@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	quantis
-DISTVERSION=	v10.06.01
+DISTVERSION=	v10.06.29
 CATEGORIES=	security devel java
 MASTER_SITES=	http://www.idquantique.com/files/products/quantis/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ale
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Libraries and utilities to access Quantis devices
