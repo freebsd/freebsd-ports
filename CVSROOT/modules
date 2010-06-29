@@ -1047,6 +1047,7 @@ biosfont                        ports/sysutils/biosfont
 biosfont-demos                  ports/misc/biosfont-demos
 bip                             ports/irc/bip
 bird                            ports/net/bird
+bird6                           ports/net/bird6
 birda                           ports/comms/birda
 birthday                        ports/misc/birthday
 bison                           ports/devel/bison
@@ -3644,6 +3645,7 @@ fortunelock                     ports/sysutils/fortunelock
 fortytwo                        ports/graphics/fortytwo
 fortytwo-bdb                    ports/databases/fortytwo-bdb
 fortytwo-encore                 ports/devel/fortytwo-encore
+fossil                          ports/devel/fossil
 fossology                       ports/devel/fossology
 foswiki                         ports/www/foswiki
 fotaq                           ports/games/fotaq
@@ -22553,6 +22555,7 @@ sablevm                         ports/java/sablevm
 sablevm-classpath               ports/java/sablevm-classpath
 sablotron                       ports/textproc/sablotron
 sabnzbdplus                     ports/news/sabnzbdplus
+sabre                           ports/devel/sabre
 safe-rm                         ports/sysutils/safe-rm
 safecat                         ports/sysutils/safecat
 saferpay                        ports/security/saferpay
