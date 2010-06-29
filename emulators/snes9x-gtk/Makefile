@@ -33,7 +33,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/gtk
 
 OPTIONS=	DEBUG	"Enable debug information"	off \
 		OPENGL	"Enable OpenGL support"	off \
-		SCREENSHOT	"Enable screenshot support"	on \
 		X86_ASM	"Use i386 optimization (only for i386)"	on \
 		MMX	"Enable MMX (only for i386)"	off \
 		JMA	"Enable JMA archive decompression support"	on \
@@ -69,13 +68,6 @@ CONFIGURE_ARGS+=	--with-opengl
 USE_GL=	glu
 .else
 CONFIGURE_ARGS+=	--without-opengl
-.endif
-
-.if !defined(WITHOUT_SCREENSHOT)
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
-CONFIGURE_ARGS+=	--with-screenshot
-.else
-CONFIGURE_ARGS+=	--without-screenshot
 .endif
 
 .if !defined(WITHOUT_JMA)
