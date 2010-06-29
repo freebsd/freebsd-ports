@@ -1,0 +1,74 @@
+--- bin/fvwm-crystal.apps.orig	2008-06-23 22:42:54.000000000 +0200
++++ bin/fvwm-crystal.apps	2010-06-29 20:54:59.000000000 +0200
+@@ -102,7 +102,7 @@
+ 	group = OptionGroup(parser, "General creation options", "Options definig what should be generated")
+ #	group.add_option('-g', '--generate', action = 'store', choices=['all','menus','panel','topapps'], dest='generate', default='all', metavar='WHAT',
+ #		help = "what should be generated. aviable options are: all, menus, panel, topapps. default is all.")
+-	group.add_option('--with', action = 'append', type='string', dest='with', metavar='DIRECTORY',
++	group.add_option('--with', action = 'append', type='string', dest='xwith', metavar='DIRECTORY',
+ 		help = 'generate entries only for defined entries (directories or files)')
+ 	group.add_option('--without', action = 'append', type='string', dest='without', metavar='DIRECTORY',
+ 		help = 'do NOT use defined entries (directories or files) for generating output.')
+@@ -206,12 +206,12 @@
+ #end of parseArgv
+ 
+ 
+-def getAppsData(databases=[database],checkExecs=False,searchIconsIn='',sortOrder='prio',minLength=3,with=None,without=None,rootName='/Applications',topInSub=True,fileIcon='default.png',dirIcon='directory.png'):
++def getAppsData(databases=[database],checkExecs=False,searchIconsIn='',sortOrder='prio',minLength=3,xwith=None,without=None,rootName='/Applications',topInSub=True,fileIcon='default.png',dirIcon='directory.png'):
+ 	"""Read application databases from directories.
+ 	if checkExecs is True then use exec_field from file name to check access before adding it to database
+ 	if searchIconsIn is provided then use this path to check icons existence
+ 	sortOrder defines sorting order for entries
+-	with is a list of entries (relative to the database root) that should be read
++	xwith is a list of entries (relative to the database root) that should be read
+ 	without is a list of entries (relative to the database root or absolute targets for symlinks) that should be left out
+ 	"""
+ 
+@@ -235,7 +235,7 @@
+ 					return True
+ 		return False
+ 
+-	def get_entry(root,dir,cat,sort,check,with,without,realcat):
++	def get_entry(root,dir,cat,sort,check,xwith,without,realcat):
+ 		if not os.path.isdir(os.path.join(root,dir)) or not os.access(os.path.join(root,dir),os.R_OK):
+ 			yield None
+ 		for entry in os.listdir(os.path.join(root,dir)):
+@@ -268,9 +268,9 @@
+ 					if not checkFileAccess(test):
+ 						continue
+ 
+-				if with and len(with)>0:
++				if xwith and len(xwith)>0:
+ 					cont=False
+-					for i,v in enumerate(with):
++					for i,v in enumerate(xwith):
+ 						if not (os.path.join(cat,name).startswith(v) or os.path.join(cat,name.replace('_',' ')).startswith(v)):
+ 							cont=True
+ 							break
+@@ -305,7 +305,7 @@
+ 					x = realcat[:]
+ 					x.extend([prio,name])
+ 					if access:
+-						for sub in get_entry(root,os.path.join(dir,entry),os.path.join(cat,name).replace(' ','_'),sort,check,with,without,x):
++						for sub in get_entry(root,os.path.join(dir,entry),os.path.join(cat,name).replace(' ','_'),sort,check,xwith,without,x):
+ 							yield sub
+ 				elif os.path.isfile(file):
+ 					if sort=='name' or sort=='rname':
+@@ -327,7 +327,7 @@
+ 				db=os.path.abspath(os.path.expanduser(databases[i]))
+ 				if not os.path.isdir(db) or not os.access(db,os.R_OK):
+ 					continue
+-				for entry in get_entry(db,'',os.path.join('/',rootName),sortOrder,checkExecs,with,without,[0,rootName]):
++				for entry in get_entry(db,'',os.path.join('/',rootName),sortOrder,checkExecs,xwith,without,[0,rootName]):
+ 					if not entry:
+ 						continue
+ 					if not entry[5]:
+@@ -850,7 +850,7 @@
+ if params[0].database and len(params[0].database)>0:
+ 	database=params[0].database
+ 
+-apps=getAppsData(database,checkExecs=params[0].checkExecs,searchIconsIn=params[0].iconPath,sortOrder=params[0].sortOrder,minLength=params[0].subLength,with=params[0].with,without=params[0].without,rootName=params[0].rootCat,topInSub=params[0].topInSub,fileIcon=params[0].fileDefault,dirIcon=params[0].dirDefault)
++apps=getAppsData(database,checkExecs=params[0].checkExecs,searchIconsIn=params[0].iconPath,sortOrder=params[0].sortOrder,minLength=params[0].subLength,xwith=params[0].xwith,without=params[0].without,rootName=params[0].rootCat,topInSub=params[0].topInSub,fileIcon=params[0].fileDefault,dirIcon=params[0].dirDefault)
+ 
+ ########################## DEBUG ################################
+ if params[0].verbosity > 1:
