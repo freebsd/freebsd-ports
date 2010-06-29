@@ -1,53 +1,36 @@
+%%NLS%%share/locale/ru/LC_MESSAGES/ibus-pinyin.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-pinyin.mo
+%%NLS%%share/locale/zh_HK/LC_MESSAGES/ibus-pinyin.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/ibus-pinyin.mo
 libexec/ibus-engine-pinyin
 libexec/ibus-setup-pinyin
-%%DATADIR%%/engine/factory.py
-%%DATADIR%%/engine/factory.pyc
-%%DATADIR%%/engine/factory.pyo
-%%DATADIR%%/engine/main.py
-%%DATADIR%%/engine/main.pyc
-%%DATADIR%%/engine/main.pyo
-%%DATADIR%%/engine/pinyin.py
-%%DATADIR%%/engine/pinyin.pyc
-%%DATADIR%%/engine/pinyin.pyo
-%%DATADIR%%/engine/py.db
-%%DATADIR%%/engine/pydict.py
-%%DATADIR%%/engine/pydict.pyc
-%%DATADIR%%/engine/pydict.pyo
-%%DATADIR%%/engine/pyparser.py
-%%DATADIR%%/engine/pyparser.pyc
-%%DATADIR%%/engine/pyparser.pyo
-%%DATADIR%%/engine/pysqlitedb.py
-%%DATADIR%%/engine/pysqlitedb.pyc
-%%DATADIR%%/engine/pysqlitedb.pyo
-%%DATADIR%%/engine/pyutil.py
-%%DATADIR%%/engine/pyutil.pyc
-%%DATADIR%%/engine/pyutil.pyo
-%%DATADIR%%/engine/special_phrase
-%%DATADIR%%/engine/special_table
-%%DATADIR%%/engine/specialphrase.py
-%%DATADIR%%/engine/specialphrase.pyc
-%%DATADIR%%/engine/specialphrase.pyo
-%%DATADIR%%/engine/specialtable.py
-%%DATADIR%%/engine/specialtable.pyc
-%%DATADIR%%/engine/specialtable.pyo
+%%DATADIR%%/db/android.db
+%%DATADIR%%/db/create_index.sql
 %%DATADIR%%/icons/chinese.svg
 %%DATADIR%%/icons/english.svg
-%%DATADIR%%/icons/full-letter.svg
 %%DATADIR%%/icons/full-punct.svg
-%%DATADIR%%/icons/half-letter.svg
+%%DATADIR%%/icons/full.svg
 %%DATADIR%%/icons/half-punct.svg
+%%DATADIR%%/icons/half.svg
+%%DATADIR%%/icons/ibus-bopomofo.svg
 %%DATADIR%%/icons/ibus-pinyin.svg
+%%DATADIR%%/icons/simp-chinese.svg
+%%DATADIR%%/icons/trad-chinese.svg
+%%DATADIR%%/phrases.txt
+%%DATADIR%%/setup/ibus-pinyin-preferences.ui
 %%DATADIR%%/setup/main.py
 %%DATADIR%%/setup/main.pyc
 %%DATADIR%%/setup/main.pyo
-%%DATADIR%%/setup/pydict.py
-%%DATADIR%%/setup/pydict.pyc
-%%DATADIR%%/setup/pydict.pyo
-%%DATADIR%%/setup/setup.glade
+%%DATADIR%%/setup/version.py
+%%DATADIR%%/setup/version.pyc
+%%DATADIR%%/setup/version.pyo
 share/ibus/component/pinyin.xml
-%%NLS%%share/locale/ja/LC_MESSAGES/ibus-pinyin.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/ibus-pinyin.mo
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_CN
+%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru
+%%NLS%%@dirrmtry share/locale
 @dirrm %%DATADIR%%/setup
 @dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/engine
+@dirrmtry %%DATADIR%%/db
 @dirrm %%DATADIR%%
