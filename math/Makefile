@@ -256,6 +256,7 @@
     SUBDIR += octave-forge-optim
     SUBDIR += octave-forge-optiminterp
     SUBDIR += octave-forge-outliers
+    SUBDIR += octave-forge-parallel
     SUBDIR += octave-forge-pdb
     SUBDIR += octave-forge-physicalconstants
     SUBDIR += octave-forge-plot
