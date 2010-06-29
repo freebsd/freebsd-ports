@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	3.2.4
+DISTVERSION=	3.2.6
 CATEGORIES=	emulators
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -168,6 +168,10 @@ PLIST_SUB+=	I386="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 900012
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-include-iprt-string.h
+.endif
 
 pre-everything::
 .if ${ARCH} == "amd64"
