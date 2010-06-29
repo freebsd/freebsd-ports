@@ -221,6 +221,7 @@
     SUBDIR += octave-forge-data-smoothing
     SUBDIR += octave-forge-econometrics
     SUBDIR += octave-forge-engine
+    SUBDIR += octave-forge-es
     SUBDIR += octave-forge-financial
     SUBDIR += octave-forge-fpl
     SUBDIR += octave-forge-ga
