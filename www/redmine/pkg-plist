@@ -1045,6 +1045,7 @@
 %%WWWDIR%%/test/fixtures/journals.yml
 %%WWWDIR%%/test/fixtures/mail_handler/message_reply.eml
 %%WWWDIR%%/test/fixtures/mail_handler/message_reply_by_subject.eml
+%%WWWDIR%%/test/fixtures/mail_handler/ticket_by_empty_user.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_by_unknown_user.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_from_emission_address.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_html_only.eml
@@ -3690,7 +3691,7 @@
 @dirrm %%WWWDIR%%/extra
 @dirrm %%WWWDIR%%/doc
 @dirrm %%WWWDIR%%/db/migrate
-@dirrm %%WWWDIR%%/db
+@dirrmtry %%WWWDIR%%/db
 @dirrm %%WWWDIR%%/config/locales
 @dirrmtry %%WWWDIR%%/config/initializers
 @dirrmtry %%WWWDIR%%/config/environments
