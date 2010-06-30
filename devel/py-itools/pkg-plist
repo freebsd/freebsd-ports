@@ -15,6 +15,7 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.61.0
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.61.1
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.61.2
+%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.61.3
 %%PYTHON_SITELIBDIR%%/itools/UPGRADE-0.61.0
 %%PYTHON_SITELIBDIR%%/itools/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/__init__.pyc
@@ -516,9 +517,6 @@ bin/ixapian-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/web/views.py
 %%PYTHON_SITELIBDIR%%/itools/web/views.pyc
 %%PYTHON_SITELIBDIR%%/itools/web/views.pyo
-%%PYTHON_SITELIBDIR%%/itools/web/webdav.py
-%%PYTHON_SITELIBDIR%%/itools/web/webdav.pyc
-%%PYTHON_SITELIBDIR%%/itools/web/webdav.pyo
 %%PYTHON_SITELIBDIR%%/itools/workflow/HOWTO.txt
 %%PYTHON_SITELIBDIR%%/itools/workflow/TODO.txt
 %%PYTHON_SITELIBDIR%%/itools/workflow/__init__.py
