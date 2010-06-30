@@ -21,12 +21,11 @@ EXTRACT_DEPENDS=	p7zip>=0:${PORTSDIR}/archivers/p7zip
 PLIST_FILES=	bin/mediainfo
 
 EXTRACT_CMD=	7z
-USE_AUTOTOOLS=	autotools:build
+EXTRACT_BEFORE_ARGS=	x -o${WRKSRC}
+EXTRACT_AFTER_ARGS=	>/dev/null
+USE_AUTOTOOLS=	aclocal:110:env automake:110:env autoconf:262:env libtool:22:env
 
 WRKSRC=		${WRKDIR}/MediaInfo${DISTVERSIONSUFFIX}
-
-do-extract:
-	@(${MKDIR} ${WRKSRC} && ${EXTRACT_CMD} x -o${WRKSRC} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES})
 
 pre-build:
 	@(cd ${WRKSRC} && ${CP} ./MediaInfo/Project/GNU/CLI/AddThisToRoot_CLI_compile.sh ./CLI_Compile.sh)
