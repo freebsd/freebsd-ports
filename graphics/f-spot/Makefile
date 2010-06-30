@@ -38,6 +38,9 @@ GCONF_SCHEMAS=	f-spot.schemas
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+# Restrict to stable (even) versions, indicated by the second component.
+PORTSCOUT=      limitw:1,even
+
 post-patch:
 	@${REINPLACE_CMD} 's|#!/bin/bash|#!/usr/bin/env bash|g' \
 		${WRKSRC}/src/f-spot.in
