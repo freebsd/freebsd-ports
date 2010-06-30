@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rdup
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://miek.nl/projects/rdup/
 
@@ -38,6 +38,5 @@ MAN1=		rdup.1 \
 		rdup-up.1
 
 MAN7=		rdup-backups.7
-
 
 .include <bsd.port.mk>
