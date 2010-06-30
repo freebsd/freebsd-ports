@@ -7,7 +7,6 @@
 
 PORTNAME=	thundercache
 PORTVERSION=	4.1
-PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.bmsoftware.org/freebsd/ \
 		http://www8.freebsdbrasil.com.br/~eksffa/thunder/ \
