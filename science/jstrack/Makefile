@@ -9,7 +9,7 @@ PORTNAME=	jstrack
 PORTVERSION=	3.0.2
 CATEGORIES=	science
 MASTER_SITES=	http://www.jstrack.org/jstrack/downloads/ \
-		http://www.bayofrum.net/dist/$%7BPORTNAME%7D/
+		http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	utisoft@gmail.com
 COMMENT=	A freeware hurricane tracking program
