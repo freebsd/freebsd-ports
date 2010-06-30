@@ -1,8 +1,8 @@
---- Makefile.orig	Sat Apr 28 09:45:46 2001
-+++ Makefile	Thu Dec 28 15:12:13 2006
-@@ -1,7 +1,7 @@
+--- Makefile.orig	2001-04-28 09:45:46.000000000 +0800
++++ Makefile	2010-06-30 10:13:29.000000000 +0800
+@@ -1,7 +1,6 @@
  
- CC=gcc
+-CC=gcc
 -CFLAG=-O2 -g -Wall -Iinclude
 -LIBS= -Llib -lhz
 +CFLAG+=-Iinclude
@@ -10,7 +10,7 @@
  
  .PHONY: all hzlib clean install-home install
  
-@@ -30,12 +30,11 @@
+@@ -30,12 +29,11 @@ install-home:
  	ln -s $(HOME)/bin/autogb $(HOME)/bin/autob5
  	chmod 755 $(HOME)/bin/autogb 
  install:
