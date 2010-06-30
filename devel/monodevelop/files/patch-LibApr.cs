@@ -5,7 +5,7 @@
  	public class LibApr0: LibApr
  	{
 -		private const string aprlib = "libapr-0.so.0";
-+		private const string aprlib = "libapr-1.so.3";
++		private const string aprlib = "libapr-1.so.4";
  		
  		public override void initialize() { apr_initialize (); }
  		public override IntPtr pool_create_ex (out IntPtr pool, IntPtr parent, IntPtr abort, IntPtr allocator) { return apr_pool_create_ex(out pool, parent, abort, allocator); }
