@@ -1,9 +1,8 @@
---- hzconvert/Makefile.orig	Mon Jan  8 18:03:21 2001
-+++ hzconvert/Makefile	Thu Dec 28 10:30:43 2006
-@@ -1,18 +1,18 @@
+--- hzconvert/Makefile.orig	2001-01-08 18:03:21.000000000 +0800
++++ hzconvert/Makefile	2010-06-30 10:13:35.000000000 +0800
+@@ -1,18 +1,17 @@
 -CC=gcc -I../include
 -CFLAGS=-O2 -Wall -g
-+CC=gcc
 +CFLAGS+=-fPIC -Wall -g -I../include
  SHARED_LIB=libhz.so
  SHARED_LIB_MAJOR=$(SHARED_LIB).0
@@ -20,7 +19,7 @@
  libhzconvert: $(OBJS)
  	ar rs  ../lib/libhz.a $(OBJS)
 -	gcc -fPIC -shared -Wl,-soname,$(SHARED_LIB_MAJOR) -o ../lib/$(SHARED_LIB_MINOR)  $(OBJS) -ldl
-+	gcc -fPIC -shared -Wl,-soname,$(SHARED_LIB_MAJOR) -o ../lib/$(SHARED_LIB_MINOR)  $(OBJS)
++	$(CC) -fPIC -shared -Wl,-soname,$(SHARED_LIB_MAJOR) -o ../lib/$(SHARED_LIB_MINOR)  $(OBJS)
  	rm -f ../lib/$(SHARED_LIB_MAJOR)
  	rm -f ../lib/$(SHARED_LIB)
  	cd ../lib;ln -s $(SHARED_LIB_MINOR) $(SHARED_LIB_MAJOR)
