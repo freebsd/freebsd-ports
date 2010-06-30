@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	3.3.3
+DISTVERSION=	3.3.4
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	A set of PHP-scripts to manage MySQL over the web
+
+LICENSE=	GPLv2
 
 USE_MYSQL=	yes
 IGNORE_WITH_PHP=	4
