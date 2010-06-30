@@ -15,13 +15,15 @@ MASTER_SITE_SUBDIR=	petef
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tk based replacement for xfontsel
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+USE_TK=		yes
+
+RUN_DEPENDS+=	xlsfonts:${PORTSDIR}/x11-fonts/xlsfonts
 
 NO_BUILD=	yes
 
 post-patch:
 	${SED} -e "s,/usr/local,${LOCALBASE}," \
-		-e "s,#!/usr/X11/bin/wish,#!$(LOCALBASE)/bin/wish8.4," \
+		-e "s,#!/usr/X11/bin/wish,#!${WISH}," \
 		 < ${WRKSRC}/tkfont > ${WRKSRC}/tkfont.new
 	${MV} ${WRKSRC}/tkfont.new ${WRKSRC}/tkfont
 
