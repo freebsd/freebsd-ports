@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dfu-programmer
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	comms
 MASTER_SITES=	SF
 
