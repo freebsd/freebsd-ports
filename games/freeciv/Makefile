@@ -7,7 +7,7 @@
 
 PORTNAME=	freeciv
 PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION}
 
@@ -61,6 +61,10 @@ PLIST_SUB+=	SDL="@comment "
 .ifndef WITHOUT_MYSQL
 CONFIGURE_ARGS+=--enable-auth --with-mysql-prefix=${LOCALBASE}
 USE_MYSQL=	yes
+.endif
+
+.ifdef WITHOUT_IPV6
+CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
 .ifdef WITHOUT_NLS
