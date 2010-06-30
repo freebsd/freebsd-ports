@@ -1,0 +1,13 @@
+
+To use YASnippet in Emacs, add the following lines to your ~/.emacs:
+
+  (require 'yasnippet)
+  (yas/initialize)
+  ;; for the default snippets:
+  (yas/load-directory "%%PREFIX%%/share/yasnippet/snippets")
+
+This way you will get a predefined, read-only behavior.
+
+You may also use a different directory with your own snippets, and
+copy any required snippets from the default directory.
+

@@ -1,0 +1,9 @@
+YASnippet is a template system for Emacs. It allows you to type an
+abbreviation and automatically expand it into function templates.
+
+Bundled language templates includes: C, C++, C#, Perl, Python, Ruby,
+SQL, LaTeX, HTML, CSS and more. The snippet syntax is inspired from
+TextMate's syntax, you can even import most TextMate templates to
+YASnippet.
+
+WWW: http://code.google.com/p/yasnippet/
