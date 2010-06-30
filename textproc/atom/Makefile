@@ -8,11 +8,11 @@
 PORTNAME=	atom
 PORTVERSION=	1.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.bayofrum.net/atom/ \
+MASTER_SITES=	http://www.bayofrum.net/dist/atom/ \
 		http://muuz.deadbbs.com/FreeBSD/atom/
 
 MAINTAINER=	utisoft@gmail.com
-COMMENT=	Converts text files to html with special attrs
+COMMENT=	Converts text files to html with special attributes
 
 MAN1=	atom.1
 MANCOMPRESSED=	no
@@ -30,9 +30,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for DOC in ${PORTDOCS}
-	${CP} -R ${WRKSRC}/${DOC} ${DOCSDIR}/
-.endfor
+.	for DOC in ${PORTDOCS}
+		${CP} -R ${WRKSRC}/${DOC} ${DOCSDIR}/
+.	endfor
 .endif
 
 .include <bsd.port.mk>
