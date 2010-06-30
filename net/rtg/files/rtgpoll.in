@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: rtgpoll
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# rtgpoll_enable (bool):   Set to NO by default.
+#                          Set it to YES to enable rtgpoll.
+# rtgpoll_config (path):   Set to %%PREFIX%%/etc/rtg/rtg.conf by default.
+# rtgpoll_targets (path):  Set to %%PREFIX%%/etc/rtg/targets.cfg by default.
+# rtgpoll_pidfile (path):  Set to /var/run/rtgpoll.pid by default.
+#
+
+. /etc/rc.subr
+
+name="rtgpoll"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/bin/${name}
+
+load_rc_config $name
+
+: ${rtgpoll_enable="NO"}
+: ${rtgpoll_config="%%PREFIX%%/etc/rtg/rtg.conf"}
+: ${rtgpoll_targets="%%PREFIX%%/etc/rtg/targets.cfg"}
+: ${rtgpoll_pidfile="/var/run/${name}.pid"}
+
+command_args="-p $rtgpoll_pidfile -c $rtgpoll_config -t $rtgpoll_targets &"
+
+run_rc_command "$1"
+
