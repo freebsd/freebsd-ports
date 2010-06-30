@@ -13,11 +13,15 @@ MASTER_SITES=	http://net.doit.wisc.edu/~plonka/Cflow/ \
 		http://net.doit.wisc.edu/~plonka/Cflow/old/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fw@moov.de
 COMMENT=	Analyze raw flow files written by cflowd (Cisco NetFlow data)
 
+OPTIONS=	FLOW_TOOLS	"Enable flow-tools support"	off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_FLOW_TOOLS)
-BUILD_DEPENDS+= ${LOCALBASE}/lib/libft.a:${PORTSDIR}/net-mgmt/flow-tools
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libft.a:${PORTSDIR}/net-mgmt/flow-tools
 RUN_DEPENDS+=	${LOCALBASE}/lib/libft.a:${PORTSDIR}/net-mgmt/flow-tools
 
 CFLAGS+=	-I${LOCALBASE}/include -DOSU
@@ -30,4 +34,4 @@ PERL_CONFIGURE=	YES
 MAN1=		flowdumper.1
 MAN3=		Cflow.3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
