@@ -27,12 +27,14 @@ MAKE_ARGS+=	DOCS=""
 .endif
 
 PLIST_FILES=	lib/postgresql/pg_sphere.so \
-		%%DATADIR%%/contrib/pg_sphere.sql \
-		%%PORTDOCS%%%%DOCSDIR%%/contrib/README.pg_sphere \
-		%%PORTDOCS%%%%DOCSDIR%%/contrib/COPYRIGHT.pg_sphere
+		%%DATADIR%%/contrib/pg_sphere.sql
+PLIST_DIRS=	%%DATADIR%%/contrib
 
-PLIST_DIRS=	%%DATADIR%%/contrib \
-		%%PORTDOCS%%%%DOCSDIR%%/contrib
+.if !defined(NOPORTDOCS)
+PLIST_FILES+=	%%DOCSDIR%%/contrib/README.pg_sphere \
+		%%DOCSDIR%%/contrib/COPYRIGHT.pg_sphere
+PLIST_DIRS+=	%%DOCSDIR%%/contrib
+.endif
 
 #regression-test:
 #	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} installcheck
