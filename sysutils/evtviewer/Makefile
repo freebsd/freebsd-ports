@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	evtViewer
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTNAME}-${PORTVERSION} \
-		http://contribs.martymac.com/evtViewer/
-
+		http://contribs.martymac.org/evtViewer/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ganael.laplanche@martymac.com
@@ -21,7 +20,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/evtViewer
 
-# Just copy the scripts
+# Just copy the script
 do-install:
 	${CP} ${WRKSRC}/evtViewer ${PREFIX}/bin
 
