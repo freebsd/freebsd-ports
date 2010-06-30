@@ -60,6 +60,7 @@ OPTIONS=	MYSQL "Use MySQL backend" on \
 		SQLITE "Use SQLite backend" off \
 		IPV6 "Support for IPv6" on \
 		LDAP "Support for checking LDAP servers" on \
+		IPMI "Support for IPMI" off \
 		JABBER "Use jabber media type" on \
 		FPING "Use fping for pinging hosts" on \
 		SSH "Use libssh2 for SSH-based checks" off
@@ -85,6 +86,11 @@ IGNORE=		zabbix requires a database backend
 .ifndef WITHOUT_LDAP
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--with-ldap
+.endif
+
+.ifdef WITH_IPMI
+LIB_DEPENDS+=	OpenIPMI:${PORTSDIR}/sysutils/openipmi
+CONFIGURE_ARGS+=	--with-openipmi
 .endif
 
 .ifndef WITHOUT_JABBER
