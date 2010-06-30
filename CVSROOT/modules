@@ -2609,6 +2609,8 @@ drupal6                         ports/www/drupal6
 drupal6-advanced_help           ports/www/drupal6-advanced_help
 drupal6-cck                     ports/www/drupal6-cck
 drupal6-chaos                   ports/www/drupal6-chaos
+drupal6-ckeditor                ports/www/drupal6-ckeditor
+drupal6-content_access          ports/www/drupal6-content_access
 drupal6-geshifilter             ports/www/drupal6-geshifilter
 drupal6-google_analytics        ports/www/drupal6-google_analytics
 drupal6-image                   ports/www/drupal6-image
@@ -6648,6 +6650,7 @@ jid3lib                         ports/audio/jid3lib
 jigdo                           ports/net-p2p/jigdo
 jigsaw                          ports/games/jigsaw
 jigzo                           ports/games/jigzo
+jiic                            ports/devel/jiic
 jikes                           ports/java/jikes
 jin                             ports/games/jin
 jing                            ports/textproc/jing
@@ -6719,6 +6722,7 @@ json-glib                       ports/devel/json-glib
 jspacker                        ports/www/jspacker
 jspice3                         ports/cad/jspice3
 jspwiki                         ports/www/jspwiki
+jstrack                         ports/science/jstrack
 jtag                            ports/devel/jtag
 jtans                           ports/games/jtans
 jtiger                          ports/java/jtiger
@@ -10287,11 +10291,14 @@ octave-forge-control            ports/math/octave-forge-control
 octave-forge-data-smoothing     ports/math/octave-forge-data-smoothing
 octave-forge-econometrics       ports/math/octave-forge-econometrics
 octave-forge-engine             ports/math/octave-forge-engine
+octave-forge-es                 ports/math/octave-forge-es
+octave-forge-fenv               ports/math/octave-forge-fenv
 octave-forge-financial          ports/math/octave-forge-financial
 octave-forge-fpl                ports/math/octave-forge-fpl
 octave-forge-ga                 ports/math/octave-forge-ga
 octave-forge-general            ports/math/octave-forge-general
 octave-forge-generate_html      ports/math/octave-forge-generate_html
+octave-forge-gnuplot            ports/math/octave-forge-gnuplot
 octave-forge-gsl                ports/math/octave-forge-gsl
 octave-forge-ident              ports/math/octave-forge-ident
 octave-forge-image              ports/math/octave-forge-image
@@ -10313,11 +10320,13 @@ octave-forge-ocs                ports/math/octave-forge-ocs
 octave-forge-oct2mat            ports/math/octave-forge-oct2mat
 octave-forge-octcdf             ports/math/octave-forge-octcdf
 octave-forge-octgpr             ports/math/octave-forge-octgpr
+octave-forge-octproj            ports/math/octave-forge-octproj
 octave-forge-odebvp             ports/math/octave-forge-odebvp
 octave-forge-odepkg             ports/math/octave-forge-odepkg
 octave-forge-optim              ports/math/octave-forge-optim
 octave-forge-optiminterp        ports/math/octave-forge-optiminterp
 octave-forge-outliers           ports/math/octave-forge-outliers
+octave-forge-parallel           ports/math/octave-forge-parallel
 octave-forge-pdb                ports/math/octave-forge-pdb
 octave-forge-physicalconstants  ports/math/octave-forge-physicalconstants
 octave-forge-plot               ports/math/octave-forge-plot
