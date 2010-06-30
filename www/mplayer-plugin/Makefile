@@ -16,6 +16,9 @@ COMMENT=	A Mozilla plugin for the MPlayer media player
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
+DEPRECATED=	Upstream support dropped. Please consider using www/gecko-mediaplayer instead
+EXPIRATION_DATE=2010-08-01
+
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GECKO=	libxul
