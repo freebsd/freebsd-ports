@@ -267,6 +267,7 @@
     SUBDIR += xmleditor
     SUBDIR += xvile
     SUBDIR += xxe
+    SUBDIR += yasnippet
     SUBDIR += yudit
     SUBDIR += yui
     SUBDIR += yzis
