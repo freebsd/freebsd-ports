@@ -381,7 +381,7 @@ CONFIGURE_ARGS+=--with-pcre
 .endif
 
 .if defined(WITH_PASSENGER_MODULE)
-PASSENGER_VERSION=	2.2.14
+PASSENGER_VERSION=	2.2.15
 MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
@@ -481,8 +481,6 @@ post-patch:
 	@${REINPLACE_CMD} '377s!-g!${CXXFLAGS}!; \
 		s!-lpthread!${PTHREAD_LIBS}!g' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info.rb
-	@${PATCH} ${PATCH_ARGS} < \
-		${PATCHDIR}/extra-patch-StaticContentHandler.c
 .endif
 .if defined(WITH_HTTP_UPSTREAM_HASH)
 	@${PATCH} ${PATCH_ARGS} < \
