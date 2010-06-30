@@ -42,9 +42,11 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 PORTREVISION_CLIENT=	0
 PORTREVISION_SERVER=	0
 
-.if !defined(CLIENT_ONLY)
 OPTIONS=	SASL "With (Cyrus) SASL2 support" off \
-		DYNACL "Run-time loadable ACL (experimental)" off \
+		FETCH "Enable fetch(3) support" on
+
+.if !defined(CLIENT_ONLY)
+OPTIONS+=	DYNACL "Run-time loadable ACL (experimental)" off \
 		ACI "Per-object ACI (experimental)" off \
 		DNSSRV "With Dnssrv backend" off \
 		PASSWD "With Passwd backend" off \
@@ -95,7 +97,7 @@ CONFIGURE_SED=		-e 's,-kthread,${PTHREAD_LIBS},g' -e 's,uuid/uuid.h,xxuuid/uuid.
 .include <bsd.port.pre.mk>
 
 .if defined(CLIENT_ONLY)
-.if defined(WITH_SASL) && !defined(WITHOUT_SASL)
+.if defined(WITH_SASL)
 PKGNAMESUFFIX=		-sasl-client
 COMMENT=		Open source LDAP client implementation with SASL2 support
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.* \
@@ -116,7 +118,7 @@ BROKEN=			You have `USE_OPENLDAP' variable defined either in environment or in m
 USE_OPENLDAP=		yes
 WANT_OPENLDAP_VER=	24
 
-.if defined(WITH_SASL) && !defined(WITHOUT_SASL)
+.if defined(WITH_SASL)
 WANT_OPENLDAP_SASL=	yes
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-client-2.*
 PKGNAMESUFFIX=		-sasl-server
@@ -147,7 +149,11 @@ CONFIGURE_ARGS=		--with-threads=posix \
 			--with-tls=openssl \
 			--enable-dynamic
 
-.if defined(WITH_SASL) && !defined(WITHOUT_SASL)
+.if defined(WITHOUT_FETCH)
+CONFIGURE_ARGS+=	--without-fetch
+.endif
+
+.if defined(WITH_SASL)
 LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl
 .else
@@ -378,7 +384,7 @@ PLIST_SUB+=		BACK_PERL=${BACKEND_PLIST}
 PLIST_SUB+=		BACK_PERL="@comment "
 .endif
 
-.if defined(WITH_SASL) && !defined(WITHOUT_SASL)
+.if defined(WITH_SASL)
 CONFIGURE_ARGS+=	--enable-spasswd
 .endif
 
