@@ -1,78 +1,74 @@
+@comment $FreeBSD$
 bin/nant
-share/NAnt/bin/NAnt.CompressionTasks.dll
-share/NAnt/bin/NAnt.CompressionTasks.dll.mdb
-share/NAnt/bin/NAnt.CompressionTasks.xml
-share/NAnt/bin/NAnt.Core.dll
-share/NAnt/bin/NAnt.Core.dll.mdb
-share/NAnt/bin/NAnt.Core.xml
-share/NAnt/bin/NAnt.DotNetTasks.dll
-share/NAnt/bin/NAnt.DotNetTasks.dll.mdb
-share/NAnt/bin/NAnt.DotNetTasks.xml
-share/NAnt/bin/NAnt.NUnit.dll
-share/NAnt/bin/NAnt.NUnit.dll.mdb
-share/NAnt/bin/NAnt.NUnit.xml
-share/NAnt/bin/NAnt.NUnit1Tasks.dll
-share/NAnt/bin/NAnt.NUnit1Tasks.dll.mdb
-share/NAnt/bin/NAnt.NUnit1Tasks.xml
-share/NAnt/bin/NAnt.NUnit2Tasks.dll
-share/NAnt/bin/NAnt.NUnit2Tasks.dll.mdb
-share/NAnt/bin/NAnt.NUnit2Tasks.xml
-share/NAnt/bin/NAnt.SourceControlTasks.dll
-share/NAnt/bin/NAnt.SourceControlTasks.dll.mdb
-share/NAnt/bin/NAnt.SourceControlTasks.xml
-share/NAnt/bin/NAnt.VSNetTasks.dll
-share/NAnt/bin/NAnt.VSNetTasks.dll.mdb
-share/NAnt/bin/NAnt.VSNetTasks.xml
-share/NAnt/bin/NAnt.VisualCppTasks.dll
-share/NAnt/bin/NAnt.VisualCppTasks.dll.mdb
-share/NAnt/bin/NAnt.VisualCppTasks.xml
-share/NAnt/bin/NAnt.Win32Tasks.dll
-share/NAnt/bin/NAnt.Win32Tasks.dll.mdb
-share/NAnt/bin/NAnt.Win32Tasks.xml
-share/NAnt/bin/NAnt.exe
-share/NAnt/bin/NAnt.exe.config
-share/NAnt/bin/NAnt.exe.mdb
-share/NAnt/bin/NAnt.xml
-share/NAnt/bin/lib/ICSharpCode.SharpCvsLib.Console.dll
-share/NAnt/bin/lib/ICSharpCode.SharpCvsLib.dll
-share/NAnt/bin/lib/ICSharpCode.SharpZipLib.dll
-share/NAnt/bin/lib/NUnitCore.dll
-share/NAnt/bin/lib/mono/1.0/NDoc.Core.dll
-share/NAnt/bin/lib/mono/1.0/NDoc.Documenter.Msdn.dll
-share/NAnt/bin/lib/mono/1.0/NDoc.ExtendedUI.dll
-share/NAnt/bin/lib/mono/1.0/nunit.core.dll
-share/NAnt/bin/lib/mono/1.0/nunit.framework.dll
-share/NAnt/bin/lib/mono/1.0/nunit.util.dll
-share/NAnt/bin/lib/mono/2.0/NDoc.Core.dll
-share/NAnt/bin/lib/mono/2.0/NDoc.Documenter.Msdn.dll
-share/NAnt/bin/lib/mono/2.0/NDoc.ExtendedUI.dll
-share/NAnt/bin/lib/mono/2.0/nunit.core.dll
-share/NAnt/bin/lib/mono/2.0/nunit.framework.dll
-share/NAnt/bin/lib/mono/2.0/nunit.util.dll
-share/NAnt/bin/lib/net/1.0/NDoc.Core.dll
-share/NAnt/bin/lib/net/1.0/NDoc.Documenter.Msdn.dll
-share/NAnt/bin/lib/net/1.0/NDoc.ExtendedUI.dll
-share/NAnt/bin/lib/net/1.0/nunit.core.dll
-share/NAnt/bin/lib/net/1.0/nunit.framework.dll
-share/NAnt/bin/lib/net/1.0/nunit.util.dll
-share/NAnt/bin/lib/net/1.1/NDoc.Core.dll
-share/NAnt/bin/lib/net/1.1/NDoc.Documenter.Msdn.dll
-share/NAnt/bin/lib/net/1.1/NDoc.ExtendedUI.dll
-share/NAnt/bin/lib/net/1.1/nunit.core.dll
-share/NAnt/bin/lib/net/1.1/nunit.framework.dll
-share/NAnt/bin/lib/net/1.1/nunit.util.dll
-share/NAnt/bin/lib/net/2.0/NDoc.Core.dll
-share/NAnt/bin/lib/net/2.0/NDoc.Documenter.Msdn.dll
-share/NAnt/bin/lib/net/2.0/NDoc.ExtendedUI.dll
-share/NAnt/bin/lib/net/2.0/nunit.core.dll
-share/NAnt/bin/lib/net/2.0/nunit.framework.dll
-share/NAnt/bin/lib/net/2.0/nunit.util.dll
-share/NAnt/bin/log4net.dll
-share/NAnt/bin/scvs.exe
+libdata/pkgconfig/nant.pc
+%%DATADIR%%/bin/NAnt.CompressionTasks.dll
+%%DATADIR%%/bin/NAnt.CompressionTasks.dll.mdb
+%%DATADIR%%/bin/NAnt.CompressionTasks.xml
+%%DATADIR%%/bin/NAnt.Core.dll
+%%DATADIR%%/bin/NAnt.Core.dll.mdb
+%%DATADIR%%/bin/NAnt.Core.xml
+%%DATADIR%%/bin/NAnt.DotNetTasks.dll
+%%DATADIR%%/bin/NAnt.DotNetTasks.dll.mdb
+%%DATADIR%%/bin/NAnt.DotNetTasks.xml
+%%DATADIR%%/bin/NAnt.NUnit.dll
+%%DATADIR%%/bin/NAnt.NUnit.dll.mdb
+%%DATADIR%%/bin/NAnt.NUnit.xml
+%%DATADIR%%/bin/NAnt.NUnit1Tasks.dll
+%%DATADIR%%/bin/NAnt.NUnit1Tasks.dll.mdb
+%%DATADIR%%/bin/NAnt.NUnit1Tasks.xml
+%%DATADIR%%/bin/NAnt.NUnit2Tasks.dll
+%%DATADIR%%/bin/NAnt.NUnit2Tasks.dll.mdb
+%%DATADIR%%/bin/NAnt.NUnit2Tasks.xml
+%%DATADIR%%/bin/NAnt.SourceControlTasks.dll
+%%DATADIR%%/bin/NAnt.SourceControlTasks.dll.mdb
+%%DATADIR%%/bin/NAnt.SourceControlTasks.xml
+%%DATADIR%%/bin/NAnt.VSNetTasks.dll
+%%DATADIR%%/bin/NAnt.VSNetTasks.dll.mdb
+%%DATADIR%%/bin/NAnt.VSNetTasks.xml
+%%DATADIR%%/bin/NAnt.VisualCppTasks.dll
+%%DATADIR%%/bin/NAnt.VisualCppTasks.dll.mdb
+%%DATADIR%%/bin/NAnt.VisualCppTasks.xml
+%%DATADIR%%/bin/NAnt.Win32Tasks.dll
+%%DATADIR%%/bin/NAnt.Win32Tasks.dll.mdb
+%%DATADIR%%/bin/NAnt.Win32Tasks.xml
+%%DATADIR%%/bin/NAnt.exe
+%%DATADIR%%/bin/NAnt.exe.config
+%%DATADIR%%/bin/NAnt.exe.mdb
+%%DATADIR%%/bin/NAnt.xml
+%%DATADIR%%/bin/extensions/common/2.0/NAnt.MSBuild.dll
+%%DATADIR%%/bin/extensions/common/2.0/NAnt.MSBuild.dll.mdb
+%%DATADIR%%/bin/extensions/common/2.0/NAnt.MSBuild.xml
+%%DATADIR%%/bin/lib/common/1.1/nunit-console-runner.dll
+%%DATADIR%%/bin/lib/common/1.1/nunit-console.exe
+%%DATADIR%%/bin/lib/common/1.1/nunit.core.dll
+%%DATADIR%%/bin/lib/common/1.1/nunit.framework.dll
+%%DATADIR%%/bin/lib/common/1.1/nunit.util.dll
+%%DATADIR%%/bin/lib/common/2.0/nunit-console-runner.dll
+%%DATADIR%%/bin/lib/common/2.0/nunit-console.exe
+%%DATADIR%%/bin/lib/common/2.0/nunit.core.dll
+%%DATADIR%%/bin/lib/common/2.0/nunit.framework.dll
+%%DATADIR%%/bin/lib/common/2.0/nunit.util.dll
+%%DATADIR%%/bin/lib/common/neutral/ICSharpCode.SharpCvsLib.Console.dll
+%%DATADIR%%/bin/lib/common/neutral/ICSharpCode.SharpCvsLib.dll
+%%DATADIR%%/bin/lib/common/neutral/ICSharpCode.SharpZipLib.dll
+%%DATADIR%%/bin/lib/common/neutral/NDoc.Core.dll
+%%DATADIR%%/bin/lib/common/neutral/NDoc.Documenter.Msdn.dll
+%%DATADIR%%/bin/lib/common/neutral/NDoc.ExtendedUI.dll
+%%DATADIR%%/bin/lib/common/neutral/NUnitCore.dll
+%%DATADIR%%/bin/lib/net/1.0/NDoc.Core.dll
+%%DATADIR%%/bin/lib/net/1.0/NDoc.Documenter.Msdn.dll
+%%DATADIR%%/bin/lib/net/1.0/NDoc.ExtendedUI.dll
+%%DATADIR%%/bin/lib/net/1.0/nunit-console-runner.dll
+%%DATADIR%%/bin/lib/net/1.0/nunit-console.exe
+%%DATADIR%%/bin/lib/net/1.0/nunit.core.dll
+%%DATADIR%%/bin/lib/net/1.0/nunit.framework.dll
+%%DATADIR%%/bin/lib/net/1.0/nunit.util.dll
+%%DATADIR%%/bin/log4net.dll
+%%DATADIR%%/bin/scvs.exe
+%%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Compression.Tasks.ExpandBaseTask.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.DataTypeBase.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Filters.ChainableReader.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Filters.Filter.html
-%%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Filters.PhysicalTextReader.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Target.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Task.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.TaskContainer.html
@@ -88,6 +84,7 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Types.Formatter.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Types.Option.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Types.PathElement.html
+%%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Types.Pattern.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Types.RawXml.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Types.Token.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Types.XmlNamespace.html
@@ -99,6 +96,7 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.DotNet.Types.DataTypeCollectionBase.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.DotNet.Types.EmbeddedResourceCollection.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.DotNet.Types.LibDirectorySet.html
+%%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.DotNet.Types.Module.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.DotNet.Types.NamespaceImport.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.DotNet.Types.Package.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.NUnit.Types.FormatterElement.html
@@ -110,15 +108,18 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.VSNet.Types.WebMap.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.VisualCpp.Types.Library.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.VisualCpp.Types.Symbol.html
-%%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Compression.Tasks.TarCompressionMethod.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Compression.Types.DuplicateHandling.html
+%%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Compression.Types.TarCompressionMethod.html
+%%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Core.FrameworkTypes.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Core.Level.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Core.Tasks.AvailableTask.ResourceType.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Core.Tasks.LoopTask.LoopItem.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Core.Tasks.LoopTask.LoopTrim.html
+%%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.Core.Types.ManagedExecution.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.DotNet.Tasks.AssemblyInfoTask.CodeLanguage.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.DotNet.Tasks.RegsvcsTask.ActionType.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.DotNet.Types.DebugOutput.html
+%%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.DotNet.Types.DelaySign.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.MSNet.Tasks.ServiceControllerTask.ActionType.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.NUnit.Types.FormatterType.html
 %%PORTDOCS%%%%DOCSDIR%%/help/enums/NAnt.VisualCpp.Tasks.ClTask.PrecompiledHeaderMode.html
@@ -128,174 +129,182 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/filters/replacestring.html
 %%PORTDOCS%%%%DOCSDIR%%/help/filters/replacetokens.html
 %%PORTDOCS%%%%DOCSDIR%%/help/filters/tabstospaces.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.get-full-name.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.get-location.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.get-name.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.load-from-file.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.load.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/assemblyname.get-assembly-name.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/assemblyname.get-codebase.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/assemblyname.get-escaped-codebase.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/assemblyname.get-full-name.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/assemblyname.get-name.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/assemblyname.get-version.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/bool.parse.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/bool.to-string.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/convert.to-boolean.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/convert.to-datetime.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/convert.to-double.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/convert.to-int.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/convert.to-string.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/cygpath.get-dos-path.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/cygpath.get-unix-path.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/cygpath.get-windows-path.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-day-of-week.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-day-of-year.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-day.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-days-in-month.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-hour.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-millisecond.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-minute.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-month.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-second.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-ticks.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-year.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.is-leap-year.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.now.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.parse.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.to-string.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/directory.exists.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/directory.get-creation-time.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/directory.get-current-directory.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/directory.get-directory-root.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/directory.get-last-access-time.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/directory.get-last-write-time.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/directory.get-parent-directory.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/double.parse.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/double.to-string.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/environment.get-folder-path.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/environment.get-machine-name.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/environment.get-operating-system.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/environment.get-user-name.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/environment.get-variable.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/environment.get-version.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/environment.variable-exists.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/file.exists.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/file.get-creation-time.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/file.get-last-access-time.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/file.get-last-write-time.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/file.get-length.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/file.is-assembly.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/file.up-to-date.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/fileversioninfo.get-company-name.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/fileversioninfo.get-file-version.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/fileversioninfo.get-product-name.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/fileversioninfo.get-product-version.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/fileversioninfo.get-version-info.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.exists.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-assembly-directory.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-clr-version.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-description.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-family.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-framework-directory.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-runtime-engine.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-runtime-framework.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-sdk-directory.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-target-framework.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-version.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.sdk-exists.html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.get-full-name(System.Reflection.Assembly).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.get-location(System.Reflection.Assembly).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.get-name(System.Reflection.Assembly).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.load(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.load-from-file(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/assemblyname.get-assembly-name(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/assemblyname.get-codebase(System.Reflection.AssemblyName).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/assemblyname.get-escaped-codebase(System.Reflection.AssemblyName).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/assemblyname.get-full-name(System.Reflection.AssemblyName).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/assemblyname.get-name(System.Reflection.AssemblyName).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/assemblyname.get-version(System.Reflection.AssemblyName).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/bool.parse(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/bool.to-string(System.Boolean).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/convert.to-boolean(System.Boolean).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/convert.to-datetime(System.DateTime).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/convert.to-double(System.Double).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/convert.to-int(System.Int32).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/convert.to-string(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/cygpath.get-dos-path(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/cygpath.get-unix-path(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/cygpath.get-windows-path(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-day(System.DateTime).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-day-of-week(System.DateTime).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-day-of-year(System.DateTime).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-days-in-month(System.Int32,System.Int32).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-hour(System.DateTime).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-millisecond(System.DateTime).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-minute(System.DateTime).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-month(System.DateTime).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-second(System.DateTime).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-ticks(System.DateTime).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.get-year(System.DateTime).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.is-leap-year(System.Int32).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.now().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.parse(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/datetime.to-string(System.DateTime).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/directory.exists(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/directory.get-creation-time(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/directory.get-current-directory().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/directory.get-directory-root(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/directory.get-last-access-time(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/directory.get-last-write-time(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/directory.get-parent-directory(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/dns.get-host-name().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/double.parse(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/double.to-string(System.Double).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/environment.get-folder-path(System.Environment.SpecialFolder).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/environment.get-machine-name().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/environment.get-operating-system().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/environment.get-user-name().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/environment.get-variable(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/environment.get-version().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/environment.newline().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/environment.variable-exists(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/file.exists(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/file.get-creation-time(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/file.get-last-access-time(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/file.get-last-write-time(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/file.get-length(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/file.is-assembly(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/file.up-to-date(System.String,System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/fileversioninfo.get-company-name(System.Diagnostics.FileVersionInfo).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/fileversioninfo.get-file-version(System.Diagnostics.FileVersionInfo).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/fileversioninfo.get-product-name(System.Diagnostics.FileVersionInfo).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/fileversioninfo.get-product-version(System.Diagnostics.FileVersionInfo).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/fileversioninfo.get-version-info(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.exists(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-assembly-directory(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-clr-version().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-clr-version(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-description().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-description(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-family(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-framework-directory(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-frameworks(NAnt.Core.FrameworkTypes).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-runtime-engine(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-runtime-framework().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-sdk-directory(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-target-framework().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-tool-path(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-version().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.get-version(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/framework.sdk-exists(System.String).html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/index.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/int.parse.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/int.to-string.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/long.parse.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/long.to-string.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/math.abs.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/math.ceiling.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/math.floor.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/math.round.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/nant.get-assembly.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/nant.get-base-directory.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/operating-system.get-platform.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/operating-system.get-version.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/operating-system.to-string.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.change-extension.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.combine.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.get-directory-name.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.get-extension.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.get-file-name-without-extension.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.get-file-name.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.get-full-path.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.get-path-root.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.get-temp-file-name.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.get-temp-path.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.has-extension.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.is-path-rooted.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.exists.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.get-compile-flags.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.get-link-flags.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.get-mod-version.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.get-variable.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.is-atleast-version.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.is-between-version.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.is-exact-version.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.is-max-version.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/platform.get-name.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/platform.is-unix.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/platform.is-win32.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/project.get-base-directory.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/project.get-buildfile-path.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/project.get-buildfile-uri.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/project.get-default-target.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/project.get-name.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/property.exists.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/property.get-value.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/property.is-dynamic.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/property.is-readonly.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.contains.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.ends-with.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.get-length.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.index-of.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.last-index-of.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.pad-left.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.pad-right.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.replace.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.starts-with.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.substring.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.to-lower.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.to-upper.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.trim-end.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.trim-start.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.trim.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/target.exists.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/target.get-current-target.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/target.has-executed.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/task.exists.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/task.get-assembly.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.from-days.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.from-hours.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.from-milliseconds.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.from-minutes.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.from-seconds.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.from-ticks.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-days.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-hours.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-milliseconds.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-minutes.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-seconds.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-ticks.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-total-days.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-total-hours.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-total-milliseconds.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-total-minutes.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-total-seconds.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.parse.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.to-string.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/version.get-build.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/version.get-major.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/version.get-minor.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/version.get-revision.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/version.parse.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/version.to-string.html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/int.parse(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/int.to-string(System.Int32).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/long.parse(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/long.to-string(System.Int64).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/math.abs(System.Double).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/math.ceiling(System.Double).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/math.floor(System.Double).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/math.round(System.Double).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/nant.get-assembly().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/nant.get-base-directory().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/operating-system.get-platform(System.OperatingSystem).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/operating-system.get-version(System.OperatingSystem).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/operating-system.to-string(System.OperatingSystem).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.change-extension(System.String,System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.combine(System.String,System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.get-directory-name(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.get-extension(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.get-file-name(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.get-file-name-without-extension(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.get-full-path(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.get-path-root(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.get-temp-file-name().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.get-temp-path().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.has-extension(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/path.is-path-rooted(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.exists(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.get-compile-flags(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.get-link-flags(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.get-mod-version(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.get-variable(System.String,System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.is-atleast-version(System.String,System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.is-between-version(System.String,System.String,System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.is-exact-version(System.String,System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/pkg-config.is-max-version(System.String,System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/platform.get-name().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/platform.is-unix().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/platform.is-win32().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/platform.is-windows().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/project.get-base-directory().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/project.get-buildfile-path().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/project.get-buildfile-uri().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/project.get-default-target().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/project.get-name().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/property.exists(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/property.get-value(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/property.is-dynamic(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/property.is-readonly(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.contains(System.String,System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.ends-with(System.String,System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.get-length(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.index-of(System.String,System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.last-index-of(System.String,System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.pad-left(System.String,System.Int32,System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.pad-right(System.String,System.Int32,System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.replace(System.String,System.String,System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.starts-with(System.String,System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.substring(System.String,System.Int32,System.Int32).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.to-lower(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.to-upper(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.trim(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.trim-end(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/string.trim-start(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/target.exists(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/target.get-current-target().html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/target.has-executed(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/task.exists(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/task.get-assembly(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.from-days(System.Double).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.from-hours(System.Double).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.from-milliseconds(System.Double).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.from-minutes(System.Double).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.from-seconds(System.Double).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.from-ticks(System.Int64).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-days(System.TimeSpan).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-hours(System.TimeSpan).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-milliseconds(System.TimeSpan).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-minutes(System.TimeSpan).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-seconds(System.TimeSpan).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-ticks(System.TimeSpan).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-total-days(System.TimeSpan).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-total-hours(System.TimeSpan).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-total-milliseconds(System.TimeSpan).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-total-minutes(System.TimeSpan).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.get-total-seconds(System.TimeSpan).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.parse(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.to-string(System.TimeSpan).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/version.get-build(System.Version).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/version.get-major(System.Version).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/version.get-minor(System.Version).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/version.get-revision(System.Version).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/version.parse(System.String).html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/version.to-string(System.Version).html
 %%PORTDOCS%%%%DOCSDIR%%/help/fundamentals/buildfiles.html
 %%PORTDOCS%%%%DOCSDIR%%/help/fundamentals/expressions.html
 %%PORTDOCS%%%%DOCSDIR%%/help/fundamentals/functions.html
@@ -386,6 +395,7 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/tlbimp.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/touch.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/tstamp.html
+%%PORTDOCS%%%%DOCSDIR%%/help/tasks/untar.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/unzip.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/uptodate.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/vbc.html
@@ -401,8 +411,10 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/types/fileset.html
 %%PORTDOCS%%%%DOCSDIR%%/help/types/filterchain.html
 %%PORTDOCS%%%%DOCSDIR%%/help/types/index.html
+%%PORTDOCS%%%%DOCSDIR%%/help/types/moduleset.html
 %%PORTDOCS%%%%DOCSDIR%%/help/types/namespaceimports.html
 %%PORTDOCS%%%%DOCSDIR%%/help/types/path.html
+%%PORTDOCS%%%%DOCSDIR%%/help/types/patternset.html
 %%PORTDOCS%%%%DOCSDIR%%/help/types/proxy.html
 %%PORTDOCS%%%%DOCSDIR%%/help/types/resourcefileset.html
 %%PORTDOCS%%%%DOCSDIR%%/help/types/tarfileset.html
@@ -410,82 +422,87 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/types/zipfileset.html
 %%PORTDOCS%%%%DOCSDIR%%/license.html
 %%PORTDOCS%%%%DOCSDIR%%/releasenotes.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/Filters/ReplaceCharacter/ReplaceCharacter.cs
-%%PORTDOCS%%%%EXAMPLESDIR%%/Filters/ReplaceCharacter/default.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWindowsForms/HelloWindowsForms.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWindowsForms/HelloWindowsForms.vbproj
-%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWindowsForms/MainForm.resx
-%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWindowsForms/MainForm.vb
-%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWorld/HelloWorld.cs
-%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWorld/HelloWorld.js
-%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWorld/HelloWorld.vb
-%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWorld/default.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/ScriptTask/script-sample.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Simple/Simple.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Simple/Simple.cs
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/AssemblyInfo.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/Form1.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/Form1.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/Form1.resX
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/ReadMe.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/WinForms.sln
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/WinForms.vcproj
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/app.ico
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/app.rc
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/cpp.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/resource.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/stdafx.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/stdafx.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/default.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/App.ico
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/AssemblyInfo.cs
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/Form1.cs
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/Form1.resx
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/WinForms.csproj
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/WinForms.sln
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/cs.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/default.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/AssemblyInfo.vb
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/Form1.resx
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/Form1.vb
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/WinForms.sln
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/WinForms.vbproj
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/vb.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/default.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/AssemblyInfo.jsl
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/Form1.jsl
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/Form1.resx
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/WinForms.sln
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/WinForms.vjsproj
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/vjs.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/default.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/SimpleExtension.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/SimpleExtension.cs
-%%PORTDOCS%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/SimpleExtension.dll
-%%PORTDOCS%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/circle.xsl
-%%PORTDOCS%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/circles.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/UserTask/UserTask.cs
-%%PORTDOCS%%%%EXAMPLESDIR%%/UserTask/default.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/examples.build
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/UserTask
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/StyleTask
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Solution/vjs/WinForms
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Solution/vjs
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Solution/vb/WinForms
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Solution/vb
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Solution/cs/WinForms
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Solution/cs
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Solution/cpp/WinForms
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Solution/cpp
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Solution
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Simple
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ScriptTask
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/HelloWorld
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/HelloWindowsForms
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Filters/ReplaceCharacter
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Filters
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Filters/ReplaceCharacter/ReplaceCharacter.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Filters/ReplaceCharacter/default.build
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/HelloWindowsForms/HelloWindowsForms.build
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/HelloWindowsForms/HelloWindowsForms.vbproj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/HelloWindowsForms/MainForm.resx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/HelloWindowsForms/MainForm.vb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/HelloWorld/HelloWorld.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/HelloWorld/HelloWorld.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/HelloWorld/HelloWorld.vb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/HelloWorld/default.build
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/NUnit2/ReferenceAssemblies/Helper.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/NUnit2/ReferenceAssemblies/ReferenceTest.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/NUnit2/ReferenceAssemblies/default.build
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ScriptTask/script-sample.build
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Simple/Simple.build
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Simple/Simple.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/AssemblyInfo.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/Form1.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/Form1.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/Form1.resX
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/ReadMe.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/WinForms.sln
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/WinForms.vcproj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/app.ico
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/app.rc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/cpp.build
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/resource.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/stdafx.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/stdafx.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cpp/default.build
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cs/WinForms/App.ico
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cs/WinForms/AssemblyInfo.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cs/WinForms/Form1.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cs/WinForms/Form1.resx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cs/WinForms/WinForms.csproj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cs/WinForms/WinForms.sln
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cs/WinForms/cs.build
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/cs/default.build
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/vb/WinForms/AssemblyInfo.vb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/vb/WinForms/Form1.resx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/vb/WinForms/Form1.vb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/vb/WinForms/WinForms.sln
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/vb/WinForms/WinForms.vbproj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/vb/WinForms/vb.build
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/vb/default.build
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/AssemblyInfo.jsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/Form1.jsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/Form1.resx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/WinForms.sln
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/WinForms.vjsproj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/vjs.build
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Solution/vjs/default.build
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/SimpleExtension.build
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/SimpleExtension.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/SimpleExtension.dll
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/circle.xsl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/circles.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/UserTask/UserTask.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/UserTask/default.build
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/examples.build
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/UserTask
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/StyleTask
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Solution/vjs/WinForms
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Solution/vjs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Solution/vb/WinForms
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Solution/vb
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Solution/cs/WinForms
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Solution/cs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Solution/cpp/WinForms
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Solution/cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Solution
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Simple
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ScriptTask
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/NUnit2/ReferenceAssemblies
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/NUnit2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/HelloWorld
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/HelloWindowsForms
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Filters/ReplaceCharacter
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Filters
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help/types
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help/tasks
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help/introduction
@@ -497,13 +514,15 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help/elements
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/NAnt/bin/lib/net/2.0
-@dirrm share/NAnt/bin/lib/net/1.1
-@dirrm share/NAnt/bin/lib/net/1.0
-@dirrm share/NAnt/bin/lib/net
-@dirrm share/NAnt/bin/lib/mono/2.0
-@dirrm share/NAnt/bin/lib/mono/1.0
-@dirrm share/NAnt/bin/lib/mono
-@dirrm share/NAnt/bin/lib
-@dirrm share/NAnt/bin
-@dirrm share/NAnt
+@dirrm %%DATADIR%%/bin/lib/net/1.0
+@dirrm %%DATADIR%%/bin/lib/net
+@dirrm %%DATADIR%%/bin/lib/common/neutral
+@dirrm %%DATADIR%%/bin/lib/common/2.0
+@dirrm %%DATADIR%%/bin/lib/common/1.1
+@dirrm %%DATADIR%%/bin/lib/common
+@dirrm %%DATADIR%%/bin/lib
+@dirrm %%DATADIR%%/bin/extensions/common/2.0
+@dirrm %%DATADIR%%/bin/extensions/common
+@dirrm %%DATADIR%%/bin/extensions
+@dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%

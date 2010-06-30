@@ -7,40 +7,40 @@
 #
 
 PORTNAME=	nant
-DISTVERSION=	0.85
-PORTREVISION=	1
+PORTVERSION=	0.90
 CATEGORIES=	devel
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-0.85-src
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	A .NET build tool inspired by Ant
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
-
-USE_GMAKE=	yes
-MAKE_ENV=	MONO_PATH=${WRKSRC}/lib
+DATADIR=	${PREFIX}/share/NAnt
 INSTALL_TARGET=	install prefix=${PREFIX}
+MAKE_ENV=	MONO_PATH=${WRKSRC}/lib
 MAKE_JOBS_UNSAFE=	yes
+USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
 post-patch:
+	@${REINPLACE_CMD} -e '/install.pkgconfigdir/ s|lib/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/NAnt.build
 	@${FIND} ${WRKSRC}/src  ${WRKSRC}/tests -name '*.build' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|warnaserror="true"|warnaserror="false"|g;'
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/doc; ${FIND} . \
-	| ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${DOCSDIR}
+	@(cd ${WRKSRC}/doc; ${FIND} . | ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${DOCSDIR})
 	@${CHMOD} -R ugo-w,ugo+rX ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples; ${FIND} . \
-	| ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples; ${FIND} . | ${CPIO} -pdmv -R ${DOCOWN}:${DOCGRP} ${EXAMPLESDIR})
 	@${CHMOD} -R ugo-w,ugo+rX ${EXAMPLESDIR}
 .endif
 
