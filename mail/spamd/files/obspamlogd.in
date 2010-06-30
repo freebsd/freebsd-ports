@@ -15,6 +15,7 @@
 #
 # obspamlogd_enable="YES"	# Run the spamlogd(8) daemon (YES/NO).
 # obspamlogd_flags=""		# Extra flags for spamlogd(8) (if enabled).
+# obspamlogd_pflog_if=""	# pflog Interface for spamlogd(8) to monitor
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
@@ -32,6 +33,20 @@ pidfile="/var/run/spamlogd.pid"
 
 obspamlogd_precmd()
 {
+        if [ ! -z ${obspamlogd_pflog_if} ]; then
+            # Configure i/f explicitly
+            load_kld pflog || {
+                warn "Unable to kldload pflog module"
+                return 1
+            }
+
+            if ! ifconfig ${obspamlogd_pflog_if} create up; then
+                warn "could not bring up ${obspamlogd_pflog_if}"
+                return 1
+            fi
+
+            rc_flags="${rc_flags} -l ${obspamlogd_pflog_if}"
+        fi                                                                      
 	_rc=0
 	/sbin/mount -p | grep 'fdescfs.*/dev/fd.*fdescfs.*rw' 2>&1 > /dev/null
 	_rc=${?}
@@ -48,6 +63,9 @@ obspamlogd_precmd()
 
 obspamlogd_cleanup()
 {
+        if [ -n ${obspamlogd_pflog_if} ]; then
+	    ifconfig ${obspamlogd_pflog_if} destroy
+	fi
 	/bin/rm -f ${pidfile}
 }
 
