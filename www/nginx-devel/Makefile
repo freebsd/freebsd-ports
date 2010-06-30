@@ -389,7 +389,7 @@ CONFIGURE_ARGS+=--with-pcre
 .endif
 
 .if defined(WITH_PASSENGER_MODULE)
-PASSENGER_VERSION=	2.2.14
+PASSENGER_VERSION=	2.2.15
 MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
