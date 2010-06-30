@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	luckybackup
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/source
 
@@ -22,6 +21,9 @@ MAKE_JOBS_SAFE=	yes
 
 MAN8=		luckybackup.8
 MANCOMPRESSED=	yes
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/license/gpl.txt
 
 .include <bsd.port.pre.mk>
 
