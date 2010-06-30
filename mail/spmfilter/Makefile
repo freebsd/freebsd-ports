@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	spmfilter
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.${PORTNAME}.org/attachments/download/54/
+MASTER_SITES=	http://www.${PORTNAME}.org/attachments/download/60/
 
 MAINTAINER=	fw@moov.de
 COMMENT=	Spmfilter is a high-performance mail filtering framework, written in C
@@ -20,6 +20,8 @@ BUILD_DEPENDS=	gmime-24>=2.4:${PORTSDIR}/mail/gmime24 \
 RUN_DEPENDS=	gmime-24>=2.4:${PORTSDIR}/mail/gmime24 \
 		libesmtp>=1.0:${PORTSDIR}/mail/libesmtp \
 		glib>=2.14:${PORTSDIR}/devel/glib20
+
+LICENSE=	LGPL3
 
 USE_CMAKE=	yes
 CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
@@ -85,6 +87,8 @@ MAN5=		${PORTNAME}.conf.5
 MANCOMPRESSED=	yes
 
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
+
+PLIST_SUB=	LIB_VERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' \
