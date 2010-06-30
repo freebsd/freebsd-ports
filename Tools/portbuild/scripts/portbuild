@@ -4,6 +4,8 @@
 # client-side script to do all the work surrounding an individual package
 #     build, and then the package build itself
 
+# note: unredirected 'echo' output goes to the journal file
+
 # usage: $0 ARCH BRANCH BUILDID CHROOT [-noclean] [-norestr] [-noplistcheck] [-distfiles] [-fetch-original] [-trybroken] PKGNAME.tgz DIRNAME [DEPENDENCY.tgz ...]
 
 pb=/var/portbuild
@@ -115,7 +117,7 @@ BD=$4
 RD=$5
 
 builddir=${pb}/${arch}/${branch}/builds/${buildid}
-buildenv.client ${pb} ${arch}
+buildenv.client ${pb} ${arch} ${branch} ${builddir}
 
 # Want to use the /etc/make.conf in the chroot
 unset __MAKE_CONF
@@ -156,6 +158,8 @@ export HTTP_TIMEOUT=${CLIENT_HTTP_TIMEOUT}
 
 export PATH=/sbin:/bin:/usr/sbin:/usr/bin:${LOCALBASE}/sbin:${LOCALBASE}/bin
 
+export MALLOC_OPTIONS=${CLIENT_MALLOC_OPTIONS}
+
 echo "building ${pkgname} in ${chroot}"
 
 bindist=${buildroot}/${branch}/${buildid}/tarballs/bindist.tar
@@ -184,8 +188,6 @@ if [ "${use_jail}" = "1" ]; then
   ip2=$((($ipbase - ($ip1*256*256)) /256))
   ip3=$((($ipbase - ($ip1*256*256) - ($ip2*256))))
 fi
-
-# Set up desired uname version
 
 trap "bailout ${chroot} ${clean} ${error} ${pkgname}" 1 2 3 9 10 11 15
 
