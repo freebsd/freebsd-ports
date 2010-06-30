@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime
-PORTVERSION=	0.58
+PORTVERSION=	0.59
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,9 +22,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_MODBUILD=	yes
 
 MAN3=		DateTime.3 DateTime::Duration.3 \
-		DateTime::Helpers.3 DateTime::Infinite.3 \
-		DateTime::LeapSecond.3 \
-		DateTimePPExtra.3 DateTimePP.3
+		DateTime::Infinite.3 \
+		DateTime::LeapSecond.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	CREDITS Changes TODO
