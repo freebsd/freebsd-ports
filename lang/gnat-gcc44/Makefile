@@ -8,7 +8,7 @@
 
 PORTNAME=		gnat-gcc
 PORTVERSION=		4.4.0
-PORTREVISION=	2
+PORTREVISION=		2
 CATEGORIES=		lang
 MASTER_SITES=		GCC/releases/gcc-${PORTVERSION} \
 			http://coreland.ath.cx/data/code/gnatport/src/:boot
@@ -22,8 +22,6 @@ COMMENT=		The GNU Ada Compiler system
 
 LIB_DEPENDS=		gmp.10:${PORTSDIR}/math/gmp \
 			mpfr.4:${PORTSDIR}/math/mpfr
-
-BROKEN=			fails to configure
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -103,7 +101,8 @@ USE_LDCONFIG=		${targlib}
 # Prepare environment for the bootstrap compiler.
 CC=			${WRKDIR}/boot/bin/gcc
 build_env=		PTHREAD_LIBS=${PTHREAD_LIBS} \
-			PATH=${WRKDIR}/boot/bin:${WRKDIR}/boot/libexec:${PATH}
+			PATH=${WRKDIR}/boot/bin:${WRKDIR}/boot/libexec:${PATH} \
+			LD_LIBRARY_PATH=${WRKDIR}/boot/lib:${LD_LIBRARY_PATH}
 
 CONFIGURE_ENV+=		${build_env} CC="${CC}"
 MAKE_ENV+=		${build_env}
