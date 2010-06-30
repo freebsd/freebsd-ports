@@ -1,0 +1,65 @@
+------------------------------------------------------------------------
+r169 | iwamatsu | 2009-11-14 09:13:57 +0100 (Sat, 14 Nov 2009) | 11 lines
+
+Add flag of server check
+
+Slim gets this SIGTERM, and its signal handler calls
+CloseServer() to teardown X. But X is not yet started (as StartServer()
+is still running in another thread, waiting in pause()), and hence this
+calls XcloseDisplay which frees some resources which are not yet allocated.
+
+This parch fix this problem.
+Thanks, Landry Breuil, goebbels, jasper and OpenBSD Developer.
+
+Signed-off-by: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>
+------------------------------------------------------------------------
+--- app.h	(revision 168)
++++ app.h	(revision 169)
+@@ -36,6 +36,7 @@
+     int GetServerPID();
+     void StopServer();
+ 
++	bool serverStarted;
+     // Lock functions
+     void GetLock();
+     void RemoveLock();
+--- app.cpp	(revision 168)
++++ app.cpp	(revision 169)
+@@ -105,7 +105,10 @@
+ 
+ void CatchSignal(int sig) {
+     cerr << APPNAME << ": unexpected signal " << sig << endl;
+-    LoginApp->StopServer();
++
++    if (LoginApp->serverStarted)
++        LoginApp->StopServer();
++
+     LoginApp->RemoveLock();
+     exit(ERR_EXIT);
+ }
+@@ -140,6 +143,7 @@
+     int tmp;
+     ServerPID = -1;
+     testing = false;
++    serverStarted = false;
+     mcookie = string(App::mcookiesize, 'a');
+     daemonmode = false;
+     force_nodaemon = false;
+@@ -860,6 +864,8 @@
+     char* args = new char[argOption.length()+2]; // NULL plus vt
+     strcpy(args, argOption.c_str());
+ 
++    serverStarted = false;
++
+     int argc = 1;
+     int pos = 0;
+     bool hasVtSet = false;
+@@ -940,6 +946,8 @@
+     
+     delete args;
+ 
++    serverStarted = true;
++
+     return ServerPID;
+ }
+ 
