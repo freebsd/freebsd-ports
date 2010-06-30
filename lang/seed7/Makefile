@@ -24,6 +24,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	makefile
 ALL_TARGET=	hi
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g;\
 	    s|`pwd`|${PREFIX}/lib/${PORTNAME}|g;\
@@ -58,4 +64,4 @@ test: install
 	@echo "Testing the ${PORTNAME} installation"
 	@(cd ${WRKSRC}/../prg && ${PREFIX}/bin/hi chk_all)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
