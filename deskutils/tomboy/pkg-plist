@@ -582,5 +582,5 @@ share/omf/tomboy/tomboy-zh_CN.omf
 @dirrm share/gnome/help/tomboy/C/figures
 @dirrm share/gnome/help/tomboy/C
 @dirrm share/gnome/help/tomboy
-@dirrm lib/tomboy/addins
-@dirrm lib/tomboy
+@dirrmtry lib/tomboy/addins
+@dirrmtry lib/tomboy
