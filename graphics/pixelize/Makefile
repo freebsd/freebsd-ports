@@ -7,18 +7,19 @@
 #
 
 PORTNAME=	pixelize
-PORTVERSION=	0.9.2
-PORTREVISION=	8
+PORTVERSION=	1.0.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		ftp://lashwhip.com/pub/ \
+MASTER_SITES=	ftp://lashwhip.com/pub/ \
+		http://www.c-s.li/ports/ \
 		http://lashwhip.com/pixelize/
 MASTER_SITE_SUBDIR=	apps/graphics/misc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	Use many scaled down images to try to duplicate another image
 
-USE_GNOME=	gtk12 imlib
+LICENSE=	GPLv2
+USE_GNOME=	gtk20 imlib
+PLIST_FILES=	bin/make_db bin/pixelize
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CC|#CC|" -e "s|CFLAGS = -g|CFLAGS+= |" \
