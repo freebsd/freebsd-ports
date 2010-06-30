@@ -7,6 +7,7 @@
 
 PORTNAME=	spmfilter-clamav
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spmfilter.org/attachments/download/59/
 
