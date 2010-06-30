@@ -44,6 +44,7 @@ add_pkg() {
 
   echo add_pkg $pkgs
   cd /tmp/depends
+  # XXX TODO more hard-coding
   export PKG_PATH=/tmp/depends
   if [ ! -z "${pkgs}" ]; then
     arch=$(uname -m)
@@ -68,6 +69,7 @@ del_pkg() {
   pkgs=$*
 
   cd /tmp/depends
+  # XXX TODO more hard-coding
   export PKG_PATH=/tmp/depends
   if [ ! -z "${pkgs}" ]; then
     recursion=1
@@ -117,7 +119,6 @@ RD=$7
 
 #export PATH=/ccache/libexec/ccache/:$PATH
 #export CCACHE_PATH=/usr/bin:/usr/local/bin
-export MALLOC_OPTIONS=AJ
 
 # pick up value from environment set up in portbuild script
 L=`echo ${LOCALBASE} | sed 's,^/,,'`
@@ -153,9 +154,6 @@ if [ $phase = 1 ]; then
   echo "RUN_DEPENDS=${RD}"
 
   echo "prefixes: LOCALBASE=${L}"
-
-  # Inform ports they are being run on the cluster
-  export PACKAGE_BUILDING=1
 
   # Stash a copy of /etc/master.passwd and /etc/group to detect whether someone modifies it
   cp /etc/master.passwd /etc/master.passwd-save
