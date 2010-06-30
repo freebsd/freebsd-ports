@@ -71,20 +71,7 @@ buildenv () {
     branch=$3
     builddir=$4
 
-    buildenv.common ${pb} ${arch}
-
-    # Have to use realpath because 'make index' doesn't deal with
-    # symlinks in PORTSDIR - kk 020311
-    if [ -d ${builddir}/ports/ ]; then
-	export PORTSDIR=$(realpath ${builddir}/ports)
-    else
-	export PORTSDIR=/nonexistent
-    fi
-    if [ -d ${builddir}/src/ ]; then
-	export SRCBASE=$(realpath ${builddir}/src)
-    else
-	export SRCBASE=/nonexistent
-    fi
+    buildenv.common ${pb} ${arch} ${branch} ${builddir}
 
     # override things destined for bsd.port.mk
     export LOCALBASE=/usr/local
@@ -113,8 +100,10 @@ buildenv () {
 buildenv.client() {
     pb=$1
     arch=$2
+    branch=$3
+    builddir=$4
 
-    buildenv.common ${pb} ${arch}
+    buildenv.common ${pb} ${arch} ${branch} ${builddir}
 
     # Don't pick up host OPTIONS
     export PORT_DBDIR=/nonexistent
@@ -134,6 +123,21 @@ buildenv.client() {
 buildenv.common() {
     pb=$1
     arch=$2
+    branch=$3
+    builddir=$4
+
+    # Have to use realpath because 'make index' doesn't deal with
+    # symlinks in PORTSDIR - kk 020311
+    if [ -d ${builddir}/ports/ ]; then
+	export PORTSDIR=$(realpath ${builddir}/ports)
+    else
+	export PORTSDIR=/nonexistent
+    fi
+    if [ -d ${builddir}/src/ ]; then
+	export SRCBASE=$(realpath ${builddir}/src)
+    else
+	export SRCBASE=/nonexistent
+    fi
 
     if [ -f ${SRCBASE}/sys/sys/param.h ]; then
 	export OSVERSION=$(awk '/^#define __FreeBSD_version/ {print $3}' < ${SRCBASE}/sys/sys/param.h)
@@ -147,4 +151,5 @@ buildenv.common() {
     export MACHINE_ARCH=${arch}
 
     export BATCH=1
+    export PACKAGE_BUILDING=1
 }
