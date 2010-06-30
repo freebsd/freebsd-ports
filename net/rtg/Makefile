@@ -7,24 +7,32 @@
 
 PORTNAME=	rtg
 PORTVERSION=	0.7.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	A flexible, high-performance SNMP statistics monitoring system
 
-LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
 
 MAN1=	rtgplot.1 rtgpoll.1
 
-USE_MYSQL=      yes
+USE_RC_SUBR=	rtgpoll
+USE_MYSQL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/${PORTNAME} \
 			--with-mysql=${LOCALBASE} \
 			--with-snmp=${LOCALBASE}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800040
+CFLAGS+=	-fstack-protector
+LDFLAGS+=	-fstack-protector
+.endif
+
 pre-configure:
 	@${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
