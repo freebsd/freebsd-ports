@@ -7,10 +7,11 @@
 
 PORTNAME=	opal3
 PORTVERSION=	3.6.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	SF/opalvoip/v3.6%20Lalande/Stable%205
 DISTNAME=	opal-${PORTVERSION}
+LICENSE=	MPL
 
 MAINTAINER=	melifaro@ipfw.ru
 COMMENT=	VoIP abstraction library
