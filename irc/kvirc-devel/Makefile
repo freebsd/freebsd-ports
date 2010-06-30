@@ -16,6 +16,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	IRC client for QT4 and KDE4
 
+FORBIDDEN=	multiple vulnerabilities
+
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_QT_VER=	4

@@ -18,6 +18,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}/source
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	IRC client for QT and KDE
 
+FORBIDDEN=	multiple vulnerabilities
+
 USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
