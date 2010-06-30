@@ -19,6 +19,8 @@ COMMENT=	A platform-independent GUI administration client for the MySQL server
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+BROKEN=		does not compile
+
 USE_MYSQL=	yes
 IGNORE_WITH_MYSQL=323
 
