@@ -7,6 +7,7 @@
 
 PORTNAME=	xmp
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
@@ -23,7 +24,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 
 MAN1=		xmp.1
 
-OPTIONS=	ARTS	"aRts output driver" off \
+OPTIONS=	ALSA    "ALSA output driver" off \
+		ARTS	"aRts output driver" off \
 		AUDACIOUS	"Audacious plugin" off \
 		BMP	"BeepMP plugin" off \
 		ESOUND	"EsounD output driver" off \
@@ -38,6 +40,14 @@ MAKE_JOBS_SAFE=	yes
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
+.endif
+
+.if defined(WITH_ALSA)
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
+CONFIGURE_ARGS+=	--enable-alsa
+.else
+CONFIGURE_ARGS+=	--disable-alsa
 .endif
 
 .if defined(WITH_ARTS)
