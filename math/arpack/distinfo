@@ -7,3 +7,6 @@ SIZE (arpack/patch.tar.gz) = 226473
 MD5 (arpack/ug.ps.gz) = 79cc51e4812c75873adafcad2185842e
 SHA256 (arpack/ug.ps.gz) = ff1faac74bfc42442955906132756ecd7f0034803898d507dbd1bc960f6f4ab0
 SIZE (arpack/ug.ps.gz) = 248543
+MD5 (arpack/arpack-arscnd-2.patch.gz) = dc1bc25e853b1d5e10dfdc752d2424f5
+SHA256 (arpack/arpack-arscnd-2.patch.gz) = 5c7923b64560733200c4ce79b2cbdc740b2cbfd94885182378c9ee8be1375711
+SIZE (arpack/arpack-arscnd-2.patch.gz) = 7946

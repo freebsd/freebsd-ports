@@ -7,7 +7,7 @@
 
 PORTNAME=	arpack
 PORTVERSION=	96
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/
 DISTFILES=	${PORTNAME}${PORTVERSION}.tar.gz patch.tar.gz
@@ -17,7 +17,10 @@ DISTFILES+=	ug.ps.gz
 DIST_SUBDIR=	arpack
 EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.gz
 
-PATCH_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/
+PATCH_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/ \
+		http://mathema.tician.de/news.tiker.net/files/
+PATCHFILES=	arpack-arscnd-2.patch.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	Argand Library: large eigenvalue subroutines (serial version)
