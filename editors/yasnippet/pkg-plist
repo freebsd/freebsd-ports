@@ -429,5 +429,28 @@
 %%DATADIR%%/snippets/text-mode/sql-mode/create.1
 %%DATADIR%%/snippets/text-mode/sql-mode/references
 %%DATADIR%%/snippets/text-mode/time
+@dirrm %%DATADIR%%/snippets/text-mode/sql-mode
+@dirrm %%DATADIR%%/snippets/text-mode/snippet-mode
+@dirrm %%DATADIR%%/snippets/text-mode/scala-mode
+@dirrm %%DATADIR%%/snippets/text-mode/ruby-mode
+@dirrm %%DATADIR%%/snippets/text-mode/rst-mode
+@dirrm %%DATADIR%%/snippets/text-mode/python-mode
+@dirrm %%DATADIR%%/snippets/text-mode/perl-mode
+@dirrm %%DATADIR%%/snippets/text-mode/nxml-mode
+@dirrm %%DATADIR%%/snippets/text-mode/markdown-mode
+@dirrm %%DATADIR%%/snippets/text-mode/latex-mode
+@dirrm %%DATADIR%%/snippets/text-mode/html-mode
+@dirrm %%DATADIR%%/snippets/text-mode/f90-mode
+@dirrm %%DATADIR%%/snippets/text-mode/erlang-mode
+@dirrm %%DATADIR%%/snippets/text-mode/emacs-lisp-mode
+@dirrm %%DATADIR%%/snippets/text-mode/css-mode
+@dirrm %%DATADIR%%/snippets/text-mode/cc-mode/objc-mode
+@dirrm %%DATADIR%%/snippets/text-mode/cc-mode/csharp-mode
+@dirrm %%DATADIR%%/snippets/text-mode/cc-mode/c-mode
+@dirrm %%DATADIR%%/snippets/text-mode/cc-mode/c++-mode
+@dirrm %%DATADIR%%/snippets/text-mode/cc-mode
+@dirrm %%DATADIR%%/snippets/text-mode
+@dirrm %%DATADIR%%/snippets
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
