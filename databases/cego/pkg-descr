@@ -1,0 +1,13 @@
+Cego is a Relational Database Management System (RDBMS). Cego
+supports transactional SQL query requests in a multithreaded
+architecture. For high availablility requirements, Cego supports a
+database shadowing feature. Several compute nodes can be defined in
+a Cego database configuration, where each node is able to manage a
+number of so called table sets. For each tableset, a backup node
+can be defined, which runs is recover mode for the corresponding
+tableset. If required, the tableset can be switched to the backup
+node and this node gets the active node for the tableset.
+
+Many more details are available at:
+
+WWW: http://www.lemke-it.com/

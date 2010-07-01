@@ -20,6 +20,7 @@
     SUBDIR += buzhug
     SUBDIR += cassandra
     SUBDIR += cdb
+    SUBDIR += cego
     SUBDIR += clip
     SUBDIR += couchdb
     SUBDIR += courier-authlib-mysql
