@@ -21,7 +21,12 @@
 # deluged_flags (str):		Set as needed
 #				See deluged(1) for more information
 #
+# deluged_confdir (path):	Set to /home/$deluged_user/.config/deluge
+#				by default
+#
 # deluged_loglevel (str):	Set to "error" by default
+#
+# deluged_logfile (path):	Set to /var/tmp/deluged.log by default
 
 . /etc/rc.subr
 
@@ -29,26 +34,48 @@ name="deluged"
 rcvar=${name}_enable
 
 command=%%PREFIX%%/bin/${name}
-command_interpreter="%%PYTHON_CMD%%"
+command_interpreter=%%PYTHON_CMD%%
 
-pidfile=/var/tmp/${name}.pid
+pidfile=/var/run/${name}/pid
 
 start_precmd=${name}_prestart
+stop_postcmd=${name}_poststop
 
 deluged_prestart()
 {
 	if [ "$deluged_user" = 'asjklasdfjklasdf' ]; then
 		err 1 "You must set deluged_user to a real, unprivileged user"
 	fi
+
+	if [ ! -d "/var/run/${name}" ]; then
+		if [ -e "/var/run/${name}" ]; then
+			unlink /var/run/${name}
+		fi
+		mkdir -p /var/run/${name}
+	fi
+
+	chmod 0755 /var/run/${name}
+	chown -R $deluged_user /var/run/${name}
+}
+
+deluged_poststop()
+{
+	[ -e "$pidfile" ] && unlink $pidfile
+	[ -d "${pidfile%/pid}" ] && rmdir ${pidfile%/pid}
+
+	[ -e "$deluged_logfile" -a ! -s "$deluged_logfile" ] &&
+		unlink $deluged_logfile
 }
 
 load_rc_config $name
 
-: ${deluged_enable="NO"}
-: ${deluged_user="asjklasdfjklasdf"}
-: ${deluged_loglevel="error"}
+: ${deluged_enable:="NO"}
+: ${deluged_user:="asjklasdfjklasdf"}
+: ${deluged_confdir:="/home/${deluged_user}/.config/deluge"}
+: ${deluged_loglevel:="error"}
+: ${deluged_logfile:="/var/tmp/${name}.log"}
 
-required_dirs="/home/${deluged_user}/.config/deluge"
-command_args="-c $required_dirs -L $deluged_loglevel -l /var/tmp/${name}.log -P $pidfile"
+required_dirs="$deluged_confdir"
+command_args="-c $required_dirs -L $deluged_loglevel -l $deluged_logfile -P $pidfile"
 
 run_rc_command "$1"
