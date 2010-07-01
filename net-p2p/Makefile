@@ -64,6 +64,7 @@
     SUBDIR += libtorrent-devel
     SUBDIR += libtorrent-rasterbar-14
     SUBDIR += libtorrent-rasterbar-15
+    SUBDIR += libtorrent-rasterbar-15-python
     SUBDIR += limewire
     SUBDIR += linux-agsatellite
     SUBDIR += linux-edonkey-core
