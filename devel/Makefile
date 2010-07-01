@@ -157,6 +157,7 @@
     SUBDIR += cdk
     SUBDIR += cdoc
     SUBDIR += cedet
+    SUBDIR += cego-base
     SUBDIR += cflow
     SUBDIR += cflow2vcg
     SUBDIR += cgdb
