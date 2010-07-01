@@ -4446,3 +4446,4 @@ www/firefox3|www/firefox35|2010-06-23|Upstream support dropped
 www/firefox3-i18n|www/firefox35-i18n|2010-06-23|Upstream support dropped
 security/krb4||2010-06-26|security vulnerability and isn't more developed
 www/linux-mozilla|www/linux-seamonkey|2010-06-27|Security vulnerabilities and abandoned upstream since 2006
+security/audit||2010-07-01|development has been discontinued
