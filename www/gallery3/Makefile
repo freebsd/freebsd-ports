@@ -17,7 +17,7 @@ COMMENT=	Web based photo album organizer written in PHP
 
 USE_ZIP=	yes
 
-USE_PHP=	pcre session filter xml iconv spl simplexml json
+USE_PHP=	pcre session filter xml iconv spl simplexml json mysql
 WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -28,7 +28,6 @@ SUB_FILES=	pkg-message
 OPTIONS=	NETPBM "Enable netpbm support" off \
 		IMAGEMAGICK "Enable imagemagick support" on \
 		GRAPHMAGICK "Enable graphicsmagick support" off \
-		PGSQL "Use PostgreSQL instead of MySQL" off \
 		JHEAD "Enable jhead support" on \
 		GD "Enable gd support" off \
 		DCRAW "Enable dcraw support" off \
@@ -37,11 +36,6 @@ OPTIONS=	NETPBM "Enable netpbm support" off \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PGSQL)
-USE_PHP+=	pgsql
-.else
-USE_PHP+=	mysql
-.endif
 .if defined(WITH_GD)
 USE_PHP+=	gd
 RUN_DEPENDS+=	pngtogd:${PORTSDIR}/graphics/gd
