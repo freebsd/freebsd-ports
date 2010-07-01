@@ -110,6 +110,7 @@
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/Role/HTMLAttributes.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/Role/SelectedOption.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Base.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Fieldset.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/None.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Simple.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Table.pm
