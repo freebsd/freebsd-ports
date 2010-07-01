@@ -2,6 +2,7 @@ bin/xslate
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Bridge.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Compiler.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Cookbook.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Booster.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Const.pm
