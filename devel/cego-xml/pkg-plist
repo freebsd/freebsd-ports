@@ -1,0 +1,15 @@
+include/Attribute.h
+include/Document.h
+include/Element.h
+include/XML.h
+include/XMLEscaper.h
+include/XMLInStream.h
+include/XMLOutStream.h
+include/XMLSuite.h
+lib/libXML.a
+lib/libXML.so.1
+share/licenses/cego-xml-1.0.20/GPLv2
+share/licenses/cego-xml-1.0.20/LICENSE
+share/licenses/cego-xml-1.0.20/catalog.mk
+@dirrm share/licenses/cego-xml-1.0.20
+@dirrm share/licenses
