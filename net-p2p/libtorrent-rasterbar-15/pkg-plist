@@ -101,13 +101,11 @@ include/libtorrent/variant_stream.hpp
 include/libtorrent/version.hpp
 include/libtorrent/web_peer_connection.hpp
 include/libtorrent/xml_parse.hpp
-lib/libtorrent-rasterbar.a
 lib/libtorrent-rasterbar.la
 lib/libtorrent-rasterbar.so
 lib/libtorrent-rasterbar.so.6
 libdata/pkgconfig/libtorrent-rasterbar.pc
 %%PORTDOCS%%%%DOCSDIR%%/Linkage.png
-%%PORTDOCS%%%%DOCSDIR%%/acquasition.jpg
 %%PORTDOCS%%%%DOCSDIR%%/arctic_thumb.png
 %%PORTDOCS%%%%DOCSDIR%%/bitbuddy_thumb.jpg
 %%PORTDOCS%%%%DOCSDIR%%/bitfox.png
