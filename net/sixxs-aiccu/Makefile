@@ -7,6 +7,7 @@
 
 PORTNAME=	aiccu
 PORTVERSION=	20070115
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://noc.sixxs.net/archive/sixxs/aiccu/unix/
 PKGNAMEPREFIX=	sixxs-
@@ -15,16 +16,23 @@ DISTNAME=	aiccu_20070115
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SixXS IPv6 TIC+ tunnel broker heartbeat client
 
+LIB_DEPENDS=	gnutls-openssl.40:${PORTSDIR}/security/gnutls
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
 USE_RC_SUBR=	sixxs-aiccu
 USE_GMAKE=	yes
 
-CFLAGS+=	${PTHREAD_CFLAGS} -D_REENTRANT
-LDFLAGS+=	${PTHREAD_LIBS}
+CFLAGS+=	${PTHREAD_CFLAGS} -D_REENTRANT -DAICCU_GNUTLS -I${LOCALBASE}/include
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -lgnutls
 MAKE_ARGS+=	CC="${CC}" LDFLAGS="${LDFLAGS}"
 WRKSRC=		${WRKDIR}/aiccu
 BUILD_WRKSRC=	${WRKDIR}/aiccu/unix-console
-
 PORTDOCS=	README
+
+post-extract:
+	${CP} ${WRKSRC}/doc/LICENSE ${WRKSRC}/COPYRIGHT
 
 post-patch:
 	@${REINPLACE_CMD} \
