@@ -14,6 +14,7 @@ COMMENT=	Integrate twitter with pidgin (AKA microblog-purple)
 
 PROJECTHOST=	microblog-purple
 USE_GMAKE=	yes
+USE_GNOME=	pkgconfig
 
 post-patch:
 	@${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.Dist
