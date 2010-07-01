@@ -49,7 +49,7 @@ USE_LDCONFIG=	yes
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:L}=="yes" && defined(USE_PYTHON)
 CONFIGURE_ARGS+=	--enable-python-binding \
-			--with-boost-python=boost_python \
+			--with-boost-python=boost_python
 .else
 CONFIGURE_ARGS+=	--disable-python-binding
 .endif
