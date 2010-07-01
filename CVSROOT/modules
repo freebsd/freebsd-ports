@@ -26269,6 +26269,7 @@ yapet                           ports/security/yapet
 yaph                            ports/net/yaph
 yaps                            ports/comms/yaps
 yasm                            ports/devel/yasm
+yasnippet                       ports/editors/yasnippet
 yasql                           ports/databases/yasql
 yasr                            ports/accessibility/yasr
 yassl                           ports/security/yassl
