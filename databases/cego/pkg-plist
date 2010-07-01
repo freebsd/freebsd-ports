@@ -1,0 +1,33 @@
+bin/cego
+bin/cgadm
+bin/cgblow
+bin/cgclt
+bin/cglog
+include/CegoBlob.h
+include/CegoCheckObject.h
+include/CegoContentObject.h
+include/CegoDataPointer.h
+include/CegoDataType.h
+include/CegoDbHandler.h
+include/CegoDecodableObject.h
+include/CegoField.h
+include/CegoFieldValue.h
+include/CegoJoinObject.h
+include/CegoKeyObject.h
+include/CegoModule.h
+include/CegoObject.h
+include/CegoOutput.h
+include/CegoProcObject.h
+include/CegoProcVar.h
+include/CegoTableObject.h
+include/CegoViewObject.h
+include/cgwrap.h
+lib/libcego.a
+lib/libcego.so.1
+lib/libcgwrap.a
+lib/libcgwrap.so.1
+share/licenses/cego-2.5.13/GPLv2
+share/licenses/cego-2.5.13/LICENSE
+share/licenses/cego-2.5.13/catalog.mk
+@dirrm share/licenses/cego-2.5.13
+@dirrm share/licenses
