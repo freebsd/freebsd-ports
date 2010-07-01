@@ -3,9 +3,9 @@
 
 NOTE:
 
-GNU info browser entries have been installed in /usr/local/info/dir.
+GNU info browser entries have been installed in %%PREFIX%%/info/dir
 If entries do not appear in your info browser, make sure that
-/usr/local/info is in your INFOPATH.
+%%PREFIX%%/info is in your INFOPATH.
 
 *********************************************************************
 

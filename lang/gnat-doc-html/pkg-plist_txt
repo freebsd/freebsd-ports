@@ -1,8 +1,8 @@
-share/doc/gnat/txt/arm95.txt
-share/doc/gnat/txt/gcc.txt
-share/doc/gnat/txt/gdb.txt
-share/doc/gnat/txt/gnat_rm.txt
-share/doc/gnat/txt/gnat_ug.txt
-share/doc/gnat/txt/gvd.txt
-@dirrm share/doc/gnat/txt
-@dirrm share/doc/gnat
+%%DOCSDIR%%/txt/arm95.txt
+%%DOCSDIR%%/txt/gcc.txt
+%%DOCSDIR%%/txt/gdb.txt
+%%DOCSDIR%%/txt/gnat_rm.txt
+%%DOCSDIR%%/txt/gnat_ug.txt
+%%DOCSDIR%%/txt/gvd.txt
+@dirrm %%DOCSDIR%%/txt
+@dirrm %%DOCSDIR%%

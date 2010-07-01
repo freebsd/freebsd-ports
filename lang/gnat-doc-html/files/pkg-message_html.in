@@ -6,16 +6,16 @@ NOTE:
 You may find it useful to add the following URL's to your browser:
 
 	Ada 95 Annotated Reference Manual
-		file:///usr/local/share/doc/gnat/html/arm95.html
+		file://%%DOCSDIR%%/html/arm95.html
 
 	GNAT gcc 2.8.1 Compiler Manual
-		file:///usr/local/share/doc/gnat/html/gcc.html
+		file://%%DOCSDIR%%/html/gcc.html
 
 	GNAT Reference Manual
-		file:///usr/local/share/doc/gnat/html/gnat_rm.html
+		file://%%DOCSDIR%%/html/gnat_rm.html
 
 	GNAT User Guide
-		file:///usr/local/share/doc/gnat/html/gnat_ug.html
+		file://%%DOCSDIR%%/html/gnat_ug.html
 
 *********************************************************************
 

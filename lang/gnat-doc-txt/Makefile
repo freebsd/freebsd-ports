@@ -5,7 +5,11 @@
 # $FreeBSD$
 #
 
-DOCFORMAT=	txt
+PORTNAME=	gnat-doc
+
+MAINTAINER=	ports@FreeBSD.org
+
 MASTERDIR=	${.CURDIR}/../gnat-doc-html
+DOCFORMAT=	txt
 
 .include "${MASTERDIR}/Makefile"

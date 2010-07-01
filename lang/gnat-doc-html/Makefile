@@ -26,10 +26,9 @@ COMMENT=	Documentation for the GNAT compiler
 WRKSRC=		${WRKDIR}/gnat-${PORTVERSION}-unx-docs
 NO_BUILD=	yes
 PLIST=		${MASTERDIR}/pkg-plist_${DOCFORMAT}
-PKGMESSAGE=	${MASTERDIR}/pkg-message_${DOCFORMAT}
+SUB_FILES=	pkg-message_${DOCFORMAT}
 
 DOCFORMAT?=	html
-DOCSDIR=	${PREFIX}/share/doc/gnat/${DOCFORMAT}
 
 SEC_LABEL=	"Programming & development tools."
 INSTALL_INFO=	install-info --section=${SEC_LABEL}
@@ -50,13 +49,11 @@ PLIST_SUB=	SEC_LABEL=${SEC_LABEL} ARM_LABEL=${ARM_LABEL} \
 	@${FALSE}
 .endif
 
-pre-install:
-	@${CP} ${PKGDIR}/pkg-plist_${DOCFORMAT} ${WRKDIR}
-	@${CP} ${PKGDIR}/pkg-message_${DOCFORMAT} ${WRKDIR}
+.ifdef NOPORTDOCS
+IGNORE=		this port only contains documentation, please undefine NOPORTDOCS and try again
+.endif
 
 do-install:
-.if !defined(NOPORTDOCS)
-
 .if ${DOCFORMAT} == "info"
 	@${MKDIR} ${PREFIX}/info
 	@${INSTALL_MAN} ${WRKSRC}/${DOCFORMAT}/* ${PREFIX}/info
@@ -65,15 +62,11 @@ do-install:
 	@${INSTALL_INFO} --item=${RM_LABEL} ${PREFIX}/info/gnat_rm.info ${PREFIX}/info/dir
 	@${INSTALL_INFO} --item=${UG_LABEL} ${PREFIX}/info/gnat_ug.info ${PREFIX}/info/dir
 .else
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/${DOCFORMAT}/* ${DOCSDIR}
-.endif
-
+	@${MKDIR} ${DOCSDIR}/${DOCFORMAT}
+	@${INSTALL_MAN} ${WRKSRC}/${DOCFORMAT}/* ${DOCSDIR}/${DOCFORMAT}
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${CAT} ${PKGMESSAGE} | ${SED} -e 's:/usr/local:${PREFIX}:'
-.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
