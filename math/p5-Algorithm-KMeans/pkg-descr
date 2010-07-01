@@ -1,0 +1,10 @@
+Algorithm::KMeans is a perl5 module for the clustering of numerical data
+in multidimensional spaces. Since the module is entirely in Perl (in the
+sense that it is not a Perl wrapper around a C library that actually does
+the clustering), the code in the module can easily be modified to experiment
+with several aspects of automatic clustering. For example, one can change
+the criterion used to measure the "distance" between two data points, the
+stopping condition for accepting final clusters, the criterion used for
+measuring the quality of the clustering achieved, etc.
+
+WWW: http://search.cpan.org/dist/Algorithm-KMeans
