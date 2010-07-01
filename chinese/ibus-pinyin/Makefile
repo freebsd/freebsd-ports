@@ -14,8 +14,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DBTAR}
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	PinYin engine for IBus
 
-RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus \
-		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+BUILD_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus \
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
+		${LOCALBASE}/include/boost/accumulators/accumulators.hpp:${PORTSDIR}/devel/boost-libs
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
