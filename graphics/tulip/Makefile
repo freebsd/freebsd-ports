@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tulip
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/auber/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -42,7 +42,7 @@ CFLAGS+=	-fPIC
 
 post-patch:
 	@${GREP} -lr '/usr/X11R6/include' ${WRKSRC} | ${XARGS} \
-	    ${REINPLACE_CMD} -e 's|/usr/X11R6/include||g'
+	    ${REINPLACE_CMD} -e 's|/usr/X11R6/include|${LOCALBASE}/include|g'
 	@${REINPLACE_CMD} -e 's|<qdir.h>|<QtCore/qdir.h>|' \
 	    ${WRKSRC}/software/tulip/src/Application.cpp
 	@${REINPLACE_CMD} -e 's|<qtimer.h>|<QtCore/qtimer.h>|;s|<qlocale.h>|<QtCore/qlocale.h>|' \
