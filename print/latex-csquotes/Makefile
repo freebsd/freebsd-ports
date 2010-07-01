@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	csquotes
-PORTVERSION=	4.4d
-PORTREVISION=	1
+PORTVERSION=	5.0a
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/contrib
@@ -35,8 +34,8 @@ CLASSNAME=	${PORTNAME}
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${CLASSNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
-CLASS_FILES=	csquotes.sty csquotes.def csquotes.cfg
-DOC_FILES=	LICENSE README csquotes.pdf tutorial.tex
+CLASS_FILES=	csquotes.sty csquotes.def csquotes.cfg csq-compat.def
+DOC_FILES=	RELEASE README csquotes.pdf csquotes.tex
 
 WRKSRC=		${WRKDIR}/${CLASSNAME}
 
