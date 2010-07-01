@@ -6,35 +6,28 @@
 #
 
 PORTNAME=	blogtk
-PORTVERSION=	1.1
-PORTREVISION=	6
-CATEGORIES=	deskutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/BloGTK-${PORTVERSION}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+PORTVERSION=	2.0
+CATEGORIES=	deskutils python
+MASTER_SITES=	http://launchpad.net/${PORTNAME}/${PORTVERSION}/${PORTVERSION}/+download/
 
 MAINTAINER=	jbq@caraldi.com
 COMMENT=	A client for Blogger, Movable Type, and other blogging systems
 
-WRKSRC=		${WRKDIR}/BloGTK-${PORTVERSION}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser \
+		${PYTHON_SITELIBDIR}/atom/__init__.py:${PORTSDIR}/devel/py-gdata \
+		${PYTHON_SITELIBDIR}/webkit/__init__.py:${PORTSDIR}/www/py-webkitgtk
 
-USE_BZIP2=	yes
-USE_GNOME=	pygnomeextras
-USE_PYTHON=	2.4+
+USE_GNOME=	pygnomeextras pygtksourceview
+USE_PYTHON=	2.3-2.7	# No Python 3 support
+
+# Is there a better way to handle this? Launchpad depends on 302 directs it seems
+FETCH_ARGS=	-pRr
 NO_BUILD=	yes
+MAKE_ENV+=	PYTHON="${PYTHON_CMD}"
 
-post-patch:
-	@${FIND} ${WRKSRC}/src -name "*.py" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|/usr/share|${PREFIX}/share|g ; \
-		 s|gtk\.FALSE|False|g ; \
-		 s|gtk\.TRUE|True|g'
+DATADIR=	${PREFIX}/share/${PORTNAME}2
 
-do-install:
-	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/blogtk
-	${INSTALL_SCRIPT} ${WRKSRC}/src/*.py ${PYTHONPREFIX_SITELIBDIR}/blogtk
-	@${LN} -fs ${PYTHONPREFIX_SITELIBDIR}/blogtk/BloGTK.py ${PREFIX}/bin/blogtk
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.glade ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.gladep ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.png ${DATADIR}
+post-install:
+	@${RM} -f ${DATADIR}/lib/blogtk2/*.py~
 
 .include <bsd.port.mk>
