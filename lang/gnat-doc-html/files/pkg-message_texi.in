@@ -3,8 +3,8 @@
 
 NOTE:
 
-ASCII Text documentation has been installed in
-/usr/local/share/gnat/txt.
+TeXi documentation has been installed in
+%%DOCSDIR%%/texi.
 
 *********************************************************************
 

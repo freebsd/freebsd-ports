@@ -1,8 +1,8 @@
-share/doc/gnat/ps/arm95.ps
-share/doc/gnat/ps/gcc.ps
-share/doc/gnat/ps/gdb.ps
-share/doc/gnat/ps/gnat_rm.ps
-share/doc/gnat/ps/gnat_ug.ps
-share/doc/gnat/ps/gvd.ps
-@dirrm share/doc/gnat/ps
-@dirrm share/doc/gnat
+%%DOCSDIR%%/ps/arm95.ps
+%%DOCSDIR%%/ps/gcc.ps
+%%DOCSDIR%%/ps/gdb.ps
+%%DOCSDIR%%/ps/gnat_rm.ps
+%%DOCSDIR%%/ps/gnat_ug.ps
+%%DOCSDIR%%/ps/gvd.ps
+@dirrm %%DOCSDIR%%/ps
+@dirrm %%DOCSDIR%%

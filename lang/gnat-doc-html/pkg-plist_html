@@ -1,18 +1,18 @@
-share/doc/gnat/html/arm95.html
-share/doc/gnat/html/assembly.gif
-share/doc/gnat/html/breakpoints.gif
-share/doc/gnat/html/canvas.gif
-share/doc/gnat/html/colors.gif
-share/doc/gnat/html/explorer.gif
-share/doc/gnat/html/gcc.html
-share/doc/gnat/html/gdb.html
-share/doc/gnat/html/gnat_rm.html
-share/doc/gnat/html/gnat_ug.html
-share/doc/gnat/html/gvd.html
-share/doc/gnat/html/main-window.gif
-share/doc/gnat/html/memory-view.gif
-share/doc/gnat/html/process.gif
-share/doc/gnat/html/tasks.gif
-share/doc/gnat/html/tooltips.gif
-@dirrm share/doc/gnat/html
-@dirrm share/doc/gnat
+%%DOCSDIR%%/html/arm95.html
+%%DOCSDIR%%/html/assembly.gif
+%%DOCSDIR%%/html/breakpoints.gif
+%%DOCSDIR%%/html/canvas.gif
+%%DOCSDIR%%/html/colors.gif
+%%DOCSDIR%%/html/explorer.gif
+%%DOCSDIR%%/html/gcc.html
+%%DOCSDIR%%/html/gdb.html
+%%DOCSDIR%%/html/gnat_rm.html
+%%DOCSDIR%%/html/gnat_ug.html
+%%DOCSDIR%%/html/gvd.html
+%%DOCSDIR%%/html/main-window.gif
+%%DOCSDIR%%/html/memory-view.gif
+%%DOCSDIR%%/html/process.gif
+%%DOCSDIR%%/html/tasks.gif
+%%DOCSDIR%%/html/tooltips.gif
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%

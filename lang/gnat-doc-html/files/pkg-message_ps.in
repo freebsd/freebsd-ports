@@ -3,8 +3,8 @@
 
 NOTE:
 
-TeXi documentation has been installed in
-/usr/local/share/doc/gnat/texi.
+Postscript documentation has been installed in
+%%DOCSDIR%%/ps
 
 *********************************************************************
 
