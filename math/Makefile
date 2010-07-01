@@ -292,6 +292,7 @@
     SUBDIR += p5-AI-Perceptron
     SUBDIR += p5-Algorithm-Combinatorics
     SUBDIR += p5-Algorithm-CurveFit
+    SUBDIR += p5-Algorithm-KMeans
     SUBDIR += p5-Algorithm-Munkres
     SUBDIR += p5-Bit-ShiftReg
     SUBDIR += p5-Bit-Vector
