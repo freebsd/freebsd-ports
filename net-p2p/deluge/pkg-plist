@@ -1,16 +1,22 @@
 bin/deluge
+bin/deluge-console
+bin/deluge-gtk
+bin/deluge-web
 bin/deluged
 %%PYTHON_SITELIBDIR%%/deluge-%%VERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
 %%PYTHON_SITELIBDIR%%/deluge-%%VERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/deluge-%%VERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/deluge-%%VERSION%%-py%%PYTHON_VER%%.egg-info/entry_points.txt
 %%PYTHON_SITELIBDIR%%/deluge-%%VERSION%%-py%%PYTHON_VER%%.egg-info/top_level.txt
-%%PYTHON_SITELIBDIR%%/deluge/SimpleXMLRPCServer.py
-%%PYTHON_SITELIBDIR%%/deluge/SimpleXMLRPCServer.pyc
-%%PYTHON_SITELIBDIR%%/deluge/SimpleXMLRPCServer.pyo
 %%PYTHON_SITELIBDIR%%/deluge/__init__.py
 %%PYTHON_SITELIBDIR%%/deluge/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deluge/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/__rpcapi.py
+%%PYTHON_SITELIBDIR%%/deluge/__rpcapi.pyc
+%%PYTHON_SITELIBDIR%%/deluge/__rpcapi.pyo
+%%PYTHON_SITELIBDIR%%/deluge/_libtorrent.py
+%%PYTHON_SITELIBDIR%%/deluge/_libtorrent.pyc
+%%PYTHON_SITELIBDIR%%/deluge/_libtorrent.pyo
 %%PYTHON_SITELIBDIR%%/deluge/bencode.py
 %%PYTHON_SITELIBDIR%%/deluge/bencode.pyc
 %%PYTHON_SITELIBDIR%%/deluge/bencode.pyo
@@ -44,6 +50,9 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/deluge/core/daemon.py
 %%PYTHON_SITELIBDIR%%/deluge/core/daemon.pyc
 %%PYTHON_SITELIBDIR%%/deluge/core/daemon.pyo
+%%PYTHON_SITELIBDIR%%/deluge/core/eventmanager.py
+%%PYTHON_SITELIBDIR%%/deluge/core/eventmanager.pyc
+%%PYTHON_SITELIBDIR%%/deluge/core/eventmanager.pyo
 %%PYTHON_SITELIBDIR%%/deluge/core/filtermanager.py
 %%PYTHON_SITELIBDIR%%/deluge/core/filtermanager.pyc
 %%PYTHON_SITELIBDIR%%/deluge/core/filtermanager.pyo
@@ -54,21 +63,31 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/deluge/core/pluginmanager.pyc
 %%PYTHON_SITELIBDIR%%/deluge/core/pluginmanager.pyo
 %%PYTHON_SITELIBDIR%%/deluge/core/preferencesmanager.py
+%%PYTHON_SITELIBDIR%%/deluge/core/preferencesmanager.py.bak
 %%PYTHON_SITELIBDIR%%/deluge/core/preferencesmanager.pyc
 %%PYTHON_SITELIBDIR%%/deluge/core/preferencesmanager.pyo
 %%PYTHON_SITELIBDIR%%/deluge/core/rpcserver.py
 %%PYTHON_SITELIBDIR%%/deluge/core/rpcserver.pyc
 %%PYTHON_SITELIBDIR%%/deluge/core/rpcserver.pyo
-%%PYTHON_SITELIBDIR%%/deluge/core/signalmanager.py
-%%PYTHON_SITELIBDIR%%/deluge/core/signalmanager.pyc
-%%PYTHON_SITELIBDIR%%/deluge/core/signalmanager.pyo
 %%PYTHON_SITELIBDIR%%/deluge/core/torrent.py
 %%PYTHON_SITELIBDIR%%/deluge/core/torrent.pyc
 %%PYTHON_SITELIBDIR%%/deluge/core/torrent.pyo
 %%PYTHON_SITELIBDIR%%/deluge/core/torrentmanager.py
 %%PYTHON_SITELIBDIR%%/deluge/core/torrentmanager.pyc
 %%PYTHON_SITELIBDIR%%/deluge/core/torrentmanager.pyo
-%%PYTHON_SITELIBDIR%%/deluge/data/GeoIP.dat
+%%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/128x128/apps/deluge.png
+%%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/16x16/apps/deluge.png
+%%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/192x192/apps/deluge.png
+%%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/22x22/apps/deluge.png
+%%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/24x24/apps/deluge.png
+%%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/256x256/apps/deluge.png
+%%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/32x32/apps/deluge.png
+%%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/36x36/apps/deluge.png
+%%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/48x48/apps/deluge.png
+%%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/64x64/apps/deluge.png
+%%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/72x72/apps/deluge.png
+%%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/96x96/apps/deluge.png
+%%PYTHON_SITELIBDIR%%/deluge/data/icons/scalable/apps/deluge.svg
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/active.svg
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/active16.png
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/alert.svg
@@ -81,11 +100,13 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/deluge.ico
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/deluge.png
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/deluge.svg
+%%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/deluge.xpm
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/deluge16.png
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/dht.svg
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/dht16.png
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/downloading.svg
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/downloading16.png
+%%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/flags/FLAGS_LICENCE
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/flags/ad.png
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/flags/ae.png
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/flags/af.png
@@ -335,115 +356,595 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/flags/zw.png
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/inactive.svg
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/inactive16.png
+%%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/loading.gif
+%%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/lock48.png
+%%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/magnet.png
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/queued.svg
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/queued16.png
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/seeding.svg
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/seeding16.png
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/traffic.svg
 %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/traffic16.png
+%%PYTHON_SITELIBDIR%%/deluge/data/share/applications/deluge.desktop
+%%PYTHON_SITELIBDIR%%/deluge/decorators.py
+%%PYTHON_SITELIBDIR%%/deluge/decorators.pyc
+%%PYTHON_SITELIBDIR%%/deluge/decorators.pyo
 %%PYTHON_SITELIBDIR%%/deluge/error.py
 %%PYTHON_SITELIBDIR%%/deluge/error.pyc
 %%PYTHON_SITELIBDIR%%/deluge/error.pyo
+%%PYTHON_SITELIBDIR%%/deluge/event.py
+%%PYTHON_SITELIBDIR%%/deluge/event.pyc
+%%PYTHON_SITELIBDIR%%/deluge/event.pyo
+%%PYTHON_SITELIBDIR%%/deluge/httpdownloader.py
+%%PYTHON_SITELIBDIR%%/deluge/httpdownloader.pyc
+%%PYTHON_SITELIBDIR%%/deluge/httpdownloader.pyo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/POTFILES.in
+%%PYTHON_SITELIBDIR%%/deluge/i18n/ar.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/ar/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/ast.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/ast/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/be.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/be/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/bg.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/bg/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/bn.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/bn/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/bs.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/bs/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/ca.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/ca/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/cs.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/cs/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/cy.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/cy/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/da.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/da/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/de.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/de/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/deluge/i18n/deluge.pot
+%%PYTHON_SITELIBDIR%%/deluge/i18n/el.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/el/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/en_AU.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/en_AU/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/en_CA.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/en_CA/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/en_GB.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/en_GB/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/eo.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/eo/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/es.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/es/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/et.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/et/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/eu.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/eu/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/fa.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/fa/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/fi.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/fi/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/fr.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/fr/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/fy.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/fy/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/gl.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/gl/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/he.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/he/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/hi.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/hi/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/hr.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/hr/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/hu.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/hu/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/id.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/id/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/is.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/is/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/it.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/it/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/iu.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/iu/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/ja.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/ja/LC_MESSAGES/deluge.mo
-%%PYTHON_SITELIBDIR%%/deluge/i18n/jv/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/ka.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/ka/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/kk.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/kk/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/kn.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/kn/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/ko.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/ko/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/ku.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/ku/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/la.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/la/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/lt.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/lt/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/lv.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/lv/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/mk.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/mk/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/ms.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/ms/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/nb.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/nb/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/nds.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/nds/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/nl.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/nl/LC_MESSAGES/deluge.mo
-%%PYTHON_SITELIBDIR%%/deluge/i18n/nn/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/pl.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/pl/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/pms.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/pms/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/pt.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/pt/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/pt_BR.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/pt_BR/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/ro.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/ro/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/ru.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/ru/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/si.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/si/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/sk.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/sk/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/sl.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/sl/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/sr.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/sr/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/sv.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/sv/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/ta.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/ta/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/th.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/th/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/tl.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/tl/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/tlh.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/tlh/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/tr.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/tr/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/uk.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/uk/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/vi.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/vi/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/zh_CN.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_CN/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/zh_HK.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_HK/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/deluge/i18n/zh_TW.po
 %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_TW/LC_MESSAGES/deluge.mo
-%%PYTHON_SITELIBDIR%%/deluge/libtorrent.so
 %%PYTHON_SITELIBDIR%%/deluge/log.py
 %%PYTHON_SITELIBDIR%%/deluge/log.pyc
 %%PYTHON_SITELIBDIR%%/deluge/log.pyo
 %%PYTHON_SITELIBDIR%%/deluge/main.py
 %%PYTHON_SITELIBDIR%%/deluge/main.pyc
 %%PYTHON_SITELIBDIR%%/deluge/main.pyo
+%%PYTHON_SITELIBDIR%%/deluge/maketorrent.py
+%%PYTHON_SITELIBDIR%%/deluge/maketorrent.pyc
+%%PYTHON_SITELIBDIR%%/deluge/maketorrent.pyo
 %%PYTHON_SITELIBDIR%%/deluge/metafile.py
 %%PYTHON_SITELIBDIR%%/deluge/metafile.pyc
 %%PYTHON_SITELIBDIR%%/deluge/metafile.pyo
 %%PYTHON_SITELIBDIR%%/deluge/pluginmanagerbase.py
 %%PYTHON_SITELIBDIR%%/deluge/pluginmanagerbase.pyc
 %%PYTHON_SITELIBDIR%%/deluge/pluginmanagerbase.pyo
-%%PYTHON_SITELIBDIR%%/deluge/plugins/Blocklist-1.0-py%%PYTHON_VER%%.egg
+%%PYTHON_SITELIBDIR%%/deluge/plugins/AutoAdd-0.28-py%%PYTHON_VER%%.egg
+%%PYTHON_SITELIBDIR%%/deluge/plugins/Blocklist-1.2-py%%PYTHON_VER%%.egg
+%%PYTHON_SITELIBDIR%%/deluge/plugins/Execute-1.2-py%%PYTHON_VER%%.egg
+%%PYTHON_SITELIBDIR%%/deluge/plugins/Extractor-0.1-py%%PYTHON_VER%%.egg
 %%PYTHON_SITELIBDIR%%/deluge/plugins/Label-0.1-py%%PYTHON_VER%%.egg
+%%PYTHON_SITELIBDIR%%/deluge/plugins/Notifications-0.1-py%%PYTHON_VER%%.egg
+%%PYTHON_SITELIBDIR%%/deluge/plugins/Scheduler-0.1-py%%PYTHON_VER%%.egg
+%%PYTHON_SITELIBDIR%%/deluge/plugins/WebUi-0.1-py%%PYTHON_VER%%.egg
 %%PYTHON_SITELIBDIR%%/deluge/plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/deluge/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deluge/plugins/__init__.pyo
-%%PYTHON_SITELIBDIR%%/deluge/plugins/coreclient.py
-%%PYTHON_SITELIBDIR%%/deluge/plugins/coreclient.pyc
-%%PYTHON_SITELIBDIR%%/deluge/plugins/coreclient.pyo
-%%PYTHON_SITELIBDIR%%/deluge/plugins/corepluginbase.py
-%%PYTHON_SITELIBDIR%%/deluge/plugins/corepluginbase.pyc
-%%PYTHON_SITELIBDIR%%/deluge/plugins/corepluginbase.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/AutoAdd.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/AutoAdd.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/AutoAdd.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/AutoAdd.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/AutoAdd.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/common.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/common.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/common.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/core.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/core.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/core.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/data/autoadd.js
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/data/autoadd_options.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/data/config.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/gtkui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/gtkui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/webui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/webui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/webui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/common.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/common.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/common.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/core.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/core.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/core.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/data/autoadd.js
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/data/autoadd_options.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/data/config.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/gtkui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/gtkui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/webui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/webui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/webui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/setup.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/setup.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/setup.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/Blocklist.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/Blocklist.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/Blocklist.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/Blocklist.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/Blocklist.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/common.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/common.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/common.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/core.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/core.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/core.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/data/COPYING
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/data/LICENSE
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/data/blocklist16.png
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/data/blocklist_download24.png
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/data/blocklist_import24.png
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/data/blocklist_pref.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/decompressers.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/decompressers.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/decompressers.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/detect.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/detect.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/detect.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/gtkui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/gtkui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/peerguardian.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/peerguardian.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/peerguardian.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/readers.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/readers.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/readers.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/webui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/webui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/webui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/common.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/common.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/common.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/core.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/core.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/core.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/data/COPYING
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/data/LICENSE
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/data/blocklist16.png
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/data/blocklist_download24.png
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/data/blocklist_import24.png
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/data/blocklist_pref.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/decompressers.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/decompressers.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/decompressers.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/detect.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/detect.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/detect.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/gtkui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/gtkui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/peerguardian.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/peerguardian.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/peerguardian.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/readers.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/readers.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/readers.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/webui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/webui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/webui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/setup.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/setup.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/setup.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/Execute.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/Execute.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/Execute.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/Execute.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/Execute.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/common.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/common.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/common.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/core.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/core.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/core.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/data/execute.js
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/data/execute_prefs.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/gtkui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/gtkui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/webui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/webui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/webui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/common.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/common.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/common.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/core.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/core.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/core.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/data/execute.js
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/data/execute_prefs.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/gtkui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/gtkui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/webui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/webui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/webui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/setup.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/setup.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/execute/setup.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/Extractor.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/Extractor.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/Extractor.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/Extractor.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/Extractor.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor/common.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor/common.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor/common.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor/core.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor/core.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor/core.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor/data/extractor_prefs.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor/gtkui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor/gtkui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor/webui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor/webui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor/webui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor/common.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor/common.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor/common.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor/core.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor/core.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor/core.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor/data/extractor_prefs.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor/gtkui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor/gtkui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor/webui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor/webui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor/webui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/setup.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/setup.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/setup.pyo
 %%PYTHON_SITELIBDIR%%/deluge/plugins/init.py
 %%PYTHON_SITELIBDIR%%/deluge/plugins/init.pyc
 %%PYTHON_SITELIBDIR%%/deluge/plugins/init.pyo
-%%PYTHON_SITELIBDIR%%/deluge/plugins/webuipluginbase.py
-%%PYTHON_SITELIBDIR%%/deluge/plugins/webuipluginbase.pyc
-%%PYTHON_SITELIBDIR%%/deluge/plugins/webuipluginbase.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/Label.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/Label.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/Label.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/Label.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/Label.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/TODO
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/core.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/core.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/core.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/data/label.js
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/data/label_options.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/data/label_pref.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/gtkui/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/gtkui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/gtkui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/gtkui/label_config.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/gtkui/label_config.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/gtkui/label_config.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/gtkui/sidebar_menu.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/gtkui/sidebar_menu.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/gtkui/sidebar_menu.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/gtkui/submenu.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/gtkui/submenu.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/gtkui/submenu.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/test.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/test.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/test.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/webui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/webui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/webui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/core.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/core.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/core.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/data/label.js
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/data/label_options.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/data/label_pref.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/gtkui/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/gtkui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/gtkui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/gtkui/label_config.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/gtkui/label_config.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/gtkui/label_config.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/gtkui/sidebar_menu.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/gtkui/sidebar_menu.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/gtkui/sidebar_menu.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/gtkui/submenu.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/gtkui/submenu.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/gtkui/submenu.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/test.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/test.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/test.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/webui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/webui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/webui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/setup.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/setup.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/label/setup.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/Notifications.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/Notifications.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/Notifications.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/Notifications.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/Notifications.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/common.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/common.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/common.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/core.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/core.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/core.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/data/config.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/data/notifications.js
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/gtkui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/gtkui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/test.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/test.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/test.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/webui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/webui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/webui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/create_dev_link.sh
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/common.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/common.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/common.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/core.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/core.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/core.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/data/config.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/data/notifications.js
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/gtkui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/gtkui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/test.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/test.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/test.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/webui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/webui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/webui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/setup.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/setup.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/setup.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/pluginbase.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/pluginbase.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/pluginbase.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/Scheduler.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/Scheduler.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/Scheduler.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/Scheduler.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/Scheduler.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/common.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/common.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/common.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/core.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/core.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/core.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/data/green.png
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/data/red.png
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/data/scheduler.js
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/data/yellow.png
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/gtkui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/gtkui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/webui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/webui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/webui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/common.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/common.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/common.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/core.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/core.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/core.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/data/green.png
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/data/red.png
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/data/scheduler.js
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/data/yellow.png
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/gtkui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/gtkui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/webui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/webui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/webui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/setup.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/setup.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/setup.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/WebUi.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/WebUi.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/WebUi.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/WebUi.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/WebUi.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/build/lib/webui/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/build/lib/webui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/build/lib/webui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/build/lib/webui/common.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/build/lib/webui/common.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/build/lib/webui/common.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/build/lib/webui/core.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/build/lib/webui/core.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/build/lib/webui/core.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/build/lib/webui/data/config.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/build/lib/webui/gtkui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/build/lib/webui/gtkui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/build/lib/webui/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/create_dev_link.sh
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/setup.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/setup.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/setup.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/webui/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/webui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/webui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/webui/common.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/webui/common.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/webui/common.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/webui/core.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/webui/core.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/webui/core.pyo
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/webui/data/config.glade
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/webui/gtkui.py
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/webui/gtkui.pyc
+%%PYTHON_SITELIBDIR%%/deluge/plugins/webui/webui/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/deluge/rencode.py
+%%PYTHON_SITELIBDIR%%/deluge/rencode.pyc
+%%PYTHON_SITELIBDIR%%/deluge/rencode.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/Win32IconImagePlugin.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/Win32IconImagePlugin.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/Win32IconImagePlugin.pyo
 %%PYTHON_SITELIBDIR%%/deluge/ui/__init__.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/__init__.pyo
@@ -465,6 +966,9 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/add.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/add.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/add.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/cache.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/cache.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/cache.pyo
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/config.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/config.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/config.pyo
@@ -486,21 +990,39 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/pause.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/pause.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/pause.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/plugin.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/plugin.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/plugin.pyo
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/quit.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/quit.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/quit.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/recheck.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/recheck.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/recheck.pyo
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/resume.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/resume.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/resume.pyo
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/rm.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/rm.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands/rm.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/eventlog.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/eventlog.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/eventlog.pyo
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/main.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/main.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/console/main.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/console/mapping.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/console/mapping.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/console/mapping.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/screen.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/screen.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/screen.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/statusbars.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/statusbars.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/console/statusbars.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/coreconfig.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/coreconfig.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/coreconfig.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/countries.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/countries.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/countries.pyo
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/__init__.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/__init__.pyo
@@ -516,18 +1038,15 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/connectionmanager.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/connectionmanager.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/connectionmanager.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/coreconfig.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/coreconfig.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/coreconfig.pyo
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/createtorrentdialog.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/createtorrentdialog.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/createtorrentdialog.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/dbusinterface.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/dbusinterface.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/dbusinterface.pyo
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/details_tab.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/details_tab.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/details_tab.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/dialogs.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/dialogs.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/dialogs.pyo
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/edittrackersdialog.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/edittrackersdialog.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/edittrackersdialog.pyo
@@ -551,6 +1070,7 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/glade/torrent_menu.glade
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/glade/tray_menu.glade
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/gtkui.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/gtkui.py.bak
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/gtkui.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/gtkui.pyo
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/ipcinterface.py
@@ -592,9 +1112,6 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/sidebar.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/sidebar.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/sidebar.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/signals.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/signals.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/signals.pyo
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/status_tab.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/status_tab.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/status_tab.pyo
@@ -613,369 +1130,756 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/torrentview.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/torrentview.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/torrentview.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/signalreceiver.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/signalreceiver.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/signalreceiver.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/sessionproxy.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/sessionproxy.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/sessionproxy.pyo
 %%PYTHON_SITELIBDIR%%/deluge/ui/tracker_icons.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/tracker_icons.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/tracker_icons.pyo
 %%PYTHON_SITELIBDIR%%/deluge/ui/ui.py
 %%PYTHON_SITELIBDIR%%/deluge/ui/ui.pyc
 %%PYTHON_SITELIBDIR%%/deluge/ui/ui.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/__init__.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/__init__.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/__init__.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/apache.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/apache.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/apache.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/components.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/components.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/components.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/config_forms.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/config_forms.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/config_forms.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/config_tabs_deluge.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/config_tabs_deluge.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/config_tabs_deluge.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/config_tabs_webui.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/config_tabs_webui.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/config_tabs_webui.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/debugerror.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/debugerror.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/debugerror.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/deluge_webserver.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/deluge_webserver.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/deluge_webserver.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/json_api.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/json_api.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/json_api.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/__init__.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/__init__.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/__init__.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/egg_handler.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/egg_handler.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/egg_handler.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/egg_render.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/egg_render.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/egg_render.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/json.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/json.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/json.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_plus.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_plus.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_plus.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/__init__.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/__init__.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/__init__.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/__init__.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/__init__.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/__init__.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/core/__init__.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/core/__init__.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/core/__init__.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/core/exceptions.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/core/exceptions.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/core/exceptions.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/__init__.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/__init__.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/__init__.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/datastructures.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/datastructures.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/datastructures.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/encoding.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/encoding.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/encoding.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/functional.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/functional.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/functional.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/html.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/html.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/html.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/http.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/http.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/http.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/safestring.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/safestring.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/safestring.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/translation.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/translation.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils/translation.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/fields.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/fields.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/fields.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/forms.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/forms.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/forms.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/models.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/models.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/models.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/util.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/util.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/util.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/widgets.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/widgets.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/widgets.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/static_handler.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/static_handler.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/static_handler.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/web.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/web.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/web.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/__init__.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/__init__.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/__init__.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/cheetah.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/cheetah.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/cheetah.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/db.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/db.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/db.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/debugerror.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/debugerror.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/debugerror.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/form.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/form.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/form.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/http.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/http.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/http.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/httpserver.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/httpserver.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/httpserver.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/net.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/net.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/net.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/request.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/request.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/request.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/template.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/template.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/template.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/utils.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/utils.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/utils.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/webapi.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/webapi.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/webapi.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/wsgi.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/wsgi.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/wsgi.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/wsgiserver/__init__.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/wsgiserver/__init__.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/wsgiserver/__init__.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/page_decorators.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/page_decorators.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/page_decorators.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/pages.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/pages.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/pages.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/register_menu.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/register_menu.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/register_menu.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/render.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/render.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/render.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/scripts/build_webui_tarball.sh
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/scripts/copy_icons.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/scripts/copy_icons.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/scripts/copy_icons.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/scripts/curl-example
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/scripts/extract_ajax_strings.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/scripts/extract_ajax_strings.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/scripts/extract_ajax_strings.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/scripts/extract_template_strings.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/scripts/extract_template_strings.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/scripts/extract_template_strings.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/scripts/template_strings.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/scripts/template_strings.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/scripts/template_strings.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/deluge-moo.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/deluge.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/connections.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/details.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/down.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/drive-harddisk.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/edit-clear.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/edit-redo.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/go-bottom.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/go-top.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/gtk-yes.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/label.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/list-add.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/list-remove.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/move.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/pause.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/preferences-system.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/process-stop.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/queue-down.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/queue-up.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/select-all.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/start.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/stop.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/system-log-out.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/up.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/user-trash.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16/view-refresh.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/debugerror.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/deluge-icon.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/deluge16.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/deluge32.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/deluge_icon.gif
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/simple_bg.jpg
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/simple_bg_flipped.jpg
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/simple_line.jpg
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/simple_logo.jpg
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/mootools-1.2-core.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/mootools-1.2-more.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/mootools-1.2.1-core-yc.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/mooui.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/refresh.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/simple_site_style.css
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/gettext.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/index.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/meta.cfg
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/add_torrent_files.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/add_torrent_options.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/create_torrent_info.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/create_torrent_options.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/create_torrent_trackers.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/create_torrent_webseeds.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/preferences_bandwidth.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/preferences_daemon.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/preferences_download.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/preferences_network.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/preferences_queue.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/preferences_webui.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/tab_details.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/tab_files.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/tab_options.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/tab_peers.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/tab_statistics.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/window_add_torrent.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/window_add_torrent_file.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/window_create_torrent.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html/window_preferences.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/css/Roar.css
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/css/mooui.css
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/16/gtk-edit.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/16/gtk-yes.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/16/network-idle.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/16/view-refresh.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/16/view-sort-ascending.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/16/view-sort-descending.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/32/add.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/32/connections.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/32/deluge.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/32/down.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/32/new.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/32/options.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/32/pause.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/32/remove.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/32/resume.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/32/up.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/images/spacer.gif
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/js/Roar.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/js/Rpc.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/js/deluge-add.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/js/deluge-bars.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/js/deluge-details.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/js/deluge-menus.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/js/deluge-mime.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/js/deluge-preferences.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/js/deluge-torrent-grid.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/js/deluge-ui.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/js/deluge.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/js/gears_init.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/classic/down.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/classic/down_hover.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/classic/iframe.css
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/classic/mime_icons/image.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/classic/mime_icons/unknown.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/classic/simple_line_flipped.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/classic/split_horizontal.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/classic/split_vertical.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/classic/style.css
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/classic/up.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/classic/up_hover.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/classic/window_close.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/white/mime_icons/image.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/white/mime_icons/unknown.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/white/style.css
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/white/window_close.png
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/template_style.css
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/about.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/admin_toolbar.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/authors.txt
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/config.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/connect.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/error.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/footer.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/gettext.js
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/header.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/index.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/login.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/meta.cfg
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/part_auto_refresh.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/part_button.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/part_label_filters.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/part_organize.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/part_stats.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/refresh_form.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/sort_column_head.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/tab_details.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/tab_files.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/tab_options.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/tab_peers.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/tab_statistics.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/tab_trackers.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/torrent_add.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/torrent_delete.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/torrent_files.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/torrent_info.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic/torrent_move.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/white/admin_toolbar.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/white/basic_header.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/white/footer.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/white/header.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/white/index.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/white/meta.cfg
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/white/part_label_filters.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/white/part_organize.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/white/part_tab_button.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/white/part_tb_button.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/white/part_toolbar.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/white/part_torrent_list.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/white/template_style.css
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/white/torrent_info_inner.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/white/torrent_label.html
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/torrent_add.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/torrent_add.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/torrent_add.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/torrent_move.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/torrent_move.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/torrent_move.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/torrent_options.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/torrent_options.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/torrent_options.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/utils.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/utils.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/utils.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/web.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/web.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/web.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/webserver_common.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/webserver_common.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/webserver_common.pyo
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/webui.py
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/webui.pyc
-%%PYTHON_SITELIBDIR%%/deluge/ui/webui/webui.pyo
-%%PYTHON_SITELIBDIR%%/deluge/xmlrpclib.py
-%%PYTHON_SITELIBDIR%%/deluge/xmlrpclib.pyc
-%%PYTHON_SITELIBDIR%%/deluge/xmlrpclib.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/TODO
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/auth.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/auth.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/auth.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/build
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/common.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/common.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/common.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/css/deluge.css
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/css/ext-all-notheme.css
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/css/ext-extensions-debug.css
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/css/ext-extensions.css
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/gen_gettext.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/gen_gettext.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/gen_gettext.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/gettext.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/LICENSE
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/active.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/add.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/add_file.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/add_magnet.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/add_url.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/alert.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/all.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/back.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/bottom.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/checking.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/connection_manager.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/connections.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/create.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/deluge.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/dht.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/document.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/down.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/downloading.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/drive.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/edit-redo.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/edit_trackers.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/error.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/expand_all.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/find_more.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/forward.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/help.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/high.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/highest.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/home.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/inactive.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/install_plugin.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/login.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/logout.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/move.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/no_download.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/normal.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/ok.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/pause.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/preferences.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/queue.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/queued.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/readme.txt
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/recheck.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/remove.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/seeding.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/start.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/top.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/traffic.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/up.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/update.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/upload_slots.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/warning.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/images/LICENSE
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/images/debugerror.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/images/deluge-icon.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/images/deluge16.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/images/deluge32.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/images/deluge_icon.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/images/s.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/images/spinner-split.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/images/spinner.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/index.html
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all-debug.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/.build
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/.order
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/AddConnectionWindow.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/AddTrackerWindow.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/Client.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/ConnectionManager.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/Deluge.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/EditTrackerWindow.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/EditTrackersWindow.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/EventsManager.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/FileBrowser.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/FilterPanel.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/Formatters.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/Keys.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/LoginWindow.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/Menus.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/MoveStorage.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/MultiOptionsManager.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/OptionsManager.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/OtherLimitWindow.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/Plugin.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/RemoveWindow.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/Sidebar.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/Statusbar.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/StatusbarMenu.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/Toolbar.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/TorrentGrid.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/UI.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/add/.order
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/add/AddWindow.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/add/FileWindow.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/add/FilesTab.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/add/Infohash.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/add/OptionsPanel.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/add/OptionsTab.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/add/UrlWindow.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/add/Window.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/data/.order
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/data/PeerRecord.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/data/SortTypes.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/data/TorrentRecord.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/details/DetailsPanel.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/details/DetailsTab.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/details/FilesTab.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/details/OptionsTab.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/details/PeersTab.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/details/StatusTab.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/preferences/BandwidthPage.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/preferences/CachePage.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/preferences/DaemonPage.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/preferences/DownloadsPage.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/preferences/EncryptionPage.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/preferences/InstallPluginWindow.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/preferences/InterfacePage.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/preferences/NetworkPage.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/preferences/OtherPage.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/preferences/PluginsPage.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/preferences/PreferencesWindow.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/preferences/ProxyField.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/preferences/ProxyPage.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/preferences/QueuePage.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-all-debug.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-all.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-base-debug.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-base.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions-debug.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/.build
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/JSLoader.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/Spinner.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/StatusBar.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/form/FileUploadField.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/form/RadioGroupFix.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/form/SpinnerField.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/form/SpinnerGroup.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/form/ToggleField.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/grid/BufferView.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/layout/FormLayoutFix.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/tree/TreeGrid.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/tree/TreeGridColumnResizer.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/tree/TreeGridColumns.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/tree/TreeGridLoader.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/tree/TreeGridNodeUI.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/tree/TreeGridNodeUIFix.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/tree/TreeGridRenderColumn.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/tree/TreeGridSorter.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/json_api.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/json_api.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/json_api.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/pluginmanager.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/pluginmanager.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/pluginmanager.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/render/tab_status.html
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/server.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/server.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/server.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/css/xtheme-access.css
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/css/xtheme-blue.css
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/css/xtheme-gray.css
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/box/corners-blue.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/box/corners.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/box/l-blue.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/box/l.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/box/r-blue.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/box/r.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/box/tb-blue.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/box/tb.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/button/arrow.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/button/btn.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/button/group-cs.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/button/group-lr.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/button/group-tb.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/button/s-arrow-b-noline.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/button/s-arrow-b.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/button/s-arrow-bo.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/button/s-arrow-noline.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/button/s-arrow-o.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/button/s-arrow.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/editor/tb-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form/checkbox.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form/clear-trigger.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form/clear-trigger.psd
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form/date-trigger - Copy.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form/date-trigger.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form/date-trigger.psd
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form/error-tip-corners.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form/exclamation.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form/radio.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form/search-trigger - Copy.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form/search-trigger.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form/search-trigger.psd
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form/text-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form/trigger - Copy.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form/trigger-tpl.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form/trigger.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form/trigger.psd
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/arrow-left-white.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/arrow-right-white.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/col-move-bottom.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/col-move-top.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/columns.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/dirty.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/done.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/drop-no.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/drop-yes.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/footer-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/grid-blue-hd.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/grid-blue-split.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/grid-hrow.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/grid-loading.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/grid-split.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/grid-vista-hd.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/grid3-hd-btn.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/grid3-hrow-over.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/grid3-hrow.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/grid3-special-col-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/grid3-special-col-sel-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/group-by.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/group-collapse.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/group-expand-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/group-expand.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/hd-pop.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/hmenu-asc.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/hmenu-desc.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/hmenu-lock.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/hmenu-lock.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/hmenu-unlock.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/hmenu-unlock.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/invalid_line.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/loading.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/mso-hd.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/nowait.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/page-first-disabled.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/page-first.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/page-last-disabled.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/page-last.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/page-next-disabled.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/page-next.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/page-prev-disabled.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/page-prev.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/pick-button.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/refresh.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/row-check-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/row-expand-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/row-over.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/row-sel.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/sort-hd.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/sort_asc.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/sort_desc.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid/wait.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/menu/checked.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/menu/group-checked.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/menu/item-over.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/menu/menu-parent.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/menu/menu.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/menu/unchecked.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/panel/corners-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/panel/left-right.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/panel/light-hd.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/panel/tool-sprite-tpl.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/panel/tool-sprites - Copy.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/panel/tool-sprites.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/panel/tools-sprites-trans.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/panel/top-bottom.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/panel/white-corners-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/panel/white-left-right.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/panel/white-top-bottom.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/progress/progress-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/qtip/close.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/qtip/tip-anchor-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/qtip/tip-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/shared/glass-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/shared/hd-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/shared/left-btn.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/shared/right-btn.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/sizer/e-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/sizer/e-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/sizer/ne-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/sizer/ne-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/sizer/nw-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/sizer/nw-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/sizer/s-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/sizer/s-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/sizer/se-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/sizer/se-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/sizer/square.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/sizer/sw-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/sizer/sw-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/slider/slider-bg.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/slider/slider-thumb.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/slider/slider-v-bg.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/slider/slider-v-thumb.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tabs/scroll-left.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tabs/scroll-right.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tabs/tab-btm-inactive-left-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tabs/tab-btm-inactive-right-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tabs/tab-btm-left-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tabs/tab-btm-right-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tabs/tab-close.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tabs/tab-strip-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tabs/tab-strip-btm-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tabs/tabs-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/toolbar/bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/toolbar/btn-arrow-light.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/toolbar/btn-arrow.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/toolbar/btn-over-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/toolbar/gray-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/toolbar/more.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/toolbar/s-arrow-bo.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/toolbar/tb-btn-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/toolbar/tb-xl-btn-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/toolbar/tb-xl-sep.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/arrows.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/drop-add.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/drop-between.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/drop-no.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/drop-over.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/drop-under.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/drop-yes.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/elbow-end-minus-nl.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/elbow-end-minus.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/elbow-end-plus-nl.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/elbow-end-plus.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/elbow-end.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/elbow-line.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/elbow-minus-nl.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/elbow-minus.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/elbow-plus-nl.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/elbow-plus.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/elbow.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/folder-open.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/folder.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/leaf.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/loading.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree/s.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/window/icon-error.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/window/icon-info.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/window/icon-question.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/window/icon-warning.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/window/left-corners.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/window/left-right.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/window/right-corners.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/window/top-bottom.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/box/corners-blue.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/box/corners.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/box/l-blue.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/box/l.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/box/r-blue.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/box/r.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/box/tb-blue.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/box/tb.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/button/arrow.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/button/btn.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/button/group-cs.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/button/group-lr.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/button/group-tb.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/button/s-arrow-b-noline.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/button/s-arrow-b.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/button/s-arrow-bo.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/button/s-arrow-noline.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/button/s-arrow-o.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/button/s-arrow.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/dd/drop-add.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/dd/drop-no.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/dd/drop-yes.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/editor/tb-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/form/checkbox.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/form/clear-trigger.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/form/clear-trigger.psd
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/form/date-trigger.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/form/date-trigger.psd
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/form/error-tip-corners.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/form/exclamation.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/form/radio.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/form/search-trigger.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/form/search-trigger.psd
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/form/text-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/form/trigger-tpl.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/form/trigger.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/form/trigger.psd
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/gradient-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/arrow-left-white.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/arrow-right-white.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/col-move-bottom.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/col-move-top.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/columns.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/dirty.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/done.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/drop-no.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/drop-yes.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/footer-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/grid-blue-hd.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/grid-blue-split.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/grid-hrow.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/grid-loading.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/grid-split.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/grid-vista-hd.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/grid3-hd-btn.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/grid3-hrow-over.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/grid3-hrow.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/grid3-special-col-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/grid3-special-col-sel-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/group-by.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/group-collapse.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/group-expand-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/group-expand.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/hd-pop.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/hmenu-asc.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/hmenu-desc.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/hmenu-lock.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/hmenu-lock.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/hmenu-unlock.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/hmenu-unlock.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/invalid_line.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/loading.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/mso-hd.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/nowait.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/page-first-disabled.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/page-first.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/page-last-disabled.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/page-last.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/page-next-disabled.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/page-next.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/page-prev-disabled.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/page-prev.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/pick-button.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/refresh.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/row-check-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/row-expand-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/row-over.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/row-sel.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/sort-hd.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/sort_asc.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/sort_desc.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid/wait.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/layout/collapse.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/layout/expand.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/layout/gradient-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/layout/mini-bottom.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/layout/mini-left.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/layout/mini-right.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/layout/mini-top.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/layout/ns-collapse.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/layout/ns-expand.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/layout/panel-close.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/layout/panel-title-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/layout/panel-title-light-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/layout/stick.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/layout/stuck.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/layout/tab-close-on.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/layout/tab-close.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/menu/checked.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/menu/group-checked.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/menu/item-over.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/menu/menu-parent.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/menu/menu.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/menu/unchecked.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/panel/corners-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/panel/left-right.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/panel/light-hd.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/panel/tool-sprite-tpl.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/panel/tool-sprites.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/panel/tools-sprites-trans.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/panel/top-bottom.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/panel/top-bottom.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/panel/white-corners-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/panel/white-left-right.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/panel/white-top-bottom.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/progress/progress-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/qtip/bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/qtip/close.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/qtip/tip-anchor-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/qtip/tip-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/s.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/shadow-c.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/shadow-lr.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/shadow.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/shared/blue-loading.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/shared/calendar.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/shared/glass-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/shared/hd-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/shared/large-loading.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/shared/left-btn.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/shared/loading-balls.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/shared/right-btn.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/shared/warning.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/sizer/e-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/sizer/e-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/sizer/ne-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/sizer/ne-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/sizer/nw-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/sizer/nw-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/sizer/s-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/sizer/s-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/sizer/se-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/sizer/se-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/sizer/square.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/sizer/sw-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/sizer/sw-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/slider/slider-bg.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/slider/slider-thumb.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/slider/slider-v-bg.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/slider/slider-v-thumb.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tabs/scroll-left.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tabs/scroll-right.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tabs/scroller-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tabs/tab-btm-inactive-left-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tabs/tab-btm-inactive-right-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tabs/tab-btm-left-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tabs/tab-btm-over-left-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tabs/tab-btm-over-right-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tabs/tab-btm-right-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tabs/tab-close.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tabs/tab-strip-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tabs/tab-strip-bg.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tabs/tab-strip-btm-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tabs/tabs-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/toolbar/bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/toolbar/btn-arrow-light.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/toolbar/btn-arrow.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/toolbar/btn-over-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/toolbar/gray-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/toolbar/more.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/toolbar/tb-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/toolbar/tb-btn-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/toolbar/tb-xl-btn-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/toolbar/tb-xl-sep.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/arrows.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/drop-add.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/drop-between.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/drop-no.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/drop-over.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/drop-under.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/drop-yes.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/elbow-end-minus-nl.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/elbow-end-minus.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/elbow-end-plus-nl.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/elbow-end-plus.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/elbow-end.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/elbow-line.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/elbow-minus-nl.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/elbow-minus.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/elbow-plus-nl.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/elbow-plus.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/elbow.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/folder-open.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/folder.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/leaf.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/loading.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree/s.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/window/icon-error.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/window/icon-info.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/window/icon-question.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/window/icon-warning.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/window/left-corners.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/window/left-corners.psd
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/window/left-right.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/window/left-right.psd
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/window/right-corners.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/window/right-corners.psd
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/window/top-bottom.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/window/top-bottom.psd
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/button/btn-arrow.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/button/btn-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/button/btn.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/button/group-cs.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/button/group-lr.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/button/group-tb.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/button/s-arrow-bo.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/button/s-arrow-o.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/form/clear-trigger.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/form/date-trigger.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/form/search-trigger.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/form/trigger.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/gradient-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/col-move-bottom.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/col-move-top.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/grid3-hd-btn.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/grid3-hrow-over.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/grid3-hrow-over2.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/grid3-hrow.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/grid3-hrow2.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/grid3-special-col-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/grid3-special-col-bg2.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/grid3-special-col-sel-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/group-collapse.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/group-expand-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/group-expand.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/page-first.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/page-last.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/page-next.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/page-prev.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/refresh.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/row-expand-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/sort_asc.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid/sort_desc.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/menu/group-checked.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/menu/item-over-disabled.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/menu/item-over.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/menu/menu-parent.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/panel/corners-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/panel/left-right.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/panel/light-hd.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/panel/tool-sprite-tpl.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/panel/tool-sprites.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/panel/tools-sprites-trans.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/panel/top-bottom.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/panel/top-bottom.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/panel/white-corners-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/panel/white-left-right.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/panel/white-top-bottom.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/progress/progress-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/qtip/bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/qtip/close.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/qtip/tip-anchor-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/qtip/tip-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/s.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/shared/hd-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/shared/left-btn.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/shared/right-btn.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/sizer/e-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/sizer/ne-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/sizer/nw-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/sizer/s-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/sizer/se-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/sizer/square.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/sizer/sw-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/slider/slider-thumb.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/slider/slider-v-thumb.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tabs/scroll-left.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tabs/scroll-right.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tabs/scroller-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tabs/tab-btm-inactive-left-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tabs/tab-btm-inactive-right-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tabs/tab-btm-left-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tabs/tab-btm-over-left-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tabs/tab-btm-over-right-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tabs/tab-btm-right-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tabs/tab-close.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tabs/tab-strip-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tabs/tab-strip-bg.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tabs/tab-strip-btm-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tabs/tabs-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/toolbar/bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/toolbar/btn-arrow-light.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/toolbar/btn-arrow.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/toolbar/btn-over-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/toolbar/gray-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/toolbar/more.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/toolbar/tb-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/toolbar/tb-btn-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tree/arrows.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tree/elbow-end-minus-nl.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tree/elbow-end-minus.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tree/elbow-end-plus-nl.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tree/elbow-end-plus.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/window/icon-error.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/window/icon-info.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/window/icon-question.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/window/icon-warning.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/window/left-corners.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/window/left-corners.pspimage
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/window/left-right.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/window/right-corners.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/window/top-bottom.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/basic-dialog/bg-center.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/basic-dialog/bg-left.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/basic-dialog/bg-right.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/basic-dialog/close.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/basic-dialog/collapse.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/basic-dialog/dlg-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/basic-dialog/e-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/basic-dialog/expand.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/basic-dialog/hd-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/basic-dialog/s-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/basic-dialog/se-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/basic-dialog/w-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/gradient-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/grid/grid-split.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/grid/grid-vista-hd.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/layout/collapse.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/layout/expand.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/layout/gradient-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/layout/ns-collapse.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/layout/ns-expand.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/layout/panel-close.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/layout/panel-title-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/layout/panel-title-light-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/layout/stick.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/layout/tab-close-on.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/layout/tab-close.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/qtip/bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/qtip/tip-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/s.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/sizer/e-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/sizer/e-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/sizer/ne-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/sizer/ne-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/sizer/nw-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/sizer/nw-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/sizer/s-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/sizer/s-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/sizer/se-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/sizer/se-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/sizer/sw-handle-dark.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/sizer/sw-handle.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/tabs/tab-btm-inactive-left-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/tabs/tab-btm-inactive-right-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/tabs/tab-btm-left-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/tabs/tab-btm-right-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/tabs/tab-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/toolbar/gray-bg.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/toolbar/tb-btn-sprite.gif
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/web.py
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/web.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/web.pyo
 share/applications/deluge.desktop
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
 share/icons/hicolor/128x128/apps/deluge.png
 share/icons/hicolor/16x16/apps/deluge.png
 share/icons/hicolor/192x192/apps/deluge.png
@@ -991,190 +1895,326 @@ share/icons/hicolor/96x96/apps/deluge.png
 share/icons/hicolor/scalable/apps/deluge.svg
 share/pixmaps/deluge.png
 share/pixmaps/deluge.xpm
-@dirrmtry share/icons/hicolor/256x256/apps
-@dirrmtry share/icons/hicolor/256x256
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/white
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/classic
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/white/mime_icons
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/white
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/classic/mime_icons
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes/classic
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/themes
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/js
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/images
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/32
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons/16
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/icons
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static/css
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/static
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render/html
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax/render
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates/ajax
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/templates
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images/16
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/static/images
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/static
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/scripts
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022/wsgiserver
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/webpy022
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/utils
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django/core
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable/django
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib/newforms_portable
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui/lib
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/webui
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/glade
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/console
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_TW/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_TW
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_HK/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_HK
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_CN/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_CN
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/vi/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/vi
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/uk/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/uk
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/tr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/tr
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/tlh/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/tlh
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/tl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/tl
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/th/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/th
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ta/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ta
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/sv/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/sv
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/sr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/sr
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/sl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/sl
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/sk/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/sk
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/si/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/si
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ru/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ru
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ro/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ro
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pt_BR/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pt_BR
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pt/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pt
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pms/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pms
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pl
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nn/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nn
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nl
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nds/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nds
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nb/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nb
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ms/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ms
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/mk/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/mk
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/lv/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/lv
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/lt/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/lt
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/la/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/la
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ku/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ku
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ko/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ko
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/kn/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/kn
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/kk/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/kk
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ka/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ka
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/jv/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/jv
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ja/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ja
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/iu/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/iu
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/it/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/it
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/is/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/is
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/id/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/id
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/hu/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/hu
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/hr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/hr
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/hi/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/hi
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/he/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/he
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/gl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/gl
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/fy/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/fy
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/fr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/fr
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/fi/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/fi
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/fa/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/fa
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/eu/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/eu
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/et/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/et
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/es/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/es
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/eo/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/eo
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/en_GB/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/en_GB
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/en_CA/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/en_CA
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/en_AU/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/en_AU
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/el/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/el
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/de/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/de
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/da/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/da
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/cy/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/cy
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/cs/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/cs
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ca/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ca
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bs/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bs
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bn/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bn
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bg/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bg
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/be/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/be
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ast/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ast
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ar/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ar
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/core
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/128x128/apps
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/128x128
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/16x16/apps
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/16x16
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/192x192/apps
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/192x192
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/22x22/apps
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/22x22
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/24x24/apps
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/24x24
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/256x256/apps
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/256x256
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/32x32/apps
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/32x32
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/36x36/apps
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/36x36
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/48x48/apps
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/48x48
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/64x64/apps
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/64x64
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/72x72/apps
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/72x72
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/96x96/apps
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor/96x96
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/hicolor
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/scalable/apps
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons/scalable
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps/flags
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/data/pixmaps
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/share
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/data/icons
 @dirrm %%PYTHON_SITELIBDIR%%/deluge/data
-@dirrm %%PYTHON_SITELIBDIR%%/deluge/core
-@dirrm %%PYTHON_SITELIBDIR%%/deluge-%%VERSION%%-py%%PYTHON_VER%%.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ar/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ar
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ast/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ast
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/be/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/be
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bg/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bg
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bn
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/bs
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ca/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ca
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/cs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/cs
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/cy/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/cy
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/da/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/da
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/de
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/el/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/el
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/en_AU/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/en_AU
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/en_CA/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/en_CA
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/en_GB/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/en_GB
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/eo/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/eo
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/es
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/et/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/et
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/eu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/eu
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/fa/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/fa
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/fi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/fi
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/fr
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/fy/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/fy
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/gl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/gl
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/he/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/he
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/hi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/hi
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/hr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/hr
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/hu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/hu
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/id/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/id
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/is/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/is
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/it
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/iu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/iu
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ja/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ja
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ka/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ka
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/kk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/kk
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/kn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/kn
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ko/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ko
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ku/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ku
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/la/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/la
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/lt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/lt
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/lv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/lv
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/mk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/mk
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ms/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ms
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nb/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nb
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nds/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nds
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/nl
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pl
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pms/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pms
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pt
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ro/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ro
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ru
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/si/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/si
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/sk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/sk
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/sl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/sl
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/sr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/sr
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/sv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/sv
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ta/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/ta
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/th/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/th
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/tl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/tl
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/tlh/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/tlh
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/tr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/tr
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/uk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/uk
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/vi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/vi
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_CN/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_HK/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_HK
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_TW/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n/zh_TW
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/i18n
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/AutoAdd.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd/data
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/autoadd
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd/data
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib/autoadd
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build/lib
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd/build
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/autoadd
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/Blocklist.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist/data
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/blocklist
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist/data
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib/blocklist
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build/lib
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist/build
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/blocklist
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/execute/Execute.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute/data
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib/execute
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build/lib
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/execute/build
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute/data
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/execute/execute
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/execute
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/Extractor.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor/data
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib/extractor
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build/lib
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/build
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor/data
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/extractor/extractor
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/extractor
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/label/Label.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/data
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label/gtkui
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib/label
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/label/build/lib
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/label/build
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/data
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/label/label/gtkui
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/label/label
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/label
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/Notifications.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications/data
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib/notifications
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build/lib
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/build
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications/data
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/notifications/notifications
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/notifications
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/Scheduler.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler/data
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib/scheduler
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build/lib
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/build
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler/data
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler/scheduler
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/scheduler
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/webui/WebUi.egg-info
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/webui/build/lib/webui/data
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/webui/build/lib/webui
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/webui/build/lib
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/webui/build
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/webui/webui/data
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/webui/webui
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins/webui
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/console/commands
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/console
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui/glade
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/gtkui
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/css
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/icons
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/images
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/add
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/data
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/details
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all/preferences
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/js/deluge-all
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/form
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/grid
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/layout
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/tree
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/js
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/render
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/css
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/box
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/button
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/editor
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/form
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/grid
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/menu
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/panel
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/progress
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/qtip
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/shared
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/sizer
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/slider
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tabs
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/toolbar
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/tree
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access/window
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/access
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/box
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/button
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/dd
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/editor
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/form
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/grid
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/layout
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/menu
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/panel
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/progress
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/qtip
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/shared
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/sizer
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/slider
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tabs
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/toolbar
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/tree
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default/window
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/default
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/button
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/form
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/grid
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/menu
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/panel
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/progress
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/qtip
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/shared
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/sizer
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/slider
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tabs
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/toolbar
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/tree
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray/window
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/gray
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/basic-dialog
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/grid
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/layout
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/qtip
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/sizer
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/tabs
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista/toolbar
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images/vista
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes/images
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web/themes
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui/web
+@dirrm %%PYTHON_SITELIBDIR%%/deluge/ui
 @dirrm %%PYTHON_SITELIBDIR%%/deluge
+@dirrm %%PYTHON_SITELIBDIR%%/deluge-%%VERSION%%-py%%PYTHON_VER%%.egg-info
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

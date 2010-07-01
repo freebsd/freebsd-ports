@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: deluged
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# MANDATORY:
+#
+# deluged_enable (bool):	Set to NO by default.
+#				Set it to YES to enable deluged.
+#
+# deluged_user (str):		The UNPRIVILEGED user to run as
+#
+# OPTIONAL:
+#
+# deluged_flags (str):		Set as needed
+#				See deluged(1) for more information
+#
+# deluged_loglevel (str):	Set to "error" by default
+
+. /etc/rc.subr
+
+name="deluged"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/bin/${name}
+command_interpreter="%%PYTHON_CMD%%"
+
+pidfile=/var/tmp/${name}.pid
+
+start_precmd=${name}_prestart
+
+deluged_prestart()
+{
+	if [ "$deluged_user" = 'asjklasdfjklasdf' ]; then
+		err 1 "You must set deluged_user to a real, unprivileged user"
+	fi
+}
+
+load_rc_config $name
+
+: ${deluged_enable="NO"}
+: ${deluged_user="asjklasdfjklasdf"}
+: ${deluged_loglevel="error"}
+
+required_dirs="/home/${deluged_user}/.config/deluge"
+command_args="-c $required_dirs -L $deluged_loglevel -l /var/tmp/${name}.log -P $pidfile"
+
+run_rc_command "$1"
