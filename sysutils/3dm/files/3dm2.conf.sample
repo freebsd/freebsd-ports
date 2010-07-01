@@ -19,10 +19,10 @@ Refresh 5
 BGRate 3333333333333333
 MsgPath %%PREFIX%%/etc/3dm2/msg
 imgPath %%PREFIX%%/etc/3dm2
-Help %%PREFIX%%/share/3dm2/help/en
+Help %%PREFIX%%/share/3dm2/help
 OEM 0
 OEMBrand 3ware
 AutoLogout 0
-CommandLog 0
+CommandLog 1
 EnclosureMonitor 1
 EnclMonitorSleepMinutes 2
