@@ -40,6 +40,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 # NOT TESTED YET
 #CONFIGURE_ARGS+=--enable-mysql-replication
 #CONFIGURE_ARGS+=--enable-flarefs --with-fuse=${LOCALBASE}
