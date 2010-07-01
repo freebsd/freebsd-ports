@@ -6,57 +6,62 @@
 #
 
 PORTNAME=	3dm
-PORTVERSION=	2.09.01.004
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://vivi.cat.pdx.edu/3dm2/
+MASTER_SITES=	http://www.lsi.com/DistributionSystem/AssetDocument/ \
+		http://vivi.cat.pdx.edu/3dm2/
 
 MAINTAINER=	ports.maintainer@evilphi.com
 COMMENT=	3ware RAID controller monitoring daemon and web server
 
 USE_RC_SUBR=	3dm2.sh
-USE_BZIP2=	yes
+USE_ZIP=	yes
 
 .include <bsd.port.pre.mk>
-
-DISTFILES=	3dm2_${PORTVERSION}_${ARCH}.tar.bz2
-
-.if ${OSVERSION} >= 800000
-BROKEN=Requires KSE support for static-linked binaries.
-.endif
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 
 NO_WRKSUBDIR=	yes
 
-OPTSRC=		${WRKSRC}/opt/AMCC/3DM2
-HELPSRC=	${OPTSRC}/help/en
-MSGSRC=		${OPTSRC}/msg
+.if ${OSVERSION} < 800000
+PORTVERSION=	2.11.00.009
+DISTFILES=	3DM2_CLI-FreeBSD-10.1.zip
+BINSRC=		${WRKSRC}
+.else
+PORTVERSION=	2.09.01.004
+DISTFILES=	3DM2_CLI-Linux-non-java-installer-9.5.3.zip
+BINSRC=		${WRKSRC}/7x
+.endif
+
+.if ${ARCH} == "i386"
+BINSUFFIX=	x86
+.elif ${ARCH} == "amd64"
+BINSUFFIX=	x86_64
+.endif
+
+HELPSRC=	${WRKSRC}/en
 
 HELPDIR=	${PREFIX}/share/3dm2/help/en
-MSGDIR=		${PREFIX}/etc/3dm2/msg
+ETCDIR=		${PREFIX}/etc/3dm2
+MSGDIR=		${ETCDIR}/msg
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|AMCC-logo\.jpg|AMCC-logo-smaler\.jpg|g' \
-	${WRKSRC}/opt/AMCC/3DM2/help/en/*.html
+post-extract:
+	${TAR} zxf ${WRKSRC}/tdmCliBSD.tgz -C ${WRKSRC}
+	${TAR} zxf ${WRKSRC}/tdm2Help.tgz -C ${WRKSRC}
+	${TAR} zxf ${WRKSRC}/tdm2Msg.tgz -C ${WRKSRC}
 
 post-configure:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
 	< ${FILESDIR}/3dm2.conf.sample > ${WRKSRC}/3dm2.conf.sample
 
 do-install:
-.if !exists(${HELPDIR}/css)
-	@${MKDIR} ${HELPDIR}/css
+.for i in ${ETCDIR} ${MSGDIR} ${HELPDIR}/css ${HELPDIR}/images ${HELPDIR}/scripts
+.if !exists(${i})
+	${MKDIR} ${i}
 .endif
-
-.if !exists(${HELPDIR}/images)
-	@${MKDIR} ${HELPDIR}/images
-.endif
-
-.if !exists(${HELPDIR}/scripts)
-	@${MKDIR} ${HELPDIR}/scripts
-.endif
+.endfor
 
 	${INSTALL_DATA} ${HELPSRC}/*.html ${HELPDIR}
 	${INSTALL_DATA} ${HELPSRC}/*.gif ${HELPDIR}
@@ -65,21 +70,13 @@ do-install:
 	${INSTALL_DATA} ${HELPSRC}/images/* ${HELPDIR}/images
 	${INSTALL_DATA} ${HELPSRC}/scripts/* ${HELPDIR}/scripts
 
-	${INSTALL_PROGRAM} ${WRKSRC}/usr/sbin/3dm2 ${PREFIX}/sbin/3dm2
+	${INSTALL_PROGRAM} ${BINSRC}/3dm2.${BINSUFFIX} ${PREFIX}/sbin/3dm2
 
-.if !exists(${PREFIX}/etc/3dm2)
-	@${MKDIR} ${PREFIX}/etc/3dm2
-.endif
+	${INSTALL_DATA} ${WRKSRC}/tdm_msg_en ${MSGDIR}
+	${INSTALL_DATA} ${WRKSRC}/tw_msg_en ${MSGDIR}
 
-.if !exists(${MSGDIR})
-	@${MKDIR} ${MSGDIR}
-.endif
-
-	${INSTALL_DATA} ${MSGSRC}/tdm_msg_en ${MSGDIR}
-	${INSTALL_DATA} ${MSGSRC}/tw_msg_en ${MSGDIR}
-
-	${INSTALL_DATA} ${WRKSRC}/3dm2.conf.sample ${PREFIX}/etc/3dm2/
-	${CHMOD} 400 ${PREFIX}/etc/3dm2/3dm2.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/3dm2.conf.sample ${ETCDIR}
+	${CHMOD} 400 ${ETCDIR}/3dm2.conf.sample
 
 post-install:
 .if !exists(${PREFIX}/etc/3dm2/3dm2.conf)

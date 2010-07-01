@@ -21,6 +21,7 @@ rcvar=`set_rcvar`
 start_precmd=twdm2_precmd
 command="%%PREFIX%%/sbin/3dm2"
 required_files=%%PREFIX%%/etc/3dm2/3dm2.conf
+sig_stop=INT
 
 twdm2_precmd()
 {
