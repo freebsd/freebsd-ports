@@ -10,8 +10,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 COMMENT=	Python bindings for libtorrent-rasterbar-15
 CATEGORIES=	net-p2p python
 
-CONFLICTS+=	py*-libtorrent-rasterbar-0.14.*
-
 USE_PYTHON=	2.5+
 
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>=0.6:${PORTSDIR}/devel/py-setuptools
