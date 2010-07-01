@@ -1,0 +1,24 @@
+lib/purple-2/libidentica.so
+lib/purple-2/liboldtwitter.so
+lib/purple-2/libstatusnet.so
+lib/purple-2/libtwitter.so
+lib/purple-2/twitgin.so
+share/pixmaps/pidgin/protocols/16/identica.png
+share/pixmaps/pidgin/protocols/16/statusnet.png
+share/pixmaps/pidgin/protocols/16/twitter.png
+share/pixmaps/pidgin/protocols/22/identica.png
+share/pixmaps/pidgin/protocols/22/statusnet.png
+share/pixmaps/pidgin/protocols/22/twitter.png
+share/pixmaps/pidgin/protocols/48/identica.png
+share/pixmaps/pidgin/protocols/48/statusnet.png
+share/pixmaps/pidgin/protocols/48/twitter.png
+share/purple/ca-certs/EquifaxSecureGlobaleBusinessCA.pem
+@dirrmtry lib/purple-2
+@dirrmtry share/pixmaps/pidgin/protocols/16
+@dirrmtry share/pixmaps/pidgin/protocols/22
+@dirrmtry share/pixmaps/pidgin/protocols/48
+@dirrmtry share/pixmaps/pidgin/protocols
+@dirrmtry share/pixmaps/pidgin
+@dirrmtry share/pixmaps
+@dirrmtry share/purple/ca-certs
+@dirrmtry share/purple

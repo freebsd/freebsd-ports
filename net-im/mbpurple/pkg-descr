@@ -1,0 +1,7 @@
+This plugin allows you to set up your twitter accounts as buddies
+in pidgin.  It supports OAuth authentication and HTTPS.
+
+You will see messages from your timeline which you can reply to,
+retweet, etc.
+
+WWW: http://code.google.com/p/microblog-purple/wiki/README

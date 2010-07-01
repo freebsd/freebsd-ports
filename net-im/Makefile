@@ -83,6 +83,7 @@
     SUBDIR += linpopup
     SUBDIR += linux-ymessenger
     SUBDIR += loudmouth
+    SUBDIR += mbpurple
     SUBDIR += mcabber
     SUBDIR += meanwhile
     SUBDIR += mercury
