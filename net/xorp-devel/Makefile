@@ -100,6 +100,10 @@ SCONS_ARGS+=	transport=tcp
 SCONS_ARGS+=	transport=local
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 post-install:
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
