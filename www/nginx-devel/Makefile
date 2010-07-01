@@ -260,12 +260,14 @@ NGINX_H264_MODULE_VERSION=	2.2.7
 MASTER_SITES+=	http://h264.code-shop.com/download/:mp4streaming
 DISTFILES+=	nginx_mod_h264_streaming-${NGINX_H264_MODULE_VERSION}.tar.gz:mp4streaming
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_mod_h264_streaming-${NGINX_H264_MODULE_VERSION}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_streaming_module.c
 .endif
 
 .if defined(WITH_HTTP_NOTICE_MODULE)
 MASTER_SITES+=	http://xph.us/dist/nginx-notice/:notice2
 DISTFILES+=	nginx-notice-2.tar.gz:notice2
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-notice-2
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_notice_module.c
 .endif
 
 .if defined(WITH_HTTP_PERL_MODULE)
@@ -349,6 +351,7 @@ NGINX_UPSTREAM_HASH_VERSION=	0.3.1
 MASTER_SITES+=	http://wiki.nginx.org/images/1/11/:upstreamhash
 DISTFILES+=	Nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}.tar.gz:upstreamhash
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_upstream_hash-${NGINX_UPSTREAM_HASH_VERSION}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_upstream.h
 .endif
 
 .if defined(WITH_HTTP_UPSTREAM_KEEPALIVE)
@@ -414,6 +417,7 @@ NGINX_UDPLOG_MODULE_VERSION=	1.0.0
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:udplog
 DISTFILES+=	nginx_udplog_module-${NGINX_UDPLOG_MODULE_VERSION}.tar.gz:udplog
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_udplog_module-${NGINX_UDPLOG_MODULE_VERSION}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_udplog_module.c
 .endif
 
 .if defined(WITH_WWW)
@@ -471,24 +475,12 @@ post-patch:
 		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
 		${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}/config
 .endif
-.if defined(WITH_HTTP_MP4_H264_MODULE)
-	@${PATCH} ${PATCH_ARGS} < \
-		${PATCHDIR}/extra-patch-ngx_http_streaming_module.c
-.endif
-.if defined(WITH_HTTP_NOTICE_MODULE)
-	@${PATCH} ${PATCH_ARGS} < \
-		${PATCHDIR}/extra-patch-ngx_http_notice_module.c
-.endif
 .if defined(WITH_PASSENGER_MODULE)
 	@${REINPLACE_CMD} 's!g++!${CXX}!' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/Rakefile
 	@${REINPLACE_CMD} '377s!-g!${CXXFLAGS}!; \
 		s!-lpthread!${PTHREAD_LIBS}!g' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info.rb
-.endif
-.if defined(WITH_HTTP_UPSTREAM_HASH)
-	@${PATCH} ${PATCH_ARGS} < \
-		${PATCHDIR}/extra-patch-ngx_http_upstream.h
 .endif
 .if defined(WITH_SUPERVISORD_MODULE)
 	( cd ${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION} && \
@@ -497,10 +489,6 @@ post-patch:
 	( cd ${WRKSRC} && \
 		${PATCH} -p0 < \
 			${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}/patches/ngx_http_upstream_init_busy-0.8.17.patch )
-.endif
-.if defined(WITH_UDPLOG_MODULE)
-	@${PATCH} ${PATCH_ARGS} < \
-		${PATCHDIR}/extra-patch-ngx_http_udplog_module.c
 .endif
 
 do-build:
