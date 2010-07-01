@@ -1,20 +1,26 @@
 bin/msguntypot
 bin/po4a
+bin/po4a-build
 bin/po4a-gettextize
 bin/po4a-normalize
 bin/po4a-translate
 bin/po4a-updatepo
 bin/po4aman-display-po
+bin/po4apod-display-po
 %%SITE_PERL%%/Locale/Po4a/BibTeX.pm
 %%SITE_PERL%%/Locale/Po4a/Chooser.pm
 %%SITE_PERL%%/Locale/Po4a/Common.pm
+%%SITE_PERL%%/Locale/Po4a/Debconf.pm
 %%SITE_PERL%%/Locale/Po4a/Dia.pm
 %%SITE_PERL%%/Locale/Po4a/Docbook.pm
 %%SITE_PERL%%/Locale/Po4a/Guide.pm
+%%SITE_PERL%%/Locale/Po4a/Halibut.pm
+%%SITE_PERL%%/Locale/Po4a/Html.pm
 %%SITE_PERL%%/Locale/Po4a/Ini.pm
 %%SITE_PERL%%/Locale/Po4a/KernelHelp.pm
 %%SITE_PERL%%/Locale/Po4a/LaTeX.pm
 %%SITE_PERL%%/Locale/Po4a/Man.pm
+%%SITE_PERL%%/Locale/Po4a/NewsDebian.pm
 %%SITE_PERL%%/Locale/Po4a/Po.pm
 %%SITE_PERL%%/Locale/Po4a/Pod.pm
 %%SITE_PERL%%/Locale/Po4a/Sgml.pm
@@ -22,75 +28,8 @@ bin/po4aman-display-po
 %%SITE_PERL%%/Locale/Po4a/Texinfo.pm
 %%SITE_PERL%%/Locale/Po4a/Text.pm
 %%SITE_PERL%%/Locale/Po4a/TransTractor.pm
+%%SITE_PERL%%/Locale/Po4a/Wml.pm
 %%SITE_PERL%%/Locale/Po4a/Xhtml.pm
 %%SITE_PERL%%/Locale/Po4a/Xml.pm
-share/locale/af/LC_MESSAGES/po4a.mo
-share/locale/ar/LC_MESSAGES/po4a.mo
-share/locale/bn/LC_MESSAGES/po4a.mo
-share/locale/ca/LC_MESSAGES/po4a.mo
-share/locale/cs/LC_MESSAGES/po4a.mo
-share/locale/de/LC_MESSAGES/po4a.mo
-share/locale/eo/LC_MESSAGES/po4a.mo
-share/locale/es/LC_MESSAGES/po4a.mo
-share/locale/et/LC_MESSAGES/po4a.mo
-share/locale/eu/LC_MESSAGES/po4a.mo
-share/locale/fr/LC_MESSAGES/po4a.mo
-share/locale/he/LC_MESSAGES/po4a.mo
-share/locale/hr/LC_MESSAGES/po4a.mo
-share/locale/id/LC_MESSAGES/po4a.mo
-share/locale/it/LC_MESSAGES/po4a.mo
-share/locale/kn/LC_MESSAGES/po4a.mo
-share/locale/ko/LC_MESSAGES/po4a.mo
-share/locale/ku/LC_MESSAGES/po4a.mo
-share/locale/nb/LC_MESSAGES/po4a.mo
-share/locale/nl/LC_MESSAGES/po4a.mo
-share/locale/oc/LC_MESSAGES/po4a.mo
-share/locale/pl/LC_MESSAGES/po4a.mo
-share/locale/pt/LC_MESSAGES/po4a.mo
-share/locale/pt_BR/LC_MESSAGES/po4a.mo
-share/locale/ru/LC_MESSAGES/po4a.mo
-share/locale/sl/LC_MESSAGES/po4a.mo
-share/locale/sv/LC_MESSAGES/po4a.mo
-share/locale/uk/LC_MESSAGES/po4a.mo
-share/locale/uz/LC_MESSAGES/po4a.mo
-share/locale/zh_CN/LC_MESSAGES/po4a.mo
-share/locale/zh_HK/LC_MESSAGES/po4a.mo
 @dirrmtry %%SITE_PERL%%/Locale/Po4a
 @dirrmtry %%SITE_PERL%%/Locale
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
-man/man1/po4aman-display-po.1.gz
-@dirrmtry man/ca/man1
-@dirrmtry man/ca
-@dirrmtry man/ca/man3
-@dirrmtry man/ca
-@dirrmtry man/ca/man7
-@dirrmtry man/ca
-@dirrmtry man/es/man1
-@dirrmtry man/es
-@dirrmtry man/es/man3
-@dirrmtry man/es
-@dirrmtry man/es/man7
-@dirrmtry man/es
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
-@dirrmtry man/fr/man3
-@dirrmtry man/fr
-@dirrmtry man/fr/man7
-@dirrmtry man/fr
-@dirrmtry man/it/man1
-@dirrmtry man/it
-@dirrmtry man/it/man3
-@dirrmtry man/it
-@dirrmtry man/it/man7
-@dirrmtry man/it
-@dirrmtry man/pl/man1
-@dirrmtry man/pl
-@dirrmtry man/pl/man3
-@dirrmtry man/pl
-@dirrmtry man/pl/man7
-@dirrmtry man/pl
