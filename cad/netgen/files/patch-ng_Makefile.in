@@ -1,0 +1,11 @@
+--- ng/Makefile.in.orig	2010-06-03 15:08:20.000000000 +0700
++++ ng/Makefile.in	2010-06-03 15:08:42.000000000 +0700
+@@ -287,7 +287,7 @@
+ 	$(top_builddir)/libsrc/gprim/libgprim.la \
+ 	$(top_builddir)/libsrc/linalg/libla.la \
+ 	$(top_builddir)/libsrc/general/libgen.la \
+-	$(OCCLIBS) -L$(TK_BIN_DIR)/Togl1.7 $(TOGLLIBDIR) -lTogl1.7 $(LIBGLU) $(TK_LIB_SPEC) $(TCL_LIB_SPEC) $(MPI_LIBS) $(FFMPEG_LIBS) $(JPEGLIB_LIBS) $(PKG_LIBS) 
++	$(OCCLIBS) -L$(TK_BIN_DIR)/Togl1.7 $(TOGLLIBDIR) -ltogl $(LIBGLU) $(TK_LIB_SPEC) $(TCL_LIB_SPEC) $(MPI_LIBS) $(FFMPEG_LIBS) $(JPEGLIB_LIBS) $(PKG_LIBS) 
+ 
+ 
+ # add for static linkage of ngsolve:

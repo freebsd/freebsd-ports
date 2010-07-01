@@ -1,0 +1,9 @@
+
+*************************************************************************
+
+  If you installed netgen to nondefault prefix,
+  make sure that you set the environment variable:
+
+      NETGENDIR=%%PREFIX%%/bin
+
+*************************************************************************
