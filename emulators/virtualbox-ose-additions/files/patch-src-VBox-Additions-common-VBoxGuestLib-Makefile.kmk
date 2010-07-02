@@ -1,0 +1,18 @@
+--- src/VBox/Additions/common/VBoxGuestLib/Makefile.kmk.orig	2010-07-01 14:25:19.000000000 +0200
++++ src/VBox/Additions/common/VBoxGuestLib/Makefile.kmk	2010-07-01 14:26:07.000000000 +0200
+@@ -136,6 +136,7 @@
+ # C library is not available.
+ #
+ ## @todo We're quite probably using the wrong template here.
++ifdef VBOX_WITH_X11_ADDITIONS
+ VBoxGuestR3LibXFree86_TEMPLATE = VBOXGUESTR3LIB
+ VBoxGuestR3LibXFree86_DEFS     = \
+ 	VBOX_WITH_HGCM \
+@@ -159,6 +160,7 @@
+         $(VBOX_PATH_X11_XFREE_4_3)/exports/include/X11
+ 
+ VBoxGuestR3LibRuntimeXF86.cpp_CXXFLAGS = -Wno-shadow
++endif
+ 
+ include	$(KBUILD_PATH)/subfooter.kmk
+ 
