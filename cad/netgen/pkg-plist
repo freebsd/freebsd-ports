@@ -22,7 +22,7 @@ include/parallelinterface.hpp
 include/soldata.hpp
 lib/libnglib.la
 lib/libnglib.so
-%%PORTDOCS%%%%DOCSDIR%%/ng4.pdf
+%%DOCSDIR%%/ng4.pdf
 %%DATADIR%%/boxcyl.geo
 %%DATADIR%%/circle_on_cube.geo
 %%DATADIR%%/cone.geo
@@ -63,4 +63,4 @@ lib/libnglib.so
 %%DATADIR%%/twocubes.geo
 %%DATADIR%%/twocyl.geo
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%

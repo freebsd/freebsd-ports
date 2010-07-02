@@ -7,6 +7,7 @@
 
 PORTNAME=	netgen
 PORTVERSION=	4.9.13
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION}/
 
