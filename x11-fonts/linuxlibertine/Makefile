@@ -6,6 +6,7 @@
 
 PORTNAME=	linuxlibertine
 PORTVERSION=	4.4.1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF
 DISTNAME=	LinLibertineFont-${PORTVERSION}
@@ -15,6 +16,7 @@ MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Linux Libertine Open Fonts
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/-.*//}
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
@@ -38,6 +40,6 @@ do-install:
 
 post-install:
 	@${ECHO_MSG} "===> Running fc-cache"
-	-${X11BASE}/bin/fc-cache -f -v ${FONTSDIR}
+	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
 
 .include <bsd.port.mk>
