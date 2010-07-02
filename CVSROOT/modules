@@ -1466,6 +1466,9 @@ cdrtools-devel                  ports/sysutils/cdrtools-devel
 cduce                           ports/lang/cduce
 cedet                           ports/devel/cedet
 ceferino                        ports/games/ceferino
+cego                            ports/databases/cego
+cego-base                       ports/devel/cego-base
+cego-xml                        ports/devel/cego-xml
 cegui                           ports/graphics/cegui
 celestia                        ports/astro/celestia
 celestia-gnome                  ports/astro/celestia-gnome
@@ -8163,6 +8166,7 @@ libtorrent                      ports/net-p2p/libtorrent
 libtorrent-devel                ports/net-p2p/libtorrent-devel
 libtorrent-rasterbar-14         ports/net-p2p/libtorrent-rasterbar-14
 libtorrent-rasterbar-15         ports/net-p2p/libtorrent-rasterbar-15
+libtorrent-rasterbar-15-python  ports/net-p2p/libtorrent-rasterbar-15-python
 libtrace                        ports/net/libtrace
 libtranslate                    ports/textproc/libtranslate
 libtre                          ports/textproc/libtre
@@ -8989,6 +8993,7 @@ mbox2mdir                       ports/mail/mbox2mdir
 mboxcheck-applet                ports/mail/mboxcheck-applet
 mboxgrep                        ports/mail/mboxgrep
 mboxstats                       ports/mail/mboxstats
+mbpurple                        ports/net-im/mbpurple
 mbrolavox                       ports/audio/mbrolavox
 mbrowse                         ports/net-mgmt/mbrowse
 mbuffer                         ports/misc/mbuffer
@@ -10683,6 +10688,7 @@ p5-Algorithm-Evolutionary       ports/devel/p5-Algorithm-Evolutionary
 p5-Algorithm-FloodControl       ports/devel/p5-Algorithm-FloodControl
 p5-Algorithm-IncludeExclude     ports/devel/p5-Algorithm-IncludeExclude
 p5-Algorithm-Interval2Prefix    ports/devel/p5-Algorithm-Interval2Prefix
+p5-Algorithm-KMeans             ports/math/p5-Algorithm-KMeans
 p5-Algorithm-LCS                ports/devel/p5-Algorithm-LCS
 p5-Algorithm-LUHN               ports/devel/p5-Algorithm-LUHN
 p5-Algorithm-MarkovChain        ports/devel/p5-Algorithm-MarkovChain
@@ -14544,6 +14550,7 @@ p5-algorithm-evolutionary       ports/devel/p5-Algorithm-Evolutionary
 p5-algorithm-floodcontrol       ports/devel/p5-Algorithm-FloodControl
 p5-algorithm-includeexclude     ports/devel/p5-Algorithm-IncludeExclude
 p5-algorithm-interval2prefix    ports/devel/p5-Algorithm-Interval2Prefix
+p5-algorithm-kmeans             ports/math/p5-Algorithm-KMeans
 p5-algorithm-lcs                ports/devel/p5-Algorithm-LCS
 p5-algorithm-luhn               ports/devel/p5-Algorithm-LUHN
 p5-algorithm-markovchain        ports/devel/p5-Algorithm-MarkovChain
