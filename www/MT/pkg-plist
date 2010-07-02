@@ -481,6 +481,10 @@
 %%CGIDIR%%/plugins/Markdown/Readme.text
 %%CGIDIR%%/plugins/Markdown/Markdown.pl
 %%CGIDIR%%/plugins/Markdown/License.text
+%%LANG_RU%%%%CGIDIR%%/plugins/YandexOpenId/tmpl/auth_yandex.tmpl
+%%LANG_RU%%%%CGIDIR%%/plugins/YandexOpenId/lib/MT/Auth/Yandex.pm
+%%LANG_RU%%%%CGIDIR%%/plugins/YandexOpenId/config.yaml
+%%LANG_RU%%%%CGIDIR%%/plugins/UpdatePingsRU/config.yaml
 %%CGIDIR%%/php/tmpl/missing.tpl
 %%CGIDIR%%/php/tmpl/header-popup.tpl
 %%CGIDIR%%/php/tmpl/footer-popup.tpl
@@ -1370,6 +1374,7 @@
 %%DATADIR%%/mt-static/styles_fr.css
 %%DATADIR%%/mt-static/styles_es.css
 %%DATADIR%%/mt-static/styles_de.css
+%%LANG_RU%%%%DATADIR%%/mt-static/styles_ru.css
 %%DATADIR%%/mt-static/styles.css
 %%DATADIR%%/mt-static/readme/mt4-logo.png
 %%DATADIR%%/mt-static/readme/mt-logo.png
@@ -1394,6 +1399,10 @@
 %%DATADIR%%/mt-static/plugins/StyleCatcher/images/down.gif
 %%DATADIR%%/mt-static/plugins/StyleCatcher/images/designer.gif
 %%DATADIR%%/mt-static/plugins/StyleCatcher/images/classic.gif
+%%LANG_RU%%%%DATADIR%%/mt-static/plugins/YandexOpenId/images/yandex-openid.gif
+%%LANG_RU%%%%DATADIR%%/mt-static/plugins/YandexOpenId/images/yandex.png
+%%LANG_RU%%%%DATADIR%%/mt-static/plugins/YandexOpenId/images/yandex_logo.png
+%%LANG_RU%%%%DATADIR%%/mt-static/mt_ru.js
 %%DATADIR%%/mt-static/mt_nl.js
 %%DATADIR%%/mt-static/mt_ja.js
 %%DATADIR%%/mt-static/mt_fr.js
@@ -2149,6 +2158,7 @@
 %%CGIDIR%%/lib/MT/L10N/es.pm
 %%CGIDIR%%/lib/MT/L10N/en_us.pm
 %%CGIDIR%%/lib/MT/L10N/de.pm
+%%LANG_RU%%%%CGIDIR%%/lib/MT/L10N/ru.pm
 %%CGIDIR%%/lib/MT/L10N.pm
 %%CGIDIR%%/lib/MT/JunkFilter.pm
 %%CGIDIR%%/lib/MT/ImportExport.pm
@@ -2759,6 +2769,12 @@
 @dirrm %%CGIDIR%%/plugins/MultiBlog
 @dirrm %%CGIDIR%%/plugins/Markdown/php
 @dirrm %%CGIDIR%%/plugins/Markdown
+%%LANG_RU%%@dirrm %%CGIDIR%%/plugins/YandexOpenId/tmpl
+%%LANG_RU%%@dirrm %%CGIDIR%%/plugins/YandexOpenId/lib/MT/Auth
+%%LANG_RU%%@dirrm %%CGIDIR%%/plugins/YandexOpenId/lib/MT
+%%LANG_RU%%@dirrm %%CGIDIR%%/plugins/YandexOpenId/lib
+%%LANG_RU%%@dirrm %%CGIDIR%%/plugins/YandexOpenId
+%%LANG_RU%%@dirrm %%CGIDIR%%/plugins/UpdatePingsRU
 @dirrm %%CGIDIR%%/plugins
 @dirrm %%CGIDIR%%/php/tmpl
 @dirrm %%CGIDIR%%/php/lib
@@ -2800,6 +2816,8 @@
 @dirrm %%DATADIR%%/mt-static/themes
 @dirrm %%DATADIR%%/mt-static/support
 @dirrm %%DATADIR%%/mt-static/readme
+%%LANG_RU%%@dirrm %%DATADIR%%/mt-static/plugins/YandexOpenId/images
+%%LANG_RU%%@dirrm %%DATADIR%%/mt-static/plugins/YandexOpenId
 @dirrm %%DATADIR%%/mt-static/plugins/WidgetManager/styles
 @dirrm %%DATADIR%%/mt-static/plugins/WidgetManager/js
 @dirrm %%DATADIR%%/mt-static/plugins/WidgetManager/images

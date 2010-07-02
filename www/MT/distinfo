@@ -4,3 +4,6 @@ SIZE (MTOS-5.02-en.tar.gz) = 5873136
 MD5 (MTOS-5.02-ja.tar.gz) = 1e832ca971fa633ed19c72a69432fea3
 SHA256 (MTOS-5.02-ja.tar.gz) = 64e33e2fd86a9f2ecacd0b0f2a51ffd2baa17fba92f47c243206e1d110b4763d
 SIZE (MTOS-5.02-ja.tar.gz) = 5866069
+MD5 (MTOS-5.02-ru.tar.gz) = 2d2fcc4814c9796a51fff7ce53a22ee3
+SHA256 (MTOS-5.02-ru.tar.gz) = d29096159dc5f9aa49eac4cd41748b334b6de80414f46383838d926ee1a3deff
+SIZE (MTOS-5.02-ru.tar.gz) = 6053417

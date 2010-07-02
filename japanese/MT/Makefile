@@ -6,14 +6,18 @@
 
 PORTNAME=	MT
 CATEGORIES=	japanese www
-DISTNAME=	MTOS-${PORTVERSION}-ja
 PKGNAMEPREFIX=	ja-
+DISTNAME=	MTOS-${PORTVERSION}-ja
 
 COMMENT=	Japanese localization of the MovableType publishing system
 
 MASTERDIR=	${.CURDIR}/../../www/${PORTNAME}
 
-JAPANESE=	yes
-CONFLICTS=	MT-[2-5].* fr-MT-[2-5].* de-MT-[2-5].* es-MT-[2-5].* nl-MT-[2-5].*
+MT_LANG=	ja
+CONFLICTS=	MT-[2-5].* fr-MT-[2-5].* de-MT-[2-5].* es-MT-[2-5].* \
+		nl-MT-[2-5].* ru-MT-[2-5].*
+
+MT_DOCS_URL=	http://movabletype.jp/documentation/
+MT_UPGRADE_URL=	http://movabletype.jp/documentation/upgrade/
 
 .include "${MASTERDIR}/Makefile"
