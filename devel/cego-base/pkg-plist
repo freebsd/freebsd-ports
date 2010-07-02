@@ -1,3 +1,4 @@
+include/AESCrypt.h
 include/Base64Coder.h
 include/BigDecimal.h
 include/BigInteger.h
@@ -31,8 +32,8 @@ include/Tokenizer.h
 include/TreeT.h
 lib/libBase.a
 lib/libBase.so.1
-share/licenses/cego-base-1.1.28/GPLv2
-share/licenses/cego-base-1.1.28/LICENSE
-share/licenses/cego-base-1.1.28/catalog.mk
-@dirrm share/licenses/cego-base-1.1.28
+share/licenses/cego-base-1.1.31/GPLv2
+share/licenses/cego-base-1.1.31/LICENSE
+share/licenses/cego-base-1.1.31/catalog.mk
+@dirrm share/licenses/cego-base-1.1.31
 @dirrm share/licenses
