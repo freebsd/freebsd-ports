@@ -7,13 +7,15 @@
 
 PORTNAME=	pulledpork
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	ohauer@gmx.de
 COMMENT=	Script to update snort-2.8+ rules
 
-RUN_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
+		p5-Crypt-SSLeay>=0.57:${PORTSDIR}/security/p5-Crypt-SSLeay
 
 #LICENSE=	GPLv2
 
