@@ -1129,6 +1129,7 @@
     SUBDIR += wpa_gui
     SUBDIR += wping
     SUBDIR += x11vnc
+    SUBDIR += x2goclient-cli
     SUBDIR += xbone
     SUBDIR += xbone-gui
     SUBDIR += xboxproxy
