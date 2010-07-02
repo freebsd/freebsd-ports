@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	MT
-PORTVERSION=	5.02
+PORTVERSION?=	5.02
 CATEGORIES?=	www
-MASTER_SITES=	http://www.movabletype.org/downloads/stable/
+MASTER_SITES?=	http://www.movabletype.org/downloads/stable/
 DISTNAME?=	MTOS-${PORTVERSION}-en
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A web-based personal publishing system for weblogs
 
-CONFLICTS?=	ja-MT-[2-5].* fr-MT-[2-5].* de-MT-[2-5].* es-MT-[2-5].* nl-MT-[2-5].*
+CONFLICTS?=	ja-MT-[2-5].* fr-MT-[2-5].* de-MT-[2-5].* es-MT-[2-5].* \
+		nl-MT-[2-5].* ru-MT-[2-5].*
 
 RUN_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
@@ -64,13 +65,19 @@ SUB_LIST+=	DATADIR=${PREFIX}/${DATADIR} CGIDIR=${PREFIX}/${CGIDIR} \
 PLIST_FILES+=	${APACHEETCDIR}/Includes/MT.conf
 .endif
 
-.if defined(JAPANESE)
-PLIST_SUB+=	LANG_EN="@comment " \
-		LANG_JA=""
+MT_LANGUAGES=	en ja ru
+MT_LANG?=	en
+
+.for _L in ${MT_LANGUAGES}
+.if ${MT_LANG} == ${_L}
+PLIST_SUB+=	LANG_${_L:U}=""
 .else
-PLIST_SUB+=	LANG_EN="" \
-		LANG_JA="@comment "
+PLIST_SUB+=	LANG_${_L:U}="@comment "
 .endif
+.endfor
+
+MT_DOCS_URL?=	http://movabletype.org/documentation/
+MT_UPGRADE_URL?=http://movabletype.org/documentation/upgrade/
 
 .include <bsd.port.pre.mk>
 
@@ -88,12 +95,7 @@ RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 pre-everything::
 	@${ECHO_CMD} "ATTENTION:"
 	@${ECHO_CMD} "If you are upgrading from an older version of MT"
-.if defined(JAPANESE)
-	@${ECHO_CMD} "please read http://movabletype.jp/documentation/upgrade/"
-.else
-	@${ECHO_CMD} "please read http://movabletype.org/documentation/upgrade/"
-.endif
-
+	@${ECHO_CMD} "please read ${MT_UPGRADE_URL}"
 	@${ECHO_CMD} "BEFORE installing this port"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Available switches:"
@@ -140,10 +142,6 @@ post-install:
 .else
 	@${ECHO_CMD} ""
 .endif
-.if defined(JAPANESE)
-	@${ECHO_MSG} "Please read the documentation: http://movabletype.jp/documentation/"
-.else
-	@${ECHO_MSG} "Please read the documentation: http://movabletype.org/documentation/"
-.endif
+	@${ECHO_MSG} "Please read the documentation: ${MT_DOCS_URL}"
 
 .include <bsd.port.post.mk>
