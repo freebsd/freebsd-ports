@@ -763,6 +763,7 @@
     SUBDIR += p5-Unicode-Escape
     SUBDIR += p5-Unicode-Normalize
     SUBDIR += p5-Unicode-Unihan
+    SUBDIR += p5-Validator-Custom
     SUBDIR += p5-Vroom
     SUBDIR += p5-WDDX
     SUBDIR += p5-WWW-Google-SiteMap
