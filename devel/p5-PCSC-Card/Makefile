@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PCSC-Card
-PORTVERSION=	1.4.8
+PORTVERSION=	1.4.9
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/pcsc-perl/
 PKGNAMEPREFIX=	p5-
@@ -16,8 +16,6 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl bindings for the PC/SC Lite Framework
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
-
-BROKEN=		does not compile
 
 PERL_CONFIGURE=	yes
 MAKE_ENV=	"LOCALBASE=$(LOCALBASE)"
