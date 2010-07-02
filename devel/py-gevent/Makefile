@@ -7,6 +7,7 @@
 
 PORTNAME=	gevent
 PORTVERSION=	0.12.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +16,7 @@ MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	Python co-routine networking library based on greenlet/libevent
 
 LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0.3.1:${PORTSDIR}/devel/py-greenlet
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
