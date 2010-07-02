@@ -3,6 +3,7 @@
 
     COMMENT = Russian support
 
+    SUBDIR += MT
     SUBDIR += apache13
     SUBDIR += apache13-modssl
     SUBDIR += artwiz-ru
