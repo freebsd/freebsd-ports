@@ -1,0 +1,19 @@
+bin/html2xhtml
+%%SITE_PERL%%/HTML/HTML5/Parser/Charset/UnicodeChecker.pm
+%%SITE_PERL%%/HTML/HTML5/Parser/Charset/Info.pm
+%%SITE_PERL%%/HTML/HTML5/Parser/Charset/UniversalCharDet.pm
+%%SITE_PERL%%/HTML/HTML5/Parser/Charset/WebThai.pm
+%%SITE_PERL%%/HTML/HTML5/Parser/Charset/DecodeHandle.pm
+%%SITE_PERL%%/HTML/HTML5/Parser/Charset/WebLatin1.pm
+%%SITE_PERL%%/HTML/HTML5/Parser/TagSoupParser.pm
+%%SITE_PERL%%/HTML/HTML5/Parser/Tokenizer.pm
+%%SITE_PERL%%/HTML/HTML5/Parser/NamedEntityList.pm
+%%SITE_PERL%%/HTML/HTML5/Parser.pm
+%%SITE_PERL%%/mach/auto/HTML/HTML5/Parser/.packlist
+@dirrm %%SITE_PERL%%/HTML/HTML5/Parser/Charset
+@dirrm %%SITE_PERL%%/HTML/HTML5/Parser
+@dirrmtry %%SITE_PERL%%/HTML/HTML5
+@dirrmtry %%SITE_PERL%%/HTML
+@dirrm %%SITE_PERL%%/mach/auto/HTML/HTML5/Parser
+@dirrmtry %%SITE_PERL%%/mach/auto/HTML/HTML5
+@dirrmtry %%SITE_PERL%%/mach/auto/HTML

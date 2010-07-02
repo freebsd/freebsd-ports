@@ -1,0 +1,11 @@
+HTML::HTML5::Parse is substantially the same as the non-CPAN module
+Whatpm::HTML. Changes include:
+    * Provides an XML::LibXML-like DOM interface. If you usually use
+XML::LibXML's DOM parser, this should be a drop-in solution for tag
+soup HTML.
+    * Constructs an XML::LibXML::Document as the result of parsing.
+    * Via bundling and modifications, removed external dependencies
+on non-CPAN packages.
+
+
+WWW: http://search.cpan.org/dist/HTML-HTML5-Parser/
