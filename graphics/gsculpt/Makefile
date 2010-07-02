@@ -20,8 +20,6 @@ LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gtkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext \
 		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 
-BROKEN=		does not compile
-
 WRKSRC=		${WRKDIR}/gSculpt-${PORTVERSION}-alpha
 USE_SCONS=	yes
 SCONS_BUILDENV=	${SCONS_ENV}
@@ -44,7 +42,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|prefix = os.path.join( '/usr', 'local' )|prefix='${PREFIX}'|; \
 		s|'bin', 'gSculpt'|'${PYTHONPREFIX_SITELIBDIR}'|;" \
 		${WRKSRC}/SConstruct-install
-	@${REINPLACE_CMD} -e "s|-O2|-O1\|-O2|;" \
+	@${REINPLACE_CMD} -e "s|-O2|-O1\|-O2|;s|'-Werror',||" \
 		${WRKSRC}/SConstruct
 .if ${ARCH} != "i386"
 	@${REINPLACE_CMD} -e "s|, '-DGSCULPT_FPU_X86'||;" \
