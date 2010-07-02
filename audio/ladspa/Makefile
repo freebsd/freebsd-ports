@@ -25,8 +25,8 @@ PLUGIN_FILES=	amp.so delay.so filter.so noise.so sine.so
 PLUGIN_DIR?=	${PREFIX}/lib/ladspa/
 
 post-patch:
-	${REINPLACE_CMD} -e 's,-ldl,,; s,-O3,${CFLAGS},; s,CPP,CXX,' \
-		${WRKSRC}/src/makefile
+	${REINPLACE_CMD} -e 's,-ldl,,; s,-O3,${CFLAGS},; \
+		s,^CC,#CC,;s,^CPP,#CPP,;s,CPP,CXX,' ${WRKSRC}/src/makefile
 
 do-build:
 	cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${GMAKE} -f makefile targets
