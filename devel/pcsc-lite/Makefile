@@ -7,6 +7,7 @@
 
 PORTNAME=	pcsc-lite
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel security
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/3279/
@@ -32,10 +33,8 @@ CONFIGURE_ARGS+=--enable-ipcdir=/var/tmp/ \
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.if !defined(NOPORTDOCS)
 MAN5=		reader.conf.5
 MAN8=		pcscd.8
-.endif
 
 .include <bsd.port.pre.mk>
 
