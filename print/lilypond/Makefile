@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.13.9
-PORTREVISION=	4
+PORTVERSION=	2.13.26
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.13/:src \
     		${MASTER_SITE_LOCAL}/gahr/:fonts \
@@ -45,7 +44,8 @@ MAN1=		lilymidi.1 lilypond-book.1 lilypond-invoke-editor.1 \
 		midi2ly.1 musicxml2ly.1
 INFO=		lilypond-changes lilypond-contributor lilypond-essay \
 		lilypond-extending lilypond-internals lilypond-learning \
-		lilypond-notation lilypond-usage lilypond-web music-glossary
+		lilypond-notation lilypond-usage lilypond-web \
+		lilypond-snippets music-glossary lilypond
 
 USE_AUTOTOOLS=	autoconf:262
 USE_BISON=	build
@@ -66,8 +66,8 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 .if !defined(NOPORTDOCS) && defined(WITH_WEBDOCS)
 BUILD_DEPENDS+=	pbmpscale:${PORTSDIR}/graphics/netpbm \
     		rsync:${PORTSDIR}/net/rsync
-ALL_TARGET+=	doc
 PLIST_SUB+=	DOCS=""
+PORTDOCS+=	*
 .else
 PLIST_SUB+=	DOCS="@comment "
 .endif
@@ -99,7 +99,7 @@ post-install:
 	@${LN} -s ${DATADIR}/${PORTVERSION} ${DATADIR}/current
 .if !defined(NOPORTDOCS) && defined(WITH_WEBDOCS)
 	@echo "Installing documentation... this takes a while..."
-	cd ${WRKSRC} && ${GMAKE} install-doc
+	cd ${WRKSRC} && ${GMAKE} doc install-doc
 #	@(cd ${WRKSRC}/out-www/offline-root && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
 
