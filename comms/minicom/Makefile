@@ -7,35 +7,31 @@
 #
 
 PORTNAME=	minicom
-PORTVERSION=	2.3
-PORTREVISION=	3
+PORTVERSION=	2.4
 CATEGORIES=	comms
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/2332/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/ \
-		http://atreides.freenix.no/~anders/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/3195/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	An MS-DOS Telix serial communication program "workalike"
 
-RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz \
-		lsz:${PORTSDIR}/comms/lrzsz
+RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/.src//}
 .if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
+CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GETTEXT=	yes
-CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE} \
-			--without-included-gettext
 PLIST_SUB+=	NLS=""
 .endif
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-dfl-baud=57600 \
 			--sysconfdir=${PREFIX}/etc/minicom \
-			--enable-lock-dir=/var/spool/lock
-
-CONFIGURE_ARGS+=	--enable-dfl-port=${MINICOM_DEFAULT_PORT}
+			--enable-lock-dir=/var/spool/lock \
+			--enable-dfl-port=${MINICOM_DEFAULT_PORT} \
+			CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		minicom.1 runscript.1 ascii-xfr.1 xminicom.1
 
@@ -58,9 +54,6 @@ post-install:
 	${CHOWN} uucp:dialer ${PREFIX}/bin/minicom
 	${CHMOD} 4511 ${PREFIX}/bin/minicom
 	${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/etc/minicom
-.if !exists(${PREFIX}/etc/minicom/minicom.users)
-	${INSTALL_DATA} ${WRKSRC}/doc/minicom.users ${PREFIX}/etc/minicom/
-.endif
 	${CHOWN} uucp ${PREFIX}/etc/minicom
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
