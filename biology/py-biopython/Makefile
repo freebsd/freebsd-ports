@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	biopython
-PORTVERSION=	1.53
+PORTVERSION=	1.54
 CATEGORIES=	biology python
 MASTER_SITES=	http://www.biopython.org/DIST/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	mauricio@arareko.net
 COMMENT=	A collection of Python modules for bioinformatics
 
-BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_SITELIBDIR}/mx/TextTools/__init__.py:${PORTSDIR}/lang/py-mx-base
+BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	2.4+
