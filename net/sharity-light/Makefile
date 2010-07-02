@@ -21,14 +21,15 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800100
-BROKEN=		does not compile
-.endif
-
 post-extract:
 	@${MKDIR} ${WRKDIR}/unshlight
 	@${CP} ${FILESDIR}/unshlight.c ${WRKDIR}/unshlight
 	@${CP} ${FILESDIR}/Makefile.unshlight ${WRKDIR}/unshlight/Makefile
+
+post-patch:
+.if ${OSVERSION} >= 800100
+	${REINPLACE_CMD} -e "s,#.*include <nfs/rpcv2.h>,," ${WRKSRC}/nfs/syscalls.c
+.endif
 
 post-build:
 	cd ${WRKDIR}/unshlight && make
