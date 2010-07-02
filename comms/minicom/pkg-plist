@@ -2,7 +2,6 @@ bin/minicom
 bin/xminicom
 bin/runscript
 bin/ascii-xfr
-etc/minicom/minicom.users
 %%NLS%%share/locale/cs/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/da/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/de/LC_MESSAGES/minicom.mo
@@ -10,6 +9,7 @@ etc/minicom/minicom.users
 %%NLS%%share/locale/fi/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/minicom.mo
+%%NLS%%share/locale/id/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/minicom.mo
@@ -46,7 +46,6 @@ etc/minicom/minicom.users
 %%PORTDOCS%%%%DOCSDIR%%/doc/fselector.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/japanese
 %%PORTDOCS%%%%DOCSDIR%%/doc/minicom.FAQ
-%%PORTDOCS%%%%DOCSDIR%%/doc/minicom.users
 %%PORTDOCS%%%%DOCSDIR%%/doc/minirc.dfl
 %%PORTDOCS%%%%DOCSDIR%%/doc/modemu.README
 %%PORTDOCS%%%%DOCSDIR%%/doc/pl-translation.txt
