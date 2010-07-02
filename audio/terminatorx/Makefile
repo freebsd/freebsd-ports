@@ -43,10 +43,6 @@ OPTIONS=	MPG123 "mpg123 support" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800501
-BROKEN=		does not build
-.endif
-
 .if !defined(WITHOUT_MPG123)
 BUILD_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
 .else
@@ -77,6 +73,10 @@ post-patch:
 		's|malloc\.h|stdlib.h|g'
 	@${GREP} -lR "%%LOCALBASE%%" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|%%LOCALBASE%%|${LOCALBASE}|g'
+.if ${OSVERSION} <= 800501
+	${REINPLACE_CMD} -e "s,only(struct dirent,only(const struct dirent," \
+		${WRKSRC}/src/tX_dialog.cc
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/terminatorX ${PREFIX}/bin
