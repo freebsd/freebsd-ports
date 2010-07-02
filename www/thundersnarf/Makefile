@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thundersnarf
-PORTVERSION=	1.0b
+PORTVERSION=	1.02b
 CATEGORIES=	www
 MASTER_SITES=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/thunder/ \
 		${MASTER_SITE_LOCAL}/jmelo
