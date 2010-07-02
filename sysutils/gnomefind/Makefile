@@ -24,12 +24,12 @@ MAN1=		gnome-find.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800023
-BROKEN=		does not compile
-.endif
-
 post-patch:
 	@${GREP} -lR "<regex\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<regex\.h>|<gnuregex.h>|g'
+.if ${OSVERSION} >= 800023
+	${REINPLACE_CMD} -e "s,^int readlink,//int readlink," \
+		${WRKSRC}/src/listfile.c
+.endif
 
 .include <bsd.port.post.mk>
