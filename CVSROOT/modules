@@ -760,7 +760,6 @@ audio_mpc                       ports/audio/mpc
 audio_muse                      ports/audio/muse
 audio_tracker                   ports/audio/tracker
 audiotag                        ports/audio/audiotag
-audit                           ports/security/audit
 augeas                          ports/textproc/augeas
 august                          ports/www/august
 aumix                           ports/audio/aumix
@@ -10192,6 +10191,7 @@ nwndata                         ports/games/nwndata
 nwreckdum                       ports/archivers/nwreckdum
 nxml                            ports/editors/nxml
 nxml-emacs21                    ports/editors/nxml-emacs21
+nxproxy                         ports/net/nxproxy
 nxserver                        ports/net/nxserver
 nxtvepg                         ports/multimedia/nxtvepg
 ny-aspell                       ports/textproc/ny-aspell
@@ -12269,6 +12269,7 @@ p5-HTML-FromANSI                ports/www/p5-HTML-FromANSI
 p5-HTML-FromText                ports/www/p5-HTML-FromText
 p5-HTML-GenToc                  ports/www/p5-HTML-GenToc
 p5-HTML-GoogleMaps              ports/www/p5-HTML-GoogleMaps
+p5-HTML-HTML5-Parser            ports/textproc/p5-HTML-HTML5-Parser
 p5-HTML-Highlight               ports/www/p5-HTML-Highlight
 p5-HTML-LinkExtractor           ports/www/p5-HTML-LinkExtractor
 p5-HTML-LinkList                ports/www/p5-HTML-LinkList
@@ -16182,6 +16183,7 @@ p5-html-fromtext                ports/www/p5-HTML-FromText
 p5-html-gentoc                  ports/www/p5-HTML-GenToc
 p5-html-googlemaps              ports/www/p5-HTML-GoogleMaps
 p5-html-highlight               ports/www/p5-HTML-Highlight
+p5-html-html5-parser            ports/textproc/p5-HTML-HTML5-Parser
 p5-html-linkextractor           ports/www/p5-HTML-LinkExtractor
 p5-html-linklist                ports/www/p5-HTML-LinkList
 p5-html-lint                    ports/www/p5-HTML-Lint
@@ -21963,6 +21965,7 @@ rtpbreak                        ports/net/rtpbreak
 rtpproxy                        ports/net/rtpproxy
 rtptools                        ports/mbone/rtptools
 rtty                            ports/sysutils/rtty
+ru-MT                           ports/russian/MT
 ru-apache13                     ports/russian/apache13
 ru-apache13-modssl              ports/russian/apache13-modssl
 ru-artwiz-ru                    ports/russian/artwiz-ru
@@ -21983,6 +21986,7 @@ ru-koi8r-ps                     ports/russian/koi8r-ps
 ru-ksocrat                      ports/russian/ksocrat
 ru-libcyrillic                  ports/russian/libcyrillic
 ru-messarge                     ports/russian/messarge
+ru-mt                           ports/russian/MT
 ru-mueller-dic                  ports/russian/mueller-dic
 ru-muttprint                    ports/russian/muttprint
 ru-napster                      ports/russian/napster
@@ -25273,6 +25277,7 @@ x11perf                         ports/x11/x11perf
 x11vnc                          ports/net/x11vnc
 x264                            ports/multimedia/x264
 x264-devel                      ports/multimedia/x264-devel
+x2goclient-cli                  ports/net/x2goclient-cli
 x2vnc                           ports/x11-servers/x2vnc
 x2x                             ports/x11-servers/x2x
 x3270                           ports/x11/x3270
