@@ -8,6 +8,7 @@
 
 PORTNAME=	libchamplain
 PORTVERSION=	0.4.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -52,5 +53,7 @@ PLIST_SUB+=		PYTHON="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|pyclutter-gtk-0.9|pyclutter-gtk-0.10|g' \
 		${WRKSRC}/configure
+	# Fix python bindings, can be safely removed after 0.4.7 release
+	@${RM} -f ${WRKSRC}/bindings/python/champlain/pychamplain.c
 
 .include <bsd.port.mk>
