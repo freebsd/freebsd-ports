@@ -1,7 +1,6 @@
-@comment $FreeBSD$
+bin/node
 bin/node-repl
 bin/node-waf
-bin/node
 include/node/config.h
 include/node/eio.h
 include/node/ev.h
@@ -10,9 +9,9 @@ include/node/node_buffer.h
 include/node/node_events.h
 include/node/node_object_wrap.h
 include/node/node_version.h
-include/node/v8.h
 include/node/v8-debug.h
 include/node/v8-profiler.h
+include/node/v8.h
 lib/node/wafadmin/Build.py
 lib/node/wafadmin/Configure.py
 lib/node/wafadmin/Constants.py
@@ -24,11 +23,6 @@ lib/node/wafadmin/Runner.py
 lib/node/wafadmin/Scripting.py
 lib/node/wafadmin/Task.py
 lib/node/wafadmin/TaskGen.py
-lib/node/wafadmin/Utils.py
-lib/node/wafadmin/__init__.py
-lib/node/wafadmin/ansiterm.py
-lib/node/wafadmin/pproc.py
-lib/node/wafadmin/py3kfixes.py
 lib/node/wafadmin/Tools/__init__.py
 lib/node/wafadmin/Tools/ar.py
 lib/node/wafadmin/Tools/bison.py
@@ -55,8 +49,8 @@ lib/node/wafadmin/Tools/gxx.py
 lib/node/wafadmin/Tools/icc.py
 lib/node/wafadmin/Tools/icpc.py
 lib/node/wafadmin/Tools/intltool.py
-lib/node/wafadmin/Tools/kde4.py
 lib/node/wafadmin/Tools/javaw.py
+lib/node/wafadmin/Tools/kde4.py
 lib/node/wafadmin/Tools/libtool.py
 lib/node/wafadmin/Tools/lua.py
 lib/node/wafadmin/Tools/misc.py
@@ -78,8 +72,12 @@ lib/node/wafadmin/Tools/vala.py
 lib/node/wafadmin/Tools/winres.py
 lib/node/wafadmin/Tools/xlc.py
 lib/node/wafadmin/Tools/xlcxx.py
-@dirrmtry lib/node/wafadmin/Tools
-@dirrmtry lib/node/wafadmin
-@dirrmtry lib/node/libraries
-@dirrmtry lib/node
+lib/node/wafadmin/Utils.py
+lib/node/wafadmin/__init__.py
+lib/node/wafadmin/ansiterm.py
+lib/node/wafadmin/pproc.py
+lib/node/wafadmin/py3kfixes.py
+@dirrm lib/node/wafadmin/Tools
+@dirrm lib/node/wafadmin
+@dirrm lib/node
 @dirrm include/node
