@@ -23,6 +23,7 @@
 %%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ViewEcho.pm
 %%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ListEcho.pm
 %%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/RecentEcho.pm
+%%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ShowSchedule.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mixi/Scraper
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mixi
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
