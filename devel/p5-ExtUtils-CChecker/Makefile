@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ExtUtils-CChecker
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sahil@tandon.net
+MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	Configure-time utilities for using C headers, libraries, OS features
 
 PERL_CONFIGURE=	yes
