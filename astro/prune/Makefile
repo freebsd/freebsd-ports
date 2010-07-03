@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	prune
-PORTVERSION=	9
+PORTVERSION=	10
 CATEGORIES=	astro java
 MASTER_SITES=	http://activityworkshop.net/software/prune/ \
 		http://mirror.amdmi3.ru/distfiles/
-DISTNAME=	${PORTNAME}_0${PORTVERSION}.jar
+DISTNAME=	${PORTNAME}_${PORTVERSION}.jar
 EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
@@ -27,6 +27,14 @@ SUB_FILES=	prune.sh
 SUB_LIST=	JARNAME=${DISTNAME}
 
 PLIST_FILES=	bin/prune-gps-tool ${JAVAJARDIR:C,${PREFIX}/?,,}/${DISTNAME}
+
+OPTIONS=	THREED "Support for 3D view of track" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_THREED)
+RUN_DEPENDS+=	java3d>=1.5.2:${PORTSDIR}/java/java3d
+.endif
 
 do-install:
 	${MKDIR} ${JAVAJARDIR}/
