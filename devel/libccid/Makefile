@@ -6,6 +6,7 @@
 
 PORTNAME=	ccid
 PORTVERSION=	1.3.12
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/3281/
 
@@ -29,10 +30,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBUSB_LIBS="-L${LOCALBASE}/lib -lusb"
 
 PLIST_SUB=	VER=${PORTVERSION}
-.if !defined(NOPORTDOCS)
 MAN1=		RSA_SecurID_getpasswd.1
 MAN8=		Kobil_mIDentity_switch.8
-.endif
 
 .include <bsd.port.pre.mk>
 

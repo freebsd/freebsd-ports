@@ -3,8 +3,8 @@ lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so
 lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so.%%VER%%
 lib/pcsc/drivers/ifd-ccid.bundle/Contents/Info.plist
 sbin/Kobil_mIDentity_switch
-%%PORTDOCS%%%%DOCSDIR%%/README_Kobil_mIDentity_switch.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DOCSDIR%%/README_Kobil_mIDentity_switch.txt
+@dirrm %%DOCSDIR%%
 @dirrm lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD
 @dirrm lib/pcsc/drivers/ifd-ccid.bundle/Contents
 @dirrm lib/pcsc/drivers/ifd-ccid.bundle
