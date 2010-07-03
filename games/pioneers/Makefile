@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	pioneers
-PORTVERSION=	0.12.2
-PORTREVISION=	5
+PORTVERSION=	0.12.3
+#PORTREVISION=	0
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/pio/Source/
 
@@ -25,6 +25,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN6=		pioneers.6 pioneers-server-gtk.6 pioneers-server-console.6 \
-		pioneersai.6 pioneers-meta-server.6
+		pioneersai.6 pioneers-meta-server.6 pioneers-editor.6
 
 .include <bsd.port.mk>

@@ -33,15 +33,27 @@ share/games/pioneers/small.game
 share/games/pioneers/south_africa.game
 share/games/pioneers/square.game
 share/games/pioneers/star.game
+share/games/pioneers/themes/Classic/board.png
+share/games/pioneers/themes/Classic/desert.png
+share/games/pioneers/themes/Classic/field.png
+share/games/pioneers/themes/Classic/forest.png
+share/games/pioneers/themes/Classic/gold.png
+share/games/pioneers/themes/Classic/hill.png
+share/games/pioneers/themes/Classic/mountain.png
+share/games/pioneers/themes/Classic/pasture.png
+share/games/pioneers/themes/Classic/sea.png
+share/games/pioneers/themes/Classic/theme.cfg
 share/games/pioneers/themes/FreeCIV-like/board.png
 share/games/pioneers/themes/FreeCIV-like/desert.png
 share/games/pioneers/themes/FreeCIV-like/field.png
 share/games/pioneers/themes/FreeCIV-like/forest.png
+share/games/pioneers/themes/FreeCIV-like/gold.png
 share/games/pioneers/themes/FreeCIV-like/hill.png
 share/games/pioneers/themes/FreeCIV-like/mountain.png
 share/games/pioneers/themes/FreeCIV-like/pasture.png
 share/games/pioneers/themes/FreeCIV-like/sea.png
 share/games/pioneers/themes/FreeCIV-like/theme.cfg
+share/games/pioneers/themes/Iceland/board.png
 share/games/pioneers/themes/Iceland/desert.png
 share/games/pioneers/themes/Iceland/field_grain.png
 share/games/pioneers/themes/Iceland/forest_lumber.png
@@ -49,6 +61,7 @@ share/games/pioneers/themes/Iceland/gold.png
 share/games/pioneers/themes/Iceland/hill_brick.png
 share/games/pioneers/themes/Iceland/mountain_ore.png
 share/games/pioneers/themes/Iceland/pasture_wool.png
+share/games/pioneers/themes/Iceland/sea.png
 share/games/pioneers/themes/Iceland/theme.cfg
 share/games/pioneers/themes/Tiny/board.png
 share/games/pioneers/themes/Tiny/brick-lorindol.png
@@ -75,16 +88,6 @@ share/games/pioneers/themes/Wesnoth-like/mountain.png
 share/games/pioneers/themes/Wesnoth-like/pasture.png
 share/games/pioneers/themes/Wesnoth-like/sea.png
 share/games/pioneers/themes/Wesnoth-like/theme.cfg
-share/games/pioneers/themes/board.png
-share/games/pioneers/themes/desert.png
-share/games/pioneers/themes/field.png
-share/games/pioneers/themes/forest.png
-share/games/pioneers/themes/gold.png
-share/games/pioneers/themes/hill.png
-share/games/pioneers/themes/mountain.png
-share/games/pioneers/themes/pasture.png
-share/games/pioneers/themes/plain.png
-share/games/pioneers/themes/sea.png
 share/games/pioneers/x.game
 share/gnome/help/pioneers/C/images/actions.png
 share/gnome/help/pioneers/C/images/brick.png
@@ -167,6 +170,7 @@ share/locale/ja/LC_MESSAGES/pioneers.mo
 share/locale/nl/LC_MESSAGES/pioneers.mo
 share/locale/pt/LC_MESSAGES/pioneers.mo
 share/locale/sv/LC_MESSAGES/pioneers.mo
+@dirrm share/games/pioneers/themes/Classic
 @dirrm share/games/pioneers/themes/FreeCIV-like
 @dirrm share/games/pioneers/themes/Iceland
 @dirrm share/games/pioneers/themes/Tiny
