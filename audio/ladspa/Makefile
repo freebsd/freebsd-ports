@@ -23,13 +23,15 @@ USE_LDCONFIG=	yes
 PROGRAM_FILES=	analyseplugin applyplugin listplugins
 PLUGIN_FILES=	amp.so delay.so filter.so noise.so sine.so
 PLUGIN_DIR?=	${PREFIX}/lib/ladspa/
+MAKEFILE=	makefile
+ALL_TARGET=	targets
+BUILD_WRKSRC=	${WRKSRC}/src
+MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's,-ldl,,; s,-O3,${CFLAGS},; \
-		s,^CC,#CC,;s,^CPP,#CPP,;s,CPP,CXX,' ${WRKSRC}/src/makefile
-
-do-build:
-	cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${GMAKE} -f makefile targets
+		s,^CC,#CC,;s,^CPP,#CPP,;s,CPP,CXX,; s,^CXXFLAGS.*=,CXXFLAGS+=,' \
+		${WRKSRC}/src/makefile
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/src/ladspa.h ${PREFIX}/include
