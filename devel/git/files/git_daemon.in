@@ -26,4 +26,6 @@ load_rc_config $name
 command="%%PREFIX%%/libexec/git-core/git-daemon"
 command_args="${git_daemon_directory}"
 
+PATH="${PATH}:%%PREFIX%%/libexec/git-core"
+
 run_rc_command "$1"
