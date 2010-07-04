@@ -4,3 +4,6 @@ SIZE (dnetc509-freebsd6-x86.tar.gz) = 815526
 MD5 (dnetc509-freebsd7-x86.tar.gz) = 0bab62c16553769dcf1dc90741637238
 SHA256 (dnetc509-freebsd7-x86.tar.gz) = a7d05b67873f8b253fc96a8cdc71337efcc30b15835aa393af7c9db46d0fbb6d
 SIZE (dnetc509-freebsd7-x86.tar.gz) = 878251
+MD5 (dnetc516-freebsd8-x86.tar.gz) = 2066f6b6835a8fc7f9650cd45a375a1d
+SHA256 (dnetc516-freebsd8-x86.tar.gz) = 22945d0fcb7220810a799bf2ba94cc28c4c9ba93395be3fcf30a885e84199027
+SIZE (dnetc516-freebsd8-x86.tar.gz) = 894389
