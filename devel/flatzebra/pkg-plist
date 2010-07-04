@@ -4,6 +4,7 @@ lib/libflatzebra-0.1.la
 lib/libflatzebra-0.1.a
 libdata/pkgconfig/flatzebra-0.1.pc
 include/flatzebra/Couple.h
+include/flatzebra/Joystick.h
 include/flatzebra/RCouple.h
 include/flatzebra/GameEngine.h
 include/flatzebra/PixmapArray.h
