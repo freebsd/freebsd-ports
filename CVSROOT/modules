@@ -14239,6 +14239,7 @@ p5-VCS                          ports/devel/p5-VCS
 p5-VCS-CVS                      ports/devel/p5-VCS-CVS
 p5-VCS-Lite                     ports/devel/p5-VCS-Lite
 p5-Validate-Net                 ports/net/p5-Validate-Net
+p5-Validator-Custom             ports/textproc/p5-Validator-Custom
 p5-Variable-Magic               ports/devel/p5-Variable-Magic
 p5-Verilog-Perl                 ports/cad/p5-Verilog-Perl
 p5-Version-Requirements         ports/devel/p5-Version-Requirements
@@ -18185,6 +18186,7 @@ p5-user-identity                ports/devel/p5-User-Identity
 p5-uuid-tiny                    ports/devel/p5-UUID-Tiny
 p5-v6                           ports/lang/p5-v6
 p5-validate-net                 ports/net/p5-Validate-Net
+p5-validator-custom             ports/textproc/p5-Validator-Custom
 p5-variable-magic               ports/devel/p5-Variable-Magic
 p5-vcg                          ports/graphics/p5-VCG
 p5-vcp-autrijus                 ports/devel/p5-VCP-autrijus
