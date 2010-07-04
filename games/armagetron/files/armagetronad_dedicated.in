@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: armagetronad_dedicated
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# armagetronad_dedicated_enable (bool):   Set to NO by default.
+#               Set it to YES to enable armagetron server.
+# armagetronad_dedicated_flags (str):   Set to "-d" by default.
+#								Extra flags passed to start command
+#
+
+. /etc/rc.subr
+
+name="armagetronad_dedicated"
+rcvar=${name}_enable
+
+command=%%PREFIX%%/bin/${name}
+pidfile=/var/run/${name}.pid
+
+load_rc_config $name
+
+: ${armagetronad_dedicated_enable="NO"}
+: ${armagetronad_dedicated_flags="-d"}
+
+command="%%PREFIX%%/bin/armagetronad-dedicated"
+command_args="${armagetronad_dedicated_flags} &"
+
+run_rc_command "$1"

@@ -1,120 +1,124 @@
-bin/armagetronad
-etc/games/armagetronad/aiplayers.cfg
-etc/games/armagetronad/default.cfg
-etc/games/armagetronad/examples/breakfast_in_hell.cfg
-etc/games/armagetronad/examples/cvs_test/fortress_complete.cfg
-etc/games/armagetronad/examples/cvs_test/fortress_physics.cfg
-etc/games/armagetronad/examples/cvs_test/fortress_politics.cfg
-etc/games/armagetronad/examples/cvs_test/fortress_scoring.cfg
-etc/games/armagetronad/examples/cvs_test/sumo_complete.cfg
-etc/games/armagetronad/examples/death_zone.cfg
-etc/games/armagetronad/examples/fortress_soccer.cfg
-etc/games/armagetronad/examples/single_use_turbo.cfg
-etc/games/armagetronad/master.srv
-etc/games/armagetronad/rc.config
-etc/games/armagetronad/settings.cfg
-etc/games/armagetronad/settings_dedicated.cfg
-etc/games/armagetronad/settings_visual.cfg
-share/doc/games/armagetronad/html/bugs.html
-share/doc/games/armagetronad/html/changelog.html
-share/doc/games/armagetronad/html/commands.html
-share/doc/games/armagetronad/html/compile.html
-share/doc/games/armagetronad/html/config.html
-share/doc/games/armagetronad/html/faq.html
-share/doc/games/armagetronad/html/index.html
-share/doc/games/armagetronad/html/install_linux.html
-share/doc/games/armagetronad/html/install_macosx.html
-share/doc/games/armagetronad/html/install_result.html
-share/doc/games/armagetronad/html/install_windows.html
-share/doc/games/armagetronad/html/net/index.html
-share/doc/games/armagetronad/html/net/lower.html
-share/doc/games/armagetronad/html/net/middle.html
-share/doc/games/armagetronad/html/net/upper.html
-share/doc/games/armagetronad/html/network.html
-share/doc/games/armagetronad/html/readme_macosx.html
-share/doc/games/armagetronad/html/todo.html
-share/doc/games/armagetronad/html/versions.html
-share/games/armagetronad/desktop/armagetronad.desktop
-share/games/armagetronad/desktop/icons/large/armagetronad.png
-share/games/armagetronad/desktop/icons/medium/armagetronad.png
-share/games/armagetronad/desktop/icons/small/armagetronad.png
-share/games/armagetronad/language/american.txt
-share/games/armagetronad/language/british.txt
-share/games/armagetronad/language/deutsch.txt
-share/games/armagetronad/language/english_base.txt
-share/games/armagetronad/language/english_base_notranslate.txt
-share/games/armagetronad/language/french.txt
-share/games/armagetronad/language/languages.txt
-share/games/armagetronad/language/languages.txt.in
-share/games/armagetronad/language/spanish.txt
-share/games/armagetronad/language/update.py
-share/games/armagetronad/models/cycle_body.mod
-share/games/armagetronad/models/cycle_front.mod
-share/games/armagetronad/models/cycle_rear.mod
-share/games/armagetronad/resource/included/AATeam/map-0.2.8.0.dtd
-share/games/armagetronad/resource/included/AATeam/map-0.2.8.0_rc4.dtd
-share/games/armagetronad/resource/included/Anonymous/README
-share/games/armagetronad/resource/included/Anonymous/polygon/README
-share/games/armagetronad/resource/included/Anonymous/polygon/regular/40-gon-0.2.aamap.xml
-share/games/armagetronad/resource/included/Anonymous/polygon/regular/README
-share/games/armagetronad/resource/included/Anonymous/polygon/regular/diamond-1.0.2.aamap.xml
-share/games/armagetronad/resource/included/Anonymous/polygon/regular/square-1.0.1.aamap.xml
-share/games/armagetronad/resource/included/Your_mom/clever/inaktek-0.7.2.aamap.xml
-share/games/armagetronad/resource/included/Your_mom/clever/repeat-0.3.2.aamap.xml
-share/games/armagetronad/resource/included/Z-Man/fortress/for_old_clients-0.1.0.aamap.xml
-share/games/armagetronad/resource/included/Z-Man/fortress/fourfold_for_old_clients-0.1.0.aamap.xml
-share/games/armagetronad/resource/included/Z-Man/fortress/sumo_4x4-0.1.1.aamap.xml
-share/games/armagetronad/resource/included/Z-Man/fortress/sumo_8x2-0.1.0.aamap.xml
-share/games/armagetronad/resource/included/Z-Man/fortress/zonetest-0.1.0.aamap.xml
-share/games/armagetronad/resource/included/map-0.1-exp.dtd
-share/games/armagetronad/resource/included/map-0.1.dtd
-share/games/armagetronad/resource/included/map-0.2.8_beta3.dtd
-share/games/armagetronad/scripts/relocate
-share/games/armagetronad/scripts/sysinstall
-share/games/armagetronad/sound/cyclrun.wav
-share/games/armagetronad/sound/expl.wav
-share/games/armagetronad/textures/KGN_logo.png
-share/games/armagetronad/textures/cycle_body.png
-share/games/armagetronad/textures/cycle_wheel.png
-share/games/armagetronad/textures/dir_wall.png
-share/games/armagetronad/textures/floor.png
-share/games/armagetronad/textures/floor_a.png
-share/games/armagetronad/textures/floor_b.png
-share/games/armagetronad/textures/font.png
-share/games/armagetronad/textures/font_extra.png
-share/games/armagetronad/textures/font_s.png
-share/games/armagetronad/textures/icon.png
-share/games/armagetronad/textures/rim_wall.png
-share/games/armagetronad/textures/shadow.png
-share/games/armagetronad/textures/sky.png
-share/games/armagetronad/textures/title.jpg
-@dirrm share/games/armagetronad/textures
-@dirrm share/games/armagetronad/sound
-@dirrm share/games/armagetronad/scripts
-@dirrm share/games/armagetronad/resource/included/Z-Man/fortress
-@dirrm share/games/armagetronad/resource/included/Z-Man
-@dirrm share/games/armagetronad/resource/included/Your_mom/clever
-@dirrm share/games/armagetronad/resource/included/Your_mom
-@dirrm share/games/armagetronad/resource/included/Anonymous/polygon/regular
-@dirrm share/games/armagetronad/resource/included/Anonymous/polygon
-@dirrm share/games/armagetronad/resource/included/Anonymous
-@dirrm share/games/armagetronad/resource/included/AATeam
-@dirrm share/games/armagetronad/resource/included
-@dirrm share/games/armagetronad/resource
-@dirrm share/games/armagetronad/models
-@dirrm share/games/armagetronad/language
-@dirrm share/games/armagetronad/desktop/icons/small
-@dirrm share/games/armagetronad/desktop/icons/medium
-@dirrm share/games/armagetronad/desktop/icons/large
-@dirrm share/games/armagetronad/desktop/icons
-@dirrm share/games/armagetronad/desktop
-@dirrm share/games/armagetronad
-@dirrm share/games
-@dirrm share/doc/games/armagetronad/html/net
-@dirrm share/doc/games/armagetronad/html
-@dirrm share/doc/games/armagetronad
-@dirrm share/doc/games
-@dirrm etc/games/armagetronad/examples/cvs_test
-@dirrm etc/games/armagetronad/examples
-@dirrm etc/games/armagetronad
+bin/armagetronad%%SUFFIX%%
+etc/games/armagetronad%%SUFFIX%%/aiplayers.cfg
+etc/games/armagetronad%%SUFFIX%%/default.cfg
+etc/games/armagetronad%%SUFFIX%%/examples/breakfast_in_hell.cfg
+etc/games/armagetronad%%SUFFIX%%/examples/cvs_test/fortress_complete.cfg
+etc/games/armagetronad%%SUFFIX%%/examples/cvs_test/fortress_physics.cfg
+etc/games/armagetronad%%SUFFIX%%/examples/cvs_test/fortress_politics.cfg
+etc/games/armagetronad%%SUFFIX%%/examples/cvs_test/fortress_scoring.cfg
+etc/games/armagetronad%%SUFFIX%%/examples/cvs_test/sumo_complete.cfg
+etc/games/armagetronad%%SUFFIX%%/examples/death_zone.cfg
+etc/games/armagetronad%%SUFFIX%%/examples/fortress_soccer.cfg
+etc/games/armagetronad%%SUFFIX%%/examples/single_use_turbo.cfg
+etc/games/armagetronad%%SUFFIX%%/master.srv
+etc/games/armagetronad%%SUFFIX%%/rc.config
+etc/games/armagetronad%%SUFFIX%%/settings.cfg
+etc/games/armagetronad%%SUFFIX%%/settings_dedicated.cfg
+etc/games/armagetronad%%SUFFIX%%/settings_visual.cfg
+share/doc/games/armagetronad%%SUFFIX%%/html/bugs.html
+share/doc/games/armagetronad%%SUFFIX%%/html/changelog.html
+share/doc/games/armagetronad%%SUFFIX%%/html/commands.html
+share/doc/games/armagetronad%%SUFFIX%%/html/compile.html
+share/doc/games/armagetronad%%SUFFIX%%/html/config.html
+share/doc/games/armagetronad%%SUFFIX%%/html/faq.html
+share/doc/games/armagetronad%%SUFFIX%%/html/index.html
+share/doc/games/armagetronad%%SUFFIX%%/html/install_linux.html
+share/doc/games/armagetronad%%SUFFIX%%/html/install_macosx.html
+share/doc/games/armagetronad%%SUFFIX%%/html/install_result.html
+share/doc/games/armagetronad%%SUFFIX%%/html/install_windows.html
+share/doc/games/armagetronad%%SUFFIX%%/html/net/index.html
+share/doc/games/armagetronad%%SUFFIX%%/html/net/lower.html
+share/doc/games/armagetronad%%SUFFIX%%/html/net/middle.html
+share/doc/games/armagetronad%%SUFFIX%%/html/net/upper.html
+share/doc/games/armagetronad%%SUFFIX%%/html/network.html
+share/doc/games/armagetronad%%SUFFIX%%/html/readme_macosx.html
+share/doc/games/armagetronad%%SUFFIX%%/html/todo.html
+share/doc/games/armagetronad%%SUFFIX%%/html/versions.html
+share/games/armagetronad%%SUFFIX%%/desktop/armagetronad.desktop
+share/games/armagetronad%%SUFFIX%%/desktop/icons/large/armagetronad.png
+share/games/armagetronad%%SUFFIX%%/desktop/icons/medium/armagetronad.png
+share/games/armagetronad%%SUFFIX%%/desktop/icons/small/armagetronad.png
+share/games/armagetronad%%SUFFIX%%/language/american.txt
+share/games/armagetronad%%SUFFIX%%/language/british.txt
+share/games/armagetronad%%SUFFIX%%/language/deutsch.txt
+share/games/armagetronad%%SUFFIX%%/language/english_base.txt
+share/games/armagetronad%%SUFFIX%%/language/english_base_notranslate.txt
+share/games/armagetronad%%SUFFIX%%/language/french.txt
+share/games/armagetronad%%SUFFIX%%/language/languages.txt
+share/games/armagetronad%%SUFFIX%%/language/languages.txt.in
+share/games/armagetronad%%SUFFIX%%/language/spanish.txt
+share/games/armagetronad%%SUFFIX%%/language/update.py
+%%CLIENT%%share/games/armagetronad/models/cycle_body.mod
+%%CLIENT%%share/games/armagetronad/models/cycle_front.mod
+%%CLIENT%%share/games/armagetronad/models/cycle_rear.mod
+share/games/armagetronad%%SUFFIX%%/resource/included/AATeam/map-0.2.8.0.dtd
+share/games/armagetronad%%SUFFIX%%/resource/included/AATeam/map-0.2.8.0_rc4.dtd
+share/games/armagetronad%%SUFFIX%%/resource/included/Anonymous/README
+share/games/armagetronad%%SUFFIX%%/resource/included/Anonymous/polygon/README
+share/games/armagetronad%%SUFFIX%%/resource/included/Anonymous/polygon/regular/40-gon-0.2.aamap.xml
+share/games/armagetronad%%SUFFIX%%/resource/included/Anonymous/polygon/regular/README
+share/games/armagetronad%%SUFFIX%%/resource/included/Anonymous/polygon/regular/diamond-1.0.2.aamap.xml
+share/games/armagetronad%%SUFFIX%%/resource/included/Anonymous/polygon/regular/square-1.0.1.aamap.xml
+share/games/armagetronad%%SUFFIX%%/resource/included/Your_mom/clever/inaktek-0.7.2.aamap.xml
+share/games/armagetronad%%SUFFIX%%/resource/included/Your_mom/clever/repeat-0.3.2.aamap.xml
+share/games/armagetronad%%SUFFIX%%/resource/included/Z-Man/fortress/for_old_clients-0.1.0.aamap.xml
+share/games/armagetronad%%SUFFIX%%/resource/included/Z-Man/fortress/fourfold_for_old_clients-0.1.0.aamap.xml
+share/games/armagetronad%%SUFFIX%%/resource/included/Z-Man/fortress/sumo_4x4-0.1.1.aamap.xml
+share/games/armagetronad%%SUFFIX%%/resource/included/Z-Man/fortress/sumo_8x2-0.1.0.aamap.xml
+share/games/armagetronad%%SUFFIX%%/resource/included/Z-Man/fortress/zonetest-0.1.0.aamap.xml
+share/games/armagetronad%%SUFFIX%%/resource/included/map-0.1-exp.dtd
+share/games/armagetronad%%SUFFIX%%/resource/included/map-0.1.dtd
+share/games/armagetronad%%SUFFIX%%/resource/included/map-0.2.8_beta3.dtd
+%%SERVER%%share/games/armagetronad%%SUFFIX%%/scripts/rcd_config
+%%SERVER%%share/games/armagetronad%%SUFFIX%%/scripts/rcd_server
+%%SERVER%%share/games/armagetronad%%SUFFIX%%/scripts/rcd_startstop
+share/games/armagetronad%%SUFFIX%%/scripts/relocate
+%%SERVER%%share/games/armagetronad%%SUFFIX%%/scripts/serverstarter
+share/games/armagetronad%%SUFFIX%%/scripts/sysinstall
+%%CLIENT%%share/games/armagetronad/sound/cyclrun.wav
+%%CLIENT%%share/games/armagetronad/sound/expl.wav
+%%CLIENT%%share/games/armagetronad/textures/KGN_logo.png
+%%CLIENT%%share/games/armagetronad/textures/cycle_body.png
+%%CLIENT%%share/games/armagetronad/textures/cycle_wheel.png
+%%CLIENT%%share/games/armagetronad/textures/dir_wall.png
+%%CLIENT%%share/games/armagetronad/textures/floor.png
+%%CLIENT%%share/games/armagetronad/textures/floor_a.png
+%%CLIENT%%share/games/armagetronad/textures/floor_b.png
+%%CLIENT%%share/games/armagetronad/textures/font.png
+%%CLIENT%%share/games/armagetronad/textures/font_extra.png
+%%CLIENT%%share/games/armagetronad/textures/font_s.png
+%%CLIENT%%share/games/armagetronad/textures/icon.png
+%%CLIENT%%share/games/armagetronad/textures/rim_wall.png
+%%CLIENT%%share/games/armagetronad/textures/shadow.png
+%%CLIENT%%share/games/armagetronad/textures/sky.png
+%%CLIENT%%share/games/armagetronad/textures/title.jpg
+%%CLIENT%%@dirrm share/games/armagetronad/textures
+%%CLIENT%%@dirrm share/games/armagetronad/sound
+@dirrm share/games/armagetronad%%SUFFIX%%/scripts
+@dirrm share/games/armagetronad%%SUFFIX%%/resource/included/Z-Man/fortress
+@dirrm share/games/armagetronad%%SUFFIX%%/resource/included/Z-Man
+@dirrm share/games/armagetronad%%SUFFIX%%/resource/included/Your_mom/clever
+@dirrm share/games/armagetronad%%SUFFIX%%/resource/included/Your_mom
+@dirrm share/games/armagetronad%%SUFFIX%%/resource/included/Anonymous/polygon/regular
+@dirrm share/games/armagetronad%%SUFFIX%%/resource/included/Anonymous/polygon
+@dirrm share/games/armagetronad%%SUFFIX%%/resource/included/Anonymous
+@dirrm share/games/armagetronad%%SUFFIX%%/resource/included/AATeam
+@dirrm share/games/armagetronad%%SUFFIX%%/resource/included
+@dirrm share/games/armagetronad%%SUFFIX%%/resource
+%%CLIENT%%@dirrm share/games/armagetronad/models
+@dirrm share/games/armagetronad%%SUFFIX%%/language
+@dirrm share/games/armagetronad%%SUFFIX%%/desktop/icons/small
+@dirrm share/games/armagetronad%%SUFFIX%%/desktop/icons/medium
+@dirrm share/games/armagetronad%%SUFFIX%%/desktop/icons/large
+@dirrm share/games/armagetronad%%SUFFIX%%/desktop/icons
+@dirrm share/games/armagetronad%%SUFFIX%%/desktop
+@dirrm share/games/armagetronad%%SUFFIX%%
+@dirrmtry share/games
+@dirrm share/doc/games/armagetronad%%SUFFIX%%/html/net
+@dirrm share/doc/games/armagetronad%%SUFFIX%%/html
+@dirrm share/doc/games/armagetronad%%SUFFIX%%
+@dirrmtry share/doc/games
+@dirrm etc/games/armagetronad%%SUFFIX%%/examples/cvs_test
+@dirrm etc/games/armagetronad%%SUFFIX%%/examples
+@dirrm etc/games/armagetronad%%SUFFIX%%
 @dirrmtry etc/games
