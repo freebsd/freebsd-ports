@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tbb
-PORTVERSION=	2.2
+PORTVERSION=	3.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.threadingbuildingblocks.org/uploads/78/140/2.2/
-DISTNAME=	tbb22_004oss_src
+MASTER_SITES=	http://www.threadingbuildingblocks.org/uploads/78/154/3.0/
+DISTNAME=	tbb30_018oss_src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ganael.laplanche@martymac.com
@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	default
 
-WRKSRC=	${WRKDIR}/tbb22_004oss
+WRKSRC=	${WRKDIR}/tbb30_018oss
 
 post-extract:
 	@${CP} ${FILESDIR}/version_info_FreeBSD.sh ${WRKSRC}/build/
@@ -32,9 +32,11 @@ post-patch:
 do-install:
 	cd ${WRKSRC}; \
 	${INSTALL_DATA} build/FreeBSD*release/libtbb.so \
-		${PREFIX}/lib/libtbb.so; \
+		${PREFIX}/lib/libtbb.so.3; \
+	${LN} -fs ${PREFIX}/lib/libtbb.so.3 ${PREFIX}/lib/libtbb.so; \
 	${INSTALL_DATA} build/FreeBSD*release/libtbbmalloc.so \
-		${PREFIX}/lib/libtbbmalloc.so; \
+		${PREFIX}/lib/libtbbmalloc.so.3; \
+	${LN} -fs ${PREFIX}/lib/libtbbmalloc.so.3 ${PREFIX}/lib/libtbbmalloc.so; \
 	${MKDIR} ${PREFIX}/include/tbb/; \
 	cd include/tbb/ && ${COPYTREE_SHARE} \* ${PREFIX}/include/tbb/
 
