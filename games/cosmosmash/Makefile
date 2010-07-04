@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cosmosmash
-DISTVERSION=	1.4.3
-PORTREVISION=	3
+DISTVERSION=	1.4.5
 CATEGORIES=	games
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
@@ -30,11 +29,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${SDL_CONFIG} --cflags`" \
 MAN6=	cosmosmash.6
 
 post-patch:
-	@${REINPLACE_CMD} 's|^pkgsounddir = .*|pkgsounddir = ${DATADIR}/sounds|' ${WRKSRC}/src/Makefile.in
-.if !defined(NOPORTDOCS)
-	@${REINPLACE_CMD} 's|^docdir = .*|docdir = ${DOCSDIR}|' ${WRKSRC}/Makefile.in
-.else
-	@${REINPLACE_CMD} 's|^install-data-am: .*|install-data-am: install-man|'	${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} 's|^pkgsounddir = .*|pkgsounddir = ${DATADIR}/sounds|' \
+		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} 's|^docdir = .*|docdir = ${DOCSDIR}|' \
+		${WRKSRC}/Makefile.in
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} 's|^install-data-am: .*|install-data-am: install-man|' \
+		${WRKSRC}/Makefile.in
 .endif
 
 post-install:
