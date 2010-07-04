@@ -12,7 +12,7 @@ PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://cvs.nvu.com/download/ CSME
 
-MAINTAINER=	ilya@space.rootshell.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete Web Authoring System
 
 USE_BZIP2=	yes

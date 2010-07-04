@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.iluxa.kremenchug.net/files/
 
-MAINTAINER=	ilya@space.rootshell.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flux-art themes pack for fluxbox
 
 RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox
