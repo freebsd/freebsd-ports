@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	afternoonstalker
-PORTVERSION=	1.1.2
-PORTREVISION=	3
+PORTVERSION=	1.1.4
 CATEGORIES=	games
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 

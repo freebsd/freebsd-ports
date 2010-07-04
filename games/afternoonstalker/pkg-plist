@@ -1,8 +1,9 @@
 bin/afternoonstalker
 share/applications/afternoonstalker.desktop
 share/pixmaps/afternoonstalker.png
-%%DATADIR%%/level1.set
-%%DATADIR%%/level2.set
+%%DATADIR%%/maze0.set
+%%DATADIR%%/maze1.set
+%%DATADIR%%/maze2.set
 %%DATADIR%%/sounds/bat-killed.wav
 %%DATADIR%%/sounds/gun-pickup.wav
 %%DATADIR%%/sounds/new-life.wav
