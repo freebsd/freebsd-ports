@@ -36,7 +36,7 @@ DESKTOP_ENTRIES="LuxRender" "${COMMENT}" "luxrender" "luxrender" \
 
 .if ${OSVERSION} < 700000
 BROKEN=		does not configure on 6.X
-.elif ${ARCH} == i386
+.elif ${ARCH} == "i386" || ${ARCH} == "sparc64"
 BROKEN=		does not build
 .endif
 
