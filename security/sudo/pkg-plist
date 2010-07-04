@@ -2,9 +2,9 @@
 @unexec if cmp -s %D/etc/pam.d/sudo %D/etc/pam.d/sudo.default; then rm -f %D/etc/pam.d/sudo; fi
 bin/sudo
 bin/sudoedit
+bin/sudoreplay
 etc/pam.d/sudo.default
 etc/sudoers.default
-libexec/sudo_noexec.so
 sbin/visudo
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
