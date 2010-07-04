@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/PostgreSQL/PLPerl/Trace.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PostgreSQL/PLPerl/Trace/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PostgreSQL/PLPerl/Trace
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PostgreSQL/PLPerl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PostgreSQL
+@dirrmtry %%SITE_PERL%%/PostgreSQL/PLPerl
+@dirrmtry %%SITE_PERL%%/PostgreSQL

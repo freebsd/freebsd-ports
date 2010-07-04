@@ -399,6 +399,7 @@
     SUBDIR += p5-POE-Component-RRDTool
     SUBDIR += p5-Pg
     SUBDIR += p5-PostgreSQL-PLPerl-Call
+    SUBDIR += p5-PostgreSQL-PLPerl-Trace
     SUBDIR += p5-RRD-Simple
     SUBDIR += p5-Redis
     SUBDIR += p5-Relations
