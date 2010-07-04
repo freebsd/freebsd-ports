@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sudo
-PORTVERSION=	1.7.2.7
+PORTVERSION=	1.7.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://obsd.isc.org/pub/sudo/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://boulder.tele.dk/pub/sudo/ \
 		ftp://core.ring.gr.jp/pub/misc/sudo/ \
 		ftp://ftp.wiretapped.net/pub/security/host-security/sudo/
-DISTNAME=	${PORTNAME}-1.7.2p7
+DISTNAME=	${PORTNAME}-1.7.3
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Allow others to run commands as root
@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=--enable-noargs-shell
 .endif
 
 MAN5+=		sudoers.5
-MAN8=		sudo.8 visudo.8
+MAN8=		sudo.8 visudo.8 sudoreplay.8
 MLINKS=		sudo.8 sudoedit.8
 
 post-install:
