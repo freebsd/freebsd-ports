@@ -6,15 +6,15 @@ bin/git-receive-pack
 bin/git-upload-archive
 %%CVS%%bin/git-cvsserver
 bin/git-shell
-%%PYTHON_SITELIBDIR%%/git_remote_helpers/__init__.pyc
-%%PYTHON_SITELIBDIR%%/git_remote_helpers/__init__.py
-%%PYTHON_SITELIBDIR%%/git_remote_helpers/util.pyc
-%%PYTHON_SITELIBDIR%%/git_remote_helpers/util.py
-%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/git.pyc
-%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/git.py
-%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/__init__.py
-%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/__init__.pyc
-%%PYTHON_SITELIBDIR%%/git_remote_helpers-0.1.0-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/__init__.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/util.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/util.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/git.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/git.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/__init__.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers-0.1.0-py%%PYTHON_VER%%.egg-info
 libexec/git-core/git
 libexec/git-core/git-add
 libexec/git-core/git-add--interactive
@@ -759,6 +759,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.0.5.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.0.6.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.1.1.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/INSTALL
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/README
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-favicon.png
@@ -882,5 +883,5 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%@dirrm share/git-core/contrib/workdir
 %%CONTRIB%%@dirrm share/git-core/contrib
 @dirrm share/git-core
-@dirrm %%PYTHON_SITELIBDIR%%/git_remote_helpers/git
-@dirrm %%PYTHON_SITELIBDIR%%/git_remote_helpers
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/git_remote_helpers/git
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/git_remote_helpers

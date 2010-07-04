@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.1.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	software/scm/${PORTNAME}
@@ -167,15 +167,12 @@ MAN7=		gitcli.7 \
 		gitworkflows.7
 
 SUB_FILES=	pkg-message
-PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_PYTHON=	yes
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-python=${LOCALBASE}/bin/python
 MAKE_ENV+=	LIBMD_SHA1=yes \
 		V=1
 MAKE_ARGS+=	prefix="${PREFIX}"
@@ -197,6 +194,19 @@ OPTIONS=	GUI "Enable building of GUI tools" off \
 		CURL "Support HTTP push and pull" on
 
 .include <bsd.port.options.mk>
+
+.ifndef (WITH_DEBUG)
+ALL_TARGET=	all strip
+.endif
+
+.ifdef (WITH_P4) || defined (WITH_CONTRIB)
+USE_PYTHON=	yes
+PLIST_SUB=	PYTHON_VER=${PYTHON_VER} PYTHON=""
+CONFIGURE_ARGS+=	--with-python=${LOCALBASE}/bin/python
+.else
+CONFIGURE_ARGS+=	--without-python
+PLIST_SUB+=	PYTHON="@comment "
+.endif
 
 .ifdef (WITH_PERL)
 USE_PERL5=	yes
@@ -244,13 +254,13 @@ MAN1+=		git-citool.1 \
 		git-gui.1 \
 		gitk.1
 PLIST_SUB+=	GUI=""
-MAKE_ENV+=	TCL_PATH=${TCLSH} TCLTK_PATH=${WISH}
+MAKE_ARGS+=	TCL_PATH=${TCLSH} TCLTK_PATH=${WISH}
 .else
 RMMAN1+=	git-citool.1 \
 		git-gui.1 \
 		gitk.1
 PLIST_SUB+=	GUI="@comment "
-MAKE_ENV+=	NO_TCLTK=yes
+MAKE_ARGS+=	NO_TCLTK=yes
 .endif
 
 .ifdef (WITH_SVN)
