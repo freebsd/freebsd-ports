@@ -1,4 +1,5 @@
 bin/burgerspace
+bin/burgerspace-server
 share/applications/burgerspace.desktop
 share/pixmaps/burgerspace.png
 %%DATADIR%%/sounds/chef-gets-treat.wav
