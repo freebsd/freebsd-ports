@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	burgerspace
-PORTVERSION=	1.8.3
-PORTREVISION=	3
+PORTVERSION=	1.9.0
 CATEGORIES=	games
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
@@ -22,7 +21,7 @@ CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN6=		burgerspace.6
+MAN6=		burgerspace.6 burgerspace-server.6
 PORTDOCS=	AUTHORS COPYING INSTALL NEWS README THANKS TODO
 
 post-patch:
