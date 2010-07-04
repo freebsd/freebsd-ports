@@ -1,35 +1,34 @@
-share/doc/ibus-qt/AUTHORS
-share/doc/ibus-qt/README
-share/doc/ibus-qt/INSTALL
-lib/libibus-qt.so.1.2.0
-lib/libibus-qt.so.1
-lib/libibus-qt.so
-include/ibus-qt/qibusobject.h
-include/ibus-qt/qibusserializable.h
 include/ibus-qt/qibusattribute.h
 include/ibus-qt/qibusattrlist.h
-include/ibus-qt/qibusproperty.h
-include/ibus-qt/qibusproplist.h
-include/ibus-qt/qibustext.h
-include/ibus-qt/qibuslookuptable.h
-include/ibus-qt/qibusenginedesc.h
-include/ibus-qt/qibuscomponent.h
-include/ibus-qt/qibusibusproxy.h
-include/ibus-qt/qibusdbusproxy.h
-include/ibus-qt/qibusinputcontextproxy.h
 include/ibus-qt/qibusbus.h
-include/ibus-qt/qibusinputcontext.h
-include/ibus-qt/qibusobservedpath.h
-include/ibus-qt/qibusengineadaptor.h
-include/ibus-qt/qibusengine.h
-include/ibus-qt/qibusservice.h
-include/ibus-qt/qibusfactoryadaptor.h
-include/ibus-qt/qibusenginefactory.h
+include/ibus-qt/qibuscomponent.h
+include/ibus-qt/qibusconfig.h
 include/ibus-qt/qibusconfigadaptor.h
 include/ibus-qt/qibusconfigproxy.h
 include/ibus-qt/qibusconfigservice.h
-include/ibus-qt/qibusconfig.h
+include/ibus-qt/qibusdbusproxy.h
+include/ibus-qt/qibusengine.h
+include/ibus-qt/qibusengineadaptor.h
+include/ibus-qt/qibusenginedesc.h
+include/ibus-qt/qibusenginefactory.h
+include/ibus-qt/qibusfactoryadaptor.h
+include/ibus-qt/qibusibusproxy.h
+include/ibus-qt/qibusinputcontext.h
+include/ibus-qt/qibusinputcontextproxy.h
+include/ibus-qt/qibuslookuptable.h
+include/ibus-qt/qibusobject.h
+include/ibus-qt/qibusobservedpath.h
+include/ibus-qt/qibusproperty.h
+include/ibus-qt/qibusproplist.h
+include/ibus-qt/qibusserializable.h
+include/ibus-qt/qibustext.h
+lib/libibus-qt.so
+lib/libibus-qt.so.1
+lib/libibus-qt.so.1.3.0
 lib/qt4/plugins/inputmethods/libqtim-ibus.so
-@dirrm include/ibus-qt
-@dirrm share/doc/ibus-qt
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/README
+@dirrm %%DOCSDIR%%
 @dirrmtry lib/qt4/plugins/inputmethods
+@dirrm include/ibus-qt
