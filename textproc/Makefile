@@ -252,6 +252,7 @@
     SUBDIR += hyperestraier
     SUBDIR += ia-aspell
     SUBDIR += ibus
+    SUBDIR += ibus-el
     SUBDIR += ibus-kmfl
     SUBDIR += ibus-m17n
     SUBDIR += ibus-qt
