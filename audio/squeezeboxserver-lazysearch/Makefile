@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lazysearch
-PORTVERSION=	3.5.3
-PORTREVISION=	1
+PORTVERSION=	3.5.6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.hickinbottom.com/sc-plugins/
 PKGNAMEPREFIX=	squeezeboxserver-
