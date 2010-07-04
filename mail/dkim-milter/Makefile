@@ -46,7 +46,7 @@ MAN5=		dkim-filter.conf.5
 MAN8=		dkim-filter.8 dkim-genkey.8 dkim-testkey.8 dkim-testssp.8
 PLIST_FILES=	etc/mail/dkim-filter.conf.sample include/dkim.h \
 		bin/dkim-genkey %%STATS%%bin/dkim-stats bin/dkim-testkey \
-		bin/dkim-testssp %%ARLIB%%lib/libar.a %%LIBDKIM%%lib/libdkim.a \
+		bin/dkim-testssp %%LIBDKIM%%lib/libdkim.a \
 		%%LIBDKIMSHARED%%lib/libdkim.so %%LIBDKIMSHARED%%lib/libdkim.so.0 \
 		libexec/dkim-filter
 PLIST_DIRS=	etc/mail
