@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dreampie
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	devel python
-MASTER_SITES=	http://launchpadlibrarian.net/40048492/
+MASTER_SITES=	http://launchpadlibrarian.net/50723402/
 
 MAINTAINER=	jupengfei@gmail.com
 COMMENT=	DreamPie is a Python shell which is designed to be reliable and fun
