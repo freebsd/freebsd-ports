@@ -48,7 +48,10 @@ include/libmemcached/storage.h
 include/libmemcached/strerror.h
 include/libmemcached/string.h
 include/libmemcached/types.h
+include/libmemcached/util.h
+include/libmemcached/util/ping.h
 include/libmemcached/util/pool.h
+include/libmemcached/util/version.h
 include/libmemcached/verbosity.h
 include/libmemcached/version.h
 include/libmemcached/visibility.h
