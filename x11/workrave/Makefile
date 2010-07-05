@@ -7,7 +7,7 @@
 
 PORTNAME=	workrave
 PORTVERSION=	1.9.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	SF
 
@@ -37,6 +37,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-
 CONFIGURE_ARGS=	--enable-gconf
 
 .include <bsd.port.pre.mk>
+LIB_DEPENDS+=	gdome.8:${PORTSDIR}/textproc/gdome2
 
 .if defined(WITH_GNOME)
 LIB_DEPENDS+=	gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26
