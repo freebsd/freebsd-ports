@@ -1,0 +1,41 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/cpuinfo.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/necompiler.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/version.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/expressions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/__config__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/interpreter.so
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/cpuinfo.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/necompiler.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/version.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/expressions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/__config__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/cpuinfo.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/necompiler.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/version.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/expressions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/__config__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/interpreter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/interpreter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/interpreter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/tests/test_numexpr.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/tests/test_numexpr.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/tests/test_numexpr.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/native_libs.txt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/numexpr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
