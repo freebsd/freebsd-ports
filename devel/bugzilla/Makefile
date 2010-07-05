@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugzilla
-PORTVERSION=	3.6
+PORTVERSION=	3.6.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -163,8 +163,12 @@ RUN_DEPENDS+=	p5-Authen-Radius>=0:${PORTSDIR}/security/p5-Authen-Radius
 .endif
 
 post-patch:
-	@${PERL} -pi -e "s!(?<=webservergroup_default = ')apache!www!" \
-		${WRKSRC}/checksetup.pl
+	@${PERL} -pi -e 's/(default => ON_WINDOWS.+)apache/$$1www/' \
+		${WRKSRC}/Bugzilla/Install/Localconfig.pm
+.if defined(WITH_PGSQL) && !defined(WITH_MYSQL)
+	@${PERL} -pi -e 's/(default =>.+|Default is )mysql/$$1Pg/' \
+		${WRKSRC}/Bugzilla/Install/Localconfig.pm
+.endif
 	@${FIND} ${WRKSRC} \( -name "CVS" -or -name ".cvsignore" -or -name "*.orig" \
 		-or -name ".bzr*" -or -name "README.docs" \) | ${XARGS} ${RM} -rf
 	${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -i '' \
