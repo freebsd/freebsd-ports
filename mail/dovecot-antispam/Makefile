@@ -7,7 +7,7 @@
 
 PORTNAME=	dovecot-antispam
 PORTVERSION=	1.2
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://johannes.sipsolutions.net/download/dovecot-antispam/ \
