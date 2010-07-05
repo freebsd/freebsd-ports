@@ -18,7 +18,6 @@ MAINTAINER?=	bsam@FreeBSD.org
 COMMENT=	Full featured Python and Ruby editor and IDE based on Qt4
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE.GPL3
 
 RUN_DEPENDS?=	${PREFIX}/bin/eric4:${PORTSDIR}/devel/eric4
 
