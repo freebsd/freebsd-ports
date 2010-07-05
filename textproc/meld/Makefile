@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	meld
-PORTVERSION=	1.3.1
-PORTREVISION=	3
+PORTVERSION=	1.3.2
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c0rn@o2.pl
 COMMENT=	GNOME 2 visual diff and merge tool
 
 OPTIONS=	PYGNOMEDESKTOP "Code syntax hilighting (many dependencies)" off
@@ -21,24 +20,24 @@ USE_GNOME=	pygnome2
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-MAKEFILE=	GNUmakefile
 MAKE_ARGS=	prefix=${PREFIX}
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
+LICENSE=	GPLv2
 
 post-patch:
-.for file in GNUmakefile
+.for file in Makefile
 	@${REINPLACE_CMD} -e '/docdir_/d' ${WRKSRC}/${file}
-.endfor 
-.for file in help/GNUmakefile
+.endfor
+.for file in help/Makefile
 	@${REINPLACE_CMD} -e '/^LANGUAGES/s|de||g' ${WRKSRC}/${file}
-.endfor 
-.for file in help/C/GNUmakefile help/es/GNUmakefile help/fr/GNUmakefile
+.endfor
+.for file in help/C/Makefile help/es/Makefile help/fr/Makefile
 	@${REINPLACE_CMD} -e \
 		's|$$(localstatedir)/lib/scrollkeeper|/var/db/scrollkeeper|g ; \
 		 s|^LANG :=|LANG_ :=|g ; \
 		 s|$$(LANG)|$$(LANG_)|g' ${WRKSRC}/${file}
-.endfor 
+.endfor
 
 .include <bsd.port.pre.mk>
 
