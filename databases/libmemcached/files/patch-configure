@@ -1,28 +1,27 @@
---- configure.orig	2010-01-12 08:22:27.000000000 +0800
-+++ configure	2010-01-19 12:20:44.000000000 +0800
-@@ -22431,7 +22431,7 @@ $as_echo "$ac_cv_safe_to_use_Wno_attribu
+--- configure.orig	2010-07-02 21:24:43.000000000 +0800
++++ configure	2010-07-02 21:26:17.000000000 +0800
+@@ -17987,7 +17987,7 @@ $as_echo "$ac_cv_safe_to_use_Wno_attribu
  
-         if test "$ac_cv_safe_to_use_Wno_attributes_" = "yes"; then
+         if test "$ac_cv_safe_to_use_Wno_attributes_" = "yes"; then :
  
 -          CC_WARNINGS="${CC_WARNINGS} -Wno-attributes"
 +          CC_WARNINGS="${CC_WARNINGS}"
            NO_ATTRIBUTES="-Wno-attributes"
  fi
- 
-@@ -24391,10 +24391,10 @@ fi
- { $as_echo "$as_me:$LINENO: result: $ac_cv_libevent" >&5
+ fi
+@@ -20246,9 +20246,9 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_libevent" >&5
  $as_echo "$ac_cv_libevent" >&6; }
    if test "$ac_cv_libevent" = yes; then
 -    HAVE_LIBEVENT=yes
 +    HAVE_LIBEVENT=no
  
- cat >>confdefs.h <<\_ACEOF
--#define HAVE_LIBEVENT 1
-+#define HAVE_LIBEVENT 0
- _ACEOF
+-$as_echo "#define HAVE_LIBEVENT 1" >>confdefs.h
++$as_echo "#define HAVE_LIBEVENT 0" >>confdefs.h
  
-     { $as_echo "$as_me:$LINENO: checking how to link with libevent" >&5
-@@ -24417,8 +24417,8 @@ $as_echo "$LIBEVENT" >&6; }
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking how to link with libevent" >&5
+ $as_echo_n "checking how to link with libevent... " >&6; }
+@@ -20270,8 +20270,8 @@ $as_echo "$LIBEVENT" >&6; }
  
  
     if test "x${ac_cv_libevent}" = "xyes"; then
