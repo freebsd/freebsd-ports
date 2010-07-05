@@ -19,7 +19,8 @@ BUILD_DEPENDS=	${BASH_CMD}:${PORTSDIR}/shells/bash \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${XSL_DIR}:${PORTSDIR}/textproc/docbook-xsl \
 		paperconf:${PORTSDIR}/print/libpaper \
-		w3m:${PORTSDIR}/www/w3m
+		w3m:${PORTSDIR}/www/w3m \
+		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes
