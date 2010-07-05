@@ -7,6 +7,7 @@
 
 PORTNAME=	php_doc
 PORTVERSION?=	20100701
+PORTREVISION?=	1
 CATEGORIES?=	lang
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	php_manual_${PHP_LANG}-${PORTVERSION}
@@ -24,19 +25,19 @@ SLAVEDIRS=	french/php_doc \
 
 PHP_LANG?=	en
 PHP_LANGS?=	${PHP_WRKDIR} ${PHP_WRKSRC}
-PHP_WRKDIR=	bg br de en fr kr pl ro tr
-PHP_WRKSRC=	ja
+PHP_HTML_CHUNKED=	br de en fr ja pl ro tr
+PHP_HTML_NORMAL=	bg kr
 PHPDOCDIR=	${PREFIX}/share/doc/php-${PHP_LANG}
 PLIST=		${WRKDIR}/pkg-plist
 
-.for lang in ${PHP_WRKSRC}
+.for lang in ${PHP_HTML_NORMAL}
 .if ${PHP_LANG} == ${lang}
-WRK_SRC=	${WRKDIR}
+WRK_SRC=	${WRKDIR}/html/
 .endif
 .endfor
-.for lang in ${PHP_WRKDIR}
+.for lang in ${PHP_HTML_CHUNKED}
 .if ${PHP_LANG} == ${lang}
-WRK_SRC=	${WRKDIR}/html
+WRK_SRC=	${WRKDIR}/php-chunked-xhtml
 .endif
 .endfor
 
