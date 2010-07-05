@@ -453,6 +453,7 @@
     SUBDIR += py-networkx
     SUBDIR += py-numarray
     SUBDIR += py-numeric
+    SUBDIR += py-numexpr
     SUBDIR += py-numpy
     SUBDIR += py-plastex
     SUBDIR += py-probstat

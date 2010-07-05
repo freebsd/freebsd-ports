@@ -1,0 +1,16 @@
+numexpr - Fast numerical array expression evaluator for Python and NumPy. 
+
+The numexpr package evaluates multiple-operator array expressions many times
+faster than NumPy can. It accepts the expression as a string, analyzes it,
+rewrites it more efficiently, and compiles it to faster Python code on the fly.
+It's the next best thing to writing the expression in C and compiling it with
+a specialized just-in-time (JIT) compiler, i.e. it does not require a compiler
+at runtime.  
+
+Also, numexpr has support for the Intel VML (Vector Math Library) -- integrated
+in Intel MKL (Math Kernel Library) --, allowing nice speed-ups when computing
+transcendental functions (like trigonometrical, exponentials...) on top of
+Intel-compatible platforms. This support also allows to use multiple cores in
+your computations. 
+
+WWW: http://code.google.com/p/numexpr/
