@@ -5693,6 +5693,7 @@ ib-kmod                         ports/comms/ib-kmod
 ibp                             ports/comms/ibp
 ibsh                            ports/shells/ibsh
 ibus                            ports/textproc/ibus
+ibus-el                         ports/textproc/ibus-el
 ibus-kmfl                       ports/textproc/ibus-kmfl
 ibus-m17n                       ports/textproc/ibus-m17n
 ibus-qt                         ports/textproc/ibus-qt
@@ -13480,6 +13481,8 @@ p5-Pod-Xhtml                    ports/textproc/p5-Pod-Xhtml
 p5-PodToHTML                    ports/www/p5-PodToHTML
 p5-PostScript                   ports/print/p5-PostScript
 p5-PostScript-Simple            ports/print/p5-PostScript-Simple
+p5-PostgreSQL-PLPerl-Call       ports/databases/p5-PostgreSQL-PLPerl-Call
+p5-PostgreSQL-PLPerl-Trace      ports/databases/p5-PostgreSQL-PLPerl-Trace
 p5-Prima                        ports/x11-toolkits/p5-Prima
 p5-Probe-Perl                   ports/sysutils/p5-Probe-Perl
 p5-Proc-Background              ports/devel/p5-Proc-Background
@@ -17402,6 +17405,8 @@ p5-poe-xs-queue-array           ports/devel/p5-POE-XS-Queue-Array
 p5-posix-regex                  ports/textproc/p5-POSIX-Regex
 p5-posix-strptime               ports/devel/p5-POSIX-strptime
 p5-postgresql-plperl            ports/databases/p5-postgresql-plperl
+p5-postgresql-plperl-call       ports/databases/p5-PostgreSQL-PLPerl-Call
+p5-postgresql-plperl-trace      ports/databases/p5-PostgreSQL-PLPerl-Trace
 p5-postscript                   ports/print/p5-PostScript
 p5-postscript-simple            ports/print/p5-PostScript-Simple
 p5-pperl                        ports/devel/p5-PPerl
