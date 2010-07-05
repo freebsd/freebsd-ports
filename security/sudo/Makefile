@@ -23,7 +23,6 @@ MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
-		--disable-log-wrap \
 		--with-ignore-dot \
 		--with-tty-tickets \
 		--with-env-editor \
