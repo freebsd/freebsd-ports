@@ -3,13 +3,7 @@ lib/tora_fr.qm
 lib/tora_it.qm
 lib/tora_se.qm
 lib/tora_toad.qm
-%%PORTDOCS%%%%DOCSDIR%%/help/Explain-plan.html
-%%PORTDOCS%%%%DOCSDIR%%/help/Getting-bind-parameters.html
 %%PORTDOCS%%%%DOCSDIR%%/help/Index_002dlist.html
-%%PORTDOCS%%%%DOCSDIR%%/help/Memo-editor.html
-%%PORTDOCS%%%%DOCSDIR%%/help/Object-description.html
-%%PORTDOCS%%%%DOCSDIR%%/help/SGA-Statement.html
-%%PORTDOCS%%%%DOCSDIR%%/help/What-privileges-do-you-need-to-run-TOra.html
 %%PORTDOCS%%%%DOCSDIR%%/help/additionalhelp.html
 %%PORTDOCS%%%%DOCSDIR%%/help/alert.html
 %%PORTDOCS%%%%DOCSDIR%%/help/analyze.html
@@ -20,10 +14,12 @@ lib/tora_toad.qm
 %%PORTDOCS%%%%DOCSDIR%%/help/current.html
 %%PORTDOCS%%%%DOCSDIR%%/help/database.html
 %%PORTDOCS%%%%DOCSDIR%%/help/debugger.html
+%%PORTDOCS%%%%DOCSDIR%%/help/editor.html
 %%PORTDOCS%%%%DOCSDIR%%/help/editors.html
+%%PORTDOCS%%%%DOCSDIR%%/help/explainplan.html
 %%PORTDOCS%%%%DOCSDIR%%/help/extendingtora.html
 %%PORTDOCS%%%%DOCSDIR%%/help/externalapi.html
-%%PORTDOCS%%%%DOCSDIR%%/help/fonts.html
+%%PORTDOCS%%%%DOCSDIR%%/help/gettingbindparameters.html
 %%PORTDOCS%%%%DOCSDIR%%/help/globalsettings.html
 %%PORTDOCS%%%%DOCSDIR%%/help/help.html
 %%PORTDOCS%%%%DOCSDIR%%/help/history.html
@@ -44,6 +40,8 @@ lib/tora_toad.qm
 %%PORTDOCS%%%%DOCSDIR%%/help/images/describe.png
 %%PORTDOCS%%%%DOCSDIR%%/help/images/difference.png
 %%PORTDOCS%%%%DOCSDIR%%/help/images/editmenu.png
+%%PORTDOCS%%%%DOCSDIR%%/help/images/editor.png
+%%PORTDOCS%%%%DOCSDIR%%/help/images/editor_syntax.png
 %%PORTDOCS%%%%DOCSDIR%%/help/images/filemenu.png
 %%PORTDOCS%%%%DOCSDIR%%/help/images/fonts.png
 %%PORTDOCS%%%%DOCSDIR%%/help/images/getparam.png
@@ -53,6 +51,7 @@ lib/tora_toad.qm
 %%PORTDOCS%%%%DOCSDIR%%/help/images/largelogo.png
 %%PORTDOCS%%%%DOCSDIR%%/help/images/lists.png
 %%PORTDOCS%%%%DOCSDIR%%/help/images/memo.png
+%%PORTDOCS%%%%DOCSDIR%%/help/images/mysql.png
 %%PORTDOCS%%%%DOCSDIR%%/help/images/newconnection.png
 %%PORTDOCS%%%%DOCSDIR%%/help/images/oracle.png
 %%PORTDOCS%%%%DOCSDIR%%/help/images/output.png
@@ -86,7 +85,9 @@ lib/tora_toad.qm
 %%PORTDOCS%%%%DOCSDIR%%/help/index.html
 %%PORTDOCS%%%%DOCSDIR%%/help/invalid.html
 %%PORTDOCS%%%%DOCSDIR%%/help/lists.html
+%%PORTDOCS%%%%DOCSDIR%%/help/memoeditor.html
 %%PORTDOCS%%%%DOCSDIR%%/help/newconnection.html
+%%PORTDOCS%%%%DOCSDIR%%/help/objectdescription.html
 %%PORTDOCS%%%%DOCSDIR%%/help/output.html
 %%PORTDOCS%%%%DOCSDIR%%/help/plsqleditor.html
 %%PORTDOCS%%%%DOCSDIR%%/help/preferences.html
@@ -95,6 +96,7 @@ lib/tora_toad.qm
 %%PORTDOCS%%%%DOCSDIR%%/help/searchreplace.html
 %%PORTDOCS%%%%DOCSDIR%%/help/security.html
 %%PORTDOCS%%%%DOCSDIR%%/help/session.html
+%%PORTDOCS%%%%DOCSDIR%%/help/sgastatement.html
 %%PORTDOCS%%%%DOCSDIR%%/help/sqledit.html
 %%PORTDOCS%%%%DOCSDIR%%/help/storage.html
 %%PORTDOCS%%%%DOCSDIR%%/help/template.html
@@ -104,6 +106,7 @@ lib/tora_toad.qm
 %%PORTDOCS%%%%DOCSDIR%%/help/trace.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tuning.html
 %%PORTDOCS%%%%DOCSDIR%%/help/unittest.html
+%%PORTDOCS%%%%DOCSDIR%%/help/whatprivileges.html
 %%PORTDOCS%%%%DOCSDIR%%/help/window.html
 %%PORTDOCS%%%%DOCSDIR%%/help/worksheet.html
 %%PORTDOCS%%%%DOCSDIR%%/help/workspace.html
