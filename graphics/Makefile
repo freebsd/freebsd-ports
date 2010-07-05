@@ -1001,6 +1001,7 @@
     SUBDIR += yap
     SUBDIR += yed
     SUBDIR += yukon
+    SUBDIR += zathura
     SUBDIR += zgv
     SUBDIR += zimg
     SUBDIR += zint
