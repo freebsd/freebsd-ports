@@ -19,10 +19,10 @@ bin/qtiplot
 %%DATADIR%%/fitPlugins/libplanck_wavelength.so.1
 %%DATADIR%%/fitPlugins/libplanck_wavelength.so.1.0
 %%DATADIR%%/fitPlugins/libplanck_wavelength.so.1.0.0
-%%DATADIR%%/qtiplot.png
 %%PYTHON%%%%DATADIR%%/qtiUtil.py
 %%PYTHON%%%%DATADIR%%/qtiUtil.pyc
 %%PYTHON%%%%DATADIR%%/qti_wordlist.txt
+%%DATADIR%%/qtiplot.png
 %%PYTHON%%%%DATADIR%%/qtiplotrc.py
 %%PYTHON%%%%DATADIR%%/qtiplotrc.pyc
 %%NLS%%%%DATADIR%%/translations/qtiplot_cn.qm
