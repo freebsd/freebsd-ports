@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clawsker
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.7.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/tools/
 
@@ -19,6 +18,7 @@ RUN_DEPENDS=	claws-mail>=3.7.6:${PORTSDIR}/mail/claws-mail \
 		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext
 
 USE_PERL5=	5.8.0+
+LICENSE=	GPLv3
 
 MAN1=		clawsker.1
 
