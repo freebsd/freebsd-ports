@@ -1,0 +1,12 @@
+#! /bin/sh
+# $FreeBSD$
+#
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+if [ -d %%PREFIX%%/etc/shellinabox ]; then
+        echo "===> You may delete '%%PREFIX%%/etc/shellinabox' if you want to remove the SSL certificate left."
+fi

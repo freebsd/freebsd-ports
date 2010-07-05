@@ -1580,6 +1580,7 @@
     SUBDIR += serf
     SUBDIR += servlet-api
     SUBDIR += session2
+    SUBDIR += shellinabox
     SUBDIR += shttpd
     SUBDIR += sidplug
     SUBDIR += simplog

@@ -1,0 +1,5 @@
+bin/shellinaboxd
+@exec mkdir -p %D/etc/shellinabox
+@exec chmod 777 %D/etc/shellinabox
+@exec chown nobody %D/etc/shellinabox
+@dirrmtry etc/shellinabox
