@@ -48,4 +48,8 @@ post-patch:
 	    ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's|$$(USER)|${SHAREOWN}:${SHAREGRP}|g' \
+	    ${WRKSRC}/themes/Makefile.am ${WRKSRC}/themes/Makefile.in
+
 .include <bsd.port.mk>
