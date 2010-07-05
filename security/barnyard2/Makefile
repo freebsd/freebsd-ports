@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	barnyard2
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	security
 MASTER_SITES=	http://www.securixlive.com/download/barnyard2/
 
@@ -42,10 +42,13 @@ CONFIGURE_ARGS+=	--with-postgresql
 pre-install:
 	${CHMOD} 744 ${WRKSRC}/install-sh
 
+post-patch:
+	@${REINPLACE_CMD} 's|/etc|${LOCALBASE}/etc|' \
+		${WRKSRC}/etc/barnyard2.conf
+
 post-install:
 
 .for f in barnyard2.conf
-	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}-sample
 	[ -f ${PREFIX}/etc/${f} ] || \
 	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}
 .endfor

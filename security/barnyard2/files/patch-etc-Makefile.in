@@ -1,0 +1,11 @@
+--- etc/Makefile.in.orig	2010-07-04 13:17:33.000000000 -0400
++++ etc/Makefile.in	2010-07-04 13:18:42.000000000 -0400
+@@ -249,7 +249,7 @@
+ 	done | $(am__base_list) | \
+ 	while read files; do \
+ 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(sysconfdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(sysconfdir)" || exit $$?; \
++	  $(INSTALL_DATA) $$files "$(DESTDIR)$(sysconfdir)/$$files-sample" || exit $$?; \
+ 	done
+ 
+ uninstall-sysconfDATA:
