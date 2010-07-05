@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.3.24
+PORTVERSION=	1.3.25
 CATEGORIES=	net
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.3/src/
 PKGNAMESUFFIX=	-devel
@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	freebsd@linepoint.com
 COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
 
-CONFLICTS=	haproxy-1.2*
+CONFLICTS=	haproxy-1.[24]*
 USE_RC_SUBR=	haproxy
 
 MAKEFILE=	Makefile.bsd
