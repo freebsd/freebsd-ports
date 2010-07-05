@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	1.2.11
+PORTVERSION=	1.2.12
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/${DOVECOTVERSION}/ \
 		http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
@@ -17,8 +17,9 @@ COMMENT=	Secure and compact IMAP and POP3 servers
 DOVECOTVERSION=	1.2
 
 ######################################################################
-# Anytime PORTVERSION changes please bump PORTREVISION of            #
-# mail/dovecot-antispam. Please see ports/135311 for an explanation. #
+# Anytime PORTVERSION changes please bump PORTREVISIONs of           #
+# mail/dovecot-antispam and mail/dovecot-managesieve. Please see     #
+# ports/135311 and ports/146029 for an explanation.                  #
 #                                                                    #
 # Please be careful when updating this port as changes to this port  #
 # can break mail/dovecot-sieve and mail/dovecot-managesieve. In      #
@@ -201,7 +202,7 @@ post-patch:
 	@${LN} -f ${WRKSRC}/doc/dovecot-ldap-example.conf	${WRKSRC}/doc/dovecot-ldap.conf
 	@${LN} -f ${WRKSRC}/doc/dovecot-sql-example.conf	${WRKSRC}/doc/dovecot-sql.conf
 
-pre-install:
+pre-su-install:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
