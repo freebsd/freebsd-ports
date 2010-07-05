@@ -180,8 +180,6 @@ USE_OPENSSL=	yes
 USE_RC_SUBR=	git_daemon
 WANT_PERL=	yes
 
-SHELLS=		/etc/shells
-
 OPTIONS=	GUI "Enable building of GUI tools" off \
 		SVN "Enable required dependencies for SVN tools" off \
 		GITWEB "Install gitweb" off \
@@ -191,7 +189,8 @@ OPTIONS=	GUI "Enable building of GUI tools" off \
 		HTMLDOCS "Install additional documentation" off \
 		PERL "Build perl based git tools" on \
 		ICONV "Support for multiple character encodings" on \
-		CURL "Support HTTP push and pull" on
+		CURL "Support HTTP push and pull" on \
+		ETCSHELLS "Modify /etc/shells" on
 
 .include <bsd.port.options.mk>
 
@@ -307,6 +306,13 @@ RMMAN1+=	git-cvsimport.1 git-cvsexportcommit.1 git-cvsserver.1
 RMMAN7+=	gitcvs-migration.7
 .endif
 
+.ifdef (WITH_ETCSHELLS)
+SHELLS=		/etc/shells
+PLIST_SUB+=	ETCSHELLS=""
+.else
+PLIST_SUB+=	ETCSHELLS="@comment "
+.endif
+
 .if defined(MAINTAINER_MODE)
 DISTFILES+=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sign \
 		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}.sign
@@ -396,11 +402,13 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/p4import/git-p4import ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/fast-import/git-p4 ${PREFIX}/bin/
 .endif
+.ifdef (WITH_ETCSHELLS)
 	@${ECHO_MSG} "===> Updating ${SHELLS}"
 	@${CP} ${SHELLS} ${SHELLS}.bak
 	@(${GREP} -v ${PREFIX}/libexec/git-core/git-shell ${SHELLS}.bak; \
 	  ${ECHO_CMD} ${PREFIX}/libexec/git-core/git-shell) > ${SHELLS}
 	@${RM} ${SHELLS}.bak
+.endif
 .ifdef (WITH_GITWEB) || defined (WITH_CONTRIB)
 	@${CAT} ${PKGMESSAGE}
 .endif

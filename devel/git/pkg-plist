@@ -140,8 +140,8 @@ libexec/git-core/git-send-pack
 libexec/git-core/git-sh-setup
 libexec/git-core/git-shell
 libexec/git-core/git-stage
-@exec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
-@unexec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
+%%ETCSHELLS%%@exec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
+%%ETCSHELLS%%@unexec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
 libexec/git-core/git-shortlog
 libexec/git-core/git-show
 libexec/git-core/git-show-branch
