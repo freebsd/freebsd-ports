@@ -50,9 +50,6 @@ lib/jabberd/mod_announce.so.0
 lib/jabberd/mod_deliver.la
 lib/jabberd/mod_deliver.so
 lib/jabberd/mod_deliver.so.0
-lib/jabberd/mod_disco-publish.la
-lib/jabberd/mod_disco-publish.so
-lib/jabberd/mod_disco-publish.so.0
 lib/jabberd/mod_disco.la
 lib/jabberd/mod_disco.so
 lib/jabberd/mod_disco.so.0
@@ -83,6 +80,9 @@ lib/jabberd/mod_iq-version.so.0
 lib/jabberd/mod_offline.la
 lib/jabberd/mod_offline.so
 lib/jabberd/mod_offline.so.0
+lib/jabberd/mod_pep.la
+lib/jabberd/mod_pep.so
+lib/jabberd/mod_pep.so.0
 lib/jabberd/mod_presence.la
 lib/jabberd/mod_presence.so
 lib/jabberd/mod_presence.so.0
