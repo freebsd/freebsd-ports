@@ -1,0 +1,56 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# Shell in a Box Daemon startup script
+#
+# PROVIDE: shellinaboxd
+# REQUIRE: login
+# KEYWORD: shutdown
+
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# shellinaboxd_enable="YES"
+#
+# You can fine tune others variables too:
+# shellinaboxd_fib="NONE"
+# shellinaboxd_pidfile="/var/run/shellinabox.pid"
+# shellinaboxd_port="4200"
+# shellinaboxd_certdir="%%PREFIX%%/etc/shellinabox"
+# shellinaboxd_flags=""
+
+shellinaboxd_setfib() {
+	sysctl net.fibs >/dev/null 2>&1 || return 0
+
+	case "$shellinaboxd_fib" in
+	[Nn][Oo][Nn][Ee])
+		;;
+	*)
+		command="setfib -F ${shellinaboxd_fib} ${command}"
+		;;
+	esac
+} 
+
+. /etc/rc.subr
+
+name="shellinaboxd"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/${name}"
+start_precmd="shellinaboxd_setfib"
+
+load_rc_config $name
+
+shellinaboxd_enable=${shellinaboxd_enable:-"NO"}
+shellinaboxd_fib=${shellinaboxd_fib:-"NONE"}
+shellinaboxd_port=${shellinaboxd_port:-"4200"}
+shellinaboxd_certdir=${shellinaboxd_certdir:-"%%PREFIX%%/etc/shellinabox"}
+
+pidfile=${shellinaboxd_pidfile:-"/var/run/shellinaboxd.pid"}
+
+required_dirs="${shellinaboxd_certdir}"
+
+command_args="--group=shellinabox --user=shellinabox --port=${shellinaboxd_port} --cert=${shellinaboxd_certdir} --background=${pidfile}"
+
+run_rc_command "$1"

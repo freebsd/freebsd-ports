@@ -1,0 +1,12 @@
+--- libhttp/ssl.c.orig	2010-07-01 12:15:40.000000000 +0200
++++ libhttp/ssl.c	2010-07-01 12:16:56.000000000 +0200
+@@ -626,6 +626,9 @@
+     return -1;
+   }
+   struct hostent *he = gethostbyname(name);
++  if (!he) {
++    return -1;
++  }
+   *ret               = *he;
+   if (result) {
+     *result          = ret;
