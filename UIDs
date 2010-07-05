@@ -78,6 +78,7 @@ rabbitmq:*:135:135::0:0:RabbitMQ:/var/db/rabbitmq:/usr/sbin/nologin
 dhcpd:*:136:136::0:0:ISC DHCP daemon:/nonexistent:/usr/sbin/nologin
 mpd:*:137:137::0:0:MusicPD pseudo-user:/usr/local/var/mpd:/usr/sbin/nologin
 wolfpack:*:138:138::0:0:Wolfpack Empire Server:/usr/local/share/wolfpack:/usr/sbin/nologin
+shellinabox:*:139:139::0:0:Shell In A Box:/nonexistent:/usr/sbin/nologin
 cricket:*:141:80::0:0:Cricket Monitoring User:/usr/local/cricket:/usr/sbin/nologin
 ladvd:*:142:142::0:0:Ladvd User:/var/empty:/usr/sbin/nologin
 dovecot:*:143:143::0:0:Dovecot User:/var/empty:/usr/sbin/nologin
