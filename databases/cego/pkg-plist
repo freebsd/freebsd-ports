@@ -26,8 +26,8 @@ lib/libcego.a
 lib/libcego.so.1
 lib/libcgwrap.a
 lib/libcgwrap.so.1
-share/licenses/cego-2.6.2/GPLv2
-share/licenses/cego-2.6.2/LICENSE
-share/licenses/cego-2.6.2/catalog.mk
-@dirrm share/licenses/cego-2.6.2
+share/licenses/cego-2.6.3/GPLv2
+share/licenses/cego-2.6.3/LICENSE
+share/licenses/cego-2.6.3/catalog.mk
+@dirrm share/licenses/cego-2.6.3
 @dirrm share/licenses
