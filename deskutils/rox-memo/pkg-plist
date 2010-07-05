@@ -18,6 +18,9 @@ apps/Memo/Memo.py
 apps/Memo/Memo.pyc
 apps/Memo/Memo.pyo
 apps/Memo/Memo.xml
+apps/Memo/MenuWindow.py
+apps/Memo/MenuWindow.pyc
+apps/Memo/MenuWindow.pyo
 apps/Memo/Messages/dist
 apps/Memo/Messages/es.gmo
 apps/Memo/Messages/es.po
@@ -35,6 +38,9 @@ apps/Memo/Options.xml
 apps/Memo/ShowAll.py
 apps/Memo/ShowAll.pyc
 apps/Memo/ShowAll.pyo
+apps/Memo/Systray.py
+apps/Memo/Systray.pyc
+apps/Memo/Systray.pyo
 apps/Memo/Window.py
 apps/Memo/Window.pyc
 apps/Memo/Window.pyo
