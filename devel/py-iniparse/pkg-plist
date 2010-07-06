@@ -11,4 +11,7 @@
 %%PYTHON_SITELIBDIR%%/iniparse/ini.py
 %%PYTHON_SITELIBDIR%%/iniparse/ini.pyc
 %%PYTHON_SITELIBDIR%%/iniparse/ini.pyo
+%%PYTHON_SITELIBDIR%%/iniparse/utils.py
+%%PYTHON_SITELIBDIR%%/iniparse/utils.pyc
+%%PYTHON_SITELIBDIR%%/iniparse/utils.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/iniparse
