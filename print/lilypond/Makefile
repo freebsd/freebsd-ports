@@ -45,7 +45,7 @@ MAN1=		lilymidi.1 lilypond-book.1 lilypond-invoke-editor.1 \
 INFO=		lilypond-changes lilypond-contributor lilypond-essay \
 		lilypond-extending lilypond-internals lilypond-learning \
 		lilypond-notation lilypond-usage lilypond-web \
-		lilypond-snippets music-glossary lilypond
+		lilypond-snippets music-glossary
 
 USE_AUTOTOOLS=	autoconf:262
 USE_BISON=	build
