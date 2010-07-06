@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	metromap
-PORTVERSION=	0.1.2
-PORTREVISION=	5
+PORTVERSION=	0.1.3
 CATEGORIES=	misc
 MASTER_SITES=	http://metromap.antex.ru/ \
 		http://mirror.amdmi3.ru/distfiles/
