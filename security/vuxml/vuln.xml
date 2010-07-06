@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="25ed4ff8-8940-11df-a339-0026189baca3">
+    <topic>bogofilter -- heap underrun on malformed base64 input</topic>
+    <affects>
+      <package>
+	<name>bogofilter</name>
+	<range><lt>1.2.1_2</lt></range>
+      </package>
+      <package>
+	<name>bogofilter-sqlite</name>
+	<range><lt>1.2.1_1</lt></range>
+      </package>
+      <package>
+	<name>bogofilter-tc</name>
+	<range><lt>1.2.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Julius Plenz reports:</p>
+	<blockquote cite="http://www.bogofilter.org/pipermail/bogofilter-dev/2010-June/003475.html">
+	  <p>I found a bug in the base64_decode function which may cause memory
+	    corruption when the function is executed on a malformed base64
+	    encoded string.</p>
+	  <p>If a string starting with an equal-sign is passed to the
+	    base64_decode function it triggers a memory corruption that
+	    in some cases makes bogofilter crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-2494</cvename>
+      <url>http://bogofilter.sourceforge.net/security/bogofilter-SA-2010-01</url>
+    </references>
+    <dates>
+      <discovery>2010-06-28</discovery>
+      <entry>2010-07-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f1331504-8849-11df-89b8-00151735203a">
     <topic>bugzilla -- information disclosure</topic>
     <affects>
@@ -185,8 +224,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Juli Mallett reports:</p>
-	<blockquote
-	  cite="http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/147007">
+	<blockquote cite="http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/147007">
 	  <p>mdnsd will crash on some systems with a corrupt stack and once
 	    that's fixed it will still leak a file descriptor when parsing
 	    resolv.conf. The crash is because scanf is used with %10s for a
