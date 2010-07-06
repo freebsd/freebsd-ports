@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	bitlbee-otr
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	irc
 MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/ \
-		http://wahjava.users.sourceforge.net/ \
-		${MASTER_SITE_FREEBSD}
+		http://wahjava.users.sourceforge.net/
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	An IRC to other chat networks gateway with support for OTR
@@ -28,6 +27,9 @@ USE_GMAKE=	yes
 USE_GNOME=	glib20
 USE_RC_SUBR=	bitlbee
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	MSN "Enable MSN protocol support" On \
 		DEBUG "Create debuggable binary" Off \
@@ -58,7 +60,7 @@ SUB_LIST+=	BITLBEEUSER=${BITLBEEUSER} \
 
 SUB_FILES+=	pkg-install pkg-deinstall
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_MSN)
 CONFIGURE_ARGS+=--msn=1
@@ -107,13 +109,6 @@ CONFIGURE_ARGS+=--twitter=0
 
 LIB_DEPENDS+=	otr.4:${PORTSDIR}/security/libotr
 CONFIGURE_ARGS+=--otr=1
-.if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/xmlto:${PORTSDIR}/textproc/xmlto \
-	${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
-post-build:
-	${MKDIR} ${WRKSRC}/.bzr
-	${GMAKE} -C ${WRKSRC}/doc/user-guide
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -148,4 +143,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
