@@ -1,0 +1,18 @@
+Index: base64.c
+===================================================================
+--- src/base64.c	(Revision 6766)
++++ src/base64.c	(Revision 6921)
+@@ -61,9 +61,11 @@
+ 	    d[i] = c;
+ 	    v = v >> 8;
+ 	}
+-	d += 3 - shorten;
+-	count += 3 - shorten;
++    if(shorten != 4) {
++        d += 3 - shorten;
++        count += 3 - shorten;
+     }
++    }
+     /* XXX do we need this NUL byte? */
+     if (word->leng)
+ 	*d = (byte) '\0'; /* safe, base64 is always longer than original */
