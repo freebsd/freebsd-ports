@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/all-in-one/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	The Open Racing Car Simulator
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
@@ -52,7 +52,7 @@ BASH2FIX=	src/linux/torcs.in src/tools/accc/accc.in \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FREEGLUT)
-LIB_DEPENDS+=	glut.11:${PORTSDIR}/graphics/freeglut
+LIB_DEPENDS+=	glut.12:${PORTSDIR}/graphics/freeglut
 .else
 USE_GL=		glut
 .endif
