@@ -126,15 +126,15 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The PNG project describes the problem in an advisory:</p>
 	<blockquote cite="http://www.libpng.org/pub/png/libpng.html">
 	  <p>Several versions of libpng through 1.4.2 (and through 1.2.43
-          in the older series) contain a bug whereby progressive
-          applications such as web browsers (or the rpng2 demo app included
-          in libpng) could receive an extra row of image data beyond the
-          height reported in the header, potentially leading to an
-          out-of-bounds write to memory (depending on how the application
-          is written) and the possibility of execution of an attacker's
-          code with the privileges of the libpng user (including remote
-          compromise in the case of a libpng-based browser visiting a
-          hostile web site).</p>
+	    in the older series) contain a bug whereby progressive
+	    applications such as web browsers (or the rpng2 demo app included
+	    in libpng) could receive an extra row of image data beyond the
+	    height reported in the header, potentially leading to an
+	    out-of-bounds write to memory (depending on how the application
+	    is written) and the possibility of execution of an attacker's
+	    code with the privileges of the libpng user (including remote
+	    compromise in the case of a libpng-based browser visiting a
+	    hostile web site).</p>
 	</blockquote>
       </body>
     </description>
@@ -504,8 +504,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <url>http://sudo.ws/sudo/alerts/secure_path.html</url>
       <cvename>CVE-2010-1646</cvename>
+      <url>http://sudo.ws/sudo/alerts/secure_path.html</url>
     </references>
     <dates>
       <discovery>2010-06-02</discovery>
@@ -528,10 +528,10 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <bid>40344</bid>
+      <cvename>CVE-2010-1513</cvename>
       <url>http://ziproxy.sourceforge.net/#news</url>
       <url>http://secunia.com/advisories/39941</url>
-      <cvename>CVE-2010-1513</cvename>
-      <bid>40344</bid>
       <mlist msgid="201005210019.37119.dancab@gmx.net">http://sourceforge.net/mailarchive/message.php?msg_name=201005210019.37119.dancab%40gmx.net</mlist>
     </references>
     <dates>
@@ -927,7 +927,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="f6b6beaa-4e0e-11df-83fb-0015587e2cc1">
-    <cancelled/> 
+    <cancelled/>
   </vuln>
 
   <vuln vid="86b8b655-4d1a-11df-83fb-0015587e2cc1">
