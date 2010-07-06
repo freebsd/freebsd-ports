@@ -1,0 +1,5 @@
+mktorrent is a simple command-line utility to create BitTorrent
+metainfo files.  It supports multiple trackers, private trackers,
+custom comments, and is multi-threaded to support multiple CPUs.
+
+WWW: http://mktorrent.sourceforge.net/

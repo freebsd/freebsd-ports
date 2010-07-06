@@ -75,6 +75,7 @@
     SUBDIR += lopster
     SUBDIR += microdc2
     SUBDIR += minder
+    SUBDIR += mktorrent
     SUBDIR += mldonkey
     SUBDIR += mldonkey-core
     SUBDIR += mldonkey-gui
