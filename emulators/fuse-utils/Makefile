@@ -32,7 +32,7 @@ PLIST_SUB=	AUDIOFILE=""
 MAN1+=		audio2tape.1 tape2wav.1
 .else
 CONFIGURE_ARGS+=--without-audiofile
-PLIST_SUB=	AUDIOFILE="@comment"
+PLIST_SUB=	AUDIOFILE="@comment "
 .endif
 
 MAKE_JOBS_SAFE=	yes
