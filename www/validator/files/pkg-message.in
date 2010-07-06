@@ -48,6 +48,7 @@ Alias /w3c-validator/  %%PREFIX%%/www/validator/htdocs/
   AddCharset     utf-8         .html
 # If you would like to move the location of validator.conf, set the following,
 #  making sure to change the path if you don't use this path.
-# SetEnv         %%PREFIX%%/www/validator/htdocs/config/validator.conf
+# SetEnv         W3C_VALIDATOR_CFG \
+#                %%PREFIX%%/www/validator/htdocs/config/validator.conf
 </Directory>
 -------------------------------------------------------------------------------

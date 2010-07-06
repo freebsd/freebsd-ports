@@ -1,7 +1,7 @@
-#
+
 # Main Configuration File for the W3C Markup Validation Service.
 #
-# $Id: validator.conf,v 1.28 2007/03/14 06:33:35 ot Exp $
+# $Id: validator.conf,v 1.39 2010-03-09 18:46:03 ville Exp $
 #
 # See 'perldoc Config::General' for the syntax, and be aware that the
 # 'SplitPolicy' is 'equalsign', ie. keys and values are separated by '\s*=\s*',
@@ -26,6 +26,14 @@
   #
   # Location of template files
   Templates = $Base/share/templates
+
+  #
+  # Directory where to store cached templates.  Relative paths are
+  # treated as relative to the system temporary directory.  Templates
+  # are not cached at all if this option is empty or not set, except
+  # with mod_perl setups where this option has no effect and templates
+  # are always cached in memory.
+  #Cache = validator
 
   # configuration file for HTML Tidy Module, if available
   TidyConf = $Base/htdocs/config/tidy.conf
@@ -55,6 +63,7 @@ Allow Private IPs = no
 # see http://validator.w3.org/docs/api.html
 Enable SOAP = yes
 
+
 #
 # Whether the validator will check its own output.
 # 0 means it will refuse to check its own output, 1 means it will but it will
@@ -65,7 +74,7 @@ Max Recursion = 0
 # Protocols the validator is allowed to use for retrieving documents.
 # The default is to allow http and https.
 <Protocols>
-  Allow = data,http,https
+  Allow = data,ftp,http,https
 </Protocols>
 
 #
@@ -119,3 +128,11 @@ Languages = en
   Include %%PREFIX%%/www/validator/htdocs/config/tips.cfg
 </Tips>
 
+<External>
+## Enable checking documents via external services.
+## The example config below assumes that you have installed the validator.nu
+## engine on the same machine as the markup validator.
+## See http://about.validator.nu/ for installation instructions.
+#HTML5 = http://localhost:8888/html5/
+#CompoundXML = http://localhost:8888/
+</External>
