@@ -21,7 +21,7 @@ COMMENT?=	Library and tool for encoding H.264/AVC video streams
 CONFLICTS=	x264-0.0.2009* x264-0.0.20100[1-2]*
 
 BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm \
-		as:${PORTSDIR}/devel/binutils
+		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
 LATEST_LINK=	x264-devel
 
