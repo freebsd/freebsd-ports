@@ -1,3 +1,4 @@
+# vim: ts=8 sw=8
 # Ports collection makefile for:  textproc/augeas
 # Date created:			  19 May 2010
 # Whom:				  Russell Jackson <raj@csub.edu>
@@ -7,6 +8,7 @@
 
 PORTNAME=	augeas
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://augeas.net/download/
 

@@ -7,7 +7,7 @@ module RcConf =
 	let eq       = Util.del_str "="
 	let dquot    = Util.del_str "\""
 	let char     = /[^\n]/
-	let var_name = /[A-Za-z0-9_]+/
+	let var_name = /[A-Za-z0-9_.]+/
 	
 	let value = dquot . store char* . dquot
 	let kv_pair = [ key var_name . eq . value . eol ]
