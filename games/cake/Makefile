@@ -34,7 +34,7 @@ OPTIONS=	FREEGLUT "Build with alternative GLUT library, FreeGLUT" off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FREEGLUT)
-LIB_DEPENDS=	glut.11:${PORTSDIR}/graphics/freeglut
+LIB_DEPENDS=	glut.12:${PORTSDIR}/graphics/freeglut
 .else
 USE_GL=		glut
 .endif
