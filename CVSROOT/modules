@@ -20802,6 +20802,7 @@ py-notifier                     ports/devel/py-notifier
 py-notify                       ports/devel/py-notify
 py-numarray                     ports/math/py-numarray
 py-numeric                      ports/math/py-numeric
+py-numexpr                      ports/math/py-numexpr
 py-numpy                        ports/math/py-numpy
 py-oauth                        ports/net/py-oauth
 py-ocempgui                     ports/devel/py-ocempgui
@@ -22921,6 +22922,7 @@ sheerdns                        ports/dns/sheerdns
 shell-fm                        ports/multimedia/shell-fm
 shell-include                   ports/shells/shell-include
 shelldap                        ports/net/shelldap
+shellinabox                     ports/www/shellinabox
 shflags                         ports/devel/shflags
 shftool                         ports/converters/shftool
 shibboleth2-sp                  ports/security/shibboleth2-sp
@@ -26344,6 +26346,7 @@ zabit                           ports/mail/zabit
 zangband                        ports/games/zangband
 zaptel                          ports/misc/zaptel
 zatacka                         ports/games/zatacka
+zathura                         ports/graphics/zathura
 zaz                             ports/games/zaz
 zbase32                         ports/converters/zbase32
 zebedee                         ports/security/zebedee
