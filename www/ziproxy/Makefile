@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		ziproxy
-PORTVERSION=		3.1.0
+PORTVERSION=		3.1.1
 CATEGORIES=		www
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -17,6 +17,9 @@ LIB_DEPENDS=		ungif.5:${PORTSDIR}/graphics/libungif \
 			jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=		yes
+
+LICENSE=		GPLv2
+LICENSE_FILE=		${WRKSRC}/COPYING
 
 CFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
