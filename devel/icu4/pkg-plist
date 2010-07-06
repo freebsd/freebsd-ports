@@ -5,14 +5,10 @@ bin/gencnval
 bin/genctd
 bin/genrb
 bin/icu-config
+bin/icuinfo
 bin/makeconv
 bin/pkgdata
 bin/uconv
-sbin/genccode
-sbin/gencmn
-sbin/gensprep
-sbin/genuca
-sbin/icupkg
 include/layout/LEFontInstance.h
 include/layout/LEGlyphFilter.h
 include/layout/LEGlyphStorage.h
@@ -27,7 +23,6 @@ include/layout/RunArrays.h
 include/layout/loengine.h
 include/layout/playout.h
 include/layout/plruns.h
-@dirrm include/layout
 include/unicode/basictz.h
 include/unicode/bms.h
 include/unicode/bmsearch.h
@@ -58,14 +53,18 @@ include/unicode/errorcode.h
 include/unicode/fieldpos.h
 include/unicode/fmtable.h
 include/unicode/format.h
+include/unicode/fpositer.h
 include/unicode/gregocal.h
 include/unicode/icudataver.h
-include/unicode/locid.h
+include/unicode/icuplug.h
 include/unicode/localpointer.h
+include/unicode/locdspnm.h
+include/unicode/locid.h
 include/unicode/measfmt.h
 include/unicode/measunit.h
 include/unicode/measure.h
 include/unicode/msgfmt.h
+include/unicode/normalizer2.h
 include/unicode/normlzr.h
 include/unicode/numfmt.h
 include/unicode/numsys.h
@@ -86,6 +85,7 @@ include/unicode/rep.h
 include/unicode/resbund.h
 include/unicode/schriter.h
 include/unicode/search.h
+include/unicode/selfmt.h
 include/unicode/simpletz.h
 include/unicode/smpdtfmt.h
 include/unicode/sortkey.h
@@ -128,6 +128,7 @@ include/unicode/uenum.h
 include/unicode/uidna.h
 include/unicode/uintrnal.h
 include/unicode/uiter.h
+include/unicode/uldnames.h
 include/unicode/uloc.h
 include/unicode/ulocdata.h
 include/unicode/umachine.h
@@ -140,6 +141,7 @@ include/unicode/unirepl.h
 include/unicode/uniset.h
 include/unicode/unistr.h
 include/unicode/unorm.h
+include/unicode/unorm2.h
 include/unicode/unum.h
 include/unicode/uobject.h
 include/unicode/uobslete.h
@@ -168,48 +170,55 @@ include/unicode/utmscale.h
 include/unicode/utrace.h
 include/unicode/utrans.h
 include/unicode/utypes.h
-include/unicode/uversion.h
 include/unicode/uvernum.h
+include/unicode/uversion.h
 include/unicode/vtzone.h
-@dirrm include/unicode
 lib/icu/%%ICUVER%%/Makefile.inc
 lib/icu/%%ICUVER%%/pkgdata.inc
-lib/icu/current
 lib/icu/Makefile.inc
+lib/icu/current
 lib/icu/pkgdata.inc
-lib/libsicudata.a
-lib/libicudata.so.%%ICUMAJOR%%.%%ICUMINOR%%
 lib/libicudata.so
 lib/libicudata.so.%%ICUMAJOR%%
-lib/libsicuuc.a
-lib/libicuuc.so.%%ICUMAJOR%%.%%ICUMINOR%%
-lib/libicuuc.so
-lib/libicuuc.so.%%ICUMAJOR%%
-lib/libsicui18n.a
-lib/libicui18n.so.%%ICUMAJOR%%.%%ICUMINOR%%
+lib/libicudata.so.%%ICUMAJOR%%.%%ICUMINOR%%
 lib/libicui18n.so
 lib/libicui18n.so.%%ICUMAJOR%%
-lib/libsicule.a
-lib/libicule.so.%%ICUMAJOR%%.%%ICUMINOR%%
-lib/libicule.so
-lib/libicule.so.%%ICUMAJOR%%
-lib/libsiculx.a
-lib/libiculx.so.%%ICUMAJOR%%.%%ICUMINOR%%
-lib/libiculx.so
-lib/libiculx.so.%%ICUMAJOR%%
-lib/libsicuio.a
-lib/libsicutu.a
-lib/libicuio.so.%%ICUMAJOR%%.%%ICUMINOR%%
+lib/libicui18n.so.%%ICUMAJOR%%.%%ICUMINOR%%
 lib/libicuio.so
 lib/libicuio.so.%%ICUMAJOR%%
-lib/libicutu.so.%%ICUMAJOR%%.%%ICUMINOR%%
-lib/libicutu.so.%%ICUMAJOR%%
+lib/libicuio.so.%%ICUMAJOR%%.%%ICUMINOR%%
+lib/libicule.so
+lib/libicule.so.%%ICUMAJOR%%
+lib/libicule.so.%%ICUMAJOR%%.%%ICUMINOR%%
+lib/libiculx.so
+lib/libiculx.so.%%ICUMAJOR%%
+lib/libiculx.so.%%ICUMAJOR%%.%%ICUMINOR%%
 lib/libicutu.so
+lib/libicutu.so.%%ICUMAJOR%%
+lib/libicutu.so.%%ICUMAJOR%%.%%ICUMINOR%%
+lib/libicuuc.so
+lib/libicuuc.so.%%ICUMAJOR%%
+lib/libicuuc.so.%%ICUMAJOR%%.%%ICUMINOR%%
+lib/libsicudata.a
+lib/libsicui18n.a
+lib/libsicuio.a
+lib/libsicule.a
+lib/libsiculx.a
+lib/libsicutu.a
+lib/libsicuuc.a
+sbin/genccode
+sbin/gencmn
+sbin/gennorm2
+sbin/gensprep
+sbin/genuca
+sbin/icupkg
 %%DATADIR%%/%%ICUVER%%/config/mh-bsd-gcc
-%%DATADIR%%/%%ICUVER%%/mkinstalldirs
 %%DATADIR%%/%%ICUVER%%/license.html
+%%DATADIR%%/%%ICUVER%%/mkinstalldirs
 @dirrm %%DATADIR%%/%%ICUVER%%/config
 @dirrm %%DATADIR%%/%%ICUVER%%
 @dirrm %%DATADIR%%
+@dirrm include/unicode
+@dirrm include/layout
 @dirrm lib/icu/%%ICUVER%%
 @dirrm lib/icu
