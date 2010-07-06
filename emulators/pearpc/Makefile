@@ -14,6 +14,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}.0
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	PowerPC architecture emulator
 
+BROKEN=		does not build
+
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
 MAN1=		ppc.1
