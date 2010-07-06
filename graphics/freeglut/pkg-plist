@@ -5,14 +5,14 @@ include/GL/glut.h
 lib/libglut.a
 lib/libglut.la
 lib/libglut.so
-lib/libglut.so.11
-%%PORTDOCS%%%%EXAMPLESDIR%%/callbackmaker
-%%PORTDOCS%%%%EXAMPLESDIR%%/fractals
-%%PORTDOCS%%%%EXAMPLESDIR%%/fractals_random
-%%PORTDOCS%%%%EXAMPLESDIR%%/fractals.dat
-%%PORTDOCS%%%%EXAMPLESDIR%%/lorenz
-%%PORTDOCS%%%%EXAMPLESDIR%%/one
-%%PORTDOCS%%%%EXAMPLESDIR%%/shapes
+lib/libglut.so.12
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/callbackmaker
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fractals
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fractals_random
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fractals.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lorenz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/one
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shapes
 %%PORTDOCS%%%%DOCSDIR%%/download.html
 %%PORTDOCS%%%%DOCSDIR%%/freeglut.html
 %%PORTDOCS%%%%DOCSDIR%%/freeglut_logo.png
@@ -21,6 +21,6 @@ lib/libglut.so.11
 %%PORTDOCS%%%%DOCSDIR%%/ogl_sm.png
 %%PORTDOCS%%%%DOCSDIR%%/progress.html
 %%PORTDOCS%%%%DOCSDIR%%/structure.html
-@dirrm include/GL
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrmtry include/GL

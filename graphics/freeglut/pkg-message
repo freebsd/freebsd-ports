@@ -1,6 +1,9 @@
-******************************************************************
-freeglut requires a DRI / OpenGL enabled-graphic card;
-You may try to run the sample programs to check your installation.
+Since FreeBSD has new USB stack, freeglut normally doesn't build on FreeBSD 8
+(yet). To workaround this I created small, ugly patch. this patch adds one
+include file and comments out content of one function (only leaves return NULL).
 
-Notice: freeglut is now a GLUT replacement.
-******************************************************************
+I have no idea what kind of side effects this can cause. Joystick wont work.
+There might be ports that won't compile, or apps that may crash because of
+this. I don't know.
+
+If you face any problems delete this port and install graphics/libglut.
