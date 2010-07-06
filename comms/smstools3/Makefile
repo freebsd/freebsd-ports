@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smstools
-PORTVERSION=	3.1.8
+PORTVERSION=	3.1.11
 CATEGORIES=	comms
 MASTER_SITES=	http://smstools3.kekekasvi.com/packages/
 DISTNAME=	smstools3-${PORTVERSION}
