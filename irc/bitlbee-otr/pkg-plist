@@ -5,4 +5,4 @@ share/bitlbee/help.txt
 @exec mkdir -p %D/etc/bitlbee
 @exec mkdir -m 0700 -p /var/db/bitlbee
 @exec chown -R %%BITLBEEUSER%%:%%BITLBEEGROUP%% /var/db/bitlbee
-@dirrmtry /var/db/bitlbee
+@unexec rmdir /var/db/bitlbee
