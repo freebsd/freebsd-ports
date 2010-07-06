@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF/lpsolve/lpsolve/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mayo@oyam.ca
 COMMENT=	Linear Programming Solver
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:R:R}
