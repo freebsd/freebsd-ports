@@ -81,6 +81,9 @@ PORTDOCS=	*
 .if ${OSVERSION} < 800502
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rpmio_rpmsq.c
 .endif
+.if ${OSVERSION} < 700000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-lib_fs.c
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e '/^pkgconfigdir/s:/:data/:' \
