@@ -81,5 +81,19 @@
 %%FLOWER2%%%%THEMEDIR%%/flower2/background.jpg
 %%FLOWER2%%%%THEMEDIR%%/flower2/slim.theme
 %%FLOWER2%%@dirrmtry %%THEMEDIR%%/flower2
+%%FREEBSD%%%%THEMEDIR%%/fbsd/background.png
+%%FREEBSD%%%%THEMEDIR%%/fbsd/preview.png
+%%FREEBSD%%%%THEMEDIR%%/fbsd/panel.png
+%%FREEBSD%%%%THEMEDIR%%/fbsd/slim.theme
+%%FREEBSD%%@dirrmtry %%THEMEDIR%%/fbsd
+%%GNEWSENSE%%%%THEMEDIR%%/gnewsense/COPYRIGHT.panel
+%%GNEWSENSE%%%%THEMEDIR%%/gnewsense/README
+%%GNEWSENSE%%%%THEMEDIR%%/gnewsense/slim.theme
+%%GNEWSENSE%%%%THEMEDIR%%/gnewsense/background.png
+%%GNEWSENSE%%%%THEMEDIR%%/gnewsense/LICENSE
+%%GNEWSENSE%%%%THEMEDIR%%/gnewsense/screenshot.png
+%%GNEWSENSE%%%%THEMEDIR%%/gnewsense/COPYRIGHT.background
+%%GNEWSENSE%%%%THEMEDIR%%/gnewsense/panel.png
+%%FREEBSD%%@dirrmtry %%THEMEDIR%%/gnewsense
 @dirrmtry share/slim/themes
 @dirrmtry share/slim
