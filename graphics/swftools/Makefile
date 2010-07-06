@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	swftools
-PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTVERSION=	0.9.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.swftools.org/
+MASTER_SITES=	http://www.swftools.org/ \
+		http://www.c-s.li/ports/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	SWF manipulation and generation utilities
 
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
@@ -21,6 +21,8 @@ LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
+LICENSE=	GPLv2
+
 OPTIONS=	LAME "LAME MP3 audio encoder support" off
 
 USE_GNOME=	pkgconfig
@@ -28,6 +30,8 @@ USE_GL=		glut
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		as3compile.1 font2swf.1 gif2swf.1 jpeg2swf.1 pdf2swf.1 \
 		png2swf.1 swfbbox.1 swfc.1 swfcombine.1 swfdump.1 \
