@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Audio/M4P.pm
+%%SITE_PERL%%/Audio/M4P/Atom.pm
+%%SITE_PERL%%/Audio/M4P/Decrypt.pm
+%%SITE_PERL%%/Audio/M4P/QuickTime.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/M4P/.packlist
+@dirrmtry %%SITE_PERL%%/Audio/M4P
+@dirrmtry %%SITE_PERL%%/Audio
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/M4P
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
