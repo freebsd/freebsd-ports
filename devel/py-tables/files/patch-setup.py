@@ -1,17 +1,17 @@
---- setup.py.orig	2009-06-18 17:57:21.000000000 +0800
-+++ setup.py	2009-06-18 18:02:43.000000000 +0800
-@@ -81,8 +81,8 @@
+--- setup.py.orig	2010-07-06 11:11:43.000000000 +0800
++++ setup.py	2010-07-06 11:13:13.000000000 +0800
+@@ -83,8 +83,8 @@
  debug = '--debug' in sys.argv
  
  # Global variables
 -lib_dirs = []
--inc_dirs = []
+-inc_dirs = ['blosc']
 +lib_dirs = ['%%LOCALBASE%%/lib']
-+inc_dirs = ['%%LOCALBASE%%/include']
++inc_dirs = ['blosc','%%LOCALBASE%%/include']
  optional_libs = []
  data_files = []    # list of data files to add to packages (mainly for DLL's)
  
-@@ -91,10 +91,10 @@
+@@ -93,10 +93,10 @@
  default_runtime_dirs = None
  
  if os.name == 'posix':
