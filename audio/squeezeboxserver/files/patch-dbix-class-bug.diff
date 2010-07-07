@@ -1,0 +1,37 @@
+Index: Slim/Schema.pm
+===================================================================
+--- Slim/Schema.pm	(revision 31006)
++++ Slim/Schema.pm	(working copy)
+@@ -274,11 +274,15 @@
+ 	# For custom exceptions
+ 	$class->storage_type('Slim::Schema::Storage');
+ 	
++	# Don't use autocommit mode for the scanner.
++	# Needs to be set here as setting dbh->{'AutoCommit'} = 0 later
++	# confusing the transaction nesting logic.
++	my $AutoCommit = (main::SCANNER ? 0 : 1);
+ 	my $on_connect_do = $sqlHelperClass->on_connect_do();
+ 	
+ 	$class->connection( $dsn || $source, $username, $password, { 
+ 		RaiseError    => 1,
+-		AutoCommit    => 1,
++		AutoCommit    => $AutoCommit, 
+ 		PrintError    => 0,
+ 		Taint         => 1,
+ 		on_connect_do => [
+Index: scanner.pl
+===================================================================
+--- scanner.pl	(revision 31006)
++++ scanner.pl	(working copy)
+@@ -236,9 +236,6 @@
+ 
+ 	main::INFOLOG && $log->info("Squeezebox Server Scanner done init...\n");
+ 
+-	# Take the db out of autocommit mode - this makes for a much faster scan.
+-	Slim::Schema->storage->dbh->{'AutoCommit'} = 0;
+-
+ 	my $scanType = 'SETUP_STANDARDRESCAN';
+ 
+ 	if ($wipe) {
+
+--------------020502080403070605040408--
