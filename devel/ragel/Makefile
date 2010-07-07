@@ -16,6 +16,7 @@ COMMENT=	Compile regular languages into executable C/C++ code
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		${PORTNAME}.1
 PORTDOCS=	*
