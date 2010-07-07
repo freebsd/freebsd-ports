@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.6.11
-PORTREVISION?=	3
+PORTVERSION=	1.6.12
+PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.5/:book
@@ -43,17 +43,19 @@ CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 
 # Default is "on"
 .if !defined(WITHOUT_NEON)
+.if !defined(NEON_VER)
 .if exists(${LOCALBASE}/bin/neon-config)
 NEON_VER!=	${LOCALBASE}/bin/neon-config --version | \
 		${SED} -n -E  's/^neon [0-9]+\.([0-9]+)\..*$$/\1/p'
 .else
-NEON_VER=      29
+NEON_VER=	29
+.endif
 .endif
 LIB_DEPENDS+=	neon.${NEON_VER}:${PORTSDIR}/www/neon${NEON_VER}
-PLIST_SUB+=		NEON=""
+PLIST_SUB+=	NEON=""
 .else
-CONFIGURE_ARGS+=	--without-neon
-PLIST_SUB+=		NEON="@comment "
+CONFIGURE_ARGS+=--without-neon
+PLIST_SUB+=	NEON="@comment "
 .endif
 
 .if defined(WITH_SASL)
