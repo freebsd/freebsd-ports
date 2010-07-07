@@ -224,6 +224,7 @@
     SUBDIR += openquicktime
     SUBDIR += oqtencoder
     SUBDIR += oqtplayer
+    SUBDIR += p5-Audio-M4P
     SUBDIR += p5-FFmpeg-Command
     SUBDIR += p5-FLV-Info
     SUBDIR += p5-File-Format-RIFF
