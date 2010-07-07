@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/DBD/Cego.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Cego/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Cego/Cego.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Cego/Cego.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Cego
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DBD
