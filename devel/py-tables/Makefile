@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tables
-PORTVERSION=	2.1.2
+PORTVERSION=	2.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.pytables.org/download/stable/ \
 		http://www.pytables.org/download/py${PORTNAME}-${PORTVERSION}/
@@ -18,7 +18,9 @@ EXTRACT_ONLY=	tables-${PORTVERSION}.tar.gz
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A hierarchical database for Python
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYNUMPY} \
+		${LOCALBASE}/bin/cython:${PORTSDIR}/lang/cython \
+		${PYTHON_PKGNAMEPREFIX}numexpr>=1.3.1:${PORTSDIR}/math/py-numexpr
 LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5 \
 		lzo.1:${PORTSDIR}/archivers/lzo \
 		ucl.1:${PORTSDIR}/archivers/ucl
