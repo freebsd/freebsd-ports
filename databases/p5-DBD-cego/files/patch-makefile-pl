@@ -1,0 +1,44 @@
+--- Makefile.PL	2010-07-02 21:08:00.000000000 +0200
++++ Makefile.PL-new	2010-07-02 21:19:41.000000000 +0200
+@@ -29,24 +29,16 @@
+     "verbose",
+     ) || die Usage();
+ 
+-if (! exists $opt->{'prefix'}) 
+-{
+-  print "Missing prefix, use option --prefix\n"; 
+-  die Usage();
+-}
+-
+ use vars qw($loadlibs);
+-$loadlibs= "-L" . $opt->{'prefix'} . " -lBase";
++$loadlibs= " -lBase";
+ 
+ WriteMakefile(
+     'NAME'          => 'DBD::Cego',
+     'VERSION_FROM'  => 'Cego.pm',
+     'PREREQ_PM'     => {DBI => 1.03},
+     'OBJECT'        => '$(O_FILES)',
+-    'INC'           => '-I$(DBI_INSTARCH_DIR) -I' . $opt->{'prefix'} . '/include',
+-    'MYEXTLIB'    => $opt->{'prefix'} . "/lib/libcego.a " 
+-	      . $opt->{'prefix'} . "/lib/libXML.a " 
+-	      . $opt->{'prefix'} . "/lib/libBase.a",
++    'INC'           => '-I$(DBI_INSTARCH_DIR) -I/usr/local/include',
++    'MYEXTLIB'    => " -lcego -lXML -lBase ",
+     "CC" => "g++",
+     "LD" => "g++",
+     "XSPROTOARG" => "-noprototypes",
+@@ -58,12 +50,7 @@
+ 
+ sub Usage {
+   print STDERR <<"USAGE";
+-Usage: perl $0 [options]
+-
+-Possible options are:
+-
+-  --prefix=<prefix path>       Use <prefix> for setting up the appropriate prefix path
+-                               to find cego libs and includes
++Usage: perl $0
+ 
+ USAGE
+   exit 1;
