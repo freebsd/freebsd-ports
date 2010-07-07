@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.0.3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/  \
 		CRITICAL
@@ -23,6 +22,7 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 # Sylpheed needs pthread if GnomeVFS is installed (GtkFileChooser uses it)
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
