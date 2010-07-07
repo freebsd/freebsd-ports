@@ -1,11 +1,11 @@
---- configure.orig	2010-04-22 07:59:58.000000000 +0000
-+++ configure	2010-05-20 19:17:21.000000000 +0000
-@@ -30958,7 +30958,7 @@
+--- configure.orig	2010-06-08 11:19:27.000000000 -0400
++++ configure	2010-07-06 21:13:02.000000000 -0400
+@@ -30958,7 +30958,7 @@ if test "x$bdb_required" = "xyes"; then
      trybdbdir=""
      dobdbsearch=yes
      bdb_search_dirs="/usr/local /usr"
--    search_subdirs="/ /db4.7 /db47 /db4.6 /db46 /db4.5 /db45 /db4.4 /db44 /db4"
-+    search_subdirs="/%%DB_NAME%% / /db4.7 /db47 /db4.6 /db46 /db4.5 /db45 /db4.4 /db44 /db4"
+-    search_subdirs="/ /db4.8 /db48 /db4.7 /db47 /db4.6 /db46 /db4"
++    search_subdirs="/%%DB_NAME%% / /db4.8 /db48 /db4.7 /db47 /db4.6 /db46 /db4"
  
      bdbfound=no
      savedcflags="$CFLAGS"
