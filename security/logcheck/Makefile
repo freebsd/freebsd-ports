@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	logcheck
-PORTVERSION=	1.2.69
-PORTREVISION=	2
+PORTVERSION=	1.3.10
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -15,7 +14,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Auditing tool for system logs on Unix boxes
 
-RUN_DEPENDS=	lockfile:${PORTSDIR}/mail/procmail \
+RUN_DEPENDS=	mime-construct:${PORTSDIR}/mail/mime-construct \
+		lockfile:${PORTSDIR}/mail/procmail \
 		bash:${PORTSDIR}/shells/bash
 
 PORTSCOUT=	limit:^1\.2\.
@@ -28,7 +28,7 @@ LOGCHECK_GID=	${LOGCHECK_UID}
 # Enable Perl dependency for logtail script
 USE_PERL5=	5.8.0+
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 BINMODE=	755
 SHAREMODE=	640
 SUB_LIST+=	LOGCHECK_USER=${LOGCHECK_USER} \
