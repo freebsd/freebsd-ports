@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	viewvc
-PORTVERSION=	1.1.5
-PORTREVISION=	3
+PORTVERSION=	1.1.6
 CATEGORIES=	devel python
-MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/47458/ \
-  LOCAL/pgollucci
+MASTER_SITES=	http://www.viewvc.org/ \
+		LOCAL/glarkin
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Web-based Version Control Repository Browsing
 
-OPTIONS=\
-		SUBVERSION 	"use svn binding" 						on \
-		APACHE 		"use ${APACHE_PORT} as webserver"		on \
-		LIGHTTPD 	"use Lighttp as webserver" 				off \
-		MODPYTHON3 	"enable mod_python3 support" 			off \
-		MYSQL 		"enable experimental MYSQL support" 	off
+OPTIONS=	SUBVERSION "use svn binding" on \
+		APACHE "Use ${APACHE_PORT} as webserver" on \
+		LIGHTTPD "Use lighttpd as webserver" off \
+		MODPYTHON3 "Enable mod_python3 support" off \
+		MYSQL "Enable experimental MYSQL support" off
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	INSTDIR="${PREFIX}/${INSTDIR}" \
-			PYTHON_CMD=${PYTHON_CMD}
+		PYTHON_CMD=${PYTHON_CMD} \
+		ECHO=${ECHO} EGREP=${EGREP} TOUCH=${TOUCH} \
+		CHOWN=${CHOWN} RM=${RM}
 
 INSTDIR?=	${PORTNAME}
 PLIST_SUB=	INSTDIR=${INSTDIR}
@@ -66,12 +66,12 @@ RUN_DEPENDS+=	${PYTHON_LIBDIR}/site-packages/_mysql.so:${PORTSDIR}/databases/py-
 
 pre-everything::
 .if defined(WITH_APACHE) && defined(WITH_LIGHTTPD)
-	@${ECHO_CMD} "It doesn't make sense to depend on Apache *and* LighHTTPD choose only one."
+	@${ECHO_CMD} "It doesn't make sense to depend on Apache *and* lighttpd choose only one."
 	@${FALSE}
 .endif
 
 .if defined(WITH_MODPYTHON3) && !defined(WITH_APACHE) && defined(WITH_LIGHTTPD)
-	@${ECHO_CMD} "mod_python3 needs Apache, please select Apache and deselect LighHTTPD"
+	@${ECHO_CMD} "mod_python3 needs Apache, please select Apache and deselect lighttpd"
 	@${FALSE}
 .elif defined(WITH_MODPYTHON3) && !defined(WITH_APACHE)
 	@${ECHO_CMD} "mod_python3 needs Apache, please select Apache"

@@ -6,22 +6,22 @@
 # REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
-# Add the following line to /etc/rc.conf to enable ViewVC:
+# Add the following line(s) to /etc/rc.conf to enable ViewVC:
 #
 #  viewvc_enable="YES"
 #  # optional
 #  viewvc_flags="-h localhost -p PORT"
 #  viewvc_user="www"
 #
-# To get aviable parameters and the default values use the 
-# command %%PREFIX%%/viewvc/bin/standalone.py --help 
+# To get available parameters and the default values, use the
+# command %%PREFIX%%/viewvc/bin/standalone.py --help
 # for more info.
 #
 # Note:
-# If you choose a listen port less then 1024 then you have 
+# If you choose a listen port less then 1024 then you have
 # to use a privileged user.
-# If the user www can not access your cvs/svn repository 
-# adust the parameter viewvc_user and it should work.
+# If the user www cannot access your cvs/svn repository,
+# adjust the parameter viewvc_user and it should work.
 #
 # INFO:
 # The default port will change with the next release of ViewVC
@@ -30,22 +30,42 @@
 
 . /etc/rc.subr
 
-name="viewvc"
+name=viewvc
 rcvar=${name}_enable
+load_rc_config $name
 
-command="%%PREFIX%%/viewvc/bin/standalone.py"
+# Set defaults
+viewvc_enable=${viewvc_enable:-"NO"}
+viewvc_flags=${viewvc_flags:-"-p 49152"}
+viewvc_user=${viewvc_user:-"www"}
 
-# we need this, since our script interpreter is python
-command_interpreter="%%PYTHON_CMD%%"
+pidfile=/var/run/viewvc.pid
+command=%%PYTHON_CMD%%
+standalone=%%INSTDIR%%/bin/standalone.py
 
-# extra required arguments
-command_args="2>/dev/null 1>/dev/null &"
+start_precmd=viewvc_precmd
+start_cmd=viewvc_start
+stop_postcmd=viewvc_cleanup
 
-load_rc_config ${name}
+viewvc_precmd()
+{
+    # with param -d we get another pid so prevent this
+    %%ECHO%% "${viewvc_flags}" | %%EGREP%% -q "(^\-d| \-d)" 2>&1 > /dev/null
+    if [ $? -eq 0 ]; then
+        %%ECHO%% "Please remove parameter -d from viewvc_flags"
+        %%ECHO%%
+        return 1
+    fi
+}
 
-viewvc_enable=${viewvc_enable-NO}
-viewvc_flags=${viewvc_flags-"-p 49152"}
-viewvc_user=${viewvc_user-www}
-viewvc_procname=${viewvc_procname-%%PREFIX%%/viewvc/bin/standalone.py}
+viewvc_start() {
+    echo "Starting viewvc."
+    %%TOUCH%% ${pidfile} && %%CHOWN%% ${viewvc_user} ${pidfile}
+    /usr/sbin/daemon -cf -p ${pidfile} -u ${viewvc_user} -c ${standalone} ${viewvc_flags}
+}
+
+viewvc_cleanup() {
+    [ -f ${pidfile} ] && %%RM%% ${pidfile}
+}
 
 run_rc_command "$1"
