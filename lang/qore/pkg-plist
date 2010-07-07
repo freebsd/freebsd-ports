@@ -1,9 +1,8 @@
 bin/qore
 lib/libqore.la
 lib/libqore.so
-lib/libqore.so.8
+lib/libqore.so.9
 include/qore/ReferenceArgumentHelper.h
-include/qore/ReferenceHelper.h
 include/qore/qore_thread.h
 include/qore/AbstractThreadResource.h
 include/qore/QoreProgram.h
@@ -21,6 +20,7 @@ include/qore/node_types.h
 include/qore/BuiltinFunctionList.h
 include/qore/QoreThreadLock.h
 include/qore/QoreThreadLocalStorage.h
+include/qore/QoreTypeSafeReferenceHelper.h
 include/qore/QoreClass.h
 include/qore/QoreString.h
 include/qore/qore-version.h
