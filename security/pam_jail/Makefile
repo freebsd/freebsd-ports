@@ -28,7 +28,7 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.if ${OSVERSION} < 700000
+.if ${OSVERSION} < 800000
 BROKEN=		jail version not supported
 .endif
 
