@@ -1,6 +1,8 @@
 @unexec if cmp -s %D/%%INSTDIR%%/cvsgraph.conf %D/%%INSTDIR%%/cvsgraph.conf.dist; then rm -f %D/%%INSTDIR%%/cvsgraph.conf; fi
 @unexec if cmp -s %D/%%INSTDIR%%/mimetypes.conf %D/%%INSTDIR%%/mimetypes.conf.dist; then rm -f %D/%%INSTDIR%%/mimetypes.conf; fi
 @unexec if cmp -s %D/%%INSTDIR%%/viewvc.conf %D/%%INSTDIR%%/viewvc.conf.dist; then rm -f %D/%%INSTDIR%%/viewvc.conf; fi
+%%INSTDIR%%/bin/wsgi/query.wsgi
+%%INSTDIR%%/bin/wsgi/viewvc.wsgi
 %%INSTDIR%%/bin/cgi/viewvc.cgi
 %%INSTDIR%%/bin/cgi/query.cgi
 %%INSTDIR%%/bin/mod_python/viewvc.py
@@ -271,6 +273,7 @@
 @dirrm %%INSTDIR%%/lib/vcauth/forbidden
 @dirrm %%INSTDIR%%/lib/vcauth
 @dirrm %%INSTDIR%%/lib
+@dirrm %%INSTDIR%%/bin/wsgi
 @dirrm %%INSTDIR%%/bin/mod_python
 @dirrm %%INSTDIR%%/bin/cgi
 @dirrm %%INSTDIR%%/bin

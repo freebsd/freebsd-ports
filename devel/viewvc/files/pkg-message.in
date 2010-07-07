@@ -1,38 +1,39 @@
 *****************************************************************
 
- To use ViewVC modify the configuration file, located at
+ To use ViewVC, modify the configuration file located at
  %%INSTDIR%%/viewvc.conf.
 
- There is no need for an Webserver, all you have to do is
+ There is no need for a web server - all you have to do is
  enable the standalone ViewVC server in rc.conf with the
  parameter viewvc_enable="YES". 
 
- You can also adjust the user wich runs the ViewVC standalone 
- server with the paramter viewvc_user.
+ You can also adjust the user which runs the ViewVC standalone 
+ server with the parameter "viewvc_user".
 
  If you want to run the ViewVC standalone server with another 
- IP/PORT use the parameter viewvc_flags
+ IP/PORT, use the parameter "viewvc_flags".
 
- To see all aviable parameters use the command
+ To see all available parameters, use the command
  %%PREFIX%%/viewvc/bin/standalone.py --help
 
 
- To use ViewVC with Apache or LigHTTP as cgi script
- see the following config exmples.
+ To use ViewVC with Apache or lighttpd as a CGI script,
+ see the following config examples.
 
  Example config lines for Apache
- ==================================
+ ===============================
  Alias /viewvc "%%PREFIX%%/viewvc/bin/cgi/"
  <Directory "%%PREFIX%%/viewvc/bin/cgi">
+    AddHandler cgi-script .cgi
     Options NONE +ExecCGI
-    DirectoryIndex  /viewvc/viewvc.cgi
+    DirectoryIndex viewvc.cgi
     Order allow,deny
     Allow from all
  </Directory>
 
 
- Example config lines for LigHTTP
- ================================
+ Example config lines for lighttpd
+ =================================
  server.modules = (
    "mod_alias",
    "mod_access"
@@ -48,8 +49,3 @@
  }
 
 *****************************************************************
-
-
-
-
-
