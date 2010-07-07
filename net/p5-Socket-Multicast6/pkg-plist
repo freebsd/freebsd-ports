@@ -1,7 +1,6 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Multicast6/Multicast6.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Multicast6/Multicast6.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Multicast6/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/Socket/Multicast6.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket/Multicast6
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket
