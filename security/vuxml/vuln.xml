@@ -375,6 +375,34 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2010-06-23</entry>
     </dates>
   </vuln>
+  
+  <vuln vid="25673e6e-786b-11df-a921-0245fb008c0b">
+    <topic>ziproxy -- security vulnerability in PNG decoder</topic>
+    <affects>
+      <package>
+       <name>ziproxy</name>
+       <range><ge>3.1.0</ge></range>
+       <range><lt>3.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Daniel Mealha Cabrita reports:</p>
+       <blockquote cite="http://ziproxy.sourceforge.net/#news">
+         <p>Fixed security vulnerability (heap-related) in PNG decoder.
+            (new bug from 3.1.0)</p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+       <url>http://ziproxy.sourceforge.net/#news</url>
+       <mlist msgid="201006150731.30474.dancab@gmx.net">http://sourceforge.net/mailarchive/message.php?msg_name=201006150731.30474.dancab%40gmx.net</mlist>
+    </references>
+    <dates>
+      <discovery>2010-06-15</discovery>
+      <entry>2010-06-15</entry>
+    </dates>
+  </vuln>
 
   <vuln vid="8816bf3a-7929-11df-bcce-0018f3e2eb82">
     <topic>tiff -- Multiple integer overflows</topic>
