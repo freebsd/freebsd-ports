@@ -42,6 +42,7 @@ NAGIOSHTMURL?=	/nagios
 NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
 
 NAGIOSPOLLIP?=	127.0.0.1
+NAGIOSPOLLIP6?=	::1
 
 .include <bsd.port.pre.mk>
 
@@ -145,6 +146,7 @@ post-patch:
 .endfor
 .if defined(WITH_JAIL)
 	@${REINPLACE_CMD} -e 's# 127.0.0.1 # ${NAGIOSPOLLIP} #g' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's# ::1 # ${NAGIOSPOLLIP6} #g' ${WRKSRC}/configure.in
 .endif
 
 .include <bsd.port.post.mk>
