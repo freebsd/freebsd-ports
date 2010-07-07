@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 PKGNAMESUFFIX=	-qt4
 
-MAINTAINER=	henry.hu.sh@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Qt4 client for Scim-bridge
 
 RUN_DEPENDS=	scim-bridge:${PORTSDIR}/textproc/scim-bridge

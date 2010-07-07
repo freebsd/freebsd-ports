@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	henry.hu.sh@gmail.com
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Scim-bridge agent (server)
 
 LIB_DEPENDS=	scim-1.0.10:${PORTSDIR}/textproc/scim
