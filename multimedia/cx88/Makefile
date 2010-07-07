@@ -26,6 +26,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 .if ${OSVERSION} < 700055
 IGNORE=		requires FreeBSD 7.0-RELEASE or later
+.elif ${OSVERSION} >= 900000
+BROKEN=		does not build
 .endif
 
 .if !exists(/usr/src/sys/Makefile)
