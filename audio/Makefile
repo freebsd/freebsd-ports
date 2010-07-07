@@ -459,6 +459,7 @@
     SUBDIR += midimountain
     SUBDIR += mikmod
     SUBDIR += milkytracker
+    SUBDIR += minitunes
     SUBDIR += mixer.app
     SUBDIR += mixmos
     SUBDIR += mixxx
