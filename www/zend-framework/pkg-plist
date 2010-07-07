@@ -5904,6 +5904,7 @@ bin/zf.php
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.tool.project.providers.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.tool.usage.cli.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.translate.adapter.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/zend.translate.additional.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.translate.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.translate.introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.translate.plurals.html
@@ -8089,6 +8090,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/MyLoader.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/MyOverloader.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/PluginLoaderTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/_files/AutoloaderClosure.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/_files/ParseError.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/_files/ZendLoaderAutoloader/Foo.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/_files/Zend_LoaderTest.phar
@@ -8671,8 +8673,33 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestTopTagsSuccess.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestWeblog.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files/TestWeblogTwoAuthors.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/TwitterSearchTest.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/TwitterTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/TwitterSearchTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/TwitterTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/account.verify_credentials.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/blocks.blocking.ids.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/blocks.blocking.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/blocks.create.twitter.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/blocks.destroy.twitter.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/blocks.exists.padraicb.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/blocks.exists.twitter.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/favorites.create.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/favorites.destroy.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/favorites.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/friendships.create.twitter.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/friendships.destroy.twitter.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/friendships.exists.twitter.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/public_timeline.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/rate_limit_status.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/statuses.destroy.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/statuses.followers.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/statuses.friends.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/statuses.friends_timeline.page.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/statuses.mentions.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/statuses.show.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/statuses.update.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/user_timeline.twitter.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files/users.show.twitter.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/BlobStorageSharedAccessTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/BlobStorageTest.php
@@ -9315,6 +9342,8 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/Credentials
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Twitter
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Technorati/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Technorati
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/StrikeIron
