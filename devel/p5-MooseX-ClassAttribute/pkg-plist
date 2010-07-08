@@ -1,9 +1,17 @@
 %%SITE_PERL%%/MooseX/ClassAttribute.pm
 %%SITE_PERL%%/MooseX/ClassAttribute/Meta/Method/Accessor.pm
-%%SITE_PERL%%/MooseX/ClassAttribute/Role/Meta/Attribute.pm
-%%SITE_PERL%%/MooseX/ClassAttribute/Role/Meta/Class.pm
-@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Role/Meta
-@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Role
+%%SITE_PERL%%/MooseX/ClassAttribute/Meta/Role/Attribute.pm
+%%SITE_PERL%%/MooseX/ClassAttribute/Trait/Application/ToClass.pm
+%%SITE_PERL%%/MooseX/ClassAttribute/Trait/Application/ToRole.pm
+%%SITE_PERL%%/MooseX/ClassAttribute/Trait/Mixin/HasClassAttributes.pm
+%%SITE_PERL%%/MooseX/ClassAttribute/Trait/Attribute.pm
+%%SITE_PERL%%/MooseX/ClassAttribute/Trait/Role.pm
+%%SITE_PERL%%/MooseX/ClassAttribute/Trait/Class.pm
+%%SITE_PERL%%/MooseX/ClassAttribute/Trait/Application.pm
+@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Mixin
+@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Application
+@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Trait
+@dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Meta/Role
 @dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Meta/Method
 @dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute/Meta
 @dirrmtry %%SITE_PERL%%/MooseX/ClassAttribute
