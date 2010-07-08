@@ -69,6 +69,8 @@ lib/cherokee/libplugin_custom.la
 lib/cherokee/libplugin_custom.so
 lib/cherokee/libplugin_custom_error.la
 lib/cherokee/libplugin_custom_error.so
+lib/cherokee/libplugin_tls.la
+lib/cherokee/libplugin_tls.so
 %%MYSQL%%lib/cherokee/libplugin_dbslayer.la
 %%MYSQL%%lib/cherokee/libplugin_dbslayer.so
 lib/cherokee/libplugin_deflate.la
@@ -192,8 +194,12 @@ share/aclocal/cherokee.m4
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/cherokee.mo
 %%ADMIN%%%%DATADIR%%/admin/Auth.py
 %%ADMIN%%%%DATADIR%%/admin/Auth.pyc
+%%ADMIN%%%%DATADIR%%/admin/Backup.py
+%%ADMIN%%%%DATADIR%%/admin/Backup.pyc
 %%ADMIN%%%%DATADIR%%/admin/Balancer.py
 %%ADMIN%%%%DATADIR%%/admin/Balancer.pyc
+%%ADMIN%%%%DATADIR%%/admin/Login.py
+%%ADMIN%%%%DATADIR%%/admin/Login.pyc
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Box.py
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Box.pyc
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Button.py
@@ -274,6 +280,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Uploader.pyc
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Widget.py
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/Widget.pyc
+%%ADMIN%%%%DATADIR%%/admin/CTK/CTK/XMLRPCProxy.py
+%%ADMIN%%%%DATADIR%%/admin/CTK/CTK/XMLRPCProxy.pyc
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/__init__.py
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/__init__.pyc
 %%ADMIN%%%%DATADIR%%/admin/CTK/CTK/consts.py
@@ -492,6 +500,8 @@ share/aclocal/cherokee.m4
 %%ADMIN%%%%DATADIR%%/admin/plugins/streaming.pyc
 %%ADMIN%%%%DATADIR%%/admin/plugins/target_ip.py
 %%ADMIN%%%%DATADIR%%/admin/plugins/target_ip.pyc
+%%ADMIN%%%%DATADIR%%/admin/plugins/tls.py
+%%ADMIN%%%%DATADIR%%/admin/plugins/tls.pyc
 %%ADMIN%%%%DATADIR%%/admin/plugins/url_arg.py
 %%ADMIN%%%%DATADIR%%/admin/plugins/url_arg.pyc
 %%ADMIN%%%%DATADIR%%/admin/plugins/uwsgi.py

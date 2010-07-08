@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/1.0/${PORTVERSION}/ \
 		http://cherokee.osuosl.org/1.0/${PORTVERSION}/ \
