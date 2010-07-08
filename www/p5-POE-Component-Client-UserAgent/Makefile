@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	POE-Component-Client-UserAgent
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/R/RC/RCAPUTO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	LWP and LWP::Parallel based POE component
 
 BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
