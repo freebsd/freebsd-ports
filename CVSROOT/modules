@@ -9194,6 +9194,7 @@ minisapserver                   ports/net/minisapserver
 minised                         ports/textproc/minised
 minissdpd                       ports/net/minissdpd
 minitube                        ports/multimedia/minitube
+minitunes                       ports/audio/minitunes
 miniupnpc                       ports/net/miniupnpc
 miniupnpd                       ports/net/miniupnpd
 minivmac                        ports/emulators/minivmac
@@ -10843,6 +10844,7 @@ p5-Audio                        ports/audio/p5-Audio
 p5-Audio-Beep                   ports/audio/p5-Audio-Beep
 p5-Audio-CD                     ports/audio/p5-Audio-CD
 p5-Audio-FLAC-Header            ports/audio/p5-Audio-FLAC-Header
+p5-Audio-M4P                    ports/multimedia/p5-Audio-M4P
 p5-Audio-MPD                    ports/audio/p5-Audio-MPD
 p5-Audio-MPD-Common             ports/audio/p5-Audio-MPD-Common
 p5-Audio-Mixer                  ports/audio/p5-Audio-Mixer
@@ -11558,6 +11560,7 @@ p5-DBD-SQLite                   ports/databases/p5-DBD-SQLite
 p5-DBD-SQLite2                  ports/databases/p5-DBD-SQLite2
 p5-DBD-Sybase                   ports/databases/p5-DBD-Sybase
 p5-DBD-XBase                    ports/databases/p5-DBD-XBase
+p5-DBD-cego                     ports/databases/p5-DBD-cego
 p5-DBD-mysql                    ports/databases/p5-DBD-mysql
 p5-DBD-mysql40                  ports/databases/p5-DBD-mysql40
 p5-DBD-mysql41                  ports/databases/p5-DBD-mysql41
@@ -14713,6 +14716,7 @@ p5-audio                        ports/audio/p5-Audio
 p5-audio-beep                   ports/audio/p5-Audio-Beep
 p5-audio-cd                     ports/audio/p5-Audio-CD
 p5-audio-flac-header            ports/audio/p5-Audio-FLAC-Header
+p5-audio-m4p                    ports/multimedia/p5-Audio-M4P
 p5-audio-mixer                  ports/audio/p5-Audio-Mixer
 p5-audio-mpd                    ports/audio/p5-Audio-MPD
 p5-audio-mpd-common             ports/audio/p5-Audio-MPD-Common
@@ -15586,6 +15590,7 @@ p5-datetime-util-calc           ports/devel/p5-DateTime-Util-Calc
 p5-datetimex-easy               ports/devel/p5-DateTimeX-Easy
 p5-db_file-lock                 ports/devel/p5-DB_File-Lock
 p5-dbd-anydata                  ports/databases/p5-DBD-AnyData
+p5-dbd-cego                     ports/databases/p5-DBD-cego
 p5-dbd-csv                      ports/databases/p5-DBD-CSV
 p5-dbd-excel                    ports/databases/p5-DBD-Excel
 p5-dbd-frontbase                ports/databases/p5-DBD-FrontBase
