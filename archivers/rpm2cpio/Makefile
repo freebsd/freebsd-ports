@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rpm2cpio
-PORTVERSION=	1.2
-PORTREVISION=	2
+PORTVERSION=	1.3
 CATEGORIES=	archivers
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -19,16 +18,24 @@ NO_WRKSUBDIR=	yes
 
 USE_PERL5=	yes
 NO_BUILD=	yes
+REINPLACE_ARGS=
+
 PLIST_FILES=	bin/rpm2cpio.pl
+
+.include <bsd.port.pre.mk>
+
+.if ( (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505 )
+RUN_DEPENDS+=	${LOCALBASE}/bin/xz:${PORTSDIR}/archivers/xz
+.endif
 
 do-fetch:
 	@${DO_NADA}
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	${PERL5} -p -e "if (1 .. 1) {s-^#!/usr/bin/perl-#!${PERL}-;}" ${FILESDIR}/${PORTNAME} >${WRKDIR}/${PORTNAME}
+	@${REINPLACE_CMD} -e 's|^#!/usr/bin/perl|#!${PERL}|' ${FILESDIR}/${PORTNAME} >${WRKDIR}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}.pl
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
