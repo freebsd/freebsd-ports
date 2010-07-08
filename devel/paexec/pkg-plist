@@ -2,30 +2,31 @@ bin/paexec
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%EXAMPLESDIR%%/1_div_X/1_div_X_cmd
-%%EXAMPLESDIR%%/1_div_X/1_div_X_run
-%%EXAMPLESDIR%%/all_substr/all_substr_cmd
-%%EXAMPLESDIR%%/all_substr/all_substr_run
-%%EXAMPLESDIR%%/broken_echo/transport_broken_echo
-%%EXAMPLESDIR%%/broken_echo/transport_broken_echo2
-%%EXAMPLESDIR%%/broken_echo/transport_closed_stdin.c
-%%EXAMPLESDIR%%/cc_wrapper/cc_wrapper_cmd
-%%EXAMPLESDIR%%/cc_wrapper/cc_wrapper_run
-%%EXAMPLESDIR%%/cc_wrapper/func1.c
-%%EXAMPLESDIR%%/cc_wrapper/func2.c
-%%EXAMPLESDIR%%/cc_wrapper/func3.c
-%%EXAMPLESDIR%%/make_package/make_package_cmd
-%%EXAMPLESDIR%%/make_package/make_package_cmd__xxx_failed
-%%EXAMPLESDIR%%/make_package/make_package_tasks
-%%EXAMPLESDIR%%/make_package/make_package_tasks2
-%%EXAMPLESDIR%%/make_package/make_package_tasks_cycle
-%%EXAMPLESDIR%%/toupper/toupper_cmd
-%%EXAMPLESDIR%%/toupper/toupper_run
-@dirrm %%EXAMPLESDIR%%/1_div_X
-@dirrm %%EXAMPLESDIR%%/all_substr
-@dirrm %%EXAMPLESDIR%%/broken_echo
-@dirrm %%EXAMPLESDIR%%/cc_wrapper
-@dirrm %%EXAMPLESDIR%%/make_package
-@dirrm %%EXAMPLESDIR%%/toupper
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/1_div_X/1_div_X_cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/1_div_X/1_div_X_run
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/all_substr/all_substr_cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/all_substr/all_substr_run
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/broken_echo/transport_broken_echo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/broken_echo/transport_broken_echo2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/broken_echo/transport_broken_toupper
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/broken_echo/transport_closed_stdin.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper/cc_wrapper_cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper/cc_wrapper_run
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper/func1.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper/func2.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cc_wrapper/func3.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/make_package_cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/make_package_cmd__xxx_failed
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/make_package_tasks
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/make_package_tasks2
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/make_package/make_package_tasks_cycle
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toupper/toupper_cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/toupper/toupper_run
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/1_div_X
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/all_substr
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/broken_echo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cc_wrapper
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/make_package
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/toupper
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
