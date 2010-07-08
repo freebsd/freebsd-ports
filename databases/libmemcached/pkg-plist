@@ -67,7 +67,7 @@ lib/libmemcachedprotocol.so
 lib/libmemcachedprotocol.so.0
 lib/libmemcachedutil.la
 lib/libmemcachedutil.so
-lib/libmemcachedutil.so.0
+lib/libmemcachedutil.so.1
 libdata/pkgconfig/libmemcached.pc
 @dirrm include/libmemcached/util
 @dirrm include/libmemcached/protocol
