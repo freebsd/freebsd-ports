@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A GUI to view, search, print, and convert PostScript and PDF documents
 
 USE_GNOME=		gtk12

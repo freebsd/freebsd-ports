@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://statmath.wu-wien.ac.at/unuran/ \
 		LOCAL/wen
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Universal Non-Uniform RANdom number generators
 
 LIB_DEPENDS=	rngstreams:${PORTSDIR}/math/rngstreams

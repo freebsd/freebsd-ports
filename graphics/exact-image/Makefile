@@ -10,7 +10,7 @@ PORTVERSION=	0.8.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://dl.exactcode.de/oss/${PORTNAME}/
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Fast image processing library
 
 BUILD_DEPENDS=	swig>=1.3.32:${PORTSDIR}/devel/swig13

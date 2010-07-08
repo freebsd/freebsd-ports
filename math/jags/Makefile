@@ -20,7 +20,7 @@ DISTFILES+=	classic-bugs.tar.gz:2 jags_developer_manual.pdf:3 \
 EXTRACT_ONLY=	${DISTNAME:S/mcmc-//:U}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Just Another Gibbs Sampler
 
 OPTIONS=	ATLAS "use ATLAS libraries instead of BLAS and LAPACK" off

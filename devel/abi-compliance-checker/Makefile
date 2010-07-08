@@ -1,6 +1,6 @@
 # New ports collection makefile for:	abi-compliance-checker
 # Date created:		August 21, 2009
-# Whom:	      		bf <bf1783@gmail.com>
+# Whom:	      		bf <bf@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	http://ispras.linux-foundation.org/images/8/8d/
 DISTFILES=	${PORTNAME:S/^a/A/}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Checks binary compatibility of two versions of a C/C++ shared library
 
 NO_BUILD=	yes

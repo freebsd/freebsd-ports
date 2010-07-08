@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.iro.umontreal.ca/~simardr/testu01/:0 \
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX}:0 testu01.pdf:1
 EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Utilities for statistical testing of uniform random number generators
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
