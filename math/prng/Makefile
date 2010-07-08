@@ -1,6 +1,6 @@
 # New ports collection makefile for:	prng
 # Date created:		16 Feb. 2010
-# Whom:			bf <bf1783@gmail.com>
+# Whom:			bf <bf@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	prng
@@ -8,7 +8,7 @@ DISTVERSION=	3.0.2
 CATEGORIES=	math
 MASTER_SITES=	http://statistik.wu-wien.ac.at/software/prng/
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Portable, high-performance ANSI-C pseudorandom number generators
 
 GNU_CONFIGURE=	yes

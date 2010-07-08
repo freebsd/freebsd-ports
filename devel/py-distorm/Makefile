@@ -14,7 +14,7 @@ DISTFILES=	${PORTNAME}64-pkg${PORTVERSION}.tar.bz2 \
 		diSlib64.py
 EXTRACT_ONLY=	${PORTNAME}64-pkg${PORTVERSION}.tar.bz2
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Fast x86 and x86-64 disassembler library with Python interface
 
 USE_BZIP2=	yes

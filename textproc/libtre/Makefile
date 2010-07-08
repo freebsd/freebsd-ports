@@ -13,7 +13,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://laurikari.net/tre/
 DISTNAME=	tre-${PORTVERSION}
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A lightweight fully POSIX compliant regexp matching library
 
 USE_BZIP2=	yes

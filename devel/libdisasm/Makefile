@@ -10,7 +10,7 @@ PORTVERSION=	0.23
 CATEGORIES=	devel
 MASTER_SITES=	SF/bastard/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	The Bastard Disassembly Environment x86 disassembler library and CLI
 
 GNU_CONFIGURE=	yes

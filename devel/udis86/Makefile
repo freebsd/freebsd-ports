@@ -10,7 +10,7 @@ PORTVERSION=	1.7
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Minimalistic x86 and x86-64 disassembler library
 
 GNU_CONFIGURE=	yes

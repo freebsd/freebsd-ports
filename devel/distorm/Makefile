@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.ragestorm.net/distorm/
 DISTNAME=	${PORTNAME}64-pkg${PORTVERSION}
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Fast x86 and x86-64 disassembler library
 
 USE_BZIP2=	yes

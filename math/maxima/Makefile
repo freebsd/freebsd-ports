@@ -10,7 +10,7 @@ PORTVERSION=	5.21.1
 CATEGORIES=	math tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Symbolic mathematics program
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/${LISPPORT}

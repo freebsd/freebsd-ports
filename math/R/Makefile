@@ -34,7 +34,7 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		http://www.bioconductor.org/CRAN/src/base/R-2/
 DISTNAME=	R-${PORTVERSION}
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 .if defined(LIBRMATH_SLAVEPORT)
 COMMENT=	The standalone math library from R
 .else

@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	SF/sevenzip/LZMA%20SDK/${PORTVERSION}/
 DISTNAME=	lzma${PORTVERSION:S/.//g}
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	High-ratio LZMA compressor
 
 CONFLICTS=	lzmautils-[0-9]* xz-[0-9]*

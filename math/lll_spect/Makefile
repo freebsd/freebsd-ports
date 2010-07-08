@@ -1,6 +1,6 @@
 # New ports collection makefile for:	lll_spect
 # Date created:		6 Feb. 2010
-# Whom:			bf <bf1783@gmail.com>
+# Whom:			bf <bf@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	lll_spect
@@ -12,7 +12,7 @@ DISTFILES=	lll_spect.C lll_search.C examples.txt
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	LLL-spectral test of linear congruential random number generators
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl

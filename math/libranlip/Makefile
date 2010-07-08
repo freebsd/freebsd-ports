@@ -1,6 +1,6 @@
 # New ports collection makefile for:	libranlip
 # Date created:		6 Feb 2010
-# Whom:			bf <bf1783@gmail.com>
+# Whom:			bf <bf@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libranlip
@@ -9,7 +9,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://www.deakin.edu.au/~gleb/
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A random variate generator for Lipschitz-continuous densities
 
 GNU_CONFIGURE=	yes

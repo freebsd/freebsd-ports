@@ -9,7 +9,7 @@ PORTVERSION=	0.21.1
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
-MAINTAINER=	bf1783@gmail.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A converter from RTF to several formats, including HTML and LaTeX
 
 USE_ICONV=	yes
