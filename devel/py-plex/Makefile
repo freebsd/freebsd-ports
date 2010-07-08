@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cosc.canterbury.ac.nz/greg.ewing/python/Plex/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Plex-${PORTVERSION}
 
-MAINTAINER=	gcooper@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lexical Analysis Module for Python
 
 USE_PYTHON=	yes

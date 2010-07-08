@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.joachim-bauch.de/projects/python/pylzma/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pylzma-${PORTVERSION}
 
-MAINTAINER=	gcooper@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python binding for the LZMA compression library
 
 USE_PYTHON=	yes
