@@ -1,5 +1,8 @@
 %%XPI_XPIDIR%%/chrome/sync.jar
-%%XPI_XPIDIR%%/defaults/preferences/sync.js
+%%XPI_XPIDIR%%/defaults/preferences/firefox-sync.js
+%%XPI_XPIDIR%%/defaults/preferences/services-sync.js
+%%XPI_XPIDIR%%/components/AboutWeaveTabs.js
+%%XPI_XPIDIR%%/components/AddonGlue.js
 %%XPI_XPIDIR%%/components/FormNotifier.js
 %%XPI_XPIDIR%%/components/IWeaveCrypto.xpt
 %%XPI_XPIDIR%%/components/Weave.js
