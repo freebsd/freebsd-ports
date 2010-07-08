@@ -24,6 +24,15 @@ MAN8=		milter-callback.8
 EXTRACT_AFTER_ARGS=	| (${MKDIR} ${WRKSRC}; ${TAR} -xf - --no-same-owner \
 				--no-same-permissions -C ${WRKSRC})
 
+OPTIONS=	SPF "build with SPF support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SPF)
+MAKE_ENV+=	WITH_SPF=yes
+LIB_DEPENDS+=	spf2.3:${PORTSDIR}/mail/libspf2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" \
 		${WRKSRC}/${PORTNAME}.c
@@ -43,4 +52,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
