@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Net-Stomp
-PORTVERSION=	0.34
+PORTVERSION=	0.36
 CATEGORIES=	net-im perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Streaming Text Orientated Messaging Protocol Client
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor
