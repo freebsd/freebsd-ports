@@ -7,7 +7,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.8.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/ \
 		http://dl.snort.org/snort-current/
@@ -128,7 +128,7 @@ CONFIGURE_ARGS+=	--enable-perfprofiling
 
 .if defined(WITH_SNORTSAM)
 PATCH_SITES+=http://www.snortsam.net/files/snort-plugin/:snortsam
-PATCHFILES+=snortsam-2.8.5.diff.gz:snortsam
+PATCHFILES+=snortsam-2.8.5.3.diff.gz:snortsam
 .endif
 
 post-patch:
