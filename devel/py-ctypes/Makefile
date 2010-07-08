@@ -18,6 +18,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 ONLY_FOR_ARCHS=	i386 amd64 alpha powerpc sparc64
+DEPRECATED=	only applies to Python2.4; you should upgrade to a newer Python
 
 .include <bsd.port.pre.mk>
 
