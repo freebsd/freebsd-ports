@@ -48,6 +48,7 @@ share/doc/luckybackup/manual/data/about.png
 share/doc/luckybackup/manual/data/gpl.png
 share/doc/luckybackup/manual/data/luckyb.png
 share/doc/luckybackup/manual/data/luckybackup_320.png
+share/doc/luckybackup/manual/data/manage_calcDifferences.png
 share/doc/luckybackup/manual/data/manage_delete.png
 share/doc/luckybackup/manual/data/manage_logViewer.png
 share/doc/luckybackup/manual/data/manage_logViewer2.png
@@ -83,8 +84,8 @@ share/doc/luckybackup/manual/data/up.png
 share/doc/luckybackup/manual/index.html
 share/luckybackup/translations/luckybackup_ara.qm
 share/luckybackup/translations/luckybackup_ara.ts
-share/luckybackup/translations/luckybackup_bh.qm
-share/luckybackup/translations/luckybackup_bh.ts
+share/luckybackup/translations/luckybackup_bs.qm
+share/luckybackup/translations/luckybackup_bs.ts
 share/luckybackup/translations/luckybackup_cs.qm
 share/luckybackup/translations/luckybackup_cs.ts
 share/luckybackup/translations/luckybackup_de.qm
