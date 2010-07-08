@@ -10,7 +10,7 @@ PORTVERSION=	1.5.2
 CATEGORIES=	misc
 MASTER_SITES=	SF/posixtest/posixtest/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	gcooper@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open POSIX Test Suite
 
 WRKSRC=		${WRKDIR}/posixtestsuite

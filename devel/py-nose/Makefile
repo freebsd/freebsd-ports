@@ -14,7 +14,7 @@ MASTER_SITES=	http://somethingaboutorange.com/mrl/projects/nose/ \
 MASTER_SITE_SUBDIR=	dryice
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	gcooper@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A discovery-based unittest extension
 
 USE_PYTHON=	2.4+
