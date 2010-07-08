@@ -1,6 +1,0 @@
-MD5 (llvm-2.7.tgz) = ac322661f20e7d6c810b1869f886ad9b
-SHA256 (llvm-2.7.tgz) = 99664bdc8503a306038166af33f28eb426d99e297575a59d74a1a0dcbddbbca5
-SIZE (llvm-2.7.tgz) = 8374297
-MD5 (clang-2.7.tgz) = b83260aa8c13494adf8978b5f238bf1b
-SHA256 (clang-2.7.tgz) = fb349471947f155c1cda1c8a4a3bbc7fa437b86f6875d9978f86c915dfed623a
-SIZE (clang-2.7.tgz) = 4953739

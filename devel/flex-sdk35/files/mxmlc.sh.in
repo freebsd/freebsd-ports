@@ -1,9 +1,0 @@
-#!/bin/sh
-
-[ -z "${PREFIX}" ]     && PREFIX="%%PREFIX%%"
-[ -z "${JAVAJARDIR}" ] && JAVAJARDIR="%%JAVAJARDIR%%/%%PORTNAME%%"
-[ -z "${DATADIR}" ]    && DATADIR="%%DATADIR%%"
-
-VMARGS="-Xmx384m -Dsun.io.useCanonCaches=false"
-
-java $VMARGS -jar "$JAVAJARDIR/mxmlc.jar" +flexlib="$DATADIR/frameworks" $*
