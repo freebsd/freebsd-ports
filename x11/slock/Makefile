@@ -8,15 +8,18 @@
 PORTNAME=	slock
 PORTVERSION=	0.9
 CATEGORIES=	x11
-MASTER_SITES=	http://code.suckless.org/dl/tools/
+MASTER_SITES=	http://dl.suckless.org/tools/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	baptiste.daroussin@gmail.com
 COMMENT=	Simple X screen locker
 
 MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \
 		X11INC="${LOCALBASE}/include" CC="${CC}" \
 		MANPREFIX="${MANPREFIX}/man"
 PLIST_FILES=	bin/slock
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKE_JOBS_SAFE=	yes
 USE_XORG=	x11 xt xproto xext
