@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	JSON-RPC-Dispatcher
-PORTVERSION=	0.0502
+PORTVERSION=	0.0503
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,5 +25,8 @@ PERL_CONFIGURE=	YES
 MAN3=		JSON::RPC::Dispatcher.3 \
 		JSON::RPC::Dispatcher::App.3 \
 		JSON::RPC::Dispatcher::Procedure.3
+
+post-patch:
+	${RM} ${WRKSRC}/lib/JSON/RPC/Dispatcher.pm.orig
 
 .include <bsd.port.mk>
