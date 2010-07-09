@@ -84,6 +84,12 @@ RUN_DEPENDS+=	${FONTSCALE}:${X_FONTS_TTF_PORT} \
 		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT}
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == powerpc64
+CFLAGS+=	-mminimal-toc
+.endif
+
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
@@ -99,4 +105,4 @@ post-configure:
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
 		${WRKSRC}/lib/pkgconfig/QtGui.pc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
