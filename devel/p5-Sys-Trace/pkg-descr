@@ -1,0 +1,9 @@
+Sys::Trace provides a way to programmatically run or trace a program
+and see the system calls it makes.
+
+This can be useful during testing as a way to ensure a particular file
+is actually opened, or another hard to test interaction actually occurs.
+
+Currently supported tracing mechanisms are ktrace, strace and truss.
+
+WWW: http://search.cpan.org/dist/Sys-Trace/
