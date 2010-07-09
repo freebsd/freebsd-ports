@@ -15,14 +15,15 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
 
+MAKE_JOBS_SAFE=	yes
+
+USE_XZ=		yes
+USE_LDCONFIG=	yes
+
 MAKEFILE=	${WRKSRC}/scripts/makefile.freebsd
 ALL_TARGET=	all libpng-config test
 MAKE_FLAGS=	ccopts="${CFLAGS}" ldopts="${LDFLAGS}" -f
-MAKE_JOBS_SAFE=	yes
-USE_LDCONFIG=	yes
 SHLIB_VER=	6
-USE_XZ=		yes
-
 MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
@@ -38,6 +39,7 @@ OPTIONS=	APNG "Animated PNG support" Off
 MASTER_SITES+=	SF/vdubapngmod/lib${PORTNAME}-apng-patch/${PORTVERSION}:apng \
 		http://littlesvr.ca/apng/diff/:apng
 DISTFILES+=	${DISTNAME}-apng.patch:apng
+EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
 .endif
 .if defined(WITH_APNG)
 USE_DOS2UNIX=	${DISTNAME}-apng.patch
