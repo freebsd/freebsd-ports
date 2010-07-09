@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	atutor
-PORTVERSION=	1.6.3
+PORTVERSION=	2.0
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/ATutor/ATutor%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/ATutor%20${PORTVERSION}
 DISTNAME=	ATutor-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An Open Source Web-based Learning Content Management System (LCMS)
 
 USE_PHP=	session mbstring zlib mysql
