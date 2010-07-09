@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.gplhost.com/pub/dtc/bsd/ \
 		ftp://ftp.gplhost.fr/pub/dtc/bsd/ \
 		ftp://ftp.gplhost.sg/pub/dtc/bsd/
 
-MAINTAINER=	thomas@goirand.fr
+MAINTAINER=	fkiernan@id.net.ar
 COMMENT=	A hosting web GUI for admin and accounting all hosting services
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql50-server \
@@ -37,7 +37,7 @@ USE_PHP=	mysql pcre session
 
 BROKEN=		bad plist
 DEPRECATED=	has been broken for 17 months
-EXPIRATION_DATE=2010-01-08
+EXPIRATION_DATE=2010-09-09
 
 .if defined(WITH_PHP5)
 DEFAULT_PHP_VER=5
