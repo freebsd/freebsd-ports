@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	pekwm
-PORTVERSION=	0.1.11
-PORTREVISION=	3
+PORTVERSION=	0.1.12
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://pekwm.org/projects/3/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	baptiste.daroussin@gmail.com
 COMMENT=	Light, Unobtrusive, and configurable windowmanager
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png
 
-USE_BZIP2=	yes
 USE_XORG=	xft xpm x11
 USE_GMAKE=	yes
 USE_ICONV=	yes
