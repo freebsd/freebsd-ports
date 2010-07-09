@@ -7,13 +7,15 @@
 
 PORTNAME=	Params-Validate
 PORTVERSION=	0.95
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dsh@vlink.ru
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Validate method/function parameters
+
+BUILD_DEPENDS=	p5-ExtUtils-CBuilder>=0.2703:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 
 PERL_MODBUILD=	yes
 
