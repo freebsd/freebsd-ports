@@ -1,3 +1,6 @@
+bin/rst2man.py
+bin/rst2odt.py
+bin/rst2odt_prepstyles.py
 bin/rst2xml
 bin/rst2s5
 bin/rst2pseudoxml
@@ -35,6 +38,13 @@ bin/rst2html
 %%PYTHON_SITELIBDIR%%/docutils/writers/s5_html/__init__.pyo
 %%PYTHON_SITELIBDIR%%/docutils/writers/s5_html/__init__.pyc
 %%PYTHON_SITELIBDIR%%/docutils/writers/s5_html/__init__.py
+%%PYTHON_SITELIBDIR%%/docutils/writers/odf_odt/__init__.py
+%%PYTHON_SITELIBDIR%%/docutils/writers/odf_odt/__init__.pyc
+%%PYTHON_SITELIBDIR%%/docutils/writers/odf_odt/__init__.pyo
+%%PYTHON_SITELIBDIR%%/docutils/writers/odf_odt/pygmentsformatter.py
+%%PYTHON_SITELIBDIR%%/docutils/writers/odf_odt/pygmentsformatter.pyc
+%%PYTHON_SITELIBDIR%%/docutils/writers/odf_odt/pygmentsformatter.pyo
+%%PYTHON_SITELIBDIR%%/docutils/writers/odf_odt/styles.odt
 %%PYTHON_SITELIBDIR%%/docutils/writers/pseudoxml.pyo
 %%PYTHON_SITELIBDIR%%/docutils/writers/pseudoxml.pyc
 %%PYTHON_SITELIBDIR%%/docutils/writers/pseudoxml.py
@@ -43,6 +53,9 @@ bin/rst2html
 %%PYTHON_SITELIBDIR%%/docutils/writers/pep_html/__init__.pyo
 %%PYTHON_SITELIBDIR%%/docutils/writers/pep_html/__init__.pyc
 %%PYTHON_SITELIBDIR%%/docutils/writers/pep_html/__init__.py
+%%PYTHON_SITELIBDIR%%/docutils/writers/manpage.py
+%%PYTHON_SITELIBDIR%%/docutils/writers/manpage.pyc
+%%PYTHON_SITELIBDIR%%/docutils/writers/manpage.pyo
 %%PYTHON_SITELIBDIR%%/docutils/writers/null.pyo
 %%PYTHON_SITELIBDIR%%/docutils/writers/null.pyc
 %%PYTHON_SITELIBDIR%%/docutils/writers/null.py
@@ -53,7 +66,8 @@ bin/rst2html
 %%PYTHON_SITELIBDIR%%/docutils/writers/newlatex2e/__init__.pyo
 %%PYTHON_SITELIBDIR%%/docutils/writers/newlatex2e/__init__.pyc
 %%PYTHON_SITELIBDIR%%/docutils/writers/newlatex2e/__init__.py
-%%PYTHON_SITELIBDIR%%/docutils/writers/latex2e/latex2e.tex
+%%PYTHON_SITELIBDIR%%/docutils/writers/latex2e/default.tex
+%%PYTHON_SITELIBDIR%%/docutils/writers/latex2e/titlepage.tex
 %%PYTHON_SITELIBDIR%%/docutils/writers/latex2e/__init__.pyo
 %%PYTHON_SITELIBDIR%%/docutils/writers/latex2e/__init__.pyc
 %%PYTHON_SITELIBDIR%%/docutils/writers/latex2e/__init__.py
@@ -152,6 +166,9 @@ bin/rst2html
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/pt_br.pyo
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/pt_br.pyc
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/pt_br.py
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/pl.py
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/pl.pyc
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/pl.pyo
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/nl.pyo
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/nl.pyc
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/nl.py
@@ -161,6 +178,9 @@ bin/rst2html
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/it.pyo
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/it.pyc
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/it.py
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/gl.py
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/gl.pyc
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/gl.pyo
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/fr.pyo
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/fr.pyc
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/fr.py
@@ -285,6 +305,9 @@ bin/rst2html
 %%PYTHON_SITELIBDIR%%/docutils/languages/pt_br.pyo
 %%PYTHON_SITELIBDIR%%/docutils/languages/pt_br.pyc
 %%PYTHON_SITELIBDIR%%/docutils/languages/pt_br.py
+%%PYTHON_SITELIBDIR%%/docutils/languages/pl.py
+%%PYTHON_SITELIBDIR%%/docutils/languages/pl.pyc
+%%PYTHON_SITELIBDIR%%/docutils/languages/pl.pyo
 %%PYTHON_SITELIBDIR%%/docutils/languages/nl.pyo
 %%PYTHON_SITELIBDIR%%/docutils/languages/nl.pyc
 %%PYTHON_SITELIBDIR%%/docutils/languages/nl.py
@@ -297,6 +320,9 @@ bin/rst2html
 %%PYTHON_SITELIBDIR%%/docutils/languages/he.py
 %%PYTHON_SITELIBDIR%%/docutils/languages/he.pyc
 %%PYTHON_SITELIBDIR%%/docutils/languages/he.pyo
+%%PYTHON_SITELIBDIR%%/docutils/languages/gl.py
+%%PYTHON_SITELIBDIR%%/docutils/languages/gl.pyc
+%%PYTHON_SITELIBDIR%%/docutils/languages/gl.pyo
 %%PYTHON_SITELIBDIR%%/docutils/languages/fr.pyo
 %%PYTHON_SITELIBDIR%%/docutils/languages/fr.pyc
 %%PYTHON_SITELIBDIR%%/docutils/languages/fr.py
@@ -339,6 +365,12 @@ bin/rst2html
 %%PYTHON_SITELIBDIR%%/docutils/core.pyo
 %%PYTHON_SITELIBDIR%%/docutils/core.pyc
 %%PYTHON_SITELIBDIR%%/docutils/core.py
+%%PYTHON_SITELIBDIR%%/docutils/_compat.py
+%%PYTHON_SITELIBDIR%%/docutils/_compat.pyc
+%%PYTHON_SITELIBDIR%%/docutils/_compat.pyo
+%%PYTHON_SITELIBDIR%%/docutils/_string_template_compat.py
+%%PYTHON_SITELIBDIR%%/docutils/_string_template_compat.pyc
+%%PYTHON_SITELIBDIR%%/docutils/_string_template_compat.pyo
 %%PYTHON_SITELIBDIR%%/docutils/__init__.pyo
 %%PYTHON_SITELIBDIR%%/docutils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/docutils/__init__.py
@@ -352,6 +384,7 @@ bin/rst2html
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/writers/s5_html/themes
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/writers/s5_html
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/writers/pep_html
+@dirrm %%PYTHON_SITELIBDIR%%/docutils/writers/odf_odt
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/writers/newlatex2e
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/writers/latex2e
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/writers/html4css1
