@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime
-PORTVERSION=	0.59
+PORTVERSION=	0.60
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,8 @@ RUN_DEPENDS=	p5-DateTime-Locale>=0.41:${PORTSDIR}/devel/p5-DateTime-Locale \
 		p5-DateTime-TimeZone>=1.09:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		p5-Params-Validate>=0.76:${PORTSDIR}/devel/p5-Params-Validate
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Simple>=0.89:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_MODBUILD=	yes
 
