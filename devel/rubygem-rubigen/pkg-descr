@@ -9,4 +9,4 @@ It is a framework to allow Ruby applications to generate file/folder stubs
 RubiGen exists to give different development environments their own generator
 framework.
 
-WWW:    http://rubigen.rubyforge.org/
+WWW:    http://drnic.github.com/rubigen/
