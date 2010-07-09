@@ -201,6 +201,7 @@
     SUBDIR += epylog
     SUBDIR += eroaster
     SUBDIR += etcmerge
+    SUBDIR += etcupdate
     SUBDIR += etoile-behavior
     SUBDIR += etoile-installer
     SUBDIR += etoile-powermenulet

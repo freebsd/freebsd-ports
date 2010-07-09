@@ -1,0 +1,11 @@
+The etcupdate utility is a tool for managing updates to files that are
+not updated as part of `make installworld' such as files in /etc.  It
+manages updates by doing a three-way merge of changes made to these files
+against the local versions.  It is also designed to minimize the amount
+of user intervention with the goal of simplifying upgrades for clusters
+of machines.
+
+The primary difference from mergemaster is that etcupdate requires less
+manual work.  The primary difference from etcmerge is that etcupdate
+updates files in-place similar to mergemaster rather than building a
+separate /etc tree.
