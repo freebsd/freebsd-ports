@@ -1,0 +1,24 @@
+
+--- etc/hylafax.in.orig	2010-07-03 12:28:08.000000000 +0400
++++ etc/hylafax.in	2010-07-03 12:34:20.000000000 +0400
+@@ -74,6 +74,9 @@
+ if [ -z "$HFAXD_SNPP_SERVER" ]; then
+     HFAXD_SNPP_SERVER=no
+ fi
++if [ -z "$HFAXD_ARGS" ]; then
++    HFAXD_ARGS=
++fi
+ 
+ IS_ON=/etc/chkconfig		# NB: chkconfig is IRIX- and Linux-specific
+ FAXQ=$SBIN/faxq
+@@ -154,7 +157,7 @@
+ 	        $FAXQ; printf " faxq"
+             fi
+             if test $HFAXD_SERVER = yes ; then
+-	        HFAXD="$HFAXD -i $FAXPORT"
++		HFAXD="$HFAXD $HFAXD_ARGS -i $FAXPORT"	        
+ 		HFAXMSG=" hfaxd"
+ 		if [ $HFAXD_SNPP_SERVER = yes ]; then
+ 	    	    HFAXD="$HFAXD -s $SNPPPORT"
+
+
