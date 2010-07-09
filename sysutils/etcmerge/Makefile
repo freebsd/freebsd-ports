@@ -10,7 +10,7 @@
 PORTNAME=	etcmerge
 PORTVERSION=	0.4
 PORTREVISION=	0
-CATEGORIES=	sysutils textproc
+CATEGORIES=	sysutils
 MASTER_SITES=	# none
 DISTFILES=	# none
 
@@ -25,11 +25,8 @@ SRC=		${.CURDIR}/src
 MAN8=		${PORTNAME}.8
 PLIST_FILES=	sbin/etcmerge
 
-do-fetch:
-	@${DO_NADA}
-
 do-install:
-	@${INSTALL_SCRIPT} ${SRC}/${PORTNAME}.sh ${PREFIX}/sbin/${PORTNAME}
-	@${INSTALL_MAN} ${SRC}/${PORTNAME}.8 ${PREFIX}/man/man8
+	${INSTALL_SCRIPT} ${SRC}/${PORTNAME}.sh ${PREFIX}/sbin/${PORTNAME}
+	${INSTALL_MAN} ${SRC}/${PORTNAME}.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
