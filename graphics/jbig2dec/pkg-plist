@@ -1,0 +1,6 @@
+bin/jbig2dec
+include/jbig2.h
+lib/libjbig2dec.a
+lib/libjbig2dec.la
+lib/libjbig2dec.so
+lib/libjbig2dec.so.0
