@@ -1,3 +1,0 @@
-If eclipse is reinstalled, you must run the 'setup-user' make
-target as each user that is using eclipse.  Failure to do so will result
-in plugins installed by the users not being available at run-time.

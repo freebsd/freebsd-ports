@@ -1,1 +1,0 @@
-freebsd-gtk-%%ECLIPSE_ARCH%%-sdk.tar.gz=file:%%WRKSRC%%/result/ | | | sdk | eclipse
