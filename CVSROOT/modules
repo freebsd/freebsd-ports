@@ -13820,6 +13820,7 @@ p5-Sys-Sig                      ports/devel/p5-Sys-Sig
 p5-Sys-SigAction                ports/devel/p5-Sys-SigAction
 p5-Sys-Syscall                  ports/devel/p5-Sys-Syscall
 p5-Sys-Syslog                   ports/sysutils/p5-Sys-Syslog
+p5-Sys-Trace                    ports/devel/p5-Sys-Trace
 p5-Sys-User-UIDhelper           ports/sysutils/p5-Sys-User-UIDhelper
 p5-Sys-Utmp                     ports/sysutils/p5-Sys-Utmp
 p5-Sysadm-Install               ports/sysutils/p5-Sysadm-Install
@@ -17770,6 +17771,7 @@ p5-sys-sig                      ports/devel/p5-Sys-Sig
 p5-sys-sigaction                ports/devel/p5-Sys-SigAction
 p5-sys-syscall                  ports/devel/p5-Sys-Syscall
 p5-sys-syslog                   ports/sysutils/p5-Sys-Syslog
+p5-sys-trace                    ports/devel/p5-Sys-Trace
 p5-sys-user-uidhelper           ports/sysutils/p5-Sys-User-UIDhelper
 p5-sys-utmp                     ports/sysutils/p5-Sys-Utmp
 p5-sysadm-install               ports/sysutils/p5-Sysadm-Install
