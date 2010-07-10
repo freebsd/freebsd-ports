@@ -45,9 +45,31 @@ share/locale/ur_PK/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/vi/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-notes-plugin.mo
+%%DATADIR%%/gtk-2.0/gradient.png
+%%DATADIR%%/gtk-2.0/notes.gtkrc
+%%DATADIR%%/gtk-2.0/scrollbars/slider-horiz-active.png
+%%DATADIR%%/gtk-2.0/scrollbars/slider-horiz.png
+%%DATADIR%%/gtk-2.0/scrollbars/slider-vert-active.png
+%%DATADIR%%/gtk-2.0/scrollbars/slider-vert.png
+%%DATADIR%%/gtk-2.0/scrollbars/stepper-down-active.png
+%%DATADIR%%/gtk-2.0/scrollbars/stepper-down.png
+%%DATADIR%%/gtk-2.0/scrollbars/stepper-left-active.png
+%%DATADIR%%/gtk-2.0/scrollbars/stepper-left.png
+%%DATADIR%%/gtk-2.0/scrollbars/stepper-right-active.png
+%%DATADIR%%/gtk-2.0/scrollbars/stepper-right.png
+%%DATADIR%%/gtk-2.0/scrollbars/stepper-up-active.png
+%%DATADIR%%/gtk-2.0/scrollbars/stepper-up.png
+%%DATADIR%%/gtk-2.0/scrollbars/trough-scrollbar-horiz.png
+%%DATADIR%%/gtk-2.0/scrollbars/trough-scrollbar-vert.png
+%%DATADIR%%/pixmaps/notes-menu-active.png
+%%DATADIR%%/pixmaps/notes-menu.png
 share/xfce4/panel-plugins/xfce4-notes-plugin.desktop
 @dirrmtry share/xfce4/panel-plugins
 @dirrmtry share/xfce4
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/gtk-2.0/scrollbars
+@dirrm %%DATADIR%%/gtk-2.0
+@dirrm %%DATADIR%%
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
 @dirrmtry share/locale/ur/LC_MESSAGES
