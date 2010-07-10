@@ -34,6 +34,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ba61ce15-8a7b-11df-87ec-0050569b2d21">
+    <topic>redmine -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>redmine</name>
+	<range><lt>0.9.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Eric Davis reports:</p>
+	<blockquote cite="http://www.redmine.org/news/41">
+	  <p>This security release addresses some security
+	    vulnerabilities found in the advanced subversion
+	    integration module (Redmine.pm perl script).</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.redmine.org/news/41</url>
+    </references>
+    <dates>
+      <discovery>2010-07-08</discovery>
+      <entry>2010-07-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="25ed4ff8-8940-11df-a339-0026189baca3">
     <topic>bogofilter -- heap underrun on malformed base64 input</topic>
     <affects>
