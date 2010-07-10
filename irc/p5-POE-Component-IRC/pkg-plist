@@ -4,6 +4,7 @@
 %%SITE_PERL%%/POE/Component/IRC/Cookbook.pod
 %%SITE_PERL%%/POE/Component/IRC/Cookbook/BasicBot.pod
 %%SITE_PERL%%/POE/Component/IRC/Cookbook/Disconnecting.pod
+%%SITE_PERL%%/POE/Component/IRC/Cookbook/Gtk2.pod
 %%SITE_PERL%%/POE/Component/IRC/Cookbook/Reload.pod
 %%SITE_PERL%%/POE/Component/IRC/Cookbook/Hailo.pod
 %%SITE_PERL%%/POE/Component/IRC/Cookbook/Resolver.pod
