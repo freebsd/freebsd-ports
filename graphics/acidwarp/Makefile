@@ -12,40 +12,35 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/hacks/svgalib
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=SVGAlib demo which displays trippy mathematical images in cycling colors
+COMMENT=	SVGAlib demo which displays trippy mathematical images in cycling colors
 
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 
-ALL_TARGET=	acidwarp
-DOCFILES=	README TODO Thanks
 ONLY_FOR_ARCHS=	i386
-PLIST=		${WRKDIR}/pkg-plist
-REINPLACE_ARGS=	-i'' -E
-WRKSRC=		${WRKDIR}/acidwarp
+ALL_TARGET=	${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+PLIST_FILES=	bin/acidwarp
+PORTDOCS=	README TODO Thanks
+
+OPTION=		SETUID "Install with setuid bit set" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_SETUID)
+BINMODE=	4555
+.endif
 
 post-extract:
-	${RM} ${WRKSRC}/acidwarp
-
-post-patch:
-	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile
-
-pre-install:
-	${ECHO_CMD} "bin/acidwarp" > ${PLIST}
-.if !defined(NOPORTDOCS)
-.for i in ${DOCFILES}
-	${ECHO_CMD} -n "share/doc/acidwarp/" >> ${PLIST}
-	${ECHO_CMD} ${i} >> ${PLIST}
-.endfor
-	${ECHO_CMD} "@dirrm share/doc/acidwarp" >> ${PLIST}
-.endif
+	${RM} -f ${WRKSRC}/acidwarp
 
 do-install:
-	${INSTALL} -c -g wheel -o root -m 4755 ${WRKSRC}/acidwarp ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/acidwarp ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/acidwarp
-.for i in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/acidwarp
+	${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
