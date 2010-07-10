@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig        2010-06-29 18:21:22.000000000 +0200
++++ CMakeLists.txt     2010-06-29 18:21:35.000000000 +0200
+@@ -69,7 +69,7 @@
+ configure_file(${CMAKE_SOURCE_DIR}/libgcal.pc.in ${CMAKE_BINARY_DIR}/libgcal.pc @ONLY)
+ install(
+ 	FILES "${CMAKE_BINARY_DIR}/libgcal.pc"
+-	DESTINATION "${GCAL_LIBRARY_INSTALL_DIR}/pkgconfig"
++	DESTINATION "libdata/pkgconfig"
+ )
+
+
