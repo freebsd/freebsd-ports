@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		mapserver
-PORTVERSION=		5.6.3
-PORTREVISION=	2
+PORTVERSION=		5.6.4
+PORTREVISION=		2
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
