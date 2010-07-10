@@ -1,4 +1,2 @@
-deb2targz is a very small perl script for converting Debian Linux .deb packages
-to a .tar.gz. deb2targz does not need any external programs like 'ar' or 'tar'.
-
-WWW: http://www.miketaylor.org.uk/tech/deb/
+deb2targz is a very small shell script for converting Debian Linux .deb packages
+to a .tar.gz.
