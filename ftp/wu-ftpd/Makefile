@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/
 PATCH_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/patches/apply_to_2.6.2/
 PATCHFILES=	connect-dos.patch realpath.patch
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A replacement ftp server for Un*x systems
 
 CONFLICTS=	wu-ftpd+ipv6-[0-9]* heimdal-[0-9]*
