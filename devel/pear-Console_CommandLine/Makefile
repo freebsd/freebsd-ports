@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Console_CommandLine
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.3
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
