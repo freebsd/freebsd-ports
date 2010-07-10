@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP_UML
-PORTVERSION=	1.0.1
+PORTVERSION=	1.5.2
 CATEGORIES=	devel
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -25,7 +25,7 @@ FILES=		UML.php \
 		UML/FileScanner.php UML/FileScannerImpl.php \
 		UML/SimpleUID.php UML/Warning.php \
 		UML/Metamodel/Class.php UML/Metamodel/Enumeration.php \
-		UML/Metamodel/File.php UML/Metamodel/Interface.php \
+		UML/Metamodel/Classifier.php UML/Metamodel/Interface.php \
 		UML/Metamodel/NamedElement.php UML/Metamodel/Operation.php \
 		UML/Metamodel/Package.php UML/Metamodel/Parameter.php \
 		UML/Metamodel/Property.php UML/Metamodel/Stereotype.php \
