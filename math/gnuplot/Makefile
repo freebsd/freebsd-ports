@@ -13,35 +13,34 @@ MASTER_SITES=	SF
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	A command-driven interactive function plotting program
 
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-lasergnu \
 		--with-readline=gnu \
 		--without-linux-vga \
 		--without-lisp-files \
 		--without-tutorial
-USE_GNOME=	pango
 
-OPTIONS=	GD		"Enable GD support"		on \
+OPTIONS=	X11		"Enable X11 support"		on \
+		GD		"Enable GD support"		on \
 		GRIDBOX		"Use the gridbox optimization for hidden3d" off \
 		PDF		"Enable PDF support"		on \
 		PLOT		"Enable plot support"		on \
 		TETEX		"Search kpsexpand at run-time"	on \
 		THINSPLINES	"Enable thin plate splines for grids in dgrid3d" off \
-		WX		"Enable WX support"		on
+		WX		"Enable WX support"		on \
+		CAIRO		"Enable CAIRO support"		on
 
 MAN1=		gnuplot.1 lasergnu.1
 INFO=		gnuplot
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_X11)
-USE_XORG=		x11
-PLIST_SUB+=		X11=""
-.else
+.if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=		X11="@comment "
+.else
+USE_XORG=		x11
+PLIST_SUB+=		X11=""
 .endif
 
 .if defined(WITHOUT_GD)
@@ -90,6 +89,13 @@ CONFIGURE_ARGS+=	--disable-wxwidgets
 .else
 USE_WX=			2.4+
 WX_CONF_ARGS=		absolute
+.endif
+
+.if defined(WITHOUT_CAIRO)
+CONFIGURE_ARGS+=	--without-cairo
+.else
+LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
+USE_GNOME+=		pango
 .endif
 
 post-patch:
