@@ -1,3 +1,5 @@
 bin/xprobe2
-etc/xprobe2/xprobe2.conf
-@dirrm etc/xprobe2
+@unexec if cmp -s %D/%%ETCDIR%%/xprobe2.conf.sample %D/%%ETCDIR%%/xprobe2.conf; then rm -f %D/%%ETCDIR%%/xprobe2.conf; fi
+%%ETCDIR%%/xprobe2.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/xprobe2.conf ]; then cp -p %D/%F %B/xprobe2.conf; fi
+@dirrm %%ETCDIR%%
