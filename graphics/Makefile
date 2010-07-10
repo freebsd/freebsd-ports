@@ -354,6 +354,7 @@
     SUBDIR += jalbum
     SUBDIR += jasper
     SUBDIR += jave6
+    SUBDIR += jbig2dec
     SUBDIR += jbigkit
     SUBDIR += jdraw
     SUBDIR += jgraph
