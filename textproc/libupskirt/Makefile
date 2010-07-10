@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	libupskirt
-DISTVERSION=	1.0-rc2
+DISTVERSION=	1.0
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://instinctive.eu/code/
 
 MAINTAINER=	baptiste.daroussin@gmail.com
 COMMENT=	Flexible C library for markdown
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKEFILE=	BSDmakefile
 USE_LDCONFIG=	yes
