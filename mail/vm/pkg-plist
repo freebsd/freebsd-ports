@@ -17,27 +17,6 @@ bin/qp-encode
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/forward-up.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/getmail-dn.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/getmail-up.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/help-dn.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/help-up.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/mime-dn.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/mime-up.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/mime-xx.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/next-dn.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/next-up.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/previous-dn.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/previous-up.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/print-dn.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/print-up.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/quit-dn.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/quit-up.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/recover-dn.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/recover-up.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/reply-dn.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/reply-up.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/undelete-dn.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/undelete-up.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/visit-dn.xpm
-%%EMACS_LIBDIR_WITH_VER%%/etc/vm/visit-up.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/gtk/autofile-dn.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/gtk/autofile-up.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/gtk/compose-dn.xpm
@@ -73,6 +52,11 @@ bin/qp-encode
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/gtk/undelete-up.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/gtk/visit-dn.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/gtk/visit-up.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/help-dn.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/help-up.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/mime-dn.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/mime-up.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/mime-xx.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/mime/application.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/mime/audio.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/mime/image.xpm
@@ -80,10 +64,29 @@ bin/qp-encode
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/mime/multipart.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/mime/text.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/vm/mime/video.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/next-dn.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/next-up.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/previous-dn.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/previous-up.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/print-dn.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/print-up.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/quit-dn.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/quit-up.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/recover-dn.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/recover-up.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/reply-dn.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/reply-up.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/undelete-dn.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/undelete-up.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/visit-dn.xpm
+%%EMACS_LIBDIR_WITH_VER%%/etc/vm/visit-up.xpm
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/tapestry.el
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/tapestry.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/vm/u-vm-color.el
+%%EMACS_VERSION_SITE_LISPDIR%%/vm/u-vm-color.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vcard.el
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vcard.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/vm/version.txt
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-autoload.el
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-autoload.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-autoloads.el
@@ -142,8 +145,6 @@ bin/qp-encode
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-ps-print.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-reply.el
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-reply.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-revno.el
-%%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-revno.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-rfaddons.el
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-rfaddons.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-save.el
@@ -176,11 +177,18 @@ bin/qp-encode
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-version.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-virtual.el
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-virtual.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-w3.el
+%%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-w3.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-w3m.el
+%%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-w3m.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-window.el
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vm-window.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vm.el
 %%EMACS_VERSION_SITE_LISPDIR%%/vm/vm.elc
-@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/vm
+@dirrmtry %%EMACS_VERSION_SITE_LISPDIR%%/vm
+@dirrmtry %%EMACS_VERSION_SITE_LISPDIR%%
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/etc/vm/mime
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/etc/vm/gtk
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/etc/vm
+@dirrmtry %%EMACS_LIBDIR_WITH_VER%%/etc
+@dirrmtry %%EMACS_LIBDIR_WITH_VER%%

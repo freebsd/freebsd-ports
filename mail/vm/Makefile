@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	vm
-PORTVERSION=	8.0.14
-PORTREVISION=	2
+PORTVERSION=	8.1.0
 CATEGORIES=	mail elisp
-MASTER_SITES=	https://launchpad.net/${PORTNAME}/8.0.x/${PORTVERSION}/+download/
+MASTER_SITES=	https://launchpad.net/${PORTNAME}/8.1.x/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jhein@symmetricom.com
