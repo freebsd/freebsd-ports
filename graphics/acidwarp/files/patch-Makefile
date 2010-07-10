@@ -4,7 +4,7 @@
 -CC=gcc
 -CFLAGS = -O2 -funroll-all-loops
 +CC ?= gcc
-+CFLAGS += -L%%PREFIX%%/lib -I%%PREFIX%%/include
++CFLAGS += -L$(LOCALBASE)/lib -I$(LOCALBASE)/include
  LFLAGS = -lvgagl -lvga
  PROGS = acidwarp 
  OSOURCES = bit_map.o palinit.o rolnfade.o lut.o
