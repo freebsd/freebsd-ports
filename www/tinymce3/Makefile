@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tinymce
-PORTVERSION=	3.3
+PORTVERSION=	3.3.6
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TinyMCE/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
@@ -14,15 +14,12 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	An open source Javascript HTML WYSIWYG editor for web sites
 
+NO_BUILD=	yes
+USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
-
 do-install:
-	${INSTALL} -d -m 0755 ${WWWDIR}
-	(cd ${WRKSRC} && ${FIND} . -not -name .PLIST.mktmp -not -name '.*_done.*' -not -name pkg-install | \
-		${CPIO} -pdmu -R${WWWOWN}:${WWWGRP} ${WWWDIR})
+	@${INSTALL} -d -m 0755 ${WWWDIR}
+	@(cd ${WRKSRC} && ${FIND} . | ${CPIO} -pdmu -R${WWWOWN}:${WWWGRP} ${WWWDIR})
 
 .include <bsd.port.mk>

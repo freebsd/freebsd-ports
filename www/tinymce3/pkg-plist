@@ -267,6 +267,7 @@
 %%WWWDIR%%/jscripts/tiny_mce/utils/form_utils.js
 %%WWWDIR%%/jscripts/tiny_mce/utils/mctabs.js
 %%WWWDIR%%/jscripts/tiny_mce/utils/validate.js
+@exec mkdir -p %%PREFIX%%/%%WWWDIR%%/jscripts/tiny_mce/plugins/autosave/images
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/utils
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/simple/skins/o2k7/img
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/themes/simple/skins/o2k7
