@@ -5,46 +5,45 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-PORTVERSION=	r940
+PORTVERSION=	0.6
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.mupdf.com/download/
+MASTER_SITES=	http://www.mupdf.com/download/source/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Lightweight PDF viewer and toolkit
 
-BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		jpeg.11:${PORTSDIR}/graphics/jpeg
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
+		jbig2dec.0:${PORTSDIR}/graphics/jbig2dec \
+		openjpeg.2:${PORTSDIR}/graphics/openjpeg
 
+USE_GMAKE=	yes
+MAKE_ARGS+=	build=release prefix=${PREFIX} verbose=true
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_XORG=	x11 xext
-JAM_ARGS=	-q -sLOCALBASE=${LOCALBASE} \
-		-sPTHREAD_LIBS=${PTHREAD_LIBS} ${_MAKE_JOBS}
+USE_GNOME=	pkgconfig
+USE_GCC=	4.2+
+
 MAKE_JOBS_SAFE=	yes
 
-EXECUTABLES=	cmapdump    pdfdraw     pdfinfo \
-		fontdump    pdfclean    pdfextract  pdfshow
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS=	CJK "Enable Asian Fontset" On
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
-
-.if defined(WITHOUT_CJK)
-JAM_ARGS+=	-sDEFINES=NOCJK
-.endif
-
-do-build:
-	cd ${WRKSRC} &&	jam ${JAM_ARGS}
-
-do-install:
-	${INSTALL} ${WRKSRC}/build/mupdf ${PREFIX}/bin/mupdf
-.for f in ${EXECUTABLES}
-	${INSTALL} ${WRKSRC}/build/$f ${PREFIX}/bin/mu_$f ;
-.endfor
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not install on sparc64
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} 's/LAGS :=/LAGS +=/g' ${WRKSRC}/Makerules
+	@${REINPLACE_CMD} 's/Linux/FreeBSD/g' ${WRKSRC}/Makerules
+	@${REINPLACE_CMD} 's/CC = .*/CC = ${CC}/g' ${WRKSRC}/Makerules
+	@${REINPLACE_CMD} 's#\(PDF.*_EXE=.*DIR./\)#\1mu_#g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
