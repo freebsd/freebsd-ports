@@ -1,3 +1,13 @@
+bin/cjpeg
+bin/djpeg
+bin/jpegtran
+bin/rdjpgcom
+bin/wrjpgcom
+include/jconfig.h
+include/jerror.h
+include/jmorecfg.h
+include/jpeglib.h
+include/turbojpeg.h
 lib/libjpeg.a
 lib/libjpeg.la
 lib/libjpeg.so
@@ -5,8 +15,3 @@ lib/libjpeg.so.62
 lib/libturbojpeg.a
 lib/libturbojpeg.la
 lib/libturbojpeg.so
-include/jerror.h
-include/jmorecfg.h
-include/jpeglib.h
-include/turbojpeg.h
-include/jconfig.h
