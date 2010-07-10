@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/celt/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	The CELT ultra-low delay audio codec
 
 LIB_DEPENDS=	ogg.7:${PORTSDIR}/audio/libogg
