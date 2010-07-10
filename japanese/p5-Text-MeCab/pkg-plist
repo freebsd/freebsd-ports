@@ -1,5 +1,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/MeCab.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/MeCab.xs
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/MeCab/Dict.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/MeCab/Node.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/MeCab/.packlist
