@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	akonadi-googledata
-PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTVERSION=	1.1.0
 CATEGORIES=	databases
 MASTER_SITES=	http://libgcal.googlecode.com/files/
 
@@ -20,7 +19,7 @@ USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build rcc_build moc_build uic_build dbus gui network sql svg xml
+QT_COMPONENTS=	qmake_build rcc_build moc_build uic_build dbus
 USE_KDE4=	kdelibs kdeprefix pimlibs automoc4 akonadi
 
 .include <bsd.port.mk>
