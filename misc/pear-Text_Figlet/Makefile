@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text_Figlet
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	misc www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -16,11 +16,9 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Text
-FILES=		Text/Figlet.php fonts/3-d.flf fonts/alligator2.flf fonts/bell.flf \
-		fonts/block.flf fonts/contessa.flf fonts/cybermedium.flf fonts/isometric1.flf \
-		fonts/larry3d.flf fonts/script.flf fonts/slant.flf
+FILES=		Text/Figlet.php fonts/makisupa.flf
 DOCS=		README.TXT
-EXAMPLES=	hello_world.php listfonts.php
+EXAMPLES=	hello_world.php
 _EXAMPLESDIR=	docs/examples
 
 .include <bsd.port.pre.mk>
