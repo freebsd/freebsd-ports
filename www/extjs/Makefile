@@ -8,7 +8,8 @@
 PORTNAME=	extjs
 PORTVERSION=	3.2.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.extjs.com/deploy/
+MASTER_SITES=	http://extjs.cachefly.net/ \
+		http://mirror.joehorn.idv.tw/
 DISTNAME=	ext-${PORTVERSION}
 
 MAINTAINER=	joehorn@gmail.com
