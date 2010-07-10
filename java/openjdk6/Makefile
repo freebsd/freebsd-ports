@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	openjdk6
-PORTVERSION=	b19
-PORTREVISION=	1
+PORTVERSION=	b20
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
-		https://jaxp.dev.java.net/files/documents/913/147491/:jaxp \
-		http://kenai.com/projects/jdk6-drops/downloads/download/:jaxws \
+		https://jaxp.dev.java.net/files/documents/913/150648/:jaxp \
+		https://jax-ws.dev.java.net/files/documents/4202/150724/:jaxws \
+		https://jax-ws.dev.java.net/files/documents/4202/150725/:jaf \
 		http://icedtea.classpath.org/builds/icedtea6/src/ \
 		http://icedtea.classpath.org/builds/icedtea6/src/drops/:jaxp \
 		http://icedtea.classpath.org/builds/icedtea6/src/drops/:jaxws \
+		http://icedtea.classpath.org/builds/icedtea6/src/drops/:jaf \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
 		http://download.java.net/openjdk/jtreg/promoted/${JTREGVERSION}/:jtreg
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${JAXPFILE}:jaxp \
 		${JAXWSFILE}:jaxws \
-		${JAFFILE}:jaxws \
+		${JAFFILE}:jaf \
 		${ANTFILE}:ant
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${ANTFILE}
 
@@ -35,7 +36,9 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
-OPENJDK_BUILDDATE=	15_apr_2010
+LICENSE=	GPLv2
+
+OPENJDK_BUILDDATE=	21_jun_2010
 
 OPTIONS=	DEBUG "Enable legacy debugging support" off \
 		FASTDEBUG "Include fastdebug build" off \
@@ -50,12 +53,12 @@ USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_XORG=	xtst xi xt x11
 
-JAXP_BUILDDATE=	2010_01_15
-JAXPFILE=	jdk6-jaxp-${JAXP_BUILDDATE}.zip
-JAXWS_BUILDDATE=2009_10_27
-JAXWSFILE=	jdk6-jaxws-${JAXWS_BUILDDATE}.zip
-JAF_BUILDDATE=	2009_10_27
-JAFFILE=	jdk6-jaf-${JAF_BUILDDATE}.zip
+JAXP_BUILD=	b20
+JAXPFILE=	jdk6-jaxp-${JAXP_BUILD}.zip
+JAXWS_BUILD=	b20
+JAXWSFILE=	jdk6-jaxws-${JAXWS_BUILD}.zip
+JAF_BUILD=	b20
+JAFFILE=	jdk6-jaf-${JAF_BUILD}.zip
 JTREGVERSION=	b03
 JTREGFILE=	jtreg-4_0-bin-${JTREGVERSION}-31_mar_2009.zip
 
