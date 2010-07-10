@@ -1,0 +1,387 @@
+--- linuxwacom-0.8.2-2/src/xdrv/wcmCommon.c.orig	2009-01-19 21:58:37.000000000 +0300
++++ linuxwacom-0.8.2-2/src/xdrv/wcmCommon.c	2010-05-11 17:25:41.265742759 +0400
+@@ -19,6 +19,8 @@
+ 
+ #include "xf86Wacom.h"
+ #include "../include/Xwacom.h"
++#include <xkbsrv.h>
++#include <xf86_OSproc.h>
+ 
+ /*
+ #if XF86_VERSION_MAJOR < 4
+@@ -277,7 +279,7 @@
+ 				bsent = 0;
+ 
+ 				/* send all pressed buttons down */
+-				for (button=2; button<=MAX_BUTTONS; button++)
++				for (button=2; button<=WCM_MAX_BUTTONS; button++)
+ 				{
+ 					mask = 1 << (button-1);
+ 					if ( buttons & mask ) 
+@@ -302,7 +304,7 @@
+ 			else
+ 			{
+ 				bsent = 0;
+-				for (button=2; button<=MAX_BUTTONS; button++)
++				for (button=2; button<=WCM_MAX_BUTTONS; button++)
+ 				{
+ 					mask = 1 << (button-1);
+ 					if ((mask & priv->oldButtons) != (mask & buttons))
+@@ -333,7 +335,7 @@
+ 			priv->flags &= ~TPCBUTTONS_FLAG;
+ 
+ 			/* send all pressed buttons up */
+-			for (button=2; button<=MAX_BUTTONS; button++)
++			for (button=2; button<=WCM_MAX_BUTTONS; button++)
+ 			{
+ 				mask = 1 << (button-1);
+ 				if ((mask & priv->oldButtons) != (mask & buttons) || (mask & buttons) )
+@@ -356,7 +358,7 @@
+ 	}
+ 	else  /* normal buttons */
+ 	{
+-		for (button=1; button<=MAX_BUTTONS; button++)
++		for (button=1; button<=WCM_MAX_BUTTONS; button++)
+ 		{
+ 			mask = 1 << (button-1);
+ 			if ((mask & priv->oldButtons) != (mask & buttons))
+@@ -405,7 +407,11 @@
+ 	int i, j, alt_keysym = 0;
+ 
+ 	/* Now that we have the keycode look for key index */
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++	KeySymsRec *ksr = XkbGetCoreMap(keydev);
++#else
+ 	KeySymsRec *ksr = &keydev->key->curKeySyms;
++#endif
+ 
+ 	for (i = ksr->minKeyCode; i <= ksr->maxKeyCode; i++)
+ 		if (ksr->map [(i - ksr->minKeyCode) * ksr->mapWidth] == keysym)
+@@ -443,11 +449,17 @@
+ 				xf86PostKeyboardEvent (keydev, j, 0);
+ 		}
+ 		else
+-			xf86Msg (X_WARNING, "Couldn't find key with code %08x on keyboard device %s\n",
+-					keysym, keydev->name);
++			xf86Msg (X_WARNING, "%s: Couldn't find key with code %08x on keyboard device %s\n",
++					keydev->name, keysym, keydev->name);
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++		xfree(ksr);
++#endif
+ 		return;
+ 	}
+ 	xf86PostKeyboardEvent (keydev, i, state);
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++	xfree(ksr);
++#endif
+ }
+ 
+ static int wcm_modifier [ ] =
+--- linuxwacom-0.8.2-2/src/xdrv/wcmConfig.c.orig	2009-01-19 21:58:37.000000000 +0300
++++ linuxwacom-0.8.2-2/src/xdrv/wcmConfig.c	2010-05-11 17:27:43.775135419 +0400
+@@ -136,15 +136,15 @@
+ 	priv->nPressCtrl [3] = 100;  /* pressure curve y1 */
+ 
+ 	/* Default button and expresskey values */
+-	for (i=0; i<MAX_BUTTONS; i++)
++	for (i=0; i<WCM_MAX_BUTTONS; i++)
+ 		priv->button[i] = IsPad (priv) ?
+-			(AC_BUTTON | (MAX_MOUSE_BUTTONS/2 + i + 1)) : (AC_BUTTON | (i + 1));
++			(AC_BUTTON | (WCM_MAX_MOUSE_BUTTONS/2 + i + 1)) : (AC_BUTTON | (i + 1));
+ 
+-	for (i=0; i<MAX_BUTTONS; i++)
++	for (i=0; i<WCM_MAX_BUTTONS; i++)
+ 		for (j=0; j<256; j++)
+ 			priv->keys[i][j] = 0;
+ 
+-	priv->nbuttons = MAX_BUTTONS;		/* Default number of buttons */
++	priv->nbuttons = WCM_MAX_BUTTONS;		/* Default number of buttons */
+ 	priv->relup = 5;			/* Default relative wheel up event */
+ 	priv->reldn = 4;			/* Default relative wheel down event */
+ 	
+@@ -859,7 +859,7 @@
+ 	}
+ 
+ 
+-	for (i=0; i<MAX_BUTTONS; i++)
++	for (i=0; i<WCM_MAX_BUTTONS; i++)
+ 	{
+ 		sprintf(b, "Button%d", i+1);
+ 		s = xf86SetStrOption(local->options, b, NULL);
+--- linuxwacom-0.8.2-2/src/xdrv/wcmUSB.c.orig	2009-01-19 21:58:37.000000000 +0300
++++ linuxwacom-0.8.2-2/src/xdrv/wcmUSB.c	2010-05-11 17:30:02.434108111 +0400
+@@ -1064,7 +1064,7 @@
+ 				for (nkeys = 0; nkeys < common->npadkeys; nkeys++)
+ 					if (event->code == common->padkey_code [nkeys])
+ 					{
+-						MOD_BUTTONS ((MAX_MOUSE_BUTTONS/2+nkeys), event->value);
++						MOD_BUTTONS ((WCM_MAX_MOUSE_BUTTONS/2+nkeys), event->value);
+ 						break;
+ 					}
+ 			}
+--- linuxwacom-0.8.2-2/src/xdrv/xf86Wacom.c.orig	2009-01-19 21:58:37.000000000 +0300
++++ linuxwacom-0.8.2-2/src/xdrv/xf86Wacom.c	2010-05-11 17:28:07.865752615 +0400
+@@ -84,6 +84,14 @@
+ #include "xf86Wacom.h"
+ #include "wcmFilter.h"
+ 
++#include <xf86_OSproc.h>
++#include <exevents.h>
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++#include <xserver-properties.h>
++#include <X11/extensions/XKB.h>
++#include <xkbsrv.h>
++#endif
++
+ static int xf86WcmDevOpen(DeviceIntPtr pWcm);
+ static void xf86WcmDevReadInput(LocalDevicePtr local);
+ static void xf86WcmDevControlProc(DeviceIntPtr device, PtrCtrl* ctrl);
+@@ -290,7 +298,11 @@
+ 		resolution = (int)((double)resolution * priv->factorX + 0.5);
+ #endif
+ 
+-		InitValuatorAxisStruct(local->dev, 0, topx, tabletSize, 
++		InitValuatorAxisStruct(local->dev, 0,
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++			XIGetKnownProperty(AXIS_LABEL_PROP_ABS_X),
++#endif
++			topx, tabletSize, 
+ 			resolution, 0, resolution); 
+ 	}
+ 	else /* y ax */
+@@ -317,7 +329,11 @@
+ 		resolution = (int)((double)resolution * priv->factorY + 0.5);
+ #endif
+ 
+-		InitValuatorAxisStruct(local->dev, 1, topy, tabletSize, 
++		InitValuatorAxisStruct(local->dev, 1,
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++			XIGetKnownProperty(AXIS_LABEL_PROP_ABS_Y),
++#endif
++			topy, tabletSize, 
+ 			resolution, 0, resolution); 
+ 	}
+ }
+@@ -523,9 +539,13 @@
+ {
+ 	WacomDevicePtr priv = (WacomDevicePtr)local->private;
+ 	WacomCommonPtr common = priv->common;
+-	CARD8 butmap[MAX_BUTTONS+1];
++	CARD8 butmap[WCM_MAX_BUTTONS+1];
+ 	int nbaxes, nbbuttons, nbkeys;
+ 	int loop;
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++	Atom btn_labels[WCM_MAX_BUTTONS] = {0};
++	Atom axis_labels[MAX_VALUATORS] = {0};
++#endif
+ 
+ 	/* Detect tablet configuration, if possible */
+ 	if (priv->common->wcmModel->DetectConfig)
+@@ -552,7 +572,11 @@
+ 	for(loop=1; loop<=nbbuttons; loop++)
+ 		butmap[loop] = loop;
+ 
+-	if (InitButtonClassDeviceStruct(local->dev, nbbuttons, butmap) == FALSE)
++	if (InitButtonClassDeviceStruct(local->dev, nbbuttons,
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++					btn_labels,
++#endif
++					butmap) == FALSE)
+ 	{
+ 		ErrorF("unable to allocate Button class device\n");
+ 		return FALSE;
+@@ -581,15 +605,13 @@
+ 		nbaxes = priv->naxes = 6;
+ 
+ 	if (InitValuatorClassDeviceStruct(local->dev, nbaxes,
+-#if WCM_XINPUTABI_MAJOR == 0
+-					  xf86GetMotionEvents,
+-					  local->history_size,
+-#else
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++					  axis_labels,
++#endif
+ #if GET_ABI_MAJOR(ABI_XINPUT_VERSION) < 3
+ 					  GetMotionHistory,
+ #endif
+ 					  GetMotionHistorySize(),
+-#endif
+ 					  ((priv->flags & ABSOLUTE_FLAG) ?
+ 					  Absolute : Relative) | 
+ 					  OutOfProximity ) == FALSE)
+@@ -602,7 +624,7 @@
+ 	/* only initial KeyClass and LedFeedbackClass once */
+ 	if (!priv->wcmInitKeyClassCount)
+ 	{
+-#ifdef WCM_KEY_SENDING_SUPPORT
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) < 5
+ 		if (nbkeys)
+ 		{
+ 			KeySymsRec wacom_keysyms;
+@@ -641,19 +663,37 @@
+ 			}
+ 		}
+ 
+-#ifndef WCM_XFREE86
+ 		if(InitKbdFeedbackClassDeviceStruct(local->dev, xf86WcmBellCallback,
+ 				xf86WcmKbdCtrlCallback) == FALSE) {
+ 			ErrorF("unable to init kbd feedback device struct\n");
+ 			return FALSE;
+ 		}
++#elif GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++		if (InitKeyboardDeviceStruct(local->dev, NULL, NULL, xf86WcmKbdCtrlCallback)) {
++#define SYMS_PER_KEY 2
++			KeySymsRec syms;
++			CARD8 modmap[MAP_LENGTH];
++			int num_keys = XkbMaxLegalKeyCode - XkbMinLegalKeyCode + 1;
+ 
++			syms.map = keymap;
++			syms.mapWidth = SYMS_PER_KEY;
++			syms.minKeyCode = XkbMinLegalKeyCode;
++			syms.maxKeyCode = XkbMaxLegalKeyCode;
++
++			memset(modmap, 0, sizeof(modmap));
++			modmap[XkbMinLegalKeyCode + 2] = ShiftMask;
++			XkbApplyMappingChange(local->dev, &syms, syms.minKeyCode, num_keys, NULL, // modmap,
++					serverClient);
++		} else
++		{
++			xf86Msg(X_ERROR, "%s: unable to init kbd device struct\n ", local->name);
++			return FALSE;
++		}
++#endif
+ 		if(InitLedFeedbackClassDeviceStruct (local->dev, xf86WcmKbdLedCallback) == FALSE) {
+ 			ErrorF("unable to init led feedback device struct\n");
+ 			return FALSE;
+ 		}
+-#endif /* WCM_XFREE86 */
+-#endif /* WCM_KEY_SENDING_SUPPORT */
+ 	}
+ 
+ #if WCM_XINPUTABI_MAJOR == 0
+@@ -672,42 +712,81 @@
+ 	xf86WcmRotateScreen(local, common->wcmRotate);
+ 
+ 	/* pressure */
+-	InitValuatorAxisStruct(local->dev, 2, 0, 
+-		common->wcmMaxZ, 1, 1, 1);
++	InitValuatorAxisStruct(local->dev, 2,
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++		XIGetKnownProperty(AXIS_LABEL_PROP_ABS_PRESSURE),
++#endif
++		0, common->wcmMaxZ, 1, 1, 1);
+ 
+ 	if (IsCursor(priv))
+ 	{
+ 		/* z-rot and throttle */
+-		InitValuatorAxisStruct(local->dev, 3, -900, 899, 1, 1, 1);
+-		InitValuatorAxisStruct(local->dev, 4, -1023, 1023, 1, 1, 1);
++		InitValuatorAxisStruct(local->dev, 3,
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++			XIGetKnownProperty(AXIS_LABEL_PROP_ABS_RZ),
++#endif
++			-900, 899, 1, 1, 1);
++		InitValuatorAxisStruct(local->dev, 4,
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++			XIGetKnownProperty(AXIS_LABEL_PROP_ABS_THROTTLE),
++#endif
++			-1023, 1023, 1, 1, 1);
+ 	}
+ 	else if (IsPad(priv))
+ 	{
+ 		/* strip-x and strip-y */
+ 		if (priv->naxes)
+ 		{
+-			InitValuatorAxisStruct(local->dev, 3, 0, common->wcmMaxStripX, 1, 1, 1);
+-			InitValuatorAxisStruct(local->dev, 4, 0, common->wcmMaxStripY, 1, 1, 1);
++			InitValuatorAxisStruct(local->dev, 3,
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++				0, /* XXX what is this axis?*/
++#endif
++				0, common->wcmMaxStripX, 1, 1, 1);
++			InitValuatorAxisStruct(local->dev, 4,
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++				0, /* XXX what is this axis?*/
++#endif
++				0, common->wcmMaxStripY, 1, 1, 1);
+ 		}
+ 	}
+ 	else
+ 	{
+ 		/* tilt-x and tilt-y */
+-		InitValuatorAxisStruct(local->dev, 3, -64, 63, 1, 1, 1);
+-		InitValuatorAxisStruct(local->dev, 4, -64, 63, 1, 1, 1);
++		InitValuatorAxisStruct(local->dev, 3,
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++			XIGetKnownProperty(AXIS_LABEL_PROP_ABS_TILT_X),
++#endif
++			-64, 63, 1, 1, 1);
++		InitValuatorAxisStruct(local->dev, 4,
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++			XIGetKnownProperty(AXIS_LABEL_PROP_ABS_TILT_Y),
++#endif
++			-64, 63, 1, 1, 1);
+ 	}
+ 
+ 	if ((strstr(common->wcmModel->name, "Intuos3") || 
+ 		strstr(common->wcmModel->name, "CintiqV5")) 
+ 			&& IsStylus(priv))
+ 		/* Art Marker Pen rotation */
+-		InitValuatorAxisStruct(local->dev, 5, -900, 899, 1, 1, 1);
++		InitValuatorAxisStruct(local->dev, 5,
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++			0, /* XXX what is this axis?*/
++#endif
++			-900, 899, 1, 1, 1);
+ 	else if (strstr(common->wcmModel->name, "Bamboo") && IsPad(priv))
+-		InitValuatorAxisStruct(local->dev, 5, 0, 71, 1, 1, 1);
++		InitValuatorAxisStruct(local->dev, 5,
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++			0, /* XXX what is this axis?*/
++#endif
++			0, 71, 1, 1, 1);
+ 	else
+ 	{
+ 		/* absolute wheel */
+-		InitValuatorAxisStruct(local->dev, 5, 0, 1023, 1, 1, 1);
++		InitValuatorAxisStruct(local->dev, 5,
++#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) >= 7
++			XIGetKnownProperty(AXIS_LABEL_PROP_ABS_WHEEL),
++#endif
++			0, 1023, 1, 1, 1);
+ 	}
+ 
+ 	if (IsTouch(priv))
+--- linuxwacom-0.8.2-2/src/xdrv/xf86WacomDefs.h.orig	2009-01-19 21:58:37.000000000 +0300
++++ linuxwacom-0.8.2-2/src/xdrv/xf86WacomDefs.h	2010-05-11 17:28:56.624883674 +0400
+@@ -125,8 +125,8 @@
+ #define IsPad(priv)    (DEVICE_ID((priv)->flags) == PAD_ID)
+ 
+ #define FILTER_PRESSURE_RES	2048	/* maximum points in pressure curve */
+-#define MAX_BUTTONS		32	/* maximum number of tablet buttons */
+-#define MAX_MOUSE_BUTTONS	16	/* maximum number of buttons-on-pointer
++#define WCM_MAX_BUTTONS		32	/* maximum number of tablet buttons */
++#define WCM_MAX_MOUSE_BUTTONS	16	/* maximum number of buttons-on-pointer
+                                          * (which are treated as mouse buttons,
+                                          * not as keys like tablet menu buttons). 
+ 					 * For backword compability support, 
+@@ -161,8 +161,8 @@
+ 	int screenBottomY[32];	/* bottom cordinate of the associated screen */
+ 	int maxWidth;		/* max active screen width */
+ 	int maxHeight;		/* max active screen height */
+-	int button[MAX_BUTTONS];/* buttons assignments */
+-	unsigned keys[MAX_BUTTONS][256]; /* keystrokes assigned to buttons */
++	int button[WCM_MAX_BUTTONS];/* buttons assignments */
++	unsigned keys[WCM_MAX_BUTTONS][256]; /* keystrokes assigned to buttons */
+ 	int relup;
+ 	unsigned rupk[256];     /* keystrokes assigned to relative wheel up event (default is button 4) */
+ 	int reldn;
+@@ -386,7 +386,7 @@
+ 
+ 	int nbuttons;                /* total number of buttons */
+ 	int npadkeys;                /* number of pad keys in the above array */
+-	int padkey_code[MAX_BUTTONS];/* hardware codes for buttons */
++	int padkey_code[WCM_MAX_BUTTONS];/* hardware codes for buttons */
+ 
+ 	WacomDevicePtr wcmDevices;   /* list of devices sharing same port */
+ 	int wcmPktLength;            /* length of a packet */
