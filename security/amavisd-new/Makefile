@@ -8,7 +8,7 @@
 
 PORTNAME=	amavisd-new
 PORTVERSION=	2.6.4
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -106,7 +106,6 @@ AMAVIS_NOMILTER="@comment "
 .endif
 
 .if defined(WITH_BDB)
-USE_BDB=	42
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
 .endif
 
@@ -155,8 +154,12 @@ RUN_DEPENDS+=	file>=4.21:${PORTSDIR}/sysutils/file
 # not suit rar.
 
 .if defined(WITH_RAR)
-IA32_BINARY_PORT=	yes
+# support for archivers/rar is broken on ia64
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
 RUN_DEPENDS+=	${LOCALBASE}/bin/rar:${PORTSDIR}/archivers/rar
+.else
+IGNORE=	archviers/rar is a 32-bit binary port and is not compatible with ${ARCH}
+.endif
 .endif
 
 .if defined(WITH_UNRAR)
