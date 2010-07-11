@@ -47,6 +47,12 @@ PLIST_SUB+=	APPLET="@comment "
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not configure on 6.X
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/include/boost|${LOCALBASE}/include/boost|g' \
 		${WRKSRC}/configure
@@ -59,4 +65,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
