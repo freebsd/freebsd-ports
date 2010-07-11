@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-minimal
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	EitanAdlerList@gmail.com
+MAINTAINER=	ports@eitanadler.com
 COMMENT=	X.Org minimal distribution metaport
 
 NO_BUILD=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://isis.poly.edu/~eitan/files/
 DISTNAME=	auto-symlink-virtual-${PORTVERSION}
 
-MAINTAINER=	EitanAdlerList@gmail.com
+MAINTAINER=	ports@eitanadler.com
 COMMENT=	Automatically generate symlinks for virtual categories
 
 USE_BZIP2=	yes
