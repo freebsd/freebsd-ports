@@ -37,7 +37,7 @@ if [ ${amavisd_ram} ];then
   echo "========================================================"
   df %%AMAVISDIR%%/tmp |  grep '^/dev/md' > /dev/null
   if [ $? -eq 1 ];then
-    mdmfs -M -s ${amavisd_ram} -p 750 -w %%AMAVISUSER%%:%%AMAVISGROUP%% md %%AMAVISDIR%%/tmp || true
+    mdmfs -s ${amavisd_ram} -p 750 -w %%AMAVISUSER%%:%%AMAVISGROUP%% md %%AMAVISDIR%%/tmp || true
   fi
 fi
 }
