@@ -665,6 +665,7 @@
     SUBDIR += py-psutil
     SUBDIR += py-supervisor
     SUBDIR += py-zdaemon
+    SUBDIR += py-zfs
     SUBDIR += pydf
     SUBDIR += pyrenamer
     SUBDIR += qlogtools

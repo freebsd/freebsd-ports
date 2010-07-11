@@ -1,0 +1,28 @@
+%%PYTHON_SITELIBDIR%%/zfs/__init__.py
+%%PYTHON_SITELIBDIR%%/zfs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/zfs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/zfs/allow.py
+%%PYTHON_SITELIBDIR%%/zfs/allow.pyc
+%%PYTHON_SITELIBDIR%%/zfs/allow.pyo
+%%PYTHON_SITELIBDIR%%/zfs/dataset.py
+%%PYTHON_SITELIBDIR%%/zfs/dataset.pyc
+%%PYTHON_SITELIBDIR%%/zfs/dataset.pyo
+%%PYTHON_SITELIBDIR%%/zfs/groupspace.py
+%%PYTHON_SITELIBDIR%%/zfs/groupspace.pyc
+%%PYTHON_SITELIBDIR%%/zfs/groupspace.pyo
+%%PYTHON_SITELIBDIR%%/zfs/ioctl.so
+%%PYTHON_SITELIBDIR%%/zfs/unallow.py
+%%PYTHON_SITELIBDIR%%/zfs/unallow.pyc
+%%PYTHON_SITELIBDIR%%/zfs/unallow.pyo
+%%PYTHON_SITELIBDIR%%/zfs/userspace.py
+%%PYTHON_SITELIBDIR%%/zfs/userspace.pyc
+%%PYTHON_SITELIBDIR%%/zfs/userspace.pyo
+%%PYTHON_SITELIBDIR%%/zfs/util.py
+%%PYTHON_SITELIBDIR%%/zfs/util.pyc
+%%PYTHON_SITELIBDIR%%/zfs/util.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/zfs
+@cwd /usr/lib
+zfs/pyzfs.py
+zfs/pyzfs.pyc
+zfs/pyzfs.pyo
+@dirrm zfs

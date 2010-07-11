@@ -1,0 +1,9 @@
+The Python ZFS library is a Python interface to ZFS functions.
+
+Since ZFS v15, the following functionality of the "zfs" command
+requires this library and the pyzfs utility:
+
+zfs allow
+zfs unallow
+zfs userspace
+zfs groupspace
