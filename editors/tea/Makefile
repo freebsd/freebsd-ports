@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tea
-DISTVERSION=	28.0.0
+DISTVERSION=	28.1.0
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}-editor/${PORTNAME}-editor/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple and powerful text editor
+COMMENT=	A simple and powerful Qt4-based text editor
 
 LICENSE=	GPLv3
 
@@ -33,7 +33,7 @@ QMAKEFLAGS+=	USE_ASPELL=false
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},' ${WRKSRC}/src.pro
+	@${REINPLACE_CMD} -e '/aspell/s,/usr,${LOCALBASE},' ${WRKSRC}/src.pro
 
 do-configure:
 	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
