@@ -3103,6 +3103,7 @@ et-aspell                       ports/textproc/et-aspell
 etask                           ports/deskutils/etask
 etcd                            ports/audio/etcd
 etcmerge                        ports/sysutils/etcmerge
+etcupdate                       ports/sysutils/etcupdate
 eterm                           ports/x11/eterm
 eterm-bg                        ports/graphics/eterm-bg
 etherape                        ports/net-mgmt/etherape
@@ -6581,6 +6582,7 @@ jawstats                        ports/www/jawstats
 jaxen                           ports/java/jaxen
 jaxup                           ports/textproc/jaxup
 jbidwatcher                     ports/misc/jbidwatcher
+jbig2dec                        ports/graphics/jbig2dec
 jbigkit                         ports/graphics/jbigkit
 jbootstrap                      ports/java/jbootstrap
 jboss-mailservices              ports/mail/jboss-mailservices
@@ -20536,6 +20538,7 @@ py-cups                         ports/print/py-cups
 py-curl                         ports/ftp/py-curl
 py-cxx                          ports/devel/py-cxx
 py-cyruslib                     ports/mail/py-cyruslib
+py-daemon                       ports/devel/py-daemon
 py-dal                          ports/devel/py-dal
 py-darcsver                     ports/devel/py-darcsver
 py-dateutil                     ports/devel/py-dateutil
@@ -20773,6 +20776,7 @@ py-ming                         ports/graphics/py-ming
 py-miniupnpc                    ports/net/py-miniupnpc
 py-mlpy                         ports/science/py-mlpy
 py-mnemosyne                    ports/games/py-mnemosyne
+py-mock                         ports/devel/py-mock
 py-mongoengine                  ports/devel/py-mongoengine
 py-mongokit                     ports/devel/py-mongokit
 py-mox                          ports/devel/py-mox
