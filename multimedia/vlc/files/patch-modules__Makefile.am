@@ -1,0 +1,30 @@
+--- ./modules/Makefile.am.orig	2010-06-24 05:07:31.000000000 -0400
++++ ./modules/Makefile.am	2010-06-24 05:09:12.000000000 -0400
+@@ -62,16 +62,16 @@
+ .PHONY: stamp-cache
+ 
+ stamp-cache:
+-	$(AM_V_GEN)if test "$(build)" = "$(host)"; then \
+-		../bin/vlc-cache-gen$(EXEEXT) . ; \
+-	else \
+-		echo "Cross-compilation: cache generation skipped!" ; \
+-	fi
+-	$(AM_V_at)touch stamp-cache
++#	$(AM_V_GEN)if test "$(build)" = "$(host)"; then \
++#		../bin/vlc-cache-gen$(EXEEXT) . ; \
++#	else \
++#		echo "Cross-compilation: cache generation skipped!" ; \
++#	fi
++#	$(AM_V_at)touch stamp-cache
+ 
+ install-exec-hook:
+-	if test -z "$(DESTDIR)"; then \
+-		../bin/vlc-cache-gen$(EXEEXT) "$(vlclibdir)/plugins" ; \
+-	else \
+-		echo "Staged installation: cache generation skipped!" ; \
+-	fi
++#	if test -z "$(DESTDIR)"; then \
++#		../bin/vlc-cache-gen$(EXEEXT) "$(vlclibdir)/plugins" ; \
++#	else \
++#		echo "Staged installation: cache generation skipped!" ; \
++#	fi
