@@ -11,7 +11,7 @@ PORTVERSION=	0.12
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
-MAINTAINER=	eitanadlerlist@gmail.com
+MAINTAINER=	ports@eitanadler.com
 COMMENT=	An interface to X selections ("the clipboard") from the command line
 
 USE_AUTOTOOLS=	autoconf:262:env aclocal:19:env automake:19:env

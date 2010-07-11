@@ -10,7 +10,7 @@ PORTVERSION=	0.11
 CATEGORIES=	misc python
 MASTER_SITES=	http://www.stgraber.org/download/projects/pastebin/
 
-MAINTAINER=	EitanAdlerList@gmail.com
+MAINTAINER=	ports@eitanadler.com
 COMMENT=	A command line utility for pastebing
 
 USE_PYTHON=	yes

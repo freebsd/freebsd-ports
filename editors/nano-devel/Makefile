@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.nano-editor.org/dist/v2.1/ \
 PKGNAMESUFFIX=	-devel
 DISTNAME=	nano-${PORTVERSION}pre2
 
-MAINTAINER=	EitanAdlerList@gmail.com
+MAINTAINER=	ports@eitanadler.com
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
 
 CONFLICTS=	nano-2*

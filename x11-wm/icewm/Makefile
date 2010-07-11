@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
-MAINTAINER=	eitanadlerlist@gmail.com
+MAINTAINER=	ports@eitanadler.com
 COMMENT=	Window Manager designed for speed, usability and consistency
 
 WANT_GNOME=	yes
