@@ -17,7 +17,6 @@ MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Microsoft Windows compatibility layer for Unix-like systems
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
-RUN_DEPENDS=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
@@ -52,7 +51,8 @@ OPTIONS=	CUPS	"Use CUPS (Common UNIX Printing System)"	Off \
 		GNUTLS	"Use GnuTLS"					Off \
 		HAL	"Use HAL (Hardware Abstraction Layer)"		Off \
 		LDAP	"Use LDAP"					Off \
-		LIBXSLT	"Use libxslt (only used by msxml3.dll)"		Off
+		LIBXSLT	"Use libxslt (only used by msxml3.dll)"		Off \
+		WINEMAKER "Fully support winemaker (requires Perl)"	Off
 
 .include <bsd.port.pre.mk>
 
@@ -89,6 +89,10 @@ CONFIGURE_ARGS+=	--with-xslt
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 .else
 CONFIGURE_ARGS+=	--without-xslt
+.endif
+
+.ifdef WITH_WINEMAKER
+RUN_DEPENDS=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 .endif
 
 .if ${OSVERSION} < 603000
