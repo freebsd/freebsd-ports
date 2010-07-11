@@ -1,0 +1,12 @@
+--- supergameboy/Makefile.orig	2010-05-17 07:50:35.000000000 +0200
++++ supergameboy/Makefile	2010-05-17 07:50:45.000000000 +0200
+@@ -1,7 +1,7 @@
+ include nall/Makefile
+ 
+-c     := $(compiler) -std=gnu99
+-cpp   := $(subst cc,++,$(compiler)) -std=gnu++0x
++c     := $(CC) -std=gnu99
++cpp   := $(CXX) -std=gnu++0x
+ flags := -O3 -fomit-frame-pointer -I. -Icommon -Ilibgambatte/include -Ilibgambatte/src
+ link  :=
+ 

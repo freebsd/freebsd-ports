@@ -1,0 +1,15 @@
+--- src/ui_qt/Makefile.orig	2010-04-16 07:06:22.000000000 +0200
++++ src/ui_qt/Makefile	2010-04-16 07:06:38.000000000 +0200
+@@ -13,9 +13,9 @@
+ 
+ # platform
+ ifeq ($(platform),x)
+-  ruby := video.glx video.xv video.qtraster video.sdl
+-  ruby += audio.alsa audio.openal audio.oss audio.pulseaudio audio.pulseaudiosimple audio.ao
+-  ruby += input.sdl input.x
++  ruby := VIDEO
++  ruby += AUDIO
++  ruby += INPUT
+ 
+   link += $(if $(findstring audio.openal,$(ruby)),-lopenal)
+ else ifeq ($(platform),osx)
