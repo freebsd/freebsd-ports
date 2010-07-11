@@ -1,0 +1,11 @@
+--- src/nall/Makefile.orig	2010-04-16 07:04:44.000000000 +0200
++++ src/nall/Makefile	2010-04-16 07:05:00.000000000 +0200
+@@ -32,7 +32,7 @@
+   ifeq ($(platform),osx)
+     compiler := gcc-4.2
+   else
+-    compiler := gcc
++    compiler := ${CC}
+   endif
+ endif
+ 

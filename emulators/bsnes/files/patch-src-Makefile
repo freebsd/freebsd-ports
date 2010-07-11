@@ -1,0 +1,24 @@
+--- src/Makefile.orig	2010-04-14 07:41:49.000000000 +0200
++++ src/Makefile	2010-05-17 07:46:17.000000000 +0200
+@@ -2,9 +2,9 @@
+ ui := ui_qt
+ 
+ # compiler
+-c       := $(compiler) -std=gnu99
+-cpp     := $(subst cc,++,$(compiler)) -std=gnu++0x
+-flags   := -O3 -fomit-frame-pointer -I.
++c       := $(CC)
++cpp     := $(CXX)
++flags   := -O3 -fomit-frame-pointer -I. -std=c++0x
+ link    :=
+ objects :=
+ 
+@@ -17,7 +17,7 @@
+ 
+ # platform
+ ifeq ($(platform),x)
+-  link += -s -ldl -lX11 -lXext
++  link += -s -lX11 -lXext
+ else ifeq ($(platform),osx)
+ else ifeq ($(platform),win)
+   link += -mwindows -mthreads
