@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	unalz
-PORTVERSION=	0.63
+PORTVERSION=	0.65
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.kipple.pe.kr/win/unalz/
+MASTER_SITES=	http://www.kipple.pe.kr/win/unalz/ \
+		http://www.c-s.li/ports/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	Extracts AlZip archives
+
+LICENSE_FILE=	${WRKSRC}/readme.txt
 
 USE_ICONV=	yes
 PLIST_FILES=	bin/unalz
