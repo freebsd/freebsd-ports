@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opendnssec
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.opendnssec.org/files/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
