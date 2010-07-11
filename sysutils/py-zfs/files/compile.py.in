@@ -1,0 +1,12 @@
+#!%%PYTHON_CMD%%
+import sys
+import compileall
+
+import sys
+
+try:
+        sys.argv[1]
+except IndexError:
+        print "Path missing"
+else:
+	compileall.compile_dir(sys.argv[1], force=True)
