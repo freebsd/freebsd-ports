@@ -6,6 +6,7 @@
 
 PORTNAME=	ikiwiki
 PORTVERSION=	3.20100704
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://kitenet.net/~joey/debian/unstable/
@@ -27,7 +28,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${SITE_PERL}/File/MimeInfo.pm:${PORTSDIR}/devel/p5-File-MimeInfo \
-		${SITE_PERL}/Locale/Po4a/Common.pm:${PORTSDIR}/textproc/po4a \
+		po4a>=0.39:${PORTSDIR}/textproc/po4a \
 		${SITE_PERL}/RPC/XML.pm:${PORTSDIR}/net/p5-RPC-XML \
 		${SITE_PERL}/XML/Feed.pm:${PORTSDIR}/textproc/p5-XML-Feed \
 		${SITE_PERL}/Authen/Passphrase.pm:${PORTSDIR}/security/p5-Authen-Passphrase
