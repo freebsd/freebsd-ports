@@ -1,6 +1,6 @@
---- src/Makefile.am.orig	2010-02-03 23:18:44.000000000 +0200
-+++ src/Makefile.am	2010-02-03 23:18:54.000000000 +0200
-@@ -45,8 +45,6 @@
+--- src/Makefile.am.orig	2010-05-05 18:34:05.000000000 +0300
++++ src/Makefile.am	2010-05-05 18:34:23.000000000 +0300
+@@ -46,8 +46,6 @@
  	-DCAIRO_DOCK_THEMES_DIR=\""$(CAIRO_DOCK_THEMES_DIR)"\"\
  	-DGL_GLEXT_PROTOTYPES=\""1"\"\
  	-std=c99\
