@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	argouml
-PORTVERSION=	0.30.1
+PORTVERSION=	0.30.2
 CATEGORIES=	devel java
 MASTER_SITES=	http://argouml-downloads.tigris.org/nonav/argouml-${PORTVERSION}/
 DISTNAME=	ArgoUML-${PORTVERSION}
@@ -17,10 +17,10 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-LICENSE=	EPL
-
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	A UML design tool with cognitive support
+
+LICENSE=	EPL
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
