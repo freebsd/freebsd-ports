@@ -6,32 +6,33 @@
 #
 
 PORTNAME=	mtr
-PORTVERSION=	0.75
-PORTREVISION=	3
+PORTVERSION=	0.79
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
-		http://gd.tuwien.ac.at/infosys/network/tools/mtr/ \
 		http://mirrors.evolva.ro/util/mtr/ \
 		http://sunpoet.net/distfiles/
 
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Traceroute and ping in a single graphical network diagnostic tool
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 MAN8=		mtr.8
 PLIST_FILES=	sbin/mtr
 
 .if defined(WITHOUT_X11)
-PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=--without-gtk
+PKGNAMESUFFIX=	-nox11
 .else
+CONFIGURE_ARGS+=--with-gtk
 USE_GNOME=	gtk20
 .endif
 
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--disable-ipv6
+.else
+CONFIGURE_ARGS+=--enable-ipv6
 .endif
 
 .include <bsd.port.pre.mk>
