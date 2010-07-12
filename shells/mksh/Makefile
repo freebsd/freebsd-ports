@@ -17,11 +17,9 @@ COMMENT=	A MirBSD enhanced shell based on pdksh
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-EXAMPLESDIR=	${LOCALBASE}/share/examples/${PORTNAME}
-
 MAN1=		mksh.1
 PLIST_FILES=	bin/mksh %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dot.mkshrc
-PLIST_DIRS=	%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+PLIST_DIRS=	%%PORTEXAMPLES%%%%EXAMPLESDIR%%
 
 .include <bsd.port.pre.mk>
 
