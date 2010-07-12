@@ -5,6 +5,7 @@ etc/dhcpd.conf.sample
 @exec if [ ! -f %D/etc/dhcpd.conf ] ; then cp -p %D/%F %B/dhcpd.conf; fi
 sbin/dhcpd
 bin/omshell
+%%LDAP%%bin/dhcpd-conf-to-ldap
 include/dhcpctl.h
 include/isc-dhcp/boolean.h
 include/isc-dhcp/dst.h
@@ -28,5 +29,7 @@ include/omapip/convert.h
 lib/libdhcpctl.a
 lib/libomapi.a
 lib/libdst.a
+%%LDAP%%%%SCHEMA_DIR%%/dhcp.schema
+%%LDAP%%@dirrm %%SCHEMA_DIR%%
 @dirrm include/omapip
 @dirrm include/isc-dhcp

@@ -1,3 +1,6 @@
 MD5 (dhcp-4.1.1-P1.tar.gz) = ee390a35687dd75dbfc32c856c0938d1
 SHA256 (dhcp-4.1.1-P1.tar.gz) = 2f640350cbb1966ec3090198c3f128d649a3655f747f96ce910a477fe63263da
 SIZE (dhcp-4.1.1-P1.tar.gz) = 1085414
+MD5 (ldap-for-dhcp-4.1.1-2.tar.gz) = 9fa2f64826c969a55fd28263e4b6cad6
+SHA256 (ldap-for-dhcp-4.1.1-2.tar.gz) = 566b7be2ebefdc583d0bf0095c804ba69807b67e5cc29a2b64b1b39202b37d0d
+SIZE (ldap-for-dhcp-4.1.1-2.tar.gz) = 39004

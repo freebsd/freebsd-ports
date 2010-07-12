@@ -1,0 +1,15 @@
+--- server/Makefile.am.orig	2010-07-11 21:36:46.615753042 -0400
++++ server/Makefile.am	2010-07-11 21:37:48.559861502 -0400
+@@ -14,3 +14,12 @@
+ man_MANS = dhcpd.8 dhcpd.conf.5 dhcpd.leases.5
+ EXTRA_DIST = $(man_MANS)
+ 
++install-dist_sysconfDATA: $(dist_sysconf_DATA)
++	@$(NORMAL_INSTALL)
++	test -z "$(sysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(sysconfdir)"
++	@list='$(dist_sysconf_DATA)'; for p in $$list; do \
++	if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
++		f=$(am__strip_dir) \
++		echo " $(dist_sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f.sample'"; \
++		$(dist_sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f.sample"; \
++	done
