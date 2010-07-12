@@ -1,6 +1,6 @@
---- plugins/mp4/mp4.cpp.orig	2006-11-18 02:51:08.000000000 -0800
-+++ plugins/mp4/mp4.cpp	2007-10-02 16:24:06.000000000 -0700
-@@ -231,9 +231,7 @@
+--- plugins/mp4/mp4.cpp.orig	2006-11-18 12:51:08.000000000 +0200
++++ plugins/mp4/mp4.cpp	2010-06-07 10:36:19.151889361 +0300
+@@ -231,9 +231,7 @@ mp4ReadMetadata(metadata_t *mdata, const
    
    strcpy(mdata->fileFormat, fileName + strlen(fileName) - 3); 
    
@@ -11,7 +11,7 @@
    return 1;
  }
  
-@@ -315,8 +313,7 @@
+@@ -315,8 +313,7 @@ mp4WriteMetadata(const metadata_t *mdata
    sprintf(temp, "%d", mdata->nonAlbum);  
    MP4SetMetadataFreeForm(mp4file, "MusicBrainz Non-Album", (u_int8_t *)temp, strlen(temp) + 1);
    

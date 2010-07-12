@@ -1,6 +1,14 @@
---- lib/metadata.cpp.orig	Wed Nov 10 17:37:26 2004
-+++ lib/metadata.cpp	Wed Sep 14 17:25:59 2005
-@@ -34,6 +34,14 @@
+--- lib/metadata.cpp.orig	2006-11-18 12:52:33.000000000 +0200
++++ lib/metadata.cpp	2010-06-07 10:43:10.556325912 +0300
+@@ -26,6 +26,7 @@
+ ----------------------------------------------------------------------------*/
+ #include <math.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "metadata.h"
+ #include "../config.h"
+ using namespace std;
+@@ -35,6 +36,14 @@ extern "C"
     #include "astrcmp.h"
  }
  
