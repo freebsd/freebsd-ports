@@ -1,17 +1,26 @@
---- Makefile.orig	Fri Nov  9 10:38:26 2001
-+++ Makefile	Mon Dec 24 17:54:32 2001
-@@ -8,7 +8,7 @@
+--- Makefile.orig	2010-05-28 03:58:59.000000000 +0900
++++ Makefile	2010-07-12 10:10:41.000000000 +0900
+@@ -7,7 +7,7 @@
  
  # 2. edit dest dir prefix if you want....
  
 -PREFIX='/usr/local'
 +PREFIX?='/usr/local'
- #PREFIX=/boot/home
  
- 
-@@ -86,13 +86,13 @@
- 	ln -sf $(BINDIR)/e3 $(BINDIR)/e3ne
+ # 3. for programmers only: debugging in 64 bit Linux
+ DEBUG=false
+@@ -43,7 +43,7 @@
+ 	chmod +x e3
  else
+ 	echo $(ASVER)
+-	nasm -O2 $(AFLAGS) -o e3.o e3.asm -l e3.lst -D$(OS) -D$(EXMODE)
++	nasm -O2 $(AFLAGS) -o e3.o e3.asm -l e3.lst -D$(OS)
+ 	ld -s -o e3 e3.o
+ 	strip --remove-section .comment e3
+ endif
+@@ -72,13 +72,13 @@
+ 
+ install:	e3
  	install -d $(PREFIX) $(BINDIR) $(MANDIR)
 -	install -m 755 e3 $(BINDIR)
 +	${BSD_INSTALL_PROGRAM} e3 $(BINDIR)
@@ -22,6 +31,6 @@
  	ln -sf $(BINDIR)/e3 $(BINDIR)/e3ne
 -	install -m 644 e3.man $(MANDIR)/e3.$(MANSEC)
 +	${BSD_INSTALL_MAN} e3.man $(MANDIR)/e3.$(MANSEC)
- endif
  
  clean:
+ 	rm -f e3*.o e3*.lst e3.tmp e3 e3em e3pi e3vi e3ws e3ne *~
