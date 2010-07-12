@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clisp
-PORTVERSION=	2.48
-PORTREVISION=	4
+PORTVERSION=	2.49
 CATEGORIES=	lang lisp
 MASTER_SITES=	GNU/${PORTNAME}/release/${PORTVERSION}
 
@@ -18,13 +17,16 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall
 LIB_DEPENDS=	readline.6:${PORTSDIR}/devel/readline \
 		sigsegv.2:${PORTSDIR}/devel/libsigsegv
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/GNU-GPL
+
 USE_ICONV=	yes
 USE_GHOSTSCRIPT_BUILD=	yes
 WANT_GNOME=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --mandir="${MANPREFIX}/man" \
 		--elispdir="${DATADIR}/emacs" --vimdir="${DATADIR}/vim" \
-		--docdir="${DOCSDIR}"
+		--docdir="${DOCSDIR} --with-dynamic-modules=no"
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 # Complaints if the environment changes between build stages.
@@ -52,7 +54,7 @@ OPTIONS=	BDB "Build Berkeley Database module" off \
 		WILDCARD "Build wildcard matching module" on \
 		ZLIB "Build ZLib interface module " off
 
-MAN1=		clisp.1
+MAN1=		clisp.1 clisp-link.1
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
@@ -106,7 +108,7 @@ CONFIGURE_ARGS+=--with-module=clx/new-clx
 .endif
 
 .if defined(WITH_DBUS)
-LIB_DEPENDS+=   dbus-1.3:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 CONFIGURE_ARGS+=--with-module=dbus
 .endif
 
