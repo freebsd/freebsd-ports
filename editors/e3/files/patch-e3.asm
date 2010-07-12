@@ -1,6 +1,6 @@
---- e3.asm	Wed Jan  3 14:21:19 2001
-+++ e3.asm.new	Wed Jan  3 14:21:47 2001
-@@ -3620,8 +3620,8 @@
+--- e3.asm.orig	2010-05-10 01:16:47.000000000 +0900
++++ e3.asm	2010-07-12 10:01:52.000000000 +0900
+@@ -5813,8 +5813,8 @@
  	dw KeyVICmdI	-_start	;33h
  	dw KeyVICmdR	-_start ;34h
  	dw KeyVICmdd	-_start ;35h
