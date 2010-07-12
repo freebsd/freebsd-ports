@@ -1,0 +1,11 @@
+--- tomboy/src/tomboy-dbus.c	2010-02-13 06:00:04.000000000 -0500
++++ tomboy/src/tomboy-dbus.c	2010-06-29 12:29:00.000000000 -0400
+@@ -28,7 +28,7 @@
+ 
+ static DBusGProxy *dbus_proxy_tomboy = NULL;
+ 
+-extern struct tm *localtime_r (time_t *timer, struct tm *tp);
++//extern struct tm *localtime_r (time_t *timer, struct tm *tp);
+ 
+ 
+ 

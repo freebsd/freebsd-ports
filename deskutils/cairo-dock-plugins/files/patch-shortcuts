@@ -1,4 +1,4 @@
---- shortcuts/src/applet-disk-usage.c.orig	2009-09-27 19:14:51.000000000 +0300
+--- shortcuts/src/applet-disk-usage.c	2009-09-27 19:14:51.000000000 +0300
 +++ shortcuts/src/applet-disk-usage.c	2010-02-03 22:25:09.000000000 +0200
 @@ -18,10 +18,18 @@
  */
