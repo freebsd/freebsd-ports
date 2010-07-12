@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	conky
-PORTVERSION=	1.7.2
-PORTREVISION=	7
+PORTVERSION=	1.8.0
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -40,6 +39,7 @@ OPTIONS+=	APCUPSD "Enable APCUPSD support" Off \
 		AUDACIOUS "Enable Audacious support" Off \
 		BMPX "Enable BMPX support" Off \
 		MPD "Enable MPD support" Off \
+		NCURSES "Enable ncurses support" Off \
 		RSS "Enable RSS support" Off \
 		METAR "Enable METAR Weather support" Off \
 		XOAP "Enable XOAP Weather support" Off \
@@ -113,6 +113,12 @@ CONFIGURE_ARGS+=	--disable-imlib2
 .if defined(WITH_LUA_IMLIB2)
 BUILD_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
 CONFIGURE_ARGS+=	--enable-lua-imlib2
+.endif
+
+.if defined(WITH_NCURSES)
+CONFIGURE_ARGS+=	--enable-ncurses
+.else
+CONFIGURE_ARGS+=	--disable-ncurses
 .endif
 
 .if defined(WITH_XFT)

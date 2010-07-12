@@ -1,0 +1,10 @@
+--- lua/cairo.pkg.orig	2010-05-01 04:41:44.000000000 +0300
++++ lua/cairo.pkg	2010-05-01 04:20:40.000000000 +0300
+@@ -4,6 +4,7 @@
+ $#include <cairo-xlib.h>
+ $#include <X11/Xlib.h>
+ $#include "libcairo-helper.h"
++$#define tolua_outside
+ /*
+  * This code was mostly copied from cairo.h and cairo-xlib.h with comments
+  * removed.  The licence noticed below is present for the sake of clarity.
