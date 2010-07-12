@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rocksndiamonds
-PORTVERSION=	3.2.6.1
-PORTREVISION=	1
+PORTVERSION=	3.3.0.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -45,7 +44,7 @@ do-install:
 	@${CHMOD} 777 ${DATADIR}/scores
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for docfile in CHANGES ChangeLog CREDITS HARDWARE README TODO
+.for docfile in ChangeLog CREDITS README
 	${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${DOCSDIR}/elements
