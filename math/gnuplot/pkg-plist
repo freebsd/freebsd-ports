@@ -195,7 +195,7 @@ bin/lasergnu
 %%DATADIR%%/4.4/PostScript/koi8u.ps
 %%DATADIR%%/4.4/PostScript/prologue.ps
 %%DATADIR%%/4.4/PostScript/utf-8.ps
-%%DATADIR%%/4.4/app-defaults/Gnuplot
+%%X11%%%%DATADIR%%/4.4/app-defaults/Gnuplot
 %%DATADIR%%/4.4/gnuplot.gih
 %%DATADIR%%/4.4/js/README
 %%DATADIR%%/4.4/js/canvasmath.js
@@ -211,10 +211,10 @@ bin/lasergnu
 %%DATADIR%%/4.4/lua/gnuplot-tikz.lua
 %%TETEX%%share/texmf-local/tex/latex/gnuplot/gnuplot-lua-tikz.sty
 %%TETEX%%share/texmf-local/tex/latex/gnuplot/gnuplot.cfg
-@dirrm share/texmf-local/tex/latex/gnuplot
-@dirrmtry share/texmf-local/tex/latex
-@dirrmtry share/texmf-local/tex
-@dirrmtry share/texmf-local
+%%TETEX%%@dirrm share/texmf-local/tex/latex/gnuplot
+%%TETEX%%@dirrmtry share/texmf-local/tex/latex
+%%TETEX%%@dirrmtry share/texmf-local/tex
+%%TETEX%%@dirrmtry share/texmf-local
 @dirrm %%DATADIR%%/4.4/lua
 @dirrm %%DATADIR%%/4.4/js
 @dirrm %%DATADIR%%/4.4/app-defaults
