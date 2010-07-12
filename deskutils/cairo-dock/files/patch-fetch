@@ -1,0 +1,33 @@
+--- cairo-dock-package-theme	2010-02-13 11:55:45.000000000 +0100
++++ cairo-dock-package-theme	2010-06-28 18:48:36.000000000 +0200
+@@ -1,3 +1,3 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Packager for Cairo-Dock
+@@ -126,5 +126,5 @@
+ 		#\__________ On cherche si ce theme est un theme officiel ou non.
+ 		echo "un theme est present ($theme)"
+-		wget "$THEME_SERVER/$3/list.conf" -O "liste.tmp" -t 3 -T 30
++		fetch -o "liste.tmp" -T 30 "$THEME_SERVER/$3/list.conf"
+ 		if test -f "liste.tmp" ; then
+ 			grep "^\[${theme}\]" "liste.tmp"
+--- src/cairo-dock-themes-manager.c	2010-04-03 14:32:50.000000000 +0200
++++ src/cairo-dock-themes-manager.c	2010-06-28 18:47:19.000000000 +0200
+@@ -143,8 +143,16 @@
+ 	//\_______________ On lance le download.
+ 	//gchar *cCommand = g_strdup_printf ("%s wget \"%s/%s/%s\" -O \"%s\" -t %d -T %d%s", (iShowActivity == 2 ? "$TERM -e '" : ""), cServerAdress, cDistantFilePath, cDistantFileName, cTmpFilePath, CAIRO_DOCK_DL_NB_RETRY, CAIRO_DOCK_DL_TIMEOUT, (iShowActivity == 2 ? "'" : ""));
++#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__DragonFlyBSD__)
++	gchar *cCommand = g_strdup_printf ("/usr/bin/fetch -qo \"%s\" -T %d \"%s/%s/%s\"",
++		cTmpFilePath,
++		cServerAdress, cDistantFilePath, cDistantFileName,
++		mySystem.iConnectionTimeout);
++	cd_debug ("download with 'MaxTime' and 'NbRetries' parameters ignored with fetch(1)");
++#else
+ 	gchar *cCommand = g_strdup_printf ("curl -s \"%s/%s/%s\" --output \"%s\" --connect-timeout %d --max-time %d --retry %d",
+ 		cServerAdress, cDistantFilePath, cDistantFileName,
+ 		cTmpFilePath,
+ 		mySystem.iConnectionTimeout, mySystem.iConnectiontMaxTime, mySystem.iConnectiontNbRetries);
++#endif
+ 	cd_debug ("download with '%s'", cCommand);
+ 	int r = system (cCommand);
