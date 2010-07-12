@@ -1,5 +1,5 @@
---- plugins/wav/wav.cpp.orig	Wed Jun 15 06:15:18 2005
-+++ plugins/wav/wav.cpp	Wed Sep 14 17:30:30 2005
+--- plugins/wav/wav.cpp.orig	2006-11-18 12:51:46.000000000 +0200
++++ plugins/wav/wav.cpp	2010-06-07 10:36:19.157879953 +0300
 @@ -34,7 +34,10 @@
  #ifdef WIN32
  #include <winsock.h>
