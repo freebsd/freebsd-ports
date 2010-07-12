@@ -7,7 +7,7 @@
 
 PORTNAME=	Image_Graph
 PORTVERSION=	0.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log \
 
 USE_PHP=	yes
 USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*php$$
 
 CATEGORY=	Image
 FILES=		Graph.php Graph/Axis.php Graph/Common.php Graph/Config.php \
@@ -179,9 +180,27 @@ post-patch:
 .if ${PHP_VER} != 4
 .for file in ${FILES}
 	@if ${ECHO_CMD} ${file} | ${GREP} -q -e "php$$" ; then \
-		${REINPLACE_CMD} -e 's|parent::Image[^(]*|parent::__construct|' ${WRKSRC}/${file}; \
+		${REINPLACE_CMD} -e 's|parent::Image[^(]*|parent::__construct|' \
+			-e 's|PHP versions 4 and 5|PHP version 5|' ${WRKSRC}/${file}; \
 	fi
 .endfor
+# fix PHP Deprecated messages
+# - Assigning the return value of new by reference
+# - Call-time pass-by-reference has been deprecated
+.for file in ${DOCS}
+	@if ${ECHO_CMD} ${file} | ${GREP} -q -e "php$$" ; then \
+		${REINPLACE_CMD} -e 's|=& |= |g' -e 's| &\$$| \$$|g' \
+		${WRKSRC}/docs/${file}; \
+	fi
+.endfor
+.for file in ${TESTS}
+	@if ${ECHO_CMD} ${file} | ${GREP} -q -e "php$$" ; then \
+		${REINPLACE_CMD} -e 's|PHP versions 4 and 5|PHP version 5|' \
+		${WRKSRC}/tests/${file}; \
+	fi
+.endfor
+	@${REINPLACE_CMD} -e 's|=& new|= new|g' ${WRKSRC}/Graph.php
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-Graph__Layout.php
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
