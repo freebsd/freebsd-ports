@@ -7,7 +7,7 @@
 
 PORTNAME=	enscript
 PORTVERSION=	1.6.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	print
 MASTER_SITES=	http://www.codento.com/people/mtr/genscript/
 PKGNAMESUFFIX=	-${PAPERSIZE}
@@ -26,10 +26,13 @@ PAPERSIZE?=	letter
 
 .if ${PAPERSIZE} == a4
 PS=A4
+CONFLICTS=	enscript-letter-* enscript-letterdj-*
 .elif ${PAPERSIZE} == letter
 PS=Letter
+CONFLICTS=	enscript-a4-* enscript-letterdj-*
 .elif ${PAPERSIZE} == letterdj
 PS=Letterdj
+CONFLICTS=	enscript-a4-* enscript-letter-*
 .else
 .BEGIN:
 	@${ECHO} "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\""
