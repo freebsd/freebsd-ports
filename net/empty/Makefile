@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	empty
-PORTVERSION=	0.6.17b
+PORTVERSION=	0.6.18b
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -17,6 +17,9 @@ MAN1=		empty.1
 DOCS=		CHANGELOG COPYRIGHT README README.CYGWIN
 EXAMPLES=	README em_ssh.sh em_ssh_2.sh em_sh.sh \
 		em_telnet.sh em_telnet_2.sh emsu.sh runtests.sh
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/empty ${PREFIX}/bin/
