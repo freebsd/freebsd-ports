@@ -6,6 +6,7 @@
 
 PORTNAME=	xapian-omega
 PORTVERSION=	1.0.21
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL}
@@ -16,6 +17,7 @@ COMMENT=	CGI search application built on Xapian
 
 LIB_DEPENDS=	xapian.21:${PORTSDIR}/databases/xapian-core
 
+LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PERL5_RUN=	yes
