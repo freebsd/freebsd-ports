@@ -6,28 +6,32 @@
 #
 
 PORTNAME=	gorilla
-PORTVERSION=	1.4
-PORTREVISION=	4
+PORTVERSION=	1.5.3
+DISTVERSIONSUFFIX=	1996106
 CATEGORIES=	security
-MASTER_SITES=	http://www.fpx.de/fp/Software/Gorilla/download/
+MASTER_SITES=	http://download.github.com/\
+				http://www.bayofrum.net/dist/gorilla/
+DISTNAME=		zdia-${PORTNAME}-v${DISTVERSION}-0-g${DISTVERSIONSUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Password Gorilla is cross-platform Password Manager
+MAINTAINER=	utisoft@gmail.com
+COMMENT=	Password Gorilla is a cross-platform Password Manager
 
-LIB_DEPENDS=	itcl.3:${PORTSDIR}/lang/itcl
-RUN_DEPENDS=	${LOCALBASE}/lib/bwidget/init.tcl:${PORTSDIR}/x11-toolkits/bwidget
+RUN_DEPENDS=	${LOCALBASE}/lib/bwidget/init.tcl:${PORTSDIR}/x11-toolkits/bwidget \
+				itcl>=3.4:${PORTSDIR}/lang/itcl
 
-USE_TCL_RUN=	84
-USE_TK=		84
-GNU_CONFIGURE=	yes
+WRKSRC=			${WRKDIR}/zdia-${PORTNAME}-${DISTVERSIONSUFFIX}
+USE_TCL_RUN=	85+
+USE_TK=		85+
 NO_BUILD=	yes
+SUB_FILES=	gorilla
+SUB_LIST=	WISH=wish
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/gorilla
-	@${INSTALL_SCRIPT} ${WRKSRC}/*.tcl ${PREFIX}/lib/gorilla
-	${TAR} -C ${WRKSRC} -cf - blowfish pics pwsafe twofish sha1 | \
+	@${INSTALL_SCRIPT} ${WRKSRC}/sources/*.tcl ${PREFIX}/lib/gorilla
+	${TAR} -C ${WRKSRC}/sources -cf - blowfish pics pwsafe twofish sha1 | \
 		${TAR} -C ${PREFIX}/lib/gorilla --unlink -xf -
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 
 post-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gorilla
