@@ -21224,6 +21224,7 @@ py-yolk                         ports/misc/py-yolk
 py-zclockfile                   ports/devel/py-zclockfile
 py-zconfig                      ports/devel/py-zconfig
 py-zdaemon                      ports/sysutils/py-zdaemon
+py-zfs                          ports/sysutils/py-zfs
 py-zope.exceptions              ports/devel/py-zope.exceptions
 py-zopeInterface                ports/devel/py-zopeInterface
 py-zopeevent                    ports/devel/py-zopeevent
