@@ -1,7 +1,7 @@
 include/libunwind-common.h
 include/libunwind-dynamic.h
 include/libunwind-ptrace.h
-include/libunwind-x86_64.h
+include/libunwind-%%ARCH%%.h
 include/libunwind.h
 include/unwind.h
 lib/libunwind-generic.a
@@ -9,7 +9,7 @@ lib/libunwind-generic.so
 lib/libunwind-ptrace.a
 lib/libunwind-setjmp.so
 lib/libunwind-setjmp.so.0
-lib/libunwind-x86_64.so
-lib/libunwind-x86_64.so.7
+lib/libunwind-%%ARCH%%.so
+lib/libunwind-%%ARCH%%.so.7
 lib/libunwind.so
 lib/libunwind.so.7
