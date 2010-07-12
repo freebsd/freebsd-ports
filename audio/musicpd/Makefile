@@ -12,7 +12,7 @@ CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
 
-MAINTAINER=	jo.lindqvist@gmail.com
+MAINTAINER=	utisoft@gmail.com
 COMMENT=	A remote-controllable music daemon
 
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
