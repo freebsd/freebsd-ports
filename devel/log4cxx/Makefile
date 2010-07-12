@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	logging/${PORTNAME}/${PORTVERSION}
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Log4cxx is a port to C++ of the Log4j project
 
 LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1

@@ -11,7 +11,7 @@ PORTVERSION=	3.0.1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Python API documentation generation tool
 
 OPTIONS=	UTF8 "Use UTF-8 instead of iso-8859-1 in HTMLs" off
