@@ -1,0 +1,29 @@
+--- doc/variables.xml.orig
++++ doc/variables.xml
+@@ -7,8 +7,8 @@
+             <option>(adapter)</option>
+         </term>
+         <listitem>ACPI ac adapter state. On linux, the adapter option specifies the
+-        subfolder of /sys/class/power_supply containing the state information (defaults
+-        to "AC"). Other systems ignore it.
++        subfolder of /sys/class/power_supply containing the state information (tries "AC"
++        and "ADP1" if there is no argument given). Non-linux systems ignore it.
+         <para /></listitem>
+     </varlistentry>
+     <varlistentry>
+@@ -2416,6 +2416,15 @@
+         <listitem>Hostname 
+         <para /></listitem>
+     </varlistentry>
++     <varlistentry>
++        <term>
++            <command>
++                <option>nodename_short</option>
++            </command>
++        </term>
++        <listitem>Short hostname (same as 'hostname -s' shell command).
++        <para /></listitem>
++    </varlistentry>
+     <varlistentry>
+         <term>
+             <command>

@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2010-04-30 21:55:48.000000000 +0300
++++ src/Makefile.in	2010-04-30 21:55:50.000000000 +0300
+@@ -141,7 +141,7 @@
+ am__objects_15 = conky-linux.$(OBJEXT) conky-top.$(OBJEXT) \
+ 	conky-users.$(OBJEXT) conky-sony.$(OBJEXT) conky-i8k.$(OBJEXT)
+ @BUILD_LINUX_TRUE@am__objects_16 = $(am__objects_15)
+-am__objects_17 = conky-freebsd.$(OBJEXT)
++am__objects_17 = conky-freebsd.$(OBJEXT) conky-top.$(OBJEXT)
+ @BUILD_FREEBSD_TRUE@am__objects_18 = $(am__objects_17)
+ am__objects_19 = conky-openbsd.$(OBJEXT)
+ @BUILD_OPENBSD_TRUE@am__objects_20 = $(am__objects_19)
