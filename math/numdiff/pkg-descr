@@ -1,9 +1,9 @@
-Numdiff is a little program that can be used to compare putatively similar 
-files line by line and field by field, ignoring small numeric differences 
-or/and different numeric formats. 
+Numdiff is a little program that can be used to compare putatively similar files
+line by line and field by field, ignoring small numeric differences or/and
+different numeric formats. 
 
-Equivalently, Numdiff is a program with the capability to appropriately 
-compare files containing numerical fields (and not only).
+Equivalently, Numdiff is a program with the capability to appropriately compare
+files containing numerical fields (and not only).
 
 % numdiff file1 file2
 
