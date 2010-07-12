@@ -7,6 +7,7 @@
 
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.29
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -46,12 +47,14 @@ OPTIONS=	LDAP		"Support for users in LDAP directories" off \
 		PRIVSEP		"Enable privilege separation" on \
 		PERUSERLIMITS	"Per-user concurrency limits" off \
 		THROTTLING	"Bandwidth throttling" off \
-		BANNER		"Show ${PORTNAME} welcome upon session start" on \
 		UPLOADSCRIPT	"Support uploadscript daemon" off \
 		UTF8		"Support for charset conversion" off \
 		SENDFILE	"Support for the sendfile syscall" on \
 		LARGEFILE	"Support downloading files larger than 2Gb" off \
-		VIRTUALCHROOT	"Follow symlinks outside a chroot jail" on
+		VIRTUALCHROOT	"Follow symlinks outside a chroot jail" on \
+		ANONRESUME	"Allow anonymous user to resume file upload" off \
+		ANONRENAME	"Allow anonymous user to rename file" off \
+		ANONDELETE	"Allow anonymous user to delete file" off
 
 .include <bsd.port.pre.mk>
 
@@ -107,11 +110,6 @@ CONFIGURE_ARGS+=	--with-certfile=${WITH_CERTFILE}
 CONFIGURE_ARGS+=	--with-pam
 .endif
 
-# for paranoia
-.if defined(WITHOUT_BANNER)
-CONFIGURE_ARGS+=	--without-banner
-.endif
-
 # support uploadscript?
 .if defined (WITH_UPLOADSCRIPT)
 CONFIGURE_ARGS+=	--with-uploadscript
@@ -139,6 +137,18 @@ CONFIGURE_ARGS+=	--disable-largefile
 CONFIGURE_ARGS+=	--with-virtualchroot
 .else
 CONFIGURE_ARGS+=	--without-virtualchroot
+.endif
+
+.if defined(WITH_ANONRESUME)
+CFLAGS+=	-DANON_CAN_RESUME
+.endif
+
+.if defined(WITH_ANONRENAME)
+CFLAGS+=	-DANON_CAN_RENAME
+.endif
+
+.if defined(WITH_ANONDELETE)
+CFLAGS+=	-DANON_CAN_DELETE
 .endif
 
 PAM_TEMPL?=	${FILESDIR}/pam.conf.5
