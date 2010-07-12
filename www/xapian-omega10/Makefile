@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xapian-omega
-PORTVERSION=	1.0.18
+PORTVERSION=	1.0.21
 CATEGORIES=	www
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL}
@@ -32,6 +32,8 @@ PORTDOCS=	cgiparams.html omegascript.html overview.html \
 PORTEXAMPLES=	omega.conf
 
 OPTIONS=	ICONV "Enable iconv character set conversion support" On
+
+PORTSCOUT=	limit:^1\.0\.
 
 .include <bsd.port.pre.mk>
 
