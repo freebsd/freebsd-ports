@@ -46,5 +46,17 @@ libdata/pkgconfig/gammu-smsd.pc
 %%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/Worker.py
 %%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/Worker.pyc
 %%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/Worker.pyo
+%%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/data.py
+%%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/data.pyc
+%%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/data.pyo
+%%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/exception.py
+%%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/exception.pyc
+%%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/exception.pyo
+%%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/smsd.py
+%%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/smsd.pyc
+%%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/smsd.pyo
+%%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/worker.py
+%%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/worker.pyc
+%%WITH_PYTHON_GAMMU%%%%PYTHON_SITELIBDIR%%/gammu/worker.pyo
 @dirrm include/gammu
 %%WITH_PYTHON_GAMMU%%@dirrm %%PYTHON_SITELIBDIR%%/gammu
