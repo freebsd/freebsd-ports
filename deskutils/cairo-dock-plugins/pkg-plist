@@ -1,4 +1,4 @@
-lib/cairo-dock/libcd-Animated-icons.la
+lib/cairo-dock/libcd-Animated-icons.la         
 lib/cairo-dock/libcd-Animated-icons.so
 lib/cairo-dock/libcd-Cairo-Penguin.la
 lib/cairo-dock/libcd-Cairo-Penguin.so
@@ -32,10 +32,14 @@ lib/cairo-dock/libcd-icon-effect.la
 lib/cairo-dock/libcd-icon-effect.so
 lib/cairo-dock/libcd-illusion.la
 lib/cairo-dock/libcd-illusion.so
+lib/cairo-dock/libcd_kde-integration.la
+lib/cairo-dock/libcd_kde-integration.so
 %%KEYBOARD_INDICATOR%%lib/cairo-dock/libcd-keyboard-indicator.la
 %%KEYBOARD_INDICATOR%%lib/cairo-dock/libcd-keyboard-indicator.so
 lib/cairo-dock/libcd-logout.la
 lib/cairo-dock/libcd-logout.so
+lib/cairo-dock/libcd-mail.la
+lib/cairo-dock/libcd-mail.so
 lib/cairo-dock/libcd-motion_blur.la
 lib/cairo-dock/libcd-motion_blur.so
 lib/cairo-dock/libcd-musicPlayer.la
@@ -48,10 +52,10 @@ lib/cairo-dock/libcd-quick-browser.la
 lib/cairo-dock/libcd-quick-browser.so
 lib/cairo-dock/libcd-rendering.la
 lib/cairo-dock/libcd-rendering.so
+lib/cairo-dock/libcd-RSSreader.la
+lib/cairo-dock/libcd-RSSreader.so
 lib/cairo-dock/libcd-shortcuts.la
 lib/cairo-dock/libcd-shortcuts.so
-lib/cairo-dock/libcd-showDesklets.la
-lib/cairo-dock/libcd-showDesklets.so
 lib/cairo-dock/libcd-showDesktop.la
 lib/cairo-dock/libcd-showDesktop.so
 lib/cairo-dock/libcd-show_mouse.la
@@ -78,7 +82,6 @@ lib/cairo-dock/libcd_gnome-integration.la
 lib/cairo-dock/libcd_gnome-integration.so
 %%XFCE_INTEGRATION%%lib/cairo-dock/libcd_xfce-integration.la
 %%XFCE_INTEGRATION%%lib/cairo-dock/libcd_xfce-integration.so
-share/locale/en_GB/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/fr/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/it/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/ja/LC_MESSAGES/cairo-dock-plugins.mo
@@ -88,19 +91,25 @@ share/locale/pt_BR/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/ru/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/sv/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/cs/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/de/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/en/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/es/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/hu/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/uk/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/zh_TW/LC_MESSAGES/cairo-dock-plugins.mo
 %%DATADIR%%/plug-ins/Animated-icons/Animated-icons.conf
-%%DATADIR%%/plug-ins/Animated-icons/preview.png
+%%DATADIR%%/plug-ins/Animated-icons/preview.jpg
 %%DATADIR%%/plug-ins/Animated-icons/icon.svg
 %%DATADIR%%/plug-ins/Animated-icons/texture-chrome.png
 %%DATADIR%%/plug-ins/Animated-icons/icon-rotation.png
 %%DATADIR%%/plug-ins/Animated-icons/spot.png
 %%DATADIR%%/plug-ins/Animated-icons/halo.png
-%%DATADIR%%/plug-ins/Animated-icons/spot-front2.png
 %%DATADIR%%/plug-ins/Animated-icons/ray.png
 %%DATADIR%%/plug-ins/Animated-icons/icon-wave.png
 %%DATADIR%%/plug-ins/Cairo-Penguin/Cairo-Penguin.conf
-%%DATADIR%%/plug-ins/Cairo-Penguin/preview.png
 %%DATADIR%%/plug-ins/Cairo-Penguin/icon.png
+%%DATADIR%%/plug-ins/Cairo-Penguin/preview.jpg
 %%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/theme.conf
 %%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/readme
 %%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/basher.png
@@ -125,8 +134,8 @@ share/locale/zh_CN/LC_MESSAGES/cairo-dock-plugins.mo
 %%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/sitter.png
 %%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic/xmas-walker.png
 %%DATADIR%%/plug-ins/Clipper/Clipper.conf
-%%DATADIR%%/plug-ins/Clipper/preview.png
 %%DATADIR%%/plug-ins/Clipper/icon.svg
+%%DATADIR%%/plug-ins/Clipper/preview.jpg
 %%DATADIR%%/plug-ins/Clipper/Clipper-actions-gnome.conf
 %%DATADIR%%/plug-ins/Clipper/Clipper-actions-xfce.conf
 %%DATADIR%%/plug-ins/Clipper/Clipper-actions-kde.conf
@@ -157,7 +166,6 @@ share/locale/zh_CN/LC_MESSAGES/cairo-dock-plugins.mo
 %%DATADIR%%/plug-ins/compiz-icon/compiz
 %%DATADIR%%/plug-ins/compiz-icon/compiz-kill
 %%DATADIR%%/plug-ins/compiz-icon/compiz-icon.conf
-%%DATADIR%%/plug-ins/compiz-icon/preview.png
 %%DATADIR%%/plug-ins/compiz-icon/default.svg
 %%DATADIR%%/plug-ins/compiz-icon/broken.svg
 %%DATADIR%%/plug-ins/compiz-icon/other.svg
@@ -167,6 +175,7 @@ share/locale/zh_CN/LC_MESSAGES/cairo-dock-plugins.mo
 %%DATADIR%%/plug-ins/compiz-icon/3.svg
 %%DATADIR%%/plug-ins/compiz-icon/4.svg
 %%DATADIR%%/plug-ins/compiz-icon/icon.png
+%%DATADIR%%/plug-ins/compiz-icon/preview.jpg
 %%DATADIR%%/plug-ins/Dbus/Dbus.conf
 %%DATADIR%%/plug-ins/Dbus/icon.svg
 %%DATADIR%%/plug-ins/desklet-rendering/icon.svg
@@ -183,20 +192,19 @@ share/locale/zh_CN/LC_MESSAGES/cairo-dock-plugins.mo
 %%DATADIR%%/plug-ins/desklet-rendering/clear-bg.svg
 %%DATADIR%%/plug-ins/desklet-rendering/board.png
 %%DATADIR%%/plug-ins/dialog-rendering/dialog-rendering.conf
-%%DATADIR%%/plug-ins/dialog-rendering/preview.png
 %%DATADIR%%/plug-ins/dialog-rendering/icon.svg
 %%DATADIR%%/plug-ins/dnd2share/upload2free.sh
 %%DATADIR%%/plug-ins/dnd2share/dnd2share.conf
 %%DATADIR%%/plug-ins/dnd2share/readme
-%%DATADIR%%/plug-ins/dnd2share/preview.png
 %%DATADIR%%/plug-ins/dnd2share/icon.png
+%%DATADIR%%/plug-ins/dnd2share/preview.jpg
 %%GMENU%%%%DATADIR%%/plug-ins/GMenu/GMenu.conf
 %%GMENU%%%%DATADIR%%/plug-ins/GMenu/icon-recent.png
 %%GMENU%%%%DATADIR%%/plug-ins/GMenu/icon.svg
-%%GMENU%%%%DATADIR%%/plug-ins/GMenu/preview.png
+%%GMENU%%%%DATADIR%%/plug-ins/GMenu/preview.jpg
 %%DATADIR%%/plug-ins/drop-indicator/drop_indicator.conf
-%%DATADIR%%/plug-ins/drop-indicator/preview.png
 %%DATADIR%%/plug-ins/drop-indicator/icon.svg
+%%DATADIR%%/plug-ins/drop-indicator/preview.jpg
 %%DATADIR%%/plug-ins/drop-indicator/default-drop-indicator.svg
 %%DATADIR%%/plug-ins/drop-indicator/default-hover-indicator.svg
 %%DATADIR%%/plug-ins/dustbin/dustbin.conf
@@ -206,35 +214,44 @@ share/locale/zh_CN/LC_MESSAGES/cairo-dock-plugins.mo
 %%DATADIR%%/plug-ins/dustbin/themes/default/trashcan_empty.svg
 %%DATADIR%%/plug-ins/gnome-integration/icon.png
 %%DATADIR%%/plug-ins/icon-effect/icon-effect.conf
-%%DATADIR%%/plug-ins/icon-effect/preview.png
 %%DATADIR%%/plug-ins/icon-effect/icon.png
+%%DATADIR%%/plug-ins/icon-effect/icon-firework.png
+%%DATADIR%%/plug-ins/icon-effect/preview.jpg
 %%DATADIR%%/plug-ins/icon-effect/star.png
 %%DATADIR%%/plug-ins/icon-effect/snow.png
 %%DATADIR%%/plug-ins/icon-effect/rain.png
 %%DATADIR%%/plug-ins/icon-effect/icon-fire.svg
 %%DATADIR%%/plug-ins/icon-effect/icon-storm.png
 %%DATADIR%%/plug-ins/illusion/illusion.conf
-%%DATADIR%%/plug-ins/illusion/preview.png
 %%DATADIR%%/plug-ins/illusion/icon.svg
+%%DATADIR%%/plug-ins/illusion/preview.jpg
 %%DATADIR%%/plug-ins/illusion/icon-black-hole.svg
 %%DATADIR%%/plug-ins/illusion/icon-break.svg
 %%DATADIR%%/plug-ins/illusion/icon-evaporate.svg
 %%DATADIR%%/plug-ins/illusion/icon-explode.svg
 %%DATADIR%%/plug-ins/illusion/icon-fade-out.svg
-%%KEYBOARD_INDICATOR%%%%DATADIR%%/plug-ins/keyboard-indicator/icon.svg
+%%DATADIR%%/plug-ins/kde-integration/icon.png
 %%KEYBOARD_INDICATOR%%%%DATADIR%%/plug-ins/keyboard-indicator/keyboard-indicator.conf
-%%KEYBOARD_INDICATOR%%%%DATADIR%%/plug-ins/keyboard-indicator/preview.png
+%%KEYBOARD_INDICATOR%%%%DATADIR%%/plug-ins/keyboard-indicator/icon.png
+%%KEYBOARD_INDICATOR%%%%DATADIR%%/plug-ins/keyboard-indicator/preview.jpg
 %%DATADIR%%/plug-ins/logout/logout.conf
-%%DATADIR%%/plug-ins/logout/preview.png
 %%DATADIR%%/plug-ins/logout/icon.svg
 %%DATADIR%%/plug-ins/logout/icon-scheduling.png
+%%DATADIR%%/plug-ins/mail/preview.jpg
+%%DATADIR%%/plug-ins/mail/cd_mail_icon.png
+%%DATADIR%%/plug-ins/mail/cd_mail_newmail.svg
+%%DATADIR%%/plug-ins/mail/cd_mail_nomail.svg
+%%DATADIR%%/plug-ins/mail/mail.conf
+%%DATADIR%%/plug-ins/mail/themes/Default/has_mail.svg
+%%DATADIR%%/plug-ins/mail/themes/Default/new_mail_sound.wav
+%%DATADIR%%/plug-ins/mail/themes/Default/no_mail.svg
 %%DATADIR%%/plug-ins/motion-blur/motion_blur.conf
-%%DATADIR%%/plug-ins/motion-blur/preview.png
 %%DATADIR%%/plug-ins/motion-blur/icon.png
 %%DATADIR%%/plug-ins/musicPlayer/musicPlayer.conf
 %%DATADIR%%/plug-ins/musicPlayer/broken.svg
 %%DATADIR%%/plug-ins/musicPlayer/pause.svg
 %%DATADIR%%/plug-ins/musicPlayer/play.svg
+%%DATADIR%%/plug-ins/musicPlayer/preview.jpg
 %%DATADIR%%/plug-ins/musicPlayer/stop.svg
 %%DATADIR%%/plug-ins/musicPlayer/default.svg
 %%DATADIR%%/plug-ins/musicPlayer/broken.jpg
@@ -246,7 +263,6 @@ share/locale/zh_CN/LC_MESSAGES/cairo-dock-plugins.mo
 %%DATADIR%%/plug-ins/musicPlayer/1.svg
 %%DATADIR%%/plug-ins/musicPlayer/2.svg
 %%DATADIR%%/plug-ins/musicPlayer/3.svg
-%%DATADIR%%/plug-ins/musicPlayer/preview.png
 %%DATADIR%%/plug-ins/musicPlayer/icon.png
 %%DATADIR%%/plug-ins/musicPlayer/themes/cd_box_simple/readme
 %%DATADIR%%/plug-ins/musicPlayer/themes/cd_box_simple/preview
@@ -254,9 +270,9 @@ share/locale/zh_CN/LC_MESSAGES/cairo-dock-plugins.mo
 %%DATADIR%%/plug-ins/musicPlayer/themes/cd_box_simple/reflect.svg
 %%DATADIR%%/plug-ins/musicPlayer/themes/cd_box_simple/theme.conf
 %%DATADIR%%/plug-ins/netspeed/netspeed.conf
-%%DATADIR%%/plug-ins/netspeed/preview.png
 %%DATADIR%%/plug-ins/netspeed/default.png
 %%DATADIR%%/plug-ins/netspeed/icon.png
+%%DATADIR%%/plug-ins/netspeed/preview.jpg
 %%DATADIR%%/plug-ins/netspeed/ok.png
 %%DATADIR%%/plug-ins/netspeed/unknown.png
 %%DATADIR%%/plug-ins/netspeed/bad.png
@@ -265,11 +281,12 @@ share/locale/zh_CN/LC_MESSAGES/cairo-dock-plugins.mo
 %%DATADIR%%/plug-ins/powermanager/default-battery.svg
 %%DATADIR%%/plug-ins/powermanager/default-charge.svg
 %%DATADIR%%/plug-ins/powermanager/powermanager.conf
-%%DATADIR%%/plug-ins/powermanager/preview.png
 %%DATADIR%%/plug-ins/powermanager/icon.png
+%%DATADIR%%/plug-ins/powermanager/charge.svg
+%%DATADIR%%/plug-ins/powermanager/preview.jpg
 %%DATADIR%%/plug-ins/quick_browser/quick-browser.conf
-%%DATADIR%%/plug-ins/quick_browser/preview.png
 %%DATADIR%%/plug-ins/quick_browser/icon.svg
+%%DATADIR%%/plug-ins/quick_browser/preview.jpg
 %%DATADIR%%/plug-ins/rendering/rendering.conf
 %%DATADIR%%/plug-ins/rendering/icon.svg
 %%DATADIR%%/plug-ins/rendering/preview-caroussel.jpg
@@ -286,45 +303,42 @@ share/locale/zh_CN/LC_MESSAGES/cairo-dock-plugins.mo
 %%DATADIR%%/plug-ins/rendering/readme-diapo-view
 %%DATADIR%%/plug-ins/rendering/readme-parabolic-view
 %%DATADIR%%/plug-ins/rendering/readme-rainbow-view
+%%DATADIR%%/plug-ins/RSSreader/icon.svg
+%%DATADIR%%/plug-ins/RSSreader/preview.jpg
+%%DATADIR%%/plug-ins/RSSreader/RSSreader.conf
 %%DATADIR%%/plug-ins/shortcuts/shortcuts.conf
 %%DATADIR%%/plug-ins/shortcuts/icon.png
-%%DATADIR%%/plug-ins/shortcuts/preview.png
-%%DATADIR%%/plug-ins/showDesklets/showDesklets.conf
-%%DATADIR%%/plug-ins/showDesklets/preview.png
-%%DATADIR%%/plug-ins/showDesklets/show-desklets.svg
-%%DATADIR%%/plug-ins/showDesklets/hide-desklets.svg
-%%DATADIR%%/plug-ins/showDesklets/icon.png
+%%DATADIR%%/plug-ins/shortcuts/preview.jpg
 %%DATADIR%%/plug-ins/showDesktop/showDesktop.conf
-%%DATADIR%%/plug-ins/showDesktop/preview.png
 %%DATADIR%%/plug-ins/showDesktop/icon.png
+%%DATADIR%%/plug-ins/showDesktop/icon-active.png
 %%DATADIR%%/plug-ins/show_mouse/show_mouse.conf
-%%DATADIR%%/plug-ins/show_mouse/preview.png
 %%DATADIR%%/plug-ins/show_mouse/icon.png
+%%DATADIR%%/plug-ins/show_mouse/preview.jpg
 %%DATADIR%%/plug-ins/slider/slider.conf
-%%DATADIR%%/plug-ins/slider/preview.png
 %%DATADIR%%/plug-ins/slider/icon.png
+%%DATADIR%%/plug-ins/slider/preview.jpg
 %%DATADIR%%/plug-ins/stack/stack.conf
-%%DATADIR%%/plug-ins/stack/preview.png
 %%DATADIR%%/plug-ins/stack/icon.png
-%%DATADIR%%/plug-ins/stack/default-icon.png
+%%DATADIR%%/plug-ins/stack/preview.jpg
 %%DATADIR%%/plug-ins/stack/text-icon.svg
 %%DATADIR%%/plug-ins/stack/url-icon.svg
 %%DATADIR%%/plug-ins/switcher/broken.svg
 %%DATADIR%%/plug-ins/switcher/default.svg
+%%DATADIR%%/plug-ins/switcher/preview.jpg
 %%DATADIR%%/plug-ins/switcher/workspaces.svg
-%%DATADIR%%/plug-ins/switcher/preview.png
 %%DATADIR%%/plug-ins/switcher/switcher.conf
 %%DATADIR%%/plug-ins/System-monitor/nvidia-config
 %%DATADIR%%/plug-ins/System-monitor/System-Monitor.conf
-%%DATADIR%%/plug-ins/System-monitor/preview.png
 %%DATADIR%%/plug-ins/System-monitor/icon.png
+%%DATADIR%%/plug-ins/System-monitor/preview.jpg
 %%DATADIR%%/plug-ins/System-monitor/button-cpu.png
 %%DATADIR%%/plug-ins/System-monitor/button-ram.png
 %%DATADIR%%/plug-ins/systray/systray.conf
-%%DATADIR%%/plug-ins/systray/preview.png
 %%DATADIR%%/plug-ins/systray/icon.png
+%%DATADIR%%/plug-ins/systray/preview.jpg
 %%TERMINAL%%%%DATADIR%%/plug-ins/terminal/icon.png
-%%TERMINAL%%%%DATADIR%%/plug-ins/terminal/preview.png
+%%TERMINAL%%%%DATADIR%%/plug-ins/terminal/preview.jpg
 %%TERMINAL%%%%DATADIR%%/plug-ins/terminal/terminal.conf
 %%DATADIR%%/plug-ins/tomboy/default.svg
 %%DATADIR%%/plug-ins/tomboy/close.svg
@@ -332,19 +346,19 @@ share/locale/zh_CN/LC_MESSAGES/cairo-dock-plugins.mo
 %%DATADIR%%/plug-ins/tomboy/note.svg
 %%DATADIR%%/plug-ins/tomboy/tomboy.conf
 %%DATADIR%%/plug-ins/tomboy/icon.png
-%%DATADIR%%/plug-ins/tomboy/preview.png
+%%DATADIR%%/plug-ins/tomboy/preview.jpg
 %%DATADIR%%/plug-ins/Toons/Toons.conf
+%%DATADIR%%/plug-ins/Toons/icon.png
 %%DATADIR%%/plug-ins/Toons/preview.jpg
-%%DATADIR%%/plug-ins/Toons/icon.svg
 %%DATADIR%%/plug-ins/Toons/themes/Classic/theme.conf
 %%DATADIR%%/plug-ins/Toons/themes/Classic/readme
 %%DATADIR%%/plug-ins/Toons/themes/Classic/toon.svg
 %%DATADIR%%/plug-ins/Toons/themes/Classic/pupil.svg
 %%DATADIR%%/plug-ins/Toons/themes/Classic/eyelid.svg
 %%DATADIR%%/plug-ins/weather/weather.conf
-%%DATADIR%%/plug-ins/weather/preview.png
 %%DATADIR%%/plug-ins/weather/broken.png
 %%DATADIR%%/plug-ins/weather/icon.png
+%%DATADIR%%/plug-ins/weather/preview.jpg
 %%DATADIR%%/plug-ins/weather/themes/Classic/0.png
 %%DATADIR%%/plug-ins/weather/themes/Classic/1.png
 %%DATADIR%%/plug-ins/weather/themes/Classic/2.png
@@ -397,11 +411,10 @@ share/locale/zh_CN/LC_MESSAGES/cairo-dock-plugins.mo
 %%DATADIR%%/plug-ins/weather/themes/Classic/preview
 %%DATADIR%%/plug-ins/weather/themes/Classic/readme
 %%WEBLETS%%%%DATADIR%%/plug-ins/weblets/icon.png
-%%WEBLETS%%%%DATADIR%%/plug-ins/weblets/preview.png
+%%WEBLETS%%%%DATADIR%%/plug-ins/weblets/preview.jpg
 %%WEBLETS%%%%DATADIR%%/plug-ins/weblets/weblets.conf
 %%DATADIR%%/plug-ins/wifi/wifi
 %%DATADIR%%/plug-ins/wifi/wifi.conf
-%%DATADIR%%/plug-ins/wifi/preview.png
 %%DATADIR%%/plug-ins/wifi/link-0.svg
 %%DATADIR%%/plug-ins/wifi/link-1.svg
 %%DATADIR%%/plug-ins/wifi/link-2.svg
@@ -409,11 +422,11 @@ share/locale/zh_CN/LC_MESSAGES/cairo-dock-plugins.mo
 %%DATADIR%%/plug-ins/wifi/link-4.svg
 %%DATADIR%%/plug-ins/wifi/link-5.svg
 %%DATADIR%%/plug-ins/wifi/icon.png
-
+%%DATADIR%%/plug-ins/wifi/preview.jpg
 %%XFCE_INTEGRATION%%%%DATADIR%%/plug-ins/xfce-integration/icon.png
 %%DATADIR%%/plug-ins/Xgamma/Xgamma.conf
-%%DATADIR%%/plug-ins/Xgamma/preview.png
 %%DATADIR%%/plug-ins/Xgamma/icon.png
+%%DATADIR%%/plug-ins/Xgamma/preview.jpg
 @dirrm %%DATADIR%%/plug-ins/Animated-icons
 @dirrm %%DATADIR%%/plug-ins/Cairo-Penguin/themes/Classic
 @dirrm %%DATADIR%%/plug-ins/Cairo-Penguin/themes
@@ -442,8 +455,12 @@ share/locale/zh_CN/LC_MESSAGES/cairo-dock-plugins.mo
 @dirrm %%DATADIR%%/plug-ins/gnome-integration
 @dirrm %%DATADIR%%/plug-ins/icon-effect
 @dirrm %%DATADIR%%/plug-ins/illusion
+@dirrm %%DATADIR%%/plug-ins/kde-integration
 %%KEYBOARD_INDICATOR%%@dirrm %%DATADIR%%/plug-ins/keyboard-indicator
 @dirrm %%DATADIR%%/plug-ins/logout
+@dirrm %%DATADIR%%/plug-ins/mail/themes/Default
+@dirrm %%DATADIR%%/plug-ins/mail/themes
+@dirrm %%DATADIR%%/plug-ins/mail
 @dirrm %%DATADIR%%/plug-ins/motion-blur
 @dirrm %%DATADIR%%/plug-ins/musicPlayer/themes/cd_box_simple
 @dirrm %%DATADIR%%/plug-ins/musicPlayer/themes
@@ -451,9 +468,9 @@ share/locale/zh_CN/LC_MESSAGES/cairo-dock-plugins.mo
 @dirrm %%DATADIR%%/plug-ins/netspeed
 @dirrm %%DATADIR%%/plug-ins/powermanager
 @dirrm %%DATADIR%%/plug-ins/quick_browser
+@dirrm %%DATADIR%%/plug-ins/RSSreader
 @dirrm %%DATADIR%%/plug-ins/rendering
 @dirrm %%DATADIR%%/plug-ins/shortcuts
-@dirrm %%DATADIR%%/plug-ins/showDesklets
 @dirrm %%DATADIR%%/plug-ins/showDesktop
 @dirrm %%DATADIR%%/plug-ins/show_mouse
 @dirrm %%DATADIR%%/plug-ins/slider

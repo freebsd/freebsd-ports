@@ -6,26 +6,29 @@
 #
 
 PORTNAME=	cairo-dock-plugins
-DISTVERSION=	2.1.0
-PORTREVISION=	2
+DISTVERSION=	2.1.3-9
 CATEGORIES=	deskutils
-MASTER_SITES=	BERLIOS/cairo-dock
+MASTER_SITES=	http://launchpadlibrarian.net/44930752/
 
 MAINTAINER=	fidaj@ukr.net
 COMMENT=	Cairo-Dock-Plugins for Cairo-Dock
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/cairo-dock.pc:${PORTSDIR}/deskutils/cairo-dock
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/cairo-dock.pc:${PORTSDIR}/deskutils/cairo-dock
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/cairo-dock.pc:${PORTSDIR}/deskutils/cairo-dock \
+		wget:${PORTSDIR}/ftp/wget
+
+LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan
 
 DATADIR=	${PREFIX}/share/cairo-dock
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig glib20 gtk20 librsvg2 libxml2
 USE_LDCONFIG=	yes
 USE_XORG=	xrender
+USE_DOS2UNIX=	YES
+MAKE_JOBS_SAFE=	YES
 
 OPTIONS+=	GMENU "Common Applications menu" On \
 		KEYBOARD_INDICATOR "Control the keyboard layout" Off \
@@ -37,9 +40,10 @@ OPTIONS+=	GMENU "Common Applications menu" On \
 
 CONFIGURE_ARGS+=	--disable-alsa-mixer \
 			--disable-old-gnome-integration
+CONFIGURE_ENV+=		CCFLAGS="-I${LOCALBASE}/include/cairo"
 
 .if defined(WITH_GMENU)
-LIB_DEPENDS+=		gnome-menu.2:${PORTSDIR}/x11/gnome-menus
+LIB_DEPENDS+=		gnome-menu:${PORTSDIR}/x11/gnome-menus
 CONFIGURE_ARGS+=	--enable-gmenu
 PLIST_SUB+=	GMENU=""
 .else
@@ -48,8 +52,8 @@ PLIST_SUB+=	GMENU="@comment "
 .endif
 
 .if defined(WITH_KEYBOARD_INDICATOR)
-LIB_DEPENDS+=		exif.12:${PORTSDIR}/graphics/libexif \
-			xklavier.12:${PORTSDIR}/x11/libxklavier
+LIB_DEPENDS+=		exif:${PORTSDIR}/graphics/libexif \
+			xklavier:${PORTSDIR}/x11/libxklavier
 CONFIGURE_ARGS+=	--enable-keyboard-indicator
 PLIST_SUB+=	KEYBOARD_INDICATOR=""
 .else
@@ -58,7 +62,7 @@ PLIST_SUB+=	KEYBOARD_INDICATOR="@comment "
 .endif
 
 .if defined(WITH_TERMINAL)
-LIB_DEPENDS+=		vte.9:${PORTSDIR}/x11-toolkits/vte
+LIB_DEPENDS+=		vte:${PORTSDIR}/x11-toolkits/vte
 CONFIGURE_ARGS+=	--enable-terminal
 PLIST_SUB+=	TERMINAL=""
 .else
@@ -67,7 +71,7 @@ PLIST_SUB+=	TERMINAL="@comment "
 .endif
 
 .if defined(WITH_WEBLETS)
-LIB_DEPENDS+=		webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS+=		webkit-1.0:${PORTSDIR}/www/webkit-gtk2
 CONFIGURE_ARGS+=	--enable-weblets
 PLIST_SUB+=	WEBLETS=""
 .else
@@ -76,8 +80,8 @@ PLIST_SUB+=	WEBLETS="@comment "
 .endif
 
 .if defined(WITH_XFCE_INTEGRATION)
-LIB_DEPENDS+=		thunar-vfs-1.5:${PORTSDIR}/x11-fm/thunar \
-			exif.12:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS+=		thunar-vfs-1:${PORTSDIR}/x11-fm/thunar \
+			exif:${PORTSDIR}/graphics/libexif
 CONFIGURE_ARGS+=	--enable-xfce-integration
 PLIST_SUB+=	XFCE_INTEGRATION=""
 .else
