@@ -444,48 +444,6 @@ dhcpd_stop ()
 	fi
 }
 
-remove_pid ()
-{
-	if [ -e ${_dhcpd_pidfile} ]; then
-		warn "${_dhcpd_pidfile} still exists! -- removing anyway"
-	fi
-	safe_remove ${_dhcpd_pidfile}
-}
-
-remove_leases ()
-{
-	if [ -s ${_dhcpd_leasesfile} ]; then
-		warn "${_dhcpd_leasesfile} not empty -- not removed --" \
-		     "futher warning messages expected, don't care."
-	else
-		safe_remove ${_dhcpd_leasesfile} ${_dhcpd_leasesfile}~
-	fi
-}
-
-remove_chuser ()
-{
-	if checkyesno paranoia && {
-	   checkyesno dhcpd_chuser_enable || checkyesno dhcpd_chroot_enable
-	}; then
-		safe_rmdir ${_dhcpd_piddir} ${_dhcpd_leasesdir}
-	fi
-}
-
-remove_chroot ()
-{
-	if checkyesno paranoia && checkyesno dhcpd_chroot_enable; then
-		safe_remove ${_dhcpd_conffile} ${_dhcpd_includedir} \
-			${_dhcpd_etcdir}
-		if checkyesno dhcpd_devfs_enable; then
-			safe_umount ${_dhcpd_devdir}
-			safe_rmdir ${_dhcpd_devdir}/_ # XXX /_ hack!
-		else
-			safe_remove ${_dhcpd_devdir}
-		fi
-		safe_rmdir ${_dhcpd_confdir} ${_dhcpd_rootdir} # XXX /_ hack!
-	fi
-}
-
 dhcpd_check ()
 {
 	check_chuser
@@ -512,64 +470,6 @@ dhcpd_precmd ()
 dhcpd_postcmd ()
 {
 	cleanup_chroot
-}
-
-_dhcpd_uninstall ()	# user group root
-{
-	local _user _group _root
-
-	_user=$1 _group=$2 _root=$3
-
-	if [ -n "${_user}" -o -n "${_group}" ]; then
-		dhcpd_chuser_enable=YES
-		dhcpd_withuser=${_user}
-		dhcpd_withgroup=${_group}
-	else
-		dhcpd_chuser_enable=NO
-	fi
-	if [ -n "${_root}" ]; then
-		dhcpd_chroot_enable=YES
-		dhcpd_rootdir=${_root}
-	else
-		dhcpd_chroot_enable=NO
-	fi
-	dhcpd_check
-	dhcpd_rcvar
-	dhcpd_uninstall
-}
-
-dhcpd_uninstall ()
-{
-	if checkyesno __dhcpd_uninstall; then
-		dhcpd_stop
-		remove_pid
-		remove_leases
-		remove_chuser
-		remove_chroot
-	else
-		local _user _group _root
-
-		__dhcpd_uninstall=YES
-
-		_user=${dhcpd_withuser}
-		_group=${dhcpd_withgroup}
-		_root=${dhcpd_rootdir}
-
-		_dhcpd_uninstall "" "" ""
-
-		if checkyesno paranoia; then
-			if [ -n "${_user}" -o -n "${_group}" ]; then
-				_dhcpd_uninstall "${_user}" "${_group}" ""
-			fi
-			if [ -n "${_root}" ]; then
-				_dhcpd_uninstall "" "" "${_root}"
-			fi
-			if [ -n "${_user}" -o -n "${_group}" ] &&
-			   [ -n "${_root}" ]; then
-				_dhcpd_uninstall "${_user}" "${_group}" "${_root}"
-			fi
-		fi
-	fi
 }
 
 dhcpd_checkconfig ()
