@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bind-tools
-PORTVERSION=	9.7.0.2
+PORTVERSION=	9.7.1.1
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		http://dougbarton.us/Downloads/%SUBDIR%/
@@ -19,7 +19,7 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	The command line tools from BIND: dig, host, and nslookup
 
 # ISC releases things like 9.4.0b3, which our versioning doesn't like
-ISCVERSION=	9.7.0-P2
+ISCVERSION=	9.7.1-P1
 
 MAKE_JOBS_UNSAFE=	yes
 
