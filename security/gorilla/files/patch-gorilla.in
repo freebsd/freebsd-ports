@@ -1,8 +1,0 @@
---- gorilla.in.orig	Sun Dec  5 22:21:54 2004
-+++ gorilla.in	Sat Feb 11 12:30:44 2006
-@@ -7,4 +7,4 @@
- }]} {
-     set myName $linkName
- }
--source [file join [file dirname $myName] gorilla.tcl]
-+source [file join [file dirname $myName] @prefix@/lib/gorilla/gorilla.tcl]

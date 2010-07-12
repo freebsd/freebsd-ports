@@ -6,6 +6,7 @@ lib/gorilla/blowfish/LICENSE.txt
 lib/gorilla/blowfish/blowfish.tcl
 lib/gorilla/blowfish/blowtest.tcl
 lib/gorilla/blowfish/pkgIndex.tcl
+lib/gorilla/pics/browse.gif
 lib/gorilla/pics/gorilla-16x16.gif
 lib/gorilla/pics/gorilla-32x32.gif
 lib/gorilla/pics/gorilla-48x48.gif
