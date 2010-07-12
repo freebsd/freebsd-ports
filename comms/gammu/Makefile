@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gammu
-PORTVERSION=	1.27.0
-PORTREVISION=	2
+PORTVERSION=	1.28.0
 CATEGORIES=	comms
 MASTER_SITES=	http://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com.nyud.net/gammu/releases/
@@ -41,7 +40,9 @@ MAN1=		gammu.1 gammu-config.1 jadmaker.1 gammu-smsd.1 gammu-smsd-inject.1 \
 		gammu-smsd-monitor.1
 MAN5=		gammu-smsdrc.5 gammurc.5
 MAN7=		gammu-smsd-files.7 gammu-smsd-mysql.7 gammu-smsd-pgsql.7 \
-		gammu-smsd-dbi.7 gammu-smsd-tables.7
+		gammu-smsd-dbi.7 gammu-smsd-tables.7 gammu-smsd-null.7 \
+		gammu-smsd-run.7
+
 .endif
 
 .if defined(WITH_PYTHON_GAMMU)
