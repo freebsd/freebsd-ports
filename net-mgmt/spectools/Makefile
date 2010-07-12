@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	spectools
-PORTVERSION=	200906.r1
-PORTREVISION=	2
+PORTVERSION=	201004.r1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brix
-DISTNAME=	spectools-2009-06-R1
+DISTNAME=	spectools-2010-04-R1
 
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	Tools for the Wi-Spy spectrum analyzers from MetaGeek LLC
 
+LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
