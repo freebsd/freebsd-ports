@@ -6,10 +6,11 @@
 #
 
 PORTNAME=		nbc
-PORTVERSION=		1.0.1.b36
+PORTVERSION=		1.2.1.r3
 CATEGORIES=		lang
-MASTER_SITES=		http://bricxcc.sourceforge.net/nbc/beta/
-DISTNAME=		${PORTNAME}-${PORTVERSION}.unix-src
+MASTER_SITES=		SF
+MASTER_SITE_SUBDIR=	bricxcc/NBC_NXC/NBC%20release%20${PORTVERSION:S/.r/%20r/}
+DISTNAME=		${PORTNAME}-${PORTVERSION}.src
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		rambiusparkisanius@gmail.com
@@ -45,10 +46,6 @@ PORTDOCS=		Changelog \
 			Readme
 .endif
 
-.if !defined(NO_INSTALL_MANPAGES)
-MAN1=			nbc.1
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' ${WRKSRC}/Makefile
@@ -61,9 +58,6 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/doc/Changelog ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/doc/Readme ${DOCSDIR}
-.endif
-.if !defined(NO_INSTALL_MANPAGES)
-	${INSTALL_MAN} ${WRKDIR}/doc/nbc.1 ${MANPREFIX}/man/man1
 .endif
 
 post-install:
