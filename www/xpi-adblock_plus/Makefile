@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adblock_plus
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 DISTVERSIONSUFFIX=	-fx+sm+tb+fn
 CATEGORIES=	www
 
