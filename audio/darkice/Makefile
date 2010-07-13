@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	darkice
-PORTVERSION=	0.20
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	audio net
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -19,11 +18,10 @@ OPTIONS=	VORBIS "Ogg Vorbis support" on \
 		LAME "LAME support for MP3" off \
 		TWOLAME "TwoLAME support for MP2" off \
 		FAAC "FAAC support for AAC" off \
-		JACK "Jack support" off
+		JACK "Jack support" off \
+		SAMPLERATE "Libsamplerate support" off
 
-USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262
-ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-AUTOMAKE_ARGS=	--add-missing
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}" \
 		ac_cv_prog_acx_pthread_config=no
 CONFIGURE_ARGS=	--without-alsa --without-aacplus
@@ -69,8 +67,15 @@ CONFIGURE_ARGS+=	--with-jack-prefix=${LOCALBASE}
 CONFIGURE_ARGS+=	--without-jack
 .endif
 
+.if defined(WITH_SAMPLERATE)
+LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
+CONFIGURE_ARGS+=	--with-samplerate-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-samplerate
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure.in
-	@${REINPLACE_CMD} -e 's|-O2 -pedantic||g' ${WRKSRC}/src/Makefile.am
+	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O2 -pedantic||g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.post.mk>
