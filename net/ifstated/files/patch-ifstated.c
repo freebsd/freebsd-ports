@@ -1,267 +1,59 @@
---- ifstated.c-orig	Fri Apr  6 09:04:30 2007
-+++ ifstated.c	Fri Apr  6 09:05:30 2007
-@@ -1,4 +1,5 @@
- /*	$OpenBSD: ifstated.c,v 1.21 2005/02/07 12:38:44 mcbride Exp $	*/
-+/*	$Id: ifstated.c,v 1.3 2005/05/05 16:06:07 mdg Exp $	*/
- 
- /*
-  * Copyright (c) 2004 Marco Pfatschbacher <mpf@openbsd.org>
-@@ -23,12 +24,15 @@
-  */
- 
- #include <sys/types.h>
-+#include <sys/event.h>
+--- ifstated.c.orig	2010-06-11 12:20:08.000000000 -0500
++++ ifstated.c	2010-06-15 13:49:50.785704080 -0500
+@@ -26,9 +26,11 @@
  #include <sys/time.h>
  #include <sys/ioctl.h>
  #include <sys/socket.h>
- #include <sys/wait.h>
 +#include <sys/sysctl.h>
+ #include <sys/wait.h>
  
  #include <net/if.h>
 +#include <net/if_mib.h>
  #include <net/route.h>
  #include <netinet/in.h>
  
-@@ -38,8 +42,6 @@
- #include <fcntl.h>
- #include <signal.h>
- #include <err.h>
--#include <event.h>
--#include <util.h>
- #include <unistd.h>
- #include <syslog.h>
- #include <stdarg.h>
-@@ -47,20 +49,22 @@
- 
- #include "ifstated.h"
- 
-+#define MAX_TIMERS 100
-+
- struct	 ifsd_config *conf = NULL, *newconf = NULL;
- 
- int	 opts = 0;
- int	 opt_debug = 0;
- int	 opt_inhibit = 0;
--char	*configfile = "/etc/ifstated.conf";
--struct event	rt_msg_ev, sighup_ev, startup_ev, sigchld_ev;
-+char	*configfile = "%%PREFIX%%/etc/ifstated.conf";
-+int      kq;
-+struct kevent   kev;
- 
--void	startup_handler(int, short, void *);
--void	sighup_handler(int, short, void *);
-+void	startup_handler(void);
-+void	sighup_handler(void);
- int	load_config(void);
- void	sigchld_handler(int, short, void *);
--void	rt_msg_handler(int, short, void *);
--void	external_handler(int, short, void *);
-+void	rt_msg_handler(int fd);
- void	external_async_exec(struct ifsd_external *);
- void	check_external_status(struct ifsd_state *);
+@@ -61,6 +63,8 @@
  void	external_evtimer_setup(struct ifsd_state *, int);
-@@ -75,6 +79,8 @@
- void	remove_expression(struct ifsd_expression *, struct ifsd_state *);
- void	log_init(int);
- void	logit(int, const char *, ...);
-+int     get_ifcount(void);
-+int     get_ifmib_general(int, struct ifmibdata *);
- 
- void
- usage(void)
-@@ -89,7 +95,7 @@
- int
- main(int argc, char *argv[])
- {
--	struct timeval tv;
-+	struct timespec ts;
- 	int ch;
- 
- 	while ((ch = getopt(argc, argv, "dD:f:hniv")) != -1) {
-@@ -136,26 +142,54 @@
- 		setproctitle(NULL);
- 	}
- 
--	event_init();
-+	kq = kqueue();
-+
- 	log_init(opt_debug);
- 
--	signal_set(&sigchld_ev, SIGCHLD, sigchld_handler, &sigchld_ev);
--	signal_add(&sigchld_ev, NULL);
-+	ts.tv_sec = 0;
-+	ts.tv_nsec = 0;
-+
-+	EV_SET(&kev, SIGCHLD, EVFILT_SIGNAL, EV_ADD, 0, 0, (void *)sigchld_handler);
-+	kevent(kq, &kev, 1, NULL, 0, &ts);
- 
- 	/* Loading the config needs to happen in the event loop */
--	tv.tv_usec = 0;
--	tv.tv_sec = 0;
--	evtimer_set(&startup_ev, startup_handler, &startup_ev);
--	evtimer_add(&startup_ev, &tv);
- 
--	event_loop(0);
-+	EV_SET(&kev, IFSD_EVTIMER_STARTUP, EVFILT_TIMER, EV_ADD|EV_ONESHOT, 0, 0, (void *)startup_handler);
-+	kevent(kq, &kev, 1, NULL, 0, &ts);
-+
-+	/* event loop */
-+	for(;;)
-+	  {
-+	    /* wait indefinitely for an event */
-+	    kevent(kq, NULL, 0, &kev, 1, NULL);
-+
-+	    void (*handler)(void);
-+	    void (*rt_handler)(int);
-+	    if (kev.filter == EVFILT_READ)
-+	      {
-+		rt_handler = kev.udata;
-+		rt_handler(kev.ident);
-+	      }
-+	    else if ((kev.filter == EVFILT_TIMER) && ((kev.ident - IFSD_EVTIMER_EXTERNAL) < MAX_TIMERS))
-+	      {
-+		external_async_exec((struct ifsd_external *)kev.udata);
-+	      }
-+	    else
-+	      {
-+		handler = kev.udata;
-+		handler();
-+	      }
-+	  }
-+
-+	/* NOTREACHED */
- 	exit(0);
- }
- 
- void
--startup_handler(int fd, short event, void *arg)
-+startup_handler()
+ void	scan_ifstate(int, int, int);
+ int	scan_ifstate_single(int, int, struct ifsd_state *);
++int	get_ifcount(void);
++int	get_ifmib_general(int row, struct ifmibdata *ifmd);
+ void	fetch_state(void);
+ void	usage(void);
+ void	adjust_expressions(struct ifsd_expression_list *, int);
+@@ -159,7 +163,6 @@
+ startup_handler(int fd, short event, void *arg)
  {
  	int rt_fd;
-+	struct timespec ts;
+-	unsigned int rtfilter;
  
- 	if (load_config() != 0) {
- 		logit(IFSD_LOG_NORMAL, "unable to load config");
-@@ -165,18 +199,20 @@
  	if ((rt_fd = socket(PF_ROUTE, SOCK_RAW, 0)) < 0)
  		err(1, "no routing socket");
+@@ -169,11 +172,6 @@
+ 		exit(1);
+ 	}
  
--	event_set(&rt_msg_ev, rt_fd, EV_READ|EV_PERSIST,
--	    rt_msg_handler, &rt_msg_ev);
--	event_add(&rt_msg_ev, NULL);
-+	ts.tv_sec = 0;
-+	ts.tv_nsec = 0;
-+
-+	EV_SET(&kev, rt_fd, EVFILT_READ, EV_ADD, 0, 0, (void *)rt_msg_handler);
-+	kevent(kq, &kev, 1, NULL, 0, &ts);
+-	rtfilter = ROUTE_FILTER(RTM_IFINFO);
+-	if (setsockopt(rt_fd, PF_ROUTE, ROUTE_MSGFILTER,
+-	    &rtfilter, sizeof(rtfilter)) == -1)         /* not fatal */
+-		log_warn("startup_handler: setsockopt");
+-	
+ 	event_set(&rt_msg_ev, rt_fd, EV_READ|EV_PERSIST, rt_msg_handler, NULL);
+ 	event_add(&rt_msg_ev, NULL);
  
--	signal_set(&sighup_ev, SIGHUP, sighup_handler, &sighup_ev);
--	signal_add(&sighup_ev, NULL);
-+	EV_SET(&kev, SIGHUP, EVFILT_SIGNAL, EV_ADD, 0, 0, (void *)sighup_handler);
-+	kevent(kq, &kev, 1, NULL, 0, &ts);
- 
- 	logit(IFSD_LOG_NORMAL, "started");
- }
- 
- void
--sighup_handler(int fd, short event, void *arg)
-+sighup_handler()
- {
- 	logit(IFSD_LOG_NORMAL, "reloading config");
- 	if (load_config() != 0)
-@@ -207,7 +243,7 @@
- }
- 
- void
--rt_msg_handler(int fd, short event, void *arg)
-+rt_msg_handler(int fd)
- {
- 	char msg[2048];
- 	struct rt_msghdr *rtm = (struct rt_msghdr *)&msg;
-@@ -245,22 +281,6 @@
- }
- 
- void
--external_handler(int fd, short event, void *arg)
--{
--	struct ifsd_external *external = (struct ifsd_external *)arg;
--	struct timeval tv;
--
--	/* re-schedule */
--	tv.tv_usec = 0;
--	tv.tv_sec = external->frequency;
--	evtimer_set(&external->ev, external_handler, external);
--	evtimer_add(&external->ev, &tv);
--
--	/* execute */
--	external_async_exec(external);
--}
--
--void
- external_async_exec(struct ifsd_external *external)
- {
- 	char *argp[] = {"sh", "-c", NULL, NULL};
-@@ -354,23 +374,28 @@
- external_evtimer_setup(struct ifsd_state *state, int action)
- {
- 	struct ifsd_external *external;
-+	struct timespec ts;
-+	int freq;
-+	int imod = 0;
-+
-+	ts.tv_nsec = 0;
-+	ts.tv_sec = 0;
- 
- 	if (state != NULL) {
- 		switch (action) {
- 		case IFSD_EVTIMER_ADD:
- 			TAILQ_FOREACH(external,
- 			    &state->external_tests, entries) {
--				struct timeval tv;
- 
- 				/* run it once right away */
- 				external_async_exec(external);
- 
- 				/* schedule it for later */
--				tv.tv_usec = 0;
--				tv.tv_sec = external->frequency;
--				evtimer_set(&external->ev, external_handler,
--				    external);
--				evtimer_add(&external->ev, &tv);
-+				freq = (external->frequency * 1000);
-+				EV_SET(&kev, IFSD_EVTIMER_EXTERNAL + imod, EVFILT_TIMER, EV_ADD, 0, freq, (void *)external);
-+				kevent(kq, &kev, 1, NULL, 0, &ts);
-+				imod ++;
-+				if(imod >= MAX_TIMERS) imod = 0;
- 			}
- 			break;
- 		case IFSD_EVTIMER_DEL:
-@@ -380,7 +405,11 @@
- 					kill(external->pid, SIGKILL);
- 					external->pid = 0;
- 				}
--				evtimer_del(&external->ev);
-+				freq = (external->frequency * 1000);
-+				EV_SET(&kev, IFSD_EVTIMER_EXTERNAL + imod, EVFILT_TIMER, EV_DELETE, 0, freq, (void *)external);
-+				imod ++;
-+				if(imod < MAX_TIMERS) 
-+				kevent(kq, &kev, 1, NULL, 0, &ts);
- 			}
- 			break;
- 		}
-@@ -504,7 +533,6 @@
- 		logit(IFSD_LOG_NORMAL, "changing state to %s",
- 		    conf->nextstate->name);
- 		if (conf->curstate != NULL) {
--			evtimer_del(&conf->curstate->ev);
- 			external_evtimer_setup(conf->curstate,
- 			    IFSD_EVTIMER_DEL);
- 		}
-@@ -550,6 +578,48 @@
+@@ -406,6 +404,8 @@
  	}
  }
  
-+
++#define	LINK_STATE_IS_UP(_s)						\
++  ((_s) >= LINK_STATE_UP)
+ #define	LINK_STATE_IS_DOWN(_s)						\
+ 	(!LINK_STATE_IS_UP((_s)) && (_s) != LINK_STATE_UNKNOWN)
+ 
+@@ -584,6 +584,44 @@
+ 	}
+ }
+ 
 +int
 +get_ifcount(void)
 +{
@@ -282,7 +74,6 @@
 +    return(-1);
 +}
 +
-+
 +int
 +get_ifmib_general(int row, struct ifmibdata *ifmd)
 +{
@@ -301,17 +92,15 @@
 +  return sysctl(name, 6, ifmd, &len, (void *)0, 0);
 +}
 +
-+
-+
  /*
   * Fetch the current link states.
   */
-@@ -559,29 +629,34 @@
+@@ -593,26 +631,31 @@
  	struct ifaddrs *ifap, *ifa;
  	char *oname = NULL;
  	int sock = socket(AF_INET, SOCK_DGRAM, 0);
-+	int ifcount = get_ifcount();
-+	int i;
++        int ifcount = get_ifcount();
++        int i;
  
 -	if (getifaddrs(&ifap) != 0)
 +	if (getifaddrs(&ifap) != 0 || ifcount == -1)
@@ -320,7 +109,7 @@
  	for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
 -		struct ifreq ifr;
 -		struct if_data  ifrdat;
-+	        struct ifmibdata ifmd;
++		struct ifmibdata ifmd;
 +		struct if_data  ifdata;
  
  		if (oname && !strcmp(oname, ifa->ifa_name))
@@ -341,20 +130,8 @@
 +		ifdata = ifmd.ifmd_data;
  
  		scan_ifstate(if_nametoindex(ifa->ifa_name),
--		    ifrdat.ifi_link_state, &conf->always);
-+		    ifdata.ifi_link_state, &conf->always);
- 		if (conf->curstate != NULL)
- 			scan_ifstate(if_nametoindex(ifa->ifa_name),
--			    ifrdat.ifi_link_state, conf->curstate);
-+			    ifdata.ifi_link_state, conf->curstate);
+-		    ifrdat.ifi_link_state, 0);
++		    ifdata.ifi_link_state, 0);
  	}
  	freeifaddrs(ifap);
  	close(sock);
-@@ -663,7 +738,6 @@
- 			TAILQ_REMOVE(&state->external_tests,
- 			    expression->u.external, entries);
- 			free(expression->u.external->command);
--			event_del(&expression->u.external->ev);
- 			free(expression->u.external);
- 		}
- 		break;
