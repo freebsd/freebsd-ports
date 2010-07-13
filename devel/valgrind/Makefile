@@ -7,11 +7,11 @@
 
 PORTNAME=	valgrind
 PORTVERSION=	3.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
+DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A (memory) debugging and profiling tool
@@ -27,6 +27,8 @@ GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+OPTIONS=	MPI "Enable build of MPI wrappers" off
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
@@ -36,8 +38,15 @@ post-install:
 IGNORE=	your FreeBSD version is not supported
 .endif
 
+.if defined(WITH_MPI) || exists(${LOCALBASE}/bin/mpicc)
+LIB_DEPENDS+=	mpich.1:${PORTSDIR}/net/mpich2
+PLIST_SUB+=	MPI=""
+.else
+PLIST_SUB+=	MPI="@comment "
+.endif
+
 .if ${ARCH} == "amd64"
-PLIST_SUB+=	AMD64=""
+PLIST_SUB+=	AMD64="" ARCH=amd64
 . if !exists(/usr/lib32)
 CONFIGURE_ARGS+=	--enable-only64bit
 PLIST_SUB+=	X86="@comment "
@@ -46,7 +55,7 @@ PLIST_SUB+=	X86=""
 . else
 . endif
 .else
-PLIST_SUB+=	X86=""
+PLIST_SUB+=	X86="" ARCH=x86
 PLIST_SUB+=	AMD64="@comment "
 .endif
 
