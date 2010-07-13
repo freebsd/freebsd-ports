@@ -7,6 +7,7 @@
 
 PORTNAME=	PHP_UML
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -40,22 +41,14 @@ FILES=		UML.php \
 		UML/Output/html/package-summary.xsl UML/Output/html/resources/inherit.gif \
 		UML/Output/html/resources/style.css UML/Output/php/classifier.xsl \
 		UML/Output/php/code-common.xsl UML/Output/php/code-generator.xsl \
-		UML/Output/php/main.xsl UML/Output/xmi1to2.xsl\
-		UML/PHP/Parser.php \
-		UML/XMI/AbstractBuilder.php UML/XMI/Builder.php \
-		UML/XMI/BuilderImpl1.php UML/XMI/BuilderImpl2.php
+		UML/Output/php/main.xsl UML/Output/xmi1to2.xsl
 DOCS=		LOGICIELS_A_UTILISER_AVEC_PHP_UML \
-		PHP_UML_class_diagram.png \
-		PHP_UML_metamodel_class_diagram.png \
-		PHP_UML_superstructure_class_diagram.png \
+		PHP_UML_simplified_class_diagram.png \
 		README SOFTWARES_TO_USE_WITH_PHP_UML \
-		TODO argouml.png bouml.png rational_rose.png readme.html
-EXAMPLES=	PHP_UML_by_PHP_UML_v1.xmi PHP_UML_by_PHP_UML_v2.xmi \
-		example1_rational_rose.png example2_bouml.png \
-		example3_argouml.png example4_in_Bouml.png \
-		test1.php.txt test2.php.txt \
-		test3.php.txt test4.php.txt test5_cs.php.txt \
-		test_to_run.php test_with_api.php
+		argouml.png bouml.png rational_rose.png readme.html
+EXAMPLES=	example1_rational_rose.png example3_argouml.png test1.php.txt \
+		test3.php.txt test5_cs.php.txt example2_bouml.png example4_in_Bouml.png\
+		test2.php.txt test4.php.txt test_to_run.php
 TESTS=		UmlParserTest.php UmlXmiTest.php \
 		suite/EMOF_test_sample.php suite/PHP_UML_test_sample.php \
 		suite/PHP_test_sample.php suite/bug-489398.php \
