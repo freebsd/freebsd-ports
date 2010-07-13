@@ -167,6 +167,11 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__misc__inhibit__xdg.c \
 		${FILESDIR}/extra-patch-modules__misc__inhibit__xscreensaver.c
 .endif
 
+.if (${OSVERSION} < 702102)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__access__file.c \
+		${FILESDIR}/extra-patch-modules__access__fs.c
+.endif
+
 .if (${OSVERSION} < 700042) && defined(WITH_QT4)
 IGNORE=	does not build on FreeBSD 6.x with Qt4.x, set this OPTION to off or\
 	define WITHOUT_QT4 to build CLI only version
