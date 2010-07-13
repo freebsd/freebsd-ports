@@ -7,15 +7,16 @@
 #
 
 PORTNAME=	xchat
-PORTVERSION=	2.8.6
-PORTREVISION=	7
+PORTVERSION=	2.8.8
 CATEGORIES=	irc gnome ipv6
-MASTER_SITES=	SF \
+MASTER_SITES=	SF/${PORTNAME}/ \
 		http://xchat.org/files/source/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
-
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An X11 IRC client using the GTK+ 2 toolkit
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	xchat-1* xchat-systray-plugin-[0-9]*
 
@@ -37,6 +38,10 @@ OPTIONS=	DBUS "Enable DBUS support" on \
 		PYTHON "Enable Python support" off \
 		TCL "Enable TCL support" off \
 		SOCKS "Build with socks5 support" off
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -86,7 +91,6 @@ PLIST_SUB+=	PERL=""
 .endif
 
 .if defined(WITH_PYTHON)
-USE_PYTHON=	yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 CONFIGURE_ARGS+=--enable-python
 PLIST_SUB+=	PYTHON=""
@@ -118,10 +122,6 @@ CONFIGURE_ARGS+=--enable-socks
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|PY_LIBS=.*|PY_LIBS="-L\$$PY_EXEC_PREFIX/lib/python\$$PY_VER/config -lpython\$$PY_VER ${PTHREAD_LIBS} -lutil"|' \
 		${WRKSRC}/configure
-.for file in dccgui.c fe-gtk.c maingui.c menu.c plugin-tray.c sexy-spell-entry.c xtext.c xtext.h
-	@${REINPLACE_CMD} -e 's|#define GTK_DISABLE_DEPRECATED||g' \
-		${WRKSRC}/src/fe-gtk/${file}
-.endfor
 
 # Create plugins directory even when no plugins are installed
 post-install:
