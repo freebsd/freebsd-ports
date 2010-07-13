@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	i2p
-PORTVERSION=	0.7.14
+PORTVERSION=	0.8
 CATEGORIES=	net-p2p java security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}:i2p \
 		http://mirror.i2p2.de/:i2p \
@@ -36,7 +36,6 @@ USE_RC_SUBR=	i2p.sh
 JAVA_BUILD=	jdk
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
-JAVA_OS=	native
 USE_ANT=	yes
 
 ALL_TARGET=	\
