@@ -13,6 +13,7 @@
 %%SITE_PERL%%/metaf2xml/XML.pm
 %%SITE_PERL%%/metaf2xml/parser.pm
 bin/metaf2xml.pl
+bin/metafsrc2raw.pl
 www/metaf2xml/cgi-bin/metaf.pl
 www/metaf2xml/htdocs/metaf-fullhtml.xsl
 www/metaf2xml/htdocs/metaf-lang.xsl
