@@ -21196,6 +21196,7 @@ py-wxpython28                   ports/x11-toolkits/py-wxPython28
 py-wxpython28-common            ports/x11-toolkits/py-wxPython28-common
 py-wxpython28-unicode           ports/x11-toolkits/py-wxPython28-unicode
 py-xattr                        ports/devel/py-xattr
+py-xdelta3                      ports/misc/py-xdelta3
 py-xdg                          ports/devel/py-xdg
 py-xlib                         ports/x11-toolkits/py-xlib
 py-xlrd                         ports/textproc/py-xlrd
