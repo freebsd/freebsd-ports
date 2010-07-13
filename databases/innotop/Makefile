@@ -7,7 +7,7 @@
 
 PORTNAME=	innotop
 PORTVERSION=	1.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
@@ -21,5 +21,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term
 PERL_CONFIGURE=	yes
 
 MAN1=		innotop.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/etc/innotop|${PREFIX}/etc|g' ${WRKSRC}/innotop
 
 .include <bsd.port.mk>
