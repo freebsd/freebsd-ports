@@ -1,345 +1,345 @@
-eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/controls.jar
-eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/icons/controls_example.gif
-eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/plugin.xml
-eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/doc-html/hglegal.htm
-eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/doc-html/swt_controls_ex.html
-eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/doc-html/swt_customcontrols_ex.html
-eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/doc-html/ngibmcpy.gif
-eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/about.html
-eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/plugin.properties
-eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/propertysheet.jar
-eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/doc-html/ui_propertysheet_ex.html
-eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/doc-html/ngibmcpy.gif
-eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/doc-html/hglegal.htm
-eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/doc.zip
-eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/plugin.properties
-eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/icons/obj16/usereditor.gif
-eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/plugin.xml
-eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/HelpContexts.xml
-eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/about.html
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.javaeditor_3.0.0/about.html
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.javaeditor_3.0.0/templateeditorexamplesrc.zip
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.javaeditor_3.0.0/javaeditorexamplesrc.zip
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.paint_3.0.0/paintsrc.zip
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.paint_3.0.0/about.html
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.team.examples.filesystem_3.0.0/about.html
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.team.examples.filesystem_3.0.0/teamfilesystemsrc.zip
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.multipageeditor_2.1.0/multipageeditorsrc.zip
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.multipageeditor_2.1.0/about.html
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.layouts_3.0.0/about.html
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.layouts_3.0.0/layoutssrc.zip
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.propertysheet_2.1.0/about.html
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.propertysheet_2.1.0/propertysheetsrc.zip
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples_3.0.0/swtexamplessrc.zip
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples_3.0.0/about.html
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.readmetool_2.1.0/about.html
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.readmetool_2.1.0/readmetoolsrc.zip
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.browser_3.0.0/browserexamplesrc.zip
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.browser_3.0.0/about.html
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.controls_3.0.0/about.html
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.controls_3.0.0/controlssrc.zip
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.launcher_3.0.0/launchersrc.zip
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.launcher_3.0.0/about.html
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.compare.examples_3.0.0/compareexamplessrc.zip
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.compare.examples_3.0.0/about.html
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.jdt.ui.examples.projects_3.0.0/jdtexamplessrc.zip
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.compare.examples.xml_3.0.0/xmlcompareexamplessrc.zip
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.compare.examples.xml_3.0.0/about.html
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/eclipse32.gif
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/plugin.xml
-eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/plugin.properties
-eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/teamfilesystem.jar
-eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/plugin.xml
-eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/icons/full/wizban/newconnect_wizban.gif
-eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/icons/full/wizards/synced.gif
-eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/icons/full/wizards/fsicon_wiz.gif
-eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/about.html
-eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/doc-html/ngibmcpy.gif
-eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/doc-html/team_filesystem_ex.html
-eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/doc-html/team_localhistory_ex.html
-eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/doc-html/hglegal.htm
-eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/plugin.properties
-eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/multipageeditor.jar
-eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/plugin.xml
-eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/about.html
-eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/doc-html/hglegal.htm
-eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/doc-html/ui_multipageeditor_ex.html
-eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/doc-html/ngibmcpy.gif
-eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/plugin.properties
-eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/icons/copy.gif
-eclipse/plugins/org.eclipse.swt.examples_3.0.0/swtexamples.jar
-eclipse/plugins/org.eclipse.swt.examples_3.0.0/about.html
-eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_addressbook_ex.html
-eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_imageanalyzer_ex.html
-eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/hglegal.htm
-eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_fileviewer_ex.html
-eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_texteditor_ex.html
-eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/ngibmcpy.gif
-eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_hoverhelp_ex.html
-eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_clipboard_ex.html
-eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_javaviewer_ex.html
-eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_manual_setup.html
-eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_helloworld_ex.html
-eclipse/plugins/org.eclipse.swt.examples_3.0.0/plugin.properties
-eclipse/plugins/org.eclipse.swt.examples_3.0.0/plugin.xml
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/xmlcompareexamples.jar
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/Ordered_NewIDMapScheme.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/ui_xmlcompare_ex.html
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/IDMap_GeneralMatching.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/Ordered_NewOrderedEntry_ContextMenu.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/IDMap_NewIDMapScheme.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/IDMap_SelectMyPlugin.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/Ordered_NewOrderedEntry_PreferencePage.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/IDMap_NewMapping_PreferencePage.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/PreferencePage.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/idMapping.html
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/CreateNewIDMapButton.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/ngibmcpy.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/addidmap.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/EditCopy.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/IDMapContextMenu.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/hglegal.htm
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/IDMap_NewMapping_ContextMenu.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/tutorial_and_examples.html
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/smartmode_co.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/IDMap_MyPlugin.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/Ordered_MyANT.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/Ordered_UnorderedScheme.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons/full/obj16/attribute_obj.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons/full/obj16/element_obj.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons/full/obj16/element_ordered_obj.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons/full/obj16/addidmap.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons/full/obj16/text_obj.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons/full/obj16/smartmode_co.gif
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/plugin.properties
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/about.html
-eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/plugin.xml
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/readmetool.jar
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/dtool16/action2.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/dtool16/action1.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/dtool16/openbrwsr.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/dtool16/action3.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/ctool16/action3.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/ctool16/openbrwsr.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/ctool16/action2.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/ctool16/action1.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/etool16/action2.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/etool16/action1.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/etool16/openbrwsr.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/etool16/action3.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/view16/sections.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/obj16/newreadme_wiz.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/obj16/editor.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/obj16/usereditor.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/wizban/newreadme_wiz.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc/ngibmcpy.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc/org_eclipse_ui_examples_readmetool.html
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc/org_eclipse_ui_examples_readmetool_sectionParser.html
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc/hglegal.htm
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc.zip
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc-html/ui_readmetool_ex.html
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc-html/hglegal.htm
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc-html/ngibmcpy.gif
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/plugin.properties
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/about.html
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/plugin.xml
-eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/HelpContexts.xml
-eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/jdtexamples.jar
-eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/archive/junit/junit381src.jar
-eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/plugin.xml
-eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/about.html
-eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/icons/full/dtool16/newjprjex_wiz.gif
-eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/icons/full/wizban/newjprjex_wiz.gif
-eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/icons/full/etool16/newjprjex_wiz.gif
-eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/doc-html/cpy.gif
-eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/doc-html/jdt_projects_ex.html
-eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/doc-html/notices.html
-eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/plugin.properties
-eclipse/plugins/org.eclipse.sdk.examples_3.0.0/about.mappings
-eclipse/plugins/org.eclipse.sdk.examples_3.0.0/about.ini
-eclipse/plugins/org.eclipse.sdk.examples_3.0.0/plugin.properties
-eclipse/plugins/org.eclipse.sdk.examples_3.0.0/plugin.xml
-eclipse/plugins/org.eclipse.sdk.examples_3.0.0/about.html
-eclipse/plugins/org.eclipse.sdk.examples_3.0.0/about.properties
-eclipse/plugins/org.eclipse.sdk.examples_3.0.0/eclipse32.gif
-eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/doc.zip
-eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/nl/ja/doc.zip
-eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/nl/ja/toc_Tasks.xml
-eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/nl/ja/toc_Concepts.xml
-eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/nl/ja/book.xml
-eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/nl/ja/toc_Ref.xml
-eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/toc_Ref.xml
-eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/plugin.xml
-eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/toc_Tasks.xml
-eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/book.xml
-eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/about.html
-eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/build.xml
-eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/plugin.properties
-eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/toc_Concepts.xml
-eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/layouts.jar
-eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/doc-html/hglegal.htm
-eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/doc-html/ngibmcpy.gif
-eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/doc-html/swt_layout_ex.html
-eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/plugin.properties
-eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/plugin.xml
-eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/icons/layouts_example.gif
-eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/about.html
-eclipse/plugins/org.eclipse.compare.examples_3.0.0/compareexamples.jar
-eclipse/plugins/org.eclipse.compare.examples_3.0.0/plugin.xml
-eclipse/plugins/org.eclipse.compare.examples_3.0.0/about.html
-eclipse/plugins/org.eclipse.compare.examples_3.0.0/doc-html/hglegal.htm
-eclipse/plugins/org.eclipse.compare.examples_3.0.0/doc-html/ngibmcpy.gif
-eclipse/plugins/org.eclipse.compare.examples_3.0.0/doc-html/ui_structurecreator_ex.html
-eclipse/plugins/org.eclipse.compare.examples_3.0.0/plugin.properties
-eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/javaeditorexample.jar
-eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/templateeditorexample.jar
-eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/doc-html/cpy.gif
-eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/doc-html/ui_templateeditor_ex.html
-eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/doc-html/ui_javaeditor_ex.html
-eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/doc-html/notices.html
-eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/icons/obj16/java.gif
-eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/icons/sample.gif
-eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/icons/template.gif
-eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/icons/resolver.gif
-eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/templates/ant.properties
-eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/templates/ant.xml
-eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/plugin.xml
-eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/about.html
-eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/plugin.properties
-eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/launcher.jar
-eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/icons/generic_example.gif
-eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/icons/openFolder.gif
-eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/icons/closedFolder.gif
-eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/icons/launcher_example.gif
-eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/plugin.xml
-eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/plugin.properties
-eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/about.html
-eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/doc-html/hglegal.htm
-eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/doc-html/swt_launcher_ex.html
-eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/doc-html/ngibmcpy.gif
-eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/schema/org.eclipse.swt.examples.launcher.launchItems.exsd
-eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/doc/org.eclipse.swt.examples.launcher.launchItems.html
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/paint.jar
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/doc-html/ngibmcpy.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/doc-html/swt_paint_ex.html
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/doc-html/hglegal.htm
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/tool_ellipse.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/tool_polyline.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/paint_example.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/linestyle_solid.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/tool_rectangle.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/tool_roundedrectangle.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/linestyle_dash.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/fill_solid.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/linestyle_dashdot.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/fill_outline.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/tool_line.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/options_font.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/tool_airbrush.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/fill_none.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/linestyle_dot.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/tool_text.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/tool_pencil.gif
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/about.html
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/plugin.xml
-eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/plugin.properties
-eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/browserexample.jar
-eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/about.html
-eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/plugin.properties
-eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/doc-html/swt_browser_ex.html
-eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/doc-html/hglegal.htm
-eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/doc-html/ngibmcpy.gif
-eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/icons/browser_example.gif
-eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/plugin.xml
-eclipse/features/org.eclipse.sdk.examples_3.0.0/cpl-v10.html
-eclipse/features/org.eclipse.sdk.examples_3.0.0/feature.xml
-eclipse/features/org.eclipse.sdk.examples_3.0.0/eclipse_update_120.jpg
-eclipse/features/org.eclipse.sdk.examples_3.0.0/feature.properties
-eclipse/features/org.eclipse.sdk.examples_3.0.0/license.html
-@dirrm eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/wizban
-@dirrm eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/view16
-@dirrm eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/obj16
-@dirrm eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/etool16
-@dirrm eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/dtool16
-@dirrm eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/ctool16
-@dirrm eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons
-@dirrm eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc-html
-@dirrm eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc
-@dirrm eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0
-@dirrm eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/icons/obj16
-@dirrm eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/icons
-@dirrm eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/doc-html
-@dirrm eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0
-@dirrm eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/icons
-@dirrm eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/doc-html
-@dirrm eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0
-@dirrm eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/templates
-@dirrm eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/icons/obj16
-@dirrm eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/icons
-@dirrm eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/doc-html
-@dirrm eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0
-@dirrm eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/icons/full/wizban
-@dirrm eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/icons/full/wizards
-@dirrm eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/icons/full
-@dirrm eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/icons
-@dirrm eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/doc-html
-@dirrm eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0
-@dirrm eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html
-@dirrm eclipse/plugins/org.eclipse.swt.examples_3.0.0
-@dirrm eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons
-@dirrm eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/doc-html
-@dirrm eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0
-@dirrm eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/icons
-@dirrm eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/doc-html
-@dirrm eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0
-@dirrm eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/schema
-@dirrm eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/icons
-@dirrm eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/doc-html
-@dirrm eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/doc
-@dirrm eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0
-@dirrm eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/icons
-@dirrm eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/doc-html
-@dirrm eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0
-@dirrm eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/icons
-@dirrm eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/doc-html
-@dirrm eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0
-@dirrm eclipse/plugins/org.eclipse.sdk.examples_3.0.0
-@dirrm eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.readmetool_2.1.0
-@dirrm eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.propertysheet_2.1.0
-@dirrm eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.multipageeditor_2.1.0
-@dirrm eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.javaeditor_3.0.0
-@dirrm eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.team.examples.filesystem_3.0.0
-@dirrm eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples_3.0.0
-@dirrm eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.paint_3.0.0
-@dirrm eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.layouts_3.0.0
-@dirrm eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.launcher_3.0.0
-@dirrm eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.controls_3.0.0
-@dirrm eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.browser_3.0.0
-@dirrm eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.jdt.ui.examples.projects_3.0.0
-@dirrm eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.compare.examples_3.0.0
-@dirrm eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.compare.examples.xml_3.0.0
-@dirrm eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src
-@dirrm eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0
-@dirrm eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/icons/full/wizban
-@dirrm eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/icons/full/etool16
-@dirrm eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/icons/full/dtool16
-@dirrm eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/icons/full
-@dirrm eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/icons
-@dirrm eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/doc-html
-@dirrm eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/archive/junit
-@dirrm eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/archive
-@dirrm eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0
-@dirrm eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/nl/ja
-@dirrm eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/nl
-@dirrm eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0
-@dirrm eclipse/plugins/org.eclipse.compare.examples_3.0.0/doc-html
-@dirrm eclipse/plugins/org.eclipse.compare.examples_3.0.0
-@dirrm eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons/full/obj16
-@dirrm eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons/full
-@dirrm eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons
-@dirrm eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html
-@dirrm eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0
-@dirrm eclipse/features/org.eclipse.sdk.examples_3.0.0
-@dirrmtry eclipse/plugins
-@dirrmtry eclipse/features
-@dirrmtry eclipse
+lib/eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/controls.jar
+lib/eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/icons/controls_example.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/doc-html/hglegal.htm
+lib/eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/doc-html/swt_controls_ex.html
+lib/eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/doc-html/swt_customcontrols_ex.html
+lib/eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/doc-html/ngibmcpy.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/propertysheet.jar
+lib/eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/doc-html/ui_propertysheet_ex.html
+lib/eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/doc-html/ngibmcpy.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/doc-html/hglegal.htm
+lib/eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/doc.zip
+lib/eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/icons/obj16/usereditor.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/HelpContexts.xml
+lib/eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/about.html
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.javaeditor_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.javaeditor_3.0.0/templateeditorexamplesrc.zip
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.javaeditor_3.0.0/javaeditorexamplesrc.zip
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.paint_3.0.0/paintsrc.zip
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.paint_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.team.examples.filesystem_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.team.examples.filesystem_3.0.0/teamfilesystemsrc.zip
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.multipageeditor_2.1.0/multipageeditorsrc.zip
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.multipageeditor_2.1.0/about.html
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.layouts_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.layouts_3.0.0/layoutssrc.zip
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.propertysheet_2.1.0/about.html
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.propertysheet_2.1.0/propertysheetsrc.zip
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples_3.0.0/swtexamplessrc.zip
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.readmetool_2.1.0/about.html
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.readmetool_2.1.0/readmetoolsrc.zip
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.browser_3.0.0/browserexamplesrc.zip
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.browser_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.controls_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.controls_3.0.0/controlssrc.zip
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.launcher_3.0.0/launchersrc.zip
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.launcher_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.compare.examples_3.0.0/compareexamplessrc.zip
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.compare.examples_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.jdt.ui.examples.projects_3.0.0/jdtexamplessrc.zip
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.compare.examples.xml_3.0.0/xmlcompareexamplessrc.zip
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.compare.examples.xml_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/eclipse32.gif
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/teamfilesystem.jar
+lib/eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/icons/full/wizban/newconnect_wizban.gif
+lib/eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/icons/full/wizards/synced.gif
+lib/eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/icons/full/wizards/fsicon_wiz.gif
+lib/eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/doc-html/ngibmcpy.gif
+lib/eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/doc-html/team_filesystem_ex.html
+lib/eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/doc-html/team_localhistory_ex.html
+lib/eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/doc-html/hglegal.htm
+lib/eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/multipageeditor.jar
+lib/eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/about.html
+lib/eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/doc-html/hglegal.htm
+lib/eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/doc-html/ui_multipageeditor_ex.html
+lib/eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/doc-html/ngibmcpy.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/icons/copy.gif
+lib/eclipse/plugins/org.eclipse.swt.examples_3.0.0/swtexamples.jar
+lib/eclipse/plugins/org.eclipse.swt.examples_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_addressbook_ex.html
+lib/eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_imageanalyzer_ex.html
+lib/eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/hglegal.htm
+lib/eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_fileviewer_ex.html
+lib/eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_texteditor_ex.html
+lib/eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/ngibmcpy.gif
+lib/eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_hoverhelp_ex.html
+lib/eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_clipboard_ex.html
+lib/eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_javaviewer_ex.html
+lib/eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_manual_setup.html
+lib/eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html/swt_helloworld_ex.html
+lib/eclipse/plugins/org.eclipse.swt.examples_3.0.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.swt.examples_3.0.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/xmlcompareexamples.jar
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/Ordered_NewIDMapScheme.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/ui_xmlcompare_ex.html
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/IDMap_GeneralMatching.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/Ordered_NewOrderedEntry_ContextMenu.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/IDMap_NewIDMapScheme.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/IDMap_SelectMyPlugin.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/Ordered_NewOrderedEntry_PreferencePage.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/IDMap_NewMapping_PreferencePage.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/PreferencePage.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/idMapping.html
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/CreateNewIDMapButton.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/ngibmcpy.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/addidmap.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/EditCopy.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/IDMapContextMenu.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/hglegal.htm
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/IDMap_NewMapping_ContextMenu.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/tutorial_and_examples.html
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/smartmode_co.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/IDMap_MyPlugin.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/Ordered_MyANT.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html/Ordered_UnorderedScheme.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons/full/obj16/attribute_obj.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons/full/obj16/element_obj.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons/full/obj16/element_ordered_obj.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons/full/obj16/addidmap.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons/full/obj16/text_obj.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons/full/obj16/smartmode_co.gif
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/readmetool.jar
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/dtool16/action2.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/dtool16/action1.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/dtool16/openbrwsr.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/dtool16/action3.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/ctool16/action3.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/ctool16/openbrwsr.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/ctool16/action2.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/ctool16/action1.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/etool16/action2.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/etool16/action1.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/etool16/openbrwsr.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/etool16/action3.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/view16/sections.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/obj16/newreadme_wiz.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/obj16/editor.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/obj16/usereditor.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/wizban/newreadme_wiz.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc/ngibmcpy.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc/org_eclipse_ui_examples_readmetool.html
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc/org_eclipse_ui_examples_readmetool_sectionParser.html
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc/hglegal.htm
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc.zip
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc-html/ui_readmetool_ex.html
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc-html/hglegal.htm
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc-html/ngibmcpy.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/about.html
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/HelpContexts.xml
+lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/jdtexamples.jar
+lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/archive/junit/junit381src.jar
+lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/icons/full/dtool16/newjprjex_wiz.gif
+lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/icons/full/wizban/newjprjex_wiz.gif
+lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/icons/full/etool16/newjprjex_wiz.gif
+lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/doc-html/cpy.gif
+lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/doc-html/jdt_projects_ex.html
+lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/doc-html/notices.html
+lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.sdk.examples_3.0.0/about.mappings
+lib/eclipse/plugins/org.eclipse.sdk.examples_3.0.0/about.ini
+lib/eclipse/plugins/org.eclipse.sdk.examples_3.0.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.sdk.examples_3.0.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.sdk.examples_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.sdk.examples_3.0.0/about.properties
+lib/eclipse/plugins/org.eclipse.sdk.examples_3.0.0/eclipse32.gif
+lib/eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/doc.zip
+lib/eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/nl/ja/doc.zip
+lib/eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/nl/ja/toc_Tasks.xml
+lib/eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/nl/ja/toc_Concepts.xml
+lib/eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/nl/ja/book.xml
+lib/eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/nl/ja/toc_Ref.xml
+lib/eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/toc_Ref.xml
+lib/eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/toc_Tasks.xml
+lib/eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/book.xml
+lib/eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/build.xml
+lib/eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/toc_Concepts.xml
+lib/eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/layouts.jar
+lib/eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/doc-html/hglegal.htm
+lib/eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/doc-html/ngibmcpy.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/doc-html/swt_layout_ex.html
+lib/eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/icons/layouts_example.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.compare.examples_3.0.0/compareexamples.jar
+lib/eclipse/plugins/org.eclipse.compare.examples_3.0.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.compare.examples_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.compare.examples_3.0.0/doc-html/hglegal.htm
+lib/eclipse/plugins/org.eclipse.compare.examples_3.0.0/doc-html/ngibmcpy.gif
+lib/eclipse/plugins/org.eclipse.compare.examples_3.0.0/doc-html/ui_structurecreator_ex.html
+lib/eclipse/plugins/org.eclipse.compare.examples_3.0.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/javaeditorexample.jar
+lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/templateeditorexample.jar
+lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/doc-html/cpy.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/doc-html/ui_templateeditor_ex.html
+lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/doc-html/ui_javaeditor_ex.html
+lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/doc-html/notices.html
+lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/icons/obj16/java.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/icons/sample.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/icons/template.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/icons/resolver.gif
+lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/templates/ant.properties
+lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/templates/ant.xml
+lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/launcher.jar
+lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/icons/generic_example.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/icons/openFolder.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/icons/closedFolder.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/icons/launcher_example.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/doc-html/hglegal.htm
+lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/doc-html/swt_launcher_ex.html
+lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/doc-html/ngibmcpy.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/schema/org.eclipse.swt.examples.launcher.launchItems.exsd
+lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/doc/org.eclipse.swt.examples.launcher.launchItems.html
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/paint.jar
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/doc-html/ngibmcpy.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/doc-html/swt_paint_ex.html
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/doc-html/hglegal.htm
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/tool_ellipse.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/tool_polyline.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/paint_example.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/linestyle_solid.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/tool_rectangle.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/tool_roundedrectangle.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/linestyle_dash.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/fill_solid.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/linestyle_dashdot.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/fill_outline.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/tool_line.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/options_font.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/tool_airbrush.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/fill_none.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/linestyle_dot.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/tool_text.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons/tool_pencil.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/browserexample.jar
+lib/eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/doc-html/swt_browser_ex.html
+lib/eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/doc-html/hglegal.htm
+lib/eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/doc-html/ngibmcpy.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/icons/browser_example.gif
+lib/eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/plugin.xml
+lib/eclipse/features/org.eclipse.sdk.examples_3.0.0/cpl-v10.html
+lib/eclipse/features/org.eclipse.sdk.examples_3.0.0/feature.xml
+lib/eclipse/features/org.eclipse.sdk.examples_3.0.0/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.sdk.examples_3.0.0/feature.properties
+lib/eclipse/features/org.eclipse.sdk.examples_3.0.0/license.html
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/wizban
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/view16
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/obj16
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/etool16
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/dtool16
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons/ctool16
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/icons
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc-html
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0/doc
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.readmetool_2.1.0
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/icons/obj16
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/icons
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0/doc-html
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.propertysheet_2.1.0
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/icons
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0/doc-html
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.multipageeditor_2.1.0
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/templates
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/icons/obj16
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/icons
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0/doc-html
+@dirrm lib/eclipse/plugins/org.eclipse.ui.examples.javaeditor_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/icons/full/wizban
+@dirrm lib/eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/icons/full/wizards
+@dirrm lib/eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/icons/full
+@dirrm lib/eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/icons
+@dirrm lib/eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0/doc-html
+@dirrm lib/eclipse/plugins/org.eclipse.team.examples.filesystem_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples_3.0.0/doc-html
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/icons
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0/doc-html
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples.paint_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/icons
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0/doc-html
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples.layouts_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/schema
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/icons
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/doc-html
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0/doc
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples.launcher_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/icons
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0/doc-html
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples.controls_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/icons
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0/doc-html
+@dirrm lib/eclipse/plugins/org.eclipse.swt.examples.browser_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.sdk.examples_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.readmetool_2.1.0
+@dirrm lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.propertysheet_2.1.0
+@dirrm lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.multipageeditor_2.1.0
+@dirrm lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.ui.examples.javaeditor_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.team.examples.filesystem_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.paint_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.layouts_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.launcher_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.controls_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.swt.examples.browser_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.jdt.ui.examples.projects_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.compare.examples_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src/org.eclipse.compare.examples.xml_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0/src
+@dirrm lib/eclipse/plugins/org.eclipse.sdk.examples.source_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/icons/full/wizban
+@dirrm lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/icons/full/etool16
+@dirrm lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/icons/full/dtool16
+@dirrm lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/icons/full
+@dirrm lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/icons
+@dirrm lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/doc-html
+@dirrm lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/archive/junit
+@dirrm lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0/archive
+@dirrm lib/eclipse/plugins/org.eclipse.jdt.ui.examples.projects_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/nl/ja
+@dirrm lib/eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0/nl
+@dirrm lib/eclipse/plugins/org.eclipse.help.examples.ex1_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.compare.examples_3.0.0/doc-html
+@dirrm lib/eclipse/plugins/org.eclipse.compare.examples_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons/full/obj16
+@dirrm lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons/full
+@dirrm lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/icons
+@dirrm lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0/doc-html
+@dirrm lib/eclipse/plugins/org.eclipse.compare.examples.xml_3.0.0
+@dirrm lib/eclipse/features/org.eclipse.sdk.examples_3.0.0
+@dirrmtry lib/eclipse/plugins
+@dirrmtry lib/eclipse/features
+@dirrmtry lib/eclipse
