@@ -2,4 +2,4 @@
 #
 # $FreeBSD$
 
-exec "%%LOCALBASE%%/bin/java" -jar "%%DATADIR%%/proguard.jar" "$@"
+exec "%%LOCALBASE%%/bin/java" -Xmx256m -jar "%%DATADIR%%/proguard.jar" "$@"
