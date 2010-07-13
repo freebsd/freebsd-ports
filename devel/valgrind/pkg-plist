@@ -115,6 +115,7 @@ lib/valgrind/default.supp
 %%X86%%lib/valgrind/vgpreload_massif-x86-freebsd.so
 %%AMD64%%lib/valgrind/vgpreload_memcheck-amd64-freebsd.so
 %%X86%%lib/valgrind/vgpreload_memcheck-x86-freebsd.so
+%%MPI%%lib/valgrind/libmpiwrap-%%ARCH%%-freebsd.so
 @dirrm lib/valgrind
 @dirrm include/valgrind/vki
 @dirrm include/valgrind
