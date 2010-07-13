@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	PyLucene
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	textproc devel python java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	lucene/pylucene

@@ -5,11 +5,11 @@
 %%PYTHON_SITELIBDIR%%/lucene/collections.py
 %%PYTHON_SITELIBDIR%%/lucene/collections.pyc
 %%PYTHON_SITELIBDIR%%/lucene/extensions.jar
-%%PYTHON_SITELIBDIR%%/lucene/lucene-analyzers-3.0.1.jar
-%%PYTHON_SITELIBDIR%%/lucene/lucene-memory-3.0.1.jar
-%%PYTHON_SITELIBDIR%%/lucene/lucene-core-3.0.1.jar
-%%PYTHON_SITELIBDIR%%/lucene/lucene-highlighter-3.0.1.jar
-%%PYTHON_SITELIBDIR%%/lucene/lucene-queries-3.0.1.jar
-%%PYTHON_SITELIBDIR%%/lucene/lucene-regex-3.0.1.jar
-%%PYTHON_SITELIBDIR%%/lucene/lucene-snowball-3.0.1.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-analyzers-3.0.2.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-memory-3.0.2.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-core-3.0.2.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-highlighter-3.0.2.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-queries-3.0.2.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-regex-3.0.2.jar
+%%PYTHON_SITELIBDIR%%/lucene/lucene-snowball-3.0.2.jar
 @dirrm %%PYTHON_SITELIBDIR%%/lucene
