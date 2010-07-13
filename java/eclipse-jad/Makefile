@@ -7,7 +7,7 @@
 
 PORTNAME=	jad
 PORTVERSION=	3.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}clipse/${PORTNAME}clipse3.3/${PORTVERSION}%20%28for%20Eclipse%20_%3D3.3M6%29
 PKGNAMEPREFIX=	eclipse-
@@ -27,13 +27,13 @@ NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 
-PLIST_FILES=	eclipse/plugins/${DISTNAME}${EXTRACT_SUFX}
+PLIST_FILES=	lib/eclipse/plugins/${DISTNAME}${EXTRACT_SUFX}
 
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${PREFIX}/eclipse/plugins
-	@${INSTALL_DATA} ${WRKSRC}/${DISTNAME}${EXTRACT_SUFX} ${PREFIX}/eclipse/plugins
+	@${MKDIR} ${PREFIX}/lib/eclipse/plugins
+	@${INSTALL_DATA} ${WRKSRC}/${DISTNAME}${EXTRACT_SUFX} ${PREFIX}/lib/eclipse/plugins
 
 .include <bsd.port.mk>
