@@ -19,11 +19,13 @@ share/locale/gl/LC_MESSAGES/xchat.mo
 share/locale/hu/LC_MESSAGES/xchat.mo
 share/locale/it/LC_MESSAGES/xchat.mo
 share/locale/ja/LC_MESSAGES/xchat.mo
+share/locale/kn/LC_MESSAGES/xchat.mo
 share/locale/ko/LC_MESSAGES/xchat.mo
 share/locale/lt/LC_MESSAGES/xchat.mo
 share/locale/mk/LC_MESSAGES/xchat.mo
 share/locale/nl/LC_MESSAGES/xchat.mo
 share/locale/pa/LC_MESSAGES/xchat.mo
+share/locale/pl/LC_MESSAGES/xchat.mo
 share/locale/pt/LC_MESSAGES/xchat.mo
 share/locale/ru/LC_MESSAGES/xchat.mo
 share/locale/sq/LC_MESSAGES/xchat.mo
