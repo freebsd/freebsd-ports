@@ -13,7 +13,7 @@ MASTER_SITES=	SF/rubyeclipse/${PORTNAME:L}/${PORTNAME}%20${PORTVERSION}
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	${RDT}-${RDTVERSION}
 
-MAINTAINER=	rehsack@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RDT adds Ruby support to the Eclipse IDE Framework
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
