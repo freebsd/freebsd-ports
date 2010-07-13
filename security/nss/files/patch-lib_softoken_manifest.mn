@@ -7,7 +7,7 @@
 -ifdef MOZILLA_CLIENT
 -INCLUDES += -I$(DIST)/include/sqlite3
 -endif
-+INCLUDES += -I${LOCALBASE}/include
++INCLUDES += -I$(LOCALBASE)/include
  
  EXPORTS = \
  	secmodt.h \
