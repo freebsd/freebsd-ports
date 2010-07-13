@@ -26,8 +26,8 @@ JAVA_VERSION=	1.4+
 USE_ZIP=	yes
 
 do-install:
-	@${MKDIR} ${PREFIX}/eclipse
-	@${MKDIR} ${PREFIX}/eclipse/plugins
-	@${CP} -r ${WRKSRC}/com.atlassw.tools.eclipse.checkstyle_${PORTVERSION} ${PREFIX}/eclipse/plugins
+	@${MKDIR} ${PREFIX}/lib/eclipse
+	@${MKDIR} ${PREFIX}/lib/eclipse/plugins
+	@${CP} -r ${WRKSRC}/com.atlassw.tools.eclipse.checkstyle_${PORTVERSION} ${PREFIX}/lib/eclipse/plugins
 
 .include <bsd.port.mk>
