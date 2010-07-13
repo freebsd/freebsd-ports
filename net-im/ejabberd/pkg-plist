@@ -61,12 +61,12 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_zlib.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/dynamic_compile.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ejabberd_captcha.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ejabberd_commands.beam
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ejabberd_debug.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ejabberd_piefxis.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ejabberd_stun.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ejd2odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eldap.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eldap_filter.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eldap_filter_yecc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eldap_pool.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eldap_utils.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/extauth.beam
@@ -120,6 +120,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_time.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_vcard.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_vcard_ldap.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_vcard_odbc.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_vcard_xupdate.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_version.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/node_buddy.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/node_club.beam
@@ -204,32 +205,33 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/vi.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/wa.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/zh.msg
 sbin/%%PORTNAME%%ctl
-%%DOCSDIR%%/discorus.png
-%%DOCSDIR%%/guide.html
-%%DOCSDIR%%/logo.png
-%%DOCSDIR%%/release_notes_0.9.1.txt
-%%DOCSDIR%%/release_notes_0.9.8.txt
-%%DOCSDIR%%/release_notes_0.9.txt
-%%DOCSDIR%%/release_notes_1.0.0.txt
-%%DOCSDIR%%/release_notes_1.1.0.txt
-%%DOCSDIR%%/release_notes_1.1.1.txt
-%%DOCSDIR%%/release_notes_1.1.2.txt
-%%DOCSDIR%%/release_notes_1.1.3.txt
-%%DOCSDIR%%/release_notes_1.1.4.txt
-%%DOCSDIR%%/release_notes_2.0.0.txt
-%%DOCSDIR%%/release_notes_2.0.1.txt
-%%DOCSDIR%%/release_notes_2.0.2.txt
-%%DOCSDIR%%/release_notes_2.0.3.txt
-%%DOCSDIR%%/release_notes_2.0.4.txt
-%%DOCSDIR%%/release_notes_2.0.5.txt
-%%DOCSDIR%%/release_notes_2.1.0.txt
-%%DOCSDIR%%/release_notes_2.1.1.txt
-%%DOCSDIR%%/release_notes_2.1.2.txt
-%%DOCSDIR%%/release_notes_2.1.3.txt
-%%DOCSDIR%%/webadmmain.png
-%%DOCSDIR%%/webadmmainru.png
-%%DOCSDIR%%/yozhikheader.png
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/discorus.png
+%%PORTDOCS%%%%DOCSDIR%%/guide.html
+%%PORTDOCS%%%%DOCSDIR%%/logo.png
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_0.9.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_0.9.8.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_0.9.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_1.0.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_1.1.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_1.1.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_1.1.2.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_1.1.3.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_1.1.4.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.0.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.0.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.0.2.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.0.3.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.0.4.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.0.5.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.0.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.2.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.3.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.4.txt
+%%PORTDOCS%%%%DOCSDIR%%/webadmmain.png
+%%PORTDOCS%%%%DOCSDIR%%/webadmmainru.png
+%%PORTDOCS%%%%DOCSDIR%%/yozhikheader.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry etc/%%PORTNAME%%
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib
