@@ -1,0 +1,8 @@
+bin/kwooty
+share/applications/kde4/kwooty.desktop
+share/apps/kwooty/kwootyui.rc
+share/config.kcfg/settings.kcfg
+share/icons/hicolor/16x16/apps/kwooty.png
+share/icons/hicolor/32x32/apps/kwooty.png
+share/icons/hicolor/64x64/apps/kwooty.png
+@dirrm share/apps/kwooty
