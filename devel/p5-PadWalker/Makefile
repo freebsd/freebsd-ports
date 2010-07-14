@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PadWalker
-PORTVERSION=	1.9
+PORTVERSION=	1.91
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/R/RO/ROBIN
@@ -21,5 +21,7 @@ MAN3=	PadWalker.3
 
 post-patch:
 	${PERL} -i -pe '$$_ = "" if /DEBUGGING/' ${WRKSRC}/Makefile.PL
+	${RM} ${WRKSRC}/._*
+	${RM} ${WRKSRC}/t/._*
 
 .include <bsd.port.mk>
