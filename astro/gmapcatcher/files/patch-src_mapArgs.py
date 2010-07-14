@@ -1,5 +1,5 @@
---- src/mapArgs.py.orig	2010-04-20 10:41:04.000000000 +0800
-+++ src/mapArgs.py	2010-04-20 10:42:13.000000000 +0800
+--- src/mapArgs.py.orig	2010-07-14 10:53:32.000000000 +0800
++++ src/mapArgs.py	2010-07-14 10:54:03.000000000 +0800
 @@ -38,9 +38,9 @@
          print '                very useful to download maps of entire world'
          print ' '
