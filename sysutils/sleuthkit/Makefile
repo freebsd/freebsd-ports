@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sleuthkit
-PORTVERSION=	3.1.2
+PORTVERSION=	3.1.3
 CATEGORIES=	sysutils security
 MASTER_SITES=	SF
 
