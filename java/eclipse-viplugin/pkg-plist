@@ -1,36 +1,36 @@
-eclipse/features/viPluginFeature_%%RELEASEVERSION%%/feature.xml
-eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/ChangeLog.txt
-eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/LICENSE_Jakarta.txt
-eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/LICENSE_NanoXML.txt
-eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/LICENSE_viPlugin.txt
-eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/viPlugin User Manual.html
-eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/viplugin_rc.xml
-eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/icons/vi.gif
-eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/ViImplementation.jar
-eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/ViPluginLicenseChecker.jar
-eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/commons-lang-2.1.jar
-eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/jakarta-regexp-1.4.jar
-eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/nanoxml-lite-2.2.3.jar
-eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/plugin.xml
-eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/viPlugin.jar
-eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/META-INF/MANIFEST.MF
-eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html/toc.html
-eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html/all_commands.html
-eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html/book.css
-eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html/commands_with_description.html
-eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html/configuration.html
-eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html/credits.html
-eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html/installation.html
-eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html/activation.html
-eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/build.xml
-eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/plugin.xml
-eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/testToc.xml
-eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/toc.xml
-@dirrm eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib
-@dirrm eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/icons
-@dirrm eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc
-@dirrm eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%
-@dirrm eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/META-INF
-@dirrm eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html
-@dirrm eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%
-@dirrm eclipse/features/viPluginFeature_%%RELEASEVERSION%%
+lib/eclipse/features/viPluginFeature_%%RELEASEVERSION%%/feature.xml
+lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/ChangeLog.txt
+lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/LICENSE_Jakarta.txt
+lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/LICENSE_NanoXML.txt
+lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/LICENSE_viPlugin.txt
+lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/viPlugin User Manual.html
+lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc/viplugin_rc.xml
+lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/icons/vi.gif
+lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/ViImplementation.jar
+lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/ViPluginLicenseChecker.jar
+lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/commons-lang-2.1.jar
+lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/jakarta-regexp-1.4.jar
+lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib/nanoxml-lite-2.2.3.jar
+lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/plugin.xml
+lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/viPlugin.jar
+lib/eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/META-INF/MANIFEST.MF
+lib/eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html/toc.html
+lib/eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html/all_commands.html
+lib/eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html/book.css
+lib/eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html/commands_with_description.html
+lib/eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html/configuration.html
+lib/eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html/credits.html
+lib/eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html/installation.html
+lib/eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html/activation.html
+lib/eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/build.xml
+lib/eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/plugin.xml
+lib/eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/testToc.xml
+lib/eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/toc.xml
+@dirrm lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/lib
+@dirrm lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/icons
+@dirrm lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%/doc
+@dirrm lib/eclipse/plugins/ViPluginEclipseLayer_%%RELEASEVERSION%%
+@dirrm lib/eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/META-INF
+@dirrm lib/eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%/html
+@dirrm lib/eclipse/plugins/viPluginHelp_%%RELEASEVERSION%%
+@dirrm lib/eclipse/features/viPluginFeature_%%RELEASEVERSION%%
