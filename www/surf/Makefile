@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	surf
-PORTVERSION=	0.3
-PORTREVISION=	2
+PORTVERSION=	0.4
 CATEGORIES=	www
-MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/ \
-		LOCAL/glarkin
+MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
 
 MAINTAINER=	jigboe@gmx.de
 COMMENT=	A simple Web browser based on WebKit/Gtk+

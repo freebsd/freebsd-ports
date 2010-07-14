@@ -1,6 +1,6 @@
---- config.mk	2009-10-30 13:41:02.000000000 +0100
-+++ config.mk	2009-12-21 19:25:11.000000000 +0100
-@@ -4,25 +4,25 @@ VERSION = 0.3
+--- config.mk.orig	2010-05-30 16:05:25.000000000 -0400
++++ config.mk	2010-07-12 20:08:08.000000000 -0400
+@@ -4,25 +4,26 @@
  # Customize below to fit your system
  
  # paths
@@ -24,10 +24,11 @@
  # flags
 -CPPFLAGS = -DVERSION=\"${VERSION}\"
 -CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
--LDFLAGS = -s ${LIBS}
+-LDFLAGS = -g ${LIBS}
 +CPPFLAGS+= -DVERSION=\"${VERSION}\"
 +CFLAGS+= -std=c99 ${INCS} ${CPPFLAGS}
 +LDFLAGS+= ${LIBS}
++
  
  # Solaris
  #CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"
