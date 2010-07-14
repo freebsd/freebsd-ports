@@ -7,7 +7,7 @@
 
 PORTNAME=	php_doc
 PORTVERSION?=	20100701
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	lang
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	php_manual_${PHP_LANG}-${PORTVERSION}
@@ -27,7 +27,7 @@ PHP_LANG?=	en
 PHP_LANGS?=	${PHP_WRKDIR} ${PHP_WRKSRC}
 PHP_HTML_CHUNKED=	br de en fr ja pl ro tr
 PHP_HTML_NORMAL=	bg kr
-PHPDOCDIR=	${PREFIX}/share/doc/php-${PHP_LANG}
+PHPDOCDIR=	${PREFIX}/share/doc/php-${PHP_LANG}/
 PLIST=		${WRKDIR}/pkg-plist
 
 .for lang in ${PHP_HTML_NORMAL}
@@ -37,7 +37,7 @@ WRK_SRC=	${WRKDIR}/html/
 .endfor
 .for lang in ${PHP_HTML_CHUNKED}
 .if ${PHP_LANG} == ${lang}
-WRK_SRC=	${WRKDIR}/php-chunked-xhtml
+WRK_SRC=	${WRKDIR}/php-chunked-xhtml/
 .endif
 .endfor
 
@@ -64,7 +64,7 @@ pre-install:
 do-install:
 	@${MKDIR} ${PHPDOCDIR}
 	${FIND} ${WRK_SRC} -type d | ${SED} -e "s,${WRK_SRC},${PHPDOCDIR}/," | ${XARGS} ${MKDIR}
-	for f in `${FIND} ${WRK_SRC} -type f ! -name '.*' ! -name pkg-plist | ${SED} -e "s,${WRK_SRC}/,,"`; do \
+	for f in `${FIND} ${WRK_SRC} -type f ! -name '.*' ! -name pkg-plist | ${SED} -e 's,${WRK_SRC},,'`; do \
 		${INSTALL_DATA} ${WRK_SRC}/$$f ${PHPDOCDIR}/$$f; \
 	done
 
