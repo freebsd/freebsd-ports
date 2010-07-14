@@ -73,19 +73,19 @@ PLIST_FILES=	\
 	%%ECLIPSE_PLUGINS%%/%%DISTNAME%%/welcome.xml
 #
 PLIST_SUB=	\
-	ECLIPSE_PLUGINS="eclipse/plugins" \
+	ECLIPSE_PLUGINS="lib/eclipse/plugins" \
 	DISTNAME="${DISTNAME}"
 
 post-extract:
 	@${RM} -Rf ${WRKSRC}/src
 
 do-install:
-		@${MKDIR} ${PREFIX}/eclipse/plugins
+		@${MKDIR} ${PREFIX}/lib/eclipse/plugins
 		@(cd ${WRKDIR} && \
 			${FIND} -s $$(${BASENAME} ${WRKSRC}) -type d \
-				-exec ${MKDIR} "${PREFIX}/eclipse/plugins/{}" \; && \
+				-exec ${MKDIR} "${PREFIX}/lib/eclipse/plugins/{}" \; && \
 			${FIND} -s $$(${BASENAME} ${WRKSRC}) -not -type d \
-				-exec ${INSTALL_DATA} "{}" "${PREFIX}/eclipse/plugins/{}" \; \
+				-exec ${INSTALL_DATA} "{}" "${PREFIX}/lib/eclipse/plugins/{}" \; \
 		)
 
 .include <bsd.port.mk>
