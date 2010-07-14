@@ -24,15 +24,15 @@ USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	APP_HOME=${APP_HOME}
-APP_HOME=	${PREFIX}/eclipse/plugins/${PORTNAME}_${PORTVERSION}
+APP_HOME=	${PREFIX}/lib/eclipse/plugins/${PORTNAME}_${PORTVERSION}
 
 .if defined(WITH_PROGUARD)
 RUN_DEPENDS+=	${LOCALBASE}/share/proguard/lib/proguard.jar:${PORTSDIR}/java/proguard
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/eclipse/plugins
-	@${CP} -R ${WRKSRC}/${PORTNAME}_${PORTVERSION} ${PREFIX}/eclipse/plugins/
+	@${MKDIR} ${PREFIX}/lib/eclipse/plugins
+	@${CP} -R ${WRKSRC}/${PORTNAME}_${PORTVERSION} ${PREFIX}/lib/eclipse/plugins/
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
