@@ -319,7 +319,7 @@ CONFIGURE_ARGS+=--enable-glx
 .endif
 
 .if defined(WITH_GNOMEVFS)
-USE_GNOME=	gnomevfs
+USE_GNOME=	gnomevfs2
 CONFIGURE_ARGS+=--enable-gnomevfs
 .else
 COFIGURE_ARGS+=--disable-gnomevfs
@@ -672,7 +672,8 @@ pre-install:
 		${SED} -e 's|^|share/${dir}/|' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrmtry share/${dir}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} "@dirrmtry share/${dir}" >> ${PLIST}
+		&& ${ECHO_CMD} "@dirrmtry share/${dir}" >> ${PLIST} ; \
+	fi
 .endfor
 .if !defined(NOPORTDOCS)
 	cd ${FAKEDIR}/share/doc && ${FIND} -s * -type f -o -type l | \
