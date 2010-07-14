@@ -28,8 +28,8 @@ JAVA_OS=	native
 PLIST_SUB=	RELEASEVERSION=${PORTVERSION}
 
 do-install:
-	@${MKDIR} ${PREFIX}/eclipse
-	@${CP} -r ${WRKSRC}/plugins  ${PREFIX}/eclipse
-	@${CP} -r ${WRKSRC}/features ${PREFIX}/eclipse
+	@${MKDIR} ${PREFIX}/lib/eclipse
+	@${CP} -r ${WRKSRC}/plugins  ${PREFIX}/lib/eclipse
+	@${CP} -r ${WRKSRC}/features ${PREFIX}/lib/eclipse
 
 .include <bsd.port.mk>
