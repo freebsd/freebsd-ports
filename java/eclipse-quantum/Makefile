@@ -18,7 +18,7 @@ MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	Database access and SQL editor for the Eclipse IDE
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
-                ${LOCALBASE}/eclipse/features/org.eclipse.gef_3.3.2.v20080129/feature.xml:${PORTSDIR}/java/eclipse-gef
+                ${LOCALBASE}/lib/eclipse/features/org.eclipse.gef_3.3.2.v20080129/feature.xml:${PORTSDIR}/java/eclipse-gef
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
@@ -34,8 +34,8 @@ post-extract:
 	@${RM} -rf ${WRKSRC}/plugins/com.quantum.Quantum_${PORTVERSION}/icons/.xvpics
 
 do-install:
-	@${MKDIR} ${PREFIX}/eclipse
-	@${CP} -r ${WRKSRC}/plugins ${PREFIX}/eclipse
-	@${CP} -r ${WRKSRC}/features ${PREFIX}/eclipse
+	@${MKDIR} ${PREFIX}/lib/eclipse
+	@${CP} -r ${WRKSRC}/plugins ${PREFIX}/lib/eclipse
+	@${CP} -r ${WRKSRC}/features ${PREFIX}/lib/eclipse
 
 .include <bsd.port.mk>
