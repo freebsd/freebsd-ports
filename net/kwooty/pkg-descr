@@ -1,0 +1,6 @@
+Kwooty is a .nzb usenet binary downloader for KDE4.
+
+It supports automatic file verifying/repairing
+with par2 files and automatic .rar archive extraction.
+
+WWW: http://kwooty.sourceforge.net/

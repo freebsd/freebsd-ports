@@ -291,6 +291,7 @@
     SUBDIR += kojoney
     SUBDIR += kphone
     SUBDIR += krdesktop
+    SUBDIR += kwooty
     SUBDIR += l2tpd
     SUBDIR += l4ip
     SUBDIR += ladvd
