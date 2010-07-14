@@ -6,25 +6,25 @@
 #
 
 PORTNAME=	qt-faststart
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	multimedia
-DISTFILES=
+MASTER_SITES=	#none
+DISTFILES=	#none
 
-MAINTAINER=	fbsd@opal.com
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Convert QuickTime movie files to streamable format
 
 PLIST_FILES=	bin/qt-faststart
 
 .include <bsd.port.pre.mk>
 
-do-fetch:
-
 do-extract:
 		${MKDIR} ${WRKSRC}
 		${CP} ${FILESDIR}/${PORTNAME}.c ${WRKSRC}
 
 do-build:
-		cd ${WRKSRC}; ${CC} ${PORTNAME}.c -o ${PORTNAME}
+		cd ${WRKSRC} && \
+		${CC} ${CFLAGS} ${PORTNAME}.c -o ${PORTNAME}
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
