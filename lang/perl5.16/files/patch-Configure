@@ -1,0 +1,11 @@
+--- Configure.orig	2010-07-14 15:28:45.000000000 +0000
++++ Configure	2010-07-14 15:29:23.000000000 +0000
+@@ -4780,7 +4780,7 @@
+ libpth=''
+ for xxx in $dlist
+ do
+-    if $test -d $xxx; then
++    if $test -d $xxx || [ $xxx = $prefix/lib ]; then
+ 		case " $libpth " in
+ 		*" $xxx "*) ;;
+ 		*) libpth="$libpth $xxx";;
