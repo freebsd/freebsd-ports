@@ -167,7 +167,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__misc__inhibit__xdg.c \
 		${FILESDIR}/extra-patch-modules__misc__inhibit__xscreensaver.c
 .endif
 
-.if (${OSVERSION} < 702102)
+.if (${OSVERSION} < 703100)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__access__file.c \
 		${FILESDIR}/extra-patch-modules__access__fs.c
 .endif
@@ -667,11 +667,12 @@ pre-install:
 		${SED} -e 's|^|@dirrmtry libdata/|' >> ${PLIST} ; \
 	fi
 .for dir in icons kde4 vlc
+	if [ -d ${FAKEDIR}/share/${dir} ]; then \
 	cd ${FAKEDIR}/share/${dir} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/${dir}/|' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrmtry share/${dir}/|' >> ${PLIST}
-		${ECHO_CMD} "@dirrmtry share/${dir}" >> ${PLIST}
+		${SED} -e 's|^|@dirrmtry share/${dir}/|' >> ${PLIST} \
+		&& ${ECHO_CMD} "@dirrmtry share/${dir}" >> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
 	cd ${FAKEDIR}/share/doc && ${FIND} -s * -type f -o -type l | \
