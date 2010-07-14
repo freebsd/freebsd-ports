@@ -6,6 +6,14 @@ bin/gmapcatcher-download
 %%PYTHON_SITELIBDIR%%/gmapcatcher/maps.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/maps.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/maps.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/images/cross.png
+%%PYTHON_SITELIBDIR%%/gmapcatcher/images/map.svg
+%%PYTHON_SITELIBDIR%%/gmapcatcher/images/maps.ico
+%%PYTHON_SITELIBDIR%%/gmapcatcher/images/marker.png
+%%PYTHON_SITELIBDIR%%/gmapcatcher/images/marker1.png
+%%PYTHON_SITELIBDIR%%/gmapcatcher/images/marker_gps.png
+%%PYTHON_SITELIBDIR%%/gmapcatcher/images/missing.png
+%%PYTHON_SITELIBDIR%%/gmapcatcher/images/setup.bmp
 %%PYTHON_SITELIBDIR%%/gmapcatcher/src/DLWindow.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/src/DLWindow.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/src/DLWindow.pyo
@@ -228,4 +236,5 @@ bin/gmapcatcher-download
 @dirrm %%PYTHON_SITELIBDIR%%/gmapcatcher/src/pyGPSD
 @dirrm %%PYTHON_SITELIBDIR%%/gmapcatcher/src/mapServers
 @dirrm %%PYTHON_SITELIBDIR%%/gmapcatcher/src
+@dirrm %%PYTHON_SITELIBDIR%%/gmapcatcher/images
 @dirrm %%PYTHON_SITELIBDIR%%/gmapcatcher

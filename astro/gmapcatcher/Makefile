@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmapcatcher
-PORTVERSION=	0.7.0.0
+PORTVERSION=	0.7.1.0
 CATEGORIES=	astro geography
 MASTER_SITES=	http://gmapcatcher.googlecode.com/files/
 DISTNAME=	GMapCatcher-${PORTVERSION}
@@ -22,6 +22,12 @@ USE_GNOME=	pygtk2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+DOWNLOAD_PY=	${WRKSRC}/download.py
+
+pre-patch:
+	@${TR} -d '\r' < ${DOWNLOAD_PY} > ${DOWNLOAD_PY}.tmp
+	@${MV} -f ${DOWNLOAD_PY}.tmp ${DOWNLOAD_PY}
+
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name '*.orig' -exec ${RM} {} \;
 
@@ -33,6 +39,7 @@ do-install:
 	@${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/*.py* ${PYTHON_SITELIBDIR}/${PORTNAME}
 	@${CP} -R ${WRKSRC}/src ${PYTHON_SITELIBDIR}/${PORTNAME}
+	@${CP} -R ${WRKSRC}/images ${PYTHON_SITELIBDIR}/${PORTNAME}
 	${CHMOD} +x ${PYTHON_SITELIBDIR}/${PORTNAME}/maps.py
 	${CHMOD} +x ${PYTHON_SITELIBDIR}/${PORTNAME}/download.py
 	${LN} -fs ${PYTHON_SITELIBDIR}/${PORTNAME}/maps.py \
