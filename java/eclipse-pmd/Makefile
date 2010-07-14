@@ -55,19 +55,19 @@ post-extract:
 		&& ${RM} ${PLUGIN_CORE_DIR}.jar
 
 do-install:
-		@${MKDIR} ${PREFIX}/eclipse
-		@${MKDIR} ${PREFIX}/eclipse/plugins
-		@${MKDIR} ${PREFIX}/eclipse/plugins/${PLUGIN_PMD_DIR}
-		@${MKDIR} ${PREFIX}/eclipse/plugins/${PLUGIN_CORE_DIR}
-		@${MKDIR} ${PREFIX}/eclipse/features/${PLUGIN_PMD_DIR}
+		@${MKDIR} ${PREFIX}/lib/eclipse
+		@${MKDIR} ${PREFIX}/lib/eclipse/plugins
+		@${MKDIR} ${PREFIX}/lib/eclipse/plugins/${PLUGIN_PMD_DIR}
+		@${MKDIR} ${PREFIX}/lib/eclipse/plugins/${PLUGIN_CORE_DIR}
+		@${MKDIR} ${PREFIX}/lib/eclipse/features/${PLUGIN_PMD_DIR}
 		cd ${WRKDIR}/features/${PLUGIN_PMD_DIR} && ${FIND} . \
 		  | ${CPIO} ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/eclipse/features/${PLUGIN_PMD_DIR}
+		  ${PREFIX}/lib/eclipse/features/${PLUGIN_PMD_DIR}
 		cd ${WRKDIR}/plugins/${PLUGIN_PMD_DIR} && ${FIND} . \
 		  | ${CPIO} ${SHAREOWN}:${SHAREGRP} \
-		  ${PREFIX}/eclipse/plugins/${PLUGIN_PMD_DIR}
+		  ${PREFIX}/lib/eclipse/plugins/${PLUGIN_PMD_DIR}
 		cd ${WRKDIR}/plugins/${PLUGIN_CORE_DIR} && ${FIND} . \
 		  | ${CPIO} ${SHAREOWN}:${SHAREGRP} \
-		  ${PREFIX}/eclipse/plugins/${PLUGIN_CORE_DIR}
+		  ${PREFIX}/lib/eclipse/plugins/${PLUGIN_CORE_DIR}
 
 .include <bsd.port.mk>
