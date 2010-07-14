@@ -1,52 +1,52 @@
-eclipse/features/%%PLUGIN_PMD_DIR%%/feature.properties
-eclipse/features/%%PLUGIN_PMD_DIR%%/feature.xml
-eclipse/features/%%PLUGIN_PMD_DIR%%/pmd_logo_small.jpg
-eclipse/plugins/%%PLUGIN_CORE_DIR%%/doc.zip
-eclipse/plugins/%%PLUGIN_CORE_DIR%%/lib/jaxen-core-1.0-fcs.jar
-eclipse/plugins/%%PLUGIN_CORE_DIR%%/lib/pmd-1.8.jar
-eclipse/plugins/%%PLUGIN_CORE_DIR%%/lib/saxpath-1.0-fcs.jar
-eclipse/plugins/%%PLUGIN_CORE_DIR%%/plugin.properties
-eclipse/plugins/%%PLUGIN_CORE_DIR%%/plugin.xml
-eclipse/plugins/%%PLUGIN_CORE_DIR%%/plugin_fr.properties
-eclipse/plugins/%%PLUGIN_CORE_DIR%%/toc.xml
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/CHANGELOG.txt
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/LICENSE.txt
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/README.txt
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/RELNOTES.txt
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/TODO.txt
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/about.ini
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/doc.zip
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/error.gif
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/file.gif
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/info.gif
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/pmd-icon-16.gif
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/pmd-icon-32.gif
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/prio_1.gif
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/prio_2.gif
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/prio_3.gif
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/prio_4.gif
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/prio_5.gif
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/prj.gif
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/remvio.gif
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/warn.gif
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/lib/commons-logging.jar
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/lib/log4j-1.2.8.jar
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/log4j.dtd
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/log4j.xml
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/messages.properties
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/nl/fr/messages.properties
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/nl/fr/welcome.xml
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/plugin.properties
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/plugin.xml
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/plugin_fr.properties
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/pmd-eclipse.jar
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/toc.xml
-eclipse/plugins/%%PLUGIN_PMD_DIR%%/welcome.xml
-@dirrm eclipse/plugins/%%PLUGIN_PMD_DIR%%/nl/fr
-@dirrm eclipse/plugins/%%PLUGIN_PMD_DIR%%/nl
-@dirrm eclipse/plugins/%%PLUGIN_PMD_DIR%%/lib
-@dirrm eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons
-@dirrm eclipse/plugins/%%PLUGIN_PMD_DIR%%
-@dirrm eclipse/plugins/%%PLUGIN_CORE_DIR%%/lib
-@dirrm eclipse/plugins/%%PLUGIN_CORE_DIR%%
-@dirrm eclipse/features/%%PLUGIN_PMD_DIR%%
+lib/eclipse/features/%%PLUGIN_PMD_DIR%%/feature.properties
+lib/eclipse/features/%%PLUGIN_PMD_DIR%%/feature.xml
+lib/eclipse/features/%%PLUGIN_PMD_DIR%%/pmd_logo_small.jpg
+lib/eclipse/plugins/%%PLUGIN_CORE_DIR%%/doc.zip
+lib/eclipse/plugins/%%PLUGIN_CORE_DIR%%/lib/jaxen-core-1.0-fcs.jar
+lib/eclipse/plugins/%%PLUGIN_CORE_DIR%%/lib/pmd-1.8.jar
+lib/eclipse/plugins/%%PLUGIN_CORE_DIR%%/lib/saxpath-1.0-fcs.jar
+lib/eclipse/plugins/%%PLUGIN_CORE_DIR%%/plugin.properties
+lib/eclipse/plugins/%%PLUGIN_CORE_DIR%%/plugin.xml
+lib/eclipse/plugins/%%PLUGIN_CORE_DIR%%/plugin_fr.properties
+lib/eclipse/plugins/%%PLUGIN_CORE_DIR%%/toc.xml
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/CHANGELOG.txt
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/LICENSE.txt
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/README.txt
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/RELNOTES.txt
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/TODO.txt
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/about.ini
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/doc.zip
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/error.gif
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/file.gif
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/info.gif
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/pmd-icon-16.gif
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/pmd-icon-32.gif
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/prio_1.gif
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/prio_2.gif
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/prio_3.gif
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/prio_4.gif
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/prio_5.gif
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/prj.gif
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/remvio.gif
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons/warn.gif
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/lib/commons-logging.jar
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/lib/log4j-1.2.8.jar
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/log4j.dtd
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/log4j.xml
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/messages.properties
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/nl/fr/messages.properties
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/nl/fr/welcome.xml
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/plugin.properties
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/plugin.xml
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/plugin_fr.properties
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/pmd-eclipse.jar
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/toc.xml
+lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/welcome.xml
+@dirrm lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/nl/fr
+@dirrm lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/nl
+@dirrm lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/lib
+@dirrm lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%/icons
+@dirrm lib/eclipse/plugins/%%PLUGIN_PMD_DIR%%
+@dirrm lib/eclipse/plugins/%%PLUGIN_CORE_DIR%%/lib
+@dirrm lib/eclipse/plugins/%%PLUGIN_CORE_DIR%%
+@dirrm lib/eclipse/features/%%PLUGIN_PMD_DIR%%
