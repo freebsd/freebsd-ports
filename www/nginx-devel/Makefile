@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.8.44
+PORTVERSION=	0.8.45
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -498,7 +498,7 @@ do-install:
 	${MKDIR} ${ETCDIR} ${NGINX_TMPDIR}
 	${CHOWN} ${WWWOWN}:${WWWGRP} ${NGINX_TMPDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/nginx ${PREFIX}/sbin
-.for i in fastcgi_params koi-utf koi-win uwsgi_params win-utf
+.for i in fastcgi_params koi-utf koi-win scgi_params uwsgi_params win-utf
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}
 .endfor
 .for i in mime.types nginx.conf
