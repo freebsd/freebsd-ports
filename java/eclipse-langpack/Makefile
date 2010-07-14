@@ -30,7 +30,7 @@ PLIST=		${WRKDIR}/pkg-plist
 do-build:
 	@${RM} -f ${PLIST}
 	@${TOUCH} ${PLIST}
-	@(cd ${WRKSRC}; ${FIND} eclipse -type f) | ${SORT} > ${PLIST}
+	@(cd ${WRKSRC}; ${FIND} eclipse -type f) | ${SORT} | ${SED} -e 's,^eclipse,lib/eclipse,' > ${PLIST}
 	@${CAT} ${.CURDIR}/pkg-plist >> ${PLIST}
 
 do-install:
