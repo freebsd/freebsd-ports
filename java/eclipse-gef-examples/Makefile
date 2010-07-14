@@ -25,8 +25,8 @@ NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
 do-install:
-		@${MKDIR} ${PREFIX}/eclipse
-		@${CP} -r ${WRKSRC}/eclipse/plugins ${PREFIX}/eclipse
-		@${CP} -r ${WRKSRC}/eclipse/features ${PREFIX}/eclipse
+		@${MKDIR} ${PREFIX}/lib/eclipse
+		@${CP} -r ${WRKSRC}/eclipse/plugins ${PREFIX}/lib/eclipse
+		@${CP} -r ${WRKSRC}/eclipse/features ${PREFIX}/lib/eclipse
 
 .include <bsd.port.mk>

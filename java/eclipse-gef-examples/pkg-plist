@@ -1,32 +1,32 @@
-eclipse/plugins/org.eclipse.gef.examples.flow_3.0.0/flow.jar
-eclipse/plugins/org.eclipse.gef.examples.flow_3.0.0/view.gif
-eclipse/plugins/org.eclipse.gef.examples.flow_3.0.0/plugin.xml
-eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/plugin.xml
-eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/src/org.eclipse.gef.examples.flow_3.0.0/flowsrc.zip
-eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/src/org.eclipse.gef.examples.logic_3.0.0/logicsrc.zip
-eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/about.html
-eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/plugin.properties
-eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/about.ini
-eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/about.mappings
-eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/eclipse32.gif
-eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/about.properties
-eclipse/plugins/org.eclipse.gef.examples.logic_3.0.0/logic.jar
-eclipse/plugins/org.eclipse.gef.examples.logic_3.0.0/plugin.properties
-eclipse/plugins/org.eclipse.gef.examples.logic_3.0.0/logic.gif
-eclipse/plugins/org.eclipse.gef.examples.logic_3.0.0/about.html
-eclipse/plugins/org.eclipse.gef.examples.logic_3.0.0/plugin.xml
-eclipse/features/org.eclipse.gef.examples_3.0.0/license.html
-eclipse/features/org.eclipse.gef.examples_3.0.0/feature.xml
-eclipse/features/org.eclipse.gef.examples_3.0.0/eclipse_update_120.jpg
-eclipse/features/org.eclipse.gef.examples_3.0.0/cpl-v10.html
-eclipse/features/org.eclipse.gef.examples_3.0.0/feature.properties
-@dirrm eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/src/org.eclipse.gef.examples.logic_3.0.0
-@dirrm eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/src/org.eclipse.gef.examples.flow_3.0.0
-@dirrm eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/src
-@dirrm eclipse/plugins/org.eclipse.gef.examples.source_3.0.0
-@dirrm eclipse/plugins/org.eclipse.gef.examples.logic_3.0.0
-@dirrm eclipse/plugins/org.eclipse.gef.examples.flow_3.0.0
-@dirrm eclipse/features/org.eclipse.gef.examples_3.0.0
-@dirrmtry eclipse/plugins
-@dirrmtry eclipse/features
-@dirrmtry eclipse
+lib/eclipse/plugins/org.eclipse.gef.examples.flow_3.0.0/flow.jar
+lib/eclipse/plugins/org.eclipse.gef.examples.flow_3.0.0/view.gif
+lib/eclipse/plugins/org.eclipse.gef.examples.flow_3.0.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/plugin.xml
+lib/eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/src/org.eclipse.gef.examples.flow_3.0.0/flowsrc.zip
+lib/eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/src/org.eclipse.gef.examples.logic_3.0.0/logicsrc.zip
+lib/eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/about.ini
+lib/eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/about.mappings
+lib/eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/eclipse32.gif
+lib/eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/about.properties
+lib/eclipse/plugins/org.eclipse.gef.examples.logic_3.0.0/logic.jar
+lib/eclipse/plugins/org.eclipse.gef.examples.logic_3.0.0/plugin.properties
+lib/eclipse/plugins/org.eclipse.gef.examples.logic_3.0.0/logic.gif
+lib/eclipse/plugins/org.eclipse.gef.examples.logic_3.0.0/about.html
+lib/eclipse/plugins/org.eclipse.gef.examples.logic_3.0.0/plugin.xml
+lib/eclipse/features/org.eclipse.gef.examples_3.0.0/license.html
+lib/eclipse/features/org.eclipse.gef.examples_3.0.0/feature.xml
+lib/eclipse/features/org.eclipse.gef.examples_3.0.0/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.gef.examples_3.0.0/cpl-v10.html
+lib/eclipse/features/org.eclipse.gef.examples_3.0.0/feature.properties
+@dirrm lib/eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/src/org.eclipse.gef.examples.logic_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/src/org.eclipse.gef.examples.flow_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.gef.examples.source_3.0.0/src
+@dirrm lib/eclipse/plugins/org.eclipse.gef.examples.source_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.gef.examples.logic_3.0.0
+@dirrm lib/eclipse/plugins/org.eclipse.gef.examples.flow_3.0.0
+@dirrm lib/eclipse/features/org.eclipse.gef.examples_3.0.0
+@dirrmtry lib/eclipse/plugins
+@dirrmtry lib/eclipse/features
+@dirrmtry lib/eclipse
