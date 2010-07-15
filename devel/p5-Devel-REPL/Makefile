@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-REPL
-PORTVERSION=	1.003010
+PORTVERSION=	1.003011
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ COMMENT=	A modern perl interactive shell
 BUILD_DEPENDS=	p5-Moose>=0.74:${PORTSDIR}/devel/p5-Moose \
 	p5-MooseX-Object-Pluggable>=0.0009:${PORTSDIR}/devel/p5-MooseX-Object-Pluggable \
 	p5-MooseX-Getopt>=0.18:${PORTSDIR}/devel/p5-MooseX-Getopt \
-	p5-MooseX-AttributeHelpers>=0.21:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
+	p5-MooseX-AttributeHelpers>=0.16:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
 	p5-namespace-clean>0:${PORTSDIR}/devel/p5-namespace-clean \
 	p5-File-HomeDir>0:${PORTSDIR}/devel/p5-File-HomeDir \
 	p5-Task-Weaken>0:${PORTSDIR}/devel/p5-Task-Weaken \
