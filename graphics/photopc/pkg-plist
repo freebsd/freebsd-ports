@@ -1,4 +1,0 @@
-bin/photopc
-bin/epinfo
-include/eph_io.h
-lib/libeph_io.a
