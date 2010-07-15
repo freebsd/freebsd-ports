@@ -4,19 +4,18 @@
 #
 # $FreeBSD$
 #
-PORTNAME=	libuninameslist
-PORTVERSION=	20080409
-CATEGORIES=	textproc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20sources/${PORTVERSION}/
 
-USE_BZIP2=	yes
+PORTNAME=	libuninameslist
+PORTVERSION=	20091231
+CATEGORIES=	textproc
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20sources/Unicode_5.2-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library of Unicode annotation data
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GNOME=	gnometarget
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
 ALL_TARGET=	both
