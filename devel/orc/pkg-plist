@@ -1,4 +1,5 @@
 bin/orcc
+bin/orc-bugreport
 include/orc-0.4/orc-test/orcarray.h
 include/orc-0.4/orc-test/orcprofile.h
 include/orc-0.4/orc-test/orcrandom.h
@@ -29,7 +30,7 @@ lib/liborc-test-0.4.so.0
 %%PORTEXAMPLES%%lib/orc/example1
 %%PORTEXAMPLES%%lib/orc/mt19937ar
 %%PORTEXAMPLES%%lib/orc/volscale
-lib/pkgconfig/orc-0.4.pc
+libdata/pkgconfig/orc-0.4.pc
 %%PORTDOCS%%share/gtk-doc/html/orc/ch01.html
 %%PORTDOCS%%share/gtk-doc/html/orc/ch02.html
 %%PORTDOCS%%share/gtk-doc/html/orc/ch03.html
