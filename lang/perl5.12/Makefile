@@ -7,7 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISON=	2
+PORTREVISION=	2
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -183,7 +183,7 @@ post-patch:
 		-e 's!%%BSDPAN_VERSION%%!${BSDPAN_VERSION}!g;' \
 		${BSDPAN_WRKSRC}/ExtUtils/*.pm
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh 
+		${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
 .if defined(WITH_THREADS)
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g;' \
 		-e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g;' \
