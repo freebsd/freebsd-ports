@@ -1,25 +1,26 @@
 bin/sagasu
+share/applications/sagasu.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-share/applications/sagasu.desktop
 share/gnome/help/sagasu/C/sagasu.html
 share/gnome/help/sagasu/fr/sagasu.html
-share/pixmaps/close.xpm
-share/pixmaps/sagasu.png
-share/sagasu/COPYING
-share/sagasu/sagasu-helper.pl
-share/sounds/sagasu/sagasu.wav
+share/locale/cs/LC_MESSAGES/sagasu.mo
 share/locale/de/LC_MESSAGES/sagasu.mo
 share/locale/fr/LC_MESSAGES/sagasu.mo
 share/locale/ja/LC_MESSAGES/sagasu.mo
 share/locale/ru/LC_MESSAGES/sagasu.mo
 share/locale/sr/LC_MESSAGES/sagasu.mo
+share/pixmaps/close.xpm
+share/pixmaps/sagasu.png
+%%DATADIR%%/COPYING
+%%DATADIR%%/sagasu-helper.pl
+share/sounds/sagasu/sagasu.wav
 @dirrm share/sounds/sagasu
-@dirrm share/sagasu
+@dirrm %%DATADIR%%
 @dirrm share/gnome/help/sagasu/fr
 @dirrm share/gnome/help/sagasu/C
 @dirrm share/gnome/help/sagasu
