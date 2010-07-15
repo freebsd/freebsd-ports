@@ -18,8 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python/Tkinter based source browser
 
 BUILD_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
-		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw \
-		bash:${PORTSDIR}/shells/bash
+		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -32,7 +31,7 @@ CONFIGURE_SCRIPT=	configure.sh
 PLIST_FILES=	bin/pypersrc.py bin/pypersrc2.py bin/pypersrc
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|g' \
+	${REINPLACE_CMD} -e 's|/bin/bash|${SH}|g' \
 	    ${WRKSRC}/configure.sh
 
 .include <bsd.port.mk>
