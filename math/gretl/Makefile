@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.8.7
-PORTREVISION=	3
+PORTVERSION=	1.9.1
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
@@ -21,7 +20,6 @@ LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3 \
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_BZIP2=	yes
-WANT_GNOME=	yes
 USE_GNOME=	gnomehier gtk20 gtksourceview2 libxml2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

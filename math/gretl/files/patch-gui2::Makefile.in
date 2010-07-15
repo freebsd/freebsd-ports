@@ -1,15 +1,15 @@
---- gui2/Makefile.in.orig	2009-12-31 01:25:11.000000000 +0900
-+++ gui2/Makefile.in	2010-02-02 03:07:35.000000000 +0900
-@@ -117,7 +117,7 @@
+--- gui2/Makefile.in.orig	2010-06-16 22:03:53.000000000 +0900
++++ gui2/Makefile.in	2010-07-09 04:32:55.000000000 +0900
+@@ -118,7 +118,7 @@
  #### End of system configuration section. ####
  
  SHELL = /bin/sh
 -LIBTOOL = ../libtool
 +LIBTOOL = @LIBTOOL@
- PROG  = gretl_x11
+ PROG  = gretl_x11$(EXEEXT)
  
  vpath %.c $(topsrc)/gui2
-@@ -192,13 +192,13 @@
+@@ -193,13 +193,13 @@
  	$(AMP)$(CC) -c -I.. -I$(libsrc) $(XML_CFLAGS) $<
  
  mklang: mklang.o 
@@ -25,7 +25,7 @@
  
  .deps:
  	$(AMP)mkdir $@
-@@ -213,7 +213,7 @@
+@@ -214,7 +214,7 @@
  	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) -s $(PROG) $(DESTDIR)$(bindir)/$(PROG)
  
  install-data: installdirs
