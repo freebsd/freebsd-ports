@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	crossfire
-PORTVERSION=	1.11.0
-PORTREVISION=	2
+PORTVERSION=	1.50.0
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-server/${PORTVERSION} \
-		ftp://ftp.real-time.com/pub/games/crossfire/
-
+		SF/${PORTNAME}/${PORTNAME}-maps/${PORTVERSION}:maps
 PKGNAMESUFFIX=	-server
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${DISTNAME}.maps${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
+		${DISTNAME}.maps${EXTRACT_SUFX}:maps
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server for multiplayer graphical arcade and adventure game
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
+		png.6:${PORTSDIR}/graphics/png
 
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
-USE_GNOME=	gnometarget
+USE_SQLITE=	3
 USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
@@ -31,7 +30,7 @@ USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-check=no
 
-MAN6=		crossedit.6 crossfire.6 crossfire-config.6 crossloop.6 \
+MAN6=		crossfire-config.6 crossfire-server.6 crossloop.6 \
 		crossloop.web.6
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
@@ -51,8 +50,8 @@ post-patch:
 post-install:
 	@${MKDIR} ${DATADIR}/maps
 	cd ${WRKDIR}/maps && ${COPYTREE_SHARE} . ${DATADIR}/maps
-	@${CHOWN} ${BINOWN}:games ${PREFIX}/bin/crossfire
-	@${CHMOD} 2755 ${PREFIX}/bin/crossfire
+	@${CHOWN} ${BINOWN}:games ${PREFIX}/bin/crossfire-server
+	@${CHMOD} 2755 ${PREFIX}/bin/crossfire-server
 	@${CHGRP} -R games ${PREFIX}/var/crossfire
 
 .include <bsd.port.mk>
