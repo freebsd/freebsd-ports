@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mtr
-PORTVERSION=	0.79
+PORTVERSION=	0.80
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://mirrors.evolva.ro/util/mtr/ \
