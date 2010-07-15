@@ -1,6 +1,5 @@
-bin/crossedit
-bin/crossfire
 bin/crossfire-config
+bin/crossfire-server
 bin/crossloop
 bin/crossloop.pl
 bin/crossloop.web
@@ -17,12 +16,27 @@ etc/crossfire/settings
 lib/crossfire/add_throw.perl
 lib/crossfire/metaserver.pl
 lib/crossfire/mktable.script
+lib/crossfire/plugins/cf_darcap.a
+lib/crossfire/plugins/cf_darcap.la
+lib/crossfire/plugins/cf_darcap.so
 lib/crossfire/plugins/cfanim.a
 lib/crossfire/plugins/cfanim.la
 lib/crossfire/plugins/cfanim.so
+lib/crossfire/plugins/cflogger.a
+lib/crossfire/plugins/cflogger.la
+lib/crossfire/plugins/cflogger.so
+lib/crossfire/plugins/cfnewspaper.a
+lib/crossfire/plugins/cfnewspaper.la
+lib/crossfire/plugins/cfnewspaper.so
 lib/crossfire/plugins/cfpython.a
 lib/crossfire/plugins/cfpython.la
 lib/crossfire/plugins/cfpython.so
+lib/crossfire/plugins/cfrhg.a
+lib/crossfire/plugins/cfrhg.la
+lib/crossfire/plugins/cfrhg.so
+lib/crossfire/plugins/citylife.a
+lib/crossfire/plugins/citylife.la
+lib/crossfire/plugins/citylife.so
 lib/crossfire/random_map
 %%DATADIR%%/adm/archsearch.pl
 %%DATADIR%%/adm/collect_images.pl
@@ -40,56 +54,78 @@ lib/crossfire/random_map
 %%DATADIR%%/def_help
 %%DATADIR%%/faces
 %%DATADIR%%/formulae
-%%DATADIR%%/help/apply
-%%DATADIR%%/help/applymode
-%%DATADIR%%/help/bind
-%%DATADIR%%/help/bowmode
-%%DATADIR%%/help/brace
-%%DATADIR%%/help/cast
-%%DATADIR%%/help/drop
-%%DATADIR%%/help/dropall
-%%DATADIR%%/help/empty
-%%DATADIR%%/help/explore
-%%DATADIR%%/help/fire
-%%DATADIR%%/help/fire_stop
-%%DATADIR%%/help/golem
-%%DATADIR%%/help/invoke
-%%DATADIR%%/help/keys
-%%DATADIR%%/help/killpets
-%%DATADIR%%/help/listen
-%%DATADIR%%/help/maps
-%%DATADIR%%/help/mark
-%%DATADIR%%/help/melee
-%%DATADIR%%/help/mode
-%%DATADIR%%/help/motd
-%%DATADIR%%/help/mouse
-%%DATADIR%%/help/move
-%%DATADIR%%/help/news
-%%DATADIR%%/help/output
-%%DATADIR%%/help/output-count
-%%DATADIR%%/help/output-sync
-%%DATADIR%%/help/party
-%%DATADIR%%/help/party_rejoin
-%%DATADIR%%/help/peaceful
-%%DATADIR%%/help/petmode
-%%DATADIR%%/help/pickup
-%%DATADIR%%/help/quests
-%%DATADIR%%/help/quit
-%%DATADIR%%/help/range
-%%DATADIR%%/help/rename
-%%DATADIR%%/help/rules
-%%DATADIR%%/help/save
-%%DATADIR%%/help/shout
-%%DATADIR%%/help/showpets
-%%DATADIR%%/help/skills
-%%DATADIR%%/help/sort_inventory
-%%DATADIR%%/help/spells
-%%DATADIR%%/help/statistics
-%%DATADIR%%/help/take
-%%DATADIR%%/help/traps
-%%DATADIR%%/help/unbind
-%%DATADIR%%/help/usekeys
-%%DATADIR%%/help/whereabouts
+%%DATADIR%%/help/apply.en
+%%DATADIR%%/help/apply.fr
+%%DATADIR%%/help/applymode.en
+%%DATADIR%%/help/applymode.fr
+%%DATADIR%%/help/bind.en
+%%DATADIR%%/help/bind.fr
+%%DATADIR%%/help/bowmode.en
+%%DATADIR%%/help/bowmode.fr
+%%DATADIR%%/help/brace.en
+%%DATADIR%%/help/brace.fr
+%%DATADIR%%/help/cast.en
+%%DATADIR%%/help/cast.fr
+%%DATADIR%%/help/chat.en
+%%DATADIR%%/help/drop.en
+%%DATADIR%%/help/drop.fr
+%%DATADIR%%/help/dropall.en
+%%DATADIR%%/help/dropall.fr
+%%DATADIR%%/help/empty.en
+%%DATADIR%%/help/empty.fr
+%%DATADIR%%/help/fire.en
+%%DATADIR%%/help/fire_stop.en
+%%DATADIR%%/help/golem.en
+%%DATADIR%%/help/invoke.en
+%%DATADIR%%/help/keys.en
+%%DATADIR%%/help/killpets.en
+%%DATADIR%%/help/killpets.fr
+%%DATADIR%%/help/knowledge.en
+%%DATADIR%%/help/knowledge.fr
+%%DATADIR%%/help/listen.en
+%%DATADIR%%/help/listen.fr
+%%DATADIR%%/help/maps.en
+%%DATADIR%%/help/maps.fr
+%%DATADIR%%/help/mark.en
+%%DATADIR%%/help/mark.fr
+%%DATADIR%%/help/melee.en
+%%DATADIR%%/help/melee.fr
+%%DATADIR%%/help/mode.en
+%%DATADIR%%/help/mode.fr
+%%DATADIR%%/help/motd.en
+%%DATADIR%%/help/mouse.en
+%%DATADIR%%/help/move.en
+%%DATADIR%%/help/news.en
+%%DATADIR%%/help/party.en
+%%DATADIR%%/help/party_rejoin.en
+%%DATADIR%%/help/peaceful.en
+%%DATADIR%%/help/petmode.en
+%%DATADIR%%/help/pickup.en
+%%DATADIR%%/help/quest.en
+%%DATADIR%%/help/quest.fr
+%%DATADIR%%/help/quit.en
+%%DATADIR%%/help/range.en
+%%DATADIR%%/help/rename.en
+%%DATADIR%%/help/rules.en
+%%DATADIR%%/help/save.en
+%%DATADIR%%/help/shout.en
+%%DATADIR%%/help/showpets.en
+%%DATADIR%%/help/skills.en
+%%DATADIR%%/help/sort_inventory.en
+%%DATADIR%%/help/sound.en
+%%DATADIR%%/help/spells.en
+%%DATADIR%%/help/statistics.en
+%%DATADIR%%/help/take.en
+%%DATADIR%%/help/title.en
+%%DATADIR%%/help/traps.en
+%%DATADIR%%/help/unarmed_skill.en
+%%DATADIR%%/help/unbind.en
+%%DATADIR%%/help/use.en
+%%DATADIR%%/help/usekeys.en
+%%DATADIR%%/help/whereabouts.en
+%%DATADIR%%/help/wimpy.en
+%%DATADIR%%/i18n/messages.en
+%%DATADIR%%/i18n/messages.fr
 %%DATADIR%%/image_info
 %%DATADIR%%/maps/.emergency
 %%DATADIR%%/maps/COPYING
@@ -97,19 +133,18 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/HallOfDMs
 %%DATADIR%%/maps/HallOfSelection
 %%DATADIR%%/maps/Info/README
-%%DATADIR%%/maps/Info/ann_map.gif
 %%DATADIR%%/maps/Info/combine.pl
-%%DATADIR%%/maps/Info/el_map.gif
 %%DATADIR%%/maps/Info/land.c
 %%DATADIR%%/maps/Info/map_sed.pl
 %%DATADIR%%/maps/Info/mapguide
 %%DATADIR%%/maps/Info/mlab-tilemapinfo.txt
 %%DATADIR%%/maps/Info/rewrite_exits.pl
 %%DATADIR%%/maps/Info/rewrite_styles.pl
-%%DATADIR%%/maps/Info/terrain_map.gif
 %%DATADIR%%/maps/Info/update_apart.pl
 %%DATADIR%%/maps/Info/update_exits.pl
-%%DATADIR%%/maps/Info/world.gif
+%%DATADIR%%/maps/Info/worldmap.png
+%%DATADIR%%/maps/README
+%%DATADIR%%/maps/animations/maps/navar_city/university-dorlf.animation
 %%DATADIR%%/maps/azumauindo/minatomachi/buildings/guildkeybuilding1
 %%DATADIR%%/maps/azumauindo/minatomachi/buildings/guildkeybuildingB1
 %%DATADIR%%/maps/azumauindo/minatomachi/buildings/guildkeybuildingB2a
@@ -211,17 +246,12 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/brest/black_shield/storage_room
 %%DATADIR%%/maps/brest/black_shield/upper
 %%DATADIR%%/maps/brest/brest.IPO
-%%DATADIR%%/maps/brest/brest.armour
-%%DATADIR%%/maps/brest/brest.cvt
-%%DATADIR%%/maps/brest/brest.food
 %%DATADIR%%/maps/brest/brest.inn
-%%DATADIR%%/maps/brest/brest.magic
 %%DATADIR%%/maps/brest/brest.scrolls
 %%DATADIR%%/maps/brest/brest.scrolls.right
 %%DATADIR%%/maps/brest/brest.scrolls.upper.1
 %%DATADIR%%/maps/brest/brest.scrolls.upper.2
 %%DATADIR%%/maps/brest/brest.trademarket
-%%DATADIR%%/maps/brest/brest.weapon
 %%DATADIR%%/maps/brest/brittany/dol-guldur.1
 %%DATADIR%%/maps/brest/brittany/dol-guldur.2
 %%DATADIR%%/maps/brest/brittany/dol-guldur.3
@@ -369,12 +399,18 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/brest/pshops/pshopsinc2
 %%DATADIR%%/maps/brest/pshops/ugriver1
 %%DATADIR%%/maps/brest/shops/a_small_shop
+%%DATADIR%%/maps/brest/shops/brest.armour
+%%DATADIR%%/maps/brest/shops/brest.cvt
+%%DATADIR%%/maps/brest/shops/brest.food
+%%DATADIR%%/maps/brest/shops/brest.magic
+%%DATADIR%%/maps/brest/shops/brest.weapon
 %%DATADIR%%/maps/brest/shops/buildshop
 %%DATADIR%%/maps/brest/shops/buildshop2
 %%DATADIR%%/maps/brest/sow/sow
 %%DATADIR%%/maps/brest/sow/sow.1
 %%DATADIR%%/maps/brest/sport.jess
 %%DATADIR%%/maps/brest/taverns/brest.seaside.tavern
+%%DATADIR%%/maps/brest/temples/valkyrie
 %%DATADIR%%/maps/brest/underground
 %%DATADIR%%/maps/brest/underground2
 %%DATADIR%%/maps/brest/zorn/castle.basement0
@@ -392,23 +428,36 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/darcap/cave/level2
 %%DATADIR%%/maps/darcap/cave/level3
 %%DATADIR%%/maps/darcap/cave/level4
+%%DATADIR%%/maps/darcap/darcap/airhouse
 %%DATADIR%%/maps/darcap/darcap/apartment
 %%DATADIR%%/maps/darcap/darcap/church
 %%DATADIR%%/maps/darcap/darcap/circus/bigtop
 %%DATADIR%%/maps/darcap/darcap/circus/chess
-%%DATADIR%%/maps/darcap/darcap/circus/circus
 %%DATADIR%%/maps/darcap/darcap/circus/double
+%%DATADIR%%/maps/darcap/darcap/circus/fz_boatracing
+%%DATADIR%%/maps/darcap/darcap/circus/fz_boulderball
+%%DATADIR%%/maps/darcap/darcap/circus/fz_d1
+%%DATADIR%%/maps/darcap/darcap/circus/fz_d1volcano
+%%DATADIR%%/maps/darcap/darcap/circus/fz_dlobby
+%%DATADIR%%/maps/darcap/darcap/circus/fz_lobby
+%%DATADIR%%/maps/darcap/darcap/circus/fz_lobby_ud
+%%DATADIR%%/maps/darcap/darcap/circus/fz_o1
+%%DATADIR%%/maps/darcap/darcap/circus/fz_olobby
+%%DATADIR%%/maps/darcap/darcap/circus/fz_sr1
+%%DATADIR%%/maps/darcap/darcap/circus/fz_srlobby
+%%DATADIR%%/maps/darcap/darcap/circus/fz_sumowrestling
 %%DATADIR%%/maps/darcap/darcap/circus/ghost
 %%DATADIR%%/maps/darcap/darcap/circus/illusions
-%%DATADIR%%/maps/darcap/darcap/circus/movers
 %%DATADIR%%/maps/darcap/darcap/circus/roller1
 %%DATADIR%%/maps/darcap/darcap/circus/roller2
 %%DATADIR%%/maps/darcap/darcap/circus/roller3
 %%DATADIR%%/maps/darcap/darcap/circus/shooting
 %%DATADIR%%/maps/darcap/darcap/circus/strength
-%%DATADIR%%/maps/darcap/darcap/circus/walls
 %%DATADIR%%/maps/darcap/darcap/circus/wheel
 %%DATADIR%%/maps/darcap/darcap/circus/wurfbude
+%%DATADIR%%/maps/darcap/darcap/earthhouse
+%%DATADIR%%/maps/darcap/darcap/firehouse
+%%DATADIR%%/maps/darcap/darcap/fishing
 %%DATADIR%%/maps/darcap/darcap/gshop
 %%DATADIR%%/maps/darcap/darcap/guilds/poisoned_dagger/bigchest
 %%DATADIR%%/maps/darcap/darcap/guilds/poisoned_dagger/ground
@@ -418,40 +467,48 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/darcap/darcap/guilds/smoking_cauldron/ground
 %%DATADIR%%/maps/darcap/darcap/guilds/smoking_cauldron/storage_room
 %%DATADIR%%/maps/darcap/darcap/guilds/smoking_cauldron/upper
-%%DATADIR%%/maps/darcap/darcap/houses
+%%DATADIR%%/maps/darcap/darcap/house_tunnels
 %%DATADIR%%/maps/darcap/darcap/inn
+%%DATADIR%%/maps/darcap/darcap/library_ground
+%%DATADIR%%/maps/darcap/darcap/library_upper
 %%DATADIR%%/maps/darcap/darcap/maze
+%%DATADIR%%/maps/darcap/darcap/park
 %%DATADIR%%/maps/darcap/darcap/pirates.1
 %%DATADIR%%/maps/darcap/darcap/potionshop
 %%DATADIR%%/maps/darcap/darcap/quest
+%%DATADIR%%/maps/darcap/darcap/random_house
 %%DATADIR%%/maps/darcap/darcap/shop_a
 %%DATADIR%%/maps/darcap/darcap/shop_g
 %%DATADIR%%/maps/darcap/darcap/shop_m
 %%DATADIR%%/maps/darcap/darcap/shop_w
 %%DATADIR%%/maps/darcap/darcap/tavern
 %%DATADIR%%/maps/darcap/darcap/temple
-%%DATADIR%%/maps/darcap/forgotten_town/city
-%%DATADIR%%/maps/darcap/forgotten_town/enter
-%%DATADIR%%/maps/darcap/forgotten_town/ft_dragonslib
-%%DATADIR%%/maps/darcap/forgotten_town/ft_funhouse
-%%DATADIR%%/maps/darcap/forgotten_town/inn
-%%DATADIR%%/maps/darcap/forgotten_town/palace
-%%DATADIR%%/maps/darcap/forgotten_town/quests/ft_quest_1
-%%DATADIR%%/maps/darcap/forgotten_town/quests/ft_quest_2
-%%DATADIR%%/maps/darcap/forgotten_town/quests/ft_quest_40
-%%DATADIR%%/maps/darcap/forgotten_town/shops/armour
-%%DATADIR%%/maps/darcap/forgotten_town/shops/general
-%%DATADIR%%/maps/darcap/forgotten_town/shops/general2
-%%DATADIR%%/maps/darcap/forgotten_town/shops/magic
-%%DATADIR%%/maps/darcap/forgotten_town/shops/potion
-%%DATADIR%%/maps/darcap/forgotten_town/shops/weapon
+%%DATADIR%%/maps/darcap/darcap/thilgar
+%%DATADIR%%/maps/darcap/darcap/thilgar_top
+%%DATADIR%%/maps/darcap/darcap/waterhouse
 %%DATADIR%%/maps/darcap/house1
 %%DATADIR%%/maps/darcap/lynn/castle1.0
 %%DATADIR%%/maps/darcap/lynn/castle1.1
 %%DATADIR%%/maps/darcap/lynn/castle1.2
 %%DATADIR%%/maps/darcap/lynn/castle1.3
+%%DATADIR%%/maps/darcap/pygmy_forest/pygmy_boss
+%%DATADIR%%/maps/darcap/pygmy_forest/pygmy_forest
+%%DATADIR%%/maps/darcap/pygmy_forest/pygmy_forest_a
+%%DATADIR%%/maps/darcap/pygmy_forest/pygmy_forest_b
+%%DATADIR%%/maps/darcap/pygmy_forest/pygmy_forest_c
+%%DATADIR%%/maps/darcap/pygmy_forest/pygmy_forest_d
+%%DATADIR%%/maps/darcap/pygmy_forest/pygmy_garden
+%%DATADIR%%/maps/darcap/pygmy_forest/pygmy_holes
+%%DATADIR%%/maps/darcap/pygmy_forest/pygmy_treehouse_a
+%%DATADIR%%/maps/darcap/pygmy_forest/pygmy_treehouse_b
+%%DATADIR%%/maps/darcap/pygmy_forest/pygmy_treehouse_c
+%%DATADIR%%/maps/darcap/pygmy_forest/pygmy_treehouse_d
 %%DATADIR%%/maps/darcap/quest/fire
 %%DATADIR%%/maps/darcap/quest/water
+%%DATADIR%%/maps/darcap/raffle/raffle1
+%%DATADIR%%/maps/darcap/raffle/raffle1_u1
+%%DATADIR%%/maps/darcap/raffle/raffle1_u2
+%%DATADIR%%/maps/darcap/raffle/raffle1_u3
 %%DATADIR%%/maps/darcap/temple_justice/temple_justice.1
 %%DATADIR%%/maps/darcap/temple_justice/temple_justice.10
 %%DATADIR%%/maps/darcap/temple_justice/temple_justice.11
@@ -466,17 +523,21 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/darcap/temple_justice/temple_justice.7
 %%DATADIR%%/maps/darcap/temple_justice/temple_justice.8
 %%DATADIR%%/maps/darcap/temple_justice/temple_justice.9
+%%DATADIR%%/maps/darcap/town2/netower
+%%DATADIR%%/maps/darcap/town2/nwtower
+%%DATADIR%%/maps/darcap/town2/setower
 %%DATADIR%%/maps/darcap/town2/shop_b
 %%DATADIR%%/maps/darcap/town2/shop_f
+%%DATADIR%%/maps/darcap/town2/swtower
 %%DATADIR%%/maps/darcap/town2/tower1
 %%DATADIR%%/maps/darcap/town2/tower2
 %%DATADIR%%/maps/darcap/town2/tower3
 %%DATADIR%%/maps/darcap/town2/tower4
-%%DATADIR%%/maps/darcap/town2/towers
 %%DATADIR%%/maps/darcap/undead/undead.1
 %%DATADIR%%/maps/darcap/undead/undead.2
 %%DATADIR%%/maps/darcap/undead/undead.3
 %%DATADIR%%/maps/darcap/village1
+%%DATADIR%%/maps/default.quests
 %%DATADIR%%/maps/dragonisland/advguild
 %%DATADIR%%/maps/dragonisland/advguild2
 %%DATADIR%%/maps/dragonisland/advguild3
@@ -535,7 +596,6 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/dungeons/train/ogre
 %%DATADIR%%/maps/dungeons/train/ogre_skel_train
 %%DATADIR%%/maps/dungeons/train/skeleton
-%%DATADIR%%/maps/dungeons/train/train-old
 %%DATADIR%%/maps/dungeons/train/undead_train
 %%DATADIR%%/maps/dungeons/train/zombie
 %%DATADIR%%/maps/dungeons/trollbridge
@@ -558,29 +618,6 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/editor/pickmaps/treasure
 %%DATADIR%%/maps/editor/pickmaps/wall special
 %%DATADIR%%/maps/editor/pickmaps/weapon
-%%DATADIR%%/maps/editor/picks/TownStaff
-%%DATADIR%%/maps/editor/picks/alchemy
-%%DATADIR%%/maps/editor/picks/alltown
-%%DATADIR%%/maps/editor/picks/artifacts
-%%DATADIR%%/maps/editor/picks/background
-%%DATADIR%%/maps/editor/picks/classes
-%%DATADIR%%/maps/editor/picks/equipment
-%%DATADIR%%/maps/editor/picks/exits
-%%DATADIR%%/maps/editor/picks/food-bparts
-%%DATADIR%%/maps/editor/picks/indoors
-%%DATADIR%%/maps/editor/picks/items
-%%DATADIR%%/maps/editor/picks/lakes
-%%DATADIR%%/maps/editor/picks/monsters
-%%DATADIR%%/maps/editor/picks/monsters2
-%%DATADIR%%/maps/editor/picks/monsters3
-%%DATADIR%%/maps/editor/picks/other
-%%DATADIR%%/maps/editor/picks/outdoors
-%%DATADIR%%/maps/editor/picks/readables
-%%DATADIR%%/maps/editor/picks/rivers
-%%DATADIR%%/maps/editor/picks/runes
-%%DATADIR%%/maps/editor/picks/shops
-%%DATADIR%%/maps/editor/picks/special
-%%DATADIR%%/maps/editor/picks/town
 %%DATADIR%%/maps/editor/scripts/LegacySpellConverter
 %%DATADIR%%/maps/editor/scripts/MapNormalizer
 %%DATADIR%%/maps/editor/scripts/MapValidator
@@ -695,6 +732,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/lake_country/marsh/marsh1_2
 %%DATADIR%%/maps/lake_country/marsh/marsh2_1
 %%DATADIR%%/maps/lake_country/marsh/marsh2_2
+%%DATADIR%%/maps/lake_country/sentrio_farmhouse
 %%DATADIR%%/maps/lake_country/shops/Mopoon_wshop
 %%DATADIR%%/maps/lake_country/shops/Olds_jewel
 %%DATADIR%%/maps/lake_country/shops/clems_archery
@@ -704,6 +742,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/lake_country/small_buildings/hut_Galmorus
 %%DATADIR%%/maps/lake_country/small_buildings/oak_twak1
 %%DATADIR%%/maps/lake_country/small_buildings/portal
+%%DATADIR%%/maps/lake_country/small_buildings/sentrio_house
 %%DATADIR%%/maps/lake_country/snake_pit/Chaos_lair1
 %%DATADIR%%/maps/lake_country/snake_pit/Chaos_lair2
 %%DATADIR%%/maps/lake_country/snake_pit/Chaos_lair3
@@ -723,6 +762,15 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/marksel/mines
 %%DATADIR%%/maps/marksel/shop
 %%DATADIR%%/maps/marksel/wizard
+%%DATADIR%%/maps/mlab/citydeclouds/IPO_citydeclouds
+%%DATADIR%%/maps/mlab/citydeclouds/apartment/cwdctownhaus1lvl1
+%%DATADIR%%/maps/mlab/citydeclouds/apartment/cwdctownhaus1lvl2
+%%DATADIR%%/maps/mlab/citydeclouds/apartment/cwdctownhaus2lvl1
+%%DATADIR%%/maps/mlab/citydeclouds/apartment/cwdctownhaus2lvl2
+%%DATADIR%%/maps/mlab/citydeclouds/apartment/cwdctownhaus3lvl1
+%%DATADIR%%/maps/mlab/citydeclouds/apartment/cwdctownhaus3lvl2
+%%DATADIR%%/maps/mlab/citydeclouds/apartment/cwdctownhaus4lvl1
+%%DATADIR%%/maps/mlab/citydeclouds/apartment/cwdctownhaus4lvl2
 %%DATADIR%%/maps/mlab/citydeclouds/bank/bank1
 %%DATADIR%%/maps/mlab/citydeclouds/bank/bank2
 %%DATADIR%%/maps/mlab/citydeclouds/bank/bank3
@@ -733,6 +781,28 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/mlab/citydeclouds/bank/vaultc3
 %%DATADIR%%/maps/mlab/citydeclouds/bank/vaultd4
 %%DATADIR%%/maps/mlab/citydeclouds/bank/vaulte5
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastleb1
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastleb2
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastleb3
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastleb4
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastleb5
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastleb6
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastleb7
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastleb8
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastlechoswld1
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastlef1
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastlef2
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastlef3
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastlef4
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastlef5
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastleofmarquis1
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastleofmarquis2
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastleofmarquis3
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastleofmarquis4
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastleofmarquis5
+%%DATADIR%%/maps/mlab/citydeclouds/castle/cwdccastleofmarquisb1
+%%DATADIR%%/maps/mlab/citydeclouds/cdcapart1
+%%DATADIR%%/maps/mlab/citydeclouds/cdcapart2
 %%DATADIR%%/maps/mlab/citydeclouds/cdcbigstore/cdcbigstore2f
 %%DATADIR%%/maps/mlab/citydeclouds/cdcbigstore/cdcbigstore3f
 %%DATADIR%%/maps/mlab/citydeclouds/cdccastlekeep/cdccastlekeep1
@@ -741,9 +811,17 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/mlab/citydeclouds/cdccastlekeep/cdccastlekeep4
 %%DATADIR%%/maps/mlab/citydeclouds/cdccastlekeep/cdccastlekeepb1
 %%DATADIR%%/maps/mlab/citydeclouds/cdccastlekeep/cdckeepbarrack1
+%%DATADIR%%/maps/mlab/citydeclouds/cdccloudre1
+%%DATADIR%%/maps/mlab/citydeclouds/cdccourthsuplvl1
+%%DATADIR%%/maps/mlab/citydeclouds/cdcgatea2
+%%DATADIR%%/maps/mlab/citydeclouds/cdcmesshluper1
+%%DATADIR%%/maps/mlab/citydeclouds/cdcnrkpdevtmp1
+%%DATADIR%%/maps/mlab/citydeclouds/cdcnwgateuprlv1
+%%DATADIR%%/maps/mlab/citydeclouds/cdcscasino
 %%DATADIR%%/maps/mlab/citydeclouds/cdcspire/cdcspire1
 %%DATADIR%%/maps/mlab/citydeclouds/cdcspire/cdcspireexit1
 %%DATADIR%%/maps/mlab/citydeclouds/cdcspire/cdcspireexit2
+%%DATADIR%%/maps/mlab/citydeclouds/cdcwgrotto1
 %%DATADIR%%/maps/mlab/citydeclouds/citydeclouds2A
 %%DATADIR%%/maps/mlab/citydeclouds/citydeclouds2B
 %%DATADIR%%/maps/mlab/citydeclouds/citydeclouds2C
@@ -756,6 +834,24 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/mlab/citydeclouds/citydecloudsA
 %%DATADIR%%/maps/mlab/citydeclouds/citydecloudsB
 %%DATADIR%%/maps/mlab/citydeclouds/citydecloudsC
+%%DATADIR%%/maps/mlab/citydeclouds/cloudworlddecity
+%%DATADIR%%/maps/mlab/citydeclouds/cwdcguestofmarquis1
+%%DATADIR%%/maps/mlab/citydeclouds/keep/cwdcrandkeep1
+%%DATADIR%%/maps/mlab/citydeclouds/misc/cwdcchessarenaa1
+%%DATADIR%%/maps/mlab/citydeclouds/misc/cwdcchessarenaa2
+%%DATADIR%%/maps/mlab/citydeclouds/misc/cwdcchessarenab2
+%%DATADIR%%/maps/mlab/citydeclouds/shops/cdcwcafe1
+%%DATADIR%%/maps/mlab/citydeclouds/shops/cwdcgenshop1
+%%DATADIR%%/maps/mlab/citydeclouds/shops/cwdckitchen
+%%DATADIR%%/maps/mlab/citydeclouds/shops/cwdcpotionshop1
+%%DATADIR%%/maps/mlab/citydeclouds/shops/cwdctrademarket
+%%DATADIR%%/maps/mlab/citydeclouds/temples/valriel
+%%DATADIR%%/maps/mlab/citydeclouds/villa/citydecloudsvillaC1
+%%DATADIR%%/maps/mlab/citydeclouds/villa/citydecloudsvillaC2
+%%DATADIR%%/maps/mlab/citydeclouds/villa/citydecloudsvillaC3
+%%DATADIR%%/maps/mlab/citydeclouds/villa/citydecloudsvillab1
+%%DATADIR%%/maps/mlab/citydeclouds/villa/citydecloudsvillab2
+%%DATADIR%%/maps/mlab/citydeclouds/villa/citydecloudsvillab3
 %%DATADIR%%/maps/mlab/mlabscrntrd1
 %%DATADIR%%/maps/mlab/mlabscrntrd2
 %%DATADIR%%/maps/mlab/mlabscrntrdb1
@@ -788,6 +884,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/navar_city/illusion/illtow5
 %%DATADIR%%/maps/navar_city/illusion/illtow6
 %%DATADIR%%/maps/navar_city/illusion/illtow7
+%%DATADIR%%/maps/navar_city/iscar
 %%DATADIR%%/maps/navar_city/jail/jail
 %%DATADIR%%/maps/navar_city/jail/jail2
 %%DATADIR%%/maps/navar_city/jail/jail3
@@ -834,6 +931,8 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/navar_city/misc/theaterb3
 %%DATADIR%%/maps/navar_city/misc/theaterb4
 %%DATADIR%%/maps/navar_city/mlab/dream
+%%DATADIR%%/maps/navar_city/mlab/tadobebuild2
+%%DATADIR%%/maps/navar_city/mlab/tadobebuild3
 %%DATADIR%%/maps/navar_city/mlab/tavern
 %%DATADIR%%/maps/navar_city/mlab/tavern2
 %%DATADIR%%/maps/navar_city/mlab/tavern3
@@ -885,6 +984,8 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/navar_city/mlab/ttower8
 %%DATADIR%%/maps/navar_city/mlab/ttower9
 %%DATADIR%%/maps/navar_city/mlab/ttowerchoswld1
+%%DATADIR%%/maps/navar_city/mlab/zealothouse2
+%%DATADIR%%/maps/navar_city/mlab/zealothouseb1
 %%DATADIR%%/maps/navar_city/mouse_house
 %%DATADIR%%/maps/navar_city/slums/Iggys_house
 %%DATADIR%%/maps/navar_city/slums/Iggys_house_lower
@@ -925,6 +1026,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/navar_city/troll_canyon/troll_canyon.7
 %%DATADIR%%/maps/navar_city/troll_canyon/troll_canyon.8
 %%DATADIR%%/maps/navar_city/troll_canyon/troll_canyon.9
+%%DATADIR%%/maps/navar_city/university
 %%DATADIR%%/maps/navar_city/warehouse1
 %%DATADIR%%/maps/navar_city/warehouse2
 %%DATADIR%%/maps/navar_city/warehouse3
@@ -935,6 +1037,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/navar_city/warehouse8
 %%DATADIR%%/maps/planes/IPO_storage
 %%DATADIR%%/maps/planes/README
+%%DATADIR%%/maps/planes/bigchest
 %%DATADIR%%/maps/planes/greenway1
 %%DATADIR%%/maps/planes/greenway2
 %%DATADIR%%/maps/planes/greenway3
@@ -945,6 +1048,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/planes/greenway8
 %%DATADIR%%/maps/planes/greenway9
 %%DATADIR%%/maps/planes/harcanna_wood
+%%DATADIR%%/maps/planes/purpleworm
 %%DATADIR%%/maps/planes/sorrow_ruin
 %%DATADIR%%/maps/port_joseph/README
 %%DATADIR%%/maps/port_joseph/goblin/caves
@@ -976,11 +1080,14 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/port_joseph/town/churchtower
 %%DATADIR%%/maps/port_joseph/town/dshark
 %%DATADIR%%/maps/port_joseph/town/generalstore
+%%DATADIR%%/maps/port_joseph/town/house
 %%DATADIR%%/maps/port_joseph/town/inn
 %%DATADIR%%/maps/port_joseph/town/ixalovh_shrine
 %%DATADIR%%/maps/port_joseph/town/portia
 %%DATADIR%%/maps/port_joseph/town/portia2
+%%DATADIR%%/maps/port_joseph/town/ruined_home
 %%DATADIR%%/maps/port_joseph/town/tomassos_house
+%%DATADIR%%/maps/port_joseph/town/underground_tavern
 %%DATADIR%%/maps/pup_land/ancient/castle/castle.1
 %%DATADIR%%/maps/pup_land/ancient/castle/castle.2
 %%DATADIR%%/maps/pup_land/ancient/castle/castle.3
@@ -1086,7 +1193,6 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/pup_land/cave_weapon/cave3
 %%DATADIR%%/maps/pup_land/cave_weapon/cave4
 %%DATADIR%%/maps/pup_land/cave_weapon/cave5
-%%DATADIR%%/maps/pup_land/cave_weapon/cave51
 %%DATADIR%%/maps/pup_land/guilds/laughing_skull/bigchest
 %%DATADIR%%/maps/pup_land/guilds/laughing_skull/ground
 %%DATADIR%%/maps/pup_land/guilds/laughing_skull/storage_room
@@ -1104,7 +1210,6 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/pup_land/kurte/eureca_road1
 %%DATADIR%%/maps/pup_land/kurte/eureca_road2
 %%DATADIR%%/maps/pup_land/kurte/eureca_road3
-%%DATADIR%%/maps/pup_land/kurte/eureca_road31
 %%DATADIR%%/maps/pup_land/kurte/house
 %%DATADIR%%/maps/pup_land/kurte/hut1
 %%DATADIR%%/maps/pup_land/kurte/hut2
@@ -1141,7 +1246,6 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/pup_land/lone_town/magic
 %%DATADIR%%/maps/pup_land/lone_town/mshop
 %%DATADIR%%/maps/pup_land/lone_town/mshop_ud
-%%DATADIR%%/maps/pup_land/lone_town/nf_bar
 %%DATADIR%%/maps/pup_land/lone_town/pupuly
 %%DATADIR%%/maps/pup_land/lone_town/shops/buildshop
 %%DATADIR%%/maps/pup_land/lone_town/shops/transport.shoppe
@@ -1318,7 +1422,6 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/pup_land/rainbow/Lv5/cross
 %%DATADIR%%/maps/pup_land/rainbow/Lv5/e-hall
 %%DATADIR%%/maps/pup_land/rainbow/Lv5/n-gate
-%%DATADIR%%/maps/pup_land/rainbow/Lv5/romm88
 %%DATADIR%%/maps/pup_land/rainbow/Lv5/room2
 %%DATADIR%%/maps/pup_land/rainbow/Lv5/room22
 %%DATADIR%%/maps/pup_land/rainbow/Lv5/room4
@@ -1377,6 +1480,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/python/CFBank.py
 %%DATADIR%%/maps/python/CFBoard.py
 %%DATADIR%%/maps/python/CFCampfire.py
+%%DATADIR%%/maps/python/CFDataBase.py
 %%DATADIR%%/maps/python/CFDataFile.py
 %%DATADIR%%/maps/python/CFDialog.py
 %%DATADIR%%/maps/python/CFGamble.py
@@ -1384,6 +1488,9 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/python/CFItemBroker.py
 %%DATADIR%%/maps/python/CFLog.py
 %%DATADIR%%/maps/python/CFMail.py
+%%DATADIR%%/maps/python/CFMapTransformer.py
+%%DATADIR%%/maps/python/CFMove.py
+%%DATADIR%%/maps/python/CFTimeOfDay.py
 %%DATADIR%%/maps/python/CFWorld.py
 %%DATADIR%%/maps/python/IPO/README
 %%DATADIR%%/maps/python/IPO/banksay.py
@@ -1398,8 +1505,10 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/python/casino/imperialslots.py
 %%DATADIR%%/maps/python/casino/platinumslots.py
 %%DATADIR%%/maps/python/casino/silverslots.py
+%%DATADIR%%/maps/python/commands/give.py
 %%DATADIR%%/maps/python/events/README
 %%DATADIR%%/maps/python/events/born/log_born.py
+%%DATADIR%%/maps/python/events/init/give_command.py
 %%DATADIR%%/maps/python/events/init/guild_init.py
 %%DATADIR%%/maps/python/events/kick/log_kick.py
 %%DATADIR%%/maps/python/events/login/log_login.py
@@ -1411,7 +1520,13 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/python/events/remove/guild_remove.py
 %%DATADIR%%/maps/python/events/remove/log_remove.py
 %%DATADIR%%/maps/python/gods/altar_valkyrie.py
+%%DATADIR%%/maps/python/guilds/GUILD_TEMPLATE.txt
+%%DATADIR%%/maps/python/guilds/PoisonedDagger.txt
+%%DATADIR%%/maps/python/guilds/PurpleButterfly.txt
 %%DATADIR%%/maps/python/guilds/README.txt
+%%DATADIR%%/maps/python/guilds/SmokingCauldron.txt
+%%DATADIR%%/maps/python/guilds/arrest.py
+%%DATADIR%%/maps/python/guilds/clearance.py
 %%DATADIR%%/maps/python/guilds/guild_dues.py
 %%DATADIR%%/maps/python/guilds/guild_entry.py
 %%DATADIR%%/maps/python/guilds/guild_questpoints_apply.py
@@ -1419,6 +1534,11 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/python/guilds/guildbuy.py
 %%DATADIR%%/maps/python/guilds/guildjoin.py
 %%DATADIR%%/maps/python/guilds/guildoracle.py
+%%DATADIR%%/maps/python/guilds/guildpay.py
+%%DATADIR%%/maps/python/guilds/guildstorage.py
+%%DATADIR%%/maps/python/guilds/storage_entry.py
+%%DATADIR%%/maps/python/guilds/trigger.py
+%%DATADIR%%/maps/python/items/banquet.py
 %%DATADIR%%/maps/python/items/campfire_say.py
 %%DATADIR%%/maps/python/items/campfire_timer.py
 %%DATADIR%%/maps/python/items/experience_rewarder.py
@@ -1427,15 +1547,45 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/python/items/ring_occidental_mages.py
 %%DATADIR%%/maps/python/items/roll-o-matic.py
 %%DATADIR%%/maps/python/items/smoking_pipe.py
+%%DATADIR%%/maps/python/items/sunnista.py
 %%DATADIR%%/maps/python/items/weapon_occidental_mages.py
 %%DATADIR%%/maps/python/maps/navar-midane_apply.py
 %%DATADIR%%/maps/python/maps/navar-midane_attack.py
 %%DATADIR%%/maps/python/maps/navar-midane_pickup.py
 %%DATADIR%%/maps/python/maps/navar-midane_time.py
+%%DATADIR%%/maps/python/maps/navar_city/university-dorlf.py
+%%DATADIR%%/maps/python/maps/scorn/HouseofHealing.py
+%%DATADIR%%/maps/python/maps/scorn/towers/mad_mage/brewery_letter
+%%DATADIR%%/maps/python/maps/scorn/towers/mad_mage/mad_mage_user.py
+%%DATADIR%%/maps/python/maps/scorn/towers/mad_mage/milking_blueprints
+%%DATADIR%%/maps/python/maps/witherspoon_manor/README
+%%DATADIR%%/maps/python/maps/witherspoon_manor/devourers.py
+%%DATADIR%%/maps/python/maps/witherspoon_manor/ghost.py
+%%DATADIR%%/maps/python/maps/witherspoon_manor/rolanda.py
+%%DATADIR%%/maps/python/maps/witherspoon_manor/tomb.py
+%%DATADIR%%/maps/python/maps/witherspoon_manor/weapon_shop.py
 %%DATADIR%%/maps/python/misc/CFInsulter.py
 %%DATADIR%%/maps/python/misc/CFweardisguise.py
 %%DATADIR%%/maps/python/misc/death_message.py
+%%DATADIR%%/maps/python/misc/doNothing.py
 %%DATADIR%%/maps/python/misc/greet_message.py
+%%DATADIR%%/maps/python/misc/npc_dialog.py
+%%DATADIR%%/maps/python/misc/swallow_whole.py
+%%DATADIR%%/maps/python/monsters/combat_chicken.py
+%%DATADIR%%/maps/python/monsters/farnass.py
+%%DATADIR%%/maps/python/monsters/lursendis.py
+%%DATADIR%%/maps/python/pshop/Floor.py
+%%DATADIR%%/maps/python/pshop/Ice.py
+%%DATADIR%%/maps/python/pshop/TODO
+%%DATADIR%%/maps/python/pshop/entry.py
+%%DATADIR%%/maps/python/pshop/pshop.py
+%%DATADIR%%/maps/python/pshop/rent.py
+%%DATADIR%%/maps/python/start/dragon_attune.py
+%%DATADIR%%/maps/python/tod/filter.py
+%%DATADIR%%/maps/python/tod/push.py
+%%DATADIR%%/maps/python/tod/replace.py
+%%DATADIR%%/maps/python/tod/replace_in_map.py
+%%DATADIR%%/maps/python/tod/sleep.py
 %%DATADIR%%/maps/quests/cd/cd.castle.750
 %%DATADIR%%/maps/quests/cd/cd.cellar1.757
 %%DATADIR%%/maps/quests/cd/cd.inn.752
@@ -1565,7 +1715,6 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/quests/peterm/Nethack_in_crossfire_Yendor
 %%DATADIR%%/maps/quests/peterm/Nethack_in_crossfire_entrance
 %%DATADIR%%/maps/quests/peterm/quests/TitanGate
-%%DATADIR%%/maps/quests/peterm/quests/dragon_quest
 %%DATADIR%%/maps/quests/peterm/quests/dragonquest2
 %%DATADIR%%/maps/quests/peterm/quests/goblin_chief
 %%DATADIR%%/maps/quests/peterm/quests/mushroom_quest
@@ -1577,6 +1726,30 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/quests/peterm/temple/InnerTemple
 %%DATADIR%%/maps/quests/peterm/temple/OuterTemple
 %%DATADIR%%/maps/quests/peterm/temple/Temple
+%%DATADIR%%/maps/quests/saromok/castlesaromok_barracks1
+%%DATADIR%%/maps/quests/saromok/castlesaromok_barracks2
+%%DATADIR%%/maps/quests/saromok/castlesaromok_barracks3
+%%DATADIR%%/maps/quests/saromok/castlesaromok_barracks4
+%%DATADIR%%/maps/quests/saromok/castlesaromok_frontgate
+%%DATADIR%%/maps/quests/saromok/castlesaromok_inside
+%%DATADIR%%/maps/quests/saromok/castlesaromok_ltl
+%%DATADIR%%/maps/quests/saromok/castlesaromok_ltr
+%%DATADIR%%/maps/quests/saromok/castlesaromok_top
+%%DATADIR%%/maps/quests/saromok/castlesaromok_towerb1
+%%DATADIR%%/maps/quests/saromok/castlesaromok_towerf1
+%%DATADIR%%/maps/quests/saromok/castlesaromok_towerf10
+%%DATADIR%%/maps/quests/saromok/castlesaromok_towerf11
+%%DATADIR%%/maps/quests/saromok/castlesaromok_towerf12
+%%DATADIR%%/maps/quests/saromok/castlesaromok_towerf2
+%%DATADIR%%/maps/quests/saromok/castlesaromok_towerf3
+%%DATADIR%%/maps/quests/saromok/castlesaromok_towerf4
+%%DATADIR%%/maps/quests/saromok/castlesaromok_towerf5
+%%DATADIR%%/maps/quests/saromok/castlesaromok_towerf6
+%%DATADIR%%/maps/quests/saromok/castlesaromok_towerf7
+%%DATADIR%%/maps/quests/saromok/castlesaromok_towerf8
+%%DATADIR%%/maps/quests/saromok/castlesaromok_towerf9
+%%DATADIR%%/maps/quests/saromok/castlesaromok_towergroundfloor
+%%DATADIR%%/maps/quests/saromok/castlesaromok_volcano
 %%DATADIR%%/maps/quests/skud/court
 %%DATADIR%%/maps/quests/skud/east_1
 %%DATADIR%%/maps/quests/skud/entrance
@@ -1591,13 +1764,12 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/quests/todd/aljwaf/crypt6
 %%DATADIR%%/maps/quests/todd/aljwaf/hall1
 %%DATADIR%%/maps/quests/todd/aljwaf/hall2
-%%DATADIR%%/maps/quests/todd/aljwaf/ruins
 %%DATADIR%%/maps/quests/todd/aljwaf/tomb
 %%DATADIR%%/maps/quests/todd/aljwaf/tower1
 %%DATADIR%%/maps/quests/todd/aljwaf/tower2
 %%DATADIR%%/maps/quests/todd/aljwaf/tower3
 %%DATADIR%%/maps/quests/todd/aljwaf/tower4
-%%DATADIR%%/maps/regions
+%%DATADIR%%/maps/regions.reg
 %%DATADIR%%/maps/santo_dominion/basement
 %%DATADIR%%/maps/santo_dominion/city_hall
 %%DATADIR%%/maps/santo_dominion/crossfire
@@ -1616,8 +1788,12 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/santo_dominion/just_preliminary
 %%DATADIR%%/maps/santo_dominion/lord_byron/1st_floor
 %%DATADIR%%/maps/santo_dominion/lord_byron/2nd_floor
+%%DATADIR%%/maps/santo_dominion/lord_byron/armour
 %%DATADIR%%/maps/santo_dominion/lord_byron/dungeon
+%%DATADIR%%/maps/santo_dominion/lord_byron/general
+%%DATADIR%%/maps/santo_dominion/lord_byron/magic
 %%DATADIR%%/maps/santo_dominion/lord_byron/main
+%%DATADIR%%/maps/santo_dominion/lord_byron/weapon
 %%DATADIR%%/maps/santo_dominion/magara/hut/floor_1
 %%DATADIR%%/maps/santo_dominion/magara/hut/floor_2
 %%DATADIR%%/maps/santo_dominion/magara/hut/floor_3
@@ -1665,7 +1841,6 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/scorn/README
 %%DATADIR%%/maps/scorn/anthony/passoffice
 %%DATADIR%%/maps/scorn/anthony/portgate
-%%DATADIR%%/maps/scorn/anthony/prison
 %%DATADIR%%/maps/scorn/apartment/Apartments1
 %%DATADIR%%/maps/scorn/apartment/Apartments2
 %%DATADIR%%/maps/scorn/apartment/Apartments3
@@ -1713,18 +1888,25 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/scorn/houses/resir
 %%DATADIR%%/maps/scorn/houses/riverside_manor
 %%DATADIR%%/maps/scorn/houses/riverside_under
+%%DATADIR%%/maps/scorn/houses/rolanda
+%%DATADIR%%/maps/scorn/houses/scorn_trappers
 %%DATADIR%%/maps/scorn/houses/smithery
 %%DATADIR%%/maps/scorn/houses/tannery
+%%DATADIR%%/maps/scorn/houses/tyl
+%%DATADIR%%/maps/scorn/houses/tyl_attic
 %%DATADIR%%/maps/scorn/houses/wizardw
 %%DATADIR%%/maps/scorn/houses/wizz.entry
 %%DATADIR%%/maps/scorn/houses/wizz.lev1
 %%DATADIR%%/maps/scorn/houses/wizz.lev1.pass1
+%%DATADIR%%/maps/scorn/houses/woodhouse
 %%DATADIR%%/maps/scorn/kar/creepy.house
 %%DATADIR%%/maps/scorn/kar/creepy.house2
 %%DATADIR%%/maps/scorn/kar/drink
+%%DATADIR%%/maps/scorn/kar/gork.msg
 %%DATADIR%%/maps/scorn/kar/gorks1
 %%DATADIR%%/maps/scorn/kar/gorks2
 %%DATADIR%%/maps/scorn/kar/gorks3
+%%DATADIR%%/maps/scorn/kar/mork.msg
 %%DATADIR%%/maps/scorn/kar/somehouse
 %%DATADIR%%/maps/scorn/kar/somehouse2
 %%DATADIR%%/maps/scorn/kar/somehouse3
@@ -1734,6 +1916,8 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/scorn/mansion/muriskunes
 %%DATADIR%%/maps/scorn/mansion/str-tunnel
 %%DATADIR%%/maps/scorn/mansion/stronghold
+%%DATADIR%%/maps/scorn/mansion/witherspoon_manor
+%%DATADIR%%/maps/scorn/mansion/witherspoon_manor_attic
 %%DATADIR%%/maps/scorn/misc/HallOfQuests
 %%DATADIR%%/maps/scorn/misc/HospitalityRoom
 %%DATADIR%%/maps/scorn/misc/HouseofHealing
@@ -1747,7 +1931,10 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/scorn/misc/beginners2
 %%DATADIR%%/maps/scorn/misc/castle
 %%DATADIR%%/maps/scorn/misc/castle2
+%%DATADIR%%/maps/scorn/misc/castle_kitchen
 %%DATADIR%%/maps/scorn/misc/church
+%%DATADIR%%/maps/scorn/misc/cider_house
+%%DATADIR%%/maps/scorn/misc/cider_house_top
 %%DATADIR%%/maps/scorn/misc/cityhall
 %%DATADIR%%/maps/scorn/misc/devourlower
 %%DATADIR%%/maps/scorn/misc/dragon_guild
@@ -1765,6 +1952,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/scorn/misc/mercenaries
 %%DATADIR%%/maps/scorn/misc/port_arena
 %%DATADIR%%/maps/scorn/misc/prison
+%%DATADIR%%/maps/scorn/misc/prison.1
 %%DATADIR%%/maps/scorn/misc/puddings.place
 %%DATADIR%%/maps/scorn/misc/templedevour
 %%DATADIR%%/maps/scorn/misc/templelyth
@@ -1783,8 +1971,6 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/scorn/oldcity/oldcity15e
 %%DATADIR%%/maps/scorn/oldcity/oldcity2
 %%DATADIR%%/maps/scorn/oldcity/oldcity3
-%%DATADIR%%/maps/scorn/oldcity/oldcity4
-%%DATADIR%%/maps/scorn/oldcity/oldcity5
 %%DATADIR%%/maps/scorn/oldcity/oldcity54
 %%DATADIR%%/maps/scorn/oldcity/oldcity6
 %%DATADIR%%/maps/scorn/oldcity/oldcity7
@@ -1814,6 +2000,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/scorn/taverns/goths
 %%DATADIR%%/maps/scorn/taverns/goths0
 %%DATADIR%%/maps/scorn/taverns/goths2
+%%DATADIR%%/maps/scorn/taverns/hintson.msg
 %%DATADIR%%/maps/scorn/taverns/inn
 %%DATADIR%%/maps/scorn/taverns/inn2
 %%DATADIR%%/maps/scorn/temples/gaea
@@ -1826,10 +2013,15 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/scorn/temples/ruggilli2
 %%DATADIR%%/maps/scorn/temples/sorig
 %%DATADIR%%/maps/scorn/temples/sorig2
+%%DATADIR%%/maps/scorn/temples/valkyrie
+%%DATADIR%%/maps/scorn/temples/valkyrie2
 %%DATADIR%%/maps/scorn/temples/valriel
 %%DATADIR%%/maps/scorn/temples/valriel2
 %%DATADIR%%/maps/scorn/temples/valriel3
-%%DATADIR%%/maps/scorn/towers/tower
+%%DATADIR%%/maps/scorn/towers/brewery.1
+%%DATADIR%%/maps/scorn/towers/brewery.2
+%%DATADIR%%/maps/scorn/towers/brewery.3
+%%DATADIR%%/maps/scorn/towers/brewery.4
 %%DATADIR%%/maps/scorn/towers/tower.mad
 %%DATADIR%%/maps/scorn/towers/tower.mad1
 %%DATADIR%%/maps/scorn/towers/tower.mad2
@@ -1861,6 +2053,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/start/HallsOfSelection/wraith_player
 %%DATADIR%%/maps/start/Nexus
 %%DATADIR%%/maps/start/newbieshouse
+%%DATADIR%%/maps/start/sigmund.msg
 %%DATADIR%%/maps/styles/decorstyles/alchemy
 %%DATADIR%%/maps/styles/decorstyles/craters
 %%DATADIR%%/maps/styles/decorstyles/creepy
@@ -2235,6 +2428,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/styles/wallstyles/water
 %%DATADIR%%/maps/styles/wallstyles/wharf
 %%DATADIR%%/maps/styles/wallstyles/wooden
+%%DATADIR%%/maps/svn-commit.tmp~
 %%DATADIR%%/maps/teamarena/teamwar
 %%DATADIR%%/maps/teamarena/twregister
 %%DATADIR%%/maps/templates/README
@@ -2250,6 +2444,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/templates/guild/guild_bbq
 %%DATADIR%%/maps/templates/guild/guild_hq
 %%DATADIR%%/maps/templates/guild/guild_jeweler
+%%DATADIR%%/maps/templates/guild/guild_tan
 %%DATADIR%%/maps/templates/guild/guild_thaum
 %%DATADIR%%/maps/templates/guild/guild_toolshed
 %%DATADIR%%/maps/templates/guild/guildman_lounge
@@ -2257,9 +2452,13 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/templates/guild/hallofjoining
 %%DATADIR%%/maps/templates/guild/journeyman_lounge
 %%DATADIR%%/maps/templates/guild/mainfloor
+%%DATADIR%%/maps/templates/guild/master_lounge
 %%DATADIR%%/maps/templates/guild/masters_lounge
 %%DATADIR%%/maps/templates/guild/novice_lounge
 %%DATADIR%%/maps/templates/guild/secondfloor
+%%DATADIR%%/maps/templates/guild/storage_hall
+%%DATADIR%%/maps/templates/guild/storage_hall.0
+%%DATADIR%%/maps/templates/guild/storage_room
 %%DATADIR%%/maps/templates/keep/grounds.tpl
 %%DATADIR%%/maps/templates/keep/keep1.tpl
 %%DATADIR%%/maps/templates/keep/keep2.tpl
@@ -2276,14 +2475,66 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/test/anthony/special_objects
 %%DATADIR%%/maps/test/barrel
 %%DATADIR%%/maps/test/bigmonpit
+%%DATADIR%%/maps/test/boat
+%%DATADIR%%/maps/test/cfanim
+%%DATADIR%%/maps/test/cfanim.animation
+%%DATADIR%%/maps/test/cfanim.button
+%%DATADIR%%/maps/test/cfanim.conjurer
+%%DATADIR%%/maps/test/cfanim.py
 %%DATADIR%%/maps/test/connected_bug
 %%DATADIR%%/maps/test/cyclops
 %%DATADIR%%/maps/test/diagonal
+%%DATADIR%%/maps/test/dialog
 %%DATADIR%%/maps/test/faceofdeath
 %%DATADIR%%/maps/test/gen_test
 %%DATADIR%%/maps/test/insert_bug
 %%DATADIR%%/maps/test/lighting
 %%DATADIR%%/maps/test/multisquare
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze-1x6
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze0x6
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x10a
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x10b
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x10c
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x11a
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x11b
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x11c
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x1a
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x1b
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x1c
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x2a
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x2b
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x2c
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x3a
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x3b
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x3c
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x4a
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x4b
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x4c
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x5a
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x5b
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x5c
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x6a
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x6b
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x6c
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x7a
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x7b
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x7c
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x8a
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x8b
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x8c
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x9a
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x9b
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze1x9c
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze2x1a
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze2x1b
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze2x1c
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze2x2c
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze2x4c
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze2x7c
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze3x3b
+%%DATADIR%%/maps/test/newmaps/madness_maze/madnessmaze3x8c
+%%DATADIR%%/maps/test/newmaps/madness_maze/scripts/madnessmaze1.py
+%%DATADIR%%/maps/test/newmaps/privateshop
 %%DATADIR%%/maps/test/paralyze
 %%DATADIR%%/maps/test/pit
 %%DATADIR%%/maps/test/playermover
@@ -2293,14 +2544,22 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/test/python_pickup.py
 %%DATADIR%%/maps/test/python_timer.py
 %%DATADIR%%/maps/test/quest
+%%DATADIR%%/maps/test/quest.py
 %%DATADIR%%/maps/test/randomtreasure
 %%DATADIR%%/maps/test/reaper
 %%DATADIR%%/maps/test/remote_altar
+%%DATADIR%%/maps/test/say
+%%DATADIR%%/maps/test/spell_requirements
+%%DATADIR%%/maps/test/talked_to
+%%DATADIR%%/maps/test/teleporter_test
 %%DATADIR%%/maps/test/templatetest
 %%DATADIR%%/maps/test/throw
+%%DATADIR%%/maps/test/thrown_pickup
 %%DATADIR%%/maps/test/tile1
 %%DATADIR%%/maps/test/tile2
 %%DATADIR%%/maps/test/tile3
+%%DATADIR%%/maps/test/tod
+%%DATADIR%%/maps/test/tod2
 %%DATADIR%%/maps/test/trapdoor
 %%DATADIR%%/maps/test/traps
 %%DATADIR%%/maps/test/treasurelist
@@ -2338,6 +2597,22 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/unlinked/academy.crap/README
 %%DATADIR%%/maps/unlinked/casino/README
 %%DATADIR%%/maps/unlinked/casino/casino_infernal
+%%DATADIR%%/maps/unlinked/forgotten_town/README
+%%DATADIR%%/maps/unlinked/forgotten_town/city
+%%DATADIR%%/maps/unlinked/forgotten_town/enter
+%%DATADIR%%/maps/unlinked/forgotten_town/ft_dragonslib
+%%DATADIR%%/maps/unlinked/forgotten_town/ft_funhouse
+%%DATADIR%%/maps/unlinked/forgotten_town/inn
+%%DATADIR%%/maps/unlinked/forgotten_town/palace
+%%DATADIR%%/maps/unlinked/forgotten_town/quests/ft_quest_1
+%%DATADIR%%/maps/unlinked/forgotten_town/quests/ft_quest_2
+%%DATADIR%%/maps/unlinked/forgotten_town/quests/ft_quest_40
+%%DATADIR%%/maps/unlinked/forgotten_town/shops/armour
+%%DATADIR%%/maps/unlinked/forgotten_town/shops/general
+%%DATADIR%%/maps/unlinked/forgotten_town/shops/general2
+%%DATADIR%%/maps/unlinked/forgotten_town/shops/magic
+%%DATADIR%%/maps/unlinked/forgotten_town/shops/potion
+%%DATADIR%%/maps/unlinked/forgotten_town/shops/weapon
 %%DATADIR%%/maps/unlinked/kandora/ambush1
 %%DATADIR%%/maps/unlinked/kandora/cave/a_mine
 %%DATADIR%%/maps/unlinked/kandora/cave/a_mine2
@@ -2400,11 +2675,16 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/unlinked/kandora/signal
 %%DATADIR%%/maps/unlinked/kandora/signal2
 %%DATADIR%%/maps/unlinked/kandora/signal3
+%%DATADIR%%/maps/unlinked/kbulgrien/rayvins_house.1
 %%DATADIR%%/maps/unlinked/lefttower2
 %%DATADIR%%/maps/unlinked/tutorial1
 %%DATADIR%%/maps/unlinked/vol_vill_shops
 %%DATADIR%%/maps/unlinked/zornstuff/zornstuff.NOT.a.map
-%%DATADIR%%/maps/whalingoutpost/houses/fishershouse1
+%%DATADIR%%/maps/whalingoutpost/houses/fisherhouseeast
+%%DATADIR%%/maps/whalingoutpost/houses/fisherhousenorth
+%%DATADIR%%/maps/whalingoutpost/houses/fisherhousesouth
+%%DATADIR%%/maps/whalingoutpost/houses/fisherhousesouthwest
+%%DATADIR%%/maps/whalingoutpost/houses/fisherhouseswest
 %%DATADIR%%/maps/whalingoutpost/houses/infestedhouse1
 %%DATADIR%%/maps/whalingoutpost/lighthouse1
 %%DATADIR%%/maps/whalingoutpost/lighthouse2
@@ -2439,6 +2719,10 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/whalingoutpost/underwaterdungeon/level1
 %%DATADIR%%/maps/whalingoutpost/underwaterdungeon/level2
 %%DATADIR%%/maps/whalingoutpost/underwaterdungeon/level3
+%%DATADIR%%/maps/wolfsburg/apartments/pet-apartment/pet-apartment
+%%DATADIR%%/maps/wolfsburg/apartments/pet-apartment/pet-apartment2
+%%DATADIR%%/maps/wolfsburg/apartments/pet-apartment/pet-apartment3
+%%DATADIR%%/maps/wolfsburg/apartments/pet-apartment/torture-chamber
 %%DATADIR%%/maps/wolfsburg/apartments/wolfsburg.apartment
 %%DATADIR%%/maps/wolfsburg/dept_store_armour
 %%DATADIR%%/maps/wolfsburg/dept_store_magic
@@ -2468,6 +2752,7 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/wolfsburg/guilds/damned_heretics/storage_room
 %%DATADIR%%/maps/wolfsburg/guilds/damned_heretics/upper
 %%DATADIR%%/maps/wolfsburg/inns
+%%DATADIR%%/maps/wolfsburg/lursendis
 %%DATADIR%%/maps/wolfsburg/magara/castle/cellar
 %%DATADIR%%/maps/wolfsburg/magara/castle/floor_1
 %%DATADIR%%/maps/wolfsburg/magara/castle/floor_2
@@ -2497,6 +2782,9 @@ lib/crossfire/random_map
 %%DATADIR%%/maps/wolfsburg/tt/tta2
 %%DATADIR%%/maps/wolfsburg/tt/ttb1
 %%DATADIR%%/maps/wolfsburg/tt/ttb2
+%%DATADIR%%/maps/wolfsburg/volcano/heimser_hut_0
+%%DATADIR%%/maps/wolfsburg/volcano/heimser_hut_1
+%%DATADIR%%/maps/wolfsburg/volcano/heimser_hut_2
 %%DATADIR%%/maps/wolfsburg/volcano/volcano
 %%DATADIR%%/maps/wolfsburg/volcano/vvhuts
 %%DATADIR%%/maps/wolfsburg/volcano/vvmansion
@@ -3473,6 +3761,7 @@ var/crossfire/temp.maps
 @dirrm %%DATADIR%%/maps/wolfsburg/guilds
 @dirrm %%DATADIR%%/maps/wolfsburg/eeur
 @dirrm %%DATADIR%%/maps/wolfsburg/dungeons
+@dirrm %%DATADIR%%/maps/wolfsburg/apartments/pet-apartment
 @dirrm %%DATADIR%%/maps/wolfsburg/apartments
 @dirrm %%DATADIR%%/maps/wolfsburg
 @dirrm %%DATADIR%%/maps/whalingoutpost/underwaterdungeon
@@ -3481,15 +3770,22 @@ var/crossfire/temp.maps
 @dirrm %%DATADIR%%/maps/whalingoutpost/houses
 @dirrm %%DATADIR%%/maps/whalingoutpost
 @dirrm %%DATADIR%%/maps/unlinked/zornstuff
+@dirrm %%DATADIR%%/maps/unlinked/kbulgrien
 @dirrm %%DATADIR%%/maps/unlinked/kandora/elcyon
 @dirrm %%DATADIR%%/maps/unlinked/kandora/circus
 @dirrm %%DATADIR%%/maps/unlinked/kandora/cave
 @dirrm %%DATADIR%%/maps/unlinked/kandora
+@dirrm %%DATADIR%%/maps/unlinked/forgotten_town/shops
+@dirrm %%DATADIR%%/maps/unlinked/forgotten_town/quests
+@dirrm %%DATADIR%%/maps/unlinked/forgotten_town
 @dirrm %%DATADIR%%/maps/unlinked/casino
 @dirrm %%DATADIR%%/maps/unlinked/academy.crap
 @dirrm %%DATADIR%%/maps/unlinked/Greyshield
 @dirrm %%DATADIR%%/maps/unlinked
 @dirrm %%DATADIR%%/maps/under_world
+@dirrm %%DATADIR%%/maps/test/newmaps/madness_maze/scripts
+@dirrm %%DATADIR%%/maps/test/newmaps/madness_maze
+@dirrm %%DATADIR%%/maps/test/newmaps
 @dirrm %%DATADIR%%/maps/test/anthony
 @dirrm %%DATADIR%%/maps/test
 @dirrm %%DATADIR%%/maps/templates/keep
@@ -3577,6 +3873,7 @@ var/crossfire/temp.maps
 @dirrm %%DATADIR%%/maps/quests/todd/aljwaf
 @dirrm %%DATADIR%%/maps/quests/todd
 @dirrm %%DATADIR%%/maps/quests/skud
+@dirrm %%DATADIR%%/maps/quests/saromok
 @dirrm %%DATADIR%%/maps/quests/peterm/temple
 @dirrm %%DATADIR%%/maps/quests/peterm/quests
 @dirrm %%DATADIR%%/maps/quests/peterm/FireTemple
@@ -3597,7 +3894,16 @@ var/crossfire/temp.maps
 @dirrm %%DATADIR%%/maps/quests/greyshield
 @dirrm %%DATADIR%%/maps/quests/cd
 @dirrm %%DATADIR%%/maps/quests
+@dirrm %%DATADIR%%/maps/python/tod
+@dirrm %%DATADIR%%/maps/python/start
+@dirrm %%DATADIR%%/maps/python/pshop
+@dirrm %%DATADIR%%/maps/python/monsters
 @dirrm %%DATADIR%%/maps/python/misc
+@dirrm %%DATADIR%%/maps/python/maps/witherspoon_manor
+@dirrm %%DATADIR%%/maps/python/maps/scorn/towers/mad_mage
+@dirrm %%DATADIR%%/maps/python/maps/scorn/towers
+@dirrm %%DATADIR%%/maps/python/maps/scorn
+@dirrm %%DATADIR%%/maps/python/maps/navar_city
 @dirrm %%DATADIR%%/maps/python/maps
 @dirrm %%DATADIR%%/maps/python/items
 @dirrm %%DATADIR%%/maps/python/guilds
@@ -3609,6 +3915,7 @@ var/crossfire/temp.maps
 @dirrm %%DATADIR%%/maps/python/events/init
 @dirrm %%DATADIR%%/maps/python/events/born
 @dirrm %%DATADIR%%/maps/python/events
+@dirrm %%DATADIR%%/maps/python/commands
 @dirrm %%DATADIR%%/maps/python/casino
 @dirrm %%DATADIR%%/maps/python/IPO
 @dirrm %%DATADIR%%/maps/python
@@ -3677,10 +3984,17 @@ var/crossfire/temp.maps
 @dirrm %%DATADIR%%/maps/navar_city/casino_infernal
 @dirrm %%DATADIR%%/maps/navar_city/apartments
 @dirrm %%DATADIR%%/maps/navar_city
+@dirrm %%DATADIR%%/maps/mlab/citydeclouds/villa
+@dirrm %%DATADIR%%/maps/mlab/citydeclouds/temples
+@dirrm %%DATADIR%%/maps/mlab/citydeclouds/shops
+@dirrm %%DATADIR%%/maps/mlab/citydeclouds/misc
+@dirrm %%DATADIR%%/maps/mlab/citydeclouds/keep
 @dirrm %%DATADIR%%/maps/mlab/citydeclouds/cdcspire
 @dirrm %%DATADIR%%/maps/mlab/citydeclouds/cdccastlekeep
 @dirrm %%DATADIR%%/maps/mlab/citydeclouds/cdcbigstore
+@dirrm %%DATADIR%%/maps/mlab/citydeclouds/castle
 @dirrm %%DATADIR%%/maps/mlab/citydeclouds/bank
+@dirrm %%DATADIR%%/maps/mlab/citydeclouds/apartment
 @dirrm %%DATADIR%%/maps/mlab/citydeclouds
 @dirrm %%DATADIR%%/maps/mlab
 @dirrm %%DATADIR%%/maps/marksel
@@ -3701,7 +4015,6 @@ var/crossfire/temp.maps
 @dirrm %%DATADIR%%/maps/euthville
 @dirrm %%DATADIR%%/maps/editor/walls
 @dirrm %%DATADIR%%/maps/editor/scripts
-@dirrm %%DATADIR%%/maps/editor/picks
 @dirrm %%DATADIR%%/maps/editor/pickmaps
 @dirrm %%DATADIR%%/maps/editor
 @dirrm %%DATADIR%%/maps/dungeons/valriel
@@ -3715,11 +4028,10 @@ var/crossfire/temp.maps
 @dirrm %%DATADIR%%/maps/darcap/undead
 @dirrm %%DATADIR%%/maps/darcap/town2
 @dirrm %%DATADIR%%/maps/darcap/temple_justice
+@dirrm %%DATADIR%%/maps/darcap/raffle
 @dirrm %%DATADIR%%/maps/darcap/quest
+@dirrm %%DATADIR%%/maps/darcap/pygmy_forest
 @dirrm %%DATADIR%%/maps/darcap/lynn
-@dirrm %%DATADIR%%/maps/darcap/forgotten_town/shops
-@dirrm %%DATADIR%%/maps/darcap/forgotten_town/quests
-@dirrm %%DATADIR%%/maps/darcap/forgotten_town
 @dirrm %%DATADIR%%/maps/darcap/darcap/guilds/smoking_cauldron
 @dirrm %%DATADIR%%/maps/darcap/darcap/guilds/poisoned_dagger
 @dirrm %%DATADIR%%/maps/darcap/darcap/guilds
@@ -3729,6 +4041,7 @@ var/crossfire/temp.maps
 @dirrm %%DATADIR%%/maps/darcap/castle
 @dirrm %%DATADIR%%/maps/darcap
 @dirrm %%DATADIR%%/maps/brest/zorn
+@dirrm %%DATADIR%%/maps/brest/temples
 @dirrm %%DATADIR%%/maps/brest/taverns
 @dirrm %%DATADIR%%/maps/brest/sow
 @dirrm %%DATADIR%%/maps/brest/shops
@@ -3790,8 +4103,12 @@ var/crossfire/temp.maps
 @dirrm %%DATADIR%%/maps/azumauindo/minatomachi/buildings
 @dirrm %%DATADIR%%/maps/azumauindo/minatomachi
 @dirrm %%DATADIR%%/maps/azumauindo
+@dirrm %%DATADIR%%/maps/animations/maps/navar_city
+@dirrm %%DATADIR%%/maps/animations/maps
+@dirrm %%DATADIR%%/maps/animations
 @dirrm %%DATADIR%%/maps/Info
 @dirrm %%DATADIR%%/maps
+@dirrm %%DATADIR%%/i18n
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/adm
 @dirrm %%DATADIR%%
