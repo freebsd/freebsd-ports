@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	snes9express
-PORTVERSION=	1.42
-PORTREVISION=	11
+PORTVERSION=	1.43
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -16,29 +15,30 @@ COMMENT=	GTK interface for snes9x
 
 RUN_DEPENDS=	snes9x:${PORTSDIR}/emulators/snes9x
 
-USE_GETTEXT=	yes
 USE_GNOME=	gtk20
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.pre.mk>
+PORTDOCS=	AUTHORS ChangeLog NEWS README
+PLIST_FILES=	bin/${PORTNAME} \
+		%%DATADIR%%/snes.s9xskin \
+		%%DATADIR%%/snsp.s9xskin
+PLIST_DIRS=	%%DATADIR%%
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile
-.endif
-
-post-configure:
-	@${REINPLACE_CMD} -e 's|lstat$$U.o||' ${WRKSRC}/Makefile
+post-patch:
+	@${REINPLACE_CMD} -e 's|<endian\.h>|<sys/endian.h>|' \
+		${WRKSRC}/s9xskin.cc
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/snes9express ${PREFIX}/bin/snes9express
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/snes.s9xskin ${DATADIR}/snes.s9xskin
-	${INSTALL_DATA} ${WRKSRC}/snsp.s9xskin ${DATADIR}/snsp.s9xskin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.s9xskin ${DATADIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for file in AUTHORS ChangeLog COPYING NEWS README
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
