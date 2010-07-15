@@ -25,7 +25,8 @@ PATCHFILES=	defined-or-${PERL_VERSION}.bz2
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
-CONFLICTS=	perl-5.6.* perl-5.10.* perl-threaded-5.10.*
+CONFLICTS=	perl-5.6.* perl-5.10.* perl-threaded-5.10.* \
+		perl-5.12.* perl-threaded-5.12.*
 
 OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 		GDBM		"Build GDBM_File extension"		off \

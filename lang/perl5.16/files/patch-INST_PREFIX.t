@@ -1,5 +1,5 @@
---- lib/ExtUtils/t/INST_PREFIX.t.orig	Wed Feb 15 12:46:31 2006
-+++ lib/ExtUtils/t/INST_PREFIX.t	Wed Feb 15 12:46:52 2006
+--- cpan/ExtUtils-MakeMaker/t/INST_PREFIX.t.orig	Wed Feb 15 12:46:31 2006
++++ cpan/ExtUtils-MakeMaker/t/INST_PREFIX.t	Wed Feb 15 12:46:52 2006
 @@ -16,7 +16,7 @@ BEGIN {
  }
  
