@@ -7,6 +7,7 @@
 
 PORTNAME=	ifstated
 PORTVERSION=	4.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://christianserving.org/ports/net/ifstated/
