@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gaupol
-PORTVERSION=	0.15.1
-PORTREVISION=	1
+PORTVERSION=	0.17
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.gna.org/gaupol/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION:R}
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subtitle editor
@@ -29,6 +28,6 @@ INSTALLS_ICONS=	yes
 MAN1=		${PORTNAME}.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|share/man/|man/|' ${WRKSRC}/manifest/data-files
+	@${REINPLACE_CMD} -e 's|share/man|man|g' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
