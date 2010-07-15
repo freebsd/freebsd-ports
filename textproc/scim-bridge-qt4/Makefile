@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scim-bridge
-PORTVERSION=	0.4.15
-PORTREVISION=	3
+PORTVERSION=	0.4.16
 CATEGORIES=	textproc
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 PKGNAMESUFFIX=	-qt4
@@ -18,13 +17,18 @@ COMMENT=	Qt4 client for Scim-bridge
 RUN_DEPENDS=	scim-bridge:${PORTSDIR}/textproc/scim-bridge
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui corelib moc_build
+QT_COMPONENTS=	corelib gui moc_build
 QT_NONSTANDARD=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-D__STDC_ISO_10646__"
+LICENSE=	GPLv2 LGPL21
+LICENSE_FILES=	${WRKSRC}/doc/LICENSE.GPL ${WRKSRC}/doc/LICENSE.LGPL
+LICENSE_COMB=	dual
+
+CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
+CXXFLAGS+=	${CPPFLAGS}
 
 CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE} \
 		--disable-agent \
