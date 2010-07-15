@@ -1,0 +1,29 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -24583,6 +24583,7 @@
+ 
+   enable_gtk2_immodule="yes";
+ fi
++enable_gtk2_immodule="no";
+ 
+ # Check if we should build scim-bridge-qt-immodule
+ 
+@@ -24660,6 +24661,7 @@
+ 
+   enable_qt3_immodule="yes";
+ fi
++enable_qt3_immodule="no";
+ 
+ 
+ pkg_failed=no
+@@ -24736,6 +24738,7 @@
+ 
+   enable_qt4_immodule="yes";
+ fi
++enable_qt4_immodule="no";
+ 
+ ###########################################################
+ ##             Definiation of compile args.              ##

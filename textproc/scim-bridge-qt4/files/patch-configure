@@ -1,0 +1,22 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -24584,6 +24584,8 @@
+   enable_gtk2_immodule="yes";
+ fi
+ 
++enable_gtk2_immodule="no";
++
+ # Check if we should build scim-bridge-qt-immodule
+ 
+ pkg_failed=no
+@@ -24661,6 +24663,7 @@
+   enable_qt3_immodule="yes";
+ fi
+ 
++enable_qt3_immodule="no";
+ 
+ pkg_failed=no
+ { $as_echo "$as_me:$LINENO: checking for QT4" >&5
