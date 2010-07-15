@@ -1,36 +1,14 @@
 bin/cfityk
 bin/fityk
 bin/xyconv
-include/fityk/brucker_raw.h
-include/fityk/cache.h
-include/fityk/canberra_mca.h
-include/fityk/cpi.h
-include/fityk/dbws.h
-include/fityk/gsas.h
-include/fityk/pdcif.h
-include/fityk/philips_raw.h
-include/fityk/philips_udf.h
-include/fityk/riet7.h
-include/fityk/rigaku_dat.h
-include/fityk/text.h
-include/fityk/uxd.h
-include/fityk/vamas.h
-include/fityk/winspec_spe.h
-include/fityk/xfit_xdd.h
-include/fityk/xylib.h
 include/fityk.h
 lib/libfityk.a
 lib/libfityk.la
 lib/libfityk.so
 lib/libfityk.so.2
-lib/libxy.a
-lib/libxy.la
-lib/libxy.so
-lib/libxy.so.2
 share/applications/fityk.desktop
 share/mime/packages/fityk.xml
 share/pixmaps/fityk.png
 @dirrmtry share/applications
-@dirrm include/fityk
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
