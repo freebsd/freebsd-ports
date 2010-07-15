@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	photopc
-PORTVERSION=	3.05
+PORTVERSION=	3.06
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -15,6 +15,7 @@ COMMENT=	A utility to manage an Epson PhotoPC 500 digital camera
 
 GNU_CONFIGURE=	yes
 
-MAN1=	photopc.1 epinfo.1
+MAN1=		epinfo.1 photopc.1
+PLIST_FILES=	bin/epinfo bin/photopc include/eph_io.h lib/libeph_io.a
 
 .include <bsd.port.mk>
