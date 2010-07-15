@@ -18,6 +18,7 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/de/Windows
 %%PORTDOCS%%%%DOCSDIR%%/de/Windows.kompilieren
 %%PORTDOCS%%%%DOCSDIR%%/de/subversion
+%%PORTDOCS%%%%DOCSDIR%%/en/FreeDoko AI.rtf
 %%PORTDOCS%%%%DOCSDIR%%/en/FreeDoko_concept.tex
 %%PORTDOCS%%%%DOCSDIR%%/en/FreeDoko_rules.tex
 %%PORTDOCS%%%%DOCSDIR%%/en/README.html
@@ -25,7 +26,7 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/en/Windows
 %%PORTDOCS%%%%DOCSDIR%%/en/shortrules.tex
 %%PORTDOCS%%%%DOCSDIR%%/freedoko.sgml
-%%PORTDOCS%%%%DOCSDIR%%/hpux.required_libs.txt
+%%PORTDOCS%%%%DOCSDIR%%/hpux.required_libs-ia64.txt
 %%DATADIR%%/backgrounds/table.png
 %%DATADIR%%/cardsets/xskat/COPYRIGHT
 %%DATADIR%%/cardsets/xskat/french/COPYRIGHT
