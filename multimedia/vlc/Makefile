@@ -55,6 +55,7 @@ OPTIONS=	A52 "A52 DVD audio decoder" On \
 		OGG "Ogg audio decoder support" On \
 		OPENGL "OpenGL acceleration support" Off \
 		PNG "PNG graphics format support" On \
+		PORTAUDIO "Portaudio library support" Off \
 		PULSE "Pulse Audio support" Off \
 		QT4 "Qt4 Interface" On \
 		REALAUDIO "Real Audio(R) support" On \
@@ -172,17 +173,12 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__access__file.c \
 		${FILESDIR}/extra-patch-modules__access__fs.c
 .endif
 
-.if (${OSVERSION} < 700042) && defined(WITH_QT4)
-IGNORE=	does not build on FreeBSD 6.x with Qt4.x, set this OPTION to off or\
-	define WITHOUT_QT4 to build CLI only version
-.endif
-
 .if (${OSVERSION} < 701000)
 CFLAGS+=	-DHAVE_SYS_MOUNT_H
 .endif
 
 .if (${OSVERSION} < 700000)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules_access_v4l2.c
+BROKEN=	VLC 1.1.0 does not work on FreeBSD 6.x
 .endif
 
 .if ${PERL_LEVEL} < 500800
@@ -445,6 +441,13 @@ LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=--enable-png
 .endif
 
+.if defined(WITH_PORTAUDIO)
+LIB_DEPENDS+=	portaudio.2:${PORTSDIR}/audio/portaudio2
+CONFIGURE_ARGS+=--enable-portaudio
+.else
+CONFIGURE_ARGS+=--disable-portaudio
+.endif
+
 .if defined(WITH_PULSE)
 CONFIGURE_ARGS+=--enable-pulse
 .else
@@ -635,6 +638,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${WITH_CDROM_DEVICE}|g' \
 		-e 's|/dev/dvd|${WITH_DVD_DEVICE}|g' \
 		${WRKSRC}/include/vlc_config.h
+	${REINPLACE_CMD} -e 's|portaudio\.h|portaudio2/&|g' \
+		${WRKSRC}/modules/audio_output/portaudio.c
 
 pre-install:
 	${RM} -rf ${PLIST} ${FAKEDIR}
