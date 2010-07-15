@@ -7,15 +7,12 @@
 
 PORTNAME=	minivmac
 PORTVERSION=	3.0.0
-
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}.src.tgz ${PORTNAME}-${PORTVERSION}.prj.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A miniature Macintosh emulator
-
-BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
 WRKSRC=		${WRKDIR}/projects/bgclx86d
 
