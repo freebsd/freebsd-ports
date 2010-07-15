@@ -11,9 +11,4 @@ bin/numdiff
 %%PORTDOCS%%%%DOCSDIR%%/numdiff.html
 %%PORTDOCS%%%%DOCSDIR%%/numdiff.pdf
 %%PORTDOCS%%%%DOCSDIR%%/numdiff.txt
-share/licenses/numdiff-5.2.1/COPYING
-share/licenses/numdiff-5.2.1/LICENSE
-share/licenses/numdiff-5.2.1/catalog.mk
-@dirrm share/licenses/numdiff-5.2.1
-@dirrm share/licenses
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
