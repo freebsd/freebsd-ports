@@ -7,14 +7,13 @@
 
 PORTNAME=	gnulib
 PORTVERSION=	20100704
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://erislabs.net/ianb/projects/gnulib/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU portability library
-
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
@@ -34,8 +33,6 @@ PLIST_FILES+=	%%DOCSDIR%%/${PORTNAME}.html
 
 post-patch:
 	${REINPLACE_CMD} -e 's/date -u.*/stat -f %Sa -t "@set UPDATED %F %T" `ls -t $$^ | sed 1q` > $$@/' ${WRKSRC}/doc/Makefile
-	${REINPLACE_CMD} -e '1s@/bin/sh@${LOCALBASE}/bin/bash@' \
-		${WRKSRC}/gnulib-tool
 
 do-build:
 	cd ${WRKSRC} && ${GMAKE} -C doc info html
