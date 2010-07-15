@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipguard
-PORTVERSION=	1.02
+PORTVERSION=	1.04
 CATEGORIES=	security net
 MASTER_SITES=	http://ipguard.deep.perm.ru/files/ http://deep.perm.ru/files/ipguard/
 
