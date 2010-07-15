@@ -6,21 +6,31 @@
 #
 
 PORTNAME=	ristretto
-PORTVERSION=	0.0.22
-PORTREVISION=	5
+PORTVERSION=	0.0.91
 CATEGORIES=	graphics xfce
-MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
+MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
+DIST_SUBDIR=	xfce4
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An image-viewer with xfce-integration
 
-LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		cairo.2:${PORTSDIR}/graphics/cairo
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 glib20 intltool intlhack desktopfileutils pkgconfig
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
-USE_XFCE=	configenv libutil thunar
+USE_XFCE=	configenv libutil libgui xfconf
+
+post-patch:
+	@${REINPLACE_CMD} -e 's| docs||' ${WRKSRC}/Makefile.in
+
+post-install:
+	@-update-desktop-database
 
 .include <bsd.port.mk>
