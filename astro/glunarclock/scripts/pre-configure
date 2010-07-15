@@ -1,0 +1,2 @@
+#
+sed -i"-orig" 's|\$\"\$|\"\$|g' ${WRKSRC}/configure

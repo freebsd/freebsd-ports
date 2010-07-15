@@ -1,39 +1,45 @@
 libdata/bonobo/servers/GNOME_GLunarclockApplet_Factory.server
 libexec/glunarclock-applet-2
-share/glunarclock/glunarclock.glade
+share/glunarclock/glunarclock.ui
 share/gnome-2.0/ui/GNOME_GLunarclockApplet.xml
 share/gnome/help/glunarclock-applet-2/C/figures/glunarclock_applet.png
 share/gnome/help/glunarclock-applet-2/C/glunarclock-applet-2.xml
 share/gnome/help/glunarclock-applet-2/C/legal.xml
-share/omf/glunarclock/glunarclock-applet-2-C.omf
+share/omf/glunarclock-applet-2/glunarclock-applet-2-C.omf
 share/pixmaps/glunarclock-logo.png
 share/pixmaps/glunarclock/cartoonmoon_12frames.png
 share/pixmaps/glunarclock/moon_56frames.png
-share/locale/ast_ES/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/az/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/br/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/da/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/de/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/es/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/fi/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/fr/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/ga/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/gl/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/hu/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/ja/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/ms/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/nl/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/no/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/ro/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/ru/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/rw/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/sk/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/sr/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/sv/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/vi/LC_MESSAGES/glunarclock-%%VERSION%%.mo
-share/locale/wa/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/ast_ES/LC_MESSAGES/glunarclock.mo
+share/locale/az/LC_MESSAGES/glunarclock.mo
+share/locale/bg/LC_MESSAGES/glunarclock.mo
+share/locale/br/LC_MESSAGES/glunarclock.mo
+share/locale/da/LC_MESSAGES/glunarclock.mo
+share/locale/de/LC_MESSAGES/glunarclock.mo
+share/locale/es/LC_MESSAGES/glunarclock.mo
+share/locale/fi/LC_MESSAGES/glunarclock.mo
+share/locale/fr/LC_MESSAGES/glunarclock.mo
+share/locale/ga/LC_MESSAGES/glunarclock.mo
+share/locale/gl/LC_MESSAGES/glunarclock.mo
+share/locale/hu/LC_MESSAGES/glunarclock.mo
+share/locale/id/LC_MESSAGES/glunarclock.mo
+share/locale/ja/LC_MESSAGES/glunarclock.mo
+share/locale/lv/LC_MESSAGES/glunarclock.mo
+share/locale/ms/LC_MESSAGES/glunarclock.mo
+share/locale/nl/LC_MESSAGES/glunarclock.mo
+share/locale/no/LC_MESSAGES/glunarclock.mo
+share/locale/pt_BR/LC_MESSAGES/glunarclock.mo
+share/locale/ro/LC_MESSAGES/glunarclock.mo
+share/locale/ru/LC_MESSAGES/glunarclock.mo
+share/locale/rw/LC_MESSAGES/glunarclock.mo
+share/locale/sk/LC_MESSAGES/glunarclock.mo
+share/locale/sr/LC_MESSAGES/glunarclock.mo
+share/locale/sv/LC_MESSAGES/glunarclock.mo
+share/locale/vi/LC_MESSAGES/glunarclock.mo
+share/locale/wa/LC_MESSAGES/glunarclock.mo
+share/locale/zh_CN/LC_MESSAGES/glunarclock.mo
+share/locale/zh_TW/LC_MESSAGES/glunarclock.mo
 @dirrm share/pixmaps/glunarclock
-@dirrm share/omf/glunarclock
+@dirrm share/omf/glunarclock-applet-2
 @dirrm share/gnome/help/glunarclock-applet-2/C/figures
 @dirrm share/gnome/help/glunarclock-applet-2/C
 @dirrm share/gnome/help/glunarclock-applet-2
