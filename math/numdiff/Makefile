@@ -24,12 +24,8 @@ INFO=	numdiff
 
 .include <bsd.port.pre.mk>
 
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/numdiff.txt ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/numdiff.html ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/numdiff.pdf ${DOCSDIR}
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	--docdir=${WRKDIR}/doc
 .endif
 
 .include <bsd.port.post.mk>
