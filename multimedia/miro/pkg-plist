@@ -42,12 +42,18 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/databasehelper.py
 %%PYTHON_SITELIBDIR%%/miro/databasehelper.pyc
 %%PYTHON_SITELIBDIR%%/miro/databasehelper.pyo
+%%PYTHON_SITELIBDIR%%/miro/databaselog.py
+%%PYTHON_SITELIBDIR%%/miro/databaselog.pyc
+%%PYTHON_SITELIBDIR%%/miro/databaselog.pyo
 %%PYTHON_SITELIBDIR%%/miro/databasesanity.py
 %%PYTHON_SITELIBDIR%%/miro/databasesanity.pyc
 %%PYTHON_SITELIBDIR%%/miro/databasesanity.pyo
 %%PYTHON_SITELIBDIR%%/miro/databaseupgrade.py
 %%PYTHON_SITELIBDIR%%/miro/databaseupgrade.pyc
 %%PYTHON_SITELIBDIR%%/miro/databaseupgrade.pyo
+%%PYTHON_SITELIBDIR%%/miro/datastructures.py
+%%PYTHON_SITELIBDIR%%/miro/datastructures.pyc
+%%PYTHON_SITELIBDIR%%/miro/datastructures.pyo
 %%PYTHON_SITELIBDIR%%/miro/dbupgradeprogress.py
 %%PYTHON_SITELIBDIR%%/miro/dbupgradeprogress.pyc
 %%PYTHON_SITELIBDIR%%/miro/dbupgradeprogress.pyo
@@ -93,7 +99,6 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/eventloop.py
 %%PYTHON_SITELIBDIR%%/miro/eventloop.pyc
 %%PYTHON_SITELIBDIR%%/miro/eventloop.pyo
-%%PYTHON_SITELIBDIR%%/miro/fasttypes.so
 %%PYTHON_SITELIBDIR%%/miro/feed.py
 %%PYTHON_SITELIBDIR%%/miro/feed.pyc
 %%PYTHON_SITELIBDIR%%/miro/feed.pyo
@@ -278,6 +283,9 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/itemcontextmenu.py
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/itemcontextmenu.pyc
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/itemcontextmenu.pyo
+%%PYTHON_SITELIBDIR%%/miro/frontends/widgets/itemedit.py
+%%PYTHON_SITELIBDIR%%/miro/frontends/widgets/itemedit.pyc
+%%PYTHON_SITELIBDIR%%/miro/frontends/widgets/itemedit.pyo
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/itemlist.py
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/itemlist.pyc
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/itemlist.pyo
@@ -380,13 +388,12 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/iconcache.py
 %%PYTHON_SITELIBDIR%%/miro/iconcache.pyc
 %%PYTHON_SITELIBDIR%%/miro/iconcache.pyo
+%%PYTHON_SITELIBDIR%%/miro/iso_639.py
+%%PYTHON_SITELIBDIR%%/miro/iso_639.pyc
+%%PYTHON_SITELIBDIR%%/miro/iso_639.pyo
 %%PYTHON_SITELIBDIR%%/miro/item.py
 %%PYTHON_SITELIBDIR%%/miro/item.pyc
 %%PYTHON_SITELIBDIR%%/miro/item.pyo
-%%PYTHON_SITELIBDIR%%/miro/libtorrent.so
-%%PYTHON_SITELIBDIR%%/miro/menubar.py
-%%PYTHON_SITELIBDIR%%/miro/menubar.pyc
-%%PYTHON_SITELIBDIR%%/miro/menubar.pyo
 %%PYTHON_SITELIBDIR%%/miro/messagehandler.py
 %%PYTHON_SITELIBDIR%%/miro/messagehandler.pyc
 %%PYTHON_SITELIBDIR%%/miro/messagehandler.pyo
@@ -399,9 +406,6 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/moviedata.py
 %%PYTHON_SITELIBDIR%%/miro/moviedata.pyc
 %%PYTHON_SITELIBDIR%%/miro/moviedata.pyo
-%%PYTHON_SITELIBDIR%%/miro/olddatabaseupgrade.py
-%%PYTHON_SITELIBDIR%%/miro/olddatabaseupgrade.pyc
-%%PYTHON_SITELIBDIR%%/miro/olddatabaseupgrade.pyo
 %%PYTHON_SITELIBDIR%%/miro/opml.py
 %%PYTHON_SITELIBDIR%%/miro/opml.pyc
 %%PYTHON_SITELIBDIR%%/miro/opml.pyo
@@ -420,9 +424,9 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/application.py
 %%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/application.pyc
 %%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/application.pyo
-%%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/httpobserver.so
-%%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/mozprompt.so
-%%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/pluginsdir.so
+%%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/mediakeys.py
+%%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/mediakeys.pyc
+%%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/mediakeys.pyo
 %%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/prefpanelset.py
 %%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/prefpanelset.pyc
 %%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/prefpanelset.pyo
@@ -432,16 +436,15 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/timer.py
 %%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/timer.pyc
 %%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/timer.pyo
+%%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/webkitbrowser.py
+%%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/webkitbrowser.pyc
+%%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/webkitbrowser.pyo
 %%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/widgetset.py
 %%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/widgetset.pyc
 %%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/widgetset.pyo
-%%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/windowcreator.so
 %%PYTHON_SITELIBDIR%%/miro/plat/idletime.py
 %%PYTHON_SITELIBDIR%%/miro/plat/idletime.pyc
 %%PYTHON_SITELIBDIR%%/miro/plat/idletime.pyo
-%%PYTHON_SITELIBDIR%%/miro/plat/mozsetup.py
-%%PYTHON_SITELIBDIR%%/miro/plat/mozsetup.pyc
-%%PYTHON_SITELIBDIR%%/miro/plat/mozsetup.pyo
 %%PYTHON_SITELIBDIR%%/miro/plat/onetime.py
 %%PYTHON_SITELIBDIR%%/miro/plat/onetime.pyc
 %%PYTHON_SITELIBDIR%%/miro/plat/onetime.pyo
@@ -457,9 +460,6 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/plat/renderers/gstreamerrenderer.py
 %%PYTHON_SITELIBDIR%%/miro/plat/renderers/gstreamerrenderer.pyc
 %%PYTHON_SITELIBDIR%%/miro/plat/renderers/gstreamerrenderer.pyo
-%%PYTHON_SITELIBDIR%%/miro/plat/renderers/xinerenderer.py
-%%PYTHON_SITELIBDIR%%/miro/plat/renderers/xinerenderer.pyc
-%%PYTHON_SITELIBDIR%%/miro/plat/renderers/xinerenderer.pyo
 %%PYTHON_SITELIBDIR%%/miro/plat/resources.py
 %%PYTHON_SITELIBDIR%%/miro/plat/resources.pyc
 %%PYTHON_SITELIBDIR%%/miro/plat/resources.pyo
@@ -500,7 +500,6 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/singleclick.py
 %%PYTHON_SITELIBDIR%%/miro/singleclick.pyc
 %%PYTHON_SITELIBDIR%%/miro/singleclick.pyo
-%%PYTHON_SITELIBDIR%%/miro/sorts.so
 %%PYTHON_SITELIBDIR%%/miro/startup.py
 %%PYTHON_SITELIBDIR%%/miro/startup.pyc
 %%PYTHON_SITELIBDIR%%/miro/startup.pyo
@@ -516,18 +515,15 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/test/__init__.py
 %%PYTHON_SITELIBDIR%%/miro/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/__init__.pyo
-%%PYTHON_SITELIBDIR%%/miro/test/bmachinetest.py
-%%PYTHON_SITELIBDIR%%/miro/test/bmachinetest.pyc
-%%PYTHON_SITELIBDIR%%/miro/test/bmachinetest.pyo
 %%PYTHON_SITELIBDIR%%/miro/test/databasesanitytest.py
 %%PYTHON_SITELIBDIR%%/miro/test/databasesanitytest.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/databasesanitytest.pyo
 %%PYTHON_SITELIBDIR%%/miro/test/databasetest.py
 %%PYTHON_SITELIBDIR%%/miro/test/databasetest.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/databasetest.pyo
-%%PYTHON_SITELIBDIR%%/miro/test/fasttypestest.py
-%%PYTHON_SITELIBDIR%%/miro/test/fasttypestest.pyc
-%%PYTHON_SITELIBDIR%%/miro/test/fasttypestest.pyo
+%%PYTHON_SITELIBDIR%%/miro/test/datastructurestest.py
+%%PYTHON_SITELIBDIR%%/miro/test/datastructurestest.pyc
+%%PYTHON_SITELIBDIR%%/miro/test/datastructurestest.pyo
 %%PYTHON_SITELIBDIR%%/miro/test/feedparsertest.py
 %%PYTHON_SITELIBDIR%%/miro/test/feedparsertest.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/feedparsertest.pyo
@@ -558,9 +554,6 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/test/messagetest.py
 %%PYTHON_SITELIBDIR%%/miro/test/messagetest.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/messagetest.pyo
-%%PYTHON_SITELIBDIR%%/miro/test/olddatabaseupgradetest.py
-%%PYTHON_SITELIBDIR%%/miro/test/olddatabaseupgradetest.pyc
-%%PYTHON_SITELIBDIR%%/miro/test/olddatabaseupgradetest.pyo
 %%PYTHON_SITELIBDIR%%/miro/test/parseurltest.py
 %%PYTHON_SITELIBDIR%%/miro/test/parseurltest.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/parseurltest.pyo
@@ -576,6 +569,9 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/test/signalstest.py
 %%PYTHON_SITELIBDIR%%/miro/test/signalstest.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/signalstest.pyo
+%%PYTHON_SITELIBDIR%%/miro/test/sparkletest.py
+%%PYTHON_SITELIBDIR%%/miro/test/sparkletest.pyc
+%%PYTHON_SITELIBDIR%%/miro/test/sparkletest.pyo
 %%PYTHON_SITELIBDIR%%/miro/test/storedatabasetest.py
 %%PYTHON_SITELIBDIR%%/miro/test/storedatabasetest.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/storedatabasetest.pyo
@@ -609,13 +605,12 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/xhtmltools.py
 %%PYTHON_SITELIBDIR%%/miro/xhtmltools.pyc
 %%PYTHON_SITELIBDIR%%/miro/xhtmltools.pyo
-%%PYTHON_SITELIBDIR%%/miro/xine.so
-libexec/miro/xine_extractor
 share/applications/miro.desktop
 share/icons/hicolor/128x128/apps/miro.png
 share/icons/hicolor/24x24/apps/miro.png
 share/icons/hicolor/48x48/apps/miro.png
 share/icons/hicolor/72x72/apps/miro.png
+share/locale/af/LC_MESSAGES/miro.mo
 share/locale/ar/LC_MESSAGES/miro.mo
 share/locale/be/LC_MESSAGES/miro.mo
 share/locale/bg/LC_MESSAGES/miro.mo
@@ -667,6 +662,7 @@ share/locale/mk/LC_MESSAGES/miro.mo
 share/locale/ml/LC_MESSAGES/miro.mo
 share/locale/mr/LC_MESSAGES/miro.mo
 share/locale/ms/LC_MESSAGES/miro.mo
+share/locale/mt/LC_MESSAGES/miro.mo
 share/locale/nb/LC_MESSAGES/miro.mo
 share/locale/nds/LC_MESSAGES/miro.mo
 share/locale/ne/LC_MESSAGES/miro.mo
@@ -703,9 +699,6 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/images/broken-image.gif
 %%DATADIR%%/resources/images/cancel-button.png
 %%DATADIR%%/resources/images/channelguide-icon-tablist.png
-%%DATADIR%%/resources/images/display_center.png
-%%DATADIR%%/resources/images/display_left.png
-%%DATADIR%%/resources/images/display_right.png
 %%DATADIR%%/resources/images/download-arrow.png
 %%DATADIR%%/resources/images/feedicon.png
 %%DATADIR%%/resources/images/folder-icon-tablist.png
@@ -733,7 +726,18 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/images/icon-site.png
 %%DATADIR%%/resources/images/icon-streaming.png
 %%DATADIR%%/resources/images/icon-streaming_large.png
-%%DATADIR%%/resources/images/icon-updating.png
+%%DATADIR%%/resources/images/icon-updating-0.png
+%%DATADIR%%/resources/images/icon-updating-1.png
+%%DATADIR%%/resources/images/icon-updating-10.png
+%%DATADIR%%/resources/images/icon-updating-11.png
+%%DATADIR%%/resources/images/icon-updating-2.png
+%%DATADIR%%/resources/images/icon-updating-3.png
+%%DATADIR%%/resources/images/icon-updating-4.png
+%%DATADIR%%/resources/images/icon-updating-5.png
+%%DATADIR%%/resources/images/icon-updating-6.png
+%%DATADIR%%/resources/images/icon-updating-7.png
+%%DATADIR%%/resources/images/icon-updating-8.png
+%%DATADIR%%/resources/images/icon-updating-9.png
 %%DATADIR%%/resources/images/icon-video.png
 %%DATADIR%%/resources/images/icon-video_large.png
 %%DATADIR%%/resources/images/list-view-button-icon.png
@@ -757,6 +761,7 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/images/navstop_disabled.png
 %%DATADIR%%/resources/images/normal-view-button-icon.png
 %%DATADIR%%/resources/images/pause-button.png
+%%DATADIR%%/resources/images/pause-item-button.png
 %%DATADIR%%/resources/images/pause.png
 %%DATADIR%%/resources/images/pause_active.png
 %%DATADIR%%/resources/images/play-button.png
@@ -786,7 +791,6 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/images/search_icon_bliptv.png
 %%DATADIR%%/resources/images/search_icon_blogdigger.png
 %%DATADIR%%/resources/images/search_icon_dailymotion.png
-%%DATADIR%%/resources/images/search_icon_everyzing.png
 %%DATADIR%%/resources/images/search_icon_google.png
 %%DATADIR%%/resources/images/search_icon_mefeedia.png
 %%DATADIR%%/resources/images/search_icon_metavid.png
@@ -825,6 +829,7 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/images/status-icon-newly-downloaded.png
 %%DATADIR%%/resources/images/stop.png
 %%DATADIR%%/resources/images/stop_active.png
+%%DATADIR%%/resources/images/subtitles_down.png
 %%DATADIR%%/resources/images/thumb-default-audio.png
 %%DATADIR%%/resources/images/thumb-default-folder.png
 %%DATADIR%%/resources/images/thumb-default-video.png
@@ -842,7 +847,6 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/searchengines/bliptv.xml
 %%DATADIR%%/resources/searchengines/blogdigger.xml
 %%DATADIR%%/resources/searchengines/dailymotion.xml
-%%DATADIR%%/resources/searchengines/everyzing.xml.disabled
 %%DATADIR%%/resources/searchengines/google.xml
 %%DATADIR%%/resources/searchengines/metavid.xml
 %%DATADIR%%/resources/searchengines/mininova.xml
@@ -851,6 +855,7 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/searchengines/yahoosearch.xml
 %%DATADIR%%/resources/searchengines/youtube.xml
 %%DATADIR%%/resources/searchengines/youtubeuser.xml
+%%DATADIR%%/resources/testdata/database.duplicate-id-test
 %%DATADIR%%/resources/testdata/dean.jpg
 %%DATADIR%%/resources/testdata/democracy-now-unicode-bug.xml
 %%DATADIR%%/resources/testdata/hide-result
@@ -861,6 +866,7 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/testdata/olddatabase-0.8.1
 %%DATADIR%%/resources/testdata/olddatabase-0.8.2
 %%DATADIR%%/resources/testdata/olddatabase-0.8.2-2
+%%DATADIR%%/resources/testdata/olddatabase.bug.12305
 %%DATADIR%%/resources/testdata/olddatabase.bug.2003
 %%DATADIR%%/resources/testdata/olddatabase.bug.2515
 %%DATADIR%%/resources/testdata/olddatabase.bug.2685
@@ -892,6 +898,8 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/testdata/stripperdata/test7.in
 %%DATADIR%%/resources/testdata/stripperdata/test8.expected
 %%DATADIR%%/resources/testdata/stripperdata/test8.in
+%%DATADIR%%/resources/testdata/stripperdata/test9.expected
+%%DATADIR%%/resources/testdata/stripperdata/test9.in
 %%DATADIR%%/resources/testdata/stripperdata/testburma.expected
 %%DATADIR%%/resources/testdata/stripperdata/testburma.in
 %%DATADIR%%/resources/testdata/translation-result
@@ -923,8 +931,9 @@ share/pixmaps/miro.xpm
 @dirrmtry share/locale/ckb
 @dirrmtry share/locale/csb/LC_MESSAGES
 @dirrmtry share/locale/csb
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
 @dirrmtry share/applications
-@dirrm libexec/miro
 @dirrm %%PYTHON_SITELIBDIR%%/miro/test
 @dirrm %%PYTHON_SITELIBDIR%%/miro/plat/renderers
 @dirrm %%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets
