@@ -11,7 +11,6 @@
 %%XPI_XPIDIR%%/chrome/content/colorpicker2.css
 %%XPI_XPIDIR%%/chrome/content/colorpicker2.xml
 %%XPI_XPIDIR%%/chrome/content/colorvalidator.js
-%%XPI_XPIDIR%%/chrome/content/confirmation.html
 %%XPI_XPIDIR%%/chrome/content/firefoxOptionsOverlay.xul
 %%XPI_XPIDIR%%/chrome/content/firefoxOverlay-svg.xul
 %%XPI_XPIDIR%%/chrome/content/firefoxOverlay.xul
@@ -28,6 +27,7 @@
 %%XPI_XPIDIR%%/chrome/content/images/edit-clear-disabled.png
 %%XPI_XPIDIR%%/chrome/content/images/edit-clear.png
 %%XPI_XPIDIR%%/chrome/content/images/emblem-favorite.png
+%%XPI_XPIDIR%%/chrome/content/images/fpplus.png
 %%XPI_XPIDIR%%/chrome/content/images/foxyproxy-nocopy.gif
 %%XPI_XPIDIR%%/chrome/content/images/go-down-disabled.png
 %%XPI_XPIDIR%%/chrome/content/images/go-down.png
