@@ -4,6 +4,4 @@ a search result launches a user command that can for example load the file in
 an editor at the appropriate line. The search can optionally ignore CVS 
 directories.
 
-WWW: http://www3.sympatico.ca/sarrazip/dev/sagasu.html
-
-Juan Salaverria -- <rael@vectorstar.net>
+WWW: http://sarrazip.com/dev/sagasu.html
