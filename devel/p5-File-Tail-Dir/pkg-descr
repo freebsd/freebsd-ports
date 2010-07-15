@@ -1,0 +1,5 @@
+This module monitors and processes any lines appended to the end of one 
+or more files in a given list of directories and keeping state between 
+sessions.
+
+WWW:	http://search.cpan.org/dist/File-Tail-Dir/
