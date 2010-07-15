@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	orc
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.6
 CATEGORIES=	devel
 MASTER_SITES=	http://code.entropywave.com/download/orc/
 
@@ -39,5 +39,10 @@ NOPORTEXAMPLES=	yes
 .endif
 
 MAKE_ARGS+=	SUBDIRS="${SUBDIRS}"
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's|pkgconfigdir=.*|pkgconfigdir=\"\\$$(prefix)/libdata/pkgconfig\"|g' \
+		${WRKSRC}/configure ${WRKSRC}/configure.ac
 
 .include <bsd.port.post.mk>
