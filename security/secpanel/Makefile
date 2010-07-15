@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	secpanel
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 PORTEPOCH=	1
 CATEGORIES=	security tcl tk
-MASTER_SITES=	http://themediahost.de/secpanel/data/ CENKES
+MASTER_SITES=	SF/${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,22 +17,19 @@ COMMENT=	GUI for managing and running ssh and related utilities
 
 RUN_DEPENDS=	ssh-askpass:${PORTSDIR}/security/openssh-askpass
 
-USE_TK_RUN=	84
+WRKSRC=		${WRKDIR}/usr/local
 NO_BUILD=	yes
 
-post-extract:
-	@${MV} ${WRKDIR}/usr ${WRKSRC}
-	@${CHMOD} -R a+rX ${WRKSRC}/
-	@${RM} -rf ${WRKSRC}/local/lib/secpanel/out/
+USE_TK_WRAPPER=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's!^exec wish!exec ${WISH}!' \
+	@${REINPLACE_CMD} \
 		-e 's!\[file dirname \[info script\]\]/../lib/secpanel!${DATADIR}!' \
-		-e 's!askpassbin askpass!askpassbin ssh-askpass!' \
-			${WRKSRC}/local/bin/secpanel
+			${WRKSRC}/bin/secpanel
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/local/bin/secpanel ${PREFIX}/bin/
-	@cd ${WRKSRC}/local/lib/secpanel/&&${COPYTREE_SHARE} . ${DATADIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/secpanel ${PREFIX}/bin
+	@(cd ${WRKSRC}/lib/secpanel && ${COPYTREE_SHARE} . ${DATADIR})
+	@${CHMOD} u+rw ${DATADIR}/default.config
 
 .include <bsd.port.mk>
