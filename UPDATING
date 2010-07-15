@@ -5,6 +5,30 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100715:
+  AFFECTS: users of lang/perl*
+  AUTHOR: skv@FreeBSD.org
+
+  lang/perl5.12 is out. If you want to switch to it from, for example
+  lang/perl5.10, that is:
+
+  Portupgrade users:
+    0) Fix pkgdb.db (for safety):
+	pkgdb -Ff
+
+    1) Reinstall new version of Perl (5.12):
+	env DISABLE_CONFLICTS=1 portupgrade -o lang/perl5.12 -f perl-5.10.\*
+
+    2) Reinstall everything that depends on Perl:
+	portupgrade -fr perl
+
+  Portmaster users:
+	env DISABLE_CONFLICTS=1 portmaster -o lang/perl5.12 lang/perl5.10
+	portmaster -r perl-
+
+  Note: If the "perl-" glob matches  more than one port you will need to
+	specify the name of the Perl directory in /var/db/pkg explicitly.
+
 20100626:
   AFFECTS: users of japanese/ibus-mozc
   AUTHOR: daichi@FreeBSD.org

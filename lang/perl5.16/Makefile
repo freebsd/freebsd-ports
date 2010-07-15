@@ -7,7 +7,6 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	2
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -21,8 +20,8 @@ DIST_SUBDIR=	perl
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
-CONFLICTS=	perl-5.6.* perl-5.8.* perl-threaded-5.8.*
-MAKE_JOBS_UNSAFE=	yes
+CONFLICTS=	perl-5.6.* perl-5.8.* perl-threaded-5.8.* \
+		perl-5.10.* perl-threaded-5.10.*
 
 OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 		GDBM		"Build GDBM_File extension"		off \
@@ -36,7 +35,7 @@ OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 
 PORTSCOUT=	limitw:1,even
 
-PERL_VERSION=	5.10.1
+PERL_VERSION=	5.12.1
 PERL_ARCH=	mach
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VERSION}
 SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
@@ -148,7 +147,7 @@ LINK_USRBIN=	yes
 LINK_USRBIN=	no
 .endif
 
-LATEST_LINK=	perl
+NO_LATEST_LINK=	yes
 
 .if defined(WITH_GDBM)
 MAN3+=	GDBM_File.3
@@ -213,7 +212,7 @@ post-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 test: build
-	@(cd ${WRKSRC}; make test)
+	@(cd ${WRKSRC}; TEST_JOBS=${MAKE_JOBS_NUMBER} make test_harness)
 
 regression-test: test
 
