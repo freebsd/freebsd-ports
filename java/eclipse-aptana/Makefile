@@ -28,6 +28,6 @@ USE_JAVA=	yes
 USE_ZIP=	yes
 
 do-install:
-	@(cd ${WRKDIR} && ${CP} -R features ${PREFIX}/eclipse && ${CP} -R plugins ${PREFIX}/eclipse;)
+	@(cd ${WRKDIR} && ${CP} -R features ${PREFIX}/lib/eclipse && ${CP} -R plugins ${PREFIX}/lib/eclipse;)
 
 .include <bsd.port.mk>
