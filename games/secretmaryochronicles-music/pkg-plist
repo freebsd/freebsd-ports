@@ -32,8 +32,12 @@
 %%DATADIR%%/music/land/water_1.txt
 %%DATADIR%%/music/land/waterway_1.ogg
 %%DATADIR%%/music/land/waterway_1.txt
+%%DATADIR%%/music/overworld/bonus_1.ogg
+%%DATADIR%%/music/overworld/bonus_1.txt
 %%DATADIR%%/music/overworld/land_1.ogg
 %%DATADIR%%/music/overworld/land_1.txt
+%%DATADIR%%/music/overworld/land_2.ogg
+%%DATADIR%%/music/overworld/land_2.txt
 %%DATADIR%%/music/story/default_story_1.ogg
 %%DATADIR%%/music/story/default_story_1.txt
 @dirrm %%DATADIR%%/music/story
