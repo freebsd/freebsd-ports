@@ -6,25 +6,36 @@
 #
 
 PORTNAME=	pnm2ppa
-PORTVERSION=	1.12
-PORTREVISION=	3
+PORTVERSION=	1.13
 CATEGORIES=	print
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PNM images to PPA for some HP printers
 
+OPTIONS=	A4SIZE "Set A4 (not Letter) as a default paper size" off
+
 USE_GHOSTSCRIPT_RUN=	yes
-
-RUN_DEPENDS=	enscript:${PORTSDIR}/print/enscript-letter
-
 USE_GMAKE=	yes
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
-CFLAGS+=	${CPPFLAGS}
+GNU_CONFIGURE=	yes
 
 MAN1=		pnm2ppa.1
+PLIST_FILES=	bin/asciippafilter bin/calibrate_ppa bin/pnm2ppa bin/ppafilter \
+		etc/pnm2ppa.conf.sample
+
+PKGDEINSTALL=	${PKGINSTALL}
+
+.include <bsd.port.pre.mk>
+
+.if defined(A4) || defined(WITH_A4SIZE)
+RUN_DEPENDS=	enscript:${PORTSDIR}/print/enscript-a4
+.else
+RUN_DEPENDS=	enscript:${PORTSDIR}/print/enscript-letter
+.endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|-Wformat-security -g|-Wformat-security| ; \
+		 s|-O2 -DNDEBUG|-DNDEBUG|' ${WRKSRC}/configure
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" \
 		${WRKSRC}/pnm2ppa.conf > ${WRKSRC}/pnm2ppa.conf.sample
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" \
@@ -43,9 +54,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ppafilter ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/pnm2ppa.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/pnm2ppa.conf.sample ${PREFIX}/etc
-.if !exists(${PREFIX}/etc/pnm2ppa.conf)
-	${CP} ${PREFIX}/etc/pnm2ppa.conf.sample ${PREFIX}/etc/pnm2ppa.conf
-.endif
+	@${SETENV} PKG_PREFIX="${PREFIX}" \
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

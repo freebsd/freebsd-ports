@@ -15,7 +15,3 @@ or Postscript files, add the following lines to your"
 	        :if=/usr/local/bin/ppafilter:\\"
 	        :mx#0:\\"
 	        :sh:"
-
-Please be sure that you install the proper flavor of"
-enscript, either A4 or Letter, by setting the PAPERSIZE"
-environment variable."
