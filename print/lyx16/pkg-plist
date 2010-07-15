@@ -123,6 +123,7 @@ bin/tex2lyx
 %%DATADIR%%/doc/de/clipart/Querverweis.png
 %%DATADIR%%/doc/de/clipart/StandardBoxQt4.png
 %%DATADIR%%/doc/de/clipart/UnterdokumentQt4.png
+%%DATADIR%%/doc/el/Intro.lyx
 %%DATADIR%%/doc/es/Customization.lyx
 %%DATADIR%%/doc/es/DocumentoPostizo1.lyx
 %%DATADIR%%/doc/es/DocumentoPostizo2.lyx
@@ -279,6 +280,7 @@ bin/tex2lyx
 %%DATADIR%%/examples/de/splash.lyx
 %%DATADIR%%/examples/de/tufte-handout.lyx
 %%DATADIR%%/examples/docbook_article.lyx
+%%DATADIR%%/examples/el/splash.lyx
 %%DATADIR%%/examples/es/Braille.lyx
 %%DATADIR%%/examples/es/ItemizeBullets.lyx
 %%DATADIR%%/examples/es/beamer-conference-ornate20min.lyx
@@ -1414,6 +1416,7 @@ bin/tex2lyx
 @dirrm %%DATADIR%%/examples/gl
 @dirrm %%DATADIR%%/examples/fr
 @dirrm %%DATADIR%%/examples/fa
+@dirrm %%DATADIR%%/examples/el
 @dirrm %%DATADIR%%/examples/eu
 @dirrm %%DATADIR%%/examples/es
 @dirrm %%DATADIR%%/examples/de
@@ -1444,6 +1447,7 @@ bin/tex2lyx
 @dirrm %%DATADIR%%/doc/gl
 @dirrm %%DATADIR%%/doc/fr/clipart
 @dirrm %%DATADIR%%/doc/fr
+@dirrm %%DATADIR%%/doc/el
 @dirrm %%DATADIR%%/doc/eu
 @dirrm %%DATADIR%%/doc/es/clipart
 @dirrm %%DATADIR%%/doc/es
