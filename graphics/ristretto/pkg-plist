@@ -8,6 +8,7 @@ share/icons/hicolor/36x36/apps/ristretto.png
 share/icons/hicolor/48x48/apps/ristretto.png
 share/icons/hicolor/scalable/apps/ristretto.svg
 share/locale/ar/LC_MESSAGES/ristretto.mo
+share/locale/ast/LC_MESSAGES/ristretto.mo
 share/locale/bg/LC_MESSAGES/ristretto.mo
 share/locale/ca/LC_MESSAGES/ristretto.mo
 share/locale/cs/LC_MESSAGES/ristretto.mo
@@ -36,9 +37,71 @@ share/locale/sv/LC_MESSAGES/ristretto.mo
 share/locale/tr/LC_MESSAGES/ristretto.mo
 share/locale/uk/LC_MESSAGES/ristretto.mo
 share/locale/ur/LC_MESSAGES/ristretto.mo
+share/locale/ur_PK/LC_MESSAGES/ristretto.mo
 share/locale/zh_CN/LC_MESSAGES/ristretto.mo
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
-@dirrmtry share/applications
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/tr/LC_MESSAGES
+@dirrmtry share/locale/tr
+@dirrmtry share/locale/sv/LC_MESSAGES
+@dirrmtry share/locale/sv
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/ru/LC_MESSAGES
+@dirrmtry share/locale/ru
+@dirrmtry share/locale/pt_BR/LC_MESSAGES
+@dirrmtry share/locale/pt_BR
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nl/LC_MESSAGES
+@dirrmtry share/locale/nl
+@dirrmtry share/locale/nb/LC_MESSAGES
+@dirrmtry share/locale/nb
+@dirrmtry share/locale/lv/LC_MESSAGES
+@dirrmtry share/locale/lv
+@dirrmtry share/locale/ja/LC_MESSAGES
+@dirrmtry share/locale/ja
+@dirrmtry share/locale/it/LC_MESSAGES
+@dirrmtry share/locale/it
+@dirrmtry share/locale/id/LC_MESSAGES
+@dirrmtry share/locale/id
+@dirrmtry share/locale/hu/LC_MESSAGES
+@dirrmtry share/locale/hu
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/fr
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/eu/LC_MESSAGES
+@dirrmtry share/locale/eu
+@dirrmtry share/locale/es/LC_MESSAGES
+@dirrmtry share/locale/es
+@dirrmtry share/locale/en_GB/LC_MESSAGES
+@dirrmtry share/locale/en_GB
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
+@dirrmtry share/locale/da/LC_MESSAGES
+@dirrmtry share/locale/da
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/bg/LC_MESSAGES
+@dirrmtry share/locale/bg
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/ar/LC_MESSAGES
+@dirrmtry share/locale/ar
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
