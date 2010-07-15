@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pipestatus
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -15,19 +15,14 @@ COMMENT=	UNIX/POSIX shell helper for running pipes safely
 
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/pipestatus
-.if !defined(NOPORTDOCS)
-PLIST_DIRS=	${DOCSDIR_REL}
-PLIST_FILES+=	${DOCSDIR_REL}/README \
-		${DOCSDIR_REL}/NEWS
-.endif
-DOCS=		README NEWS
+PORTDOCS=	ChangeLog README NEWS
+PLIST_FILES=	bin/${PORTNAME}
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/pipestatus ${DESTDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOCS}
+.for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
