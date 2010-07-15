@@ -6,33 +6,38 @@
 #
 
 PORTNAME=	vde2
-PORTVERSION=	2.1.6
+PORTVERSION=	2.2.3
 CATEGORIES=	net
 MASTER_SITES=	SF/vde/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User-mode virtual ethernet infrastructure
 
-MAKE_JOBS_SAFE=  yes
-
 CONFLICTS=	vde-[0-9]*
 
+USE_GNOME=	gnomehack
 USE_GMAKE=	yes
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datarootdir=${PREFIX}
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
-SHLIB_MAJOR=	2
-PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
+MLINKS=		unixcmd.1 vdecmd.1 \
+		vdeq.1 vdeqemu.1 \
+		vdeq.1 vdekvm.1
+MAN1=		dpipe.1 slirpvde.1 unixcmd.1 unixterm.1 \
+		vde_autolink.1 vde_cryptcab.1 vde_l3.1 vde_over_ns.1 \
+		vde_pcapplug.1 vde_plug.1 vde_plug2tap.1 vde_switch.1 \
+		vdeq.1 vdetaplib.1 vdeterm.1 wirefilter.1
+MAN8=		vde_tunctl.8
 
 .include <bsd.port.pre.mk>
 
-CFLAGS+=	${CPPFLAGS} -fPIC
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+.if ${OSVERSION} < 700000
+BROKEN=		Fails to Build
+.endif
 
-MAN1=		dpipe.1 slirpvde.1 unixterm.1 \
-		vde_cryptcab.1 vde_plug.1 vde_plug2tap.1 \
-		vde_switch.1 vdeq.1 vdetaplib.1 \
-		wirefilter.1
-MLINKS=		vdeq.1 vdeqemu.1
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(MAKE).*install-data-hook||g' \
+		${WRKSRC}/man/Makefile.in
+
 .include <bsd.port.post.mk>
