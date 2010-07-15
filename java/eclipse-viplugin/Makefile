@@ -17,7 +17,7 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	Vi like keybinding Eclipse plugin FREETRIAL Version
 
-RUN_DEPENDS=	${LOCALBASE}/eclipse:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
