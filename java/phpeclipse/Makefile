@@ -7,7 +7,7 @@
 
 PORTNAME=	phpeclipse
 PORTVERSION=	1.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java editors devel
 MASTER_SITES=	SF/${PORTNAME}/a%29%20Eclipse%203.3.x/PHPEclipse-${PORTVERSION}
 DISTNAME=	PHPEclipse-${PLIST_VER}-src
@@ -26,10 +26,11 @@ USE_ANT=	yes
 USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/dist
-ECLIPSE=	${PREFIX}/eclipse
+ECLIPSE=	lib/eclipse
 PLIST_VER=	${PORTVERSION}.200910091456PRD
 
-PLIST_SUB=	VER=${PLIST_VER}
+PLIST_SUB=	VER=${PLIST_VER} \
+		ECLIPSE=${ECLIPSE}
 
 post-patch:
 .for _task in ${PATCH_TASKS}
@@ -51,8 +52,8 @@ do-build:
 
 do-install:
 .for _path in ${PLUGIN_PATHS}
-	@${MKDIR} ${ECLIPSE}/${_path}
-	@${CP} -r ${WRKSRC}/${_path}/* ${ECLIPSE}/${_path}/
+	@${MKDIR} ${PREFIX}/${ECLIPSE}/${_path}
+	@${CP} -r ${WRKSRC}/${_path}/* ${PREFIX}/${ECLIPSE}/${_path}/
 .endfor
 
 plist: build
@@ -61,16 +62,16 @@ plist: build
 	@${RM} ${PLIST}
 .for _path in ${PLUGIN_PATHS}
 	@${FIND} ${WRKSRC}/${_path}/ -not -type d \
-		| ${SED} "s|${WRKSRC}|eclipse|1" \
+		| ${SED} "s|${WRKSRC}|%%ECLIPSE%%|1" \
 		| ${SED} "s|${PLIST_VER}|%%VER%%|g" \
 		>> ${PLIST}
 	@${FIND} -d ${WRKSRC}/${_path}/ -mindepth 1 -type d \
-		| ${SED} "s|${WRKSRC}|@dirrm eclipse|1" \
+		| ${SED} "s|${WRKSRC}|@dirrm %%ECLIPSE%%|1" \
 		| ${SED} "s|${PLIST_VER}|%%VER%%|g" \
 		>> ${PLIST}
-	@${ECHO} "@dirrmtry eclipse/${_path}" >> ${PLIST}
+	@${ECHO} "@dirrmtry ${ECLIPSE}/${_path}" >> ${PLIST}
 .endfor
-	@${ECHO} "@dirrmtry eclipse" >> ${PLIST}
+	@${ECHO} "@dirrmtry ${ECLIPSE}" >> ${PLIST}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
