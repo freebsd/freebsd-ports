@@ -1,4 +1,4 @@
-etc/%%CONFIG%%.conf
+etc/%%CONFIG%%.sample
 %%NSS%%lib/nss_ldap.so.1
 %%NSLCD%%sbin/nslcd
 %%PAM%%lib/pam_ldap.so

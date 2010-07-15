@@ -5,28 +5,28 @@
 # $FreeBSD$
 #
 
-PORTNAME=		nss_ldapd
-PORTVERSION=		0.7.3
+PORTNAME=		nss-pam-ldapd
+PORTVERSION=		0.7.7
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/ \
 			http://static.ipfw.ru/files/
-DISTNAME=		nss-pam-ldapd-${PORTVERSION}
+LICENSE=		LGPL21 LGPL3
+LICENSE_COMB=		dual
 
 MAINTAINER=		melifaro@ipfw.ru
 COMMENT=		Advanced fork of nss_ldap
 
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USE_LDCONFIG=		yes
 USE_OPENLDAP=		yes
 USE_RC_SUBR=		nslcd
 
 NSLCD_PIDFILE?=		/var/run/nslcd.pid
 NSLCD_SOCKET?=		/var/run/nslcd.ctl
 
-OPTIONS=		NSS_COMPAT	"Enable nss_ldap compatibility" on \
-			SASL		"Enable SASL" off \
-			PAM		"Build pam_ldap" on
+OPTIONS=		SASL		"Enable SASL" off \
+			PAM		"Build pam_ldap" on \
+			NSS_COMPAT	"Enable nss_ldap compatibility (DEPRECATED)" off
 
 USERS=			nslcd
 GROUPS=			nslcd
@@ -49,11 +49,14 @@ CONFIGURE_ARGS+=	--with-nslcd-pidfile=${NSLCD_PIDFILE} \
 .endif
 
 .if defined(WITH_NSS_COMPAT)
-CONFIGURE_ARGS+=	--enable-nss_compat --disable-configfile-checking --with-ldap-conf-file=${PREFIX}/etc/nss_ldap.conf
-PLIST_SUB+=		CONFIG="nss_ldap"
+CONFIG_FILE=		"nss_ldap.conf"
+CONFIGURE_ARGS+=	--enable-nss_compat --disable-configfile-checking --with-ldap-conf-file=${PREFIX}/etc/${CONFIG_FILE}
+EXTRA_PATCHES+=		${FILESDIR}/nss_patch.diff
+PLIST_SUB+=		CONFIG=${CONFIG_FILE}
 .else
-CONFIGURE_ARGS+=	--with-ldap-conf-file=${PREFIX}/etc/nss_ldapd.conf
-PLIST_SUB+=		CONFIG="nss_ldapd"
+CONFIG_FILE=		"nslcd.conf"
+CONFIGURE_ARGS+=	--with-ldap-conf-file=${PREFIX}/etc/${CONFIG_FILE}
+PLIST_SUB+=		CONFIG=${CONFIG_FILE}
 .endif
 
 .if defined(WITH_SASL)
@@ -94,9 +97,13 @@ MAN8+=			nslcd.8
 
 post-extract:
 	@${REINPLACE_CMD} -e 's/\(INSTALL_\)\(.*\)) -D /\1\2) /' ${WRKSRC}/Makefile.in ${WRKSRC}/nss/Makefile.in
-	@${REINPLACE_CMD} -e 's/shadow.$$(OBJEXT)/shadow.$$(OBJEXT) bsdnss.$$(OBJEXT)/;s/shadow\.c/shadow.c bsdnss.c/;s/exports\.linux/exports.freebsd/' ${WRKSRC}/nss/Makefile.in
+	@${REINPLACE_CMD} -e 's/shadow.$$(OBJEXT)/shadow.$$(OBJEXT) bsdnss.$$(OBJEXT)/;s/shadow\.c/shadow.c bsdnss.c/' ${WRKSRC}/nss/Makefile.in
 	@${REINPLACE_CMD} -e 's/^NSS_VERS = .*/NSS_VERS = 1/;s/libnss_ldap\.so/nss_ldap.so/' ${WRKSRC}/nss/Makefile.in
 	@${REINPLACE_CMD} -e 's/$$(DESTDIR)$$(NSS_LDAP_PATH_CONF)/$$(DESTDIR)$$(NSS_LDAP_PATH_CONF).sample/' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^$$(ACLOCAL_M4/,+2d' ${WRKSRC}/Makefile.in
+
+post-configure:
+	${REINPLACE_CMD} -e 's/^\(CFLAGS.*\) \-O2 \(.*\)$$/\1 -O0 \2/' ${WRKSRC}/nss/Makefile
 
 post-install:
 	@${ECHO_MSG}
@@ -104,16 +111,17 @@ post-install:
 	@${ECHO_MSG}
 .if defined(WITH_NSS_COMPAT)
 	@${ECHO_MSG} "                NSS_LDAP compatibility ENABLED."
+	@${ECHO_MSG} "          It is DEPRECATED now and will be removed."
 	@${ECHO_MSG}
-	@${ECHO_MSG} " LDAP configuration:      ${PREFIX}/etc/nss_ldap.conf"
+	@${ECHO_MSG} " LDAP configuration:      ${PREFIX}/etc/${CONFIG_FILE}"
 	@${ECHO_MSG} " Secret file:             ${PREFIX}/etc/nss_ldap.secret"
-	@${ECHO_MSG} " Sample configuration:    ${PREFIX}/etc/nss_ldap.conf.sample"
+	@${ECHO_MSG} " Sample configuration:    ${PREFIX}/etc/${CONFIG_FILE}.sample"
 	@${ECHO_MSG}
 	@${ECHO_MSG} " Check if you need to adjust  reconnect_* parameters"
 	@${ECHO_MSG} " WARNING: nss_ldapd will use ONLY rootbinddn to access LDAP data"
 .else
-	@${ECHO_MSG} " LDAP configuration:      ${PREFIX}/etc/nss_ldapd.conf"
-	@${ECHO_MSG} " Sample configuration:    ${PREFIX}/etc/nss_ldapd.conf.sample"
+	@${ECHO_MSG} " LDAP configuration:      ${PREFIX}/etc/${CONFIG_FILE}"
+	@${ECHO_MSG} " Sample configuration:    ${PREFIX}/etc/${CONFIG_FILE}.sample"
 	@${ECHO_MSG}
 .endif
 .if !defined(WITHOUT_NSS)
