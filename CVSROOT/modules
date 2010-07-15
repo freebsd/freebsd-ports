@@ -7406,6 +7406,7 @@ kwatch                          ports/misc/kwatch
 kwebget                         ports/ftp/kwebget
 kwebkitpart                     ports/www/kwebkitpart
 kwirc                           ports/irc/kwirc
+kwooty                          ports/net/kwooty
 kxl                             ports/devel/kxl
 kxmleditor                      ports/editors/kxmleditor
 ky-aspell                       ports/textproc/ky-aspell
