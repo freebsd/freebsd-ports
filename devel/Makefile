@@ -1779,6 +1779,7 @@
     SUBDIR += p5-Log-Dispatch-Config
     SUBDIR += p5-Log-Dispatch-Configurator-YAML
     SUBDIR += p5-Log-Dispatch-Email-EmailSend
+    SUBDIR += p5-Log-Dispatch-File-Stamped
     SUBDIR += p5-Log-Dispatch-FileRotate
     SUBDIR += p5-Log-Dispatch-FileShared
     SUBDIR += p5-Log-Dispatch-Perl
