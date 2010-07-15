@@ -29,14 +29,19 @@ libdata/pkgconfig/libfreecell-solver.pc
 %%DATADIR%%/presetrc
 %%DATADIR%%/presets/abra-kadabra.sh
 %%DATADIR%%/presets/blue-yonder.sh
+%%DATADIR%%/presets/children-playing-ball.sh
 %%DATADIR%%/presets/cool-jives.sh
 %%DATADIR%%/presets/crooked-nose.sh
+%%DATADIR%%/presets/foss-nessy.sh
 %%DATADIR%%/presets/fools-gold.sh
 %%DATADIR%%/presets/gooey-unknown-thing.sh
 %%DATADIR%%/presets/hello-world.sh
 %%DATADIR%%/presets/john_galt_line-500.sh
 %%DATADIR%%/presets/rin-tin-tin.sh
 %%DATADIR%%/presets/sand-stone.sh
+%%DATADIR%%/presets/sentient-pearls.sh
+%%DATADIR%%/presets/tea-for-two.sh
+%%DATADIR%%/presets/the-iglu-cabal.sh
 %%DATADIR%%/presets/toons-for-twenty-somethings.sh
 %%DATADIR%%/presets/yellow-brick-road.sh
 @dirrm %%DATADIR%%/presets
