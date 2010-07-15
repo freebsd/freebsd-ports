@@ -5,7 +5,7 @@
    /* 24 */ "Verbose logging to console\n",
    
 -  /* 25 */ "Please configure your printer in /etc/pnm2ppa.conf\n",
-+  /* 25 */ "Please configure your printer in " CONFDIR "/pnm2ppa.conf\n",
++  /* 25 */ "Please configure your printer in " SYSCONFDIR "/pnm2ppa.conf\n",
    
    /* 26 */ "couldn't open config file \n",
  

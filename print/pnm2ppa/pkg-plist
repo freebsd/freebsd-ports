@@ -1,7 +1,0 @@
-bin/asciippafilter
-bin/calibrate_ppa
-bin/pnm2ppa
-bin/ppafilter
-@unexec if cmp -s %D/etc/pnm2ppa.conf %D/etc/pnm2ppa.conf.sample; then rm -f %D/etc/pnm2ppa.conf; fi
-etc/pnm2ppa.conf.sample
-@exec test -f %B/pnm2ppa.conf || cp %B/%f %B/pnm2ppa.conf
