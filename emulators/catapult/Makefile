@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	catapult
-PORTVERSION=	0.7.2
-PORTREVISION=	2
+PORTVERSION=	0.8.0
 CATEGORIES=	emulators
 MASTER_SITES=	SF/openmsx/openmsx/${PORTVERSION}
 DISTNAME=	openmsx-${PORTNAME}-${PORTVERSION}
@@ -21,6 +20,7 @@ RUN_DEPENDS=	openmsx:${PORTSDIR}/emulators/openmsx
 
 USE_GNOME=	libxml2
 USE_WX=		2.6+
+USE_PYTHON_BUILD=yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	INSTALL_BASE="${PREFIX}" \
@@ -46,8 +46,6 @@ CATAPULT_STRIP=	true
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's|freebsd5\*|freebsd*| ; \
-		 s|x86_64)|amd64)|' ${WRKSRC}/build/detectsys.sh
 	@${REINPLACE_CMD} 's|INSTALL_BASE|INSTALL_SHARE_DIR|' \
 		${WRKSRC}/build/info2code.mk
 .for file in build/main.mk build/probe.mk
