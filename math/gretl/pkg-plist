@@ -8,20 +8,19 @@ include/gretl/boxplots.h
 include/gretl/calendar.h
 include/gretl/compare.h
 include/gretl/compat.h
-include/gretl/csvdata.h
 include/gretl/dataio.h
 include/gretl/dataset.h
 include/gretl/dbread.h
 include/gretl/describe.h
 include/gretl/discrete.h
 include/gretl/estimate.h
-include/gretl/flow_control.h
 include/gretl/forecast.h
 include/gretl/genfuncs.h
 include/gretl/genmain.h
 include/gretl/graphing.h
 include/gretl/gretl_bfgs.h
 include/gretl/gretl_commands.h
+include/gretl/gretl_data_io.h
 include/gretl/gretl_errors.h
 include/gretl/gretl_f2c.h
 include/gretl/gretl_fft.h
@@ -86,6 +85,9 @@ lib/gretl-gtk2/arma_x12.la
 lib/gretl-gtk2/arma_x12.so
 lib/gretl-gtk2/data/dwdata.gz
 lib/gretl-gtk2/data/urcdata.gz
+lib/gretl-gtk2/duration.a
+lib/gretl-gtk2/duration.la
+lib/gretl-gtk2/duration.so
 lib/gretl-gtk2/eviews_import.a
 lib/gretl-gtk2/eviews_import.la
 lib/gretl-gtk2/eviews_import.so
@@ -334,6 +336,7 @@ share/applications/gretl.desktop
 %%DATADIR%%/data/misc/pension.gdt
 %%DATADIR%%/data/misc/poisson.gdt
 %%DATADIR%%/data/misc/rac3d.gdt
+%%DATADIR%%/data/misc/recid.gdt
 %%DATADIR%%/data/misc/sw_ch12.gdt
 %%DATADIR%%/data/misc/sw_ch14.gdt
 %%DATADIR%%/data/misc/theil.gdt
@@ -349,11 +352,13 @@ share/applications/gretl.desktop
 %%DATADIR%%/data/nist/Wampler3.dat
 %%DATADIR%%/data/nist/Wampler4.dat
 %%DATADIR%%/data/nist/Wampler5.dat
+%%DATADIR%%/data/plotbars/nber.txt
 %%DATADIR%%/db/fedstl.bin
 %%DATADIR%%/db/fedstl.idx
 %%DATADIR%%/fonts/FreeSans.ttf
 %%DATADIR%%/fonts/Vera.ttf
 %%DATADIR%%/fonts/VeraMono.ttf
+%%DATADIR%%/functions/criteria.gfn
 %%DATADIR%%/functions/gretlfunc.dtd
 %%DATADIR%%/genrcli.hlp
 %%DATADIR%%/genrcli.hlp.it
@@ -559,6 +564,7 @@ share/pixmaps/gretl.xpm
 @dirrm %%DATADIR%%/functions
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/db
+@dirrm %%DATADIR%%/data/plotbars
 @dirrm %%DATADIR%%/data/nist
 @dirrm %%DATADIR%%/data/misc
 @dirrm %%DATADIR%%/data/greene
