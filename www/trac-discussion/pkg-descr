@@ -1,0 +1,9 @@
+The DiscussionPlugin adds discussion forums to Trac. An arbitrary number
+of forums can be added, organised to forum groups. Users can create
+topics in forums and reply to them which together creates discussion
+threads. Threaded or flat view to topics and its replies is supported.
+Each forum has a list of moderators who can delete topics, replies,
+etc.  Appending new forums and topics either as new replies shows up in
+timeline. Searching capability in topics and replies is supported too.
+
+WWW: http://trac-hacks.org/wiki/DiscussionPlugin
