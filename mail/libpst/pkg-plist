@@ -138,4 +138,4 @@ bin/readpst
 %%PORTDOCS%%%%DOCSDIR%%/rn01re04.html
 %%PORTDOCS%%%%DOCSDIR%%/rn01re05.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/devel
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%
