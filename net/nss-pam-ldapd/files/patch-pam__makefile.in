@@ -6,7 +6,7 @@
  install-pam_ldap_so: pam_ldap.so
 -	$(INSTALL_PROGRAM) -D pam_ldap.so $(DESTDIR)$(libdir)/security/pam_ldap.so
 +	$(INSTALL_PROGRAM) pam_ldap.so $(DESTDIR)$(libdir)/pam_ldap.so.1
-+	ln -s $(DESTDIR)$(libdir)/pam_ldap.so.1 $(DESTDIR)$(libdir)/pam_ldap.so
++	ln -sfh $(DESTDIR)$(libdir)/pam_ldap.so.1 $(DESTDIR)$(libdir)/pam_ldap.so
  uninstall-pam_ldap_so:
  	-rm -f $(DESTDIR)$(libdir)/security/pam_ldap.so
  
