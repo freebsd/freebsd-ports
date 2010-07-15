@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	secretmaryochronicles-music
-PORTVERSION=	4.0
-PORTREVISION=	2
+PORTVERSION=	4.1
 CATEGORIES=	games
 MASTER_SITES=	SF/smclone/Addon%20-%20Music/${PORTVERSION}
-DISTNAME=	SMC_music_${PORTVERSION}_high
+DISTNAME=	SMC_Music_${PORTVERSION}_high
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Background music for Secret Maryo Chronicles
