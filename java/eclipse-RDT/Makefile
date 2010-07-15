@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/${RDT}
 
 RDT=		org.rubypeople.rdt
 RDTVERSION=	${PORTVERSION}.200711131528NGT
-ECLIPSE=	${PREFIX}/eclipse
+ECLIPSE=	${PREFIX}/lib/eclipse
 RDTFILES=	features/org.rubypeople.rdt_${RDTVERSION} \
 		features/com.aptana.rdt.mylyn_feature_${RDTVERSION} \
 		plugins/com.aptana.rdt.mylyn_${RDTVERSION} \
