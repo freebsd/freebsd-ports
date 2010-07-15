@@ -1658,6 +1658,7 @@
     SUBDIR += trac-customfieldadmin
     SUBDIR += trac-customroadmap
     SUBDIR += trac-datefield
+    SUBDIR += trac-discussion
     SUBDIR += trac-down
     SUBDIR += trac-email2trac
     SUBDIR += trac-estimator
