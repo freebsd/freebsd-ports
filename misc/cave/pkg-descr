@@ -2,4 +2,4 @@ CAVE (Character Animation Viewer for Everyone) is an ascii animation viewer.
 It uses (n)curses for its interface so you'll need to have those libraries
 installed.
 
-WWW: http://arbornet.org/~bjk/cave/
+WWW: http://benkibbey.wordpress.com/cave/
