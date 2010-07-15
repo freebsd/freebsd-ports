@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	jstrack
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	science
-MASTER_SITES=	http://www.jstrack.org/jstrack/downloads/ \
+MASTER_SITES=	http://www.jstrack.org/${PORTNAME}/downloads/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	utisoft@gmail.com
@@ -24,7 +24,7 @@ LICENSE_PERMS=	no-dist-sell pkg-mirror no-pkg-sell auto-accept
 LICENSE_TEXT=	It is and always will be free, and [Jim Graham] wrote it...\
 		so don't charge money for it, and don't claim that you wrote it
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_TCL_RUN=	84
 USE_TK=		84
 NO_BUILD=	yes
@@ -55,9 +55,5 @@ post-install:
 	@${CHMOD} ugo+rx ${PREFIX}/lib/${PORTNAME}/${d}/*.t*
 .endfor
 	@(cd ${PREFIX}/lib/${PORTNAME} && ${TCLSH} autoconfig.tcl && ${RM} paths.tcl.old)
-.for f in filt/filt.tcl ftpfilt/autoftp.override.tcl ftpfilt/autoftp.tcl ftpfilt/ftp.tcl ftpfilt/ftplib.tcl ftpfilt/old_ftplib.tcl tracker/jstrack-text_only.tcl tracker/jstrack.tcl
-	@${REINPLACE_CMD} 's#\.\./paths.tcl#${PREFIX}/lib/jstrack/paths.tcl#g' \
-		${PREFIX}/lib/${PORTNAME}/${f}
-.endfor
 
 .include <bsd.port.mk>
