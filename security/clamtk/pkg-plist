@@ -1,5 +1,6 @@
 bin/clamtk
 %%SITE_PERL%%/ClamTk/App.pm
+%%SITE_PERL%%/ClamTk/Device.pm
 %%SITE_PERL%%/ClamTk/GUI.pm
 %%SITE_PERL%%/ClamTk/Prefs.pm
 %%SITE_PERL%%/ClamTk/Schedule.pm
@@ -18,6 +19,7 @@ share/locale/de/LC_MESSAGES/clamtk.mo
 share/locale/el_GR/LC_MESSAGES/clamtk.mo
 share/locale/en_GB/LC_MESSAGES/clamtk.mo
 share/locale/es/LC_MESSAGES/clamtk.mo
+share/locale/eu/LC_MESSAGES/clamtk.mo
 share/locale/fr/LC_MESSAGES/clamtk.mo
 share/locale/gl/LC_MESSAGES/clamtk.mo
 share/locale/he/LC_MESSAGES/clamtk.mo
