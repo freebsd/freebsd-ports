@@ -300,6 +300,8 @@
 %%CACTIDIR%%/install/0_8_7b_to_0_8_7c.php
 %%CACTIDIR%%/install/0_8_7c_to_0_8_7d.php
 %%CACTIDIR%%/install/0_8_7d_to_0_8_7e.php
+%%CACTIDIR%%/install/0_8_7e_to_0_8_7f.php
+%%CACTIDIR%%/install/0_8_7f_to_0_8_7g.php
 %%CACTIDIR%%/install/0_8_to_0_8_1.php
 %%CACTIDIR%%/install/index.php
 %%CACTIDIR%%/install/install_finish.gif
