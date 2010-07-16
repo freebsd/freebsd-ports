@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jmeter
-PORTVERSION=	2.3.4
+PORTVERSION=	2.4
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	jmeter/binaries
@@ -17,8 +17,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	beat@FreeBSD.org
 COMMENT=	Functional behaviour load and performance test application
 
+LICENSE=	ASL
+
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SUB_FILES=	jmeter.sh
