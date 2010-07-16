@@ -1,0 +1,17 @@
+usr/lib/gtk-2.0/2.10.0/engines/libqtcurve.so
+usr/share/doc/qtcurve-gtk2-0.69.2/AUTHORS
+usr/share/doc/qtcurve-gtk2-0.69.2/COPYING
+usr/share/doc/qtcurve-gtk2-0.69.2/ChangeLog
+usr/share/doc/qtcurve-gtk2-0.69.2/README
+usr/share/doc/qtcurve-gtk2-0.69.2/TODO
+usr/share/themes/QtCurve/gtk-2.0/gtkrc
+usr/share/themes/QtCurve/gtk-2.0/icons3
+usr/share/themes/QtCurve/gtk-2.0/icons4
+usr/share/themes/QtCurve/gtk-2.0/map_kde_icons.pl
+usr/share/themes/QtCurve/mozilla/QtCurve-KDEButtonOrder.css
+usr/share/themes/QtCurve/mozilla/QtCurve.css
+usr/share/themes/QtCurve/mozilla/preferences-rev.xml
+@dirrm usr/share/themes/QtCurve/mozilla
+@dirrm usr/share/themes/QtCurve/gtk-2.0
+@dirrm usr/share/themes/QtCurve
+@dirrm usr/share/doc/qtcurve-gtk2-0.69.2
