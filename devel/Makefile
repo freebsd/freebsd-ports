@@ -693,6 +693,7 @@
     SUBDIR += kscope
     SUBDIR += kxl
     SUBDIR += kyra
+    SUBDIR += lamson
     SUBDIR += lasi
     SUBDIR += lbpp
     SUBDIR += leaktracer
