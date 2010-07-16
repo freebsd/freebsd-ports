@@ -19,6 +19,7 @@ BUILD_DEPENDS=\
 	${PYTHON_PKGNAMEPREFIX}daemon>0:${PORTSDIR}/devel/py-daemon\
 	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock\
 	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose
+	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-lockfile
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
