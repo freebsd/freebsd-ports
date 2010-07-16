@@ -1,0 +1,4 @@
+simple weblog written in C using markdown to write posts and tinycdb to store
+them
+
+WWW:	http://github.com/bapt/cblog
