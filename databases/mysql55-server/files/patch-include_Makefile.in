@@ -1,11 +1,11 @@
---- include/Makefile.in.orig	2009-07-23 14:45:21.000000000 +0200
-+++ include/Makefile.in	2009-07-23 14:45:34.000000000 +0200
-@@ -712,8 +712,6 @@
+--- include/Makefile.in.orig	2010-07-16 10:14:39.000000000 +0200
++++ include/Makefile.in	2010-07-16 10:14:51.000000000 +0200
+@@ -708,8 +708,6 @@
  @HAVE_DTRACE_TRUE@probes_mysql_dtrace.h: $(DTRACEPROVIDER)
  @HAVE_DTRACE_TRUE@	$(DTRACE) $(DTRACEFLAGS) -h -s $(DTRACEPROVIDER) -o $@
  
 -probes_mysql_nodtrace.h: $(DTRACEPROVIDER)
 -	@PERL@ $(top_srcdir)/scripts/dheadgen.pl -f $(DTRACEPROVIDER) > $@
- 
- # Don't update the files from bitkeeper
- %::SCCS/s.%
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

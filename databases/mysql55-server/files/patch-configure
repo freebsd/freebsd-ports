@@ -1,5 +1,5 @@
---- configure.orig	2010-04-18 11:13:22.000000000 +0200
-+++ configure	2010-04-18 11:17:01.000000000 +0200
+--- configure.orig	2010-07-06 20:37:18.000000000 +0200
++++ configure	2010-07-16 10:11:24.000000000 +0200
 @@ -3,8 +3,9 @@
  # of perl script that calls cmake.
  
@@ -9,6 +9,6 @@
 +#cmake -P cmake/check_minimal_version.cmake >/dev/null 2>&1 || HAVE_CMAKE=no
 +#perl --version >/dev/null 2>&1 || HAVE_CMAKE=no
 +HAVE_CMAKE=no
+ scriptdir=`dirname $0`
  if test "$HAVE_CMAKE" = "no"
  then
-   sh ./configure.am "$@"

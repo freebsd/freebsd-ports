@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.5.4
+PORTVERSION=	5.5.5
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-libedit \
 		--with-libwrap \
 		--with-low-memory \
+		--with-plugins=max \
 		--with-comment='FreeBSD port: ${PKGNAME}' \
 		--enable-thread-safe-client \
 		--disable-dtrace
@@ -60,11 +61,6 @@ CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
 PLIST_SUB+=	PLUGINS="@comment "
 .else
 PLIST_SUB+=	PLUGINS=""
-.endif
-.if defined(WITH_NDB)
-CONFIGURE_ARGS+=--with-plugins=max
-.else
-CONFIGURE_ARGS+=--with-plugins=max-no-ndb
 .endif
 .if defined(WITH_COLLATION) && ${WITH_COLLATION} != ""
 CONFIGURE_ARGS+=--with-collation=${WITH_COLLATION}
@@ -108,25 +104,11 @@ USE_RC_SUBR=	mysql-server.sh
 USERS=		mysql
 GROUPS=		mysql
 
-.if defined(WITH_NDB)
-USE_LDCONFIG=	${PREFIX}/lib/mysql
-PLIST_SUB+=	NDB=""
-.else
-PLIST_SUB+=	NDB="@comment "
-.endif
-
 MAN1=		innochecksum.1 myisamchk.1 myisamlog.1 myisampack.1 \
 		my_print_defaults.1 myisam_ftdump.1 mysql_client_test_embedded.1 \
 		mysql_install_db.1 mysql_tzinfo_to_sql.1 \
 		mysql_waitpid.1 mysqld_safe.1 mysqltest_embedded.1 mysql.server.1 \
 		perror.1 replace.1 resolve_stack_dump.1 resolveip.1
-.if defined(WITH_NDB)
-MAN1+=		ndb_config.1 ndb_delete_all.1 ndb_desc.1 ndb_drop_index.1 \
-		ndb_drop_table.1 ndb_error_reporter.1 ndb_mgm.1 \
-		ndb_print_backup_file.1 ndb_print_schema_file.1 \
-		ndb_print_sys_file.1 ndb_restore.1 ndb_select_all.1 \
-		ndb_select_count.1 ndb_show_tables.1 ndb_size.pl.1 ndb_waiter.1
-.endif
 
 INFO=		mysql
 
@@ -151,7 +133,6 @@ pre-fetch:
 	@${ECHO} "				(use it if you need speed)."
 	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
 	@${ECHO} "				(use it if you need even more speed)."
-	@${ECHO} "	WITH_NDB=yes		Enable support for NDB Cluster."
 	@${ECHO} ""
 
 post-patch:
@@ -162,7 +143,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/extra/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/include/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-exec-am: install-pkglibLTLIBRARIES|install-exec-am:|g" ${WRKSRC}/libmysql/Makefile.in
-	@${REINPLACE_CMD} -e "/^AM_CXXFLAGS/s|=.*|+= \$$(NDB_CXXFLAGS)|" `${FIND} ${WRKSRC}/storage/ndb -name Makefile.in`
 .if defined(WITH_PROC_SCOPE_PTH)
 	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/sql/mysqld.cc
 .endif
@@ -190,12 +170,14 @@ CONFIGURE_ARGS+=--without-server
 post-patch:
 	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include sql-common scripts @sql_client_dirs@ @man_dirs@|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-exec-am: install-pkglibLIBRARIES|install-exec-am:|g" ${WRKSRC}/strings/Makefile.in ${WRKSRC}/mysys/Makefile.in ${WRKSRC}/dbug/Makefile.in
-	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = mysql_config mysql_fix_privilege_tables mysqlbug|g" ${WRKSRC}/scripts/Makefile.in
-	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = mysql_fix_privilege_tables.sql|g" ${WRKSRC}/scripts/Makefile.in
+	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = mysql_config mysqlbug|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|man1_MANS =|man1_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-exec-am: install-binPROGRAMS|install-exec-am:|g" ${WRKSRC}/extra/Makefile.in
 
 post-install:
+	@${MKDIR} ${PREFIX}/include/mysql/psi
+	@${MV} ${PREFIX}/include/mysql/mysql_thread.h ${PREFIX}/include/mysql/psi/mysql_thread.h
+	@${MV} ${PREFIX}/include/mysql/psi.h ${PREFIX}/include/mysql/psi/psi.h
 	${INSTALL_DATA} ${WRKSRC}/support-files/mysql.m4 ${PREFIX}/share/aclocal/
 
 .else
