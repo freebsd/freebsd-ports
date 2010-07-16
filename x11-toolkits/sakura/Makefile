@@ -7,7 +7,7 @@
 
 PORTNAME=	sakura
 PORTVERSION=	2.3.8
-CATEGORIES=	x11 gnome
+CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://www.pleyades.net/david/projects/sakura/
 
 MAINTAINER=	ports@FreeBSD.org
