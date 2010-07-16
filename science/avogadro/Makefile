@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	avogadro
-PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	science
 MASTER_SITES=	SF
 
@@ -29,12 +28,13 @@ CMAKE_ARGS=	-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 USE_GCC=	4.4+
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	PYTHON "Enable python support (broken with sip-4.10)" off
+OPTIONS=	PYTHON "Enable python support" off
+
+MAN1=		avogadro.1 avopkg.1
 
 .include <bsd.port.options.mk>
 
 .if defined (WITH_PYTHON)
-IGNORE=		doesn't compile with devel/py-sip>=4.10
 CMAKE_ARGS+=	-DENABLE_PYTHON=ON
 USE_PYTHON=	2.5+
 BUILD_DEPENDS+=	${PYNUMPY} \
@@ -53,5 +53,8 @@ PLIST_SUB+=	PYTHON="@comment "
 .if ${OSVERSION} < 700013
 BROKEN=		requires posix_memalign
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} 's|share/man|man|' ${WRKSRC}/doc/CMakeLists.txt
 
 .include <bsd.port.post.mk>

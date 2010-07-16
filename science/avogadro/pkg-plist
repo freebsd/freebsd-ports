@@ -1,4 +1,5 @@
 bin/avogadro
+bin/avopkg
 include/avogadro/animation.h
 include/avogadro/atom.h
 include/avogadro/bond.h
@@ -99,7 +100,8 @@ lib/avogadro/1_0/tools/navigatetool.so
 lib/avogadro/1_0/tools/selectrotatetool.so
 lib/libavogadro.so
 lib/libavogadro.so.1
-lib/libavogadro.so.1.0.0
+lib/libavogadro.so.1.0.1
+share/qt4/mkspecs/features/avogadro.prf
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/Avogadro.so
 %%DATADIR%%/builder/amino/d-ala.zmat
 %%DATADIR%%/builder/amino/d-arg.zmat
@@ -370,6 +372,7 @@ lib/libavogadro.so.1.0.0
 %%DATADIR%%/i18n/avogadro_bg.qm
 %%DATADIR%%/i18n/avogadro_ca.qm
 %%DATADIR%%/i18n/avogadro_cs.qm
+%%DATADIR%%/i18n/avogadro_da.qm
 %%DATADIR%%/i18n/avogadro_de.qm
 %%DATADIR%%/i18n/avogadro_el.qm
 %%DATADIR%%/i18n/avogadro_en_CA.qm
@@ -377,12 +380,17 @@ lib/libavogadro.so.1.0.0
 %%DATADIR%%/i18n/avogadro_es.qm
 %%DATADIR%%/i18n/avogadro_fi.qm
 %%DATADIR%%/i18n/avogadro_fr.qm
+%%DATADIR%%/i18n/avogadro_he.qm
+%%DATADIR%%/i18n/avogadro_hr.qm
+%%DATADIR%%/i18n/avogadro_hu.qm
 %%DATADIR%%/i18n/avogadro_id.qm
 %%DATADIR%%/i18n/avogadro_it.qm
 %%DATADIR%%/i18n/avogadro_ja.qm
+%%DATADIR%%/i18n/avogadro_kn.qm
 %%DATADIR%%/i18n/avogadro_ko.qm
 %%DATADIR%%/i18n/avogadro_nb.qm
 %%DATADIR%%/i18n/avogadro_nl.qm
+%%DATADIR%%/i18n/avogadro_oc.qm
 %%DATADIR%%/i18n/avogadro_pl.qm
 %%DATADIR%%/i18n/avogadro_pt.qm
 %%DATADIR%%/i18n/avogadro_pt_BR.qm
@@ -397,6 +405,7 @@ lib/libavogadro.so.1.0.0
 %%DATADIR%%/i18n/libavogadro_bg.qm
 %%DATADIR%%/i18n/libavogadro_ca.qm
 %%DATADIR%%/i18n/libavogadro_cs.qm
+%%DATADIR%%/i18n/libavogadro_da.qm
 %%DATADIR%%/i18n/libavogadro_de.qm
 %%DATADIR%%/i18n/libavogadro_el.qm
 %%DATADIR%%/i18n/libavogadro_en_CA.qm
@@ -404,12 +413,17 @@ lib/libavogadro.so.1.0.0
 %%DATADIR%%/i18n/libavogadro_es.qm
 %%DATADIR%%/i18n/libavogadro_fi.qm
 %%DATADIR%%/i18n/libavogadro_fr.qm
+%%DATADIR%%/i18n/libavogadro_he.qm
+%%DATADIR%%/i18n/libavogadro_hi.qm
+%%DATADIR%%/i18n/libavogadro_hu.qm
 %%DATADIR%%/i18n/libavogadro_id.qm
 %%DATADIR%%/i18n/libavogadro_it.qm
 %%DATADIR%%/i18n/libavogadro_ja.qm
+%%DATADIR%%/i18n/libavogadro_kn.qm
 %%DATADIR%%/i18n/libavogadro_ko.qm
 %%DATADIR%%/i18n/libavogadro_nb.qm
 %%DATADIR%%/i18n/libavogadro_nl.qm
+%%DATADIR%%/i18n/libavogadro_oc.qm
 %%DATADIR%%/i18n/libavogadro_pl.qm
 %%DATADIR%%/i18n/libavogadro_pt.qm
 %%DATADIR%%/i18n/libavogadro_pt_BR.qm
