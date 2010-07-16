@@ -1,66 +1,130 @@
 @comment $FreeBSD$
+bin/imgmerge
+bin/pdfconcat
 bin/xpaint
 lib/X11/app-defaults/XPaint
 lib/X11/app-defaults/XPaint_es
 lib/X11/app-defaults/XPaint_fr
-lib/X11/xpaint/XPaintIcon.xpm
-lib/X11/xpaint/c_scripts/3d_curves/helicoid.c
-lib/X11/xpaint/c_scripts/3d_curves/lissajous.c
-lib/X11/xpaint/c_scripts/3d_surfaces/ellipsoid.c
-lib/X11/xpaint/c_scripts/3d_surfaces/heart.c
-lib/X11/xpaint/c_scripts/3d_surfaces/hyperboloid.c
-lib/X11/xpaint/c_scripts/3d_surfaces/polyhedra.c
-lib/X11/xpaint/c_scripts/3d_surfaces/torus.c
-lib/X11/xpaint/c_scripts/3d_surfaces/trefoil.c
-lib/X11/xpaint/c_scripts/3d_surfaces/waves.c
-lib/X11/xpaint/c_scripts/filters/leftright.c
-lib/X11/xpaint/c_scripts/filters/mapping.c
-lib/X11/xpaint/c_scripts/filters/merge.c
-lib/X11/xpaint/c_scripts/filters/permute.c
-lib/X11/xpaint/c_scripts/filters/rotleft.c
-lib/X11/xpaint/c_scripts/filters/rotright.c
-lib/X11/xpaint/c_scripts/filters/updown.c
-lib/X11/xpaint/c_scripts/images/random.c
-lib/X11/xpaint/c_scripts/layers/combine.c
-lib/X11/xpaint/c_scripts/procedures/setmemory.c
-lib/X11/xpaint/help/Help
-lib/X11/xpaint/help/Help_es
-lib/X11/xpaint/help/Help_fr
-lib/X11/xpaint/include/Colormap.h
-lib/X11/xpaint/include/ColormapP.h
-lib/X11/xpaint/include/DefaultRC.txt.h
-lib/X11/xpaint/include/Paint.h
-lib/X11/xpaint/include/PaintP.h
-lib/X11/xpaint/include/XPaint.ad.h
-lib/X11/xpaint/include/Xpaint.h
-lib/X11/xpaint/include/Xpaint3d.h
-lib/X11/xpaint/include/color.h
-lib/X11/xpaint/include/graphic.h
-lib/X11/xpaint/include/hash.h
-lib/X11/xpaint/include/image.h
-lib/X11/xpaint/include/menu.h
-lib/X11/xpaint/include/messages.h
-lib/X11/xpaint/include/misc.h
-lib/X11/xpaint/include/operation.h
-lib/X11/xpaint/include/ops.h
-lib/X11/xpaint/include/palette.h
-lib/X11/xpaint/include/patchlevel.h
-lib/X11/xpaint/include/protocol.h
-lib/X11/xpaint/include/rc.h
-lib/X11/xpaint/include/region.h
-lib/X11/xpaint/include/text.h
-lib/X11/xpaint/include/xpaint.h
-lib/X11/xpaint/messages/Messages
-lib/X11/xpaint/messages/Messages_es
-lib/X11/xpaint/messages/Messages_fr
-@dirrm lib/X11/xpaint/messages
-@dirrm lib/X11/xpaint/help
-@dirrm lib/X11/xpaint/include
-@dirrm lib/X11/xpaint/c_scripts/procedures
-@dirrm lib/X11/xpaint/c_scripts/layers
-@dirrm lib/X11/xpaint/c_scripts/images
-@dirrm lib/X11/xpaint/c_scripts/filters
-@dirrm lib/X11/xpaint/c_scripts/3d_surfaces
-@dirrm lib/X11/xpaint/c_scripts/3d_curves
-@dirrm lib/X11/xpaint/c_scripts
-@dirrm lib/X11/xpaint
+%%DATADIR%%/XPaintIcon.xpm
+%%DATADIR%%/bin/xpaint_ocr
+%%DATADIR%%/bitmaps/brushbox.cfg
+%%DATADIR%%/bitmaps/brushes/paint0.xpm
+%%DATADIR%%/bitmaps/brushes/paint1.xpm
+%%DATADIR%%/bitmaps/brushes/paint2.xpm
+%%DATADIR%%/bitmaps/brushes/paint3.xpm
+%%DATADIR%%/bitmaps/brushes/paint4.xpm
+%%DATADIR%%/bitmaps/brushes/paint5.xpm
+%%DATADIR%%/bitmaps/brushes/paint6.xpm
+%%DATADIR%%/bitmaps/brushes/paintA.xpm
+%%DATADIR%%/bitmaps/brushes/paintB.xpm
+%%DATADIR%%/bitmaps/brushes/paintC.xpm
+%%DATADIR%%/bitmaps/brushes/paintD.xpm
+%%DATADIR%%/bitmaps/brushes/paintE.xpm
+%%DATADIR%%/bitmaps/brushes/paintF.xpm
+%%DATADIR%%/bitmaps/brushes/paintG.xpm
+%%DATADIR%%/bitmaps/brushes/paintH.xpm
+%%DATADIR%%/bitmaps/brushes/paintI.xpm
+%%DATADIR%%/bitmaps/brushes/paintJ.xpm
+%%DATADIR%%/bitmaps/brushes/paintK.xpm
+%%DATADIR%%/bitmaps/brushes/paintL.xpm
+%%DATADIR%%/bitmaps/brushes/paintM.xpm
+%%DATADIR%%/bitmaps/brushes/paintN.xpm
+%%DATADIR%%/bitmaps/brushes/paintO.xpm
+%%DATADIR%%/bitmaps/brushes/paintP.xpm
+%%DATADIR%%/bitmaps/brushes/paintQ.xpm
+%%DATADIR%%/bitmaps/brushes/paintR.xpm
+%%DATADIR%%/bitmaps/brushes/paintS.xpm
+%%DATADIR%%/bitmaps/brushes/paintT.xpm
+%%DATADIR%%/bitmaps/brushes/paintU.xpm
+%%DATADIR%%/bitmaps/brushes/paintV.xpm
+%%DATADIR%%/bitmaps/brushes/paintW.xpm
+%%DATADIR%%/bitmaps/brushes/paintX.xpm
+%%DATADIR%%/bitmaps/brushes/paintY.xpm
+%%DATADIR%%/bitmaps/brushes/paintZ.xpm
+%%DATADIR%%/bitmaps/elec/busH.xpm
+%%DATADIR%%/bitmaps/elec/busV.xpm
+%%DATADIR%%/bitmaps/elec/capH.xpm
+%%DATADIR%%/bitmaps/elec/capV.xpm
+%%DATADIR%%/bitmaps/elec/coilV.xpm
+%%DATADIR%%/bitmaps/elec/dioV.xpm
+%%DATADIR%%/bitmaps/elec/fetV.xpm
+%%DATADIR%%/bitmaps/elec/grid.xpm
+%%DATADIR%%/bitmaps/elec/op_amp.xpm
+%%DATADIR%%/bitmaps/elec/resH.xpm
+%%DATADIR%%/bitmaps/elec/resV.xpm
+%%DATADIR%%/bitmaps/elec/tfxV.xpm
+%%DATADIR%%/bitmaps/elec/traV.xpm
+%%DATADIR%%/c_scripts/3d_curves/helicoid.c
+%%DATADIR%%/c_scripts/3d_curves/lissajous.c
+%%DATADIR%%/c_scripts/3d_surfaces/ellipsoid.c
+%%DATADIR%%/c_scripts/3d_surfaces/genre_g.c
+%%DATADIR%%/c_scripts/3d_surfaces/heart.c
+%%DATADIR%%/c_scripts/3d_surfaces/hyperboloid.c
+%%DATADIR%%/c_scripts/3d_surfaces/polyhedra.c
+%%DATADIR%%/c_scripts/3d_surfaces/torus.c
+%%DATADIR%%/c_scripts/3d_surfaces/trefoil.c
+%%DATADIR%%/c_scripts/3d_surfaces/waves.c
+%%DATADIR%%/c_scripts/batch/batch.c
+%%DATADIR%%/c_scripts/filters/clean.c
+%%DATADIR%%/c_scripts/filters/leftright.c
+%%DATADIR%%/c_scripts/filters/mapping.c
+%%DATADIR%%/c_scripts/filters/merge.c
+%%DATADIR%%/c_scripts/filters/permute.c
+%%DATADIR%%/c_scripts/filters/rotleft.c
+%%DATADIR%%/c_scripts/filters/rotright.c
+%%DATADIR%%/c_scripts/filters/updown.c
+%%DATADIR%%/c_scripts/images/alpha_test.c
+%%DATADIR%%/c_scripts/images/rgb_test.c
+%%DATADIR%%/c_scripts/layers/combine.c
+%%DATADIR%%/c_scripts/procedures/proc_with_params.c
+%%DATADIR%%/c_scripts/procedures/setmemory.c
+%%DATADIR%%/c_scripts/templates/image.c
+%%DATADIR%%/help/Help
+%%DATADIR%%/help/Help_es
+%%DATADIR%%/help/Help_fr
+%%DATADIR%%/include/Colormap.h
+%%DATADIR%%/include/ColormapP.h
+%%DATADIR%%/include/DefaultRC.txt.h
+%%DATADIR%%/include/Paint.h
+%%DATADIR%%/include/PaintP.h
+%%DATADIR%%/include/XPaint.ad.h
+%%DATADIR%%/include/Xpaint.h
+%%DATADIR%%/include/Xpaint3d.h
+%%DATADIR%%/include/color.h
+%%DATADIR%%/include/crc32.h
+%%DATADIR%%/include/graphic.h
+%%DATADIR%%/include/hash.h
+%%DATADIR%%/include/image.h
+%%DATADIR%%/include/menu.h
+%%DATADIR%%/include/messages.h
+%%DATADIR%%/include/misc.h
+%%DATADIR%%/include/operation.h
+%%DATADIR%%/include/ops.h
+%%DATADIR%%/include/palette.h
+%%DATADIR%%/include/patchlevel.h
+%%DATADIR%%/include/print.h
+%%DATADIR%%/include/protocol.h
+%%DATADIR%%/include/rc.h
+%%DATADIR%%/include/region.h
+%%DATADIR%%/include/text.h
+%%DATADIR%%/include/xpaint.h
+%%DATADIR%%/messages/Messages
+%%DATADIR%%/messages/Messages_es
+%%DATADIR%%/messages/Messages_fr
+@dirrm %%DATADIR%%/messages
+@dirrm %%DATADIR%%/include
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/c_scripts/templates
+@dirrm %%DATADIR%%/c_scripts/procedures
+@dirrm %%DATADIR%%/c_scripts/layers
+@dirrm %%DATADIR%%/c_scripts/images
+@dirrm %%DATADIR%%/c_scripts/filters
+@dirrm %%DATADIR%%/c_scripts/batch
+@dirrm %%DATADIR%%/c_scripts/3d_surfaces
+@dirrm %%DATADIR%%/c_scripts/3d_curves
+@dirrm %%DATADIR%%/c_scripts
+@dirrm %%DATADIR%%/bitmaps/elec
+@dirrm %%DATADIR%%/bitmaps/brushes
+@dirrm %%DATADIR%%/bitmaps
+@dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%

@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	xpaint
-PORTVERSION=	2.7.8.1
-PORTREVISION=	4
+PORTVERSION=	2.9.1.4
 CATEGORIES=	graphics
-MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION} \
-		ftp://ftp.ac-grenoble.fr/Office/
-
+MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple paint program
@@ -21,24 +18,21 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 
 USE_BZIP2=	yes
 USE_IMAKE=	yes
-USE_XORG=	xpm
+USE_XORG=	xft xmu xpm
 
 MAN1=		xpaint.1
 
-.if defined(WITH_NEXTAW)
-LIB_DEPENDS+=	neXtaw:${PORTSDIR}/x11-toolkits/neXtaw
-XAW_INCDIR=	${LOCALBASE}/include/X11/neXtaw
-XAW_LIBS=	-lneXtaw
-.else
-LIB_DEPENDS+=  Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
-XAW_INCDIR=	${LOCALBASE}/include/X11/Xaw3d
-XAW_LIBS=	-lXaw3d
-.endif
+post-extract:
+	@${MKDIR} ${WRKSRC}/X11
+	@${LN} -sf ../xaw3dxft ${WRKSRC}/X11/Xaw3d
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|@PREFIX@|${PREFIX}|g ; \
+		 s|@XPMDIR@|${LOCALBASE}|g ; \
+		 s|@LOCALBASE@|${LOCALBASE}|g' ${WRKSRC}/Local.config
 
 pre-configure:
-	@cd ${WRKSRC} && ${LN} -sf ${XAW_INCDIR} xaw_incdir \
-		&& ${ECHO_CMD} -n > Local.xawdefs \
-		&& ${ECHO_CMD} "XAWLIB_DEFINES=-DXAW3D" >> Local.xawdefs \
-		&& ${ECHO_CMD} "SYS_LIBRARIES=${XAW_LIBS}" >> Local.xawdefs
+	@cd ${WRKSRC} && ${SH} ./configure xaw3dxft.a
 
 .include <bsd.port.mk>

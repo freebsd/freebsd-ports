@@ -1,6 +1,6 @@
---- fileName.c.orig	Mon Nov  8 21:41:46 2004
-+++ fileName.c	Sun Jan 30 18:55:53 2005
-@@ -38,7 +38,7 @@
+--- fileBrowser.c.orig	2010-04-28 17:02:11.000000000 +0900
++++ fileBrowser.c	2010-05-29 13:23:51.000000000 +0900
+@@ -40,7 +40,7 @@
  #include <stdio.h>
  #include <sys/types.h>
  #include <sys/stat.h>
@@ -9,7 +9,7 @@
  #include <dirent.h>
  #else
  #include <sys/dir.h>
-@@ -409,7 +409,7 @@
+@@ -513,7 +513,7 @@
  setCWD(arg_t * arg, char *dir)
  {
      DIR *dirp;
