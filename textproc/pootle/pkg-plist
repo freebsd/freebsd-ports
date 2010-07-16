@@ -313,6 +313,9 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle/middleware/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle/middleware/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle/middleware/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pootle/middleware/captcha.py
+%%PYTHON_SITELIBDIR%%/pootle/middleware/captcha.pyc
+%%PYTHON_SITELIBDIR%%/pootle/middleware/captcha.pyo
 %%PYTHON_SITELIBDIR%%/pootle/middleware/check_cookies.py
 %%PYTHON_SITELIBDIR%%/pootle/middleware/check_cookies.pyc
 %%PYTHON_SITELIBDIR%%/pootle/middleware/check_cookies.pyo
