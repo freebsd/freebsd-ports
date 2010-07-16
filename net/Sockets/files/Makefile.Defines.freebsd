@@ -1,0 +1,14 @@
+CXX?=		g++
+
+CFLAGS +=	-Wall $(INCLUDE) -MD -D_VERSION='"$(VERSION)"'
+
+CFLAGS +=	-O2
+
+
+CFLAGS +=	-fPIC
+
+OBJS +=		Semaphore.o
+
+LDFLAGSSO =	-shared \
+		-Wl,-lssl \
+		-Wl,-h$(SONAME)
