@@ -30,13 +30,13 @@ do-install:
 	@${MKDIR} ${WRKSRC}/eclipse
 	@${MV} ${WRKSRC}/plugins ${WRKSRC}/eclipse/plugins
 	@${MV} ${WRKSRC}/features ${WRKSRC}/eclipse/features
-	@${MKDIR} ${PREFIX}/eclipse
-	@${CP} -r ${WRKSRC}/eclipse/plugins ${PREFIX}/eclipse
-	@${CP} -r ${WRKSRC}/eclipse/features ${PREFIX}/eclipse
-	@(cd ${WRKSRC}; ${FIND} -s eclipse/features eclipse/plugins -not -type d) >> ${TMPPLIST}
+	@${MKDIR} ${PREFIX}/lib/eclipse
+	@${CP} -r ${WRKSRC}/eclipse/plugins ${PREFIX}/lib/eclipse
+	@${CP} -r ${WRKSRC}/eclipse/features ${PREFIX}/lib/eclipse
+	@(cd ${WRKSRC}; ${FIND} -s eclipse/features eclipse/plugins -not -type d) | ${SED} -e 's,^eclipse,lib/eclipse,' >> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} -s -d eclipse/features eclipse/plugins -type d) \
 	| ${GREP} -vE 'eclipse/plugins$$|eclipse/features$$' \
-	| ${SED} -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
+	| ${SED} -ne 's,^,@dirrm lib/,p' >> ${TMPPLIST}
 	@${MV} ${WRKSRC}/eclipse/plugins ${WRKSRC}/plugins
 	@${MV} ${WRKSRC}/eclipse/features ${WRKSRC}/features
 	@${RM} -rf ${WRKSRC}/eclipse
