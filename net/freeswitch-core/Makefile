@@ -5,14 +5,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=	freeswitch
+PORTNAME=	freeswitch-core
 PORTVERSION=	1.0.6
+PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	http://files.freeswitch.org/ \
-		ftp://ftp.secure-computing.net/pub/freeswitch/ \
-		ftp://ftp2.secure-computing.net/pub/freeswitch/
-PKGNAMESUFFIX=	-core
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://files.freeswitch.org/:1 \
+		http://files.freeswitch.org/downloads/libs/:2
+DISTFILES=	freeswitch-${PORTVERSION}.tar.gz:1 \
+		celt-0.7.1.tar.gz:2 \
+		flite-1.3.99-latest.tar.gz:2 \
+		json-c-0.9.tar.gz \
+		lame-3.97.tar.gz:2 \
+		libmemcached-0.32.tar.gz \
+		libshout-2.2.2.tar.gz:2 \
+		mpg123.tar.gz:2 \
+		openldap-2.4.11.tar.gz:2 \
+		pocketsphinx-0.5.99-20091212.tar.gz:2 \
+		soundtouch-1.3.1.tar.gz:2 \
+		sphinxbase-0.4.99-20091212.tar.gz:2 \
+		communicator_semi_6000_20080321.tar.gz:2
+EXTRACT_ONLY=	freeswitch-${PORTVERSION}.tar.gz
 
 MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	FreeSwitch SoftSwitch Port
@@ -35,13 +47,13 @@ SUB_FILES=	pkg-install pkg-message
 USE_RC_SUBR=	freeswitch
 HAS_CONFIGURE=	yes
 VARBASE?=	/var
-CONFIGURE_ARGS=	--prefix=${PREFIX}/share/${PORTNAME} \
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--bindir=${PREFIX}/bin \
 		--sysconfdir=${PREFIX}/etc/${PORTNAME}/conf \
 		--includedir=${PREFIX}/include/${PORTNAME} \
 		--libdir=${PREFIX}/lib/${PORTNAME}/lib \
 		--with-modinstdir=${PREFIX}/lib/${PORTNAME}/mod \
-		--with-rundir=${VARBASE}/run \
+		--with-rundir=${VARBASE}/run/freeswitch \
 		--with-libgnutls-prefix=${LOCALBASE} \
 		--with-ogg=${LOCALBASE} \
 		--with-ogg-libraries=${LOCALBASE}/lib \
@@ -54,9 +66,8 @@ CPPFLAGS+=	-I${PREFIX}/include
 
 FREESWITCH_USER=	freeswitch
 FREESWITCH_GROUP=	${FREESWITCH_USER}
-UID=    610
-GID=    ${UID}
-SUB_LIST=	FREESWITCH_USER=${FREESWITCH_USER} FREESWITCH_GROUP=${FREESWITCH_GROUP} UID=${UID} GID=${GID}
+
+SUB_LIST=	FREESWITCH_USER=${FREESWITCH_USER} FREESWITCH_GROUP=${FREESWITCH_GROUP}
 
 OPTIONS=	MODSHOUT        "Enable mod_shout (streaming audio/mp3)" on \
 		MODFLITE	"Enable mod_flite (Text to Speech)" on \
@@ -87,7 +98,6 @@ OPTIONS=	MODSHOUT        "Enable mod_shout (streaming audio/mp3)" on \
 		MODPORTAUDIO    "Enable mod_portaudio" on \
 		MODPASTREAM	"Enable mod_portaudio_stream (new)" on \
 		MODSHELLSTREAM	"Enable mod_SHELL_stream (New)" on \
-		MODSPDRMNKYODBC	"Enable mod_spidermonkey_odbc (req odbc)" on \
 		MODPERL		"Enable mod_perl (perl support)" off \
 		MODPYTHON	"Enable mod_python (python lang)" off \
 		MODCURL		"Enable mod_curl" off \
@@ -103,28 +113,24 @@ OPTIONS=	MODSHOUT        "Enable mod_shout (streaming audio/mp3)" on \
 		MODSAYNL	"Enable mod_say_nl (Dutch support)" off \
 		MODSAYRU	"Enable mod_say_ru (Russian support)" on \
 		MODSAYTH	"Enable mod_say_th (Thi support(new)" off \
-		MODSAYZH	"Enable mod_say_zh (Chinese support)" off
+		MODSAYZH	"Enable mod_say_zh (Chinese support)" off \
+		EXTENSIONS	"Include Default User Extensions" off
 
 .include <bsd.port.options.mk>
 
-.if defined(PACKAGE_BUILDING)
-BROKEN=		Fails to compile on pointyhat
-.endif
-
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
-CONFIGURE_ARGS+=	--enable-64
 .endif
 
 .for i in MODFLITE MODPOCKETSPHINX MODCIDLOOKUP MODDPDIRECTORY MODEASYROUTE MODLCR MODSOUNDTOUCH \
 	MODRSS MODSNOM MODVMD MODSPY MODAMRWB MODCELT MODMULTICAST MODPORTAUDIO MODCURL MODXMLCURL \
 	MODSAYDE MODSAYEN MODSAYES MODSAYFR MODSAYHU MODSAYIT MODSAYNL MODSAYRU MODSAYTH MODSAYZH \
 	MODNIBBLEBILL MODDINGALING MODDIRECTORY MODMEMCACHE MODPYTHON MODPASTREAM MODSHELLSTREAM \
-	MODSILK MODSPDRMNKYODBC MODUNIMRCP MODTTSCMDLINE MODDISTRIBUTOR MODSNAPSHOT MODSKINNY
+	MODSILK MODUNIMRCP MODTTSCMDLINE MODDISTRIBUTOR MODSNAPSHOT MODSKINNY EXTENSIONS
 .if !defined(WITH_${i})
-PLIST_SUB+=     WITH_${i}="@comment "
+PLIST_SUB+=	WITH_${i}="@comment "
 .else
-PLIST_SUB+=     WITH_${i}=""
+PLIST_SUB+=	WITH_${i}=""
 .endif
 .endfor
 
@@ -168,18 +174,18 @@ PLIST_SUB+=	WITH_MODERLANGEVENT=""
 BUILD_DEPENDS+=	${LOCALBASE}/lib/erlang/usr/include/erl_driver.h:${PORTSDIR}/lang/erlang-lite
 .endif
 
-.if !defined(WITH_MODSKINNY)
-PLIST_SUB+=	WITH_MODSKINNY="@comment "
-.else
-PLIST_SUB+=	WITH_MODSKINNY=""
-.endif
-
 pre-configure:
 	cd ${WRKSRC} && ./rebootstrap.sh
-	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = $(libdir)data/libdata/pkgconfig|g' ${WRKSRC}/libs/*/Makefile.am
-	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = $(libdir)data/libdata/pkgconfig|g' ${WRKSRC}/libs/*/Makefile.in
-	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = $(libdir)data/libdata/pkgconfig|g' ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = $(libdir)data/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = ${PREFIX}/libdata/libdata/pkgconfig|g' ${WRKSRC}/libs/*/Makefile.am
+	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' ${WRKSRC}/libs/*/Makefile.in
+	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = ${PREFIX}/libdata/libdata/pkgconfig|g' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = ${PREFIX}/libdata/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|base=http://files.freeswitch.org/downloads/libs/|base=file:///usr/ports/distfiles/|g' ${WRKSRC}/build/getlib.sh.in
+
+.if defined(WITH_VOICEMAILPATCH)
+	@${REINPLACE_CMD} -e 's|${storage_dir}/|${voicemail_dir}|g' ${WRKSRC}/src/mod/applications/mod_voicemail/mod_voicemail.c
+	@${REINPLACE_CMD} -e 's|<!--<param name="storage-dir" value="/tmp"/>-->|<!--<param name="voicemail-dir" value="/var/spool/freeswitch/voicemail"/>-->|g' ${WRKSRC}/conf/autoload_configs/voicemail.conf.xml
+.endif
 
 post-configure:
 .for i in mod_unimrcp mod_flite mod_pocketsphinx
@@ -220,9 +226,6 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|#\(languages/${i}\)|\1|g' ${WRKSRC}/modules.conf
 .endif
 .endfor
-.if defined(WITH_MODSPDRMNKYODBC)
-	@${REINPLACE_CMD} -e 's|#languages/mod_spidermonkey_odbc|languages/mod_spidermonkey_odbc|g' ${WRKSRC}/modules.conf
-.endif
 .for i in mod_skinny mod_portaudio mod_dingaling
 .if defined(WITH_${i:C/_//g:U})
 	@${REINPLACE_CMD} -e 's|#\(endpoints/${i}\)|\1|g' ${WRKSRC}/modules.conf
@@ -243,57 +246,36 @@ post-configure:
 .if defined(WITH_MODXMLCURL)
 	@${REINPLACE_CMD} -e 's|#xml_int/mod_xml_curl|xml_int/mod_xml_curl|g' ${WRKSRC}/modules.conf
 .endif
-.if defined(WITH_MODSKINNY)
-	@${REINPLACE_CMD} -e 's|#endpoints/mod_skinny|endpoints/mod_skinny|g' ${WRKSRC}/modules.conf
-.endif
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
-do-install:
-	cd ${WRKSRC} && ${GMAKE} ${INSTALL}
-	@${MKDIR} ${VARBASE}/db/${PORTNAME}
-	@${RM} -rf ${PREFIX}/share/${PORTNAME}/db
-	@${LN} -F -s ${VARBASE}/db/${PORTNAME}/ ${PREFIX}/share/${PORTNAME}/db
-	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/db/${PORTNAME}
-	@${CHMOD} -R 774 ${VARBASE}/db/${PORTNAME}
-	@${MKDIR} ${VARBASE}/${PORTNAME}/recordings
-	@${RM} -rf ${PREFIX}/share/${PORTNAME}/recordings
-	@${LN} -F -s ${VARBASE}/${PORTNAME}/recordings ${PREFIX}/share/${PORTNAME}/recordings
-	@${MKDIR} ${VARBASE}/${PORTNAME}/scripts
-	@${RM} -rf ${PREFIX}/share/${PORTNAME}/scripts
-	@${LN} -F -s ${VARBASE}/${PORTNAME}/scripts ${PREFIX}/share/${PORTNAME}/scripts
-	@${MKDIR} ${VARBASE}/log/${PORTNAME}/xml_cdr
-	@${RM} -rf ${PREFIX}/share/${PORTNAME}/log
-	@${LN} -F -s ${VARBASE}/log/${PORTNAME}/ ${PREFIX}/share/${PORTNAME}/log
-	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/log/${PORTNAME}
-	@${CHMOD} -R 774 ${VARBASE}/log/${PORTNAME}
-	@${MKDIR} ${VARBASE}/spool/voicemail
-	@${LN} -F -s ${VARBASE}/spool/voicemail ${PREFIX}/share/${PORTNAME}/storage
-	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/spool/voicemail
-	@${CHMOD} -R 774 ${VARBASE}/spool/voicemail
-	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/${PORTNAME}
-	@${CHMOD} -R 774 ${VARBASE}/${PORTNAME}
-	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${PREFIX}/share/${PORTNAME}
-	@${CHMOD} -R 774 ${PREFIX}/share/${PORTNAME}
-	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${PREFIX}/etc/${PORTNAME}
-	@${CHMOD} -R 774 ${PREFIX}/etc/${PORTNAME}
+.if !defined(WITH_EXTENSIONS)
+	@${RM} ${WRKSRC}/conf/directory/default/*
+.endif
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}/conf
-	(cd ${WRKSRC}/conf/ && \
-		${COPYTREE_SHARE} \* ${EXAMPLESDIR}/conf)
+.if !defined(WITH_EXTENSIONS)
+	@${MKDIR} ${PREFIX}/etc/${PORTNAME}/conf/directory/default
 .endif
-.if defined(WITH_MODOPENZAP)
-	(cd ${WRKSRC}/libs/openzap/conf/ && \
-		${CP} *.conf ${EXAMPLESDIR}/conf && \
-		${CP} openzap.conf.xml ${EXAMPLESDIR}/conf/autoload_configs)
-.endif
+	@${MKDIR} ${PREFIX}/share/${PORTNAME}/sounds
+	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${PREFIX}/etc/${PORTNAME}
+	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${PREFIX}/share/${PORTNAME}
+	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/db/${PORTNAME}
+	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/log/${PORTNAME}
+	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/${PORTNAME}
+	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/run/${PORTNAME}
+	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/spool/${PORTNAME}
+	@for i in $$(${FIND} ${PREFIX}/etc/${PORTNAME}/conf/ -type f -name '*.sample'); do if [ ! -f $${i%.sample} ]; then ${CP} -p $$i $${i%.sample}; fi; done
 	@${CAT} ${PKGMESSAGE}
 
 .if ${OSVERSION} < 700000
 IGNORE=		freeswitch is only supported on FreeBSD 7 or newer
 .endif
+
+	@${ECHO_MSG} "This port chown -R various directories ${FREESWITCH_USER}:${FREESWITCH_GROUP} "
+	@${ECHO_MSG} "this is for port security . in the event something should stop working."
+	@${ECHO_MSG} "Please take the time to check chownership of the dir's"
+	@${ECHO_MSG} "${VARBASE}/db/${PORTNAME} ${VARBASE}/log/${PORTNAME} ${VARBAE}/${PORTNAME} ${PREFIX}/etc/${PORTNAME}"
 
 .include <bsd.port.mk>

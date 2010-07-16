@@ -1,0 +1,18 @@
+--- libs/openzap/Makefile.am	2010-06-22 17:19:27.000000000 -0400
++++ libs/openzap/Makefile.am	2010-06-28 21:10:25.000000000 -0400
+@@ -34,7 +34,7 @@
+ 
+ moddir = @modinstdir@
+ libdir = @libdir@
+-library_includedir = $(PREFIX)/include
++library_includedir = @includedir@
+ 
+ INCS      = -I$(OZ_SRCDIR)/$(SRC)/include -I$(OZ_SRCDIR)/$(SRC)/isdn/include
+ if HAVE_SCTP
+@@ -268,5 +268,5 @@
+ install-data-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(PREFIX)
+ 	$(mkinstalldirs) $(DESTDIR)@confdir@
+-	@[ -f "$(DESTDIR)@confdir@/openzap.conf" ] || ( cp conf/*.conf $(DESTDIR)@confdir@)
++	@for i in conf/*.conf; do cp $$i $$i.sample; done; cp -f conf/*.conf.sample $(DESTDIR)@confdir@
+ 	@echo OpenZAP Installed

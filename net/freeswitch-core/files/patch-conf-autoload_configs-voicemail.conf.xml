@@ -1,0 +1,11 @@
+--- conf/autoload_configs/voicemail.conf.xml	2010-06-22 17:19:31.000000000 -0400
++++ conf/autoload_configs/voicemail.conf.xml	2010-06-29 11:10:26.000000000 -0400
+@@ -57,7 +57,7 @@
+         <param name="date-fmt" value="%A, %B %d %Y, %I %M %p"/>
+         <param name="email-from" value="${voicemail_account}@${voicemail_domain}"/>
+       </email>
+-      <!--<param name="storage-dir" value="/tmp"/>-->
++      <!--<param name="voicemail-dir" value="/tmp"/>-->
+       <!--<param name="odbc-dsn" value="dsn:user:pass"/>-->
+       <!--<param name="record-comment" value="Your Comment"/>-->
+       <!--<param name="record-title" value="Your Title"/>-->

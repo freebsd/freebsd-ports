@@ -1,35 +1,32 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/net/freeswitch-core/files/pkg-install.in,v 1.1 2010-06-11 22:26:44 jpaetzel Exp $
+#
+# $FreeBSD: /tmp/pcvs/ports/net/freeswitch-core/files/pkg-install.in,v 1.2 2010-07-16 14:57:42 jpaetzel Exp $
 #
 
-if [ "$2" != "PRE-INSTALL" ]; then
-	exit 0
-fi
+PATH=/bin:/usr/bin:/usr/sbin
 
-FREESWITCHUSER=%%FREESWITCH_USER%%
-FREESWITCHGROUP=%%FREESWITCH_GROUP%%
-FREESWITCHUID=%%UID%%
-FREESWITCHGID=%%GID%%
+case $2 in
 
-if ! pw groupshow "${FREESWITCHGROUP}" 2>/dev/null 1>&2; then
-	if pw groupadd ${FREESWITCHGROUP} -g ${FREESWITCHGID}; then
-		echo "Added group \"${FREESWITCHGROUP}\"."
-	else
-		echo "Adding group \"${FREESWITCHGROUP}\" failed..."
-		exit 1
-	fi
-fi
+PRE-INSTALL)
+  echo "---> Starting pre-install script:"
 
-if ! pw usershow "${FREESWITCHUSER}" 2>/dev/null 1>&2; then
-	if pw useradd ${FREESWITCHUSER} -u ${FREESWITCHUID} -g ${FREESWITCHGROUP} -h - \
-		-s "/sbin/nologin" -d "/nonexistent" \
-		-c "FREESWITCH Owner"; \
-	then
-		echo "Added user \"${FREESWITCHUSER}\"."
-	else
-		echo "Adding user \"${FREESWITCHUSER}\" failed..."
-		exit 1
-	fi
-fi
+  if pw showgroup "freeswitch" 2>/dev/null; then
+    echo "---> Using existing group \"freeswitch\""
+  else
+    echo "---> Adding group \"freeswitch\""
+    pw addgroup freeswitch -h - || exit 1
+  fi
 
-exit 0
+
+  # Create user if required
+  if pw showuser "freeswitch" 2>/dev/null; then
+    echo "---> Using existing user \"freeswitch\""
+  else
+    echo "---> Adding user \"freeswitch\""
+    pw adduser freeswitch -g freeswitch -h - \
+      -d "/nonexistent" -s "/sbin/nologin" -c "freeswitch User" || exit 1
+  fi
+
+  ;;
+
+esac

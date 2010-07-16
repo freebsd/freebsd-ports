@@ -18,15 +18,15 @@
 freeswitch_enable=${freeswitch_enable:-"NO"}
 freeswitch_user=${freeswitch_user:-"freeswitch"}
 freeswitch_group=${freeswitch_group:-"freeswitch"}
-freeswitch_flags=${freeswitch_flags:-""}
+freeswitch_flags=${freeswitch_flags:-"-nc"}
 
 name=freeswitch
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/bin/freeswitch
-command_args="-nc -u ${freeswitch_user} -g ${freeswitch_group} ${freeswitch_flags} -db /var/db/freeswitch -log /var/log/freeswitch/"
+command_args="${freeswitch_flags} ${freeswitch_user} -g ${freeswitch_group}"
 
-pidfile=${freeswitch_pidfile:-"/var/run/freeswitch.pid"}
+pidfile=${freeswitch_pidfile:-"/var/run/freeswitch/freeswitch.pid"}
 
 start_cmd="freeswitch_start"
 stop_precmd="freeswitch_stop"

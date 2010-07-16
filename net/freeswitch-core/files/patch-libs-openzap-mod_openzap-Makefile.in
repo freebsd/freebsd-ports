@@ -1,0 +1,11 @@
+--- libs/openzap/mod_openzap/Makefile.in	2010-06-22 17:19:26.000000000 -0400
++++ libs/openzap/mod_openzap/Makefile.in	2010-06-25 12:31:28.000000000 -0400
+@@ -15,7 +15,7 @@
+ 
+ local_install:
+ 	cd $(OZ_DIR) && $(MAKE) install
+-	[ -f $(DESTDIR)@confdir@/autoload_configs/openzap.conf.xml ] || cp -f $(OZ_DIR)/conf/openzap.conf.xml  $(DESTDIR)@confdir@/autoload_configs
++	@for i in $(OZ_DIR)/conf/*.xml; do cp $$i $$i.sample; done; cp  -f $(OZ_DIR)/conf/*.xml.sample $(DESTDIR)@confdir@/autoload_configs
+ 
+ local_clean:
+ 	cd $(OZ_DIR) && $(MAKE) clean

@@ -1,0 +1,52 @@
+--- configure.in	2010-06-22 17:19:37.000000000 -0400
++++ configure.in	2010-06-29 12:01:43.000000000 -0400
+@@ -44,34 +44,42 @@
+ AC_SUBST(runtimedir)
+ AC_DEFINE_UNQUOTED([SWITCH_RUN_DIR],"${runtimedir}",[where to put pidfile to])
+ 
+-logfiledir="${prefix}/log"
++logfiledir="/var/log/freeswitch"
+ AC_SUBST(logfiledir)
+ AC_DEFINE_UNQUOTED([SWITCH_LOG_DIR],"${logfiledir}",[where to put log files])
+ 
+-dbdir="${prefix}/db"
++dbdir="/var/db/freeswitch"
+ AC_SUBST(dbdir)
+ AC_DEFINE_UNQUOTED([SWITCH_DB_DIR],"${dbdir}",[where to put db files])
+ 
+-htdocsdir="${prefix}/htdocs"
++htdocsdir="${prefix}/www/freeswitch/htdocs"
+ AC_SUBST(htdocsdir)
+ AC_DEFINE_UNQUOTED([SWITCH_HTDOCS_DIR],"${htdocsdir}",[where to put htdocs files])
+ 
+-soundsdir="${prefix}/sounds"
++soundsdir="${prefix}/share/freeswitch/sounds"
+ AC_SUBST(soundsdir)
+ AC_DEFINE_UNQUOTED([SWITCH_SOUNDS_DIR],"${soundsdir}",[where to put sounds files])
+ 
+-grammardir="${prefix}/grammar"
++grammardir="${prefix}/etc/freeswitch/grammar"
+ AC_SUBST(grammardir)
+ AC_DEFINE_UNQUOTED([SWITCH_GRAMMAR_DIR],"${grammardir}",[where to put grammar files])
+ 
+-scriptdir="${prefix}/scripts"
++scriptdir="${prefix}/etc/freeswitch/scripts"
+ AC_SUBST(scriptdir)
+ AC_DEFINE_UNQUOTED([SWITCH_SCRIPT_DIR],"${scriptdir}",[where to put script files])
+ 
+-recordingsdir="${prefix}/recordings"
++recordingsdir="/var/freeswitch/recordings"
+ AC_SUBST(recordingsdir)
+ AC_DEFINE_UNQUOTED([SWITCH_RECORDINGS_DIR],"${recordingsdir}",[where to put recording files])
+ 
++storagedir="/var/freeswitch"
++AC_SUBST(storagedir)
++AC_DEFINE_UNQUOTED([SWITCH_STORAGE_DIR],"${storagedir}",[where to put extra files])
++
++voicemaildir="/var/spool/freeswitch/voicemail"
++AC_SUBST(voicemaildir)
++AC_DEFINE_UNQUOTED([SWITCH_VOICEMAIL_DIR],"${voicemaildir}",[where to put voicemail])
++
+ if test "$sysconfdir" = "\${prefix}/etc" ; then
+     confdir="$prefix/conf"
+ else

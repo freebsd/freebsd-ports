@@ -1,0 +1,10 @@
+--- conf/autoload_configs/switch.conf.xml	2010-06-22 17:19:31.000000000 -0400
++++ conf/autoload_configs/switch.conf.xml	2010-06-29 11:06:18.000000000 -0400
+@@ -71,6 +71,7 @@
+  -->    
+     <param name="mailer-app" value="sendmail"/>
+     <param name="mailer-app-args" value="-t"/>
++    <!--<param name="storage-dir" value="/tmp"/>-->
+     <param name="dump-cores" value="yes"/>
+     <!--RTP port range -->
+     <!--<param name="rtp-start-port" value="16384"/>-->
