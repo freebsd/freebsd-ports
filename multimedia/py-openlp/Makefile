@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	OpenLP
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.2.1
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/openlp/openlp/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Open Source Lyrics Projection
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	py*-sip>=0:${PORTSDIR}/devel/py-sip \
 		py*-qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
