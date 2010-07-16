@@ -14,7 +14,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.hsc.fr/ressources/outils/ssltunnel/download/
 PKGNAMESUFFIX=	-client
 
-MAINTAINER=	at@rominet.net
+MAINTAINER=	utisoft@gmail.com
 COMMENT=	PPP over SSL virtual private networking (client part)
 
 USE_ICONV=	yes
