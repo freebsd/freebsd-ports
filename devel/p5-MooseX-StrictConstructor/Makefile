@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-StrictConstructor
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Make your MooseX object constructors blow up on unknown attributes
 
-RUN_DEPENDS=	p5-Moose>=0.74:${PORTSDIR}/devel/p5-Moose
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Moose>=0.94:${PORTSDIR}/devel/p5-Moose
+BUILD_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
+		${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		MooseX::StrictConstructor.3 \
 		MooseX::StrictConstructor::Role::Meta::Method::Constructor.3 \
