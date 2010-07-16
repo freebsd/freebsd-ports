@@ -1,6 +1,5 @@
 bin/mysql
 bin/mysql_config
-bin/mysql_fix_privilege_tables
 bin/mysql_upgrade
 bin/mysqladmin
 bin/mysqlbinlog
@@ -33,7 +32,6 @@ include/mysql/mysql.h
 include/mysql/mysql_com.h
 include/mysql/mysql_embed.h
 include/mysql/mysql_file.h
-include/mysql/mysql_thread.h
 include/mysql/mysql_time.h
 include/mysql/mysql_version.h
 include/mysql/mysqld_ername.h
@@ -43,7 +41,8 @@ include/mysql/plugin_audit.h
 include/mysql/plugin_ftparser.h
 include/mysql/probes_mysql.h
 include/mysql/probes_mysql_nodtrace.h
-include/mysql/psi.h
+include/mysql/psi/mysql_thread.h
+include/mysql/psi/psi.h
 include/mysql/services.h
 include/mysql/service_my_snprintf.h
 include/mysql/service_thd_alloc.h
@@ -62,7 +61,7 @@ lib/mysql/libmysqlclient_r.la
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.16
 share/aclocal/mysql.m4
-%%DATADIR%%/mysql_fix_privilege_tables.sql
+@dirrm include/mysql/psi
 @dirrm include/mysql
 @dirrm lib/mysql
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%

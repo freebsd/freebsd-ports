@@ -11,58 +11,10 @@ bin/mysql_install_db
 bin/mysql_tzinfo_to_sql
 bin/mysql_waitpid
 bin/mysqld_safe
-%%NDB%%bin/ndb_config
-%%NDB%%bin/ndb_delete_all
-%%NDB%%bin/ndb_desc
-%%NDB%%bin/ndb_drop_index
-%%NDB%%bin/ndb_drop_table
-%%NDB%%bin/ndb_error_reporter
-%%NDB%%bin/ndb_mgm
-%%NDB%%bin/ndb_print_backup_file
-%%NDB%%bin/ndb_print_schema_file
-%%NDB%%bin/ndb_print_sys_file
-%%NDB%%bin/ndb_restore
-%%NDB%%bin/ndb_select_all
-%%NDB%%bin/ndb_select_count
-%%NDB%%bin/ndb_show_tables
-%%NDB%%bin/ndb_size.pl
-%%NDB%%bin/ndb_test_platform
-%%NDB%%bin/ndb_waiter
 bin/perror
 bin/replace
 bin/resolve_stack_dump
 bin/resolveip
-%%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi.h
-%%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi_config_parameters.h
-%%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi_config_parameters_debug.h
-%%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi_debug.h
-%%NDB%%include/mysql/storage/ndb/mgmapi/mgmapi_error.h
-%%NDB%%include/mysql/storage/ndb/mgmapi/ndb_logevent.h
-%%NDB%%include/mysql/storage/ndb/mgmapi/ndbd_exit_codes.h
-%%NDB%%include/mysql/storage/ndb/ndb_constants.h
-%%NDB%%include/mysql/storage/ndb/ndb_init.h
-%%NDB%%include/mysql/storage/ndb/ndb_types.h
-%%NDB%%include/mysql/storage/ndb/ndb_version.h
-%%NDB%%include/mysql/storage/ndb/ndbapi/Ndb.hpp
-%%NDB%%include/mysql/storage/ndb/ndbapi/NdbApi.hpp
-%%NDB%%include/mysql/storage/ndb/ndbapi/NdbBlob.hpp
-%%NDB%%include/mysql/storage/ndb/ndbapi/NdbDictionary.hpp
-%%NDB%%include/mysql/storage/ndb/ndbapi/NdbError.hpp
-%%NDB%%include/mysql/storage/ndb/ndbapi/NdbEventOperation.hpp
-%%NDB%%include/mysql/storage/ndb/ndbapi/NdbIndexOperation.hpp
-%%NDB%%include/mysql/storage/ndb/ndbapi/NdbIndexScanOperation.hpp
-%%NDB%%include/mysql/storage/ndb/ndbapi/NdbIndexStat.hpp
-%%NDB%%include/mysql/storage/ndb/ndbapi/NdbOperation.hpp
-%%NDB%%include/mysql/storage/ndb/ndbapi/NdbPool.hpp
-%%NDB%%include/mysql/storage/ndb/ndbapi/NdbRecAttr.hpp
-%%NDB%%include/mysql/storage/ndb/ndbapi/NdbReceiver.hpp
-%%NDB%%include/mysql/storage/ndb/ndbapi/NdbScanFilter.hpp
-%%NDB%%include/mysql/storage/ndb/ndbapi/NdbScanOperation.hpp
-%%NDB%%include/mysql/storage/ndb/ndbapi/NdbTransaction.hpp
-%%NDB%%include/mysql/storage/ndb/ndbapi/ndbapi_limits.h
-%%NDB%%include/mysql/storage/ndb/ndbapi/ndb_cluster_connection.hpp
-%%NDB%%include/mysql/storage/ndb/ndbapi/ndb_opt_defaults.h
-%%NDB%%include/mysql/storage/ndb/ndbapi/ndberror.h
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmyisam.a
@@ -71,10 +23,6 @@ lib/mysql/libmysqld.a
 lib/mysql/libmysqlservices.a
 lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
-%%NDB%%lib/mysql/libndbclient.a
-%%NDB%%lib/mysql/libndbclient.la
-%%NDB%%lib/mysql/libndbclient.so
-%%NDB%%lib/mysql/libndbclient.so.3
 lib/mysql/libvio.a
 %%PLUGINS%%lib/mysql/plugin/adt_null.a
 %%PLUGINS%%lib/mysql/plugin/adt_null.la
@@ -101,10 +49,6 @@ lib/mysql/libvio.a
 %%PLUGINS%%lib/mysql/plugin/semisync_slave.so
 %%PLUGINS%%lib/mysql/plugin/semisync_slave.so.0
 libexec/mysqld
-%%NDB%%libexec/ndb_cpcd
-%%NDB%%libexec/ndb_mgmd
-%%NDB%%libexec/ndbd
-%%DATADIR%%/ChangeLog
 %%DATADIR%%/binary-configure
 %%DATADIR%%/charsets/Index.xml
 %%DATADIR%%/charsets/README
@@ -173,10 +117,6 @@ libexec/mysqld
 %%DATADIR%%/spanish/errmsg.sys
 %%DATADIR%%/swedish/errmsg.sys
 %%DATADIR%%/ukrainian/errmsg.sys
-%%NDB%%@dirrm include/mysql/storage/ndb/mgmapi
-%%NDB%%@dirrm include/mysql/storage/ndb/ndbapi
-%%NDB%%@dirrm include/mysql/storage/ndb
-%%NDB%%@dirrm include/mysql/storage
 @dirrmtry include/mysql
 %%PLUGINS%%@dirrm lib/mysql/plugin
 @dirrmtry lib/mysql
