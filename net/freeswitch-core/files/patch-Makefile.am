@@ -1,13 +1,23 @@
---- Makefile.am.orig	2010-05-11 15:58:08.000000000 -0700
-+++ Makefile.am	2010-05-12 20:01:14.000000000 -0700
-@@ -450,8 +450,8 @@
- 	@echo Installing $(NAME)
- 	@for x in $(modulesdir) $(runtimedir) $(dbdir) $(logfiledir) $(logfiledir)/xml_cdr $(bindir) $(scriptdir) $(recordingsdir) $(grammardir); do \
- 		$(mkinstalldirs) $(DESTDIR)$$x ; \
--	 done
--	test -d $(DESTDIR)$(sysconfdir) || $(MAKE) samples-conf
-+	done
-+	test -d $(DESTDIR)$(sysconfdir) || $(mkinstalldirs) $(DESTDIR)$(sysconfdir)
- 	test -d $(DESTDIR)$(htdocsdir) || $(MAKE) samples-htdocs
+--- Makefile.am	2010-06-22 17:19:37.000000000 -0400
++++ Makefile.am	2010-07-02 11:45:29.000000000 -0400
+@@ -426,7 +426,7 @@
+ 		test -d $(DESTDIR)$(sysconfdir)$$dir || $(mkinstalldirs) $(DESTDIR)$(sysconfdir)$$dir ; \
+ 		test -f $(DESTDIR)$(sysconfdir)$$dir/$$filename || \
+ 		test -f $(DESTDIR)$(sysconfdir)$$dir/$$filename.noload || \
+-			$(INSTALL) -m 644 $(switch_srcdir)/conf/$$dir/$$filename $(DESTDIR)$(sysconfdir)$$dir; \
++			$(INSTALL) -m 644 $(switch_srcdir)/conf/$$dir/$$filename $(DESTDIR)$(sysconfdir)$$dir/$$filename.sample; \
+ 	done
  
- is-scm:
+ samples-htdocs: 
+@@ -444,8 +444,9 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(modulesdir)
+ 
+ install-data-local:
+-	@echo Installing $(NAME)
+-	@for x in $(modulesdir) $(runtimedir) $(dbdir) $(logfiledir) $(logfiledir)/xml_cdr $(bindir) $(scriptdir) $(recordingsdir) $(grammardir); do \
++	@for x in $(bindir) $(modulesdir) $(runtimedir) $(logfiledir) \
++		$(logfiledir)/xml_cdr $(dbdir) $(grammardir) $(scriptdir) \
++		$(storagedir) $(recordingsdir) $(voicemaildir) ; do \
+ 		$(mkinstalldirs) $(DESTDIR)$$x ; \
+ 	 done
+ 	test -d $(DESTDIR)$(sysconfdir) || $(MAKE) samples-conf
