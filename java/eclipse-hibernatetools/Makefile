@@ -20,8 +20,8 @@ COMMENT=	Hibernate3 Tools for the Eclipse IDE
 ## XXX - Notify the maintainer if the dependencies on either
 ## java/eclipse-gef of java/eclipse-webtools change
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.3.2.v20080129/feature.xml:${PORTSDIR}/java/eclipse-gef \
-		${LOCALBASE}/eclipse/features/org.eclipse.wst.common_core.feature_2.0.2.v200802150100-7C78EKOE_EkMNlO6f7cjpz0/feature.xml:${PORTSDIR}/java/eclipse-webtools
+		${LOCALBASE}/lib/eclipse/features/org.eclipse.gef_3.3.2.v20080129/feature.xml:${PORTSDIR}/java/eclipse-gef \
+		${LOCALBASE}/lib/eclipse/features/org.eclipse.wst.common_core.feature_2.0.2.v200802150100-7C78EKOE_EkMNlO6f7cjpz0/feature.xml:${PORTSDIR}/java/eclipse-webtools
 
 LICENSE=	EPL LGPL3
 LICENSE_COMB=	multi
@@ -40,23 +40,23 @@ post-extract:
 
 do-install:
 # create destination dir
-	@${MKDIR} ${PREFIX}/eclipse
+	@${MKDIR} ${PREFIX}/lib/eclipse
 # install both files and directories
 	@(cd ${WRKSRC} && \
 		${FIND} -s features plugins -type d \
-			-exec ${MKDIR} "${PREFIX}/eclipse/{}" \; && \
+			-exec ${MKDIR} "${PREFIX}/lib/eclipse/{}" \; && \
 		${FIND} -s features plugins -not -type d \
-			-exec ${INSTALL_DATA} "{}" "${PREFIX}/eclipse/{}" \; \
+			-exec ${INSTALL_DATA} "{}" "${PREFIX}/lib/eclipse/{}" \; \
 	)
 
 # used to manually generate the plist files
 generate-plist-locally: build
 # annotate installation files
 	@(cd ${WRKSRC} && ${FIND} -s features plugins -not -type d) \
-		| ${SED} -ne 's,^,eclipse/,p' > ${PLIST}
+		| ${SED} -ne 's,^,lib/eclipse/,p' > ${PLIST}
 # annotate installation directories
 	@(cd ${WRKSRC} && ${FIND} -s -d features plugins -type d) \
 		| ${GREP} -vE '^plugins$$|^features$$' \
-		| ${SED} -ne 's,^,@dirrm eclipse/,p' >> ${PLIST}
+		| ${SED} -ne 's,^,@dirrm lib/eclipse/,p' >> ${PLIST}
 
 .include <bsd.port.mk>
