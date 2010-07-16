@@ -6,3 +6,6 @@
 @dirrm %%SITE_PERL%%/MooseX/StrictConstructor/Role
 @dirrm %%SITE_PERL%%/MooseX/StrictConstructor
 @dirrmtry %%SITE_PERL%%/MooseX
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/StrictConstructor/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/StrictConstructor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
