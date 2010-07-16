@@ -7,8 +7,8 @@
 %%T%%/bin/catalina-tasks.xml
 %%T%%/bin/catalina.sh
 %%T%%/bin/commons-daemon.jar
+%%T%%/bin/commons-daemon-native.tar.gz
 %%T%%/bin/digest.sh
-%%T%%/bin/jsvc.tar.gz
 %%T%%/bin/setclasspath.sh
 %%T%%/bin/shutdown.sh
 %%T%%/bin/startup.sh
@@ -292,8 +292,8 @@
 %%T%%/webapps/examples/jsp/cal/cal2.jsp.html
 %%T%%/webapps/examples/jsp/cal/calendar.html
 %%T%%/webapps/examples/jsp/cal/login.html
-%%T%%/webapps/examples/jsp/chat/chat.jsp
-%%T%%/webapps/examples/jsp/chat/chat.jsp.html
+%%T%%/webapps/examples/jsp/chat/index.jsp
+%%T%%/webapps/examples/jsp/chat/index.jsp.html
 %%T%%/webapps/examples/jsp/chat/login.jsp
 %%T%%/webapps/examples/jsp/chat/login.jsp.html
 %%T%%/webapps/examples/jsp/chat/post.jsp
