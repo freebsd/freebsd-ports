@@ -6,9 +6,9 @@
 
 PORTNAME=	kannel
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://www.kannel.org/download/%SUBDIR%/ \
-		http://farrokhi.net/distfiles/
+MASTER_SITES=	http://www.kannel.org/download/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	gateway-${PORTVERSION}
 
@@ -25,15 +25,41 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cflags="${CPPFLAGS}" --with-libs="${LDFLAGS}" \
 		--enable-pcre=yes --enable-docs=no --with-malloc=native \
-		--enable-start-stop-daemon=no
+		--enable-start-stop-daemon=no --without-sdb --without-oracle \
+		--without-sqlite2
 
 MAN1=		mtbatch.1 seewbmp.1 wmlsc.1 wmlsdasm.1
 MAN8=		kannel.8 run_kannel_box.8
 
+OPTIONS=	MYSQL	"Enable MySQL support"		off \
+		PGSQL	"Enable PostgreSQL support"	off \
+		SQLITE3	"Enable SQLite support"		off
+
+.include <bsd.port.options.mk>
+
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+CONFIGURE_ARGS+=--with-mysql
+.else
+CONFIGURE_ARGS+=--without-mysql
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+CONFIGURE_ARGS+=--with-pgsql
+.else
+CONFIGURE_ARGS+=--without-pgsql
+.endif
+
+.if defined(WITH_SQLITE3)
+USE_SQLITE=	3
+CONFIGURE_ARGS+=--with-sqlite3
+.else
+CONFIGURE_ARGS+=--without-sqlite3
+.endif
 
 .if ${ARCH} == "alpha"
 BROKEN=		Does not compile on alpha
@@ -55,4 +81,4 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/sbin/${filename}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
