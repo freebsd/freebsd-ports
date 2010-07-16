@@ -1,18 +1,11 @@
---- rw/rwTable.c.orig	Sun Apr 10 17:52:02 2005
-+++ rw/rwTable.c	Sun Apr 17 01:35:47 2005
-@@ -249,6 +249,7 @@
+--- rw/rwTable.c.orig	2010-04-09 14:27:03.000000000 +0900
++++ rw/rwTable.c	2010-05-29 13:28:58.000000000 +0900
+@@ -296,7 +296,7 @@
  char *
  RWGetMsg()
  {
+-#ifndef __NetBSD__
 +#if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)
  #if defined(BSD4_4)
      __const extern char *__const sys_errlist[];
  #else
-@@ -258,6 +259,7 @@
- #  define sys_errlist _sys_errlist
- #else
-     extern char *sys_errlist[];
-+#endif
- #endif
- #endif
- #endif
