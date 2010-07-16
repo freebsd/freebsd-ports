@@ -23,7 +23,12 @@ you update your ports collection, before attempting any port upgrades.
 	portupgrade -fr perl
 
   Portmaster users:
-	env DISABLE_CONFLICTS=1 portmaster -o lang/perl5.12 lang/perl5.10
+	portmaster -o lang/perl5.12 lang/perl5.10
+
+	Conservative:
+	portmaster p5-
+
+	Comprehensive (but perhaps overkill):
 	portmaster -r perl-
 
   Note: If the "perl-" glob matches  more than one port you will need to
