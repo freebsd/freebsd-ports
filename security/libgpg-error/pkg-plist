@@ -19,9 +19,13 @@ share/common-lisp/source/gpg-error/gpg-error-codes.lisp
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%NLS%%share/locale/cs/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/de/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libgpg-error.mo
+%%NLS%%share/locale/it/LC_MESSAGES/libgpg-error.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libgpg-error.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/libgpg-error.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/libgpg-error.mo
