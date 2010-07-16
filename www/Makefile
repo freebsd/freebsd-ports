@@ -75,6 +75,7 @@
     SUBDIR += campsite
     SUBDIR += castget
     SUBDIR += caudium14
+    SUBDIR += cblog
     SUBDIR += cgi-lib
     SUBDIR += cgi-lib.pl
     SUBDIR += cgic
