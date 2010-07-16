@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://asm.sourceforge.net/asmutils/
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	A set of UNIX utilities written in assembly language
+COMMENT=	A set of UNIX utilities written in x86 assembly language
 
 ONLY_FOR_ARCHS=	i386
 
