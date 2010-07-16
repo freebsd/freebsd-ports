@@ -16,6 +16,8 @@ include/nickle/value.h
 %%DATADIR%%/builtin.5c
 %%DATADIR%%/command.5c
 %%DATADIR%%/ctype.5c
+%%DATADIR%%/factorial.5c
+%%DATADIR%%/prime_sieve.5c
 %%DATADIR%%/examples/COPYING
 %%DATADIR%%/examples/comb.5c
 %%DATADIR%%/examples/cribbage.5c
