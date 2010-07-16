@@ -64,6 +64,10 @@ CONFIGURE_ENV+=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${PREFIX}/include
 
+.if ${OSVERSION} < 700000
+IGNORE=		freeswitch is only supported on FreeBSD 7 or newer
+.endif
+
 FREESWITCH_USER=	freeswitch
 FREESWITCH_GROUP=	${FREESWITCH_USER}
 
@@ -268,11 +272,6 @@ post-install:
 	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/spool/${PORTNAME}
 	@for i in $$(${FIND} ${PREFIX}/etc/${PORTNAME}/conf/ -type f -name '*.sample'); do if [ ! -f $${i%.sample} ]; then ${CP} -p $$i $${i%.sample}; fi; done
 	@${CAT} ${PKGMESSAGE}
-
-.if ${OSVERSION} < 700000
-IGNORE=		freeswitch is only supported on FreeBSD 7 or newer
-.endif
-
 	@${ECHO_MSG} "This port chown -R various directories ${FREESWITCH_USER}:${FREESWITCH_GROUP} "
 	@${ECHO_MSG} "this is for port security . in the event something should stop working."
 	@${ECHO_MSG} "Please take the time to check chownership of the dir's"
