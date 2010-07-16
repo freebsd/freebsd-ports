@@ -4,10 +4,13 @@ bin/task
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%DATADIR%%/rc/holidays-US.rc
-%%DATADIR%%/rc/holidays-SE.rc
 %%DATADIR%%/rc/dark-16.theme
 %%DATADIR%%/rc/dark-256.theme
+%%DATADIR%%/rc/dark-blue-256.theme
+%%DATADIR%%/rc/dark-green-256.theme
+%%DATADIR%%/rc/dark-red-256.theme
+%%DATADIR%%/rc/holidays-SE.rc
+%%DATADIR%%/rc/holidays-US.rc
 %%DATADIR%%/rc/light-16.theme
 %%DATADIR%%/rc/light-256.theme
 %%DATADIR%%/scripts/bash/task_completion.sh
