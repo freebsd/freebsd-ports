@@ -1,25 +1,30 @@
---- Makefile.orig	2010-01-12 15:22:03.000000000 +0800
-+++ Makefile	2010-01-12 15:24:19.000000000 +0800
-@@ -70,18 +70,17 @@
+--- /Makefile.orig	2010-06-29 21:16:10.000000000 +0200
++++ Makefile	2010-06-29 21:17:45.000000000 +0200
+@@ -90,9 +90,9 @@
  
  install:	all 
- 		@mkdir -p $(PREFIX)/lib
--		cp libSockets.a $(PREFIX)/lib
--		cp libSocketsEx.a $(PREFIX)/lib
-+		@${BSD_INSTALL_DATA} libSockets.a $(PREFIX)/lib
-+		@${BSD_INSTALL_DATA} libSocketsEx.a $(PREFIX)/lib
- 		@mkdir -p $(PREFIX)/include/Sockets
--		cp -a *.h $(PREFIX)/include/Sockets
-+		@${BSD_INSTALL_DATA} *.h $(PREFIX)/include/Sockets
- 		@rm -f $(PREFIX)/include/Sockets/SSLSocket.*
- 		@rm -f $(PREFIX)/include/Sockets/HttpsGetSocket.*
- 		@rm -f $(PREFIX)/include/Sockets/HttpsSocket.*
- 		@rm -f $(PREFIX)/include/Sockets/EventSocket.*
- 		@rm -f $(PREFIX)/include/Sockets/PoolSocket.*
- 		@rm -f $(PREFIX)/include/Sockets/SocketThread.*
--		@mkdir -p $(PREFIX)/bin
--		install Sockets-config $(PREFIX)/bin
-+		@${BSD_INSTALL_DATA} Sockets-config $(PREFIX)/bin
+ 		@mkdir -p $(DESTDIR)/$(PREFIX)/lib
+-		cp $(LIBNAME) $(DESTDIR)/$(PREFIX)/lib
++		@${BSD_INSTALL_DATA} $(LIBNAME) $(DESTDIR)/$(PREFIX)/lib
+ 		@mkdir -p $(DESTDIR)/$(PREFIX)/include/$(NAME)
+-		cp -a *.h $(DESTDIR)/$(PREFIX)/include/$(NAME)
++		@${BSD_INSTALL_DATA} *.h $(DESTDIR)/$(PREFIX)/include/$(NAME)
+ 		@rm -f $(DESTDIR)/$(PREFIX)/include/$(NAME)/SSLSocket.*
+ 		@rm -f $(DESTDIR)/$(PREFIX)/include/$(NAME)/HttpsGetSocket.*
+ 		@rm -f $(DESTDIR)/$(PREFIX)/include/$(NAME)/HttpsSocket.*
+@@ -106,12 +106,12 @@
+ 		@rm -f $(DESTDIR)/$(PREFIX)/include/$(NAME)/Min*Handler.h
+ 		@rm -f $(DESTDIR)/$(PREFIX)/include/$(NAME)/Uid.h
+ 		@mkdir -p $(DESTDIR)/$(PREFIX)/bin
+-		install $(CONFNAME) $(DESTDIR)/$(PREFIX)/bin
++		@${BSD_INSTALL_PROGRAM} $(CONFNAME) $(DESTDIR)/$(PREFIX)/bin
  
- # no binary files, zip will translate lf to cr lf
- FILES =		*.h *.cpp Makefile Makefile.* Project/*.ds* \
+ install_shared:	install shared
+ 		@mkdir -p $(DESTDIR)/$(PREFIX)/lib/pkgconfig
+-		cp $(SHAREDLIBNAME) $(DESTDIR)/$(PREFIX)/lib
+-		cp -a pkgconfig/*pc $(DESTDIR)/$(PREFIX)/lib/pkgconfig
++		@${BSD_INSTALL_DATA} $(SHAREDLIBNAME) $(DESTDIR)/$(PREFIX)/lib
++		@${BSD_INSTALL_DATA} pkgconfig/*pc $(DESTDIR)/$(PREFIX)/libdata/pkgconfig
+ 		rm -f $(DESTDIR)/$(PREFIX)/lib/lib$(NAME).so
+ 		rm -f $(DESTDIR)/$(PREFIX)/lib/lib$(NAME).so.$(MAJOR)
+ 		ln -s $(DESTDIR)/$(PREFIX)/lib/lib$(NAME).so.$(MAJOR).$(MINOR) $(DESTDIR)/$(PREFIX)/lib/lib$(NAME).so
