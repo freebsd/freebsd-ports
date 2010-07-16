@@ -19,8 +19,8 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Data Tools Platform for the Eclipse IDE
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/eclipse/features/org.eclipse.emf_2.3.2.v200802051830/feature.xml:${PORTSDIR}/java/eclipse-emf \
-		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.3.2.v20080129/feature.xml:${PORTSDIR}/java/eclipse-gef
+		${LOCALBASE}/lib/eclipse/features/org.eclipse.emf_2.3.2.v200802051830/feature.xml:${PORTSDIR}/java/eclipse-emf \
+		${LOCALBASE}/lib/eclipse/features/org.eclipse.gef_3.3.2.v20080129/feature.xml:${PORTSDIR}/java/eclipse-gef
 
 LICENSE=	EPL
 
@@ -38,23 +38,23 @@ post-extract:
 
 do-install:
 # create destination dir
-		@${MKDIR} ${PREFIX}/eclipse
+		@${MKDIR} ${PREFIX}/lib/eclipse
 # install both files and directories
 		@(cd ${WRKSRC}/eclipse && \
 			${FIND} -s features plugins -type d \
-				-exec ${MKDIR} "${PREFIX}/eclipse/{}" \; && \
+				-exec ${MKDIR} "${PREFIX}/lib/eclipse/{}" \; && \
 			${FIND} -s features plugins -not -type d \
-				-exec ${INSTALL_DATA} "{}" "${PREFIX}/eclipse/{}" \; \
+				-exec ${INSTALL_DATA} "{}" "${PREFIX}/lib/eclipse/{}" \; \
 		)
 
 # used to manually generate the plist files
 generate-plist-locally: build
 # annotate installation files
 	@(cd ${WRKSRC}/eclipse && ${FIND} -s features plugins -not -type d) \
-		| ${SED} -ne 's,^,eclipse/,p' > ${PLIST}
+		| ${SED} -ne 's,^,lib/eclipse/,p' > ${PLIST}
 # annotate installation directories
 	@(cd ${WRKSRC}/eclipse && ${FIND} -s -d features plugins -type d) \
 		| ${GREP} -vE '^plugins$$|^features$$' \
-		| ${SED} -ne 's,^,@dirrm eclipse/,p' >> ${PLIST}
+		| ${SED} -ne 's,^,@dirrm lib/eclipse/,p' >> ${PLIST}
 
 .include <bsd.port.mk>

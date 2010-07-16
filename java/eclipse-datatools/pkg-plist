@@ -1,437 +1,437 @@
-eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/feature.properties
-eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/feature.xml
-eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/license.html
-eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/feature.properties
-eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/feature.xml
-eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/license.html
-eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/epl-v10.html
-eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/feature.properties
-eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/feature.xml
-eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/license.html
-eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/epl-v10.html
-eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/feature.properties
-eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/feature.xml
-eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/license.html
-eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/epl-v10.html
-eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/feature.properties
-eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/feature.xml
-eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/license.html
-eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/feature.properties
-eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/feature.xml
-eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/license.html
-eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/epl-v10.html
-eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/feature.properties
-eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/feature.xml
-eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/license.html
-eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/epl-v10.html
-eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/feature.properties
-eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/feature.xml
-eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/license.html
-eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/epl-v10.html
-eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/feature.properties
-eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/feature.xml
-eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/license.html
-eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/epl-v10.html
-eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/feature.properties
-eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/feature.xml
-eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/license.html
-eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/epl-v10.html
-eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/feature.properties
-eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/feature.xml
-eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/license.html
-eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/epl-v10.html
-eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/feature.properties
-eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/feature.xml
-eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/license.html
-eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/epl-v10.html
-eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/feature.properties
-eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/feature.xml
-eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/license.html
-eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/epl-v10.html
-eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/feature.properties
-eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/feature.xml
-eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/license.html
-eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/epl-v10.html
-eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/feature.properties
-eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/feature.xml
-eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/license.html
-eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/epl-v10.html
-eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/feature.properties
-eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/feature.xml
-eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/license.html
-eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/epl-v10.html
-eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/feature.properties
-eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/feature.xml
-eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/license.html
-eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/epl-v10.html
-eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/feature.properties
-eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/feature.xml
-eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/license.html
-eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/epl-v10.html
-eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/feature.properties
-eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/feature.xml
-eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/license.html
-eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/epl-v10.html
-eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/feature.properties
-eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/feature.xml
-eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/license.html
-eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/epl-v10.html
-eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/feature.properties
-eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/feature.xml
-eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/license.html
-eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/epl-v10.html
-eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/feature.properties
-eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/feature.xml
-eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/license.html
-eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/epl-v10.html
-eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/feature.properties
-eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/feature.xml
-eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/license.html
-eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/epl-v10.html
-eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/feature.properties
-eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/feature.xml
-eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/license.html
-eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/epl-v10.html
-eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/feature.properties
-eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/feature.xml
-eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/license.html
-eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/epl-v10.html
-eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/feature.properties
-eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/feature.xml
-eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/license.html
-eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/epl-v10.html
-eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/feature.properties
-eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/feature.xml
-eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/license.html
-eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/epl-v10.html
-eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/feature.properties
-eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/feature.xml
-eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/license.html
-eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/epl-v10.html
-eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/feature.properties
-eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/feature.xml
-eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/license.html
-eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF/ECLIPSE.RSA
-eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF/ECLIPSE.SF
-eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF/MANIFEST.MF
-eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF/eclipse.inf
-eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/eclipse_update_120.jpg
-eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/feature.properties
-eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/feature.xml
-eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/license.html
-eclipse/plugins/javax.wsdl_1.4.0.v200806030407.jar
-eclipse/plugins/javax.xml_1.3.4.v200806030440.jar
-eclipse/plugins/net.sourceforge.lpg.lpgjavaruntime_1.1.0.v200803061910.jar
-eclipse/plugins/org.apache.xerces_2.9.0.v200805270400.jar
-eclipse/plugins/org.apache.xml.resolver_1.2.0.v200806030312.jar
-eclipse/plugins/org.apache.xml.serializer_2.7.1.v200806030322.jar
-eclipse/plugins/org.eclipse.datatools.common.doc.user_1.6.1.v20080828133713.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.apache.derby.dbdefinition_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.apache.derby.ui_1.0.1.v200807010433.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.apache.derby_1.0.1.v200807150030.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.console.profile_1.0.0.v200805231345.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.db.generic.ui_1.0.1.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.db.generic_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.dbdefinition.genericJDBC_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.doc.user.contexts_1.6.1.v20080828133713.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.doc.user_1.6.1.v20080828133713.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.oda.consumer_3.1.3.v200808270255.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.oda.design.ui_3.0.7.v200808051050.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.oda.design_3.0.7.v200807231215.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.oda.flatfile.ui_3.0.7.v200808130628.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.oda.flatfile_3.0.7.v200808261835.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.oda.profile_3.0.6.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.oda.template.ui_3.0.6.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.oda_3.1.3.v200808270255.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.sqm.core.ui_1.1.1.v200808140022.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.sqm.core_1.0.3.v200809180120.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.sqm.server.ui_1.1.1.v200808300421.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.ui.dse_1.1.1.v200807230727.jar
-eclipse/plugins/org.eclipse.datatools.connectivity.ui_1.1.2.v200809150616.jar
-eclipse/plugins/org.eclipse.datatools.connectivity_1.1.1.v200809180120.jar
-eclipse/plugins/org.eclipse.datatools.doc.user_1.6.1.v20080828133713.jar
-eclipse/plugins/org.eclipse.datatools.enablement.finfo_1.5.1.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.hsqldb.dbdefinition_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.hsqldb.ui_1.0.0.v200807220100.jar
-eclipse/plugins/org.eclipse.datatools.enablement.hsqldb_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.iseries.dbdefinition_1.0.0.v200806100223.jar
-eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.iseries.ui_1.0.0.v200805160737.jar
-eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.iseries_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.luw.dbdefinition_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.luw.ui_1.0.1.v200806260315.jar
-eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.luw_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.zseries.dbdefinition_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.zseries.ui_1.0.0.v200805160737.jar
-eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.zseries_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.ibm.informix.dbdefinition_1.0.1.v200807170829.jar
-eclipse/plugins/org.eclipse.datatools.enablement.ibm.informix.ui_1.0.1.v200806260315.jar
-eclipse/plugins/org.eclipse.datatools.enablement.ibm.informix_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.ibm.ui_1.0.0.v200806271414.jar
-eclipse/plugins/org.eclipse.datatools.enablement.jdt.classpath_1.0.1.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.msft.sqlserver.dbdefinition_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.msft.sqlserver.ui_1.0.1.v200808222228.jar
-eclipse/plugins/org.eclipse.datatools.enablement.msft.sqlserver_1.0.1.v200807181158.jar
-eclipse/plugins/org.eclipse.datatools.enablement.mysql.dbdefinition_1.0.1.v200805170742.jar
-eclipse/plugins/org.eclipse.datatools.enablement.mysql.ui_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.mysql_1.0.1.v200808261158.jar
-eclipse/plugins/org.eclipse.datatools.enablement.oda.ws.ui_1.1.1.v200808271112.jar
-eclipse/plugins/org.eclipse.datatools.enablement.oda.ws_1.1.1.v200808211640.jar
-eclipse/plugins/org.eclipse.datatools.enablement.oda.xml.ui_1.1.1.v200808130628.jar
-eclipse/plugins/org.eclipse.datatools.enablement.oda.xml_1.1.1.v200808261409.jar
-eclipse/plugins/org.eclipse.datatools.enablement.oracle.dbdefinition_1.0.1.v200808021450.jar
-eclipse/plugins/org.eclipse.datatools.enablement.oracle.ui_1.0.1.v200806260315.jar
-eclipse/plugins/org.eclipse.datatools.enablement.oracle_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.postgresql.dbdefinition_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.postgresql.ui_1.0.0.v200806060334.jar
-eclipse/plugins/org.eclipse.datatools.enablement.postgresql_1.0.1.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.sap.maxdb.dbdefinition_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.sap.maxdb.ui_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.sap.maxdb_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.sybase.asa.dbdefinition_1.0.0.v200805240040.jar
-eclipse/plugins/org.eclipse.datatools.enablement.sybase.asa.models_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.sybase.asa.ui_1.0.1.v200805310538.jar
-eclipse/plugins/org.eclipse.datatools.enablement.sybase.asa_1.0.1.v200805310538.jar
-eclipse/plugins/org.eclipse.datatools.enablement.sybase.ase.dbdefinition_1.0.0.v200805240040.jar
-eclipse/plugins/org.eclipse.datatools.enablement.sybase.ase.models_1.0.1.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.sybase.ase.ui_1.0.1.v200806260315.jar
-eclipse/plugins/org.eclipse.datatools.enablement.sybase.ase_1.0.1.v200807010411.jar
-eclipse/plugins/org.eclipse.datatools.enablement.sybase.models_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.enablement.sybase.ui_1.0.0.v200808221518.jar
-eclipse/plugins/org.eclipse.datatools.enablement.sybase_1.0.1.v200805310538.jar
-eclipse/plugins/org.eclipse.datatools.help_1.5.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.intro_1.6.1.v200807021300.jar
-eclipse/plugins/org.eclipse.datatools.modelbase.dbdefinition_1.0.0.v200808020150.jar
-eclipse/plugins/org.eclipse.datatools.modelbase.derby_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.modelbase.sql.edit_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.modelbase.sql.query.edit_1.0.0.v200806070329.jar
-eclipse/plugins/org.eclipse.datatools.modelbase.sql.query_1.0.1.v200807251820.jar
-eclipse/plugins/org.eclipse.datatools.modelbase.sql.xml.query_1.0.0.v200807080500.jar
-eclipse/plugins/org.eclipse.datatools.modelbase.sql_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.oda.cshelp_1.1.0.v200808280228.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.common.ui_1.0.0.v200807211830.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.data.core_1.0.0.v200808260630.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.data.ui_1.1.0.v200808260630.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.db.derby_1.0.0.v200805152355.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.db.generic_1.0.0.v200808140643.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.ddlgen.ui_1.0.0.v200808140615.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.debugger.core_1.0.0.v200808140615.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.doc.user_1.6.1.v20080828133713.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.editor.core_1.0.0.v200808271350.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.parsers.sql.lexer_1.0.1.v200808080530.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.parsers.sql.query_1.0.1.v200808140615.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.parsers.sql.xml.query_1.0.0.v200808140615.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.parsers.sql_1.0.1.v200808140615.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.plan_1.0.0.v200807211830.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.result_1.0.0.v200808271350.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.routineeditor_1.0.0.v200807211830.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.sql_1.0.0.v200808140615.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.sqlbuilder_1.0.0.v200808271350.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.sqleditor_1.0.0.v200808271350.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.sqlscrapbook_1.0.0.v200808271350.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.tabledataeditor_1.0.0.v200808300730.jar
-eclipse/plugins/org.eclipse.datatools.sqltools.tablewizard_1.0.0.v200808140615.jar
-@dirrm eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824
-@dirrm eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59
-@dirrm eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H
-@dirrm eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh
-@dirrm eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ
-@dirrm eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24
-@dirrm eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK
-@dirrm eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc
-@dirrm eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK
-@dirrm eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa
-@dirrm eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ
-@dirrm eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466
-@dirrm eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW
-@dirrm eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ
-@dirrm eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C
-@dirrm eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW
-@dirrm eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML
-@dirrm eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP
-@dirrm eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ
-@dirrm eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9
-@dirrm eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411
-@dirrm eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT
-@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5
-@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS
-@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR
-@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp
-@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN
-@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5
-@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI
-@dirrm eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF
-@dirrm eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824
+lib/eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/feature.properties
+lib/eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/feature.xml
+lib/eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/license.html
+lib/eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/feature.properties
+lib/eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/feature.xml
+lib/eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/license.html
+lib/eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/feature.properties
+lib/eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/feature.xml
+lib/eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/license.html
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/feature.properties
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/feature.xml
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/license.html
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/feature.properties
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/feature.xml
+lib/eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/license.html
+lib/eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/feature.properties
+lib/eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/feature.xml
+lib/eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/license.html
+lib/eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/feature.properties
+lib/eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/feature.xml
+lib/eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/license.html
+lib/eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/feature.properties
+lib/eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/feature.xml
+lib/eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/license.html
+lib/eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/feature.properties
+lib/eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/feature.xml
+lib/eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/license.html
+lib/eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/feature.properties
+lib/eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/feature.xml
+lib/eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/license.html
+lib/eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/feature.properties
+lib/eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/feature.xml
+lib/eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/license.html
+lib/eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/feature.properties
+lib/eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/feature.xml
+lib/eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/license.html
+lib/eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/feature.properties
+lib/eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/feature.xml
+lib/eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/license.html
+lib/eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/feature.properties
+lib/eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/feature.xml
+lib/eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/license.html
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/feature.properties
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/feature.xml
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/license.html
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/feature.properties
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/feature.xml
+lib/eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/license.html
+lib/eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/feature.properties
+lib/eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/feature.xml
+lib/eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/license.html
+lib/eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/feature.properties
+lib/eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/feature.xml
+lib/eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/license.html
+lib/eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/feature.properties
+lib/eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/feature.xml
+lib/eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/license.html
+lib/eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/feature.properties
+lib/eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/feature.xml
+lib/eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/license.html
+lib/eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/feature.properties
+lib/eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/feature.xml
+lib/eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/license.html
+lib/eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/feature.properties
+lib/eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/feature.xml
+lib/eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/license.html
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/feature.properties
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/feature.xml
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/license.html
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/feature.properties
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/feature.xml
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/license.html
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/feature.properties
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/feature.xml
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/license.html
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/feature.properties
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/feature.xml
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/license.html
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/feature.properties
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/feature.xml
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/license.html
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/feature.properties
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/feature.xml
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/license.html
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/epl-v10.html
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/feature.properties
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/feature.xml
+lib/eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/license.html
+lib/eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF/ECLIPSE.RSA
+lib/eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF/ECLIPSE.SF
+lib/eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF/MANIFEST.MF
+lib/eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF/eclipse.inf
+lib/eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/eclipse_update_120.jpg
+lib/eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/feature.properties
+lib/eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/feature.xml
+lib/eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/license.html
+lib/eclipse/plugins/javax.wsdl_1.4.0.v200806030407.jar
+lib/eclipse/plugins/javax.xml_1.3.4.v200806030440.jar
+lib/eclipse/plugins/net.sourceforge.lpg.lpgjavaruntime_1.1.0.v200803061910.jar
+lib/eclipse/plugins/org.apache.xerces_2.9.0.v200805270400.jar
+lib/eclipse/plugins/org.apache.xml.resolver_1.2.0.v200806030312.jar
+lib/eclipse/plugins/org.apache.xml.serializer_2.7.1.v200806030322.jar
+lib/eclipse/plugins/org.eclipse.datatools.common.doc.user_1.6.1.v20080828133713.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.apache.derby.dbdefinition_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.apache.derby.ui_1.0.1.v200807010433.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.apache.derby_1.0.1.v200807150030.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.console.profile_1.0.0.v200805231345.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.db.generic.ui_1.0.1.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.db.generic_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.dbdefinition.genericJDBC_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.doc.user.contexts_1.6.1.v20080828133713.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.doc.user_1.6.1.v20080828133713.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.oda.consumer_3.1.3.v200808270255.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.oda.design.ui_3.0.7.v200808051050.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.oda.design_3.0.7.v200807231215.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.oda.flatfile.ui_3.0.7.v200808130628.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.oda.flatfile_3.0.7.v200808261835.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.oda.profile_3.0.6.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.oda.template.ui_3.0.6.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.oda_3.1.3.v200808270255.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.sqm.core.ui_1.1.1.v200808140022.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.sqm.core_1.0.3.v200809180120.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.sqm.server.ui_1.1.1.v200808300421.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.ui.dse_1.1.1.v200807230727.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity.ui_1.1.2.v200809150616.jar
+lib/eclipse/plugins/org.eclipse.datatools.connectivity_1.1.1.v200809180120.jar
+lib/eclipse/plugins/org.eclipse.datatools.doc.user_1.6.1.v20080828133713.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.finfo_1.5.1.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.hsqldb.dbdefinition_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.hsqldb.ui_1.0.0.v200807220100.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.hsqldb_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.iseries.dbdefinition_1.0.0.v200806100223.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.iseries.ui_1.0.0.v200805160737.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.iseries_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.luw.dbdefinition_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.luw.ui_1.0.1.v200806260315.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.luw_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.zseries.dbdefinition_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.zseries.ui_1.0.0.v200805160737.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.ibm.db2.zseries_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.ibm.informix.dbdefinition_1.0.1.v200807170829.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.ibm.informix.ui_1.0.1.v200806260315.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.ibm.informix_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.ibm.ui_1.0.0.v200806271414.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.jdt.classpath_1.0.1.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.msft.sqlserver.dbdefinition_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.msft.sqlserver.ui_1.0.1.v200808222228.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.msft.sqlserver_1.0.1.v200807181158.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.mysql.dbdefinition_1.0.1.v200805170742.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.mysql.ui_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.mysql_1.0.1.v200808261158.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.oda.ws.ui_1.1.1.v200808271112.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.oda.ws_1.1.1.v200808211640.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.oda.xml.ui_1.1.1.v200808130628.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.oda.xml_1.1.1.v200808261409.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.oracle.dbdefinition_1.0.1.v200808021450.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.oracle.ui_1.0.1.v200806260315.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.oracle_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.postgresql.dbdefinition_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.postgresql.ui_1.0.0.v200806060334.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.postgresql_1.0.1.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.sap.maxdb.dbdefinition_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.sap.maxdb.ui_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.sap.maxdb_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.sybase.asa.dbdefinition_1.0.0.v200805240040.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.sybase.asa.models_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.sybase.asa.ui_1.0.1.v200805310538.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.sybase.asa_1.0.1.v200805310538.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.sybase.ase.dbdefinition_1.0.0.v200805240040.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.sybase.ase.models_1.0.1.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.sybase.ase.ui_1.0.1.v200806260315.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.sybase.ase_1.0.1.v200807010411.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.sybase.models_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.sybase.ui_1.0.0.v200808221518.jar
+lib/eclipse/plugins/org.eclipse.datatools.enablement.sybase_1.0.1.v200805310538.jar
+lib/eclipse/plugins/org.eclipse.datatools.help_1.5.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.intro_1.6.1.v200807021300.jar
+lib/eclipse/plugins/org.eclipse.datatools.modelbase.dbdefinition_1.0.0.v200808020150.jar
+lib/eclipse/plugins/org.eclipse.datatools.modelbase.derby_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.modelbase.sql.edit_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.modelbase.sql.query.edit_1.0.0.v200806070329.jar
+lib/eclipse/plugins/org.eclipse.datatools.modelbase.sql.query_1.0.1.v200807251820.jar
+lib/eclipse/plugins/org.eclipse.datatools.modelbase.sql.xml.query_1.0.0.v200807080500.jar
+lib/eclipse/plugins/org.eclipse.datatools.modelbase.sql_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.oda.cshelp_1.1.0.v200808280228.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.common.ui_1.0.0.v200807211830.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.data.core_1.0.0.v200808260630.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.data.ui_1.1.0.v200808260630.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.db.derby_1.0.0.v200805152355.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.db.generic_1.0.0.v200808140643.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.ddlgen.ui_1.0.0.v200808140615.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.debugger.core_1.0.0.v200808140615.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.doc.user_1.6.1.v20080828133713.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.editor.core_1.0.0.v200808271350.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.parsers.sql.lexer_1.0.1.v200808080530.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.parsers.sql.query_1.0.1.v200808140615.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.parsers.sql.xml.query_1.0.0.v200808140615.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.parsers.sql_1.0.1.v200808140615.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.plan_1.0.0.v200807211830.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.result_1.0.0.v200808271350.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.routineeditor_1.0.0.v200807211830.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.sql_1.0.0.v200808140615.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.sqlbuilder_1.0.0.v200808271350.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.sqleditor_1.0.0.v200808271350.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.sqlscrapbook_1.0.0.v200808271350.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.tabledataeditor_1.0.0.v200808300730.jar
+lib/eclipse/plugins/org.eclipse.datatools.sqltools.tablewizard_1.0.0.v200808140615.jar
+@dirrm lib/eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.common.doc.user_1.6.1.v200809191145-1507w31191939244824
+@dirrm lib/eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.connectivity.doc.user_1.6.1.v200809191145-27A18s733I3I7I599G59
+@dirrm lib/eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.connectivity.feature_1.6.1.v200809191145-7_7K7_Dn-QY4jNGDlg0YiVa76H
+@dirrm lib/eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.connectivity.oda.designer.feature_1.6.1.v200809191145-7C67OCYQCD4D-JkHcYh
+@dirrm lib/eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.connectivity.oda.feature_1.6.1.v200809191145-7F27PBcMAAwAtKkESVZ
+@dirrm lib/eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.doc.user_1.6.1.v200809191145-37A09oA55S5P_P8CEO24
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.apache.derby.feature_1.6.1.v200809191145-652AlJAKaLiJyLhdmBEKK
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.feature_1.6.1.v200809191145-7D8H7C9FSwOBZabCz-MXEZLR8Rnc
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.hsqldb.feature_1.6.1.v200809191145-57_1_pF9IQJZIsJcVhBEKK
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.ibm.feature_1.6.1.v200809191145-7D43EB7sQS9RbiYgHAa
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.jdbc.feature_1.6.1.v200809191145-3-09oA55S5J8JADJJ
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.jdt.feature_1.6.1.v200809191145-1-07w311916263466
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.msft.feature_1.6.1.v200809191145-442_kE77c7VBQDFNW
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.mysql.feature_1.6.1.v200809191145-442_kE77c7TBTBKPQ
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.oda.designer.feature_1.6.1.v200809191145-2118s733I3I6C4_6C
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.oda.feature_1.6.1.v200809191145-797P6CYQCD4CvIcEeNW
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.oracle.feature_1.6.1.v200809191145-442_kE77c7UAOBJML
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.postgresql.feature_1.6.1.v200809191145-441_kE77c7R_RCIOP
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.sap.feature_1.6.1.v200809191145-440_kE77c7QAQEIQQ
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.enablement.sybase.feature_1.6.1.v200809191145-7A-5E9IgKLhLGetRuu9
+@dirrm lib/eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.intro_1.6.1.v200806271731-1507w311918132411
+@dirrm lib/eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.modelbase.feature_1.6.1.v200809191145-6-0BcMAAwAmEgFXTT
+@dirrm lib/eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.sqldevtools.data.feature_1.6.1.v200809191145-30-9oA55S5SBG5ND5
+@dirrm lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddl.feature_1.6.1.v200809191145-25084B22NbbGK7M3VgJoaS
+@dirrm lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.sqldevtools.ddlgen.feature_1.6.1.v200809191145-77--CYQCD4D-NfInZR
+@dirrm lib/eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.sqldevtools.feature_1.6.1.v200809191145-7F7d5E8yz-UHrDYUGnc_DXkE39Kp
+@dirrm lib/eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.sqldevtools.parsers.feature_1.6.1.v200809191145-502AgI99m9hBY_eFN
+@dirrm lib/eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.sqldevtools.results.feature_1.6.1.v200809191145-3009oA55S5S_K7GE5
+@dirrm lib/eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.sqldevtools.sqlbuilder.feature_1.6.1.v200809191145-6--BcMAAwAvKeEdXI
+@dirrm lib/eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824/META-INF
+@dirrm lib/eclipse/features/org.eclipse.datatools.sqltools.doc.user_1.6.1.v200809191145-1507w31191939244824
