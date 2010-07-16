@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	since
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	misc
 MASTER_SITES=	http://welz.org.za/projects/since/
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	View the end of a file like tail(1), but save state between sessions
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
