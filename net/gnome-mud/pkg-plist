@@ -1,24 +1,21 @@
 bin/gnome-mud
 share/applications/gnome-mud.desktop
-share/gnome-mud/directions.glade
-share/gnome/help/gnome-mud/C/figures/connections-window.png
-share/gnome/help/gnome-mud/C/figures/main-window.png
-share/gnome/help/gnome-mud/C/figures/mudlist-window.png
-share/gnome/help/gnome-mud/C/figures/preferences-window.png
-share/gnome/help/gnome-mud/C/figures/profiles-window.png
-share/gnome/help/gnome-mud/C/gnome-mud-manual.xml
-share/gnome/help/gnome-mud/C/gnome-mud-plugin-api.xml
-share/gnome/help/gnome-mud/C/monitor.py
-share/omf/gnome-mud/gnome-mud-manual-C.omf
-share/omf/gnome-mud/gnome-mud-plugin-api-C.omf
-share/pixmaps/gnome-mud/connection-offline.png
-share/pixmaps/gnome-mud/connection-online.png
-share/pixmaps/gnome-mud/gnome-mud-tray-icon.png
-share/pixmaps/gnome-mud.png
+%%DATADIR%%/directions.glade
+%%DATADIR%%/main.glade
+%%DATADIR%%/muds.glade
+%%DATADIR%%/prefs.glade
+share/icons/hicolor/16x16/apps/gnome-mud.png
+share/icons/hicolor/22x22/apps/gnome-mud.png
+share/icons/hicolor/24x24/apps/gnome-mud.png
+share/icons/hicolor/32x32/apps/gnome-mud.png
+share/icons/hicolor/scalable/apps/gnome-mud.svg
+share/locale/ar/LC_MESSAGES/gnome-mud.mo
 share/locale/az/LC_MESSAGES/gnome-mud.mo
 share/locale/ca/LC_MESSAGES/gnome-mud.mo
 share/locale/cs/LC_MESSAGES/gnome-mud.mo
 share/locale/de/LC_MESSAGES/gnome-mud.mo
+share/locale/dz/LC_MESSAGES/gnome-mud.mo
+share/locale/el/LC_MESSAGES/gnome-mud.mo
 share/locale/en_CA/LC_MESSAGES/gnome-mud.mo
 share/locale/en_GB/LC_MESSAGES/gnome-mud.mo
 share/locale/es/LC_MESSAGES/gnome-mud.mo
@@ -26,7 +23,10 @@ share/locale/fr/LC_MESSAGES/gnome-mud.mo
 share/locale/hr/LC_MESSAGES/gnome-mud.mo
 share/locale/mk/LC_MESSAGES/gnome-mud.mo
 share/locale/ml/LC_MESSAGES/gnome-mud.mo
+share/locale/nb/LC_MESSAGES/gnome-mud.mo
+share/locale/ne/LC_MESSAGES/gnome-mud.mo
 share/locale/nl/LC_MESSAGES/gnome-mud.mo
+share/locale/oc/LC_MESSAGES/gnome-mud.mo
 share/locale/pa/LC_MESSAGES/gnome-mud.mo
 share/locale/pl/LC_MESSAGES/gnome-mud.mo
 share/locale/pt/LC_MESSAGES/gnome-mud.mo
@@ -36,13 +36,8 @@ share/locale/sr/LC_MESSAGES/gnome-mud.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-mud.mo
 share/locale/sv/LC_MESSAGES/gnome-mud.mo
 share/locale/tr/LC_MESSAGES/gnome-mud.mo
+share/locale/uk/LC_MESSAGES/gnome-mud.mo
+share/locale/vi/LC_MESSAGES/gnome-mud.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-mud.mo
-@dirrm share/pixmaps/gnome-mud
-@dirrm share/omf/gnome-mud
-@dirrm share/gnome/help/gnome-mud/C/figures
-@dirrm share/gnome/help/gnome-mud/C
-@dirrm share/gnome/help/gnome-mud
-@dirrm share/gnome-mud
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
 @dirrmtry share/applications
+@dirrm %%DATADIR%%
