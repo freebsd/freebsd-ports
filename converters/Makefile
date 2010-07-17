@@ -17,6 +17,7 @@
     SUBDIR += cocot
     SUBDIR += convmv
     SUBDIR += dosunix
+    SUBDIR += drg2sbg
     SUBDIR += dumpasn1
     SUBDIR += ecore-txt
     SUBDIR += enca
