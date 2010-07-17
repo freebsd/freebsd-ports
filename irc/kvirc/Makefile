@@ -6,72 +6,120 @@
 #
 
 PORTNAME=	kvirc
-PORTVERSION=	3.4.2
-PORTREVISION=	4
+PORTVERSION=	4.0.0
 CATEGORIES=	irc kde
-MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/${PORTVERSION}/source/ \
-		ftp://ftp.kvirc.de/pub/%SUBDIR%/ \
-		http://kvirc.gmake.de/pub/%SUBDIR%/ \
-		LOCAL/beech
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}/source
+MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/%SUBDIR%/ \
+		http://kvirc.gmake.de/pub/kvirc/%SUBDIR%/ \
+		http://kvirc-ftp.visualscripts.com/%SUBDIR%/ \
+		ftp://dedimarbo.ath.cx/pub/kvirc/%SUBDIR%/ \
+		ftp://kvirc.eban-meban.com/%SUBDIR%/ \
+		http://kvirc.tradebit.com/%SUBDIR%/ \
+		http://kvirc.imsam.info/%SUBDIR%/ \
+		http://kvirc.bcoos.net/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION}/source
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	IRC client for QT and KDE
+COMMENT?=	IRC client for KDE4
 
-FORBIDDEN=	multiple vulnerabilities
+.if !defined(PKGNAMESUFFIX)
+CONFLICTS=	kvirc-qt4-4.*
+.endif
 
-USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
-USE_KDELIBS_VER=3
-USE_GMAKE=	yes
-USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
+USE_OPENSSL=	yes
+USE_PERL5_BUILD=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build \
+		dbus gui network sql xml
+USE_CMAKE=	yes
+CMAKE_ARGS=	-DWITHOUT_ESD=yes -DWITHOUT_DOXYGEN=yes \
+		-DMANDIR=${MANPREFIX}
 INSTALLS_ICONS=	yes
-PLIST_SUB=		VER=${PORTVERSION}
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
-MAN1=	kvirc.1
+MAN1=		kvirc.1
+MANLANG=	"" de it
 
-OPTIONS=	ARTS "Compile with arts support" on \
-			AUDIOFILE "Compile with libaudiofile support" on \
-			ESOUND "Compile with esound support" off \
-			GSM "Compile with gsm support" off
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_ARTS)
-LIB_DEPENDS+=		artsc.0:${PORTSDIR}/audio/arts
-.else
-CONFIGURE_ARGS+=	--without-arts-support
+OPTIONS=	AUDIOFILE "Support for various audio formats" off \
+		DEBUG "Build with debug support" off \
+		GSM "u-law to gsm audio converter support" off \
+		PERL "Perl scripting support" off \
+		PYTHON "Python scripting support" off
+.if defined(PKGNAMESUFFIX)
+OPTIONS+=	PHONON "Build with Phonon support" off \
+		WEBKIT "Build with QtWebkit support" off
 .endif
 
+PLIST_SUB+=	VER="${PORTVERSION:R}"
+
+.include <bsd.port.options.mk>
+
+.if defined(PKGNAMESUFFIX)
+CMAKE_ARGS+=	-DWITHOUT_KDE4=yes
+PLIST_SUB+=	QT="" KDE="@comment "
+. if defined(WITH_PHONON)
+QT_COMPONENTS+=	phonon
+. else
+CMAKE_ARGS+=	-DWITHOUT_PHONON=yes
+. endif
+. if defined(WITH_WEBKIT)
+QT_COMPONENTS+=	webkit
+. else
+CMAKE_ARGS+=	-DWITHOUT_QTWEBKIT=yes
+. endif
+.else #defined(PKGNAMESUFFIX)
+USE_KDE4=	kdelibs automoc4 kdeprefix
+PLIST_SUB+=	QT="@comment " KDE=""
+.endif #defined(PKGNAMESUFFIX)
+
+.if defined(WITH_DEBUG)
+CMAKE_ARGS+=	-DWITH_DEBUG -DVERBOSE=yes
+.endif
+
+#audio support
 .if defined(WITH_AUDIOFILE)
-LIB_DEPENDS+=		audiofile.0:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 .else
-CONFIGURE_ARGS+=	--without-af-support
-.endif
-
-.if defined(WITH_ESOUND)
-LIB_DEPENDS+=		esd.2:${PORTSDIR}/audio/esound
-.else
-CONFIGURE_ARGS+=	--without-esd-support
+CMAKE_ARGS+=	-DWITHOUT_AUDIOFILE=yes
 .endif
 
 .if defined(WITH_GSM)
-LIB_DEPENDS+=		gsm.1:${PORTSDIR}/audio/gsm
+LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
 .else
-CONFIGURE_ARGS+=	--without-gsm
+CMAKE_ARGS+=	-DWITHOUT_GSM=yes
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" \
-		-e "s,.SS_KDE_GENERAL_DIR/share/icons,${PREFIX}/share/icons," \
-		-e "s,.SS_KDE_GENERAL_DIR/share/applnk,${PREFIX}/share/applnk," \
-		-e "s,.SS_KDE_GENERAL_DIR/share/mimelnk,${PREFIX}/share/mimelnk," \
-		-e "s,kdeservicesdir=\".SS_KDE_SERVICESDIR\",kdeservicesdir=\"${PREFIX}/share/services\"," \
-		-e "s,%%LTMAIN%%,${LTMAIN}," \
-		${WRKSRC}/configure
-post-configure:
-	@${MV} ${WRKSRC}/data/protocols/irc.protocol ${WRKSRC}/data/protocols/kvirc.protocol
-	@${MV} ${WRKSRC}/data/protocols/irc6.protocol ${WRKSRC}/data/protocols/kvirc6.protocol
+#scripting support
+.if defined(WITH_PYTHON)
+USE_PYTHON=	yes
+PLIST_SUB+=	PYTHON=""
+.else
+CMAKE_ARGS+=	-DWITHOUT_PYTHON=yes
+PLIST_SUB+=	PYTHON="@comment "
+.endif
+
+.if defined(WITH_PERL)
+USE_PERL5_RUN=	yes
+PLIST_SUB+=	PERL=""
+.else
+CMAKE_ARGS+=	-DWITHOUT_PERL=yes
+PLIST_SUB+=	PERL="@comment "
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION}<700042
+CMAKE_USE_PTHREAD=	yes
+.endif
+
+.if defined(WITH_PERL)
+pre-everything::
+	@${ECHO_CMD} "====================================================="
+	@${ECHO_CMD} "     To enable perl scripting you need to rebuild"
+	@${ECHO_CMD} "     perl with multiplicity support!"
+	@${ECHO_CMD} "====================================================="
+.endif
 
 .include <bsd.port.post.mk>
