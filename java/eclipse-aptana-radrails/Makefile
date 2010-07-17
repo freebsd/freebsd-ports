@@ -7,7 +7,7 @@
 
 PORTNAME=	aptana
 PORTVERSION=	1.2.1.23268
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	http://update1.aptana.org/rails/${PORTVERSION}/ \
 		http://update2.aptana.org/rails/${PORTVERSION}/
@@ -18,7 +18,7 @@ DISTNAME=	org.radrails.rails_feature-${PORTVERSION}-278787EUNvWohWG-fz0019H9P9Y9
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	IDE for Ruby and the Ruby on Rails framework (Eclipse plugin)
 
-RUN_DEPENDS=	${LOCALBASE}/eclipse/features/com.aptana.ide.feature_1.2.7.024747.jar:${PORTSDIR}/java/eclipse-aptana
+RUN_DEPENDS=	${LOCALBASE}/lib/eclipse/features/com.aptana.ide.feature_1.2.7.024747.jar:${PORTSDIR}/java/eclipse-aptana
 
 JAVA_VERSION=	1.5+
 
@@ -29,6 +29,6 @@ USE_JAVA=	yes
 USE_ZIP=	yes
 
 do-install:
-	@(cd ${WRKDIR} && ${CP} -R features ${PREFIX}/eclipse && ${CP} -R plugins ${PREFIX}/eclipse;)
+	@(cd ${WRKDIR} && ${CP} -R features ${PREFIX}/lib/eclipse && ${CP} -R plugins ${PREFIX}/lib/eclipse;)
 
 .include <bsd.port.mk>
