@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.seasip.demon.co.uk/Unix/LibDsk/
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Emulation of uPD765a Floppy Disc Controller
 
+LICENSE=	LGPL20
+
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 

@@ -14,6 +14,8 @@ MASTER_SITES=	SF
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Python API documentation generation tool
 
+LICENSE=	MIT
+
 OPTIONS=	UTF8 "Use UTF-8 instead of iso-8859-1 in HTMLs" off
 
 USE_PYTHON=	yes
