@@ -1,7 +1,0 @@
-V4ALL Eclipse GUI Designer
-
-An Eclipse Plugin for Designing Java Swing & SWT GUIs and generating
-the code. The design model has XML format and is rather abstract
-and not tightly coupled with the generated target API.
-
-WWW: http://sourceforge.net/projects/v4all/
