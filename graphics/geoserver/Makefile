@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geoserver
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	graphics geography java
 MASTER_SITES=	SF/${PORTNAME}/GeoServer/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
@@ -24,11 +24,13 @@ GEOSERVERDIR=	${PREFIX}/${PORTNAME}
 GEODIRS=	data_dir etc lib logs resources webapps
 
 USE_RC_SUBR=	${PORTNAME}
-PLIST_SUB=	G="${GEOSERVERDIR:S,^${PREFIX}/,,}"
+PLIST_SUB=	G="${GEOSERVERDIR:S,^${PREFIX}/,,}" GTVER=2.6.4 MVER=${PORTVERSION}
 SUB_LIST=	GEOSERVERDIR="${GEOSERVERDIR}" JAVA="${JAVA}"
 SUB_FILES=	pkg-message
 
 post-patch:
+	@${RM} ${WRKSRC}/data_dir/logs/geoserver.log
+	@${RM} ${WRKSRC}/data_dir/gwc/meta_jdbc_h2/*
 	@${REINPLACE_CMD} -e 's|$$GEOSERVER_HOME|${GEOSERVERDIR}|g' \
 		-e 's|%%JAVA%%|${JAVA}|g' \
 		${WRKSRC}/bin/startup.sh ${WRKSRC}/bin/shutdown.sh
