@@ -12,19 +12,80 @@ http://www.openoffice.org/issues/show_bug.cgi?id=97320
 "bridges/inc/bridges/cpp_uno/shared/vtablefactory.hxx"
 .
 
---- bridges/source/cpp_uno/gcc3_freebsd_x86-64/abi.cxx	2009-06-13 15:39:58.000000000 +0900
-+++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/abi.cxx	2009-06-13 15:41:26.000000000 +0900
-@@ -353,6 +353,8 @@
-             case X86_64_SSEDF_CLASS:
-                 *pStructAlign++ = *reinterpret_cast<sal_uInt64 *>( *pSSE++ );
-                 break;
-+            default:
-+                break;
-         }
+--- bridges/source/cpp_uno/gcc3_freebsd_x86-64/abi.cxx	2009-12-12 18:15:33.000000000 +0900
++++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/abi.cxx	2009-12-06 13:19:58.000000000 +0900
+@@ -229,6 +229,7 @@
+                 for ( sal_Int32 nMember = 0; nMember < pStruct->nMembers; ++nMember )
+                 {
+                     typelib_TypeDescriptionReference *pTypeInStruct = pStruct->ppTypeRefs[ nMember ];
++                    rByteOffset = pStruct->pMemberOffsets[ nMember ];
+ 
+                     int num = classify_argument( pTypeInStruct, subclasses, rByteOffset );
+ 
+@@ -243,9 +244,6 @@
+                         int pos = rByteOffset / 8;
+                         classes[i + pos] = merge_classes( subclasses[i], classes[i + pos] );
+                     }
+-
+-                    if ( pTypeInStruct->eTypeClass != typelib_TypeClass_STRUCT )
+-                        rByteOffset = pStruct->pMemberOffsets[ nMember ];
+                 }
+ 
+                 TYPELIB_DANGER_RELEASE( pTypeDescr );
+@@ -332,7 +330,7 @@
+     return examine_argument( pTypeRef, true, g, s ) == 0;
  }
  
---- bridges/source/cpp_uno/gcc3_freebsd_x86-64/cpp2uno.cxx	2009-06-13 15:39:58.000000000 +0900
-+++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/cpp2uno.cxx	2009-06-13 15:41:26.000000000 +0900
+-void x86_64::fill_struct( typelib_TypeDescriptionReference *pTypeRef, void * const *pGPR, void * const *pSSE, void *pStruct )
++void x86_64::fill_struct( typelib_TypeDescriptionReference *pTypeRef, const sal_uInt64 *pGPR, const double *pSSE, void *pStruct )
+ {
+     enum x86_64_reg_class classes[MAX_CLASSES];
+     int offset = 0;
+@@ -346,12 +344,14 @@
+         {
+             case X86_64_INTEGER_CLASS:
+             case X86_64_INTEGERSI_CLASS:
+-                *pStructAlign++ = *reinterpret_cast<sal_uInt64 *>( *pGPR++ );
++                *pStructAlign++ = *pGPR++;
+                 break;
+             case X86_64_SSE_CLASS:
+             case X86_64_SSESF_CLASS:
+             case X86_64_SSEDF_CLASS:
+-                *pStructAlign++ = *reinterpret_cast<sal_uInt64 *>( *pSSE++ );
++                *pStructAlign++ = *reinterpret_cast<const sal_uInt64 *>( pSSE++ );
++                break;
++            default:
+                 break;
+         }
+ }
+
+--- bridges/source/cpp_uno/gcc3_freebsd_x86-64/abi.hxx	2009-12-12 18:15:33.000000000 +0900
++++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/abi.hxx	2009-12-06 13:19:58.000000000 +0900
+@@ -63,7 +63,7 @@
+ */
+ bool return_in_hidden_param( typelib_TypeDescriptionReference *pTypeRef );
+ 
+-void fill_struct( typelib_TypeDescriptionReference *pTypeRef, void * const *pGPR, void * const *pSSE, void *pStruct );
++void fill_struct( typelib_TypeDescriptionReference *pTypeRef, const sal_uInt64* pGPR, const double* pSSE, void *pStruct );
+ 
+ } // namespace x86_64
+ 
+
+--- bridges/source/cpp_uno/gcc3_freebsd_x86-64/call.s	2009-12-12 18:15:33.000000000 +0900
++++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/call.s	2009-12-06 13:19:58.000000000 +0900
+@@ -43,6 +43,9 @@
+ 	je	.Lfloat
+ 
+ 	movq	-144(%rbp), %rax		# Return value (int case)
++	movq	-136(%rbp), %rdx		# Return value (int case)
++	movq	-144(%rbp), %xmm0		# Return value (int case)
++	movq	-136(%rbp), %xmm1		# Return value (int case)
+ 	jmp	.Lfinish
+ .Lfloat:
+ 	movlpd	-144(%rbp), %xmm0		# Return value (float/double case)
+
+--- bridges/source/cpp_uno/gcc3_freebsd_x86-64/cpp2uno.cxx	2009-12-12 18:15:33.000000000 +0900
++++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/cpp2uno.cxx	2009-12-06 13:19:58.000000000 +0900
 @@ -77,8 +77,8 @@
  	void ** gpreg, void ** fpreg, void ** ovrflw,
  	sal_uInt64 * pRegisterReturn /* space for register return */ )
@@ -36,7 +97,49 @@ http://www.openoffice.org/issues/show_bug.cgi?id=97320
         
  	// return
  	typelib_TypeDescription * pReturnTypeDescr = 0;
-@@ -489,13 +489,12 @@
+@@ -126,7 +126,10 @@
+ 
+ 		int nUsedGPR = 0;
+ 		int nUsedSSE = 0;
+-		bool bFitsRegisters = x86_64::examine_argument( rParam.pTypeRef, false, nUsedGPR, nUsedSSE );
++#if OSL_DEBUG_LEVEL > 1
++		bool bFitsRegisters =
++#endif
++			x86_64::examine_argument( rParam.pTypeRef, false, nUsedGPR, nUsedSSE );
+ 		if ( !rParam.bOut && bridges::cpp_uno::shared::isSimpleType( pParamTypeDescr ) ) // value
+ 		{
+ 			// Simple types must fit exactly one register on x86_64
+@@ -159,28 +162,7 @@
+ 		else // struct <= 16 bytes || ptr to complex value || ref
+ 		{
+ 			void *pCppStack;
+-			char pTmpStruct[16];
+-
+-			if ( bFitsRegisters && !rParam.bOut &&
+-				 ( pParamTypeDescr->eTypeClass == typelib_TypeClass_STRUCT ||
+-				   pParamTypeDescr->eTypeClass == typelib_TypeClass_EXCEPTION ) )
+-			{
+-				if ( ( nr_gpr + nUsedGPR <= x86_64::MAX_GPR_REGS ) && ( nr_fpr + nUsedSSE <= x86_64::MAX_SSE_REGS ) )
+-				{
+-					x86_64::fill_struct( rParam.pTypeRef, gpreg, fpreg, pTmpStruct );
+-#if OSL_DEBUG_LEVEL > 1
+-					fprintf( stderr, "nUsedGPR == %d, nUsedSSE == %d, pTmpStruct[0] == 0x%x, pTmpStruct[1] == 0x%x, **gpreg == 0x%lx\n",
+-							nUsedGPR, nUsedSSE, pTmpStruct[0], pTmpStruct[1], *(sal_uInt64*)*gpreg );
+-#endif
+-
+-					pCppArgs[nPos] = pCppStack = reinterpret_cast<void *>( pTmpStruct );
+-					gpreg += nUsedGPR;
+-					fpreg += nUsedSSE;
+-				}
+-				else
+-					pCppArgs[nPos] = pCppStack = *ovrflw++;
+-			}
+-			else if ( nr_gpr < x86_64::MAX_GPR_REGS )
++			if ( nr_gpr < x86_64::MAX_GPR_REGS )
+ 			{ 
+ 				pCppArgs[nPos] = pCppStack = *gpreg++;
+ 				nr_gpr++;
+@@ -489,13 +471,12 @@
  //==================================================================================================
  
  unsigned char * bridges::cpp_uno::shared::VtableFactory::addLocalFunctions(
@@ -51,7 +154,7 @@ http://www.openoffice.org/issues/show_bug.cgi?id=97320
  	for ( sal_Int32 nPos = 0; nPos < type->nMembers; ++nPos )
  	{
  		typelib_TypeDescription * pTD = 0;
-@@ -509,14 +508,14 @@
+@@ -509,14 +490,14 @@
  				reinterpret_cast<typelib_InterfaceAttributeTypeDescription *>( pTD );
  
  			// get method
@@ -68,7 +171,7 @@ http://www.openoffice.org/issues/show_bug.cgi?id=97320
  				code = codeSnippet( code, nFunctionOffset++, nVtableOffset, false );
  			}
  		}
-@@ -525,7 +524,7 @@
+@@ -525,7 +506,7 @@
  			typelib_InterfaceMethodTypeDescription *pMethodTD =
  				reinterpret_cast<typelib_InterfaceMethodTypeDescription *>( pTD );
  			
@@ -78,70 +181,8 @@ http://www.openoffice.org/issues/show_bug.cgi?id=97320
  								x86_64::return_in_hidden_param( pMethodTD->pReturnTypeRef ) );
  		}
 
---- bridges/source/cpp_uno/gcc3_freebsd_x86-64/uno2cpp.cxx	2009-06-13 15:39:58.000000000 +0900
-+++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/uno2cpp.cxx	2009-06-13 15:41:27.000000000 +0900
-@@ -68,13 +68,13 @@
-     // Let's figure out what is really going on here
-     {
-         fprintf( stderr, "= callVirtualMethod() =\nGPR's (%d): ", nGPR );
--        for ( int i = 0; i < nGPR; ++i )
-+        for ( unsigned int i = 0; i < nGPR; ++i )
-             fprintf( stderr, "0x%lx, ", pGPR[i] );
-         fprintf( stderr, "\nFPR's (%d): ", nFPR );
--        for ( int i = 0; i < nFPR; ++i )
-+        for ( unsigned int i = 0; i < nFPR; ++i )
-             fprintf( stderr, "%f, ", pFPR[i] );
-         fprintf( stderr, "\nStack (%d): ", nStack );
--        for ( int i = 0; i < nStack; ++i )
-+        for ( unsigned int i = 0; i < nStack; ++i )
-             fprintf( stderr, "0x%lx, ", pStack[i] );
-         fprintf( stderr, "\n" );
-     }
-@@ -323,6 +323,8 @@
- 			case typelib_TypeClass_DOUBLE:
- 				INSERT_FLOAT_DOUBLE( pCppArgs[nPos], nFPR, pFPR, pStack );
- 				break;
-+			default:
-+				break;
- 			}
- 
- 			// no longer needed
-@@ -435,16 +437,19 @@
- 	// is my surrogate
- 	bridges::cpp_uno::shared::UnoInterfaceProxy * pThis
- 		= static_cast< bridges::cpp_uno::shared::UnoInterfaceProxy * >(pUnoI);
-+#if OSL_DEBUG_LEVEL > 0
- 	typelib_InterfaceTypeDescription * pTypeDescr = pThis->pTypeDescr;
-+#endif
- 	
- 	switch (pMemberDescr->eTypeClass)
- 	{
- 	case typelib_TypeClass_INTERFACE_ATTRIBUTE:
- 	{
-+#if OSL_DEBUG_LEVEL > 0
- 		// determine vtable call index
- 		sal_Int32 nMemberPos = ((typelib_InterfaceMemberTypeDescription *)pMemberDescr)->nPosition;
- 		OSL_ENSURE( nMemberPos < pTypeDescr->nAllMembers, "### member pos out of range!" );
--		
-+#endif
- 		VtableSlot aVtableSlot(
- 				getVtableSlot(
- 					reinterpret_cast<
-@@ -489,10 +494,11 @@
- 	}
- 	case typelib_TypeClass_INTERFACE_METHOD:
- 	{
-+#if OSL_DEBUG_LEVEL > 0
- 		// determine vtable call index
- 		sal_Int32 nMemberPos = ((typelib_InterfaceMemberTypeDescription *)pMemberDescr)->nPosition;
- 		OSL_ENSURE( nMemberPos < pTypeDescr->nAllMembers, "### member pos out of range!" );
--		
-+#endif
- 		VtableSlot aVtableSlot(
- 				getVtableSlot(
- 					reinterpret_cast<
---- bridges/source/cpp_uno/gcc3_freebsd_x86-64/except.cxx	2009-06-13 15:39:58.000000000 +0900
-+++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/except.cxx	2009-06-13 15:42:43.000000000 +0900
+--- bridges/source/cpp_uno/gcc3_freebsd_x86-64/except.cxx	2009-12-12 18:15:33.000000000 +0900
++++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/except.cxx	2009-12-06 13:19:58.000000000 +0900
 @@ -32,6 +32,7 @@
  #include "precompiled_bridges.hxx"
  
@@ -168,7 +209,7 @@ http://www.openoffice.org/issues/show_bug.cgi?id=97320
          rtti = (type_info *)dlsym( RTLD_DEFAULT, symName.getStr() );
  #else
          rtti = (type_info *)dlsym( m_hApp, symName.getStr() );
-@@ -175,8 +175,8 @@
+@@ -175,8 +167,8 @@
          else
          {
              // try to lookup the symbol in the generated rtti map
@@ -179,7 +220,7 @@ http://www.openoffice.org/issues/show_bug.cgi?id=97320
              {
                  // we must generate it !
                  // symbol and rtti-name is nearly identical,
-@@ -205,7 +205,7 @@
+@@ -205,7 +197,7 @@
              }
              else // taking already generated rtti
              {
@@ -189,6 +230,140 @@ http://www.openoffice.org/issues/show_bug.cgi?id=97320
          }
      }
 
+--- bridges/source/cpp_uno/gcc3_freebsd_x86-64/uno2cpp.cxx	2009-12-12 18:15:33.000000000 +0900
++++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/uno2cpp.cxx	2009-12-06 13:19:58.000000000 +0900
+@@ -53,13 +53,13 @@
+ 
+ //==================================================================================================
+ static void callVirtualMethod(void * pThis, sal_uInt32 nVtableIndex,
+-                              void * pRegisterReturn, typelib_TypeDescription * pReturnTypeDescr, bool bSimpleReturn,
++                              void * pRegisterReturn, typelib_TypeDescriptionReference * pReturnTypeRef, bool bSimpleReturn,
+                               sal_uInt64 *pStack, sal_uInt32 nStack,
+                               sal_uInt64 *pGPR, sal_uInt32 nGPR,
+                               double *pFPR, sal_uInt32 nFPR) __attribute__((noinline));
+ 
+ static void callVirtualMethod(void * pThis, sal_uInt32 nVtableIndex,
+-                              void * pRegisterReturn, typelib_TypeDescription * pReturnTypeDescr, bool bSimpleReturn,
++                              void * pRegisterReturn, typelib_TypeDescriptionReference * pReturnTypeRef, bool bSimpleReturn,
+                               sal_uInt64 *pStack, sal_uInt32 nStack,
+                               sal_uInt64 *pGPR, sal_uInt32 nGPR,
+                               double *pFPR, sal_uInt32 nFPR)
+@@ -68,13 +68,13 @@
+     // Let's figure out what is really going on here
+     {
+         fprintf( stderr, "= callVirtualMethod() =\nGPR's (%d): ", nGPR );
+-        for ( int i = 0; i < nGPR; ++i )
++        for ( unsigned int i = 0; i < nGPR; ++i )
+             fprintf( stderr, "0x%lx, ", pGPR[i] );
+         fprintf( stderr, "\nFPR's (%d): ", nFPR );
+-        for ( int i = 0; i < nFPR; ++i )
++        for ( unsigned int i = 0; i < nFPR; ++i )
+             fprintf( stderr, "%f, ", pFPR[i] );
+         fprintf( stderr, "\nStack (%d): ", nStack );
+-        for ( int i = 0; i < nStack; ++i )
++        for ( unsigned int i = 0; i < nStack; ++i )
+             fprintf( stderr, "0x%lx, ", pStack[i] );
+         fprintf( stderr, "\n" );
+     }
+@@ -113,6 +113,7 @@
+     sal_uInt64 rax;
+     sal_uInt64 rdx;
+     double xmm0;
++    double xmm1;
+ 
+     asm volatile (
+         
+@@ -147,13 +148,14 @@
+         "movq   %%rax, %4\n\t"
+         "movq   %%rdx, %5\n\t"
+         "movsd %%xmm0, %6\n\t"
++        "movsd %%xmm1, %7\n\t"
+         :
+         : "m" ( pMethod ), "m" ( pGPR ), "m" ( pFPR ), "m" ( nFPR ),
+-          "m" ( rax ), "m" ( rdx ), "m" ( xmm0 )
++          "m" ( rax ), "m" ( rdx ), "m" ( xmm0 ), "m" ( xmm1 )
+         : "rax", "rdi", "rsi", "rdx", "rcx", "r8", "r9", "r11"
+     );
+ 
+-    switch (pReturnTypeDescr->eTypeClass)
++    switch (pReturnTypeRef->eTypeClass)
+     {
+     case typelib_TypeClass_HYPER:
+     case typelib_TypeClass_UNSIGNED_HYPER:
+@@ -179,12 +181,17 @@
+         break;
+     default:
+         {
+-            sal_Int32 const nRetSize = pReturnTypeDescr->nSize;
++            sal_Int32 const nRetSize = pReturnTypeRef->pType->nSize;
+             if (bSimpleReturn && nRetSize <= 16 && nRetSize > 0)
+             {
+-                if (nRetSize > 8)
+-                    static_cast<sal_uInt64 *>(pRegisterReturn)[1] = rdx;
+-                static_cast<sal_uInt64 *>(pRegisterReturn)[0] = rax;
++                sal_uInt64 longs[2];
++                longs[0] = rax;
++                longs[1] = rdx;
++
++                double doubles[2];
++                doubles[0] = xmm0;
++                doubles[1] = xmm1;
++                x86_64::fill_struct( pReturnTypeRef, &longs[0], &doubles[0], pRegisterReturn);
+             }
+             break;
+         }
+@@ -323,6 +330,8 @@
+ 			case typelib_TypeClass_DOUBLE:
+ 				INSERT_FLOAT_DOUBLE( pCppArgs[nPos], nFPR, pFPR, pStack );
+ 				break;
++			default:
++				break;
+ 			}
+ 
+ 			// no longer needed
+@@ -365,7 +374,7 @@
+ 	{
+ 		callVirtualMethod(
+ 			pAdjustedThisPtr, aVtableSlot.index,
+-			pCppReturn, pReturnTypeDescr, bSimpleReturn,
++			pCppReturn, pReturnTypeRef, bSimpleReturn,
+ 			pStackStart, ( pStack - pStackStart ),
+ 			pGPR, nGPR,
+ 			pFPR, nFPR );
+@@ -435,16 +444,19 @@
+ 	// is my surrogate
+ 	bridges::cpp_uno::shared::UnoInterfaceProxy * pThis
+ 		= static_cast< bridges::cpp_uno::shared::UnoInterfaceProxy * >(pUnoI);
++#if OSL_DEBUG_LEVEL > 0
+ 	typelib_InterfaceTypeDescription * pTypeDescr = pThis->pTypeDescr;
++#endif
+ 	
+ 	switch (pMemberDescr->eTypeClass)
+ 	{
+ 	case typelib_TypeClass_INTERFACE_ATTRIBUTE:
+ 	{
++#if OSL_DEBUG_LEVEL > 0
+ 		// determine vtable call index
+ 		sal_Int32 nMemberPos = ((typelib_InterfaceMemberTypeDescription *)pMemberDescr)->nPosition;
+ 		OSL_ENSURE( nMemberPos < pTypeDescr->nAllMembers, "### member pos out of range!" );
+-		
++#endif
+ 		VtableSlot aVtableSlot(
+ 				getVtableSlot(
+ 					reinterpret_cast<
+@@ -489,10 +501,11 @@
+ 	}
+ 	case typelib_TypeClass_INTERFACE_METHOD:
+ 	{
++#if OSL_DEBUG_LEVEL > 0
+ 		// determine vtable call index
+ 		sal_Int32 nMemberPos = ((typelib_InterfaceMemberTypeDescription *)pMemberDescr)->nPosition;
+ 		OSL_ENSURE( nMemberPos < pTypeDescr->nAllMembers, "### member pos out of range!" );
+-		
++#endif
+ 		VtableSlot aVtableSlot(
+ 				getVtableSlot(
+ 					reinterpret_cast<
 --- bridges/inc/bridges/cpp_uno/shared/vtablefactory.hxx~	2009-06-13 16:41:45.000000000 +0900
 +++ bridges/inc/bridges/cpp_uno/shared/vtablefactory.hxx	2009-06-13 16:42:24.000000000 +0900
 @@ -40,7 +40,7 @@

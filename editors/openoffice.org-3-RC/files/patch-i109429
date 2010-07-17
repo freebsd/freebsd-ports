@@ -1,0 +1,11 @@
+--- extensions/source/config/ldap/makefile.mk~	2010-02-04 02:35:34.000000000 +0900
++++ extensions/source/config/ldap/makefile.mk	2010-02-19 18:50:59.000000000 +0900
+@@ -90,7 +90,7 @@
+ SHL1STDLIBS+=-lcompat
+ # workaround for FreeBSD, which needs -llber50, too
+ .IF "$(WITH_OPENLDAP)" != "YES"
+-SHL1STDLIBS+=-Wl,-Bstatic -llber50
++SHL1STDLIBS+=-Wl,-Bstatic -llber50 -Wl,-Bdynamic
+ .ENDIF
+ .ENDIF
+ 

@@ -1,6 +1,82 @@
---- solenv/inc/unxfbsd.mk	2009-08-05 06:24:36.000000000 +0900
-+++ solenv/inc/unxfbsd.mk	2009-08-05 09:20:06.000000000 +0900
-@@ -141,12 +141,12 @@
+--- solenv/inc/unxfbsd.mk.orig	2009-12-12 18:29:11.000000000 +0900
++++ solenv/inc/unxfbsd.mk	2009-12-13 12:17:38.000000000 +0900
+@@ -30,27 +30,24 @@
+ #*************************************************************************
+ 
+ # Makefile for FreeBSD.
+-
+-ASM=
+-AFLAGS=
+-
++ASM*=
++AFLAGS*=
+ SOLAR_JAVA*=
++# default optimization level for product code
++CDEFAULTOPT*=-O2
++# architecture dependent flags for the C and C++ compiler that can be changed by
++# exporting the variable ARCH_FLAGS="..." in the shell, which is used to start build
++ARCH_FLAGS*=
++# position independent code switch
++PICSWITCH*:=-fpic
+ JAVAFLAGSDEBUG=-g
+ 
+-# Include arch specific makefile.
+-.IF "$(CPUNAME)" == "INTEL"
+-.INCLUDE : unxfbsdi.mk
+-.ENDIF
+-.IF "$(CPUNAME)" == "X86_64"
+-.INCLUDE : unxfbsdx.mk
+-.ENDIF
+-
+ # filter for supressing verbose messages from linker
+ #not needed at the moment
+ #LINKOUTPUT_FILTER=" |& $(SOLARENV)/bin/msg_filter"
+ 
+ # _PTHREADS is needed for the stl
+-CDEFS+=$(PTHREAD_CFLAGS) -D_PTHREADS -D_REENTRANT -DNEW_SOLAR -D_USE_NAMESPACE=1 -DSTLPORT_VERSION=450
++CDEFS+=$(PTHREAD_CFLAGS) -D_PTHREADS -D_REENTRANT -DNEW_SOLAR -D_USE_NAMESPACE=1 -DSTLPORT_VERSION=$(STLPORT_VER)
+ 
+ # enable visibility define in "sal/types.h"
+ .IF "$(HAVE_GCC_VISIBILITY_FEATURE)" == "TRUE"
+@@ -72,7 +69,7 @@
+ # name of C Compiler
+ CC*=gcc
+ .IF "$(SYSBASE)"!=""
+-CFLAGS_SYSBASE:=-isystem $(SYSBASE)/usr/include
++CFLAGS_SYSBASE:=-isystem $(SYSBASE)$/usr$/include
+ CXX+:=$(CFLAGS_SYSBASE)
+ CC+:=$(CFLAGS_SYSBASE)
+ .ENDIF          # "$(SYSBASE)"!=""
+@@ -95,11 +92,14 @@
+ 
+ # -fpermissive should be removed as soon as possible
+ CFLAGSCXX= -pipe $(ARCH_FLAGS)
+-PICSWITCH:=-fpic
+ .IF "$(HAVE_GCC_VISIBILITY_FEATURE)" == "TRUE"
+ CFLAGSCXX += -fvisibility-inlines-hidden
+ .ENDIF # "$(HAVE_GCC_VISIBILITY_FEATURE)" == "TRUE"
+ 
++CFLAGS_CREATE_PCH=-x c++-header -I$(INCPCH) -DPRECOMPILED_HEADERS
++CFLAGS_USE_PCH=-I$(SLO)$/pch -DPRECOMPILED_HEADERS -Winvalid-pch
++CFLAGS_USE_EXCEPTIONS_PCH=-I$(SLO)$/pch_ex -DPRECOMPILED_HEADERS -Winvalid-pch
++
+ # Compiler flags for compiling static object in multi threaded environment with graphical user interface
+ CFLAGSOBJGUIMT=
+ # Compiler flags for compiling static object in multi threaded environment with character user interface
+@@ -113,6 +113,12 @@
+ # Compiler flags for debugging
+ CFLAGSDEBUG=-g
+ CFLAGSDBGUTIL=
++# Compiler flags for enabling optimizations
++.IF "$(PRODUCT)"!=""
++CFLAGSOPT=$(CDEFAULTOPT) -fno-strict-aliasing		# optimizing for products
++.ELSE 	# "$(PRODUCT)"!=""
++CFLAGSOPT=   							# no optimizing for non products
++.ENDIF	# "$(PRODUCT)"!=""
+ # Compiler flags for disabling optimizations
+ CFLAGSNOOPT=-O0
+ # Compiler flags for describing the output path
+@@ -141,19 +147,25 @@
  
  # default linker flags
  LINKFLAGSDEFS*=#-Wl,-z,defs
@@ -17,4 +93,151 @@
 +LINKFLAGSRUNPATH_BRAND=-Wl,-z,origin -Wl,-rpath,\''$$ORIGIN:$$ORIGIN/../basis-link/program:$$ORIGIN/../basis-link/ure-link/lib'\'
  LINKFLAGSRUNPATH_OXT=
  LINKFLAGSRUNPATH_NONE=
- LINKFLAGS=-Wl,-z,combreloc $(LINKFLAGSDEFS)
+-LINKFLAGS=-Wl,-z,combreloc $(LINKFLAGSDEFS)
++# flag -Wl,-z,noexecstack sets the NX bit on the stack
++LINKFLAGS=-Wl,-z,noexecstack -Wl,-z,combreloc $(LINKFLAGSDEFS)
++.IF "$(HAVE_LD_BSYMBOLIC_FUNCTIONS)"  == "TRUE"
++LINKFLAGS += -Wl,-Bsymbolic-functions -Wl,--dynamic-list-cpp-new -Wl,--dynamic-list-cpp-typeinfo
++.ENDIF
+ 
+ # linker flags for linking applications
+-LINKFLAGSAPPGUI= -Wl,-export-dynamic -Wl,--noinhibit-exec
+-LINKFLAGSAPPCUI= -Wl,-export-dynamic -Wl,--noinhibit-exec
++LINKFLAGSAPPGUI= -Wl,-export-dynamic -Wl,--noinhibit-exec \
++    -Wl,-rpath-link,$(LB):$(SOLARLIBDIR)
++LINKFLAGSAPPCUI= -Wl,-export-dynamic -Wl,--noinhibit-exec \
++    -Wl,-rpath-link,$(LB):$(SOLARLIBDIR)
+ 
+ # linker flags for linking shared libraries
+ LINKFLAGSSHLGUI= -shared
+@@ -176,18 +188,30 @@
+ STDLIBCPP=-lstdc++
+ 
+ # default objectfilenames to link
+-STDOBJVCL=$(L)/salmain.o
++STDOBJVCL=$(L)$/salmain.o
+ STDOBJGUI=
+ STDSLOGUI=
+ STDOBJCUI=
+ STDSLOCUI=
+ 
++.IF "$(ALLOC)" == "TCMALLOC"
++STDLIBGUIMT+=-ltcmalloc
++STDLIBCUIMT+=-ltcmalloc
++STDSHLGUIMT+=-ltcmalloc
++STDSHLCUIMT+=-ltcmalloc
++.ENDIF
++.IF "$(HAVE_LD_HASH_STYLE)"  == "TRUE"
++LINKFLAGS += -Wl,--hash-style=both
++.ELSE
++LINKFLAGS += -Wl,-zdynsort
++.ENDIF
++
+ # libraries for linking applications
+-STDLIBGUIMT=-lX11 $(PTHREAD_LIBS) -lm
+-STDLIBCUIMT=$(PTHREAD_LIBS) -lm
++STDLIBGUIMT+=-Wl,--as-needed -lX11 $(PTHREAD_LIBS) -lm -Wl,--no-as-needed
++STDLIBCUIMT+=-Wl,--as-needed $(PTHREAD_LIBS) -lm -Wl,--no-as-needed
+ # libraries for linking shared libraries
+-STDSHLGUIMT=-lX11 -lXext $(PTHREAD_LIBS) -lm
+-STDSHLCUIMT=$(PTHREAD_LIBS) -lm
++STDSHLGUIMT+=-Wl,--as-needed -lX11 -lXext $(PTHREAD_LIBS) -lm -Wl,--no-as-needed
++STDSHLCUIMT+=-Wl,--as-needed $(PTHREAD_LIBS) -lm -Wl,--no-as-needed
+ 
+ LIBSALCPPRT*=-Wl,--whole-archive -lsalcpprt -Wl,--no-whole-archive
+ 
+@@ -212,7 +236,7 @@
+ #FILLUPARC=$(STATIC) -lsupc++ $(DYNAMIC)
+ 
+ # name of library manager
+-LIBMGR=ar
++LIBMGR*=ar
+ LIBFLAGS=-r
+ 
+ # tool for generating import libraries
+@@ -231,3 +255,4 @@
+ # platform specific identifier for shared libs
+ DLLPRE=lib
+ DLLPOST=.so
++PCHPOST=.gch
+
+
+--- solenv/inc/unxfbsdi.mk.org	2009-12-13 12:11:43.000000000 +0900
++++ solenv/inc/unxfbsdi.mk	2009-12-13 12:13:15.000000000 +0900
+@@ -29,22 +29,13 @@
+ #
+ #*************************************************************************
+ 
+-#
+ # FreBSD/i386 specific defines
+-#
+  
+-CDEFS+=-DX86
+-
+ # architecture dependent flags for the C and C++ compiler that can be changed by
+ # exporting the variable ARCH_FLAGS="..." in the shell, which is used to start build
++CDEFAULTOPT=-Os
+ ARCH_FLAGS*=-mtune=pentiumpro
+-
+-# Compiler flags for enabling optimizations
+-.IF "$(PRODUCT)"!=""
+-CFLAGSOPT=-Os -fno-strict-aliasing		# optimizing for products
+-.ELSE 	# "$(PRODUCT)"!=""
+-CFLAGSOPT= 					# no optimizing for non products
+-.ENDIF	# "$(PRODUCT)"!=""
+-
+-# platform specific identifier for shared libs
++.INCLUDE : unxfbsd.mk
++CDEFS+=-DX86
++DLLPOST=.so
+ DLLPOSTFIX=fi
+
+--- solenv/inc/unxfbsdx.mk	2009-12-13 12:16:16.000000000 +0900
++++ solenv/inc/unxfbsdx.mk	2009-12-13 12:54:57.000000000 +0900
+@@ -29,25 +29,10 @@
+ #
+ #*************************************************************************
+ 
+-#
+ # FreBSD/amd64 specific defines
+-#
+-
++.INCLUDE : unxfbsd.mk
+ CDEFS+=-DX86_64
+-
+-# architecture dependent flags for the C and C++ compiler that can be changed by
+-# exporting the variable ARCH_FLAGS="..." in the shell, which is used to start build
+-.IF "$(CPUNAME)" == "X86_64"
+-ARCH_FLAGS*=
+-.ENDIF
+-
+-# Compiler flags for enabling optimizations
+-.IF "$(PRODUCT)"!=""
+-CFLAGSOPT=-O2 -fno-strict-aliasing		# optimizing for products
+-.ELSE 	# "$(PRODUCT)"!=""
+-CFLAGSOPT=   					# no optimizing for non products
+-.ENDIF	# "$(PRODUCT)"!=""
+-
+-# platform specific identifier for shared libs
++#MODULES_WITH_WARNINGS+=\
++#    svx
+ DLLPOSTFIX=fx
+ BUILD64=1
+
+--- solenv/inc/unx.mk	2009-12-12 18:44:35.000000000 +0900
++++ solenv/inc/unx.mk	2009-12-13 17:15:50.000000000 +0900
+@@ -147,8 +147,12 @@
+ .INCLUDE : unxbsds.mk
+ .ENDIF
+ 
+-.IF "$(COM)$(OS)" == "GCCFREEBSD"
+-.INCLUDE : unxfbsd.mk
++.IF "$(COM)$(OS)$(CPU)" == "GCCFREEBSDI"
++.INCLUDE : unxfbsdi.mk
++.ENDIF
++
++.IF "$(COM)$(OS)$(CPU)" == "GCCFREEBSDX"
++.INCLUDE : unxfbsdx.mk
+ .ENDIF
+ 
+ .IF "$(COM)$(OS)$(CPU)" == "C730IRIXM"
