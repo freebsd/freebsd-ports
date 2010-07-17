@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	daemons
-PORTVERSION=	1.0.10
+PORTVERSION=	1.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
