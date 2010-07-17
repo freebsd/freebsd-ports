@@ -1407,6 +1407,7 @@ cavezofphear                    ports/games/cavezofphear
 cbb                             ports/finance/cbb
 cbedic                          ports/textproc/cbedic
 cbind                           ports/devel/cbind
+cblog                           ports/www/cblog
 cbrowser                        ports/devel/cbrowser
 cbrpager                        ports/graphics/cbrpager
 cbview                          ports/graphics/cbview
@@ -3876,6 +3877,7 @@ frickin                         ports/net/frickin
 frikqcc                         ports/games/frikqcc
 frink                           ports/devel/frink
 frodo                           ports/emulators/frodo
+frogatto                        ports/games/frogatto
 frontbase                       ports/databases/frontbase
 frontbase-jdbc                  ports/databases/frontbase-jdbc
 frontline                       ports/graphics/frontline
@@ -7435,6 +7437,7 @@ lambda                          ports/math/lambda
 lambdamoo                       ports/net/lambdamoo
 lame                            ports/audio/lame
 lamprop                         ports/science/lamprop
+lamson                          ports/devel/lamson
 lanbrowsing                     ports/net/lanbrowsing
 lander                          ports/games/lander
 landscape                       ports/graphics/landscape
@@ -8430,6 +8433,7 @@ linux-f10-pango                 ports/x11-toolkits/linux-f10-pango
 linux-f10-png                   ports/graphics/linux-f10-png
 linux-f10-png10                 ports/graphics/linux-f10-png10
 linux-f10-qt33                  ports/x11-toolkits/linux-f10-qt33
+linux-f10-qtcurve-gtk2          ports/x11-themes/linux-f10-qtcurve-gtk2
 linux-f10-scim-gtk              ports/textproc/linux-f10-scim-gtk
 linux-f10-scim-libs             ports/textproc/linux-f10-scim-libs
 linux-f10-sdl12                 ports/devel/linux-f10-sdl12
