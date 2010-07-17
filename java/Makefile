@@ -50,7 +50,6 @@
     SUBDIR += eclipse-sqlexplorer
     SUBDIR += eclipse-sysdeo-tomcat
     SUBDIR += eclipse-uml
-    SUBDIR += eclipse-v4all
     SUBDIR += eclipse-vep
     SUBDIR += eclipse-vep-examples
     SUBDIR += eclipse-viplugin
