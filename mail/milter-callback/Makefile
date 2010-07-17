@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	milter-callback
-PORTVERSION=	1.5.8
+PORTVERSION=	1.5.10
 CATEGORIES=	mail
 MASTER_SITES=	http://unix.zhegan.in/distfiles/ \
 		CRITICAL
