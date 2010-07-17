@@ -14,6 +14,8 @@ MASTER_SITES=	SF/${PORTNAME}/all-in-one/${PORTVERSION}
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	The Open Racing Car Simulator
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
