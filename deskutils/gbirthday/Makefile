@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gbirthday
-PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTVERSION=	0.6.5
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A birthday reminder for Evolution and some others
@@ -19,6 +18,7 @@ OPTIONS=	EVO	"Enable Evolution support"	on \
 		MYSQL	"Enable MySQL database support"	off \
 		NOTIFY	"Enable libnotify support"	off
 
+USE_XZ=		yes
 NO_WRKSUBDIR=	yes
 USE_PYTHON_RUN=	yes
 USE_GNOME=	pygtk2 desktopfileutils
