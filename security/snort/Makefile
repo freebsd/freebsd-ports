@@ -8,8 +8,8 @@
 PORTNAME=	snort
 PORTVERSION=	2.8.6
 CATEGORIES=	security
-MASTER_SITES=	http://www.snort.org/dl/ \
-		http://dl.snort.org/snort-current/
+MASTER_SITES=	LOCAL
+MASTER_SITE_SUBDIR=     clsung
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Lightweight network intrusion detection system
@@ -126,14 +126,12 @@ CONFIGURE_ARGS+=	--enable-perfprofiling
 .endif
 
 .if defined(WITH_SNORTSAM)
+BUILD_DEPENDS+=		automake>=1.10.1:${PORTSDIR}/devel/automake110
 PATCH_SITES+=http://www.snortsam.net/files/snort-plugin/:snortsam
 PATCHFILES+=snortsam-2.8.6.diff.gz:snortsam
 .endif
 
 post-patch:
-.if defined(WITH_SNORTSAM)
-BUILD_DEPENDS+=		automake>=1.10.1:${PORTSDIR}/devel/automake110
-.endif
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} '/SUBDIRS = /s/doc//' ${WRKSRC}/Makefile.in
 .endif
