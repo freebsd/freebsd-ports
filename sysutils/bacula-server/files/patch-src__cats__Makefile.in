@@ -1,0 +1,11 @@
+--- src/cats/Makefile.in.orig	2010-05-19 17:13:07.000000000 +0300
++++ src/cats/Makefile.in	2010-05-19 17:15:47.000000000 +0300
+@@ -69,7 +69,7 @@
+ 
+ libbacsql.la: Makefile $(LIBBACSQL_LOBJS)
+ 	@echo "Making $@ ..."	  
+-	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACSQL_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBACSQL_LT_CURRENT).$(LIBBACSQL_LT_REVISION).$(LIBBACSQL_LT_AGE) $(DB_LIBS)
++	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACSQL_LOBJS) -export-dynamic -rpath $(libdir) -version-info $(LIBBACSQL_LT_CURRENT):$(LIBBACSQL_LT_REVISION):$(LIBBACSQL_LT_AGE) $(DB_LIBS)
+ 
+ Makefile: $(srcdir)/Makefile.in $(topdir)/config.status
+ 	cd $(topdir) \

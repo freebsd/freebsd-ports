@@ -60,11 +60,25 @@ the same time, and on any given machine, you must run only one version
 of Bacula. This means that on the Director and Storage daemon machines,
 you *must* upgrade your File daemon as well.
 
-New database Catalog format in version 5.0.0 (3.1.9 or later).
+New database Catalog format in version 5.0.2 (3.1.9 or later).
 
 If upgrading to 5.x from < 5.x, you must run the update_bacula_tables
 script.  Afterwards, check the ownership on any new tables
 and make sure they are consisten with existing tables.
+
+!!!!!!!!!!!!!!! NOTE FOR 5.0.0 USERS !!!!!!!!!!!!!!!!!!!!
+The Allow Duplicate Jobs directive has been significantly-
+reworked, and the default value has changed. See below.
+
+Truncate On Purge has been totally rewritten. See the new
+features section of the manual.
+
+When Volume Poll Interval is set in the SD DEVICE configuration,
+(default 5 mins), after a certain number of polling tries (approx
+10) polling will stop and the operator will be asked to
+resolve the problem.  Previously there was no limit, and an
+error message could be produced at each poll attempt.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 Read the ReleaseNotes for further information.
 

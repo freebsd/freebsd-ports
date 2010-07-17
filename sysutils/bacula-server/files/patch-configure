@@ -1,0 +1,11 @@
+--- configure.orig	2010-05-20 20:25:58.000000000 +0300
++++ configure	2010-05-20 20:26:30.000000000 +0300
+@@ -47193,7 +47193,7 @@
+    { (exit 1); exit 1; }; }
+    fi
+ 
+-   QMAKEBIN="qmake"
++   QMAKEBIN="$QMAKE"
+    cd src/qt-console
+    echo "Creating bat Makefile"
+    touch bat
