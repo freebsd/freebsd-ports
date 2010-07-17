@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dwdiff
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	1.8
 CATEGORIES=	textproc
 MASTER_SITES=	http://os.ghalkes.nl/dist/ \
 		http://www.logvinov.ru/files/dist/ \
@@ -29,6 +28,9 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
 
 MAN1=		${PORTNAME}.1 dwfilter.1
 PORTDOCS=	COPYING Changelog README
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 .include <bsd.port.options.mk>
 
