@@ -5,6 +5,9 @@ bin/ppserver.py
 %%PYTHON_SITELIBDIR%%/ppauto.py
 %%PYTHON_SITELIBDIR%%/ppauto.pyc
 %%PYTHON_SITELIBDIR%%/ppauto.pyo
+%%PYTHON_SITELIBDIR%%/ppcommon.py
+%%PYTHON_SITELIBDIR%%/ppcommon.pyc
+%%PYTHON_SITELIBDIR%%/ppcommon.pyo
 %%PYTHON_SITELIBDIR%%/pptransport.py
 %%PYTHON_SITELIBDIR%%/pptransport.pyc
 %%PYTHON_SITELIBDIR%%/pptransport.pyo
