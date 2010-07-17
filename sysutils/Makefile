@@ -50,10 +50,8 @@
     SUBDIR += backupme
     SUBDIR += bacula-bat
     SUBDIR += bacula-client
-    SUBDIR += bacula-client-devel
     SUBDIR += bacula-docs
     SUBDIR += bacula-server
-    SUBDIR += bacula-server-devel
     SUBDIR += bacula2-client
     SUBDIR += bacula2-server
     SUBDIR += bashburn
