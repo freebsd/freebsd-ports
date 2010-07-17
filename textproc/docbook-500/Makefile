@@ -98,7 +98,7 @@ do-install:
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	files1=$$(${FIND} ${WRKSRC} -type f -depth 1| ${GREP} -v -e "$.xml" -e "$.nvdl"); \
+	files1=$$(${FIND} ${WRKSRC} -type f -depth 1| ${GREP} -v -e '.xml$$' -e '.nvdl$$'); \
 	files2=$$(${FIND} ${WRKSRC}/docs -type f -depth 1); \
 	for i in $${files1} $${files2}; do \
 		${INSTALL_DATA} $${i} ${DOCSDIR}; \
