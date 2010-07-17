@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pidgin-birthday-reminder
-PORTVERSION=	1.5
-PORTREVISION=	2
+PORTVERSION=	1.6
 CATEGORIES=	net-im
-MASTER_SITES=	SF/pidgin-birthday/pidgin-birthday/${PORTVERSION}
+MASTER_SITES=	http://launchpadlibrarian.net/48067464/
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	The birthday reminder for Pidgin

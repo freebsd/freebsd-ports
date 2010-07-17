@@ -4,7 +4,11 @@ lib/pidgin/birthday_reminder.a
 share/locale/de/LC_MESSAGES/pidgin-birthday-reminder.mo
 share/locale/es/LC_MESSAGES/pidgin-birthday-reminder.mo
 share/locale/fr/LC_MESSAGES/pidgin-birthday-reminder.mo
+share/locale/gl/LC_MESSAGES/pidgin-birthday-reminder.mo
+share/locale/he/LC_MESSAGES/pidgin-birthday-reminder.mo
+share/locale/pt/LC_MESSAGES/pidgin-birthday-reminder.mo
 share/locale/ru/LC_MESSAGES/pidgin-birthday-reminder.mo
+share/locale/tr/LC_MESSAGES/pidgin-birthday-reminder.mo
 share/pixmaps/pidgin/birthday_reminder/birthday0.png
 share/pixmaps/pidgin/birthday_reminder/birthday1.png
 share/pixmaps/pidgin/birthday_reminder/birthday2.png
