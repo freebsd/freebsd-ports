@@ -68,7 +68,7 @@
     SUBDIR += konversation
     SUBDIR += konversation-kde4
     SUBDIR += kvirc
-    SUBDIR += kvirc-devel
+    SUBDIR += kvirc-qt4
     SUBDIR += kwirc
     SUBDIR += libircclient
     SUBDIR += lostirc
