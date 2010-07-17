@@ -10,8 +10,7 @@ PKGNAMESUFFIX=	-bat
 
 COMMENT=	The network backup solution (GUI)
 
-LIB_DEPENDS+=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
-		bac.1:${PORTSDIR}/sysutils/bacula-client
+LIB_DEPENDS+=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build uic_build moc_build rcc_build
@@ -32,21 +31,37 @@ CONFIGURE_ARGS+=--enable-bat \
 		--disable-build-stored \
 		--enable-client-only
 
-pre-install:
-	# override master
+.include "${MASTERDIR}/Makefile"
+.include <bsd.port.pre.mk>
 
-post-install:
-	# override master
+.if exists(${LOCALBASE}/lib/libbac.so.${PORTVERSION:R:R}) && exists(${LOCALBASE}/lib/libbaccfg.so.${PORTVERSION:R:R})
+LIB_DEPENDS+=	bac.${PORTVERSION:R:R}:${PORTSDIR}/sysutils/bacula-client
+PLIST_SUB+=	INDEP="@comment "
+
+.elif exists(${LOCALBASE}/lib/libbac.so.1) || exists(${LOCALBASE}/lib/libbaccfg.so.1)
+# To prevent build with old libraries
+IGNORE=		please update sysutils/bacula-client first
+
+.else
+WITH_LIBS=	YES
+PLIST_SUB+=	INDEP=""
+.endif
+
+pre-everything::
+	@${ECHO_MSG} "===> Building bat the GUI interface for Bacula."
 
 do-install:
 	# Install config files and preserve existing ones
-	@if [ -f ${WRKSRC}/src/qt-console/bat ]; then \
-		${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/bat ${PREFIX}/sbin; \
-	else \
-		${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/.libs/bat ${PREFIX}/sbin; \
-	fi
 	${INSTALL_SCRIPT}  ${WRKSRC}/src/qt-console/bat.conf ${PREFIX}/etc/bat.conf.sample
-	${GZIP_CMD} ${WRKSRC}/manpages/bat.1
-	${INSTALL_MAN}     ${WRKSRC}/manpages/bat.1.gz          ${PREFIX}/man/man1/
+	${INSTALL_MAN}     ${WRKSRC}/manpages/bat.1          ${PREFIX}/man/man1/
+.if defined(WITH_LIBS)
+	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/.libs/bat ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/lib/.libs/libbac.so.${PORTVERSION:R:R} \
+	    ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/src/lib/.libs/libbaccfg.so.${PORTVERSION:R:R} \
+	    ${PREFIX}/lib
+.else
+	${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/bat ${PREFIX}/sbin
+.endif
 
-.include "${MASTERDIR}/Makefile"
+.include <bsd.port.post.mk>

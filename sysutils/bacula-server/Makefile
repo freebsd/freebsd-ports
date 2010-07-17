@@ -6,23 +6,28 @@
 #
 
 PORTNAME=	bacula
-DISTVERSION=	5.0.0
-PORTREVISION=	1
+DISTVERSION=	5.0.2
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 
 MAINTAINER=	dan@langille.org
 COMMENT?=	The network backup solution (server)
 
-PKGNAMESUFFIX?=	-server
-
 CONFLICTS=	bacula-server-devel-[0-9]* bacula-client-devel-[0-9]* bacula-docs-devel-[0-9]*
 
-UNIQUENAME?=${PORTNAME}${PKGNAMESUFFIX}
+UNIQUENAME?=	${PORTNAME}${PKGNAMESUFFIX}
 
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
+PLIST_SUB+=	MAJOR=${PORTVERSION:R:R}
 
-.if !defined(WITH_BAT)
+GNU_CONFIGURE=	yes
+
+CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/readline -I${LOCALBASE}/include" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
+
+.if !defined(WITH_BAT) && !defined(WITH_NAGIOS_CHECK_ONLY)  #Till end of the file
+PKGNAMESUFFIX?=	-server
+
 PORTDOCS=	VERIFYING \
 		technotes \
 		ChangeLog \
@@ -30,9 +35,7 @@ PORTDOCS=	VERIFYING \
 		ReleaseNotes \
 		LICENSE \
 		INSTALL
-.endif
 
-.if !defined(WITH_BAT)
 .if !defined(WITH_CLIENT_ONLY)
 USE_RC_SUBR?=	bacula-dir bacula-sd
 .endif
@@ -42,7 +45,6 @@ SUB_FILES+=	pkg-message.client
 .else
 SUB_FILES+=	pkg-message.server
 .endif
-.endif
 
 # The user/group IDs below are registered, see
 # http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#DADS-UID
@@ -50,7 +52,6 @@ SUB_FILES+=	pkg-message.server
 BACULA_DIR?=/var/db/bacula
 #
 MANCOMPRESSED=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-tcp-wrappers=/usr/lib \
 		--enable-smartalloc \
 		--with-working-dir=${BACULA_DIR} \
@@ -64,6 +65,7 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers=/usr/lib \
 		--with-dump-email=root@localhost \
 		--with-job-email=root@localhost \
 		--with-db-name=bacula \
+		--with-sbin-perm=755 \
 		--with-db-user=bacula \
 		--with-baseport=9101
 
@@ -77,39 +79,19 @@ CONFIGURE_ARGS+=--with-dir-user=bacula \
 		--with-sd-group=operator
 .endif
 
-CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/readline -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
-
-.for opt in ${ALL_OPTIONS}
-.if defined(WITH_${opt})
-BATCH=	yes
-.endif
-.endfor
-
-.if !defined(BATCH)
-IS_INTERACTIVE=	yes
-.endif
-
 .if defined(WITH_CLIENT_ONLY)
 OPTIONS=	WXCONSOLE "Build with wxGTK based GUI console: deprecated" off
 OPTIONS+=	SFDAEMON "Build with staticly compiled file daemon" off
-.elif defined(WITH_BAT)
-OPTIONS=	
 .else
 OPTIONS=	SQLITE3 "Use SqLite-3 database instead of SqLite-2" off
 OPTIONS+=	MYSQL "Use MySQL database instead of SqLite" off
 OPTIONS+=	POSTGRESQL "Use PostgreSQL database instead of SqLite" off
 OPTIONS+=	MTX "Install mtx for control of autochanger devices" off
 .endif
-
 OPTIONS+=	NLS "Native Language Support via gettext utilities" on
 OPTIONS+=	OPENSSL "Enable OpenSSL for encrypted communication" off
 
-.if !defined(WITH_BAT)
 PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -134,9 +116,12 @@ PKGINSTALL=	${PKGDIR}/pkg-install.client
 # Build a static fd binary.
 .if defined(WITH_SFDAEMON)
 CONFIGURE_ARGS+=	--enable-static-fd
+CONFIGURE_ARGS+=	--disable-libtool
 PLIST_SUB+=	SFDAEMON=""
+PLIST_SUB+=	NOSF="@comment "
 .else
 PLIST_SUB+=	SFDAEMON="@comment "
+PLIST_SUB+=	NOSF=""
 .endif
 # Build bwx-console
 .if defined(WITH_WXCONSOLE)
@@ -178,13 +163,11 @@ RUN_DEPENDS+=		${LOCALBASE}/sbin/mtx:${PORTSDIR}/misc/mtx
 CONFIGURE_ARGS+=	--with-openssl
 .endif
 
-.if !defined(WITH_BAT)
 .if defined(WITH_CLIENT_ONLY)
 MAN8=bacula-fd.8 bconsole.8
 .else
 MAN8=bacula.8 bacula-dir.8 bacula-sd.8 bcopy.8 bextract.8 bls.8 bscan.8 btape.8 btraceback.8 dbcheck.8
 MAN1=bsmtp.1 bacula-tray-monitor.1 bacula-bwxconsole.1
-.endif
 .endif
 
 MAKE_ARGS+=	-E MAN8 -E MAN1
@@ -198,7 +181,6 @@ pre-everything::
 	@${ECHO_MSG} "  WITH_WXCONSOLE=yes	if you only want a wxGTK based GUI console."
 	@${ECHO_MSG} "  WITH_MTX=yes		if you want to use mtx instead of chio for autochanger control."
 	@${ECHO_MSG} "  WITH_SQLITE3=yes  	if you want SqLite-3 instead of SqLite-2 as the database."
-	@${ECHO_MSG} "  WITH_SFDAEMON=yes  if you want staticly compiled file daemon (client)."
 .if !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL)
 	@${ECHO_MSG} "  WITH_MYSQL=yes  	if you want MySQL instead of SqLite as the database."
 	@${ECHO_MSG} "  WITH_POSTGRESQL=yes	if you want PostgreSQL instead of SqLite as the database."
@@ -210,6 +192,8 @@ pre-everything::
 	@${ECHO_MSG} "===> Using ${DBTYPE} as the bacula database."
 	@${ECHO_MSG} ""
 .else
+	@${ECHO_MSG} "You may use the following build options (or make config):"
+	@${ECHO_MSG} "  WITH_SFDAEMON=yes	if you want staticly compiled file daemon (client)."
 	@${ECHO_MSG} "===> Building file daemon only."
 .endif
 
@@ -283,14 +267,14 @@ post-install:
 # 	chmod of bsmtp program so bacula can use it with dropped down permissions
 	${CHMOD} o+x ${PREFIX}/sbin/bsmtp
 	${CHOWN} -R bacula:bacula ${PREFIX}/share/bacula
-	
+
 #	on a fresh install, the .new suffix is not used
 	if [ -f ${PREFIX}/etc/bacula-dir.conf.new ]; then \
 		${CHGRP} bacula ${PREFIX}/etc/bacula-dir.conf.new; \
 	else \
 		${CHGRP} bacula ${PREFIX}/etc/bacula-dir.conf; \
 	fi
-		
+
 	${CHGRP} bacula ${PREFIX}/sbin/dbcheck
 
 .endif
@@ -308,3 +292,4 @@ post-install:
 .endif
 
 .include <bsd.port.post.mk>
+.endif # if !defined(WITH_BAT) && !defined(WITH_NAGIOS_CHECK_ONLY)
