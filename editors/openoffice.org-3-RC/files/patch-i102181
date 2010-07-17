@@ -1,23 +1,23 @@
---- openssl/makefile.mk.orig	2009-12-06 12:25:44.000000000 +0900
-+++ openssl/makefile.mk	2009-12-12 17:14:17.000000000 +0900
-@@ -61,7 +61,7 @@
- OUT2LIB += libcrypto.*
- OUT2INC += include/openssl/*
+--- openssl/makefile.mk.orig	2010-07-17 07:41:38.000000000 +0900
++++ openssl/makefile.mk	2010-07-17 17:23:07.000000000 +0900
+@@ -64,7 +64,7 @@
+ 
+ UNAME=$(shell uname)
  
 -.IF "$(OS)" == "LINUX" || "$(OS)" == "FREEBSD"
 +.IF "$(OS)" == "LINUX"
  	PATCH_FILES=openssllnx.patch
  	ADDITIONAL_FILES:= \
- 		libcrypto_OOo_0_9_8n.map \
-@@ -99,6 +99,22 @@
+ 		libcrypto_OOo_0_9_8o.map \
+@@ -110,6 +110,22 @@
  	.ENDIF
  .ENDIF
  
 +.IF "$(OS)" == "FREEBSD"
 +	PATCH_FILES=openssllnx.patch
 +	ADDITIONAL_FILES:= \
-+		libcrypto_OOo_0_9_8n.map \
-+		libssl_OOo_0_9_8n.map
++		libcrypto_OOo_0_9_8o.map \
++		libssl_OOo_0_9_8o.map
 +	.IF "$(CPU)" == "I"
 +		CONFIGURE_ACTION=Configure BSD-x86-elf
 +	.ELIF "$(BUILD64)" == "1"

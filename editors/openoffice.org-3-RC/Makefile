@@ -9,21 +9,23 @@ PORTNAME?=	openoffice.org
 PORTVERSION?=	3.2.${SNAPDATE}
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
+		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/:extsrc \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/misc/moz/:mozsrc \
 		${MASTER_SITE_MOZILLA_EXTENDED:S/$/:mozsrc/} \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unowinreg
 MASTER_SITE_SUBDIR+=	seamonkey/releases/${SEAMONKEY_VERSION}/:mozsrc
-DISTFILES+=	${OOOSRC} unowinreg.dll:unowinreg
-EXTRACT_ONLY=	${OOOSRC}
+DISTFILES+=	${OOOSRC} ${OOOEXTSRC} unowinreg.dll:unowinreg
 
 #de facto maintainer is maho@FreeBSD.org
 #patch submitters must sign SCA; see http://porting.openoffice.org/freebsd/#policy
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
 
-IGNORE=		newer version has been released
-
 CONFLICTS=	cppunit*
+
+EXTRATC_ONLY?=	${OOOSRC} ${OOOEXTSRC}
+
+OOOEXTSRC=	ext_sources.20100505.tar.bz2:extsrc
 
 NO_LATEST_LINK=	yes
 
@@ -71,16 +73,16 @@ JAVA_VERSION=	1.4 1.5 1.6
 ONLY_FOR_ARCHS=	i386 amd64
 
 .if ${ARCH} == amd64
-FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
+FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
 .else
-FREEBSD_ENV_SET=	FreeBSDX86Env.Set
+FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 .endif
 
-MILESTONE?=		19
-OOOTAG?=		OOO320_m${MILESTONE}
+MILESTONE?=		1
+OOOTAG?=		OOO330_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20100529
+SNAPDATE=		20100717
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org3
@@ -125,13 +127,14 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		imake:${PORTSDIR}/devel/imake \
 		gtar:${PORTSDIR}/archivers/gtar \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
-		ant:${PORTSDIR}/devel/apache-ant
+		ant:${PORTSDIR}/devel/apache-ant \
+		${LOCALBASE}/share/java/classes/junit.jar:${PORTSDIR}/java/junit
 #see #i85469# for gperf
 
 USE_BISON=	build
 GNU_CONFIGURE=	yes
-WRKSRC?=		${WRKDIR}/${OOOTAG}
-TCSH?=		/bin/tcsh
+WRKSRC?=	${WRKDIR}/${OOOTAG}
+BASH?=		${PREFIX}/bin/bash
 SUB_FILES=	pkg-message
 SUB_LIST=	EXECBASE=${EXECBASE} OOOTAG=${OOOTAG} OOODIR=${OOODIR}
 
@@ -142,6 +145,7 @@ MAKE_JOBS_NUMBER=	1
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
 			--enable-crashdump=yes				\
+			--with-junit=${LOCALBASE}/share/java/classes/junit.jar	\
 			--with-system-zlib				\
 			--with-system-stdlibs				\
 			--with-epm=internal				\
@@ -150,7 +154,9 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--enable-presenter-console			\
 			--enable-pdfimport				\
 			--enable-wiki-publisher				\
-			--enable-report-builder
+			--enable-report-builder				\
+			--with-use-shell=bash				\
+			--with-vendor="FreeBSD ports system"
 
 OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
@@ -206,7 +212,7 @@ pre-configure:
 
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" "TMP=${WRKSRC}" ${TCSH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAKE_JOBS_NUMBER} --all --html --dontgraboutput"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" "LIBINTL_PREFIX=${PREFIX}" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAKE_JOBS_NUMBER} --all --html"
 
 .if ${LOCALIZED_LANG} == "alllangs"
 	@${MAKE} languagepack
@@ -229,7 +235,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}
 	@cd ${WRKDIR}/tmp/opt/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-	@cd ${WRKSRC}/solver/320/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
+	@cd ${WRKSRC}/solver/3?0/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 	@${INSTALL_DATA} ${WRKSRC}/instsetoo_native/unxfbsd?.pro/bin/hid.lst ${PREFIX}/${INSTALLATION_BASEDIR}
 .else
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
