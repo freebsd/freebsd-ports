@@ -7,7 +7,6 @@
 
 PORTNAME=	wanderlust
 PORTVERSION=	2.15.9.b.${SNAPDATE}
-PORTREVISION=	2
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.jpl.org/elips/wl/snapshots/ \
 	http://people.freebsd.org/~nobutaka/
@@ -19,8 +18,8 @@ COMMENT=	Yet another message interface on Emacsen
 
 USE_EMACS=	yes
 
-SNAPDATE=	20100125
-SNAPTIME=	1004
+SNAPDATE=	20100711
+SNAPTIME=	0810
 
 CONFLICTS=	wanderlust-*-2.14.*
 NO_LATEST_LINK=	yes
