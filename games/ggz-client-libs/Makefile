@@ -11,7 +11,7 @@ PORTVERSION=	${GGZ_VERSION}
 PORTREVISION=	2
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - Core Client Libraries
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
