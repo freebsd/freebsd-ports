@@ -867,10 +867,8 @@ backfract                       ports/graphics/backfract
 backupme                        ports/sysutils/backupme
 bacula-bat                      ports/sysutils/bacula-bat
 bacula-client                   ports/sysutils/bacula-client
-bacula-client-devel             ports/sysutils/bacula-client-devel
 bacula-docs                     ports/sysutils/bacula-docs
 bacula-server                   ports/sysutils/bacula-server
-bacula-server-devel             ports/sysutils/bacula-server-devel
 bacula-web                      ports/www/bacula-web
 bacula2-client                  ports/sysutils/bacula2-client
 bacula2-server                  ports/sysutils/bacula2-server
@@ -2565,6 +2563,7 @@ dragstack                       ports/deskutils/dragstack
 drbl                            ports/mail/drbl
 dreampie                        ports/devel/dreampie
 drexelsnmp                      ports/java/drexelsnmp
+drg2sbg                         ports/converters/drg2sbg
 drgeo                           ports/math/drgeo
 dri                             ports/graphics/dri
 dri2proto                       ports/x11/dri2proto
@@ -2848,7 +2847,6 @@ eclipse-shelled                 ports/java/eclipse-shelled
 eclipse-sqlexplorer             ports/java/eclipse-sqlexplorer
 eclipse-sysdeo-tomcat           ports/java/eclipse-sysdeo-tomcat
 eclipse-uml                     ports/java/eclipse-uml
-eclipse-v4all                   ports/java/eclipse-v4all
 eclipse-vep                     ports/java/eclipse-vep
 eclipse-vep-examples            ports/java/eclipse-vep-examples
 eclipse-viplugin                ports/java/eclipse-viplugin
