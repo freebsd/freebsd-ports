@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	terminus-font
-PORTVERSION=	4.28
-PORTREVISION=	1
+PORTVERSION=	4.30
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.is-vn.bg/hamster/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|%SUBDIR%|${PORTNAME:L}/${PORTNAME}-${PORTVERSION}|}
+
 PATCH_SITES=	${MASTER_SITES}
 
 MAINTAINER=	vlad@vlad.uz.ua
@@ -37,43 +37,43 @@ FONTDIR=	lib/X11/fonts/${PORTNAME}
 PLIST_SUB+=	FONTDIR=${FONTDIR}
 
 .if defined(WITH_AO2)
-PATCHFILES+=	terminus-font-4.28-ao2.diff.gz
+PATCHFILES+=	terminus-font-4.30-ao2.diff.gz
 .endif
 
 .if defined(WITH_DV1)
-PATCHFILES+=	terminus-font-4.28-dv1.diff.gz
+PATCHFILES+=	terminus-font-4.30-dv1.diff.gz
 .endif
 
 .if defined(WITH_GE1)
-PATCHFILES+=	terminus-font-4.28-ge1.diff.gz
+PATCHFILES+=	terminus-font-4.30-ge1.diff.gz
 .endif
 
 .if defined(WITH_GQ2)
-PATCHFILES+=	terminus-font-4.28-gq2.diff.gz
+PATCHFILES+=	terminus-font-4.30-gq2.diff.gz
 .endif
 
 .if defined(WITH_IJ1)
-PATCHFILES+=	terminus-font-4.28-ij1.diff.gz
+PATCHFILES+=	terminus-font-4.30-ij1.diff.gz
 .endif
 
 .if defined(WITH_KA2)
-PATCHFILES+=	terminus-font-4.28-ka2.diff.gz
+PATCHFILES+=	terminus-font-4.30-ka2.diff.gz
 .endif
 
 .if defined(WITH_CM2)
-PATCHFILES+=	terminus-font-4.28-cm2.diff.gz
+PATCHFILES+=	terminus-font-4.30-cm2.diff.gz
 .endif
 
 post-build:
 	@${GZIP_CMD} ${WRKSRC}/*.pcf
 
 do-install:
-	@${MKDIR} ${LOCALBASE}/${FONTDIR}
-	@${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${LOCALBASE}/${FONTDIR}
+	@${MKDIR} ${PREFIX}/${FONTDIR}
+	@${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${PREFIX}/${FONTDIR}
 
 post-install:
-	@cd ${LOCALBASE}/${FONTDIR}; mkfontdir
-	@${CP} ${LOCALBASE}/${FONTDIR}/fonts.dir ${LOCALBASE}/${FONTDIR}/fonts.scale || true
-	@command fc-cache -f -v ${LOCALBASE}/${FONTDIR} || true
+	@cd ${PREFIX}/${FONTDIR}; mkfontdir
+	@${CP} ${PREFIX}/${FONTDIR}/fonts.dir ${PREFIX}/${FONTDIR}/fonts.scale || true
+	@command fc-cache -f -v ${PREFIX}/${FONTDIR} || true
 
 .include <bsd.port.post.mk>

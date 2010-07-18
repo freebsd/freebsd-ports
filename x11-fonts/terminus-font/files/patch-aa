@@ -1,42 +1,45 @@
---- Makefile.orig	2008-09-14 21:57:18.000000000 +0400
-+++ Makefile	2008-10-23 19:51:40.000000000 +0400
+--- Makefile-orig	2010-07-17 09:12:42.000000000 +0300
++++ Makefile	2010-07-17 09:22:50.000000000 +0300
 @@ -6,6 +6,7 @@
  BDF2RAW	= $(PERL) ./bdftopsf.pl -h
  UCS2X11	= $(PERL) ./ucstoany.pl
  BDF2PCF	= bdftopcf
-+MKITALIC	= mkitalic
++MKITALIC = mkitalic
  
  R_88591	= ISO8859 1
  R_88592	= ISO8859 2
-@@ -56,19 +57,26 @@
+@@ -58,21 +59,29 @@
  
  PCF_12N	= ter-112n.pcf ter-212n.pcf ter-512n.pcf ter-712n.pcf ter-912n.pcf ter-c12n.pcf ter-d12n.pcf ter-f12n.pcf ter-g12n.pcf ter-k12n.pcf ter-p12n.pcf ter-u12n.pcf ter-x12n.pcf
  PCF_12B	= ter-112b.pcf ter-212b.pcf ter-512b.pcf ter-712b.pcf ter-912b.pcf ter-c12b.pcf ter-d12b.pcf ter-f12b.pcf ter-g12b.pcf ter-k12b.pcf ter-p12b.pcf ter-u12b.pcf ter-x12b.pcf
-+PCF_12I	= ter-112i.pcf ter-212i.pcf ter-512i.pcf ter-712i.pcf ter-912i.pcf ter-c12i.pcf ter-d12i.pcf ter-f12i.pcf ter-g12i.pcf ter-k12i.pcf ter-p12i.pcf ter-u12i.pcf ter-x12i.pcf ter-112bi.pcf ter-212bi.pcf ter-512bi.pcf ter-712bi.pcf ter-912bi.pcf ter-c12bi.pcf ter-d12bi.pcf ter-f12bi.pcf ter-g12bi.pcf ter-k12bi.pcf ter-p12bi.pcf ter-u12bi.pcf ter-x12bi.pcf
++PCF_12I = ter-112i.pcf ter-212i.pcf ter-512i.pcf ter-712i.pcf ter-912i.pcf ter-c12i.pcf ter-d12i.pcf ter-f12i.pcf ter-g12i.pcf ter-k12i.pcf ter-p12i.pcf ter-u12i.pcf ter-x12i.pcf ter-112bi.pcf ter-212bi.pcf ter-512bi.pcf ter-712bi.pcf ter-912bi.pcf ter-c12bi.pcf ter-d12bi.pcf ter-f12bi.pcf ter-g12bi.pcf ter-k12bi.pcf ter-p12bi.pcf ter-u12bi.pcf ter-x12bi.pcf
  PCF_14N	= ter-114n.pcf ter-214n.pcf ter-514n.pcf ter-714n.pcf ter-914n.pcf ter-c14n.pcf ter-d14n.pcf ter-f14n.pcf ter-g14n.pcf ter-k14n.pcf ter-p14n.pcf ter-u14n.pcf ter-x14n.pcf
  PCF_14B	= ter-114b.pcf ter-214b.pcf ter-514b.pcf ter-714b.pcf ter-914b.pcf ter-c14b.pcf ter-d14b.pcf ter-f14b.pcf ter-g14b.pcf ter-k14b.pcf ter-p14b.pcf ter-u14b.pcf ter-x14b.pcf
-+PCF_14I	= ter-114i.pcf ter-214i.pcf ter-514i.pcf ter-714i.pcf ter-914i.pcf ter-c14i.pcf ter-d14i.pcf ter-f14i.pcf ter-g14i.pcf ter-k14i.pcf ter-p14i.pcf ter-u14i.pcf ter-x14i.pcf ter-114bi.pcf ter-214bi.pcf ter-514bi.pcf ter-714bi.pcf ter-914bi.pcf ter-c14bi.pcf ter-d14bi.pcf ter-f14bi.pcf ter-g14bi.pcf ter-k14bi.pcf ter-p14bi.pcf ter-u14bi.pcf ter-x14bi.pcf
++PCF_14I = ter-114i.pcf ter-214i.pcf ter-514i.pcf ter-714i.pcf ter-914i.pcf ter-c14i.pcf ter-d14i.pcf ter-f14i.pcf ter-g14i.pcf ter-k14i.pcf ter-p14i.pcf ter-u14i.pcf ter-x14i.pcf ter-114bi.pcf ter-214bi.pcf ter-514bi.pcf ter-714bi.pcf ter-914bi.pcf ter-c14bi.pcf ter-d14bi.pcf ter-f14bi.pcf ter-g14bi.pcf ter-k14bi.pcf ter-p14bi.pcf ter-u14bi.pcf ter-x14bi.pcf
  PCF_16N	= ter-116n.pcf ter-216n.pcf ter-516n.pcf ter-716n.pcf ter-916n.pcf ter-c16n.pcf ter-d16n.pcf ter-f16n.pcf ter-g16n.pcf ter-k16n.pcf ter-p16n.pcf ter-u16n.pcf ter-x16n.pcf
  PCF_16B	= ter-116b.pcf ter-216b.pcf ter-516b.pcf ter-716b.pcf ter-916b.pcf ter-c16b.pcf ter-d16b.pcf ter-f16b.pcf ter-g16b.pcf ter-k16b.pcf ter-p16b.pcf ter-u16b.pcf ter-x16b.pcf
-+PCF_16I	= ter-116i.pcf ter-216i.pcf ter-516i.pcf ter-716i.pcf ter-916i.pcf ter-c16i.pcf ter-d16i.pcf ter-f16i.pcf ter-g16i.pcf ter-k16i.pcf ter-p16i.pcf ter-u16i.pcf ter-x16i.pcf ter-116bi.pcf ter-216bi.pcf ter-516bi.pcf ter-716bi.pcf ter-916bi.pcf ter-c16bi.pcf ter-d16bi.pcf ter-f16bi.pcf ter-g16bi.pcf ter-k16bi.pcf ter-p16bi.pcf ter-u16bi.pcf ter-x16bi.pcf
++PCF_16I = ter-116i.pcf ter-216i.pcf ter-516i.pcf ter-716i.pcf ter-916i.pcf ter-c16i.pcf ter-d16i.pcf ter-f16i.pcf ter-g16i.pcf ter-k16i.pcf ter-p16i.pcf ter-u16i.pcf ter-x16i.pcf ter-116bi.pcf ter-216bi.pcf ter-516bi.pcf ter-716bi.pcf ter-916bi.pcf ter-c16bi.pcf ter-d16bi.pcf ter-f16bi.pcf ter-g16bi.pcf ter-k16bi.pcf ter-p16bi.pcf ter-u16bi.pcf ter-x16bi.pcf
  PCF_20N	= ter-120n.pcf ter-220n.pcf ter-520n.pcf ter-720n.pcf ter-920n.pcf ter-c20n.pcf ter-d20n.pcf ter-f20n.pcf ter-g20n.pcf ter-k20n.pcf ter-p20n.pcf ter-u20n.pcf ter-x20n.pcf
  PCF_20B	= ter-120b.pcf ter-220b.pcf ter-520b.pcf ter-720b.pcf ter-920b.pcf ter-c20b.pcf ter-d20b.pcf ter-f20b.pcf ter-g20b.pcf ter-k20b.pcf ter-p20b.pcf ter-u20b.pcf ter-x20b.pcf
-+PCF_20I	= ter-120i.pcf ter-220i.pcf ter-520i.pcf ter-720i.pcf ter-920i.pcf ter-c20i.pcf ter-d20i.pcf ter-f20i.pcf ter-g20i.pcf ter-k20i.pcf ter-p20i.pcf ter-u20i.pcf ter-x20i.pcf ter-120bi.pcf ter-220bi.pcf ter-520bi.pcf ter-720bi.pcf ter-920bi.pcf ter-c20bi.pcf ter-d20bi.pcf ter-f20bi.pcf ter-g20bi.pcf ter-k20bi.pcf ter-p20bi.pcf ter-u20bi.pcf ter-x20bi.pcf
++PCF_20I = ter-120i.pcf ter-220i.pcf ter-520i.pcf ter-720i.pcf ter-920i.pcf ter-c20i.pcf ter-d20i.pcf ter-f20i.pcf ter-g20i.pcf ter-k20i.pcf ter-p20i.pcf ter-u20i.pcf ter-x20i.pcf ter-120bi.pcf ter-220bi.pcf ter-520bi.pcf ter-720bi.pcf ter-920bi.pcf ter-c20bi.pcf ter-d20bi.pcf ter-f20bi.pcf ter-g20bi.pcf ter-k20bi.pcf ter-p20bi.pcf ter-u20bi.pcf ter-x20bi.pcf
+ PCF_22N	= ter-122n.pcf ter-222n.pcf ter-522n.pcf ter-722n.pcf ter-922n.pcf ter-c22n.pcf ter-d22n.pcf ter-f22n.pcf ter-g22n.pcf ter-k22n.pcf ter-p22n.pcf ter-u22n.pcf ter-x22n.pcf
+ PCF_22B	= ter-122b.pcf ter-222b.pcf ter-522b.pcf ter-722b.pcf ter-922b.pcf ter-c22b.pcf ter-d22b.pcf ter-f22b.pcf ter-g22b.pcf ter-k22b.pcf ter-p22b.pcf ter-u22b.pcf ter-x22b.pcf
++PCF_22I = ter-122i.pcf ter-224i.pcf ter-522i.pcf ter-722i.pcf ter-922i.pcf ter-c22i.pcf ter-d22i.pcf ter-f22i.pcf ter-g22i.pcf ter-k22i.pcf ter-p22i.pcf ter-u22i.pcf ter-x22i.pcf ter-122bi.pcf ter-222bi.pcf ter-522bi.pcf ter-722bi.pcf ter-922bi.pcf ter-c22bi.pcf ter-d22bi.pcf ter-f22bi.pcf ter-g22bi.pcf ter-k22bi.pcf ter-p22bi.pcf ter-u22bi.pcf ter-x22bi.pcf
  PCF_24N	= ter-124n.pcf ter-224n.pcf ter-524n.pcf ter-724n.pcf ter-924n.pcf ter-c24n.pcf ter-d24n.pcf ter-f24n.pcf ter-g24n.pcf ter-k24n.pcf ter-p24n.pcf ter-u24n.pcf ter-x24n.pcf
  PCF_24B	= ter-124b.pcf ter-224b.pcf ter-524b.pcf ter-724b.pcf ter-924b.pcf ter-c24b.pcf ter-d24b.pcf ter-f24b.pcf ter-g24b.pcf ter-k24b.pcf ter-p24b.pcf ter-u24b.pcf ter-x24b.pcf
-+PCF_24I	= ter-124i.pcf ter-224i.pcf ter-524i.pcf ter-724i.pcf ter-924i.pcf ter-c24i.pcf ter-d24i.pcf ter-f24i.pcf ter-g24i.pcf ter-k24i.pcf ter-p24i.pcf ter-u24i.pcf ter-x24i.pcf ter-124bi.pcf ter-224bi.pcf ter-524bi.pcf ter-724bi.pcf ter-924bi.pcf ter-c24bi.pcf ter-d24bi.pcf ter-f24bi.pcf ter-g24bi.pcf ter-k24bi.pcf ter-p24bi.pcf ter-u24bi.pcf ter-x24bi.pcf
++PCF_24I = ter-124i.pcf ter-224i.pcf ter-524i.pcf ter-724i.pcf ter-924i.pcf ter-c24i.pcf ter-d24i.pcf ter-f24i.pcf ter-g24i.pcf ter-k24i.pcf ter-p24i.pcf ter-u24i.pcf ter-x24i.pcf ter-124bi.pcf ter-224bi.pcf ter-524bi.pcf ter-724bi.pcf ter-924bi.pcf ter-c24bi.pcf ter-d24bi.pcf ter-f24bi.pcf ter-g24bi.pcf ter-k24bi.pcf ter-p24bi.pcf ter-u24bi.pcf ter-x24bi.pcf
  PCF_28N	= ter-128n.pcf ter-228n.pcf ter-528n.pcf ter-728n.pcf ter-928n.pcf ter-c28n.pcf ter-d28n.pcf ter-f28n.pcf ter-g28n.pcf ter-k28n.pcf ter-p28n.pcf ter-u28n.pcf ter-x28n.pcf
  PCF_28B	= ter-128b.pcf ter-228b.pcf ter-528b.pcf ter-728b.pcf ter-928b.pcf ter-c28b.pcf ter-d28b.pcf ter-f28b.pcf ter-g28b.pcf ter-k28b.pcf ter-p28b.pcf ter-u28b.pcf ter-x28b.pcf
-+PCF_28I	= ter-128i.pcf ter-228i.pcf ter-528i.pcf ter-728i.pcf ter-928i.pcf ter-c28i.pcf ter-d28i.pcf ter-f28i.pcf ter-g28i.pcf ter-k28i.pcf ter-p28i.pcf ter-u28i.pcf ter-x28i.pcf ter-128bi.pcf ter-228bi.pcf ter-528bi.pcf ter-728bi.pcf ter-928bi.pcf ter-c28bi.pcf ter-d28bi.pcf ter-f28bi.pcf ter-g28bi.pcf ter-k28bi.pcf ter-p28bi.pcf ter-u28bi.pcf ter-x28bi.pcf
++PCF_28I = ter-128i.pcf ter-228i.pcf ter-528i.pcf ter-728i.pcf ter-928i.pcf ter-c28i.pcf ter-d28i.pcf ter-f28i.pcf ter-g28i.pcf ter-k28i.pcf ter-p28i.pcf ter-u28i.pcf ter-x28i.pcf ter-128bi.pcf ter-228bi.pcf ter-528bi.pcf ter-728bi.pcf ter-928bi.pcf ter-c28bi.pcf ter-d28bi.pcf ter-f28bi.pcf ter-g28bi.pcf ter-k28bi.pcf ter-p28bi.pcf ter-u28bi.pcf ter-x28bi.pcf
  PCF_32N	= ter-132n.pcf ter-232n.pcf ter-532n.pcf ter-732n.pcf ter-932n.pcf ter-c32n.pcf ter-d32n.pcf ter-f32n.pcf ter-g32n.pcf ter-k32n.pcf ter-p32n.pcf ter-u32n.pcf ter-x32n.pcf
  PCF_32B	= ter-132b.pcf ter-232b.pcf ter-532b.pcf ter-732b.pcf ter-932b.pcf ter-c32b.pcf ter-d32b.pcf ter-f32b.pcf ter-g32b.pcf ter-k32b.pcf ter-p32b.pcf ter-u32b.pcf ter-x32b.pcf
--PCF	= $(PCF_12N) $(PCF_12B) $(PCF_14N) $(PCF_14B) $(PCF_16N) $(PCF_16B) $(PCF_20N) $(PCF_20B) $(PCF_24N) $(PCF_24B) $(PCF_28N) $(PCF_28B) $(PCF_32N) $(PCF_32B)
-+PCF_32I	= ter-132i.pcf ter-232i.pcf ter-532i.pcf ter-732i.pcf ter-932i.pcf ter-c32i.pcf ter-d32i.pcf ter-f32i.pcf ter-g32i.pcf ter-k32i.pcf ter-p32i.pcf ter-u32i.pcf ter-x32i.pcf ter-132bi.pcf ter-232bi.pcf ter-532bi.pcf ter-732bi.pcf ter-932bi.pcf ter-c32bi.pcf ter-d32bi.pcf ter-f32bi.pcf ter-g32bi.pcf ter-k32bi.pcf ter-p32bi.pcf ter-u32bi.pcf ter-x32bi.pcf
-+PCF	= $(PCF_12N) $(PCF_12B) $(PCF_12I) $(PCF_14N) $(PCF_14B) $(PCF_14I) $(PCF_16N) $(PCF_16B) $(PCF_16I) $(PCF_20N) $(PCF_20B) $(PCF_20I) $(PCF_24N) $(PCF_24B) $(PCF_24I) $(PCF_28N) $(PCF_28B) $(PCF_28I) $(PCF_32N) $(PCF_32B) $(PCF_32I)
- PCF_N12	= $(PCF_12N) $(PCF_14N) $(PCF_14B) $(PCF_16N) $(PCF_16B) $(PCF_20N) $(PCF_20B) $(PCF_24N) $(PCF_24B) $(PCF_28N) $(PCF_28B) $(PCF_32N) $(PCF_32B)
+-PCF	= $(PCF_12N) $(PCF_12B) $(PCF_14N) $(PCF_14B) $(PCF_16N) $(PCF_16B) $(PCF_20N) $(PCF_20B) $(PCF_22N) $(PCF_22B) $(PCF_24N) $(PCF_24B) $(PCF_28N) $(PCF_28B) $(PCF_32N) $(PCF_32B)
++PCF_32I = ter-132i.pcf ter-232i.pcf ter-532i.pcf ter-732i.pcf ter-932i.pcf ter-c32i.pcf ter-d32i.pcf ter-f32i.pcf ter-g32i.pcf ter-k32i.pcf ter-p32i.pcf ter-u32i.pcf ter-x32i.pcf ter-132bi.pcf ter-232bi.pcf ter-532bi.pcf ter-732bi.pcf ter-932bi.pcf ter-c32bi.pcf ter-d32bi.pcf ter-f32bi.pcf ter-g32bi.pcf ter-k32bi.pcf ter-p32bi.pcf ter-u32bi.pcf ter-x32bi.pcf
++PCF  = $(PCF_12N) $(PCF_12B) $(PCF_12I) $(PCF_14N) $(PCF_14B) $(PCF_14I) $(PCF_16N) $(PCF_16B) $(PCF_16I) $(PCF_20N) $(PCF_20B) $(PCF_20I) $(PCF_22N) $(PCF_22B) $(PCF_22I) $(PCF_24N) $(PCF_24B) $(PCF_24I) $(PCF_28N) $(PCF_28B) $(PCF_28I) $(PCF_32N) $(PCF_32B) $(PCF_32I)
+ PCF_N12	= $(PCF_12N) $(PCF_14N) $(PCF_14B) $(PCF_16N) $(PCF_16B) $(PCF_20N) $(PCF_20B) $(PCF_22N) $(PCF_22B) $(PCF_24N) $(PCF_24B) $(PCF_28N) $(PCF_28B) $(PCF_32N) $(PCF_32B)
  
- EEE	= ter-x12n.pcf ter-x12b.pcf ter-x14n.pcf ter-x14b.pcf ter-x16n.pcf ter-x16b.pcf ter-x20n.pcf ter-x20b.pcf
-@@ -1098,6 +1106,48 @@
+ EEE	= ter-x12n.pcf ter-x12b.pcf ter-x14n.pcf ter-x14b.pcf ter-x16n.pcf ter-x16b.pcf ter-x20n.pcf ter-x20b.pcf ter-x22n.pcf ter-x22b.pcf
+@@ -1182,6 +1191,54 @@
  X_PT154	= uni/x11gr.uni uni/ascii-h.uni uni/pt-154.uni
  X_10646	= uni/x11gr.uni uni/10646-1.uni
  
@@ -64,6 +67,12 @@
 +ter-u20bi.bdf: ter-u20b.bdf
 +	$(MKITALIC) ${.ALLSRC} > ${.TARGET}
 +
++ter-u22i.bdf: ter-u20n.bdf
++	$(MKITALIC) ${.ALLSRC} > ${.TARGET}
++
++ter-u22bi.bdf: ter-u20b.bdf
++	$(MKITALIC) ${.ALLSRC} > ${.TARGET}
++
 +ter-u24i.bdf: ter-u24n.bdf
 +	$(MKITALIC) ${.ALLSRC} > ${.TARGET}
 +
@@ -85,7 +94,7 @@
  ter-112n.pcf: ter-u12n.bdf $(X_88591)
  	$(UCS2X11) ter-u12n.bdf $(R_88591) $(X_88591) | $(BDF2PCF) -o $@
  
-@@ -1644,6 +1694,552 @@
+@@ -1806,6 +1863,630 @@
  ter-x32b.pcf: ter-u32b.bdf $(X_10646)
  	$(UCS2X11) ter-u32b.bdf $(R_10646) $(X_10646) | $(BDF2PCF) -o $@
  
@@ -401,6 +410,84 @@
 +ter-x20bi.pcf: ter-u20bi.bdf $(X_10646)
 +	$(UCS2X11) ter-u20bi.bdf $(R_10646) $(X_10646) | $(BDF2PCF) -o $@
 +
++ter-122i.pcf: ter-u22i.bdf $(X_88591)
++	$(UCS2X11) ter-u22i.bdf $(R_88591) $(X_88591) | $(BDF2PCF) -o $@
++
++ter-122bi.pcf: ter-u22bi.bdf $(X_88591)
++	$(UCS2X11) ter-u22bi.bdf $(R_88591) $(X_88591) | $(BDF2PCF) -o $@
++
++ter-222i.pcf: ter-u22i.bdf $(X_88592)
++	$(UCS2X11) ter-u22i.bdf $(R_88592) $(X_88592) | $(BDF2PCF) -o $@
++
++ter-222bi.pcf: ter-u22bi.bdf $(X_88592)
++	$(UCS2X11) ter-u22bi.bdf $(R_88592) $(X_88592) | $(BDF2PCF) -o $@
++
++ter-522i.pcf: ter-u22i.bdf $(X_88595)
++	$(UCS2X11) ter-u22i.bdf $(R_88595) $(X_88595) | $(BDF2PCF) -o $@
++
++ter-522bi.pcf: ter-u22bi.bdf $(X_88595)
++	$(UCS2X11) ter-u22bi.bdf $(R_88595) $(X_88595) | $(BDF2PCF) -o $@
++
++ter-722i.pcf: ter-u22i.bdf $(X_88597)
++	$(UCS2X11) ter-u22i.bdf $(R_88597) $(X_88597) | $(BDF2PCF) -o $@
++
++ter-722bi.pcf: ter-u22bi.bdf $(X_88597)
++	$(UCS2X11) ter-u22bi.bdf $(R_88597) $(X_88597) | $(BDF2PCF) -o $@
++
++ter-922i.pcf: ter-u22i.bdf $(X_88599)
++	$(UCS2X11) ter-u22i.bdf $(R_88599) $(X_88599) | $(BDF2PCF) -o $@
++
++ter-922bi.pcf: ter-u22bi.bdf $(X_88599)
++	$(UCS2X11) ter-u22bi.bdf $(R_88599) $(X_88599) | $(BDF2PCF) -o $@
++
++ter-c22i.pcf: ter-u22i.bdf $(X_W1251)
++	$(UCS2X11) ter-u22i.bdf $(R_W1251) $(X_W1251) | $(BDF2PCF) -o $@
++
++ter-c22bi.pcf: ter-u22bi.bdf $(X_W1251)
++	$(UCS2X11) ter-u22bi.bdf $(R_W1251) $(X_W1251) | $(BDF2PCF) -o $@
++
++ter-d22i.pcf: ter-u22i.bdf $(X_8859D)
++	$(UCS2X11) ter-u22i.bdf $(R_8859D) $(X_8859D) | $(BDF2PCF) -o $@
++
++ter-d22bi.pcf: ter-u22bi.bdf $(X_8859D)
++	$(UCS2X11) ter-u22bi.bdf $(R_8859D) $(X_8859D) | $(BDF2PCF) -o $@
++
++ter-f22i.pcf: ter-u22i.bdf $(X_8859F)
++	$(UCS2X11) ter-u22i.bdf $(R_8859F) $(X_8859F) | $(BDF2PCF) -o $@
++
++ter-f22bi.pcf: ter-u22bi.bdf $(X_8859F)
++	$(UCS2X11) ter-u22bi.bdf $(R_8859F) $(X_8859F) | $(BDF2PCF) -o $@
++
++ter-g22i.pcf: ter-u22i.bdf $(X_8859G)
++	$(UCS2X11) ter-u22i.bdf $(R_8859G) $(X_8859G) | $(BDF2PCF) -o $@
++
++ter-g22bi.pcf: ter-u22bi.bdf $(X_8859G)
++	$(UCS2X11) ter-u22bi.bdf $(R_8859G) $(X_8859G) | $(BDF2PCF) -o $@
++
++ter-k22i.pcf: ter-u22i.bdf $(X_KOI8R)
++	$(UCS2X11) ter-u22i.bdf $(R_KOI8R) $(X_KOI8R) | $(BDF2PCF) -o $@
++
++ter-k22bi.pcf: ter-u22bi.bdf $(X_KOI8R)
++	$(UCS2X11) ter-u22bi.bdf $(R_KOI8R) $(X_KOI8R) | $(BDF2PCF) -o $@
++
++ter-p22i.pcf: ter-u22i.bdf $(X_PT154)
++	$(UCS2X11) ter-u22i.bdf $(R_PT154) $(X_PT154) | $(BDF2PCF) -o $@
++
++ter-p22bi.pcf: ter-u22bi.bdf $(X_PT154)
++	$(UCS2X11) ter-u22bi.bdf $(R_PT154) $(X_PT154) | $(BDF2PCF) -o $@
++
++ter-u22i.pcf: ter-u22i.bdf $(X_KOI8U)
++	$(UCS2X11) ter-u22i.bdf $(R_KOI8U) $(X_KOI8U) | $(BDF2PCF) -o $@
++
++ter-u22bi.pcf: ter-u22bi.bdf $(X_KOI8U)
++	$(UCS2X11) ter-u22bi.bdf $(R_KOI8U) $(X_KOI8U) | $(BDF2PCF) -o $@
++
++ter-x22i.pcf: ter-u22i.bdf $(X_10646)
++	$(UCS2X11) ter-u22i.bdf $(R_10646) $(X_10646) | $(BDF2PCF) -o $@
++
++ter-x22bi.pcf: ter-u22bi.bdf $(X_10646)
++	$(UCS2X11) ter-u22bi.bdf $(R_10646) $(X_10646) | $(BDF2PCF) -o $@
++
 +ter-124i.pcf: ter-u24i.bdf $(X_88591)
 +	$(UCS2X11) ter-u24i.bdf $(R_88591) $(X_88591) | $(BDF2PCF) -o $@
 +
@@ -638,7 +725,7 @@
  install-pcf: $(PCF)
  	mkdir -p $(DESTDIR)$(x11dir)
  	for i in $(PCF) ; do gzip -c $$i > $(DESTDIR)$(x11dir)/$$i.gz ; done
-@@ -1659,4 +2255,4 @@
+@@ -1821,4 +2502,4 @@
  	for i in $(PCF_N12) ; do rm -f $(DESTDIR)$(x11dir)/$$i.gz ; done
  
  clean:
