@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9a8fecef-92c0-11df-b140-0015f2db7bde">
+    <topic>vte -- Classic terminal title set+query attack</topic>
+    <affects>
+      <package>
+	<name></name>
+	<range><lt>0.24.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kees Cook reports:</p>
+	<blockquote cite="http://www.securityfocus.com/archive/1/512388">
+	  <p>Janne Snabb discovered that applications using VTE, such as
+	     gnome-terminal, did not correctly filter window and icon title
+	     request escape codes. If a user were tricked into viewing
+	     specially crafted output in their terminal, a remote attacker
+	     could execute arbitrary commands with user privileges.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-2713</cvename>
+      <url>http://www.securityfocus.com/archive/1/512388</url>
+    </references>
+    <dates>
+      <discovery>2010-07-15</discovery>
+      <entry>2010-07-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="19419b3b-92bd-11df-b140-0015f2db7bde">
     <topic>webkit-gtk2 -- Multiple vulnabilities</topic>
     <affects>
@@ -54,6 +84,29 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2010-1386</cvename>
+      <cvename>CVE-2010-1392</cvename>
+      <cvename>CVE-2010-1405</cvename>
+      <cvename>CVE-2010-1407</cvename>
+      <cvename>CVE-2010-1416</cvename>
+      <cvename>CVE-2010-1417</cvename>
+      <cvename>CVE-2010-1418</cvename>
+      <cvename>CVE-2010-1421</cvename>
+      <cvename>CVE-2010-1422</cvename>
+      <cvename>CVE-2010-1501</cvename>
+      <cvename>CVE-2010-1664</cvename>
+      <cvename>CVE-2010-1665</cvename>
+      <cvename>CVE-2010-1758</cvename>
+      <cvename>CVE-2010-1759</cvename>
+      <cvename>CVE-2010-1760</cvename>
+      <cvename>CVE-2010-1761</cvename>
+      <cvename>CVE-2010-1762</cvename>
+      <cvename>CVE-2010-1767</cvename>
+      <cvename>CVE-2010-1770</cvename>
+      <cvename>CVE-2010-1771</cvename>
+      <cvename>CVE-2010-1772</cvename>
+      <cvename>CVE-2010-1773</cvename>
+      <cvename>CVE-2010-1774</cvename>
       <url>http://blog.kov.eti.br/?p=116</url>
     </references>
     <dates>
