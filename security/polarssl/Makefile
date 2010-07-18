@@ -17,11 +17,9 @@ COMMENT=	Open Source embedded SSL/TLS cryptographic library
 
 LICENSE=	GPLv2
 
-USE_CMAKE=	yes
 USE_PERL5_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-CMAKE_BUILD_TYPE=	release
 PORTDOCS=	ChangeLog LICENSE README
 
 BINFILES=	aescrypt2 benchmark dh_client dh_genprime dh_server hello \
@@ -34,7 +32,7 @@ do-install:
 	@${TAR} -C ${WRKSRC}/include -cf - polarssl | ${TAR} -C ${PREFIX}/include -xf -
 	${INSTALL_DATA} ${WRKSRC}/library/libpolarssl.a ${PREFIX}/lib/
 .for i in ${BINFILES}
-	${INSTALL_DATA} ${WRKSRC}/programs/*/${i} ${PREFIX}/bin/polarssl_${i}
+	${INSTALL_PROGRAM} ${WRKSRC}/programs/*/${i} ${PREFIX}/bin/polarssl_${i}
 .endfor
 
 post-install:
