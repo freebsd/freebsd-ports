@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mlterm
-PORTVERSION=	2.9.4
-PORTREVISION=	9
+PORTVERSION=	3.0.1
 CATEGORIES=	x11
-MASTER_SITES=	SF/${PORTNAME}/01%20release/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/01release/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Multilingual X11 terminal emulator
@@ -26,7 +25,7 @@ CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf --enable-utmp \
 		--with-tools="mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig" \
 		--with-type-engines="xcore,xft"
 CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/iiim"
-
+MAKE_JOBS_UNSAFE=	yes
 OPTIONS=	FRIBIDI	"Use Fribidi for BiDi rendering" off \
 		UIM "uim support (experimental)" off \
 		M17NLIB "m17n library support (experimental)" off \
