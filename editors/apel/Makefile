@@ -7,17 +7,15 @@
 
 PORTNAME=	apel
 PORTVERSION=	${APEL_VER}
-PORTREVISION=	7
 CATEGORIES=	editors elisp
-MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/apel/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,elisp/jpl/elisp/apel,}
+MASTER_SITES=	http://kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/apel/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	A Portable Emacs Library for emacs
 
 # distfile version
-APEL_VER=	10.7
+APEL_VER=	10.8
 # apel lispdir
 APEL_LISPDIR?=			${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 APEL_VERSION_SPECIFIC_LISPDIR?=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
@@ -34,6 +32,14 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 		LISPDIR="${APEL_LISPDIR}" \
 		VERSION_SPECIFIC_LISPDIR="${APEL_VERSION_SPECIFIC_LISPDIR}"
 
+.include <bsd.port.pre.mk>
+
+.if (${EMACS_PORT_NAME} == "emacs23")
+PLIST_SUB+=	EMACS23="" NOEMACS23="@comment "
+.else
+PLIST_SUB+=	EMACS23="@comment " NOEMACS23=""
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -43,4 +49,4 @@ post-install:
 	done)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
