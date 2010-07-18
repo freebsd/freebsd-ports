@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2010.06.06
+PORTVERSION=	2010.07.14
 CATEGORIES=	www
 MASTER_SITES=	http://bitbucket.org/rg3/youtube-dl/raw/${PORTVERSION}/
 DISTNAME=	youtube-dl
-EXTRACT_SUFX=
+EXTRACT_SUFX=	# empty
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
-EXTRACT_ONLY=
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	A program for downloading videos from YouTube.com
