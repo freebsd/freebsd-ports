@@ -14,6 +14,4 @@ EMACS_PORT_NAME=	emacs22
 MIMEUI_PORT_NAME=	${MIMEUI_PRODUCT}-${EMACS_PORT_NAME}
 EMACS_W3M_PORT_NAME=	emacs-w3m-${EMACS_PORT_NAME}
 
-BROKEN=		conflicting dependencies
-
 .include "${MASTERDIR}/Makefile"
