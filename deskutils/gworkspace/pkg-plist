@@ -88,6 +88,7 @@ GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/LSFolder.gorm
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/LSFolder.gorm/objects.gorm
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/Localizable.strings
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/data.info
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/objects.gorm
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm/data.classes
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/OperationPrefs.gorm/objects.gorm
@@ -95,6 +96,7 @@ GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.go
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/data.info
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/objects.gorm
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/data.classes
+GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/data.info
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/objects.gorm
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/SearchResults.gorm/data.classes
 GNUstep/System/Applications/GWorkspace.app/Resources/English.lproj/SearchResults.gorm/data.info
@@ -499,7 +501,6 @@ GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION
 GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj/Localizable.strings
 GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/Info-gnustep.plist
 GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/Operation.tiff
-GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/progind.tiff
 GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/libOperation.so
 GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/libOperation.so.%%MAJORLIBVERSION3%%
 GNUstep/System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/libOperation.so.%%LIBVERSION3%%
