@@ -3,12 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/webkit-gtk2/Makefile,v 1.60 2010/04/05 17:39:13 kwm Exp $
+#   $MCom: ports-stable/www/webkit-gtk2/Makefile,v 1.1 2010/07/14 13:43:27 kwm Exp $
 #
 
 PORTNAME=	webkit
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/
 PKGNAMESUFFIX=	-gtk2
@@ -55,8 +54,8 @@ OPTIONS=	VIDEO "Enable video support" on \
 
 .include <bsd.port.pre.mk>
 
-.if exists (${LOCALBASE}/lib/libicutu.so.43)
-LIB_DEPENDS+=	icutu.43:${PORTSDIR}/devel/icu4
+.if exists (${LOCALBASE}/lib/libicutu.so.44)
+LIB_DEPENDS+=	icutu.44:${PORTSDIR}/devel/icu4
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-WebCore_platform_text_TextBreakIterator.h
 .else
 LIB_DEPENDS+=	icutu.38:${PORTSDIR}/devel/icu
