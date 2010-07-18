@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.prevantage.com/releases/ \
 		ftp://ftp2.prevantage.com/releases/
 DISTNAME=	ngmp-for-freebsd-${PORTVERSION}
 
-MAINTAINER=	lukejee@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full AJAX based web app for messaging and collaboration
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache22 \
@@ -34,6 +34,8 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache22 \
 		${LOCALBASE}/www/tinymce:${PORTSDIR}/www/tinymce
 
 BROKEN=		does not compile
+DEPRECATED=		${BROKEN} and no longer supported by upstream
+EXPIRATION_DATE=	2010-08-18
 
 NO_BUILD=	yes
 
