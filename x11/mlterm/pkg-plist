@@ -79,6 +79,7 @@ share/locale/ja/LC_MESSAGES/mlconfig.mo
 share/locale/vi/LC_MESSAGES/mlconfig.mo
 share/locale/zh_TW/LC_MESSAGES/mlconfig.mo
 @dirrm etc/mlterm
+@dirrm lib/mkf
 @dirrm lib/mlterm
 @dirrm libexec/w3mmlconfig
 %%PORTDOCS%%@dirrm share/doc/ja/mlterm
