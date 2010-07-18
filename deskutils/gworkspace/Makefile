@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gworkspace
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.8
 CATEGORIES=	deskutils gnustep
 #MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
@@ -32,6 +32,7 @@ PLIST_SUB+=	LIBVERSION2=${DEFAULT_LIBVERSION2}
 PLIST_SUB+=	MAJORLIBVERSION2=${DEFAULT_LIBVERSION2:C/([0-9]).*/\1/1}
 PLIST_SUB+=	LIBVERSION3=${DEFAULT_LIBVERSION3}
 PLIST_SUB+=	MAJORLIBVERSION3=${DEFAULT_LIBVERSION3:C/([0-9]).*/\1/1}
+MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 
 .if defined(WITHOUT_GHOSTSCRIPT)
 PLIST_SUB+=	PDFVIEW="@comment "
@@ -42,9 +43,5 @@ USE_GHOSTSCRIPT=	yes
 
 pre-configure:
 	${RM} -rf ${WRKSRC}/GWMetadata
-
-post-install:
-	${CP} ${WRKSRC}/Inspector/ContentViewersProtocol.h \
-		${GNUSTEP_SYSTEM_ROOT}/Library/Frameworks/Inspector.framework/Versions/${DEFAULT_LIBVERSION2:C/([0-9]).*/\1/1}/Headers/ContentViewersProtocol.h
 
 .include <bsd.port.mk>

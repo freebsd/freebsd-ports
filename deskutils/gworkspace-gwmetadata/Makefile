@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gworkspace
-PORTVERSION=	0.8.7
-PORTREVISION=	1
+PORTVERSION=	0.8.8
 CATEGORIES=	deskutils gnustep
 #MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
@@ -38,6 +37,7 @@ CONFIGURE_ARGS+=	--with-sqlite-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-sqlite-library=${LOCALBASE}/lib
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 DEFAULT_LIBVERSION=	0.1.0
+MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 
 GWORKSPACE_PORT?=	deskutils/gworkspace
 PREFERENCEPANES_PORT?=	deskutils/preferencepanes
