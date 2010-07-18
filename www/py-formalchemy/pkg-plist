@@ -1,0 +1,179 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/exceptions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/couchdb.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/couchdb.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/couchdb.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/fsblob.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/fsblob.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/fsblob.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/admin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/admin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/admin.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/admin_edit.mako
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/admin_index.mako
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/admin_list.mako
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/base.mako
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/controller.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/controller.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/controller.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/maps.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/maps.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/maps.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/pastertemplate.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/pastertemplate.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/pastertemplate.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/resources/add.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/resources/admin.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/resources/delete.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/resources/edit.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/rdf.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/rdf.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/rdf.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/zope/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/zope/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/zope/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/fatypes.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/fatypes.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/fatypes.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/fields.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/fields.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/fields.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/fieldset.tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/fieldset_readonly.tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/forms.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/forms.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/forms.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/grid.tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/grid_readonly.tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/helpers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/helpers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/helpers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources/en/LC_MESSAGES/formalchemy.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources/en/LC_MESSAGES/formalchemy.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources/es/LC_MESSAGES/formalchemy.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources/es/LC_MESSAGES/formalchemy.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources/formalchemy.pot
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources/fr/LC_MESSAGES/formalchemy.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources/fr/LC_MESSAGES/formalchemy.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources/hu/LC_MESSAGES/formalchemy.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources/hu/LC_MESSAGES/formalchemy.po
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/msgfmt.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/msgfmt.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/msgfmt.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/paster_templates/pylons_fa/+package+/config/routing.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/paster_templates/pylons_fa/+package+/controllers/admin.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/paster_templates/pylons_fa/+package+/forms/__init__.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/paster_templates/pylons_fa/+package+/templates/forms/fieldset.mako_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/paster_templates/pylons_fa/+package+/templates/forms/fieldset_readonly.mako_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/paster_templates/pylons_fa/+package+/templates/forms/grid.mako_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/paster_templates/pylons_fa/+package+/templates/forms/grid_readonly.mako_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/paster_templates/pylons_fa/+package+/templates/forms/restfieldset.mako_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tables.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tables.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tables.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/templates.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/templates.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/templates.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/data/genshi/fieldset.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/data/mako/fieldset.mako
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/fake_module.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/fake_module.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/fake_module.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_aliases.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_aliases.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_aliases.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_binary.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_binary.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_binary.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_dates.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_dates.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_dates.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_fieldset.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_fieldset.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_fieldset.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_fieldset_api.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_fieldset_api.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_fieldset_api.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_fsblob.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_fsblob.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_fsblob.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_multiple_keys.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_multiple_keys.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_multiple_keys.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_options.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_options.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_options.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_readonly.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_readonly.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_readonly.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_tables.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_tables.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_tables.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_unicode.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_unicode.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_unicode.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_validators.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_validators.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/test_validators.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/validators.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/validators.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/validators.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/data/mako
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/data/genshi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests/data
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/paster_templates/pylons_fa/+package+/templates/forms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/paster_templates/pylons_fa/+package+/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/paster_templates/pylons_fa/+package+/forms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/paster_templates/pylons_fa/+package+/controllers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/paster_templates/pylons_fa/+package+/config
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/paster_templates/pylons_fa/+package+
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/paster_templates/pylons_fa
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/paster_templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources/hu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources/hu
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources/es
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources/en/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources/en
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/i18n_resources
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/zope
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons/resources
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext/pylons
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy/ext
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/formalchemy
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_SITELIB%%

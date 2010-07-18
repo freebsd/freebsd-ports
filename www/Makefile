@@ -1424,6 +1424,7 @@
     SUBDIR += py-flexget
     SUBDIR += py-flup
     SUBDIR += py-forgethtml
+    SUBDIR += py-formalchemy
     SUBDIR += py-formencode
     SUBDIR += py-funkload
     SUBDIR += py-html5lib
