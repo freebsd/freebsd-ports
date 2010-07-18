@@ -1,6 +1,6 @@
-# New ports collection makefile for:	wrapper
+# New ports collection makefile for:	Xwrapper
 # Date created:				2000-09-18
-# Whom:					Trevor Johnson
+# Whom:					Trevor Johnson <trevor@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,27 +13,25 @@ DISTNAME=	# intentionally left blank
 EXTRACT_SUFX=	# intentionally left blank
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	Wrapper for xorg server
+COMMENT=	Wrapper for X.Org X11 server
 
 RUN_DEPENDS=	Xorg:${PORTSDIR}/x11-servers/xorg-server
 
 NO_WRKSUBDIR=	yes
-PLIST_FILES=	bin/Xwrapper
 USE_XORG=	x11
-
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/Xwrapper
 
 XSERVER=	-DXSERVER_PATH=\"${LOCALBASE}/bin/Xorg\"
 PKGNAMEPREFIX=	xorg-
-COMMENT=	Wrapper for X.org X11 server
 
 do-fetch:
+	@${DO_NADA}
 
 do-build:
 	${CC} ${CFLAGS} ${XSERVER} -o ${WRKSRC}/Xwrapper ${FILESDIR}/wrapper.c
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/Xwrapper ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/Xwrapper ${PREFIX}/bin
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
