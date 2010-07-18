@@ -1,0 +1,14 @@
+--- configure.orig	2010-06-03 20:49:28.000000000 +0000
++++ configure	2010-06-03 20:50:18.000000000 +0000
+@@ -12231,6 +12231,9 @@
+   powerpc-*-freebsd*)
+ 	TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc
+ 	;;
++  powerpc64-*-freebsd*)
++        TARGET=POWERPC; TARGETDIR=powerpc
++        ;;
+   powerpc*-*-rtems*)
+ 	TARGET=POWERPC; TARGETDIR=powerpc
+ 	;;
+
+
