@@ -1,0 +1,45 @@
+[ from the website ]
+
+Introduction
+============
+
+FormAlchemy greatly speeds development with SQLAlchemy mapped classes
+(models) in a HTML forms environment.
+
+FormAlchemy eliminates boilerplate by autogenerating HTML input fields
+from a given model. FormAlchemy will try to figure out what kind of
+HTML code should be returned by introspecting the model's properties
+and generate ready-to-use HTML code that will fit the developer's
+application.
+
+Of course, FormAlchemy can't figure out everything, i.e, the developer
+might want to display only a few columns from the given model. Thus,
+FormAlchemy is also highly customizable.
+
+Features
+========
+
+- Generates HTML form fields and tables from SQLAlchemy mapped classes
+  or manually added Fields
+- Works with declarative or classic mapper definitions
+- Render and edits single objects or collections (grids)
+- Handles object relationships (including many-to-many), not just
+  simple data types
+- Synonym support
+- Composite and custom type support
+- Supports all composite primary keys and most CFKs
+- Pre-fills input fields with current or default value
+- Highly customizable HTML output
+- Validates input and displays errors in-line
+- Syncs model instances with input data
+- Easy-to-use, extensible API
+- SQLAlchemy 0.4 (0.4.5 or later) and 0.5 compatible
+
+
+Limitations
+===========
+
+- Currently, only handles composite foreign keys of primitive Python
+  types
+
+WWW: http://code.google.com/p/formalchemy/
