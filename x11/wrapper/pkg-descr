@@ -1,9 +1,7 @@
 This program runs an X server after sanity-checking the environment
 and any options passed to it.  It is meant to enhance security on
-multi-user systems running XFree86 4 or the X11 server from x.org,
+multi-user systems running XFree86 4 or the X11 server from X.Org,
 where the ability to use a startx script is needed.  If you have
 XFree86 3, do not install this:  you do not need it and it will not
 work.  If you have no untrusted users or always run the X server
 from xdm, you do not need this.
-
-Trevor Johnson
