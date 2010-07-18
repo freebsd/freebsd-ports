@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="19419b3b-92bd-11df-b140-0015f2db7bde">
+    <topic>webkit-gtk2 -- Multiple vulnabilities</topic>
+    <affects>
+      <package>
+	<name>webkit-gtk2</name>
+	<range><lt>1.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gustavo Noronha reports:</p>
+	<blockquote cite="http://blog.kov.eti.br/?p=116">
+	  <p>Debian's Michael Gilbert has done a great job going
+             through all CVEs released about WebKit, and including patches in
+             the Debian package. 1.2.3 includes all of the commits from trunk
+             to fix those, too.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://blog.kov.eti.br/?p=116</url>
+    </references>
+    <dates>
+      <discovery>2010-07-16</discovery>
+      <entry>2010-07-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ba61ce15-8a7b-11df-87ec-0050569b2d21">
     <topic>redmine -- multiple vulnerabilities</topic>
     <affects>
