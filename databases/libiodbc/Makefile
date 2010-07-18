@@ -11,7 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.iodbc.org/downloads/iODBC/ \
 		SF/iodbc/iodbc/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	An ODBC 3.x driver manager, for universal data source access
 
 CONFLICTS=	unixODBC-[0-9]*

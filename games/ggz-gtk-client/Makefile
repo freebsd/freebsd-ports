@@ -11,7 +11,7 @@ PORTVERSION=	${GGZ_VERSION}
 PORTREVISION=	5
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - GTK+ Frontend
 
 USE_AUTOTOOLS=	libtool:22
