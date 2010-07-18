@@ -6,21 +6,24 @@
 #
 
 PORTNAME=	mk-configure
-PORTVERSION=	0.15.1
+PORTVERSION=	0.17.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	to.my.trociny@gmail.com
 COMMENT=	Lightweight, easy to use replacement for GNU autotools
 
-BUILD_DEPENDS=	bmake:${PORTSDIR}/devel/bmake
-RUN_DEPENDS=	$(BUILD_DEPENDS)
+BUILD_DEPENDS=	${BMAKE}:${PORTSDIR}/devel/bmake
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-.if !defined(NOPORTDOCS)
-DOCFILES=	README NEWS TODO COPYRIGHT FAQ
-.else
-DOCFILES=
-.endif
+MAKE_JOBS_UNSAFE=	yes
+
+BMAKE?=		${LOCALBASE}/bin/bmake
+MAKE_ENV+=	EXTRAFILES="${PORTDOCS:C|.*\.pdf|doc/&|}"
+INSTALL_TARGET=	installdirs install
+
+PORTDOCS=	README NEWS TODO COPYRIGHT FAQ presentation.pdf
+PORTEXAMPLES=	*
 
 MAN1=		mkc_check_funclib.1 mkc_check_header.1 mkc_check_sizeof.1 \
 		mkc_check_decl.1 mkc_check_prog.1 mkc_check_custom.1 \
@@ -28,9 +31,14 @@ MAN1=		mkc_check_funclib.1 mkc_check_header.1 mkc_check_sizeof.1 \
 MAN7=		mk-configure.7
 
 do-build:
-	bmake -C ${WRKSRC} all
+	@${SETENV} ${MAKE_ENV} ${BMAKE} -C ${BUILD_WRKSRC} ${MAKE_FLAGS} ${MAKEFILE} \
+		${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}
 
 do-install:
-	bmake -C ${WRKSRC} installdirs install EXTRAFILES="${DOCFILES}"
+	@${SETENV} ${MAKE_ENV} ${BMAKE} -C ${INSTALL_WRKSRC} ${MAKE_FLAGS} ${MAKEFILE} \
+		${_MAKE_JOBS} ${MAKE_ARGS} ${INSTALL_TARGET}
+.if !defined(NOPORTEXAMPLES)
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
