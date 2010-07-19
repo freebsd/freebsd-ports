@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Session
-PORTVERSION=	0.35
+PORTVERSION=	0.40
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,9 +26,6 @@ PERL_CONFIGURE=	yes
 
 MAN3=		HTTP::Session.3 \
 		HTTP::Session::State::Cookie.3 \
-		HTTP::Session::State::GUID.3 \
-		HTTP::Session::State::MobileAgentID.3 \
-		HTTP::Session::State::MobileAttributeID.3 \
 		HTTP::Session::State::Null.3 \
 		HTTP::Session::State::Test.3 \
 		HTTP::Session::State::URI.3 \

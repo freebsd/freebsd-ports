@@ -2,10 +2,7 @@
 %%SITE_PERL%%/HTTP/Session/ID/MD5.pm
 %%SITE_PERL%%/HTTP/Session/State/Base.pm
 %%SITE_PERL%%/HTTP/Session/State/Cookie.pm
-%%SITE_PERL%%/HTTP/Session/State/GUID.pm
 %%SITE_PERL%%/HTTP/Session/State/Mixin/ResponseFilter.pm
-%%SITE_PERL%%/HTTP/Session/State/MobileAgentID.pm
-%%SITE_PERL%%/HTTP/Session/State/MobileAttributeID.pm
 %%SITE_PERL%%/HTTP/Session/State/Null.pm
 %%SITE_PERL%%/HTTP/Session/State/Test.pm
 %%SITE_PERL%%/HTTP/Session/State/URI.pm
