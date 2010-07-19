@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cblog
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	www
 MASTER_SITES=	http://cloud.github.com/downloads/bapt/cblog/
 
