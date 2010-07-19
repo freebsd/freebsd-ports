@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	isolate
-PORTVERSION=	20100105
+PORTVERSION=	20100717
 CATEGORIES=	security
 MASTER_SITES=	http://meatwad.mouf.net/~steve/
 
