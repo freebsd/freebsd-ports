@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	cueplayer
-PORTVERSION=	0.25
-PORTREVISION?=	1
+PORTVERSION=	0.27
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	CUE player
 
+LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
+
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network
 USE_GSTREAMER=	flac good dvd lame ugly ffmpeg taglib ogg vorbis soup libmms wavpack
+
+LICENSE=	GPLv3
 
 DESKTOP_ENTRIES="Cueplayer" "Lightweight media player based on Qt and Gstreamer" \
 		"${DATADIR}/${PORTNAME}.png" "${PORTNAME}" \
