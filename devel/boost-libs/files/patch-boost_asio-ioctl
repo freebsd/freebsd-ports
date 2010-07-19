@@ -1,0 +1,90 @@
+--- boost/asio/detail/io_control.hpp.orig	2010-01-04 04:36:00.000000000 -0500
++++ boost/asio/detail/io_control.hpp	2010-06-25 18:38:28.000000000 -0400
+@@ -46,7 +46,7 @@ public:
+   }
+ 
+   // Get the name of the IO control command.
+-  int name() const
++  ioctl_cmd_type name() const
+   {
+     return FIONBIO;
+   }
+@@ -96,7 +96,7 @@ public:
+   }
+ 
+   // Get the name of the IO control command.
+-  int name() const
++  ioctl_cmd_type name() const
+   {
+     return FIONREAD;
+   }
+--- boost/asio/detail/reactive_descriptor_service.hpp.orig	2010-06-25 18:24:52.000000000 -0400
++++ boost/asio/detail/reactive_descriptor_service.hpp	2010-06-25 18:56:32.000000000 -0400
+@@ -223,7 +223,7 @@ public:
+     // descriptor is put into the state that has been requested by the user. If
+     // the ioctl syscall was successful then we need to update the flags to
+     // match.
+-    if (!ec && command.name() == static_cast<int>(FIONBIO))
++    if (!ec && command.name() == static_cast<ioctl_cmd_type>(FIONBIO))
+     {
+       if (*static_cast<ioctl_arg_type*>(command.data()))
+       {
+--- boost/asio/detail/reactive_socket_service.hpp.orig	2010-04-07 04:44:41.000000000 -0400
++++ boost/asio/detail/reactive_socket_service.hpp	2010-06-25 18:55:06.000000000 -0400
+@@ -453,7 +453,7 @@ public:
+     // already in the correct state. This ensures that the underlying socket
+     // is put into the state that has been requested by the user. If the ioctl
+     // syscall was successful then we need to update the flags to match.
+-    if (!ec && command.name() == static_cast<int>(FIONBIO))
++    if (!ec && command.name() == static_cast<ioctl_cmd_type>(FIONBIO))
+     {
+       if (*static_cast<ioctl_arg_type*>(command.data()))
+       {
+--- boost/asio/detail/win_iocp_socket_service.hpp.orig	2010-03-29 21:20:37.000000000 -0400
++++ boost/asio/detail/win_iocp_socket_service.hpp	2010-06-25 18:55:49.000000000 -0400
+@@ -564,7 +564,7 @@ public:
+     socket_ops::ioctl(impl.socket_, command.name(),
+         static_cast<ioctl_arg_type*>(command.data()), ec);
+ 
+-    if (!ec && command.name() == static_cast<int>(FIONBIO))
++    if (!ec && command.name() == static_cast<ioctl_cmd_type>(FIONBIO))
+     {
+       if (*static_cast<ioctl_arg_type*>(command.data()))
+         impl.flags_ |= implementation_type::user_set_non_blocking;
+--- boost/asio/detail/descriptor_ops.hpp.orig	2010-01-04 04:36:00.000000000 -0500
++++ boost/asio/detail/descriptor_ops.hpp	2010-06-25 18:37:37.000000000 -0400
+@@ -110,7 +110,7 @@ inline int gather_write(int d, const buf
+   return result;
+ }
+ 
+-inline int ioctl(int d, long cmd, ioctl_arg_type* arg,
++inline int ioctl(int d, ioctl_cmd_type cmd, ioctl_arg_type* arg,
+     boost::system::error_code& ec)
+ {
+   clear_error(ec);
+--- boost/asio/detail/socket_ops.hpp.orig	2010-01-04 06:55:09.000000000 -0500
++++ boost/asio/detail/socket_ops.hpp	2010-06-25 18:39:55.000000000 -0400
+@@ -596,7 +596,7 @@ inline int getsockname(socket_type s, so
+   return result;
+ }
+ 
+-inline int ioctl(socket_type s, long cmd, ioctl_arg_type* arg,
++inline int ioctl(socket_type s, ioctl_cmd_type cmd, ioctl_arg_type* arg,
+     boost::system::error_code& ec)
+ {
+   clear_error(ec);
+--- boost/asio/detail/socket_types.hpp.orig	2010-03-21 05:39:26.000000000 -0400
++++ boost/asio/detail/socket_types.hpp	2010-06-25 18:48:43.000000000 -0400
+@@ -189,6 +189,12 @@ typedef sockaddr_in6 sockaddr_in6_type;
+ typedef sockaddr_storage sockaddr_storage_type;
+ typedef sockaddr_un sockaddr_un_type;
+ typedef addrinfo addrinfo_type;
++#if (defined(__MACH__) && defined(__APPLE__)) || defined(__DragonFly__) || \
++    defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
++typedef unsigned long ioctl_cmd_type;
++#else
++typedef int ioctl_cmd_type;
++#endif
+ typedef int ioctl_arg_type;
+ typedef uint32_t u_long_type;
+ typedef uint16_t u_short_type;
