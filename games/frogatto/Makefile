@@ -29,7 +29,7 @@ post-patch:
 # remove superfluous libraries when linking server executable, etc.
 	@${REINPLACE_CMD} -E -e 's,(ccache )?g\+\+,$$(CXX) $$(CXXFLAGS),' \
 		-e 's,-O2,, ; s,-g,, ; s,/usr/X11R6,${LOCALBASE},' \
-		-e 's,-mt,,g ; /server/s,`.*mixer,,' \
+		-e 's,-mt,,g ; /server/s,`.*mixer,${PTHREAD_LIBS},' \
 		-e '/server/s,-lX11,,' ${WRKSRC}/Makefile
 # Point to the right location where look for the resources on FreeBSD
 	@${REINPLACE_CMD} -e 's,HAVE_CONFIG_H,__FreeBSD__,' \
