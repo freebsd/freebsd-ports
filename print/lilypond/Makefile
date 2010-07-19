@@ -34,6 +34,8 @@ LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile \
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
     		mftrace:${PORTSDIR}/print/mftrace
 
+BROKEN=		does not build
+
 GONVILLE_REV=	r8724
 GONVILLE_SIZES=	11 13 14 16 18 20 23 26
 
