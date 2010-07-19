@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	audiotag
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	audio multimedia
-MASTER_SITES=	http://www.tempestgames.com/ryan/downloads/
+MASTER_SITES=	 http://cloud.github.com/downloads/Daenyth/audiotag/
 
 MAINTAINER=	baptiste.daroussin@gmail.com
 COMMENT=	A command-line tool for mass tagging/renaming of audio files
+
+LICENSE=	GPLv2
+LICENSE=	${WRKSRC}/COPYING
 
 OPTIONS=	VORBIS "Support renaming/tagging ogg vorbis files" On \
 		ID3 "Support renaming/tagging files supporting id3 tags" On \
@@ -20,6 +23,8 @@ OPTIONS=	VORBIS "Support renaming/tagging ogg vorbis files" On \
 USE_PERL5_RUN=	yes
 
 NO_BUILD=	yes
+
+USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
