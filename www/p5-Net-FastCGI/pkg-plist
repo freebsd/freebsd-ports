@@ -3,6 +3,8 @@
 %%SITE_PERL%%/Net/FastCGI.pod
 %%SITE_PERL%%/Net/FastCGI/Constant.pm
 %%SITE_PERL%%/Net/FastCGI/Constant.pod
+%%SITE_PERL%%/Net/FastCGI/IO.pm
+%%SITE_PERL%%/Net/FastCGI/IO.pod
 %%SITE_PERL%%/Net/FastCGI/Protocol.pm
 %%SITE_PERL%%/Net/FastCGI/Protocol.pod
 %%SITE_PERL%%/Net/FastCGI/Protocol/PP.pm
