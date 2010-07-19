@@ -5,6 +5,7 @@ share/apps/yakuake/skins/default/icon.png
 share/apps/yakuake/skins/default/tabs.skin
 share/apps/yakuake/skins/default/tabs/back_image.png
 share/apps/yakuake/skins/default/tabs/left_corner.png
+share/apps/yakuake/skins/default/tabs/lock.png
 share/apps/yakuake/skins/default/tabs/minus_down.png
 share/apps/yakuake/skins/default/tabs/minus_over.png
 share/apps/yakuake/skins/default/tabs/minus_up.png
@@ -34,6 +35,7 @@ share/apps/yakuake/skins/plastik_dark/icon.png
 share/apps/yakuake/skins/plastik_dark/tabs.skin
 share/apps/yakuake/skins/plastik_dark/tabs/back_image.png
 share/apps/yakuake/skins/plastik_dark/tabs/left_corner.png
+share/apps/yakuake/skins/plastik_dark/tabs/lock.png
 share/apps/yakuake/skins/plastik_dark/tabs/minus_down.png
 share/apps/yakuake/skins/plastik_dark/tabs/minus_over.png
 share/apps/yakuake/skins/plastik_dark/tabs/minus_up.png
@@ -63,6 +65,7 @@ share/apps/yakuake/skins/plastik_light/icon.png
 share/apps/yakuake/skins/plastik_light/tabs.skin
 share/apps/yakuake/skins/plastik_light/tabs/back_image.png
 share/apps/yakuake/skins/plastik_light/tabs/left_corner.png
+share/apps/yakuake/skins/plastik_light/tabs/lock.png
 share/apps/yakuake/skins/plastik_light/tabs/minus_down.png
 share/apps/yakuake/skins/plastik_light/tabs/minus_over.png
 share/apps/yakuake/skins/plastik_light/tabs/minus_up.png
@@ -97,6 +100,7 @@ share/icons/hicolor/48x48/apps/yakuake.png
 share/icons/hicolor/64x64/apps/yakuake.png
 share/icons/hicolor/scalable/apps/yakuake.svgz
 share/locale/ca/LC_MESSAGES/yakuake.mo
+share/locale/ca@valencia/LC_MESSAGES/yakuake.mo
 share/locale/cs/LC_MESSAGES/yakuake.mo
 share/locale/da/LC_MESSAGES/yakuake.mo
 share/locale/de/LC_MESSAGES/yakuake.mo
@@ -107,18 +111,21 @@ share/locale/et/LC_MESSAGES/yakuake.mo
 share/locale/fr/LC_MESSAGES/yakuake.mo
 share/locale/ga/LC_MESSAGES/yakuake.mo
 share/locale/gl/LC_MESSAGES/yakuake.mo
-share/locale/hne/LC_MESSAGES/yakuake.mo
+share/locale/hr/LC_MESSAGES/yakuake.mo
 share/locale/it/LC_MESSAGES/yakuake.mo
 share/locale/ja/LC_MESSAGES/yakuake.mo
 share/locale/ko/LC_MESSAGES/yakuake.mo
+share/locale/nb/LC_MESSAGES/yakuake.mo
 share/locale/nds/LC_MESSAGES/yakuake.mo
 share/locale/nl/LC_MESSAGES/yakuake.mo
 share/locale/nn/LC_MESSAGES/yakuake.mo
+share/locale/pa/LC_MESSAGES/yakuake.mo
 share/locale/pl/LC_MESSAGES/yakuake.mo
 share/locale/pt/LC_MESSAGES/yakuake.mo
 share/locale/pt_BR/LC_MESSAGES/yakuake.mo
 share/locale/ro/LC_MESSAGES/yakuake.mo
 share/locale/ru/LC_MESSAGES/yakuake.mo
+share/locale/sk/LC_MESSAGES/yakuake.mo
 share/locale/sv/LC_MESSAGES/yakuake.mo
 share/locale/th/LC_MESSAGES/yakuake.mo
 share/locale/tr/LC_MESSAGES/yakuake.mo
