@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack-Server-AnyEvent
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIYAGAWA
@@ -23,6 +23,8 @@ RUN_DEPENDS=	\
 	p5-namespace-clean>0:${PORTSDIR}/devel/p5-namespace-clean
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+DEPRECATED=	yes
+EXPIRATION_DATE=2010-08-31
 PERL_CONFIGURE=	yes
 
 MAN3=	Plack::Server::AnyEvent.3
