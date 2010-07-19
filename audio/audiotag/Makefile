@@ -14,7 +14,7 @@ MAINTAINER=	baptiste.daroussin@gmail.com
 COMMENT=	A command-line tool for mass tagging/renaming of audio files
 
 LICENSE=	GPLv2
-LICENSE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	VORBIS "Support renaming/tagging ogg vorbis files" On \
 		ID3 "Support renaming/tagging files supporting id3 tags" On \
