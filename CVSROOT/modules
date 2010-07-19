@@ -7400,7 +7400,7 @@ kuickshow-kde4                  ports/graphics/kuickshow-kde4
 kuklomenos                      ports/games/kuklomenos
 kumofs                          ports/databases/kumofs
 kvirc                           ports/irc/kvirc
-kvirc-devel                     ports/irc/kvirc-devel
+kvirc-qt4                       ports/irc/kvirc-qt4
 kwappen                         ports/games/kwappen
 kwatch                          ports/misc/kwatch
 kwebget                         ports/ftp/kwebget
@@ -20622,6 +20622,7 @@ py-fngrab                       ports/net-p2p/py-fngrab
 py-fonttools                    ports/print/py-fonttools
 py-forgethtml                   ports/www/py-forgethtml
 py-forgetsql                    ports/databases/py-forgetsql
+py-formalchemy                  ports/www/py-formalchemy
 py-formencode                   ports/www/py-formencode
 py-fortran                      ports/devel/py-fortran
 py-fpconst                      ports/math/py-fpconst
