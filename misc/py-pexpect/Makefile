@@ -8,6 +8,7 @@
 
 PORTNAME=	pexpect
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	CHEESESHOP \
 		http://dryice.name/computer/FreeBSD/distfiles/
