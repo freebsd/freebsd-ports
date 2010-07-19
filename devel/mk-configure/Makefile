@@ -19,7 +19,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 MAKE_JOBS_UNSAFE=	yes
 
 BMAKE?=		${LOCALBASE}/bin/bmake
-MAKE_ENV+=	EXTRAFILES="${PORTDOCS:C|.*\.pdf|doc/&|}"
 INSTALL_TARGET=	installdirs install
 
 PORTDOCS=	README NEWS TODO COPYRIGHT FAQ presentation.pdf
@@ -29,6 +28,12 @@ MAN1=		mkc_check_funclib.1 mkc_check_header.1 mkc_check_sizeof.1 \
 		mkc_check_decl.1 mkc_check_prog.1 mkc_check_custom.1 \
 		mkcmake.1
 MAN7=		mk-configure.7
+
+.if !defined(NOPORTDOCS)
+MAKE_ENV+=	EXTRAFILES="${PORTDOCS:C|.*\.pdf|doc/&|}"
+.else
+MAKE_ENV+=	EXTRAFILES=""
+.endif
 
 do-build:
 	@${SETENV} ${MAKE_ENV} ${BMAKE} -C ${BUILD_WRKSRC} ${MAKE_FLAGS} ${MAKEFILE} \
