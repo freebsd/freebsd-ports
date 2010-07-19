@@ -38,7 +38,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>vte -- Classic terminal title set+query attack</topic>
     <affects>
       <package>
-	<name></name>
+	<name>vte</name>
 	<range><lt>0.24.3</lt></range>
       </package>
     </affects>
