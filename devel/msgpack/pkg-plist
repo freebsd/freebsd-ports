@@ -30,6 +30,7 @@ include/msgpack/unpack.h
 include/msgpack/unpack.hpp
 include/msgpack/unpack_define.h
 include/msgpack/unpack_template.h
+include/msgpack/version.h
 include/msgpack/vrefbuffer.h
 include/msgpack/vrefbuffer.hpp
 include/msgpack/zbuffer.h
