@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	yakuake
-PORTVERSION=	2.9.6
-PORTREVISION=	5
+PORTVERSION=	2.9.7
 CATEGORIES=	x11 kde
 MASTER_SITES=	BERLIOS
 PKGNAMESUFFIX=	-kde4
@@ -15,9 +14,11 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	decept0@gmail.com
 COMMENT=	Drop-down terminal emulator for KDE
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_CMAKE=	yes
-USE_KDE4=	kdebase kdeprefix automoc4
+USE_KDE4=	kdelibs kdeprefix automoc4
 USE_GETTEXT=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build
