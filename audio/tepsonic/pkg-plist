@@ -9,12 +9,12 @@ share/icons/hicolor/256x256/apps/tepsonic.png
 share/icons/hicolor/32x32/apps/tepsonic.png
 share/icons/hicolor/48x48/apps/tepsonic.png
 share/icons/hicolor/64x64/apps/tepsonic.png
-share/tepsonic/locale/lastfmscrobbler/cs_CZ.qm
-share/tepsonic/locale/tepsonic/cs_CZ.qm
-@dirrm share/tepsonic/locale/tepsonic
-@dirrm share/tepsonic/locale/lastfmscrobbler
-@dirrm share/tepsonic/locale
-@dirrm share/tepsonic
+%%DATADIR%%/locale/tepsonic/cs.qm
+%%DATADIR%%/locale/lastfmscrobbler/cs.qm
+@dirrm %%DATADIR%%/locale/tepsonic
+@dirrm %%DATADIR%%/locale/lastfmscrobbler
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor/48x48/apps
