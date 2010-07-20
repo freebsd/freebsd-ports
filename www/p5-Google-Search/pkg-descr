@@ -1,0 +1,4 @@
+Google::Search is an interface to the Google AJAX Search API. Currently, their
+API looks like it will fetch you the top 64 results for your search query.
+
+WWW: http://search.cpan.org/dist/Google-Search/
