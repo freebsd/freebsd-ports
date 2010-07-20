@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	delegate
-PORTVERSION=	9.9.6
+PORTVERSION=	9.9.7
 CATEGORIES=	net www
 MASTER_SITES=	http://www.chifeng.name/dist/delegate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -15,7 +15,7 @@ MAINTAINER=	chifeng@gmail.com
 COMMENT=	General purpose TCP/IP proxy system
 
 IS_INTERACTIVE=	YES
-PORTDOCS=	HowToDG.html Manual.htm tutor-jp.htm tutor-en.htm COPYRIGHT
+PORTDOCS=	HowToDG.html Manual.htm jpconv.htm tutor-jp.htm tutor-en.htm COPYRIGHT
 PLIST_FILES=	sbin/delegated etc/rc.d/delegated.sh-dist
 SUB_FILES=	pkg-message
 SUB_LIST=	DOCSDIR=${DOCSDIR}
