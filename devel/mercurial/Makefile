@@ -13,12 +13,17 @@ MASTER_SITES=	http://mercurial.selenic.com/release/
 MAINTAINER=	roberto@FreeBSD.org
 COMMENT=	A fast, lightweight source control management system
 
+.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=    ${PORTNAME}
-PYDISTUTILS_PKGVERSION= ${PORTVERSION}
-PYDISTUTILS_EGGINFO=    ${PORTNAME}-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
+PYDISTUTILS_PKGNAME=	${PORTNAME}
+PYDISTUTILS_PKGVERSION=	${PORTVERSION}
+PYDISTUTILS_EGGINFO=	${PORTNAME}-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
 
 CONTRIB_FILES=	bash_completion \
 		convert-repo \
@@ -62,6 +67,11 @@ MAN1=	hg.1
 MAN5=	hgignore.5 hgrc.5
 
 SUB_FILES=	pkg-message
+
+post-patch:
+.if defined(WITHOUT_NLS)
+	@${REINPLACE_CMD} '/^build.sub_co.*$$/d' ${WRKSRC}/setup.py
+.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1/
