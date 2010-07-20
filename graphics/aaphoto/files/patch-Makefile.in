@@ -5,7 +5,7 @@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -AM_CFLAGS = -Wall -O2 -D__OPENMP__ -fopenmp
-+AM_CFLAGS = -Wall -O2 -Wno-unknown-pragmas
++AM_CFLAGS = -Wall -O2
  AM_LDFLAGS = -ljasper -ljpeg -lpng -lm
  aaphoto_SOURCES = aaphoto.c
  INCLUDES = 
