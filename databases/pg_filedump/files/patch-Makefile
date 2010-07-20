@@ -9,7 +9,7 @@
  
  # PGSQL MUST POINT TO pgsql SOURCE DIRECTORY
 -PGSQL=../../../../postgres/pgsql
-+PGSQL=../../../postgresql83-client/work/postgresql-8.3.9
++PGSQL=../../../postgresql84-client/work/postgresql-8.4.4
  
  CRC_SRC=${PGSQL}/src/backend/utils/hash
  CRC_INCLUDE=${PGSQL}/src
