@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aaphoto
-PORTVERSION=	0.37
-PORTREVISION=	1
+PORTVERSION=	0.38
 CATEGORIES=	graphics
 MASTER_SITES=	http://log69.com/downloads/
 DISTNAME=	${PORTNAME}_sources_v${PORTVERSION}
@@ -19,6 +18,9 @@ LIB_DEPENDS=	jasper:${PORTSDIR}/graphics/jasper \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png
 
+LICENSE=	GPLv3
+
+USE_AUTOTOOLS=	autoheader:262
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -31,11 +33,7 @@ PORTDOCS=	AUTHORS ChangeLog COPYING COPYRIGHT INSTALL LICENSE \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "amd64" && ${ARCH} != "i386"
-BROKEN=		Does not compile on !amd64 and !i386
-.endif
-
-.if ${OSVERSION} >= 700000
+.if ${ARCH} == "amd64" || ${ARCH} == "i386" && ${OSVERSION} >= 700000
 CFLAGS+=	-fopenmp -D__OPENMP__
 .endif
 
