@@ -222,6 +222,7 @@
     SUBDIR += eyeos
     SUBDIR += eyeos-themes
     SUBDIR += fcgi
+    SUBDIR += fcgiwrap
     SUBDIR += feedjack
     SUBDIR += feedonfeeds
     SUBDIR += ffproxy
