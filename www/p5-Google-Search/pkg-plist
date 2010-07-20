@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Google/Search.pm
+%%SITE_PERL%%/Google/Search/Carp.pm
+%%SITE_PERL%%/Google/Search/Error.pm
+%%SITE_PERL%%/Google/Search/Page.pm
+%%SITE_PERL%%/Google/Search/Response.pm
+%%SITE_PERL%%/Google/Search/Result.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/Search/.packlist
+@dirrmtry %%SITE_PERL%%/Google/Search
+@dirrmtry %%SITE_PERL%%/Google
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/Search
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google
