@@ -67,7 +67,8 @@ CONFIGURE_TARGET=${GLIB_ARCH}-portbld-freebsd${OSREL}
 LIB_DEPENDS+=	icui18n:${PORTSDIR}/devel/icu
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
 		${FILESDIR}/extra-patch-glib_gunicollate.c
-CONFIGURE_ENV+=	CFLAGS="-D__STDC_ISO_10646__"
+# Disable it until someone can figure why it causes net-im/pidgin crashed.
+#CONFIGURE_ENV+=	CFLAGS="-D__STDC_ISO_10646__"
 .endif
 
 post-patch:
