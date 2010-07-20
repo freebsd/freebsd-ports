@@ -17,7 +17,7 @@
 
 . /etc/rc.subr
 
-name="cf_serverd"
+name="cf-serverd"
 rcvar=${name}_enable
 
 command="%%PREFIX%%/sbin/${name}"
