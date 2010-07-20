@@ -116,6 +116,8 @@ post-patch:
 		${WRKSRC}/src/pk-lsof.c
 	@${REINPLACE_CMD} -e 's|girepositry|girepository|g' \
 		${WRKSRC}/lib/packagekit-glib2/Makefile.in
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		'/xsltproc/s|.xsl [$$]? &> /dev|.xsl $$? > /dev|g'
 
 post-install:
 .if !defined(SLAVEPORT)
