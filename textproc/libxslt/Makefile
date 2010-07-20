@@ -46,7 +46,6 @@ CONFIGURE_ARGS+=	--with-mem-debug
 
 .if defined(WITH_CRYPTO)
 LIB_DEPENDS+=	gcrypt.16:${PORTSDIR}/security/libgcrypt
-USE_GETTEXT=	yes
 .else
 CONFIGURE_ARGS+=--without-crypto
 .endif
