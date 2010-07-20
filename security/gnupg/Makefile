@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	2.0.15
+PORTVERSION=	2.0.16
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -23,6 +23,9 @@ LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
 		ksba.17:${PORTSDIR}/security/libksba \
 		pth.20:${PORTSDIR}/devel/pth
 
+LICENSE=	GPLv3 LGPL3
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/COPYING ${WRKSRC}/COPYING.LIB
 USE_BZIP2=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
@@ -45,6 +48,7 @@ OPTIONS=	LDAP "LDAP keyserver interface" off \
 		GPGSM "Enable GPGSM (require LDAP)" off \
 		CAMELLIA "Enable Camellia algorithm" on \
 		KDNS "Use DNS CERT helper" off \
+		STD_SOCKET "Use standard socket for agent" off \
 		NLS "National Language Support" off
 
 .include <bsd.port.pre.mk>
@@ -78,6 +82,10 @@ PLIST_SUB+=	ADNS=""
 .else
 CONFIGURE_SUB=	-e '/GPGKEYS_KDNS=/s/".*"/""/'
 PLIST_SUB+=	ADNS="@comment "
+.endif
+
+.if defined(WITH_STD_SOCKET) && !defined(WITHOUT_STD_SOCKET)
+CONFIGURE_ARGS+=--enable-standard-socket
 .endif
 
 .if defined(WITH_NLS) && !defined(WITHOUT_NLS)
