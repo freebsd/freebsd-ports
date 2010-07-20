@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nasm
-PORTVERSION=	2.08.01
+PORTVERSION=	2.08.02
 PORTEPOCH=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.nasm.us/pub/nasm/releasebuilds/${PORTVERSION}/
@@ -14,6 +14,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-xdoc${EXTRACT_SUFX}
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	General-purpose multi-platform x86 and amd64 assembler
+
+LICENSE=	BSD
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
