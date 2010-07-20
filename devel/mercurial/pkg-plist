@@ -285,16 +285,16 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/keepalive.py
 %%PYTHON_SITELIBDIR%%/mercurial/keepalive.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/keepalive.pyo
-%%PYTHON_SITELIBDIR%%/mercurial/locale/da/LC_MESSAGES/hg.mo
-%%PYTHON_SITELIBDIR%%/mercurial/locale/de/LC_MESSAGES/hg.mo
-%%PYTHON_SITELIBDIR%%/mercurial/locale/el/LC_MESSAGES/hg.mo
-%%PYTHON_SITELIBDIR%%/mercurial/locale/fr/LC_MESSAGES/hg.mo
-%%PYTHON_SITELIBDIR%%/mercurial/locale/it/LC_MESSAGES/hg.mo
-%%PYTHON_SITELIBDIR%%/mercurial/locale/ja/LC_MESSAGES/hg.mo
-%%PYTHON_SITELIBDIR%%/mercurial/locale/sv/LC_MESSAGES/hg.mo
-%%PYTHON_SITELIBDIR%%/mercurial/locale/pt_BR/LC_MESSAGES/hg.mo
-%%PYTHON_SITELIBDIR%%/mercurial/locale/zh_CN/LC_MESSAGES/hg.mo
-%%PYTHON_SITELIBDIR%%/mercurial/locale/zh_TW/LC_MESSAGES/hg.mo
+%%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/da/LC_MESSAGES/hg.mo
+%%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/de/LC_MESSAGES/hg.mo
+%%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/el/LC_MESSAGES/hg.mo
+%%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/fr/LC_MESSAGES/hg.mo
+%%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/it/LC_MESSAGES/hg.mo
+%%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/ja/LC_MESSAGES/hg.mo
+%%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/sv/LC_MESSAGES/hg.mo
+%%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/pt_BR/LC_MESSAGES/hg.mo
+%%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/zh_CN/LC_MESSAGES/hg.mo
+%%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/zh_TW/LC_MESSAGES/hg.mo
 %%PYTHON_SITELIBDIR%%/mercurial/localrepo.py
 %%PYTHON_SITELIBDIR%%/mercurial/localrepo.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/localrepo.pyo
@@ -594,27 +594,27 @@ bin/hg
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/coal
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates/atom
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/templates
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/da/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/da
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/de/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/de
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/el/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/el
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/fr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/fr
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/it/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/it
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/ja/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/ja
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/sv/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/sv
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/pt_BR/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/pt_BR
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/zh_CN/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/zh_CN
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/zh_TW/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/zh_TW
-@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/da/LC_MESSAGES
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/da
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/de/LC_MESSAGES
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/de
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/el/LC_MESSAGES
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/el
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/fr
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/it/LC_MESSAGES
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/it
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/ja/LC_MESSAGES
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/ja
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/sv/LC_MESSAGES
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/sv
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/pt_BR
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/zh_CN
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/zh_TW
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/help
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial/hgweb
 @dirrm %%PYTHON_SITELIBDIR%%/mercurial
