@@ -1,65 +1,80 @@
-bin/ctpp2-config
+bin/ctpp2vm
 bin/ctpp2c
 bin/ctpp2i
 bin/ctpp2json
-bin/ctpp2vm
+bin/ctpp2-config
 include/ctpp2/CDT.hpp
-include/ctpp2/CTPP2.hpp
 include/ctpp2/CTPP2BitIndex.hpp
 include/ctpp2/CTPP2CharIterator.hpp
 include/ctpp2/CTPP2Compiler.hpp
-include/ctpp2/CTPP2Error.hpp
+include/ctpp2/CTPP2DTOA.hpp
 include/ctpp2/CTPP2Exception.hpp
+include/ctpp2/CTPP2Error.hpp
 include/ctpp2/CTPP2ErrorCodes.h
+include/ctpp2/CTPP2FileLogger.hpp
+include/ctpp2/CTPP2FileOutputCollector.hpp
 include/ctpp2/CTPP2FileSourceLoader.hpp
 include/ctpp2/CTPP2GlobalDefines.h
+include/ctpp2/CTPP2HashTable.hpp
 include/ctpp2/CTPP2JSONFileParser.hpp
 include/ctpp2/CTPP2JSONParser.hpp
+include/ctpp2/CTPP2Logger.hpp
+include/ctpp2/CTPP2OutputCollector.hpp
 include/ctpp2/CTPP2Parser.hpp
 include/ctpp2/CTPP2ParserException.hpp
 include/ctpp2/CTPP2SourceLoader.hpp
+include/ctpp2/CTPP2Sprintf.hpp
+include/ctpp2/CTPP2StaticData.hpp
+include/ctpp2/CTPP2StaticText.hpp
+include/ctpp2/CTPP2StreamOutputCollector.hpp
 include/ctpp2/CTPP2StringBuffer.hpp
+include/ctpp2/CTPP2StringIconvOutputCollector.hpp
+include/ctpp2/CTPP2StringOutputCollector.hpp
 include/ctpp2/CTPP2SymbolTable.hpp
 include/ctpp2/CTPP2Syntax.h
 include/ctpp2/CTPP2SysHeaders.h
+include/ctpp2/CTPP2SysTypes.h
+include/ctpp2/CTPP2SyscallFactory.hpp
 include/ctpp2/CTPP2Types.h
 include/ctpp2/CTPP2Util.hpp
-include/ctpp2/FileOutputCollector.hpp
-include/ctpp2/HashTable.hpp
-include/ctpp2/OutputCollector.hpp
-include/ctpp2/SimpleCompiler.hpp
-include/ctpp2/SimpleVM.hpp
-include/ctpp2/StaticData.hpp
-include/ctpp2/StaticText.hpp
-include/ctpp2/StreamOutputCollector.hpp
-include/ctpp2/StringIconvOutputCollector.hpp
-include/ctpp2/StringOutputCollector.hpp
-include/ctpp2/SyscallFactory.hpp
-include/ctpp2/Types.h
-include/ctpp2/VM.hpp
-include/ctpp2/VMArgStack.hpp
-include/ctpp2/VMCodeStack.hpp
-include/ctpp2/VMDebugInfo.hpp
-include/ctpp2/VMDumper.hpp
-include/ctpp2/VMException.hpp
-include/ctpp2/VMExecutable.hpp
-include/ctpp2/VMFileLoader.hpp
-include/ctpp2/VMInstruction.hpp
-include/ctpp2/VMLoader.hpp
-include/ctpp2/VMMemoryCore.hpp
-include/ctpp2/VMOpcodeCollector.hpp
-include/ctpp2/VMOpcodes.h
-include/ctpp2/VMSTDLib.hpp
-include/ctpp2/VMStackException.hpp
-include/ctpp2/VMSyscall.hpp
+include/ctpp2/CTPP2VM.hpp
+include/ctpp2/CTPP2VMArgStack.hpp
+include/ctpp2/CTPP2VMCodeStack.hpp
+include/ctpp2/CTPP2VMDebugInfo.hpp
+include/ctpp2/CTPP2VMDumper.hpp
+include/ctpp2/CTPP2VMException.hpp
+include/ctpp2/CTPP2VMExecutable.hpp
+include/ctpp2/CTPP2VMFileLoader.hpp
+include/ctpp2/CTPP2VMInstruction.hpp
+include/ctpp2/CTPP2VMLoader.hpp
+include/ctpp2/CTPP2VMMemoryCore.hpp
+include/ctpp2/CTPP2VMOpcodeCollector.hpp
+include/ctpp2/CTPP2VMOpcodes.h
+include/ctpp2/CTPP2VMSTDLib.hpp
+include/ctpp2/CTPP2VMStackException.hpp
+include/ctpp2/CTPP2VMSyscall.hpp
+include/ctpp2/STLException.hpp
+include/ctpp2/STLFunctional.hpp
+include/ctpp2/STLIosfwd.hpp
+include/ctpp2/STLMap.hpp
+include/ctpp2/STLOstream.hpp
+include/ctpp2/STLPair.hpp
+include/ctpp2/STLString.hpp
+include/ctpp2/STLVector.hpp
 lib/libctpp2-st.a
 lib/libctpp2.so
 lib/libctpp2.so.2
 lib/libctpp2.so.%%PORTVERSION%%
-share/locale/ru_RU.CP1251/LC_MESSAGES/ctpp2.mo
-share/locale/ru_RU.KOI8-R/LC_MESSAGES/ctpp2.mo
-@dirrmtry share/locale/ru_RU.KOI8-R/LC_MESSAGES
-@dirrmtry share/locale/ru_RU.KOI8-R
+share/locale/ru.CP1251/LC_MESSAGES/ctpp2.mo
+share/locale/ru.CP866/LC_MESSAGES/ctpp2.mo
+share/locale/ru.KOI8-R/LC_MESSAGES/ctpp2.mo
+share/locale/ru.UTF-8/LC_MESSAGES/ctpp2.mo
 @dirrmtry share/locale/ru_RU.CP1251/LC_MESSAGES
 @dirrmtry share/locale/ru_RU.CP1251
+@dirrmtry share/locale/ru_RU.CP866/LC_MESSAGES
+@dirrmtry share/locale/ru_RU.CP866
+@dirrmtry share/locale/ru_RU.KOI8-R/LC_MESSAGES
+@dirrmtry share/locale/ru_RU.KOI8-R
+@dirrmtry share/locale/ru_RU.UTF-8/LC_MESSAGES
+@dirrmtry share/locale/ru_RU.UTF-8
 @dirrm include/ctpp2
