@@ -18,6 +18,7 @@ include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_app.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_app_ex.py
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_artprov.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_aui_docstrings.i
+include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_axbase.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_bitmap.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_brush.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_button.i
@@ -91,6 +92,7 @@ include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_renderer.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_richtextbuffer.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_richtextctrl.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_richtexthtml.i
+include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_richtextprint.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_richtextxml.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_sashwin.i
 include/wx-%%WX_VERSION%%/wx/wxPython/i_files/_scrolbar.i
@@ -209,9 +211,12 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Button.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Button.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Button.pyo
-%%PYTHON_SITELIBDIR%%/wxPython/demo/ButtonPanel.py
-%%PYTHON_SITELIBDIR%%/wxPython/demo/ButtonPanel.pyc
-%%PYTHON_SITELIBDIR%%/wxPython/demo/ButtonPanel.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/Cairo.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/Cairo.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/Cairo.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/Cairo_Snippets.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/Cairo_Snippets.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/Cairo_Snippets.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Calendar.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Calendar.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Calendar.pyo
@@ -266,9 +271,6 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/CustomDragAndDrop.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/CustomDragAndDrop.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/CustomDragAndDrop.pyo
-%%PYTHON_SITELIBDIR%%/wxPython/demo/CustomTreeCtrl.py
-%%PYTHON_SITELIBDIR%%/wxPython/demo/CustomTreeCtrl.pyc
-%%PYTHON_SITELIBDIR%%/wxPython/demo/CustomTreeCtrl.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/DatePickerCtrl.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/DatePickerCtrl.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/DatePickerCtrl.pyo
@@ -326,18 +328,12 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/FindReplaceDialog.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/FindReplaceDialog.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/FindReplaceDialog.pyo
-%%PYTHON_SITELIBDIR%%/wxPython/demo/FlatNotebook.py
-%%PYTHON_SITELIBDIR%%/wxPython/demo/FlatNotebook.pyc
-%%PYTHON_SITELIBDIR%%/wxPython/demo/FlatNotebook.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/FloatBar.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/FloatBar.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/FloatBar.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/FloatCanvas.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/FloatCanvas.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/FloatCanvas.pyo
-%%PYTHON_SITELIBDIR%%/wxPython/demo/FoldPanelBar.py
-%%PYTHON_SITELIBDIR%%/wxPython/demo/FoldPanelBar.pyc
-%%PYTHON_SITELIBDIR%%/wxPython/demo/FoldPanelBar.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/FontDialog.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/FontDialog.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/FontDialog.pyo
@@ -392,6 +388,9 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/GridHugeTable.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/GridHugeTable.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/GridHugeTable.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/GridLabelRenderer.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/GridLabelRenderer.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/GridLabelRenderer.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/GridSimple.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/GridSimple.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/GridSimple.pyo
@@ -404,9 +403,6 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/HtmlWindow.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/HtmlWindow.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/HtmlWindow.pyo
-%%PYTHON_SITELIBDIR%%/wxPython/demo/HyperLinkCtrl.py
-%%PYTHON_SITELIBDIR%%/wxPython/demo/HyperLinkCtrl.pyc
-%%PYTHON_SITELIBDIR%%/wxPython/demo/HyperLinkCtrl.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/I18N.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/I18N.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/I18N.pyo
@@ -530,6 +526,9 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Pickers.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Pickers.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/Pickers.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/PlateButton.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/PlateButton.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/PlateButton.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/PopupControl.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/PopupControl.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/PopupControl.pyo
@@ -582,6 +581,9 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/RendererNative.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/RendererNative.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/RendererNative.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/ResizeWidget.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/ResizeWidget.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/ResizeWidget.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/RichTextCtrl.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/RichTextCtrl.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/RichTextCtrl.pyo
@@ -660,6 +662,9 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/StyledTextCtrl_2.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/StyledTextCtrl_2.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/StyledTextCtrl_2.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/SystemSettings.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/SystemSettings.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/SystemSettings.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/TablePrint.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/TablePrint.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/TablePrint.pyo
@@ -733,6 +738,188 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/XmlResourceSubclass.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/XmlResourceSubclass.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/XmlResourceSubclass.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/AUI.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/AUI.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/AUI.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/AdvancedSplash.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/AdvancedSplash.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/AdvancedSplash.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/AquaButton.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/AquaButton.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/AquaButton.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/BalloonTip.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/BalloonTip.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/BalloonTip.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ButtonPanel.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ButtonPanel.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ButtonPanel.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/CubeColourDialog.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/CubeColourDialog.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/CubeColourDialog.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/CustomTreeCtrl.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/CustomTreeCtrl.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/CustomTreeCtrl.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/FlatMenu.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/FlatMenu.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/FlatMenu.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/FlatNotebook.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/FlatNotebook.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/FlatNotebook.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/FloatSpin.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/FloatSpin.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/FloatSpin.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/FoldPanelBar.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/FoldPanelBar.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/FoldPanelBar.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/FourWaySplitter.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/FourWaySplitter.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/FourWaySplitter.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/GenericMessageDialog.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/GenericMessageDialog.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/GenericMessageDialog.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/GradientButton.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/GradientButton.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/GradientButton.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/HyperLinkCtrl.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/HyperLinkCtrl.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/HyperLinkCtrl.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/HyperTreeList.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/HyperTreeList.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/HyperTreeList.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/KnobCtrl.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/KnobCtrl.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/KnobCtrl.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/LabelBook.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/LabelBook.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/LabelBook.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ListCtrl.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ListCtrl.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ListCtrl.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/MultiDirDialog.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/MultiDirDialog.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/MultiDirDialog.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PeakMeter.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PeakMeter.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PeakMeter.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PieCtrl.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PieCtrl.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PieCtrl.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyCollapsiblePane.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyCollapsiblePane.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyCollapsiblePane.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyProgress.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyProgress.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/PyProgress.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/RulerCtrl.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/RulerCtrl.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/RulerCtrl.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ShapedButton.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ShapedButton.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ShapedButton.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/SpeedMeter.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/SpeedMeter.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/SpeedMeter.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/SuperToolTip.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/SuperToolTip.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/SuperToolTip.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ThumbnailCtrl.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ThumbnailCtrl.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ThumbnailCtrl.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ToasterBox.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ToasterBox.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/ToasterBox.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/__demo__.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/__demo__.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/__demo__.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/advancedsplash.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/aquabutton.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/aquachecked.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/aquaflagged.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/aquanotchecked.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/aquanotflagged.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/canada.gif
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/checked.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/columns.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/contexthelp-16.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/contexthelp.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/copy.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/cut.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/editcopy.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/editcut.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/editpaste.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/exit-16.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/exit.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/ffwd.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/ffwddisabled.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/field-16.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/filenew.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/fileopen.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/filesave.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/flagged.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/folder_new.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/ghost.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/gradientbutton.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/help-16.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/help.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/italy.gif
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/lbadd.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/lbcharge.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/lbdecrypted.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/lbnews.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/lbroll.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/minus1.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/minus2.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/minus3.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/minus4.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/minus5.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/month-16.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/new_file.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/new_folder.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/notchecked.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/notflagged.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/ok-16.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/open_folder.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/paste.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/pause.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/pausedisabled.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/play.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/playdisabled.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/plus1.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/plus2.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/plus3.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/plus4.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/plus5.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/record.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/recorddisabled.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/rewind.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/rewinddisabled.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/round.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/save.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/smfuel.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/smpi.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/smtemp.ico
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/stop.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/stopdisabled.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/sttbutton.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/sttfont.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/sttheader.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/stthelp.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/view1.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/view2.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/view_choose.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/view_detailed.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/view_icon.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/view_multicolumn.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/viewmag-16.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/viewmag-m-16.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/viewmag-p-16.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps/viewmagfit-16.png
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/images.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/images.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/images.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/run.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/run.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/agw/run.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/b
 %%PYTHON_SITELIBDIR%%/wxPython/demo/bitmaps/AG00028_.gif
 %%PYTHON_SITELIBDIR%%/wxPython/demo/bitmaps/AG00039_.gif
@@ -916,6 +1103,7 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/proclamation.txt
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/resource.wdr
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/resource_wdr.xrc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/data/romedalen.png
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/stc.h.html
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/tables.htm
 %%PYTHON_SITELIBDIR%%/wxPython/demo/data/test.htm
@@ -950,12 +1138,90 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxPython/demo/run.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/run.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/run.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/__init__.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/__init__.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/__init__.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/arc.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/arc.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/arc.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/arc_negative.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/arc_negative.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/arc_negative.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/clip.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/clip.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/clip.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/clip_image.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/clip_image.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/clip_image.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/curve_rectangle.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/curve_rectangle.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/curve_rectangle.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/curve_to.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/curve_to.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/curve_to.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/dash.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/dash.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/dash.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/ellipse.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/ellipse.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/ellipse.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/fill_and_stroke.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/fill_and_stroke.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/fill_and_stroke.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/fill_and_stroke2.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/fill_and_stroke2.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/fill_and_stroke2.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/fill_style.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/fill_style.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/fill_style.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/glyph_path.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/glyph_path.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/glyph_path.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/gradient.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/gradient.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/gradient.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/gradient_mask.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/gradient_mask.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/gradient_mask.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/group.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/group.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/group.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/image.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/image.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/image.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/imagepattern.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/imagepattern.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/imagepattern.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/path.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/path.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/path.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/set_line_cap.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/set_line_cap.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/set_line_cap.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/set_line_join.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/set_line_join.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/set_line_join.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/show_glyphs.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/show_glyphs.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/show_glyphs.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/text.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/text.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/text.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/text_align_center.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/text_align_center.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/text_align_center.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/text_extents.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/text_extents.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/snippets/text_extents.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/template.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/template.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/template.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/throbImages.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/throbImages.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/throbImages.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/demo/version.py
+%%PYTHON_SITELIBDIR%%/wxPython/demo/version.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/demo/version.pyo
 %%PYTHON_SITELIBDIR%%/wxPython/demo/viewer.py
 %%PYTHON_SITELIBDIR%%/wxPython/demo/viewer.pyc
 %%PYTHON_SITELIBDIR%%/wxPython/demo/viewer.pyo
@@ -969,22 +1235,25 @@ include/wx-%%WX_VERSION%%/wx/wxPython/wxPython_int.h
 %%PYTHON_SITELIBDIR%%/wxversion.py
 %%PYTHON_SITELIBDIR%%/wxversion.pyc
 %%PYTHON_SITELIBDIR%%/wxversion.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/dllwidget
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/agw/bitmaps
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/agw
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/bitmaps
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/bmp_source
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale-src
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/it/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/it
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/fr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/fr
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/es/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/es
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/de/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/de
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/af/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/af
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/es
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale/it
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data/locale
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/data
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/bmp_source
-@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/bitmaps
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/dllwidget
+@dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo/snippets
 @dirrm %%PYTHON_SITELIBDIR%%/wxPython/demo
 @dirrmtry %%PYTHON_SITELIBDIR%%/wxPython
 @dirrmtry %%PYTHON_SITELIBDIR%%
