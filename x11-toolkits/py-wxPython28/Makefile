@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	wxPython
-PORTVERSION=	2.8.7.1
-PORTREVISION?=	5
+PORTVERSION=	2.8.10.1
+PORTREVISION?=	0
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	SF/wxpython/wxPython/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +25,7 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
+USE_GETTEXT=	yes
 
 PYDISTUTILS_BUILDARGS=	\
 			WX_CONFIG="${WX_CONFIG}" \
@@ -70,11 +71,7 @@ post-build:
 
 .include <bsd.port.pre.mk>
 
-# wx version
-.if exists(${WX_CONFIG})
-WX_VERSION!=	${WX_CONFIG} --release
-PLIST_SUB+=	WX_VERSION=${WX_VERSION}
-.endif
+PLIST_SUB+=	WX_VERSION=${USE_WX}
 
 .if defined(WITH_COMMON_ONLY)
 ## These are not shared amongst installations
