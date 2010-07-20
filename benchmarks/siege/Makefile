@@ -6,15 +6,20 @@
 #
 
 PORTNAME=	siege
-PORTVERSION=	2.69
+PORTVERSION=	2.70
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://sid.joedog.org/pub/siege/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	baptiste.daroussin@gmail.com
 COMMENT=	A http regression testing and benchmarking utility
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
+
+USE_PERL5=	yes
 
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} --disable-shared
 
