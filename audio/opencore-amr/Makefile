@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	opencore-amr
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	audio
-MASTER_SITES=	# none knwon, please fix
+MASTER_SITES=	SF
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	OpenCORE implementation of AMR Narrowband & Wideband speech codec
 
-CFLAGS+=	-fPIC
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
