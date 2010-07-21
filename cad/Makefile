@@ -70,6 +70,7 @@
     SUBDIR += pythoncad
     SUBDIR += qcad
     SUBDIR += qcad-partslib
+    SUBDIR += qelectrotech
     SUBDIR += qfsm
     SUBDIR += qmls
     SUBDIR += qucs
