@@ -22,8 +22,8 @@ USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		fails to install on 6.X
+.if ${OSVERSION} < 800000
+BROKEN=		fails to install
 .endif
 
 do-install:
