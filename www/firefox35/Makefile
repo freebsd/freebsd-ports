@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	3.5.10
+DISTVERSION=	3.5.11
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -51,10 +51,7 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-official-branding \
 		--enable-canvas --enable-libxul
 
-SYSTEM_PREFS=		${FAKEDIR}/lib/${MOZILLA}/defaults/pref/firefox.js
-
 OPTIONS=	DBUS "Enable D-BUS support" on \
-		NEWTAB "Open external links in a new tab" on \
 		SMB "Enable smb:// URI support using gnomevfs" off
 
 .include <bsd.port.pre.mk>
@@ -108,12 +105,6 @@ port-pre-install:
 	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLISTF}
 	${ECHO_CMD} "@dirrmtry share/applications" >> ${PLISTD}
 	${ECHO_CMD} 'share/pixmaps/${FIREFOX_ICON}' >> ${PLISTF}
-.if !defined(WITHOUT_NEWTAB)
-	${ECHO_CMD} >> ${SYSTEM_PREFS}
-	${ECHO_CMD} "// Open external links in new tab" >> ${SYSTEM_PREFS}
-	${ECHO_CMD} "pref(\"browser.link.open_external\", 3);" \
-		>> ${SYSTEM_PREFS}
-.endif # !defined(WITHOUT_NEWTAB)
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/pixmaps
