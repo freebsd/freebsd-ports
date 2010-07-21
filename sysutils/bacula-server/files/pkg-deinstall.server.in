@@ -18,14 +18,14 @@ case "$2" in
 	    rmdir ${BACULA_DIR};
 	fi
 	if [ -d ${BACULA_DIR} ]; then
-	    echo "Check if ${BACULA_DIR} is empty and delete it to permanently remove the bacula port"
+	    echo "Check if ${BACULA_DIR} is empty and delete it to permanently remove the bacula port."
 	fi
 
 	# Note how to delete UID/GID
 	USER=bacula
 	GROUP=${USER}
 	if pw usershow "${USER}" 2>/dev/null 1>&2; then
-	    echo "To delete Bacula user permanently, use 'pw userdel  ${USER}'"
+	    echo "To delete Bacula user permanently, use 'pw userdel ${USER}'"
 	    echo "To delete Bacula group permanently, use 'pw groupdel ${GROUP}'"
 	fi
         ;;

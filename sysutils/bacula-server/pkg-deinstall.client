@@ -18,7 +18,7 @@ case "$2" in
 	    rmdir ${BACULA_DIR};
 	fi
 	if [ -d ${BACULA_DIR} ]; then
-	    echo "Check if ${BACULA_DIR} is empty and delete it to permanently remove the bacula port"
+	    echo "Check if ${BACULA_DIR} is empty and delete it to permanently remove the bacula port."
 	fi
 
 	# Note how to delete UID/GID
