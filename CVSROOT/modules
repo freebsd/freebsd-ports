@@ -3345,6 +3345,7 @@ fcalc                           ports/misc/fcalc
 fceu-server                     ports/emulators/fceu-server
 fceux                           ports/emulators/fceux
 fcgi                            ports/www/fcgi
+fcgiwrap                        ports/www/fcgiwrap
 fcheck                          ports/security/fcheck
 fconfig                         ports/sysutils/fconfig
 fconv                           ports/converters/fconv
@@ -12211,6 +12212,7 @@ p5-Google-Checkout              ports/devel/p5-Google-Checkout
 p5-Google-Data-JSON             ports/textproc/p5-Google-Data-JSON
 p5-Google-SAML-Request          ports/net/p5-Google-SAML-Request
 p5-Google-SAML-Response         ports/net/p5-Google-SAML-Response
+p5-Google-Search                ports/www/p5-Google-Search
 p5-Gopher-Server                ports/net/p5-Gopher-Server
 p5-Graph                        ports/math/p5-Graph
 p5-Graph-Easy                   ports/graphics/p5-Graph-Easy
@@ -16108,6 +16110,7 @@ p5-google-checkout              ports/devel/p5-Google-Checkout
 p5-google-data-json             ports/textproc/p5-Google-Data-JSON
 p5-google-saml-request          ports/net/p5-Google-SAML-Request
 p5-google-saml-response         ports/net/p5-Google-SAML-Response
+p5-google-search                ports/www/p5-Google-Search
 p5-gopher-server                ports/net/p5-Gopher-Server
 p5-gps                          ports/astro/p5-GPS
 p5-gps-babel                    ports/astro/p5-GPS-Babel
