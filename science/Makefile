@@ -152,6 +152,7 @@
     SUBDIR += pycdf
     SUBDIR += pynn
     SUBDIR += qcl
+    SUBDIR += qelectrotech
     SUBDIR += qtresistors
     SUBDIR += ruby-dcl
     SUBDIR += ruby-gphys
