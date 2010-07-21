@@ -4456,3 +4456,4 @@ sysutils/bacula-server-devel||2010-07-16|Removed
 java/eclipse-v4all||2010-07-16|Not useful with Eclipse 3.x
 irc/kvirc-devel||2010-07-17|irc/kvirc has been updated to the latest version
 www/p5-Plack-Server-AnyEvent||2010-07-19|use www/p5-Twiggy instead
+science/qelectrotech|cad/qelectrotech|2010-07-21|Fix category
