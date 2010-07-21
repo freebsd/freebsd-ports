@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prayer
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/
 
@@ -17,19 +17,25 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libc-client4.a:${PORTSDIR}/mail/cclient
 
 USE_OPENLDAP=	yes
 USE_GMAKE=	yes
-USE_OPENSSL=	yes
 USE_PERL5_BUILD=yes
 USE_ICONV=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
+
 MAKE_ENV+=	PORTCFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		PORTLDFLAGS="${LDFLAGS}"
 
 PORTDOCS=	ACCOUNTD CMD_LINE DESIGN DONE DONE-OLD FEATURES ICONLIST \
 		INSTALL LOGS NOTICE README ROADMAP SECURITY TODO
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/docs/LICENCE
+
 USE_RC_SUBR=	prayer
 
-OPTIONS=	SESSIONCACHE	"Activate Session Cache" On
+OPTIONS=	SESSIONCACHE	"Activate Session Cache" On \
+		TIDY	"Enable tidy support" On \
+		SSL	"Enable SSL support" On \
+		LDAP	"Enable LDAP support" On
 
 USERS=		_prayer
 GROUPS=		prayer
@@ -41,6 +47,14 @@ MAN8=		prayer-session.8 prayer-ssl-prune.8 prayer.8
 
 .if defined(WITH_SESSIONCACHE)
 USE_BDB=	yes
+.endif
+
+.if !defined(WITHOUT_LDAP)
+USE_OPENLDAP=	yes
+.endif
+
+.if !defined(WITHOUT_TIDY)
+LIB_DEPENDS+=	tidy-0.99.0:${PORTSDIR}/www/tidy-lib
 .endif
 
 pre-patch:
@@ -62,6 +76,22 @@ post-configure:
 	@${REINPLACE_CMD} "s#^SESSION_CACHE_ENABLE = true#SESSION_CACHE_ENABLE = false#" ${WRKSRC}/Config
 .endif
 	@${REINPLACE_CMD} "s#^RW_USER    = prayer#RW_USER    = _prayer#" ${WRKSRC}/Config
+
+.if defined(WITHOUT_SSL)
+	@${REINPLACE_CMD} "s#^SSL_ENABLE           = true#SSL_ENABLE           = false#" ${WRKSRC}/Config
+.else
+	@${REINPLACE_CMD} "s#CCLIENT_SSL_ENABLE   = false#CCLIENT_SSL_ENABLE   = true#" ${WRKSRC}/Config
+.endif
+
+.if defined(WITHOUT_LDAP)
+	@${REINPLACE_CMD} "s#LDAP_ENABLE          = true#LDAP_ENABLE          = false#" ${WRKSRC}/Config
+.endif
+
+.if defined(WITHOUT_TIDY)
+	@${REINPLACE_CMD} "s#TIDY_ENABLE          = true#TIDY_ENABLE          = false#" ${WRKSRC}/Config
+.else
+	@${REINPLACE_CMD} "s#TIDY_INCLUDE=-I/usr/include/tidy#TIDY_INCLUDE=-I${LOCALBASE}/include/tidy#" ${WRKSRC}/Config
+.endif
 
 pre-install:
 	@${MKDIR} ${PREFIX}/etc/prayer
