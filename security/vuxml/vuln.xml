@@ -34,6 +34,90 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8c2ea875-9499-11df-8e32-000f20797ede">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>3.6.*,1</gt><lt>3.6.7,1</lt></range>
+	<range><gt>3.5.*,1</gt><lt>3.5.11,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>3.6.7,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox-devel</name>
+	<range><lt>3.5.11</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><gt>2.0.*</gt><lt>2.0.6</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><ge>3.0</ge><lt>3.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2010-34 Miscellaneous memory safety hazards (rv:1.9.2.7/ 1.9.1.11)</p>
+	  <p>MFSA 2010-35 DOM attribute cloning remote code execution vulnerability</p>
+	  <p>MFSA 2010-36 Use-after-free error in NodeIterator</p>
+	  <p>MFSA 2010-37 Plugin parameter EnsureCachedAttrParamArrays remote code execution vulnerability</p>
+	  <p>MFSA 2010-38 Arbitrary code execution using SJOW and fast native function</p>
+	  <p>MFSA 2010-39 nsCSSValue::Array index integer overflow</p>
+	  <p>MFSA 2010-40 nsTreeSelection dangling pointer remote code execution vulnerability</p>
+	  <p>MFSA 2010-41 Remote code execution using malformed PNG image</p>
+	  <p>MFSA 2010-42 Cross-origin data disclosure via Web Workers and importScripts</p>
+	  <p>MFSA 2010-43 Same-origin bypass using canvas context</p>
+	  <p>MFSA 2010-44 Characters mapped to U+FFFD in 8 bit encodings cause subsequent character to vanish</p>
+	  <p>MFSA 2010-45 Multiple location bar spoofing vulnerabilities</p>
+	  <p>MFSA 2010-46 Cross-domain data theft using CSS</p>
+	  <p>MFSA 2010-47 Cross-origin data leakage from script filename in error messages</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-0654</cvename>
+      <cvename>CVE-2010-1205</cvename>
+      <cvename>CVE-2010-1206</cvename>
+      <cvename>CVE-2010-1207</cvename>
+      <cvename>CVE-2010-1208</cvename>
+      <cvename>CVE-2010-1209</cvename>
+      <cvename>CVE-2010-1210</cvename>
+      <cvename>CVE-2010-1211</cvename>
+      <cvename>CVE-2010-1212</cvename>
+      <cvename>CVE-2010-1213</cvename>
+      <cvename>CVE-2010-1214</cvename>
+      <cvename>CVE-2010-1215</cvename>
+      <cvename>CVE-2010-2751</cvename>
+      <cvename>CVE-2010-2752</cvename>
+      <cvename>CVE-2010-2753</cvename>
+      <cvename>CVE-2010-2754</cvename>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-34.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-35.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-36.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-37.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-38.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-39.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-40.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-41.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-42.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-43.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-44.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-45.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-46.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-47.html</url>
+    </references>
+    <dates>
+      <discovery>2010-07-20</discovery>
+      <entry>2010-07-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9a8fecef-92c0-11df-b140-0015f2db7bde">
     <topic>vte -- Classic terminal title set+query attack</topic>
     <affects>
