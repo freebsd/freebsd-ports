@@ -7,6 +7,7 @@
 
 PORTNAME=	codeigniter
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://codeigniter.com/download_files/ \
 		LOCAL/glarkin
@@ -147,6 +148,9 @@ confighelp:
 	@${ECHO_MSG} "For more information, please see:"
 	@${ECHO_MSG} "http://codeigniter.com/user_guide/installation/index.html"
 	@${ECHO_MSG} ""
+
+post-patch:
+	@cd ${WRKSRC} && ${RM} system/libraries/Upload.php.orig
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${STD_BITS}" ${WWWDIR}
