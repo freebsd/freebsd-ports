@@ -1,9 +1,0 @@
-@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
-%%SQUIRRELDIR%%/plugins/compatibility/functions.php
-%%SQUIRRELDIR%%/plugins/compatibility/index.php
-%%SQUIRRELDIR%%/plugins/compatibility/INSTALL
-%%SQUIRRELDIR%%/plugins/compatibility/README
-%%SQUIRRELDIR%%/plugins/compatibility/setup.php
-%%SQUIRRELDIR%%/plugins/compatibility/version
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility
-@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi

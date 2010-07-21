@@ -662,13 +662,11 @@
     SUBDIR += squirrelmail-change_sqlpass-plugin
     SUBDIR += squirrelmail-check_quota-plugin
     SUBDIR += squirrelmail-compatibility-plugin
-    SUBDIR += squirrelmail-compatibility-plugin1
     SUBDIR += squirrelmail-email_footer-plugin
     SUBDIR += squirrelmail-login_auth-plugin
     SUBDIR += squirrelmail-login_notes-plugin
     SUBDIR += squirrelmail-mark_read-plugin
     SUBDIR += squirrelmail-multilogin-plugin
-    SUBDIR += squirrelmail-newuser_wiz-plugin
     SUBDIR += squirrelmail-notes-plugin
     SUBDIR += squirrelmail-notify-plugin
     SUBDIR += squirrelmail-password_forget-plugin
