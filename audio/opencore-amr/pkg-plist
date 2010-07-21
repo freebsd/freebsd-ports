@@ -4,12 +4,14 @@ include/opencore-amrnb/interf_enc.h
 include/opencore-amrwb/dec_if.h
 include/opencore-amrwb/if_rom.h
 lib/libopencore-amrnb.a
+lib/libopencore-amrnb.la
 lib/libopencore-amrnb.so
 lib/libopencore-amrnb.so.0
-lib/libopencore-amrnb.so.0.1.1
 lib/libopencore-amrwb.a
+lib/libopencore-amrwb.la
 lib/libopencore-amrwb.so
 lib/libopencore-amrwb.so.0
-lib/libopencore-amrwb.so.0.1.1
+libdata/pkgconfig/opencore-amrnb.pc
+libdata/pkgconfig/opencore-amrwb.pc
 @dirrmtry include/opencore-amrwb
 @dirrmtry include/opencore-amrnb
