@@ -5,7 +5,7 @@
  	  (cd $(DESTDIR)$(includedir)/stable && tar -xf -)
  # The dist/include has module subdirectories that we need to flatten
 -	find $(DIST)/include -xtype f -exec $(SYSINSTALL) $(IFLAGS1) {} $(DESTDIR)$(includedir)/unstable \;
-+	find $(DIST)/include -type f -o -type l -exec $(SYSINSTALL) $(IFLAGS1) {} $(DESTDIR)$(includedir)/unstable \;
++	find -L $(DIST)/include -name system_wrappers\* -prune -or -type f -exec $(SYSINSTALL) $(IFLAGS1) {} $(DESTDIR)$(includedir)/unstable \;
  # IDL directory is stable (dist/sdk/idl) and unstable (dist/idl)
  	$(NSINSTALL) -D $(DESTDIR)$(idldir)/stable 
  	$(NSINSTALL) -D $(DESTDIR)$(idldir)/unstable
