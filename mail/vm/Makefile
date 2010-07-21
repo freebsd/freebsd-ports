@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vm
-PORTVERSION=	8.1.0
+PORTVERSION=	8.1.1
 CATEGORIES=	mail elisp
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/8.1.x/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
