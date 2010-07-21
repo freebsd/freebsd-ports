@@ -25,8 +25,14 @@ CMAKE_ARGS=	-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 USE_LDCONFIG=	yes
 USE_GCC=	4.2+
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" && (${OSVERSION} >= 700000 && ${OSVERSION} < 800000)
+BROKEN=		does not link
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,(libdir)/pkgconfig,(prefix)/libdata/pkgconfig,' \
 		${WRKSRC}/Makefile.am
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
