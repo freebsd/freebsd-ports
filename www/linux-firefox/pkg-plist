@@ -102,6 +102,7 @@ lib/%%APP_NAME%%/defaults/profile/chrome/userContent-example.css
 lib/%%APP_NAME%%/defaults/profile/localstore.rdf
 lib/%%APP_NAME%%/defaults/profile/mimeTypes.rdf
 lib/%%APP_NAME%%/defaults/profile/prefs.js
+lib/%%APP_NAME%%/dependentlibs.list
 lib/%%APP_NAME%%/dictionaries/en-US.aff
 lib/%%APP_NAME%%/dictionaries/en-US.dic
 lib/%%APP_NAME%%/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
