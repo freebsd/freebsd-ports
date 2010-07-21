@@ -1,0 +1,15 @@
+--- xaw3dxft/Imakefile.orig	2010-03-13 04:07:59.000000000 +0900
++++ xaw3dxft/Imakefile	2010-05-29 13:57:44.000000000 +0900
+@@ -25,10 +25,10 @@
+ #define IncSubSubdir Xaw3dxft
+ 
+ XCOMM When building outside an X11 source tree:
+-EXTRA_INCLUDES = -I. -I/usr/include/X11/Xft -I/usr/include/freetype2
++EXTRA_INCLUDES = -I. `pkg-config --cflags xft`
+ 
+ #ifdef SharedXawReqs
+-REQUIREDLIBS = SharedXawReqs -lXft
++REQUIREDLIBS = SharedXawReqs `pkg-config --libs xft`
+ #endif
+ 
+ 
