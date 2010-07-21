@@ -1,13 +1,12 @@
 *******************************************************************************
 
-From 0.10.x to 0.11.x
+From 0.11.x to 0.12.x
 ---------------------
 You should be careful to check that the plugins you depend on have
-been ported to 0.11, as they most probably won't work without adaptation
-due to the numerous internal changes that occurred during 0.11 development.
-Note however that Clearsilver based plugin are still supported.
+been ported to 0.12, as they most probably won't work without adaptation
+due to the numerous internal changes that occurred during 0.12 development.
 
-See:	http://trac.edgewall.org/wiki/TracDev/ApiChanges/0.11
+See:	http://trac.edgewall.org/wiki/TracDev/ApiChanges/0.12
 
 Consult the upgrade instructions at:
 
