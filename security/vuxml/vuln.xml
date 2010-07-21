@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0502c1cb-8f81-11df-a0bb-0050568452ac">
+    <topic>codeigniter -- file upload class vulnerability</topic>
+    <affects>
+      <package>
+	<name>codeigniter</name>
+	<range><lt>1.7.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Derek Jones reports:</p>
+	<blockquote cite="http://codeigniter.com/news/codeigniter_1.7.2_security_patch/">
+	  <p>A fix has been implemented for a security flaw in
+	    CodeIgniter 1.7.2.  All applications using the File
+	    Upload class should install the patch to ensure that
+	    their application is not subject to a vulnerability.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://codeigniter.com/news/codeigniter_1.7.2_security_patch/</url>
+      <url>http://www.phpframeworks.com/news/p/16365/codeigniter-1-7-2-security-patch</url>
+    </references>
+    <dates>
+      <discovery>2010-07-12</discovery>
+      <entry>2010-07-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8c2ea875-9499-11df-8e32-000f20797ede">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
