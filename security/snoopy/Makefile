@@ -4,23 +4,24 @@
 # $FreeBSD$
 
 PORTNAME=	snoopy
-PORTVERSION=	1.3
+PORTVERSION=	1.6.1
 CATEGORIES=	security
-MASTER_SITES=	SF/${PORTNAME}logger/${PORTNAME}logger/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}logger/${PORTNAME}logger/
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	baptiste.daroussin@gmail.com
 COMMENT=	An execve() wrapper and logger
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 PLIST_FILES=	lib/snoopy.so bin/detect
 PORTDOCS=	README
 
-.include <bsd.port.pre.mk>
+GNU_CONFIGURE=	yes
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC
-.endif
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/README
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/README
+	@${REINPLACE_CMD} '/^LIBS.*/d' ${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/snoopy.so ${PREFIX}/lib
@@ -30,4 +31,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
