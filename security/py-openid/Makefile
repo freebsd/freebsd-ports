@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	openid
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	security python
-MASTER_SITES=	http://openidenabled.com/files/python-openid/packages/
+MASTER_SITES=	LOCAL/clsung
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-${PORTNAME}-${PORTVERSION}
+DISTNAME=	openid-python-openid-2.2.5-0-gb666238
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Python OpenID version
 
-USE_BZIP2=	yes
-
+WRKSRC=		${WRKDIR}/openid-python-openid-b666238
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	python-openid
