@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	ssltunnel
-PORTVERSION=	1.16
+PORTVERSION=	1.18
 CATEGORIES=	net
 MASTER_SITES=	http://www.hsc.fr/ressources/outils/ssltunnel/download/
 PKGNAMESUFFIX=	-client
@@ -17,6 +17,7 @@ PKGNAMESUFFIX=	-client
 MAINTAINER=	utisoft@gmail.com
 COMMENT=	PPP over SSL virtual private networking (client part)
 
+LICENSE=	BSD
 USE_ICONV=	yes
 
 MAN1=		pppclient.1
