@@ -780,6 +780,8 @@
     SUBDIR += sdlsand
     SUBDIR += seabattle
     SUBDIR += seahaven
+    SUBDIR += searchandrescue
+    SUBDIR += searchandrescue-data
     SUBDIR += secretmaryochronicles
     SUBDIR += secretmaryochronicles-music
     SUBDIR += senken
