@@ -7,7 +7,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -16,6 +16,7 @@ COMMENT=	Systems & network statistics collection daemon
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libltdl:22
 WANT_GNOME=	yes
 
 OPTIONS=	CGI		"Install collection.cgi (requires RRDTOOL)" 	Off \
