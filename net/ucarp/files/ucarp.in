@@ -1,35 +1,43 @@
 #!/bin/sh
-#
-# Init script : ucarp for FreeBSD
-# By Nico <nico@rottenbytes.info>
-#
+# $FreeBSD$
+
 # PROVIDE: ucarp
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
-#
+
 # Add the following lines to /etc/rc.conf to enable & configure ucarp:
 #
-# ucarp_enable (bool):		Set it to "YES" to enable ucarp
+# Mandatory options:
+#
+# ucarp_enable (bool):		Set it to "YES" to enable ucarp.
 #				Default is "NO".
-# ucarp_if:			Set interface to use for ucarp checks
-#				Default is "eth0"
-# ucarp_src:			Set source (real) IP address of that host
-# ucarp_vhid:			Set virtual IP identifier (1-255)
-#				Default is "1"
-# ucarp_pass:			Set password
-#				Default is "dumbp4ss"
-# ucarp_preempt (bool):		Set it to "YES" to become a master as soon as possible
-#				Default is "NO"
-# ucarp_addr:			Set virtual shared IP address
-# ucarp_advbase:		Set advertisement frequency (seconds)
-# ucarp_advskew:		Set advertisement skew (0-255)
-# ucarp_upscript:		Run <file> to become a master
-# ucarp_downscript:		Run <file> to become a backup
-# ucarp_deadratio:		Set ratio to consider a host as dead
-# ucarp_shutdown (bool):	Set it to "YES"  to call shutdown script at exit
-#				Default is "YES"
-# ucarp_facility:		Set syslog facility
-#				Default is "daemon"
+# ucarp_addr (str):		Set virtual shared IP address.
+# ucarp_if (str):		Set interface to use for ucarp checks.
+# ucarp_src (str):		Set source (real) IP address of that host.
+# ucarp_passfile (str):		Set file to read password from.	The file must
+# 				not be readable by 'others'. Unset by default.
+# ucarp_pass (str):		Set password. No defaults set and you are
+# 				strongly encouraged to use ${ucarp_passfile}
+# 				variable instead.
+# Optional tunes:
+#
+# ucarp_vhid (int):		Set virtual IP identifier (1-255). Default is "1".
+# ucarp_preempt (bool):		Set it to "YES" to become a master as soon as
+#				possible. Default is "NO".
+# ucarp_advbase (int):		Set advertisement frequency (seconds).
+# ucarp_advskew (int):		Set advertisement skew (0-255).
+# ucarp_upscript (str):		Run <file> to become a master. You may want to
+# 				use %%PREFIX%%/sbin/ucarp-up script for this
+# 				purpose.
+# ucarp_downscript (str):	Run <file> to become a backup. You may want to
+# 				use %%PREFIX%%/sbin/ucarp-down script for this
+#				purpose.
+# ucarp_deadratio (int):	Set ratio to consider a host as dead.
+# ucarp_shutdown (bool):	Set it to "YES" to call shutdown script at exit.
+#				Default is "YES".
+# ucarp_facility (str):		Set syslog facility. Default is "daemon".
+# ucarp_xparam (str):		Extra parameter to send to up/down scripts. No
+#				defaults set.
 
 . /etc/rc.subr
 
@@ -39,65 +47,105 @@ rcvar=`set_rcvar`
 load_rc_config $name
 
 : ${ucarp_enable="NO"}
-: ${ucarp_if="eth0"}
 : ${ucarp_vhid="1"}
-: ${ucarp_pass="dumbp4ss"}
 : ${ucarp_preempt="NO"}
 : ${ucarp_shutdown="YES"}
 : ${ucarp_facility="daemon"}
 
 command=%%PREFIX%%/sbin/ucarp
-command_args="-i ${ucarp_if} -v ${ucarp_vhid} -p ${ucarp_pass} -f ${ucarp_facility} -B "
+command_args="-i ${ucarp_if} -f ${ucarp_facility} -B "
 start_precmd="build_command_args"
 
 build_command_args()
 {
-	if [ ${ucarp_preempt} = "YES" ]
-	then
-		command_args=${command_args}"-P "
+	# Check for mandatory arguments are set.
+	for _var in ucarp_src ucarp_addr ucarp_if; do
+		eval "_val=\$${_var}"
+		if [ -z "${_val}" ]; then
+			err 255 "\${${_var}} parameter required to start."
+		fi
+	done
+
+	# ${ucarp_passfile} or ${ucarp_pass} must also be set,
+	if [ -z "${ucarp_passfile}" -a -z "${ucarp_pass}" ]; then
+		str="You need to set one of \${ucarp_passfile} or"
+		str=" \${ucarp_pass} variable to run ucarp."
+		err 255 "${str}"
 	fi
 
-	if [ ${ucarp_shutdown} = "YES" ]
-	then
-		command_args=${command_args}"-z "
+	# but not both.
+	if [ ! -z "${ucarp_passfile}" -a ! -z "${ucarp_pass}" ]; then
+		str="You should not set both \${ucarp_passfile} and"
+		str="${str} \${ucarp_pass} variables. "
+		str="${str} Will try to use \${ucarp_passfile} instead."
+		warn "${str}"
 	fi
 
-	# Mandatory arguments
-	if [ -z ${ucarp_src} ]
-	then
-		echo "source address is not set ! please set it"
-		exit 1
+	# Set password source.
+	if [ ! -z "${ucarp_passfile}" ]; then
+
+		# The variable should point to a file resource.
+		if [ ! -f "${ucarp_passfile}" ]; then
+			str="\${ucarp_passfile} variable is set,"
+			str="${str} but the value is not a file."
+			err 255 "${str}"
+		else
+			# Check permissions: password file must not be world
+			# readable. First, take the file permissions mode as a
+			# shell variable.
+			eval `stat -s ${ucarp_passfile}`
+
+			# Yeld the last digit and check if `r' bit is set.
+			if [ $((${st_mode##${st_mode%%?}} & 4)) -ne 0 ]; then
+				err 255 "Password file is readable by others."
+			fi
+
+			# Set the passfile argument.
+			command_args="${command_args} \
+					--passfile=${ucarp_passfile}"
+		fi
+	else
+		# Set the password with command line argument.
+		command_args="${command_args} -p ${ucarp_pass}"	
 	fi
 
-	if [ -z ${ucarp_addr} ]
-	then
-		echo "virtual address is not set ! please set it"
-		exit 1
+	# Check and set optional args if any.
+
+	if checkyesno ucarp_preempt; then
+		command_args="${command_args} -P"
 	fi
 
-	command_args=${command_args}"-s ${ucarp_src} -a ${ucarp_addr} "
+	if checkyesno ucarp_shutdown; then
+		command_args="${command_args} -z"
+	fi
 
-	# Optional args
-	if ! [ -z ${ucarp_upscript} ]
-	then
-		command_args=${command_args}"-u ${ucarp_upscript} "
+	if [ ! -z "${ucarp_xparam}" ]; then
+		command_args="${command_args} -x \"${ucarp_xparam}\""
 	fi
-	if ! [ -z ${ucarp_downscript} ]
-	then
-		command_args=${command_args}"-d ${ucarp_downscript} "
+
+	if ! [ -z ${ucarp_upscript} ]; then
+		command_args="${command_args} -u ${ucarp_upscript}"
 	fi
-	if ! [ -z ${ucarp_deadratio} ]
-	then
-		command_args=${command_args}"-r ${ucarp_deadratio} "
+
+	if ! [ -z ${ucarp_downscript} ]; then
+		command_args="${command_args} -d ${ucarp_downscript}"
 	fi
-	if ! [ -z ${ucarp_advbase} ]
-	then
-		command_args=${command_args}"-b ${ucarp_advbase} "
+
+	if ! [ -z ${ucarp_deadratio} ]; then
+		command_args="${command_args} -r ${ucarp_deadratio}"
 	fi
-	if ! [ -z ${ucarp_advskew} ]
-	then
-		command_args=${command_args}"-k ${ucarp_advskew} "
+
+	if ! [ -z ${ucarp_advbase} ]; then
+		command_args="${command_args} -b ${ucarp_advbase}"
 	fi
+
+	if ! [ -z ${ucarp_advskew} ]; then
+		command_args="${command_args} -k ${ucarp_advskew}"
+	fi
+
+	command_args="${command_args} -s ${ucarp_src} -a ${ucarp_addr}"
+	command_args="${command_args} -i ${ucarp_if} -v ${ucarp_vhid}"
+
 }
 
 run_rc_command "$1"
