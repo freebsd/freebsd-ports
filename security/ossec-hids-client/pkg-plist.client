@@ -3,7 +3,9 @@
 %%PORTNAME%%/active-response/bin/host-deny.sh
 %%PORTNAME%%/active-response/bin/ipfw.sh
 %%PORTNAME%%/active-response/bin/ipfw_mac.sh
+%%PORTNAME%%/active-response/bin/ossec-tweeter.sh
 %%PORTNAME%%/active-response/bin/pf.sh
+%%PORTNAME%%/active-response/bin/restart-ossec.sh
 %%PORTNAME%%/active-response/bin/route-null.sh
 %%PORTNAME%%/bin/manage_agents
 %%PORTNAME%%/bin/ossec-agentd
@@ -11,7 +13,6 @@
 %%PORTNAME%%/bin/ossec-execd
 %%PORTNAME%%/bin/ossec-logcollector
 %%PORTNAME%%/bin/ossec-syscheckd
-%%PORTNAME%%/etc/internal_options.conf
 %%PORTNAME%%/etc/shared/cis_debian_linux_rcl.txt
 %%PORTNAME%%/etc/shared/cis_rhel_linux_rcl.txt
 %%PORTNAME%%/etc/shared/cis_rhel5_linux_rcl.txt
@@ -23,9 +24,12 @@
 %%PORTNAME%%/etc/shared/win_applications_rcl.txt
 @unexec if cmp -s %D/%%PORTNAME%%/etc/ossec.conf %D/%%PORTNAME%%/etc/ossec.conf.sample; then rm -f %D/%%PORTNAME%%/etc/ossec.conf; fi
 %%PORTNAME%%/etc/ossec.conf.sample
+%%PORTNAME%%/etc/internal_options.conf
 %%PORTNAME%%/logs/ossec.log
 %%PORTNAME%%/agentless/main.exp
 %%PORTNAME%%/agentless/sshlogin.exp
+%%PORTNAME%%/agentless/ssh_asa-fwsmconfig_diff
+%%PORTNAME%%/agentless/ssh_foundry_diff
 %%PORTNAME%%/agentless/ssh_pixconfig_diff
 %%PORTNAME%%/agentless/ssh_nopass.exp
 %%PORTNAME%%/agentless/ssh_integrity_check_linux
@@ -35,7 +39,6 @@
 %%PORTNAME%%/agentless/register_host.sh
 %%PORTNAME%%/agentless/su.exp
 @dirrmtry %%PORTNAME%%/agentless
-@dirrmtry %%PORTNAME%%/active-response/bin/firewalls
 @dirrmtry %%PORTNAME%%/active-response/bin
 @dirrmtry %%PORTNAME%%/active-response
 @dirrmtry %%PORTNAME%%/etc/shared
