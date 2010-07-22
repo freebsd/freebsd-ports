@@ -7,6 +7,7 @@
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;S;Plugin$;;:L}
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -16,7 +17,7 @@ MAINTAINER=	brooks@freebsd.org
 COMMENT=	A discussion forum plugin for Trac
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
-		trac-spam-filter>=0.2.1:${PORTSDIR}/www/trac-spam-filter
+		trac-TracSpamFilter>=0.2.1:${PORTSDIR}/www/trac-spam-filter
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
 USE_PYTHON=	yes
