@@ -157,7 +157,7 @@ PLIST_SUB+=	APCUPS="@comment "
 
 .if defined(WITH_CURL)
 CONFIGURE_ARGS+=--enable-curl --with-libcurl=${LOCALBASE}
-LIB_DEPENDS+=   curl.6:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	CURL=""
 .else
 CONFIGURE_ARGS+=--disable-curl
