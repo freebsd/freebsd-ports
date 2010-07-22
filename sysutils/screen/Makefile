@@ -7,7 +7,7 @@
 
 PORTNAME=	screen
 PORTVERSION=	4.0.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/ \
 		http://komquats.com/distfiles/ \
