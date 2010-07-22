@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rabbitmq
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -15,7 +15,8 @@ MAINTAINER=	pneumann@gmail.com
 COMMENT=	RabbitMQ is an implementation of AMQP
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang-lite \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson
+		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson \
+		xmlto:${PORTSDIR}/textproc/xmlto
 RUN_DEPENDS=	erlc:${PORTSDIR}/lang/erlang-lite
 
 USE_GMAKE=	yes
@@ -29,7 +30,7 @@ RABBITMQ_USER=	rabbitmq
 
 PLIST_SUB=	"VERSION=${PORTVERSION}"
 
-SUB_FILES=	pkg-install pkg-message
+SUB_FILES=	pkg-install
 SUB_LIST=	RABBITMQ_GID=${RABBITMQ_GID} \
 		RABBITMQ_GROUP=${RABBITMQ_GROUP} \
 		RABBITMQ_UID=${RABBITMQ_UID} \
@@ -56,10 +57,7 @@ pre-install:
 	@${FIND} ${WRKSRC}/ebin ${WRKSRC}/include -type f | \
 		${XARGS} ${CHMOD} 0644
 
-# TODO: Wrap control scripts to use ${RABBITMQ_USER} via su, much like
-# the installed rc.d script, for user convenience.
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
