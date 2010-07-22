@@ -21366,6 +21366,7 @@ qdbm-plus                       ports/databases/qdbm-plus
 qdecoder                        ports/www/qdecoder
 qdevelop                        ports/devel/qdevelop
 qdvdauthor                      ports/multimedia/qdvdauthor
+qelectrotech                    ports/cad/qelectrotech
 qemu                            ports/emulators/qemu
 qemu-devel                      ports/emulators/qemu-devel
 qemu-launcher                   ports/emulators/qemu-launcher
@@ -23396,13 +23397,11 @@ squirrelmail-change_ldappass-plugin  ports/mail/squirrelmail-change_ldappass-plu
 squirrelmail-change_sqlpass-plugin  ports/mail/squirrelmail-change_sqlpass-plugin
 squirrelmail-check_quota-plugin  ports/mail/squirrelmail-check_quota-plugin
 squirrelmail-compatibility-plugin  ports/mail/squirrelmail-compatibility-plugin
-squirrelmail-compatibility-plugin1  ports/mail/squirrelmail-compatibility-plugin1
 squirrelmail-email_footer-plugin  ports/mail/squirrelmail-email_footer-plugin
 squirrelmail-login_auth-plugin  ports/mail/squirrelmail-login_auth-plugin
 squirrelmail-login_notes-plugin  ports/mail/squirrelmail-login_notes-plugin
 squirrelmail-mark_read-plugin   ports/mail/squirrelmail-mark_read-plugin
 squirrelmail-multilogin-plugin  ports/mail/squirrelmail-multilogin-plugin
-squirrelmail-newuser_wiz-plugin  ports/mail/squirrelmail-newuser_wiz-plugin
 squirrelmail-notes-plugin       ports/mail/squirrelmail-notes-plugin
 squirrelmail-notify-plugin      ports/mail/squirrelmail-notify-plugin
 squirrelmail-password_forget-plugin  ports/mail/squirrelmail-password_forget-plugin
