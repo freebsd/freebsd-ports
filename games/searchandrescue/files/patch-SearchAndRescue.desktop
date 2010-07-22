@@ -1,0 +1,10 @@
+--- ./SearchAndRescue.desktop.orig	2010-03-05 22:10:43.000000000 +0300
++++ ./SearchAndRescue.desktop	2010-07-22 23:03:07.163020299 +0400
+@@ -2,6 +2,7 @@
+ Encoding=UTF-8
+ Name=Search and rescue
+ Exec=SearchAndRescue
++Icon=SearchAndRescue.xpm
+ Terminal=False
+ Type=Application
+ Categories=Game
