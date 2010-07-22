@@ -1,10 +1,12 @@
-OpenDKIM is an open source implementation of the DKIM sender authentication
-system proposed by the E-mail Signing Technology Group (ESTG), now a proposed
-standard of the IETF (RFC4871).
+OpenDKIM is an open source implementation of the DKIM (Domain Keys Identified 
+Mail) sender authentication system proposed by the E-mail Signing Technology 
+Group (ESTG), now standardized by the IETF (RFC4871). It also includes 
+implementations of the Author Domain Signing Practises (ADSP, RFC5617) and 
+Vouch By Reference (VBR, RFC5518) proposed standards.
 
 The OpenDKIM package consists of a library that implements the DKIM service
 and a milter-based filter application that can plug in to any milter-aware
 MTA to provide that service to sufficiently recent sendmail MTAs and other
 MTAs that support the milter protocol. 
 
-WWW:	http://opendkim.org/
+WWW: http://opendkim.org/
