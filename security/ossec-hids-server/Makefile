@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ossec-hids
-PORTVERSION=	2.0
+PORTVERSION=	2.4.1
 PORTREVISION?=	0
 CATEGORIES=	security
 MASTER_SITES=	http://www.ossec.net/files/ \
