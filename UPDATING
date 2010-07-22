@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100722:
+  AFFECTS: users of net/rabbitmq
+  AUTHOR: Phillip <pneumann@gmail.com>
+
+  The database schema and the format in which persistent messages are
+  stored have both changed since the last release (1.7.2). When
+  starting, the RabbitMQ server will detect the existence of an old
+  database and will move it to a backup location, before creating a
+  fresh, empty database, and will log a warning.
+
 20100715:
   AFFECTS: users of lang/perl*
   AUTHOR: skv@FreeBSD.org
