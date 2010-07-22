@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	email2trac
-PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTVERSION=	1.5.1
 CATEGORIES=	www devel python
 MASTER_SITES=	ftp://ftp.sara.nl/pub/outgoing/
 PKGNAMEPREFIX=	trac-
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Convert email to trac tickets
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
