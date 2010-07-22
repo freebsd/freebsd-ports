@@ -36,11 +36,13 @@
 name="milteropendkim"
 rcvar=`set_rcvar`
 
+extra_commands="reload"
 start_precmd="dkim_prepcmd"
 stop_postcmd="dkim_postcmd"
 command="%%PREFIX%%/sbin/opendkim"
 _piddir="/var/run/milteropendkim"
 pidfile="${_piddir}/pid"
+sig_reload="USR1"
 
 load_rc_config $name
 
