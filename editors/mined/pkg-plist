@@ -17,6 +17,8 @@ share/applications/mined.desktop
 %%DATADIR%%/bin/makeprint
 %%DATADIR%%/bin/mkicon
 %%DATADIR%%/bin/postinstall
+%%DATADIR%%/bin/preremove
+%%DATADIR%%/bin/setupreg.sh
 %%DATADIR%%/cancel.html
 %%DATADIR%%/changes.html
 %%DATADIR%%/combined.png
@@ -35,6 +37,7 @@ share/applications/mined.desktop
 %%DATADIR%%/header.html
 %%DATADIR%%/index-dl.html
 %%DATADIR%%/index.html
+%%DATADIR%%/keyboard.html
 %%DATADIR%%/konsole/xterm-modified.keytab
 %%DATADIR%%/kp5
 %%DATADIR%%/logo.gif
@@ -42,6 +45,7 @@ share/applications/mined.desktop
 %%DATADIR%%/minedfav.ico
 %%DATADIR%%/menu.png
 %%DATADIR%%/mined-html.png
+%%DATADIR%%/mined-mintty.png
 %%DATADIR%%/mined-pw.png
 %%DATADIR%%/mined-sep.png
 %%DATADIR%%/mined-small-10x20.png
@@ -81,6 +85,10 @@ share/applications/mined.desktop
 %%DATADIR%%/script-hiragana.gif
 %%DATADIR%%/script-thai.gif
 %%DATADIR%%/separated.png
+%%DATADIR%%/setupreg.sh
+%%DATADIR%%/setupreg.bat
+%%DATADIR%%/soft82_award_130x130.gif
+%%DATADIR%%/rectangular.png
 %%DATADIR%%/terminator/options
 %%DATADIR%%/thankyou.html
 %%DATADIR%%/umined
@@ -89,10 +97,14 @@ share/applications/mined.desktop
 %%DATADIR%%/uprint
 %%DATADIR%%/uterm
 %%DATADIR%%/uterm.html
+%%DATADIR%%/win/setup.b~
+%%DATADIR%%/win/install.bat
+%%DATADIR%%/win/uninst.b~
 %%DATADIR%%/wined
 %%DATADIR%%/wined.bat
 %%DATADIR%%/xinitrc.mined
 %%DATADIR%%/xmined
+@dirrm %%DATADIR%%/win
 @dirrm %%DATADIR%%/terminator
 @dirrm %%DATADIR%%/mlterm
 @dirrm %%DATADIR%%/konsole

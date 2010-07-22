@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	mined
-PORTVERSION=	2000.15.4
+PORTVERSION=	2000.16
 CATEGORIES=	editors
-MASTER_SITES=	http://towo.net/mined/
+MASTER_SITES=	http://towo.net/mined/download/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Text mode editor with Unicode support
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/usrshare/package_doc/LICENSE.GNU
 
 .if defined(NOPORTDOCS)
 ALL_TARGET=	mined manual
@@ -23,7 +24,7 @@ PORTDOCS=	*
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile
-MAKE_SHELL=	${LOCALBASE}/bin/bash	# To avoid "shift: can't shift that many"
+#MAKE_SHELL=	${LOCALBASE}/bin/bash	# To avoid "shift: can't shift that many"
 REINPLACE_ARGS=	-i ""
 MAKE_ARGS=	GMAKE=${GMAKE} CC=${CC:T} OPT="${CFLAGS}"
 INSTALL_TARGET=	localinstall
@@ -33,7 +34,7 @@ NO_MANCOMPRESS=	yes
 MAN1=		mined.1 minmacs.1 mpico.1 mstar.1 umined.1 uterm.1 xmined.1
 
 PRFX2FIX=	src/makefile.bsd usrshare/conf_user/xinitrc.mined	\
-		src/makefile.curses src/mined1.c man/mined.1		\
+		src/mined1.c man/mined.1		\
 		usrshare/setup_install/mined.desktop src/makefile.gcc
 
 pre-configure:
