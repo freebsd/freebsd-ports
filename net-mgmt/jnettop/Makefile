@@ -18,7 +18,13 @@ MAN8=		jnettop.8
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
+USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX}
+
+.if defined(WITH_DAG)
+post-configure:
+	${ECHO_CMD} "#define BSD 1" >> ${WRKSRC}/config.h
+.endif
 
 .include <bsd.port.mk>
