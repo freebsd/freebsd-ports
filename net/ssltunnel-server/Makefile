@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	ssltunnel
-PORTVERSION=	1.16
+PORTVERSION=	1.18
 CATEGORIES=	net
 MASTER_SITES=	http://www.hsc.fr/ressources/outils/ssltunnel/download/
 PKGNAMESUFFIX=	-server
@@ -17,18 +17,21 @@ PKGNAMESUFFIX=	-server
 MAINTAINER=	utisoft@gmail.com
 COMMENT=	PPP over SSL virtual private networking (server part)
 
+LICENSE=	BSD
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-client
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
-
 .if defined(WITH_TCPWRAPPERS)
 CONFIGURE_ARGS+=	--with-libwrap
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's^#include <utmp.h>^/*utmp.h not for FreeBSD*/^' \
+		${WRKSRC}/server/main.c \
+		${WRKSRC}/server/pppwho.c \
+		${WRKSRC}/server/sessions.c
 
 post-install:
 .if !defined(NOPORTDOCS)
