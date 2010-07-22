@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liberation-fonts-ttf
-PORTVERSION=	1.05.2.20091227
+PORTVERSION=	1.05.3.20100621
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://fedorahosted.org/releases/l/i/liberation-fonts/
