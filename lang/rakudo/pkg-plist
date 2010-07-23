@@ -1,7 +1,6 @@
 bin/perl6
 lib/parrot/%%PARROT_VERSION%%/dynext/perl6_group.so
 lib/parrot/%%PARROT_VERSION%%/dynext/perl6_ops.so
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Safe.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/perl6.pbc
