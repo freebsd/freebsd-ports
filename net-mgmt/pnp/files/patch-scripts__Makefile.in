@@ -1,5 +1,5 @@
---- scripts/Makefile.in.orig	2008-12-24 01:11:40.000000000 +0300
-+++ scripts/Makefile.in	2008-12-24 01:12:25.000000000 +0300
+--- ./scripts/Makefile.in.orig	2010-05-29 23:27:44.000000000 +0200
++++ ./scripts/Makefile.in	2010-05-29 23:27:44.000000000 +0200
 @@ -25,7 +25,6 @@
  devclean: distclean
  

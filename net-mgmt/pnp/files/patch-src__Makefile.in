@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	2008-12-24 01:12:54.000000000 +0300
-+++ src/Makefile.in	2008-12-24 01:13:31.000000000 +0300
-@@ -88,8 +88,6 @@
+--- ./src/Makefile.in.orig	2010-05-29 23:27:44.000000000 +0200
++++ ./src/Makefile.in	2010-05-29 23:27:44.000000000 +0200
+@@ -121,8 +121,6 @@
  	$(MAKE) install-basic
  
  install-basic:
 -	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
 -	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(PERFDATA_SPOOL_DIR)
  	$(INSTALL) -m 754 $(INSTALL_OPTS) @npcd_name@ $(DESTDIR)$(BINDIR)
+ 	$(INSTALL) -m 754 $(INSTALL_OPTS) npcdmod.o $(DESTDIR)$(BINDIR)
  
- strip-post-install:
