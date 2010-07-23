@@ -1,0 +1,8 @@
+#!/bin/sh
+
+DOTDIR=$HOME/.sea-defender
+
+mkdir -p "$DOTDIR"
+cd "$DOTDIR" || exit 1
+
+exec %%PREFIX%%/libexec/sea-defender "$@"
