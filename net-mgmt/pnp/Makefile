@@ -7,8 +7,10 @@
 
 PORTNAME=	pnp
 PORTVERSION=	0.4.14
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}4nagios/PNP/${PORTNAME}-${PORTVERSION}
+LICENSE=	GPLv2
 
 MAINTAINER=	rea-fbsd@codelabs.ru
 COMMENT=	Nagios performance data collector and grapher
@@ -19,7 +21,10 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
 
 OPTIONS=	PDF "Use built-in fpdf library to produce PDF views" ON
 
+.include <bsd.port.options.mk>
+
 USE_PHP=	zlib gd xml pcre
+USE_DOS2UNIX=	yes
 WANT_PHP_WEB=	yes
 USE_RC_SUBR=	npcd.sh
 MAN1=		pnpsender.1
@@ -33,9 +38,8 @@ PNP_RRDS=	${PNP_STATE}/rrd
 PNP_SPOOL=	${PNP_STATE}/perfspool
 FPDF_DIR?=	share/fpdf
 
-.if defined(WITH_PDF)
-.else
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-share::pnp::include::function.inc.php
+.if !defined(WITH_PDF)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-share__pnp__include__function.inc.php
 .endif
 
 GNU_CONFIGURE=	yes
@@ -67,7 +71,12 @@ SUB_LIST=	PNP_STATE=${PNP_STATE} \
 # All files in share/pnp/include/ are installed, so if we patched something
 # in that directory, we must clean the '.orig' files -- they shouldn't be
 # installed.
-PNP_CLEAN_PATCHED=	share/pnp/include/function.inc.php.orig
+PNP_CLEAN_PATCHED=	share/pnp/include/font/makefont/makefont.php.orig \
+			share/pnp/include/fpdi.php.orig \
+			share/pnp/include/fpdi_pdf_parser.php.orig \
+			share/pnp/include/function.inc.php.orig \
+			share/pnp/include/pdf_parser.php.orig \
+			share/pnp/include/site.php.orig
 
 .if defined(WITH_PDF)
 PNP_USE_FPDF=	1

@@ -1,5 +1,5 @@
---- sample-config/Makefile.in.orig	2008-10-11 18:13:17.000000000 +0400
-+++ sample-config/Makefile.in	2008-12-24 17:33:32.000000000 +0300
+--- ./sample-config/Makefile.in.orig	2010-05-29 23:27:44.000000000 +0200
++++ ./sample-config/Makefile.in	2010-05-29 23:27:44.000000000 +0200
 @@ -27,23 +27,19 @@
  devclean: distclean
  

@@ -1,0 +1,10 @@
+--- ./man/Makefile.in.orig	2010-05-29 23:27:44.000000000 +0200
++++ ./man/Makefile.in	2010-05-29 23:27:44.000000000 +0200
+@@ -36,7 +36,6 @@
+ devclean: distclean
+ 
+ install:
+-	$(MAKE) install-basic
+ 
+ install-basic:
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(MANDIR)/man1/
