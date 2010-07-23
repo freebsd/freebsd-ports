@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	whatweb
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	security www
 MASTER_SITES=	http://www.morningstarsecurity.com/downloads/
 
