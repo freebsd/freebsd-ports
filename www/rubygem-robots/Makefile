@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	robots
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
