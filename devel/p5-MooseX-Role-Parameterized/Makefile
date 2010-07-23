@@ -20,6 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		MooseX::Role::Parameterized.3 \
+		MooseX::Role::Parameterized::Extending.3 \
 		MooseX::Role::Parameterized::Meta::Parameter.3 \
 		MooseX::Role::Parameterized::Meta::Role::Parameterizable.3 \
 		MooseX::Role::Parameterized::Meta::Role::Parameterized.3 \
