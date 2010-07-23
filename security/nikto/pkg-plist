@@ -1,9 +1,9 @@
 bin/nikto
-@unexec if cmp -s %D/etc/nikto.conf %D/etc/nikto.conf.sample; then rm -f %D/etc/nikto.conf; fi
+etc/nikto.conf
 etc/nikto.conf.sample
-@exec [ -f %B/nikto.conf ] || cp %B/%f %B/nikto.conf
 %%DATADIR%%/plugins/LW2.pm
 %%DATADIR%%/plugins/db_404_strings
+%%DATADIR%%/plugins/db_content_search
 %%DATADIR%%/plugins/db_embedded
 %%DATADIR%%/plugins/db_favicon
 %%DATADIR%%/plugins/db_headers
@@ -17,7 +17,9 @@ etc/nikto.conf.sample
 %%DATADIR%%/plugins/db_variables
 %%DATADIR%%/plugins/nikto_apache_expect_xss.plugin
 %%DATADIR%%/plugins/nikto_apacheusers.plugin
+%%DATADIR%%/plugins/nikto_auth.plugin
 %%DATADIR%%/plugins/nikto_cgi.plugin
+%%DATADIR%%/plugins/nikto_content_search.plugin
 %%DATADIR%%/plugins/nikto_core.plugin
 %%DATADIR%%/plugins/nikto_dictionary_attack.plugin
 %%DATADIR%%/plugins/nikto_embedded.plugin
@@ -26,19 +28,17 @@ etc/nikto.conf.sample
 %%DATADIR%%/plugins/nikto_httpoptions.plugin
 %%DATADIR%%/plugins/nikto_msgs.plugin
 %%DATADIR%%/plugins/nikto_multiple_index.plugin
-%%DATADIR%%/plugins/nikto_mutate.plugin
 %%DATADIR%%/plugins/nikto_outdated.plugin
-%%DATADIR%%/plugins/nikto_passfiles.plugin
 %%DATADIR%%/plugins/nikto_put_del_test.plugin
 %%DATADIR%%/plugins/nikto_report_csv.plugin
 %%DATADIR%%/plugins/nikto_report_html.plugin
+%%DATADIR%%/plugins/nikto_report_nbe.plugin
 %%DATADIR%%/plugins/nikto_report_text.plugin
 %%DATADIR%%/plugins/nikto_report_xml.plugin
 %%DATADIR%%/plugins/nikto_robots.plugin
 %%DATADIR%%/plugins/nikto_single.plugin
 %%DATADIR%%/plugins/nikto_subdomain.plugin
 %%DATADIR%%/plugins/nikto_tests.plugin
-%%DATADIR%%/plugins/nikto_user_enum_apache.plugin
 %%DATADIR%%/templates/htm_close.tmpl
 %%DATADIR%%/templates/htm_end.tmpl
 %%DATADIR%%/templates/htm_host_head.tmpl
