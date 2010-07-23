@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clementine
-PORTVERSION=	0.3
+PORTVERSION=	0.4.2
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
@@ -24,11 +24,24 @@ PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
 
 USE_CMAKE=	yes
 USE_ICONV=	yes
+USE_GL=		glew
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
 		linguist_build network sql opengl dbus qtestlib corelib
 USE_GCC=	4.2+
 INSTALLS_ICONS=	yes
-USE_GSTREAMER=	gio ogg mp3 flac
+USE_GSTREAMER=	gio ogg mp3 flac soup
+MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.mk>
+OPTIONS=	VISUALISATION "Visualisations from projectM" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_VISUALISATION)
+PLIST_SUB+=	VSL=""
+.else
+CMAKE_ARGS+=	-DENABLE_VISUALISATIONS=OFF
+PLIST_SUB+=	VSL="@comment "
+.endif
+
+.include <bsd.port.post.mk>

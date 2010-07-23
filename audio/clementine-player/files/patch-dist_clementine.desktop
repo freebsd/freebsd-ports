@@ -1,5 +1,5 @@
---- dist/clementine.desktop.orig
-+++ dist/clementine.desktop
+--- dist/clementine.desktop.orig	2010-06-29 03:47:54.000000000 +0800
++++ dist/clementine.desktop	2010-06-30 16:09:30.000000000 +0800
 @@ -4,8 +4,8 @@
  Name=Clementine
  GenericName=Clementine Music Player
