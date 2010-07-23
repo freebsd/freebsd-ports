@@ -63,6 +63,10 @@ PLIST_SUB+=	UWACOMKLD="@noinst UWACOMKLD uwacom.ko"
 PORTTYPE=	serial
 .endif
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 post-patch:
 	@${LN} -s ../${LINUXWACOM} ${WRKDIR}/linuxwacom/
 
