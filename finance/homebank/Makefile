@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	homebank
-PORTVERSION=	4.2.1
-PORTREVISION=	2
+PORTVERSION=	4.3
 CATEGORIES=	finance
 MASTER_SITES=	http://homebank.free.fr/public/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manage your personal accounts at home
+
+LICENSE=	GPLv2
+LICENSE_FILE_GPLv2=${WRKSRC}/COPYING
 
 OPTIONS=	OFX "Enable libOFX support" on
 

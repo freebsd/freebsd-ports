@@ -5,6 +5,15 @@ share/applications/homebank.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/datas/example.xhb
+%%DATADIR%%/datas/hb-categories-de.csv
+%%DATADIR%%/datas/hb-categories-en.csv
+%%DATADIR%%/datas/hb-categories-es.csv
+%%DATADIR%%/datas/hb-categories-fr.csv
+%%DATADIR%%/datas/hb-categories-it.csv
+%%DATADIR%%/datas/hb-categories-pt.csv
+%%DATADIR%%/datas/hb-categories-ro.csv
+%%DATADIR%%/datas/hb-categories-ru.csv
 %%DATADIR%%/help/00new4.0.html
 %%DATADIR%%/help/00new4.1.html
 %%DATADIR%%/help/00new4.2.html
@@ -207,31 +216,45 @@ share/icons/hicolor/32x32/apps/homebank.png
 share/icons/hicolor/48x48/apps/homebank.png
 share/icons/hicolor/64x64/apps/homebank.png
 share/icons/hicolor/scalable/apps/homebank.svg
+share/locale/am/LC_MESSAGES/homebank.mo
 share/locale/ar/LC_MESSAGES/homebank.mo
 share/locale/ast/LC_MESSAGES/homebank.mo
 share/locale/be/LC_MESSAGES/homebank.mo
 share/locale/bg/LC_MESSAGES/homebank.mo
+share/locale/br/LC_MESSAGES/homebank.mo
+share/locale/bs/LC_MESSAGES/homebank.mo
 share/locale/ca/LC_MESSAGES/homebank.mo
 share/locale/cs/LC_MESSAGES/homebank.mo
+share/locale/da/LC_MESSAGES/homebank.mo
 share/locale/de/LC_MESSAGES/homebank.mo
 share/locale/el/LC_MESSAGES/homebank.mo
+share/locale/en_AU/LC_MESSAGES/homebank.mo
 share/locale/en_CA/LC_MESSAGES/homebank.mo
 share/locale/en_GB/LC_MESSAGES/homebank.mo
 share/locale/es/LC_MESSAGES/homebank.mo
 share/locale/et/LC_MESSAGES/homebank.mo
+share/locale/eu/LC_MESSAGES/homebank.mo
+share/locale/fa/LC_MESSAGES/homebank.mo
 share/locale/fi/LC_MESSAGES/homebank.mo
 share/locale/fr/LC_MESSAGES/homebank.mo
 share/locale/gl/LC_MESSAGES/homebank.mo
 share/locale/he/LC_MESSAGES/homebank.mo
 share/locale/hr/LC_MESSAGES/homebank.mo
+share/locale/ht/LC_MESSAGES/homebank.mo
 share/locale/hu/LC_MESSAGES/homebank.mo
 share/locale/id/LC_MESSAGES/homebank.mo
+share/locale/is/LC_MESSAGES/homebank.mo
 share/locale/it/LC_MESSAGES/homebank.mo
 share/locale/ja/LC_MESSAGES/homebank.mo
 share/locale/ka/LC_MESSAGES/homebank.mo
+share/locale/kk/LC_MESSAGES/homebank.mo
+share/locale/kn/LC_MESSAGES/homebank.mo
 share/locale/ko/LC_MESSAGES/homebank.mo
 share/locale/lt/LC_MESSAGES/homebank.mo
 share/locale/lv/LC_MESSAGES/homebank.mo
+share/locale/mi/LC_MESSAGES/homebank.mo
+share/locale/ml/LC_MESSAGES/homebank.mo
+share/locale/ms/LC_MESSAGES/homebank.mo
 share/locale/nb/LC_MESSAGES/homebank.mo
 share/locale/nds/LC_MESSAGES/homebank.mo
 share/locale/nl/LC_MESSAGES/homebank.mo
@@ -244,15 +267,41 @@ share/locale/ro/LC_MESSAGES/homebank.mo
 share/locale/ru/LC_MESSAGES/homebank.mo
 share/locale/sk/LC_MESSAGES/homebank.mo
 share/locale/sl/LC_MESSAGES/homebank.mo
+share/locale/sn/LC_MESSAGES/homebank.mo
+share/locale/sr/LC_MESSAGES/homebank.mo
 share/locale/sv/LC_MESSAGES/homebank.mo
+share/locale/ta/LC_MESSAGES/homebank.mo
+share/locale/th/LC_MESSAGES/homebank.mo
 share/locale/tr/LC_MESSAGES/homebank.mo
 share/locale/uk/LC_MESSAGES/homebank.mo
+share/locale/ur/LC_MESSAGES/homebank.mo
+share/locale/uz/LC_MESSAGES/homebank.mo
 share/locale/vi/LC_MESSAGES/homebank.mo
 share/locale/zh_CN/LC_MESSAGES/homebank.mo
+share/locale/zh_HK/LC_MESSAGES/homebank.mo
 share/locale/zh_TW/LC_MESSAGES/homebank.mo
 share/mime/packages/homebank.xml
 share/mime-info/homebank.keys
 share/mime-info/homebank.mime
+share/mime/application/x-homebank.xml
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/sn/LC_MESSAGES
+@dirrmtry share/locale/sn
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/mi/LC_MESSAGES
+@dirrmtry share/locale/mi
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/ht/LC_MESSAGES
+@dirrmtry share/locale/ht
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/icons/hicolor/48x48/status
 @dirrm %%DATADIR%%/icons/hicolor/48x48/actions
@@ -267,6 +316,7 @@ share/mime-info/homebank.mime
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/help/images
 @dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/datas
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
