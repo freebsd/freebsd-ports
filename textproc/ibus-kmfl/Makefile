@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ibus-kmfl
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/kmfl/${PORTNAME}/${PORTVERSION} \
-		http://anthesphoria.net/FreeBSD/ports/distfiles/
+		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
 DIST_SUBDIR=	kmfl
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
@@ -22,10 +22,8 @@ RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
 USE_GNOME=	glib20 pkgconfig
 
-USE_AUTOTOOLS=	aclocal:110 automake:110
-ACLOCAL_ARGS=	-I m4
-AUTOMAKE_ARGS=	--add-missing --copy
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
