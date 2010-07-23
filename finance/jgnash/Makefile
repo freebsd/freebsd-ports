@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	jGnash
-PORTVERSION=	2.3.5
+PORTVERSION=	2.4.0
 CATEGORIES=	finance java
-MASTER_SITES=	SF/jgnash/Active%20Stable%202.x/2.3.x%20Releases
+MASTER_SITES=	SF/jgnash/Active%20Stable%202.x/2.4.x%20Releases
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	A free personal finance manager
