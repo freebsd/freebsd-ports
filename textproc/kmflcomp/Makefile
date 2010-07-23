@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	kmflcomp
-PORTVERSION=	0.9.8
-PORTREVISION=	2
+PORTVERSION=	0.9.9
 CATEGORIES=	textproc
 MASTER_SITES=	SF/kmfl/kmfl/${PORTVERSION} \
-		http://anthesphoria.net/FreeBSD/ports/distfiles/
+		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		KMFL-Compiler.sxw
 DIST_SUBDIR=	kmfl
@@ -41,9 +40,7 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|-L/usr/X11R6/lib|-L${X11BASE}/lib|' \
 		${WRKSRC}/kmfl_compiler/Makefile.in
-	@${REINPLACE_CMD} -E 's,"UTF(8|16LE|32LE)","UTF-\1",g' \
-		${WRKSRC}/src/utfconv.c
-	@${REINPLACE_CMD} -E 's,(VERSION= *)"0\.9\.7",\1"0.9.8",' \
+	@${REINPLACE_CMD} -E 's,(VERSION= *)"0\.9\.7",\1"0.9.9",' \
 		${WRKSRC}/kmfl_compiler/kmfl_compiler.c
 
 post-install:
