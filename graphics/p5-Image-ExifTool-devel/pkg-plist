@@ -29,6 +29,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Ricoh.pm
 %%SITE_PERL%%/Image/ExifTool/Real.pm
 %%SITE_PERL%%/Image/ExifTool/Rawzor.pm
+%%SITE_PERL%%/Image/ExifTool/RTF.pm
 %%SITE_PERL%%/Image/ExifTool/RSRC.pm
 %%SITE_PERL%%/Image/ExifTool/RIFF.pm
 %%SITE_PERL%%/Image/ExifTool/README
@@ -52,6 +53,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Nikon.pm
 %%SITE_PERL%%/Image/ExifTool/MinoltaRaw.pm
 %%SITE_PERL%%/Image/ExifTool/Minolta.pm
+%%SITE_PERL%%/Image/ExifTool/Matroska.pm
 %%SITE_PERL%%/Image/ExifTool/MakerNotes.pm
 %%SITE_PERL%%/Image/ExifTool/MWG.pm
 %%SITE_PERL%%/Image/ExifTool/MPF.pm
@@ -199,6 +201,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Ricoh.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Real.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Rawzor.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/RTF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/RSRC.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/RIFF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/QuickTime.html
@@ -220,6 +223,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Nikon.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MinoltaRaw.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Minolta.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Matroska.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MWG.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MPF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MPEG.html
