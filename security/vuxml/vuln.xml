@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="827bc2b7-95ed-11df-9160-00e0815b8da8">
+    <topic>git -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>git</name>
+	<range><ge>1.5.6</ge><lt>1.7.1.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Greg Brockman reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2010/07/22/1">
+	  <p>If an attacker were to create a crafted working copy where the
+	    user runs any git command, the attacker could force execution
+	    of arbitrary code.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-2542</cvename>
+      <url>http://git.kernel.org/?p=git/git.git;a=commit;h=3c9d0414ed2db0167e6c828b547be8fc9f88fccc</url>
+      <url>http://www.openwall.com/lists/oss-security/2010/07/22/1</url>
+    </references>
+    <dates>
+      <discovery>2010-07-20</discovery>
+      <entry>2010-07-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0502c1cb-8f81-11df-a0bb-0050568452ac">
     <topic>codeigniter -- file upload class vulnerability</topic>
     <affects>
@@ -596,7 +625,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2010-06-23</entry>
     </dates>
   </vuln>
-  
+
   <vuln vid="25673e6e-786b-11df-a921-0245fb008c0b">
     <topic>ziproxy -- security vulnerability in PNG decoder</topic>
     <affects>
