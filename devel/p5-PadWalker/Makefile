@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PadWalker
-PORTVERSION=	1.91
+PORTVERSION=	1.92
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/R/RO/ROBIN
@@ -18,10 +18,5 @@ COMMENT=	PadWalker - play with Perl lexical variables
 PERL_CONFIGURE=	5.8.0+
 
 MAN3=	PadWalker.3
-
-post-patch:
-	${PERL} -i -pe '$$_ = "" if /DEBUGGING/' ${WRKSRC}/Makefile.PL
-	${RM} ${WRKSRC}/._*
-	${RM} ${WRKSRC}/t/._*
 
 .include <bsd.port.mk>
