@@ -25,6 +25,12 @@ GNU_CONFIGURE=	yes
 USE_XORG=	ice x11 sm
 PLIST_FILES=	bin/nxproxy
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 post-extract:
 	${LN} -sf ${WRKDIR}/nxcomp-${DISTVERSION:S/2/1/} ${WRKDIR}/nxcomp
 
@@ -43,4 +49,4 @@ pre-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nxproxy ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
