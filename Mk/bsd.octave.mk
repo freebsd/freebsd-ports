@@ -43,18 +43,3 @@ post-install:
 	@${ECHO_CMD} "share/octave/tarballs/${OCTAVE_PKGNAME}.tar.gz" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec octave -H -q --no-site-file --eval \"pkg('uninstall','${OCTAVE_PKGNAME}')\" > /dev/null" >> ${TMPPLIST}
 	@if [ -e ${.CURDIR}/pkg-message ]; then ${CAT} ${.CURDIR}/pkg-message; fi
-
-check-octave-forge-depends:	extract
-	@listd=`${PERL} -lne '$$_=lc($$_);if (s/^depends://){s/\(.*?\)//g;s/\s*\,\s*/ /g;s/octave//g;print}' < ${WRKSRC}/DESCRIPTION`; \
-	listm=`${PERL} -lne 'if (/RUN_DEPENDS\+=\t..TARBALLS_DIR.\/(.*)\.tar\.gz/){print$$1}' < ${.CURDIR}/Makefile`; \
-	for i in $$listd; do \
-		if !(${ECHO_CMD} $$listm|${GREP} $$i > /dev/null); then \
-			${ECHO_MSG} "octave-forge-${OCTAVE_PKGNAME} is missing dependency octave-forge-$$i"; \
-		fi; \
-	done; \
-	for i in $$listm; do \
-		if !(${ECHO_CMD} $$listd|${GREP} $$i > /dev/null); then \
-			${ECHO_MSG} "octave-forge-${OCTAVE_PKGNAME} has unnecessary dependency octave-forge-$$i"; \
-		fi; \
-	done; \
-
