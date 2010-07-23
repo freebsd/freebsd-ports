@@ -1,16 +1,22 @@
---- makefile.orig	2009-06-23 11:49:24.000000000 +0400
-+++ makefile	2009-06-23 11:50:10.000000000 +0400
-@@ -1,10 +1,10 @@
- UNAME_S:=$(shell uname -s)
+--- makefile.orig	2010-07-19 06:03:27.000000000 +0400
++++ makefile	2010-07-23 11:11:06.000000000 +0400
+@@ -39,14 +39,15 @@ CRYPT_LIB=-lcrypto
+ endif
  
  # defaults
 -CC = gcc
 +CC ?= gcc
- OPTIONS=-g -Wall
--LDLIBS=-lc -lm
+ OPTIONS=-g -Wall $(ENC_OPTS)
+-LDLIBS=-lc -lm $(CRYPT_LIB)
 -CFLAGS=
-+LDLIBS+=-lc -lm
++LDLIBS+=-lm $(CRYPT_LIB)
 +CFLAGS?=
  
  # FreeBSD
  ifeq ("FreeBSD", "$(UNAME_S)")
+-OPTIONS=-g -Wall -DHAS_GETIFADDRS $(ENC_OPTS)
++OPTIONS=-Wall -DHAS_GETIFADDRS $(ENC_OPTS)
++OPENSSL=/usr
+ endif
+ 
+ # OSX, aka Darwin
