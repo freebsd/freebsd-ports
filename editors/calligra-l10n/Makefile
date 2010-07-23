@@ -34,22 +34,21 @@ zh_CN_PORT=	chinese/koffice-kde4-l10n-zh_CN
 zh_TW_PORT=	chinese/koffice-kde4-l10n-zh_TW
 
 .include <${.CURDIR}/../../misc/kde4-l10n/files/kde4-lang-names>
+nb_NAME=	Norwegian Bokmal
 
+OPTIONS=	ALL "All localizations" on
 .for lang in ${KOFFICE2_LANG_ALL}
 ${lang}_DETECT?=	${KDE4_PREFIX}/share/locale/${lang}/LC_MESSAGES/koffice.mo
 ${lang}_PORT?=		editors/koffice-kde4-l10n-${lang}
 ${lang}_NAME?=		${lang}
+${lang}_OPTION=		${lang:S/@/_/}
+OPTIONS+=	${${lang}_OPTION} "${${lang}_NAME} localization" off
 .endfor
 
-OPTIONS=	ALL "All localizations" on
-.for lang in ${KOFFICE2_LANG_ALL}
-OPTIONS+=	${lang} "${${lang}_NAME} localization" off
-.endfor
-
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .for lang in ${KOFFICE2_LANG_ALL}
-.if defined(WITH_ALL) || defined(WITH_${lang})
+.if defined(WITH_ALL) || defined(WITH_${${lang}_OPTION})
 RUN_DEPENDS+=	${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
 .endif
 .endfor
@@ -57,4 +56,4 @@ RUN_DEPENDS+=	${${lang}_DETECT}:${PORTSDIR}/${${lang}_PORT}
 do-install:
 	${DO_NADA}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
