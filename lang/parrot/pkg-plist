@@ -35,7 +35,6 @@ include/parrot/%%PARROT_VER%%/parrot/extend.h
 include/parrot/%%PARROT_VER%%/parrot/extend_vtable.h
 include/parrot/%%PARROT_VER%%/parrot/feature.h
 include/parrot/%%PARROT_VER%%/parrot/gc_api.h
-include/parrot/%%PARROT_VER%%/parrot/global.h
 include/parrot/%%PARROT_VER%%/parrot/global_setup.h
 include/parrot/%%PARROT_VER%%/parrot/has_header.h
 include/parrot/%%PARROT_VER%%/parrot/hash.h
@@ -52,6 +51,7 @@ include/parrot/%%PARROT_VER%%/parrot/longopt.h
 include/parrot/%%PARROT_VER%%/parrot/memory.h
 include/parrot/%%PARROT_VER%%/parrot/misc.h
 include/parrot/%%PARROT_VER%%/parrot/multidispatch.h
+include/parrot/%%PARROT_VER%%/parrot/namespace.h
 include/parrot/%%PARROT_VER%%/parrot/nci.h
 include/parrot/%%PARROT_VER%%/parrot/oo.h
 include/parrot/%%PARROT_VER%%/parrot/oo_private.h
@@ -399,6 +399,7 @@ lib/parrot/%%PARROT_VER%%/library/Test/More.pbc
 lib/parrot/%%PARROT_VER%%/library/Test/More.pir
 lib/parrot/%%PARROT_VER%%/library/URI.pbc
 lib/parrot/%%PARROT_VER%%/library/URI.pir
+lib/parrot/%%PARROT_VER%%/library/URI/Escape.pir
 lib/parrot/%%PARROT_VER%%/library/YAML/Dumper.pbc
 lib/parrot/%%PARROT_VER%%/library/YAML/Dumper.pir
 lib/parrot/%%PARROT_VER%%/library/YAML/Dumper/Base.pir
@@ -666,6 +667,7 @@ src/parrot/%%PARROT_VER%%/vtable.tbl
 @dirrm lib/parrot/%%PARROT_VER%%/tools
 @dirrm lib/parrot/%%PARROT_VER%%/library/YAML/Dumper
 @dirrm lib/parrot/%%PARROT_VER%%/library/YAML
+@dirrm lib/parrot/%%PARROT_VER%%/library/URI
 @dirrm lib/parrot/%%PARROT_VER%%/library/Test/Builder
 @dirrm lib/parrot/%%PARROT_VER%%/library/Test
 @dirrm lib/parrot/%%PARROT_VER%%/library/Tcl
