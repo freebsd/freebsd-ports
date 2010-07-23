@@ -7,6 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
+PORTREVISION=	1
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -29,7 +30,6 @@ OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 		PERL_64BITINT	"Use 64 bit integers (on i386)"		on  \
 		THREADS		"Build threaded perl"			off \
 		MULTIPLICITY	"Use multiplicity"			off \
-		SUIDPERL	"Build set-user-id suidperl binary"	off \
 		SITECUSTOMIZE	"Run-time customization of @INC"	off \
 		USE_PERL	"Rewrite links in /usr/bin"		on
 
@@ -86,14 +86,6 @@ STRIP=
 STRIP_CMD=	${TRUE}
 .else
 CONFIGURE_ARGS+=	-Doptimize="${CFLAGS}"
-.endif
-
-.if defined(ENABLE_SUIDPERL) || defined(WITH_SUIDPERL)
-CONFIGURE_ARGS+=	-Dd_dosuid=define
-PLIST_SUB+=		SUIDPERL=""
-.else
-CONFIGURE_ARGS+=	-Ud_dosuid
-PLIST_SUB+=		SUIDPERL="@comment "
 .endif
 
 .if defined(WITH_GDBM)
