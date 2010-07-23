@@ -5,15 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	openoffice.org
-PORTVERSION?=	3.3.${SNAPDATE}
-CATEGORIES+=	editors java
+PORTNAME=	openoffice.org
+PORTVERSION=	3.3.${SNAPDATE}
+CATEGORIES=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/:extsrc \
-		http://ooopackages.good-day.net/pub/OpenOffice.org/misc/moz/:mozsrc \
-		${MASTER_SITE_MOZILLA_EXTENDED:S/$/:mozsrc/} \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unowinreg
-MASTER_SITE_SUBDIR+=	seamonkey/releases/${SEAMONKEY_VERSION}/:mozsrc
 DISTFILES+=	${OOOSRC} ${OOOEXTSRC} unowinreg.dll:unowinreg
 
 #de facto maintainer is maho@FreeBSD.org
@@ -25,14 +22,11 @@ CONFLICTS=	cppunit*
 
 EXTRATC_ONLY?=	${OOOSRC} ${OOOEXTSRC}
 
-OOOEXTSRC=	ext_sources.20100505.tar.bz2:extsrc
+OOOEXTSRC=	ext_sources.20100718.tar.bz2:extsrc
 
 NO_LATEST_LINK=	yes
 
 .if !defined(WITHOUT_MOZILLA)
-SEAMONKEY_VERSION=	1.1.14
-SEAMONKEY_SOURCE=	seamonkey-${SEAMONKEY_VERSION}.source.tar.bz2
-DISTFILES+=		${SEAMONKEY_SOURCE}:mozsrc
 USE_GNOME+=		libidl
 .endif
 
@@ -128,7 +122,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		gtar:${PORTSDIR}/archivers/gtar \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		ant:${PORTSDIR}/devel/apache-ant \
-		${LOCALBASE}/share/java/classes/junit.jar:${PORTSDIR}/java/junit
+		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 #see #i85469# for gperf
 
 USE_BISON=	build
@@ -191,16 +185,9 @@ pre-everything::
 .endif
 
 #issue XXXXXX not raised yet...
-CRLFFILES=curl/curl*patch neon/neon*patch jfreereport/patches/*.patch
-
+DOS2UNIX_REGEX=curl/curl*patch neon/neon*patch jfreereport/patches/*.patch
 post-extract:
-	for i in ${CRLFFILES};  do \
-		cd ${WRKSRC} ; ${REINPLACE_CMD} -e 's###g' $$i ; \
-	done
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
-.if !defined(WITHOUT_MOZILLA)
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${SEAMONKEY_SOURCE} ${WRKSRC}/moz/download
-.endif
 
 pre-configure:
 #Workaround for gperf. #i85469#
