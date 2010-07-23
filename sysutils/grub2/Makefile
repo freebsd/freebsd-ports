@@ -36,6 +36,10 @@ MKFONT=		"@comment "
 
 PLIST_SUB+=	MKFONT=${MKFONT}
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
