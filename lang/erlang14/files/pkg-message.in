@@ -1,8 +1,4 @@
 ===========================================================================
-This package requires a properly configured nsswitch.conf on FreeBSD
-5.x, else nameserver queries (and the distribution protocol) will
-not work.
-
 Installation tips:
 
 You can find an emacs mode for Erlang here:
