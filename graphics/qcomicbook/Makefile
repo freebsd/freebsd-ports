@@ -53,6 +53,10 @@ CPPFLAGS+=	${PTHREAD_CFLAGS}
 QTCFGLIBS+=	${PTHREAD_LIBS}
 .endif
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not link on 6.X
+.endif
+
 # 7-Zip (.cb7) support
 .if !defined(WITHOUT_7ZIP)
 RUN_DEPENDS+=	7z:${PORTSDIR}/archivers/p7zip
