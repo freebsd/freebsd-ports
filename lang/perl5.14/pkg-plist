@@ -38,9 +38,7 @@ bin/ptar
 bin/ptardiff
 bin/s2p
 bin/shasum
-%%SUIDPERL%%bin/sperl%%PERL_VER%%
 bin/splain
-%%SUIDPERL%%bin/suidperl
 bin/xsubpp
 lib/perl5/%%PERL_VER%%/AnyDBM_File.pm
 lib/perl5/%%PERL_VER%%/App/Cpan.pm
@@ -656,7 +654,6 @@ lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regcomp.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regexp.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/regnodes.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/scope.h
-%%SUIDPERL%%lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/sperl.o
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/bitcount.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/sv.h
 lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/CORE/thread.h

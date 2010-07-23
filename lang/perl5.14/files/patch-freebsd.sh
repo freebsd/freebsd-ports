@@ -29,7 +29,16 @@
              lddlflags="-shared "
          fi
          cccdlflags='-DPIC -fPIC'
-@@ -136,7 +142,7 @@
+@@ -133,7 +139,7 @@
+ *)
+        libpth="/usr/lib /usr/local/lib"
+        glibpth="/usr/lib /usr/local/lib"
+-       ldflags="-Wl,-E "
++       ldflags="%%PTHREAD_LIBS%% -Wl,-E "
+         lddlflags="-shared "
+         cccdlflags='-DPIC -fPIC'
+        ;;
+@@ -143,7 +149,7 @@
  0*|1*|2*|3*) ;;
  
  *)
@@ -38,7 +47,7 @@
  	if /usr/bin/file -L /usr/lib/libc.so | /usr/bin/grep -vq "not stripped" ; then
  	    usenm=false
  	fi
-@@ -183,7 +189,9 @@
+@@ -190,7 +196,9 @@
  
  # This script UU/usethreads.cbu will get 'called-back' by Configure 
  # after it has prompted the user for whether to use threads.
