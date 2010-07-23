@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	minitunes
-PORTVERSION=	0.1
+PORTVERSION=	0.1.1
 CATEGORIES=	audio
 MASTER_SITES=	http://flavio.tordini.org/files/${PORTNAME}/
 
