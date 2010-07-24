@@ -1,4 +1,5 @@
 bin/ffmpeg
+bin/ffprobe
 %%FFSERVER%%bin/ffserver
 %%FFSERVER%%@unexec if cmp -s %D/etc/ffserver.conf %D/etc/ffserver.conf-dist; then rm -f %D/etc/ffserver.conf; fi
 %%FFSERVER%%etc/ffserver.conf-dist
@@ -30,7 +31,10 @@ include/ffmpeg/swscale.h
 include/ffmpeg/vdpau.h
 include/ffmpeg/xvmc.h
 include/libavcodec/avcodec.h
+include/libavcodec/avfft.h
+include/libavcodec/dxva2.h
 include/libavcodec/opt.h
+include/libavcodec/vaapi.h
 include/libavcodec/vdpau.h
 include/libavcodec/xvmc.h
 include/libavdevice/avdevice.h
@@ -38,11 +42,14 @@ include/libavfilter/avfilter.h
 include/libavformat/avformat.h
 include/libavformat/avio.h
 include/libavutil/adler32.h
+include/libavutil/attributes.h
+include/libavutil/avconfig.h
 include/libavutil/avstring.h
 include/libavutil/avutil.h
 include/libavutil/base64.h
 include/libavutil/common.h
 include/libavutil/crc.h
+include/libavutil/error.h
 include/libavutil/fifo.h
 include/libavutil/intfloat_readwrite.h
 include/libavutil/log.h
@@ -50,8 +57,8 @@ include/libavutil/lzo.h
 include/libavutil/mathematics.h
 include/libavutil/md5.h
 include/libavutil/mem.h
+include/libavutil/pixdesc.h
 include/libavutil/pixfmt.h
-include/libavutil/random.h
 include/libavutil/rational.h
 include/libavutil/sha1.h
 include/libpostproc/postprocess.h
@@ -60,37 +67,31 @@ include/libswscale/swscale.h
 lib/libavcodec.a
 lib/libavcodec.so
 lib/libavcodec.so.1
-lib/libavcodec.so.52.20.1
+lib/libavcodec.so.52.72.2
 lib/libavdevice.a
 lib/libavdevice.so
 lib/libavdevice.so.1
-lib/libavdevice.so.52.1.0
+lib/libavdevice.so.52.2.0
 lib/libavfilter.a
 lib/libavfilter.so
-lib/libavfilter.so.0.4.0
+lib/libavfilter.so.1.19.0
 lib/libavfilter.so.1
 lib/libavformat.a
 lib/libavformat.so
 lib/libavformat.so.1
-lib/libavformat.so.52.31.0
+lib/libavformat.so.52.64.2
 lib/libavutil.a
 lib/libavutil.so
 lib/libavutil.so.1
-lib/libavutil.so.49.15.0
+lib/libavutil.so.50.15.1
 lib/libpostproc.a
 lib/libpostproc.so
 lib/libpostproc.so.1
 lib/libpostproc.so.51.2.0
 lib/libswscale.a
 lib/libswscale.so
-lib/libswscale.so.0.7.1
+lib/libswscale.so.0.11.0
 lib/libswscale.so.1
-%%VHOOK%%lib/vhook/drawtext.so
-%%VHOOK%%lib/vhook/fish.so
-%%VHOOK%%lib/vhook/ppm.so
-%%VHOOK%%lib/vhook/imlib2.so
-%%VHOOK%%lib/vhook/null.so
-%%VHOOK%%lib/vhook/watermark.so
 libdata/pkgconfig/libavcodec.pc
 libdata/pkgconfig/libavdevice.pc
 libdata/pkgconfig/libavfilter.pc
@@ -100,6 +101,10 @@ libdata/pkgconfig/libpostproc.pc
 libdata/pkgconfig/libswscale.pc
 %%DATADIR%%/libx264-baseline.ffpreset
 %%DATADIR%%/libx264-default.ffpreset
+%%DATADIR%%/libx264-fast.ffpreset
+%%DATADIR%%/libx264-fast_firstpass.ffpreset
+%%DATADIR%%/libx264-faster.ffpreset
+%%DATADIR%%/libx264-faster_firstpass.ffpreset
 %%DATADIR%%/libx264-fastfirstpass.ffpreset
 %%DATADIR%%/libx264-hq.ffpreset
 %%DATADIR%%/libx264-ipod320.ffpreset
@@ -112,10 +117,25 @@ libdata/pkgconfig/libswscale.pc
 %%DATADIR%%/libx264-lossless_ultrafast.ffpreset
 %%DATADIR%%/libx264-main.ffpreset
 %%DATADIR%%/libx264-max.ffpreset
+%%DATADIR%%/libx264-medium.ffpreset
+%%DATADIR%%/libx264-medium_firstpass.ffpreset
 %%DATADIR%%/libx264-normal.ffpreset
+%%DATADIR%%/libx264-placebo.ffpreset
+%%DATADIR%%/libx264-placebo_firstpass.ffpreset
+%%DATADIR%%/libx264-slow.ffpreset
+%%DATADIR%%/libx264-slow_firstpass.ffpreset
+%%DATADIR%%/libx264-slower.ffpreset
+%%DATADIR%%/libx264-slower_firstpass.ffpreset
 %%DATADIR%%/libx264-slowfirstpass.ffpreset
-@dirrm %%DATADIR%%
-%%VHOOK%%@dirrm lib/vhook
+%%DATADIR%%/libx264-superfast.ffpreset
+%%DATADIR%%/libx264-superfast_firstpass.ffpreset
+%%DATADIR%%/libx264-ultrafast.ffpreset
+%%DATADIR%%/libx264-ultrafast_firstpass.ffpreset
+%%DATADIR%%/libx264-veryfast.ffpreset
+%%DATADIR%%/libx264-veryfast_firstpass.ffpreset
+%%DATADIR%%/libx264-veryslow.ffpreset
+%%DATADIR%%/libx264-veryslow_firstpass.ffpreset
+@dirrm %%DATADIR%%/
 @dirrm include/postproc
 @dirrm include/libswscale
 @dirrm include/libpostproc

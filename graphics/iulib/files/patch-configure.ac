@@ -1,5 +1,5 @@
---- ./configure.ac.orig	2009-06-10 07:32:20.000000000 +0900
-+++ ./configure.ac	2009-06-11 18:17:12.000000000 +0900
+--- configure.ac.orig	2009-06-10 00:32:20.000000000 +0200
++++ configure.ac	2010-07-24 18:02:39.000000000 +0200
 @@ -10,7 +10,7 @@
  
  AC_PROG_CXX
@@ -9,3 +9,25 @@
  
  AC_HEADER_STDC
  AC_HEADER_SYS_WAIT
+@@ -55,15 +55,15 @@
+ 
+ # --- vidio (optional video in-/output) ---
+ AC_SUBST(novidio, 0)
+-AC_CHECK_HEADER(ffmpeg/avcodec.h,,AC_SUBST(novidio, 1))
+-AC_CHECK_HEADER(ffmpeg/avformat.h,,AC_SUBST(novidio, 1))
+-AC_TRY_COMPILE([#include <ffmpeg/avio.h>
+-                #include <ffmpeg/avformat.h>],
++AC_CHECK_HEADER(libavcodec/avcodec.h,,AC_SUBST(novidio, 1))
++AC_CHECK_HEADER(libavformat/avformat.h,,AC_SUBST(novidio, 1))
++AC_TRY_COMPILE([#include <libavformat/avio.h>
++                #include <libavformat/avformat.h>],
+                [AVFormatContext fc; url_fclose(fc.pb);],
+-               [], [AC_DEFINE(HAVE_OLD_AVFORMAT)])
++               [], [])
+ AM_CONDITIONAL([have_vidio], [test "$novidio" != 1])
+ 
+-AC_SUBST(nov4l2, 0)
++AC_SUBST(nov4l2, 1)
+ AC_CHECK_HEADER(linux/videodev2.h,,AC_SUBST(nov4l2, 1))
+ AM_CONDITIONAL([have_v4l2], [test "$nov4l2" != 1])
+ 

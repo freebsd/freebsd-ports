@@ -7,6 +7,7 @@
 
 PORTNAME=	libdlna
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://libdlna.geexbox.org/releases/ \
 		http://critical.ch/distfiles/ \
