@@ -1,4 +1,6 @@
 bin/pkg-config
 share/aclocal/pkg.m4
+%%DOCSDIR%%/pkg-config-guide.html
+@dirrm %%DOCSDIR%%
 @dirrmtry lib/pkgconfig
 @unexec rmdir %%LOCALBASE%%/lib/pkgconfig 2>/dev/null || true
