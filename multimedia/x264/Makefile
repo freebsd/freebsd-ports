@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20100222
-PORTREVISION=	2
+PORTVERSION=	0.0.20100624
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -88,9 +87,9 @@ RESTRICTED_FILES=	${Y4M_VIDEO_DISTFILE}
 .if !defined(WITHOUT_GPAC)
 BUILD_DEPENDS+=		gpac-libgpac>=0.4.5,1:${PORTSDIR}/multimedia/gpac-libgpac
 LIB_DEPENDS+=		gpac.1:${PORTSDIR}/multimedia/gpac-libgpac
-CONFIGURE_ARGS+=	--enable-mp4-output
+CONFIGURE_ARGS+=	--enable-gpac
 .else
-CONFIGURE_ARGS+=	--disable-mp4-output
+CONFIGURE_ARGS+=	--disable-gpac
 .endif
 
 .if defined(WITH_X11_OUTPUT)

@@ -270,7 +270,7 @@ CONFIGURE_ARGS+=	--disable-libvorbis
 
 # x264
 .ifdef(WITH_X264)
-LIB_DEPENDS+=	x264.85:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.98:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=	--enable-libx264
 .else
 CONFIGURE_ARGS+=	--disable-libx264

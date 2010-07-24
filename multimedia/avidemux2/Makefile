@@ -7,7 +7,7 @@
 
 PORTNAME=	avidemux2
 PORTVERSION=	2.4.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		SF/avidemux/avidemux/${PORTVERSION}
@@ -155,7 +155,7 @@ LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
 .if defined(WITHOUT_X264)
 CMAKE_ARGS+=	-DNO_x264=1
 .else
-LIB_DEPENDS+=	x264.85:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.98:${PORTSDIR}/multimedia/x264
 .endif
 
 .if defined(WITHOUT_XVID)

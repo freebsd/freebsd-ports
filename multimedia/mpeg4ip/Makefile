@@ -7,7 +7,7 @@
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	1.6.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	LOCAL/ahze
 # http://sourceforge.net/forum/forum.php?thread_id=1839453&forum_id=59136
@@ -27,7 +27,7 @@ LIB_DEPENDS=	faac.0:${PORTSDIR}/audio/faac \
 		a52.0:${PORTSDIR}/audio/liba52 \
 		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2	\
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		x264.85:${PORTSDIR}/multimedia/x264
+		x264.98:${PORTSDIR}/multimedia/x264
 RUN_DEPENDS=	mpeg4ip-libmp4v2>=1.6.1:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 
 USE_GNOME=	gtk20
