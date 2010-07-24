@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	cego
-PORTVERSION=	2.6.3
+PORTVERSION=	2.6.4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
-DISTNAME=	cego-${PORTVERSION}
 
 MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	A relational and transactional database system
