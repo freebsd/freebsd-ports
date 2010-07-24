@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.18
+PORTVERSION=	0.10.19
 CATEGORIES=	multimedia python gnome
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +19,8 @@ COMMENT=	A set of Python bindings for gstreamer
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
