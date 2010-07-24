@@ -7,14 +7,15 @@
 #
 
 PORTNAME=	biggles
-PORTVERSION=	1.6.5
-PORTREVISION=	1
+PORTVERSION=	1.6.6
 CATEGORIES=	math
 MASTER_SITES=	SF
 DISTNAME=	python2-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create publication-quality 2D scientific plots
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	plot:${PORTSDIR}/graphics/plotutils
