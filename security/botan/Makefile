@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	botan
-PORTVERSION=	1.8.8
-PORTREVISION=	1
+PORTVERSION=	1.8.9
 CATEGORIES=	security
 MASTER_SITES=	http://files.randombit.net/botan/v1.8/
 DISTNAME=	Botan-${PORTVERSION}
@@ -16,6 +15,9 @@ EXTRACT_SUFX=	.tbz
 
 MAINTAINER=	lapo@lapo.it
 COMMENT=	A portable, easy to use, and efficient C++ crypto library
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
 OPTIONS=	SSL "Enable OpenSSL engine" on \
 		GMP "Enable GMP engine" on \
