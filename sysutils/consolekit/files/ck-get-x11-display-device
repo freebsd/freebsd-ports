@@ -5,7 +5,6 @@ GREP="/usr/bin/grep"
 AWK="/usr/bin/awk"
 SED="/usr/bin/sed"
 CAT="/bin/cat"
-HEAD="/usr/bin/head"
 
 dispnum=0
 if [ x"$1" = x"--display" ]; then
@@ -25,11 +24,18 @@ if [ ! -f "/tmp/.X${dispnum}-lock" ]; then
 fi
 pid=$(${CAT} "/tmp/.X${dispnum}-lock")
 
-device=$(${FSTAT} -p ${pid} | ${GREP} ttyv | ${HEAD} -1 | ${AWK} '{print $8}')
+device=$(${FSTAT} -p ${pid} | ${GREP} ttyv | ${AWK} '{print $8}')
 
 if [ -z "${device}" ]; then
     echo "ERROR: Failed to find TTY device for X server on display ${dispnum}"
     exit 1
 fi
 
-echo "/dev/${device}"
+ret=""
+for dev in ${device}; do
+    if [ "${dev}" \> "${ret}" ]; then
+	ret=${dev}
+    fi
+done
+
+echo "/dev/${dev}"
