@@ -1,7 +1,8 @@
 bin/sigit
+bin/sigitdb
 @unexec if cmp -s %D/etc/sigit.rc.dist %D/etc/sigit.rc; then rm -f %D/etc/sigit.rc; fi
 etc/sigit.rc.dist
 @exec if [ ! -f %D/etc/sigit.rc ]; then cp %D/etc/%f %D/etc/sigit.rc; fi
-share/sigit/sigit.data
-share/sigit/sigit.sig
-@dirrm share/sigit
+%%DATADIR%%/sigit.data
+%%DATADIR%%/sigit.sig
+@dirrm %%DATADIR%%

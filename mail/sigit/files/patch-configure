@@ -1,0 +1,34 @@
+--- configure.orig	2003-07-28 19:47:51.000000000 +0200
++++ configure	2010-07-20 15:00:43.000000000 +0200
+@@ -1084,16 +1084,25 @@
+     echo $echo_front "Checking for POSIX threads... $echo_end" 1>&5
+ fi
+ cat <<EOF >__conftest.c
+-#include <unistd.h>
+ #include <pthread.h>
+-int count=0;
+-void *handle() { count++;}
+-int main() {
++#include <stdio.h>
++#define NUM_THREADS     5
++
++int count = 0;
++
++void *test_thread()
++{
++  count++;
++  pthread_exit(NULL);
++}
++
++int main (int argc, char *argv[])
++{
+   pthread_t thread;
+-  pthread_attr_t attr;
+-  pthread_create(&thread, &attr, handle, NULL);
++  pthread_create(&thread, NULL, test_thread, 0);
+   return 0;
+ }
++
+ EOF
+ 
+ if [ x"$PRELINK" = x ]; then

@@ -1,0 +1,11 @@
+--- data/Makefile.orig	2010-07-18 20:52:04.000000000 +0200
++++ data/Makefile	2010-07-18 20:52:39.000000000 +0200
+@@ -18,7 +18,7 @@
+ 	$(INSTALL) -d $(INSTALLROOT)$(ETCDIR)
+ 	$(INSTALL) -m $(MANMODE) sigit.data $(INSTALLROOT)$(PREFIX)
+ 	$(INSTALL) -m $(MANMODE) sigit.sig $(INSTALLROOT)$(PREFIX)
+-	$(INSTALL) -m $(MANMODE) sigit.rc $(INSTALLROOT)$(ETCDIR)
++	$(INSTALL) -m $(MANMODE) sigit.rc.dist $(INSTALLROOT)$(ETCDIR)
+ 
+ # and a way to remove it again.
+ uninstall:
