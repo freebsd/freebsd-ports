@@ -133,6 +133,8 @@ bin/ctest
 %%DATADIR%%/Modules/CheckTypeSizeMap.cmake.in
 %%DATADIR%%/Modules/CheckVariableExists.c
 %%DATADIR%%/Modules/CheckVariableExists.cmake
+%%DATADIR%%/Modules/Compiler/Clang-C.cmake
+%%DATADIR%%/Modules/Compiler/Clang-CXX.cmake
 %%DATADIR%%/Modules/Compiler/G95-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/GNU-C.cmake
 %%DATADIR%%/Modules/Compiler/GNU-CXX.cmake
@@ -209,6 +211,7 @@ bin/ctest
 %%DATADIR%%/Modules/FindGTK2.cmake
 %%DATADIR%%/Modules/FindGTest.cmake
 %%DATADIR%%/Modules/FindGettext.cmake
+%%DATADIR%%/Modules/FindGit.cmake
 %%DATADIR%%/Modules/FindGnuTLS.cmake
 %%DATADIR%%/Modules/FindGnuplot.cmake
 %%DATADIR%%/Modules/FindHDF5.cmake
@@ -378,6 +381,8 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/Haiku.cmake
 %%DATADIR%%/Modules/Platform/IRIX.cmake
 %%DATADIR%%/Modules/Platform/IRIX64.cmake
+%%DATADIR%%/Modules/Platform/Linux-Clang-C.cmake
+%%DATADIR%%/Modules/Platform/Linux-Clang-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linux-GNU-C.cmake
 %%DATADIR%%/Modules/Platform/Linux-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/Linux-GNU-Fortran.cmake
@@ -425,6 +430,7 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/Windows-Borland-C.cmake
 %%DATADIR%%/Modules/Platform/Windows-Borland-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-Borland.cmake
+%%DATADIR%%/Modules/Platform/Windows-G95-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Windows-GNU-C.cmake
 %%DATADIR%%/Modules/Platform/Windows-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-GNU-Fortran.cmake
@@ -524,7 +530,6 @@ bin/ctest
 %%DOCSDIR%%/cmcurl/COPYING
 %%DOCSDIR%%/cmexpat/COPYING
 %%DOCSDIR%%/cmsys/Copyright.txt
-%%DOCSDIR%%/cmtar/COPYRIGHT
 %%DOCSDIR%%/cmzlib/Copyright.txt
 %%DOCSDIR%%/cpack.docbook
 %%DOCSDIR%%/cpack.html
@@ -533,7 +538,6 @@ bin/ctest
 %%DOCSDIR%%/ctest.html
 %%DOCSDIR%%/ctest.txt
 @dirrm %%DOCSDIR%%/cmzlib
-@dirrm %%DOCSDIR%%/cmtar
 @dirrm %%DOCSDIR%%/cmsys
 @dirrm %%DOCSDIR%%/cmexpat
 @dirrm %%DOCSDIR%%/cmcurl
