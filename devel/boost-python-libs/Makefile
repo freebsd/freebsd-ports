@@ -35,6 +35,7 @@ BUILD_DEPENDS+=	${BJAM}:${PORTSDIR}/devel/boost-jam
 post-patch: customize-boost-build
 
 do-build:
+	${ECHO_CMD} "using python : " ${PYTHON_VER} ";" >> ${WRKSRC}/tools/build/v2/site-config.jam
 # build the library
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_OPTIONS} --prefix=${PREFIX}\
