@@ -7,14 +7,14 @@
 
 PORTNAME=	kallery
 PORTVERSION=	1.2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics www kde
 MASTER_SITES=	http://kallery.kdewebdev.org/releases/
 
 MAINTAINER=	metrol@metrol.net
 COMMENT=	An image gallery generator for KDE
 
-LIB_DEPENDS=	MagickCore.3:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	MagickCore.4:${PORTSDIR}/graphics/ImageMagick
 
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes

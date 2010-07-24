@@ -7,7 +7,7 @@
 
 PORTNAME=	reallyslick
 PORTVERSION=	0.9.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/rss-glx/rss-glx/${PORTVERSION}
 DISTNAME=	rss-glx_${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	rss-glx_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL screensaver collection
 
-LIB_DEPENDS=	MagickWand.3:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick \
 		GLC.0:${PORTSDIR}/graphics/quesoglc
 
 OPTIONS=	FREEALUT "Enable freealut support" off \

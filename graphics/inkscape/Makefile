@@ -7,7 +7,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.47
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		wpg-0.1.1:${PORTSDIR}/graphics/libwpg \
-		Magick++.3:${PORTSDIR}/graphics/ImageMagick
+		Magick++.4:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	${SITE_PERL}/XML/XQL.pm:${PORTSDIR}/textproc/p5-XML-XQL
 
 USE_BZIP2=	yes

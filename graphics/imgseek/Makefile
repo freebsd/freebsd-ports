@@ -7,7 +7,7 @@
 
 PORTNAME=	imgSeek
 PORTVERSION=	0.8.6
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -17,7 +17,7 @@ COMMENT=	A photo manager and viewer with content-based search
 BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		MagickWand.3:${PORTSDIR}/graphics/ImageMagick
+		MagickWand.4:${PORTSDIR}/graphics/ImageMagick
 
 USE_PYDISTUTILS=yes
 USE_PYTHON=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	autotrace
 PORTVERSION=	0.31.1
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/AutoTrace/${PORTVERSION}
 
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert bitmap to vector graphics
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
-    		MagickWand.3:${PORTSDIR}/graphics/ImageMagick
+    		MagickWand.4:${PORTSDIR}/graphics/ImageMagick
 
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes

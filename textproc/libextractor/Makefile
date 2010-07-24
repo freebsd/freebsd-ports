@@ -7,7 +7,7 @@
 
 PORTNAME=	libextractor
 PORTVERSION=	0.5.20b
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	http://gnunet.org/libextractor/download/
 
@@ -52,7 +52,7 @@ check: build
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/include/wand/magick-wand.h)
-LIB_DEPENDS+=	MagickWand.3:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 .if exists(${LOCALBASE}/include/vorbis/vorbisfile.h)
