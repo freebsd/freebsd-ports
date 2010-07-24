@@ -72,7 +72,6 @@ lib/libqwt.so
 lib/libqwt.so.5
 lib/libqwt.so.5.2
 lib/libqwt.so.5.2.1
-%%DESIGNER_PLUGIN%%lib/qt4/plugins/designer/libqwt_designer_plugin.so
 %%PORTDOCS%%%%DOCSDIR%%/analogclock.png
 %%PORTDOCS%%%%DOCSDIR%%/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_abstract_scale-members.html
@@ -728,6 +727,4 @@ lib/libqwt.so.5.2.1
 %%PORTDOCS%%%%DOCSDIR%%/tab_r.gif
 %%PORTDOCS%%%%DOCSDIR%%/tabs.css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%DESIGNER_PLUGIN%%@dirrmtry %%QT_PLUGINDIR_REL%%/designer
-%%DESIGNER_PLUGIN%%@dirrmtry %%QT_PLUGINDIR_REL%%
 @dirrm include/qwt

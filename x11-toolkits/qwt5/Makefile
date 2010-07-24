@@ -7,6 +7,7 @@
 
 PORTNAME=	qwt
 PORTVERSION=	5.2.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 
@@ -22,21 +23,10 @@ HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	DESIGNER_PLUGIN "Install plugin for Qt Designer" on
-
 STRIP_FILES=	lib/libqwt.so.${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.man>
-
-.if !defined(WITHOUT_DESIGNER_PLUGIN)
-QT_COMPONENTS+=	designer rcc_build
-QMAKE_ARGS+=	CONFIG+=QwtDesigner PLUGINDIR=${PREFIX}/${QT_PLUGINDIR_REL}
-PLIST_SUB+=	DESIGNER_PLUGIN=""
-STRIP_FILES+=	${QT_PLUGINDIR_REL}/designer/libqwt_designer_plugin.so
-.else
-PLIST_SUB+=	DESIGNER_PLUGIN="@comment "
-.endif
 
 do-configure:
 	(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS})

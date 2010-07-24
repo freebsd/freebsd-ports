@@ -1,0 +1,3 @@
+%%QT_PLUGINDIR_REL%%/designer/libqwt_designer_plugin.so
+@dirrmtry %%QT_PLUGINDIR_REL%%/designer
+@dirrmtry %%QT_PLUGINDIR_REL%%
