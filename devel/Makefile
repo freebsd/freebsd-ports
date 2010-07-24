@@ -696,6 +696,7 @@
     SUBDIR += lamson
     SUBDIR += lasi
     SUBDIR += lbpp
+    SUBDIR += lcov
     SUBDIR += leaktracer
     SUBDIR += lemon
     SUBDIR += lexi
