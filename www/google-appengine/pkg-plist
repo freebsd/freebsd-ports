@@ -47,7 +47,6 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/icons/appengine-40.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/icons/database-100.jpg
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/icons/paperpencil-40.gif
-%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/images.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/Antonin.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/ExternalEditorsConfiguration.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/FireLogger-Screenshot.png
@@ -65,6 +64,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/sf_onetile.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/index_building.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/java/serving_dynamic_images.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/life_of_write.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/load_test.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/load_test_screenshot.jpg
@@ -76,6 +76,8 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/paging.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/polymodel.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/pure_django.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/python/recording_exceptions_with_ereporter.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/python/serving_dynamic_images.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/remote_api.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/rietveld.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/rpc.html
@@ -91,16 +93,26 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/update_schema.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/using_xmpp.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/versions.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/business/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/business/roadmap.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/business/sla.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/business/support.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/casestudies.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/community.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/css/local_extensions.css
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/billing.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/domain.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/add_domain.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/add_new_urls.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/add_to_domain.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/authoptions.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/apis.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/blobstore/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/blobstore/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/config/appconfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/config/cron.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/config/dos.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/config/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/config/indexconfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/config/queue.html
@@ -125,6 +137,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/gettingstarted/usingjsps.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/gettingstarted/usingusers.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/howto/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/howto/maintenance.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/howto/unittesting.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/images/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/images/overview.html
@@ -135,13 +148,19 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore/BlobInfoFactory.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore/BlobKey.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore/BlobstoreFailureException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore/BlobstoreInputStream.BlobstoreIOException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore/BlobstoreInputStream.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore/BlobstoreService.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore/BlobstoreServiceFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore/ByteRange.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore/RangeFormatException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore/UnsupportedRangeFormatException.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/Blob.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/Category.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/CommittedButStillApplyingException.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/CompositeIndexManager.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/Cursor.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/DataTypeTranslator.ComparableByteArray.html
@@ -152,6 +171,8 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/DatastoreFailureException.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/DatastoreNeedIndexException.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/DatastoreService.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/DatastoreServiceConfig.Builder.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/DatastoreServiceConfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/DatastoreServiceFactory.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/DatastoreTimeoutException.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/Email.html
@@ -184,6 +205,8 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/QueryResultIterator.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/QueryResultList.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/Rating.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/ReadPolicy.Consistency.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/ReadPolicy.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/ShortBlob.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/Text.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/Transaction.html
@@ -242,6 +265,15 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/memcache/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/memcache/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/memcache/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/oauth/InvalidOAuthParametersException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/oauth/InvalidOAuthTokenException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/oauth/OAuthRequestException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/oauth/OAuthService.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/oauth/OAuthServiceFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/oauth/OAuthServiceFailureException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/oauth/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/oauth/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/oauth/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/quota/QuotaService.DataType.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/quota/QuotaService.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/quota/QuotaServiceFactory.html
@@ -267,6 +299,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/users/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/users/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/users/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/utils/FutureWrapper.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/utils/SystemProperty.Environment.Value.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/utils/SystemProperty.Environment.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/utils/SystemProperty.html
@@ -286,6 +319,10 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/xmpp/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/xmpp/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/xmpp/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/apphosting/api/DeadlineExceededException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/apphosting/api/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/apphosting/api/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/apphosting/api/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/constant-values.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/deprecated-list.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/dev_javadoc.css
@@ -305,17 +342,100 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/memcache/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/memcache/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/memcache/usingjcache.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/oauth/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/oauth/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/runtime.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/taskqueue/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/taskqueue/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/ant.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/appstats.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/devserver.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/eclipse.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/eclipse/ae_deploy_button.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/eclipse/new_app_button.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/eclipse/terminate_button.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/allclasses-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/BlobInfoStorage.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/BlobStorage.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/BlobStorageFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/BlobUploadSessionStorage.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/LocalBlobstoreService.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/ServeBlobFilter.ResponseWrapper.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/ServeBlobFilter.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/UploadBlobServlet.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/datastore/dev/LocalDatastoreService.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/datastore/dev/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/datastore/dev/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/datastore/dev/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/images/dev/LocalImagesService.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/images/dev/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/images/dev/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/images/dev/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/labs/taskqueue/dev/LocalTaskQueue.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/labs/taskqueue/dev/QueueStateInfo.HeaderWrapper.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/labs/taskqueue/dev/QueueStateInfo.TaskStateInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/labs/taskqueue/dev/QueueStateInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/labs/taskqueue/dev/UrlFetchJob.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/labs/taskqueue/dev/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/labs/taskqueue/dev/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/labs/taskqueue/dev/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/mail/dev/LocalMailService.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/mail/dev/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/mail/dev/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/mail/dev/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/memcache/dev/LocalMemcacheService.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/memcache/dev/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/memcache/dev/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/memcache/dev/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/urlfetch/dev/LocalURLFetchService.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/urlfetch/dev/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/urlfetch/dev/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/urlfetch/dev/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/users/dev/LocalLoginServlet.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/users/dev/LocalLogoutServlet.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/users/dev/LocalUserService.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/users/dev/LoginCookieUtils.CookieData.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/users/dev/LoginCookieUtils.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/users/dev/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/users/dev/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/users/dev/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/xmpp/dev/LocalXMPPService.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/xmpp/dev/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/xmpp/dev/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/xmpp/dev/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalBlobstoreServiceTestConfig.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalDatastoreServiceTestConfig.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalImagesServiceTestConfig.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalMailServiceTestConfig.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalMemcacheServiceTestConfig.SizeUnit.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalMemcacheServiceTestConfig.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalServiceTestConfig.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalServiceTestHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalTaskQueueTestConfig.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalURLFetchServiceTestConfig.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalUserServiceTestConfig.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalXMPPServiceTestConfig.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/constant-values.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/deprecated-list.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/dev_javadoc.css
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/help-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/index-all.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/overview-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/overview-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/overview-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/resources/inherit.gif
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/uploadinganapp.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/urlfetch/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/urlfetch/overview.html
@@ -327,12 +447,14 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/apis.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/blobstore/blobinfoclass.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/blobstore/blobkeyclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/blobstore/blobreaderclass.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/blobstore/exceptions.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/blobstore/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/blobstore/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/blobstore/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/config/appconfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/config/cron.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/config/dos.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/config/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/config/indexconfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/config/queue.html
@@ -367,6 +489,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/gettingstarted/usingusers.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/gettingstarted/usingwebapp.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/howto/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/howto/maintenance.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/howto/usinggdataservices.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/images/exceptions.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/images/functions.html
@@ -397,6 +520,10 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/memcache/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/memcache/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/memcache/usingmemcache.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/oauth/exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/oauth/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/oauth/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/oauth/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/runtime.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/taskqueue/exceptions.html
@@ -405,6 +532,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/taskqueue/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/taskqueue/queues.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/taskqueue/tasks.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/appstats.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/devserver.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/libraries.html
@@ -452,12 +580,15 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine-noborder-120x30.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine-silver-120x30.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine_lowres.gif
+%%PORTDOCS%%%%DOCSDIR%%/appengine/images/arrow-48.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/bestbuy-logo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/buddypoke.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/caucho-main-websafe.jpg
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/cloudstatus.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/demo_video.gif
+%%PORTDOCS%%%%DOCSDIR%%/appengine/images/docs.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/ezasset_brand_final.jpg
+%%PORTDOCS%%%%DOCSDIR%%/appengine/images/features-48.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/giftag_large.jpg
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/gigapan_logo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/lifeaware_weblogo.png
@@ -465,12 +596,12 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/socialwok.jpg
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/ubisoft-logo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/walkscore-logo.gif
-%%PORTDOCS%%%%DOCSDIR%%/appengine/images/whitehouse.jpg
 %%PORTDOCS%%%%DOCSDIR%%/appengine/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/js/customtabs.js
 %%PORTDOCS%%%%DOCSDIR%%/appengine/js/ui.tabs.js
 %%PORTDOCS%%%%DOCSDIR%%/appengine/kb/adminconsole.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/kb/billing.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/kb/business.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/kb/commontasks.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/kb/general.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/kb/index.html
@@ -479,6 +610,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/kb/sms.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/kb/status.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/kb/supported_carriers.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/kb/unappliedwrites.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/privacy.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/privacy_20080407.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/program_policies.html
@@ -526,6 +658,10 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/api/capabilities/__init__.py
 %%DATADIR%%/google/appengine/api/capabilities/capability_service_pb.py
 %%DATADIR%%/google/appengine/api/capabilities/capability_stub.py
+%%DATADIR%%/google/appengine/api/channel/__init__.py
+%%DATADIR%%/google/appengine/api/channel/channel.py
+%%DATADIR%%/google/appengine/api/channel/channel_service_pb.py
+%%DATADIR%%/google/appengine/api/channel/channel_service_stub.py
 %%DATADIR%%/google/appengine/api/croninfo.py
 %%DATADIR%%/google/appengine/api/datastore.py
 %%DATADIR%%/google/appengine/api/datastore_admin.py
@@ -697,8 +833,10 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/tools/appengine_rpc.py
 %%DATADIR%%/google/appengine/tools/bulkload_client.py
 %%DATADIR%%/google/appengine/tools/bulkloader.py
+%%DATADIR%%/google/appengine/tools/dev-channel-js.js
 %%DATADIR%%/google/appengine/tools/dev_appserver.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_blobstore.py
+%%DATADIR%%/google/appengine/tools/dev_appserver_channel.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_index.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_login.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_main.py
@@ -1653,6 +1791,7 @@ bin/remote_api_shell.py
 @dirrm %%DATADIR%%/google/appengine/api/labs/taskqueue
 @dirrm %%DATADIR%%/google/appengine/api/labs
 @dirrm %%DATADIR%%/google/appengine/api/images
+@dirrm %%DATADIR%%/google/appengine/api/channel
 @dirrm %%DATADIR%%/google/appengine/api/capabilities
 @dirrm %%DATADIR%%/google/appengine/api/blobstore
 @dirrm %%DATADIR%%/google/appengine/api
@@ -1674,6 +1813,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/tools/webapp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/tools
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/taskqueue
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/oauth
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/memcache
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/mail
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/images
@@ -1686,17 +1826,50 @@ bin/remote_api_shell.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/xmpp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/users
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/urlfetch
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/xmpp/dev
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/xmpp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/users/dev
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/users
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/urlfetch/dev
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/urlfetch
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/memcache/dev
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/memcache
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/mail/dev
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/mail
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/labs/taskqueue/dev
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/labs/taskqueue
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/labs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/images/dev
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/datastore/dev
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/datastore
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/eclipse
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/taskqueue
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/oauth
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/memcache
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/mail
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/apphosting/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/apphosting
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/xmpp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/utils
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/users
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/urlfetch
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/quota
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/oauth
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/memcache
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/mail
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/labs/taskqueue
@@ -1716,9 +1889,13 @@ bin/remote_api_shell.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/config
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/blobstore
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/business
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/articles/scaling
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/articles/python
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/articles/java
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/articles/img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/articles/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/articles/extending_models
