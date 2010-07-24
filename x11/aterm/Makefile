@@ -18,7 +18,7 @@ USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 # `+=' is for slave ports
 CONFIGURE_ARGS+=	--enable-transparency \
-			--enable-fading --enable-utmp --enable-wtmp \
+			--enable-fading --enable-wtmp \
 			--without-afterstep-config
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
@@ -26,7 +26,9 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
+CONFIGURE_ARGS+=	--disable-utmp
+.else
+CONFIGURE_ARGS+=	--enable-utmp
 .endif
 
 .if !defined(WITHOUT_BACKGROUND_IMAGE)
