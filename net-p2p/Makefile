@@ -106,6 +106,7 @@
     SUBDIR += py-vertex
     SUBDIR += pyslsk
     SUBDIR += qbittorrent-22
+    SUBDIR += qbittorrent-23
     SUBDIR += qtella
     SUBDIR += qtorrent
     SUBDIR += rtgui
