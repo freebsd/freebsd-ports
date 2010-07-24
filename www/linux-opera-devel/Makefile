@@ -7,6 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/ \
 		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/${OPERA_VER:S/.//}/ \
@@ -98,7 +99,8 @@ post-patch:
 		s|opera)|${UNIQUENAME})|g ; \
 		s|opera-widget-manager)|${UNIQUENAME}-widget-manager)|g ; \
 		s|^.*rmdir.*mime/packages.*||g ; \
-		s|^.*GX - bin/uninstall-opera@.*||g' \
+		s|^.*GX - bin/uninstall-opera@.*||g ; \
+		s|[$$]tempdir/damaged|${WRKSRC}/damaged|g' \
 			${WRKSRC}/install
 	@${REINPLACE_CMD} -e '/^Name/s|$$| (Linux version)|g ; \
 		/Exec/s|opera|${UNIQUENAME}|g ; \
