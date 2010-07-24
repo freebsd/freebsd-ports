@@ -159,9 +159,9 @@ lib/soprano/libsoprano_nquadparser.so
 lib/soprano/libsoprano_nquadserializer.so
 lib/soprano/libsoprano_raptorparser.so
 lib/soprano/libsoprano_raptorserializer.so
-%%REDLAND%%lib/soprano/libsoprano_redlandbackend.so
+lib/soprano/libsoprano_redlandbackend.so
 %%SESAME2%%lib/soprano/libsoprano_sesame2backend.so
-%%VIRTUOSO%%lib/soprano/libsoprano_virtuosobackend.so
+lib/soprano/libsoprano_virtuosobackend.so
 libdata/pkgconfig/soprano.pc
 libdata/pkgconfig/sopranoclient.pc
 libdata/pkgconfig/sopranoindex.pc
@@ -176,9 +176,9 @@ share/dbus-1/interfaces/org.soprano.StatementIterator.xml
 %%DATADIR%%/plugins/nquadserializer.desktop
 %%DATADIR%%/plugins/raptorparser.desktop
 %%DATADIR%%/plugins/raptorserializer.desktop
-%%REDLAND%%%%DATADIR%%/plugins/redlandbackend.desktop
+%%DATADIR%%/plugins/redlandbackend.desktop
 %%SESAME2%%%%DATADIR%%/plugins/sesame2backend.desktop
-%%VIRTUOSO%%%%DATADIR%%/plugins/virtuosobackend.desktop
+%%DATADIR%%/plugins/virtuosobackend.desktop
 %%DATADIR%%/rules/nrl.rules
 %%DATADIR%%/rules/rdfs.rules
 %%SESAME2%%%%DATADIR%%/sesame2/openrdf-sesame-2.2.4-onejar.jar
