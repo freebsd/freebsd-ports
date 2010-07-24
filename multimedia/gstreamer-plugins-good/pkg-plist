@@ -121,6 +121,7 @@ share/locale/pl/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/pt_BR/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/ru/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/sk/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
+share/locale/sl/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/sq/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-good-%%VERSION%%.mo
