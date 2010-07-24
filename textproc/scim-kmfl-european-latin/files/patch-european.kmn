@@ -1,5 +1,5 @@
---- european.kmn	2009-11-20 01:07:20.000000000 +0000
-+++ work/european.kmn	2009-11-20 01:07:56.000000000 +0000
+--- european.kmn.orig	2010-06-29 10:41:38.000000000 +0000
++++ european.kmn	2010-06-29 10:42:30.000000000 +0000
 @@ -5,15 +5,15 @@
  
  VERSION 7.0
@@ -18,4 +18,13 @@
 +c store(&KMW_EmbedJS) 'european_js.txt'
  
  begin Unicode > use(Main)
+ 
+@@ -70,7 +70,7 @@
+ store(ringO) 'åÅůŮ'
+ store(ringK) 'aAuU'
+ 
+-c \
++c backslash
+ store(specialO) 'ĸŉſÐðØø¡¦§¨©ª¬­®¯°±²³´µ¶·¸¹º¿×÷†‡‰–—•'
+ store(specialK) "knsDdOo!|S:cf~-r_*+23'uP.,1m?x/tT%NM>"
  

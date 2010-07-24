@@ -6,7 +6,7 @@
 
 PORTNAME=	scim-kmfl-european-latin
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://eurolatin.keymankeyboards.com/ \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
