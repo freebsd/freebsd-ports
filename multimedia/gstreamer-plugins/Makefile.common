@@ -476,11 +476,7 @@ gst_vorbis_PLIST_FILES=	${GST_LIB_DIR}/libgstvorbis.la \
 gst_vorbis_DIST=	base
 
 # x264
-.if exists(${LOCALBASE}/lib/libx264.so.93)
-gst_x264_LIB_DEPENDS+=	x264.93:${PORTSDIR}/multimedia/x264-devel
-.else
-gst_x264_LIB_DEPENDS+=	x264.85:${PORTSDIR}/multimedia/x264
-.endif
+gst_x264_LIB_DEPENDS+=	x264.98:${PORTSDIR}/multimedia/x264
 gst_x264_PLIST_FILES=	${GST_LIB_DIR}/libgstx264.la \
 		${GST_LIB_DIR}/libgstx264.so \
 		share/gstreamer-${VERSION}/presets/GstX264Enc.prs

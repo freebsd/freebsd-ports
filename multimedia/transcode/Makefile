@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://fromani.exit1.org/
@@ -117,7 +117,7 @@ CONFIGURE_ARGS+=	--disable-xvid
 .endif
 
 .if defined(WITH_X264)
-LIB_DEPENDS+=	x264.85:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.98:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=	--with-x264-prefix=${LOCALBASE} --enable-x264
 .else
 CONFIGURE_ARGS+=	--disable-x264
