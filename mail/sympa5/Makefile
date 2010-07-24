@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES?=	http://www.sympa.org/distribution/
 
-MAINTAINER=	Olivier.Girard@univ-angers.fr
+MAINTAINER=	utisoft@gmail.com
 COMMENT=	Sympa is an electronic mailing list manager
 
 BUILD_DEPENDS+=	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
