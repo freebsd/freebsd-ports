@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 PKGNAMESUFFIX=	-gtk2
 
 MAINTAINER=	mezz@FreeBSD.org
@@ -25,9 +25,6 @@ SLAVEPORT=	gtk2
 USE_GNOME=	gnometarget gnomehack gtk20 desktopfileutils intlhack
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 EXTRA_CONF_ARGS=--disable-cli \
 		--disable-daemon \

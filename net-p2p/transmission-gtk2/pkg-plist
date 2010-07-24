@@ -39,6 +39,7 @@ share/locale/fo/LC_MESSAGES/transmission.mo
 share/locale/fr/LC_MESSAGES/transmission.mo
 share/locale/ga/LC_MESSAGES/transmission.mo
 share/locale/gl/LC_MESSAGES/transmission.mo
+share/locale/gv/LC_MESSAGES/transmission.mo
 share/locale/he/LC_MESSAGES/transmission.mo
 share/locale/hi/LC_MESSAGES/transmission.mo
 share/locale/hr/LC_MESSAGES/transmission.mo
@@ -91,6 +92,8 @@ share/pixmaps/transmission.png
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
+@dirrmtry share/locale/gv/LC_MESSAGES
+@dirrmtry share/locale/gv
 @dirrmtry share/locale/fo/LC_MESSAGES
 @dirrmtry share/locale/fo
 @dirrmtry share/locale/fil/LC_MESSAGES

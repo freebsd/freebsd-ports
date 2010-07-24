@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	1.93
+PORTVERSION=	2.03
 PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
@@ -20,15 +20,18 @@ SLAVEPORT?=
 LIB_DEPENDS?=	${GEN_LIB_DEPENDS}
 
 # General dependencies
-GEN_LIB_DEPENDS=curl.6:${PORTSDIR}/ftp/curl
+GEN_LIB_DEPENDS=curl.6:${PORTSDIR}/ftp/curl \
+		event-1.4.3:${PORTSDIR}/devel/libevent
 GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission-web
 
 USE_GMAKE=	yes
 USE_GNOME?=	pkgconfig
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=--with-ssl=${OPENSSLBASE} \
-		--with-zlib=/usr \
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
+CONFIGURE_ARGS=--with-zlib=/usr \
 		--disable-libappindicator \
 		--disable-gconf2 \
 		${EXTRA_CONF_ARGS}
@@ -43,14 +46,12 @@ MAN1?=		transmissioncli.1
 EXTRA_PATCHES=	${PATCHDIR}/disable-web
 .endif
 
-USE_BZIP2=	yes
+USE_XZ=	yes
 
 DOCS=		AUTHORS COPYING NEWS README
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 general-patch:
-	@${REINPLACE_CMD} -e 's|SUBDIRS = . sample.*|SUBDIRS = .|g' \
-		${WRKSRC}/third-party/libevent/Makefile.in
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|noinst_PROGRAMS = |noinst_PROGRAMS = #|g'
 .if ${SLAVEPORT}!="gtk2"
@@ -59,10 +60,9 @@ general-patch:
 .endif
 	@${REINPLACE_CMD} -e \
 		's|_pthread_flags=".*"|_pthread_flags="${PTHREAD_LIBS}"|g ; \
-		s|libevent_source=system|libevent_source=bundled|g' \
+		s|rt_clock_gettime=yes|rt_clock_gettime=no|g ; \
+		s|" == "|" = "|g ; s|$$with_ssl.*/usr;|${OPENSSLBASE};|g' \
 			${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-lrt||g' \
-		${WRKSRC}/third-party/libevent/configure
 	@${REINPLACE_CMD} -e 's|doc \\| \\|g' \
 		${WRKSRC}/Makefile.in
 
