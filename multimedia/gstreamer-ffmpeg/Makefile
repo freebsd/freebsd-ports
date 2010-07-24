@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.10
+PORTVERSION=	0.10.11
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
 PKGNAMESUFFIX=	-ffmpeg
@@ -15,6 +15,8 @@ DISTNAME=	gst-ffmpeg-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer plug-in for manipulating MPEG video streams
+
+LIB_DEPENDS=	orc-0.4.0:${PORTSDIR}/devel/orc
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 USE_BZIP2=	yes
@@ -43,5 +45,7 @@ post-patch:
 		${WRKSRC}/gst-libs/ext/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|g'\
 		${WRKSRC}/gst-libs/ext/ffmpeg/doc/texi2pod.pl
+	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
