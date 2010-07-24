@@ -1,0 +1,16 @@
+===============================================================================
+
+Standart GOST font. GOST 2.304-81
+Pay attention to copyright issues before any commercial use of this fonts.
+Copyright (c) 1996-2010. ASCON. All Rights Reserved.
+
+===============================================================================
+
+Make sure that the freetype module is loaded.  If it is not, add the following
+line to the "Modules" section of your X Windows configuration file:
+
+        Load "freetype"
+
+Add the following line to the "Files" section of X Windows configuration file:
+
+        FontPath "%%FONTSDIR%%/"
