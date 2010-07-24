@@ -7,7 +7,7 @@
 
 PORTNAME=	qwt
 PORTVERSION=	5.2.1
-CATEGORIES=	x11-toolkits
+CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-designerplugin
 
