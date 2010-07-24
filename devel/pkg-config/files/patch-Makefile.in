@@ -1,11 +1,11 @@
---- Makefile.in.orig	Tue Apr 12 13:47:14 2005
-+++ Makefile.in	Tue Apr 12 13:48:21 2005
-@@ -18,7 +18,7 @@
- top_srcdir = @top_srcdir@
+--- Makefile.in.orig	2010-05-28 11:55:55.000000000 -0400
++++ Makefile.in	2010-07-24 14:52:26.000000000 -0400
+@@ -19,7 +19,7 @@
  VPATH = @srcdir@
  pkgdatadir = $(datadir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
 -pkglibdir = $(libdir)/@PACKAGE@
 +pkglibdir = $(prefix)/libdata/@PACKAGE@
- pkgincludedir = $(includedir)/@PACKAGE@
- top_builddir = .
- 
+ pkglibexecdir = $(libexecdir)/@PACKAGE@
+ am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
+ install_sh_DATA = $(install_sh) -c -m 644

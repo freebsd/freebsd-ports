@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pkg-config
-PORTVERSION=	0.23
-PORTREVISION=	1
+PORTVERSION=	0.25
 CATEGORIES=	devel
 MASTER_SITES=	http://pkgconfig.freedesktop.org/releases/
 DIST_SUBDIR=	gnome2
