@@ -7,7 +7,7 @@
 
 PORTNAME=	calibre
 PORTVERSION=	0.6.27
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils python
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
 		http://calibre-ebook.googlecode.com/files/
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Ebook management application
 
-LIB_DEPENDS=	MagickWand.3:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
 		wmflite:${PORTSDIR}/graphics/libwmf

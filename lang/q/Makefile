@@ -7,14 +7,14 @@
 
 PORTNAME=	q
 PORTVERSION=	7.11
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}-lang/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Q -- equational programming language
 
-LIB_DEPENDS=	MagickWand.3:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick \
     		curl.6:${PORTSDIR}/ftp/curl \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm \

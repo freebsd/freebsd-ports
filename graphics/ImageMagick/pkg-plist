@@ -68,6 +68,7 @@ include/ImageMagick/magick/hashmap.h
 include/ImageMagick/magick/histogram.h
 include/ImageMagick/magick/identify.h
 include/ImageMagick/magick/image.h
+include/ImageMagick/magick/image-view.h
 include/ImageMagick/magick/layer.h
 include/ImageMagick/magick/list.h
 include/ImageMagick/magick/locale_.h
@@ -134,9 +135,9 @@ include/ImageMagick/wand/magick-wand.h
 include/ImageMagick/wand/mogrify.h
 include/ImageMagick/wand/montage.h
 include/ImageMagick/wand/pixel-iterator.h
-include/ImageMagick/wand/pixel-view.h
 include/ImageMagick/wand/pixel-wand.h
 include/ImageMagick/wand/stream.h
+include/ImageMagick/wand/wand-view.h
 lib/ImageMagick-%%PORTVERSION%%/config/configure.xml
 lib/ImageMagick-%%PORTVERSION%%/config/delegates.xml
 lib/ImageMagick-%%PORTVERSION%%/config/english.xml
@@ -174,6 +175,8 @@ lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/.keep
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/dcm.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/dds.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/dds.so
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/debug.la
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/debug.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/dib.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/dib.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/dng.la
@@ -370,15 +373,15 @@ lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters/.keep
 lib/libMagick++.a
 lib/libMagick++.la
 lib/libMagick++.so
-lib/libMagick++.so.3
+lib/libMagick++.so.4
 lib/libMagickCore.a
 lib/libMagickCore.la
 lib/libMagickCore.so
-lib/libMagickCore.so.3
+lib/libMagickCore.so.4
 lib/libMagickWand.a
 lib/libMagickWand.la
 lib/libMagickWand.so
-lib/libMagickWand.so.3
+lib/libMagickWand.so.4
 libdata/pkgconfig/ImageMagick++.pc
 libdata/pkgconfig/Magick++.pc
 libdata/pkgconfig/ImageMagick.pc
@@ -1223,6 +1226,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/fx.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/histogram.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/image.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/image-view.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/layer.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/list.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/magick-deprecate.html
@@ -1252,6 +1256,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/stream.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/transform.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/version.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/wand-view.html
 %%PORTDOCS%%%%DOCSDIR%%/www/architecture.html
 %%PORTDOCS%%%%DOCSDIR%%/www/binary-releases.html
 %%PORTDOCS%%%%DOCSDIR%%/www/changelog.html

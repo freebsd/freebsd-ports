@@ -7,7 +7,7 @@
 
 PORTNAME=	kismet
 PORTVERSION=	200805.r1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/
 DISTNAME=	kismet-2008-05-R1
@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=--disable-setuid
 PLIST_SUB+=	GPS=""
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp \
 		expat.6:${PORTSDIR}/textproc/expat2 \
-		Magick++.3:${PORTSDIR}/graphics/ImageMagick
+		Magick++.4:${PORTSDIR}/graphics/ImageMagick
 BUILD_DEPENDS+=	wget:${PORTSDIR}/ftp/wget
 MAN1=		gpsmap.1
 .else

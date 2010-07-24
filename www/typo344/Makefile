@@ -7,7 +7,7 @@
 
 PORTNAME=	typo3
 PORTVERSION=	4.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_src-${PORTVERSION}
@@ -43,7 +43,7 @@ USE_PHP+=	zlib
 .endif
 
 .if defined(WITH_IMAGICK)
-LIB_DEPENDS+=	MagickWand.3:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 pre-install:

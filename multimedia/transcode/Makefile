@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.5
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://fromani.exit1.org/
@@ -209,7 +209,7 @@ CONFIGURE_ARGS+=	--disable-sdl
 .endif
 
 .if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	MagickWand.3:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick
 CONFIGURE_ARGS+=	--with-imagemagick-prefix=${LOCALBASE} --enable-imagemagick
 .else
 CONFIGURE_ARGS+=	--disable-imagemagick
