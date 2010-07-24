@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.29
-PORTREVISION=	1
+PORTVERSION=	0.10.30
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
 		GNOME
@@ -18,9 +17,10 @@ COMMENT=	Development framework for creating media applications
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/GLib-2.0.gir:${PORTSDIR}/devel/gobject-introspection
 
+LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 USE_BISON=	build
 USE_XORG=	x11 xv xext videoproto xextproto
