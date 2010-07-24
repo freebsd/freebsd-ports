@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	2.9.10
-PORTREVISION=	1
+PORTVERSION=	2.11.0
 CATEGORIES=	security net
-MASTER_SITES=	http://alpha.gnu.org/gnu/gnutls/
+MASTER_SITES=	http://alpha.gnu.org/gnu/gnutls/ \
+		ftp://ftp.gnutls.org/pub/gnutls/devel/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	novel@FreeBSD.org
