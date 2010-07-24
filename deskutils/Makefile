@@ -44,6 +44,7 @@
     SUBDIR += drivel
     SUBDIR += ecru
     SUBDIR += egroupware
+    SUBDIR += epoch
     SUBDIR += estickies
     SUBDIR += etask
     SUBDIR += etoile-corner
