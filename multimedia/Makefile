@@ -236,6 +236,7 @@
     SUBDIR += p5-Video-OpenQuicktime
     SUBDIR += phonon
     SUBDIR += phonon-gstreamer
+    SUBDIR += phonon-vlc
     SUBDIR += phonon-xine
     SUBDIR += playd
     SUBDIR += playd2
