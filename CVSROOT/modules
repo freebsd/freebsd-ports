@@ -22831,6 +22831,8 @@ seam-carving-gui                ports/graphics/seam-carving-gui
 seamonkey                       ports/www/seamonkey
 seamonkey2                      ports/www/seamonkey2
 seamonkey2-i18n                 ports/www/seamonkey2-i18n
+searchandrescue                 ports/games/searchandrescue
+searchandrescue-data            ports/games/searchandrescue-data
 searchmonkey                    ports/sysutils/searchmonkey
 seatools                        ports/sysutils/seatools
 seaview                         ports/biology/seaview
