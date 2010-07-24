@@ -1,0 +1,7 @@
+************************************************************************
+Please note that code-coverage is not fully supported on FreeBSD and
+cutter will crash when used to generate a report.  The problem has been
+reported upstream and no fix is available ATM. However, a workaround has
+been found: adding the '--keep-opening-modules' argument to cutter's
+command-line circumvents the problem.
+************************************************************************
