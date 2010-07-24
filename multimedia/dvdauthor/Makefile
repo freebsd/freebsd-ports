@@ -15,6 +15,7 @@ MAINTAINER=	pb@FreeBSD.org
 COMMENT=	Makes a DVD file structure from one or more MPEG2 streams
 
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread \
+		fribidi.3:${PORTSDIR}/converters/fribidi \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_BISON=	build
@@ -28,9 +29,6 @@ MAN1=	dvdauthor.1 dvddirdel.1 dvdunauthor.1 mpeg2desc.1 spumux.1 spuunmux.1
 .if exists(${LOCALBASE}/lib/libfreetype.so.9)
 WITH_FREETYPE=		yes
 .endif
-.if exists(${LOCALBASE}/lib/libfridibi.so.3)
-WITH_FRIBIDI=		yes
-.endif
 .if exists(${LOCALBASE}/lib/libiconv.so)
 WITH_ICONV=		yes
 .endif
@@ -40,9 +38,6 @@ WITH_IMAGEMAGICK=	yes
 
 .if defined(WITH_FREETYPE)
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-.endif
-.if defined(WITH_FRIBIDI)
-LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
 .endif
 .if defined(WITH_ICONV)
 USE_ICONV=	yes
@@ -57,10 +52,6 @@ LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
 pre-everything::
 .if !defined(WITH_FREETYPE)
 	@${ECHO_MSG} "You can enable Freetype support by defining WITH_FREETYPE."
-	@${ECHO_MSG}
-.endif
-.if !defined(WITH_FRIBIDI)
-	@${ECHO_MSG} "You can enable FriBidi support by defining WITH_FRIBIDI."
 	@${ECHO_MSG}
 .endif
 .if !defined(WITH_ICONV)
