@@ -1,2 +1,5 @@
 Phonon is multimedia framework for QT4/KDE4.
 This port provides GStreamer backend.
+
+WWW:	http://www.gstreamer.net
+WWW:	http://phonon.kde.org

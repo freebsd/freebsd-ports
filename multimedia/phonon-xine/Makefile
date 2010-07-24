@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-xine
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Phonon xine backend
+COMMENT=	The xine backend for Phonon
 
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
 
