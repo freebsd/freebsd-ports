@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sigit
-PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.redhead.dk/download/stable/
 DISTNAME=	Sigit-${PORTVERSION}
@@ -15,15 +14,23 @@ DISTNAME=	Sigit-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to create random signatures
 
-USE_PERL5=	yes
-USE_GMAKE=	yes
-WRKSRC=	${WRKDIR}/sigit-${PORTVERSION}
+BUILD_DEPENDS=	${LOCALBASE}/bin/boxes:${PORTSDIR}/misc/boxes
 
-MAN1=	sigit.1 sigit.rc.1
+LICENSE=	GPLv2
+
+USE_PERL5_BUILD=	yes
+USE_GMAKE=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${DATADIR} \
+		--bin-dir=${PREFIX}/bin \
+		--man-dir=${PREFIX}/man \
+		--etc-dir=${PREFIX}/etc
+
+MAN1=	sigit.1 sigitdb.1
+MAN5=	sigit.rc.5
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/etc/sigit.rc,${PREFIX}/etc/sigit.rc,; \
-		s,/usr/share/sigit,${DATADIR},' ${WRKSRC}/config.h
+	@${MV} ${WRKSRC}/data/sigit.rc ${WRKSRC}/data/sigit.rc.dist
 
 post-install:
 	@(if [ ! -f ${PREFIX}/etc/sigit.rc ]; then \
