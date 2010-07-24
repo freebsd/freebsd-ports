@@ -1,0 +1,8 @@
+Cutter is a xUnit family Unit Testing Framework for C and C++.
+
+This is a list of features of Cutter:
+ - easy to write tests;
+ - outputs result with useful format for debugging;
+ - tests are built as shared libraries.
+
+WWW:	http://cutter.sourceforge.net/
