@@ -591,6 +591,7 @@
     SUBDIR += nwndata
     SUBDIR += odamex
     SUBDIR += oilwar
+    SUBDIR += oldrunner
     SUBDIR += omega
     SUBDIR += oneko
     SUBDIR += oneko-sakura
