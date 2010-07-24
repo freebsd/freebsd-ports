@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	pinot
-PORTVERSION=	0.95
-PORTREVISION=	5
+PORTVERSION=	0.96
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
-#MASTER_SITES=	http://www.chez.com/colinf/pinot/
+#MASTER_SITES=	http://colinf.chez.com/pinot/
 #		http://amra.dyndns.org/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -80,7 +79,7 @@ post-extract:
 	${FIND} ${WRKSRC}/po -name "*.gmo" -delete
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|-lthr|${PTHREAD_LIBS}|' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|'	\
 		${LM2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|'	\
