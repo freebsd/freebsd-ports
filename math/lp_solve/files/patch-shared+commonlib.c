@@ -18,7 +18,7 @@
 +  struct timezone tz;
 +
 +  gettimeofday(&tv, &tz);
-+  return((double)tv.tv_sec+((double)tv.tv_usec)/1000.0);
++  return((double)tv.tv_sec+((double)tv.tv_usec)/1000000.0);
  
 -  ftime(&buf);
 -  return((double)buf.time+((double) buf.millitm)/1000.0);
