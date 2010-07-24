@@ -6,7 +6,7 @@
 #    $MCom: ports/multimedia/gstreamer-plugins-ugly/Makefile,v 1.13 2008/03/19 14:05:37 ahze Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 COMMENT=	Ugly gstreamer-plugins
@@ -17,6 +17,7 @@ GST_PLUGIN_SUFFIX=	-ugly
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
 BUILD_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
+LIB_DEPENDS+=	oil-0.3.0:${PORTSDIR}/devel/liboil
 RUN_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
 
 gst_ugly_DIST=	ugly
