@@ -50,7 +50,7 @@
 +#if 0
    int dst_pix_fmt = PIX_FMT_RGBA32;
 +#else
-+  PixelFormat dst_pix_fmt = PIX_FMT_RGBA32;
++  PixelFormat dst_pix_fmt = PIX_FMT_RGB32;
 +#endif
    int got_picture;
    int len;

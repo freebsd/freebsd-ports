@@ -7,6 +7,7 @@
 
 PORTNAME=	flv2mpeg4
 DISTVERSION=	20061129
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://src4.narod.ru/
 

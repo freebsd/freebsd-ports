@@ -7,6 +7,7 @@
 
 PORTNAME=	alsa-plugins
 PORTVERSION=	1.0.23
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.silug.org/pub/alsa/plugins/ \
 		ftp://gd.tuwien.ac.at/opsys/linux/alsa/plugins/ \

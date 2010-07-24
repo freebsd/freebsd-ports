@@ -7,6 +7,7 @@
 
 PORTNAME=	libomxil-bellagio
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/omxil/omxil/Bellagio%200.9.1
 
