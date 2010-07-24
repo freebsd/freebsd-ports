@@ -26,12 +26,11 @@ COMMENT?=	GStreamer written collection of plugins handling several media types
 
 BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS+=	gstreamer-0.10.0:${PORTSDIR}/multimedia/gstreamer \
-		popt.0:${PORTSDIR}/devel/popt \
-		oil-0.3.0:${PORTSDIR}/devel/liboil
+		orc-0.4.0:${PORTSDIR}/devel/orc
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 
-BASE_PORTVERSION=	0.10.29
+BASE_PORTVERSION=	0.10.30
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
 BAD_PORTVERSION=	0.10.19
