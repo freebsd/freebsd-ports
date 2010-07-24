@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-gstreamer
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Phonon gstreamer backend
+COMMENT=	The GStreamer backend for Phonon
 
 CONFLICTS=	qt4-phonon-gst-4*
 
