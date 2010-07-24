@@ -7,6 +7,7 @@
 
 PORTNAME=	gost
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://sd.ascon.ru/ftp/Public/Utils/DWG-DXF/ \
 		http://fbsd.zlonet.ru/distfiles/
@@ -22,7 +23,8 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 FONTSDIR=	${PREFIX}/lib/X11/fonts/gost
-
+SUB_FILES=	pkg-message
+SUB_LIST=	FONTSDIR=${FONTSDIR}
 WRKSRC=		${WRKDIR}/Fonts
 
 do-install:
@@ -31,14 +33,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.TTF ${FONTSDIR}
 
 post-install:
-	${ECHO_MSG} "===> Running fc-cache"
+	@${ECHO_MSG} "===> Running fc-cache"
 	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
-	${ECHO_MSG}
-	${CAT} ${PKGMESSAGE}
-	${ECHO_MSG}
-	@${ECHO_MSG} "Standart GOST font. GOST 2.304-81"
-	@${ECHO_MSG} "Pay attention to copyright issues before\
-		any commercial use this fonts."
-	@${ECHO_MSG} "Copyright (c) 1996-2010. ASCON. All Rights Reserved."
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
