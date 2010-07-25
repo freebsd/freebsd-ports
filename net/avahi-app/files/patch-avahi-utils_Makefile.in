@@ -1,23 +1,23 @@
---- avahi-utils/Makefile.in.orig	2008-07-03 14:46:57.000000000 -0500
-+++ avahi-utils/Makefile.in	2008-07-03 14:48:35.000000000 -0500
-@@ -489,16 +489,16 @@
- 	done
+--- avahi-utils/Makefile.in.orig	2010-07-24 19:59:10.000000000 -0400
++++ avahi-utils/Makefile.in	2010-07-24 20:00:07.000000000 -0400
+@@ -513,16 +513,16 @@ clean-binPROGRAMS:
+ 	rm -f $$list
  avahi-browse$(EXEEXT): $(avahi_browse_OBJECTS) $(avahi_browse_DEPENDENCIES) 
  	@rm -f avahi-browse$(EXEEXT)
--	$(avahi_browse_LINK) $(avahi_browse_OBJECTS) $(avahi_browse_LDADD) $(LIBS)
-+	$(avahi_browse_LINK) $(avahi_browse_OBJECTS) $(avahi_browse_LDADD) $(LIBS) $(INTLLIBS)
+-	$(AM_V_CCLD)$(avahi_browse_LINK) $(avahi_browse_OBJECTS) $(avahi_browse_LDADD) $(LIBS)
++	$(AM_V_CCLD)$(avahi_browse_LINK) $(avahi_browse_OBJECTS) $(avahi_browse_LDADD) $(LIBS) $(INTLLIBS)
  avahi-publish$(EXEEXT): $(avahi_publish_OBJECTS) $(avahi_publish_DEPENDENCIES) 
  	@rm -f avahi-publish$(EXEEXT)
--	$(avahi_publish_LINK) $(avahi_publish_OBJECTS) $(avahi_publish_LDADD) $(LIBS)
-+	$(avahi_publish_LINK) $(avahi_publish_OBJECTS) $(avahi_publish_LDADD) $(LIBS) $(INTLLIBS)
+-	$(AM_V_CCLD)$(avahi_publish_LINK) $(avahi_publish_OBJECTS) $(avahi_publish_LDADD) $(LIBS)
++	$(AM_V_CCLD)$(avahi_publish_LINK) $(avahi_publish_OBJECTS) $(avahi_publish_LDADD) $(LIBS) $(INTLLIBS)
  avahi-resolve$(EXEEXT): $(avahi_resolve_OBJECTS) $(avahi_resolve_DEPENDENCIES) 
  	@rm -f avahi-resolve$(EXEEXT)
--	$(avahi_resolve_LINK) $(avahi_resolve_OBJECTS) $(avahi_resolve_LDADD) $(LIBS)
-+	$(avahi_resolve_LINK) $(avahi_resolve_OBJECTS) $(avahi_resolve_LDADD) $(LIBS) $(INTLLIBS)
+-	$(AM_V_CCLD)$(avahi_resolve_LINK) $(avahi_resolve_OBJECTS) $(avahi_resolve_LDADD) $(LIBS)
++	$(AM_V_CCLD)$(avahi_resolve_LINK) $(avahi_resolve_OBJECTS) $(avahi_resolve_LDADD) $(LIBS) $(INTLLIBS)
  avahi-set-host-name$(EXEEXT): $(avahi_set_host_name_OBJECTS) $(avahi_set_host_name_DEPENDENCIES) 
  	@rm -f avahi-set-host-name$(EXEEXT)
--	$(avahi_set_host_name_LINK) $(avahi_set_host_name_OBJECTS) $(avahi_set_host_name_LDADD) $(LIBS)
-+	$(avahi_set_host_name_LINK) $(avahi_set_host_name_OBJECTS) $(avahi_set_host_name_LDADD) $(LIBS) $(INTLLIBS)
+-	$(AM_V_CCLD)$(avahi_set_host_name_LINK) $(avahi_set_host_name_OBJECTS) $(avahi_set_host_name_LDADD) $(LIBS)
++	$(AM_V_CCLD)$(avahi_set_host_name_LINK) $(avahi_set_host_name_OBJECTS) $(avahi_set_host_name_LDADD) $(LIBS) $(INTLLIBS)
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT)

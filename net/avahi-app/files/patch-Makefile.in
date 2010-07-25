@@ -1,50 +1,11 @@
---- Makefile.in.orig	Wed Oct 11 01:31:58 2006
-+++ Makefile.in	Wed Oct 11 01:34:55 2006
-@@ -1057,21 +1056,29 @@ uninstall-info: uninstall-info-recursive
- avahi-core.pc: avahi-core.pc.in
- 	sed -e 's,@prefix\@,$(prefix),g' \
+--- Makefile.in.orig	2010-07-24 19:44:27.000000000 -0400
++++ Makefile.in	2010-07-24 19:45:59.000000000 -0400
+@@ -1175,6 +1175,8 @@ uninstall-am: uninstall-pkgconfigDATA
+ %.pc: %.pc.in
+ 	$(AM_V_GEN)sed -e 's,@prefix\@,$(prefix),g' \
  	    -e 's,@libdir\@,$(libdir),g' \
-+	    -e 's,@PTHREAD_LIBS\@,$(PTHREAD_LIBS),g' \
 +	    -e 's,@PTHREAD_CFLAGS\@,$(PTHREAD_CFLAGS),g' \
++	    -e 's,@PTHREAD_LIBS\@,$(PTHREAD_LIBS),g' \
  	    -e 's,@PACKAGE_VERSION\@,$(PACKAGE_VERSION),g' $< > $@
  
- @HAVE_DBUS_TRUE@avahi-client.pc: avahi-client.pc.in
- @HAVE_DBUS_TRUE@	sed -e 's,@prefix\@,$(prefix),g' \
- @HAVE_DBUS_TRUE@	    -e 's,@libdir\@,$(libdir),g' \
-+@HAVE_DBUS_TRUE@	    -e 's,@PTHREAD_CFLAGS\@,$(PTHREAD_CFLAGS),g' \
-+@HAVE_DBUS_TRUE@	    -e 's,@PTHREAD_LIBS\@,$(PTHREAD_LIBS),g' \
- @HAVE_DBUS_TRUE@	    -e 's,@PACKAGE_VERSION\@,$(PACKAGE_VERSION),g' $< > $@
- 
- @ENABLE_COMPAT_HOWL_TRUE@@HAVE_DBUS_TRUE@avahi-compat-howl.pc: avahi-compat-howl.pc.in
- @ENABLE_COMPAT_HOWL_TRUE@@HAVE_DBUS_TRUE@	sed -e 's,@prefix\@,$(prefix),g' \
- @ENABLE_COMPAT_HOWL_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@libdir\@,$(libdir),g' \
-+@ENABLE_COMPAT_HOWL_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@PTHREAD_CFLAGS\@,$(PTHREAD_CFLAGS),g' \
-+@ENABLE_COMPAT_HOWL_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@PTHREAD_LIBS\@,$(PTHREAD_LIBS),g' \
- @ENABLE_COMPAT_HOWL_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@HOWL_COMPAT_VERSION\@,$(HOWL_COMPAT_VERSION),g' $< > $@
- 
- @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@avahi-compat-libdns_sd.pc: avahi-compat-libdns_sd.pc.in
- @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	sed -e 's,@prefix\@,$(prefix),g' \
- @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@libdir\@,$(libdir),g' \
-+@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@PTHREAD_CFLAGS\@,$(PTHREAD_CFLAGS),g' \
-+@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@PTHREAD_LIBS\@,$(PTHREAD_LIBS),g' \
- @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@PACKAGE_VERSION\@,$(PACKAGE_VERSION),g' $< > $@
- 
- @HAVE_DBUS_TRUE@@HAVE_MONO_TRUE@avahi-sharp.pc: avahi-sharp.pc.in
-@@ -1096,6 +1104,8 @@
- @HAVE_GLIB_TRUE@avahi-glib.pc: avahi-glib.pc.in
- @HAVE_GLIB_TRUE@	sed -e 's,@prefix\@,$(prefix),g' \
- @HAVE_GLIB_TRUE@	    -e 's,@libdir\@,$(libdir),g' \
-+@HAVE_GLIB_TRUE@	    -e 's,@PTHREAD_CFLAGS\@,$(PTHREAD_CFLAGS),g' \
-+@HAVE_GLIB_TRUE@	    -e 's,@PTHREAD_LIBS\@,$(PTHREAD_LIBS),g' \
- @HAVE_GLIB_TRUE@	    -e 's,@PACKAGE_VERSION\@,$(PACKAGE_VERSION),g' $< > $@
- 
- @HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@avahi-ui.pc: avahi-ui.pc.in
-@@ -1106,6 +1116,8 @@
- @HAVE_QT3_TRUE@avahi-qt3.pc: avahi-qt3.pc.in
- @HAVE_QT3_TRUE@	sed -e 's,@prefix\@,$(prefix),g' \
- @HAVE_QT3_TRUE@	    -e 's,@libdir\@,$(libdir),g' \
-+@HAVE_QT3_TRUE@	    -e 's,@PTHREAD_CFLAGS\@,$(PTHREAD_CFLAGS),g' \
-+@HAVE_QT3_TRUE@	    -e 's,@PTHREAD_LIBS\@,$(PTHREAD_LIBS),g' \
- @HAVE_QT3_TRUE@	    -e 's,@PACKAGE_VERSION\@,$(PACKAGE_VERSION),g' $< > $@
- 
- @HAVE_QT4_TRUE@avahi-qt4.pc: avahi-qt4.pc.in
+ avahi.devhelp: doxygen-run

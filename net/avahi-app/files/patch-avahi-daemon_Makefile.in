@@ -1,5 +1,5 @@
---- avahi-daemon/Makefile.in.orig	2009-07-08 22:53:37.000000000 -0400
-+++ avahi-daemon/Makefile.in	2009-07-08 22:55:59.000000000 -0400
+--- avahi-daemon/Makefile.in.orig	2010-07-24 19:49:59.000000000 -0400
++++ avahi-daemon/Makefile.in	2010-07-24 19:51:01.000000000 -0400
 @@ -69,7 +69,7 @@ host_triplet = @host@
  @ENABLE_CHROOT_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	caps.c caps.h
  
@@ -9,35 +9,12 @@
  @HAVE_DBUS_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@am__append_5 = \
  @HAVE_DBUS_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	dbus-protocol.c dbus-protocol.h \
  @HAVE_DBUS_TRUE@@HAVE_LIBDAEMON_TRUE@@HAVE_XML_TRUE@	dbus-util.c dbus-util.h \
-@@ -599,7 +599,7 @@ clean-sbinPROGRAMS:
- 	done
+@@ -678,7 +678,7 @@ clean-sbinPROGRAMS:
+ 	rm -f $$list
  avahi-daemon$(EXEEXT): $(avahi_daemon_OBJECTS) $(avahi_daemon_DEPENDENCIES) 
  	@rm -f avahi-daemon$(EXEEXT)
--	$(avahi_daemon_LINK) $(avahi_daemon_OBJECTS) $(avahi_daemon_LDADD) $(LIBS)
-+	$(avahi_daemon_LINK) $(avahi_daemon_OBJECTS) $(avahi_daemon_LDADD) $(LIBS) $(INTLLIBS)
+-	$(AM_V_CCLD)$(avahi_daemon_LINK) $(avahi_daemon_OBJECTS) $(avahi_daemon_LDADD) $(LIBS)
++	$(AM_V_CCLD)$(avahi_daemon_LINK) $(avahi_daemon_OBJECTS) $(avahi_daemon_LDADD) $(LIBS) $(INTLLIBS)
  ini-file-parser-test$(EXEEXT): $(ini_file_parser_test_OBJECTS) $(ini_file_parser_test_DEPENDENCIES) 
  	@rm -f ini-file-parser-test$(EXEEXT)
- 	$(ini_file_parser_test_LINK) $(ini_file_parser_test_OBJECTS) $(ini_file_parser_test_LDADD) $(LIBS)
-@@ -1079,14 +1079,14 @@ uninstall-pkgdataDATA:
- 	  rm -f "$(DESTDIR)$(pkgdatadir)/$$f"; \
- 	done
- install-pkgsysconfDATA: $(pkgsysconf_DATA)
--	@$(NORMAL_INSTALL)
--	test -z "$(pkgsysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(pkgsysconfdir)"
--	@list='$(pkgsysconf_DATA)'; for p in $$list; do \
--	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
--	  f=$(am__strip_dir) \
--	  echo " $(pkgsysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(pkgsysconfdir)/$$f'"; \
--	  $(pkgsysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(pkgsysconfdir)/$$f"; \
--	done
-+#	@$(NORMAL_INSTALL)
-+#	test -z "$(pkgsysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(pkgsysconfdir)"
-+#	@list='$(pkgsysconf_DATA)'; for p in $$list; do \
-+#	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-+#	  f=$(am__strip_dir) \
-+#	  echo " $(pkgsysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(pkgsysconfdir)/$$f'"; \
-+#	  $(pkgsysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(pkgsysconfdir)/$$f"; \
-+#	done
- 
- uninstall-pkgsysconfDATA:
- 	@$(NORMAL_UNINSTALL)
+ 	$(AM_V_CCLD)$(ini_file_parser_test_LINK) $(ini_file_parser_test_OBJECTS) $(ini_file_parser_test_LDADD) $(LIBS)

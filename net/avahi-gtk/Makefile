@@ -6,7 +6,7 @@
 #   $MCom: ports/net/avahi-gtk/Makefile,v 1.2 2007/09/12 12:41:45 ahze Exp $
 #
 
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	net
 PKGNAMESUFFIX=	-gtk
 
