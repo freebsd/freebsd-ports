@@ -13,7 +13,7 @@ CATEGORIES=	www xfce
 MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Lightweight web browser using WebKit browser engine
 
 LIB_DEPENDS=	webkit-1.0:${PORTSDIR}/www/webkit-gtk2 \

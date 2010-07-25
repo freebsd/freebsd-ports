@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/%SUBDIR%,}
 MASTER_SITE_SUBDIR=	gimp/plug-ins/v${PORTVERSION:R}/gap
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GIMP Animation Package
 
 BUILD_DEPENDS=	wavplay:${PORTSDIR}/audio/wavplay \

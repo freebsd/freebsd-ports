@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Canvas widget for GTK+
 
 USE_GNOME=	gtk20 gnomehack ltverhack
