@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2010-04-18
-PORTREVISION=	3
+DISTVERSION=	2010-07-25
 CATEGORIES=	multimedia audio ipv6 net
-MASTER_SITES=	http://people.freebsd.org/~mm/distfiles/
-PKGNAMESUFFIX=	-devel
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mm
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
@@ -31,7 +30,6 @@ OPTIONS=	AMR_NB	"AMR Narrow Band encoder (opencore)" on \
 		AMR_WB	"AMR Wide Band decoder (opencore)" on \
 		DIRAC	"Dirac codec via libdirac" off \
 		FAAC	"FAAC mp4/aac audio encoder" off \
-		FAAD	"FAAD mp4/aac audio decoder" on \
 		FFSERVER "Build and install ffserver" on \
 		GSM	"GSM audio codec" off \
 		LAME	"LAME MP3 encoder" off \
@@ -99,13 +97,13 @@ PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 USE_LDCONFIG=	yes
 
 DOC_FILES=	Changelog COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 \
-		COPYING.LGPLv3 CREDITS INSTALL MAINTAINERS README
+		COPYING.LGPLv3 CREDITS INSTALL LICENSE MAINTAINERS README
 # under doc subdirectory
-DOC_DOCFILES=	APIchanges avutil.txt faq.html ffmpeg-doc.html \
-		ffmpeg_powerpc_performance_evaluation_howto.txt \
-		ffplay-doc.html ffserver-doc.html general.html \
-		issue_tracker.txt optimization.txt \
-		snow.txt soc.txt swscale.txt TODO
+DOC_DOCFILES=	APIchanges TODO avutil.txt developer.html faq.html \
+		ffmpeg-doc.html ffplay-doc.html ffprobe-doc.html \
+		ffserver-doc.html general.html issue_tracker.txt \
+		libavfilter.html optimization.txt rate_distortion.txt \
+		snow.txt soc.txt swscale.txt tablegen.txt viterbi.txt
 PORTDOCS=	*
 
 .if !defined(WITHOUT_SSSE3)
@@ -181,15 +179,6 @@ LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 CONFIGURE_ARGS+=	--enable-libfaac --enable-nonfree
 .else
 CONFIGURE_ARGS+=	--disable-libfaac
-.endif
-
-# faad
-.ifndef(WITHOUT_FAAD)
-LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
-CONFIGURE_ARGS+=	--enable-libfaad \
-			--enable-libfaadbin
-.else
-CONFIGURE_ARGS+=	--disable-libfaad
 .endif
 
 # ffserver
@@ -290,8 +279,6 @@ pre-configure:
 .endif
 
 post-patch:
-# faad compat
-	@${REINPLACE_CMD} -e 's|faacD|NeAACD|' ${WRKSRC}/libavcodec/libfaad.c
 # {C,LD}FLAGS safeness
 	@${REINPLACE_CMD} -e 's|$$(LIBDIR)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/subdir.mak

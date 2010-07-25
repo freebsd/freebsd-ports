@@ -37,6 +37,7 @@ include/libavcodec/opt.h
 include/libavcodec/vaapi.h
 include/libavcodec/vdpau.h
 include/libavcodec/xvmc.h
+include/libavcore/avcore.h
 include/libavdevice/avdevice.h
 include/libavfilter/avfilter.h
 include/libavformat/avformat.h
@@ -47,11 +48,15 @@ include/libavutil/avconfig.h
 include/libavutil/avstring.h
 include/libavutil/avutil.h
 include/libavutil/base64.h
+include/libavutil/bswap.h
 include/libavutil/common.h
 include/libavutil/crc.h
 include/libavutil/error.h
+include/libavutil/eval.h
 include/libavutil/fifo.h
 include/libavutil/intfloat_readwrite.h
+include/libavutil/intreadwrite.h
+include/libavutil/lfg.h
 include/libavutil/log.h
 include/libavutil/lzo.h
 include/libavutil/mathematics.h
@@ -59,6 +64,7 @@ include/libavutil/md5.h
 include/libavutil/mem.h
 include/libavutil/pixdesc.h
 include/libavutil/pixfmt.h
+include/libavutil/random_seed.h
 include/libavutil/rational.h
 include/libavutil/sha1.h
 include/libpostproc/postprocess.h
@@ -67,32 +73,37 @@ include/libswscale/swscale.h
 lib/libavcodec.a
 lib/libavcodec.so
 lib/libavcodec.so.1
-lib/libavcodec.so.52.66.0
+lib/libavcodec.so.52.84.0
+lib/libavcore.a
+lib/libavcore.so
+lib/libavcore.so.0.0.0
+lib/libavcore.so.1
 lib/libavdevice.a
 lib/libavdevice.so
 lib/libavdevice.so.1
 lib/libavdevice.so.52.2.0
 lib/libavfilter.a
 lib/libavfilter.so
-lib/libavfilter.so.1.19.0
+lib/libavfilter.so.1.26.1
 lib/libavfilter.so.1
 lib/libavformat.a
 lib/libavformat.so
 lib/libavformat.so.1
-lib/libavformat.so.52.61.0
+lib/libavformat.so.52.77.0
 lib/libavutil.a
 lib/libavutil.so
 lib/libavutil.so.1
-lib/libavutil.so.50.14.0
+lib/libavutil.so.50.23.0
 lib/libpostproc.a
 lib/libpostproc.so
 lib/libpostproc.so.1
 lib/libpostproc.so.51.2.0
 lib/libswscale.a
 lib/libswscale.so
-lib/libswscale.so.0.10.0
+lib/libswscale.so.0.11.0
 lib/libswscale.so.1
 libdata/pkgconfig/libavcodec.pc
+libdata/pkgconfig/libavcore.pc
 libdata/pkgconfig/libavdevice.pc
 libdata/pkgconfig/libavfilter.pc
 libdata/pkgconfig/libavformat.pc
@@ -143,5 +154,6 @@ libdata/pkgconfig/libswscale.pc
 @dirrm include/libavformat
 @dirrm include/libavfilter
 @dirrm include/libavdevice
+@dirrm include/libavcore
 @dirrm include/libavcodec
 @dirrm include/ffmpeg
