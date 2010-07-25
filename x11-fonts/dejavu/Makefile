@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	dejavu
-DISTVERSION=	2.30
-PORTREVISION=	1
+DISTVERSION=	2.31
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-fonts-ttf-${DISTVERSION}
@@ -45,7 +44,7 @@ post-install:
 	@${ECHO_MSG} "===> Running fc-cache"
 	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
 	@${ECHO_MSG}
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>
