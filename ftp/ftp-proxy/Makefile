@@ -7,7 +7,7 @@
 
 PORTNAME=	ftp-proxy
 PORTVERSION=	4.4p1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.chrissicool.net/projects/ftp-proxy/distfiles/
 
