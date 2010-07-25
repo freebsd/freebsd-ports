@@ -6,7 +6,7 @@
 #    $MCom: ports/print/libspectre/Makefile,v 1.7 2010/04/19 15:38:43 kwm Exp $
 
 PORTNAME=	libspectre
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 CATEGORIES=	print
 MASTER_SITES=	http://libspectre.freedesktop.org/releases/
 
