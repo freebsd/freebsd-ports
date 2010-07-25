@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rrdtool
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	databases graphics
 MASTER_SITES=	http://oss.oetiker.ch/rrdtool/pub/
 
@@ -16,7 +16,7 @@ COMMENT=	Round Robin Database Tools
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		cairo.2:${PORTSDIR}/graphics/cairo \
 		png.6:${PORTSDIR}/graphics/png \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
+		xml2:${PORTSDIR}/textproc/libxml2 \
 		pangocairo-1\.0.0:${PORTSDIR}/x11-toolkits/pango
 
 CONFLICTS=	rrdtool-1.0* rrdtool-1.2*
