@@ -1,9 +1,9 @@
 bin/gnome-audio-profiles-properties
 bin/gnome-sound-recorder
-bin/gnome-volume-control
-bin/gnome-volume-control-applet
+%%PULSE%%bin/gnome-volume-control
+%%PULSE%%bin/gnome-volume-control-applet
 bin/gstreamer-properties
-etc/xdg/autostart/gnome-volume-control-applet.desktop
+%%PULSE%%etc/xdg/autostart/gnome-volume-control-applet.desktop
 include/gnome-media/profiles/audio-profile-choose.h
 include/gnome-media/profiles/audio-profile-edit.h
 include/gnome-media/profiles/audio-profile.h
@@ -15,30 +15,30 @@ lib/libgnome-media-profiles.so
 lib/libgnome-media-profiles.so.0
 libdata/pkgconfig/gnome-media-profiles.pc
 share/applications/gnome-sound-recorder.desktop
-share/applications/gnome-volume-control.desktop
+%%PULSE%%share/applications/gnome-volume-control.desktop
 share/applications/gstreamer-properties.desktop
 %%DATADIR%%/gnome-audio-profile-edit.ui
 %%DATADIR%%/gnome-audio-profile-new.ui
-%%DATADIR%%/icons/hicolor/16x16/status/audio-input-microphone-high.png
-%%DATADIR%%/icons/hicolor/16x16/status/audio-input-microphone-low.png
-%%DATADIR%%/icons/hicolor/16x16/status/audio-input-microphone-medium.png
-%%DATADIR%%/icons/hicolor/16x16/status/audio-input-microphone-muted.png
-%%DATADIR%%/icons/hicolor/22x22/status/audio-input-microphone-high.png
-%%DATADIR%%/icons/hicolor/22x22/status/audio-input-microphone-low.png
-%%DATADIR%%/icons/hicolor/22x22/status/audio-input-microphone-medium.png
-%%DATADIR%%/icons/hicolor/22x22/status/audio-input-microphone-muted.png
-%%DATADIR%%/icons/hicolor/24x24/status/audio-input-microphone-high.png
-%%DATADIR%%/icons/hicolor/24x24/status/audio-input-microphone-low.png
-%%DATADIR%%/icons/hicolor/24x24/status/audio-input-microphone-medium.png
-%%DATADIR%%/icons/hicolor/24x24/status/audio-input-microphone-muted.png
-%%DATADIR%%/icons/hicolor/32x32/status/audio-input-microphone-high.png
-%%DATADIR%%/icons/hicolor/32x32/status/audio-input-microphone-low.png
-%%DATADIR%%/icons/hicolor/32x32/status/audio-input-microphone-medium.png
-%%DATADIR%%/icons/hicolor/32x32/status/audio-input-microphone-muted.png
-%%DATADIR%%/icons/hicolor/scalable/status/audio-input-microphone-high.svg
-%%DATADIR%%/icons/hicolor/scalable/status/audio-input-microphone-low.svg
-%%DATADIR%%/icons/hicolor/scalable/status/audio-input-microphone-medium.svg
-%%DATADIR%%/icons/hicolor/scalable/status/audio-input-microphone-muted.svg
+%%PULSE%%%%DATADIR%%/icons/hicolor/16x16/status/audio-input-microphone-high.png
+%%PULSE%%%%DATADIR%%/icons/hicolor/16x16/status/audio-input-microphone-low.png
+%%PULSE%%%%DATADIR%%/icons/hicolor/16x16/status/audio-input-microphone-medium.png
+%%PULSE%%%%DATADIR%%/icons/hicolor/16x16/status/audio-input-microphone-muted.png
+%%PULSE%%%%DATADIR%%/icons/hicolor/22x22/status/audio-input-microphone-high.png
+%%PULSE%%%%DATADIR%%/icons/hicolor/22x22/status/audio-input-microphone-low.png
+%%PULSE%%%%DATADIR%%/icons/hicolor/22x22/status/audio-input-microphone-medium.png
+%%PULSE%%%%DATADIR%%/icons/hicolor/22x22/status/audio-input-microphone-muted.png
+%%PULSE%%%%DATADIR%%/icons/hicolor/24x24/status/audio-input-microphone-high.png
+%%PULSE%%%%DATADIR%%/icons/hicolor/24x24/status/audio-input-microphone-low.png
+%%PULSE%%%%DATADIR%%/icons/hicolor/24x24/status/audio-input-microphone-medium.png
+%%PULSE%%%%DATADIR%%/icons/hicolor/24x24/status/audio-input-microphone-muted.png
+%%PULSE%%%%DATADIR%%/icons/hicolor/32x32/status/audio-input-microphone-high.png
+%%PULSE%%%%DATADIR%%/icons/hicolor/32x32/status/audio-input-microphone-low.png
+%%PULSE%%%%DATADIR%%/icons/hicolor/32x32/status/audio-input-microphone-medium.png
+%%PULSE%%%%DATADIR%%/icons/hicolor/32x32/status/audio-input-microphone-muted.png
+%%PULSE%%%%DATADIR%%/icons/hicolor/scalable/status/audio-input-microphone-high.svg
+%%PULSE%%%%DATADIR%%/icons/hicolor/scalable/status/audio-input-microphone-low.svg
+%%PULSE%%%%DATADIR%%/icons/hicolor/scalable/status/audio-input-microphone-medium.svg
+%%PULSE%%%%DATADIR%%/icons/hicolor/scalable/status/audio-input-microphone-muted.svg
 %%DATADIR%%/sounds/gnome-sounds-default.xml
 share/gnome-sound-recorder/ui/ui.xml
 share/gnome/help/gnome-audio-profiles/C/figures/gnome-audio-profiles-profile-window.png
@@ -132,21 +132,21 @@ share/gnome/help/gstreamer-properties/zh_CN/gstreamer-properties.xml
 share/gstreamer-properties/gstreamer-properties.ui
 share/gstreamer-properties/icons/gstreamer-properties.png
 share/icons/hicolor/16x16/apps/gnome-sound-recorder.png
-share/icons/hicolor/16x16/apps/gnome-volume-control.png
-share/icons/hicolor/16x16/apps/gnome-volume-control.svg
+%%PULSE%%share/icons/hicolor/16x16/apps/gnome-volume-control.png
+%%PULSE%%share/icons/hicolor/16x16/apps/gnome-volume-control.svg
 share/icons/hicolor/22x22/apps/gnome-sound-recorder.png
-share/icons/hicolor/22x22/apps/gnome-volume-control.png
-share/icons/hicolor/22x22/apps/gnome-volume-control.svg
+%%PULSE%%share/icons/hicolor/22x22/apps/gnome-volume-control.png
+%%PULSE%%share/icons/hicolor/22x22/apps/gnome-volume-control.svg
 share/icons/hicolor/24x24/apps/gnome-sound-recorder.png
-share/icons/hicolor/24x24/apps/gnome-volume-control.png
+%%PULSE%%share/icons/hicolor/24x24/apps/gnome-volume-control.png
 share/icons/hicolor/32x32/apps/gnome-sound-recorder.png
-share/icons/hicolor/32x32/apps/gnome-volume-control.png
-share/icons/hicolor/32x32/apps/gnome-volume-control.svg
+%%PULSE%%share/icons/hicolor/32x32/apps/gnome-volume-control.png
+%%PULSE%%share/icons/hicolor/32x32/apps/gnome-volume-control.svg
 share/icons/hicolor/48x48/apps/gnome-sound-recorder.png
-share/icons/hicolor/48x48/apps/gnome-volume-control.png
+%%PULSE%%share/icons/hicolor/48x48/apps/gnome-volume-control.png
 share/icons/hicolor/48x48/apps/gstreamer-properties.png
 share/icons/hicolor/scalable/apps/gnome-sound-recorder.svg
-share/icons/hicolor/scalable/apps/gnome-volume-control.svg
+%%PULSE%%share/icons/hicolor/scalable/apps/gnome-volume-control.svg
 share/locale/af/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-media-2.0.mo
@@ -362,18 +362,18 @@ share/sounds/gnome/default/alerts/sonar.ogg
 @dirrm share/gnome-sound-recorder/ui
 @dirrm share/gnome-sound-recorder
 @dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%/icons/hicolor/scalable/status
-@dirrm %%DATADIR%%/icons/hicolor/scalable
-@dirrm %%DATADIR%%/icons/hicolor/32x32/status
-@dirrm %%DATADIR%%/icons/hicolor/32x32
-@dirrm %%DATADIR%%/icons/hicolor/24x24/status
-@dirrm %%DATADIR%%/icons/hicolor/24x24
-@dirrm %%DATADIR%%/icons/hicolor/22x22/status
-@dirrm %%DATADIR%%/icons/hicolor/22x22
-@dirrm %%DATADIR%%/icons/hicolor/16x16/status
-@dirrm %%DATADIR%%/icons/hicolor/16x16
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
+%%PULSE%%@dirrm %%DATADIR%%/icons/hicolor/scalable/status
+%%PULSE%%@dirrm %%DATADIR%%/icons/hicolor/scalable
+%%PULSE%%@dirrm %%DATADIR%%/icons/hicolor/32x32/status
+%%PULSE%%@dirrm %%DATADIR%%/icons/hicolor/32x32
+%%PULSE%%@dirrm %%DATADIR%%/icons/hicolor/24x24/status
+%%PULSE%%@dirrm %%DATADIR%%/icons/hicolor/24x24
+%%PULSE%%@dirrm %%DATADIR%%/icons/hicolor/22x22/status
+%%PULSE%%@dirrm %%DATADIR%%/icons/hicolor/22x22
+%%PULSE%%@dirrm %%DATADIR%%/icons/hicolor/16x16/status
+%%PULSE%%@dirrm %%DATADIR%%/icons/hicolor/16x16
+%%PULSE%%@dirrm %%DATADIR%%/icons/hicolor
+%%PULSE%%@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm include/gnome-media/profiles
