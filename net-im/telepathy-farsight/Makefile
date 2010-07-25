@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	telepathy-farsight
-PORTVERSION=	0.0.13
-PORTREVISION=	2
+PORTVERSION=	0.0.14
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
