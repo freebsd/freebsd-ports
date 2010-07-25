@@ -21,6 +21,9 @@ bin/dulwich
 %%PYTHON_SITELIBDIR%%/dulwich/index.py
 %%PYTHON_SITELIBDIR%%/dulwich/index.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/index.pyo
+%%PYTHON_SITELIBDIR%%/dulwich/log_utils.py
+%%PYTHON_SITELIBDIR%%/dulwich/log_utils.pyc
+%%PYTHON_SITELIBDIR%%/dulwich/log_utils.pyo
 %%PYTHON_SITELIBDIR%%/dulwich/lru_cache.py
 %%PYTHON_SITELIBDIR%%/dulwich/lru_cache.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/lru_cache.pyo
