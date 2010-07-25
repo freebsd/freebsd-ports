@@ -32,8 +32,3 @@ include/Tokenizer.h
 include/TreeT.h
 lib/libBase.a
 lib/libBase.so.1
-share/licenses/cego-base-1.1.31/GPLv2
-share/licenses/cego-base-1.1.31/LICENSE
-share/licenses/cego-base-1.1.31/catalog.mk
-@dirrm share/licenses/cego-base-1.1.31
-@dirrm share/licenses
