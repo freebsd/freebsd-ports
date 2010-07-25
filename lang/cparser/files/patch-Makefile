@@ -1,0 +1,11 @@
+--- Makefile.orig	2010-07-17 20:44:08.000000000 +0000
++++ Makefile	2010-07-17 20:44:24.000000000 +0000
+@@ -25,8 +25,6 @@
+ 
+ SOURCES := \
+ 	adt/hashset.c \
+-	adt/obstack.c \
+-	adt/obstack_printf.c \
+ 	adt/strset.c \
+ 	adt/xmalloc.c \
+ 	attribute.c \

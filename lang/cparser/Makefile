@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	cparser
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.11
 CATEGORIES=	lang devel
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	armin@frozen-zone.org
 COMMENT=	A C99 compiler using libFIRM as backend
 
 LIB_DEPENDS=	firm.0:${PORTSDIR}/devel/libfirm
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
