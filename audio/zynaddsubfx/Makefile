@@ -7,7 +7,7 @@
 
 PORTNAME=	zynaddsubfx
 PORTVERSION=	2.2.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	SF
 DISTNAME=	ZynAddSubFX-${PORTVERSION}
@@ -24,7 +24,7 @@ LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		jack.0:${PORTSDIR}/audio/jack
-BUILD_DEPENDS=	${LOCALBASE}/include/mxml.h:${PORTSDIR}/textproc/mini-xml \
+BUILD_DEPENDS=	${LOCALBASE}/include/mxml.h:${PORTSDIR}/textproc/mxml \
 		jackit>=0.109.2:${PORTSDIR}/audio/jack
 
 # Between 0.109.0 and earlier versions there was an api change in JACK.
