@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Implementation of http get that keeps a local cache of fetched pages
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww

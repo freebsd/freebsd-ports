@@ -11,7 +11,7 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to capture metadata info about an SVG file
 
 BUILD_DEPENDS=	xml_grep:${PORTSDIR}/textproc/p5-XML-Twig
