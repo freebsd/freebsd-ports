@@ -1,6 +1,6 @@
---- avahi-compat-libdns_sd/Makefile.in.orig	2008-07-03 14:23:56.000000000 -0500
-+++ avahi-compat-libdns_sd/Makefile.in	2008-07-03 14:31:19.000000000 -0500
-@@ -106,9 +106,7 @@
+--- avahi-compat-libdns_sd/Makefile.in.orig	2010-07-24 19:46:12.000000000 -0400
++++ avahi-compat-libdns_sd/Makefile.in	2010-07-24 19:49:25.000000000 -0400
+@@ -127,9 +127,7 @@ am__null_test_SOURCES_DIST = dns_sd.h co
  null_test_OBJECTS = $(am_null_test_OBJECTS)
  am__DEPENDENCIES_1 =
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@null_test_DEPENDENCIES = $(am__DEPENDENCIES_1) \
@@ -8,20 +8,20 @@
 -@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	../avahi-common/libavahi-common.la \
 -@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	../avahi-client/libavahi-client.la
 +@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(am__DEPENDENCIES_1)
- null_test_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ null_test_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(null_test_CFLAGS) \
  	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-@@ -118,8 +116,7 @@
+@@ -139,8 +137,7 @@ am__txt_test_SOURCES_DIST = dns_sd.h txt
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	txt_test-warn.$(OBJEXT)
  txt_test_OBJECTS = $(am_txt_test_OBJECTS)
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@txt_test_DEPENDENCIES = $(am__DEPENDENCIES_1) \
 -@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(am__DEPENDENCIES_1) \
 -@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	../avahi-common/libavahi-common.la
 +@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(am__DEPENDENCIES_1)
- txt_test_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
- 	--mode=link $(CCLD) $(txt_test_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
- 	$(LDFLAGS) -o $@
-@@ -411,7 +408,7 @@
+ txt_test_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(txt_test_CFLAGS) \
+ 	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+@@ -433,7 +430,7 @@ AM_CFLAGS = -I$(top_srcdir) '-DDEBUG_TRA
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	warn.c warn.h
  
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@libdns_sd_la_CFLAGS = $(AM_CFLAGS) $(PTHREAD_CFLAGS)
@@ -30,7 +30,7 @@
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@txt_test_SOURCES = \
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	dns_sd.h \
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	txt.c \
-@@ -419,7 +416,7 @@
+@@ -441,7 +438,7 @@ AM_CFLAGS = -I$(top_srcdir) '-DDEBUG_TRA
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	warn.c warn.h
  
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@txt_test_CFLAGS = $(AM_CFLAGS) $(PTHREAD_CFLAGS)
@@ -39,7 +39,7 @@
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@null_test_SOURCES = \
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	dns_sd.h \
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	compat.c \
-@@ -427,7 +424,7 @@
+@@ -449,7 +446,7 @@ AM_CFLAGS = -I$(top_srcdir) '-DDEBUG_TRA
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	warn.c warn.h
  
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@null_test_CFLAGS = $(AM_CFLAGS) $(PTHREAD_CFLAGS)
@@ -48,12 +48,12 @@
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@CLEANFILES = libdns_sd-test.o libdns_sd-test
  all: all-am
  
-@@ -870,7 +867,7 @@
+@@ -943,7 +940,7 @@ uninstall-am: uninstall-avahi_compat_lib
  
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@libdns_sd-test: libdns_sd-test.c libdns_sd.la
- @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(LIBTOOL) --mode=compile $(CC) $(AM_CFLAGS) $(PTHREAD_CFLAGS) -o libdns_sd-test.o -c libdns_sd-test.c 
--@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(LIBTOOL) --mode=link $(CC) $(AM_CFLAGS) $(PTHREAD_CFLAGS) -o libdns_sd-test libdns_sd-test.o $(PTHREAD_LIBS) ../avahi-common/libavahi-common.la libdns_sd.la 
-+@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(LIBTOOL) --mode=link $(CC) $(AM_CFLAGS) $(PTHREAD_CFLAGS) -o libdns_sd-test libdns_sd-test.o $(PTHREAD_LIBS) libdns_sd.la 
+ @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(LIBTOOL) --mode=compile $(CC) $(AM_CFLAGS) $(PTHREAD_CFLAGS) -o libdns_sd-test.o -c libdns_sd-test.c
+-@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(LIBTOOL) --mode=link $(CC) $(AM_CFLAGS) $(PTHREAD_CFLAGS) -o libdns_sd-test libdns_sd-test.o $(PTHREAD_LIBS) ../avahi-common/libavahi-common.la libdns_sd.la
++@ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	$(LIBTOOL) --mode=link $(CC) $(AM_CFLAGS) $(PTHREAD_CFLAGS) -o libdns_sd-test libdns_sd-test.o $(PTHREAD_LIBS) libdns_sd.la
+ 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:

@@ -71,6 +71,8 @@ include/avahi-gobject/ga-record-browser.h
 include/avahi-gobject/ga-service-browser.h
 include/avahi-gobject/ga-service-resolver.h
 lib/avahi/.keep
+lib/girepository-1.0/Avahi-0.6.typelib
+lib/girepository-1.0/AvahiCore-0.6.typelib
 lib/libavahi-client.a
 lib/libavahi-client.la
 lib/libavahi-client.so
@@ -82,7 +84,7 @@ lib/libavahi-common.so.3
 lib/libavahi-core.a
 lib/libavahi-core.la
 lib/libavahi-core.so
-lib/libavahi-core.so.6
+lib/libavahi-core.so.7
 lib/libavahi-glib.a
 lib/libavahi-glib.la
 lib/libavahi-glib.so
@@ -103,17 +105,21 @@ libdata/pkgconfig/avahi-gobject.pc
 sbin/avahi-daemon
 sbin/avahi-dnsconfd
 %%DATADIR%%/avahi-service.dtd
-%%DATADIR%%/introspection/AddressResolver.introspect
-%%DATADIR%%/introspection/DomainBrowser.introspect
-%%DATADIR%%/introspection/EntryGroup.introspect
-%%DATADIR%%/introspection/HostNameResolver.introspect
-%%DATADIR%%/introspection/RecordBrowser.introspect
-%%DATADIR%%/introspection/Server.introspect
-%%DATADIR%%/introspection/ServiceBrowser.introspect
-%%DATADIR%%/introspection/ServiceResolver.introspect
-%%DATADIR%%/introspection/ServiceTypeBrowser.introspect
 %%DATADIR%%/service-types
+share/dbus-1/interfaces/org.freedesktop.Avahi.AddressResolver.xml
+share/dbus-1/interfaces/org.freedesktop.Avahi.DomainBrowser.xml
+share/dbus-1/interfaces/org.freedesktop.Avahi.EntryGroup.xml
+share/dbus-1/interfaces/org.freedesktop.Avahi.HostNameResolver.xml
+share/dbus-1/interfaces/org.freedesktop.Avahi.RecordBrowser.xml
+share/dbus-1/interfaces/org.freedesktop.Avahi.Server.xml
+share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceBrowser.xml
+share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceResolver.xml
+share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceTypeBrowser.xml
+share/gir-1.0/Avahi-0.6.gir
+share/gir-1.0/AvahiCore-0.6.gir
+share/locale/bg/LC_MESSAGES/avahi.mo
 share/locale/ca/LC_MESSAGES/avahi.mo
+share/locale/cs/LC_MESSAGES/avahi.mo
 share/locale/de/LC_MESSAGES/avahi.mo
 share/locale/el/LC_MESSAGES/avahi.mo
 share/locale/en_AU/LC_MESSAGES/avahi.mo
@@ -123,9 +129,12 @@ share/locale/en_NZ/LC_MESSAGES/avahi.mo
 share/locale/es/LC_MESSAGES/avahi.mo
 share/locale/fi/LC_MESSAGES/avahi.mo
 share/locale/fr/LC_MESSAGES/avahi.mo
+share/locale/gl/LC_MESSAGES/avahi.mo
 share/locale/hu/LC_MESSAGES/avahi.mo
 share/locale/it/LC_MESSAGES/avahi.mo
+share/locale/ja/LC_MESSAGES/avahi.mo
 share/locale/ms/LC_MESSAGES/avahi.mo
+share/locale/nl/LC_MESSAGES/avahi.mo
 share/locale/pl/LC_MESSAGES/avahi.mo
 share/locale/pt_BR/LC_MESSAGES/avahi.mo
 share/locale/ro/LC_MESSAGES/avahi.mo
@@ -133,12 +142,13 @@ share/locale/ru/LC_MESSAGES/avahi.mo
 share/locale/sr/LC_MESSAGES/avahi.mo
 share/locale/sv/LC_MESSAGES/avahi.mo
 share/locale/sr@latin/LC_MESSAGES/avahi.mo
+share/locale/uk/LC_MESSAGES/avahi.mo
 share/locale/zh_CN/LC_MESSAGES/avahi.mo
+share/locale/zh_TW/LC_MESSAGES/avahi.mo
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/en_NZ/LC_MESSAGES
 @dirrmtry share/locale/en_NZ
-@dirrm %%DATADIR%%/introspection
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm lib/avahi
