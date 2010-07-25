@@ -1,6 +1,6 @@
---- lib/gibber/gibber-unix-transport.c.orig	2009-09-12 13:43:06.000000000 -0400
-+++ lib/gibber/gibber-unix-transport.c	2009-09-12 13:55:49.000000000 -0400
-@@ -200,11 +200,12 @@ gibber_unix_transport_send_credentials (
+--- lib/gibber/gibber-unix-transport.c.orig	2010-05-20 06:10:39.000000000 -0400
++++ lib/gibber/gibber-unix-transport.c	2010-07-24 20:47:17.000000000 -0400
+@@ -217,11 +217,12 @@ gibber_unix_transport_send_credentials (
      gsize size)
  {
    int fd, ret;
@@ -16,14 +16,15 @@
  
    DEBUG ("send credentials");
    fd = GIBBER_FD_TRANSPORT (transport)->fd;
-@@ -217,19 +218,14 @@ gibber_unix_transport_send_credentials (
-   memset (&msg, 0, sizeof msg);
+@@ -234,20 +235,14 @@ gibber_unix_transport_send_credentials (
+   memset (&msg, 0, sizeof (msg));
    msg.msg_iov = &iov;
    msg.msg_iovlen = 1;
 -  msg.msg_control = buffer;
 -  msg.msg_controllen = sizeof (buffer);
 +  msg.msg_control = (caddr_t) &buffer;
 +  msg.msg_controllen = CMSG_SPACE (sizeof (struct cmsgcred));
+   memset (buffer, 0, sizeof (buffer));
  
    /* Set the credentials */
 -  ch = CMSG_FIRSTHDR (&msg);
@@ -35,14 +36,13 @@
 -  cred->pid = getpid ();
 -  cred->uid = getuid ();
 -  cred->gid = getgid ();
-+  memset (&buffer, 0, sizeof (buffer));
 +  buffer.hdr.cmsg_len = CMSG_LEN (sizeof (struct cmsgcred));
 +  buffer.hdr.cmsg_level = SOL_SOCKET;
 +  buffer.hdr.cmsg_type = SCM_CREDS;
  
    ret = sendmsg (fd, &msg, 0);
    if (ret == -1)
-@@ -256,10 +252,10 @@ gibber_unix_transport_read (GibberFdTran
+@@ -274,10 +269,10 @@ gibber_unix_transport_read (GibberFdTran
    GibberBuffer buf;
    struct iovec iov;
    struct msghdr msg;
@@ -57,7 +57,7 @@
  
    if (priv->recv_creds_cb == NULL)
      return gibber_fd_transport_read (transport, channel, error);
-@@ -267,10 +263,6 @@ gibber_unix_transport_read (GibberFdTran
+@@ -285,10 +280,6 @@ gibber_unix_transport_read (GibberFdTran
    /* We are waiting for credentials */
    fd = transport->fd;
  
@@ -68,7 +68,7 @@
    memset (buffer, 0, sizeof (buffer));
    memset (&iov, 0, sizeof (iov));
    iov.iov_base = buffer;
-@@ -279,8 +271,9 @@ gibber_unix_transport_read (GibberFdTran
+@@ -297,8 +288,9 @@ gibber_unix_transport_read (GibberFdTran
    memset (&msg, 0, sizeof (msg));
    msg.msg_iov = &iov;
    msg.msg_iovlen = 1;
@@ -80,7 +80,7 @@
  
    bytes_read = recvmsg (fd, &msg, 0);
  
-@@ -299,16 +292,11 @@ gibber_unix_transport_read (GibberFdTran
+@@ -317,16 +309,11 @@ gibber_unix_transport_read (GibberFdTran
        return GIBBER_FD_IO_RESULT_ERROR;
      }
  
@@ -98,7 +98,7 @@
      {
        GError *err = NULL;
  
-@@ -324,11 +312,12 @@ gibber_unix_transport_read (GibberFdTran
+@@ -342,11 +329,12 @@ gibber_unix_transport_read (GibberFdTran
    else
      {
        GibberCredentials credentials;
