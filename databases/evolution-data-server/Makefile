@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/evolution-data-server/Makefile,v 1.194 2010/04/26 13:45:12 kwm Exp $
+#   $MCom: ports-stable/databases/evolution-data-server/Makefile,v 1.8 2010/06/24 10:03:53 kwm Exp $
 #
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	2.30.1
-PORTREVISION=	2
+PORTVERSION=	2.30.2.1
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -22,7 +22,7 @@ LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
 		nss3.1:${PORTSDIR}/security/nss \
 		tasn1.4:${PORTSDIR}/security/libtasn1 \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
+		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -85,6 +85,7 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldb|-l${BDB_LIB_NAME}|g ; \
 		s|heimlibs=".*"|heimlibs="${KRB5_LIB}"|g ; \
+		s|LIBEDATASERVER_CURRENT=13|LIBEDATASERVER_CURRENT=11|g ; \
 		s|-Wl,--no-undefined||g ; \
 		s|-Wmissing-include-dirs||g' \
 			${WRKSRC}/configure

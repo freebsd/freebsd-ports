@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/net/vinagre/Makefile,v 1.40 2010/05/04 14:13:29 kwm Exp $
+#   $MCom: ports-stable/net/vinagre/Makefile,v 1.5 2010/07/25 00:14:30 marcus Exp $
 #
 
 PORTNAME=	vinagre
-PORTVERSION=	2.30.1
-PORTREVISION=	2
+PORTVERSION=	2.30.2
+PORTREVISION=	3
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,7 +19,7 @@ COMMENT=	VNC client for the GNOME Desktop
 LIB_DEPENDS=	gtk-vnc-1.0.0:${PORTSDIR}/net/gtk-vnc \
     		avahi-core.7:${PORTSDIR}/net/avahi-app \
 		avahi-ui.0:${PORTSDIR}/net/avahi-gtk \
-		gnome-keyring:${PORTSDIR}/security/gnome-keyring
+		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

@@ -325,6 +325,8 @@ share/gnome/help/brasero/en_GB/brasero.xml
 share/gnome/help/brasero/en_GB/figures/brasero_main.png
 share/gnome/help/brasero/es/brasero.xml
 share/gnome/help/brasero/es/figures/brasero_main.png
+share/gnome/help/brasero/fi/brasero.xml
+share/gnome/help/brasero/fi/figures/brasero_main.png
 share/gnome/help/brasero/fr/brasero.xml
 share/gnome/help/brasero/fr/figures/brasero_main.png
 share/gnome/help/brasero/it/brasero.xml
@@ -391,6 +393,7 @@ share/locale/mr/LC_MESSAGES/brasero.mo
 share/locale/nb/LC_MESSAGES/brasero.mo
 share/locale/nds/LC_MESSAGES/brasero.mo
 share/locale/nl/LC_MESSAGES/brasero.mo
+share/locale/nn/LC_MESSAGES/brasero.mo
 share/locale/oc/LC_MESSAGES/brasero.mo
 share/locale/or/LC_MESSAGES/brasero.mo
 share/locale/pa/LC_MESSAGES/brasero.mo
@@ -421,6 +424,7 @@ share/omf/brasero/brasero-de.omf
 share/omf/brasero/brasero-el.omf
 share/omf/brasero/brasero-en_GB.omf
 share/omf/brasero/brasero-es.omf
+share/omf/brasero/brasero-fi.omf
 share/omf/brasero/brasero-fr.omf
 share/omf/brasero/brasero-it.omf
 share/omf/brasero/brasero-pl.omf
@@ -446,6 +450,8 @@ share/omf/brasero/brasero-zh_TW.omf
 @dirrm share/gnome/help/brasero/it
 @dirrm share/gnome/help/brasero/fr/figures
 @dirrm share/gnome/help/brasero/fr
+@dirrm share/gnome/help/brasero/fi/figures
+@dirrm share/gnome/help/brasero/fi
 @dirrm share/gnome/help/brasero/es/figures
 @dirrm share/gnome/help/brasero/es
 @dirrm share/gnome/help/brasero/en_GB/figures

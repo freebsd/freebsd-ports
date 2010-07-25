@@ -1,6 +1,6 @@
 #
 # $FreeBSD$
-#    $MCom: ports/x11/gdm/files/gdm.pam.in,v 1.11 2010/03/16 19:33:11 mezz Exp $
+#    $MCom: ports-stable/x11/gdm/files/gdm.pam.in,v 1.3 2010/07/21 13:50:46 kwm Exp $
 #
 # PAM configuration for the "gdm" service
 #

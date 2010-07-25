@@ -24,9 +24,6 @@ libexec/gdm-user-switch-applet
 libexec/gdm-xdmcp-chooser-slave
 sbin/gdm
 sbin/gdm-binary
-sbin/gdm-restart
-sbin/gdm-safe-restart
-sbin/gdm-stop
 %%DATADIR%%/autostart/LoginWindow/at-spi-registryd-wrapper.desktop
 %%DATADIR%%/autostart/LoginWindow/gdm-simple-greeter.desktop
 %%DATADIR%%/autostart/LoginWindow/gnome-mag.desktop

@@ -394,6 +394,7 @@ share/icons/gnome/scalable/status/weather-few-clouds-night-350.svg
 %%DATADIR%%/Locations.bs.xml
 %%DATADIR%%/Locations.ca.xml
 %%DATADIR%%/Locations.ca@valencia.xml
+%%DATADIR%%/Locations.crh.xml
 %%DATADIR%%/Locations.cs.xml
 %%DATADIR%%/Locations.cy.xml
 %%DATADIR%%/Locations.da.xml
@@ -403,6 +404,7 @@ share/icons/gnome/scalable/status/weather-few-clouds-night-350.svg
 %%DATADIR%%/Locations.en_CA.xml
 %%DATADIR%%/Locations.en_GB.xml
 %%DATADIR%%/Locations.en@shaw.xml
+%%DATADIR%%/Locations.eo.xml
 %%DATADIR%%/Locations.es.xml
 %%DATADIR%%/Locations.et.xml
 %%DATADIR%%/Locations.eu.xml
@@ -465,6 +467,7 @@ share/icons/gnome/scalable/status/weather-few-clouds-night-350.svg
 %%DATADIR%%/Locations.zh_HK.xml
 %%DATADIR%%/Locations.zh_TW.xml
 %%DATADIR%%/locations.dtd
+share/locale/af/LC_MESSAGES/libgweather.mo
 share/locale/am/LC_MESSAGES/libgweather.mo
 share/locale/ar/LC_MESSAGES/libgweather.mo
 share/locale/as/LC_MESSAGES/libgweather.mo
@@ -479,6 +482,7 @@ share/locale/br/LC_MESSAGES/libgweather.mo
 share/locale/bs/LC_MESSAGES/libgweather.mo
 share/locale/ca/LC_MESSAGES/libgweather.mo
 share/locale/ca@valencia/LC_MESSAGES/libgweather.mo
+share/locale/crh/LC_MESSAGES/libgweather.mo
 share/locale/cs/LC_MESSAGES/libgweather.mo
 share/locale/cy/LC_MESSAGES/libgweather.mo
 share/locale/da/LC_MESSAGES/libgweather.mo
@@ -488,6 +492,7 @@ share/locale/el/LC_MESSAGES/libgweather.mo
 share/locale/en_CA/LC_MESSAGES/libgweather.mo
 share/locale/en_GB/LC_MESSAGES/libgweather.mo
 share/locale/en@shaw/LC_MESSAGES/libgweather.mo
+share/locale/eo/LC_MESSAGES/libgweather.mo
 share/locale/es/LC_MESSAGES/libgweather.mo
 share/locale/es_AR/LC_MESSAGES/libgweather.mo
 share/locale/es_CL/LC_MESSAGES/libgweather.mo
@@ -636,6 +641,8 @@ share/locale/zh_TW/LC_MESSAGES/libgweather.mo
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/crh/LC_MESSAGES
+@dirrmtry share/locale/crh
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES

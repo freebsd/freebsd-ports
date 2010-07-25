@@ -1,0 +1,14 @@
+--- configure.orig	2010-06-23 23:07:54.000000000 +0200
++++ configure	2010-06-23 23:09:57.000000000 +0200
+@@ -18629,9 +18629,9 @@
+        INTROSPECTION_COMPILER=`$PKG_CONFIG --variable=g_ir_compiler gobject-introspection-1.0`
+        INTROSPECTION_GENERATE=`$PKG_CONFIG --variable=g_ir_generate gobject-introspection-1.0`
+        INTROSPECTION_GIRDIR=`$PKG_CONFIG --variable=girdir gobject-introspection-1.0`
+-       INTROSPECTION_GIRDIR=${INTROSPECTION_GIRDIR/$datadir/\$(datadir)}
++       INTROSPECTION_GIRDIR=`echo ${INTROSPECTION_GIRDIR} | sed -e "s|${datadir}|\\\${datadir}|"`
+        INTROSPECTION_TYPELIBDIR="$($PKG_CONFIG --variable=typelibdir gobject-introspection-1.0)"
+-       INTROSPECTION_TYPELIBDIR=${INTROSPECTION_TYPELIBDIR/$libdir/\$(libdir)}
++       INTROSPECTION_TYPELIBDIR=`echo ${INTROSPECTION_TYPELIBDIR} | sed -e "s|${libdir}|\\\${libdir}|"`
+        INTROSPECTION_CFLAGS=`$PKG_CONFIG --cflags gobject-introspection-1.0`
+        INTROSPECTION_LIBS=`$PKG_CONFIG --libs gobject-introspection-1.0`
+        INTROSPECTION_MAKEFILE=`$PKG_CONFIG --variable=datadir gobject-introspection-1.0`/gobject-introspection-1.0/Makefile.introspection

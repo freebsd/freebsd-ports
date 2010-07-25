@@ -75,6 +75,7 @@ share/locale/el/LC_MESSAGES/pessulus.mo
 share/locale/en@shaw/LC_MESSAGES/pessulus.mo
 share/locale/en_CA/LC_MESSAGES/pessulus.mo
 share/locale/en_GB/LC_MESSAGES/pessulus.mo
+share/locale/eo/LC_MESSAGES/pessulus.mo
 share/locale/es/LC_MESSAGES/pessulus.mo
 share/locale/et/LC_MESSAGES/pessulus.mo
 share/locale/eu/LC_MESSAGES/pessulus.mo
@@ -85,6 +86,7 @@ share/locale/gu/LC_MESSAGES/pessulus.mo
 share/locale/he/LC_MESSAGES/pessulus.mo
 share/locale/hi/LC_MESSAGES/pessulus.mo
 share/locale/hu/LC_MESSAGES/pessulus.mo
+share/locale/hy/LC_MESSAGES/pessulus.mo
 share/locale/id/LC_MESSAGES/pessulus.mo
 share/locale/it/LC_MESSAGES/pessulus.mo
 share/locale/ja/LC_MESSAGES/pessulus.mo
@@ -125,6 +127,7 @@ share/locale/te/LC_MESSAGES/pessulus.mo
 share/locale/th/LC_MESSAGES/pessulus.mo
 share/locale/tr/LC_MESSAGES/pessulus.mo
 share/locale/uk/LC_MESSAGES/pessulus.mo
+share/locale/ug/LC_MESSAGES/pessulus.mo
 share/locale/uz@cyrillic/LC_MESSAGES/pessulus.mo
 share/locale/vi/LC_MESSAGES/pessulus.mo
 share/locale/zh_CN/LC_MESSAGES/pessulus.mo
@@ -140,6 +143,8 @@ share/locale/zh_TW/LC_MESSAGES/pessulus.mo
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
 @dirrmtry share/locale/uz@cyrillic
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -158,6 +163,8 @@ share/locale/zh_TW/LC_MESSAGES/pessulus.mo
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES

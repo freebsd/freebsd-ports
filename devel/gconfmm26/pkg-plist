@@ -15,15 +15,11 @@ include/gconfmm-%%API_VERSION%%/gconfmm/value.h
 include/gconfmm-%%API_VERSION%%/gconfmm/value_listhelpers.h
 include/gconfmm-%%API_VERSION%%/gconfmm/wrap_init.h
 lib/gconfmm-%%API_VERSION%%/include/gconfmmconfig.h
-lib/gconfmm-%%API_VERSION%%/proc/m4/convert.m4
-lib/gconfmm-%%API_VERSION%%/proc/m4/convert_gconfmm.m4
 lib/libgconfmm-%%VERSION%%.a
 lib/libgconfmm-%%VERSION%%.la
 lib/libgconfmm-%%VERSION%%.so
 lib/libgconfmm-%%VERSION%%.so.1
 libdata/pkgconfig/gconfmm-%%API_VERSION%%.pc
-@dirrm lib/gconfmm-%%API_VERSION%%/proc/m4
-@dirrm lib/gconfmm-%%API_VERSION%%/proc
 @dirrm lib/gconfmm-%%API_VERSION%%/include
 @dirrm lib/gconfmm-%%API_VERSION%%
 @dirrm include/gconfmm-%%API_VERSION%%/gconfmm/private

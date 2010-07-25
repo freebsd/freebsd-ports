@@ -34,6 +34,7 @@ share/desktop-directories/X-GNOME-Other.directory
 share/gir-1.0/GMenu-2.0.gir
 share/gnome-menus/examples/gnome-menus-ls.py
 share/locale/af/LC_MESSAGES/gnome-menus.mo
+share/locale/an/LC_MESSAGES/gnome-menus.mo
 share/locale/ar/LC_MESSAGES/gnome-menus.mo
 share/locale/as/LC_MESSAGES/gnome-menus.mo
 share/locale/ast/LC_MESSAGES/gnome-menus.mo
@@ -203,3 +204,5 @@ share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an

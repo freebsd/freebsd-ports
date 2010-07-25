@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libcanberra
-PORTVERSION=	0.24
-PORTREVISION=	1
+PORTVERSION=	0.25
 CATEGORIES=	audio devel
 MASTER_SITES=	http://0pointer.de/lennart/projects/libcanberra/
 
@@ -16,11 +15,13 @@ COMMENT=	Implementation of the Freedesktop sound theme spec
 
 LIB_DEPENDS=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LGPL
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20 ltverhack gconf2
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22 libltdl:22
-CONFIGURE_ARGS=	--disable-lynx --disable-tdb
+CONFIGURE_ARGS=	--disable-lynx --disable-tdb --disable-gtk3
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

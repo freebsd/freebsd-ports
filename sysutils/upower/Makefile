@@ -3,12 +3,11 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/upower/Makefile,v 1.15 2010/05/09 17:43:53 marcus Exp $
+#   $MCom: ports-stable/sysutils/upower/Makefile,v 1.1 2010/07/12 14:10:07 kwm Exp $
 #
 
 PORTNAME=	upower
-PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTVERSION=	0.9.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://upower.freedesktop.org/releases/
 
@@ -20,6 +19,8 @@ LIB_DEPENDS=	polkit-gobject-1.0:${PORTSDIR}/sysutils/polkit \
     		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	${LOCALBASE}/lib/girepository-1.0/GObject-2.0.typelib:${PORTSDIR}/devel/gobject-introspection
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

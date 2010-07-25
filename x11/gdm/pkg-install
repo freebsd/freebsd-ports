@@ -23,12 +23,12 @@ POST-INSTALL)
 	${CHOWN} root:wheel ${PKG_PREFIX}/share/gdm
 	${CHMOD} 0755 ${PKG_PREFIX}/share/gdm
 	${MKDIR} -p ${PKG_PREFIX}/etc/gdm/home
-	${CHOWN} root:${GROUP} ${PKG_PREFIX}/etc/gdm/home
+	${CHOWN} ${USER}:${GROUP} ${PKG_PREFIX}/etc/gdm/home
 	${CHMOD} 1770 ${PKG_PREFIX}/etc/gdm/home
 	install  -o root -g wheel -m 444 ${PKG_PREFIX}/share/gdm/gconf.path ${PKG_PREFIX}/etc/gdm/home/.gconf.path
 	gconftool-2 --direct --config-source=xml:merged:${PKG_PREFIX}/etc/gdm/home/.gconf.mandatory --recursive-unset /
 	gconftool-2 --direct --config-source=xml:merged:${PKG_PREFIX}/etc/gdm/home/.gconf.mandatory --load ${PKG_PREFIX}/share/gdm/session-setup.entries
-	${CHOWN} -R root:gdm ${PKG_PREFIX}/etc/gdm/home/.gconf.mandatory
+	${CHOWN} -R ${USER}:${GROUP} ${PKG_PREFIX}/etc/gdm/home/.gconf.mandatory
 	${CHMOD} 1750 ${PKG_PREFIX}/etc/gdm/home/.gconf.mandatory
 	${CHMOD} 1640 ${PKG_PREFIX}/etc/gdm/home/.gconf.mandatory/*.xml
 
