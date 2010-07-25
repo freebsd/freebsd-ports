@@ -10,7 +10,7 @@ PORTVERSION=	2.49
 CATEGORIES=	lang lisp
 MASTER_SITES=	GNU/${PORTNAME}/release/${PORTVERSION}
 
-MAINTAINER=	jsa@wickedmachine.net
+MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	A Common Lisp implementation
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libavcall.a:${PORTSDIR}/devel/ffcall

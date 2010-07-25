@@ -10,7 +10,7 @@ PORTVERSION=	1.7.10
 CATEGORIES=	graphics
 MASTER_SITES=	SF/pmt/${PORTNAME}/00-${PORTVERSION}
 
-MAINTAINER=	jsa@wickedmachine.net
+MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	An optimizer for PNG files
 
 USE_BZIP2=	yes

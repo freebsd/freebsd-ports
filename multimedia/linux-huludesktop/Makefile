@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${LINUX_RPM_ARCH}
 EXTRACT_SUFX=	.rpm
 
-MAINTAINER=	jsa@wickedmachine.net
+MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	Streaming video client for TV and movies on Hulu.com
 
 ONLY_FOR_ARCHS=	i386 amd64
