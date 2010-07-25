@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	libfirm
-PORTVERSION=	1.16.0
+PORTVERSION=	1.18.1
 CATEGORIES=	devel lang
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	armin@frozen-zone.org
 COMMENT=	A graph-based SSA intermediate representation library for compilers
+
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
