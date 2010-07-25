@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gchemutils
-PORTVERSION=	0.10.12
-PORTREVISION=	3
+PORTVERSION=	0.12.1
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}/0.10
+MASTER_SITE_SUBDIR=	${PORTNAME}/0.12
 DISTNAME=	gnome-chemistry-utils-${PORTVERSION}
 
 MAINTAINER=	pav@FreeBSD.org
@@ -25,7 +25,8 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/bodr.pc:${PORTSDIR}/science/bodr \
 		${LOCALBASE}/libdata/pkgconfig/chemical-mime-data.pc:${PORTSDIR}/science/chemical-mime-data
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack intlhack libglade2 gnomedocutils libgnomecanvas
+USE_XORG=	x11
+USE_GNOME=	gnomehack intlhack gnomedocutils gtk20 libgsf
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -33,11 +34,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-omf-dir=${PREFIX}/share/omf
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
-GCONF_SCHEMAS=	gcrystal.schemas gchempaint.schemas gchempaint-arrows.schemas gchemutils.schemas
+GCONF_SCHEMAS=	gcrystal.schemas gchempaint.schemas gchempaint-arrows.schemas \
+		gchemutils.schemas
 
-MAN1=		gchem3d.1 gchemcalc.1 gchempaint.1 gchemtable.1 gcrystal.1 gspectrum.1
+MAN1=		gchem3d.1 gchemcalc.1 gchempaint.1 gchemtable.1 gcrystal.1 \
+		gspectrum.1
 
-PLIST_SUB=	VER=0.10 GOFFICE=0.8.5
+PLIST_SUB=	VER=0.12 GOFFICE=0.8.7 GNUMERIC_VER=1.10.7
 
 OPTIONS=	XUL "Build browser plugin (requires Xulrunner)" off
 
@@ -52,8 +55,18 @@ CONFIGURE_ARGS+=--disable-mozilla-plugin
 PLIST_SUB+=	XUL="@comment "
 .endif
 
+.if exists(${LOCALBASE}/bin/gnumeric)
+RUN_DEPENDS+=	gnumeric:${PORTSDIRS}/math/gnumeric
+PLIST_SUB+=	GNUMERIC=""
+.else
+PLIST_SUB+=	GNUMERIC="@comment "
+.endif
+
 .if ${OSVERSION} < 700043
 BROKEN=		does not compile
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/libs/gcp/Makefile.in
 
 .include <bsd.port.post.mk>

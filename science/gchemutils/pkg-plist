@@ -10,15 +10,6 @@ bin/gcrystal
 bin/gcrystal-%%VER%%
 bin/gspectrum
 bin/gspectrum-%%VER%%
-lib/libgchempaint-%%VER%%.la
-lib/libgchempaint-%%VER%%.so
-lib/libgchempaint-%%VER%%.so.10
-lib/libgcpcanvas-%%VER%%.la
-lib/libgcpcanvas-%%VER%%.so
-lib/libgcpcanvas-%%VER%%.so.10
-lib/libgcu-%%VER%%.la
-lib/libgcu-%%VER%%.so
-lib/libgcu-%%VER%%.so.10
 lib/gchemutils/%%VER%%/plugins/cdxml/cdxml.la
 lib/gchemutils/%%VER%%/plugins/cdxml/cdxml.so
 lib/gchemutils/%%VER%%/plugins/cdxml/plugin.xml
@@ -31,6 +22,12 @@ lib/gchemutils/%%VER%%/plugins/paint/atoms.la
 lib/gchemutils/%%VER%%/plugins/paint/atoms.so
 lib/gchemutils/%%VER%%/plugins/paint/bonds.la
 lib/gchemutils/%%VER%%/plugins/paint/bonds.so
+lib/gchemutils/%%VER%%/plugins/cif/cif.la
+lib/gchemutils/%%VER%%/plugins/cif/cif.so
+lib/gchemutils/%%VER%%/plugins/cif/plugin.xml
+lib/gchemutils/%%VER%%/plugins/cml/cml.la
+lib/gchemutils/%%VER%%/plugins/cml/cml.so
+lib/gchemutils/%%VER%%/plugins/cml/plugin.xml
 lib/gchemutils/%%VER%%/plugins/paint/cycles.la
 lib/gchemutils/%%VER%%/plugins/paint/cycles.so
 lib/gchemutils/%%VER%%/plugins/paint/residues.la
@@ -43,9 +40,21 @@ lib/gchemutils/%%VER%%/plugins/paint/text.la
 lib/gchemutils/%%VER%%/plugins/paint/text.so
 lib/gchemutils/%%VER%%/plugins/paint/wikipedia.la
 lib/gchemutils/%%VER%%/plugins/paint/wikipedia.so
+%%GNUMERIC%%lib/gnumeric/%%GNUMERIC_VER%%/plugins/gchemutils/plugin.la
+%%GNUMERIC%%lib/gnumeric/%%GNUMERIC_VER%%/plugins/gchemutils/plugin.so
+%%GNUMERIC%%lib/gnumeric/%%GNUMERIC_VER%%/plugins/gchemutils/plugin.xml
 lib/goffice/%%GOFFICE%%/plugins/gchemutils/gchemutils.la
 lib/goffice/%%GOFFICE%%/plugins/gchemutils/gchemutils.so
 lib/goffice/%%GOFFICE%%/plugins/gchemutils/plugin.xml
+lib/libgccv-%%VER%%.la
+lib/libgccv-%%VER%%.so
+lib/libgccv-%%VER%%.so.12
+lib/libgcp-%%VER%%.la
+lib/libgcp-%%VER%%.so
+lib/libgcp-%%VER%%.so.12
+lib/libgcu-%%VER%%.la
+lib/libgcu-%%VER%%.so
+lib/libgcu-%%VER%%.so.12
 %%XUL%%lib/xulrunner/plugins/libmozgcu.la
 %%XUL%%lib/xulrunner/plugins/libmozgcu.so
 %%XUL%%libexec/chem-viewer
@@ -57,45 +66,49 @@ share/applications/gspectrum-%%VER%%.desktop
 share/applications/gchemtable-%%VER%%.desktop
 share/gchemutils/%%VER%%/elecprops.xml
 share/gchemutils/%%VER%%/elements.xml
-share/gchemutils/%%VER%%/glade/crystal/atoms.glade
-share/gchemutils/%%VER%%/glade/crystal/bonds.glade
-share/gchemutils/%%VER%%/glade/crystal/cell.glade
-share/gchemutils/%%VER%%/glade/crystal/cleavages.glade
-share/gchemutils/%%VER%%/glade/crystal/docprop.glade
-share/gchemutils/%%VER%%/glade/crystal/lines.glade
-share/gchemutils/%%VER%%/glade/crystal/prefs.glade
-share/gchemutils/%%VER%%/glade/crystal/size.glade
-share/gchemutils/%%VER%%/glade/crystal/view-settings.glade
-share/gchemutils/%%VER%%/glade/gchemcalc.glade
-share/gchemutils/%%VER%%/glade/gtkperiodic.glade
-share/gchemutils/%%VER%%/glade/image-resolution.glade
-share/gchemutils/%%VER%%/glade/image-size.glade
-share/gchemutils/%%VER%%/glade/paint/arrow.png
-share/gchemutils/%%VER%%/glade/paint/arrow-object.glade
-share/gchemutils/%%VER%%/glade/paint/docprop.glade
-share/gchemutils/%%VER%%/glade/paint/H-pos.glade
-share/gchemutils/%%VER%%/glade/paint/newfiledlg.glade
-share/gchemutils/%%VER%%/glade/paint/plugins/arrows/arrowtool.glade
-share/gchemutils/%%VER%%/glade/paint/plugins/bonds/bond.glade
-share/gchemutils/%%VER%%/glade/paint/plugins/bonds/chain.glade
-share/gchemutils/%%VER%%/glade/paint/plugins/cycles/cyclen.glade
-share/gchemutils/%%VER%%/glade/paint/plugins/cycles/cycle.glade
-share/gchemutils/%%VER%%/glade/paint/plugins/residues/residues.glade
-share/gchemutils/%%VER%%/glade/paint/plugins/selection/group.glade
-share/gchemutils/%%VER%%/glade/paint/plugins/templates/new-template.glade
-share/gchemutils/%%VER%%/glade/paint/plugins/templates/templates.glade
-share/gchemutils/%%VER%%/glade/paint/plugins/text/fontsel.glade
-share/gchemutils/%%VER%%/glade/paint/preferences.glade
-share/gchemutils/%%VER%%/glade/paint/stringdlg.glade
-share/gchemutils/%%VER%%/glade/paint/tools.glade
-share/gchemutils/%%VER%%/glade/paint/zoom.glade
-share/gchemutils/%%VER%%/glade/print-setup.glade
-share/gchemutils/%%VER%%/glade/table/acidity.glade
-share/gchemutils/%%VER%%/glade/table/block.glade
-share/gchemutils/%%VER%%/glade/table/curve.glade
-share/gchemutils/%%VER%%/glade/table/eltpage.glade
-share/gchemutils/%%VER%%/glade/table/family.glade
-share/gchemutils/%%VER%%/glade/table/state-thermometer.glade
+share/gchemutils/%%VER%%/space-groups.xml
+share/gchemutils/%%VER%%/ui/crystal/atoms.ui
+share/gchemutils/%%VER%%/ui/crystal/bonds.ui
+share/gchemutils/%%VER%%/ui/crystal/cell.ui
+share/gchemutils/%%VER%%/ui/crystal/cleavages.ui
+share/gchemutils/%%VER%%/ui/crystal/docprop.ui
+share/gchemutils/%%VER%%/ui/crystal/lines.ui
+share/gchemutils/%%VER%%/ui/crystal/prefs.ui
+share/gchemutils/%%VER%%/ui/crystal/size.ui
+share/gchemutils/%%VER%%/ui/crystal/view-settings.ui
+share/gchemutils/%%VER%%/ui/gchemcalc.ui
+share/gchemutils/%%VER%%/ui/gcuperiodic.ui
+share/gchemutils/%%VER%%/ui/image-resolution.ui
+share/gchemutils/%%VER%%/ui/image-size.ui
+share/gchemutils/%%VER%%/ui/paint/H-pos.ui
+share/gchemutils/%%VER%%/ui/paint/arrow-object.ui
+share/gchemutils/%%VER%%/ui/paint/arrow.png
+share/gchemutils/%%VER%%/ui/paint/docprop.ui
+share/gchemutils/%%VER%%/ui/paint/newfiledlg.ui
+share/gchemutils/%%VER%%/ui/paint/plugins/arrows/arrowtool.ui
+share/gchemutils/%%VER%%/ui/paint/plugins/arrows/curvedarrowtool.ui
+share/gchemutils/%%VER%%/ui/paint/plugins/atoms/orbital-prop.ui
+share/gchemutils/%%VER%%/ui/paint/plugins/atoms/orbital.ui
+share/gchemutils/%%VER%%/ui/paint/plugins/bonds/bond.ui
+share/gchemutils/%%VER%%/ui/paint/plugins/bonds/chain.ui
+share/gchemutils/%%VER%%/ui/paint/plugins/cycles/cycle.ui
+share/gchemutils/%%VER%%/ui/paint/plugins/cycles/cyclen.ui
+share/gchemutils/%%VER%%/ui/paint/plugins/residues/residues.ui
+share/gchemutils/%%VER%%/ui/paint/plugins/selection/group.ui
+share/gchemutils/%%VER%%/ui/paint/plugins/templates/new-template.ui
+share/gchemutils/%%VER%%/ui/paint/plugins/templates/templates.ui
+share/gchemutils/%%VER%%/ui/paint/plugins/text/fontsel.ui
+share/gchemutils/%%VER%%/ui/paint/preferences.ui
+share/gchemutils/%%VER%%/ui/paint/stringdlg.ui
+share/gchemutils/%%VER%%/ui/paint/tools.ui
+share/gchemutils/%%VER%%/ui/paint/zoom.ui
+share/gchemutils/%%VER%%/ui/print-setup.ui
+share/gchemutils/%%VER%%/ui/table/acidity.ui
+share/gchemutils/%%VER%%/ui/table/block.ui
+share/gchemutils/%%VER%%/ui/table/curve.ui
+share/gchemutils/%%VER%%/ui/table/eltpage.ui
+share/gchemutils/%%VER%%/ui/table/family.ui
+share/gchemutils/%%VER%%/ui/table/state-thermometer.ui
 share/gchemutils/%%VER%%/isotopes.xml
 share/gchemutils/%%VER%%/paint/templates/haworth.xml
 share/gchemutils/%%VER%%/paint/templates/templates.xml
@@ -168,7 +181,6 @@ share/gnome/help/gchempaint-%%VER%%/C/figures/ghemical3.png
 share/gnome/help/gchempaint-%%VER%%/C/figures/group.png
 share/gnome/help/gchempaint-%%VER%%/C/figures/main-window.png
 share/gnome/help/gchempaint-%%VER%%/C/figures/mechanism-arrows.png
-share/gnome/help/gchempaint-%%VER%%/C/figures/mendeleiev.png
 share/gnome/help/gchempaint-%%VER%%/C/figures/merge.png
 share/gnome/help/gchempaint-%%VER%%/C/figures/merge1.png
 share/gnome/help/gchempaint-%%VER%%/C/figures/merge2.png
@@ -229,6 +241,10 @@ share/gnome/help/gchemtable-%%VER%%/C/figures/atomic-radii.png
 share/gnome/help/gchemtable-%%VER%%/C/figures/blocs.png
 share/gnome/help/gchemtable-%%VER%%/C/figures/choose-data.png
 share/gnome/help/gchemtable-%%VER%%/C/figures/curve.png
+share/gnome/help/gchempaint-%%VER%%/C/figures/curved-arrow-end.png
+share/gnome/help/gchempaint-%%VER%%/C/figures/curved-arrow-opts.png
+share/gnome/help/gchempaint-%%VER%%/C/figures/curved-arrow.png
+share/gnome/help/gchempaint-%%VER%%/C/figures/downbond.png
 share/gnome/help/gchemtable-%%VER%%/C/figures/elec.png
 share/gnome/help/gchemtable-%%VER%%/C/figures/electronegativity.png
 share/gnome/help/gchemtable-%%VER%%/C/figures/family.png
@@ -236,6 +252,10 @@ share/gnome/help/gchemtable-%%VER%%/C/figures/graph-guru.png
 share/gnome/help/gchemtable-%%VER%%/C/figures/main.png
 share/gnome/help/gchemtable-%%VER%%/C/figures/new-chart-guru.png
 share/gnome/help/gchemtable-%%VER%%/C/figures/new-chart.png
+share/gnome/help/gchempaint-%%VER%%/C/figures/orbital-prop.png
+share/gnome/help/gchempaint-%%VER%%/C/figures/orbital-sample.png
+share/gnome/help/gchempaint-%%VER%%/C/figures/orbital-toolbox.png
+share/gnome/help/gchempaint-%%VER%%/C/figures/orbital.png
 share/gnome/help/gchemtable-%%VER%%/C/figures/page-setup.png
 share/gnome/help/gchemtable-%%VER%%/C/figures/print-scale.png
 share/gnome/help/gchemtable-%%VER%%/C/figures/radii.png
@@ -250,32 +270,32 @@ share/omf/gcrystal-%%VER%%/gcrystal-%%VER%%-C.omf
 share/omf/gspectrum-%%VER%%/gspectrum-%%VER%%-C.omf
 share/mimelnk/application/x-gchempaint.desktop
 share/mimelnk/application/x-gcrystal.desktop
-share/icons/hicolor/32x32/mimetypes/gnome-mime-application-x-gchempaint.png
-share/icons/hicolor/32x32/mimetypes/gnome-mime-application-x-gcrystal.png
+share/icons/hicolor/128x128/mimetypes/application-x-gchempaint.png
+share/icons/hicolor/128x128/mimetypes/application-x-gcrystal.png
 share/icons/hicolor/32x32/apps/gchem3d.png
 share/icons/hicolor/32x32/apps/gchemcalc.png
 share/icons/hicolor/32x32/apps/gchempaint.png
 share/icons/hicolor/32x32/apps/gchemtable.png
 share/icons/hicolor/32x32/apps/gcrystal.png
 share/icons/hicolor/32x32/apps/gspectrum.png
-share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-gchempaint.png
-share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-gcrystal.png
+share/icons/hicolor/32x32/mimetypes/application-x-gchempaint.png
+share/icons/hicolor/32x32/mimetypes/application-x-gcrystal.png
 share/icons/hicolor/48x48/apps/gchem3d.png
 share/icons/hicolor/48x48/apps/gchemcalc.png
 share/icons/hicolor/48x48/apps/gchempaint.png
 share/icons/hicolor/48x48/apps/gchemtable.png
 share/icons/hicolor/48x48/apps/gcrystal.png
 share/icons/hicolor/48x48/apps/gspectrum.png
-share/icons/hicolor/72x72/mimetypes/gnome-mime-application-x-gchempaint.png
-share/icons/hicolor/72x72/mimetypes/gnome-mime-application-x-gcrystal.png
+share/icons/hicolor/48x48/mimetypes/application-x-gchempaint.png
+share/icons/hicolor/48x48/mimetypes/application-x-gcrystal.png
 share/icons/hicolor/72x72/apps/gchem3d.png
 share/icons/hicolor/72x72/apps/gchemcalc.png
 share/icons/hicolor/72x72/apps/gchempaint.png
 share/icons/hicolor/72x72/apps/gchemtable.png
 share/icons/hicolor/72x72/apps/gcrystal.png
 share/icons/hicolor/72x72/apps/gspectrum.png
-share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-gchempaint.png
-share/icons/hicolor/128x128/mimetypes/gnome-mime-application-x-gcrystal.png
+share/icons/hicolor/72x72/mimetypes/application-x-gchempaint.png
+share/icons/hicolor/72x72/mimetypes/application-x-gcrystal.png
 share/icons/hicolor/128x128/apps/gchem3d.png
 share/icons/hicolor/128x128/apps/gchemcalc.png
 share/icons/hicolor/128x128/apps/gchempaint.png
@@ -293,22 +313,23 @@ share/locale/zh_CN/LC_MESSAGES/gchemutils-%%VER%%.mo
 share/locale/zh_TW/LC_MESSAGES/gchemutils-%%VER%%.mo
 share/mime/packages/gchemutils.xml
 @dirrmtry share/applications
+@dirrm share/gchemutils/%%VER%%/ui/crystal
+@dirrm share/gchemutils/%%VER%%/ui/table
+@dirrm share/gchemutils/%%VER%%/ui/paint/plugins/text
+@dirrm share/gchemutils/%%VER%%/ui/paint/plugins/templates
+@dirrm share/gchemutils/%%VER%%/ui/paint/plugins/selection
+@dirrm share/gchemutils/%%VER%%/ui/paint/plugins/residues
+@dirrm share/gchemutils/%%VER%%/ui/paint/plugins/cycles
+@dirrm share/gchemutils/%%VER%%/ui/paint/plugins/bonds
+@dirrm share/gchemutils/%%VER%%/ui/paint/plugins/atoms
+@dirrm share/gchemutils/%%VER%%/ui/paint/plugins/arrows
+@dirrm share/gchemutils/%%VER%%/ui/paint/plugins
+@dirrm share/gchemutils/%%VER%%/ui/paint
+@dirrm share/gchemutils/%%VER%%/ui
 @dirrm share/gchemutils/%%VER%%/pixmaps
 @dirrm share/gchemutils/%%VER%%/paint/themes
 @dirrm share/gchemutils/%%VER%%/paint/templates
 @dirrm share/gchemutils/%%VER%%/paint
-@dirrm share/gchemutils/%%VER%%/glade/crystal
-@dirrm share/gchemutils/%%VER%%/glade/table
-@dirrm share/gchemutils/%%VER%%/glade/paint/plugins/text
-@dirrm share/gchemutils/%%VER%%/glade/paint/plugins/templates
-@dirrm share/gchemutils/%%VER%%/glade/paint/plugins/selection
-@dirrm share/gchemutils/%%VER%%/glade/paint/plugins/residues
-@dirrm share/gchemutils/%%VER%%/glade/paint/plugins/cycles
-@dirrm share/gchemutils/%%VER%%/glade/paint/plugins/bonds
-@dirrm share/gchemutils/%%VER%%/glade/paint/plugins/arrows
-@dirrm share/gchemutils/%%VER%%/glade/paint/plugins
-@dirrm share/gchemutils/%%VER%%/glade/paint
-@dirrm share/gchemutils/%%VER%%/glade
 @dirrm share/gchemutils/%%VER%%
 @dirrm share/gchemutils
 @dirrm share/omf/gchem3d-%%VER%%
@@ -340,6 +361,8 @@ share/mime/packages/gchemutils.xml
 @dirrmtry share/mimelnk
 @dirrm lib/goffice/%%GOFFICE%%/plugins/gchemutils
 @dirrm lib/gchemutils/%%VER%%/plugins/paint
+@dirrm lib/gchemutils/%%VER%%/plugins/cml
+@dirrm lib/gchemutils/%%VER%%/plugins/cif
 @dirrm lib/gchemutils/%%VER%%/plugins/cdxml
 @dirrm lib/gchemutils/%%VER%%/plugins/cdx
 @dirrm lib/gchemutils/%%VER%%/plugins
