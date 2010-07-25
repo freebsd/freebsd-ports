@@ -1,4 +1,3 @@
-include/libfirm/absgraph.h
 include/libfirm/adt/align.h
 include/libfirm/adt/array.h
 include/libfirm/adt/bipartite.h
@@ -22,7 +21,6 @@ include/libfirm/adt/pmap.h
 include/libfirm/adt/pqueue.h
 include/libfirm/adt/pset.h
 include/libfirm/adt/pset_new.h
-include/libfirm/adt/raw_bitset.h
 include/libfirm/adt/set.h
 include/libfirm/adt/unionfind.h
 include/libfirm/adt/util.h
@@ -32,15 +30,14 @@ include/libfirm/be.h
 include/libfirm/callgraph.h
 include/libfirm/cdep.h
 include/libfirm/cgana.h
+include/libfirm/compound_path.h
 include/libfirm/dbginfo.h
-include/libfirm/dfs.h
 include/libfirm/execfreq.h
 include/libfirm/execution_frequency.h
 include/libfirm/field_temperature.h
 include/libfirm/firm.h
 include/libfirm/firm_common.h
 include/libfirm/firm_types.h
-include/libfirm/firm_ycomp.h
 include/libfirm/firmstat.h
 include/libfirm/height.h
 include/libfirm/ident.h
@@ -61,14 +58,14 @@ include/libfirm/irgopt.h
 include/libfirm/irgraph.h
 include/libfirm/irgwalk.h
 include/libfirm/irhooks.h
-include/libfirm/irlivechk.h
+include/libfirm/irio.h
+include/libfirm/irpass.h
 include/libfirm/irloop.h
 include/libfirm/irmemory.h
 include/libfirm/irmode.h
 include/libfirm/irnode.h
 include/libfirm/irop.h
 include/libfirm/iropt.h
-include/libfirm/iropt_dbg.h
 include/libfirm/iroptimize.h
 include/libfirm/irouts.h
 include/libfirm/irprintf.h
@@ -78,7 +75,6 @@ include/libfirm/irtypeinfo.h
 include/libfirm/irvrfy.h
 include/libfirm/lowering.h
 include/libfirm/old_fctnames.h
-include/libfirm/phiclass.h
 include/libfirm/pseudo_irg.h
 include/libfirm/rta.h
 include/libfirm/seqnumbers.h
@@ -87,6 +83,7 @@ include/libfirm/timing.h
 include/libfirm/trouts.h
 include/libfirm/tv.h
 include/libfirm/typerep.h
+include/libfirm/vrp.h
 lib/libfirm.a
 lib/libfirm.la
 lib/libfirm.so
