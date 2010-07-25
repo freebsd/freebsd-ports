@@ -7,6 +7,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -93,13 +94,15 @@ PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 USE_LDCONFIG=	yes
 
 DOC_FILES=	Changelog COPYING.GPLv2 COPYING.GPLv3 COPYING.LGPLv2.1 \
-		COPYING.LGPLv3 CREDITS INSTALL MAINTAINERS README
+		COPYING.LGPLv3 CREDITS INSTALL LICENSE MAINTAINERS README \
+		RELEASE
 # under doc subdirectory
-DOC_DOCFILES=	APIchanges avutil.txt faq.html ffmpeg-doc.html \
+DOC_DOCFILES=	APIchanges TODO avutil.txt developer.html faq.html \
 		ffmpeg_powerpc_performance_evaluation_howto.txt \
-		ffplay-doc.html ffserver-doc.html general.html \
-		issue_tracker.txt optimization.txt \
-		snow.txt soc.txt swscale.txt TODO
+		ffmpeg-doc.html ffplay-doc.html ffprobe-doc.html \
+		ffserver-doc.html general.html issue_tracker.txt \
+		libavfilter.html optimization.txt rate_distortion.txt \
+		snow.txt soc.txt swscale.txt tablegen.txt viterbi.txt
 PORTDOCS=	*
 
 .if !defined(WITHOUT_SSSE3)
