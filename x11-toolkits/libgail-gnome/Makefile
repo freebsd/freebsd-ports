@@ -3,11 +3,11 @@
 # Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/libgail-gnome/Makefile,v 1.24 2010/04/01 13:23:49 kwm Exp $
+#   $MCom: ports-stable/x11-toolkits/libgail-gnome/Makefile,v 1.1 2010/06/23 12:27:01 kwm Exp $
 #
 
 PORTNAME=	libgail-gnome
-PORTVERSION=	1.20.2
+PORTVERSION=	1.20.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -26,5 +26,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 PLIST_FILES=	lib/gtk-2.0/modules/libgail-gnome.la \
 		lib/gtk-2.0/modules/libgail-gnome.so \
 		libdata/pkgconfig/libgail-gnome.pc
+GCONF_SCHEMAS=	libgail-gnome.schemas
 
 .include <bsd.port.mk>

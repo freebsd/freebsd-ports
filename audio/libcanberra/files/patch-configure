@@ -1,0 +1,15 @@
+--- configure.orig	2010-07-14 13:00:51.000000000 +0200
++++ configure	2010-07-14 13:02:26.000000000 +0200
+@@ -3273,12 +3273,6 @@
+ AM_BACKSLASH='\'
+ 
+ 
+-if type -p stow > /dev/null && test -d /usr/local/stow ; then
+-   { $as_echo "$as_me:${as_lineno-$LINENO}: *** Found /usr/local/stow: default install prefix set to /usr/local/stow/${PACKAGE_NAME}-${PACKAGE_VERSION} ***" >&5
+-$as_echo "$as_me: *** Found /usr/local/stow: default install prefix set to /usr/local/stow/${PACKAGE_NAME}-${PACKAGE_VERSION} ***" >&6;}
+-   ac_default_prefix="/usr/local/stow/${PACKAGE_NAME}-${PACKAGE_VERSION}"
+-fi
+-
+ #### Checks for programs. ####
+ 
+ 

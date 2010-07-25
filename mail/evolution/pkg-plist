@@ -1,5 +1,4 @@
 bin/evolution
-bin/evolution-alarm-notify
 bin/evolution-settings
 etc/xdg/autostart/evolution-alarm-notify.desktop
 include/evolution-%%VERSION%%/addressbook/gui/widgets/eab-config.h
@@ -629,6 +628,7 @@ libdata/pkgconfig/evolution-shell.pc
 libexec/evolution/%%VERSION%%/csv2vcard
 libexec/evolution/%%VERSION%%/evolution-addressbook-clean
 libexec/evolution/%%VERSION%%/evolution-addressbook-export
+libexec/evolution/%%VERSION%%/evolution-alarm-notify
 libexec/evolution/%%VERSION%%/evolution-backup
 libexec/evolution/%%VERSION%%/killev
 share/applications/evolution.desktop
@@ -754,6 +754,8 @@ share/doc/eshell/up.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/stock_bell.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/stock_contact-list.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/stock_insert-note.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/stock_insert-rule.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/stock_insert-table.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/stock_mail-filters-apply.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/stock_mail-flag-for-followup-done.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/stock_mail-flag-for-followup.png
@@ -770,6 +772,7 @@ share/doc/eshell/up.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/stock_task-assigned.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/stock_task-recurring.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/stock_task.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/stock_text-monospaced.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/stock_timezone.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/stock_todo.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/16x16/actions/stock_video-conferencing.png
@@ -798,6 +801,9 @@ share/doc/eshell/up.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/22x22/actions/view-calendar-workweek.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_contact-list.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_insert-note.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_insert-rule.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_insert-table.png
+%%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_text-monospaced.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_mail-filters-apply.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_mail-open-multiple.png
 %%DATADIR%%/%%VERSION%%/icons/hicolor/24x24/actions/stock_mail-unread-multiple.png
@@ -1855,7 +1861,6 @@ share/locale/xh/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/zh_HK/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
-share/mime-info/evolution.keys
 share/mime-info/evolution.mime
 share/omf/evolution/evolution-C.omf
 share/omf/evolution/evolution-cs.omf

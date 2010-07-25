@@ -3,12 +3,12 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/graphics/evince/Makefile,v 1.137 2010/04/27 14:14:36 kwm Exp $
+#    $MCom: ports-stable/graphics/evince/Makefile,v 1.11 2010/06/24 10:03:54 kwm Exp $
 #
 
 PORTNAME=	evince
-PORTVERSION=	2.30.1
-PORTREVISION=	2
+PORTVERSION=	2.30.3
+PORTREVISION=	1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -78,7 +78,7 @@ PLIST_SUB+=		NAUTILUS=""
 BUILD_DEPENDS+=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 RUN_DEPENDS+=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 .if !defined(WITHOUT_KEYRING)
-LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
+LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
 .else
 CONFIGURE_ARGS+=	--without-keyring
 .endif

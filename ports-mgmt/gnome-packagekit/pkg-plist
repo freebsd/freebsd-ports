@@ -389,6 +389,7 @@ share/locale/bg/LC_MESSAGES/gnome-packagekit.mo
 share/locale/bn/LC_MESSAGES/gnome-packagekit.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-packagekit.mo
 share/locale/ca/LC_MESSAGES/gnome-packagekit.mo
+share/locale/ca@valencia/LC_MESSAGES/gnome-packagekit.mo
 share/locale/cs/LC_MESSAGES/gnome-packagekit.mo
 share/locale/cy/LC_MESSAGES/gnome-packagekit.mo
 share/locale/da/LC_MESSAGES/gnome-packagekit.mo
@@ -397,6 +398,7 @@ share/locale/el/LC_MESSAGES/gnome-packagekit.mo
 share/locale/en@shaw/LC_MESSAGES/gnome-packagekit.mo
 share/locale/en_GB/LC_MESSAGES/gnome-packagekit.mo
 share/locale/es/LC_MESSAGES/gnome-packagekit.mo
+share/locale/et/LC_MESSAGES/gnome-packagekit.mo
 share/locale/fi/LC_MESSAGES/gnome-packagekit.mo
 share/locale/fr/LC_MESSAGES/gnome-packagekit.mo
 share/locale/gl/LC_MESSAGES/gnome-packagekit.mo
@@ -404,12 +406,15 @@ share/locale/gu/LC_MESSAGES/gnome-packagekit.mo
 share/locale/he/LC_MESSAGES/gnome-packagekit.mo
 share/locale/hi/LC_MESSAGES/gnome-packagekit.mo
 share/locale/hu/LC_MESSAGES/gnome-packagekit.mo
+share/locale/id/LC_MESSAGES/gnome-packagekit.mo
 share/locale/it/LC_MESSAGES/gnome-packagekit.mo
 share/locale/ja/LC_MESSAGES/gnome-packagekit.mo
 share/locale/kn/LC_MESSAGES/gnome-packagekit.mo
 share/locale/lt/LC_MESSAGES/gnome-packagekit.mo
+share/locale/lv/LC_MESSAGES/gnome-packagekit.mo
 share/locale/ml/LC_MESSAGES/gnome-packagekit.mo
 share/locale/mr/LC_MESSAGES/gnome-packagekit.mo
+share/locale/ms/LC_MESSAGES/gnome-packagekit.mo
 share/locale/nb/LC_MESSAGES/gnome-packagekit.mo
 share/locale/nl/LC_MESSAGES/gnome-packagekit.mo
 share/locale/oc/LC_MESSAGES/gnome-packagekit.mo
@@ -450,6 +455,8 @@ share/omf/gnome-packagekit/gnome-packagekit-zh_CN.omf
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/as/LC_MESSAGES

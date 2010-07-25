@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-terminal/Makefile,v 1.132 2010/04/28 02:58:55 mezz Exp $
+#   $MCom: ports-stable/x11/gnome-terminal/Makefile,v 1.5 2010/06/23 15:06:11 kwm Exp $
 #
 
 PORTNAME=	gnome-terminal
-PORTVERSION=	2.30.1
-PORTREVISION=	1
+PORTVERSION=	2.30.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -31,7 +30,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GCONF_SCHEMAS=	gnome-terminal.schemas
 
-post-patch:
-	@${TOUCH} -f ${WRKSRC}/aclocal.m4
+post-configure:
+		@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 
 .include <bsd.port.mk>

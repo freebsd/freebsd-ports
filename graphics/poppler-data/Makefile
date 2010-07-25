@@ -3,10 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports-stable/graphics/poppler-data/Makefile,v 1.1 2010/07/20 08:17:51 kwm Exp $
 #
 
 PORTNAME=	poppler-data
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://poppler.freedesktop.org/
 

@@ -3,12 +3,11 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/security/gnome-keyring/Makefile,v 1.92 2010/04/27 16:51:29 kwm Exp $
+#   $MCom: ports-stable/security/gnome-keyring/Makefile,v 1.6 2010/06/23 12:38:25 kwm Exp $
 #
 
 PORTNAME=	gnome-keyring
-PORTVERSION=	2.30.1
-PORTREVISION=	2
+PORTVERSION=	2.30.3
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -28,11 +27,5 @@ CONFIGURE_ARGS=	--with-pam-dir="${PREFIX}/lib"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 GCONF_SCHEMAS=	gnome-keyring.schemas
-
-SUB_FILES=	org.freedesktop.secrets.service
-
-post-install:
-	${INSTALL_DATA} ${WRKDIR}/org.freedesktop.secrets.service \
-	    	${PREFIX}/share/dbus-1/services
 
 .include <bsd.port.mk>
