@@ -10,7 +10,7 @@ lib/libavahi-ui.so.0
 libdata/pkgconfig/avahi-ui.pc
 share/applications/bssh.desktop
 share/applications/bvnc.desktop
-%%DATADIR%%/interfaces/avahi-discover.glade
+%%DATADIR%%/interfaces/avahi-discover.ui
 @dirrm %%DATADIR%%/interfaces
 @dirrmtry share/applications
 @dirrm include/avahi-ui
