@@ -6,8 +6,8 @@
 #   $MCom: ports/ports-mgmt/packagekit/Makefile,v 1.20 2010/04/07 04:53:37 marcus Exp $
 
 PORTNAME=	PackageKit
-PORTVERSION=	0.6.3
-PORTREVISION?=	1
+PORTVERSION=	0.6.6
+PORTREVISION?=	0
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	http://www.packagekit.org/releases/
 
@@ -51,8 +51,7 @@ MAKE_JOBS_UNSAFE=yes
 
 .if !defined(SLAVEPORT)
 OPTIONS=PORTS "Use portupgrade for management, dummy if disabled" on \
-	PORTDOCS "Build documentation" on \
-	RUCK "Enable ruck" on
+	PORTDOCS "Build documentation" on
 # gtk module seems to be broken/disabled/gone?
 #	GTK20 "Enable GTK+ modules" off \
 
@@ -76,14 +75,6 @@ PLIST_SUB+=	PORTS=""
 .else
 CONFIGURE_ARGS+=--disable-ports --with-default-backend=dummy
 PLIST_SUB+=	PORTS="@comment "
-.endif
-
-.if defined(WITH_RUCK)
-CONFIGURE_ARGS+=--enable-ruck
-PLIST_SUB+=	RUCK=""
-.else
-CONFIGURE_ARGS+=--disable-ruck
-PLIST_SUB+=	RUCK="@comment "
 .endif
 
 #.if defined(WITH_GTK)
