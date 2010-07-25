@@ -8,7 +8,7 @@
 
 PORTNAME=	vinagre
 PORTVERSION=	2.30.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC client for the GNOME Desktop
 
 LIB_DEPENDS=	gtk-vnc-1.0.0:${PORTSDIR}/net/gtk-vnc \
-    		avahi-core.6:${PORTSDIR}/net/avahi-app \
+    		avahi-core.7:${PORTSDIR}/net/avahi-app \
 		avahi-ui.0:${PORTSDIR}/net/avahi-gtk \
 		gnome-keyring:${PORTSDIR}/security/gnome-keyring
 
