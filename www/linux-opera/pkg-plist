@@ -400,6 +400,8 @@ share/mime/packages/linux-opera-widget.xml
 @dirrmtry share/icons/hicolor/128x128/mimetypes
 @dirrmtry share/icons/hicolor/128x128/apps
 @dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm %%DOCSDIR%%
 @dirrmtry share/applications
 @dirrm lib/linux-opera/plugins
