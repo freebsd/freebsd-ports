@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://launchpad.net/${LP_DIR}/ \
 		http://wickedmachine.net/mirror/
 
-MAINTAINER=	jsa@wickedmachine.net
+MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	A full featured python-based music player for GTK+
 
 RUN_DEPENDS=	py*-mutagen>=1.11:${PORTSDIR}/audio/py-mutagen

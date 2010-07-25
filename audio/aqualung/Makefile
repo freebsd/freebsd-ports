@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
  		http://wickedmachine.net/mirror/
 
-MAINTAINER=	jsa@wickedmachine.net
+MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	Music player with rich features
 
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \

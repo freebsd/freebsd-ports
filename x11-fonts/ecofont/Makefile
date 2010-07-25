@@ -11,7 +11,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.ecofont.com/assets/files/
 DISTNAME=	ecofont_vera_sans_regular
 
-MAINTAINER=	jsa@wickedmachine.net
+MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	Environmentally friendly, ink saving typeface
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig

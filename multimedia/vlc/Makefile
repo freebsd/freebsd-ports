@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSIO
 		http://ftp.snt.utwente.nl/pub/software/videolan/${PORTNAME}/${DISTVERSION}/ \
 		ftp://ftp.crans.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 
-MAINTAINER=	jsa@wickedmachine.net
+MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	Qt4 based multimedia player and streaming server
 
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
