@@ -13,7 +13,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/43802
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Kazehakase is a browser with gecko engine like Epiphany or Galeon
 
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls \

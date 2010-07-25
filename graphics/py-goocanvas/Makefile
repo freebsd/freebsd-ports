@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	sources/py${PORTNAME}/${PORTVERSION:C/..$//}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GooCanvas python bindings
 
 LIB_DEPENDS=	goocanvas.3:${PORTSDIR}/graphics/goocanvas
