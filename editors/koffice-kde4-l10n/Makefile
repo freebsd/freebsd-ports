@@ -7,7 +7,7 @@
 
 PORTNAME=	koffice-l10n
 PORTVERSION=	${KOFFICE2_VERSION}
-CATEGORIES=	misc kde
+CATEGORIES=	editors kde
 MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
