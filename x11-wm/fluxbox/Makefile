@@ -30,6 +30,20 @@ MAN1=		fbrun.1 fbsetbg.1 fbsetroot.1 fluxbox.1 fluxstyle.1 \
 MAN5=		fluxbox-keys.5
 DOCSVERSION=	20060629
 
+OPTIONS=	DOCHTML "Install html documentation" off \
+		DOCPDF "Install pdf documentation" off \
+		DEBUG "Enable debugging support" off \
+		GNOME "Enable GNOME support" off \
+		IMLIB2 "Enable imlib2 support" off \
+		XINERAMA "Enable xinerama support" off \
+		XRENDER "Enable xrender support" on \
+		NLS "Native language support" on \
+		SLIT "Enable slit feature" on \
+		REMEMBER "Enable remember feature" on \
+		TOOLBAR "Enable toolbar feature" on
+
+.include <bsd.port.options.mk>
+
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
@@ -111,44 +125,6 @@ CONFIGURE_ARGS+=	--disable-xrender
 CONFIGURE_ARGS+=	--enable-gnome
 .else
 CONFIGURE_ARGS+=	--disable-gnome
-.endif
-
-pre-everything::
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "Definable build options"
-	@${ECHO_CMD} "-----------------------"
-.if !defined(WITH_DEBUG)
-	@${ECHO_CMD} "WITH_DEBUG=yes		Build with debugging symbols"
-.endif
-.if !defined(WITH_DOCHTML)
-	@${ECHO_CMD} "WITH_DOCHTML=yes	Install the HTML documentation"
-.endif
-.if !defined(WITH_DOCPDF)
-	@${ECHO_CMD} "WITH_DOCPDF=yes		Install the PDF documentation"
-.endif
-.if !defined(WITH_GNOME)
-	@${ECHO_CMD} "WITH_GNOME=yes		Enable GNOME support"
-.endif
-.if !defined(WITH_IMLIB2)
-	@${ECHO_CMD} "WITH_IMLIB2=yes		Enable Imlib2 (pixmap themes) support"
-.endif
-.if !defined(WITH_XINERAMA)
-	@${ECHO_CMD} "WITH_XINERAMA=yes	Enable Xinerama support"
-.endif
-.if !defined(WITHOUT_NLS)
-	@${ECHO_CMD} "WITHOUT_NLS=yes		Disable NLS support"
-.endif
-.if !defined(WITHOUT_REMEMBER)
-	@${ECHO_CMD} "WITHOUT_REMEMBER=yes	Disable remembering attributes support"
-.endif
-.if !defined(WITHOUT_SLIT)
-	@${ECHO_CMD} "WITHOUT_SLIT=yes	Disable slit"
-.endif
-.if !defined(WITHOUT_TOOLBAR)
-	@${ECHO_CMD} "WITHOUT_TOOLBAR=yes	Disable toolbar"
-.endif
-.if !defined(WITHOUT_XRENDER)
-	@${ECHO_CMD} "WITHOUT_XRENDER=yes	Disable Xrender (transparent) support"
 .endif
 
 post-patch:
