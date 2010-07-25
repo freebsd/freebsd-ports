@@ -2028,6 +2028,7 @@ cuse4bsd-kmod                   ports/multimedia/cuse4bsd-kmod
 cutecom                         ports/comms/cutecom
 cutils                          ports/devel/cutils
 cutmp3                          ports/audio/cutmp3
+cutter                          ports/devel/cutter
 cuttlefish                      ports/graphics/cuttlefish
 cuyo                            ports/games/cuyo
 cvc3                            ports/math/cvc3
@@ -3053,6 +3054,7 @@ epiwm                           ports/x11-wm/epiwm
 epix                            ports/graphics/epix
 epkg                            ports/archivers/epkg
 epm                             ports/devel/epm
+epoch                           ports/deskutils/epoch
 epos-devel                      ports/audio/epos-devel
 epplets                         ports/x11-wm/epplets
 eps                             ports/mail/eps
@@ -7509,6 +7511,7 @@ lcdproc                         ports/sysutils/lcdproc
 lcdtest                         ports/graphics/lcdtest
 lcms                            ports/graphics/lcms
 lcms-python                     ports/graphics/lcms-python
+lcov                            ports/devel/lcov
 ldap-account-manager            ports/sysutils/ldap-account-manager
 ldap-stats                      ports/net/ldap-stats
 ldap2dns                        ports/net/ldap2dns
@@ -21618,6 +21621,7 @@ qwit                            ports/net-im/qwit
 qwit-devel                      ports/net-im/qwit-devel
 qwt4                            ports/x11-toolkits/qwt4
 qwt5                            ports/x11-toolkits/qwt5
+qwt5-designerplugin             ports/x11-toolkits/qwt5-designerplugin
 qwtplot3d                       ports/math/qwtplot3d
 qwtplot3d-qt4                   ports/math/qwtplot3d-qt4
 r                               ports/math/R
