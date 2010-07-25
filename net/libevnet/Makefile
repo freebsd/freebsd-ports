@@ -8,6 +8,7 @@
 
 PORTNAME=	libevnet
 PORTVERSION=	0.3.11
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.25thandclement.com/~william/projects/releases/
 EXTRACT_SUFX=	.tgz

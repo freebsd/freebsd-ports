@@ -6,14 +6,14 @@ include/evdns.h
 include/evrpc.h
 include/evutil.h
 lib/libevent-1.4.so
-lib/libevent-1.4.so.3
+lib/libevent-1.4.so.4
 lib/libevent_core-1.4.so
-lib/libevent_core-1.4.so.3
+lib/libevent_core-1.4.so.4
 lib/libevent_core.a
 lib/libevent_core.la
 lib/libevent_core.so
 lib/libevent_extra-1.4.so
-lib/libevent_extra-1.4.so.3
+lib/libevent_extra-1.4.so.4
 lib/libevent_extra.a
 lib/libevent_extra.la
 lib/libevent_extra.so

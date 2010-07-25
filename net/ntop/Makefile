@@ -7,7 +7,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	3.3.10
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://www.ntop.org/trac/export/4103/trunk/ntop/3rd_party/ \
 		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}

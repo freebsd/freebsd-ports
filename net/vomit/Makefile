@@ -7,7 +7,7 @@
 
 PORTNAME=	vomit
 PORTVERSION=	0.2c
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net security
 MASTER_SITES=	http://vomit.xtdnet.nl/
 

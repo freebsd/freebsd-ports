@@ -7,7 +7,7 @@
 
 PORTNAME=	stegdetect
 PORTVERSION=	0.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security
 MASTER_SITES=	http://www.outguess.org/ \
 		http://distfiles.master.finkmirrors.net/ \
