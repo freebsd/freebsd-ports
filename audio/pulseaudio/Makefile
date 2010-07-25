@@ -3,7 +3,7 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/pulseaudio/Makefile,v 1.21 2009/11/28 19:08:20 marcus Exp $
+#   $MCom: ports-stable/audio/pulseaudio/Makefile,v 1.7 2010/06/25 20:35:01 kwm Exp $
 #
 # !!!NOTE!!! Any PORTVERSION update to this port must be accompanied by
 # PORTREVISION bumps to audio/gnome-media, sysutils/gnome-settings-daemon,
@@ -12,7 +12,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	0.9.21
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -117,9 +117,14 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
+	${MKDIR} ${PREFIX}/etc/pulse
 .for ii in default.pa daemon.conf client.conf system.pa
 	${INSTALL_DATA} ${WRKSRC}/src/${ii} \
 		${PREFIX}/etc/pulse/${ii}-dist
+. if !exists(${PREFIX}/etc/pulse/${II})
+	${INSTALL_DATA} ${WRKSRC}/src/${ii} \
+		${PREFIX}/etc/pulse/${ii}
+. endif
 .endfor
 
 .include <bsd.port.post.mk>
