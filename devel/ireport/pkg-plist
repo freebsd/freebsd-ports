@@ -1951,9 +1951,9 @@ bin/iReport
 %%JAVAJARDIR%%/iText-2.1.7-LICENSE.txt
 %%JAVAJARDIR%%/iText-2.1.7.jar
 %%JAVAJARDIR%%/iTextAsian.jar
-%%JAVAJARDIR%%/jasperreports-chart-themes-3.7.3.jar
+%%JAVAJARDIR%%/jasperreports-chart-themes-3.7.4.jar
 %%JAVAJARDIR%%/jasperreports-extensions-3.5.3.jar
-%%JAVAJARDIR%%/jasperreports-fonts-3.7.3.jar
+%%JAVAJARDIR%%/jasperreports-fonts-3.7.4.jar
 %%JAVAJARDIR%%/javacup.jar
 %%JAVAJARDIR%%/javassist-3.4.GA.jar
 %%JAVAJARDIR%%/jdt-compiler-3.1.1-LICENSE.html

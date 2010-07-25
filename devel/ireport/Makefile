@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ireport
-PORTVERSION=	3.7.3
-PORTREVISION=	1
+PORTVERSION=	3.7.4
 CATEGORIES=	devel databases java
 MASTER_SITES=	SF/${PORTNAME}/iReport/iReport-${PORTVERSION}
 DISTNAME=	iReport-${PORTVERSION}
@@ -61,8 +60,8 @@ JARFILES=	asm-attrs.jar asm.jar barcode4j-2.0-LICENSE.txt			\
 		ejb3-persistence.jar hibernate-annotations.jar			\
 		hibernate-commons-annotations.jar hibernate3-LICENSE.txt	\
 		hibernate3.jar iText-2.1.7-LICENSE.txt iText-2.1.7.jar		\
-		iTextAsian.jar jasperreports-chart-themes-3.7.3.jar		\
-		jasperreports-extensions-3.5.3.jar jasperreports-fonts-3.7.3.jar\
+		iTextAsian.jar jasperreports-chart-themes-3.7.4.jar		\
+		jasperreports-extensions-3.5.3.jar jasperreports-fonts-3.7.4.jar\
 		javacup.jar javassist-3.4.GA.jar jdt-compiler-3.1.1-LICENSE.html\
 		jdt-compiler-3.1.1.jar jpa.jar					\
 		js_jasperserver-common-ws-3.5.0.jar js_saaj-api-1.3.jar		\
@@ -93,8 +92,8 @@ CLSSPTH=	ant antlr asm-attrs asm barbecue barcode4j-2.0 batik batik-anim	\
 		eigenbase-xom-1.3.0.11999 ejb3-persistence groovy		\
 		hibernate-annotations hibernate-commons-annotations hibernate3	\
 		itext iText-2.1.7 iTextAsian jasperreports			\
-		jasperreports-chart-themes-3.6.2 jasperreports-extensions-3.5.3	\
-		jasperreports-fonts-3.7.2 javacup javassist-3.4.GA  jaxen-full	\
+		jasperreports-chart-themes-3.7.4 jasperreports-extensions-3.5.3	\
+		jasperreports-fonts-3.7.4 javacup javassist-3.4.GA  jaxen-full	\
 		jcommon jdt-compiler-3.1.1 jfreechart jpa activation axis	\
 		commons-codec commons-discovery commons-httpclient		\
 		js_jasperserver-common-ws-3.5.0 jaxrpc mail js_saaj-api-1.3	\
