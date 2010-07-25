@@ -15,7 +15,7 @@ MASTER_SITES=	SF/gnucash/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
 		http://www.linas.org/pub/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Documentation for gnucash
 
 LIB_DEPENDS=	rarian.0:${PORTSDIR}/textproc/rarian
