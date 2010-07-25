@@ -8,7 +8,8 @@
 PORTNAME=	dulwich
 PORTVERSION=	0.6.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://samba.org/~jelmer/${PORTNAME}/
+MASTER_SITES=	http://samba.org/~jelmer/${PORTNAME}/ \
+		http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	marco.broeder@gmx.eu
@@ -16,6 +17,8 @@ COMMENT=	Pure-Python implementation of the Git file formats and protocols
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+
+FETCH_ARGS=	-pRr	# default '-ApRr' prevents 302 redirects by launchpad
 
 .ifndef (NOPORTDOCS)
 PORTDOCS=	AUTHORS COPYING HACKING NEWS README
