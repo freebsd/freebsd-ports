@@ -7,7 +7,7 @@
 
 PORTNAME=	drjava
 PORTVERSION=	0.9.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/3.%20DrJava%20Eclipse%20Plug-in/${PORTNAME}-eclipse-${PORTVERSION}
 PKGNAMEPREFIX=	eclipse-
@@ -26,7 +26,7 @@ USE_ZIP=	yes
 JAVA_VERSION=	1.4+
 JAVA_OS=	native
 
-DATADIR=	${PREFIX}/eclipse/plugins
+DATADIR=	${PREFIX}/lib/eclipse/plugins
 
 EPLUGIN_ID=	edu.rice.cs.drjava
 EPLUGIN_VER=	${PORTVERSION}
