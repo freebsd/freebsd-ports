@@ -15,7 +15,7 @@ name=musicpd
 rcvar=`set_rcvar`
 stop_cmd="${name}_stop"
 
-config=%%PREFIX%%/etc/mpd.conf
+config=%%PREFIX%%/etc/%%MPDCONF%%
 command=%%PREFIX%%/bin/mpd
 required_files=$config
 

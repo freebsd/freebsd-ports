@@ -1,2 +1,5 @@
 bin/mpd
 @dirrmtry var/mpd
+@unexec if cmp -s %D/etc/%%MPDCONF%%.sample %D/etc/%%MPDCONF%%; then rm -f %D/etc/%%MPDCONF%%; fi
+etc/%%MPDCONF%%.sample
+@exec if [ ! -f %D/etc/%%MPDCONF%% ] ; then cp -p %D/%F %B/%%MPDCONF%%; fi

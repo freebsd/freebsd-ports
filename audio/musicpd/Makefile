@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.15.8
-PORTREVISION=	4
+PORTVERSION=	0.15.12
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -62,6 +61,7 @@ OPTIONS=	ID3TAG          "Support ID3 v1/v2 tags"                on \
 MPDDIR=	var/mpd
 MPDUSER=	mpd
 MPDGROUP=	mpd
+MPDCONF=	mpd.conf
 
 USERS=	${MPDUSER}
 GROUPS=	${MPDGROUP}
@@ -70,13 +70,15 @@ MPDUID=	137
 MPDGID=	137
 
 PLIST_SUB=	MPDUSER=${MPDUSER} \
-		MPDGROUP=${MPDGROUP}
+		MPDGROUP=${MPDGROUP} \
+		MPDCONF=${MPDCONF}
 
 SUB_LIST+=	MPDUSER=${MPDUSER} \
 		MPDGROUP=${MPDGROUP} \
 		MPDDIR=${PREFIX}/${MPDDIR} \
 		MPDUID=${MPDUID} \
-		MPDGID=${MPDGID}
+		MPDGID=${MPDGID} \
+		MPDCONF=${MPDCONF}
 
 .include <bsd.port.pre.mk>
 
@@ -227,6 +229,10 @@ post-patch:
 .endif
 
 post-install:
+	@${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example ${PREFIX}/etc/${MPDCONF}.sample
+	@if [ ! -f ${PREFIX}/etc/${MPDCONF} ]; then \
+		${CP} -p ${PREFIX}/etc/${MPDCONF}.sample ${PREFIX}/etc/${MPDCONF} ; \
+	fi
 	@${MKDIR} ${PREFIX}/${MPDDIR}
 	@${CHOWN} -R ${MPDUSER}:${MPDGROUP} ${PREFIX}/${MPDDIR}
 	@${ECHO_MSG}
