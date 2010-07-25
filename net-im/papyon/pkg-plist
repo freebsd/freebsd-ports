@@ -181,6 +181,9 @@
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/exceptions.py
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/exceptions.pyc
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/papyon/msnp2p/filetransfer.py
+%%PYTHON_SITELIBDIR%%/papyon/msnp2p/filetransfer.pyc
+%%PYTHON_SITELIBDIR%%/papyon/msnp2p/filetransfer.pyo
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/msnobject.py
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/msnobject.pyc
 %%PYTHON_SITELIBDIR%%/papyon/msnp2p/msnobject.pyo
@@ -577,9 +580,6 @@
 %%PYTHON_SITELIBDIR%%/papyon/util/odict.py
 %%PYTHON_SITELIBDIR%%/papyon/util/odict.pyc
 %%PYTHON_SITELIBDIR%%/papyon/util/odict.pyo
-%%PYTHON_SITELIBDIR%%/papyon/util/pyDes.py
-%%PYTHON_SITELIBDIR%%/papyon/util/pyDes.pyc
-%%PYTHON_SITELIBDIR%%/papyon/util/pyDes.pyo
 %%PYTHON_SITELIBDIR%%/papyon/util/queue.py
 %%PYTHON_SITELIBDIR%%/papyon/util/queue.pyc
 %%PYTHON_SITELIBDIR%%/papyon/util/queue.pyo
