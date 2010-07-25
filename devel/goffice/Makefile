@@ -3,13 +3,13 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/goffice/Makefile,v 1.35 2008/10/20 18:13:37 kwm Exp $
+#   $MCom: ports-stable/devel/goffice/Makefile,v 1.3 2010/06/29 10:56:38 kwm Exp $
 #
 # !!! When updating goffice, don't forget to update pkg-plist in:
 #     math/gnumeric science/gchemutils
 
 PORTNAME=	goffice
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.7
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -18,6 +18,8 @@ COMMENT=	GLib/GTK+ set of document centric objects and utilities
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgsf gconf2 \
