@@ -13,7 +13,7 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/gtk2-perl/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Perl bindings to the cairo graphics library
 
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/releases/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A helper that makes system-config-printer use PolicyKit
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
