@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pydev
-PORTVERSION=	1.5.6.2010033101
+PORTVERSION=	1.6.0.2010071813
 PORTREVISION=	0
 CATEGORIES=	java devel python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Pydev%20${PORTVERSION:R}
@@ -30,7 +30,7 @@ USE_ZIP=	yes
 
 do-install:
 .for d in features plugins
-	cd ${WRKDIR}/${d} && ${COPYTREE_SHARE} . ${PREFIX}/eclipse/${d}
+	cd ${WRKDIR}/${d} && ${COPYTREE_SHARE} . ${PREFIX}/lib/eclipse/${d}
 .endfor
 
 post-install:
