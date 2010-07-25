@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/gnome-media/Makefile,v 1.151 2010/04/02 01:29:55 avl Exp $
+#   $MCom: ports-stable/audio/gnome-media/Makefile,v 1.2 2010/06/25 06:51:09 kwm Exp $
 #
 
 PORTNAME=	gnome-media
 PORTVERSION=	2.30.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,7 +18,6 @@ COMMENT=	Multimedia applications for the GNOME 2 desktop
 
 BUILD_DEPENDS=	xml2po:${PORTSDIR}/textproc/gnome-doc-utils
 LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
-    		pulse.0:${PORTSDIR}/audio/pulseaudio \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 
 USE_BZIP2=	yes
@@ -38,8 +37,21 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 GCONF_SCHEMAS=	gnome-audio-profiles.schemas \
 		gnome-sound-recorder.schemas
 
+OPTIONS=	PULSEAUDIO "Enable Pulse Audio support" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_PULSEAUDIO)
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+CONFIGURE_ARGS+=--enable-pulseaudio
+PLIST_SUB+=	PULSE=""
+.else
+CONFIGURE_ARGS+=--disable-pulseaudio
+PLIST_SUB+=	PULSE="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|have_gladeui=true|have_gladeui=false|g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
