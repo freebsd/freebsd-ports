@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Determine file type using magic
 
 PERL_CONFIGURE=	YES
