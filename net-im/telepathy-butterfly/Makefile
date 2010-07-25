@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	telepathy-butterfly
-PORTVERSION=	0.5.9
+PORTVERSION=	0.5.12
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

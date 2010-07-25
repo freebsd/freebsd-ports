@@ -25,6 +25,9 @@
 %%PYTHON_SITELIBDIR%%/butterfly/channel/contact_list.py
 %%PYTHON_SITELIBDIR%%/butterfly/channel/contact_list.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/channel/contact_list.pyo
+%%PYTHON_SITELIBDIR%%/butterfly/channel/file_transfer.py
+%%PYTHON_SITELIBDIR%%/butterfly/channel/file_transfer.pyc
+%%PYTHON_SITELIBDIR%%/butterfly/channel/file_transfer.pyo
 %%PYTHON_SITELIBDIR%%/butterfly/channel/group.py
 %%PYTHON_SITELIBDIR%%/butterfly/channel/group.pyc
 %%PYTHON_SITELIBDIR%%/butterfly/channel/group.pyo
