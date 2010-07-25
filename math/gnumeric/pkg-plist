@@ -115,6 +115,7 @@ include/libspreadsheet-1.10/spreadsheet/style-font.h
 include/libspreadsheet-1.10/spreadsheet/style.h
 include/libspreadsheet-1.10/spreadsheet/symbol.h
 include/libspreadsheet-1.10/spreadsheet/tools/gnm-solver.h
+include/libspreadsheet-1.10/spreadsheet/undo.h
 include/libspreadsheet-1.10/spreadsheet/validation-combo.h
 include/libspreadsheet-1.10/spreadsheet/validation.h
 include/libspreadsheet-1.10/spreadsheet/value.h
@@ -356,7 +357,6 @@ share/gnumeric/%%VERSION%%/glade/normality-tests.glade
 share/gnumeric/%%VERSION%%/glade/mean-tests.glade
 share/gnumeric/%%VERSION%%/glade/merge.glade
 share/gnumeric/%%VERSION%%/glade/moving-averages.glade
-share/gnumeric/%%VERSION%%/glade/paste-names.glade
 share/gnumeric/%%VERSION%%/glade/paste-special.glade
 share/gnumeric/%%VERSION%%/glade/plugin-manager.glade
 share/gnumeric/%%VERSION%%/glade/preferences.glade
@@ -869,6 +869,8 @@ share/locale/am/LC_MESSAGES/gnumeric-functions.mo
 share/locale/am/LC_MESSAGES/gnumeric.mo
 share/locale/ar/LC_MESSAGES/gnumeric-functions.mo
 share/locale/ar/LC_MESSAGES/gnumeric.mo
+share/locale/ast/LC_MESSAGES/gnumeric-functions.mo
+share/locale/ast/LC_MESSAGES/gnumeric.mo
 share/locale/az/LC_MESSAGES/gnumeric-functions.mo
 share/locale/az/LC_MESSAGES/gnumeric.mo
 share/locale/bg/LC_MESSAGES/gnumeric-functions.mo
@@ -981,6 +983,8 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm share/gnumeric/%%VERSION%%/ui
 @dirrm share/gnumeric/%%VERSION%%/templates
 @dirrm share/gnumeric/%%VERSION%%/glade
+@dirrm share/gnumeric/%%VERSION%%/doc/C
+@dirrm share/gnumeric/%%VERSION%%/doc
 @dirrm share/gnumeric/%%VERSION%%/autoformat-templates/List
 @dirrm share/gnumeric/%%VERSION%%/autoformat-templates/General
 @dirrm share/gnumeric/%%VERSION%%/autoformat-templates/Financial
@@ -1055,3 +1059,5 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast

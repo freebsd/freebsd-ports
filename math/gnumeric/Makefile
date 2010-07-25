@@ -3,11 +3,12 @@
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
-#   $MCom: ports/math/gnumeric/Makefile,v 1.46 2008/10/20 21:37:28 kwm Exp $
+#   $MCom: ports-stable/math/gnumeric/Makefile,v 1.5 2010/06/29 11:24:22 kwm Exp $
 #
+# When updating, remember to update pkg-plist of gchemutils.
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.10.5
+PORTVERSION=	1.10.7
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,6 +19,8 @@ COMMENT=	The GNOME 2 spreadsheet
 LIB_DEPENDS=	goffice-0.8.8:${PORTSDIR}/devel/goffice \
 		psiconv.10:${PORTSDIR}/converters/psiconv
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -39,7 +42,7 @@ GCONF_SCHEMAS=	gnumeric-dialogs.schemas gnumeric-general.schemas \
 
 MAN1=		gnumeric.1 ssconvert.1 ssindex.1 ssgrep.1
 
-PLIST_SUB=	VERSION=${PORTVERSION} GOFFICE=0.8.5
+PLIST_SUB=	VERSION=${PORTVERSION} GOFFICE=0.8.7
 
 OPTIONS=	PERL "Enable Perl as extension language" on
 #GNOMEDB "Enable libgnomedb support" off
