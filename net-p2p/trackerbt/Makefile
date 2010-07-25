@@ -15,6 +15,8 @@ COMMENT=	A BitTorrent tracker with additional distributed functionality
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libSockets.a:${PORTSDIR}/net/Sockets
 
+BROKEN=		does not compile with new Sockets
+
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
 USE_ICONV=	yes
