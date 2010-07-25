@@ -1,0 +1,16 @@
+
+--- ./scripts/xdg-screensaver.orig	2010-06-29 12:36:04.000000000 -0400
++++ ./scripts/xdg-screensaver	2010-06-29 12:37:22.000000000 -0400
+@@ -355,7 +355,9 @@
+ }
+ 
+ # Check if we can use "mv -T" 
+-if mv -T ... ... 2>&1 | grep '\.\.\.' > /dev/null ; then
++# FreeBSD cannot, so supress scary messages in the terminal
++#if mv -T ... ... 2>&1 | grep '\.\.\.' > /dev/null ; then
++if false ; then
+    # We can securely move files in /tmp with mv -T
+    DEBUG 1 "mv -T available"
+    MV="mv -T"
+
+

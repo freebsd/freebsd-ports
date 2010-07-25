@@ -3,12 +3,12 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports-stable/devel/xdg-utils/Makefile,v 1.1 2006/10/27 20:43:38 ahze Exp $
+#    $MCom: ports-stable/devel/xdg-utils/Makefile,v 1.3 2010/06/29 17:32:55 kwm Exp $
 #
 
 PORTNAME=	xdg-utils
 PORTVERSION=	1.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://portland.freedesktop.org/download/
 EXTRACT_SUFX=	.tgz
