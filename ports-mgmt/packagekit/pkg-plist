@@ -3,7 +3,6 @@ bin/pk-debuginfo-install
 bin/pkcon
 bin/pkgenpack
 bin/pkmon
-%%RUCK%%bin/ruck
 @unexec if cmp -s %D/etc/PackageKit/CommandNotFound.conf %D/etc/PackageKit/CommandNotFound.conf.default; then rm -f %D/etc/PackageKit/CommandNotFound.conf; fi
 etc/PackageKit/CommandNotFound.conf
 @exec [ -f %B/CommandNotFound.conf ] || cp %B/%f %B/CommandNotFound.conf
@@ -116,8 +115,8 @@ lib/polkit-1/extensions/libpackagekit-action-lookup.so
 %%PYTHON_SITELIBDIR%%/packagekit/progress.pyc
 %%PYTHON_SITELIBDIR%%/packagekit/progress.pyo
 libdata/pkgconfig/packagekit-glib2.pc
+libexec/packagekitd
 libexec/pk-command-not-found
-sbin/packagekitd
 %%PORTS%%share/PackageKit/helpers/ports/portsBackend.rb
 %%PORTS%%share/PackageKit/helpers/ports/ruby_packagekit/enums.rb
 %%PORTS%%share/PackageKit/helpers/ports/ruby_packagekit/prints.rb
@@ -276,38 +275,38 @@ share/dbus-1/system-services/org.freedesktop.PackageKit.service
 share/gir-1.0/PackageKitGlib-1.0.gir
 share/gtk-doc/html/PackageKit/PackageKit-egg-debug.html
 share/gtk-doc/html/PackageKit/PackageKit-pk-bitfield.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-catalog.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-category.html
 share/gtk-doc/html/PackageKit/PackageKit-pk-client-sync.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-client.html
 share/gtk-doc/html/PackageKit/PackageKit-pk-common.html
 share/gtk-doc/html/PackageKit/PackageKit-pk-control-sync.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-control.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-desktop.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-details.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-distro-upgrade.html
 share/gtk-doc/html/PackageKit/PackageKit-pk-enum.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-error.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-eula-required.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-files.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-media-change-required.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-message.html
 share/gtk-doc/html/PackageKit/PackageKit-pk-package-id.html
 share/gtk-doc/html/PackageKit/PackageKit-pk-package-ids.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-package-sack.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-package.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-progress.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-repo-detail.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-repo-signature-required.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-require-restart.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-results.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-service-pack.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-task.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-transaction-past.html
+share/gtk-doc/html/PackageKit/PackageKit-pk-update-detail.html
 share/gtk-doc/html/PackageKit/PackageKit.devhelp
 share/gtk-doc/html/PackageKit/PackageKit.devhelp2
 share/gtk-doc/html/PackageKit/PackageKit.html
-share/gtk-doc/html/PackageKit/PkCatalog.html
-share/gtk-doc/html/PackageKit/PkCategory.html
-share/gtk-doc/html/PackageKit/PkClient.html
-share/gtk-doc/html/PackageKit/PkControl.html
-share/gtk-doc/html/PackageKit/PkDesktop.html
-share/gtk-doc/html/PackageKit/PkDetails.html
-share/gtk-doc/html/PackageKit/PkDistroUpgrade.html
-share/gtk-doc/html/PackageKit/PkError.html
-share/gtk-doc/html/PackageKit/PkEulaRequired.html
-share/gtk-doc/html/PackageKit/PkFiles.html
-share/gtk-doc/html/PackageKit/PkMediaChangeRequired.html
-share/gtk-doc/html/PackageKit/PkMessage.html
-share/gtk-doc/html/PackageKit/PkPackage.html
-share/gtk-doc/html/PackageKit/PkPackageSack.html
-share/gtk-doc/html/PackageKit/PkProgress.html
-share/gtk-doc/html/PackageKit/PkRepoDetail.html
-share/gtk-doc/html/PackageKit/PkRepoSignatureRequired.html
-share/gtk-doc/html/PackageKit/PkRequireRestart.html
-share/gtk-doc/html/PackageKit/PkResults.html
-share/gtk-doc/html/PackageKit/PkServicePack.html
-share/gtk-doc/html/PackageKit/PkTask.html
-share/gtk-doc/html/PackageKit/PkTransactionPast.html
-share/gtk-doc/html/PackageKit/PkUpdateDetail.html
 share/gtk-doc/html/PackageKit/Transaction.html
 share/gtk-doc/html/PackageKit/api-reference.html
 share/gtk-doc/html/PackageKit/backend-compiled.html
@@ -397,25 +396,12 @@ share/mime/packages/packagekit-catalog.xml
 share/mime/packages/packagekit-package-list.xml
 share/mime/packages/packagekit-servicepack.xml
 share/polkit-1/actions/org.freedesktop.packagekit.policy
-%%RUCK%%share/ruck/AUTHORS
-%%RUCK%%share/ruck/README
-%%RUCK%%share/ruck/commands/ruckcachecmds.py
-%%RUCK%%share/ruck/commands/ruckpackagecmds.py
-%%RUCK%%share/ruck/commands/rucktransactcmds.py
-%%RUCK%%share/ruck/i18n.py
-%%RUCK%%share/ruck/ruckcommand.py
-%%RUCK%%share/ruck/ruckformat.py
-%%RUCK%%share/ruck/ruckmain.py
-%%RUCK%%share/ruck/rucktalk.py
-%%RUCK%%share/ruck/ruckyum.py
 @exec mkdir -p /var/cache/PackageKit/downloads
 @unexec rmdir /var/cache/PackageKit/downloads 2>/dev/null || true
 @unexec rmdir /var/cache/PackageKit 2>/dev/null || true
 @unexec rmdir /var/cache 2>/dev/null || true
 @unexec rmdir /var/lib/PackageKit 2>/dev/null || true
 @unexec rmdir /var/lib 2>/dev/null || true
-%%RUCK%%@dirrm share/ruck/commands
-%%RUCK%%@dirrm share/ruck
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
