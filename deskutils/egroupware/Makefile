@@ -24,7 +24,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PEARDIR=	${LOCALBASE}/share/pear
 USE_BZIP2=	yes
-USE_PHP=	session
+USE_PHP=	session ctype
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 SUB_FILES=	pkg-message
