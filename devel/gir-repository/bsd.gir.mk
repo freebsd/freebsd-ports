@@ -37,9 +37,6 @@ gtksourceview2_GIR=	GtkSource-2.2
 vte_CATEGORY=	x11-toolkits
 vte_GIR=	Vte-1.0
 
-avahi_CATEGORY=	net
-avahi_GIR=	Avahi-0.6
-
 goocanvas_CATEGORY=	graphics
 goocanvas_GIR=	GooCanvas-0.10
 
@@ -71,7 +68,7 @@ PLIST=		${NONEXISTENT}
 _USE_GIR_ALL=	dbus atk pango pangoxft poppler gtk gconf soup babl nautilusextension \
 		gnomekeyring webkit notify gnio clutter clutter_gtk clutter_cairo \
 		gstreamer gstbufferlist_h gstreamer_plugins_base gtksourceview vte \
-		goocanvas gssdp gupnp avahi unique gmenu wnck
+		goocanvas gssdp gupnp unique gmenu wnck
 
 .if ${GIR_NAME} == "poppler"
 LIB_DEPENDS+=	poppler-glib.4:${PORTSDIR}/graphics/poppler-gtk
@@ -134,11 +131,6 @@ CLEAR_DEPS+=	Gtk-2.0
 USE_GNOME+=	vte
 GIR_FILES=	Vte-1.0
 CLEAR_DEPS+=	Gtk-2.0
-.endif
-
-.if ${GIR_NAME} == "avahi"
-LIB_DEPENDS+=	avahi-gobject.0:${PORTSDIR}/net/avahi-app
-GIR_FILES=	Avahi-0.6 AvahiCore-0.6
 .endif
 
 .if ${GIR_NAME} == "goocanvas"
