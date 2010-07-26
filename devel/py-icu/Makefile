@@ -7,6 +7,7 @@
 
 PORTNAME=	icu
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_CHEESESHOP}
 MASTER_SITE_SUBDIR=	source/P/PyICU
@@ -15,8 +16,6 @@ DISTNAME=	PyICU-${PORTVERSION}
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Python extension wrapping IBM's ICU C++ API
-
-LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
@@ -29,4 +28,14 @@ MAKE_ENV+= \
 	PYICU_LFLAGS="-L${PREFIX}/lib" \
 	PYICU_LIBRARIES="icui18n:icuuc:icudata"
 
-.include <bsd.port.mk>
+OPTIONS=		ICU4		"Use ICU 4.x instead of 3.8"	off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_ICU4) || exists(${LOCALBASE}/lib/libicudata.so.44)
+LIB_DEPENDS+=	icudata:${PORTSDIR}/devel/icu4
+.else
+LIB_DEPENDS+=	icudata:${PORTSDIR}/devel/icu
+.endif
+
+.include <bsd.port.post.mk>
