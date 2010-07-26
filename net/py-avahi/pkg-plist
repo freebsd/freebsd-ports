@@ -6,9 +6,6 @@ bin/avahi-discover
 %%PYTHON_SITELIBDIR%%/avahi/__init__.py
 %%PYTHON_SITELIBDIR%%/avahi/__init__.pyc
 %%PYTHON_SITELIBDIR%%/avahi/__init__.pyo
-%%PYTHON_SITELIBDIR%%/avahi_discover/SimpleGladeApp.py
-%%PYTHON_SITELIBDIR%%/avahi_discover/SimpleGladeApp.pyc
-%%PYTHON_SITELIBDIR%%/avahi_discover/SimpleGladeApp.pyo
 %%PYTHON_SITELIBDIR%%/avahi_discover/__init__.py
 %%PYTHON_SITELIBDIR%%/avahi_discover/__init__.pyc
 %%PYTHON_SITELIBDIR%%/avahi_discover/__init__.pyo
