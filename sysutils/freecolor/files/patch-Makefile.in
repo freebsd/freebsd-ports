@@ -1,11 +1,21 @@
---- Makefile.in.bak	Sun Oct 30 09:50:03 2005
-+++ Makefile.in	Sun Oct 30 09:50:13 2005
-@@ -21,7 +21,7 @@
+--- ./Makefile.in.orig	2005-06-04 15:52:52.000000000 +0100
++++ ./Makefile.in	2010-07-26 12:40:15.000000000 +0100
+@@ -2,7 +2,6 @@
+ CFLAGS = -Wall @CFLAGS@ @DEFS@
+ CPPFLAGS = @CPPFLAGS@ @DEFS@
+ LDFLAGS = @LDFLAGS@ @LIBS@
+-INSTALL = @INSTALL@
+ 
+ prefix = @prefix@
+ mandir = @mandir@
+@@ -19,9 +18,8 @@
+ 	cp -i free `which free`
+ 
  install:
- 	strip free
+-	strip free
  	-$(INSTALL) -d $(bindir)
 -	$(INSTALL) -m 755 free $(bindir)/freecolor
-+	$(INSTALL) -g kmem -m 2755 free $(bindir)/freecolor
++	$(INSTALL_PROGRAM) free $(bindir)/freecolor
  
  clean:
  	rm -f core free *~
