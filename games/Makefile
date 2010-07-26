@@ -779,7 +779,7 @@
     SUBDIR += sdlquake2
     SUBDIR += sdlroids
     SUBDIR += sdlsand
-    SUBDIR += sea-sefender
+    SUBDIR += sea-defender
     SUBDIR += seabattle
     SUBDIR += seahaven
     SUBDIR += searchandrescue
