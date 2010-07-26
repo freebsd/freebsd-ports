@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	slony1v2
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.4
 CATEGORIES=	databases
 MASTER_SITES=	http://main.slony.info/downloads/2.0/source/
 DISTNAME=	slony1-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-docs${EXTRACT_SUFX}
 
-MAINTAINER=	vivek@khera.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	PostgreSQL master to multiple replicas replication system
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
@@ -34,7 +34,7 @@ CONFLICTS?=     slony1-1*
 
 .include <bsd.port.pre.mk>
 
-IGNORE_WITH_PGSQL=	73 74 80 81 82 84
+IGNORE_WITH_PGSQL=	73 74 80 81 82
 
 .if defined(WITH_PERLTOOLS)
 USE_PERL5=	yes
