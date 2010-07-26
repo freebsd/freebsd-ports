@@ -24,4 +24,9 @@ CONFIGURE_ARGS+=	INC="-I${LOCALBASE}/include"
 
 MAN3=		Math::BigInt::GMP.3
 
+post-patch:
+	@${PERL} -pi -e "s!-lgmp!-L${LOCALBASE}/lib $$&!;" \
+		     -e "if (/'LIBS'/) { print qq!'INC' => '-I${LOCALBASE}/include',!; }" \
+		${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>
