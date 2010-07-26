@@ -2301,7 +2301,6 @@ lib/perl5/%%PERL_VER%%/warnings/register.pm
 @dirrm lib/perl5/%%PERL_VER%%/unicore/lib/Age
 @dirrm lib/perl5/%%PERL_VER%%/unicore/lib/AHex
 @dirrm lib/perl5/%%PERL_VER%%/unicore/lib
-@dirrm lib/perl5/%%PERL_VER%%/unicore/lib
 @dirrm lib/perl5/%%PERL_VER%%/unicore/extracted
 @dirrm lib/perl5/%%PERL_VER%%/unicore/auxiliary
 @dirrm lib/perl5/%%PERL_VER%%/unicore/To
