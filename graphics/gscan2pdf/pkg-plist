@@ -32,6 +32,7 @@ share/pixmaps/gscan2pdf.svg
 %%NLS%%share/locale/ko/LC_MESSAGES/gscan2pdf.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/gscan2pdf.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gscan2pdf.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/gscan2pdf.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gscan2pdf.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/gscan2pdf.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gscan2pdf.mo
