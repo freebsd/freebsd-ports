@@ -1,3 +1,8 @@
+bin/usb-devices
+libdata/pkgconfig/usbutils.pc
 sbin/lsusb
+sbin/update-usbids.sh
+%%DATADIR%%/usb.ids
 %%DATADIR%%/usb.ids.gz
 @dirrm %%DATADIR%%
+@dirrmtry libdata/pkgconfig
