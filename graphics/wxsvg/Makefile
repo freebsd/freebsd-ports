@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library to create, manipulate, and render SVG files
 
 AUTOMAKE_ARGS=	--add-missing

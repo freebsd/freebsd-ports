@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Microsoft file word processor format import filter library
 
 LIB_DEPENDS=	wpd-0.8.8:${PORTSDIR}/textproc/libwpd

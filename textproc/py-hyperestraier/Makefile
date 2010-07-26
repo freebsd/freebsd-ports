@@ -11,7 +11,7 @@ MASTER_SITES=	http://hyperestraier.sourceforge.net/binding/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	hyper_estraier_wrappers-${PORTVERSION}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for HyperEstraier
 
 BUILD_DEPENDS=	swig>=1.3:${PORTSDIR}/devel/swig13

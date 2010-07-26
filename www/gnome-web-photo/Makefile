@@ -13,7 +13,7 @@ PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	GNOME
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to generate full-size image files and thumbnails
 
 USE_BZIP2=	yes

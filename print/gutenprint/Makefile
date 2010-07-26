@@ -14,7 +14,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The "meta-port" for GutenPrint
 
 RUN_DEPENDS=	gutenprint-base>0:${PORTSDIR}/print/gutenprint-base

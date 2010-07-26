@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
 DISTFILES=	${LDOUBLE_DISTFILE}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Long double math precision functions
 
 NO_WRKSUBDIR=	yes

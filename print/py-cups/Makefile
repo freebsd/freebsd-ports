@@ -12,7 +12,7 @@ MASTER_SITES=	http://cyberelk.net/tim/data/pycups/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CUPS bindings for Python
 
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client

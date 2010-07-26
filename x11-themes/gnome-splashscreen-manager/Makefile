@@ -12,7 +12,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.miketech.net/gnome-art/download/
 DISTNAME=	gnome-art-${PORTVERSION}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome splash screen manager
 
 BUILD_DEPENDS=	gnome-session:${PORTSDIR}/x11/gnome-session \

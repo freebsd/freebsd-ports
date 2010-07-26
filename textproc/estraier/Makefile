@@ -13,7 +13,7 @@ MASTER_SITES=	SF \
 		http://estraier.sourceforge.net/
 
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-text search system for personal use
 
 LIB_DEPENDS=	qdbm.14:${PORTSDIR}/databases/qdbm
