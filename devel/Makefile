@@ -539,6 +539,7 @@
     SUBDIR += happydoc
     SUBDIR += hapy
     SUBDIR += hcs12mem
+    SUBDIR += hexcompare
     SUBDIR += hg-git
     SUBDIR += hgsvn
     SUBDIR += hgview
