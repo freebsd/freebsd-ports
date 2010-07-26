@@ -21,6 +21,8 @@ BUILD_DEPENDS=\
 	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose\
 	${PYTHON_PKGNAMEPREFIX}lockfile>0:${PORTSDIR}/devel/py-lockfile
 
+BROKEN=		leaves behind files on deinstall
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_NOEGGINFO=	yes
