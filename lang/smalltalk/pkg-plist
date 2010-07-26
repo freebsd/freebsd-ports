@@ -15,7 +15,7 @@ include/gstpub.h
 lib/libgst.a
 lib/libgst.la
 lib/libgst.so
-lib/libgst.so.7
+lib/libgst.so.8
 %%TCLTK%%lib/smalltalk/blox-tk-%%VERSION%%.so
 %%TCLTK%%lib/smalltalk/blox-tk.a
 %%TCLTK%%lib/smalltalk/blox-tk.la
@@ -76,7 +76,6 @@ libexec/smalltalk/vfs/uzip
 var/lib/smalltalk/gst.im
 share/aclocal/gst.m4
 share/aclocal/gst-package.m4
-share/aclocal/snprintfv.m4
 share/emacs/site-lisp/gst-mode.el
 share/emacs/site-lisp/smalltalk-mode.el
 @dirrm lib/smalltalk
