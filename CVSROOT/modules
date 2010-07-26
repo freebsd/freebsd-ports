@@ -9192,7 +9192,6 @@ mingw32-libgmp4                 ports/math/mingw32-libgmp4
 mingw32-pdcurses                ports/devel/mingw32-pdcurses
 mingw32-pthreads                ports/devel/mingw32-pthreads
 mingw64-binutils                ports/devel/mingw64-binutils
-mini-xml                        ports/textproc/mini-xml
 mini_httpd                      ports/www/mini_httpd
 mini_sendmail                   ports/mail/mini_sendmail
 minicom                         ports/comms/minicom
@@ -10397,6 +10396,7 @@ oinkmaster                      ports/security/oinkmaster
 ois                             ports/devel/ois
 ojs2                            ports/www/ojs2
 okle                            ports/multimedia/okle
+oldrunner                       ports/games/oldrunner
 oleo                            ports/math/oleo
 olsrd                           ports/net/olsrd
 olvwm                           ports/x11-wm/olvwm
@@ -19439,6 +19439,7 @@ phluid                          ports/x11-wm/phluid
 pho                             ports/graphics/pho
 phonon                          ports/multimedia/phonon
 phonon-gstreamer                ports/multimedia/phonon-gstreamer
+phonon-vlc                      ports/multimedia/phonon-vlc
 phonon-xine                     ports/multimedia/phonon-xine
 phoon                           ports/astro/phoon
 phoronix-test-suite             ports/benchmarks/phoronix-test-suite
@@ -21346,6 +21347,7 @@ qadsl                           ports/net/qadsl
 qalculate                       ports/math/qalculate
 qar-bufo                        ports/mail/qar-bufo
 qbittorrent-22                  ports/net-p2p/qbittorrent-22
+qbittorrent-23                  ports/net-p2p/qbittorrent-23
 qbrew                           ports/misc/qbrew
 qbzr                            ports/devel/qbzr
 qca                             ports/devel/qca
