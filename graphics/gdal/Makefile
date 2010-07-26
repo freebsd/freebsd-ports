@@ -7,7 +7,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.6.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics geography
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/ \
 		http://www.gdal.org/dl/ \
@@ -95,7 +95,7 @@ CONFIGURE_ARGS+=	--with-geos=no
 .endif
 
 .if !defined(WITHOUT_GEOTIFF)
-LIB_DEPENDS+=		geotiff.1:${PORTSDIR}/graphics/libgeotiff
+LIB_DEPENDS+=		geotiff.2:${PORTSDIR}/graphics/libgeotiff
 CONFIGURE_ARGS+=	--with-libgeotiff=${LOCALBASE}
 .endif
 
