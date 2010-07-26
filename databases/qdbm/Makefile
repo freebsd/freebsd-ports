@@ -13,7 +13,7 @@ MASTER_SITES=	SF/qdbm/qdbm/${PORTVERSION} \
 		http://qdbm.sourceforge.net/
 
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Quick Database Manager
 
 GNU_CONFIGURE=	yes
