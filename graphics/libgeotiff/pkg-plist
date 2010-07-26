@@ -1,5 +1,8 @@
+bin/applygeo
+bin/csv2html
 bin/geotifcp
 bin/listgeo
+bin/makegeo
 include/cpl_serv.h
 include/epsg_datum.inc
 include/epsg_ellipse.inc
@@ -11,6 +14,7 @@ include/epsg_units.inc
 include/epsg_vertcs.inc
 include/geo_config.h
 include/geo_ctrans.inc
+include/geo_incode_defs.h
 include/geo_keyp.h
 include/geo_normalize.h
 include/geo_simpletags.h
@@ -23,8 +27,9 @@ include/geotiffio.h
 include/geovalues.h
 include/xtiffio.h
 lib/libgeotiff.a
+lib/libgeotiff.la
 lib/libgeotiff.so
-lib/libgeotiff.so.1
+lib/libgeotiff.so.2
 share/epsg_csv/alias.csv
 share/epsg_csv/area.csv
 share/epsg_csv/change.csv
@@ -39,8 +44,8 @@ share/epsg_csv/coordinate_operation_path.csv
 share/epsg_csv/coordinate_reference_system.csv
 share/epsg_csv/coordinate_system.csv
 share/epsg_csv/datum.csv
-share/epsg_csv/deprecation.csv
 share/epsg_csv/ellipsoid.csv
+share/epsg_csv/esri_datum_override.csv
 share/epsg_csv/gcs.csv
 share/epsg_csv/gcs.override.csv
 share/epsg_csv/naming_system.csv
