@@ -134,6 +134,11 @@ lib/purple-2/offlinemsg.la
 lib/purple-2/offlinemsg.so
 %%PERL:%%lib/purple-2/perl.la
 %%PERL:%%lib/purple-2/perl.so
+%%PERL:%%lib/purple-2/perl/Purple.pm
+%%PERL:%%lib/purple-2/perl/auto/Purple/.packlist
+%%PERL:%%lib/purple-2/perl/auto/Purple/Purple.bs
+%%PERL:%%lib/purple-2/perl/auto/Purple/Purple.so
+%%PERL:%%lib/purple-2/perl/auto/Purple/autosplit.ix
 lib/purple-2/psychic.la
 lib/purple-2/psychic.so
 %%GNUTLS%%lib/purple-2/ssl-gnutls.la
@@ -146,11 +151,6 @@ lib/purple-2/statenotify.la
 lib/purple-2/statenotify.so
 %%TCL:%%lib/purple-2/tcl.la
 %%TCL:%%lib/purple-2/tcl.so
-%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Purple/autosplit.ix
-%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Purple/Purple.so
-%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Purple/Purple.bs
-%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Purple/.packlist
-%%PERL:%%%%SITE_PERL%%/%%PERL_ARCH%%/Purple.pm
 %%DBUS%%lib/libpurple-client.la
 %%DBUS%%lib/libpurple-client.so
 %%DBUS%%lib/libpurple-client.so.7
@@ -266,7 +266,6 @@ share/sounds/purple/send.wav
 @dirrm share/sounds/purple
 @dirrm share/purple/ca-certs
 @dirrm share/purple
-%%PERL:%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Purple
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -307,6 +306,9 @@ share/sounds/purple/send.wav
 @dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+%%PERL:%%@dirrm lib/purple-2/perl/auto/Purple
+%%PERL:%%@dirrm lib/purple-2/perl/auto
+%%PERL:%%@dirrm lib/purple-2/perl
 @dirrm lib/purple-2
 @dirrm include/libpurple/media
 @dirrm include/libpurple
