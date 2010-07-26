@@ -1,11 +1,8 @@
-UFTP is a multicast file transfer program, utilizing a protocol
-based on Starburst MFTP. It is designed to reliably and efficiently
-transfer files to multiple receivers simultaneously, where either
-the intended receivers can be specified beforehand, or receivers
-can join the transfer when it is initiated. This is useful for
-distributing large files to a large number of receivers, and is
-especially useful for data distribution over a satellite link (with
-two way communication), where the inherent delay makes any TCP based
-communication terribly inefficient. 
+UFTP is an encrypted multicast file transfer program, designed to securely,
+reliably, and efficiently transfer files to multiple receivers simultaneously.
+This is useful for distributing large files to a large number of receivers,
+and is especially useful for data distribution over a satellite link
+(with two way communication), where the inherent delay makes any TCP based
+communication highly inefficient.
 
 WWW: http://www.tcnj.edu/~bush/uftp.html
