@@ -6,25 +6,29 @@
 #
 
 PORTNAME=	libgeotiff
-PORTVERSION=	1.2.5
-PORTREVISION=	3
+PORTVERSION=	1.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.osgeo.org/geotiff/libgeotiff/ \
-		ftp://ftp.remotesensing.org/geotiff/libgeotiff/
+		ftp://ftp.remotesensing.org/geotiff/libgeotiff/ \
+		http://sunpoet.net/distfiles/
 
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Library for reading and writing GeoTIFF information tags
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		proj.6:${PORTSDIR}/graphics/proj \
-		tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	jbig:${PORTSDIR}/graphics/jbigkit \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		proj:${PORTSDIR}/graphics/proj \
+		tiff:${PORTSDIR}/graphics/tiff
 
-USE_GNOME=	gnometarget
-USE_AUTOTOOLS=	automake:15:env autoconf:262:env
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-jpeg=${LOCALBASE} \
+CONFIGURE_ARGS=	--disable-doxygen-doc \
+		--disable-doxygen-dot \
+		--disable-doxygen-html \
+		--disable-doxygen-man \
+		--with-jpeg=${LOCALBASE} \
 		--with-proj=${LOCALBASE} \
-		--with-libtiff=${LOCALBASE}
+		--with-libtiff=${LOCALBASE} \
+		--with-zlib=/usr
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
