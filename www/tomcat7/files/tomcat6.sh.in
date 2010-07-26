@@ -113,6 +113,8 @@ flags="-p ${pidfile} ${java_command} start ${tomcat%%TOMCAT_VERSION%%_flags} ${l
 
 start_precmd="pid_touch"
 stop_cmd="tomcat_stop"
+status_cmd="tomcat_status"
+poll_cmd="tomcat_poll"
 
 pid_touch() {
 	touch $pidfile
@@ -124,11 +126,7 @@ tomcat_stop() {
 
 	if [ -z "$rc_pid" ]; then
 		[ -n "$rc_fast" ] && return 0
-		if [ -n "$pidfile" ]; then
-			echo "${name} not running? (check $pidfile)."
-		else
-			echo "${name} not running?"
-		fi
+		echo "${name} not running? (check $pidfile)."
 		return 1
 	fi
 	
@@ -139,10 +137,28 @@ tomcat_stop() {
 	rm -f ${pidfile}
 }
 
+tomcat_status() {
+	rc_pid=$(tomcat_check_pidfile $pidfile)
+
+	if [ -z "$rc_pid" ]; then
+		[ -n "$rc_fast" ] && return 0
+		echo "${name} not running? (check $pidfile)."
+		return 1
+	fi
+}
+
+tomcat_poll() {
+	while (true) ; do
+		rc_pid=$(tomcat_check_pidfile $pidfile)
+		[ -z "$rc_pid" ] && break
+		sleep 2
+	done
+}
+
 tomcat_check_pidfile() {
 	_pidfile=$1
-	if [ -z "$_pidfile" -o -z "$_procname" ]; then
-		err 3 'USAGE: check_pidfile pidfile procname [interpreter]'
+	if [ -z "$_pidfile" ]; then
+		err 3 'USAGE: tomcat_check_pidfile pidfile'
 	fi
 	if [ ! -f $_pidfile ]; then
 		debug "pid file ($_pidfile): not readable."
