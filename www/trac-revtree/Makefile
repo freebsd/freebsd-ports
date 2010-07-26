@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	revtree
-PORTVERSION=	0.6.3
-PORTREVISION=	2
+PORTVERSION=	0.6.4
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
@@ -17,14 +16,15 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Graphical representation of an SVN repository
 
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	trac>=0.12:${PORTSDIR}/www/trac \
+		subversion>=0:${PORTSDIR}/devel/subversion
 
 OPTIONS=	MINFOENH "Enable mergeinfo display enhancer" On \
 		LOGENH "Enable log message display enhancer" Off
 
 USE_ZIP=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
+WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.12
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracRevtreePlugin
