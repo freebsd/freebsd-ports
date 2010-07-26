@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	suhosin
-PORTVERSION=	0.9.31
+PORTVERSION=	0.9.32.1
 CATEGORIES=	security
 MASTER_SITES=	http://download.suhosin.org/
 PKGNAMEPREFIX=	php-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PHP extension that implements high-level protections
