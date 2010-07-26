@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	php52
-PORTVERSION=	5.2.13
-PORTREVISION=	4
+PORTVERSION=	5.2.14
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -60,7 +59,7 @@ PATCH_DIST_STRIP=	-p1
 . if defined(WITHOUT_FASTCGI)
 IGNORE=		FPM requires FastCGI support
 . endif
-PATCHFILES+=	php-5.2.13-fpm-0.5.14-freebsd.patch.gz
+PATCHFILES+=	php-${PORTVERSION}-fpm-0.5.14-freebsd.patch.gz
 PATCH_SITES+=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR+=	mm
 LIB_DEPENDS+=	event-1.4:${PORTSDIR}/devel/libevent

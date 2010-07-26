@@ -1,9 +1,13 @@
---- config.m4.orig	2007-12-06 15:17:43.000000000 +0100
-+++ config.m4	2008-12-11 12:50:27.000000000 +0100
-@@ -280,6 +280,34 @@
+--- config.m4.orig	2010-07-26 00:28:32.111202104 +0200
++++ config.m4	2010-07-26 00:28:35.656577336 +0200
+@@ -280,6 +280,38 @@
        THIS_PREFIX=$i
        THIS_INCLUDE=$i/db4/db.h
        break
++    elif test -f "$i/include/db48/db.h"; then
++      THIS_PREFIX=$i
++      THIS_INCLUDE=$i/include/db48/db.h
++      break
 +    elif test -f "$i/include/db47/db.h"; then
 +      THIS_PREFIX=$i
 +      THIS_INCLUDE=$i/include/db47/db.h
@@ -32,15 +36,6 @@
 +      THIS_PREFIX=$i
 +      THIS_INCLUDE=$i/include/db41/db.h
 +      break
-     elif test -f "$i/include/db4.6/db.h"; then
+     elif test -f "$i/include/db4.8/db.h"; then
        THIS_PREFIX=$i
-       THIS_INCLUDE=$i/include/db4.6/db.h
-@@ -306,7 +334,7 @@
-       break
-     fi
-   done
--  PHP_DBA_DB_CHECK(4, db-4.6 db-4.5 db-4.4 db-4.3 db-4.2 db-4.1 db-4.0 db-4 db4 db, [(void)db_create((DB**)0, (DB_ENV*)0, 0)])
-+  PHP_DBA_DB_CHECK(4, db-4.7 db-4.6 db-4.5 db-4.4 db-4.3 db-4.2 db-4.1 db-4.0 db-4 db4 db, [(void)db_create((DB**)0, (DB_ENV*)0, 0)])
- fi
- PHP_DBA_STD_RESULT(db4,Berkeley DB4)
- 
+       THIS_INCLUDE=$i/include/db4.8/db.h
