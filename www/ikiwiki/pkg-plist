@@ -29,6 +29,7 @@
 %%DATADIR%%/directives/ikiwiki/directive/calendar.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/color.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/comment.mdwn
+%%DATADIR%%/directives/ikiwiki/directive/commentmoderation.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/copy.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/cut.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/cutpaste.mdwn
