@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	1.1.0
-PORTREVISION=	1
+DISTVERSION=	1.1.1
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -60,6 +59,7 @@ OPTIONS=	A52 "A52 DVD audio decoder" On \
 		PULSE "Pulse Audio support" Off \
 		QT4 "Qt4 Interface" On \
 		REALAUDIO "Real Audio(R) support" On \
+		RUNROOT "Enable running as root" Off \
 		SAMBA "SAMBA Access module" On \
 		SCHROED "Enable Schroedinger decoder" Off \
 		SDL "SDL video output" On \
@@ -133,6 +133,7 @@ WITHOUT_DVDNAV=yes
 .if defined(WITH_SERVER_ONLY)
 WITHOUT_LUA=yes
 WITHOUT_QT4=yes
+WITH_RUNROOT=yes
 WITHOUT_V4L=yes
 WITHOUT_XCB=yes
 .endif
@@ -462,6 +463,10 @@ CONFIGURE_ARGS+=--disable-pulse
 CONFIGURE_ARGS+=--disable-real --disable-realrtsp
 .else
 CONFIGURE_ARGS+=--enable-real --enable-realrtsp
+.endif
+
+.if defined(WITH_RUNROOT)
+CONFIGURE_ARGS+=--enable-run-as-root
 .endif
 
 .if !defined(WITHOUT_SAMBA)
