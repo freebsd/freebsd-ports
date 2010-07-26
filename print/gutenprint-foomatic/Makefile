@@ -9,7 +9,7 @@ PORTREVISION=	2
 PORTEPOCH=	0
 PKGNAMESUFFIX=	-foomatic
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GutenPrint Foomatic Drivers
 
 MASTERDIR=	${.CURDIR}/../../print/gutenprint-base

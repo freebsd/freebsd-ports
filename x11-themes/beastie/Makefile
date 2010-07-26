@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	ahze
 DISTNAME=	Beastie-${PORTVERSION}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome theme with FreeBSD Colors
 
 RUN_DEPENDS+=	gtk-engines2>=2.7.4_1:${PORTSDIR}/x11-themes/gtk-engines2 \

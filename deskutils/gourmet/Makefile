@@ -12,7 +12,7 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/grecipe-manager/grecipe-manager/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME recipe manager
 
 LIB_DEPENDS=	mk4:${PORTSDIR}/databases/metakit

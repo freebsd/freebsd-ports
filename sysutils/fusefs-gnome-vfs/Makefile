@@ -12,7 +12,7 @@ CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.evolware.org/chri/
 DISTNAME=	${RPORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interface between FUSE and the Gnome VFS 2.0
 
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod

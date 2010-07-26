@@ -12,7 +12,7 @@ PORTREVISION=	10
 CATEGORIES=	x11-themes
 MASTER_SITES=	SF/clearlooks/clearlooks/clearlooks%20${PORTVERSION}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	GTK+ 2.x engine based on Bluecurve
 
 USE_BZIP2=	yes

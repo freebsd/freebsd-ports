@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.miketech.net/gnome-art/download/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend for art.gnome.org
 
 RUN_DEPENDS=	gnome-splashscreen-manager:${PORTSDIR}/x11-themes/gnome-splashscreen-manager

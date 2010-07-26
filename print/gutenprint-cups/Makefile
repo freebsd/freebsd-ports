@@ -9,7 +9,7 @@ PORTREVISION=	2
 PORTEPOCH=	0
 PKGNAMESUFFIX=	-cups
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GutenPrint CUPS drivers
 
 MASTERDIR=	${.CURDIR}/../../print/gutenprint-base

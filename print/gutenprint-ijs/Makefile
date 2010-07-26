@@ -9,7 +9,7 @@ PORTREVISION=	2
 PORTEPOCH=	0
 PKGNAMESUFFIX=	-ijs
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GutenPrint Ghostscript Drivers
 
 MASTERDIR=	${.CURDIR}/../../print/gutenprint-base

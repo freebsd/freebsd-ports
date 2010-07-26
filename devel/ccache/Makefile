@@ -11,7 +11,7 @@ PORTREVISION=	9
 CATEGORIES=	devel
 MASTER_SITES=	http://samba.org/ftp/ccache/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to minimize the compile time of C/C++ programs
 
 GNU_CONFIGURE=	yes

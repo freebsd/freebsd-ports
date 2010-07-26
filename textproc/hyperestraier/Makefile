@@ -10,7 +10,7 @@ PORTVERSION=	1.4.13
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-text search system
 
 BUILD_DEPENDS=	qdbm>=1.8.77:${PORTSDIR}/databases/qdbm

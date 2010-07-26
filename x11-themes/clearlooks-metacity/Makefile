@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.stellingwerff.com/
 #MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 #MASTER_SITE_SUBDIR=	clearlooks
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clearlooks Metacity theme
 
 CONFLICTS=	gnome-themes-2.11.9[1-9]* gnome-themes-2.*

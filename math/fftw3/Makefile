@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
 PKGNAMESUFFIX=	${FFTW3_PKGNAMESUFFIX}
 DISTNAME=	fftw-${PORTVERSION}
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 
 # current flavors: default, float, and long

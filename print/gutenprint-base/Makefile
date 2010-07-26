@@ -13,7 +13,7 @@ CATEGORIES=	print
 MASTER_SITES=	SF/gimp-print/gutenprint-5.2/${PORTVERSION}
 PKGNAMESUFFIX?=	-base
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GutenPrint Printer Driver
 
 CONFLICTS=	gimp-print-[0-9]*
