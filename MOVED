@@ -4460,3 +4460,4 @@ science/qelectrotech|cad/qelectrotech|2010-07-21|Fix category
 mail/squirrelmail-compatibility-plugin1|mail/squirrelmail-compatibility-plugin|2010-07-21|Has expired: use mail/squirrelmail-compatibility-plugin
 mail/squirrelmail-newuser_wiz-plugin|mail/squirrelmail-askuserinfo-plugin|2010-07-21|Has expired: use mail/squirrelmail-askuserinfo-plugin
 textproc/mini-xml|textproc/mxml|2010-07-25|Duplicate port
+net/gir-repository-avahi|net/avahi-app|2010-07-25|Handled by net/avahi-app now
