@@ -1368,6 +1368,19 @@ share/locale/zh_CN/LC_MESSAGES/solfege.mo
 %%DATADIR%%/help/C/rhythmtapping-module.html
 %%DATADIR%%/help/C/rhythmtapping2-module.html
 %%DATADIR%%/help/C/rhythmtapping2.html
+%%DATADIR%%/help/C/ly/inverting-intervals.png
+%%DATADIR%%/help/C/ly/theory-intervals-1.png
+%%DATADIR%%/help/C/ly/theory-intervals-fifths-1.png
+%%DATADIR%%/help/C/ly/theory-intervals-fifths-2.png
+%%DATADIR%%/help/C/ly/theory-intervals-fifths.png
+%%DATADIR%%/help/C/ly/theory-intervals-fourths.png
+%%DATADIR%%/help/C/ly/theory-intervals-seconds-1.png
+%%DATADIR%%/help/C/ly/theory-intervals-seconds-2.png
+%%DATADIR%%/help/C/ly/theory-intervals-seconds-3.png
+%%DATADIR%%/help/C/ly/theory-intervals-seconds.png
+%%DATADIR%%/help/C/ly/theory-intervals-sevenths.png
+%%DATADIR%%/help/C/ly/theory-intervals-sixths.png
+%%DATADIR%%/help/C/ly/theory-intervals-thirds.png
 %%DATADIR%%/help/C/scales.html
 %%DATADIR%%/help/C/scales/aug.html
 %%DATADIR%%/help/C/scales/beb.html
@@ -2469,6 +2482,7 @@ share/locale/zh_CN/LC_MESSAGES/solfege.mo
 @dirrm %%DATADIR%%/help/C/scales/images
 @dirrm %%DATADIR%%/help/C/scales
 @dirrm %%DATADIR%%/help/C/figures
+@dirrm %%DATADIR%%/help/C/ly
 @dirrm %%DATADIR%%/help/C
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/hash-bug-workaround2
