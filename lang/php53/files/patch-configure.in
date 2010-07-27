@@ -31,7 +31,7 @@
 
 -all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_ZEND_EX) \$(PHP_CLI_TARGET) $pharcmd"
 -install_targets="$install_modules install-build install-headers install-programs $install_pear $pharcmd_install"
-+all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_ZEND_EX) \$(PHP_CLI_TARGET) \$(PHP_CGI_TARGET) $pharcmd"
++all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_ZEND_EX) \$(PHP_CLI_TARGET) \$(PHP_CGI_TARGET) \$(PHP_FPM_TARGET) $pharcmd"
 +install_targets="$PHP_INSTALL_CLI_TARGET $PHP_INSTALL_CGI_TARGET $install_modules install-build install-headers install-programs $install_pear $pharcmd_install"
  
  case $PHP_SAPI in
@@ -40,7 +40,7 @@
 -    ;;
 -  *)
 -    install_targets="install-sapi $PHP_INSTALL_CLI_TARGET $install_targets"
-+  apache|apache2handler)
++  apache|apache2handler|apache2filter)
 +    install_targets="install-sapi $install_targets"
      ;;
  esac

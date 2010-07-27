@@ -102,7 +102,7 @@ check-makevars::
 		@${ECHO_CMD} "or WANT_PHP_MOD. Use only one of them."
 		@${FALSE}
 .	else
-.	if defined(PHP_VERSION) && ${PHP_SAPI:Mcgi} == "" && ${PHP_SAPI:Mmod} == ""
+.	if defined(PHP_VERSION) && ${PHP_SAPI:Mcgi} == "" && ${PHP_SAPI:Mfpm} == "" && ${PHP_SAPI:Mmod} == ""
 check-makevars::
 		@${ECHO_CMD} "This port requires the Apache Module or the CGI version of PHP, but you have"
 		@${ECHO_CMD} "already installed a PHP port without them."
@@ -112,7 +112,7 @@ check-makevars::
 .else
 
 .if defined(WANT_PHP_CGI)
-.	if defined(PHP_VERSION) && ${PHP_SAPI:Mcgi} == ""
+.	if defined(PHP_VERSION) && ${PHP_SAPI:Mcgi} == "" && ${PHP_SAPI:Mfpm} == ""
 check-makevars::
 		@${ECHO_CMD} "This port requires the CGI version of PHP, but you have already"
 		@${ECHO_CMD} "installed a PHP port without CGI."

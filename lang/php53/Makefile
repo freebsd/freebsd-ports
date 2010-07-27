@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.3.2
-PORTREVISION?=	1
+PORTVERSION=	5.3.3
+PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -27,6 +27,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 CONFIGURE_ARGS=	\
 		--with-layout=GNU \
+		--localstatedir=/var \
 		--with-config-file-scan-dir=${PREFIX}/etc/php \
 		--disable-all \
 		--enable-libxml \
@@ -38,7 +39,9 @@ USE_GNOME=	libxml2
 
 OPTIONS=	CLI "Build CLI version" on \
 		CGI "Build CGI version" on \
+		FPM "Build FPM version (experimental)" off \
 		APACHE "Build Apache module" off \
+		AP2FILTER " Use Apache 2.x filter interface (experimental)" off \
 		DEBUG "Enable debug" off \
 		SUHOSIN "Enable Suhosin protection system" on \
 		MULTIBYTE "Enable zend multibyte support" off \
@@ -55,7 +58,7 @@ MAN1=		php-config.1 phpize.1
 PATCH_DIST_STRIP=	-p1
 
 .if !defined(WITHOUT_SUHOSIN)
-PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.9.1.patch.gz:suhosin
+PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.10.patch.gz:suhosin
 PATCH_SITES+=	http://download.suhosin.org/:suhosin
 PLIST_SUB+=	SUHOSIN=""
 .else
@@ -63,7 +66,8 @@ PLIST_SUB+=	SUHOSIN="@comment "
 .endif
 
 .if defined(WITH_MAILHEAD)
-PATCHFILES+=	php-${PORTVERSION}-mail-header.patch:mail
+#PATCHFILES+=	php-${PORTVERSION}-mail-header.patch:mail
+PATCHFILES+=	php-5.3.2-mail-header.patch:mail
 PATCH_SITES+=	http://choon.net/opensource/php/:mail
 .endif
 
@@ -84,12 +88,30 @@ PLIST_SUB+=	CGI="@comment "
 CONFIGURE_ARGS+=--disable-cgi
 .endif
 
+.if defined(WITH_FPM)
+PHP_SAPI+=	fpm
+LIB_DEPENDS+=	event-1.4:${PORTSDIR}/devel/libevent
+MAN1+=		php-fpm.1
+USE_RC_SUBR+=	php-fpm
+CONFIGURE_ARGS+=--enable-fpm \
+		--with-fpm-user=${WWWOWN} \
+		--with-fpm-group=${WWWGRP} \
+		--with-libevent-dir=${LOCALBASE}
+PLIST_SUB+=	FPM=""
+.else
+PLIST_SUB+=	FPM="@comment "
+.endif
+
 .if defined(WITH_APACHE)
 PHP_SAPI+=	mod
 USE_APACHE=	1.3+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .if ${APACHE_VERSION} > 13
+.if defined(WITH_AP2FILTER)
+CONFIGURE_ARGS+=--with-apxs2filter=${APXS}
+.else
 CONFIGURE_ARGS+=--with-apxs2=${APXS}
+.endif
 .else
 CONFIGURE_ARGS+=--with-apxs=${APXS}
 .endif
@@ -139,6 +161,10 @@ CONFIGURE_ARGS+=--disable-ipv6
 post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
 	@${REINPLACE_CMD} "s|^\(extension_dir\)|; \1|" ${WRKSRC}/php.ini-*
+.if defined(WITH_FPM)
+	@${REINPLACE_CMD} -e "s|^;\(pid\)|\1|;s|^;\(pm\.[a-z_]*_servers\)|\1|" \
+		${WRKSRC}/sapi/fpm/php-fpm.conf.in
+.endif
 
 pre-configure:
 	@${CAT} ${WRKSRC}/acinclude.m4 ${WRKSRC}/build/libtool.m4 > ${WRKSRC}/aclocal.m4
@@ -157,6 +183,9 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-production ${PREFIX}/etc
 	@${INSTALL_DATA} ${WRKDIR}/php.conf ${PREFIX}/etc
 	@${TOUCH} ${PREFIX}/include/php/ext/php_config.h
+.if defined(WITH_FPM)
+	@${CP} -n ${PREFIX}/etc/php-fpm.conf.default ${PREFIX}/etc/php-fpm.conf
+.endif
 .if defined(WITH_APACHE)
 	@${CAT} ${PKGMESSAGE}
 .endif

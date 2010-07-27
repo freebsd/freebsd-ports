@@ -2,9 +2,13 @@
 %%CGI%%bin/php-cgi
 bin/php-config
 bin/phpize
+%%FPM%%sbin/php-fpm
 etc/php.conf
 etc/php.ini-development
 etc/php.ini-production
+%%FPM%%@unexec if cmp -s %D/etc/php-fpm.conf %D/etc/php-fpm.conf.default; then rm -f %D/etc/php-fpm.conf; fi
+%%FPM%%etc/php-fpm.conf.default
+%%FPM%%@exec cp -n %D/%F %B/php-fpm.conf
 include/php/TSRM/TSRM.h
 include/php/TSRM/acconfig.h
 include/php/TSRM/readdir.h
