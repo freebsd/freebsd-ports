@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moosefs
-PORTVERSION=	1.6.15
+PORTVERSION=	1.6.16
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/moosefs/moosefs/${PORTVERSION}/
 PKGNAMESUFFIX=	-master
@@ -15,7 +15,7 @@ DISTNAME=	mfs-${PORTVERSION}
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Managing the whole filesystem and storing metadata
 
-USE_PYTHON=		2.5+
+USE_PYTHON=	2.5+
 
 GNU_CONFIGURE=	yes
 USE_RC_SUBR+=	mfsmaster mfsmetalogger mfscgiserv
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--localstatedir=${MFS_WORKDIR} \
 
 MAN5=		mfsmaster.cfg.5 mfsexports.cfg.5 mfsmetalogger.cfg.5
 MAN7=		moosefs.7 mfs.7
-MAN8=		mfsmaster.8 mfsmetarestore.8 mfsmetalogger.8
+MAN8=		mfscgiserv.8 mfsmaster.8 mfsmetarestore.8 mfsmetalogger.8
 
 .include <bsd.port.pre.mk>
 
