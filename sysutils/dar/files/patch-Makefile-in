@@ -1,11 +1,11 @@
---- Makefile.in-orig	Fri Apr 21 13:46:43 2006
-+++ Makefile.in	Fri Apr 21 13:46:50 2006
-@@ -214,7 +214,7 @@
- target_alias = @target_alias@
- tmp = @tmp@
+--- Makefile.in.orig	2010-07-26 07:58:58.000000000 +0000
++++ Makefile.in	2010-07-26 07:59:12.000000000 +0000
+@@ -204,7 +204,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  upx = @upx@
 -SUBDIRS = m4 man src doc misc po
-+SUBDIRS = m4 man src misc 
- dist_noinst_DATA = INSTALL README THANKS TODO AUTHORS COPYING ChangeLog NEWS ABOUT-NLS
++SUBDIRS = m4 man src misc
+ dist_noinst_DATA = INSTALL README THANKS TODO AUTHORS COPYING ChangeLog NEWS ABOUT-NLS LICENSING_EXCEPTION_FOR_OPENSSL
  ACLOCAL_AMFLAGS = -I m4
  EXTRA_DIST = config.rpath
