@@ -7,7 +7,7 @@
 
 PORTNAME=	kqemu
 PORTVERSION=	1.3.0.p11
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://bellard.org/qemu/ \
 		http://qemu.org/ \
@@ -76,6 +76,7 @@ post-patch:
 .endif
 
 do-build:
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} beforedepend && ${LN} -s @/sys sys)
 	@(cd ${BUILD_WRKSRC}/common; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile ${MAKE_ARGS} ${ALL_TARGET})
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
 
