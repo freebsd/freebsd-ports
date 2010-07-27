@@ -6,7 +6,7 @@ include/gcrypt-module.h
 lib/libgcrypt.a
 lib/libgcrypt.la
 lib/libgcrypt.so
-lib/libgcrypt.so.16
+lib/libgcrypt.so.17
 share/aclocal/libgcrypt.m4
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
