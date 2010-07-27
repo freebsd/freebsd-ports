@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -42,6 +42,7 @@ OPTIONS=	AMR_NB	"AMR Narrow Band encoder (opencore)" off \
 		SSSE3	"Enable ssse3 support" on \
 		THEORA	"Theora encoder (implies OGG)" on \
 		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
+		VP8	"VP8 codec via libvpx" on \
 		X264	"H.264 encoder" on \
 		XVID	"Xvid encoder via xvidcore" on
 
@@ -263,6 +264,14 @@ CONFIGURE_ARGS+=	--enable-libvorbis
 FFMPEG_CFLAGS+=		-I${LOCALBASE}/include/vorbis
 .else
 CONFIGURE_ARGS+=	--disable-libvorbis
+.endif
+
+# vp8
+.ifndef(WITHOUT_VP8)
+LIB_DEPENDS+=	vpx.0:${PORTSDIR}/multimedia/libvpx
+CONFIGURE_ARGS+=	--enable-libvpx
+.else
+CONFIGURE_ARGS+=	--disable-libvpx
 .endif
 
 # x264
