@@ -1364,6 +1364,7 @@
     SUBDIR += phproxy
     SUBDIR += phpsysinfo
     SUBDIR += phpsysinfo-dev
+    SUBDIR += phpvirtualbox
     SUBDIR += phpwebapp
     SUBDIR += phpwebgallery
     SUBDIR += phpwiki
