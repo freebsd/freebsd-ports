@@ -61,7 +61,7 @@ viewvc_precmd()
 viewvc_start() {
     echo "Starting viewvc."
     %%TOUCH%% ${pidfile} && %%CHOWN%% ${viewvc_user} ${pidfile}
-    /usr/sbin/daemon -cf -p ${pidfile} -u ${viewvc_user} -c ${standalone} ${viewvc_flags}
+    /usr/sbin/daemon -cf -p ${pidfile} -u ${viewvc_user} ${standalone} ${viewvc_flags}
 }
 
 viewvc_cleanup() {
