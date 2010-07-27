@@ -37,6 +37,7 @@ lib/jstrack/ftpfilt/timestamp.strike
 lib/jstrack/paths.tcl
 lib/jstrack/tracker/config_citydefs.tcl
 lib/jstrack/tracker/config_user_citylist.tcl
+lib/jstrack/tracker/imagery/huir.jpg
 lib/jstrack/tracker/jstrack-text_only.tcl
 lib/jstrack/tracker/jstrack.tcl
 lib/jstrack/tracker/lib/bindings.tk
@@ -60,7 +61,6 @@ lib/jstrack/tracker/lib/images/gulf_cab2_js.tcl
 lib/jstrack/tracker/lib/images/large_js-land.bmp
 lib/jstrack/tracker/lib/images/large_js.bmp
 lib/jstrack/tracker/lib/images/large_js.tcl
-lib/jstrack/tracker/lib/interp.tcl
 lib/jstrack/tracker/lib/jpg_xy.tcl
 lib/jstrack/tracker/lib/loadsatmap.tk
 lib/jstrack/tracker/lib/menu.tcl
@@ -69,23 +69,115 @@ lib/jstrack/tracker/lib/menuproc.tk
 lib/jstrack/tracker/lib/misc.tcl
 lib/jstrack/tracker/lib/misc.tk
 lib/jstrack/tracker/lib/miscb.tcl
+lib/jstrack/tracker/lib/oldver/bplist.tcl
+lib/jstrack/tracker/lib/oldver/plot.tk
+lib/jstrack/tracker/lib/oldver/read_vtec.tcl
 lib/jstrack/tracker/lib/plot.tk
 lib/jstrack/tracker/lib/plotcity.tk
 lib/jstrack/tracker/lib/plotmenu.tk
 lib/jstrack/tracker/lib/read_any.tcl
-lib/jstrack/tracker/lib/read_vtec.tcl
 lib/jstrack/tracker/lib/saffsimp.tcl
 lib/jstrack/tracker/lib/saffsimp.tk
 lib/jstrack/tracker/lib/save_config.tcl
 lib/jstrack/tracker/lib/ss_global.tcl
 lib/jstrack/tracker/lib/stlib.tcl
 lib/jstrack/tracker/lib/storm.tcl
+lib/jstrack/tracker/lib/tkcon.tcl
+lib/jstrack/tracker/lib/tkcon_wrap.tcl
+lib/jstrack/tracker/lib/tklib0.4/autoscroll/autoscroll.tcl
+lib/jstrack/tracker/lib/tklib0.4/autoscroll/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/ctext/ctext.tcl
+lib/jstrack/tracker/lib/tklib0.4/ctext/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/cursor/cursor.tcl
+lib/jstrack/tracker/lib/tklib0.4/cursor/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/datefield/datefield.tcl
+lib/jstrack/tracker/lib/tklib0.4/datefield/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/getstring/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/getstring/tk_getString.tcl
+lib/jstrack/tracker/lib/tklib0.4/history/history.tcl
+lib/jstrack/tracker/lib/tklib0.4/history/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/ico/ico.tcl
+lib/jstrack/tracker/lib/tklib0.4/ico/ico0.tcl
+lib/jstrack/tracker/lib/tklib0.4/ico/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/ipentry/ipentry.tcl
+lib/jstrack/tracker/lib/tklib0.4/ipentry/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/khim/ROOT.msg
+lib/jstrack/tracker/lib/tklib0.4/khim/cs.msg
+lib/jstrack/tracker/lib/tklib0.4/khim/da.msg
+lib/jstrack/tracker/lib/tklib0.4/khim/de.msg
+lib/jstrack/tracker/lib/tklib0.4/khim/en.msg
+lib/jstrack/tracker/lib/tklib0.4/khim/khim.tcl
+lib/jstrack/tracker/lib/tklib0.4/khim/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/khim/pl.msg
+lib/jstrack/tracker/lib/tklib0.4/khim/ru.msg
+lib/jstrack/tracker/lib/tklib0.4/khim/uk.msg
+lib/jstrack/tracker/lib/tklib0.4/ntext/ntext.tcl
+lib/jstrack/tracker/lib/tklib0.4/ntext/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/plotchart/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/plotchart/plot3d.tcl
+lib/jstrack/tracker/lib/tklib0.4/plotchart/plotannot.tcl
+lib/jstrack/tracker/lib/tklib0.4/plotchart/plotaxis.tcl
+lib/jstrack/tracker/lib/tklib0.4/plotchart/plotbusiness.tcl
+lib/jstrack/tracker/lib/tklib0.4/plotchart/plotchart.tcl
+lib/jstrack/tracker/lib/tklib0.4/plotchart/plotcontour.tcl
+lib/jstrack/tracker/lib/tklib0.4/plotchart/plotgantt.tcl
+lib/jstrack/tracker/lib/tklib0.4/plotchart/plotpriv.tcl
+lib/jstrack/tracker/lib/tklib0.4/plotchart/scaling.tcl
+lib/jstrack/tracker/lib/tklib0.4/style/as.tcl
+lib/jstrack/tracker/lib/tklib0.4/style/lobster.tcl
+lib/jstrack/tracker/lib/tklib0.4/style/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/style/style.tcl
+lib/jstrack/tracker/lib/tklib0.4/swaplist/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/swaplist/swaplist.tcl
+lib/jstrack/tracker/lib/tklib0.4/tablelist/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/tablelist/scripts/mwutil.tcl
+lib/jstrack/tracker/lib/tklib0.4/tablelist/scripts/repair.tcl
+lib/jstrack/tracker/lib/tklib0.4/tablelist/scripts/tablelistBind.tcl
+lib/jstrack/tracker/lib/tklib0.4/tablelist/scripts/tablelistBitmaps.tcl
+lib/jstrack/tracker/lib/tklib0.4/tablelist/scripts/tablelistConfig.tcl
+lib/jstrack/tracker/lib/tklib0.4/tablelist/scripts/tablelistEdit.tcl
+lib/jstrack/tracker/lib/tklib0.4/tablelist/scripts/tablelistMove.tcl
+lib/jstrack/tracker/lib/tklib0.4/tablelist/scripts/tablelistSort.tcl
+lib/jstrack/tracker/lib/tklib0.4/tablelist/scripts/tablelistThemes.tcl
+lib/jstrack/tracker/lib/tklib0.4/tablelist/scripts/tablelistUtil.tcl
+lib/jstrack/tracker/lib/tklib0.4/tablelist/scripts/tablelistWidget.tcl
+lib/jstrack/tracker/lib/tklib0.4/tablelist/scripts/tclIndex
+lib/jstrack/tracker/lib/tklib0.4/tablelist/tablelist.tcl
+lib/jstrack/tracker/lib/tklib0.4/tablelist/tablelistPublic.tcl
+lib/jstrack/tracker/lib/tklib0.4/tablelist/tablelist_tile.tcl
+lib/jstrack/tracker/lib/tklib0.4/tklib.tap
+lib/jstrack/tracker/lib/tklib0.4/tkpiechart/boxlabel.tcl
+lib/jstrack/tracker/lib/tklib0.4/tkpiechart/canlabel.tcl
+lib/jstrack/tracker/lib/tklib0.4/tkpiechart/labarray.tcl
+lib/jstrack/tracker/lib/tklib0.4/tkpiechart/objselec.tcl
+lib/jstrack/tracker/lib/tklib0.4/tkpiechart/perilabel.tcl
+lib/jstrack/tracker/lib/tklib0.4/tkpiechart/pie.tcl
+lib/jstrack/tracker/lib/tklib0.4/tkpiechart/pielabel.tcl
+lib/jstrack/tracker/lib/tklib0.4/tkpiechart/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/tkpiechart/relirect.tcl
+lib/jstrack/tracker/lib/tklib0.4/tkpiechart/selector.tcl
+lib/jstrack/tracker/lib/tklib0.4/tkpiechart/slice.tcl
+lib/jstrack/tracker/lib/tklib0.4/tkpiechart/tkpiechart.tcl
+lib/jstrack/tracker/lib/tklib0.4/tooltip/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/tooltip/tipstack.tcl
+lib/jstrack/tracker/lib/tklib0.4/tooltip/tooltip.tcl
+lib/jstrack/tracker/lib/tklib0.4/widget/dialog.tcl
+lib/jstrack/tracker/lib/tklib0.4/widget/mentry.tcl
+lib/jstrack/tracker/lib/tklib0.4/widget/panelframe.tcl
+lib/jstrack/tracker/lib/tklib0.4/widget/pkgIndex.tcl
+lib/jstrack/tracker/lib/tklib0.4/widget/ruler.tcl
+lib/jstrack/tracker/lib/tklib0.4/widget/scrollw.tcl
+lib/jstrack/tracker/lib/tklib0.4/widget/statusbar.tcl
+lib/jstrack/tracker/lib/tklib0.4/widget/stext.tcl
+lib/jstrack/tracker/lib/tklib0.4/widget/superframe.tcl
+lib/jstrack/tracker/lib/tklib0.4/widget/toolbar.tcl
+lib/jstrack/tracker/lib/tklib0.4/widget/widget.tcl
 lib/jstrack/tracker/lib/update.tcl
 lib/jstrack/tracker/lib/user.tcl
 lib/jstrack/tracker/lib/userdata.tcl
 lib/jstrack/tracker/lib/userdata.tk
 lib/jstrack/tracker/options.tcl
-lib/jstrack/tracker/patch-better-citynames.txt
 lib/jstrack/tracker/sample_sysconfig.tcl
 lib/jstrack/tracker/storms/alex.adv
 lib/jstrack/tracker/storms/alex.dis
@@ -339,14 +431,41 @@ lib/jstrack/tracker/storms/old/2009/three.fc
 lib/jstrack/tracker/storms/old/2009/two.adv
 lib/jstrack/tracker/storms/old/2009/two.dis
 lib/jstrack/tracker/storms/old/2009/two.fc
-lib/jstrack/tracker/storms/one.adv
 lib/jstrack/tracker/storms/one.dis
 lib/jstrack/tracker/storms/one.fc
+lib/jstrack/tracker/storms/three.adv
+lib/jstrack/tracker/storms/three.dis
+lib/jstrack/tracker/storms/three.fc
+lib/jstrack/tracker/storms/three.trk
+lib/jstrack/tracker/storms/two.adv
+lib/jstrack/tracker/storms/two.dis
+lib/jstrack/tracker/storms/two.fc
+lib/jstrack/tracker/storms/two.trk
 @dirrm lib/jstrack/tracker/storms/old/2009
 @dirrm lib/jstrack/tracker/storms/old/2008
 @dirrm lib/jstrack/tracker/storms/old/2007
 @dirrm lib/jstrack/tracker/storms/old
 @dirrm lib/jstrack/tracker/storms
+@dirrm lib/jstrack/tracker/lib/tklib0.4/widget
+@dirrm lib/jstrack/tracker/lib/tklib0.4/tooltip
+@dirrm lib/jstrack/tracker/lib/tklib0.4/tkpiechart
+@dirrm lib/jstrack/tracker/lib/tklib0.4/tablelist/scripts
+@dirrm lib/jstrack/tracker/lib/tklib0.4/tablelist
+@dirrm lib/jstrack/tracker/lib/tklib0.4/swaplist
+@dirrm lib/jstrack/tracker/lib/tklib0.4/style
+@dirrm lib/jstrack/tracker/lib/tklib0.4/plotchart
+@dirrm lib/jstrack/tracker/lib/tklib0.4/ntext
+@dirrm lib/jstrack/tracker/lib/tklib0.4/khim
+@dirrm lib/jstrack/tracker/lib/tklib0.4/ipentry
+@dirrm lib/jstrack/tracker/lib/tklib0.4/ico
+@dirrm lib/jstrack/tracker/lib/tklib0.4/history
+@dirrm lib/jstrack/tracker/lib/tklib0.4/getstring
+@dirrm lib/jstrack/tracker/lib/tklib0.4/datefield
+@dirrm lib/jstrack/tracker/lib/tklib0.4/cursor
+@dirrm lib/jstrack/tracker/lib/tklib0.4/ctext
+@dirrm lib/jstrack/tracker/lib/tklib0.4/autoscroll
+@dirrm lib/jstrack/tracker/lib/tklib0.4
+@dirrm lib/jstrack/tracker/lib/oldver
 @dirrm lib/jstrack/tracker/lib/images
 @dirrm lib/jstrack/tracker/lib
 @dirrm lib/jstrack/tracker/imagery
