@@ -377,6 +377,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Apia.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Auckland.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Chatham.pm
+%%SITE_PERL%%/DateTime/TimeZone/Pacific/Chuuk.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Easter.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Efate.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Enderbury.pm
@@ -402,14 +403,13 @@
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Pago_Pago.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Palau.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Pitcairn.pm
-%%SITE_PERL%%/DateTime/TimeZone/Pacific/Ponape.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Port_Moresby.pm
+%%SITE_PERL%%/DateTime/TimeZone/Pacific/Pohnpei.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Rarotonga.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Saipan.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Tahiti.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Tarawa.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Tongatapu.pm
-%%SITE_PERL%%/DateTime/TimeZone/Pacific/Truk.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Wake.pm
 %%SITE_PERL%%/DateTime/TimeZone/Pacific/Wallis.pm
 %%SITE_PERL%%/DateTime/TimeZone/UTC.pm
