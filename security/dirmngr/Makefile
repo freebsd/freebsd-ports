@@ -7,6 +7,7 @@
 
 PORTNAME=	dirmngr
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	dirmngr
@@ -17,7 +18,7 @@ MAINTAINER=	umq@ueo.co.jp
 COMMENT=	A client for managing and downloading certificate revocation lists
 
 LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
-		gcrypt.16:${PORTSDIR}/security/libgcrypt \
+		gcrypt.17:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		ksba.17:${PORTSDIR}/security/libksba \
 		pth:${PORTSDIR}/devel/pth

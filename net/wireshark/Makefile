@@ -7,6 +7,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	1.2.9
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
     		http://wireshark.osmirror.nl/download/src/ \
@@ -162,7 +163,7 @@ CONFIGURE_ARGS+=--with-libgnutls-prefix=${LOCALBASE}
 .endif
 
 .if exists(${LOCALBASE}/lib/libgcrypt.so) || defined(WITH_LIBGCRYPT)
-LIB_DEPENDS+=	gcrypt.16:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt.17:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--with-libgcrypt-prefix=${LOCALBASE}
 .endif
 

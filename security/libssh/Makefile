@@ -7,6 +7,7 @@
 
 PORTNAME=	libssh
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh.org/files/ \
 		LOCAL/avl
@@ -28,7 +29,7 @@ USE_LDCONFIG=	yes
 .include <bsd.port.options.mk>
 
 .if defined(WITH_GCRYPT)
-LIB_DEPENDS+=	gcrypt.16:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt.17:${PORTSDIR}/security/libgcrypt
 CMAKE_ARGS+=	-DWITH_GCRYPT:BOOL=ON
 .else
 USE_OPENSSL=	yes

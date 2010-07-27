@@ -7,7 +7,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	2.8.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_GNUPG}
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
-LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS=	gcrypt.17:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
 
 CONFLICTS=	gnutls-devel-[0-9]*
