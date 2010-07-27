@@ -7,6 +7,7 @@
 
 PORTNAME=	nefu
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://rsug.itd.umich.edu/software/nefu/files/
 EXTRACT_SUFX=	.tgz
@@ -27,8 +28,8 @@ CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE} \
 			--without-zlib \
 			--without-shelltests
 
-NEFU_USER=	nefu
-NEFU_GROUP=	nefu
+USERS=		nefu
+GROUPS=		nefu
 
 USE_OPENSSL=	yes
 OPTIONS=	LDAP "Enable OpenLDAP support" off \
@@ -71,12 +72,11 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/nefu.conf.4 ${PREFIX}/man/man4
 
 post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if defined(WITH_HTML)
 	${MKDIR} ${WWWDIR}
-	${CHOWN} -R ${NEFU_USER}:${NEFU_GROUP} ${WWWDIR}
+	${CHOWN} -R ${USERS}:${GROUPS} ${WWWDIR}
 .endif
 	${MKDIR} ${DBDIR}
-	${CHOWN} -R ${NEFU_USER}:${NEFU_GROUP} ${DBDIR}
+	${CHOWN} -R ${USERS}:${GROUPS} ${DBDIR}
 
 .include <bsd.port.post.mk>
