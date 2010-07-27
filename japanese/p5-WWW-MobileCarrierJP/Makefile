@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-MobileCarrierJP
-PORTVERSION=	0.44
+PORTVERSION=	0.45
 CATEGORIES=	japanese www perl5
 MASTER_SITES=	CPAN
 
@@ -21,11 +21,13 @@ BUILD_DEPENDS=	p5-Moose>=0.60:${PORTSDIR}/devel/p5-Moose \
 		p5-libwww>=5.834:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-CAM-PDF>=0:${PORTSDIR}/textproc/p5-CAM-PDF
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		WWW::MobileCarrierJP::EZWeb::PictogramInfo.3 \
 		WWW::MobileCarrierJP::ThirdForce::HTTPHeader.3 \
+		WWW::MobileCarrierJP::ThirdForce::Flash.3 \
 		WWW::MobileCarrierJP::EZWeb::DeviceID.3 \
 		WWW::MobileCarrierJP::DoCoMo::Display.3 \
 		WWW::MobileCarrierJP::AirHPhone::CIDR.3 \
