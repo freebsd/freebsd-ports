@@ -7,19 +7,22 @@
 #
 
 PORTNAME=	fityk
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	math
 MASTER_SITES=	SF \
 		SF/xylib:xylib
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 		${XYLIB_DISTNAME}${EXTRACT_SUFX}:xylib
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	armin@frozen-zone.org
 COMMENT=	Free peak fitting software
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/spirit/core.hpp:${PORTSDIR}/devel/boost-libs \
 		gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
