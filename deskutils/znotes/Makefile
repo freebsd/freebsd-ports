@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	znotes
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -47,12 +47,12 @@ do-install:
 .if defined(WITH_NLS)
 	${MKDIR} ${DATADIR}/translations
 	${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${DATADIR}/translations
-PLIST_FILES+=	share/${PORTNAME}/translations/${PORTNAME}_cs.qm \
-		share/${PORTNAME}/translations/${PORTNAME}_ru.qm \
-		share/${PORTNAME}/translations/${PORTNAME}_pt_BR.qm \
-		share/${PORTNAME}/translations/${PORTNAME}_uk.qm
-PLIST_DIRS+=	share/${PORTNAME}/translations \
-		share/${PORTNAME}
+PLIST_FILES+=	%%DATADIR%%/translations/${PORTNAME}_cs.qm \
+		%%DATADIR%%/translations/${PORTNAME}_ru.qm \
+		%%DATADIR%%/translations/${PORTNAME}_pt_BR.qm \
+		%%DATADIR%%/translations/${PORTNAME}_uk.qm
+PLIST_DIRS+=	%%DATADIR%%/translations \
+		%%DATADIR%%
 .else
 .endif
 
