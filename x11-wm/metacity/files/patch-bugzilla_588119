@@ -1,0 +1,139 @@
+From a3de65d5d1861f755ced7cad291fbbd4f1b8ef51 Mon Sep 17 00:00:00 2001
+From: Owen W. Taylor <otaylor@fishsoup.net>
+Date: Sat, 22 Aug 2009 15:00:57 -0400
+Subject: [PATCH] Should set RestartStyleHint to RestartIfRunning when replaced
+
+This reverts most of commit abbd057eb967e6ab462ffe305f41b2b04d417b25;
+
+ - It's fine to call meta_session_shutdown() after the display
+   is closed, since it's talking over the ICE connection
+ - We should not call warn_about_lame_clients_and_finish_interact()
+   unless we are interacting with the window manager in a session
+   save.
+
+However, the part of abbd057 that fixed accessing freed memory was
+fixing a real problem; this patches does the same thing in a simpler
+way by fixing an obvious type in meta_display_close() where it was
+NULL'ing out the local variable 'display' rather than the global
+variable 'the_display' and adding keeping the check in meta_finalize()
+that was added in abbd057.
+
+The order of calling meta_session_shutdown() and
+calling meta_display_close() is reverted back to the old order to
+make it clear that it's OK if the display way already closed previously.
+
+http://bugzilla.gnome.org/show_bug.cgi?id=588119
+---
+ src/core/display-private.h |    2 +-
+ src/core/display.c         |   16 ++++------------
+ src/core/main.c            |    5 ++---
+ src/core/session.c         |    8 --------
+ 4 files changed, 7 insertions(+), 24 deletions(-)
+
+diff --git a/src/core/display-private.h b/src/core/display-private.h
+index 19287f3..9c8ebc6 100644
+--- src/core/display-private.h
++++ src/core/display-private.h
+@@ -329,7 +329,7 @@ MetaScreen*   meta_display_screen_for_xwindow  (MetaDisplay *display,
+ void          meta_display_grab                (MetaDisplay *display);
+ void          meta_display_ungrab              (MetaDisplay *display);
+ 
+-void          meta_display_unmanage_screen     (MetaDisplay **display,
++void          meta_display_unmanage_screen     (MetaDisplay *display,
+                                                 MetaScreen  *screen,
+                                                 guint32      timestamp);
+ 
+diff --git a/src/core/display.c b/src/core/display.c
+index 55c374a..8e35a35 100644
+--- src/core/display.c
++++ src/core/display.c
+@@ -926,7 +926,7 @@ meta_display_close (MetaDisplay *display,
+     meta_compositor_destroy (display->compositor);
+   
+   g_free (display);
+-  display = NULL;
++  the_display = NULL;
+ 
+   meta_quit (META_EXIT_SUCCESS);
+ }
+@@ -4762,13 +4762,10 @@ process_selection_clear (MetaDisplay   *display,
+       meta_verbose ("Got selection clear for screen %d on display %s\n",
+                     screen->number, display->name);
+       
+-      meta_display_unmanage_screen (&display, 
++      meta_display_unmanage_screen (display, 
+                                     screen,
+                                     event->xselectionclear.time);
+ 
+-      if (!display)
+-        the_display = NULL;
+-
+       /* display and screen may both be invalid memory... */
+       
+       return;
+@@ -4790,12 +4787,10 @@ process_selection_clear (MetaDisplay   *display,
+ }
+ 
+ void
+-meta_display_unmanage_screen (MetaDisplay **displayp,
++meta_display_unmanage_screen (MetaDisplay *display,
+                               MetaScreen  *screen,
+                               guint32      timestamp)
+ {
+-  MetaDisplay *display = *displayp;
+-
+   meta_verbose ("Unmanaging screen %d on display %s\n",
+                 screen->number, display->name);
+   
+@@ -4805,10 +4800,7 @@ meta_display_unmanage_screen (MetaDisplay **displayp,
+   display->screens = g_slist_remove (display->screens, screen);
+ 
+   if (display->screens == NULL)
+-    {
+-      meta_display_close (display, timestamp);
+-      *displayp = NULL;
+-    }
++    meta_display_close (display, timestamp);
+ }
+ 
+ void
+diff --git a/src/core/main.c b/src/core/main.c
+index a36a396..44d317e 100644
+--- src/core/main.c
++++ src/core/main.c
+@@ -361,12 +361,11 @@ static void
+ meta_finalize (void)
+ {
+   MetaDisplay *display = meta_get_display();
+-
+-  meta_session_shutdown ();
+-
+   if (display)
+     meta_display_close (display,
+                         CurrentTime); /* I doubt correct timestamps matter here */
++
++  meta_session_shutdown ();
+ }
+ 
+ static void
+diff --git a/src/core/session.c b/src/core/session.c
+index 7e3b389..0d69350 100644
+--- src/core/session.c
++++ src/core/session.c
+@@ -376,14 +376,6 @@ meta_session_shutdown (void)
+   SmProp *props[1];
+   char hint = SmRestartIfRunning;
+ 
+-  if (!meta_get_display ())
+-    {
+-      meta_verbose ("Cannot close session because there is no display");
+-      return;
+-    }
+-
+-  warn_about_lame_clients_and_finish_interact (FALSE);
+-
+   if (session_connection == NULL)
+     return;
+   
+-- 
+1.6.4
