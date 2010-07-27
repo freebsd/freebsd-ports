@@ -7,7 +7,7 @@
 
 PORTNAME=	remmina
 PORTVERSION=	0.7.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	SF/${PORTNAME}/0.7/
 
@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=	--disable-ssh
 .endif
 
 .if defined(WITH_GCRYPT)
-LIB_DEPENDS+=	gcrypt.16:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt.17:${PORTSDIR}/security/libgcrypt
 .else
 CONFIGURE_ARGS+=	--disable-gcrypt
 .endif

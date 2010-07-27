@@ -7,7 +7,7 @@
 
 PORTNAME=	libxslt
 PORTVERSION=	1.1.26
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	ftp://fr.rpmfind.net/pub/libxml/ \
 		ftp://gd.tuwien.ac.at/pub/libxml/ \
@@ -45,7 +45,7 @@ CONFIGURE_ARGS+=	--with-mem-debug
 .endif
 
 .if defined(WITH_CRYPTO)
-LIB_DEPENDS+=	gcrypt.16:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt.17:${PORTSDIR}/security/libgcrypt
 .else
 CONFIGURE_ARGS+=--without-crypto
 .endif

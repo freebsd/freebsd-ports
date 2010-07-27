@@ -7,7 +7,7 @@
 
 PORTNAME=	cryptofs
 PORTVERSION=	0.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://reboot78.re.funpic.de/cryptofs/
 PKGNAMEPREFIX=	fusefs-
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A encrypted filesystem for FUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
-LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS=	gcrypt.17:${PORTSDIR}/security/libgcrypt \
 		glib-2.0:${PORTSDIR}/devel/glib20
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	libgnome-keyring
 PORTVERSION=	2.30.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 
@@ -15,7 +15,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program that keeps passwords and other secrets
 
 LIB_DEPENDS=    tasn1.4:${PORTSDIR}/security/libtasn1 \
-                gcrypt.16:${PORTSDIR}/security/libgcrypt
+                gcrypt.17:${PORTSDIR}/security/libgcrypt
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix ltverhack intlhack gconf2

@@ -7,7 +7,7 @@
 
 PORTNAME=	chmsee
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -15,7 +15,7 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A viewer for Microsoft Help "CHM" files
 
 LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib \
-		gcrypt.16:${PORTSDIR}/security/libgcrypt
+		gcrypt.17:${PORTSDIR}/security/libgcrypt
 
 USE_GNOME=	gnomehier libglade2
 USE_GECKO=	libxul seamonkey

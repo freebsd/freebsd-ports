@@ -7,7 +7,7 @@
 
 PORTNAME=	wmbiff
 PORTVERSION=	0.4.27
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	mail windowmaker afterstep
 MASTER_SITES=	SF
 
@@ -34,7 +34,7 @@ PLIST_DIRS=	%%DATADIR%%/skins \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gcrypt.16:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS+=	gcrypt.17:${PORTSDIR}/security/libgcrypt \
 		gnutls.40:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-libgnutls-prefix=${LOCALBASE} \
 			--with-libgcrypt-prefix=${LOCALBASE}

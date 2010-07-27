@@ -7,6 +7,7 @@
 
 PORTNAME=	Crypt-GCrypt
 PORTVERSION=	1.24
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	Perl interface to the GNU Cryptographic library
 
-LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gcrypt.17:${PORTSDIR}/security/libgcrypt
 
 PERL_CONFIGURE=	5.6.0+
 CONFIGURE_ARGS+=	GCRYPTLIBPATH=${LOCALBASE}/lib \

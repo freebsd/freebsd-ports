@@ -7,6 +7,7 @@
 
 PORTNAME=	metalink
 PORTVERSION=	0.3.6
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/metalinks/Metalink%20commandline/${PORTVERSION}
 PKGNAMESUFFIX?=	-tools
@@ -14,7 +15,7 @@ PKGNAMESUFFIX?=	-tools
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Metalink generation tool
 
-LIB_DEPENDS=	gcrypt.16:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS=	gcrypt.17:${PORTSDIR}/security/libgcrypt \
 		glibmm-2.4.1:${PORTSDIR}/devel/glibmm \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
