@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgcrypt
-PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTVERSION=	1.4.6
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +15,8 @@ COMMENT=	General purpose crypto library based on code used in GnuPG
 
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
