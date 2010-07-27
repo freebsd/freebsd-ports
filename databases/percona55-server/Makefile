@@ -7,7 +7,7 @@
 
 PORTNAME?=	mysql
 PORTVERSION=	5.5.5
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases ipv6
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-5.5
@@ -175,9 +175,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|install-exec-am: install-binPROGRAMS|install-exec-am:|g" ${WRKSRC}/extra/Makefile.in
 
 post-install:
-	@${MKDIR} ${PREFIX}/include/mysql/psi
-	@${MV} ${PREFIX}/include/mysql/mysql_thread.h ${PREFIX}/include/mysql/psi/mysql_thread.h
-	@${MV} ${PREFIX}/include/mysql/psi.h ${PREFIX}/include/mysql/psi/psi.h
 	${INSTALL_DATA} ${WRKSRC}/support-files/mysql.m4 ${PREFIX}/share/aclocal/
 
 .else

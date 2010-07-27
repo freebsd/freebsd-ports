@@ -1,6 +1,22 @@
---- include/Makefile.in.orig	2010-07-16 10:14:39.000000000 +0200
-+++ include/Makefile.in	2010-07-16 10:14:51.000000000 +0200
-@@ -708,8 +708,6 @@
+--- include/Makefile.in.orig	2010-07-27 16:46:08.000000000 +0200
++++ include/Makefile.in	2010-07-27 16:48:45.000000000 +0200
+@@ -480,12 +480,11 @@
+ 	-rm -rf .libs _libs
+ install-pkgincludeHEADERS: $(pkginclude_HEADERS)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(pkgincludedir)" || $(MKDIR_P) "$(DESTDIR)$(pkgincludedir)"
++	test -z "$(pkgincludedir)" || $(MKDIR_P) "$(DESTDIR)$(pkgincludedir)/mysql/psi"
+ 	@list='$(pkginclude_HEADERS)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f=$(am__strip_dir) \
+-	  echo " $(pkgincludeHEADERS_INSTALL) '$$d$$p' '$(DESTDIR)$(pkgincludedir)/$$f'"; \
+-	  $(pkgincludeHEADERS_INSTALL) "$$d$$p" "$(DESTDIR)$(pkgincludedir)/$$f"; \
++	  echo " $(pkgincludeHEADERS_INSTALL) '$$d$$p' '$(DESTDIR)$(pkgincludedir)/$$p'"; \
++	  $(pkgincludeHEADERS_INSTALL) "$$d$$p" "$(DESTDIR)$(pkgincludedir)/$$p"; \
+ 	done
+ 
+ uninstall-pkgincludeHEADERS:
+@@ -708,8 +707,6 @@
  @HAVE_DTRACE_TRUE@probes_mysql_dtrace.h: $(DTRACEPROVIDER)
  @HAVE_DTRACE_TRUE@	$(DTRACE) $(DTRACEFLAGS) -h -s $(DTRACEPROVIDER) -o $@
  
