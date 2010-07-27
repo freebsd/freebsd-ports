@@ -16,7 +16,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	A library to make access to GnuPG easier
 
-LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error
+LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
+		gpg-error.0:${PORTSDIR}/security/libgpg-error
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:22
@@ -52,7 +53,6 @@ RUN_DEPENDS+=	gpg2:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=--with-gpg=${LOCALBASE}/bin/gpg2 \
 		--with-gpgconf=${LOCALBASE}/bin/gpgconf
 .if exists(${LOCALBASE}/bin/gpgsm)
-LIB_DEPENDS+=	assuan.0:${PORTSDIR}/security/libassuan
 CONFIGURE_ARGS+=--with-gpgsm=${LOCALBASE}/bin/gpgsm
 .else
 CONFIGURE_ARGS+=--with-gpgsm=no
@@ -69,7 +69,6 @@ PLIST_SUB+=	WITH_PTH='@comment '
 
 .if defined(WITH_UISERVER)
 CONFIGURE_ARGS+=--enable-fd-passing
-LIB_DEPENDS+=	assuan.0:${PORTSDIR}/security/libassuan
 .endif
 
 verify: checksum
