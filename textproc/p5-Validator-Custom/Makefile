@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Validator-Custom
-PORTVERSION=	0.1204
+PORTVERSION=	0.1206
 CATEGORIES=	textproc perl5
-MASTER_SITES=	CPAN/../../authors/id/K/KI/KIMOTO/
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@sunpoet.net
