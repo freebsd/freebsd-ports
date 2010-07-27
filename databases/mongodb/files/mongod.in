@@ -10,7 +10,7 @@
 #               Set it to YES to enable mongod.
 #
 # Additional configurable variables:
-# mongod_config (path):   Set to %%PREFIX%%/etc/mongod.conf
+# mongod_config (path):   Set to %%PREFIX%%/etc/mongodb.conf
 #               by default. Additional configuration. You
 #               can also use mongod_flags for additional
 #               command line arguments.
