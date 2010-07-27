@@ -22829,6 +22829,7 @@ sdpara                          ports/math/sdpara
 sdparm                          ports/sysutils/sdparm
 sdr                             ports/mbone/sdr
 sdts++                          ports/devel/sdts++
+sea-defender                    ports/games/sea-defender
 seabattle                       ports/games/seabattle
 seahaven                        ports/games/seahaven
 seahorse                        ports/security/seahorse
