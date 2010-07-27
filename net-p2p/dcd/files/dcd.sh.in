@@ -16,7 +16,7 @@ name="dcd"
 rcvar=${name}_enable
 
 command=%%PREFIX%%/sbin/dcd
-sig_stop=-KILL 
+sig_stop=KILL 
 stop_cmd=stop_cmd
 
 load_rc_config $name
