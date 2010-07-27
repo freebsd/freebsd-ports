@@ -1,0 +1,11 @@
+===================================================================
+
+phpVirtualBox was installed.
+
+You need to start vboxwebsrv on the server now. If phpVirtualBox
+cannot login please check the credentials and if it does not help
+you can disable authentication on the server by:
+
+$ VBoxManage setproperty websrvauthlibrary null
+
+===================================================================

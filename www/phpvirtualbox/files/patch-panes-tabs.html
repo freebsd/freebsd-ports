@@ -1,0 +1,25 @@
+--- panes/tabs.html	(revision 31)
++++ panes/tabs.html	(revision 32)
+@@ -26,6 +26,11 @@
+ 	if($('#vboxIndex').data('vboxConfig')['disable' + tabs[i].name.substring(4)])
+ 		continue;
+ 
++	// Hide Console tab if OSE is detected
++	if(tabs[i].name == 'vboxTabVMConsole' && $('#vboxIndex').data('vboxConfig').version.ose)
++		continue;
++
++
+ 	// Tab link
+ 	var li = document.createElement('li');
+ 	li.innerHTML = '<a href="#'+tabs[i].name+'"><span><img style="vertical-align: middle" src="images/vbox/'+tabs[i].icon+'_16px.png" border="0" /> <span id="'+tabs[i].name+'Title">'+trans(tabs[i].label)+'</span></span></a>';					
+@@ -48,6 +53,10 @@
+ 		// Tab disabled?
+ 		if($('#vboxIndex').data('vboxConfig')['disable' + tabs[i].name.substring(4)])
+ 			continue;
++
++		// Hide Console tab if OSE is detected
++		if(tabs[i].name == 'vboxTabVMConsole' && $('#vboxIndex').data('vboxConfig').version.ose)
++			continue;
+ 		
+ 		tabsMain.addTab(tabs[i]);
+ 		
