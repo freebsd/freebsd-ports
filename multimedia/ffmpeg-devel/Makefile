@@ -18,6 +18,8 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 
 CONFLICTS=	ffmpeg-0.*
 
+LATEST_LINK=	ffmpeg-devel
+
 WRKSRC=		${WRKDIR}/ffmpeg-export-${DISTVERSION}
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
