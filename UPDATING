@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20090727:
+  AFFECTS: users of security/libgcrypt
+  AUTHOR: wxs@FreeBSD.org
+
+  libgcrypt has been upgraded to 1.4.6 which has a shared library version
+  bump.  You need to reinstall all ports that depend on it.  Use something
+  like this:
+
+	portupgrade -rf libgcrypt
+	portmaster -r libgcrypt
+
 20100722:
   AFFECTS: users of net/rabbitmq
   AUTHOR: Phillip <pneumann@gmail.com>
