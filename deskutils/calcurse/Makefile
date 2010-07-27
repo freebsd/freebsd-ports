@@ -9,12 +9,11 @@ PORTVERSION=	2.8
 CATEGORIES=	deskutils
 MASTER_SITES=	ftp://ftp2.culot.org/culot/
 
-MAINTAINER=	h.skuhra@gmail.com
-COMMENT=	A text-based personal organizer
+MAINTAINER=	frederic@culot.org
+COMMENT=	A text-based calendar and scheduling application
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 MAN1=		calcurse.1
 

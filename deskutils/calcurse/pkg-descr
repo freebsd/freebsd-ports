@@ -1,8 +1,7 @@
-Calcurse is a text-based personal organizer which helps keeping track
-of events and everyday tasks. It contains a calendar, a 'todo' list,
-and puts your appointments in order. The user interface is
-configurable, and one can choose between different color schemes and
-layouts.  All of the commands are documented within an online help
-system.
+Calcurse is a text-based calendar and scheduling application. It helps
+keeping track of events, appointments and everyday tasks.
+A configurable notification system reminds user of upcoming deadlines,
+and the curses based interface can be customized to suit user needs.
+All of the commands are documented within an online help system.
 
 WWW: http://culot.org/calcurse/
