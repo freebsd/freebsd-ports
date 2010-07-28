@@ -13,10 +13,8 @@ bin/latex-mk
 %%DATADIR%%/example/mkfile.mk
 %%DATADIR%%/example/refs.bib
 %%DATADIR%%/example/tgif/myfig.obj
-%%DATADIR%%/latex-mk.dvi
 %%DATADIR%%/latex-mk.html
 %%DATADIR%%/latex-mk.pdf
-%%DATADIR%%/latex-mk.ps
 %%DATADIR%%/latex.gmk
 %%DATADIR%%/latex.mk
 %%DATADIR%%/latex.subdir.gmk
