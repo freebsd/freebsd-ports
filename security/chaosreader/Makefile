@@ -7,10 +7,12 @@
 
 PORTNAME=	chaosreader
 PORTVERSION=	0.94
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}${PORTVERSION} sshkeydata0.20
 EXTRACT_ONLY=
+NO_WRKSUBDIR=	yes
 
 MAINTAINER=	pauls@utdallas.edu
 COMMENT=	A tool to extract data from tcpdump logs
