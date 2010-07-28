@@ -10,7 +10,7 @@ PORTVERSION=	2.2.11
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	legatvs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line video extraction tool for YouTube and others
 
 RUN_DEPENDS=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA \

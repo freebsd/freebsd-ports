@@ -12,7 +12,7 @@ CATEGORIES=	multimedia net perl5
 MASTER_SITES=	GOOGLE_CODE
 DIST_SUBDIR=	clive
 
-MAINTAINER=	legatvs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passwords, RSS parsing, and link extraction for clive
 
 NO_BUILD=	yes
