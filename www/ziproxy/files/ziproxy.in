@@ -20,11 +20,22 @@ rcvar=${name}_enable
 command=%%PREFIX%%/bin/${name}
 pidfile=/var/run/${name}.pid
 
+start_precmd="start_precmd"
+stop_postcmd="stop_postcmd"
+
 load_rc_config $name
 
 : ${ziproxy_enable="NO"}
 : ${ziproxy_config="%%PREFIX%%/etc/ziproxy/ziproxy.conf"}
 
 command_args="-d -c ${ziproxy_config} --pid-file ${pidfile}"
+
+start_precmd() {
+	rm -f ${pidfile}
+}
+
+stop_postcmd() {
+	rm -f ${pidfile}
+}
 
 run_rc_command "$1"
