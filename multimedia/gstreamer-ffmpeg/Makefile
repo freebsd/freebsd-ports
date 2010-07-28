@@ -8,6 +8,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.10.11
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
 PKGNAMESUFFIX=	-ffmpeg
@@ -47,5 +48,7 @@ post-patch:
 		${WRKSRC}/gst-libs/ext/ffmpeg/doc/texi2pod.pl
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
+	@cd ${WRKSRC}/gst-libs/ext/ffmpeg/libavcodec && \
+		${LN} -s x86 i386 && ${LN} -s x86 amd64
 
 .include <bsd.port.post.mk>
