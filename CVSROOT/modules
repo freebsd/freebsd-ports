@@ -4349,7 +4349,6 @@ gindent                         ports/devel/gindent
 gini                            ports/net/gini
 gio-fam-backend                 ports/devel/gio-fam-backend
 gir-repository                  ports/devel/gir-repository
-gir-repository-avahi            ports/net/gir-repository-avahi
 gir-repository-babl             ports/x11/gir-repository-babl
 gir-repository-dbus             ports/devel/gir-repository-dbus
 gir-repository-gconf2           ports/devel/gir-repository-gconf2
@@ -5328,6 +5327,7 @@ hex                             ports/games/hex
 hex-a-hop                       ports/games/hex-a-hop
 hexalate                        ports/games/hexalate
 hexcalc                         ports/math/hexcalc
+hexcompare                      ports/devel/hexcompare
 hexcurse                        ports/editors/hexcurse
 hexedit                         ports/editors/hexedit
 hexpert                         ports/editors/hexpert
@@ -19711,6 +19711,7 @@ phpua-hl                        ports/games/phpua-hl
 phpua-q3                        ports/games/phpua-q3
 phpua-ut                        ports/games/phpua-ut
 phpua-ut2003                    ports/games/phpua-ut2003
+phpvirtualbox                   ports/www/phpvirtualbox
 phpwebapp                       ports/www/phpwebapp
 phpwebftp                       ports/ftp/phpwebftp
 phpwebgallery                   ports/www/phpwebgallery
