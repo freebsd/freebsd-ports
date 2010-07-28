@@ -42,7 +42,6 @@ include/nspr/plbase64.h
 include/nspr/plerror.h
 include/nspr/plgetopt.h
 include/nspr/plhash.h
-include/nspr/plresolv.h
 include/nspr/plstr.h
 include/nspr/pratom.h
 include/nspr/prbit.h
