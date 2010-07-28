@@ -7,37 +7,33 @@
 #
 
 PORTNAME=	dejavu
-DISTVERSION=	2.31
+PORTVERSION=	2.31
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF
-DISTNAME=	${PORTNAME}-fonts-ttf-${DISTVERSION}
+DISTNAME=	${PORTNAME}-fonts-ttf-${PORTVERSION}
 
-MAINTAINER=	naddy@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Bitstream Vera Fonts clone with a wider range of characters
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
-USE_BZIP2=	yes
 NO_BUILD=	yes
-PORTDOCS=	README status.txt unicover.txt langcover.txt
-PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}/"
-MSG_FILE=	${PKGDIR}/pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
-FONTNAME=	${PORTNAME}
-FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
+USE_BZIP2=	yes
 
-post-patch:
-	${SED} 's|%%FONTSDIR%%|${FONTSDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
+FONTSDIR=	${PREFIX}/${FONTSDIR_REL}
+FONTSDIR_REL?=	lib/X11/fonts/${PORTNAME}
+PLIST_SUB=	FONTSDIR_REL=${FONTSDIR_REL}
+PORTDOCS=	README langcover.txt status.txt unicover.txt
+SUB_FILES=	pkg-message
+SUB_LIST=	FONTSDIR=${FONTSDIR}
 
 do-install:
-	${MKDIR} ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf ${FONTSDIR}
+	@${MKDIR} ${FONTSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf ${FONTSDIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 post-install:
