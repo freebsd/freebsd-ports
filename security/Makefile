@@ -305,6 +305,7 @@
     SUBDIR += mussh
     SUBDIR += mypasswordsafe
     SUBDIR += nbaudit
+    SUBDIR += ncrack
     SUBDIR += ncrypt
     SUBDIR += nessus
     SUBDIR += nessus-libnasl

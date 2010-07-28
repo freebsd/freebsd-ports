@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+bin/ncrack
+share/ncrack/ncrack-services
+share/ncrack/common.usr
+share/ncrack/default.pwd
+share/ncrack/default.usr
+share/ncrack/jtr.pwd
+share/ncrack/minimal.usr
+share/ncrack/myspace.pwd
+share/ncrack/phpbb.pwd
+share/ncrack/top50000.pwd
+@dirrm share/ncrack
