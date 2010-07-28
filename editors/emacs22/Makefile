@@ -26,7 +26,7 @@ LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png
 .endif
 
-CONFLICTS=	emacs-19.* emacs-21.* \
+CONFLICTS=	emacs-19.* emacs-21.* emacs-23.* emacs-24.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
