@@ -7,7 +7,7 @@
 
 PORTNAME=	moinmoin
 PORTVERSION=	1.9.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www python
 MASTER_SITES=	http://static.moinmo.in/files/
 DISTNAME=	moin-${PORTVERSION}
@@ -33,7 +33,7 @@ MOINTYPE?=	CGI
 PKGDEINSTALL=	${PKGINSTALL}
 
 .if ${MOINTYPE} == "STANDALONE"
-MOINSCRIPT=	${MOINDIR}/server/wikiserver.py
+MOINSCRIPT=	${MOINDIR}/server/moin
 .elif ${MOINTYPE} == "FCGI"
 MOINSCRIPT=	${MOINDIR}/server/moin.fcgi
 .elif ${MOINTYPE} == "MOD_PYTHON"
