@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fd
-PORTVERSION=	3.00h
+PORTVERSION=	3.00i
 CATEGORIES=	shells net
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/ \
 		ftp://ftp.unixusers.net/src/fdclone/
