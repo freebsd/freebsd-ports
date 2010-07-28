@@ -22,6 +22,8 @@ RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 NO_BUILD=	yes
 ASTERISKDIR=	${DATADIR}/${PKGNAMESUFFIX:S|-||}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+SUB_FILES=	pkg-message
+SUB_LIST=	PORTSDIR=${PORTSDIR}
 
 post-extract:
 	${MV} ${WRKDIR}/jp/README.txt ${WRKDIR}
