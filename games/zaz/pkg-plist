@@ -1,6 +1,5 @@
 bin/zaz
 share/applications/zaz.desktop
-share/pixmaps/zaz.xpm
 %%NLS%%share/locale/de/LC_MESSAGES/zaz.mo
 %%NLS%%share/locale/es/LC_MESSAGES/zaz.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/zaz.mo
@@ -9,6 +8,7 @@ share/pixmaps/zaz.xpm
 %%NLS%%share/locale/pl/LC_MESSAGES/zaz.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/zaz.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/zaz.mo
+share/pixmaps/zaz.xpm
 %%DATADIR%%/FreeMonoBold.ttf
 %%DATADIR%%/FreeSans.ttf
 %%DATADIR%%/balls1.png
@@ -64,9 +64,17 @@ share/pixmaps/zaz.xpm
 %%DATADIR%%/level18.jpg
 %%DATADIR%%/level18.lvl
 %%DATADIR%%/level18_thumb.jpg
+%%DATADIR%%/level19.jpg
+%%DATADIR%%/level19.lvl
+%%DATADIR%%/level19_overlay.png
+%%DATADIR%%/level19_thumb.jpg
 %%DATADIR%%/level1_thumb.jpg
 %%DATADIR%%/level2.jpg
 %%DATADIR%%/level2.lvl
+%%DATADIR%%/level20.jpg
+%%DATADIR%%/level20.lvl
+%%DATADIR%%/level20_overlay.png
+%%DATADIR%%/level20_thumb.jpg
 %%DATADIR%%/level2_thumb.jpg
 %%DATADIR%%/level3.jpg
 %%DATADIR%%/level3.lvl
@@ -100,6 +108,7 @@ share/pixmaps/zaz.xpm
 %%DATADIR%%/ouch.ogg
 %%DATADIR%%/player.png
 %%DATADIR%%/pro.set
+%%DATADIR%%/ptr.png
 %%DATADIR%%/pull.ogg
 %%DATADIR%%/push.ogg
 %%DATADIR%%/roll.ogg
