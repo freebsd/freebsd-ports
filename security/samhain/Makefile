@@ -36,9 +36,7 @@ LICENSE=	GPLv2
 CFLAGS+=	-fPIC
 .endif
 
-.if ${ARCH} == "amd64" && ${OSVERSION} >= 800000
-BROKEN=		does not compile
-.elif ${OSVERSION} > 900007
+.if ${OSVERSION} > 900007
 BROKEN=		fails to build with new utmpx
 .endif
 
