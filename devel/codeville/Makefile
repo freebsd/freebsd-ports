@@ -15,6 +15,9 @@ DISTNAME=	Codeville-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An "anarchic" control version system without unnecessary re-merges
 
+DEPRECATED=	Dead project.
+EXPIRATION_DATE=2010-08-31
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Codeville
