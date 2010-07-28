@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	activitymail
-PORTVERSION=	1.24
+PORTVERSION=	1.26
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DW/DWHEELER/activitymail
