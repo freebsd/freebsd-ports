@@ -39,6 +39,9 @@ share/applications/ario.desktop
 %%DATADIR%%/art/ario-play.png
 %%DATADIR%%/art/ario.png
 %%DATADIR%%/art/logo.png
+%%DATADIR%%/art/pl-below.png
+%%DATADIR%%/art/pl-inside.png
+%%DATADIR%%/art/pl-right.png
 %%DATADIR%%/art/play.png
 %%DATADIR%%/art/repeat.png
 %%DATADIR%%/art/shuffle.png
@@ -112,6 +115,10 @@ share/locale/nb/LC_MESSAGES/ario.mo
 share/locale/ga/LC_MESSAGES/ario.mo
 share/locale/oc/LC_MESSAGES/ario.mo
 share/locale/vi/LC_MESSAGES/ario.mo
+share/locale/eo/LC_MESSAGES/ario.mo
+share/locale/en_CA/LC_MESSAGES/ario.mo
+share/locale/uk/LC_MESSAGES/ario.mo
+share/locale/en_AU/LC_MESSAGES/ario.mo
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/96x96/apps
