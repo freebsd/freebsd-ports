@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20090728:
+  AFFECTS: users of textproc/nltk
+  AUTHOR: clsung@FreeBSD.org
+
+  nltk has been upgraded to 2.0b8 which depend on devel/py-yaml now.
+  You need to deinstall nltk before upgrading, since the previous port
+  will delete files installed from py-yaml on deinstall phase.
+
+  for example:
+
+    # pkg_delete nltk-2.0b7,1
+    # portsnap fetch update
+    # cd /usr/ports/textproc/nltk/
+    # make install clean
+
+
 20090727:
   AFFECTS: users of security/libgcrypt
   AUTHOR: wxs@FreeBSD.org
