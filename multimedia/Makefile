@@ -11,6 +11,7 @@
     SUBDIR += atomicparsley
     SUBDIR += audacious
     SUBDIR += audacious-plugins
+    SUBDIR += audiopreview
     SUBDIR += avbin
     SUBDIR += avidemux2
     SUBDIR += avifile
