@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	batchmodify
-PORTVERSION=	0.2.0.4447
-PORTREVISION=	2
+PORTVERSION=	0.7.0.8250
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
@@ -17,17 +16,18 @@ DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Enables users to modify several tickets together at once
 
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	trac>=0.12:${PORTSDIR}/www/trac
 
 USE_ZIP=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
+WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.12/trunk
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=    BatchModify
-PYDISTUTILS_PKGVERSION= ${PORTVERSION:R}
+PYDISTUTILS_PKGVERSION= ${PORTVERSION:R}_trac0.12
 PLIST_SUB+=	EGGVERSION=${PORTVERSION:R} PYTHONVERSION=${_PYTHON_VERSION}
 PYDISTUTILS_NOEGGINFO=	yes
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/BatchModify-%%EGGVERSION%%_trac0.12-py%%PYTHONVERSION%%.egg
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
