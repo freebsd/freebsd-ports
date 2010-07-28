@@ -502,11 +502,21 @@ lib/mono/2.0/xbuild.exe.mdb
 lib/mono/2.0/xbuild.rsp
 lib/mono/2.0/xsd.exe
 lib/mono/2.0/xsd.exe.mdb
+%%PROFILE2%%lib/mono/3.5/MSBuild/Microsoft.Build.CommonTypes.xsd
+%%PROFILE2%%lib/mono/3.5/MSBuild/Microsoft.Build.Core.xsd
 %%PROFILE2%%lib/mono/3.5/Microsoft.Build.Engine.dll
 %%PROFILE2%%lib/mono/3.5/Microsoft.Build.Framework.dll
 %%PROFILE2%%lib/mono/3.5/Microsoft.Build.Tasks.v3.5.dll
 %%PROFILE2%%lib/mono/3.5/Microsoft.Build.Utilities.v3.5.dll
+%%PROFILE2%%lib/mono/3.5/Microsoft.Build.xsd
+%%PROFILE2%%lib/mono/3.5/Microsoft.CSharp.targets
+%%PROFILE2%%lib/mono/3.5/Microsoft.Common.targets
+%%PROFILE2%%lib/mono/3.5/Microsoft.Common.tasks
+%%PROFILE2%%lib/mono/3.5/Microsoft.VisualBasic.targets
 %%PROFILE2%%lib/mono/3.5/System.Web.Extensions.Design.dll
+%%PROFILE2%%lib/mono/3.5/xbuild.exe
+%%PROFILE2%%lib/mono/3.5/xbuild.exe.mdb
+%%PROFILE2%%lib/mono/3.5/xbuild.rsp
 %%PROFILE4%%lib/mono/4.0/Accessibility.dll
 %%PROFILE4%%lib/mono/4.0/ByteFX.Data.dll
 %%PROFILE4%%lib/mono/4.0/Commons.Xml.Relaxng.dll
@@ -519,12 +529,19 @@ lib/mono/2.0/xsd.exe.mdb
 %%PROFILE4%%lib/mono/4.0/I18N.dll
 %%PROFILE4%%lib/mono/4.0/IBM.Data.DB2.dll
 %%PROFILE4%%lib/mono/4.0/ICSharpCode.SharpZipLib.dll
+%%PROFILE4%%lib/mono/4.0/MSBuild/Microsoft.Build.CommonTypes.xsd
+%%PROFILE4%%lib/mono/4.0/MSBuild/Microsoft.Build.Core.xsd
 %%PROFILE4%%lib/mono/4.0/Microsoft.Build.Engine.dll
 %%PROFILE4%%lib/mono/4.0/Microsoft.Build.Framework.dll
-%%PROFILE4%%lib/mono/4.0/Microsoft.Build.Tasks.dll
-%%PROFILE4%%lib/mono/4.0/Microsoft.Build.Utilities.dll
+%%PROFILE4%%lib/mono/4.0/Microsoft.Build.Tasks.v4.0.dll
+%%PROFILE4%%lib/mono/4.0/Microsoft.Build.Utilities.v4.0.dll
+%%PROFILE4%%lib/mono/4.0/Microsoft.Build.xsd
 %%PROFILE4%%lib/mono/4.0/Microsoft.CSharp.dll
+%%PROFILE4%%lib/mono/4.0/Microsoft.CSharp.targets
+%%PROFILE4%%lib/mono/4.0/Microsoft.Common.targets
+%%PROFILE4%%lib/mono/4.0/Microsoft.Common.tasks
 %%PROFILE4%%lib/mono/4.0/Microsoft.JScript.dll
+%%PROFILE4%%lib/mono/4.0/Microsoft.VisualBasic.targets
 %%PROFILE4%%lib/mono/4.0/Microsoft.VisualC.dll
 %%PROFILE4%%lib/mono/4.0/Microsoft.Vsa.dll
 %%PROFILE4%%lib/mono/4.0/Mono.C5.dll
@@ -553,6 +570,8 @@ lib/mono/2.0/xsd.exe.mdb
 %%PROFILE4%%lib/mono/4.0/Npgsql.dll
 %%PROFILE4%%lib/mono/4.0/OpenSystem.C.dll
 %%PROFILE4%%lib/mono/4.0/PEAPI.dll
+%%PROFILE4%%lib/mono/4.0/RabbitMQ.Client.Apigen.exe
+%%PROFILE4%%lib/mono/4.0/RabbitMQ.Client.Apigen.exe.mdb
 %%PROFILE4%%lib/mono/4.0/RabbitMQ.Client.dll
 %%PROFILE4%%lib/mono/4.0/System.ComponentModel.DataAnnotations.dll
 %%PROFILE4%%lib/mono/4.0/System.Configuration.Install.dll
@@ -658,12 +677,14 @@ lib/mono/2.0/xsd.exe.mdb
 %%PROFILE4%%lib/mono/4.0/wsdl.exe.mdb
 %%PROFILE4%%lib/mono/4.0/xbuild.exe
 %%PROFILE4%%lib/mono/4.0/xbuild.exe.mdb
+%%PROFILE4%%lib/mono/4.0/xbuild.rsp
 %%PROFILE4%%lib/mono/4.0/xsd.exe
 %%PROFILE4%%lib/mono/4.0/xsd.exe.mdb
 lib/mono/compat-1.0/ICSharpCode.SharpZipLib.dll
 lib/mono/compat-2.0/ICSharpCode.SharpZipLib.dll
 lib/mono/compat-2.0/System.Web.Extensions.Design.dll
 lib/mono/compat-2.0/System.Web.Extensions.dll
+lib/mono/compat-2.0/System.Web.Mvc.dll
 %%PROFILE4%%lib/mono/compat-4.0/ICSharpCode.SharpZipLib.dll
 lib/mono/gac/Accessibility/1.0.5000.0__b03f5f7f11d50a3a/Accessibility.dll
 lib/mono/gac/Accessibility/1.0.5000.0__b03f5f7f11d50a3a/Accessibility.dll.mdb
@@ -751,14 +772,14 @@ lib/mono/gac/Microsoft.Build.Framework/2.0.0.0__b03f5f7f11d50a3a/Microsoft.Build
 %%PROFILE2%%lib/mono/gac/Microsoft.Build.Tasks.v3.5/3.5.0.0__b03f5f7f11d50a3a/Microsoft.Build.Tasks.v3.5.dll.mdb
 lib/mono/gac/Microsoft.Build.Tasks/2.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Tasks.dll
 lib/mono/gac/Microsoft.Build.Tasks/2.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Tasks.dll.mdb
-%%PROFILE4%%lib/mono/gac/Microsoft.Build.Tasks/4.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Tasks.dll
-%%PROFILE4%%lib/mono/gac/Microsoft.Build.Tasks/4.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Tasks.dll.mdb
+%%PROFILE4%%lib/mono/gac/Microsoft.Build.Tasks.v4.0/4.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Tasks.v4.0.dll
+%%PROFILE4%%lib/mono/gac/Microsoft.Build.Tasks.v4.0/4.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Tasks.v4.0.dll.mdb
 %%PROFILE2%%lib/mono/gac/Microsoft.Build.Utilities.v3.5/3.5.0.0__b03f5f7f11d50a3a/Microsoft.Build.Utilities.v3.5.dll
 %%PROFILE2%%lib/mono/gac/Microsoft.Build.Utilities.v3.5/3.5.0.0__b03f5f7f11d50a3a/Microsoft.Build.Utilities.v3.5.dll.mdb
+%%PROFILE4%%lib/mono/gac/Microsoft.Build.Utilities.v4.0/4.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Utilities.v4.0.dll
+%%PROFILE4%%lib/mono/gac/Microsoft.Build.Utilities.v4.0/4.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Utilities.v4.0.dll.mdb
 lib/mono/gac/Microsoft.Build.Utilities/2.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Utilities.dll
 lib/mono/gac/Microsoft.Build.Utilities/2.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Utilities.dll.mdb
-%%PROFILE4%%lib/mono/gac/Microsoft.Build.Utilities/4.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Utilities.dll
-%%PROFILE4%%lib/mono/gac/Microsoft.Build.Utilities/4.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Utilities.dll.mdb
 %%PROFILE4%%lib/mono/gac/Microsoft.CSharp/4.0.0.0__b03f5f7f11d50a3a/Microsoft.CSharp.dll
 %%PROFILE4%%lib/mono/gac/Microsoft.CSharp/4.0.0.0__b03f5f7f11d50a3a/Microsoft.CSharp.dll.mdb
 %%PROFILE4%%lib/mono/gac/Microsoft.JScript/0.0.0.0__b03f5f7f11d50a3a/Microsoft.JScript.dll
@@ -1080,6 +1101,8 @@ lib/mono/gac/System.Web.Extensions/3.5.0.0__31bf3856ad364e35/System.Web.Extensio
 %%PROFILE4%%lib/mono/gac/System.Web.Extensions/4.0.0.0__31bf3856ad364e35/System.Web.Extensions.dll.mdb
 lib/mono/gac/System.Web.Mvc/1.0.0.0__31bf3856ad364e35/System.Web.Mvc.dll
 lib/mono/gac/System.Web.Mvc/1.0.0.0__31bf3856ad364e35/System.Web.Mvc.dll.mdb
+lib/mono/gac/System.Web.Mvc/2.0.0.0__31bf3856ad364e35/System.Web.Mvc.dll
+lib/mono/gac/System.Web.Mvc/2.0.0.0__31bf3856ad364e35/System.Web.Mvc.dll.mdb
 lib/mono/gac/System.Web.Routing/3.5.0.0__31bf3856ad364e35/System.Web.Routing.dll
 lib/mono/gac/System.Web.Routing/3.5.0.0__31bf3856ad364e35/System.Web.Routing.dll.mdb
 %%PROFILE4%%lib/mono/gac/System.Web.Routing/4.0.0.0__31bf3856ad364e35/System.Web.Routing.dll
@@ -1155,6 +1178,12 @@ lib/mono/gac/nunit.util/2.4.8.0__96d09a1eb7f44a77/nunit.util.dll
 lib/mono/gac/nunit.util/2.4.8.0__96d09a1eb7f44a77/nunit.util.dll.mdb
 lib/mono/monodoc/monodoc.dll
 lib/mono/xbuild/Microsoft/VisualStudio/v9.0/WebApplications/Microsoft.WebApplication.targets
+lib/mono/xbuild/Microsoft/Silverlight/v2.0/Microsoft.Silverlight.Common.targets
+lib/mono/xbuild/Microsoft/Silverlight/v2.0/Microsoft.Silverlight.CSharp.targets
+lib/mono/xbuild/Microsoft/Silverlight/v2.0/Microsoft.Silverlight.VisualBasic.targets
+lib/mono/xbuild/Microsoft/Silverlight/v3.0/Microsoft.Silverlight.CSharp.targets
+lib/mono/xbuild/Microsoft/Silverlight/v3.0/Microsoft.Silverlight.Common.targets
+lib/mono/xbuild/Microsoft/Silverlight/v3.0/Microsoft.Silverlight.VisualBasic.targets
 lib/monodoc/monodoc.xml
 lib/monodoc/sources/Mono.source
 lib/monodoc/sources/Mono.tree
@@ -1168,14 +1197,8 @@ lib/monodoc/sources/ecma334.tree
 lib/monodoc/sources/ecma334.zip
 lib/monodoc/sources/lang-csharp.source
 lib/monodoc/sources/mono-file-formats.source
-lib/monodoc/sources/mono-file-formats.tree
-lib/monodoc/sources/mono-file-formats.zip
 lib/monodoc/sources/mono-tools.source
-lib/monodoc/sources/mono-tools.tree
-lib/monodoc/sources/mono-tools.zip
 lib/monodoc/sources/monoapi.source
-lib/monodoc/sources/monoapi.tree
-lib/monodoc/sources/monoapi.zip
 lib/monodoc/sources/netdocs.source
 lib/monodoc/sources/netdocs.tree
 lib/monodoc/sources/netdocs.zip
@@ -1243,13 +1266,16 @@ share/locale/ja/LC_MESSAGES/mcs.mo
 @dirrm %%DATADIR%%-1.0
 @dirrm share/libgc-mono
 @dirrm share/jay
-@dirrm lib/monodoc/sources
-@dirrm lib/monodoc
+@dirrmtry lib/monodoc/sources
+@dirrmtry lib/monodoc
 @dirrm lib/mono/xbuild/Microsoft/VisualStudio/v9.0/WebApplications
 @dirrm lib/mono/xbuild/Microsoft/VisualStudio/v9.0
 @dirrm lib/mono/xbuild/Microsoft/VisualStudio
+@dirrm lib/mono/xbuild/Microsoft/Silverlight/v3.0
+@dirrm lib/mono/xbuild/Microsoft/Silverlight/v2.0
+@dirrm lib/mono/xbuild/Microsoft/Silverlight
 @dirrm lib/mono/xbuild/Microsoft
-@dirrm lib/mono/xbuild
+@dirrmtry lib/mono/xbuild
 @dirrm lib/mono/monodoc
 @dirrm lib/mono/gac/nunit.util/2.4.8.0__96d09a1eb7f44a77
 @dirrm lib/mono/gac/nunit.util
@@ -1304,6 +1330,7 @@ share/locale/ja/LC_MESSAGES/mcs.mo
 %%PROFILE4%%@dirrm lib/mono/gac/System.Web.Routing/4.0.0.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Web.Routing/3.5.0.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Web.Routing
+@dirrm lib/mono/gac/System.Web.Mvc/2.0.0.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Web.Mvc/1.0.0.0__31bf3856ad364e35
 @dirrm lib/mono/gac/System.Web.Mvc
 %%PROFILE4%%@dirrm lib/mono/gac/System.Web.Extensions/4.0.0.0__31bf3856ad364e35
@@ -1533,13 +1560,15 @@ share/locale/ja/LC_MESSAGES/mcs.mo
 @dirrm lib/mono/gac/Microsoft.JScript
 %%PROFILE4%%@dirrm lib/mono/gac/Microsoft.CSharp/4.0.0.0__b03f5f7f11d50a3a
 %%PROFILE4%%@dirrm lib/mono/gac/Microsoft.CSharp
-%%PROFILE4%%@dirrm lib/mono/gac/Microsoft.Build.Utilities/4.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/Microsoft.Build.Utilities/2.0.0.0__b03f5f7f11d50a3a
+%%PROFILE4%%@dirrm lib/mono/gac/Microsoft.Build.Utilities.v4.0/4.0.0.0__b03f5f7f11d50a3a
+%%PROFILE4%%@dirrm lib/mono/gac/Microsoft.Build.Utilities.v4.0
 %%PROFILE2%%@dirrm lib/mono/gac/Microsoft.Build.Utilities.v3.5/3.5.0.0__b03f5f7f11d50a3a
 %%PROFILE2%%@dirrm lib/mono/gac/Microsoft.Build.Utilities.v3.5
 @dirrm lib/mono/gac/Microsoft.Build.Utilities
-%%PROFILE4%%@dirrm lib/mono/gac/Microsoft.Build.Tasks/4.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/Microsoft.Build.Tasks/2.0.0.0__b03f5f7f11d50a3a
+%%PROFILE4%%@dirrm lib/mono/gac/Microsoft.Build.Tasks.v4.0/4.0.0.0__b03f5f7f11d50a3a
+%%PROFILE4%%@dirrm lib/mono/gac/Microsoft.Build.Tasks.v4.0
 %%PROFILE2%%@dirrm lib/mono/gac/Microsoft.Build.Tasks.v3.5/3.5.0.0__b03f5f7f11d50a3a
 %%PROFILE2%%@dirrm lib/mono/gac/Microsoft.Build.Tasks.v3.5
 @dirrm lib/mono/gac/Microsoft.Build.Tasks
@@ -1599,17 +1628,19 @@ share/locale/ja/LC_MESSAGES/mcs.mo
 @dirrm lib/mono/gac/Accessibility/2.0.0.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/Accessibility/1.0.5000.0__b03f5f7f11d50a3a
 @dirrm lib/mono/gac/Accessibility
-@dirrm lib/mono/gac
+@dirrmtry lib/mono/gac
 %%PROFILE4%%@dirrm lib/mono/compat-4.0
 @dirrm lib/mono/compat-2.0
 @dirrm lib/mono/compat-1.0
-%%PROFILE4%%@dirrm lib/mono/4.0
-%%PROFILE2%%@dirrm lib/mono/3.5
+%%PROFILE4%%@dirrm lib/mono/4.0/MSBuild
+%%PROFILE4%%@dirrmtry lib/mono/4.0
+%%PROFILE2%%@dirrm lib/mono/3.5/MSBuild
+%%PROFILE2%%@dirrmtry lib/mono/3.5
 @dirrm lib/mono/2.0/MSBuild
-@dirrm lib/mono/2.0
-@dirrm lib/mono/1.0
+@dirrmtry lib/mono/2.0
+@dirrmtry lib/mono/1.0
 @dirrm lib/mono-source-libs
-@dirrm lib/mono
+@dirrmtry lib/mono
 @dirrm include/mono-1.0/mono/utils
 @dirrm include/mono-1.0/mono/metadata
 @dirrm include/mono-1.0/mono/jit
