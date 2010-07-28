@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cloud.github.com/downloads/lloyd/yajl/
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A Portable JSON parsing and serialization library in ANSI C
 
 USE_LDCONFIG=	yes

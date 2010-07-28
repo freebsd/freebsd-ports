@@ -10,7 +10,7 @@ PORTVERSION=	0.15
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.murmeldjur.se/btpd/
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Bittorrent  client consisting of a daemon and client commands
 
 USE_AUTOTOOLS=	autoconf:262 aclocal:110

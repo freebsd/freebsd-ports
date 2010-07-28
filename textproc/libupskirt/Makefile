@@ -10,7 +10,7 @@ DISTVERSION=	1.0
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://instinctive.eu/code/
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Flexible C library for markdown
 
 LICENSE=	BSD

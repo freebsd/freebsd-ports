@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://files.kaworu.ch/
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A tool to manage tags in music files
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib

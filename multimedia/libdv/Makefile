@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Quasar DV codec (libdv): software codec for DV video encoding format
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \

@@ -10,7 +10,7 @@ PORTVERSION=	0.9
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple X screen locker
 
 MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${LOCALBASE}/lib" \

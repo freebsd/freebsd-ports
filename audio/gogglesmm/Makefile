@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://gogglesmm.googlecode.com/files/
 DISTNAME=	gogglesmm-${PORTVERSION}
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Music collection manager and player
 
 LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16 		\

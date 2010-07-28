@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://pekwm.org/projects/3/files/
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Light, Unobtrusive, and configurable windowmanager
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \

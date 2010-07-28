@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple .ini files emitter and parser for Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/Mixin/Linewise/Readers.pm:${PORTSDIR}/devel/p5-Mixin-Linewise

@@ -10,7 +10,7 @@ PORTVERSION=	0.11
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://ghostscript.com/~giles/jbig2/jbig2dec/
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Decoder implementation of the JBIG2 image compression format
 
 GNU_CONFIGURE=	yes
