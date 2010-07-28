@@ -10,7 +10,7 @@ PORTVERSION=	0.19
 CATEGORIES=	audio multimedia
 MASTER_SITES=	 http://cloud.github.com/downloads/Daenyth/audiotag/
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A command-line tool for mass tagging/renaming of audio files
 
 LICENSE=	GPLv2

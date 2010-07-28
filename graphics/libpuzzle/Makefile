@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/libpuzzle/releases/
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A library to find similar pictures
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd

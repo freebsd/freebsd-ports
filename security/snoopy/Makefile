@@ -8,7 +8,7 @@ PORTVERSION=	1.6.1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}logger/${PORTNAME}logger/
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	An execve() wrapper and logger
 
 LICENSE=	GPLv2

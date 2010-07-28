@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTNAME}%20v${PORTVERSION}
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Command line program for reading parsing and setting MP4/M4A metadata
 
 USE_ZIP=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.14.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Parallel executor, distributes tasks over network
 
 LIB_DEPENDS=	maa:${PORTSDIR}/devel/libmaa

@@ -10,7 +10,7 @@ PORTVERSION=	2.70
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://sid.joedog.org/pub/siege/
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A http regression testing and benchmarking utility
 
 LICENSE=	GPLv2

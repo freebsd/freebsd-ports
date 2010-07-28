@@ -10,7 +10,7 @@ PORTVERSION=	20100601
 CATEGORIES=	security
 MASTER_SITES=	NETBSD/LOCAL_PORTS
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	PGP signing, verification, encryption and decryption program
 
 LICENSE=	BSD

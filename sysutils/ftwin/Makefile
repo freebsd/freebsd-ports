@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.meroware.org/ftwin/
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A useful tool to find duplicate files
 
 LIB_DEPENDS=	puzzle.1:${PORTSDIR}/graphics/libpuzzle \

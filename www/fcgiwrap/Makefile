@@ -10,7 +10,7 @@ PORTVERSION=	1.0.3
 CATEGORIES=	www
 MASTER_SITES=	http://cloud.github.com/downloads/gnosek/fcgiwrap/
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple FastCGI wrapper for CGI scripts
 
 LIB_DEPENDS=	fcgi.0:${PORTSDIR}/www/fcgi

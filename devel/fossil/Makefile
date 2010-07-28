@@ -11,7 +11,7 @@ CATEGORIES=	devel www
 MASTER_SITES=	http://www.fossil-scm.org/download/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	baptiste.daroussin@gmail.com
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	DSCM with built-in wiki, http interface and server, tickets database
 
 MAKE_JOBS_SAFE=	yes
