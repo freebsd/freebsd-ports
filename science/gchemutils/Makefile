@@ -56,7 +56,7 @@ PLIST_SUB+=	XUL="@comment "
 .endif
 
 .if exists(${LOCALBASE}/bin/gnumeric)
-RUN_DEPENDS+=	gnumeric:${PORTSDIRS}/math/gnumeric
+RUN_DEPENDS+=	gnumeric:${PORTSDIR}/math/gnumeric
 PLIST_SUB+=	GNUMERIC=""
 .else
 PLIST_SUB+=	GNUMERIC="@comment "
