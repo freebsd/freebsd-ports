@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	minitube
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	multimedia www
 MASTER_SITES=	http://flavio.tordini.org/files/minitube/
 
@@ -15,7 +15,7 @@ COMMENT=	A native YouTube client
 
 USE_QT_VER=	4
 QT_COMPONENTS=	gui network xml phonon phonon-gst \
-		qmake_build moc_build rcc_build
+		qmake_build moc_build rcc_build imageformats_run
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
