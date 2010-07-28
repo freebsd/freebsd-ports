@@ -9,11 +9,11 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of textproc/nltk
   AUTHOR: clsung@FreeBSD.org
 
-  nltk has been upgraded to 2.0b8 which depend on devel/py-yaml now.
+  Nltk has been upgraded to 2.0b8 which depends on devel/py-yaml now.
   You need to deinstall nltk before upgrading, since the previous port
-  will delete files installed from py-yaml on deinstall phase.
+  will delete files installed from py-yaml during its deinstall phase.
 
-  for example:
+  Use, for example:
 
     # pkg_delete nltk-2.0b7,1
     # portsnap fetch update
@@ -86,10 +86,10 @@ you update your ports collection, before attempting any port upgrades.
     o devel/py-gyp-devel
 
   You can not upgrade with portupgrade or portmaster. To upgrade, you 
-  must deinstall japanese/ibus-mozc first and then install new 
+  must deinstall japanese/ibus-mozc first and then install the new 
   japanese/ibus-mozc.
 
-  for example:
+  For example:
 
     # pkg_delete ja-ibus-mozc-0.11.365.102_1
     # portsnap fetch update
@@ -128,7 +128,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of deskutils/kdepim4, and  security/{gpa|opensc}
   AUTHOR: dougb@FreeBSD.org
 
-  The security/libassuan port has been updated to version 2.0.0, however
+  The security/libassuan port has been updated to version 2.0.0, however,
   the applications listed above are not yet compatible with it.  Therefore
   security/libassuan-1 has been created until they can be updated, and the
   ports listed above have been updated to depend on it.  You must first
@@ -151,8 +151,8 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of audio/libogg and audio/libao
   AUTHOR: naddy@FreeBSD.org
 
-  There are new versions of libogg (1.2.0) and libao (1.0.0) and the shlib
-  versions have been bumped (ogg.6 to ogg.7, ao.3 to ao.4).
+  There are new versions of libogg (1.2.0) and libao (1.0.0) and the
+  shared library versions have been bumped (ogg.6 to ogg.7, ao.3 to ao.4).
 
   All ports that have an identifiable direct dependency on these libraries
   have had their PORTREVISIONs bumped.  However, some ports that pull in
