@@ -1,0 +1,167 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -5981,160 +5981,10 @@
+ 
+ 
+ 
+-  ALSA_REQUIRED=1.0.0
+-  ALSA_MODULES="alsa >= $ALSA_REQUIRED"
+-
+-  succeeded=no
+-
+-  # Extract the first word of "pkg-config", so it can be a program name with args.
+-set dummy pkg-config; ac_word=$2
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-$as_echo_n "checking for $ac_word... " >&6; }
+-if test "${ac_cv_path_PKG_CONFIG+set}" = set; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  case $PKG_CONFIG in
+-  [\\/]* | ?:[\\/]*)
+-  ac_cv_path_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test with a path.
+-  ;;
+-  *)
+-  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-for as_dir in $PATH
+-do
+-  IFS=$as_save_IFS
+-  test -z "$as_dir" && as_dir=.
+-    for ac_exec_ext in '' $ac_executable_extensions; do
+-  if { test -f "$as_dir/$ac_word$ac_exec_ext" && $as_test_x "$as_dir/$ac_word$ac_exec_ext"; }; then
+-    ac_cv_path_PKG_CONFIG="$as_dir/$ac_word$ac_exec_ext"
+-    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    break 2
+-  fi
+-done
+-  done
+-IFS=$as_save_IFS
+-
+-  test -z "$ac_cv_path_PKG_CONFIG" && ac_cv_path_PKG_CONFIG="no"
+-  ;;
+-esac
+-fi
+-PKG_CONFIG=$ac_cv_path_PKG_CONFIG
+-if test -n "$PKG_CONFIG"; then
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $PKG_CONFIG" >&5
+-$as_echo "$PKG_CONFIG" >&6; }
+-else
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-fi
+-
+-
+-
+-  if test "$PKG_CONFIG" = "no" ; then
+-     HAVE_ALSA=no
+-  else
+-     PKG_CONFIG_MIN_VERSION=0.9.0
+-     if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ALSA_MODULES" >&5
+-$as_echo_n "checking for $ALSA_MODULES... " >&6; }
+-
+-        if $PKG_CONFIG --exists "$ALSA_MODULES" 2>&5; then
+-            { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-            succeeded=yes
+-
+-            { $as_echo "$as_me:${as_lineno-$LINENO}: checking ALSA_CFLAGS" >&5
+-$as_echo_n "checking ALSA_CFLAGS... " >&6; }
+-            ALSA_CFLAGS=`$PKG_CONFIG --cflags "$ALSA_MODULES"|sed -e 's,///*,/,g'`
+-            { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ALSA_CFLAGS" >&5
+-$as_echo "$ALSA_CFLAGS" >&6; }
+-
+-            { $as_echo "$as_me:${as_lineno-$LINENO}: checking ALSA_LIBS" >&5
+-$as_echo_n "checking ALSA_LIBS... " >&6; }
+-            ALSA_LIBS=`$PKG_CONFIG --libs "$ALSA_MODULES"|sed -e 's,///*,/,g'`
+-            { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ALSA_LIBS" >&5
+-$as_echo "$ALSA_LIBS" >&6; }
+-        else
+-            { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-            ALSA_CFLAGS=""
+-            ALSA_LIBS=""
+-            ## If we have a custom action on failure, don't print errors, but
+-            ## do set a variable so people can do so.
+-            ALSA_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "$ALSA_MODULES"`
+-
+-        fi
+-
+-
+-
+-     else
+-        echo "*** Your version of pkg-config is too old. You need version $PKG_CONFIG_MIN_VERSION or newer."
+-        echo "*** See http://www.freedesktop.org/software/pkgconfig"
+-     fi
+-  fi
+-
+-  if test $succeeded = yes; then
+-     HAVE_ALSA=yes
+-  else
+-     HAVE_ALSA=no
+-  fi
+-
+-  if test $HAVE_ALSA = yes; then
+-    SAVE_CFLAGS="$CFLAGS"
+-    SAVE_LDFLAGS="$LDFLAGS"
+-    CFLAGS="$ALSA_CFLAGS $CFLAGS"
+-    LDFLAGS="$ALSA_LIBS $LDFLAGS"
+-    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-#include <asoundlib.h>
+-int
+-main ()
+-{
+-snd_lib_error_set_handler (0);
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_compile "$LINENO"; then :
+-  emacs_alsa_normal=yes
+-else
+-  emacs_alsa_normal=no
+-fi
+-rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+-    if test "$emacs_alsa_normal" != yes; then
+-      cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-#include <alsa/asoundlib.h>
+-int
+-main ()
+-{
+-snd_lib_error_set_handler (0);
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_compile "$LINENO"; then :
+-  emacs_alsa_subdir=yes
+-else
+-  emacs_alsa_subdir=no
+-fi
+-rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+-      if test "$emacs_alsa_subdir" != yes; then
+-        as_fn_error $? "pkg-config found alsa, but it does not compile.  See config.log for error messages." "$LINENO" 5
+-      fi
+-      ALSA_CFLAGS="$ALSA_CFLAGS -DALSA_SUBDIR_INCLUDE"
+-    fi
+-
+-    CFLAGS="$SAVE_CFLAGS"
+-    LDFLAGS="$SAVE_LDFLAGS"
+-    LIBSOUND="$LIBSOUND $ALSA_LIBS"
+-    CFLAGS_SOUND="$CFLAGS_SOUND $ALSA_CFLAGS"
+-
+-$as_echo "#define HAVE_ALSA 1" >>confdefs.h
+-
+-  fi
+ 
+         if test x$have_sound_header = xyes || test $HAVE_ALSA = yes; then
+      case "$opsys" in
+-              gnu-linux|freebsd|netbsd)
++              gnu-linux|freebsd*|netbsd)
+ 
+ $as_echo "#define HAVE_SOUND 1" >>confdefs.h
+ 
