@@ -14,13 +14,13 @@ MAINTAINER=	spolyack@collaborativefusion.com
 COMMENT=	CLI to manage IPMI systems
 
 USE_BZIP2=	yes
+DOS2UNIX=	ipmi_fwum.c
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-intf-lan --enable-intf-lanplus \
 		--disable-intf-imb --disable-intf-lipmi --disable-intf-bmc
-CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" \
-	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 PLIST_FILES=	bin/ipmitool sbin/ipmievd share/ipmitool/oem_ibm_sel_map
 PLIST_DIRS=	share/ipmitool
 PORTDOCS=	AUTHORS COPYING ChangeLog README
