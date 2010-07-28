@@ -132,6 +132,7 @@ lib/eaglemode/etc/emCore/FpPlugins/emPnm.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emPs.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emRas.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emRgb.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emSvg.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTestPanel.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emText.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emText_Alt.emFpPlugin
@@ -139,6 +140,7 @@ lib/eaglemode/etc/emCore/FpPlugins/emTga.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTiff.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_abiword.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_archives.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_dia.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_dvi.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_eps.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_fig.emFpPlugin
@@ -148,8 +150,7 @@ lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_iso.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_pdf.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_pov.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_rpm.emFpPlugin
-lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_svg.emFpPlugin
-lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_wmf.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_sk.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTmpConv_xwd.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emTreeDump.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emXbm.emFpPlugin
@@ -177,9 +178,13 @@ lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackArj.pl
 lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackBz2.pl
 lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackGz.pl
 lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackLzh.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackLzma.pl
 lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackLzo.pl
 lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackTar.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackTarLzma.pl
 lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackTarLzo.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackTarXz.pl
+lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackXz.pl
 lib/eaglemode/etc/emFileMan/Commands/Archive/MorePackCommands/PackZoo.pl
 lib/eaglemode/etc/emFileMan/Commands/Archive/MoreUnpackCommands.props
 lib/eaglemode/etc/emFileMan/Commands/Archive/MoreUnpackCommands/UnpackHere.pl
@@ -399,6 +404,9 @@ lib/eaglemode/include/emPs/emPsPagePanel.h
 lib/eaglemode/include/emPs/emPsRenderer.h
 lib/eaglemode/include/emRas/emRasImageFileModel.h
 lib/eaglemode/include/emRgb/emRgbImageFileModel.h
+lib/eaglemode/include/emSvg/emSvgFileModel.h
+lib/eaglemode/include/emSvg/emSvgFilePanel.h
+lib/eaglemode/include/emSvg/emSvgServerModel.h
 lib/eaglemode/include/emTest/emTestPanel.h
 lib/eaglemode/include/emText/emTextFileModel.h
 lib/eaglemode/include/emText/emTextFilePanel.h
@@ -536,6 +544,7 @@ lib/eaglemode/res/icons/em-error-unknown-icon.tga
 @dirrm lib/eaglemode/include/emTga
 @dirrm lib/eaglemode/include/emText
 @dirrm lib/eaglemode/include/emTest
+@dirrm lib/eaglemode/include/emSvg
 @dirrm lib/eaglemode/include/emRgb
 @dirrm lib/eaglemode/include/emRas
 @dirrm lib/eaglemode/include/emPs

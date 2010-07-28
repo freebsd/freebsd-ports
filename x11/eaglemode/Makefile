@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eaglemode
-PORTVERSION=	0.77.0
+PORTVERSION=	0.78.0
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -30,9 +30,10 @@ BUILD_ARGS+=	${lib}-inc-dir="${LOCALBASE}/include" \
 		${lib}-lib-dir="${LOCALBASE}/lib"
 .endfor
 
-OPTIONS=	XINE "Video playback support through libxine" on
+OPTIONS=	XINE "Video playback support through libxine" on \
+		RSVG "SVG support throute librsvg" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "sparc64" && ${OSVERSION} < 700000
 BROKEN=		Does not build on sparc64-6
@@ -47,11 +48,18 @@ PLIST_SUB=	EMAV=""
 PLIST_SUB=	EMAV="@comment "
 .endif
 
+.if !defined(WITHOUT_RSVG)
+USE_GNOME+=	librsvg2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|"-O2"|"${CFLAGS}"|' \
 		${WRKSRC}/makers/unicc/plugins/unicc_gnu.pm
 .if defined(WITHOUT_XINE)
 	@${RM} -f ${WRKSRC}/makers/emAv.maker.pm
+.endif
+.if defined(WITHOUT_RSVG)
+	@${RM} -f ${WRKSRC}/makers/emSvg.maker.pm
 .endif
 
 do-build:
@@ -62,4 +70,4 @@ do-install:
 	cd ${WRKSRC} && ${PERL} make.pl install dir=${PREFIX}/lib/eaglemode
 	${INSTALL_SCRIPT} ${WRKDIR}/eaglemode.sh ${PREFIX}/bin/eaglemode
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
