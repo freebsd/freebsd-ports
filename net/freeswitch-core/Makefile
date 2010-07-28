@@ -26,8 +26,10 @@ DISTFILES=	freeswitch-${PORTVERSION}.tar.gz:1 \
 		communicator_semi_6000_20080321.tar.gz:2
 EXTRACT_ONLY=	freeswitch-${PORTVERSION}.tar.gz
 
-MAINTAINER=	ecrist@secure-computing.net
+MAINTAINER=	r.neese@gmail.com
 COMMENT=	FreeSwitch SoftSwitch Port
+
+BROKEN=		Recent change to the PORTNAME resulted in plist problems
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
