@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	multimedia net
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	legatvs@gmail.com
+MAINTAINER=	kimelto@gmail.com
 COMMENT=	Lightweight command line video extraction tool
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
