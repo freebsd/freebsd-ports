@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia net
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	legatvs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Front-end for c/clive
 
 OPTIONS=	CCLIVE "Use cclive backend (instead of clive)" on

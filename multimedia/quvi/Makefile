@@ -10,7 +10,7 @@ PORTVERSION=	0.1.4
 CATEGORIES=	multimedia devel
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	legatvs@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Query video library for Youtube like websites
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
