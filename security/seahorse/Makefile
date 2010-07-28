@@ -8,7 +8,7 @@
 
 PORTNAME=	seahorse
 PORTVERSION=	2.30.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,6 +21,7 @@ RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 LIB_DEPENDS=	gpgme.18:${PORTSDIR}/security/gpgme \
     		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		gnome-keyring:${PORTSDIR}/security/gnome-keyring \
+		gcrypt.17:${PORTSDIR}/security/libgcrypt \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup
 
 USE_XORG=	sm
