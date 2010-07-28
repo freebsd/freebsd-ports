@@ -18,10 +18,10 @@ PATCHFILES=		emacs-21.1-fontset.patch emacs-21.2-menu-encode.patch
 PATCH_DIST_STRIP=	-p1
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	GNU editing macros
 
-CONFLICTS=	emacs-19.* emacs-22.* \
+CONFLICTS=	emacs-19.* emacs-22.* emacs-23.* emacs-24.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
