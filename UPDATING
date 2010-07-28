@@ -5,7 +5,7 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20090728:
+20100728:
   AFFECTS: users of textproc/nltk
   AUTHOR: clsung@FreeBSD.org
 
@@ -21,7 +21,7 @@ you update your ports collection, before attempting any port upgrades.
     # make install clean
 
 
-20090727:
+20100727:
   AFFECTS: users of security/libgcrypt
   AUTHOR: wxs@FreeBSD.org
 
