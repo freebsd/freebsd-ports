@@ -283,6 +283,7 @@
     SUBDIR += dbus-qt3
     SUBDIR += dbus-qt4
     SUBDIR += dbus-sharp
+    SUBDIR += dcmtk
     SUBDIR += ddd
     SUBDIR += deputy
     SUBDIR += desktop-file-utils

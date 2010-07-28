@@ -1,0 +1,25 @@
+--- config/Makefile.def.in.orig	2004-11-12 13:43:35.000000000 +0000
++++ config/Makefile.def.in	2010-07-27 19:23:16.000000000 +0000
+@@ -11,8 +11,8 @@
+ 
+ bindir = $(DESTDIR)@bindir@
+ etcdir = $(DESTDIR)@sysconfdir@
+-datadir = $(DESTDIR)@datadir@/data
+-docdir = $(DESTDIR)@datadir@/doc
++datadir = $(DESTDIR)@datadir@
++docdir = $(DESTDIR)/@datadir@
+ mandir = $(DESTDIR)@mandir@
+ libdir = $(DESTDIR)@libdir@
+ includedir = $(DESTDIR)@includedir@
+@@ -86,9 +86,9 @@
+ .SUFFIXES: .o .cc .c .h
+ 
+ .cc.o:
+-	$(CXX)	$(defines) -c $(includes) $(ARCH) \
++	$(CXX)	$(defines) -c $(includes) \
+ 		$(CPPFLAGS) $(CXXFLAGS) $<
+ 
+ .c.o:
+-	$(CC)	$(defines) -c $(includes) $(ARCH) \
++	$(CC)	$(defines) -c $(includes) \
+ 		$(CPPFLAGS) $(CFLAGS) $<

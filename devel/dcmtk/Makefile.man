@@ -1,0 +1,8 @@
+MAN1=	dcm2pnm.1 dcmcrle.1 dcmdump.1 dcmmkcrv.1 dcmp2pgm.1 dcmpsmk.1 \
+	dcmqridx.1 dcmscale.1 dsr2html.1 echoscu.1 storescp.1 xml2dcm.1 \
+	dcm2xml.1 dcmdjpeg.1 dcmftest.1 dcmmkdir.1 dcmprscp.1 dcmpsprt.1 \
+	dcmqrscp.1 dcmsign.1 dsr2xml.1 findscu.1 storescu.1 xml2dsr.1 \
+	dcmcjpeg.1 dcmdrle.1 dcmgpdir.1 dcmmklut.1 dcmprscu.1 dcmpsrcv.1 \
+	dcmqrti.1 dcod2lum.1 dsrdump.1 movescu.1 termscu.1 dcmconv.1 \
+	dcmdspfn.1 dcmj2pnm.1 dcmodify.1 dcmpschk.1 dcmpssnd.1 dcmquant.1 \
+	dconvlum.1 dump2dcm.1 pdf2dcm.1 wlmscpfs.1 
