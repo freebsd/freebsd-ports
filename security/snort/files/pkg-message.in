@@ -6,7 +6,7 @@ Configuration files are located in %%PREFIX%%/etc/snort directory.
 
 NOTE: Starting with Snort 2.4.0 (released on 2005-04-22) 
       the rules are no longer included with the distribution.
-      Please download them from http://www.snort.org/rules/.
-      You might consider installing security/oinkmaster port to simplify
-      rules downloads and updates.
+      Please download them from http://www.snort.org/snort-rules/.
+      You might consider installing the port security/oinkmaster or
+      security/pulledpork to simplify rules downloads and updates.
 =========================================================================
