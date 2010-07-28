@@ -33,7 +33,7 @@ PORTDOCS=	AUTHORS ChangeLog COPYING COPYRIGHT INSTALL LICENSE \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "i386" && ${OSVERSION} >= 700000
+.if (${ARCH} == "amd64" || ${ARCH} == "i386") && ${OSVERSION} >= 700000
 CFLAGS+=	-fopenmp -D__OPENMP__
 .endif
 
