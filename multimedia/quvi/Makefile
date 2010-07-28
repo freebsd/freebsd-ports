@@ -10,7 +10,7 @@ PORTVERSION=	0.1.4
 CATEGORIES=	multimedia devel
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Query video library for Youtube like websites
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \

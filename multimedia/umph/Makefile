@@ -10,7 +10,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Youtube video playlist parser for cclive and alike tools
 
 RUN_DEPENDS=	p5-XML-DOM>=1.44:${PORTSDIR}/textproc/p5-XML-DOM \
