@@ -25,7 +25,7 @@ load_rc_config $name
 command="%%PREFIX%%/sbin/$name"
 command_args="--pid=${spampd_pidfile}"
 pidfile="${spampd_pidfile}"
-sig_stop="-KILL"
+sig_stop="KILL"
 stop_cmd="stop_cmd"
 status_cmd="status_cmd"
 
