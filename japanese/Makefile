@@ -20,6 +20,7 @@
     SUBDIR += another-htmllint
     SUBDIR += anthy
     SUBDIR += asterisk-sounds
+    SUBDIR += asterisk16-sounds
     SUBDIR += aterm
     SUBDIR += awffull
     SUBDIR += bible_names-fpw
