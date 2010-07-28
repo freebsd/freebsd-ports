@@ -6,7 +6,6 @@
 # the FreeBSD ports system.
 #
 # $FreeBSD$
-#   $Id: bsd.mono.mk,v 1.27 2007/11/22 15:31:04 killfill Exp $
 #
 
 # USE_NANT		- If set, the port uses nant.

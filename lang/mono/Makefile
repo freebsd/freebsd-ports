@@ -3,12 +3,10 @@
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.98 2007/12/13 19:31:45 killfill Exp $
 #
 
 PORTNAME=	mono
-PORTVERSION=	2.6.4
-PORTREVISION=	1
+PORTVERSION=	2.6.7
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
