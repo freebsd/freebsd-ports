@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ibus-chewing
-PORTVERSION=	1.2.0.20090817
-PORTREVISION=	3
+PORTVERSION=	1.3.5.20100706
 CATEGORIES=	chinese
-MASTER_SITES=	http://github.com/definite/ibus-chewing/tarball/${PORTVERSION}/
-DISTNAME=	definite-ibus-chewing-${GITCOMMIT}
+MASTER_SITES=	http://ibus.googlecode.com/files/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 
 MAINTAINER=	lihong@ieee.org
 COMMENT=	Chewing engine for IBus
@@ -31,6 +30,5 @@ GCONF_SCHEMAS=	ibus-chewing.schemas
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD=yes
 CMAKE_ARGS+=	-DSYSCONF_INSTALL_DIR=${PREFIX}/etc
-GITCOMMIT=	8dd0478
 
 .include <bsd.port.mk>
