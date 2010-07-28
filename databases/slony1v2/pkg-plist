@@ -6,8 +6,10 @@ etc/slon.conf-sample
 sbin/slon-mkservice
 share/postgresql/slony1_base.sql
 share/postgresql/slony1_base.v83.sql
+share/postgresql/slony1_base.v84.sql
 share/postgresql/slony1_funcs.sql
 share/postgresql/slony1_funcs.v83.sql
+share/postgresql/slony1_funcs.v84.sql
 %%PERLTOOLS%%sbin/slon_kill
 %%PERLTOOLS%%sbin/slon_start
 %%PERLTOOLS%%sbin/slon_watchdog
