@@ -498,10 +498,12 @@ gecko-post-patch:
 	@${ECHO_CMD} "export ${var}" >> ${MOZCONFIG}
 .endfor
 .endif # .if !defined(NOMOZCONFIG)
+.if exists(${MOZSRC}/build/unix/mozilla-config.in)
 	@${REINPLACE_CMD} -e  's/%{idldir}/%idldir%/g ; \
 		s|"%FULL_NSPR_CFLAGS%"|`nspr-config --cflags`|g ; \
 		s|"%FULL_NSPR_LIBS%"|`nspr-config --libs`|g' \
 			${MOZSRC}/build/unix/mozilla-config.in
+.endif
 	@${REINPLACE_CMD} -e 's|<iconv.h>|\"${LOCALBASE}/include/iconv.h\"|g' \
 		${WRKSRC}/configure \
 		${MOZSRC}/intl/uconv/native/nsNativeUConvService.cpp \
