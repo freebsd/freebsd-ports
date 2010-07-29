@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	pine-pgp-filters
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	mail security
-MASTER_SITES=	http://dougbarton.us/PGP/ppf/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dougb
+MASTER_SITES=	http://dougbarton.us/PGP/ppf/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	DougB@FreeBSD.org
+MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Simple /bin/sh-based filters to use GnuPG with Alpine
 
 LICENSE=	BSD
