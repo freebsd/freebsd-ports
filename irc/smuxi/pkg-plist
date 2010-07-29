@@ -22,6 +22,9 @@ libdata/pkgconfig/smuxi-engine-irc.pc
 libdata/pkgconfig/smuxi-engine.pc
 libdata/pkgconfig/smuxi-frontend.pc
 share/applications/smuxi-frontend-gnome.desktop
+%%NLS%%share/locale/ca/LC_MESSAGES/smuxi-engine-irc.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/smuxi-engine-twitter.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/smuxi-frontend.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/smuxi-frontend-gnome.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/smuxi-engine-irc.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/smuxi-engine-twitter.mo
@@ -29,10 +32,14 @@ share/applications/smuxi-frontend-gnome.desktop
 %%NLS%%share/locale/cs/LC_MESSAGES/smuxi-frontend-gnome-irc.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/smuxi-frontend-gnome.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/smuxi-frontend.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/smuxi-server.mo
 %%NLS%%share/locale/da/LC_MESSAGES/smuxi-engine-irc.mo
+%%NLS%%share/locale/da/LC_MESSAGES/smuxi-engine-twitter.mo
 %%NLS%%share/locale/da/LC_MESSAGES/smuxi-engine.mo
+%%NLS%%share/locale/da/LC_MESSAGES/smuxi-frontend.mo
 %%NLS%%share/locale/da/LC_MESSAGES/smuxi-frontend-gnome-irc.mo
 %%NLS%%share/locale/da/LC_MESSAGES/smuxi-frontend-gnome.mo
+%%NLS%%share/locale/da/LC_MESSAGES/smuxi-server.mo
 %%NLS%%share/locale/de/LC_MESSAGES/smuxi-engine-irc.mo
 %%NLS%%share/locale/de/LC_MESSAGES/smuxi-engine-twitter.mo
 %%NLS%%share/locale/de/LC_MESSAGES/smuxi-engine.mo
@@ -68,12 +75,20 @@ share/applications/smuxi-frontend-gnome.desktop
 %%NLS%%share/locale/it/LC_MESSAGES/smuxi-frontend-gnome-irc.mo
 %%NLS%%share/locale/it/LC_MESSAGES/smuxi-frontend-gnome.mo
 %%NLS%%share/locale/it/LC_MESSAGES/smuxi-frontend.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/smuxi-engine-irc.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/smuxi-engine-twitter.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/smuxi-engine.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/smuxi-frontend-gnome-irc.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/smuxi-frontend-gnome.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/smuxi-frontend.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/smuxi-server.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/smuxi-engine-irc.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/smuxi-engine-twitter.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/smuxi-engine.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/smuxi-frontend-gnome-irc.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/smuxi-frontend-gnome.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/smuxi-frontend.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/smuxi-server.mo
 share/pixmaps/smuxi-frontend-gnome.svg
 @dirrm lib/smuxi/icons
 @dirrm lib/smuxi

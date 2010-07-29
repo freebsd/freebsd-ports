@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smuxi
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2.2
 CATEGORIES=	irc
 MASTER_SITES=	http://www.smuxi.org/jaws/data/files/
 
