@@ -24,6 +24,10 @@ USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--disable-libQgpsmm
+USE_PYTHON=	yes
+INSTALLS_EGGINFO=	yes
+PYDISTUTILS_PKGNAME=	gps
 
 MAN1=	cgps.1 gps.1 gpscat.1 gpsctl.1 gpsfake.1 \
 	gpspipe.1 gpsprof.1 xgps.1 xgpsspeed.1 gpsmon.1 \
@@ -33,7 +37,9 @@ MAN5=	rtcm-104.5 srec.5
 MAN8=	gpsd.8
 MANCOMPRESSED=	no
 
-OPTIONS=	XGPS "Build xgps and xgpsspeed (require X)" off \
+SUB_FILES=	pkg-message
+
+OPTIONS=	GTK2 "Install py-gtk2 (required for xgps & xgpsspeed)" off \
 		NMEA "NMEA support" on \
 		SIRF "SiRF chipset support" on \
 		SUPERSTARII "SuperStarII support" off \
@@ -60,23 +66,10 @@ OPTIONS=	XGPS "Build xgps and xgpsspeed (require X)" off \
 		PPS "PPS time syncing support" off \
 		DBUS "DBUS support" off
 
-USE_PYTHON=	yes
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
-SUB_FILES=	pkg-message
-CONFIGURE_ARGS+=--disable-garmin
-
-.if defined(WITH_XGPS)
-CONFIGURE_ENV+=	CFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lm"
-CONFIGURE_ARGS+=--with-x
-USE_MOTIF=	yes
-USE_XORG=	x11 xpm xaw7
-PLIST_SUB+=	X11=""
-.else
-CONFIGURE_ARGS+=--without-x
-PLIST_SUB+=	X11="@comment "
+.if defined(WITH_GTK2)
+USE_GNOME+=	pygtk2
 .endif
 
 .if defined(WITHOUT_NMEA)
@@ -189,4 +182,4 @@ CONFIGURE_ARGS+=--enable-dbus
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
