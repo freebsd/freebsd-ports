@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;S;Plugin$;;:L}
-PORTVERSION=	0.1
-PORTREVISION=	4
+PORTVERSION=	0.1.1
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
+DIST_SUBDIR=	trac
 
 MAINTAINER=	brooks@freebsd.org
 COMMENT=	This plugin provides a project Blog
@@ -25,15 +25,20 @@ USE_PYTHON=	2.5+
 NO_BUILD=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	TracFullBlogPlugin
-WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 PYDISTUTILS_NOEGGINFO=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 		PYTHON_VER=${PYTHON_VER}
 
 EGG_PATH=	${PYTHONPREFIX_SITELIBDIR}/${PYDISTUTILS_PKGNAME}-${PORTVERSION}-py${PYTHON_VER}.egg
 
-do-build:
-	@${DO_NADA}
+.if defined(BOOTSTRAP)
+do-fetch:
+	${MKDIR} ${WRKDIR}
+	svn export http://trac-hacks.org/svn/fullblogplugin/0.11/ ${WRKSRC}
+	${MKDIR} ${_DISTDIR}
+	cd ${WRKDIR} && \
+	    tar cfvz ${_DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
+.endif
 
 build-plist:
 	@${CAT} /dev/null > ${PLIST}
