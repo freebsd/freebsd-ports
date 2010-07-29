@@ -10,7 +10,7 @@ PORTVERSION=	0.21.0
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	sahil@tandon.net
+MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	Wrapper for AWK interpreter that implements a modules system
 
 MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -Wl,-rpath -Wl,${LOCALBASE}/lib" \

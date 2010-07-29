@@ -10,7 +10,7 @@ PORTVERSION=	1.6.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.geeklog.net/filemgmt/upload_dir/
 
-MAINTAINER=	sahil@tandon.net
+MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	GeekLog is a web content magagement system
 
 SUB_FILES=	pkg-message
