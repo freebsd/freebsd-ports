@@ -759,6 +759,7 @@ audio_dcd                       ports/audio/dcd
 audio_mpc                       ports/audio/mpc
 audio_muse                      ports/audio/muse
 audio_tracker                   ports/audio/tracker
+audiopreview                    ports/multimedia/audiopreview
 audiotag                        ports/audio/audiotag
 augeas                          ports/textproc/augeas
 august                          ports/www/august
@@ -2203,6 +2204,7 @@ dcfldd                          ports/sysutils/dcfldd
 dcl                             ports/science/dcl
 dclib                           ports/net-p2p/dclib
 dclock                          ports/x11-clocks/dclock
+dcmtk                           ports/devel/dcmtk
 dcraw                           ports/graphics/dcraw
 dctc                            ports/net-p2p/dctc
 dctc-gui                        ports/net-p2p/dctc-gui
@@ -6068,6 +6070,7 @@ ja-another-htmllint             ports/japanese/another-htmllint
 ja-anthy                        ports/japanese/anthy
 ja-asciidates98-fpw             ports/japanese/ASCIIdates98-fpw
 ja-asterisk-sounds              ports/japanese/asterisk-sounds
+ja-asterisk16-sounds            ports/japanese/asterisk16-sounds
 ja-aterm                        ports/japanese/aterm
 ja-awffull                      ports/japanese/awffull
 ja-bible_names-fpw              ports/japanese/bible_names-fpw
@@ -9882,6 +9885,7 @@ ncmpcpp                         ports/audio/ncmpcpp
 ncnf                            ports/devel/ncnf
 ncp                             ports/net/ncp
 ncplib                          ports/net/ncplib
+ncrack                          ports/security/ncrack
 ncrypt                          ports/security/ncrypt
 ncs                             ports/science/ncs
 nctop                           ports/sysutils/nctop
