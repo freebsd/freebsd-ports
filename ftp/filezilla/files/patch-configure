@@ -1,0 +1,11 @@
+--- ./configure.orig	2010-07-28 18:57:24.000000000 -0400
++++ ./configure	2010-07-28 18:57:52.000000000 -0400
+@@ -22686,7 +22686,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ltinyxml  $LIBS"
++LIBS="-ltinyxml -lstdc++ $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF

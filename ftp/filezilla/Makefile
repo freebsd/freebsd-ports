@@ -7,6 +7,7 @@
 
 PORTNAME=	filezilla
 PORTVERSION=	3.3.3
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -16,10 +17,13 @@ COMMENT=	Fast and reliable cross-platform FTP, FTPS and SFTP client
 
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls \
-		idn.16:${PORTSDIR}/dns/libidn
+LIB_DEPENDS=	gcrypt.17:${PORTSDIR}/security/libgcrypt \
+		gnutls.40:${PORTSDIR}/security/gnutls \
+		idn.16:${PORTSDIR}/dns/libidn \
+		tinyxml.3:${PORTSDIR}/textproc/tinyxml
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
@@ -29,6 +33,7 @@ WX_CONF_ARGS=	relative
 WX_UNICODE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--with-tinyxml="system"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		filezilla.1 fzputtygen.1 fzsftp.1
