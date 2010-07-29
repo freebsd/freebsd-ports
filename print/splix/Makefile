@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES?=	print
 MASTER_SITES=	SF
 
-MAINTAINER=	tomasv@megalogika.lt
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of CUPS printer drivers for Samsung Printer Language printers
 
 LIB_DEPENDS=
