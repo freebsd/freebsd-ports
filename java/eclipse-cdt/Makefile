@@ -21,6 +21,8 @@ COMMENT=	C/C++ IDE for Eclipse
 RUN_DEPENDS=	${LOCALBASE}/eclipse:${PORTSDIR}/java/eclipse
 PATCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
+BROKEN=		bad dependency object for java/eclipse
+
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
