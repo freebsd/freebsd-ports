@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;:L}
-PORTVERSION=	0.11.0.7
-PORTREVISION=	2
+PORTVERSION=	0.11.0.9
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
+DIST_SUBDIR=	trac
 
 MAINTAINER=	brooks@freebsd.org
 COMMENT=	A plugin to use Mercurial instead of Subversion in Trac
@@ -25,12 +25,17 @@ USE_PYTHON=	yes
 NO_BUILD=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	TracMercurial
-WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 PYDISTUTILS_NOEGGINFO=	yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PYDISTUTILS_PKGNAME}-${PORTVERSION}-py${PYTHON_VER}.egg
 
-do-build:
-	@${DO_NADA}
+.if defined(BOOTSTRAP)
+do-fetch:
+	${MKDIR} ${WRKDIR}
+	svn export http://svn.edgewall.org/repos/trac/plugins/0.11/mercurial-plugin ${WRKSRC}
+	${MKDIR} ${_DISTDIR}
+	cd ${WRKDIR} && \
+	    tar cfvz ${_DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
+.endif
 
 .include <bsd.port.mk>
