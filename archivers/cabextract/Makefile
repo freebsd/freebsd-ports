@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cabextract
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cabextract.org.uk/
 
@@ -25,6 +25,7 @@ SRC_DOCS=	wince_info wince_rename
 PORTDOCS=	${DOCS} ${DOC_DOCS} ${SRC_DOCS}
 
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/cabextract.1 ${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/ja/cabextract.1 ${MAN1PREFIX}/man/ja/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
