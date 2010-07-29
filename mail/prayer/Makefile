@@ -7,15 +7,15 @@
 
 PORTNAME=	prayer
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Prayer Webmail System
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libc-client4.a:${PORTSDIR}/mail/cclient
+LIB_DEPENDS=	c-client4.9:${PORTSDIR}/mail/cclient
 
-USE_OPENLDAP=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_ICONV=	yes
@@ -66,12 +66,13 @@ post-patch:
 # change the user in the default config and cylog util
 	@${REINPLACE_CMD} "s#prayer_user           = \"prayer\"#prayer_user           = \"_prayer\"#" ${WRKSRC}/files/etc/prayer.cf.SRC
 	@${REINPLACE_CMD} "s#\"prayer\" \"prayer\"#\"_prayer\" \"prayer\"#" ${WRKSRC}/utils/prayer-cyclog.SRC
-	@${REINPLACE_CMD} "s#%%PREFIX%%#${PREFIX}#" ${WRKSRC}/Config
+	@${REINPLACE_CMD} "/^CC\s.*/d" ${WRKSRC}/Config
 
 post-configure:
+	@${REINPLACE_CMD} "s#%%PREFIX%%#${PREFIX}#" ${WRKSRC}/Config
 .if defined(WITH_SESSIONCACHE)
-	@${REINPLACE_CMD} "s#^DB_INCLUDE=.*#DB_INCLUDE=-I${BDB_INCLUDE_DIR}#" ${WRKSRC}/Config
-	@${REINPLACE_CMD} "s#^DB_LIBS=.*#DB_LIBS=-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}#" ${WRKSRC}/Config
+	@${REINPLACE_CMD} "s|^#DB_INCLUDE=.*|DB_INCLUDE=-I${BDB_INCLUDE_DIR}|" ${WRKSRC}/Config
+	@${REINPLACE_CMD} "s|^#DB_LIBS=.*|DB_LIBS=-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}|" ${WRKSRC}/Config
 .else
 	@${REINPLACE_CMD} "s#^SESSION_CACHE_ENABLE = true#SESSION_CACHE_ENABLE = false#" ${WRKSRC}/Config
 .endif
