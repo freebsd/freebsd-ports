@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Compile-SOAP
-PORTVERSION=	2.12
+PORTVERSION=	2.15
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,6 +27,7 @@ MAN3=		XML::Compile::SOAP.3 \
 		XML::Compile::SOAP11::Operation.3 \
 		XML::Compile::SOAP11::Server.3 \
 		XML::Compile::SOAP::Client.3 \
+		XML::Compile::SOAP::Extension.3 \
 		XML::Compile::SOAP::Server.3 \
 		XML::Compile::SOAP::Trace.3 \
 		XML::Compile::SOAP::Util.3 XML::Compile::Transport.3 \
