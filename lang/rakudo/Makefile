@@ -7,9 +7,11 @@
 
 PORTNAME=	rakudo
 PORTVERSION=	2010.07
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang
-MASTER_SITES=	http://cloud.github.com/downloads/rakudo/rakudo/
+MASTER_SITES=	http://cloud.github.com/downloads/rakudo/star/
+DISTNAME=	${PORTNAME}-star-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Rakudo Perl 6 Compiler targets the Parrot Virtual Machine
