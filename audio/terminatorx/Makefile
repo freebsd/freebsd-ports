@@ -21,6 +21,8 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		jack.0:${PORTSDIR}/audio/jack
 
+BROKEN=		does not compile
+
 USE_BZIP2=	yes
 INSTALLS_OMF=	yes
 USE_XORG=	x11 xext xi xxf86dga
