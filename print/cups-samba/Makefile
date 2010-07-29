@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=cups/windows
 DISTNAME=	cups-windows-${PORTVERSION}-source
 
-MAINTAINER=	tomasv@megalogika.lt
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Common UNIX Printing System:  MS Windows client drivers
 
 RUN_DEPENDS=	smbspool:${PORTSDIR}/net/samba3 \
