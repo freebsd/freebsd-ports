@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="43024078-9b63-11df-8983-001d60d86f38">
+    <topic>libmspack -- infinite loop denial of service</topic>
+    <affects>
+      <package>
+	<name>libmspack</name>
+	<range><le>0.0.20060920</le></range>
+      </package>
+      <package>
+	<name>cabextract</name>
+	<range><lt>1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>There is a denial of service vulnerability in libmspack.  The
+	  libmspack code is built into cabextract, so it is also
+	  vulnerable.</p>
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/40719/">
+	  <p>The vulnerability is caused due to an error when copying data
+	    from an uncompressed block (block type 0) and can be exploited
+	    to trigger an infinite loop by tricking an application using the
+	    library into processing specially crafted MS-ZIP archives.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/40719/</url>
+    </references>
+    <dates>
+      <discovery>2010-07-26</discovery>
+      <entry>2010-07-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="28a7310f-9855-11df-8d36-001aa0166822">
     <topic>apache -- Remote DoS bug in mod_cache and mod_dav</topic>
     <affects>
