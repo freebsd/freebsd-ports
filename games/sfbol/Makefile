@@ -5,15 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	sfbol
-PORTVERSION=	4.37
-PORTREVISION=	2
+PORTVERSION=	4.72
 CATEGORIES=	games java
 MASTER_SITES=	http://www.sfbonline.com/programs/
 DISTNAME=	install40
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	Star Fleet Battles Online
 
 IGNOREFILES=	install40.jar
@@ -37,13 +36,17 @@ DESKTOP_ENTRIES=	"SFBOL" "Star Fleet Battles Online" \
 			"sfbol" "Application;Game;BoardGame;StrategyGame;" \
 			false
 
-RESTRICTED=	Commerical software.  Licenses does not allow redistribution.
+LICENSE=	EULA
+LICENSE_NAME=	End User License Agreement
+LICENSE_PERMS=	no-dist-mirror
+LICENSE_FILE=	${WRKDIR}/license.txt
 
 FUDGE=		Users/paulfranz/sfbonline/SFBOL-Install/dist/core.jar
 
 post-extract:
 	@cd ${WRKDIR} && ${JAR} -xf ${DISTDIR}/${DISTFILES} ${FUDGE} 2>/dev/null | ${TRUE}
 	@cd ${WRKDIR} && ${JAR} -xf ${FUDGE} sfbicon.ico
+	@cd ${WRKDIR} && ${JAR} -xf ${FUDGE} license.txt
 
 do-install:
 	@${MKDIR} ${DATADIR}
