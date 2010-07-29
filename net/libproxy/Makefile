@@ -27,7 +27,7 @@ PLIST_SUB+=	VERSION=${PORTVERSION}
 
 .if !defined(LIBPROXY_SLAVE)
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 
 post-build:
 	${PYTHON_CMD} -Qold ${PYTHON_LIBDIR}/compileall.py \
