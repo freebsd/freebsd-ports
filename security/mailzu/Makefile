@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/MailZu%200.8RC3
 DISTNAME=	MailZu_${DISTVERSION:S/rc/RC/}
 
-MAINTAINER=	sahil@tandon.net
+MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	A simple and intuitive web interface to manage amavisd-new quarantine
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/amavisd:${PORTSDIR}/security/amavisd-new \

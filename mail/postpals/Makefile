@@ -12,7 +12,7 @@ MASTER_SITES=	http://mailfud.org/${PORTNAME}/
 DISTFILES=	${PORTNAME} ${PORTNAME}-taillog
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	sahil@tandon.net
+MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	Postpals is a simple policy daemon for Postfix
 
 RUN_DEPENDS=	p5-IO-Multiplex>=0:${PORTSDIR}/devel/p5-IO-Multiplex \

@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sahil@tandon.net
+MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	An object-oriented handler for logging, tracing and debugging in Perl
 
 BUILD_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate

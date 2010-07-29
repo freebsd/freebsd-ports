@@ -17,7 +17,7 @@ PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.wyae.de/software/Retired/ensita-clamfilter/
 
-MAINTAINER=	sahil@tandon.net
+MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	A small, efficient clamav content filter for Postfix
 
 .if defined(WITH_CLAMAV_DEVEL)

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	gabor
 DISTNAME=	tn-${PORTVERSION}
 
-MAINTAINER=	sahil@tandon.net
+MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	A cross-platform terminal manipulation library
 
 do-install:
