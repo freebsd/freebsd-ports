@@ -17,6 +17,8 @@ COMMENT=	Free Liberty Alliance Implementation
 RUN_DEPENDS=	xmlsec1:${PORTSDIR}/security/xmlsec1
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
+BROKEN=		does not compile
+
 CONFIGURE_ARGS+=	--disable-java --disable-php4 --with-zlib
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack glib20 libxml2
