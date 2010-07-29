@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	alexandria
-PORTVERSION=	0.6.5
-PORTREVISION=	3
+PORTVERSION=	0.6.6
 CATEGORIES=	deskutils ruby
 MASTER_SITES=	RF
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -22,7 +21,8 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/gettext.rb:${PORTSDIR}/devel/ruby-gettext \
 		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gconf2.so:${PORTSDIR}/devel/ruby-gconf2 \
 		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/libglade2.so:${PORTSDIR}/devel/ruby-libglade2 \
 		rubygem-zoom>=0:${PORTSDIR}/devel/rubygem-zoom \
-		rubygem-hpricot>=0:${PORTSDIR}/www/rubygem-hpricot
+		rubygem-hpricot>=0:${PORTSDIR}/www/rubygem-hpricot \
+		rubygem-htmlentities>=0:${PORTSDIR}/textproc/rubygem-htmlentities
 
 USE_GNOME=	gnomehier intltool
 INSTALLS_ICONS=	yes
@@ -31,6 +31,8 @@ USE_GETTEXT=	yes
 USE_RUBY=	yes
 
 MAN1=		alexandria.1
+
+OPTIONS=	IMAGESIZE "Cover images optimization" off
 
 DOCS=		NEWS README TODO
 GCONF_SCHEMAS=	alexandria.schemas
@@ -46,6 +48,10 @@ USR2FIX=	Rakefile alexandria.desktop.in data/menu/alexandria \
 
 .if !defined(RUBY_PROVIDED)
 IGNORE=		only works with Ruby 1.8.0 or later
+.endif
+
+.if defined(WITH_IMAGESIZE)
+RUN_DEPENDS+=${RUBY_SITELIBDIR}/image_size.rb:${PORTSDIR}/graphics/ruby-image_size
 .endif
 
 pre-build:
@@ -64,9 +70,6 @@ do-install:
 	@cd ${WRKSRC} && rake PREFIX=${PREFIX} install
 
 post-install:
-	@${MKDIR} ${LOCALBASE}/etc/gconf/schemas
-	@${INSTALL_DATA} ${WRKSRC}/schemas/alexandria.schemas \
-		${LOCALBASE}/etc/gconf/schemas/
 #.if !defined(NOPORTDOCS)
 #	@${MKDIR} ${RUBY_MODDOCDIR}
 #.for f in ${DOCS}
