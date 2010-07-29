@@ -257,6 +257,11 @@ virtuoso/doc/html/fn_cov_store.html
 virtuoso/doc/html/fn_covar_pop.html
 virtuoso/doc/html/fn_covar_samp.html
 virtuoso/doc/html/fn_createXML.html
+virtuoso/doc/html/fn_csv_cols_def.html
+virtuoso/doc/html/fn_csv_load.html
+virtuoso/doc/html/fn_csv_load_file.html
+virtuoso/doc/html/fn_csv_parse.html
+virtuoso/doc/html/fn_csv_table_def.html
 virtuoso/doc/html/fn_curdate.html
 virtuoso/doc/html/fn_current_charset.html
 virtuoso/doc/html/fn_dateadd.html
@@ -282,12 +287,17 @@ virtuoso/doc/html/fn_dbg_obj_print.html
 virtuoso/doc/html/fn_dbg_printf.html
 virtuoso/doc/html/fn_dbname.html
 virtuoso/doc/html/fn_delay.html
+virtuoso/doc/html/fn_dict_dec_or_remove.html
 virtuoso/doc/html/fn_dict_duplicate.html
 virtuoso/doc/html/fn_dict_get.html
+virtuoso/doc/html/fn_dict_inc_or_put.html
+virtuoso/doc/html/fn_dict_iter_next.html
+virtuoso/doc/html/fn_dict_iter_rewind.html
 virtuoso/doc/html/fn_dict_list_keys.html
 virtuoso/doc/html/fn_dict_new.html
 virtuoso/doc/html/fn_dict_put.html
 virtuoso/doc/html/fn_dict_remove.html
+virtuoso/doc/html/fn_dict_size.html
 virtuoso/doc/html/fn_dict_to_vector.html
 virtuoso/doc/html/fn_disconnect.html
 virtuoso/doc/html/fn_disconnect_user.html
@@ -313,6 +323,7 @@ virtuoso/doc/html/fn_file_delete.html
 virtuoso/doc/html/fn_file_dirlist.html
 virtuoso/doc/html/fn_file_mkdir.html
 virtuoso/doc/html/fn_file_mkpath.html
+virtuoso/doc/html/fn_file_open.html
 virtuoso/doc/html/fn_file_stat.html
 virtuoso/doc/html/fn_file_to_string.html
 virtuoso/doc/html/fn_file_to_string_output.html
@@ -323,10 +334,13 @@ virtuoso/doc/html/fn_ftp_get.html
 virtuoso/doc/html/fn_ftp_ls.html
 virtuoso/doc/html/fn_ftp_put.html
 virtuoso/doc/html/fn_get_certificate_info.html
+virtuoso/doc/html/fn_get_csv_row.html
 virtuoso/doc/html/fn_get_keyword.html
 virtuoso/doc/html/fn_get_keyword_ucase.html
 virtuoso/doc/html/fn_get_timestamp.html
 virtuoso/doc/html/fn_getdate.html
+virtuoso/doc/html/fn_gvector_digit_sort.html
+virtuoso/doc/html/fn_gvector_sort.html
 virtuoso/doc/html/fn_gz_compress.html
 virtuoso/doc/html/fn_gz_file_open.html
 virtuoso/doc/html/fn_gz_uncompress.html
@@ -455,6 +469,8 @@ virtuoso/doc/html/fn_rdf_64bit_upgrade.html
 virtuoso/doc/html/fn_rdf_audit_metadata.html
 virtuoso/doc/html/fn_rdf_backup_metadata.html
 virtuoso/doc/html/fn_rdf_convert_rdfxml_to_ttl.html
+virtuoso/doc/html/fn_rdf_graph_group_create.html
+virtuoso/doc/html/fn_rdf_graph_group_ins.html
 virtuoso/doc/html/fn_rdf_langmatches.html
 virtuoso/doc/html/fn_rdf_load_rdfxml.html
 virtuoso/doc/html/fn_rdf_load_rdfxml_mt.html
@@ -521,6 +537,7 @@ virtuoso/doc/html/fn_rmoreresults.html
 virtuoso/doc/html/fn_rnd.html
 virtuoso/doc/html/fn_rnext.html
 virtuoso/doc/html/fn_row_count.html
+virtuoso/doc/html/fn_rowvector_digit_sort.html
 virtuoso/doc/html/fn_rstmtexec.html
 virtuoso/doc/html/fn_rtrim.html
 virtuoso/doc/html/fn_search_excerpt.html
@@ -1390,6 +1407,7 @@ virtuoso/doc/images/ui/blog010.jpg
 virtuoso/doc/images/ui/blog011.jpg
 virtuoso/doc/images/ui/blog012.jpg
 virtuoso/doc/images/ui/blog013.jpg
+virtuoso/doc/images/ui/cartrapikey.png
 virtuoso/doc/images/ui/cn1.png
 virtuoso/doc/images/ui/cn2.png
 virtuoso/doc/images/ui/dav_freetxt_01.jpg
