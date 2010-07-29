@@ -43,13 +43,16 @@ BROKEN=		Does not build on sparc64-6
 LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
 BUILD_ARGS+=	xine-inc-dir="${LOCALBASE}/include" \
 		xine-lib-dir="${LOCALBASE}/lib"
-PLIST_SUB=	EMAV=""
+PLIST_SUB+=	EMAV=""
 .else
-PLIST_SUB=	EMAV="@comment "
+PLIST_SUB+=	EMAV="@comment "
 .endif
 
 .if !defined(WITHOUT_RSVG)
 USE_GNOME+=	librsvg2
+PLIST_SUB+=	EMSVG=""
+.else
+PLIST_SUB+=	EMSVG="@comment "
 .endif
 
 post-patch:
