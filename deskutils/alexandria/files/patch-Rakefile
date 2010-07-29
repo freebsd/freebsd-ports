@@ -1,0 +1,14 @@
+--- Rakefile	2010-06-17 21:28:36.000000000 +0400
++++ Rakefile	2010-06-26 20:56:17.000000000 +0400
+@@ -103,9 +103,9 @@
+   install_task.install_icons(icon_files, "#{SHARE}/icons")
+   install_task.install('data/app-icon/32x32', 'data/app-icon/32x32/*.xpm', "#{SHARE}/pixmaps")
+ 
+-  install_task.install('','schemas/alexandria.schemas', "#{SHARE}/gconf")
++  install_task.install('','schemas/alexandria.schemas', "#{PREFIX}/etc/gconf")
+   install_task.install('', 'alexandria.desktop', "#{SHARE}/applications")
+-  install_task.install('doc','doc/alexandria.1', "#{SHARE}/man/man1")
++  install_task.install('doc','doc/alexandria.1', "#{PREFIX}/man/man1")
+ 
+ end
+ 
