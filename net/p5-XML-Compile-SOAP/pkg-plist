@@ -6,6 +6,8 @@
 %%SITE_PERL%%/XML/Compile/SOAP.pod
 %%SITE_PERL%%/XML/Compile/SOAP/Client.pm
 %%SITE_PERL%%/XML/Compile/SOAP/Client.pod
+%%SITE_PERL%%/XML/Compile/SOAP/Extension.pm
+%%SITE_PERL%%/XML/Compile/SOAP/Extension.pod
 %%SITE_PERL%%/XML/Compile/SOAP/Server.pm
 %%SITE_PERL%%/XML/Compile/SOAP/Server.pod
 %%SITE_PERL%%/XML/Compile/SOAP/Trace.pm
