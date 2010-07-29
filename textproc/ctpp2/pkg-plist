@@ -69,12 +69,12 @@ share/locale/ru.CP1251/LC_MESSAGES/ctpp2.mo
 share/locale/ru.CP866/LC_MESSAGES/ctpp2.mo
 share/locale/ru.KOI8-R/LC_MESSAGES/ctpp2.mo
 share/locale/ru.UTF-8/LC_MESSAGES/ctpp2.mo
-@dirrmtry share/locale/ru_RU.CP1251/LC_MESSAGES
-@dirrmtry share/locale/ru_RU.CP1251
-@dirrmtry share/locale/ru_RU.CP866/LC_MESSAGES
-@dirrmtry share/locale/ru_RU.CP866
-@dirrmtry share/locale/ru_RU.KOI8-R/LC_MESSAGES
-@dirrmtry share/locale/ru_RU.KOI8-R
-@dirrmtry share/locale/ru_RU.UTF-8/LC_MESSAGES
-@dirrmtry share/locale/ru_RU.UTF-8
+@dirrmtry share/locale/ru.CP1251/LC_MESSAGES
+@dirrmtry share/locale/ru.CP1251
+@dirrmtry share/locale/ru.CP866/LC_MESSAGES
+@dirrmtry share/locale/ru.CP866
+@dirrmtry share/locale/ru.KOI8-R/LC_MESSAGES
+@dirrmtry share/locale/ru.KOI8-R
+@dirrmtry share/locale/ru.UTF-8/LC_MESSAGES
+@dirrmtry share/locale/ru.UTF-8
 @dirrm include/ctpp2
