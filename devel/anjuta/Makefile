@@ -8,6 +8,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	2.30.2.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -65,12 +66,8 @@ OPTIONS=	SVN "Build subversion plugin" off \
 
 .if defined(WITH_SVN)
 BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-LIB_DEPENDS+=	apr-1.4:${PORTSDIR}/devel/apr1
-.if exists(${LOCALBASE}/lib/libneon.so.29)
-LIB_DEPENDS+=	neon.29:${PORTSDIR}/www/neon29
-.else
-LIB_DEPENDS+=	neon.28:${PORTSDIR}/www/neon28
-.endif
+LIB_DEPENDS+=	apr-1.4:${PORTSDIR}/devel/apr1 \
+		neon.27:${PORTSDIR}/www/neon29
 RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 PLIST_SUB+=	SVN=""
 .else

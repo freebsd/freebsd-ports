@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100730:
+  AFFECTS: users of www/neon28 and www/neon29
+  AUTHOR: mezz@FreeBSD.org
+
+  Makes neon29 our default neon library in the ports tree. The www/neon28
+  has been removed and www/neon29's shared library version has been changed.
+  You will have to rebuild all ports that depend on www/neon29. Do this:
+
+  Portmaster users:
+	portmaster -o www/neon29 www/neon28
+	portmaster -r neon29-
+
+  Portupgrade user:
+	env DISABLE_CONFLICTS=1 portupgrade -o www/neon29 -f neon28-\*
+	pkgdb -Ff
+	portupgrade -rf www/neon29-\*
+
 20100728:
   AFFECTS: users of textproc/nltk
   AUTHOR: clsung@FreeBSD.org
@@ -19,7 +36,6 @@ you update your ports collection, before attempting any port upgrades.
     # portsnap fetch update
     # cd /usr/ports/textproc/nltk/
     # make install clean
-
 
 20100727:
   AFFECTS: users of security/libgcrypt

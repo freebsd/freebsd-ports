@@ -366,11 +366,7 @@ gst_nas_PLIST_FILES=	${GST_LIB_DIR}/libgstnassink.la \
 		${GST_LIB_DIR}/libgstnassink.so
 
 # neon
-.if exists(${LOCALBASE}/lib/libneon.so.29)
-gst_neon_LIB_DEPENDS+=	neon.29:${PORTSDIR}/www/neon29
-.else
-gst_neon_LIB_DEPENDS+=	neon.28:${PORTSDIR}/www/neon28
-.endif
+gst_neon_LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
 gst_neon_CONFIGURE_ENV+=	NEON_CFLAGS="-I${LOCALBASE}/include/neon"
 gst_neon_PLIST_FILES=	${GST_LIB_DIR}/libgstneonhttpsrc.la \
 			${GST_LIB_DIR}/libgstneonhttpsrc.so

@@ -7,6 +7,7 @@
 
 PORTNAME=	libopensync-plugin-sunbird
 PORTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.opensync.org/download/releases/${PORTVERSION}/
 
@@ -14,7 +15,7 @@ MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Sunbird plugin for the OpenSync framework
 
 LIB_DEPENDS=	opensync.0:${PORTSDIR}/devel/libopensync022 \
-		neon.28:${PORTSDIR}/www/neon28
+		neon.27:${PORTSDIR}/www/neon29
 
 MAKE_JOBS_SAFE=	yes
 

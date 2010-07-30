@@ -7,7 +7,7 @@
 
 PORTNAME=	neon29
 PORTVERSION=	0.29.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 DISTNAME=	neon-${PORTVERSION}
@@ -20,7 +20,7 @@ CONFLICTS=	neon2[6|8]-[0-9]*
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack ltverhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \
 		--with-libs=${LOCALBASE}:${PREFIX}
