@@ -2,17 +2,19 @@ bin/xslate
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Bridge.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Compiler.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Cookbook.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Manual/Cookbook.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Manual/FAQ.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Booster.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Const.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Macro.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Method.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Opcode.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/State.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Type/Macro.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Type/Pair.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Type/Raw.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Parser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Runner.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Symbol.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Syntax/Kolon.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Syntax/Metakolon.pm
@@ -28,5 +30,6 @@ bin/xslate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Syntax
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP/Type
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/PP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate/Manual
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text/Xslate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Text
