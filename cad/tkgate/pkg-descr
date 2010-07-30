@@ -5,7 +5,7 @@ design.  The simulator can be controlled either interactively or
 through a simulation script.  Memory contents can be loaded from
 files, and a microcode/macrocode compiler (gmac) is included to create
 tkgate memory files from a high-level description.  The simulator
-supports continous simulation, single step simulation (by clock or
+supports continuous simulation, single step simulation (by clock or
 epoch) and breakpoints.  Save files are in a Verilog-like format.
 
 TkGate also includes a number of tutorial and example circuits which

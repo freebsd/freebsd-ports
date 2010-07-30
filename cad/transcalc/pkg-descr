@@ -8,7 +8,7 @@ used. Transcalc is built using the GIMP toolkit (GTK) for its GUI interface.
 
 For each type of transmission line, using dialog boxes, you can enter values
 for the various parameters, and either calculate its electrical properties
-(analyze), or use the given electrical requirements to sythesize physical
+(analyze), or use the given electrical requirements to synthesize physical
 parameters of the required transmission line.
 
 Available transmission lines (this list will expand with subsequent releases):

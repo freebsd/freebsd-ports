@@ -16,7 +16,7 @@ Electric handles these file formats:
    DXF I/O 
    PostScript, HPGL, and QuickDraw output 
 
-For real funcionality, one should consider installing
+For real functionality, one should consider installing
 support simulation software such as cad/spice.
 
 WWW: http://www.gnu.org/software/electric/electric.html
