@@ -7,7 +7,7 @@ Features:
    - automatic checksum file naming ability in create mode
    - recursive operation
    - show unverified files option
-   - ignore case and fix path seperator options for cross platform use
+   - ignore case and fix path separator options for cross platform use
    - transparent gzip support for checksum files
    - configurable renaming of bad files (with testing against previous bad
      files, to save only unique differing copies)

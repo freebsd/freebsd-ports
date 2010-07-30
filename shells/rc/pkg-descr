@@ -2,7 +2,7 @@ This is a reimplementation for Unix, by Byron Rakitzis, of the Plan
 9 shell. rc offers much the same capabilities as a traditional
 Bourne shell, but with a much cleaner syntax.
 
-See the end of the man page, under "INCOMPATABILITIES" for (known?)
+See the end of the man page, under "INCOMPATIBILITIES" for (known?)
 differences from the "real" rc.
 
 Scott Kenney <saken@hotel.rmta.org>
