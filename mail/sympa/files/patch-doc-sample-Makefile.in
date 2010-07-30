@@ -1,0 +1,90 @@
+--- doc/sample/Makefile.in	2010-07-06 14:12:30.000000000 +0000
++++ doc/sample/Makefile.in-bkp	2010-07-29 01:00:41.000000000 +0000
+@@ -71,7 +71,7 @@
+     *) f=$$p;; \
+   esac;
+ am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
+-am__installdirs = "$(DESTDIR)$(sampledir)"
++am__installdirs = "$(sampledir)"
+ nobase_sampleDATA_INSTALL = $(install_sh_DATA)
+ DATA = $(nobase_sample_DATA)
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+@@ -177,7 +177,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ webtemplatedir = @webtemplatedir@
+-sampledir = $(docdir)/sample
++sampledir = /usr/local/share/examples/sympa
+ nobase_sample_DATA = README \
+ 		     trusted_applications.conf robot.conf employees.ldap \
+ 		     test/config test/info test/message.footer test/web_tt2/welcome.tt2
+@@ -218,13 +218,13 @@
+ uninstall-info-am:
+ install-nobase_sampleDATA: $(nobase_sample_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(sampledir)" || $(mkdir_p) "$(DESTDIR)$(sampledir)"
++	test -z "$(sampledir)" || $(mkdir_p) "$(sampledir)"
+ 	@$(am__vpath_adj_setup) \
+ 	list='$(nobase_sample_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  $(am__vpath_adj) \
+-	  echo " $(nobase_sampleDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sampledir)/$$f'"; \
+-	  $(nobase_sampleDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sampledir)/$$f"; \
++	  echo " $(nobase_sampleDATA_INSTALL) '$$d$$p' '$(sampledir)/$$f'"; \
++	  $(nobase_sampleDATA_INSTALL) "$$d$$p" "$(sampledir)/$$f"; \
+ 	done
+ 
+ uninstall-nobase_sampleDATA:
+@@ -232,8 +232,8 @@
+ 	@$(am__vpath_adj_setup) \
+ 	list='$(nobase_sample_DATA)'; for p in $$list; do \
+ 	  $(am__vpath_adj) \
+-	  echo " rm -f '$(DESTDIR)$(sampledir)/$$f'"; \
+-	  rm -f "$(DESTDIR)$(sampledir)/$$f"; \
++	  echo " rm -f '$(sampledir)/$$f'"; \
++	  rm -f "$(sampledir)/$$f"; \
+ 	done
+ tags: TAGS
+ TAGS:
+@@ -243,7 +243,7 @@
+ 
+ 
+ distdir: $(DISTFILES)
+-	$(mkdir_p) $(distdir)/test $(distdir)/test/web_tt2
++	$(mkdir_p) /$(sampledir)/test $(sampledir)/test/web_tt2
+ 	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
+ 	topsrcdirstrip=`echo "$(top_srcdir)" | sed 's|.|.|g'`; \
+ 	list='$(DISTFILES)'; for file in $$list; do \
+@@ -255,18 +255,18 @@
+ 	  dir=`echo "$$file" | sed -e 's,/[^/]*$$,,'`; \
+ 	  if test "$$dir" != "$$file" && test "$$dir" != "."; then \
+ 	    dir="/$$dir"; \
+-	    $(mkdir_p) "$(distdir)$$dir"; \
++	    $(mkdir_p) "$(sampledir)$$dir"; \
+ 	  else \
+ 	    dir=''; \
+ 	  fi; \
+ 	  if test -d $$d/$$file; then \
+ 	    if test -d $(srcdir)/$$file && test $$d != $(srcdir); then \
+-	      cp -pR $(srcdir)/$$file $(distdir)$$dir || exit 1; \
++	      cp -pR $(srcdir)/$$file $(sampledir)$$dir || exit 1; \
+ 	    fi; \
+-	    cp -pR $$d/$$file $(distdir)$$dir || exit 1; \
++	    cp -pR $$d/$$file $(sampledir)$$dir || exit 1; \
+ 	  else \
+-	    test -f $(distdir)/$$file \
+-	    || cp -p $$d/$$file $(distdir)/$$file \
++	    test -f $(sampledir)/$$file \
++	    || cp -p $$d/$$file $(sampledir)/$$file \
+ 	    || exit 1; \
+ 	  fi; \
+ 	done
+@@ -274,7 +274,7 @@
+ check: check-am
+ all-am: Makefile $(DATA)
+ installdirs:
+-	for dir in "$(DESTDIR)$(sampledir)"; do \
++	for dir in "$(sampledir)"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
+ install: install-am

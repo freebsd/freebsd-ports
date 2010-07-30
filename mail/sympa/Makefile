@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	sympa
-PORTVERSION?=	4.1.2
-PORTREVISION=	4
+PORTVERSION=	6.0.5
 CATEGORIES=	mail
-MASTER_SITES?=	http://www.sympa.org/distribution/old/
+MASTER_SITES=	http://www.sympa.org/distribution/ \
+		http://www.sympa.org/distribution/old/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT?=	Sympa is an electronic mailing list manager
+MAINTAINER=	utisoft@gmail.com
+COMMENT=	Sympa is an electronic mailing list manager
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS+=	${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
@@ -28,14 +30,24 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 HAS_CONFIGURE=	yes
 USE_PERL5=	yes
+USE_APACHE=	1.3+
 CONFIGURE_ARGS+=--prefix=${PREFIX}/sympa \
 		--with-confdir=${PREFIX}/etc \
 		--with-initdir=${PREFIX}/etc/rc.d \
 		--with-etcdir=${PREFIX}/sympa/bin/etc \
 		--with-iconsdir=${PREFIX}/www/icons \
+		--mandir=${PREFIX}/man \
 		${CONFIGURE_TARGET}
 CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 MAN8=		alias_manager.8 archived.8 bounced.8 sympa.8
 
@@ -46,28 +58,28 @@ DB_TYPE=
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FASTCGI)
-.if defined(WITH_APACHE2)
+.	if ${APACHE_VERSION}>=20
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
-.else
+.	else
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
-.endif
+.	endif
 BUILD_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
 .endif
 
 .if ${DB_TYPE} == "Oracle"
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle
 .else
-.if ${DB_TYPE} == "Pg"
+.	if ${DB_TYPE} == "Pg"
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
-.else
-.if ${DB_TYPE} == "Sybase"
+.	else
+.		if ${DB_TYPE} == "Sybase"
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Sybase.pm:${PORTSDIR}/databases/p5-DBD-Sybase
-.else
-.if ${DB_TYPE} == "mysql"
+.		else
+.			if ${DB_TYPE} == "mysql"
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
-.endif
-.endif
-.endif
+.			endif
+.		endif
+.	endif
 .endif
 
 pre-fetch:
@@ -82,12 +94,11 @@ pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-patch:
-	${MV} ${WRKSRC}/src/etc/script/sympa ${WRKSRC}/src/etc/script/sympa.sh
 	@${FIND} ${WRKSRC} -name "*.orig" -a -exec ${RM} -f {} \;
 
 post-install:
 	@PKG_PREFIX=${PREFIX} DB_TYPE=${DB_TYPE} WITH_FASTCGI=${WITH_FASTCGI} \
-	 ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 post-deinstall:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
