@@ -1,0 +1,7 @@
+This is a collection of functions for dealing with PPI objects, many of
+which originated in Perl::Critic.  They are organized into modules by
+the kind of PPI class they relate to, by replacing the "PPI" at the
+front of the module name with "PPIx::Utilities", e.g. functionality
+related to PPI::Nodes is in PPIx::Utilities::Node.
+
+WWW: http://search.cpan.org/dist/PPIx-Utilities/

@@ -1,0 +1,7 @@
+%%SITE_PERL%%/PPIx/Utilities.pm
+%%SITE_PERL%%/PPIx/Utilities/Exception/Bug.pm
+%%SITE_PERL%%/PPIx/Utilities/Node.pm
+%%SITE_PERL%%/PPIx/Utilities/Statement.pm
+@dirrm %%SITE_PERL%%/PPIx/Utilities/Exception
+@dirrm %%SITE_PERL%%/PPIx/Utilities
+@dirrmtry %%SITE_PERL%%/PPIx
