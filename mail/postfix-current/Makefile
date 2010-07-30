@@ -1,12 +1,12 @@
 # New ports collection makefile for:	postfix-current
-# Date created: 	18 Mar 1999
-# Whom:			torstenb
+# Date created:				18 Mar 1999
+# Whom:					torstenb
 #
 # $FreeBSD$
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.8-20100323
+DISTVERSION=	2.8-20100707
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -27,23 +27,37 @@ CONFLICTS=	courier-0.* postfix-1.* postfix-2.* postfix-current-2.[0-79]* \
 MAKE_JOBS_SAFE=	yes
 USE_SUBMAKE=	yes
 USE_PERL5_BUILD=yes
-USE_RC_SUBR=	postfix.sh
+SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
-OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
-OPTIONS=	PCRE		"Perl Compatible Regular Expressions" 			on \
-		SASL2		"Cyrus SASLv2 (Simple Auth. and Sec. Layer)"		off \
+# back compat pull in settings from POSTFIX_OPTIONS for convenience when
+# make config is run (happens first time port is built, too)
+.for o in SASL2 SASLKRB5 SASLKRB5MIT TLS BDB MySQL PgSQL OpenLDAP CDB NIS VDA Test
+STATUS_${o}=off
+.endfor
+.if defined(POSTFIX_OPTIONS)
+. for o in ${POSTFIX_OPTIONS}
+STATUS_${o}=on
+. endfor
+.endif
+
+OPTIONS=	PCRE		"Perl Compatible Regular Expressions"			on \
+		SASL2		"Cyrus SASLv2 (Simple Auth. and Sec. Layer)"		${STATUS_SASL2} \
 		DOVECOT		"Dovecot SASL authentication method"			off \
-		SASLKRB		"If your SASL req. Kerberos select this option"		off \
-		SASLKRB5	"If your SASL req. Kerberos5 select this option"	off \
-		SASLKMIT	"If your SASL req. MIT Kerberos5 select this option"	off \
-		TLS		"Enable SSL and TLS support"				off \
-		BDB		"Berkeley DB (choose version with WITH_BDB_VER)"	off \
-		MYSQL		"MySQL maps (choose version with WITH_MYSQL_VER)"	off \
-		PGSQL		"PostgreSQL maps (choose with DEFAULT_PGSQL_VER)"	off \
-		OPENLDAP	"OpenLDAP maps (choose ver. with WITH_OPENLDAP_VER)"	off \
-		CDB		"CDB maps lookups"					off \
-		NIS		"NIS maps lookups"					off \
-		TEST		"SMTP/LMTP test server and generator"			off
+		SASLKRB5	"If your SASL req. Kerberos5 select this option"	${STATUS_SASLKRB5} \
+		SASLKMIT	"If your SASL req. MIT Kerberos5 select this option"	${STATUS_SASLKRB5MIT} \
+		TLS		"Enable SSL and TLS support"				${STATUS_TLS} \
+		BDB		"Berkeley DB (choose version with WITH_BDB_VER)"	${STATUS_BDB} \
+		MYSQL		"MySQL maps (choose version with WITH_MYSQL_VER)"	${STATUS_MySQL} \
+		PGSQL		"PostgreSQL maps (choose with DEFAULT_PGSQL_VER)"	${STATUS_PgSQL} \
+		SQLITE		"SQLite maps"						off \
+		OPENLDAP	"OpenLDAP maps (choose ver. with WITH_OPENLDAP_VER)"	${STATUS_OpenLDAP} \
+		CDB		"CDB maps lookups"					${STATUS_CDB} \
+		NIS		"NIS maps lookups"					${STATUS_NIS} \
+		VDA		"VDA (Virtual Delivery Agent 32Bit)"			${STATUS_VDA} \
+		TEST		"SMTP/LMTP test server and generator"			${STATUS_Test} \
+		INST_BASE	"Install into /usr and /etc/postfix"			off
+
+.include <bsd.port.options.mk>
 
 MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
 	postlock.1 postlog.1 postmap.1 postmulti.1 postqueue.1 postsuper.1 \
@@ -52,7 +66,7 @@ MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
 MAN5=	access.5 aliases.5 bounce.5 canonical.5 cidr_table.5 generic.5 \
 	header_checks.5 ldap_table.5 master.5 mysql_table.5 nisplus_table.5 \
 	pcre_table.5 pgsql_table.5 postconf.5 postfix-wrapper.5 regexp_table.5 \
-	relocated.5 tcp_table.5 transport.5 virtual.5
+	relocated.5 sqlite_table.5 tcp_table.5 transport.5 virtual.5
 
 MAN8=	anvil.8 bounce.8 cleanup.8 discard.8 dnsblog.8 error.8 flush.8 local.8 master.8 \
 	oqmgr.8 pickup.8 pipe.8 postscreen.8 proxymap.8 qmgr.8 qmqpd.8 scache.8 showq.8 \
@@ -65,8 +79,8 @@ MLINKS=	sendmail.1 mailq.1 \
 	bounce.8 trace.8 \
 	smtp.8 lmtp.8
 
-CONF1=	access aliases canonical generic header_checks main.cf master.cf \
-	relocated transport virtual
+HTML1=	body_checks.5.html bounce.5.html postfix-power.png \
+	scache.8.html tlsmgr.8.html
 
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
@@ -74,11 +88,19 @@ MAKEFILEFLAGS+=	DEBUG=
 
 MAKEFILEFLAGS+=	CC="${CC}" OPT="${CFLAGS}"
 
-SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-		TOUCH="${TOUCH}" \
-		MKDIR="${MKDIR}"
-
-.include <bsd.port.pre.mk>
+POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
+			-DDEF_DAEMON_DIR=\\\"${DAEMONDIR}\\\" \
+			-DDEF_COMMAND_DIR=\\\"${PREFIX}/sbin\\\" \
+			-DDEF_SENDMAIL_PATH=\\\"${PREFIX}/sbin/sendmail\\\" \
+			-DDEF_NEWALIAS_PATH=\\\"${PREFIX}/bin/newaliases\\\" \
+			-DDEF_MAILQ_PATH=\\\"${PREFIX}/bin/mailq\\\" \
+			-DDEF_MANPAGE_DIR=\\\"${MANPREFIX}/man\\\" \
+			-DDEF_README_DIR=\\\"${READMEDIR}\\\" \
+			-DDEF_HTML_DIR=\\\"${READMEDIR}\\\" \
+			-DDEF_QUEUE_DIR=\\\"/var/spool/postfix\\\" \
+			-DDEF_DATA_DIR=\\\"/var/db/postfix\\\" \
+			-DDEF_MAIL_OWNER=\\\"postfix\\\" \
+			-DDEF_SGID_GROUP=\\\"maildrop\\\" \
 
 # Default requirement for postfix rc script
 _REQUIRE=	LOGIN cleanvar
@@ -100,17 +122,11 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
 .if defined(WITH_DOVECOT)
 RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DDEF_SERVER_SASL_TYPE=\\\"dovecot\\\"
-.endif
-
-.if defined(WITH_SASLKRB)
-.if defined(WITH_SASLKRB5) || defined(WITH_SASLKMIT)
-BROKEN=			Select only one SASL Kerberos option
-.endif
-POSTFIX_AUXLIBS+=	-lkrb -lcrypto -lcom_err
+_REQUIRE+=		dovecot
 .endif
 
 .if defined(WITH_SASLKRB5)
-.if defined(WITH_SASLKRB) || defined(WITH_SASLKMIT)
+.if defined(WITH_SASLKMIT)
 BROKEN=			Select only one SASL Kerberos option
 .endif
 .if ${OSVERSION} >= 800037
@@ -120,7 +136,7 @@ POSTFIX_AUXLIBS+=	-lkrb5 ${KRB5_EXTR} -lcrypto -lcrypt -lcom_err -lasn1 -lroken
 .endif
 
 .if defined(WITH_SASLKMIT)
-.if defined(WITH_SASLKRB) || defined(WITH_SASLKRB5)
+.if defined(WITH_SASLKRB5)
 BROKEN=			Select only one SASL Kerberos option
 .endif
 LIB_DEPENDS+=		krb5.3:${PORTSDIR}/security/krb5
@@ -153,6 +169,12 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/pgsql/lib -lpq -lcrypt
 _REQUIRE+=		postgresql
 .endif
 
+.if defined(WITH_SQLITE)
+USE_SQLITE=		yes
+POSTFIX_CCARGS+= 	-DHAS_SQLITE -I${LOCALBASE}/include
+POSTFIX_AUXLIBS+= 	-L${LOCALBASE}/lib -lsqlite3
+.endif
+
 .if defined(WITH_OPENLDAP)
 USE_OPENLDAP=		yes
 .if defined(WITH_OPENLDAP_VER)
@@ -174,24 +196,75 @@ POSTFIX_CCARGS+=	-DHAS_NIS
 _REQUIRE+=		ypserv
 .endif
 
+.if defined(WITH_VDA)
+BROKEN=		At the moment there is no VDA patch for ${PORTNAME}-${DISTVERSION} available
+.endif
+
 .if defined(WITH_TEST)
 BINTEST=	qmqp-sink qmqp-source smtp-sink smtp-source
 MANTEST=	qmqp-sink.1 qmqp-source.1 smtp-sink.1 smtp-source.1
 MAN1+=		${MANTEST}
-PLIST_SUB+=	SUB_TEST=""
+PLIST_SUB+=	TEST=""
 .else
-PLIST_SUB+=	SUB_TEST="@comment "
+PLIST_SUB+=	TEST="@comment "
 .endif
+
+.if defined(WITH_INST_BASE)
+PKGNAMESUFFIX=	-base
+PREFIX=		/usr
+ETCDIR=		/etc/postfix
+USE_RCORDER=	postfix.sh
+PLIST_SUB+=	BASE=""
+.else
+USE_RC_SUBR=	postfix.sh
+PLIST_SUB+=	BASE="@comment "
+.endif
+
+PLIST_SUB+=	PFETC=${ETCDIR}
 
 .if defined(NOPORTDOCS)
-READMEDIR=no
+READMEDIR=	no
 .else
-READMEDIR=${PREFIX}/share/doc/postfix
+READMEDIR=	${DOCSDIR}
 .endif
 
-SUB_LIST+=	REQUIRE="${_REQUIRE}"
+DAEMONDIR=	${PREFIX}/libexec/postfix
+
+SUB_LIST+=	REQUIRE="${_REQUIRE}" READMEDIR="${READMEDIR}" DAEMONDIR="${DAEMONDIR}"
+SUB_FILES+=	pkg-install pkg-message
+
+# sed script for files in ${WRKSRC}/README_FILES ${WRKSRC}/conf ${WRKSRC}/man
+REINPLACE=	s!^PATH=.*!PATH=/bin:/sbin:/usr/bin:/usr/sbin:${PREFIX}/bin:${PREFIX}/sbin!;\
+		s!(_directory = )/usr/!\1${PREFIX}/!g;\
+		s!^(data_directory = /var/)lib/!\1db/!g;\
+		s!^\#(mynetworks_style = host)!\1!g;\
+		s!^(sendmail_path =)!\1 ${PREFIX}/sbin/sendmail!g;\
+		s!^(newaliases_path =)!\1 ${PREFIX}/bin/newaliases!g;\
+		s!^(mailq_path =)!\1 ${PREFIX}/bin/mailq!g;\
+		s!^(setgid_group =)!\1 maildrop!g;\
+		s!^(manpage_directory =)!\1 ${MANPREFIX}/man!g;\
+		s!^((html|readme)_directory =)!\1 ${READMEDIR}!g;\
+		\!^\#alias_database = dbm:/etc/mail/aliases$$!d;\
+		s!(:|= )/etc/postfix!\1$$config_directory!g;\
+		s!/etc/postfix!${ETCDIR}!g;\
+		s!^(sample_directory =)!\1 ${ETCDIR}!g;\
+		s!($config_directory/(access|aliases|canonical|generic|header_checks|relocated|transport|virtual):f:root:-:644:)p1!\1o!;
 
 pre-patch:
+.if defined(POSTFIX_OPTIONS)
+	@${ECHO_MSG}
+	@${ECHO_MSG}
+	@${ECHO_MSG}
+	@${ECHO_MSG} "***** ALERT *****"
+	@${ECHO_MSG} "POSTFIX_OPTIONS is no longer supported,"
+	@${ECHO_MSG} "${PORTNAME} uses options, consider running"
+	@${ECHO_MSG} "# make config"
+	@${ECHO_MSG}
+	@${ECHO_MSG}
+	@${ECHO_MSG}
+	@sleep 10
+.endif
+
 .if defined(WITH_SASL2) && !defined(WITH_MYSQL) && exists(${LOCALBASE}/lib/libsasl2.a)
 	@if /usr/bin/nm ${LOCALBASE}/lib/libsasl2.a | ${GREP} -wq "mysql_init"; then \
 		${ECHO_MSG}; \
@@ -204,20 +277,21 @@ pre-patch:
 	fi
 .endif
 
-	@${ECHO} "<HTML><BODY>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY></HTML>" \
+	@${ECHO} '<HTML><BODY>See <A HREF="header_checks.5.html">header_checks.5.html</A></BODY></HTML>' \
 		> ${WRKSRC}/html/body_checks.5.html
-	@${FIND} -P ${WRKSRC}/man -type f | ${XARGS} \
-		${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g"
-	@${FIND} -P ${WRKSRC}/README_FILES -type f | ${XARGS} \
-		${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g"
-	@${FIND} -P ${WRKSRC}/conf -type f | ${XARGS} \
-		${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g"
+	@${REINPLACE_CMD} -E -e 's![[:<:]]perl[[:>:]]!${PERL}!' \
+		${WRKSRC}/src/bounce/Makefile.in
+	@${REINPLACE_CMD} -E -e 's!^(#define DEF_SGID_GROUP[^"]+)"postdrop"$$!\1"maildrop"!' \
+		${WRKSRC}/src/global/mail_params.h
+	@${FIND} -X ${WRKSRC}/README_FILES ${WRKSRC}/conf ${WRKSRC}/man \
+		-type f -a ! \( -name INSTALL -o -name aliases \) | ${XARGS} \
+		${REINPLACE_CMD} -E -e '${REINPLACE}'
 
 post-patch:
-# All files modified with ${FILESDIR}/patch-* to use !!PREFIX!! need REINPLACE. Put below.
-	@${REINPLACE_CMD} -e "s,!!PREFIX!!,${PREFIX},g" \
-		${WRKSRC}/conf/main.cf ${WRKSRC}/src/global/mail_params.h
-	@${REINPLACE_CMD} -e "s|perl|${PERL}|" ${WRKSRC}/src/bounce/Makefile.in
+.for f in ${HTML1}
+	@${ECHO} '$$html_directory/$f:f:root:-:644' \
+		>> ${WRKSRC}/conf/postfix-files
+.endfor
 
 do-configure:
 	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
@@ -228,26 +302,13 @@ pre-su-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	cd ${WRKSRC}; ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
-		config_directory=${PREFIX}/etc/postfix \
-		data_directory=/var/db/postfix \
-		daemon_directory=${PREFIX}/libexec/postfix \
-		command_directory=${PREFIX}/sbin \
-		queue_directory=/var/spool/postfix \
-		sendmail_path=${PREFIX}/sbin/sendmail \
-		newaliases_path=${PREFIX}/bin/newaliases \
-		mailq_path=${PREFIX}/bin/mailq \
-		mail_owner=postfix \
-		setgid_group=maildrop \
-		manpage_directory=${MANPREFIX}/man \
-		sample_directory=${PREFIX}/etc/postfix \
+	@cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
+		daemon_directory=${DAEMONDIR} \
+		html_directory=${READMEDIR} \
 		readme_directory=${READMEDIR}
-
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${PREFIX}/bin/rmail
-
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${PREFIX}/bin/qshape
 	${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${MANPREFIX}/man/man1
-
 .for f in ${BINTEST}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/bin
 .endfor
@@ -255,22 +316,10 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${MANPREFIX}/man/man1
 .endfor
 
-	@${MKDIR} ${PREFIX}/etc/postfix/dist
-.for f in ${CONF1}
-	${INSTALL_DATA} ${WRKSRC}/conf/${f} ${PREFIX}/etc/postfix/dist
-.endfor
-
-.if !defined(NOPORTDOCS)
-	${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} -m 555 ${DOCSDIR}
-	@cd ${WRKSRC}/html && ${INSTALL_DATA} *.html *.jpg *.png ${DOCSDIR} && \
-		${ECHO_MSG} "Installed HTML documentation in ${DOCSDIR}"
-.endif
-
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 # Fix compressed man pages
-	@${REINPLACE_CMD} -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${PREFIX}/libexec/postfix/postfix-files
-	@${RM} -f ${PREFIX}/libexec/postfix/postfix-files.bak
+	@${REINPLACE_CMD} -i '' -E -e "s|(man[158]/.*.[158]):|\1.gz:|g" ${DAEMONDIR}/postfix-files
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

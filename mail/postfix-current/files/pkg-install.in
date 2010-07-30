@@ -1,0 +1,158 @@
+#!/bin/sh
+#
+#	$FreeBSD: /tmp/pcvs/ports/mail/postfix-current/files/pkg-install.in,v 1.1 2010-07-30 03:39:18 sahil Exp $
+#
+
+# If the POSTFIX_DEFAULT_MTA environment variable is set to YES, it
+# will make the port/package use defaults which make postfix replace
+# sendmail as much as possible.
+
+PREFIX=${PKG_PREFIX:=%%PREFIX%%}
+ETCDIR=${ETCDIR:=%%ETCDIR%%}
+DAEMONDIR=${DAEMONDIR:=%%DAEMONDIR%%}
+READMEDIR=${READMEDIR:=%%READMEDIR%%}
+BATCH=${BATCH:=no}
+POSTFIX_DEFAULT_MTA=${POSTFIX_DEFAULT_MTA:=no}
+
+if [ "${POSTFIX_DEFAULT_MTA}" = "no" ]; then
+      DEFAULT_REPLACE_MAILERCONF=n
+else
+      DEFAULT_REPLACE_MAILERCONF=y
+fi
+
+if [ -x /usr/sbin/nologin ]; then
+      NOLOGIN=/usr/sbin/nologin
+else
+      NOLOGIN=/sbin/nologin
+fi
+
+ask() {
+      local question default answer
+
+      question=$1
+      default=$2
+      if [ -z "${PACKAGE_BUILDING}" -a "${BATCH}" = "no" ]; then
+	      read -p "${question} [${default}]? " answer
+      fi
+      if [ -z "${answer}" ]; then
+	      answer=${default}
+      fi
+      echo ${answer}
+}
+
+yesno() {
+      local question default answer
+
+      question=$1
+      default=$2
+      while :; do
+	      answer=$(ask "${question}" "${default}")
+	      case "${answer}" in
+		      [Yy]*)	return 0;;
+		      [Nn]*)	return 1;;
+	      esac
+	      echo "Please answer yes or no."
+      done
+}
+
+if [ "$2" = "PRE-INSTALL" ]; then
+      USER=postfix
+      UID=125
+      GROUP=postfix
+      GID=125
+      GROUP2=maildrop
+      GID2=126
+
+      if /usr/sbin/pw groupshow "${GROUP}" 2>/dev/null; then
+	      echo "You already have a group \"${GROUP}\", so I will use it."
+      else
+	      if /usr/sbin/pw groupadd ${GROUP} -g ${GID}; then
+		      echo "Added group \"${GROUP}\"."
+	      else
+		      echo "Adding group \"${GROUP}\" failed..."
+		      echo "Please create it, and try again."
+		      exit 1
+	      fi
+      fi
+
+      if /usr/sbin/pw groupshow "${GROUP2}" 2>/dev/null; then
+	      echo "You already have a group \"${GROUP2}\", so I will use it."
+      else
+	      if /usr/sbin/pw groupadd ${GROUP2} -g ${GID2}; then
+		      echo "Added group \"${GROUP2}\"."
+	      else
+		      echo "Adding group \"${GROUP2}\" failed..."
+		      echo "Please create it, and try again."
+		      exit 1
+	      fi
+      fi
+
+      if /usr/sbin/pw user show "${USER}" 2>/dev/null; then
+	      echo "You already have a user \"${USER}\", so I will use it."
+      else
+	      if /usr/sbin/pw useradd ${USER} -u ${UID} -g ${GROUP} -h - -d /var/spool/postfix -s ${NOLOGIN} -c "Postfix Mail System"; then
+		      echo "Added user \"${USER}\"."
+	      else
+		      echo "Adding user \"${USER}\" failed..."
+		      echo "Please create it, and try again."
+		      exit 1
+	      fi
+      fi
+
+      if /usr/sbin/pw show group mail | grep -q "${USER}" 2>/dev/null; then
+	      echo "You already have user \"${USER}\" in group \"mail\", so I will use it."
+      else
+	      echo "You need user \"${USER}\" added to group \"mail\"."
+	      if yesno "Would you like me to add it" y; then
+		      /usr/sbin/pw groupmod mail -m ${USER} || exit
+		      echo "Done."
+	      else
+		      echo "Please create it, and try again."
+		      exit 1
+	      fi
+      fi
+fi
+
+if [ "$2" = "POST-INSTALL" ]; then
+	SAMPLES="main.cf master.cf" 
+	for file in $SAMPLES
+	do
+		if [ ! -f ${ETCDIR}/$file ]; then
+                	cp ${DAEMONDIR}/$file ${ETCDIR}/
+		fi
+	done
+
+      /bin/sh ${DAEMONDIR}/post-install tempdir=/tmp \
+	daemon_directory=${DAEMONDIR} \
+	html_directory=${READMEDIR} \
+	readme_directory=${READMEDIR} \
+	upgrade-package
+fi
+
+replace() {
+      local orig repl
+
+	orig=$1
+	repl=$2
+	if [ -e ${orig} ]; then
+		/bin/mv -f ${orig} ${orig}.OFF
+		/bin/chmod 0 ${orig}.OFF
+	fi
+	if [ -e ${repl} ]; then
+		/bin/ln -s ${repl} ${orig}
+	fi
+}
+
+if [ "$2" = "POST-INSTALL" -a -z "${PACKAGE_BUILDING}" ]; then
+	if yesno "Would you like to activate Postfix in /etc/mail/mailer.conf" ${DEFAULT_REPLACE_MAILERCONF}; then
+		/bin/mv -f /etc/mail/mailer.conf /etc/mail/mailer.conf.old
+		echo "#"						>	/etc/mail/mailer.conf
+		echo -n "# Execute the Postfix sendmail program"	>>	/etc/mail/mailer.conf
+		echo ", named ${PREFIX}/sbin/sendmail"		>>	/etc/mail/mailer.conf
+		echo "#"						>>	/etc/mail/mailer.conf
+		echo "sendmail	${PREFIX}/sbin/sendmail"	>>	/etc/mail/mailer.conf
+		echo "send-mail	${PREFIX}/sbin/sendmail"	>>	/etc/mail/mailer.conf
+		echo "mailq		${PREFIX}/sbin/sendmail"	>>	/etc/mail/mailer.conf
+		echo "newaliases	${PREFIX}/sbin/sendmail"	>>	/etc/mail/mailer.conf
+	fi
+fi

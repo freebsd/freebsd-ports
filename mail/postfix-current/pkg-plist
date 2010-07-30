@@ -1,28 +1,5 @@
-@unexec if cmp -s %D/etc/postfix/main.cf %D/etc/postfix/dist/main.cf; then rm -f %D/etc/postfix/main.cf; fi
-@unexec if cmp -s %D/etc/postfix/master.cf %D/etc/postfix/dist/master.cf; then rm -f %D/etc/postfix/master.cf; fi
-@unexec if cmp -s %D/etc/postfix/access %D/etc/postfix/dist/access; then rm -f %D/etc/postfix/access; fi
-@unexec if cmp -s %D/etc/postfix/aliases %D/etc/postfix/dist/aliases; then rm -f %D/etc/postfix/aliases; fi
-@unexec if cmp -s %D/etc/postfix/canonical %D/etc/postfix/dist/canonical; then rm -f %D/etc/postfix/canonical; fi
-@unexec if cmp -s %D/etc/postfix/header_checks %D/etc/postfix/dist/header_checks; then rm -f %D/etc/postfix/header_checks; fi
-@unexec if cmp -s %D/etc/postfix/relocated %D/etc/postfix/dist/relocated; then rm -f %D/etc/postfix/relocated; fi
-@unexec if cmp -s %D/etc/postfix/transport %D/etc/postfix/dist/transport; then rm -f %D/etc/postfix/transport; fi
-@unexec if cmp -s %D/etc/postfix/virtual %D/etc/postfix/dist/virtual; then rm -f %D/etc/postfix/virtual; fi
-@unexec if cmp -s %D/etc/postfix/generic %D/etc/postfix/dist/generic; then rm -f %D/etc/postfix/generic; fi
-etc/postfix/LICENSE
-etc/postfix/TLS_LICENSE
-etc/postfix/bounce.cf.default
-etc/postfix/main.cf.default
-etc/postfix/makedefs.out
-etc/postfix/dist/main.cf
-etc/postfix/dist/master.cf
-etc/postfix/dist/access
-etc/postfix/dist/aliases
-etc/postfix/dist/canonical
-etc/postfix/dist/header_checks
-etc/postfix/dist/relocated
-etc/postfix/dist/transport
-etc/postfix/dist/virtual
-etc/postfix/dist/generic
+@unexec if cmp -s %D/libexec/postfix/main.cf %%PFETC%%/main.cf; then rm -f %%PFETC%%/main.cf; fi
+@unexec if cmp -s %D/libexec/postfix/master.cf %%PFETC%%/master.cf; then rm -f %%PFETC%%/master.cf; fi
 libexec/postfix/anvil
 libexec/postfix/bounce
 libexec/postfix/cleanup
@@ -57,6 +34,15 @@ libexec/postfix/trivial-rewrite
 libexec/postfix/verify
 libexec/postfix/virtual
 libexec/postfix/tlsmgr
+@dirrm libexec/postfix
+bin/mailq
+bin/newaliases
+bin/qshape
+bin/rmail
+%%TEST%%bin/qmqp-sink
+%%TEST%%bin/qmqp-source
+%%TEST%%bin/smtp-sink
+%%TEST%%bin/smtp-source
 sbin/postalias
 sbin/postcat
 sbin/postconf
@@ -70,14 +56,6 @@ sbin/postmulti
 sbin/postqueue
 sbin/postsuper
 sbin/sendmail
-%%SUB_TEST%%bin/qmqp-sink
-%%SUB_TEST%%bin/qmqp-source
-%%SUB_TEST%%bin/smtp-sink
-%%SUB_TEST%%bin/smtp-source
-bin/rmail
-bin/qshape
-bin/newaliases
-bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/AAAREADME
 %%PORTDOCS%%%%DOCSDIR%%/ADDRESS_CLASS_README
 %%PORTDOCS%%%%DOCSDIR%%/ADDRESS_CLASS_README.html
@@ -154,7 +132,10 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/SMTPD_POLICY_README.html
 %%PORTDOCS%%%%DOCSDIR%%/SMTPD_PROXY_README
 %%PORTDOCS%%%%DOCSDIR%%/SMTPD_PROXY_README.html
+%%PORTDOCS%%%%DOCSDIR%%/SOHO_README
 %%PORTDOCS%%%%DOCSDIR%%/SOHO_README.html
+%%PORTDOCS%%%%DOCSDIR%%/SQLITE_README
+%%PORTDOCS%%%%DOCSDIR%%/SQLITE_README.html
 %%PORTDOCS%%%%DOCSDIR%%/STANDARD_CONFIGURATION_README
 %%PORTDOCS%%%%DOCSDIR%%/STANDARD_CONFIGURATION_README.html
 %%PORTDOCS%%%%DOCSDIR%%/STRESS_README
@@ -238,6 +219,7 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/smtp.8.html
 %%PORTDOCS%%%%DOCSDIR%%/smtpd.8.html
 %%PORTDOCS%%%%DOCSDIR%%/spawn.8.html
+%%PORTDOCS%%%%DOCSDIR%%/sqlite_table.5.html
 %%PORTDOCS%%%%DOCSDIR%%/tcp_table.5.html
 %%PORTDOCS%%%%DOCSDIR%%/trace.8.html
 %%PORTDOCS%%%%DOCSDIR%%/transport.5.html
@@ -248,6 +230,10 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/tlsmgr.8.html
 %%PORTDOCS%%%%DOCSDIR%%/generic.5.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libexec/postfix
-@dirrm etc/postfix/dist
+%%BASE%%@cwd /
+etc/postfix/LICENSE
+etc/postfix/TLS_LICENSE
+etc/postfix/bounce.cf.default
+etc/postfix/main.cf.default
+etc/postfix/makedefs.out
 @dirrmtry etc/postfix
