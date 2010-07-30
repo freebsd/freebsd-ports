@@ -1,0 +1,26 @@
+--- ./texmath.cabal.orig	2010-07-23 00:04:31.000000000 +0200
++++ ./texmath.cabal	2010-07-29 13:52:06.000000000 +0200
+@@ -63,12 +63,12 @@
+       Build-depends: base >= 3 && < 4
+     Exposed-modules:     Text.TeXMath, Text.TeXMath.Parser, Text.TeXMath.MathMLWriter
+ 
+-    Ghc-Options:         -Wall -fno-warn-unused-do-bind
++    Ghc-Options:         -Wall
+     Ghc-Prof-Options:    -auto-all
+ 
+ Executable testTeXMathML
+     Main-is:             testTeXMathML.hs
+-    Ghc-Options:         -Wall -fno-warn-unused-do-bind
++    Ghc-Options:         -Wall
+     Ghc-Prof-Options:    -auto-all
+     if flag(test)
+       Buildable:         True
+@@ -78,7 +78,7 @@
+ Executable texmath-cgi
+     Main-is:             cgi/texmath-cgi.hs
+     Build-depends:       utf8-string
+-    Ghc-Options:         -Wall -fno-warn-unused-do-bind
++    Ghc-Options:         -Wall
+     Ghc-Prof-Options:    -auto-all
+     if flag(cgi)
+       Buildable:         True

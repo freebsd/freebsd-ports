@@ -1,6 +1,6 @@
 @comment $FreeBSD$
-bin/testTeXMathML
-bin/texmath-cgi
+%%MAYBE_TEST%%bin/testTeXMathML
+%%MAYBE_CGI%%bin/texmath-cgi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/TeXMath.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/TeXMath/MathMLWriter.hi
