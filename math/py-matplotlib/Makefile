@@ -8,6 +8,7 @@
 
 PORTNAME=	matplotlib
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-1.0/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -101,6 +102,8 @@ PLIST_SUB+= WXAGGBACKEND="@comment "
 .include <bsd.port.pre.mk>
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+post-extract:
+	${CHMOD} -R ga+r ${WORKDIR}
 
 # bsd.tcl.mk doesn't set TK_VER, so we use TCL_VER instead
 post-patch:
