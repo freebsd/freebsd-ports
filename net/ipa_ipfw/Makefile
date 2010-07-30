@@ -6,34 +6,30 @@
 #
 
 PORTNAME=	ipa_ipfw
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	net
-MASTER_SITES=	http://ipa-system.sourceforge.net/modules/ipa_ipfw/
+MASTER_SITES=	SF/ipa-system/modules/ipa_ipfw
 
 MAINTAINER=	simon@comsys.ntu-kpi.kiev.ua
 COMMENT=	IPA accounting module for FreeBSD IP Firewall
 
+LICENSE=	BSD
+
 NO_PACKAGE=	Needs to be built uniquely for each host
 
 USE_BZIP2=	yes
+USE_LDCONFIG=	yes
 
-OPTIONS=	PTHREAD "Build pthread safe module" off \
-		DEBUG_INFO "Produce debugging info" off \
-		IPFW2 "Enable IPFW2 support (on FreeBSD < 5.x)" off \
+OPTIONS=	DEBUG_INFO "Produce debugging info" off \
 		MAN_KOI8_R "Install Russian manual pages" off
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_PTHREAD)
-MAKE_ENV+=	WITH_PTHREAD=yes
-CFLAGS+=	${PTHREAD_CFLAGS}
-.endif
 
 .if !defined(WITH_DEBUG_INFO)
 MAKE_ENV+=	DEBUG_FLAGS=""
 .endif
 
-BUILD_DEPENDS+=	${PREFIX}/include/ipa_mod.h:${PORTSDIR}/sysutils/ipa
+BUILD_DEPENDS+=	${LOCALBASE}/include/ipa_mod.h:${PORTSDIR}/sysutils/ipa
 
 PLIST_FILES=	lib/ipa_ipfw.so
 
