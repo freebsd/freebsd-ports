@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	duplicity
-PORTVERSION=	0.6.08b
-PORTREVISION=	1
+PORTVERSION=	0.6.09
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.6-series/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-devel
@@ -27,6 +26,7 @@ CONFLICTS=	duplicity-[0-9]*
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 USE_GETTEXT=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		duplicity.1 rdiffdir.1
 
