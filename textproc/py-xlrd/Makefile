@@ -7,6 +7,7 @@
 
 PORTNAME=	xlrd
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	Reading data and formatting information from Excel files
 
-USE_PYTHON=	2.5-2.6
+USE_PYTHON=	2.4-2.6
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
