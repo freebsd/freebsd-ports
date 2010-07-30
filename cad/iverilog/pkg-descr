@@ -1,5 +1,5 @@
 Icarus Verilog is a Verilog simulation and synthesis tool. It
-operates as a compiler, compiling source code writen in Verilog
+operates as a compiler, compiling source code written in Verilog
 (IEEE-1364) into some target format. For batch simulation, the
 compiler can generate C++ code that is compiled and linked with
 a run time library (called "vvm") then executed as a command to
