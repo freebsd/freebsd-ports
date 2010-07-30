@@ -10,7 +10,7 @@ PORTVERSION=	2.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/${PORTVERSION}/${PORTVERSION}/+download/
 
-MAINTAINER=	jbq@caraldi.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A client for Blogger, Movable Type, and other blogging systems
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/feedparser.py:${PORTSDIR}/textproc/py-feedparser \

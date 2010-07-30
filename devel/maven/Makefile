@@ -12,7 +12,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/binaries
 
-MAINTAINER=	jbq@caraldi.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java project management and project comprehension tool
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper

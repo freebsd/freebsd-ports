@@ -11,7 +11,7 @@ PORTREVISION=	13
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/${PORTNAME}/Drivel%20%28stable%29/${PORTVERSION}
 
-MAINTAINER=	jbq@caraldi.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blog editor for GNOME
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl

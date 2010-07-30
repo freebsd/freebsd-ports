@@ -12,7 +12,7 @@ CATEGORIES=		comms
 MASTER_SITES=		SF
 EXTRACT_SUFX=		.src.tgz
 
-MAINTAINER=		jbq@caraldi.com
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		GUI front end for the efax fax program
 
 LIB_DEPENDS=		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
