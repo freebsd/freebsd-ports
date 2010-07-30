@@ -23,6 +23,8 @@ WANT_FPC_BASE=	yes
 RUN_DEPENDS+=	${LOCALBASE}/share/doc/fpdocs-${PORTVERSION}/user.pdf:${PORTSDIR}/lang/fpc-docs
 .endif
 
+BROKEN=		does not build
+
 NO_BUILD=	yes
 
 do-install:	# empty
