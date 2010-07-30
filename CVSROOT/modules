@@ -12216,6 +12216,7 @@ p5-Goo                          ports/deskutils/p5-Goo
 p5-Goo-Canvas                   ports/devel/p5-Goo-Canvas
 p5-Google-Chart                 ports/graphics/p5-Google-Chart
 p5-Google-Checkout              ports/devel/p5-Google-Checkout
+p5-Google-Code-Upload           ports/www/p5-Google-Code-Upload
 p5-Google-Data-JSON             ports/textproc/p5-Google-Data-JSON
 p5-Google-SAML-Request          ports/net/p5-Google-SAML-Request
 p5-Google-SAML-Response         ports/net/p5-Google-SAML-Response
@@ -13006,6 +13007,7 @@ p5-Net-BitTorrent-PeerPacket    ports/net-p2p/p5-Net-BitTorrent-PeerPacket
 p5-Net-Blogger                  ports/net/p5-Net-Blogger
 p5-Net-CIDR                     ports/net-mgmt/p5-Net-CIDR
 p5-Net-CIDR-Lite                ports/net/p5-Net-CIDR-Lite
+p5-Net-CIDR-MobileJP            ports/net/p5-Net-CIDR-MobileJP
 p5-Net-CSTA                     ports/net/p5-Net-CSTA
 p5-Net-Cassandra                ports/net/p5-Net-Cassandra
 p5-Net-Cassandra-Easy           ports/net/p5-Net-Cassandra-Easy
@@ -16114,6 +16116,7 @@ p5-goo                          ports/deskutils/p5-Goo
 p5-goo-canvas                   ports/devel/p5-Goo-Canvas
 p5-google-chart                 ports/graphics/p5-Google-Chart
 p5-google-checkout              ports/devel/p5-Google-Checkout
+p5-google-code-upload           ports/www/p5-Google-Code-Upload
 p5-google-data-json             ports/textproc/p5-Google-Data-JSON
 p5-google-saml-request          ports/net/p5-Google-SAML-Request
 p5-google-saml-response         ports/net/p5-Google-SAML-Response
@@ -16928,6 +16931,7 @@ p5-net-cassandra                ports/net/p5-Net-Cassandra
 p5-net-cassandra-easy           ports/net/p5-Net-Cassandra-Easy
 p5-net-cidr                     ports/net-mgmt/p5-Net-CIDR
 p5-net-cidr-lite                ports/net/p5-Net-CIDR-Lite
+p5-net-cidr-mobilejp            ports/net/p5-Net-CIDR-MobileJP
 p5-net-csta                     ports/net/p5-Net-CSTA
 p5-net-daap-client              ports/audio/p5-Net-DAAP-Client
 p5-net-daap-dmap                ports/audio/p5-Net-DAAP-DMAP
