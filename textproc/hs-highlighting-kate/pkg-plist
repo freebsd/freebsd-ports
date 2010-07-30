@@ -42,6 +42,7 @@
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Nasm.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Objectivec.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Ocaml.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Octave.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Pascal.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Perl.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Text/Highlighting/Kate/Syntax/Php.hi
