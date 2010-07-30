@@ -1,0 +1,11 @@
+--- ./fastcgi.cabal.orig	2010-06-23 20:23:46.000000000 +0200
++++ ./fastcgi.cabal	2010-07-29 20:31:01.000000000 +0200
+@@ -18,7 +18,7 @@
+   description: Choose the new smaller, split-up base package.
+ 
+ library
+-  build-depends: base >= 4 && < 5, cgi >= 3000.0.0, bytestring >= 0.9.1.5
++  build-depends: base >= 4 && < 5, cgi >= 3000.0.0, bytestring
+   Extensions: ForeignFunctionInterface, EmptyDataDecls, ScopedTypeVariables
+   Exposed-Modules: 
+      Network.FastCGI

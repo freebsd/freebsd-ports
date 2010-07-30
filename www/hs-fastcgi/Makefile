@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fastcgi
-PORTVERSION=	3001.0.2.2
+PORTVERSION=	3001.0.2.3
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
