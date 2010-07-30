@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-5/v${PORTVERSION}/bin
 DISTFILES=	apache-tomcat-${PORTVERSION}.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jgh@experts-exchange.com
 COMMENT=	Open-source Java web server by Apache, 5.5.x branch
 
 USE_JAVA=	yes
