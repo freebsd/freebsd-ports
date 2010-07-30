@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moosefs
-PORTVERSION=	1.6.16
+PORTVERSION=	1.6.17
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/moosefs/moosefs/${PORTVERSION}/
 PKGNAMESUFFIX=	-master
