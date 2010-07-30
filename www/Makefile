@@ -585,9 +585,7 @@
     SUBDIR += nanoblogger
     SUBDIR += nanoblogger-extra
     SUBDIR += nd
-    SUBDIR += neon28
     SUBDIR += neon29
-    SUBDIR += neonpp
     SUBDIR += neowebscript
     SUBDIR += netoffice
     SUBDIR += netrik

@@ -23,7 +23,7 @@ include/neon/ne_utils.h
 include/neon/ne_xml.h
 include/neon/ne_xmlreq.h
 include/neon/ne_pkcs11.h
-lib/libneon.so.29
+lib/libneon.so.27
 lib/libneon.so
 lib/libneon.la
 lib/libneon.a

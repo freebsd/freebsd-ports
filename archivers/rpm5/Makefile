@@ -6,7 +6,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	5.0.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm5.org/files/rpm/rpm-5.0/
 PATCHFILES=	rpm-5.0.3.1.patch
@@ -19,7 +19,7 @@ LIB_DEPENDS=	db-${DB_VERSION:C/(.)/\1./}:${PORTSDIR}/databases/db${DB_VERSION} \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		popt.0:${PORTSDIR}/devel/popt \
 		beecrypt.7:${PORTSDIR}/security/beecrypt \
-		neon.28:${PORTSDIR}/www/neon28 \
+		neon.27:${PORTSDIR}/www/neon29 \
 		magic:${PORTSDIR}/sysutils/file \
 		xar:${PORTSDIR}/archivers/xar \
 		pcre.0:${PORTSDIR}/devel/pcre

@@ -7,7 +7,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	2.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -275,13 +275,7 @@ PLIST_SUB+=	PARANORMALPLUGIN="@comment "
 .endif
 
 .if !defined(WITHOUT_NEON)
-.if exists(${LOCALBASE}/bin/neon-config)
-NEON_VER!=	${LOCALBASE}/bin/neon-config --version | \
-		${SED} -n -E  's/^neon [0-9]+\.([0-9]+)\..*$$/\1/p'
-.else
-NEON_VER=	29
-.endif
-LIB_DEPENDS+=	neon.${NEON_VER}:${PORTSDIR}/www/neon${NEON_VER}
+LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
 CONFIGURE_ARGS+=--enable-neon
 PLIST_SUB+=	NEONPLUGIN=""
 .else
