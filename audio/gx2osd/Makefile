@@ -29,6 +29,10 @@ MAN1=		gx2osd.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not link
+.endif
+
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf --conf-prefix=${LOCALBASE} --with-mandir=${PREFIX}/man --prefix=${PREFIX} configure
 
