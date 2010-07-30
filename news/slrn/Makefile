@@ -23,6 +23,12 @@ LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 USE_GMAKE=	yes
 USE_ICONV=	yes
 
+OPTIONS=	NLS "Native Language Support via gettext utilities" on \
+		SSL "Adds support for SSL (Secure Socket Layer)" on \
+		DEVIEW "Enable uulib for multiple de-/encoding" off
+
+.include <bsd.port.options.mk>
+
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
