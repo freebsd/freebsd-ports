@@ -21,9 +21,11 @@ NOPORTDOCS=	yes
 IGNORE+=	is a documentation-only port, do not install if no documentation needed
 .endif
 
-.if !defined(SLAVE) && !defined(DOCUMENTATION)
+.if !defined(SLAVE) && !defined(DOCUMENTATION) && !defined(STANDALONE)
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+.elif defined(STANDALONE)
+BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 .endif
 
 .if defined(SLAVE)
@@ -161,7 +163,7 @@ PORTDOCS+=	${xmldoc:C/^.*://g}
 .if defined(PORTDATA) && defined(NOPORTDATA)
 __handle_datadir__=	--datadir='' --datasubdir='' --docdir='${DOCSDIR}'
 .else
-__handle_datadir__=
+__handle_datadir__=	--datadir='${DATADIR}' --datasubdir='' --docdir='${DOCSDIR}'
 .endif
 
 MAN1SRC?=	man/man1
@@ -173,12 +175,15 @@ CONFIGURE_ARGS+=	--haddock-options=-w
 
 .SILENT:
 
+.if !target(post-patch)
 post-patch:
 .if defined(XMLDOCS) && defined(USE_AUTOTOOLS)
 	@${REINPLACE_CMD} -e 's|/usr/local/share/xsl/docbook|${LOCALBASE}/share/xsl/docbook|' \
 		${WRKSRC}/doc/configure.ac
 .endif
+.endif # target(post-patch)
 
+.if !target(do-configure)
 do-configure:
 	cd ${WRKSRC} && ${GHC_CMD} --make ${CABAL_SETUP} -o setup -package Cabal
 	cd ${WRKSRC} && ${SETENV} CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" \
@@ -189,7 +194,9 @@ do-configure:
 	cd ${WRKSRC}/doc && ${AUTOCONF} && ./configure --prefix=${PREFIX}
 .endif
 .endif # !NOPORTDOCS
+.endif # target(do-configure)
 
+.if !target(do-build)
 do-build:
 .if !defined(DOCUMENTATION)
 	cd ${WRKSRC} && ${SETUP_CMD} build
@@ -207,7 +214,9 @@ do-build:
 	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} html)
 .endif # XMLDOCS
 .endif # !NOPORTDOCS
+.endif # target(do-build)
 
+.if !target(do-install)
 do-install:
 .if !defined(DOCUMENTATION)
 	cd ${WRKSRC} && ${SETUP_CMD} install
@@ -245,7 +254,9 @@ do-install:
 .endfor
 .endif # XMLDOCS
 .endif
+.endif # target(do-install)
 
+.if !target(post-install)
 post-install:
 .if !defined(SLAVE) && !defined(STANDALONE) && !defined(DOCUMENTATION)
 	${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
@@ -265,3 +276,4 @@ post-install:
 	@${ECHO_MSG} "================================================================="
 	@${ECHO_MSG}
 .endif # SHOW_PKGMSG
+.endif # target(post-install)
