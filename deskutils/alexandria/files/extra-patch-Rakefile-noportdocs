@@ -1,0 +1,24 @@
+--- Rakefile.orig	2010-07-30 13:58:02.000000000 -0400
++++ Rakefile	2010-07-30 13:58:21.000000000 -0400
+@@ -119,12 +119,6 @@
+ packageinstall = FileInstallTask.new(:package) do |j|
+   install_common(j)
+ 
+-  docs = ['README', 'NEWS', 'INSTALL', 'TODO']
+-  devel_docs = ['doc/AUTHORS', 'doc/BUGS', 'doc/FAQ', 
+-                'doc/cuecat_support.rdoc']
+-  j.install('', docs, "#{SHARE}/doc/#{PROJECT}") 
+-  j.install('doc', devel_docs, "#{SHARE}/doc/#{PROJECT}")
+-
+   j.uninstall_empty_dirs(["#{SHARE}/**/#{PROJECT}/",
+                           "#{j.rubylib}/#{PROJECT}/"
+                          ])
+@@ -308,7 +302,7 @@
+                           "TODO", "alexandria.desktop",
+                           "alexandria.desktop.in",
+                           "bin/**/*", "data/**/*", "misc/**/*",
+-                          "doc/**/*", "lib/**/*", "po/**/*",
++                          "lib/**/*", "po/**/*",
+                           "schemas/**/*", "spec/**/*", "tests/**/*")
+ end
+ 
