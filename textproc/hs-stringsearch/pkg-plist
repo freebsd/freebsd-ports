@@ -1,11 +1,26 @@
 @comment $FreeBSD$
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search/BoyerMoore.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search/DFA.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search/KarpRabin.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search/KMP.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search/KnuthMorrisPratt.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search/Substitution.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Lazy/Search.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Lazy/Search/DFA.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Lazy/Search/KarpRabin.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Lazy/Search/KMP.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search/Internal/BoyerMoore.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search/Internal/KnuthMorrisPratt.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search/Internal/Utils.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
 %%LIBDIR_REL%%/register.sh
-%%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
+%%NOPORTDOCS%%%%DOCSDIR%%/LICENCE
 %%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Lazy/Search
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Lazy
+@dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search/Internal
 @dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString/Search
 @dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data/ByteString
 @dirrm %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Data

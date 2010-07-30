@@ -5,12 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	stringsearch
-PORTVERSION=	0.2.1.1
-PORTREVISION=	4
+PORTVERSION=	0.3.0
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Boyer-Moore/Knuth-Morris-Pratt string search library
+
+CABAL_SETUP=	Setup.hs
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
