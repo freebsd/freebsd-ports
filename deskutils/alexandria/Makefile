@@ -34,7 +34,16 @@ MAN1=		alexandria.1
 
 OPTIONS=	IMAGESIZE "Cover images optimization" off
 
-DOCS=		NEWS README TODO
+.if !defined(NOPORTDOCS)
+PORTDOCS=	README NEWS INSTALL TODO AUTHORS BUGS FAQ \
+		cuecat_support.rdoc
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Rakefile-fixpaths
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Rakefile-fixpaths \
+		${FILESDIR}/extra-patch-Rakefile-noportdocs
+PORTDOCS=
+.endif
+
 GCONF_SCHEMAS=	alexandria.schemas
 
 RUBY_REQUIRE=	Ruby > 180
@@ -55,26 +64,13 @@ RUN_DEPENDS+=${RUBY_SITELIBDIR}/image_size.rb:${PORTSDIR}/graphics/ruby-image_si
 .endif
 
 pre-build:
-	${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|' \
+	@${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|' \
 		${USR2FIX:S|^|${WRKSRC}/|}
-.if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e \
-		's/default_groups.push(\*documentation_installation)//' \
-		${WRKSRC}/tasks.rb
-.endif
 
 do-build:
 	@cd ${WRKSRC} && rake PREFIX=${PREFIX} build
 
 do-install:
 	@cd ${WRKSRC} && rake PREFIX=${PREFIX} install
-
-post-install:
-#.if !defined(NOPORTDOCS)
-#	@${MKDIR} ${RUBY_MODDOCDIR}
-#.for f in ${DOCS}
-#	@${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-#.endfor
-#.endif
 
 .include <bsd.port.post.mk>

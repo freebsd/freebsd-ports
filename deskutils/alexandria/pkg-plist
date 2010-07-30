@@ -103,15 +103,6 @@ bin/alexandria
 %%DATADIR%%/web-themes/list/list.css
 %%DATADIR%%/web-themes/list/preview.jpg
 share/applications/alexandria.desktop
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/cuecat_support.rdoc
 share/gnome/help/alexandria/C/about.xml
 share/gnome/help/alexandria/C/adding-books.xml
 share/gnome/help/alexandria/C/alexandria.xml
@@ -216,7 +207,6 @@ share/pixmaps/alexandria.xpm
 share/sounds/alexandria/bad_scan.wav
 share/sounds/alexandria/good_scan.wav
 share/sounds/alexandria/scanning.wav
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/sounds/alexandria
 @dirrm share/omf/alexandria
 @dirrmtry share/icons/hicolor/scalable/apps
