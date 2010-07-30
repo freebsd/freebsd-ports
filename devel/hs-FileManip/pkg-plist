@@ -1,9 +1,10 @@
 @comment $FreeBSD$
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/FilePath/Error.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/FilePath/Find.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/FilePath/Glob.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/FilePath/GlobPattern.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/FilePath/Manip.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
 %%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
