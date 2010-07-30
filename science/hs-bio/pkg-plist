@@ -2,6 +2,7 @@
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/AAlign.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/ACE.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/AlignData.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/BED.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/Blast.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/BlastData.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/BlastFlat.hi
@@ -10,6 +11,7 @@
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/Matrices.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/Multiple.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/QAlign.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/PSL.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/SAlign.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Alignment/Soap.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Clustering.hi
@@ -27,6 +29,7 @@
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/SeqLocation.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Location/Strand.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/AminoProperties.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/Entropy.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/FastQ.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/Fasta.hi
@@ -36,6 +39,7 @@
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/KEGG.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/Phd.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/SFF.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/SFF_filters.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/SFF_name.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/SeqData.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/Bio/Sequence/TwoBit.hi

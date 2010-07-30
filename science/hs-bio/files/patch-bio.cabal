@@ -1,0 +1,11 @@
+--- ./bio.cabal.orig	2010-07-20 16:19:58.000000000 +0200
++++ ./bio.cabal	2010-07-29 13:06:19.000000000 +0200
+@@ -26,7 +26,7 @@
+ 
+ Tested-With:         GHC==6.12.1
+ Build-Type:          Simple
+-Build-Depends:       base>=4 && <5, QuickCheck>=2, binary >=0.4 && <0.5, tagsoup>=0.4 && <0.8, bytestring >= 0.9.1,
++Build-Depends:       base>=4 && <5, QuickCheck>=2, binary, tagsoup>=0.4, bytestring >= 0.9.1,
+                      containers, array, parallel, parsec, random, old-time, mtl
+ 
+ Data-Files:          README
