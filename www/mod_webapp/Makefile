@@ -20,6 +20,8 @@ COMMENT=	Apache module mounts Tomcat web applications
 
 LIB_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/apr1:configure
 
+BROKEN=		does not build
+
 MAKE_JOBS_UNSAFE=	yes
 
 USE_APACHE=	1.3
