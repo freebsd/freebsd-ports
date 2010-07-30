@@ -6,12 +6,12 @@ Odamex can run on a wide range of operating systems and hardware, so players
 should be able to play on almost any platform. Features:
 
 * The popular ZDoom 1.22 core engine and CSDoom 0.62 core netcode.
-* Compatability with many major operating systems, including Windows, Linux,
+* Compatibility with many major operating systems, including Windows, Linux,
   FreeBSD and Mac OSX.
 * Core gameplay modeled on the original doom2.exe.
 * Streamlined WAD loading, allowing the server and clients to load WAD files
   on the fly without needing to restart the client or server.
-* Compatability with Boom, MBF and CTF Standard maps.
+* Compatibility with Boom, MBF and CTF Standard maps.
 * Deathmatch, Cooperative, Team Deathmatch and CTF gametypes.
 * Jumping, Mouselook and other non-standard features available as server-side
   options.

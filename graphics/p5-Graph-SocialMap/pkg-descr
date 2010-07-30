@@ -19,7 +19,7 @@ Defines 4 issues which have common people involves in, the relation
 'WorkWith' involves Marry and Rose, and the relation 'ChatWith' involves 
 Marry and Peacock. By this 2 relations, we say that Marry is directly 
 connected to Rose and Peacock, and Rose and Peacock are connected to each 
-other indirectly, with degree of seperation 1. Likewise, Marry and Joan 
-are connected to each other with degree of seperation 2.
+other indirectly, with degree of separation 1. Likewise, Marry and Joan 
+are connected to each other with degree of separation 2.
 
 WWW: http://search.cpan.org/dist/Graph-SocialMap
