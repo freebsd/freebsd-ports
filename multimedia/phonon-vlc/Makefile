@@ -17,7 +17,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The VLC backend for Phonon
 
-LIB_DEPENDS=	vlc.5:${PORTSDIR}/multimedia/vlc
+LIB_DEPENDS=	vlc.6:${PORTSDIR}/multimedia/vlc
 
 USE_CMAKE=	yes
 USE_KDE4=	kdehier automoc4 kdeprefix
