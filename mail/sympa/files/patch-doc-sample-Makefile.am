@@ -1,0 +1,11 @@
+--- doc/sample/Makefile.am	2009-07-28 12:13:00.000000000 +0000
++++ doc/sample/Makefile.am-bkp	2010-07-29 07:04:25.000000000 +0000
+@@ -19,7 +19,7 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ 
+-sampledir = $(docdir)/sample
++sampledir = /usr/local/share/examples/sympa
+ nobase_sample_DATA = README \
+ 		     trusted_applications.conf robot.conf employees.ldap \
+ 		     test/config test/info test/message.footer test/web_tt2/welcome.tt2

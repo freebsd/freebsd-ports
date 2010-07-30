@@ -1,0 +1,74 @@
+--- src/etc/script/sympa.in.bak	2010-07-25 11:53:14.000000000 +0100
++++ src/etc/script/sympa.in	2010-07-25 11:58:18.000000000 +0100
+@@ -59,6 +59,8 @@
+ sympaconf="--CONFIG--"
+ wwsympaconf="--WWSCONFIG--"
+ 
++lockdir="--LOCKDIR--"
++
+ ##'echo -n' not supported with SH on Solaris
+ if [ ${OSTYPE} = "SunOS" ]; then
+   echo_opt=""
+@@ -66,6 +68,10 @@
+   echo_opt="-n"
+ fi
+ 
++if [ ${OSTYPE} = "FreeBSD" ]; then
++	lockdir="/var/spool/lock"
++fi
++
+ # End of parameters
+ 
+ # Current state of the module
+@@ -85,7 +91,7 @@
+        if [ -f --piddir--/$1.pid ] ; then
+              pid=`head -1 --piddir--/$1.pid`
+              if [ "$pid" != "" ] ; then
+-                 running=`ps -A | grep "$pid"`
++                 running=`ps -ax | grep perl | grep "$pid"`
+                  if [ "$running" != "" ]; then
+                      echo "$1 (pid $pid) is active..."
+                      return 0
+@@ -155,7 +161,7 @@
+ 	if [ -f --piddir--/$1.pid ]; then
+ 		echo $echo_opt "Stopping module $1.pl: "
+ 		pid=`head -1 --piddir--/$1.pid`
+-		running=`ps -A | grep "$pid"`
++		running=`ps -ax | grep perl | grep "$pid"`
+ 		if [ $1 = 'bulk' ]; then
+ 		    if [ ${use_functions} ]; then
+ 			kill -TERM $pid && success || failure
+@@ -197,14 +203,14 @@
+ # See how we were called.
+ case "$1" in
+   start)
+-	if [ ! -f --lockdir--/sympa ]; then
++	if [ ! -f $lockdir/sympa ]; then
+ 		echo "Starting Sympa subsystem: "
+ 		sympa_start sympa
+ 		sympa_start bulk
+ 		sympa_start archived
+ 		sympa_start bounced
+ 		sympa_start task_manager
+-		touch --lockdir--/sympa
++		touch $lockdir/sympa
+ 		echo
+ 	else
+ 
+@@ -226,13 +232,13 @@
+ 		sympa_stop sympa-creation
+ 	fi
+ 	sympa_stop task_manager
+-	if [ -f --lockdir--/sympa ]; then
+-		rm -f --lockdir--/sympa
++	if [ -f $lockdir/sympa ]; then
++		rm -f $lockdir/sympa
+ 	fi
+ 	;;
+   status)
+ 	echo "Status of Sympa subsystem: "
+-	if [ -f --lockdir--/sympa ]; then
++	if [ -f $lockdir/sympa ]; then
+ 		echo "Status file for subsystem found."
+ 	else
+ 		echo "Status file for subsystem NOT found."
