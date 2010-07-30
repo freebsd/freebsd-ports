@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	TypeCompose
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
