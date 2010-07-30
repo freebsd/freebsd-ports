@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	statistics
-PORTVERSION=	0.5.1.0
+PORTVERSION=	0.6.0.2
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library of statistical types, data, and functions
 
-USE_HACKAGE=	erf mwc-random>=0.5.0.0 primitive vector>=0.5 vector-algorithms>=0.3
+USE_HACKAGE=	erf mwc-random>=0.7.0.0 primitive>=0.3 vector>=0.6.0.2 vector-algorithms>=0.3.2
 
 PORTDATA=		*
 INSTALL_PORTDATA=	${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}
