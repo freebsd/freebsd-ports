@@ -6,17 +6,13 @@
 #
 
 PORTNAME=	fgl
-PORTVERSION=	5.4.2.2
+PORTVERSION=	5.4.2.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Martin Erwig Functional Graph Library
 
 CABAL_SETUP=	Setup.hs
-
-PORTDATA=		*
-INSTALL_PORTDATA=	${INSTALL_DATA} ${WRKSRC}/doc/CHANGES ${DATADIR} \
-			  && ${INSTALL_DATA} ${WRKSRC}/doc/README ${DATADIR}
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
