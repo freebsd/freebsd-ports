@@ -1,5 +1,4 @@
 bin/runxlrd.py
-lib/%%PYTHON_VERSION%%/site-packages/xlrd-0.7.1-py2.6.egg-info
 lib/%%PYTHON_VERSION%%/site-packages/xlrd/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/xlrd/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/xlrd/__init__.pyo
@@ -36,5 +35,3 @@ lib/%%PYTHON_VERSION%%/site-packages/xlrd/xldate.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/xlrd/examples
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/xlrd/doc
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/xlrd
-@dirrm lib/%%PYTHON_VERSION%%/site-packages
-@dirrm lib/%%PYTHON_VERSION%%
