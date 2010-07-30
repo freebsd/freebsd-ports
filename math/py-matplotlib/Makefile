@@ -103,7 +103,7 @@ PLIST_SUB+= WXAGGBACKEND="@comment "
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 post-extract:
-	${CHMOD} -R ga+r ${WORKDIR}
+	${CHMOD} -R ga+r ${WRKDIR}
 
 # bsd.tcl.mk doesn't set TK_VER, so we use TCL_VER instead
 post-patch:
