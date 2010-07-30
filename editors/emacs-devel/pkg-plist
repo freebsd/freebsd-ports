@@ -3902,8 +3902,6 @@ share/icons/hicolor/scalable/mimetypes/emacs-document.svg
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc/charsets
 @dirrm %%DATADIR%%/%%EMACS_VER%%/etc
 @dirrm %%DATADIR%%/%%EMACS_VER%%
-@dirrmtry %%DATADIR%%/site-lisp
-@dirrmtry %%DATADIR%%
 @dirrm libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%
 @dirrm libexec/emacs/%%EMACS_VER%%
 @dirrm libexec/emacs
