@@ -14,8 +14,6 @@ MASTER_SITES=	http://ctpp.havoc.ru/download/
 MAINTAINER=	reki@reki.ru
 COMMENT=	C++ library to use templates in C/C++ projects, version 2
 
-BROKEN=		leaves files behind on deinstallation
-
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
