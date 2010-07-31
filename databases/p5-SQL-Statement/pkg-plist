@@ -13,6 +13,7 @@
 %%SITE_PERL%%/SQL/Statement/Operation.pm
 %%SITE_PERL%%/SQL/Statement/Placeholder.pm
 %%SITE_PERL%%/SQL/Statement/RAM.pm
+%%SITE_PERL%%/SQL/Statement/Roadmap.pod
 %%SITE_PERL%%/SQL/Statement/Structure.pod
 %%SITE_PERL%%/SQL/Statement/Syntax.pod
 %%SITE_PERL%%/SQL/Statement/Term.pm

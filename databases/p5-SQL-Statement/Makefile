@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SQL-Statement
-PORTVERSION=	1.27
+PORTVERSION=	1.28
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +15,7 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	A perl5 module for SQL parsing and processing
 
 RUN_DEPENDS=	p5-Clone>=0.30:${PORTSDIR}/devel/p5-Clone \
+		p5-DBI>=1.612:${PORTSDIR}/databases/p5-DBI \
 		p5-Params-Util>=1.00:${PORTSDIR}/devel/p5-Params-Util
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
@@ -34,6 +35,7 @@ MAN3=		SQL::Dialects::ANSI.3 \
 		SQL::Statement::Operation.3 \
 		SQL::Statement::Placeholder.3 \
 		SQL::Statement::RAM.3 \
+		SQL::Statement::Roadmap.3 \
 		SQL::Statement::Structure.3 \
 		SQL::Statement::Syntax.3 \
 		SQL::Statement::Term.3 \
