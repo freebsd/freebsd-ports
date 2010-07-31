@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://mirror.cs.wisc.edu/pub/mirrors/ghost/contrib/
 
-MAINTAINER=	ob@breuninger.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PostScript to Text converter
 
 USE_GHOSTSCRIPT_RUN=	yes

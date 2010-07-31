@@ -11,7 +11,7 @@ MASTER_SITES=	http://family.zawodny.com/~jzawodn/c/discid/	\
 		http://www.breuninger.org/files/distfiles/
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 
-MAINTAINER=	ob@breuninger.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Identify audio cd in your drive
 
 PLIST_FILES=	bin/discid
