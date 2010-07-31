@@ -79,6 +79,7 @@
     SUBDIR += font-ipa-uigothic
     SUBDIR += font-ipaex
     SUBDIR += font-kochi
+    SUBDIR += font-migmix
     SUBDIR += font-mona-ipa
     SUBDIR += font-mplus
     SUBDIR += font-mplus-ipa
