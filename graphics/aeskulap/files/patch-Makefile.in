@@ -1,0 +1,29 @@
+--- Makefile.in.orig	2010-07-26 18:25:22.000000000 +0000
++++ Makefile.in	2010-07-26 18:25:37.000000000 +0000
+@@ -237,7 +237,6 @@
+ target_alias = @target_alias@
+ SUBDIRS = \
+ 	po \
+-	dcmtk \
+ 	configuration \
+ 	imagepool \
+ 	widgets \
+@@ -709,18 +708,7 @@
+ 
+ @INTLTOOL_DESKTOP_RULE@
+ 
+-dist-hook:
+-	mkdir -p $(distdir)/dcmtk
+-	cp -Rf $(top_srcdir)/dcmtk/* $(distdir)/dcmtk
+-	cd $(distdir)/dcmtk && make distclean
+-	list=`find $(distdir)/dcmtk -name "CVS"` && rm -Rf $$list
+-	list=`find $(distdir)/dcmtk -name ".cvsignore"` && rm -f $$list
+-	list=`find $(distdir)/dcmtk -name ".#*"` && rm -f $$list
+-	list=`find $(distdir)/dcmtk -name "*.a"` && rm -f $$list
+-	list=`find $(distdir)/dcmtk -name "*.so"` && rm -f $$list
+-
+ distclean: distclean-recursive
+-	cd $(top_builddir)/dcmtk && make distclean
+ 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
+ 	-rm -f Makefile
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
