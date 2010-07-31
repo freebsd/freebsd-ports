@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unix-1.2/${PORTNAME}-unix-${PORTVERSION
 DISTNAME=	${PORTNAME}-unix-${PORTVERSION}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	sahil@tandon.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard netcat enhanced with twofish encryption
 
 WRKSRC=		${WRKDIR}/unix
