@@ -18,7 +18,7 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	mitsuru@riken.jp
 COMMENT=	A database design tool for the Eclipse development environment
 
-RUN_DEPENDS+=	${LOCALBASE}/eclipse/features/org.eclipse.gef_3.3.2.v20080129/feature.xml:${PORTSDIR}/java/eclipse-gef
+RUN_DEPENDS+=	${LOCALBASE}/lib/eclipse/features/org.eclipse.gef_3.3.2.v20080129/feature.xml:${PORTSDIR}/java/eclipse-gef
 
 RESTRICTED=	License agreement is required to download.
 
@@ -37,8 +37,8 @@ IGNORE='You must manually fetch the tarball from http://www.azzurri.jp/en/clay/d
 .endif
 
 do-install:
-		@${MKDIR} ${PREFIX}/eclipse
-		@${CP} -r ${WRKSRC}/plugins ${PREFIX}/eclipse
-		@${CP} -r ${WRKSRC}/features ${PREFIX}/eclipse
+		@${MKDIR} ${PREFIX}/lib/eclipse
+		@${CP} -r ${WRKSRC}/plugins ${PREFIX}/lib/eclipse
+		@${CP} -r ${WRKSRC}/features ${PREFIX}/lib/eclipse
 
 .include <bsd.port.post.mk>
