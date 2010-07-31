@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rtmpdump
-PORTVERSION=	2.2d
+PORTVERSION=	2.3
 CATEGORIES=	multimedia net
 MASTER_SITES=	http://rtmpdump.mplayerhq.hu/download/
 EXTRACT_SUFX=	.tgz
@@ -13,13 +13,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A tool to download RTMP streams
 
-USE_GMAKE=	yes
-ALL_TARGET=	posix
-
 MAN1=		rtmpdump.1
+MAN3=		librtmp.3
 MAN8=		rtmpgw.8
 
-PLIST_FILES=	bin/rtmpdump bin/rtmpgw bin/rtmpsrv bin/rtmpsuck
+USE_GNOME=	pkgconfig
+USE_LDCONFIG=	yes
+MAKE_ENV=	CFLAGS="${PTHREAD_CFLAGS}" THREADLIB="${PTHREAD_LIBS}"
 PORTDOCS=	ChangeLog README
 
 .include <bsd.port.pre.mk>
@@ -27,12 +27,6 @@ PORTDOCS=	ChangeLog README
 .if ${OSVERSION} < 700000
 BROKEN=		does not compile on 6.X
 .endif
-
-do-install:
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PLIST_FILES:S,^bin/,,} \
-		${PREFIX}/bin \
-		&& ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1 \
-		&& ${INSTALL_MAN} ${MAN8} ${MAN1PREFIX}/man/man8
 
 post-install:
 .if !defined(NOPORTDOCS)
