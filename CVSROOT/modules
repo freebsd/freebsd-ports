@@ -13366,6 +13366,7 @@ p5-PPI-HTML                     ports/textproc/p5-PPI-HTML
 p5-PPI-XS                       ports/textproc/p5-PPI-XS
 p5-PPIx-EditorTools             ports/textproc/p5-PPIx-EditorTools
 p5-PPIx-Regexp                  ports/textproc/p5-PPIx-Regexp
+p5-PPIx-Utilities               ports/textproc/p5-PPIx-Utilities
 p5-PPerl                        ports/devel/p5-PPerl
 p5-PSGI                         ports/www/p5-PSGI
 p5-PV                           ports/devel/p5-PV
@@ -17445,6 +17446,7 @@ p5-ppi-html                     ports/textproc/p5-PPI-HTML
 p5-ppi-xs                       ports/textproc/p5-PPI-XS
 p5-ppix-editortools             ports/textproc/p5-PPIx-EditorTools
 p5-ppix-regexp                  ports/textproc/p5-PPIx-Regexp
+p5-ppix-utilities               ports/textproc/p5-PPIx-Utilities
 p5-pquery                       ports/www/p5-pQuery
 p5-prefork                      ports/devel/p5-prefork
 p5-prima                        ports/x11-toolkits/p5-Prima
