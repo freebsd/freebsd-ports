@@ -1,32 +1,32 @@
-eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/azzurri_logo.gif
-eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/feature.properties
-eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/feature.xml
-eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/feature_ja.properties
-eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/license.html
-eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/license_en.html
-eclipse/plugins/jp.azzurri.clay.core.ui_%%RELEASEVERSION%%.jar
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/META-INF/MANIFEST.MF
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/about.html
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/about.ini
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/about.mappings
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/about.properties
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/about_en.html
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/azzurri.cer
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/azzurri_clay_core.jar
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/clayFeature.jpg
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/license.html
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/license_en.html
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/en/about.properties
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/en/welcome.xml
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/ja/about.properties
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/ja/welcome.xml
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/plugin.xml
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/schema/databaseModelValidators.exsd
-eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/schema/sqlDialectLists.exsd
-@dirrm eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/META-INF
-@dirrm eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/en
-@dirrm eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/ja
-@dirrm eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl
-@dirrm eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/schema
-@dirrm eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%
-@dirrm eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%
+lib/eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/azzurri_logo.gif
+lib/eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/feature.properties
+lib/eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/feature.xml
+lib/eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/feature_ja.properties
+lib/eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/license.html
+lib/eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%/license_en.html
+lib/eclipse/plugins/jp.azzurri.clay.core.ui_%%RELEASEVERSION%%.jar
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/META-INF/MANIFEST.MF
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/about.html
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/about.ini
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/about.mappings
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/about.properties
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/about_en.html
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/azzurri.cer
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/azzurri_clay_core.jar
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/clayFeature.jpg
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/license.html
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/license_en.html
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/en/about.properties
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/en/welcome.xml
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/ja/about.properties
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/ja/welcome.xml
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/plugin.xml
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/schema/databaseModelValidators.exsd
+lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/schema/sqlDialectLists.exsd
+@dirrm lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/META-INF
+@dirrm lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/en
+@dirrm lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl/ja
+@dirrm lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/nl
+@dirrm lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%/schema
+@dirrm lib/eclipse/plugins/jp.azzurri.clay.core_%%RELEASEVERSION%%
+@dirrm lib/eclipse/features/jp.azzurri.clay.core_%%RELEASEVERSION%%
