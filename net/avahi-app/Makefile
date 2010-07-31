@@ -8,7 +8,7 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.27
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 PKGNAMESUFFIX?=	-app
@@ -160,6 +160,8 @@ avahi-post-install:
 			${PREFIX}/etc/avahi; \
 	fi
 .endfor
+	${INSTALL_DATA} ${FILESDIR}/org.freedesktop.Avahi.service \
+	    	${LOCALBASE}/share/dbus-1/system-services
 .if !defined(PACKAGE_BUILDING) && (${AVAHI_SLAVE}=="no" || ${AVAHI_SLAVE}=="autoipd")
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
