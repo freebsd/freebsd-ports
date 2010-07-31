@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-freebsd
 MAINTAINER=	tech@wooztalk.com
 COMMENT=	Meet your World Wide Web neighbors with VLC
 
+DEPRECATED=		wooztalk website not responding as of 20100731
+EXPIRATION_DATE=	2010-08-31
+
 RUN_DEPENDS=	vlc:${PORTSDIR}/multimedia/vlc
 
 USE_LDCONFIG=	yes
