@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100731:
+  AFFECTS: users of devel/ccache
+  AUTHOR: ehaupt@FreeBSD.org
+
+  Users upgrading from 2.4 release should clear the old cache directory with:
+ 
+        # ccache --clear
+
 20100730:
   AFFECTS: users of www/neon28 and www/neon29
   AUTHOR: mezz@FreeBSD.org
