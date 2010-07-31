@@ -25,6 +25,8 @@ PLIST_FILES=	bin/httping
 
 .if(${OSVERSION} >= 701101)
 CFLAGS+=	-D_GNU_SOURCE
+.else
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-mssl.c
 .endif
 
 do-install:
