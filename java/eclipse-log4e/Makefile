@@ -25,13 +25,13 @@ NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
 do-install:
-		@${MKDIR} -p ${PREFIX}/eclipse
-		@${CP} -r ${WRKSRC}/plugins ${PREFIX}/eclipse
-		@${CP} -r ${WRKSRC}/features ${PREFIX}/eclipse
+		@${MKDIR} -p ${PREFIX}/lib/eclipse
+		@${CP} -r ${WRKSRC}/plugins ${PREFIX}/lib/eclipse
+		@${CP} -r ${WRKSRC}/features ${PREFIX}/lib/eclipse
 		@(cd ${WRKSRC}; ${FIND} -s features plugins -not -type d) \
-			| ${SED} -ne 's,^,eclipse/,p' >> ${TMPPLIST}
+			| ${SED} -ne 's,^,lib/eclipse/,p' >> ${TMPPLIST}
 		@(cd ${WRKSRC}; ${FIND} -s -d features plugins -type d) \
 			| ${GREP} -vE 'plugins$$|features$$' \
-			| ${SED} -ne 's,^,@dirrm eclipse/,p' >> ${TMPPLIST}
+			| ${SED} -ne 's,^,@dirrm lib/eclipse/,p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
