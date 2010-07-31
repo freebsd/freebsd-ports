@@ -18,7 +18,7 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	C/C++ IDE for Eclipse
 
-RUN_DEPENDS=	${LOCALBASE}/eclipse:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 PATCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 BROKEN=		bad dependency object for java/eclipse
@@ -37,8 +37,8 @@ ECLIPSE_OS=	freebsd
 ECLIPSE_ARCH=	amd64
 .else
 ECLIPSE_ARCH=	x86
-PLIST_FILES+=	eclipse/plugins/org.eclipse.cdt.core.freebsd.x86_${PORTVERSION_TS}/os/freebsd/x86/libpty.so \
-		eclipse/plugins/org.eclipse.cdt.core.freebsd.x86_${PORTVERSION_TS}/os/freebsd/x86/libspawner.so
+PLIST_FILES+=	lib/eclipse/plugins/org.eclipse.cdt.core.freebsd.x86_${PORTVERSION_TS}/os/freebsd/x86/libpty.so \
+		lib/eclipse/plugins/org.eclipse.cdt.core.freebsd.x86_${PORTVERSION_TS}/os/freebsd/x86/libspawner.so
 .endif
 
 SCRIPTS_ENV=	PORTVERSION_TS=${PORTVERSION_TS} UNZIP_CMD=${UNZIP_CMD}
@@ -77,7 +77,7 @@ CDT_JARS=	eclipse/plugins/org.eclipse.cdt.core_${PORTVERSION_TS}.jar \
 		eclipse/plugins/org.eclipse.cdt.ui_${PORTVERSION_TS}.jar \
 		eclipse/plugins/org.eclipse.cdt_${PORTVERSION_TS}.jar
 
-PLIST_FILES=	${CDT_JARS}
+PLIST_FILES=	${CDT_JARS:S/^eclipse/lib\/eclipse/}
 
 do-build:
 		@${FIND} ${WRKSRC} -name \*.orig -delete
@@ -93,17 +93,17 @@ pre-install:
 .endif
 
 do-install:
-		@${MKDIR} ${PREFIX}/eclipse
-		@${MKDIR} ${PREFIX}/eclipse/features
-		@${MKDIR} ${PREFIX}/eclipse/plugins
-		cd ${WRKSRC} && ${INSTALL_DATA} ${CDT_JARS} ${PREFIX}/eclipse/plugins
+		@${MKDIR} ${PREFIX}/lib/eclipse
+		@${MKDIR} ${PREFIX}/lib/eclipse/features
+		@${MKDIR} ${PREFIX}/lib/eclipse/plugins
+		cd ${WRKSRC} && ${INSTALL_DATA} ${CDT_JARS} ${PREFIX}/lib/eclipse/plugins
 		cd ${WRKSRC} && ${FIND} ${CDT_DIRS} \
-			-type f -not -name '*.o' -print0 | ${XARGS} -0 ${TAR} -cf - | ( cd ${PREFIX} && ${TAR} -xf - )
+			-type f -not -name '*.o' -print0 | ${XARGS} -0 ${TAR} -cf - | ( cd ${PREFIX}/lib && ${TAR} -xf - )
 
 post-install:
 		cd ${WRKSRC} && ${FIND} -d ${CDT_DIRS} \
-			-type f -not -name '*.o' -print >> ${TMPPLIST}
+			-type f -not -name '*.o' -print | ${SED} -e 's,^eclipse,lib/eclipse,' >> ${TMPPLIST}
 		cd ${WRKSRC} && ${FIND} -d ${CDT_DIRS} \
-			-type d -not -name '*.o' -print0 | ${XARGS} -0 printf '@dirrm %s\n' >> ${TMPPLIST}
+			-type d -not -name '*.o' -print0 | ${XARGS} -0 printf '@dirrm lib/%s\n' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
