@@ -1,27 +1,27 @@
 # New ports collection makefile for:	ccache
 # Date created:				31/03/2002
-# Whom:			Dominic Marks <d.marks@student.umist.ac.uk>
+# Whom:					Dominic Marks <d.marks@student.umist.ac.uk>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	ccache
-PORTVERSION=	2.4
-PORTREVISION=	9
+PORTVERSION=	3.0.1
 CATEGORIES=	devel
-MASTER_SITES=	http://samba.org/ftp/ccache/
+MASTER_SITES=	http://samba.org/ftp/ccache/ CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A tool to minimize the compile time of C/C++ programs
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 
 MAN1=		ccache.1
 PLIST_FILES=	bin/ccache
 
-PORTDOCS=	index.html \
-		ccache-man.html \
-		${HOWTO}
+PORTDOCS=	*
 
 .if !defined(WITHOUT_COMPILER_LINKS)
 HOWTO=		ccache-howto-freebsd.txt
@@ -34,9 +34,9 @@ SUB_FILES=	${HOWTO} pkg-message
 
 .if !defined(WITHOUT_COMPILER_LINKS)
 .if ${ARCH}=="i386"
-CCACHE_COMPILERS+=      icc icpc
+CCACHE_COMPILERS+=	icc icpc
 .endif
-GNU_COMPILERS+=		34 42 43 44 -ooo
+GNU_COMPILERS+=		34 42 43 44 45 46
 CCACHE_COMPILERS+=	cc c++ gcc g++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
 .if defined(EXTRA_COMPILERS)
 CCACHE_COMPILERS+=	${EXTRA_COMPILERS}
@@ -78,9 +78,7 @@ do-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS:S/${HOWTO}//}
-	${INSTALL_DATA} ${WRKSRC}/web/${i} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/manual.html ${DOCSDIR}
 .if !defined(WITHOUT_COMPILER_LINKS)
 	${INSTALL_DATA} ${WRKDIR}/${HOWTO} ${DOCSDIR}
 .endif
