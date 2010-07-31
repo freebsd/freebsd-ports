@@ -1,0 +1,39 @@
+@comment $FreeBSD$
+%%DATADIR%%/MigMix-1M-Bold.ttf
+%%DATADIR%%/MigMix-1M-Regular.ttf
+%%DATADIR%%/MigMix-1P-Bold.ttf
+%%DATADIR%%/MigMix-1P-Regular.ttf
+%%DATADIR%%/MigMix-2M-Bold.ttf
+%%DATADIR%%/MigMix-2M-Regular.ttf
+%%DATADIR%%/MigMix-2P-Bold.ttf
+%%DATADIR%%/MigMix-2P-Regular.ttf
+@dirrm %%DATADIR%%
+%%LOCAL_FONTSDIR%%/TTF/MigMix-1M-Bold.ttf
+%%LOCAL_FONTSDIR%%/TTF/MigMix-1M-Regular.ttf
+%%LOCAL_FONTSDIR%%/TTF/MigMix-1P-Bold.ttf
+%%LOCAL_FONTSDIR%%/TTF/MigMix-1P-Regular.ttf
+%%LOCAL_FONTSDIR%%/TTF/MigMix-2M-Bold.ttf
+%%LOCAL_FONTSDIR%%/TTF/MigMix-2M-Regular.ttf
+%%LOCAL_FONTSDIR%%/TTF/MigMix-2P-Bold.ttf
+%%LOCAL_FONTSDIR%%/TTF/MigMix-2P-Regular.ttf
+@dirrmtry %%LOCAL_FONTSDIR%%/TTF
+@dirrmtry %%LOCAL_FONTSDIR%%
+etc/fonts/conf.avail/20-unhint-migmix.conf
+etc/fonts/conf.avail/62-fonts-migmix.conf
+@exec ln -s -f ../conf.avail/20-unhint-migmix.conf %D/etc/fonts/conf.d/20-unhint-migmix.conf
+@exec ln -s -f ../conf.avail/62-fonts-migmix.conf %D/etc/fonts/conf.d/62-fonts-migmix.conf
+@unexec rm -f %D/etc/fonts/conf.d/20-unhint-migmix.conf
+@unexec rm -f %D/etc/fonts/conf.d/62-fonts-migmix.conf
+%%X_FONTSDIR%%/TTF/MigMix-1M-Bold.ttf
+%%X_FONTSDIR%%/TTF/MigMix-1M-Regular.ttf
+%%X_FONTSDIR%%/TTF/MigMix-1P-Bold.ttf
+%%X_FONTSDIR%%/TTF/MigMix-1P-Regular.ttf
+%%X_FONTSDIR%%/TTF/MigMix-2M-Bold.ttf
+%%X_FONTSDIR%%/TTF/MigMix-2M-Regular.ttf
+%%X_FONTSDIR%%/TTF/MigMix-2P-Bold.ttf
+%%X_FONTSDIR%%/TTF/MigMix-2P-Regular.ttf
+@exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
+@unexec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
+@unexec rm -f %D/%%X_FONTSDIR%%/TTF/fonts.cache-1
+@dirrmtry %%X_FONTSDIR%%/TTF
+@unexec if [ -d %D/%%X_FONTSDIR%%/TTF ]; then %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true; fi
