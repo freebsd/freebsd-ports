@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}
 NO_BUILD=	yes
 USE_ZIP=	yes
 
-ECLIPSE=	${PREFIX}/eclipse
+ECLIPSE=	${PREFIX}/lib/eclipse
 SUBCLIPSE=	org.tigris.subversion.subclipse
 SUBCLIPSEFILES=	features/${SUBCLIPSE}_${PORTVERSION} \
 		features/${SUBCLIPSE}.graph.feature_1.0.7 \
