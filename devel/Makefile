@@ -511,6 +511,7 @@
     SUBDIR += google-gdata
     SUBDIR += google-perftools
     SUBDIR += google-sparsehash
+    SUBDIR += google-styleguide
     SUBDIR += googlemock
     SUBDIR += googletest
     SUBDIR += gorm
