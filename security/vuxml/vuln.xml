@@ -74,7 +74,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>apache</name>
-	<range><lt>2.2.16</lt></range>
+	<range><ge>2.2.0</ge><lt>2.2.16</lt></range>
       </package>
     </affects>
     <description>
