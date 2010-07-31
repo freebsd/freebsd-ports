@@ -25,11 +25,11 @@ NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
 do-install:
-		@${MKDIR} -p ${PREFIX}/eclipse
-		@${CP} -r ${WRKSRC}/com.sysdeo.eclipse.tomcat_${PORTVERSION} ${PREFIX}/eclipse/plugins
+		@${MKDIR} -p ${PREFIX}/lib/eclipse
+		@${CP} -r ${WRKSRC}/com.sysdeo.eclipse.tomcat_${PORTVERSION} ${PREFIX}/lib/eclipse/plugins
 		@(cd ${WRKSRC}; ${FIND} -s com.sysdeo.eclipse.tomcat_${PORTVERSION} -not -type d) \
-			| ${SED} -ne 's,^,eclipse/plugins/,p' >> ${TMPPLIST}
+			| ${SED} -ne 's,^,lib/eclipse/plugins/,p' >> ${TMPPLIST}
 		@(cd ${WRKSRC}; ${FIND} -s -d com.sysdeo.eclipse.tomcat_${PORTVERSION} -type d) \
-			| ${SED} -ne 's,^,@dirrm eclipse/plugins/,p' >> ${TMPPLIST}
+			| ${SED} -ne 's,^,@dirrm lib/eclipse/plugins/,p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
