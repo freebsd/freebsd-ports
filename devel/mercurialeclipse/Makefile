@@ -25,7 +25,7 @@ PLIST_SUB=	VER=${PORTVERSION}
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-ECLIPSE=	${PREFIX}/eclipse
+ECLIPSE=	${PREFIX}/lib/eclipse
 PLUGINS=	plugins
 
 do-install:
