@@ -38,7 +38,7 @@ DESKTOP_ENTRIES=	"SFBOL" "Star Fleet Battles Online" \
 
 LICENSE=	EULA
 LICENSE_NAME=	End User License Agreement
-LICENSE_PERMS=	no-dist-mirror
+LICENSE_PERMS=	no-dist-mirror auto-accept
 LICENSE_FILE=	${WRKDIR}/license.txt
 
 FUDGE=		Users/paulfranz/sfbonline/SFBOL-Install/dist/core.jar
