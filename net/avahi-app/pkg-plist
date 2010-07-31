@@ -115,6 +115,7 @@ share/dbus-1/interfaces/org.freedesktop.Avahi.Server.xml
 share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceBrowser.xml
 share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceResolver.xml
 share/dbus-1/interfaces/org.freedesktop.Avahi.ServiceTypeBrowser.xml
+share/dbus-1/system-services/org.freedesktop.Avahi.service
 share/gir-1.0/Avahi-0.6.gir
 share/gir-1.0/AvahiCore-0.6.gir
 share/locale/bg/LC_MESSAGES/avahi.mo
