@@ -23,7 +23,7 @@ USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${EPIC}
 
 EPIC=		org.epic.updatesite
-ECLIPSE=	${PREFIX}/eclipse
+ECLIPSE=	${PREFIX}/lib/eclipse
 EPICFILES=	features/org.epic.feature.main_${PORTVERSION} \
 		plugins/org.epic.debug_0.6.27 \
 		plugins/org.epic.doc_0.6.2 \
