@@ -19,19 +19,19 @@ MAINTAINER=	sugimura@jp.FreeBSD.ORG
 COMMENT=	A visual database query tool for Eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.3.2.v20080129/feature.xml:${PORTSDIR}/java/eclipse-gef
+		${LOCALBASE}/lib/eclipse/features/org.eclipse.gef_3.3.2.v20080129/feature.xml:${PORTSDIR}/java/eclipse-gef
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
 do-install:
-		@${MKDIR} -p ${PREFIX}/eclipse
-		@${CP} -r ${WRKSRC}/plugins ${PREFIX}/eclipse
+		@${MKDIR} -p ${PREFIX}/lib/eclipse
+		@${CP} -r ${WRKSRC}/plugins ${PREFIX}/lib/eclipse
 		@(cd ${WRKSRC}; ${FIND} -s plugins -not -type d) \
-			| ${SED} -ne 's,^,eclipse/,p' >> ${TMPPLIST}
+			| ${SED} -ne 's,^,lib/eclipse/,p' >> ${TMPPLIST}
 		@(cd ${WRKSRC}; ${FIND} -s -d plugins -type d) \
 			| ${GREP} -vE '^plugins$$' \
-			| ${SED} -ne 's,^,@dirrm eclipse/,p' >> ${TMPPLIST}
+			| ${SED} -ne 's,^,@dirrm lib/eclipse/,p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
