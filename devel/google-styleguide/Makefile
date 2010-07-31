@@ -1,0 +1,38 @@
+# New ports collection makefile for:	google-styleguide
+# Date created:				2010-07-28
+# Whom:					Yen-Ming Lee <leeym@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	google-styleguide
+PORTVERSION=	52
+CATEGORIES=	devel
+MASTER_SITES=	http://google-styleguide.googlecode.com/svn/trunk/cpplint/
+DISTFILES=	cpplint.py cpplint_unittest.py README
+
+MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	A tool to assist with Google style guide compliance
+
+USE_PYTHON?=	yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+
+PLIST_FILES=	bin/cpplint.py
+PORTDOCS=	README
+
+do-extract:
+	@${MKDIR} ${WRKSRC}
+	@cd ${DISTDIR} && ${CP} ${DISTFILES} ${WRKSRC}
+
+post-patch:
+	@${REINPLACE_CMD} -Ee "s,#!.*,#!${PYTHON_CMD}," ${WRKSRC}/*.py
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/cpplint.py ${PREFIX}/bin
+.ifndef NOPORTDOCS
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
+
+.include <bsd.port.mk>
