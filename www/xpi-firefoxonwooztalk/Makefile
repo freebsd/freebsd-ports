@@ -15,6 +15,9 @@ DISTNAME=	firefoxonwooztalk-freebsd
 MAINTAINER=	tech@wooztalk.com
 COMMENT=	Meet your World Wide Web neighbors with Firefox
 
+DEPRECATED=		wooztalk website not responding as of 20100731
+EXPIRATION_DATE=	2010-08-31
+
 XPI_ID=		firefoxonwooztalk@wooztalk.com
 XPI_FILES=	chrome.manifest install.rdf \
 		content/contents.rdf content/firefoxOverlay.xul	content/overlay.js \

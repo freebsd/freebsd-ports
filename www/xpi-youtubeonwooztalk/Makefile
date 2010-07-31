@@ -14,6 +14,9 @@ DISTNAME=	youtubeonwooztalk-freebsd
 MAINTAINER=	tech@wooztalk.com
 COMMENT=	Meet your World Wide Web neighbors on Youtube
 
+DEPRECATED=		wooztalk website not responding as of 20100731
+EXPIRATION_DATE=	2010-08-31
+
 XPI_ID=		youtubeonwooztalk@wooztalk.com
 XPI_FILES=	chrome.manifest install.rdf chrome/content/youtube.png \
 		chrome/content/overlay.xul chrome/content/overlay.js \

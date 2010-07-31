@@ -14,6 +14,9 @@ DISTNAME=	jiwaonwooztalk-freebsd
 MAINTAINER=	tech@wooztalk.com
 COMMENT=	Meet your World Wide Web neighbors on Jiwa
 
+DEPRECATED=		wooztalk website not responding as of 20100731
+EXPIRATION_DATE=	2010-08-31
+
 XPI_ID=		jiwaonwooztalk@wooztalk.com
 XPI_FILES=	chrome.manifest install.rdf chrome/content/jiwa.png \
 		chrome/content/overlay.xul chrome/content/overlay.js \

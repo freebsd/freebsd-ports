@@ -14,6 +14,9 @@ DISTNAME=	googlevideoonwooztalk-freebsd
 MAINTAINER=	tech@wooztalk.com
 COMMENT=	Meet your World Wide Web neighbors on Google Video
 
+DEPRECATED=		wooztalk website not responding as of 20100731
+EXPIRATION_DATE=	2010-08-31
+
 XPI_ID=		googlevideoonwooztalk@wooztalk.com
 XPI_FILES=	chrome.manifest install.rdf chrome/content/googlevideo.png \
 		chrome/content/overlay.xul chrome/content/overlay.js \

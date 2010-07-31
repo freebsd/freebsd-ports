@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION}-freebsd
 MAINTAINER=	tech@wooztalk.com
 COMMENT=	Meet your World Wide Web neighbors
 
+DEPRECATED=		wooztalk website not responding as of 20100731
+EXPIRATION_DATE=	2010-08-31
+
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
     		boost_serialization.4:${PORTSDIR}/devel/boost-libs \
     		boost_regex.4:${PORTSDIR}/devel/boost-libs \
