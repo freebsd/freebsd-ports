@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.breuninger.org/files/distfiles/
 MASTER_SITE_SUBDIR=	X11/xutils
 
-MAINTAINER=	ob@breuninger.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xcmd is a front-end for starting programs under X11
 
 USE_IMAKE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	SF/ooc/ooc2/${PORTVERSION}
 DISTNAME=	${PORTNAME}_32-${PORTVERSION}
 
-MAINTAINER=	ob@breuninger.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optimizing Oberon-2 compiler of University of Kaiserslautern, Germany
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
