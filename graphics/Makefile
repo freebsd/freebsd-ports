@@ -20,6 +20,7 @@
     SUBDIR += aalib
     SUBDIR += aaphoto
     SUBDIR += acidwarp
+    SUBDIR += aeskulap
     SUBDIR += agave
     SUBDIR += agg
     SUBDIR += albumshaper
