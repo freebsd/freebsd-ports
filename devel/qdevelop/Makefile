@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qdevelop
-PORTVERSION=	0.27.4
-PORTREVISION=	1
+PORTVERSION=	0.28
 CATEGORIES=	devel kde
-MASTER_SITES=	http://qdevelop.org/public/release/
+MASTER_SITES=	http://biord-software.org/downloads/
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A development environment entirely dedicated to Qt4
@@ -20,8 +20,13 @@ RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
 USE_QT_VER=	4
 QT_COMPONENTS=	gui sql network xml designer \
 		qmake_build moc_build uic_build rcc_build
-USE_CMAKE=	yes
-CMAKE_USE_PTHREAD=	yes
+MAKE_JOBS_SAFE=	yes
+
+QMAKE_ARGS=	-unix -recursive ${QMAKE_PRO}
+QMAKE_PRO=	QDevelop.pro
+STRIP_FILES=	bin/${PORTNAME}
+
+QT_LRELEASE=	${LOCALBASE}/bin/lrelease-qt4
 
 DESKTOP_ENTRIES=	"QDevelop" \
 			"Qt4 development environment" \
@@ -34,6 +39,7 @@ OPTIONS=	TOOLS "Install Qt4 dev. tools (qmake, moc, etc.)" on
 
 .include <bsd.port.pre.mk>
 .if !defined(WITHOUT_NLS)
+QT_COMPONENTS+=	linguist_build
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
@@ -54,18 +60,30 @@ post-patch:
 		-e "s|\"/usr/bin/make\"|\"${LOCALBASE}/bin/gmake\"|g" \
 		-e "s|\"/usr/bin/ctags\"|\"${LOCALBASE}/bin/exctags\"|g" \
 		${WRKSRC}/src/toolscontrolimpl.cpp
+	${REINPLACE_CMD} -e "/target.path/s|/usr/bin/|${PREFIX}/bin|g" \
+		${WRKSRC}/${QMAKE_PRO}
+	${REINPLACE_CMD} -e "s,lib/qdevelop/translations,${DATADIR_REL}/translations,g" \
+		${WRKSRC}/src/main.cpp \
+		${WRKSRC}/plugins/tools-regexp-planner/replugin.cpp \
+		${WRKSRC}/plugins/formatting-astyle/astyleplugin.cpp
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/qdevelop ${PREFIX}/bin/
-	@${INSTALL_DATA} ${WRKSRC}/resources/images/logo.png ${PREFIX}/share/pixmaps/qdevelop.png
+do-configure:
 .if !defined(WITHOUT_NLS)
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/resources/translations/ && ${COPYTREE_SHARE} '*.qm' ${DATADIR}/translations)
+	cd ${WRKSRC} && ${QT_LRELEASE} ${QMAKE_PRO}
+.endif
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS}
+
+post-install:
+	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
+	${INSTALL_DATA} ${WRKSRC}/resources/images/logo.png ${PREFIX}/share/pixmaps/qdevelop.png
+.if !defined(WITHOUT_NLS)
+	${MKDIR} ${DATADIR}
+	cd ${WRKSRC}/resources/translations/ && ${COPYTREE_SHARE} '*.qm' ${DATADIR}/translations
 .endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
 .for doc in ChangeLog.txt README.txt
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
