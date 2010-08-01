@@ -8,6 +8,7 @@
 
 PORTNAME=	wine
 DISTVERSION=	1.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -28,7 +29,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} --verbose --disable-tests \
 		--without-capi --without-gphoto \
 		--without-gsm --without-mpg123 --without-openal \
-		--without-sane --without-xcursor
+		--without-sane
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		FLEX="${LOCALBASE}/bin/flex"
@@ -42,7 +43,7 @@ USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		glu
-USE_XORG=	xpm xrender
+USE_XORG=	xcursor xpm xrender
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
