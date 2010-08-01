@@ -1,0 +1,8 @@
+Rabbit is an RD-document-based presentation application.
+Rabbit has some features which set it apart from other presentation tools:
+ * Use plain Ruby to define the look of your slides
+ * Lots of keyboard commands
+ * Mouse gesture support
+ * and more...
+
+WWW:	http://www.cozmixng.org/~rwiki/?cmd=view;name=Rabbit%3A%3AREADME.en
