@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.8-20100707
+DISTVERSION=	2.8-20100728
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -171,8 +171,8 @@ _REQUIRE+=		postgresql
 
 .if defined(WITH_SQLITE)
 USE_SQLITE=		yes
-POSTFIX_CCARGS+= 	-DHAS_SQLITE -I${LOCALBASE}/include
-POSTFIX_AUXLIBS+= 	-L${LOCALBASE}/lib -lsqlite3
+POSTFIX_CCARGS+=	-DHAS_SQLITE -I${LOCALBASE}/include
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsqlite3
 .endif
 
 .if defined(WITH_OPENLDAP)
@@ -210,7 +210,7 @@ PLIST_SUB+=	TEST="@comment "
 .endif
 
 .if defined(WITH_INST_BASE)
-PKGNAMESUFFIX=	-base
+PKGNAMESUFFIX+=	-base
 PREFIX=		/usr
 ETCDIR=		/etc/postfix
 USE_RCORDER=	postfix.sh
