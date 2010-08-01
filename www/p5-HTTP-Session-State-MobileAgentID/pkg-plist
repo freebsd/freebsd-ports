@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Session/State/MobileAgentID/.packlist
+%%SITE_PERL%%/HTTP/Session/State/MobileAgentID.pm
+@dirrmtry %%SITE_PERL%%/HTTP/Session/State
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Session/State/MobileAgentID
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Session/State
