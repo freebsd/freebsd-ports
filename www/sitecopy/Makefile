@@ -14,17 +14,26 @@ MASTER_SITES=	http://www.manyfish.co.uk/${PORTNAME}/ \
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	Maintains remote websites, uses FTP or WebDAV to sync up with local copy
+COMMENT=	Maintains remote websites, uses FTP or WebDAV to sync up w/ local copy
 
 LIB_DEPENDS=	neon.27:${PORTSDIR}/www/neon29
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl"
+		LIBS="${LIBS}"
+LIBS=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-neon --with-libxml2
-USE_GETTEXT=	yes
 USE_GNOME=	libxml2
 USE_GMAKE=	yes
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+LIBS+=		-lintl
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 .ifndef WITHOUT_SSL
 USE_OPENSSL=	yes
