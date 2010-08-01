@@ -15,6 +15,7 @@
 %%SITE_PERL%%/CHI/Driver/Role/IsSizeAware.pm
 %%SITE_PERL%%/CHI/Driver/Role/IsSubcache.pm
 %%SITE_PERL%%/CHI/Driver/Role/Universal.pm
+%%SITE_PERL%%/CHI/Serializer/JSON.pm
 %%SITE_PERL%%/CHI/Serializer/Storable.pm
 %%SITE_PERL%%/CHI/Stats.pm
 %%SITE_PERL%%/CHI/Test.pm
@@ -35,12 +36,12 @@
 %%SITE_PERL%%/CHI/t/Driver/File/DepthZero.pm
 %%SITE_PERL%%/CHI/t/Driver/Memory.pm
 %%SITE_PERL%%/CHI/t/Driver/NonMoose.pm
-%%SITE_PERL%%/CHI/t/Driver/Null.pm
 %%SITE_PERL%%/CHI/t/Driver/Subcache.pm
 %%SITE_PERL%%/CHI/t/Driver/Subcache/l1_cache.pm
 %%SITE_PERL%%/CHI/t/Driver/Subcache/mirror_cache.pm
 %%SITE_PERL%%/CHI/t/GetError.pm
 %%SITE_PERL%%/CHI/t/Initialize.pm
+%%SITE_PERL%%/CHI/t/Null.pm
 %%SITE_PERL%%/CHI/t/RequiredModules.pm
 %%SITE_PERL%%/CHI/t/Sanity.pm
 %%SITE_PERL%%/CHI/t/SetError.pm
