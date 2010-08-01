@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-AMF
-PORTVERSION=	0.04
+PORTVERSION=	0.07
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	Perl extension to serialize, deserialize AMF data
 
 RUN_DEPENDS=	\
 	p5-DateTime>0:${PORTSDIR}/devel/p5-DateTime \
-	p5-Moose>0:${PORTSDIR}/devel/p5-Moose \
+	p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
 	p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 BUILD_DEPENDS=	${RUN_DEPENDS}
