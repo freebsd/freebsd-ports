@@ -3,3 +3,4 @@ lib/libmspack.a
 lib/libmspack.la
 lib/libmspack.so
 lib/libmspack.so.1
+lib/pkgconfig/libmspack.pc

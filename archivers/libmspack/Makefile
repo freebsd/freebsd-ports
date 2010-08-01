@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmspack
-PORTVERSION=	0.0.20060920
+PORTVERSION=	0.2
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cabextract.org.uk/libmspack/
 DISTNAME=	${PORTNAME}-${PORTVERSION}alpha
