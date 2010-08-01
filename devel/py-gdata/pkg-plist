@@ -133,6 +133,9 @@
 %%PYTHON_SITELIBDIR%%/gdata/analytics/service.py
 %%PYTHON_SITELIBDIR%%/gdata/analytics/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/analytics/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps_property.py
+%%PYTHON_SITELIBDIR%%/gdata/apps_property.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps_property.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.pyo
@@ -145,6 +148,12 @@
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/client.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/client.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/client.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/data.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/data.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/service.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/service.pyo
@@ -160,6 +169,12 @@
 %%PYTHON_SITELIBDIR%%/gdata/apps/migration/service.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/migration/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/migration/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/organization/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/organization/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/organization/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/organization/service.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/organization/service.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/organization/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/service.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/service.pyo
@@ -599,6 +614,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/books
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/blogger
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/base
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/organization
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/migration
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/groups
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings
