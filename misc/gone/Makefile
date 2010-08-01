@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gone
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.6
 CATEGORIES=	misc
-MASTER_SITES=	http://jaguar.ir.miami.edu/~marcus/
+MASTER_SITES=	http://www.marcuscom.com/downloads/gone/
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A terminal locking utility with many improvements over lock(1)
@@ -16,6 +16,10 @@ COMMENT=	A terminal locking utility with many improvements over lock(1)
 MAN1=		gone.1
 PLIST_FILES=	bin/gone
 GNU_CONFIGURE=	yes
+
+OPTIONS=	SETUID "Install gone setuid root for password support" OFF
+
+.include <bsd.port.pre.mk>
 
 #
 # If you would like to be able to use system passwords for gone
@@ -28,4 +32,4 @@ CONFIGURE_ENV=	with_setuid=yes
 CONFIGURE_ENV=	with_setuid=no
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
