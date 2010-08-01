@@ -392,6 +392,7 @@
     SUBDIR += jtopen
     SUBDIR += jx
     SUBDIR += k3b
+    SUBDIR += k3b-kde4
     SUBDIR += k8temp
     SUBDIR += kcpuload
     SUBDIR += kcube
