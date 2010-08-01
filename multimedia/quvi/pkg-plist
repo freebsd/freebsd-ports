@@ -1,8 +1,40 @@
+@comment $FreeBSD$
 bin/quvi
 include/quvi/quvi.h
-@dirrm include/quvi
 lib/libquvi.a
 lib/libquvi.la
 lib/libquvi.so
 lib/libquvi.so.%%SHLIB_VER%%
 libdata/pkgconfig/libquvi.pc
+%%PORTDOCS%%%%DOCSDIR%%/HowtoContributeCode
+%%PORTDOCS%%%%DOCSDIR%%/HowtoGetDevelopmentCode
+%%PORTDOCS%%%%DOCSDIR%%/HowtoHelp
+%%PORTDOCS%%%%DOCSDIR%%/HowtoSubmitPatches
+%%DATADIR%%/lua/README
+%%DATADIR%%/lua/util/charset.lua
+%%DATADIR%%/lua/util/content_type.lua
+%%DATADIR%%/lua/website/README
+%%DATADIR%%/lua/website/break.lua
+%%DATADIR%%/lua/website/buzzhumor.lua
+%%DATADIR%%/lua/website/cctv.lua
+%%DATADIR%%/lua/website/clipfish.lua
+%%DATADIR%%/lua/website/dailymotion.lua
+%%DATADIR%%/lua/website/evisor.lua
+%%DATADIR%%/lua/website/funnyhub.lua
+%%DATADIR%%/lua/website/golem.lua
+%%DATADIR%%/lua/website/google.lua
+%%DATADIR%%/lua/website/liveleak.lua
+%%DATADIR%%/lua/website/myubo.lua
+%%DATADIR%%/lua/website/sevenload.lua
+%%DATADIR%%/lua/website/spiegel.lua
+%%DATADIR%%/lua/website/vimeo.lua
+%%DATADIR%%/lua/website/youtube.lua
+%%SMUT%%%%DATADIR%%/lua/website/tube8.lua
+%%SMUT%%%%DATADIR%%/lua/website/xvideos.lua
+%%SMUT%%%%DATADIR%%/lua/website/youjizz.lua
+@dirrm %%DATADIR%%/lua/website
+@dirrm %%DATADIR%%/lua/util
+@dirrm %%DATADIR%%/lua
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/quvi

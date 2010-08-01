@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quvi
-PORTVERSION=	0.1.4
+PORTVERSION=	0.2.1
 CATEGORIES=	multimedia devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -16,33 +16,42 @@ COMMENT=	Query video library for Youtube like websites
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		pcre.0:${PORTSDIR}/devel/pcre
 
-USE_LDCONFIG=	yes
-SHLIB_VER=	1
+LICENSE=	GPLv3
 
-MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
-PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
+CONFIGURE_ARGS=	--enable-broken --enable-examples
+CONFIGURE_ENV=	CPPFLAGS='${CPPFLAGS} -I${WRKSRC}/include \
+		-I${LOCALBASE}/include'
+GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+USE_GNOME=	gnomehack pkgconfig
+USE_ICONV=	yes
+USE_LDCONFIG=	yes
+USE_LUA=	yes
 
 MAN1=		quvi.1
-
-USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig
-USE_ICONV=	yes
-
-CONFIGURE_ENV+=	CPPFLAGS='${CPPFLAGS} -I${WRKSRC}/include \
-		-I${LOCALBASE}/include'
+PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
 OPTIONS=	SMUT "Enable adult website support" off
+
+SHLIB_VER=	2
+
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=--without-doc
+.endif
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SMUT)
 CONFIGURE_ARGS+=--enable-smut
+PLIST_SUB+=	SMUT=""
+.else
+PLIST_SUB+=	SMUT="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E -e \
-		's|\$$\(libdir\)/pkgconfig|\$$\(prefix\)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e '/install-data-am:/ s| install-docDATA||' \
+		${WRKSRC}/doc/Makefile.in
+.endif
 
 .include <bsd.port.post.mk>
