@@ -86,6 +86,7 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/tal.properties
 %%DATADIR%%/tcl.properties
 %%DATADIR%%/tex.properties
+%%DATADIR%%/txt2tags.properties
 %%DATADIR%%/vb.properties
 %%DATADIR%%/verilog.properties
 %%DATADIR%%/vhdl.properties
