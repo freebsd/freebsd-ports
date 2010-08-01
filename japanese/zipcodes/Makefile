@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zipcodes
-PORTVERSION=	20100630
+PORTVERSION=	20100730
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
@@ -31,7 +31,7 @@ PORTVERSION_J?=	${PORTVERSION}
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
 
-# for maintainance.
+# for maintenance.
 fetch1:
 	fetch http://www.post.japanpost.jp/zipcode/dl/kogaki/lzh/ken_all.lzh
 	fetch http://www.post.japanpost.jp/zipcode/dl/jigyosyo/lzh/jigyosyo.lzh
@@ -42,8 +42,5 @@ fetch2:
 	${MV} ken_all.lzh `date -r $${m} +ken_all-%Y%m%d.lzh`
 	m=`stat -f %m jigyosyo.lzh`; \
 	${MV} jigyosyo.lzh `date -r $${m} +jigyosyo-%Y%m%d.lzh`
-
-scp:
-	scp -4 *.lzh localdist:public_distfiles
 
 .include <bsd.port.mk>
