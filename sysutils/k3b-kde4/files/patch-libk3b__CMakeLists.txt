@@ -1,0 +1,16 @@
+--- ./libk3b/CMakeLists.txt.orig	2009-04-21 21:54:02.000000000 +0400
++++ ./libk3b/CMakeLists.txt	2010-01-30 03:22:10.208943627 +0300
+@@ -230,12 +230,8 @@
+   ${KCDDB_LIBRARIES}
+   ${SAMPLERATE_LIBRARIES}
+   k3bdevice
++  ${CMAKE_DL_LIBS}
+ )
+-if(NOT WIN32)
+-	target_link_libraries(k3b dl)
+-else(NOT WIN32)
+-	target_link_libraries(k3b uuid ole32)
+-endif(NOT WIN32)
+   
+ if(ENABLE_DVD_RIPPING)
+   target_link_libraries(k3b ${DVDREAD_LIBRARIES})

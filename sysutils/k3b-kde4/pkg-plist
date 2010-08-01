@@ -10,8 +10,8 @@ include/k3baudiodecoder.h
 include/k3baudiodoc.h
 include/k3baudioencoder.h
 include/k3baudiofile.h
+include/k3baudiofileanalyzerjob.h
 include/k3baudiojob.h
-include/k3baudiooutputplugin.h
 include/k3baudiotrack.h
 include/k3baudiozerodata.h
 include/k3bbinimagewritingjob.h
@@ -20,7 +20,6 @@ include/k3bbootitem.h
 include/k3bbusywidget.h
 include/k3bcdcopyjob.h
 include/k3bcddb.h
-include/k3bcddbresult.h
 include/k3bcdparanoialib.h
 include/k3bcdrdaowriter.h
 include/k3bcdrecordwriter.h
@@ -30,11 +29,9 @@ include/k3bchecksumpipe.h
 include/k3bclonejob.h
 include/k3bcore.h
 include/k3bcuefileparser.h
-include/k3bcutcombobox.h
 include/k3bdatadoc.h
 include/k3bdataitem.h
 include/k3bdatajob.h
-include/k3bdebug.h
 include/k3bdefaultexternalprograms.h
 include/k3bdevice.h
 include/k3bdevice_export.h
@@ -49,9 +46,7 @@ include/k3bdirsizejob.h
 include/k3bdiskinfo.h
 include/k3bdoc.h
 include/k3bdvdcopyjob.h
-include/k3bdvddoc.h
 include/k3bdvdformattingjob.h
-include/k3bdvdjob.h
 include/k3bexceptions.h
 include/k3bexternalbinmanager.h
 include/k3bfileitem.h
@@ -73,40 +68,35 @@ include/k3bjobhandler.h
 include/k3blistview.h
 include/k3blistviewitemanimator.h
 include/k3bmd5job.h
+include/k3bmediacache.h
+include/k3bmedium.h
+include/k3bmetawriter.h
 include/k3bmixeddoc.h
 include/k3bmixedjob.h
 include/k3bmovixdoc.h
-include/k3bmovixdvddoc.h
-include/k3bmovixdvdjob.h
 include/k3bmovixfileitem.h
 include/k3bmovixjob.h
 include/k3bmsf.h
 include/k3bmsfedit.h
 include/k3bmultichoicedialog.h
-include/k3bpipe.h
 include/k3bplugin.h
 include/k3bpluginconfigwidget.h
-include/k3bpluginfactory.h
 include/k3bpluginmanager.h
 include/k3bprocess.h
 include/k3bprogressdialog.h
 include/k3bprojectplugin.h
 include/k3bpushbutton.h
-include/k3bradioaction.h
+include/k3brawaudiodatasource.h
 include/k3brichtextlabel.h
 include/k3bsignalwaiter.h
 include/k3bsimplejobhandler.h
 include/k3bstdguiitems.h
 include/k3bstringutils.h
-include/k3btempfile.h
-include/k3bthread.h
 include/k3bthreadjob.h
 include/k3bthreadwidget.h
 include/k3bthroughputestimator.h
 include/k3btoc.h
 include/k3btocfilewriter.h
-include/k3btoolbox.h
-include/k3btoolbutton.h
 include/k3btrack.h
 include/k3bvalidators.h
 include/k3bvcddoc.h
@@ -122,165 +112,118 @@ include/k3bvideodvdjob.h
 %%LIBDVDREAD%%include/k3bvideodvdsubpicturestream.h
 %%LIBDVDREAD%%include/k3bvideodvdtime.h
 %%LIBDVDREAD%%include/k3bvideodvdtitle.h
-%%LIBDVDREAD%%include/k3bvideodvdtitledetectclippingjob.h
-%%LIBDVDREAD%%include/k3bvideodvdtitletranscodingjob.h
+include/k3bvideodvdtitledetectclippingjob.h
+include/k3bvideodvdtitletranscodingjob.h
 %%LIBDVDREAD%%include/k3bvideodvdvideostream.h
 include/k3bwavefilewriter.h
-include/kcutlabel.h
-lib/kde3/kfile_k3b.a
-lib/kde3/kfile_k3b.la
-lib/kde3/kfile_k3b.so
-lib/kde3/kio_videodvd.a
-lib/kde3/kio_videodvd.la
-lib/kde3/kio_videodvd.so
-lib/kde3/libk3bartsoutputplugin.a
-lib/kde3/libk3bartsoutputplugin.la
-lib/kde3/libk3bartsoutputplugin.so
-lib/kde3/libk3baudiometainforenamerplugin.a
-lib/kde3/libk3baudiometainforenamerplugin.la
-lib/kde3/libk3baudiometainforenamerplugin.so
-lib/kde3/libk3baudioprojectcddbplugin.a
-lib/kde3/libk3baudioprojectcddbplugin.la
-lib/kde3/libk3baudioprojectcddbplugin.so
-lib/kde3/libk3bexternalencoder.a
-lib/kde3/libk3bexternalencoder.la
-lib/kde3/libk3bexternalencoder.so
-%%FFMPEG%%lib/kde3/libk3bffmpegdecoder.a
-%%FFMPEG%%lib/kde3/libk3bffmpegdecoder.la
-%%FFMPEG%%lib/kde3/libk3bffmpegdecoder.so
-%%FLAC%%lib/kde3/libk3bflacdecoder.a
-%%FLAC%%lib/kde3/libk3bflacdecoder.la
-%%FLAC%%lib/kde3/libk3bflacdecoder.so
-%%LAME%%lib/kde3/libk3blameencoder.a
-%%LAME%%lib/kde3/libk3blameencoder.la
-%%LAME%%lib/kde3/libk3blameencoder.so
-lib/kde3/libk3blibsndfiledecoder.a
-lib/kde3/libk3blibsndfiledecoder.la
-lib/kde3/libk3blibsndfiledecoder.so
-lib/kde3/libk3bmaddecoder.a
-lib/kde3/libk3bmaddecoder.la
-lib/kde3/libk3bmaddecoder.so
-%%MPC%%lib/kde3/libk3bmpcdecoder.a
-%%MPC%%lib/kde3/libk3bmpcdecoder.la
-%%MPC%%lib/kde3/libk3bmpcdecoder.so
-lib/kde3/libk3boggvorbisdecoder.a
-lib/kde3/libk3boggvorbisdecoder.la
-lib/kde3/libk3boggvorbisdecoder.so
-lib/kde3/libk3boggvorbisencoder.a
-lib/kde3/libk3boggvorbisencoder.la
-lib/kde3/libk3boggvorbisencoder.so
-lib/kde3/libk3bsoxencoder.a
-lib/kde3/libk3bsoxencoder.la
-lib/kde3/libk3bsoxencoder.so
-lib/kde3/libk3bwavedecoder.a
-lib/kde3/libk3bwavedecoder.la
-lib/kde3/libk3bwavedecoder.so
-lib/libk3b.a
-lib/libk3b.la
-lib/libk3b.so
-lib/libk3b.so.3
-lib/libk3bdevice.a
-lib/libk3bdevice.la
+%%TAGLIB%%lib/kde4/k3baudiometainforenamerplugin.so
+lib/kde4/k3baudioprojectcddbplugin.so
+lib/kde4/k3bexternalencoder.so
+%%FFMPEG%%lib/kde4/k3bffmpegdecoder.so
+%%FLAC%%lib/kde4/k3bflacdecoder.so
+%%LAME%%lib/kde4/k3blameencoder.so
+%%SNDFILE%%lib/kde4/k3blibsndfiledecoder.so
+%%MAD%%lib/kde4/k3bmaddecoder.so
+%%MPC%%lib/kde4/k3bmpcdecoder.so
+%%VORBIS_DEC%%lib/kde4/k3boggvorbisdecoder.so
+%%VORBIS_ENC%%lib/kde4/k3boggvorbisencoder.so
+%%SOX%%lib/kde4/k3bsoxencoder.so
+lib/kde4/k3bwavedecoder.so
+lib/kde4/kcm_k3bexternalencoder.so
+%%LAME%%lib/kde4/kcm_k3blameencoder.so
+%%VORBIS_ENC%%lib/kde4/kcm_k3boggvorbisencoder.so
+%%SOX%%lib/kde4/kcm_k3bsoxencoder.so
+lib/kde4/kio_videodvd.so
 lib/libk3bdevice.so
-lib/libk3bdevice.so.5
-share/applications/kde/k3b.desktop
-share/applnk/.hidden/k3b-cue.desktop
-share/applnk/.hidden/k3b-iso.desktop
+lib/libk3bdevice.so.6
+lib/libk3bdevice.so.6.0.0
+lib/libk3blib.so
+lib/libk3blib.so.6
+lib/libk3blib.so.6.0.0
+share/applications/kde4/k3b.desktop
 share/apps/k3b/cdi/cdi_imag.rtf
 share/apps/k3b/cdi/cdi_text.fnt
 share/apps/k3b/cdi/cdi_vcd.app
 share/apps/k3b/cdi/cdi_vcd.cfg
 share/apps/k3b/cdi/icdia.htm
 share/apps/k3b/cdi/vcd_on_cdi_41.pdf
-share/apps/k3b/eventsrc
 share/apps/k3b/extra/k3bphotosvcd.mpg
 share/apps/k3b/extra/k3bphotovcd.mpg
-share/apps/k3b/icons/crystalsvg/16x16/actions/greenled.png
-share/apps/k3b/icons/crystalsvg/16x16/actions/redled.png
-share/apps/k3b/icons/crystalsvg/16x16/actions/yellowinfo.png
-share/apps/k3b/icons/crystalsvg/16x16/actions/yellowled.png
-share/apps/k3b/icons/hicolor/16x16/actions/audiocd.png
-share/apps/k3b/icons/hicolor/16x16/actions/burn_cdimage.png
-share/apps/k3b/icons/hicolor/16x16/actions/burn_dvdimage.png
-share/apps/k3b/icons/hicolor/16x16/actions/cdburn.png
-share/apps/k3b/icons/hicolor/16x16/actions/cdcopy.png
-share/apps/k3b/icons/hicolor/16x16/actions/cddarip.png
-share/apps/k3b/icons/hicolor/16x16/actions/datacd.png
-share/apps/k3b/icons/hicolor/16x16/actions/datadvd.png
-share/apps/k3b/icons/hicolor/16x16/actions/dvdcopy.png
-share/apps/k3b/icons/hicolor/16x16/actions/emovix.png
-share/apps/k3b/icons/hicolor/16x16/actions/erasecd.png
-share/apps/k3b/icons/hicolor/16x16/actions/formatdvd.png
-share/apps/k3b/icons/hicolor/16x16/actions/mixedcd.png
-share/apps/k3b/icons/hicolor/16x16/actions/mp3cd.png
 share/apps/k3b/icons/hicolor/16x16/actions/musicbrainz.png
-share/apps/k3b/icons/hicolor/16x16/actions/videocd.png
-share/apps/k3b/icons/hicolor/16x16/actions/videodvd.png
-share/apps/k3b/icons/hicolor/22x22/actions/audiocd.png
-share/apps/k3b/icons/hicolor/22x22/actions/burn_cdimage.png
-share/apps/k3b/icons/hicolor/22x22/actions/burn_dvdimage.png
-share/apps/k3b/icons/hicolor/22x22/actions/cdburn.png
-share/apps/k3b/icons/hicolor/22x22/actions/cdcopy.png
-share/apps/k3b/icons/hicolor/22x22/actions/cddarip.png
-share/apps/k3b/icons/hicolor/22x22/actions/datacd.png
-share/apps/k3b/icons/hicolor/22x22/actions/datadvd.png
-share/apps/k3b/icons/hicolor/22x22/actions/dvdcopy.png
-share/apps/k3b/icons/hicolor/22x22/actions/emovix.png
-share/apps/k3b/icons/hicolor/22x22/actions/erasecd.png
-share/apps/k3b/icons/hicolor/22x22/actions/formatdvd.png
-share/apps/k3b/icons/hicolor/22x22/actions/mixedcd.png
-share/apps/k3b/icons/hicolor/22x22/actions/mp3cd.png
-share/apps/k3b/icons/hicolor/22x22/actions/videocd.png
-share/apps/k3b/icons/hicolor/22x22/actions/videodvd.png
-share/apps/k3b/icons/hicolor/32x32/actions/audiocd.png
-share/apps/k3b/icons/hicolor/32x32/actions/burn_cdimage.png
-share/apps/k3b/icons/hicolor/32x32/actions/burn_dvdimage.png
-share/apps/k3b/icons/hicolor/32x32/actions/cdburn.png
-share/apps/k3b/icons/hicolor/32x32/actions/cdcopy.png
-share/apps/k3b/icons/hicolor/32x32/actions/cddarip.png
-share/apps/k3b/icons/hicolor/32x32/actions/datacd.png
-share/apps/k3b/icons/hicolor/32x32/actions/datadvd.png
-share/apps/k3b/icons/hicolor/32x32/actions/dvdcopy.png
-share/apps/k3b/icons/hicolor/32x32/actions/emovix.png
-share/apps/k3b/icons/hicolor/32x32/actions/erasecd.png
-share/apps/k3b/icons/hicolor/32x32/actions/formatdvd.png
-share/apps/k3b/icons/hicolor/32x32/actions/mixedcd.png
-share/apps/k3b/icons/hicolor/32x32/actions/mp3cd.png
-share/apps/k3b/icons/hicolor/32x32/actions/videocd.png
-share/apps/k3b/icons/hicolor/32x32/actions/videodvd.png
-share/apps/k3b/icons/hicolor/48x48/actions/audiocd.png
-share/apps/k3b/icons/hicolor/48x48/actions/burn_cdimage.png
-share/apps/k3b/icons/hicolor/48x48/actions/burn_dvdimage.png
-share/apps/k3b/icons/hicolor/48x48/actions/cdburn.png
-share/apps/k3b/icons/hicolor/48x48/actions/cdcopy.png
-share/apps/k3b/icons/hicolor/48x48/actions/cddarip.png
-share/apps/k3b/icons/hicolor/48x48/actions/datacd.png
-share/apps/k3b/icons/hicolor/48x48/actions/datadvd.png
-share/apps/k3b/icons/hicolor/48x48/actions/dvdcopy.png
-share/apps/k3b/icons/hicolor/48x48/actions/emovix.png
-share/apps/k3b/icons/hicolor/48x48/actions/erasecd.png
-share/apps/k3b/icons/hicolor/48x48/actions/formatdvd.png
-share/apps/k3b/icons/hicolor/48x48/actions/mixedcd.png
-share/apps/k3b/icons/hicolor/48x48/actions/mp3cd.png
-share/apps/k3b/icons/hicolor/48x48/actions/videocd.png
-share/apps/k3b/icons/hicolor/48x48/actions/videodvd.png
 share/apps/k3b/icons/hicolor/64x64/actions/musicbrainz.png
-share/apps/k3b/icons/hicolor/scalable/actions/audiocd.svgz
-share/apps/k3b/icons/hicolor/scalable/actions/burn_cdimage.svgz
-share/apps/k3b/icons/hicolor/scalable/actions/burn_dvdimage.svgz
-share/apps/k3b/icons/hicolor/scalable/actions/cdburn.svgz
-share/apps/k3b/icons/hicolor/scalable/actions/cdcopy.svgz
-share/apps/k3b/icons/hicolor/scalable/actions/cddarip.svgz
-share/apps/k3b/icons/hicolor/scalable/actions/datacd.svgz
-share/apps/k3b/icons/hicolor/scalable/actions/datadvd.svgz
-share/apps/k3b/icons/hicolor/scalable/actions/dvdcopy.svgz
-share/apps/k3b/icons/hicolor/scalable/actions/emovix.svgz
-share/apps/k3b/icons/hicolor/scalable/actions/erasecd.svgz
-share/apps/k3b/icons/hicolor/scalable/actions/formatdvd.svgz
-share/apps/k3b/icons/hicolor/scalable/actions/mixedcd.svgz
-share/apps/k3b/icons/hicolor/scalable/actions/mp3cd.svgz
-share/apps/k3b/icons/hicolor/scalable/actions/videocd.svgz
-share/apps/k3b/icons/hicolor/scalable/actions/videodvd.svgz
+share/apps/k3b/icons/oxygen/128x128/actions/tools-rip-audio-cd.png
+share/apps/k3b/icons/oxygen/128x128/actions/tools-rip-video-cd.png
+share/apps/k3b/icons/oxygen/128x128/actions/tools-rip-video-dvd.png
+share/apps/k3b/icons/oxygen/128x128/apps/k3b.png
+share/apps/k3b/icons/oxygen/128x128/devices/media-optical-audio.png
+share/apps/k3b/icons/oxygen/128x128/devices/media-optical-cd-video.png
+share/apps/k3b/icons/oxygen/128x128/devices/media-optical-dvd-video.png
+share/apps/k3b/icons/oxygen/128x128/devices/media-optical-mixed-cd.png
+share/apps/k3b/icons/oxygen/128x128/devices/media-optical-video.png
+share/apps/k3b/icons/oxygen/128x128/mimetypes/application-x-k3b.png
+share/apps/k3b/icons/oxygen/16x16/actions/tools-rip-audio-cd.png
+share/apps/k3b/icons/oxygen/16x16/actions/tools-rip-video-cd.png
+share/apps/k3b/icons/oxygen/16x16/actions/tools-rip-video-dvd.png
+share/apps/k3b/icons/oxygen/16x16/apps/k3b.png
+share/apps/k3b/icons/oxygen/16x16/devices/media-optical-audio.png
+share/apps/k3b/icons/oxygen/16x16/devices/media-optical-cd-video.png
+share/apps/k3b/icons/oxygen/16x16/devices/media-optical-data.png
+share/apps/k3b/icons/oxygen/16x16/devices/media-optical-mixed-cd.png
+share/apps/k3b/icons/oxygen/16x16/devices/media-optical-video.png
+share/apps/k3b/icons/oxygen/22x22/actions/tools-rip-audio-cd.png
+share/apps/k3b/icons/oxygen/22x22/actions/tools-rip-video-cd.png
+share/apps/k3b/icons/oxygen/22x22/actions/tools-rip-video-dvd.png
+share/apps/k3b/icons/oxygen/22x22/apps/k3b.png
+share/apps/k3b/icons/oxygen/22x22/devices/media-optical-audio.png
+share/apps/k3b/icons/oxygen/22x22/devices/media-optical-cd-video.png
+share/apps/k3b/icons/oxygen/22x22/devices/media-optical-data.png
+share/apps/k3b/icons/oxygen/22x22/devices/media-optical-mixed-cd.png
+share/apps/k3b/icons/oxygen/22x22/devices/media-optical-video.png
+share/apps/k3b/icons/oxygen/32x32/actions/tools-rip-audio-cd.png
+share/apps/k3b/icons/oxygen/32x32/actions/tools-rip-video-cd.png
+share/apps/k3b/icons/oxygen/32x32/actions/tools-rip-video-dvd.png
+share/apps/k3b/icons/oxygen/32x32/apps/k3b.png
+share/apps/k3b/icons/oxygen/32x32/devices/media-optical-audio.png
+share/apps/k3b/icons/oxygen/32x32/devices/media-optical-cd-video.png
+share/apps/k3b/icons/oxygen/32x32/devices/media-optical-data.png
+share/apps/k3b/icons/oxygen/32x32/devices/media-optical-dvd-video.png
+share/apps/k3b/icons/oxygen/32x32/devices/media-optical-mixed-cd.png
+share/apps/k3b/icons/oxygen/32x32/devices/media-optical-video.png
+share/apps/k3b/icons/oxygen/32x32/mimetypes/application-x-k3b.png
+share/apps/k3b/icons/oxygen/48x48/actions/tools-rip-audio-cd.png
+share/apps/k3b/icons/oxygen/48x48/actions/tools-rip-video-cd.png
+share/apps/k3b/icons/oxygen/48x48/actions/tools-rip-video-dvd.png
+share/apps/k3b/icons/oxygen/48x48/apps/k3b.png
+share/apps/k3b/icons/oxygen/48x48/devices/media-optical-audio.png
+share/apps/k3b/icons/oxygen/48x48/devices/media-optical-cd-video.png
+share/apps/k3b/icons/oxygen/48x48/devices/media-optical-data.png
+share/apps/k3b/icons/oxygen/48x48/devices/media-optical-dvd-video.png
+share/apps/k3b/icons/oxygen/48x48/devices/media-optical-mixed-cd.png
+share/apps/k3b/icons/oxygen/48x48/devices/media-optical-video.png
+share/apps/k3b/icons/oxygen/48x48/mimetypes/application-x-k3b.png
+share/apps/k3b/icons/oxygen/64x64/actions/tools-rip-audio-cd.png
+share/apps/k3b/icons/oxygen/64x64/actions/tools-rip-video-cd.png
+share/apps/k3b/icons/oxygen/64x64/actions/tools-rip-video-dvd.png
+share/apps/k3b/icons/oxygen/64x64/apps/k3b.png
+share/apps/k3b/icons/oxygen/64x64/devices/media-optical-audio.png
+share/apps/k3b/icons/oxygen/64x64/devices/media-optical-cd-video.png
+share/apps/k3b/icons/oxygen/64x64/devices/media-optical-dvd-video.png
+share/apps/k3b/icons/oxygen/64x64/devices/media-optical-mixed-cd.png
+share/apps/k3b/icons/oxygen/64x64/devices/media-optical-video.png
+share/apps/k3b/icons/oxygen/64x64/mimetypes/application-x-k3b.png
+share/apps/k3b/icons/oxygen/scalable/actions/tools-rip-audio-cd.svgz
+share/apps/k3b/icons/oxygen/scalable/actions/tools-rip-video-cd.svgz
+share/apps/k3b/icons/oxygen/scalable/actions/tools-rip-video-dvd.svgz
+share/apps/k3b/icons/oxygen/scalable/apps/k3b.svgz
+share/apps/k3b/icons/oxygen/scalable/devices/media-optical-audio.svgz
+share/apps/k3b/icons/oxygen/scalable/devices/media-optical-cd-video.svgz
+share/apps/k3b/icons/oxygen/scalable/devices/media-optical-data.svgz
+share/apps/k3b/icons/oxygen/scalable/devices/media-optical-dvd-video.svgz
+share/apps/k3b/icons/oxygen/scalable/devices/media-optical-mixed-cd.svgz
+share/apps/k3b/icons/oxygen/scalable/devices/media-optical-video.svgz
+share/apps/k3b/icons/oxygen/scalable/mimetypes/application-x-k3b.svgz
+share/apps/k3b/k3b.notifyrc
+share/apps/k3b/k3bdeviceui.rc
 share/apps/k3b/k3bui.rc
 share/apps/k3b/pics/73lab/dialog_left.png
 share/apps/k3b/pics/73lab/dialog_right.png
@@ -356,88 +299,312 @@ share/apps/k3b/pics/quant/project_left.png
 share/apps/k3b/pics/quant/project_right.png
 share/apps/k3b/pics/quant/splash.png
 share/apps/k3b/pics/quant/welcome_bg.png
-share/apps/k3b/plugins/k3bartsoutputplugin.plugin
-share/apps/k3b/plugins/k3baudiometainforenamerplugin.plugin
-share/apps/k3b/plugins/k3baudioprojectcddbplugin.plugin
-share/apps/k3b/plugins/k3bexternalencoder.plugin
-%%FFMPEG%%share/apps/k3b/plugins/k3bffmpegdecoder.plugin
-%%FLAC%%share/apps/k3b/plugins/k3bflacdecoder.plugin
-%%LAME%%share/apps/k3b/plugins/k3blameencoder.plugin
-share/apps/k3b/plugins/k3blibsndfiledecoder.plugin
-share/apps/k3b/plugins/k3bmaddecoder.plugin
-%%MPC%%share/apps/k3b/plugins/k3bmpcdecoder.plugin
-share/apps/k3b/plugins/k3boggvorbisdecoder.plugin
-share/apps/k3b/plugins/k3boggvorbisencoder.plugin
-share/apps/k3b/plugins/k3bsoxencoder.plugin
-share/apps/k3b/plugins/k3bwavedecoder.plugin
-share/apps/k3b/servicemenus/k3b_create_audio_cd.desktop
-share/apps/k3b/servicemenus/k3b_create_data_cd.desktop
-share/apps/k3b/servicemenus/k3b_create_data_dvd.desktop
-share/apps/k3b/servicemenus/k3b_create_video_cd.desktop
-share/apps/k3b/servicemenus/k3b_write_bin_image.desktop
-share/apps/k3b/servicemenus/k3b_write_iso_image.desktop
 share/apps/k3b/tips
 share/apps/konqsidebartng/virtual_folders/services/videodvd.desktop
-share/apps/konqueror/servicemenus/k3b_audiocd_rip.desktop
-share/apps/konqueror/servicemenus/k3b_cd_copy.desktop
-share/apps/konqueror/servicemenus/k3b_dvd_copy.desktop
-share/apps/konqueror/servicemenus/k3b_handle_empty_cd.desktop
-share/apps/konqueror/servicemenus/k3b_handle_empty_dvd.desktop
-share/apps/konqueror/servicemenus/k3b_videodvd_rip.desktop
-share/doc/HTML/en/k3b/audiocd-howto.docbook
-share/doc/HTML/en/k3b/burndialog_audio.png
-share/doc/HTML/en/k3b/burndialog_progress.png
-share/doc/HTML/en/k3b/cdcloning_dialog.png
-share/doc/HTML/en/k3b/cdcloning_reading.png
-share/doc/HTML/en/k3b/cdcopy-howto.docbook
-share/doc/HTML/en/k3b/cdcopy_done.png
-share/doc/HTML/en/k3b/cdcopy_reading.png
-share/doc/HTML/en/k3b/cdcopy_settings.png
-share/doc/HTML/en/k3b/cdcopy_writing.png
-share/doc/HTML/en/k3b/commands.docbook
-share/doc/HTML/en/k3b/common
-share/doc/HTML/en/k3b/dcop.docbook
-share/doc/HTML/en/k3b/index.cache.bz2
-share/doc/HTML/en/k3b/index.docbook
-share/doc/HTML/en/k3b/select_audiofiles.png
-share/doc/HTML/en/k3b/select_project.png
-share/icons/hicolor/128x128/apps/k3b.png
-share/icons/hicolor/16x16/apps/k3b.png
-share/icons/hicolor/22x22/apps/k3b.png
-share/icons/hicolor/32x32/apps/k3b.png
-share/icons/hicolor/48x48/apps/k3b.png
-share/icons/hicolor/64x64/apps/k3b.png
-share/mimelnk/application/x-k3b.desktop
-share/services/kfile_k3b.desktop
-share/services/videodvd.protocol
+share/apps/solid/actions/k3b_audiocd_rip.desktop
+share/apps/solid/actions/k3b_copy_disc.desktop
+share/apps/solid/actions/k3b_create_audio_cd_from_blank_medium.desktop
+share/apps/solid/actions/k3b_create_data_project_from_blank_medium.desktop
+%%LIBDVDREAD%%share/apps/solid/actions/k3b_videodvd_rip.desktop
+share/kde4/services/ServiceMenus/k3b_create_audio_cd.desktop
+share/kde4/services/ServiceMenus/k3b_create_data_project.desktop
+share/kde4/services/ServiceMenus/k3b_create_video_cd.desktop
+share/kde4/services/ServiceMenus/k3b_write_bin_image.desktop
+share/kde4/services/ServiceMenus/k3b_write_iso_image.desktop
+%%TAGLIB%%share/kde4/services/k3baudiometainforenamerplugin.desktop
+share/kde4/services/k3baudioprojectcddbplugin.desktop
+share/kde4/services/k3bexternalencoder.desktop
+%%FFMPEG%%share/kde4/services/k3bffmpegdecoder.desktop
+%%FLAC%%share/kde4/services/k3bflacdecoder.desktop
+%%LAME%%share/kde4/services/k3blameencoder.desktop
+%%SNDFILE%%share/kde4/services/k3blibsndfiledecoder.desktop
+%%MAD%%share/kde4/services/k3bmaddecoder.desktop
+%%MPC%%share/kde4/services/k3bmpcdecoder.desktop
+%%VORBIS_DEC%%share/kde4/services/k3boggvorbisdecoder.desktop
+%%VORBIS_ENC%%share/kde4/services/k3boggvorbisencoder.desktop
+%%SOX%%share/kde4/services/k3bsoxencoder.desktop
+share/kde4/services/k3bwavedecoder.desktop
+share/kde4/services/kcm_k3bexternalencoder.desktop
+%%LAME%%share/kde4/services/kcm_k3blameencoder.desktop
+%%VORBIS_ENC%%share/kde4/services/kcm_k3boggvorbisencoder.desktop
+%%SOX%%share/kde4/services/kcm_k3bsoxencoder.desktop
+share/kde4/services/videodvd.protocol
+share/kde4/servicetypes/k3bplugin.desktop
+share/locale/ast/LC_MESSAGES/k3b.mo
+share/locale/ast/LC_MESSAGES/k3bsetup.mo
+share/locale/ast/LC_MESSAGES/libk3b.mo
+share/locale/ast/LC_MESSAGES/libk3bdevice.mo
+share/locale/be/LC_MESSAGES/k3b.mo
+share/locale/be/LC_MESSAGES/k3bsetup.mo
+share/locale/be/LC_MESSAGES/libk3b.mo
+share/locale/be/LC_MESSAGES/libk3bdevice.mo
+share/locale/bg/LC_MESSAGES/k3b.mo
+share/locale/bg/LC_MESSAGES/k3bsetup.mo
+share/locale/bg/LC_MESSAGES/libk3b.mo
+share/locale/bg/LC_MESSAGES/libk3bdevice.mo
+share/locale/ca/LC_MESSAGES/k3b.mo
+share/locale/ca/LC_MESSAGES/k3bsetup.mo
+share/locale/ca/LC_MESSAGES/libk3b.mo
+share/locale/ca/LC_MESSAGES/libk3bdevice.mo
+share/locale/ca@valencia/LC_MESSAGES/k3b.mo
+share/locale/ca@valencia/LC_MESSAGES/k3bsetup.mo
+share/locale/ca@valencia/LC_MESSAGES/libk3b.mo
+share/locale/ca@valencia/LC_MESSAGES/libk3bdevice.mo
+share/locale/cs/LC_MESSAGES/k3b.mo
+share/locale/cs/LC_MESSAGES/k3bsetup.mo
+share/locale/cs/LC_MESSAGES/libk3b.mo
+share/locale/cs/LC_MESSAGES/libk3bdevice.mo
+share/locale/csb/LC_MESSAGES/k3b.mo
+share/locale/csb/LC_MESSAGES/k3bsetup.mo
+share/locale/da/LC_MESSAGES/k3b.mo
+share/locale/da/LC_MESSAGES/k3bsetup.mo
+share/locale/da/LC_MESSAGES/libk3b.mo
+share/locale/da/LC_MESSAGES/libk3bdevice.mo
+share/locale/de/LC_MESSAGES/k3b.mo
+share/locale/de/LC_MESSAGES/k3bsetup.mo
+share/locale/de/LC_MESSAGES/libk3b.mo
+share/locale/de/LC_MESSAGES/libk3bdevice.mo
+share/locale/el/LC_MESSAGES/k3b.mo
+share/locale/el/LC_MESSAGES/k3bsetup.mo
+share/locale/el/LC_MESSAGES/libk3b.mo
+share/locale/el/LC_MESSAGES/libk3bdevice.mo
+share/locale/en_GB/LC_MESSAGES/k3b.mo
+share/locale/en_GB/LC_MESSAGES/k3bsetup.mo
+share/locale/en_GB/LC_MESSAGES/libk3b.mo
+share/locale/en_GB/LC_MESSAGES/libk3bdevice.mo
+share/locale/eo/LC_MESSAGES/k3b.mo
+share/locale/eo/LC_MESSAGES/k3bsetup.mo
+share/locale/eo/LC_MESSAGES/libk3b.mo
+share/locale/eo/LC_MESSAGES/libk3bdevice.mo
+share/locale/es/LC_MESSAGES/k3b.mo
+share/locale/es/LC_MESSAGES/k3bsetup.mo
+share/locale/es/LC_MESSAGES/libk3b.mo
+share/locale/es/LC_MESSAGES/libk3bdevice.mo
+share/locale/et/LC_MESSAGES/k3b.mo
+share/locale/et/LC_MESSAGES/k3bsetup.mo
+share/locale/et/LC_MESSAGES/libk3b.mo
+share/locale/et/LC_MESSAGES/libk3bdevice.mo
+share/locale/eu/LC_MESSAGES/k3b.mo
+share/locale/eu/LC_MESSAGES/k3bsetup.mo
+share/locale/eu/LC_MESSAGES/libk3b.mo
+share/locale/eu/LC_MESSAGES/libk3bdevice.mo
+share/locale/fi/LC_MESSAGES/k3b.mo
+share/locale/fi/LC_MESSAGES/k3bsetup.mo
+share/locale/fi/LC_MESSAGES/libk3b.mo
+share/locale/fi/LC_MESSAGES/libk3bdevice.mo
+share/locale/fr/LC_MESSAGES/k3b.mo
+share/locale/fr/LC_MESSAGES/k3bsetup.mo
+share/locale/fr/LC_MESSAGES/libk3b.mo
+share/locale/fr/LC_MESSAGES/libk3bdevice.mo
+share/locale/ga/LC_MESSAGES/k3b.mo
+share/locale/ga/LC_MESSAGES/k3bsetup.mo
+share/locale/ga/LC_MESSAGES/libk3b.mo
+share/locale/ga/LC_MESSAGES/libk3bdevice.mo
+share/locale/gl/LC_MESSAGES/k3b.mo
+share/locale/gl/LC_MESSAGES/k3bsetup.mo
+share/locale/gl/LC_MESSAGES/libk3b.mo
+share/locale/gl/LC_MESSAGES/libk3bdevice.mo
+share/locale/he/LC_MESSAGES/k3b.mo
+share/locale/he/LC_MESSAGES/k3bsetup.mo
+share/locale/he/LC_MESSAGES/libk3b.mo
+share/locale/he/LC_MESSAGES/libk3bdevice.mo
+share/locale/hi/LC_MESSAGES/k3b.mo
+share/locale/hi/LC_MESSAGES/k3bsetup.mo
+share/locale/hi/LC_MESSAGES/libk3b.mo
+share/locale/hi/LC_MESSAGES/libk3bdevice.mo
+share/locale/hne/LC_MESSAGES/k3b.mo
+share/locale/hne/LC_MESSAGES/k3bsetup.mo
+share/locale/hne/LC_MESSAGES/libk3b.mo
+share/locale/hne/LC_MESSAGES/libk3bdevice.mo
+share/locale/hr/LC_MESSAGES/k3b.mo
+share/locale/hr/LC_MESSAGES/k3bsetup.mo
+share/locale/hr/LC_MESSAGES/libk3b.mo
+share/locale/hr/LC_MESSAGES/libk3bdevice.mo
+share/locale/hu/LC_MESSAGES/k3b.mo
+share/locale/hu/LC_MESSAGES/k3bsetup.mo
+share/locale/hu/LC_MESSAGES/libk3b.mo
+share/locale/hu/LC_MESSAGES/libk3bdevice.mo
+share/locale/is/LC_MESSAGES/k3b.mo
+share/locale/is/LC_MESSAGES/k3bsetup.mo
+share/locale/is/LC_MESSAGES/libk3b.mo
+share/locale/is/LC_MESSAGES/libk3bdevice.mo
+share/locale/it/LC_MESSAGES/k3b.mo
+share/locale/it/LC_MESSAGES/k3bsetup.mo
+share/locale/it/LC_MESSAGES/libk3b.mo
+share/locale/it/LC_MESSAGES/libk3bdevice.mo
+share/locale/ja/LC_MESSAGES/k3b.mo
+share/locale/ja/LC_MESSAGES/k3bsetup.mo
+share/locale/ja/LC_MESSAGES/libk3b.mo
+share/locale/ja/LC_MESSAGES/libk3bdevice.mo
+share/locale/km/LC_MESSAGES/k3b.mo
+share/locale/km/LC_MESSAGES/k3bsetup.mo
+share/locale/km/LC_MESSAGES/libk3b.mo
+share/locale/km/LC_MESSAGES/libk3bdevice.mo
+share/locale/ko/LC_MESSAGES/k3b.mo
+share/locale/ko/LC_MESSAGES/k3bsetup.mo
+share/locale/ko/LC_MESSAGES/libk3b.mo
+share/locale/ko/LC_MESSAGES/libk3bdevice.mo
+share/locale/ku/LC_MESSAGES/k3b.mo
+share/locale/lt/LC_MESSAGES/k3b.mo
+share/locale/lt/LC_MESSAGES/k3bsetup.mo
+share/locale/lt/LC_MESSAGES/libk3b.mo
+share/locale/lt/LC_MESSAGES/libk3bdevice.mo
+share/locale/lv/LC_MESSAGES/k3bsetup.mo
+share/locale/lv/LC_MESSAGES/libk3b.mo
+share/locale/lv/LC_MESSAGES/libk3bdevice.mo
+share/locale/mai/LC_MESSAGES/k3b.mo
+share/locale/mai/LC_MESSAGES/libk3b.mo
+share/locale/nb/LC_MESSAGES/k3b.mo
+share/locale/nb/LC_MESSAGES/k3bsetup.mo
+share/locale/nb/LC_MESSAGES/libk3b.mo
+share/locale/nb/LC_MESSAGES/libk3bdevice.mo
+share/locale/nds/LC_MESSAGES/k3b.mo
+share/locale/nds/LC_MESSAGES/k3bsetup.mo
+share/locale/nds/LC_MESSAGES/libk3b.mo
+share/locale/nds/LC_MESSAGES/libk3bdevice.mo
+share/locale/nl/LC_MESSAGES/k3b.mo
+share/locale/nl/LC_MESSAGES/k3bsetup.mo
+share/locale/nl/LC_MESSAGES/libk3b.mo
+share/locale/nl/LC_MESSAGES/libk3bdevice.mo
+share/locale/nn/LC_MESSAGES/k3b.mo
+share/locale/nn/LC_MESSAGES/k3bsetup.mo
+share/locale/nn/LC_MESSAGES/libk3b.mo
+share/locale/nn/LC_MESSAGES/libk3bdevice.mo
+share/locale/oc/LC_MESSAGES/k3b.mo
+share/locale/oc/LC_MESSAGES/k3bsetup.mo
+share/locale/oc/LC_MESSAGES/libk3b.mo
+share/locale/oc/LC_MESSAGES/libk3bdevice.mo
+share/locale/pa/LC_MESSAGES/k3b.mo
+share/locale/pa/LC_MESSAGES/k3bsetup.mo
+share/locale/pa/LC_MESSAGES/libk3b.mo
+share/locale/pa/LC_MESSAGES/libk3bdevice.mo
+share/locale/pl/LC_MESSAGES/k3b.mo
+share/locale/pl/LC_MESSAGES/k3bsetup.mo
+share/locale/pl/LC_MESSAGES/libk3b.mo
+share/locale/pl/LC_MESSAGES/libk3bdevice.mo
+share/locale/pt/LC_MESSAGES/k3b.mo
+share/locale/pt/LC_MESSAGES/k3bsetup.mo
+share/locale/pt/LC_MESSAGES/libk3b.mo
+share/locale/pt/LC_MESSAGES/libk3bdevice.mo
+share/locale/pt_BR/LC_MESSAGES/k3b.mo
+share/locale/pt_BR/LC_MESSAGES/k3bsetup.mo
+share/locale/pt_BR/LC_MESSAGES/libk3b.mo
+share/locale/pt_BR/LC_MESSAGES/libk3bdevice.mo
+share/locale/ro/LC_MESSAGES/k3b.mo
+share/locale/ro/LC_MESSAGES/k3bsetup.mo
+share/locale/ro/LC_MESSAGES/libk3b.mo
+share/locale/ro/LC_MESSAGES/libk3bdevice.mo
+share/locale/ru/LC_MESSAGES/k3b.mo
+share/locale/ru/LC_MESSAGES/k3bsetup.mo
+share/locale/ru/LC_MESSAGES/libk3b.mo
+share/locale/ru/LC_MESSAGES/libk3bdevice.mo
+share/locale/se/LC_MESSAGES/k3b.mo
+share/locale/se/LC_MESSAGES/k3bsetup.mo
+share/locale/se/LC_MESSAGES/libk3b.mo
+share/locale/se/LC_MESSAGES/libk3bdevice.mo
+share/locale/sk/LC_MESSAGES/k3b.mo
+share/locale/sk/LC_MESSAGES/k3bsetup.mo
+share/locale/sk/LC_MESSAGES/libk3b.mo
+share/locale/sk/LC_MESSAGES/libk3bdevice.mo
+share/locale/sl/LC_MESSAGES/k3b.mo
+share/locale/sl/LC_MESSAGES/k3bsetup.mo
+share/locale/sl/LC_MESSAGES/libk3b.mo
+share/locale/sl/LC_MESSAGES/libk3bdevice.mo
+share/locale/sr/LC_MESSAGES/k3b.mo
+share/locale/sr/LC_MESSAGES/k3bsetup.mo
+share/locale/sr/LC_MESSAGES/libk3b.mo
+share/locale/sr/LC_MESSAGES/libk3bdevice.mo
+share/locale/sr@ijekavian/LC_MESSAGES/k3b.mo
+share/locale/sr@ijekavian/LC_MESSAGES/k3bsetup.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libk3b.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libk3bdevice.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/k3b.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/k3bsetup.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libk3b.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libk3bdevice.mo
+share/locale/sr@latin/LC_MESSAGES/k3b.mo
+share/locale/sr@latin/LC_MESSAGES/k3bsetup.mo
+share/locale/sr@latin/LC_MESSAGES/libk3b.mo
+share/locale/sr@latin/LC_MESSAGES/libk3bdevice.mo
+share/locale/sv/LC_MESSAGES/k3b.mo
+share/locale/sv/LC_MESSAGES/k3bsetup.mo
+share/locale/sv/LC_MESSAGES/libk3b.mo
+share/locale/sv/LC_MESSAGES/libk3bdevice.mo
+share/locale/th/LC_MESSAGES/k3b.mo
+share/locale/th/LC_MESSAGES/k3bsetup.mo
+share/locale/th/LC_MESSAGES/libk3b.mo
+share/locale/th/LC_MESSAGES/libk3bdevice.mo
+share/locale/tr/LC_MESSAGES/k3b.mo
+share/locale/tr/LC_MESSAGES/k3bsetup.mo
+share/locale/tr/LC_MESSAGES/libk3b.mo
+share/locale/tr/LC_MESSAGES/libk3bdevice.mo
+share/locale/uk/LC_MESSAGES/k3b.mo
+share/locale/uk/LC_MESSAGES/k3bsetup.mo
+share/locale/uk/LC_MESSAGES/libk3b.mo
+share/locale/uk/LC_MESSAGES/libk3bdevice.mo
+share/locale/zh_CN/LC_MESSAGES/k3b.mo
+share/locale/zh_CN/LC_MESSAGES/k3bsetup.mo
+share/locale/zh_CN/LC_MESSAGES/libk3b.mo
+share/locale/zh_CN/LC_MESSAGES/libk3bdevice.mo
+share/locale/zh_TW/LC_MESSAGES/k3b.mo
+share/locale/zh_TW/LC_MESSAGES/k3bsetup.mo
+share/locale/zh_TW/LC_MESSAGES/libk3b.mo
+share/locale/zh_TW/LC_MESSAGES/libk3bdevice.mo
+share/mime/packages/x-k3b.xml
 share/sounds/k3b_error1.wav
 share/sounds/k3b_success1.wav
 share/sounds/k3b_wait_media1.wav
-@dirrm share/doc/HTML/en/k3b
-@dirrm share/apps/k3b/servicemenus
-@dirrm share/apps/k3b/plugins
+@dirrm share/locale/sr@latin/LC_MESSAGES
+@dirrm share/locale/sr@latin
+@dirrm share/locale/sr@ijekavianlatin/LC_MESSAGES
+@dirrm share/locale/sr@ijekavianlatin
 @dirrm share/apps/k3b/pics/quant
 @dirrm share/apps/k3b/pics/crystal
 @dirrm share/apps/k3b/pics/RobsTheme
 @dirrm share/apps/k3b/pics/73lab
 @dirrm share/apps/k3b/pics
-@dirrm share/apps/k3b/icons/hicolor/scalable/actions
-@dirrm share/apps/k3b/icons/hicolor/scalable
+@dirrm share/apps/k3b/icons/oxygen/scalable/mimetypes
+@dirrm share/apps/k3b/icons/oxygen/scalable/devices
+@dirrm share/apps/k3b/icons/oxygen/scalable/apps
+@dirrm share/apps/k3b/icons/oxygen/scalable/actions
+@dirrm share/apps/k3b/icons/oxygen/scalable
+@dirrm share/apps/k3b/icons/oxygen/64x64/mimetypes
+@dirrm share/apps/k3b/icons/oxygen/64x64/devices
+@dirrm share/apps/k3b/icons/oxygen/64x64/apps
+@dirrm share/apps/k3b/icons/oxygen/64x64/actions
+@dirrm share/apps/k3b/icons/oxygen/64x64
+@dirrm share/apps/k3b/icons/oxygen/48x48/mimetypes
+@dirrm share/apps/k3b/icons/oxygen/48x48/devices
+@dirrm share/apps/k3b/icons/oxygen/48x48/apps
+@dirrm share/apps/k3b/icons/oxygen/48x48/actions
+@dirrm share/apps/k3b/icons/oxygen/48x48
+@dirrm share/apps/k3b/icons/oxygen/32x32/mimetypes
+@dirrm share/apps/k3b/icons/oxygen/32x32/devices
+@dirrm share/apps/k3b/icons/oxygen/32x32/apps
+@dirrm share/apps/k3b/icons/oxygen/32x32/actions
+@dirrm share/apps/k3b/icons/oxygen/32x32
+@dirrm share/apps/k3b/icons/oxygen/22x22/devices
+@dirrm share/apps/k3b/icons/oxygen/22x22/apps
+@dirrm share/apps/k3b/icons/oxygen/22x22/actions
+@dirrm share/apps/k3b/icons/oxygen/22x22
+@dirrm share/apps/k3b/icons/oxygen/16x16/devices
+@dirrm share/apps/k3b/icons/oxygen/16x16/apps
+@dirrm share/apps/k3b/icons/oxygen/16x16/actions
+@dirrm share/apps/k3b/icons/oxygen/16x16
+@dirrm share/apps/k3b/icons/oxygen/128x128/mimetypes
+@dirrm share/apps/k3b/icons/oxygen/128x128/devices
+@dirrm share/apps/k3b/icons/oxygen/128x128/apps
+@dirrm share/apps/k3b/icons/oxygen/128x128/actions
+@dirrm share/apps/k3b/icons/oxygen/128x128
+@dirrm share/apps/k3b/icons/oxygen
 @dirrm share/apps/k3b/icons/hicolor/64x64/actions
 @dirrm share/apps/k3b/icons/hicolor/64x64
-@dirrm share/apps/k3b/icons/hicolor/48x48/actions
-@dirrm share/apps/k3b/icons/hicolor/48x48
-@dirrm share/apps/k3b/icons/hicolor/32x32/actions
-@dirrm share/apps/k3b/icons/hicolor/32x32
-@dirrm share/apps/k3b/icons/hicolor/22x22/actions
-@dirrm share/apps/k3b/icons/hicolor/22x22
 @dirrm share/apps/k3b/icons/hicolor/16x16/actions
 @dirrm share/apps/k3b/icons/hicolor/16x16
 @dirrm share/apps/k3b/icons/hicolor
-@dirrm share/apps/k3b/icons/crystalsvg/16x16/actions
-@dirrm share/apps/k3b/icons/crystalsvg/16x16
-@dirrm share/apps/k3b/icons/crystalsvg
 @dirrm share/apps/k3b/icons
 @dirrm share/apps/k3b/extra
 @dirrm share/apps/k3b/cdi
 @dirrm share/apps/k3b
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
