@@ -1,12 +1,10 @@
-S9fES is an interpreter for a broad subset of (R4RS) Scheme. It is
-written in ANSI C (C89) and Scheme and it runs in many popular
-environments, including *BSD, Linux, Plan 9, and the unmentionable
-horror.
+Scheme 9 from Empty Space is a portable R4RS Scheme
+interpreter plus
 
-The S9fES code strives to be simple and comprehensible. It is
-particularly interesting to people who want to (a) write Unix
-programs in a high-level language (b) try Scheme without having
-to jump through too many hoops (c) study the implementation of
-Scheme (in a language other than Scheme). 
+- support for low-level Unix programming;
+- basic networking procedures;
+- cursor addressing with Curses;
+- a vi-style integrated development environment;
+- loads of useful library functions.
 
 WWW: http://www.t3x.org/s9fes/

@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	s9fes
-PORTVERSION=	20100625
+PORTVERSION=	20100731
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.t3x.org/misc/
 
 MAINTAINER=	nmh@t3x.org
-COMMENT=	A comprehensible Scheme interpreter with a Unix interface
+COMMENT=	A portable Scheme interpreter with a Unix interface
 
 WRKSRC=		${WRKDIR}/s9
 
