@@ -11,7 +11,7 @@ CATEGORIES=	textproc rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	${PORTNAME}file
 
-MAINTAINER=	yds@CoolRat.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby INI File Parser and Writer
 
 USE_RUBY=	yes
