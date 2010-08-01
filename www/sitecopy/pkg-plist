@@ -3,14 +3,14 @@ bin/sitecopy
 %%DOCSDIR%%/README
 %%DOCSDIR%%/THANKS
 %%DOCSDIR%%/update.sh
-share/locale/cs/LC_MESSAGES/sitecopy.mo
-share/locale/de/LC_MESSAGES/sitecopy.mo
-share/locale/fr/LC_MESSAGES/sitecopy.mo
-share/locale/it/LC_MESSAGES/sitecopy.mo
-share/locale/ja/LC_MESSAGES/sitecopy.mo
-share/locale/nn/LC_MESSAGES/sitecopy.mo
-share/locale/ru/LC_MESSAGES/sitecopy.mo
-share/locale/tr/LC_MESSAGES/sitecopy.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/sitecopy.mo
+%%NLS%%share/locale/de/LC_MESSAGES/sitecopy.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/sitecopy.mo
+%%NLS%%share/locale/it/LC_MESSAGES/sitecopy.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/sitecopy.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/sitecopy.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/sitecopy.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/sitecopy.mo
 %%DATADIR%%/changes.awk
 %%DATADIR%%/examplerc
 @dirrm %%DATADIR%%
