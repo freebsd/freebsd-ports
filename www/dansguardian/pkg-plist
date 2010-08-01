@@ -200,6 +200,7 @@ etc/dansguardian/lists/phraselists/goodphrases/weighted_general_dutch
 etc/dansguardian/lists/phraselists/goodphrases/weighted_general_malay
 etc/dansguardian/lists/phraselists/goodphrases/weighted_general_polish
 etc/dansguardian/lists/phraselists/goodphrases/weighted_general_portuguese
+etc/dansguardian/lists/phraselists/goodphrases/weighted_general_swedish
 etc/dansguardian/lists/phraselists/goodphrases/weighted_news
 etc/dansguardian/lists/phraselists/goodphrases/exception
 etc/dansguardian/lists/phraselists/goodphrases/exception_email
@@ -235,6 +236,7 @@ etc/dansguardian/lists/phraselists/pornography/weighted_polish
 etc/dansguardian/lists/phraselists/pornography/weighted_portuguese
 etc/dansguardian/lists/phraselists/pornography/weighted_russian
 etc/dansguardian/lists/phraselists/pornography/weighted_spanish
+etc/dansguardian/lists/phraselists/pornography/weighted_swedish
 etc/dansguardian/lists/phraselists/proxies/weighted
 etc/dansguardian/lists/phraselists/sport/weighted
 etc/dansguardian/lists/phraselists/violence/weighted
