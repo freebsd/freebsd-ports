@@ -1,6 +1,7 @@
 %%DATADIR%%/attack-payloads/all-attacks/all-attacks-unix.txt
 %%DATADIR%%/attack-payloads/all-attacks/all-attacks-win.txt
 %%DATADIR%%/attack-payloads/all-attacks/interesting-metacharacters.txt
+%%DATADIR%%/attack-payloads/control-chars/null.fuzz
 %%DATADIR%%/attack-payloads/disclosure-directory/generic/directory-indexing-generic.txt
 %%DATADIR%%/attack-payloads/disclosure-directory/source-directory-file-indexing-cheatsheet.html
 %%DATADIR%%/attack-payloads/disclosure-localpaths/unix/common-unix-httpd-log-locations.txt
@@ -12,14 +13,20 @@
 %%DATADIR%%/attack-payloads/file-upload/alt-extensions-jsp.txt
 %%DATADIR%%/attack-payloads/file-upload/alt-extensions-perl.txt
 %%DATADIR%%/attack-payloads/file-upload/alt-extensions-php.txt
-%%DATADIR%%/attack-payloads/file-upload/alt-extensions.credits.txt
 %%DATADIR%%/attack-payloads/file-upload/file-ul-filter-bypass-commonly-writable-directories.txt
+%%DATADIR%%/attack-payloads/file-upload/file-ul-filter-bypass-microsoft-asp-filetype-bf.txt
 %%DATADIR%%/attack-payloads/file-upload/file-ul-filter-bypass-microsoft-asp.txt
 %%DATADIR%%/attack-payloads/file-upload/file-ul-filter-bypass-ms-php.txt
 %%DATADIR%%/attack-payloads/file-upload/file-ul-filter-bypass-x-platform-generic.txt
 %%DATADIR%%/attack-payloads/file-upload/file-ul-filter-bypass-x-platform-php.txt
 %%DATADIR%%/attack-payloads/file-upload/file-ul-filter-bypass.readme
+%%DATADIR%%/attack-payloads/file-upload/invalid-filenames-linux.txt
+%%DATADIR%%/attack-payloads/file-upload/invalid-filenames-microsoft.txt
+%%DATADIR%%/attack-payloads/file-upload/invalid-filesystem-chars-microsoft.txt
+%%DATADIR%%/attack-payloads/file-upload/invalid-filesystem-chars-osx.txt
 %%DATADIR%%/attack-payloads/format-strings/format-strings.txt
+%%DATADIR%%/attack-payloads/html_fuzz/html_tags.txt
+%%DATADIR%%/attack-payloads/html_fuzz/javascript_events.txt
 %%DATADIR%%/attack-payloads/http-protocol/docs.http-method-defs.html
 %%DATADIR%%/attack-payloads/http-protocol/http-header-cache-poison.txt
 %%DATADIR%%/attack-payloads/http-protocol/http-protocol-methods.txt
@@ -31,6 +38,7 @@
 %%DATADIR%%/attack-payloads/os-cmd-execution/command-execution-unix.txt
 %%DATADIR%%/attack-payloads/os-cmd-execution/commands-unix.txt
 %%DATADIR%%/attack-payloads/os-cmd-execution/commands-windows.txt
+%%DATADIR%%/attack-payloads/os-cmd-execution/docs/command-execution-cheatsheat-unix.txt
 %%DATADIR%%/attack-payloads/os-cmd-execution/source-disc-cmd-exec-traversal.txt
 %%DATADIR%%/attack-payloads/os-dir-indexing/directory-indexing.txt
 %%DATADIR%%/attack-payloads/path-traversal/path-traversal-windows.txt
@@ -101,6 +109,9 @@
 %%DATADIR%%/discovery/win/interesting-files-microsoft-iis.txt
 %%DATADIR%%/discovery/win/interesting-files-microsoft-sharepoint.txt
 %%DATADIR%%/discovery/win/interesting-files-netware.txt
+%%DATADIR%%/regex/errors.txt
+%%DATADIR%%/regex/readme.txt
+%%DATADIR%%/regex/sessionid.txt
 %%DATADIR%%/web-backdoors/asp/cmd-asp-5.1.asp
 %%DATADIR%%/web-backdoors/asp/cmd.asp
 %%DATADIR%%/web-backdoors/asp/cmd.aspx
@@ -193,6 +204,7 @@
 @dirrm %%DATADIR%%/web-backdoors/c
 @dirrm %%DATADIR%%/web-backdoors/asp
 @dirrm %%DATADIR%%/web-backdoors
+@dirrm %%DATADIR%%/regex
 @dirrm %%DATADIR%%/discovery/win
 @dirrm %%DATADIR%%/discovery/unix
 @dirrm %%DATADIR%%/discovery/generic/cms
@@ -221,11 +233,13 @@
 @dirrm %%DATADIR%%/attack-payloads/rfi
 @dirrm %%DATADIR%%/attack-payloads/path-traversal
 @dirrm %%DATADIR%%/attack-payloads/os-dir-indexing
+@dirrm %%DATADIR%%/attack-payloads/os-cmd-execution/docs
 @dirrm %%DATADIR%%/attack-payloads/os-cmd-execution
 @dirrm %%DATADIR%%/attack-payloads/lfi
 @dirrm %%DATADIR%%/attack-payloads/ldap
 @dirrm %%DATADIR%%/attack-payloads/integer-overflow
 @dirrm %%DATADIR%%/attack-payloads/http-protocol
+@dirrm %%DATADIR%%/attack-payloads/html_fuzz
 @dirrm %%DATADIR%%/attack-payloads/format-strings
 @dirrm %%DATADIR%%/attack-payloads/file-upload
 @dirrm %%DATADIR%%/attack-payloads/disclosure-source
@@ -236,6 +250,7 @@
 @dirrm %%DATADIR%%/attack-payloads/disclosure-directory/unix
 @dirrm %%DATADIR%%/attack-payloads/disclosure-directory/generic
 @dirrm %%DATADIR%%/attack-payloads/disclosure-directory
+@dirrm %%DATADIR%%/attack-payloads/control-chars
 @dirrm %%DATADIR%%/attack-payloads/all-attacks
 @dirrm %%DATADIR%%/attack-payloads
 @dirrm %%DATADIR%%
