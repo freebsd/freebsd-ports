@@ -7,6 +7,7 @@
 
 PORTNAME=	httrack
 PORTVERSION=	3.43.9
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.httrack.com/ \
 		http://sunpoet.net/distfiles/
@@ -31,6 +32,9 @@ post-patch:
 	@${REINPLACE_CMD} -e '/DEFAULT_CFLAGS=/ s|-O -g3 ||g' \
 		-e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/ install-data-hook/D' ${WRKSRC}/html/Makefile.in
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
+		${WRKSRC}/html/server/div/WebHTTrack.desktop \
+		${WRKSRC}/html/server/div/WebHTTrack-Websites.desktop
 .if defined(NOPORTDATA)
 	@${REINPLACE_CMD} -E '/^SUBDIRS = / s/ (lang|libtest|templates)//g' ${WRKSRC}/Makefile.in
 .endif
