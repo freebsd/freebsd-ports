@@ -1,6 +1,6 @@
 # New ports collection makefile for:   C++ Sockets
-# Date created:                Tue Jun 29 16:00:00 UTC 2010
-# Whom:                 Andrea Venturoli <ml@netfence.it>
+# Date created:                Sat Jan 15 16:17:20 UTC 2005
+# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
 #
