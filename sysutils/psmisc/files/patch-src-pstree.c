@@ -25,7 +25,7 @@
        if (! (path = malloc(strlen(PROC_BASE) + strlen(de->d_name) + 10)))
          exit(2);
 -      sprintf(path, "%s/%d/stat", PROC_BASE, pid);
-+      sprintf (path, "%s/%d/status", PROC_BASE, pid);
++      sprintf(path, "%s/%d/status", PROC_BASE, pid);
        if ((file = fopen(path, "r")) != NULL) {
          empty = 0;
          sprintf(path, "%s/%d", PROC_BASE, pid);
