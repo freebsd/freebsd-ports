@@ -10,7 +10,7 @@ PORTVERSION=	2.8.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	yds@CoolRat.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	RubyGem port of the single most extensive additions and extensions
 
 USE_RUBY=	yes
