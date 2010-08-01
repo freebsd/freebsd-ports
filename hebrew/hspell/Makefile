@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	hspell
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	hebrew
-MASTER_SITES=	http://www.ivrix.org.il/projects/spell-checker/ \
+MASTER_SITES=	http://hspell.ivrix.org.il/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	makc
 
