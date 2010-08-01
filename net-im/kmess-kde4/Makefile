@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kmess
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.0.4
 CATEGORIES=	net-im kde
 MASTER_SITES=	SF/${PORTNAME}/Latest%20versions/${PORTVERSION}/
 
@@ -21,6 +20,8 @@ RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 
 LATEST_LINK=	${PORTNAME}-kde4
 MAKE_JOBS_SAFE=	yes
+
+USE_BZIP2=	yes
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdehier kdeprefix kdebase automoc4
 USE_QT_VER=	4
