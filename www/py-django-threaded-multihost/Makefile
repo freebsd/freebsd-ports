@@ -16,7 +16,7 @@ COMMENT=	Multi-host utilities to Django
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
 
-#WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_NOEGGINFO=	yes
