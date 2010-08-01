@@ -1,5 +1,5 @@
---- src/osd/sdl/sdl.mak.orig	2010-03-24 00:15:07.000000000 +0100
-+++ src/osd/sdl/sdl.mak	2010-03-24 00:17:26.000000000 +0100
+--- src/osd/sdl/sdl.mak.orig	2010-02-14 04:47:30.000000000 +0100
++++ src/osd/sdl/sdl.mak	2010-07-30 12:05:33.000000000 +0200
 @@ -139,7 +139,7 @@
  ifeq ($(TARGETOS),freebsd)
  BASE_TARGETOS = unix
@@ -9,6 +9,15 @@
  # /usr/local/include is not considered a system include directory
  # on FreeBSD. GL.h resides there and throws warnings
  CCOMFLAGS += -isystem /usr/local/include
+@@ -205,7 +205,7 @@
+ ifndef GTK_INSTALL_ROOT
+ NO_DEBUGGER = 1
+ else
+-DEBUGOBJS = $(SDLOBJ)/debugwin.o $(SDLOBJ)/dview.o $(SDLOBJ)/debug-sup.o $(SDLOBJ)/debug-intf.o
++DEBUGOBJS = $(SDLOBJ)/debugwin.o
+ LIBS += -lgtk-win32-2.0 -lgdk-win32-2.0 -lgmodule-2.0 -lglib-2.0 -lgobject-2.0 \
+ 	-lpango-1.0 -latk-1.0 -lgdk_pixbuf-2.0
+ CCOMFLAGS += -mms-bitfields \
 @@ -304,7 +304,7 @@
  ifeq ($(BASE_TARGETOS),unix)
  

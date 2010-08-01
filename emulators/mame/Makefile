@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mame
-PORTVERSION=	0.138
+PORTVERSION=	0.139
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.aarongiles.com/mirror/releases/ \
 		ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/
@@ -27,7 +27,7 @@ USE_GCC=	4.2+
 MAKEFILE=	makefile
 ONLY_FOR_ARCHS=	i386 amd64
 SUB_FILES=	pkg-message
-USE_DOS2UNIX=	makefile sdl.mak
+USE_DOS2UNIX=	makefile sdl.mak debugcpu.c
 
 OPTIONS=	DEBUG "Build mame debugger" off
 
