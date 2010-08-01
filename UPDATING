@@ -28,7 +28,7 @@ you update your ports collection, before attempting any port upgrades.
   Portupgrade user:
 	env DISABLE_CONFLICTS=1 portupgrade -o www/neon29 -f neon28-\*
 	pkgdb -Ff
-	portupgrade -rf www/neon29-\*
+	portupgrade -rf neon29-\*
 
 20100728:
   AFFECTS: users of textproc/nltk
