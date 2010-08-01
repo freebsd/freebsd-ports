@@ -597,12 +597,6 @@ share/locale/ja/LC_MESSAGES/rabbit.mo
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/kof2005
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/asahina
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry share/locale/ja/LC_MESSAGES
-@dirrmtry share/locale/ja
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fr
-@dirrmtry share/locale/en/LC_MESSAGES
-@dirrmtry share/locale/en
 @dirrm %%DATADIR%%/image/ruby-images
 @dirrm %%DATADIR%%/image/rabbit-images
 @dirrm %%DATADIR%%/image/cozmixng-images
