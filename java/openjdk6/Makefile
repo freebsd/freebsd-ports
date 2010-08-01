@@ -27,7 +27,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${ANTFILE}
 
 MAINTAINER=	java@FreeBSD.org
-COMMENT=	Sun's java 6 virtual machine release under the GPL v2
+COMMENT=	Oracle's Java 6 virtual machine release under the GPL v2
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
@@ -52,6 +52,7 @@ WRKSRC=		${WRKDIR}
 USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_XORG=	xtst xi xt x11
+MAKE_JOBS_SAFE=	yes
 
 JAXP_BUILD=	b20
 JAXPFILE=	jdk6-jaxp-${JAXP_BUILD}.zip
@@ -145,8 +146,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 USE_DISPLAY=	yes
 .endif
 
-BUILD_JOBS_NUMBER!=	${SYSCTL} -n kern.smp.cpus
-MAKE_ENV+=	HOTSPOT_BUILD_JOBS=${BUILD_JOBS_NUMBER}
+.if !defined(DISABLE_MAKE_JOBS)
+MAKE_ENV+=	HOTSPOT_BUILD_JOBS=${MAKE_JOBS_NUMBER}
+.endif
 
 COPYDIRS=	\
 	hotspot/src/os/linux/launcher \
