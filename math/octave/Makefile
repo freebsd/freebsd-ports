@@ -23,7 +23,6 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		gsed:${PORTSDIR}/textproc/gsed
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		glpk.28:${PORTSDIR}/math/glpk \
-		hdf5:${PORTSDIR}/science/hdf5 \
 		umfpack.1:${PORTSDIR}/math/suitesparse \
 		qhull:${PORTSDIR}/math/qhull \
 		arpack:${PORTSDIR}/math/arpack \
@@ -43,7 +42,15 @@ USE_AUTOTOOLS=	autoconf:262
 INFO=		octave liboctave
 MAN1=		octave.1 octave-bug.1 mkoctfile.1 octave-config.1
 
+OPTIONS=	LEGACY_HDF5 "Build with HDF5 v1.6 (otherwise with HDF5 v1.8)" on
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_LEGACY_HDF5)
+LIB_DEPENDS+=	hdf5:${PORTSDIR}/science/hdf5-18
+.else
+LIB_DEPENDS+=	hdf5:${PORTSDIR}/science/hdf5
+.endif
 
 USE_BLAS?=	reference
 
