@@ -473,6 +473,7 @@
     SUBDIR += quick-lounge-applet
     SUBDIR += quotes
     SUBDIR += quranref
+    SUBDIR += rabbit
     SUBDIR += ree
     SUBDIR += renamedlgplugins
     SUBDIR += rfc
