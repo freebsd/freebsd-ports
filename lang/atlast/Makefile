@@ -6,27 +6,22 @@
 #
 
 PORTNAME=	atlast
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	lang
-MASTER_SITES=	http://www.fourmilab.ch/atlast/ \
-		http://www.fourmilab.to/atlast/
+MASTER_SITES=	http://www.fourmilab.ch/atlast/download/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Autodesk Threaded Language Application System Toolkit
 
-SRC=		atlast.c atlmain.c
-DEFINES=	-DMEMSTAT -DALIGNMENT -DEXPORT
-LDFLAGS+=	-lm
+ALL_TARGET=	${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME}
 
-PLIST_FILES=	bin/atlast
-PORTDOCS=	atlast.ps atlast.rtf
+PORTDOCS=	atlast.html atlast.pdf
 
-do-build:
-.for f in ${SRC}
-	${CC} ${CFLAGS} ${DEFINES} -c ${WRKSRC}/${f} -o ${WRKSRC}/${f:C/\.c$/.o/}
-.endfor
-	${CC} ${LDFLAGS} ${SRC:C/(.*)\.c$/${WRKSRC}\/\1.o/} \
-		-o ${WRKSRC}/${PORTNAME}
+post-patch:
+	${REINPLACE_CMD} -e "/^COPTIONS = /s, = .*, = ${CFLAGS}, " \
+		-e "/^CC = /s,= .*, = ${CC}," \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
