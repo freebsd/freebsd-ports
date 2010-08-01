@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	bricxcc/NBC_NXC/NBC%20release%20${PORTVERSION:S/.r/%20r/}
 DISTNAME=		${PORTNAME}-${PORTVERSION}.src
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		rambiusparkisanius@gmail.com
+MAINTAINER=		rene@FreeBSD.org
 COMMENT=		NBC is a programming language for the LEGO MINDSTORMS NXT product
 
 OPTIONS=	ROBOCTL	"Include roboctl to communicate with the NXT"	off
