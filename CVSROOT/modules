@@ -339,6 +339,7 @@ aee                             ports/editors/aee
 aegis                           ports/devel/aegis
 aegisub                         ports/multimedia/aegisub
 aescrypt                        ports/security/aescrypt
+aeskulap                        ports/graphics/aeskulap
 aespipe                         ports/security/aespipe
 aestats                         ports/games/aestats
 aewan                           ports/editors/aewan
@@ -4806,6 +4807,7 @@ google-gdata                    ports/devel/google-gdata
 google-perftools                ports/devel/google-perftools
 google-sitemapgen               ports/www/google-sitemapgen
 google-sparsehash               ports/devel/google-sparsehash
+google-styleguide               ports/devel/google-styleguide
 googlecl                        ports/net/googlecl
 googlemock                      ports/devel/googlemock
 googletest                      ports/devel/googletest
@@ -9913,9 +9915,7 @@ nekobee                         ports/audio/nekobee
 nemesis                         ports/net/nemesis
 nemiver                         ports/devel/nemiver
 nenscript                       ports/print/nenscript
-neon28                          ports/www/neon28
 neon29                          ports/www/neon29
-neonpp                          ports/www/neonpp
 neowebscript                    ports/www/neowebscript
 nepenthes                       ports/net/nepenthes
 nepim                           ports/net/nepim
