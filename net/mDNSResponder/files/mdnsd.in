@@ -1,19 +1,22 @@
 #!/bin/sh
+#
 # $FreeBSD$
 
 # PROVIDE: mdnsd
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
 
-mdnsd_enable="${mdnsd_enable-NO}"
-
 . /etc/rc.subr
 
 name=mdnsd
 rcvar=`set_rcvar`
-command="%%PREFIX%%/sbin/${name}"
-pidfile="/var/run/${name}.pid"
 
 load_rc_config $name
+
+: ${mdnsd_enable="NO"}
+: ${mdnsd_pidfile="/var/run/${name}.pid"}
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile="${mdnsd_pidfile}"
 
 run_rc_command $*
