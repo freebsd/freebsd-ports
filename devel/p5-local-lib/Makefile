@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	local-lib
-PORTVERSION=	1.006000
+PORTVERSION=	1.006005
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/M/MS/MSTROUT
+MASTER_SITE_SUBDIR=	../../authors/id/G/GE/GETTY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -23,7 +23,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	lib::core::only.3 \
+MAN3=	POD2::DE::local::lib.3 \
+	lib::core::only.3 \
 	local::lib.3
 
 .include <bsd.port.mk>
