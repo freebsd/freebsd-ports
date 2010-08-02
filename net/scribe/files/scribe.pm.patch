@@ -1,0 +1,119 @@
+--- gen-perl/scribe.pm.orig	2010-07-14 18:52:03.000000000 +0800
++++ gen-perl/scribe.pm	2010-07-14 18:49:30.000000000 +0800
+@@ -8,14 +8,14 @@
+ use warnings;
+ use Thrift;
+ 
+-use Types;
++use Scribe::Thrift::Types;
+ use Facebook::FB303::FacebookService;
+ 
+ # HELPER FUNCTIONS AND STRUCTURES
+ 
+-package scribe_Log_args;
++package Scribe::Thrift::scribe_Log_args;
+ use base qw(Class::Accessor);
+-scribe_Log_args->mk_accessors( qw( messages ) );
++Scribe::Thrift::scribe_Log_args->mk_accessors( qw( messages ) );
+ 
+ sub new {
+   my $classname = shift;
+@@ -99,9 +99,9 @@
+   return $xfer;
+ }
+ 
+-package scribe_Log_result;
++package Scribe::Thrift::scribe_Log_result;
+ use base qw(Class::Accessor);
+-scribe_Log_result->mk_accessors( qw( success ) );
++Scribe::Thrift::scribe_Log_result->mk_accessors( qw( success ) );
+ 
+ sub new {
+   my $classname = shift;
+@@ -163,7 +163,7 @@
+   return $xfer;
+ }
+ 
+-package scribeIf;
++package Scribe::Thrift::scribeIf;
+ 
+ use strict;
+ use base qw(Facebook::FB303::FacebookServiceIf);
+@@ -175,7 +175,7 @@
+   die 'implement interface';
+ }
+ 
+-package scribeRest;
++package Scribe::Thrift::scribeRest;
+ 
+ use strict;
+ use base qw(Facebook::FB303::FacebookServiceRest);
+@@ -187,10 +187,10 @@
+   return $self->{impl}->Log($messages);
+ }
+ 
+-package scribeClient;
++package Scribe::Thrift::scribeClient;
+ 
+ use base qw(Facebook::FB303::FacebookServiceClient);
+-use base qw(scribeIf);
++use base qw(Scribe::Thrift::scribeIf);
+ sub new {
+   my ($classname, $input, $output) = @_;
+   my $self      = {};
+@@ -211,7 +211,7 @@
+   my $messages = shift;
+ 
+   $self->{output}->writeMessageBegin('Log', TMessageType::CALL, $self->{seqid});
+-  my $args = new scribe_Log_args();
++  my $args = new Scribe::Thrift::scribe_Log_args();
+   $args->{messages} = $messages;
+   $args->write($self->{output});
+   $self->{output}->writeMessageEnd();
+@@ -232,7 +232,7 @@
+     $self->{input}->readMessageEnd();
+     die $x;
+   }
+-  my $result = new scribe_Log_result();
++  my $result = new Scribe::Thrift::scribe_Log_result();
+   $result->read($self->{input});
+   $self->{input}->readMessageEnd();
+ 
+@@ -241,7 +241,7 @@
+   }
+   die "Log failed: unknown result";
+ }
+-package scribeProcessor;
++package Scribe::Thrift::scribeProcessor;
+ 
+ use strict;
+ use base qw(Facebook::FB303::FacebookServiceProcessor);
+--- gen-perl/Constants.pm.orig	2010-07-14 18:52:03.000000000 +0800
++++ gen-perl/Constants.pm	2010-07-14 18:49:30.000000000 +0800
+@@ -3,7 +3,7 @@
+ #
+ # DO NOT EDIT UNLESS YOU ARE SURE THAT YOU KNOW WHAT YOU ARE DOING
+ #
+-package Constants;
++package Scribe::Thrift::Constants;
+ require 5.6.0;
+ use strict;
+ use warnings;
+--- gen-perl/Types.pm.orig	2010-07-14 18:52:03.000000000 +0800
++++ gen-perl/Types.pm	2010-07-14 18:49:30.000000000 +0800
+@@ -8,12 +8,12 @@
+ use warnings;
+ use Thrift;
+ 
+-package ResultCode;
++package Scribe::Thrift::ResultCode;
+ use constant OK => 0;
+ use constant TRY_LATER => 1;
+-package LogEntry;
++package Scribe::Thrift::LogEntry;
+ use base qw(Class::Accessor);
+-LogEntry->mk_accessors( qw( category message ) );
++Scribe::Thrift::LogEntry->mk_accessors( qw( category message ) );
+ 
+ sub new {
+   my $classname = shift;

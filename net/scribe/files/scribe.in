@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: scribe
+# REQUIRE: DAEMON
+
+. /etc/rc.subr
+
+name="scribe"
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon -p ${pidfile} %%PREFIX%%/bin/scribed"
+procname="%%PREFIX%%/bin/scribed"
+
+load_rc_config "$name"
+: ${scribe_enable="NO"}
+: ${scribe_flags=""}
+
+run_rc_command "$1"
