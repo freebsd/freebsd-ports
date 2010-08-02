@@ -59,7 +59,7 @@ CUPS_DEVS= cups
 .undef _CUPS_DEVS
 
 .for D in ${CUPS_DEVS}
-.if defined(WITHOUT_CUPS)
+.if defined(WITHOUT_CUPS) || defined(WITHOUT_GS_${D})
 .undef WITH_GS_${D}
 .elif defined(WITH_GS_${D})
 _CUPS_DEVS+= ${D}
@@ -78,7 +78,7 @@ VGA_DEVS= lvga256 vgalib
 .undef _VGA_DEVS
 
 .for D in ${VGA_DEVS}
-.if defined(WITHOUT_SVGALIB)
+.if defined(WITHOUT_SVGALIB) || defined(WITHOUT_GS_${D})
 .undef WITH_GS_${D}
 .elif defined(WITH_GS_${D})
 _VGA_DEVS+= ${D}
@@ -95,7 +95,7 @@ X11_DEVS= x11 x11alpha x11cmyk x11cmyk2 x11cmyk4 x11cmyk8 x11gray2	\
 .undef _X11_DEVS
 
 .for D in ${X11_DEVS}
-.if defined(WITHOUT_X11)
+.if defined(WITHOUT_X11) || defined(WITHOUT_GS_${D})
 . undef WITH_GS_${D}
 .elif defined(WITH_GS_${D})
 _X11_DEVS+= ${D}
@@ -121,7 +121,7 @@ ICONV_DEVS= oprp opvp
 .undef _ICONV_DEVS
 
 .for D in ${ICONV_DEVS}
-.if defined(WITHOUT_ICONV)
+.if defined(WITHOUT_ICONV) || defined(WITHOUT_GS_${D})
 .undef WITH_GS_${D}
 .elif defined(WITH_GS_${D})
 _ICONV_DEVS+= ${D}

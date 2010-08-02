@@ -1,5 +1,5 @@
---- base/gdevvglb.c.orig	Tue Sep 25 22:31:24 2007
-+++ base/gdevvglb.c	Sat Nov 24 23:00:49 2007
+--- base/gdevvglb.c.orig	2007-09-25 22:31:24.000000000 +0900
++++ base/gdevvglb.c	2010-08-01 23:08:53.000000000 +0900
 @@ -149,10 +149,13 @@
  }
  
@@ -17,3 +17,16 @@
  }
  
  static int
+@@ -368,12 +371,3 @@
+     }
+     return 0;
+ }
+-
+-#ifdef GS_DEVS_SHARED
+-extern void gs_lib_register_device(const gx_device *dev);
+-void
+-gs_shared_init(void)
+-{
+-  gs_lib_register_device(&gs_vgalib_device);
+-}
+-#endif
