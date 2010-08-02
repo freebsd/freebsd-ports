@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	nitrogen
-PORTVERSION=	1.0
-PORTREVISION=	4
+PORTVERSION=	1.5.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://l3ib.org/nitrogen/files/ \
-		http://www.sourcefiles.org/Toys/Candy/
+MASTER_SITES=	http://projects.l3ib.org/nitrogen/files/
 
 MAINTAINER=	Net147@hotmail.com
 COMMENT=	Background browser and setter for X windows
@@ -19,6 +17,8 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
+
+LICENSE=	GPLv2
 
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes

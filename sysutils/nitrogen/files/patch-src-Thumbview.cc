@@ -1,27 +1,16 @@
---- src/Thumbview.cc.orig	Tue Jan 30 04:01:36 2007
-+++ src/Thumbview.cc	Wed Jul  4 17:10:44 2007
-@@ -56,6 +56,11 @@
-  * Constructor, sets up gtk stuff, inits data and queues
-  */
- Thumbview::Thumbview() : dir("") {
-+	Glib::RefPtr<Gtk::IconTheme> icontheme = Gtk::IconTheme::get_default();
-+	Glib::RefPtr<Gtk::IconTheme> gnomeicontheme = Gtk::IconTheme::create();
+--- src/Thumbview.cc.orig	2010-07-31 08:36:07.000000000 +0200
++++ src/Thumbview.cc	2010-07-31 08:36:33.000000000 +0200
+@@ -745,6 +745,8 @@
+ 	}
+ }
+ 
++#endif
 +
-+	gnomeicontheme->set_custom_theme("gnome");
-+
- 	set_policy (Gtk::POLICY_NEVER, Gtk::POLICY_AUTOMATIC);
- 	set_shadow_type (Gtk::SHADOW_IN);
+ void Thumbview::set_current_display_mode(DisplayMode newmode)
+ {
+     remove();
+@@ -776,4 +778,3 @@
+     signal_selected(path);
+ }
  
-@@ -96,7 +101,11 @@
- 	// store->set_sort_column (short_filename, Gtk::SORT_ASCENDING);
- 
- 	// load loading image
--	this->loading_image = Gtk::IconTheme::get_default()->load_icon("image-loading", 64, Gtk::ICON_LOOKUP_FORCE_SVG);
-+	try {
-+		this->loading_image = icontheme->load_icon("image-loading", 64, Gtk::ICON_LOOKUP_FORCE_SVG);
-+	} catch (...) {
-+		this->loading_image = gnomeicontheme->load_icon("image-loading", 64, Gtk::ICON_LOOKUP_FORCE_SVG);
-+	}
- 
- 	// make our async queues
- 	this->aqueue_createthumbs = g_async_queue_new();
+-#endif
