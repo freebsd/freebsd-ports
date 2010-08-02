@@ -1,0 +1,5 @@
+DT PS Tree shows running processes as a tree. It is a reimplementation
+of pstree from PSmisc for FreeBSD. It also works without /proc and will
+show the full set of processes in a jail even if init is not present.
+
+WWW: http://code.douglasthrift.net/trac/dtpstree
