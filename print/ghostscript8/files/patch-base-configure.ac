@@ -1,0 +1,20 @@
+--- base/configure.ac.orig	2010-08-01 22:37:05.000000000 +0900
++++ base/configure.ac	2010-08-01 22:41:12.000000000 +0900
+@@ -402,7 +402,7 @@
+ 	PNGDEVS="$PNGDEVS_ALL"
+ else
+ 	AC_MSG_RESULT([no])
+-	AC_CHECK_LIB(png, png_check_sig, [
++	AC_CHECK_LIB(png, png_sig_cmp, [
+ 	  AC_CHECK_HEADERS(png.h, [
+ 		SHARE_LIBPNG=1
+ 		PNGDEVS="$PNGDEVS_ALL"
+@@ -434,7 +434,7 @@
+ 	AC_CHECK_LIB(tiff, TIFFOpen,
+ 		     [AC_CHECK_HEADERS(tiff.h, [HAVE_SYSTEM_LIBTIFF=1;SHARE_LIBTIFF=1])],
+ 		     [], [-ljpeg])
+-	if test -z $LOCAL_LIBTIFF_VERSION && test "x$HAVE_SYSTEM_LIBTIFF" == x; then
++	if test -z $LOCAL_LIBTIFF_VERSION && test "x$HAVE_SYSTEM_LIBTIFF" = x; then
+ 	    AC_MSG_NOTICE([Could not find a copy of libtiff on your system.
+ Disabling tiff output devices.])
+ 	else

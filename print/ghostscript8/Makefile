@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript8
 PORTVERSION=	8.71
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://ghostscript.com/releases/:gs_srcs \
 		SF/ghostscript/files/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -18,13 +18,16 @@ DISTNAME=	${PORTNAME:S,8$,,}-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gs_srcs ${EPAG_SRCS}:epag
 DIST_SUBDIR=	${PORTNAME:S,8$,,}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_AFTER_ARGS=	| ${TAR} -xpf - ${EXCLUDE_DIRS:S/^/--exclude /}
 
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Ghostscript 8.x PostScript interpreter
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png.6:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
+		jasper:${PORTSDIR}/graphics/jasper \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		png:${PORTSDIR}/graphics/png \
+		tiff:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME:S,8,,}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
 CONFLICTS=	gambc-[0-9]* ghostscript7-[0-9]* ghostscript7-*-[0-9]*
@@ -33,6 +36,7 @@ USE_XZ=		yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
@@ -80,6 +84,7 @@ MLINKS=		gslp.1 gsbj.1 \
 		ps2ps.1 eps2eps.1
 
 CIDFONTDIR=	${DATADIR}/${PORTVERSION}/Resource
+EXCLUDE_DIRS=	jpeg expat jasper libpng tiff zlib
 
 .include "Makefile.drivers"
 .include <bsd.port.pre.mk>
