@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	bsnes
-PORTVERSION=	0.65
+PORTVERSION=	0.67
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		ftp://ftp.arcadebsd.org/pub/ArcadeBSD/ports/distfiles/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}
 
 MAINTAINER=	elbarto@ArcadeBSD.org
