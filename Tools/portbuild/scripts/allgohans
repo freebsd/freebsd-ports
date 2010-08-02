@@ -43,7 +43,7 @@ else
 fi
 
 pb=/var/portbuild
-. ${pb}/scripts/server.conf
+. ${pb}/conf/server.conf
 
 if [ "${arch}" = "all" ]; then
     arches=$(find ${pb}/*/portbuild.conf)
