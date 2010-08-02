@@ -4,5 +4,5 @@
 *	sh/bash:  export XMODIFIERS='@im=fcitx'	      *
 *                                                     *
 *   For GTK/Qt programs, you might also want to set   *
-#      GTK_IM_MODULE=xim and/or QT_IM_MODULE=xim      *
+*      GTK_IM_MODULE=xim and/or QT_IM_MODULE=xim      *
 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
