@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Paste to http://rafb.net/ from Perl
 
+DEPRECATED=	http://rafb.net service is dead
+EXPIRATION_DATE=	2010-10-02
+
 RUN_DEPENDS+=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Class/Data/Accessor.pm:${PORTSDIR}/devel/p5-Class-Data-Accessor
 
