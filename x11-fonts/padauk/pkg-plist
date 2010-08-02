@@ -1,0 +1,4 @@
+%%FONTSDIR%%/Padauk.ttf
+%%FONTSDIR%%/Padauk-Bold.ttf
+@exec %D/bin/fc-cache -f -v %%FONTSDIR%%
+@dirrm %%FONTSDIR%%
