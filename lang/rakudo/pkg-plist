@@ -83,13 +83,15 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/YAML.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/YAML/Dumper.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/YAML/Dumper.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/perl6.pbc
-share/doc/rakudo/CREDITS
-share/doc/rakudo/ChangeLog
-share/doc/rakudo/LICENSE
-share/doc/rakudo/README
-share/doc/rakudo/ROADMAP
-share/doc/rakudo/S11-Modules-proposal.pod
-@dirrm share/doc/rakudo
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ROADMAP
+%%PORTDOCS%%%%DOCSDIR%%/S11-Modules-proposal.pod
+%%PORTDOCS%%%%DOCSDIR%%/UsingPerl6-draft.pdf
+%%PORTDOCS%%%%DOCSDIR%%/cheatsheet.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/YAML
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/XML
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test
