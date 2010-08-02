@@ -42,7 +42,12 @@ bin/alephone
 %%DATADIR%%/Themes/Default/tiny_button_c.bmp
 %%DATADIR%%/Themes/Default/tiny_button_l.bmp
 %%DATADIR%%/Themes/Default/tiny_button_r.bmp
+%%PORTDOCS%%%%DOCSDIR%%/Lua.html
+%%PORTDOCS%%%%DOCSDIR%%/Lua_HUD.html
+%%PORTDOCS%%%%DOCSDIR%%/MML.html
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/Themes/Default
 @dirrm %%DATADIR%%/Themes
 @dirrm %%DATADIR%%/MML
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
