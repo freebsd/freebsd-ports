@@ -1,0 +1,5 @@
+Tpl is a library for serializing C data. The data is stored in its 
+natural binary form. The API is small and tries to stay "out of the
+way". Tpl can serialize many C data types, including structures.
+
+WWW: http://tpl.sourceforge.net/

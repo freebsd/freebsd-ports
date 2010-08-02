@@ -865,6 +865,7 @@
     SUBDIR += libtifiles
     SUBDIR += libtifiles2
     SUBDIR += libtool22
+    SUBDIR += libtpl
     SUBDIR += libublio
     SUBDIR += libukcprog
     SUBDIR += libunicode
