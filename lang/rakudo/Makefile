@@ -7,7 +7,7 @@
 
 PORTNAME=	rakudo
 PORTVERSION=	2010.07
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://cloud.github.com/downloads/rakudo/star/
@@ -40,11 +40,17 @@ CONFIGURE_SCRIPT=	Configure.pl
 CONFIGURE_ARGS=	--parrot-config=${PARROTCONFIG}
 PLIST_SUB+=	PARROT_VERSION=${PARROT_VERSION}
 
+EXTRA_DOCS=	UsingPerl6-draft.pdf cheatsheet.txt
+
 do-configure:
 	cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/perl6.1 ${MAN1PREFIX}/man/man1/perl6.1
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${EXTRA_DOCS:S!^!${WRKSRC}/docs/!} ${DOCSDIR}/
+.endif
 
 test: build
 	${MAKE} -C ${WRKSRC} test
