@@ -1142,6 +1142,7 @@
     SUBDIR += scim-input-pad
     SUBDIR += scim-kmfl-european-latin
     SUBDIR += scim-kmfl-imengine
+    SUBDIR += scim-kmfl-khmer
     SUBDIR += scim-kmfl-sil-ezra
     SUBDIR += scim-kmfl-sil-galatia
     SUBDIR += scim-kmfl-sil-ipa-unicode5
