@@ -33,7 +33,7 @@
 # _LICENSE_LIST_GROUPS	- List of defined license groups
 #
 
-_LICENSE_LIST=			ASL BSD BSL CDDL EPL GFDL GPLv2 GPLv3 LGPL20 LGPL21 LGPL3 MIT MPL
+_LICENSE_LIST=			ART10 ART20 ASL BSD BSL CDDL EPL GFDL GPLv1 GPLv2 GPLv3 LGPL20 LGPL21 LGPL3 MIT MPL
 
 # List of groups (only names must be present)
 
@@ -58,6 +58,12 @@ _LICENSE_PERMS_DEFAULT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 # - General permissions from groups are added to each license, if not defined.
 #
 
+_LICENSE_NAME_ART10=	Artistic License version 1.0
+_LICENSE_GROUPS_ART10=	OSI
+
+_LICENSE_NAME_ART20=	Artistic License version 2.0
+_LICENSE_GROUPS_ART20=	FSF GPL OSI
+
 _LICENSE_NAME_ASL=		Apache License
 _LICENSE_GROUPS_ASL=	FSF OSI
 
@@ -75,6 +81,9 @@ _LICENSE_GROUPS_EPL=	FSF OSI
 
 _LICENSE_NAME_GFDL=		GNU Free Documentation License
 _LICENSE_GROUPS_GFDL=	FSF
+
+_LICENSE_NAME_GPLv1=	GNU General Public License version 1
+_LICENSE_GROUPS_GPLv1=	FSF GPL OSI
 
 _LICENSE_NAME_GPLv2=	GNU General Public License version 2
 _LICENSE_GROUPS_GPLv2=	FSF GPL OSI
