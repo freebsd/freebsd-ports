@@ -19,16 +19,14 @@ COMMENT?=	The wxWidgets GUI toolkit with GTK+ bindings
 LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png\
 		jpeg.11:${PORTSDIR}/graphics/jpeg\
 		tiff.4:${PORTSDIR}/graphics/tiff\
-		expat.6:${PORTSDIR}/textproc/expat2\
-		mspack.1:${PORTSDIR}/archivers/libmspack
+		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_BZIP2=	yes
 USE_XORG=	x11 sm xxf86vm xinerama 
 USE_GL=		glu
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_GNOME=	gtk20 gconf2
-USE_GSTREAMER=	yes
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libpng=sys\
 		--with-libjpeg=sys\
@@ -49,6 +47,28 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"\
 PLIST=		${.CURDIR}/pkg-plist
 
 WXGTK_FLAVOR?=	gtk2
+
+OPTIONS=	GSTREAMER "media support" on\
+		MSPACK "MS archives support" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GSTREAMER)
+CONFIGURE_ARGS+=--enable-mediactrl
+USE_GNOME+=	gconf2
+USE_GSTREAMER=	yes
+PLIST_SUB+=     GSTREAMER=""
+.else
+CONFIGURE_ARGS+=--disable-mediactrl
+PLIST_SUB+=     GSTREAMER="@comment "
+.endif
+
+.if defined(WITH_MSPACK)
+CONFIGURE_ARGS+=--with-libmspack
+LIB_DEPENDS+=	mspack.1:${PORTSDIR}/archivers/libmspack
+.else
+CONFIGURE_ARGS+=--without-libmspack
+.endif
 
 .if ${WXGTK_FLAVOR} != "gtk2-common"
 RUN_DEPENDS=	${LOCALBASE}/include/wx-2.8/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk28-common
@@ -92,4 +112,4 @@ post-patch:
 		-e 's|png_check_sig|png_sig_cmp|g' \
 			${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
