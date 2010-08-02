@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Authen-Passphrase
-PORTVERSION=	0.006
-PORTREVISION=	1
+PORTVERSION=	0.007
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,6 +28,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Authen/DecHpwd.pm:${PORTSDIR}/security/
 		${SITE_PERL}/${PERL_ARCH}/Params/Classify.pm:${PORTSDIR}/devel/p5-Params-Classify
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+LICENSE_COMB=	dual
+LICENSE=	ART10 GPLv1
 PERL_MODBUILD=	yes
 
 MAN3=	Authen::Passphrase.3 \
