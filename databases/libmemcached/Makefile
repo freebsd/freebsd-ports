@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmemcached
-PORTVERSION=	0.42
+PORTVERSION=	0.43
 PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://download.tangent.org/
@@ -116,6 +116,7 @@ MAN3=		hashkit_clone.3 \
 		memcached_set_memory_allocators.3 \
 		memcached_set_user_data.3 \
 		memcached_stat.3 \
+		memcached_stat_execute.3 \
 		memcached_stat_get_keys.3 \
 		memcached_stat_get_value.3 \
 		memcached_stat_servername.3 \
