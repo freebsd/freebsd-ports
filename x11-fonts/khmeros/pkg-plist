@@ -1,0 +1,14 @@
+%%FONTSDIR%%/KhmerOS.ttf
+%%FONTSDIR%%/KhmerOS_battambang.ttf
+%%FONTSDIR%%/KhmerOS_bokor.ttf
+%%FONTSDIR%%/KhmerOS_content.ttf
+%%FONTSDIR%%/KhmerOS_fasthand.ttf
+%%FONTSDIR%%/KhmerOS_freehand.ttf
+%%FONTSDIR%%/KhmerOS_metalchrieng.ttf
+%%FONTSDIR%%/KhmerOS_muol.ttf
+%%FONTSDIR%%/KhmerOS_muollight.ttf
+%%FONTSDIR%%/KhmerOS_muolpali.ttf
+%%FONTSDIR%%/KhmerOS_siemreap.ttf
+%%FONTSDIR%%/KhmerOS_sys.ttf
+@exec %D/bin/fc-cache -f -v %%FONTSDIR%%
+@dirrm %%FONTSDIR%%
