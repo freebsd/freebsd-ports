@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Class-Date
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	frederic@culot.org
 COMMENT=	A Perl class for easy date and time manipulation
 
 PERL_CONFIGURE=	yes
