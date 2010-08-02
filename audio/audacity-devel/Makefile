@@ -6,7 +6,7 @@
 
 PORTNAME=	audacity
 PORTVERSION=	1.3.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		SF/${PORTNAME}/${PORTNAME}-unstable/${PORTVERSION}
@@ -16,14 +16,13 @@ DISTNAME=	${PORTNAME}-minsrc-${PORTVERSION}-beta
 MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	Audacity is a GUI editor for digital audio waveforms
 
-BUILD_DEPENDS+=	automake-1.10:${PORTSDIR}/devel/automake110
-BUILD_DEPENDS+=	autoconf-2.62:${PORTSDIR}/devel/autoconf262
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
 CONFLICTS=	audacity-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}-beta
 
+USE_AUTOTOOLS=	aclocal:110 autoconf:262
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GCC=	4.2+
@@ -60,11 +59,18 @@ OPTIONS=	DEBUG		"enable debug support" off \
 SSE_CFLAGS=	-mno-sse -mno-sse2
 .endif
 
-CONFIGURE_ARG+=	--destdir=/
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		CPPFLAGS="${CPPFLAGS} -I${WRKSRC}/lib-src/portaudio-v19/include -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}" \
-		CFLAGS="${CFLAGS} -I${WRKSRC}/lib-src/portaudio-v19/include -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}" \
-		WX_CONFIG=${WX_CONFIG}
+ACLOCAL_ARGS+=	-I ${WRKSRC}/m4
+AUTOCONF_ARGS+=	-I ${WRKSRC}/m4
+
+CONFIGURE_ARG+	=--destdir=/
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}
+CXXFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}
+CFLAGS+=	-I${WRKSRC}/lib-src/portsmf -I${WRKSRC}/lib-src/portaudio-v19/include -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}
+
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}" \
+		WX_CONFIG="${WX_CONFIG}"
 
 .if !defined(NOPORTDOCS)
 MAKE_ENV=	DOC=yes
