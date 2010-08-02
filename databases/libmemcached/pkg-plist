@@ -35,6 +35,7 @@ include/libmemcached/memcached.hpp
 include/libmemcached/memcached_util.h
 include/libmemcached/memcached/protocol_binary.h
 include/libmemcached/parse.h
+include/libmemcached/platform.h
 include/libmemcached/protocol_handler.h
 include/libmemcached/protocol/cache.h
 include/libmemcached/protocol/callback.h
