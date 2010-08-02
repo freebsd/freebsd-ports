@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	alephone
-PORTVERSION=	20080913
-PORTREVISION=	4
+PORTVERSION=	20100424
 CATEGORIES=	games
-MASTER_SITES=	SF/marathon/Aleph%20One/2008-09-13
+MASTER_SITES=	SF/marathon/Aleph%20One/2010-04-24
 DISTNAME=	AlephOne-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fiziologus@gmail.com
 COMMENT=	The open source version of Bungie's Marathon game
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs \
+		${LOCALBASE}/include/zzip/lib.h:${PORTSDIR}/devel/zziplib
 
 USE_BZIP2=	yes
 USE_GL=		yes
-USE_GNOME=	gnometarget
 USE_LUA=	5.1
-USE_SDL=	image net sdl sound
+USE_SDL=	image ttf net sdl sound
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LUA_INCDIR}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${LUA_LIBDIR}"
@@ -31,17 +30,14 @@ DATADIR=	${PREFIX}/share/AlephOne
 
 MAN6=		alephone.6
 
-PORTDOCS=	*
-
-.include <bsd.port.pre.mk>
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} README docs/* ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} README ${DOCSDIR}
+	cd ${WRKSRC}/docs && ${INSTALL_DATA} *.html ${DOCSDIR}
 .endif
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
