@@ -17,7 +17,5 @@
 %%SITE_PERL%%/Authen/Passphrase/RejectAll.pm
 %%SITE_PERL%%/Authen/Passphrase/SaltedDigest.pm
 %%SITE_PERL%%/Authen/Passphrase/VMSPurdy.pm
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Passphrase
 @dirrm %%SITE_PERL%%/Authen/Passphrase
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
 @dirrmtry %%SITE_PERL%%/Authen
