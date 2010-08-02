@@ -11,7 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	staden/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	frederic@coulot.org
+MAINTAINER=	frederic@culot.org
 COMMENT=	A general purpose trace file(and Experiment File) reading interface
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
