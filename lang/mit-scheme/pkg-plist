@@ -235,7 +235,7 @@ lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/imap-syntax.com
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/imail/load.scm
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prbfish.so
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prmd5.so
-lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prpgsql.so
+%%POSTGRESQL%%lib/mit-scheme-%%MIT_SCHEME_ARCH%%/lib/prpgsql.so
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/optiondb.scm
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/advice.bci
 lib/mit-scheme-%%MIT_SCHEME_ARCH%%/runtime/apply.bci

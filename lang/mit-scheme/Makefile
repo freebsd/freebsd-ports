@@ -7,6 +7,7 @@
 
 PORTNAME=	mit-scheme
 PORTVERSION=	9.0.1
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	mit-scheme/stable.pkg/${PORTVERSION}
@@ -19,7 +20,17 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/mit-scheme-${PORTVERSION}/src/
 
+OPTIONS=	POSTGRESQL	"Enable PostgreSQL support"	off
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_POSTGRESQL)
+PLIST_SUB+=	POSTGRESQL=""
+CONFIGURE_ARGS+=--with-libpq
+.else
+PLIST_SUB+=	POSTGRESQL="@comment "
+CONFIGURE_ARGS+=--without-libpq
+.endif
 
 MIT_SCHEME_ARCH=i386
 
