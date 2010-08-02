@@ -689,6 +689,7 @@
     SUBDIR += photoclip
     SUBDIR += photopc
     SUBDIR += php-facedetect
+    SUBDIR += php-libpuzzle
     SUBDIR += php-magickwand
     SUBDIR += php4-chartdirector
     SUBDIR += php4-exif
