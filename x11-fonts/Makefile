@@ -89,6 +89,7 @@
     SUBDIR += jmk-x11-fonts
     SUBDIR += junicode
     SUBDIR += kaputa
+    SUBDIR += khmeros
     SUBDIR += lfpfonts-fix
     SUBDIR += lfpfonts-var
     SUBDIR += libFS
@@ -116,7 +117,9 @@
     SUBDIR += p5-Font-TTF
     SUBDIR += p5-Font-TTFMetrics
     SUBDIR += p5-type1inst
+    SUBDIR += padauk
     SUBDIR += pcf2bdf
+    SUBDIR += pingwi
     SUBDIR += ppantsfonts
     SUBDIR += profont
     SUBDIR += proggy_fonts
