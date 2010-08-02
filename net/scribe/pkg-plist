@@ -1,0 +1,27 @@
+@comment $FreeBSD$
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/example1.conf
+%%EXAMPLESDIR%%/example2central.conf
+%%EXAMPLESDIR%%/example2client.conf
+%%EXAMPLESDIR%%/hdfs_example.conf
+%%EXAMPLESDIR%%/hdfs_example2.conf
+%%EXAMPLESDIR%%/scribe_cat
+%%EXAMPLESDIR%%/scribe_ctrl
+%%PYTHON_SITELIBDIR%%/scribe-2.0-%%PYTHON_VERSION_SHORTNAME%%.egg-info
+%%PYTHON_SITELIBDIR%%/scribe/__init__.py
+%%PYTHON_SITELIBDIR%%/scribe/__init__.pyc
+%%PYTHON_SITELIBDIR%%/scribe/constants.py
+%%PYTHON_SITELIBDIR%%/scribe/constants.pyc
+%%PYTHON_SITELIBDIR%%/scribe/scribe.py
+%%PYTHON_SITELIBDIR%%/scribe/scribe.pyc
+%%PYTHON_SITELIBDIR%%/scribe/ttypes.py
+%%PYTHON_SITELIBDIR%%/scribe/ttypes.pyc
+%%SITE_PERL%%/Scribe/Thrift/Constants.pm
+%%SITE_PERL%%/Scribe/Thrift/Types.pm
+%%SITE_PERL%%/Scribe/Thrift/scribe.pm
+bin/scribed
+lib/libscribe.a
+@dirrmtry %%SITE_PERL%%/Scribe/Thrift
+@dirrmtry %%SITE_PERL%%/Scribe
+@dirrmtry %%PYTHON_SITELIBDIR%%/scribe
+@dirrmtry %%EXAMPLESDIR%%

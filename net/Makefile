@@ -946,6 +946,7 @@
     SUBDIR += scapy
     SUBDIR += scnc
     SUBDIR += scr_ipfm
+    SUBDIR += scribe
     SUBDIR += sdl_net
     SUBDIR += seda
     SUBDIR += sendemail
