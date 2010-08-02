@@ -44,18 +44,6 @@
 %%DATADIR%%/javadoc/org/apache/cassandra/auth/package-summary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/auth/package-tree.html
 %%DATADIR%%/javadoc/org/apache/cassandra/auth/package-use.html
-%%DATADIR%%/javadoc/org/apache/cassandra/avro/AvroValidation.html
-%%DATADIR%%/javadoc/org/apache/cassandra/avro/CassandraDaemon.html
-%%DATADIR%%/javadoc/org/apache/cassandra/avro/CassandraServer.html
-%%DATADIR%%/javadoc/org/apache/cassandra/avro/KeyspaceNotDefinedException.html
-%%DATADIR%%/javadoc/org/apache/cassandra/avro/class-use/AvroValidation.html
-%%DATADIR%%/javadoc/org/apache/cassandra/avro/class-use/CassandraDaemon.html
-%%DATADIR%%/javadoc/org/apache/cassandra/avro/class-use/CassandraServer.html
-%%DATADIR%%/javadoc/org/apache/cassandra/avro/class-use/KeyspaceNotDefinedException.html
-%%DATADIR%%/javadoc/org/apache/cassandra/avro/package-frame.html
-%%DATADIR%%/javadoc/org/apache/cassandra/avro/package-summary.html
-%%DATADIR%%/javadoc/org/apache/cassandra/avro/package-tree.html
-%%DATADIR%%/javadoc/org/apache/cassandra/avro/package-use.html
 %%DATADIR%%/javadoc/org/apache/cassandra/cache/AbstractCache.html
 %%DATADIR%%/javadoc/org/apache/cassandra/cache/IAggregatableCacheProvider.html
 %%DATADIR%%/javadoc/org/apache/cassandra/cache/ICacheExpungeHook.html
@@ -586,6 +574,10 @@
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/Cassandra.describe_keyspaces_args.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/Cassandra.describe_keyspaces_result._Fields.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/Cassandra.describe_keyspaces_result.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/Cassandra.describe_partitioner_args._Fields.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/Cassandra.describe_partitioner_args.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/Cassandra.describe_partitioner_result._Fields.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/Cassandra.describe_partitioner_result.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/Cassandra.describe_ring_args._Fields.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/Cassandra.describe_ring_args.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/Cassandra.describe_ring_result._Fields.html
@@ -717,6 +709,10 @@
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/Cassandra.describe_keyspaces_args.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/Cassandra.describe_keyspaces_result._Fields.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/Cassandra.describe_keyspaces_result.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/Cassandra.describe_partitioner_args._Fields.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/Cassandra.describe_partitioner_args.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/Cassandra.describe_partitioner_result._Fields.html
+%%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/Cassandra.describe_partitioner_result.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/Cassandra.describe_ring_args._Fields.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/Cassandra.describe_ring_args.html
 %%DATADIR%%/javadoc/org/apache/cassandra/thrift/class-use/Cassandra.describe_ring_result._Fields.html
@@ -895,7 +891,6 @@
 %%DATADIR%%/javadoc/stylesheet.css
 %%DATADIR%%/lib/antlr-3.1.3.jar
 %%DATADIR%%/lib/apache-cassandra-%%PORTVERSION%%.jar
-%%DATADIR%%/lib/avro-1.2.0-dev.jar
 %%DATADIR%%/lib/clhm-production.jar
 %%DATADIR%%/lib/commons-cli-1.1.jar
 %%DATADIR%%/lib/commons-codec-1.2.jar
@@ -911,7 +906,6 @@
 %%DATADIR%%/lib/json-simple-1.1.jar
 %%DATADIR%%/lib/libthrift-r917130.jar
 %%DATADIR%%/lib/licenses/antlr-3.1.3.txt
-%%DATADIR%%/lib/licenses/avro-1.2.0-dev.txt
 %%DATADIR%%/lib/licenses/clhm-production.txt
 %%DATADIR%%/lib/licenses/commons-cli-1.1.txt
 %%DATADIR%%/lib/licenses/commons-codec-1.2.txt
@@ -980,8 +974,6 @@
 @dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/cli
 @dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/cache/class-use
 @dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/cache
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/avro/class-use
-@dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/avro
 @dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/auth/class-use
 @dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra/auth
 @dirrmtry %%DATADIR%%/javadoc/org/apache/cassandra
