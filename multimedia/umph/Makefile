@@ -16,9 +16,11 @@ COMMENT=	Youtube video playlist parser for cclive and alike tools
 RUN_DEPENDS=	p5-XML-DOM>=1.44:${PORTSDIR}/textproc/p5-XML-DOM \
 		p5-Getopt-ArgvFile>=1.11:${PORTSDIR}/devel/p5-Getopt-ArgvFile
 
-MAN1=		umph.1
-
 PERL_CONFIGURE=	yes
 USE_BZIP2=	yes
+
+MAN1=		umph.1
+PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/auto/umph
+PLIST_FILES=	bin/umph ${SITE_PERL_REL}/${PERL_ARCH}/auto/umph/.packlist
 
 .include <bsd.port.mk>
