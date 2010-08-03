@@ -10,6 +10,8 @@ PORTREVISION=	1
 
 COMMENT=	A GnuPG extension for the Thunderbird mail client
 
+IGNORE=		Does not work with Thunderbird 3.1
+
 MASTERDIR=	${.CURDIR}/../enigmail
 
 GECKO=		thunderbird
