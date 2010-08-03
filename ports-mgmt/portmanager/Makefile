@@ -11,7 +11,7 @@ PORTREVISION=	9
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	SF
 
-MAINTAINER=	rnoland@FreeBSD.org
+MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	FreeBSD installed ports status and safe update utility
 
 MAN1=		portmanager.1
