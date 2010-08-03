@@ -1,5 +1,5 @@
---- security/coreconf/FreeBSD.mk.orig	Wed Mar 26 20:17:25 2003
-+++ security/coreconf/FreeBSD.mk	Thu Jul  8 12:56:24 2004
+--- mozilla/security/coreconf/FreeBSD.mk.orig	Wed Mar 26 20:17:25 2003
++++ mozilla/security/coreconf/FreeBSD.mk	Thu Jul  8 12:56:24 2004
 @@ -35,16 +35,18 @@
  
  include $(CORE_DEPTH)/coreconf/UNIX.mk

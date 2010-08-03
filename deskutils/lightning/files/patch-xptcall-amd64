@@ -1,5 +1,5 @@
 --- /dev/null	Wed Dec 31 16:00:00 1969
-+++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_amd64_freebsd.cpp	Thu Oct 16 22:59:43 2003
++++ mozilla/xpcom/reflect/xptcall/src/md/unix/xptcinvoke_amd64_freebsd.cpp	Thu Oct 16 22:59:43 2003
 @@ -0,0 +1,174 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 +// Platform specific code to invoke XPCOM methods on native objects
@@ -176,7 +176,7 @@
 +    return result;
 +}
 --- /dev/null	Wed Dec 31 16:00:00 1969
-+++ xpcom/reflect/xptcall/src/md/unix/xptcstubs_amd64_freebsd.cpp	Thu Oct 16 23:01:08 2003
++++ mozilla/xpcom/reflect/xptcall/src/md/unix/xptcstubs_amd64_freebsd.cpp	Thu Oct 16 23:01:08 2003
 @@ -0,0 +1,206 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 +

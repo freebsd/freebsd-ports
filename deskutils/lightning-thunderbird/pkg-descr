@@ -1,5 +1,6 @@
-The Sunbird Project is a redesign of the Mozilla Calendar component. The goal
-is to produce a cross platform standalone calendar application based on
-Mozilla's XUL user interface language.
+Lightning brings the Sunbird calendar to the popular email client, Mozilla
+Thunderbird and the SeaMonkey  internet application suite. Since it's an
+extension, Lightning is tightly integrated with Thunderbird or SeaMonkey,
+allowing it to easily perform email-related calendaring tasks. 
 
-WWW:	http://www.mozilla.org/projects/calendar/sunbird.html
+WWW:	http://www.mozilla.org/projects/calendar/lightning/

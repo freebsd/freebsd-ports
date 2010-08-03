@@ -1,0 +1,66 @@
+--- mozilla/media/libsydneyaudio/src/Makefile.in.orig	2009-08-20 21:43:41.000000000 +0200
++++ mozilla/media/libsydneyaudio/src/Makefile.in	2009-08-20 21:44:17.000000000 +0200
+@@ -45,6 +45,12 @@
+ LIBRARY_NAME	= sydneyaudio
+ FORCE_STATIC_LIB= 1
+ 
++ifeq ($(OS_ARCH),FreeBSD)
++CSRCS		= \
++		sydney_audio_pulseaudio.c \
++		$(NULL)
++endif
++
+ ifeq ($(OS_ARCH),Linux)
+ CSRCS		= \
+ 		sydney_audio_alsa.c \
+--- mozilla/toolkit/library/Makefile.in.orig	2009-08-20 21:45:20.000000000 +0200
++++ mozilla/toolkit/library/Makefile.in	2009-08-20 21:46:25.000000000 +0200
+@@ -228,12 +228,12 @@
+ endif
+ 
+ ifeq (gtk2,$(MOZ_WIDGET_TOOLKIT))
+-EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS) $(MOZ_PANGO_LIBS) $(MOZ_GTK2_LIBS) $(XT_LIBS) -lgthread-2.0
++EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS) $(MOZ_PANGO_LIBS) $(MOZ_GTK2_LIBS) $(XT_LIBS) -lgthread-2.0 -lpulse -lpthread -lc
+ EXTRA_DSO_LDOPTS += $(FT2_LIBS)
+ endif
+ 
+ ifeq (qt,$(MOZ_WIDGET_TOOLKIT))
+-EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS) $(XT_LIBS) $(MOZ_QT_LIBS) -lgthread-2.0
++EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS) $(XT_LIBS) $(MOZ_QT_LIBS) -lgthread-2.0 -lpulse -lpthread -lc
+ EXTRA_DSO_LDOPTS += $(FT2_LIBS)
+ endif
+ 
+--- mozilla/js/src/Makefile.in.orig	2009-08-21 00:34:43.000000000 +0200
++++ mozilla/js/src/Makefile.in	2009-08-21 00:36:59.000000000 +0200
+@@ -427,7 +427,7 @@
+ endif # WINNT
+ 
+ ifeq ($(OS_ARCH),FreeBSD)
+-EXTRA_LIBS	+= -pthread
++EXTRA_LIBS	+= -pthread -lpulse -lc
+ endif
+ ifeq ($(OS_ARCH),IRIX)
+ ifdef USE_N32
+--- config/rules.mk.orig	2009-08-22 15:30:16.000000000 +0200
++++ config/rules.mk	2009-08-22 15:30:46.000000000 +0200
+@@ -583,6 +583,7 @@
+ ifdef IS_COMPONENT
+ EXTRA_DSO_LDOPTS += -Wl,-Bsymbolic
+ endif
++EXTRA_LIBS	+= -pthread -lpulse -lc
+ endif
+ 
+ ifeq ($(OS_ARCH),NetBSD)
+--- mozilla/layout/build/Makefile.in.orig	2009-08-22 01:00:21.000000000 +0200
++++ mozilla/layout/build/Makefile.in	2009-08-22 01:00:57.000000000 +0200
+@@ -269,6 +269,10 @@
+ endif
+ endif
+ 
++ifeq ($(OS_ARCH),FreeBSD)
++EXTRA_LIBS	+= -lpulse
++endif
++
+ include $(topsrcdir)/config/rules.mk
+ 
+ LOCAL_INCLUDES	+= -I$(srcdir)/../base \
