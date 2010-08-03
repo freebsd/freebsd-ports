@@ -425,6 +425,7 @@
     SUBDIR += libchamplain
     SUBDIR += libdmtx
     SUBDIR += libdrm
+    SUBDIR += libecwj2
     SUBDIR += libemf
     SUBDIR += libexif
     SUBDIR += libexif-gtk
