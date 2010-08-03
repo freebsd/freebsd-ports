@@ -3418,10 +3418,20 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Gdata/Gapps/Extension/Login.php
 %%DATADIR%%/library/Zend/Gdata/Gapps/Extension/Name.php
 %%DATADIR%%/library/Zend/Gdata/Gapps/Extension/Nickname.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/Extension/Property.php
 %%DATADIR%%/library/Zend/Gdata/Gapps/Extension/Quota.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/GroupEntry.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/GroupFeed.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/GroupQuery.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/MemberEntry.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/MemberFeed.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/MemberQuery.php
 %%DATADIR%%/library/Zend/Gdata/Gapps/NicknameEntry.php
 %%DATADIR%%/library/Zend/Gdata/Gapps/NicknameFeed.php
 %%DATADIR%%/library/Zend/Gdata/Gapps/NicknameQuery.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/OwnerEntry.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/OwnerFeed.php
+%%DATADIR%%/library/Zend/Gdata/Gapps/OwnerQuery.php
 %%DATADIR%%/library/Zend/Gdata/Gapps/Query.php
 %%DATADIR%%/library/Zend/Gdata/Gapps/ServiceException.php
 %%DATADIR%%/library/Zend/Gdata/Gapps/UserEntry.php
@@ -6756,6 +6766,8 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/ImportTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/IteratorTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Pubsubhubbub/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Pubsubhubbub/Model/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Pubsubhubbub/Model/SubscriptionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Pubsubhubbub/PublisherTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Pubsubhubbub/PubsubhubbubTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Feed/Pubsubhubbub/Subscriber/CallbackTest.php
@@ -7742,12 +7754,22 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/EmailListRecipientQueryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/EmailListTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/ErrorTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/GroupEntryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/GroupFeedTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/GroupQueryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/LoginTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/MemberEntryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/MemberFeedTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/MemberQueryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/NameTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/NicknameEntryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/NicknameFeedTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/NicknameQueryTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/NicknameTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/OwnerEntryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/OwnerFeedTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/OwnerQueryTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/PropertyTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/QuotaTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/ServiceExceptionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/UserEntryTest.php
@@ -7759,11 +7781,18 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/EmailListFeedDataSample1.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/EmailListRecipientEntryDataSample1.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/EmailListRecipientFeedDataSample1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/GroupEntryDataSample1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/GroupFeedDataSample1.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/LoginElementSample1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/MemberEntryDataSample1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/MemberFeedDataSample1.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/NameElementSample1.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/NicknameElementSample1.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/NicknameEntryDataSample1.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/NicknameFeedDataSample1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/OwnerEntryDataSample1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/OwnerFeedDataSample1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/PropertyElementSample1.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/QuotaElementSample1.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/UserEntryDataSample1.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Gdata/Gapps/_files/UserFeedDataSample1.xml
@@ -7979,6 +8008,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/ResponseTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/body
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_302
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_302_iis
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_403_nomessage
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_404
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/_files/response_500
@@ -8111,12 +8141,15 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Formatter/SimpleTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Formatter/XmlTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/LogTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/AbstractTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/DbTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/FirebugTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/MailTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/MockTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/NullTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/StreamTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/SyslogTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Log/Writer/ZendMonitorTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/ImapTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Mail/InterfaceTest.php
@@ -8986,6 +9019,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/UploadTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/WordCountTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/_files/badpicture.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/_files/magic.mime
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/_files/picture.jpg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/_files/test.zip
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Validate/File/_files/testsize.mo
@@ -9794,6 +9828,7 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Pubsubhubbub/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Pubsubhubbub/Subscriber/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Pubsubhubbub/Subscriber
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Pubsubhubbub/Model
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Pubsubhubbub/Http
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Pubsubhubbub
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Feed/Entry
