@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	bozohttpd
-PORTVERSION=	20100512
+PORTVERSION=	20100621
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.eterna.com.au/bozohttpd/ \
 		${MASTER_SITE_NETBSD}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	The bozotic HTTP server
+
+LICENSE=	BSD
 
 USE_BZIP2=	YES
 USE_RC_SUBR=	bozohttpd
