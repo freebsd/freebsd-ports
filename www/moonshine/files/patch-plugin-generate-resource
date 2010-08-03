@@ -1,0 +1,76 @@
+--- plugin/generate-resource.orig	2010-06-22 21:46:11.000000000 +0200
++++ plugin/generate-resource	2010-07-01 12:39:33.000000000 +0200
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # generate-resource by Aaron Bockover
+ # Copyright (C) 2008 Novell
+@@ -6,7 +6,7 @@
+ # 
+ # Turns a set of files into a C header file
+ 
+-function bail () {
++bail () {
+ 	echo "ERROR: $1" 1>&2
+ 	exit 1
+ }
+@@ -23,17 +23,19 @@
+ all_name=$1; shift
+ all_array=""
+ 
+-[[ -z $out ]] && 
++if [ -z "$out" ]; then
+ 	bail "You must specify an output file first"
++fi
+ 
+-while (($# > 0)); do
++while [ $# -gt 0 ]; do
+ 	var=$1
+ 	input=$2
+ 	
+-	[[ -z $var || ! -f $input ]] && 
++	if [ -z $var ] || [ ! -f $input ]; then
+ 		bail "Invalid variable/input file argument pair ($var, $input)"
++	fi
+ 
+-	[[ $inputs -eq 0 ]] && {
++	if [ $inputs -eq 0 ]; then
+ 		(echo "/* "
+ 			echo " * $out: auto-generated embedded resources "
+ 			echo " */ "
+@@ -41,24 +43,29 @@
+ 			echo "#ifndef $out_define"
+ 			echo "#define $out_define"
+ 			echo) > $out
+-	}
++	fi
+ 
+-	((inputs++))
++	inputs=$((inputs+1))
+ 	all_array="$all_array $var"
+ 
+ 	(echo "/* Embedded Resource $inputs ($input) */"
+-		table=$(hexdump -e '"    " 16/1 "0x%02x, " "\n"' $input | sed -r 's/, 0x[ ,]+.*/, 0x00/')
++		table=$(hexdump -e '"    " 16/1 "0x%02x, " "\n"' $input | sed -E 's/, 0x[ ,]+.*/, 0x00/')
+ 		echo "static const char $var [] = {"
+         echo "$table"
+-        [[ ${table:$((${#table}-1))} = "," ]] && echo "    0x00"
++	tablelen=${#table}
++	tablestr=$(echo $table | awk -v var=$tablelen '{ string=substr($1, 0, var); print string; }' )
++	if [ $tablestr = "," ]; then
++		echo "    0x00"
++	fi
+ 		echo "};"
+ 		echo) >> $out
+ 		
+ 	shift; shift
+ done
+ 
+-[[ $inputs -eq 0 ]] && 
++if [ $inputs -eq 0 ]; then
+ 	bail "You must specify at least one variable/input file pair"
++fi
+ 
+ echo "static const char const * $all_name [] = {" >> $out
+ for var in $all_array; do

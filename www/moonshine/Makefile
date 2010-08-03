@@ -6,20 +6,25 @@
 #
 
 PORTNAME=	moonshine
-PORTVERSION=	0.2
-PORTREVISION=	2
+PORTVERSION=	0.7
 CATEGORIES=	www multimedia
-MASTER_SITES=	http://abock.org/${PORTNAME}/releases/
+MASTER_SITES=	http://github.com/abock/moonshine/tarball/${PORTVERSION}/
+DISTNAME=	abock-${PORTNAME}-${GITCOMMIT}
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Windows Media playback through Moonlight and Firefox
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+FETCH_BEFORE_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
+FETCH_ARGS=	-apRr
+GITCOMMIT=	35085a4
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GECKO=	libxul
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:22 libtoolize aclocal:110 autoconf:262 autoheader:262 automake:110
+LIBTOOLIZE_ARGS=	--force --copy --automake
+AUTOMAKE_ARGS=	--gnu --add-missing --force --copy -Wno-portability
+ACLOCAL_ARGS=	
 CONFIGURE_ARGS=	--with-browser-plugin-dir=${PREFIX}/lib/browser_plugins/${PORTNAME}/
 
 USE_WEBPLUGINS=		gecko19
@@ -32,10 +37,6 @@ WEBPLUGINS_FILES=	libmoonshine-plugin.so
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than i386 and amd64"
 
-.if ${ARCH} == "amd64"
-CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-.endif
-
 .if defined(WITH_XPI_PLUGIN_ONLY)
 CONFIGURE_ARGS+=--enable-xpi-build
 PLIST=		${NONEXISTENT}
@@ -43,10 +44,11 @@ PLIST_FILES=	${WEBPLUGINS_DIR}/${PKGNAME}-freebsd-${OSREL}.xpi
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|^SHELL=.*|SHELL=${LOCALBASE}/bin/bash|' \
-		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|' \
+		${WRKSRC}/plugin/xpi/dist-build/build-all-arch \
+		${WRKSRC}/xulrunner/icon-theme-hicolor/icon-theme-installer
 	${REINPLACE_CMD} -e 's|sed -r|sed -E|' \
-		${WRKSRC}/plugin/Makefile.in \
+		${WRKSRC}/plugin/Makefile.am \
 		${WRKSRC}/plugin/generate-resource
 
 .if defined(WITH_XPI_PLUGIN_ONLY)
