@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.manyfish.co.uk/${PORTNAME}/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	sitecopy@oldach.net
 COMMENT=	Maintains remote websites, uses FTP or WebDAV to sync up w/ local copy
 
 LIB_DEPENDS=	neon.27:${PORTSDIR}/www/neon29
