@@ -13,3 +13,4 @@ share/locale/sv/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/uk/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/zh_TW/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 @dirrmtry etc/xdg/autostart
+@dirrmtry etc/xdg
