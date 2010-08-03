@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nsd
-PORTVERSION=	3.2.5
+PORTVERSION=	3.2.6
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -23,7 +23,7 @@ NSDGROUP?=	bind
 NSDLSDIR=	/var
 NSDDBDIR=	/var/db/nsd
 NSDRUNDIR=	/var/run/nsd
-NSDMAX_INT?=	512
+NSDMAX_IPS?=	512
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-user=${NSDUSER} \
@@ -52,14 +52,11 @@ PORTDOCS=	CREDITS ChangeLog LICENSE NSD-DATABASE NSD-DIFFFILE \
 OPTIONS=	ROOT_SERVER	"Configure NSD as a root server" Off \
 		LARGEFILE	"Enable support for large files" On \
 		IPV6		"Enable IPv6 support" On \
-		DNSSEC		"Enable DNSSEC" On \
 		BIND8_STATS	"Enable BIND8 like NSTATS & XSTATS" Off \
 		CHECKING	"Enable internal runtime checks" Off \
-		TSIG		"Enable TSIG support" On \
 		NSEC3		"Enable NSEC3 support" On \
-		NSID		"Enable NSID support" On \
 		MMAP		"Use mmap instead of malloc(experimental)" Off \
-		MAXINT		"Raise max_interfaces from 8 to ${NSDMAX_INT}" Off
+		MAXIPS		"Raise max-ips from 8 to ${NSDMAX_IPS}" Off
 
 .include <bsd.port.pre.mk>
 
@@ -103,8 +100,8 @@ CONFIGURE_ARGS+=	--disable-nsid
 CONFIGURE_ARGS+=	--enable-mmap
 .endif
 
-.if defined(WITH_MAXINT)
-CONFIGURE_ARGS+=	--with-max_interfaces=${NSDMAX_INT}
+.if defined(WITH_MAXIPS)
+CONFIGURE_ARGS+=	--with-max-ips=${NSDMAX_IPS}
 .endif
 
 pre-patch:
