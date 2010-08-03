@@ -24,13 +24,13 @@ include/polkit-qt-1/polkitqt1-temporaryauthorization.h
 include/polkit-qt-1/polkitqt1-version.h
 lib/libpolkit-qt-agent-1.so
 lib/libpolkit-qt-agent-1.so.0
-lib/libpolkit-qt-agent-1.so.0.95.1
+lib/libpolkit-qt-agent-1.so.0.96.1
 lib/libpolkit-qt-core-1.so
 lib/libpolkit-qt-core-1.so.0
-lib/libpolkit-qt-core-1.so.0.95.1
+lib/libpolkit-qt-core-1.so.0.96.1
 lib/libpolkit-qt-gui-1.so
 lib/libpolkit-qt-gui-1.so.0
-lib/libpolkit-qt-gui-1.so.0.95.1
+lib/libpolkit-qt-gui-1.so.0.96.1
 libdata/pkgconfig/polkit-qt-1.pc
 libdata/pkgconfig/polkit-qt-agent-1.pc
 libdata/pkgconfig/polkit-qt-core-1.pc

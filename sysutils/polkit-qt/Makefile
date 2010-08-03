@@ -6,32 +6,26 @@
 #
 
 PORTNAME=	polkit-qt
-PORTVERSION=	0.95.1
-PORTREVISION=	1
+PORTVERSION=	0.96.1
+DISTVERSIONPREFIX=	1-
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/polkit-qt-1
-DISTNAME=	polkit-qt-1-${PORTVERSION}
+MASTER_SITE_SUBDIR=	stable/apps/KDE4.x/admin/
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt4 frontend to PolKit-1.
+COMMENT=	Qt4 frontend to PolKit-1
 
 LIB_DEPENDS=	polkit-agent-1.0:${PORTSDIR}/sysutils/polkit
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
+USE_KDE4=	automoc4
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui network svg xml  \
 		qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
-
-USE_KDE4=	automoc4
-
-CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib"
-CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:STRING="${LOCALBASE}/include"
-CMAKE_ARGS+=	-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
-CMAKE_ARGS+=    -DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
+CMAKE_ARGS+=	-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
 
 post-extract:
 	${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
