@@ -1,0 +1,1214 @@
+--- Source/NCSBuildGnu/Makefile.in.orig	2006-08-29 11:57:09.000000000 +0400
++++ Source/NCSBuildGnu/Makefile.in	2010-07-29 19:56:41.000000000 +0400
+@@ -246,22 +246,6 @@
+ 	../C/NCSEcw/shared_src/qmf_util.c \
+ 	../C/NCSEcw/shared_src/quantize.c \
+ 	../C/NCSEcw/shared_src/unpack.c \
+-	../C/NCSEcw/lcms/src/cmscnvrt.c \
+-	../C/NCSEcw/lcms/src/cmserr.c \
+-	../C/NCSEcw/lcms/src/cmsgamma.c \
+-	../C/NCSEcw/lcms/src/cmsgmt.c \
+-	../C/NCSEcw/lcms/src/cmsintrp.c \
+-	../C/NCSEcw/lcms/src/cmsio1.c \
+-	../C/NCSEcw/lcms/src/cmslut.c \
+-	../C/NCSEcw/lcms/src/cmsmatsh.c \
+-	../C/NCSEcw/lcms/src/cmsmtrx.c \
+-	../C/NCSEcw/lcms/src/cmsnamed.c \
+-	../C/NCSEcw/lcms/src/cmspack.c \
+-	../C/NCSEcw/lcms/src/cmspcs.c \
+-	../C/NCSEcw/lcms/src/cmssamp.c \
+-	../C/NCSEcw/lcms/src/cmsvirt.c \
+-	../C/NCSEcw/lcms/src/cmswtpnt.c \
+-	../C/NCSEcw/lcms/src/cmsxform.c \
+ 	../C/NCSGDT2/NCSGDTEpsg.cpp \
+ 	../C/NCSGDT2/NCSGDTEPSGKey.cpp \
+ 	../C/NCSGDT2/NCSGDTLocation.cpp
+@@ -571,22 +555,6 @@
+ 	______lib_libecwj2_a-qmf_util.$(OBJEXT) \
+ 	______lib_libecwj2_a-quantize.$(OBJEXT) \
+ 	______lib_libecwj2_a-unpack.$(OBJEXT) \
+-	______lib_libecwj2_a-cmscnvrt.$(OBJEXT) \
+-	______lib_libecwj2_a-cmserr.$(OBJEXT) \
+-	______lib_libecwj2_a-cmsgamma.$(OBJEXT) \
+-	______lib_libecwj2_a-cmsgmt.$(OBJEXT) \
+-	______lib_libecwj2_a-cmsintrp.$(OBJEXT) \
+-	______lib_libecwj2_a-cmsio1.$(OBJEXT) \
+-	______lib_libecwj2_a-cmslut.$(OBJEXT) \
+-	______lib_libecwj2_a-cmsmatsh.$(OBJEXT) \
+-	______lib_libecwj2_a-cmsmtrx.$(OBJEXT) \
+-	______lib_libecwj2_a-cmsnamed.$(OBJEXT) \
+-	______lib_libecwj2_a-cmspack.$(OBJEXT) \
+-	______lib_libecwj2_a-cmspcs.$(OBJEXT) \
+-	______lib_libecwj2_a-cmssamp.$(OBJEXT) \
+-	______lib_libecwj2_a-cmsvirt.$(OBJEXT) \
+-	______lib_libecwj2_a-cmswtpnt.$(OBJEXT) \
+-	______lib_libecwj2_a-cmsxform.$(OBJEXT) \
+ 	______lib_libecwj2_a-NCSGDTEpsg.$(OBJEXT) \
+ 	______lib_libecwj2_a-NCSGDTEPSGKey.$(OBJEXT) \
+ 	______lib_libecwj2_a-NCSGDTLocation.$(OBJEXT)
+@@ -667,10 +635,7 @@
+ 	ncscbmnet.lo ncscbmopen.lo ncscbmpurge.lo NCSEcw.lo NCSFile.lo \
+ 	NCSHuffmanCoder.lo collapse_pyr.lo ecw_open.lo ecw_read.lo \
+ 	fileio_compress.lo fileio_decompress.lo build_pyr.lo pack.lo \
+-	qmf_util.lo quantize.lo unpack.lo cmscnvrt.lo cmserr.lo \
+-	cmsgamma.lo cmsgmt.lo cmsintrp.lo cmsio1.lo cmslut.lo \
+-	cmsmatsh.lo cmsmtrx.lo cmsnamed.lo cmspack.lo cmspcs.lo \
+-	cmssamp.lo cmsvirt.lo cmswtpnt.lo cmsxform.lo NCSGDTEpsg.lo \
++	qmf_util.lo quantize.lo unpack.lo NCSGDTEpsg.lo \
+ 	NCSGDTEPSGKey.lo NCSGDTLocation.lo
+ am_______bin_libNCSEcw_la_OBJECTS = $(am__objects_6)
+ ______bin_libNCSEcw_la_OBJECTS = $(am_______bin_libNCSEcw_la_OBJECTS)
+@@ -901,22 +866,6 @@
+ @AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-NCSWorldFile.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-NCScnet.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-build_pyr.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-cmserr.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-cmsgamma.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-cmsgmt.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-cmsintrp.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-cmsio1.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-cmslut.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-cmsnamed.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-cmspack.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-cmspcs.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-cmssamp.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-cmsvirt.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.Po \
+-@AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-cmsxform.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-collapse_pyr.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-compress.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-dynamiclib.Po \
+@@ -944,14 +893,6 @@
+ @AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-unpack.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/______lib_libecwj2_a-util.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/build_pyr.Plo ./$(DEPDIR)/cmscnvrt.Plo \
+-@AMDEP_TRUE@	./$(DEPDIR)/cmserr.Plo ./$(DEPDIR)/cmsgamma.Plo \
+-@AMDEP_TRUE@	./$(DEPDIR)/cmsgmt.Plo ./$(DEPDIR)/cmsintrp.Plo \
+-@AMDEP_TRUE@	./$(DEPDIR)/cmsio1.Plo ./$(DEPDIR)/cmslut.Plo \
+-@AMDEP_TRUE@	./$(DEPDIR)/cmsmatsh.Plo ./$(DEPDIR)/cmsmtrx.Plo \
+-@AMDEP_TRUE@	./$(DEPDIR)/cmsnamed.Plo ./$(DEPDIR)/cmspack.Plo \
+-@AMDEP_TRUE@	./$(DEPDIR)/cmspcs.Plo ./$(DEPDIR)/cmssamp.Plo \
+-@AMDEP_TRUE@	./$(DEPDIR)/cmsvirt.Plo ./$(DEPDIR)/cmswtpnt.Plo \
+-@AMDEP_TRUE@	./$(DEPDIR)/cmsxform.Plo \
+ @AMDEP_TRUE@	./$(DEPDIR)/collapse_pyr.Plo \
+ @AMDEP_TRUE@	./$(DEPDIR)/compress.Plo ./$(DEPDIR)/dynamiclib.Plo \
+ @AMDEP_TRUE@	./$(DEPDIR)/ecw_open.Plo ./$(DEPDIR)/ecw_read.Plo \
+@@ -1321,22 +1262,6 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-NCSWorldFile.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-NCScnet.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-build_pyr.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-cmserr.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-cmsgamma.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-cmsgmt.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-cmsintrp.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-cmsio1.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-cmslut.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-cmsnamed.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-cmspack.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-cmspcs.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-cmssamp.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-cmsvirt.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-cmsxform.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-collapse_pyr.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-compress.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-dynamiclib.Po@am__quote@
+@@ -1364,22 +1289,6 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-unpack.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/______lib_libecwj2_a-util.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/build_pyr.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmscnvrt.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmserr.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmsgamma.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmsgmt.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmsintrp.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmsio1.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmslut.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmsmatsh.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmsmtrx.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmsnamed.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmspack.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmspcs.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmssamp.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmsvirt.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmswtpnt.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cmsxform.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/collapse_pyr.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/compress.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dynamiclib.Plo@am__quote@
+@@ -1935,534 +1844,6 @@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-unpack.lo `test -f '../C/NCSEcw/shared_src/unpack.c' || echo '$(srcdir)/'`../C/NCSEcw/shared_src/unpack.c
+ 
+-______lib_libecwj2_a-cmscnvrt.o: ../C/NCSEcw/lcms/src/cmscnvrt.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmscnvrt.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmscnvrt.o `test -f '../C/NCSEcw/lcms/src/cmscnvrt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmscnvrt.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmscnvrt.c' object='______lib_libecwj2_a-cmscnvrt.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmscnvrt.o `test -f '../C/NCSEcw/lcms/src/cmscnvrt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmscnvrt.c
+-
+-______lib_libecwj2_a-cmscnvrt.obj: ../C/NCSEcw/lcms/src/cmscnvrt.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmscnvrt.obj -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmscnvrt.obj `if test -f '../C/NCSEcw/lcms/src/cmscnvrt.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmscnvrt.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmscnvrt.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmscnvrt.c' object='______lib_libecwj2_a-cmscnvrt.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmscnvrt.obj `if test -f '../C/NCSEcw/lcms/src/cmscnvrt.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmscnvrt.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmscnvrt.c'; fi`
+-
+-______lib_libecwj2_a-cmscnvrt.lo: ../C/NCSEcw/lcms/src/cmscnvrt.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmscnvrt.lo -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmscnvrt.lo `test -f '../C/NCSEcw/lcms/src/cmscnvrt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmscnvrt.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmscnvrt.c' object='______lib_libecwj2_a-cmscnvrt.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.Plo' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmscnvrt.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmscnvrt.lo `test -f '../C/NCSEcw/lcms/src/cmscnvrt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmscnvrt.c
+-
+-______lib_libecwj2_a-cmserr.o: ../C/NCSEcw/lcms/src/cmserr.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmserr.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmserr.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmserr.o `test -f '../C/NCSEcw/lcms/src/cmserr.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmserr.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmserr.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmserr.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmserr.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmserr.c' object='______lib_libecwj2_a-cmserr.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmserr.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmserr.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmserr.o `test -f '../C/NCSEcw/lcms/src/cmserr.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmserr.c
+-
+-______lib_libecwj2_a-cmserr.obj: ../C/NCSEcw/lcms/src/cmserr.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmserr.obj -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmserr.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmserr.obj `if test -f '../C/NCSEcw/lcms/src/cmserr.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmserr.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmserr.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmserr.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmserr.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmserr.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmserr.c' object='______lib_libecwj2_a-cmserr.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmserr.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmserr.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmserr.obj `if test -f '../C/NCSEcw/lcms/src/cmserr.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmserr.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmserr.c'; fi`
+-
+-______lib_libecwj2_a-cmserr.lo: ../C/NCSEcw/lcms/src/cmserr.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmserr.lo -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmserr.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmserr.lo `test -f '../C/NCSEcw/lcms/src/cmserr.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmserr.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmserr.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmserr.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmserr.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmserr.c' object='______lib_libecwj2_a-cmserr.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmserr.Plo' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmserr.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmserr.lo `test -f '../C/NCSEcw/lcms/src/cmserr.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmserr.c
+-
+-______lib_libecwj2_a-cmsgamma.o: ../C/NCSEcw/lcms/src/cmsgamma.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsgamma.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsgamma.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsgamma.o `test -f '../C/NCSEcw/lcms/src/cmsgamma.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsgamma.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsgamma.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsgamma.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsgamma.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsgamma.c' object='______lib_libecwj2_a-cmsgamma.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsgamma.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsgamma.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsgamma.o `test -f '../C/NCSEcw/lcms/src/cmsgamma.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsgamma.c
+-
+-______lib_libecwj2_a-cmsgamma.obj: ../C/NCSEcw/lcms/src/cmsgamma.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsgamma.obj -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsgamma.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsgamma.obj `if test -f '../C/NCSEcw/lcms/src/cmsgamma.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsgamma.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsgamma.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsgamma.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsgamma.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsgamma.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsgamma.c' object='______lib_libecwj2_a-cmsgamma.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsgamma.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsgamma.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsgamma.obj `if test -f '../C/NCSEcw/lcms/src/cmsgamma.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsgamma.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsgamma.c'; fi`
+-
+-______lib_libecwj2_a-cmsgamma.lo: ../C/NCSEcw/lcms/src/cmsgamma.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsgamma.lo -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsgamma.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsgamma.lo `test -f '../C/NCSEcw/lcms/src/cmsgamma.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsgamma.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsgamma.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsgamma.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsgamma.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsgamma.c' object='______lib_libecwj2_a-cmsgamma.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsgamma.Plo' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsgamma.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsgamma.lo `test -f '../C/NCSEcw/lcms/src/cmsgamma.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsgamma.c
+-
+-______lib_libecwj2_a-cmsgmt.o: ../C/NCSEcw/lcms/src/cmsgmt.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsgmt.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsgmt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsgmt.o `test -f '../C/NCSEcw/lcms/src/cmsgmt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsgmt.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsgmt.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsgmt.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsgmt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsgmt.c' object='______lib_libecwj2_a-cmsgmt.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsgmt.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsgmt.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsgmt.o `test -f '../C/NCSEcw/lcms/src/cmsgmt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsgmt.c
+-
+-______lib_libecwj2_a-cmsgmt.obj: ../C/NCSEcw/lcms/src/cmsgmt.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsgmt.obj -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsgmt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsgmt.obj `if test -f '../C/NCSEcw/lcms/src/cmsgmt.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsgmt.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsgmt.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsgmt.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsgmt.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsgmt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsgmt.c' object='______lib_libecwj2_a-cmsgmt.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsgmt.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsgmt.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsgmt.obj `if test -f '../C/NCSEcw/lcms/src/cmsgmt.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsgmt.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsgmt.c'; fi`
+-
+-______lib_libecwj2_a-cmsgmt.lo: ../C/NCSEcw/lcms/src/cmsgmt.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsgmt.lo -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsgmt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsgmt.lo `test -f '../C/NCSEcw/lcms/src/cmsgmt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsgmt.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsgmt.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsgmt.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsgmt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsgmt.c' object='______lib_libecwj2_a-cmsgmt.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsgmt.Plo' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsgmt.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsgmt.lo `test -f '../C/NCSEcw/lcms/src/cmsgmt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsgmt.c
+-
+-______lib_libecwj2_a-cmsintrp.o: ../C/NCSEcw/lcms/src/cmsintrp.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsintrp.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsintrp.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsintrp.o `test -f '../C/NCSEcw/lcms/src/cmsintrp.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsintrp.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsintrp.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsintrp.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsintrp.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsintrp.c' object='______lib_libecwj2_a-cmsintrp.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsintrp.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsintrp.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsintrp.o `test -f '../C/NCSEcw/lcms/src/cmsintrp.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsintrp.c
+-
+-______lib_libecwj2_a-cmsintrp.obj: ../C/NCSEcw/lcms/src/cmsintrp.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsintrp.obj -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsintrp.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsintrp.obj `if test -f '../C/NCSEcw/lcms/src/cmsintrp.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsintrp.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsintrp.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsintrp.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsintrp.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsintrp.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsintrp.c' object='______lib_libecwj2_a-cmsintrp.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsintrp.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsintrp.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsintrp.obj `if test -f '../C/NCSEcw/lcms/src/cmsintrp.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsintrp.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsintrp.c'; fi`
+-
+-______lib_libecwj2_a-cmsintrp.lo: ../C/NCSEcw/lcms/src/cmsintrp.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsintrp.lo -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsintrp.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsintrp.lo `test -f '../C/NCSEcw/lcms/src/cmsintrp.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsintrp.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsintrp.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsintrp.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsintrp.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsintrp.c' object='______lib_libecwj2_a-cmsintrp.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsintrp.Plo' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsintrp.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsintrp.lo `test -f '../C/NCSEcw/lcms/src/cmsintrp.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsintrp.c
+-
+-______lib_libecwj2_a-cmsio1.o: ../C/NCSEcw/lcms/src/cmsio1.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsio1.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsio1.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsio1.o `test -f '../C/NCSEcw/lcms/src/cmsio1.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsio1.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsio1.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsio1.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsio1.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsio1.c' object='______lib_libecwj2_a-cmsio1.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsio1.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsio1.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsio1.o `test -f '../C/NCSEcw/lcms/src/cmsio1.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsio1.c
+-
+-______lib_libecwj2_a-cmsio1.obj: ../C/NCSEcw/lcms/src/cmsio1.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsio1.obj -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsio1.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsio1.obj `if test -f '../C/NCSEcw/lcms/src/cmsio1.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsio1.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsio1.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsio1.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsio1.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsio1.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsio1.c' object='______lib_libecwj2_a-cmsio1.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsio1.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsio1.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsio1.obj `if test -f '../C/NCSEcw/lcms/src/cmsio1.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsio1.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsio1.c'; fi`
+-
+-______lib_libecwj2_a-cmsio1.lo: ../C/NCSEcw/lcms/src/cmsio1.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsio1.lo -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsio1.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsio1.lo `test -f '../C/NCSEcw/lcms/src/cmsio1.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsio1.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsio1.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsio1.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsio1.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsio1.c' object='______lib_libecwj2_a-cmsio1.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsio1.Plo' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsio1.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsio1.lo `test -f '../C/NCSEcw/lcms/src/cmsio1.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsio1.c
+-
+-______lib_libecwj2_a-cmslut.o: ../C/NCSEcw/lcms/src/cmslut.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmslut.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmslut.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmslut.o `test -f '../C/NCSEcw/lcms/src/cmslut.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmslut.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmslut.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmslut.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmslut.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmslut.c' object='______lib_libecwj2_a-cmslut.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmslut.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmslut.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmslut.o `test -f '../C/NCSEcw/lcms/src/cmslut.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmslut.c
+-
+-______lib_libecwj2_a-cmslut.obj: ../C/NCSEcw/lcms/src/cmslut.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmslut.obj -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmslut.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmslut.obj `if test -f '../C/NCSEcw/lcms/src/cmslut.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmslut.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmslut.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmslut.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmslut.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmslut.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmslut.c' object='______lib_libecwj2_a-cmslut.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmslut.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmslut.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmslut.obj `if test -f '../C/NCSEcw/lcms/src/cmslut.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmslut.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmslut.c'; fi`
+-
+-______lib_libecwj2_a-cmslut.lo: ../C/NCSEcw/lcms/src/cmslut.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmslut.lo -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmslut.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmslut.lo `test -f '../C/NCSEcw/lcms/src/cmslut.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmslut.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmslut.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmslut.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmslut.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmslut.c' object='______lib_libecwj2_a-cmslut.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmslut.Plo' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmslut.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmslut.lo `test -f '../C/NCSEcw/lcms/src/cmslut.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmslut.c
+-
+-______lib_libecwj2_a-cmsmatsh.o: ../C/NCSEcw/lcms/src/cmsmatsh.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsmatsh.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsmatsh.o `test -f '../C/NCSEcw/lcms/src/cmsmatsh.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsmatsh.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsmatsh.c' object='______lib_libecwj2_a-cmsmatsh.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsmatsh.o `test -f '../C/NCSEcw/lcms/src/cmsmatsh.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsmatsh.c
+-
+-______lib_libecwj2_a-cmsmatsh.obj: ../C/NCSEcw/lcms/src/cmsmatsh.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsmatsh.obj -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsmatsh.obj `if test -f '../C/NCSEcw/lcms/src/cmsmatsh.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsmatsh.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsmatsh.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsmatsh.c' object='______lib_libecwj2_a-cmsmatsh.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsmatsh.obj `if test -f '../C/NCSEcw/lcms/src/cmsmatsh.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsmatsh.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsmatsh.c'; fi`
+-
+-______lib_libecwj2_a-cmsmatsh.lo: ../C/NCSEcw/lcms/src/cmsmatsh.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsmatsh.lo -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsmatsh.lo `test -f '../C/NCSEcw/lcms/src/cmsmatsh.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsmatsh.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsmatsh.c' object='______lib_libecwj2_a-cmsmatsh.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.Plo' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsmatsh.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsmatsh.lo `test -f '../C/NCSEcw/lcms/src/cmsmatsh.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsmatsh.c
+-
+-______lib_libecwj2_a-cmsmtrx.o: ../C/NCSEcw/lcms/src/cmsmtrx.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsmtrx.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsmtrx.o `test -f '../C/NCSEcw/lcms/src/cmsmtrx.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsmtrx.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsmtrx.c' object='______lib_libecwj2_a-cmsmtrx.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsmtrx.o `test -f '../C/NCSEcw/lcms/src/cmsmtrx.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsmtrx.c
+-
+-______lib_libecwj2_a-cmsmtrx.obj: ../C/NCSEcw/lcms/src/cmsmtrx.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsmtrx.obj -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsmtrx.obj `if test -f '../C/NCSEcw/lcms/src/cmsmtrx.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsmtrx.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsmtrx.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsmtrx.c' object='______lib_libecwj2_a-cmsmtrx.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsmtrx.obj `if test -f '../C/NCSEcw/lcms/src/cmsmtrx.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsmtrx.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsmtrx.c'; fi`
+-
+-______lib_libecwj2_a-cmsmtrx.lo: ../C/NCSEcw/lcms/src/cmsmtrx.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsmtrx.lo -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsmtrx.lo `test -f '../C/NCSEcw/lcms/src/cmsmtrx.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsmtrx.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsmtrx.c' object='______lib_libecwj2_a-cmsmtrx.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.Plo' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsmtrx.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsmtrx.lo `test -f '../C/NCSEcw/lcms/src/cmsmtrx.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsmtrx.c
+-
+-______lib_libecwj2_a-cmsnamed.o: ../C/NCSEcw/lcms/src/cmsnamed.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsnamed.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsnamed.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsnamed.o `test -f '../C/NCSEcw/lcms/src/cmsnamed.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsnamed.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsnamed.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsnamed.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsnamed.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsnamed.c' object='______lib_libecwj2_a-cmsnamed.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsnamed.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsnamed.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsnamed.o `test -f '../C/NCSEcw/lcms/src/cmsnamed.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsnamed.c
+-
+-______lib_libecwj2_a-cmsnamed.obj: ../C/NCSEcw/lcms/src/cmsnamed.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsnamed.obj -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsnamed.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsnamed.obj `if test -f '../C/NCSEcw/lcms/src/cmsnamed.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsnamed.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsnamed.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsnamed.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsnamed.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsnamed.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsnamed.c' object='______lib_libecwj2_a-cmsnamed.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsnamed.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsnamed.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsnamed.obj `if test -f '../C/NCSEcw/lcms/src/cmsnamed.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsnamed.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsnamed.c'; fi`
+-
+-______lib_libecwj2_a-cmsnamed.lo: ../C/NCSEcw/lcms/src/cmsnamed.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsnamed.lo -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsnamed.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsnamed.lo `test -f '../C/NCSEcw/lcms/src/cmsnamed.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsnamed.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsnamed.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsnamed.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsnamed.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsnamed.c' object='______lib_libecwj2_a-cmsnamed.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsnamed.Plo' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsnamed.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsnamed.lo `test -f '../C/NCSEcw/lcms/src/cmsnamed.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsnamed.c
+-
+-______lib_libecwj2_a-cmspack.o: ../C/NCSEcw/lcms/src/cmspack.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmspack.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmspack.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmspack.o `test -f '../C/NCSEcw/lcms/src/cmspack.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmspack.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmspack.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmspack.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmspack.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmspack.c' object='______lib_libecwj2_a-cmspack.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmspack.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmspack.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmspack.o `test -f '../C/NCSEcw/lcms/src/cmspack.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmspack.c
+-
+-______lib_libecwj2_a-cmspack.obj: ../C/NCSEcw/lcms/src/cmspack.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmspack.obj -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmspack.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmspack.obj `if test -f '../C/NCSEcw/lcms/src/cmspack.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmspack.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmspack.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmspack.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmspack.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmspack.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmspack.c' object='______lib_libecwj2_a-cmspack.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmspack.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmspack.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmspack.obj `if test -f '../C/NCSEcw/lcms/src/cmspack.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmspack.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmspack.c'; fi`
+-
+-______lib_libecwj2_a-cmspack.lo: ../C/NCSEcw/lcms/src/cmspack.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmspack.lo -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmspack.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmspack.lo `test -f '../C/NCSEcw/lcms/src/cmspack.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmspack.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmspack.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmspack.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmspack.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmspack.c' object='______lib_libecwj2_a-cmspack.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmspack.Plo' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmspack.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmspack.lo `test -f '../C/NCSEcw/lcms/src/cmspack.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmspack.c
+-
+-______lib_libecwj2_a-cmspcs.o: ../C/NCSEcw/lcms/src/cmspcs.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmspcs.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmspcs.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmspcs.o `test -f '../C/NCSEcw/lcms/src/cmspcs.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmspcs.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmspcs.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmspcs.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmspcs.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmspcs.c' object='______lib_libecwj2_a-cmspcs.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmspcs.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmspcs.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmspcs.o `test -f '../C/NCSEcw/lcms/src/cmspcs.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmspcs.c
+-
+-______lib_libecwj2_a-cmspcs.obj: ../C/NCSEcw/lcms/src/cmspcs.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmspcs.obj -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmspcs.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmspcs.obj `if test -f '../C/NCSEcw/lcms/src/cmspcs.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmspcs.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmspcs.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmspcs.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmspcs.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmspcs.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmspcs.c' object='______lib_libecwj2_a-cmspcs.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmspcs.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmspcs.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmspcs.obj `if test -f '../C/NCSEcw/lcms/src/cmspcs.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmspcs.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmspcs.c'; fi`
+-
+-______lib_libecwj2_a-cmspcs.lo: ../C/NCSEcw/lcms/src/cmspcs.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmspcs.lo -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmspcs.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmspcs.lo `test -f '../C/NCSEcw/lcms/src/cmspcs.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmspcs.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmspcs.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmspcs.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmspcs.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmspcs.c' object='______lib_libecwj2_a-cmspcs.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmspcs.Plo' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmspcs.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmspcs.lo `test -f '../C/NCSEcw/lcms/src/cmspcs.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmspcs.c
+-
+-______lib_libecwj2_a-cmssamp.o: ../C/NCSEcw/lcms/src/cmssamp.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmssamp.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmssamp.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmssamp.o `test -f '../C/NCSEcw/lcms/src/cmssamp.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmssamp.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmssamp.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmssamp.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmssamp.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmssamp.c' object='______lib_libecwj2_a-cmssamp.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmssamp.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmssamp.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmssamp.o `test -f '../C/NCSEcw/lcms/src/cmssamp.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmssamp.c
+-
+-______lib_libecwj2_a-cmssamp.obj: ../C/NCSEcw/lcms/src/cmssamp.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmssamp.obj -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmssamp.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmssamp.obj `if test -f '../C/NCSEcw/lcms/src/cmssamp.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmssamp.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmssamp.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmssamp.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmssamp.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmssamp.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmssamp.c' object='______lib_libecwj2_a-cmssamp.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmssamp.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmssamp.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmssamp.obj `if test -f '../C/NCSEcw/lcms/src/cmssamp.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmssamp.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmssamp.c'; fi`
+-
+-______lib_libecwj2_a-cmssamp.lo: ../C/NCSEcw/lcms/src/cmssamp.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmssamp.lo -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmssamp.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmssamp.lo `test -f '../C/NCSEcw/lcms/src/cmssamp.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmssamp.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmssamp.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmssamp.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmssamp.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmssamp.c' object='______lib_libecwj2_a-cmssamp.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmssamp.Plo' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmssamp.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmssamp.lo `test -f '../C/NCSEcw/lcms/src/cmssamp.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmssamp.c
+-
+-______lib_libecwj2_a-cmsvirt.o: ../C/NCSEcw/lcms/src/cmsvirt.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsvirt.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsvirt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsvirt.o `test -f '../C/NCSEcw/lcms/src/cmsvirt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsvirt.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsvirt.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsvirt.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsvirt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsvirt.c' object='______lib_libecwj2_a-cmsvirt.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsvirt.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsvirt.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsvirt.o `test -f '../C/NCSEcw/lcms/src/cmsvirt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsvirt.c
+-
+-______lib_libecwj2_a-cmsvirt.obj: ../C/NCSEcw/lcms/src/cmsvirt.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsvirt.obj -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsvirt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsvirt.obj `if test -f '../C/NCSEcw/lcms/src/cmsvirt.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsvirt.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsvirt.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsvirt.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsvirt.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsvirt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsvirt.c' object='______lib_libecwj2_a-cmsvirt.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsvirt.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsvirt.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsvirt.obj `if test -f '../C/NCSEcw/lcms/src/cmsvirt.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsvirt.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsvirt.c'; fi`
+-
+-______lib_libecwj2_a-cmsvirt.lo: ../C/NCSEcw/lcms/src/cmsvirt.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsvirt.lo -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsvirt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsvirt.lo `test -f '../C/NCSEcw/lcms/src/cmsvirt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsvirt.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsvirt.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsvirt.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsvirt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsvirt.c' object='______lib_libecwj2_a-cmsvirt.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsvirt.Plo' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsvirt.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsvirt.lo `test -f '../C/NCSEcw/lcms/src/cmsvirt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsvirt.c
+-
+-______lib_libecwj2_a-cmswtpnt.o: ../C/NCSEcw/lcms/src/cmswtpnt.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmswtpnt.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmswtpnt.o `test -f '../C/NCSEcw/lcms/src/cmswtpnt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmswtpnt.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmswtpnt.c' object='______lib_libecwj2_a-cmswtpnt.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmswtpnt.o `test -f '../C/NCSEcw/lcms/src/cmswtpnt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmswtpnt.c
+-
+-______lib_libecwj2_a-cmswtpnt.obj: ../C/NCSEcw/lcms/src/cmswtpnt.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmswtpnt.obj -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmswtpnt.obj `if test -f '../C/NCSEcw/lcms/src/cmswtpnt.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmswtpnt.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmswtpnt.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmswtpnt.c' object='______lib_libecwj2_a-cmswtpnt.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmswtpnt.obj `if test -f '../C/NCSEcw/lcms/src/cmswtpnt.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmswtpnt.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmswtpnt.c'; fi`
+-
+-______lib_libecwj2_a-cmswtpnt.lo: ../C/NCSEcw/lcms/src/cmswtpnt.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmswtpnt.lo -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmswtpnt.lo `test -f '../C/NCSEcw/lcms/src/cmswtpnt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmswtpnt.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmswtpnt.c' object='______lib_libecwj2_a-cmswtpnt.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.Plo' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmswtpnt.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmswtpnt.lo `test -f '../C/NCSEcw/lcms/src/cmswtpnt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmswtpnt.c
+-
+-______lib_libecwj2_a-cmsxform.o: ../C/NCSEcw/lcms/src/cmsxform.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsxform.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsxform.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsxform.o `test -f '../C/NCSEcw/lcms/src/cmsxform.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsxform.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsxform.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsxform.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsxform.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsxform.c' object='______lib_libecwj2_a-cmsxform.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsxform.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsxform.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsxform.o `test -f '../C/NCSEcw/lcms/src/cmsxform.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsxform.c
+-
+-______lib_libecwj2_a-cmsxform.obj: ../C/NCSEcw/lcms/src/cmsxform.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsxform.obj -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsxform.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsxform.obj `if test -f '../C/NCSEcw/lcms/src/cmsxform.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsxform.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsxform.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsxform.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsxform.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsxform.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsxform.c' object='______lib_libecwj2_a-cmsxform.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsxform.Po' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsxform.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsxform.obj `if test -f '../C/NCSEcw/lcms/src/cmsxform.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsxform.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsxform.c'; fi`
+-
+-______lib_libecwj2_a-cmsxform.lo: ../C/NCSEcw/lcms/src/cmsxform.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-cmsxform.lo -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-cmsxform.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-cmsxform.lo `test -f '../C/NCSEcw/lcms/src/cmsxform.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsxform.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/______lib_libecwj2_a-cmsxform.Tpo" "$(DEPDIR)/______lib_libecwj2_a-cmsxform.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/______lib_libecwj2_a-cmsxform.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsxform.c' object='______lib_libecwj2_a-cmsxform.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/______lib_libecwj2_a-cmsxform.Plo' tmpdepfile='$(DEPDIR)/______lib_libecwj2_a-cmsxform.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -c -o ______lib_libecwj2_a-cmsxform.lo `test -f '../C/NCSEcw/lcms/src/cmsxform.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsxform.c
+-
+ ______lib_libecwj2_a-dynamiclib.o: ../C/NCSUtil/dynamiclib.c
+ @am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(______lib_libecwj2_a_CPPFLAGS) $(CPPFLAGS) $(______lib_libecwj2_a_CFLAGS) $(CFLAGS) -MT ______lib_libecwj2_a-dynamiclib.o -MD -MP -MF "$(DEPDIR)/______lib_libecwj2_a-dynamiclib.Tpo" \
+ @am__fastdepCC_TRUE@	  -c -o ______lib_libecwj2_a-dynamiclib.o `test -f '../C/NCSUtil/dynamiclib.c' || echo '$(srcdir)/'`../C/NCSUtil/dynamiclib.c; \
+@@ -3288,534 +2669,6 @@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o unpack.lo `test -f '../C/NCSEcw/shared_src/unpack.c' || echo '$(srcdir)/'`../C/NCSEcw/shared_src/unpack.c
+ 
+-cmscnvrt.o: ../C/NCSEcw/lcms/src/cmscnvrt.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmscnvrt.o -MD -MP -MF "$(DEPDIR)/cmscnvrt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmscnvrt.o `test -f '../C/NCSEcw/lcms/src/cmscnvrt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmscnvrt.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmscnvrt.Tpo" "$(DEPDIR)/cmscnvrt.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmscnvrt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmscnvrt.c' object='cmscnvrt.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmscnvrt.Po' tmpdepfile='$(DEPDIR)/cmscnvrt.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmscnvrt.o `test -f '../C/NCSEcw/lcms/src/cmscnvrt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmscnvrt.c
+-
+-cmscnvrt.obj: ../C/NCSEcw/lcms/src/cmscnvrt.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmscnvrt.obj -MD -MP -MF "$(DEPDIR)/cmscnvrt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmscnvrt.obj `if test -f '../C/NCSEcw/lcms/src/cmscnvrt.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmscnvrt.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmscnvrt.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmscnvrt.Tpo" "$(DEPDIR)/cmscnvrt.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmscnvrt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmscnvrt.c' object='cmscnvrt.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmscnvrt.Po' tmpdepfile='$(DEPDIR)/cmscnvrt.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmscnvrt.obj `if test -f '../C/NCSEcw/lcms/src/cmscnvrt.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmscnvrt.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmscnvrt.c'; fi`
+-
+-cmscnvrt.lo: ../C/NCSEcw/lcms/src/cmscnvrt.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmscnvrt.lo -MD -MP -MF "$(DEPDIR)/cmscnvrt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmscnvrt.lo `test -f '../C/NCSEcw/lcms/src/cmscnvrt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmscnvrt.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmscnvrt.Tpo" "$(DEPDIR)/cmscnvrt.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmscnvrt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmscnvrt.c' object='cmscnvrt.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmscnvrt.Plo' tmpdepfile='$(DEPDIR)/cmscnvrt.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmscnvrt.lo `test -f '../C/NCSEcw/lcms/src/cmscnvrt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmscnvrt.c
+-
+-cmserr.o: ../C/NCSEcw/lcms/src/cmserr.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmserr.o -MD -MP -MF "$(DEPDIR)/cmserr.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmserr.o `test -f '../C/NCSEcw/lcms/src/cmserr.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmserr.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmserr.Tpo" "$(DEPDIR)/cmserr.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmserr.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmserr.c' object='cmserr.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmserr.Po' tmpdepfile='$(DEPDIR)/cmserr.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmserr.o `test -f '../C/NCSEcw/lcms/src/cmserr.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmserr.c
+-
+-cmserr.obj: ../C/NCSEcw/lcms/src/cmserr.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmserr.obj -MD -MP -MF "$(DEPDIR)/cmserr.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmserr.obj `if test -f '../C/NCSEcw/lcms/src/cmserr.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmserr.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmserr.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmserr.Tpo" "$(DEPDIR)/cmserr.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmserr.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmserr.c' object='cmserr.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmserr.Po' tmpdepfile='$(DEPDIR)/cmserr.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmserr.obj `if test -f '../C/NCSEcw/lcms/src/cmserr.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmserr.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmserr.c'; fi`
+-
+-cmserr.lo: ../C/NCSEcw/lcms/src/cmserr.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmserr.lo -MD -MP -MF "$(DEPDIR)/cmserr.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmserr.lo `test -f '../C/NCSEcw/lcms/src/cmserr.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmserr.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmserr.Tpo" "$(DEPDIR)/cmserr.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmserr.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmserr.c' object='cmserr.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmserr.Plo' tmpdepfile='$(DEPDIR)/cmserr.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmserr.lo `test -f '../C/NCSEcw/lcms/src/cmserr.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmserr.c
+-
+-cmsgamma.o: ../C/NCSEcw/lcms/src/cmsgamma.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsgamma.o -MD -MP -MF "$(DEPDIR)/cmsgamma.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsgamma.o `test -f '../C/NCSEcw/lcms/src/cmsgamma.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsgamma.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsgamma.Tpo" "$(DEPDIR)/cmsgamma.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsgamma.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsgamma.c' object='cmsgamma.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsgamma.Po' tmpdepfile='$(DEPDIR)/cmsgamma.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsgamma.o `test -f '../C/NCSEcw/lcms/src/cmsgamma.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsgamma.c
+-
+-cmsgamma.obj: ../C/NCSEcw/lcms/src/cmsgamma.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsgamma.obj -MD -MP -MF "$(DEPDIR)/cmsgamma.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsgamma.obj `if test -f '../C/NCSEcw/lcms/src/cmsgamma.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsgamma.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsgamma.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsgamma.Tpo" "$(DEPDIR)/cmsgamma.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsgamma.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsgamma.c' object='cmsgamma.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsgamma.Po' tmpdepfile='$(DEPDIR)/cmsgamma.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsgamma.obj `if test -f '../C/NCSEcw/lcms/src/cmsgamma.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsgamma.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsgamma.c'; fi`
+-
+-cmsgamma.lo: ../C/NCSEcw/lcms/src/cmsgamma.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsgamma.lo -MD -MP -MF "$(DEPDIR)/cmsgamma.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsgamma.lo `test -f '../C/NCSEcw/lcms/src/cmsgamma.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsgamma.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsgamma.Tpo" "$(DEPDIR)/cmsgamma.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsgamma.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsgamma.c' object='cmsgamma.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsgamma.Plo' tmpdepfile='$(DEPDIR)/cmsgamma.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsgamma.lo `test -f '../C/NCSEcw/lcms/src/cmsgamma.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsgamma.c
+-
+-cmsgmt.o: ../C/NCSEcw/lcms/src/cmsgmt.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsgmt.o -MD -MP -MF "$(DEPDIR)/cmsgmt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsgmt.o `test -f '../C/NCSEcw/lcms/src/cmsgmt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsgmt.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsgmt.Tpo" "$(DEPDIR)/cmsgmt.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsgmt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsgmt.c' object='cmsgmt.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsgmt.Po' tmpdepfile='$(DEPDIR)/cmsgmt.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsgmt.o `test -f '../C/NCSEcw/lcms/src/cmsgmt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsgmt.c
+-
+-cmsgmt.obj: ../C/NCSEcw/lcms/src/cmsgmt.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsgmt.obj -MD -MP -MF "$(DEPDIR)/cmsgmt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsgmt.obj `if test -f '../C/NCSEcw/lcms/src/cmsgmt.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsgmt.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsgmt.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsgmt.Tpo" "$(DEPDIR)/cmsgmt.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsgmt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsgmt.c' object='cmsgmt.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsgmt.Po' tmpdepfile='$(DEPDIR)/cmsgmt.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsgmt.obj `if test -f '../C/NCSEcw/lcms/src/cmsgmt.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsgmt.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsgmt.c'; fi`
+-
+-cmsgmt.lo: ../C/NCSEcw/lcms/src/cmsgmt.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsgmt.lo -MD -MP -MF "$(DEPDIR)/cmsgmt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsgmt.lo `test -f '../C/NCSEcw/lcms/src/cmsgmt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsgmt.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsgmt.Tpo" "$(DEPDIR)/cmsgmt.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsgmt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsgmt.c' object='cmsgmt.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsgmt.Plo' tmpdepfile='$(DEPDIR)/cmsgmt.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsgmt.lo `test -f '../C/NCSEcw/lcms/src/cmsgmt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsgmt.c
+-
+-cmsintrp.o: ../C/NCSEcw/lcms/src/cmsintrp.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsintrp.o -MD -MP -MF "$(DEPDIR)/cmsintrp.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsintrp.o `test -f '../C/NCSEcw/lcms/src/cmsintrp.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsintrp.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsintrp.Tpo" "$(DEPDIR)/cmsintrp.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsintrp.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsintrp.c' object='cmsintrp.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsintrp.Po' tmpdepfile='$(DEPDIR)/cmsintrp.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsintrp.o `test -f '../C/NCSEcw/lcms/src/cmsintrp.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsintrp.c
+-
+-cmsintrp.obj: ../C/NCSEcw/lcms/src/cmsintrp.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsintrp.obj -MD -MP -MF "$(DEPDIR)/cmsintrp.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsintrp.obj `if test -f '../C/NCSEcw/lcms/src/cmsintrp.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsintrp.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsintrp.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsintrp.Tpo" "$(DEPDIR)/cmsintrp.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsintrp.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsintrp.c' object='cmsintrp.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsintrp.Po' tmpdepfile='$(DEPDIR)/cmsintrp.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsintrp.obj `if test -f '../C/NCSEcw/lcms/src/cmsintrp.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsintrp.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsintrp.c'; fi`
+-
+-cmsintrp.lo: ../C/NCSEcw/lcms/src/cmsintrp.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsintrp.lo -MD -MP -MF "$(DEPDIR)/cmsintrp.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsintrp.lo `test -f '../C/NCSEcw/lcms/src/cmsintrp.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsintrp.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsintrp.Tpo" "$(DEPDIR)/cmsintrp.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsintrp.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsintrp.c' object='cmsintrp.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsintrp.Plo' tmpdepfile='$(DEPDIR)/cmsintrp.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsintrp.lo `test -f '../C/NCSEcw/lcms/src/cmsintrp.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsintrp.c
+-
+-cmsio1.o: ../C/NCSEcw/lcms/src/cmsio1.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsio1.o -MD -MP -MF "$(DEPDIR)/cmsio1.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsio1.o `test -f '../C/NCSEcw/lcms/src/cmsio1.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsio1.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsio1.Tpo" "$(DEPDIR)/cmsio1.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsio1.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsio1.c' object='cmsio1.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsio1.Po' tmpdepfile='$(DEPDIR)/cmsio1.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsio1.o `test -f '../C/NCSEcw/lcms/src/cmsio1.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsio1.c
+-
+-cmsio1.obj: ../C/NCSEcw/lcms/src/cmsio1.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsio1.obj -MD -MP -MF "$(DEPDIR)/cmsio1.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsio1.obj `if test -f '../C/NCSEcw/lcms/src/cmsio1.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsio1.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsio1.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsio1.Tpo" "$(DEPDIR)/cmsio1.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsio1.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsio1.c' object='cmsio1.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsio1.Po' tmpdepfile='$(DEPDIR)/cmsio1.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsio1.obj `if test -f '../C/NCSEcw/lcms/src/cmsio1.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsio1.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsio1.c'; fi`
+-
+-cmsio1.lo: ../C/NCSEcw/lcms/src/cmsio1.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsio1.lo -MD -MP -MF "$(DEPDIR)/cmsio1.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsio1.lo `test -f '../C/NCSEcw/lcms/src/cmsio1.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsio1.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsio1.Tpo" "$(DEPDIR)/cmsio1.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsio1.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsio1.c' object='cmsio1.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsio1.Plo' tmpdepfile='$(DEPDIR)/cmsio1.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsio1.lo `test -f '../C/NCSEcw/lcms/src/cmsio1.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsio1.c
+-
+-cmslut.o: ../C/NCSEcw/lcms/src/cmslut.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmslut.o -MD -MP -MF "$(DEPDIR)/cmslut.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmslut.o `test -f '../C/NCSEcw/lcms/src/cmslut.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmslut.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmslut.Tpo" "$(DEPDIR)/cmslut.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmslut.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmslut.c' object='cmslut.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmslut.Po' tmpdepfile='$(DEPDIR)/cmslut.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmslut.o `test -f '../C/NCSEcw/lcms/src/cmslut.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmslut.c
+-
+-cmslut.obj: ../C/NCSEcw/lcms/src/cmslut.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmslut.obj -MD -MP -MF "$(DEPDIR)/cmslut.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmslut.obj `if test -f '../C/NCSEcw/lcms/src/cmslut.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmslut.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmslut.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmslut.Tpo" "$(DEPDIR)/cmslut.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmslut.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmslut.c' object='cmslut.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmslut.Po' tmpdepfile='$(DEPDIR)/cmslut.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmslut.obj `if test -f '../C/NCSEcw/lcms/src/cmslut.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmslut.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmslut.c'; fi`
+-
+-cmslut.lo: ../C/NCSEcw/lcms/src/cmslut.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmslut.lo -MD -MP -MF "$(DEPDIR)/cmslut.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmslut.lo `test -f '../C/NCSEcw/lcms/src/cmslut.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmslut.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmslut.Tpo" "$(DEPDIR)/cmslut.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmslut.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmslut.c' object='cmslut.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmslut.Plo' tmpdepfile='$(DEPDIR)/cmslut.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmslut.lo `test -f '../C/NCSEcw/lcms/src/cmslut.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmslut.c
+-
+-cmsmatsh.o: ../C/NCSEcw/lcms/src/cmsmatsh.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsmatsh.o -MD -MP -MF "$(DEPDIR)/cmsmatsh.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsmatsh.o `test -f '../C/NCSEcw/lcms/src/cmsmatsh.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsmatsh.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsmatsh.Tpo" "$(DEPDIR)/cmsmatsh.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsmatsh.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsmatsh.c' object='cmsmatsh.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsmatsh.Po' tmpdepfile='$(DEPDIR)/cmsmatsh.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsmatsh.o `test -f '../C/NCSEcw/lcms/src/cmsmatsh.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsmatsh.c
+-
+-cmsmatsh.obj: ../C/NCSEcw/lcms/src/cmsmatsh.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsmatsh.obj -MD -MP -MF "$(DEPDIR)/cmsmatsh.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsmatsh.obj `if test -f '../C/NCSEcw/lcms/src/cmsmatsh.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsmatsh.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsmatsh.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsmatsh.Tpo" "$(DEPDIR)/cmsmatsh.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsmatsh.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsmatsh.c' object='cmsmatsh.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsmatsh.Po' tmpdepfile='$(DEPDIR)/cmsmatsh.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsmatsh.obj `if test -f '../C/NCSEcw/lcms/src/cmsmatsh.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsmatsh.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsmatsh.c'; fi`
+-
+-cmsmatsh.lo: ../C/NCSEcw/lcms/src/cmsmatsh.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsmatsh.lo -MD -MP -MF "$(DEPDIR)/cmsmatsh.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsmatsh.lo `test -f '../C/NCSEcw/lcms/src/cmsmatsh.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsmatsh.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsmatsh.Tpo" "$(DEPDIR)/cmsmatsh.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsmatsh.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsmatsh.c' object='cmsmatsh.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsmatsh.Plo' tmpdepfile='$(DEPDIR)/cmsmatsh.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsmatsh.lo `test -f '../C/NCSEcw/lcms/src/cmsmatsh.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsmatsh.c
+-
+-cmsmtrx.o: ../C/NCSEcw/lcms/src/cmsmtrx.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsmtrx.o -MD -MP -MF "$(DEPDIR)/cmsmtrx.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsmtrx.o `test -f '../C/NCSEcw/lcms/src/cmsmtrx.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsmtrx.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsmtrx.Tpo" "$(DEPDIR)/cmsmtrx.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsmtrx.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsmtrx.c' object='cmsmtrx.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsmtrx.Po' tmpdepfile='$(DEPDIR)/cmsmtrx.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsmtrx.o `test -f '../C/NCSEcw/lcms/src/cmsmtrx.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsmtrx.c
+-
+-cmsmtrx.obj: ../C/NCSEcw/lcms/src/cmsmtrx.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsmtrx.obj -MD -MP -MF "$(DEPDIR)/cmsmtrx.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsmtrx.obj `if test -f '../C/NCSEcw/lcms/src/cmsmtrx.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsmtrx.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsmtrx.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsmtrx.Tpo" "$(DEPDIR)/cmsmtrx.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsmtrx.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsmtrx.c' object='cmsmtrx.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsmtrx.Po' tmpdepfile='$(DEPDIR)/cmsmtrx.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsmtrx.obj `if test -f '../C/NCSEcw/lcms/src/cmsmtrx.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsmtrx.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsmtrx.c'; fi`
+-
+-cmsmtrx.lo: ../C/NCSEcw/lcms/src/cmsmtrx.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsmtrx.lo -MD -MP -MF "$(DEPDIR)/cmsmtrx.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsmtrx.lo `test -f '../C/NCSEcw/lcms/src/cmsmtrx.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsmtrx.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsmtrx.Tpo" "$(DEPDIR)/cmsmtrx.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsmtrx.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsmtrx.c' object='cmsmtrx.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsmtrx.Plo' tmpdepfile='$(DEPDIR)/cmsmtrx.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsmtrx.lo `test -f '../C/NCSEcw/lcms/src/cmsmtrx.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsmtrx.c
+-
+-cmsnamed.o: ../C/NCSEcw/lcms/src/cmsnamed.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsnamed.o -MD -MP -MF "$(DEPDIR)/cmsnamed.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsnamed.o `test -f '../C/NCSEcw/lcms/src/cmsnamed.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsnamed.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsnamed.Tpo" "$(DEPDIR)/cmsnamed.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsnamed.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsnamed.c' object='cmsnamed.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsnamed.Po' tmpdepfile='$(DEPDIR)/cmsnamed.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsnamed.o `test -f '../C/NCSEcw/lcms/src/cmsnamed.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsnamed.c
+-
+-cmsnamed.obj: ../C/NCSEcw/lcms/src/cmsnamed.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsnamed.obj -MD -MP -MF "$(DEPDIR)/cmsnamed.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsnamed.obj `if test -f '../C/NCSEcw/lcms/src/cmsnamed.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsnamed.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsnamed.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsnamed.Tpo" "$(DEPDIR)/cmsnamed.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsnamed.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsnamed.c' object='cmsnamed.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsnamed.Po' tmpdepfile='$(DEPDIR)/cmsnamed.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsnamed.obj `if test -f '../C/NCSEcw/lcms/src/cmsnamed.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsnamed.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsnamed.c'; fi`
+-
+-cmsnamed.lo: ../C/NCSEcw/lcms/src/cmsnamed.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsnamed.lo -MD -MP -MF "$(DEPDIR)/cmsnamed.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsnamed.lo `test -f '../C/NCSEcw/lcms/src/cmsnamed.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsnamed.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsnamed.Tpo" "$(DEPDIR)/cmsnamed.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsnamed.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsnamed.c' object='cmsnamed.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsnamed.Plo' tmpdepfile='$(DEPDIR)/cmsnamed.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsnamed.lo `test -f '../C/NCSEcw/lcms/src/cmsnamed.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsnamed.c
+-
+-cmspack.o: ../C/NCSEcw/lcms/src/cmspack.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmspack.o -MD -MP -MF "$(DEPDIR)/cmspack.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmspack.o `test -f '../C/NCSEcw/lcms/src/cmspack.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmspack.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmspack.Tpo" "$(DEPDIR)/cmspack.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmspack.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmspack.c' object='cmspack.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmspack.Po' tmpdepfile='$(DEPDIR)/cmspack.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmspack.o `test -f '../C/NCSEcw/lcms/src/cmspack.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmspack.c
+-
+-cmspack.obj: ../C/NCSEcw/lcms/src/cmspack.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmspack.obj -MD -MP -MF "$(DEPDIR)/cmspack.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmspack.obj `if test -f '../C/NCSEcw/lcms/src/cmspack.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmspack.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmspack.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmspack.Tpo" "$(DEPDIR)/cmspack.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmspack.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmspack.c' object='cmspack.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmspack.Po' tmpdepfile='$(DEPDIR)/cmspack.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmspack.obj `if test -f '../C/NCSEcw/lcms/src/cmspack.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmspack.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmspack.c'; fi`
+-
+-cmspack.lo: ../C/NCSEcw/lcms/src/cmspack.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmspack.lo -MD -MP -MF "$(DEPDIR)/cmspack.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmspack.lo `test -f '../C/NCSEcw/lcms/src/cmspack.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmspack.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmspack.Tpo" "$(DEPDIR)/cmspack.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmspack.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmspack.c' object='cmspack.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmspack.Plo' tmpdepfile='$(DEPDIR)/cmspack.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmspack.lo `test -f '../C/NCSEcw/lcms/src/cmspack.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmspack.c
+-
+-cmspcs.o: ../C/NCSEcw/lcms/src/cmspcs.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmspcs.o -MD -MP -MF "$(DEPDIR)/cmspcs.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmspcs.o `test -f '../C/NCSEcw/lcms/src/cmspcs.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmspcs.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmspcs.Tpo" "$(DEPDIR)/cmspcs.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmspcs.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmspcs.c' object='cmspcs.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmspcs.Po' tmpdepfile='$(DEPDIR)/cmspcs.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmspcs.o `test -f '../C/NCSEcw/lcms/src/cmspcs.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmspcs.c
+-
+-cmspcs.obj: ../C/NCSEcw/lcms/src/cmspcs.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmspcs.obj -MD -MP -MF "$(DEPDIR)/cmspcs.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmspcs.obj `if test -f '../C/NCSEcw/lcms/src/cmspcs.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmspcs.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmspcs.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmspcs.Tpo" "$(DEPDIR)/cmspcs.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmspcs.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmspcs.c' object='cmspcs.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmspcs.Po' tmpdepfile='$(DEPDIR)/cmspcs.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmspcs.obj `if test -f '../C/NCSEcw/lcms/src/cmspcs.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmspcs.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmspcs.c'; fi`
+-
+-cmspcs.lo: ../C/NCSEcw/lcms/src/cmspcs.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmspcs.lo -MD -MP -MF "$(DEPDIR)/cmspcs.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmspcs.lo `test -f '../C/NCSEcw/lcms/src/cmspcs.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmspcs.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmspcs.Tpo" "$(DEPDIR)/cmspcs.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmspcs.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmspcs.c' object='cmspcs.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmspcs.Plo' tmpdepfile='$(DEPDIR)/cmspcs.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmspcs.lo `test -f '../C/NCSEcw/lcms/src/cmspcs.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmspcs.c
+-
+-cmssamp.o: ../C/NCSEcw/lcms/src/cmssamp.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmssamp.o -MD -MP -MF "$(DEPDIR)/cmssamp.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmssamp.o `test -f '../C/NCSEcw/lcms/src/cmssamp.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmssamp.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmssamp.Tpo" "$(DEPDIR)/cmssamp.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmssamp.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmssamp.c' object='cmssamp.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmssamp.Po' tmpdepfile='$(DEPDIR)/cmssamp.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmssamp.o `test -f '../C/NCSEcw/lcms/src/cmssamp.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmssamp.c
+-
+-cmssamp.obj: ../C/NCSEcw/lcms/src/cmssamp.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmssamp.obj -MD -MP -MF "$(DEPDIR)/cmssamp.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmssamp.obj `if test -f '../C/NCSEcw/lcms/src/cmssamp.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmssamp.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmssamp.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmssamp.Tpo" "$(DEPDIR)/cmssamp.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmssamp.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmssamp.c' object='cmssamp.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmssamp.Po' tmpdepfile='$(DEPDIR)/cmssamp.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmssamp.obj `if test -f '../C/NCSEcw/lcms/src/cmssamp.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmssamp.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmssamp.c'; fi`
+-
+-cmssamp.lo: ../C/NCSEcw/lcms/src/cmssamp.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmssamp.lo -MD -MP -MF "$(DEPDIR)/cmssamp.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmssamp.lo `test -f '../C/NCSEcw/lcms/src/cmssamp.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmssamp.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmssamp.Tpo" "$(DEPDIR)/cmssamp.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmssamp.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmssamp.c' object='cmssamp.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmssamp.Plo' tmpdepfile='$(DEPDIR)/cmssamp.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmssamp.lo `test -f '../C/NCSEcw/lcms/src/cmssamp.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmssamp.c
+-
+-cmsvirt.o: ../C/NCSEcw/lcms/src/cmsvirt.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsvirt.o -MD -MP -MF "$(DEPDIR)/cmsvirt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsvirt.o `test -f '../C/NCSEcw/lcms/src/cmsvirt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsvirt.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsvirt.Tpo" "$(DEPDIR)/cmsvirt.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsvirt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsvirt.c' object='cmsvirt.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsvirt.Po' tmpdepfile='$(DEPDIR)/cmsvirt.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsvirt.o `test -f '../C/NCSEcw/lcms/src/cmsvirt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsvirt.c
+-
+-cmsvirt.obj: ../C/NCSEcw/lcms/src/cmsvirt.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsvirt.obj -MD -MP -MF "$(DEPDIR)/cmsvirt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsvirt.obj `if test -f '../C/NCSEcw/lcms/src/cmsvirt.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsvirt.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsvirt.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsvirt.Tpo" "$(DEPDIR)/cmsvirt.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsvirt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsvirt.c' object='cmsvirt.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsvirt.Po' tmpdepfile='$(DEPDIR)/cmsvirt.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsvirt.obj `if test -f '../C/NCSEcw/lcms/src/cmsvirt.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsvirt.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsvirt.c'; fi`
+-
+-cmsvirt.lo: ../C/NCSEcw/lcms/src/cmsvirt.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsvirt.lo -MD -MP -MF "$(DEPDIR)/cmsvirt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsvirt.lo `test -f '../C/NCSEcw/lcms/src/cmsvirt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsvirt.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsvirt.Tpo" "$(DEPDIR)/cmsvirt.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsvirt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsvirt.c' object='cmsvirt.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsvirt.Plo' tmpdepfile='$(DEPDIR)/cmsvirt.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsvirt.lo `test -f '../C/NCSEcw/lcms/src/cmsvirt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsvirt.c
+-
+-cmswtpnt.o: ../C/NCSEcw/lcms/src/cmswtpnt.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmswtpnt.o -MD -MP -MF "$(DEPDIR)/cmswtpnt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmswtpnt.o `test -f '../C/NCSEcw/lcms/src/cmswtpnt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmswtpnt.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmswtpnt.Tpo" "$(DEPDIR)/cmswtpnt.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmswtpnt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmswtpnt.c' object='cmswtpnt.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmswtpnt.Po' tmpdepfile='$(DEPDIR)/cmswtpnt.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmswtpnt.o `test -f '../C/NCSEcw/lcms/src/cmswtpnt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmswtpnt.c
+-
+-cmswtpnt.obj: ../C/NCSEcw/lcms/src/cmswtpnt.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmswtpnt.obj -MD -MP -MF "$(DEPDIR)/cmswtpnt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmswtpnt.obj `if test -f '../C/NCSEcw/lcms/src/cmswtpnt.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmswtpnt.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmswtpnt.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmswtpnt.Tpo" "$(DEPDIR)/cmswtpnt.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmswtpnt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmswtpnt.c' object='cmswtpnt.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmswtpnt.Po' tmpdepfile='$(DEPDIR)/cmswtpnt.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmswtpnt.obj `if test -f '../C/NCSEcw/lcms/src/cmswtpnt.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmswtpnt.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmswtpnt.c'; fi`
+-
+-cmswtpnt.lo: ../C/NCSEcw/lcms/src/cmswtpnt.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmswtpnt.lo -MD -MP -MF "$(DEPDIR)/cmswtpnt.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmswtpnt.lo `test -f '../C/NCSEcw/lcms/src/cmswtpnt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmswtpnt.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmswtpnt.Tpo" "$(DEPDIR)/cmswtpnt.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmswtpnt.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmswtpnt.c' object='cmswtpnt.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmswtpnt.Plo' tmpdepfile='$(DEPDIR)/cmswtpnt.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmswtpnt.lo `test -f '../C/NCSEcw/lcms/src/cmswtpnt.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmswtpnt.c
+-
+-cmsxform.o: ../C/NCSEcw/lcms/src/cmsxform.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsxform.o -MD -MP -MF "$(DEPDIR)/cmsxform.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsxform.o `test -f '../C/NCSEcw/lcms/src/cmsxform.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsxform.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsxform.Tpo" "$(DEPDIR)/cmsxform.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsxform.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsxform.c' object='cmsxform.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsxform.Po' tmpdepfile='$(DEPDIR)/cmsxform.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsxform.o `test -f '../C/NCSEcw/lcms/src/cmsxform.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsxform.c
+-
+-cmsxform.obj: ../C/NCSEcw/lcms/src/cmsxform.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsxform.obj -MD -MP -MF "$(DEPDIR)/cmsxform.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsxform.obj `if test -f '../C/NCSEcw/lcms/src/cmsxform.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsxform.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsxform.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsxform.Tpo" "$(DEPDIR)/cmsxform.Po"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsxform.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsxform.c' object='cmsxform.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsxform.Po' tmpdepfile='$(DEPDIR)/cmsxform.TPo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsxform.obj `if test -f '../C/NCSEcw/lcms/src/cmsxform.c'; then $(CYGPATH_W) '../C/NCSEcw/lcms/src/cmsxform.c'; else $(CYGPATH_W) '$(srcdir)/../C/NCSEcw/lcms/src/cmsxform.c'; fi`
+-
+-cmsxform.lo: ../C/NCSEcw/lcms/src/cmsxform.c
+-@am__fastdepCC_TRUE@	if $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT cmsxform.lo -MD -MP -MF "$(DEPDIR)/cmsxform.Tpo" \
+-@am__fastdepCC_TRUE@	  -c -o cmsxform.lo `test -f '../C/NCSEcw/lcms/src/cmsxform.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsxform.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/cmsxform.Tpo" "$(DEPDIR)/cmsxform.Plo"; \
+-@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/cmsxform.Tpo"; exit 1; \
+-@am__fastdepCC_TRUE@	fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../C/NCSEcw/lcms/src/cmsxform.c' object='cmsxform.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/cmsxform.Plo' tmpdepfile='$(DEPDIR)/cmsxform.TPlo' @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o cmsxform.lo `test -f '../C/NCSEcw/lcms/src/cmsxform.c' || echo '$(srcdir)/'`../C/NCSEcw/lcms/src/cmsxform.c
+-
+ dynamiclib.o: ../C/NCSUtil/dynamiclib.c
+ @am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT dynamiclib.o -MD -MP -MF "$(DEPDIR)/dynamiclib.Tpo" \
+ @am__fastdepCC_TRUE@	  -c -o dynamiclib.o `test -f '../C/NCSUtil/dynamiclib.c' || echo '$(srcdir)/'`../C/NCSUtil/dynamiclib.c; \
