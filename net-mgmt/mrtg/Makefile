@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mrtg
-PORTVERSION=	2.16.2
-PORTREVISION=	6
+PORTVERSION=	2.16.4
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
@@ -67,6 +66,14 @@ SCRIPTS=	cfgmaker indexmaker mrtg mrtg-traffic-sum
 OPTIONS=	IPV6 "Enable IPv6 support" OFF \
 		SNMP "Enable use of SNMPv3" OFF
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
+.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	*
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_IPV6)
@@ -92,7 +99,8 @@ do-install:
 	@${MKDIR} ${ETCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg ${ETCDIR}/mrtg.cfg.sample
 	@${INSTALL_DATA} ${MAN1:S,^,${WRKSRC}/doc/,} ${MAN1PREFIX}/man/man1
-	@${CP} -p ${WRKSRC}/lib/mrtg2/*.pm ${SITE_PERL}/
+	@${MKDIR} ${PREFIX}/${SITE_PERL_REL}
+	@${CP} -p ${WRKSRC}/lib/mrtg2/*.pm ${PREFIX}/${SITE_PERL_REL}
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/rateup ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/bin/,} ${PREFIX}/bin
 
