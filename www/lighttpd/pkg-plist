@@ -44,6 +44,9 @@ lib/lighttpd/mod_fastcgi.so
 lib/lighttpd/mod_flv_streaming.a
 lib/lighttpd/mod_flv_streaming.la
 lib/lighttpd/mod_flv_streaming.so
+%%GEOIP%%lib/lighttpd/mod_geoip.a
+%%GEOIP%%lib/lighttpd/mod_geoip.la
+%%GEOIP%%lib/lighttpd/mod_geoip.so
 %%H264%%lib/lighttpd/mod_h264_streaming.a
 %%H264%%lib/lighttpd/mod_h264_streaming.la
 %%H264%%lib/lighttpd/mod_h264_streaming.so
