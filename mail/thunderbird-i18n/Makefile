@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird-i18n
-PORTVERSION=	2.0.0.24
+PORTVERSION=	3.1.1
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -23,9 +23,11 @@ RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-swit
 NO_BUILD=	yes
 USE_XPI=	*thunderbird
 
-THUNDERBIRD_I18N_ALL=	af be bg ca cs da de el en-GB es-AR es-ES eu fi fr ga-IE \
-			he hu it ja ko lt mk nb-NO nl nn-NO pa-IN pl pt-BR \
-			pt-PT ru sk sl sv-SE tr uk zh-CN zh-TW
+THUNDERBIRD_I18N_ALL=	af ar be bg bn-BD ca cs da de el en-GB en-US es-AR es-ES \
+			et eu fi fr fy-NL ga-IE he hu id is it ja ko lt nb-NO nl \
+			nn-NO pa-IN pl pt-BR pt-PT ro ru si sk sl sq sv-SE tr uk \
+			zh-CN zh-TW
+
 .ifdef PACKAGE_BUILDING
 THUNDERBIRD_I18N?=	all
 .else
@@ -42,8 +44,8 @@ WDIR=	langpack-*@thunderbird.mozilla.org
 XPI_DISTNAMES=	${THUNDERBIRD_I18N_}
 .for dist in ${XPI_DISTNAMES}
 XPI_ID_${dist}=		langpack-${dist}@thunderbird.mozilla.org
-XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar chrome/chromelist.txt
-XPI_DIRS_${dist}=	chrome
+XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar defaults/pref/all-l10n.js
+XPI_DIRS_${dist}=	chrome defaults/pref defaults
 .endfor
 
 do-extract:

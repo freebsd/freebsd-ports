@@ -1,0 +1,13 @@
+--- directory/c-sdk/ldap/libraries/libldap/Makefile.in.orig	2009-11-10 09:56:42.000000000 +0100
++++ directory/c-sdk/ldap/libraries/libldap/Makefile.in	2009-11-10 09:58:15.000000000 +0100
+@@ -254,6 +254,10 @@
+ EXTRA_LIBS = -L$(dist_libdir) -l$(LBER_LIBNAME) -lbe
+ endif
+ 
++ifeq ($(OS_ARCH), FreeBSD)
++EXTRA_LIBS = -L$(dist_libdir) -l$(LBER_LIBNAME) -lpthread
++endif
++
+ ifeq ($(OS_ARCH), NetBSD)
+ EXTRA_LIBS = -L$(dist_libdir) -l$(LBER_LIBNAME)
+ endif
