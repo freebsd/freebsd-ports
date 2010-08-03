@@ -12,7 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 DISTNAME=	sqlite-${PORTVERSION}
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	pol@opk.ru
 COMMENT=	An SQL database engine in a C library
 
 CONFLICTS=	sqlite34-[0-9]*

@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
-MAINTAINER=	mnag@FreeBSD.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A secure, fast, compliant, and very flexible Web Server
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
