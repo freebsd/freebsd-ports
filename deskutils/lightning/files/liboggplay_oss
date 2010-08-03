@@ -1,0 +1,15 @@
+--- mozilla/media/libsydneyaudio/src/Makefile.in_orgi	2009-04-10 12:12:45.000000000 +0200
++++ mozilla/media/libsydneyaudio/src/Makefile.in	2009-04-10 12:13:12.000000000 +0200
+@@ -45,6 +45,12 @@
+ LIBRARY_NAME	= sydneyaudio
+ FORCE_STATIC_LIB= 1
+ 
++ifeq ($(OS_ARCH),FreeBSD)
++CSRCS		= \
++		sydney_audio_oss.c \
++		$(NULL)
++endif
++
+ ifeq ($(OS_ARCH),Linux)
+ CSRCS		= \
+ 		sydney_audio_alsa.c \

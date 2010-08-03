@@ -1,5 +1,5 @@
---- security/manager/ssl/src/Makefile.in.orig	Mon Aug 14 19:22:52 2006
-+++ security/manager/ssl/src/Makefile.in	Thu Aug 31 15:17:20 2006
+--- mozilla/security/manager/ssl/src/Makefile.in.orig	Mon Aug 14 19:22:52 2006
++++ mozilla/security/manager/ssl/src/Makefile.in	Thu Aug 31 15:17:20 2006
 @@ -124,19 +124,19 @@
  		  pipboot \
  		  $(NULL)
@@ -22,32 +22,27 @@
  		$(NULL)
  
  include $(topsrcdir)/config/rules.mk
---- security/manager/Makefile.in.orig	2008-11-23 09:08:49.000000000 +1000
-+++ security/manager/Makefile.in	2008-11-23 09:11:24.000000000 +1000
-@@ -54,22 +54,14 @@
- 	SSL3_LIB \
- 	SOFTOKEN3_LIB \
- 	SOFTOKEN3_CHK \
--	LOADABLE_ROOT_MODULE \
- 	HAVE_FREEBL_LIBS \
- 	HAVE_FREEBL_LIBS_32 \
- 	HAVE_FREEBL_LIBS_32INT64 \
- 	HAVE_FREEBL_LIBS_64 \
- 	$(NULL)
+--- mozilla/security/manager/Makefile.in.orig	2009-12-03 08:19:28.000000000 +0100
++++ mozilla/security/manager/Makefile.in	2009-12-05 16:08:10.000000000 +0100
+@@ -45,17 +45,6 @@
  
+ MODULE = psm
+ 
+-ifndef MOZ_NATIVE_NSS
 -LOADABLE_ROOT_MODULE = $(DLL_PREFIX)nssckbi$(DLL_SUFFIX)
- endif
- 
+-endif
+-
 -NSS3_LIB = $(DLL_PREFIX)nss3$(DLL_SUFFIX)
+-NSSUTIL3_LIB = $(DLL_PREFIX)nssutil3$(DLL_SUFFIX)
 -SMIME3_LIB = $(DLL_PREFIX)smime3$(DLL_SUFFIX)
 -SSL3_LIB =  $(DLL_PREFIX)ssl3$(DLL_SUFFIX)
 -SOFTOKEN3_LIB = $(DLL_PREFIX)softokn3$(DLL_SUFFIX)
 -SOFTOKEN3_CHK = $(DLL_PREFIX)softokn3.chk
 -
- # Default
- HAVE_FREEBL_LIBS = 1
- 
-@@ -217,13 +209,6 @@
+ ifndef NSS_DISABLE_DBM
+ NSSDBM3_LIB = $(DLL_PREFIX)nssdbm3$(DLL_SUFFIX)
+ NSSDBM3_CHK = $(DLL_PREFIX)nssdbm3.chk
+@@ -255,13 +244,6 @@
  
  .nss.cleaned: .nss.checkout
  ifndef MOZ_NATIVE_NSS
@@ -60,31 +55,27 @@
 -	touch $@
  endif
  
- .nss.checkout:
-@@ -240,113 +225,14 @@
+ GARBAGE += .nss.cleaned
+@@ -280,78 +262,6 @@
  endif
  
  libs::
 -ifndef MOZ_NATIVE_NSS
 -	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS)
+-ifndef NSS_DISABLE_DBM
+-	$(MAKE) -C $(topsrcdir)/security/dbm $(DEFAULT_GMAKE_FLAGS) 
 -endif
--ifeq ($(OS_ARCH),WINNT)
--	cd $(DIST)/lib; cp -f $(LIB_PREFIX)dbm$(MOZ_BITS).$(LIB_SUFFIX) $(LIB_PREFIX)dbm.$(LIB_SUFFIX)
--else
--	cd $(DIST)/lib; cp -f $(LIB_PREFIX)mozdbm_s.$(LIB_SUFFIX) $(LIB_PREFIX)dbm.$(LIB_SUFFIX); $(RANLIB) $(LIB_PREFIX)dbm.$(LIB_SUFFIX)
--endif
--ifndef MOZ_NATIVE_NSS
--	$(MAKE) -C $(topsrcdir)/security/nss/lib/util $(DEFAULT_GMAKE_FLAGS) clean
--	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib $(DEFAULT_GMAKE_FLAGS) export
--	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib/util $(DEFAULT_GMAKE_FLAGS) libs
--	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib/freebl $(DEFAULT_GMAKE_FLAGS) libs
--	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib/softoken $(DEFAULT_GMAKE_FLAGS) libs
--	$(MAKE) -C $(topsrcdir)/security/nss-fips/lib/util $(DEFAULT_GMAKE_FLAGS) clean
--	# In NSS 3.11.8-3.11.9, lib/ssl/derive.c includes cmd/lib/secutil.h.
--	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS) export
--	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS) DIRS="util base dev pki pki1 certdb certhigh pk11wrap cryptohi nss ssl pkcs12 pkcs7 smime crmf jar ckfw ckfw/builtins"
--ifndef SKIP_CHK
+-	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS)
+-ifdef ENABLE_TESTS
+-	# Need certutil binary for mochitest certificates generation
 -	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS)
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/certutil $(DEFAULT_GMAKE_FLAGS)
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/pk12util $(DEFAULT_GMAKE_FLAGS)
+-endif
+-ifndef SKIP_CHK
+-ifndef ENABLE_TESTS # Just avoid secondary compile
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS)
+-endif
 -	$(MAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS)
 -endif
 -	$(INSTALL) -m 755 $(DIST)/lib/$(LOADABLE_ROOT_MODULE) $(DIST)/bin
@@ -92,9 +83,17 @@
 -	$(INSTALL) -m 644 $(DIST)/lib/$(SOFTOKEN3_CHK) $(DIST)/bin
 -endif
 -	$(INSTALL) -m 755 $(DIST)/lib/$(SOFTOKEN3_LIB) $(DIST)/bin
+-ifndef NSS_DISABLE_DBM
+-ifndef SKIP_CHK
+-	$(INSTALL) -m 644 $(DIST)/lib/$(NSSDBM3_CHK) $(DIST)/bin
+-endif
+-	$(INSTALL) -m 755 $(DIST)/lib/$(NSSDBM3_LIB) $(DIST)/bin
+-endif
 -	$(INSTALL) -m 755 $(DIST)/lib/$(NSS3_LIB) $(DIST)/bin
+-	$(INSTALL) -m 755 $(DIST)/lib/$(NSSUTIL3_LIB) $(DIST)/bin
 -	$(INSTALL) -m 755 $(DIST)/lib/$(SSL3_LIB) $(DIST)/bin
 -	$(INSTALL) -m 755 $(DIST)/lib/$(SMIME3_LIB) $(DIST)/bin
+-	$(INSTALL) -m 755 $(SDK_LIBS) $(DIST)/sdk/lib
 -ifdef HAVE_FREEBL_LIBS
 -ifndef SKIP_CHK
 -	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_CHK) $(DIST)/bin
@@ -124,12 +123,20 @@
 -	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_64FPU_LIB) $(DIST)/bin
 -endif
 -endif
+-ifndef MOZ_NATIVE_NSS
+-# NSS installs headers to dist/public and we want them in dist/include
+-	$(NSINSTALL) -D $(DIST)/include/nss
+-	(cd $(DIST)/public/nss && tar $(TAR_CREATE_FLAGS) - .) | \
+-	  (cd $(DIST)/include/nss && tar -xf -)
+-	(cd $(DIST)/public/nss && tar $(TAR_CREATE_FLAGS) - .) | \
+-	  (cd $(DIST)/sdk/include && tar -xf -)
+-endif
 -	$(MAKE) -C boot $@
-	$(MAKE) -C ssl $@
+ 	$(MAKE) -C ssl $@
  	$(MAKE) -C locales $@
  ifdef MOZ_XUL
- 	$(MAKE) -C pki $@
- endif
+@@ -362,50 +272,6 @@
+ 	$(MAKE) -C ssl $@
  
  install::
 -ifndef MOZ_NATIVE_NSS
@@ -138,7 +145,12 @@
 -	$(SYSINSTALL) -m 644 $(DIST)/lib/$(SOFTOKEN3_CHK) $(DESTDIR)$(mozappdir)
 -endif
 -	$(SYSINSTALL) -m 755 $(DIST)/lib/$(SOFTOKEN3_LIB) $(DESTDIR)$(mozappdir)
+-ifndef SKIP_CHK
+-	$(SYSINSTALL) -m 644 $(DIST)/lib/$(NSSDBM3_CHK) $(DESTDIR)$(mozappdir)
+-endif
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(NSSDBM3_LIB) $(DESTDIR)$(mozappdir)
 -	$(SYSINSTALL) -m 755 $(DIST)/lib/$(NSS3_LIB) $(DESTDIR)$(mozappdir)
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(NSSUTIL3_LIB) $(DESTDIR)$(mozappdir)
 -	$(SYSINSTALL) -m 755 $(DIST)/lib/$(SSL3_LIB) $(DESTDIR)$(mozappdir)
 -	$(SYSINSTALL) -m 755 $(DIST)/lib/$(SMIME3_LIB) $(DESTDIR)$(mozappdir)
 -ifdef HAVE_FREEBL_LIBS
@@ -171,11 +183,10 @@
 -endif
 -endif
 -	$(MAKE) -C boot $@
-	$(MAKE) -C ssl $@
+ 	$(MAKE) -C ssl $@
  	$(MAKE) -C locales $@
  ifdef MOZ_XUL
- 	$(MAKE) -C pki $@
-@@ -360,12 +244,6 @@
+@@ -420,12 +286,6 @@
  	$(MAKE) -C pki $@
  endif
  ifndef MOZ_NATIVE_NSS
@@ -188,18 +199,18 @@
  endif
  
  echo-requires-recursive::
---- toolkit/mozapps/update/src/updater/Makefile.in.orig	Mon Jul  2 07:59:59 2007
-+++ toolkit/mozapps/update/src/updater/Makefile.in	Mon Jul  2 08:00:21 2007
-@@ -52,11 +52,11 @@
+--- mozilla/toolkit/mozapps/update/src/updater/Makefile.in.orig	2009-12-03 08:19:47.000000000 +0100
++++ mozilla/toolkit/mozapps/update/src/updater/Makefile.in	2009-12-05 16:10:00.000000000 +0100
+@@ -55,12 +55,11 @@
  
- PROGRAM = updater$(BIN_SUFFIX)
- 
--REQUIRES = libmar libbz2
-+REQUIRES = libmar
+ REQUIRES	= \
+ 		libmar \
+-		$(BZ2_REQUIRES) \
+ 		$(NULL)
  
  LIBS += \
- 	$(DIST)/lib/$(LIB_PREFIX)mar.$(LIB_SUFFIX) \
--	$(DIST)/lib/$(LIB_PREFIX)bz2.$(LIB_SUFFIX) \
+ 	$(DEPTH)/modules/libmar/src/$(LIB_PREFIX)mar.$(LIB_SUFFIX) \
+-	$(BZ2_LIBS) \
 +	%%LIB_BZ2%% \
  	$(NULL)
  
