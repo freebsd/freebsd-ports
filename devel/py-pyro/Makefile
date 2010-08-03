@@ -15,7 +15,7 @@ DISTNAME=	Pyro-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed Object Middleware for Python(IPC/RPC)
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Pyro
 
