@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rabbit
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	misc ruby
 MASTER_SITES=	http://www.cozmixng.org/~kou/download/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/rabbit|}
@@ -16,9 +16,6 @@ COMMENT=	An RD-document-based presentation application
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		${LOCALBASE}/bin/rd2:${PORTSDIR}/textproc/ruby-rdtool
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
