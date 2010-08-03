@@ -1,7 +1,0 @@
-zfSnap is very simple sh script to make periodic zfs snapshots with cron.
-It will also delete old snapshots.
-
-WWW: http://aldis.git.bsdroot.lv/zfSnap
-
--- Aldis Berjoza
-<aldis@bsdroot.lv>
