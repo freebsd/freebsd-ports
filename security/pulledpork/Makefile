@@ -17,21 +17,19 @@ COMMENT=	Script to update snort-2.8+ rules
 RUN_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
 		p5-Crypt-SSLeay>=0.57:${PORTSDIR}/security/p5-Crypt-SSLeay
 
-#LICENSE=	GPLv2
+LICENSE=	GPLv2
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-PLIST_DIRS=	etc/pulledpork
+PLIST_DIRS=	%%ETCDIR%%
 PLIST_FILES=	bin/pulledpork.pl \
-		${PLIST_DIRS}/disablesid.conf.sample \
-		${PLIST_DIRS}/dropsid.conf.sample \
-		${PLIST_DIRS}/enablesid.conf.sample \
-		${PLIST_DIRS}/pulledpork.conf.sample
+		%%ETCDIR%%/disablesid.conf.sample \
+		%%ETCDIR%%/dropsid.conf.sample \
+		%%ETCDIR%%/enablesid.conf.sample \
+		%%ETCDIR%%/pulledpork.conf.sample
 
-CONFIG_DIR=	${PREFIX}/${PLIST_DIRS}
 SUB_FILES=	pkg-message
-SUB_LIST=	CONFIGDIR=${CONFIG_DIR}
 
 .include <bsd.port.pre.mk>
 
@@ -53,12 +51,12 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pulledpork.pl ${PREFIX}/bin
-	@${MKDIR} -m 750 ${CONFIG_DIR}
+	@${MKDIR} -m 750 ${ETCDIR}
 	# pulledpork.conf contains the snort user registration key, do not install world readable
-	${INSTALL_DATA} -m 440 ${WRKSRC}/etc/pulledpork.conf ${CONFIG_DIR}/pulledpork.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/etc/disablesid.conf ${CONFIG_DIR}/disablesid.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/etc/dropsid.conf    ${CONFIG_DIR}/dropsid.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/etc/enablesid.conf  ${CONFIG_DIR}/enablesid.conf.sample
+	${INSTALL_DATA} -m 440 ${WRKSRC}/etc/pulledpork.conf ${ETCDIR}/pulledpork.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/disablesid.conf ${ETCDIR}/disablesid.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/dropsid.conf    ${ETCDIR}/dropsid.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/enablesid.conf  ${ETCDIR}/enablesid.conf.sample
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
