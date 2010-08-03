@@ -6772,6 +6772,7 @@ jzip.org                        ports/archivers/jzip.org
 jzlib                           ports/archivers/jzlib
 k3b                             ports/sysutils/k3b
 k3b-i18n                        ports/misc/k3b-i18n
+k3b-kde4                        ports/sysutils/k3b-kde4
 k3bmonkeyaudioplugin            ports/audio/k3bmonkeyaudioplugin
 k3d                             ports/graphics/k3d
 k3dsurf                         ports/math/k3dsurf
@@ -8181,6 +8182,7 @@ libtorrent-devel                ports/net-p2p/libtorrent-devel
 libtorrent-rasterbar-14         ports/net-p2p/libtorrent-rasterbar-14
 libtorrent-rasterbar-15         ports/net-p2p/libtorrent-rasterbar-15
 libtorrent-rasterbar-15-python  ports/net-p2p/libtorrent-rasterbar-15-python
+libtpl                          ports/devel/libtpl
 libtrace                        ports/net/libtrace
 libtranslate                    ports/textproc/libtranslate
 libtre                          ports/textproc/libtre
@@ -19471,6 +19473,7 @@ php-gtk                         ports/x11-toolkits/php-gtk
 php-gtk2                        ports/x11-toolkits/php-gtk2
 php-java-bridge                 ports/devel/php-java-bridge
 php-libawl                      ports/devel/php-libawl
+php-libpuzzle                   ports/graphics/php-libpuzzle
 php-magickwand                  ports/graphics/php-magickwand
 php-mode.el                     ports/lang/php-mode.el
 php-plurk-api                   ports/www/php-plurk-api
