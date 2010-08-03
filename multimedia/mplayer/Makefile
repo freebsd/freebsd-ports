@@ -7,7 +7,6 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	2
 
 COMMENT=	High performance media player supporting many formats
 
@@ -37,6 +36,7 @@ OPTIONS+=	OPENAL "Enable OpenAL sound support" off
 OPTIONS+=	PULSE "Enable PulseAudio" off
 OPTIONS+=	LIBUNGIF "Enable gif support" on
 OPTIONS+=	OPENJPEG "Enable JPEG2000 support" off
+OPTIONS+=	MNG "Enable MNG input support" off
 OPTIONS+=	AALIB "Enable aalib support" off
 OPTIONS+=	LIBCACA "Enable libcaca support" off
 OPTIONS+=	SVGALIB "Enable svgalib support" off
@@ -82,6 +82,7 @@ CONFIGURE_ARGS+=	--disable-ssse3 \
 			--disable-twolame \
 			--disable-x264 \
 			--disable-xvid \
+			--disable-libdirac-lavc \
 			--disable-mencoder
 
 .include "${.CURDIR}/Makefile.options"
@@ -251,19 +252,12 @@ post-patch:
 		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
 		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${DEFAULT_DVD_DEVICE:S/dev\//dev\/\\\:/}|g ; \
 		 s|/dev/\\:(cdrom[[:alnum:]]*[[:>:]])|${DEFAULT_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g'
+	@cd ${WRKSRC}/libavcodec && ${LN} -s x86 i386 && ${LN} -s x86 amd64
 .if defined(WITH_RTC)
 	@${REINPLACE_CMD} -e \
 		's|irqp = 1024|irqp = ${DEFAULT_KERN_HZ}|' \
 		${WRKSRC}/mplayer.c
 .endif
-#.if defined(WITH_VDPAU)
-#	@if [ ! -e ${LOCALBASE}/share/doc/NVIDIA_GLX-1.0/vdpau.h ]; then \
-#		${ECHO_CMD} "For VDPAU support you need a recent version of x11/nvidia-driver installed"; \
-#		${FALSE}; \
-#	fi
-#	@${MKDIR} ${WRKSRC}/vdpau
-#	@${CP} ${LOCALBASE}/share/doc/NVIDIA_GLX-1.0/vdpau*.h ${WRKSRC}/vdpau
-#.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e 's#-pthread#${PTHREAD_LIBS}#g' \

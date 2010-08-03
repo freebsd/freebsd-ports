@@ -1,6 +1,6 @@
---- configure.orig	2010-01-17 00:22:43.000000000 +0100
-+++ configure	2010-01-17 14:29:54.248533341 +0100
-@@ -527,7 +527,7 @@
+--- configure.orig	2010-07-14 15:49:08.000000000 +0200
++++ configure	2010-07-17 12:50:00.937109688 +0200
+@@ -555,7 +555,7 @@
  _iwmmxt=auto
  _mtrr=auto
  _altivec=auto
@@ -9,7 +9,7 @@
  _ranlib=ranlib
  _windres=windres
  _cc=cc
-@@ -1353,7 +1353,6 @@
+@@ -1385,7 +1385,6 @@
  
    *)
      echo "Unknown parameter: $ac_option"
@@ -17,7 +17,7 @@
      ;;
  
    esac
-@@ -1462,8 +1461,8 @@
+@@ -1494,8 +1493,8 @@
  _timer=timer-linux.c
  _getch=getch2.c
  if freebsd ; then
@@ -28,7 +28,7 @@
  fi
  
  if netbsd || dragonfly ; then
-@@ -3516,22 +3515,10 @@
+@@ -3618,22 +3617,10 @@
  if linux ; then
    THREAD_CFLAGS=-D_REENTRANT
  elif freebsd || netbsd || openbsd || bsdos ; then
@@ -52,34 +52,47 @@
 +_pthreads=yes
 +_ld_pthread="${PTHREAD_LIBS}"
  if test "$_pthreads" = yes ; then
-   test $_ld_pthread && _res_comment="using $_ld_pthread"
+   test $_ld_pthread && res_comment="using $_ld_pthread"
    def_pthreads='#define HAVE_PTHREADS 1'
-@@ -7637,8 +7624,8 @@
- if test "$_mencoder" = yes ; then
-   def_muxers='#define CONFIG_MUXERS 1'
+@@ -3746,8 +3733,13 @@
+ 
+ 
+ echocheck "sys/dvdio.h"
++cat > $TMPC << EOF
++#include <unistd.h>
++#include <sys/dvdio.h>
++int main(void) { return 0; }
++EOF
+ _dvdio=no
+-header_check sys/dvdio.h && _dvdio=yes
++cc_check && _dvdio=yes
+ if test "$_dvdio" = yes ; then
+   def_dvdio='#define DVD_STRUCT_IN_SYS_DVDIO_H 1'
  else
--  # mpeg1video for vf_lavc, snow for vf_uspp and vf_mcdeint, png for vf_screenshot
--  _libavencoders="MPEG1VIDEO_ENCODER SNOW_ENCODER"
-+  # mpeg1video for vf_lavc, snow/h263 for vf_uspp and vf_mcdeint, png for vf_screenshot
-+  _libavencoders="MPEG1VIDEO_ENCODER H263_ENCODER SNOW_ENCODER"
-   test "$_zlib" = yes && _libavencoders="$_libavencoders PNG_ENCODER"
-   _libavmuxers=""
-   def_muxers='#define CONFIG_MUXERS 0'
-@@ -8023,8 +8010,11 @@
+@@ -7800,7 +7792,7 @@
+ else
+   # mpeg1video for vf_lavc, snow for vf_uspp / vf_mcdeint,
+   # png for vf_screenshot, mjpeg for zr
+-  libavencoders="MPEG1VIDEO_ENCODER SNOW_ENCODER"
++  libavencoders="MPEG1VIDEO_ENCODER H263_ENCODER SNOW_ENCODER"
+   test "$_zlib" = yes && libavencoders="$libavencoders PNG_ENCODER"
+   test "$_zr" = yes && libavencoders="$libavencoders MJPEG_ENCODER"
+   libavmuxers=""
+@@ -8161,8 +8153,11 @@
  if test "$_gui" = yes ; then
  
    # Required libraries
 -  if test "$_libavcodec" != yes ||
--      ! echo $_libavdecoders | grep -q PNG_DECODER ; then
+-      ! echo $libavdecoders | grep -q PNG_DECODER ; then
 +  # Work around a sh bug in FreeBSD < 8
 +  if test "$_libavcodec" != yes ; then
 +    die "The GUI requires libavcodec with PNG support (needs zlib)."
 +  fi
-+  if ! echo $_libavdecoders | grep -q PNG_DECODER ; then
++  if ! echo $libavdecoders | grep -q PNG_DECODER ; then
      die "The GUI requires libavcodec with PNG support (needs zlib)."
    fi
    test "$_freetype" = no && test "$_bitmap_font" = no && \
-@@ -8217,7 +8207,7 @@
+@@ -8352,7 +8347,7 @@
  echocheck "joystick"
  def_joystick='#undef CONFIG_JOYSTICK'
  if test "$_joystick" = yes ; then
