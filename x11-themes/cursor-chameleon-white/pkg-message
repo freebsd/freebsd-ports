@@ -1,0 +1,7 @@
+=============================================================
+If the animations are flickering on your nvidia card, add the
+following line to your xorg.conf file, into the nvidia device
+section, to fix it:
+
+        Option "HWCursor" "off"
+=============================================================
