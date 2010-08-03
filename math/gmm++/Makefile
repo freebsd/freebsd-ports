@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmm++
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1
 CATEGORIES=	math
 MASTER_SITES=	http://download.gna.org/getfem/stable/
 DISTNAME=	${PORTNAME:S/+//g}-${PORTVERSION}
