@@ -1,0 +1,8 @@
+--- mozilla/toolkit/xre/Makefile.in.orig	2007-09-10 10:31:53.000000000 -0400
++++ mozilla/toolkit/xre/Makefile.in	2007-09-10 10:35:00.000000000 -0400
+@@ -263,5 +263,3 @@
+ libs:: platform.ini
+ 	$(INSTALL) $^ $(DIST)/bin
+ 
+-install::
+-	$(INSTALL) $(IFLAGS1) $^ $(DESTDIR)$(mozappdir)

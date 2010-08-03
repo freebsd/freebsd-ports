@@ -1,0 +1,21 @@
+--- config/autoconf.mk.in.orig	2009-04-24 03:46:37.000000000 +0200
++++ config/autoconf.mk.in	2009-05-11 15:03:26.000000000 +0200
+@@ -57,14 +57,14 @@
+ prefix		= @prefix@
+ exec_prefix	= @exec_prefix@
+ bindir		= @bindir@
+-includedir	= @includedir@/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
++includedir	= @includedir@/%%MOZILLA%%
+ libdir		= @libdir@
+ datadir		= @datadir@
+ mandir		= @mandir@
+-idldir		= $(datadir)/idl/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
++idldir		= $(datadir)/idl/%%MOZILLA%%
+ 
+-installdir	= $(libdir)/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
+-sdkdir		= $(libdir)/$(MOZ_APP_NAME)-devel-$(MOZ_APP_VERSION)
++installdir	= $(libdir)/%%MOZILLA%%
++sdkdir		= $(libdir)/%%MOZILLA%%
+ 
+ DIST		= $(DEPTH)/dist
+ LIBXUL_SDK      = @LIBXUL_SDK@

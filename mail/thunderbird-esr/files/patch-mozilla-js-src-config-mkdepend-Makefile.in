@@ -1,0 +1,11 @@
+--- mozilla/js/src/config/mkdepend/Makefile.in.orig	2010-01-19 21:27:45.000000000 +0100
++++ mozilla/js/src/config/mkdepend/Makefile.in	2010-01-20 21:55:56.000000000 +0100
+@@ -71,7 +71,7 @@
+ 
+ include $(topsrcdir)/config/rules.mk
+ 
+-HOST_CFLAGS	+= -DINCLUDEDIR=\"/usr/include\" -DOBJSUFFIX=\".$(OBJ_SUFFIX)\"
++HOST_CFLAGS	+= -DINCLUDEDIR=\"%%LOCALBASE%%/include\" -DOBJSUFFIX=\".$(OBJ_SUFFIX)\" -I/usr/local/include
+ 
+ ifdef GNU_CC
+ _GCCDIR		= $(shell $(CC) -print-file-name=include)
