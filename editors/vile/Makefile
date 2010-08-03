@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vile
-PORTVERSION=	9.7za
+PORTVERSION=	9.7zg
 CATEGORIES=	editors
 MASTER_SITES=	ftp://dickey.his.com/vile/ \
 		ftp://invisible-island.net/vile/ \
@@ -41,7 +41,13 @@ PATCHFILES=	vile-9.7a.patch.gz \
 		vile-9.7x.patch.gz \
 		vile-9.7y.patch.gz \
 		vile-9.7z.patch.gz \
-		vile-9.7za.patch.gz
+		vile-9.7za.patch.gz \
+		vile-9.7zb.patch.gz \
+		vile-9.7zc.patch.gz \
+		vile-9.7zd.patch.gz \
+		vile-9.7ze.patch.gz \
+		vile-9.7zf.patch.gz \
+		vile-9.7zg.patch.gz
 
 MAINTAINER=	gj@FreeBSD.org
 COMMENT=	VI Like Emacs.  a vi "workalike", with many additional features
@@ -49,6 +55,7 @@ COMMENT=	VI Like Emacs.  a vi "workalike", with many additional features
 MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
 MAN1=		vile.1
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS= FILTERS "Add support for loadable filters" OFF
 OPTIONS+= ICONV "Add support for ICONV" OFF

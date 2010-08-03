@@ -1,3 +1,5 @@
+bin/lxvile
+bin/lxvile-fonts
 bin/uxvile
 bin/vileget
 bin/xvile
