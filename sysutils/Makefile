@@ -10,7 +10,6 @@
     SUBDIR += LPRng
     SUBDIR += LPRngTool
     SUBDIR += Tee
-    SUBDIR += aaccli
     SUBDIR += abck
     SUBDIR += abgx360
     SUBDIR += abgx360gui
