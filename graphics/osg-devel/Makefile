@@ -7,7 +7,7 @@
 
 PORTNAME=	osg
 PORTVERSION=	2.9.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -87,7 +87,7 @@ PLIST_SUB+=	FREETYPE="@comment "
 
 .if defined(WITH_GDAL)
 FORCE_REQUIRE+=	GDAL
-LIB_DEPENDS+=	gdal.14:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS+=	gdal.15:${PORTSDIR}/graphics/gdal
 PLIST_SUB+=	GDAL=""
 .else
 FORCE_IGNORE+=	GDAL

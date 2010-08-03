@@ -6,6 +6,8 @@ bin/gdal-config
 bin/gdal2tiles.py
 bin/gdal2xyz.py
 bin/gdal_contour
+bin/gdal_fillnodata.dox
+bin/gdal_fillnodata.py
 bin/gdal_grid
 bin/gdal_merge.py
 bin/gdal_polygonize.py
@@ -16,7 +18,9 @@ bin/gdal_sieve.dox
 bin/gdal_sieve.py
 bin/gdal_translate
 bin/gdaladdo
+bin/gdalbuildvrt
 bin/gdalchksum.py
+bin/gdaldem
 bin/gdalenhance
 bin/gdalident.py
 bin/gdalimport.py
@@ -33,7 +37,9 @@ bin/ogrtindex
 bin/pct2rgb.py
 bin/rgb2pct.py
 bin/testepsg
+include/cpl_atomic_ops.h
 include/cpl_config.h
+include/cpl_config_extras.h
 include/cpl_conv.h
 include/cpl_csv.h
 include/cpl_error.h
@@ -48,6 +54,7 @@ include/cpl_odbc.h
 include/cpl_port.h
 include/cpl_quad_tree.h
 include/cpl_string.h
+include/cpl_time.h
 include/cpl_vsi.h
 include/cpl_vsi_virtual.h
 include/cpl_win32ce_api.h
@@ -83,7 +90,7 @@ include/vrtdataset.h
 lib/libgdal.a
 lib/libgdal.la
 lib/libgdal.so
-lib/libgdal.so.14
+lib/libgdal.so.15
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -139,39 +146,47 @@ lib/libgdal.so.14
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/osr.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/osr.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/osr.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+%%PYTHON_SITELIBDIR%%/easy-install.pth
+%%PYTHON_SITELIBDIR%%/site.py
+%%PYTHON_SITELIBDIR%%/site.pyc
+%%PYTHON_SITELIBDIR%%/site.pyo
+share/gdal/GDALLogoBW.svg
+share/gdal/GDALLogoColor.svg
+share/gdal/GDALLogoGS.svg
+share/gdal/LICENSE.TXT
+share/gdal/coordinate_axis.csv
+share/gdal/cubewerx_extra.wkt
+share/gdal/ecw_cs.wkt
+share/gdal/ellipsoid.csv
+share/gdal/epsg.wkt
+share/gdal/esri_extra.wkt
+share/gdal/gcs.csv
+share/gdal/gcs.override.csv
+share/gdal/gdal_datum.csv
+share/gdal/gdalicon.png
+share/gdal/gt_datum.csv
+share/gdal/gt_ellips.csv
+share/gdal/header.dxf
+share/gdal/pcs.csv
+share/gdal/pcs.override.csv
+share/gdal/prime_meridian.csv
+share/gdal/projop_wparm.csv
+share/gdal/s57agencies.csv
+share/gdal/s57attributes.csv
+share/gdal/s57attributes_aml.csv
+share/gdal/s57attributes_iw.csv
+share/gdal/s57expectedinput.csv
+share/gdal/s57objectclasses.csv
+share/gdal/s57objectclasses_aml.csv
+share/gdal/s57objectclasses_iw.csv
+share/gdal/seed_2d.dgn
+share/gdal/seed_3d.dgn
+share/gdal/stateplane.csv
+share/gdal/trailer.dxf
+share/gdal/unit_of_measure.csv
+@dirrm share/gdal
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/osgeo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-%%DATADIR%%/GDALLogoBW.svg
-%%DATADIR%%/GDALLogoColor.svg
-%%DATADIR%%/GDALLogoGS.svg
-%%DATADIR%%/LICENSE.TXT
-%%DATADIR%%/coordinate_axis.csv
-%%DATADIR%%/cubewerx_extra.wkt
-%%DATADIR%%/ecw_cs.wkt
-%%DATADIR%%/ellipsoid.csv
-%%DATADIR%%/epsg.wkt
-%%DATADIR%%/esri_extra.wkt
-%%DATADIR%%/gcs.csv
-%%DATADIR%%/gcs.override.csv
-%%DATADIR%%/gdal_datum.csv
-%%DATADIR%%/gdalicon.png
-%%DATADIR%%/gt_datum.csv
-%%DATADIR%%/gt_ellips.csv
-%%DATADIR%%/pcs.csv
-%%DATADIR%%/pcs.override.csv
-%%DATADIR%%/prime_meridian.csv
-%%DATADIR%%/projop_wparm.csv
-%%DATADIR%%/s57agencies.csv
-%%DATADIR%%/s57attributes.csv
-%%DATADIR%%/s57attributes_aml.csv
-%%DATADIR%%/s57attributes_iw.csv
-%%DATADIR%%/s57expectedinput.csv
-%%DATADIR%%/s57objectclasses.csv
-%%DATADIR%%/s57objectclasses_aml.csv
-%%DATADIR%%/s57objectclasses_iw.csv
-%%DATADIR%%/seed_2d.dgn
-%%DATADIR%%/seed_3d.dgn
-%%DATADIR%%/stateplane.csv
-%%DATADIR%%/unit_of_measure.csv
-@dirrm %%DATADIR%%
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry %%PYTHON_LIBDIR%%

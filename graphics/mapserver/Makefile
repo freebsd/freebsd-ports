@@ -7,7 +7,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		5.6.4
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -77,7 +77,7 @@ CONFIGURE_ARGS+=	--with-wfs --with-wfsclient
 .endif
 
 .if defined(WITH_GDAL)
-LIB_DEPENDS+=		gdal.14:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS+=		gdal.15:${PORTSDIR}/graphics/gdal
 CONFIGURE_ARGS+=	--with-gdal=${LOCALBASE}/bin/gdal-config \
 			--with-ogr=${LOCALBASE}/bin/gdal-config
 .endif

@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	gdal
-PORTVERSION=	1.6.0
-PORTREVISION=	9
+PORTVERSION=	1.7.2
 CATEGORIES=	graphics geography
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/ \
 		http://www.gdal.org/dl/ \
 		http://dl.maptools.org/dl/gdal/ \
 		http://sunpoet.net/distfiles/
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	glebius@FreeBSD.ORG
 COMMENT=	A translator library for geospatial data formats
 
 USE_AUTOTOOLS=	libtool:22
@@ -23,14 +22,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} --with-libz=/usr
 MAKEFILE=	GNUmakefile
-INSTALL_TARGET=	install install-man
 MAKE_JOBS_UNSAFE=	yes
-
-MAN1=		gdal-config.1 gdal2tiles.1 gdal_contour.1 gdal_grid.1 \
-		gdal_merge.1 gdal_rasterize.1 gdal_retile.1 gdal_translate.1 \
-		gdal_utilities.1 gdaladdo.1 gdalinfo.1 gdaltindex.1 \
-		gdaltransform.1 gdalwarp.1 nearblack.1 ogr2ogr.1 \
-		ogr_utilities.1 ogrinfo.1 ogrtindex.1 pct2rgb.1 rgb2pct.1
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=		${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
@@ -189,19 +181,13 @@ RUN_DEPENDS+=	${PYEASYINSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
 PYEASYINSTALL_CMD=	${LOCALBASE}/bin/easy_install-${PYTHON_VER}
 PYDISTUTILS_PKGNAME=	${PORTNAME:U}
 PYDISTUTILS_PKGVERSION=	${PORTVERSION}
-PORTREVISION=	4
 _OSRELEASE!=		${UNAME} -r
 PYEASYINSTALL_OSARCH=	-${OPSYS:L}-${_OSRELEASE}-${ARCH}
 PYEASYINSTALL_EGG=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-${PYTHON_VERSION:S/thon//}${PYEASYINSTALL_OSARCH}.egg
 PYEASYINSTALL_BINDIR=	${PREFIX}/bin
 PYEASYINSTALL_SITELIBDIR=	${PYTHONPREFIX_SITELIBDIR}
 
-PLIST_SUB+=		PYEASYINSTALL_EGG=${PYEASYINSTALL_EGG} \
-			PYEASYINSTALL_CMD=${PYEASYINSTALL_CMD} \
-			PYEASYINSTALL_BINDIR=${PYEASYINSTALL_BINDIR} \
-			PYEASYINSTALL_SITELIBDIR=${PYEASYINSTALL_SITELIBDIR} \
-			PYDISTUTILS_PKGNAME=${PYDISTUTILS_PKGNAME} \
-			PYDISTUTILS_PKGVERSION=${PYDISTUTILS_PKGVERSION}
+PLIST_SUB+=		PYEASYINSTALL_EGG=${PYEASYINSTALL_EGG}
 .endif
 
 .if !defined(WITHOUT_PNG)
@@ -270,8 +256,5 @@ post-patch:
 		s,%%WRKSRC%%,${WRKSRC},; \
 		' ${WRKSRC}/swig/python/GNUmakefile
 .endif
-
-post-install:
-	${INSTALL_MAN} ${FILESDIR}/gdalwarp.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.post.mk>
