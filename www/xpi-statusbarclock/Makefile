@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	simon@olofsson.de
 COMMENT=	Display date and time in the status bar
 
+DEPRECATED=	Development has been ceased and not compatible with Firefox > 2.
+EXPIRATION_DATE=	2010-10-01
+
 XPI_DISTNAME=	statusbar_clock
 XPI_ID=		{3669edc0-b1ad-11d8-92e7-00d09e0179f2}
 XPI_NUM=	52
