@@ -1,0 +1,14 @@
+--- xulrunner/moonshine.in.orig	2010-06-22 21:46:11.000000000 +0200
++++ xulrunner/moonshine.in	2010-07-22 21:49:39.000000000 +0200
+@@ -1,7 +1,8 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+-XULRUNNER=$(readlink -e $(which xulrunner))
+-BROWSER_PLUGIN_DIR=@BROWSER_PLUGIN_DIR@
++XULRUNNERBINARY=$(which xulrunner)
++XULRUNNER=$(echo $(cd $(dirname $XULRUNNERBINARY); pwd -P)/$(basename $XULRUNNERBINARY))
++BROWSER_PLUGIN_DIR=@BROWSER_PLUGIN_DIR@../symlinks/gecko19
+ LIBDIR=${XULRUNNER%%/xulrunner*}
+ 
+ FF_PROFILES_PATH="$HOME/.mozilla/firefox"

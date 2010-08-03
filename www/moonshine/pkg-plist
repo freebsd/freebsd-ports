@@ -1,4 +1,5 @@
 bin/moonshine
+lib/browser_plugins/moonshine/libmoonshine-plugin.a
 lib/browser_plugins/moonshine/libmoonshine-plugin.la
 lib/browser_plugins/moonshine/libmoonshine-plugin.so
 share/applications/moonshine.desktop
@@ -36,6 +37,7 @@ share/applications/moonshine.desktop
 %%DATADIR%%/chrome/skin/dialog-error.png
 %%DATADIR%%/chrome/skin/player-shell.css
 %%DATADIR%%/defaults/preferences/prefs.js
+@dirrmtry %%DATADIR%%/extensions
 @dirrm %%DATADIR%%/defaults/preferences
 @dirrm %%DATADIR%%/defaults
 @dirrm %%DATADIR%%/chrome/skin
@@ -47,6 +49,6 @@ share/applications/moonshine.desktop
 @dirrm %%DATADIR%%/chrome/content/player
 @dirrm %%DATADIR%%/chrome/content
 @dirrm %%DATADIR%%/chrome
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
 @dirrm lib/browser_plugins/moonshine
-@dirrm lib/browser_plugins
+@dirrmtry lib/browser_plugins
