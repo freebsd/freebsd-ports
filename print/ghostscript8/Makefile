@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript8
 PORTVERSION=	8.71
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	http://ghostscript.com/releases/:gs_srcs \
 		SF/ghostscript/files/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -25,6 +25,7 @@ COMMENT=	Ghostscript 8.x PostScript interpreter
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		jasper:${PORTSDIR}/graphics/jasper \
+		jbig2dec:${PORTSDIR}/graphics/jbig2dec \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff
@@ -84,7 +85,7 @@ MLINKS=		gslp.1 gsbj.1 \
 		ps2ps.1 eps2eps.1
 
 CIDFONTDIR=	${DATADIR}/${PORTVERSION}/Resource
-EXCLUDE_DIRS=	jpeg expat jasper libpng tiff zlib
+EXCLUDE_DIRS=	jbig2dec jpeg expat jasper libpng tiff zlib
 
 .include "Makefile.drivers"
 .include <bsd.port.pre.mk>
