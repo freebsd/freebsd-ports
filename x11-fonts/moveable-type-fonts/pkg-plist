@@ -1,0 +1,28 @@
+%%FONTSDIR%%/Blackout-2am.ttf
+%%FONTSDIR%%/Blackout-Midnight.ttf
+%%FONTSDIR%%/Chunk.otf
+%%FONTSDIR%%/Chunk.ttf
+%%FONTSDIR%%/GoudyBookletter1911.otf
+%%FONTSDIR%%/Junction 02.otf
+%%FONTSDIR%%/Junction 02.ttf
+%%FONTSDIR%%/League Gothic.otf
+%%FONTSDIR%%/OFLGoudyStM-Italic.otf
+%%FONTSDIR%%/OFLGoudyStM.otf
+%%FONTSDIR%%/OFLGoudyStMTT-Italic.ttf
+%%FONTSDIR%%/OFLGoudyStMTT.ttf
+%%FONTSDIR%%/Prociono.otf
+%%FONTSDIR%%/ProcionoTT.ttf
+%%FONTSDIR%%/Sniglet.ttf
+%%FONTSDIR%%/orbitron-black.otf
+%%FONTSDIR%%/orbitron-black.ttf
+%%FONTSDIR%%/orbitron-bold.otf
+%%FONTSDIR%%/orbitron-bold.ttf
+%%FONTSDIR%%/orbitron-light.otf
+%%FONTSDIR%%/orbitron-light.ttf
+%%FONTSDIR%%/orbitron-medium.otf
+%%FONTSDIR%%/orbitron-medium.ttf
+%%FONTSDIR%%/raleway_thin.otf
+%%FONTSDIR%%/raleway_thin.ttf
+@unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+@dirrm %%FONTSDIR%%
+@exec %%X11BASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true

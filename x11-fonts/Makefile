@@ -110,6 +110,7 @@
     SUBDIR += mkfontscale
     SUBDIR += mkitalic
     SUBDIR += montecarlo_fonts
+    SUBDIR += moveable-type-fonts
     SUBDIR += mozilla-fonts
     SUBDIR += nexfontsel
     SUBDIR += nucleus

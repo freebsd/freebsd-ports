@@ -1,0 +1,46 @@
+# New ports collection makefile for:	moveable-type-fonts
+# Date created:				30 July 2010
+# Whom:					Jimmy Olgeni <olgeni@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	moveable-type-fonts
+PORTVERSION=	20100801
+CATEGORIES=	x11-fonts
+MASTER_SITES=	http://s3.amazonaws.com/theleague-production/fonts/
+DISTFILES=	junction.zip \
+		orbitron.zip \
+		prociono.zip \
+		raleway.zip \
+		sniglet.zip \
+		chunk.zip \
+		blackout.zip \
+		sorts-mill-goudy.zip \
+		league-gothic.zip \
+		goudy-bookletter-1911.zip
+
+MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	A collection of open source fonts
+
+BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+
+NO_BUILD=	yes
+USE_ZIP=	yes
+FONTSDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
+PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
+
+post-extract:
+	@${FIND} ${WRKDIR} -name __MACOSX | ${XARGS} rm -r
+
+do-install:
+	@${MKDIR} ${FONTSDIR}
+	@${FIND} . -name \*.ttf -exec ${CP} {} ${FONTSDIR} \;
+	@${FIND} . -name \*.otf -exec ${CP} {} ${FONTSDIR} \;
+
+post-install:
+	@${ECHO_MSG} "===> Running fc-cache"
+	-${LOCALBASE}/bin/fc-cache -f -v ${FONTSDIR}
+
+.include <bsd.port.mk>
