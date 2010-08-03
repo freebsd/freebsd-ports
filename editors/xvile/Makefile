@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xvile
-PORTVERSION=	9.7za
+PORTVERSION=	9.7zg
 CATEGORIES=	editors
 MASTER_SITES=	ftp://invisible-island.net/vile/ \
 		ftp://dickey.his.com/vile/ \
@@ -41,7 +41,13 @@ PATCHFILES=	vile-9.7a.patch.gz \
 		vile-9.7x.patch.gz \
 		vile-9.7y.patch.gz \
 		vile-9.7z.patch.gz \
-		vile-9.7za.patch.gz
+		vile-9.7za.patch.gz \
+		vile-9.7zb.patch.gz \
+		vile-9.7zc.patch.gz \
+		vile-9.7zd.patch.gz \
+		vile-9.7ze.patch.gz \
+		vile-9.7zf.patch.gz \
+		vile-9.7zg.patch.gz
 
 MAINTAINER=	gj@FreeBSD.org
 COMMENT=	VI Like Emacs, X11 version -- a fully "X aware" vi work-alike
@@ -50,6 +56,7 @@ MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xpm xext
 USE_PERL5=	yes
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-libdir-path=${PREFIX}/lib/xvile \
