@@ -17,10 +17,12 @@
 %%PYTHON_SITELIBDIR%%/pygraphviz/tests/attributes.txt
 %%PYTHON_SITELIBDIR%%/pygraphviz/tests/graph.txt
 %%PYTHON_SITELIBDIR%%/pygraphviz/tests/layout_draw.txt
-%%PYTHON_SITELIBDIR%%/pygraphviz/tests/subgraph.txt
 %%PYTHON_SITELIBDIR%%/pygraphviz/tests/test.py
 %%PYTHON_SITELIBDIR%%/pygraphviz/tests/test.pyc
 %%PYTHON_SITELIBDIR%%/pygraphviz/tests/test.pyo
+%%PYTHON_SITELIBDIR%%/pygraphviz/version.py
+%%PYTHON_SITELIBDIR%%/pygraphviz/version.pyc
+%%PYTHON_SITELIBDIR%%/pygraphviz/version.pyo
 %%DOCSDIR%%/INSTALL.txt
 %%DOCSDIR%%/README.txt
 %%DOCSDIR%%/examples/attributes.py
