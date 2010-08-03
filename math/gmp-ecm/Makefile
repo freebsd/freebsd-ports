@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	gmp-ecm
-PORTVERSION=	6.2.3
+PORTVERSION=	6.3
 CATEGORIES=	math
-MASTER_SITES=	https://gforge.inria.fr/frs/download.php/22124/
+MASTER_SITES=	https://gforge.inria.fr/frs/download.php/26838/
 DISTNAME=	ecm-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	frederic@culot.org
 COMMENT=	Elliptic Curve Method for Integer Factorization
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
