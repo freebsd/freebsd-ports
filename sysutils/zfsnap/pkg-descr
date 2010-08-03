@@ -1,7 +1,12 @@
-zfSnap is very simple sh script to make periodic zfs snapshots with cron.
-It will also delete old snapshots.
+zfSnap is simple sh script to make rolling zfs snapshots with cron. Main
+advantage of zfSnap is that it's written in %100 pure /bin/sh, doesn't
+require any additional software to run, and is simple to use.
 
-WWW: http://aldis.git.bsdroot.lv/zfSnap
+zfSnap keeps all information about snapshot in snapshot name. zfs snapshot
+names are in form: Timestamp--TTL where timestamp is date and time of
+snapshot creation and TTL is Time To Live in human readable form.
+
+WWW: http://wiki.bsdroot.lv/zfsnap
 
 -- Aldis Berjoza
 <aldis@bsdroot.lv>
