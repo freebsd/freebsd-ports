@@ -196,15 +196,10 @@ CONFIGURE_ARGS+=	--disable-win32dll \
 .endif # ARCH == i386/amd64
 
 .if defined(WITH_REALPLAYER)
-CONFIGURE_ARGS+=	--realcodecsdir=${LOCALBASE}/lib/RealPlayer/codecs
 RUN_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 .else
-.if !defined(WITHOUT_WIN32) && !defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=	--realcodecsdir=${LOCALBASE}/lib/win32
-.else
 CONFIGURE_ARGS+=	--disable-real
-.endif
 .endif
 
 .if defined(WITH_AMR)
@@ -223,6 +218,12 @@ EXTRA_LIBS+=		-lv4l1 -lv4l2
 .else
 CONFIGURE_ARGS+=	--disable-tv-v4l1 \
 			--disable-tv-v4l2
+.endif
+
+.if defined(WITH_MNG)
+LIB_DEPENDS+=		mng.1:${PORTSDIR}/graphics/libmng
+.else
+CONFIGURE_ARGS+=	--disable-mng
 .endif
 
 .if defined(EXTRA_LIBS)

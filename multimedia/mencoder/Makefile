@@ -6,9 +6,8 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	3
 COMMENT=	Convenient video file and movie encoder
-NO_PACKAGE=	Port has restricted dependencies
+RESTRICTED=	Port has restricted dependencies
 
 .include "${.CURDIR}/../mplayer/Makefile.shared"
 
@@ -22,6 +21,7 @@ OPTIONS+=	OPENAL "Enable OpenAL sound support" off
 OPTIONS+=	PULSE "Enable PulseAudio" off
 OPTIONS+=	LIBUNGIF "Enable gif support" on
 OPTIONS+=	OPENJPEG "Enable JPEG2000 support" off
+OPTIONS+=	MNG "Enable MNG input support" off
 OPTIONS+=	LIBDV "Enable libdv support" off
 OPTIONS+=	MAD "Enable mad MPEG audio engine support" off
 OPTIONS+=	AMR "Enable opencore AMR audio codec support" off
@@ -112,7 +112,7 @@ CONFIGURE_ARGS+=	--disable-xvid
 .ifdef(WITH_DIRAC)
 LIB_DEPENDS+=		dirac_encoder.1:${PORTSDIR}/multimedia/dirac
 .else
-CONFIGURE_ARGS+=	--disable-libdirac
+CONFIGURE_ARGS+=	--disable-libdirac-lavc
 .endif
 
 
@@ -147,6 +147,7 @@ post-patch:
 		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
 		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${DEFAULT_DVD_DEVICE:S/dev\//dev\/\\\:/}|g ; \
 		 s|/dev/\\:(cdrom[[:alnum:]]*[[:>:]])|${DEFAULT_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g'
+	@cd ${WRKSRC}/libavcodec && ${LN} -s x86 i386 && ${LN} -s x86 amd64
 
 post-configure:
 	@${REINPLACE_CMD} -e 's#-pthread#${PTHREAD_LIBS}#g' \
