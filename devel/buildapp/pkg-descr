@@ -1,0 +1,5 @@
+Allows building executables simply from sbcl.
+Also allows for ARGV so programs  generated
+behave like normal unix programs.
+
+WWW: http://www.xach.com/lisp/buildapp/
