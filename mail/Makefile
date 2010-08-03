@@ -229,7 +229,6 @@
     SUBDIR += libsrs2
     SUBDIR += libsrs_alt
     SUBDIR += libvmime
-    SUBDIR += lightning
     SUBDIR += linux-thunderbird
     SUBDIR += listadmin
     SUBDIR += listmanager
