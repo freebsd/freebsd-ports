@@ -4466,3 +4466,4 @@ www/neon28|www/neon29|2010-07-30|Replaced by neon 0.29.x
 sysutils/aaccli||2010-08-03|Has expired: see sysutils/arcconf instead, no longer maintained by Adaptec
 mail/moztraybiff|mail/mail-notification|2010-08-03|Depends on obsolete Thunderbird 2.0
 deskutils/lightning-xpi|deskutils/lightning|2010-08-03|Depends on obsolete Thunderbird 2.0
+sysutils/zfSnap|sysutils/zfsnap|2010-08-03|Change name to lower case
