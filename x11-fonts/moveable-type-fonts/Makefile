@@ -35,9 +35,9 @@ post-extract:
 	@${FIND} ${WRKDIR} -name __MACOSX | ${XARGS} rm -r
 
 do-install:
-	@${MKDIR} ${FONTSDIR}
-	@${FIND} . -name \*.ttf -exec ${CP} {} ${FONTSDIR} \;
-	@${FIND} . -name \*.otf -exec ${CP} {} ${FONTSDIR} \;
+	${MKDIR} ${FONTSDIR}
+	${FIND} . -name \*.ttf -exec ${INSTALL_DATA} {} ${FONTSDIR} \;
+	${FIND} . -name \*.otf -exec ${INSTALL_DATA} {} ${FONTSDIR} \;
 
 post-install:
 	@${ECHO_MSG} "===> Running fc-cache"
