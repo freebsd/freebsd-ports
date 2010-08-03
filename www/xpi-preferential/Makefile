@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	simon@olofsson.de
 COMMENT=	Advanced preferences manager for Mozilla-based products
 
+DEPRECATED=	Development has been ceased and not compatible with Firefox > 2.
+EXPIRATION_DATE=	2010-10-01
+
 XPI_DISTNAME=	preferential_new_guid_
 XPI_NUM=	713
 XPI_ID=		{e3a1bec3-1cc1-4d20-875b-a10587471a5e}
