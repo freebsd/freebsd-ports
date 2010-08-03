@@ -16,6 +16,11 @@
     SUBDIR += clearlooks-themes-extras
     SUBDIR += colorstep
     SUBDIR += cursor-bluecurve-theme
+    SUBDIR += cursor-chameleon-anthracite
+    SUBDIR += cursor-chameleon-darkskyblue
+    SUBDIR += cursor-chameleon-pearl
+    SUBDIR += cursor-chameleon-skyblue
+    SUBDIR += cursor-chameleon-white
     SUBDIR += cursor-crystal-theme
     SUBDIR += cursor-dmz-aa-theme
     SUBDIR += cursor-dmz-theme
