@@ -146,10 +146,6 @@ lib/libgdal.so.15
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/osr.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/osr.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/osr.pyo
-%%PYTHON_SITELIBDIR%%/easy-install.pth
-%%PYTHON_SITELIBDIR%%/site.py
-%%PYTHON_SITELIBDIR%%/site.pyc
-%%PYTHON_SITELIBDIR%%/site.pyo
 share/gdal/GDALLogoBW.svg
 share/gdal/GDALLogoColor.svg
 share/gdal/GDALLogoGS.svg
