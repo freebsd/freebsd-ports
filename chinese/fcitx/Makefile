@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Free Chinese Input Toy of X
+# New ports collection makefile for:	Free Chinese Input Toy for X
 # Date created:				26 March 2003
 # Whom:			Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
 #
