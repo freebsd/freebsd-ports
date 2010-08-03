@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sdl_gfx
-PORTVERSION=	2.0.20
+PORTVERSION=	2.0.21
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ferzkopp.net/Software/%SUBDIR%/
 MASTER_SITE_SUBDIR=	SDL_gfx-${PORTVERSION:R}
