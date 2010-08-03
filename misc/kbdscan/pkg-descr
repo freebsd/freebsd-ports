@@ -1,0 +1,7 @@
+kbdscan is a small program to set the FreeBSD console keyboard in
+raw scancode mode and show scancodes of keys pressed and released.
+
+Five seconds of inactivity resets the console to the original mode
+and quits the program.
+
+WWW: http://hack.org/mc/hacks/kbdscan/
