@@ -20,7 +20,7 @@ BUILD_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr
 USE_AUTOTOOLS=	autoconf:213
 LATEST_LINK=	thunderbird3
 USE_GECKO=	gecko
-CONFLICTS=	thunderbird-2* lightning-0.[0-9]*
+CONFLICTS=	thunderbird-3.1*
 USE_MOZILLA=	-png -nss -dbm -jpeg -xft
 MOZ_TOOLKIT=	cairo-gtk2
 
