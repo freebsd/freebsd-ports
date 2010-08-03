@@ -1475,6 +1475,8 @@ www/data-dist/phpgroupware/doc/php-configuration.txt
 www/data-dist/phpgroupware/doc/phpgw-apache.conf
 www/data-dist/phpgroupware/doc/phpgw-apache.conf.html
 www/data-dist/phpgroupware/doc/pics/logo.png
+www/data-dist/phpgroupware/doc/preparing_svn_packages.sh
+www/data-dist/phpgroupware/doc/preparing_svn_tags.sh
 www/data-dist/phpgroupware/doc/rpm-build/build-phpgw-rpms
 www/data-dist/phpgroupware/doc/rpm-build/phpgroupware-rh-allapp.spec
 www/data-dist/phpgroupware/doc/rpm-build/phpgroupware-rh.spec
