@@ -36,8 +36,8 @@ OPTIONS=	XINE "Video playback support through libxine" on \
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "sparc64" && ${OSVERSION} < 700000
-BROKEN=		Does not build on sparc64-6
+.if ${OSVERSION} < 700000
+BROKEN=		Does not build on 6.x
 .endif
 
 .if !defined(WITHOUT_XINE)
