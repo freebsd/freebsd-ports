@@ -7,19 +7,20 @@
 
 PORTNAME=	lighttpd
 PORTVERSION=	1.4.26
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A secure, fast, compliant, and very flexible Web Server
 
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
-USE_GNOME=	lthack pkgconfig
+USE_GNOME=	lthack
 USE_RC_SUBR=	lighttpd.sh
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/lighttpd --enable-static
 
@@ -32,6 +33,7 @@ OPTIONS=	BZIP2		"Enable Bzip2 support" off \
 		CML		"Enable Cache Meta Language support" off \
 		FAM		"Enable fam/gamin support" off \
 		GDBM		"Enable gdbm storage support" off \
+		GEOIP		"Enable GeoIP support" off \
 		H264		"Enable H.264 streaming" off \
 		IPV6		"Enable IPV6 support" on \
 		MAGNET		"Enable magnet support" off \
@@ -53,17 +55,28 @@ PORTDOCS=	AUTHORS COPYING INSTALL NEWS README
 # Default REQUIRE to rc.d script
 _REQUIRE=	DAEMON
 
-.if defined(WITH_H264)
+.if defined(WITH_H264) || defined(WITH_GEOIP)
 PATCH_SITES+=		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR+=	mm
-PATCHFILES+=		lighttpd-1.4.26_mod_h264_streaming-2.2.9.patch.gz
 USE_AUTOTOOLS+=		autoconf:262 autoheader:262 aclocal:110 automake:110
 ACLOCAL_ARGS+=		-I m4
+.endif
+
+.if defined(WITH_H264)
+PATCHFILES+=		lighttpd-1.4.26_mod_h264_streaming-2.2.9.patch.gz
 PORTDOCS+=		COPYING_H264
-MANUAL_PACKAGE_BUILD=	free for non-commercial use only
+#MANUAL_PACKAGE_BUILD=	free for non-commercial use only
 PLIST_SUB+=		H264=""
 .else
 PLIST_SUB+=		H264="@comment "
+.endif
+
+.if defined(WITH_GEOIP)
+PATCHFILES+=		lighttpd-1.4.26_mod_geoip.patch.gz
+LIB_DEPENDS+=		GeoIP.5:${PORTSDIR}/net/GeoIP
+PLIST_SUB+=		GEOIP=""
+.else
+PLIST_SUB+=		GEOIP="@comment "
 .endif
 
 .if !defined(WITHOUT_OPENSSL)

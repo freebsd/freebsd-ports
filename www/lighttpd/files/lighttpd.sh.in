@@ -35,7 +35,7 @@ stop_postcmd=stop_postcmd
 restart_precmd="checkconfig"
 reload_precmd=reload_precmd
 reload_postcmd=reload_postcmd
-sig_reload="-INT"
+sig_reload="INT"
 check_cmd="checkconfig"
 extra_commands="reload check"
 
