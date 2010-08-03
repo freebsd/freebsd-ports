@@ -4463,3 +4463,4 @@ textproc/mini-xml|textproc/mxml|2010-07-25|Duplicate port
 net/gir-repository-avahi|net/avahi-app|2010-07-25|Handled by net/avahi-app now
 www/neonpp||2010-07-30|Does not build with neon 0.28 and above
 www/neon28|www/neon29|2010-07-30|Replaced by neon 0.29.x
+sysutils/aaccli||2010-08-03|Has expired: see sysutils/arcconf instead, no longer maintained by Adaptec
