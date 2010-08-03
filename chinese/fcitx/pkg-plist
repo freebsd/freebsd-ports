@@ -1,5 +1,6 @@
 bin/createPYMB
 bin/fcitx
+bin/fcitx-remote
 bin/jd2fcitx
 bin/mb2org
 bin/mb2txt
@@ -43,7 +44,6 @@ bin/win2fcitx
 %%DOCSDIR%%/API.txt
 %%DOCSDIR%%/Develop_Readme.GBK
 %%DOCSDIR%%/cjkvinput.txt
-%%DOCSDIR%%/fcitx3.odt
 %%DOCSDIR%%/fcitx3.pdf
 %%DOCSDIR%%/fcitx_trunk.doxyfile
 %%DOCSDIR%%/pinyin.txt
