@@ -163,7 +163,7 @@
     SUBDIR += libopensync-plugin-synce-legacy
     SUBDIR += libopensync-plugin-syncml
     SUBDIR += libopensync-plugin-vformat-devel
-    SUBDIR += lightning-xpi
+    SUBDIR += lightning
     SUBDIR += linux-sunbird
     SUBDIR += ljcharm
     SUBDIR += ljclive
