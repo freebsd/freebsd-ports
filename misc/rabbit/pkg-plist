@@ -3,6 +3,7 @@ bin/rabbit
 bin/rabbit-command
 bin/rabbit-theme-manager
 bin/rabbit.bat
+bin/rabbitter
 bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/action.rb
 %%RUBY_SITELIBDIR%%/rabbit/action/basic.rb
@@ -85,6 +86,7 @@ bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/menu.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/base.rb
+%%RUBY_SITELIBDIR%%/rabbit/parser/ext/aafigure.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/ext/anthy.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/ext/enscript.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/ext/entity.rb
@@ -96,6 +98,7 @@ bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/parser/pause-support.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/pdf.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd.rb
+%%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/aafigure.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/anthy.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/base.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/block-verbatim.rb
@@ -178,12 +181,14 @@ bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/theme/applier.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/auto-slide/auto-slide.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/auto-slide/property.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/background-image-toolkit/background-image-toolkit.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/base/base.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/base/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/blue-bar/blue-bar.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/blue-bar/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/blue-circle/blue-circle.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/blue-circle/property.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/body-background-image/body-background-image.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/centering-rabbit/centering-rabbit.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/centering-rabbit/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/clear-blue/clear-blue.rb
@@ -697,9 +702,11 @@ share/locale/ja/LC_MESSAGES/rabbit.mo
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/clock
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/clear-blue
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/centering-rabbit
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/body-background-image
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/blue-circle
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/blue-bar
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/base
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/background-image-toolkit
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/auto-slide
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme-browser/ext
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme-browser
