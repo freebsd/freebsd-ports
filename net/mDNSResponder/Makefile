@@ -7,29 +7,35 @@
 #
 
 PORTNAME=	mDNSResponder
-PORTVERSION=	214.3
+PORTVERSION=	214.3.2
 CATEGORIES=	net dns
 MASTER_SITES=	http://opensource.apple.com/tarballs/mDNSResponder/
 
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	Apple's mDNSResponder
 
+LICENSE=	ASL BSD
+LICENSE_COMB=	dual
+
+CONFLICTS=	avahi-libdns-[0-9]*
+
 BUILD_WRKSRC=	${WRKSRC}/mDNSPosix
 INSTALL_WRKSRC=	${WRKSRC}/mDNSPosix
-MAKE_ARGS+=	os=freebsd LOCALBASE=${PREFIX} MANPATH=${MANPREFIX}/man
-MAKE_JOBS_UNSAFE=	yes
+MAKE_ARGS=	os=freebsd LOCALBASE=${PREFIX} MANPATH=${MANPREFIX}/man
 USE_BISON=	build
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	mdnsd
-EXTRA_PROGS_BIN=mDNSClientPosix mDNSIdentify mDNSNetMonitor \
-		mDNSProxyResponderPosix mDNSResponderPosix
-EXTRA_PROGS_SBIN=dnsextd
 
-EXTRAMAN8=	dnsextd.8 mDNSResponderPosix.8
-MAN8=		mdnsd.8 ${EXTRAMAN8}
-
-CONFLICTS=	avahi-libdns-[0-9]*
+EXTRA_BIN=	bin/mDNSClientPosix bin/mDNSIdentify bin/mDNSNetMonitor \
+		bin/mDNSProxyResponderPosix bin/mDNSResponderPosix
+EXTRA_MAN8=	dnsextd.8 mDNSResponderPosix.8
+EXTRA_SBIN=	sbin/dnsextd
+MAN8=		mdnsd.8 ${EXTRA_MAN8}
+PLIST_FILES=	bin/dns-sd ${EXTRA_BIN} \
+		include/dns_sd.h \
+		lib/libdns_sd.so lib/libdns_sd.so.1 \
+		sbin/mdnsd ${EXTRA_SBIN}
 
 .include <bsd.port.pre.mk>
 
@@ -48,10 +54,9 @@ pre-build:
 
 post-install:
 	@cd ${INSTALL_WRKSRC}/build/prod && \
-		${INSTALL_PROGRAM} ${EXTRA_PROGS_BIN} ${PREFIX}/bin && \
-		${INSTALL_PROGRAM} ${EXTRA_PROGS_SBIN} ${PREFIX}/sbin
-.for page in ${EXTRAMAN8}
-	@${INSTALL_MAN} ${WRKSRC}/mDNSShared/${page} ${MAN8PREFIX}/man/man8/
-.endfor
+		${INSTALL_PROGRAM} ${EXTRA_BIN:T} ${PREFIX}/bin/ && \
+		${INSTALL_PROGRAM} ${EXTRA_SBIN:T} ${PREFIX}/sbin/
+	@cd ${WRKSRC}/mDNSShared/ && \
+		${INSTALL_MAN} ${EXTRA_MAN8} ${MAN8PREFIX}/man/man8/
 
 .include <bsd.port.post.mk>
