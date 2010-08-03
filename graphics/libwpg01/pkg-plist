@@ -86,6 +86,7 @@ libdata/pkgconfig/libwpg-stream-0.1.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/WPGraphics_8h.html
 %%PORTDOCS%%%%DOCSDIR%%/html/WPGraphics_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/html/bc_s.png
 %%PORTDOCS%%%%DOCSDIR%%/html/classWPG1Parser-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classWPG1Parser.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classWPG1Parser.png
@@ -186,6 +187,7 @@ libdata/pkgconfig/libwpg-stream-0.1.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1WPGStringPrivate.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1WPGraphics-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classlibwpg_1_1WPGraphics.html
+%%PORTDOCS%%%%DOCSDIR%%/html/closed.png
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
 %%PORTDOCS%%%%DOCSDIR%%/html/files.html
@@ -283,6 +285,13 @@ libdata/pkgconfig/libwpg-stream-0.1.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/main.html
 %%PORTDOCS%%%%DOCSDIR%%/html/namespacelibwpg.html
 %%PORTDOCS%%%%DOCSDIR%%/html/namespaces.html
+%%PORTDOCS%%%%DOCSDIR%%/html/nav_f.png
+%%PORTDOCS%%%%DOCSDIR%%/html/nav_h.png
+%%PORTDOCS%%%%DOCSDIR%%/html/open.png
+%%PORTDOCS%%%%DOCSDIR%%/html/tab_a.png
+%%PORTDOCS%%%%DOCSDIR%%/html/tab_b.png
+%%PORTDOCS%%%%DOCSDIR%%/html/tab_h.png
+%%PORTDOCS%%%%DOCSDIR%%/html/tab_s.png
 %%PORTDOCS%%%%DOCSDIR%%/html/tabs.css
 %%PORTDOCS%%%%DOCSDIR%%/html/tree.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
