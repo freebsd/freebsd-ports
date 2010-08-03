@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpgroupware
-PORTVERSION=	0.9.16.016
+PORTVERSION=	0.9.16.017
 CATEGORIES=	deskutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	phpgroupware/phpgroupware/${PORTVERSION}
