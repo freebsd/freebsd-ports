@@ -1,12 +1,11 @@
 lib/liblensfun.so
-lib/liblensfun.so.0
-lib/liblensfun.so.0.2.3
-include/lensfun.h
 libdata/pkgconfig/lensfun.pc
+include/lensfun.h
 %%DATADIR%%/6x6.xml
 %%DATADIR%%/compact-canon.xml
 %%DATADIR%%/compact-casio.xml
 %%DATADIR%%/compact-fujifilm.xml
+%%DATADIR%%/compact-kodak.xml
 %%DATADIR%%/compact-konica-minolta.xml
 %%DATADIR%%/compact-leica.xml
 %%DATADIR%%/compact-nikon.xml
@@ -14,14 +13,17 @@ libdata/pkgconfig/lensfun.pc
 %%DATADIR%%/compact-panasonic.xml
 %%DATADIR%%/compact-pentax.xml
 %%DATADIR%%/compact-ricoh.xml
+%%DATADIR%%/compact-sigma.xml
 %%DATADIR%%/compact-sony.xml
 %%DATADIR%%/generic.xml
 %%DATADIR%%/rf-leica.xml
 %%DATADIR%%/slr-canon.xml
 %%DATADIR%%/slr-contax.xml
+%%DATADIR%%/slr-hasselblad.xml
 %%DATADIR%%/slr-konica-minolta.xml
 %%DATADIR%%/slr-nikon.xml
 %%DATADIR%%/slr-olympus.xml
+%%DATADIR%%/slr-panasonic.xml
 %%DATADIR%%/slr-pentax.xml
 %%DATADIR%%/slr-samsung.xml
 %%DATADIR%%/slr-schneider.xml
@@ -30,9 +32,11 @@ libdata/pkgconfig/lensfun.pc
 %%DATADIR%%/slr-tamron.xml
 %%DATADIR%%/slr-tokina.xml
 %%DATADIR%%/slr-ussr.xml
-share/doc/lensfun-0.2.3/README
-share/doc/lensfun-0.2.3/lgpl-3.0.txt
-share/doc/lensfun-0.2.3/gpl-3.0.txt
-share/doc/lensfun-0.2.3/cc-by-sa-3.0.txt
-@dirrm share/doc/lensfun-0.2.3
+share/doc/lensfun-%%PORTVERSION%%/README
+share/doc/lensfun-%%PORTVERSION%%/lgpl-3.0.txt
+share/doc/lensfun-%%PORTVERSION%%/gpl-3.0.txt
+share/doc/lensfun-%%PORTVERSION%%/cc-by-sa-3.0.txt
+@dirrm share/doc/lensfun-%%PORTVERSION%%
 @dirrm %%DATADIR%%
+@dirrmtry lib/pkgconfig
+@exec ln -fs lib/liblensfun.so lib/liblensfun.so.2

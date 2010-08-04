@@ -6,39 +6,40 @@
 #
 
 PORTNAME=	lensfun
-PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTVERSION=	0.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	BERLIOS
 
 MAINTAINER=	dindin@dindin.ru
 COMMENT=	Library for fixing lens geometry distortion
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 
+USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_GNOME=	glib20
 MAKEFILE=	GNUmakefile
+LIBVERSION=	2
 
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CXXFLAGS+=	-I${LOCALBASE}/include
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
-CONFIGURE_ARGS= --prefix=${PREFIX} --target=${TARGET}
+CONFIGURE_ARGS=	--prefix=${PREFIX} --target=${TARGET} --vectorization=SSE
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e '1s|#!/usr/bin/python|#!/usr/bin/env python|' \
 		-e 's|make --version|gmake --version|' \
 		-e '/add_config_mak.*DOXYGEN/ d' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} \
-		-e 's|cp -d|/bin/cp |' ${WRKSRC}/build/mak/host/posix.mak
-	@${REINPLACE_CMD} -e 's|lib64|lib|' ${WRKSRC}/ac.py
-	@${REINPLACE_CMD} \
-		-e 's|$$(CONF_LIBDIR)pkgconfig/|$$(CONF_PREFIX)libdata/pkgconfig/|g'\
-		${WRKSRC}/build/mak/compiler/pkgconfig.mak
+	@${REINPLACE_CMD} -e 's|{_libdir}/pkgconfig|{_libdir}/../libdata/pkgconfig|' \
+		${WRKSRC}/build/lensfun.spec.in
+	@${REINPLACE_CMD} -e 's|CONF_LIBDIR)pkgconfig|CONF_LIBDIR)../libdata/pkgconfig|g' \
+		${WRKSRC}/build/tibs/compiler/pkgconfig.mak
 
 .include <bsd.port.mk>
