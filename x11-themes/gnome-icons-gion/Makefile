@@ -8,7 +8,7 @@
 PORTNAME=	gion
 PORTVERSION=	0.1.2
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	http://www.silvestre.com.ar/wp-content/uploaded/
+MASTER_SITES=	http://www.silvestre.com.ar/icons/
 DISTNAME=	Gion-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
