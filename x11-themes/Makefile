@@ -66,6 +66,7 @@
     SUBDIR += gnome-icons-aqua-fusion
     SUBDIR += gnome-icons-cool-gorilla
     SUBDIR += gnome-icons-crystal
+    SUBDIR += gnome-icons-dropline-neu
     SUBDIR += gnome-icons-dropline-nou
     SUBDIR += gnome-icons-edge
     SUBDIR += gnome-icons-gentoo-test
