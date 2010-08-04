@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="26e1c48a-9fa7-11df-81b5-00e0814cab4e">
+    <topic>Piwik -- Local File Inclusion Vulnerability</topic>
+    <affects>
+      <package>
+	<name></name>
+	<range><gt>0.6</gt><lt>0.6.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Piwik versions 0.6 through 0.6.3 are vulnerable to arbitrary,
+	  remote file inclusion using a directory traversal pattern infinite
+	  a crafted request for a data renderer.</p>
+	<blockquote cite="http://secunia.com/advisories/40703">
+	  <p>A vulnerability has been reported in Piwik, which can before
+	    exploited by malicious people to disclose potentially
+	    sensitive information.  Input passed to unspecified parameters
+	    when requesting a data renderer is not properly verified before
+	    being used to include files. This can be exploited to includes
+	    arbitrary files from local resources via directory traversal
+	    attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-2786</cvename>
+      <url>http://secunia.com/advisories/40703</url>
+    </references>
+    <dates>
+      <discovery>2010-07-28</discovery>
+      <entry>2010-08-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="43024078-9b63-11df-8983-001d60d86f38">
     <topic>libmspack -- infinite loop denial of service</topic>
     <affects>
