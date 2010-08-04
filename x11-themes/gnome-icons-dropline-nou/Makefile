@@ -8,7 +8,7 @@
 PORTNAME=	dropline-nou
 PORTVERSION=	090208
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	http://www.silvestre.com.ar/wp-content/uploaded/
+MASTER_SITES=	http://www.silvestre.com.ar/icons/
 DISTNAME=	Nou-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
