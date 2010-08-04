@@ -6,16 +6,21 @@
 #
 
 PORTNAME=	lamarc
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.5
 PORTEPOCH=	1
 CATEGORIES=	biology
-MASTER_SITES=	http://evolution.gs.washington.edu/lamarc/download/
+MASTER_SITES=	http://evolution.gs.washington.edu/lamarc/download/ \
+		http://www.c-s.li/ports/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	A package of programs for computing population parameters
 
-MAKE_JOBS_SAFE=  yes
+LICENSE=	ASL
+
+OPTIONS=	WXGTK2 "Install wxWidgets" off
+
+MAKE_JOBS_SAFE=	yes
 
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
