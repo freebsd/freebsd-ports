@@ -1,8 +1,8 @@
---- setup.py.orig	2010-01-09 08:30:12.000000000 +0800
-+++ setup.py	2010-01-09 08:31:47.000000000 +0800
-@@ -38,27 +38,6 @@
-           "networkx.tests",
-           ]
+--- setup.py.orig	2010-08-04 18:13:53.000000000 +0900
++++ setup.py	2010-08-04 18:14:18.000000000 +0900
+@@ -45,26 +45,6 @@
+           "networkx.readwrite",
+           "networkx.tests"]
  
 -docdirbase  = 'share/doc/networkx-%s' % release.version
 -# add basic documentation 
@@ -15,8 +15,7 @@
 -          'graph',
 -          'multigraph',
 -          'pygraphviz',
--          'readwrite',
--          'ubigraph']:
+-          'readwrite']:
 -    dd=os.path.join(docdirbase,'examples',d)
 -    pp=os.path.join('examples',d)
 -    data.append((dd,glob(os.path.join(pp,"*.py"))))
@@ -26,9 +25,9 @@
 -    data.append((dd,glob(os.path.join(pp,"*.edgelist"))))
 -
  # add the tests
- package_data     = {'': ['tests/*.py'],
-                     '': ['tests/*.txt'],
-@@ -82,7 +61,6 @@
+ package_data     = {
+     'networkx': ['tests/*.py'],
+@@ -102,7 +82,6 @@
          download_url     = release.download_url,
          classifiers      = release.classifiers,
          packages         = packages,
