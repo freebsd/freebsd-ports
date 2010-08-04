@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://wordpress.org/ \
 		ftp://ftp.stu.edu.tw/pub/wordpress/ \
 		ftp://ftp.twaren.net/local-distfiles/wordpress/
 MASTER_SITE_SUBDIR=	cafelog
-DISTNAME=		wordpress-${PORTVERSION:S/.0//}
+#DISTNAME=		wordpress-${PORTVERSION:S/.0//}
 
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	A state-of-the-art semantic personal publishing platform
