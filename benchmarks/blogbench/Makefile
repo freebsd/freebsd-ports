@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blogbench
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://download.pureftpd.org/pub/blogbench/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/blogbench/
