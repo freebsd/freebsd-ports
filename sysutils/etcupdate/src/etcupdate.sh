@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh
 #
 # Copyright (c) 2010 Advanced Computing Technologies LLC
 # Written by: John H. Baldwin <jhb@FreeBSD.org>
@@ -188,37 +188,29 @@ build_tree()
 
 	log "Building tree at $1 with $make"
 	mkdir -p $1/usr/obj >&3 2>&1
-	(cd $SRCDIR; $make DESTDIR=$1 distrib-dirs) >&3 2>&1
-	if [ $? -ne 0 ]; then
-		echo "Failed to build tree at $1"
-		return 1
-	fi
+	(cd $SRCDIR; $make DESTDIR=$1 distrib-dirs) >&3 2>&1 || return 1
 
 	if ! [ -n "$nobuild" ]; then
 		(cd $SRCDIR; \
 	    MAKEOBJDIRPREFIX=$1/usr/obj $make _obj SUBDIR_OVERRIDE=etc &&
 	    MAKEOBJDIRPREFIX=$1/usr/obj $make everything SUBDIR_OVERRIDE=etc &&
 	    MAKEOBJDIRPREFIX=$1/usr/obj $make DESTDIR=$1 distribution) >&3 2>&1
-		    >&3 2>&1
+		    >&3 2>&1 || return 1
 	else
-		(cd $SRCDIR; $make DESTDIR=$1 distribution) >&3 2>&1
+		(cd $SRCDIR; $make DESTDIR=$1 distribution) >&3 2>&1 || return 1
 	fi
-	if [ $? -ne 0 ]; then
-		echo "Failed to build tree at $1"
-		return 1
-	fi
-	chflags -R noschg $1 >&3 2>&1
-	rm -rf $1/usr/obj >&3 2>&1
+	chflags -R noschg $1 >&3 2>&1 || return 1
+	rm -rf $1/usr/obj >&3 2>&1 || return 1
 
 	# Purge auto-generated files.  Only the source files need to
 	# be updated after which these files are regenerated.
-	rm -f $1/etc/*.db $1/etc/passwd >&3 2>&1
+	rm -f $1/etc/*.db $1/etc/passwd >&3 2>&1 || return 1
 
 	# Remove empty files.  These just clutter the output of 'diff'.
-	find $1 -type f -size 0 -delete >&3 2>&1
+	find $1 -type f -size 0 -delete >&3 2>&1 || return 1
 
 	# Trim empty directories.
-	find -d $1 -type d -empty -delete >&3 2>&1
+	find -d $1 -type d -empty -delete >&3 2>&1 || return 1
 	return 0
 }
 
@@ -229,14 +221,15 @@ extract_tree()
 {
 	# If we have a tarball, extract that into the new directory.
 	if [ -n "$tarball" ]; then
-		(mkdir -p $NEWTREE && tar xf $tarball -C $NEWTREE) >&3 2>&1
-		if [ $? -ne 0 ]; then
+		if ! (mkdir -p $NEWTREE && tar xf $tarball -C $NEWTREE) \
+		    >&3 2>&1; then
 			echo "Failed to extract new tree."
 			remove_tree $NEWTREE
 			exit 1
 		fi
 	else
 		if ! build_tree $NEWTREE; then
+			echo "Failed to build new tree."
 			remove_tree $NEWTREE
 			exit 1
 		fi
@@ -1216,11 +1209,12 @@ build_cmd()
 		exit 1
 	fi
 	if ! build_tree $dir; then
+		echo "Failed to build tree."
 		remove_tree $dir
 		exit 1
 	fi
 	if ! tar cfj $1 -C $dir . >&3 2>&1; then
-		echo "Failed to create tarball ."
+		echo "Failed to create tarball."
 		remove_tree $dir
 		exit 1
 	fi
