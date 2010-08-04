@@ -11,6 +11,7 @@ bin/scmpp
 %%DATADIR%%/amk.scm
 %%DATADIR%%/and-letstar.scm
 %%DATADIR%%/append-to-output-file.scm
+%%DATADIR%%/appendb.scm
 %%DATADIR%%/array.scm
 %%DATADIR%%/arse-core.image
 %%DATADIR%%/arse.help
@@ -65,6 +66,7 @@ bin/scmpp
 %%DATADIR%%/help/append
 %%DATADIR%%/help/append-streams
 %%DATADIR%%/help/append-to-output-file
+%%DATADIR%%/help/appendb
 %%DATADIR%%/help/apply
 %%DATADIR%%/help/apropos
 %%DATADIR%%/help/array
@@ -337,6 +339,7 @@ bin/scmpp
 %%DATADIR%%/help/list-to-string
 %%DATADIR%%/help/list-to-vector
 %%DATADIR%%/help/listp
+%%DATADIR%%/help/listq
 %%DATADIR%%/help/load
 %%DATADIR%%/help/load-from-library
 %%DATADIR%%/help/locate-file
@@ -422,6 +425,7 @@ bin/scmpp
 %%DATADIR%%/help/r4rs-procedures
 %%DATADIR%%/help/r4rs-syntax-objects
 %%DATADIR%%/help/random
+%%DATADIR%%/help/random-sort
 %%DATADIR%%/help/random-state
 %%DATADIR%%/help/re-comp
 %%DATADIR%%/help/re-match
@@ -735,6 +739,7 @@ bin/scmpp
 %%DATADIR%%/letrecstar.scm
 %%DATADIR%%/list-to-set.scm
 %%DATADIR%%/list-tools.scm
+%%DATADIR%%/listq.scm
 %%DATADIR%%/make-partitions.scm
 %%DATADIR%%/matcher.scm
 %%DATADIR%%/math-tools.scm
@@ -758,6 +763,7 @@ bin/scmpp
 %%DATADIR%%/pushb.scm
 %%DATADIR%%/queue.scm
 %%DATADIR%%/quicksort.scm
+%%DATADIR%%/random-sort.scm
 %%DATADIR%%/random.scm
 %%DATADIR%%/read-file.scm
 %%DATADIR%%/read-from-string.scm
