@@ -55,6 +55,7 @@ libexec/rancid/trancid
 libexec/rancid/tntlogin
 libexec/rancid/tntrancid
 libexec/rancid/xrancid
+libexec/rancid/xrrancid
 libexec/rancid/zrancid
 etc/rancid/lg.conf.sample
 etc/rancid/rancid.conf.sample
