@@ -1,0 +1,13 @@
+FreeRDP is a fork of the rdesktop project that intends to rapidly start moving
+forward and implement features that rdesktop lacks the most.
+
+Improvements:
+
+ * Support for cursors on Windows Server 2008 R2
+ * Support for bitmap caching, which provides a good performance boost
+ * Support for Windows Server 2008 Terminal Services Session Broker Load
+   Balancing
+ * New keyboard input system based on the XKB database, providing better support
+   for international keyboards
+
+WWW: http://freerdp.sourceforge.net/
