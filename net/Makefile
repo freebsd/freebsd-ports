@@ -1008,6 +1008,7 @@
     SUBDIR += stone
     SUBDIR += straw
     SUBDIR += stund
+    SUBDIR += subnetcalc
     SUBDIR += suckblow
     SUBDIR += sup
     SUBDIR += tableutil
