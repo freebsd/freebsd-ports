@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
-CONFIGURE_ARGS+=	--datadir=${DATADIR}
+CONFIGURE_ARGS+=--datadir=${DATADIR}
 
 WRKSRC=		${WRKDIR}/postgresql_autodoc
 
