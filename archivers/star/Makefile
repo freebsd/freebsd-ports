@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.berlios.de/pub/star/
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unique standard tape archiver with many enhancements
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/smake:${PORTSDIR}/devel/smake
