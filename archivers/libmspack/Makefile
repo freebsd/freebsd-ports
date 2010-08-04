@@ -7,6 +7,7 @@
 
 PORTNAME=	libmspack
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cabextract.org.uk/libmspack/
 DISTNAME=	${PORTNAME}-${PORTVERSION}alpha
@@ -17,5 +18,8 @@ COMMENT=	A library for Microsoft compression formats
 USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,$$(libdir)/pkgconfig,@prefix@/libdata/pkgconfig,g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
