@@ -29,8 +29,8 @@ ALL_TARGET=	target
 PLIST_SUB=	VERSION="${PORTVERSION}"
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	SDL_TTF "SDL_ttf support" on \
-		SDL_IMAGE "SDL_image support" on
+OPTIONS=	SDL_TTF		"SDL_ttf support"	on \
+		SDL_IMAGE	"SDL_image support"	on
 
 .include <bsd.port.pre.mk>
 
