@@ -44,4 +44,6 @@ include/polarssl/timing.h
 include/polarssl/x509.h
 include/polarssl/xtea.h
 lib/libpolarssl.a
+lib/libpolarssl.so.0
+lib/libpolarssl.so
 @dirrm include/polarssl
