@@ -6,10 +6,10 @@
 
 PORTNAME=	mupdf
 PORTVERSION=	0.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.mupdf.com/download/source/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Lightweight PDF viewer and toolkit
@@ -20,7 +20,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		openjpeg.2:${PORTSDIR}/graphics/openjpeg
 
 USE_GMAKE=	yes
-MAKE_ARGS+=	build=release prefix=${PREFIX} verbose=true
+MAKE_ARGS+=	build=release prefix=${PREFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_XORG=	x11 xext
 USE_GNOME=	pkgconfig
@@ -38,12 +38,21 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not install on sparc64
+.elif ${ARCH} == amd64
+CFLAGS+=	-DARCH_X86_64
+.else
+CFLAGS+=	-DARCH_X86
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} 's/LAGS :=/LAGS +=/g' ${WRKSRC}/Makerules
-	@${REINPLACE_CMD} 's/Linux/FreeBSD/g' ${WRKSRC}/Makerules
-	@${REINPLACE_CMD} 's/CC = .*/CC = ${CC}/g' ${WRKSRC}/Makerules
-	@${REINPLACE_CMD} 's#\(PDF.*_EXE=.*DIR./\)#\1mu_#g' ${WRKSRC}/Makefile
+post-patch:	.SILENT
+	${REINPLACE_CMD} -e 's#\(PDF.*_EXE=.*DIR./\)#\1mu_#g' \
+		-e 's/@[[:space:]]*echo[^&]*&&//' \
+		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's/LAGS :=/LAGS +=/g' \
+		-e 's/Linux/FreeBSD/g' \
+		-e '/^CC/s/=/?=/' \
+		-e '/-O3/d' \
+		-e '/-msse/d' \
+		${WRKSRC}/Makerules
 
 .include <bsd.port.mk>
