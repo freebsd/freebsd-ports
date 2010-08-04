@@ -5,18 +5,20 @@
 # $FreeBSD$
 
 PORTNAME=	quark
-PORTVERSION=	3.21
-PORTREVISION=	21
+PORTVERSION=	3.23
 CATEGORIES=	multimedia gnome
-MASTER_SITES=	http://quark.sunsite.dk/ \
-		http://demian.dyndns.org/src/
+MASTER_SITES=	http://hsgg.github.com/quark/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An audio player, for geeks, by geeks
 
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_GNOME=	gnomehack gnomeprefix gnometarget gnomevfs2
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -24,6 +26,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 PORTDOCS=	AUTHORS COPYING INSTALL README
 GCONF_SCHEMAS=	quark.schemas strange-quark.schemas
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+PLIST_SUB+=	NLS=""
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
