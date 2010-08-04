@@ -38,7 +38,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>Piwik -- Local File Inclusion Vulnerability</topic>
     <affects>
       <package>
-	<name></name>
+	<name>piwik</name>
 	<range><gt>0.6</gt><lt>0.6.3</lt></range>
       </package>
     </affects>
