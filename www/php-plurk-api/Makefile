@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php-plurk-api
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	php-plurk-api-${PORTVERSION}
@@ -18,21 +18,15 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 USE_PHP=	json curl
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 SUB_LIST+=	PKGNAME=${PKGNAME}
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
 do-install:
-	@${MV} ${WRKSRC}\ ${PORTVERSION} ${WRKSRC}
-	@${ECHO_CMD} '@exec ${MV} ${WRKSRC}\ ${PORTVERSION} \
-		${WRKSRC}' >> ${TMPPLIST}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${PHPBBDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
 	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type f -print0 | \
 		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
