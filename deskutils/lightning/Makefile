@@ -40,6 +40,7 @@ MOZ_OPTIONS=	--enable-application=calendar \
 MOZ_MK_OPTIONS=	MOZ_CO_PROJECT=calendar
 NOGECKO_PLIST=		yes
 NOGECKO_INSTALL=	yes
+LATEST_LINK=	mozilla-lightning
 
 .include <bsd.init.mk>
 .include <bsd.libnames.mk>
