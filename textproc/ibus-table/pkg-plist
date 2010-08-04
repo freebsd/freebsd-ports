@@ -47,6 +47,7 @@ share/ibus/component/table.xml
 %%DATADIR%%/tables/compose.db
 %%DATADIR%%/tables/latex.db
 %%DATADIR%%/tables/template.txt
+@dirrmtry share/ibus/component
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/engine
 @dirrm %%DATADIR%%/icons

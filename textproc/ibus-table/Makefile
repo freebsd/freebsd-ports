@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ibus-table
-PORTVERSION=	1.2.0.20091113
-PORTREVISION=	4
+PORTVERSION=	1.3.0.20100621
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/
@@ -39,5 +38,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|/usr/|${PREFIX}/|g" ${WRKSRC}/engine/*.py
+	@${CHMOD} ${BINMODE} ${WRKSRC}/install-sh
 
 .include <bsd.port.mk>
