@@ -4,6 +4,7 @@ bin/ctpp2i
 bin/ctpp2json
 bin/ctpp2-config
 include/ctpp2/CDT.hpp
+include/ctpp2/CDTSortRoutines.hpp
 include/ctpp2/CTPP2BitIndex.hpp
 include/ctpp2/CTPP2CharIterator.hpp
 include/ctpp2/CTPP2Compiler.hpp
