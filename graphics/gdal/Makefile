@@ -31,6 +31,7 @@ BUILD_DEPENDS+=		${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 
 OPTIONS=	CFITSIO	"FITS support"			off \
 		CURL	"Curl support"			off \
+		ECW	"ECW & JPEG2000 support"	off \
 		EXPAT	"Expat support"			off \
 		GEOS	"GEOS support"			off \
 		GEOTIFF	"GeoTIFF support"		on \
@@ -69,6 +70,13 @@ LIB_DEPENDS+=		curl.6:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}/bin/curl-config
 .else
 CONFIGURE_ARGS+=	--with-curl=no
+.endif
+
+.if defined(WITH_ECW)
+LIB_DEPENDS+=		NCSEcw.0:${PORTSDIR}/graphics/libecwj2
+CONFIGURE_ARGS+=	--with-ecw=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--with-ecw=no
 .endif
 
 .if defined(WITH_EXPAT)
