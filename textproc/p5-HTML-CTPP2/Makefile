@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-CTPP2
-PORTVERSION=	2.5.12
+PORTVERSION=	2.6.1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN \
 		http://ctpp.havoc.ru/download/
