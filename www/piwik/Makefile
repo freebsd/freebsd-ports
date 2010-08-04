@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	piwik
-PORTVERSION=	0.6.3
+PORTVERSION=	0.8
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
@@ -17,7 +17,7 @@ USE_PHP=	mysql gd pdo pdo_mysql zlib iconv dom json session xml
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/misc/license.txt
+LICENSE_FILE=	${WRKSRC}/misc/gpl-3.0.txt
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
