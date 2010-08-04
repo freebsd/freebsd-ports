@@ -121,9 +121,9 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2010-1452</cvename>
-			<url>http://www.apache.org/dist/httpd/CHANGES_2.2.16</url>
-			<url>https://issues.apache.org/bugzilla/show_bug.cgi?id=49246</url>
-			<url>http://svn.apache.org/viewvc?view=revision&amp;revision=966349</url>
+      <url>http://www.apache.org/dist/httpd/CHANGES_2.2.16</url>
+      <url>https://issues.apache.org/bugzilla/show_bug.cgi?id=49246</url>
+      <url>http://svn.apache.org/viewvc?view=revision&amp;revision=966349</url>
     </references>
     <dates>
       <discovery>2010-07-21</discovery>
