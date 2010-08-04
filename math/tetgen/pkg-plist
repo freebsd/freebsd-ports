@@ -1,5 +1,5 @@
 bin/tetgen
 include/tetgen.h
 lib/libtet.a
-%%PORTDOCS%%%%EXAMPLESDIR%%/example.poly
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.poly
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

@@ -6,15 +6,20 @@
 #
 
 PORTNAME=	tetgen
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	math
-MASTER_SITES=	http://www.wias-berlin.de/people/si/
+MASTER_SITES=	http://tetgen.berlios.de/files/ \
+		http://www.c-s.li/ports/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	A Quality Tetrahedral Mesh Generator and Delaunay Triangulator
 
+LICENSE_FILE=	${WRKDIR}/LICENSE
+
 NO_CDROM=	Tetgen is for academic or personal use only
+
+MAKE_JOBS_SAFE=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 MAKEFILE=	makefile
@@ -24,7 +29,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/tetgen ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/tetgen.h ${PREFIX}/include
 	@${INSTALL_DATA} ${WRKSRC}/libtet.a ${PREFIX}/lib
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/example.poly ${EXAMPLESDIR}
 .endif
