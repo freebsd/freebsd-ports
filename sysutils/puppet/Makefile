@@ -6,44 +6,60 @@
 #
 
 PORTNAME=	puppet
-PORTVERSION=	0.25.4
+DISTVERSION=	2.6.1rc1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.puppetlabs.com/downloads/${PORTNAME}/
+MASTER_SITES=	http://www.puppetlabs.com/downloads/puppet/
 
 MAINTAINER=	raj@csub.edu
 COMMENT=	A configuration management framework written in Ruby
 
-BUILD_DEPENDS=	${RUBY_SITELIBDIR}/facter.rb:${PORTSDIR}/sysutils/facter \
-	portupgrade>0:${PORTSDIR}/ports-mgmt/portupgrade
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/facter.rb:${PORTSDIR}/sysutils/facter \
+		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-augeas \
+		ruby18-iconv>=0:${PORTSDIR}/converters/ruby-iconv
 
 CONFLICTS=	puppet-devel-[0-9]*
 
 NO_BUILD=	yes
 USE_RUBY=	yes
-USE_RC_SUBR=	puppetmasterd puppetd
+USE_RC_SUBR=	puppet puppetmaster
 PORTDOCS=	CHANGELOG README LICENSE COPYING
 PORTEXAMPLES=	*
 PUPPET_USER:=	puppet
 PUPPET_GROUP:=	${PUPPET_USER}
+PUPPET_VARDIR:=	/var/${PORTNAME}
 PUPPET_RUNDIR:=	/var/run/${PORTNAME}
-PUPPET_WORKDIR:=	/var/${PORTNAME}
 SUB_FILES+=	pkg-install pkg-message pkg-deinstall
-SUB_LIST+=	PUPPET_RUNDIR="${PUPPET_RUNDIR}" \
-		PUPPET_USER="${PUPPET_USER}" \
+SUB_LIST+=	PUPPET_USER="${PUPPET_USER}" \
 		PUPPET_GROUP="${PUPPET_GROUP}" \
-		PUPPET_WORKDIR="${PUPPET_WORKDIR}"
+		PUPPET_VARDIR="${PUPPET_VARDIR}" \
+		PUPPET_RUNDIR="${PUPPET_RUNDIR}"
 
 MANCOMPRESSED=	yes
-MAN8=	filebucket.8 pi.8 puppet.8 puppet.conf.8 puppetca.8 puppetd.8 \
+MAN5=	puppet.conf.5
+MAN8=	filebucket.8 pi.8 puppet.8 puppetca.8 puppetd.8 \
 	puppetdoc.8 puppetmasterd.8 puppetrun.8 ralsh.8 puppetqd.8
+
+OPTIONS=	MONGREL		"Run puppet server as a mongrel service"	Off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_MONGREL)
+RUN_DEPENDS+=	rubygem-mongrel>=0:${PORTSDIR}/www/rubygem-mongrel
+.endif
 
 .include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/puppet|${PREFIX}/etc/puppet|" \
-		${WRKSRC}/lib/puppet/reference/configuration.rb
-	@${REINPLACE_CMD} -e "s|/etc/puppet|${PREFIX}/etc/puppet|" \
+		${WRKSRC}/lib/puppet/reference/configuration.rb \
+		${WRKSRC}/lib/puppet/defaults.rb \
+		${WRKSRC}/lib/puppet/util/run_mode.rb
+	@${REINPLACE_CMD} -e "s|/var/lib/puppet|${PUPPET_VARDIR}|" \
+		${WRKSRC}/lib/puppet/reference/configuration.rb \
+		${WRKSRC}/lib/puppet/util/run_mode.rb
+	@${REINPLACE_CMD} -e "s|\$$vardir/run|${PUPPET_RUNDIR}|" \
+		${WRKSRC}/lib/puppet/util/run_mode.rb
+	@${REINPLACE_CMD} -e "s|\$$confdir/ssl|${PUPPET_VARDIR}/ssl|" \
 		${WRKSRC}/lib/puppet/defaults.rb
 
 pre-install:
@@ -54,10 +70,7 @@ do-install:
 
 post-install:
 	${INSTALL} -d ${PREFIX}/etc/${PORTNAME}
-.for DIR in ssl manifests
-	${INSTALL} -d ${PREFIX}/etc/${PORTNAME}/${DIR}
-.endfor
-	${RUBY} -I ${RUBY_SITELIBDIR} ${PREFIX}/bin/puppetmasterd \
+	${RUBY} -I ${RUBY_SITELIBDIR} ${PREFIX}/sbin/puppetmasterd \
 		--confdir=${PREFIX}/etc/${PORTNAME} \
 		--rundir=${PUPPET_RUNDIR} \
 		--genconfig | \
