@@ -1,0 +1,9 @@
+The Parse::Template class evaluates Perl expressions placed within
+a text. This class can be used as a code generator, or a generator
+of documents in various document formats (HTML, XML, RTF, etc.).
+
+Parse::Template was initially created to serve as a code generator
+for the Parse::Lex class. The class is now available as a separate
+module.
+
+WWW: http://search.cpan.org/dist/ParseTemplate/
