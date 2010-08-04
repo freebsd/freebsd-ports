@@ -1756,6 +1756,7 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/plugins/listcommands/mailout.php
 %%SQUIRRELDIR%%/plugins/listcommands/setup.php
 %%SQUIRRELDIR%%/plugins/mail_fetch/class.POP3.php
+%%SQUIRRELDIR%%/plugins/mail_fetch/config_example.php
 %%SQUIRRELDIR%%/plugins/mail_fetch/fetch.php
 %%SQUIRRELDIR%%/plugins/mail_fetch/functions.php
 %%SQUIRRELDIR%%/plugins/mail_fetch/index.php
