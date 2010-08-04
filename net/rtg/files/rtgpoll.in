@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: rtgpoll
-# REQUIRE: LOGIN
+# REQUIRE: LOGIN mysql
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
@@ -29,6 +29,8 @@ load_rc_config $name
 : ${rtgpoll_config="%%PREFIX%%/etc/rtg/rtg.conf"}
 : ${rtgpoll_targets="%%PREFIX%%/etc/rtg/targets.cfg"}
 : ${rtgpoll_pidfile="/var/run/${name}.pid"}
+
+required_files="$rtgpoll_targets"
 
 command_args="-p $rtgpoll_pidfile -c $rtgpoll_config -t $rtgpoll_targets &"
 

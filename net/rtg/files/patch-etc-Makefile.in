@@ -1,6 +1,6 @@
---- etc/Makefile.in.orig	Thu Oct  2 09:59:32 2003
-+++ etc/Makefile.in	Tue Jan  6 22:58:25 2004
-@@ -84,8 +84,8 @@
+--- etc/Makefile.in.orig	2003-10-02 16:59:32.000000000 +0100
++++ etc/Makefile.in	2010-07-04 03:34:26.379748720 +0100
+@@ -84,19 +84,19 @@
  install_sh = @install_sh@
  
  top_builddir = ..
@@ -10,7 +10,21 @@
 +webdir = @webdir@
  reportsdir = /bin
  
- ETC = rtg.conf rtgtargmkr.pl routers createdb BER.pm \
+-ETC = rtg.conf rtgtargmkr.pl routers createdb BER.pm \
++ETC = rtg.conf.sample rtgtargmkr.pl routers.sample createdb BER.pm \
+                SNMP_Session.pm SNMP_util.pm
+ 
+ WEB = rtg.php 95.php view.php common.php rtg.png rtgback.png
+ REPORTS = report.pl 95.pl
+ 
+ EXTRA_DIST = rtgtargmkr.pl.in report.pl 95.pl createdb.in \
+-               BER.pm SNMP_Session.pm SNMP_util.pm rtg.conf \
+-	       routers rtg.php 95.php view.php common.php.in rtg.png rtgback.png
++               BER.pm SNMP_Session.pm SNMP_util.pm rtg.conf.sample \
++	       routers.sample rtg.php 95.php view.php common.php.in rtg.png rtgback.png
+ 
+ subdir = etc
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
 @@ -220,13 +220,13 @@
  all:
  

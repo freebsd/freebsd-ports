@@ -1,0 +1,43 @@
+--- man/rtgplot.1.orig	2010-04-21 09:04:22.473988200 +0100
++++ man/rtgplot.1	2010-04-21 09:08:22.862400825 +0100
+@@ -10,7 +10,8 @@
+ -t tablename(s) -i interface(s) [options] begin end
+ .br
+ .B rtgplot.cgi
+-?t1=tablename &t2=tablename &iid=interface &begin=unixtime &end=unixtime &[options]
++?t1=tablename &t`_name=descname &t2=tablename &t2_name=descname &iid=interface 
++&begin=unixtime &end=unixtime &[options]
+ .SH DESCRIPTION
+ .I rtgplot
+ generates traffic plots of RTG data in PNG format.  It operates in
+@@ -82,14 +83,19 @@
+ Set plot bottom border to 
+ .RI <size> 
+ pixels.
++.TP
++.IR "title=<title>"
++Set graph title to
++.RI <title>
+ .PP
+ .SH "EXAMPLES"
+ .PP
+ .br
+ Example HTML IMG TAG:
+ .PP
+-<IMG SRC="rtgplot.cgi? t1=ifInOctets_2& t2=ifOutOctets_2& iid=4& 
+-begin=1046754000& end=1046840399& units=bits/s& factor=8& scalex=yes">
++<IMG SRC="rtgplot.cgi? t1=ifInOctets_2& t1_name=Input& t2=ifOutOctets_2& 
++t2_name=Output& iid=4& begin=1046754000& end=1046840399& units=bits/s& 
++factor=8& scalex=yes& title=Bandwidth+Graph">
+ .PP
+ will plot two lines from the MySQL tables ifInOctets_2 and ifOutOctets_2
+ corresponding to interface 4 on router 2 for the time span 1046754000 to
+@@ -97,6 +103,8 @@
+ second; the units argument is displayed as the Y-axis label on the plot.
+ The scalex argument auto-adjusts the X time axis according to the available 
+ data samples rather than according to the actual time span given.  
++It will have a graph title of "Bandwidth Graph" and legend tags of "Input"
++and "Output" for t1 and t2 respectively.
+ .PP
+ Draw a 95th percentile line:
+ .PP
