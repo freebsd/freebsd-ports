@@ -235,7 +235,6 @@ a2ps-a4                         ports/print/a2ps-a4
 a2ps-letter                     ports/print/a2ps-letter
 a2ps-letterdj                   ports/print/a2ps-letterdj
 aa                              ports/astro/aa
-aaccli                          ports/sysutils/aaccli
 aacgain                         ports/audio/aacgain
 aacplusenc                      ports/audio/aacplusenc
 aafid2                          ports/security/aafid2
@@ -1291,6 +1290,7 @@ bugzilla                        ports/devel/bugzilla
 bugzilla2                       ports/devel/bugzilla2
 buici-clock                     ports/x11-clocks/buici-clock
 build                           ports/devel/build
+buildapp                        ports/devel/buildapp
 buildbot                        ports/devel/buildbot
 buildtool                       ports/devel/buildtool
 buildtool-doc                   ports/devel/buildtool-doc
@@ -2018,6 +2018,11 @@ curlpp                          ports/ftp/curlpp
 curly                           ports/sysutils/curly
 cursive                         ports/games/cursive
 cursor-bluecurve-theme          ports/x11-themes/cursor-bluecurve-theme
+cursor-chameleon-anthracite     ports/x11-themes/cursor-chameleon-anthracite
+cursor-chameleon-darkskyblue    ports/x11-themes/cursor-chameleon-darkskyblue
+cursor-chameleon-pearl          ports/x11-themes/cursor-chameleon-pearl
+cursor-chameleon-skyblue        ports/x11-themes/cursor-chameleon-skyblue
+cursor-chameleon-white          ports/x11-themes/cursor-chameleon-white
 cursor-crystal-theme            ports/x11-themes/cursor-crystal-theme
 cursor-dmz-aa-theme             ports/x11-themes/cursor-dmz-aa-theme
 cursor-dmz-theme                ports/x11-themes/cursor-dmz-theme
@@ -2664,6 +2669,7 @@ dtdinst                         ports/textproc/dtdinst
 dtdparse                        ports/textproc/dtdparse
 dtiquery                        ports/science/dtiquery
 dtmfdial                        ports/audio/dtmfdial
+dtpstree                        ports/sysutils/dtpstree
 dtracetoolkit                   ports/sysutils/DTraceToolkit
 dtse                            ports/www/dtse
 dtv                             ports/multimedia/dtv
@@ -6815,6 +6821,7 @@ kb                              ports/comms/kb
 kb2mb2                          ports/x11/kb2mb2
 kbackup                         ports/archivers/kbackup
 kbarcode                        ports/graphics/kbarcode
+kbdscan                         ports/misc/kbdscan
 kbear                           ports/ftp/kbear
 kbedic                          ports/textproc/kbedic
 kbfx                            ports/misc/kbfx
@@ -7093,6 +7100,7 @@ kgraphviewer                    ports/graphics/kgraphviewer
 kgrubeditor                     ports/sysutils/kgrubeditor
 kgtk                            ports/sysutils/kgtk
 khacc                           ports/finance/khacc
+khmeros                         ports/x11-fonts/khmeros
 khtml2png                       ports/www/khtml2png
 kiax                            ports/net/kiax
 kicad                           ports/cad/kicad
@@ -7739,6 +7747,7 @@ libeatmydata                    ports/misc/libeatmydata
 libebml                         ports/textproc/libebml
 libecap                         ports/www/libecap
 libecc                          ports/security/libecc
+libecwj2                        ports/graphics/libecwj2
 libelf                          ports/devel/libelf
 libemf                          ports/graphics/libemf
 libepc                          ports/www/libepc
@@ -9510,6 +9519,7 @@ mountsmb2                       ports/sysutils/mountsmb2
 mouseclock                      ports/x11-clocks/mouseclock
 mousepad                        ports/editors/mousepad
 mousetweaks                     ports/accessibility/mousetweaks
+moveable-type-fonts             ports/x11-fonts/moveable-type-fonts
 movemail                        ports/mail/movemail
 movingmotif                     ports/x11-toolkits/movingmotif
 mowitz                          ports/x11-toolkits/mowitz
@@ -18532,6 +18542,7 @@ packddir                        ports/archivers/packddir
 packit                          ports/net-mgmt/packit
 pacpl                           ports/audio/pacpl
 pad                             ports/security/pad
+padauk                          ports/x11-fonts/padauk
 padevchooser                    ports/audio/padevchooser
 padkey                          ports/x11/padkey
 pads                            ports/net-mgmt/pads
@@ -19798,6 +19809,7 @@ pinentry-qt                     ports/security/pinentry-qt
 pinentry-qt4                    ports/security/pinentry-qt4
 pinfo                           ports/misc/pinfo
 pingus                          ports/games/pingus
+pingwi                          ports/x11-fonts/pingwi
 pink-pony                       ports/games/pink-pony
 pino                            ports/net-im/pino
 pinot                           ports/deskutils/pinot
@@ -22755,6 +22767,7 @@ scim-bridge-qt4                 ports/textproc/scim-bridge-qt4
 scim-input-pad                  ports/textproc/scim-input-pad
 scim-kmfl-european-latin        ports/textproc/scim-kmfl-european-latin
 scim-kmfl-imengine              ports/textproc/scim-kmfl-imengine
+scim-kmfl-khmer                 ports/textproc/scim-kmfl-khmer
 scim-kmfl-sil-ezra              ports/textproc/scim-kmfl-sil-ezra
 scim-kmfl-sil-galatia           ports/textproc/scim-kmfl-sil-galatia
 scim-kmfl-sil-ipa-unicode5      ports/textproc/scim-kmfl-sil-ipa-unicode5
@@ -22792,6 +22805,7 @@ screem                          ports/www/screem
 screen                          ports/sysutils/screen
 screenie                        ports/sysutils/screenie
 scriba                          ports/lang/scriba
+scribe                          ports/net/scribe
 scribes                         ports/editors/scribes
 scribus                         ports/print/scribus
 script4rss                      ports/www/script4rss
@@ -26419,6 +26433,7 @@ zetaback                        ports/sysutils/zetaback
 zfs-replicate                   ports/sysutils/zfs-replicate
 zfs-snapshot-clean              ports/sysutils/zfs-snapshot-clean
 zfs-snapshot-mgmt               ports/sysutils/zfs-snapshot-mgmt
+zfsnap                          ports/sysutils/zfsnap
 zgv                             ports/graphics/zgv
 zh-CJKUnifonts                  ports/chinese/CJKUnifonts
 zh-CNS11643-font                ports/chinese/CNS11643-font
