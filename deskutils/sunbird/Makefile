@@ -18,6 +18,10 @@ DISTNAME=	lightning-${PORTNAME}-${DISTVERSION}-source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Redesign of the Mozilla Calendar with XUL interface
 
+DEPRECATED=	Upstream development discontinued. Please consider using\
+		${PORTSDIR}/deskutils/lightning instead
+EXPIRATION_DATE=	2010-09-04
+
 USE_AUTOTOOLS=	libtool:22
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
