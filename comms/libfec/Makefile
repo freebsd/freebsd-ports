@@ -26,6 +26,6 @@ ONLY_FOR_ARCHS=	i386
 PLIST_FILES=	include/fec.h lib/libfec.so lib/libfec.a
 
 post-patch:
-	${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/makefile.in
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/makefile.in
 
 .include <bsd.port.mk>
