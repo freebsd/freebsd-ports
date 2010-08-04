@@ -7,6 +7,9 @@ share/ibus/component/skk.xml
 %%DATADIR%%/engine/factory.py
 %%DATADIR%%/engine/factory.pyc
 %%DATADIR%%/engine/factory.pyo
+%%DATADIR%%/engine/kzik.py
+%%DATADIR%%/engine/kzik.pyc
+%%DATADIR%%/engine/kzik.pyo
 %%DATADIR%%/engine/main.py
 %%DATADIR%%/engine/main.pyc
 %%DATADIR%%/engine/main.pyo
