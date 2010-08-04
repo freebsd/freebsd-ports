@@ -16,6 +16,10 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for Sunbird
 
+DEPRECATED=	Upstream development discontinued. Please consider using\
+		${PORTSDIR}/deskutils/lightning instead
+EXPIRATION_DATE=	2010-09-04
+
 .ifndef WITHOUT_SWITCHER
 RUN_DEPENDS+=	xpi-quick-locale-switcher>=1.6.5.1:${PORTSDIR}/www/xpi-quick-locale-switcher
 .endif

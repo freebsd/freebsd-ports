@@ -17,6 +17,10 @@ MASTER_SITE_SUBDIR?=	calendar/${PORTNAME}/releases/${DISTVERSION}/linux-i686/en-
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Calendaring application branched from Mozilla
 
+DEPRECATED=	Upstream development discontinued. Please consider using\
+		${PORTSDIR}/deskutils/lightning instead
+EXPIRATION_DATE=	2010-09-04
+
 post-extract:
 	@${MKDIR} ${WRKSRC}/plugins/
 	@${TOUCH} ${WRKSRC}/plugins/.empty
