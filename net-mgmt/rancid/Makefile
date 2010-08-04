@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rancid
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 
@@ -36,7 +36,7 @@ MAN1=		agmrancid.1 alogin.1 arancid.1 arrancid.1 avologin.1 avorancid.1 \
 		par.1 prancid.1 rancid-cvs.1 rancid-run.1 rancid.1 \
 		rancid_intro.1 rivlogin.1 rivrancid.1 \
 		rrancid.1 srancid.1 tlogin.1 tntlogin.1 tntrancid.1 trancid.1 \
-		xrancid.1 zrancid.1
+		xrancid.1 xrrancid.1 zrancid.1
 
 MAN5=		lg.conf.5 cloginrc.5 rancid.conf.5 router.db.5
 
