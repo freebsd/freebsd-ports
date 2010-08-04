@@ -97,8 +97,16 @@ stop_postcmd()
 	rm -f "$pidfile" || warn "Could not remove $pidfile."
 }
 
-# support SIGHUP to reparse configuration file
-extra_commands="reload"
+softrestart()
+{
+    sig_reload=USR1 run_rc_command reload
+    exit $?
+}
+
+# reload: support SIGHUP to reparse configuration file
+# softrestart: support SIGUSR1 to reconnect without privileges
+extra_commands="reload softrestart"
+softrestart_cmd="softrestart"
 
 # pidfile
 pidfile="/var/run/${name}.pid"
