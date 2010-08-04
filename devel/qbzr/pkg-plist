@@ -328,12 +328,15 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sl/LC_MESSAGES/qbzr.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sr/LC_MESSAGES/qbzr.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sv/LC_MESSAGES/qbzr.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/th/LC_MESSAGES/qbzr.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/tr/LC_MESSAGES/qbzr.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/uk/LC_MESSAGES/qbzr.mo
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/uk/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/uk
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/tr/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/tr
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/th/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/th
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sv/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sv
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/locale/sr/LC_MESSAGES

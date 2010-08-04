@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	qbzr
-PORTVERSION=	0.18.6
+PORTVERSION=	0.18.7
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpadlibrarian.net/47816511/ \
+MASTER_SITES=	http://launchpadlibrarian.net/53034522/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	c-s@c-s.li
@@ -20,13 +20,14 @@ BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng \
 		${PYTHON_PKGNAMEPREFIX}enchant>=0:${PORTSDIR}/textproc/py-enchant
 RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
 
-WRKSRC= ${WRKDIR}/${PORTNAME}
+LICENSE=	GPLv2
 
-USE_PYTHON=	2.4+
-USE_QT_VER=     4
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_PYTHON=	yes
+USE_QT_VER=	4
 USE_PYDISTUTILS=	yes
+USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 
-.include <bsd.port.pre.mk>
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
