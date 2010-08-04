@@ -3,5 +3,6 @@ bin/quark
 bin/strange-quark
 share/applications/quark.desktop
 share/pixmaps/quark.png
-share/locale/ko/LC_MESSAGES/quark.mo
+share/pixmaps/quark48.png
+%%NLS%%share/locale/ko/LC_MESSAGES/quark.mo
 @dirrmtry share/applications
