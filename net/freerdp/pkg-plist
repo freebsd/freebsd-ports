@@ -1,0 +1,61 @@
+%%X11%%bin/xfreerdp
+include/freerdp/chanman.h
+include/freerdp/constants_ui.h
+include/freerdp/constants_vchan.h
+include/freerdp/freerdp.h
+include/freerdp/kbd.h
+include/freerdp/rdpset.h
+include/freerdp/types_ui.h
+include/freerdp/vchan.h
+lib/freerdp/cliprdr.a
+lib/freerdp/cliprdr.la
+lib/freerdp/cliprdr.so
+lib/freerdp/disk.a
+lib/freerdp/disk.la
+lib/freerdp/disk.so
+lib/freerdp/printer.a
+lib/freerdp/printer.la
+lib/freerdp/printer.so
+lib/freerdp/rdpdr.a
+lib/freerdp/rdpdr.la
+lib/freerdp/rdpdr.so
+%%SOUND%%lib/freerdp/rdpsnd.a
+%%SOUND%%lib/freerdp/rdpsnd.la
+%%SOUND%%lib/freerdp/rdpsnd.so
+lib/libfreerdp.a
+lib/libfreerdp.la
+lib/libfreerdp.so
+lib/libfreerdp.so.0
+lib/libfreerdpchanman.a
+lib/libfreerdpchanman.la
+lib/libfreerdpchanman.so
+lib/libfreerdpchanman.so.0
+lib/libfreerdpkbd.a
+lib/libfreerdpkbd.la
+lib/libfreerdpkbd.so
+lib/libfreerdpkbd.so.0
+libdata/pkgconfig/freerdp.pc
+%%DATADIR%%/keymaps/aliases
+%%DATADIR%%/keymaps/amiga
+%%DATADIR%%/keymaps/ataritt
+%%DATADIR%%/keymaps/digital_vndr/lk
+%%DATADIR%%/keymaps/digital_vndr/pc
+%%DATADIR%%/keymaps/empty
+%%DATADIR%%/keymaps/evdev
+%%DATADIR%%/keymaps/fujitsu
+%%DATADIR%%/keymaps/hp
+%%DATADIR%%/keymaps/ibm
+%%DATADIR%%/keymaps/macintosh
+%%DATADIR%%/keymaps/sgi_vndr/indigo
+%%DATADIR%%/keymaps/sgi_vndr/indy
+%%DATADIR%%/keymaps/sgi_vndr/iris
+%%DATADIR%%/keymaps/sony
+%%DATADIR%%/keymaps/sun
+%%DATADIR%%/keymaps/xfree86
+%%DATADIR%%/keymaps/xfree98
+@dirrm include/freerdp
+@dirrm lib/freerdp
+@dirrm %%DATADIR%%/keymaps/sgi_vndr
+@dirrm %%DATADIR%%/keymaps/digital_vndr
+@dirrm %%DATADIR%%/keymaps
+@dirrm %%DATADIR%%

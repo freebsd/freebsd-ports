@@ -159,6 +159,7 @@
     SUBDIR += freeradius-client
     SUBDIR += freeradius-mysql
     SUBDIR += freeradius2
+    SUBDIR += freerdp
     SUBDIR += freeswitch
     SUBDIR += freeswitch-core
     SUBDIR += freevrrpd
