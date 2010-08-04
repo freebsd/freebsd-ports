@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mime-construct
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	mail
 MASTER_SITES=	http://www.argon.org/~roderick/ \
 		ftp://renatasystems.org/pub/FreeBSD/ports/distfiles/
