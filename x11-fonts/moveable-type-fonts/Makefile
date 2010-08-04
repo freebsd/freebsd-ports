@@ -32,7 +32,7 @@ FONTSDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 
 post-extract:
-	@${FIND} ${WRKDIR} -name __MACOSX | ${XARGS} rm -r
+	@${FIND} ${WRKDIR} -name __MACOSX | ${XARGS} ${RM} -r
 
 do-install:
 	@${MKDIR} ${FONTSDIR}
