@@ -10,8 +10,4 @@ sbin/puppetmasterd
 sbin/puppetqd
 sbin/puppetrun
 etc/puppet/puppet.conf-dist
-@exec mkdir -p %D/etc/puppet/ssl
-@exec mkdir -p %D/etc/puppet/manifests
-@dirrmtry etc/puppet/ssl
-@dirrmtry etc/puppet/manifests
 @dirrmtry etc/puppet

@@ -8,7 +8,7 @@ UID=814
 GID=$UID
 
 RUNDIR=%%PUPPET_RUNDIR%%
-WORKDIR=%%PUPPET_WORKDIR%%
+VARDIR=%%PUPPET_VARDIR%%
 
 PW="pw"
 CHOWN="chown"
@@ -43,11 +43,11 @@ elif [ "$2" = "POST-INSTALL" ]; then
 		echo -n "=> Creating RUNDIR ${RUNDIR}... "
 		${INSTALL_DIR} ${RUNDIR} || echo "failed"
 	fi
-	if [ -d ${WORKDIR} ]; then
-		echo "=> ${WORKDIR} already exists."
+	if [ -d ${VARDIR} ]; then
+		echo "=> ${VARDIR} already exists."
 	else
-		echo -n "=> Creating WORKDIR ${WORKDIR}... "
-		${INSTALL_DIR} ${WORKDIR} || echo "failed"
+		echo -n "=> Creating VARDIR ${VARDIR}... "
+		${INSTALL_DIR} ${VARDIR} || echo "failed"
 	fi
 fi
 
