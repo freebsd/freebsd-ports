@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gnome-subtitles
-PORTVERSION=	0.9.1
-PORTREVISION=	3
+PORTVERSION=	1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	armin@frozen-zone.org
 COMMENT=	Subtitle editor with video preview
 
 LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
@@ -19,10 +18,11 @@ LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
+LICENSE=	GPLv2
+
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gtksharp20 gnomesharp20 gnomedocutils
 USE_GSTREAMER=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -33,6 +33,14 @@ INSTALLS_ICONS=	yes
 USE_LDCONFIG=	${PREFIX}/lib/gnome-subtitles
 
 MAN1=		gnome-subtitles.1
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
