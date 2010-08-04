@@ -1,57 +1,140 @@
 bin/freeguide
-%%DOCSDIR%%/developers.html
-%%DOCSDIR%%/sflogo.png
-%%DOCSDIR%%/userguide.html
-%%DOCSDIR%%/ls-docs
-%%DOCSDIR%%/userguide.choosing_channels.html
-%%DOCSDIR%%/userguide.features.html
-%%DOCSDIR%%/timezone.html
-%%DOCSDIR%%/contributors.html
-%%DOCSDIR%%/README.html
-%%DOCSDIR%%/downinst.html
-%%DOCSDIR%%/FAQ.html
-%%DOCSDIR%%/developers-translating.html
-%%DOCSDIR%%/downinst.macos.html
-%%DOCSDIR%%/contact.html
-%%DOCSDIR%%/INSTALL-linux-noxmltv.html
-%%DOCSDIR%%/userguide.look_and_feel.html
-%%DOCSDIR%%/developers-cvs.html
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/FreeGuide-0_7-Linux-MetalLookAndFeel.png
-%%DOCSDIR%%/downinst.linux.html
-%%DOCSDIR%%/userguide.mainscreen.html
-%%DOCSDIR%%/license.html
-%%DOCSDIR%%/toc.html
-%%DOCSDIR%%/stylesheet.css
-%%DOCSDIR%%/design.html
-%%DOCSDIR%%/LookAndFeel.html
-%%DOCSDIR%%/help.html
-%%DOCSDIR%%/developers-compiling.html
+%%DOCSDIR%%/DownloadAndInstall/RecentChanges.html
+%%DOCSDIR%%/DownloadAndInstall/LinuxOthers.html
+%%DOCSDIR%%/DownloadAndInstall/LinuxDebian.html
+%%DOCSDIR%%/DownloadAndInstall/LinuxRPM.html
+%%DOCSDIR%%/DownloadAndInstall/LinuxUbuntu.html
+%%DOCSDIR%%/DownloadAndInstall/Windows.html
+%%DOCSDIR%%/DownloadAndInstall/SideBar.html
+%%DOCSDIR%%/DownloadAndInstall/InstallXMLTVFromSource.html
+%%DOCSDIR%%/DownloadAndInstall/MacOSX.html
+%%DOCSDIR%%/DownloadAndInstall/Other.html
+%%DOCSDIR%%/DownloadAndInstall/FreeBSD.html
+%%DOCSDIR%%/DownloadAndInstall/LinuxGentoo.html
+%%DOCSDIR%%/DownloadAndInstall/Linux.html
+%%DOCSDIR%%/DownloadAndInstall/BuildFreeGuideOnMac.html
+%%DOCSDIR%%/DownloadAndInstall/DownloadAndInstall.html
+%%DOCSDIR%%/uploads/FAQ/ChooseChannels.png
+%%DOCSDIR%%/uploads/FAQ/ShowOutput.png
+%%DOCSDIR%%/uploads/FAQ/CopyXMLTVCommand.png
+%%DOCSDIR%%/uploads/FAQ/SettingTZ-2.png
+%%DOCSDIR%%/uploads/FAQ/TurnOffUpgradeCheck.png
+%%DOCSDIR%%/uploads/FAQ/EditShortcut-2.png
+%%DOCSDIR%%/uploads/FAQ/CharacterEncoding.png
+%%DOCSDIR%%/uploads/FAQ/SettingTZ-1.png
+%%DOCSDIR%%/uploads/FAQ/AllChannels.png
+%%DOCSDIR%%/uploads/FAQ/EditShortcut-1.png
+%%DOCSDIR%%/uploads/UserGuide/Screenshot-First_Time_Wizard-3.png
+%%DOCSDIR%%/uploads/UserGuide/channel-set.png
+%%DOCSDIR%%/uploads/UserGuide/main-screen.png
+%%DOCSDIR%%/uploads/UserGuide/listview-filter-time-dialog.png
+%%DOCSDIR%%/uploads/UserGuide/Screenshot-First_Time_Wizard-2.png
+%%DOCSDIR%%/uploads/UserGuide/Screenshot-Want_to_download_listings.png
+%%DOCSDIR%%/uploads/UserGuide/Screenshot-First_Time_Wizard-7.png
+%%DOCSDIR%%/uploads/UserGuide/listview-filter-time.png
+%%DOCSDIR%%/uploads/UserGuide/print-this.png
+%%DOCSDIR%%/uploads/UserGuide/Screenshot-First_Time_Wizard-1.png
+%%DOCSDIR%%/uploads/UserGuide/Screenshot-First_Time_Wizard-6.png
+%%DOCSDIR%%/uploads/UserGuide/listview-filter-channel.png
+%%DOCSDIR%%/uploads/UserGuide/plus-minus.png
+%%DOCSDIR%%/uploads/UserGuide/Screenshot-First_Time_Wizard-5.png
+%%DOCSDIR%%/uploads/UserGuide/Screenshot-Main_Screen-small.png
+%%DOCSDIR%%/uploads/UserGuide/Screenshot-First_Time_Wizard-4.png
+%%DOCSDIR%%/uploads/UserGuide/listview-filter-title.png
+%%DOCSDIR%%/uploads/UserGuide/Screenshot-Downloading.png
+%%DOCSDIR%%/uploads/UserGuide/listview.png
+%%DOCSDIR%%/uploads/UserGuide/channel-sets.png
+%%DOCSDIR%%/uploads/Main/Screenshot-Channel_Sets.png
+%%DOCSDIR%%/uploads/Main/Screenshot-FreeGuide-0.10.7-small.png
+%%DOCSDIR%%/uploads/Main/Screenshot-Vertical_main_screen.png
+%%DOCSDIR%%/uploads/Main/Screenshot-Set_grabber_config_2.png
+%%DOCSDIR%%/uploads/Main/Screenshot-Download.png
+%%DOCSDIR%%/uploads/Main/Screenshot-Set_grabber_config_1.png
+%%DOCSDIR%%/uploads/Main/Screenshot-FreeGuide_Main_Screen.png
+%%DOCSDIR%%/uploads/Main/freeguide-logo-50.png
+%%DOCSDIR%%/uploads/Main/Screenshot-FreeGuide-0.10.7.png
+%%DOCSDIR%%/uploads/Main/Screenshot-Channel_Sets_2.png
+%%DOCSDIR%%/FAQ/RunningOutOfMemory.html
+%%DOCSDIR%%/FAQ/FreezeDuringDownload.html
+%%DOCSDIR%%/FAQ/JavaVersion.html
+%%DOCSDIR%%/FAQ/DateManipError.html
+%%DOCSDIR%%/FAQ/NonXMLTVGrabber.html
+%%DOCSDIR%%/FAQ/ChangeChannelOrder.html
+%%DOCSDIR%%/FAQ/FAQ.html
+%%DOCSDIR%%/FAQ/UninstallLinux.html
+%%DOCSDIR%%/FAQ/ChangeGTKTheme.html
+%%DOCSDIR%%/FAQ/StoppedWorking.html
+%%DOCSDIR%%/FAQ/RunningXMLTVManually.html
+%%DOCSDIR%%/FAQ/XmltvCrash.html
+%%DOCSDIR%%/FAQ/InvalidUTF8.html
+%%DOCSDIR%%/FAQ/DownloadListingsFromCron.html
+%%DOCSDIR%%/FAQ/CantSeeChannels.html
+%%DOCSDIR%%/FAQ/TurnOffUpgradeCheck.html
+%%DOCSDIR%%/FAQ/UninstallWindows.html
+%%DOCSDIR%%/FAQ/MoreThanOneWeeksListings.html
+%%DOCSDIR%%/FAQ/BadEntrySeenInRTChannels.html
+%%DOCSDIR%%/FAQ/ChooseChannelsFails.html
+%%DOCSDIR%%/FAQ/SettingTheTZEnvironmentVariable.html
+%%DOCSDIR%%/FAQ/RecentChanges.html
+%%DOCSDIR%%/FAQ/MissingLookAndFeel.html
+%%DOCSDIR%%/FAQ/MissingListings.html
+%%DOCSDIR%%/FAQ/ExecutionError.html
+%%DOCSDIR%%/FAQ/UpgradeXMLTV.html
+%%DOCSDIR%%/FAQ/DiagnosingProblems.html
+%%DOCSDIR%%/FAQ/ProxyServer.html
+%%DOCSDIR%%/FAQ/ChangeTimeZone.html
+%%DOCSDIR%%/Main/ConfigureProxyOnLinux.html
+%%DOCSDIR%%/Main/HomePage.html
+%%DOCSDIR%%/Main/WikiSandbox.html
+%%DOCSDIR%%/Main/Screenshots.html
+%%DOCSDIR%%/Main/ConfigureProxyOnWindows.html
+%%DOCSDIR%%/Main/GroupAttributes.html
+%%DOCSDIR%%/Main/PmWikiInfo.html
+%%DOCSDIR%%/Main/COPYING.html
+%%DOCSDIR%%/Main/ContactUs.html
+%%DOCSDIR%%/Main/RecentChanges.html
+%%DOCSDIR%%/Main/Credits.html
+%%DOCSDIR%%/Main/GNUGeneralPublicLicense.html
+%%DOCSDIR%%/Main/SiteMap.html
+%%DOCSDIR%%/Main/SignUpForSchedulesDirect.html
+%%DOCSDIR%%/Main/Links.html
+%%DOCSDIR%%/UserGuide/ChoosingChannels.html
+%%DOCSDIR%%/UserGuide/RecentChanges.html
+%%DOCSDIR%%/UserGuide/RunningForTheFirstTime.html
+%%DOCSDIR%%/UserGuide/LookAndFeel.html
+%%DOCSDIR%%/UserGuide/TheMainScreen.html
+%%DOCSDIR%%/UserGuide/ListView.html
+%%DOCSDIR%%/UserGuide/UserGuide.html
+%%DOCSDIR%%/UserGuide/SideBar.html
+%%DOCSDIR%%/UserGuide/Features.html
+%%DOCSDIR%%/Developers/Developers.html
+%%DOCSDIR%%/Developers/CodeRules.html
+%%DOCSDIR%%/Developers/SideBar.html
+%%DOCSDIR%%/Developers/BuildTheLatestSource.html
+%%DOCSDIR%%/Developers/RecentChanges.html
+%%DOCSDIR%%/Developers/Design.html
+%%DOCSDIR%%/Developers/ChangingTheVersion.html
+%%DOCSDIR%%/Developers/HelpUsMakeFreeGuide.html
+%%DOCSDIR%%/Developers/GettingTheCodeWithoutXMLTV.html
+%%DOCSDIR%%/Developers/FutureTODOList.html
+%%DOCSDIR%%/Developers/PastTODOList.html
+%%DOCSDIR%%/Developers/Roles.html
+%%DOCSDIR%%/Developers/CreateInstallationPackagesForDifferentPlatforms.html
+%%DOCSDIR%%/Developers/RunTheNightlyBuild.html
+%%DOCSDIR%%/Developers/TranslateFreeGuide.html
+%%DOCSDIR%%/Developers/TODOList.html
+%%DOCSDIR%%/Developers/SourceLayout.html
+%%DOCSDIR%%/Site/AllRecentChanges.html
+%%DOCSDIR%%/Site/Search.html
+%%DOCSDIR%%/pub/skins/plain-freeguide/favicon.gif
+%%DOCSDIR%%/pub/skins/plain-freeguide/plain2.css
+%%DOCSDIR%%/pub/skins/plain-freeguide/plain1.css
+%%DOCSDIR%%/PmWiki/DocumentationIndex.html
+%%DOCSDIR%%/PmWiki/BasicEditing.html
+%%DOCSDIR%%/PmWiki/InitialSetupTasks.html
+%%DOCSDIR%%/PmWiki/TextFormattingRules.html
 %%DOCSDIR%%/index.html
-%%DOCSDIR%%/COPYING
-%%JAVAJARDIR%%/freeguide/lib/importexport-palmatv.jar
-%%JAVAJARDIR%%/freeguide/lib/grabber-vsetv.jar
-%%JAVAJARDIR%%/freeguide/lib/reminder-alarm.jar
-%%JAVAJARDIR%%/freeguide/lib/grabber-newsvm.jar
-%%JAVAJARDIR%%/freeguide/lib/common.jar
-%%JAVAJARDIR%%/freeguide/lib/docs.jar
-%%JAVAJARDIR%%/freeguide/lib/grabber-kulichki.jar
-%%JAVAJARDIR%%/freeguide/lib/ui-vertical.jar
-%%JAVAJARDIR%%/freeguide/lib/grabber-ntvplus.jar
-%%JAVAJARDIR%%/freeguide/lib/ui-horizontal.jar
-%%JAVAJARDIR%%/freeguide/lib/importexport-xmltv.jar
-%%JAVAJARDIR%%/freeguide/lib/importexport-html.jar
-%%JAVAJARDIR%%/freeguide/lib/grabber-xmltv.jar
-%%JAVAJARDIR%%/freeguide/lib/grabber-cosmostv.jar
-%%JAVAJARDIR%%/freeguide/lib/importexport-jtv.jar
-%%JAVAJARDIR%%/freeguide/lib/grabber-hallmark.jar
-%%JAVAJARDIR%%/freeguide/lib/tagsoup-1.0.1.jar
-%%JAVAJARDIR%%/freeguide/lib/program-freeguide.jar
-%%JAVAJARDIR%%/freeguide/lib/grabber-rbc.jar
-%%JAVAJARDIR%%/freeguide/lib/importexport-mobile.jar
-%%JAVAJARDIR%%/freeguide/lib/retroweaver-rt-1.2.5.jar
-%%JAVAJARDIR%%/freeguide/lib/storage-serfiles.jar
-%%JAVAJARDIR%%/freeguide/startup.jar
+%%JAVAJARDIR%%/freeguide/FreeGuide.jar
 share/pixmaps/freeguide/logo-96x96.png
 share/pixmaps/freeguide/logo-16x16.png
 share/pixmaps/freeguide/logo-72x72.png
@@ -62,6 +145,19 @@ share/pixmaps/freeguide.png
 share/applications/freeguide.desktop
 @dirrmtry share/applications
 @dirrm share/pixmaps/freeguide
-@dirrm %%JAVAJARDIR%%/freeguide/lib
 @dirrm %%JAVAJARDIR%%/freeguide/
+@dirrm %%DOCSDIR%%/DownloadAndInstall
+@dirrm %%DOCSDIR%%/uploads/FAQ
+@dirrm %%DOCSDIR%%/uploads/UserGuide
+@dirrm %%DOCSDIR%%/uploads/Main
+@dirrm %%DOCSDIR%%/uploads
+@dirrm %%DOCSDIR%%/FAQ
+@dirrm %%DOCSDIR%%/Main
+@dirrm %%DOCSDIR%%/UserGuide
+@dirrm %%DOCSDIR%%/Developers
+@dirrm %%DOCSDIR%%/Site
+@dirrm %%DOCSDIR%%/pub/skins/plain-freeguide
+@dirrm %%DOCSDIR%%/pub/skins
+@dirrm %%DOCSDIR%%/pub
+@dirrm %%DOCSDIR%%/PmWiki
 @dirrm %%DOCSDIR%%
