@@ -8,6 +8,7 @@
 PORTNAME=	polarssl
 PORTVERSION=	0.13.1
 DISTVERSIONSUFFIX=	-gpl
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://polarssl.org/code/download/
 EXTRACT_SUFX=	.tgz
@@ -31,6 +32,8 @@ BINFILES=	aescrypt2 benchmark dh_client dh_genprime dh_server hello \
 do-install:
 	@${TAR} -C ${WRKSRC}/include -cf - polarssl | ${TAR} -C ${PREFIX}/include -xf -
 	${INSTALL_DATA} ${WRKSRC}/library/libpolarssl.a ${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/library/libpolarssl.so  ${PREFIX}/lib/libpolarssl.so.0
+	cd ${PREFIX}/lib/ && ${LN} -sf libpolarssl.so.0 libpolarssl.so
 .for i in ${BINFILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/programs/*/${i} ${PREFIX}/bin/polarssl_${i}
 .endfor
