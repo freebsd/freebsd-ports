@@ -39,7 +39,7 @@ lib/libplplotcxxd.so.9
 lib/libplplotcxxd.so.9.3.0
 lib/libplplotd.so
 lib/libplplotd.so.9
-lib/libplplotd.so.9.7.0
+lib/libplplotd.so.9.8.0
 %%FORTRAN%%lib/libplplotf77cd.so
 %%FORTRAN%%lib/libplplotf77cd.so.9
 %%FORTRAN%%lib/libplplotf77cd.so.9.1.1
@@ -99,6 +99,8 @@ libdata/pkgconfig/plplotd.pc
 %%DATADIR%%/cmap1_default.pal
 %%DATADIR%%/cmap1_gray.pal
 %%DATADIR%%/cmap1_radar.pal
+%%DATADIR%%/cmap1_highfreq.pal
+%%DATADIR%%/cmap1_lowfreq.pal
 %%DATADIR%%/examples/CMakeLists.txt
 %%DATADIR%%/examples/Makefile
 %%DATADIR%%/examples/c++/CMakeLists.txt
@@ -190,6 +192,7 @@ libdata/pkgconfig/plplotd.pc
 %%DATADIR%%/examples/cmake/modules/export_plplot.cmake
 %%DATADIR%%/examples/cmake/modules/pkg-config.cmake
 %%DATADIR%%/examples/cmake/modules/plplot_configure.cmake
+%%DATADIR%%/examples/cmake/modules/language_support.cmake
 %%FORTRAN%%%%DATADIR%%/examples/f77/CMakeLists.txt
 %%FORTRAN%%%%DATADIR%%/examples/f77/Makefile
 %%FORTRAN%%%%DATADIR%%/examples/f77/plf77demos.inc
@@ -427,8 +430,10 @@ libdata/pkgconfig/plplotd.pc
 %%TCLTK%%%%DATADIR%%/examples/tcl/x31
 %%TCLTK%%%%DATADIR%%/examples/tcl/x31.tcl
 %%DATADIR%%/examples/test_c.sh
+%%DATADIR%%/examples/test_c_interactive.sh
 %%DATADIR%%/examples/test_cxx.sh
 %%DATADIR%%/examples/test_diff.sh
+%%DATADIR%%/examples/test_octave_interactive.sh
 %%FORTRAN%%%%DATADIR%%/examples/test_f77.sh
 %%FORTRAN%%%%DATADIR%%/examples/test_f95.sh
 %%PYTHON%%%%DATADIR%%/examples/test_python.sh
