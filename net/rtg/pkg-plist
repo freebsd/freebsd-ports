@@ -4,9 +4,9 @@ bin/rtgplot
 bin/rtgpoll
 contrib/README
 contrib/rtgtargmkr-with-modules-0.2.tar.gz
-etc/rtg/rtg.conf
+etc/rtg/rtg.conf.sample
 etc/rtg/rtgtargmkr.pl
-etc/rtg/routers
+etc/rtg/routers.sample
 etc/rtg/createdb
 etc/rtg/BER.pm
 etc/rtg/SNMP_Session.pm

@@ -7,7 +7,7 @@
 
 PORTNAME=	rtg
 PORTVERSION=	0.7.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -27,12 +27,19 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/${PORTNAME} \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800040
+.if ( ${OSVERSION} >= 800040 )
 CFLAGS+=	-fstack-protector
 LDFLAGS+=	-fstack-protector
 .endif
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g' ${WRKSRC}/configure
+
+post-patch:
+	@${MV} ${WRKSRC}/etc/rtg.conf ${WRKSRC}/etc/rtg.conf.sample
+	@${MV} ${WRKSRC}/etc/routers ${WRKSRC}/etc/routers.sample
+
+post-install:
+	@${ECHO} "To enable the web interface, copy ${PREFIX}/bin/rtgplot to your site cgi-bin as rtgplot.cgi"
 
 .include <bsd.port.post.mk>
