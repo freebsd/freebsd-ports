@@ -1,0 +1,13 @@
+--- build.xml.orig	2010-07-24 11:24:51.000000000 +0200
++++ build.xml	2010-07-24 11:29:57.000000000 +0200
+@@ -200,8 +200,8 @@
+         <mkdir dir="${install_share_dir}/applications" />
+         <copy file="${install}/linux/freeguide.desktop" todir="${install_share_dir}/applications/" />
+ 
+-        <mkdir dir="${install_share_dir}/man/man1" />
+-        <gzip src="${install-bin}/linux/freeguide.1" destfile="${install_share_dir}/man/man1/freeguide.1.gz"/>
++        <mkdir dir="${install_man1_dir}/man/man1" />
++        <gzip src="${install-bin}/linux/freeguide.1" destfile="${install_man1_dir}/man/man1/freeguide.1.gz"/>
+ 
+         <mkdir dir="${install_share_dir}/doc/freeguide" />
+         <copy todir="${install_share_dir}/doc/freeguide/">

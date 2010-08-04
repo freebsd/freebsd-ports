@@ -3,12 +3,10 @@
 # Whom:			Stephen Hurd <shurd@sasktel.net>
 #
 # $FreeBSD$
-# $Carpetsmoker: ports/misc/freeguide/Makefile,v 1.1 2007/10/12 12:28:45 carpetsmoker Exp $
 #
 
 PORTNAME=	freeguide
-PORTVERSION=	0.10.6
-PORTREVISION=	2
+PORTVERSION=	0.11
 CATEGORIES=	misc java
 MASTER_SITES=	SF/${PORTNAME}-tv/${PORTNAME}-source/${PORTVERSION}
 
@@ -16,6 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive TV guide which will create personalized TV listings
 
 RUN_DEPENDS=	tv_cat:${PORTSDIR}/textproc/p5-xmltv
+
+LICENSE=	GPLv2
 
 USE_JAVA=	yes
 USE_JIKES=	no
@@ -32,14 +32,12 @@ MAKE_ARGS=	-Dinstall_share_dir=${PREFIX}/share \
 		-Dinstall_doc_dir=${DOCSDIR} \
 		-Dinstall_java_share_dir=${JAVASHAREDIR} \
 		-Dinstall_jar_dir=${JAVAJARDIR}/freeguide
-INSTALL_TARGET=	install-linux
+INSTALL_TARGET=	install
 
 post-patch:
 	@${REINPLACE_CMD} 's|__ANT_INSTALL_DIRECTORY__|${JAVAJARDIR}/freeguide|; \
 		s|=java|=${JAVA}|;' \
 		${WRKSRC}/install/linux/freeguide
-	@${REINPLACE_CMD} 's|install_share_dir}/man|install_man1_dir}/man|g' \
-		${WRKSRC}/ant/install-linux.xml
 
 do-install:
 	@(cd ${BUILD_WRKSRC}; \
