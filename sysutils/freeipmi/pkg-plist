@@ -1,11 +1,10 @@
-@unexec [ -f %D/etc/freeipmi/freeipmi.conf ] && cmp -s %D/etc/freeipmi/freeipmi.conf.sample %D/etc/freeipmi/freeipmi.conf && rm -f %D/etc/freeipmi/freeipmi.conf
+@comment $FreeBSD$
 etc/freeipmi/freeipmi.conf.sample
-@exec [ -f %D/etc/freeipmi/freeipmi.conf ] || cp -p %D/etc/freeipmi/freeipmi.conf.sample %D/etc/freeipmi/freeipmi.conf
-@unexec [ -f %D/etc/freeipmi/ipmi_monitoring_sensors.conf ] && cmp -s %D/etc/freeipmi/ipmi_monitoring_sensors.conf.sample %D/etc/freeipmi/ipmi_monitoring_sensors.conf && rm -f %D/etc/freeipmi/ipmi_monitoring_sensors.conf
 etc/freeipmi/ipmi_monitoring_sensors.conf.sample
-@exec [ -f %D/etc/freeipmi/ipmi_monitoring_sensors.conf ] || cp -p %D/etc/freeipmi/ipmi_monitoring_sensors.conf.sample %D/etc/freeipmi/ipmi_monitoring_sensors.conf
+etc/freeipmi/ipmidetectd.conf
 include/freeipmi/api/ipmi-api.h
 include/freeipmi/api/ipmi-chassis-cmds-api.h
+include/freeipmi/api/ipmi-dcmi-cmds-api.h
 include/freeipmi/api/ipmi-device-global-cmds-api.h
 include/freeipmi/api/ipmi-event-cmds-api.h
 include/freeipmi/api/ipmi-fru-inventory-device-cmds-api.h
@@ -20,6 +19,8 @@ include/freeipmi/api/ipmi-serial-modem-cmds-api.h
 include/freeipmi/api/ipmi-sol-cmds-api.h
 include/freeipmi/cmds/ipmi-bmc-watchdog-timer-cmds.h
 include/freeipmi/cmds/ipmi-chassis-cmds.h
+include/freeipmi/cmds/ipmi-dcmi-cmds.h
+include/freeipmi/cmds/ipmi-dcmi-oem-cmds.h
 include/freeipmi/cmds/ipmi-device-global-cmds.h
 include/freeipmi/cmds/ipmi-event-cmds.h
 include/freeipmi/cmds/ipmi-fru-inventory-device-cmds.h
@@ -40,6 +41,7 @@ include/freeipmi/driver/ipmi-ssif-driver.h
 include/freeipmi/driver/ipmi-sunbmc-driver.h
 include/freeipmi/fiid/fiid.h
 include/freeipmi/freeipmi.h
+include/freeipmi/fru-parse/ipmi-fru-parse.h
 include/freeipmi/interface/ipmi-ipmb-interface.h
 include/freeipmi/interface/ipmi-kcs-interface.h
 include/freeipmi/interface/ipmi-lan-interface.h
@@ -51,32 +53,90 @@ include/freeipmi/record-format/ipmi-fru-information-record-format.h
 include/freeipmi/record-format/ipmi-sdr-record-format.h
 include/freeipmi/record-format/ipmi-sel-record-format.h
 include/freeipmi/sdr-cache/ipmi-sdr-cache.h
+include/freeipmi/sdr-parse/ipmi-sdr-parse.h
+include/freeipmi/sel-parse/ipmi-sel-parse.h
+include/freeipmi/sensor-read/ipmi-sensor-read.h
 include/freeipmi/spec/ipmi-authentication-type-spec.h
 include/freeipmi/spec/ipmi-channel-spec.h
+include/freeipmi/spec/ipmi-chassis-boot-options-parameter-oem-spec.h
 include/freeipmi/spec/ipmi-chassis-boot-options-parameter-spec.h
+include/freeipmi/spec/ipmi-cmd-dcmi-spec.h
+include/freeipmi/spec/ipmi-cmd-oem-spec.h
 include/freeipmi/spec/ipmi-cmd-spec.h
+include/freeipmi/spec/ipmi-comp-code-dcmi-spec.h
+include/freeipmi/spec/ipmi-comp-code-oem-spec.h
 include/freeipmi/spec/ipmi-comp-code-spec.h
+include/freeipmi/spec/ipmi-device-types-oem-spec.h
+include/freeipmi/spec/ipmi-device-types-spec.h
+include/freeipmi/spec/ipmi-entity-ids-spec.h
+include/freeipmi/spec/ipmi-event-reading-type-code-oem-spec.h
 include/freeipmi/spec/ipmi-event-reading-type-code-spec.h
 include/freeipmi/spec/ipmi-fru-chassis-types-spec.h
 include/freeipmi/spec/ipmi-fru-language-codes-spec.h
+include/freeipmi/spec/ipmi-iana-enterprise-numbers-spec.h
 include/freeipmi/spec/ipmi-ipmb-lun-spec.h
+include/freeipmi/spec/ipmi-lan-parameter-oem-spec.h
 include/freeipmi/spec/ipmi-lan-parameter-spec.h
+include/freeipmi/spec/ipmi-netfn-oem-spec.h
 include/freeipmi/spec/ipmi-netfn-spec.h
+include/freeipmi/spec/ipmi-pef-parameter-oem-spec.h
 include/freeipmi/spec/ipmi-pef-parameter-spec.h
 include/freeipmi/spec/ipmi-privilege-level-spec.h
+include/freeipmi/spec/ipmi-product-id-spec.h
 include/freeipmi/spec/ipmi-rmcpplus-status-spec.h
+include/freeipmi/spec/ipmi-sensor-and-event-code-tables-oem-spec.h
+include/freeipmi/spec/ipmi-sensor-and-event-code-tables-spec.h
+include/freeipmi/spec/ipmi-sensor-numbers-oem-spec.h
+include/freeipmi/spec/ipmi-sensor-types-oem-spec.h
 include/freeipmi/spec/ipmi-sensor-types-spec.h
 include/freeipmi/spec/ipmi-sensor-units-spec.h
+include/freeipmi/spec/ipmi-serial-modem-parameter-oem-spec.h
 include/freeipmi/spec/ipmi-serial-modem-parameter-spec.h
+include/freeipmi/spec/ipmi-slave-address-oem-spec.h
 include/freeipmi/spec/ipmi-slave-address-spec.h
+include/freeipmi/spec/ipmi-sol-parameter-oem-spec.h
 include/freeipmi/spec/ipmi-sol-parameter-spec.h
+include/freeipmi/spec/ipmi-system-info-parameter-oem-spec.h
+include/freeipmi/spec/ipmi-system-info-parameter-spec.h
 include/freeipmi/spec/ipmi-system-software-id-spec.h
+include/freeipmi/templates/ipmi-bmc-watchdog-timer-cmds-templates.h
+include/freeipmi/templates/ipmi-chassis-cmds-templates.h
+include/freeipmi/templates/ipmi-cipher-suite-record-format-templates.h
+include/freeipmi/templates/ipmi-dcmi-cmds-templates.h
+include/freeipmi/templates/ipmi-device-global-cmds-templates.h
+include/freeipmi/templates/ipmi-event-cmds-templates.h
+include/freeipmi/templates/ipmi-fru-information-record-format-templates.h
+include/freeipmi/templates/ipmi-fru-inventory-device-cmds-templates.h
+include/freeipmi/templates/ipmi-ipmb-interface-templates.h
+include/freeipmi/templates/ipmi-kcs-interface-templates.h
+include/freeipmi/templates/ipmi-lan-cmds-templates.h
+include/freeipmi/templates/ipmi-lan-interface-templates.h
+include/freeipmi/templates/ipmi-messaging-support-cmds-templates.h
+include/freeipmi/templates/ipmi-pef-and-alerting-cmds-templates.h
+include/freeipmi/templates/ipmi-rmcpplus-interface-templates.h
+include/freeipmi/templates/ipmi-rmcpplus-support-and-payload-cmds-templates.h
+include/freeipmi/templates/ipmi-sdr-record-format-templates.h
+include/freeipmi/templates/ipmi-sdr-repository-cmds-templates.h
+include/freeipmi/templates/ipmi-sel-cmds-templates.h
+include/freeipmi/templates/ipmi-sel-record-format-templates.h
+include/freeipmi/templates/ipmi-sensor-cmds-templates.h
+include/freeipmi/templates/ipmi-serial-modem-cmds-templates.h
+include/freeipmi/templates/ipmi-sol-cmds-templates.h
+include/freeipmi/templates/rmcp-cmds-templates.h
+include/freeipmi/templates/rmcp-interface-templates.h
+include/freeipmi/util/ipmi-channel-util.h
 include/freeipmi/util/ipmi-cipher-suite-util.h
+include/freeipmi/util/ipmi-dcmi-util.h
+include/freeipmi/util/ipmi-device-types-util.h
+include/freeipmi/util/ipmi-error-dcmi-util.h
 include/freeipmi/util/ipmi-error-util.h
+include/freeipmi/util/ipmi-iana-enterprise-numbers-util.h
 include/freeipmi/util/ipmi-ipmb-util.h
 include/freeipmi/util/ipmi-lan-util.h
+include/freeipmi/util/ipmi-outofband-util.h
 include/freeipmi/util/ipmi-rmcpplus-util.h
 include/freeipmi/util/ipmi-sensor-and-event-code-tables-util.h
+include/freeipmi/util/ipmi-sensor-units-util.h
 include/freeipmi/util/ipmi-sensor-util.h
 include/freeipmi/util/ipmi-util.h
 include/freeipmi/util/rmcp-util.h
@@ -105,9 +165,11 @@ sbin/bmc-info
 sbin/bmc-watchdog
 sbin/ipmi-chassis
 sbin/ipmi-chassis-config
+sbin/ipmi-dcmi
 sbin/ipmi-fru
 sbin/ipmi-locate
 sbin/ipmi-oem
+sbin/ipmi-pef-config
 sbin/ipmi-raw
 sbin/ipmi-sel
 sbin/ipmi-sensors
@@ -120,12 +182,71 @@ sbin/ipmiping
 sbin/ipmipower
 sbin/pef-config
 sbin/rmcpping
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ZRESEARCH
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.bmc-watchdog
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmi-dcmi
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmi-fru
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmiconsole
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmidetect
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmimonitoring
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmiping
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmipower
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.pstdout
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.rmcpping
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.sunbmc
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.0
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.bmc-watchdog
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.bmc-watchdog.UC
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmi-dcmi
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmi-fru
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmi-fru.UC
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmiconsole
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmiconsole.UC
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmidetect
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmidetect.UC
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmimonitoring
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmimonitoring.UC
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmiping
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmiping.UC
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmipower
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmipower.UC
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.pstdout
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.pstdout.UC
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.rmcpping
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.rmcpping.UC
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.argp
+%%PORTDOCS%%%%DOCSDIR%%/README.build
+%%PORTDOCS%%%%DOCSDIR%%/README.openipmi
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/freeipmi-bugs-issues-and-workarounds.txt
+%%PORTDOCS%%%%DOCSDIR%%/freeipmi-coding.txt
+%%PORTDOCS%%%%DOCSDIR%%/freeipmi-hostrange.txt
+%%PORTDOCS%%%%DOCSDIR%%/freeipmi-libraries.txt
+%%PORTDOCS%%%%DOCSDIR%%/freeipmi-oem-documentation-requirements.txt
+%%PORTDOCS%%%%DOCSDIR%%/freeipmi-testing.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec mkdir -p %%CACHE_DIR%%/ipmimonitoringsdrcache %%LOG_DIR%% %%RUN_DIR%%
+@exec touch %%RUN_DIR%%/ipckey
+@exec chmod 0700 %%CACHE_DIR%% %%LOG_DIR%% %%RUN_DIR%%
+@unexec rm -f %%RUN_DIR%%/ipckey
+@dirrmtry %%CACHE_DIR%%/ipmimonitoringsdrcache %%CACHE_DIR%% %%LOG_DIR%% %%RUN_DIR%%
 @dirrm include/freeipmi/util
+@dirrm include/freeipmi/templates
 @dirrm include/freeipmi/spec
+@dirrm include/freeipmi/sensor-read
+@dirrm include/freeipmi/sel-parse
+@dirrm include/freeipmi/sdr-parse
 @dirrm include/freeipmi/sdr-cache
 @dirrm include/freeipmi/record-format
 @dirrm include/freeipmi/locate
 @dirrm include/freeipmi/interface
+@dirrm include/freeipmi/fru-parse
 @dirrm include/freeipmi/fiid
 @dirrm include/freeipmi/driver
 @dirrm include/freeipmi/debug
@@ -133,8 +254,3 @@ sbin/rmcpping
 @dirrm include/freeipmi/api
 @dirrm include/freeipmi
 @dirrmtry etc/freeipmi
-@exec mkdir -p %%CACHE_DIR%%/ipmimonitoringsdrcache %%LOG_DIR%% %%RUN_DIR%%
-@exec touch %%RUN_DIR%%/ipckey
-@exec chmod 0700 %%CACHE_DIR%% %%LOG_DIR%% %%RUN_DIR%%
-@unexec rm -f %%RUN_DIR%%/ipckey
-@dirrmtry %%CACHE_DIR%%/ipmimonitoringsdrcache %%CACHE_DIR%% %%LOG_DIR%% %%RUN_DIR%%
