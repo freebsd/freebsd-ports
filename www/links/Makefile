@@ -7,7 +7,7 @@
 
 PORTNAME=	links
 DISTVERSION=	2.2
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://links.twibright.com/download/
@@ -33,6 +33,7 @@ USE_BZIP2=	yes
 
 OPTIONS=	SVGALIB "non-X11 graphics support" off \
 		DIRECTFB "directfb driver support" off \
+		IPV6 "IPv6 support" off \
 		X11 "X11 graphics support" on \
 		UTF8 "With gentoo utf-8 patch" on \
 		TRANS "Hack for background transparency" off
@@ -62,6 +63,12 @@ CONFIGURE_ARGS+=	--with-directfb
 CONFIGURE_ARGS+=	--without-directfb
 .endif
 
+.if defined(WITH_IPV6)
+USE_AUTOTOOLS+=	autoconf:262
+PATCH_SITES+=	http://xpisar.wz.cz/links-ipv6/:ipv6
+PATCHFILES+=	links-2.2-ipv6-2.diff:ipv6
+.endif
+
 .if !defined(WITHOUT_X11)
 USE_XORG=	x11 xproto
 CONFIGURE_ARGS+=	--with-x
@@ -77,7 +84,7 @@ CONFIGURE_ARGS+=	--without-x
 .endif
 
 .if defined(WITH_UTF8)
-PATCHFILES=	links-2.1pre33-utf8.diff.bz2
+PATCHFILES+=	links-2.1pre33-utf8.diff.bz2
 pre-configure:
 		pwd && cd ${WRKSRC}/intl && ./gen-intl && ./synclang && cd ..
 .endif
