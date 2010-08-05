@@ -2306,6 +2306,7 @@ desktop-data-model              ports/net/desktop-data-model
 desktop-file-utils              ports/devel/desktop-file-utils
 desktop-installer               ports/sysutils/desktop-installer
 desktopbsd-tools                ports/sysutils/desktopbsd-tools
+deskutils_lightning             ports/deskutils/lightning
 desmume                         ports/emulators/desmume
 despoof                         ports/net/despoof
 destroy                         ports/security/destroy
@@ -3851,6 +3852,7 @@ freeradius                      ports/net/freeradius
 freeradius-client               ports/net/freeradius-client
 freeradius-mysql                ports/net/freeradius-mysql
 freeradius2                     ports/net/freeradius2
+freerdp                         ports/net/freerdp
 freeride                        ports/devel/freeride
 freesbie                        ports/sysutils/freesbie
 freesci                         ports/games/freesci
@@ -4608,6 +4610,7 @@ gnome-icons                     ports/x11-themes/gnome-icons
 gnome-icons-aqua-fusion         ports/x11-themes/gnome-icons-aqua-fusion
 gnome-icons-cool-gorilla        ports/x11-themes/gnome-icons-cool-gorilla
 gnome-icons-crystal             ports/x11-themes/gnome-icons-crystal
+gnome-icons-dropline-neu        ports/x11-themes/gnome-icons-dropline-neu
 gnome-icons-dropline-nou        ports/x11-themes/gnome-icons-dropline-nou
 gnome-icons-edge                ports/x11-themes/gnome-icons-edge
 gnome-icons-gentoo-test         ports/x11-themes/gnome-icons-gentoo-test
@@ -8317,7 +8320,6 @@ liedentd                        ports/security/liedentd
 lifelines                       ports/misc/lifelines
 liferea                         ports/net/liferea
 lifetype                        ports/www/lifetype
-lightning-xpi                   ports/deskutils/lightning-xpi
 lightspark-devel                ports/graphics/lightspark-devel
 lightsquid                      ports/www/lightsquid
 lighttpd                        ports/www/lighttpd
@@ -8911,7 +8913,6 @@ maia                            ports/security/maia
 mail-notification               ports/mail/mail-notification
 mail2procmailrc                 ports/mail/mail2procmailrc
 mail2sms                        ports/mail/mail2sms
-mail_lightning                  ports/mail/lightning
 mailagent                       ports/mail/mailagent
 mailcrypt                       ports/mail/mailcrypt
 maildirsync                     ports/mail/maildirsync
@@ -9528,7 +9529,6 @@ mozex                           ports/www/mozex
 mozilla                         ports/www/mozilla
 mozilla-fonts                   ports/x11-fonts/mozilla-fonts
 mozplugger                      ports/www/mozplugger
-moztraybiff                     ports/mail/moztraybiff
 mp                              ports/editors/mp
 mp-a4                           ports/print/mp-a4
 mp-letter                       ports/print/mp-letter
@@ -13422,6 +13422,7 @@ p5-Parse-Syslog                 ports/textproc/p5-Parse-Syslog
 p5-Parse-Syslog-Mail            ports/mail/p5-Parse-Syslog-Mail
 p5-Parse-Yapp                   ports/devel/p5-Parse-Yapp
 p5-ParseLex                     ports/devel/p5-ParseLex
+p5-ParseTemplate                ports/devel/p5-ParseTemplate
 p5-PatchReader                  ports/devel/p5-PatchReader
 p5-Path-Class                   ports/devel/p5-Path-Class
 p5-Path-Class-URI               ports/www/p5-Path-Class-URI
@@ -17256,6 +17257,7 @@ p5-parse-syslog                 ports/textproc/p5-Parse-Syslog
 p5-parse-syslog-mail            ports/mail/p5-Parse-Syslog-Mail
 p5-parse-yapp                   ports/devel/p5-Parse-Yapp
 p5-parselex                     ports/devel/p5-ParseLex
+p5-parsetemplate                ports/devel/p5-ParseTemplate
 p5-patchreader                  ports/devel/p5-PatchReader
 p5-path-class                   ports/devel/p5-Path-Class
 p5-path-class-uri               ports/www/p5-Path-Class-URI
@@ -23607,6 +23609,7 @@ subcommander                    ports/devel/subcommander
 subcommander2                   ports/devel/subcommander2
 subconv                         ports/multimedia/subconv
 sublib                          ports/multimedia/sublib
+subnetcalc                      ports/net/subnetcalc
 subtitlecomposer                ports/multimedia/subtitlecomposer
 subtitlecomposer-kde4           ports/multimedia/subtitlecomposer-kde4
 subtitleeditor                  ports/multimedia/subtitleeditor
