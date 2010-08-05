@@ -14,6 +14,11 @@ DISTFILES=	ipv4-ext.c ipv4-ext.sql
 MAINTAINER=	pol@iib.ru
 COMMENT=	Library will provide the ipv4 functions in SQL queries
 
+# This port is replaced by a new version with more modules
+CONFLICTS=	sqlite-ext-mobigroup-[0-9]*
+DEPRECATED=	Please install databases/sqlite-ext-mobigroup instead
+EXPIRATION_DATE=2010-09-05
+
 USE_SQLITE=	yes
 
 DIST_SUBDIR=	sqlite-ext
