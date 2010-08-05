@@ -1,14 +1,15 @@
---- test/Makefile.in.orig	2009-01-06 21:01:57.000000000 +0900
-+++ test/Makefile.in	2009-01-06 20:49:06.000000000 +0900
-@@ -184,9 +184,11 @@
+--- test/Makefile.in.orig	2010-07-19 10:37:07.000000000 +0900
++++ test/Makefile.in	2010-07-19 10:33:53.000000000 +0900
+@@ -205,10 +205,10 @@
+ top_srcdir = @top_srcdir@
  hangul_CFLAGS = 
  hangul_SOURCES = hangul.c
- hangul_LDADD = ../hangul/libhangul.la
-+hangul_LDFLAGS = -liconv
+-hangul_LDADD = ../hangul/libhangul.la
++hangul_LDADD = ../hangul/libhangul.la -liconv
  hanja_CFLAGS = 
  hanja_SOURCES = hanja.c
- hanja_LDADD = ../hangul/libhangul.la
-+hanja_LDFLAGS = -liconv
- TESTS = test
+-hanja_LDADD = ../hangul/libhangul.la
++hanja_LDADD = ../hangul/libhangul.la -liconv
  test_SOURCES = test.c ../hangul/hangul.h
  test_CFLAGS = @CHECK_CFLAGS@
+ test_LDADD = @CHECK_LIBS@ $(top_builddir)/hangul/libhangul.la
