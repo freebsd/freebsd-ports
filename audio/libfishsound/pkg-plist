@@ -1,0 +1,12 @@
+include/fishsound/comments.h
+include/fishsound/constants.h
+include/fishsound/decode.h
+include/fishsound/deprecated.h
+include/fishsound/encode.h
+include/fishsound/fishsound.h
+lib/libfishsound.a
+lib/libfishsound.la
+lib/libfishsound.so
+lib/libfishsound.so.4
+libdata/pkgconfig/fishsound.pc
+@dirrm include/fishsound

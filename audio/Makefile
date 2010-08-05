@@ -359,6 +359,7 @@
     SUBDIR += libconvolve
     SUBDIR += libdiscid
     SUBDIR += libdssialsacompat
+    SUBDIR += libfishsound
     SUBDIR += libgig
     SUBDIR += libgme
     SUBDIR += libgpod
