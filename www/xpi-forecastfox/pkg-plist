@@ -7,8 +7,9 @@
 %%XPI_XPIDIR%%/defaults/parser.js
 %%XPI_XPIDIR%%/defaults/upgrade.js
 %%XPI_XPIDIR%%/defaults/preferences/forecastfox.js
-%%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/icon.png
+%%XPI_XPIDIR%%/install.rdf
 @dirrm %%XPI_XPIDIR%%/chrome
 @dirrm %%XPI_XPIDIR%%/components
 @dirrm %%XPI_XPIDIR%%/defaults/icons
