@@ -1,5 +1,5 @@
 Jetty is  an open-source, standards-based, full-featured  web server implemented
-entirely in java. It  is released under the Apache 2.0  licence and is therefore
+entirely in Java. It  is released under the Apache 2.0  licence and is therefore
 free for commercial use and distribution.
 
 Jetty can be used as:
@@ -7,7 +7,7 @@ Jetty can be used as:
     * a stand-alone traditional web server for static and dynamic content
     * a dynamic content server behind a dedicated HTTP server such as Apache
       using mod_proxy
-    * an embedded component within a java application
+    * an embedded component within a Java application
 
 Some of the defining features of Jetty are:
 
@@ -15,11 +15,11 @@ Simplicity:  The guiding principle of Jetty  could be said to be "simplicity not
 complexity".  We want to make Jetty easy to understand and use:
 
 Efficiency:   A lot  of  effort  goes into  optimizing  Jetty's performance  and
-crafting the code so as to make the footprint as small as possible:
+crafting the code so as to make the footprint as small as possible.
 
 Embeddability:  Jetty is designed to be a good component. This means that it can
 easily be embedded in an application without forcing the application to adapt to
-it:
+it.
 
 Pluggability:  Jetty  is architected for pluggability. The  API allows different
 implementations  of all  of the  principal Jetty  components to  be selected. At
