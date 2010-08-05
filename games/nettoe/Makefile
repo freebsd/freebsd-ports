@@ -6,24 +6,30 @@
 #
 
 PORTNAME=	nettoe
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF \
+		http://www.c-s.li/ports/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	A tic-tac-toe game playable over the network
+
+LICENSE=	GPLv2
+
+PLIST_FILES=	bin/nettoe
 
 MAN6=		nettoe.6
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-post-install:
+PORTDOCS=	AUTHORS BUGS ChangeLog NEWS README TO-DO
+
 .if !defined(NOPORTDOCS)
+post-install:
 	${MKDIR} ${DOCSDIR}
-.for I in AUTHORS BUGS COPYING ChangeLog INSTALL NEWS README TO-DO
-	${INSTALL_DATA} ${WRKSRC}/$I ${DOCSDIR}
+.for I in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/$I ${DOCSDIR}/
 .endfor
 .endif
 
