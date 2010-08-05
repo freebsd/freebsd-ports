@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	milter-greylist
-PORTVERSION=	4.2.5
+PORTVERSION=	4.2.6
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/
 DISTNAME=	milter-greylist-${PORTVERSION}
