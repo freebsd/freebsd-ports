@@ -1,8 +1,10 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/Validator/Custom.pm
 %%SITE_PERL%%/Validator/Custom/Result.pm
+%%SITE_PERL%%/Validator/Custom/Basic/Constraints.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Validator/Custom/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Validator/Custom
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Validator
+@dirrmtry %%SITE_PERL%%/Validator/Custom/Basic
 @dirrmtry %%SITE_PERL%%/Validator/Custom
 @dirrmtry %%SITE_PERL%%/Validator
