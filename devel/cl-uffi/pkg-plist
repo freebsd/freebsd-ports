@@ -1,6 +1,7 @@
 %%LIB32DIR%%/common-lisp/system-registry/uffi.asd
 %%LIB32DIR%%/common-lisp/uffi/src/aggregates.lisp
 %%LIB32DIR%%/common-lisp/uffi/src/functions.lisp
+%%LIB32DIR%%/common-lisp/uffi/src/i18n.lisp
 %%LIB32DIR%%/common-lisp/uffi/src/libraries.lisp
 %%LIB32DIR%%/common-lisp/uffi/src/objects.lisp
 %%LIB32DIR%%/common-lisp/uffi/src/os.lisp
