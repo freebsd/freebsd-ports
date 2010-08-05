@@ -39,9 +39,16 @@ QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \
 USE_OPENLDAP=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	PULSEAUDIO "KMix control for PulseAudio" off
+OPTIONS=	PULSEAUDIO "KMix control for PulseAudio" off \
+		ALSA "Build with ALSA compatibility library" off
 
 .include <bsd.port.options.mk>
+
+.if !defined(WITH_ALSA)
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-CMakeLists.txt
+.else
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+.endif
 
 .if defined(WITH_PULSEAUDIO)
 CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=ON
