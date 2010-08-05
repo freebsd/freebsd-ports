@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fetion
-PORTVERSION=	0.98.5.1
-PORTREVISION=	3
+PORTVERSION=	0.98.5.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.logvinov.ru/files/dist/fetion/ \
 		LOCAL/avl
@@ -24,5 +23,8 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 .include <bsd.port.mk>
