@@ -24,4 +24,4 @@ auth.info;authpriv.info                         |exec %%PREFIX%%/sbin/bruteblock
  
   and start bruteblockd: %%PREFIX%%/etc/rc.d/bruteblockd.sh start
 
-See bruteblock(8) for more detailts.
+See bruteblock(8) for more details.
