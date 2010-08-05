@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-MobileCarrierJP
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	japanese www perl5
 MASTER_SITES=	CPAN
 
@@ -21,8 +21,9 @@ BUILD_DEPENDS=	p5-Moose>=0.60:${PORTSDIR}/devel/p5-Moose \
 		p5-libwww>=5.834:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-CAM-PDF>=0:${PORTSDIR}/textproc/p5-CAM-PDF
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USE_PERL5=	5.8.1+
 PERL_CONFIGURE=	yes
 
 MAN3=		WWW::MobileCarrierJP::EZWeb::PictogramInfo.3 \
@@ -41,6 +42,7 @@ MAN3=		WWW::MobileCarrierJP::EZWeb::PictogramInfo.3 \
 		WWW::MobileCarrierJP::ThirdForce::PictogramInfo.3 \
 		WWW::MobileCarrierJP::ThirdForce::UserAgent.3 \
 		WWW::MobileCarrierJP::ThirdForce::Java.3 \
+		WWW::MobileCarrierJP::ThirdForce::Display.3 \
 		WWW::MobileCarrierJP::DoCoMo::CIDR.3 \
 		WWW::MobileCarrierJP::EZWeb::BREW.3 \
 		WWW::MobileCarrierJP::DoCoMo::HTMLVersion.3 \
