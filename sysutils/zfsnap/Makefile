@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zfsnap
-PORTVERSION=	1.1.8
+PORTVERSION=	1.2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.bsdroot.lv/FreeBSD/distfiles/
 DISTNAME=	zfSnap-${PORTVERSION}
@@ -21,4 +21,5 @@ NO_BUILD=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/zfSnap.sh ${PREFIX}/sbin/zfSnap
 
+# vim: set ts=8 sw=8:
 .include <bsd.port.mk>
