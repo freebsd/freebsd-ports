@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tmux
-PORTVERSION=	1.2
-PORTREVISION=	3
+PORTVERSION=	1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -31,13 +30,7 @@ CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 703100
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-configure
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e '/^#define HAVE_TREE_H/d' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
 		${WRKSRC}/Makefile
 
