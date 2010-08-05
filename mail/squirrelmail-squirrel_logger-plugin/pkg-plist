@@ -1,0 +1,18 @@
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin squirrel_logger; fi
+%%SQUIRRELDIR%%/plugins/squirrel_logger/COPYING
+%%SQUIRRELDIR%%/plugins/squirrel_logger/INSTALL
+%%SQUIRRELDIR%%/plugins/squirrel_logger/README
+%%SQUIRRELDIR%%/plugins/squirrel_logger/alert_functions.php
+%%SQUIRRELDIR%%/plugins/squirrel_logger/config_example.php
+%%SQUIRRELDIR%%/plugins/squirrel_logger/contrib/index.php
+%%SQUIRRELDIR%%/plugins/squirrel_logger/contrib/fail2ban
+%%SQUIRRELDIR%%/plugins/squirrel_logger/database_functions.php
+%%SQUIRRELDIR%%/plugins/squirrel_logger/functions.php
+%%SQUIRRELDIR%%/plugins/squirrel_logger/getpot
+%%SQUIRRELDIR%%/plugins/squirrel_logger/index.php
+%%SQUIRRELDIR%%/plugins/squirrel_logger/make_release.sh
+%%SQUIRRELDIR%%/plugins/squirrel_logger/setup.php
+%%SQUIRRELDIR%%/plugins/squirrel_logger/show_stats.php
+%%SQUIRRELDIR%%/plugins/squirrel_logger/version
+@dirrmtry %%SQUIRRELDIR%%/plugins/squirrel_logger/contrib
+@dirrmtry %%SQUIRRELDIR%%/plugins/squirrel_logger

@@ -677,6 +677,7 @@
     SUBDIR += squirrelmail-secure_login-plugin
     SUBDIR += squirrelmail-shared_calendars-plugin
     SUBDIR += squirrelmail-spam-buttons-plugin
+    SUBDIR += squirrelmail-squirrel_logger-plugin
     SUBDIR += squirrelmail-timeout_user-plugin
     SUBDIR += squirrelmail-tmda-plugin
     SUBDIR += squirrelmail-unsafe_image_rules-plugin
