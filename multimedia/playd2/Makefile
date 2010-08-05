@@ -13,6 +13,9 @@ MASTER_SITES=	http://files.bsdroot.lv/FreeBSD/playd/
 MAINTAINER=	aldis@BSDroot.lv
 COMMENT=	Very easy to use mplayer Perl wrapper script, with useful features
 
+DEPRECATED=	Use multimedia/playd instead
+EXPIRATION=	2010-09-05
+
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		${LOCALBASE}/${SITE_PERL_REL}/File/Type.pm:${PORTSDIR}/devel/p5-File-Type
 
