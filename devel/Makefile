@@ -1622,6 +1622,7 @@
     SUBDIR += p5-File-Remove
     SUBDIR += p5-File-SafeDO
     SUBDIR += p5-File-ShareDir
+    SUBDIR += p5-File-ShareDir-Install
     SUBDIR += p5-File-ShareDir-PAR
     SUBDIR += p5-File-Slurp
     SUBDIR += p5-File-Slurp-Tree
