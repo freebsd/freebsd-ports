@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zfsnap
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.bsdroot.lv/FreeBSD/distfiles/
 DISTNAME=	zfSnap-${PORTVERSION}
