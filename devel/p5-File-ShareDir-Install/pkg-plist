@@ -3,5 +3,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ShareDir/Install/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ShareDir/Install
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/ShareDir
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
 @dirrmtry %%SITE_PERL%%/File/ShareDir
 @dirrmtry %%SITE_PERL%%/File
