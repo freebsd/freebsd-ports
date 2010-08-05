@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jGnash
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	finance java
 MASTER_SITES=	SF/jgnash/Active%20Stable%202.x/2.4.x%20Releases
 
