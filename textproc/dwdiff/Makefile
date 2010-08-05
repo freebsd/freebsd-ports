@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dwdiff
-PORTVERSION=	1.8
+PORTVERSION=	1.8.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://os.ghalkes.nl/dist/ \
 		http://www.logvinov.ru/files/dist/ \
