@@ -31,7 +31,7 @@ BUILD_DEPENDS+=		${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 
 OPTIONS=	CFITSIO	"FITS support"			off \
 		CURL	"Curl support"			off \
-		ECW	"ECW & JPEG2000 support"	off \
+		ECW	"ECW & JPEG2000 support (THREAD required)"	off \
 		EXPAT	"Expat support"			off \
 		GEOS	"GEOS support"			off \
 		GEOTIFF	"GeoTIFF support"		on \
@@ -52,8 +52,8 @@ OPTIONS=	CFITSIO	"FITS support"			off \
 		PYTHON	"Python support"		on \
 		RUBY	"Ruby support"			off \
 		SQLITE	"SQLite support"		off \
-		THREAD	"Thread support"		off\
-		TIFF	"TIFF support"			on \
+		THREAD	"Thread support"		off \
+		TIFF	"External libtiff"		off \
 		XERCES	"Xerces support"		off
 
 .include <bsd.port.pre.mk>
@@ -70,13 +70,6 @@ LIB_DEPENDS+=		curl.6:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}/bin/curl-config
 .else
 CONFIGURE_ARGS+=	--with-curl=no
-.endif
-
-.if defined(WITH_ECW)
-LIB_DEPENDS+=		NCSEcw.0:${PORTSDIR}/graphics/libecwj2
-CONFIGURE_ARGS+=	--with-ecw=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--with-ecw=no
 .endif
 
 .if defined(WITH_EXPAT)
@@ -218,13 +211,26 @@ CONFIGURE_ARGS+=	--with-sqlite=no
 .endif
 
 .if !defined(WITHOUT_THREAD)
-CONFIGURE_ARGS+=	--with-threads=${PTHREAD_LIBS}
+CONFIGURE_ARGS+=	--with-threads=yes
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
+.if defined(WITH_ECW)
+LIB_DEPENDS+=		NCSEcw.0:${PORTSDIR}/graphics/libecwj2
+CONFIGURE_ARGS+=	--with-ecw=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--with-ecw=no
+.endif
+.else
+CONFIGURE_ARGS+=	--with-threads=no
+.if defined(WITH_ECW)
+IGNORE=		THREAD option required.  Please 'make config' again
+.endif
 .endif
 
 .if !defined(WITHOUT_TIFF)
 LIB_DEPENDS+=		tiff.4:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	--with-libtiff=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--with-libtiff=internal
 .endif
 
 .if defined(WITH_XERCES)
