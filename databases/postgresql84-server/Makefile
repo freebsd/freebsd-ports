@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 DISTVERSION?=	8.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -112,7 +112,7 @@ CONFIGURE_ARGS+=--with-icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
 PATCHFILES+=	pg-840-icu-2009-09-15.diff.gz:icu
 .   if defined(WITH_ICU4)
-LIB_DEPENDS+=	icudata.43:${PORTSDIR}/devel/icu4
+LIB_DEPENDS+=	icudata.44:${PORTSDIR}/devel/icu4
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
 .   else
 LIB_DEPENDS+=	icudata.38:${PORTSDIR}/devel/icu
