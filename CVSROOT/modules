@@ -12070,6 +12070,7 @@ p5-File-SafeDO                  ports/devel/p5-File-SafeDO
 p5-File-Scan                    ports/security/p5-File-Scan
 p5-File-Scan-ClamAV             ports/security/p5-File-Scan-ClamAV
 p5-File-ShareDir                ports/devel/p5-File-ShareDir
+p5-File-ShareDir-Install        ports/devel/p5-File-ShareDir-Install
 p5-File-ShareDir-PAR            ports/devel/p5-File-ShareDir-PAR
 p5-File-Slurp                   ports/devel/p5-File-Slurp
 p5-File-Slurp-Tree              ports/devel/p5-File-Slurp-Tree
@@ -15977,6 +15978,7 @@ p5-file-safedo                  ports/devel/p5-File-SafeDO
 p5-file-scan                    ports/security/p5-File-Scan
 p5-file-scan-clamav             ports/security/p5-File-Scan-ClamAV
 p5-file-sharedir                ports/devel/p5-File-ShareDir
+p5-file-sharedir-install        ports/devel/p5-File-ShareDir-Install
 p5-file-sharedir-par            ports/devel/p5-File-ShareDir-PAR
 p5-file-slurp                   ports/devel/p5-File-Slurp
 p5-file-slurp-tree              ports/devel/p5-File-Slurp-Tree
@@ -23457,6 +23459,7 @@ squirrelmail-sasql-plugin       ports/mail/squirrelmail-sasql-plugin
 squirrelmail-secure_login-plugin  ports/mail/squirrelmail-secure_login-plugin
 squirrelmail-shared_calendars-plugin  ports/mail/squirrelmail-shared_calendars-plugin
 squirrelmail-spam-buttons-plugin  ports/mail/squirrelmail-spam-buttons-plugin
+squirrelmail-squirrel_logger-plugin  ports/mail/squirrelmail-squirrel_logger-plugin
 squirrelmail-timeout_user-plugin  ports/mail/squirrelmail-timeout_user-plugin
 squirrelmail-tmda-plugin        ports/mail/squirrelmail-tmda-plugin
 squirrelmail-unsafe_image_rules-plugin  ports/mail/squirrelmail-unsafe_image_rules-plugin
