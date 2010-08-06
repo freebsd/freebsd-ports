@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	api-sanity-autotest
-PORTVERSION=	1.8
+PORTVERSION=	1.11
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://ispras.linux-foundation.org/images/e/e8/
-DISTFILES=	${PORTNAME:S/^a/A/}-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	http://linuxtesting.org/downloads/
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Quickly generate sanity tests for the API of a C/C++ shared library
