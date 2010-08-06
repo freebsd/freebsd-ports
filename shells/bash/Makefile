@@ -9,7 +9,7 @@
 PORTNAME=		bash
 PATCHLEVEL=		7
 PORTVERSION=		4.1.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
 			ftp://ftp.cwru.edu/pub/%SUBDIR%/:faq
@@ -45,6 +45,7 @@ INFO=			bash
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=		yes
 USE_BISON=		build
+USE_ICONV=		yes
 
 .if !defined(NOPORTDOCS)
 .if !defined(WITH_INCLUDED_FAQ)
