@@ -7,7 +7,7 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv
-PORTVERSION=	0.23
+PORTVERSION=	0.23.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.oregonstate.edu/pub/mythtv/
@@ -38,7 +38,7 @@ USE_PERL=	yes
 USE_PYTHON=	yes
 INSTALLS_EGGINFO=yes
 PYDISTUTILS_PKGNAME=MythTV
-PYDISTUTILS_PKGVERSION=${PORTVERSION}.0
+PYDISTUTILS_PKGVERSION=${PORTVERSION}
 USE_LDCONFIG=	${PREFIX}/lib/mythtv/filters
 REINPLACE_ARGS=	-i ""
 USE_RC_SUBR=	mythbackend
