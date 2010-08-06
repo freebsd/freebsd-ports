@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	buildbot
-PORTVERSION=	0.7.12
+PORTVERSION=	0.8.1
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Automated system from compile/test cycle to validate code changes
 
-USE_PYTHON=	yes
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.1:${PORTSDIR}/devel/py-Jinja2 \
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 USE_TWISTED_RUN=	conch mail web words
 
