@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.2.13-alpha
-PORTREVISION=	1
+DISTVERSION=	0.2.2.14-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.cypherpunks.at/dist/ \
@@ -24,7 +23,6 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-WITH_OPENSSL_PORT=	yes
 CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}" --disable-asciidoc
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
@@ -43,6 +41,10 @@ SUB_FILES=	pkg-message
 CONFLICTS=	tor-[0-9]*
 
 .include <bsd.port.pre.mk>
+
+.if  ( ${OSVERSION} < 801000 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900011) )
+WITH_OPENSSL_PORT=	yes
+.endif
 
 .if defined(WITH_BUFFREELISTS)
 CONFIGURE_ARGS+=	--enable-buf-freelists
@@ -83,15 +85,11 @@ post-patch:
 		${WRKSRC}/contrib/tor-tsocks.conf.sample
 	@${REINPLACE_CMD} -e "s|tor-tsocks.conf|tor-tsocks.conf.sample|g" \
 		${WRKSRC}/contrib/Makefile.in
-	@${FIND} -X ${WRKSRC} -type f | ${XARGS} \
-		-n 10 ${REINPLACE_CMD} -E \
-		-e 's|-g -O2||g' \
-		-e 's|-O2||g' \
-		-e 's|-g -O||g' \
-		-e 's|netinet/in6|netinet6/in6|g'
+	@${REINPLACE_CMD} -e '\|CFLAGS=|{s|-g||;s|-O[0-9]\{0,1\}||;}' \
+		-e 's|netinet/in6|netinet6/in6|g' ${WRKSRC}/configure
 
 post-configure:
-	@${FIND} -X ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
+	@${FIND} -X ${WRKSRC} -type f -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
 		"s|-lpthread|${PTHREAD_LIBS}|g"
 
 pre-su-install:
