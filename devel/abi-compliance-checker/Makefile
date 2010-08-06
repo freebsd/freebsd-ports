@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	abi-compliance-checker
-PORTVERSION=	1.16
+PORTVERSION=	1.20
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://ispras.linux-foundation.org/images/8/8d/
-DISTFILES=	${PORTNAME:S/^a/A/}-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	http://linuxtesting.org/downloads/
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Checks binary compatibility of two versions of a C/C++ shared library
@@ -33,6 +32,7 @@ post-patch:
 			s%\"g++\"%\"${CXX}\"%g; \
 			s%\"gcc\"%\"${CC}\"%g; }" \
 		-e "s%-shared%& -fPIC%g" \
+		-e "s%detailes%details%g" \
 		${WRKSRC}/${PORTNAME}.pl
 
 do-install:
