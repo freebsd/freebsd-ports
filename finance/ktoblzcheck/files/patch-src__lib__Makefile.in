@@ -1,0 +1,11 @@
+--- ./src/lib/Makefile.in.orig	2010-08-05 17:44:05.000000000 -0400
++++ ./src/lib/Makefile.in	2010-08-05 17:45:35.000000000 -0400
+@@ -758,7 +758,7 @@
+ 
+ 
+ ../bankdata/bankdatalist.h:
+-	make -C ../bankdata bankdatalist.h
++	$(MAKE) -C ../bankdata bankdatalist.h
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
