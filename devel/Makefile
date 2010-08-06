@@ -2849,7 +2849,6 @@
     SUBDIR += py-zopeInterface
     SUBDIR += py-zopeevent
     SUBDIR += py-zopetesting
-    SUBDIR += py_otp_interface
     SUBDIR += pybaz
     SUBDIR += pychecker
     SUBDIR += pycount
