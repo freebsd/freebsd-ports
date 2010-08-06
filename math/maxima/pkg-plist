@@ -186,6 +186,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_93.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_94.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_95.html
+%%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_96.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_abt.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_fot.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_ovr.html
@@ -297,8 +298,11 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/calculus/qualsp.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/calculus/revert.mac
 %%DATADIR%%/%%PORTVERSION%%/share/calculus/taylor1.mac
+%%DATADIR%%/%%PORTVERSION%%/share/colnew/colnew-if.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/colnew/colnew-lisp.system
 %%DATADIR%%/%%PORTVERSION%%/share/colnew/colnew-package.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/colnew/colnew.mac
+%%DATADIR%%/%%PORTVERSION%%/share/colnew/colnew.system
 %%DATADIR%%/%%PORTVERSION%%/share/colnew/lisp/approx.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/colnew/lisp/appsln.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/colnew/lisp/colnew.lisp
@@ -328,6 +332,8 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/colnew/lisp/subfor.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/colnew/lisp/vmonde.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/colnew/lisp/vwblok.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/colnew/prob1.mac
+%%DATADIR%%/%%PORTVERSION%%/share/colnew/prob2.mac
 %%DATADIR%%/%%PORTVERSION%%/share/combinatorics/README
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/Grobner/README
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/Grobner/grobner-demo.output
@@ -435,6 +441,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits/physical_constants.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits/rtestezunits.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/f90.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/finance/finance.es.texi
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/finance/finance.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/finance/finance.texi
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/floatproperties.lisp
@@ -688,8 +695,10 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/rand/vandpol.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/rand/vandpol.usg
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/rtest_lsquares.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/rtest_mnewton.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/rtest_opproperties.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/rtest_sequence.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/rtest_solve_rat_ineq.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/rtest_to_poly_solver.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/rtest_topoly.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/rtest_z_transform.mac
@@ -1220,6 +1229,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/sym/treillis.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/sym/tri.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/sym/util.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/template-standalone.texi
 %%DATADIR%%/%%PORTVERSION%%/share/template.texi
 %%DATADIR%%/%%PORTVERSION%%/share/tensor/ademo.dem
 %%DATADIR%%/%%PORTVERSION%%/share/tensor/adsitter.dem
@@ -1287,6 +1297,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/trigonometry/trgsmp.mac
 %%DATADIR%%/%%PORTVERSION%%/share/trigonometry/trigrat.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/utils/mactex-utilities.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/vector/rtest_vect.mac
 %%DATADIR%%/%%PORTVERSION%%/share/vector/vect.dem
 %%DATADIR%%/%%PORTVERSION%%/share/vector/vect.mac
 %%DATADIR%%/%%PORTVERSION%%/share/vector/vect.usg
@@ -1629,9 +1640,9 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest9.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest9a.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_abs.mac
-%%DATADIR%%/%%PORTVERSION%%/tests/rtest_ask.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_algebraic.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_allnummod.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/rtest_ask.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_boolean.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_diff_invtrig.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_dot.mac

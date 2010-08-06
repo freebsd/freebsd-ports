@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maxima
-PORTVERSION=	5.21.1
+PORTVERSION=	5.22.0
 CATEGORIES=	math tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -78,11 +78,12 @@ IGNORE=		define only one lisp
 
 post-patch:
 	${FIND} -X ${WRKSRC}/archive ${WRKSRC}/interfaces/xmaxima \
-	 -name "Makefile*" | ${XARGS} ${REINPLACE_CMD} -e "s;tclsh;${TCLSH};g"
+	-name "Makefile*" | ${XARGS} ${REINPLACE_CMD} -e "s;tclsh;${TCLSH};g"
+	${REINPLACE_CMD} -e "s;/usr/;${LOCALBASE}/;g" ${WRKSRC}/src/intl.lisp
 	( cd ${WRKSRC}/doc/info ; ${LOCALBASE}/bin/bash ./fix_crlf ; \
 	${LOCALBASE}/bin/bash ./fix_tab )
 
-regression-test: build
+test: build
 	${LOCALBASE}/bin/bash ${WRKSRC}/maxima-local --batch-string='run_testsuite();'
 
 .include <bsd.port.post.mk>
