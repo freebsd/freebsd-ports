@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gv
-PORTVERSION=	3.6.9
+PORTVERSION=	3.7.1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -35,14 +35,19 @@ MAN1=		gv.1 gv-update-userconfig.1
 INFO=		gv
 PLIST_FILES=	bin/gv \
 		bin/gv-update-userconfig \
-		${DATADIR_REL}/gv_class.ad \
-		${DATADIR_REL}/gv_copyright.dat \
-		${DATADIR_REL}/gv_spartan.dat \
-		${DATADIR_REL}/gv_system.ad \
-		${DATADIR_REL}/gv_user.ad \
-		${DATADIR_REL}/gv_user_res.dat \
-		${DATADIR_REL}/gv_widgetless.dat \
+		%%DATADIR%%/gv_class.ad \
+		%%DATADIR%%/gv_copyright.dat \
+		%%DATADIR%%/gv_spartan.dat \
+		%%DATADIR%%/gv_system.ad \
+		%%DATADIR%%/gv_user.ad \
+		%%DATADIR%%/gv_user_res.dat \
+		%%DATADIR%%/gv_widgetless.dat \
+		%%DATADIR%%/safe-gs-workdir/.keep_me \
 		lib/X11/app-defaults/GV
-PLIST_DIRS=	${DATADIR_REL}
+PLIST_DIRS=	%%DATADIR%%/safe-gs-workdir \
+		%%DATADIR%%
+
+post-install:
+	@${TOUCH} ${DATADIR}/safe-gs-workdir/.keep_me
 
 .include <bsd.port.mk>
