@@ -4468,3 +4468,5 @@ mail/moztraybiff|mail/mail-notification|2010-08-03|Depends on obsolete Thunderbi
 deskutils/lightning-xpi|deskutils/lightning|2010-08-03|Depends on obsolete Thunderbird 2.0
 sysutils/zfSnap|sysutils/zfsnap|2010-08-03|Change name to lower case
 mail/lightning|deskutils/lightning|2010-08-03|Upstream development discontinued
+mail/lightning|deskutils/lightning|2010-08-03|Upstream development discontinued
+devel/py_otp_interface|devel/py-interface|2010-08-06|Duplicate py-interface port has better distutils handling
