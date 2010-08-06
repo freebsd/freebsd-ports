@@ -14,7 +14,7 @@ MASTER_SITES=	BERLIOS \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 		${MGC_DISTNAME}${EXTRACT_SUFX}:mygpoclient
 
-MAINTAINER=	steinex@nognu.de
+MAINTAINER=	corky1951@comcast.net
 COMMENT=	A GTK2 podcast aggregrator written in Python
 
 RUN_DEPENDS=	py*-pysqlite>=2.3:${PORTSDIR}/databases/py-pysqlite23 \
@@ -56,7 +56,7 @@ RUN_DEPENDS+=	py*-imaging>=0:${PORTSDIR}/graphics/py-imaging
 LIB_DEPENDS+=	gpod.5:${PORTSDIR}/audio/libgpod
 RUN_DEPENDS+=	py*-mad>=0:${PORTSDIR}/audio/py-mad
 .if !exists(${PYTHON_SITELIBDIR}/gpod/__init__.py)
-IGNORE=		Requires Python bindings for libgpod. Please uninstall libgpod and reinstall with Python support.
+IGNORE=		requires Python bindings for libgpod. Please uninstall libgpod and reinstall with Python support
 .endif
 .endif
 
