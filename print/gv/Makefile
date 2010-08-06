@@ -21,6 +21,7 @@ USE_XORG=	xpm ice sm xext xmu x11
 USE_GHOSTSCRIPT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
+USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
