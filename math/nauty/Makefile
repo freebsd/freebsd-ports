@@ -6,28 +6,30 @@
 #
 
 PORTNAME=	nauty
-PORTVERSION=	2.0b9
+PORTVERSION=	2.4r1
 CATEGORIES=	math
-MASTER_SITES=	http://cs.anu.edu.au/~bdm/nauty/
-DISTNAME=	${PORTNAME}20beta9
+MASTER_SITES=	http://cs.anu.edu.au/~bdm/nauty/ \
+		http://www.c-s.li/ports/
+DISTNAME=	${PORTNAME}24r1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	Brendan McKay's graph isomorphism tester
 
-WRKSRC=		${WRKDIR}/${PORTNAME}20
+WRKSRC=		${WRKDIR}/${PORTNAME}24r1
 MAKEFILE=	makefile
-ALL_TARGET=	nauty
-NO_INSTALL_MANPAGES=yes
-PORTDOCS=	oldmanual.ps read.me
-PLIST_FILES=	bin/dreadnaut bin/dreadnaut1 bin/dreadnautL1 bin/dreadnautB
+ALL_TARGET=	all
+MAKE_JOBS_SAFE=	YES
+PORTDOCS=	nug.pdf
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|-O4|${CFLAGS}|' \
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|-O4 -march=i686|${CFLAGS}|' \
 		${WRKSRC}/${MAKEFILE}
 
 do-install:
-	cd ${WRKSRC}; 	${INSTALL_PROGRAM} dreadnaut dreadnaut1 \
-		dreadnautL1 dreadnautB  ${PREFIX}/bin
+	cd ${WRKSRC}; ${INSTALL_PROGRAM} dreadnaut copyg listg labelg dretog \
+		amtog geng complg shortg showg NRswitchg biplabg addedgeg \
+		deledgeg countg pickg genrang newedgeg catg genbg directg \
+		multig planarg gentourng ${PREFIX}/bin
 
 post-install:
 .if !defined(NOPORTDOCS)
