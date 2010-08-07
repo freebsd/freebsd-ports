@@ -7,7 +7,7 @@
 
 PORTNAME=	connect4
 PORTVERSION=	3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_COMP_SOURCES}
 MASTER_SITE_SUBDIR=	games/volume6
@@ -26,10 +26,14 @@ EXTRACT_AFTER_ARGS=	| gunshar
 NO_WRKSUBDIR=	yes
 MAN6=		connect4.6
 
+SCOREFILE=	/var/games/connect4.scores
+PLIST_SUB=	SCOREFILE=${SCOREFILE}
+
 do-install:
-	${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/c4 ${PREFIX}/bin/connect4
-	@${MKDIR} ${PREFIX}/share/connect4
-	${INSTALL_DATA} -m 664 -o root -g games /dev/null ${PREFIX}/share/connect4/scores
+	${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/c4 \
+	    ${PREFIX}/bin/connect4
+	test -f ${SCOREFILE} || \
+	    ${INSTALL_DATA} -m 664 -o root -g games /dev/null ${SCOREFILE}
 	${INSTALL_MAN} ${FILESDIR}/connect4.6 ${MANPREFIX}/man/man6
 
 .include <bsd.port.mk>
