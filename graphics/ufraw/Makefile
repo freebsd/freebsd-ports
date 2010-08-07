@@ -7,7 +7,7 @@
 
 PORTNAME=	ufraw
 PORTVERSION=	0.16
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -53,7 +53,7 @@ PC_FALSE+=	gimp
 PLIST_SUB+=	GIMP="@comment "
 .endif
 .if !defined(WITHOUT_LENSFUN)
-LIB_DEPENDS+=	lensfun.0:${PORTSDIR}/graphics/lensfun
+LIB_DEPENDS+=	lensfun.2:${PORTSDIR}/graphics/lensfun
 CONFIGURE_ARGS+=	--with-lensfun
 .endif
 .if defined(WITH_FITS) || exists(${LOCALBASE}/lib/libcfitsio.so)
