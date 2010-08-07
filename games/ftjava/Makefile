@@ -9,7 +9,7 @@ PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	http://www.warpfish.com/davisje/:file1 \
-		http://home.nycap.rr.com/davisje/ftjava/:doc1
+		http://home.roadrunner.com/~davisje/ftjava/:doc1
 DISTFILES=	FTJavaV${PORTVERSION}.zip:file1 \
 		FTJava_Documentation.html:doc1 faq.html:doc1 FTJava_Linux.html:doc1
 DIST_SUBDIR=	${PORTNAME}
