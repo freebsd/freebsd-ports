@@ -931,6 +931,7 @@
     SUBDIR += vindaloo
     SUBDIR += vips
     SUBDIR += visionegg
+    SUBDIR += visionworkbench
     SUBDIR += visprint
     SUBDIR += vp
     SUBDIR += vrml2pov
