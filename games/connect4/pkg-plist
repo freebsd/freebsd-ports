@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/connect4
-share/connect4/scores
-@dirrm share/connect4
+@exec test -f %%SCOREFILE%% || install -o root -g games -m 664 /dev/null %%SCOREFILE%%
+@unexec test -s %%SCOREFILE%% || rm -f %%SCOREFILE%%

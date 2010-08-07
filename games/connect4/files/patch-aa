@@ -1,30 +1,17 @@
-*** Makefile.orig	Fri Nov  3 02:23:51 2000
---- Makefile	Fri Nov  3 02:24:41 2000
-***************
-*** 1,10 ****
-  # Makefile for c4
-  
-! CFLAGS = -g #-DSCOREFILE=\"/usr/games/lib/c4.scores\" 
-  CURSES = -lcurses -ltermcap
-  
-  c4 : c4.o screen.o c4.h tables.h types.h
-! 	cc $(CFLAGS) -o c4 c4.o screen.o $(CURSES)
-  
-  screen.o : c4.h
-  
---- 1,15 ----
-  # Makefile for c4
-+ # Patched for FreeBSD 2.1.5R by 
-+ # Joel Sutton <suttonj@interconnect.com.au>
-+ # 15th April, 1997
-  
-! CFLAGS += -DSCOREFILE=\"$(PREFIX)/share/connect4/scores\" 
-  CURSES = -lcurses -ltermcap
-  
-+ all:	c4
-+ 
-  c4 : c4.o screen.o c4.h tables.h types.h
-! 	$(CC) $(CFLAGS) -o c4 c4.o screen.o $(CURSES)
-  
-  screen.o : c4.h
-  
+--- Makefile.orig	2010-08-07 20:02:05.000000000 +0200
++++ Makefile	2010-08-07 20:23:05.000000000 +0200
+@@ -1,10 +1,12 @@
+ # Makefile for c4
+ 
+-CFLAGS = -g #-DSCOREFILE=\"/usr/games/lib/c4.scores\" 
++CFLAGS += -DSCOREFILE=\"/var/games/connect4.scores\" 
+ CURSES = -lcurses -ltermcap
+ 
++all:	c4
++
+ c4 : c4.o screen.o c4.h tables.h types.h
+-	cc $(CFLAGS) -o c4 c4.o screen.o $(CURSES)
++	$(CC) $(CFLAGS) -o c4 c4.o screen.o $(CURSES)
+ 
+ screen.o : c4.h
+ 
