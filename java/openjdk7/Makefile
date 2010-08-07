@@ -33,10 +33,9 @@ ANT_DISTFILE=		apache-ant-${ANT_VERSION}-bin
 
 LATEST_LINK=		openjdk7
 
-USE_GMAKE=	yes
-USE_ICONV=	yes
+USE_GMAKE=	YES
+USE_ICONV=	YES
 USE_XORG+=	x11 xext xi xrender xt xtst
-MAKE_JOBS_SAFE=	yes
 
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
@@ -74,8 +73,8 @@ MAKE_ENV+=	LANG="C" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		MILESTONE="fcs"
 
-.if !defined(DISABLE_MAKE_JOBS)
-MAKE_ENV+=	HOTSPOT_BUILD_JOBS=${MAKE_JOBS_NUMBER}
+.if defined(HOTSPOT_BUILD_JOBS)
+MAKE_ENV+=	HOTSPOT_BUILD_JOBS="${HOTSPOT_BUILD_JOBS}"
 .endif
 
 BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk7 \
