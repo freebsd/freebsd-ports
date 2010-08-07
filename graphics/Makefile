@@ -748,6 +748,7 @@
     SUBDIR += pstoepsi
     SUBDIR += pvmpov
     SUBDIR += py-PyX
+    SUBDIR += py-aafigure
     SUBDIR += py-amanith
     SUBDIR += py-cairo
     SUBDIR += py-cgkit
