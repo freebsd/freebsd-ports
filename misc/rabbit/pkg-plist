@@ -2,7 +2,6 @@ bin/rabbirc
 bin/rabbit
 bin/rabbit-command
 bin/rabbit-theme-manager
-bin/rabbit.bat
 bin/rabbitter
 bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/action.rb

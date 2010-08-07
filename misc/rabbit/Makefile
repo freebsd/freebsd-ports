@@ -7,6 +7,7 @@
 
 PORTNAME=	rabbit
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	misc ruby
 MASTER_SITES=	http://www.cozmixng.org/~kou/download/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/rabbit|}
@@ -20,8 +21,14 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
+RUBY_SHEBANG_FILES=	bin/rabbirc bin/rabbit bin/rabbit-command \
+			bin/rabbit-theme-manager bin/rabbitter bin/rabrick
+
 DOCS_EN=	NEWS.en README.en
 DOCS_JA=	NEWS.ja README.ja
+
+pre-install:
+	${RM} -f ${WRKSRC}/bin/rabbit.bat
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
