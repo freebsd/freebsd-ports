@@ -73,8 +73,6 @@ bin/gpodder-backup
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface/welcome.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/model.py
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/model.pyc
-%%PYTHON_SITELIBDIR%%/gpodder/gtkui/mygpodder.py
-%%PYTHON_SITELIBDIR%%/gpodder/gtkui/mygpodder.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/opml.py
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/opml.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/services.py
@@ -83,6 +81,8 @@ bin/gpodder-backup
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/widgets.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/gui.py
 %%PYTHON_SITELIBDIR%%/gpodder/gui.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/hooks.py
+%%PYTHON_SITELIBDIR%%/gpodder/hooks.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/launcher.py
 %%PYTHON_SITELIBDIR%%/gpodder/launcher.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/libconverter.py
@@ -97,6 +97,8 @@ bin/gpodder-backup
 %%PYTHON_SITELIBDIR%%/gpodder/my.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/opml.py
 %%PYTHON_SITELIBDIR%%/gpodder/opml.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/player.py
+%%PYTHON_SITELIBDIR%%/gpodder/player.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/qtui.py
 %%PYTHON_SITELIBDIR%%/gpodder/qtui.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/services.py
@@ -182,7 +184,6 @@ share/dbus-1/services/org.gpodder.service
 %%DATADIR%%/ui/desktop/gpoddershownotes.ui
 %%DATADIR%%/ui/desktop/gpoddersyncprogress.ui
 %%DATADIR%%/ui/gpodderwelcome.ui
-%%DATADIR%%/ui/mygpoddersettings.ui
 share/icons/hicolor/16x16/apps/gpodder.png
 share/icons/hicolor/22x22/apps/gpodder.png
 share/icons/hicolor/24x24/apps/gpodder.png
