@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: sixxs-aiccu
-# REQUIRE: NETWORKING
+# REQUIRE: NETWORKING ldconfig
 
 #
 # Add the following lines to /etc/rc.conf to enable sixxs-aiccu:
