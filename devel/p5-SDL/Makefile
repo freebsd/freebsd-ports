@@ -22,6 +22,8 @@ USE_PERL5=	yes
 USE_SDL=	sdl
 PERL_MODBUILD=	yes
 
+BROKEN=		does not build
+
 OPTIONS=	SDL_TTF "Enable TTF support" on \
 			SDL_NET "Enable NET support" on \
 			SDL_GFX "Enable GFX support" on \
