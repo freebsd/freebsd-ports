@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	playd
-PORTVERSION=	1.7.12
+PORTVERSION=	1.8.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.bsdroot.lv/FreeBSD/distfiles/
 DISTNAME=	playd.sh-${PORTVERSION}
@@ -28,4 +28,5 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/playd.sh ${PREFIX}/bin/playd
 	${INSTALL_MAN} ${WRKSRC}/man/man1/playd.1 ${PREFIX}/man/man1/
 
+# vim: set ts=8 sw=8:
 .include <bsd.port.mk>
