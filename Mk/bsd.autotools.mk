@@ -105,7 +105,7 @@ AUTOMAKE_SUFFIX=	${AUTOMAKE_VERSION:C/([0-9])(.*)/\1.\2/}
 # Make sure we specified a legal version of automake
 #
 . if !exists(${PORTSDIR}/devel/automake${AUTOMAKE_VERSION}/Makefile)
-IGNORE+=	cannot install: unknown AUTOMAKE version: ${AUTOMAKE_VERSION}
+#IGNORE+=	cannot install: unknown AUTOMAKE version: ${AUTOMAKE_VERSION}
 . endif
 
 # Set up the automake environment
@@ -151,7 +151,7 @@ AUTOCONF_SUFFIX=	${AUTOCONF_VERSION:C/([0-9])(.*)/\1.\2/}
 # Make sure we specified a legal version of autoconf
 #
 . if !exists(${PORTSDIR}/devel/autoconf${AUTOCONF_VERSION}/Makefile)
-IGNORE+=	cannot install: unknown AUTOCONF version: ${AUTOCONF_VERSION}
+#IGNORE+=	cannot install: unknown AUTOCONF version: ${AUTOCONF_VERSION}
 . endif
 
 # Set up the autoconf/autoheader environment
@@ -198,7 +198,7 @@ LIBTOOL_VERSION=		${AUTOTOOL_libtool_env}
 # Make sure we specified a legal version of libtool
 #
 . if !exists(${PORTSDIR}/devel/libtool${LIBTOOL_VERSION}/Makefile)
-IGNORE+=	cannot install: unknown LIBTOOL version: ${LIBTOOL_VERSION}
+#IGNORE+=	cannot install: unknown LIBTOOL version: ${LIBTOOL_VERSION}
 . endif
 
 # Set up the libtool environment

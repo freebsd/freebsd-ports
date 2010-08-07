@@ -12,8 +12,7 @@
 # X.Y.  To request a specific version omit the trailing + sign.  Use of
 # a Fortran compiler is declared by the USE_FORTRAN knob, not USE_GCC.
 #
-# As of 2010-06-06, USE_GCC=4.3 is deprecated and USE_GCC=4.3+ is
-# transparently rewritten to USE_GCC=4.4+.
+# As of 2010-06-06, USE_GCC=4.3+ is transparently rewritten to USE_GCC=4.4+.
 #
 # Examples:
 #   USE_GCC=	4.2+		# port requires GCC 4.2 or later.
@@ -40,14 +39,13 @@ GCC_Include_MAINTAINER=		gerald@FreeBSD.org
 
 # All GCC versions supported by the ports framework.  Keep them in
 # ascending order and in sync with the table below. 
-GCCVERSIONS=	030402 040200 040300 040400 040500 040600
+GCCVERSIONS=	030402 040200 040400 040500 040600
 
 # The first field if the OSVERSION in which it appeared in the base.
 # The second field is the OSVERSION in which it disappeared from the base.
 # The third field is the version as USE_GCC would use.
 GCCVERSION_030402=	502126 700042 3.4
 GCCVERSION_040200=	700042 999999 4.2
-GCCVERSION_040300=	999999 999999 4.3
 GCCVERSION_040400=	999999 999999 4.4
 GCCVERSION_040500=	999999 999999 4.5
 GCCVERSION_040600=	999999 999999 4.6
@@ -117,7 +115,6 @@ MAKE_ENV+=		F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
 
 .if defined(USE_GCC)
 
-# USE_GCC=4.3 is deprecated...
 .if ${USE_GCC} == "4.3+"
 USE_GCC=4.4+
 .endif
