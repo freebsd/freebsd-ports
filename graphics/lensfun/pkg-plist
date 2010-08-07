@@ -1,4 +1,5 @@
 lib/liblensfun.so
+lib/liblensfun.so.%%LIBVERSION%%
 libdata/pkgconfig/lensfun.pc
 include/lensfun.h
 %%DATADIR%%/6x6.xml
@@ -39,4 +40,3 @@ share/doc/lensfun-%%PORTVERSION%%/cc-by-sa-3.0.txt
 @dirrm share/doc/lensfun-%%PORTVERSION%%
 @dirrm %%DATADIR%%
 @dirrmtry lib/pkgconfig
-@exec ln -fs lib/liblensfun.so lib/liblensfun.so.2
