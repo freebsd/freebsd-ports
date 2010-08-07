@@ -29,7 +29,6 @@ CONTRIB_FILES=	bash_completion \
 		convert-repo \
 		dumprevlog \
 		hg-ssh \
-		hgdiff \
 		hgk \
 		logo-droplets.svg \
 		memory.py \
@@ -39,7 +38,6 @@ CONTRIB_FILES=	bash_completion \
 		perf.py \
 		pylintrc \
 		python-hook-examples.py \
-		rewrite-log \
 		sample.hgrc \
 		shrink-revlog.py \
 		simplemerge \
