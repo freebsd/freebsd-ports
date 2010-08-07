@@ -7,6 +7,7 @@
 
 PORTNAME=	lensfun
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	BERLIOS
 
@@ -30,7 +31,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_ARGS=	--prefix=${PREFIX} --target=${TARGET} --vectorization=SSE
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} LIBVERSION=${LIBVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e '1s|#!/usr/bin/python|#!/usr/bin/env python|' \
@@ -41,5 +42,8 @@ post-patch:
 		${WRKSRC}/build/lensfun.spec.in
 	@${REINPLACE_CMD} -e 's|CONF_LIBDIR)pkgconfig|CONF_LIBDIR)../libdata/pkgconfig|g' \
 		${WRKSRC}/build/tibs/compiler/pkgconfig.mak
+
+post-install:
+	@${LN} -sf ${PREFIX}/lib/lib${PORTNAME}.so ${PREFIX}/lib/lib${PORTNAME}.so.${LIBVERSION}
 
 .include <bsd.port.mk>
