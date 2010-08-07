@@ -7,6 +7,7 @@
 
 PORTNAME=	bbkeys
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF
 
@@ -38,6 +39,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
