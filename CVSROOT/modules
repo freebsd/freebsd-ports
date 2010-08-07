@@ -7774,6 +7774,7 @@ libfb                           ports/net/libfb
 libfec                          ports/comms/libfec
 libffi                          ports/devel/libffi
 libfirm                         ports/devel/libfirm
+libfishsound                    ports/audio/libfishsound
 libfixbuf                       ports/net/libfixbuf
 libflash                        ports/graphics/libflash
 libfontenc                      ports/x11-fonts/libfontenc
@@ -12925,6 +12926,7 @@ p5-Module-Starter-Plugin-SimpleStore  ports/devel/p5-Module-Starter-Plugin-Simpl
 p5-Module-Starter-Plugin-TT2    ports/devel/p5-Module-Starter-Plugin-TT2
 p5-Module-Used                  ports/devel/p5-Module-Used
 p5-Module-Util                  ports/devel/p5-Module-Util
+p5-Module-Version               ports/devel/p5-Module-Version
 p5-Module-Versions              ports/devel/p5-Module-Versions
 p5-Module-Versions-Report       ports/devel/p5-Module-Versions-Report
 p5-MogileFS-Client              ports/sysutils/p5-MogileFS-Client
@@ -16843,6 +16845,7 @@ p5-module-starter-plugin-simplestore  ports/devel/p5-Module-Starter-Plugin-Simpl
 p5-module-starter-plugin-tt2    ports/devel/p5-Module-Starter-Plugin-TT2
 p5-module-used                  ports/devel/p5-Module-Used
 p5-module-util                  ports/devel/p5-Module-Util
+p5-module-version               ports/devel/p5-Module-Version
 p5-module-versions              ports/devel/p5-Module-Versions
 p5-module-versions-report       ports/devel/p5-Module-Versions-Report
 p5-mogilefs-client              ports/sysutils/p5-MogileFS-Client
@@ -18619,6 +18622,7 @@ paraview                        ports/science/paraview
 parcellite                      ports/deskutils/parcellite
 parchive                        ports/archivers/parchive
 pardiff                         ports/textproc/pardiff
+paredit-mode.el                 ports/editors/paredit-mode.el
 pari                            ports/math/pari
 paris-traceroute                ports/net/paris-traceroute
 parmetis                        ports/math/parmetis
@@ -21286,7 +21290,6 @@ py-zsi                          ports/net/py-zsi
 py25-bsddb                      ports/databases/py25-bsddb
 py2html                         ports/textproc/py2html
 py31-tkinter                    ports/x11-toolkits/py31-tkinter
-py_otp_interface                ports/devel/py_otp_interface
 pyawale                         ports/games/pyawale
 pybaz                           ports/devel/pybaz
 pybench                         ports/benchmarks/pybench
