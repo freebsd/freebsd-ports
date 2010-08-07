@@ -12,6 +12,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Cursor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Event.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Font.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Game/Rect.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/MPEG.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Mixer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Music.pm
@@ -30,6 +31,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tutorial/Animation.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tutorial/Drawing.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tutorial/Images.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tutorial/LunarLander.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Video.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SDL_perl.pm
@@ -37,6 +39,7 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL/SFont
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SDL_perl
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Game
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SDL/OpenGL
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tool
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SDL/Tutorial
