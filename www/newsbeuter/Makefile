@@ -6,6 +6,7 @@
 
 PORTNAME=	newsbeuter
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://newsbeuter.org/downloads/
 
@@ -22,7 +23,6 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_PERL5_BUILD=yes
 USE_SQLITE=	yes
-USE_RUBY=	yes
 USE_GCC=	4.2+
 USE_GNOME=	libxml2
 
