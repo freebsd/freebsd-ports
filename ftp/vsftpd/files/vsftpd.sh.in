@@ -10,7 +10,8 @@
 # 1. add the following line(s) to /etc/rc.conf to enable `vsftpd':
 #
 # vsftpd_enable="YES"
-# vsftpd_flags="/some/path/conf.file" # Not required
+# vsftpd_flags="-ooption=value" # Not required
+# vsftpd_config="/some/path/conf.file" # Not required
 #
 # 2. tell vsftpd about standalone mode
 # Edit %%PREFIX%%/etc/vsftpd.conf (or /some/path/conf.file) to contain
@@ -27,23 +28,24 @@ rcvar=`set_rcvar`
 
 load_rc_config "$name"
 : ${vsftpd_enable:="NO"}
+: ${vsftpd_config:="%%PREFIX%%/etc/$name.conf"}
 
 command="%%PREFIX%%/libexec/$name"
-required_files="%%PREFIX%%/etc/$name.conf"
+required_files="${vsftpd_config}"
 start_precmd="vsftpd_check"
 extra_commands="reload"
 
 vsftpd_check()
 {
-	if grep -q "^ftp[ 	]" /etc/inetd.conf ${required_files}
+	if grep -q "^ftp[ 	]" /etc/inetd.conf
 	then
 		err 1 "ftp is already activated in /etc/inetd.conf"
 	fi
-	if ! egrep -q -i -E "^listen.*=.*YES$" ${required_files}
+	if ! egrep -q -i -E "^listen.*=.*YES$" ${vsftpd_config}
 	then
 		err 1 'vsftpd script need "listen=YES" in config file'
 	fi
-	if ! egrep -q -i -E "^background.*=.*YES$" ${required_files}
+	if ! egrep -q -i -E "^background.*=.*YES$" ${vsftpd_config}
 	then
 		err 1 'vsftpd script need "background=YES" in config file'
 	fi

@@ -1,0 +1,87 @@
+diff -ruN ../vsftpd-2.0.7.orig/parseconf.c ./parseconf.c
+--- ../vsftpd-2.0.7.orig/parseconf.c	2008-08-01 18:35:33.000000000 +0300
++++ ./parseconf.c	2008-08-01 18:35:30.000000000 +0300
+@@ -149,6 +149,7 @@
+   { "secure_chroot_dir", &tunable_secure_chroot_dir },
+   { "ftp_username", &tunable_ftp_username },
+   { "chown_username", &tunable_chown_username },
++  { "pid_file", &tunable_pid_file },
+   { "xferlog_file", &tunable_xferlog_file },
+   { "vsftpd_log_file", &tunable_vsftpd_log_file },
+   { "message_file", &tunable_message_file },
+diff -ruN ../vsftpd-2.0.7.orig/standalone.c ./standalone.c
+--- ../vsftpd-2.0.7.orig/standalone.c	2008-08-01 18:35:34.000000000 +0300
++++ ./standalone.c	2008-08-01 18:46:36.000000000 +0300
+@@ -7,6 +7,8 @@
+  * Code to listen on the network and launch children servants.
+  */
+ 
++#include <stdio.h>
++
+ #include "standalone.h"
+ 
+ #include "parseconf.h"
+@@ -49,7 +51,23 @@
+     int forkret = vsf_sysutil_fork();
+     if (forkret > 0)
+     {
+-      /* Parent, just exit */
++      /* Parent, write pidfile (if nessesary) and exit. */
++      if (tunable_pid_file)
++      {
++        FILE* pidfile = fopen(tunable_pid_file, "w");
++        if (NULL != pidfile)
++        {
++          if (0 > fprintf(pidfile, "%d\n", forkret))
++          {
++            die2("failed write to pidfile:", tunable_pid_file);
++          }
++          fclose(pidfile);
++        }
++        else
++        {
++          die2("cannot open pidfile:", tunable_pid_file);
++        }
++      }
+       vsf_sysutil_exit(0);
+     }
+     /* Son, close standard FDs to avoid SSH hang-on-exit */
+diff -ruN ../vsftpd-2.0.7.orig/tunables.c ./tunables.c
+--- ../vsftpd-2.0.7.orig/tunables.c	2008-08-01 18:35:33.000000000 +0300
++++ ./tunables.c	2008-08-01 18:55:17.000000000 +0300
+@@ -107,6 +107,7 @@
+ const char* tunable_secure_chroot_dir;
+ const char* tunable_ftp_username;
+ const char* tunable_chown_username;
++const char* tunable_pid_file = 0;
+ const char* tunable_xferlog_file;
+ const char* tunable_vsftpd_log_file;
+ const char* tunable_message_file;
+diff -ruN ../vsftpd-2.0.7.orig/tunables.h ./tunables.h
+--- ../vsftpd-2.0.7.orig/tunables.h	2008-08-01 18:35:34.000000000 +0300
++++ ./tunables.h	2008-08-01 18:35:31.000000000 +0300
+@@ -101,6 +101,7 @@
+ extern const char* tunable_secure_chroot_dir;
+ extern const char* tunable_ftp_username;
+ extern const char* tunable_chown_username;
++extern const char* tunable_pid_file;
+ extern const char* tunable_xferlog_file;
+ extern const char* tunable_vsftpd_log_file;
+ extern const char* tunable_message_file;
+diff -ruN ../vsftpd-2.0.7.orig/vsftpd.conf.5 ./vsftpd.conf.5
+--- ../vsftpd-2.0.7.orig/vsftpd.conf.5	2008-08-01 18:35:34.000000000 +0300
++++ ./vsftpd.conf.5	2008-08-01 18:35:31.000000000 +0300
+@@ -923,6 +923,13 @@
+ 
+ Default: (none - the address is taken from the incoming connected socket)
+ .TP
++.B pid_file
++This option has efect only if
++.BR background
++is set. It writes pid of running daemon to file at the specified path.
++
++Default: (none) (no pidfile is created)
++.TP
+ .B rsa_cert_file
+ This option specifies the location of the RSA certificate to use for SSL
+ encrypted connections.

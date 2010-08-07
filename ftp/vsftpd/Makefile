@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vsftpd
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://vsftpd.beasts.org/users/cevans/
 PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
@@ -26,7 +26,8 @@ DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
 LDFLAGS+=	-lwrap
 
 OPTIONS=	RC_NG		"install RC_NG script"		off \
-		VSFTPD_SSL	"Include support for SSL"	off
+		VSFTPD_SSL	"Include support for SSL"	off \
+		PIDFILE		"unofficial support for pidfile"	off
 
 .include <bsd.port.pre.mk>
 
@@ -44,6 +45,10 @@ CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 .else
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+.endif
+
+.if defined(WITH_PIDFILE)
+EXTRA_PATCHES+=	${FILESDIR}/pidfile.patch
 .endif
 
 do-configure:
