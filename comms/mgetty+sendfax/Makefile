@@ -7,7 +7,7 @@
 
 PORTNAME=	mgetty
 PORTVERSION=	1.1.35
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms
 MASTER_SITES=	ftp://mgetty.greenie.net/pub/mgetty/source/1.1/
 DISTNAME=	${PORTNAME}${PORTVERSION}-Feb22
@@ -19,6 +19,7 @@ USE_PERL5=	yes
 
 CONFLICTS=	netpbm-[0-9]*
 
+SUB_FILES=	pkg-message mgettycfg
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_FLAGS=	CFLAGS="${CFLAGS}" prefix=${PREFIX} -f
 ALL_TARGET=	noident all
@@ -102,8 +103,7 @@ post-install:
 	${INSTALL_DATA} -m 600 ${WRKSRC}/voice/voice.conf-dist \
 		${PREFIX}/etc/mgetty+sendfax/voice.conf.dist
 	@${TAR}  -cf - -C ${WRKSRC} samples | ${TAR}  -xf - -C ${PREFIX}/lib/mgetty+sendfax/
-.if !defined(BATCH)
-	@(cd ${PKGDIR}; export PKG_PREFIX=${PREFIX}; ${PERL5} ${PKGINSTALL} _ POST-INSTALL)
-.endif
+	@${INSTALL_SCRIPT} ${WRKDIR}/mgettycfg ${PREFIX}/bin
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
