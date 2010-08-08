@@ -7,7 +7,7 @@
 
 PORTNAME=	bsdgroup-firefox-searchplugin
 PORTVERSION=	0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	german www
 MASTER_SITES=	http://www.crashmail.de/files/ \
 		http://people.bsdgroup.de/~steve/files/
@@ -17,8 +17,9 @@ EXTRACT_ONLY=	yes
 MAINTAINER=	stefan.tell@crashmail.de
 COMMENT=	Firefox searchplugins for the www.BSDGroup.de board
 
+RUN_DEPENDS=	firefox3:${PORTSDIR}/www/firefox
+
 NO_BUILD=	yes
-USE_GECKO=	libxul
 
 do-extract:
 	@${MKDIR} ${WRKSRC}

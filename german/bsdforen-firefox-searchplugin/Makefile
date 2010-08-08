@@ -7,7 +7,7 @@
 
 PORTNAME=	bsdforen-firefox-searchplugin
 PORTVERSION=	0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	german www
 MASTER_SITES=	http://www.crashmail.de/files/ \
 		http://people.bsdgroup.de/~steve/files/
@@ -17,8 +17,9 @@ EXTRACT_ONLY=	yes
 MAINTAINER=	stefan.tell@crashmail.de
 COMMENT=	Firefox searchplugins for the www.bsdforen.de board and wiki
 
+RUN_DEPENDS=	firefox3:${PORTSDIR}/www/firefox
+
 NO_BUILD=	yes
-USE_GECKO=	libxul
 
 .include <bsd.port.pre.mk>
 
