@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpeg2theora
-PORTVERSION=	0.24
-PORTREVISION=	4
+PORTVERSION=	0.27
 CATEGORIES=	multimedia
-MASTER_SITES=	http://v2v.cc/~j/ffmpeg2theora/
+MASTER_SITES=	http://v2v.cc/~j/ffmpeg2theora/downloads/
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Reencode many media file formats to Ogg Theora
