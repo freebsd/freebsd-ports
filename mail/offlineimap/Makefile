@@ -6,29 +6,25 @@
 #
 
 PORTNAME=	offlineimap
-PORTVERSION=	6.0.3
+DISTVERSION=	6.2.0.2
+DISTVERSIONSUFFIX=-0-g6b1cb5e
 CATEGORIES=	mail python
-MASTER_SITES=	http://software.complete.org/software/attachments/download/334/ \
+MASTER_SITES=	http://download.github.com/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sergei
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	jgoerzen-${PORTNAME}-debian-${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Powerful IMAP/Maildir synchronization and reader support
 
-.if !defined(WITHOUT_X11)
-RUN_DEPENDS=	${TKINTER}:${PORTSDIR}/x11-toolkits/py-tkinter
-
-TKINTER=	${PYTHON_SITELIBDIR}/_tkinter.so
-.endif
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/jgoerzen-${PORTNAME}-0f1a667
 SUB_FILES=	pkg-message
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGVERSION=${PORTVERSION:R}
 
-DOCS=		COPYING COPYRIGHT FAQ.html README UPGRADING
+DOCS=		COPYING COPYRIGHT FAQ.html UPGRADING
 EXAMPLES=	offlineimap.conf offlineimap.conf.minimal
 
 post-install:
