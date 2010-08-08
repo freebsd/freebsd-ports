@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	t-prot
-PORTVERSION=	2.5
-PORTREVISION=	2
+PORTVERSION=	2.99
 CATEGORIES=	mail
 MASTER_SITES=	http://www.escape.de/~tolot/mutt/t-prot/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -16,7 +15,7 @@ MASTER_SITE_SUBDIR=	sergei
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	TOFU Protection - Display Filter for RFC822 messages
 
-RUN_DEPENDS=	${SITE_PERL}/Getopt/Mixed.pm:${PORTSDIR}/devel/p5-Getopt-Mixed
+RUN_DEPENDS=	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long
 
 USE_PERL5=	yes
 NO_BUILD=	yes
@@ -27,8 +26,10 @@ DOCS=		ChangeLog README TODO
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/t-prot ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/t-prot.1 ${MAN1PREFIX}/man/man1
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/contrib/* ${EXAMPLESDIR}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
