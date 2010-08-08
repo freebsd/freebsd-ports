@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PPIx-Regexp
-PORTVERSION=	0.008
+PORTVERSION=	0.010
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/W/WY/WYANT
@@ -22,7 +22,8 @@ BUILD_DEPENDS=	p5-List-MoreUtils>0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-Scalar-List-Utils>0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Task-Weaken>0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
+
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8+
 
