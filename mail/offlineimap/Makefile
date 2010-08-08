@@ -18,11 +18,12 @@ COMMENT=	Powerful IMAP/Maildir synchronization and reader support
 
 .if !defined(WITHOUT_X11)
 RUN_DEPENDS=	${TKINTER}:${PORTSDIR}/x11-toolkits/py-tkinter
+
 TKINTER=	${PYTHON_SITELIBDIR}/_tkinter.so
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -37,8 +38,6 @@ post-install:
 .endif
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
-	@${SED} -e 's!%%EXAMPLESDIR%%!${EXAMPLESDIR}!' \
-		${MASTERDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
