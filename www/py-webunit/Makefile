@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	webunit
-PORTVERSION=	1.3.9
+PORTVERSION=	1.3.10
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP \
-		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
