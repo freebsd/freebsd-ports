@@ -823,6 +823,7 @@
     SUBDIR += stepbill
     SUBDIR += stepmania-devel
     SUBDIR += stonesoup
+    SUBDIR += stonesoup-sdl
     SUBDIR += stormbaancoureur
     SUBDIR += stransball2
     SUBDIR += stratagus
