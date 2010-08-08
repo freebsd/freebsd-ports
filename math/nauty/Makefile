@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	nauty
-PORTVERSION=	2.4r1
+PORTVERSION=	2.4r2
 CATEGORIES=	math
 MASTER_SITES=	http://cs.anu.edu.au/~bdm/nauty/ \
 		http://www.c-s.li/ports/
-DISTNAME=	${PORTNAME}24r1
+DISTNAME=	${PORTNAME}24r2
 
 MAINTAINER=	c-s@c-s.li
 COMMENT=	Brendan McKay's graph isomorphism tester
 
-WRKSRC=		${WRKDIR}/${PORTNAME}24r1
+WRKSRC=		${WRKDIR}/${PORTNAME}24r2
 MAKEFILE=	makefile
-ALL_TARGET=	all
+GNU_CONFIGURE=	YES
 MAKE_JOBS_SAFE=	YES
 PORTDOCS=	nug.pdf
 
