@@ -560,7 +560,6 @@
     SUBDIR += mod_vdbh
     SUBDIR += mod_vhost_ldap
     SUBDIR += mod_vhs
-    SUBDIR += mod_webapp
     SUBDIR += mod_webkit
     SUBDIR += mod_webobjects
     SUBDIR += mod_wsgi

@@ -4474,3 +4474,4 @@ www/mplayer-plugin|www/gecko-mediaplayer|2010-08-08|Upstream support dropped
 lang/plt-scheme|lang/racket|2010-08-08|Upstream development discontinued
 emulators/sdlmess|emulators/mess|2010-08-08|SDL port has been integrated into mainstream
 security/libassuan-1||2010-08-08|This is an ex-library (Superseded by security/libassuan, but not compatible)
+www/mod_webapp||2010-08-08|Removed
