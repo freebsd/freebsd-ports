@@ -1,3 +1,3 @@
-MD5 (pandoc-1.6.tar.gz) = c24014cd65471a056938cf0f08e1dfd4
-SHA256 (pandoc-1.6.tar.gz) = 9b825233293edf1ea414b0e7ea821d6a914711dc2c60546566ab5a97512b079b
-SIZE (pandoc-1.6.tar.gz) = 360842
+MD5 (cabal/pandoc-1.6.tar.gz) = c24014cd65471a056938cf0f08e1dfd4
+SHA256 (cabal/pandoc-1.6.tar.gz) = 9b825233293edf1ea414b0e7ea821d6a914711dc2c60546566ab5a97512b079b
+SIZE (cabal/pandoc-1.6.tar.gz) = 360842

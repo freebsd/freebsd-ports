@@ -1,3 +1,3 @@
-MD5 (MonadCatchIO-mtl-0.3.0.1.tar.gz) = 53f56fece758b15eff950f9c9796fbdf
-SHA256 (MonadCatchIO-mtl-0.3.0.1.tar.gz) = 56113319439a10e338b2e3169e1df575024fbaf97827511f4856e46efbac9a07
-SIZE (MonadCatchIO-mtl-0.3.0.1.tar.gz) = 2090
+MD5 (cabal/MonadCatchIO-mtl-0.3.0.1.tar.gz) = 53f56fece758b15eff950f9c9796fbdf
+SHA256 (cabal/MonadCatchIO-mtl-0.3.0.1.tar.gz) = 56113319439a10e338b2e3169e1df575024fbaf97827511f4856e46efbac9a07
+SIZE (cabal/MonadCatchIO-mtl-0.3.0.1.tar.gz) = 2090
