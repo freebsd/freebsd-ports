@@ -7,6 +7,7 @@
 
 PORTNAME=	eclipse
 PORTVERSION=	3.5.2
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/technology/linuxtools/eclipse-build/:1 \
 		http://download.eclipse.org/tools/orbit/downloads/drops/R20090825191606/bundles/:2 \
