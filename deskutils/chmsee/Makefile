@@ -7,7 +7,7 @@
 
 PORTNAME=	chmsee
 PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt
 
 USE_GNOME=	gnomehier libglade2
-USE_GECKO=	libxul seamonkey
+USE_GECKO=	libxul
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD=	yes
