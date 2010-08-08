@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	openvrml
-PORTVERSION=	0.17.5
-PORTREVISION=	9
+PORTVERSION=	0.18.6
+PORTREVISION=	1
 CATEGORIES=	www graphics
 MASTER_SITES=	SF
 
@@ -20,25 +20,27 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig		\
 		js.1:${PORTSDIR}/lang/spidermonkey			\
 		jpeg.11:${PORTSDIR}/graphics/jpeg			\
 		png.6:${PORTSDIR}/graphics/png				\
-		curl.6:${PORTSDIR}/ftp/curl
+		curl.6:${PORTSDIR}/ftp/curl				\
+		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_GL=		yes
 USE_GNOME=	gnomehack libglade2 libgnomeui
 USE_SDL=	sdl
 USE_JAVA=	yes
 GNU_CONFIGURE=	yes
-LIBTOOLFILES=	configure mozilla-plugin/configure lib/gtkglext/configure
+LIBTOOLFILES=	configure
 CONFIGURE_ARGS=	--enable-gecko-rpath
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${JAVA_HOME}/include -I${JAVA_HOME}/include/${OPSYS:L}"	\
 		LDFLAGS="-L${LOCALBASE}/lib -L${JAVA_HOME}/jre/lib/${ARCH}/client ${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"	\
-		LIBS="-lm"
+		LIBS="-lm" BOOST_LIB_SUFFIX=""
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GECKO=	libxul seamonkey
+USE_GECKO=	libxul
 
 USE_WEBPLUGINS=	native
 WEBPLUGINS_FILES=openvrml.so
+MAKE_JOBS_UNSAFE=yes
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -79,12 +81,16 @@ pre-configure:
 		${WRKSRC}/${cfg}
 .endfor
 	${REINPLACE_CMD} -e 's|$$(libdir)/mozilla/plugins|${WEBPLUGINS_DIR}|'	\
-		${WRKSRC}/mozilla-plugin/src/Makefile.in
+		${WRKSRC}/src/Makefile.in
 .if ${GECKO} != "firefox"
 	${REINPLACE_CMD} -e "s|FIREFOX_JS|${GECKO:U}_JS|g;s|firefox-js|${GECKO}-js|"	\
 		${WRKSRC}/configure
 	${REINPLACE_CMD} -e "s|firefox-plugin|${GECKO}-plugin|g"	\
-		${WRKSRC}/mozilla-plugin/configure
+		${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s|mozilla-plugin|${GECKO}|g" \
+		${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s|boost_thread-mt|boost_thread|g" \
+		${WRKSRC}/configure
 .endif
 
 post-install:

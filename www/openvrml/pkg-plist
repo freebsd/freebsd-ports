@@ -3,6 +3,7 @@ include/openvrml/openvrml-common.h
 include/openvrml/openvrml-config.h
 include/openvrml/openvrml-gl-common.h
 include/openvrml/openvrml-gl-config.h
+include/openvrml/openvrml/bad_url.h
 include/openvrml/openvrml/basetypes.h
 include/openvrml/openvrml/bounding_volume.h
 include/openvrml/openvrml/browser.h
@@ -13,41 +14,85 @@ include/openvrml/openvrml/frustum.h
 include/openvrml/openvrml/gl/viewer.h
 include/openvrml/openvrml/node.h
 include/openvrml/openvrml/node_impl_util.h
-include/openvrml/openvrml/read_write_mutex.h
 include/openvrml/openvrml/rendering_context.h
+include/openvrml/openvrml/scene.h
 include/openvrml/openvrml/scope.h
 include/openvrml/openvrml/script.h
 include/openvrml/openvrml/viewer.h
 include/openvrml/openvrml/vrml97_grammar.h
-include/openvrml/openvrml/vrml97node.h
-include/openvrml/openvrml/x3d_cad_geometry.h
-include/openvrml/openvrml/x3d_core.h
-include/openvrml/openvrml/x3d_dis.h
-include/openvrml/openvrml/x3d_environmental_effects.h
-include/openvrml/openvrml/x3d_event_utilities.h
-include/openvrml/openvrml/x3d_geometry2d.h
-include/openvrml/openvrml/x3d_geospatial.h
-include/openvrml/openvrml/x3d_grouping.h
-include/openvrml/openvrml/x3d_hanim.h
-include/openvrml/openvrml/x3d_interpolation.h
-include/openvrml/openvrml/x3d_key_device_sensor.h
-include/openvrml/openvrml/x3d_networking.h
-include/openvrml/openvrml/x3d_nurbs.h
-include/openvrml/openvrml/x3d_rendering.h
-include/openvrml/openvrml/x3d_shape.h
-include/openvrml/openvrml/x3d_texturing.h
 include/openvrml/openvrml/x3d_vrml_grammar.h
 lib/libopenvrml-gl.a
+lib/libopenvrml-gl.la
 lib/libopenvrml-gl.so
-lib/libopenvrml-gl.so.7
+lib/libopenvrml-gl.so.8
 lib/libopenvrml.a
+lib/libopenvrml.la
 lib/libopenvrml.so
-lib/libopenvrml.so.8
+lib/libopenvrml.so.9
+%%WEBPLUGINS_DIR%%/openvrml.a
 %%WEBPLUGINS_DIR%%/openvrml.la
 %%WEBPLUGINS_DIR%%/openvrml.so
+lib/openvrml/node/vrml97.a
+lib/openvrml/node/vrml97.la
+lib/openvrml/node/vrml97.so
+lib/openvrml/node/x3d-cad-geometry.a
+lib/openvrml/node/x3d-cad-geometry.la
+lib/openvrml/node/x3d-cad-geometry.so
+lib/openvrml/node/x3d-core.a
+lib/openvrml/node/x3d-core.la
+lib/openvrml/node/x3d-core.so
+lib/openvrml/node/x3d-dis.a
+lib/openvrml/node/x3d-dis.la
+lib/openvrml/node/x3d-dis.so
+lib/openvrml/node/x3d-environmental-effects.a
+lib/openvrml/node/x3d-environmental-effects.la
+lib/openvrml/node/x3d-environmental-effects.so
+lib/openvrml/node/x3d-event-utilities.a
+lib/openvrml/node/x3d-event-utilities.la
+lib/openvrml/node/x3d-event-utilities.so
+lib/openvrml/node/x3d-geometry2d.a
+lib/openvrml/node/x3d-geometry2d.la
+lib/openvrml/node/x3d-geometry2d.so
+lib/openvrml/node/x3d-geospatial.a
+lib/openvrml/node/x3d-geospatial.la
+lib/openvrml/node/x3d-geospatial.so
+lib/openvrml/node/x3d-grouping.a
+lib/openvrml/node/x3d-grouping.la
+lib/openvrml/node/x3d-grouping.so
+lib/openvrml/node/x3d-h-anim.a
+lib/openvrml/node/x3d-h-anim.la
+lib/openvrml/node/x3d-h-anim.so
+lib/openvrml/node/x3d-interpolation.a
+lib/openvrml/node/x3d-interpolation.la
+lib/openvrml/node/x3d-interpolation.so
+lib/openvrml/node/x3d-key-device-sensor.a
+lib/openvrml/node/x3d-key-device-sensor.la
+lib/openvrml/node/x3d-key-device-sensor.so
+lib/openvrml/node/x3d-networking.a
+lib/openvrml/node/x3d-networking.la
+lib/openvrml/node/x3d-networking.so
+lib/openvrml/node/x3d-nurbs.a
+lib/openvrml/node/x3d-nurbs.la
+lib/openvrml/node/x3d-nurbs.so
+lib/openvrml/node/x3d-rendering.a
+lib/openvrml/node/x3d-rendering.la
+lib/openvrml/node/x3d-rendering.so
+lib/openvrml/node/x3d-shape.a
+lib/openvrml/node/x3d-shape.la
+lib/openvrml/node/x3d-shape.so
+lib/openvrml/node/x3d-texturing.a
+lib/openvrml/node/x3d-texturing.la
+lib/openvrml/node/x3d-texturing.so
+lib/openvrml/script/java.a
+lib/openvrml/script/java.la
+lib/openvrml/script/java.so
+lib/openvrml/script/javascript.a
+lib/openvrml/script/javascript.la
+lib/openvrml/script/javascript.so
 libdata/pkgconfig/openvrml-gl.pc
 libdata/pkgconfig/openvrml.pc
 libexec/openvrml-xembed
+share/dbus-1/services/org.openvrml.BrowserControl.service
 %%PORTDOCS%%%%EXAMPLESDIR%%/Anchor.wrl
 %%PORTDOCS%%%%EXAMPLESDIR%%/Click.wrl
 %%PORTDOCS%%%%EXAMPLESDIR%%/EventPROTO.wrl
@@ -66,14 +111,48 @@ libexec/openvrml-xembed
 %%PORTDOCS%%%%EXAMPLESDIR%%/scale.wrl
 %%PORTDOCS%%%%EXAMPLESDIR%%/snoman.wrl
 %%PORTDOCS%%%%EXAMPLESDIR%%/warbird.wrl
-share/openvrml-player/glade/openvrml-player.glade
-@dirrm share/openvrml-player/glade
-@dirrm share/openvrml-player
+%%DATADIR%%-player/ui/openvrml-player.ui
+%%DATADIR%%-xembed/dbus-1/browser-factory.xml
+%%DATADIR%%-xembed/dbus-1/browser-host.xml
+%%DATADIR%%-xembed/dbus-1/browser.xml
+%%DATADIR%%/component/cad-geometry.xml
+%%DATADIR%%/component/core.xml
+%%DATADIR%%/component/dis.xml
+%%DATADIR%%/component/environmental-effects.xml
+%%DATADIR%%/component/environmental-sensor.xml
+%%DATADIR%%/component/event-utilities.xml
+%%DATADIR%%/component/geometry2d.xml
+%%DATADIR%%/component/geometry3d.xml
+%%DATADIR%%/component/geospatial.xml
+%%DATADIR%%/component/grouping.xml
+%%DATADIR%%/component/h-anim.xml
+%%DATADIR%%/component/interpolation.xml
+%%DATADIR%%/component/key-device-sensor.xml
+%%DATADIR%%/component/lighting.xml
+%%DATADIR%%/component/navigation.xml
+%%DATADIR%%/component/networking.xml
+%%DATADIR%%/component/nurbs.xml
+%%DATADIR%%/component/pointing-device-sensor.xml
+%%DATADIR%%/component/rendering.xml
+%%DATADIR%%/component/shape.xml
+%%DATADIR%%/component/sound.xml
+%%DATADIR%%/component/text.xml
+%%DATADIR%%/component/texturing.xml
+%%DATADIR%%/component/time.xml
+%%DATADIR%%/component/vrml97.xml
+%%DATADIR%%/java/script.jar
 @dirrmtry %%WEBPLUGINS_DIR%%
+@dirrm %%DATADIR%%-xembed/dbus-1
+@dirrm %%DATADIR%%-xembed
+@dirrm %%DATADIR%%-player/ui
+@dirrm %%DATADIR%%-player
+@dirrm %%DATADIR%%/java
+@dirrm %%DATADIR%%/component
+@dirrm %%DATADIR%%
+@dirrm lib/openvrml/script
+@dirrm lib/openvrml/node
+@dirrm lib/openvrml
 @dirrm include/openvrml/openvrml/gl
 @dirrm include/openvrml/openvrml
 @dirrm include/openvrml
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry share/gtk-doc/html/gtkglext
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc

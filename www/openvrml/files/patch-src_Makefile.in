@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	2010-07-02 09:21:26.000000000 +0200
++++ src/Makefile.in	2010-07-02 11:34:41.000000000 +0200
+@@ -1684,6 +1684,7 @@
+ 
+ mozilla_plugin_openvrml_la_CXXFLAGS = \
+         $(MOZILLA_PLUGIN_CFLAGS) \
++	$(JS_CFLAGS) \
+         $(DBUS_G_CFLAGS)
+ 
+ mozilla_plugin_openvrml_la_SOURCES = mozilla-plugin/openvrml.cpp
