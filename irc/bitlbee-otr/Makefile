@@ -7,7 +7,7 @@
 
 PORTNAME=	bitlbee-otr
 PORTVERSION=	1.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/ \
 		http://wahjava.users.sourceforge.net/
