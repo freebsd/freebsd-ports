@@ -283,6 +283,7 @@
     SUBDIR += q
     SUBDIR += qore
     SUBDIR += qscheme
+    SUBDIR += racket
     SUBDIR += rakudo
     SUBDIR += ratfor
     SUBDIR += rexx-imc
