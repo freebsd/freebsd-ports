@@ -7,7 +7,7 @@
 
 PORTNAME=	moonlight
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia www
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/moon/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -32,8 +32,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-cairo=system \
 		--with-debug=yes \
 		--with-ff2=no \
-		--with-ff3=yes \
-		--with-ff36=no \
+		--with-ff3=no \
+		--with-ff36=yes \
 		--with-mcspath=${MONODIR}/mcs/ \
 		--with-mono-basic-path=${MONOBASICDIR}/
 

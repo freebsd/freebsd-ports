@@ -94,8 +94,8 @@ lib/moonlight/plugin/System.dll
 lib/moonlight/plugin/System.dll.mdb
 lib/moonlight/plugin/libmoonloader.la
 lib/moonlight/plugin/libmoonloader.so
-lib/moonlight/plugin/libmoonplugin-ff3bridge.la
-lib/moonlight/plugin/libmoonplugin-ff3bridge.so
+lib/moonlight/plugin/libmoonplugin-ff36bridge.la
+lib/moonlight/plugin/libmoonplugin-ff36bridge.so
 lib/moonlight/plugin/libmoonplugin.la
 lib/moonlight/plugin/libmoonplugin.so
 lib/moonlight/plugin/mscorlib.dll
