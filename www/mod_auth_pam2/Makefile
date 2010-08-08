@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_auth_pam
 PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://pam.sourceforge.net/mod_auth_pam/dist/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -28,6 +28,8 @@ PORTEXAMPLES=	pam-httpd.sample
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
+
+AP_EXTRAS+=	-lpam
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
