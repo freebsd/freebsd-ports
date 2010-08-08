@@ -1,0 +1,36 @@
+--- ./rltiles/Makefile.orig	2010-08-05 09:25:41.000000000 +0200
++++ ./rltiles/Makefile	2010-08-05 09:26:36.000000000 +0200
+@@ -10,7 +10,7 @@
+ PNG_INCLUDE := $(shell pkg-config libpng --cflags 2> /dev/null || echo "-I../contrib/install/include")
+ PNG_LIB := $(shell pkg-config libpng --libs 2> /dev/null || echo "../contrib/install/lib/libpng.a ../contrib/install/lib/libz.a")
+ 
+-CFLAGS := -O2 $(SDL_CFLAGS) $(PNG_INCLUDE)
++CFLAGS_L := $(CFLAGS) $(SDL_CFLAGS) $(PNG_INCLUDE)
+ LDFLAGS += $(SDL_LDFLAGS) $(PNG_LIB)
+ 
+ ifneq (,$(findstring MINGW,$(uname_S)))
+@@ -25,6 +25,7 @@
+ 
+ # Attempt to use a full compiler name, to make
+ # distcc builds work nicely.
++ifndef FREEBSD_PORT
+ LMACH := $(shell gcc -dumpmachine)-
+ ifeq ($(LMACH),-)
+ LMACH :=
+@@ -37,6 +38,7 @@
+ CF_ARCHS := $(patsubst %,-arch %,$(ARCH))
+ CXX += $(CF_ARCHS)
+ endif
++endif
+ 
+ DELETE = rm -f
+ 
+@@ -79,7 +81,7 @@
+ distclean: clean
+ 
+ %.o: %.cc
+-	$(QUIET_CXX)$(CXX) $(CFLAGS) -Wp,-MD,$*.d,-MT,$@ -c $< -o $@
++	$(QUIET_CXX)$(CXX) $(CFLAGS_L) -Wp,-MD,$*.d,-MT,$@ -c $< -o $@
+ 
+ $(TILEGEN): $(OBJECTS)
+ 	$(QUIET_LINK)$(CXX) $(OBJECTS) -o $@ $(LDFLAGS)

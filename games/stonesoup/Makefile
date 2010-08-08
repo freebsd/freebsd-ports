@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.1
 CATEGORIES=	games
 MASTER_SITES=	SF/crawl-ref/Stone%20Soup/${PORTVERSION}
 DISTNAME=	stone_soup-${PORTVERSION}-nodeps
@@ -14,9 +14,7 @@ DISTNAME=	stone_soup-${PORTVERSION}-nodeps
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Dungeon Crawl Stone Soup - a fun, free rogue-like game
 
-LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
-RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
-
+USE_SQLITE=	yes
 USE_BZIP2=	yes
 USE_BISON=	build
 USE_GMAKE=	yes
@@ -26,13 +24,12 @@ USE_PERL5_BUILD=	yes
 MAKE_JOBS_SAFE=	yes
 
 SAVEDIR?=	/var/games/${PORTNAME}
-WRKSRC=		${WRKDIR}/stone_soup-${PORTVERSION}/source/
+WRKSRC=		${WRKDIR}/stone_soup-${PORTVERSION}-1-g7ce9b19/source/
 
 SUB_FILES=	README.FreeBSD
 PLIST_SUB=	SAVEDIR="${SAVEDIR}"
 
-OPTIONS=	SDL		"SDL support (tiles interface)"	off \
-		SOUND		"Sound support"			off \
+OPTIONS=	SOUND		"Sound support"			off \
 		LUA_BINDINGS	"LUA bindings for user scripts"	on \
 		UNICODE		"Unicode glyphs (UTF-8)"	off \
 		WIZARD		"Wizard mode"			off
@@ -51,10 +48,7 @@ MAKE_ARGS+=	V=yes
 MAKE_ARGS+=	wizard
 .endif
 
-.if defined(WITHOUT_SDL)
-CONFLICTS+=	${PORTNAME}-sdl-[0-9]*
-PLIST_SUB+=	SDL="@comment "
-.else
+.if defined(WITH_SDL)
 CONFLICTS+=	${PORTNAME}-[0-9]*
 MAKE_ARGS+=	TILES=y
 PLIST_SUB+=	SDL=""
@@ -63,6 +57,9 @@ BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 USE_SDL=	sdl image
+.else
+CONFLICTS+=	${PORTNAME}-sdl-[0-9]*
+PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if defined(WITH_SOUND)
