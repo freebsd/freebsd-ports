@@ -430,6 +430,7 @@
     SUBDIR += linux-libvorbis
     SUBDIR += linux-mbrola
     SUBDIR += linux-mikmod
+    SUBDIR += linux-musicipserver
     SUBDIR += linux-nas-libs
     SUBDIR += linux-nerodigitalaudio
     SUBDIR += linux-openal
