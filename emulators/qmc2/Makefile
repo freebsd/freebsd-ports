@@ -7,7 +7,7 @@
 
 PORTNAME=	qmc2
 PORTVERSION=	0.2.b8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ MAINTAINER=	elbarto@ArcadeBSD.org
 COMMENT=	Qt 4 based UNIX MAME/MESS frontend supporting MAME/SDLMESS
 
 RUN_DEPENDS=	mame:${PORTSDIR}/emulators/mame
-RUN_DEPENDS+=	sdlmess:${PORTSDIR}/emulators/sdlmess
+RUN_DEPENDS+=	mess:${PORTSDIR}/emulators/mess
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
