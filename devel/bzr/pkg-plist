@@ -64,87 +64,6 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/atomicfile.py
 %%PYTHON_SITELIBDIR%%/bzrlib/atomicfile.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/atomicfile.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/__init__.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/__init__.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/__init__.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_add.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_add.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_add.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_bench.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_bench.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_bench.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_bundle.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_bundle.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_bundle.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_cache_utf8.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_cache_utf8.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_cache_utf8.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_checkout.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_checkout.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_checkout.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_commit.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_commit.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_commit.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_dirstate.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_dirstate.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_dirstate.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_info.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_info.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_info.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_inventory.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_inventory.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_inventory.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_knit.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_knit.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_knit.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_log.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_log.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_log.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_osutils.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_osutils.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_osutils.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_pack.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_pack.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_pack.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_rocks.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_rocks.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_rocks.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_sftp.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_sftp.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_sftp.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_startup.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_startup.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_startup.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_status.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_status.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_status.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_tags.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_tags.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_tags.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_transform.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_transform.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_transform.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_workingtree.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_workingtree.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_workingtree.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_xml.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_xml.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/bench_xml.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/tree_creator/__init__.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/tree_creator/__init__.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/tree_creator/__init__.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/tree_creator/heavily_merged.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/tree_creator/heavily_merged.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/tree_creator/heavily_merged.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/tree_creator/kernel_like.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/tree_creator/kernel_like.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/tree_creator/kernel_like.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/tree_creator/many_commit.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/tree_creator/many_commit.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/tree_creator/many_commit.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/tree_creator/simple_many_commit.py
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/tree_creator/simple_many_commit.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/tree_creator/simple_many_commit.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/bencode.py
 %%PYTHON_SITELIBDIR%%/bzrlib/bencode.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/bencode.pyo
@@ -220,6 +139,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/cmd_version_info.py
 %%PYTHON_SITELIBDIR%%/bzrlib/cmd_version_info.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/cmd_version_info.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/cmdline.py
+%%PYTHON_SITELIBDIR%%/bzrlib/cmdline.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/cmdline.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/commands.py
 %%PYTHON_SITELIBDIR%%/bzrlib/commands.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/commands.pyo
@@ -395,6 +317,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/lazy_regex.py
 %%PYTHON_SITELIBDIR%%/bzrlib/lazy_regex.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/lazy_regex.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/library_state.py
+%%PYTHON_SITELIBDIR%%/bzrlib/library_state.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/library_state.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/lock.py
 %%PYTHON_SITELIBDIR%%/bzrlib/lock.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/lock.pyo
@@ -464,6 +389,18 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion/bashcomp.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion/bashcomp.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion/bashcomp.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion/tests/test_bashcomp.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion/tests/test_bashcomp.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion/tests/test_bashcomp.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/__init__.pyo
@@ -476,6 +413,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/lp_directory.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/lp_directory.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/lp_directory.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/lp_propose.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/lp_propose.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/lp_propose.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/lp_registration.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/lp_registration.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad/lp_registration.pyo
@@ -536,6 +476,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/reconfigure.py
 %%PYTHON_SITELIBDIR%%/bzrlib/reconfigure.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/reconfigure.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/recordcounter.py
+%%PYTHON_SITELIBDIR%%/bzrlib/recordcounter.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/recordcounter.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/registry.py
 %%PYTHON_SITELIBDIR%%/bzrlib/registry.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/registry.pyo
@@ -737,6 +680,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_debug.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_debug.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_debug.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_deleted.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_deleted.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_deleted.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_diff.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_diff.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_diff.pyo
@@ -794,6 +740,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_logformats.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_logformats.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_logformats.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_lookup_revision.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_lookup_revision.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_lookup_revision.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_ls.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_ls.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_ls.pyo
@@ -866,6 +815,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_revno.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_revno.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_revno.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_rmbranch.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_rmbranch.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_rmbranch.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_selftest.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_selftest.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/blackbox/test_selftest.pyo
@@ -977,6 +929,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/file_utils.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/file_utils.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/file_utils.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/fixtures.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/fixtures.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/fixtures.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/ftp_server/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/ftp_server/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/ftp_server/__init__.pyo
@@ -998,6 +953,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/lock_helpers.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/lock_helpers.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/lock_helpers.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/matchers.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/matchers.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/matchers.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_branch/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_branch/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_branch/__init__.pyo
@@ -1016,6 +974,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_branch/test_commit.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_branch/test_commit.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_branch/test_commit.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_branch/test_config.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_branch/test_config.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_branch/test_config.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_branch/test_create_checkout.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_branch/test_create_checkout.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_branch/test_create_checkout.pyo
@@ -1091,6 +1052,15 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_bzrdir/test_push.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_bzrdir/test_push.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_bzrdir/test_push.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_bzrdir_colo/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_bzrdir_colo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_bzrdir_colo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_bzrdir_colo/test_supported.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_bzrdir_colo/test_supported.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_bzrdir_colo/test_supported.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_bzrdir_colo/test_unsupported.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_bzrdir_colo/test_unsupported.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_bzrdir_colo/test_unsupported.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_foreign_vcs/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_foreign_vcs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_foreign_vcs/__init__.pyo
@@ -1103,6 +1073,12 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_copy_content_into.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_copy_content_into.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_copy_content_into.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_get.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_get.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_get.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_pull.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_pull.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch/test_pull.pyo
@@ -1301,6 +1277,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_list_files.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_list_files.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_list_files.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_locking.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_locking.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_locking.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_path_content_summary.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_path_content_summary.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_tree/test_path_content_summary.pyo
@@ -1427,6 +1406,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_smart_add.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_smart_add.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_smart_add.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_symlinks.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_symlinks.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_symlinks.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_uncommit.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_uncommit.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_workingtree/test_uncommit.pyo
@@ -1544,6 +1526,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_cleanup.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_cleanup.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_cleanup.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_cmdline.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_cmdline.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_cmdline.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_commands.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_commands.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_commands.pyo
@@ -1610,6 +1595,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_filters.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_filters.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_filters.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_fixtures.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_fixtures.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_fixtures.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_foreign.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_foreign.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_foreign.pyo
@@ -1658,6 +1646,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_ignores.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_ignores.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_ignores.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_import_tariff.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_import_tariff.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_import_tariff.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_index.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_index.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_index.pyo
@@ -1679,6 +1670,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_lazy_regex.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_lazy_regex.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_lazy_regex.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_library_state.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_library_state.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_library_state.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_lock.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_lock.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_lock.pyo
@@ -1700,6 +1694,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_mail_client.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_mail_client.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_mail_client.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_matchers.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_matchers.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_matchers.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_memorytree.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_memorytree.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_memorytree.pyo
@@ -1833,6 +1830,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_serializer.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_serializer.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_serializer.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_server.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_server.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_server.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_setup.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_setup.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_setup.pyo
@@ -1920,6 +1920,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_treebuilder.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_treebuilder.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_treebuilder.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_treeshape.py
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_treeshape.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/tests/test_treeshape.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_tsort.py
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_tsort.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/tests/test_tsort.pyo
@@ -2019,6 +2022,9 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/transport/ftp/_gssapi.py
 %%PYTHON_SITELIBDIR%%/bzrlib/transport/ftp/_gssapi.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/transport/ftp/_gssapi.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/transport/gio_transport.py
+%%PYTHON_SITELIBDIR%%/bzrlib/transport/gio_transport.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/transport/gio_transport.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/transport/http/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/transport/http/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/transport/http/__init__.pyo
@@ -2166,9 +2172,6 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/weave.py
 %%PYTHON_SITELIBDIR%%/bzrlib/weave.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/weave.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/weave_commands.py
-%%PYTHON_SITELIBDIR%%/bzrlib/weave_commands.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/weave_commands.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/weavefile.py
 %%PYTHON_SITELIBDIR%%/bzrlib/weavefile.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/weavefile.pyo
@@ -2199,8 +2202,6 @@ bin/bzr
 %%PYTHON_SITELIBDIR%%/bzrlib/xml_serializer.py
 %%PYTHON_SITELIBDIR%%/bzrlib/xml_serializer.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/xml_serializer.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/benchmarks/tree_creator
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/benchmarks
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/bundle/serializer
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/bundle
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/doc/api
@@ -2210,6 +2211,8 @@ bin/bzr
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/filters
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/help_topics/en
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/help_topics
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion/tests
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bash_completion
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/launchpad
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/netrc_credential_store/tests
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/netrc_credential_store
@@ -2225,6 +2228,7 @@ bin/bzr
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/ftp_server
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_branch
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_bzrdir
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_bzrdir_colo
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_foreign_vcs
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interbranch
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/tests/per_interrepository
