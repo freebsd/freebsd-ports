@@ -260,7 +260,6 @@
     SUBDIR += php_doc
     SUBDIR += pike76
     SUBDIR += pike78
-    SUBDIR += plt-scheme
     SUBDIR += pnet
     SUBDIR += pnet-base
     SUBDIR += pnetlib
