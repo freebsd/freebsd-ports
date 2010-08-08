@@ -191,6 +191,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/copies.py
 %%PYTHON_SITELIBDIR%%/mercurial/copies.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/copies.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/dagparser.py
+%%PYTHON_SITELIBDIR%%/mercurial/dagparser.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/dagparser.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.py
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/demandimport.pyo
@@ -198,6 +201,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/dirstate.py
 %%PYTHON_SITELIBDIR%%/mercurial/dirstate.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/dirstate.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/discovery.py
+%%PYTHON_SITELIBDIR%%/mercurial/discovery.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/discovery.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/dispatch.py
 %%PYTHON_SITELIBDIR%%/mercurial/dispatch.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/dispatch.pyo
@@ -233,9 +239,12 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/help/diffs.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/environment.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/extensions.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/glossary.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/hgweb.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/multirevs.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/patterns.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/revisions.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/revsets.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/templates.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/urls.txt
 %%PYTHON_SITELIBDIR%%/mercurial/hg.py
@@ -331,6 +340,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/node.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/node.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/osutil.so
+%%PYTHON_SITELIBDIR%%/mercurial/parser.py
+%%PYTHON_SITELIBDIR%%/mercurial/parser.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/parser.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/parsers.so
 %%PYTHON_SITELIBDIR%%/mercurial/patch.py
 %%PYTHON_SITELIBDIR%%/mercurial/patch.pyc
@@ -338,6 +350,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/posix.py
 %%PYTHON_SITELIBDIR%%/mercurial/posix.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/posix.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/pushkey.py
+%%PYTHON_SITELIBDIR%%/mercurial/pushkey.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/pushkey.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/repair.py
 %%PYTHON_SITELIBDIR%%/mercurial/repair.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/repair.pyo
@@ -347,6 +362,12 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/revlog.py
 %%PYTHON_SITELIBDIR%%/mercurial/revlog.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/revlog.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/revset.py
+%%PYTHON_SITELIBDIR%%/mercurial/revset.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/revset.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/similar.py
+%%PYTHON_SITELIBDIR%%/mercurial/similar.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/similar.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/simplemerge.py
 %%PYTHON_SITELIBDIR%%/mercurial/simplemerge.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/simplemerge.pyo
