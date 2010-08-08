@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	add
-PORTVERSION=	20070214
+PORTVERSION=	20100708
 CATEGORIES=	math
 MASTER_SITES=	ftp://dickey.his.com/add/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	frederic@culot.org
 COMMENT=	Full-screen editing calculator
 
 GNU_CONFIGURE=	yes
