@@ -92,13 +92,13 @@ case ${ADOBE_VER} in
 8)
 	ACROBASE=%%ACROBASE8%%
 	BINPREFIX=Adobe/Reader8/bin
-	MOZILLA_COMP_PATH=/../%%PREFIX%%/lib/linux-nvu
+	MOZILLA_COMP_PATH=/../%%PREFIX%%/lib/linux-libgtkembedmoz
 	export MOZILLA_COMP_PATH
 ;;
 9)
 	ACROBASE=%%ACROBASE9%%
 	BINPREFIX=Adobe/Reader9/bin
-	MOZILLA_COMP_PATH=/../%%PREFIX%%/lib/linux-nvu
+	MOZILLA_COMP_PATH=/../%%PREFIX%%/lib/linux-libgtkembedmoz
 	export MOZILLA_COMP_PATH
 ;;
 esac
