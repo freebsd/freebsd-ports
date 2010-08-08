@@ -98,6 +98,7 @@
     SUBDIR += mame-extras
     SUBDIR += mastergear
     SUBDIR += mednafen
+    SUBDIR += mess
     SUBDIR += minivmac
     SUBDIR += mtools
     SUBDIR += mupen64
@@ -147,7 +148,6 @@
     SUBDIR += raine
     SUBDIR += rtc
     SUBDIR += sdlmame-devel
-    SUBDIR += sdlmess
     SUBDIR += sim6811
     SUBDIR += simh
     SUBDIR += ski
