@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gecko-mediaplayer
-PORTVERSION=	0.9.5
-PORTREVISION=	5
+PORTVERSION=	0.9.9.2
+PORTREVISION=	1
 CATEGORIES=	www multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 
@@ -22,13 +22,16 @@ OPTIONS=	GCONF	"Use Gconf to store preferences"	off \
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	glib20
-USE_GECKO=	libxul seamonkey
+USE_GNOME=	glib20 pkgconfig
+USE_GECKO=	libxul
 USE_WEBPLUGINS=	native
 WEBPLUGINS_FILES=	${PORTNAME}-dvx.so ${PORTNAME}-qt.so ${PORTNAME}-rm.so \
 				${PORTNAME}-wmp.so ${PORTNAME}.so
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--enable-new-libxul \
+		--with-xulrunner-sdk="${LOCALBASE}/include" \
+		--with-plugin_dir="${WEBPLUGINS_DIR}"
 
 PORTDOCS=	README COPYING AUTHORS ChangeLog INSTALL NEWS javascript.txt
 
@@ -47,7 +50,8 @@ CONFIGURE_ARGS+=	--disable-caching
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/mozilla/plugins|${WEBPLUGINS_DIR}|' \
+	@${REINPLACE_CMD} -e 's|-ldl||' \
+		${WRKSRC}/configure \
 		${WRKSRC}/src/Makefile.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e \
