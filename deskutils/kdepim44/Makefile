@@ -33,28 +33,8 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		kabcclient.1
 
-#OPTIONS=	ASSUAN "Kleopatra support for libassuan-1" off
-#OPTIONS=	KITCHENSYNC "PIM synchronization utility" off
-
-.include <bsd.port.options.mk>
-
-# kitchensync is disabled in KDE 4.2
-# .if defined(WITH_KITCHENSYNC)
-# LIB_DEPENDS+=	opensync.1:${PORTSDIR}/devel/libopensync
-# PLIST_SUB+=	KITCHENSYNC=""
-# .else
-# CMAKE_ARGS+=	-DWITH_Opensync:BOOL=off
-# PLIST_SUB+=	KITCHENSYNC="@comment "
-# .endif
-
-.if defined(WITH_ASSUAN)
-IGNORE=		Conflicts with libassuan2
-BUILD_DEPENDS=	libassuan-1>=1.0.5:${PORTSDIR}/security/libassuan-1
-PLIST_SUB+=	WITH_ASSUAN=""
-.else
+#cannot be built with assuan2
 CMAKE_ARGS+=	-DWITH_Assuan:BOOL=off
-PLIST_SUB+=	WITH_ASSUAN="@comment "
-.endif
 
 pre-configure:
 # respect prefix
