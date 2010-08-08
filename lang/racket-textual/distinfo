@@ -1,3 +1,3 @@
-MD5 (plt-scheme/4.2.4/plt-4.2.4-src-unix.tgz) = 7a21fcb5b565b8c352aa22e1698eb05b
-SHA256 (plt-scheme/4.2.4/plt-4.2.4-src-unix.tgz) = cf34e2dcead02284d8db427b86edcabc9f54d3d08452352a1e57870a665a5f15
-SIZE (plt-scheme/4.2.4/plt-4.2.4-src-unix.tgz) = 16081145
+MD5 (racket/5.0/racket-5.0-src-unix.tgz) = 369af9d3728ab636e8234d8ee039658c
+SHA256 (racket/5.0/racket-5.0-src-unix.tgz) = 5d4ecfa79b781ebb061d9f7c72104053d537f2f3411fbeda5682957118d6878b
+SIZE (racket/5.0/racket-5.0-src-unix.tgz) = 16661627
