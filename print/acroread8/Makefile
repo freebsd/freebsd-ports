@@ -22,7 +22,7 @@ RUN_DEPENDS=	acroreadwrapper>=0.0.20080906:${PORTSDIR}/print/acroreadwrapper
 RESTRICTED=	Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
-USE_LINUX_APPS=	gtk2 pango webauth
+USE_LINUX_APPS=	gtk2 pango
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 #USE_GNOME=	desktopfileutils
