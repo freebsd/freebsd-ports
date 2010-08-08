@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	wmfs
-DISTVERSION=	201003
+DISTVERSION=	201008
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.wmfs.info/static/dl/
+MASTER_SITES=	http://dl.wmfs.info/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A floating and tiling Window Manager From Scratch
