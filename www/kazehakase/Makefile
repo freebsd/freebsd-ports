@@ -8,7 +8,7 @@
 
 PORTNAME=	kazehakase
 PORTVERSION=	0.5.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/43802
@@ -22,7 +22,7 @@ LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls \
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_GECKO=	libxul seamonkey
+USE_GECKO=	libxul
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gecko_engine=${GECKO}
@@ -82,6 +82,10 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-D.*_DISABLE_DEPRECATED=1||g'
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-embedding||g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-unstable||g' \
 		${WRKSRC}/configure
 
 pre-install:

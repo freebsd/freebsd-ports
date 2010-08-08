@@ -1,0 +1,180 @@
+--- src/kz-tab-label.c	(revision 3870)
++++ src/kz-tab-label.c	(revision 3871)
+@@ -519,7 +519,7 @@
+ 	
+ 	g_return_if_fail(KZ_IS_TAB_LABEL(kztab));
+ 
+-	if (!GTK_WIDGET_REALIZED(kztab)) return;
++	if (!gtk_widget_get_realized(GTK_WIDGET(kztab))) return;
+ 
+ 	priv = KZ_TAB_LABEL_GET_PRIVATE (kztab);
+ 	if (priv->create_thumbnail &&
+@@ -965,7 +965,7 @@
+ 
+ 	widget = GTK_WIDGET(kztab);
+ 
+-	if(GTK_WIDGET_REALIZED(widget))
++	if(gtk_widget_get_realized(widget))
+ 	{
+ 		GdkBitmap *mask;
+ 		KzTabLabelPrivate *priv = KZ_TAB_LABEL_GET_PRIVATE(kztab);
+--- src/dialogs/kz-about-dialog.c	(revision 3870)
++++ src/dialogs/kz-about-dialog.c	(revision 3871)
+@@ -78,7 +78,7 @@
+ 
+ 	/* Draw background image */
+ 	gdk_draw_pixbuf(widget->window,
+-			widget->style->bg_gc[GTK_WIDGET_STATE(widget)],
++			widget->style->bg_gc[gtk_widget_get_state(widget)],
+ 			image,
+ 			0, 0,
+ 			0, 0,
+@@ -87,7 +87,7 @@
+ 			0, 0);
+ 	/* Draw logo at top right */
+ 	gdk_draw_pixbuf(widget->window,
+-			widget->style->fg_gc[GTK_WIDGET_STATE(widget)],
++			widget->style->fg_gc[gtk_widget_get_state(widget)],
+ 			logo,
+ 			0, 0,
+ 			bg_width - logo_width, 0,
+@@ -113,7 +113,7 @@
+ 	pango_layout_set_alignment(info_layout, PANGO_ALIGN_RIGHT);
+ 	pango_layout_get_pixel_extents(info_layout, &link, &logical);
+ 	gdk_draw_layout(widget->window,
+-			widget->style->fg_gc[GTK_WIDGET_STATE(widget)],
++			widget->style->fg_gc[gtk_widget_get_state(widget)],
+ 			bg_width - logical.width, logo_height,
+ 			info_layout);
+ 	g_free (version);
+@@ -127,7 +127,7 @@
+ 	pango_layout_set_width(copyright_layout, -1);
+ 	pango_layout_get_pixel_extents(copyright_layout, &link, &logical);
+ 	gdk_draw_layout(widget->window,
+-			widget->style->fg_gc[GTK_WIDGET_STATE(widget)],
++			widget->style->fg_gc[gtk_widget_get_state(widget)],
+ 			bg_width - logical.width, bg_height - logical.height,
+ 			copyright_layout);
+ 
+--- src/kz-web.c	(revision 3870)
++++ src/kz-web.c	(revision 3871)
+@@ -656,7 +656,7 @@
+ 
+     requisition->height = GTK_CONTAINER(widget)->border_width;
+ 
+-    if (child && GTK_WIDGET_VISIBLE(child)) {
++    if (child && gtk_widget_get_visible(child)) {
+         gtk_widget_size_request(child, &child_requisition);
+         requisition->width += child_requisition.width;
+         requisition->height += child_requisition.height;
+@@ -669,11 +669,11 @@
+     GtkWidget *child;
+     GtkAllocation child_allocation;
+ 
+-    if (!GTK_WIDGET_REALIZED(widget))
++    if (!gtk_widget_get_realized(widget))
+         return;
+     widget->allocation = *allocation;
+ 
+-    if (GTK_WIDGET_NO_WINDOW(widget)) {
++    if (!gtk_widget_get_has_window(widget)) {
+         child_allocation.x = allocation->x + GTK_CONTAINER(widget)->border_width;
+         child_allocation.y = allocation->y + GTK_CONTAINER(widget)->border_width;
+     } else {
+--- src/widget/kz-entry.c	(revision 3870)
++++ src/widget/kz-entry.c	(revision 3871)
+@@ -137,7 +137,7 @@
+ {
+     GtkEntry *entry = GTK_ENTRY(widget);
+ 
+-    if (!GTK_WIDGET_HAS_FOCUS(widget) &&
++    if (!gtk_widget_has_focus(widget) &&
+         (!gtk_entry_get_text(entry) || gtk_entry_get_text(entry)[0] == '\0')) {
+         PangoLayout *layout;
+         PangoAttrList *attrs;
+--- src/widget/kz-paned.c	(revision 3870)
++++ src/widget/kz-paned.c	(revision 3871)
+@@ -154,8 +154,8 @@
+ 
+ 	paned = GTK_PANED(kzpaned);
+ 
+-	return paned->child1 && GTK_WIDGET_VISIBLE(paned->child1) &&
+-		paned->child2 && GTK_WIDGET_VISIBLE(paned->child2);
++	return paned->child1 && gtk_widget_get_visible(paned->child1) &&
++		paned->child2 && gtk_widget_get_visible(paned->child2);
+ }
+ 
+ void
+--- src/kz-download-box.c	(revision 3870)
++++ src/kz-download-box.c	(revision 3871)
+@@ -344,7 +344,7 @@
+ 				icon_set,
+ 				icon->image->style,
+ 				gtk_widget_get_direction(icon->image),
+-				GTK_WIDGET_STATE(icon->image),
++				gtk_widget_get_state(icon->image),
+ 				GTK_ICON_SIZE_MENU,
+ 				icon->image,
+ 				"download icon");
+--- src/actions/kz-zoom-action.c	(revision 3870)
++++ src/actions/kz-zoom-action.c	(revision 3871)
+@@ -205,7 +205,7 @@
+ 	KzWeb *web;
+ 	KzZoomActionPrivate *priv = KZ_ZOOM_ACTION_GET_PRIVATE (action);
+ 
+-	if (!priv->spin || !GTK_WIDGET_VISIBLE(priv->spin))
++	if (!priv->spin || !gtk_widget_get_visible(priv->spin))
+ 		return;
+ 
+ 	web = KZ_WINDOW_CURRENT_WEB(priv->kz);
+@@ -228,7 +228,7 @@
+ 	
+ 	priv = KZ_ZOOM_ACTION_GET_PRIVATE (action);
+ 
+-	if (!priv->spin || !GTK_WIDGET_VISIBLE(priv->spin))
++	if (!priv->spin || !gtk_widget_get_visible(priv->spin))
+ 		return;
+ 	
+ 	spin = priv->spin;
+@@ -249,7 +249,7 @@
+ 	
+ 	priv = KZ_ZOOM_ACTION_GET_PRIVATE (action);
+ 	
+-	if (!priv->spin || !GTK_WIDGET_VISIBLE(priv->spin))
++	if (!priv->spin || !gtk_widget_get_visible(priv->spin))
+ 		return 1.0;
+ 	ratio = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(priv->spin)) / 100;
+     
+--- src/kz-window.c	(revision 3870)
++++ src/kz-window.c	(revision 3871)
+@@ -615,7 +615,7 @@
+ 
+ 	g_return_if_fail(KZ_IS_WINDOW(kz));
+ 
+-	if (!GTK_WIDGET_REALIZED(kz)) return;
++	if (!gtk_widget_get_realized(GTK_WIDGET(kz))) return;
+ 
+ 	web = KZ_WINDOW_CURRENT_WEB(kz);
+ 	kz_actions_set_sensitive(kz, web);
+--- configure.ac	(revision 3870)
++++ configure.ac	(revision 3871)
+@@ -101,7 +101,7 @@
+ dnl **************************************************************
+ dnl Test for GTK+, and define GTK_CFLAGS and GTK_LIBS, if gthread is specified
+ dnl in MODULES, pass to pkg-config
+-AM_PATH_GTK_2_0(2.17.7, , ,[gthread])
++AM_PATH_GTK_2_0(2.20.0, , ,[gthread])
+ AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
+ AC_PATH_PROG(GLIB_MKENUMS, glib-mkenums)
+ 
+--- configure.orig	2010-07-08 19:04:29.000000000 +0200
++++ configure	2010-07-08 19:07:21.000000000 +0200
+@@ -17020,7 +17020,7 @@
+     no_gtk=yes
+   fi
+ 
+-  min_gtk_version=2.17.7
++  min_gtk_version=2.20.0
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for GTK+ - version >= $min_gtk_version" >&5
+ $as_echo_n "checking for GTK+ - version >= $min_gtk_version... " >&6; }
+ 
