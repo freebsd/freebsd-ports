@@ -28,6 +28,7 @@ MAN6=		connect4.6
 
 SCOREFILE=	/var/games/connect4.scores
 PLIST_SUB=	SCOREFILE=${SCOREFILE}
+MAKE_ENV=	SCOREFILE=${SCOREFILE}
 
 do-install:
 	${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/c4 \
