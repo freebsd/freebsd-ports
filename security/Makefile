@@ -241,7 +241,6 @@
     SUBDIR += lasso
     SUBDIR += lep
     SUBDIR += libassuan
-    SUBDIR += libassuan-1
     SUBDIR += libbf
     SUBDIR += libecc
     SUBDIR += libfprint
