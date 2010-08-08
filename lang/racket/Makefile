@@ -5,21 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=	plt-scheme
-PORTVERSION=	4.2.4
-PORTREVISION=	2
+PORTNAME=	racket
+PORTVERSION=	5.0
 CATEGORIES=	lang scheme
-MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/\
-		http://plt.cs.uchicago.edu/bundles/${PORTVERSION}/plt/\
-		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/\
-		http://mirror.informatik.uni-tuebingen.de/mirror/plt/${PORTVERSION}/plt/\
-		ftp://infogroep.be/pub/plt/bundles/${PORTVERSION}/plt/\
-		http://gd.tuwien.ac.at/languages/scheme/plt/${PORTVERSION}/plt/
-DISTFILES=	plt-${PORTVERSION}-src-unix.tgz ${PLTPATCHES}
-DIST_SUBDIR=	plt-scheme/${PORTVERSION}
-EXTRACT_ONLY=	plt-${PORTVERSION}-src-unix.tgz
-
-MAINTAINER=	areilly@bigpond.net.au
+MASTER_SITES=	http://download.racket-lang.org/installers/${PORTVERSION}/racket/ \
+		http://www.eecs.northwestern.edu/racket/${PORTVERSION}/racket/ \
+		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/racket/ \
+		http://mirror.informatik.uni-tuebingen.de/mirror/racket/${PORTVERSION}/racket/ \
+		ftp://infogroep.be/pub/racket/installers/${PORTVERSION}/racket/ \
+		http://russell.cs.bilgi.edu.tr/racket-installers/${PORTVERSION}/racket/
+DISTFILES=	racket-${PORTVERSION}-src-unix.tgz ${PLTPATCHES}
+DIST_SUBDIR=	racket/${PORTVERSION}
+EXTRACT_ONLY=	racket-${PORTVERSION}-src-unix.tgz
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	An interactive, integrated, graphical Scheme programming environment
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo	\
@@ -43,12 +41,9 @@ USE_GL=		yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22:env
 
-# no man files in this version: run plt-help for helpdesk
-MAN1=	drscheme.1 mred.1 mzc.1 mzscheme.1 \
-	plt-help.1 setup-plt.1 tex2page.1
-
-#CGC is deprecated now
-# OPTIONS=      CGC "With CGC garbage collector" off
+MAN1=	drracket.1 drscheme.1 gracket.1 \
+	mred.1 mzc.1 mzscheme.1 plt-help.1 \
+	racket.1 raco.1 setup-plt.1 tex2page.1
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -57,14 +52,6 @@ PLIST_SUB+=	ARCH=${ARCH}
 PLTPATCHES=	# none yet for this version
 
 .include <bsd.port.pre.mk>
-
-#.if defined(WITH_CGC)
-#ALL_TARGET=		both
-#INSTALL_TARGET=	install-both
-#PLIST_SUB+=		CGC=""
-#.else
-#PLIST_SUB+=		CGC="@comment "
-#.endif
 
 .if ${ARCH} == "amd64"
 CPPFLAGS+=	-DLONG64
