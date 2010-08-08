@@ -575,7 +575,6 @@
     SUBDIR += mozex
     SUBDIR += mozilla
     SUBDIR += mozplugger
-    SUBDIR += mplayer-plugin
     SUBDIR += multisort
     SUBDIR += mybb
     SUBDIR += myfaces
