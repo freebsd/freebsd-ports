@@ -1,11 +1,9 @@
-#!/usr/bin/perl
+#!%%LOCALBASE%%/bin/perl
 
-exit 0 if $ARGV[1] ne "POST-INSTALL";
-exit 0 if $ENV{'BATCH'};
 exit 0 if ! -t;
 
-print STDERR "\n\n\n =========== mgetty+sendfax configuration ===========\n\n";
-$prefix = $ENV{'PKG_PREFIX'};
+print STDERR "\n=========== mgetty+sendfax configuration ===========\n";
+$prefix = "%%PREFIX%%";
 $sep = "~";
 
 &read_config ("$prefix/etc/mgetty+sendfax/mgetty.config");
@@ -19,7 +17,7 @@ foreach (keys(%var)) {
 }
 
 $a = 1;
-$devices = $var{'ports'} ? $var{'ports'} : "cuad1";
+$devices = $var{'ports'} ? $var{'ports'} : "cuau1";
 while ($a) {
     $devices = &ask ("list of devices", $devices);
 
@@ -156,7 +154,7 @@ sub inq_m {
     $def{'debug'} = 4 if !$def{'debug'};
     $def{'debug'} = &ask ("   - `debug (mgetty)' 
      This sets the amount of logging `mgetty' will do. A good value is
-     4, more details are seen with `5', and `9' is really noisy.  Try
+     4, more details are seen with `5', and `9' is really noisy. Try
      it! The log data is written to the file `/tmp/log_mg.cuaxx'.", 
 			  $def{'debug'});
 
@@ -180,7 +178,7 @@ sub inq_m {
     $def{'switchbd'} = &ask ("   - `switchbd'
      Some modems, mainly Rockwell chipsets, switch to 19200 bps when
      entering fax mode. Others may need other speed switches (but I
-     know none).  If your modem is Rockwell based, try `switchbd 19200'
+     know none). If your modem is Rockwell based, try `switchbd 19200'
      if fax reception doesn't work. (*Warning:* if this is set wrongly,
      fax reception will definitely fail. For most sane modems, you do
      *not need* this.). Set speed or `0'", $def{'switchbd'});
@@ -193,7 +191,7 @@ sub inq_m {
      to initialize any modem, nor will it wait for `RING'. It will just
      wait for any character, and then output the issue file and login
      prompt. This option is used if you want to connect to machines via
-     nullmodem cable.",  $def{'direct'});
+     null modem cable.",  $def{'direct'});
 
     $settings .= " blocking";
     $def{'blocking'} = "NO" if !$def{'blocking'};
@@ -205,12 +203,12 @@ sub inq_m {
 
     $settings .= " port-owner";
     $def{'port-owner'} = "uucp" if !$def{'port-owner'};
-    $def{'port-owner'} =  &ask ("   - `port-owner'
+    $def{'port-owner'} = &ask ("   - `port-owner'
      If set, mgetty will `chown' the tty line to the given username (you
      can specify a string or an integer uid, but the integer must be
-     valid).  This is highly recommended for security purposes: only
+     valid). This is highly recommended for security purposes: only
      give port access to those users you trust not to misuse your modem
-     lines!",   $def{'port-owner'});
+     lines!", $def{'port-owner'});
 
     $settings .= " port-group";
     $def{'port-group'} = "uucp" if !$def{'port-group'};
@@ -322,13 +320,12 @@ sub inq_m {
     $def{'rings'} = 1 if !$def{'rings'};
     $def{'rings'} = &ask ("   - `rings' 
      Sets the number of `RING' messages to wait for, before mgetty
-     picks up the phone. *Warning:* if your modem  auto-answers, for 
-     whatever reason, set this to something  *different* than the 
-     value set with `ATS0=mmm', otherwise the  modems autoanswer and 
-     mgettys manual answer will collide (most  modems hang up if a 
+     picks up the phone. *Warning:* if your modem auto-answers, for 
+     whatever reason, set this to something *different* than the 
+     value set with `ATS0=mmm', otherwise the modem's autoanswer and 
+     mgetty's manual answer will collide (most modems hang up if a 
      command is received during auto-answer)", $def{'rings'});
 
-  
     $settings .= " answer-chat";
     $def{'answer-chat'} = '"" ATA CONNECT \c \r' if !$def{'answer-chat'};
     $def{'answer-chat'} =&ask ("   - `answer-chat'
@@ -407,7 +404,7 @@ sub inq_m {
 
     $settings .= " login-prompt";
     $def{'login-prompt'} = "@!login: " if !$def{'login-prompt'} ;
-    $def{'login-prompt'} =  &ask("   - `login-prompt'
+    $def{'login-prompt'} = &ask("   - `login-prompt'
      This specifies the login prompt that mgetty will output. Some
      special characters in this string (and in the issue file, btw) are
      recognized and replaced by something else:
@@ -427,14 +424,14 @@ sub inq_m {
         * \\T current time in hh:mm:ss format
         * \\DIGIT character with the specified octal code
 
-     The maximum lenght of the login prompt is limited to 140
+     The maximum length of the login prompt is limited to 140
      characters (after expansion).", $def{'login-prompt'});
 
     $settings .= " login-time";
     $def{'login-time'} = 240 if !$def{'login-time'};
     $def{'login-time'} = &ask ("   - `login-time'
      This specifies the maximum time the user can take to log in. If no
-     login has occured after that time, `mgetty' will hang up.", 
+     login has occurred after that time, `mgetty' will hang up.", 
 			       $def{'login-time'});
 
     $settings .= " fax-server-file";
@@ -468,16 +465,16 @@ sub inq_m {
 
     $settings .= " fax-owner";
     $def{'fax-owner'} = "uucp" if !$def{'fax-owner'};
-    $def{'fax-owner'} =  &ask ("   - `fax-owner'
+    $def{'fax-owner'} = &ask ("   - `fax-owner'
      If set, mgetty will `chown' the received files to the given username 
      (you can specify a string or an integer uid, but the integer must be
-     valid).",  $def{'fax-owner'});
+     valid).", $def{'fax-owner'});
 
     $settings .= " fax-group";
     $def{'fax-group'} = "modem" if !$def{'fax-group'};
     $def{'fax-group'} = &ask ("   - `fax-group' 
      If set, mgetty will `chgrp' the received files to this group id
-     (which  can be given as group name, or as integer gid).", $def{'fax-group'});
+     (which can be given as group name, or as integer gid).", $def{'fax-group'});
 
     $settings .= " fax-mode";
     $def{'fax-mode'} = "0660" if !$def{'fax-mode'};
@@ -489,7 +486,7 @@ sub inq_f {
     $def_f{'debug'} = 4 if !$def_f{'debug'};
     $def_f{'debug'} = &ask ("   - `debug (sendfax)' 
      controls the amount of information written into the fax log file.
-     `0' means \"totally silent\" (not even  errors are written), `9' 
+     `0' means \"totally silent\" (not even errors are written), `9' 
      is really noisy. I usually use `3' or `4' in normal use, and `6' 
      for debugging.", $def_f{'debug'});
 
@@ -516,7 +513,7 @@ sub inq_f {
      successfully transmit a page, `sendfax' will give up or simply go
      on, depending on the setting of `max-tries-continue' (see below).
      If this is set to `0', `sendfax' will ignore retransmission
-     requests and simply go on.",  $def_f{'max-tries'});
+     requests and simply go on.", $def_f{'max-tries'});
 
     $settings .= " max-tries-continue";
     $def_f{'max-tries-continue'} = "YES" if !$def_f{'max-tries-continue'};
@@ -534,9 +531,9 @@ sub inq_f {
     $def_f{'speed'} = &ask ("   - `speed'
      Set the port speed to use for fax send operations. Usually,
      `38400' is a good choice, but a few dumb modems (for example, some
-     based on rockwell chipsets) need `19200' or even `9600'. A few
+     based on Rockwell chipsets) need `19200' or even `9600'. A few
      modems can go higher, but `sendfax' may not support it, and it may
-     not always work.",  $def_f{'speed'});
+     not always work.", $def_f{'speed'});
 
     $settings .= " dial-prefix";
     $def_f{'dial-prefix'} = "ATD" if !$def_f{'dial-prefix'};
@@ -552,7 +549,7 @@ sub inq_f {
     $settings .= " poll-dir";
     $def_f{'poll-dir'} = "./" if !$def_f{'poll-dir'};
     $def_f{'poll-dir'} = &ask ("   - `poll-dir'
-     This is used to specify a directory where polled faxes (wheather
+     This is used to specify a directory where polled faxes (weather
      maps and such) are to be saved into. Default is the current
      directory.", $def_f{'poll-dir'});
 
@@ -571,6 +568,7 @@ sub inq_f {
      on stdout, if set to `no', `sendfax' will only print error and
      warning messages.", $def_f{'verbose'});
 }
+
 sub setdef {
     local ($p, $l);
     $p = shift;
@@ -588,6 +586,7 @@ sub setdef {
 	$def_f{$_} = substr ($var_f{$_}, 1) if (!$def_f{$_} && $var_f{$_} =~ /^$sep/);
     }
 }
+
 sub ask {
     ($info, $default, $x) = @_;
     print STDERR "\n$info: ";
@@ -600,6 +599,7 @@ sub ask {
     }
     return $_;
 }
+
 sub read_config {
     local ($conf, $port, $a, $b);
 

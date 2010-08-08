@@ -9,6 +9,7 @@ bin/g3cat
 bin/g3topbm
 bin/lintopvf
 bin/mg.echo
+bin/mgettycfg
 bin/newslock
 bin/pbm2g3
 bin/pvfamp
