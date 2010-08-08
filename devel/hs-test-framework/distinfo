@@ -1,3 +1,3 @@
-MD5 (test-framework-0.3.2.tar.gz) = 9db832bd496d3f525e2fdf45b63cb0de
-SHA256 (test-framework-0.3.2.tar.gz) = 89b7c45146a8dbdf1672a41e00866cf1a23ce96f29d2b7ebad9e19793234512f
-SIZE (test-framework-0.3.2.tar.gz) = 18645
+MD5 (cabal/test-framework-0.3.2.tar.gz) = 9db832bd496d3f525e2fdf45b63cb0de
+SHA256 (cabal/test-framework-0.3.2.tar.gz) = 89b7c45146a8dbdf1672a41e00866cf1a23ce96f29d2b7ebad9e19793234512f
+SIZE (cabal/test-framework-0.3.2.tar.gz) = 18645

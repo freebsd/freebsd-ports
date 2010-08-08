@@ -9,8 +9,10 @@
 # Maintained by: haskell@FreeBSD.org
 #
 
-MASTER_SITES?=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX?=	hs-
+
+MASTER_SITES?=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
+DIST_SUBDIR?=	cabal
 
 .if !defined(DOCUMENTATION) && \
     (${PORTNAME} == haddock || ${PORTNAME} == ghc-paths || ${PORTNAME} == hscolour)

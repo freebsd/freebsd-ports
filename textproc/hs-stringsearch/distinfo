@@ -1,3 +1,3 @@
-MD5 (stringsearch-0.3.0.tar.gz) = 707123ceed7b55df0e92266f2c100d93
-SHA256 (stringsearch-0.3.0.tar.gz) = 0cac37bc53526c29d571e2c7fe2670f8387feb90e16eae7a79de7c4795f063a4
-SIZE (stringsearch-0.3.0.tar.gz) = 35459
+MD5 (cabal/stringsearch-0.3.0.tar.gz) = 707123ceed7b55df0e92266f2c100d93
+SHA256 (cabal/stringsearch-0.3.0.tar.gz) = 0cac37bc53526c29d571e2c7fe2670f8387feb90e16eae7a79de7c4795f063a4
+SIZE (cabal/stringsearch-0.3.0.tar.gz) = 35459

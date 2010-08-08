@@ -1,3 +1,3 @@
-MD5 (texmath-0.3.0.1.tar.gz) = f2ec771aaae9e678bf9106fe161efb85
-SHA256 (texmath-0.3.0.1.tar.gz) = e1f4773b152ad30ab22f2f31fd6227017474504559ba4fe9a919631448c5c288
-SIZE (texmath-0.3.0.1.tar.gz) = 25368
+MD5 (cabal/texmath-0.3.0.1.tar.gz) = f2ec771aaae9e678bf9106fe161efb85
+SHA256 (cabal/texmath-0.3.0.1.tar.gz) = e1f4773b152ad30ab22f2f31fd6227017474504559ba4fe9a919631448c5c288
+SIZE (cabal/texmath-0.3.0.1.tar.gz) = 25368
