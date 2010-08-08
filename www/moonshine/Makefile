@@ -7,6 +7,7 @@
 
 PORTNAME=	moonshine
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	www multimedia
 MASTER_SITES=	http://github.com/abock/moonshine/tarball/${PORTVERSION}/
 DISTNAME=	abock-${PORTNAME}-${GITCOMMIT}
