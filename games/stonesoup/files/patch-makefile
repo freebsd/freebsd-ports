@@ -1,22 +1,36 @@
---- ./makefile.orig	2010-03-27 00:43:25.000000000 +0100
-+++ ./makefile	2010-04-18 13:18:41.000000000 +0200
-@@ -44,7 +44,7 @@
+--- ./makefile.orig	2010-07-24 05:31:49.000000000 +0200
++++ ./makefile	2010-08-05 09:25:27.000000000 +0200
+@@ -45,14 +45,7 @@
  #    ask for a package with convenience libraries instead -- we'll try to provide
  #    them somewhere in the near future.
  
 -GAME = crawl
+-
+-ASSERTS = yes
+-
+-# Disable GNU Make implicit rules and variables. Leaving them enabled will slow
+-# down MinGW and Cygwin builds by a very VERY noticeable degree. Besides, we have
+-# _explicit_ rules defined for everything. So we don't need them.
+-MAKEFLAGS += -rR
 +GAME = stonesoup
  
  #
  # Compiler Flags
-@@ -82,19 +82,31 @@
+@@ -86,24 +79,39 @@
+ 
+ else
+ 
++ifndef FREEBSD_PORT
+ CFOPTIMIZE := -O2
++endif
  
  endif # USE_ICC
  
 +ifndef FREEBSD_PORT
- CFOTHERS := -fno-strict-aliasing -pipe $(EXTERNAL_FLAGS)
+ CFOTHERS := -pipe $(EXTERNAL_FLAGS)
  CFOTHERS_L := -fsigned-char
  CFWARN := -Wall
+ CFWARN_L := -Wundef
  
  DEFINES := $(EXTERNAL_DEFINES)
 +else
@@ -25,6 +39,7 @@
 +CFOTHERS := $(CFLAGS)
 +CFOTHERS_L := -fsigned-char
 +CFWARN := 
++CFWARN_L := 
 +
 +DEFINES := $(EXTERNAL_DEFINES)
 +endif
@@ -41,11 +56,23 @@
  RM = rm -f
  COPY = cp
  COPY_R = cp -r
-@@ -268,9 +280,10 @@
+@@ -135,10 +143,10 @@
+ endif
+ LIBZ := contrib/install/lib/libz.a
  
- # Permissions to set on the save directory.
- MCHMOD_SAVEDIR := 775
-+MCHMOD_LOGS := 664
+-LUA_INCLUDE_DIR := /usr/include/lua5.1
+-LUA_LIB := -llua5.1
+-SQLITE_INCLUDE_DIR := /usr/include
+-SQLITE_LIB := -lsqlite3
++LUA_INCLUDE_DIR := ${LOCALBASE}/include/lua51
++LUA_LIB := -L${LOCALBASE}/lib/lua51 -llua-5.1
++SQLITE_INCLUDE_DIR := ${LOCALBASE}/include
++SQLITE_LIB := -L${LOCALBASE}/lib -lsqlite3
+ 
+ #
+ # Platform Detection
+@@ -314,7 +322,7 @@
+ MCHMOD_LOGS := 664
  
  # The user:group to install the game as.
 -INSTALL_UGRP := games:games
@@ -53,83 +80,25 @@
  
  chroot_prefix :=
  prefix        :=
-@@ -386,25 +399,34 @@
- endif
- endif
- 
--ifndef BUILD_LUA
--  ifneq (,$(wildcard /usr/include/lua5.1))
--    INCLUDES_L += -I/usr/include/lua5.1
--    LIBS += -llua5.1
--  else
--    ifneq (,$(wildcard /usr/include/lua.h))
--      LIBS += -llua
-+ifndef FREEBSD_PORT
-+  ifndef BUILD_LUA
-+    ifneq (,$(wildcard /usr/include/lua5.1))
-+      INCLUDES_L += -I/usr/include/lua5.1
-+      LIBS += -llua5.1
-     else
--      BUILD_LUA = yes
-+      ifneq (,$(wildcard /usr/include/lua.h))
-+        LIBS += -llua
-+      else
-+        BUILD_LUA = yes
-+      endif
-     endif
-   endif
--endif
--
--ifndef BUILD_SQLITE
--  ifneq ($(shell grep -q sqlite3_prepare_v2 /usr/include/sqlite3.h 2>/dev/null && echo yes),yes)
--    BUILD_SQLITE = yes
--  else
--    LIBS += -lsqlite3
-+  
-+  ifndef BUILD_SQLITE
-+    ifneq ($(shell grep -q sqlite3_prepare_v2 /usr/include/sqlite3.h 2>/dev/null && echo yes),yes)
-+      BUILD_SQLITE = yes
-+    else
-+      LIBS += -lsqlite3
-+    endif
-   endif
-+else
-+  INCLUDES_L += -I${LOCALBASE}/include/
-+  INCLUDES_L += -I${LOCALBASE}/include/lua51
-+  LIBS += -L${LOCALBASE}/lib/
-+  LIBS += -L${LOCALBASE}/lib/lua51
-+  LIBS += -llua-5.1
-+  LIBS += -lsqlite3
- endif
- 
- RLTILES = rltiles
-@@ -476,11 +498,13 @@
+@@ -540,6 +548,7 @@
  
  endif # TILES
  
 +ifndef FREEBSD_PORT
- ifeq ($(GCC_GTE_4_3_0),1)
- CFWARN_L += -Wno-array-bounds
- endif
+ # On clang, unknown -Wfoo is merely a warning, thus -Werror.
+ CFWARN_L += $(shell w=-Wno-array-bounds;echo|$(GCC) -E - -Werror $$w >/dev/null 2>&1 && echo $$w)
  
- CFWARN_L += -Wno-parentheses -Wwrite-strings -Wshadow -pedantic -D_FORTIFY_SOURCE=0
-+endif
- CFOTHERS_L = $(EXTERNAL_FLAGS_L) $(EXTRA_FLAGS) $(DEFINES) $(SDL_CFLAGS)
- 
- ifndef NO_LUA_BINDINGS
-@@ -519,6 +543,7 @@
- 	NO_OPTIMIZE=YesPlease
- endif
- 
-+ifndef FREEBSD_PORT
- ifdef FULLDEBUG
- DEFINES += -DFULLDEBUG
- endif
-@@ -544,6 +569,11 @@
- CFWARN_L += -Wno-uninitialized
- endif
+@@ -607,6 +616,17 @@
+ ifndef NO_OPTIMIZE
+ CFWARN_L += -Wuninitialized
  endif
 +else # ifdef FREEBSD_PORT
++CFOTHERS_L = $(EXTERNAL_FLAGS_L) $(EXTRA_FLAGS) $(DEFINES) $(SDL_CFLAGS)
++
++ifndef NO_LUA_BINDINGS
++CFOTHERS_L += -DCLUA_BINDINGS
++endif
++
 +ifdef WIZARD
 +DEFINES += -DWIZARD
 +endif
@@ -137,16 +106,20 @@
  
  ifneq ($(strip $(chroot_prefix)),)
  	USE_CHROOT=YesPlease
-@@ -756,7 +786,7 @@
- SRC_VERSION   := $(shell git describe --tags --long 2>/dev/null || cat util/release_ver)
+@@ -822,10 +842,10 @@
+ 
+ GAME_DEPENDS  := $(DESTTILEFILES) $(OBJECTS) $(EXTRA_OBJECTS) $(CONTRIB_LIBS)
+ SRC_PKG_BASE  := stone_soup
+-SRC_VERSION   := $(shell git describe --tags --long $(MERGE_BASE) 2>/dev/null || cat util/release_ver)
++SRC_VERSION   := $(cat util/release_ver)
  
  # when making release builds, use just the bare tag
--SRC_VERSION_SHORT := $(shell git describe --tags 2>/dev/null)
-+SRC_VERSION_SHORT := $(shell git describe --tags 2>/dev/null || cat util/release_ver)
+-SRC_VERSION_SHORT := $(shell git describe --tags $(MERGE_BASE) 2>/dev/null || cat util/release_ver)
++SRC_VERSION_SHORT := $(cat util/release_ver)
  ifneq (,$(SRC_VERSION_SHORT))
    ifeq (,$(findstring -,$(SRC_VERSION_SHORT)))
      SRC_VERSION := $(SRC_VERSION_SHORT)
-@@ -907,9 +937,11 @@
+@@ -983,9 +1003,11 @@
  	$(COPY) dat/tiles/VeraMono.ttf $(datadir_fp)/dat/tiles/
  endif
  endif
@@ -155,15 +128,6 @@
  	$(CHOWN) -R $(INSTALL_UGRP) $(datadir_fp) || true
  endif
 +endif
- ifneq ($(SAVEDIR),)
+ ifneq ($(savedir_fp),)
  	mkdir -p $(savedir_fp)/saves
  ifneq ($(patsubst /var/%,%,$(savedir_fp)),$(savedir_fp))
-@@ -924,6 +956,8 @@
- 	$(CHOWN) -R $(INSTALL_UGRP) $(savedir_fp) || true
- 	$(CHMOD) $(MCHMOD_SAVEDIR) $(savedir_fp) || true
- 	$(CHMOD) $(MCHMOD_SAVEDIR) $(savedir_fp)/saves || true
-+	$(CHMOD) $(MCHMOD_LOGS) $(savedir_fp)/saves/logfile || true
-+	$(CHMOD) $(MCHMOD_LOGS) $(savedir_fp)/saves/scores || true
- 	$(CHMOD) $(MCHMOD_SAVEDIR) $(savedir_fp)/morgue || true
- endif
- endif
