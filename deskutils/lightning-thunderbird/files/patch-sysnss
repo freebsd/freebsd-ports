@@ -22,8 +22,8 @@
  		$(NULL)
  
  include $(topsrcdir)/config/rules.mk
---- mozilla/security/manager/Makefile.in.orig	2009-12-03 08:19:28.000000000 +0100
-+++ mozilla/security/manager/Makefile.in	2009-12-05 16:08:10.000000000 +0100
+--- mozilla/security/manager/Makefile.in.orig	2010-06-10 22:23:39.000000000 +0200
++++ mozilla/security/manager/Makefile.in	2010-06-25 13:55:50.000000000 +0200
 @@ -45,17 +45,6 @@
  
  MODULE = psm
@@ -42,41 +42,41 @@
  ifndef NSS_DISABLE_DBM
  NSSDBM3_LIB = $(DLL_PREFIX)nssdbm3$(DLL_SUFFIX)
  NSSDBM3_CHK = $(DLL_PREFIX)nssdbm3.chk
-@@ -255,13 +244,6 @@
+@@ -292,13 +281,6 @@
  
  .nss.cleaned: .nss.checkout
  ifndef MOZ_NATIVE_NSS
--	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS) clean
--	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS) clean
+-	$(NSSMAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS) clean
+-	$(NSSMAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS) clean
 -ifndef SKIP_CHK
--	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS) clean
--	$(MAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS) clean
+-	$(NSSMAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS) clean
+-	$(NSSMAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS) clean
 -endif
 -	touch $@
  endif
  
  GARBAGE += .nss.cleaned
-@@ -280,78 +262,6 @@
+@@ -317,76 +299,6 @@
  endif
  
  libs::
 -ifndef MOZ_NATIVE_NSS
--	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS)
+-	$(NSSMAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS)
 -ifndef NSS_DISABLE_DBM
--	$(MAKE) -C $(topsrcdir)/security/dbm $(DEFAULT_GMAKE_FLAGS) 
+-	$(NSSMAKE) -C $(topsrcdir)/security/dbm $(DEFAULT_GMAKE_FLAGS) 
 -endif
--	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS)
+-	$(NSSMAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS)
 -ifdef ENABLE_TESTS
 -	# Need certutil binary for mochitest certificates generation
--	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS)
--	$(MAKE) -C $(topsrcdir)/security/nss/cmd/certutil $(DEFAULT_GMAKE_FLAGS)
--	$(MAKE) -C $(topsrcdir)/security/nss/cmd/pk12util $(DEFAULT_GMAKE_FLAGS)
+-	$(NSSMAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS)
+-	$(NSSMAKE) -C $(topsrcdir)/security/nss/cmd/certutil $(DEFAULT_GMAKE_FLAGS)
+-	$(NSSMAKE) -C $(topsrcdir)/security/nss/cmd/pk12util $(DEFAULT_GMAKE_FLAGS)
 -endif
 -ifndef SKIP_CHK
 -ifndef ENABLE_TESTS # Just avoid secondary compile
--	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS)
+-	$(NSSMAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS)
 -endif
--	$(MAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS)
+-	$(NSSMAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS)
 -endif
 -	$(INSTALL) -m 755 $(DIST)/lib/$(LOADABLE_ROOT_MODULE) $(DIST)/bin
 -ifndef SKIP_CHK
@@ -127,15 +127,13 @@
 -# NSS installs headers to dist/public and we want them in dist/include
 -	$(NSINSTALL) -D $(DIST)/include/nss
 -	(cd $(DIST)/public/nss && tar $(TAR_CREATE_FLAGS) - .) | \
--	  (cd $(DIST)/include/nss && tar -xf -)
--	(cd $(DIST)/public/nss && tar $(TAR_CREATE_FLAGS) - .) | \
--	  (cd $(DIST)/sdk/include && tar -xf -)
+-	  (cd $(DIST)/include && tar -xf -)
 -endif
 -	$(MAKE) -C boot $@
  	$(MAKE) -C ssl $@
  	$(MAKE) -C locales $@
  ifdef MOZ_XUL
-@@ -362,50 +272,6 @@
+@@ -397,50 +309,6 @@
  	$(MAKE) -C ssl $@
  
  install::
@@ -186,15 +184,15 @@
  	$(MAKE) -C ssl $@
  	$(MAKE) -C locales $@
  ifdef MOZ_XUL
-@@ -420,12 +286,6 @@
+@@ -455,12 +323,6 @@
  	$(MAKE) -C pki $@
  endif
  ifndef MOZ_NATIVE_NSS
--	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS) clean
--	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS) clean
+-	$(NSSMAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS) clean
+-	$(NSSMAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS) clean
 -ifndef SKIP_CHK
--	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS) clean
--	$(MAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS) clean
+-	$(NSSMAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS) clean
+-	$(NSSMAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS) clean
 -endif
  endif
  

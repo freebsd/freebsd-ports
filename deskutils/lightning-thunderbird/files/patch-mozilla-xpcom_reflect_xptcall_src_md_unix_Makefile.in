@@ -1,15 +1,15 @@
---- mozilla/xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	2009-12-03 08:19:56.000000000 +0100
-+++ mozilla/xpcom/reflect/xptcall/src/md/unix/Makefile.in	2010-01-22 10:43:23.000000000 +0100
-@@ -71,6 +71,9 @@
+--- mozilla/xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	2009-03-05 22:32:55.000000000 +0100
++++ mozilla/xpcom/reflect/xptcall/src/md/unix/Makefile.in	2009-04-21 14:15:46.135700268 +0200
+@@ -70,6 +70,9 @@
+ ifeq (Darwin,$(OS_ARCH))
  DEFINES		+= -DKEEP_STACK_16_BYTE_ALIGNED
- endif
  endif
 +ifeq (x86_64,$(OS_TEST))
 +CPPSRCS		:= xptcinvoke_x86_64_linux.cpp xptcstubs_x86_64_linux.cpp
 +endif
  endif
+ endif
  #
- # New code for Linux, et. al., with gcc
 @@ -87,7 +90,7 @@
  endif
  endif
@@ -26,7 +26,7 @@
 +# FreeBSD/amd64
 +#
 +ifeq ($(OS_ARCH)$(OS_TEST),FreeBSDamd64)
-+CPPSRCS		:= xptcinvoke_amd64_openbsd.cpp xptcstubs_amd64_openbsd.cpp
++CPPSRCS         := xptcinvoke_amd64_openbsd.cpp xptcstubs_amd64_openbsd.cpp
 +endif
 +#
  # BeOS/Intel (uses the same unixish_x86 code)

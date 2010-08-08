@@ -9,14 +9,14 @@ PORTNAME=	lightning
 DISTVERSION=	1.0
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
-MASTER_SITE_SUBDIR=	calendar/${PORTNAME}/releases/${DISTVERSION}b1/source
-DISTNAME=	${PORTNAME}-sunbird-${DISTVERSION}b1.source
+MASTER_SITE_SUBDIR=	calendar/${PORTNAME}/releases/${DISTVERSION}b2/source
+PKGNAMESUFFIX=	-thunderbird
+DISTNAME=	${PORTNAME}-${DISTVERSION}b2.source
 
 MAINTAINER=	gecko@FreeBSD.org
-COMMENT=	An integrated calendar for Thunderbird and SeaMonkey
+COMMENT=	An integrated calendar for Thunderbird 3.1
 
-OPTIONS+=	THUNDERBIRD "Install Thunderbird 3.0" on \
-		SEAMONKEY "Install SeaMonkey 2.0" off
+RUN_DEPENDS+=	${LOCALBASE}/lib/thunderbird/thunderbird-bin:${PORTSDIR}/mail/thunderbird
 
 USE_AUTOTOOLS=	autoconf:213 libtool:22
 ALL_TARGET=	default
@@ -35,30 +35,21 @@ LIBS=		-Wl,-Bsymbolic -lc
 MOZ_PKGCONFIG_FILES=	${PORTNAME}-js ${PORTNAME}-xpcom ${PORTNAME}-plugin
 PKGCONFIG_FILES=	${MOZ_PKG_CONFIG_FILES}
 MOZ_OPTIONS=	--enable-application=calendar \
-		--enable-system-cairo \
-		--enable-canvas
+		--enable-system-cairo --disable-updater \
+		--enable-canvas --disable-necko-wifi
 MOZ_MK_OPTIONS=	MOZ_CO_PROJECT=calendar
 NOGECKO_PLIST=		yes
 NOGECKO_INSTALL=	yes
-LATEST_LINK=	mozilla-lightning
 
 .include <bsd.init.mk>
 .include <bsd.libnames.mk>
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_THUNDERBIRD)
-RUN_DEPENDS+=	${LOCALBASE}/lib/thunderbird/thunderbird-bin:${PORTSDIR}/mail/thunderbird3
-.endif
-
-.if defined(WITH_SEAMONKEY)
-RUN_DEPENDS+=	${LOCALBASE}/lib/seamonkey/seamonkey-bin:${PORTSDIR}/www/seamonkey2
-.endif
-
 XPI_FILE=	${DISTNAME}-${GECKO}-freebsd${OSVERSION:C/([0-9]).+/\1/}-${ARCH}.xpi
 PLIST_FILES=	%%DATADIR%%/${XPI_FILE}
 PLIST_DIRS=	%%DATADIR%%
 
-WRKSRC=		${WRKDIR}/comm-1.9.1
+WRKSRC=		${WRKDIR}/comm-1.9.2
 MOZSRC:=	${WRKSRC}/mozilla
 
 .if ${OSVERSION} < 700000
@@ -71,9 +62,10 @@ EXTRA_PATCHES=	${FILESDIR}/liboggplay_oss
 GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 '%{\!pg: %{pthread:' | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
 .if defined(WITHOUT_DBUS)
-MOZ_OPTIONS+=	--disable-dbus
+MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
 .else
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		notify.1:${PORTSDIR}/devel/libnotify
 .endif
 
 post-patch:
@@ -97,15 +89,6 @@ pre-configure:
 	(cd ${WRKSRC} && ${AUTOCONF})
 	(cd ${MOZSRC} && ${AUTOCONF})
 	(cd ${MOZSRC}/js/src/ && ${AUTOCONF})
-
-# XXX: Workaround for bug 533070. Should be fixed in next release
-	${CP} ${WRKSRC}/calendar/sunbird/app/*.png ${WRKSRC}/calendar/sunbird/branding/nightly/
-	${CP} ${WRKSRC}/calendar/sunbird/app/*.xpm ${WRKSRC}/calendar/sunbird/branding/nightly/
-	${CP} ${WRKSRC}/calendar/sunbird/app/*.ico ${WRKSRC}/calendar/sunbird/branding/nightly/
-	${MKDIR} ${WRKSRC}/calendar/sunbird/branding/nightly/content/
-	${CP} ${WRKSRC}/calendar/sunbird/base/branding/*.png ${WRKSRC}/calendar/sunbird/branding/nightly/content/
-	${MKDIR} ${WRKSRC}/calendar/sunbird/branding/nightly/locales/en-US
-	${CP} ${WRKSRC}/calendar/locales/en-US/chrome/branding/brand.* ${WRKSRC}/calendar/sunbird/branding/nightly/locales/en-US/
 
 post-build:
 	@(cd ${MOZSRC}/xpfe/components/autocomplete/src && ${GMAKE})

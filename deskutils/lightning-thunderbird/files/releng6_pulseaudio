@@ -13,14 +13,14 @@
  ifeq ($(OS_ARCH),Linux)
  CSRCS		= \
  		sydney_audio_alsa.c \
---- mozilla/toolkit/library/Makefile.in.orig	2009-08-20 21:45:20.000000000 +0200
-+++ mozilla/toolkit/library/Makefile.in	2009-08-20 21:46:25.000000000 +0200
-@@ -228,12 +228,12 @@
+--- mozilla/toolkit/library/Makefile.in.orig	2010-01-19 20:28:10.000000000 +0000
++++ mozilla/toolkit/library/Makefile.in	2010-01-25 09:38:40.000000000 +0000
+@@ -235,12 +235,12 @@
  endif
  
  ifeq (gtk2,$(MOZ_WIDGET_TOOLKIT))
--EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS) $(MOZ_PANGO_LIBS) $(MOZ_GTK2_LIBS) $(XT_LIBS) -lgthread-2.0
-+EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS) $(MOZ_PANGO_LIBS) $(MOZ_GTK2_LIBS) $(XT_LIBS) -lgthread-2.0 -lpulse -lpthread -lc
+-EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS) $(XEXT_LIBS) $(XCOMPOSITE_LIBS) $(MOZ_PANGO_LIBS) $(MOZ_GTK2_LIBS) $(XT_LIBS) -lgthread-2.0
++EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS) $(XEXT_LIBS) $(XCOMPOSITE_LIBS) $(MOZ_PANGO_LIBS) $(MOZ_GTK2_LIBS) $(XT_LIBS) -lgthread-2.0 -lpulse -lpthread -lc
  EXTRA_DSO_LDOPTS += $(FT2_LIBS)
  endif
  
