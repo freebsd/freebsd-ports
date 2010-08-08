@@ -13,6 +13,9 @@ MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION}
 EXTRACT_SUFX=	.tar
 
+DEPRECATED=	sources not available
+EXPIRATION_DATE=	2010-09-01
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intels C/C++ compiler, set up to produce native FreeBSD binaries
 
