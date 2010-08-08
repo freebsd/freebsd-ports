@@ -46,11 +46,6 @@ CONTRIB_FILES=	bash_completion \
 		tmplrewrite.py \
 		undumprevlog \
 		zsh_completion \
-		git-viz/git-cat-file \
-		git-viz/git-diff-tree \
-		git-viz/git-rev-list \
-		git-viz/git-rev-tree \
-		git-viz/hg-viz \
 		hgsh/Makefile \
 		hgsh/hgsh.c \
 		vim/HGAnnotate.vim \
@@ -83,16 +78,15 @@ post-install:
 .if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}
 	${MKDIR} ${DATADIR}/contrib
-	${MKDIR} ${DATADIR}/contrib/git-viz
 	${MKDIR} ${DATADIR}/contrib/hgsh
 	${MKDIR} ${DATADIR}/contrib/vim
 	for f in ${CONTRIB_FILES}; do \
 		${CP} -p ${WRKSRC}/contrib/$${f} ${DATADIR}/contrib/$${f}; \
 	done
 	${MKDIR} ${DATADIR}/www
-	${INSTALL_MAN} ${WRKSRC}/*.cgi ${DATADIR}/www
-	${INSTALL_MAN} ${WRKSRC}/contrib/hgwebdir.fcgi ${DATADIR}/www
-	${INSTALL_MAN} ${WRKSRC}/contrib/hgwebdir.wsgi ${DATADIR}/www
+	${INSTALL_DATA} ${WRKSRC}/*.cgi ${DATADIR}/www
+	${INSTALL_DATA} ${WRKSRC}/contrib/hgweb.fcgi ${DATADIR}/www
+	${INSTALL_DATA} ${WRKSRC}/contrib/hgweb.wsgi ${DATADIR}/www
 .endif
 	@${CAT} ${PKGMESSAGE}
 
