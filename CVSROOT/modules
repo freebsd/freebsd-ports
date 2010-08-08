@@ -20503,6 +20503,7 @@ py-WebError                     ports/www/py-WebError
 py-WebFlash                     ports/www/py-WebFlash
 py-WebTest                      ports/www/py-WebTest
 py-YABT                         ports/misc/py-YABT
+py-aafigure                     ports/graphics/py-aafigure
 py-addons                       ports/devel/py-AddOns
 py-adns                         ports/dns/py-adns
 py-aipy                         ports/astro/py-aipy
@@ -24872,6 +24873,7 @@ virtualmin                      ports/sysutils/virtualmin
 virtuoso                        ports/databases/virtuoso
 vis5d+                          ports/science/vis5d+
 visionegg                       ports/graphics/visionegg
+visionworkbench                 ports/graphics/visionworkbench
 visitors                        ports/www/visitors
 visprint                        ports/graphics/visprint
 visualos                        ports/emulators/visualos
