@@ -4472,3 +4472,4 @@ mail/lightning|deskutils/lightning|2010-08-03|Upstream development discontinued
 devel/py_otp_interface|devel/py-interface|2010-08-06|Duplicate py-interface port has better distutils handling
 www/mplayer-plugin|www/gecko-mediaplayer|2010-08-08|Upstream support dropped
 lang/plt-scheme|lang/racket|2010-08-08|Upstream development discontinued
+emulators/sdlmame|emulators/mame|2010-08-08|SDL port has been integrated into mainstream
