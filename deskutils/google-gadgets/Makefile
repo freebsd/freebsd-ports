@@ -7,7 +7,7 @@
 
 PORTNAME=	google-gadgets
 PORTVERSION=	0.11.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://google-gadgets-for-linux.googlecode.com/files/
 DISTNAME=	${PORTNAME}-for-linux-${PORTVERSION}
@@ -37,7 +37,7 @@ USE_GCC=	4.2+
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -Wno-deprecated-declarations" LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-ltdl-install=no --with-browser-plugins-dir=${LOCALBASE}/lib/browser_plugins
+CONFIGURE_ARGS=	--disable-werror --enable-ltdl-install=no --with-browser-plugins-dir=${LOCALBASE}/lib/browser_plugins
 USE_AUTOTOOLS=	libtool:22:env autoconf:262:env automake:110:env aclocal:110:env libltdl:22
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack
@@ -62,7 +62,7 @@ LIB_DEPENDS+=	webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
 .endif
 
 .if defined(WITH_MOZILLA)
-USE_GECKO=	libxul firefox mozilla seamonkey xulrunner
+USE_GECKO=	libxul
 .endif
 
 .if defined(WITHOUT_GTKWEBKIT) && defined(WITHOUT_MOZILLA) && defined(WITH_GTK)
