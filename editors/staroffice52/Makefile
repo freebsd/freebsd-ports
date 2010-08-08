@@ -29,6 +29,9 @@ DISTFILES+=	soa-5_2-ga-bin-linux-en.bin
 .endif
 EXTRACT_ONLY=	109939-03.tar.Z
 
+DEPRECATED=	sources not available, requires /proc
+EXPIRATION_DATE=	2010-09-01
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 

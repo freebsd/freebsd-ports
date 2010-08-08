@@ -27,6 +27,9 @@ DISTFILES+=     soa-7-ga-bin-linux-en.bin
 
 EXTRACT_ONLY=	116518-08.tar
 
+DEPRECATED=	sources not available, requires /proc
+EXPIRATION_DATE=	2010-09-01
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wordprocessor/dbase/spreadheet/drawing/chart
 

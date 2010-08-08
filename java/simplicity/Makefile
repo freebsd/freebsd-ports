@@ -12,6 +12,9 @@ CATEGORIES=	java devel
 MASTER_SITES=	# http://www.datarepresentations.com/products/simplicity/
 DISTNAME=	simpjava
 
+DEPRECATED=	sources not available
+EXPIRATION_DATE=	2010-09-01
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely powerful and extremely simple RAD IDE for Java
 
