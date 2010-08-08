@@ -1,5 +1,5 @@
---- /dev/null	Wed Dec 31 16:00:00 1969
-+++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_amd64_freebsd.cpp	Thu Oct 16 22:59:43 2003
+--- xpcom/reflect/xptcall/src/md/unix/xptcinvoke_amd64_freebsd.cpp.orig	2009-10-02 22:13:13.000000000 +0200
++++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_amd64_freebsd.cpp	2009-10-02 22:41:36.000000000 +0200
 @@ -0,0 +1,174 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 +// Platform specific code to invoke XPCOM methods on native objects
@@ -98,8 +98,8 @@
 +}
 +
 +extern "C"
-+XPTC_PUBLIC_API(nsresult)
-+XPTC_InvokeByIndex(nsISupports * that, PRUint32 methodIndex,
++EXPORT_XPCOM_API(nsresult)
++NS_InvokeByIndex_P(nsISupports * that, PRUint32 methodIndex,
 +                   PRUint32 paramCount, nsXPTCVariant * params)
 +{
 +    PRUint32 nr_gpr, nr_fpr, nr_stack;
@@ -175,14 +175,15 @@
 +    PRUint32 result = ((Method)methodAddress)(a0, a1, a2, a3, a4, a5);
 +    return result;
 +}
---- /dev/null	Wed Dec 31 16:00:00 1969
-+++ xpcom/reflect/xptcall/src/md/unix/xptcstubs_amd64_freebsd.cpp	Thu Oct 16 23:01:08 2003
-@@ -0,0 +1,206 @@
+--- xpcom/reflect/xptcall/src/md/unix/xptcstubs_amd64_freebsd.cpp.orig	2009-10-02 22:13:13.000000000 +0200
++++ xpcom/reflect/xptcall/src/md/unix/xptcstubs_amd64_freebsd.cpp	2009-10-02 22:39:37.000000000 +0200
+@@ -0,0 +1,200 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 +
 +// Implement shared vtbl methods.
 +
 +#include "xptcprivate.h"
++#include "xptiprivate.h"
 +
 +// The Linux/x86-64 ABI passes the first 6 integral parameters and the
 +// first 8 floating point parameters in registers (rdi, rsi, rdx, rcx,
@@ -209,7 +210,6 @@
 +{
 +    nsXPTCMiniVariant paramBuffer[PARAM_BUFFER_COUNT];
 +    nsXPTCMiniVariant* dispatchParams = NULL;
-+    nsIInterfaceInfo* iface_info = NULL;
 +    const nsXPTMethodInfo* info;
 +    PRUint32 paramCount;
 +    PRUint32 i;
@@ -217,12 +217,7 @@
 +
 +    NS_ASSERTION(self,"no self");
 +
-+    self->GetInterfaceInfo(&iface_info);
-+    NS_ASSERTION(iface_info,"no interface info");
-+    if (! iface_info)
-+        return NS_ERROR_UNEXPECTED;
-+
-+    iface_info->GetMethodInfo(PRUint16(methodIndex), &info);
++    self->mEntry->GetMethodInfo(PRUint16(methodIndex), &info);
 +    NS_ASSERTION(info,"no method info");
 +    if (! info)
 +        return NS_ERROR_UNEXPECTED;
@@ -297,9 +292,8 @@
 +        }
 +    }
 +
-+    result = self->CallMethod((PRUint16) methodIndex, info, dispatchParams);
-+
-+    NS_RELEASE(iface_info);
++    result = self->mOuter->CallMethod((PRUint16)methodIndex, info,
++                                      dispatchParams);
 +
 +    if (dispatchParams != paramBuffer)
 +        delete [] dispatchParams;
