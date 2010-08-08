@@ -1,12 +1,11 @@
-bin/sdlmess
-libexec/sdlmess/chdman
-libexec/sdlmess/imgtool
-libexec/sdlmess/jedutil
-libexec/sdlmess/ldresample
-libexec/sdlmess/ldverify
-libexec/sdlmess/testkeys
-libexec/sdlmess/unidasm
-%%PORTDOCS%%%%DOCSDIR%%/SDLMESS.txt
+bin/mess
+libexec/mess/chdman
+libexec/mess/imgtool
+libexec/mess/jedutil
+libexec/mess/ldresample
+libexec/mess/ldverify
+libexec/mess/testkeys
+libexec/mess/unidasm
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/config.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/credits.htm
@@ -18,7 +17,6 @@ libexec/sdlmess/unidasm
 %%PORTDOCS%%%%DOCSDIR%%/docs/newvideo.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/wintoc.xml
-%%PORTDOCS%%%%DOCSDIR%%/docs/images/logo.gif
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/choice.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/compile.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/config.htm
@@ -26,10 +24,8 @@ libexec/sdlmess/unidasm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/guiconf.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/guiuse.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/install.htm
-%%PORTDOCS%%%%DOCSDIR%%/docs/windows/instbios.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/instroms.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/main.htm
-%%PORTDOCS%%%%DOCSDIR%%/docs/windows/mgebios.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/mgeroms.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/osmenu.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/runsw.htm
@@ -62,9 +58,6 @@ libexec/sdlmess/unidasm
 %%DATADIR%%/artwork/dallas.zip
 %%DATADIR%%/artwork/dallas16.zip
 %%DATADIR%%/artwork/dallas32.zip
-%%DATADIR%%/artwork/dir.txt
-%%DATADIR%%/artwork/floppyr.png
-%%DATADIR%%/artwork/floppyw.png
 %%DATADIR%%/artwork/glasgow.zip
 %%DATADIR%%/artwork/hp48g.zip
 %%DATADIR%%/artwork/hp48gp.zip
@@ -73,8 +66,6 @@ libexec/sdlmess/unidasm
 %%DATADIR%%/artwork/hp48sx.zip
 %%DATADIR%%/artwork/junior.zip
 %%DATADIR%%/artwork/kim1.zip
-%%DATADIR%%/artwork/ledoff.png
-%%DATADIR%%/artwork/ledon.png
 %%DATADIR%%/artwork/mk1.zip
 %%DATADIR%%/artwork/mk2.zip
 %%DATADIR%%/artwork/mm4.zip
@@ -82,14 +73,12 @@ libexec/sdlmess/unidasm
 %%DATADIR%%/artwork/mm50.zip
 %%DATADIR%%/artwork/mpf1.zip
 %%DATADIR%%/artwork/mpf1b.zip
-%%DATADIR%%/artwork/nes.zip
 %%DATADIR%%/artwork/pc1401.zip
 %%DATADIR%%/artwork/pc1402.zip
 %%DATADIR%%/artwork/pc1403.zip
 %%DATADIR%%/artwork/rebel5.zip
 %%DATADIR%%/artwork/roma32.zip
 %%DATADIR%%/artwork/ssystem3.zip
-%%DATADIR%%/artwork/thomson.lay
 %%DATADIR%%/artwork/thomson.zip
 %%DATADIR%%/hash/a2600.hsi
 %%DATADIR%%/hash/a5200.hsi
@@ -117,7 +106,6 @@ libexec/sdlmess/unidasm
 %%DATADIR%%/hash/channelf.hsi
 %%DATADIR%%/hash/coco.hsi
 %%DATADIR%%/hash/coleco.hsi
-%%DATADIR%%/hash/coupe.hsi
 %%DATADIR%%/hash/cpc464.hsi
 %%DATADIR%%/hash/cpc6128.hsi
 %%DATADIR%%/hash/dragon64.hsi
@@ -140,6 +128,7 @@ libexec/sdlmess/unidasm
 %%DATADIR%%/hash/mc10.hsi
 %%DATADIR%%/hash/megaduck.hsi
 %%DATADIR%%/hash/microtan.hsi
+%%DATADIR%%/hash/mo5.hsi
 %%DATADIR%%/hash/msx.hsi
 %%DATADIR%%/hash/msx2.hsi
 %%DATADIR%%/hash/mtx512.hsi
@@ -165,26 +154,18 @@ libexec/sdlmess/unidasm
 %%DATADIR%%/hash/svision.hsi
 %%DATADIR%%/hash/ti99_4a.hsi
 %%DATADIR%%/hash/ts2068.hsi
+%%DATADIR%%/hash/vboy.hsi
 %%DATADIR%%/hash/vc4000.hsi
 %%DATADIR%%/hash/vectrex.hsi
 %%DATADIR%%/hash/vic20.hsi
 %%DATADIR%%/hash/wswan.hsi
-%%DATADIR%%/keymaps/km-be.txt
-%%DATADIR%%/keymaps/km-ch.txt
-%%DATADIR%%/keymaps/km-de.txt
-%%DATADIR%%/keymaps/km-fr-OSX.txt
-%%DATADIR%%/keymaps/km-fr.txt
-%%DATADIR%%/keymaps/km_it.txt
-%%DATADIR%%/ui.bdf
 %%EXAMPLESDIR%%/mess.ini
 @dirrm %%DATADIR%%/artwork
 @dirrm %%DATADIR%%/hash
-@dirrm %%DATADIR%%/keymaps
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/windows/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/windows
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
-@dirrm libexec/sdlmess
+@dirrm libexec/mess
