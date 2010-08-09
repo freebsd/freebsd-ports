@@ -8,7 +8,7 @@
 
 PORTNAME=	cmucl
 PORTVERSION=	19f
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang lisp
 MASTER_SITES=	http://common-lisp.net/pub/project/cmucl/release/${PORTVERSION}/ \
 		http://www.pmsf.de/pub/cmucl/release/${PORTVERSION}/ \
@@ -20,7 +20,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-x86-freebsd_6.3-release
 MAINTAINER=	cracauer@cons.org
 COMMENT=	The CMU implementation of Common Lisp
 
-LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
+LIB_DEPENDS=	c.6:${PORTSDIR}/misc/compat6x
 
 # To make available on other archs, has to be cross-compiled (there is a
 # script for this, but a configuration file has to be written).
