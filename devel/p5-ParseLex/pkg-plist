@@ -2,7 +2,6 @@
 %%SITE_PERL%%/Parse/ALex.pm
 %%SITE_PERL%%/Parse/LexEvent.pm
 %%SITE_PERL%%/Parse/YYLex.pm
-%%SITE_PERL%%/Parse/Template.pm
 %%SITE_PERL%%/Parse/CLex.pm
 %%SITE_PERL%%/Parse/Trace.pm
 %%SITE_PERL%%/Parse/Token.pm
