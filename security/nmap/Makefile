@@ -15,7 +15,7 @@ MASTER_SITES=	http://nmap.org/dist/ \
 		http://www.mirrorservice.org/sites/ftp.wiretapped.net/pub/security/network-mapping/nmap/ \
 		http://mirror.sg.depaul.edu/pub/security/nmap/
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port scanning utility for large networks
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre

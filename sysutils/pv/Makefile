@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/pipeviewer/pipeviewer/${PORTVERSION}
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pipe throughput monitor
 
 USE_BZIP2=	yes

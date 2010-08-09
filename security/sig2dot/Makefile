@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.chaosreigns.com/code/sig2dot/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.pl
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPG/PGP Keyring Graph Generator
 
 PLIST_FILES=	bin/sig2dot

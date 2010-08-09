@@ -14,7 +14,7 @@ DISTNAME=	Spicetrade-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Colourful 14th century Arab spice trading game
 
 NO_PACKAGE=	Package will be 186MB, set FORCE_PACKAGE if you really want to build it
