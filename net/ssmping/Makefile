@@ -7,6 +7,7 @@
 
 PORTNAME=	ssmping
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.venaas.no/multicast/ssmping/
 
@@ -24,8 +25,8 @@ PLIST_FILES=	bin/ssmping \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700000
-IGNORE=		does not work at FreeBSD 7.x and newer
+.if ${OSVERSION} <= 8100000 && ${OSVERSION} >= 6400000
+IGNORE=		does not work at FreeBSD 7.x
 .endif
 
 do-install:
