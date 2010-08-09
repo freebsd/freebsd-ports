@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libunwind
-PORTVERSION=	20100430
+PORTVERSION=	20100809
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
