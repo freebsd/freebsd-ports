@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c2eac2b5-9a7d-11df-8e32-000f20797ede">
+    <topic>firefox -- Dangling pointer crash regression from plugin parameter array fix</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>3.6.*,1</gt><lt>3.6.8,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>3.6.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2010-48 Dangling pointer crash regression from plugin parameter array fix</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-2755</cvename>
+      <url>https://www.mozilla.org/security/announce/2010/mfsa2010-48.html</url>
+    </references>
+    <dates>
+      <discovery>2010-07-20</discovery>
+      <entry>2010-08-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="26e1c48a-9fa7-11df-81b5-00e0814cab4e">
     <topic>Piwik -- Local File Inclusion Vulnerability</topic>
     <affects>
