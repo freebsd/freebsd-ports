@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	eiciel
-PORTVERSION=	0.9.6.1
-PORTREVISION=	6
+PORTVERSION=	0.9.8
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://rofi.roger-ferrer.org/eiciel/download/
 
@@ -21,13 +20,22 @@ USE_GNOME=	gnomehack gnomeprefix intlhack nautilus2 libgnomeui
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-nautilus-extensions-dir=${PREFIX}/lib/nautilus/extensions-2.0
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		eiciel.1
+LICENSE=	GPLv2
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
