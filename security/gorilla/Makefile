@@ -1,4 +1,4 @@
-# New ports collection makefile for:	gorilla
+# New ports collection Makefile for:	gorilla
 # Date created:				2006-02-11
 # Whom:					Kay Lehmann <kay_lehmann@web.de>
 #
@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	gorilla
-PORTVERSION=	1.5.3
-DISTVERSIONSUFFIX=	1996106
+PORTVERSION=	1.5.3.1
+DISTVERSIONSUFFIX=	c05eb4e
 CATEGORIES=	security
-MASTER_SITES=	http://download.github.com/\
-				http://www.bayofrum.net/dist/gorilla/
-DISTNAME=		zdia-${PORTNAME}-v${DISTVERSION}-0-g${DISTVERSIONSUFFIX}
+MASTER_SITES=	http://www.bayofrum.net/dist/gorilla/ \
+		http://cerberus.bayofrum.net/dist/gorilla/
+DISTNAME=	zdia-${PORTNAME}-v${DISTVERSION}-0-g${DISTVERSIONSUFFIX}
 
 MAINTAINER=	utisoft@gmail.com
 COMMENT=	Password Gorilla is a cross-platform Password Manager
 
 RUN_DEPENDS=	${LOCALBASE}/lib/bwidget/init.tcl:${PORTSDIR}/x11-toolkits/bwidget \
-				itcl>=3.4:${PORTSDIR}/lang/itcl
+		itcl>=3.4:${PORTSDIR}/lang/itcl
 
-WRKSRC=			${WRKDIR}/zdia-${PORTNAME}-${DISTVERSIONSUFFIX}
+LICENSE=	GPLv2
+
+WRKSRC=		${WRKDIR}/zdia-${PORTNAME}-${DISTVERSIONSUFFIX}
 USE_TCL_RUN=	85+
 USE_TK=		85+
 NO_BUILD=	yes
