@@ -656,8 +656,8 @@
 %%WWWDIR%%/admin/images/url-noajax.png
 %%WWWDIR%%/admin/images/url-nolinks.png
 %%WWWDIR%%/admin/images/url-noscript.png
-%%WWWDIR%%/admin/js/user.js
 %%WWWDIR%%/admin/index.php
+%%WWWDIR%%/admin/js/user.js
 %%WWWDIR%%/admin/linkconfig.main.php
 %%WWWDIR%%/admin/news.php
 %%WWWDIR%%/admin/password.php
@@ -694,10 +694,10 @@
 %%WWWDIR%%/contact.php
 %%WWWDIR%%/cron.verifyurls.php
 %%WWWDIR%%/docs/CHANGEDFILES
+%%WWWDIR%%/docs/CHANGELOG
 %%WWWDIR%%/docs/INSTALL
 %%WWWDIR%%/docs/LICENSE
 %%WWWDIR%%/docs/README
-%%WWWDIR%%/docs/CHANGELOG
 %%WWWDIR%%/docs/documentation.en.html
 %%WWWDIR%%/feed/category/rss.php
 %%WWWDIR%%/feed/latest/rss.php
@@ -797,12 +797,21 @@
 %%WWWDIR%%/inc/PMF_Perm/PermMedium.php
 %%WWWDIR%%/inc/PMF_Search/Abstract.php
 %%WWWDIR%%/inc/PMF_Search/Database.php
+%%WWWDIR%%/inc/PMF_Search/Database/Ibase.php
+%%WWWDIR%%/inc/PMF_Search/Database/Ibm_db2.php
+%%WWWDIR%%/inc/PMF_Search/Database/Mssql.php
 %%WWWDIR%%/inc/PMF_Search/Database/Mysql.php
 %%WWWDIR%%/inc/PMF_Search/Database/Mysqli.php
+%%WWWDIR%%/inc/PMF_Search/Database/Oci8.php
 %%WWWDIR%%/inc/PMF_Search/Database/Pgsql.php
+%%WWWDIR%%/inc/PMF_Search/Database/Sqlite.php
+%%WWWDIR%%/inc/PMF_Search/Database/Sqlsrv.php
+%%WWWDIR%%/inc/PMF_Search/Database/Sybase.php
 %%WWWDIR%%/inc/PMF_Search/Exception.php
+%%WWWDIR%%/inc/PMF_Search/Factory.php
 %%WWWDIR%%/inc/PMF_Search/Interface.php
 %%WWWDIR%%/inc/PMF_Search/Resultset.php
+%%WWWDIR%%/inc/PMF_Search/Resultset.php.orig
 %%WWWDIR%%/inc/PMF_String/Abstract.php
 %%WWWDIR%%/inc/PMF_String/Basic.php
 %%WWWDIR%%/inc/PMF_String/Mbstring.php
@@ -837,8 +846,6 @@
 %%WWWDIR%%/inc/js/plugins/datePicker/jquery.datePicker.js
 %%WWWDIR%%/inc/js/suggest.js
 %%WWWDIR%%/inc/js/syntaxhighlighter/LGPLv3.txt
-%%WWWDIR%%/inc/js/syntaxhighlighter/src/shCore.js
-%%WWWDIR%%/inc/js/syntaxhighlighter/src/shLegacy.js
 %%WWWDIR%%/inc/js/syntaxhighlighter/scripts/clipboard.swf
 %%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushAS3.js
 %%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushBash.js
@@ -865,6 +872,8 @@
 %%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shBrushXml.js
 %%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shCore.js
 %%WWWDIR%%/inc/js/syntaxhighlighter/scripts/shLegacy.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/src/shCore.js
+%%WWWDIR%%/inc/js/syntaxhighlighter/src/shLegacy.js
 %%WWWDIR%%/inc/js/syntaxhighlighter/styles/help.png
 %%WWWDIR%%/inc/js/syntaxhighlighter/styles/magnifier.png
 %%WWWDIR%%/inc/js/syntaxhighlighter/styles/page_white_code.png
@@ -925,6 +934,7 @@
 %%WWWDIR%%/install/questionnaire.php
 %%WWWDIR%%/install/setup.php
 %%WWWDIR%%/install/sqlite.sql.php
+%%WWWDIR%%/install/sqlsrv.sql.php
 %%WWWDIR%%/install/stopwords.sql.php
 %%WWWDIR%%/install/style/setup.css
 %%WWWDIR%%/install/sybase.sql.php
@@ -983,15 +993,15 @@
 %%WWWDIR%%/savecomment.php
 %%WWWDIR%%/savequestion.php
 %%WWWDIR%%/savevoting.php
+%%WWWDIR%%/scripts/git2changelog.sh
+%%WWWDIR%%/scripts/git2package.sh
+%%WWWDIR%%/scripts/version.sh
 %%WWWDIR%%/search.php
 %%WWWDIR%%/send2friend.php
 %%WWWDIR%%/sendmail.php
 %%WWWDIR%%/show.php
 %%WWWDIR%%/sitemap.google.php
 %%WWWDIR%%/sitemap.php
-%%WWWDIR%%/scripts/git2changelog.sh
-%%WWWDIR%%/scripts/git2package.sh
-%%WWWDIR%%/scripts/version.sh
 %%WWWDIR%%/template/default/add.tpl
 %%WWWDIR%%/template/default/artikel.tpl
 %%WWWDIR%%/template/default/ask.tpl
@@ -1034,6 +1044,7 @@
 @dirrm %%WWWDIR%%/xml
 @dirrm %%WWWDIR%%/template/default
 @dirrmtry %%WWWDIR%%/template
+@dirrm %%WWWDIR%%/scripts
 @dirrmtry %%WWWDIR%%/pdf
 @dirrm %%WWWDIR%%/lang
 @dirrm %%WWWDIR%%/install/style
@@ -1043,18 +1054,18 @@
 @dirrm %%WWWDIR%%/inc/libs/phpseclib/Crypt
 @dirrm %%WWWDIR%%/inc/libs/phpseclib
 @dirrm %%WWWDIR%%/inc/libs
-@dirrm %%WWWDIR%%/inc/js/syntaxhighlighter/scripts
 @dirrm %%WWWDIR%%/inc/js/syntaxhighlighter/styles
 @dirrm %%WWWDIR%%/inc/js/syntaxhighlighter/src
+@dirrm %%WWWDIR%%/inc/js/syntaxhighlighter/scripts
 @dirrm %%WWWDIR%%/inc/js/syntaxhighlighter
 @dirrm %%WWWDIR%%/inc/js/plugins/datePicker
 @dirrm %%WWWDIR%%/inc/js/plugins/autocomplete
 @dirrm %%WWWDIR%%/inc/js/plugins
 @dirrm %%WWWDIR%%/inc/js
 @dirrm %%WWWDIR%%/inc/PMF_User
+@dirrm %%WWWDIR%%/inc/PMF_String
 @dirrm %%WWWDIR%%/inc/PMF_Search/Database
 @dirrm %%WWWDIR%%/inc/PMF_Search
-@dirrm %%WWWDIR%%/inc/PMF_String
 @dirrm %%WWWDIR%%/inc/PMF_Perm
 @dirrm %%WWWDIR%%/inc/PMF_Mail
 @dirrm %%WWWDIR%%/inc/PMF_Language
@@ -1070,7 +1081,6 @@
 @dirrm %%WWWDIR%%/inc/PMF_Attachment/Filesystem
 @dirrm %%WWWDIR%%/inc/PMF_Attachment
 @dirrm %%WWWDIR%%/inc
-@dirrm %%WWWDIR%%/scripts
 @dirrmtry %%WWWDIR%%/images
 @dirrm %%WWWDIR%%/font
 @dirrm %%WWWDIR%%/feed/topten
@@ -1084,8 +1094,8 @@
 @dirrmtry %%WWWDIR%%/config
 @dirrm %%WWWDIR%%/attachments
 @dirrm %%WWWDIR%%/admin/style
-@dirrm %%WWWDIR%%/admin/images
 @dirrm %%WWWDIR%%/admin/js
+@dirrm %%WWWDIR%%/admin/images
 @dirrm %%WWWDIR%%/admin/editor/utils
 @dirrm %%WWWDIR%%/admin/editor/themes/simple/skins/o2k7/img
 @dirrm %%WWWDIR%%/admin/editor/themes/simple/skins/o2k7
@@ -1153,8 +1163,8 @@
 @dirrm %%WWWDIR%%/admin/editor/plugins/media/img
 @dirrm %%WWWDIR%%/admin/editor/plugins/media/css
 @dirrm %%WWWDIR%%/admin/editor/plugins/media
-@dirrm %%WWWDIR%%/admin/editor/plugins/layer
 @dirrm %%WWWDIR%%/admin/editor/plugins/legacyoutput
+@dirrm %%WWWDIR%%/admin/editor/plugins/layer
 @dirrm %%WWWDIR%%/admin/editor/plugins/insertdatetime
 @dirrm %%WWWDIR%%/admin/editor/plugins/inlinepopups/skins/clearlooks2/img
 @dirrm %%WWWDIR%%/admin/editor/plugins/inlinepopups/skins/clearlooks2
