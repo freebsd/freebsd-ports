@@ -1,0 +1,5 @@
+A unified, cross-platform replacement for the Etc
+module that allows you to get information about
+users and groups.
+
+WWW: http://sysutils.rubyforge.org/

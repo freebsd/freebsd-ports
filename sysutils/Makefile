@@ -739,6 +739,7 @@
     SUBDIR += rubygem-capistrano
     SUBDIR += rubygem-god
     SUBDIR += rubygem-ohai
+    SUBDIR += rubygem-sys-admin
     SUBDIR += rubygem-sys-cpu
     SUBDIR += rubygem-sys-filesystem
     SUBDIR += rubygem-sys-host
