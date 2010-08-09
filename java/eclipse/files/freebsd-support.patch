@@ -2847,8 +2847,8 @@ $FreeBSD$
  if [ -z "${MOZILLA_INCLUDES}" -a -z "${MOZILLA_LIBS}" ]; then
 -	if [ x`pkg-config --exists mozilla-xpcom && echo YES` = "xYES" ]; then
 +	if [ x`pkg-config --exists libxul && echo YES` = "xYES" ]; then
-+		XULRUNNER_INCLUDES=`pkg-config --cflags libxul-unstable`
-+		XULRUNNER_LIBS="`pkg-config --libs libxul-unstable` -lxpcomglue"
++		XULRUNNER_INCLUDES=`pkg-config --cflags libxul`
++		XULRUNNER_LIBS="`pkg-config --libs libxul` -lxpcomglue"
 +		export XULRUNNER_INCLUDES
 +		export XULRUNNER_LIBS
 +		MAKE_MOZILLA="make_xulrunner make_xpcominit"
