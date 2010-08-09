@@ -17,9 +17,11 @@ name=webcamd
 rcvar=`set_rcvar`
 command=%%PREFIX%%/sbin/webcamd
 command_args="-B"
+pidfile="/var/run/webcamd.$cdev.0.pid"
 
 load_rc_config $name
 if [ $# -gt 1 ]; then
+	pidfile="webcamd.dummy"
 	command_args="$command_args -d $2 -i 0"
 fi
 run_rc_command $1
