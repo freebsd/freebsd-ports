@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	Net_URL2
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.1
 CATEGORIES=	net www pear
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Easy parsing of Urls
+MAINTAINER=	joehorn@gmail.com
+COMMENT=	PEAR Class for parsing and handling URL
+
+LICENSE=	BSD
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
