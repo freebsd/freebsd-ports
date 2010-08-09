@@ -1,0 +1,3 @@
+A respond_to style Rails block for baked-in web service support in Sinatra.
+
+WWW: http://github.com/cehoffman/sinatra-respond_to
