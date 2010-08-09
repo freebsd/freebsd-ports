@@ -741,6 +741,7 @@
     SUBDIR += rubygem-ohai
     SUBDIR += rubygem-sys-cpu
     SUBDIR += rubygem-sys-host
+    SUBDIR += rubygem-sys-uname
     SUBDIR += runit
     SUBDIR += runwhen
     SUBDIR += safe-rm
