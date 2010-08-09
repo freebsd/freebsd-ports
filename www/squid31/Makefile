@@ -48,12 +48,9 @@
 #     to indicate variance within an accelerator setup. Typically used
 #     together with other code that adds custom HTTP headers to the
 #     requests.
-#    --disable-loadable-modules
-#     Do not support loadable modules.
 
 PORTNAME=	squid
 PORTVERSION=	3.1.${SQUID_STABLE_VER}
-PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirrors.ccs.neu.edu/Squid/ \
@@ -75,8 +72,7 @@ MASTER_SITE_SUBDIR=	squid
 DISTNAME=	squid-3.1.${SQUID_STABLE_VER}
 DIST_SUBDIR=	squid3.1
 
-PATCHFILES=	squid-3.1-9996.patch squid-3.1-9998.patch \
-		squid-3.1-10001.patch squid-3.1-10003.patch
+PATCHFILES=
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www2.us.squid-cache.org/%SUBDIR%/ \
 		http://www1.at.squid-cache.org/%SUBDIR%/ \
@@ -92,7 +88,7 @@ COMMENT=	HTTP Caching Proxy
 
 LATEST_LINK=	squid31
 
-SQUID_STABLE_VER=	4
+SQUID_STABLE_VER=	6
 
 CONFLICTS=	squid-2.[0-9].* squid-3.[^1].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
@@ -181,9 +177,14 @@ error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
 		ERR_URN_RESOLVE ERR_WRITE_ERROR ERR_ZERO_SIZE_OBJECT
 
 error_dirs=	af ar az bg ca cs da de el en es et fa fi fr he hu hy id it \
-		ja ko lt lv ms nl pl pt pt-br ro ru sk sv th tr uk uz \
+		ja ko lt lv ms nl pl pt pt-br ro ru sk sr sv th tr uk uz \
 		zh-cn zh-tw \
 		templates
+
+# XXX:	this is probably a bug in 3.1.6: sr-latn should probably a symlink but
+# 	is installed as a directory; if this is intentional the directory is
+# 	currently empty which is not really useful either.
+error_dirs+=	sr-latn
 
 error_dir_links=	ar-ae ar-bh ar-dz ar-eg ar-iq ar-jo ar-kw ar-lb \
 			ar-ly ar-ma ar-om ar-qa ar-sa ar-sy ar-tn ar-ye \
@@ -200,7 +201,8 @@ error_dir_links=	ar-ae ar-bh ar-dz ar-eg ar-iq ar-jo ar-kw ar-lb \
 			fr-be fr-ca fr-ch fr-fr fr-lu fr-mc \
 			he-il hu-hu hy-am id-id it-ch it-it \
 			ja-jp ko-kp ko-kr lt-lt lv-lv ms-my nl-nl \
-			pl-pl pt-pt ro-md ro-ro ru-ru sk-sk sv-fi sv-se \
+			pl-pl pt-pt ro-md ro-ro ru-ru sk-sk \
+			sr-latn-cs sr-sp sv-fi sv-se \
 			th-th tr-tr uk-ua zh-hk zh-mo zh-sg
 
 libexec=	cachemgr.cgi digest_pw_auth diskd ip_user_check \
@@ -372,10 +374,15 @@ CONFIGURE_ARGS+=	--enable-ipf-transparent
 CONFIGURE_ARGS+=	--enable-follow-x-forwarded-for
 .endif
 .if defined(WITH_SQUID_ECAP)
-CONFIGURE_ARGS+=	--enable-ecap
+CONFIGURE_ARGS+=	--enable-ecap --enable-loadable-modules
+# XXX:	work around issues with the bundled libtool from 3.1.5 onwards;
+# 	we need to tell c++ where to find them explicitly
+CFLAGS+=	-I${WRKSRC}/libltdl
 LIB_DEPENDS+=	ecap:${PORTSDIR}/www/libecap
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+.else
+CONFIGURE_ARGS+=	--disable-ecap --disable-loadable-modules
 .endif
 .if defined(WITH_SQUID_ICAP)
 CONFIGURE_ARGS+=	--enable-icap-client
