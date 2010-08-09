@@ -6,16 +6,20 @@
 #
 
 PORTNAME=	HTTP_Session2
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	www devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joehorn@gmail.com
 COMMENT=	PHP5 Session Handler
+
+LICENSE=	BSD
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_DOS2UNIX=	yes
+
+IGNORE_WITH_PHP=	4
 
 CATEGORY=	HTTP
 FILES=		HTTP/Session2.php \
@@ -27,7 +31,9 @@ FILES=		HTTP/Session2.php \
 		HTTP/Session2/Container/Memcache.php
 EXAMPLES=	HTTP_Session2_Example.php sessiondata.sql
 _EXAMPLESDIR=	docs
-TESTS=		AllTests.php Session2Test.php
+TESTS=		AllTests.php functions.php \
+		test-session2.phpt test-session-doctrine.phpt \
+		test-session-mdb2.phpt test-session.phpt
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
