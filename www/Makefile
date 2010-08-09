@@ -1563,6 +1563,7 @@
     SUBDIR += rubygem-scrubyt
     SUBDIR += rubygem-simple-rss
     SUBDIR += rubygem-sinatra
+    SUBDIR += rubygem-sinatra-respond_to
     SUBDIR += rubygem-staticmatic
     SUBDIR += rubygem-taggable
     SUBDIR += rubygem-thin
