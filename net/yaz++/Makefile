@@ -7,6 +7,7 @@
 
 PORTNAME=	yaz++
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yazpp/
 DISTNAME=	yazpp-${PORTVERSION}
