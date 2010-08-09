@@ -17,6 +17,9 @@ BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
 		bzr:${PORTSDIR}/devel/bazaar-ng
 
+IGNORE=		does not run with latest version of bzr
+
+USE_GETTEXT=	yes
 USE_PYTHON=	2.4+
 USE_GNOME=	pygtk2
 USE_PYDISTUTILS=	yes
