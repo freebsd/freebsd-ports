@@ -8,6 +8,7 @@ bin/Random-config
 bin/RandomObjects-config
 bin/RefCount-config
 bin/Units-config
+bin/Utility-config
 bin/Vector-config
 bin/clhep-config
 bin/clheplib
@@ -32,6 +33,16 @@ include/CLHEP/Exceptions/ZMthrow.h
 include/CLHEP/Exceptions/arch_spec_Exceptions.mk
 include/CLHEP/Exceptions/defs.h
 include/CLHEP/Exceptions/link_Exceptions.mk
+include/CLHEP/GenericFunctions/Airy.hh
+include/CLHEP/GenericFunctions/Airy.icc
+include/CLHEP/GenericFunctions/Gamma.hh
+include/CLHEP/GenericFunctions/GammaDistribution.hh
+include/CLHEP/GenericFunctions/KroneckerDelta.hh
+include/CLHEP/GenericFunctions/Legendre.hh
+include/CLHEP/GenericFunctions/Legendre.icc
+include/CLHEP/GenericFunctions/ParameterComposition.hh
+include/CLHEP/GenericFunctions/SymToArgAdaptor.hh
+include/CLHEP/GenericFunctions/SymToArgAdaptor.icc
 include/CLHEP/GenericFunctions/ACos.hh
 include/CLHEP/GenericFunctions/ASin.hh
 include/CLHEP/GenericFunctions/ATan.hh
@@ -213,6 +224,11 @@ include/CLHEP/Units/GlobalSystemOfUnits.h
 include/CLHEP/Units/PhysicalConstants.h
 include/CLHEP/Units/SystemOfUnits.h
 include/CLHEP/Units/defs.h
+include/CLHEP/Utility/keywords.h
+include/CLHEP/Utility/memory.h
+include/CLHEP/Utility/noncopyable.h
+include/CLHEP/Utility/type_traits.h
+include/CLHEP/Utility/defs.h
 include/CLHEP/Vector/AxisAngle.h
 include/CLHEP/Vector/AxisAngle.icc
 include/CLHEP/Vector/Boost.h
@@ -272,6 +288,7 @@ lib/libCLHEP.a
 lib/libCLHEP.so
 @dirrm include/CLHEP/Vector
 @dirrm include/CLHEP/Units
+@dirrm include/CLHEP/Utility
 @dirrm include/CLHEP/RefCount
 @dirrm include/CLHEP/RandomObjects
 @dirrm include/CLHEP/Random
