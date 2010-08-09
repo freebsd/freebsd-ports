@@ -198,6 +198,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_cat.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_cat.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_cat.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_commit.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_commit.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_commit.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_commit_data.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_commit_data.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/tests/test_commit_data.pyo
