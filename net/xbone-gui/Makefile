@@ -17,7 +17,7 @@ COMMENT=	The GUI for XBone, a tool to deploy and manage IP-based VPNs
 
 BUILD_DEPENDS=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
-		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6 \
+		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6 \
 		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		p5-NetAddr-IP>0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		${SITE_PERL}/Net/IP.pm:${PORTSDIR}/net-mgmt/p5-Net-IP \

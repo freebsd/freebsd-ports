@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-IO-Socket-SSL>0:${PORTSDIR}/security/p5-IO-Socket-SSL	\
 		p5-Term-ReadKey>0:${PORTSDIR}/devel/p5-Term-ReadKey 		\
 		p5-MIME-Lite>0:${PORTSDIR}/mail/p5-MIME-Lite 			\
 		p5-File-Type>0:${PORTSDIR}/devel/p5-File-Type 			\
-		p5-IO-Socket-INET6>0:${PORTSDIR}/net/p5-IO-INET6
+		p5-IO-Socket-INET6>0:${PORTSDIR}/net/p5-IO-Socket-INET6
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}

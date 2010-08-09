@@ -123,7 +123,7 @@ RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SS
 .endif
 
 .if !defined(WITHOUT_IPV6)
-RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
+RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6
 .endif
 
 EXTRACT_AFTER_ARGS=	-d ${PORTNAME}-${PORTVERSION}

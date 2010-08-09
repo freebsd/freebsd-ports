@@ -24,7 +24,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Un
 		p5-Convert-UUlib>=1.08,1:${PORTSDIR}/converters/p5-Convert-UUlib \
 		p5-Compress-Zlib>=2.004:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6 \
+		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6 \
 		p5-Net-Server>=0.93:${PORTSDIR}/net/p5-Net-Server \
 		p5-Mail-DKIM>=0.33:${PORTSDIR}/mail/p5-Mail-DKIM
 

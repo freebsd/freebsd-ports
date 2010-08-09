@@ -77,7 +77,7 @@ PORTEXAMPLES=	*
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_IPV6)
-RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
+RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6
 .endif
 .if defined(WITH_SNMP)
 RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
