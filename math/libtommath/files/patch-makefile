@@ -1,6 +1,6 @@
---- makefile.orig	Mon Aug  1 12:34:44 2005
-+++ makefile	Wed Aug 31 15:19:42 2005
-@@ -10,7 +10,7 @@
+--- makefile.bak	2010-07-30 12:05:21.219322050 +0200
++++ makefile	2010-07-30 12:07:19.588144344 +0200
+@@ -14,7 +14,7 @@
  ifndef IGNORE_SPEED
  
  #for speed 
@@ -9,7 +9,7 @@
  
  #for size 
  #CFLAGS += -Os
-@@ -48,9 +48,9 @@
+@@ -53,9 +53,9 @@
  #INCPATH-The directory to install the header files for libtommath.
  #DATAPATH-The directory to install the pdf docs.
  DESTDIR=
