@@ -89,6 +89,7 @@ include/yaz/z-diag1.h
 include/yaz/z-espec1.h
 include/yaz/z-estask.h
 include/yaz/z-exp.h
+include/yaz/z-facet-1.h
 include/yaz/z-grs.h
 include/yaz/z-mterm2.h
 include/yaz/z-oclcui.h
@@ -212,6 +213,7 @@ share/yaz/z39.50/charneg-3.asn
 share/yaz/z39.50/datetime.asn
 share/yaz/z39.50/esadmin.asn
 share/yaz/z39.50/esupdate.asn
+share/yaz/z39.50/facet.asn
 share/yaz/z39.50/mterm2.asn
 share/yaz/z39.50/oclcui.asn
 share/yaz/z39.50/univres.asn
