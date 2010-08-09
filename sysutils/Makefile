@@ -740,6 +740,7 @@
     SUBDIR += rubygem-god
     SUBDIR += rubygem-ohai
     SUBDIR += rubygem-sys-cpu
+    SUBDIR += rubygem-sys-host
     SUBDIR += runit
     SUBDIR += runwhen
     SUBDIR += safe-rm
