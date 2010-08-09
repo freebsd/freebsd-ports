@@ -40,7 +40,14 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
+lib/libgracket3m-5.0.so
+lib/libgracket3m.a
+lib/libgracket3m.la
+lib/libgracket3m.so
+lib/libracket3m-5.0.so
 lib/libracket3m.a
+lib/libracket3m.la
+lib/libracket3m.so
 lib/racket/buildinfo
 lib/racket/collects/2htdp/batch-io.rkt
 lib/racket/collects/2htdp/compiled/batch-io_rkt.dep
