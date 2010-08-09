@@ -8561,6 +8561,7 @@ linux-libg2c                    ports/lang/linux-libg2c
 linux-libglade                  ports/devel/linux-libglade
 linux-libglade2                 ports/devel/linux-libglade2
 linux-libglu                    ports/graphics/linux-libGLU
+linux-libgtkembedmoz            ports/www/linux-libgtkembedmoz
 linux-libmad                    ports/audio/linux-libmad
 linux-libmng                    ports/graphics/linux-libmng
 linux-libogg                    ports/audio/linux-libogg
@@ -8576,6 +8577,7 @@ linux-megacli                   ports/sysutils/linux-megacli
 linux-megamgr                   ports/sysutils/linux-megamgr
 linux-mikmod                    ports/audio/linux-mikmod
 linux-mplayer-plugin            ports/www/linux-mplayer-plugin
+linux-musicipserver             ports/audio/linux-musicipserver
 linux-nas-libs                  ports/audio/linux-nas-libs
 linux-nero                      ports/sysutils/linux-nero
 linux-nerodigitalaudio          ports/audio/linux-nerodigitalaudio
@@ -9104,6 +9106,7 @@ mesa-demos                      ports/graphics/mesa-demos
 mesagl                          ports/graphics/mesagl
 mesgui                          ports/x11-toolkits/mesgui
 meshviewer                      ports/graphics/meshviewer
+mess                            ports/emulators/mess
 mess822                         ports/mail/mess822
 messagewall                     ports/mail/messagewall
 meta-cvs                        ports/devel/meta-cvs
@@ -9594,7 +9597,6 @@ mping                           ports/net/mping
 mpiosh                          ports/audio/mpiosh
 mplayer                         ports/multimedia/mplayer
 mplayer-fonts                   ports/multimedia/mplayer-fonts
-mplayer-plugin                  ports/www/mplayer-plugin
 mplayer-skins                   ports/multimedia/mplayer-skins
 mplayerxp                       ports/multimedia/mplayerxp
 mplex                           ports/multimedia/mplex
@@ -19975,7 +19977,6 @@ ploticus-nox11                  ports/math/ploticus-nox11
 plotmtv                         ports/graphics/plotmtv
 plotutils                       ports/graphics/plotutils
 plplot                          ports/math/plplot
-plt-scheme                      ports/lang/plt-scheme
 plucker                         ports/palm/plucker
 plugdaemon                      ports/net/plugdaemon
 plugger                         ports/www/plugger
@@ -21680,6 +21681,7 @@ rabbitmq-c-devel                ports/net/rabbitmq-c-devel
 rabl_client                     ports/mail/rabl_client
 rabl_server                     ports/mail/rabl_server
 race                            ports/games/race
+racket                          ports/lang/racket
 rackmonkey                      ports/net-mgmt/rackmonkey
 racoon2                         ports/security/racoon2
 raddump                         ports/net/raddump
@@ -22856,7 +22858,6 @@ sdl_sound                       ports/audio/sdl_sound
 sdl_ttf                         ports/graphics/sdl_ttf
 sdlcc                           ports/games/sdlCC
 sdlmame-devel                   ports/emulators/sdlmame-devel
-sdlmess                         ports/emulators/sdlmess
 sdlmm                           ports/devel/sdlmm
 sdlquake2                       ports/games/sdlquake2
 sdlroids                        ports/games/sdlroids
