@@ -744,6 +744,7 @@
     SUBDIR += rubygem-sys-filesystem
     SUBDIR += rubygem-sys-host
     SUBDIR += rubygem-sys-uname
+    SUBDIR += rubygem-sys-uptime
     SUBDIR += runit
     SUBDIR += runwhen
     SUBDIR += safe-rm
