@@ -1,4 +1,5 @@
 bin/thrift
+include/thrift/TApplicationException.h
 include/thrift/TLogging.h
 include/thrift/TProcessor.h
 include/thrift/TReflectionLocal.h

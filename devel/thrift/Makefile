@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	thrift
-PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	incubator/thrift/${PORTVERSION}-incubating
-DISTNAME=	thrift-${PORTVERSION}-incubating
+DISTNAME=	thrift-${PORTVERSION}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Framework for scalable cross-language services development
@@ -40,7 +39,7 @@ CONFIGURE_ENV+=	${MAKE_ENV}
 # For Ruby support, use devel/ruby-thrift.
 # Other languages are not yet supported, please feel free to contribute
 # using one of the leaf ports as an example.
-CONFIGURE_ARGS+= \
+CONFIGURE_ARGS+=	\
 		--without-csharp \
 		--without-erlang \
 		--without-java \
