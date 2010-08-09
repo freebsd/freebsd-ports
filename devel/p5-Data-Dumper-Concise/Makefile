@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Data-Dumper-Concise
-PORTVERSION=	1.200
+PORTVERSION=	2.010
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	cjk32@cam.ac.uk
 COMMENT=	Less indentation and newlines plus sub deparsing
+
+BUILD_DEPENDS=	p5-Devel-ArgNames>=0.03:${PORTSDIR}/devel/p5-Devel-ArgNames
+RUN_DEPENDS=	p5-Devel-ArgNames>=0.03:${PORTSDIR}/devel/p5-Devel-ArgNames
 
 PERL_CONFIGURE=	yes
 
