@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libtommath
-PORTVERSION=	0.41
+PORTVERSION=	0.42.0
 CATEGORIES=	math
-MASTER_SITES=	http://libtom.org/files/ \
-		http://www.atarininja.org/~wxs/distfiles/
+MASTER_SITES=	http://libtom.org/files/
 DISTNAME=	ltm-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
