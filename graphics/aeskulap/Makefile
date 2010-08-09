@@ -23,7 +23,8 @@ USE_GNOME=	gconf2
 GCONF_SCHEMAS=	aeskulap.schemas
 USE_LDCONFIG=	${PREFIX}/lib/aeskulap
 
-CXXFLAGS+=	-I${LOCALBASE}/include/dcmtk \
+CXXFLAGS+=	-fPIC \
+		-I${LOCALBASE}/include/dcmtk \
 		-I${LOCALBASE}/include/dcmtk/config \
 		-I${LOCALBASE}/include/dcmtk/ofstd \
 		-I${LOCALBASE}/include/dcmtk/dcmdata \
