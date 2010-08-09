@@ -7,7 +7,7 @@
 
 PORTNAME=	maxima
 PORTVERSION=	5.22.0
-CATEGORIES=	math tk
+CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
 MAINTAINER=	bf@FreeBSD.org
