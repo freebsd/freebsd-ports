@@ -40,6 +40,7 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	SKIP_UNPACK_REQUIRED_MODULES=1
 USE_CDRTOOLS=	yes
 USE_GETTEXT=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		dvdrip.1 dvdrip-progress.1 dvdrip-splitpipe.1
 
