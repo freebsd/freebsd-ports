@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	miro
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/	\
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	armin@frozen-zone.org
 COMMENT=	A video player to get internet TV broadcasts
 
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex				\
@@ -28,11 +28,14 @@ INSTALL_WRKSRC=	${WRKSRC}/platform/gtk-x11
 
 CONFLICTS=	Miro-[0-9]*
 
+LICENSE=	GPLv2
+
 USE_GNOME=	gconf2 gtk20
 USE_GSTREAMER=	python
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_LDCONFIG=	yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}"
 INSTALLS_ICONS=	yes
 INSTALLS_EGGINFO=	yes
@@ -43,6 +46,10 @@ MAN1=		miro.1 miro.real.1
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.x
+.endif
 
 .SILENT:
 
