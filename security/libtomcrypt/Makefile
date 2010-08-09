@@ -7,7 +7,7 @@
 
 PORTNAME=	libtomcrypt
 PORTVERSION=	1.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://libtom.org/files/ \
 		http://www.atarininja.org/~wxs/distfiles/
