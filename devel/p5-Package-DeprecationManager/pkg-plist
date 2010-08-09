@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Package/DeprecationManager.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/DeprecationManager/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/DeprecationManager
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package
+@dirrmtry %%SITE_PERL%%/Package
