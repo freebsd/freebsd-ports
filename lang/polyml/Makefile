@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	beyert.cs.ucr.edu
+MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Fast open-source implementation of Standard ML
 
 GNU_CONFIGURE=	yes
