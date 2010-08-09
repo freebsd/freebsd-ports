@@ -1,0 +1,6 @@
+This port is the slave part of BuildBot. For the buildmaster, install the
+devel/buildbot port
+
+For more information, please see: http://buildbot.net/trac
+
+WWW: http://buildbot.net/

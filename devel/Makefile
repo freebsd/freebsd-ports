@@ -131,6 +131,7 @@
     SUBDIR += build
     SUBDIR += buildapp
     SUBDIR += buildbot
+    SUBDIR += buildbot-slave
     SUBDIR += buildtool
     SUBDIR += buildtool-doc
     SUBDIR += bullet
