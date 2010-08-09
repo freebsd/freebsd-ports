@@ -17,6 +17,9 @@ COMMENT=	Java project management and project comprehension tool
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
+DEPRECATED=	Development has been ceased, superseded by devel/maven2.
+EXPIRATION_DATE=	2010-10-01
+
 USE_BZIP2=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
