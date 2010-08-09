@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scrotwm
-PORTVERSION=	0.9.24
+PORTVERSION=	0.9.25
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://scrotwm.org/snapshot/ \
 		http://www.peereboom.us/scrotwm/snapshot/
