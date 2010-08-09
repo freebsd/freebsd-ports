@@ -7,6 +7,7 @@
 
 PORTNAME=	paredit-mode.el
 PORTVERSION=	21
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	olgeni
@@ -23,5 +24,8 @@ PLIST_FILES=	%%EMACS_SITE_LISPDIR%%/paredit.el
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/paredit.el ${PREFIX}/${EMACS_SITE_LISPDIR}/paredit.el
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
