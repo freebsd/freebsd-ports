@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.suckless.org/download/ \
 		http://mirror.roe.ch/dist/${PORTNAME}/
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 generic pointer warping utility
 
 MAKE_ARGS=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lX11" \

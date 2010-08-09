@@ -10,7 +10,7 @@ PORTVERSION=	20090825
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://mirror.roe.ch/dist/dma/
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DragonFly Mail Agent, a small MTA for local/outbound mail
 
 USE_BZIP2=	yes

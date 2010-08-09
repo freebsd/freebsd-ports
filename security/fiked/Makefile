@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://mirror.roe.ch/dist/fiked/
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fake IKE PSK+XAUTH daemon based on VPNC
 
 LIB_DEPENDS=	gcrypt.17:${PORTSDIR}/security/libgcrypt

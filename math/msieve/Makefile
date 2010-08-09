@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.boo.net/~jasonp/ \
 		http://mirror.roe.ch/dist/msieve/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast factorization of big integers using MPQS and GNFS
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libecm.a:${PORTSDIR}/math/gmp-ecm

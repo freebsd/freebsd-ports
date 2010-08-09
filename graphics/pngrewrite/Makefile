@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://entropymine.com/jason/pngrewrite/ \
 		http://mirror.roe.ch/dist/pngrewrite/
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PNG palette optimizer
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
