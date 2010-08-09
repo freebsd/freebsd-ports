@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	exact-image
-PORTVERSION=	0.8.0
-CATEGORIES=	graphics
+PORTVERSION=	0.8.1
+CATEGORIES=	graphics perl5 python
 MASTER_SITES=	http://dl.exactcode.de/oss/${PORTNAME}/
 
 MAINTAINER=	bf@FreeBSD.org
@@ -71,10 +71,12 @@ do-install:
 	@cd ${INSTALL_WRKSRC}/&&for i in ${BINS};do\
 		${INSTALL_PROGRAM} */$$i ${PREFIX}/bin/;done
 	@cd ${INSTALL_WRKSRC}/api/perl&&\
-		${INSTALL_PROGRAM} ExactImage.so ${SITE_PERL}/;\
-		${INSTALL_DATA} ExactImage.pm ${SITE_PERL}/
+		${MKDIR} ${PREFIX}/${SITE_PERL_REL}&&\
+		${INSTALL_PROGRAM} ExactImage.so ${PREFIX}/${SITE_PERL_REL}/&&\
+		${INSTALL_DATA} ExactImage.pm ${PREFIX}/${SITE_PERL_REL}/
 	@cd ${INSTALL_WRKSRC}/api/python&&\
-		${INSTALL_SCRIPT} ExactImage.py ${PYTHONPREFIX_SITELIBDIR}/;\
+		${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/&&\
+		${INSTALL_SCRIPT} ExactImage.py ${PYTHONPREFIX_SITELIBDIR}/&&\
 		${INSTALL_PROGRAM} _ExactImage.so ${PYTHONPREFIX_SITELIBDIR}/
 
 .include <bsd.port.mk>
