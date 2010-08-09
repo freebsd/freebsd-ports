@@ -41,6 +41,7 @@ CONFIGURE_ARGS+=--prefix=${PREFIX}		\
 		--enable-pcre=${PREFIX}
 
 PORTDOCS=	operguide.txt userintro.txt whats-new-1.2.txt
+MAKE_JOBS_UNSAFE=yes
 
 #-- Options ------------------------------------------------------------
 
