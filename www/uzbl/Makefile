@@ -14,15 +14,19 @@ MAINTAINER=	aehlig@linta.de
 COMMENT=	Web interface tools which adhere to the unix philosophy
 
 LIB_DEPENDS=	webkit:${PORTSDIR}/www/webkit-gtk2
+RUN_DEPENDS=	socat:${PORTSDIR}/net/socat
 
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 
-GITDATE=	2010.04.03
-GITVERSION=	ae15d25
+GITDATE=	2010.08.05
+GITVERSION=	9cc39cb
 
 WRKSRC=		${WRKDIR}/Dieterbe-uzbl-${GITVERSION}
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	AUTHORS README COMMUNITY CONTRIBUTING FAQ INSTALL TODO config-syntax \
