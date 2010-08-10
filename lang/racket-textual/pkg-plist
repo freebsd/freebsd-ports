@@ -40,11 +40,11 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
-lib/libgracket3m-5.0.so
+lib/libgracket3m-5.0.1.so
 lib/libgracket3m.a
 lib/libgracket3m.la
 lib/libgracket3m.so
-lib/libracket3m-5.0.so
+lib/libracket3m-5.0.1.so
 lib/libracket3m.a
 lib/libracket3m.la
 lib/libracket3m.so
@@ -68,6 +68,8 @@ lib/racket/collects/2htdp/private/compiled/check-aux_rkt.dep
 lib/racket/collects/2htdp/private/compiled/check-aux_rkt.zo
 lib/racket/collects/2htdp/private/compiled/checked-cell_rkt.dep
 lib/racket/collects/2htdp/private/compiled/checked-cell_rkt.zo
+lib/racket/collects/2htdp/private/compiled/image-core_rkt.dep
+lib/racket/collects/2htdp/private/compiled/image-core_rkt.zo
 lib/racket/collects/2htdp/private/compiled/image-more_rkt.dep
 lib/racket/collects/2htdp/private/compiled/image-more_rkt.zo
 lib/racket/collects/2htdp/private/compiled/img-err_rkt.dep
@@ -99,6 +101,7 @@ lib/racket/collects/2htdp/private/csv/friends.csv
 lib/racket/collects/2htdp/private/csv/fruit.csv
 lib/racket/collects/2htdp/private/csv/permission.txt
 lib/racket/collects/2htdp/private/design.txt
+lib/racket/collects/2htdp/private/image-core.rkt
 lib/racket/collects/2htdp/private/image-more.rkt
 lib/racket/collects/2htdp/private/img-err.rkt
 lib/racket/collects/2htdp/private/last.rkt
@@ -115,6 +118,7 @@ lib/racket/collects/2htdp/tests/bad-draw.rkt
 lib/racket/collects/2htdp/tests/batch-io.rkt
 lib/racket/collects/2htdp/tests/clause-once.rkt
 lib/racket/collects/2htdp/tests/full-scene-visible.rkt
+lib/racket/collects/2htdp/tests/image-equality-performance-htdp.rkt
 lib/racket/collects/2htdp/tests/image-equality-performance.rkt
 lib/racket/collects/2htdp/tests/mouse-evt.rkt
 lib/racket/collects/2htdp/tests/mp.rkt
@@ -471,6 +475,79 @@ lib/racket/collects/config/config.rkt
 lib/racket/collects/config/config.scrbl
 lib/racket/collects/config/info.rkt
 lib/racket/collects/config/main.rkt
+lib/racket/collects/datalog/ast.rkt
+lib/racket/collects/datalog/compiled/ast_rkt.dep
+lib/racket/collects/datalog/compiled/ast_rkt.zo
+lib/racket/collects/datalog/compiled/eval_rkt.dep
+lib/racket/collects/datalog/compiled/eval_rkt.zo
+lib/racket/collects/datalog/compiled/info_rkt.dep
+lib/racket/collects/datalog/compiled/info_rkt.zo
+lib/racket/collects/datalog/compiled/main_rkt.dep
+lib/racket/collects/datalog/compiled/main_rkt.zo
+lib/racket/collects/datalog/compiled/parse_rkt.dep
+lib/racket/collects/datalog/compiled/parse_rkt.zo
+lib/racket/collects/datalog/compiled/pretty_rkt.dep
+lib/racket/collects/datalog/compiled/pretty_rkt.zo
+lib/racket/collects/datalog/compiled/runtime_rkt.dep
+lib/racket/collects/datalog/compiled/runtime_rkt.zo
+lib/racket/collects/datalog/compiled/stx_rkt.dep
+lib/racket/collects/datalog/compiled/stx_rkt.zo
+lib/racket/collects/datalog/eval.rkt
+lib/racket/collects/datalog/info.rkt
+lib/racket/collects/datalog/lang/compiled/reader_rkt.dep
+lib/racket/collects/datalog/lang/compiled/reader_rkt.zo
+lib/racket/collects/datalog/lang/reader.rkt
+lib/racket/collects/datalog/main.rkt
+lib/racket/collects/datalog/parse.rkt
+lib/racket/collects/datalog/pretty.rkt
+lib/racket/collects/datalog/private/compiled/compiler_rkt.dep
+lib/racket/collects/datalog/private/compiled/compiler_rkt.zo
+lib/racket/collects/datalog/private/compiled/env_rkt.dep
+lib/racket/collects/datalog/private/compiled/env_rkt.zo
+lib/racket/collects/datalog/private/compiled/lex_rkt.dep
+lib/racket/collects/datalog/private/compiled/lex_rkt.zo
+lib/racket/collects/datalog/private/compiled/pprint_rkt.dep
+lib/racket/collects/datalog/private/compiled/pprint_rkt.zo
+lib/racket/collects/datalog/private/compiled/subst_rkt.dep
+lib/racket/collects/datalog/private/compiled/subst_rkt.zo
+lib/racket/collects/datalog/private/compiled/unify_rkt.dep
+lib/racket/collects/datalog/private/compiled/unify_rkt.zo
+lib/racket/collects/datalog/private/compiled/variant_rkt.dep
+lib/racket/collects/datalog/private/compiled/variant_rkt.zo
+lib/racket/collects/datalog/private/compiler.rkt
+lib/racket/collects/datalog/private/env.rkt
+lib/racket/collects/datalog/private/lex.rkt
+lib/racket/collects/datalog/private/pprint.rkt
+lib/racket/collects/datalog/private/subst.rkt
+lib/racket/collects/datalog/private/unify.rkt
+lib/racket/collects/datalog/private/variant.rkt
+lib/racket/collects/datalog/runtime.rkt
+lib/racket/collects/datalog/scribblings/compiled/datalog_scrbl.dep
+lib/racket/collects/datalog/scribblings/compiled/datalog_scrbl.zo
+lib/racket/collects/datalog/scribblings/compiled/racket_scrbl.dep
+lib/racket/collects/datalog/scribblings/compiled/racket_scrbl.zo
+lib/racket/collects/datalog/scribblings/compiled/tutorial_scrbl.dep
+lib/racket/collects/datalog/scribblings/compiled/tutorial_scrbl.zo
+lib/racket/collects/datalog/scribblings/compiled/utils_rkt.dep
+lib/racket/collects/datalog/scribblings/compiled/utils_rkt.zo
+lib/racket/collects/datalog/scribblings/datalog.scrbl
+lib/racket/collects/datalog/scribblings/racket.scrbl
+lib/racket/collects/datalog/scribblings/tutorial.scrbl
+lib/racket/collects/datalog/scribblings/utils.rkt
+lib/racket/collects/datalog/sexp/compiled/lang_rkt.dep
+lib/racket/collects/datalog/sexp/compiled/lang_rkt.zo
+lib/racket/collects/datalog/sexp/lang.rkt
+lib/racket/collects/datalog/sexp/lang/compiled/reader_rkt.dep
+lib/racket/collects/datalog/sexp/lang/compiled/reader_rkt.zo
+lib/racket/collects/datalog/sexp/lang/reader.rkt
+lib/racket/collects/datalog/stx.rkt
+lib/racket/collects/datalog/tool/compiled/submit_rkt.dep
+lib/racket/collects/datalog/tool/compiled/submit_rkt.zo
+lib/racket/collects/datalog/tool/compiled/syntax-color_rkt.dep
+lib/racket/collects/datalog/tool/compiled/syntax-color_rkt.zo
+lib/racket/collects/datalog/tool/datalog.png
+lib/racket/collects/datalog/tool/submit.rkt
+lib/racket/collects/datalog/tool/syntax-color.rkt
 lib/racket/collects/defaults/README
 lib/racket/collects/deinprogramm/DMdA-advanced-reader.rkt
 lib/racket/collects/deinprogramm/DMdA-advanced.rkt
@@ -539,21 +616,6 @@ lib/racket/collects/deinprogramm/compiled/turtle_rkt.dep
 lib/racket/collects/deinprogramm/compiled/turtle_rkt.zo
 lib/racket/collects/deinprogramm/compiled/world_rkt.dep
 lib/racket/collects/deinprogramm/compiled/world_rkt.zo
-lib/racket/collects/deinprogramm/contract/compiled/contract-syntax_rkt.dep
-lib/racket/collects/deinprogramm/contract/compiled/contract-syntax_rkt.zo
-lib/racket/collects/deinprogramm/contract/compiled/contract-test-display_rkt.dep
-lib/racket/collects/deinprogramm/contract/compiled/contract-test-display_rkt.zo
-lib/racket/collects/deinprogramm/contract/compiled/contract-test-engine_rkt.dep
-lib/racket/collects/deinprogramm/contract/compiled/contract-test-engine_rkt.zo
-lib/racket/collects/deinprogramm/contract/compiled/contract_rkt.dep
-lib/racket/collects/deinprogramm/contract/compiled/contract_rkt.zo
-lib/racket/collects/deinprogramm/contract/compiled/module-begin_rkt.dep
-lib/racket/collects/deinprogramm/contract/compiled/module-begin_rkt.zo
-lib/racket/collects/deinprogramm/contract/contract-syntax.rkt
-lib/racket/collects/deinprogramm/contract/contract-test-display.rkt
-lib/racket/collects/deinprogramm/contract/contract-test-engine.rkt
-lib/racket/collects/deinprogramm/contract/contract.rkt
-lib/racket/collects/deinprogramm/contract/module-begin.rkt
 lib/racket/collects/deinprogramm/convert-explicit.rkt
 lib/racket/collects/deinprogramm/convert-explicit.scm
 lib/racket/collects/deinprogramm/define-record-procedures.rkt
@@ -629,6 +691,15 @@ lib/racket/collects/deinprogramm/scribblings/sound.scrbl
 lib/racket/collects/deinprogramm/scribblings/std-grammar.rkt
 lib/racket/collects/deinprogramm/scribblings/turtle.scrbl
 lib/racket/collects/deinprogramm/scribblings/world.scrbl
+lib/racket/collects/deinprogramm/signature/compiled/module-begin_rkt.dep
+lib/racket/collects/deinprogramm/signature/compiled/module-begin_rkt.zo
+lib/racket/collects/deinprogramm/signature/compiled/signature-syntax_rkt.dep
+lib/racket/collects/deinprogramm/signature/compiled/signature-syntax_rkt.zo
+lib/racket/collects/deinprogramm/signature/compiled/signature_rkt.dep
+lib/racket/collects/deinprogramm/signature/compiled/signature_rkt.zo
+lib/racket/collects/deinprogramm/signature/module-begin.rkt
+lib/racket/collects/deinprogramm/signature/signature-syntax.rkt
+lib/racket/collects/deinprogramm/signature/signature.rkt
 lib/racket/collects/deinprogramm/syntax-checkers.rkt
 lib/racket/collects/deinprogramm/test-suite.rkt
 lib/racket/collects/deinprogramm/turtle.rkt
@@ -1174,6 +1245,8 @@ lib/racket/collects/file/compiled/gzip_rkt.dep
 lib/racket/collects/file/compiled/gzip_rkt.zo
 lib/racket/collects/file/compiled/md5_rkt.dep
 lib/racket/collects/file/compiled/md5_rkt.zo
+lib/racket/collects/file/compiled/sha1_rkt.dep
+lib/racket/collects/file/compiled/sha1_rkt.zo
 lib/racket/collects/file/compiled/tar_rkt.dep
 lib/racket/collects/file/compiled/tar_rkt.zo
 lib/racket/collects/file/compiled/zip_rkt.dep
@@ -1200,6 +1273,8 @@ lib/racket/collects/file/scribblings/compiled/info_rkt.dep
 lib/racket/collects/file/scribblings/compiled/info_rkt.zo
 lib/racket/collects/file/scribblings/compiled/md5_scrbl.dep
 lib/racket/collects/file/scribblings/compiled/md5_scrbl.zo
+lib/racket/collects/file/scribblings/compiled/sha1_scrbl.dep
+lib/racket/collects/file/scribblings/compiled/sha1_scrbl.zo
 lib/racket/collects/file/scribblings/compiled/tar_scrbl.dep
 lib/racket/collects/file/scribblings/compiled/tar_scrbl.zo
 lib/racket/collects/file/scribblings/compiled/zip_scrbl.dep
@@ -1210,8 +1285,10 @@ lib/racket/collects/file/scribblings/gunzip.scrbl
 lib/racket/collects/file/scribblings/gzip.scrbl
 lib/racket/collects/file/scribblings/info.rkt
 lib/racket/collects/file/scribblings/md5.scrbl
+lib/racket/collects/file/scribblings/sha1.scrbl
 lib/racket/collects/file/scribblings/tar.scrbl
 lib/racket/collects/file/scribblings/zip.scrbl
+lib/racket/collects/file/sha1.rkt
 lib/racket/collects/file/tar.rkt
 lib/racket/collects/file/zip.rkt
 lib/racket/collects/framework/collapsed-snipclass.rkt
@@ -2406,6 +2483,7 @@ lib/racket/collects/icons/execute.bmp
 lib/racket/collects/icons/file.gif
 lib/racket/collects/icons/foot-up.png
 lib/racket/collects/icons/foot.png
+lib/racket/collects/icons/heart.png
 lib/racket/collects/icons/help.bmp
 lib/racket/collects/icons/help16x16.xbm
 lib/racket/collects/icons/help16x16.xpm
@@ -2443,6 +2521,9 @@ lib/racket/collects/icons/plt.gif
 lib/racket/collects/icons/plt.jpg
 lib/racket/collects/icons/plt.xpm
 lib/racket/collects/icons/pltbw.gif
+lib/racket/collects/icons/private/compiled/mkheart_rkt.dep
+lib/racket/collects/icons/private/compiled/mkheart_rkt.zo
+lib/racket/collects/icons/private/mkheart.rkt
 lib/racket/collects/icons/r5rs.png
 lib/racket/collects/icons/recycle.png
 lib/racket/collects/icons/red-arrow.bmp
@@ -2559,8 +2640,8 @@ lib/racket/collects/lang/private/compiled/and-or-map_rkt.dep
 lib/racket/collects/lang/private/compiled/and-or-map_rkt.zo
 lib/racket/collects/lang/private/compiled/beginner-funs_rkt.dep
 lib/racket/collects/lang/private/compiled/beginner-funs_rkt.zo
-lib/racket/collects/lang/private/compiled/contract-forms_rkt.dep
-lib/racket/collects/lang/private/compiled/contract-forms_rkt.zo
+lib/racket/collects/lang/private/compiled/continuation-mark-key_rkt.dep
+lib/racket/collects/lang/private/compiled/continuation-mark-key_rkt.zo
 lib/racket/collects/lang/private/compiled/firstorder_rkt.dep
 lib/racket/collects/lang/private/compiled/firstorder_rkt.zo
 lib/racket/collects/lang/private/compiled/imageeq_rkt.dep
@@ -2569,6 +2650,10 @@ lib/racket/collects/lang/private/compiled/intermediate-funs_rkt.dep
 lib/racket/collects/lang/private/compiled/intermediate-funs_rkt.zo
 lib/racket/collects/lang/private/compiled/set-result_rkt.dep
 lib/racket/collects/lang/private/compiled/set-result_rkt.zo
+lib/racket/collects/lang/private/compiled/signature-syntax_rkt.dep
+lib/racket/collects/lang/private/compiled/signature-syntax_rkt.zo
+lib/racket/collects/lang/private/compiled/teach-module-begin_rkt.dep
+lib/racket/collects/lang/private/compiled/teach-module-begin_rkt.zo
 lib/racket/collects/lang/private/compiled/teach-shared_rkt.dep
 lib/racket/collects/lang/private/compiled/teach-shared_rkt.zo
 lib/racket/collects/lang/private/compiled/teach_rkt.dep
@@ -2579,38 +2664,13 @@ lib/racket/collects/lang/private/compiled/teachprims_rkt.dep
 lib/racket/collects/lang/private/compiled/teachprims_rkt.zo
 lib/racket/collects/lang/private/compiled/todo_rkt.dep
 lib/racket/collects/lang/private/compiled/todo_rkt.zo
-lib/racket/collects/lang/private/contract-forms.rkt
-lib/racket/collects/lang/private/contracts/advanced-contracts.rkt
-lib/racket/collects/lang/private/contracts/beginner-contracts.rkt
-lib/racket/collects/lang/private/contracts/compiled/advanced-contracts_rkt.dep
-lib/racket/collects/lang/private/contracts/compiled/advanced-contracts_rkt.zo
-lib/racket/collects/lang/private/contracts/compiled/beginner-contracts_rkt.dep
-lib/racket/collects/lang/private/contracts/compiled/beginner-contracts_rkt.zo
-lib/racket/collects/lang/private/contracts/compiled/contract-transformers_rkt.dep
-lib/racket/collects/lang/private/contracts/compiled/contract-transformers_rkt.zo
-lib/racket/collects/lang/private/contracts/compiled/contracts-helpers_rkt.dep
-lib/racket/collects/lang/private/contracts/compiled/contracts-helpers_rkt.zo
-lib/racket/collects/lang/private/contracts/compiled/contracts-module-begin_rkt.dep
-lib/racket/collects/lang/private/contracts/compiled/contracts-module-begin_rkt.zo
-lib/racket/collects/lang/private/contracts/compiled/contracts_rkt.dep
-lib/racket/collects/lang/private/contracts/compiled/contracts_rkt.zo
-lib/racket/collects/lang/private/contracts/compiled/define-data_rkt.dep
-lib/racket/collects/lang/private/contracts/compiled/define-data_rkt.zo
-lib/racket/collects/lang/private/contracts/compiled/hilighters_rkt.dep
-lib/racket/collects/lang/private/contracts/compiled/hilighters_rkt.zo
-lib/racket/collects/lang/private/contracts/compiled/intermediate-contracts_rkt.dep
-lib/racket/collects/lang/private/contracts/compiled/intermediate-contracts_rkt.zo
-lib/racket/collects/lang/private/contracts/contract-transformers.rkt
-lib/racket/collects/lang/private/contracts/contracts-helpers.rkt
-lib/racket/collects/lang/private/contracts/contracts-module-begin.rkt
-lib/racket/collects/lang/private/contracts/contracts.rkt
-lib/racket/collects/lang/private/contracts/define-data.rkt
-lib/racket/collects/lang/private/contracts/hilighters.rkt
-lib/racket/collects/lang/private/contracts/intermediate-contracts.rkt
+lib/racket/collects/lang/private/continuation-mark-key.rkt
 lib/racket/collects/lang/private/firstorder.rkt
 lib/racket/collects/lang/private/imageeq.rkt
 lib/racket/collects/lang/private/intermediate-funs.rkt
 lib/racket/collects/lang/private/set-result.rkt
+lib/racket/collects/lang/private/signature-syntax.rkt
+lib/racket/collects/lang/private/teach-module-begin.rkt
 lib/racket/collects/lang/private/teach-shared.rkt
 lib/racket/collects/lang/private/teach.rkt
 lib/racket/collects/lang/private/teachhelp.rkt
@@ -2657,6 +2717,8 @@ lib/racket/collects/lazy/lazy.rkt
 lib/racket/collects/lazy/lazy.scrbl
 lib/racket/collects/lazy/main.rkt
 lib/racket/collects/lazy/mz-without-promises.rkt
+lib/racket/collects/macro-debugger/compiled/emit_rkt.dep
+lib/racket/collects/macro-debugger/compiled/emit_rkt.zo
 lib/racket/collects/macro-debugger/compiled/expand_rkt.dep
 lib/racket/collects/macro-debugger/compiled/expand_rkt.zo
 lib/racket/collects/macro-debugger/compiled/info_rkt.dep
@@ -2671,6 +2733,7 @@ lib/racket/collects/macro-debugger/compiled/syntax-browser_rkt.dep
 lib/racket/collects/macro-debugger/compiled/syntax-browser_rkt.zo
 lib/racket/collects/macro-debugger/compiled/tool_rkt.dep
 lib/racket/collects/macro-debugger/compiled/tool_rkt.zo
+lib/racket/collects/macro-debugger/emit.rkt
 lib/racket/collects/macro-debugger/expand.rkt
 lib/racket/collects/macro-debugger/info.rkt
 lib/racket/collects/macro-debugger/macro-debugger.scrbl
@@ -2690,8 +2753,6 @@ lib/racket/collects/macro-debugger/model/compiled/deriv_rkt.dep
 lib/racket/collects/macro-debugger/model/compiled/deriv_rkt.zo
 lib/racket/collects/macro-debugger/model/compiled/hiding-policies_rkt.dep
 lib/racket/collects/macro-debugger/model/compiled/hiding-policies_rkt.zo
-lib/racket/collects/macro-debugger/model/compiled/info_rkt.dep
-lib/racket/collects/macro-debugger/model/compiled/info_rkt.zo
 lib/racket/collects/macro-debugger/model/compiled/reductions-config_rkt.dep
 lib/racket/collects/macro-debugger/model/compiled/reductions-config_rkt.zo
 lib/racket/collects/macro-debugger/model/compiled/reductions-engine_rkt.dep
@@ -2718,7 +2779,6 @@ lib/racket/collects/macro-debugger/model/deriv-tokens.rkt
 lib/racket/collects/macro-debugger/model/deriv-util.rkt
 lib/racket/collects/macro-debugger/model/deriv.rkt
 lib/racket/collects/macro-debugger/model/hiding-policies.rkt
-lib/racket/collects/macro-debugger/model/info.rkt
 lib/racket/collects/macro-debugger/model/reductions-config.rkt
 lib/racket/collects/macro-debugger/model/reductions-engine.rkt
 lib/racket/collects/macro-debugger/model/reductions.rkt
@@ -2788,7 +2848,10 @@ lib/racket/collects/macro-debugger/syntax-browser/widget.rkt
 lib/racket/collects/macro-debugger/tool.rkt
 lib/racket/collects/macro-debugger/util/compiled/mpi_rkt.dep
 lib/racket/collects/macro-debugger/util/compiled/mpi_rkt.zo
+lib/racket/collects/macro-debugger/util/compiled/stxobj_rkt.dep
+lib/racket/collects/macro-debugger/util/compiled/stxobj_rkt.zo
 lib/racket/collects/macro-debugger/util/mpi.rkt
+lib/racket/collects/macro-debugger/util/stxobj.rkt
 lib/racket/collects/macro-debugger/view/compiled/cursor_rkt.dep
 lib/racket/collects/macro-debugger/view/compiled/cursor_rkt.zo
 lib/racket/collects/macro-debugger/view/compiled/debug-format_rkt.dep
@@ -2801,8 +2864,6 @@ lib/racket/collects/macro-debugger/view/compiled/frame_rkt.dep
 lib/racket/collects/macro-debugger/view/compiled/frame_rkt.zo
 lib/racket/collects/macro-debugger/view/compiled/hiding-panel_rkt.dep
 lib/racket/collects/macro-debugger/view/compiled/hiding-panel_rkt.zo
-lib/racket/collects/macro-debugger/view/compiled/info_rkt.dep
-lib/racket/collects/macro-debugger/view/compiled/info_rkt.zo
 lib/racket/collects/macro-debugger/view/compiled/interfaces_rkt.dep
 lib/racket/collects/macro-debugger/view/compiled/interfaces_rkt.zo
 lib/racket/collects/macro-debugger/view/compiled/prefs_rkt.dep
@@ -2815,22 +2876,18 @@ lib/racket/collects/macro-debugger/view/compiled/term-record_rkt.dep
 lib/racket/collects/macro-debugger/view/compiled/term-record_rkt.zo
 lib/racket/collects/macro-debugger/view/compiled/view_rkt.dep
 lib/racket/collects/macro-debugger/view/compiled/view_rkt.zo
-lib/racket/collects/macro-debugger/view/compiled/warning_rkt.dep
-lib/racket/collects/macro-debugger/view/compiled/warning_rkt.zo
 lib/racket/collects/macro-debugger/view/cursor.rkt
 lib/racket/collects/macro-debugger/view/debug-format.rkt
 lib/racket/collects/macro-debugger/view/debug.rkt
 lib/racket/collects/macro-debugger/view/extensions.rkt
 lib/racket/collects/macro-debugger/view/frame.rkt
 lib/racket/collects/macro-debugger/view/hiding-panel.rkt
-lib/racket/collects/macro-debugger/view/info.rkt
 lib/racket/collects/macro-debugger/view/interfaces.rkt
 lib/racket/collects/macro-debugger/view/prefs.rkt
 lib/racket/collects/macro-debugger/view/step-display.rkt
 lib/racket/collects/macro-debugger/view/stepper.rkt
 lib/racket/collects/macro-debugger/view/term-record.rkt
 lib/racket/collects/macro-debugger/view/view.rkt
-lib/racket/collects/macro-debugger/view/warning.rkt
 lib/racket/collects/make/collection-sig.rkt
 lib/racket/collects/make/collection-unit.rkt
 lib/racket/collects/make/collection.rkt
@@ -3711,8 +3768,6 @@ lib/racket/collects/mzlib/scribblings/compiled/struct_scrbl.dep
 lib/racket/collects/mzlib/scribblings/compiled/struct_scrbl.zo
 lib/racket/collects/mzlib/scribblings/compiled/thread_scrbl.dep
 lib/racket/collects/mzlib/scribblings/compiled/thread_scrbl.zo
-lib/racket/collects/mzlib/scribblings/compiled/trace_scrbl.dep
-lib/racket/collects/mzlib/scribblings/compiled/trace_scrbl.zo
 lib/racket/collects/mzlib/scribblings/compiled/traceld_scrbl.dep
 lib/racket/collects/mzlib/scribblings/compiled/traceld_scrbl.zo
 lib/racket/collects/mzlib/scribblings/compiled/transcr_scrbl.dep
@@ -3746,7 +3801,6 @@ lib/racket/collects/mzlib/scribblings/serialize.scrbl
 lib/racket/collects/mzlib/scribblings/string.scrbl
 lib/racket/collects/mzlib/scribblings/struct.scrbl
 lib/racket/collects/mzlib/scribblings/thread.scrbl
-lib/racket/collects/mzlib/scribblings/trace.scrbl
 lib/racket/collects/mzlib/scribblings/traceld.scrbl
 lib/racket/collects/mzlib/scribblings/transcr.scrbl
 lib/racket/collects/mzlib/scribblings/unit.scrbl
@@ -4278,8 +4332,8 @@ lib/racket/collects/plot/compiled/main_rkt.dep
 lib/racket/collects/plot/compiled/main_rkt.zo
 lib/racket/collects/plot/compiled/math_rkt.dep
 lib/racket/collects/plot/compiled/math_rkt.zo
-lib/racket/collects/plot/compiled/native/%%ARCH%%-freebsd/libfit.so
-lib/racket/collects/plot/compiled/native/%%ARCH%%-freebsd/libplplot.so
+lib/racket/collects/plot/compiled/native/i386-freebsd/libfit.so
+lib/racket/collects/plot/compiled/native/i386-freebsd/libplplot.so
 lib/racket/collects/plot/compiled/plot-extend_rkt.dep
 lib/racket/collects/plot/compiled/plot-extend_rkt.zo
 lib/racket/collects/plot/compiled/plot_rkt.dep
@@ -5120,6 +5174,15 @@ lib/racket/collects/racklog/compiled/unify_rkt.dep
 lib/racket/collects/racklog/compiled/unify_rkt.zo
 lib/racket/collects/racklog/history
 lib/racket/collects/racklog/info.rkt
+lib/racket/collects/racklog/lang/compiled/compiler_rkt.dep
+lib/racket/collects/racklog/lang/compiled/compiler_rkt.zo
+lib/racket/collects/racklog/lang/compiled/lang_rkt.dep
+lib/racket/collects/racklog/lang/compiled/lang_rkt.zo
+lib/racket/collects/racklog/lang/compiled/reader_rkt.dep
+lib/racket/collects/racklog/lang/compiled/reader_rkt.zo
+lib/racket/collects/racklog/lang/compiler.rkt
+lib/racket/collects/racklog/lang/lang.rkt
+lib/racket/collects/racklog/lang/reader.rkt
 lib/racket/collects/racklog/main.rkt
 lib/racket/collects/racklog/racklog.rkt
 lib/racket/collects/racklog/racklog.scrbl
@@ -6115,13 +6178,13 @@ lib/racket/collects/scribble/private/qsloc.rkt
 lib/racket/collects/scribble/private/render-utils.rkt
 lib/racket/collects/scribble/private/run-pdflatex.rkt
 lib/racket/collects/scribble/provide-doc-transform.rkt
+lib/racket/collects/scribble/racket.css
 lib/racket/collects/scribble/racket.rkt
+lib/racket/collects/scribble/racket.tex
 lib/racket/collects/scribble/reader.rkt
 lib/racket/collects/scribble/render-struct.rkt
 lib/racket/collects/scribble/run.rkt
-lib/racket/collects/scribble/scheme.css
 lib/racket/collects/scribble/scheme.rkt
-lib/racket/collects/scribble/scheme.tex
 lib/racket/collects/scribble/scribble-common.js
 lib/racket/collects/scribble/scribble-prefix.html
 lib/racket/collects/scribble/scribble-prefix.tex
@@ -7393,6 +7456,8 @@ lib/racket/collects/scribblings/reference/compiled/custom-write_scrbl.dep
 lib/racket/collects/scribblings/reference/compiled/custom-write_scrbl.zo
 lib/racket/collects/scribblings/reference/compiled/data_scrbl.dep
 lib/racket/collects/scribblings/reference/compiled/data_scrbl.zo
+lib/racket/collects/scribblings/reference/compiled/debugging_scrbl.dep
+lib/racket/collects/scribblings/reference/compiled/debugging_scrbl.zo
 lib/racket/collects/scribblings/reference/compiled/define-struct_scrbl.dep
 lib/racket/collects/scribblings/reference/compiled/define-struct_scrbl.zo
 lib/racket/collects/scribblings/reference/compiled/dicts_scrbl.dep
@@ -7583,6 +7648,8 @@ lib/racket/collects/scribblings/reference/compiled/threads_scrbl.dep
 lib/racket/collects/scribblings/reference/compiled/threads_scrbl.zo
 lib/racket/collects/scribblings/reference/compiled/time_scrbl.dep
 lib/racket/collects/scribblings/reference/compiled/time_scrbl.zo
+lib/racket/collects/scribblings/reference/compiled/trace_scrbl.dep
+lib/racket/collects/scribblings/reference/compiled/trace_scrbl.zo
 lib/racket/collects/scribblings/reference/compiled/units_scrbl.dep
 lib/racket/collects/scribblings/reference/compiled/units_scrbl.zo
 lib/racket/collects/scribblings/reference/compiled/unix-paths_scrbl.dep
@@ -7607,6 +7674,7 @@ lib/racket/collects/scribblings/reference/custodians.scrbl
 lib/racket/collects/scribblings/reference/custom-ports.scrbl
 lib/racket/collects/scribblings/reference/custom-write.scrbl
 lib/racket/collects/scribblings/reference/data.scrbl
+lib/racket/collects/scribblings/reference/debugging.scrbl
 lib/racket/collects/scribblings/reference/define-struct.scrbl
 lib/racket/collects/scribblings/reference/dicts.scrbl
 lib/racket/collects/scribblings/reference/ellipses-defn.rkt
@@ -7704,6 +7772,7 @@ lib/racket/collects/scribblings/reference/thread-groups.scrbl
 lib/racket/collects/scribblings/reference/thread-local.scrbl
 lib/racket/collects/scribblings/reference/threads.scrbl
 lib/racket/collects/scribblings/reference/time.scrbl
+lib/racket/collects/scribblings/reference/trace.scrbl
 lib/racket/collects/scribblings/reference/units.scrbl
 lib/racket/collects/scribblings/reference/unix-paths.scrbl
 lib/racket/collects/scribblings/reference/unsafe.scrbl
@@ -7911,11 +7980,16 @@ lib/racket/collects/scriblib/compiled/autobib_rkt.dep
 lib/racket/collects/scriblib/compiled/autobib_rkt.zo
 lib/racket/collects/scriblib/compiled/figure_rkt.dep
 lib/racket/collects/scriblib/compiled/figure_rkt.zo
+lib/racket/collects/scriblib/compiled/footnote_rkt.dep
+lib/racket/collects/scriblib/compiled/footnote_rkt.zo
 lib/racket/collects/scriblib/compiled/gui-eval_rkt.dep
 lib/racket/collects/scriblib/compiled/gui-eval_rkt.zo
 lib/racket/collects/scriblib/figure.css
 lib/racket/collects/scriblib/figure.rkt
 lib/racket/collects/scriblib/figure.tex
+lib/racket/collects/scriblib/footnote.css
+lib/racket/collects/scriblib/footnote.rkt
+lib/racket/collects/scriblib/footnote.tex
 lib/racket/collects/scriblib/gui-eval.rkt
 lib/racket/collects/scriblib/private/compiled/counter_rkt.dep
 lib/racket/collects/scriblib/private/compiled/counter_rkt.zo
@@ -7928,6 +8002,8 @@ lib/racket/collects/scriblib/scribblings/compiled/autobib_scrbl.dep
 lib/racket/collects/scriblib/scribblings/compiled/autobib_scrbl.zo
 lib/racket/collects/scriblib/scribblings/compiled/figure_scrbl.dep
 lib/racket/collects/scriblib/scribblings/compiled/figure_scrbl.zo
+lib/racket/collects/scriblib/scribblings/compiled/footnote_scrbl.dep
+lib/racket/collects/scriblib/scribblings/compiled/footnote_scrbl.zo
 lib/racket/collects/scriblib/scribblings/compiled/gui-eval_scrbl.dep
 lib/racket/collects/scriblib/scribblings/compiled/gui-eval_scrbl.zo
 lib/racket/collects/scriblib/scribblings/compiled/info_rkt.dep
@@ -7935,9 +8011,13 @@ lib/racket/collects/scriblib/scribblings/compiled/info_rkt.zo
 lib/racket/collects/scriblib/scribblings/compiled/scriblib_scrbl.dep
 lib/racket/collects/scriblib/scribblings/compiled/scriblib_scrbl.zo
 lib/racket/collects/scriblib/scribblings/figure.scrbl
+lib/racket/collects/scriblib/scribblings/footnote.scrbl
 lib/racket/collects/scriblib/scribblings/gui-eval.scrbl
 lib/racket/collects/scriblib/scribblings/info.rkt
 lib/racket/collects/scriblib/scribblings/scriblib.scrbl
+lib/racket/collects/setup/collects.rkt
+lib/racket/collects/setup/compiled/collects_rkt.dep
+lib/racket/collects/setup/compiled/collects_rkt.zo
 lib/racket/collects/setup/compiled/configtab_rkt.dep
 lib/racket/collects/setup/compiled/configtab_rkt.zo
 lib/racket/collects/setup/compiled/dirs_rkt.dep
@@ -7958,6 +8038,10 @@ lib/racket/collects/setup/compiled/option-unit_rkt.dep
 lib/racket/collects/setup/compiled/option-unit_rkt.zo
 lib/racket/collects/setup/compiled/pack_rkt.dep
 lib/racket/collects/setup/compiled/pack_rkt.zo
+lib/racket/collects/setup/compiled/parallel-build-worker_rkt.dep
+lib/racket/collects/setup/compiled/parallel-build-worker_rkt.zo
+lib/racket/collects/setup/compiled/parallel-build_rkt.dep
+lib/racket/collects/setup/compiled/parallel-build_rkt.zo
 lib/racket/collects/setup/compiled/path-relativize_rkt.dep
 lib/racket/collects/setup/compiled/path-relativize_rkt.zo
 lib/racket/collects/setup/compiled/plt-installer-sig_rkt.dep
@@ -8003,6 +8087,8 @@ lib/racket/collects/setup/main.rkt
 lib/racket/collects/setup/option-sig.rkt
 lib/racket/collects/setup/option-unit.rkt
 lib/racket/collects/setup/pack.rkt
+lib/racket/collects/setup/parallel-build-worker.rkt
+lib/racket/collects/setup/parallel-build.rkt
 lib/racket/collects/setup/path-relativize.rkt
 lib/racket/collects/setup/plt-installer-sig.rkt
 lib/racket/collects/setup/plt-installer-unit.rkt
@@ -8052,7 +8138,7 @@ lib/racket/collects/sgl/compiled/make-gl-info_rkt.dep
 lib/racket/collects/sgl/compiled/make-gl-info_rkt.zo
 lib/racket/collects/sgl/compiled/makefile_rkt.dep
 lib/racket/collects/sgl/compiled/makefile_rkt.zo
-lib/racket/collects/sgl/compiled/native/%%ARCH%%-freebsd/3m/make-gl-info-helper_rkt.so
+lib/racket/collects/sgl/compiled/native/i386-freebsd/3m/make-gl-info-helper_rkt.so
 lib/racket/collects/sgl/compiled/sgl_rkt.dep
 lib/racket/collects/sgl/compiled/sgl_rkt.zo
 lib/racket/collects/sgl/examples/alpha.rkt
@@ -9404,6 +9490,7 @@ lib/racket/collects/teachpack/2htdp/scribblings/img/1acede17bc6.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/1bbeedc0d6.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/1f0b671ed7b.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/1f5944ec1ed.png
+lib/racket/collects/teachpack/2htdp/scribblings/img/1fdee89ec7d.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/201c231dce2.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/216addb7809.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/2187216ca96.png
@@ -9416,6 +9503,7 @@ lib/racket/collects/teachpack/2htdp/scribblings/img/24b86203f5.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/24e80ea10b4.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/25354f2b84e.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/25451dd2997.png
+lib/racket/collects/teachpack/2htdp/scribblings/img/25bd9b1ac5a.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/25dd3e2d97c.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/262a4fa650a.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/268c974b9ab.png
@@ -9427,7 +9515,9 @@ lib/racket/collects/teachpack/2htdp/scribblings/img/27bbbb6fd64.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/28253f4c3c.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/28c73238138.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/28daec71a64.png
+lib/racket/collects/teachpack/2htdp/scribblings/img/296a50fddcd.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/29b31e5fe3a.png
+lib/racket/collects/teachpack/2htdp/scribblings/img/2a03b18c0c.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/2a1f3988f.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/2b944b7ab91.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/2bed4c99df8.png
@@ -9452,6 +9542,7 @@ lib/racket/collects/teachpack/2htdp/scribblings/img/72aef3dc67.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/7bbcc7cbaa.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/89a0d469a7.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/89b3a9e462.png
+lib/racket/collects/teachpack/2htdp/scribblings/img/8aebbc110e.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/8cb34e62d4.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/8e1ebaaf82.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/8e7c1870c7.png
@@ -9467,6 +9558,7 @@ lib/racket/collects/teachpack/2htdp/scribblings/img/d417a51b4.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/d47072011e.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/d629961aee.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/d92d6a49f1.png
+lib/racket/collects/teachpack/2htdp/scribblings/img/e58911226.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/eb99639e31.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/f488ae4f9e.png
 lib/racket/collects/teachpack/2htdp/scribblings/img/fa1a9f17b6.png
@@ -9670,6 +9762,10 @@ lib/racket/collects/test-engine/compiled/info_rkt.dep
 lib/racket/collects/test-engine/compiled/info_rkt.zo
 lib/racket/collects/test-engine/compiled/print_rkt.dep
 lib/racket/collects/test-engine/compiled/print_rkt.zo
+lib/racket/collects/test-engine/compiled/racket-gui_rkt.dep
+lib/racket/collects/test-engine/compiled/racket-gui_rkt.zo
+lib/racket/collects/test-engine/compiled/racket-tests_rkt.dep
+lib/racket/collects/test-engine/compiled/racket-tests_rkt.zo
 lib/racket/collects/test-engine/compiled/scheme-gui_rkt.dep
 lib/racket/collects/test-engine/compiled/scheme-gui_rkt.zo
 lib/racket/collects/test-engine/compiled/scheme-tests_rkt.dep
@@ -9688,6 +9784,8 @@ lib/racket/collects/test-engine/compiled/test-tool_scm.dep
 lib/racket/collects/test-engine/compiled/test-tool_scm.zo
 lib/racket/collects/test-engine/info.rkt
 lib/racket/collects/test-engine/print.rkt
+lib/racket/collects/test-engine/racket-gui.rkt
+lib/racket/collects/test-engine/racket-tests.rkt
 lib/racket/collects/test-engine/scheme-gui.rkt
 lib/racket/collects/test-engine/scheme-tests.rkt
 lib/racket/collects/test-engine/test-coverage.scm
@@ -9710,16 +9808,148 @@ lib/racket/collects/tests/compiled/eli-tester_rkt.dep
 lib/racket/collects/tests/compiled/eli-tester_rkt.zo
 lib/racket/collects/tests/compiled/info_rkt.dep
 lib/racket/collects/tests/compiled/info_rkt.zo
-lib/racket/collects/tests/deinprogramm/contract.rkt
+lib/racket/collects/tests/datalog/ast.rkt
+lib/racket/collects/tests/datalog/compiled/ast_rkt.dep
+lib/racket/collects/tests/datalog/compiled/ast_rkt.zo
+lib/racket/collects/tests/datalog/compiled/eval_rkt.dep
+lib/racket/collects/tests/datalog/compiled/eval_rkt.zo
+lib/racket/collects/tests/datalog/compiled/main_rkt.dep
+lib/racket/collects/tests/datalog/compiled/main_rkt.zo
+lib/racket/collects/tests/datalog/compiled/parse_rkt.dep
+lib/racket/collects/tests/datalog/compiled/parse_rkt.zo
+lib/racket/collects/tests/datalog/compiled/pretty_rkt.dep
+lib/racket/collects/tests/datalog/compiled/pretty_rkt.zo
+lib/racket/collects/tests/datalog/compiled/racket_rkt.dep
+lib/racket/collects/tests/datalog/compiled/racket_rkt.zo
+lib/racket/collects/tests/datalog/compiled/runtime_rkt.dep
+lib/racket/collects/tests/datalog/compiled/runtime_rkt.zo
+lib/racket/collects/tests/datalog/compiled/util_rkt.dep
+lib/racket/collects/tests/datalog/compiled/util_rkt.zo
+lib/racket/collects/tests/datalog/eval.rkt
+lib/racket/collects/tests/datalog/examples/ancestor.rkt
+lib/racket/collects/tests/datalog/examples/ancestor.txt
+lib/racket/collects/tests/datalog/examples/bidipath.rkt
+lib/racket/collects/tests/datalog/examples/bidipath.txt
+lib/racket/collects/tests/datalog/examples/compiled/ancestor_rkt.dep
+lib/racket/collects/tests/datalog/examples/compiled/ancestor_rkt.zo
+lib/racket/collects/tests/datalog/examples/compiled/bidipath_rkt.dep
+lib/racket/collects/tests/datalog/examples/compiled/bidipath_rkt.zo
+lib/racket/collects/tests/datalog/examples/compiled/laps_rkt.dep
+lib/racket/collects/tests/datalog/examples/compiled/laps_rkt.zo
+lib/racket/collects/tests/datalog/examples/compiled/long_rkt.dep
+lib/racket/collects/tests/datalog/examples/compiled/long_rkt.zo
+lib/racket/collects/tests/datalog/examples/compiled/path_rkt.dep
+lib/racket/collects/tests/datalog/examples/compiled/path_rkt.zo
+lib/racket/collects/tests/datalog/examples/compiled/pq_rkt.dep
+lib/racket/collects/tests/datalog/examples/compiled/pq_rkt.zo
+lib/racket/collects/tests/datalog/examples/compiled/revpath_rkt.dep
+lib/racket/collects/tests/datalog/examples/compiled/revpath_rkt.zo
+lib/racket/collects/tests/datalog/examples/compiled/says_rkt.dep
+lib/racket/collects/tests/datalog/examples/compiled/says_rkt.zo
+lib/racket/collects/tests/datalog/examples/compiled/true_rkt.dep
+lib/racket/collects/tests/datalog/examples/compiled/true_rkt.zo
+lib/racket/collects/tests/datalog/examples/compiled/tutorial_rkt.dep
+lib/racket/collects/tests/datalog/examples/compiled/tutorial_rkt.zo
+lib/racket/collects/tests/datalog/examples/laps.rkt
+lib/racket/collects/tests/datalog/examples/laps.txt
+lib/racket/collects/tests/datalog/examples/long.rkt
+lib/racket/collects/tests/datalog/examples/long.txt
+lib/racket/collects/tests/datalog/examples/path.rkt
+lib/racket/collects/tests/datalog/examples/path.txt
+lib/racket/collects/tests/datalog/examples/pq.rkt
+lib/racket/collects/tests/datalog/examples/pq.txt
+lib/racket/collects/tests/datalog/examples/revpath.rkt
+lib/racket/collects/tests/datalog/examples/revpath.txt
+lib/racket/collects/tests/datalog/examples/says.rkt
+lib/racket/collects/tests/datalog/examples/says.txt
+lib/racket/collects/tests/datalog/examples/true.rkt
+lib/racket/collects/tests/datalog/examples/true.txt
+lib/racket/collects/tests/datalog/examples/tutorial.rkt
+lib/racket/collects/tests/datalog/examples/tutorial.txt
+lib/racket/collects/tests/datalog/main.rkt
+lib/racket/collects/tests/datalog/paren-examples/add1.rkt
+lib/racket/collects/tests/datalog/paren-examples/add1.txt
+lib/racket/collects/tests/datalog/paren-examples/ancestor.rkt
+lib/racket/collects/tests/datalog/paren-examples/ancestor.txt
+lib/racket/collects/tests/datalog/paren-examples/bidipath.rkt
+lib/racket/collects/tests/datalog/paren-examples/bidipath.txt
+lib/racket/collects/tests/datalog/paren-examples/compiled/add1_rkt.dep
+lib/racket/collects/tests/datalog/paren-examples/compiled/add1_rkt.zo
+lib/racket/collects/tests/datalog/paren-examples/compiled/ancestor_rkt.dep
+lib/racket/collects/tests/datalog/paren-examples/compiled/ancestor_rkt.zo
+lib/racket/collects/tests/datalog/paren-examples/compiled/bidipath_rkt.dep
+lib/racket/collects/tests/datalog/paren-examples/compiled/bidipath_rkt.zo
+lib/racket/collects/tests/datalog/paren-examples/compiled/laps_rkt.dep
+lib/racket/collects/tests/datalog/paren-examples/compiled/laps_rkt.zo
+lib/racket/collects/tests/datalog/paren-examples/compiled/long_rkt.dep
+lib/racket/collects/tests/datalog/paren-examples/compiled/long_rkt.zo
+lib/racket/collects/tests/datalog/paren-examples/compiled/path_rkt.dep
+lib/racket/collects/tests/datalog/paren-examples/compiled/path_rkt.zo
+lib/racket/collects/tests/datalog/paren-examples/compiled/pq_rkt.dep
+lib/racket/collects/tests/datalog/paren-examples/compiled/pq_rkt.zo
+lib/racket/collects/tests/datalog/paren-examples/compiled/req_rkt.dep
+lib/racket/collects/tests/datalog/paren-examples/compiled/req_rkt.zo
+lib/racket/collects/tests/datalog/paren-examples/compiled/revpath_rkt.dep
+lib/racket/collects/tests/datalog/paren-examples/compiled/revpath_rkt.zo
+lib/racket/collects/tests/datalog/paren-examples/compiled/says_rkt.dep
+lib/racket/collects/tests/datalog/paren-examples/compiled/says_rkt.zo
+lib/racket/collects/tests/datalog/paren-examples/compiled/true_rkt.dep
+lib/racket/collects/tests/datalog/paren-examples/compiled/true_rkt.zo
+lib/racket/collects/tests/datalog/paren-examples/compiled/tutorial_rkt.dep
+lib/racket/collects/tests/datalog/paren-examples/compiled/tutorial_rkt.zo
+lib/racket/collects/tests/datalog/paren-examples/laps.rkt
+lib/racket/collects/tests/datalog/paren-examples/laps.txt
+lib/racket/collects/tests/datalog/paren-examples/long.rkt
+lib/racket/collects/tests/datalog/paren-examples/long.txt
+lib/racket/collects/tests/datalog/paren-examples/path.rkt
+lib/racket/collects/tests/datalog/paren-examples/path.txt
+lib/racket/collects/tests/datalog/paren-examples/pq.rkt
+lib/racket/collects/tests/datalog/paren-examples/pq.txt
+lib/racket/collects/tests/datalog/paren-examples/req.rkt
+lib/racket/collects/tests/datalog/paren-examples/req.txt
+lib/racket/collects/tests/datalog/paren-examples/revpath.rkt
+lib/racket/collects/tests/datalog/paren-examples/revpath.txt
+lib/racket/collects/tests/datalog/paren-examples/says.rkt
+lib/racket/collects/tests/datalog/paren-examples/says.txt
+lib/racket/collects/tests/datalog/paren-examples/true.rkt
+lib/racket/collects/tests/datalog/paren-examples/true.txt
+lib/racket/collects/tests/datalog/paren-examples/tutorial.rkt
+lib/racket/collects/tests/datalog/paren-examples/tutorial.txt
+lib/racket/collects/tests/datalog/parse.rkt
+lib/racket/collects/tests/datalog/pretty.rkt
+lib/racket/collects/tests/datalog/private/compiled/env_rkt.dep
+lib/racket/collects/tests/datalog/private/compiled/env_rkt.zo
+lib/racket/collects/tests/datalog/private/compiled/lex_rkt.dep
+lib/racket/collects/tests/datalog/private/compiled/lex_rkt.zo
+lib/racket/collects/tests/datalog/private/compiled/subst_rkt.dep
+lib/racket/collects/tests/datalog/private/compiled/subst_rkt.zo
+lib/racket/collects/tests/datalog/private/compiled/unify_rkt.dep
+lib/racket/collects/tests/datalog/private/compiled/unify_rkt.zo
+lib/racket/collects/tests/datalog/private/compiled/variant_rkt.dep
+lib/racket/collects/tests/datalog/private/compiled/variant_rkt.zo
+lib/racket/collects/tests/datalog/private/env.rkt
+lib/racket/collects/tests/datalog/private/lex.rkt
+lib/racket/collects/tests/datalog/private/subst.rkt
+lib/racket/collects/tests/datalog/private/unify.rkt
+lib/racket/collects/tests/datalog/private/variant.rkt
+lib/racket/collects/tests/datalog/racket.rkt
+lib/racket/collects/tests/datalog/runtime.rkt
+lib/racket/collects/tests/datalog/tool/compiled/syntax-color_rkt.dep
+lib/racket/collects/tests/datalog/tool/compiled/syntax-color_rkt.zo
+lib/racket/collects/tests/datalog/tool/syntax-color.rkt
+lib/racket/collects/tests/datalog/util.rkt
 lib/racket/collects/tests/deinprogramm/image.rkt
-lib/racket/collects/tests/deinprogramm/run-contract-tests.rkt
 lib/racket/collects/tests/deinprogramm/run-image-test.rkt
+lib/racket/collects/tests/deinprogramm/run-signature-tests.rkt
+lib/racket/collects/tests/deinprogramm/signature.rkt
 lib/racket/collects/tests/drracket/compiled/drracket-test-util_rkt.dep
 lib/racket/collects/tests/drracket/compiled/drracket-test-util_rkt.zo
 lib/racket/collects/tests/drracket/compiled/io_rkt.dep
 lib/racket/collects/tests/drracket/compiled/io_rkt.zo
 lib/racket/collects/tests/drracket/compiled/language-test_rkt.dep
 lib/racket/collects/tests/drracket/compiled/language-test_rkt.zo
+lib/racket/collects/tests/drracket/compiled/memory-log_rkt.dep
+lib/racket/collects/tests/drracket/compiled/memory-log_rkt.zo
 lib/racket/collects/tests/drracket/compiled/module-lang-test-utils_rkt.dep
 lib/racket/collects/tests/drracket/compiled/module-lang-test-utils_rkt.zo
 lib/racket/collects/tests/drracket/compiled/module-lang-test_rkt.dep
@@ -9749,6 +9979,7 @@ lib/racket/collects/tests/drracket/compiled/time-keystrokes_rkt.zo
 lib/racket/collects/tests/drracket/drracket-test-util.rkt
 lib/racket/collects/tests/drracket/io.rkt
 lib/racket/collects/tests/drracket/language-test.rkt
+lib/racket/collects/tests/drracket/memory-log.rkt
 lib/racket/collects/tests/drracket/module-lang-test-utils.rkt
 lib/racket/collects/tests/drracket/module-lang-test.rkt
 lib/racket/collects/tests/drracket/randomly-click-language-dialog.rkt
@@ -9956,6 +10187,8 @@ lib/racket/collects/tests/net/compiled/main_rkt.dep
 lib/racket/collects/tests/net/compiled/main_rkt.zo
 lib/racket/collects/tests/net/compiled/uri-codec_rkt.dep
 lib/racket/collects/tests/net/compiled/uri-codec_rkt.zo
+lib/racket/collects/tests/net/compiled/url-port_rkt.dep
+lib/racket/collects/tests/net/compiled/url-port_rkt.zo
 lib/racket/collects/tests/net/compiled/url_rkt.dep
 lib/racket/collects/tests/net/compiled/url_rkt.zo
 lib/racket/collects/tests/net/cookie.rkt
@@ -9964,6 +10197,7 @@ lib/racket/collects/tests/net/ftp.rkt
 lib/racket/collects/tests/net/head.rkt
 lib/racket/collects/tests/net/main.rkt
 lib/racket/collects/tests/net/uri-codec.rkt
+lib/racket/collects/tests/net/url-port.rkt
 lib/racket/collects/tests/net/url.rkt
 lib/racket/collects/tests/plai/datatype-state.rkt
 lib/racket/collects/tests/plai/datatype.rkt
@@ -10161,6 +10395,8 @@ lib/racket/collects/tests/racket/benchmarks/common/nqueens.rkt
 lib/racket/collects/tests/racket/benchmarks/common/nqueens.sch
 lib/racket/collects/tests/racket/benchmarks/common/nucleic2.rkt
 lib/racket/collects/tests/racket/benchmarks/common/nucleic2.sch
+lib/racket/collects/tests/racket/benchmarks/common/nucleic3.rkt
+lib/racket/collects/tests/racket/benchmarks/common/nucleic3.sch
 lib/racket/collects/tests/racket/benchmarks/common/paraffins.rkt
 lib/racket/collects/tests/racket/benchmarks/common/paraffins.sch
 lib/racket/collects/tests/racket/benchmarks/common/petite-prelude.sch
@@ -10172,6 +10408,8 @@ lib/racket/collects/tests/racket/benchmarks/common/psyntax.sch
 lib/racket/collects/tests/racket/benchmarks/common/puzzle.rkt
 lib/racket/collects/tests/racket/benchmarks/common/puzzle.sch
 lib/racket/collects/tests/racket/benchmarks/common/r5rs-wrap.rktl
+lib/racket/collects/tests/racket/benchmarks/common/ray.rkt
+lib/racket/collects/tests/racket/benchmarks/common/ray.sch
 lib/racket/collects/tests/racket/benchmarks/common/sboyer.rkt
 lib/racket/collects/tests/racket/benchmarks/common/sboyer.sch
 lib/racket/collects/tests/racket/benchmarks/common/scheme.rkt
@@ -10193,6 +10431,77 @@ lib/racket/collects/tests/racket/benchmarks/common/takr2.sch
 lib/racket/collects/tests/racket/benchmarks/common/traverse.sch
 lib/racket/collects/tests/racket/benchmarks/common/triangle.rkt
 lib/racket/collects/tests/racket/benchmarks/common/triangle.sch
+lib/racket/collects/tests/racket/benchmarks/common/typed/cpstack-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/cpstack-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/cpstack.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/ctak-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/ctak-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/ctak.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/dderiv-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/dderiv-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/dderiv.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/deriv-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/deriv-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/deriv.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/div-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/div-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/div.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/fft-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/fft-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/fft.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/graphs-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/graphs-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/graphs.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/lattice2-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/lattice2-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/lattice2.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/maze2-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/maze2-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/maze2.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/mazefun-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/mazefun-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/mazefun.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/nestedloop-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/nestedloop-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/nestedloop.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/nfa-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/nfa-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/nfa.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/nothing-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/nothing-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/nothing.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/nqueens-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/nqueens-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/nqueens.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/nucleic3-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/nucleic3-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/nucleic3.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/paraffins-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/paraffins-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/paraffins.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/puzzle-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/puzzle-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/puzzle.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/ray-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/ray-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/ray.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/tak-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/tak-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/tak.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/takl-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/takl-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/takl.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/takr-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/takr-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/takr.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/takr2-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/takr2-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/takr2.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/triangle-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/triangle-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/common/typed/triangle.rktl
+lib/racket/collects/tests/racket/benchmarks/common/typed/wrapper.rkt
+lib/racket/collects/tests/racket/benchmarks/common/wrap-common.rkt
 lib/racket/collects/tests/racket/benchmarks/common/wrap.rkt
 lib/racket/collects/tests/racket/benchmarks/mz/expand-class.rktl
 lib/racket/collects/tests/racket/benchmarks/mz/input.xml
@@ -10207,11 +10516,13 @@ lib/racket/collects/tests/racket/benchmarks/rx/python_prefix.py
 lib/racket/collects/tests/racket/benchmarks/shootout/README.txt
 lib/racket/collects/tests/racket/benchmarks/shootout/ackermann.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/ary.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/auto.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/binarytrees.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/chameneos.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/cheapconcurrency.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/echo.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/except.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/fannkuch-redux.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/fannkuch.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/fasta.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/fibo.rkt
@@ -10222,7 +10533,6 @@ lib/racket/collects/tests/racket/benchmarks/shootout/hello.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/k-nucleotide.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/lists.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/mandelbrot-generic.rkt
-lib/racket/collects/tests/racket/benchmarks/shootout/mandelbrot-unsafe.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/mandelbrot.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/matrix.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/meteor.rkt
@@ -10233,6 +10543,7 @@ lib/racket/collects/tests/racket/benchmarks/shootout/nbody-vec-unsafe.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/nbody-vec.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/nbody.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/nestedloop.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/nothing.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/nsieve.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/nsievebits.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/partialsums.rkt
@@ -10248,18 +10559,166 @@ lib/racket/collects/tests/racket/benchmarks/shootout/reversefile.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/run.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/sieve.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/spectralnorm-generic.rkt
-lib/racket/collects/tests/racket/benchmarks/shootout/spectralnorm-unsafe.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/spectralnorm.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/spellcheck.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/strcat.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/sumcol-input.txt
 lib/racket/collects/tests/racket/benchmarks/shootout/sumcol.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/thread-ring.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/ackermann-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/ackermann-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/ackermann.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/ary-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/ary-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/ary.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/binarytrees-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/binarytrees-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/binarytrees.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/chameneos-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/chameneos-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/chameneos.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/cheapconcurrency-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/cheapconcurrency-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/cheapconcurrency.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/echo-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/echo-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/echo.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/except-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/except-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/except.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/fannkuch-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/fannkuch-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/fannkuch-redux-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/fannkuch-redux-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/fannkuch-redux.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/fannkuch.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/fasta-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/fasta-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/fasta.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/fibo-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/fibo-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/fibo.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/hash-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/hash-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/hash.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/hash2-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/hash2-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/hash2.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/heapsort-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/heapsort-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/heapsort.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/hello-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/hello-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/hello.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/k-nucleotide-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/k-nucleotide-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/k-nucleotide.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/lists-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/lists-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/lists.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/mandelbrot-generic-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/mandelbrot-generic-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/mandelbrot-generic.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/mandelbrot-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/mandelbrot-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/mandelbrot.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/matrix-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/matrix-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/matrix.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/meteor-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/meteor-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/meteor.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/moments-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/moments-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/moments.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nbody-generic-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nbody-generic-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nbody-generic.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nbody-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nbody-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nbody-vec-generic-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nbody-vec-generic-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nbody-vec-generic.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nbody-vec-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nbody-vec-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nbody-vec-unsafe-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nbody-vec-unsafe-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nbody-vec-unsafe.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nbody-vec.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nbody.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nestedloop-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nestedloop-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nestedloop.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nothing-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nothing-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nothing.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nsieve-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nsieve-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nsieve.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nsievebits-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nsievebits-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/nsievebits.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/partialsums-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/partialsums-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/partialsums.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/pidigits-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/pidigits-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/pidigits.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/pidigits1-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/pidigits1-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/pidigits1.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/random-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/random-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/random.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/recursive-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/recursive-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/recursive.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/regexmatch-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/regexmatch-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/regexmatch.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/regexpdna-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/regexpdna-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/regexpdna.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/reversecomplement-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/reversecomplement-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/reversecomplement.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/reversefile-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/reversefile-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/reversefile.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/sieve-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/sieve-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/sieve.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/spectralnorm-generic-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/spectralnorm-generic-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/spectralnorm-generic.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/spectralnorm-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/spectralnorm-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/spectralnorm.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/spellcheck-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/spellcheck-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/spellcheck.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/strcat-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/strcat-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/strcat.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/sumcol-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/sumcol-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/sumcol.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/thread-ring-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/thread-ring-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/thread-ring.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/wc-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/wc-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/wc.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/wordfreq-non-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/wordfreq-optimizing.rkt
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/wordfreq.rktl
+lib/racket/collects/tests/racket/benchmarks/shootout/typed/wrapper.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/wc.rkt
 lib/racket/collects/tests/racket/benchmarks/shootout/wordfreq.rkt
 lib/racket/collects/tests/racket/binc.rktl
 lib/racket/collects/tests/racket/boundmap-test.rktl
 lib/racket/collects/tests/racket/cache-image-snip-test.rktl
+lib/racket/collects/tests/racket/cat.rkt
 lib/racket/collects/tests/racket/censor.rktl
 lib/racket/collects/tests/racket/chaperone.rktl
 lib/racket/collects/tests/racket/char-set.rktl
@@ -10294,6 +10753,11 @@ lib/racket/collects/tests/racket/embed-me6.rkt
 lib/racket/collects/tests/racket/embed-me7.rkt
 lib/racket/collects/tests/racket/embed-me8.c
 lib/racket/collects/tests/racket/embed-me9.rkt
+lib/racket/collects/tests/racket/embed-planet-1/alt.rkt
+lib/racket/collects/tests/racket/embed-planet-1/main.rkt
+lib/racket/collects/tests/racket/embed-planet-1/other.rkt
+lib/racket/collects/tests/racket/embed-planet-2/main.ss
+lib/racket/collects/tests/racket/embed-planet-2/private/sub.rkt
 lib/racket/collects/tests/racket/embed.rktl
 lib/racket/collects/tests/racket/etc.rktl
 lib/racket/collects/tests/racket/expand.rktl
@@ -10433,6 +10897,8 @@ lib/racket/collects/tests/racklog/compiled/holland_rkt.dep
 lib/racket/collects/tests/racklog/compiled/holland_rkt.zo
 lib/racket/collects/tests/racklog/compiled/houses_rkt.dep
 lib/racket/collects/tests/racklog/compiled/houses_rkt.zo
+lib/racket/collects/tests/racklog/compiled/lang_rkt.dep
+lib/racket/collects/tests/racklog/compiled/lang_rkt.zo
 lib/racket/collects/tests/racklog/compiled/mapcol_rkt.dep
 lib/racket/collects/tests/racklog/compiled/mapcol_rkt.zo
 lib/racket/collects/tests/racklog/compiled/puzzle_rkt.dep
@@ -10449,6 +10915,31 @@ lib/racket/collects/tests/racklog/fac.rkt
 lib/racket/collects/tests/racklog/games.rkt
 lib/racket/collects/tests/racklog/holland.rkt
 lib/racket/collects/tests/racklog/houses.rkt
+lib/racket/collects/tests/racklog/lang.rkt
+lib/racket/collects/tests/racklog/lang/ancestor.rkt
+lib/racket/collects/tests/racklog/lang/ancestor.txt
+lib/racket/collects/tests/racklog/lang/compiled/ancestor_rkt.dep
+lib/racket/collects/tests/racklog/lang/compiled/ancestor_rkt.zo
+lib/racket/collects/tests/racklog/lang/compiled/laps_rkt.dep
+lib/racket/collects/tests/racklog/lang/compiled/laps_rkt.zo
+lib/racket/collects/tests/racklog/lang/compiled/long_rkt.dep
+lib/racket/collects/tests/racklog/lang/compiled/long_rkt.zo
+lib/racket/collects/tests/racklog/lang/compiled/says_rkt.dep
+lib/racket/collects/tests/racklog/lang/compiled/says_rkt.zo
+lib/racket/collects/tests/racklog/lang/compiled/true_rkt.dep
+lib/racket/collects/tests/racklog/lang/compiled/true_rkt.zo
+lib/racket/collects/tests/racklog/lang/compiled/tutorial_rkt.dep
+lib/racket/collects/tests/racklog/lang/compiled/tutorial_rkt.zo
+lib/racket/collects/tests/racklog/lang/laps.rkt
+lib/racket/collects/tests/racklog/lang/laps.txt
+lib/racket/collects/tests/racklog/lang/long.rkt
+lib/racket/collects/tests/racklog/lang/long.txt
+lib/racket/collects/tests/racklog/lang/says.rkt
+lib/racket/collects/tests/racklog/lang/says.txt
+lib/racket/collects/tests/racklog/lang/true.rkt
+lib/racket/collects/tests/racklog/lang/true.txt
+lib/racket/collects/tests/racklog/lang/tutorial.rkt
+lib/racket/collects/tests/racklog/lang/tutorial.txt
 lib/racket/collects/tests/racklog/mapcol.rkt
 lib/racket/collects/tests/racklog/puzzle.rkt
 lib/racket/collects/tests/racklog/run-all.rkt
@@ -10582,15 +11073,18 @@ lib/racket/collects/tests/typed-scheme/fail/check-expect-fail.rkt
 lib/racket/collects/tests/typed-scheme/fail/cl-bug.rkt
 lib/racket/collects/tests/typed-scheme/fail/cnt-err1.rkt
 lib/racket/collects/tests/typed-scheme/fail/cnt-struct-err.rkt
-lib/racket/collects/tests/typed-scheme/fail/dotted-identity.rkt
+lib/racket/collects/tests/typed-scheme/fail/dead-substruct.rkt
 lib/racket/collects/tests/typed-scheme/fail/dup-ann.rkt
 lib/racket/collects/tests/typed-scheme/fail/duplicate-ann.rkt
 lib/racket/collects/tests/typed-scheme/fail/formal-len-mismatches.rkt
 lib/racket/collects/tests/typed-scheme/fail/gadt.rkt
 lib/racket/collects/tests/typed-scheme/fail/ht-infer.rkt
+lib/racket/collects/tests/typed-scheme/fail/inexact-complex.rkt
 lib/racket/collects/tests/typed-scheme/fail/infer-dots.rkt
 lib/racket/collects/tests/typed-scheme/fail/internal-ann.rkt
+lib/racket/collects/tests/typed-scheme/fail/multi-arr-parse.rkt
 lib/racket/collects/tests/typed-scheme/fail/nested-tvars.rkt
+lib/racket/collects/tests/typed-scheme/fail/nonnegative-float.rkt
 lib/racket/collects/tests/typed-scheme/fail/poly-expect-error.rkt
 lib/racket/collects/tests/typed-scheme/fail/pr10350.rkt
 lib/racket/collects/tests/typed-scheme/fail/pr10594.rkt
@@ -10603,6 +11097,8 @@ lib/racket/collects/tests/typed-scheme/fail/struct-provide.rkt
 lib/racket/collects/tests/typed-scheme/fail/subtype-int-err.rkt
 lib/racket/collects/tests/typed-scheme/fail/too-many-errors.rkt
 lib/racket/collects/tests/typed-scheme/fail/unbound-type.rkt
+lib/racket/collects/tests/typed-scheme/fail/unsafe-struct-parent.rkt
+lib/racket/collects/tests/typed-scheme/fail/unsafe-struct.rkt
 lib/racket/collects/tests/typed-scheme/fail/untyped-srfi1.rkt
 lib/racket/collects/tests/typed-scheme/fail/values-dots.rkt
 lib/racket/collects/tests/typed-scheme/fail/with-type-bug.rkt
@@ -10611,6 +11107,128 @@ lib/racket/collects/tests/typed-scheme/fail/with-type2.rkt
 lib/racket/collects/tests/typed-scheme/fail/with-type3.rkt
 lib/racket/collects/tests/typed-scheme/main.rkt
 lib/racket/collects/tests/typed-scheme/nightly-run.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/begin-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/binary-fixnum.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/binary-nonzero-fixnum.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/cross-module-struct.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/cross-module-struct2.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/dead-substructs.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/define-begin-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/define-call-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/define-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/define-pair.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/different-langs.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/double-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/exact-inexact.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/fixnum-comparison.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/float-comp.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/float-fun.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/float-promotion.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/flvector-length.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/fx-fl.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/in-list.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/inexact-complex-div.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/inexact-complex-mult.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/inexact-complex-parts.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/inexact-complex.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/invalid-binary-nonzero-fixnum.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/invalid-exact-inexact.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/invalid-float-comp.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/invalid-float-promotion.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/invalid-inexact-complex-parts.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/invalid-make-flrectangular.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/invalid-sqrt.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/invalid-vector-ref.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/invalid-vector-set.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/known-vector-length.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/let-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/make-flrectangular.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/n-ary-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/n-ary-inexact-complex.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/nested-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/nested-float2.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/nested-inexact-complex.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/nested-pair1.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/nested-pair2.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/pair-fun.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/quote.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/simple-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/simple-pair.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/sqrt.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/structs.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/unary-fixnum-nested.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/unary-fixnum.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/unary-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/vector-length-nested.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/vector-length.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/vector-ref-set-ref.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/vector-ref.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/vector-ref2.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/vector-set-quote.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/vector-set.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/generic/vector-set2.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/begin-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/binary-fixnum.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/binary-nonzero-fixnum.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/cross-module-struct.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/cross-module-struct2.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/dead-substructs.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/define-begin-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/define-call-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/define-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/define-pair.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/different-langs.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/double-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/exact-inexact.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/fixnum-comparison.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/float-comp.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/float-fun.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/float-promotion.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/flvector-length.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/fx-fl.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/in-list.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/inexact-complex-div.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/inexact-complex-mult.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/inexact-complex-parts.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/inexact-complex.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/invalid-binary-nonzero-fixnum.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/invalid-exact-inexact.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/invalid-float-comp.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/invalid-float-promotion.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/invalid-inexact-complex-parts.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/invalid-make-flrectangular.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/invalid-sqrt.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/invalid-vector-ref.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/invalid-vector-set.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/known-vector-length.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/let-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/make-flrectangular.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/n-ary-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/n-ary-inexact-complex.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/nested-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/nested-float2.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/nested-inexact-complex.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/nested-pair1.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/nested-pair2.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/pair-fun.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/quote.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/simple-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/simple-pair.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/sqrt.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/structs.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/unary-fixnum-nested.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/unary-fixnum.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/unary-float.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/vector-length-nested.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/vector-length.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/vector-ref-set-ref.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/vector-ref.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/vector-ref2.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/vector-set-quote.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/vector-set.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized/vector-set2.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/non-optimized/dead-substructs.rkt
+lib/racket/collects/tests/typed-scheme/optimizer/run.rkt
 lib/racket/collects/tests/typed-scheme/run
 lib/racket/collects/tests/typed-scheme/run.rkt
 lib/racket/collects/tests/typed-scheme/succeed/andmap.rkt
@@ -10638,6 +11256,7 @@ lib/racket/collects/tests/typed-scheme/succeed/def-pred.rkt
 lib/racket/collects/tests/typed-scheme/succeed/do.rkt
 lib/racket/collects/tests/typed-scheme/succeed/dot-intro.rkt
 lib/racket/collects/tests/typed-scheme/succeed/dotted-identity.rkt
+lib/racket/collects/tests/typed-scheme/succeed/dotted-identity2.rkt
 lib/racket/collects/tests/typed-scheme/succeed/empty-or.rkt
 lib/racket/collects/tests/typed-scheme/succeed/even-odd.rkt
 lib/racket/collects/tests/typed-scheme/succeed/fix.rkt
@@ -10649,15 +11268,22 @@ lib/racket/collects/tests/typed-scheme/succeed/fold-left-inst.rkt
 lib/racket/collects/tests/typed-scheme/succeed/fold-left.rkt
 lib/racket/collects/tests/typed-scheme/succeed/foldo.rkt
 lib/racket/collects/tests/typed-scheme/succeed/foo.scm
+lib/racket/collects/tests/typed-scheme/succeed/for-ann.rkt
+lib/racket/collects/tests/typed-scheme/succeed/for-in-range.rkt
 lib/racket/collects/tests/typed-scheme/succeed/for-list.rkt
 lib/racket/collects/tests/typed-scheme/succeed/for-lists.rkt
+lib/racket/collects/tests/typed-scheme/succeed/for-seq.rkt
+lib/racket/collects/tests/typed-scheme/succeed/for.rkt
 lib/racket/collects/tests/typed-scheme/succeed/force-delay.rkt
+lib/racket/collects/tests/typed-scheme/succeed/generalize-vectors.rkt
+lib/racket/collects/tests/typed-scheme/succeed/hari-vector-bug.rkt
 lib/racket/collects/tests/typed-scheme/succeed/hash-ref.rkt
 lib/racket/collects/tests/typed-scheme/succeed/het-vec.rkt
 lib/racket/collects/tests/typed-scheme/succeed/het-vec2.rkt
 lib/racket/collects/tests/typed-scheme/succeed/hw01.scm
 lib/racket/collects/tests/typed-scheme/succeed/icfp-examples.rkt
 lib/racket/collects/tests/typed-scheme/succeed/if-splitting-test.rkt
+lib/racket/collects/tests/typed-scheme/succeed/inexact-complex.rkt
 lib/racket/collects/tests/typed-scheme/succeed/infer-dots.rkt
 lib/racket/collects/tests/typed-scheme/succeed/infer-funargs.rkt
 lib/racket/collects/tests/typed-scheme/succeed/inst-dots.rkt
@@ -10666,6 +11292,7 @@ lib/racket/collects/tests/typed-scheme/succeed/int-def-colon.rkt
 lib/racket/collects/tests/typed-scheme/succeed/kw.rkt
 lib/racket/collects/tests/typed-scheme/succeed/leftist-heap.rkt
 lib/racket/collects/tests/typed-scheme/succeed/let-values-tests.rkt
+lib/racket/collects/tests/typed-scheme/succeed/list-dots.rkt
 lib/racket/collects/tests/typed-scheme/succeed/list-ref-vec.rkt
 lib/racket/collects/tests/typed-scheme/succeed/list-struct-sum.rkt
 lib/racket/collects/tests/typed-scheme/succeed/little-schemer.rkt
@@ -10683,12 +11310,15 @@ lib/racket/collects/tests/typed-scheme/succeed/match.rkt
 lib/racket/collects/tests/typed-scheme/succeed/member-pred.rkt
 lib/racket/collects/tests/typed-scheme/succeed/metrics.rkt
 lib/racket/collects/tests/typed-scheme/succeed/module-lang.rkt
+lib/racket/collects/tests/typed-scheme/succeed/mpair.rkt
 lib/racket/collects/tests/typed-scheme/succeed/mu-rec.rkt
 lib/racket/collects/tests/typed-scheme/succeed/mutable-struct-pred.rkt
 lib/racket/collects/tests/typed-scheme/succeed/nested-poly.rkt
 lib/racket/collects/tests/typed-scheme/succeed/new-metrics.rkt
 lib/racket/collects/tests/typed-scheme/succeed/no-bound-fl.rkt
+lib/racket/collects/tests/typed-scheme/succeed/nonnegative-float.rkt
 lib/racket/collects/tests/typed-scheme/succeed/null-program.rkt
+lib/racket/collects/tests/typed-scheme/succeed/optimize-simple.rkt
 lib/racket/collects/tests/typed-scheme/succeed/or-sym.rkt
 lib/racket/collects/tests/typed-scheme/succeed/overloading.rkt
 lib/racket/collects/tests/typed-scheme/succeed/pair-test.rkt
@@ -10698,9 +11328,11 @@ lib/racket/collects/tests/typed-scheme/succeed/param.rkt
 lib/racket/collects/tests/typed-scheme/succeed/parse-path.rkt
 lib/racket/collects/tests/typed-scheme/succeed/patch.rkt
 lib/racket/collects/tests/typed-scheme/succeed/poly-ret-ann.rkt
+lib/racket/collects/tests/typed-scheme/succeed/poly-struct-union.rkt
 lib/racket/collects/tests/typed-scheme/succeed/poly-struct.rkt
 lib/racket/collects/tests/typed-scheme/succeed/poly-subtype.rkt
 lib/racket/collects/tests/typed-scheme/succeed/poly-tests.rkt
+lib/racket/collects/tests/typed-scheme/succeed/pr10057.rkt
 lib/racket/collects/tests/typed-scheme/succeed/pr10318.rkt
 lib/racket/collects/tests/typed-scheme/succeed/pr10319.rkt
 lib/racket/collects/tests/typed-scheme/succeed/pr10342.rkt
@@ -10715,13 +11347,16 @@ lib/racket/collects/tests/typed-scheme/succeed/pr9053-2.rkt
 lib/racket/collects/tests/typed-scheme/succeed/pr9053.rkt
 lib/racket/collects/tests/typed-scheme/succeed/pr9054.rkt
 lib/racket/collects/tests/typed-scheme/succeed/priority-queue.scm
+lib/racket/collects/tests/typed-scheme/succeed/provide-case-rest.rkt
 lib/racket/collects/tests/typed-scheme/succeed/provide-poly-struct.rkt
 lib/racket/collects/tests/typed-scheme/succeed/provide-sexp.rkt
 lib/racket/collects/tests/typed-scheme/succeed/provide-struct-untyped.rkt
 lib/racket/collects/tests/typed-scheme/succeed/provide-struct.rkt
 lib/racket/collects/tests/typed-scheme/succeed/provide-syntax.rkt
+lib/racket/collects/tests/typed-scheme/succeed/racket-struct.rkt
 lib/racket/collects/tests/typed-scheme/succeed/rackunit.rkt
 lib/racket/collects/tests/typed-scheme/succeed/random-bits.rkt
+lib/racket/collects/tests/typed-scheme/succeed/rec-het-vec-infer.rkt
 lib/racket/collects/tests/typed-scheme/succeed/rec-types.rkt
 lib/racket/collects/tests/typed-scheme/succeed/refinement-even.rkt
 lib/racket/collects/tests/typed-scheme/succeed/require-poly.rkt
@@ -10745,12 +11380,16 @@ lib/racket/collects/tests/typed-scheme/succeed/struct-cert.rkt
 lib/racket/collects/tests/typed-scheme/succeed/struct-exec.rkt
 lib/racket/collects/tests/typed-scheme/succeed/struct-out.rkt
 lib/racket/collects/tests/typed-scheme/succeed/struct-path-update.rkt
+lib/racket/collects/tests/typed-scheme/succeed/test-child-field.rkt
 lib/racket/collects/tests/typed-scheme/succeed/test.rkt
 lib/racket/collects/tests/typed-scheme/succeed/test2.rkt
+lib/racket/collects/tests/typed-scheme/succeed/threads-and-channels.rkt
 lib/racket/collects/tests/typed-scheme/succeed/time.rkt
 lib/racket/collects/tests/typed-scheme/succeed/typeann-letrec.rkt
 lib/racket/collects/tests/typed-scheme/succeed/typed-list.rkt
 lib/racket/collects/tests/typed-scheme/succeed/unholy-terror.rkt
+lib/racket/collects/tests/typed-scheme/succeed/unsafe-struct-parent.rkt
+lib/racket/collects/tests/typed-scheme/succeed/unsafe-struct.rkt
 lib/racket/collects/tests/typed-scheme/succeed/values-dots.rkt
 lib/racket/collects/tests/typed-scheme/succeed/varargs-tests.rkt
 lib/racket/collects/tests/typed-scheme/succeed/vec-tests.rkt
@@ -10772,12 +11411,36 @@ lib/racket/collects/tests/typed-scheme/unit-tests/typecheck-tests.rkt
 lib/racket/collects/tests/typed-scheme/xfail/applicative.rkt
 lib/racket/collects/tests/typed-scheme/xfail/apply-map-bug.rkt
 lib/racket/collects/tests/typed-scheme/xfail/cl-expected.rkt
+lib/racket/collects/tests/typed-scheme/xfail/for-inference.rkt
 lib/racket/collects/tests/typed-scheme/xfail/pr10618.rkt
+lib/racket/collects/tests/typed-scheme/xfail/priority-queue.scm
 lib/racket/collects/tests/typed-scheme/xfail/rec-contract.rkt
+lib/racket/collects/tests/typed-scheme/xfail/xmodule-mutation.rkt
 lib/racket/collects/tests/unstable/byte-counting-port.rkt
+lib/racket/collects/tests/unstable/class.rkt
+lib/racket/collects/tests/unstable/contract.rkt
+lib/racket/collects/tests/unstable/debug.rkt
+lib/racket/collects/tests/unstable/define.rkt
+lib/racket/collects/tests/unstable/dict.rkt
+lib/racket/collects/tests/unstable/exn.rkt
+lib/racket/collects/tests/unstable/function.rkt
 lib/racket/collects/tests/unstable/generics.rkt
+lib/racket/collects/tests/unstable/hash.rkt
+lib/racket/collects/tests/unstable/helpers.rkt
+lib/racket/collects/tests/unstable/list.rkt
 lib/racket/collects/tests/unstable/markparam.rkt
+lib/racket/collects/tests/unstable/match.rkt
+lib/racket/collects/tests/unstable/planet-syntax.rkt
+lib/racket/collects/tests/unstable/port.rkt
+lib/racket/collects/tests/unstable/queue.rkt
+lib/racket/collects/tests/unstable/regexp.rkt
+lib/racket/collects/tests/unstable/set.rkt
+lib/racket/collects/tests/unstable/sexp-diff.rkt
 lib/racket/collects/tests/unstable/srcloc.rktl
+lib/racket/collects/tests/unstable/syntax.rkt
+lib/racket/collects/tests/unstable/text.rkt
+lib/racket/collects/tests/unstable/values.rkt
+lib/racket/collects/tests/unstable/web.rkt
 lib/racket/collects/tests/utils/compiled/gui_rkt.dep
 lib/racket/collects/tests/utils/compiled/gui_rkt.zo
 lib/racket/collects/tests/utils/compiled/mz-testing_rkt.dep
@@ -10800,6 +11463,7 @@ lib/racket/collects/tests/web-server/dispatchers/dispatch-servlets-test.rkt
 lib/racket/collects/tests/web-server/dispatchers/filesystem-map-test.rkt
 lib/racket/collects/tests/web-server/dispatchers/servlet-test-util.rkt
 lib/racket/collects/tests/web-server/formlets-test.rkt
+lib/racket/collects/tests/web-server/formlets/formlet-star.rkt
 lib/racket/collects/tests/web-server/http/all-http-tests.rkt
 lib/racket/collects/tests/web-server/http/cookies-test.rkt
 lib/racket/collects/tests/web-server/http/digest-auth-test.rkt
@@ -11570,27 +12234,35 @@ lib/racket/collects/typed-scheme/compiled/minimal_rkt.dep
 lib/racket/collects/typed-scheme/compiled/minimal_rkt.zo
 lib/racket/collects/typed-scheme/compiled/no-check_rkt.dep
 lib/racket/collects/typed-scheme/compiled/no-check_rkt.zo
+lib/racket/collects/typed-scheme/compiled/tc-setup_rkt.dep
+lib/racket/collects/typed-scheme/compiled/tc-setup_rkt.zo
 lib/racket/collects/typed-scheme/compiled/typed-reader_rkt.dep
 lib/racket/collects/typed-scheme/compiled/typed-reader_rkt.zo
 lib/racket/collects/typed-scheme/compiled/typed-scheme_rkt.dep
 lib/racket/collects/typed-scheme/compiled/typed-scheme_rkt.zo
+lib/racket/collects/typed-scheme/env/compiled/global-env_rkt.dep
+lib/racket/collects/typed-scheme/env/compiled/global-env_rkt.zo
+lib/racket/collects/typed-scheme/env/compiled/index-env_rkt.dep
+lib/racket/collects/typed-scheme/env/compiled/index-env_rkt.zo
 lib/racket/collects/typed-scheme/env/compiled/init-envs_rkt.dep
 lib/racket/collects/typed-scheme/env/compiled/init-envs_rkt.zo
 lib/racket/collects/typed-scheme/env/compiled/lexical-env_rkt.dep
 lib/racket/collects/typed-scheme/env/compiled/lexical-env_rkt.zo
+lib/racket/collects/typed-scheme/env/compiled/tvar-env_rkt.dep
+lib/racket/collects/typed-scheme/env/compiled/tvar-env_rkt.zo
 lib/racket/collects/typed-scheme/env/compiled/type-alias-env_rkt.dep
 lib/racket/collects/typed-scheme/env/compiled/type-alias-env_rkt.zo
-lib/racket/collects/typed-scheme/env/compiled/type-env_rkt.dep
-lib/racket/collects/typed-scheme/env/compiled/type-env_rkt.zo
-lib/racket/collects/typed-scheme/env/compiled/type-environments_rkt.dep
-lib/racket/collects/typed-scheme/env/compiled/type-environments_rkt.zo
+lib/racket/collects/typed-scheme/env/compiled/type-env-structs_rkt.dep
+lib/racket/collects/typed-scheme/env/compiled/type-env-structs_rkt.zo
 lib/racket/collects/typed-scheme/env/compiled/type-name-env_rkt.dep
 lib/racket/collects/typed-scheme/env/compiled/type-name-env_rkt.zo
+lib/racket/collects/typed-scheme/env/global-env.rkt
+lib/racket/collects/typed-scheme/env/index-env.rkt
 lib/racket/collects/typed-scheme/env/init-envs.rkt
 lib/racket/collects/typed-scheme/env/lexical-env.rkt
+lib/racket/collects/typed-scheme/env/tvar-env.rkt
 lib/racket/collects/typed-scheme/env/type-alias-env.rkt
-lib/racket/collects/typed-scheme/env/type-env.rkt
-lib/racket/collects/typed-scheme/env/type-environments.rkt
+lib/racket/collects/typed-scheme/env/type-env-structs.rkt
 lib/racket/collects/typed-scheme/env/type-name-env.rkt
 lib/racket/collects/typed-scheme/infer/compiled/constraint-structs_rkt.dep
 lib/racket/collects/typed-scheme/infer/compiled/constraint-structs_rkt.zo
@@ -11630,6 +12302,33 @@ lib/racket/collects/typed-scheme/no-check.rkt
 lib/racket/collects/typed-scheme/no-check/lang/compiled/reader_rkt.dep
 lib/racket/collects/typed-scheme/no-check/lang/compiled/reader_rkt.zo
 lib/racket/collects/typed-scheme/no-check/lang/reader.rkt
+lib/racket/collects/typed-scheme/optimizer/compiled/fixnum_rkt.dep
+lib/racket/collects/typed-scheme/optimizer/compiled/fixnum_rkt.zo
+lib/racket/collects/typed-scheme/optimizer/compiled/float_rkt.dep
+lib/racket/collects/typed-scheme/optimizer/compiled/float_rkt.zo
+lib/racket/collects/typed-scheme/optimizer/compiled/inexact-complex_rkt.dep
+lib/racket/collects/typed-scheme/optimizer/compiled/inexact-complex_rkt.zo
+lib/racket/collects/typed-scheme/optimizer/compiled/list_rkt.dep
+lib/racket/collects/typed-scheme/optimizer/compiled/list_rkt.zo
+lib/racket/collects/typed-scheme/optimizer/compiled/optimizer_rkt.dep
+lib/racket/collects/typed-scheme/optimizer/compiled/optimizer_rkt.zo
+lib/racket/collects/typed-scheme/optimizer/compiled/pair_rkt.dep
+lib/racket/collects/typed-scheme/optimizer/compiled/pair_rkt.zo
+lib/racket/collects/typed-scheme/optimizer/compiled/struct_rkt.dep
+lib/racket/collects/typed-scheme/optimizer/compiled/struct_rkt.zo
+lib/racket/collects/typed-scheme/optimizer/compiled/utils_rkt.dep
+lib/racket/collects/typed-scheme/optimizer/compiled/utils_rkt.zo
+lib/racket/collects/typed-scheme/optimizer/compiled/vector_rkt.dep
+lib/racket/collects/typed-scheme/optimizer/compiled/vector_rkt.zo
+lib/racket/collects/typed-scheme/optimizer/fixnum.rkt
+lib/racket/collects/typed-scheme/optimizer/float.rkt
+lib/racket/collects/typed-scheme/optimizer/inexact-complex.rkt
+lib/racket/collects/typed-scheme/optimizer/list.rkt
+lib/racket/collects/typed-scheme/optimizer/optimizer.rkt
+lib/racket/collects/typed-scheme/optimizer/pair.rkt
+lib/racket/collects/typed-scheme/optimizer/struct.rkt
+lib/racket/collects/typed-scheme/optimizer/utils.rkt
+lib/racket/collects/typed-scheme/optimizer/vector.rkt
 lib/racket/collects/typed-scheme/private/annotate-classes.rkt
 lib/racket/collects/typed-scheme/private/base-env-indexing-abs.rkt
 lib/racket/collects/typed-scheme/private/base-env-indexing.rkt
@@ -11637,7 +12336,7 @@ lib/racket/collects/typed-scheme/private/base-env-numeric.rkt
 lib/racket/collects/typed-scheme/private/base-env.rkt
 lib/racket/collects/typed-scheme/private/base-special-env.rkt
 lib/racket/collects/typed-scheme/private/base-types-extra.rkt
-lib/racket/collects/typed-scheme/private/base-types-new.rkt
+lib/racket/collects/typed-scheme/private/base-types.rkt
 lib/racket/collects/typed-scheme/private/colon.rkt
 lib/racket/collects/typed-scheme/private/compiled/annotate-classes_rkt.dep
 lib/racket/collects/typed-scheme/private/compiled/annotate-classes_rkt.zo
@@ -11653,18 +12352,18 @@ lib/racket/collects/typed-scheme/private/compiled/base-special-env_rkt.dep
 lib/racket/collects/typed-scheme/private/compiled/base-special-env_rkt.zo
 lib/racket/collects/typed-scheme/private/compiled/base-types-extra_rkt.dep
 lib/racket/collects/typed-scheme/private/compiled/base-types-extra_rkt.zo
-lib/racket/collects/typed-scheme/private/compiled/base-types-new_rkt.dep
-lib/racket/collects/typed-scheme/private/compiled/base-types-new_rkt.zo
+lib/racket/collects/typed-scheme/private/compiled/base-types_rkt.dep
+lib/racket/collects/typed-scheme/private/compiled/base-types_rkt.zo
 lib/racket/collects/typed-scheme/private/compiled/colon_rkt.dep
 lib/racket/collects/typed-scheme/private/compiled/colon_rkt.zo
 lib/racket/collects/typed-scheme/private/compiled/env-lang_rkt.dep
 lib/racket/collects/typed-scheme/private/compiled/env-lang_rkt.zo
 lib/racket/collects/typed-scheme/private/compiled/extra-procs_rkt.dep
 lib/racket/collects/typed-scheme/private/compiled/extra-procs_rkt.zo
+lib/racket/collects/typed-scheme/private/compiled/for-clauses_rkt.dep
+lib/racket/collects/typed-scheme/private/compiled/for-clauses_rkt.zo
 lib/racket/collects/typed-scheme/private/compiled/internal_rkt.dep
 lib/racket/collects/typed-scheme/private/compiled/internal_rkt.zo
-lib/racket/collects/typed-scheme/private/compiled/optimize_rkt.dep
-lib/racket/collects/typed-scheme/private/compiled/optimize_rkt.zo
 lib/racket/collects/typed-scheme/private/compiled/parse-type_rkt.dep
 lib/racket/collects/typed-scheme/private/compiled/parse-type_rkt.zo
 lib/racket/collects/typed-scheme/private/compiled/prims_rkt.dep
@@ -11681,8 +12380,8 @@ lib/racket/collects/typed-scheme/private/compiled/with-types_rkt.dep
 lib/racket/collects/typed-scheme/private/compiled/with-types_rkt.zo
 lib/racket/collects/typed-scheme/private/env-lang.rkt
 lib/racket/collects/typed-scheme/private/extra-procs.rkt
+lib/racket/collects/typed-scheme/private/for-clauses.rkt
 lib/racket/collects/typed-scheme/private/internal.rkt
-lib/racket/collects/typed-scheme/private/optimize.rkt
 lib/racket/collects/typed-scheme/private/parse-type.rkt
 lib/racket/collects/typed-scheme/private/prims.rkt
 lib/racket/collects/typed-scheme/private/type-annotation.rkt
@@ -11713,6 +12412,8 @@ lib/racket/collects/typed-scheme/scribblings/compiled/begin_scrbl.dep
 lib/racket/collects/typed-scheme/scribblings/compiled/begin_scrbl.zo
 lib/racket/collects/typed-scheme/scribblings/compiled/more_scrbl.dep
 lib/racket/collects/typed-scheme/scribblings/compiled/more_scrbl.zo
+lib/racket/collects/typed-scheme/scribblings/compiled/optimization_scrbl.dep
+lib/racket/collects/typed-scheme/scribblings/compiled/optimization_scrbl.zo
 lib/racket/collects/typed-scheme/scribblings/compiled/quick_scrbl.dep
 lib/racket/collects/typed-scheme/scribblings/compiled/quick_scrbl.zo
 lib/racket/collects/typed-scheme/scribblings/compiled/ts-guide_scrbl.dep
@@ -11726,17 +12427,24 @@ lib/racket/collects/typed-scheme/scribblings/compiled/utils_rkt.zo
 lib/racket/collects/typed-scheme/scribblings/compiled/varargs_scrbl.dep
 lib/racket/collects/typed-scheme/scribblings/compiled/varargs_scrbl.zo
 lib/racket/collects/typed-scheme/scribblings/more.scrbl
+lib/racket/collects/typed-scheme/scribblings/optimization.scrbl
 lib/racket/collects/typed-scheme/scribblings/quick.scrbl
 lib/racket/collects/typed-scheme/scribblings/ts-guide.scrbl
 lib/racket/collects/typed-scheme/scribblings/ts-reference.scrbl
 lib/racket/collects/typed-scheme/scribblings/types.scrbl
 lib/racket/collects/typed-scheme/scribblings/utils.rkt
 lib/racket/collects/typed-scheme/scribblings/varargs.scrbl
+lib/racket/collects/typed-scheme/tc-setup.rkt
+lib/racket/collects/typed-scheme/typecheck/check-below.rkt
 lib/racket/collects/typed-scheme/typecheck/check-subforms-unit.rkt
+lib/racket/collects/typed-scheme/typecheck/compiled/check-below_rkt.dep
+lib/racket/collects/typed-scheme/typecheck/compiled/check-below_rkt.zo
 lib/racket/collects/typed-scheme/typecheck/compiled/check-subforms-unit_rkt.dep
 lib/racket/collects/typed-scheme/typecheck/compiled/check-subforms-unit_rkt.zo
 lib/racket/collects/typed-scheme/typecheck/compiled/def-binding_rkt.dep
 lib/racket/collects/typed-scheme/typecheck/compiled/def-binding_rkt.zo
+lib/racket/collects/typed-scheme/typecheck/compiled/def-export_rkt.dep
+lib/racket/collects/typed-scheme/typecheck/compiled/def-export_rkt.zo
 lib/racket/collects/typed-scheme/typecheck/compiled/find-annotation_rkt.dep
 lib/racket/collects/typed-scheme/typecheck/compiled/find-annotation_rkt.zo
 lib/racket/collects/typed-scheme/typecheck/compiled/internal-forms_rkt.dep
@@ -11749,12 +12457,14 @@ lib/racket/collects/typed-scheme/typecheck/compiled/tc-app-helper_rkt.dep
 lib/racket/collects/typed-scheme/typecheck/compiled/tc-app-helper_rkt.zo
 lib/racket/collects/typed-scheme/typecheck/compiled/tc-app_rkt.dep
 lib/racket/collects/typed-scheme/typecheck/compiled/tc-app_rkt.zo
-lib/racket/collects/typed-scheme/typecheck/compiled/tc-dots-unit_rkt.dep
-lib/racket/collects/typed-scheme/typecheck/compiled/tc-dots-unit_rkt.zo
+lib/racket/collects/typed-scheme/typecheck/compiled/tc-apply_rkt.dep
+lib/racket/collects/typed-scheme/typecheck/compiled/tc-apply_rkt.zo
 lib/racket/collects/typed-scheme/typecheck/compiled/tc-envops_rkt.dep
 lib/racket/collects/typed-scheme/typecheck/compiled/tc-envops_rkt.zo
 lib/racket/collects/typed-scheme/typecheck/compiled/tc-expr-unit_rkt.dep
 lib/racket/collects/typed-scheme/typecheck/compiled/tc-expr-unit_rkt.zo
+lib/racket/collects/typed-scheme/typecheck/compiled/tc-funapp_rkt.dep
+lib/racket/collects/typed-scheme/typecheck/compiled/tc-funapp_rkt.zo
 lib/racket/collects/typed-scheme/typecheck/compiled/tc-if_rkt.dep
 lib/racket/collects/typed-scheme/typecheck/compiled/tc-if_rkt.zo
 lib/racket/collects/typed-scheme/typecheck/compiled/tc-lambda-unit_rkt.dep
@@ -11772,15 +12482,17 @@ lib/racket/collects/typed-scheme/typecheck/compiled/tc-toplevel_rkt.zo
 lib/racket/collects/typed-scheme/typecheck/compiled/typechecker_rkt.dep
 lib/racket/collects/typed-scheme/typecheck/compiled/typechecker_rkt.zo
 lib/racket/collects/typed-scheme/typecheck/def-binding.rkt
+lib/racket/collects/typed-scheme/typecheck/def-export.rkt
 lib/racket/collects/typed-scheme/typecheck/find-annotation.rkt
 lib/racket/collects/typed-scheme/typecheck/internal-forms.rkt
 lib/racket/collects/typed-scheme/typecheck/provide-handling.rkt
 lib/racket/collects/typed-scheme/typecheck/signatures.rkt
 lib/racket/collects/typed-scheme/typecheck/tc-app-helper.rkt
 lib/racket/collects/typed-scheme/typecheck/tc-app.rkt
-lib/racket/collects/typed-scheme/typecheck/tc-dots-unit.rkt
+lib/racket/collects/typed-scheme/typecheck/tc-apply.rkt
 lib/racket/collects/typed-scheme/typecheck/tc-envops.rkt
 lib/racket/collects/typed-scheme/typecheck/tc-expr-unit.rkt
+lib/racket/collects/typed-scheme/typecheck/tc-funapp.rkt
 lib/racket/collects/typed-scheme/typecheck/tc-if.rkt
 lib/racket/collects/typed-scheme/typecheck/tc-lambda-unit.rkt
 lib/racket/collects/typed-scheme/typecheck/tc-let-unit.rkt
@@ -11807,6 +12519,8 @@ lib/racket/collects/typed-scheme/types/compiled/remove-intersect_rkt.dep
 lib/racket/collects/typed-scheme/types/compiled/remove-intersect_rkt.zo
 lib/racket/collects/typed-scheme/types/compiled/resolve_rkt.dep
 lib/racket/collects/typed-scheme/types/compiled/resolve_rkt.zo
+lib/racket/collects/typed-scheme/types/compiled/substitute_rkt.dep
+lib/racket/collects/typed-scheme/types/compiled/substitute_rkt.zo
 lib/racket/collects/typed-scheme/types/compiled/subtype_rkt.dep
 lib/racket/collects/typed-scheme/types/compiled/subtype_rkt.zo
 lib/racket/collects/typed-scheme/types/compiled/type-table_rkt.dep
@@ -11820,6 +12534,7 @@ lib/racket/collects/typed-scheme/types/filter-ops.rkt
 lib/racket/collects/typed-scheme/types/printer.rkt
 lib/racket/collects/typed-scheme/types/remove-intersect.rkt
 lib/racket/collects/typed-scheme/types/resolve.rkt
+lib/racket/collects/typed-scheme/types/substitute.rkt
 lib/racket/collects/typed-scheme/types/subtype.rkt
 lib/racket/collects/typed-scheme/types/type-table.rkt
 lib/racket/collects/typed-scheme/types/union.rkt
@@ -11931,16 +12646,28 @@ lib/racket/collects/typed/private/utils.rkt
 lib/racket/collects/typed/private/wrap.rkt
 lib/racket/collects/typed/racket.rkt
 lib/racket/collects/typed/racket/base.rkt
+lib/racket/collects/typed/racket/base/compiled/no-check_rkt.dep
+lib/racket/collects/typed/racket/base/compiled/no-check_rkt.zo
 lib/racket/collects/typed/racket/base/lang/compiled/reader_rkt.dep
 lib/racket/collects/typed/racket/base/lang/compiled/reader_rkt.zo
 lib/racket/collects/typed/racket/base/lang/reader.rkt
+lib/racket/collects/typed/racket/base/no-check.rkt
+lib/racket/collects/typed/racket/base/no-check/lang/compiled/reader_rkt.dep
+lib/racket/collects/typed/racket/base/no-check/lang/compiled/reader_rkt.zo
+lib/racket/collects/typed/racket/base/no-check/lang/reader.rkt
 lib/racket/collects/typed/racket/compiled/base_rkt.dep
 lib/racket/collects/typed/racket/compiled/base_rkt.zo
+lib/racket/collects/typed/racket/compiled/no-check_rkt.dep
+lib/racket/collects/typed/racket/compiled/no-check_rkt.zo
 lib/racket/collects/typed/racket/compiled/system_rkt.dep
 lib/racket/collects/typed/racket/compiled/system_rkt.zo
 lib/racket/collects/typed/racket/lang/compiled/reader_rkt.dep
 lib/racket/collects/typed/racket/lang/compiled/reader_rkt.zo
 lib/racket/collects/typed/racket/lang/reader.rkt
+lib/racket/collects/typed/racket/no-check.rkt
+lib/racket/collects/typed/racket/no-check/lang/compiled/reader_rkt.dep
+lib/racket/collects/typed/racket/no-check/lang/compiled/reader_rkt.zo
+lib/racket/collects/typed/racket/no-check/lang/reader.rkt
 lib/racket/collects/typed/racket/system.rkt
 lib/racket/collects/typed/rackunit.rkt
 lib/racket/collects/typed/rackunit/compiled/gui_rkt.dep
@@ -11971,25 +12698,32 @@ lib/racket/collects/typed/scheme/system.rkt
 lib/racket/collects/typed/srfi/14.rkt
 lib/racket/collects/typed/srfi/compiled/14_rkt.dep
 lib/racket/collects/typed/srfi/compiled/14_rkt.zo
+lib/racket/collects/typed/test-engine/compiled/racket-tests_rkt.dep
+lib/racket/collects/typed/test-engine/compiled/racket-tests_rkt.zo
 lib/racket/collects/typed/test-engine/compiled/scheme-tests_rkt.dep
 lib/racket/collects/typed/test-engine/compiled/scheme-tests_rkt.zo
 lib/racket/collects/typed/test-engine/compiled/type-env-ext_rkt.dep
 lib/racket/collects/typed/test-engine/compiled/type-env-ext_rkt.zo
+lib/racket/collects/typed/test-engine/racket-tests.rkt
 lib/racket/collects/typed/test-engine/scheme-tests.rkt
 lib/racket/collects/typed/test-engine/type-env-ext.rkt
-lib/racket/collects/unstable/byte-counting-port.rkt
 lib/racket/collects/unstable/bytes.rkt
 lib/racket/collects/unstable/class-iop.rkt
-lib/racket/collects/unstable/compiled/byte-counting-port_rkt.dep
-lib/racket/collects/unstable/compiled/byte-counting-port_rkt.zo
+lib/racket/collects/unstable/class.rkt
 lib/racket/collects/unstable/compiled/bytes_rkt.dep
 lib/racket/collects/unstable/compiled/bytes_rkt.zo
 lib/racket/collects/unstable/compiled/class-iop_rkt.dep
 lib/racket/collects/unstable/compiled/class-iop_rkt.zo
+lib/racket/collects/unstable/compiled/class_rkt.dep
+lib/racket/collects/unstable/compiled/class_rkt.zo
 lib/racket/collects/unstable/compiled/contract_rkt.dep
 lib/racket/collects/unstable/compiled/contract_rkt.zo
 lib/racket/collects/unstable/compiled/debug_rkt.dep
 lib/racket/collects/unstable/compiled/debug_rkt.zo
+lib/racket/collects/unstable/compiled/define_rkt.dep
+lib/racket/collects/unstable/compiled/define_rkt.zo
+lib/racket/collects/unstable/compiled/dict_rkt.dep
+lib/racket/collects/unstable/compiled/dict_rkt.zo
 lib/racket/collects/unstable/compiled/dirs_rkt.dep
 lib/racket/collects/unstable/compiled/dirs_rkt.zo
 lib/racket/collects/unstable/compiled/exn_rkt.dep
@@ -11998,6 +12732,8 @@ lib/racket/collects/unstable/compiled/file_rkt.dep
 lib/racket/collects/unstable/compiled/file_rkt.zo
 lib/racket/collects/unstable/compiled/find_rkt.dep
 lib/racket/collects/unstable/compiled/find_rkt.zo
+lib/racket/collects/unstable/compiled/function_rkt.dep
+lib/racket/collects/unstable/compiled/function_rkt.zo
 lib/racket/collects/unstable/compiled/generics_rkt.dep
 lib/racket/collects/unstable/compiled/generics_rkt.zo
 lib/racket/collects/unstable/compiled/hash_rkt.dep
@@ -12018,10 +12754,32 @@ lib/racket/collects/unstable/compiled/mutated-vars_rkt.dep
 lib/racket/collects/unstable/compiled/mutated-vars_rkt.zo
 lib/racket/collects/unstable/compiled/path_rkt.dep
 lib/racket/collects/unstable/compiled/path_rkt.zo
+lib/racket/collects/unstable/compiled/planet-syntax_rkt.dep
+lib/racket/collects/unstable/compiled/planet-syntax_rkt.zo
+lib/racket/collects/unstable/compiled/planet_rkt.dep
+lib/racket/collects/unstable/compiled/planet_rkt.zo
 lib/racket/collects/unstable/compiled/poly-c_rkt.dep
 lib/racket/collects/unstable/compiled/poly-c_rkt.zo
+lib/racket/collects/unstable/compiled/port_rkt.dep
+lib/racket/collects/unstable/compiled/port_rkt.zo
+lib/racket/collects/unstable/compiled/pretty_rkt.dep
+lib/racket/collects/unstable/compiled/pretty_rkt.zo
+lib/racket/collects/unstable/compiled/queue_rkt.dep
+lib/racket/collects/unstable/compiled/queue_rkt.zo
+lib/racket/collects/unstable/compiled/regexp_rkt.dep
+lib/racket/collects/unstable/compiled/regexp_rkt.zo
+lib/racket/collects/unstable/compiled/require_rkt.dep
+lib/racket/collects/unstable/compiled/require_rkt.zo
+lib/racket/collects/unstable/compiled/sandbox_rkt.dep
+lib/racket/collects/unstable/compiled/sandbox_rkt.zo
+lib/racket/collects/unstable/compiled/scribble_rkt.dep
+lib/racket/collects/unstable/compiled/scribble_rkt.zo
 lib/racket/collects/unstable/compiled/sequence_rkt.dep
 lib/racket/collects/unstable/compiled/sequence_rkt.zo
+lib/racket/collects/unstable/compiled/set_rkt.dep
+lib/racket/collects/unstable/compiled/set_rkt.zo
+lib/racket/collects/unstable/compiled/sexp-diff_rkt.dep
+lib/racket/collects/unstable/compiled/sexp-diff_rkt.zo
 lib/racket/collects/unstable/compiled/skip-list_rkt.dep
 lib/racket/collects/unstable/compiled/skip-list_rkt.zo
 lib/racket/collects/unstable/compiled/srcloc_rkt.dep
@@ -12032,19 +12790,37 @@ lib/racket/collects/unstable/compiled/struct_rkt.dep
 lib/racket/collects/unstable/compiled/struct_rkt.zo
 lib/racket/collects/unstable/compiled/syntax_rkt.dep
 lib/racket/collects/unstable/compiled/syntax_rkt.zo
+lib/racket/collects/unstable/compiled/text_rkt.dep
+lib/racket/collects/unstable/compiled/text_rkt.zo
+lib/racket/collects/unstable/compiled/values_rkt.dep
+lib/racket/collects/unstable/compiled/values_rkt.zo
+lib/racket/collects/unstable/compiled/web_rkt.dep
+lib/racket/collects/unstable/compiled/web_rkt.zo
 lib/racket/collects/unstable/contract.rkt
 lib/racket/collects/unstable/debug.rkt
+lib/racket/collects/unstable/define.rkt
+lib/racket/collects/unstable/dict.rkt
 lib/racket/collects/unstable/dirs.rkt
 lib/racket/collects/unstable/exn.rkt
 lib/racket/collects/unstable/file.rkt
 lib/racket/collects/unstable/find.rkt
+lib/racket/collects/unstable/function.rkt
 lib/racket/collects/unstable/generics.rkt
+lib/racket/collects/unstable/gui/compiled/language-level_rkt.dep
+lib/racket/collects/unstable/gui/compiled/language-level_rkt.zo
 lib/racket/collects/unstable/gui/compiled/notify_rkt.dep
 lib/racket/collects/unstable/gui/compiled/notify_rkt.zo
 lib/racket/collects/unstable/gui/compiled/prefs_rkt.dep
 lib/racket/collects/unstable/gui/compiled/prefs_rkt.zo
+lib/racket/collects/unstable/gui/compiled/slideshow_rkt.dep
+lib/racket/collects/unstable/gui/compiled/slideshow_rkt.zo
+lib/racket/collects/unstable/gui/compiled/window_rkt.dep
+lib/racket/collects/unstable/gui/compiled/window_rkt.zo
+lib/racket/collects/unstable/gui/language-level.rkt
 lib/racket/collects/unstable/gui/notify.rkt
 lib/racket/collects/unstable/gui/prefs.rkt
+lib/racket/collects/unstable/gui/slideshow.rkt
+lib/racket/collects/unstable/gui/window.rkt
 lib/racket/collects/unstable/hash.rkt
 lib/racket/collects/unstable/info.rkt
 lib/racket/collects/unstable/interval-map.rkt
@@ -12057,26 +12833,42 @@ lib/racket/collects/unstable/net/compiled/url_rkt.dep
 lib/racket/collects/unstable/net/compiled/url_rkt.zo
 lib/racket/collects/unstable/net/url.rkt
 lib/racket/collects/unstable/path.rkt
+lib/racket/collects/unstable/planet-syntax.rkt
+lib/racket/collects/unstable/planet.rkt
 lib/racket/collects/unstable/poly-c.rkt
+lib/racket/collects/unstable/port.rkt
+lib/racket/collects/unstable/pretty.rkt
 lib/racket/collects/unstable/private/class-iop-ct.rkt
 lib/racket/collects/unstable/private/compiled/class-iop-ct_rkt.dep
 lib/racket/collects/unstable/private/compiled/class-iop-ct_rkt.zo
+lib/racket/collects/unstable/private/compiled/expand_ss.dep
+lib/racket/collects/unstable/private/compiled/expand_ss.zo
 lib/racket/collects/unstable/private/compiled/notify_rkt.dep
 lib/racket/collects/unstable/private/compiled/notify_rkt.zo
+lib/racket/collects/unstable/private/expand.ss
 lib/racket/collects/unstable/private/notify.rkt
-lib/racket/collects/unstable/scribblings/byte-counting-port.scrbl
+lib/racket/collects/unstable/queue.rkt
+lib/racket/collects/unstable/regexp.rkt
+lib/racket/collects/unstable/require.rkt
+lib/racket/collects/unstable/sandbox.rkt
+lib/racket/collects/unstable/scribble.rkt
 lib/racket/collects/unstable/scribblings/bytes.scrbl
 lib/racket/collects/unstable/scribblings/class-iop.scrbl
-lib/racket/collects/unstable/scribblings/compiled/byte-counting-port_scrbl.dep
-lib/racket/collects/unstable/scribblings/compiled/byte-counting-port_scrbl.zo
+lib/racket/collects/unstable/scribblings/class.scrbl
 lib/racket/collects/unstable/scribblings/compiled/bytes_scrbl.dep
 lib/racket/collects/unstable/scribblings/compiled/bytes_scrbl.zo
 lib/racket/collects/unstable/scribblings/compiled/class-iop_scrbl.dep
 lib/racket/collects/unstable/scribblings/compiled/class-iop_scrbl.zo
+lib/racket/collects/unstable/scribblings/compiled/class_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/class_scrbl.zo
 lib/racket/collects/unstable/scribblings/compiled/contract_scrbl.dep
 lib/racket/collects/unstable/scribblings/compiled/contract_scrbl.zo
 lib/racket/collects/unstable/scribblings/compiled/debug_scrbl.dep
 lib/racket/collects/unstable/scribblings/compiled/debug_scrbl.zo
+lib/racket/collects/unstable/scribblings/compiled/define_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/define_scrbl.zo
+lib/racket/collects/unstable/scribblings/compiled/dict_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/dict_scrbl.zo
 lib/racket/collects/unstable/scribblings/compiled/dirs_scrbl.dep
 lib/racket/collects/unstable/scribblings/compiled/dirs_scrbl.zo
 lib/racket/collects/unstable/scribblings/compiled/exn_scrbl.dep
@@ -12085,6 +12877,8 @@ lib/racket/collects/unstable/scribblings/compiled/file_scrbl.dep
 lib/racket/collects/unstable/scribblings/compiled/file_scrbl.zo
 lib/racket/collects/unstable/scribblings/compiled/find_scrbl.dep
 lib/racket/collects/unstable/scribblings/compiled/find_scrbl.zo
+lib/racket/collects/unstable/scribblings/compiled/function_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/function_scrbl.zo
 lib/racket/collects/unstable/scribblings/compiled/generics_scrbl.dep
 lib/racket/collects/unstable/scribblings/compiled/generics_scrbl.zo
 lib/racket/collects/unstable/scribblings/compiled/gui_scrbl.dep
@@ -12105,10 +12899,32 @@ lib/racket/collects/unstable/scribblings/compiled/net_scrbl.dep
 lib/racket/collects/unstable/scribblings/compiled/net_scrbl.zo
 lib/racket/collects/unstable/scribblings/compiled/path_scrbl.dep
 lib/racket/collects/unstable/scribblings/compiled/path_scrbl.zo
+lib/racket/collects/unstable/scribblings/compiled/planet-syntax_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/planet-syntax_scrbl.zo
+lib/racket/collects/unstable/scribblings/compiled/planet_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/planet_scrbl.zo
 lib/racket/collects/unstable/scribblings/compiled/poly-c_scrbl.dep
 lib/racket/collects/unstable/scribblings/compiled/poly-c_scrbl.zo
+lib/racket/collects/unstable/scribblings/compiled/port_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/port_scrbl.zo
+lib/racket/collects/unstable/scribblings/compiled/pretty_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/pretty_scrbl.zo
+lib/racket/collects/unstable/scribblings/compiled/queue_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/queue_scrbl.zo
+lib/racket/collects/unstable/scribblings/compiled/regexp_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/regexp_scrbl.zo
+lib/racket/collects/unstable/scribblings/compiled/require_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/require_scrbl.zo
+lib/racket/collects/unstable/scribblings/compiled/sandbox_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/sandbox_scrbl.zo
+lib/racket/collects/unstable/scribblings/compiled/scribble_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/scribble_scrbl.zo
 lib/racket/collects/unstable/scribblings/compiled/sequence_scrbl.dep
 lib/racket/collects/unstable/scribblings/compiled/sequence_scrbl.zo
+lib/racket/collects/unstable/scribblings/compiled/set_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/set_scrbl.zo
+lib/racket/collects/unstable/scribblings/compiled/sexp-diff_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/sexp-diff_scrbl.zo
 lib/racket/collects/unstable/scribblings/compiled/skip-list_scrbl.dep
 lib/racket/collects/unstable/scribblings/compiled/skip-list_scrbl.zo
 lib/racket/collects/unstable/scribblings/compiled/srcloc_scrbl.dep
@@ -12119,24 +12935,42 @@ lib/racket/collects/unstable/scribblings/compiled/struct_scrbl.dep
 lib/racket/collects/unstable/scribblings/compiled/struct_scrbl.zo
 lib/racket/collects/unstable/scribblings/compiled/syntax_scrbl.dep
 lib/racket/collects/unstable/scribblings/compiled/syntax_scrbl.zo
+lib/racket/collects/unstable/scribblings/compiled/text_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/text_scrbl.zo
 lib/racket/collects/unstable/scribblings/compiled/unstable_scrbl.dep
 lib/racket/collects/unstable/scribblings/compiled/unstable_scrbl.zo
 lib/racket/collects/unstable/scribblings/compiled/utils_rkt.dep
 lib/racket/collects/unstable/scribblings/compiled/utils_rkt.zo
+lib/racket/collects/unstable/scribblings/compiled/values_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/values_scrbl.zo
+lib/racket/collects/unstable/scribblings/compiled/web_scrbl.dep
+lib/racket/collects/unstable/scribblings/compiled/web_scrbl.zo
 lib/racket/collects/unstable/scribblings/contract.scrbl
 lib/racket/collects/unstable/scribblings/debug.scrbl
+lib/racket/collects/unstable/scribblings/define.scrbl
+lib/racket/collects/unstable/scribblings/dict.scrbl
 lib/racket/collects/unstable/scribblings/dirs.scrbl
 lib/racket/collects/unstable/scribblings/exn.scrbl
 lib/racket/collects/unstable/scribblings/file.scrbl
 lib/racket/collects/unstable/scribblings/find.scrbl
+lib/racket/collects/unstable/scribblings/function.scrbl
 lib/racket/collects/unstable/scribblings/generics.scrbl
 lib/racket/collects/unstable/scribblings/gui.scrbl
+lib/racket/collects/unstable/scribblings/gui/compiled/language-level_scrbl.dep
+lib/racket/collects/unstable/scribblings/gui/compiled/language-level_scrbl.zo
 lib/racket/collects/unstable/scribblings/gui/compiled/notify_scrbl.dep
 lib/racket/collects/unstable/scribblings/gui/compiled/notify_scrbl.zo
 lib/racket/collects/unstable/scribblings/gui/compiled/prefs_scrbl.dep
 lib/racket/collects/unstable/scribblings/gui/compiled/prefs_scrbl.zo
+lib/racket/collects/unstable/scribblings/gui/compiled/slideshow_scrbl.dep
+lib/racket/collects/unstable/scribblings/gui/compiled/slideshow_scrbl.zo
+lib/racket/collects/unstable/scribblings/gui/compiled/window_scrbl.dep
+lib/racket/collects/unstable/scribblings/gui/compiled/window_scrbl.zo
+lib/racket/collects/unstable/scribblings/gui/language-level.scrbl
 lib/racket/collects/unstable/scribblings/gui/notify.scrbl
 lib/racket/collects/unstable/scribblings/gui/prefs.scrbl
+lib/racket/collects/unstable/scribblings/gui/slideshow.scrbl
+lib/racket/collects/unstable/scribblings/gui/window.scrbl
 lib/racket/collects/unstable/scribblings/hash.scrbl
 lib/racket/collects/unstable/scribblings/interval-map.scrbl
 lib/racket/collects/unstable/scribblings/list.scrbl
@@ -12148,21 +12982,40 @@ lib/racket/collects/unstable/scribblings/net/compiled/url_scrbl.dep
 lib/racket/collects/unstable/scribblings/net/compiled/url_scrbl.zo
 lib/racket/collects/unstable/scribblings/net/url.scrbl
 lib/racket/collects/unstable/scribblings/path.scrbl
+lib/racket/collects/unstable/scribblings/planet-syntax.scrbl
+lib/racket/collects/unstable/scribblings/planet.scrbl
 lib/racket/collects/unstable/scribblings/poly-c.scrbl
+lib/racket/collects/unstable/scribblings/port.scrbl
+lib/racket/collects/unstable/scribblings/pretty.scrbl
+lib/racket/collects/unstable/scribblings/queue.scrbl
+lib/racket/collects/unstable/scribblings/regexp.scrbl
+lib/racket/collects/unstable/scribblings/require.scrbl
+lib/racket/collects/unstable/scribblings/sandbox.scrbl
+lib/racket/collects/unstable/scribblings/scribble.scrbl
 lib/racket/collects/unstable/scribblings/sequence.scrbl
+lib/racket/collects/unstable/scribblings/set.scrbl
+lib/racket/collects/unstable/scribblings/sexp-diff.scrbl
 lib/racket/collects/unstable/scribblings/skip-list.scrbl
 lib/racket/collects/unstable/scribblings/srcloc.scrbl
 lib/racket/collects/unstable/scribblings/string.scrbl
 lib/racket/collects/unstable/scribblings/struct.scrbl
 lib/racket/collects/unstable/scribblings/syntax.scrbl
+lib/racket/collects/unstable/scribblings/text.scrbl
 lib/racket/collects/unstable/scribblings/unstable.scrbl
 lib/racket/collects/unstable/scribblings/utils.rkt
+lib/racket/collects/unstable/scribblings/values.scrbl
+lib/racket/collects/unstable/scribblings/web.scrbl
 lib/racket/collects/unstable/sequence.rkt
+lib/racket/collects/unstable/set.rkt
+lib/racket/collects/unstable/sexp-diff.rkt
 lib/racket/collects/unstable/skip-list.rkt
 lib/racket/collects/unstable/srcloc.rkt
 lib/racket/collects/unstable/string.rkt
 lib/racket/collects/unstable/struct.rkt
 lib/racket/collects/unstable/syntax.rkt
+lib/racket/collects/unstable/text.rkt
+lib/racket/collects/unstable/values.rkt
+lib/racket/collects/unstable/web.rkt
 lib/racket/collects/version/check.rkt
 lib/racket/collects/version/compiled/check_rkt.dep
 lib/racket/collects/version/compiled/check_rkt.zo
@@ -12356,6 +13209,8 @@ lib/racket/collects/web-server/dispatchers/dispatch.rkt
 lib/racket/collects/web-server/dispatchers/filesystem-map.rkt
 lib/racket/collects/web-server/dispatchers/limit.rkt
 lib/racket/collects/web-server/formlets.rkt
+lib/racket/collects/web-server/formlets/compiled/dyn-syntax_rkt.dep
+lib/racket/collects/web-server/formlets/compiled/dyn-syntax_rkt.zo
 lib/racket/collects/web-server/formlets/compiled/input_rkt.dep
 lib/racket/collects/web-server/formlets/compiled/input_rkt.zo
 lib/racket/collects/web-server/formlets/compiled/lib_rkt.dep
@@ -12364,6 +13219,7 @@ lib/racket/collects/web-server/formlets/compiled/servlet_rkt.dep
 lib/racket/collects/web-server/formlets/compiled/servlet_rkt.zo
 lib/racket/collects/web-server/formlets/compiled/syntax_rkt.dep
 lib/racket/collects/web-server/formlets/compiled/syntax_rkt.zo
+lib/racket/collects/web-server/formlets/dyn-syntax.rkt
 lib/racket/collects/web-server/formlets/input.rkt
 lib/racket/collects/web-server/formlets/lib.rkt
 lib/racket/collects/web-server/formlets/servlet.rkt
@@ -12681,6 +13537,7 @@ lib/racket/collects/web-server/scribblings/tutorial/examples/dummy-3.rkt
 lib/racket/collects/web-server/scribblings/tutorial/examples/htdocs/test-static.css
 lib/racket/collects/web-server/scribblings/tutorial/examples/iteration-1.rkt
 lib/racket/collects/web-server/scribblings/tutorial/examples/iteration-10.rkt
+lib/racket/collects/web-server/scribblings/tutorial/examples/iteration-11.rkt
 lib/racket/collects/web-server/scribblings/tutorial/examples/iteration-2.rkt
 lib/racket/collects/web-server/scribblings/tutorial/examples/iteration-3.rkt
 lib/racket/collects/web-server/scribblings/tutorial/examples/iteration-4.rkt
@@ -12882,6 +13739,15 @@ share/racket/doc/continue/in.sxref
 share/racket/doc/continue/index.html
 share/racket/doc/continue/out.sxref
 share/racket/doc/continue/stamp.sxref
+share/racket/doc/datalog/Acknowledgments.html
+share/racket/doc/datalog/Parenthetical_Datalog_Module_Language.html
+share/racket/doc/datalog/Tutorial.html
+share/racket/doc/datalog/datalog.html
+share/racket/doc/datalog/in.sxref
+share/racket/doc/datalog/index.html
+share/racket/doc/datalog/interop.html
+share/racket/doc/datalog/out.sxref
+share/racket/doc/datalog/stamp.sxref
 share/racket/doc/deinprogramm/DMdA-advanced.html
 share/racket/doc/deinprogramm/DMdA-assignments.html
 share/racket/doc/deinprogramm/DMdA-beginner.html
@@ -12892,12 +13758,12 @@ share/racket/doc/deinprogramm/Eigenschaften.html
 share/racket/doc/deinprogramm/Konstruktionsanleitungen_1_bis_10.html
 share/racket/doc/deinprogramm/Parametrische_Record-Typ-Definitionen.html
 share/racket/doc/deinprogramm/Record-Typ-Definitionen.html
+share/racket/doc/deinprogramm/Signaturen.html
 share/racket/doc/deinprogramm/Testf_lle.html
-share/racket/doc/deinprogramm/Vertr_ge.html
 share/racket/doc/deinprogramm/_t_and__f.html
-share/racket/doc/deinprogramm/advanced-contracts.html
 share/racket/doc/deinprogramm/advanced-prim-op.html
 share/racket/doc/deinprogramm/advanced-quote.html
+share/racket/doc/deinprogramm/advanced-signatures.html
 share/racket/doc/deinprogramm/and.html
 share/racket/doc/deinprogramm/application.html
 share/racket/doc/deinprogramm/assignments-prim-op.html
@@ -13015,6 +13881,7 @@ share/racket/doc/file/in.sxref
 share/racket/doc/file/index.html
 share/racket/doc/file/md5.html
 share/racket/doc/file/out.sxref
+share/racket/doc/file/sha1b.html
 share/racket/doc/file/stamp.sxref
 share/racket/doc/file/tar.html
 share/racket/doc/file/zip.html
@@ -13990,6 +14857,8 @@ share/racket/doc/r6rs/libpaths.html
 share/racket/doc/r6rs/out.sxref
 share/racket/doc/r6rs/r6rs-mod.html
 share/racket/doc/r6rs/stamp.sxref
+share/racket/doc/racket.css
+share/racket/doc/racklog/Racklog_Module_Language.html
 share/racket/doc/racklog/and-or.html
 share/racket/doc/racklog/backtracking.html
 share/racket/doc/racklog/cut.html
@@ -14120,6 +14989,7 @@ share/racket/doc/reference/creatingunits.html
 share/racket/doc/reference/custodians.html
 share/racket/doc/reference/customport.html
 share/racket/doc/reference/data.html
+share/racket/doc/reference/debugging.html
 share/racket/doc/reference/define-sig-form.html
 share/racket/doc/reference/define-struct.html
 share/racket/doc/reference/define.html
@@ -14209,6 +15079,7 @@ share/racket/doc/reference/single-unit.html
 share/racket/doc/reference/special-comments.html
 share/racket/doc/reference/splicing.html
 share/racket/doc/reference/stamp.sxref
+share/racket/doc/reference/stratified-body.html
 share/racket/doc/reference/stringport.html
 share/racket/doc/reference/strings.html
 share/racket/doc/reference/struct-copy.html
@@ -14268,10 +15139,10 @@ share/racket/doc/release/in.sxref
 share/racket/doc/release/index.html
 share/racket/doc/release/out.sxref
 share/racket/doc/release/stamp.sxref
-share/racket/doc/scheme.css
 share/racket/doc/scheme/compat-exe.html
 share/racket/doc/scheme/in.sxref
 share/racket/doc/scheme/index.html
+share/racket/doc/scheme/mred.html
 share/racket/doc/scheme/nest.html
 share/racket/doc/scheme/out.sxref
 share/racket/doc/scheme/scheme.html
@@ -14389,6 +15260,7 @@ share/racket/doc/scribble/stamp.sxref
 share/racket/doc/scribble/xref.html
 share/racket/doc/scriblib/autobib.html
 share/racket/doc/scriblib/figure.html
+share/racket/doc/scriblib/footnotes.html
 share/racket/doc/scriblib/gui-eval.html
 share/racket/doc/scriblib/in.sxref
 share/racket/doc/scriblib/index.html
@@ -14638,6 +15510,7 @@ share/racket/doc/teachpack/1acede17bc6.png
 share/racket/doc/teachpack/1bbeedc0d6.png
 share/racket/doc/teachpack/1f0b671ed7b.png
 share/racket/doc/teachpack/1f5944ec1ed.png
+share/racket/doc/teachpack/1fdee89ec7d.png
 share/racket/doc/teachpack/201c231dce2.png
 share/racket/doc/teachpack/216addb7809.png
 share/racket/doc/teachpack/2187216ca96.png
@@ -14648,6 +15521,7 @@ share/racket/doc/teachpack/24410dd26db.png
 share/racket/doc/teachpack/24e80ea10b4.png
 share/racket/doc/teachpack/25354f2b84e.png
 share/racket/doc/teachpack/25451dd2997.png
+share/racket/doc/teachpack/25bd9b1ac5a.png
 share/racket/doc/teachpack/25dd3e2d97c.png
 share/racket/doc/teachpack/262a4fa650a.png
 share/racket/doc/teachpack/268c974b9ab.png
@@ -14658,6 +15532,7 @@ share/racket/doc/teachpack/27bbbb6fd64.png
 share/racket/doc/teachpack/28253f4c3c.png
 share/racket/doc/teachpack/28c73238138.png
 share/racket/doc/teachpack/28daec71a64.png
+share/racket/doc/teachpack/296a50fddcd.png
 share/racket/doc/teachpack/29b31e5fe3a.png
 share/racket/doc/teachpack/2a1f3988f.png
 share/racket/doc/teachpack/2b944b7ab91.png
@@ -14708,6 +15583,7 @@ share/racket/doc/teachpack/docs.html
 share/racket/doc/teachpack/door-real.png
 share/racket/doc/teachpack/door-sim.png
 share/racket/doc/teachpack/draw.html
+share/racket/doc/teachpack/e58911226.png
 share/racket/doc/teachpack/eb99639e31.png
 share/racket/doc/teachpack/elevator.html
 share/racket/doc/teachpack/fa1a9f17b6.png
@@ -14775,6 +15651,7 @@ share/racket/doc/ts-guide/beginning.html
 share/racket/doc/ts-guide/in.sxref
 share/racket/doc/ts-guide/index.html
 share/racket/doc/ts-guide/more.html
+share/racket/doc/ts-guide/optimization.html
 share/racket/doc/ts-guide/out.sxref
 share/racket/doc/ts-guide/quick.html
 share/racket/doc/ts-guide/stamp.sxref
@@ -14789,14 +15666,33 @@ share/racket/doc/turtles/in.sxref
 share/racket/doc/turtles/index.html
 share/racket/doc/turtles/out.sxref
 share/racket/doc/turtles/stamp.sxref
-share/racket/doc/unstable/Byte_Counting_Ports.html
+share/racket/doc/unstable/Classes_and_Objects.html
+share/racket/doc/unstable/Debugging.html
+share/racket/doc/unstable/Definitions.html
+share/racket/doc/unstable/Dictionaries.html
+share/racket/doc/unstable/DrRacket_Language_Levels.html
+share/racket/doc/unstable/Functions.html
+share/racket/doc/unstable/GUI_Widgets.html
 share/racket/doc/unstable/Generics.html
+share/racket/doc/unstable/Hash_Tables.html
+share/racket/doc/unstable/Imperative_Queues.html
 share/racket/doc/unstable/Mark_Parameters.html
+share/racket/doc/unstable/Multiple_Values.html
+share/racket/doc/unstable/Planet_Package_Macros.html
+share/racket/doc/unstable/Ports.html
+share/racket/doc/unstable/Pretty-Printing.html
+share/racket/doc/unstable/Regular_Expressions.html
+share/racket/doc/unstable/Requiring_Modules.html
+share/racket/doc/unstable/Sandboxed_Evaluation.html
+share/racket/doc/unstable/Scribble_Documentation.html
+share/racket/doc/unstable/Sets.html
+share/racket/doc/unstable/Slideshow_Presentations.html
 share/racket/doc/unstable/Source_Locations.html
+share/racket/doc/unstable/XML_and_CSS.html
 share/racket/doc/unstable/bytes.html
+share/racket/doc/unstable/cce-planet.html
 share/racket/doc/unstable/class-iop.html
 share/racket/doc/unstable/contract.html
-share/racket/doc/unstable/debug.html
 share/racket/doc/unstable/dirs.html
 share/racket/doc/unstable/exn.html
 share/racket/doc/unstable/file.html
@@ -14804,7 +15700,6 @@ share/racket/doc/unstable/find.html
 share/racket/doc/unstable/gui-notify.html
 share/racket/doc/unstable/gui-prefs.html
 share/racket/doc/unstable/guidelines.html
-share/racket/doc/unstable/hash.html
 share/racket/doc/unstable/in.sxref
 share/racket/doc/unstable/index.html
 share/racket/doc/unstable/interval-map.html
@@ -14816,12 +15711,14 @@ share/racket/doc/unstable/out.sxref
 share/racket/doc/unstable/path.html
 share/racket/doc/unstable/poly-c.html
 share/racket/doc/unstable/sequence.html
+share/racket/doc/unstable/sexp-diff.html
 share/racket/doc/unstable/skip-list.html
 share/racket/doc/unstable/stamp.sxref
 share/racket/doc/unstable/string.html
 share/racket/doc/unstable/struct.html
 share/racket/doc/unstable/syntax.html
 share/racket/doc/unstable/unstable-gui.html
+share/racket/doc/unstable/unstable-text.html
 share/racket/doc/unstable/url.html
 share/racket/doc/version/in.sxref
 share/racket/doc/version/index.html
@@ -14965,6 +15862,7 @@ share/racket/doc/xml/stamp.sxref
 @dirrm share/racket/doc/dynext
 @dirrm share/racket/doc/drracket
 @dirrm share/racket/doc/deinprogramm
+@dirrm share/racket/doc/datalog
 @dirrm share/racket/doc/continue
 @dirrm share/racket/doc/config
 @dirrm share/racket/doc/cffi
@@ -15050,11 +15948,18 @@ share/racket/doc/xml/stamp.sxref
 @dirrm lib/racket/collects/typed/scheme
 @dirrm lib/racket/collects/typed/rackunit/compiled
 @dirrm lib/racket/collects/typed/rackunit
+@dirrm lib/racket/collects/typed/racket/no-check/lang/compiled
+@dirrm lib/racket/collects/typed/racket/no-check/lang
+@dirrm lib/racket/collects/typed/racket/no-check
 @dirrm lib/racket/collects/typed/racket/lang/compiled
 @dirrm lib/racket/collects/typed/racket/lang
 @dirrm lib/racket/collects/typed/racket/compiled
+@dirrm lib/racket/collects/typed/racket/base/no-check/lang/compiled
+@dirrm lib/racket/collects/typed/racket/base/no-check/lang
+@dirrm lib/racket/collects/typed/racket/base/no-check
 @dirrm lib/racket/collects/typed/racket/base/lang/compiled
 @dirrm lib/racket/collects/typed/racket/base/lang
+@dirrm lib/racket/collects/typed/racket/base/compiled
 @dirrm lib/racket/collects/typed/racket/base
 @dirrm lib/racket/collects/typed/racket
 @dirrm lib/racket/collects/typed/private/compiled
@@ -15080,6 +15985,8 @@ share/racket/doc/xml/stamp.sxref
 @dirrm lib/racket/collects/typed-scheme/rep
 @dirrm lib/racket/collects/typed-scheme/private/compiled
 @dirrm lib/racket/collects/typed-scheme/private
+@dirrm lib/racket/collects/typed-scheme/optimizer/compiled
+@dirrm lib/racket/collects/typed-scheme/optimizer
 @dirrm lib/racket/collects/typed-scheme/no-check/lang/compiled
 @dirrm lib/racket/collects/typed-scheme/no-check/lang
 @dirrm lib/racket/collects/typed-scheme/no-check
@@ -15124,6 +16031,7 @@ share/racket/doc/xml/stamp.sxref
 @dirrm lib/racket/collects/tests/web-server/managers
 @dirrm lib/racket/collects/tests/web-server/lang
 @dirrm lib/racket/collects/tests/web-server/http
+@dirrm lib/racket/collects/tests/web-server/formlets
 @dirrm lib/racket/collects/tests/web-server/dispatchers
 @dirrm lib/racket/collects/tests/web-server/configuration
 @dirrm lib/racket/collects/tests/web-server
@@ -15133,6 +16041,10 @@ share/racket/doc/xml/stamp.sxref
 @dirrm lib/racket/collects/tests/typed-scheme/xfail
 @dirrm lib/racket/collects/tests/typed-scheme/unit-tests
 @dirrm lib/racket/collects/tests/typed-scheme/succeed
+@dirrm lib/racket/collects/tests/typed-scheme/optimizer/non-optimized
+@dirrm lib/racket/collects/tests/typed-scheme/optimizer/hand-optimized
+@dirrm lib/racket/collects/tests/typed-scheme/optimizer/generic
+@dirrm lib/racket/collects/tests/typed-scheme/optimizer
 @dirrm lib/racket/collects/tests/typed-scheme/fail
 @dirrm lib/racket/collects/tests/typed-scheme
 @dirrm lib/racket/collects/tests/test-engine/compiled
@@ -15155,13 +16067,20 @@ share/racket/doc/xml/stamp.sxref
 @dirrm lib/racket/collects/tests/scribble/compiled
 @dirrm lib/racket/collects/tests/scribble
 @dirrm lib/racket/collects/tests/rackunit
+@dirrm lib/racket/collects/tests/racklog/lang/compiled
+@dirrm lib/racket/collects/tests/racklog/lang
 @dirrm lib/racket/collects/tests/racklog/compiled
 @dirrm lib/racket/collects/tests/racklog
 @dirrm lib/racket/collects/tests/racket/ttt
 @dirrm lib/racket/collects/tests/racket/lang
+@dirrm lib/racket/collects/tests/racket/embed-planet-2/private
+@dirrm lib/racket/collects/tests/racket/embed-planet-2
+@dirrm lib/racket/collects/tests/racket/embed-planet-1
+@dirrm lib/racket/collects/tests/racket/benchmarks/shootout/typed
 @dirrm lib/racket/collects/tests/racket/benchmarks/shootout
 @dirrm lib/racket/collects/tests/racket/benchmarks/rx
 @dirrm lib/racket/collects/tests/racket/benchmarks/mz
+@dirrm lib/racket/collects/tests/racket/benchmarks/common/typed
 @dirrm lib/racket/collects/tests/racket/benchmarks/common
 @dirrm lib/racket/collects/tests/racket/benchmarks
 @dirrm lib/racket/collects/tests/racket
@@ -15208,6 +16127,16 @@ share/racket/doc/xml/stamp.sxref
 @dirrm lib/racket/collects/tests/drracket/compiled
 @dirrm lib/racket/collects/tests/drracket
 @dirrm lib/racket/collects/tests/deinprogramm
+@dirrm lib/racket/collects/tests/datalog/tool/compiled
+@dirrm lib/racket/collects/tests/datalog/tool
+@dirrm lib/racket/collects/tests/datalog/private/compiled
+@dirrm lib/racket/collects/tests/datalog/private
+@dirrm lib/racket/collects/tests/datalog/paren-examples/compiled
+@dirrm lib/racket/collects/tests/datalog/paren-examples
+@dirrm lib/racket/collects/tests/datalog/examples/compiled
+@dirrm lib/racket/collects/tests/datalog/examples
+@dirrm lib/racket/collects/tests/datalog/compiled
+@dirrm lib/racket/collects/tests/datalog
 @dirrm lib/racket/collects/tests/compiled
 @dirrm lib/racket/collects/tests/aligned-pasteboard/old-bugs
 @dirrm lib/racket/collects/tests/aligned-pasteboard
@@ -15437,8 +16366,8 @@ share/racket/doc/xml/stamp.sxref
 @dirrm lib/racket/collects/sgl/scribblings/compiled
 @dirrm lib/racket/collects/sgl/scribblings
 @dirrm lib/racket/collects/sgl/examples
-@dirrm lib/racket/collects/sgl/compiled/native/%%ARCH%%-freebsd/3m
-@dirrm lib/racket/collects/sgl/compiled/native/%%ARCH%%-freebsd
+@dirrm lib/racket/collects/sgl/compiled/native/i386-freebsd/3m
+@dirrm lib/racket/collects/sgl/compiled/native/i386-freebsd
 @dirrm lib/racket/collects/sgl/compiled/native
 @dirrm lib/racket/collects/sgl/compiled
 @dirrm lib/racket/collects/sgl
@@ -15608,6 +16537,8 @@ share/racket/doc/xml/stamp.sxref
 @dirrm lib/racket/collects/rackunit/private
 @dirrm lib/racket/collects/rackunit/compiled
 @dirrm lib/racket/collects/rackunit
+@dirrm lib/racket/collects/racklog/lang/compiled
+@dirrm lib/racket/collects/racklog/lang
 @dirrm lib/racket/collects/racklog/compiled
 @dirrm lib/racket/collects/racklog
 @dirrm lib/racket/collects/racket/unsafe/compiled
@@ -15671,7 +16602,7 @@ share/racket/doc/xml/stamp.sxref
 @dirrm lib/racket/collects/plot/src
 @dirrm lib/racket/collects/plot/fonts
 @dirrm lib/racket/collects/plot/demos
-@dirrm lib/racket/collects/plot/compiled/native/%%ARCH%%-freebsd
+@dirrm lib/racket/collects/plot/compiled/native/i386-freebsd
 @dirrm lib/racket/collects/plot/compiled/native
 @dirrm lib/racket/collects/plot/compiled
 @dirrm lib/racket/collects/plot
@@ -15776,14 +16707,14 @@ share/racket/doc/xml/stamp.sxref
 @dirrm lib/racket/collects/lazy
 @dirrm lib/racket/collects/launcher/compiled
 @dirrm lib/racket/collects/launcher
-@dirrm lib/racket/collects/lang/private/contracts/compiled
-@dirrm lib/racket/collects/lang/private/contracts
 @dirrm lib/racket/collects/lang/private/compiled
 @dirrm lib/racket/collects/lang/private
 @dirrm lib/racket/collects/lang/compiled
 @dirrm lib/racket/collects/lang
 @dirrm lib/racket/collects/info-domain/compiled
 @dirrm lib/racket/collects/info-domain
+@dirrm lib/racket/collects/icons/private/compiled
+@dirrm lib/racket/collects/icons/private
 @dirrm lib/racket/collects/icons
 @dirrm lib/racket/collects/html/compiled
 @dirrm lib/racket/collects/html
@@ -15945,12 +16876,12 @@ share/racket/doc/xml/stamp.sxref
 @dirrm lib/racket/collects/drracket/private
 @dirrm lib/racket/collects/drracket/compiled
 @dirrm lib/racket/collects/drracket
+@dirrm lib/racket/collects/deinprogramm/signature/compiled
+@dirrm lib/racket/collects/deinprogramm/signature
 @dirrm lib/racket/collects/deinprogramm/scribblings/compiled
 @dirrm lib/racket/collects/deinprogramm/scribblings
 @dirrm lib/racket/collects/deinprogramm/quickcheck/compiled
 @dirrm lib/racket/collects/deinprogramm/quickcheck
-@dirrm lib/racket/collects/deinprogramm/contract/compiled
-@dirrm lib/racket/collects/deinprogramm/contract
 @dirrm lib/racket/collects/deinprogramm/compiled
 @dirrm lib/racket/collects/deinprogramm/DMdA/lang/compiled
 @dirrm lib/racket/collects/deinprogramm/DMdA/lang
@@ -15969,6 +16900,20 @@ share/racket/doc/xml/stamp.sxref
 @dirrm lib/racket/collects/deinprogramm/DMdA
 @dirrm lib/racket/collects/deinprogramm
 @dirrm lib/racket/collects/defaults
+@dirrm lib/racket/collects/datalog/tool/compiled
+@dirrm lib/racket/collects/datalog/tool
+@dirrm lib/racket/collects/datalog/sexp/lang/compiled
+@dirrm lib/racket/collects/datalog/sexp/lang
+@dirrm lib/racket/collects/datalog/sexp/compiled
+@dirrm lib/racket/collects/datalog/sexp
+@dirrm lib/racket/collects/datalog/scribblings/compiled
+@dirrm lib/racket/collects/datalog/scribblings
+@dirrm lib/racket/collects/datalog/private/compiled
+@dirrm lib/racket/collects/datalog/private
+@dirrm lib/racket/collects/datalog/lang/compiled
+@dirrm lib/racket/collects/datalog/lang
+@dirrm lib/racket/collects/datalog/compiled
+@dirrm lib/racket/collects/datalog
 @dirrm lib/racket/collects/config/compiled
 @dirrm lib/racket/collects/config
 @dirrm lib/racket/collects/compiler/private/compiled
