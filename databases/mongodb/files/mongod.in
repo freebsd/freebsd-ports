@@ -14,8 +14,8 @@
 #               by default. Additional configuration. You
 #               can also use mongod_flags for additional
 #               command line arguments.
-# mongod_dbpath (path):   Set to /var/db/mongod by default
-# mongod_user (username): Set to "mongod" by default
+# mongod_dbpath (path):   Set to /var/db/mongodb by default
+# mongod_user (username): Set to "mongodb" by default
 
 . /etc/rc.subr
 
