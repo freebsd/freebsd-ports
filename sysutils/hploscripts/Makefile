@@ -7,6 +7,7 @@
 
 PORTNAME=	hploscripts
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CRITICAL
 
@@ -28,10 +29,12 @@ do-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.xml ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/hponcfg_reformat.xsl ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/locfg.pl ${PREFIX}/bin/locfg
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/iLO_perl_xml.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/linux-LOsamplescripts3.00.0-2.txt ${DOCSDIR}/linux-LOsamplescripts.txt
-	${INSTALL_SCRIPT} ${WRKSRC}/locfg.pl ${PREFIX}/bin/locfg
+.endif
 
 regression-test: build
 	@${PERL} -c ${WRKSRC}/locfg.pl
