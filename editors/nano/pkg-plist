@@ -51,6 +51,7 @@ share/nano/html.nanorc
 share/nano/java.nanorc
 share/nano/makefile.nanorc
 share/nano/man.nanorc
+share/nano/mgp.nanorc
 share/nano/mutt.nanorc
 share/nano/nanorc.nanorc
 share/nano/objc.nanorc
