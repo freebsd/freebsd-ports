@@ -1292,6 +1292,7 @@ buici-clock                     ports/x11-clocks/buici-clock
 build                           ports/devel/build
 buildapp                        ports/devel/buildapp
 buildbot                        ports/devel/buildbot
+buildbot-slave                  ports/devel/buildbot-slave
 buildtool                       ports/devel/buildtool
 buildtool-doc                   ports/devel/buildtool-doc
 bulk_mailer                     ports/mail/bulk_mailer
@@ -7652,7 +7653,6 @@ libart_lgpl                     ports/graphics/libart_lgpl
 libassa                         ports/devel/libassa
 libassetml                      ports/devel/libassetml
 libassuan                       ports/security/libassuan
-libassuan-1                     ports/security/libassuan-1
 libast                          ports/devel/libast
 libaudiofile                    ports/audio/libaudiofile
 libaura                         ports/devel/libaura
@@ -9451,7 +9451,6 @@ mod_uid                         ports/www/mod_uid
 mod_vdbh                        ports/www/mod_vdbh
 mod_vhost_ldap                  ports/www/mod_vhost_ldap
 mod_vhs                         ports/www/mod_vhs
-mod_webapp                      ports/www/mod_webapp
 mod_webkit                      ports/www/mod_webkit
 mod_webobjects                  ports/www/mod_webobjects
 mod_wsgi                        ports/www/mod_wsgi
@@ -11821,6 +11820,7 @@ p5-Debug-Client                 ports/devel/p5-Debug-Client
 p5-Decision-ACL                 ports/devel/p5-Decision-ACL
 p5-DelimMatch                   ports/textproc/p5-DelimMatch
 p5-Devel-Arena                  ports/devel/p5-Devel-Arena
+p5-Devel-ArgNames               ports/devel/p5-Devel-ArgNames
 p5-Devel-Backtrace              ports/devel/p5-Devel-Backtrace
 p5-Devel-Caller                 ports/devel/p5-Devel-Caller
 p5-Devel-Caller-Perl            ports/devel/p5-Devel-Caller-Perl
@@ -13373,6 +13373,8 @@ p5-POE-Filter-LZW               ports/archivers/p5-POE-Filter-LZW
 p5-POE-Filter-Transparent-SMTP  ports/mail/p5-POE-Filter-Transparent-SMTP
 p5-POE-Filter-XML               ports/textproc/p5-POE-Filter-XML
 p5-POE-Filter-Zlib              ports/archivers/p5-POE-Filter-Zlib
+p5-POE-Loop-Glib                ports/devel/p5-POE-Loop-Glib
+p5-POE-Session-Irssi            ports/irc/p5-POE-Session-Irssi
 p5-POE-Session-MultiDispatch    ports/devel/p5-POE-Session-MultiDispatch
 p5-POE-Stage                    ports/devel/p5-POE-Stage
 p5-POE-Test-Loops               ports/devel/p5-POE-Test-Loops
@@ -13390,6 +13392,7 @@ p5-PPerl                        ports/devel/p5-PPerl
 p5-PSGI                         ports/www/p5-PSGI
 p5-PV                           ports/devel/p5-PV
 p5-Package-Constants            ports/devel/p5-Package-Constants
+p5-Package-DeprecationManager   ports/devel/p5-Package-DeprecationManager
 p5-Package-Generator            ports/devel/p5-Package-Generator
 p5-Package-Stash                ports/devel/p5-Package-Stash
 p5-PadWalker                    ports/devel/p5-PadWalker
@@ -15716,6 +15719,7 @@ p5-debug-client                 ports/devel/p5-Debug-Client
 p5-decision-acl                 ports/devel/p5-Decision-ACL
 p5-delimmatch                   ports/textproc/p5-DelimMatch
 p5-devel-arena                  ports/devel/p5-Devel-Arena
+p5-devel-argnames               ports/devel/p5-Devel-ArgNames
 p5-devel-backtrace              ports/devel/p5-Devel-Backtrace
 p5-devel-caller                 ports/devel/p5-Devel-Caller
 p5-devel-caller-perl            ports/devel/p5-Devel-Caller-Perl
@@ -17223,6 +17227,7 @@ p5-p4                           ports/devel/p5-P4
 p5-p4-client                    ports/devel/p5-P4-Client
 p5-pQuery                       ports/www/p5-pQuery
 p5-package-constants            ports/devel/p5-Package-Constants
+p5-package-deprecationmanager   ports/devel/p5-Package-DeprecationManager
 p5-package-generator            ports/devel/p5-Package-Generator
 p5-package-stash                ports/devel/p5-Package-Stash
 p5-padre                        ports/editors/p5-Padre
@@ -17452,6 +17457,8 @@ p5-poe-filter-lzw               ports/archivers/p5-POE-Filter-LZW
 p5-poe-filter-transparent-smtp  ports/mail/p5-POE-Filter-Transparent-SMTP
 p5-poe-filter-xml               ports/textproc/p5-POE-Filter-XML
 p5-poe-filter-zlib              ports/archivers/p5-POE-Filter-Zlib
+p5-poe-loop-glib                ports/devel/p5-POE-Loop-Glib
+p5-poe-session-irssi            ports/irc/p5-POE-Session-Irssi
 p5-poe-session-multidispatch    ports/devel/p5-POE-Session-MultiDispatch
 p5-poe-stage                    ports/devel/p5-POE-Stage
 p5-poe-test-loops               ports/devel/p5-POE-Test-Loops
@@ -22420,6 +22427,7 @@ rubygem-do_postgres             ports/databases/rubygem-do_postgres
 rubygem-do_sqlite3              ports/databases/rubygem-do_sqlite3
 rubygem-echoe                   ports/devel/rubygem-echoe
 rubygem-elif                    ports/devel/rubygem-elif
+rubygem-emk-sinatra-url-for     ports/www/rubygem-emk-sinatra-url-for
 rubygem-erubis                  ports/www/rubygem-erubis
 rubygem-eventmachine            ports/devel/rubygem-eventmachine
 rubygem-exifr                   ports/graphics/rubygem-exifr
@@ -22585,6 +22593,7 @@ rubygem-sequel                  ports/devel/rubygem-sequel
 rubygem-sexp_processor          ports/devel/rubygem-sexp_processor
 rubygem-simple-rss              ports/www/rubygem-simple-rss
 rubygem-sinatra                 ports/www/rubygem-sinatra
+rubygem-sinatra-respond_to      ports/www/rubygem-sinatra-respond_to
 rubygem-snmp                    ports/net-mgmt/rubygem-snmp
 rubygem-soap4r                  ports/devel/rubygem-soap4r
 rubygem-spreadsheet             ports/textproc/rubygem-spreadsheet
@@ -22597,12 +22606,18 @@ rubygem-stream                  ports/devel/rubygem-stream
 rubygem-streetaddress           ports/devel/rubygem-streetaddress
 rubygem-stringex                ports/devel/rubygem-stringex
 rubygem-syntax                  ports/textproc/rubygem-syntax
+rubygem-sys-admin               ports/sysutils/rubygem-sys-admin
 rubygem-sys-cpu                 ports/sysutils/rubygem-sys-cpu
+rubygem-sys-filesystem          ports/sysutils/rubygem-sys-filesystem
+rubygem-sys-host                ports/sysutils/rubygem-sys-host
+rubygem-sys-uname               ports/sysutils/rubygem-sys-uname
+rubygem-sys-uptime              ports/sysutils/rubygem-sys-uptime
 rubygem-systemu                 ports/devel/rubygem-systemu
 rubygem-taggable                ports/www/rubygem-taggable
 rubygem-templater               ports/devel/rubygem-templater
 rubygem-termcolor               ports/textproc/rubygem-termcolor
 rubygem-termtter                ports/net-im/rubygem-termtter
+rubygem-test-unit               ports/devel/rubygem-test-unit
 rubygem-thin                    ports/www/rubygem-thin
 rubygem-tidy                    ports/textproc/rubygem-tidy
 rubygem-tmail                   ports/mail/rubygem-tmail
@@ -23578,6 +23593,7 @@ stlport                         ports/devel/stlport
 stmpclean                       ports/sysutils/stmpclean
 stone                           ports/net/stone
 stonesoup                       ports/games/stonesoup
+stonesoup-sdl                   ports/games/stonesoup-sdl
 stonx                           ports/emulators/stonx
 stopwatch                       ports/x11-clocks/stopwatch
 stormbaancoureur                ports/games/stormbaancoureur
