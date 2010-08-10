@@ -7,6 +7,7 @@
 
 PORTNAME=	swatch
 PORTVERSION=	3.2.3
+PORTREVISION=	1
 CATEGORIES=	security sysutils
 MASTER_SITES=	SF
 
