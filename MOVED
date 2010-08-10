@@ -4475,3 +4475,4 @@ lang/plt-scheme|lang/racket|2010-08-08|Upstream development discontinued
 emulators/sdlmess|emulators/mess|2010-08-08|SDL port has been integrated into mainstream
 security/libassuan-1||2010-08-08|This is an ex-library (Superseded by security/libassuan, but not compatible)
 www/mod_webapp||2010-08-08|Removed
+net/p5-IO-INET6|net/p5-IO-Socket-INET6|2010-08-09|Renamed
