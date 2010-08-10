@@ -29,19 +29,19 @@ PATCHDIR=	# none
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_RDP)
-#RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-rdp.so:${PORTSDIR}/net/remmina-plugin-rdp
+RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-rdp.so:${PORTSDIR}/net/remmina-plugin-rdp
 .endif
 
 .if !defined(WITHOUT_VNC)
-#RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-vnc.so:${PORTSDIR}/net/remmina-plugin-vnc
+RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-vnc.so:${PORTSDIR}/net/remmina-plugin-vnc
 .endif
 
 .if !defined(WITHOUT_XDMCP)
-#RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-xdmcp.so:${PORTSDIR}/net/remmina-plugin-xdmcp
+RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-xdmcp.so:${PORTSDIR}/net/remmina-plugin-xdmcp
 .endif
 
 .if !defined(WITHOUT_TELEP)
-#RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-telepathy.so:${PORTSDIR}/net/remmina-plugin-telepathy
+RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-telepathy.so:${PORTSDIR}/net/remmina-plugin-telepathy
 .endif
 
 do-install:	# empty
