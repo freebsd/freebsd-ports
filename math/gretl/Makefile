@@ -11,7 +11,7 @@ PORTVERSION=	1.9.1
 CATEGORIES=	math finance
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	GNU Regression, Econometrics and Time-series Library
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
