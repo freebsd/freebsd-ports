@@ -11,6 +11,8 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
+BROKEN=		missing dependency
+
 MAINTAINER=	cjk32@cam.ac.uk
 COMMENT=	Less indentation and newlines plus sub deparsing
 
