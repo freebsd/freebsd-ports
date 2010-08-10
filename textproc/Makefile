@@ -1245,6 +1245,7 @@
     SUBDIR += uim-kde
     SUBDIR += uim-m17nlib
     SUBDIR += uim-qt
+    SUBDIR += uim-qt4
     SUBDIR += uml2svg
     SUBDIR += uncrustify
     SUBDIR += uni2ascii
