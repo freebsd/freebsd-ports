@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	remmina
-PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	net gnome
-MASTER_SITES=	SF/${PORTNAME}/0.7/
+MASTER_SITES=	SF/${PORTNAME}/0.8
 PKGNAMESUFFIX=	-applet
 DISTNAME=	${PORTNAME}-gnome-${PORTVERSION}
 
@@ -27,10 +26,13 @@ USE_GNOME=	gnomehack glib20 gtk20 gnomepanel
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
+CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
@@ -40,7 +42,7 @@ PLIST_SUB+=	NLS=""
 .if defined(WITH_AVAHI)
 LIB_DEPENDS+=	avahi-ui.0:${PORTSDIR}/net/avahi-gtk
 .else
-CONFIGURE_ARGS+=	--disable-avahi
+CONFIGURE_ARGS+=--disable-avahi
 .endif
 
 .include <bsd.port.post.mk>
