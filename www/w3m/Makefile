@@ -54,7 +54,7 @@ PLIST_SUB+=	M17N="@comment "
 
 .if defined(JAPANESE)
 USE_GETTEXT=		yes
-CONFIGURE_ARGS+=	--enable-m17n --enable-japanese=E --with-migemo=yes
+CONFIGURE_ARGS+=	--enable-m17n --enable-japanese=E --with-migemo=yes gt_cv_func_gnugettext1_libintl=yes
 DOCS_JP=	${DOCS} README.SSL README.cookie README.keymap README.mailcap \
 		README.menu README.migemo
 
@@ -139,7 +139,12 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|\`\(expr\) \(.*\) : \(.*\)`|`\1 \\( \2 : \3 \\)`|' \
+		-e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+		${WRKSRC}/scripts/w3mman/w3mman2html.cgi.in
+	@${FIND} ${WRKSRC}/doc* -type f \! -name HISTORY \
+		-exec ${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' {} +
 
 post-install:
 .if !defined(NOPORTDOCS)
