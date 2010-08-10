@@ -34,6 +34,8 @@ MAKE_ARGS=	LIBTOOL="${LIBTOOL}" \
 		CXXFLAGS_COMMON="${CXXFLAGS}"
 USE_LDCONFIG=	yes
 
+LICENSE=	BSD
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_DEBUG)
