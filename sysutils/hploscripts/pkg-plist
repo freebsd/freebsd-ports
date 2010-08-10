@@ -1,15 +1,16 @@
 bin/locfg
-bin/vspconfig
 %%EXAMPLESDIR%%/Add_User.xml
 %%EXAMPLESDIR%%/Administrator_reset_pw.xml
 %%EXAMPLESDIR%%/Cert_Request.xml
 %%EXAMPLESDIR%%/Change_Password.xml
 %%EXAMPLESDIR%%/Clear_EventLog.xml
 %%EXAMPLESDIR%%/Clear_IML.xml
+%%EXAMPLESDIR%%/Clear_Power_On_Time.xml
 %%EXAMPLESDIR%%/Computer_Lock_Config.xml
 %%EXAMPLESDIR%%/Copy_Virtual_Floppy.xml
 %%EXAMPLESDIR%%/Delete_User.xml
 %%EXAMPLESDIR%%/Eject_Virtual_Media.xml
+%%EXAMPLESDIR%%/Factory_Defaults.xml
 %%EXAMPLESDIR%%/Get_2Factor.xml
 %%EXAMPLESDIR%%/Get_All_Cables_Status.xml
 %%EXAMPLESDIR%%/Get_All_User_Info.xml
@@ -28,8 +29,11 @@ bin/vspconfig
 %%EXAMPLESDIR%%/Get_Host_Pwr_Micro_Ver.xml
 %%EXAMPLESDIR%%/Get_IML.xml
 %%EXAMPLESDIR%%/Get_Network.xml
+%%EXAMPLESDIR%%/Get_OA_Info.xml
 %%EXAMPLESDIR%%/Get_PowerCap.xml
+%%EXAMPLESDIR%%/Get_Power_On_Time.xml
 %%EXAMPLESDIR%%/Get_Power_Readings.xml
+%%EXAMPLESDIR%%/Get_Pwreg_Alert_Threshold.xml
 %%EXAMPLESDIR%%/Get_SNMP_IM.xml
 %%EXAMPLESDIR%%/Get_SSO_Settings.xml
 %%EXAMPLESDIR%%/Get_Server_Name.xml
@@ -45,6 +49,7 @@ bin/vspconfig
 %%EXAMPLESDIR%%/Import_SSH_Key.xml
 %%EXAMPLESDIR%%/Insert_Virtual_Media.xml
 %%EXAMPLESDIR%%/License.xml
+%%EXAMPLESDIR%%/Lock_Configuration.xml
 %%EXAMPLESDIR%%/Mod_2Factor.xml
 %%EXAMPLESDIR%%/Mod_Blade_Rack.xml
 %%EXAMPLESDIR%%/Mod_DiagPort_Settings.xml
@@ -65,6 +70,7 @@ bin/vspconfig
 %%EXAMPLESDIR%%/Set_Host_Power.xml
 %%EXAMPLESDIR%%/Set_Host_Power_Saver.xml
 %%EXAMPLESDIR%%/Set_PowerCap.xml
+%%EXAMPLESDIR%%/Set_Pwreg_Alert_Threshold.xml
 %%EXAMPLESDIR%%/Set_Server_Name.xml
 %%EXAMPLESDIR%%/Set_VM_Status.xml
 %%EXAMPLESDIR%%/Shared_Network_Port.xml
@@ -72,6 +78,6 @@ bin/vspconfig
 %%EXAMPLESDIR%%/Update_Firmware.xml
 %%EXAMPLESDIR%%/add_sso_rec.xml
 %%EXAMPLESDIR%%/delete_sso_rec.xml
-%%EXAMPLESDIR%%/hponcfgcap.xml
 %%EXAMPLESDIR%%/hponcfg_reformat.xsl
+%%EXAMPLESDIR%%/hponcfgcap.xml
 @dirrm %%EXAMPLESDIR%%

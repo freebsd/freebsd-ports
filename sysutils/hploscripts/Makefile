@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hploscripts
-PORTVERSION=	2.40.0
+PORTVERSION=	3.0
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CRITICAL
 
@@ -19,11 +19,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_PERL5=	5.8.0+
 NO_BUILD=	yes
 
-PORTDOCS=	iLO_perl_xml.pdf linux-LOsamplescripts2.40.0-1.txt
+PORTDOCS=	iLO_perl_xml.pdf linux-LOsamplescripts.txt
 
 post-patch:
-	@${REINPLACE_CMD} -e '1s|.*|#!${PERL}|' ${WRKSRC}/locfg.pl \
-		${WRKSRC}/vspconfig.pl
+	@${REINPLACE_CMD} -e '1s|.*|#!${PERL}|' ${WRKSRC}/locfg.pl
 
 do-install:
 	${MKDIR} ${EXAMPLESDIR}
@@ -31,12 +30,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/hponcfg_reformat.xsl ${EXAMPLESDIR}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/iLO_perl_xml.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/linux-LOsamplescripts2.40.0-1.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/linux-LOsamplescripts3.00.0-2.txt ${DOCSDIR}/linux-LOsamplescripts.txt
 	${INSTALL_SCRIPT} ${WRKSRC}/locfg.pl ${PREFIX}/bin/locfg
-	${INSTALL_SCRIPT} ${WRKSRC}/vspconfig.pl ${PREFIX}/bin/vspconfig
 
 regression-test: build
 	@${PERL} -c ${WRKSRC}/locfg.pl
-	@${PERL} -c ${WRKSRC}/vspconfig.pl
 
 .include <bsd.port.mk>
