@@ -7,7 +7,6 @@
 
 PORTNAME=		scorched3d
 PORTVERSION=		0.${SCORCH_VERSION}${SCORCH_REVISION}
-PORTREVISION=	4
 CATEGORIES=		games
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/Version%20${SCORCH_VERSION}/
 DISTNAME=		Scorched3D-${SCORCH_VERSION}-src
@@ -20,7 +19,9 @@ LIB_DEPENDS=		fftw3f:${PORTSDIR}/math/fftw3-float \
 			jpeg:${PORTSDIR}/graphics/jpeg \
 			png:${PORTSDIR}/graphics/png
 
-SCORCH_VERSION=		42.1
+LICENSE=		GPLv1
+
+SCORCH_VERSION=		43.1c
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
