@@ -1354,6 +1354,7 @@
     SUBDIR += p5-Data-Dump-Streamer
     SUBDIR += p5-Data-DumpXML
     SUBDIR += p5-Data-Dumper
+    SUBDIR += p5-Data-Dumper-Concise
     SUBDIR += p5-Data-Dumper-Perltidy
     SUBDIR += p5-Data-Dumper-Simple
     SUBDIR += p5-Data-Flow
