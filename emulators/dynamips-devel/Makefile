@@ -1,6 +1,6 @@
 # New ports collection makefile for:	dynamips
 # Date created:				21 Mar 2007
-# Whom:					Pavel Volkov <pol@opk.ru>
+# Whom:					Pavel I Volkov <pavelivolkov@googlemail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	pol@iib.ru
+MAINTAINER=	pavelivolkov@googlemail.com
 COMMENT=	Cisco 1700/2600/3600/3700/7200 Simulator
 
 LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf
