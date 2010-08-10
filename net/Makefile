@@ -885,6 +885,7 @@
     SUBDIR += relayd
     SUBDIR += remmina
     SUBDIR += remmina-applet
+    SUBDIR += remmina-plugin-i18n
     SUBDIR += remmina-plugins
     SUBDIR += remotedesk
     SUBDIR += repeater
