@@ -11,6 +11,7 @@ bin/datemail
 bin/elq
 bin/except
 bin/forward
+%%SPAMCONTROL%%bin/ipmeprint
 bin/maildir2mbox
 bin/maildirmake
 bin/maildirwatch
