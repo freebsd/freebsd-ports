@@ -33,6 +33,8 @@ MAKE_ARGS=	LIBTOOL="${LIBTOOL}" \
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
+LICENSE=	BSD
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_DEBUG)
