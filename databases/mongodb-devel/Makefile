@@ -22,6 +22,8 @@ LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 CONFLICTS=	mongodb-[0-9]*
+DEPRECATED=	Outdated: Please use devel/mongodb instead.
+EXPIRATION_DATE=	2010-09-10
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than i386 and amd64"
