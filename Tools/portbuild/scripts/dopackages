@@ -592,7 +592,7 @@ if [ "$skipstart" = 0 ]; then
     
     if [ "$incremental" = 1 ]; then
 	
-        # Copy back in the restricted ports that were saved after the
+        # Copy back in the restricted packages that were saved after the
         # previous build
 	if [ -d ${builddir}/bak/restricted/ ]; then
 	    cd ${builddir}/bak/restricted
@@ -608,8 +608,8 @@ if [ "$skipstart" = 0 ]; then
 	    cd ${olderrors} && find . -name \*.log\* | cpio -dumpl ${newerrors}
 	fi
 	
-        # Identify the ports that have changed and need to be removed
-        # before rebuilding
+        # Identify the ports that have changed and thus whose packages
+        # need to be removed before rebuilding
 	cd ${PORTSDIR}
 	if [ -f ${INDEXFILE}.old ]; then
 	cut -f 1,2,3,8,9,11,12,13 -d \| ${INDEXFILE}.old | sort > ${INDEXFILE}.old1
