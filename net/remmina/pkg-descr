@@ -15,6 +15,6 @@ The Remmina main program:
  * Floating toolbar in fullscreen mode, allows you to switch between modes,
    toggle keyboard grabbing, minimize, etc.
  * Tabbed interface, optionally managed by groups
- * Supported network protocols: RDP, VNC, XDMCP, SSH, Avahi
+ * Supported network protocols: RDP, NX, Telepathy, VNC, XDMCP, SSH, Avahi
 
 WWW: http://remmina.sourceforge.net/

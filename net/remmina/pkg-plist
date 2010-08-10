@@ -1,4 +1,6 @@
 bin/remmina
+include/remmina/plugin.h
+include/remmina/types.h
 share/applications/remmina.desktop
 %%DATADIR%%/icons/hicolor/16x16/actions/remmina-fit-window.png
 %%DATADIR%%/icons/hicolor/16x16/actions/remmina-leave-fullscreen.png
@@ -6,12 +8,6 @@ share/applications/remmina.desktop
 %%DATADIR%%/icons/hicolor/16x16/actions/remmina-scrolled-fullscreen.png
 %%DATADIR%%/icons/hicolor/16x16/actions/remmina-viewport-fullscreen.png
 %%DATADIR%%/icons/hicolor/16x16/actions/remmina-switch-page.png
-%%DATADIR%%/icons/hicolor/16x16/emblems/remmina-rdp.png
-%%DATADIR%%/icons/hicolor/16x16/emblems/remmina-rdp-ssh.png
-%%DATADIR%%/icons/hicolor/16x16/emblems/remmina-vnc.png
-%%DATADIR%%/icons/hicolor/16x16/emblems/remmina-vnc-ssh.png
-%%DATADIR%%/icons/hicolor/16x16/emblems/remmina-xdmcp.png
-%%DATADIR%%/icons/hicolor/16x16/emblems/remmina-xdmcp-ssh.png
 %%DATADIR%%/icons/hicolor/16x16/emblems/remmina-sftp.png
 %%DATADIR%%/icons/hicolor/22x22/actions/remmina-fit-window.png
 %%DATADIR%%/icons/hicolor/22x22/actions/remmina-leave-fullscreen.png
@@ -19,12 +15,6 @@ share/applications/remmina.desktop
 %%DATADIR%%/icons/hicolor/22x22/actions/remmina-scrolled-fullscreen.png
 %%DATADIR%%/icons/hicolor/22x22/actions/remmina-viewport-fullscreen.png
 %%DATADIR%%/icons/hicolor/22x22/actions/remmina-switch-page.png
-%%DATADIR%%/icons/hicolor/22x22/emblems/remmina-rdp.png
-%%DATADIR%%/icons/hicolor/22x22/emblems/remmina-rdp-ssh.png
-%%DATADIR%%/icons/hicolor/22x22/emblems/remmina-vnc.png
-%%DATADIR%%/icons/hicolor/22x22/emblems/remmina-vnc-ssh.png
-%%DATADIR%%/icons/hicolor/22x22/emblems/remmina-xdmcp.png
-%%DATADIR%%/icons/hicolor/22x22/emblems/remmina-xdmcp-ssh.png
 %%DATADIR%%/icons/hicolor/22x22/emblems/remmina-sftp.png
 %%NLS%%share/locale/bg/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/de/LC_MESSAGES/remmina.mo
@@ -52,13 +42,14 @@ share/icons/hicolor/48x48/apps/remmina.png
 share/icons/hicolor/scalable/apps/remmina.svg
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrm include/remmina
 @dirrm %%DATADIR%%/icons/hicolor/22x22/actions
-@dirrm %%DATADIR%%/icons/hicolor/22x22/emblems
-@dirrm %%DATADIR%%/icons/hicolor/22x22
+@dirrmtry %%DATADIR%%/icons/hicolor/22x22/emblems
+@dirrmtry %%DATADIR%%/icons/hicolor/22x22
 @dirrm %%DATADIR%%/icons/hicolor/16x16/actions
-@dirrm %%DATADIR%%/icons/hicolor/16x16/emblems
-@dirrm %%DATADIR%%/icons/hicolor/16x16
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/icons/hicolor/16x16/emblems
+@dirrmtry %%DATADIR%%/icons/hicolor/16x16
+@dirrmtry %%DATADIR%%/icons/hicolor
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%
 @dirrmtry share/applications

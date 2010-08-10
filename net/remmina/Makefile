@@ -6,91 +6,77 @@
 #
 
 PORTNAME=	remmina
-PORTVERSION=	0.7.5
-PORTREVISION=	2
+PORTVERSION=	0.8.1
 CATEGORIES=	net gnome
-MASTER_SITES=	SF/${PORTNAME}/0.7/
+MASTER_SITES=	SF/${PORTNAME}/0.8
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	The GTK+ Remote Desktop Client
 
-RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
+OPTIONS=	SSH	"Build with SSH tunneling support"	on \
+		GCRYPT	"Build with libgcrypt support for password encryption"	on \
+		TERM	"Build with terminal support"	on \
+		AVAHI	"Build with Avahi support"	on \
+		UNIQUE	"Build with Unique-App support"	on
 
-OPTIONS=	VNC	"Build with VNC protocol support"	off \
-		GNUTLS	"Build VNC with GNUTLS encryption support"	off \
-		XDMCP	"Build with XDMCP protocol support"	off \
-		SSH	"Build with SSH tunneling support"	off \
-		GCRYPT	"Build with libgcrypt support for password encryption"	off \
-		TERM	"Build with terminal support"	off \
-		AVAHI	"Build with Avahi support"	off \
-		UNIQUE	"Build with Unique-App support"	off
-
-MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gtk20 desktopfileutils
 INSTALLS_ICONS=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -Wl,-rpath -Wl,${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
+SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_NLS)
-CONFIGURE_ARGS+=	--disable-nls
+CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
-.if defined(WITH_VNC)
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
-.if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
-.endif
-.else
-CONFIGURE_ARGS+=	--disable-vnc
-.endif
-
-.if defined(WITH_XDMCP)
-RUN_DEPENDS+=	Xephyr:${PORTSDIR}/x11-servers/xephyr
-.endif
-
-.if defined(WITH_SSH)
-LIB_DEPENDS+=	ssh.4:${PORTSDIR}/security/libssh
+.if !defined(WITHOUT_SSH)
+BUILD_DEPENDS+=	${LOCALBASE}/include/libssh/libssh.h:${PORTSDIR}/security/libssh
+RUN_DEPENDS+=	${LOCALBASE}/lib/libssh.so.4:${PORTSDIR}/security/libssh
 .if ${OSVERSION} >= 800040
 LDFLAGS+=	-fstack-protector
 .endif
 .else
-CONFIGURE_ARGS+=	--disable-ssh
+CONFIGURE_ARGS+=--disable-ssh
 .endif
 
-.if defined(WITH_GCRYPT)
+.if !defined(WITHOUT_GCRYPT)
 LIB_DEPENDS+=	gcrypt.17:${PORTSDIR}/security/libgcrypt
 .else
-CONFIGURE_ARGS+=	--disable-gcrypt
+CONFIGURE_ARGS+=--disable-gcrypt
 .endif
 
-.if defined(WITH_TERM)
+.if !defined(WITHOUT_TERM)
 USE_GNOME+=	vte
 .else
-CONFIGURE_ARGS+=	--disable-vte
+CONFIGURE_ARGS+=--disable-vte
 .endif
 
-.if defined(WITH_AVAHI)
+.if !defined(WITHOUT_AVAHI)
 LIB_DEPENDS+=	avahi-ui.0:${PORTSDIR}/net/avahi-gtk
 .else
-CONFIGURE_ARGS+=	--disable-avahi
+CONFIGURE_ARGS+=--disable-avahi
 .endif
 
-.if defined(WITH_UNIQUE)
+.if !defined(WITHOUT_UNIQUE)
 LIB_DEPENDS+=	unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 .else
-CONFIGURE_ARGS+=	--disable-unique
+CONFIGURE_ARGS+=--disable-unique
 .endif
 
 post-install:
 	@-update-desktop-database
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
