@@ -43,7 +43,6 @@ BARRIER_SMTP_AUTH_PATCH=	yes
 .if defined(SLAVE_LDAP)
 BARRIER_BIG_CONCURRENCY_PATCH=	yes
 BARRIER_EXTTODO_PATCH=		yes
-BARRIER_OUTGOINGIP_PATCH=	yes
 .endif
 
 .if defined(SLAVE_LDAP) || \
@@ -53,6 +52,7 @@ BARRIER_DISCBOUNCES_PATCH=	yes
 BARRIER_SENDMAIL_F_PATCH=	yes
 BARRIER_BIG_TODO_PATCH=		yes
 BARRIER_DNS_PATCH=		yes
+BARRIER_OUTGOINGIP_PATCH=	yes
 .endif
 
 .if defined(SLAVE_LDAP) || \
@@ -180,11 +180,9 @@ LDAP_PARAMS=	ALTQUEUE BIGBROTHER BIGTODO BIND_8_COMPAT\
 		QMQP_COMPRESS QUOTATRASH SMTPEXECCHECK
 
 .elif defined(SLAVE_SPAMCONTROL)
-OPTIONS+=	REQBRACKETS	"Require brackets in <addresses>" on \
-		VERP		"VERP addresses for recipients" on \
+OPTIONS+=	TLSREMOTE	"TLS support (requires ucspi-ssl)" on \
 		MOREIPME	"Add control files (more|not)ipme" off \
 		BIGTODO		"Bruce Guenter's BigToDo patch" off \
-		DELIVERTO	"smtpd can deliver identified spam" off \
 		NEWLINE		"smtpd accept bare line feeds" off \
 		PAM111421	"smtpd allow email in case PAM failure" on \
 		SMTPEXTFORK	"Allow qmail-smtpd fork external progs" off \
@@ -280,14 +278,16 @@ DOCFILES_WRKDIR+=	TLS.readme
 .elif defined(SLAVE_SPAMCONTROL)
 DOCFILES_WRKDIR_doc+=	FILES.spamcontrol HISTORY.spamcontrol \
 			INSTALL.spamcontrol LICENSE.spamcontrol \
-			LOGGING.spamcontrol Makefile.djbdns README.bigtodo \
+			LOGGING.spamcontrol PROPOSAL.mav README.bigtodo \
 			README.bouncemaxbytes README.clamav README.djbdns \
 			README.doublebouncetrim README.mav README.moreipme \
 			README.qmailqueue README.recipients \
 			README.wildmat README_spamcontrol.html \
 			RELEASE_22.spamcontrol RELEASE_23.spamcontrol \
-			SMTPREPLY.spamcontrol TODO.spamcontrol badloadertypes \
-			badmailfrom badmimetypes badrcptto
+			RELEASE_24.spamcontrol RELEASE_25.spamcontrol \
+			RELEASE_26.spamcontrol SMTPREPLY.spamcontrol \
+			TODO.spamcontrol badloadertypes badmailfrom \
+			badmimetypes badrcptto
 SCRIPTS+=	qmail-alias2recipients qmail-pwd2recipients \
 		qmail-users2recipients qmail-vpopmail2recipients
 .endif
@@ -383,7 +383,7 @@ PATCHFILES+=	qmail-discard-double-bounces.patch:doublebounce
 .if defined(WITH_SPF_PATCH) && !defined(BARRIER_SPF_PATCH)
 . if defined(SLAVE_TLS) || defined(SLAVE_SPAMCONTROL)
 .  if defined(SLAVE_SPAMCONTROL)
-SPF_SPAMCONTROL_PATCH=	qmail-spf-rc5.patch-spamcontrol-25
+SPF_SPAMCONTROL_PATCH=	qmail-spf-rc5.patch-spamcontrol-26
 MASTER_SITES+=		${MASTER_SITE_LOCAL:S/$/:spf_spamcontrol/}
 MASTER_SITE_SUBDIR+=	garga/qmail/:spf_spamcontrol
 DISTFILES+=		${SPF_SPAMCONTROL_PATCH}:spf_spamcontrol
@@ -458,10 +458,6 @@ PATCHFILES+=	big-concurrency.patch
 .if defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH) && \
     defined(WITH_QMTPC_PATCH) && !defined(BARRIER_QMTPC_PATCH)
 PATCHFILES+=	qmail-1.03-qmtpc_outgoingip_20090630.patch:qmtpc_outgoingip
-.elif defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH) && defined(SLAVE_SPAMCONTROL)
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:outgoingip_spamcontrol/}
-MASTER_SITE_SUBDIR+=	garga/qmail/:outgoingip_spamcontrol
-DISTFILES+=	outgoingip.patch-spamcontrol-25:outgoingip_spamcontrol
 .elif defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)
 PATCHFILES+=	outgoingip.patch
 .elif defined(WITH_QMTPC_PATCH) && !defined(BARRIER_QMTPC_PATCH)
@@ -514,6 +510,18 @@ PATCH_SITE_SUBDIR+=	garga/qmail/:ldapenhacelog
 PATCHFILES+=	enhacelogging-ldap-${LDAP_PATCH_DATE}_4.patch:ldapenhacelog
 .endif
 
+.if defined(SLAVE_SPAMCONTROL) && defined(WITH_TLSREMOTE)
+MASTER_SITES+=	http://www.superscript.com/ucspi-ssl/:ucspi_ssl \
+		http://dev.qmailrocks.org/downloads/qmailrocks_3.0-beta/:ucspi_ssl \
+		${MASTER_SITE_GENTOO:S/$/:ucspi_ssl/}
+DISTFILES+=	ucspi-ssl-0.70.tar.gz:ucspi_ssl
+
+MASTER_SITES+=	http://www.fehcom.de/qmail/spamcontrol/:ucspi_ssl_patch
+DISTFILES+=	ucspi-ssl-0.70_ucspitls-0.6.patch_:ucspi_ssl_patch
+
+UCSPISRC=	${WRKDIR}/host/superscript.com/net/ucspi-ssl-0.70
+.endif
+
 # Some default values, these can be modified by make command line
 .if defined(WITH_BIG_CONCURRENCY_PATCH) && !defined(BARRIER_BIG_CONCURRENCY_PATCH)
 WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT?=	509
@@ -530,16 +538,10 @@ RCDLINK=	\#
 # Fill SELECTED_OPTIONS with options to write conf-spamcontrol
 .if defined(SLAVE_SPAMCONTROL)
 
-. if defined(WITH_REQBRACKETS)
-SELECTED_OPTIONS+=	reqbrackets=yes
+. if defined(WITH_TLSREMOTE)
+SELECTED_OPTIONS+=	tlsremote=yes
 . else
-SELECTED_OPTIONS+=	reqbrackets=no
-. endif
-
-. if defined(WITH_VERP)
-SELECTED_OPTIONS+=	verp=yes
-. else
-SELECTED_OPTIONS+=	verp=no
+SELECTED_OPTIONS+=	tlsremote=no
 . endif
 
 . if defined(WITH_MOREIPME)
@@ -552,12 +554,6 @@ SELECTED_OPTIONS+=	moreipme=no
 SELECTED_OPTIONS+=	bigtodo=yes
 . else
 SELECTED_OPTIONS+=	bigtodo=no
-. endif
-
-. if defined(WITH_DELIVERTO)
-SELECTED_OPTIONS+=	deliverto=yes
-. else
-SELECTED_OPTIONS+=	deliverto=no
 . endif
 
 . if defined(WITH_NEWLINE)
@@ -601,6 +597,9 @@ pre-everything::
 post-extract:
 .if defined(SLAVE_SPAMCONTROL)
 	@cd ${WRKSRC} && ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${SPAMCONTROL_DIST}
+. if defined(WITH_TLSREMOTE)
+	@cd ${WRKDIR} && ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/ucspi-ssl-0.70.tar.gz
+. endif
 .endif
 
 post-patch:
@@ -641,15 +640,16 @@ post-patch:
 	@${PATCH} -p1 -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${EXTTODO_PATCH}
 .  endif
 . endif
-. if defined(WITH_OUTGOINGIP_PATCH) && !defined(BARRIER_OUTGOINGIP_PATCH)
-	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/outgoingip.patch-spamcontrol-25
-. endif
 . if defined(WITH_SMTPEXTFORK)
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SMTPEXTFORK_PATCH}
 .  if defined(WITH_XF_QUITASAP)
 	@${REINPLACE_CMD} 's!//#define XF_QUITASAP!#define XF_QUITASAP!g' \
 		${WRKSRC}/qmail-smtpd.c
 .  endif
+. endif
+. if defined(WITH_TLSREMOTE)
+	@cd ${UCSPISRC}/src && patch -p0 < ${DISTDIR}/${DIST_SUBDIR}/ucspi-ssl-0.70_ucspitls-0.6.patch_
+	@${ECHO_CMD} "${UCSPISRC}/compile" > ${WRKSRC}/conf-ucspissl
 . endif
 	@${REINPLACE_CMD} -E "/qhpsi *= *\"unknown\"/d; s/(\*qqx *== *'D')/qhpsi \&\& \1/g" \
 		${WRKSRC}/qmail-smtpd.c
@@ -731,6 +731,19 @@ do-configure:
 		${ECHO_CMD} "${WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT}" \
 			> ${WRKSRC}/conf-spawn ; \
 	fi
+.endif
+.if defined(SLAVE_SPAMCONTROL) && defined(WITH_TLSREMOTE)
+	${ECHO_CMD} "${CC} ${CFLAGS}" > ${UCSPISRC}/src/conf-cc
+	${ECHO_CMD} "${PREFIX}" > ${UCSPISRC}/src/conf-home
+	${ECHO_CMD} "${PREFIX}/bin" > ${UCSPISRC}/src/conf-tcpbin
+	${ECHO_CMD} "/etc/ssl" > ${UCSPISRC}/src/conf-cadir
+	${ECHO_CMD} "/etc/ssl/cert.pem" > ${UCSPISRC}/src/conf-cafile
+	${ECHO_CMD} "/etc/ssl/dh1024.pem" > ${UCSPISRC}/src/conf-dhfile
+.endif
+
+pre-build:
+.if defined(SLAVE_SPAMCONTROL) && defined(WITH_TLSREMOTE)
+	@cd ${UCSPISRC} && package/compile
 .endif
 
 do-install:
