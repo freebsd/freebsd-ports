@@ -889,6 +889,7 @@
     SUBDIR += remmina-plugin-rdp
     SUBDIR += remmina-plugin-telepathy
     SUBDIR += remmina-plugin-vnc
+    SUBDIR += remmina-plugin-xdmcp
     SUBDIR += remmina-plugins
     SUBDIR += remotedesk
     SUBDIR += repeater
