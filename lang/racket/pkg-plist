@@ -4332,8 +4332,8 @@ lib/racket/collects/plot/compiled/main_rkt.dep
 lib/racket/collects/plot/compiled/main_rkt.zo
 lib/racket/collects/plot/compiled/math_rkt.dep
 lib/racket/collects/plot/compiled/math_rkt.zo
-lib/racket/collects/plot/compiled/native/i386-freebsd/libfit.so
-lib/racket/collects/plot/compiled/native/i386-freebsd/libplplot.so
+lib/racket/collects/plot/compiled/native/%%ARCH%%-freebsd/libfit.so
+lib/racket/collects/plot/compiled/native/%%ARCH%%-freebsd/libplplot.so
 lib/racket/collects/plot/compiled/plot-extend_rkt.dep
 lib/racket/collects/plot/compiled/plot-extend_rkt.zo
 lib/racket/collects/plot/compiled/plot_rkt.dep
@@ -8138,7 +8138,7 @@ lib/racket/collects/sgl/compiled/make-gl-info_rkt.dep
 lib/racket/collects/sgl/compiled/make-gl-info_rkt.zo
 lib/racket/collects/sgl/compiled/makefile_rkt.dep
 lib/racket/collects/sgl/compiled/makefile_rkt.zo
-lib/racket/collects/sgl/compiled/native/i386-freebsd/3m/make-gl-info-helper_rkt.so
+lib/racket/collects/sgl/compiled/native/%%ARCH%%-freebsd/3m/make-gl-info-helper_rkt.so
 lib/racket/collects/sgl/compiled/sgl_rkt.dep
 lib/racket/collects/sgl/compiled/sgl_rkt.zo
 lib/racket/collects/sgl/examples/alpha.rkt
@@ -16366,8 +16366,8 @@ share/racket/doc/xml/stamp.sxref
 @dirrm lib/racket/collects/sgl/scribblings/compiled
 @dirrm lib/racket/collects/sgl/scribblings
 @dirrm lib/racket/collects/sgl/examples
-@dirrm lib/racket/collects/sgl/compiled/native/i386-freebsd/3m
-@dirrm lib/racket/collects/sgl/compiled/native/i386-freebsd
+@dirrm lib/racket/collects/sgl/compiled/native/%%ARCH%%-freebsd/3m
+@dirrm lib/racket/collects/sgl/compiled/native/%%ARCH%%-freebsd
 @dirrm lib/racket/collects/sgl/compiled/native
 @dirrm lib/racket/collects/sgl/compiled
 @dirrm lib/racket/collects/sgl
@@ -16602,7 +16602,7 @@ share/racket/doc/xml/stamp.sxref
 @dirrm lib/racket/collects/plot/src
 @dirrm lib/racket/collects/plot/fonts
 @dirrm lib/racket/collects/plot/demos
-@dirrm lib/racket/collects/plot/compiled/native/i386-freebsd
+@dirrm lib/racket/collects/plot/compiled/native/%%ARCH%%-freebsd
 @dirrm lib/racket/collects/plot/compiled/native
 @dirrm lib/racket/collects/plot/compiled
 @dirrm lib/racket/collects/plot
