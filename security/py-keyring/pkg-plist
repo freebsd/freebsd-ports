@@ -9,4 +9,7 @@
 %%PYTHON_SITELIBDIR%%/keyring/core.py
 %%PYTHON_SITELIBDIR%%/keyring/core.pyc
 %%PYTHON_SITELIBDIR%%/keyring/core.pyo
+%%PYTHON_SITELIBDIR%%/keyring/getpassbackend.py
+%%PYTHON_SITELIBDIR%%/keyring/getpassbackend.pyc
+%%PYTHON_SITELIBDIR%%/keyring/getpassbackend.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/keyring
