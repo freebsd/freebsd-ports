@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prune
-PORTVERSION=	10
+PORTVERSION=	11
 CATEGORIES=	astro java
 MASTER_SITES=	http://activityworkshop.net/software/prune/ \
 		http://mirror.amdmi3.ru/distfiles/
