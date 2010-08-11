@@ -96,7 +96,7 @@ _VERSION_sound=	1
 _SUBDIR_sound=	audio
 _REQUIRES_sound=sdl
 
-_VERSION_ttf=	6
+_VERSION_ttf=	10
 _SUBDIR_ttf=	graphics
 _LIB_ttf=	SDL_ttf-2.0
 _REQUIRES_ttf=	sdl

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdl_ttf
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.10
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
 DISTNAME=	SDL_ttf-${PORTVERSION}
@@ -19,6 +19,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 USE_AUTOTOOLS=	libtool:22
 USE_SDL=	sdl
 USE_GMAKE=	yes
+USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
