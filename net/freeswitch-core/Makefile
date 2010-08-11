@@ -1,6 +1,6 @@
 # Ports collection makefile for: freeswitch-core
 # Date created: May 11, 2010
-# Whom: Eric F Crist <ecrist@secure-computing.net>
+# Whom: Richard Neese<r.neese@gmail.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/:1 \
 		http://files.freeswitch.org/downloads/libs/:2
-DISTFILES=	freeswitch-${PORTVERSION}.tar.gz:1 \
+DISTFILES=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz:1 \
 		celt-0.7.1.tar.gz:2 \
 		flite-1.3.99-latest.tar.gz:2 \
 		json-c-0.9.tar.gz \
@@ -24,19 +24,17 @@ DISTFILES=	freeswitch-${PORTVERSION}.tar.gz:1 \
 		soundtouch-1.3.1.tar.gz:2 \
 		sphinxbase-0.4.99-20091212.tar.gz:2 \
 		communicator_semi_6000_20080321.tar.gz:2
-EXTRACT_ONLY=	freeswitch-${PORTVERSION}.tar.gz
+EXTRACT_ONLY=	${BASE_PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	r.neese@gmail.com
 COMMENT=	FreeSwitch SoftSwitch Port
-
-BROKEN=		Recent change to the PORTNAME resulted in plist problems
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		gnutls:${PORTSDIR}/security/gnutls \
 		odbc:${PORTSDIR}/databases/unixODBC
 
-WRKSRC=		${WRKDIR}/freeswitch-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${BASE_PORTNAME}-${PORTVERSION}
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -51,11 +49,11 @@ HAS_CONFIGURE=	yes
 VARBASE?=	/var
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--bindir=${PREFIX}/bin \
-		--sysconfdir=${PREFIX}/etc/${PORTNAME}/conf \
-		--includedir=${PREFIX}/include/${PORTNAME} \
-		--libdir=${PREFIX}/lib/${PORTNAME}/lib \
-		--with-modinstdir=${PREFIX}/lib/${PORTNAME}/mod \
-		--with-rundir=${VARBASE}/run/freeswitch \
+		--sysconfdir=${PREFIX}/etc/${BASE_PORTNAME}/conf \
+		--includedir=${PREFIX}/include/${BASE_PORTNAME} \
+		--libdir=${PREFIX}/lib/${BASE_PORTNAME}/lib \
+		--with-modinstdir=${PREFIX}/lib/${BASE_PORTNAME}/mod \
+		--with-rundir=${VARBASE}/run/${BASE_PORTNAME} \
 		--with-libgnutls-prefix=${LOCALBASE} \
 		--with-ogg=${LOCALBASE} \
 		--with-ogg-libraries=${LOCALBASE}/lib \
@@ -68,6 +66,7 @@ CPPFLAGS+=	-I${PREFIX}/include
 
 FREESWITCH_USER=	freeswitch
 FREESWITCH_GROUP=	${FREESWITCH_USER}
+BASE_PORTNAME=	${FREESWITCH_USER}
 
 SUB_LIST=	FREESWITCH_USER=${FREESWITCH_USER} FREESWITCH_GROUP=${FREESWITCH_GROUP}
 
@@ -120,6 +119,10 @@ OPTIONS=	MODSHOUT        "Enable mod_shout (streaming audio/mp3)" on \
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=	Does not compile on FreeBSD < 7.0
+.endif
+
 .if ${ARCH} == "amd64"
 CFLAGS+=	-fPIC
 .endif
@@ -127,7 +130,7 @@ CFLAGS+=	-fPIC
 .for i in MODFLITE MODPOCKETSPHINX MODCIDLOOKUP MODDPDIRECTORY MODEASYROUTE MODLCR MODSOUNDTOUCH \
 	MODRSS MODSNOM MODVMD MODSPY MODAMRWB MODCELT MODMULTICAST MODPORTAUDIO MODCURL MODXMLCURL \
 	MODSAYDE MODSAYEN MODSAYES MODSAYFR MODSAYHU MODSAYIT MODSAYNL MODSAYRU MODSAYTH MODSAYZH \
-	MODNIBBLEBILL MODDINGALING MODDIRECTORY MODMEMCACHE MODPYTHON MODPASTREAM MODSHELLSTREAM \
+	MODNIBBLEBILL MODDINGALING MODDIRECTORY MODMEMCACHE MODPASTREAM MODSHELLSTREAM \
 	MODSILK MODUNIMRCP MODTTSCMDLINE MODDISTRIBUTOR MODSNAPSHOT MODSKINNY EXTENSIONS
 .if !defined(WITH_${i})
 PLIST_SUB+=	WITH_${i}="@comment "
@@ -139,12 +142,22 @@ PLIST_SUB+=	WITH_${i}=""
 .if !defined(WITH_MODOPENZAP)
 PLIST_SUB+=	WITH_MODOPENZAP="@comment "
 .else
+.if ${OSVERSION} < 703000 || (${OSVERSION} >= 800000 && ${OSVERSION} < 800108)
+IGNORE=		sorry you can not use mod_openzap on this version of freebsd ( dahdi support broken ) please update
+.endif
 PLIST_SUB+=	WITH_MODOPENZAP=""
 CONFIGURE_ARGS+=	--with-libpri
 BUILD_DEPENDS+=	libpri>=1.2.0:${PORTSDIR}/misc/libpri \
 		${LOCALBASE}/include/dahdi/wctdm_user.h:${PORTSDIR}/misc/dahdi
 LIB_DEPENDS+=	pri:${PORTSDIR}/misc/libpri
 RUN_DEPENDS+=	${LOCALBASE}/include/dahdi/wctdm_user.h:${PORTSDIR}/misc/dahdi
+.endif
+
+.if !defined(WITH_MODPYTHON)
+PLIST_SUB+=	WITH_MODPYTHON="@comment "
+.else
+PLIST_SUB+=	WITH_MODPYTHON=""
+USE_PYTHON=	yes
 .endif
 
 .if !defined(WITH_MODSHOUT)
@@ -178,11 +191,11 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/erlang/usr/include/erl_driver.h:${PORTSDIR}/lan
 
 pre-configure:
 	cd ${WRKSRC} && ./rebootstrap.sh
-	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = ${PREFIX}/libdata/libdata/pkgconfig|g' ${WRKSRC}/libs/*/Makefile.am
+	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' ${WRKSRC}/libs/*/Makefile.am
 	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' ${WRKSRC}/libs/*/Makefile.in
-	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = ${PREFIX}/libdata/libdata/pkgconfig|g' ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = ${PREFIX}/libdata/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|base=http://files.freeswitch.org/downloads/libs/|base=file:///usr/ports/distfiles/|g' ${WRKSRC}/build/getlib.sh.in
+	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' ${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's|pkgconfigdir = $$(libdir)/pkgconfig|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|base=http://files.freeswitch.org/downloads/libs/|base=file://${DISTDIR}/|g' ${WRKSRC}/build/getlib.sh.in
 
 .if defined(WITH_VOICEMAILPATCH)
 	@${REINPLACE_CMD} -e 's|${storage_dir}/|${voicemail_dir}|g' ${WRKSRC}/src/mod/applications/mod_voicemail/mod_voicemail.c
@@ -250,35 +263,29 @@ post-configure:
 .endif
 
 pre-install:
-	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+	@${SH} ${PKGINSTALL} ${BASE_PORTNAME} PRE-INSTALL
 
 .if !defined(WITH_EXTENSIONS)
-	@${RM} ${WRKSRC}/conf/directory/default/*
+	@${FIND} ${WRKSRC}/conf/directory/default -type f -name '*.xml' -delete
 .endif
 
 post-install:
 .if !defined(WITH_EXTENSIONS)
-	@${MKDIR} ${PREFIX}/etc/${PORTNAME}/conf/directory/default
+	@${MKDIR} ${PREFIX}/etc/${BASE_PORTNAME}/conf/directory/default
 .endif
-	@${MKDIR} ${PREFIX}/share/${PORTNAME}/sounds
-	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${PREFIX}/etc/${PORTNAME}
-	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${PREFIX}/share/${PORTNAME}
-	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/db/${PORTNAME}
-	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/log/${PORTNAME}
-	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/${PORTNAME}
-	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/run/${PORTNAME}
-	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/spool/${PORTNAME}
-	@for i in $$(${FIND} ${PREFIX}/etc/${PORTNAME}/conf/ -type f -name '*.sample'); do if [ ! -f $${i%.sample} ]; then ${CP} -p $$i $${i%.sample}; fi; done
+	@${MKDIR} ${PREFIX}/share/${BASE_PORTNAME}/sounds
+	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${PREFIX}/etc/${BASE_PORTNAME}
+	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${PREFIX}/share/${BASE_PORTNAME}
+	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/db/${BASE_PORTNAME}
+	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/log/${BASE_PORTNAME}
+	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/${BASE_PORTNAME}
+	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/run/${BASE_PORTNAME}
+	@${CHOWN} -R ${FREESWITCH_USER}:${FREESWITCH_GROUP} ${VARBASE}/spool/${BASE_PORTNAME}
+	@for i in $$(${FIND} ${PREFIX}/etc/${BASE_PORTNAME}/conf/ -type f -name '*.sample'); do if [ ! -f $${i%.sample} ]; then ${CP} -p $$i $${i%.sample}; fi; done
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG} "This port chown -R various directories ${FREESWITCH_USER}:${FREESWITCH_GROUP} "
 	@${ECHO_MSG} "this is for port security . in the event something should stop working."
 	@${ECHO_MSG} "Please take the time to check chownership of the dir's"
-	@${ECHO_MSG} "${VARBASE}/db/${PORTNAME} ${VARBASE}/log/${PORTNAME} ${VARBASE}/${PORTNAME} ${PREFIX}/etc/${PORTNAME}"
+	@${ECHO_MSG} "${VARBASE}/db/${BASE_PORTNAME} ${VARBASE}/log/${BASE_PORTNAME} ${VARBASE}/${BASE_PORTNAME} ${PREFIX}/etc/${BASE_PORTNAME}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-IGNORE=		freeswitch is only supported on FreeBSD 7 or newer
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
