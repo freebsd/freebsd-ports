@@ -39,8 +39,8 @@ MAN1=	gdb${VER}.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not configure on ia64, powerpc, or sparc64
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc"
+BROKEN=		Does not configure on ia64 or powerpc
 .endif
 
 .if defined(WITH_INSIGHT)
