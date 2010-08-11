@@ -7,7 +7,7 @@
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	1.6.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	LOCAL/ahze
 # http://sourceforge.net/forum/forum.php?thread_id=1839453&forum_id=59136
@@ -18,7 +18,7 @@ PKGNAMESUFFIX=	${PKG_NAME_SUFFIX}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Standards-based system to encode, stream and play MPEG-4 audio/video
 
-BUILD_DEPENDS=	mpeg4ip-libmp4v2>=1.6.1:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
+BUILD_DEPENDS=	mp4v2>=1.9.1:${PORTSDIR}/multimedia/mp4v2 \
 		${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	faac.0:${PORTSDIR}/audio/faac \
 		faad.2:${PORTSDIR}/audio/faad \
@@ -28,7 +28,7 @@ LIB_DEPENDS=	faac.0:${PORTSDIR}/audio/faac \
 		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2	\
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		x264.98:${PORTSDIR}/multimedia/x264
-RUN_DEPENDS=	mpeg4ip-libmp4v2>=1.6.1:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
+RUN_DEPENDS=	mp4v2>=1.9.1:${PORTSDIR}/multimedia/mp4v2
 
 USE_GNOME=	gtk20
 USE_SDL=	sdl
@@ -147,24 +147,15 @@ BROKEN=		Does not compile
 post-patch:
 	@${TOUCH} -f ${WRKSRC}/bootstrapped
 # don't compile or use libmp4v2
-	@${REINPLACE_CMD} -e 's|mp4v2||; s|gnu||; s|mp4av||' \
+	@${REINPLACE_CMD} -e 's|mp4v2||' \
 		${WRKSRC}/lib/Makefile.in
 	@${FIND} ${WRKSRC} -type f -name Makefile.in | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -e \
 		's|-I$(top_srcdir)/lib/mp4v2||; \
 		s|$$(top_builddir)/lib/mp4v2/libmp4v2.la||; \
-		s|$$(top_builddir)/lib/gnu/libmpeg4ip_gnu.la||; \
-		s|$$(top_builddir)/lib/mp4av/libmp4av.la||; \
 		s|$$(top_srcdir)/lib/mp4v2/libmp4v2.la||; \
-		s|$$(top_srcdir)/lib/gnu/libmpeg4ip_gnu.la||; \
-		s|$$(top_srcdir)/lib/mp4av/libmp4av.la||; \
-		s|@LIBS@|@LIBS@ -lmp4v2 -lmp4av -lmpeg4ip_gnu|; \
+		s|@LIBS@|@LIBS@ -lmp4v2|; \
 		s|nasm|yasm|'
-	@${REINPLACE_CMD} -e 's|mpeg4ip.h||; \
-		s|mpeg4ip_config.h||; s|mpeg4ip_version.h||' \
-		${WRKSRC}/include/Makefile.in
-	@${REINPLACE_CMD} -e 's|include_HEADERS = mpeg4ip_config.h||' \
-		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|-Werror||' \
 		${WRKSRC}/common/video/iso-mpeg4/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|mp4venc_template.par||' \
@@ -172,7 +163,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*.[ch]" -or -name "*.cpp" | ${XARGS} -n 10 \
 		${REINPLACE_CMD} -e \
 		's|<stdint.h>|<inttypes.h>|; \
-		s|mp4v2/mp4.h|mp4.h|; \
 		s|<malloc.h>|<stdlib.h>|; \
 		s|<avcodec.h>|<libavcodec/avcodec.h>|; \
 		s|<swscale.h>|<libswscale/swscale.h>|; \
@@ -195,6 +185,13 @@ post-patch:
 	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} -e 's|echo aout|echo elf|'
 	@${REINPLACE_CMD} -e 's|$${enable_ffmpeg}/lib/libavcodec.a|-lavcodec -lswscale|g' \
 		${WRKSRC}/configure
+
+# replace bundled mp4v2 with placeholder
+post-configure:
+	@${RM} -rf ${WRKSRC}/lib/mp4v2
+	@${MKDIR} ${WRKSRC}/lib/mp4v2
+	@echo '#include "mpeg4ip.h"' > ${WRKSRC}/lib/mp4v2/mp4.h
+
 
 post-install:
 	@${MKDIR} ${DATADIR}

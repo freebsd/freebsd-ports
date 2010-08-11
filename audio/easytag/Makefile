@@ -7,7 +7,7 @@
 
 PORTNAME=	easytag
 PORTVERSION=	2.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28gtk%202%29/${PORTVERSION}
 
@@ -17,7 +17,7 @@ COMMENT=	GTK2 Tag editor for MP3 and OGG files
 LIB_DEPENDS=	id3:${PORTSDIR}/audio/id3lib \
 		vorbis:${PORTSDIR}/audio/libvorbis \
 		FLAC:${PORTSDIR}/audio/flac \
-		mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
+		mp4v2.10:${PORTSDIR}/multimedia/mp4v2
 
 MAN1=		easytag.1
 CONFLICTS=	easytag-devel-[0-9]*
@@ -35,5 +35,10 @@ CONFIGURE_ARGS+=	--enable-wavpack
 .else
 CONFIGURE_ARGS+=	--disable-wavpack
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|<mp4\.h>|<mp4v2/mp4v2.h>|g' \
+		${WRKSRC}/src/mp4_header.c \
+		${WRKSRC}/src/mp4_tag.c
 
 .include <bsd.port.mk>

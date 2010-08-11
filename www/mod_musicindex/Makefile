@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_musicindex
 PORTVERSION=	1.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www audio
 MASTER_SITES=	http://www.parisc-linux.org/~varenet/musicindex/ \
 		http://depot.fsck.ch/mirror/distfiles/
@@ -62,7 +62,7 @@ LIB_DEPENDS+=	id3tag:${PORTSDIR}/audio/libid3tag \
 .if defined(WITHOUT_MP4)
 CONFIGURE_ARGS+=	--disable-mp4
 .else
-LIB_DEPENDS+=	mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
+LIB_DEPENDS+=	mp4v2:${PORTSDIR}/multimedia/mp4v2
 .endif
 
 .if defined(WITHOUT_VORBIS)

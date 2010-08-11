@@ -7,7 +7,7 @@
 
 PORTNAME=	quodlibet
 PORTVERSION=	2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -82,7 +82,7 @@ USE_GSTREAMER+=	wavpack
 .endif
 
 .if !defined(WITHOUT_MPEG4IP)
-LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
+LIB_DEPENDS+=	mp4v2.10:${PORTSDIR}/multimedia/mp4v2
 USE_GSTREAMER+=	faad
 .endif
 

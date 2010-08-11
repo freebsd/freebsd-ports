@@ -7,7 +7,7 @@
 
 PORTNAME=	kid3
 PORTVERSION=	1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		ogg.7:${PORTSDIR}/audio/libogg \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
-		mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
+		mp4v2.10:${PORTSDIR}/multimedia/mp4v2
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
