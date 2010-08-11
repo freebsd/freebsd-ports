@@ -6,6 +6,7 @@
 
 PORTNAME=	libtunepimp
 DISTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/
