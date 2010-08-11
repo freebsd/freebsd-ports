@@ -7,13 +7,14 @@
 
 PORTNAME=	faac
 PORTVERSION=	1.28
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	MPEG-2 and MPEG-4 AAC audio encoder
 
-LIB_DEPENDS=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
+LIB_DEPENDS=	mp4v2.10:${PORTSDIR}/multimedia/mp4v2
 
 RESTRICTED=	Distribution in binary form is prohibited
 
@@ -24,6 +25,7 @@ MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:22
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
+CONFIGURE_ARGS= --with-mp4v2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-lmp4v2"
@@ -35,6 +37,8 @@ MAN1=		faac.1
 
 post-patch:
 	@${ECHO_CMD} "" >> ${WRKSRC}/libfaac/psych.h
+	@${REINPLACE_CMD} -e 's|<mp4\.h>|<mp4v2/mp4v2.h>|g' \
+		${WRKSRC}/frontend/main.c \
 
 pre-configure:
 	@cd ${WRKSRC}; ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} --automake

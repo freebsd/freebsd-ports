@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkpod
 PORTVERSION=	0.99.14
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -40,11 +40,14 @@ OPTIONS=	MPEG4IP	 "Enable AAC and H.264 support with MPEG4IP"	off \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MPEG4IP) || exists(${LOCALBASE}/lib/libmp4v2.so)
-LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
+.if defined(WITH_MPEG4IP) && !defined(WITHOUT_MPEG4IP)
+LIB_DEPENDS+=	mp4v2.10:${PORTSDIR}/multimedia/mp4v2
+CONFIGURE_ARGS+=	--with-mp4v2
 # Define HAVE_GTK to unbreak the build with libmp4v2.so (it is built
 # without Gtk support by default, which can result in gtkpod breakage)
 MAKE_ARGS+=	CPPFLAGS="-DHAVE_GTK"
+.else
+CONFIGURE_ARGS+=	--without-mp4v2
 .endif
 .for x in faac faad
 .  if exists(${LOCALBASE}/bin/${x})

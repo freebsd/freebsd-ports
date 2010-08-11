@@ -24,5 +24,4 @@ lib/tunepimp/plugins/wma.tpp
 lib/tunepimp/plugins/wv.tpp
 @dirrm lib/tunepimp/plugins
 @dirrm lib/tunepimp
-@dirrm include/tunepimp
 @dirrm include/tunepimp-0.5

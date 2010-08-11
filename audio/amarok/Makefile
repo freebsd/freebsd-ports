@@ -7,7 +7,7 @@
 
 PORTNAME=	amarok
 PORTVERSION=	1.4.10
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
@@ -17,7 +17,7 @@ COMMENT=	Media player for KDE
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
-		mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
+		mp4v2.10:${PORTSDIR}/multimedia/mp4v2 \
 		xine.1:${PORTSDIR}/multimedia/libxine
 
 MIN_OPTIONS_VER=	${PORTNAME}-1.4.1
@@ -109,10 +109,14 @@ STRIP=		# none
 pre-extract:	check-options-version
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's|LIBS="-ltunepimp  $$LIBS"|LIBS="-ltunepimp -liconv $$LIBS"|g' \
-	${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|-O2||g;	\
+		s|LIBS="-ltunepimp  $$LIBS"|LIBS="-ltunepimp -liconv $$LIBS"|g; \
+		s|mp4\.h|mp4v2/mp4v2.h|g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|xx||g' ${WRKSRC}/po/Makefile.in
+	@${REINPLACE_CMD} -e 's|<mp4\.h>|<mp4v2/mp4v2.h>|g' \
+		${WRKSRC}/amarok/src/metadata/mp4/mp4properties.h \
+		${WRKSRC}/amarok/src/metadata/mp4/mp4tag.h
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${TOUCH}
 
 post-install:

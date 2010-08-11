@@ -7,7 +7,7 @@
 
 PORTNAME=	libtunepimp-old
 PORTVERSION=	0.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.osuosl.org/pub/musicbrainz/ \
@@ -20,7 +20,7 @@ COMMENT=	Client library for musicbrainz
 LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		expat:${PORTSDIR}/textproc/expat2 \
 		mad:${PORTSDIR}/audio/libmad \
-		mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
+		mp4v2.10:${PORTSDIR}/multimedia/mp4v2 \
 		musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
 		ogg:${PORTSDIR}/audio/libogg \
 		tag:${PORTSDIR}/audio/taglib \
@@ -40,6 +40,8 @@ post-patch:
 		 s|^CPPFLAGS=|#CPPFLAGS=|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-lthr|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/lib/threads/posix/Makefile.in
+	@${REINPLACE_CMD} -e 's|<mp4\.h>|<mp4v2/mp4v2.h>|g' \
+		${WRKSRC}/plugins/mp4/mp4.cpp
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|\(^LDFLAGS =.*\)|\1 ${PTHREAD_LIBS} -liconv|g' \
