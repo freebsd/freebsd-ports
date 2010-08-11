@@ -7,6 +7,7 @@
 
 PORTNAME=	frogatto
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.frogatto.com/files/
 
