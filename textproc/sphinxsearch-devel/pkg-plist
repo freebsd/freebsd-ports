@@ -8,9 +8,4 @@ etc/sphinx.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/sphinx.html
 %%PORTDOCS%%%%DOCSDIR%%/sphinx.txt
 %%PORTDOCS%%%%DOCSDIR%%/sphinx.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sphinxapi.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test2.php
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
