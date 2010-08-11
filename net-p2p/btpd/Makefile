@@ -6,19 +6,26 @@
 #
 
 PORTNAME=	btpd
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://www.murmeldjur.se/btpd/
+MASTER_SITES=	http://cloud.github.com/downloads/btpd/btpd/
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	Bittorrent  client consisting of a daemon and client commands
+COMMENT=	Bittorrent client consisting of a daemon and client commands
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USE_AUTOTOOLS=	autoconf:262 aclocal:110
 GNU_CONFIGURE=	yes
+USE_OPENSSL=	yes
 
 PLIST_FILES=	bin/btcli \
 		bin/btinfo \
 		bin/btpd
+MAN1=		btcli.1 \
+		btinfo.1 \
+		btpd.1
 
 PORTDOCS=	README
 
