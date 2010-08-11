@@ -4,9 +4,9 @@
 # $FreeBSD$
 
 PORTNAME=	snoopy
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7.1
 CATEGORIES=	security
-MASTER_SITES=	SF/${PORTNAME}logger/${PORTNAME}logger/
+MASTER_SITES=	SF/${PORTNAME}logger/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	An execve() wrapper and logger
