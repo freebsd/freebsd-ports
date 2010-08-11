@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	keyring
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP \
-		http://apt.douglasthrift.net/files/${PORTNAME}/ \
-		http://code.douglasthrift.net/files/${PORTNAME}/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Store and access your passwords safely
+
+#LICENSE=	PSF
 
 LATEST_LINK=	py-${PORTNAME}
 
