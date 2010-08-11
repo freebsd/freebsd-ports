@@ -180,7 +180,7 @@ LDAP_PARAMS=	ALTQUEUE BIGBROTHER BIGTODO BIND_8_COMPAT\
 		QMQP_COMPRESS QUOTATRASH SMTPEXECCHECK
 
 .elif defined(SLAVE_SPAMCONTROL)
-OPTIONS+=	TLSREMOTE	"TLS support (requires ucspi-ssl)" on \
+OPTIONS+=	TLSREMOTE	"TLS support" on \
 		MOREIPME	"Add control files (more|not)ipme" off \
 		BIGTODO		"Bruce Guenter's BigToDo patch" off \
 		NEWLINE		"smtpd accept bare line feeds" off \
@@ -511,7 +511,7 @@ PATCH_SITE_SUBDIR+=	garga/qmail/:ldapenhacelog
 PATCHFILES+=	enhacelogging-ldap-${LDAP_PATCH_DATE}_4.patch:ldapenhacelog
 .endif
 
-.if defined(SLAVE_SPAMCONTROL) && defined(WITH_TLSREMOTE)
+.if defined(SLAVE_SPAMCONTROL)
 MASTER_SITES+=	http://www.superscript.com/ucspi-ssl/:ucspi_ssl \
 		http://dev.qmailrocks.org/downloads/qmailrocks_3.0-beta/:ucspi_ssl \
 		${MASTER_SITE_GENTOO:S/$/:ucspi_ssl/}
@@ -598,9 +598,7 @@ pre-everything::
 post-extract:
 .if defined(SLAVE_SPAMCONTROL)
 	@cd ${WRKSRC} && ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${SPAMCONTROL_DIST}
-. if defined(WITH_TLSREMOTE)
 	@cd ${WRKDIR} && ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/ucspi-ssl-0.70.tar.gz
-. endif
 .endif
 
 post-patch:
@@ -633,6 +631,15 @@ post-patch:
 . for option in ${SELECTED_OPTIONS}
 	@${ECHO_CMD} ${option} >> ${WRKSRC}/conf-spamcontrol
 . endfor
+	@cd ${UCSPISRC}/src && patch -p0 < ${DISTDIR}/${DIST_SUBDIR}/ucspi-ssl-0.70_ucspitls-0.6.patch_
+	@${ECHO_CMD} "${UCSPISRC}/compile" > ${WRKSRC}/conf-ucspissl
+	${ECHO_CMD} "${CC} ${CFLAGS}" > ${UCSPISRC}/src/conf-cc
+	${ECHO_CMD} "${PREFIX}" > ${UCSPISRC}/src/conf-home
+	${ECHO_CMD} "${PREFIX}/bin" > ${UCSPISRC}/src/conf-tcpbin
+	${ECHO_CMD} "/etc/ssl" > ${UCSPISRC}/src/conf-cadir
+	${ECHO_CMD} "/etc/ssl/cert.pem" > ${UCSPISRC}/src/conf-cafile
+	${ECHO_CMD} "/etc/ssl/dh1024.pem" > ${UCSPISRC}/src/conf-dhfile
+	@cd ${UCSPISRC} && package/compile
 	@cd ${WRKSRC} && ./install_spamcontrol.sh
 	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-spamcontrol-qmail-smtpd.c
 . if defined(WITH_SPF_PATCH) && defined(SPF_SPAMCONTROL_PATCH)
@@ -647,10 +654,6 @@ post-patch:
 	@${REINPLACE_CMD} 's!//#define XF_QUITASAP!#define XF_QUITASAP!g' \
 		${WRKSRC}/qmail-smtpd.c
 .  endif
-. endif
-. if defined(WITH_TLSREMOTE)
-	@cd ${UCSPISRC}/src && patch -p0 < ${DISTDIR}/${DIST_SUBDIR}/ucspi-ssl-0.70_ucspitls-0.6.patch_
-	@${ECHO_CMD} "${UCSPISRC}/compile" > ${WRKSRC}/conf-ucspissl
 . endif
 	@${REINPLACE_CMD} -E "/qhpsi *= *\"unknown\"/d; s/(\*qqx *== *'D')/qhpsi \&\& \1/g" \
 		${WRKSRC}/qmail-smtpd.c
@@ -732,19 +735,6 @@ do-configure:
 		${ECHO_CMD} "${WITH_BIG_CONCURRENCY_PATCH_CONCURRENCY_LIMIT}" \
 			> ${WRKSRC}/conf-spawn ; \
 	fi
-.endif
-.if defined(SLAVE_SPAMCONTROL) && defined(WITH_TLSREMOTE)
-	${ECHO_CMD} "${CC} ${CFLAGS}" > ${UCSPISRC}/src/conf-cc
-	${ECHO_CMD} "${PREFIX}" > ${UCSPISRC}/src/conf-home
-	${ECHO_CMD} "${PREFIX}/bin" > ${UCSPISRC}/src/conf-tcpbin
-	${ECHO_CMD} "/etc/ssl" > ${UCSPISRC}/src/conf-cadir
-	${ECHO_CMD} "/etc/ssl/cert.pem" > ${UCSPISRC}/src/conf-cafile
-	${ECHO_CMD} "/etc/ssl/dh1024.pem" > ${UCSPISRC}/src/conf-dhfile
-.endif
-
-pre-build:
-.if defined(SLAVE_SPAMCONTROL) && defined(WITH_TLSREMOTE)
-	@cd ${UCSPISRC} && package/compile
 .endif
 
 do-install:
