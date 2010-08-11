@@ -36,6 +36,10 @@ LICENSE=	GPLv2
 CFLAGS+=	-fPIC
 .endif
 
+.if ${OSVERSION} > 800000 && ${ARCH} == "amd64"
+MANUAL_PACKAGE_BUILD=	fails to link on pointyhat
+.endif
+
 .if ${OSVERSION} > 900007
 BROKEN=		fails to build with new utmpx
 .endif
