@@ -1,5 +1,4 @@
 libexec/dma
-libexec/dma.rb
 @unexec if cmp -s %D/etc/dma/dma.conf.sample %D/etc/dma/dma.conf; then rm -f %D/etc/dma/dma.conf; fi
 etc/dma/dma.conf.sample
 @exec if [ ! -f %B/dma.conf ] ; then cp -p %B/%f %B/dma.conf; fi
@@ -11,4 +10,4 @@ etc/dma/virtusertable.sample
 @exec if [ ! -f %B/virtusertable ] ; then cp -p %B/%f %B/virtusertable; fi
 @dirrmtry etc/dma
 @exec install -d -o root -g mail -m 770 /var/spool/dma
-@unexec rmdir /var/spool/dma 2>/dev/null || true
+@dirrmtry /var/spool/dma

@@ -5,15 +5,6 @@ referring to another MTA with the following:
 sendmail	%%PREFIX%%/libexec/dma
 send-mail	%%PREFIX%%/libexec/dma
 
-If you need sendmail -t compatibility, e.g. for send-pr(1), you may use the
-ruby wrapper script instead (make sure to install lang/ruby as well):
-
-sendmail	%%PREFIX%%/libexec/dma.rb
-send-mail	%%PREFIX%%/libexec/dma.rb
-
-Note that the ruby wrapper only supports a subset of what is considered valid
-email address syntax by the relevant RFCs.
-
 If you not need sendmail anymore, please add in your rc.conf:
 
 sendmail_enable="NO"

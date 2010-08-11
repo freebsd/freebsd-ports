@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	dma
-PORTVERSION=	20090825
+PORTVERSION=	20091004
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://mirror.roe.ch/dist/dma/
+MASTER_SITES=	http://people.FreeBSD.org/~bapt/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	DragonFly Mail Agent, a small MTA for local/outbound mail
 
-USE_BZIP2=	yes
+LICENSE=	BSD
+
 USE_OPENSSL=	yes
 
 MAN8=		dma.8
@@ -25,21 +26,19 @@ SUB_FILES=	pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/dma,${PREFIX}/etc/dma,g' \
-		${WRKSRC}/libexec/dma/dma.8 \
-		${WRKSRC}/libexec/dma/dma.h
+		${WRKSRC}/dma.8 \
+		${WRKSRC}/dma.h
 	@${REINPLACE_CMD} -e 's, /etc/dma, ${PREFIX}/etc/dma,g' \
-		${WRKSRC}/etc/dma/dma.conf
-	@${REINPLACE_CMD} -e '/^WARNS/d' ${WRKSRC}/libexec/dma/Makefile
+		${WRKSRC}/dma.conf
 
 do-install:
-	${INSTALL} -o root -g mail -m 2555 ${WRKSRC}/libexec/dma/dma ${PREFIX}/libexec
-	${INSTALL_SCRIPT} ${FILESDIR}/dma.rb ${PREFIX}/libexec
-	${INSTALL_MAN} ${WRKSRC}/libexec/dma/dma.8 ${PREFIX}/man/man8/
+	${INSTALL} -o root -g mail -m 2555 ${WRKSRC}/dma ${PREFIX}/libexec
+	${INSTALL_MAN} ${WRKSRC}/dma.8 ${PREFIX}/man/man8/
 	${MKDIR} ${PREFIX}/etc/dma
 .for i in dma.conf virtusertable
-	${INSTALL_DATA} -m 0644 ${WRKSRC}/etc/dma/${i} ${PREFIX}/etc/dma/${i}.sample
+	${INSTALL_DATA} -m 0644 ${WRKSRC}/${i} ${PREFIX}/etc/dma/${i}.sample
 .endfor
-	${INSTALL} -o root -g mail -m 0640 ${WRKSRC}/etc/dma/auth.conf \
+	${INSTALL} -o root -g mail -m 0640 ${WRKSRC}/auth.conf \
 		${PREFIX}/etc/dma/auth.conf.sample
 .for i in dma.conf virtusertable auth.conf
 	if [ ! -f ${PREFIX}/etc/dma/${i} ]; then \
