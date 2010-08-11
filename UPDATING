@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100811:
+  AFFECTS: multimedia/mpeg4ip-libmp4v2
+  AUTHOR: makc@FreeBSD.org
+
+  multimedia/mpeg4ip-libmp4v2, which is not maintained upstream, has been
+  replaced with new port, multimedia/mp4v2. The shared library version
+  has been changed with this update, thus all ports that depends on
+  mp4v2 library must be rebuilt:
+
+	portmaster -o multimedia/mp4v2 multimedia/mpeg4ip-libmp4v2
+	portmaster -a
+
 20100731:
   AFFECTS: users of devel/ccache
   AUTHOR: ehaupt@FreeBSD.org
