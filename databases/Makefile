@@ -716,6 +716,7 @@
     SUBDIR += sqldeveloper
     SUBDIR += sqlite-ext-inet
     SUBDIR += sqlite-ext-miscfuncs
+    SUBDIR += sqlite-ext-mobigroup
     SUBDIR += sqlite2
     SUBDIR += sqlite3
     SUBDIR += sqlite34

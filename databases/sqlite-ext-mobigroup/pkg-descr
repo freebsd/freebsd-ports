@@ -1,0 +1,19 @@
+These SQLite extension libraries provide the following functions:
+
+IPv4 functions (loaded with ".load libsqliteipv4.so"):
+  ISINNET, ISSAMENET
+  IP2INT, INT2IP
+  NETFROM, NETTO
+  NETLENGTH, NETMASKLENGTH
+
+Shell environment functions (loaded with ".load libsqliteenv.so"):
+  CURRENT_USER
+  CURRENT_LOCALE
+  GETENV
+
+MD5 message-digest algorithm functions (loaded with ".load libsqlitemd5.so"):
+  GROUP_MD5
+  MD5
+  MD5FILE
+
+WWW: http://sqlite.mobigroup.ru/wiki?name=extensions
