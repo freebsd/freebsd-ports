@@ -12467,7 +12467,6 @@ p5-IO-Compress-Bzip2            ports/archivers/p5-IO-Compress-Bzip2
 p5-IO-Compress-Zlib             ports/archivers/p5-IO-Compress-Zlib
 p5-IO-Digest                    ports/devel/p5-IO-Digest
 p5-IO-Handle-Util               ports/devel/p5-IO-Handle-Util
-p5-IO-INET6                     ports/net/p5-IO-INET6
 p5-IO-Interactive               ports/devel/p5-IO-Interactive
 p5-IO-Interface                 ports/net/p5-IO-Interface
 p5-IO-KQueue                    ports/devel/p5-IO-KQueue
@@ -12479,6 +12478,7 @@ p5-IO-NestedCapture             ports/devel/p5-IO-NestedCapture
 p5-IO-Null                      ports/devel/p5-IO-Null
 p5-IO-Pager                     ports/devel/p5-IO-Pager
 p5-IO-Prompt                    ports/devel/p5-IO-Prompt
+p5-IO-Socket-INET6              ports/net/p5-IO-Socket-INET6
 p5-IO-Socket-Multicast          ports/net/p5-IO-Socket-Multicast
 p5-IO-Socket-Multicast6         ports/net/p5-IO-Socket-Multicast6
 p5-IO-Socket-SSL                ports/security/p5-IO-Socket-SSL
@@ -16421,7 +16421,6 @@ p5-io-compress-zlib             ports/archivers/p5-IO-Compress-Zlib
 p5-io-csvheaderfile             ports/textproc/p5-IO-CSVHeaderFile
 p5-io-digest                    ports/devel/p5-IO-Digest
 p5-io-handle-util               ports/devel/p5-IO-Handle-Util
-p5-io-inet6                     ports/net/p5-IO-INET6
 p5-io-interactive               ports/devel/p5-IO-Interactive
 p5-io-interface                 ports/net/p5-IO-Interface
 p5-io-kqueue                    ports/devel/p5-IO-KQueue
@@ -16433,6 +16432,7 @@ p5-io-nestedcapture             ports/devel/p5-IO-NestedCapture
 p5-io-null                      ports/devel/p5-IO-Null
 p5-io-pager                     ports/devel/p5-IO-Pager
 p5-io-prompt                    ports/devel/p5-IO-Prompt
+p5-io-socket-inet6              ports/net/p5-IO-Socket-INET6
 p5-io-socket-multicast          ports/net/p5-IO-Socket-Multicast
 p5-io-socket-multicast6         ports/net/p5-IO-Socket-Multicast6
 p5-io-socket-ssl                ports/security/p5-IO-Socket-SSL
@@ -21822,6 +21822,12 @@ remind                          ports/deskutils/remind
 reminiscence                    ports/games/reminiscence
 remmina                         ports/net/remmina
 remmina-applet                  ports/net/remmina-applet
+remmina-plugin-i18n             ports/net/remmina-plugin-i18n
+remmina-plugin-rdp              ports/net/remmina-plugin-rdp
+remmina-plugin-telepathy        ports/net/remmina-plugin-telepathy
+remmina-plugin-vnc              ports/net/remmina-plugin-vnc
+remmina-plugin-xdmcp            ports/net/remmina-plugin-xdmcp
+remmina-plugins                 ports/net/remmina-plugins
 remotedesk                      ports/net/remotedesk
 renaissance                     ports/x11-toolkits/renaissance
 rename                          ports/sysutils/rename
