@@ -1,0 +1,11 @@
+--- ./GNUmakefile.in.orig	2010-07-12 21:25:25.000000000 +0100
++++ ./GNUmakefile.in	2010-07-12 21:26:04.000000000 +0100
+@@ -443,7 +443,7 @@
+ lib_LTLIBRARIES = libmp4v2.la
+ 
+ ###############################################################################
+-libmp4v2_la_LDFLAGS = -version-number $(PROJECT_version_major):$(PROJECT_version_minor):$(PROJECT_version_point) $(X_libmp4v2_la_LDFLAGS)
++libmp4v2_la_LDFLAGS = -version-info 10:1:9
+ libmp4v2_la_SOURCES = src/3gp.cpp src/atom_ac3.cpp src/atom_amr.cpp \
+ 	src/atom_avc1.cpp src/atom_avcC.cpp src/atom_chpl.cpp \
+ 	src/atom_colr.cpp src/atom_d263.cpp src/atom_dac3.cpp \
