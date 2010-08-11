@@ -7,13 +7,16 @@
 #
 
 PORTNAME=	yasm
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.tortall.net/projects/yasm/releases/
 
 MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	A complete rewrite of the NASM assembler
+
+LICENSE=	BSD
+
+MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-python --disable-python-bindings
