@@ -1,6 +1,6 @@
---- ./README.orig	2010-02-11 21:58:07.000000000 +0100
-+++ ./README	2010-07-20 17:45:31.306297157 +0200
-@@ -46,11 +46,11 @@
+--- ./README.orig	2010-08-05 01:02:04.000000000 +0200
++++ ./README	2010-08-11 12:10:05.170201000 +0200
+@@ -51,14 +51,14 @@
    Snoopy is placed in /etc/ld.so.preload to trap all occurances of exec,
    if you wish to monitor only certain applications you can do so through
    the $LD_PRELOAD environment variable - simply set it to 
@@ -8,11 +8,13 @@
 +  %%PREFIX%%/lib/snoopy.so before loading the application. For example:
  
 -    export LD_PRELOAD=/usr/local/lib/snoopy.so
--    lynx http://linux.com/
 +    export LD_PRELOAD=%%PREFIX%%/lib/snoopy.so
-+    lynx http://freebsd.org
+     lynx http://linux.com/
      unset LD_PRELOAD
  
    To remove snoopy later, simply edit /etc/ld.so.preload and remove the
 -  reference to snoopy.so and delete /usr/local/lib/snoopy.so.
 +  reference to snoopy.so and delete %%PREFIX%%/lib/snoopy.so.
+ 
+ 
+ 
