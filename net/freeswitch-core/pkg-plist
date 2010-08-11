@@ -4,162 +4,162 @@ bin/fs_cli
 bin/fs_ivrd
 bin/fsxs
 bin/gentls_cert
-%%ETCDIR%%/conf/autoload_configs/acl.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/alsa.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/cdr_csv.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/cdr_pg_csv.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/cidlookup.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/conference.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/console.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/dialplan_directory.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/dingaling.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/directory.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/distributor.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/easyroute.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/enum.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/erlang_event.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/event_multicast.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/event_socket.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/fax.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/fifo.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/ivr.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/java.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/lcr.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/limit.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/local_stream.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/logfile.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/lua.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/memcache.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/modules.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/nibblebill.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/opal.conf.xml.sample
-%%WITH_MODOPENZAP%%%%ETCDIR%%/conf/autoload_configs/openzap.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/perl.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/pocketsphinx.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/portaudio.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/post_load_modules.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/python.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/rss.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/sangoma_codec.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/shout.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/skinny.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/sofia.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/spidermonkey.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/switch.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/syslog.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/timezones.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/tts_commandline.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/unicall.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/unimrcp.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/voicemail.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/xml_cdr.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/xml_curl.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/xml_rpc.conf.xml.sample
-%%ETCDIR%%/conf/autoload_configs/zeroconf.conf.xml.sample
-%%ETCDIR%%/conf/dialplan/default.xml.sample
-%%ETCDIR%%/conf/dialplan/default/00_pizza_demo.xml.sample
-%%ETCDIR%%/conf/dialplan/default/01_example.com.xml.sample
-%%ETCDIR%%/conf/dialplan/default/99999_enum.xml.sample
-%%ETCDIR%%/conf/dialplan/features.xml.sample
-%%ETCDIR%%/conf/dialplan/public.xml.sample
-%%ETCDIR%%/conf/dialplan/public/00_inbound_did.xml.sample
-%%ETCDIR%%/conf/directory/default.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1000.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1001.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1002.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1003.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1004.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1005.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1006.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1007.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1008.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1009.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1010.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1011.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1012.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1013.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1014.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1015.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1016.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1017.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1018.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/1019.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/brian.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/default.xml.sample
-%%WITH_EXTENSIONS%%%%ETCDIR%%/conf/directory/default/example.com.xml.sample
-%%ETCDIR%%/conf/extensions.conf.sample
-%%ETCDIR%%/conf/freeswitch.xml.sample
-%%ETCDIR%%/conf/fur_elise.ttml.sample
-%%ETCDIR%%/conf/ivr_menus/demo_ivr.xml.sample
-%%ETCDIR%%/conf/jingle_profiles/client.xml.sample
-%%ETCDIR%%/conf/jingle_profiles/server.xml.sample
-%%ETCDIR%%/conf/lang/de/de.xml.sample
-%%ETCDIR%%/conf/lang/de/demo/demo.xml.sample
-%%ETCDIR%%/conf/lang/de/vm/tts.xml.sample
-%%ETCDIR%%/conf/lang/en/demo/demo-ivr.xml.sample
-%%ETCDIR%%/conf/lang/en/demo/demo.xml.sample
-%%ETCDIR%%/conf/lang/en/dir/sounds.xml.sample
-%%ETCDIR%%/conf/lang/en/dir/tts.xml.sample
-%%ETCDIR%%/conf/lang/en/en.xml.sample
-%%ETCDIR%%/conf/lang/en/vm/sounds.xml.sample
-%%ETCDIR%%/conf/lang/en/vm/tts.xml.sample
-%%ETCDIR%%/conf/lang/fr/demo/demo.xml.sample
-%%ETCDIR%%/conf/lang/fr/dir/sounds.xml.sample
-%%ETCDIR%%/conf/lang/fr/dir/tts.xml.sample
-%%ETCDIR%%/conf/lang/fr/fr.xml.sample
-%%ETCDIR%%/conf/lang/fr/vm/sounds.xml.sample
-%%ETCDIR%%/conf/lang/ru/demo/demo-ivr.xml.sample
-%%ETCDIR%%/conf/lang/ru/demo/demo.xml.sample
-%%ETCDIR%%/conf/lang/ru/dir/sounds.xml.sample
-%%ETCDIR%%/conf/lang/ru/dir/tts.xml.sample
-%%ETCDIR%%/conf/lang/ru/ru.xml.sample
-%%ETCDIR%%/conf/lang/ru/vm/sounds.xml.sample
-%%ETCDIR%%/conf/lang/ru/vm/tts.xml.sample
-%%WITH_MODOPENZAP%%%%ETCDIR%%/conf/m3ua.conf.sample
-%%ETCDIR%%/conf/mime.types.sample
-%%ETCDIR%%/conf/mrcp_profiles/loquendo-7-mrcp-v2.xml.sample
-%%ETCDIR%%/conf/mrcp_profiles/nuance-1.0.0-mrcp-v1.xml.sample
-%%ETCDIR%%/conf/mrcp_profiles/nuance-5.0-mrcp-v1.xml.sample
-%%ETCDIR%%/conf/mrcp_profiles/nuance-5.0-mrcp-v2.xml.sample
-%%ETCDIR%%/conf/mrcp_profiles/unimrcpserver-mrcp-v1.xml.sample
-%%ETCDIR%%/conf/mrcp_profiles/voxeo-prophecy-8.0-mrcp-v1.xml.sample
-%%ETCDIR%%/conf/notify-voicemail.tpl.sample
-%%WITH_MODOPENZAP%%%%ETCDIR%%/conf/openzap.conf.sample
-%%WITH_MODOPENZAP%%%%ETCDIR%%/conf/pika.conf.sample
-%%ETCDIR%%/conf/sip_profiles/external.xml.sample
-%%ETCDIR%%/conf/sip_profiles/external/example.xml.sample
-%%ETCDIR%%/conf/sip_profiles/internal-ipv6.xml.sample
-%%ETCDIR%%/conf/sip_profiles/internal.xml.sample
-%%ETCDIR%%/conf/sip_profiles/internal/example.xml.sample
-%%ETCDIR%%/conf/skinny_profiles/internal.xml.sample
-%%ETCDIR%%/conf/tetris.ttml.sample
-%%WITH_MODOPENZAP%%%%ETCDIR%%/conf/tones.conf.sample
-%%ETCDIR%%/conf/vars.xml.sample
-%%ETCDIR%%/conf/voicemail.tpl.sample
-%%WITH_MODOPENZAP%%%%ETCDIR%%/conf/wanpipe.conf.sample
-%%ETCDIR%%/conf/web-vm.tpl.sample
-%%WITH_MODOPENZAP%%%%ETCDIR%%/conf/zt.conf.sample
+etc/freeswitch/conf/autoload_configs/acl.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/alsa.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/cdr_csv.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/cdr_pg_csv.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/cidlookup.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/conference.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/console.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/dialplan_directory.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/dingaling.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/directory.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/distributor.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/easyroute.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/enum.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/erlang_event.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/event_multicast.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/event_socket.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/fax.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/fifo.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/ivr.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/java.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/lcr.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/limit.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/local_stream.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/logfile.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/lua.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/memcache.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/modules.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/nibblebill.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/opal.conf.xml.sample
+%%WITH_MODOPENZAP%%etc/freeswitch/conf/autoload_configs/openzap.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/perl.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/pocketsphinx.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/portaudio.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/post_load_modules.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/python.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/rss.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/sangoma_codec.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/shout.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/skinny.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/sofia.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/spidermonkey.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/switch.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/syslog.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/timezones.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/tts_commandline.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/unicall.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/unimrcp.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/voicemail.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/xml_cdr.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/xml_curl.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/xml_rpc.conf.xml.sample
+etc/freeswitch/conf/autoload_configs/zeroconf.conf.xml.sample
+etc/freeswitch/conf/dialplan/default.xml.sample
+etc/freeswitch/conf/dialplan/default/00_pizza_demo.xml.sample
+etc/freeswitch/conf/dialplan/default/01_example.com.xml.sample
+etc/freeswitch/conf/dialplan/default/99999_enum.xml.sample
+etc/freeswitch/conf/dialplan/features.xml.sample
+etc/freeswitch/conf/dialplan/public.xml.sample
+etc/freeswitch/conf/dialplan/public/00_inbound_did.xml.sample
+etc/freeswitch/conf/directory/default.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1000.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1001.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1002.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1003.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1004.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1005.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1006.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1007.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1008.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1009.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1010.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1011.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1012.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1013.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1014.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1015.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1016.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1017.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1018.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/1019.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/brian.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/default.xml.sample
+%%WITH_EXTENSIONS%%etc/freeswitch/conf/directory/default/example.com.xml.sample
+etc/freeswitch/conf/extensions.conf.sample
+etc/freeswitch/conf/freeswitch.xml.sample
+etc/freeswitch/conf/fur_elise.ttml.sample
+etc/freeswitch/conf/ivr_menus/demo_ivr.xml.sample
+etc/freeswitch/conf/jingle_profiles/client.xml.sample
+etc/freeswitch/conf/jingle_profiles/server.xml.sample
+etc/freeswitch/conf/lang/de/de.xml.sample
+etc/freeswitch/conf/lang/de/demo/demo.xml.sample
+etc/freeswitch/conf/lang/de/vm/tts.xml.sample
+etc/freeswitch/conf/lang/en/demo/demo-ivr.xml.sample
+etc/freeswitch/conf/lang/en/demo/demo.xml.sample
+etc/freeswitch/conf/lang/en/dir/sounds.xml.sample
+etc/freeswitch/conf/lang/en/dir/tts.xml.sample
+etc/freeswitch/conf/lang/en/en.xml.sample
+etc/freeswitch/conf/lang/en/vm/sounds.xml.sample
+etc/freeswitch/conf/lang/en/vm/tts.xml.sample
+etc/freeswitch/conf/lang/fr/demo/demo.xml.sample
+etc/freeswitch/conf/lang/fr/dir/sounds.xml.sample
+etc/freeswitch/conf/lang/fr/dir/tts.xml.sample
+etc/freeswitch/conf/lang/fr/fr.xml.sample
+etc/freeswitch/conf/lang/fr/vm/sounds.xml.sample
+etc/freeswitch/conf/lang/ru/demo/demo-ivr.xml.sample
+etc/freeswitch/conf/lang/ru/demo/demo.xml.sample
+etc/freeswitch/conf/lang/ru/dir/sounds.xml.sample
+etc/freeswitch/conf/lang/ru/dir/tts.xml.sample
+etc/freeswitch/conf/lang/ru/ru.xml.sample
+etc/freeswitch/conf/lang/ru/vm/sounds.xml.sample
+etc/freeswitch/conf/lang/ru/vm/tts.xml.sample
+%%WITH_MODOPENZAP%%etc/freeswitch/conf/m3ua.conf.sample
+etc/freeswitch/conf/mime.types.sample
+etc/freeswitch/conf/mrcp_profiles/loquendo-7-mrcp-v2.xml.sample
+etc/freeswitch/conf/mrcp_profiles/nuance-1.0.0-mrcp-v1.xml.sample
+etc/freeswitch/conf/mrcp_profiles/nuance-5.0-mrcp-v1.xml.sample
+etc/freeswitch/conf/mrcp_profiles/nuance-5.0-mrcp-v2.xml.sample
+etc/freeswitch/conf/mrcp_profiles/unimrcpserver-mrcp-v1.xml.sample
+etc/freeswitch/conf/mrcp_profiles/voxeo-prophecy-8.0-mrcp-v1.xml.sample
+etc/freeswitch/conf/notify-voicemail.tpl.sample
+%%WITH_MODOPENZAP%%etc/freeswitch/conf/openzap.conf.sample
+%%WITH_MODOPENZAP%%etc/freeswitch/conf/pika.conf.sample
+etc/freeswitch/conf/sip_profiles/external.xml.sample
+etc/freeswitch/conf/sip_profiles/external/example.xml.sample
+etc/freeswitch/conf/sip_profiles/internal-ipv6.xml.sample
+etc/freeswitch/conf/sip_profiles/internal.xml.sample
+etc/freeswitch/conf/sip_profiles/internal/example.xml.sample
+etc/freeswitch/conf/skinny_profiles/internal.xml.sample
+etc/freeswitch/conf/tetris.ttml.sample
+%%WITH_MODOPENZAP%%etc/freeswitch/conf/tones.conf.sample
+etc/freeswitch/conf/vars.xml.sample
+etc/freeswitch/conf/voicemail.tpl.sample
+%%WITH_MODOPENZAP%%etc/freeswitch/conf/wanpipe.conf.sample
+etc/freeswitch/conf/web-vm.tpl.sample
+%%WITH_MODOPENZAP%%etc/freeswitch/conf/zt.conf.sample
 @exec for i in $(find %D/etc/freeswitch/conf/ -type f -name *.sample); do if [ ! -f ${i%.sample} ]; then cp $i ${i%.sample}; fi; done
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/default.dic
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/communicator/COPYING
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/communicator/feat.params
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/communicator/mdef
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/communicator/means
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/communicator/noisedict
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/communicator/sendump
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/communicator/transition_matrices
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/communicator/variances
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/wsj1/Makefile
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/wsj1/Makefile.am
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/wsj1/Makefile.in
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/wsj1/feat.params
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/wsj1/kdtrees
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/wsj1/mdef
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/wsj1/means
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/wsj1/noisedict
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/wsj1/sendump
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/wsj1/transition_matrices
-%%WITH_MODPOCKETSPHINX%%%%ETCDIR%%/grammar/model/wsj1/variances
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/default.dic
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/communicator/COPYING
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/communicator/feat.params
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/communicator/mdef
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/communicator/means
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/communicator/noisedict
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/communicator/sendump
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/communicator/transition_matrices
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/communicator/variances
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/wsj1/Makefile
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/wsj1/Makefile.am
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/wsj1/Makefile.in
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/wsj1/feat.params
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/wsj1/kdtrees
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/wsj1/mdef
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/wsj1/means
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/wsj1/noisedict
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/wsj1/sendump
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/wsj1/transition_matrices
+%%WITH_MODPOCKETSPHINX%%etc/freeswitch/grammar/model/wsj1/variances
 %%WITH_MODOPENZAP%%include/freeswitch/fsk.h
 %%WITH_MODOPENZAP%%include/freeswitch/g711.h
 %%WITH_MODOPENZAP%%include/freeswitch/hashtable.h
@@ -325,6 +325,7 @@ lib/freeswitch/mod/mod_native_file.so
 %%WITH_MODPASTREAM%%lib/freeswitch/mod/mod_portaudio_stream.so
 %%WITH_MODPYTHON%%lib/freeswitch/mod/mod_python.la
 %%WITH_MODPYTHON%%lib/freeswitch/mod/mod_python.so
+%%WITH_MODPYTHON%%%%PYTHON_SITELIBDIR%%/freeswitch.py
 %%WITH_MODRSS%%lib/freeswitch/mod/mod_rss.la
 %%WITH_MODRSS%%lib/freeswitch/mod/mod_rss.so
 %%WITH_MODSAYDE%%lib/freeswitch/mod/mod_say_de.la
@@ -426,59 +427,60 @@ lib/freeswitch/mod/mod_xml_cdr.so
 %%WITH_MODXMLCURL%%lib/freeswitch/mod/mod_xml_curl.so
 lib/freeswitch/mod/mod_xml_rpc.la
 lib/freeswitch/mod/mod_xml_rpc.so
+libdata/pkgconfig/freeswitch.pc
 %%WITH_MODPERL%%perl/freeswitch.la
 %%WITH_MODPERL%%perl/freeswitch.pm
 %%WITH_MODPERL%%perl/freeswitch.so
-%%WWWDIR%%/htdocs/license.txt
-%%WWWDIR%%/htdocs/slim.swf
-%%WWWDIR%%/htdocs/slimtest.htm
-@dirrm %%WWWDIR%%/htdocs
-@dirrm %%WWWDIR%%
-@dirrm %%DATADIR%%/sounds
-@dirrm %%DATADIR%%
+www/freeswitch/htdocs/license.txt
+www/freeswitch/htdocs/slim.swf
+www/freeswitch/htdocs/slimtest.htm
+@dirrm www/freeswitch/htdocs
+@dirrm www/freeswitch
+@dirrm share/freeswitch/sounds
+@dirrm share/freeswitch
 %%WITH_MODPERL%%@dirrm perl
 @dirrm lib/freeswitch/mod
 @dirrm lib/freeswitch/lib
 @dirrm lib/freeswitch
 @dirrm include/freeswitch
-@dirrm %%ETCDIR%%/scripts
-%%WITH_MODPOCKETSPHINX%%@dirrm %%ETCDIR%%/grammar/model/wsj1
-%%WITH_MODPOCKETSPHINX%%@dirrm %%ETCDIR%%/grammar/model/communicator
-%%WITH_MODPOCKETSPHINX%%@dirrm %%ETCDIR%%/grammar/model
-@dirrm %%ETCDIR%%/grammar
-@dirrm %%ETCDIR%%/conf/skinny_profiles
-@dirrm %%ETCDIR%%/conf/sip_profiles/internal
-@dirrm %%ETCDIR%%/conf/sip_profiles/external
-@dirrm %%ETCDIR%%/conf/sip_profiles
-@dirrm %%ETCDIR%%/conf/mrcp_profiles
-@dirrm %%ETCDIR%%/conf/lang/ru/vm
-@dirrm %%ETCDIR%%/conf/lang/ru/dir
-@dirrm %%ETCDIR%%/conf/lang/ru/demo
-@dirrm %%ETCDIR%%/conf/lang/ru
-@dirrm %%ETCDIR%%/conf/lang/fr/vm
-@dirrm %%ETCDIR%%/conf/lang/fr/dir
-@dirrm %%ETCDIR%%/conf/lang/fr/demo
-@dirrm %%ETCDIR%%/conf/lang/fr
-@dirrm %%ETCDIR%%/conf/lang/en/vm
-@dirrm %%ETCDIR%%/conf/lang/en/dir
-@dirrm %%ETCDIR%%/conf/lang/en/demo
-@dirrm %%ETCDIR%%/conf/lang/en
-@dirrm %%ETCDIR%%/conf/lang/de/vm
-@dirrm %%ETCDIR%%/conf/lang/de/demo
-@dirrm %%ETCDIR%%/conf/lang/de
-@dirrm %%ETCDIR%%/conf/lang
-@dirrm %%ETCDIR%%/conf/jingle_profiles
-@dirrm %%ETCDIR%%/conf/ivr_menus
-@dirrm %%ETCDIR%%/conf/directory/default
-@dirrm %%ETCDIR%%/conf/directory
-@dirrm %%ETCDIR%%/conf/dialplan/public
-@dirrm %%ETCDIR%%/conf/dialplan/default
-@dirrm %%ETCDIR%%/conf/dialplan
-@dirrm %%ETCDIR%%/conf/autoload_configs
-@dirrm %%ETCDIR%%/conf
-@dirrm %%ETCDIR%%
-@exec mkdir -p %D/%%ETCDIR%%/scripts
-@exec mkdir -p %D/%%DATADDIR%%/sounds
+@dirrm etc/freeswitch/scripts
+%%WITH_MODPOCKETSPHINX%%@dirrm etc/freeswitch/grammar/model/wsj1
+%%WITH_MODPOCKETSPHINX%%@dirrm etc/freeswitch/grammar/model/communicator
+%%WITH_MODPOCKETSPHINX%%@dirrm etc/freeswitch/grammar/model
+@dirrm etc/freeswitch/grammar
+@dirrm etc/freeswitch/conf/skinny_profiles
+@dirrm etc/freeswitch/conf/sip_profiles/internal
+@dirrm etc/freeswitch/conf/sip_profiles/external
+@dirrm etc/freeswitch/conf/sip_profiles
+@dirrm etc/freeswitch/conf/mrcp_profiles
+@dirrm etc/freeswitch/conf/lang/ru/vm
+@dirrm etc/freeswitch/conf/lang/ru/dir
+@dirrm etc/freeswitch/conf/lang/ru/demo
+@dirrm etc/freeswitch/conf/lang/ru
+@dirrm etc/freeswitch/conf/lang/fr/vm
+@dirrm etc/freeswitch/conf/lang/fr/dir
+@dirrm etc/freeswitch/conf/lang/fr/demo
+@dirrm etc/freeswitch/conf/lang/fr
+@dirrm etc/freeswitch/conf/lang/en/vm
+@dirrm etc/freeswitch/conf/lang/en/dir
+@dirrm etc/freeswitch/conf/lang/en/demo
+@dirrm etc/freeswitch/conf/lang/en
+@dirrm etc/freeswitch/conf/lang/de/vm
+@dirrm etc/freeswitch/conf/lang/de/demo
+@dirrm etc/freeswitch/conf/lang/de
+@dirrm etc/freeswitch/conf/lang
+@dirrm etc/freeswitch/conf/jingle_profiles
+@dirrm etc/freeswitch/conf/ivr_menus
+@dirrm etc/freeswitch/conf/directory/default
+@dirrm etc/freeswitch/conf/directory
+@dirrm etc/freeswitch/conf/dialplan/public
+@dirrm etc/freeswitch/conf/dialplan/default
+@dirrm etc/freeswitch/conf/dialplan
+@dirrm etc/freeswitch/conf/autoload_configs
+@dirrm etc/freeswitch/conf
+@dirrm etc/freeswitch
+@exec mkdir -p %D/etc/freeswitch/scripts
+@exec mkdir -p %D/share/freeswitch/sounds
 @cwd /var/
 @dirrm spool/freeswitch/voicemail
 @dirrm log/freeswitch/xml_cdr
