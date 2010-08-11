@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cgit
-PORTVERSION=	0.8.3.2
+PORTVERSION=	0.8.3.3
 CATEGORIES=	devel www
 MASTER_SITES=	http://hjemli.net/git/cgit/snapshot/:cgit \
 		${MASTER_SITE_KERNEL_ORG:S/$/:git/g}
@@ -19,6 +19,9 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A fast webinterface for git
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/curl-config:${PORTSDIR}/ftp/curl
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
