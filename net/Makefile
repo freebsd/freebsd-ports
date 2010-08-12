@@ -199,6 +199,7 @@
     SUBDIR += googolplex
     SUBDIR += gopher
     SUBDIR += gotthard
+    SUBDIR += gpxe
     SUBDIR += gq
     SUBDIR += grdesktop
     SUBDIR += grsync
