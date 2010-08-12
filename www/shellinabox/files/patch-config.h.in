@@ -1,0 +1,15 @@
+--- ./config.h.in.orig	2009-11-21 23:47:44.000000000 +0100
++++ ./config.h.in	2010-08-12 14:11:16.292619989 +0200
+@@ -105,6 +105,12 @@
+ /* Define to 1 if you have the <utmp.h> header file. */
+ #undef HAVE_UTMP_H
+ 
++/* Define to 1 if you have support for updwtmp */
++#undef HAVE_UPDWTMP
++
++/* Define to 1 if you have support for updwtmpx */
++#undef HAVE_UPDWTMPX
++
+ /* Define to 1 if zlib development files are installed */
+ #undef HAVE_ZLIB
+ 
