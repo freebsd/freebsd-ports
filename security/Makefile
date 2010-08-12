@@ -110,6 +110,7 @@
     SUBDIR += donkey
     SUBDIR += doorman
     SUBDIR += doscan
+    SUBDIR += dradis
     SUBDIR += dropbear
     SUBDIR += drweb
     SUBDIR += drweb-postfix
