@@ -26,17 +26,14 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-IFGRAPH_USER=	ifgraph
-IFGRAPH_GROUP=	ifgraph
+USERS=	ifgraph
+GROUPS=	ifgraph
 
 PLFILES=	find-if.pl ifgraph.pl makegraph.pl
 DOCFILES=	CHANGELOG INSTALACAO INSTALL TODO LICENSE.TXT MUDANCAS
 
 SUB_FILES=	crontab pkg-deinstall pkg-install pkg-message
-SUB_LIST=	USER=${IFGRAPH_USER} GROUP=${IFGRAPH_GROUP} PERL=${PERL}
-
-pre-install:
-	@ ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+SUB_LIST=	USER=${USERS} PERL=${PERL}
 
 do-install:
 .for plfile in ${PLFILES}
