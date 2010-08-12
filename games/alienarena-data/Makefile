@@ -6,29 +6,49 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2008.721
+PORTVERSION=	2010.745
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://ftp.jeuxlinux.fr/files/ \
 		http://mirror.ipgn.com.au/games/alienarena/ \
 		http://gd.tuwien.ac.at/opsys/linux/gentoo/distfiles/ \
 		http://offload2.icculus.org:9090/alienarena/Files/ \
-		http://offload1.icculus.org:9090/alienarena/Files/
+		http://offload1.icculus.org:9090/alienarena/Files/ \
+		${MASTER_SITE_GENTOO:S|$|distfiles/|}
 PKGNAMESUFFIX=	-data
-DISTNAME=	${PORTNAME}2008-linux20090109
-
+DISTNAME=	${PORTNAME}7_45-Linux20100726
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Alien Arena (data)
 
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Package will be 270MB, set FORCE_PACKAGE if you want it
-WRKSRC=		${WRKDIR}/${PORTNAME}2008
+PLIST=		${WRKDIR}/pkg-plist
+WRKSRC=		${WRKDIR}/${PORTNAME}7_45
 
 .include <bsd.port.pre.mk>
 
 post-extract:
-	@cd ${WRKSRC} && ${RM} arena/*.so data1/*.so
+	@cd ${WRKSRC} && ${RM} data1/*.so
+
+pre-install:
+	@${RM} -f ${PLIST}
+
+.	for DIRE in arena botinfo data1
+		@cd ${WRKSRC} && \
+			${FIND} ${DIRE} -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
+				${FIND} ${DIRE} -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
+.	endfor
+
+	@${ECHO_CMD} share/pixmaps/${PORTNAME}.png >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%" >> ${PLIST}
+
+.	if !defined(NOPORTDOCS)
+		@cd ${WRKSRC}/docs && \
+			${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%PORTDOCS%%%%DOCSDIR%%/|' >> ${PLIST} && \
+				${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|%%PORTDOCS%%@dirrm %%DOCSDIR%%/|' >> ${PLIST}
+		@${ECHO_CMD} "%%PORTDOCS%%@dirrmtry %%DOCSDIR%%" >> ${PLIST}
+.	endif
 
 do-install:
 	${MKDIR} ${DATADIR}
