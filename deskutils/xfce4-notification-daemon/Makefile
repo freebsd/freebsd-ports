@@ -7,7 +7,7 @@
 
 PORTNAME=	notification-daemon
 PORTVERSION=	0.3.7
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/notification-daemon-xfce/ \
 		CRITICAL
@@ -26,6 +26,7 @@ RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
+USE_GNOME=	librsvg2
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil libgui
