@@ -1,0 +1,10 @@
+--- ./Makefile.in.orig	2009-11-21 23:47:39.000000000 +0100
++++ ./Makefile.in	2010-08-12 15:05:47.001428510 +0200
+@@ -372,6 +372,7 @@
+                          i[0-9]86) echo '-O elf32-i386 -B i386';;             \
+                          x86_64)   echo '-O elf64-x86-64 -B i386:x86-64';;    \
+                          arm*)     echo '-O elf32-littlearm -B arm';;         \
++                          sparc64)  echo '-O elf64-sparc -B sparc';;         \
+                        esac
+ 
+ renamesymbols = \
