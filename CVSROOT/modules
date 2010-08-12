@@ -7409,7 +7409,6 @@ ktagebuch                       ports/deskutils/ktagebuch
 ktextdecode                     ports/converters/ktextdecode
 ktoblzcheck                     ports/finance/ktoblzcheck
 ktorrent                        ports/net-p2p/ktorrent
-ktorrent-devel                  ports/net-p2p/ktorrent-devel
 ktorrent2                       ports/net-p2p/ktorrent2
 ktrack                          ports/comms/ktrack
 ktritoc                         ports/games/ktritoc
@@ -23425,6 +23424,7 @@ sqldjbdns                       ports/dns/sqldjbdns
 sqlgrey                         ports/mail/sqlgrey
 sqlite-ext-inet                 ports/databases/sqlite-ext-inet
 sqlite-ext-miscfuncs            ports/databases/sqlite-ext-miscfuncs
+sqlite-ext-mobigroup            ports/databases/sqlite-ext-mobigroup
 sqlite2                         ports/databases/sqlite2
 sqlite3                         ports/databases/sqlite3
 sqlite34                        ports/databases/sqlite34
@@ -24621,6 +24621,7 @@ uim-gtk                         ports/textproc/uim-gtk
 uim-kde                         ports/textproc/uim-kde
 uim-m17nlib                     ports/textproc/uim-m17nlib
 uim-qt                          ports/textproc/uim-qt
+uim-qt4                         ports/textproc/uim-qt4
 uird                            ports/comms/uird
 uk-aspell                       ports/ukrainian/aspell
 uk-emacs-koi8u                  ports/ukrainian/emacs-koi8u
