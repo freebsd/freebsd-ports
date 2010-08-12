@@ -1,0 +1,96 @@
+diff -urNad aterm-1.0.1~/src/main.c src/main.c
+--- aterm-1.0.1~/src/main.c	2007-08-04 00:05:30.000000000 +0200
++++ src/main.c	2007-08-04 00:09:53.000000000 +0200
+@@ -1334,6 +1334,12 @@
+ 	break;
+ #endif
+ 
++	case XTerm_EtermSeq:
++		op = atoi(str);
++		if (!(str = strchr(str, ';')))
++			break;
++		eterm_seq(op, str + 1);
++		break;
+     case XTerm_Menu:
+     /*
+      * menubar_dispatch() violates the constness of the string,
+@@ -1360,6 +1366,43 @@
+ 	break;
+     }
+ }
++
++/*
++ * Eterm escape sequences: ESC ] 6;Ps;Pt BEL
++ *       2 = set shade/tint mask
++ * (There are more codes--check Eterm's reference doc.)
++ */
++/* PROTO */
++	void
++eterm_seq(int op, const char *str)
++{
++	assert(str != NULL);
++	switch (op) {
++#if defined(BACKGROUND_IMAGE) || defined(TRANSPARENT)
++		case 2:
++			/* { shade | tint } [ class ; ] value */
++			if (strncmp(str, "tint", 4) == 0) {
++				char *class;
++				char *value;
++
++				if (!(class = strchr((char *) str, ';')))
++					break;
++				*class++ = '\0';
++				if (!(value = strchr(class, ';'))) {
++					/* Default class is bg. */
++					value = class;
++					class = "bg";
++				} else
++					*value++ = '\0';
++
++				if (strcmp(class, "bg") == 0) {
++					set_window_color(Color_tint, value);
++				}
++			}
++			break;
++#endif
++	}
++}
+ /*}}} */
+ 
+ 
+diff -urNad aterm-1.0.1~/src/rxvt.h src/rxvt.h
+--- aterm-1.0.1~/src/rxvt.h	2007-08-04 00:05:30.000000000 +0200
++++ src/rxvt.h	2007-08-04 00:10:31.000000000 +0200
+@@ -807,6 +807,7 @@
+ /*
+  * rxvt extensions of XTerm escape sequences: ESC ] Ps;Pt BEL
+  */
++#define XTerm_EtermSeq         6       /* Eterm proprietary escape sequences */
+ #define XTerm_Menu		10	/* set menu item */
+ #define XTerm_Pixmap		20	/* new bg pixmap */
+ #define XTerm_restoreFG		39	/* change default fg color */
+diff -urNad aterm-1.0.1~/src/screen.c src/screen.c
+--- aterm-1.0.1~/src/screen.c	2007-08-04 00:05:30.000000000 +0200
++++ src/screen.c	2007-08-04 00:15:22.000000000 +0200
+@@ -2665,7 +2665,20 @@
+ 		 !(Options & Opt_transparent))
+     {
+ 		XSetWindowBackground(Xdisplay, TermWin.vt, PixColors[Color_bg]);
+-    }
++	} else if (idx == Color_tint) {
++		XColor tint;
++
++		tint.pixel = PixColors[Color_tint];
++		XQueryColor(Xdisplay, Xcmap, &tint);
++		if (TermWin.background.Shading.tintColor.red == tint.red &&
++				TermWin.background.Shading.tintColor.green == tint.green &&
++				TermWin.background.Shading.tintColor.blue == tint.blue) {
++			return;
++		}
++		TermWin.background.Shading.tintColor = tint;
++		RenderPixmap(0);
++	}
++
+ 
+ /* handle Color_BD, scrollbar background, etc. */
+ 

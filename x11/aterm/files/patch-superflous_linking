@@ -1,0 +1,25 @@
+diff -urNad aterm-1.0.1~/configure configure
+--- aterm-1.0.1~/configure	2007-09-22 10:33:40.000000000 +0200
++++ configure	2007-09-22 10:34:13.000000000 +0200
+@@ -6796,9 +6796,9 @@
+ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_ICE_IceConnectionNumber" >&5
+ echo "${ECHO_T}$ac_cv_lib_ICE_IceConnectionNumber" >&6; }
+-if test $ac_cv_lib_ICE_IceConnectionNumber = yes; then
+-  X_PRE_LIBS="$X_PRE_LIBS -lSM -lICE"
+-fi
++#if test $ac_cv_lib_ICE_IceConnectionNumber = yes; then
++#  X_PRE_LIBS="$X_PRE_LIBS -lSM -lICE"
++#fi
+ 
+   LDFLAGS=$ac_save_LDFLAGS
+ 
+@@ -6877,7 +6877,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lXext $x_libs $LIBS"
++#LIBS="-lXext $x_libs $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF

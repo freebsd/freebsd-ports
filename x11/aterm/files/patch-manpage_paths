@@ -1,0 +1,23 @@
+diff -urNad aterm-1.0.1~/doc/aterm.1 doc/aterm.1
+--- aterm-1.0.1~/doc/aterm.1	2007-12-17 22:48:28.000000000 +0100
++++ doc/aterm.1	2007-12-17 22:51:01.000000000 +0100
+@@ -1,6 +1,6 @@
+ .TH "ATERM" "1" "05 July 05" "X Version 11" "X Tools" 
+ .SH "NAME" 
+-aterm (Afterstep XVT) \- a VT102 emulator for the X window system
++aterm \- a VT102 emulator for the X window system
+ .PP 
+ .SH "SYNOPSIS" 
+ .PP 
+@@ -656,9 +656,9 @@
+ to find XPM files\&.
+ .SH "FILES" 
+ .PP 
+-.IP "\fB/etc/utmp\fP" 
++.IP "\fB/var/run/utmp\fP" 
+ System file for login records\&.
+-.IP "\fB/usr/lib/X11/rgb\&.txt\fP" 
++.IP "\fB/etc/X11/rgb.txt\fP" 
+ Color names\&.
+ .PP 
+ .SH "SEE ALSO" 

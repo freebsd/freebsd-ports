@@ -1,0 +1,32 @@
+diff -urNad aterm-1.0.1~/src/libafterstep.h src/libafterstep.h
+--- aterm-1.0.1~/src/libafterstep.h	2004-11-10 18:21:43.000000000 +0100
++++ src/libafterstep.h	2009-07-20 23:10:02.000000000 +0200
+@@ -45,7 +45,6 @@
+ #ifdef INTERN
+ int DeadPipe( int nonsense ){return 1;}
+ ScreenInfo Scr ;
+-Display *dpy ;
+ char *MyName;
+ #endif /* INTERN */
+ #endif /* USE_LIBASIMAGE */
+diff -urNad aterm-1.0.1~/src/main.c src/main.c
+--- aterm-1.0.1~/src/main.c	2007-08-01 16:08:29.000000000 +0200
++++ src/main.c	2009-07-20 23:08:46.000000000 +0200
+@@ -2087,7 +2087,7 @@
+ #endif
+ 
+ 	ConnectX ( &Scr, 0 );
+-    Xdisplay = dpy ;
++    Xdisplay = get_current_X_display() ;
+     Xscreen = Scr.screen ;
+ 	asv = Scr.asv ;
+ 
+@@ -2125,7 +2125,7 @@
+ 	XdisplayHeight = DisplayHeight (Xdisplay, Xscreen);
+ 
+ #ifdef HAVE_AFTERIMAGE
+-	dpy = Xdisplay ;
++	set_current_X_display(Xdisplay) ;
+ 	asv = create_asvisual (Xdisplay, Xscreen, Xdepth, NULL);
+ 	Xcmap = asv->colormap;
+ 	Xdepth = asv->visual_info.depth;
