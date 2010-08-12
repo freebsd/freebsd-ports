@@ -74,6 +74,10 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 .endif
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile
+.endif
+
 post-extract:
 # remove pre-generated messages catalogs
 	${FIND} ${WRKSRC}/po -name "*.gmo" -delete
