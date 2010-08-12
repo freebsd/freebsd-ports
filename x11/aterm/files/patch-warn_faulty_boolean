@@ -1,0 +1,31 @@
+diff -urNad --exclude=CVS --exclude=.svn ./src/xdefaults.c /tmp/dpep-work.T9H3hg/aterm-1.0.0/src/xdefaults.c
+--- src/xdefaults.c	2005-07-31 18:31:49.000000000 +0200
++++ src/xdefaults.c	2005-07-31 18:46:26.000000000 +0200
+@@ -862,8 +862,12 @@
+ 				s = !s;
+ 			    if (s)
+ 				Options |= (optList[entry].flag);
+-			    else
++			    else {
++				if (my_strcasecmp(str, "FALSE"))
++				    print_error("Cannot parse value \"%s\" from resource \"%s\" as boolean",
++						str, kw);
+ 				Options &= ~(optList[entry].flag);
++			    }
+ 			}
+ 		    }
+ 		    break;
+@@ -945,8 +949,12 @@
+ 		    s = !s;
+ 		if (s)
+ 		    Options |= (optList[entry].flag);
+-		else
++		else {
++		    if (my_strcasecmp(p, "FALSE"))
++			print_error("Cannot parse value \"%s\" from resource \"%s\" as boolean",
++				    p, kw);
+ 		    Options &= ~(optList[entry].flag);
++		}
+ 	    }
+ 	}
+     }

@@ -1,0 +1,56 @@
+diff -urNad aterm-1.0.1~/src/rxvt.h src/rxvt.h
+--- src/rxvt.h	2007-08-03 23:55:28.000000000 +0200
++++ src/rxvt.h	2007-08-03 23:56:36.000000000 +0200
+@@ -784,6 +784,7 @@
+ #define Opt_scrollKeypress	(1LU<<12)
+ #define Opt_transparent		(1LU<<13)
+ #define Opt_transparent_sb	(1LU<<14)
++#define Opt_cutToBeginningOfLine (1LU<<15)
+ #define Opt_borderLess		(1LU<<16)
+ 
+ /* place holder used for parsing command-line options */
+diff -urNad aterm-1.0.1~/src/screen.c src/screen.c
+--- aterm-1.0.1~/src/screen.c	2007-08-03 23:55:28.000000000 +0200
++++ src/screen.c	2007-08-04 00:02:35.000000000 +0200
+@@ -3155,7 +3155,7 @@
+     text_t         *stp;
+     rend_t         *srp;
+ 
+-    if (selection.clicks != 2)
++    if (selection.clicks < 2)
+ 	return;			/* Go away: we only handle double clicks */
+ 
+     if (dirn == UP) {
+@@ -3454,7 +3454,11 @@
+     } else if (selection.clicks == 3) {
+ 	if (ROWCOL_IS_AFTER(selection.mark, selection.beg))
+ 	    selection.mark.col++;
+-	selection.beg.col = 0;
++	if (Options & Opt_cutToBeginningOfLine) {
++		selection_delimit_word(UP, &(selection.beg), &(selection.beg));
++	} else {
++		selection.beg.col = 0;
++	}
+ 	selection.end.col = TermWin.bcol;
+     }
+     if (button3 && buttonpress) {	/* mark may need to be changed */
+diff -urNad aterm-1.0.1~/src/xdefaults.c src/xdefaults.c
+--- aterm-1.0.1~/src/xdefaults.c	2007-08-03 23:55:28.000000000 +0200
++++ src/xdefaults.c	2007-08-04 00:03:23.000000000 +0200
+@@ -70,6 +70,7 @@
+ #endif
+ static const char *rs_visualBell = NULL;
+ static const char *rs_reverseVideo = NULL;
++static const char *rs_cutToBeginningOfLine = NULL;
+ 
+ #ifdef META8_OPTION
+ static const char *rs_meta8 = NULL;
+@@ -327,6 +328,8 @@
+     BOOL(rs_utmpInhibit, "utmpInhibit", "ut", Opt_utmpInhibit,
+          "utmp inhibit"),
+     BOOL(rs_visualBell, "visualBell", "vb", Opt_visualBell, "visual bell"),
++	BOOL(rs_cutToBeginningOfLine, "cutToBeginningOfLine", "cb", Opt_cutToBeginningOfLine,
++			"cut to beginning of line"),
+ 
+ #ifndef NO_MAPALERT
+ # ifdef MAPALERT_OPTION
