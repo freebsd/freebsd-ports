@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2009.733
-PORTREVISION=	5
+PORTVERSION=	2010.745
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://ftp.jeuxlinux.fr/files/ \
@@ -16,7 +15,7 @@ MASTER_SITES=	ftp://ftp.linux.kiev.ua/pub/Linux/Gentoo/distfiles/ \
 		http://offload2.icculus.org:9090/alienarena/Files/ \
 		http://offload1.icculus.org:9090/alienarena/Files/ \
 		${MASTER_SITE_GENTOO:S|$|distfiles/|}
-DISTNAME=	${PORTNAME}7_33-linux20091227
+DISTNAME=	${PORTNAME}7_45-Linux20100726
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Alien Arena (native version)
@@ -29,7 +28,7 @@ USE_GMAKE=	yes
 
 MAKE_ENV=	WITH_DATADIR=yes WITH_LIBDIR=yes \
 		DATADIR="${DATADIR}" LIBDIR="${LIBDIR}"
-WRKSRC=		${WRKDIR}/${PORTNAME}7_33/source
+WRKSRC=		${WRKDIR}/${PORTNAME}7_45/source
 
 SUB_FILES=	pkg-message
 ALL_TARGET=	build-release
