@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-notifyd
 PORTVERSION=	0.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://spuriousinterrupt.org/files/xfce4-notifyd/ \
 		CRITICAL
@@ -22,7 +22,7 @@ RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	intltool
+USE_GNOME=	intltool librsvg2
 USE_XFCE=	configenv libutil libgui
 INSTALLS_ICONS=	yes
 
