@@ -1,0 +1,14 @@
+================================================================
+
+ dradis uses SQLite as default database backend.
+
+  For other databases such as MySQL configure the file
+   %%PREFIX%%/dradis/server/config/database.yml
+
+  The (SQLite) database can be initialized with the command 
+   %%PREFIX%%/etc/rc.d/dradis initdb
+
+  For more information see:
+   http://dradisframework.org/configure.html
+
+================================================================
