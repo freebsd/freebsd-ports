@@ -7,6 +7,7 @@
 
 PORTNAME=	sslh
 PORTVERSION=	1.7a
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.rutschle.net/tech/
 
@@ -18,6 +19,8 @@ USE_PERL5_BUILD=	yes
 
 MAN8=		sslh.8
 PLIST_FILES=	sbin/sslh
+
+USE_RC_SUBR=	sslh
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^PREFIX=/usr/local|PREFIX=${PREFIX}|g' ${WRKSRC}/Makefile
