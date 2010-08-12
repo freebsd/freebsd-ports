@@ -5,4 +5,6 @@ traditional UNIX VNC servers in that it is accessing a real X displays that
 may already be in progress rather than creating its own X server for clients
 to connect to.
 
+LICENSE: GPL2 or later
+
 WWW: http://www.karlrunge.com/x11vnc/
