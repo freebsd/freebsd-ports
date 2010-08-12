@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	x11vnc
-PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTVERSION=	0.9.11
 CATEGORIES=	net
 MASTER_SITES=	SF/libvncserver/${PORTNAME}/${PORTVERSION}
 
@@ -19,6 +18,8 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		xcb:${PORTSDIR}/x11/libxcb \
 		pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
 		avahi-common:${PORTSDIR}/net/avahi-app
+
+LICENSE=	GPLv2
 
 USE_GNOME=	gnometarget
 USE_XORG=	x11 xdamage xfixes xrandr xinerama xext xtst xau xrender xdmcp recordproto
@@ -39,6 +40,9 @@ PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README README.LibVNCServer TODO
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|include_HEADERS = |noinst_HEADERS = |' \
+		-e 's|am__include_HEADERS_DIST|am__noinst_HEADERS_DIST|' \
+		-e 's|/include/rfb|/include|' ${WRKSRC}/Makefile.in
 
 .if !defined(NOPORTDOCS)
 post-install:
