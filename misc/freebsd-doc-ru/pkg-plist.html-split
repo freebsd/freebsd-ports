@@ -143,14 +143,15 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/hubs/mirror-requirements.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/hubs/mirror-statpages.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/hubs/mirror-where.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/caveat.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/code.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/experiment.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/ipsec-install.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/ipsec.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/kernel.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/x22.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/x55.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/solution.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/laptop/modems.html
@@ -227,6 +228,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-followup.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-further.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-prep.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-problems.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-when.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/problem-reports/pr-writing.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pxe/TRADEMARKS.html
@@ -251,11 +253,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/releng/release-proc.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/index.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/kern.flp.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/kernel.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/ro-fs.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/strategies.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/x120.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/solid-state/x94.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/conclusion.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/version-guide/decision-points.html
@@ -388,6 +389,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-shell.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-web.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/filesystems-zfs.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/filesystems.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-apps.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-concepts.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/firewalls-ipf.html
@@ -426,6 +429,8 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-building.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-config.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-custom-kernel.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-devices.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-modules.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-trouble.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/l10n-basics.html
