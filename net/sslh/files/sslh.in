@@ -1,0 +1,63 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# sslh startup script
+#
+# PROVIDE: sslh
+# REQUIRE: login
+# KEYWORD: shutdown
+
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# sslh_enable="YES"
+#
+# You can fine tune others variables too:
+# sslh_fib="NONE"
+# sslh_pidfile="/var/run/sslh.pid"
+# sslh_ssltarget="localhost:443"
+# sslh_sshtarget="localhost:22"
+# sslh_sshtimeout="2"
+# sslh_listening="0.0.0.0:8443"	
+# sslh_uid="nobody"
+# sslh_flags=""
+
+sslh_setfib() {
+	sysctl net.fibs >/dev/null 2>&1 || return 0
+
+	case "$sslh_fib" in
+	[Nn][Oo][Nn][Ee])
+		;;
+	*)
+		command="setfib -F ${sslh_fib} ${command}"
+		;;
+	esac
+} 
+
+. /etc/rc.subr
+
+name="sslh"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/${name}"
+start_precmd="sslh_setfib"
+
+load_rc_config $name
+
+sslh_enable=${sslh_enable:-"NO"}
+sslh_fib=${sslh_fib:-"NONE"}
+sslh_listening=${sslh_listening:-"0.0.0.0:443"}
+sslh_sshtarget=${sslh_sshtarget:-"localhost:22"}
+sslh_ssltarget=${sslh_ssltarget:-"localhost:8443"}
+sslh_uid=${sslh_uid:-"nobody"}
+sslh_sshtimeout=${sslh_sshtimeout:-"2"}
+sslh_ssltarget=${sslh_ssltarget:-"localhost:8443"}
+
+pidfile=${sslh_pidfile:-"/var/run/sslh.pid"}
+
+command_args="-t ${sslh_sshtimeout} -p ${sslh_listening} \
+	-l ${sslh_ssltarget} -s ${sslh_sshtarget} -P ${pidfile} \
+	-u ${sslh_uid}"
+
+run_rc_command "$1"
