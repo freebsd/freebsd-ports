@@ -1,0 +1,25 @@
+# New ports collection makefile for:	p5-Devel-CheckLib
+# Date created:				08 August 2010
+# Whom:					Frederic Culot <frederic@culot.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Devel-CheckLib
+PORTVERSION=	0.6
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	frederic@culot.org
+COMMENT=	Perl5 module to check that a library is available
+
+BUILD_DEPENDS=	p5-IO-CaptureOutput>=1.08:${PORTSDIR}/devel/p5-IO-CaptureOutput
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN1=		use-devel-checklib.1
+MAN3=		Devel::CheckLib.3
+
+.include <bsd.port.mk>
