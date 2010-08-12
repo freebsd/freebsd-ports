@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net-mgmt/ifgraph/files/pkg-deinstall.in,v 1.1 2010-01-24 18:51:29 lth Exp $
+# $FreeBSD: /tmp/pcvs/ports/net-mgmt/ifgraph/files/pkg-deinstall.in,v 1.2 2010-08-12 13:20:34 lth Exp $
 #
 
 PATH=/bin:/usr/bin:/usr/sbin
@@ -13,25 +13,6 @@ DEINSTALL)
   echo '---> Zeroing crontab(5) file belonging to user "%%USER%%"'
   /usr/bin/crontab -u %%USER%% /dev/null
   echo '     (The crontab(5) will be deleted completely when user "%%USER%%" is removed.)'
-
-  ;;
-
-POST-DEINSTALL)
-  echo '---> Starting post-deinstall script:'
-
-  if [ -f %%PREFIX%%/etc/ifgraph.conf -o \
-       -d %%PREFIX%%/ifgraph -o \
-       -d %%PREFIX%%/var/ifgraph ]; then
-    echo '---> You seem to have made some custom ifGraph configuration.'
-    echo '---> - The "%%USER%%" user and "%%GROUP%%" group were therefore not deleted.'
-    echo '---> - You may delete them with "pw groupdel %%GROUP%%; pw userdel %%USER%%".'
-
-  else
-    echo '---> Removing group "%%GROUP%%"'
-    /usr/sbin/pw groupdel -n %%GROUP%%
-    echo '---> Removing user "%%USER%%"'
-    echo 'y' | /usr/sbin/pw userdel -n %%USER%%
-  fi
 
   ;;
 
