@@ -1,0 +1,8 @@
+This module does not provide any methods. Simply loading it changes the
+default naming policy for the loading class so that accessors are
+separated into get and set methods. The get methods are prefixed with
+"get_" as the accessor, while set methods are prefixed with "set_".
+This is the naming style recommended by Damian Conway in Perl Best
+Practices.
+
+WWW: http://search.cpan.org/dist/MooseX-FollowPBP/
