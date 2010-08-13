@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- ../../j2se/src/share/classes/sun/nio/ch/KqueueSelectorProvider.java	(revision 0)
 +++ ../../j2se/src/share/classes/sun/nio/ch/KqueueSelectorProvider.java	(revision 0)
 @@ -0,0 +1,17 @@
@@ -19,7 +21,7 @@
 +    }
 +}
 --- ../../j2se/src/solaris/native/sun/nio/ch/KqueueArrayWrapper.c	(revision 0)
-+++ ../../j2se/src/solaris/native/sun/nio/ch/KqueueArrayWrapper.c	(revision 0)
++++ ../../j2se/src/solaris/native/sun/nio/ch/KqueueArrayWrapper.c	(revision 6)
 @@ -0,0 +1,186 @@
 +/*
 + * Scratched by davidxu@freebsd.org
@@ -168,7 +170,7 @@
 +}
 +
 +JNIEXPORT void JNICALL Java_sun_nio_ch_KqueueArrayWrapper_putKevent
-+  (JNIEnv *env, jclass cls, jlong address, jint index, jint fd, jint flags, jint filter)
++  (JNIEnv *env, jclass cls, jlong address, jint index, jint fd, jshort flags, jshort filter)
 +{
 +	struct kevent *ev = (struct kevent *)jlong_to_ptr(address);
 +
@@ -208,8 +210,8 @@
 +}
 +#endif
 --- ../../j2se/src/solaris/classes/sun/nio/ch/KqueueArrayWrapper.java	(revision 0)
-+++ ../../j2se/src/solaris/classes/sun/nio/ch/KqueueArrayWrapper.java	(revision 0)
-@@ -0,0 +1,240 @@
++++ ../../j2se/src/solaris/classes/sun/nio/ch/KqueueArrayWrapper.java	(revision 6)
+@@ -0,0 +1,231 @@
 +/*
 + * Scratched by davidxu@freebsd.org
 + */
@@ -237,10 +239,9 @@
 +    static final short EVFILT_WRITE = -2;
 +
 +    // Kevent flags
-+    static final char EV_ADD       = 0x0001;
-+    static final char EV_DELETE    = 0x0002;
-+    static final char EV_EOF       = 0x8000;
-+    static final char EV_ERROR     = 0x4000;
++    static final short EV_ADD       = 0x0001;
++    static final short EV_DELETE    = 0x0002;
++    static final short EV_ERROR     = 0x4000;
 +
 +    // Miscellaneous constants
 +    static final int SIZE_KEVENT   = keventSize();
@@ -263,7 +264,7 @@
 +
 +    // Machinery for remembering fd registration changes
 +    private HashMap<Integer, Integer> updateMap = new HashMap<Integer, Integer>();
-+    private int[] oldMasks = new int[1];
++    private int[] oldMasks = new int[capacityIncr];
 +
 +    // kevent array to receive
 +    private AllocatedNativeObject pollKeventArray;
@@ -305,7 +306,6 @@
 +    void resizeEventBuffer() {
 +	if (nextKeventSize > pollKeventSize) {
 +	    pollKeventArray.free();
-+	    pollKeventArray = null;
 +	    pollKeventSize = nextKeventSize + capacityIncr * 2;
 +	    int allocationSize = pollKeventSize * SIZE_KEVENT;
 +	    pollKeventArray = new AllocatedNativeObject(allocationSize, true);
@@ -372,27 +372,27 @@
 +    int updateRegistrations() {
 +	int index = 0;
 +	synchronized (updateMap) {
-+	    long address = pollKeventArray.address();
-+	    Set<Integer> s = updateMap.keySet();
-+	    boolean change;
-+	
 +	    resizeEventBuffer();
 +
++	    Set<Integer> s = updateMap.keySet();
++	    /*
++             * Because resizeEventBuffer may reallocate event buffer,
++             * we must retrieve fresh address here.
++             */
++	    long address = pollKeventArray.address();
++
 +	    for (Integer fd : s) {
-+		change = false;
 +		Integer newmask = updateMap.get(fd);
 +		int oldmask = oldMasks[fd];
 +		if ((oldmask & POLLIN) != 0) {
 +			if ((newmask & POLLIN) == 0) {
 +		    		putKevent(address, index, fd.intValue(), EV_DELETE, EVFILT_READ);
 +				index++;
-+				change = true;
 +			}
 +		} else {
 +			if ((newmask & POLLIN) != 0) {
 +			    putKevent(address, index, fd.intValue(), EV_ADD, EVFILT_READ);
 +			    index++;
-+			    change = true;
 +			}
 +		}
 +
@@ -400,21 +400,14 @@
 +			if ((newmask & POLLOUT) == 0) {
 +		    		putKevent(address, index, fd.intValue(), EV_DELETE, EVFILT_WRITE);
 +				index++;
-+			        change = true;
 +			}
 +		} else {
 +			if ((newmask & POLLOUT) != 0) {
 +		    		putKevent(address, index, fd.intValue(), EV_ADD, EVFILT_WRITE);
 +				index++;
-+			        change = true;
 +			}
 +		}
-+		if (change) {
-+		    if ((newmask &(POLLIN | POLLOUT)) == 0)
-+			oldMasks[fd] = 0;
-+		    else
-+		        oldMasks[fd] = newmask;
-+		}
++		oldMasks[fd] = newmask;
 +	    }
 +	    updateMap.clear();
 +	}
@@ -445,13 +438,13 @@
 +	int nevents, long timeout);
 +    private static native int  keventSize();
 +    private static native void interrupt(int fd);
-+    private static native void putKevent(long address, int index, int fd, int flag, int filter);
++    private static native void putKevent(long address, int index, int fd, short flag, short filter);
 +    private static native short getKeventFilter(long address, int index);
 +    private static native short getKeventFlags(long address, int index);
 +    private static native int getKeventIdent(long address, int index);
 +}
 --- ../../j2se/src/solaris/classes/sun/nio/ch/KqueueSelectorImpl.java	(revision 0)
-+++ ../../j2se/src/solaris/classes/sun/nio/ch/KqueueSelectorImpl.java	(revision 0)
++++ ../../j2se/src/solaris/classes/sun/nio/ch/KqueueSelectorImpl.java	(revision 6)
 @@ -0,0 +1,205 @@
 +/*
 + * scratched by davidxu@freebsd.org
@@ -555,7 +548,7 @@
 +            ski = (SelectionKeyImpl) fdToKey.get(new Integer(fd));
 +            // ski is null in the case of an interrupt
 +	    if (ski != null)
-+		ski.channel.translateAndSetReadyOps(0, ski);
++		ski.nioReadyOps(0);
 +	}
 +
 +	for (i = 0; i < entries; i++) {
@@ -659,7 +652,7 @@
 +
 +}
 --- ../../j2se/make/java/nio/Makefile	(revision 1)
-+++ ../../j2se/make/java/nio/Makefile	(working copy)
++++ ../../j2se/make/java/nio/Makefile	(revision 6)
 @@ -70,11 +70,15 @@
  	sun/nio/ch/EPollSelectorProvider.java \
  	sun/nio/ch/EPollSelectorImpl.java \
@@ -685,7 +678,7 @@
  endif # PLATFORM = linux
  
 --- ../../j2se/src/solaris/classes/sun/nio/ch/DefaultSelectorProvider.java	(revision 1)
-+++ ../../j2se/src/solaris/classes/sun/nio/ch/DefaultSelectorProvider.java	(working copy)
++++ ../../j2se/src/solaris/classes/sun/nio/ch/DefaultSelectorProvider.java	(revision 6)
 @@ -29,6 +29,10 @@
      public static SelectorProvider create() {
  	PrivilegedAction pa = new GetPropertyAction("os.name");
