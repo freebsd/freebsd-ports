@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.67
-PORTREVISION=	1
+PORTVERSION=	2.68
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/
 
@@ -50,8 +49,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
 .endif
 
 .if exists( /usr/local/include/libmilter/mfapi.h )
-CONFIGURE_ARGS+= --with-milterinc=${LOCALBASE}/include
-CONFIGURE_ARGS+= --with-milterlib=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--with-milterinc=${LOCALBASE}/include --with-milterlib=${LOCALBASE}/lib
 .endif
 
 post-patch:
@@ -61,10 +59,8 @@ pre-install:
 	@${REINPLACE_CMD} -e '/LOCAL_STATE_DIR/s,/var/lib,/var/db,' ${WRKSRC}/mimedefang.pl
 
 post-install:
-	@${REINPLACE_CMD} -e 's,# MX_USER=,MX_USER=,g ; \
-			s,# MX_MAX_RSS=,MX_MAX_RSS=,g ; \
-			s,# MX_MAX_AS=,MX_MAX_AS=,g' ${WRKSRC}/examples/init-script
-	@${INSTALL_SCRIPT} ${WRKSRC}/examples/init-script ${PREFIX}/etc/rc.d/mimedefang.sh-dist
+	@${REINPLACE_CMD} -e 's,%%CHMOD%%,${CHMOD},g' ${WRKSRC}/examples/init-script
+	@${INSTALL_SCRIPT} ${WRKSRC}/examples/init-script ${PREFIX}/etc/rc.d/mimedefang
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${MKDIR} ${DOCSDIR}
@@ -73,6 +69,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/examples/README ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}
 .endif
+	@[ -d ${SPOOLDIR} ] && ${CHGRP} ${MAILUSER} ${SPOOLDIR}
+	@[ -d ${QUARANTINEDIR} ] && ${CHGRP} ${MAILUSER} ${QUARANTINEDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
