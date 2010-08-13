@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	squirrel-sql
-PORTVERSION=	3.1.1
+PORTVERSION=	3.1.2
 CATEGORIES=	databases java
 MASTER_SITES=	SF/${PORTNAME}/1-stable/${PORTVERSION}%20(plain%20zip)
 DISTNAME=	${PORTNAME}-${PORTVERSION}-optional
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jonc@chen.org.nz
 COMMENT=	A universal SQL Client
 
 NO_BUILD=	yes
