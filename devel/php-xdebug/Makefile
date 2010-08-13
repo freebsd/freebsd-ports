@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdebug
-DISTVERSION=	2.0.5
+DISTVERSION=	2.1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xdebug.org/files/
 PKGNAMEPREFIX=	php-
