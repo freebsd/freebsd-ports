@@ -31,8 +31,6 @@ USE_LDCONFIG=		yes
 USE_RC_SUBR=		clamav-clamd clamav-freshclam
 CONF_FILES=		clamd freshclam
 
-LICENSE=	GPLv2
-
 PORTDOCS=	*
 
 DBDIR=		/var/db/clamav
