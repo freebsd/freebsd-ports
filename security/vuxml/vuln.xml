@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="71273c4d-a6ec-11df-8a8d-0008743bf21a">
+    <topic>opera -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>opera</name>
+        <range><lt>10.61</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The Opera Destkop Team reports:</p>
+        <blockquote cite="http://www.opera.com/docs/changelogs/unix/1061/">
+          <ul>
+            <li>Fixed an issue where heap buffer overflow in HTML5 canvas could
+              be used to execute arbitrary code, as reported by Kuzzcc.</li>
+            <li>Fixed an issue where unexpected changes in tab focus could be
+              used to run programs from the Internet, as reported by Jakob Balle
+              and Sven Krewitt of Secunia.</li>
+            <li>Fixed an issue where news feed preview could subscribe to feeds
+              without interaction, as reported by Alexios Fakos.</li>
+          </ul>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/support/search/view/966/</url>
+      <url>http://www.opera.com/support/search/view/967/</url>
+      <url>http://www.opera.com/support/search/view/968/</url>
+    </references>
+    <dates>
+      <discovery>2010-08-12</discovery>
+      <entry>2010-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c2eac2b5-9a7d-11df-8e32-000f20797ede">
     <topic>firefox -- Dangling pointer crash regression from plugin parameter array fix</topic>
     <affects>
