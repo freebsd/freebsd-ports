@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Aug  9 11:32:55 2004
-+++ Makefile.in	Thu Dec 23 11:22:02 2004
-@@ -182,7 +182,7 @@
+--- ./Makefile.in.orig	2010-02-16 17:29:59.000000000 +0100
++++ ./Makefile.in	2010-05-09 16:46:21.000000000 +0200
+@@ -201,7 +201,7 @@
  		chown "$(DEFANGUSER)" $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-ip-key > /dev/null 2>&1 || true; \
  		mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ > /dev/null 2>&1 || true; \
  		chown "$(DEFANGUSER)" $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ || true; \
@@ -9,7 +9,7 @@
  		mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ > /dev/null 2>&1 || true; \
  		chown "$(DEFANGUSER)" $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ || true; \
  		chmod 700 $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ || exit 1; \
-@@ -196,12 +196,11 @@
+@@ -215,12 +215,11 @@
  	-mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man5 && chmod 755 $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man5
  	-mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man7 && chmod 755 $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man7
  	-mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man8 && chmod 755 $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man8
@@ -25,7 +25,7 @@
  		@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter || exit 1; \
  	fi
  
-@@ -221,9 +220,8 @@
+@@ -242,9 +241,8 @@
  	if test "$(HAVE_SPAM_ASSASSIN)" = "yes" ; then \
  		mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR} > /dev/null 2>&1 ; \
  		chmod 755 $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR} ;\

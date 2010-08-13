@@ -1,0 +1,89 @@
+--- examples/init-script.in.orig	2009-05-04 17:34:32.000000000 +0200
++++ examples/init-script.in	2010-08-13 10:34:05.000000000 +0200
+@@ -39,6 +39,12 @@
+ # The socket used by mimedefang to communicate with sendmail
+ # SOCKET=$SPOOLDIR/mimedefang.sock
+ 
++# Timeout while waiting for socket to appear
++# SOCKET_TIMEOUT=60
++
++# The value of socket file access mode
++# SOCKET_MODE=600
++
+ # Run the multiplexor and filters as this user, not root.  RECOMMENDED
+ MX_USER=@DEFANGUSER@
+ 
+@@ -132,11 +138,11 @@
+ 
+ # Limit slave processes' resident-set size to this many kilobytes.  Default
+ # is unlimited.
+-# MX_MAX_RSS=10000
++MX_MAX_RSS=100000
+ 
+ # Limit total size of slave processes' memory space to this many kilobytes.
+ # Default is unlimited.
+-# MX_MAX_AS=30000
++MX_MAX_AS=300000
+ 
+ # If you want to use the "notification" facility, set the appropriate port.
+ # See the mimedefang-notify man page for details.
+@@ -189,6 +195,7 @@
+     procname=$PROGDIR/$prog-multiplexor
+     start_cmd="start_it"
+     stop_cmd="stop_it"
++    restart_cmd="restart_it"
+     sig_reload="INT"
+     reread_cmd="reread_it"
+     # provide both "reload", the FreeBSD default, with a direct signal to
+@@ -199,6 +206,8 @@
+ # Make sure required vars are set
+ SOCKET=${SOCKET:=$SPOOLDIR/$prog.sock}
+ MX_SOCKET=${MX_SOCKET:=$SPOOLDIR/$prog-multiplexor.sock}
++SOCKET_TIMEOUT=${SOCKET_TIMEOUT:=60}
++SOCKET_MODE=${SOCKET_MODE:=600}
+ 
+ start_it() {
+     if test -r $PID ; then
+@@ -281,6 +290,29 @@
+ 	kill `cat $MXPID`
+ 	return 1
+     fi
++
++    SOCKET_PREFIX=${SOCKET%:*}
++    # We can have inet or inet6, try to remove 6
++    SOCKET_PREFIX=${SOCKET_PREFIX%6}
++
++    if [ "x$SOCKET" != "x" -a "${SOCKET_PREFIX}" != "inet" ] ; then
++        printf "Waiting for $prog socket."
++        i=${SOCKET_TIMEOUT}
++        while [ $i -ne 0 ]
++        do
++            [ -S "$SOCKET" ] && break
++            printf "."
++            sleep 1
++            i=$(($i-1))
++        done
++        echo ""
++        if [ $i -eq 0 ] ; then
++            echo "There is no $prog socket (${SOCKET})!"
++            return 1
++        fi
++        %%CHMOD%% ${SOCKET_MODE} ${SOCKET} > /dev/null 2>&1
++    fi
++
+     return 0
+ }
+ 
+@@ -368,6 +400,12 @@
+ 	fi
+ }
+ 
++restart_it() {
++    stop_it wait
++    start_it
++    RETVAL=$?
++}
++
+ if type run_rc_command > /dev/null 2>&1
+ then
+     # NetBSD/FreeBSD compatible startup script
