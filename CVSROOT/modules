@@ -9560,6 +9560,7 @@ mp3unicode                      ports/audio/mp3unicode
 mp3val                          ports/audio/mp3val
 mp3wrap                         ports/audio/mp3wrap
 mp4split                        ports/multimedia/mp4split
+mp4v2                           ports/multimedia/mp4v2
 mpack                           ports/converters/mpack
 mpage                           ports/print/mpage
 mpatrol                         ports/devel/mpatrol
@@ -9576,7 +9577,6 @@ mpeg                            ports/multimedia/mpeg
 mpeg2codec                      ports/multimedia/mpeg2codec
 mpeg2play                       ports/multimedia/mpeg2play
 mpeg4ip                         ports/multimedia/mpeg4ip
-mpeg4ip-libmp4v2                ports/multimedia/mpeg4ip-libmp4v2
 mpeg_encode                     ports/multimedia/mpeg_encode
 mpeg_play                       ports/multimedia/mpeg_play
 mpeg_stat                       ports/multimedia/mpeg_stat
@@ -11824,6 +11824,7 @@ p5-Devel-Backtrace              ports/devel/p5-Devel-Backtrace
 p5-Devel-Caller                 ports/devel/p5-Devel-Caller
 p5-Devel-Caller-Perl            ports/devel/p5-Devel-Caller-Perl
 p5-Devel-Callsite               ports/devel/p5-Devel-Callsite
+p5-Devel-CheckLib               ports/devel/p5-Devel-CheckLib
 p5-Devel-CheckOS                ports/devel/p5-Devel-CheckOS
 p5-Devel-Constants              ports/devel/p5-Devel-Constants
 p5-Devel-CoreStack              ports/devel/p5-Devel-CoreStack
@@ -12948,6 +12949,7 @@ p5-MooseX-ConfigFromFile        ports/devel/p5-MooseX-ConfigFromFile
 p5-MooseX-Daemonize             ports/devel/p5-MooseX-Daemonize
 p5-MooseX-Declare               ports/devel/p5-MooseX-Declare
 p5-MooseX-Emulate-Class-Accessor-Fast  ports/devel/p5-MooseX-Emulate-Class-Accessor-Fast
+p5-MooseX-FollowPBP             ports/devel/p5-MooseX-FollowPBP
 p5-MooseX-Getopt                ports/devel/p5-MooseX-Getopt
 p5-MooseX-Has-Sugar             ports/devel/p5-MooseX-Has-Sugar
 p5-MooseX-IOC                   ports/devel/p5-MooseX-IOC
@@ -15723,6 +15725,7 @@ p5-devel-backtrace              ports/devel/p5-Devel-Backtrace
 p5-devel-caller                 ports/devel/p5-Devel-Caller
 p5-devel-caller-perl            ports/devel/p5-Devel-Caller-Perl
 p5-devel-callsite               ports/devel/p5-Devel-Callsite
+p5-devel-checklib               ports/devel/p5-Devel-CheckLib
 p5-devel-checkos                ports/devel/p5-Devel-CheckOS
 p5-devel-constants              ports/devel/p5-Devel-Constants
 p5-devel-corestack              ports/devel/p5-Devel-CoreStack
@@ -16872,6 +16875,7 @@ p5-moosex-configfromfile        ports/devel/p5-MooseX-ConfigFromFile
 p5-moosex-daemonize             ports/devel/p5-MooseX-Daemonize
 p5-moosex-declare               ports/devel/p5-MooseX-Declare
 p5-moosex-emulate-class-accessor-fast  ports/devel/p5-MooseX-Emulate-Class-Accessor-Fast
+p5-moosex-followpbp             ports/devel/p5-MooseX-FollowPBP
 p5-moosex-getopt                ports/devel/p5-MooseX-Getopt
 p5-moosex-has-sugar             ports/devel/p5-MooseX-Has-Sugar
 p5-moosex-insideout             ports/devel/p5-MooseX-InsideOut
