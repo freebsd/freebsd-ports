@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e19e74a4-a712-11df-b234-001b2134ef46">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><lt>9.0r280</lt></range>
+      </package>
+      <package>
+	<name>linux-f8-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>10.1r82</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Product Security Incident Response Team reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb10-16.html">
+	  <p>Critical  vulnerabilities have been identified in Adobe
+	    Flash Player version 10.1.53.64 and earlier. These
+	    vulnerabilities could cause the application to crash and
+	    could potentially allow an attacker to take control of the
+	    affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-0209</cvename>
+      <cvename>CVE-2010-2188</cvename>
+      <cvename>CVE-2010-2213</cvename>
+      <cvename>CVE-2010-2214</cvename>
+      <cvename>CVE-2010-2215</cvename>
+      <cvename>CVE-2010-2216</cvename>
+      <url>http://www.adobe.com/support/security/bulletins/apsb10-16.html</url>
+    </references>
+    <dates>
+      <discovery>2010-01-06</discovery>
+      <entry>2010-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="71273c4d-a6ec-11df-8a8d-0008743bf21a">
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
