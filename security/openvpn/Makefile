@@ -16,7 +16,7 @@ MASTER_SITES=	http://openvpn.net/release/
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure IP/Ethernet tunnel daemon
 
-CONFLICTS=	openvpn-devel-[0-9]* openvpn-2.0*
+CONFLICTS=	openvpn-devel-[0-9]* openvpn-2.0* openvpn-beta-[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
