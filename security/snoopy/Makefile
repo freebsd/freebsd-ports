@@ -20,7 +20,7 @@ PORTDOCS=	README
 GNU_CONFIGURE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/README
+	@${REINPLACE_CMD} 's|/usr/local|${PREFIX}|g' ${WRKSRC}/README
 	@${REINPLACE_CMD} '/^LIBS.*/d' ${WRKSRC}/Makefile.in
 
 do-install:
