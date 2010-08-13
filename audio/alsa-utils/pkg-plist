@@ -32,6 +32,8 @@ share/sounds/alsa/Rear_Left.wav
 share/sounds/alsa/Rear_Right.wav
 share/sounds/alsa/Side_Left.wav
 share/sounds/alsa/Side_Right.wav
+@dirrmtry man/fr/man8
+@dirrmtry man/fr
 @dirrmtry share/sounds/alsa
 @dirrmtry share/sounds
 @dirrmtry share/alsa/speaker-test
