@@ -455,7 +455,7 @@ bin/sndplay
 %%SCHEME%%%%DATADIR%%/toolbar.scm
 %%SCHEME%%%%DATADIR%%/tools/check-help.scm
 %%SCHEME%%%%DATADIR%%/tools/gldata.scm
-%%SCHEME%%%%DATADIR%%/tools/indexer.scm
+%%SCHEME%%%%DATADIR%%/tools/make-index.scm
 %%SCHEME%%%%DATADIR%%/tools/makegl.scm
 %%SCHEME%%%%DATADIR%%/tools/makexg.scm
 %%SCHEME%%%%DATADIR%%/tools/nor.scm
