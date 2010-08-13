@@ -103,9 +103,9 @@ pre-install:
 	@${CHOWN} -R ${SQUID_UID}:${SQUID_GID} ${SAMPLE_BL_DIR}
 	${CHMOD} -R 550 ${SAMPLE_BL_DIR}
 .endif
+	@${MKDIR} ${DATADIR}
 .if ${INSTALL_BL} == "yes"
 	@${ECHO_MSG} "===>   Installing blacklists"
-	@${MKDIR} ${DATADIR}
 	@${CP} -Rpf ${_DATADIR}/* ${DATADIR}/
 	@${CHOWN} -R ${SQUID_UID}:${SQUID_GID} ${DATADIR}
 	@${CHMOD} -R 550 ${DATADIR}
