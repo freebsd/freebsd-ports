@@ -25,6 +25,7 @@
     SUBDIR += vnterm
     SUBDIR += vntex
     SUBDIR += vnxfonts
+    SUBDIR += x-unikey
     SUBDIR += xvnkb
 
 .include <bsd.port.subdir.mk>
