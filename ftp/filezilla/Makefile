@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	filezilla
-PORTVERSION=	3.3.3
-PORTREVISION=	1
+PORTVERSION=	3.3.4
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -33,7 +32,6 @@ WX_CONF_ARGS=	relative
 WX_UNICODE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--with-tinyxml="system"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		filezilla.1 fzputtygen.1 fzsftp.1
