@@ -203,6 +203,7 @@ include/ibus-1.0/ibusconfig.h
 include/ibus-1.0/ibusconfigservice.h
 include/ibus-1.0/ibusconnection.h
 include/ibus-1.0/ibusdebug.h
+include/ibus-1.0/ibusdbus.h
 include/ibus-1.0/ibusengine.h
 include/ibus-1.0/ibusenginedesc.h
 include/ibus-1.0/ibusenumtypes.h
@@ -236,12 +237,14 @@ lib/gtk-2.0/2.10.0/immodules/im-ibus.so
 lib/libibus.la
 lib/libibus.so
 lib/libibus.so.2
+lib/girepository-1.0/IBus-1.0.typelib
 libdata/pkgconfig/ibus-1.0.pc
 libexec/ibus-gconf
 libexec/ibus-ui-gtk
 libexec/ibus-x11
 share/applications/ibus-setup.desktop
 share/applications/ibus.desktop
+share/gir-1.0/IBus-1.0.gir
 share/gtk-doc/html/ibus/IBusAttrList.html
 share/gtk-doc/html/ibus/IBusBus.html
 share/gtk-doc/html/ibus/IBusComponent.html
@@ -300,6 +303,7 @@ share/icons/hicolor/scalable/apps/ibus-engine.svg
 share/icons/hicolor/scalable/apps/ibus-keyboard.svg
 share/icons/hicolor/scalable/apps/ibus-setup.svg
 share/icons/hicolor/scalable/apps/ibus.svg
+%%VALA%%share/vala/vapi/ibus-1.0.vapi
 @dirrm %%DATADIR%%/ui/gtk
 @dirrm %%DATADIR%%/ui
 @dirrmtry %%DATADIR%%/icons

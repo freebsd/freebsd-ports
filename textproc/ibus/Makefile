@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ibus
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.3.5
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -29,7 +28,8 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	ibus.schemas
 
-OPTIONS=	ISOCODES "Use isocodecs" on
+OPTIONS=	ISOCODES "Use isocodecs" on \
+		VALA "Install vala binding" on
 
 .include <bsd.port.pre.mk>
 
@@ -47,6 +47,14 @@ PLIST_SUB+=	NLS=""
 CPPFLAGS=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if defined(WITH_VALA)
+CONFIGURE_ARGS+=	--enable-vala
+PLIST_SUB+=	VALA=""
+.else
+CONFIGURE_ARGS+=	--disable-vala
+PLIST_SUB+=	VALA="@comment "
 .endif
 
 post-patch:
