@@ -6,30 +6,30 @@
 #
 
 PORTNAME=	ecl
-PORTVERSION=	0.9l
-PORTREVISION=	3
+PORTVERSION=	10.4.1
 CATEGORIES=	lang lisp
-MASTER_SITES=	SF/${PORTNAME}s/${PORTNAME}s/${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	SF/${PORTNAME}s/${PORTNAME}s/10.4/
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	An ANSI Common Lisp implementation
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp gc.1:${PORTSDIR}/devel/boehm-gc
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-system-gmp --enable-boehm=system
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-CFLAGS=	-I${LOCALBASE}/include
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+CFLAGS=		-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
+USE_LDCONFIG=	yes
 
 OPTIONS=	ASDF "Enable ASDF building facility" on \
-		CLOS_STREAMS "Enable user defined stream objects" on \
 		CLX "Enable X11 interface" off \
 		SOCKETS "Enable socket interface" on \
 		THREADS "Enable threading support" off
+
+MAN1=		ecl.1
 
 .include <bsd.port.pre.mk>
 
@@ -43,14 +43,6 @@ PLIST_SUB+=	ASDF=""
 .else
 CONFIGURE_ARGS+=--with-asdf=no
 PLIST_SUB+=	ASDF="@comment "
-.endif
-
-.if !defined(WITHOUT_CLOS_STREAMS)
-CONFIGURE_ARGS+=--with-clos-streams=yes
-PLIST_SUB+=	CLOS_STREAMS=""
-.else
-CONFIGURE_ARGS+=--with-clos-streams=no
-PLIST_SUB+=	CLOS_STREAMS="@comment "
 .endif
 
 .if defined(WITH_CLX)
@@ -74,14 +66,18 @@ PLIST_SUB+=	SOCKETS="@comment "
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=--enable-threads=yes
 LDFLAGS+=	${PTHREAD_LIBS}
+LIB_DEPENDS+=	gc-threaded.1:${PORTSDIR}/devel/boehm-gc-threaded
 .else
 CONFIGURE_ARGS+=--enable-threads=no
+LIB_DEPENDS+=	gc.1:${PORTSDIR}/devel/boehm-gc
 .endif
 
 .if defined(WITH_THREADS)
 post-patch:
 	@${REINPLACE_CMD} -e 's|_NP[[:>:]]||' \
 		${WRKSRC}/src/c/package.d ${WRKSRC}/src/c/threads.d
+	@${REINPLACE_CMD} -e 's|-lgc|-lgc-threaded|' \
+		-e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/src/configure
 .endif
 
 .include <bsd.port.post.mk>
