@@ -1,5 +1,7 @@
 lib/xorg/modules/drivers/vmware_drv.la
 lib/xorg/modules/drivers/vmware_drv.so
+lib/xorg/modules/drivers/vmwlegacy_drv.so
+lib/xorg/modules/drivers/vmwlegacy_drv.la
 @dirrmtry lib/xorg/modules/drivers
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg
