@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SUB_FILES=	squirrel-sql
 PKGMESSAGE=	pkg-messages
 
-PORTDATA=	*
 DATADIR=	${PREFIX}/share/java/${UNIQUENAME}
 
 DESKTOP_ENTRIES="Squirrel-SQL Client" \
