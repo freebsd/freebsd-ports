@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
-PORTREVISION=	2
+PORTVERSION=	${OPERA_VER}.${OPERA_BUILD}
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://opera.inode.at/${MASTER_SITES_VER_PATH} \
 		http://gd.tuwien.ac.at/infosys/browsers/opera/${MASTER_SITES_VER_PATH} \
@@ -25,20 +24,16 @@ MASTER_SITES=	ftp://opera.inode.at/${MASTER_SITES_VER_PATH} \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/${MASTER_SITES_VER_PATH}&,} \
 		ftp://ftp.opera.com/pub/opera/${MASTER_SITES_VER_PATH}
 PKGNAMESUFFIX=	-linuxplugins
-DISTNAME=	${PORTNAME}-${OPERA_VER}.gcc3-shared-qt3.i386
+DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.i386.linux
 
 MAINTAINER=	freebsd-maintainer@opera.com
 COMMENT=	Linux plugin support for the native Opera browser
 
-RUN_DEPENDS=	${PREFIX}/share/opera/bin/operapluginwrapper:${PORTSDIR}/www/opera
+RUN_DEPENDS=	${PREFIX}/lib/opera/operapluginwrapper:${PORTSDIR}/www/opera
 
-OPERA_VER=	10.10
-OPERA_MINVER=
-OPERA_REL=	final
-OPERA_DATE=	20091120
-OPERA_BUILD=	4742
-MASTER_SITES_VER_PATH=	linux/${OPERA_VER:S/.//}${OPERA_MINVER}/${OPERA_REL}/en/i386/shared/
-WRKSRC=		${WRKDIR}/${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.gcc3-shared-qt3.i386
+OPERA_VER=	10.61
+OPERA_BUILD=	6430
+MASTER_SITES_VER_PATH=	linux/${OPERA_VER:S/.//}/
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
@@ -48,9 +43,9 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 NO_BUILD=	yes
 
-PLIST_FILES=	share/opera/bin/operapluginwrapper.linux
+PLIST_FILES=	lib/opera/operapluginwrapper.linux
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/usr/lib/opera/operapluginwrapper ${PREFIX}/share/opera/bin/operapluginwrapper.linux
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/opera/operapluginwrapper ${PREFIX}/lib/opera/operapluginwrapper.linux
 
 .include <bsd.port.mk>
