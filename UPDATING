@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100813:
+  AFFECTS: www/opera
+  AUTHOR: dinoex@
+
+  If you run opera without gtk or kde4, the browser might crash on shutdown.
+  In this case go to about:config and change "Dialog Toolkit" from 0 to 4.
+
 20100811:
   AFFECTS: multimedia/mpeg4ip-libmp4v2
   AUTHOR: makc@FreeBSD.org
