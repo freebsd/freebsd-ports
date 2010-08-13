@@ -134,10 +134,27 @@
 %%WWWDIR%%/help/help.inc
 %%WWWDIR%%/help/.htaccess
 %%WWWDIR%%/index.html
+%%WWWDIR%%/lib/html.inc
+%%WWWDIR%%/lib/modules/asteriskVoicemail.inc
+%%WWWDIR%%/lib/modules/hostObject.inc
+%%WWWDIR%%/lib/3rdParty/phpseclib/PHP/Compat/Function/str_split.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/PHP/Compat/Function/bcpowmod.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/PHP/Compat/Function/array_fill.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Net/SSH1.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Net/SSH2.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Net/SFTP.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Math/BigInteger.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Crypt/RSA.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Crypt/Hash.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Crypt/TripleDES.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Crypt/AES.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Crypt/RC4.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Crypt/DES.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Crypt/Random.php
+%%WWWDIR%%/lib/3rdParty/phpseclib/Crypt/Rijndael.php
 %%WWWDIR%%/lib/.htaccess
 %%WWWDIR%%/lib/tools.inc
 %%WWWDIR%%/lib/account.inc
-%%WWWDIR%%/lib/account.inc.orig
 %%WWWDIR%%/lib/baseModule.inc
 %%WWWDIR%%/lib/baseType.inc
 %%WWWDIR%%/lib/cache.inc
@@ -255,6 +272,37 @@
 %%WWWDIR%%/style/type_netgroup.css
 %%WWWDIR%%/style/type_smbDomain.css
 %%WWWDIR%%/style/type_user.css
+%%WWWDIR%%/style/jquery.ui.autocomplete.css
+%%WWWDIR%%/style/jquery.ui.datepicker.css
+%%WWWDIR%%/style/jquery.ui.accordion.css
+%%WWWDIR%%/style/jquery.ui.dialog.css
+%%WWWDIR%%/style/jquery.ui.base.css
+%%WWWDIR%%/style/jquery-ui-1.8.2.custom.css
+%%WWWDIR%%/style/jquery.ui.slider.css
+%%WWWDIR%%/style/jquery.ui.button.css
+%%WWWDIR%%/style/jquery.ui.selectable.css
+%%WWWDIR%%/style/jquery.ui.theme.css
+%%WWWDIR%%/style/jquery.ui.resizable.css
+%%WWWDIR%%/style/images/ui-icons_888888_256x240.png
+%%WWWDIR%%/style/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%WWWDIR%%/style/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/style/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%WWWDIR%%/style/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/style/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/style/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/style/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/style/images/ui-anim_basic_16x16.gif
+%%WWWDIR%%/style/images/ui-bg_glass_75_dadada_1x400.png
+%%WWWDIR%%/style/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/style/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%WWWDIR%%/style/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/style/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/style/jquery.ui.all.css
+%%WWWDIR%%/style/jquery.ui.progressbar.css
+%%WWWDIR%%/style/jquery.ui.core.css
+%%WWWDIR%%/style/jquery.ui.tabs.css
+%%WWWDIR%%/templates/lib/jquery-1.4.2.min.js
+%%WWWDIR%%/templates/lib/jquery-ui-1.8.2.custom.min.js
 %%WWWDIR%%/templates/.htaccess
 %%WWWDIR%%/templates/account/edit.php
 %%WWWDIR%%/templates/config/conflogin.php
@@ -271,7 +319,6 @@
 %%WWWDIR%%/templates/help.php
 %%WWWDIR%%/templates/initsuff.php
 %%WWWDIR%%/templates/lib/config.js
-%%WWWDIR%%/templates/lib/jquery-1.3.2.min.js
 %%WWWDIR%%/templates/lib/list.js
 %%WWWDIR%%/templates/lib/wz_tooltip.js
 %%WWWDIR%%/templates/lists/deletelink.php
@@ -339,6 +386,7 @@
 @dirrm %%WWWDIR%%/templates/config
 @dirrm %%WWWDIR%%/templates/account
 @dirrm %%WWWDIR%%/templates
+@dirrm %%WWWDIR%%/style/images
 @dirrm %%WWWDIR%%/style
 @dirrm %%WWWDIR%%/sess
 @dirrm %%WWWDIR%%/locale/zh_TW/LC_MESSAGES
@@ -375,6 +423,14 @@
 @dirrm %%WWWDIR%%/lib/modules/sambaSamAccount
 @dirrm %%WWWDIR%%/lib/modules
 @dirrm %%WWWDIR%%/lib/font
+@dirrm %%WWWDIR%%/lib/3rdParty/phpseclib/Crypt
+@dirrm %%WWWDIR%%/lib/3rdParty/phpseclib/Math
+@dirrm %%WWWDIR%%/lib/3rdParty/phpseclib/Net
+@dirrm %%WWWDIR%%/lib/3rdParty/phpseclib/PHP/Compat/Function
+@dirrm %%WWWDIR%%/lib/3rdParty/phpseclib/PHP/Compat
+@dirrm %%WWWDIR%%/lib/3rdParty/phpseclib/PHP
+@dirrm %%WWWDIR%%/lib/3rdParty/phpseclib
+@dirrm %%WWWDIR%%/lib/3rdParty
 @dirrm %%WWWDIR%%/lib
 @dirrm %%WWWDIR%%/help
 @dirrm %%WWWDIR%%/graphics
