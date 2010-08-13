@@ -160,6 +160,7 @@
     SUBDIR += rzip
     SUBDIR += sectar
     SUBDIR += sharutils
+    SUBDIR += squeeze
     SUBDIR += squsq
     SUBDIR += star
     SUBDIR += stuffit

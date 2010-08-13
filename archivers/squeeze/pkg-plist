@@ -1,0 +1,57 @@
+bin/squeeze
+include/libsqueeze-0.2/libsqueeze/libsqueeze-archive.h
+include/libsqueeze-0.2/libsqueeze/libsqueeze-command.h
+include/libsqueeze-0.2/libsqueeze/libsqueeze-module.h
+include/libsqueeze-0.2/libsqueeze/libsqueeze-vfs-mime.h
+include/libsqueeze-0.2/libsqueeze/libsqueeze-view.h
+include/libsqueeze-0.2/libsqueeze/libsqueeze.h
+lib/libsqueeze-0.2.so.0
+lib/libsqueeze-0.2.so
+lib/libsqueeze-0.2.la
+lib/libsqueeze-0.2.a
+libdata/pkgconfig/libsqueeze-0.2.pc
+libexec/thunar-archive-plugin/squeeze.tap
+share/locale/ar/LC_MESSAGES/squeeze.mo
+share/locale/be/LC_MESSAGES/squeeze.mo
+share/locale/ca/LC_MESSAGES/squeeze.mo
+share/locale/cs/LC_MESSAGES/squeeze.mo
+share/locale/el/LC_MESSAGES/squeeze.mo
+share/locale/en_GB/LC_MESSAGES/squeeze.mo
+share/locale/eu/LC_MESSAGES/squeeze.mo
+share/locale/fi/LC_MESSAGES/squeeze.mo
+share/locale/fr/LC_MESSAGES/squeeze.mo
+share/locale/hu/LC_MESSAGES/squeeze.mo
+share/locale/nl/LC_MESSAGES/squeeze.mo
+share/locale/pa/LC_MESSAGES/squeeze.mo
+share/locale/pt_BR/LC_MESSAGES/squeeze.mo
+share/locale/ru/LC_MESSAGES/squeeze.mo
+share/locale/sq/LC_MESSAGES/squeeze.mo
+share/locale/tr/LC_MESSAGES/squeeze.mo
+share/locale/uk/LC_MESSAGES/squeeze.mo
+share/pixmaps/squeeze/archive-add.png
+share/pixmaps/squeeze/archive-extract.png
+%%GTKDOC%%share/gtk-doc/html/libsqueeze/LSQArchive.html
+%%GTKDOC%%share/gtk-doc/html/libsqueeze/LSQArchiveCommand.html
+%%GTKDOC%%share/gtk-doc/html/libsqueeze/archiving.html
+%%GTKDOC%%share/gtk-doc/html/libsqueeze/home.png
+%%GTKDOC%%share/gtk-doc/html/libsqueeze/index.html
+%%GTKDOC%%share/gtk-doc/html/libsqueeze/index.sgml
+%%GTKDOC%%share/gtk-doc/html/libsqueeze/ix01.html
+%%GTKDOC%%share/gtk-doc/html/libsqueeze/left.png
+%%GTKDOC%%share/gtk-doc/html/libsqueeze/libsqueeze-LSQArchiveSupport.html
+%%GTKDOC%%share/gtk-doc/html/libsqueeze/libsqueeze-libsqueeze.html
+%%GTKDOC%%share/gtk-doc/html/libsqueeze/libsqueeze.devhelp
+%%GTKDOC%%share/gtk-doc/html/libsqueeze/libsqueeze.devhelp2
+%%GTKDOC%%share/gtk-doc/html/libsqueeze/libsqueeze.html
+%%GTKDOC%%share/gtk-doc/html/libsqueeze/right.png
+%%GTKDOC%%share/gtk-doc/html/libsqueeze/style.css
+%%GTKDOC%%share/gtk-doc/html/libsqueeze/up.png
+share/icons/hicolor/16x16/apps/squeeze.png
+share/icons/hicolor/48x48/apps/squeeze.png
+share/icons/hicolor/scalable/apps/squeeze.svg
+share/applications/squeeze.desktop
+@dirrmtry share/pixmaps/squeeze
+@dirrmtry share/gtk-doc/html/libsqueeze
+@dirrmtry libexec/thunar-archive-plugin
+@dirrmtry include/libsqueeze-0.2/libsqueeze
+@dirrmtry include/libsqueeze-0.2
