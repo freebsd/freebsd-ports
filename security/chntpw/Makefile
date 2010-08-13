@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	chntpw
-PORTVERSION=	080526
+PORTVERSION=	100627
 CATEGORIES=	security sysutils
-MASTER_SITES=	http://home.eunet.no/pnordahl/ntpasswd/
+MASTER_SITES=	http://pogostick.net/~pnh/ntpasswd/
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	buganini@gmail.com
@@ -30,10 +30,10 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/chntpw ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/chntpw ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
