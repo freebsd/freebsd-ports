@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uhso
-PORTVERSION=	20091122
+PORTVERSION=	20100416
 CATEGORIES=	comms kld
 MASTER_SITES=	http://www.shapeshifter.se/pub/hso/
 PKGNAMESUFFIX=	-kmod
@@ -38,25 +38,33 @@ IGNORE=		requires FreeBSD 8.0 or later, please try comms/hso-kmod instead
 .endif
 
 .if !defined(WITHOUT_UHSOCTL)
-UHSOCTL_VERSION=	20090820
-DISTFILES+=	uhsoctl-beta-${UHSOCTL_VERSION}${EXTRACT_SUFX}
-WRKSRC_UHSOCTL=	${WRKDIR}/uhsoctl-beta-${UHSOCTL_VERSION}
+UHSOCTL_VERSION=	20100416
+DISTFILES+=	uhsoctl-${UHSOCTL_VERSION}${EXTRACT_SUFX}
+WRKSRC_UHSOCTL=	${WRKDIR}/uhsoctl-${UHSOCTL_VERSION}
 PLIST_SUB+=	PL_UHSOCTL=""
 MAN1=	uhsoctl.1
 .else
 PLIST_SUB+=	PL_UHSOCTL="@comment "
 .endif
 
-.if defined(WITH_DEBUG)
-EXTRA_PATCHES+=	${PATCHDIR}/UHSO-DEBUG-patch-Makefile
+.if !defined(WITH_DEBUG)
+EXTRA_PATCHES+=	${PATCHDIR}/UHSO-NODEBUG-patch-Makefile
+.endif
+
+pre-fetch:
+.if ${OSVERSION} >= 800501
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "==================================================================="
+	@${ECHO_CMD} " Warning: the uhso driver is already available in the base system,"
+	@${ECHO_CMD} "          you may want to use this version instead of the port."
+	@${ECHO_CMD} "==================================================================="
+	@${ECHO_CMD} ""
 .endif
 
 post-patch:
 .if !defined(WITHOUT_UHSOCTL)
 .if defined(WITH_DEBUG)
 	@${PATCH} -d ${WRKSRC_UHSOCTL} < ${PATCHDIR}/UHSOCTL-DEBUG-patch-Makefile
-.else
-	@${PATCH} -d ${WRKSRC_UHSOCTL} < ${PATCHDIR}/UHSOCTL-NODEBUG-patch-Makefile
 .endif
 .endif
 
