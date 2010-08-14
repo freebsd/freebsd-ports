@@ -35,6 +35,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack glib20 libxslt intlhack referencehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ARGS=	--without-sybase \
 		--enable-introspection
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
