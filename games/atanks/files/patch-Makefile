@@ -1,0 +1,11 @@
+--- Makefile.orig	2010-06-10 10:03:35.000000000 -0300
++++ Makefile	2010-06-10 11:00:00.000000000 -0300
+@@ -16,7 +16,7 @@
+ INCOMMON=COPYING README TODO Changelog *.txt unicode.dat
+ 
+ all:
+-	FLAGS=-DLINUX $(MAKE) -C src
++	FLAGS=-DMACOSX $(MAKE) -C src -f Makefile.bsd
+ 
+ install: 
+ 	mkdir -p ${BINDIR}

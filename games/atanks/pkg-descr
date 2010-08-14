@@ -1,0 +1,9 @@
+This is a port of Atomic Tanks, a 2D tank game where small tanks use
+cartoonishly large weapons to blow up each other. Atomic Tanks is loosely
+based on the classic DOS game, Scorched Earth. The game is very
+flexible, allowing anywhere from two to ten players, variable environments
+and a wide range of weapons and other items.
+
+To work, this game requires that the Allegro graphics library be installed.
+
+WWW: http://atanks.sourceforge.net/
