@@ -21,4 +21,10 @@ USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/rdebug-ide
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64
+.endif
+
+.include <bsd.port.post.mk>
