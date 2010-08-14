@@ -1,162 +1,79 @@
 bin/kaffeine
-include/kaffeine/kaffeineaudioencoder.h
-include/kaffeine/mrl.h
-include/kaffeine/kaffeinepart.h
-include/kaffeine/xine_part.h
-include/kaffeine/xine_part_iface.h
-include/kaffeine/kaffeinedvbevents.h
-include/kaffeine/kaffeinedvbplugin.h
-include/kaffeine/kaffeinedvbsection.h
-%%NOGSTREAMER%%lib/kde3/libgstreamerpart.a
-%%NOGSTREAMER%%lib/kde3/libgstreamerpart.so
-%%NOGSTREAMER%%lib/kde3/libgstreamerpart.la
-%%NOLAME%%lib/kde3/libkaffeinemp3lame.a
-%%NOLAME%%lib/kde3/libkaffeinemp3lame.la
-%%NOLAME%%lib/kde3/libkaffeinemp3lame.so
-lib/kde3/libkaffeineoggvorbis.a
-lib/kde3/libkaffeineoggvorbis.la
-lib/kde3/libkaffeineoggvorbis.so
-lib/libkaffeineaudioencoder.a
-lib/libkaffeineaudioencoder.la
-lib/libkaffeineaudioencoder.so
-lib/libkaffeineaudioencoder.so.0
-lib/libkaffeineepgplugin.so.0
-lib/libkaffeineepgplugin.so
-lib/libkaffeineepgplugin.la
-lib/libkaffeineepgplugin.a
-lib/libkaffeinepart.so
-lib/libkaffeinepart.la
-lib/libkaffeinepart.a
-lib/libkaffeinedvbplugin.so.0
-lib/libkaffeinedvbplugin.so
-lib/libkaffeinedvbplugin.la
-lib/libkaffeinedvbplugin.a
-lib/kde3/libxinepart.so
-lib/kde3/libxinepart.la
-lib/kde3/libxinepart.a
-share/applications/kde/kaffeine.desktop
-%%NOGSTREAMER%%share/apps/gstreamerpart/gstreamer_part.rc
-share/apps/kaffeine/kaffeinedisc.rc
-share/apps/kaffeine/kaffeineplaylist.rc
-share/apps/kaffeine/kaffeineui.rc
-share/apps/kaffeine/nocover.png
-share/apps/kaffeine/logo
-share/apps/kaffeine/logo.mpg
-share/apps/kaffeine/logo.avi
-share/apps/kaffeine/mms.protocol
-share/apps/kaffeine/rtsp.protocol
-share/apps/kaffeine/dvbdata.tar.gz
-share/apps/kaffeine/xine_part.rc
-share/apps/kaffeine/pics/playing.png
-share/apps/kaffeine/kaffeinedvb.rc
-share/apps/konqueror/servicemenus/kaffeine_open_directory.desktop
-share/apps/konqueror/servicemenus/kaffeine_append_file.desktop
-share/apps/konqueror/servicemenus/kaffeine_play_audiocd.desktop
-share/apps/konqueror/servicemenus/kaffeine_play_dvd.desktop
-share/apps/konqueror/servicemenus/kaffeine_play_vcd.desktop
+bin/kaffeine-xbu
+share/applications/kde4/kaffeine.desktop
+share/apps/kaffeine/scanfile.dvb
 share/apps/profiles/kaffeine.profile.xml
-share/doc/HTML/en/kaffeine/startwindow.png
-share/doc/HTML/en/kaffeine/kaffeinepart.png
-share/doc/HTML/en/kaffeine/playlistwin.png
-share/doc/HTML/en/kaffeine/index.docbook
-share/doc/HTML/en/kaffeine/index.cache.bz2
-share/doc/HTML/en/kaffeine/common
-share/doc/HTML/en/kaffeine/discwindow.png
-share/doc/HTML/en/kaffeine/dvbbroadcast.png
-share/doc/HTML/en/kaffeine/dvbclient.png
-share/doc/HTML/en/kaffeine/dvbwin.png
-share/doc/HTML/en/kaffeine/dvblive.jpg
-share/doc/HTML/en/kaffeine/dvbscan.png
-share/doc/HTML/en/kaffeine/dvbepg.png
-share/doc/HTML/en/kaffeine/dvbconfig.png
-share/doc/HTML/en/kaffeine/dvbtimers.png
-share/doc/HTML/en/kaffeine/gstpart.png
-share/icons/hicolor/128x128/apps/kaffeine.png
-%%NOGSTREAMER%%share/icons/hicolor/16x16/apps/gstreamer.png
-share/icons/hicolor/16x16/apps/kaffeine.png
-share/icons/hicolor/16x16/apps/kdvbra.png
-share/icons/hicolor/16x16/apps/kdvbrac.png
-share/icons/hicolor/16x16/apps/kdvbtv.png
-share/icons/hicolor/16x16/apps/kdvbtvc.png
-share/icons/hicolor/16x16/apps/kilogram.png
-share/icons/hicolor/16x16/mimetypes/mime_kaffeine.png
-share/icons/hicolor/16x16/actions/player_mute.png
-share/icons/hicolor/16x16/actions/player_record.png
-share/icons/hicolor/22x22/apps/kaffeine.png
-share/icons/hicolor/22x22/apps/kilogram.png
-share/icons/hicolor/22x22/actions/player_mute.png
-share/icons/hicolor/22x22/actions/player_record.png
-share/icons/hicolor/32x32/actions/player_mute.png
-share/icons/hicolor/32x32/actions/player_record.png
-share/icons/hicolor/32x32/apps/kaffeine-pause.png
-share/icons/hicolor/32x32/apps/kaffeine-play.png
-share/icons/hicolor/32x32/apps/kaffeine-record.png
-share/icons/hicolor/32x32/apps/kaffeine.png
-share/icons/hicolor/32x32/apps/kilogram.png
-share/icons/hicolor/32x32/mimetypes/mime_kaffeine.png
-share/icons/hicolor/48x48/apps/kaffeine.png
-share/icons/hicolor/48x48/mimetypes/mime_kaffeine.png
-share/icons/hicolor/64x64/apps/kaffeine.png
-share/locale/bg/LC_MESSAGES/kaffeine.mo
-share/locale/bn/LC_MESSAGES/kaffeine.mo
-share/locale/br/LC_MESSAGES/kaffeine.mo
+share/apps/solid/actions/kaffeine_play_audiocd.desktop
+share/apps/solid/actions/kaffeine_play_dvd.desktop
+share/apps/solid/actions/kaffeine_play_videocd.desktop
+share/icons/oxygen/16x16/actions/audio-radio-encrypted.png
+share/icons/oxygen/16x16/actions/video-television-encrypted.png
+share/icons/oxygen/22x22/actions/audio-radio-encrypted.png
+share/icons/oxygen/22x22/actions/video-television-encrypted.png
+share/icons/oxygen/32x32/actions/audio-radio-encrypted.png
+share/icons/oxygen/32x32/actions/video-television-encrypted.png
+share/icons/oxygen/48x48/actions/audio-radio-encrypted.png
+share/icons/oxygen/48x48/actions/video-television-encrypted.png
+share/locale/ast/LC_MESSAGES/kaffeine.mo
+share/locale/be/LC_MESSAGES/kaffeine.mo
 share/locale/ca/LC_MESSAGES/kaffeine.mo
+share/locale/ca@valencia/LC_MESSAGES/kaffeine.mo
 share/locale/cs/LC_MESSAGES/kaffeine.mo
 share/locale/da/LC_MESSAGES/kaffeine.mo
 share/locale/de/LC_MESSAGES/kaffeine.mo
 share/locale/el/LC_MESSAGES/kaffeine.mo
+share/locale/en_GB/LC_MESSAGES/kaffeine.mo
+share/locale/eo/LC_MESSAGES/kaffeine.mo
 share/locale/es/LC_MESSAGES/kaffeine.mo
+share/locale/et/LC_MESSAGES/kaffeine.mo
 share/locale/fi/LC_MESSAGES/kaffeine.mo
 share/locale/fr/LC_MESSAGES/kaffeine.mo
 share/locale/ga/LC_MESSAGES/kaffeine.mo
 share/locale/gl/LC_MESSAGES/kaffeine.mo
-share/locale/he/LC_MESSAGES/kaffeine.mo
 share/locale/hu/LC_MESSAGES/kaffeine.mo
+share/locale/hr/LC_MESSAGES/kaffeine.mo
 share/locale/it/LC_MESSAGES/kaffeine.mo
 share/locale/ja/LC_MESSAGES/kaffeine.mo
+share/locale/km/LC_MESSAGES/kaffeine.mo
+share/locale/ko/LC_MESSAGES/kaffeine.mo
+share/locale/ku/LC_MESSAGES/kaffeine.mo
 share/locale/lt/LC_MESSAGES/kaffeine.mo
-share/locale/mk/LC_MESSAGES/kaffeine.mo
+share/locale/mai/LC_MESSAGES/kaffeine.mo
 share/locale/nb/LC_MESSAGES/kaffeine.mo
-share/locale/nn/LC_MESSAGES/kaffeine.mo
+share/locale/nds/LC_MESSAGES/kaffeine.mo
 share/locale/nl/LC_MESSAGES/kaffeine.mo
+share/locale/nn/LC_MESSAGES/kaffeine.mo
 share/locale/pa/LC_MESSAGES/kaffeine.mo
 share/locale/pl/LC_MESSAGES/kaffeine.mo
 share/locale/pt/LC_MESSAGES/kaffeine.mo
 share/locale/pt_BR/LC_MESSAGES/kaffeine.mo
+share/locale/ro/LC_MESSAGES/kaffeine.mo
 share/locale/ru/LC_MESSAGES/kaffeine.mo
+share/locale/se/LC_MESSAGES/kaffeine.mo
 share/locale/sk/LC_MESSAGES/kaffeine.mo
 share/locale/sr/LC_MESSAGES/kaffeine.mo
-share/locale/sr@Latn/LC_MESSAGES/kaffeine.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kaffeine.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kaffeine.mo
+share/locale/sr@latin/LC_MESSAGES/kaffeine.mo
 share/locale/sv/LC_MESSAGES/kaffeine.mo
+share/locale/th/LC_MESSAGES/kaffeine.mo
 share/locale/tr/LC_MESSAGES/kaffeine.mo
 share/locale/uk/LC_MESSAGES/kaffeine.mo
-share/locale/uz/LC_MESSAGES/kaffeine.mo
 share/locale/zh_CN/LC_MESSAGES/kaffeine.mo
-share/locale/et/LC_MESSAGES/kaffeine.mo
 share/locale/zh_TW/LC_MESSAGES/kaffeine.mo
-share/locale/ar/LC_MESSAGES/kaffeine.mo
-share/locale/ka/LC_MESSAGES/kaffeine.mo
-share/locale/km/LC_MESSAGES/kaffeine.mo
-share/locale/se/LC_MESSAGES/kaffeine.mo
-share/locale/tg/LC_MESSAGES/kaffeine.mo
-share/mimelnk/application/x-kaffeine.desktop
-%%NOGSTREAMER%%share/services/gstreamer_part.desktop
-%%NOLAME%%share/services/kaffeinemp3lame.desktop
-share/services/kaffeineoggvorbis.desktop
-share/services/xine_part.desktop
-share/servicetypes/kaffeineaudioencoder.desktop
-share/servicetypes/kaffeinedvbplugin.desktop
-share/servicetypes/kaffeineepgplugin.desktop
-@dirrm include/kaffeine
-@dirrm share/apps/kaffeine/pics
 @dirrm share/apps/kaffeine
-@dirrm share/doc/HTML/en/kaffeine
-@dirrmtry share/apps/konqueror/servicemenus
-@dirrmtry share/apps/konqueror
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/tg/LC_MESSAGES
-@dirrmtry share/locale/tg
-@dirrmtry share/locale/se/LC_MESSAGES
-@dirrmtry share/locale/se
-%%NOGSTREAMER%%@dirrm share/apps/gstreamerpart
+@dirrmtry share/apps/profiles
+@dirrmtry share/icons/oxygen/48x48/actions
+@dirrmtry share/icons/oxygen/48x48
+@dirrmtry share/icons/oxygen/32x32/actions
+@dirrmtry share/icons/oxygen/32x32
+@dirrmtry share/icons/oxygen/22x22/actions
+@dirrmtry share/icons/oxygen/22x22
+@dirrmtry share/icons/oxygen/16x16/actions
+@dirrmtry share/icons/oxygen/16x16
+@dirrmtry share/locale/sr@ijekavian/LC_MESSAGES
+@dirrmtry share/locale/sr@ijekavian
+@dirrmtry share/locale/sr@ijekavianlatin/LC_MESSAGES
+@dirrmtry share/locale/sr@ijekavianlatin
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
