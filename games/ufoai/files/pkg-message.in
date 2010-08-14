@@ -14,9 +14,13 @@ The UFO ALien Invasion was installed
 
    # ufo2map
 
-4) If you are using the UFO CLient, you need a minimal 1024x968 resolution. It 
+4) If you chosen installed radiant map editor, you can run it using:
+
+   # uforadiant
+
+5) If you are using the UFO CLient, you need a minimal 1024x968 resolution. It 
    avoids some problems during the game.
 
-5) Enjoy it ;)
+6) Enjoy it ;)
 
 ###############################################################################
