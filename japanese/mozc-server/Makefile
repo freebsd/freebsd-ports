@@ -32,6 +32,10 @@ USE_PYTHON=	yes
 BROKEN=	Does not compile on FreeBSD 7.X
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: segfault
+.endif
+
 .if defined(WITH_DIC_UT)
 WITH_DIC_UT_MEISHI=yes
 WITH_DIC_UT_JINMEI=yes
