@@ -7,16 +7,27 @@
 
 PORTNAME=	erlang
 PORTVERSION=	r13b04
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	lang parallel java
-MASTER_SITES=	http://www.erlang.org/download/        \
-		ftp://ftp.erlang.org/pub/download/     \
-		http://www.erlang.org/download/        \
-		http://erlang.stacken.kth.se/download/ \
-		http://www.csd.uu.se/ftp/mirror/erlang/download/
+MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
+		http://erlang.stacken.kth.se/download/:erlangorg	\
+		http://www.csd.uu.se/ftp/mirror/erlang/download/:erlangorg \
+		http://www.erlang.se/doc/:erlangse			\
+		http://www.erlang.se/publications/:publications		\
+		http://www.sics.se/~joe/thesis/:joe			\
+		${MASTER_SITE_LOCAL:S/$/:local/}
 DISTNAME=	otp_src_R13B04
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ERLANG_MAN} ${ERLANG_DOCS}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg	\
+		${ERLANG_MAN}:erlangorg			\
+		${ERLANG_DOCS}:erlangorg		\
+		${DOC_DISTFILES}
+DOC_DISTFILES=	armstrong_thesis_2003.pdf:joe		\
+		bjarnelic.pdf:publications		\
+		erlang-book-part1.pdf:erlangorg		\
+		master_thesis_patterns.pdf:local	\
+		mnesia_overview.pdf:publications	\
+		programming_rules.pdf:erlangse
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -155,6 +166,11 @@ post-install:
 		-C ${PREFIX}/lib/erlang
 	@${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
 		${LOCALBASE}/lib/erlang/lib/dialyzer-*/doc/
+
+	@${MKDIR} ${PREFIX}/share/doc/erlang
+.for FILE in ${DOC_DISTFILES}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$$(expr ${FILE} : '\([^:]*\)') ${PREFIX}/share/doc/erlang
+.endfor
 .endif
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/erlang
 	@${CHMOD} -R o+rX-w,g+rX-w ${PREFIX}/lib/erlang
