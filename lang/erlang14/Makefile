@@ -30,11 +30,11 @@ CONFLICTS?=	erlang-lite-r[0-9]*
 SUB_FILES=	pkg-message
 SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
 
-OPTIONS=	JAVA "Enable Java applications" on \
-		X11 "Enable X11 support" on \
-		WX "Enable WX Extensions" on \
-		ODBC "Enable ODBC" on \
-		SMP "Enable SMP" on
+OPTIONS=	JAVA	"Enable Java applications"	on \
+		X11	"Enable X11 support"		on \
+		WX	"Enable WX Extensions"		on \
+		ODBC	"Enable ODBC"			on \
+		SMP	"Enable SMP"			on
 
 .include <bsd.port.pre.mk>
 
@@ -161,13 +161,13 @@ post-install:
 
 # All non-library files.
 
-	@cd ${PREFIX} ; ${FIND} lib/erlang/* -type d -empty \
+	@cd ${PREFIX}; ${FIND} lib/erlang/* -type d -empty \
 		| ${GREP} -v "^lib/erlang/lib" \
 		| ${SORT} \
 		| ${SED} -e 's#^#@exec ${MKDIR} %D/#g' \
 		> ${ERLANG_PLIST}
 
-	@cd ${PREFIX} ; ${FIND} lib/erlang/* -type f -o -type l \
+	@cd ${PREFIX}; ${FIND} lib/erlang/* -type f -o -type l \
 		| ${GREP} -v "^lib/erlang/man" \
 		| ${GREP} -v "^lib/erlang/lib" \
 		| ${SORT} \
@@ -176,27 +176,27 @@ post-install:
 # Stock OTP libraries.
 
 	@for LIBRARY in ${OTP_LIBS}; do \
-		cd ${PREFIX} ; ${TEST} -d lib/erlang/lib/$${LIBRARY} \
+		cd ${PREFIX}; ${TEST} -d lib/erlang/lib/$${LIBRARY} \
 			&& ${FIND} lib/erlang/lib/$${LIBRARY} -type f -o -type l; \
 	done | ${SORT} >> ${ERLANG_PLIST}
 
 # Stock OTP library directories.
 
 	@for LIBRARY in ${OTP_LIBS}; do \
-		cd ${PREFIX} ; ${TEST} -d lib/erlang/lib/$${LIBRARY} \
+		cd ${PREFIX}; ${TEST} -d lib/erlang/lib/$${LIBRARY} \
 			&& ${FIND} lib/erlang/lib/$${LIBRARY} -type d -empty \
 			| ${SED} -e 's#^#@exec ${MKDIR} %D/#g'; \
 	done | ${SORT} >> ${ERLANG_PLIST}
 
 	@for LIBRARY in ${OTP_LIBS}; do \
-		cd ${PREFIX} ; ${TEST} -d lib/erlang/lib/$${LIBRARY} \
+		cd ${PREFIX}; ${TEST} -d lib/erlang/lib/$${LIBRARY} \
 			&& ${FIND} lib/erlang/lib/$${LIBRARY} -type d \
 			| ${SED} -e 's/^/@dirrm /g'; \
 	done | ${SORT} -r >> ${ERLANG_PLIST}
 
 # Other directories.
 
-	@cd ${PREFIX} ; ${FIND} lib/erlang/* -type d | ${SORT} -r \
+	@cd ${PREFIX}; ${FIND} lib/erlang/* -type d | ${SORT} -r \
 		| ${GREP} -v "^lib/erlang/man" \
 		| ${GREP} -v "^lib/erlang/lib" \
 		| ${SED} -e 's/^/@dirrm /g' \
@@ -207,7 +207,7 @@ post-install:
 	@${ECHO_CMD} "d"			>> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "r ${ERLANG_PLIST}"	>> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
-	@cd ${WRKDIR} ; ex < ex.script
+	@cd ${WRKDIR}; ex < ex.script
 
 buildplt:
 	@${ECHO_CMD} =====================================================
@@ -216,7 +216,7 @@ buildplt:
 	@${ECHO_CMD} You may wish to settle for the standard PLT built by
 	@${ECHO_CMD} dialyzer on the first run.
 	@${ECHO_CMD} =====================================================
-	@cd ${PREFIX}/lib/erlang/lib ; ${PREFIX}/bin/dialyzer --verbose --build_plt --output_plt ${HOME}/.dialyzer_plt -c $$(find ${OTP_LIBS} -name ebin -maxdepth 1) || true
+	@cd ${PREFIX}/lib/erlang/lib; ${PREFIX}/bin/dialyzer --verbose --build_plt --output_plt ${HOME}/.dialyzer_plt -c $$(find ${OTP_LIBS} -name ebin -maxdepth 1) || true
 
 .include "Makefile.lib"
 .include "Makefile.man"
