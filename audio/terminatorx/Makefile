@@ -21,14 +21,13 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		jack.0:${PORTSDIR}/audio/jack
 
-BROKEN=		does not compile
-
 USE_BZIP2=	yes
 INSTALLS_OMF=	yes
-USE_XORG=	x11 xext xi xxf86dga
+USE_XORG=	x11 xext xi xxf86dga ice sm
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20 libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:262 autoheader:262
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--disable-alsa \
@@ -75,10 +74,6 @@ post-patch:
 		's|malloc\.h|stdlib.h|g'
 	@${GREP} -lR "%%LOCALBASE%%" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|%%LOCALBASE%%|${LOCALBASE}|g'
-.if ${OSVERSION} <= 800501
-	${REINPLACE_CMD} -e "s,only(struct dirent,only(const struct dirent," \
-		${WRKSRC}/src/tX_dialog.cc
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/terminatorX ${PREFIX}/bin
