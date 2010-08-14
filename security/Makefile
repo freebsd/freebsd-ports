@@ -349,6 +349,7 @@
     SUBDIR += openvpn
     SUBDIR += openvpn-admin
     SUBDIR += openvpn-auth-ldap
+    SUBDIR += openvpn-beta
     SUBDIR += openvpn-devel
     SUBDIR += openvpn20
     SUBDIR += ophcrack

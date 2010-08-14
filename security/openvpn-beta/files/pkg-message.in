@@ -1,0 +1,10 @@
+### ------------------------------------------------------------------------
+###  Edit /etc/rc.conf[.local] to start OpenVPN automatically at system
+###  startup. See %%PREFIX%%/etc/rc.d/openvpn for details.
+### ------------------------------------------------------------------------
+###  For compatibility notes when interoperating with older OpenVPN
+###  versions, please, see <http://openvpn.net/relnotes.html>
+### ------------------------------------------------------------------------
+###  NOTE THIS IS AN UNSTABLE BETA VERSION UNDER DEVELOPMENT!
+###  It may or may not be suitable for production. Use at your own risk.
+### ------------------------------------------------------------------------
