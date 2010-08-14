@@ -36,8 +36,8 @@ GCONF_SCHEMAS=	planner.schemas
 
 MAN1=		planner.1
 
-OPTIONS=	GDA "Enable database support (though libgda)" off \
-		EVO "Enable evolution data server support" off
+OPTIONS=	GDA "Enable database support (though libgda)" off
+#		EVO "Enable evolution data server support" off
 
 .include <bsd.port.pre.mk>
 
@@ -50,13 +50,13 @@ PLIST_SUB+=	GDA=""
 PLIST_SUB+=	GDA="@comment "
 .endif
 
-.if defined(WITH_EVO)
-USE_GNOME+=	evolutiondataserver
-CONFIGURE_ARGS+=--enable-eds --enable-eds-backend
-PLIST_SUB+=	EVO=""
-.else
+#.if defined(WITH_EVO)
+#USE_GNOME+=	evolutiondataserver
+#CONFIGURE_ARGS+=--enable-eds --enable-eds-backend
+#PLIST_SUB+=	EVO=""
+#.else
 PLIST_SUB+=	EVO="@comment "
-.endif
+#.endif
 
 post-install:
 	@-update-desktop-database
