@@ -79,7 +79,7 @@ CONFIGURE_ARGS+=	--audio-card-list=ac97,es1370,sb16,cs4231a,adlib,gus
 .endif
 
 .if defined(WITH_SAMBA)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba3
+RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba34
 .endif
 
 .if defined(NOPORTDOCS)
