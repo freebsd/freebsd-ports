@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dtpstree
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://apt.douglasthrift.net/files/${PORTNAME}/ \
 		http://code.douglasthrift.net/files/${PORTNAME}/
