@@ -7,6 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.510
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
@@ -21,10 +22,10 @@ COMMENT=	Web-based interface for system administration for Unix
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
 		${SITE_PERL}/${PERL_ARCH}/Authen/PAM.pm:${PORTSDIR}/security/p5-Authen-PAM
 
-NO_BUILD=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	webmin.sh
 SUB_LIST=	PERL5=${PERL}
+SUB_FILES=	pkg-message
 
 WEBMIN_MODULES=
 
@@ -35,7 +36,6 @@ post-extract:
 			${TAR} --unlink -xzf ${DISTDIR}/$${webmin_module} -C ${WRKSRC}; \
 		done; \
 	fi
-	@${CP} ${WRKSRC}/mount/freebsd-mounts-7.c ${WRKSRC}/mount/freebsd-mounts-8.c
 
 post-patch:
 .for file in	config-freebsd apache/config-freebsd \
@@ -63,6 +63,10 @@ post-patch:
 		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/bin/perl@#!${PERL}@"
 	@${FIND} ${WRKSRC} -name "*.orig" -print | ${XARGS} ${RM}
 	@${FIND} ${WRKSRC} -name "*.bak" -print | ${XARGS} ${RM}
+	@${RM} ${WRKSRC}/mount/freebsd-mounts-?
+
+do-build:
+	@${CC} ${CFLAGS} -o ${WRKSRC}/mount/freebsd-mounts-7 ${WRKSRC}/mount/freebsd-mounts-7.c
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/webmin
