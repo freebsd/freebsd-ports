@@ -29,7 +29,8 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		lcms.1:${PORTSDIR}/graphics/lcms \
-		gegl-0.1:${PORTSDIR}/graphics/gegl
+		gegl-0.1:${PORTSDIR}/graphics/gegl \
+		babl-0.1:${PORTSDIR}/x11/babl
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 
 CONFLICTS=	gimp-app-devel-[0-9]*
