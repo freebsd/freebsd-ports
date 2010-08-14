@@ -34,6 +34,10 @@ DOCS=		reportlab-graphics-reference.pdf \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC}/docs && ${PYTHON_CMD} genAll.py
