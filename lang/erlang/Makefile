@@ -208,6 +208,7 @@ post-install:
 	@${ECHO_CMD} "r ${ERLANG_PLIST}"	>> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	@cd ${WRKDIR}; ex < ex.script
+	@${CAT} ${PKGMESSAGE}
 
 buildplt:
 	@${ECHO_CMD} =====================================================
