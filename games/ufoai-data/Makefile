@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3
 CATEGORIES=	games
 MASTER_SITES=	SF/ufoai/UFO_AI%202.x/${PORTVERSION}
 PKGNAMEPREFIX=	ufoai-
@@ -19,7 +19,7 @@ COMMENT=	UFO alien invasion data files
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 
-NO_PACKAGE=	Package will be 400MB, set FORCE_PACKAGE if you really want it
+NO_PACKAGE=	Package will be 500MB, set FORCE_PACKAGE if you really want it
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
@@ -34,14 +34,15 @@ post-extract:
 pre-install:
 	@${RM} -f ${PLIST}
 	@cd ${WRKDIR}/base && \
-		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
-			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
-	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
+		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/base/|' >> ${PLIST} && \
+			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/base/|' >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%/base" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry %%DATADIR%%" >> ${PLIST}
 
 do-install:
-	${MKDIR} ${PREFIX}/${DATADIR}
+	${MKDIR} ${PREFIX}/${DATADIR}/base
 	cd ${WRKDIR}/base && \
-		${FIND} * -type d -exec ${MKDIR} "${PREFIX}/${DATADIR}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${PREFIX}/${DATADIR}/{}" \;
+		${FIND} * -type d -exec ${MKDIR} "${PREFIX}/${DATADIR}/base/{}" \; && \
+			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${PREFIX}/${DATADIR}/base/{}" \;
 
 .include <bsd.port.mk>
