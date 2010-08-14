@@ -38,7 +38,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic> vlc -- invalid id3v2 tags may lead to invalid memory dereferencing</topic>
     <affects>
       <package>
-	<name></name>
+	<name>vlc</name>
 	<range><gt>0.9.0,3</gt><lt>1.1.2_1,3</lt></range>
       </package>
     </affects>
