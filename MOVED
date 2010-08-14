@@ -4479,3 +4479,4 @@ net/p5-IO-INET6|net/p5-IO-Socket-INET6|2010-08-09|Renamed
 net-p2p/ktorrent-devel||2010-08-11|obsoleted: please use net-p2p/ktorrent2 or net-p2p/ktorrent
 multimedia/mpeg4ip-libmp4v2|multimedia/mp4v2|2010-08-11|Superseded by multimedia/mp4v2
 lang/ifc7||2010-08-12|Distfile no longer available
+multimedia/kaffeine-devel|multimedia/kaffeine|2010-08-14|New non-development version
