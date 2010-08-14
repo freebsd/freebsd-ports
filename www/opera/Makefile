@@ -26,46 +26,41 @@ MASTER_SITES=	ftp://ftp.opera.com/pub/opera/${MASTER_SITES_VER_PATH}/ \
 DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.${ARCH}.freebsd
 
 MAINTAINER=	freebsd-maintainer@opera.com
-COMMENT=	Blazingly fast, full-featured, standards-compliant browser, devel version
+COMMENT=	Blazingly fast, full-featured, standards-compliant browser
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		pcre.0:${PORTSDIR}/devel/pcre \
-		png.6:${PORTSDIR}/graphics/png \
-		pthread-stubs.0:${PORTSDIR}/devel/libpthread-stubs \
-		streamanalyzer.0:${PORTSDIR}/deskutils/strigi \
-		streams.0:${PORTSDIR}/deskutils/strigi \
-		xcb-render-util.0:${PORTSDIR}/x11/xcb-util \
-		xcb-render.0:${PORTSDIR}/x11/libxcb \
-		xcb.2:${PORTSDIR}/x11/libxcb
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 LICENSE=	LGPL20
 
 OPERA_VER=	10.61
-INSTALLS_ICONS=	yes
-USE_LDCONFIG=	yes
-USE_ICONV=	yes
-MANCOMPRESSED=	yes
-USE_XLIB=	ice pixman sm x11 xau xcomposite xcursor xdamage xdmcp \
-		xext xfixes xft xi xinerama xpm xrandr xrender xtst
-USE_GSTREAMER=	yes
-USE_GETTEXT=	yes
 OPERA_BUILD=	6430
 MASTER_SITES_VER_PATH=	unix/${OPERA_VER:S/.//}
 
 USE_BZIP2=	yes
+USE_XORG=	x11 xext sm ice xft xrender
+INSTALLS_ICONS=	yes
 
-MAN1=		${PORTNAME}-widget-manager.1 \
-		${PORTNAME}.1
+MAN1=		opera.1 opera-widget-manager.1
+MANCOMPRESSED=	yes
 
 NO_BUILD=	yes
 
-OPTIONS=	GTK "Use GTK backend" off \
-		QT4 "Use Qt4 backend" off \
-		KDE4 "Use KDE4 backend" off
+OPTIONS=	CUPS	"Enable support for printing (requires CUPS)"		on \
+		VIDEO	"Enable support for HTML5 video (requires GStreamer)"	on \
+		GTK	"Use GTK backend"	off \
+		QT4	"Use Qt4 backend"	off \
+		KDE4	"Use KDE4 backend"	off
 
 .include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_CUPS)
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
+.endif
+
+.if !defined(WITHOUT_VIDEO)
+USE_GSTREAMER=	vorbis ogg theora
+.endif
 
 .if defined(WITH_GTK)
 USE_GNOME=	atk gtk20 glib20 pango libxml2
