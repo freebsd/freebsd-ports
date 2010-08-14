@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	kaffeine/kaffeine/${DISTNAME}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A xine-base multimedia player
 
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/dvb/ca.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
 
 LICENSE=	GPLv2
