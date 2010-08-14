@@ -7,9 +7,16 @@ share/applications/desmume.desktop
 %%DATADIR%%/glade/DeSmuMe.glade
 %%DATADIR%%/glade/DeSmuMe_Dtools.glade
 share/locale/fr/LC_MESSAGES/desmume.mo
+share/locale/nb/LC_MESSAGES/desmume.mo
 share/locale/pt_BR/LC_MESSAGES/desmume.mo
 share/locale/sv/LC_MESSAGES/desmume.mo
+share/locale/zh_CN/LC_MESSAGES/desmume.mo
+share/locale/zh_TW/LC_MESSAGES/desmume.mo
 share/pixmaps/DeSmuME.xpm
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW

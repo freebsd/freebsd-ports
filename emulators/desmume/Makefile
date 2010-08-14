@@ -7,6 +7,7 @@
 
 PORTNAME=	desmume
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 EXTRACT_SUFX=	-1.tar.gz
@@ -19,6 +20,7 @@ LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 USE_SDL=	sdl
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GMSGFMT=msgfmt DATADIRNAME=share
 
