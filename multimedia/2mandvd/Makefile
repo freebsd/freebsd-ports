@@ -26,6 +26,8 @@ RUN_DEPENDS=	sox>=14.0:${PORTSDIR}/audio/sox \
 		tcprobe:${PORTSDIR}/multimedia/transcode \
 		xine:${PORTSDIR}/multimedia/xine
 
+BROKEN=		does not fetch
+
 USE_QT_VER=	4
 USE_CDRTOOLS=	true
 USE_PERL5_RUN=	yes
