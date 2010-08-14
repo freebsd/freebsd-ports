@@ -410,3 +410,4 @@ share/mime/packages/opera-widget.xml
 @dirrm lib/opera/gstreamer/plugins
 @dirrm lib/opera/gstreamer
 @dirrm lib/opera
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
