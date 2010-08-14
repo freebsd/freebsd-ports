@@ -5,60 +5,30 @@
 # $FreeBSD$
 
 PORTNAME=	kaffeine
-PORTVERSION=	0.8.7
-PORTREVISION=	8
+PORTVERSION=	1.0
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	kaffeine/kaffeine/${DISTNAME}
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A xine-base multimedia player
 
-LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine \
-		cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia \
-		xcb.2:${PORTSDIR}/x11/libxcb
+LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_BZIP2=		yes
-USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 USE_GETTEXT=		yes
+USE_KDE4=	kdehier kdeprefix automoc4 kdelibs
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui phonon svg network dbus xml sql \
+		qmake_build moc_build rcc_build uic_build
+USE_CMAKE=	yes
+CMAKE_VERBOSE=	yes
 USE_LDCONFIG=		yes
-USE_AUTOTOOLS=		libtool:22
-CONFIGURE_ENV=		CXXFLAGS="${CFLAGS} -I${WRKSRC}" CFLAGS="${CFLAGS} -I${WRKSRC}"
-DVB_HEADERS=		ca.h dmx.h frontend.h net.h audio.h video.h
-
-.ifdef (WITH_GSTREAMER)
-USE_GSTREAMER=		yes
-PLIST_SUB+=		NOGSTREAMER=""
-.else
-PLIST_SUB+=		NOGSTREAMER="@comment "
-.endif
-.ifdef (WITH_LAME)
-LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
-PLIST_SUB+=	NOLAME=""
-.else
-CONFIGURE_ARGS+=	--without-lame
-PLIST_SUB+=	NOLAME="@comment "
-.endif
-
-.include <bsd.port.pre.mk>
-
-.ifndef (WITH_GSTREAMER)
-CONFIGURE_ARGS+=	--without-gstreamer
-.endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s,xx,," ${WRKSRC}/po/Makefile.in
-	${REINPLACE_CMD} "s,#include <endian.h>,," \
-		${WRKSRC}/kaffeine/src/input/disc/paranoia.cpp
-	${REINPLACE_CMD} "s,#include <linux/types.h>,," \
-		${WRKSRC}/kaffeine/src/input/dvb/lib/libdvbapi/dvbvideo.c
-	${MKDIR} ${WRKSRC}/linux/dvb
-	cd ${FILESDIR}; ${CP} ${DVB_HEADERS} ${WRKSRC}/linux/dvb
-	${REINPLACE_CMD} -e "s,^LIBTOOL=,#LIBTOOL=,; \
-			s,-0.8.6,," ${WRKSRC}/configure
-	${TOUCH} -t 200401230000 ${WRKSRC}/admin/acinclude.m4.in
+	${REINPLACE_CMD} -e 's,add_subdirectory(x-test),,' ${WRKSRC}/po/CMakeLists.txt
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
