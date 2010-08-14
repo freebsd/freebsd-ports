@@ -53,6 +53,7 @@
     SUBDIR += asc
     SUBDIR += asciiquarium
     SUBDIR += assaultcube
+    SUBDIR += atanks
     SUBDIR += atitd
     SUBDIR += atlantikdesigner
     SUBDIR += atomix
