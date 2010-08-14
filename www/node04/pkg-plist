@@ -9,6 +9,7 @@ include/node/node_buffer.h
 include/node/node_config.h
 include/node/node_events.h
 include/node/node_object_wrap.h
+include/node/node_version.h
 include/node/v8-debug.h
 include/node/v8-profiler.h
 include/node/v8.h
