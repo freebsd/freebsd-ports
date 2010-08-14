@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	desmume
-PORTVERSION=	0.9.1
-PORTREVISION=	3
+PORTVERSION=	0.9.6
 CATEGORIES=	emulators
 MASTER_SITES=	SF
+EXTRACT_SUFX=	-1.tar.gz
 
 MAINTAINER=	llc2w@virginia.edu
 COMMENT=	Nintendo DS emulator
@@ -22,7 +22,7 @@ USE_GNOME=	gtk20 libglade2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GMSGFMT=msgfmt DATADIRNAME=share
 
-USE_AUTOTOOLS=	aclocal:19 autoconf:262
+USE_AUTOTOOLS=	aclocal:110 autoconf:262
 ACLOCAL_ARGS=
 AUTOCONF_ARGS=
 
@@ -38,12 +38,5 @@ MAN1=		desmume-cli.1 \
 .if ${ARCH} == "ia64"
 BROKEN=		Does not compile on ia64
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|@MKDIR_P@|${MKDIR}|' ${WRKSRC}/src/cli/Makefile.in \
-		${WRKSRC}/src/gtk/Makefile.in ${WRKSRC}/src/gtk-glade/Makefile.in \
-		${WRKSRC}/src/gtk/doc/Makefile.in ${WRKSRC}/src/gtk-glade/doc/Makefile.in \
-		${WRKSRC}/src/cli/doc/Makefile.in
-	@${REINPLACE_CMD} -e 's|../MMU.h|../&|' ${WRKSRC}/src/gtk/tools/ioregsView.cpp
 
 .include <bsd.port.post.mk>
