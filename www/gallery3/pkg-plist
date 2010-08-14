@@ -23,8 +23,8 @@
 %%WWWDIR%%/installer/views/success.html.php
 %%WWWDIR%%/installer/web.php
 %%WWWDIR%%/lib/flowplayer.controls.swf
-%%WWWDIR%%/lib/flowplayer.h264streaming.swf
 %%WWWDIR%%/lib/flowplayer.js
+%%WWWDIR%%/lib/flowplayer.pseudostreaming.swf
 %%WWWDIR%%/lib/flowplayer.swf
 %%WWWDIR%%/lib/gallery.ajax.js
 %%WWWDIR%%/lib/gallery.common.css
@@ -68,29 +68,6 @@
 %%WWWDIR%%/lib/swfupload/swfupload.js
 %%WWWDIR%%/lib/swfupload/swfupload.queue.js
 %%WWWDIR%%/lib/swfupload/swfupload.swf
-%%WWWDIR%%/lib/themeroller/images/ui-bg_flat_0_aaaaaa_40x100.png
-%%WWWDIR%%/lib/themeroller/images/ui-bg_flat_55_fbec88_40x100.png
-%%WWWDIR%%/lib/themeroller/images/ui-bg_glass_75_d0e5f5_1x400.png
-%%WWWDIR%%/lib/themeroller/images/ui-bg_glass_85_dfeffc_1x400.png
-%%WWWDIR%%/lib/themeroller/images/ui-bg_glass_95_fef1ec_1x400.png
-%%WWWDIR%%/lib/themeroller/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png
-%%WWWDIR%%/lib/themeroller/images/ui-bg_inset-hard_100_f5f8f9_1x100.png
-%%WWWDIR%%/lib/themeroller/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
-%%WWWDIR%%/lib/themeroller/images/ui-icons_217bc0_256x240.png
-%%WWWDIR%%/lib/themeroller/images/ui-icons_2e83ff_256x240.png
-%%WWWDIR%%/lib/themeroller/images/ui-icons_469bdd_256x240.png
-%%WWWDIR%%/lib/themeroller/images/ui-icons_6da8d5_256x240.png
-%%WWWDIR%%/lib/themeroller/images/ui-icons_cd0a0a_256x240.png
-%%WWWDIR%%/lib/themeroller/images/ui-icons_d8e7f3_256x240.png
-%%WWWDIR%%/lib/themeroller/images/ui-icons_f9bd01_256x240.png
-%%WWWDIR%%/lib/themeroller/ui.base.css
-%%WWWDIR%%/lib/themeroller/ui.core.css
-%%WWWDIR%%/lib/themeroller/ui.datepicker.css
-%%WWWDIR%%/lib/themeroller/ui.dialog.css
-%%WWWDIR%%/lib/themeroller/ui.progressbar.css
-%%WWWDIR%%/lib/themeroller/ui.resizable.css
-%%WWWDIR%%/lib/themeroller/ui.tabs.css
-%%WWWDIR%%/lib/themeroller/ui.theme.css
 %%WWWDIR%%/lib/uploadify/cancel.png
 %%WWWDIR%%/lib/uploadify/jquery.uploadify.min.js
 %%WWWDIR%%/lib/uploadify/uploadify.allglyphs.swf
@@ -107,19 +84,24 @@
 %%WWWDIR%%/modules/akismet/views/admin_akismet.html.php
 %%WWWDIR%%/modules/akismet/views/admin_akismet_stats.html.php
 %%WWWDIR%%/modules/comment/controllers/admin_comments.php
+%%WWWDIR%%/modules/comment/controllers/admin_manage_comments.php
 %%WWWDIR%%/modules/comment/controllers/comments.php
 %%WWWDIR%%/modules/comment/css/comment.css
 %%WWWDIR%%/modules/comment/helpers/comment.php
 %%WWWDIR%%/modules/comment/helpers/comment_block.php
 %%WWWDIR%%/modules/comment/helpers/comment_event.php
 %%WWWDIR%%/modules/comment/helpers/comment_installer.php
+%%WWWDIR%%/modules/comment/helpers/comment_rest.php
 %%WWWDIR%%/modules/comment/helpers/comment_rss.php
 %%WWWDIR%%/modules/comment/helpers/comment_theme.php
+%%WWWDIR%%/modules/comment/helpers/comments_rest.php
+%%WWWDIR%%/modules/comment/helpers/item_comments_rest.php
 %%WWWDIR%%/modules/comment/js/comment.js
 %%WWWDIR%%/modules/comment/models/comment.php
 %%WWWDIR%%/modules/comment/module.info
 %%WWWDIR%%/modules/comment/views/admin_block_recent_comments.html.php
 %%WWWDIR%%/modules/comment/views/admin_comments.html.php
+%%WWWDIR%%/modules/comment/views/admin_manage_comments.html.php
 %%WWWDIR%%/modules/comment/views/comment.html.php
 %%WWWDIR%%/modules/comment/views/comment.mrss.php
 %%WWWDIR%%/modules/comment/views/comments.html.php
@@ -178,6 +160,7 @@
 %%WWWDIR%%/modules/g2_import/helpers/g2_import_installer.php
 %%WWWDIR%%/modules/g2_import/helpers/g2_import_task.php
 %%WWWDIR%%/modules/g2_import/helpers/g2_import_theme.php
+%%WWWDIR%%/modules/g2_import/libraries/G2_Import_Exception.php
 %%WWWDIR%%/modules/g2_import/models/g2_map.php
 %%WWWDIR%%/modules/g2_import/module.info
 %%WWWDIR%%/modules/g2_import/views/admin_g2_import.html.php
@@ -203,6 +186,7 @@
 %%WWWDIR%%/modules/gallery/controllers/albums.php
 %%WWWDIR%%/modules/gallery/controllers/combined.php
 %%WWWDIR%%/modules/gallery/controllers/file_proxy.php
+%%WWWDIR%%/modules/gallery/controllers/flash_uploader.php
 %%WWWDIR%%/modules/gallery/controllers/items.php
 %%WWWDIR%%/modules/gallery/controllers/l10n_client.php
 %%WWWDIR%%/modules/gallery/controllers/login.php
@@ -215,7 +199,6 @@
 %%WWWDIR%%/modules/gallery/controllers/photos.php
 %%WWWDIR%%/modules/gallery/controllers/quick.php
 %%WWWDIR%%/modules/gallery/controllers/reauthenticate.php
-%%WWWDIR%%/modules/gallery/controllers/simple_uploader.php
 %%WWWDIR%%/modules/gallery/controllers/upgrader.php
 %%WWWDIR%%/modules/gallery/controllers/user_profile.php
 %%WWWDIR%%/modules/gallery/controllers/welcome_message.php
@@ -268,6 +251,7 @@
 %%WWWDIR%%/modules/gallery/images/imagemagick.jpg
 %%WWWDIR%%/modules/gallery/images/missing_movie.png
 %%WWWDIR%%/modules/gallery/js/albums_form_add.js
+%%WWWDIR%%/modules/gallery/js/item_form_delete.js
 %%WWWDIR%%/modules/gallery/js/l10n_client.js
 %%WWWDIR%%/modules/gallery/libraries/Admin_View.php
 %%WWWDIR%%/modules/gallery/libraries/Block.php
@@ -335,6 +319,9 @@
 %%WWWDIR%%/modules/gallery/views/admin_themes_preview.html.php
 %%WWWDIR%%/modules/gallery/views/error.html.php
 %%WWWDIR%%/modules/gallery/views/error_404.html.php
+%%WWWDIR%%/modules/gallery/views/error_admin.html.php
+%%WWWDIR%%/modules/gallery/views/error_cli.txt.php
+%%WWWDIR%%/modules/gallery/views/error_user.html.php
 %%WWWDIR%%/modules/gallery/views/form.html.php
 %%WWWDIR%%/modules/gallery/views/form_uploadify.html.php
 %%WWWDIR%%/modules/gallery/views/form_uploadify_buttons.html.php
@@ -384,15 +371,13 @@
 %%WWWDIR%%/modules/notification/views/item_updated.html.php
 %%WWWDIR%%/modules/notification/views/user_profile_notification.html.php
 %%WWWDIR%%/modules/organize/controllers/organize.php
-%%WWWDIR%%/modules/organize/css/organize.css
 %%WWWDIR%%/modules/organize/css/organize_theme.css
 %%WWWDIR%%/modules/organize/helpers/organize_event.php
+%%WWWDIR%%/modules/organize/helpers/organize_installer.php
 %%WWWDIR%%/modules/organize/helpers/organize_theme.php
-%%WWWDIR%%/modules/organize/js/organize.js
+%%WWWDIR%%/modules/organize/lib/Gallery3WebClient.swf
 %%WWWDIR%%/modules/organize/module.info
 %%WWWDIR%%/modules/organize/views/organize_dialog.html.php
-%%WWWDIR%%/modules/organize/views/organize_thumb_grid.html.php
-%%WWWDIR%%/modules/organize/views/organize_tree.html.php
 %%WWWDIR%%/modules/recaptcha/controllers/admin_recaptcha.php
 %%WWWDIR%%/modules/recaptcha/css/recaptcha.css
 %%WWWDIR%%/modules/recaptcha/helpers/recaptcha.php
@@ -408,8 +393,9 @@
 %%WWWDIR%%/modules/rest/helpers/rest_event.php
 %%WWWDIR%%/modules/rest/helpers/rest_installer.php
 %%WWWDIR%%/modules/rest/libraries/Rest_Exception.php
-%%WWWDIR%%/modules/rest/models/user_access_token.php
+%%WWWDIR%%/modules/rest/models/user_access_key.php
 %%WWWDIR%%/modules/rest/module.info
+%%WWWDIR%%/modules/rest/views/error_rest.json.php
 %%WWWDIR%%/modules/rest/views/user_profile_rest.html.php
 %%WWWDIR%%/modules/rss/controllers/rss.php
 %%WWWDIR%%/modules/rss/helpers/rss.php
@@ -598,6 +584,29 @@
 %%WWWDIR%%/system/views/profiler/table.php
 %%WWWDIR%%/themes/admin_wind/css/fix-ie.css
 %%WWWDIR%%/themes/admin_wind/css/screen.css
+%%WWWDIR%%/themes/admin_wind/css/themeroller/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/themes/admin_wind/css/themeroller/images/ui-bg_flat_55_fbec88_40x100.png
+%%WWWDIR%%/themes/admin_wind/css/themeroller/images/ui-bg_glass_75_d0e5f5_1x400.png
+%%WWWDIR%%/themes/admin_wind/css/themeroller/images/ui-bg_glass_85_dfeffc_1x400.png
+%%WWWDIR%%/themes/admin_wind/css/themeroller/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/themes/admin_wind/css/themeroller/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png
+%%WWWDIR%%/themes/admin_wind/css/themeroller/images/ui-bg_inset-hard_100_f5f8f9_1x100.png
+%%WWWDIR%%/themes/admin_wind/css/themeroller/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+%%WWWDIR%%/themes/admin_wind/css/themeroller/images/ui-icons_217bc0_256x240.png
+%%WWWDIR%%/themes/admin_wind/css/themeroller/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/themes/admin_wind/css/themeroller/images/ui-icons_469bdd_256x240.png
+%%WWWDIR%%/themes/admin_wind/css/themeroller/images/ui-icons_6da8d5_256x240.png
+%%WWWDIR%%/themes/admin_wind/css/themeroller/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/themes/admin_wind/css/themeroller/images/ui-icons_d8e7f3_256x240.png
+%%WWWDIR%%/themes/admin_wind/css/themeroller/images/ui-icons_f9bd01_256x240.png
+%%WWWDIR%%/themes/admin_wind/css/themeroller/ui.base.css
+%%WWWDIR%%/themes/admin_wind/css/themeroller/ui.core.css
+%%WWWDIR%%/themes/admin_wind/css/themeroller/ui.datepicker.css
+%%WWWDIR%%/themes/admin_wind/css/themeroller/ui.dialog.css
+%%WWWDIR%%/themes/admin_wind/css/themeroller/ui.progressbar.css
+%%WWWDIR%%/themes/admin_wind/css/themeroller/ui.resizable.css
+%%WWWDIR%%/themes/admin_wind/css/themeroller/ui.tabs.css
+%%WWWDIR%%/themes/admin_wind/css/themeroller/ui.theme.css
 %%WWWDIR%%/themes/admin_wind/images/avatar.jpg
 %%WWWDIR%%/themes/admin_wind/js/ui.init.js
 %%WWWDIR%%/themes/admin_wind/theme.info
@@ -607,6 +616,29 @@
 %%WWWDIR%%/themes/admin_wind/views/pager.html.php
 %%WWWDIR%%/themes/wind/css/fix-ie.css
 %%WWWDIR%%/themes/wind/css/screen.css
+%%WWWDIR%%/themes/wind/css/themeroller/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/themes/wind/css/themeroller/images/ui-bg_flat_55_fbec88_40x100.png
+%%WWWDIR%%/themes/wind/css/themeroller/images/ui-bg_glass_75_d0e5f5_1x400.png
+%%WWWDIR%%/themes/wind/css/themeroller/images/ui-bg_glass_85_dfeffc_1x400.png
+%%WWWDIR%%/themes/wind/css/themeroller/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/themes/wind/css/themeroller/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png
+%%WWWDIR%%/themes/wind/css/themeroller/images/ui-bg_inset-hard_100_f5f8f9_1x100.png
+%%WWWDIR%%/themes/wind/css/themeroller/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+%%WWWDIR%%/themes/wind/css/themeroller/images/ui-icons_217bc0_256x240.png
+%%WWWDIR%%/themes/wind/css/themeroller/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/themes/wind/css/themeroller/images/ui-icons_469bdd_256x240.png
+%%WWWDIR%%/themes/wind/css/themeroller/images/ui-icons_6da8d5_256x240.png
+%%WWWDIR%%/themes/wind/css/themeroller/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/themes/wind/css/themeroller/images/ui-icons_d8e7f3_256x240.png
+%%WWWDIR%%/themes/wind/css/themeroller/images/ui-icons_f9bd01_256x240.png
+%%WWWDIR%%/themes/wind/css/themeroller/ui.base.css
+%%WWWDIR%%/themes/wind/css/themeroller/ui.core.css
+%%WWWDIR%%/themes/wind/css/themeroller/ui.datepicker.css
+%%WWWDIR%%/themes/wind/css/themeroller/ui.dialog.css
+%%WWWDIR%%/themes/wind/css/themeroller/ui.progressbar.css
+%%WWWDIR%%/themes/wind/css/themeroller/ui.resizable.css
+%%WWWDIR%%/themes/wind/css/themeroller/ui.tabs.css
+%%WWWDIR%%/themes/wind/css/themeroller/ui.theme.css
 %%WWWDIR%%/themes/wind/images/avatar.jpg
 %%WWWDIR%%/themes/wind/images/ico-album.png
 %%WWWDIR%%/themes/wind/images/ico-help.png
@@ -631,11 +663,15 @@
 @dirrm %%WWWDIR%%/themes/wind/views
 @dirrm %%WWWDIR%%/themes/wind/js
 @dirrm %%WWWDIR%%/themes/wind/images
+@dirrm %%WWWDIR%%/themes/wind/css/themeroller/images
+@dirrm %%WWWDIR%%/themes/wind/css/themeroller
 @dirrm %%WWWDIR%%/themes/wind/css
 @dirrm %%WWWDIR%%/themes/wind
 @dirrm %%WWWDIR%%/themes/admin_wind/views
 @dirrm %%WWWDIR%%/themes/admin_wind/js
 @dirrm %%WWWDIR%%/themes/admin_wind/images
+@dirrm %%WWWDIR%%/themes/admin_wind/css/themeroller/images
+@dirrm %%WWWDIR%%/themes/admin_wind/css/themeroller
 @dirrm %%WWWDIR%%/themes/admin_wind/css
 @dirrm %%WWWDIR%%/themes/admin_wind
 @dirrm %%WWWDIR%%/themes
@@ -711,7 +747,7 @@
 @dirrm %%WWWDIR%%/modules/recaptcha/controllers
 @dirrm %%WWWDIR%%/modules/recaptcha
 @dirrm %%WWWDIR%%/modules/organize/views
-@dirrm %%WWWDIR%%/modules/organize/js
+@dirrm %%WWWDIR%%/modules/organize/lib
 @dirrm %%WWWDIR%%/modules/organize/helpers
 @dirrm %%WWWDIR%%/modules/organize/css
 @dirrm %%WWWDIR%%/modules/organize/controllers
@@ -746,6 +782,7 @@
 @dirrm %%WWWDIR%%/modules/gallery
 @dirrm %%WWWDIR%%/modules/g2_import/views
 @dirrm %%WWWDIR%%/modules/g2_import/models
+@dirrm %%WWWDIR%%/modules/g2_import/libraries
 @dirrm %%WWWDIR%%/modules/g2_import/helpers
 @dirrm %%WWWDIR%%/modules/g2_import/data
 @dirrm %%WWWDIR%%/modules/g2_import/css
@@ -782,8 +819,6 @@
 @dirrm %%WWWDIR%%/modules
 @dirrm %%WWWDIR%%/lib/yui
 @dirrm %%WWWDIR%%/lib/uploadify
-@dirrm %%WWWDIR%%/lib/themeroller/images
-@dirrm %%WWWDIR%%/lib/themeroller
 @dirrm %%WWWDIR%%/lib/swfupload
 @dirrm %%WWWDIR%%/lib/superfish/js
 @dirrm %%WWWDIR%%/lib/superfish/images
