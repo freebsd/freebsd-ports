@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.dillo.org/download/
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A fast, small graphical Web browser built upon fltk2
 
+LICENSE=	GPLv3
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libfltk2.a:${PORTSDIR}/x11-toolkits/fltk2
 RUN_DEPENDS=	${LOCALBASE}/lib/libfltk2.a:${PORTSDIR}/x11-toolkits/fltk2 \
 		wget:${PORTSDIR}/ftp/wget
