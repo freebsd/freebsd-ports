@@ -6,7 +6,7 @@
 
 PORTNAME=	openvpn-auth-ldap
 PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	auth-ldap-${PORTVERSION}
@@ -24,12 +24,17 @@ CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE} \
 			--with-openvpn=${OPENVPN_WRKSRC}
 
 PORTDOCS=	README
+PORTEXAMPLES=	auth-ldap.conf
 PLIST_FILES=	lib/openvpn-auth-ldap.so
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/auth-ldap.conf ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
