@@ -122,6 +122,7 @@
     SUBDIR += freebsd-doc-zh_cn
     SUBDIR += freebsd-doc-zh_tw
     SUBDIR += freeguide
+    SUBDIR += freeswitch-pizzademo
     SUBDIR += freeswitch-scripts
     SUBDIR += freshmeat-submit
     SUBDIR += ftdi-eeprom
