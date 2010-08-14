@@ -8,8 +8,8 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.2.5.20090325
-PORTREVISION=	4
-CATEGORIES=	lang java
+PORTREVISION=	5
+CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
@@ -37,10 +37,6 @@ PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != i386 && ${ARCH} != amd64
-WITHOUT_JAVA=	yes
-.endif
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
@@ -80,45 +76,10 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gccint \
 		gcc${SUFFIX}/libgomp
 
-.if ! defined(WITHOUT_JAVA)
-ECJ_JAR=	ecj-4.3.jar
-MASTER_SITES+=	${MASTER_SITE_SOURCEWARE:S|$|:ecj|}
-MASTER_SITE_SUBDIR+=	java/:ecj
-DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX} \
-		${ECJ_JAR}:ecj
-EXTRACT_ONLY=  ${DISTFILES:S|${ECJ_JAR}:ecj||}
-BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
-EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
-# FIXME: we are currently getting weird build failures with libjava on
-# some 4.x and 5.x systems, which the following works around. PR 81788.
-CONFIGURE_ARGS+=--disable-rpath --enable-libgcj
-MAKE_ENV+=	JAR=no
-MAN1+=		gcj${SUFFIX}.1 \
-		gcj-dbtool${SUFFIX}.1 \
-		gcjh${SUFFIX}.1 \
-		gij${SUFFIX}.1 \
-		gjnih${SUFFIX}.1 \
-		grmic${SUFFIX}.1 \
-		grmiregistry${SUFFIX}.1 \
-		jcf-dump${SUFFIX}.1 \
-		jv-scan${SUFFIX}.1 \
-		jv-convert${SUFFIX}.1
-INFO+=		gcc${SUFFIX}/gcj
-PLIST_SUB+=	JAVA=""
-
-# Preps the source tree for the gcj build
-post-patch::
-	@${CP} ${DISTDIR}/${ECJ_JAR} ${SRCDIR}/ecj.jar
-
-.else
-CONFIGURE_ARGS+=--disable-libgcj
-PLIST_SUB+=	JAVA="@comment "
-.endif
-
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
 
-post-patch::
+post-patch:
 	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
 	    ${SRCDIR}/gcc/version.c
 
@@ -133,7 +94,7 @@ post-install:
 	${RM} -f ${TARGLIB}/*.la
 	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
-.for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
+.for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///}
 	cd ${PREFIX} ; if [ -d $d ]; then \
 	    ${FIND} $d -type f -o -type l >>${WRKDIR}/PLIST.lib ;\
 	    ${FIND} $d -type d | ${SORT} -r \
