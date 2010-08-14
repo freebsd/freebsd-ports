@@ -7,6 +7,7 @@
 
 PORTNAME=	opendnssec
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.opendnssec.org/files/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -16,7 +17,7 @@ COMMENT=	Tool suite for maintaining DNSSEC
 
 BUILD_DEPENDS=	ldns>=1.6.4:${PORTSDIR}/dns/ldns \
 		${PYTHON_SITELIBDIR}/Ft/Xml/__init__.py:${PORTSDIR}/textproc/py-4suite-xml \
-		rubygem-dnsruby>=1.43:${PORTSDIR}/dns/rubygem-dnsruby
+		rubygem-dnsruby>=1.48:${PORTSDIR}/dns/rubygem-dnsruby
 LIB_DEPENDS=	ldns:${PORTSDIR}/dns/ldns \
 		sqlite3:${PORTSDIR}/databases/sqlite3
 
