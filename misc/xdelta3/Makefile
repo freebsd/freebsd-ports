@@ -20,6 +20,10 @@ USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64" && ${SLAVE_PORT:Myes}
+BROKEN=		Does not compile on sparc64
+.endif
+
 .if ${SLAVE_PORT:Mno}
 PLIST_FILES=	bin/xdelta3
 .endif
