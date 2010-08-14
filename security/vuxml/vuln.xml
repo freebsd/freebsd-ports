@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e7d91a3c-a7c9-11df-870c-00242b513d7c">
+    <topic> vlc -- invalid id3v2 tags may lead to invalid memory dereferencing</topic>
+    <affects>
+      <package>
+	<name></name>
+	<range><gt>0.9.0,3</gt><lt>1.1.2_1,3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>VideoLAN project reports:</p>
+	<blockquote cite="http://www.videolan.org/security/sa1004.html">
+	  <p>VLC fails to perform sufficient input validation when trying to
+            extract some meta-informations about input media through ID3v2
+            tags. In the failure case, VLC attempt dereference an invalid
+            memory address, and a crash will ensure.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-2937</cvename>
+      <url>http://www.videolan.org/security/sa1004.html</url>
+    </references>
+    <dates>
+      <discovery>2010-07-29</discovery>
+      <entry>2010-08-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e19e74a4-a712-11df-b234-001b2134ef46">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
