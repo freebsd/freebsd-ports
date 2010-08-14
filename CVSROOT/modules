@@ -2570,6 +2570,7 @@ dpkg                            ports/archivers/dpkg
 dprog                           ports/devel/dprog
 dpsearch                        ports/www/dpsearch
 drac                            ports/mail/drac
+dradis                          ports/security/dradis
 dragstack                       ports/deskutils/dragstack
 drbl                            ports/mail/drbl
 dreampie                        ports/devel/dreampie
@@ -4878,6 +4879,7 @@ gpstk                           ports/astro/gpstk
 gpt31                           ports/misc/gpt31
 gpte                            ports/sysutils/gpte
 gputils                         ports/devel/gputils
+gpxe                            ports/net/gpxe
 gq                              ports/net/gq
 gqlplus                         ports/databases/gqlplus
 gqmpeg                          ports/audio/gqmpeg
@@ -5783,7 +5785,6 @@ idnkit                          ports/dns/idnkit
 iec16022                        ports/graphics/iec16022
 iextract                        ports/sysutils/iextract
 ifc                             ports/lang/ifc
-ifc7                            ports/lang/ifc7
 ifd-devkit                      ports/security/ifd-devkit
 ifd-gempc410                    ports/security/ifd-gempc410
 ifd-slb_rf60                    ports/security/ifd-slb_rf60
@@ -23444,6 +23445,7 @@ squall                          ports/net-p2p/squall
 squash                          ports/audio/squash
 squashfs-tools                  ports/sysutils/squashfs-tools
 squeak                          ports/lang/squeak
+squeeze                         ports/archivers/squeeze
 squeezeboxserver                ports/audio/squeezeboxserver
 squeezeboxserver-dynamicplaylist  ports/audio/squeezeboxserver-dynamicplaylist
 squeezeboxserver-lazysearch     ports/audio/squeezeboxserver-lazysearch
@@ -24856,6 +24858,7 @@ vi-vnroff                       ports/vietnamese/vnroff
 vi-vnterm                       ports/vietnamese/vnterm
 vi-vntex                        ports/vietnamese/vntex
 vi-vnxfonts                     ports/vietnamese/vnxfonts
+vi-x-unikey                     ports/vietnamese/x-unikey
 vi-xvnkb                        ports/vietnamese/xvnkb
 vic                             ports/mbone/vic
 vice                            ports/emulators/vice
