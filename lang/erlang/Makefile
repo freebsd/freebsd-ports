@@ -154,7 +154,7 @@ pre-configure:
 # rest, not in share/doc/erlang as it should, because of relative
 # links in the documentation.
 post-install:
-	@${LN} -sf ${LOCALBASE}/lib/erlang/lib/erl_interface-*/bin/erl_call ${LOCALBASE}/bin/erl_call
+	@${LN} -sf ${PREFIX}/lib/erlang/lib/erl_interface-*/bin/erl_call ${PREFIX}/bin/erl_call
 	@for SECTION in 1 3 4 6; do \
 		${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_MAN} \
 			-C ${PREFIX}/lib/erlang \
@@ -165,7 +165,7 @@ post-install:
 	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
 		-C ${PREFIX}/lib/erlang
 	@${INSTALL_DATA} ${WRKSRC}/lib/dialyzer/doc/*.txt \
-		${LOCALBASE}/lib/erlang/lib/dialyzer-*/doc/
+		${PREFIX}/lib/erlang/lib/dialyzer-*/doc/
 
 	@${MKDIR} ${PREFIX}/share/doc/erlang
 .for FILE in ${DOC_DISTFILES}
