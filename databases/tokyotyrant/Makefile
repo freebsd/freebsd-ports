@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	tokyotyrant
-PORTVERSION=	1.1.40
-PORTREVISION=	1
+PORTVERSION=	1.1.41
 CATEGORIES=	databases
-MASTER_SITES=	http://1978th.net/${PORTNAME}/
+MASTER_SITES=	http://fallabs.com/${PORTNAME}/
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Network interface of Tokyo Cabinet
@@ -38,6 +37,8 @@ CONFIGURE_ARGS+=	--enable-lua
 CONFIGURE_ENV+=	LDFLAGS="-L${LUA_LIBDIR}"
 CFLAGS+=	-I${LUA_INCDIR}
 USE_LUA=	yes
+.else
+CONFIGURE_ARGS+=	--disable-lua
 .endif
 
 # Since gnomehack only works for "(libdir)" case, we need to patch it
