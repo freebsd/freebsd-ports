@@ -16,6 +16,7 @@ MAINTAINER=	naylor.b.david@gmail.com
 COMMENT=	A R SVG graphics device
 
 R_MOD=	yes
+R_MOD_AUTOPLIST=	yes
 
 .include "${.CURDIR}/../../math/R-cran-sm/files/bsd.cran.mk"
 .include <bsd.port.mk>
