@@ -18,6 +18,8 @@ COMMENT=	An Ice (Internet Communications Engine) language mapping for PHP
 
 LIB_DEPENDS=	Ice.${LIB_VRS}:${PORTSDIR}/devel/ice
 
+BROKEN=		Port needs to be updated to new Ice version.
+
 USE_GMAKE=	yes
 MAKE_ARGS+=	PHP_EXT_DIR=${PHP_EXT_DIR}
 DEFAULT_PHP_VER=5
