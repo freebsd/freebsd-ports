@@ -1,15 +1,15 @@
-lib/%%PYTHON_VERSION%%/site-packages/logilab/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/XmlEditor.py
-lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/XmlEditor.pyc
-lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/XmlEditor.pyo
-lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/XmlTree.py
-lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/XmlTree.pyc
-lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/XmlTree.pyo
-lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/__pkginfo__.py
-lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/__pkginfo__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools/__pkginfo__.pyo
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/logilab/xmltools
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/logilab
+%%PYTHON_SITELIBDIR%%/logilab/__init__.py
+%%PYTHON_SITELIBDIR%%/logilab/xmltools/XmlEditor.py
+%%PYTHON_SITELIBDIR%%/logilab/xmltools/XmlEditor.pyc
+%%PYTHON_SITELIBDIR%%/logilab/xmltools/XmlEditor.pyo
+%%PYTHON_SITELIBDIR%%/logilab/xmltools/XmlTree.py
+%%PYTHON_SITELIBDIR%%/logilab/xmltools/XmlTree.pyc
+%%PYTHON_SITELIBDIR%%/logilab/xmltools/XmlTree.pyo
+%%PYTHON_SITELIBDIR%%/logilab/xmltools/__init__.py
+%%PYTHON_SITELIBDIR%%/logilab/xmltools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/logilab/xmltools/__init__.pyo
+%%PYTHON_SITELIBDIR%%/logilab/xmltools/__pkginfo__.py
+%%PYTHON_SITELIBDIR%%/logilab/xmltools/__pkginfo__.pyc
+%%PYTHON_SITELIBDIR%%/logilab/xmltools/__pkginfo__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/logilab/xmltools
+@dirrm %%PYTHON_SITELIBDIR%%/logilab
