@@ -31,8 +31,6 @@ COMMENT=	Blazingly fast, full-featured, standards-compliant browser
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
-LICENSE=	LGPL20
-
 OPERA_VER=	10.61
 OPERA_BUILD=	6430
 MASTER_SITES_VER_PATH=	unix/${OPERA_VER:S/.//}
