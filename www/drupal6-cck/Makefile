@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cck
-DISTVERSION=	6.x-2.6
+DISTVERSION=	6.x-2.8
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 
@@ -235,6 +235,7 @@ MODULE_FILES=	help/add-existing-field.html \
 		translations/ja.po \
 		translations/nl.po \
 		translations/pt.po \
+		translations/pt-br.po \
 		translations/ru.po \
 		translations/theme.de.po \
 		translations/theme.pot \
@@ -244,6 +245,9 @@ MODULE_FILES=	help/add-existing-field.html \
 		translations/vi.po
 DOC_FILES=	CHANGELOG.txt DEVELOPER.txt README.txt UPGRADE.txt \
 		LICENSE.txt
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
