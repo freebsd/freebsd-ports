@@ -27,10 +27,6 @@ PLIST_FILES=	bin/nxproxy
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
-.endif
-
 post-extract:
 	${LN} -sf ${WRKDIR}/nxcomp-${DISTVERSION:S/2/1/} ${WRKDIR}/nxcomp
 
@@ -39,6 +35,9 @@ post-patch:
 		${WRKDIR}/nxcomp/configure
 	${REINPLACE_CMD} -e "s,-lXcomp, -L${PREFIX}/lib -lpng -ljpeg ../nxcomp/libXcomp.a," \
 		${WRKSRC}/configure
+.if ${OSVERSION} < 700000
+	${REINPLACE_CMD} -e "s,result = unsetenv,unsetenv," ${WRKDIR}/nxcomp/Children.cpp
+.endif
 
 pre-configure:
 	cd ${WRKDIR}/nxcomp; ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS};
