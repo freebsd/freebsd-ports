@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	thrift
-PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTVERSION=	0.3.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	erlang-
@@ -42,6 +41,7 @@ do-patch:
 	    ${WRKSRC}/build/buildtargets.mk
 	${REINPLACE_CMD} "/^THRIFT_VSN=/s/0\.1/${PORTVERSION}/" \
 	     ${WRKSRC}/vsn.mk
+	${REINPLACE_CMD} -e "s,$$(top_builddir)/config.status,," ${WRKSRC}/Makefile
 
 # Gnarly and ripped off from erlang-mysql; no bsd.erlang.mk yet.
 do-install:
