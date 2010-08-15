@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Ice
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.zeroc.com/download/Ice/3.3/ \
-		http://www.dirk.sh/dirk/Ice/
+MASTER_SITES=	http://www.zeroc.com/download/Ice/3.4/
 PKGNAMEPREFIX=	php5-
 DISTNAME=	Ice-${PORTVERSION}
 
@@ -17,8 +16,6 @@ MAINTAINER=	dirk.ye@gmail.com
 COMMENT=	An Ice (Internet Communications Engine) language mapping for PHP
 
 LIB_DEPENDS=	Ice.${LIB_VRS}:${PORTSDIR}/devel/ice
-
-BROKEN=		Port needs to be updated to new Ice version.
 
 USE_GMAKE=	yes
 MAKE_ARGS+=	PHP_EXT_DIR=${PHP_EXT_DIR}
@@ -53,11 +50,11 @@ MAKE_ENV+=	NOPORTDOCS=yes
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' ${WRKSRC}/php/config/Make.rules
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|' ${WRKSRC}/php/config/Make.rules.php
 	${REINPLACE_CMD} 's|%%INSTALL_PROGRAM%%|${INSTALL_PROGRAM}|g; \
 		s|%%INSTALL_DATA%%|${INSTALL_DATA}|g; \
 		s|%%PREFIX%%|${PREFIX}|g ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/php/config/Make.rules
+		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/php/config/Make.rules.php
 post-install:
 	@${MKDIR} ${PREFIX}/etc/php
 	@${ECHO_CMD} extension=${PHP_MODNAME}.so \
