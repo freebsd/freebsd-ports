@@ -7,7 +7,7 @@
 
 PORTNAME=	murmur
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio net
 MASTER_SITES=	SF/mumble/Mumble/${PORTVERSION}
 DISTNAME=	mumble-${PORTVERSION}
@@ -33,7 +33,7 @@ OPTIONS=	ICE "Ice Support" on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ICE)
-LIB_DEPENDS+=	Ice.33:${PORTSDIR}/devel/ice
+LIB_DEPENDS+=	Ice.34:${PORTSDIR}/devel/ice
 .else
 CONFIG+=	no-ice
 .endif
