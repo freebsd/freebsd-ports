@@ -7,6 +7,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b20
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		https://jaxp.dev.java.net/files/documents/913/150648/:jaxp \
@@ -52,6 +53,7 @@ WRKSRC=		${WRKDIR}
 USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_XORG=	xtst xi xt x11
+MAKE_JOBS_UNSAFE=	yes
 
 JAXP_BUILD=	b20
 JAXPFILE=	jdk6-jaxp-${JAXP_BUILD}.zip
