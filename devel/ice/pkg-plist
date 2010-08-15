@@ -13,11 +13,11 @@ bin/icestormadmin
 bin/icestormmigrate
 bin/slice2cpp
 bin/slice2cs
-bin/slice2docbook
 bin/slice2freeze
 bin/slice2freezej
 bin/slice2html
 bin/slice2java
+bin/slice2php
 bin/slice2py
 bin/slice2rb
 bin/transformdb
@@ -39,10 +39,12 @@ include/Freeze/Map.h
 include/Freeze/Transaction.h
 include/Freeze/TransactionHolder.h
 include/Freeze/TransactionalEvictor.h
+include/Glacier2/Application.h
 include/Glacier2/Glacier2.h
 include/Glacier2/PermissionsVerifier.h
 include/Glacier2/PermissionsVerifierF.h
 include/Glacier2/Router.h
+include/Glacier2/RouterF.h
 include/Glacier2/SSLInfo.h
 include/Glacier2/Session.h
 include/Ice/Application.h
@@ -50,9 +52,11 @@ include/Ice/BasicStream.h
 include/Ice/Buffer.h
 include/Ice/BuiltinSequences.h
 include/Ice/Communicator.h
+include/Ice/CommunicatorAsync.h
 include/Ice/CommunicatorF.h
 include/Ice/Config.h
 include/Ice/Connection.h
+include/Ice/ConnectionAsync.h
 include/Ice/ConnectionF.h
 include/Ice/ConnectionFactoryF.h
 include/Ice/ConnectionIF.h
@@ -60,16 +64,19 @@ include/Ice/ConnectionMonitorF.h
 include/Ice/Current.h
 include/Ice/Direct.h
 include/Ice/DispatchInterceptor.h
+include/Ice/Dispatcher.h
 include/Ice/DynamicLibrary.h
 include/Ice/DynamicLibraryF.h
 include/Ice/Endpoint.h
+include/Ice/EndpointF.h
 include/Ice/EndpointFactory.h
 include/Ice/EndpointFactoryF.h
 include/Ice/EndpointIF.h
+include/Ice/EndpointTypes.h
 include/Ice/Exception.h
 include/Ice/FacetMap.h
 include/Ice/FactoryTable.h
-include/Ice/FactoryTableDef.h
+include/Ice/FactoryTableInit.h
 include/Ice/Functional.h
 include/Ice/GCCountMap.h
 include/Ice/GCShared.h
@@ -132,7 +139,6 @@ include/Ice/StreamF.h
 include/Ice/StringConverter.h
 include/Ice/UndefSysMacros.h
 include/Ice/UserExceptionFactory.h
-include/Ice/UserExceptionFactoryF.h
 include/IceBox/IceBox.h
 include/IceGrid/Admin.h
 include/IceGrid/Descriptor.h
@@ -149,6 +155,10 @@ include/IceGrid/UserAccountMapper.h
 include/IcePatch2/ClientUtil.h
 include/IcePatch2/FileInfo.h
 include/IcePatch2/FileServer.h
+include/IcePatch2/Util.h
+include/IceSSL/ConnectionInfo.h
+include/IceSSL/EndpointInfo.h
+include/IceSSL/IceSSL.h
 include/IceSSL/Plugin.h
 include/IceStorm/IceStorm.h
 include/IceUtil/AbstractMutex.h
@@ -160,8 +170,8 @@ include/IceUtil/CountDownLatch.h
 include/IceUtil/CtrlCHandler.h
 include/IceUtil/DisableWarnings.h
 include/IceUtil/Exception.h
-include/IceUtil/Functional.h
 include/IceUtil/FileUtil.h
+include/IceUtil/Functional.h
 include/IceUtil/Handle.h
 include/IceUtil/IceUtil.h
 include/IceUtil/InputUtil.h
@@ -169,6 +179,9 @@ include/IceUtil/Iterator.h
 include/IceUtil/Lock.h
 include/IceUtil/Monitor.h
 include/IceUtil/Mutex.h
+include/IceUtil/MutexProtocol.h
+include/IceUtil/MutexPtrLock.h
+include/IceUtil/MutexPtrTryLock.h
 include/IceUtil/Options.h
 include/IceUtil/OutputUtil.h
 include/IceUtil/RWRecMutex.h
@@ -191,6 +204,7 @@ include/Slice/CsUtil.h
 include/Slice/DotNetNames.h
 include/Slice/FileTracker.h
 include/Slice/JavaUtil.h
+include/Slice/PHPUtil.h
 include/Slice/Parser.h
 include/Slice/Preprocessor.h
 include/Slice/PythonUtil.h
@@ -198,49 +212,50 @@ include/Slice/RubyUtil.h
 include/Slice/Util.h
 lib/ImportKey.class
 lib/libFreeze.so
-lib/libFreeze.so.3.3.1
-lib/libFreeze.so.33
+lib/libFreeze.so.3.4.1
+lib/libFreeze.so.34
 lib/libGlacier2.so
-lib/libGlacier2.so.3.3.1
-lib/libGlacier2.so.33
+lib/libGlacier2.so.3.4.1
+lib/libGlacier2.so.34
 lib/libIce.so
-lib/libIce.so.3.3.1
-lib/libIce.so.33
+lib/libIce.so.3.4.1
+lib/libIce.so.34
 lib/libIceBox.so
-lib/libIceBox.so.3.3.1
-lib/libIceBox.so.33
+lib/libIceBox.so.3.4.1
+lib/libIceBox.so.34
+lib/libIceDB.so
+lib/libIceDB.so.3.4.1
+lib/libIceDB.so.34
 lib/libIceGrid.so
-lib/libIceGrid.so.3.3.1
-lib/libIceGrid.so.33
+lib/libIceGrid.so.3.4.1
+lib/libIceGrid.so.34
+lib/libIceGridFreezeDB.so
+lib/libIceGridFreezeDB.so.3.4.1
+lib/libIceGridFreezeDB.so.34
 lib/libIcePatch2.so
-lib/libIcePatch2.so.3.3.1
-lib/libIcePatch2.so.33
+lib/libIcePatch2.so.3.4.1
+lib/libIcePatch2.so.34
 lib/libIceSSL.so
-lib/libIceSSL.so.3.3.1
-lib/libIceSSL.so.33
+lib/libIceSSL.so.3.4.1
+lib/libIceSSL.so.34
 lib/libIceStorm.so
-lib/libIceStorm.so.3.3.1
-lib/libIceStorm.so.33
+lib/libIceStorm.so.3.4.1
+lib/libIceStorm.so.34
+lib/libIceStormFreezeDB.so
+lib/libIceStormFreezeDB.so.3.4.1
+lib/libIceStormFreezeDB.so.34
 lib/libIceStormService.so
-lib/libIceStormService.so.3.3.1
-lib/libIceStormService.so.33
+lib/libIceStormService.so.3.4.1
+lib/libIceStormService.so.34
 lib/libIceUtil.so
-lib/libIceUtil.so.3.3.1
-lib/libIceUtil.so.33
+lib/libIceUtil.so.3.4.1
+lib/libIceUtil.so.34
 lib/libIceXML.so
-lib/libIceXML.so.3.3.1
-lib/libIceXML.so.33
+lib/libIceXML.so.3.4.1
+lib/libIceXML.so.34
 lib/libSlice.so
-lib/libSlice.so.3.3.1
-lib/libSlice.so.33
-%%DATADIR%%/ICE_LICENSE
-%%DATADIR%%/LICENSE
-%%DATADIR%%/config/convertssl.py
-%%DATADIR%%/config/icegrid-slice.3.1.ice.gz
-%%DATADIR%%/config/icegrid-slice.3.2.ice.gz
-%%DATADIR%%/config/icegrid-slice.3.3.ice.gz
-%%DATADIR%%/config/templates.xml
-%%DATADIR%%/config/upgradeicegrid.py
+lib/libSlice.so.3.4.1
+lib/libSlice.so.34
 %%DATADIR%%/Freeze/BackgroundSaveEvictor.ice
 %%DATADIR%%/Freeze/CatalogData.ice
 %%DATADIR%%/Freeze/Connection.ice
@@ -258,7 +273,7 @@ lib/libSlice.so.33
 %%DATADIR%%/Glacier2/RouterF.ice
 %%DATADIR%%/Glacier2/SSLInfo.ice
 %%DATADIR%%/Glacier2/Session.ice
-%%DATADIR%%/Glacier2/SessionF.ice
+%%DATADIR%%/ICE_LICENSE
 %%DATADIR%%/Ice/BuiltinSequences.ice
 %%DATADIR%%/Ice/Communicator.ice
 %%DATADIR%%/Ice/CommunicatorF.ice
@@ -266,6 +281,8 @@ lib/libSlice.so.33
 %%DATADIR%%/Ice/ConnectionF.ice
 %%DATADIR%%/Ice/Current.ice
 %%DATADIR%%/Ice/Endpoint.ice
+%%DATADIR%%/Ice/EndpointF.ice
+%%DATADIR%%/Ice/EndpointTypes.ice
 %%DATADIR%%/Ice/FacetMap.ice
 %%DATADIR%%/Ice/Identity.ice
 %%DATADIR%%/Ice/ImplicitContext.ice
@@ -305,17 +322,17 @@ lib/libSlice.so.33
 %%DATADIR%%/IceGrid/UserAccountMapper.ice
 %%DATADIR%%/IcePatch2/FileInfo.ice
 %%DATADIR%%/IcePatch2/FileServer.ice
+%%DATADIR%%/IceSSL/ConnectionInfo.ice
+%%DATADIR%%/IceSSL/EndpointInfo.ice
 %%DATADIR%%/IceStorm/IceStorm.ice
+%%DATADIR%%/LICENSE
+%%DATADIR%%/config/convertssl.py
+%%DATADIR%%/config/icegrid-slice.3.1.ice.gz
+%%DATADIR%%/config/icegrid-slice.3.2.ice.gz
+%%DATADIR%%/config/icegrid-slice.3.3.ice.gz
+%%DATADIR%%/config/templates.xml
+%%DATADIR%%/config/upgradeicegrid.py
 %%PORTDOCS%%%%DOCSDIR%%/reference/Freeze.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/Glacier2.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/Ice.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/IceBox.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/IcePatch2.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/IceStorm.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/_sindex.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/index.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/symboltree.js
 %%PORTDOCS%%%%DOCSDIR%%/reference/Freeze/BackgroundSaveEvictor.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Freeze/CatalogData.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Freeze/Connection.html
@@ -334,6 +351,7 @@ lib/libSlice.so.33
 %%PORTDOCS%%%%DOCSDIR%%/reference/Freeze/Transaction.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Freeze/TransactionAlreadyInProgressException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Freeze/TransactionalEvictor.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/Glacier2.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Glacier2/Admin.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Glacier2/CannotCreateSessionException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Glacier2/IdentitySet.html
@@ -348,6 +366,7 @@ lib/libSlice.so.33
 %%PORTDOCS%%%%DOCSDIR%%/reference/Glacier2/SessionManager.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Glacier2/SessionNotExistException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Glacier2/StringSet.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/Ice.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/AdapterAlreadyActiveException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/AdapterNotFoundException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/AlreadyRegisteredException.html
@@ -360,9 +379,9 @@ lib/libSlice.so.33
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/CommunicatorDestroyedException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/CompressionException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/ConnectFailedException.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/Ice/Logger.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/ConnectTimeoutException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/Connection.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/Ice/ConnectionInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/ConnectionLostException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/ConnectionNotValidatedException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/ConnectionRefusedException.html
@@ -372,6 +391,7 @@ lib/libSlice.so.33
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/DatagramLimitException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/EncapsulationException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/Endpoint.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/Ice/EndpointInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/EndpointParseException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/EndpointSelectionType.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/EndpointSelectionTypeParseException.html
@@ -380,20 +400,20 @@ lib/libSlice.so.33
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/FileException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/FixedProxyException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/ForcedCloseConnectionException.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/Ice/IPConnectionInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/Ice/IPEndpointInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/Identity.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/IdentityParseException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/IllegalIdentityException.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/Ice/IllegalIndirectionException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/IllegalMessageSizeException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/ImplicitContext.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/InitializationException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/InvalidReplicaGroupIdException.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/Ice/Plugin.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/Locator.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/LocatorRegistry.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/Ice/Logger.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/MarshalException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/MemoryLimitException.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/Ice/NegativeSizeException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/NoEndpointException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/NoObjectFactoryException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/NotRegisteredException.html
@@ -403,8 +423,10 @@ lib/libSlice.so.33
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/ObjectFactory.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/ObjectNotExistException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/ObjectNotFoundException.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/Ice/OpaqueEndpointInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/OperationMode.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/OperationNotExistException.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/Ice/Plugin.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/PluginInitializationException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/PluginManager.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/Process.html
@@ -418,13 +440,17 @@ lib/libSlice.so.33
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/Router.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/SecurityException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/ServantLocator.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/Ice/SocketException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/ServerNotFoundException.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/Ice/SocketException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/Stats.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/StringConversionException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/SyscallException.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/Ice/TCPConnectionInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/Ice/TCPEndpointInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/TimeoutException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/TwowayOnlyException.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/Ice/UDPConnectionInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/Ice/UDPEndpointInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/UnexpectedObjectException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/UnknownException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/UnknownLocalException.html
@@ -436,6 +462,7 @@ lib/libSlice.so.33
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/UnsupportedEncodingException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/UnsupportedProtocolException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/Ice/VersionMismatchException.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/IceBox.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceBox/AlreadyStartedException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceBox/AlreadyStoppedException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceBox/FailureException.html
@@ -443,6 +470,7 @@ lib/libSlice.so.33
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceBox/Service.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceBox/ServiceManager.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceBox/ServiceObserver.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/AccessDeniedException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/AdapterDescriptor.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/AdapterDynamicInfo.html
@@ -471,8 +499,8 @@ lib/libSlice.so.33
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/FileNotAvailableException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/FileParser.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/IceBoxDescriptor.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/LoadInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/LoadBalancingPolicy.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/LoadInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/LoadSample.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/Locator.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/NodeDescriptor.html
@@ -487,8 +515,8 @@ lib/libSlice.so.33
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/ObjectInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/ObjectNotRegisteredException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/ObjectObserver.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/OrderedLoadBalancingPolicy.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/ObserverAlreadyRegisteredException.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/OrderedLoadBalancingPolicy.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/ParseException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/PatchException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/PermissionDeniedException.html
@@ -502,8 +530,8 @@ lib/libSlice.so.33
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/RegistryObserver.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/RegistryUnreachableException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/ReplicaGroupDescriptor.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/ServerDescriptor.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/RoundRobinLoadBalancingPolicy.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/ServerDescriptor.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/ServerDynamicInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/ServerInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/ServerInstanceDescriptor.html
@@ -518,11 +546,16 @@ lib/libSlice.so.33
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/TemplateDescriptor.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/UserAccountMapper.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid/UserAccountNotFoundException.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/IcePatch2.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IcePatch2/Admin.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IcePatch2/FileAccessException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IcePatch2/FileInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IcePatch2/FileServer.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IcePatch2/PartitionOutOfRangeException.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/IceSSL.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/IceSSL/ConnectionInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/IceSSL/EndpointInfo.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/IceStorm.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceStorm/AlreadySubscribed.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceStorm/BadQoS.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceStorm/LinkExists.html
@@ -532,6 +565,7 @@ lib/libSlice.so.33
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceStorm/Topic.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceStorm/TopicExists.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/IceStorm/TopicManager.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/_sindex.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/images/caution.gif
 %%PORTDOCS%%%%DOCSDIR%%/reference/images/closed.gif
 %%PORTDOCS%%%%DOCSDIR%%/reference/images/collapseAll.gif
@@ -550,8 +584,22 @@ lib/libSlice.so.33
 %%PORTDOCS%%%%DOCSDIR%%/reference/images/up.gif
 %%PORTDOCS%%%%DOCSDIR%%/reference/images/upx.gif
 %%PORTDOCS%%%%DOCSDIR%%/reference/images/warning.gif
+%%PORTDOCS%%%%DOCSDIR%%/reference/index.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/symboltree.js
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/images
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/IceStorm
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/IceSSL
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/IcePatch2
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/IceBox
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/Ice
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/Glacier2
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/Freeze
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference
+@dirrm %%PORTDOCS%%%%DOCSDIR%%
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%/IceStorm
+@dirrm %%DATADIR%%/IceSSL
 @dirrm %%DATADIR%%/IcePatch2
 @dirrm %%DATADIR%%/IceGrid
 @dirrm %%DATADIR%%/IceBox
@@ -559,16 +607,6 @@ lib/libSlice.so.33
 @dirrm %%DATADIR%%/Glacier2
 @dirrm %%DATADIR%%/Freeze
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/Freeze
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/Glacier2
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/Ice
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/IceBox
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/IceGrid
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/IcePatch2
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/IceStorm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/Slice
 @dirrm include/IceXML
 @dirrm include/IceUtil
