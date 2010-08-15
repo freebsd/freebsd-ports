@@ -2,13 +2,14 @@
 %%DATADIR%%/COPYING
 %%DATADIR%%/ChangeLog
 %%DATADIR%%/THANKS
-%%DATADIR%%/doc/index.html
 %%DATADIR%%/doc/common.css
+%%DATADIR%%/doc/index.html
 %%DATADIR%%/doc/spex.html
 %%DATADIR%%/ext/mapreduce.lua
 %%DATADIR%%/ext/queue.lua
 %%DATADIR%%/ext/senatus.lua
 %%DATADIR%%/ext/usherette.lua
+%%DATADIR%%/tokyotyrant.idl
 bin/tcrmgr
 bin/tcrmttest
 bin/tcrtest
@@ -21,7 +22,7 @@ include/ttutil.h
 lib/libtokyotyrant.a
 lib/libtokyotyrant.so
 lib/libtokyotyrant.so.3
-lib/libtokyotyrant.so.3.23.0
+lib/libtokyotyrant.so.3.24.0
 lib/ttskeldir.so
 lib/ttskelmock.so
 lib/ttskelnull.so
