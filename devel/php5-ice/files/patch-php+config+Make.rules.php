@@ -1,13 +1,13 @@
---- php/config/Make.rules.orig	2008-05-17 01:24:03.000000000 +0800
-+++ php/config/Make.rules	2008-08-02 08:20:17.000000000 +0800
+--- php/config/Make.rules.php.orig	2010-06-03 18:48:34.000000000 +0200
++++ php/config/Make.rules.php	2010-07-30 14:43:46.000000000 +0200
 @@ -12,7 +12,9 @@
  # if it does not exist.
  #
  
 -prefix			?= /opt/Ice-$(VERSION)
-+ICE_HOME		= %%PREFIX%%
++ICE_HOME		= /usr/local
 +
-+prefix			?= %%PREFIX%%/lib/php/$(PHP_EXT_DIR)
++prefix			?= /usr/local/lib/php/$(PHP_EXT_DIR)
  
  #
  # The "root directory" for runpath embedded in executables. Can be unset
@@ -20,20 +20,22 @@
  
  #
  # Define LP64 as yes if you want to build in 64 bit mode on a platform
-@@ -48,7 +50,7 @@
+@@ -54,7 +56,7 @@
  # PHP_INCLUDE_DIR and PHP_LIB_DIR.
  #
  
 -PHP_HOME		?= /opt/php
-+PHP_HOME		?= %%PREFIX%%
++PHP_HOME		?= /usr/local
  
  #
  # Verifies the PHP_HOME is valid and attempts to adjust for platform variances
-@@ -94,7 +96,7 @@
+@@ -100,8 +102,8 @@
  endif
  
  libdir			= $(top_srcdir)/lib
--install_libdir		= $(prefix)/$(libsubdir)
+-install_phpdir		= $(prefix)/php
+-install_libdir		= $(prefix)/php
++install_phpdir		= $(prefix)
 +install_libdir		= $(prefix)
  
  #

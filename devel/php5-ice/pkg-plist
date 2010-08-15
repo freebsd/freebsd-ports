@@ -1,6 +1,64 @@
 lib/php/%%PHP_EXT_DIR%%/ICE_LICENSE
+lib/php/%%PHP_EXT_DIR%%/Ice.php
 lib/php/%%PHP_EXT_DIR%%/IcePHP.so
 lib/php/%%PHP_EXT_DIR%%/LICENSE
+lib/php/%%PHP_EXT_DIR%%/Glacier2.php
+lib/php/%%PHP_EXT_DIR%%/Glacier2/PermissionsVerifier.php
+lib/php/%%PHP_EXT_DIR%%/Glacier2/PermissionsVerifierF.php
+lib/php/%%PHP_EXT_DIR%%/Glacier2/Router.php
+lib/php/%%PHP_EXT_DIR%%/Glacier2/RouterF.php
+lib/php/%%PHP_EXT_DIR%%/Glacier2/SSLInfo.php
+lib/php/%%PHP_EXT_DIR%%/Glacier2/Session.php
+lib/php/%%PHP_EXT_DIR%%/Ice/BuiltinSequences.php
+lib/php/%%PHP_EXT_DIR%%/Ice/Communicator.php
+lib/php/%%PHP_EXT_DIR%%/Ice/CommunicatorF.php
+lib/php/%%PHP_EXT_DIR%%/Ice/Connection.php
+lib/php/%%PHP_EXT_DIR%%/Ice/ConnectionF.php
+lib/php/%%PHP_EXT_DIR%%/Ice/Current.php
+lib/php/%%PHP_EXT_DIR%%/Ice/Endpoint.php
+lib/php/%%PHP_EXT_DIR%%/Ice/EndpointF.php
+lib/php/%%PHP_EXT_DIR%%/Ice/EndpointTypes.php
+lib/php/%%PHP_EXT_DIR%%/Ice/FacetMap.php
+lib/php/%%PHP_EXT_DIR%%/Ice/Identity.php
+lib/php/%%PHP_EXT_DIR%%/Ice/ImplicitContext.php
+lib/php/%%PHP_EXT_DIR%%/Ice/ImplicitContextF.php
+lib/php/%%PHP_EXT_DIR%%/Ice/LocalException.php
+lib/php/%%PHP_EXT_DIR%%/Ice/Locator.php
+lib/php/%%PHP_EXT_DIR%%/Ice/LocatorF.php
+lib/php/%%PHP_EXT_DIR%%/Ice/Logger.php
+lib/php/%%PHP_EXT_DIR%%/Ice/LoggerF.php
+lib/php/%%PHP_EXT_DIR%%/Ice/ObjectAdapterF.php
+lib/php/%%PHP_EXT_DIR%%/Ice/ObjectFactory.php
+lib/php/%%PHP_EXT_DIR%%/Ice/ObjectFactoryF.php
+lib/php/%%PHP_EXT_DIR%%/Ice/Plugin.php
+lib/php/%%PHP_EXT_DIR%%/Ice/PluginF.php
+lib/php/%%PHP_EXT_DIR%%/Ice/Process.php
+lib/php/%%PHP_EXT_DIR%%/Ice/ProcessF.php
+lib/php/%%PHP_EXT_DIR%%/Ice/Properties.php
+lib/php/%%PHP_EXT_DIR%%/Ice/PropertiesF.php
+lib/php/%%PHP_EXT_DIR%%/Ice/Router.php
+lib/php/%%PHP_EXT_DIR%%/Ice/RouterF.php
+lib/php/%%PHP_EXT_DIR%%/Ice/SliceChecksumDict.php
+lib/php/%%PHP_EXT_DIR%%/Ice/Stats.php
+lib/php/%%PHP_EXT_DIR%%/Ice/StatsF.php
+lib/php/%%PHP_EXT_DIR%%/IceBox.php
+lib/php/%%PHP_EXT_DIR%%/IceBox/IceBox.php
+lib/php/%%PHP_EXT_DIR%%/IceGrid.php
+lib/php/%%PHP_EXT_DIR%%/IceGrid/Admin.php
+lib/php/%%PHP_EXT_DIR%%/IceGrid/Descriptor.php
+lib/php/%%PHP_EXT_DIR%%/IceGrid/Exception.php
+lib/php/%%PHP_EXT_DIR%%/IceGrid/FileParser.php
+lib/php/%%PHP_EXT_DIR%%/IceGrid/Locator.php
+lib/php/%%PHP_EXT_DIR%%/IceGrid/Observer.php
+lib/php/%%PHP_EXT_DIR%%/IceGrid/Query.php
+lib/php/%%PHP_EXT_DIR%%/IceGrid/Registry.php
+lib/php/%%PHP_EXT_DIR%%/IceGrid/Session.php
+lib/php/%%PHP_EXT_DIR%%/IceGrid/UserAccountMapper.php
+lib/php/%%PHP_EXT_DIR%%/IcePatch2.php
+lib/php/%%PHP_EXT_DIR%%/IcePatch2/FileInfo.php
+lib/php/%%PHP_EXT_DIR%%/IcePatch2/FileServer.php
+lib/php/%%PHP_EXT_DIR%%/IceStorm.php
+lib/php/%%PHP_EXT_DIR%%/IceStorm/IceStorm.php
 lib/php/%%PHP_EXT_DIR%%/slice/Freeze/BackgroundSaveEvictor.ice
 lib/php/%%PHP_EXT_DIR%%/slice/Freeze/CatalogData.ice
 lib/php/%%PHP_EXT_DIR%%/slice/Freeze/Connection.ice
@@ -18,7 +76,6 @@ lib/php/%%PHP_EXT_DIR%%/slice/Glacier2/Router.ice
 lib/php/%%PHP_EXT_DIR%%/slice/Glacier2/RouterF.ice
 lib/php/%%PHP_EXT_DIR%%/slice/Glacier2/SSLInfo.ice
 lib/php/%%PHP_EXT_DIR%%/slice/Glacier2/Session.ice
-lib/php/%%PHP_EXT_DIR%%/slice/Glacier2/SessionF.ice
 lib/php/%%PHP_EXT_DIR%%/slice/Ice/BuiltinSequences.ice
 lib/php/%%PHP_EXT_DIR%%/slice/Ice/Communicator.ice
 lib/php/%%PHP_EXT_DIR%%/slice/Ice/CommunicatorF.ice
@@ -26,6 +83,8 @@ lib/php/%%PHP_EXT_DIR%%/slice/Ice/Connection.ice
 lib/php/%%PHP_EXT_DIR%%/slice/Ice/ConnectionF.ice
 lib/php/%%PHP_EXT_DIR%%/slice/Ice/Current.ice
 lib/php/%%PHP_EXT_DIR%%/slice/Ice/Endpoint.ice
+lib/php/%%PHP_EXT_DIR%%/slice/Ice/EndpointF.ice
+lib/php/%%PHP_EXT_DIR%%/slice/Ice/EndpointTypes.ice
 lib/php/%%PHP_EXT_DIR%%/slice/Ice/FacetMap.ice
 lib/php/%%PHP_EXT_DIR%%/slice/Ice/Identity.ice
 lib/php/%%PHP_EXT_DIR%%/slice/Ice/ImplicitContext.ice
@@ -65,13 +124,22 @@ lib/php/%%PHP_EXT_DIR%%/slice/IceGrid/Session.ice
 lib/php/%%PHP_EXT_DIR%%/slice/IceGrid/UserAccountMapper.ice
 lib/php/%%PHP_EXT_DIR%%/slice/IcePatch2/FileInfo.ice
 lib/php/%%PHP_EXT_DIR%%/slice/IcePatch2/FileServer.ice
+lib/php/%%PHP_EXT_DIR%%/slice/IceSSL/ConnectionInfo.ice
+lib/php/%%PHP_EXT_DIR%%/slice/IceSSL/EndpointInfo.ice
 lib/php/%%PHP_EXT_DIR%%/slice/IceStorm/IceStorm.ice
+@dirrmtry lib/php/%%PHP_EXT_DIR%%/Glacier2
+@dirrmtry lib/php/%%PHP_EXT_DIR%%/Ice
+@dirrmtry lib/php/%%PHP_EXT_DIR%%/IceBox
+@dirrmtry lib/php/%%PHP_EXT_DIR%%/IceGrid
+@dirrmtry lib/php/%%PHP_EXT_DIR%%/IcePatch2
+@dirrmtry lib/php/%%PHP_EXT_DIR%%/IceStorm
 @dirrmtry lib/php/%%PHP_EXT_DIR%%/slice/Freeze
 @dirrmtry lib/php/%%PHP_EXT_DIR%%/slice/Glacier2
 @dirrmtry lib/php/%%PHP_EXT_DIR%%/slice/Ice
 @dirrmtry lib/php/%%PHP_EXT_DIR%%/slice/IceBox
 @dirrmtry lib/php/%%PHP_EXT_DIR%%/slice/IceGrid
 @dirrmtry lib/php/%%PHP_EXT_DIR%%/slice/IcePatch2
+@dirrmtry lib/php/%%PHP_EXT_DIR%%/slice/IceSSL
 @dirrmtry lib/php/%%PHP_EXT_DIR%%/slice/IceStorm
 @dirrmtry lib/php/%%PHP_EXT_DIR%%/slice
 @dirrmtry lib/php/%%PHP_EXT_DIR%%
