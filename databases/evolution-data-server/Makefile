@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	2.30.2.1
-PORTREVISION=	2
+PORTVERSION=	2.30.3
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
