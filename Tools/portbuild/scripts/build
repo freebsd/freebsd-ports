@@ -513,6 +513,9 @@ case "$cmd" in
 	do_list ${arch} ${branch} $@ || exit 1
 	;;
     create)
+	if [ -z "${buildid}" ]; then
+	    usage
+	fi
 	proxy_root create ${arch} ${branch} ${buildid} $@ || exit 1
 	;;
     clone)
