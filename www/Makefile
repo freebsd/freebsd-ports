@@ -864,6 +864,7 @@
     SUBDIR += p5-Catalyst-Plugin-Unicode-Encoding
     SUBDIR += p5-Catalyst-Plugin-XMLRPC
     SUBDIR += p5-Catalyst-Runtime
+    SUBDIR += p5-Catalyst-TraitFor-Controller-DBIC-DoesPaging
     SUBDIR += p5-Catalyst-TraitFor-Request-BrowserDetect
     SUBDIR += p5-Catalyst-View-ClearSilver
     SUBDIR += p5-Catalyst-View-Email

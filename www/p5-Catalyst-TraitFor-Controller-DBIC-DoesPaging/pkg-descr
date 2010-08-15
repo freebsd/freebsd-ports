@@ -1,0 +1,8 @@
+Catalyst::TraitFor::Controller::DBIC::DoesPaging - Helps you paginate,
+search, sort, and more easily using DBIx::Class.
+
+This module helps you to map various DBIx::Class features to CGI
+parameters. For the most part that means it will help you search,
+sort, and paginate with a minimum of effort and thought.
+
+WWW:	http://search.cpan.org/perldoc?Catalyst::TraitFor::Controller::DBIC::DoesPaging
