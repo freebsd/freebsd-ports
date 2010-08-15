@@ -7,7 +7,7 @@
 
 PORTNAME?=	firebird
 PORTVERSION=	2.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	databases
 MASTER_SITES=	SF/firebird/OldFiles
 PKGNAMESUFFIX?=	-server
@@ -77,7 +77,7 @@ ALL_TARGET=	firebird_basic libfbembed embed_isql embed_gpre \
 #		client_gpre client_gdef client_isql client_qli extlib
 
 USE_LDCONFIG=	yes
-CLIENT_BIN=	gpre isql qli
+CLIENT_BIN=	gpre isql-fb qli
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -103,6 +103,9 @@ post-patch:
 	@${MKDIR} ${WRKSRC}/m4
 	${CP} ${FILESDIR}/*.m4 ${WRKSRC}/m4
 	${FIND} ${WRKSRC} -name "*.sh" -exec ${CHMOD} +x {} \+
+.if defined(CLIENT_ONLY)
+	${REINPLACE_CMD} -e 's|/isql|/isql-fb|g' ${WRKSRC}/builds/posix/make.defaults
+.endif
 
 .include <bsd.port.pre.mk>
 

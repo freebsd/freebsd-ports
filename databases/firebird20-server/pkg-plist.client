@@ -1,6 +1,6 @@
 @comment $FreeBSD$
 bin/gpre
-bin/isql
+bin/isql-fb
 bin/qli
 include/blr.h
 include/ib_util.h
