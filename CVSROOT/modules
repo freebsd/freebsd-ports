@@ -720,6 +720,7 @@ at-spi-reference                ports/accessibility/at-spi-reference
 at-spi2-atk                     ports/accessibility/at-spi2-atk
 at-spi2-core                    ports/accessibility/at-spi2-core
 ataidle                         ports/sysutils/ataidle
+atanks                          ports/games/atanks
 atari800                        ports/emulators/atari800
 aterm                           ports/x11/aterm
 atitd                           ports/games/atitd
@@ -6795,7 +6796,6 @@ kBuild                          ports/devel/kBuild
 kaddressbook-plugins            ports/misc/kaddressbook-plugins
 kaffe                           ports/java/kaffe
 kaffeine                        ports/multimedia/kaffeine
-kaffeine-devel                  ports/multimedia/kaffeine-devel
 kaffeine-mozilla                ports/multimedia/kaffeine-mozilla
 kaid                            ports/games/kaid
 kalbum                          ports/graphics/kalbum
@@ -10586,6 +10586,7 @@ openvmps                        ports/net-mgmt/openvmps
 openvpn                         ports/security/openvpn
 openvpn-admin                   ports/security/openvpn-admin
 openvpn-auth-ldap               ports/security/openvpn-auth-ldap
+openvpn-beta                    ports/security/openvpn-beta
 openvpn-devel                   ports/security/openvpn-devel
 openvpn20                       ports/security/openvpn20
 openvrml                        ports/www/openvrml
