@@ -47,7 +47,6 @@ NO_BUILD=	yes
 OPTIONS=	CUPS	"Enable support for printing (requires CUPS)"		on \
 		VIDEO	"Enable support for HTML5 video (requires GStreamer)"	on \
 		GTK	"Use GTK backend"	off \
-		QT4	"Use Qt4 backend"	off \
 		KDE4	"Use KDE4 backend"	off
 
 .include <bsd.port.options.mk>
@@ -63,11 +62,6 @@ USE_GSTREAMER=	vorbis ogg theora
 .if defined(WITH_GTK)
 USE_GNOME=	atk gtk20 glib20 pango libxml2
 USE_FPC=	cairo
-.endif
-
-.if defined(WITH_QT4)
-USE_QT_VER=	4
-QT_COMPONENTS=	dbus gui network svg xml
 .endif
 
 .if defined(WITH_KDE4)
