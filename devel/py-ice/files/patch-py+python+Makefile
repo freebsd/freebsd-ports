@@ -1,6 +1,6 @@
---- py/python/Makefile.orig	2008-08-01 16:33:15.000000000 +0800
-+++ py/python/Makefile	2008-08-01 16:33:45.000000000 +0800
-@@ -230,7 +230,8 @@
+--- py/python/Makefile.orig	2010-07-11 13:05:38.000000000 +1000
++++ py/python/Makefile	2010-07-11 13:09:09.000000000 +1000
+@@ -121,7 +121,8 @@
  	$(INSTALL_DATA) *.py $(install_pythondir)
  	@for i in $(PACKAGES) ; \
  	do \
@@ -9,4 +9,4 @@
 +	    $(INSTALL_DATA) $$i/*.py $(install_pythondir)/$$i ; \
  	done
  
- clean::
+ depend::  $(ICE_SLICE) $(GLACIER2_SLICE) $(ICEBOX_SLICE) $(ICEGRID_SLICE) $(ICEPATCH2_SLICE) $(ICESTORM_SLICE)

@@ -3,8 +3,8 @@
 %%PYTHON_SITELIBDIR%%/Ice/Glacier2_RouterF_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Glacier2_Router_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Glacier2_SSLInfo_ice.py
-%%PYTHON_SITELIBDIR%%/Ice/Glacier2_SessionF_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Glacier2_Session_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Glacier2.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IceBox_IceBox_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IceGrid_Admin_ice.py
@@ -27,6 +27,8 @@
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Connection_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Current_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Endpoint_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_EndpointF_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_EndpointTypes_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_FacetMap_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Identity_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_ImplicitContextF_ice.py
@@ -62,7 +64,6 @@
 @rmtry %%PYTHON_SITELIBDIR%%/Ice/Glacier2_RouterF_ice.pyc
 @rmtry %%PYTHON_SITELIBDIR%%/Ice/Glacier2_Router_ice.pyc
 @rmtry %%PYTHON_SITELIBDIR%%/Ice/Glacier2_SSLInfo_ice.pyc
-@rmtry %%PYTHON_SITELIBDIR%%/Ice/Glacier2_SessionF_ice.pyc
 @rmtry %%PYTHON_SITELIBDIR%%/Ice/Glacier2_Session_ice.pyc
 @rmtry %%PYTHON_SITELIBDIR%%/Ice/Ice.pyc
 @rmtry %%PYTHON_SITELIBDIR%%/Ice/IceBox_IceBox_ice.pyc
@@ -117,7 +118,6 @@
 @rmtry %%PYTHON_SITELIBDIR%%/Ice/Glacier2_RouterF_ice.pyo
 @rmtry %%PYTHON_SITELIBDIR%%/Ice/Glacier2_Router_ice.pyo
 @rmtry %%PYTHON_SITELIBDIR%%/Ice/Glacier2_SSLInfo_ice.pyo
-@rmtry %%PYTHON_SITELIBDIR%%/Ice/Glacier2_SessionF_ice.pyo
 @rmtry %%PYTHON_SITELIBDIR%%/Ice/Glacier2_Session_ice.pyo
 @rmtry %%PYTHON_SITELIBDIR%%/Ice/Ice.pyo
 @rmtry %%PYTHON_SITELIBDIR%%/Ice/IceBox_IceBox_ice.pyo
@@ -167,9 +167,14 @@
 @rmtry %%PYTHON_SITELIBDIR%%/Ice/Ice_SliceChecksumDict_ice.pyo
 @rmtry %%PYTHON_SITELIBDIR%%/Ice/Ice_StatsF_ice.pyo
 @rmtry %%PYTHON_SITELIBDIR%%/Ice/Ice_Stats_ice.pyo
+@rmtry %%PYTHON_SITELIBDIR%%/Ice/Glacier2/__init__.py
 @rmtry %%PYTHON_SITELIBDIR%%/Ice/Glacier2
-@rmtry %%PYTHON_SITELIBDIR%%/Ice/IceBox
-@rmtry %%PYTHON_SITELIBDIR%%/Ice/IceGrid
-@rmtry %%PYTHON_SITELIBDIR%%/Ice/IcePatch2
-@rmtry %%PYTHON_SITELIBDIR%%/Ice/IceStorm
+@rmtry %%PYTHON_SITELIBDIR%%/Ice/IceBox/__init__.py
+@dirrmtry %%PYTHON_SITELIBDIR%%/Ice/IceBox
+@rmtry %%PYTHON_SITELIBDIR%%/Ice/IceGrid/__init__.py
+@dirrmtry %%PYTHON_SITELIBDIR%%/Ice/IceGrid
+@rmtry %%PYTHON_SITELIBDIR%%/Ice/IcePatch2/__init__.py
+@dirrmtry %%PYTHON_SITELIBDIR%%/Ice/IcePatch2
+@rmtry %%PYTHON_SITELIBDIR%%/Ice/IceStorm/__init__.py
+@dirrmtry %%PYTHON_SITELIBDIR%%/Ice/IceStorm
 @dirrmtry %%PYTHON_SITELIBDIR%%/Ice

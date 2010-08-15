@@ -1,17 +1,16 @@
---- py/config/Make.rules.orig	2009-04-14 21:17:37.000000000 +0800
-+++ py/config/Make.rules	2009-04-14 21:19:57.000000000 +0800
-@@ -12,7 +12,9 @@
+--- py/config/Make.rules.orig	2010-07-11 11:13:30.000000000 +1000
++++ py/config/Make.rules	2010-07-11 11:18:09.000000000 +1000
+@@ -12,7 +12,8 @@
  # if it does not exist.
  #
  
 -prefix			?= /opt/Ice-$(VERSION)
 +ICE_HOME		= %%LOCALBASE%%
-+
 +prefix			?= %%PREFIX%%
  
  #
  # The "root directory" for runpath embedded in executables. Can be unset
-@@ -72,8 +74,8 @@
+@@ -80,8 +81,8 @@
  endif
  
  libdir			= $(top_srcdir)/python
@@ -22,7 +21,7 @@
  
  #
  # Platform specific definitions
-@@ -97,7 +99,7 @@
+@@ -105,7 +106,7 @@
      ICE_LIB_DIR = -L$(ice_dir)/$(libsubdir)
      ICE_FLAGS	= -I$(ice_dir)/include
  endif

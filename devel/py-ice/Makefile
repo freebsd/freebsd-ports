@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Ice
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.zeroc.com/download/Ice/3.3/ \
+MASTER_SITES=	http://www.zeroc.com/download/Ice/3.4/ \
 		http://www.dirk.sh/dirk/Ice/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Ice-${PORTVERSION}
@@ -16,7 +16,7 @@ DISTNAME=	Ice-${PORTVERSION}
 MAINTAINER=	dirk.ye@gmail.com
 COMMENT=	An Ice (Internet Communications Engine) language mapping for Python
 
-BUILD_DEPENDS=	mcpp:${PORTSDIR}/devel/mcpp
+BUILD_DEPENDS=	mcpp.3:${PORTSDIR}/devel/mcpp
 LIB_DEPENDS=	Ice.${LIB_VRS}:${PORTSDIR}/devel/ice
 
 USE_GMAKE=	yes
