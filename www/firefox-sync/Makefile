@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	firefox-sync
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.4.4
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://files.roorback.net/ \
@@ -22,6 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul
 ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=yes
 
 OPTIONS=	FF35 "Build for Firefox 3.5 instead of 3.6" Off
 
@@ -38,7 +38,7 @@ AMD64_ARCH=	x86_64
 BUILD_DEPENDS+=	${FF_DEPENDS}
 RUN_DEPENDS+=	${FF_DEPENDS}
 
-REVID=		cd6f2b6e9ab1
+REVID=		5a3327fd9c8f
 .if ${ARCH} == i386
 PLATFORM=	FreeBSD_x86-gcc3
 .elif ${ARCH} == amd64
