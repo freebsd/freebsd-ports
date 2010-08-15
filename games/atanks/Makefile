@@ -9,7 +9,6 @@ PORTNAME=	atanks
 PORTVERSION=	4.6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jessefrgsmith@yahoo.ca
 COMMENT=	A 2D tank game with large, cartoonish weapons
@@ -28,7 +27,6 @@ post-patch:
 		    -e 's/-m *755/-m555 ${STRIP}/;' \
 		    -e 's/-m *644/-m444/;' \
 		    ${WRKSRC}/Makefile
-
 .if ${OSVERSION} >= 800501
 		${REINPLACE_CMD} \
 		    -e 's/int Filter_File( struct dirent/int Filter_File( const struct dirent/' \
