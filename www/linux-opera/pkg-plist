@@ -14,7 +14,6 @@ share/applications/linux-opera-browser.desktop
 share/applications/linux-opera-widget-installer.desktop
 share/applications/linux-opera-widget-manager.desktop
 %%DOCSDIR%%/LGPL-2
-%%DOCSDIR%%/LGPL-3
 %%DOCSDIR%%/LICENSE
 share/icons/hicolor/128x128/apps/linux-opera-browser.png
 share/icons/hicolor/128x128/apps/linux-opera-widget-manager.png
