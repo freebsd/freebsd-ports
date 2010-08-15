@@ -15,6 +15,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Inline C, C++, Fortran function calls from R
 
 R_MOD=	yes
+R_MOD_AUTOPLIST=	yes
 
 .include "${.CURDIR}/../../math/R-cran-sm/files/bsd.cran.mk"
 

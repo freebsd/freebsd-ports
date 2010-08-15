@@ -15,6 +15,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	R Classes and Methods for Spatial Data
 
 R_MOD=  yes
+R_MOD_AUTOPLIST=  yes
 
 .include "${.CURDIR}/../../math/R-cran-sm/files/bsd.cran.mk"
 
