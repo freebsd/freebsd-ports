@@ -1,4 +1,3 @@
-etc/reader.conf.sample
 include/PCSC/debuglog.h
 include/PCSC/ifdhandler.h
 include/PCSC/pcsclite.h
