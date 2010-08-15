@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	dvdstyler
-DISTVERSION=	1.5.1_2
-PORTREVISION=	6
+DISTVERSION=	1.8.1
 PORTEPOCH=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.5.1
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 DISTNAME=	DVDStyler-${DISTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
@@ -18,16 +17,18 @@ COMMENT=	WXGTK2 front end to dvd recoding and authoring programs
 
 BUILD_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		mplex:${PORTSDIR}/multimedia/mjpegtools \
-		jpegtopnm:${PORTSDIR}/graphics/netpbm \
-		mpgtx:${PORTSDIR}/multimedia/mpgtx \
-		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
+		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
+		xmlto:${PORTSDIR}/textproc/xmlto \
+		zip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		mplex:${PORTSDIR}/multimedia/mjpegtools \
-		jpegtopnm:${PORTSDIR}/graphics/netpbm \
-		mpgtx:${PORTSDIR}/multimedia/mpgtx \
-		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
+		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
+		xmlto:${PORTSDIR}/textproc/xmlto
+LIB_DEPENDS+=	avformat.1:${PORTSDIR}/multimedia/ffmpeg \
+		exif:${PORTSDIR}/graphics/libexif
 
-USE_WX=		2.6
+USE_BZIP2=	yes
+USE_WX=		2.8
 WX_COMPS=	wx svg
 WX_CONF_ARGS=	absolute
 USE_GMAKE=	yes
@@ -38,6 +39,7 @@ USE_CDRTOOLS=	yes	# dvdstyler needs mkisofs
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+MAN1=		dvdstyler.1
 
 .include <bsd.port.pre.mk>
 

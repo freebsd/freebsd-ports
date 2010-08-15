@@ -6,29 +6,29 @@
 #    $MCom: ports/graphics/wxsvg/Makefile,v 1.1 2006/09/22 01:48:33 ahze Exp $
 
 PORTNAME=	wxsvg
-DISTVERSION=	1.0b7_2
-PORTREVISION=	5
+DISTVERSION=	1.0.5
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library to create, manipulate, and render SVG files
 
-AUTOMAKE_ARGS=	--add-missing
+LIB_DEPENDS+=	avformat.1:${PORTSDIR}/multimedia/ffmpeg
+
+USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22 automake:15 autoconf:262
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-wx-config=${LOCALBASE}/bin/wxgtk2-2.8-config
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GNOME=	libartlgpl2
 USE_GMAKE=	yes
-USE_WX=		2.6
+USE_WX=		2.8
 
 post-patch:
 	@cd ${WRKSRC} && \
 		${TOUCH} -f README NEWS INSTALL
 	@${REINPLACE_CMD} -e 's|WX_CONFIG_NAME=wx-config|WX_CONFIG_NAME=${WX_CONFIG}|' \
 		${WRKSRC}/*.m4
-
-pre-configure:
-	@cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I .; \
-		${SETENV} ${SCRIPTS_ENV} ${LIBTOOLIZE} --automake
 
 .include <bsd.port.mk>
