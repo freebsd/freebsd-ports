@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drupal5
-PORTVERSION=	5.22
+PORTVERSION=	5.23
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
@@ -28,6 +28,9 @@ DOCS=		CHANGELOG.txt INSTALL.txt LICENSE.txt MAINTAINERS.txt \
 		UPGRADE.txt INSTALL.mysql.txt INSTALL.pgsql.txt
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 .include <bsd.port.pre.mk>
 
