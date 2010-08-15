@@ -11,6 +11,7 @@ include/wxSVG/ElementTimeControl.h
 include/wxSVG/EventTarget.h
 include/wxSVG/GetSVGDocument.h
 include/wxSVG/NodeList.h
+include/wxSVG/NodeListCls.h
 include/wxSVG/RGBColor.h
 include/wxSVG/SVGAElement.h
 include/wxSVG/SVGAltGlyphDefElement.h
@@ -176,15 +177,16 @@ include/wxSVG/SVGViewElement.h
 include/wxSVG/SVGViewSpec.h
 include/wxSVG/SVGZoomAndPan.h
 include/wxSVG/SVGZoomEvent.h
-include/wxSVG/String.h
+include/wxSVG/String_wxsvg.h
 include/wxSVG/ViewCSS.h
+include/wxSVG/mediadec_ffmpeg.h
 include/wxSVG/svg.h
 include/wxSVG/svgctrl.h
-include/wxXML/xml.h
-include/wxXML/xmlhelpr.h
+include/wxSVGXML/svgxml.h
+include/wxSVGXML/svgxmlhelpr.h
 lib/libwxsvg.a
 lib/libwxsvg.la
 lib/libwxsvg.so
 lib/libwxsvg.so.0
-@dirrm include/wxXML
+@dirrm include/wxSVGXML
 @dirrm include/wxSVG

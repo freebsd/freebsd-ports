@@ -164,9 +164,6 @@ _WX_LIB_contrib_2.6=	wx_gtk2${_WX_UC}_animate-2.6
 _WX_PORT_python_2.6=	x11-toolkits/py-wxPython26${_WX_UCL}
 _WX_FILE_python_2.6=	${PYTHON_SITELIBDIR}/wx-2.6-gtk2${_WX_PYSUFX}/wx/__init__.py
 
-_WX_PORT_svg_2.6=		graphics/wxsvg
-_WX_LIB_svg_2.6=		wxsvg
-
 # wxgtk 2.8
 _WX_PORT_wx_2.8=		x11-toolkits/wxgtk28${_WX_UCL}
 _WX_LIB_wx_2.8=			wx_base${_WX_UC}-2.8
@@ -176,6 +173,9 @@ _WX_LIB_contrib_2.8=	wx_gtk2${_WX_UC}_fl-2.8
 
 _WX_PORT_python_2.8=	x11-toolkits/py-wxPython28${_WX_UCL}
 _WX_FILE_python_2.8=	${PYTHON_SITELIBDIR}/wx-2.8-gtk2${_WX_PYSUFX}/wx/__init__.py
+
+_WX_PORT_svg_2.8=		graphics/wxsvg
+_WX_LIB_svg_2.8=		wxsvg
 
 # Set _WX_SHVER_comp_ver to 0 and _WX_FILE_comp_ver for libs appropiately.
 # Set _WX_DEPTYPE_comp_ver for "python" to "run", and others to "lib".
