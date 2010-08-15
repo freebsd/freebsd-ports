@@ -11,7 +11,7 @@ CATEGORIES=	games kde
 MASTER_SITES=	http://david.bieder.free.fr/eric/taquin/ \
 		http://perso.orange.fr/coquelle/taquin/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE puzzle game
 
 LICENSE=	GPLv2

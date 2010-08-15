@@ -11,7 +11,7 @@ CATEGORIES=	games kde
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 DISTNAME=	20292-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mastermind game designed for K Desktop Environment
 
 BUILD_DEPENDS=		${NONEXISTENT}:${PORTSDIR}/x11/kdelibs3:extract
