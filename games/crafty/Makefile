@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crafty
-PORTVERSION=	23.2
+PORTVERSION=	23.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.craftychess.com/:src \
 		ftp://ftp.cis.uab.edu/pub/hyatt/pgn/:data \
@@ -24,6 +24,8 @@ COMMENT=	A chess programm for playing and analyzing games
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
+
+WRKSRC=		${WRKDIR}
 
 BOOKS=		books.bin
 DISTFILES+=	${BOOKS:S/$/:books/}
