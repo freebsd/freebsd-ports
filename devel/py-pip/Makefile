@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pip
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8
 PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
@@ -16,14 +16,14 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Pip installs (Python) packages. An easy_install replacement
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0.6c9:${PORTSDIR}/devel/py-setuptools
-
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 REINPLACE_ARGS=	-i.bak -e "s/env python$$/&${PYTHON_VER}/"
 
+PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
+
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 
 post-patch:
 	${FIND} ${WRKSRC} -type f -name "pip*" -print0 | ${XARGS} -0 ${REINPLACE_CMD}
