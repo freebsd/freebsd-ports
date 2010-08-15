@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	redis
-PORTVERSION=	1.2.6
+DISTVERSION=	2.0.0-rc4
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	A persistent key-value database with built-in net interface
@@ -17,9 +18,12 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 CFLAGS+=	-I${LOCALBASE}/include
 
+CONFLICTS?=	redis-1.*
+
 USE_GMAKE=	yes
 USE_RC_SUBR=	redis.sh
-BIN_FILES=	redis-server redis-benchmark redis-cli
+BIN_FILES=	redis-benchmark redis-check-aof redis-check-dump \
+		redis-cli redis-server
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-install
@@ -44,9 +48,9 @@ SUB_LIST+=	PORTNAME="${PORTNAME}" \
 	REDIS_DBDIR="${REDIS_DBDIR}" \
 	REDIS_RUNDIR="${REDIS_RUNDIR}"
 
-PATTERN=	'10d;13s|$$$$(ARCH) ||'
+PATTERN=	'16d;115d;15s|$$$$(ARCH) ||'
 .if !defined(WITH_DEBUG)
-PATTERN:=	${PATTERN:S/'$/;14s|^|\#|'/}
+PATTERN:=	${PATTERN:S/'$/;5s|^|\#|'/}
 .endif
 
 post-patch:
