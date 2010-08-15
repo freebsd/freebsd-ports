@@ -7318,15 +7318,6 @@
  
 --- jdk/make/java/nio/Makefile	2010-06-21 14:15:08.000000000 -0700
 +++ jdk/make/java/nio/Makefile	2010-06-20 21:56:16.000000000 -0700
-@@ -82,7 +82,7 @@
- 	sun/nio/ch/WindowsSelectorImpl.java
- endif # PLATFORM = windows
- 
--ifeq ($(PLATFORM), linux)
-+ifneq (,$(findstring $(PLATFORM), linux bsd))
- FILES_java += \
-         sun/nio/ch/AbstractPollSelectorImpl.java \
- 	sun/nio/ch/EPollArrayWrapper.java \
 @@ -126,6 +126,11 @@
    -I$(PLATFORM_SRC)/native/java/net \
    -I$(CLASSHDRDIR)/../../../java.lang/java/CClassHeaders
