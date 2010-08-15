@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ccid
-PORTVERSION=	1.3.12
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	devel
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/3281/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/3333/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Generic USB CCID (Chip/Smart Card Interface Devices) driver
@@ -42,5 +41,9 @@ LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 post-patch:
 	${REINPLACE_CMD} -e "s,use warnings;,," ${WRKSRC}/src/create_Info_plist.pl
 	${REINPLACE_CMD} -e "s,ndef __APPLE__, !(__APPLE__ || __FreeBSD__)," ${WRKSRC}/contrib/Kobil_mIDentity_switch/Kobil_mIDentity_switch.c
+	${REINPLACE_CMD} -e "s,libusb-1.0/libusb.h,libusb.h," \
+		${WRKSRC}/configure ${WRKSRC}/src/ccid_usb.c \
+		${WRKSRC}/src/ccid_usb.h \
+		${WRKSRC}/contrib/Kobil_mIDentity_switch/Kobil_mIDentity_switch.c
 
 .include <bsd.port.post.mk>
