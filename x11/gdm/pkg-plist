@@ -143,6 +143,7 @@ share/locale/ta/LC_MESSAGES/gdm.mo
 share/locale/te/LC_MESSAGES/gdm.mo
 share/locale/th/LC_MESSAGES/gdm.mo
 share/locale/tr/LC_MESSAGES/gdm.mo
+share/locale/ug/LC_MESSAGES/gdm.mo
 share/locale/uk/LC_MESSAGES/gdm.mo
 share/locale/uz/LC_MESSAGES/gdm.mo
 share/locale/uz@cyrillic/LC_MESSAGES/gdm.mo
@@ -242,6 +243,8 @@ share/pixmaps/nohost.png
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
 @dirrmtry share/locale/uz@cyrillic
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
