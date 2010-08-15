@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	1.6.2
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/3279/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/3329/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A smartcard development library
@@ -53,8 +52,11 @@ LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s,^datadir,#datadir,; s,^data_DATA,#data_DATA," ${WRKSRC}/doc/Makefile.in
-	${REINPLACE_CMD} -e "s,^confdir,#sysconfdir,; s,^conf_DATA,#sysconf_DATA,; s,^EXTRA_DIST,#EXTRA_DIST," ${WRKSRC}/etc/Makefile.in
+	${REINPLACE_CMD} -e "s,^datadir,#datadir,; s,^data_DATA,#data_DATA," \
+		${WRKSRC}/doc/Makefile.in
+	${REINPLACE_CMD} -e "s,libusb-1.0/libusb.h,libusb.h,; \
+		s,libusb_strerror(ret),ret," ${WRKSRC}/configure \
+			${WRKSRC}/src/hotplug_libusb.c
 
 pre-everything::
 .if !defined(WITHOUT_USB)
@@ -74,8 +76,6 @@ post-install:
 	@${MKDIR} ${PREFIX}/lib/pcsc/services
 	${TOUCH} ${PREFIX}/lib/pcsc/drivers/.keep_me
 	${TOUCH} ${PREFIX}/lib/pcsc/services/.keep_me
-	${INSTALL_DATA} ${WRKSRC}/etc/reader.conf \
-		${PREFIX}/etc/reader.conf.sample
 	@${SED} 's,%%PREFIX%%,${PREFIX},g' < ${FILESDIR}/pkg-message.in > \
 		${WRKDIR}/pkg-message
 	@${CAT} ${PKGMESSAGE}
