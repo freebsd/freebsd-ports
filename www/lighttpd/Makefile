@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.4.26
-PORTREVISION=	4
+PORTVERSION=	1.4.27
 CATEGORIES=	www
 MASTER_SITES=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -36,13 +35,14 @@ OPTIONS=	BZIP2		"Enable Bzip2 support" off \
 		GEOIP		"Enable GeoIP support" off \
 		H264		"Enable H.264 streaming" off \
 		IPV6		"Enable IPV6 support" on \
+		LIBEV		"Enable libev support" off \
 		MAGNET		"Enable magnet support" off \
 		MEMCACHE	"Enable memory caching support" off \
 		MYSQL		"Enable MYSQL support" off \
 		NODELAY		"Set TCP_NODELAY on listening sockets" off \
 		OPENLDAP	"Enable LDAP support" off \
 		OPENSSL		"Enable SSL support" on \
-		SPAWNFCGI	"Enable spawn-fcgi utility" on \
+		SPAWNFCGI	"Depend on spawn-fcgi utility" off \
 		VALGRIND	"Enable valgrind support" off \
 		WEBDAV		"Enable WebDAV support"	off
 
@@ -111,6 +111,11 @@ CONFIGURE_ARGS+=	--with-gdbm
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
+.if defined(WITH_LIBEV)
+CONFIGURE_ARGS+=	--with-libev=${LOCALBASE}
+LIB_DEPENDS+=		ev.3:${PORTSDIR}/devel/libev
+.endif
+
 .if defined(WITH_MAGNET)
 USE_LUA=		5.1+
 CONFIGURE_ARGS+=	--with-lua
@@ -167,12 +172,18 @@ post-patch:
 		-e 's|#server.username.*|server.username            = "www"|' \
 		-e 's|#server.groupname.*|server.groupname           = "www"|' \
 		-e 's|/usr/local/bin/php|${PREFIX}/bin/php-cgi|' \
-			${WRKSRC}/doc/lighttpd.conf
+			${WRKSRC}/doc/config/lighttpd.conf
+	@${ECHO} >> ${WRKSRC}/doc/config/lighttpd.conf
+	@${ECHO} "# IPv4 listening socket" >> ${WRKSRC}/doc/lighttpd.conf >> \
+		${WRKSRC}/doc/config/lighttpd.conf
+	@${ECHO} "\$$SERVER[\"socket\"] == \"0.0.0.0:80\" { }" >> \
+		${WRKSRC}/doc/config/lighttpd.conf
 .if !defined(WITHOUT_IPV6)
-	@${ECHO} "" >> ${WRKSRC}/doc/lighttpd.conf
-	@${ECHO} "# Enable IPV6 and IPV4 together" >> ${WRKSRC}/doc/lighttpd.conf
-	@${ECHO} "server.use-ipv6 = \"enable\"" >> ${WRKSRC}/doc/lighttpd.conf
-	@${ECHO} "\$$SERVER[\"socket\"] == \"0.0.0.0:80\" { }" >> ${WRKSRC}/doc/lighttpd.conf
+	@${ECHO} >> ${WRKSRC}/doc/config/lighttpd.conf
+	@${ECHO} "# IPv6 listening socket" >> ${WRKSRC}/doc/lighttpd.conf >> \
+		${WRKSRC}/doc/config/lighttpd.conf
+	@${ECHO} "\$$SERVER[\"socket\"] == \"[::]:80\" { }" >> \
+		${WRKSRC}/doc/config/lighttpd.conf
 .endif
 .if defined(WITH_H264)
 	@${CAT} ${WRKSRC}/COPYING_H264
@@ -180,9 +191,9 @@ post-patch:
 .endif
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/doc/lighttpd.conf ${PREFIX}/etc/lighttpd.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/doc/config/lighttpd.conf ${PREFIX}/etc/lighttpd.conf.sample
 .if !exists(${PREFIX}/etc/lighttpd.conf)
-	@${INSTALL_DATA} ${WRKSRC}/doc/lighttpd.conf ${PREFIX}/etc/lighttpd.conf
+	@${INSTALL_DATA} ${WRKSRC}/doc/config/lighttpd.conf ${PREFIX}/etc/lighttpd.conf
 .endif
 	@${LIBTOOL} --finish ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
