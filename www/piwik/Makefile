@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	piwik
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	www
 MASTER_SITES=	http://builds.piwik.org/
 
