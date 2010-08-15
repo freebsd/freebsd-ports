@@ -11,7 +11,7 @@ CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE card game
 
 LIB_DEPENDS=	kdegames.3:${PORTSDIR}/games/kdegames3
