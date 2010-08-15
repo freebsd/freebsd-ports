@@ -1,5 +1,5 @@
---- cpp/config/Make.rules.FreeBSD.orig	2008-08-02 08:12:53.000000000 +0800
-+++ cpp/config/Make.rules.FreeBSD	2008-08-02 08:14:46.000000000 +0800
+--- cpp/config/Make.rules.FreeBSD.orig	2010-07-11 11:00:46.000000000 +1000
++++ cpp/config/Make.rules.FreeBSD	2010-07-11 11:07:28.000000000 +1000
 @@ -27,7 +27,7 @@
  endif
  
@@ -19,13 +19,12 @@
  mklib			= ar cr $(1) $(2)
  
 -BASELIBS		= -lIceUtil -lc_r
-+BASELIBS		= -lIceUtil %%PTHREAD_LIBS%% -L$(LOCALBASE)/lib -liconv
++BASELIBS		= -lIceUtil %%PTHREAD_LIBS%%
  LIBS			= -lIce $(BASELIBS)
  
--ICEUTIL_OS_LIBS		= 
+ ICEUTIL_OS_LIBS		= 
 -ICE_OS_LIBS		= 
-+ICEUTIL_OS_LIBS		= %%PTHREAD_LIBS%% 
-+ICE_OS_LIBS		=
++ICE_OS_LIBS		= %%PTHREAD_LIBS%%
  
  PLATFORM_HAS_READLINE	= yes
  
