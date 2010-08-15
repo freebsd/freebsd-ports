@@ -7,7 +7,7 @@
 
 PORTNAME=	confman
 PORTVERSION=	1.9.3b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.timesinks.net/distfiles/
 
@@ -19,6 +19,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		sudo:${PORTSDIR}/security/sudo \
 		greadlink:${PORTSDIR}/sysutils/coreutils \
 		wget:${PORTSDIR}/ftp/wget
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 GNU_CONFIGURE=	yes
 
