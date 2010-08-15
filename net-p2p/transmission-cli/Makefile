@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	2.03
-PORTREVISION?=	1
+PORTVERSION=	2.04
+PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
 PKGNAMESUFFIX?=	-cli
