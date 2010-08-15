@@ -22,7 +22,7 @@ EXTRA_PATCHES+=	${FILESDIR}/mesalib74-configure
 .endif
 
 do-install:
-	${RM} ${WRKSRC}/include/GL/glu*.h
+	${RM} -f ${WRKSRC}/include/GL/glu*.h
 	cd ${WRKSRC}/src/mesa; ${GMAKE} install-libgl
 
 .include "${.CURDIR}/bsd.mesalib.mk"
