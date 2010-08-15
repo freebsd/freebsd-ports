@@ -99,6 +99,7 @@
     SUBDIR += p5-Compress-LZO
     SUBDIR += p5-Compress-LZW
     SUBDIR += p5-Compress-Raw-Bzip2
+    SUBDIR += p5-Compress-Raw-Lzma
     SUBDIR += p5-Compress-Raw-Zlib
     SUBDIR += p5-Compress-Zlib
     SUBDIR += p5-IO-Compress-Base
