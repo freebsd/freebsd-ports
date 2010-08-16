@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmnd
-PORTVERSION=	0.4.13
+PORTVERSION=	0.4.16
 CATEGORIES=	net
 MASTER_SITES=	http://www.thregr.org/~wavexx/software/wmnd/releases/ \
 		${MASTER_SITE_GENTOO}
@@ -20,7 +20,9 @@ USE_XORG=	ice sm x11 xext xpm
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
-CONFIGURE_ARGS=	--with-drivers="freebsd_sysctl"
+CONFIGURE_ARGS=	--disable-dummy-driver
+
+LICENSE=	GPLv2
 
 MAN1=		wmnd.1
 PORTEXAMPLES=	wmndrc
