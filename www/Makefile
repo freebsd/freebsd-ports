@@ -244,6 +244,7 @@
     SUBDIR += fnord
     SUBDIR += formication
     SUBDIR += foswiki
+    SUBDIR += fpc-fastcgi
     SUBDIR += fpc-httpd13
     SUBDIR += fpc-httpd20
     SUBDIR += fpc-httpd22
