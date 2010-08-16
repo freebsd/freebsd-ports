@@ -397,6 +397,7 @@
     SUBDIR += fossil
     SUBDIR += fossology
     SUBDIR += fpc-bfd
+    SUBDIR += fpc-dbus
     SUBDIR += fpc-fcl-async
     SUBDIR += fpc-fcl-base
     SUBDIR += fpc-fcl-db
