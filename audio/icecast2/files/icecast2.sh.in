@@ -28,6 +28,7 @@ rcvar=`set_rcvar`
 
 command="%%PREFIX%%/bin/icecast"
 command_args="-b 1>/dev/null"
+extra_commands="reload"
 
 # read configuration and set defaults
 load_rc_config "$name"

@@ -7,7 +7,7 @@
 
 PORTNAME=	icecast2
 PORTVERSION=	2.3.2
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	audio net ipv6
 MASTER_SITES=	http://downloads.xiph.org/releases/icecast/ \
@@ -23,6 +23,8 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		xslt.2:${PORTSDIR}/textproc/libxslt
+
+LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
