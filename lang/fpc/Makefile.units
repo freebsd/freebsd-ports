@@ -327,7 +327,7 @@ LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj
 
 .if ${PKGNAMESUFFIX} == "-rexx"
 .	if defined(WITH_REXX_REGINA)
-LIB_DEPENDS=	regina:${PORTSDIR}/lang/rexx-regina
+RUN_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
 .	endif
 .endif
 
