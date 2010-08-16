@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	json_pure
-PORTVERSION=	1.1.9
+PORTVERSION=	1.4.3
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	json
+MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Parse JSON texts and generate them from ruby data structures in Ruby
