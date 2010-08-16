@@ -81,6 +81,9 @@ bin/pilprint.py
 %%PYTHON_SITELIBDIR%%/PIL/ImageChops.py
 %%PYTHON_SITELIBDIR%%/PIL/ImageChops.pyc
 %%PYTHON_SITELIBDIR%%/PIL/ImageChops.pyo
+%%PYTHON_SITELIBDIR%%/PIL/ImageCms.py
+%%PYTHON_SITELIBDIR%%/PIL/ImageCms.pyc
+%%PYTHON_SITELIBDIR%%/PIL/ImageCms.pyo
 %%PYTHON_SITELIBDIR%%/PIL/ImageColor.py
 %%PYTHON_SITELIBDIR%%/PIL/ImageColor.pyc
 %%PYTHON_SITELIBDIR%%/PIL/ImageColor.pyo
@@ -132,6 +135,9 @@ bin/pilprint.py
 %%PYTHON_SITELIBDIR%%/PIL/ImageSequence.py
 %%PYTHON_SITELIBDIR%%/PIL/ImageSequence.pyc
 %%PYTHON_SITELIBDIR%%/PIL/ImageSequence.pyo
+%%PYTHON_SITELIBDIR%%/PIL/ImageShow.py
+%%PYTHON_SITELIBDIR%%/PIL/ImageShow.pyc
+%%PYTHON_SITELIBDIR%%/PIL/ImageShow.pyo
 %%PYTHON_SITELIBDIR%%/PIL/ImageStat.py
 %%PYTHON_SITELIBDIR%%/PIL/ImageStat.pyc
 %%PYTHON_SITELIBDIR%%/PIL/ImageStat.pyo
@@ -249,7 +255,6 @@ bin/pilprint.py
 %%EXAMPLESDIR%%/enhancer.py
 %%EXAMPLESDIR%%/explode.py
 %%EXAMPLESDIR%%/gifmaker.py
-%%EXAMPLESDIR%%/image2py.py
 %%EXAMPLESDIR%%/painter.py
 %%EXAMPLESDIR%%/pilconvert.py
 %%EXAMPLESDIR%%/pildriver.py
