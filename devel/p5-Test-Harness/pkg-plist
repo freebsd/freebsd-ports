@@ -39,7 +39,6 @@ bin/%%P5_PREFIX%%prove
 %%SITE_PERL%%/TAP/Parser/Scheduler/Spinner.pm
 %%SITE_PERL%%/TAP/Parser/SourceHandler/Handle.pm
 %%SITE_PERL%%/TAP/Parser/SourceHandler/Perl.pm
-%%SITE_PERL%%/TAP/Parser/SourceHandler/pgTAP.pm
 %%SITE_PERL%%/TAP/Parser/SourceHandler/Executable.pm
 %%SITE_PERL%%/TAP/Parser/SourceHandler/RawTAP.pm
 %%SITE_PERL%%/TAP/Parser/SourceHandler/File.pm
