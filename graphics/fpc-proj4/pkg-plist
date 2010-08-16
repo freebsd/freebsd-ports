@@ -1,0 +1,9 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/proj4/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/proj4/proj.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/proj4/proj.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/proj4/libpproj.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/proj4
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
