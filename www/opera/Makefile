@@ -87,5 +87,7 @@ do-install:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6/lib/browser_plugins|${LOCALBASE}/lib/browser_plugins/symlinks/opera|g' \
 		${DATADIR}/defaults/pluginpath.ini
 	@${RM} ${DATADIR}/defaults/pluginpath.ini.bak
+	@${CP} ${LOCALBASE}/lib/opera/operapluginwrapper ${LOCALBASE}/lib/opera/operapluginwrapper.freebsd
+	@${INSTALL_SCRIPT} ${PATCHDIR}/operapluginwrapper ${LOCALBASE}/lib/opera/
 
 .include <bsd.port.post.mk>
