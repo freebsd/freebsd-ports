@@ -31,6 +31,7 @@ share/aclocal/bison-i18n.m4
 %%PORTDOCS%%%%EXAMPLESDIR%%/calc++/location.hh
 %%PORTDOCS%%%%EXAMPLESDIR%%/calc++/position.hh
 %%PORTDOCS%%%%EXAMPLESDIR%%/calc++/stack.hh
+%%NLS%%share/locale/ast/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/da/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/da/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/de/LC_MESSAGES/bison-runtime.mo
@@ -42,6 +43,7 @@ share/aclocal/bison-i18n.m4
 %%NLS%%share/locale/et/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/et/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/bison-runtime.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/bison-runtime.mo
@@ -56,6 +58,7 @@ share/aclocal/bison-i18n.m4
 %%NLS%%share/locale/ja/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/ky/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/bison-runtime.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/bison-runtime.mo
@@ -66,6 +69,8 @@ share/aclocal/bison-i18n.m4
 %%NLS%%share/locale/pl/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/bison.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/bison-runtime.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/bison-runtime.mo
@@ -83,6 +88,8 @@ share/aclocal/bison-i18n.m4
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/bison.mo
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
 %%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ky
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/calc++
