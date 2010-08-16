@@ -414,6 +414,7 @@
     SUBDIR += fpc-fpmkunit
     SUBDIR += fpc-fv
     SUBDIR += fpc-gdbint
+    SUBDIR += fpc-newt
     SUBDIR += fpc-pthreads
     SUBDIR += fpc-regexpr
     SUBDIR += fpc-sdl
