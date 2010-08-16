@@ -147,6 +147,7 @@
     SUBDIR += flowgrep
     SUBDIR += fonulator
     SUBDIR += forg
+    SUBDIR += fpc-ldap
     SUBDIR += fpc-pcap
     SUBDIR += fping
     SUBDIR += fping+ipv6
