@@ -7,6 +7,7 @@
 
 PORTNAME=	Ice
 PORTVERSION=	3.4.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.zeroc.com/download/Ice/3.4/ \
 		http://www.dirk.sh/dirk/Ice/
@@ -26,6 +27,7 @@ INSTALL_WRKSRC=	${WRKSRC}/py
 
 LIB_VRS=	${PORTVERSION:S|.||g:C|1$||}
 PLIST_SUB=	LIB_VERSION="${PORTVERSION}" LIB_VRS="${LIB_VRS}"
+MAKE_ENV=	ICE_HOME="${LOCALBASE}/share/Ice"
 
 CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT ${PTHREAD_CFLAGS}
 .if defined(DEBUG)
@@ -53,6 +55,11 @@ post-patch:
 		s|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g; \
 		s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/py/config/Make.rules
+	${REINPLACE_CMD} 's|.(ice_dir).slice|${LOCALBASE}/share/Ice|g; \
+		s|.(prefix).slice|${LOCALBASE}/share/Ice|g' \
+		${WRKSRC}/py/config/Make.rules.mak \
+		${WRKSRC}/config/Make.common.rules.mak \
+		${WRKSRC}/config/Make.common.rules
 
 post-install:
 	${ECHO} "Ice" > ${PYTHON_SITELIBDIR}/Ice.pth
