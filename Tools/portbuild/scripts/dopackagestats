@@ -356,7 +356,7 @@ for arch in ${SUPPORTED_ARCHS}; do
     grep "${SRC_BRANCHES_PATTERN}[-\.]" | \
     sort -n`
   if [ ! -z "$branches" ]; then
-    for branch in branches; do
+    for branch in $branches; do
       builds=`ls ${pb}/${arch}/$branch* | \
         grep "${SRC_BRANCHES_PATTERN}[-\.]" | \
         sort`
