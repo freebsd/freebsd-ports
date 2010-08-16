@@ -366,7 +366,7 @@ do-build:
 
 do-install:
 	@cd ${WRKDIR}/${WRKUNITDIR} && FPCDIR=${UNITDIR} ${GMAKE} install ${MAKE_ENV}
-.	if !defined(NOPORTSDOCS)
+.	if !defined(NOPORTDOCS)
 .		if defined(HAVE_EXAMPLES)
 			@cd ${WRKDIR}/${WRKUNITDIR} && ${GMAKE} fpc_exampleinstall
 .		endif
