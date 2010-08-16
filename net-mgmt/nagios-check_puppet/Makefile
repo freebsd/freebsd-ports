@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	check_puppet
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 PKGNAMEPREFIX=	nagios-
