@@ -64,6 +64,7 @@
     SUBDIR += flvmeta
     SUBDIR += flvstreamer
     SUBDIR += flvtool++
+    SUBDIR += fpc-dts
     SUBDIR += freevo
     SUBDIR += fxtv
     SUBDIR += gaupol
