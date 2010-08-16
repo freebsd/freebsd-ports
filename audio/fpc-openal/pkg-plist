@@ -1,0 +1,9 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openal/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openal/openal.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openal/openal.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openal/libpopenal.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/openal
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
