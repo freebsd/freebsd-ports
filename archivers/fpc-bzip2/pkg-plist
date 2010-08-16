@@ -1,0 +1,15 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bzip2/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bzip2/bzip2.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bzip2/bzip2.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bzip2/bzip2comn.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bzip2/bzip2comn.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bzip2/bzip2stream.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bzip2/bzip2stream.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bzip2/libpbzip2.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bzip2/libpbzip2comn.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bzip2/libpbzip2stream.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/bzip2
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
