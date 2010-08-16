@@ -15,7 +15,7 @@ MASTER_SITES=	SF/kaffeine/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kaffeine Mozilla plugin
 
-RUN_DEPENDS=	kaffeine:${PORTSDIR}/multimedia/kaffeine
+RUN_DEPENDS=	${KDE4_PREFIX}/bin/kaffeine:${PORTSDIR}/multimedia/kaffeine
 
 USE_XORG=	x11 xaw
 USE_BZIP2=	yes
@@ -27,6 +27,7 @@ USE_AUTOTOOLS=	libtool:22
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
+.include "${PORTSDIR}/Mk/bsd.kde4.mk"
 
 post-patch:
 	${REINPLACE_CMD} -e "s,[$$][(]prefix[)]/plugins,${WEBPLUGINS_DIR}," \
