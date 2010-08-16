@@ -1712,6 +1712,7 @@
     SUBDIR += trac-wikitopdf
     SUBDIR += trac-wysiwyg
     SUBDIR += trac-xmlrpc
+    SUBDIR += trafficserver
     SUBDIR += transmission-web
     SUBDIR += transproxy
     SUBDIR += ttf2eot

@@ -1,0 +1,12 @@
+--- rc/Makefile.am.orig	2010-08-15 22:00:12.940238878 +0800
++++ rc/Makefile.am	2010-08-15 22:00:28.382362165 +0800
+@@ -25,9 +25,6 @@
+   -I$(top_srcdir)/proxy/cache \
+   -I$(top_srcdir)/proxy/logging
+ 
+-dist_bin_SCRIPTS = \
+-  trafficserver
+-
+ noinst_PROGRAMS = update_records
+ 
+ update_records_SOURCES = update_records.cc 
