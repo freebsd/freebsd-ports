@@ -7,6 +7,7 @@
 
 PORTNAME=	lua
 PORTVERSION=	5.1.4
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
@@ -60,6 +61,8 @@ post-patch:
 		${WRKSRC}/etc/lua.pc
 	@${REINPLACE_CMD} -e 's,rand *(,random(,g' \
 		${WRKSRC}/src/lmathlib.c
+	@${REINPLACE_CMD} -e '/LUA_ROOT/s|/usr/local|${PREFIX}|' \
+		${WRKSRC}/src/luaconf.h
 
 post-build:
 	@${RM} -f ${WRKSRC}/test/lua ${WRKSRC}/test/luac
