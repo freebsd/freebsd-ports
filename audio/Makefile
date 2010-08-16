@@ -196,6 +196,7 @@
     SUBDIR += fluidsynth-dssi
     SUBDIR += fmio
     SUBDIR += fmit
+    SUBDIR += fpc-a52
     SUBDIR += freealut
     SUBDIR += freedesktop-sound-theme
     SUBDIR += freepats
