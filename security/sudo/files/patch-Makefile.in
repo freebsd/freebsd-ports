@@ -1,0 +1,15 @@
+--- ./Makefile.in.orig	2010-07-30 11:58:54.000000000 -0400
++++ ./Makefile.in	2010-08-15 21:33:54.000000000 -0400
+@@ -493,11 +493,9 @@
+ 	if [ -f .libs/lib$(noexecfile) ]; then $(INSTALL) -b~ -O $(install_uid) -G $(install_gid) -M 0755 .libs/lib$(noexecfile) $(DESTDIR)$(noexecdir)/$(noexecfile); fi
+ 
+ install-sudoers: install-dirs
+-	$(INSTALL) -d -O $(sudoers_uid) -G $(sudoers_gid) -M 0750 \
+-	    $(DESTDIR)$(sudoersdir)/sudoers.d
+ 	test -f $(DESTDIR)$(sudoersdir)/sudoers || \
+ 	    $(INSTALL) -O $(sudoers_uid) -G $(sudoers_gid) -M $(sudoers_mode) \
+-		$(srcdir)/sudoers $(DESTDIR)$(sudoersdir)/sudoers
++		$(srcdir)/sudoers $(DESTDIR)$(sudoersdir)/sudoers.sample
+ 
+ install-doc: install-dirs ChangeLog
+ 	(cd $(srcdir) && for f in ChangeLog HISTORY LICENSE NEWS README TROUBLESHOOTING UPGRADE sample.*; do $(INSTALL) -O $(install_uid) -G $(install_gid) -M 0444 $$f $(DESTDIR)$(docdir); done)
