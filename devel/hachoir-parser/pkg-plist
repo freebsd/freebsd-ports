@@ -37,6 +37,9 @@
 %%PYTHON_SITELIBDIR%%/hachoir_parser/archive/zip.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/archive/zip.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/archive/zip.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/audio/8svx.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/audio/8svx.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/audio/8svx.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_parser/audio/__init__.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/audio/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/audio/__init__.pyo
