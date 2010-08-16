@@ -30,7 +30,7 @@ SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKDIR}/share/doc/fpdocs-${PORTVERSION} && \
+	@cd ${WRKDIR}/doc && \
 		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
 
 post-install:
