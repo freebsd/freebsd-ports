@@ -73,6 +73,8 @@ post-patch:
 do-build:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} LCL_PLATFORM=${LCL_PLATFORM}
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} tools LCL_PLATFORM=${LCL_PLATFORM}
 
 post-build:
 	@cd ${WRKSRC} && \
@@ -119,7 +121,8 @@ do-install:
 			${FIND} * -type d -exec ${MKDIR} "${DATADIR}/${DIRE}/{}" \; && \
 				${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/${DIRE}/{}" \;
 .endfor
-	@${CHMOD} +x ${DATADIR}/tools/svn2revisioninc
+	@${CHMOD} +x ${DATADIR}/tools/svn2revisioninc ${DATADIR}/tools/lazres ${DATADIR}/tools/lrstolfm \
+		${DATADIR}/tools/updatepofiles
 
 .for FILE in lazarus startlazarus lazbuild
 	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${DATADIR}
