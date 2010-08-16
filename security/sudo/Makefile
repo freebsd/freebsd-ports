@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sudo
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://obsd.isc.org/pub/sudo/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://boulder.tele.dk/pub/sudo/ \
 		ftp://core.ring.gr.jp/pub/misc/sudo/ \
 		ftp://ftp.wiretapped.net/pub/security/host-security/sudo/
-DISTNAME=	${PORTNAME}-1.7.3
+DISTNAME=	${PORTNAME}-1.7.4p2
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Allow others to run commands as root
@@ -84,27 +84,17 @@ MAN5+=		sudoers.5
 MAN8=		sudo.8 visudo.8 sudoreplay.8
 MLINKS=		sudo.8 sudoedit.8
 
+post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's/$$(DESTDIR)$$(sudoersdir) $$(DESTDIR)$$(docdir)/$$(DESTDIR)$$(sudoersdir)/' \
+		${WRKSRC}/Makefile.in
+
+	@${REINPLACE_CMD} -e '/for f in ChangeLog/d' ${WRKSRC}/Makefile.in
+.endif
+
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/sudoers ${PREFIX}/etc/sudoers.default
-	${INSTALL_DATA} ${FILESDIR}/pam.conf ${PREFIX}/etc/pam.d/sudo.default
-
-	if [ ! -e ${PREFIX}/etc/pam.d/sudo ]; then \
-		${CP} -p ${PREFIX}/etc/pam.d/sudo.default \
-		${PREFIX}/etc/pam.d/sudo ;\
+	if [ ! -f ${PREFIX}/etc/sudoers ]; then \
+		${CP} -p ${PREFIX}/etc/sudoers.sample ${PREFIX}/etc/sudoers; \
 	fi
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/TROUBLESHOOTING ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/UPGRADE ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample.sudoers ${DOCSDIR}
-.if defined(WITH_LDAP)
-	${INSTALL_DATA} ${WRKSRC}/README.LDAP ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/schema.OpenLDAP ${DOCSDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/sudoers2ldif ${DOCSDIR}
-.endif
-.endif
 
 .include <bsd.port.post.mk>

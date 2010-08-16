@@ -1,16 +1,17 @@
---- sudoers.orig	2008-01-15 22:18:17.000000000 +0000
-+++ sudoers	2008-10-11 20:36:46.928244000 +0000
-@@ -14,6 +14,13 @@
- # Cmnd alias specification
- 
- # Defaults specification
-+# Uncomment if needed to preserve environmental variables related to the
-+# FreeBSD pkg_* utilities and fetch.
-+#Defaults	env_keep += "PKG_PATH PKG_DBDIR PKG_TMPDIR TMPDIR PACKAGEROOT PACKAGESITE PKGDIR FTP_PASSIVE_MODE"
-+
-+# Additionally uncomment if needed to preserve environmental variables
-+# related to portupgrade.
-+#Defaults	env_keep += "PORTSDIR PORTS_INDEX PORTS_DBDIR PACKAGES PKGTOOLS_CONF"
- 
- # Runas alias specification
- 
+--- ./sudoers.orig	2010-07-30 11:58:54.000000000 -0400
++++ ./sudoers	2010-08-15 21:31:54.000000000 -0400
+@@ -31,6 +31,14 @@
+ ##
+ ## Defaults specification
+ ##
++## Uncomment if needed to preserve environmental variables related to the
++## FreeBSD pkg_* utilities and fetch.
++# Defaults	env_keep += "PKG_PATH PKG_DBDIR PKG_TMPDIR TMPDIR PACKAGEROOT PACKAGESITE PKGDIR FTP_PASSIVE_MODE"
++##
++## Additionally uncomment if needed to preserve environmental variables
++## related to portupgrade
++# Defaults	env_keep += "PORTSDIR PORTS_INDEX PORTS_DBDIR PACKAGES PKGTOOLS_CONF"
++##
+ ## You may wish to keep some of the following environment variables
+ ## when running commands via sudo.
+ ##
