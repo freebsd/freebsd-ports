@@ -8,8 +8,10 @@
 pb=/var/portbuild
 . ${pb}/conf/server.conf
 
-OUTFILE=`basename $0 | sed -e "s/^do//"`".html"
-TMPFILE=.${OUTFILE}
+here=`pwd`
+tmp=`basename $0 | sed -e "s/^do//"`".html"
+OUTFILE="${here}/${tmp}"
+TMPFILE="${here}/.${tmp}"
 
 #journalname="make"
 journalname="journal"
@@ -36,7 +38,7 @@ write_header () {
 write_table_begin () {
   echo "<table border='1' cellpadding='4' cellspacing='1' bgcolor='$TABLEBGCOLOR'>" >> ${TMPFILE}
   echo "<tr>" >> ${TMPFILE}
-  echo "<td align='left' width='120' bgcolor='$TABLEBGCOLOR'>&nbsp;</td>" >> ${TMPFILE}
+  echo "<td align='left' width='240' bgcolor='$TABLEBGCOLOR'>&nbsp;</td>" >> ${TMPFILE}
   echo "<th width='60' bgcolor='$THCOLOR'>updated</th>" >> ${TMPFILE}
   # MCL removed 20090808 -- this takes way too long
   # echo "<th width='60' bgcolor='$THCOLOR'>latest log</th>" >> ${TMPFILE}
@@ -333,7 +335,8 @@ write_header
 #     (i.e. where build = branch, e.g. "7", "10")
 for arch in ${SUPPORTED_ARCHS}; do
 
-  builds=`ls ${pb}/${arch} | \
+  cd ${pb}/${arch}
+  builds=`ls | \
     grep "${SRC_BRANCHES_PATTERN}$" | \
     sort -n`
   if [ ! -z "$builds" ]; then
@@ -352,13 +355,16 @@ done
 #   examples: 8.1; 8-exp; 8-exp-gettext; 8.1R
 for arch in ${SUPPORTED_ARCHS}; do
 
-  branches=`ls ${pb}/${arch} | \
+  cd ${pb}/${arch}
+  branches=`ls | \
     grep "${SRC_BRANCHES_PATTERN}[-\.]" | \
+    sed -e "s@[-\.].*@@" | \
+    uniq | \
     sort -n`
   if [ ! -z "$branches" ]; then
     for branch in $branches; do
-      builds=`ls ${pb}/${arch}/$branch* | \
-        grep "${SRC_BRANCHES_PATTERN}[-\.]" | \
+      builds=`ls -d $branch* | \
+        grep -v "${SRC_BRANCHES_PATTERN}$" | \
         sort`
       if [ ! -z "$builds" ]; then
         write_table_begin
