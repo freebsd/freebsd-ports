@@ -176,6 +176,7 @@
     SUBDIR += foiltex
     SUBDIR += fop
     SUBDIR += fpc-aspell
+    SUBDIR += fpc-libxml2
     SUBDIR += freegrep
     SUBDIR += fy-aspell
     SUBDIR += ga-aspell
