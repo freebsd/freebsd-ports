@@ -194,6 +194,7 @@
     SUBDIR += fpc-opengl
     SUBDIR += fpc-pasjpeg
     SUBDIR += fpc-proj4
+    SUBDIR += fpc-rsvg
     SUBDIR += fpc-svgalib
     SUBDIR += fracplanet
     SUBDIR += fractorama
