@@ -3863,6 +3863,8 @@ freesweep                       ports/games/freesweep
 freeswitch                      ports/net/freeswitch
 freeswitch-core                 ports/net/freeswitch-core
 freeswitch-music                ports/audio/freeswitch-music
+freeswitch-pizzademo            ports/misc/freeswitch-pizzademo
+freeswitch-scripts              ports/misc/freeswitch-scripts
 freeswitch-sounds               ports/audio/freeswitch-sounds
 freesynd                        ports/games/freesynd
 freetalk                        ports/net-im/freetalk
@@ -11239,6 +11241,7 @@ p5-Catalyst-Plugin-Unicode      ports/www/p5-Catalyst-Plugin-Unicode
 p5-Catalyst-Plugin-Unicode-Encoding  ports/www/p5-Catalyst-Plugin-Unicode-Encoding
 p5-Catalyst-Plugin-XMLRPC       ports/www/p5-Catalyst-Plugin-XMLRPC
 p5-Catalyst-Runtime             ports/www/p5-Catalyst-Runtime
+p5-Catalyst-TraitFor-Controller-DBIC-DoesPaging  ports/www/p5-Catalyst-TraitFor-Controller-DBIC-DoesPaging
 p5-Catalyst-TraitFor-Request-BrowserDetect  ports/www/p5-Catalyst-TraitFor-Request-BrowserDetect
 p5-Catalyst-View-ClearSilver    ports/www/p5-Catalyst-View-ClearSilver
 p5-Catalyst-View-Email          ports/www/p5-Catalyst-View-Email
@@ -11430,6 +11433,7 @@ p5-Compress-LZO                 ports/archivers/p5-Compress-LZO
 p5-Compress-LZW                 ports/archivers/p5-Compress-LZW
 p5-Compress-LeadingBlankSpaces  ports/www/p5-Compress-LeadingBlankSpaces
 p5-Compress-Raw-Bzip2           ports/archivers/p5-Compress-Raw-Bzip2
+p5-Compress-Raw-Lzma            ports/archivers/p5-Compress-Raw-Lzma
 p5-Compress-Raw-Zlib            ports/archivers/p5-Compress-Raw-Zlib
 p5-Compress-Zlib                ports/archivers/p5-Compress-Zlib
 p5-Config-Any                   ports/devel/p5-Config-Any
@@ -12466,6 +12470,7 @@ p5-IO-Capture                   ports/devel/p5-IO-Capture
 p5-IO-CaptureOutput             ports/devel/p5-IO-CaptureOutput
 p5-IO-Compress-Base             ports/archivers/p5-IO-Compress-Base
 p5-IO-Compress-Bzip2            ports/archivers/p5-IO-Compress-Bzip2
+p5-IO-Compress-Lzma             ports/archivers/p5-IO-Compress-Lzma
 p5-IO-Compress-Zlib             ports/archivers/p5-IO-Compress-Zlib
 p5-IO-Digest                    ports/devel/p5-IO-Digest
 p5-IO-Handle-Util               ports/devel/p5-IO-Handle-Util
@@ -15046,6 +15051,7 @@ p5-catalyst-plugin-unicode      ports/www/p5-Catalyst-Plugin-Unicode
 p5-catalyst-plugin-unicode-encoding  ports/www/p5-Catalyst-Plugin-Unicode-Encoding
 p5-catalyst-plugin-xmlrpc       ports/www/p5-Catalyst-Plugin-XMLRPC
 p5-catalyst-runtime             ports/www/p5-Catalyst-Runtime
+p5-catalyst-traitfor-controller-dbic-doespaging  ports/www/p5-Catalyst-TraitFor-Controller-DBIC-DoesPaging
 p5-catalyst-traitfor-request-browserdetect  ports/www/p5-Catalyst-TraitFor-Request-BrowserDetect
 p5-catalyst-view-clearsilver    ports/www/p5-Catalyst-View-ClearSilver
 p5-catalyst-view-email          ports/www/p5-Catalyst-View-Email
@@ -15315,6 +15321,7 @@ p5-compress-lzf                 ports/archivers/p5-Compress-LZF
 p5-compress-lzo                 ports/archivers/p5-Compress-LZO
 p5-compress-lzw                 ports/archivers/p5-Compress-LZW
 p5-compress-raw-bzip2           ports/archivers/p5-Compress-Raw-Bzip2
+p5-compress-raw-lzma            ports/archivers/p5-Compress-Raw-Lzma
 p5-compress-raw-zlib            ports/archivers/p5-Compress-Raw-Zlib
 p5-compress-zlib                ports/archivers/p5-Compress-Zlib
 p5-config-any                   ports/devel/p5-Config-Any
@@ -16421,6 +16428,7 @@ p5-io-capture                   ports/devel/p5-IO-Capture
 p5-io-captureoutput             ports/devel/p5-IO-CaptureOutput
 p5-io-compress-base             ports/archivers/p5-IO-Compress-Base
 p5-io-compress-bzip2            ports/archivers/p5-IO-Compress-Bzip2
+p5-io-compress-lzma             ports/archivers/p5-IO-Compress-Lzma
 p5-io-compress-zlib             ports/archivers/p5-IO-Compress-Zlib
 p5-io-csvheaderfile             ports/textproc/p5-IO-CSVHeaderFile
 p5-io-digest                    ports/devel/p5-IO-Digest
@@ -21799,6 +21807,7 @@ red5                            ports/www/red5
 redet                           ports/textproc/redet
 redir                           ports/net/redir
 redis                           ports/databases/redis
+redis-devel                     ports/databases/redis-devel
 redland                         ports/textproc/redland
 redland-bindings                ports/textproc/redland-bindings
 redland-bindings-python         ports/textproc/redland-bindings-python
