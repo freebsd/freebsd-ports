@@ -16,7 +16,7 @@ DISTNAME=	Ice-${PORTVERSION}
 MAINTAINER=	dirk.ye@gmail.com
 COMMENT=	An Ice (Internet Communications Engine) language mapping for Python
 
-BUILD_DEPENDS=	mcpp.3:${PORTSDIR}/devel/mcpp
+BUILD_DEPENDS=	mcpp:${PORTSDIR}/devel/mcpp
 LIB_DEPENDS=	Ice.${LIB_VRS}:${PORTSDIR}/devel/ice
 
 USE_GMAKE=	yes
