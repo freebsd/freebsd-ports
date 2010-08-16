@@ -1,8 +1,0 @@
-bin/peacock-2
-share/peacock-2/glade/dialogs.glade
-share/peacock-2/pixmaps/peacock-logo.png
-share/peacock-2/ui/peacock-ui.xml
-@dirrm share/peacock-2/ui
-@dirrm share/peacock-2/pixmaps
-@dirrm share/peacock-2/glade
-@dirrm share/peacock-2
