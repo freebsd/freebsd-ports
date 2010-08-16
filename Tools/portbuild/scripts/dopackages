@@ -237,6 +237,10 @@ dobuild() {
     echo "started at $(date)"
     start=$(date +%s)
     ${QMANAGER_PATH}/packagebuild ${arch} ${branch} ${buildid} > ${builddir}/${journalname} 2>&1 < /dev/null
+    result=$?
+    if [ $result -ne 0 ]; then
+        echo "ERROR: packagebuild ${arch} ${branch} ${buildid} failed: see ${builddir}/${journalname} for details"
+    fi
     echo "ended at $(date)"
     end=$(date +%s)
     echo "Build took $(date -u -j -r $((end - start)) | awk '{print $4}')"
