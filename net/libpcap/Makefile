@@ -115,6 +115,9 @@ CONFIGURE_ARGS+=	--enable-ipv6
 
 .if !defined(WITH_DAG)
 CONFIGURE_ARGS+=	--without-dag
+.else
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 .endif
 
 .if defined(LIBPCAP_OVERWRITE_BASE)
