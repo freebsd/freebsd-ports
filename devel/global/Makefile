@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	global
-PORTVERSION=	5.7.7
+PORTVERSION=	5.9.1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -16,7 +16,7 @@ COMMENT=	A source code tag system
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 
-MAN1=		global.1 gozilla.1 gtags.1 gtags-cscope.1 gtags-parser.1 htags.1
+MAN1=		global.1 globash.1 gozilla.1 gtags.1 gtags-cscope.1 htags.1
 INFO=		global
 
 post-patch:

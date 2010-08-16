@@ -1,8 +1,8 @@
 bin/global
+bin/globash
 bin/gozilla
 bin/gtags
 bin/gtags-cscope
-bin/gtags-parser
 bin/htags
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -13,10 +13,14 @@ bin/htags
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
+lib/gtags/exuberant-ctags.a
+lib/gtags/exuberant-ctags.la
+lib/gtags/exuberant-ctags.so
 share/gtags/BOKIN_MODEL
 share/gtags/BOKIN_MODEL_FAQ
 share/gtags/DONORS
 share/gtags/bless.sh.tmpl
+share/gtags/completion.cgi.tmpl
 share/gtags/ghtml.cgi.tmpl
 share/gtags/global.cgi.tmpl
 share/gtags/globash.rc
@@ -24,6 +28,7 @@ share/gtags/gtags.conf
 share/gtags/gtags.el
 share/gtags/gtags.pl
 share/gtags/gtags.vim
+share/gtags/gtags-cscope.vim
 share/gtags/icons/back.png
 share/gtags/icons/bottom.png
 share/gtags/icons/c.png
@@ -43,7 +48,32 @@ share/gtags/icons/pglobe.png
 share/gtags/icons/right.png
 share/gtags/icons/text.png
 share/gtags/icons/top.png
+share/gtags/jquery/images/file.gif
+share/gtags/jquery/images/folder.gif
+share/gtags/jquery/images/folder-closed.gif
+share/gtags/jquery/images/minus.gif
+share/gtags/jquery/images/plus.gif
+share/gtags/jquery/images/treeview-black.gif
+share/gtags/jquery/images/treeview-black-line.gif
+share/gtags/jquery/images/treeview-default.gif
+share/gtags/jquery/images/treeview-default-line.gif
+share/gtags/jquery/images/treeview-famfamfam.gif
+share/gtags/jquery/images/treeview-famfamfam-line.gif
+share/gtags/jquery/images/treeview-gray.gif
+share/gtags/jquery/images/treeview-gray-line.gif
+share/gtags/jquery/images/treeview-red.gif
+share/gtags/jquery/images/treeview-red-line.gif
+share/gtags/jquery/jquery.js
+share/gtags/jquery/jquery.suggest.css
+share/gtags/jquery/jquery.suggest.js
+share/gtags/jquery/jquery.treeview.css
+share/gtags/jquery/jquery.treeview.js
+share/gtags/jscode_suggest.tmpl
+share/gtags/jscode_treeview.tmpl
 share/gtags/style.css
+@dirrm lib/gtags
 @dirrm share/gtags/icons
+@dirrm share/gtags/jquery/images
+@dirrm share/gtags/jquery
 @dirrm share/gtags
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
