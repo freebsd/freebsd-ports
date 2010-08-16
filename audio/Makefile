@@ -198,6 +198,7 @@
     SUBDIR += fmit
     SUBDIR += fpc-a52
     SUBDIR += fpc-mad
+    SUBDIR += fpc-modplug
     SUBDIR += freealut
     SUBDIR += freedesktop-sound-theme
     SUBDIR += freepats
