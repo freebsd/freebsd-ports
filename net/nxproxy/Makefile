@@ -6,6 +6,7 @@
 
 PORTNAME=	nxproxy
 DISTVERSION=	3.4.0-2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://x2go.obviously-nice.de/deb/pool-lenny/nxproxy/:nxproxy \
 		http://x2go.obviously-nice.de/deb/pool-lenny/nxcomp/:nxcomp
@@ -23,7 +24,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 CONFLICTS=	nxserver-[0-9]*
 GNU_CONFIGURE=	yes
 USE_XORG=	ice x11 sm
-PLIST_FILES=	bin/nxproxy
+PLIST_FILES=	bin/nxproxy bin/setsid
 
 .include <bsd.port.pre.mk>
 
@@ -44,8 +45,10 @@ pre-configure:
 
 pre-build:
 	cd ${WRKDIR}/nxcomp; ${MAKE_ENV} ${MAKE}
+	cd ${WRKSRC}; ${CC} ${CFLAGS} ${FILESDIR}/setsid.c -o setsid
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nxproxy ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/setsid ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
