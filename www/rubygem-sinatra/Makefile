@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	sinatra
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
