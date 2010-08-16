@@ -284,7 +284,6 @@
     SUBDIR += gstreamer-plugins-neon
     SUBDIR += gtkhtml
     SUBDIR += gtkhtml3
-    SUBDIR += gtkhtml38
     SUBDIR += guile-www
     SUBDIR += gurlchecker
     SUBDIR += habari
