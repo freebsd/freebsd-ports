@@ -1,0 +1,33 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/avisocncgcodereader.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/avisocncgcodewriter.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/avisozlib.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/fpvectorial.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/fpvtocanvas.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/pdfvectorialreader.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/pdfvrlexico.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/pdfvrsemantico.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/pdfvrsintatico.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/avisocncgcodereader.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/avisocncgcodewriter.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/avisozlib.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/fpvectorial.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/fpvtocanvas.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/pdfvectorialreader.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/pdfvrlexico.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/pdfvrsemantico.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/pdfvrsintatico.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/libpavisocncgcodereader.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/libpavisocncgcodewriter.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/libpavisozlib.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/libpfpvectorial.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/libpfpvtocanvas.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/libppdfvectorialreader.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/libppdfvrlexico.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/libppdfvrsemantico.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial/libppdfvrsintatico.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fpvectorial
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc

@@ -182,6 +182,7 @@
     SUBDIR += fotofix
     SUBDIR += fpc-cairo
     SUBDIR += fpc-fpgtk
+    SUBDIR += fpc-fpvectorial
     SUBDIR += fpc-ggi
     SUBDIR += fpc-graph
     SUBDIR += fpc-imagemagick
