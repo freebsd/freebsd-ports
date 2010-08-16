@@ -7,7 +7,7 @@
 
 PORTNAME=	lazarus
 PORTVERSION=	0.9.28.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/-src/}
@@ -16,7 +16,7 @@ DIST_SUBDIR=	freepascal
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A portable Delphi-like IDE for the FreePascal compiler
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
