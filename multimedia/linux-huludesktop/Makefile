@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	huludesktop
-PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTVERSION=	0.9.8
 CATEGORIES=	multimedia linux
 MASTER_SITES=	http://download.hulu.com/
 PKGNAMEPREFIX=	linux-
