@@ -1,0 +1,12 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libxml2/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libxml2/xml2.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libxml2/xmlxsd.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libxml2/xml2.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libxml2/xmlxsd.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libxml2/libpxml2.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libxml2/libpxmlxsd.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libxml2
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc
