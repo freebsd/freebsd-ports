@@ -1,0 +1,14 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hermes/Package.fpc
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hermes/mmx_clr.o
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hermes/mmxp_32.o
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hermes/mmx_main.o
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hermes/mmxp2_32.o
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hermes/hm_i386.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hermes/hermes.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hermes/hermes.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hermes/libphermes.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hermes
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc

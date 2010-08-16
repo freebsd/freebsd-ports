@@ -185,6 +185,7 @@
     SUBDIR += fpc-fpvectorial
     SUBDIR += fpc-ggi
     SUBDIR += fpc-graph
+    SUBDIR += fpc-hermes
     SUBDIR += fpc-imagemagick
     SUBDIR += fpc-imlib
     SUBDIR += fpc-libgd
