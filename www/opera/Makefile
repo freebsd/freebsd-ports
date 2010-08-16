@@ -60,8 +60,7 @@ USE_GSTREAMER=	vorbis ogg theora
 .endif
 
 .if defined(WITH_GTK)
-USE_GNOME=	atk gtk20 glib20 pango libxml2
-USE_FPC=	cairo
+USE_GNOME=	gtk20
 .endif
 
 .if defined(WITH_KDE4)
