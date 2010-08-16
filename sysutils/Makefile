@@ -241,6 +241,7 @@
     SUBDIR += fpc-syslog
     SUBDIR += fpc-users
     SUBDIR += fpc-utmp
+    SUBDIR += fpc-uuid
     SUBDIR += fpkg
     SUBDIR += freebsd-snapshot
     SUBDIR += freecolor
