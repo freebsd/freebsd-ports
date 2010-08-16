@@ -408,6 +408,7 @@
     SUBDIR += fpc-fcl-passrc
     SUBDIR += fpc-fcl-process
     SUBDIR += fpc-fcl-registry
+    SUBDIR += fpc-fcl-res
     SUBDIR += fpc-fcl-web
     SUBDIR += fpc-fcl-xml
     SUBDIR += fpc-fpmkunit
