@@ -1,4 +1,5 @@
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/ascii85.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/contnrs.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/inifiles.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/rtfpars.ppu
@@ -28,6 +29,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpexprpars.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/syncobjs.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/daemonapp.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fptimer.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/ascii85.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/contnrs.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/inifiles.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/rtfpars.o
@@ -57,6 +59,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fpexprpars.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/syncobjs.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/daemonapp.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/fptimer.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/libpascii85.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/libpcontnrs.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/libpinifiles.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-base/libprtfpars.a

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	ftp lang
 PKGNAMESUFFIX=	-libcurl
 

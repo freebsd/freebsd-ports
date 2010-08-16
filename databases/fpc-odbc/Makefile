@@ -18,6 +18,6 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	ODBC	"Install ODBC library suite for Unix"	on
+OPTIONS=	ODBC	"Install ODBC library suite for Unix"	off
 
 .include "${MASTERDIR}/Makefile"

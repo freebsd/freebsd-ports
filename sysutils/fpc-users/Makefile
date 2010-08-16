@@ -6,7 +6,7 @@
 #
 
 PORTREVISION=	0
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils lang
 PKGNAMESUFFIX=	-users
 
 MAINTAINER=	acm@FreeBSD.org

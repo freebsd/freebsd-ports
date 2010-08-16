@@ -12,8 +12,6 @@ PKGNAMESUFFIX=	-fcl-db
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal Component Library
 
-BROKEN=		does not build
-
 USE_FPC=	fcl-async fcl-base fcl-xml hash ibase mysql odbc oracle paszlib postgres \
 		pthreads pxlib sqlite
 

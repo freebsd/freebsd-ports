@@ -15,6 +15,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpglu.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpglut.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpglx.a
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/glutdemo.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/glutdemova.pp
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/morph3d.pp
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/glxtest.pp
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/radblur.pp

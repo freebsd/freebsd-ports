@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-fcl-web
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal Component Library
 
-USE_FPC=	fcl-async fcl-base fcl-db fcl-process fcl-xml hash httpd13 httpd20 \
+USE_FPC=	fastcgi fcl-async fcl-base fcl-db fcl-process fcl-xml hash httpd13 httpd20 \
 		httpd22 ibase mysql odbc oracle paszlib postgres pthreads sqlite
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc

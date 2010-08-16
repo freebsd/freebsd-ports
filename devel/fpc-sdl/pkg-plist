@@ -8,7 +8,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_gfx.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_net.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/smpeg.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/logger.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdlutils.ppu
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdlutils.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_image.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_mixer.o
@@ -18,7 +18,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_gfx.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdl_net.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/smpeg.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/logger.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdlutils.o
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/sdlutils.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/libpsdl.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/libpsdl_image.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/libpsdl_mixer.a
@@ -28,7 +28,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/libpsdl_gfx.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/libpsdl_net.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/libpsmpeg.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/libplogger.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/libpsdlutils.a
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl/libpsdlutils.a
 @dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/sdl
 @dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
 @dirrmtry lib/fpc/%%PORTVERSION%%/units

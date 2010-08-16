@@ -30,8 +30,9 @@ _FPCMKINCLUDED=	yes
 FPC_Include_MAINTAINER=	acm@FreeBSD.org
 FPC_Pre_Include=	bsd.fpc.mk
 
-DEFAULT_FPC_VER=	2.2.4
+DEFAULT_FPC_VER=	2.4.0
 FPC_VER=		${DEFAULT_FPC_VER}
+FPC_ARCH=		${ARCH:S/amd64/x86_64/}
 
 .if exists(${LOCALBASE}/bin/fpc)
 FPC_CURRENT_VER!=	${LOCALBASE}/bin/fpc -iV
@@ -40,9 +41,15 @@ IGNORE=	incompatible fpc ${FPC_CURRENT_VER} compiler, please install ${FPC_VER} 
 .	endif
 .endif
 
-BUILD_DEPENDS+=		ppc386:${PORTSDIR}/lang/fpc
+.if ${ARCH} == "i386"
+PPNAME=			ppc386
+.elif ${ARCH} == "amd64"
+PPNAME=			ppcx64
+.endif
 
-BUILDNAME=		${ARCH}-freebsd
+BUILD_DEPENDS+=		${PPNAME}:${PORTSDIR}/lang/fpc
+
+BUILDNAME=		${FPC_ARCH}-freebsd
 UNITSDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/units/${BUILDNAME}
 
 fpc-check-install:
@@ -57,18 +64,20 @@ check-makevars::
 	@${ECHO_CMD} "#################################################################"
 .endif
 
-_FPC_ALL_UNITS=	aspell bfd cairo chm fcl-async fcl-base fcl-db fcl-fpcunit fcl-image \
-		fcl-json fcl-net fcl-passrc fcl-process fcl-registry fcl-web fcl-xml fftw \
-		fpmkunit fpgtk fv gdbint gdbm ggi gnome1 graph gtk1 gtk2 hash httpd13 httpd20 \
-		httpd22 ibase iconvenc imagemagick imlib libcurl libgd libpng mysql ncurses numlib \
-		odbc opengl openssl oracle pasjpeg paszlib pcap postgres pthreads pxlib \
-		regexpr sdl sqlite svgalib symbolic syslog tcl unzip users utmp x11 xforms \
-		zlib
+_FPC_ALL_UNITS=	a52 aspell bfd bzip2 cairo chm dbus dts fastcgi fcl-async fcl-base \
+		fcl-db fcl-fpcunit fcl-image fcl-json fcl-net fcl-passrc fcl-process \
+		fcl-registry fcl-res fcl-web fcl-xml fftw fpgtk fpmkunit fpvectorial \
+		fv gdbint gdbm ggi gmp gnome1 graph gtk1 gtk2 hash hermes httpd13 \
+		httpd20 httpd22 ibase iconvenc imagemagick imlib ldap libcurl libgd \
+		libpng 	libxml2 lua mad matroska modplug mysql ncurses newt numlib \
+		odbc oggvorbis openal opengl openssl oracle pasjpeg paszlib pcap \
+		postgres proj4 pthreads pxlib regexpr rexx rsvg sdl sndfile sqlite \
+		svgalib symbolic syslog tcl unzip users utmp uuid x11 xforms zlib
 
 .if defined(WANT_FPC_BASE)
 .       if ${WANT_FPC_BASE:L} == "yes"
-USE_FPC=	gdbint graph ibase hash httpd13 httpd20 httpd22 mysql odbc oracle \
-		pasjpeg paszlib	pthreads postgres regexpr sqlite
+USE_FPC=	gdbint graph hash httpd13 httpd20 httpd22 ibase mysql odbc oracle \
+		pasjpeg paszlib postgres pthreads regexpr sqlite
 .       else
 IGNORE= unknown value, please use "yes" instead of
 .       endif
@@ -93,26 +102,31 @@ IGNORE= cannot install: unknown FPC unit ${UNITS}
 # Base units
 gdbint_UNIT=	devel/fpc-gdbint
 graph_UNIT=	graphics/fpc-graph
-ibase_UNIT=	databases/fpc-ibase
 hash_UNIT=	security/fpc-hash
 httpd13_UNIT=	www/fpc-httpd13
 httpd20_UNIT=	www/fpc-httpd20
 httpd22_UNIT=	www/fpc-httpd22
+ibase_UNIT=	databases/fpc-ibase
 mysql_UNIT=	databases/fpc-mysql
 odbc_UNIT=	databases/fpc-odbc
 oracle_UNIT=	databases/fpc-oracle
 pasjpeg_UNIT=	graphics/fpc-pasjpeg
 paszlib_UNIT=	archivers/fpc-paszlib
-pthreads_UNIT=	devel/fpc-pthreads
 postgres_UNIT=	databases/fpc-postgres
+pthreads_UNIT=	devel/fpc-pthreads
 regexpr_UNIT=	devel/fpc-regexpr
 sqlite_UNIT=	databases/fpc-sqlite
 
 # Extra units
+a52_UNIT=	audio/fpc-a52
 aspell_UNIT=	textproc/fpc-aspell
 bfd_UNIT=	devel/fpc-bfd
+bzip2_UNIT=	archivers/fpc-bzip2
 cairo_UNIT=	graphics/fpc-cairo
 chm_UNIT=	misc/fpc-chm
+dbus_UNIT=	devel/fpc-dbus
+dts_UNIT=	multimedia/fpc-dts
+fastcgi_UNIT=	www/fpc-fastcgi
 fcl_async_UNIT=	devel/fpc-fcl-async
 fcl_base_UNIT=	devel/fpc-fcl-base
 fcl_db_UNIT=	devel/fpc-fcl-db
@@ -123,30 +137,47 @@ fcl_net_UNIT=	devel/fpc-fcl-net
 fcl_passrc_UNIT=	devel/fpc-fcl-passrc
 fcl_process_UNIT=	devel/fpc-fcl-process
 fcl_registry_UNIT=	devel/fpc-fcl-registry
+fcl_res_UNIT=	devel/fpc-fcl-res
 fcl_web_UNIT=	devel/fpc-fcl-web
 fcl_xml_UNIT=	devel/fpc-fcl-xml
 fftw_UNIT=	math/fpc-fftw
 fpmkunit_UNIT=	devel/fpc-fpmkunit
 fpgtk_UNIT=	graphics/fpc-fpgtk
+fpvectorial_UNIT=	graphics/fpc-fpvectorial
 fv_UNIT=	devel/fpc-fv
+hermes_UNIT=	graphics/fpc-hermes
 gdbm_UNIT=	databases/fpc-gdbm
 ggi_UNIT=	graphics/fpc-ggi
+gmp_UNIT=	math/fpc-gmp
 gnome1_UNIT=	x11-toolkits/fpc-gnome1
 gtk1_UNIT=	x11-toolkits/fpc-gtk1
 gtk2_UNIT=	x11-toolkits/fpc-gtk2
 iconvenc_UNIT=	converters/fpc-iconvenc
 imagemagick_UNIT=	graphics/fpc-imagemagick
 imlib_UNIT=	graphics/fpc-imlib
+ldap_UNIT=	net/fpc-ldap
 libcurl_UNIT=	ftp/fpc-libcurl
 libgd_UNIT=	graphics/fpc-libgd
 libpng_UNIT=	graphics/fpc-libpng
+libxml2_UNIT=	textproc/fpc-libxml2
+lua_UNIT=	lang/fpc-lua
+mad_UNIT=	audio/fpc-mad
+matroska_UNIT=	multimedia/fpc-matroska
+modplug_UNIT=	audio/fpc-modplug
+newt_UNIT=	devel/fpc-newt
 ncurses_UNIT=	graphics/fpc-ncurses
 numlib_UNIT=	math/fpc-numlib
+oggvorbis_UNIT=	audio/fpc-oggvorbis
+openal_UNIT=	audio/fpc-openal
 opengl_UNIT=	graphics/fpc-opengl
 openssl_UNIT=	security/fpc-openssl
 pcap_UNIT=	net/fpc-pcap
+proj4_UNIT=	graphics/fpc-proj4
 pxlib_UNIT=	databases/fpc-pxlib
+rexx_UNIT=	lang/fpc-rexx
+rsvg_UNIT=	graphics/fpc-rsvg
 sdl_UNIT=	devel/fpc-sdl
+sndfile_UNIT=	audio/fpc-sndfile
 svgalib_UNIT=	graphics/fpc-svgalib
 symbolic_UNIT=	devel/fpc-symbolic
 syslog_UNIT=	sysutils/fpc-syslog
@@ -154,6 +185,7 @@ tcl_UNIT=	lang/fpc-tcl
 unzip_UNIT=	archivers/fpc-unzip
 users_UNIT=	sysutils/fpc-users
 utmp_UNIT=	sysutils/fpc-utmp
+uuid_UNIT=	sysutils/fpc-uuid
 x11_UNIT=	x11/fpc-x11
 xforms_UNIT=	x11-toolkits/fpc-xforms
 zlib_UNIT=	devel/fpc-zlib

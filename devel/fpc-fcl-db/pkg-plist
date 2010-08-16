@@ -206,6 +206,9 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpfpcgdbcoll.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpfpcgsqlconst.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpfpcgtiopf.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpfpddpopcode.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/xmldatapacketreader.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/xmldatapacketreader.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db/libpxmldatapacketreader.a
 @dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-db
 @dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
 @dirrmtry lib/fpc/%%PORTVERSION%%/units

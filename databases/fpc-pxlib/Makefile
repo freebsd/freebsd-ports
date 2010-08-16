@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	0
+PORTREVISION=	0
 CATEGORIES=	databases lang
 PKGNAMESUFFIX=	-pxlib
 

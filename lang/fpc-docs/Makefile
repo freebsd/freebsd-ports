@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docs
-PORTVERSION=	2.2.4
+PORTVERSION=	2.4.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/docs/ \
 		ftp://planetmirror.com/pub/fpc/dist/${PORTVERSION}/docs/ \
@@ -21,7 +21,7 @@ DIST_SUBDIR=	freepascal
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal compiler Adobe Acrobat(tm) documentation
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/fpdocs-${PORTVERSION}

@@ -4,8 +4,11 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/ezcgi.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/httpdefs.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fphttp.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custcgi.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custfcgi.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custweb.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpapache.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpcgi.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpfcgi.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fptemplate.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fphtml.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/websession.ppu
@@ -17,8 +20,11 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/ezcgi.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/httpdefs.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fphttp.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custcgi.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custfcgi.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custweb.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpapache.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpcgi.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpfcgi.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fptemplate.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fphtml.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/websession.o
@@ -30,8 +36,11 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpcgiapp.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpezcgi.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libphttpdefs.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpfpcgi.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpfpfcgi.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpfphttp.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpcustcgi.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpcustfcgi.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpcustweb.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpfptemplate.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpfphtml.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpwebsession.a

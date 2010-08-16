@@ -1,4 +1,6 @@
-PLIST_SUB=		PORTVERSION=${PORTVERSION} \
+BUILDNAME=		${FPC_ARCH}-freebsd
+
+PLIST_SUB+=		PORTVERSION=${PORTVERSION} \
 			BUILDNAME=${BUILDNAME}
 
 PLIST=			${.CURDIR}/pkg-plist
@@ -13,9 +15,10 @@ UNITDIR=		lib/fpc/${PORTVERSION}/units/${BUILDNAME}
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${EXTRACTUNITDIR}
 OPT=-CX
 
-MAKE_ENV+=		PP=${LOCALBASE}/bin/ppc386 \
+MAKE_ENV+=		PP=${LOCALBASE}/bin/${PPNAME} \
 			FPCMAKE=${LOCALBASE}/bin/fpcmake \
 			FPCTARGET=${BUILDNAME} \
+			ARCH=${FPC_ARCH} \
 			OPT="${OPT}" \
 			BSDHIER=1
 
@@ -82,8 +85,8 @@ HAVE_EXAMPLES=	true
 .endif
 
 .if ${PKGNAMESUFFIX} == "-fcl-db"
-OPT+=	-Fuunits/${ARCH}-freebsd -Fu../units/${ARCH}-freebsd -Fu../* \
-	-Fu../../units/${ARCH}-freebsd -Fu../../../units/${ARCH}-freebsd \
+OPT+=	-Fuunits/${BUILDNAME} -Fu../units/${BUILDNAME} -Fu../* \
+	-Fu../../units/${BUILDNAME} -Fu../../../units/${BUILDNAME} \
 	-Fu../sqldb/*
 .endif
 
@@ -235,6 +238,117 @@ USE_XLIB=	yes
 USE_ICONV=	yes
 .endif
 
+.if ${PKGNAMESUFFIX} == "-a52"
+.	if defined(WITH_LIBA52)
+LIB_DEPENDS=	a52:${PORTSDIR}/audio/liba52
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-dbus"
+.	if defined(WITH_DBUS)
+LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-dts"
+.	if defined(WITH_LIBDCA)
+LIB_DEPENDS=	dca:${PORTSDIR}/multimedia/libdca
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-gmp"
+.	if defined(WITH_GMP)
+LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-ldap"
+.	if defined(WITH_OPENLDAP)
+USE_OPENLDAP=	yes
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-libxml2"
+.	if defined(WITH_LIBXML2)
+LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-lua"
+.	if defined(WITH_LUA)
+LIB_DEPENDS=	lua-5.1:${PORTSDIR}/lang/lua
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-mad"
+.	if defined(WITH_LIBMAD)
+LIB_DEPENDS=	mad:${PORTSDIR}/audio/libmad
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-matroska"
+.	if defined(WITH_LIBMATROSKA)
+LIB_DEPENDS=	matroska:${PORTSDIR}/multimedia/libmatroska
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-modplug"
+.	if defined(WITH_LIBMODPLUG)
+LIB_DEPENDS=	modplug:${PORTSDIR}/audio/libmodplug
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-newt"
+.	if defined(WITH_NEWT)
+LIB_DEPENDS=	newt:${PORTSDIR}/devel/newt
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-oggvorbis"
+.	if defined(WITH_LIBOGG)
+LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg
+.	endif
+.	if defined(WITH_LIBVORBIS)
+LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-openal"
+.	if defined(WITH_OPENAL)
+LIB_DEPENDS=	openal:${PORTSDIR}/audio/openal
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-proj4"
+.	if defined(WITH_PROJ)
+LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-rexx"
+.	if defined(WITH_REXX_REGINA)
+LIB_DEPENDS=	regina:${PORTSDIR}/lang/rexx-regina
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-rsvg"
+.	if defined(WITH_LIBRSVG2)
+LIB_DEPENDS=	rsvg-2:${PORTSDIR}/graphics/librsvg2
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-sndfile"
+.	if defined(WITH_LIBSNDFILE)
+LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
+.	endif
+.endif
+
+.if ${PKGNAMESUFFIX} == "-hermes"
+.	if defined(WITH_HERMES)
+LIB_DEPENDS=	Hermes:${PORTSDIR}/graphics/Hermes
+.	endif
+.endif
+
 post-extract:
 	@cd ${WRKDIR}/${WRKUNITDIR} && \
 		${FIND} ${WRKSRC} -type d -name .svn | ${XARGS} ${RM} -rf
@@ -251,7 +365,7 @@ do-build:
 	@cd ${WRKDIR}/${WRKUNITDIR} && ${GMAKE} all ${MAKE_ENV}
 
 do-install:
-	@cd ${WRKDIR}/${WRKUNITDIR} && ${GMAKE} install ${MAKE_ENV}
+	@cd ${WRKDIR}/${WRKUNITDIR} && FPCDIR=${UNITDIR} ${GMAKE} install ${MAKE_ENV}
 .	if !defined(NOPORTSDOCS)
 .		if defined(HAVE_EXAMPLES)
 			@cd ${WRKDIR}/${WRKUNITDIR} && ${GMAKE} fpc_exampleinstall

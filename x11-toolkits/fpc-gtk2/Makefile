@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits lang
 PKGNAMESUFFIX=	-gtk2
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to the GTK2 libraries
 
-USE_FPC=	x11
+USE_FPC=	cairo x11
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
