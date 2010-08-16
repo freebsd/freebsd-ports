@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	google-earth
-PORTVERSION=	5.2.1.1329
+PORTVERSION=	5.1.3535.3218
+PORTEPOCH=	1
 CATEGORIES=	astro deskutils geography
-MASTER_SITES=	http://dl.google.com/earth/client/current/
+MASTER_SITES=	http://dl.google.com/earth/client/advanced/previous/
 DISTNAME=	GoogleEarthLinux
 EXTRACT_SUFX=	.bin
 DIST_SUBDIR=    ${PORTNAME}/${PORTVERSION}
