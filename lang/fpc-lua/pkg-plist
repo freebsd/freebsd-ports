@@ -1,0 +1,15 @@
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lua/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lua/lua.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lua/lualib.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lua/lauxlib.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lua/lua.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lua/lualib.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lua/lauxlib.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lua/libplua.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lua/libplualib.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lua/libplauxlib.a
+@dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lua
+@dirrmtry lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%
+@dirrmtry lib/fpc/%%PORTVERSION%%/units
+@dirrmtry lib/fpc/%%PORTVERSION%%
+@dirrmtry lib/fpc

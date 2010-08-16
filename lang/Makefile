@@ -74,6 +74,7 @@
     SUBDIR += fpc
     SUBDIR += fpc-base
     SUBDIR += fpc-docs
+    SUBDIR += fpc-lua
     SUBDIR += fpc-tcl
     SUBDIR += fpc-units
     SUBDIR += fpc-utils
