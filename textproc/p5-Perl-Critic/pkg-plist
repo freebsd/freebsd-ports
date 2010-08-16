@@ -1,6 +1,7 @@
 bin/perlcritic
 %%SITE_PERL%%/Perl/Critic.pm
 %%SITE_PERL%%/Perl/Critic/Annotation.pm
+%%SITE_PERL%%/Perl/Critic/CORE_DEVELOPER.pod
 %%SITE_PERL%%/Perl/Critic/Command.pm
 %%SITE_PERL%%/Perl/Critic/Config.pm
 %%SITE_PERL%%/Perl/Critic/DEVELOPER.pod
@@ -63,6 +64,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/PodSpelling.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/RequirePackageMatchesPodName.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/RequirePodAtEnd.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Documentation/RequirePodLinksIncludeText.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Documentation/RequirePodSections.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling/RequireCarping.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ErrorHandling/RequireCheckingReturnValueOfEval.pm
@@ -118,6 +120,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/Subroutines/ProhibitNestedSubs.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Subroutines/ProhibitReturnSort.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Subroutines/ProhibitSubroutinePrototypes.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Subroutines/ProhibitUnusedPrivateSubroutines.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Subroutines/ProtectPrivateSubs.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Subroutines/RequireArgUnpacking.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Subroutines/RequireFinalReturn.pm
@@ -149,6 +152,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/RequireQuotedHeredocTerminator.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/RequireUpperCaseHeredocTerminator.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitConditionalDeclarations.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitEvilVariables.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitLocalVars.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitMatchVars.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitPackageVars.pm
@@ -184,9 +188,12 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Utils/McCabe.pm
 %%SITE_PERL%%/Perl/Critic/Utils/POD.pm
 %%SITE_PERL%%/Perl/Critic/Utils/PPI.pm
-%%SITE_PERL%%/Perl/Critic/Utils/PPIRegexp.pm
 %%SITE_PERL%%/Perl/Critic/Utils/Perl.pm
 %%SITE_PERL%%/Perl/Critic/Violation.pm
+%%SITE_PERL%%/Test/Perl/Critic/Policy.pm
+@dirrm %%SITE_PERL%%/Test/Perl/Critic
+@dirrmtry %%SITE_PERL%%/Test/Perl
+@dirrmtry %%SITE_PERL%%/Test
 @dirrm %%SITE_PERL%%/Perl/Critic/Utils
 @dirrm %%SITE_PERL%%/Perl/Critic/PolicyParameter/Behavior
 @dirrm %%SITE_PERL%%/Perl/Critic/PolicyParameter

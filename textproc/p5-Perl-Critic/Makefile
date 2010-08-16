@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.10.6
+PORTVERSION=	1.10.8
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,13 +18,16 @@ COMMENT=	Critique Perl source for style and standards
 
 RUN_DEPENDS=	p5-B-Keywords>=1.05:${PORTSDIR}/devel/p5-B-Keywords \
 		p5-Config-Tiny>=2:${PORTSDIR}/devel/p5-Config-Tiny \
+		p5-Email-Address>=1.88.9:${PORTSDIR}/mail/p5-Email-Address \
 		p5-Exception-Class>=1.23:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which \
 		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 		p5-List-MoreUtils>=0.19:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-PPI>=1.205:${PORTSDIR}/textproc/p5-PPI \
+		p5-PPI>=1.208:${PORTSDIR}/textproc/p5-PPI \
+		p5-PPIx-Regexp>=0.008:${PORTSDIR}/textproc/p5-PPIx-Regexp \
 		p5-Readonly>=1.03:${PORTSDIR}/devel/p5-Readonly \
 		p5-String-Format>=1.13:${PORTSDIR}/textproc/p5-String-Format \
+		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-version>=0:${PORTSDIR}/devel/p5-version \
 		perltidy:${PORTSDIR}/devel/perltidy
 BUILD_DEPENDS=	${RUN_DEPENDS}
@@ -34,6 +37,7 @@ PERL_MODBUILD=	yes
 MAN1=	perlcritic.1
 MAN3=	Perl::Critic.3 \
 	Perl::Critic::Annotation.3 \
+	Perl::Critic::CORE_DEVELOPER.3 \
 	Perl::Critic::Command.3 \
 	Perl::Critic::Config.3 \
 	Perl::Critic::DEVELOPER.3 \
@@ -96,6 +100,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Documentation::PodSpelling.3 \
 	Perl::Critic::Policy::Documentation::RequirePackageMatchesPodName.3 \
 	Perl::Critic::Policy::Documentation::RequirePodAtEnd.3 \
+	Perl::Critic::Policy::Documentation::RequirePodLinksIncludeText.3 \
 	Perl::Critic::Policy::Documentation::RequirePodSections.3 \
 	Perl::Critic::Policy::ErrorHandling::RequireCarping.3 \
 	Perl::Critic::Policy::ErrorHandling::RequireCheckingReturnValueOfEval.3 \
@@ -113,9 +118,9 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::InputOutput::RequireCheckedOpen.3 \
 	Perl::Critic::Policy::InputOutput::RequireCheckedSyscalls.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitFormats.3 \
+	Perl::Critic::Policy::Miscellanea::ProhibitTies.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitUnrestrictedNoCritic.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitUselessNoCritic.3 \
-	Perl::Critic::Policy::Miscellanea::ProhibitTies.3 \
 	Perl::Critic::Policy::Miscellanea::RequireRcsKeywords.3 \
 	Perl::Critic::Policy::Modules::ProhibitAutomaticExportation.3 \
 	Perl::Critic::Policy::Modules::ProhibitEvilModules.3 \
@@ -151,6 +156,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Subroutines::ProhibitNestedSubs.3 \
 	Perl::Critic::Policy::Subroutines::ProhibitReturnSort.3 \
 	Perl::Critic::Policy::Subroutines::ProhibitSubroutinePrototypes.3 \
+	Perl::Critic::Policy::Subroutines::ProhibitUnusedPrivateSubroutines.3 \
 	Perl::Critic::Policy::Subroutines::ProtectPrivateSubs.3 \
 	Perl::Critic::Policy::Subroutines::RequireArgUnpacking.3 \
 	Perl::Critic::Policy::Subroutines::RequireFinalReturn.3 \
@@ -182,6 +188,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::RequireQuotedHeredocTerminator.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::RequireUpperCaseHeredocTerminator.3 \
 	Perl::Critic::Policy::Variables::ProhibitConditionalDeclarations.3 \
+	Perl::Critic::Policy::Variables::ProhibitEvilVariables.3 \
 	Perl::Critic::Policy::Variables::ProhibitLocalVars.3 \
 	Perl::Critic::Policy::Variables::ProhibitMatchVars.3 \
 	Perl::Critic::Policy::Variables::ProhibitPackageVars.3 \
@@ -217,8 +224,8 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Utils::McCabe.3 \
 	Perl::Critic::Utils::POD.3 \
 	Perl::Critic::Utils::PPI.3 \
-	Perl::Critic::Utils::PPIRegexp.3 \
 	Perl::Critic::Utils::Perl.3 \
-	Perl::Critic::Violation.3
+	Perl::Critic::Violation.3 \
+	Test::Perl::Critic::Policy.3
 
 .include <bsd.port.mk>
