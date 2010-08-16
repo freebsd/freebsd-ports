@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits lang
 PKGNAMESUFFIX=	-gnome1
 

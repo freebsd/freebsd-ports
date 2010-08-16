@@ -15,6 +15,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/jcomapi.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/jcparam.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/jcphuff.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/jcprepct.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/jctrans.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/jctrans.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/jcsample.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/jdapimin.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/jdapistd.ppu
@@ -114,6 +116,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/libpjcomapi.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/libpjcparam.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/libpjcphuff.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/libpjcprepct.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/libpjctrans.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/libpjcsample.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/libpjdapimin.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pasjpeg/libpjdapistd.a

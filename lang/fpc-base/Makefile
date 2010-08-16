@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	base
-PORTVERSION=	2.2.4
-PORTREVISION=	3
+PORTVERSION=	2.4.0
 CATEGORIES=	lang
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	fpc-
@@ -22,8 +21,6 @@ WANT_FPC_BASE=	yes
 .if !defined(NOPORTDOCS)
 RUN_DEPENDS+=	${LOCALBASE}/share/doc/fpdocs-${PORTVERSION}/user.pdf:${PORTSDIR}/lang/fpc-docs
 .endif
-
-BROKEN=		does not build
 
 NO_BUILD=	yes
 

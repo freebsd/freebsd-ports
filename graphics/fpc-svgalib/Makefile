@@ -18,6 +18,6 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	SVGA	"Install svgalib low level console graphics library"	on
+OPTIONS=	SVGA	"Install svgalib low level console graphics library"	off
 
 .include "${MASTERDIR}/Makefile"

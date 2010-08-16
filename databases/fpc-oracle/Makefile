@@ -18,6 +18,6 @@ MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
 EXTRACTUNITDIR+=	${WRKUNITDIR}
 
-OPTIONS=	ORACLE	"Install oracle client"	on
+OPTIONS=	ORACLE	"Install oracle client"	off
 
 .include "${MASTERDIR}/Makefile"

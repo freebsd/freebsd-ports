@@ -5,14 +5,12 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	editors lang
 PKGNAMESUFFIX=	-ide
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal integrated IDE/compiler
-
-BROKEN=		does not build
 
 USE_FPC=	chm fcl-async fcl-base fv gdbint graph ibase hash mysql odbc \
 		oracle pasjpeg paszlib pthreads postgres regexpr sqlite

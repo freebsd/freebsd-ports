@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fpc
-PORTVERSION=	2.2.4
+PORTVERSION=	2.4.0
 PORTREVISION?=	0
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
@@ -16,8 +16,10 @@ MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:sourc
 		ftp://ftp.no.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
 		ftp://ftp.us.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
 		SF/freepascal/Source/${PORTVERSION}:source \
-		${MASTER_SITE_GOOGLE_CODE}:bin \
-		${MASTER_SITE_LOCAL:S|$|acm/freepascal/:bin|}
+		${MASTER_SITE_GOOGLE_CODE}:bootstrap \
+		${MASTER_SITE_LOCAL:S|$|acm/freepascal/:bootstrap|} \
+		${MASTER_SITE_GOOGLE_CODE}:man \
+		${MASTER_SITE_LOCAL:S|$|acm/freepascal/:man|}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME:S/$/.source/}${EXTRACT_SUFX}:source
 DIST_SUBDIR=	freepascal
@@ -27,7 +29,7 @@ COMMENT?=	Free Pascal compiler with Turbo and Delphi
 
 PROJECTHOST=	bsdistfiles
 USE_GMAKE=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
 SUB_FILES=	pkg-message
@@ -37,14 +39,28 @@ FPCSRCDIR=	${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "i386"
+PPNAME=		ppc386
+FPC_ARCH=	i386
+PLIST_SUB=	FPC_I386="" \
+		FPC_AMD64="@comment "
+.elif ${ARCH} == "amd64"
+PPNAME=		ppcx64
+FPC_ARCH=	x86_64
+PLIST_SUB=	FPC_I386="@comment " \
+		FPC_AMD64=""
+.endif
+
 .if !defined(PKGNAMESUFFIX)
-BUILDNAME=	${ARCH}-freebsd
-PLIST_SUB=	PORTVERSION=${PORTVERSION} \
+BUILDNAME=	${FPC_ARCH}-freebsd
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		BUILDNAME=${BUILDNAME}
-DISTFILES+=	${DISTNAME:S/$/.bin/}${EXTRACT_SUFX}:bin
-MAKE_ENV+=	PP=${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/lib/${PORTNAME}/${PORTVERSION}/ppc386 \
-		FPCMAKE=${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/bin/fpcmake \
+DISTFILES+=	${PPNAME}-${PORTVERSION}-${OPSYS:L}${EXTRACT_SUFX}:bootstrap \
+		${DISTNAME:S/$/.man/}${EXTRACT_SUFX}:man
+MAKE_ENV+=	PP=${WRKDIR}/${PPNAME}-${PORTVERSION}-${OPSYS:L} \
+		FPCMAKE=${WRKDIR}/${FPCSRCDIR}/utils/fpcm/fpcmake \
 		FPCTARGET=${BUILDNAME} \
+		ARCH=${FPC_ARCH} \
 		OPT="${OPT}" \
 		BSDHIER=1
 
@@ -89,7 +105,10 @@ MAN5=	fpc.cfg.5 fpcmake.5 ptop.cfg.5
 do-extract:
 # unpack binary distribution
 	@${MKDIR} ${WRKDIR}
-	@${TAR} xfz ${_DISTDIR}/${DISTNAME:S/$/.bin/}${EXTRACT_SUFX} --directory \
+	@${TAR} xfz ${_DISTDIR}/${PPNAME}-${PORTVERSION}-${OPSYS:L}${EXTRACT_SUFX} --directory \
+		${WRKDIR} && ${CHMOD} +x ${WRKDIR}/${PPNAME}-${PORTVERSION}-${OPSYS:L}
+# unpack man files
+	@${TAR} xfz ${_DISTDIR}/${DISTNAME:S/$/.man/}${EXTRACT_SUFX} --directory \
 		${WRKDIR}
 # unpack source distribution
 	@cd ${WRKDIR} && \
@@ -97,8 +116,13 @@ do-extract:
 			| ${TAR} xf - ${FPCSRCDIR}/compiler ${FPCSRCDIR}/rtl ${FPCSRCDIR}/utils/fpcm
 
 post-patch:
-# patch fpc rtl
-	@${REINPLACE_CMD} -i "" -e 's|504000|${OSVERSION}|g' ${WRKDIR}/${FPCSRCDIR}/rtl/freebsd/${ARCH}/cprt0.as
+.if ${ARCH} == "i386"
+	@${REINPLACE_CMD} -i "" -e 's|504000|${OSVERSION}|g' ${WRKDIR}/${FPCSRCDIR}/rtl/freebsd/${FPC_ARCH}/cprt0.as
+.elif ${ARCH} == "amd64"
+	@${REINPLACE_CMD} -i "" -e 's|700055|${OSVERSION}|g' ${WRKDIR}/${FPCSRCDIR}/rtl/freebsd/${FPC_ARCH}/cprt0.as
+	@${REINPLACE_CMD} -i "" -e 's|502110|${OSVERSION}|g' ${WRKDIR}/${FPCSRCDIR}/rtl/freebsd/${FPC_ARCH}/gprt0.as
+	@${REINPLACE_CMD} -i "" -e 's|700055|${OSVERSION}|g' ${WRKDIR}/${FPCSRCDIR}/rtl/freebsd/${FPC_ARCH}/prt0.as
+.endif
 
 do-build:
 # build fpc compiler
@@ -114,12 +138,12 @@ do-install:
 	# Installng fpcmake
 	@@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcm && ${GMAKE} install ${MAKE_ENV}
 	# Installing manpages
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/man/man1/* ${MAN1PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.bin/}/man/man5/* ${MAN1PREFIX}/man/man5
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.man/}/man/man1/* ${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.man/}/man/man5/* ${MAN1PREFIX}/man/man5
 
 post-install:
-	if [ -e "${PREFIX}/bin/ppc386" ]; then ${RM} -f "${PREFIX}/bin/ppc386"; fi
-	${LN} -s "${PREFIX}/lib/fpc/${PORTVERSION}/ppc386" "${PREFIX}/bin"
+	if [ -e "${PREFIX}/bin/${PPNAME}" ]; then ${RM} -f "${PREFIX}/bin/${PPNAME}"; fi
+	${LN} -s "${PREFIX}/lib/fpc/${PORTVERSION}/${PPNAME}" "${PREFIX}/bin"
 	${SH} "${PREFIX}/lib/fpc/${PORTVERSION}/samplecfg" "${PREFIX}/lib/fpc/${PORTVERSION}" "${PREFIX}/etc"
 	@if [ ! -f ${PREFIX}/etc/fpc.cfg ]; then \
 		${CP} ${PREFIX}/etc/fpc.cfg.sample ${PREFIX}/etc/fpc.cfg; \

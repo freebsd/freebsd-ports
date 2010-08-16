@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-fcl-xml
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal Component Library
 
-USE_FPC=	fcl-async fcl-base hash paszlib pthreads
+USE_FPC=	fcl-async fcl-base hash iconvenc paszlib pthreads
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}

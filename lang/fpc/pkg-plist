@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/lang/fpc/pkg-plist,v 1.11 2009-01-14 06:12:03 acm Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/lang/fpc/pkg-plist,v 1.12 2010-08-16 17:45:10 acm Exp $
 
 @unexec if cmp -s %D/etc/fpc.cfg.sample %D/etc/fpc.cfg; then rm -f %D/etc/fpc.cfg; fi
 etc/fpc.cfg.sample
@@ -7,10 +7,13 @@ bin/fpc
 bin/fpcmake
 bin/fpcmkcfg
 bin/fpcsubst
+bin/mkarmins
+bin/mkx86ins
 bin/ppudump
 bin/ppufiles
 bin/ppumove
-bin/ppc386
+%%FPC_I386%%bin/ppc386
+%%FPC_AMD64%%bin/ppcx64
 lib/fpc/%%PORTVERSION%%/msg/errorct.msg
 lib/fpc/%%PORTVERSION%%/msg/errord.msg
 lib/fpc/%%PORTVERSION%%/msg/errorda.msg
@@ -30,7 +33,8 @@ lib/fpc/%%PORTVERSION%%/msg/errorptw.msg
 lib/fpc/%%PORTVERSION%%/msg/errorues.msg
 lib/fpc/%%PORTVERSION%%/msg/errorr.msg
 lib/fpc/%%PORTVERSION%%/msg/errorrw.msg
-lib/fpc/%%PORTVERSION%%/ppc386
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/ppc386
+%%FPC_AMD64%%lib/fpc/%%PORTVERSION%%/ppcx64
 lib/fpc/%%PORTVERSION%%/samplecfg
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/Package.fpc
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/baseunix.o
@@ -48,8 +52,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/console.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/convutils.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/convutils.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/cprt0.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/cpu.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/cpu.ppu
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/cpu.o
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/cpu.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/crt.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/crt.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/cthreads.o
@@ -76,6 +80,9 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fgl.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fgl.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fmtbcd.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fmtbcd.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fpintres.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/fpintres.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpfpintres.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/freebsd.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/freebsd.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/getopts.o
@@ -96,7 +103,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpclocale.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpcmem.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpconsole.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpconvutils.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpcpu.a
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpcpu.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpcrt.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpcthreads.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpctypes.a
@@ -121,7 +128,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libplnfodwrf.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpmacpas.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpmath.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpmatrix.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpmmx.a
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpmmx.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpmouse.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpobjects.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpobjpas.a
@@ -160,8 +167,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/math.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/math.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/matrix.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/matrix.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/mmx.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/mmx.ppu
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/mmx.o
+%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/mmx.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/mouse.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/mouse.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/objects.o
