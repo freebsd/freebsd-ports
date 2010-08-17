@@ -7,6 +7,7 @@
 
 PORTNAME=	thrift
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE
@@ -53,7 +54,7 @@ CONFIGURE_ARGS+=	\
 BROKEN=		Does not compile on sparc64
 .endif
 
-do-patch:
+post-patch:
 	@${REINPLACE_CMD} 's,^pkgconfigdir = .*,pkgconfigdir=$${prefix}/libdata/pkgconfig,' ${WRKSRC}/lib/cpp/Makefile.am
 
 pre-configure:
