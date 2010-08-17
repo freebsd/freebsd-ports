@@ -68,7 +68,6 @@ lib/openvpn-down-root.so
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/auth-pam.pl
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/bridge-start
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/bridge-stop
-%%PORTDOCS%%%%DOCSDIR%%/sample-scripts/bs
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/openvpn.init
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/ucn.pl
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/verify-cn
