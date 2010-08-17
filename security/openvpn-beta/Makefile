@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvpn
-DISTVERSION=	2.2-beta1
+DISTVERSION=	2.2-beta2
 CATEGORIES=	security net
 MASTER_SITES=	http://build.openvpn.net/downloads/releases/
 PKGNAMESUFFIX=	-beta
@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-beta
 MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	Secure IP/Ethernet tunnel daemon
 
-CONFLICTS=	openvpn-*
+CONFLICTS=	openvpn-devel-[0-9]* openvpn-2.0* openvpn-beta-[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
