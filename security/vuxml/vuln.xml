@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b74a8076-9b1f-11df-9f58-021e8c343e76">
+    <topic>isolate -- local root exploit</topic>
+    <affects>
+      <package>
+	<name>isolate</name>
+	<range><lt>20100717</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<blockquote cite="http://code.google.com/p/isolate/">
+	  <p>isolate currently suffers from some bad security bugs! These
+	    are local root privilege escalation bugs.  Thanks to the helpful
+	    person who reported them (email Chris if you want credit!).
+	    We're working to fix them ASAP, but until then, isolate is
+	    unsafe and you should uninstall it. Sorry! </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/148911</freebsdpr>
+      <url>http://code.google.com/p/isolate/</url>
+    </references>
+    <dates>
+      <discovery>2010-07-29</discovery>
+      <entry>2010-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e7d91a3c-a7c9-11df-870c-00242b513d7c">
     <topic> vlc -- invalid id3v2 tags may lead to invalid memory dereferencing</topic>
     <affects>
