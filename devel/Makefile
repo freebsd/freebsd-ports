@@ -750,6 +750,7 @@
     SUBDIR += libdfui
     SUBDIR += libdict
     SUBDIR += libdisasm
+    SUBDIR += libdisorder
     SUBDIR += libdispatch
     SUBDIR += libdlmalloc
     SUBDIR += libdlna
