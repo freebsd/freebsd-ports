@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nagiosgraph
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -24,21 +24,23 @@ NAGIOSWWWDIR?=	www/nagios
 CGIFILES=	show.cgi showgraph.cgi showhost.cgi showservice.cgi testcolor.cgi showgroup.cgi
 LIBFILES=	insert.pl
 CFGFILES=	nagiosgraph.conf nagiosgraph_de.conf nagiosgraph_es.conf nagiosgraph_fr.conf \
-                servdb.conf groupdb.conf hostdb.conf datasetdb.conf map access.conf labels.conf \
+		servdb.conf groupdb.conf hostdb.conf datasetdb.conf map access.conf labels.conf \
 		rrdopts.conf
 
 PLIST_SUB=	NAGIOSWWWDIR=${NAGIOSWWWDIR} PORTNAME=${PORTNAME}
 
 post-patch:
-	${REINPLACE_CMD} -e 's!%%PREFIX%%!${PREFIX}!' ${WRKSRC}/etc/nagiosgraph.conf
+	@${REINPLACE_CMD} -e 's!%%PREFIX%%!${PREFIX}!' ${WRKSRC}/etc/nagiosgraph.conf
 .for i in ${CGIFILES}
-	${REINPLACE_CMD} -e 's!/usr/bin/perl!${PERL}!g' -e 's!/usr/local!${PREFIX}!g' \
-		-e 's!/opt/nagiosgraph/etc!${PREFIX}/etc/nagios/nagiosgraph!g' ${WRKSRC}/cgi/$i
+	@${REINPLACE_CMD} -e 's!/usr/bin/perl!${PERL}!g' -e 's!/usr/local!${PREFIX}!g' \
+		-e 's!/opt/nagiosgraph/etc!${PREFIX}/etc/nagios/nagiosgraph!g' \
+			${WRKSRC}/cgi/$i
 .endfor
 
 .for i in ${LIBFILES}
-	${REINPLACE_CMD} -e 's!/usr/bin/perl!${PERL}!g' -e 's!/usr/local!${PREFIX}!g' \
-		-e 's!/opt/nagiosgraph/etc!${PREFIX}/etc/nagios/nagiosgraph!g' ${WRKSRC}/lib/$i
+	@${REINPLACE_CMD} -e 's!/usr/bin/perl!${PERL}!g' -e 's!/usr/local!${PREFIX}!g' \
+		-e 's!/opt/nagiosgraph/etc!${PREFIX}/etc/nagios/nagiosgraph!g' \
+			${WRKSRC}/lib/$i
 .endfor
 
 do-install:
@@ -47,7 +49,8 @@ do-install:
 
 .for i in ${CFGFILES}
 	${INSTALL_DATA} ${WRKSRC}/etc/$i ${PREFIX}/etc/nagios/${PORTNAME}/${i}.sample
-	[ -f ${PREFIX}/etc/nagios/${PORTNAME}/${i} ] || ${CP} -p ${PREFIX}/etc/nagios/${PORTNAME}/${i}.sample ${PREFIX}/etc/nagios/${PORTNAME}/${i}
+	[ -f ${PREFIX}/etc/nagios/${PORTNAME}/${i} ] || ${CP} -p ${PREFIX}/etc/nagios/${PORTNAME}/${i}.sample \
+		${PREFIX}/etc/nagios/${PORTNAME}/${i}
 .endfor
 
 	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
