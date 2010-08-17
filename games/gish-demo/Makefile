@@ -24,6 +24,8 @@ DATADIR=	${PREFIX}/lib/${PORTNAME}
 SUB_FILES=	rungish.sh
 SUB_LIST=	LINUXBASE=${LINUXBASE}
 
+BROKEN=		Checksum mismatch. Newer version does not work.
+
 do-install:
 	${MKDIR} ${DATADIR}
 	${CP} -R ${WRKSRC}/* ${DATADIR}
