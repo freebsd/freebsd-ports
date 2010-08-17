@@ -36,9 +36,11 @@ stop_postcmd()
 load_rc_config $name
 
 postgrey_enable=${postgrey_enable:-"NO"}
+postgrey_greylist_header=${postgrey_greylist_header:-"X-Greylist: delayed %t seconds by postgrey-%v at %h\; %d"}
 postgrey_pidfile=${postgrey_pidfile:-"/var/run/postgrey.pid"}
 postgrey_flags=${postgrey_flags:-"--pidfile=${postgrey_pidfile} \
-	--inet=10023 -d --user=%%USER%% --group=%%GROUP%% --dbdir=/var/db/postgrey"}
+	--inet=10023 -d --user=%%USER%% --group=%%GROUP%% --dbdir=/var/db/postgrey \
+	--x-greylist-header=${postgrey_greylist_header}"}
 
 pidfile="${postgrey_pidfile}"
 
