@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ufraw
-PORTVERSION=	0.16
-PORTREVISION=	5
+PORTVERSION=	0.17
+PORTREVISION=	0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -35,7 +35,6 @@ OPTIONS=	CONTRAST "Enable contrast setting"		on	\
 		EXIV2	"EXIF support via exiv2 library"	on	\
 		FITS	"Enable FITS output support"		off	\
 		GIMP	"Install GIMP UFRaw plugin"		on	\
-		HOTPIXEL "Enable hot pixels elimination"	on	\
 		LENSFUN	"Build with LensFun library support"	on
 
 .include <bsd.port.pre.mk>
@@ -52,18 +51,14 @@ PLIST_SUB+=	GIMP=""
 PC_FALSE+=	gimp
 PLIST_SUB+=	GIMP="@comment "
 .endif
-.if !defined(WITHOUT_LENSFUN)
+.if !defined(WITHOUT_LENSFUN) || exists(${LOCALBASE}/lib/lensfun.so.2)
 LIB_DEPENDS+=	lensfun.2:${PORTSDIR}/graphics/lensfun
-CONFIGURE_ARGS+=	--with-lensfun
 .endif
 .if defined(WITH_FITS) || exists(${LOCALBASE}/lib/libcfitsio.so)
 LIB_DEPENDS+=	cfitsio.0:${PORTSDIR}/astro/cfitsio
 .endif
 .if !defined(WITHOUT_CONTRAST)
 CONFIGURE_ARGS+=	--enable-contrast
-.endif
-.if !defined(WITHOUT_HOTPIXEL)
-CONFIGURE_ARGS+=	--enable-hotpixels
 .endif
 .if defined(WITH_DST)
 CONFIGURE_ARGS+=	--enable-dst-correction
