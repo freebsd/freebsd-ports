@@ -7,6 +7,7 @@
 
 PORTNAME=	fcgiwrap
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://cloud.github.com/downloads/gnosek/fcgiwrap/
 
@@ -17,6 +18,8 @@ LIB_DEPENDS=	fcgi.0:${PORTSDIR}/www/fcgi
 
 WRKSRC=		${WRKDIR}/gnosek-fcgiwrap-2e301c8
 LICENSE=	MIT
+
+USE_RC_SUBR=	fcgiwrap
 
 USE_AUTOTOOLS=	autoconf:262:env autoheader:262
 
