@@ -204,6 +204,7 @@
     SUBDIR += clisp-hyperspec
     SUBDIR += cmake
     SUBDIR += cmake-gui
+    SUBDIR += cmph
     SUBDIR += cmunge
     SUBDIR += cobf
     SUBDIR += cocktail
