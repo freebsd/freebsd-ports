@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# If there is a global system configuration file, suck it in.
+#
+if [ -r /etc/defaults/periodic.conf ]
+then
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
+fi
+
+case "$daily_ddclient_force_enable" in
+	[Yy][Ee][Ss])
+		echo
+		echo 'Forcing ddclient update:'
+
+		out=`%%PREFIX%%/sbin/ddclient -force`
+		echo "$out"
+		rc=0
+		;;
+	*)
+		rc=0
+		;;
+esac
+
+exit $rc
