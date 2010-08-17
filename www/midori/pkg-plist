@@ -1,20 +1,23 @@
 bin/midori
 etc/xdg/midori/search
 include/midori-0.2/extensions/external-applications.h
+include/midori-0.2/extensions/history-list.h
 lib/midori/libadblock.so
 lib/midori/libaddons.so
 lib/midori/libcolorful-tabs.so
 lib/midori/libcookie-manager.so
+lib/midori/libcopy-tabs.so
 lib/midori/libexternal-applications.so
 lib/midori/libfeed-panel.so
 lib/midori/libformhistory.so
+lib/midori/libhistory-list.so
 lib/midori/libmouse-gestures.so
 lib/midori/libpage-holder.so
 lib/midori/libshortcuts.so
 lib/midori/libstatus-clock.so
 lib/midori/libstatusbar-features.so
+lib/midori/libtabs-minimized.so
 lib/midori/libtab-panel.so
-lib/midori/libtab-switcher.so
 lib/midori/libtoolbar-editor.so
 lib/midori/libweb-cache.so
 share/applications/midori.desktop
@@ -88,6 +91,9 @@ share/icons/hicolor/32x32/status/news-feed.png
 share/icons/hicolor/48x48/apps/midori.png
 share/icons/hicolor/48x48/categories/extension.png
 share/icons/hicolor/48x48/status/news-feed.png
+share/icons/hicolor/scalable/apps/midori.svg
+share/icons/hicolor/scalable/categories/extension.svg
+share/icons/hicolor/scalable/status/news-feed.svg
 %%NLS%%share/locale/ast/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/midori.mo
@@ -133,6 +139,8 @@ share/icons/hicolor/48x48/status/news-feed.png
 %%DATADIR%%/res/speeddial.json
 share/vala/vapi/external-applications.deps
 share/vala/vapi/external-applications.vapi
+share/vala/vapi/history-list.deps
+share/vala/vapi/history-list.vapi
 @dirrmtry share/vala/vapi
 @dirrmtry share/vala
 @dirrm %%DATADIR%%/res
