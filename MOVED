@@ -4480,3 +4480,5 @@ net-p2p/ktorrent-devel||2010-08-11|obsoleted: please use net-p2p/ktorrent2 or ne
 multimedia/mpeg4ip-libmp4v2|multimedia/mp4v2|2010-08-11|Superseded by multimedia/mp4v2
 lang/ifc7||2010-08-12|Distfile no longer available
 multimedia/kaffeine-devel|multimedia/kaffeine|2010-08-14|New non-development version
+www/peacock||2010-08-17|Has runtime errors, upstream development discontinued
+www/gtkhtml38||2010-08-17|Removed, because there are no more users of this library
