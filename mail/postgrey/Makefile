@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	postgrey
-PORTVERSION=	1.32
-PORTREVISION=	1
+PORTVERSION=	1.33
 CATEGORIES=	mail
-MASTER_SITES=	http://postgrey.schweikert.ch/pub/ LOCAL/beech
+MASTER_SITES=	http://postgrey.schweikert.ch/pub/ \
+		http://postgrey.schweikert.ch/pub/old/
 
 MAINTAINER=	haroldp@internal.org
 COMMENT=	Greylisting policy server for Postfix
