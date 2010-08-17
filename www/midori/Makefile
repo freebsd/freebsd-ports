@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	midori
-PORTVERSION=	0.2.6
-PORTREVISION=	2
+PORTVERSION=	0.2.7
 CATEGORIES=	www xfce
 MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
@@ -17,6 +16,7 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Lightweight web browser using WebKit browser engine
 
 LIB_DEPENDS=	webkit-1.0:${PORTSDIR}/www/webkit-gtk2 \
+		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		notify.1:${PORTSDIR}/devel/libnotify \
 		vala.0:${PORTSDIR}/lang/vala
 BUILD_DEPENDS=	rsvg-convert:${PORTSDIR}/graphics/librsvg2
@@ -25,7 +25,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--disable-unique \
 		--disable-libidn \
-		--enable-sqlite \
 		--enable-libnotify \
 		--enable-addons \
 		--jobs=${MAKE_JOBS_NUMBER}
