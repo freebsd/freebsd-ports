@@ -1,0 +1,11 @@
+Sievelog is a message dispatcher inspired by swatch but more focused on the
+following problems:
+
+    * Having a clean syntax
+    * Directing a raw syslog stream to different files based on content
+    * Mailing out alerts based on content
+    * Being fast 
+
+Sievelog's syntax is as simple as "<regex>" -> /some/file. 
+
+WWW: http://sievelog.googlecode.com/ 

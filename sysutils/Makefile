@@ -778,6 +778,7 @@
     SUBDIR += sge61
     SUBDIR += sge62
     SUBDIR += shlock
+    SUBDIR += sievelog
     SUBDIR += skill
     SUBDIR += slack
     SUBDIR += sleuthkit
