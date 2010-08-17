@@ -29,9 +29,9 @@ lib/gnome-settings-daemon-2.0/libkeybindings.so
 lib/gnome-settings-daemon-2.0/libkeyboard.a
 lib/gnome-settings-daemon-2.0/libkeyboard.la
 lib/gnome-settings-daemon-2.0/libkeyboard.so
-lib/gnome-settings-daemon-2.0/libmedia-keys.a
-lib/gnome-settings-daemon-2.0/libmedia-keys.la
-lib/gnome-settings-daemon-2.0/libmedia-keys.so
+%%PULSEAUDIO%%lib/gnome-settings-daemon-2.0/libmedia-keys.a
+%%PULSEAUDIO%%lib/gnome-settings-daemon-2.0/libmedia-keys.la
+%%PULSEAUDIO%%lib/gnome-settings-daemon-2.0/libmedia-keys.so
 lib/gnome-settings-daemon-2.0/libmouse.a
 lib/gnome-settings-daemon-2.0/libmouse.la
 lib/gnome-settings-daemon-2.0/libmouse.so
@@ -50,7 +50,7 @@ lib/gnome-settings-daemon-2.0/libxrdb.so
 lib/gnome-settings-daemon-2.0/libxsettings.a
 lib/gnome-settings-daemon-2.0/libxsettings.la
 lib/gnome-settings-daemon-2.0/libxsettings.so
-lib/gnome-settings-daemon-2.0/media-keys.gnome-settings-plugin
+%%PULSEAUDIO%%lib/gnome-settings-daemon-2.0/media-keys.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/mouse.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/sound.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/typing-break.gnome-settings-plugin
