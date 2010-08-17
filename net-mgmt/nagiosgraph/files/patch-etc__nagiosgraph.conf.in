@@ -1,5 +1,5 @@
---- etc/nagiosgraph.conf.orig	2010-04-27 08:14:25.000000000 +0000
-+++ etc/nagiosgraph.conf	2010-04-27 08:18:16.000000000 +0000
+--- ./etc/nagiosgraph.conf.orig	2010-06-07 18:30:21.000000000 +0200
++++ ./etc/nagiosgraph.conf	2010-08-17 21:50:26.000000000 +0200
 @@ -8,19 +8,19 @@
  # Author:  (c) 2010 Matthew Wall
  
@@ -15,7 +15,8 @@
 +perflog = /var/spool/nagios/perfdata.log
  
  # Directory to store rrd database files
- rrddir = /var/nagiosgraph/rrd
+-rrddir = /var/nagiosgraph/rrd
++rrddir = /var/spool/nagios/nagiosgraph/rrd
  
  # File containing regular expressions to identify service and perf data
 -mapfile = /etc/nagiosgraph/map
