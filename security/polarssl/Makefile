@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	polarssl
-PORTVERSION=	0.13.1
+PORTVERSION=	0.14.0
 DISTVERSIONSUFFIX=	-gpl
-PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://polarssl.org/code/download/
 EXTRACT_SUFX=	.tgz
