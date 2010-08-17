@@ -56,6 +56,12 @@ EXTRA_PATCHES+=	${FILESDIR}/NSFileManager.m.patch
 
 .include <bsd.port.pre.mk>
 
+.if defined(GNUSTEP_WITH_GCC42)
+.if (${ARCH} == i386) || (${ARCH} == amd64)
+BROKEN=		Does not build with gcc42
+.endif
+.endif
+
 PATH:=	${PREFIX}/System/Tools:${PATH}
 
 post-build:
