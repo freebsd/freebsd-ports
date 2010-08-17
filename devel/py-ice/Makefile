@@ -7,7 +7,7 @@
 
 PORTNAME=	Ice
 PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.zeroc.com/download/Ice/3.4/ \
 		http://www.dirk.sh/dirk/Ice/
@@ -55,8 +55,9 @@ post-patch:
 		s|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g; \
 		s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/py/config/Make.rules
-	${REINPLACE_CMD} 's|.(ice_dir).slice|${LOCALBASE}/share/Ice|g; \
-		s|.(prefix).slice|${LOCALBASE}/share/Ice|g' \
+	${REINPLACE_CMD} 's|.(ice_dir).slice|${DATADIR}|g; \
+		s|.(prefix).slice|${DATADIR}|g; \
+		s|.(prefix).[ICE_]*LICENSE|${DATADIR}/LICENSE|g;' \
 		${WRKSRC}/py/config/Make.rules.mak \
 		${WRKSRC}/config/Make.common.rules.mak \
 		${WRKSRC}/config/Make.common.rules
