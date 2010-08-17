@@ -42,7 +42,7 @@ PKGNAMESUFFIX=		-odbc
 DISTNAME=		psqlodbc-${PORTVERSION}
 DIST_SUBDIR=		postgresql
 
-MAINTAINER=		alex-goncharov@comcast.net
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		PostgreSQL ODBC driver
 
 BUILD_DEPENDS=		pg_config:${PORTSDIR}/databases/postgresql83-client
