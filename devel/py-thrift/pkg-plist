@@ -32,6 +32,9 @@
 %%PYTHON_SITELIBDIR%%/thrift/transport/THttpClient.py
 %%PYTHON_SITELIBDIR%%/thrift/transport/THttpClient.pyc
 %%PYTHON_SITELIBDIR%%/thrift/transport/THttpClient.pyo
+%%PYTHON_SITELIBDIR%%/thrift/transport/TSerialization.py
+%%PYTHON_SITELIBDIR%%/thrift/transport/TSerialization.pyc
+%%PYTHON_SITELIBDIR%%/thrift/transport/TSerialization.pyo
 %%PYTHON_SITELIBDIR%%/thrift/transport/TSocket.py
 %%PYTHON_SITELIBDIR%%/thrift/transport/TSocket.pyc
 %%PYTHON_SITELIBDIR%%/thrift/transport/TSocket.pyo
