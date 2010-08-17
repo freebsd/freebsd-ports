@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.mew.org/~kazu/proj/pgpdump/
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	PGP packet visualizer
 
-BROKEN=		Fails to fetch due to size mismatch
-
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
