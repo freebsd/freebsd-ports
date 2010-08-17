@@ -35,6 +35,7 @@ USE_GNUSTEP_LOCAL_LIBS+=	ScriptKit:${SCRIPTKIT_PORT}
 
 WRKSRC=	${WRKDIR}/Etoile-${PORTVERSION}
 USE_GNUSTEP_MAKE_DIRS+=	Services/User/Melodie
+ADDITIONAL_INCLUDE_DIRS+=	-I${LOCALBASE}/include/mp4v2
 
 FOUNDATION_PORT?=	devel/etoile-foundation
 COREOBJECT_PORT?=	devel/etoile-coreobject
@@ -45,6 +46,9 @@ LANGUAGEKIT_PORT?=	lang/etoile-languagekit
 SMALLTALKKIT_PORT?=	lang/etoile-smalltalkkit
 SCRIPTKIT_PORT?=	lang/etoile-scriptkit
 
+post-patch:
+	${REINPLACE_CMD} -e 's|mp4.h|mp4v2.h|' \
+		${WRKSRC}/Services/User/Melodie/TLMusicFile.m
 post-configure:
 	${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/etoile.make \
 		${WRKSRC}/Services/User/Melodie/GNUmakefile
