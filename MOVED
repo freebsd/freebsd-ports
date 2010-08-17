@@ -4482,3 +4482,4 @@ lang/ifc7||2010-08-12|Distfile no longer available
 multimedia/kaffeine-devel|multimedia/kaffeine|2010-08-14|New non-development version
 www/peacock||2010-08-17|Has runtime errors, upstream development discontinued
 www/gtkhtml38||2010-08-17|Removed, because there are no more users of this library
+security/isolate||2010-08-17|Security vulnerability
