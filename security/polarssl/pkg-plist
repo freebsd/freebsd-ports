@@ -41,6 +41,7 @@ include/polarssl/sha2.h
 include/polarssl/sha4.h
 include/polarssl/ssl.h
 include/polarssl/timing.h
+include/polarssl/version.h
 include/polarssl/x509.h
 include/polarssl/xtea.h
 lib/libpolarssl.a
