@@ -37,6 +37,9 @@ MAN8=		Kobil_mIDentity_switch.8
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 .endif
+.if (${OSVERSION} >=800069 && ${OSVERSION} < 801000)
+BROKEN=		Basesystem libusb is missing some functions.		
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s,use warnings;,," ${WRKSRC}/src/create_Info_plist.pl
