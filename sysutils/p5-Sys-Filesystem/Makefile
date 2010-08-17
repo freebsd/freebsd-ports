@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Sys-Filesystem
-PORTVERSION=	1.27
+PORTVERSION=	1.30
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Sys
@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	Perl module to Retrieve list of filesystems and their properties
+
+RUN_DEPENDS=	p5-Params-Util>=1.0:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 
