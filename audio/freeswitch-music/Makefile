@@ -5,11 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	freeswitch
+PORTNAME=	freeswitch-music
 PORTVERSION=	1.0.8
 CATEGORIES=	audio
 MASTER_SITES=	http://files.freeswitch.org/
-PKGNAMESUFFIX=	-music
 DIST_SUBDIR=	freeswitch-music
 
 MAINTAINER=	ecrist@secure-computing.net
@@ -18,6 +17,8 @@ COMMENT=	FreeSwitch Music - All Bitrates
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
+BASE_PORTNAME=	freeswitch
+
 OPTIONS=	8K           "Install 8000Hz Music" on \
 		16K          "Install 16000Hz Music" on \
 		32K          "Install 32000Hz Music" on \
@@ -25,23 +26,30 @@ OPTIONS=	8K           "Install 8000Hz Music" on \
 
 .include <bsd.port.options.mk>
 .if defined(WITH_8K)
-DISTFILES+=	${PORTNAME}-sounds${PKGNAMESUFFIX}-8000-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES+=	freeswitch-sounds-music-8000-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 .if defined(WITH_16K)
-DISTFILES+=	${PORTNAME}-sounds${PKGNAMESUFFIX}-16000-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES+=	freeswitch-sounds-music-16000-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 .if defined(WITH_32K)
-DISTFILES+=	${PORTNAME}-sounds${PKGNAMESUFFIX}-32000-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES+=	freeswitch-sounds-music-32000-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 .if defined(WITH_48K)
-DISTFILES+=	${PORTNAME}-sounds${PKGNAMESUFFIX}-48000-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES+=	freeswitch-sounds-music-48000-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
-#RUN_DEPENDS+= freeswitch:${PORTSDIR}/net/freeswitch-core
+.for i in 8K 16K 32K 48K
+.if !defined(WITH_${i})
+PLIST_SUB+=	WITH_${i}="@comment "
+.else
+PLIST_SUB+=	WITH_${i}=""
+.endif
+.endfor
 
 do-install:
 	@${ECHO_MSG} "Installing files..."
-	${MKDIR} ${PREFIX}/share/${PORTNAME}/sounds
-	(cd ${WRKDIR} &&${COPYTREE_SHARE} \* ${DATADIR}/sounds/)
+	${MKDIR} ${PREFIX}/share/${BASE_PORTNAME}/sounds
+	${TOUCH} ${PREFIX}/share/${BASE_PORTNAME}/sounds/.freeswitch-music
+	(cd ${WRKSRC} &&${COPYTREE_SHARE} \* ${PREFIX}/share/${BASE_PORTNAME}/sounds/)
 
 .include <bsd.port.mk>
