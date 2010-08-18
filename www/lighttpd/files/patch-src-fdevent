@@ -1,0 +1,532 @@
+Index: src/fdevent.h
+===================================================================
+--- src/fdevent.h	(revision 2763)
++++ src/fdevent.h	(revision 2765)
+@@ -91,7 +91,6 @@
+ 		FDEVENT_HANDLER_LINUX_SYSEPOLL,
+ 		FDEVENT_HANDLER_SOLARIS_DEVPOLL,
+ 		FDEVENT_HANDLER_FREEBSD_KQUEUE,
+-		FDEVENT_HANDLER_SOLARIS_PORT,
+ 		FDEVENT_HANDLER_LIBEV
+ } fdevent_handler_t;
+ 
+@@ -101,6 +100,7 @@
+ 	void *ctx;
+ 	void *handler_ctx;
+ 	int fd;
++	int events;
+ } fdnode;
+ 
+ /**
+@@ -166,7 +166,7 @@
+ 	int (*reset)(struct fdevents *ev);
+ 	void (*free)(struct fdevents *ev);
+ 
+-	int (*event_add)(struct fdevents *ev, int fde_ndx, int fd, int events);
++	int (*event_set)(struct fdevents *ev, int fde_ndx, int fd, int events);
+ 	int (*event_del)(struct fdevents *ev, int fde_ndx, int fd);
+ 	int (*event_get_revent)(struct fdevents *ev, size_t ndx);
+ 	int (*event_get_fd)(struct fdevents *ev, size_t ndx);
+@@ -182,7 +182,7 @@
+ int fdevent_reset(fdevents *ev); /* "init" after fork() */
+ void fdevent_free(fdevents *ev);
+ 
+-int fdevent_event_add(fdevents *ev, int *fde_ndx, int fd, int events);
++int fdevent_event_set(fdevents *ev, int *fde_ndx, int fd, int events); /* events can be FDEVENT_IN, FDEVENT_OUT or FDEVENT_IN | FDEVENT_OUT */
+ int fdevent_event_del(fdevents *ev, int *fde_ndx, int fd);
+ int fdevent_event_get_revent(fdevents *ev, size_t ndx);
+ int fdevent_event_get_fd(fdevents *ev, size_t ndx);
+Index: src/mod_cgi.c
+===================================================================
+--- src/mod_cgi.c	(revision 2763)
++++ src/mod_cgi.c	(revision 2765)
+@@ -1157,7 +1157,7 @@
+ 		con->plugin_ctx[p->id] = hctx;
+ 
+ 		fdevent_register(srv->ev, hctx->fd, cgi_handle_fdevent, hctx);
+-		fdevent_event_add(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_IN);
++		fdevent_event_set(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_IN);
+ 
+ 		if (-1 == fdevent_fcntl_set(srv->ev, hctx->fd)) {
+ 			log_error_write(srv, __FILE__, __LINE__, "ss", "fcntl failed: ", strerror(errno));
+Index: src/connections.c
+===================================================================
+--- src/connections.c	(revision 2763)
++++ src/connections.c	(revision 2765)
+@@ -1792,7 +1792,7 @@
+ 	case CON_STATE_READ_POST:
+ 	case CON_STATE_READ:
+ 	case CON_STATE_CLOSE:
+-		fdevent_event_add(srv->ev, &(con->fde_ndx), con->fd, FDEVENT_IN);
++		fdevent_event_set(srv->ev, &(con->fde_ndx), con->fd, FDEVENT_IN);
+ 		break;
+ 	case CON_STATE_WRITE:
+ 		/* request write-fdevent only if we really need it
+@@ -1802,7 +1802,7 @@
+ 		if (!chunkqueue_is_empty(con->write_queue) &&
+ 		    (con->is_writable == 0) &&
+ 		    (con->traffic_limit_reached == 0)) {
+-			fdevent_event_add(srv->ev, &(con->fde_ndx), con->fd, FDEVENT_OUT);
++			fdevent_event_set(srv->ev, &(con->fde_ndx), con->fd, FDEVENT_OUT);
+ 		} else {
+ 			fdevent_event_del(srv->ev, &(con->fde_ndx), con->fd);
+ 		}
+Index: src/network.c
+===================================================================
+--- src/network.c	(revision 2763)
++++ src/network.c	(revision 2765)
+@@ -724,7 +724,7 @@
+ 		server_socket *srv_socket = srv->srv_sockets.ptr[i];
+ 
+ 		fdevent_register(srv->ev, srv_socket->fd, network_server_handle_fdevent, srv_socket);
+-		fdevent_event_add(srv->ev, &(srv_socket->fde_ndx), srv_socket->fd, FDEVENT_IN);
++		fdevent_event_set(srv->ev, &(srv_socket->fde_ndx), srv_socket->fd, FDEVENT_IN);
+ 	}
+ 	return 0;
+ }
+Index: src/fdevent_freebsd_kqueue.c
+===================================================================
+--- src/fdevent_freebsd_kqueue.c	(revision 2763)
++++ src/fdevent_freebsd_kqueue.c	(revision 2765)
+@@ -22,20 +22,31 @@
+ }
+ 
+ static int fdevent_freebsd_kqueue_event_del(fdevents *ev, int fde_ndx, int fd) {
+-	int ret;
++	int ret, n = 0;
+ 	struct kevent kev[2];
+ 	struct timespec ts;
++	int oevents;
+ 
+ 	if (fde_ndx < 0) return -1;
+ 
+-	EV_SET(&kev[0], fd, EVFILT_READ, EV_DELETE, 0, 0, NULL);
+-	EV_SET(&kev[1], fd, EVFILT_WRITE, EV_DELETE, 0, 0, NULL);
++	oevents = ev->fdarray[fd]->events;
+ 
++	if (oevents & FDEVENT_IN)  {
++		EV_SET(&kev[n], fd, EVFILT_READ, EV_DELETE, 0, 0, NULL);
++		n++;
++	}
++	if (oevents & FDEVENT_OUT)  {
++		EV_SET(&kev[n], fd, EVFILT_WRITE, EV_DELETE, 0, 0, NULL);
++		n++;
++	}
++
++	if (0 == n) return -1;
++
+ 	ts.tv_sec  = 0;
+ 	ts.tv_nsec = 0;
+ 
+ 	ret = kevent(ev->kq_fd,
+-		&kev, 2,
++		&kev, n,
+ 		NULL, 0,
+ 		&ts);
+ 
+@@ -49,28 +60,46 @@
+ 	return -1;
+ }
+ 
+-static int fdevent_freebsd_kqueue_event_add(fdevents *ev, int fde_ndx, int fd, int events) {
+-	int filter, ret;
+-	struct kevent kev;
++static int fdevent_freebsd_kqueue_event_set(fdevents *ev, int fde_ndx, int fd, int events) {
++	int ret, n = 0;
++	struct kevent kev[2];
+ 	struct timespec ts;
++	int oevents = ev->fdarray[fd]->events;
++	int addevents = events & ~oevents;
++	int delevents = ~events & oevents;
+ 
+ 	UNUSED(fde_ndx);
+ 
+-	filter = (events & FDEVENT_IN) ? EVFILT_READ : EVFILT_WRITE;
++	if (events == oevents) return fd;
+ 
+-	EV_SET(&kev, fd, filter, EV_ADD|EV_CLEAR, 0, 0, NULL);
++	if (addevents & FDEVENT_IN)  {
++		EV_SET(&kev[n], fd, EVFILT_READ, EV_ADD|EV_CLEAR, 0, 0, NULL);
++		n++;
++	} else if (delevents & FDEVENT_IN) {
++		EV_SET(&kev[n], fd, EVFILT_READ, EV_DELETE, 0, 0, NULL);
++		n++;
++	}
++	if (addevents & FDEVENT_OUT)  {
++		EV_SET(&kev[n], fd, EVFILT_WRITE, EV_ADD|EV_CLEAR, 0, 0, NULL);
++		n++;
++	} else if (delevents & FDEVENT_OUT) {
++		EV_SET(&kev[n], fd, EVFILT_WRITE, EV_DELETE, 0, 0, NULL);
++		n++;
++	}
+ 
++	if (0 == n) return fd;
++
+ 	ts.tv_sec  = 0;
+ 	ts.tv_nsec = 0;
+ 
+ 	ret = kevent(ev->kq_fd,
+-		&kev, 1,
++		kev, n,
+ 		NULL, 0,
+ 		&ts);
+ 
+ 	if (ret == -1) {
+ 		log_error_write(ev->srv, __FILE__, __LINE__, "SS",
+-			"kqueue event add failed: ", strerror(errno));
++			"kqueue event set failed: ", strerror(errno));
+ 
+ 		return -1;
+ 	}
+@@ -161,7 +190,7 @@
+ 	SET(reset);
+ 
+ 	SET(event_del);
+-	SET(event_add);
++	SET(event_set);
+ 
+ 	SET(event_next_fdndx);
+ 	SET(event_get_fd);
+Index: src/fdevent_solaris_devpoll.c
+===================================================================
+--- src/fdevent_solaris_devpoll.c	(revision 2763)
++++ src/fdevent_solaris_devpoll.c	(revision 2765)
+@@ -40,7 +40,7 @@
+ 	return -1;
+ }
+ 
+-static int fdevent_solaris_devpoll_event_add(fdevents *ev, int fde_ndx, int fd, int events) {
++static int fdevent_solaris_devpoll_event_set(fdevents *ev, int fde_ndx, int fd, int events) {
+ 	struct pollfd pfd;
+ 	int add = 0;
+ 
+@@ -56,7 +56,7 @@
+ 
+ 	if (-1 == write(ev->devpoll_fd, &pfd, sizeof(pfd))) {
+ 		log_error_write(ev->srv, __FILE__, __LINE__, "S(D, S)",
+-			"(add) write failed: ", fd, strerror(errno));
++			"(set) write failed: ", fd, strerror(errno));
+ 
+ 		return -1;
+ 	}
+@@ -139,7 +139,7 @@
+ 	SET(reset);
+ 
+ 	SET(event_del);
+-	SET(event_add);
++	SET(event_set);
+ 
+ 	SET(event_next_fdndx);
+ 	SET(event_get_fd);
+Index: src/mod_scgi.c
+===================================================================
+--- src/mod_scgi.c	(revision 2763)
++++ src/mod_scgi.c	(revision 2765)
+@@ -2230,7 +2230,7 @@
+ 
+ 				/* connection is in progress, wait for an event and call getsockopt() below */
+ 
+-				fdevent_event_add(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
++				fdevent_event_set(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
+ 
+ 				return HANDLER_WAIT_FOR_EVENT;
+ 			case -1:
+@@ -2343,10 +2343,10 @@
+ 		if (hctx->wb->bytes_out == hctx->wb->bytes_in) {
+ 			/* we don't need the out event anymore */
+ 			fdevent_event_del(srv->ev, &(hctx->fde_ndx), hctx->fd);
+-			fdevent_event_add(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_IN);
++			fdevent_event_set(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_IN);
+ 			scgi_set_state(srv, hctx, FCGI_STATE_READ);
+ 		} else {
+-			fdevent_event_add(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
++			fdevent_event_set(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
+ 
+ 			return HANDLER_WAIT_FOR_EVENT;
+ 		}
+@@ -2891,12 +2891,12 @@
+ 	if (hctx->fd != -1) {
+ 		switch (hctx->state) {
+ 		case FCGI_STATE_READ:
+-			fdevent_event_add(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_IN);
++			fdevent_event_set(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_IN);
+ 
+ 			break;
+ 		case FCGI_STATE_CONNECT:
+ 		case FCGI_STATE_WRITE:
+-			fdevent_event_add(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
++			fdevent_event_set(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
+ 
+ 			break;
+ 		case FCGI_STATE_INIT:
+Index: src/mod_proxy.c
+===================================================================
+--- src/mod_proxy.c	(revision 2763)
++++ src/mod_proxy.c	(revision 2765)
+@@ -798,7 +798,7 @@
+ 
+ 				/* connection is in progress, wait for an event and call getsockopt() below */
+ 
+-				fdevent_event_add(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
++				fdevent_event_set(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
+ 
+ 				return HANDLER_WAIT_FOR_EVENT;
+ 			case -1:
+@@ -863,9 +863,9 @@
+ 			proxy_set_state(srv, hctx, PROXY_STATE_READ);
+ 
+ 			fdevent_event_del(srv->ev, &(hctx->fde_ndx), hctx->fd);
+-			fdevent_event_add(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_IN);
++			fdevent_event_set(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_IN);
+ 		} else {
+-			fdevent_event_add(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
++			fdevent_event_set(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
+ 
+ 			return HANDLER_WAIT_FOR_EVENT;
+ 		}
+Index: src/fdevent_libev.c
+===================================================================
+--- src/fdevent_libev.c	(revision 2763)
++++ src/fdevent_libev.c	(revision 2765)
+@@ -53,7 +53,7 @@
+ 	return -1;
+ }
+ 
+-static int fdevent_libev_event_add(fdevents *ev, int fde_ndx, int fd, int events) {
++static int fdevent_libev_event_set(fdevents *ev, int fde_ndx, int fd, int events) {
+ 	fdnode *fdn = ev->fdarray[fd];
+ 	ev_io *watcher = fdn->handler_ctx;
+ 	int ev_events = 0;
+@@ -70,9 +70,9 @@
+ 		watcher->data = ev;
+ 		ev_io_start(ev->libev_loop, watcher);
+ 	} else {
+-		if ((watcher->events & ev_events) != ev_events) {
++		if ((watcher->events & (EV_READ | EV_WRITE)) != ev_events) {
+ 			ev_io_stop(ev->libev_loop, watcher);
+-			ev_io_set(watcher, watcher->fd, watcher->events | ev_events);
++			ev_io_set(watcher, watcher->fd, ev_events);
+ 			ev_io_start(ev->libev_loop, watcher);
+ 		}
+ 	}
+@@ -140,7 +140,7 @@
+ 	SET(reset);
+ 
+ 	SET(event_del);
+-	SET(event_add);
++	SET(event_set);
+ 
+ 	SET(event_next_fdndx);
+ 	SET(event_get_fd);
+Index: src/mod_fastcgi.c
+===================================================================
+--- src/mod_fastcgi.c	(revision 2763)
++++ src/mod_fastcgi.c	(revision 2765)
+@@ -2989,7 +2989,7 @@
+ 		case CONNECTION_DELAYED:
+ 			/* connection is in progress, wait for an event and call getsockopt() below */
+ 
+-			fdevent_event_add(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
++			fdevent_event_set(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
+ 
+ 			fcgi_set_state(srv, hctx, FCGI_STATE_CONNECT_DELAYED);
+ 			return HANDLER_WAIT_FOR_EVENT;
+@@ -3108,10 +3108,10 @@
+ 		if (hctx->wb->bytes_out == hctx->wb->bytes_in) {
+ 			/* we don't need the out event anymore */
+ 			fdevent_event_del(srv->ev, &(hctx->fde_ndx), hctx->fd);
+-			fdevent_event_add(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_IN);
++			fdevent_event_set(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_IN);
+ 			fcgi_set_state(srv, hctx, FCGI_STATE_READ);
+ 		} else {
+-			fdevent_event_add(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
++			fdevent_event_set(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
+ 
+ 			return HANDLER_WAIT_FOR_EVENT;
+ 		}
+@@ -3726,12 +3726,12 @@
+ 	if (hctx->fd != -1) {
+ 		switch (hctx->state) {
+ 		case FCGI_STATE_READ:
+-			fdevent_event_add(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_IN);
++			fdevent_event_set(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_IN);
+ 
+ 			break;
+ 		case FCGI_STATE_CONNECT_DELAYED:
+ 		case FCGI_STATE_WRITE:
+-			fdevent_event_add(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
++			fdevent_event_set(srv->ev, &(hctx->fde_ndx), hctx->fd, FDEVENT_OUT);
+ 
+ 			break;
+ 		case FCGI_STATE_INIT:
+Index: src/fdevent_poll.c
+===================================================================
+--- src/fdevent_poll.c	(revision 2763)
++++ src/fdevent_poll.c	(revision 2765)
+@@ -66,7 +66,7 @@
+ }
+ #endif
+ 
+-static int fdevent_poll_event_add(fdevents *ev, int fde_ndx, int fd, int events) {
++static int fdevent_poll_event_set(fdevents *ev, int fde_ndx, int fd, int events) {
+ 	int pevents = 0;
+ 	if (events & FDEVENT_IN)  pevents |= POLLIN;
+ 	if (events & FDEVENT_OUT) pevents |= POLLOUT;
+@@ -80,7 +80,7 @@
+ 			return fde_ndx;
+ 		}
+ 		log_error_write(ev->srv, __FILE__, __LINE__, "SdD",
+-			"add: ", fde_ndx, ev->pollfds[fde_ndx].fd);
++			"set: ", fde_ndx, ev->pollfds[fde_ndx].fd);
+ 		SEGFAULT();
+ 	}
+ 
+@@ -170,7 +170,7 @@
+ 	SET(poll);
+ 
+ 	SET(event_del);
+-	SET(event_add);
++	SET(event_set);
+ 
+ 	SET(event_next_fdndx);
+ 	SET(event_get_fd);
+Index: src/fdevent_select.c
+===================================================================
+--- src/fdevent_select.c	(revision 2763)
++++ src/fdevent_select.c	(revision 2765)
+@@ -34,7 +34,7 @@
+ 	return -1;
+ }
+ 
+-static int fdevent_select_event_add(fdevents *ev, int fde_ndx, int fd, int events) {
++static int fdevent_select_event_set(fdevents *ev, int fde_ndx, int fd, int events) {
+ 	UNUSED(fde_ndx);
+ 
+ 	/* we should be protected by max-fds, but you never know */
+@@ -42,11 +42,13 @@
+ 
+ 	if (events & FDEVENT_IN) {
+ 		FD_SET(fd, &(ev->select_set_read));
+-		FD_CLR(fd, &(ev->select_set_write));
++	} else {
++		FD_CLR(fd, &(ev->select_set_read));
+ 	}
+ 	if (events & FDEVENT_OUT) {
+-		FD_CLR(fd, &(ev->select_set_read));
+ 		FD_SET(fd, &(ev->select_set_write));
++	} else {
++		FD_CLR(fd, &(ev->select_set_write));
+ 	}
+ 	FD_SET(fd, &(ev->select_set_error));
+ 
+@@ -113,7 +115,7 @@
+ 	SET(poll);
+ 
+ 	SET(event_del);
+-	SET(event_add);
++	SET(event_set);
+ 
+ 	SET(event_next_fdndx);
+ 	SET(event_get_fd);
+Index: src/fdevent_linux_sysepoll.c
+===================================================================
+--- src/fdevent_linux_sysepoll.c	(revision 2763)
++++ src/fdevent_linux_sysepoll.c	(revision 2765)
+@@ -41,7 +41,7 @@
+ 	return -1;
+ }
+ 
+-static int fdevent_linux_sysepoll_event_add(fdevents *ev, int fde_ndx, int fd, int events) {
++static int fdevent_linux_sysepoll_event_set(fdevents *ev, int fde_ndx, int fd, int events) {
+ 	struct epoll_event ep;
+ 	int add = 0;
+ 
+@@ -124,7 +124,7 @@
+ 	SET(poll);
+ 
+ 	SET(event_del);
+-	SET(event_add);
++	SET(event_set);
+ 
+ 	SET(event_next_fdndx);
+ 	SET(event_get_fd);
+Index: src/server.c
+===================================================================
+--- src/server.c	(revision 2763)
++++ src/server.c	(revision 2765)
+@@ -1147,7 +1147,7 @@
+ 
+ 		srv->stat_cache->fam_fcce_ndx = -1;
+ 		fdevent_register(srv->ev, FAMCONNECTION_GETFD(srv->stat_cache->fam), stat_cache_handle_fdevent, NULL);
+-		fdevent_event_add(srv->ev, &(srv->stat_cache->fam_fcce_ndx), FAMCONNECTION_GETFD(srv->stat_cache->fam), FDEVENT_IN);
++		fdevent_event_set(srv->ev, &(srv->stat_cache->fam_fcce_ndx), FAMCONNECTION_GETFD(srv->stat_cache->fam), FDEVENT_IN);
+ 	}
+ #endif
+ 
+@@ -1346,7 +1346,7 @@
+ 			    (0 == graceful_shutdown)) {
+ 				for (i = 0; i < srv->srv_sockets.used; i++) {
+ 					server_socket *srv_socket = srv->srv_sockets.ptr[i];
+-					fdevent_event_add(srv->ev, &(srv_socket->fde_ndx), srv_socket->fd, FDEVENT_IN);
++					fdevent_event_set(srv->ev, &(srv_socket->fde_ndx), srv_socket->fd, FDEVENT_IN);
+ 				}
+ 
+ 				log_error_write(srv, __FILE__, __LINE__, "s", "[note] sockets enabled again");
+Index: src/fdevent.c
+===================================================================
+--- src/fdevent.c	(revision 2763)
++++ src/fdevent.c	(revision 2765)
+@@ -9,6 +9,7 @@
+ #include <errno.h>
+ #include <stdio.h>
+ #include <fcntl.h>
++#include <assert.h>
+ 
+ 
+ fdevents *fdevent_init(server *srv, size_t maxfds, fdevent_handler_t type) {
+@@ -112,6 +113,7 @@
+ 	fdn->fd      = fd;
+ 	fdn->ctx     = ctx;
+ 	fdn->handler_ctx = NULL;
++	fdn->events  = 0;
+ 
+ 	ev->fdarray[fd] = fdn;
+ 
+@@ -120,9 +122,12 @@
+ 
+ int fdevent_unregister(fdevents *ev, int fd) {
+ 	fdnode *fdn;
+-        if (!ev) return 0;
++
++	if (!ev) return 0;
+ 	fdn = ev->fdarray[fd];
+ 
++	assert(fdn->events == 0);
++
+ 	fdnode_free(fdn);
+ 
+ 	ev->fdarray[fd] = NULL;
+@@ -133,17 +138,21 @@
+ int fdevent_event_del(fdevents *ev, int *fde_ndx, int fd) {
+ 	int fde = fde_ndx ? *fde_ndx : -1;
+ 
++	if (NULL == ev->fdarray[fd]) return 0;
++
+ 	if (ev->event_del) fde = ev->event_del(ev, fde, fd);
++	ev->fdarray[fd]->events = 0;
+ 
+ 	if (fde_ndx) *fde_ndx = fde;
+ 
+ 	return 0;
+ }
+ 
+-int fdevent_event_add(fdevents *ev, int *fde_ndx, int fd, int events) {
++int fdevent_event_set(fdevents *ev, int *fde_ndx, int fd, int events) {
+ 	int fde = fde_ndx ? *fde_ndx : -1;
+ 
+-	if (ev->event_add) fde = ev->event_add(ev, fde, fd, events);
++	if (ev->event_set) fde = ev->event_set(ev, fde, fd, events);
++	ev->fdarray[fd]->events = events;
+ 
+ 	if (fde_ndx) *fde_ndx = fde;
+ 
