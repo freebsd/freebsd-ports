@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-CheckOS
-PORTVERSION=	1.61
+PORTVERSION=	1.63
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -32,6 +32,7 @@ MAN3=		Devel::AssertOS.3 \
 		Devel::AssertOS::DGUX.3 \
 		Devel::AssertOS::DragonflyBSD.3 \
 		Devel::AssertOS::Dynix.3 \
+		Devel::AssertOS::EBCDIC.3 \
 		Devel::AssertOS::Extending.3 \
 		Devel::AssertOS::FreeBSD.3 \
 		Devel::AssertOS::HPUX.3 \
@@ -45,6 +46,7 @@ MAN3=		Devel::AssertOS.3 \
 		Devel::AssertOS::MSWin32.3 \
 		Devel::AssertOS::MacOSX.3 \
 		Devel::AssertOS::MacOSX::v10_4.3 \
+		Devel::AssertOS::MacOSX::v10_5.3 \
 		Devel::AssertOS::MacOSclassic.3 \
 		Devel::AssertOS::MachTen.3 \
 		Devel::AssertOS::MicrosoftWindows.3 \
