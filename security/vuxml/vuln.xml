@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="34e0316a-aa91-11df-8c2e-001517289bf8">
+    <topic>ruby -- UTF-7 encoding XSS vulnerability in WEBrick</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<name>ruby+pthreads</name>
+	<name>ruby+pthreads+oniguruma</name>
+	<name>ruby+oniguruma</name>
+	<range><ge>1.8.*,1</ge><lt>1.8.7.248_3,1</lt></range>
+	<range><ge>1.9.*,1</ge><lt>1.9.1.430,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The official ruby site reports:</p>
+	<blockquote cite="http://www.ruby-lang.org/en/news/2010/08/16/xss-in-webrick-cve-2010-0541/">
+	  <p>WEBrick have had a cross-site scripting vulnerability that allows
+	    an attacker to inject arbitrary script or HTML via a crafted URI.
+	    This does not affect user agents that strictly implement HTTP/1.1,
+	    however, some user agents do not.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>40895</bid>
+      <cvename>CVE-2010-0541</cvename>
+      <url>http://www.ruby-lang.org/en/news/2010/08/16/xss-in-webrick-cve-2010-0541/</url>
+    </references>
+    <dates>
+      <discovery>2010-08-16</discovery>
+      <entry>2008-08-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b74a8076-9b1f-11df-9f58-021e8c343e76">
     <topic>isolate -- local root exploit</topic>
     <affects>
