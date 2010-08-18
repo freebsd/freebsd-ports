@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	couchdb
-PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_APACHE}
@@ -26,6 +25,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 COUCH_VARDIR?=	/var
 COUCH_DBDIR?=	${COUCH_VARDIR}/db/couchdb
 COUCH_LOGDIR?=	${COUCH_VARDIR}/log/couchdb
+COUCH_LIBDIR?=	${COUCH_VARDIR}/lib/couchdb
 COUCH_USER?=	couchdb
 
 USE_RC_SUBR=	couchdb
@@ -44,10 +44,11 @@ MAN1=	couchdb.1 couchjs.1
 pre-fetch:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "If you are upgrading CouchDB, please double-check that the datafile is compatible."
+	@${ECHO_MSG} "Upgrading also might require you to rebuild your views entirely."
 	@${ECHO_MSG} ""
 
 post-patch:
-	${REINPLACE_CMD} -e '117s|@INSTALL_PROGRAM@|@INSTALL_SCRIPT@|' ${WRKSRC}/src/couchdb/priv/Makefile.in
+	${REINPLACE_CMD} -e '169s|@INSTALL_PROGRAM@|@INSTALL_SCRIPT@|' ${WRKSRC}/src/couchdb/priv/Makefile.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's/install-data-am$$//' ${WRKSRC}/Makefile.in
 .endif
@@ -60,5 +61,6 @@ post-install:
 	${MKDIR} ${COUCH_DBDIR}
 	${CHOWN} ${COUCH_USER} ${COUCH_DBDIR}
 	${CHOWN} ${COUCH_USER} ${COUCH_LOGDIR}
+	${CHOWN} ${COUCH_USER} ${COUCH_LIBDIR}
 
 .include <bsd.port.mk>
