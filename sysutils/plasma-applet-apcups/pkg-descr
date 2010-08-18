@@ -1,0 +1,6 @@
+A KDE Plasma applet that monitors uninterruptible power supplies
+controlled by apcupsd <http://www.apcupsd.com/>. It can connect to
+any UPS (or more precisely: any apcupsd daemon) which is reachable
+over the network.
+
+WWW:	http://code.google.com/p/plasma-apcups/
