@@ -27,8 +27,6 @@ CONFIGURE_ENV+=	TCLSH_CMD="${TCLSH}" \
 		TCLLIBDIR="${PREFIX}/lib/${PORTNAME}" \
 		ac_cv_search_pthread_create=""
 
-MAN1=		sqlite3.1
-
 OPTIONS=	DEBUG		"Enable debugging & verbose explain"	off \
 		FTS3		"Enable FTS3 (Full Text Search) module"	off \
 		RTREE		"Enable R*Tree module"			off \
@@ -39,6 +37,10 @@ OPTIONS=	DEBUG		"Enable debugging & verbose explain"	off \
 		EXTENSION	"Allow loadable extensions"		off
 
 .include <bsd.port.pre.mk>
+
+.if !defined(NO_INSTALL_MANPAGES)
+MAN1=		sqlite3.1
+.endif
 
 .if ${OSVERSION} < 700000
 EXTRA_PATCHES+=		${FILESDIR}/pthread_equal_stub
