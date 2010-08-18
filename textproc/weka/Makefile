@@ -13,6 +13,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3-6/${PORTVERSION}
 MAINTAINER=	simon@olofsson.de
 COMMENT=	Data Mining Software in Java
 
+PORTSCOUT=	limitw:1,even	# Second component is even for stable versions.
+
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
