@@ -348,5 +348,6 @@
     SUBDIR += xvid4conf
     SUBDIR += y4mscaler
     SUBDIR += yamdi
+    SUBDIR += youtube-viewer
 
 .include <bsd.port.subdir.mk>
