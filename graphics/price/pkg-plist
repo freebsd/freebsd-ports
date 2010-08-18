@@ -37,6 +37,9 @@ GNUstep/Local/Applications/PRICE.app/Resources/PRICE.desktop
 GNUstep/Local/Applications/PRICE.app/Resources/PRWindow.gorm/data.classes
 GNUstep/Local/Applications/PRICE.app/Resources/PRWindow.gorm/data.info
 GNUstep/Local/Applications/PRICE.app/Resources/PRWindow.gorm/objects.gorm
+GNUstep/Local/Applications/PRICE.app/Resources/Preview.gorm/data.classes
+GNUstep/Local/Applications/PRICE.app/Resources/Preview.gorm/data.info
+GNUstep/Local/Applications/PRICE.app/Resources/Preview.gorm/objects.gorm
 GNUstep/Local/Applications/PRICE.app/Resources/ProgressPanel.gorm/data.classes
 GNUstep/Local/Applications/PRICE.app/Resources/ProgressPanel.gorm/objects.gorm
 GNUstep/Local/Applications/PRICE.app/Resources/Scale.gorm/data.classes
@@ -51,6 +54,7 @@ GNUstep/Local/Tools/PRICE
 @dirrm GNUstep/Local/Applications/PRICE.app/Resources/TraceEdges.gorm
 @dirrm GNUstep/Local/Applications/PRICE.app/Resources/Scale.gorm
 @dirrm GNUstep/Local/Applications/PRICE.app/Resources/ProgressPanel.gorm
+@dirrm GNUstep/Local/Applications/PRICE.app/Resources/Preview.gorm
 @dirrm GNUstep/Local/Applications/PRICE.app/Resources/PRWindow.gorm
 @dirrm GNUstep/Local/Applications/PRICE.app/Resources/Median.gorm
 @dirrm GNUstep/Local/Applications/PRICE.app/Resources/MainMenu.gorm
