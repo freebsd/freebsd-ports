@@ -1,0 +1,8 @@
+%%FONTSDIR%%/kMon40hV2E3s.ttf
+%%FONTSDIR%%/kMons40V2E3.ttf
+%%FONTSDIR%%/kMons40dicV2E3s.ttf
+%%FONTSDIR%%/kMons40spcV2E3s.ttf
+%%FONTSDIR%%/kMons60bV2E3s.ttf
+%%FONTSDIR%%/kMons99V1E2s.ttf
+@exec %D/bin/fc-cache -f -v %%FONTSDIR%%
+@dirrm %%FONTSDIR%%
