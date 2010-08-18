@@ -1,7 +1,83 @@
 @comment $FreeBSD$
-@unexec if cmp -s %D/etc/lighttpd.conf %D/etc/lighttpd.conf.sample; then rm -f %D/etc/lighttpd.conf; fi
-etc/lighttpd.conf.sample
+@unexec if cmp -s %D/etc/lighttpd/lighttpd.conf %D/etc/lighttpd/lighttpd.conf.sample; then rm -f %D/etc/lighttpd/lighttpd.conf; fi
+etc/lighttpd/lighttpd.conf.sample
 @exec [ -f %B/lighttpd.conf ] || cp %B/%f %B/lighttpd.conf
+@unexec if cmp -s %D/etc/lighttpd/modules.conf %D/etc/lighttpd/modules.conf.sample; then rm -f %D/etc/lighttpd/modules.conf; fi
+etc/lighttpd/modules.conf.sample
+@exec [ -f %B/modules.conf ] || cp %B/%f %B/modules.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/access_log.conf %D/etc/lighttpd/conf.d/access_log.conf.sample; then rm -f %D/etc/lighttpd/conf.d/access_log.conf; fi
+etc/lighttpd/conf.d/access_log.conf.sample
+@exec [ -f %B/access_log.conf ] || cp %B/%f %B/access_log.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/auth.conf %D/etc/lighttpd/conf.d/auth.conf.sample; then rm -f %D/etc/lighttpd/conf.d/auth.conf; fi
+etc/lighttpd/conf.d/auth.conf.sample
+@exec [ -f %B/auth.conf ] || cp %B/%f %B/auth.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/cgi.conf %D/etc/lighttpd/conf.d/cgi.conf.sample; then rm -f %D/etc/lighttpd/conf.d/cgi.conf; fi
+etc/lighttpd/conf.d/cgi.conf.sample
+@exec [ -f %B/cgi.conf ] || cp %B/%f %B/cgi.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/cml.conf %D/etc/lighttpd/conf.d/cml.conf.sample; then rm -f %D/etc/lighttpd/conf.d/cml.conf; fi
+etc/lighttpd/conf.d/cml.conf.sample
+@exec [ -f %B/cml.conf ] || cp %B/%f %B/cml.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/compress.conf %D/etc/lighttpd/conf.d/compress.conf.sample; then rm -f %D/etc/lighttpd/conf.d/compress.conf; fi
+etc/lighttpd/conf.d/compress.conf.sample
+@exec [ -f %B/compress.conf ] || cp %B/%f %B/compress.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/debug.conf %D/etc/lighttpd/conf.d/debug.conf.sample; then rm -f %D/etc/lighttpd/conf.d/debug.conf; fi
+etc/lighttpd/conf.d/debug.conf.sample
+@exec [ -f %B/debug.conf ] || cp %B/%f %B/debug.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/dirlisting.conf %D/etc/lighttpd/conf.d/dirlisting.conf.sample; then rm -f %D/etc/lighttpd/conf.d/dirlisting.conf; fi
+etc/lighttpd/conf.d/dirlisting.conf.sample
+@exec [ -f %B/dirlisting.conf ] || cp %B/%f %B/dirlisting.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/evhost.conf %D/etc/lighttpd/conf.d/evhost.conf.sample; then rm -f %D/etc/lighttpd/conf.d/evhost.conf; fi
+etc/lighttpd/conf.d/evhost.conf.sample
+@exec [ -f %B/evhost.conf ] || cp %B/%f %B/evhost.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/expire.conf %D/etc/lighttpd/conf.d/expire.conf.sample; then rm -f %D/etc/lighttpd/conf.d/expire.conf; fi
+etc/lighttpd/conf.d/expire.conf.sample
+@exec [ -f %B/expire.conf ] || cp %B/%f %B/expire.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/fastcgi.conf %D/etc/lighttpd/conf.d/fastcgi.conf.sample; then rm -f %D/etc/lighttpd/conf.d/fastcgi.conf; fi
+etc/lighttpd/conf.d/fastcgi.conf.sample
+@exec [ -f %B/fastcgi.conf ] || cp %B/%f %B/fastcgi.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/geoip.conf %D/etc/lighttpd/conf.d/geoip.conf.sample; then rm -f %D/etc/lighttpd/conf.d/geoip.conf; fi
+etc/lighttpd/conf.d/geoip.conf.sample
+@exec [ -f %B/geoip.conf ] || cp %B/%f %B/geoip.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/magnet.conf %D/etc/lighttpd/conf.d/magnet.conf.sample; then rm -f %D/etc/lighttpd/conf.d/magnet.conf; fi
+etc/lighttpd/conf.d/magnet.conf.sample
+@exec [ -f %B/magnet.conf ] || cp %B/%f %B/magnet.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/mime.conf %D/etc/lighttpd/conf.d/mime.conf.sample; then rm -f %D/etc/lighttpd/conf.d/mime.conf; fi
+etc/lighttpd/conf.d/mime.conf.sample
+@exec [ -f %B/mime.conf ] || cp %B/%f %B/mime.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/mysql_vhost.conf %D/etc/lighttpd/conf.d/mysql_vhost.conf.sample; then rm -f %D/etc/lighttpd/conf.d/mysql_vhost.conf; fi
+etc/lighttpd/conf.d/mysql_vhost.conf.sample
+@exec [ -f %B/mysql_vhost.conf ] || cp %B/%f %B/mysql_vhost.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/proxy.conf %D/etc/lighttpd/conf.d/proxy.conf.sample; then rm -f %D/etc/lighttpd/conf.d/proxy.conf; fi
+etc/lighttpd/conf.d/proxy.conf.sample
+@exec [ -f %B/proxy.conf ] || cp %B/%f %B/proxy.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/rrdtool.conf %D/etc/lighttpd/conf.d/rrdtool.conf.sample; then rm -f %D/etc/lighttpd/conf.d/rrdtool.conf; fi
+etc/lighttpd/conf.d/rrdtool.conf.sample
+@exec [ -f %B/rrdtool.conf ] || cp %B/%f %B/rrdtool.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/scgi.conf %D/etc/lighttpd/conf.d/scgi.conf.sample; then rm -f %D/etc/lighttpd/conf.d/scgi.conf; fi
+etc/lighttpd/conf.d/scgi.conf.sample
+@exec [ -f %B/scgi.conf ] || cp %B/%f %B/scgi.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/secdownload.conf %D/etc/lighttpd/conf.d/secdownload.conf.sample; then rm -f %D/etc/lighttpd/conf.d/secdownload.conf; fi
+etc/lighttpd/conf.d/secdownload.conf.sample
+@exec [ -f %B/secdownload.conf ] || cp %B/%f %B/secdownload.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/simple_vhost.conf %D/etc/lighttpd/conf.d/simple_vhost.conf.sample; then rm -f %D/etc/lighttpd/conf.d/simple_vhost.conf; fi
+etc/lighttpd/conf.d/simple_vhost.conf.sample
+@exec [ -f %B/simple_vhost.conf ] || cp %B/%f %B/simple_vhost.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/ssi.conf %D/etc/lighttpd/conf.d/ssi.conf.sample; then rm -f %D/etc/lighttpd/conf.d/ssi.conf; fi
+etc/lighttpd/conf.d/ssi.conf.sample
+@exec [ -f %B/ssi.conf ] || cp %B/%f %B/ssi.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/status.conf %D/etc/lighttpd/conf.d/status.conf.sample; then rm -f %D/etc/lighttpd/conf.d/status.conf; fi
+etc/lighttpd/conf.d/status.conf.sample
+@exec [ -f %B/status.conf ] || cp %B/%f %B/status.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/trigger_b4_dl.conf %D/etc/lighttpd/conf.d/trigger_b4_dl.conf.sample; then rm -f %D/etc/lighttpd/conf.d/trigger_b4_dl.conf; fi
+etc/lighttpd/conf.d/trigger_b4_dl.conf.sample
+@exec [ -f %B/trigger_b4_dl.conf ] || cp %B/%f %B/trigger_b4_dl.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/userdir.conf %D/etc/lighttpd/conf.d/userdir.conf.sample; then rm -f %D/etc/lighttpd/conf.d/userdir.conf; fi
+etc/lighttpd/conf.d/userdir.conf.sample
+@exec [ -f %B/userdir.conf ] || cp %B/%f %B/userdir.conf
+@unexec if cmp -s %D/etc/lighttpd/conf.d/webdav.conf %D/etc/lighttpd/conf.d/webdav.conf.sample; then rm -f %D/etc/lighttpd/conf.d/webdav.conf; fi
+etc/lighttpd/conf.d/webdav.conf.sample
+@exec [ -f %B/webdav.conf ] || cp %B/%f %B/webdav.conf
+etc/lighttpd/vhosts.d/vhosts.template
 lib/lighttpd/mod_access.a
 lib/lighttpd/mod_access.la
 lib/lighttpd/mod_access.so
@@ -107,3 +183,10 @@ lib/lighttpd/mod_webdav.so
 sbin/lighttpd
 sbin/lighttpd-angel
 @dirrm lib/lighttpd
+@dirrmtry etc/lighttpd/vhosts.d
+@dirrmtry etc/lighttpd/conf.d
+@dirrmtry etc/lighttpd
+@cwd /
+@exec %%MKDIR%% -m 0700 %%LOGROOT%%
+@exec %%CHOWN%% %%USER%%:%%GROUP%% %%LOGROOT%%
+@dirrmtry %%LOGROOT%%
