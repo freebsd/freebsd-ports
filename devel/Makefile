@@ -616,8 +616,8 @@
     SUBDIR += hs-split
     SUBDIR += hs-terminfo
     SUBDIR += hs-test-framework
-    SUBDIR += hs-test-framework-quickcheck2
     SUBDIR += hs-test-framework-hunit
+    SUBDIR += hs-test-framework-quickcheck2
     SUBDIR += hs-testpack
     SUBDIR += hs-transformers
     SUBDIR += hs-unamb
@@ -631,6 +631,7 @@
     SUBDIR += hs-uvector-algorithms
     SUBDIR += hs-vector
     SUBDIR += hs-vector-algorithms
+    SUBDIR += htable
     SUBDIR += hypersrc
     SUBDIR += i386-rtems-binutils
     SUBDIR += i386-rtems-gcc
