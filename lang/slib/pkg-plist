@@ -1,5 +1,4 @@
 %%DATADIR%%/Bev2slib.scm
-%%DATADIR%%/DrScheme.init
 %%DATADIR%%/RScheme.init
 %%DATADIR%%/STk.init
 %%DATADIR%%/Template.scm
@@ -49,9 +48,9 @@
 %%DATADIR%%/elk.init
 %%DATADIR%%/eval.scm
 %%DATADIR%%/factor.scm
-%%DATADIR%%/fft.scm
 %%DATADIR%%/fluidlet.scm
 %%DATADIR%%/format.scm
+%%DATADIR%%/formatst.scm
 %%DATADIR%%/gambit.init
 %%DATADIR%%/genwrite.scm
 %%DATADIR%%/getopt.scm
@@ -99,7 +98,6 @@
 %%DATADIR%%/paramlst.scm
 %%DATADIR%%/peanosfc.scm
 %%DATADIR%%/phil-spc.scm
-%%DATADIR%%/plottest.scm
 %%DATADIR%%/pnm.scm
 %%DATADIR%%/pp.scm
 %%DATADIR%%/ppfile.scm
@@ -123,7 +121,7 @@
 %%DATADIR%%/require.scm
 %%DATADIR%%/resenecolours.txt
 %%DATADIR%%/root.scm
-%%DATADIR%%/s48-0_57.init
+%%DATADIR%%/s7.init
 %%DATADIR%%/saturate.txt
 %%DATADIR%%/sc2.scm
 %%DATADIR%%/sc4opt.scm
@@ -151,6 +149,7 @@
 %%DATADIR%%/srfi-11.scm
 %%DATADIR%%/srfi-2.scm
 %%DATADIR%%/srfi-23.scm
+%%DATADIR%%/srfi-39.scm
 %%DATADIR%%/srfi-61.scm
 %%DATADIR%%/srfi-8.scm
 %%DATADIR%%/srfi-9.scm
