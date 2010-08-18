@@ -107,8 +107,9 @@ post-install:
 .if defined(NOPORTDOCS)
 	@${INSTALL_MAN} ${WRKSRC}/tools/clang/docs/tools/clang.1 \
 	    ${MANPREFIX}/man/man1/
-.endif
+.else
 	@${RMDIR} ${DOCSDIR}/html/img
+.endif
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check)'
 regression-test: ${BUILD_COOKIE}
