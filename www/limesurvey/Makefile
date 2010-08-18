@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	limesurvey
-PORTVERSION=	1.87
+PORTVERSION=	1.90
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/1._LimeSurvey_stable/${PORTVERSION}+/
-DISTNAME=	${PORTNAME}${PORTVERSION:S^.^^}plus-build8518-20100323
+DISTNAME=	${PORTNAME}${PORTVERSION:S^.^^}plus-build9046-20100810
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A PHP-based survey building and runing system
