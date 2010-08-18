@@ -3,12 +3,21 @@ bin/mkvinfo
 bin/mkvmerge
 bin/mkvpropedit
 %%GUI%%bin/mmg
+%%GUI%%share/applications/mkvinfo.desktop
+%%GUI%%share/applications/mkvmergeGUI.desktop
+%%GUI%%share/icons/hicolor/32x32/apps/mkvinfo.png
+%%GUI%%share/icons/hicolor/32x32/apps/mkvmergeGUI.png
+%%GUI%%share/icons/hicolor/64x64/apps/mkvinfo.png
+%%GUI%%share/icons/hicolor/64x64/apps/mkvmergeGUI.png
 share/locale/de/LC_MESSAGES/mkvtoolnix.mo
+share/locale/es/LC_MESSAGES/mkvtoolnix.mo
 share/locale/ja/LC_MESSAGES/mkvtoolnix.mo
+share/locale/nl/LC_MESSAGES/mkvtoolnix.mo
 share/locale/ru/LC_MESSAGES/mkvtoolnix.mo
 share/locale/uk/LC_MESSAGES/mkvtoolnix.mo
 share/locale/zh_CN/LC_MESSAGES/mkvtoolnix.mo
 share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
+%%GUI%%share/mime/packages/mkvtoolnix.xml
 %%DATADIR%%/guide/en/images/addingremovingattachments.gif
 %%DATADIR%%/guide/en/images/addremovefiles.gif
 %%DATADIR%%/guide/en/images/attachmentoptions.gif
@@ -51,3 +60,4 @@ share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
 @dirrm %%DATADIR%%/guide/en
 @dirrm %%DATADIR%%/guide
 @dirrm %%DATADIR%%
+%%GUI%%@dirrmtry share/applications

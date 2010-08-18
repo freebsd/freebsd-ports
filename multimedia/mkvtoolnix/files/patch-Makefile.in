@@ -1,27 +1,27 @@
---- Makefile.in.orig	2010-01-19 20:05:55.000000000 +0900
-+++ Makefile.in	2010-01-21 16:43:29.000000000 +0900
-@@ -185,11 +185,11 @@
+--- Makefile.in.orig	2010-07-28 14:56:32.000000000 +0200
++++ Makefile.in	2010-08-05 23:30:34.000000000 +0200
+@@ -190,11 +190,11 @@
  		-Lsrc/common -Lsrc/input -Lsrc/output -Lsrc/mpegparser
  
  RUNAR = $(AR) rcu
 -LINK = $(CXX) $(LDFLAGS) $(LIBDIRS) $(SYSTEM_LIBDIRS)
 -LINKSHARED = $(CXX) $(LDFLAGS) $(LIBDIRS) $(SYSTEM_LIBDIRS) \
-+LINK = $(CXX) $(SYSTEM_LIBDIRS) $(LIBDIRS) $(LDFLAGS)
-+LINKSHARED = $(CXX) $(SYSTEM_LIBDIRS) $(LIBDIRS) $(LDFLAGS) \
++LINK = $(CXX) $(SYSTEM_LIBDIRS) $(LDFLAGS) $(LIBDIRS)
++LINKSHARED = $(CXX) $(SYSTEM_LIBDIRS) $(LDFLAGS) $(LIBDIRS) \
  		-shared -Wl,--export-all
 -CXXCOMPILE = $(CXX) $(CXXFLAGS) $(INCLUDES) $(SYSTEM_INCLUDES)
 -CCOMPILE = $(CC) $(CFLAGS) $(INCLUDES) $(SYSTEM_INCLUDES)
-+CXXCOMPILE = $(CXX) $(SYSTEM_INCLUDES) $(INCLUDES) $(CXXFLAGS)
-+CCOMPILE = $(CC) $(SYSTEM_INCLUDES) $(INCLUDES) $(CFLAGS)
++CXXCOMPILE = $(CXX) $(SYSTEM_INCLUDES) $(CXXFLAGS) $(INCLUDES)
++CCOMPILE = $(CC) $(SYSTEM_INCLUDES) $(CFLAGS) $(INCLUDES)
  RCCOMPILE = $(WINDRES) $(WXWIDGETS_INCLUDES) -Isrc/mmg
  
  ALL_SOURCES=$(wildcard lib/avilib-0.6.10/*.c) $(wildcard lib/avilib-0.6.10/*.cpp) \
-@@ -242,7 +242,7 @@
+@@ -251,7 +251,7 @@
  
  all: $(MANPAGES_DEP) $(TAGSFILE) $(APPLICATIONS) $(TRANSLATIONS_MOS) $(HTMLHELPBOOKS)
  
--install: install-programs install-mans install-translated-mans install-trans install-guide
-+install: install-programs install-mans install-trans install-guide
+-install: install-programs $(TARGET_INSTALL_SHARED) install-mans install-translated-mans install-trans install-guide
++install: install-programs $(TARGET_INSTALL_SHARED) install-mans install-trans install-guide
  
  install-programs: $(APPLICATIONS)
  	$(mkinstalldirs) $(DESTDIR)$(bindir)
