@@ -21,6 +21,7 @@
 %%ETCDIR%%/ignore.d.paranoid/usb
 %%ETCDIR%%/ignore.d.server/acpid
 %%ETCDIR%%/ignore.d.server/amandad
+%%ETCDIR%%/ignore.d.server/amavisd-new
 %%ETCDIR%%/ignore.d.server/anacron
 %%ETCDIR%%/ignore.d.server/anon-proxy
 %%ETCDIR%%/ignore.d.server/apache
@@ -33,7 +34,6 @@
 %%ETCDIR%%/ignore.d.server/courier
 %%ETCDIR%%/ignore.d.server/cpqarrayd
 %%ETCDIR%%/ignore.d.server/cpufreqd
-%%ETCDIR%%/ignore.d.server/cracklib
 %%ETCDIR%%/ignore.d.server/cron
 %%ETCDIR%%/ignore.d.server/cron-apt
 %%ETCDIR%%/ignore.d.server/cups-lpd
@@ -74,6 +74,7 @@
 %%ETCDIR%%/ignore.d.server/kernel
 %%ETCDIR%%/ignore.d.server/klogind
 %%ETCDIR%%/ignore.d.server/krb5-kdc
+%%ETCDIR%%/ignore.d.server/libpam-krb5
 %%ETCDIR%%/ignore.d.server/libpam-mount
 %%ETCDIR%%/ignore.d.server/logcheck
 %%ETCDIR%%/ignore.d.server/login
@@ -171,6 +172,7 @@
 %%ETCDIR%%/ignore.d.workstation/proftpd
 %%ETCDIR%%/ignore.d.workstation/pump
 %%ETCDIR%%/ignore.d.workstation/sendfile
+%%ETCDIR%%/ignore.d.workstation/slim
 %%ETCDIR%%/ignore.d.workstation/squid
 %%ETCDIR%%/ignore.d.workstation/udev
 %%ETCDIR%%/ignore.d.workstation/wdm
@@ -178,7 +180,6 @@
 %%ETCDIR%%/ignore.d.workstation/wpasupplicant
 %%ETCDIR%%/ignore.d.workstation/xdm
 %%ETCDIR%%/ignore.d.workstation/xlockmore
-%%ETCDIR%%/ignore.d.workstation/xscreensaver
 %%ETCDIR%%/violations.d/kernel
 %%ETCDIR%%/violations.d/logcheck
 %%ETCDIR%%/violations.d/smartd
