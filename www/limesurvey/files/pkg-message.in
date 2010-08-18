@@ -8,7 +8,7 @@ be found in:
   %%PREFIX%%/%%PHPSURVEYORDIR%%/docs/manual.html
 
 Once these steps have been taken, you may connect to the following URL to
-configure your installation of phpsurveyor:
+configure your installation of limesurvey:
 
   http://localhost/%%PHPSURVEYORURL%%/
 
