@@ -9,6 +9,7 @@
 
 PORTNAME=	nikto
 PORTVERSION=	2.1.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.cirt.net/${PORTNAME}/ \
@@ -26,28 +27,20 @@ NO_BUILD=	yes
 PORTDOCS=	CHANGES.txt LICENSE.txt nikto.dtd nikto_manual.html
 
 OPTIONS+=	SSLEAY "Use NET::SSLeay for ssl scanning" on
-OPTIONS+=	NMAP "Use security/nmap for port scanning" on
 
 .include <bsd.port.pre.mk>
 
 .ifdef(WITH_SSLEAY)
-RUN_DEPENEDS+=	p5-Net-SSLeay>0:${PORTSDIR}/security/p5-Net-SSLeay
-.endif
-
-.ifdef(WITH_NMAP)
-RUN_DEPENEDS+=	nmap:${PORTSDIR}/security/nmap
+RUN_DEPENDS+=	p5-Net-SSLeay>0:${PORTSDIR}/security/p5-Net-SSLeay
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/local/bin/perl|${PERL}|" ${WRKSRC}/nikto.pl
-	@${REINPLACE_CMD} -e "s|/etc/nikto.conf|${PREFIX}/etc/nikto.conf|" ${WRKSRC}/nikto.pl
-	@${REINPLACE_CMD} -Ee "s|/usr/bin/nmap|${LOCALBASE}/bin/nmap|g" \
-		-e "s|# (EXECDIR=)/usr/local/nikto|\1${DATADIR}|g" \
-		${WRKSRC}/nikto.conf
-	@${REINPLACE_CMD} -e 's:\$NIKTO{plugindir}/../docs/CHANGES.txt:\$NIKTO{plugindir}/../../docs/nikto/CHANGES.txt:' \
-		-e 's:\$NIKTO{plugindir}/../CHANGES.txt:\$NIKTO{plugindir}/../../docs/nikto/CHANGES.txt:' \
-		${WRKSRC}/plugins/nikto_core.plugin
-	@${RM} ${WRKSRC}/plugins/*.bak
+	@${REINPLACE_CMD} -e "s|/usr/local/bin/perl|${PERL}|" \
+		-e "s|/etc/nikto.conf|${PREFIX}/etc/nikto.conf|" ${WRKSRC}/nikto.pl
+	@${REINPLACE_CMD} -Ee "s|# (EXECDIR=)/usr/local/nikto|\1${DATADIR}|g" \
+		-e "s|# (PLUGINDIR=)/opt/nikto/plugins|\1${DATADIR}/plugins|g" \
+		-e "s|# (TEMPLATEDIR=)/opt/nikto/templates|\1${DATADIR}/templates|g" \
+		-e "s|# (DOCDIR=)/opt/nikto/docs|\1${DOCSDIR}|g" ${WRKSRC}/nikto.conf
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/nikto.pl ${PREFIX}/bin/nikto
@@ -55,13 +48,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/nikto.1 ${PREFIX}/man/man1/
 	[ -f ${PREFIX}/etc/nikto.conf ] || \
 		${INSTALL_DATA} ${WRKSRC}/nikto.conf ${PREFIX}/etc/nikto.conf
-	@${MKDIR} ${DATADIR}
-	@${MKDIR} ${DATADIR}/plugins
-	@${MKDIR} ${DATADIR}/templates
-	${INSTALL_DATA} ${WRKSRC}/plugins/LW2.pm ${DATADIR}/plugins
-	${INSTALL_DATA} ${WRKSRC}/plugins/db_* ${DATADIR}/plugins
-	${INSTALL_DATA} ${WRKSRC}/plugins/*.plugin ${DATADIR}/plugins
-	${INSTALL_DATA} ${WRKSRC}/templates/*.tmpl ${DATADIR}/templates
+
+	( cd ${WRKSRC}/plugins && ${COPYTREE_SHARE} .  ${DATADIR}/plugins )
+	( cd ${WRKSRC}/templates && ${COPYTREE_SHARE} .  ${DATADIR}/templates )
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .	for i in ${PORTDOCS}
