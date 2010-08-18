@@ -328,6 +328,7 @@
     SUBDIR += jack-keyboard
     SUBDIR += jack-rack
     SUBDIR += jack-smf-utils
+    SUBDIR += jack_mixer
     SUBDIR += jamin
     SUBDIR += jid3lib
     SUBDIR += jmusic
