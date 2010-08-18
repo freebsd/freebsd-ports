@@ -5,13 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	mlt
-PORTVERSION=	0.5.4
-PORTREVISION=	2
+PORTVERSION=	0.5.6
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	A multimedia framework and video playout server for TV broadcasting
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	libxml2 gnomehack
 USE_QT_VER=	4
@@ -44,7 +46,7 @@ OPTIONS=	AVFORMAT	"Avformat module" on \
 		SSE2	"SSE2 support (requires SSE)" off \
 		VORBIS	"Vorbis module" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .ifdef(WITH_AVFORMAT)
 LIB_DEPENDS+=	avformat.1:${PORTSDIR}/multimedia/ffmpeg
@@ -63,15 +65,6 @@ PLIST_SUB+=	DV=""
 .else
 CONFIGURE_ARGS+=	--disable-dv
 PLIST_SUB+=	DV="@comment "
-.endif
-
-.if defined(WITH_FREI0R) && ${OSVERSION} >= 700042
-BUILD_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
-CONFIGURE_ARGS+=	--enable-frei0r
-PLIST_SUB+=	FREI0R=""
-.else
-CONFIGURE_ARGS+=	--disable-frei0r
-PLIST_SUB+=	FREI0R="@comment "
 .endif
 
 .ifdef(WITH_GTK2)
@@ -157,6 +150,18 @@ PLIST_SUB+=	VORBIS=""
 .else
 CONFIGURE_ARGS+=	--disable-vorbis
 PLIST_SUB+=	VORBIS="@comment "
+.endif
+
+.include <bsd.port.pre.mk>
+
+# frei0r depends on OpenCV, which is not available on FreeBSD 6
+.if defined(WITH_FREI0R) && ${OSVERSION} >= 700042
+BUILD_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
+CONFIGURE_ARGS+=	--enable-frei0r
+PLIST_SUB+=	FREI0R=""
+.else
+CONFIGURE_ARGS+=	--disable-frei0r
+PLIST_SUB+=	FREI0R="@comment "
 .endif
 
 pre-configure:
