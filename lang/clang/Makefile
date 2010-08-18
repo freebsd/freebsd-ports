@@ -7,18 +7,18 @@
 
 PORTNAME=	clang
 PORTVERSION=	2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
+EXTRACT_SUFX=	.tgz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${LLVM_SOURCE}
 EXTRACT_ONLY=	${LLVM_SOURCE}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and (alpha-quality) C++ compiler
 
-CONFLICTS=      clang-devel-2.[0-9]* llvm-devel-2.[0-9]*
+CONFLICTS=	clang-devel-2.[0-9]* llvm-devel-2.[0-9]*
 
 CLANG_NAME=	clang-${PORTVERSION}
 CLANG_SOURCE=	${CLANG_NAME}${EXTRACT_SUFX}
@@ -40,7 +40,9 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
 USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USE_LDCONFIG=	yes
+USE_PERL5=	yes
+USE_PYTHON=	yes
 MAKE_JOBS_SAFE=	yes
 
 .if defined(MAINTAINER_MODE)
@@ -77,7 +79,10 @@ post-patch:
 	    ${WRKSRC}/Makefile ${WRKSRC}/tools/clang/Makefile
 	${REINPLACE_CMD} -e 's|/usr/bin/env perl|${PERL}|' \
 	    ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
+	    ${WRKSRC}/tools/clang/tools/scan-build/c++-analyzer \
 	    ${WRKSRC}/tools/clang/tools/scan-build/scan-build
+	${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|' \
+	    ${WRKSRC}/tools/clang/tools/scan-view/scan-view
 
 .if defined(NOPORTDOCS)
 post-build:
@@ -86,9 +91,16 @@ post-build:
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
+		${WRKSRC}/tools/clang/tools/scan-build/c++-analyzer \
+		${WRKSRC}/tools/clang/tools/scan-build/scan-build \
+		${WRKSRC}/tools/clang/tools/scan-view/scan-view \
 	    ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/scan-build \
-	    ${PREFIX}/bin
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/Resources
+	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-view/*.py \
+	    ${PYTHONPREFIX_SITELIBDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-view/Resources/* \
+	    ${PYTHONPREFIX_SITELIBDIR}/Resources
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/scanview.css ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js ${DATADIR}
@@ -96,6 +108,7 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/tools/clang/docs/tools/clang.1 \
 	    ${MANPREFIX}/man/man1/
 .endif
+	@${RMDIR} ${DOCSDIR}/html/img
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check)'
 regression-test: ${BUILD_COOKIE}
@@ -107,15 +120,22 @@ regression-test: ${BUILD_COOKIE}
 	fi
 
 PLIST_FILE_LIST=	bin/ccc-analyzer \
+			bin/c++-analyzer \
 			bin/clang \
 			bin/clang++ \
 			bin/scan-build \
+			bin/scan-view \
 			lib/libCIndex.* \
 			lib/libclang*
 PLIST_DIR_LIST=		include/clang \
 			include/clang-c \
 			lib/clang
-			
+PLIST_PYFILE_LIST=	ScanView.py \
+			Reporter.py \
+			Resources/* \
+			startfile.py
+PLIST_PYDIR_LIST=	Resources
+
 build-plist:
 	${RM} -f ${PLIST}
 	cd ${PREFIX} && \
@@ -124,9 +144,15 @@ build-plist:
 	${FIND} ${DATADIR} ${DOCSDIR} -type f | \
 	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
 	     -e 's|${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | ${SORT} >> ${PLIST}
+	cd ${PYTHONPREFIX_SITELIBDIR} && \
+	    ls ${PLIST_PYFILE_LIST} | ${SORT} | \
+	    ${SED} -e 's|^|%%PYTHON_SITELIBDIR%%/|' >> ${PLIST}
 	cd ${PREFIX} && \
 	    ${FIND} ${PLIST_DIR_LIST} -type d | \
 	    ${SORT} -r | ${SED} -e 's|^|@dirrm |' >> ${PLIST}
+	cd ${PYTHONPREFIX_SITELIBDIR} && \
+	    ${FIND} ${PLIST_PYDIR_LIST} -type d | ${SORT} -r | \
+	    ${SED} -e 's|^|@dirrm %%PYTHON_SITELIBDIR%%/|' >> ${PLIST}
 	${FIND} ${DATADIR} ${DOCSDIR} -type d | ${SORT} -r | \
 	    ${SED} -e 's|${DATADIR}|@dirrm %%DATADIR%%|' \
 	     -e 's|${DOCSDIR}|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' >> ${PLIST}

@@ -1,7 +1,9 @@
+bin/c++-analyzer
 bin/ccc-analyzer
 bin/clang
 bin/clang++
 bin/scan-build
+bin/scan-view
 include/clang-c/Index.h
 include/clang/AST/APValue.h
 include/clang/AST/AST.h
@@ -298,6 +300,12 @@ lib/libclangSema.a
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/libIndex.html
 %%PORTDOCS%%%%DOCSDIR%%/ps/clang.ps
+%%PYTHON_SITELIBDIR%%/Reporter.py
+%%PYTHON_SITELIBDIR%%/Resources/FileRadar.scpt
+%%PYTHON_SITELIBDIR%%/Resources/GetRadarVersion.scpt
+%%PYTHON_SITELIBDIR%%/Resources/bugcatcher.ico
+%%PYTHON_SITELIBDIR%%/ScanView.py
+%%PYTHON_SITELIBDIR%%/startfile.py
 @dirrm lib/clang/1.1/include
 @dirrm lib/clang/1.1
 @dirrm lib/clang
@@ -325,8 +333,8 @@ lib/libclangSema.a
 @dirrm include/clang/AST
 @dirrm include/clang-c
 @dirrm include/clang
+@dirrm %%PYTHON_SITELIBDIR%%/Resources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/clang
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
