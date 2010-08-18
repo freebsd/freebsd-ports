@@ -7,7 +7,7 @@
 
 PORTNAME=	sguil-sensor
 PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF/sguil/sguil/sguil-${PORTVERSION}
 
@@ -16,7 +16,7 @@ COMMENT=	Sguil is a network security monitoring program
 
 LIB_DEPENDS=	tls:${PORTSDIR}/devel/tcltls
 RUN_DEPENDS=	snort:${PORTSDIR}/security/snort \
-		barnyard:${PORTSDIR}/security/barnyard-sguil \
+		barnyard2:${PORTSDIR}/security/barnyard2 \
 		${LOCALBASE}/lib/tclx8.4/tclx.tcl:${PORTSDIR}/lang/tclX
 
 OPTIONS=	SANCP "Include sancp sensor" off \
