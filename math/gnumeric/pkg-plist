@@ -35,6 +35,7 @@ include/libspreadsheet-1.10/spreadsheet/gnm-format.h
 include/libspreadsheet-1.10/spreadsheet/gnm-graph-window.h
 include/libspreadsheet-1.10/spreadsheet/gnm-pane.h
 include/libspreadsheet-1.10/spreadsheet/gnm-plugin.h
+include/libspreadsheet-1.10/spreadsheet/gnm-random.h
 include/libspreadsheet-1.10/spreadsheet/gnm-sheet-slicer.h
 include/libspreadsheet-1.10/spreadsheet/gnm-so-filled.h
 include/libspreadsheet-1.10/spreadsheet/gnm-so-line.h
@@ -114,13 +115,17 @@ include/libspreadsheet-1.10/spreadsheet/style-conditions.h
 include/libspreadsheet-1.10/spreadsheet/style-font.h
 include/libspreadsheet-1.10/spreadsheet/style.h
 include/libspreadsheet-1.10/spreadsheet/symbol.h
+include/libspreadsheet-1.10/spreadsheet/tools/dao.h
 include/libspreadsheet-1.10/spreadsheet/tools/gnm-solver.h
+include/libspreadsheet-1.10/spreadsheet/tools/tools.h
 include/libspreadsheet-1.10/spreadsheet/undo.h
 include/libspreadsheet-1.10/spreadsheet/validation-combo.h
 include/libspreadsheet-1.10/spreadsheet/validation.h
 include/libspreadsheet-1.10/spreadsheet/value.h
 include/libspreadsheet-1.10/spreadsheet/wbc-gtk-impl.h
 include/libspreadsheet-1.10/spreadsheet/wbc-gtk.h
+include/libspreadsheet-1.10/spreadsheet/widgets/gnm-notebook.h
+include/libspreadsheet-1.10/spreadsheet/widgets/gnumeric-expr-entry.h
 include/libspreadsheet-1.10/spreadsheet/workbook-cmd-format.h
 include/libspreadsheet-1.10/spreadsheet/workbook-control-priv.h
 include/libspreadsheet-1.10/spreadsheet/workbook-control.h
@@ -913,6 +918,8 @@ share/locale/hr/LC_MESSAGES/gnumeric-functions.mo
 share/locale/hr/LC_MESSAGES/gnumeric.mo
 share/locale/hu/LC_MESSAGES/gnumeric-functions.mo
 share/locale/hu/LC_MESSAGES/gnumeric.mo
+share/locale/id/LC_MESSAGES/gnumeric-functions.mo
+share/locale/id/LC_MESSAGES/gnumeric.mo
 share/locale/it/LC_MESSAGES/gnumeric-functions.mo
 share/locale/it/LC_MESSAGES/gnumeric.mo
 share/locale/ja/LC_MESSAGES/gnumeric-functions.mo
@@ -1044,6 +1051,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins
 @dirrm lib/gnumeric/%%VERSION%%
 @dirrm lib/gnumeric
+@dirrm include/libspreadsheet-1.10/spreadsheet/widgets
 @dirrm include/libspreadsheet-1.10/spreadsheet/tools
 @dirrm include/libspreadsheet-1.10/spreadsheet
 @dirrm include/libspreadsheet-1.10
