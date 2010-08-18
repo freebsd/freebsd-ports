@@ -2,6 +2,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SIP/.packlist
 %%SITE_PERL%%/Net/SIP.pm
 %%SITE_PERL%%/Net/SIP.pod
+%%SITE_PERL%%/Net/SIP/Blocker.pm
+%%SITE_PERL%%/Net/SIP/Blocker.pod
 %%SITE_PERL%%/Net/SIP/Debug.pm
 %%SITE_PERL%%/Net/SIP/Debug.pod
 %%SITE_PERL%%/Net/SIP/Dispatcher.pm
