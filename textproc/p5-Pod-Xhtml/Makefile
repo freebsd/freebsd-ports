@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	Pod-Xhtml
-PORTVERSION=	1.59
-PORTREVISION=	1
+PORTVERSION=	1.61
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate well-formed XHTML documents from POD format documentation
+
+RUN_DEPENDS=	p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 PERL_CONFIGURE=	yes
 
