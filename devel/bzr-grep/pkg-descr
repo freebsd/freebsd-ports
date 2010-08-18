@@ -1,0 +1,4 @@
+bzr-grep is a plugin for bzr to grep files. Its purpose is to print lines
+matching PATTERN for specified files and revisions.
+
+WWW: https://launchpad.net/bzr-grep
