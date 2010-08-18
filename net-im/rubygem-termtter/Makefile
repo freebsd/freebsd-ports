@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	termtter
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.0
 CATEGORIES=	net-im rubygems
 MASTER_SITES=	RG
 
@@ -23,6 +23,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
-PLIST_FILES= bin/termtter
+PLIST_FILES=	bin/termtter
 
 .include <bsd.port.mk>
