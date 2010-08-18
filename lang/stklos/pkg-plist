@@ -1,9 +1,7 @@
 bin/stklos
 bin/stklos-compile
 bin/stklos-config
-bin/stklos-ext-install
 bin/stklos-genlex
-bin/stklos-install
 bin/stklos-pkg
 bin/stklos-script
 etc/stklos/Makefile-scmpkg.tmpl
@@ -12,8 +10,19 @@ include/stklos/fport.h
 include/stklos/socket.h
 include/stklos/stklos.h
 include/stklos/stklosconf.h
-lib/stklos/%%VERSION%%/ldap.so
 %%DATADIR%%/%%VERSION%%/DOCDB
+%%DATADIR%%/%%VERSION%%/Demos.d/fork-test
+%%DATADIR%%/%%VERSION%%/Demos.d/fork-test.stk
+%%DATADIR%%/%%VERSION%%/Demos.d/hello
+%%DATADIR%%/%%VERSION%%/Demos.d/hello.stk
+%%DATADIR%%/%%VERSION%%/Demos.d/secho
+%%DATADIR%%/%%VERSION%%/Demos.d/secho.stk
+%%DATADIR%%/%%VERSION%%/Demos.d/socket-client
+%%DATADIR%%/%%VERSION%%/Demos.d/socket-client.stk
+%%DATADIR%%/%%VERSION%%/Demos.d/socket-server
+%%DATADIR%%/%%VERSION%%/Demos.d/socket-server.stk
+%%DATADIR%%/%%VERSION%%/Demos.d/threads
+%%DATADIR%%/%%VERSION%%/Demos.d/threads.stk
 %%DATADIR%%/%%VERSION%%/Match.d/compiler.scm
 %%DATADIR%%/%%VERSION%%/Match.d/descr.scm
 %%DATADIR%%/%%VERSION%%/Match.d/mexpand.scm
@@ -28,7 +37,6 @@ lib/stklos/%%VERSION%%/ldap.so
 %%DATADIR%%/%%VERSION%%/bigmatch.ostk
 %%DATADIR%%/%%VERSION%%/bigmatch.stk
 %%DATADIR%%/%%VERSION%%/bonus.stk
-%%DATADIR%%/%%VERSION%%/boot-callcc.stk
 %%DATADIR%%/%%VERSION%%/boot.stk
 %%DATADIR%%/%%VERSION%%/callcc.stk
 %%DATADIR%%/%%VERSION%%/compfile.ostk
@@ -42,7 +50,6 @@ lib/stklos/%%VERSION%%/ldap.so
 %%DATADIR%%/%%VERSION%%/env.stk
 %%DATADIR%%/%%VERSION%%/expand.pp
 %%DATADIR%%/%%VERSION%%/expand.ss
-%%DATADIR%%/%%VERSION%%/ffi.ostk
 %%DATADIR%%/%%VERSION%%/ffi.stk
 %%DATADIR%%/%%VERSION%%/full-conditions.ostk
 %%DATADIR%%/%%VERSION%%/full-conditions.stk
@@ -50,15 +57,16 @@ lib/stklos/%%VERSION%%/ldap.so
 %%DATADIR%%/%%VERSION%%/full-syntax.stk
 %%DATADIR%%/%%VERSION%%/getopt.ostk
 %%DATADIR%%/%%VERSION%%/getopt.stk
+%%DATADIR%%/%%VERSION%%/help.ostk
+%%DATADIR%%/%%VERSION%%/help.stk
 %%DATADIR%%/%%VERSION%%/http.ostk
 %%DATADIR%%/%%VERSION%%/http.stk
 %%DATADIR%%/%%VERSION%%/lalr.ostk
 %%DATADIR%%/%%VERSION%%/lalr.stk
-%%DATADIR%%/%%VERSION%%/ldap.ostk
-%%DATADIR%%/%%VERSION%%/ldap.stk
 %%DATADIR%%/%%VERSION%%/lex-rt.ostk
 %%DATADIR%%/%%VERSION%%/lex-rt.stk
 %%DATADIR%%/%%VERSION%%/load.stk
+%%DATADIR%%/%%VERSION%%/logical.stk
 %%DATADIR%%/%%VERSION%%/make-C-boot.stk
 %%DATADIR%%/%%VERSION%%/mbe.stk
 %%DATADIR%%/%%VERSION%%/module.stk
@@ -70,9 +78,11 @@ lib/stklos/%%VERSION%%/ldap.so
 %%DATADIR%%/%%VERSION%%/pp.stk
 %%DATADIR%%/%%VERSION%%/process.stk
 %%DATADIR%%/%%VERSION%%/r5rs.stk
+%%DATADIR%%/%%VERSION%%/readline.stk
 %%DATADIR%%/%%VERSION%%/recette.ostk
 %%DATADIR%%/%%VERSION%%/recette.stk
 %%DATADIR%%/%%VERSION%%/regexp.stk
+%%DATADIR%%/%%VERSION%%/repl-readline.stk
 %%DATADIR%%/%%VERSION%%/repl.stk
 %%DATADIR%%/%%VERSION%%/runtime.stk
 %%DATADIR%%/%%VERSION%%/scmpkg-support.ostk
@@ -83,6 +93,8 @@ lib/stklos/%%VERSION%%/ldap.so
 %%DATADIR%%/%%VERSION%%/srfi-0.stk
 %%DATADIR%%/%%VERSION%%/srfi-1.ostk
 %%DATADIR%%/%%VERSION%%/srfi-1.stk
+%%DATADIR%%/%%VERSION%%/srfi-100.ostk
+%%DATADIR%%/%%VERSION%%/srfi-100.stk
 %%DATADIR%%/%%VERSION%%/srfi-11.ostk
 %%DATADIR%%/%%VERSION%%/srfi-11.stk
 %%DATADIR%%/%%VERSION%%/srfi-13.ostk
@@ -123,10 +135,14 @@ lib/stklos/%%VERSION%%/ldap.so
 %%DATADIR%%/%%VERSION%%/srfi-7.stk
 %%DATADIR%%/%%VERSION%%/srfi-70.ostk
 %%DATADIR%%/%%VERSION%%/srfi-70.stk
+%%DATADIR%%/%%VERSION%%/srfi-74.ostk
+%%DATADIR%%/%%VERSION%%/srfi-74.stk
 %%DATADIR%%/%%VERSION%%/srfi-89.ostk
 %%DATADIR%%/%%VERSION%%/srfi-89.stk
 %%DATADIR%%/%%VERSION%%/srfi-9.ostk
 %%DATADIR%%/%%VERSION%%/srfi-9.stk
+%%DATADIR%%/%%VERSION%%/srfi-96.ostk
+%%DATADIR%%/%%VERSION%%/srfi-96.stk
 %%DATADIR%%/%%VERSION%%/struct.stk
 %%DATADIR%%/%%VERSION%%/tar.ostk
 %%DATADIR%%/%%VERSION%%/tar.stk
@@ -157,11 +173,10 @@ lib/stklos/%%VERSION%%/ldap.so
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/%%VERSION%%/ScmPkg.d
+@dirrm %%DATADIR%%/%%VERSION%%/Demos.d
 @dirrm %%DATADIR%%/%%VERSION%%/Match.d
+@dirrm %%DATADIR%%/%%VERSION%%/ScmPkg.d
 @dirrm %%DATADIR%%/%%VERSION%%
 @dirrm %%DATADIR%%
-@dirrm lib/stklos/%%VERSION%%
-@dirrm lib/stklos
 @dirrm include/stklos
 @dirrm etc/stklos

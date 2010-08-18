@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	stklos
-PORTVERSION=	0.98
-PORTREVISION=	3
+PORTVERSION=	1.00
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.stklos.net/download/ \
 		ftp://kaolin.essi.fr/pub/STklos/
@@ -27,22 +26,20 @@ CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-gtk	\
-		--disable-gnome	\
-		--enable-threads=posix
+CONFIGURE_ARGS=	--enable-threads=posix
 
-MAN1=		stklos-compile.1 stklos-config.1 stklos-genlex.1 stklos.1 \
-		stklos-install.1
+MAN1=		stklos-compile.1 stklos-config.1 stklos-genlex.1 \
+		stklos-pkg.1 stklos.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lgc|-lgc-threaded|' \
-		-e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} -e 's|-@VERSION@||' ${WRKSRC}/doc/Makefile.in
-	@${REINPLACE_CMD} -e '/&&/s|make|gmake|; /&&/s|configure|./configure|' \
-		-e 's|wget|fetch|' ${WRKSRC}/utils/stklos-install
-	@${REINPLACE_CMD} -e 's|stklos\.org|stklos.net|' \
-		${WRKSRC}/pkgman/params.stk
+		-e 's|bdw-gc|bdw-gc-threaded|' \
+		-e 's|-lpthread|${PTHREAD_LIBS}|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|share/man|man|' \
+		-e 's|-@VERSION@||' \
+		-e 's|^man_MANS = |man_MANS = stklos-pkg.1 |' \
+		${WRKSRC}/doc/Makefile.in
 
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -E -e 's/^(install-data-am:).*/\1 install-man install-schemeDATA/' \
