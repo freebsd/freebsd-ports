@@ -154,7 +154,6 @@ share/apps/k3b/icons/hicolor/64x64/actions/musicbrainz.png
 share/apps/k3b/icons/oxygen/128x128/actions/tools-rip-audio-cd.png
 share/apps/k3b/icons/oxygen/128x128/actions/tools-rip-video-cd.png
 share/apps/k3b/icons/oxygen/128x128/actions/tools-rip-video-dvd.png
-share/apps/k3b/icons/oxygen/128x128/apps/k3b.png
 share/apps/k3b/icons/oxygen/128x128/devices/media-optical-audio.png
 share/apps/k3b/icons/oxygen/128x128/devices/media-optical-cd-video.png
 share/apps/k3b/icons/oxygen/128x128/devices/media-optical-dvd-video.png
@@ -164,7 +163,6 @@ share/apps/k3b/icons/oxygen/128x128/mimetypes/application-x-k3b.png
 share/apps/k3b/icons/oxygen/16x16/actions/tools-rip-audio-cd.png
 share/apps/k3b/icons/oxygen/16x16/actions/tools-rip-video-cd.png
 share/apps/k3b/icons/oxygen/16x16/actions/tools-rip-video-dvd.png
-share/apps/k3b/icons/oxygen/16x16/apps/k3b.png
 share/apps/k3b/icons/oxygen/16x16/devices/media-optical-audio.png
 share/apps/k3b/icons/oxygen/16x16/devices/media-optical-cd-video.png
 share/apps/k3b/icons/oxygen/16x16/devices/media-optical-data.png
@@ -173,7 +171,6 @@ share/apps/k3b/icons/oxygen/16x16/devices/media-optical-video.png
 share/apps/k3b/icons/oxygen/22x22/actions/tools-rip-audio-cd.png
 share/apps/k3b/icons/oxygen/22x22/actions/tools-rip-video-cd.png
 share/apps/k3b/icons/oxygen/22x22/actions/tools-rip-video-dvd.png
-share/apps/k3b/icons/oxygen/22x22/apps/k3b.png
 share/apps/k3b/icons/oxygen/22x22/devices/media-optical-audio.png
 share/apps/k3b/icons/oxygen/22x22/devices/media-optical-cd-video.png
 share/apps/k3b/icons/oxygen/22x22/devices/media-optical-data.png
@@ -182,7 +179,6 @@ share/apps/k3b/icons/oxygen/22x22/devices/media-optical-video.png
 share/apps/k3b/icons/oxygen/32x32/actions/tools-rip-audio-cd.png
 share/apps/k3b/icons/oxygen/32x32/actions/tools-rip-video-cd.png
 share/apps/k3b/icons/oxygen/32x32/actions/tools-rip-video-dvd.png
-share/apps/k3b/icons/oxygen/32x32/apps/k3b.png
 share/apps/k3b/icons/oxygen/32x32/devices/media-optical-audio.png
 share/apps/k3b/icons/oxygen/32x32/devices/media-optical-cd-video.png
 share/apps/k3b/icons/oxygen/32x32/devices/media-optical-data.png
@@ -193,7 +189,6 @@ share/apps/k3b/icons/oxygen/32x32/mimetypes/application-x-k3b.png
 share/apps/k3b/icons/oxygen/48x48/actions/tools-rip-audio-cd.png
 share/apps/k3b/icons/oxygen/48x48/actions/tools-rip-video-cd.png
 share/apps/k3b/icons/oxygen/48x48/actions/tools-rip-video-dvd.png
-share/apps/k3b/icons/oxygen/48x48/apps/k3b.png
 share/apps/k3b/icons/oxygen/48x48/devices/media-optical-audio.png
 share/apps/k3b/icons/oxygen/48x48/devices/media-optical-cd-video.png
 share/apps/k3b/icons/oxygen/48x48/devices/media-optical-data.png
@@ -204,7 +199,6 @@ share/apps/k3b/icons/oxygen/48x48/mimetypes/application-x-k3b.png
 share/apps/k3b/icons/oxygen/64x64/actions/tools-rip-audio-cd.png
 share/apps/k3b/icons/oxygen/64x64/actions/tools-rip-video-cd.png
 share/apps/k3b/icons/oxygen/64x64/actions/tools-rip-video-dvd.png
-share/apps/k3b/icons/oxygen/64x64/apps/k3b.png
 share/apps/k3b/icons/oxygen/64x64/devices/media-optical-audio.png
 share/apps/k3b/icons/oxygen/64x64/devices/media-optical-cd-video.png
 share/apps/k3b/icons/oxygen/64x64/devices/media-optical-dvd-video.png
@@ -214,7 +208,6 @@ share/apps/k3b/icons/oxygen/64x64/mimetypes/application-x-k3b.png
 share/apps/k3b/icons/oxygen/scalable/actions/tools-rip-audio-cd.svgz
 share/apps/k3b/icons/oxygen/scalable/actions/tools-rip-video-cd.svgz
 share/apps/k3b/icons/oxygen/scalable/actions/tools-rip-video-dvd.svgz
-share/apps/k3b/icons/oxygen/scalable/apps/k3b.svgz
 share/apps/k3b/icons/oxygen/scalable/devices/media-optical-audio.svgz
 share/apps/k3b/icons/oxygen/scalable/devices/media-optical-cd-video.svgz
 share/apps/k3b/icons/oxygen/scalable/devices/media-optical-data.svgz
@@ -306,6 +299,13 @@ share/apps/solid/actions/k3b_copy_disc.desktop
 share/apps/solid/actions/k3b_create_audio_cd_from_blank_medium.desktop
 share/apps/solid/actions/k3b_create_data_project_from_blank_medium.desktop
 %%LIBDVDREAD%%share/apps/solid/actions/k3b_videodvd_rip.desktop
+share/icons/hicolor/128x128/apps/k3b.png
+share/icons/hicolor/16x16/apps/k3b.png
+share/icons/hicolor/22x22/apps/k3b.png
+share/icons/hicolor/32x32/apps/k3b.png
+share/icons/hicolor/48x48/apps/k3b.png
+share/icons/hicolor/64x64/apps/k3b.png
+share/icons/hicolor/scalable/apps/k3b.svgz
 share/kde4/services/ServiceMenus/k3b_create_audio_cd.desktop
 share/kde4/services/ServiceMenus/k3b_create_data_project.desktop
 share/kde4/services/ServiceMenus/k3b_create_video_cd.desktop
@@ -362,6 +362,7 @@ share/locale/da/LC_MESSAGES/libk3b.mo
 share/locale/da/LC_MESSAGES/libk3bdevice.mo
 share/locale/de/LC_MESSAGES/k3b.mo
 share/locale/de/LC_MESSAGES/k3bsetup.mo
+share/locale/de/LC_MESSAGES/kio_videodvd.mo
 share/locale/de/LC_MESSAGES/libk3b.mo
 share/locale/de/LC_MESSAGES/libk3bdevice.mo
 share/locale/el/LC_MESSAGES/k3b.mo
