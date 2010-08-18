@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.1.18.1
-PORTREVISION=	2
+PORTVERSION=	1.1.19
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -29,14 +28,15 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
 		mad.2:${PORTSDIR}/audio/libmad \
-		dca.0:${PORTSDIR}/multimedia/libdca
+		dca.0:${PORTSDIR}/multimedia/libdca \
+		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
+		faad.2:${PORTSDIR}/audio/faad
 
 .if !defined(PACKAGE_BUILDING)
 LIB_DEPENDS+=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
 .endif
 
 USE_XZ=		yes
-USE_GETTEXT=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
@@ -47,15 +47,21 @@ USE_GL=		gl glu
 USE_PERL5_BUILD=yes
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread -I${LOCALBASE}/include/ffmeg" \
+		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ffmpeg" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}" \
 		EXTRA_X_LIBS="-lGL -lGLU -lXext -lX11 -lm"
-CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 --enable-ipv6 \
+CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 \
+		--enable-ipv6 \
 		--with-external-libmad \
-		--with-external-libdts --with-libflac --disable-v4l
+		--with-external-libdts \
+		--with-libflac \
+		--with-external-ffmpeg \
+		--with-external-libfaad \
+		--disable-v4l \
+		--without-alsa
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	ARTS "Enable aRts support" off \
@@ -64,26 +70,32 @@ OPTIONS=	ARTS "Enable aRts support" off \
 		JACK "Enable JACK support" off \
 		GNOMEVFS2 "Enable GnomeVFS2 support" off \
 		PULSEAUDIO "Enable PulseAudio support" off \
-		FFMPEG "Enable external FFMpeg" on \
 		XVMC "Enable XvMC support" off \
 		SMB "Enable SMB protocol support" off \
 		AALIB "Enable aalib support" off \
 		IMAGEMAGICK "Enable ImageMagick support" off \
 		GTK2 "Enable gdkpixbuf support" off \
-		WAVPACK "Enable WavPack support" on \
-		FAAD "Enable external faad support" off
+		WAVPACK "Enable WavPack support" off
 
 MAN1=	xine-config.1 xine-list-1.1.1
 MAN5=	xine.5
 
 DOCSDIR=	${PREFIX}/share/doc/xine-lib
-PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/1.28"
+PLIST_SUB=	PLUGINSDIR="lib/xine/plugins/1.29"
 
 # DVDCSS version hardcoded in src/input/input_dvd.c misc/cdda_server.c
 # and src/input/libdvdnav/dvd_input.c (dlopen'ed)
 DVDCSS_LIBVERSION=	3
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS+=	--disable-nls
+.endif
 
 .if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
@@ -132,15 +144,6 @@ PLIST_SUB+=	WITH_PULSEAUDIO=""
 .else
 PLIST_SUB+=	WITH_PULSEAUDIO="@comment "
 CONFIGURE_ARGS+=	--without-pulseaudio
-.endif
-
-.if defined(WITH_FFMPEG)
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
-CONFIGURE_ARGS+=	--with-external-ffmpeg
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/ffmeg" \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/ffmpeg"
-.else
-CONFIGURE_ARGS+=	--with-external-ffmpeg=no
 .endif
 
 .if defined(WITH_XVMC)
@@ -198,13 +201,6 @@ PLIST_SUB+=	WITH_WAVPACK="@comment "
 CONFIGURE_ARGS+=	--without-wavpack
 .endif
 
-.if defined(WITH_FAAD)
-LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
-CONFIGURE_ARGS+=	--with-external-libfaad=yes
-.else
-CONFIGURE_ARGS+=	--with-external-libfaad=no
-.endif
-
 .if ${CONFIGURE_ARGS:M*--without-imagemagick*} == "" || ${CONFIGURE_ARGS:M*-disable-gdkpixbuf*} == ""
 PLIST_SUB+=	WITH_DMX_IMAGE=""
 .else
@@ -250,4 +246,4 @@ pre-configure:
 pre-build:
 	@${CP} -p ${LOCALBASE}/include/dts.h ${WRKSRC}/src/libdts/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
