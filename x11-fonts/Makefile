@@ -109,6 +109,7 @@
     SUBDIR += mkfontdir
     SUBDIR += mkfontscale
     SUBDIR += mkitalic
+    SUBDIR += mondulkiri
     SUBDIR += montecarlo_fonts
     SUBDIR += moveable-type-fonts
     SUBDIR += mozilla-fonts
