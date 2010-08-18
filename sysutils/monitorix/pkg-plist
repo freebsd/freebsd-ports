@@ -1,0 +1,58 @@
+@exec mkdir -p /var/db/monitorix/usage
+@exec mkdir -p %D/%%WWWDIR%%/imgs
+@exec chown %%WWW_OWNER%%:%%WWW_GROUP%% %D/%%WWWDIR%%/imgs
+@unexec if cmp -s %D/etc/monitorix.conf %D/etc/monitorix.conf.sample; then rm -f %D/etc/monitorix.conf; fi
+etc/monitorix.conf.sample
+@exec if [ ! -f %D/etc/monitorix.conf ]; then cp %B/%f %D/etc/monitorix.conf; fi
+sbin/monitorix.pl
+%%CGIDIR%%/monitorix.cgi
+@dirrmtry %%CGIDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/Changes
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
+%%PORTDOCS%%%%DOCSDIR%%/README.nginx
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/monitorix-alert.sh
+%%PORTDOCS%%%%DOCSDIR%%/monitorix-apache.conf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%REPORTS%%monitorix/reports/ca/imgs_email/blank.png
+%%REPORTS%%monitorix/reports/ca/imgs_email/logo.jpg
+%%REPORTS%%monitorix/reports/ca/imgs_email/signature.png
+%%REPORTS%%monitorix/reports/ca/imgs_email/title.jpg
+%%REPORTS%%monitorix/reports/ca/traffic_report.html
+%%REPORTS%%monitorix/reports/ca/traffic_report.sh
+%%REPORTS%%monitorix/reports/de/imgs_email/blank.png
+%%REPORTS%%monitorix/reports/de/imgs_email/logo.jpg
+%%REPORTS%%monitorix/reports/de/imgs_email/signature.png
+%%REPORTS%%monitorix/reports/de/imgs_email/title.jpg
+%%REPORTS%%monitorix/reports/de/traffic_report.html
+%%REPORTS%%monitorix/reports/de/traffic_report.sh
+%%REPORTS%%monitorix/reports/en/imgs_email/blank.png
+%%REPORTS%%monitorix/reports/en/imgs_email/logo.jpg
+%%REPORTS%%monitorix/reports/en/imgs_email/signature.png
+%%REPORTS%%monitorix/reports/en/imgs_email/title.jpg
+%%REPORTS%%monitorix/reports/en/traffic_report.html
+%%REPORTS%%monitorix/reports/en/traffic_report.sh
+%%REPORTS%%monitorix/reports/it/imgs_email/blank.png
+%%REPORTS%%monitorix/reports/it/imgs_email/logo.jpg
+%%REPORTS%%monitorix/reports/it/imgs_email/signature.png
+%%REPORTS%%monitorix/reports/it/imgs_email/title.jpg
+%%REPORTS%%monitorix/reports/it/traffic_report.html
+%%REPORTS%%monitorix/reports/it/traffic_report.sh
+%%REPORTS%%@dirrm monitorix/reports/it/imgs_email
+%%REPORTS%%@dirrm monitorix/reports/it
+%%REPORTS%%@dirrm monitorix/reports/en/imgs_email
+%%REPORTS%%@dirrm monitorix/reports/en
+%%REPORTS%%@dirrm monitorix/reports/de/imgs_email
+%%REPORTS%%@dirrm monitorix/reports/de
+%%REPORTS%%@dirrm monitorix/reports/ca/imgs_email
+%%REPORTS%%@dirrm monitorix/reports/ca
+%%REPORTS%%@dirrm monitorix/reports
+@dirrmtry monitorix/usage
+@dirrmtry monitorix
+%%WWWDIR%%/logo_bot.png
+%%WWWDIR%%/logo_top.png
+%%WWWDIR%%/monitorixico.png
+@dirrmtry %%WWWDIR%%/imgs
+@dirrmtry %%WWWDIR%%

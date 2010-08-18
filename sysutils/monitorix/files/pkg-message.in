@@ -1,0 +1,16 @@
+================================================================
+
+ The port has a generic default config, please adjust your
+ settings in file: %%PREFIX%%/etc/monitorix.conf 
+
+ To initialize monitorix follow this steps
+  %%PREFIX%%/sbin/monitorix.pl create
+
+ Then place the following entries into root crontab:
+ ---------------------------------------------------
+ PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
+ *  *  * * *  %%PREFIX%%/sbin/monitorix.pl update
+ 00 00 * * *  %%PREFIX%%/sbin/monitorix.pl collect
+ 01 00 1 * *  %%PREFIX%%/sbin/monitorix.pl report
+
+================================================================
