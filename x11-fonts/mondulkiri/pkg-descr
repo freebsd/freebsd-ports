@@ -1,0 +1,9 @@
+A collection of Mondulkiri Opentype fonts. The package contains:
+- Mondulkiri Normal text font
+- Mondulkiri Bold form of normal text font
+- Mondulkiri Very bold font for titles etc.
+- Mondulkiri 4 characters have the shapes found in the Chuon Nath dictionary
+- Mondulkiri high line-spacing font
+- Mondulkiri diagnostic font showing spaces and zero-width (non-)joiner
+
+WWW:	http://sourceforge.net/projects/khmer/
