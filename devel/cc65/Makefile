@@ -7,6 +7,7 @@
 
 PORTNAME=	cc65
 PORTVERSION=	2.13.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.musoftware.de/pub/uz/cc65/ \
 		http://www.funet.fi/pub/cbm/programming/cc65/ \
@@ -40,6 +41,8 @@ post-patch:
 	@${REINPLACE_CMD} -E -e "s,(install:.*)install-docs(.*)$$,\1\2," \
 		-e '/\(MKDIR\)[[:space:]]+\$$\(CC65DOC\)/d' \
 		${WRKSRC}/make/gcc.mak
+	@${REINPLACE_CMD} -E -e "s,^(docdir[[:space:]]*=).*,\1," \
+		-e "s,^(CC65_DOC[[:space:]]*=).*,\1," ${WRKSRC}/make/gcc.mak
 .endif
 
 post-install:
