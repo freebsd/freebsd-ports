@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.99.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ui/${PORTVERSION}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
@@ -54,7 +54,7 @@ DOCSDIR=	${PREFIX}/share/doc/xine-ui
 
 .if ${ARCH} == "i386"
 .if !defined(WITHOUT_WIN32_CODECS)
-RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
+RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
 CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
@@ -89,9 +89,9 @@ CONFIGURE_ARGS+=	--disable-lirc
 .endif
 
 .if defined(WITH_CACA)
-LIBXINE_VER=	1.28
-.if !exists(${LOCALBASE}/lib/xine/plugins/${LIBXINE_VER}/xineplug_vo_out_caca.so)
-IGNORE=libxine should be compiled with caca support
+XINE_PLUGINSDIR=	lib/xine/plugins/1.29
+.if !exists(${LOCALBASE}/${XINE_PLUGINSDIR}/xineplug_vo_out_caca.so)
+IGNORE=		libxine should be compiled with caca support
 .endif
 LIB_DEPENDS+=	caca.0:${PORTSDIR}/graphics/libcaca
 PLIST_SUB+=	WITH_CACA=""
