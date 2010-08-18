@@ -499,6 +499,7 @@
     SUBDIR += modules
     SUBDIR += monit
     SUBDIR += monitord
+    SUBDIR += monitorix
     SUBDIR += monkeytail
     SUBDIR += mono-kmod
     SUBDIR += moosefs-chunkserver

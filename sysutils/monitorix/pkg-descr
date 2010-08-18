@@ -1,0 +1,8 @@
+Monitorix is a free, open source, lightweight system monitoring tool
+designed to monitorize as many services as possible. At this time it
+monitors from the CPU load and temperatures to the users using the system.
+Network devices activity, network services demand and even the devices'
+interrupt activity are also monitored, and more. The current status of any
+corporate server with Monitorix installed can be accessed via a web browser.
+
+WWW: http://www.monitorix.org/

@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# @(#) Fibranet NSP, SL
+# Copyright (C) 2005-2010 by Jordi Sanfeliu <jordi@fibranet.cat>
+#
+#	/usr/local/etc/rc.d/monitorix
+#
+# Starts Monitorix on FreeBSD systems
+#
+# PROVIDE: monitorix
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
+
+monitorix_enable=${monitorix_enable:-"NO"}
+
+. /etc/rc.subr
+
+name="monitorix"
+rcvar=`set_rcvar`
+command_interpreter=%%PERL%%
+start_cmd=monitorix_start
+stop_cmd=monitorix_stop
+
+monitorix_start()
+{   # Creates RRDs files (if needed)
+	%%PREFIX%%/sbin/monitorix.pl create
+	%%PREFIX%%/sbin/monitorix.pl init
+}
+
+monitorix_stop()
+{
+		%%PREFIX%%/sbin/monitorix.pl stop
+}
+
+load_rc_config $name
+run_rc_command "$1"
