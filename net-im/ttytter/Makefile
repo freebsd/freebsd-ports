@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	ttytter
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.floodgap.com/software/ttytter/dist1/
-DISTFILES=	1.1.02.txt
+DISTFILES=	1.1.03.txt
 EXTRACT_ONLY=
 
 MAINTAINER=	jdunn@aquezada.com
