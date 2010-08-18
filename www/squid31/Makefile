@@ -51,6 +51,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.1.${SQUID_STABLE_VER}
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirrors.ccs.neu.edu/Squid/ \

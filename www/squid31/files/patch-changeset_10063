@@ -1,0 +1,237 @@
+This FreeBSD port patch is a slightly trimmed version of the original
+changeset (http://www.squid-cache.org/Versions/v3/3.1/changesets/squid-3.1-10063.patch):
+The part that patches a file that is not present in the downloadable
+tarball was removed.
+This is a fix for Squid bug 3011: "squid 3.1.6 doesn't work on
+ipv4-only-systems".
+------------------------------------------------------------
+revno: 10063
+revision-id: amosjeffries@squid-cache.org-20100811111641-hybknxtyd8ukt5c1
+parent: amosjeffries@squid-cache.org-20100810083149-w98pbcc8f0d5tlpo
+committer: Amos Jeffries <amosjeffries@squid-cache.org>
+branch nick: SQUID_3_1
+timestamp: Wed 2010-08-11 05:16:41 -0600
+message:
+  Bug 3011: ICAP, HTTPS, cache_peer probe IPv4-only port fixes
+  
+  Also updates the forwarding CONNECT_FAIL errors to display more correct
+  errno messages.
+------------------------------------------------------------
+# Bazaar merge directive format 2 (Bazaar 0.90)
+# revision_id: amosjeffries@squid-cache.org-20100811111641-\
+#   hybknxtyd8ukt5c1
+# target_branch: http://www.squid-cache.org/bzr/squid3/trunk/
+# testament_sha1: 2aac12c8c664a6c3dbdbd075b256aefeb53926a8
+# timestamp: 2010-08-11 11:31:46 +0000
+# source_branch: http://www.squid-cache.org/bzr/squid3/branches\
+#   /SQUID_3_1
+# base_revision_id: amosjeffries@squid-cache.org-20100810083149-\
+#   w98pbcc8f0d5tlpo
+# 
+# Begin patch
+=== modified file 'src/adaptation/ServiceConfig.cc'
+--- src/adaptation/ServiceConfig.cc	2010-05-26 04:00:23 +0000
++++ src/adaptation/ServiceConfig.cc	2010-08-11 11:16:41 +0000
+@@ -5,10 +5,11 @@
+ #include "squid.h"
+ #include "ConfigParser.h"
+ #include "adaptation/ServiceConfig.h"
++#include "ip/tools.h"
+ 
+ Adaptation::ServiceConfig::ServiceConfig():
+         port(-1), method(methodNone), point(pointNone),
+-        bypass(false), routing(false)
++        bypass(false), routing(false), ipv6(false)
+ {}
+ 
+ const char *
+@@ -93,7 +94,11 @@
+             grokked = grokBool(bypass, name, value);
+         else if (strcmp(name, "routing") == 0)
+             grokked = grokBool(routing, name, value);
+-        else {
++        else if (strcmp(name, "ipv6") == 0) {
++            grokked = grokBool(ipv6, name, value);
++            if (grokked && ipv6 && !Ip::EnableIpv6)
++                debugs(3, DBG_IMPORTANT, "WARNING: IPv6 is disabled. ICAP service option ignored.");
++        } else {
+             debugs(3, 0, cfg_filename << ':' << config_lineno << ": " <<
+                    "unknown adaptation service option: " << name << '=' << value);
+         }
+
+=== modified file 'src/adaptation/ServiceConfig.h'
+--- src/adaptation/ServiceConfig.h	2009-09-03 12:15:55 +0000
++++ src/adaptation/ServiceConfig.h	2010-08-11 11:16:41 +0000
+@@ -33,6 +33,7 @@
+     VectPoint point; // where the adaptation happens (pre- or post-cache)
+     bool bypass;
+     bool routing; ///< whether this service may determine the next service(s)
++    bool ipv6;    ///< whether this service uses IPv6 transport (default IPv4)
+ 
+ protected:
+     Method parseMethod(const char *buf) const;
+
+=== modified file 'src/adaptation/icap/Xaction.cc'
+--- src/adaptation/icap/Xaction.cc	2009-09-03 12:15:55 +0000
++++ src/adaptation/icap/Xaction.cc	2010-08-11 11:16:41 +0000
+@@ -13,6 +13,7 @@
+ #include "pconn.h"
+ #include "HttpRequest.h"
+ #include "HttpReply.h"
++#include "ip/tools.h"
+ #include "acl/FilledChecklist.h"
+ #include "icap_log.h"
+ #include "fde.h"
+@@ -116,6 +117,15 @@
+     disableRetries(); // we only retry pconn failures
+ 
+     IpAddress outgoing;
++    if (!Ip::EnableIpv6 && !outgoing.SetIPv4()) {
++        debugs(31, DBG_CRITICAL, "ERROR: IPv6 is disabled. " << outgoing << " is not an IPv4 address.");
++        dieOnConnectionFailure(); // throws
++    }
++    /* split-stack for now requires default IPv4-only socket */
++    if (Ip::EnableIpv6&IPV6_SPECIAL_SPLITSTACK && outgoing.IsAnyAddr() && !s.cfg().ipv6) {
++        outgoing.SetIPv4();
++    }
++
+     connection = comm_open(SOCK_STREAM, 0, outgoing,
+                            COMM_NONBLOCKING, s.cfg().uri.termedBuf());
+ 
+
+=== modified file 'src/cf.data.pre'
+--- src/cf.data.pre	2010-08-10 08:31:49 +0000
++++ src/cf.data.pre	2010-08-11 11:16:41 +0000
+@@ -5798,6 +5798,11 @@
+ 		Routing is not allowed by default: the ICAP X-Next-Services
+ 		response header is ignored.
+ 
++	ipv6=on|off
++		Only has effect on split-stack systems. The default on those systems
++		is to use IPv4-only connections. When set to 'on' this option will
++		make Squid use IPv6-only connections to contact this ICAP service.
++
+ 	Older icap_service format without optional named parameters is
+ 	deprecated but supported for backward compatibility.
+ 
+
+=== modified file 'src/dns_internal.cc'
+--- src/dns_internal.cc	2010-07-27 13:02:31 +0000
++++ src/dns_internal.cc	2010-08-11 11:16:41 +0000
+@@ -201,10 +201,15 @@
+ 
+     if (A.IsAnyAddr()) {
+         debugs(78, 0, "WARNING: Squid does not accept " << A << " in DNS server specifications.");
+-        A = "127.0.0.1";
++        A.SetLocalhost();
+         debugs(78, 0, "Will be using " << A << " instead, assuming you meant that DNS is running on the same machine");
+     }
+ 
++    if (!Ip::EnableIpv6 && !A.SetIPv4()) {
++        debugs(78, DBG_IMPORTANT, "WARNING: IPv6 is disabled. Discarding " << A << " in DNS server specifications.");
++        return;
++    }
++
+     if (nns == nns_alloc) {
+         int oldalloc = nns_alloc;
+         ns *oldptr = nameservers;
+@@ -742,6 +747,12 @@
+     else
+         addr = Config.Addrs.udp_incoming;
+ 
++    if (nameservers[ns].S.IsIPv4() && !addr.SetIPv4()) {
++        debugs(31, DBG_CRITICAL, "ERROR: Cannot contact DNS nameserver " << nameservers[ns].S << " from " << addr);
++        addr.SetAnyAddr();
++        addr.SetIPv4();
++    }
++
+     vc->queue = new MemBuf;
+ 
+     vc->msg = new MemBuf;
+
+=== modified file 'src/forward.cc'
+--- src/forward.cc	2010-08-01 13:29:09 +0000
++++ src/forward.cc	2010-08-11 11:16:41 +0000
+@@ -870,9 +870,9 @@
+ 
+     // if IPv6 is disabled try to force IPv4-only outgoing.
+     if (!Ip::EnableIpv6 && !outgoing.SetIPv4()) {
+-        debugs(50, 4, "fwdConnectStart: " << xstrerror());
++        debugs(50, 4, "fwdConnectStart: IPv6 is Disabled. Cannot connect from " << outgoing);
+         ErrorState *anErr = errorCon(ERR_CONNECT_FAIL, HTTP_SERVICE_UNAVAILABLE, request);
+-        anErr->xerrno = errno;
++        anErr->xerrno = EAFNOSUPPORT;
+         fail(anErr);
+         self = NULL;	// refcounted
+         return;
+
+=== modified file 'src/neighbors.cc'
+--- src/neighbors.cc	2010-02-14 05:30:15 +0000
++++ src/neighbors.cc	2010-08-11 11:16:41 +0000
+@@ -46,6 +46,7 @@
+ #include "Store.h"
+ #include "icmp/net_db.h"
+ #include "ip/IpAddress.h"
++#include "ip/tools.h"
+ 
+ /* count mcast group peers every 15 minutes */
+ #define MCAST_COUNT_RATE 900
+@@ -1387,6 +1388,20 @@
+ 
+     IpAddress temp(getOutgoingAddr(NULL,p));
+ 
++    // if IPv6 is disabled try to force IPv4-only outgoing.
++    if (!Ip::EnableIpv6 && !temp.SetIPv4()) {
++        debugs(50, DBG_IMPORTANT, "WARNING: IPv6 is disabled. Failed to use " << temp << " to probe " << p->host);
++        return ret;
++    }
++
++    // if IPv6 is split-stack, prefer IPv4
++    if (Ip::EnableIpv6&IPV6_SPECIAL_SPLITSTACK) {
++        // NP: This is not a great choice of default,
++        // but with the current Internet being IPv4-majority has a higher success rate.
++        // if setting to IPv4 fails we dont care, that just means to use IPv6 outgoing.
++        temp.SetIPv4();
++    }
++
+     fd = comm_open(SOCK_STREAM, IPPROTO_TCP, temp, COMM_NONBLOCKING, p->host);
+ 
+     if (fd < 0)
+
+=== modified file 'src/tunnel.cc'
+--- src/tunnel.cc	2010-07-23 04:30:08 +0000
++++ src/tunnel.cc	2010-08-11 11:16:41 +0000
+@@ -46,6 +46,7 @@
+ #include "client_side.h"
+ #include "MemBuf.h"
+ #include "http.h"
++#include "ip/tools.h"
+ 
+ class TunnelStateData
+ {
+@@ -641,6 +642,24 @@
+     statCounter.server.other.requests++;
+     /* Create socket. */
+     IpAddress temp = getOutgoingAddr(request,NULL);
++
++    // if IPv6 is disabled try to force IPv4-only outgoing.
++    if (!Ip::EnableIpv6 && !temp.SetIPv4()) {
++        debugs(50, 4, "tunnelStart: IPv6 is Disabled. Tunnel failed from " << temp);
++        ErrorState *anErr = errorCon(ERR_CONNECT_FAIL, HTTP_SERVICE_UNAVAILABLE, request);
++        anErr->xerrno = EAFNOSUPPORT;
++        errorSend(fd, anErr);
++        return;
++    }
++    
++    // if IPv6 is split-stack, prefer IPv4
++    if (Ip::EnableIpv6&IPV6_SPECIAL_SPLITSTACK) {
++        // NP: This is not a great choice of default,
++        // but with the current Internet being IPv4-majority has a higher success rate.
++        // if setting to IPv4 fails we dont care, that just means to use IPv6 outgoing.
++        temp.SetIPv4();
++    }
++
+     int flags = COMM_NONBLOCKING;
+     if (request->flags.spoof_client_ip) {
+         flags |= COMM_TRANSPARENT;
+
