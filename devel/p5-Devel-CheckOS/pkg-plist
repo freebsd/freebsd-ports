@@ -10,6 +10,7 @@ bin/use-devel-assertos
 %%SITE_PERL%%/Devel/AssertOS/DGUX.pm
 %%SITE_PERL%%/Devel/AssertOS/DragonflyBSD.pm
 %%SITE_PERL%%/Devel/AssertOS/Dynix.pm
+%%SITE_PERL%%/Devel/AssertOS/EBCDIC.pm
 %%SITE_PERL%%/Devel/AssertOS/Extending.pod
 %%SITE_PERL%%/Devel/AssertOS/FreeBSD.pm
 %%SITE_PERL%%/Devel/AssertOS/HPUX.pm
@@ -23,6 +24,7 @@ bin/use-devel-assertos
 %%SITE_PERL%%/Devel/AssertOS/MSWin32.pm
 %%SITE_PERL%%/Devel/AssertOS/MacOSX.pm
 %%SITE_PERL%%/Devel/AssertOS/MacOSX/v10_4.pm
+%%SITE_PERL%%/Devel/AssertOS/MacOSX/v10_5.pm
 %%SITE_PERL%%/Devel/AssertOS/MacOSclassic.pm
 %%SITE_PERL%%/Devel/AssertOS/MachTen.pm
 %%SITE_PERL%%/Devel/AssertOS/MicrosoftWindows.pm
