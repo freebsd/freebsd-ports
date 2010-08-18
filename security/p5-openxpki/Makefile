@@ -7,7 +7,7 @@
 
 PORTNAME=	openxpki
 PORTVERSION=	0.9.1389
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.9.1300
 PKGNAMEPREFIX=	p5-
@@ -287,6 +287,11 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 PERL_CONFIGURE=	5.8.6+
 
+USERS=	openxpki
+GROUPS=	openxpki
+
+LICENSE=	ART20
+
 OPTIONS=	DEVELOPER	"Install development tools for OpenXPKI?" off \
 		GRAPHVIZ	"With graphical visualization of workflows?" off
 # If DEVELOPER is checked, then docbook, Java and Xorg libraries are installed.
@@ -313,16 +318,14 @@ WITH_OPENSSL_BASE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DEVELOPER)
-RUN_DEPENDS+=	fop:${PORTSDIR}/textproc/fop \
-		xsltproc:${PORTSDIR}/textproc/libxslt \
+RUN_DEPENDS+=	${LOCALBASE}/bin/fop:${PORTSDIR}/textproc/fop \
+		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/share/java/jai/lib/libmlib_jai.so:${PORTSDIR}/java/jai
 .endif
 .if defined(WITH_GRAPHVIZ)
-RUN_DEPENDS+=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz
+RUN_DEPENDS+=	${LOCALBASE}/bin/dot:${PORTSDIR}/graphics/graphviz \
+		${LOCALBASE}/bin/imgsize:${PORTSDIR}/graphics/p5-Image-Size
 .endif
-
-post-install:
-	${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
