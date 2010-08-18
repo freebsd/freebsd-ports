@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cxref
-PORTVERSION=	1.6b
+PORTVERSION=	1.6c
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.gedanken.demon.co.uk/download-cxref/ \
