@@ -5,17 +5,18 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	0.96.0
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 
 COMMENT=	A GnuPG extension for the Thunderbird mail client
 
-IGNORE=		Does not work with Thunderbird 3.1
+EXTRACT_DEPENDS=autoconf-2.13:${PORTSDIR}/devel/autoconf213
 
 MASTERDIR=	${.CURDIR}/../enigmail
 
 GECKO=		thunderbird
 GECKO_PORTDIR=	mail/${GECKO}
-GECKO_WRKSRC=	${WRKDIR}/../../../${GECKO_PORTDIR}/work/mozilla
+GECKO_EXTDIR=	comm-1.9.2
+
+MAKE_JOBS_UNSAFE=	yes
 
 .include "${MASTERDIR}/Makefile"
