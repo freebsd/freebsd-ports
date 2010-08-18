@@ -11,7 +11,7 @@
 # lighttpd_enable (bool):	Set it to "YES" to enable lighttpd
 #				Default is "NO".
 # lighttpd_conf (path):		Set full path to config file.
-#				Default is "%%PREFIX%%/etc/lighttpd.conf".
+#				Default is "%%PREFIX%%/etc/lighttpd/lighttpd.conf".
 # lighttpd_pidfile (path):	Set full path to pid file.
 #				Default is "/var/run/lighttpd.pid".
 #
@@ -24,13 +24,25 @@ rcvar=`set_rcvar`
 load_rc_config $name
 
 : ${lighttpd_enable="NO"}
-: ${lighttpd_conf="%%PREFIX%%/etc/lighttpd.conf"}
+: ${lighttpd_conf=""}
 : ${lighttpd_pidfile="/var/run/${name}.pid"}
+
+# Compatibility for old configuration file location
+deprecated_conf=
+if [ -z "${lighttpd_conf}" ]; then
+	if [ -f "%%PREFIX%%/etc/lighttpd.conf" ]; then
+		deprecated_conf=1
+		lighttpd_conf="%%PREFIX%%/etc/lighttpd.conf"
+	else
+		lighttpd_conf="%%PREFIX%%/etc/lighttpd/lighttpd.conf"
+	fi
+fi
 
 command=%%PREFIX%%/sbin/lighttpd
 command_args="-f ${lighttpd_conf}"
 pidfile=${lighttpd_pidfile}
 required_files=${lighttpd_conf}
+start_precmd="check_deprecated"
 stop_postcmd=stop_postcmd
 restart_precmd="checkconfig"
 reload_precmd=reload_precmd
@@ -38,6 +50,17 @@ reload_postcmd=reload_postcmd
 sig_reload="INT"
 check_cmd="checkconfig"
 extra_commands="reload check"
+
+check_deprecated()
+{
+	if [ -n "${deprecated_conf}" ]; then
+		echo ""
+		echo "*** NOTICE: ***"
+		echo "The default location of %%PREFIX%%/etc/lighttpd.conf is deprecated"
+		echo "Please consider moving to %%PREFIX%%/etc/lighttpd/lighttpd.conf"
+		echo ""
+	fi
+}
 
 checkconfig()
 {
@@ -52,7 +75,11 @@ stop_postcmd()
 
 reload_precmd()
 {
-	echo "Stoping ${name} and start gracefully."
+	if checkconfig; then
+		echo "Performing a graceful restart"
+	else
+		return 1
+	fi
 }
 
 reload_postcmd()

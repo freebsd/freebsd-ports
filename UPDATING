@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100818:
+  AFFECTS: users of www/lighttpd
+  AUTHOR: mm@FreeBSD.org
+
+  The default lighttpd configuration file locations have changed.
+  The main configuration file is now: $PREFIX/etc/lighttpd/lighttpd.conf
+  and includes other configuration files from $PREFIX/etc/lighttpd/
+
+  For compatibility with old-style configurations, if the lighttpd_conf 
+  variable is not set in /etc/rc.conf, $PREFIX/etc/lighttpd.conf takes
+  precedence over $PREFIX/etc/lighttpd/lighttpd.conf
+
 20100815:
   AFFECTS: users of databases/redis and databases/redis-devel
   AUTHOR: osa@FreeBSD.org

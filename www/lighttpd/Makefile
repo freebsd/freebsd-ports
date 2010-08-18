@@ -7,7 +7,7 @@
 
 PORTNAME=	lighttpd
 PORTVERSION=	1.4.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -50,6 +50,27 @@ OPTIONS=	BZIP2		"Enable Bzip2 support" off \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	AUTHORS COPYING INSTALL NEWS README
 .endif
+
+CONF_FILES=	lighttpd.conf modules.conf
+
+CONFD_FILES=	access_log.conf auth.conf cgi.conf cml.conf \
+		compress.conf debug.conf dirlisting.conf \
+		evhost.conf expire.conf fastcgi.conf geoip.conf \
+		magnet.conf mime.conf mysql_vhost.conf proxy.conf \
+		rrdtool.conf scgi.conf secdownload.conf \
+		simple_vhost.conf ssi.conf status.conf \
+		trigger_b4_dl.conf userdir.conf webdav.conf
+
+LIGHTTPD_LOGROOT?=	/var/log/lighttpd
+LIGHTTPD_WEBROOT?=	${PREFIX}/www/data
+LIGHTTPD_USER?=		www
+LIGHTTPD_GROUP?=	www
+
+PLIST_SUB+=		LOGROOT="${LIGHTTPD_LOGROOT}" \
+			USER="${LIGHTTPD_USER}" \
+			GROUP="${LIGHTTPD_GROUP}" \
+			MKDIR="${MKDIR}" \
+			CHOWN="${CHOWN}"
 
 .include <bsd.port.pre.mk>
 
@@ -164,39 +185,54 @@ CONFIGURE_ARGS+=	--with-webdav-props --with-webdav-locks
 SUB_LIST+=		REQUIRE="${_REQUIRE}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-std=gnu99||' ${WRKSRC}/configure ${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -E -e 's|(server.document-root.*=).*|\1 "${PREFIX}/www/data/"|' \
-		-e 's|(server.errorlog.*=).*|\1 "/var/log/lighttpd.error.log"|' \
-		-e 's|# server.event-handler|server.event-handler|' \
-		-e 's|(accesslog.filename.*=).*|\1 "/var/log/lighttpd.access.log"|' \
-		-e 's|#server.pid-file|server.pid-file|' \
-		-e 's|#server.username.*|server.username            = "www"|' \
-		-e 's|#server.groupname.*|server.groupname           = "www"|' \
-		-e 's|/usr/local/bin/php|${PREFIX}/bin/php-cgi|' \
-			${WRKSRC}/doc/config/lighttpd.conf
+	@${REINPLACE_CMD} -e 's|-std=gnu99||' \
+		${WRKSRC}/configure ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -E -e \
+		's|^(server.document-root.*=).*|\1 "${PREFIX}/www/data/"|' \
+		-e "s|/etc/lighttpd|${PREFIX}/etc/lighttpd|g" \
+		-e 's|^(server.event-handler.*=).*|\1 "freebsd-kqueue"|' \
+		-e 's|^(server.network-backend.*=).*|\1 "writev"|' \
+		-e "s|^(server.username.*=).*|\1 \"${LIGHTTPD_USER}\"|" \
+		-e "s|^(server.groupname.*=).*|\1 \"${LIGHTTPD_GROUP}\"|" \
+		-e "s|^(var.log_root.*=).*|\1 \"${LIGHTTPD_LOGROOT}\"|" \
+		-e "s|^(var.home_dir.*=).*|\1 \"/var/spool/lighttpd\"|" \
+		-e "s|^(var.server_root.*=).*|\1 \"${LIGHTTPD_WEBROOT}\"|" \
+		${WRKSRC}/doc/config/lighttpd.conf
+	@${REINPLACE_CMD} -e "s|/etc/lighttpd|${PREFIX}/etc/lighttpd|g" \
+		${WRKSRC}/doc/config/conf.d/auth.conf
 	@${ECHO} >> ${WRKSRC}/doc/config/lighttpd.conf
-	@${ECHO} "# IPv4 listening socket" >> ${WRKSRC}/doc/lighttpd.conf >> \
+	@${ECHO} "# IPv4 listening socket" >> \
 		${WRKSRC}/doc/config/lighttpd.conf
 	@${ECHO} "\$$SERVER[\"socket\"] == \"0.0.0.0:80\" { }" >> \
 		${WRKSRC}/doc/config/lighttpd.conf
-.if !defined(WITHOUT_IPV6)
-	@${ECHO} >> ${WRKSRC}/doc/config/lighttpd.conf
-	@${ECHO} "# IPv6 listening socket" >> ${WRKSRC}/doc/lighttpd.conf >> \
-		${WRKSRC}/doc/config/lighttpd.conf
-	@${ECHO} "\$$SERVER[\"socket\"] == \"[::]:80\" { }" >> \
-		${WRKSRC}/doc/config/lighttpd.conf
-.endif
 .if defined(WITH_H264)
 	@${CAT} ${WRKSRC}/COPYING_H264
 	@sleep 10
 .endif
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/doc/config/lighttpd.conf ${PREFIX}/etc/lighttpd.conf.sample
-.if !exists(${PREFIX}/etc/lighttpd.conf)
-	@${INSTALL_DATA} ${WRKSRC}/doc/config/lighttpd.conf ${PREFIX}/etc/lighttpd.conf
+	@${MKDIR} ${PREFIX}/etc/lighttpd/conf.d ${PREFIX}/etc/lighttpd/vhosts.d
+.for FILE in ${CONF_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/doc/config/${FILE} \
+		${PREFIX}/etc/lighttpd/${FILE}.sample
+.if !exists(${PREFIX}/etc/lighttpd/${FILE})
+	@${INSTALL_DATA} ${WRKSRC}/doc/config/${FILE} \
+		${PREFIX}/etc/lighttpd/${FILE}
 .endif
-	@${LIBTOOL} --finish ${PREFIX}/lib
+.endfor
+.for FILE in ${CONFD_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/doc/config/conf.d/${FILE} \
+		${PREFIX}/etc/lighttpd/conf.d/${FILE}.sample
+.if !exists(${PREFIX}/etc/lighttpd/conf.d/${FILE})
+	@${INSTALL_DATA} ${WRKSRC}/doc/config/conf.d/${FILE} \
+		${PREFIX}/etc/lighttpd/conf.d/${FILE}
+.endif
+.endfor
+	@${INSTALL_DATA} ${WRKSRC}/doc/config/vhosts.d/vhosts.template \
+		${PREFIX}/etc/lighttpd/vhosts.d/vhosts.template
+	@${MKDIR} -m 0700 ${LIGHTTPD_LOGROOT}
+	@${CHOWN} ${LIGHTTPD_USER}:${LIGHTTPD_GROUP} ${LIGHTTPD_LOGROOT}
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 . for FILE in ${PORTDOCS}
