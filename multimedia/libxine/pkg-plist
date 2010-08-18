@@ -179,18 +179,18 @@ share/aclocal/xine.m4
 %%DOCSDIR%%/hackersguide/library.png
 %%DOCSDIR%%/hackersguide/overlays.png
 %%DOCSDIR%%/hackersguide/post_frame.png
-share/locale/cs/LC_MESSAGES/libxine1.mo
-share/locale/de/LC_MESSAGES/libxine1.mo
-share/locale/en_US/LC_MESSAGES/libxine1.mo
-share/locale/eo/LC_MESSAGES/libxine1.mo
-share/locale/es/LC_MESSAGES/libxine1.mo
-share/locale/eu/LC_MESSAGES/libxine1.mo
-share/locale/fr/LC_MESSAGES/libxine1.mo
-share/locale/it/LC_MESSAGES/libxine1.mo
-share/locale/pl/LC_MESSAGES/libxine1.mo
-share/locale/pt_BR/LC_MESSAGES/libxine1.mo
-share/locale/sk/LC_MESSAGES/libxine1.mo
-share/locale/tr/LC_MESSAGES/libxine1.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/libxine1.mo
+%%NLS%%share/locale/de/LC_MESSAGES/libxine1.mo
+%%NLS%%share/locale/en_US/LC_MESSAGES/libxine1.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/libxine1.mo
+%%NLS%%share/locale/es/LC_MESSAGES/libxine1.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/libxine1.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/libxine1.mo
+%%NLS%%share/locale/it/LC_MESSAGES/libxine1.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/libxine1.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/libxine1.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/libxine1.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/libxine1.mo
 %%DATADIR%%/libxine1/fonts/cc-16.xinefont.gz
 %%DATADIR%%/libxine1/fonts/cc-20.xinefont.gz
 %%DATADIR%%/libxine1/fonts/cc-24.xinefont.gz
@@ -235,10 +235,10 @@ share/locale/tr/LC_MESSAGES/libxine1.mo
 @dirrm lib/xine
 @dirrm %%DOCSDIR%%/hackersguide
 @dirrm %%DOCSDIR%%
-@dirrmtry share/locale/pl_PL/LC_MESSAGES
-@dirrmtry share/locale/pl_PL
-@dirrmtry share/locale/en_US/LC_MESSAGES
-@dirrmtry share/locale/en_US
+%%NLS%%@dirrmtry share/locale/pl_PL/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl_PL
+%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en_US
 @dirrm %%DATADIR%%/libxine1/fonts
 @dirrm %%DATADIR%%/libxine1
 @dirrm %%DATADIR%%
