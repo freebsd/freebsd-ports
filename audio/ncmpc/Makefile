@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ncmpc
-PORTVERSION=	0.16
-PORTREVISION=	1
+PORTVERSION=	0.17
 CATEGORIES=	audio
 MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
 
@@ -37,7 +36,7 @@ PLIST_DIRS=%%EXAMPLESDIR%%
 CONFIGURE_ARGS+=--disable-nls
 .else
 USE_GETTEXT=	yes
-LANGUAGES=cs da de eo es fr gl he hu ko nb nl ru sk sv uk zh_CN
+LANGUAGES=cs da de eo es fi fr gl he hu ko nb nl pt_BR ru sk sv uk zh_CN
 .for language in ${LANGUAGES}
 PLIST_FILES+=share/locale/${language}/LC_MESSAGES/ncmpc.mo
 .endfor
