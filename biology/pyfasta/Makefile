@@ -16,7 +16,7 @@ COMMENT=	Fast, memory-efficient, pythonic access to fasta sequence files
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PYTHON=		yes
+USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.mk>
