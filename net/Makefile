@@ -905,6 +905,7 @@
     SUBDIR += rp-pppoe
     SUBDIR += rshell
     SUBDIR += rsmb
+    SUBDIR += rsplib
     SUBDIR += rsync
     SUBDIR += rtg
     SUBDIR += rtpbreak
