@@ -1,0 +1,21 @@
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/features.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/features.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/features.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/grep.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/grep.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/grep.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/termcolor.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/termcolor.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/termcolor.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/test_grep.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/test_grep.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/test_grep.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/version.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/version.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep/version.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/grep
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib

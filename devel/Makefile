@@ -138,6 +138,7 @@
     SUBDIR += bunny
     SUBDIR += byaccj
     SUBDIR += bzr-explorer
+    SUBDIR += bzr-grep
     SUBDIR += bzr-gtk
     SUBDIR += bzrtools
     SUBDIR += c2lib
