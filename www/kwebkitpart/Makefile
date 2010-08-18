@@ -5,15 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	kwebkitpart
-DISTVERSION=	0.9.0svn1130403
+PORTVERSION=	0.9.6.b1
 CATEGORIES=	www kde
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.FreeBSD.org/~avilla/distfiles/
-MASTER_SITE_SUBDIR=	avilla
+MASTER_SITES=	http://opendesktop.org/CONTENT/content-files/
+DISTNAME=	127960-${PORTNAME}-0.9.6
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Web browser component for KDE (KPart)
+COMMENT=	Web browser component for KDE based on QtWebKit
 
+USE_BZIP2=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 USE_QT_VER=	4
 QT_COMPONENTS=	designer webkit \
@@ -22,14 +22,7 @@ MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 
-distfile:
-	${MKDIR} ${WRKDIR}
-	svn export \
-	    svn://anonsvn.kde.org/home/kde/trunk/extragear/base/kwebkitpart \
-	    ${WRKSRC}
-	cd ${WRKDIR}; tar -czf ${DISTDIR}/${DISTFILES} ${DISTNAME}
-	scp ${DISTDIR}/${DISTFILES} \
-	    ${MASTER_SITE_SUBDIR}@freefall.FreeBSD.org:public_distfiles
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.9.6
 
 post-install:
 	${CAT} ${PKGMESSAGE}
