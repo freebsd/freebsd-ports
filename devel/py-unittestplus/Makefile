@@ -15,7 +15,7 @@ MAINTAINER=		hsmtkk@gmail.com
 COMMENT=		Test utilities built on unittest
 
 USE_ZIP=		yes
-USE_PYTHON=		yes
+USE_PYTHON=		2.6+
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
