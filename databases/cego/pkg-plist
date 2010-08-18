@@ -15,6 +15,7 @@ include/CegoFieldValue.h
 include/CegoJoinObject.h
 include/CegoKeyObject.h
 include/CegoModule.h
+include/CegoNet.h
 include/CegoObject.h
 include/CegoOutput.h
 include/CegoProcObject.h
