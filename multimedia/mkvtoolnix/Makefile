@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	3.4.0
+PORTVERSION=	4.2.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/
 
@@ -14,13 +14,16 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create Matroska media streams
 
 LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
-		ebml.0:${PORTSDIR}/textproc/libebml \
+		ebml.2:${PORTSDIR}/textproc/libebml \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		lzo2.2:${PORTSDIR}/archivers/lzo2 \
-		matroska.0:${PORTSDIR}/multimedia/libmatroska \
+		matroska.2:${PORTSDIR}/multimedia/libmatroska \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ogg.7:${PORTSDIR}/audio/libogg \
 		boost_regex.4:${PORTSDIR}/devel/boost-libs
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -39,6 +42,8 @@ CONFIGURE_ARGS=	--enable-lzo --enable-bz2 --disable-qt \
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		mkvextract.1 mkvinfo.1 mkvmerge.1 mkvpropedit.1
+
+OPTIONS=	WXGTK "build wxGTK2 based GUI" on
 
 .include <bsd.port.pre.mk>
 
@@ -63,13 +68,5 @@ PLIST_SUB+=	GUI="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"-O3"|""|g' ${WRKSRC}/configure
-
-pre-configure::
-.ifndef(WITHOUT_WXGTK)
-	@${ECHO_MSG} "===>"
-	@${ECHO_MSG} "===> You can disable wxGTK2 support by defining"
-	@${ECHO_MSG} "===>  WITHOUT_WXGTK"
-	@${ECHO_MSG} "===>"
-.endif
 
 .include <bsd.port.post.mk>
