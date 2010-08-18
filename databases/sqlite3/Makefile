@@ -7,7 +7,7 @@
 
 PORTNAME=	sqlite3
 PORTVERSION=	3.6.23.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 DISTNAME=	sqlite-${PORTVERSION}
@@ -18,10 +18,9 @@ COMMENT=	An SQL database engine in a C library
 CONFLICTS=	sqlite34-[0-9]*
 
 USE_GMAKE=	YES
-USE_GNOME=	pkgconfig
+USE_GNOME=	pkgconfig gnomehack
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
-USE_GNOME=	gnomehack
 USE_TCL_BUILD=	84+
 CONFIGURE_ENV+=	TCLSH_CMD="${TCLSH}" \
 		TCLLIBDIR="${PREFIX}/lib/${PORTNAME}" \
