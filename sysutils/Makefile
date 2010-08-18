@@ -633,6 +633,7 @@
     SUBDIR += php52-posix
     SUBDIR += pidof
     SUBDIR += pipemeter
+    SUBDIR += plasma-applet-apcups
     SUBDIR += plconfig
     SUBDIR += plod
     SUBDIR += pmap
