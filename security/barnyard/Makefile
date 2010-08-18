@@ -7,7 +7,7 @@
 
 PORTNAME=	barnyard
 PORTVERSION=	0.2.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	SF/barnyard/barnyard-0.2/${PORTVERSION}
 
@@ -18,6 +18,9 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort
 
 OPTIONS=	MYSQL "Enable MySQL support" on \
 		POSTGRESQL "Enable PostgreSQL support" off
+
+DEPRECATED=	Use security/barnyard2 instead
+EXPIRATION=	2010-12-31
 
 USE_AUTOTOOLS=	autoheader:262 aclocal:19
 USE_RC_SUBR=	barnyard.sh
