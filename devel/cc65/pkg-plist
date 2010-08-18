@@ -12,7 +12,9 @@ lib/cc65/asminc/_file.inc
 lib/cc65/asminc/_heap.inc
 lib/cc65/asminc/apple2.inc
 lib/cc65/asminc/atari.inc
+lib/cc65/asminc/atmos.inc
 lib/cc65/asminc/c128.inc
+lib/cc65/asminc/c16.inc
 lib/cc65/asminc/c64.inc
 lib/cc65/asminc/cbm510.inc
 lib/cc65/asminc/cbm610.inc
@@ -29,6 +31,7 @@ lib/cc65/asminc/modload.inc
 lib/cc65/asminc/mouse-kernel.inc
 lib/cc65/asminc/nes.inc
 lib/cc65/asminc/o65.inc
+lib/cc65/asminc/pet.inc
 lib/cc65/asminc/plus4.inc
 lib/cc65/asminc/rs232.inc
 lib/cc65/asminc/ser-error.inc
