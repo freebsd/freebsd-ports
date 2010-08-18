@@ -16,7 +16,7 @@ COMMENT=	A fancy interface to the Python interpreter
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=0:${PORTSDIR}/textproc/py-pygments
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 
 MAN1=		bpython.1
