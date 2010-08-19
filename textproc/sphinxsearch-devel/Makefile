@@ -114,8 +114,8 @@ PORTEXAMPLES=	*
 DOCS=		doc/sphinx.css doc/sphinx.html doc/sphinx.txt doc/sphinx.xml
 .endif
 
-.if ${ARCH} == "sparc64" && ${OSVERSION} < 700000
-BROKEN=		Does not build on sparc64-6
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not build on sparc64
 .endif
 
 # Fix up the sample configuration file to correspond to FreeBSD norms
