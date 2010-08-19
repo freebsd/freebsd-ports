@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astk
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 DISTVERSIONPREFIX=	full-src-
 DISTVERSIONSUFFIX=	.noarch
 CATEGORIES=	cad
@@ -41,7 +41,7 @@ USE_PYTHON=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
 
-ASTER_DISTVERSION=	${ASTER_VER}-4
+ASTER_DISTVERSION=	${ASTER_VER}-1
 EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION:S/-/./:R}/SRC
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -51,9 +51,8 @@ aster_dir=	${LOCALBASE}/aster/${vaster}
 S_SCRIPTS=	bin/as_run bin/parallel_cp asrun/installation.py	\
 		share/codeaster/asrun/data/mpirun_template
 S_PYLIBS=	share/codeaster/asrun/examples/alamain.py		\
-		asrun/installation.py asrun/devtools.py asrun/repart.py	\
-		unittest/client/config_serveurs.in			\
-		unittest/others/deprecate.py	unittest/README
+		unittest/data/config_serveurs unittest/010_misc.py	\
+		unittest/015_package.py unittest/run_test.py
 C_SCRIPTS=	bin/astk bin/bsf
 tools_dir=	${LOCALBASE}/aster/outils
 conf_dir=	${WRKSRC}/etc/astkrc
@@ -66,7 +65,8 @@ PATCHDIR=	${MASTERDIR}/files
 PLIST_SUB=	ASTKDIR=${LINSTDIR}/ASTK_SERV SERV="" CLIENT="@comment "		\
 		vaster=${vaster}
 PATCH2RM=	bin/as_run bin/parallel_cp etc/asrun etc/profile.csh etc/profile.sh	\
-		asrun/config.py
+		asrun/config.py asrun/installation.py asrun/system.py			\
+		asrun/common/sysutils.py asrun/system_command.py
 . if exists(${LOCALBASE}/sbin/pbs_server)
 WITH_PBS=	yes
 . endif
@@ -101,7 +101,7 @@ TCL_VER?=	${TK_VER}
 SHORT_TK_VER=	${TK_VER:S/.//}
 BWidget_VER=	1.7.0
 
-ASTER_VER=	10.1.0
+ASTER_VER=	10.2.0
 vaster=		STA${ASTER_VER:R}
 ETCDIR=		${PREFIX}/aster/etc/codeaster
 
@@ -184,7 +184,7 @@ do-configure:
 	${REINPLACE_CMD} -e "s|?SHELL_EXECUTION?|${SHELL_INSTALL_ASTER}|"	\
 		-e "s|?ASTER_ROOT?|${PREFIX}/aster|" ${WRKSRC}/${scripts}
 . endfor
-	${REINPLACE_CMD} -e "s|?ASTER_VERSION?|${ASTER_VER}|"			\
+	${REINPLACE_CMD} -e "s|?ASTER_VERSION?|${vaster}|"			\
 		 -e 's|#?vers : VVV?|vers : ${vaster}|'				\
 		${WRKSRC}/etc/aster
 . if defined(WITH_MPI)
@@ -201,7 +201,7 @@ do-configure:
 		${WRKSRC}/etc/${sc}
 . endfor
 . for sh in sh csh
-	${REINPLACE_CMD} -e "s|?ASTER_ROOT?|${LOCALBASE}/aster|"			\
+	${REINPLACE_CMD} -e "s|?ASTER_ROOT?|${LOCALBASE}/aster|"		\
 		-e 's|?HOME_PYTHON?|${PYTHONBASE}|'				\
 		-e 's|?ASRUN_SITE_PKG?|${PREFIX}/${LINSTDIR}/ASTK_SERV|'	\
 		-e 's|?PYTHON_EXE?|${PYTHON_CMD}|'				\
@@ -214,14 +214,23 @@ do-configure:
 	${REINPLACE_CMD} -e "s|/opt/aster/NEW9|${aster_dir}|"			\
 		 -e "s|/opt/aster/NEW10|${aster_dir}|"				\
 		-e "s|/opt/aster/ASTK|${inst_dir}|"				\
+		-e "s|/opt/aster/etc|${LOCALBASE}/aster/etc|"			\
 		-e "s|/opt/aster|${aster_dir}|" ${WRKSRC}/${libs}
 . endfor
 . if defined(WITH_PBS)
-.   for cf in etc/asrun unittest/client/config_serveurs.in
+.   for cf in etc/asrun unittest/data/config_serveurs
 	${REINPLACE_CMD} -e "s|batch : non|batch : oui|"			\
 		${WRKSRC}/${cf}
 .   endfor
 . endif
+. if defined(MAKE_JOBS_NUMBER) && ! defined(PACKAGE_BUILDING)
+	${REINPLACE_CMD}	\
+		-e "s|%%MAKE_JOBS_NUMBER%%|self.Shell('${ECHO_CMD} ${MAKE_JOBS_NUMBER}', mach, user)|" \
+		${WRKSRC}/asrun/system.py
+. else
+	${REINPLACE_CMD} -e 's|%%MAKE_JOBS_NUMBER%%|1|'	${WRKSRC}/asrun/system.py
+. endif
+	${REINPLACE_CMD} -e 's|bash|${SHIA}|' ${WRKSRC}/asrun/system_command.py
 .else
 # CLIENT_SEUL
 . for scripts in ${C_SCRIPTS}
@@ -230,7 +239,7 @@ do-configure:
 		-e "s|wish|wish${TK_VER}|;s|%%inst_dir%%|${inst_dir}|"		\
 		${WRKSRC}/${scripts}
 . endfor
-	${REINPLACE_CMD} -e "s|?vaster?|${vaster}|"					\
+	${REINPLACE_CMD} -e "s|?vaster?|${vaster}|"				\
 		-e "s|?TOOLS_DIR?|${tools_dir}|" ${conf_dir}/outils
 	${REINPLACE_CMD} -e "s#?HOME_ASTK?#${inst_dir}#"			\
 		-e "s#?TERMINAL?#${LOCALBASE}/bin/xterm#"			\
@@ -260,8 +269,6 @@ do-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${inst_dir}/ASTK_SERV/${rep}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${inst_dir}/ASTK_SERV/${rep}
 . endfor
-	(cd ${inst_dir}/ASTK_SERV/unittest/ &&		\
-	${SETENV} PYTHONPATH=${PREFIX}/${LINSTDIR}/ASTK_SERV ${PYTHON_CMD} ./config.py)
 . if defined(WITH_MPI)
 	${ECHO_CMD} "localhost" > ${PREFIX}/aster/aster-mpihosts
 . endif
