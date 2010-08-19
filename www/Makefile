@@ -1814,7 +1814,6 @@
     SUBDIR += woadaptor-cgi
     SUBDIR += woof
     SUBDIR += wordpress
-    SUBDIR += wordpress-mu
     SUBDIR += wsdlpull
     SUBDIR += wsmake
     SUBDIR += www6to4
