@@ -7,9 +7,8 @@
 
 PORTNAME=	homard
 DISTVERSIONPREFIX=	full-src-
-DISTVERSION=	9.5-1
+DISTVERSION=	9.6-1
 DISTVERSIONSUFFIX=	.all
-PORTREVISION=	7
 CATEGORIES=	french cad linux
 MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 DISTNAME=	aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION}${ASTER_DISTVERSIONSUFFIX}
@@ -35,8 +34,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_VER}/SRC
 
 LHOMARDDIR?=	apps/${PORTNAME}
-ASTER_VER=	10.1.0
-ASTER_DISTVERSION=	${ASTER_VER}-4
+ASTER_VER=	10.2.0
+ASTER_DISTVERSION=	${ASTER_VER}-1
 ASTER_DISTVERSIONSUFFIX=	.noarch
 vaster=		STA${ASTER_VER:R}
 ASTER_TOOLS=	${LOCALBASE}/aster/outils
@@ -46,11 +45,6 @@ HOMARDSCRIPT=	${PORTNAME}_base
 # This name is requested to run aster's make test
 HOMARDPG=	${PORTNAME:U}_V${PORTVERSION:R}.out
 HOMARDWDIR=	${PORTNAME:U}
-
-DIR2RM=		hex_3x3_d1 hex_d2 med_2d_6xtri_d2 med_2d_carre_d1	\
-		med_3d_cube_d2_fig med_3d_tet_tri_d2_man mix_3d_d2	\
-		mix_qua_tri_d1_equ pen_d1 qua_2d_24x36_d2 sau_qua_tri_d1\
-		sfr_2d_att_rugby_qua sfr_mix_2d_zzzz121d_d1
 
 DOCS=		A_Lire.txt Readme.txt
 
@@ -87,7 +81,7 @@ do-install:
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/${HOMARDWDIR}/Linux/CAS_TESTS/* ${EXAMPLESDIR}
-	${TOUCH} ${DIR2RM:S|^|${EXAMPLESDIR}/|:S|$|/resultats/.keepme|}
+	${FIND} ${EXAMPLESDIR} -type d -empty -exec ${TOUCH} {}/.keepme \;
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
 
