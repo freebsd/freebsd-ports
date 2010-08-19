@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozplugger
-PORTVERSION=	1.14.0
+PORTVERSION=	1.14.1
 CATEGORIES=	www
 MASTER_SITES=	http://mozplugger.mozdev.org/files/
 
