@@ -20,6 +20,9 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		vga.1:${PORTSDIR}/graphics/svgalib \
 		png.6:${PORTSDIR}/graphics/png
 
+DEPRECATED=	Development has ceased.
+EXPIRATION_DATE=	2010-11-01
+
 DOCS=		AUTHORS Changelog README etc/wb0/wb0.config.README
 PORTDOCS=	${DOCS:T}
 ONLY_FOR_ARCHS=	i386
