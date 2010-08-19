@@ -1,14 +1,5 @@
---- etc/profile.sh.orig	2009-12-23 15:53:06.000000000 +0100
-+++ etc/profile.sh	2010-02-03 18:56:19.000000000 +0100
-@@ -26,7 +26,7 @@
-    export LD_LIBRARY_PATH=?HOME_PYTHON?/lib:$LD_LIBRARY_PATH
- fi
- 
--if [ -z "$PATH" ]; then
-+if [ -z "$PYTHONPATH" ]; then
-    export PYTHONPATH=?ASRUN_SITE_PKG?
- else
-    export PYTHONPATH=?ASRUN_SITE_PKG?:$PYTHONPATH
+--- etc/profile.sh.orig	2010-07-07 18:18:08.000000000 +0200
++++ etc/profile.sh	2010-08-11 19:07:22.000000000 +0200
 @@ -37,6 +37,13 @@
  # this should not be usefull...
  #export PYTHONHOME=?HOME_PYTHON?
