@@ -7,7 +7,7 @@
 
 PORTNAME=	torcs
 DISTVERSION=	1.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/all-in-one/${PORTVERSION}
 
@@ -50,6 +50,13 @@ BASH2FIX=	src/linux/torcs.in src/tools/accc/accc.in \
 		src/tools/trackgen/trackgen.in \
 		src/modules/telemetry/telemetry.sh robotgen Make-default.mk \
 		data/tracks/road/ole-road-1/generate.sh
+
+DESKTOP_ENTRIES=	"TORCS" \
+			"The Open Racing Car Simulator" \
+			"${INSTDIR}/Ticon.png" \
+			"torcs" \
+			"Game;Simulation;" \
+			false
 
 .include <bsd.port.pre.mk>
 
