@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	zile
-PORTVERSION=	2.3.18
+PORTVERSION=	2.3.19
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	frederic@culot.org
 COMMENT=	Small emacs-like text editor
 
 USE_GMAKE=	yes
