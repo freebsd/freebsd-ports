@@ -1,0 +1,4 @@
+bin/ctronome
+%%DATADIR%%/metronome1.wav
+%%DATADIR%%/metronome2.wav
+@dirrm %%DATADIR%%
