@@ -7,7 +7,7 @@
 
 PORTNAME=	tecnoballz
 PORTVERSION=	0.92
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://linux.tlk.fr/games/TecnoballZ/download/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -27,6 +27,13 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 MAN6=		tecnoballz.6
+
+DESKTOP_ENTRIES=	"TecnoballZ" \
+			"A brick breaker (Arkanoid-like game)" \
+			"" \
+			"tecnoballz" \
+			"Game;ArcadeGame;" \
+			false
 
 post-patch:
 	@${FIND} ${WRKSRC}/include -name '*.h' | ${XARGS} ${REINPLACE_CMD} \

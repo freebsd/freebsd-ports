@@ -7,6 +7,7 @@
 
 PORTNAME=	spacejunk
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -25,6 +26,13 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include" \
 SUB_FILES=	spacejunk
 
 PORTDOCS=	*
+
+DESKTOP_ENTRIES=	"Spacejunk" \
+			"Collect garbage by navigating through the gravitational fields of planets and stars" \
+			"" \
+			"spacejunk" \
+			"Game;ArcadeGame;" \
+			false
 
 .include <bsd.port.pre.mk>
 

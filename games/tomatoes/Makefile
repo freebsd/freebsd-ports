@@ -7,7 +7,7 @@
 
 PORTNAME=	tomatoes
 PORTVERSION=	1.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-linux-src-${PORTVERSION}5${EXTRACT_SUFX} \
@@ -35,13 +35,21 @@ MAKE_ARGS=	CC="${CXX}" \
 PLIST_FILES=	bin/tomatoes \
 		%%DATADIR%%/config.cfg \
 		%%DATADIR%%/music/IHaveNoTomatoes.it \
-		%%DATADIR%%/tomatoes.mpk
+		%%DATADIR%%/tomatoes.mpk \
+		%%DATADIR%%/icon.png
 PLIST_DIRS=	%%DATADIR%%/music \
 		%%DATADIR%%
 
 SDL_CFLAGS=	`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
 SDL_LDFLAGS=	`${SDL_CONFIG} --libs` -lSDL_image -lSDL_mixer \
 		-L${LOCALBASE}/lib -lGL -lGLU
+
+DESKTOP_ENTRIES=	"Tomatoes" \
+			"I Have No Tomatoes" \
+			"${DATADIR}/icon.png" \
+			"tomatoes" \
+			"Game;ArcadeGame;" \
+			false
 
 .include <bsd.port.pre.mk>
 
@@ -56,6 +64,7 @@ do-install:
 	${MKDIR} ${DATADIR}/music
 	${INSTALL_DATA} ${TDATA}/config.cfg ${DATADIR}
 	${INSTALL_DATA} ${TDATA}/tomatoes.mpk ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/icon.png ${DATADIR}
 	${INSTALL_DATA} ${TDATA}/music/IHaveNoTomatoes.it ${DATADIR}/music
 
 .include <bsd.port.post.mk>
