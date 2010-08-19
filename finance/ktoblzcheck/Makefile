@@ -7,7 +7,8 @@
 
 PORTNAME=	ktoblzcheck
 PORTVERSION=	1.28
-CATEGORIES=	german finance
+PORTREVISION=	1
+CATEGORIES=	finance german
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	bsdkaffee@gmail.com
