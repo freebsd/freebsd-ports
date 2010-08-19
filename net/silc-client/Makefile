@@ -32,7 +32,7 @@ CONFLICTS=	silc-toolkit-1.1.* silc-irssi-plugin-1.1.*
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	glib12
+USE_GNOME=	glib20
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
@@ -49,12 +49,22 @@ OPTIONS=	PTHREADS "Enable pthreads support" off \
 CONFIGURE_ARGS+=	--with-silc-plugin=${PREFIX}/lib/irssi \
 			--without-silc-includes
 CFLAGS+=	-fPIC
-RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
+BUILD_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 # We don't want to install the man page and configuration file for this case
 # Also, the port makes an extra symlink which causes IRSSI to load the plugin
 # twice.  This causes weird behavior such as /me output showing up twice.
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-apps__irssi__Makefile.in \
 		${FILESDIR}/extra-patch-apps__irssi__src__fe-common__Makefile.in
+
+# Following is to fix plugin errors. Fixes taken from debian bug report #522080
+# and #577501 modified to work with port build process
+EXTRA_PATCHES += \
+		${FILESDIR}/extra-patch-apps__irssi__src__perl__silc__Makefile.PL.in \
+		${FILESDIR}/extra-patch-apps__irssi__src__fe-common__silc__Makefile.in \
+		${FILESDIR}/extra-patch-apps__irssi__src__silc__core__Makefile.in \
+		${FILESDIR}/extra-patch-apps__irssi__src__silc__core__silc-core.c \
+		${FILESDIR}/extra-patch-apps__irssi__src__silc__core__silc-expandos.c \
+		${FILESDIR}/extra-patch-apps__irssi__src__silc__core__client_ops.c
 .else
 MAN1=		silc.1
 .endif
