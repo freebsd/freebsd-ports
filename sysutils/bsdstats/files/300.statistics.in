@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.43 2010-08-19 03:03:34 amdmi3 Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/bsdstats/files/300.statistics.in,v 1.44 2010-08-19 03:06:13 amdmi3 Exp $
 #
 
 # If there is a global system configuration file, suck it in.
@@ -28,7 +28,7 @@ checkin_server=${monthly_statistics_checkin_server:-"rpt.bsdstats.org"}
 bsdstats_log=${monthly_statistics_logfile:-"/var/log/bsdstats"}
 id_token_file='/var/db/bsdstats'
 
-PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/sbin:%%PREFIX%%/bin
 export PATH
 
 unset HTTP_USER_AGENT

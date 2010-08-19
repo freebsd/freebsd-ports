@@ -7,6 +7,7 @@
 
 PORTNAME=	bsdstats
 PORTVERSION=	5.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 DISTFILES=
 
@@ -14,15 +15,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monthly script for reporting anonymous statistics about your machine
 
 NO_BUILD=	yes
+USE_RC_SUBR=	bsdstats
+SUB_FILES=	300.statistics pkg-message
 
 do-install:
-	${MKDIR} ${LOCALBASE}/etc/periodic/monthly
-	${CP} ${FILESDIR}/300.statistics ${LOCALBASE}/etc/periodic/monthly
-	${CP} ${FILESDIR}/bsdstats.sh ${LOCALBASE}/etc/rc.d
-	${CHMOD} 0755 ${LOCALBASE}/etc/rc.d/bsdstats.sh
-	${CHMOD} 0755 ${LOCALBASE}/etc/periodic/monthly/300.statistics
+	${MKDIR} ${PREFIX}/etc/periodic/monthly
+	${INSTALL_SCRIPT} ${WRKDIR}/300.statistics ${PREFIX}/etc/periodic/monthly
 post-install:
-	${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 	@${ECHO_MSG} "	To activate monthly statistics reporting in /etc/periodic.conf,"
 	@${ECHO_MSG} "	execute the following as root user:"

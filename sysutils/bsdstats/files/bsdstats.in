@@ -21,7 +21,7 @@ load_rc_config bsdstats
 name=bsdstats
 rcvar=`set_rcvar`
 
-command=/usr/local/etc/periodic/monthly/300.statistics
+command=%%PREFIX%%/etc/periodic/monthly/300.statistics
 
 # default to disable
 bsdstats_enable=${bsdstats_enable:-"NO"}
