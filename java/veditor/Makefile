@@ -7,6 +7,7 @@
 
 PORTNAME=	veditor
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	java cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20runtime/VEditor%20${PORTVERSION}
 DISTNAME=	net.sourceforge.${PORTNAME}_${PORTVERSION}
@@ -31,16 +32,18 @@ RUN_DEPENDS+=	iverilog:${PORTSDIR}/cad/iverilog
 RUN_DEPENDS+=	freehdl-v2cc:${PORTSDIR}/cad/freehdl
 .endif
 
-PLIST_SUB=	VER=${PORTVERSION}
+PLIST_SUB=	VER=${PORTVERSION} \
+		ECLIPSE=${ECLIPSE}
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-ECLIPSE=	${PREFIX}/eclipse
+ECLIPSE=	lib/eclipse
 PLUGINS=	plugins
 
 do-install:
-	@${MKDIR} ${ECLIPSE}/${PLUGINS}
-	@${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${ECLIPSE}/${PLUGINS}/
+	@${MKDIR} ${PREFIX}/${ECLIPSE}/${PLUGINS}
+	@${INSTALL_DATA} ${DISTDIR}/${DISTFILES} \
+		${PREFIX}/${ECLIPSE}/${PLUGINS}/
 
 .include <bsd.port.mk>
