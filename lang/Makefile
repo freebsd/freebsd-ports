@@ -147,6 +147,7 @@
     SUBDIR += klone
     SUBDIR += kroc
     SUBDIR += lafontaine
+    SUBDIR += ldc-devel
     SUBDIR += libhx
     SUBDIR += libjit
     SUBDIR += librep
