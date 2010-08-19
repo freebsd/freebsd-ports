@@ -169,6 +169,7 @@
     SUBDIR += cgit
     SUBDIR += cgprof
     SUBDIR += charva
+    SUBDIR += checkheaders
     SUBDIR += chrpath
     SUBDIR += cil
     SUBDIR += cl-alexandria
