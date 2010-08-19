@@ -1,6 +1,6 @@
---- http.c.orig	Wed Oct 31 15:13:04 2007
-+++ http.c	Wed Oct 31 15:13:39 2007
-@@ -51,7 +51,7 @@
+--- http.c.orig	2010-08-16 13:42:14.099356738 +0200
++++ http.c	2010-08-16 13:42:58.186459428 +0200
+@@ -52,7 +52,7 @@ static size_t WriteMemoryCallback(void *
  static int initCurlStuffFailed(void);
  
  #ifdef NEED_CURL_EASY_STRERROR
@@ -9,7 +9,7 @@
  #endif
  
  /* Set auction error with full libcurl details */
-@@ -409,7 +409,7 @@
+@@ -517,7 +517,7 @@ static const char *curlErrorTable[] = {
  	"Requested FTP SSL level failed", /* CURLE_FTP_SSL_FAILED */
  };
  
