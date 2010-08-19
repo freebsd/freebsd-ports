@@ -18,6 +18,9 @@ COMMENT=	A nice KDE frontend to the ports system
 BUILD_DEPENDS=	${LOCALBASE}/sbin/portsdb:${PORTSDIR}/ports-mgmt/portupgrade
 RUN_DEPENDS=	${LOCALBASE}/sbin/portsdb:${PORTSDIR}/ports-mgmt/portupgrade
 
+DEPRECATED=	Development has ceased.
+EXPIRATION_DATE=	2010-11-01
+
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:22
