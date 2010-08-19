@@ -8,6 +8,8 @@
 %%SITE_PERL%%/Net/Analysis/Listener/Example2.pm
 %%SITE_PERL%%/Net/Analysis/Listener/Example3.pm
 %%SITE_PERL%%/Net/Analysis/Listener/HTTP.pm
+%%SITE_PERL%%/Net/Analysis/Listener/HTTPPipelining.pm
+%%SITE_PERL%%/Net/Analysis/Listener/PortCounter.pm
 %%SITE_PERL%%/Net/Analysis/Listener/TCP.pm
 %%SITE_PERL%%/Net/Analysis/Packet.pm
 %%SITE_PERL%%/Net/Analysis/TCPMonologue.pm

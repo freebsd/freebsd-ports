@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Analysis
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -31,6 +31,8 @@ MAN3=		Net::Analysis.3 \
 		Net::Analysis::Listener::Example2.3 \
 		Net::Analysis::Listener::Example3.3 \
 		Net::Analysis::Listener::HTTP.3 \
+		Net::Analysis::Listener::HTTPPipelining.3 \
+		Net::Analysis::Listener::PortCounter.3 \
 		Net::Analysis::Listener::TCP.3 \
 		Net::Analysis::Packet.3 \
 		Net::Analysis::TCPMonologue.3 \
