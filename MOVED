@@ -4483,3 +4483,4 @@ multimedia/kaffeine-devel|multimedia/kaffeine|2010-08-14|New non-development ver
 www/peacock||2010-08-17|Has runtime errors, upstream development discontinued
 www/gtkhtml38||2010-08-17|Removed, because there are no more users of this library
 security/isolate||2010-08-17|Security vulnerability
+www/wordpress-mu|www/wordpress|2010-08-19|Multiuser support was incorporate in the upstream version
