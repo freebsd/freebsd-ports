@@ -15,6 +15,10 @@ DIST_SUBDIR=	clive
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passwords, RSS parsing, and link extraction for clive
 
+DEPRECATED=	development has ceased; use multimedia/umph instead
+EXPIRATION_DATE=	2010-11-01
+IGNORE=		broken due to changes at youtube
+
 NO_BUILD=	yes
 USE_PERL5_RUN=	5.8.2+
 USE_BZIP2=	yes
