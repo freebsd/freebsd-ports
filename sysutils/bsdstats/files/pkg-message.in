@@ -23,7 +23,7 @@ To enable ports reporting, add this line:
 	monthly_statistics_report_ports="YES"
 
 To run it manually the first time, just run it as:
-	${LOCALBASE}/etc/periodic/monthly/300.statistics -nodelay
+	%%PREFIX%%/etc/periodic/monthly/300.statistics -nodelay
 
 To view current statistics, go to:
         http://www.bsdstats.org
