@@ -1,5 +1,7 @@
 bin/merkaartor
+lib/merkaartor/plugins/background/libMWalkingPapersBackgroundPlugin.so
 lib/merkaartor/plugins/background/libMYahooBackgroundPlugin.so
+lib/merkaartor/plugins/background/libMYahooTiledBackgroundPlugin.so
 lib/merkaartor/plugins/styles/libskulpture.so
 share/applications/merkaartor.desktop
 share/icons/hicolor/48x48/apps/merkaartor.png
@@ -16,8 +18,12 @@ share/icons/hicolor/48x48/apps/merkaartor.png
 %%NLS%%%%DATADIR%%/translations/merkaartor_ja.qm
 %%NLS%%%%DATADIR%%/translations/merkaartor_nl.qm
 %%NLS%%%%DATADIR%%/translations/merkaartor_pl.qm
+%%NLS%%%%DATADIR%%/translations/merkaartor_pt.qm
+%%NLS%%%%DATADIR%%/translations/merkaartor_pt_BR.qm
 %%NLS%%%%DATADIR%%/translations/merkaartor_ru.qm
+%%NLS%%%%DATADIR%%/translations/merkaartor_sk.qm
 %%NLS%%%%DATADIR%%/translations/merkaartor_sv.qm
+%%NLS%%%%DATADIR%%/translations/merkaartor_uk.qm
 %%DATADIR%%/world_background.osb
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%
