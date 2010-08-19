@@ -1,7 +1,19 @@
 bin/bmake
+share/mk/auto.dep.mk
 share/mk/auto.obj.mk
 share/mk/autoconf.mk
 share/mk/autodep.mk
+share/mk/bsd.dep.mk
+share/mk/bsd.doc.mk
+share/mk/bsd.init.mk
+share/mk/bsd.lib.mk
+share/mk/bsd.links.mk
+share/mk/bsd.man.mk
+share/mk/bsd.nls.mk
+share/mk/bsd.obj.mk
+share/mk/bsd.own.mk
+share/mk/bsd.prog.mk
+share/mk/bsd.subdir.mk
 share/mk/dep.mk
 share/mk/doc.mk
 share/mk/dpadd.mk
@@ -26,19 +38,6 @@ share/mk/rst2htm.mk
 share/mk/scripts.mk
 share/mk/subdir.mk
 share/mk/sys.mk
-share/mk/target-flags.mk
-share/mk/warnings.mk
-share/mk/yacc.mk
-share/mk/bsd.dep.mk
-share/mk/bsd.doc.mk
-share/mk/bsd.init.mk
-share/mk/bsd.lib.mk
-share/mk/bsd.man.mk
-share/mk/bsd.nls.mk
-share/mk/bsd.obj.mk
-share/mk/bsd.own.mk
-share/mk/bsd.prog.mk
-share/mk/bsd.subdir.mk
 share/mk/sys/AIX.mk
 share/mk/sys/Darwin.mk
 share/mk/sys/Generic.mk
@@ -50,5 +49,8 @@ share/mk/sys/OSF1.mk
 share/mk/sys/OpenBSD.mk
 share/mk/sys/SunOS.mk
 share/mk/sys/UnixWare.mk
+share/mk/target-flags.mk
+share/mk/warnings.mk
+share/mk/yacc.mk
 @dirrm share/mk/sys
 @dirrmtry share/mk
