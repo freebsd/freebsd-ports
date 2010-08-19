@@ -1320,6 +1320,7 @@ bygfoot                         ports/games/bygfoot
 bzflag                          ports/games/bzflag
 bzip                            ports/archivers/bzip
 bzr-explorer                    ports/devel/bzr-explorer
+bzr-grep                        ports/devel/bzr-grep
 bzr-gtk                         ports/devel/bzr-gtk
 bzrtools                        ports/devel/bzrtools
 c-a-i-r                         ports/graphics/c-a-i-r
@@ -1738,6 +1739,7 @@ cmdwatch                        ports/sysutils/cmdwatch
 cmios9                          ports/converters/cmios9
 cmospwd                         ports/sysutils/cmospwd
 cmp3                            ports/audio/cmp3
+cmph                            ports/devel/cmph
 cmpsfont                        ports/print/cmpsfont
 cmsmadesimple                   ports/www/cmsmadesimple
 cmt                             ports/audio/cmt
@@ -5634,6 +5636,7 @@ hsetroot                        ports/graphics/hsetroot
 hsftp                           ports/ftp/hsftp
 hso-kmod                        ports/comms/hso-kmod
 hsqldb                          ports/databases/hsqldb
+htable                          ports/devel/htable
 htdig                           ports/textproc/htdig
 htdump                          ports/www/htdump
 hte                             ports/editors/hte
@@ -6537,6 +6540,7 @@ jack                            ports/audio/jack
 jack-keyboard                   ports/audio/jack-keyboard
 jack-rack                       ports/audio/jack-rack
 jack-smf-utils                  ports/audio/jack-smf-utils
+jack_mixer                      ports/audio/jack_mixer
 jad                             ports/java/jad
 jade                            ports/textproc/jade
 jadetex                         ports/print/jadetex
@@ -9490,10 +9494,12 @@ mol2ps                          ports/science/mol2ps
 molden                          ports/biology/molden
 momspider                       ports/www/momspider
 mondrian                        ports/editors/mondrian
+mondulkiri                      ports/x11-fonts/mondulkiri
 mongodb                         ports/databases/mongodb
 mongodb-devel                   ports/databases/mongodb-devel
 monit                           ports/sysutils/monit
 monitord                        ports/sysutils/monitord
+monitorix                       ports/sysutils/monitorix
 monkey                          ports/www/monkey
 monkeybubble                    ports/games/monkeybubble
 monkeysphere                    ports/security/monkeysphere
@@ -11324,6 +11330,7 @@ p5-Class-Accessor-Children      ports/devel/p5-Class-Accessor-Children
 p5-Class-Accessor-Fast-Contained  ports/devel/p5-Class-Accessor-Fast-Contained
 p5-Class-Accessor-Fast-XS       ports/devel/p5-Class-Accessor-Fast-XS
 p5-Class-Accessor-Grouped       ports/devel/p5-Class-Accessor-Grouped
+p5-Class-Accessor-Lite          ports/devel/p5-Class-Accessor-Lite
 p5-Class-Accessor-Lvalue        ports/devel/p5-Class-Accessor-Lvalue
 p5-Class-Accessor-Named         ports/devel/p5-Class-Accessor-Named
 p5-Class-Adapter                ports/devel/p5-Class-Adapter
@@ -15210,6 +15217,7 @@ p5-class-accessor-children      ports/devel/p5-Class-Accessor-Children
 p5-class-accessor-fast-contained  ports/devel/p5-Class-Accessor-Fast-Contained
 p5-class-accessor-fast-xs       ports/devel/p5-Class-Accessor-Fast-XS
 p5-class-accessor-grouped       ports/devel/p5-Class-Accessor-Grouped
+p5-class-accessor-lite          ports/devel/p5-Class-Accessor-Lite
 p5-class-accessor-lvalue        ports/devel/p5-Class-Accessor-Lvalue
 p5-class-accessor-named         ports/devel/p5-Class-Accessor-Named
 p5-class-adapter                ports/devel/p5-Class-Adapter
@@ -19982,6 +19990,7 @@ planets                         ports/astro/planets
 planner                         ports/deskutils/planner
 planner.el                      ports/deskutils/planner.el
 plans                           ports/deskutils/plans
+plasma-applet-apcups            ports/sysutils/plasma-applet-apcups
 plasma-applet-cwp               ports/deskutils/plasma-applet-cwp
 plasma-applet-daisy             ports/deskutils/plasma-applet-daisy
 plasma-applet-fancytasks        ports/deskutils/plasma-applet-fancytasks
@@ -22025,6 +22034,7 @@ rshell                          ports/net/rshell
 rsibreak                        ports/x11/rsibreak
 rsmb                            ports/net/rsmb
 rsnapshot                       ports/sysutils/rsnapshot
+rsplib                          ports/net/rsplib
 rss2email                       ports/mail/rss2email
 rss2html                        ports/textproc/rss2html
 rssdler                         ports/www/rssdler
@@ -23091,6 +23101,7 @@ sidplay2                        ports/audio/sidplay2
 sidplayer                       ports/audio/sidplayer
 sidplug                         ports/www/sidplug
 siege                           ports/benchmarks/siege
+sievelog                        ports/sysutils/sievelog
 sig2dot                         ports/security/sig2dot
 sigit                           ports/mail/sigit
 signing-party                   ports/security/signing-party
@@ -26460,6 +26471,7 @@ yodl                            ports/textproc/yodl
 yorick                          ports/lang/yorick
 yould                           ports/textproc/yould
 yourls                          ports/www/yourls
+youtube-viewer                  ports/multimedia/youtube-viewer
 youtube_dl                      ports/www/youtube_dl
 ypsilon                         ports/lang/ypsilon
 yptransitd                      ports/net/yptransitd
