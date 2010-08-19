@@ -417,6 +417,7 @@
     SUBDIR += linux-f10-mikmod
     SUBDIR += linux-f10-nas-libs
     SUBDIR += linux-f10-openal
+    SUBDIR += linux-f10-openal-soft
     SUBDIR += linux-f10-sdl_mixer
     SUBDIR += linux-f8-alsa-lib
     SUBDIR += linux-f8-arts
