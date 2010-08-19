@@ -7,9 +7,8 @@
 
 PORTNAME=	eficas
 DISTVERSIONPREFIX=	full-src-
-DISTVERSION=	1.17.0-1
+DISTVERSION=	2.0.3-1
 DISTVERSIONSUFFIX=	.noarch
-PORTREVISION=	1
 CATEGORIES=	french cad
 MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 DISTNAME=	aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION}${DISTVERSIONSUFFIX}
@@ -17,13 +16,13 @@ DISTNAME=	aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION}${DISTVERSIONSUFFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASter Command FIle Editor
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw		\
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw	\
 		${PYTHON_SITELIBDIR}/mx:${PORTSDIR}/lang/py-mx-base		\
-		${PYNUMERIC}							\
+		${PYNUMPY}							\
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
-ASTER_VER=	10.1.0
-ASTER_DISTVERSION=	${ASTER_VER}-4
+ASTER_VER=	10.2.0
+ASTER_DISTVERSION=	${ASTER_VER}-1
 EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_VER}/SRC
 
 USE_PYTHON=	yes
@@ -50,10 +49,9 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt
 SUB_FILES+=	qtEficas
 .endif
 
-ENV2PYTHON=	Misc/Cyclops.py Aster/eficas_aster.py convert/Parserv5/Translate.py	\
-		Traducteur/traduitV8V9.py Traducteur/traduitV7V8.py Aster/test_eficas.py\
-		Aster/qtEficas_aster.py generator/OpenturnsSTD.py	\
-		generator/generator_openturns_study.py generator/generator_openturns_wrapper.py
+ENV2PYTHON=	Misc/Cyclops.py Aster/eficas_aster.py Aster/qtEficas_aster.py	\
+		Aster/qtGroup.py Traducteur/traduitV8V9.py			\
+		Traducteur/traduitV7V8.py convert/Parserv5/Translate.py
 FIXSHTK=	bureau.py cataediteur.py panels.py
 FIXSHQT4=	typeNode.py
 FIXBASH=	cataSTA9/Macro/macr_ecre_calc_ops.py cataSTA10/Macro/macr_ecre_calc_ops.py
@@ -87,6 +85,7 @@ pre-configure:
 do-install:
 	${MKDIR} ${EFICASDIR}
 	${CP} -R ${WRKSRC}/* ${EFICASDIR}
+	${FIND} ${EFICASDIR} -name CMakeFiles -delete
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${EFICASDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/eficas ${PREFIX}/bin
