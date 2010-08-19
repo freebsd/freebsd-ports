@@ -7,7 +7,7 @@
 
 PORTNAME=	claws-mail
 PORTVERSION=	3.7.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	SF/sylpheed-claws/Claws%20Mail/${PORTVERSION}
 
@@ -42,7 +42,6 @@ MAN1=		claws-mail.1
 CONFIGURE_ARGS=	\
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-manualdir=${DOCSDIR}/manual \
-		--with-faqdir=${DOCSDIR}/faq
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
@@ -50,12 +49,11 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 OPTIONS=	ALL		"Enable all options except GNUTLS."			off \
-		ASPELL		"Enable spell checking support."	on \
+		ENCHANT		"Enable spell checking support."	on \
 		BOGOFILTER	"Enable bogofilter support."		off \
 		COMPFACE	"Enable X-Face support."		on \
 		DEBUG		"Enable debug support."			off \
 		DILLO		"Enable Dillo HTML viewer."		off \
-		GNOMEPRINT	"Enable extended print support (deprecated)."	off \
 		GPGME		"Enable PGP/GnuPG/SMIME support using GPGME."	off \
 		IPV6		"Enable ipv6 support."			on \
 		JPILOT		"Enable JPilot support."		off \
@@ -65,15 +63,6 @@ OPTIONS=	ALL		"Enable all options except GNUTLS."			off \
 		THEMES		"Install additional themes."		on
 
 .include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mgnomeprint} != "" || defined(WITH_GNOMEPRINT)
-PLIST_SUB+=		GNOMEPRINT=""
-USE_GNOME+=		libgnomeprint libgnomeprintui libgnomecanvas
-CONFIGURE_ARGS+=	--enable-gnomeprint
-.else
-PLIST_SUB+=		GNOMEPRINT="@comment "
-CONFIGURE_ARGS+=	--disable-gnomeprint
-.endif
 
 .if defined(WITH_BOGOFILTER) || defined(WITH_ALL)
 RUN_DEPENDS+=		bogofilter:${PORTSDIR}/mail/bogofilter
@@ -90,11 +79,11 @@ CONFIGURE_ARGS+=	--enable-compface
 .else
 CONFIGURE_ARGS+=	--disable-compface
 .endif
-.if defined(WITH_ASPELL) || defined(WITH_ALL)
-LIB_DEPENDS+=		pspell.16:${PORTSDIR}/textproc/aspell
-CONFIGURE_ARGS+=	--enable-aspell
+.if defined(WITH_ENCHANT) || defined(WITH_ALL)
+LIB_DEPENDS+=		enchant:${PORTSDIR}/textproc/enchant
+CONFIGURE_ARGS+=	--enable-enchant
 .else
-CONFIGURE_ARGS+=	--disable-aspell
+CONFIGURE_ARGS+=	--disable-enchant
 .endif
 .if defined(WITH_JPILOT) || defined(WITH_ALL)
 LIB_DEPENDS+=		pisock:${PORTSDIR}/palm/pilot-link
