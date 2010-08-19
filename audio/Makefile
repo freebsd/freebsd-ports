@@ -116,6 +116,7 @@
     SUBDIR += crip
     SUBDIR += cripple
     SUBDIR += csound
+    SUBDIR += ctronome
     SUBDIR += cuberok
     SUBDIR += cue2toc
     SUBDIR += cueplayer
