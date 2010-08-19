@@ -7,7 +7,7 @@
 
 PORTNAME=		aster
 DISTVERSIONPREFIX=	full-src-
-DISTVERSION=		10.1.0-4
+DISTVERSION=		10.2.0-1
 DISTVERSIONSUFFIX=	.noarch
 PORTREVISION=	1
 CATEGORIES=		french cad
@@ -39,7 +39,7 @@ COMMENT=	Code_Aster finite element method solver
 
 BUILD_DEPENDS+=	${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur	\
 		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}		\
-		${PYNUMERIC}
+		${PYNUMPY}
 LIB_DEPENDS+=	tcl${SHORT_TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}	\
 		tk${SHORT_TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}	\
 		hdf5.0:${PORTSDIR}/science/hdf5					\
@@ -115,7 +115,7 @@ PLIST_SUB+=	GRACE=""
 PLIST_SUB+=	GRACE="@comment "
 .endif
 .if !defined(WITHOUT_MACR_RECAL)
-RUN_DEPENDS+=	${PYNUMERIC}
+RUN_DEPENDS+=	${PYNUMPY}
 .endif
 .if !defined(WITHOUT_SCOTCH)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libscotch.a:${PORTSDIR}/cad/scotch
@@ -197,7 +197,7 @@ WITH_ED=	vi
 
 vaster=		STA${PORTVERSION:R:R}
 INST_DAT=	LICENSE.TERMS astest cata_ele.pickled catalo catapy	\
-		elements etude materiau
+		elements materiau
 INST_PY=	bibpyt commande
 INST_SH=	as_run parallel_cp
 DAT2FIX=	astout.export config.txt forma01a.export
@@ -335,6 +335,7 @@ pre-build:
 	${MKDIR} ${WRKSRC}/instdir/etc/codeaster
 	${CP} ${LOCALBASE}/aster/etc/codeaster/*		\
 		${WRKSRC}/instdir/etc/codeaster/
+	${ECHO_CMD} "#?vers : VVV?" >> ${WRKSRC}/instdir/etc/codeaster/aster
 	${CP} -R ${LOCALBASE}/aster/ASTK/ASTK_SERV/bin		\
 		${LOCALBASE}/aster/ASTK/ASTK_SERV/asrun		\
 		${WRKSRC}/instdir/
@@ -388,7 +389,6 @@ do-install:
 .endfor
 
 post-install:
-	@${TOUCH} ${inst_dir}/etude/forma01a.17
 	${LN} -fs ${LOCALBASE}/bin/kmetis ${tools_dir}/
 	${LN} -fs ${LOCALBASE}/bin/onmetis ${tools_dir}/
 	${LN} -fs ${LOCALBASE}/bin/pmetis ${tools_dir}/
@@ -419,7 +419,7 @@ regression-test:	install
 	@${ECHO_MSG} "Note: homard must be installed to run some steps succesfully."
 	(cd ${inst_dir};	\
 	HDF5_DISABLE_VERSION_CHECK=1	\
-	${LOCALBASE}/aster/ASTK/ASTK_SERV/bin/as_run astout.export)
+	${LOCALBASE}/aster/ASTK/ASTK_SERV/bin/as_run astout.export) || ${TRUE}
 	@${ECHO_MSG} "Check /tmp/resu_test/*.erre"
 .endif
 

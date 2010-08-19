@@ -1,15 +1,15 @@
---- as_setup.py.orig	2010-02-09 10:04:57.000000000 +0100
-+++ as_setup.py	2010-02-20 15:49:39.000000000 +0100
-@@ -47,6 +47,8 @@
+--- as_setup.py.orig	2010-07-07 18:18:13.000000000 +0200
++++ as_setup.py	2010-08-12 19:01:09.000000000 +0200
+@@ -46,6 +46,8 @@
+ import compileall
  import imp
- import shutil
  import pprint
 +import fileinput
 +import string
+ import distutils.sysconfig as SC
  from types import StringTypes
  EnumTypes=(list, tuple)
- 
-@@ -449,6 +451,17 @@
+@@ -472,6 +474,17 @@
        if iextr_as:
           self.Clean(to_delete=path)
  
@@ -27,15 +27,3 @@
  #-------------------------------------------------------------------------------
     def Configure(self, **kargs):
        """Configuration of the product.
-@@ -1302,7 +1315,10 @@
-       from socket import gethostname, gethostbyaddr
-       if host==None:
-          host = gethostname()
--      fqn, alias, ip = gethostbyaddr(host)
-+      try:
-+         fqn, alias, ip = gethostbyaddr(host)
-+      except:
-+         fqn='put-your-host-name.here'
-       if fqn.find('localhost')>-1:
-          alias=[a for a in alias if a.find('localhost')<0]
-          if len(alias)>0:

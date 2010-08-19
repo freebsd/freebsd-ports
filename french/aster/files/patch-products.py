@@ -1,9 +1,9 @@
---- products.py.orig	2010-02-09 10:04:58.000000000 +0100
-+++ products.py	2010-02-17 21:35:50.000000000 +0100
-@@ -900,16 +900,19 @@
+--- products.py.orig	2010-07-07 18:18:13.000000000 +0200
++++ products.py	2010-08-12 19:08:43.000000000 +0200
+@@ -907,16 +907,19 @@
             'HOME_PYTHON', 'PYTHON_EXE', 'PYTHONLIB',
             'HOME_MUMPS', 'HOME_ZMAT', 'HOME_MPI', 'INCLUDE_MUMPS', 'HOME_METIS',
-            'HOME_MED', 'HOME_HDF', 'HOME_CRPCRS', 'HOME_NUMERIC',
+            'HOME_MED', 'HOME_HDF', 'HOME_CRPCRS', 'HOME_NUMPY', 'USE_NUMPY',
 -           'LD', 'CC', 'F77', 'F90', 'CXXLIB', 'OTHERLIB',],
 +           'LD', 'CC', 'F77', 'F90', 'LDFLAGS', 'SYSLIB',
 +           'CFLAGS', 'CFLAGS_DBG',
@@ -24,7 +24,7 @@
             'NOBUILD', ],
     )
     cfg['ENV_SH']   = cfg.get('ENV_SH', '')
-@@ -945,6 +948,19 @@
+@@ -959,6 +962,19 @@
        opt['FFLAGS']     = '-O2'
        zmat_platform='Linux'
        mpilibs.extend(['mpich'])
@@ -44,7 +44,7 @@
     elif cfg['IFDEF'] == 'LINUX64':
        opt['SYSLIB']     = '-Wl,--allow-multiple-definition -Wl,--export-dynamic -lieee -ldl -lutil -lm'
        opt['LDFLAGS']    = '-v'
-@@ -1017,11 +1033,12 @@
+@@ -1031,11 +1047,12 @@
        cfg['MEDLIB']=''
  
     # ----- libs c++ (for MED and ZMAT)
@@ -62,7 +62,7 @@
  
     # ----- MUMPS
     if cfg['HOME_MUMPS'] != '':
-@@ -1030,12 +1047,15 @@
+@@ -1044,12 +1061,15 @@
        if not less_than_version(dict_prod['mumps'], '4.8.0'):
           mumps_lib.extend(['smumps', 'cmumps', 'mumps_common'])
        mumps_lib.extend(['pord', 'mpiseq'])
