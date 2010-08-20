@@ -1,0 +1,15 @@
+%%SITE_PERL%%/Child.pm
+%%SITE_PERL%%/Child/IPC/Pipe.pm
+%%SITE_PERL%%/Child/Link.pm
+%%SITE_PERL%%/Child/Link/IPC.pm
+%%SITE_PERL%%/Child/Link/IPC/Pipe.pm
+%%SITE_PERL%%/Child/Link/IPC/Pipe/Parent.pm
+%%SITE_PERL%%/Child/Link/IPC/Pipe/Proc.pm
+%%SITE_PERL%%/Child/Link/Parent.pm
+%%SITE_PERL%%/Child/Link/Proc.pm
+%%SITE_PERL%%/Child/Util.pm
+@dirrm %%SITE_PERL%%/Child/Link/IPC/Pipe
+@dirrm %%SITE_PERL%%/Child/Link/IPC
+@dirrm %%SITE_PERL%%/Child/Link
+@dirrm %%SITE_PERL%%/Child/IPC
+@dirrmtry %%SITE_PERL%%/Child

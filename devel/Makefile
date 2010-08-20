@@ -1218,6 +1218,7 @@
     SUBDIR += p5-Carp-Datum
     SUBDIR += p5-Cdk
     SUBDIR += p5-Check-ISA
+    SUBDIR += p5-Child
     SUBDIR += p5-Chooser
     SUBDIR += p5-Class-Accessor
     SUBDIR += p5-Class-Accessor-Chained
