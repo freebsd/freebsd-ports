@@ -1,5 +1,5 @@
---- mDNSPosix/Makefile.orig	2009-02-03 04:44:06.000000000 +0900
-+++ mDNSPosix/Makefile	2009-12-24 18:01:14.000000000 +0900
+--- mDNSPosix/Makefile.orig	2009-02-03 03:44:06.000000000 +0800
++++ mDNSPosix/Makefile	2010-08-17 23:23:31.000000000 +0800
 @@ -380,7 +380,7 @@
  LOCALBASE?=/usr/local
  INSTBASE=$(LOCALBASE)
@@ -18,3 +18,25 @@
  
  # 'setup' sets up the build directory structure the way we want
  setup:
+@@ -514,10 +514,10 @@
+ 	@$(LD) $(LINKOPTS) -o $@ $+
+ 	@$(STRIP) $@
+ 
+-Clients: setup libdns_sd ../Clients/build/dns-sd
++Clients: ../Clients/build/dns-sd
+ 	@echo "Clients done"
+ 
+-../Clients/build/dns-sd:
++../Clients/build/dns-sd: setup libdns_sd
+ 	@$(MAKE) -C ../Clients
+ 
+ # nss_mdns target builds the Name Service Switch module
+@@ -592,7 +592,7 @@
+ 	cp $< $@
+ 	chmod 444 $@
+ 
+-$(MANPATH)/man8/mdnsd.8: $(SHAREDDIR)/mDNSResponder.8
++$(MANPATH)/man8/mdnsd.8: $(SHAREDDIR)/mDNSResponderPosix.8
+ 	cp $< $@
+ 	chmod 444 $@
+ 
