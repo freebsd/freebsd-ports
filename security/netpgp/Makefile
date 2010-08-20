@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netpgp
-PORTVERSION=	20100601
+PORTVERSION=	20100710
 CATEGORIES=	security
 MASTER_SITES=	NETBSD/LOCAL_PORTS
 
@@ -16,6 +16,7 @@ COMMENT=	PGP signing, verification, encryption and decryption program
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/Licence
 
+USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
