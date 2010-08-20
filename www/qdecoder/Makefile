@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qdecoder
-PORTVERSION=	10.1.4
+PORTVERSION=	10.1.6
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.qdecoder.org/pub/qDecoder/
 DISTNAME=	qDecoder-${PORTVERSION}
