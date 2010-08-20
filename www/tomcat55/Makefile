@@ -17,7 +17,8 @@ MAINTAINER=	jgh@experts-exchange.com
 COMMENT=	Open-source Java web server by Apache, 5.5.x branch
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION?=	1.4+
+JAVA_VENDOR?=	freebsd
 NO_BUILD=	YES
 
 USE_RC_SUBR=	tomcat55.sh
