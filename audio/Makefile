@@ -379,6 +379,7 @@
     SUBDIR += libmad
     SUBDIR += libmikmod
     SUBDIR += libmodplug
+    SUBDIR += libmp3-archive-perl
     SUBDIR += libmp3splt
     SUBDIR += libmpcdec
     SUBDIR += libmpd

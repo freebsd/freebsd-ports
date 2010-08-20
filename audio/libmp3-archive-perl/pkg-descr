@@ -1,0 +1,7 @@
+MP3::Archive (packaged as libmp3-archive-perl) is a perl module to encapsulate
+the parsing and creation of filenames containing music metadata (artist, album,
+etc).
+
+It is used by mp3-archive-tools and mp3lint.
+
+WWW:	http://erislabs.net/ianb/projects/libmp3-archive-perl/
