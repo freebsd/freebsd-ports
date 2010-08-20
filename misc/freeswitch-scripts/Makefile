@@ -39,6 +39,8 @@ PLIST_SUB+=	WITH_${i}=""
 .endfor
 
 do-install:
+	${TOUCH} ${PREFIX}/etc/${BASE_PORTNAME}/scripts/.freeswitch-scripts
+
 .if defined(WITH_JAVASCRIPT)
 	@${RM} ${WRKSRC}/javascript/ps_pizza.js
 	@${RM} ${WRKSRC}/javascript/pizza.js

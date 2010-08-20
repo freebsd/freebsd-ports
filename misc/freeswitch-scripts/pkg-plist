@@ -1,3 +1,4 @@
+etc/freeswitch/scripts/.freeswitch-scripts
 %%WITH_JAVASCRIPT%%etc/freeswitch/scripts/javascript/aadir/README
 %%WITH_JAVASCRIPT%%etc/freeswitch/scripts/javascript/aadir/aadir.js
 %%WITH_JAVASCRIPT%%etc/freeswitch/scripts/javascript/api.js
