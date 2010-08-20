@@ -436,8 +436,8 @@ www/freeswitch/htdocs/slim.swf
 www/freeswitch/htdocs/slimtest.htm
 @dirrm www/freeswitch/htdocs
 @dirrm www/freeswitch
-@dirrm share/freeswitch/sounds
-@dirrm share/freeswitch
+@dirrmtry share/freeswitch/sounds
+@dirrmtry share/freeswitch
 %%WITH_MODPERL%%@dirrm perl
 @dirrm lib/freeswitch/mod
 @dirrm lib/freeswitch/lib
@@ -471,7 +471,7 @@ www/freeswitch/htdocs/slimtest.htm
 @dirrm etc/freeswitch/conf/lang
 @dirrm etc/freeswitch/conf/jingle_profiles
 @dirrm etc/freeswitch/conf/ivr_menus
-@dirrm etc/freeswitch/conf/directory/default
+@dirrmtry etc/freeswitch/conf/directory/default
 @dirrm etc/freeswitch/conf/directory
 @dirrm etc/freeswitch/conf/dialplan/public
 @dirrm etc/freeswitch/conf/dialplan/default
