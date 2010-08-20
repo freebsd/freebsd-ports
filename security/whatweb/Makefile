@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	whatweb
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	security www
 MASTER_SITES=	http://www.morningstarsecurity.com/downloads/
 
@@ -18,6 +18,7 @@ NO_BUILD=	yes
 PORTDOCS=	README INSTALL CHANGELOG TODO How-to-develop-WhatWeb-plugins-1.1.txt
 MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	no
+LICENSE=	GPLv2
 
 .include <bsd.port.pre.mk>
 
