@@ -479,6 +479,7 @@
     SUBDIR += moc
     SUBDIR += modplugplay
     SUBDIR += mp-player
+    SUBDIR += mp3-archive-tools
     SUBDIR += mp32ogg
     SUBDIR += mp3_check
     SUBDIR += mp3asm
