@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.2.14-alpha
+DISTVERSION=	0.2.2.15-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.cypherpunks.at/dist/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.anonymity.cn/dist/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	An anonymizing overlay network for TCP
 
 RUN_DEPENDS=	torsocks:${PORTSDIR}/net/torsocks
