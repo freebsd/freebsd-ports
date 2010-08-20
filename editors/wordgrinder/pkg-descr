@@ -1,0 +1,11 @@
+WordGrinder is a simple, Unicode-aware word processor that runs on the
+console. It's designed to get the hell out of your way and let you write;
+it does very little, but what it does it does well.
+
+It supports basic paragraph styles, basic character styles, basic screen
+markup, a menu interface that means you don't have to remember complex
+key sequences, HTML import and export, and some other useful features.
+
+WordGrinder does not require X. It runs in a terminal. 
+
+WWW: http://wordgrinder.sf.net
