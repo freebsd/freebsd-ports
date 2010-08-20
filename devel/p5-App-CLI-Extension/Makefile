@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	App-CLI-Extension
-PORTVERSION=	1.21
+PORTVERSION=	1.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0*$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extension for App::CLI extension module
@@ -27,6 +28,7 @@ MAN3=	App::CLI::Extension::Component::RunCommand.3 \
 	App::CLI::Extension::Component::InstallCallback.3 \
 	App::CLI::Extension.3 \
 	App::CLI::Extension::Component::Config.3 \
-	App::CLI::Extension::Component::Stash.3
+	App::CLI::Extension::Component::Stash.3 \
+	App::CLI::Extension::Exception.3
 
 .include <bsd.port.mk>

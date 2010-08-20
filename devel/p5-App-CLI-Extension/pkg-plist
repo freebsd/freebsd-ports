@@ -6,6 +6,7 @@
 %%SITE_PERL%%/App/CLI/Extension/Component/OriginalArgv.pm
 %%SITE_PERL%%/App/CLI/Extension/Component/ErrorHandler.pm
 %%SITE_PERL%%/App/CLI/Extension/Component/Stash.pm
+%%SITE_PERL%%/App/CLI/Extension/Exception.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/CLI/Extension
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/CLI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
