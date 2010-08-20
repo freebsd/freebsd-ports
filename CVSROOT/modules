@@ -1528,6 +1528,7 @@ check_multi                     ports/net-mgmt/check_multi
 check_snmp_pkgvuln              ports/net-mgmt/check_snmp_pkgvuln
 checkbot                        ports/www/checkbot
 checkdns                        ports/dns/checkdns
+checkheaders                    ports/devel/checkheaders
 checkmate                       ports/audio/checkmate
 checkmol                        ports/science/checkmol
 checkpassword                   ports/security/checkpassword
@@ -1992,6 +1993,7 @@ ctpp2                           ports/textproc/ctpp2
 ctrace                          ports/net/ctrace
 ctris                           ports/games/ctris
 ctrlproxy                       ports/irc/ctrlproxy
+ctronome                        ports/audio/ctronome
 ctwm                            ports/x11-wm/ctwm
 cu-prolog                       ports/lang/cu-prolog
 cube                            ports/games/cube
@@ -7568,6 +7570,7 @@ ldapscripts                     ports/net/ldapscripts
 ldapsdk                         ports/net/ldapsdk
 ldapsh                          ports/net/ldapsh
 ldapvi                          ports/sysutils/ldapvi
+ldc-devel                       ports/lang/ldc-devel
 ldmud                           ports/games/ldmud
 ldns                            ports/dns/ldns
 ldnsm                           ports/dns/ldnsm
