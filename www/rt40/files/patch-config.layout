@@ -1,18 +1,19 @@
---- config.layout.orig	2008-08-18 11:13:57.000000000 -0400
-+++ config.layout	2009-01-21 10:35:34.000000000 -0500
-@@ -85,25 +85,26 @@
+--- config.layout.orig	2010-04-01 14:52:01.000000000 +0200
++++ config.layout	2010-04-01 14:54:23.000000000 +0200
+@@ -88,26 +88,27 @@
  </Layout>
  
  <Layout FreeBSD>
 -  prefix:		/usr/local
-+  prefix:		%%PREFIX%%	
++  prefix:		%%PREFIX%%
    exec_prefix:		${prefix}
    bindir:		${exec_prefix}/bin
    sbindir:		${exec_prefix}/sbin
    sysconfdir:		${prefix}/etc+
    mandir:		${prefix}/man
+   plugindir:		${prefix}/plugins
 -  libdir:		${prefix}/lib+
-+  libdir:	 	%%SITE_PERL%%	
++  libdir:		%%SITE_PERL%%
    datadir:		${prefix}/share+
    htmldir:		${datadir}/html
 +  sharedir:		${prefix}/share+
