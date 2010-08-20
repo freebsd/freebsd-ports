@@ -107,6 +107,7 @@
     SUBDIR += hamsterdb
     SUBDIR += hk_classes
     SUBDIR += hsqldb
+    SUBDIR += hypertable
     SUBDIR += innobackup
     SUBDIR += innotop
     SUBDIR += ip4r
