@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.7.1.1
-PORTREVISION=	1
+PORTVERSION=	1.7.2.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	software/scm/${PORTNAME}
@@ -165,7 +164,8 @@ MAN7=		gitcli.7 \
 		gitcore-tutorial.7 \
 		gitdiffcore.7 \
 		gittutorial-2.7 \
-		gitworkflows.7
+		gitworkflows.7 \
+		gitrevisions.7
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -354,6 +354,9 @@ post-patch:
 .ifndef (WITH_SVN)
 	@${REINPLACE_CMD} -e '/git-svn.perl/d' ${WRKSRC}/Makefile
 .endif
+.ifndef (WITH_GITWEB)
+	@${REINPLACE_CMD} -e '/$$(MAKE) -C gitweb install/d' ${WRKSRC}/Makefile
+.endif
 
 post-build:
 .ifdef (WITH_P4) || defined (WITH_CONTRIB)
@@ -385,14 +388,6 @@ post-install:
 		${PREFIX}/lib/xemacs/site-lisp/git/git.el
 	${LN} -sf ${PREFIX}/share/emacs/site-lisp/git/git-blame.el \
 		${PREFIX}/lib/xemacs/site-lisp/git/git-blame.el
-.ifdef (WITH_GITWEB)
-	${RM} ${WRKSRC}/gitweb/Makefile \
-		${WRKSRC}/gitweb/GITWEB-BUILD-OPTIONS \
-		${WRKSRC}/gitweb/gitweb.perl
-	@${ECHO_MSG} "===> Installing gitweb files"
-	${MKDIR} ${EXAMPLESDIR}/gitweb
-	(cd ${WRKSRC}/gitweb/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/gitweb)
-.endif
 .ifdef (WITH_CONTRIB)
 	@${ECHO_MSG} "===> Installing contributed scripts"
 	${MKDIR} ${PREFIX}/share/git-core/contrib
