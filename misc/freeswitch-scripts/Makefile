@@ -7,6 +7,7 @@
 
 PORTNAME=	freeswitch-scripts
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://files.freeswitch.org/
 DISTNAME=	${BASE_PORTNAME}-${PORTVERSION}
