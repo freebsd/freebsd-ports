@@ -8,6 +8,7 @@
 
 PORTNAME=	argouml
 PORTVERSION=	0.30.2
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://argouml-downloads.tigris.org/nonav/argouml-${PORTVERSION}/
 DISTNAME=	ArgoUML-${PORTVERSION}
@@ -33,6 +34,13 @@ JAVA_VERSION=	1.5+
 
 SUB_FILES=	argouml.sh
 PORTDOCS=	manual-${PORTVERSION}.pdf quickguide-${PORTVERSION}.pdf
+
+DESKTOP_ENTRIES=	"ArgoUML" \
+			"Create advanced UML diagrams" \
+			"" \
+			"argouml" \
+			"Application;Development;Building;Java;" \
+			false
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/argouml.sh ${PREFIX}/bin/argouml
