@@ -48,6 +48,7 @@ include/sm/pmfdef.h
 include/sm/pmilter.h
 include/sm/smreplycodes.h
 include/sm/smmts.h
+include/sm/ssmdef.h
 lib/meta1/libcstrr.a
 lib/meta1/libevthr.a
 lib/meta1/libmtar.a
