@@ -7,9 +7,9 @@ include/exiv2/cr2image.hpp
 include/exiv2/crwimage.hpp
 include/exiv2/datasets.hpp
 include/exiv2/error.hpp
+include/exiv2/easyaccess.hpp
 include/exiv2/exif.hpp
 include/exiv2/exv_conf.h
-include/exiv2/exv_msvc.h
 include/exiv2/fujimn.hpp
 include/exiv2/futils.hpp
 include/exiv2/gifimage.hpp
@@ -26,12 +26,14 @@ include/exiv2/olympusmn.hpp
 include/exiv2/orfimage.hpp
 include/exiv2/panasonicmn.hpp
 include/exiv2/pentaxmn.hpp
+include/exiv2/pgfimage.hpp
 include/exiv2/pngimage.hpp
 include/exiv2/preview.hpp
 include/exiv2/properties.hpp
 include/exiv2/psdimage.hpp
 include/exiv2/rafimage.hpp
 include/exiv2/rcsid.hpp
+include/exiv2/rw2image.hpp
 include/exiv2/sigmamn.hpp
 include/exiv2/sonymn.hpp
 include/exiv2/tags.hpp
@@ -45,7 +47,7 @@ include/exiv2/xmpsidecar.hpp
 lib/libexiv2.a
 lib/libexiv2.la
 lib/libexiv2.so
-lib/libexiv2.so.7
+lib/libexiv2.so.9
 libdata/pkgconfig/exiv2.pc
 share/locale/de/LC_MESSAGES/exiv2.mo
 share/locale/es/LC_MESSAGES/exiv2.mo
