@@ -4,7 +4,8 @@
 #
 
 # PROVIDE: trafficserver
-# REQUIRE: DAEMON
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
 
 . /etc/rc.subr
 
@@ -14,7 +15,7 @@ command="/usr/sbin/daemon -p ${pidfile} %%PREFIX%%/bin/traffic_server"
 procname="%%PREFIX%%/bin/traffic_server"
 
 load_rc_config "$name"
+
 : ${trafficserver_enable="NO"}
-: ${trafficserver_flags=""}
 
 run_rc_command "$1"
