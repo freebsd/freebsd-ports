@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ibus-el
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.0
 #PORTREVISION=	0
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://www11.atwiki.jp/s-irie/pub/emacs/ibus/
