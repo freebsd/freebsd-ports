@@ -7,7 +7,7 @@
 
 PORTNAME=	qtpfsgui
 PORTVERSION=	1.9.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical user interface that provides a workflow for HDR imaging
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
-LIB_DEPENDS=	exiv2.7:${PORTSDIR}/graphics/exiv2 \
+LIB_DEPENDS=	exiv2.9:${PORTSDIR}/graphics/exiv2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		tiff.4:${PORTSDIR}/graphics/tiff \

@@ -7,7 +7,7 @@
 
 PORTNAME=	geeqie
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -40,7 +40,7 @@ OPTIONS=	EXIV2 "Metadata editing" on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_EXIV2)
-LIB_DEPENDS+=	exiv2.7:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS+=	exiv2.9:${PORTSDIR}/graphics/exiv2
 CONFIGURE_ARGS+=--enable-exiv2
 .else
 CONFIGURE_ARGS+=--disable-exiv2

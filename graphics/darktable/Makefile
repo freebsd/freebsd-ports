@@ -15,7 +15,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A virtual lighttable and darkroom for photographers
 
 LIB_DEPENDS=	gegl-0.1.101:${PORTSDIR}/graphics/gegl \
-		exiv2.7:${PORTSDIR}/graphics/exiv2 \
+		exiv2.9:${PORTSDIR}/graphics/exiv2 \
 		lensfun.2:${PORTSDIR}/graphics/lensfun \
 		lcms.1:${PORTSDIR}/graphics/lcms
 
