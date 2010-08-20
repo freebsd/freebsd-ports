@@ -7,7 +7,7 @@
 
 PORTNAME=	freeswitch-core
 PORTVERSION=	1.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/:1 \
 		http://files.freeswitch.org/downloads/libs/:2
