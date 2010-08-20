@@ -7,6 +7,7 @@
 
 PORTNAME=	k3b
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -92,6 +93,7 @@ PLIST_SUB+=	MAD="@comment "
 .endif
 
 .if defined(WITH_MPC)
+CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
 LIB_DEPENDS+=	mpcdec:${PORTSDIR}/audio/libmpcdec
 PLIST_SUB+=	MPC=""
 .else
