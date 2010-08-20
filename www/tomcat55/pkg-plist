@@ -17,12 +17,11 @@
 %%T%%/bin/catalina-tasks.xml
 %%T%%/bin/catalina.sh
 %%T%%/bin/commons-daemon.jar
+%%T%%/bin/commons-daemon-native.tar.gz
 %%T%%/bin/commons-logging-api-1.1.1.jar
 %%T%%/bin/digest.sh
 %%JAVA14%%%%T%%/bin/jmx.jar
-%%T%%/bin/jkstatus-tasks.xml
 %%T%%/bin/jmxaccessor-tasks.xml
-%%T%%/bin/jsvc.tar.gz
 %%T%%/bin/setclasspath.sh
 %%T%%/bin/shutdown.sh
 %%T%%/bin/startup.sh
@@ -74,7 +73,6 @@
 %%T%%/server/lib/tomcat-apr.jar
 %%T%%/server/lib/tomcat-coyote.jar
 %%T%%/server/lib/tomcat-http.jar
-%%T%%/server/lib/tomcat-jkstatus-ant.jar
 %%T%%/server/lib/tomcat-util.jar
 %%T%%/server/webapps/host-manager/WEB-INF/lib/catalina-host-manager.jar
 %%T%%/server/webapps/host-manager/WEB-INF/web.xml
@@ -843,12 +841,12 @@
 %%T%%/webapps/webdav/tomcat.gif
 @exec mkdir %D/%%T%%/work || true
 @exec mkdir %D/%%T%%/webapps/balancer/images || true
-@exec mkdir %D/%%T%%/temp || true
 @exec mkdir %D/%%T%%/shared || true
 @exec mkdir %D/%%T%%/shared/lib || true
 @exec mkdir %D/%%T%%/shared/classes || true
 @exec mkdir %D/%%T%%/server/classes || true
-@exec mkdir %D/%%T%%/common/endorsed ||true
+@exec mkdir %D/%%T%%/common/endorsed || true
+@exec mkdir %D/%%T%%/common/classes || true
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/conf %D/%%T%%/logs %D/%%T%%/temp %D/%%T%%/work
 @dirrm %%T%%/work
 @dirrm %%T%%/webapps/webdav/WEB-INF
@@ -1022,8 +1020,5 @@
 @dirrm %%T%%/common/endorsed
 @dirrm %%T%%/common/classes
 @dirrm %%T%%/common
-@dirrm %%T%%/bin/procrun/ia64
-@dirrm %%T%%/bin/procrun/amd64
-@dirrm %%T%%/bin/procrun
 @dirrm %%T%%/bin
 @dirrm %%T%%
