@@ -1,0 +1,24 @@
+@comment $FreeBSD$
+bin/mp3lint
+bin/mp3lintsum
+bin/mp3lintskip
+etc/mp3lintrc
+%%SITE_PERL%%/MP3/Archive/Lint.pm
+%%SITE_PERL%%/MP3/Archive/Lint/Conf.pm
+%%SITE_PERL%%/MP3/Archive/Lint/Skip.pm
+%%SITE_PERL%%/MP3/Archive/Lint/Tool.pm
+%%SITE_PERL%%/MP3/Archive/Lint/Tools/Au.pm
+%%SITE_PERL%%/MP3/Archive/Lint/Tools/Dir.pm
+%%SITE_PERL%%/MP3/Archive/Lint/Tools/Filename.pm
+%%SITE_PERL%%/MP3/Archive/Lint/Tools/Filesys.pm
+%%SITE_PERL%%/MP3/Archive/Lint/Tools/Flac.pm
+%%SITE_PERL%%/MP3/Archive/Lint/Tools/Id3.pm
+%%SITE_PERL%%/MP3/Archive/Lint/Tools/M3u.pm
+%%SITE_PERL%%/MP3/Archive/Lint/Tools/Mp3check.pm
+%%SITE_PERL%%/MP3/Archive/Lint/Tools/Mp3info.pm
+%%SITE_PERL%%/MP3/Archive/Lint/Tools/Ogg.pm
+%%SITE_PERL%%/MP3/Archive/Lint/Tools/Wav.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/mp3lint/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/mp3lint
+@dirrmtry %%SITE_PERL%%/MP3/Archive/Lint/Tools
+@dirrmtry %%SITE_PERL%%/MP3/Archive/Lint
