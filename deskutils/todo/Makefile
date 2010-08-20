@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	todo
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	deskutils
 MASTER_SITES=	http://cloud.github.com/downloads/ginatrapani/todo.txt-cli/
 DISTNAME=	todo.txt_cli-${PORTVERSION}
