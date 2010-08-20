@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tomcat
-PORTVERSION=	5.5.28
-PORTREVISION=	1
+PORTVERSION=	5.5.30
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-5/v${PORTVERSION}/bin
@@ -87,7 +86,8 @@ pre-patch:
 
 post-patch:
 	@${ECHO_MSG} -n ">> Removing unneeded files..."
-	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'`
+	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'` `${FIND} ${WRKSRC} -name '*.dll'`
+	@${RMDIR} ${WRKSRC}/bin/[i,x]64
 	@${ECHO_MSG} " [ DONE ]"
 
 .for file in ${REPLACE_FILES}
