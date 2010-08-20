@@ -8,9 +8,10 @@
 PORTNAME=	gnustep-base
 .if defined(WITH_GNUSTEP_DEVEL)
 PORTVERSION=	1.21.1
+PORTREVISION=	1
 .else
 PORTVERSION=	1.19.3
-PORTREVISION=	2
+PORTREVISION=	3
 .endif
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
@@ -19,6 +20,7 @@ MASTER_SITE_SUBDIR=	core
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep Foundation library
 
+LIB_DEPENDS+=	ffi.5:${PORTSDIR}/devel/libffi
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
@@ -42,7 +44,7 @@ USE_ICONV=	yes
 
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
-CFLAGS+=	-I${LOCALBASE}/include/libxml2/libxml
+CFLAGS+=	-I${LOCALBASE}/include/libxml2/libxml -DHAVE_DLADDR=1
 BREAKS_IF_PEDANTIC=	yes
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 ETCDIR=		${LOCALBASE}/etc
@@ -55,12 +57,6 @@ PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 EXTRA_PATCHES+=	${FILESDIR}/NSFileManager.m.patch
 
 .include <bsd.port.pre.mk>
-
-.if defined(GNUSTEP_WITH_GCC42)
-.if (${ARCH} == i386) || (${ARCH} == amd64)
-BROKEN=		Does not build with gcc42
-.endif
-.endif
 
 PATH:=	${PREFIX}/System/Tools:${PATH}
 
