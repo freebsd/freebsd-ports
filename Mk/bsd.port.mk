@@ -492,7 +492,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  or a sound server which supports the FreeBSD native one),
 #				  use the default or the X11 prefix if it's a leaf port
 #				  (e.g. a game or program).
-#				  Implies NO_MTREE=yes, and, if INSTALLS_SHLIB is defined:
+#				  Implies NO_MTREE=yes, and, if USE_LDCONFIG is defined:
 #				    - USE_LINUX=yes
 #				    - appropriate invocation of the Linux ldconfig
 # USE_LINUX_RPM	- Set to yes to pull in variables and targets useful to Linux
@@ -680,7 +680,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Shell glob patterns can be used, directories include
 #				  the entire subtree of contained files and directories.
 #				  Should not be set when no documentation files are
-#				  installed (for example because NOPORTDOCS is defined).
+#				  installed.
 #				  Useful for dynamically generated documentation.
 #
 # Set the following to specify all documentation your port installs into
@@ -690,7 +690,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Shell glob patterns can be used, directories include
 #				  the entire subtree of contained files and directories.
 #				  Should not be set when no examples files are
-#				  installed (for example because NOPORTEXAMPLES is defined).
+#				  installed.
 #				  Useful for dynamically generated examples.
 #
 # Set the following to specify all documentation your port installs into
@@ -700,7 +700,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Shell glob patterns can be used, directories include
 #				  the entire subtree of contained files and directories.
 #				  Should not be set when no data files are
-#				  installed (for example because NOPORTDATA is defined).
+#				  installed.
 #				  Useful for dynamically generated data files.
 #
 # Default targets and their behaviors:
@@ -761,7 +761,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # deinstall-all	- Remove all installations with the same PKGORIGIN.
 # package		- Create a package from an _installed_ port.
 # package-recursive
-#				- Create a package for a port and _all_ of its dependancies.
+#				- Create a package for a port and _all_ of its dependencies.
 # describe		- Try to generate a one-line description for each port for
 #				  use in INDEX files and the like.
 # checkpatch	- Do a "patch -C" instead of a "patch".  Note that it may
@@ -777,14 +777,16 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Automatically run prior to extract, patch, configure, build,
 #				  install, and package.
 # config-recursive
-#				- Configure options for this port for this port and all
+#				- Configure options for this port for a port and all its
 #				  dependencies.
 # showconfig	- Display options config for this port.
 # showconfig-recursive
-#				- Display options config for this port and all dependencies.
+#				- Display options config for this port and all its
+#				  dependencies.
 # rmconfig		- Remove the options config for this port.
 # rmconfig-recursive
-#				- Remove the options config for this port and all dependencies.
+#				- Remove the options config for this port and all its
+#				  dependencies.
 #
 # Default sequence for "all" is:
 #
@@ -990,25 +992,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # SUB_LIST		- List of "variable=value" pair for substitution in ${SUB_FILES}
 #				  Some pairs are added by default: eg. PREFIX=${PREFIX}
 #
-# INSTALLS_SHLIB
-#				- If set, bsd.port.mk will automatically run ldconfig commands
-#				  from post-install and also add appropriate @exec/@unexec
-#				  directives to directories listed in LDCONFIG_DIRS. (deprecated)
-#				  If USE_LINUX_PREFIX is defined, the Linux version of
-#				  ldconfig will be used instead of the native FreeBSD
-#				  version, and LDCONFIG_DIRS will be ignored.
-# LDCONFIG_DIRS	- List of directories to run ldconfig if INSTALLS_SHLIB is set.
-#				  Note that this is passed through sed just like the
-#				  rest of PLIST, so ${PLIST_SUB} substitutions also
-#				  apply here.  It is recommended that you use
-#				  %%PREFIX%% for ${PREFIX}, %%LOCALBASE%% for
-#				  ${LOCALBASE} and %%X11BASE%% for ${X11BASE}.
-#				  Default: %%PREFIX%%/lib
-# USE_LDCONFIG  - If set to "yes", this subsumes the function of the
-#				  deprecated variable INSTALLS_SHLIB and adds ${PREFIX}/lib
-#				  to the list of directories to be searched for shared
-#				  libraries.  Otherwise, this is a list of directories to
-#				  be added to that list.  The directory names are written to
+# USE_LDCONFIG  - If set to "yes", this adds ${PREFIX}/lib to the list of
+#				  directories to be searched for shared libraries.
+#				  Otherwise, this is a list of directories to be added to that
+#				  list. The directory names are written to
 #				  ${PREFIX}/libdata/ldconfig/${UNIQUENAME} which is then
 #				  used by the ldconfig startup script.
 #				  This mechanism replaces ldconfig scripts installed by some
@@ -1440,12 +1427,6 @@ PREFIX?=		${LOCALBASE}
 
 .if defined(USE_LINUX_PREFIX)
 LDCONFIG_CMD?=			${LINUXBASE}/sbin/ldconfig -r ${LINUXBASE}
-LDCONFIG_PLIST_EXEC_CMD?=	${LDCONFIG_CMD}
-LDCONFIG_PLIST_UNEXEC_CMD?=	${LDCONFIG_CMD}
-.else
-LDCONFIG_CMD?=			${LDCONFIG} -m ${LDCONFIG_RUNLIST}
-LDCONFIG_PLIST_EXEC_CMD?=	${LDCONFIG} -m ${LDCONFIG_PLIST}
-LDCONFIG_PLIST_UNEXEC_CMD?=	${LDCONFIG} -R
 .endif
 
 PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
@@ -1542,7 +1523,7 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 .endif
 
-.if defined(USE_APACHE) || defined(APACHE_COMPAT)
+.if defined(USE_APACHE)
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .endif
 
@@ -1558,7 +1539,7 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.gecko.mk"
 .endif
 
-.if defined(WANT_GNOME) || defined(USE_GNOME)
+.if defined(WANT_GNOME) || defined(USE_GNOME) || defined(INSTALLS_ICONS)
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
 .endif
 
@@ -1901,7 +1882,7 @@ LIB_DEPENDS+=	intl.${USE_GETTEXT}:${PORTSDIR}/devel/gettext
 .	endif
 .endif
 
-.if defined(USE_LINUX_PREFIX) && (defined(INSTALLS_SHLIB) || defined(USE_LDCONFIG))
+.if defined(USE_LINUX_PREFIX) && defined(USE_LDCONFIG)
 # we need ${LINUXBASE}/sbin/ldconfig
 USE_LINUX?=	yes
 .endif
@@ -2294,7 +2275,7 @@ _MAKE_JOBS=		#
 .else
 .if defined(MAKE_JOBS_SAFE) || defined(FORCE_MAKE_JOBS)
 MAKE_JOBS_NUMBER?=	`${SYSCTL} -n kern.smp.cpus`
-_MAKE_JOBS=		-j${MAKE_JOBS_NUMBER}
+_MAKE_JOBS?=		-j${MAKE_JOBS_NUMBER}
 .if defined(FORCE_MAKE_JOBS) && !defined(MAKE_JOBS_SAFE)
 BUILD_FAIL_MESSAGE+=	"You have chosen to use multiple make jobs (parallelization) for all ports.  This port was not tested for this setting.  Please remove FORCE_MAKE_JOBS and retry the build before reporting the failure to the maintainer."
 .endif
@@ -3181,14 +3162,6 @@ _DESKTOPDIR_REL=	${DESKTOPDIR:S,^${PREFIX}/,,}/
 _DESKTOPDIR_REL=
 .endif
 
-# Put this as far down as possible so it will catch all PLIST_SUB definitions.
-
-.if defined(INSTALLS_SHLIB)
-LDCONFIG_DIRS?=	%%PREFIX%%/lib
-LDCONFIG_PLIST!=	${ECHO_CMD} ${LDCONFIG_DIRS} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
-LDCONFIG_RUNLIST!=	${ECHO_CMD} ${LDCONFIG_PLIST} | ${SED} -e "s!%D!${PREFIX}!g"
-.endif
-
 .MAIN: all
 
 ################################################################
@@ -4043,7 +4016,7 @@ install-mtree:
 
 .if !target(install-ldconfig-file)
 install-ldconfig-file:
-.if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32) || defined(INSTALLS_SHLIB)
+.if defined(USE_LDCONFIG) || defined(USE_LDCONFIG32)
 .if defined(USE_LDCONFIG)
 .if defined(USE_LINUX_PREFIX)
 	@${ECHO_MSG} "===>   Running linux ldconfig"
@@ -4093,24 +4066,9 @@ install-ldconfig-file:
 .endif
 .endif
 .endif
-# This can be removed once all ports have been converted to USE_LDCONFIG.
 .if defined(INSTALLS_SHLIB)
-.if defined(USE_LDCONFIG)
-	@${ECHO_MSG} "===>   INSTALLS_SHLIB and USE_LDCONFIG both defined."
+	@${ECHO_MSG} "INSTALLS_SHLIB is deprecated. Use USE_LDCONFIG instead."
 .endif
-.if defined(USE_LDCONFIG32)
-	@${ECHO_MSG} "===>   INSTALLS_SHLIB and USE_LDCONFIG32 both defined."
-.endif
-.if !defined(INSTALL_AS_USER)
-	@${ECHO_MSG} "===>   Running ldconfig"
-	${LDCONFIG_CMD}
-.else
-	@${ECHO_MSG} "===>   Running ldconfig (errors are ignored)"
-	-${LDCONFIG_CMD}
-.endif
-.endif
-.else
-	@${DO_NADA}
 .endif
 .endif
 
@@ -5568,9 +5526,6 @@ missing:
 # If this ever changes, portmgr should contact the portsnap maintainer
 # first to avoid gratuitous breakage.
 
-# XXX Older versions do not support the :u make modifier.  The .else
-# clause can be removed once 6.3-RELEASE is no longer supported.
-.if ${OSVERSION} >= 603104
 . if !target(describe)
 _EXTRACT_DEPENDS=${EXTRACT_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u}
 _PATCH_DEPENDS=${PATCH_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u}
@@ -5599,71 +5554,6 @@ describe:
 		esac; \
 	done < ${DESCR}; ${ECHO_CMD}
 . endif
-.else
-. if !target(describe)
-describe:
-	@${ECHO_CMD} -n "${PKGNAME}|${.CURDIR}|${PREFIX}|"
-. if defined(COMMENT)
-	@${ECHO_CMD} -n ${COMMENT:Q}
-. else
-	@${ECHO_CMD} -n '** No Description'
-. endif
-	@perl -e ' \
-		if ( -f q{${DESCR}} ) { \
-			print q{|${DESCR}}; \
-		} else { \
-			print q{|/dev/null}; \
-		} \
-		print q{|${MAINTAINER}|${CATEGORIES}|}; \
-		@edirs = map((split /:/)[1], split(q{ }, q{${EXTRACT_DEPENDS}})); \
-		@pdirs = map((split /:/)[1], split(q{ }, q{${PATCH_DEPENDS}})); \
-		@fdirs = map((split /:/)[1], split(q{ }, q{${FETCH_DEPENDS}})); \
-		@bdirs = map((split /:/)[1], split(q{ }, q{${BUILD_DEPENDS}})); \
-		@rdirs = map((split /:/)[1], split(q{ }, q{${RUN_DEPENDS}})); \
-		@ldirs = map((split /:/)[1], split(q{ }, q{${LIB_DEPENDS}})); \
-		for my $$i (\@edirs, \@pdirs, \@fdirs, \@bdirs, \@rdirs, \@ddirs, \@ldirs) { \
-			my @dirs = @$$i; \
-			@$$i = (); \
-			for (@dirs) { \
-				if (-d $$_) { \
-					push @$$i, $$_; \
-				} else { \
-					print STDERR qq{${PKGNAME}: \"$$_\" non-existent -- dependency list incomplete\n}; \
-					exit(1); \
-				} \
-			} \
-		} \
-		for (@edirs, @ddirs) { \
-			$$xe{$$_} = 1; \
-		} \
-		print join(q{ }, sort keys %xe), q{|}; \
-		for (@pdirs, @ddirs) { \
-			$$xp{$$_} = 1; \
-		} \
-		print join(q{ }, sort keys %xp), q{|}; \
-		for (@fdirs, @ddirs) { \
-			$$xf{$$_} = 1; \
-		} \
-		print join(q{ }, sort keys %xf), q{|}; \
-		for (@bdirs, @ddirs, @ldirs) { \
-			$$xb{$$_} = 1; \
-		} \
-		print join(q{ }, sort keys %xb), q{|}; \
-		for (@rdirs, @ddirs, @ldirs) { \
-			$$xr{$$_} = 1; \
-		} \
-		print join(q{ }, sort keys %xr), q{|}; \
-		if (open(DESCR, q{${DESCR}})) { \
-			while (<DESCR>) { \
-				if (/^WWW:\s+(\S+)/) { \
-					print $$1; \
-					last; \
-				} \
-			} \
-		} \
-		print qq{\n};'
-. endif
-.endif
 
 www-site:
 .if exists(${DESCR})
@@ -5797,14 +5687,6 @@ generate-plist:
 .for dir in ${PLIST_DIRS}
 	@${ECHO_CMD} ${dir} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} -e 's,^,@dirrm ,' >> ${TMPPLIST}
 .endfor
-# To be removed once INSTALLS_SHLIB has been eradicated.
-.if defined(INSTALLS_SHLIB) && !defined(INSTALL_AS_USER)
-	@${ECHO_CMD} "@exec ${LDCONFIG_PLIST_EXEC_CMD}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${LDCONFIG_PLIST_UNEXEC_CMD}" >> ${TMPPLIST}
-.elif defined(INSTALLS_SHLIB)
-	@${ECHO_CMD} "@exec ${LDCONFIG_PLIST_EXEC_CMD} || ${TRUE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${LDCONFIG_PLIST_UNEXEC_CMD} || ${TRUE}" >> ${TMPPLIST}
-.endif
 .if defined(USE_LINUX_PREFIX)
 .if defined(USE_LDCONFIG)
 	@${ECHO_CMD} "@exec ${LDCONFIG_CMD}" >> ${TMPPLIST}
@@ -6446,6 +6328,21 @@ install-desktop-entries:
 .else
 	@${DO_NADA}
 .endif
+.endif
+
+.if !target(check-license)
+check-license:
+	@${DO_NADA}
+.endif
+
+.if !target(ask-license)
+ask-license:
+	@${DO_NADA}
+.endif
+
+.if !target(install-license)
+install-license:
+	@${DO_NADA}
 .endif
 
 .endif
