@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maxima
-PORTVERSION=	5.22.0
+PORTVERSION=	5.22.1
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
 		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
+LICENSE=		GPLv2
 USE_TK =		84+
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes

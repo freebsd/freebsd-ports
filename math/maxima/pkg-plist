@@ -916,6 +916,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/blas/ztrmv.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/blas/ztrsm.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/blas/ztrsv.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/lapack/dgesv.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/eigensys.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/lapack-package.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/lapack.mac
