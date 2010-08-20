@@ -47,6 +47,7 @@ bin/gmv
 bin/gnice
 bin/gnl
 bin/gnohup
+bin/gnproc
 bin/god
 bin/gpaste
 bin/gpathchk
@@ -113,6 +114,8 @@ lib/coreutils/glibstdbuf.so
 %%NLS%%share/locale/da/LC_TIME/coreutils.mo
 %%NLS%%share/locale/de/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/de/LC_TIME/coreutils.mo
+%%NLS%%share/locale/en/LC_MESSAGES/coreutils.mo
+%%NLS%%share/locale/en/LC_TIME/coreutils.mo
 %%NLS%%share/locale/el/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/el/LC_TIME/coreutils.mo
 %%NLS%%share/locale/es/LC_MESSAGES/coreutils.mo
@@ -139,6 +142,8 @@ lib/coreutils/glibstdbuf.so
 %%NLS%%share/locale/ja/LC_TIME/coreutils.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/ko/LC_TIME/coreutils.mo
+%%NLS%%share/locale/lg/LC_MESSAGES/coreutils.mo
+%%NLS%%share/locale/lg/LC_TIME/coreutils.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/lt/LC_TIME/coreutils.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/coreutils.mo
@@ -153,6 +158,8 @@ lib/coreutils/glibstdbuf.so
 %%NLS%%share/locale/pt/LC_TIME/coreutils.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/pt_BR/LC_TIME/coreutils.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/coreutils.mo
+%%NLS%%share/locale/ro/LC_TIME/coreutils.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/ru/LC_TIME/coreutils.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/coreutils.mo
@@ -173,45 +180,77 @@ lib/coreutils/glibstdbuf.so
 %%NLS%%share/locale/zh_TW/LC_TIME/coreutils.mo
 @dirrm lib/coreutils
 %%NLS%%@dirrmtry share/locale/zh_TW/LC_TIME
+%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/zh_CN/LC_TIME
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/vi/LC_TIME
 %%NLS%%@dirrmtry share/locale/vi/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/uk/LC_TIME
 %%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/tr/LC_TIME
+%%NLS%%@dirrmtry share/locale/tr/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sv/LC_TIME
+%%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sl/LC_TIME
+%%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sk/LC_TIME
+%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/rw/LC_TIME
 %%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ru/LC_TIME
+%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro/LC_TIME
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/pt_BR/LC_TIME
+%%NLS%%@dirrmtry share/locale/pt_BR/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/pt/LC_TIME
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/pl/LC_TIME
-%%NLS%%@dirrmtry share/locale/no/LC_TIME
+%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/nl/LC_TIME
 %%NLS%%@dirrmtry share/locale/nb/LC_TIME
+%%NLS%%@dirrmtry share/locale/nb/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ms/LC_TIME
+%%NLS%%@dirrmtry share/locale/lg/LC_TIME
+%%NLS%%@dirrmtry share/locale/lg/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lg/
 %%NLS%%@dirrmtry share/locale/lt/LC_TIME
 %%NLS%%@dirrmtry share/locale/ko/LC_TIME
+%%NLS%%@dirrmtry share/locale/ko/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ja/LC_TIME
+%%NLS%%@dirrmtry share/locale/ja/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/it/LC_TIME
 %%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/id/LC_TIME
 %%NLS%%@dirrmtry share/locale/id/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/hu/LC_TIME
 %%NLS%%@dirrmtry share/locale/gl/LC_TIME
+%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ga/LC_TIME
+%%NLS%%@dirrmtry share/locale/ga/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fr/LC_TIME
+%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fi/LC_TIME
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/eu/LC_TIME
+%%NLS%%@dirrmtry share/locale/eu/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/et/LC_TIME
+%%NLS%%@dirrmtry share/locale/et/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/es/LC_TIME
+%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en/LC_TIME
 %%NLS%%@dirrmtry share/locale/el/LC_TIME
+%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/de/LC_TIME
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/da/LC_TIME
+%%NLS%%@dirrmtry share/locale/da/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/cs/LC_TIME
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ca/LC_TIME
+%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/bg/LC_TIME
+%%NLS%%@dirrmtry share/locale/bg/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/be/LC_TIME
+%%NLS%%@dirrmtry share/locale/be/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/af/LC_TIME

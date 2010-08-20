@@ -1,15 +1,19 @@
---- src/stty.c.orig	2007-03-18 14:36:43.000000000 -0700
-+++ src/stty.c	2008-08-28 18:54:40.000000000 -0700
-@@ -282,8 +282,6 @@
- #endif
- #ifdef TABDLY
+--- src/stty.c.orig	2010-07-21 17:11:49.000000000 +0200
++++ src/stty.c	2010-07-21 17:12:36.000000000 +0200
+@@ -282,10 +282,10 @@
+ # ifdef TAB3
    {"tab3", output, SANE_UNSET, TAB3, TABDLY},
--  {"tab2", output, SANE_UNSET, TAB2, TABDLY},
--  {"tab1", output, SANE_UNSET, TAB1, TABDLY},
-   {"tab0", output, SANE_SET, TAB0, TABDLY},
- #else
- # ifdef OXTABS
-@@ -632,7 +630,7 @@
+ # endif
+-# ifdef TAB2
++# if 0
+   {"tab2", output, SANE_UNSET, TAB2, TABDLY},
+ # endif
+-# ifdef TAB1
++# if 0
+   {"tab1", output, SANE_UNSET, TAB1, TABDLY},
+ # endif
+ # ifdef TAB0
+@@ -635,7 +635,7 @@
        fputs (_("\
   * [-]onocr      do not print carriage returns in the first column\n\
     [-]opost      postprocess output\n\

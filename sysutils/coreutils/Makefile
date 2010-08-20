@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	coreutils
-PORTVERSION=	7.5
-PORTREVISION=	1
+PORTVERSION=	8.5
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +16,13 @@ COMMENT=	The Free Software Foundation's core utilities
 
 CONFLICTS=	id-utils-[0-9]* linux-gid-[0-9]*
 
+SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.sig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XZ=		yes
 USE_GMAKE=	yes
@@ -41,7 +44,7 @@ MAN1=	gbasename.1 gcat.1 gchcon.1 gchgrp.1 gchmod.1 gchown.1 gchroot.1 \
 	gtail.1 gtee.1 gtest.1 gtimeout.1 gtouch.1 gtr.1 gtrue.1 gtruncate.1 \
 	gtsort.1 gtty.1 guname.1 gunexpand.1 guniq.1 gunlink.1 guptime.1 \
 	gusers.1 gvdir.1 gwc.1 gwho.1 gwhoami.1 gyes.1 gbase64.1 gsha224sum.1 \
-	gsha256sum.1 gsha384sum.1 gsha512sum.1 gshuf.1
+	gsha256sum.1 gsha384sum.1 gsha512sum.1 gshuf.1 gnproc.1
 
 OPTIONS=	GMP "Build with GNU Multiple Precision Arithmetic Library" off
 
