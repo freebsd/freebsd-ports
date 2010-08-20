@@ -254,6 +254,7 @@
     SUBDIR += vim6+ruby
     SUBDIR += wily
     SUBDIR += winefish
+    SUBDIR += wordgrinder
     SUBDIR += xcoral
     SUBDIR += xed
     SUBDIR += xemacs
