@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	abi-compliance-checker
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://linuxtesting.org/downloads/
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Checks binary compatibility of two versions of a C/C++ shared library
+
+LICENSE=	LGPL20 GPLv2
+LICENSE_COMB=	dual
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
@@ -33,6 +36,7 @@ post-patch:
 			s%\"gcc\"%\"${CC}\"%g; }" \
 		-e "s%-shared%& -fPIC%g" \
 		-e "s%detailes%details%g" \
+		-e "\%which% s%or.*and%or%" \
 		${WRKSRC}/${PORTNAME}.pl
 
 do-install:
@@ -41,4 +45,12 @@ do-install:
 test: build
 	@(cd ${WRKSRC} && ./${PORTNAME}.pl -test )
 
+.ifndef(NOPORTDOCS)
+PORTDOCS=	README.html
+
+post-install:
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README.html ${DOCSDIR}
+
+.endif
 .include <bsd.port.mk>
