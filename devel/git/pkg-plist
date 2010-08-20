@@ -14,6 +14,14 @@ bin/git-shell
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/git.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/__init__.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/repo.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/repo.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/non_local.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/non_local.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/importer.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/importer.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/exporter.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers/git/exporter.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/git_remote_helpers-0.1.0-py%%PYTHON_VER%%.egg-info
 libexec/git-core/git
 libexec/git-core/git-add
@@ -121,6 +129,7 @@ libexec/git-core/git-receive-pack
 libexec/git-core/git-reflog
 libexec/git-core/git-relink
 libexec/git-core/git-remote
+libexec/git-core/git-remote-testgit
 %%CURL%%libexec/git-core/git-remote-http
 %%CURL%%libexec/git-core/git-remote-https
 %%CURL%%libexec/git-core/git-remote-ftp
@@ -610,6 +619,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/git-daemon.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-index-pack.txt
 %%HTMLDOCS%%%%DOCSDIR%%/rev-list-options.txt
+%%HTMLDOCS%%%%DOCSDIR%%/revisions.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-rerere.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-fast-export.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-get-tar-commit-id.txt
@@ -655,10 +665,12 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/git-gc.txt
 %%HTMLDOCS%%%%DOCSDIR%%/gitattributes.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-update-index.txt
-%%HTMLDOCS%%%%DOCSDIR%%/gitdiffcore.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-check-ref-format.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-unpack-objects.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-diff.txt
+%%HTMLDOCS%%%%DOCSDIR%%/gitdiffcore.txt
+%%HTMLDOCS%%%%DOCSDIR%%/gitrevisions.html
+%%HTMLDOCS%%%%DOCSDIR%%/gitrevisions.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.5.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.5.0.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.5.0.2.txt
@@ -758,17 +770,18 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.0.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.0.5.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.0.6.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.0.7.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.1.1.txt
-%%GITWEB%%%%EXAMPLESDIR%%/gitweb/INSTALL
-%%GITWEB%%%%EXAMPLESDIR%%/gitweb/README
-%%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-favicon.png
-%%GITWEB%%%%EXAMPLESDIR%%/gitweb/git-logo.png
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.1.2.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.2.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.2.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes-1.7.2.2.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.cgi
-%%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.js
-%%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.css
-%%GITWEB%%@dirrm %%EXAMPLESDIR%%/gitweb
-%%GITWEB%%@dirrm %%EXAMPLESDIR%%
+%%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.js
+%%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.css
+%%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/git-favicon.png
+%%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/git-logo.png
 %%CONTRIB%%share/git-core/contrib/README
 %%CONTRIB%%share/git-core/contrib/blameview/README
 %%CONTRIB%%share/git-core/contrib/blameview/blameview.perl
@@ -839,10 +852,17 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%share/git-core/contrib/stats/git-common-hash
 %%CONTRIB%%share/git-core/contrib/stats/mailmap.pl
 %%CONTRIB%%share/git-core/contrib/stats/packinfo.pl
+%%CONTRIB%%share/git-core/contrib/svn-fe/svn-fe.c
+%%CONTRIB%%share/git-core/contrib/svn-fe/svn-fe.txt
+%%CONTRIB%%share/git-core/contrib/svn-fe/.gitignore
+%%CONTRIB%%share/git-core/contrib/svn-fe/Makefile
 %%CONTRIB%%share/git-core/contrib/thunderbird-patch-inline/README
 %%CONTRIB%%share/git-core/contrib/thunderbird-patch-inline/appp.sh
 %%CONTRIB%%share/git-core/contrib/vim/README
 %%CONTRIB%%share/git-core/contrib/workdir/git-new-workdir
+%%GITWEB%%@dirrm %%EXAMPLESDIR%%/gitweb/static
+%%GITWEB%%@dirrm %%EXAMPLESDIR%%/gitweb
+%%GITWEB%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
 @dirrm lib/xemacs/site-lisp/git
 @dirrmtry lib/xemacs/site-lisp
@@ -878,6 +898,7 @@ share/git-core/templates/info/exclude
 %%CONTRIB%%@dirrm share/git-core/contrib/p4import
 %%CONTRIB%%@dirrm share/git-core/contrib/patches
 %%CONTRIB%%@dirrm share/git-core/contrib/stats
+%%CONTRIB%%@dirrm share/git-core/contrib/svn-fe
 %%CONTRIB%%@dirrm share/git-core/contrib/thunderbird-patch-inline
 %%CONTRIB%%@dirrm share/git-core/contrib/vim
 %%CONTRIB%%@dirrm share/git-core/contrib/workdir
