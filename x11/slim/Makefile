@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	slim
-PORTVERSION=	1.3.1
-PORTREVISION=	9
+PORTVERSION=	1.3.2
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://depot.fsck.ch/mirror/distfiles/
@@ -20,6 +19,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2 \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+
+LICENSE=	GPLv2
 
 USE_XORG=	x11 xft xmu xorg-server xrender
 USE_RC_SUBR=	slim.sh
