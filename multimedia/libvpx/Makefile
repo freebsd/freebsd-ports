@@ -22,6 +22,7 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=yes
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -56,6 +57,9 @@ CONFIGURE_ARGS+=	--disable-multithread
 
 .if defined(WITH_SHARED)
 CONFIGURE_ARGS+=	--enable-shared
+PLIST_SUB+=	SHARED=""
+.else
+PLIST_SUB+=	SHARED="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
@@ -64,6 +68,8 @@ CONFIGURE_ARGS+=	--enable-shared
 CONFIGURE_ARGS+=	--target=x86_64-linux-gcc
 .elif ${ARCH} == "i386"
 CONFIGURE_ARGS+=	--target=x86-linux-gcc
+.elif ${ARCH} == "ia64"
+CONFIGURE_ARGS+=	--target=ia64-linux-gcc
 .else
 IGNORE=	no support for ${ARCH} the moment. testing/patches are welcome
 .endif
