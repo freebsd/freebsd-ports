@@ -1,0 +1,6 @@
+#!/bin/sh
+# $FreeBSD$
+
+cd %%PATH%%
+exec %%PYTHON_CMD%% %%PATH%%/BlindElephant.py "$@"
+
