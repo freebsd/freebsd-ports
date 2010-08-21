@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="274922b8-ad20-11df-af1f-00e0814cab4e">
+    <topic>phpmyadmin -- Several XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>3.3.5</lt></range>
+      </package>
+      <package>
+        <name>phpMyAdmin211</name>
+	<range><lt>2.11.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpMyAdmin Team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2010-5.php">
+	  <p>It was possible to conduct a XSS attack using crafted URLs org
+	    POST parameters on several pages.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-3056</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2010-5.php</url>
+    </references>
+    <dates>
+      <discovery>2010-08-09</discovery>
+      <entry>2010-08-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="68c7187a-abd2-11df-9be6-0015587e2cc1">
     <topic>SLiM -- insecure PATH assignment</topic>
     <affects>
