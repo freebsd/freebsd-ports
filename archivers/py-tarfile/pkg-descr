@@ -1,5 +1,0 @@
-Tarfile is a comprehensive implementation of the TAR archive
-format for the Python Language as a module. It enables read/write
-access to common TAR archives including all specialties.
-
-WWW: http://www.gustaebel.de/lars/tarfile/
