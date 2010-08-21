@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	phpMyAdmin211
-DISTVERSION=	2.11.10
+DISTVERSION=	2.11.10.1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/phpmyadmin/phpMyAdmin/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/211//}-${DISTVERSION}-all-languages
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	A set of PHP-scripts to manage MySQL over the web
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
