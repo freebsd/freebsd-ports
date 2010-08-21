@@ -551,6 +551,7 @@
     SUBDIR += wingz3
     SUBDIR += wmcalc
     SUBDIR += wxMaxima
+    SUBDIR += x12arima
     SUBDIR += xgfe
     SUBDIR += xgobi
     SUBDIR += xgraph
