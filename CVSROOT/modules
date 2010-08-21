@@ -5725,6 +5725,7 @@ hyperic-sigar                   ports/sysutils/hyperic-sigar
 hyperlatex                      ports/print/hyperlatex
 hypermail                       ports/www/hypermail
 hypersrc                        ports/devel/hypersrc
+hypertable                      ports/databases/hypertable
 i18ntools                       ports/converters/i18ntools
 i2p                             ports/net-p2p/i2p
 i3                              ports/x11-wm/i3
@@ -7999,6 +8000,7 @@ libmonetra                      ports/devel/libmonetra
 libmorph                        ports/graphics/libmorph
 libmovtar                       ports/multimedia/libmovtar
 libmowgli                       ports/devel/libmowgli
+libmp3-archive-perl             ports/audio/libmp3-archive-perl
 libmp3splt                      ports/audio/libmp3splt
 libmpcbdm                       ports/devel/libmpcbdm
 libmpcdec                       ports/audio/libmpcdec
@@ -8479,6 +8481,7 @@ linux-f10-nas-libs              ports/audio/linux-f10-nas-libs
 linux-f10-nspr                  ports/devel/linux-f10-nspr
 linux-f10-nss                   ports/security/linux-f10-nss
 linux-f10-openal                ports/audio/linux-f10-openal
+linux-f10-openal-soft           ports/audio/linux-f10-openal-soft
 linux-f10-openldap              ports/net/linux-f10-openldap
 linux-f10-openmotif             ports/x11-toolkits/linux-f10-openmotif
 linux-f10-openssl               ports/security/linux-f10-openssl
@@ -9569,6 +9572,7 @@ mp                              ports/editors/mp
 mp-a4                           ports/print/mp-a4
 mp-letter                       ports/print/mp-letter
 mp-player                       ports/audio/mp-player
+mp3-archive-tools               ports/audio/mp3-archive-tools
 mp32ogg                         ports/audio/mp32ogg
 mp3_check                       ports/audio/mp3_check
 mp3asm                          ports/audio/mp3asm
@@ -9582,6 +9586,7 @@ mp3ck                           ports/audio/mp3ck
 mp3gain                         ports/audio/mp3gain
 mp3guessenc                     ports/audio/mp3guessenc
 mp3info                         ports/audio/mp3info
+mp3lint                         ports/audio/mp3lint
 mp3mover                        ports/audio/mp3mover
 mp3plot                         ports/audio/mp3plot
 mp3rename                       ports/audio/mp3rename
@@ -11322,6 +11327,7 @@ p5-Chemistry-Pattern            ports/science/p5-Chemistry-Pattern
 p5-Chemistry-Reaction           ports/science/p5-Chemistry-Reaction
 p5-Chemistry-Ring               ports/science/p5-Chemistry-Ring
 p5-Chess-PGN-Parse              ports/textproc/p5-Chess-PGN-Parse
+p5-Child                        ports/devel/p5-Child
 p5-Chooser                      ports/devel/p5-Chooser
 p5-Cisco-Hash                   ports/security/p5-Cisco-Hash
 p5-Cisco-IPPhone                ports/net/p5-Cisco-IPPhone
@@ -15207,6 +15213,7 @@ p5-chemistry-reaction           ports/science/p5-Chemistry-Reaction
 p5-chemistry-ring               ports/science/p5-Chemistry-Ring
 p5-chess-pgn-parse              ports/textproc/p5-Chess-PGN-Parse
 p5-chi                          ports/devel/p5-CHI
+p5-child                        ports/devel/p5-Child
 p5-chklinks                     ports/www/p5-chklinks
 p5-chooser                      ports/devel/p5-Chooser
 p5-cisco-hash                   ports/security/p5-Cisco-Hash
@@ -25354,10 +25361,10 @@ woof                            ports/www/woof
 wooztalk                        ports/net-im/wooztalk
 wop                             ports/games/wop
 word2x                          ports/textproc/word2x
+wordgrinder                     ports/editors/wordgrinder
 wordnet                         ports/textproc/wordnet
 wordplay                        ports/games/wordplay
 wordpress                       ports/www/wordpress
-wordpress-mu                    ports/www/wordpress-mu
 words                           ports/textproc/words
 worker                          ports/x11-fm/worker
 workman                         ports/audio/workman
