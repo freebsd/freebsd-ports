@@ -1,9 +1,27 @@
 @comment $FreeBSD$
-include/dbh.h
-include/dbh_config.h
-include/dbh_functions.h
-lib/libdbh-4.5.so
-lib/libdbh-4.5.so.4
+include/dbh/dbh.h
+lib/libdbh-2.so
+lib/libdbh-2.so.1
 lib/libdbh.a
 lib/libdbh.so
 libdata/pkgconfig/dbh.pc
+%%GTKDOC%%share/gtk-doc/html/dbh/DBH.html
+%%GTKDOC%%share/gtk-doc/html/dbh/Makefile.am
+%%GTKDOC%%share/gtk-doc/html/dbh/calc.png
+%%GTKDOC%%share/gtk-doc/html/dbh/ch01.html
+%%GTKDOC%%share/gtk-doc/html/dbh/dbh.devhelp
+%%GTKDOC%%share/gtk-doc/html/dbh/dbh.devhelp2
+%%GTKDOC%%share/gtk-doc/html/dbh/home.png
+%%GTKDOC%%share/gtk-doc/html/dbh/index.html
+%%GTKDOC%%share/gtk-doc/html/dbh/index.sgml
+%%GTKDOC%%share/gtk-doc/html/dbh/left.png
+%%GTKDOC%%share/gtk-doc/html/dbh/right.png
+%%GTKDOC%%share/gtk-doc/html/dbh/style.css
+%%GTKDOC%%share/gtk-doc/html/dbh/up.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/filesystem.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple_hash.c
+%%GTKDOC%%@dirrm share/gtk-doc/html/dbh
+%%GTKDOC%%@dirrmtry share/gtk-doc/html
+%%GTKDOC%%@dirrmtry share/gtk-doc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm include/dbh
