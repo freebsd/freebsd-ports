@@ -32,6 +32,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/contrib/fb303
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 post-build:
 	(cd ${WRKSRC} && ${LOCALBASE}/bin/thrift --gen perl ${WRKSRC}/if/fb303.thrift)
 
