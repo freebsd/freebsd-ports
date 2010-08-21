@@ -24,7 +24,8 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 MAKE_ENV=	LIBS="-L${PREFIX}/lib -lpcsclite ${PTHREAD_LIBS}"
 
 post-patch:
-	${REINPLACE_CMD} -e "s,LPSTR,LPTSTR,g; s,LPCSTR,LPCTSTR,g" \
+	${REINPLACE_CMD} -e "s,LPSTR,LPTSTR,g; s,LPCSTR,LPCTSTR,g; \
+		s,[P]*SCARD_READERSTATE_A,SCARD_READERSTATE\*,g" \
 		${WRKSRC}/commands.h ${WRKSRC}/ifdtest.c
 
 do-install:
