@@ -62,7 +62,7 @@ WITH_FREETYPE_SRC=	--disable-freetype --without-freetype-bytecode \
 
 CONFIGURE_ARGS=	${WITH_MULTILAYER} --enable-devicetables ${WITH_FREETYPE_SRC} \
 		--enable-pasteafter --enable-tilepath
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
