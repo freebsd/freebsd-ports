@@ -7,7 +7,7 @@
 
 PORTNAME=	openprinting
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=\
@@ -17,8 +17,6 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun's implementation of the OpenPrinting API (PAPI)
-
-BROKEN=		incomplete plist
 
 WRKSRC=		${WRKDIR}/papi-${PORTVERSION}_beta
 
@@ -77,6 +75,8 @@ CONFIGURE_ARGS+=--without-cups
 MANCOMPRESSED=	no
 MAN5=		psm-ipp.5
 
+PLIST_DIRS+=	man/mani
+
 PLIST_FILES+=\
 	include/papi.h \
 	include/ipp.h \
@@ -84,12 +84,16 @@ PLIST_FILES+=\
 	include/http.h \
 	include/http-private.h \
 	include/ipp-listener.h \
+	lib/libpapi-common.so \
 	lib/libpapi-common.so.0 \
 	lib/libpapi-common.la \
+	lib/libpapi.so \
 	lib/libpapi.so.0 \
 	lib/libpapi.la \
+	lib/libipp-core.so \
 	lib/libipp-core.so.0 \
 	lib/libipp-core.la \
+	lib/libipp-listener.so \
 	lib/libipp-listener.so.0 \
 	lib/libipp-listener.la \
 	libexec/psm-lpd.so \
