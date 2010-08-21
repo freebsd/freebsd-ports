@@ -38,6 +38,7 @@
     SUBDIR += bfbtester
     SUBDIR += bioapi
     SUBDIR += bjorb
+    SUBDIR += blindelephant
     SUBDIR += blocksshd
     SUBDIR += borzoi
     SUBDIR += botan
