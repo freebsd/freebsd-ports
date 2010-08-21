@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript8
 PORTVERSION=	8.71
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	http://ghostscript.com/releases/:gs_srcs \
 		SF/ghostscript/files/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -71,6 +71,7 @@ OPTIONS=	A4SIZE	"Set A4 (not Letter) as a default paper size"	off \
 		CUPS	"Enable CUPS support"	on \
 		FONTCONFIG	"fontconfig support"	on \
 		FT_BRIDGE	"FreeType bridge"	off \
+		GTK	"GTK frontend"	off \
 		X11	"X11 support"	on
 
 MAN1=		dvipdf.1 font2c.1 gs.1 gslp.1 gsnd.1 \

@@ -9,7 +9,7 @@ OPTIONS_${D}_DEFAULT=	on
 OPTIONS_${D}_DEFAULT=	off
 .endif
 .endfor
-.for D in SVGALIB CAIRO CUPS
+.for D in SVGALIB CAIRO CUPS GTK
 .if !defined(WITH_${D})
 OPTIONS_${D}_DEFAULT=	off
 .else
@@ -20,6 +20,7 @@ OPTIONS_${D}_DEFAULT=	on
 # makesum needs lowest common multiple
 .if make(makesum)
 OPTIONS_X11_DEFAULT=	on
+OPTIONS_GTK_DEFAULT=	on
 OPTIONS_SVGALIB_DEFAULT=on
 OPTIONS_ICONV_DEFAULT=	on
 OPTIONS_CAIRO_DEFAULT=	on
@@ -91,7 +92,7 @@ LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 
 # x11 specific
 X11_DEVS= x11 x11alpha x11cmyk x11cmyk2 x11cmyk4 x11cmyk8 x11gray2	\
-	x11gray4 x11mono x11rg16x x11rg32x
+	x11gray4 x11mono x11rg16x x11rg32x display
 .undef _X11_DEVS
 
 .for D in ${X11_DEVS}
@@ -108,13 +109,17 @@ CONFIGURE_ARGS+=--with-x \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib
 CONFLICTS+=	ghostscript8-nox11-[0-9]*
+.if defined(WITH_GTK)
+USE_GNOME=	atk gdkpixbuf glib20 gtk20
+CONFIGURE_ARGS+=--enable-gtk
 .else
-CONFIGURE_ARGS+=--without-x
-CONFLICTS+=	ghostscript8-[0-9]*
+CONFIGURE_ARGS+=--disable-gtk
 .endif
-.if defined(WITHOUT_X11)
+.else	# defined(_X11_DEVS)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
-.endif
+CONFIGURE_ARGS+=--without-x --disable-gtk
+CONFLICTS+=	ghostscript8-[0-9]*
+.endif	# defined(_X11_DEVS)
 
 # iconv specific
 ICONV_DEVS= oprp opvp
