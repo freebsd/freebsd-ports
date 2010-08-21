@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	zim
-PORTVERSION=	0.28
-PORTREVISION=	4
+PORTVERSION=	0.29
 CATEGORIES=	editors perl5
-MASTER_SITES=	http://www.zim-wiki.org/downloads/
+MASTER_SITES=	http://www.zim-wiki.org/downloads/perl-zim/
 DISTNAME=	Zim-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -18,7 +17,7 @@ COMMENT=	WYSIWYG text editor written in Gtk2-Perl
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		${SITE_PERL}/File/MimeInfo.pm:${PORTSDIR}/devel/p5-File-MimeInfo \
 		${SITE_PERL}/File/DesktopEntry.pm:${PORTSDIR}/devel/p5-File-DesktopEntry
-RUN_DEPENDS=	${BUILD_DEPENDS} \
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info \
 		xdg-icon-resource:${PORTSDIR}/devel/xdg-utils
 
