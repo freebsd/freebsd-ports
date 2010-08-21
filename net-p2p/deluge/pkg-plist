@@ -1166,6 +1166,9 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/add_url.png
 %%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/alert.png
 %%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/all.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/apple-pre-114.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/apple-pre-57.png
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/apple-pre-72.png
 %%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/back.png
 %%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/bottom.png
 %%PYTHON_SITELIBDIR%%/deluge/ui/web/icons/checking.png
@@ -1301,6 +1304,7 @@ bin/deluged
 %%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/form/ToggleField.js
 %%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/grid/BufferView.js
 %%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/layout/FormLayoutFix.js
+%%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/tree/MultiSelectionModelFix.js
 %%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/tree/TreeGrid.js
 %%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/tree/TreeGridColumnResizer.js
 %%PYTHON_SITELIBDIR%%/deluge/ui/web/js/ext-extensions/tree/TreeGridColumns.js
