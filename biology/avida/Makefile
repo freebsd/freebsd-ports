@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	avida
-PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTVERSION=	2.10.0
 CATEGORIES=	biology
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	Avida is an auto-adaptive genetic system designed for ALife research
+
+LICENSE=	GPLv2
 
 USE_CMAKE=	yes
 USE_GCC=	4.2+
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
+MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
 
@@ -27,7 +27,6 @@ post-extract:
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/work/avida ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/work/avida-viewer ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/work/*.cfg ${WRKSRC}/work/*.org ${DATADIR}
 .if !defined(NOPORTDOCS)
