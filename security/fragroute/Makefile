@@ -7,20 +7,19 @@
 
 PORTNAME=	fragroute
 PORTVERSION=	1.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	security net
 MASTER_SITES=	http://monkey.org/~dugsong/fragroute/ \
 		${MASTER_SITE_PACKETSTORM}
 MASTER_SITE_SUBDIR=	UNIX/security
 
-MAINTAINER=	onatan@gmail.com
+MAINTAINER=	niels@FreeBSD.org
 COMMENT=	A tool for intercepting, modifying and rewriting egress traffic
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet \
 		event-1.4:${PORTSDIR}/devel/libevent
 
-BROKEN=		does not build
-
+LICENSE=	BSD
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libdnet=${LOCALBASE} \
 			--with-libevent=${LOCALBASE} --with-pcap
