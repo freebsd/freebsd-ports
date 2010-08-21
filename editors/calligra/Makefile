@@ -7,7 +7,7 @@
 
 PORTNAME=	koffice
 PORTVERSION=	${KOFFICE2_VERSION}
-PORTREVISION?=	1
+PORTREVISION=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}-${PORTVERSION}/
@@ -19,7 +19,8 @@ COMMENT=	Office suite for KDE
 
 BUILD_DEPENDS=	eigen>=2.0.b3:${PORTSDIR}/math/eigen2 \
 		gmm++>=3.0.4:${PORTSDIR}/math/gmm++ \
-		${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx30
+		${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx30 \
+		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		qca.2:${PORTSDIR}/devel/qca \
 		GraphicsMagick++.1:${PORTSDIR}/graphics/GraphicsMagick \

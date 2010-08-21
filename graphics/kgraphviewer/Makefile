@@ -16,6 +16,7 @@ DIST_SUBDIR=	KDE/extragear
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	GraphViz dot graph viewer for KDE
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	gvc.5:${PORTSDIR}/graphics/graphviz
 
 USE_BZIP2=	yes
@@ -27,5 +28,11 @@ MAKE_JOBS_SAFE=	yes
 
 APP_VER=	2.0.2
 EXTRA_VER=	4.4.0
+
+post-patch:
+#Fix build with kdelibs>=4.5.0
+	${REINPLACE_CMD} -e 's,V4.1.2-Based,V4.2-Based,g' \
+		${WRKSRC}/doc-translations/*_kgraphviewer/kgraphviewer/index.docbook \
+		${WRKSRC}/doc/index.docbook
 
 .include <bsd.port.mk>

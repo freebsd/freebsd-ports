@@ -17,6 +17,8 @@ DIST_SUBDIR=	KDE/extragear
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A KDE editor/frontend for Povray
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT_VER=	4
@@ -27,5 +29,10 @@ MAKE_JOBS_SAFE=	yes
 
 APP_VER=	1.1.3
 EXTRA_VER=	4.3.1
+
+post-patch:
+#Fix build with kdelibs>=4.5.0
+	${REINPLACE_CMD} -e 's,V4.1.2-Based,V4.2-Based,g' \
+		${WRKSRC}/doc-translations/hu_kpovmodeler/kpovmodeler/index.docbook
 
 .include <bsd.port.mk>

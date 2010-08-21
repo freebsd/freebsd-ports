@@ -17,6 +17,8 @@ DIST_SUBDIR=	KDE/extragear
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE image viewer
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+
 USE_BZIP2=	yes
 USE_GNOME=	imlib
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4

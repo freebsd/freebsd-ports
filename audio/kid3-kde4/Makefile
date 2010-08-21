@@ -15,6 +15,7 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	MP3/Ogg/FLAC tag editor for KDE
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		FLAC.10:${PORTSDIR}/audio/flac \
 		ogg.7:${PORTSDIR}/audio/libogg \
@@ -32,5 +33,9 @@ MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include" \
 		-DCMAKE_REQUIRED_LIBRARIES:STRING="${PTHREAD_LIBS}"
+
+post-patch:
+	${REINPLACE_CMD} -e 's,V4.1-Based Variant V1.0,V4.2-Based Variant V1.1,g' \
+		${WRKSRC}/doc/*/index.docbook
 
 .include <bsd.port.mk>
