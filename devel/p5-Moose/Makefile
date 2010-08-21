@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN/../../authors/id/D/DO/DOY
+MASTER_SITES=	CPAN/../../authors/id/D/DR/DROLSKY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A complete modern object system for Perl 5
 
 BUILD_DEPENDS=	\
-	p5-Class-MOP>=1.02:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Class-MOP>=1.04:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Package-DeprecationManager>=0.04:${PORTSDIR}/devel/p5-Package-DeprecationManager \
 	p5-List-MoreUtils>=0.12:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Sub-Exporter>=0.980:${PORTSDIR}/devel/p5-Sub-Exporter \
 	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
@@ -58,6 +59,7 @@ MAN3=	Moose.3 \
 	Moose::Cookbook::Snack::Keywords.3 \
 	Moose::Cookbook::Snack::Types.3 \
 	Moose::Cookbook::Style.3 \
+	Moose::Deprecated.3 \
 	Moose::Error::Confess.3 \
 	Moose::Error::Croak.3 \
 	Moose::Error::Default.3 \

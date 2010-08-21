@@ -28,6 +28,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Snack/Keywords.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Snack/Types.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Style.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Deprecated.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Error/Confess.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Error/Croak.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Error/Default.pm
