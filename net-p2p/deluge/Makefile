@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	deluge
-DISTVERSION=	1.3.0_rc1
-PORTREVISION=	1
+DISTVERSION=	1.3.0_rc2
 PORTEPOCH=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/source/
@@ -76,8 +75,7 @@ INSTALLS_ICONS=	yes
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
-		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 			${WRKSRC}/setup.py
 	${REINPLACE_CMD} -e '/"new_release_check":/s|True,|False,|g ; \
 		 /"geoip_db_location":/s|/usr/share/GeoIP/GeoIP.dat|${LOCALBASE}/share/GeoIP/GeoIP.dat|g' \
