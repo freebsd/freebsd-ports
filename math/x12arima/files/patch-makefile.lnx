@@ -1,0 +1,38 @@
+--- makefile.lnx.orig	2010-08-20 22:32:52.000000000 -0400
++++ makefile.lnx	2010-08-20 22:50:54.000000000 -0400
+@@ -1,15 +1,11 @@
+ # MKMF template makefile for protected mode executables.
+-FC        = ifort
+-LINKER    = ifort
++LINKER    = $(FC)
+ PROGRAM         = x12a
+-DEST      = .
++DEST      = $(PREFIX)/bin
+ EXTHDRS         =
+-FFLAGS    = 
+ HDRS            =
+-LDFLAGS   = 
+ LDMAP     = 
+ LIBS      =
+-MAKEFILE  = Makefile
+ OBJS            = aaamain.o abend.o acf.o acfar.o acfdgn.o \
+                   acfhdr.o addadj.o addaic.o addate.o addfix.o \
+                   addmul.o addotl.o addsef.o addsub.o addusr.o \
+@@ -237,6 +233,8 @@
+                   xrgdiv.f xrgdrv.f xrgtrn.f xrlkhd.f xtrm.f \
+                   yprmy.f yrly.f  
+ 
++all: $(PROGRAM)
++
+ $(PROGRAM):     $(OBJS) $(LIBS)
+ 	$(LINKER) -o $@ $(OBJS) $(LDMAP) $(LIBS) $(LDFLAGS)
+ 
+@@ -244,7 +242,7 @@
+ 
+ install:   $(PROGRAM)
+ 	@echo Installing $(PROGRAM) in $(DEST)
+-	@if not $(DEST)x==.x copy $(PROGRAM) $(DEST)
++	@$(BSD_INSTALL_PROGRAM) $(PROGRAM) $(DEST)
+ ### OPUS MKMF:  Do not remove this line!  Automatic dependencies follow.
+ 
+ aaamain.o:  build.prm cchars.i chrt.cmn error.cmn hiddn.cmn lex.i \
