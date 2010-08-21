@@ -1,4 +1,4 @@
-# New ports collection makefile for:	rssdler
+# New ports collection makefile for:	py-rssdler
 # Date created:		02 May 2010
 # Whom:			Anonymous <swell.k@gmail.com>
 #
@@ -7,8 +7,10 @@
 
 PORTNAME=	rssdler
 PORTVERSION=	0.4.2
-CATEGORIES=	www
+PORTREVISION=	1
+CATEGORIES=	www python
 MASTER_SITES=	GOOGLE_CODE
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	swell.k@gmail.com
 COMMENT=	Automatically grab link elements of an RSS feed
@@ -21,6 +23,7 @@ USE_PYDISTUTILS=yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}
 
 OPTIONS=	MECHANIZE "Retrieve pages with mechanize" On
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 .include <bsd.port.pre.mk>
 
