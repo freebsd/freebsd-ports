@@ -16,6 +16,9 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER=	ports@christianserving.org
 COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//})
 
+DEPRECATED=	Development has ceased. Please upgrade to Zabbix 1.8.
+EXPIRATION_DATE=	2010-10-01
+
 LATEST_LINK=	${PORTNAME}16${PKGNAMESUFFIX}
 
 CONFLICTS=	${PKGBASE}-1.8*
