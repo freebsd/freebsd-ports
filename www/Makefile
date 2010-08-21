@@ -1457,6 +1457,7 @@
     SUBDIR += py-recaptcha
     SUBDIR += py-restclient
     SUBDIR += py-routes
+    SUBDIR += py-rssdler
     SUBDIR += py-satchmo
     SUBDIR += py-scgi
     SUBDIR += py-scrapy
@@ -1504,7 +1505,6 @@
     SUBDIR += retawq
     SUBDIR += rnews
     SUBDIR += roundup
-    SUBDIR += rssdler
     SUBDIR += rssowl
     SUBDIR += rsstail
     SUBDIR += rsstool
