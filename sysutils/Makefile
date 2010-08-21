@@ -348,6 +348,7 @@
     SUBDIR += hal
     SUBDIR += hal-info
     SUBDIR += hammerhead
+    SUBDIR += hatop
     SUBDIR += hdup
     SUBDIR += healthd
     SUBDIR += heartbeat
