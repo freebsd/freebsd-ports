@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	htable
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp2.culot.org/culot/
 
 MAINTAINER=	frederic@culot.org
 COMMENT=	Lightweight implementation of hash tables in C
 
+USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN3=		htable.3
@@ -23,5 +24,8 @@ NO_BUILD=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/htable.h ${PREFIX}/include
 	${INSTALL_MAN} ${WRKSRC}/src/htable.3 ${MAN3PREFIX}/man/man3
+
+regression-test:
+	cd ${WRKSRC}/tst && ${GMAKE} test
 
 .include <bsd.port.mk>
