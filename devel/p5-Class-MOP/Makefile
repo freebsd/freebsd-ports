@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-MOP
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,15 +20,10 @@ BUILD_DEPENDS=	p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDe
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Try-Tiny>=0.02:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-Data-OptList>=0:${PORTSDIR}/devel/p5-Data-OptList \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
-RUN_DEPENDS=	p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
-		p5-MRO-Compat>=0.05:${PORTSDIR}/devel/p5-MRO-Compat \
-		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
-		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
-		p5-Try-Tiny>=0.02:${PORTSDIR}/lang/p5-Try-Tiny \
-		p5-Data-OptList>=0:${PORTSDIR}/devel/p5-Data-OptList \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-List-MoreUtils>=0.12:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Package-DeprecationManager>=0.04:${PORTSDIR}/devel/p5-Package-DeprecationManager \
 		p5-Package-Stash>=0:${PORTSDIR}/devel/p5-Package-Stash
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes
 
