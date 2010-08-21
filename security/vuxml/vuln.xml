@@ -34,6 +34,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="67a1c3ae-ad69-11df-9be6-0015587e2cc1">
+    <topic>corkscrew -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>corkscrew</name>
+	<range><le>2.0</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The affected corkscrew versions use sscanf calls without proper
+	  bounds checking. In the authentication file parsing routine
+	  this can cause an exploitable buffer overflow condition.
+	  A similar but issue exists in the server response code but
+	  appears to be non-exploitable.</p>
+      </body>
+    </description>
+    <references>
+    	<url>http://people.freebsd.org/~niels/issues/corkscrew-20100821.txt</url>
+    </references>
+    <dates>
+      <discovery>2010-08-21</discovery>
+      <entry>2010-08-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="274922b8-ad20-11df-af1f-00e0814cab4e">
     <topic>phpmyadmin -- Several XSS vulnerabilities</topic>
     <affects>
@@ -66,7 +92,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="68c7187a-abd2-11df-9be6-0015587e2cc1">
-    <topic>SLiM -- insecure PATH assignment</topic>
+    <topic>slim -- insecure PATH assignment</topic>
     <affects>
       <package>
 	<name>slim</name>
