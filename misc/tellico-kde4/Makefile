@@ -14,6 +14,7 @@ MASTER_SITES=	http://tellico-project.org/files/
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Collection manager for KDE
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
 		yaz:${PORTSDIR}/net/yaz \

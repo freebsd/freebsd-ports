@@ -13,6 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/unstable/${PORTNAME}-${DISTVERSION}
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A LaTeX source editor for KDE
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		identify:${PORTSDIR}/graphics/ImageMagick
 

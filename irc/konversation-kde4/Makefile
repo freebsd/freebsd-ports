@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${DISTVERSION}/src
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A user friendly IRC client for KDE
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	qca.2:${PORTSDIR}/devel/qca
 
 LATEST_LINK=	${PORTNAME}-kde4

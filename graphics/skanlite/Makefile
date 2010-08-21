@@ -16,6 +16,7 @@ DIST_SUBDIR=	KDE/extragear
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Simple image scanning application for KDE
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	ksane.0:${PORTSDIR}/graphics/kdegraphics4
 
 USE_BZIP2=	yes
