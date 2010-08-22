@@ -925,6 +925,7 @@
     SUBDIR += rubygem-bunny
     SUBDIR += rubygem-geoip
     SUBDIR += rubygem-macaddr
+    SUBDIR += rubygem-net-ldap
     SUBDIR += rubygem-net-netrc
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-openid

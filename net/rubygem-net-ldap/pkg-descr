@@ -1,0 +1,7 @@
+Net::LDAP is an LDAP support library written in pure Ruby. It supports most
+LDAP client features and a subset of server features as well.
+
+    * Standards-based (going for RFC 4511)
+    * Portable: 100% Ruby
+
+WWW: http://net-ldap.rubyforge.org/
