@@ -289,6 +289,7 @@
     SUBDIR += gcdmaster
     SUBDIR += gcombust
     SUBDIR += gconf-editor
+    SUBDIR += gdisk
     SUBDIR += gdmap
     SUBDIR += geomWatch
     SUBDIR += geomgui
