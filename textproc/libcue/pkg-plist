@@ -1,0 +1,12 @@
+include/libcue-1.4/libcue/cd.h
+include/libcue-1.4/libcue/cdtext.h
+include/libcue-1.4/libcue/libcue.h
+include/libcue-1.4/libcue/rem.h
+include/libcue-1.4/libcue/time.h
+lib/libcue.a
+lib/libcue.la
+lib/libcue.so
+lib/libcue.so.1
+libdata/pkgconfig/libcue.pc
+@dirrm include/libcue-1.4/libcue
+@dirrm include/libcue-1.4
