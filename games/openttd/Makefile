@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openttd
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	games
 MASTER_SITES=	http://gb.binaries.openttd.org/binaries/releases/${PORTVERSION}/ \
 		#SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
