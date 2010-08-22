@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b6069837-aadc-11df-82df-0015f2db7bde">
+    <topic>OpenTTD -- Denial of service (server) via infinite loop</topic>
+    <affects>
+      <package>
+	<name>openttd</name>
+	<range><gt>1.0.1</gt><lt>1.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenTTD project reports:</p>
+	<blockquote cite="http://security.openttd.org/en/CVE-2010-2534">
+	  <p>When multiple commands are queued (at the server) for execution
+	     in the next game tick and an client joins the server can get into
+	     an infinite loop. With the default settings triggering this bug
+	     is difficult (if not impossible), however the larger value of 
+	     the "frame_freq" setting is easier it is to trigger the bug. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-2534</cvename>
+      <url>http://security.openttd.org/en/CVE-2010-2534</url>
+    </references>
+    <dates>
+      <discovery>2010-06-27</discovery>
+      <entry>2010-08-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="67a1c3ae-ad69-11df-9be6-0015587e2cc1">
     <topic>corkscrew -- buffer overflow vulnerability</topic>
     <affects>
