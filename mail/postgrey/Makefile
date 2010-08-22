@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://postgrey.schweikert.ch/pub/ \
 		http://postgrey.schweikert.ch/pub/old/
 
-MAINTAINER=	haroldp@internal.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Greylisting policy server for Postfix
 
 RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
