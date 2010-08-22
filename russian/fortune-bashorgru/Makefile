@@ -10,7 +10,7 @@ PORTVERSION=	20080903
 CATEGORIES=	russian
 MASTER_SITES=	http://www.dindin.ru/download/
 
-MAINTAINER=	dindin@dindin.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fortunes from bash.org.ru and freebsd.rusnet.org.ru/bash
 
 NO_BUILD=	yes

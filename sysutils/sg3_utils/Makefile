@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dindin@dindin.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of utilities that send SCSI commands to devices
 
 USE_GMAKE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	20091116
 CATEGORIES=	sysutils kld
 MASTER_SITES=	http://dindin.ru/download/
 
-MAINTAINER=	dindin@dindin.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Protect process from killing when the swap space is exhausted
 
 NO_PACKAGE=	Needs to be compiled for specific kernel
