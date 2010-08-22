@@ -13,6 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}2/KMyMoney-KDE4/3.98
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	KDE 4.x-based personal finance manager
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	boost_graph.4:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
