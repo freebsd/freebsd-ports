@@ -73,6 +73,7 @@
     SUBDIR += clamav-devel
     SUBDIR += clamav-unofficial-sigs
     SUBDIR += clamcour
+    SUBDIR += clamd-stream-client
     SUBDIR += clamsmtp
     SUBDIR += clamtk
     SUBDIR += clusterssh
