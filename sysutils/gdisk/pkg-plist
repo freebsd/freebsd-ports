@@ -1,0 +1,5 @@
+sbin/gdisk
+sbin/sgdisk
+%%PORTDOCS%%%%DOCSDIR%%/gdisk.html
+%%PORTDOCS%%%%DOCSDIR%%/sgdisk.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

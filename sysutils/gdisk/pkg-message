@@ -1,0 +1,14 @@
+###############################################################
+!!! WARNING !!! WARNING !!! WARNING !!! WARNING !!! WARNING !!!
+
+        PLEASE, READ DOCUMENTATION BEFORE USE
+
+See `man gdisk' , `man sgdisk' , `${DOCSDIR}/gdisk.html' ,
+`${DOCSDIR}/sgdisk.html'.
+
+Any errors in usage gdisk (sgdisk) or not understanding
+of that you do, can call loss of your data.
+Make a backup copy of all data of a disk before you use
+these programs for its processing.
+
+###############################################################

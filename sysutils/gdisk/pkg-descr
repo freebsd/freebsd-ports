@@ -1,0 +1,16 @@
+GPT fdisk (aka gdisk) by Roderick W. Smith, rodsmith@rodsbooks.com
+
+This software is intended as a (somewhat) fdisk-workalike program for
+GPT-partitioned disks. Specific advantages of gdisk and sgdisk include:
+
+ * Edit GUID partition table (GPT) definitions in Linux, FreeBSD, MacOS X,
+   or Windows
+ * Convert MBR to GPT or back without data loss
+ * Convert BSD disklabels to GPT without data loss
+ * Create hybrid MBR, which permits GPT-unaware
+   OSes to access up to three GPT partitions on the disk
+ * Repair damaged GPT data structures
+ * The ability to specify sector-exact partition sizes
+ * Clear identification of the number of unallocated sectors on a disk
+
+WWW: http://www.rodsbooks.com/gdisk/
