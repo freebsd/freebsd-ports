@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	3.2.5
-PORTREVISION=	4
+PORTVERSION=	3.3.1
 CATEGORIES=	japanese mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
 		${PATCH_SITES}
@@ -18,30 +17,34 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:apache,cpan \
 DIST_SUBDIR=	ja-spamassassin
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	http://spamassassin.jp/download/sa${PORTVERSION:R}/:JA
+PATCH_SITES=	http://spamassassin.emaillab.jp/pub/ja-patch/sa${PORTVERSION:R}/:JA
 PATCHFILES=	spamassassin-${PORTVERSION}-ja-${PATCHLEVEL}.patch:JA
-PATCHLEVEL=	test1
+PATCHLEVEL=	1
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	fmysh@iijmio-mail.jp
 COMMENT=	SpamAssassin with Japanese tokenizer
 
-BUILD_DEPENDS=	p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
+BUILD_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
+		p5-Archive-Tar>=1.23:${PORTSDIR}/archivers/p5-Archive-Tar \
+		p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-Compress-Zlib>=2.04:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		p5-IO-Zlib>=1.04:${PORTSDIR}/archivers/p5-IO-Zlib \
 		p5-HTML-Parser>=3.43:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-IO-Compress-Zlib>=2.04:${PORTSDIR}/archivers/p5-IO-Compress-Zlib \
-		p5-Compress-Zlib>=2.04:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		p5-Digest-SHA1>=2.11:${PORTSDIR}/security/p5-Digest-SHA1
+		p5-Test-Harness>=3.16:${PORTSDIR}/devel/p5-Test-Harness \
+		${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
+		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 
 RUN_DEPENDS=	${BUILD_DEPENDS} \
-		${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		p5-Archive-Tar>=1.23:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${SITE_PERL}/mach/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
+		ja-p5-MeCab>=0.98:${PORTSDIR}/japanese/p5-MeCab
 
 CONFLICTS=	p5-Mail-SpamAssassin-[0-9]*
 
 PERL_CONFIGURE=	yes
+USE_PERL5_RUN=	5.8.8+
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 	       	CONTACT_ADDRESS="${CONTACT_ADDRESS}" \
@@ -53,14 +56,15 @@ CONTACT_ADDRESS?=	The administrator of that system
 OPTIONS=	AS_ROOT "Run spamd as root (recommended)" on \
 		SPAMC "Build spamd/spamc (not for amavisd)" on \
 		SACOMPILE "sa-compile" off \
-		DKIM "DKIM/DomainKeys Identified Mail" off \
+		DKIM "DKIM/DomainKeys Identified Mail" on \
 		SSL "Build with SSL support for spamd/spamc" on \
 		GNUPG "Install GnuPG (for sa-update)" on \
 		MYSQL "Add MySQL support" off \
 		PGSQL "Add PostreSQL support" off \
 		RAZOR "Add Vipul's Razor support" on \
 		SPF_QUERY "Add SPF query support" off \
-		RELAY_COUNTRY "Relay country support" off
+		RELAY_COUNTRY "Relay country support" off \
+		DCC "Add DCC support (see LICENSE)" off
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
@@ -77,8 +81,10 @@ WITHOUT_SSL=1
 .endif
 
 .if defined(WITH_SPF_QUERY)
-RUN_DEPENDS+=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
-RUN_DEPENDS+=	${SITE_PERL}/Mail/SPF.pm:${PORTSDIR}/mail/p5-Mail-SPF
+BUILD_DEPENDS+=	${SITE_PERL}/Mail/SPF.pm:${PORTSDIR}/mail/p5-Mail-SPF
+.endif
+.if !defined(WITHOUT_IPV6)
+RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6
 .endif
 
 .if !defined(WITHOUT_SSL)
@@ -107,12 +113,19 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 
 .if defined(WITH_RAZOR)
 RUN_DEPENDS+=	razor-agents>=2.84:${PORTSDIR}/mail/razor-agents
+.else
+.if !defined(WITH_DKIM)
+.if   ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-Digest-SHA1>=2.11:${PORTSDIR}/security/p5-Digest-SHA1
+.endif
+.endif
 .endif
 
 .if defined(WITH_DKIM)
-RUN_DEPENDS+=	p5-Mail-DKIM>=0.34:${PORTSDIR}/mail/p5-Mail-DKIM
-RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
-RUN_DEPENDS+=	p5-Crypt-OpenSSL-RSA>=0.24:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
+BUILD_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA.pm:${PORTSDIR}/security/p5-Digest-SHA
+BUILD_DEPENDS+=	p5-Mail-DKIM>=0.37:${PORTSDIR}/mail/p5-Mail-DKIM
+BUILD_DEPENDS+=	p5-Crypt-OpenSSL-RSA>=0.24:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
 .endif
 
 .if defined(WITH_SACOMPILE)
@@ -123,6 +136,10 @@ RUN_DEPENDS+=	re2c>=.12.0:${PORTSDIR}/devel/re2c
 RUN_DEPENDS+=	${SITE_PERL}/IP/Country/Fast.pm:${PORTSDIR}/net/p5-IP-Country
 .endif
 
+.if defined(WITH_DCC)
+RUN_DEPENDS+=	dcc-dccd>=1.3.111:${PORTSDIR}/mail/dcc-dccd
+.endif
+
 MAN3=		Mail::SpamAssassin.3 \
 		Mail::SpamAssassin::AICache.3 \
 		Mail::SpamAssassin::ArchiveIterator.3 \
@@ -130,6 +147,7 @@ MAN3=		Mail::SpamAssassin.3 \
 		Mail::SpamAssassin::AutoWhitelist.3 \
 		Mail::SpamAssassin::Bayes.3 \
 		Mail::SpamAssassin::BayesStore.3 \
+		Mail::SpamAssassin::BayesStore::BDB.3 \
 		Mail::SpamAssassin::BayesStore::MySQL.3 \
 		Mail::SpamAssassin::BayesStore::PgSQL.3 \
 		Mail::SpamAssassin::BayesStore::SQL.3 \
@@ -155,18 +173,20 @@ MAN3=		Mail::SpamAssassin.3 \
 		Mail::SpamAssassin::Plugin::AccessDB.3 \
 		Mail::SpamAssassin::Plugin::AntiVirus.3 \
 		Mail::SpamAssassin::Plugin::AutoLearnThreshold.3 \
+		Mail::SpamAssassin::Plugin::Bayes.3 \
 		Mail::SpamAssassin::Plugin::BodyRuleBaseExtractor.3 \
 		Mail::SpamAssassin::Plugin::Check.3 \
 		Mail::SpamAssassin::Plugin::DCC.3 \
 		Mail::SpamAssassin::Plugin::DKIM.3 \
-		Mail::SpamAssassin::Plugin::DomainKeys.3 \
 		Mail::SpamAssassin::Plugin::Hashcash.3 \
 		Mail::SpamAssassin::Plugin::MIMEHeader.3 \
 		Mail::SpamAssassin::Plugin::OneLineBodyRuleType.3 \
+		Mail::SpamAssassin::Plugin::PhishTag.3 \
 		Mail::SpamAssassin::Plugin::Pyzor.3 \
 		Mail::SpamAssassin::Plugin::Razor2.3 \
 		Mail::SpamAssassin::Plugin::RelayCountry.3 \
 		Mail::SpamAssassin::Plugin::ReplaceTags.3 \
+		Mail::SpamAssassin::Plugin::Reuse.3 \
 		Mail::SpamAssassin::Plugin::Rule2XSBody.3 \
 		Mail::SpamAssassin::Plugin::SPF.3 \
 		Mail::SpamAssassin::Plugin::Shortcircuit.3 \
@@ -223,6 +243,7 @@ post-patch:
 		-e 's#B_CONFDIR)/v310.pre#B_CONFDIR)/v310.pre.sample#g' \
 		-e 's#B_CONFDIR)/v312.pre#B_CONFDIR)/v312.pre.sample#g' \
 		-e 's#B_CONFDIR)/v320.pre#B_CONFDIR)/v320.pre.sample#g' \
+		-e 's#B_CONFDIR)/v330.pre#B_CONFDIR)/v330.pre.sample#g' \
 		-e 's/require DBI/0/' \
 		${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} -e '/^CC =/d; \
@@ -234,8 +255,8 @@ post-patch:
 .if defined(WITH_RELAY_COUNTRY)
 	${REINPLACE_CMD} -e '/RelayCountry/s/^# ?loadplugin/loadplugin/' ${WRKSRC}/rules/init.pre
 .endif
-.if defined(WITH_DKIM)
-	${REINPLACE_CMD} -e '/DKIM/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v312.pre
+.if !defined(WITH_DKIM)
+	${REINPLACE_CMD} -e '/DKIM/s/^loadplugin/#loadplugin/' ${WRKSRC}/rules/v312.pre
 .endif
 .if !defined(WITH_SPF_QUERY)
 	${REINPLACE_CMD} -e '/SPF/s/^loadplugin/#loadplugin/' ${WRKSRC}/rules/init.pre
@@ -243,9 +264,15 @@ post-patch:
 .if defined(WITH_DCC)
 	${REINPLACE_CMD} -e '/DCC/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v310.pre
 .endif
+.if !defined(WITH_AWL)
+	${REINPLACE_CMD} -e '/AWL/s/^loadplugin/#loadplugin/' ${WRKSRC}/rules/v310.pre
+.endif
 .if defined(WITH_SACOMPILE)
 	${REINPLACE_CMD} -e '/Rule2XSBody/s/^# loadplugin/loadplugin/' ${WRKSRC}/rules/v320.pre
 .endif
+
+pre-install:
+	@${MKDIR}  ${DATADIR}
 
 post-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} spamc/libspamc.so)
@@ -279,7 +306,10 @@ post-install:
 	@[ -f ${PREFIX}/etc/mail/spamassassin/v320.pre ] || \
 		${CP} ${PREFIX}/etc/mail/spamassassin/v320.pre.sample \
 			${PREFIX}/etc/mail/spamassassin/v320.pre
-	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
+	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} SU_CMD="${SU_CMD}" ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
+	@[ -f ${PREFIX}/etc/mail/spamassassin/v330.pre ] || \
+		${CP} ${PREFIX}/etc/mail/spamassassin/v330.pre.sample \
+			${PREFIX}/etc/mail/spamassassin/v330.pre
 
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${TOKENIZER_PRE} ${PREFIX}/etc/mail/spamassassin/${TOKENIZER_PRE}.sample
 	@[ -f ${PREFIX}/etc/mail/spamassassin/${TOKENIZER_PRE} ] || \

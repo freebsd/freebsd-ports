@@ -21,10 +21,15 @@
 *************************************************************************
 You may wish to run sa-update now to obtain the latest rules.
 
-NOTE:  FREEBSD users: If you are updating to 3.20 you will find
-that sa-update now places state files in /var/db/spamassassin
-and not the default /var/lib/spamassassin.  This is to be consistant
-with Freebsd file directory conventions
+NOTE:  FREEBSD users: If you are updating from a version prior to 3.20.
+sa-update now places state files in /var/db/spamassassin and not 
+/var/lib/spamassassin.  This is to be consistant with Freebsd file
+directory conventions.
+
+If you run sa-compile, you will notice that files are in 
+/var/db/spamassassin/compiled/<perlversion>/<version> instead of
+/var/db/spamassassin/compiled/<version>.
+No attempts have been made to move old versions over. You must recompile.
 
 If you are running with spamd, you must add the following to rc.conf:
 spamd_enable="YES"
@@ -33,6 +38,7 @@ Security Note:  If you did NOT deselected AS_ROOT, spamd will be running
 as root. To change this, also add this to rc.conf:
 spamd_flags="-u spamd -H /var/spool/spamd"
 
+************************************************************************
 For Japanese users, see document in
 PREFIX/share/doc/ja-p5-Mail-SpamAssassin/
 
@@ -40,4 +46,5 @@ Tokenizer::MeCab uses UTF-8 encoding.  You may have to manually
 (re)install the following ports with the build options for UTF-8:
 	japanese/mecab		WITH_CHARSET=utf-8
 	japanese/mecab-ipadic	WITH_CHARSET=utf-8
-	japanese/p5-Text-MeCab	ENCODING=utf-8
+	japanese/p5-MeCab
+************************************************************************
