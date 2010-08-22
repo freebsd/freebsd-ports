@@ -151,7 +151,6 @@ abills/Abills/modules/Docs/webinterface
 abills/Abills/modules/Dunes/config
 abills/Abills/modules/Dunes/webinterface
 abills/Abills/modules/Dv/config
-abills/Abills/modules/Dv/registration.cgi
 abills/Abills/modules/Dv/templates/dv_compensation.tpl
 abills/Abills/modules/Dv/templates/dv_errors_search.tpl
 abills/Abills/modules/Dv/templates/dv_reg_complete.tpl
@@ -547,18 +546,201 @@ abills/misc/proftpd/install
 abills/misc/proftpd/proftpd.conf
 abills/misc/proftpd/proftpd_anon.conf
 abills/misc/samba_add.pl
-abills/misc/sslcerts.sh
 abills/misc/usr-trafic
 abills/soft/exppp_asm-0.2.4.tar.gz
 abills/soft/expppd-0.2.1.tar.gz
 abills/soft/kha0s-mpd.tar.gz
 abills/soft/radpppd.tar.gz
-@dirrm abills/var/q
-@dirrm abills/var/log/ipn
-@dirrm abills/var/log
-@dirrm abills/var
+abills/libexec/billd.plugins/check_dublicates.pm
+abills/misc/freeradius/v2/radiusd.conf
+abills/misc/freeradius/v2/default_rlm_perl
+abills/misc/freeradius/v2/perl
+abills/misc/freeradius/v2/default
+abills/misc/freeradius/v2/sql.conf
+abills/misc/freeradius/v2/users
+abills/misc/freeradius/v2/users_perl
+abills/misc/mpd/mpd_configure.pl
+abills/misc/ipfw/shaper_start.sh
+abills/misc/dhcp/install
+abills/misc/apache/abills_hotspot.conf
+abills/misc/msgs_filter.sh
+abills/misc/certs_create.sh
+abills/language/armenian.pl
+abills/cgi-bin/ajax/lib/JsHttpRequest/JsHttpRequest.js
+abills/cgi-bin/admin/charts.swf
+abills/cgi-bin/charts/charts_library/scno.swf
+abills/cgi-bin/charts/charts_library/arno.swf
+abills/cgi-bin/charts/charts_library/ars3.swf
+abills/cgi-bin/charts/charts_library/arst.swf
+abills/cgi-bin/charts/charts_library/brfl.swf
+abills/cgi-bin/charts/charts_library/brno.swf
+abills/cgi-bin/charts/charts_library/brst.swf
+abills/cgi-bin/charts/charts_library/buno.swf
+abills/cgi-bin/charts/charts_library/cl3d.swf
+abills/cgi-bin/charts/charts_library/clfl.swf
+abills/cgi-bin/charts/charts_library/clim.swf
+abills/cgi-bin/charts/charts_library/clno.swf
+abills/cgi-bin/charts/charts_library/clp3.swf
+abills/cgi-bin/charts/charts_library/cls3.swf
+abills/cgi-bin/charts/charts_library/clst.swf
+abills/cgi-bin/charts/charts_library/cnno.swf
+abills/cgi-bin/charts/charts_library/dollar.jpg
+abills/cgi-bin/charts/charts_library/dono.swf
+abills/cgi-bin/charts/charts_library/lnno.swf
+abills/cgi-bin/charts/charts_library/mxno.swf
+abills/cgi-bin/charts/charts_library/pi3d.swf
+abills/cgi-bin/charts/charts_library/pie.jpg
+abills/cgi-bin/charts/charts_library/piim.swf
+abills/cgi-bin/charts/charts_library/pino.swf
+abills/cgi-bin/charts/charts_library/pono.swf
+abills/cgi-bin/charts/charts_library/ar3d.swf
+abills/cgi-bin/charts/resources/button_rollover/button_rollover.fla
+abills/cgi-bin/charts/resources/button_rollover/button_rollover.swf
+abills/cgi-bin/charts/resources/chart_in_swf/chart_in_swf.fla
+abills/cgi-bin/charts/resources/cursor/cursor.fla
+abills/cgi-bin/charts/resources/cursor/cursor.swf
+abills/cgi-bin/charts/resources/full_screen/full_screen.fla
+abills/cgi-bin/charts/resources/full_screen/full_screen.swf
+abills/cgi-bin/charts/resources/preview_scroll/black.swf
+abills/cgi-bin/charts/resources/preview_scroll/preview_handle_1.swf
+abills/cgi-bin/charts/resources/preview_scroll/preview_handle_2.swf
+abills/cgi-bin/charts/resources/scroll/slider_over_R.gif
+abills/cgi-bin/charts/resources/scroll/slider_R.gif
+abills/cgi-bin/charts/resources/scroll/slider_bg.gif
+abills/cgi-bin/charts/resources/scroll/slider_handle.gif
+abills/cgi-bin/charts/resources/scroll/slider_handle_L.gif
+abills/cgi-bin/charts/resources/scroll/slider_handle_R.gif
+abills/cgi-bin/charts/resources/scroll/slider_over_L.gif
+abills/cgi-bin/charts/resources/scroll/slider_L.gif
+abills/cgi-bin/charts/AC_RunActiveContent.js
+abills/cgi-bin/charts/charts.swf
+abills/cgi-bin/img/cal.gif
+abills/cgi-bin/img/delivered1.png
+abills/cgi-bin/img/delivered2.png
+abills/cgi-bin/img/mastercard-sc.gif
+abills/cgi-bin/img/next_mon.gif
+abills/cgi-bin/img/next_year.gif
+abills/cgi-bin/img/no_cal.gif
+abills/cgi-bin/img/pixel.gif
+abills/cgi-bin/img/prev_mon.gif
+abills/cgi-bin/img/prev_year.gif
+abills/cgi-bin/img/progbar.gif
+abills/cgi-bin/img/v-visa.gif
+abills/cgi-bin/favicon.ico
+abills/cgi-bin/calendar.js
+abills/Abills/main_tpls/describe.tpls
+abills/Abills/main_tpls/form_address.tpl
+abills/Abills/main_tpls/form_address_sel.tpl
+abills/Abills/main_tpls/form_build.tpl
+abills/Abills/main_tpls/form_client_hotspot_start.tpl
+abills/Abills/main_tpls/form_district.tpl
+abills/Abills/main_tpls/form_hotspot_login.tpl
+abills/Abills/main_tpls/form_money_transfer_s1.tpl
+abills/Abills/main_tpls/form_money_transfer_s2.tpl
+abills/Abills/main_tpls/form_money_transfer_s3.tpl
+abills/Abills/main_tpls/form_nas_configure.tpl
+abills/Abills/main_tpls/form_nas_group.tpl
+abills/Abills/main_tpls/form_neg_deposit.tpl
+abills/Abills/main_tpls/form_street.tpl
+abills/Abills/main_tpls/form_street_search.tpl
+abills/Abills/main_tpls/form_template_editor.tpl
+abills/Abills/main_tpls/metatags.tpl
+abills/Abills/main_tpls/metatags_client.tpl
+abills/Abills/modules/Ashield/templates/ashield_client_info.tpl
+abills/Abills/modules/Ashield/templates/ashield_client_subcribe.tpl
+abills/Abills/modules/Ashield/templates/ashield_tp.tpl
+abills/Abills/modules/Ashield/templates/ashield_user.tpl
+abills/Abills/modules/Ashield/avd.cgi
+abills/Abills/modules/Ashield/config
+abills/Abills/modules/Ashield/lng_russian.pl
+abills/Abills/modules/Ashield/lng_ukraine.pl
+abills/Abills/modules/Ashield/webinterface
+abills/Abills/modules/Ashield/lng_english.pl
+abills/Abills/modules/Cards/templates/cards_card_info.tpl
+abills/Abills/modules/Cards/templates/cards_diller_sum_check.tpl
+abills/Abills/modules/Cards/templates/cards_dillers_tp.tpl
+abills/Abills/modules/Cards/templates/cards_print.dsc
+abills/Abills/modules/Cards/templates/cards_print.pdf
+abills/Abills/modules/Cards/templates/cards_print.tpl
+abills/Abills/modules/Cards/templates/cards_reseller_cod_gen.tpl
+abills/Abills/modules/Cards/lng_english.pl
+abills/Abills/modules/Cards/lng_russian.pl
+abills/Abills/modules/Cards/lng_ukraine.pl
+abills/Abills/modules/Dhcphosts/templates/dhcphosts_log_search.tpl
+abills/Abills/modules/Dhcphosts/templates/describe.tpls
+abills/Abills/modules/Dhcphosts/dhcp_log2db.pl
+abills/Abills/modules/Docs/templates/docs_account_company.dsc
+abills/Abills/modules/Docs/templates/docs_account_company.pdf
+abills/Abills/modules/Docs/templates/docs_account_company.tpl
+abills/Abills/modules/Docs/templates/docs_account_search.tpl
+abills/Abills/modules/Docs/templates/docs_act.dsc
+abills/Abills/modules/Docs/templates/docs_act.pdf
+abills/Abills/modules/Docs/templates/docs_act.tpl
+abills/Abills/modules/Docs/templates/docs_invoice_search.tpl
+abills/Abills/modules/Docs/templates/docs_tax_export.tpl
+abills/Abills/modules/Docs/templates/describe.tpls
+abills/Abills/modules/Dv/templates/dv_guest_mode.tpl
+abills/Abills/modules/Dv/templates/dv_hold_up.tpl
+abills/Abills/modules/Dv/templates/dv_traffic_class.tpl
+abills/Abills/modules/Dv/templates/dv_user_info.dsc
+abills/Abills/modules/Dv/templates/dv_user_info.pdf
+abills/Abills/modules/Dv/templates/describe.tpls
+abills/Abills/modules/Iptv/templates/iptv_pin_access.tpl
+abills/Abills/modules/Iptv/Vod.pm
+abills/Abills/modules/Iptv/lng_russian.pl
+abills/Abills/modules/Iptv/lng_ukraine.pl
+abills/Abills/modules/Abon/lng_english.pl
+abills/Abills/modules/Abon/lng_russian.pl
+abills/Abills/modules/Abon/lng_ukraine.pl
+abills/Abills/modules/Marketing/templates/marketing_report2.tpl
+abills/Abills/modules/Marketing/lng_english.pl
+abills/Abills/modules/Marketing/lng_russian.pl
+abills/Abills/modules/Marketing/lng_ukraine.pl
+abills/Abills/modules/Msgs/templates/msgs_unreg_request.tpl
+abills/Abills/modules/Msgs/templates/msgs_dispatch.tpl
+abills/Abills/modules/Msgs/templates/msgs_dispatch_blank.tpl
+abills/Abills/modules/Msgs/templates/msgs_reg_complete.tpl
+abills/Abills/modules/Msgs/templates/msgs_reg_complete_mail.tpl
+abills/Abills/modules/Msgs/templates/msgs_registration.tpl
+abills/Abills/modules/Msgs/templates/msgs_request_search.tpl
+abills/Abills/modules/Msgs/templates/msgs_request_show.tpl
+abills/Abills/modules/Multidoms/templates/multidoms_sell_points.tpl
+abills/Abills/modules/Multidoms/templates/multidoms_client_intro.tpl
+abills/Abills/modules/Multidoms/templates/multidoms_client_promo.tpl
+abills/Abills/modules/Multidoms/templates/multidoms_client_start.tpl
+abills/Abills/modules/Multidoms/templates/multidoms_domain.tpl
+abills/Abills/modules/Multidoms/templates/multidoms_metatags_client.tpl
+abills/Abills/modules/Multidoms/templates/multidoms_reseller_info.tpl
+abills/Abills/modules/Multidoms/templates/multidoms_reseller_login.tpl
+abills/Abills/modules/Multidoms/templates/multidoms_reseller_nas.tpl
+abills/Abills/modules/Multidoms/templates/multidoms_reseller_reg_complete.tpl
+abills/Abills/modules/Multidoms/templates/multidoms_reseller_reg_email.tpl
+abills/Abills/modules/Multidoms/templates/multidoms_reseller_registration.tpl
+abills/Abills/modules/Multidoms/templates/multidoms_reseller_rule.tpl
+abills/Abills/modules/Multidoms/templates/multidoms_reseller_start.tpl
+abills/Abills/modules/Multidoms/templates/multidoms_reseller_tp.tpl
+abills/Abills/modules/Multidoms/templates/describe.tpls
+abills/Abills/modules/Multidoms/config
+abills/Abills/modules/Multidoms/lng_english.pl
+abills/Abills/modules/Multidoms/lng_russian.pl
+abills/Abills/modules/Multidoms/lng_ukraine.pl
+abills/Abills/modules/Multidoms/webinterface
+abills/Abills/modules/Paysys/templates/paysys_lr_add.tpl
+abills/Abills/modules/Paysys/templates/paysys_pb_add.tpl
+abills/Abills/modules/Paysys/templates/paysys_privatbank_p24_add.tpl
+abills/Abills/modules/Paysys/lng_ukraine.pl
+abills/Abills/modules/Sqlcmd/templates/sqlcmd_field.tpl
+abills/Abills/modules/Sqlcmd/lng_english.pl
+abills/Abills/modules/Sqlcmd/lng_russian.pl
+abills/Abills/modules/Sqlcmd/lng_ukraine.pl
+abills/Abills/modules/Ureports/templates/ureports_session_detail.tpl
+abills/db/Ashield.sql
+abills/db/Marketing.sql
 @dirrm abills/soft
 @dirrm abills/misc/proftpd
+@dirrm abills/misc/freeradius/v2
+@dirrm abills/misc/freeradius
+@dirrm abills/misc/dhcp
 @dirrm abills/misc/pppoe
 @dirrm abills/misc/pppd
 @dirrm abills/misc/postfix/sql
@@ -570,18 +752,30 @@ abills/soft/radpppd.tar.gz
 @dirrm abills/misc/monit
 @dirrm abills/misc/ipfw
 @dirrm abills/misc/ipcad
-@dirrm abills/misc/freeradius
 @dirrm abills/misc/flow-tools
 @dirrm abills/misc/exppp
 @dirrm abills/misc/apache
 @dirrm abills/misc
 @dirrm abills/miniserv/etc
 @dirrm abills/miniserv
+@dirrm abills/libexec/billd.plugins
 @dirrm abills/libexec
 @dirrm abills/language
 @dirrm abills/docs/img
 @dirrm abills/docs
 @dirrm abills/db
+@dirrm abills/cgi-bin/charts/resources/scroll
+@dirrm abills/cgi-bin/charts/resources/preview_scroll
+@dirrm abills/cgi-bin/charts/resources/full_screen
+@dirrm abills/cgi-bin/charts/resources/cursor
+@dirrm abills/cgi-bin/charts/resources/chart_in_swf
+@dirrm abills/cgi-bin/charts/resources/button_rollover
+@dirrm abills/cgi-bin/charts/resources
+@dirrm abills/cgi-bin/charts/charts_library
+@dirrm abills/cgi-bin/charts
+@dirrm abills/cgi-bin/ajax/lib/JsHttpRequest
+@dirrm abills/cgi-bin/ajax/lib
+@dirrm abills/cgi-bin/ajax
 @dirrm abills/cgi-bin/img
 @dirrm abills/cgi-bin/charts_library
 @dirrm abills/cgi-bin/admin
@@ -612,9 +806,14 @@ abills/soft/radpppd.tar.gz
 @dirrm abills/Abills/modules/Msgs
 @dirrm abills/Abills/modules/Mdelivery/templates
 @dirrm abills/Abills/modules/Mdelivery
-@dirrm abills/Abills/modules/Marketing
 @dirrm abills/Abills/modules/Mail/templates
 @dirrm abills/Abills/modules/Mail
+@dirrm abills/Abills/modules/Multidoms/templates
+@dirrm abills/Abills/modules/Multidoms
+@dirrm abills/Abills/modules/Marketing/templates
+@dirrm abills/Abills/modules/Marketing
+@dirrm abills/Abills/modules/Ashield/templates
+@dirrm abills/Abills/modules/Ashield
 @dirrm abills/Abills/modules/Iptv/templates
 @dirrm abills/Abills/modules/Iptv
 @dirrm abills/Abills/modules/Ipn/templates
