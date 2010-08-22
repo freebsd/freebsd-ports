@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Google-Calendar
-PORTVERSION=	0.97
+PORTVERSION=	0.99
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mhsin@mhsin.org
 COMMENT=	Programmatic access to Google's Calendar API
 
-BUILD_DEPENDS=	p5-XML-Atom>=0:${PORTSDIR}/textproc/p5-XML-Atom \
+BUILD_DEPENDS=	p5-XML-Atom>=0.37:${PORTSDIR}/textproc/p5-XML-Atom \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
