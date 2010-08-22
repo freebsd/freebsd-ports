@@ -1,0 +1,32 @@
+Index: rssdler.py
+===================================================================
+--- rssdler.py	(revision 169)
++++ rssdler.py	(working copy)
+@@ -79,6 +79,7 @@ percentQuoteDict = {u'!': u'%21', u' ': u'%20', u'
+   u';': u'%3B', u':': u'%3A', u']': u'%5D', u'[': u'%5B', u'?': u'%3F', 
+   u'!':u'%7E'}
+ percentunQuoteDict = dict(((j,i) for (i,j) in percentQuoteDict.items()))
++xmlUnEscapeDict = { u'&lt;' : u'<', u'&gt;' : u'>', u'&amp;' : u'&' }
+ netscapeHeader= """# HTTP Cookie File
+ # http://www.netscape.com/newsref/std/cookie_spec.html
+ # This is a generated file!  Do not edit.\n\n"""
+@@ -327,16 +328,15 @@ def unicodeC( s ):
+         raise UnicodeEncodeError(u'could not encode %s to unicode' % s)
+     return s
+     
+-def xmlUnEscape( sStr, percent=0, pd=percentunQuoteDict ):
++def xmlUnEscape( sStr, percent=0, pd=percentunQuoteDict, xd=xmlUnEscapeDict ):
+     u"""xml unescape a string, by default also checking for percent encoded 
+     characters. set percent=0 to ignore percent encoding. 
+     can specify your own percent quote dict 
+     (key, value) pairs are of (search, replace) ordering with percentunQuoteDict
+     """
+-    sStr = sStr.replace("&lt;", "<")
+-    sStr = sStr.replace("&gt;", ">")
+     if percent: sStr = percentUnQuote( sStr, pd )
+-    sStr = sStr.replace("&amp;", "&")
++    for search in xd:
++        sStr = re.sub('(?i)' + re.escape(search), xd[search], sStr)
+     return sStr
+ 
+ def percentIsQuoted(sStr, testCases=percentQuoteDict.values()):
