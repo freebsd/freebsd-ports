@@ -1,0 +1,4 @@
+Installing databases/virtuoso is recommended:
+Bangarang uses nepomuk to store metainformation and to search for
+media files, and it needs a suitable storage backend.
+However, it will play media files without it.

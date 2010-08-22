@@ -16,6 +16,7 @@
     SUBDIR += avidemux2
     SUBDIR += avifile
     SUBDIR += avinfo
+    SUBDIR += bangarang
     SUBDIR += banshee
     SUBDIR += banshee-mirage
     SUBDIR += beep-media-player
