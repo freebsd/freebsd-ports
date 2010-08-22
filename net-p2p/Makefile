@@ -102,6 +102,7 @@
     SUBDIR += py-fngrab
     SUBDIR += py-kenosis
     SUBDIR += py-py2play
+    SUBDIR += py-transmissionrpc
     SUBDIR += py-vertex
     SUBDIR += pyslsk
     SUBDIR += qbittorrent-22
