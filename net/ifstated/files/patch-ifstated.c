@@ -1,5 +1,5 @@
 --- ifstated.c.orig	2010-06-11 12:20:08.000000000 -0500
-+++ ifstated.c	2010-06-15 13:49:50.785704080 -0500
++++ ifstated.c	2010-07-30 21:55:03.045444649 -0500
 @@ -26,9 +26,11 @@
  #include <sys/time.h>
  #include <sys/ioctl.h>
@@ -12,7 +12,17 @@
  #include <net/route.h>
  #include <netinet/in.h>
  
-@@ -61,6 +63,8 @@
+@@ -47,7 +49,8 @@
+ 
+ int	 opts = 0;
+ int	 opt_inhibit = 0;
+-char	*configfile = "/etc/ifstated.conf";
++char	*configfile = "/usr/local/etc/ifstated.conf";
++char	*pidfile = NULL;
+ struct event	rt_msg_ev, sighup_ev, startup_ev, sigchld_ev;
+ 
+ void	startup_handler(int, short, void *);
+@@ -61,6 +64,8 @@
  void	external_evtimer_setup(struct ifsd_state *, int);
  void	scan_ifstate(int, int, int);
  int	scan_ifstate_single(int, int, struct ifsd_state *);
@@ -21,7 +31,42 @@
  void	fetch_state(void);
  void	usage(void);
  void	adjust_expressions(struct ifsd_expression_list *, int);
-@@ -159,7 +163,6 @@
+@@ -70,13 +75,14 @@
+ void	do_action(struct ifsd_action *);
+ void	remove_action(struct ifsd_action *, struct ifsd_state *);
+ void	remove_expression(struct ifsd_expression *, struct ifsd_state *);
++void	remove_pidfile(int);
+ 
+ void
+ usage(void)
+ {
+ 	extern char *__progname;
+ 
+-	fprintf(stderr, "usage: %s [-dhinv] [-D macro=value] [-f file]\n",
++	fprintf(stderr, "usage: %s [-dhinv] [-D macro=value] [-f file] [-p pidfile]\n",
+ 	    __progname);
+ 	exit(1);
+ }
+@@ -90,7 +96,7 @@
+ 
+ 	log_init(1);
+ 
+-	while ((ch = getopt(argc, argv, "dD:f:hniv")) != -1) {
++	while ((ch = getopt(argc, argv, "dD:f:p:hniv")) != -1) {
+ 		switch (ch) {
+ 		case 'd':
+ 			debug = 1;
+@@ -112,6 +118,9 @@
+ 		case 'i':
+ 			opt_inhibit = 1;
+ 			break;
++		case 'p':
++			pidfile = optarg;
++			break;
+ 		case 'v':
+ 			if (opts & IFSD_OPT_VERBOSE)
+ 				opts |= IFSD_OPT_VERBOSE2;
+@@ -159,7 +168,6 @@
  startup_handler(int fd, short event, void *arg)
  {
  	int rt_fd;
@@ -29,7 +74,7 @@
  
  	if ((rt_fd = socket(PF_ROUTE, SOCK_RAW, 0)) < 0)
  		err(1, "no routing socket");
-@@ -169,11 +172,6 @@
+@@ -169,11 +177,24 @@
  		exit(1);
  	}
  
@@ -38,10 +83,28 @@
 -	    &rtfilter, sizeof(rtfilter)) == -1)         /* not fatal */
 -		log_warn("startup_handler: setsockopt");
 -	
++	if (pidfile != NULL) {
++		FILE* file = fopen(pidfile, "w");
++
++		if (file == NULL) {
++			log_warnx("unable to open pidfile");
++		}
++		else {
++			fprintf(file, "%ld\n", (long)getpid());
++			fclose(file);
++			log_debug("wrote pidfile %s", pidfile);
++
++			signal(SIGINT, remove_pidfile);
++			signal(SIGQUIT, remove_pidfile);
++			signal(SIGABRT, remove_pidfile);
++			signal(SIGTERM, remove_pidfile);
++		}
++	}
++
  	event_set(&rt_msg_ev, rt_fd, EV_READ|EV_PERSIST, rt_msg_handler, NULL);
  	event_add(&rt_msg_ev, NULL);
  
-@@ -406,6 +404,8 @@
+@@ -406,6 +427,8 @@
  	}
  }
  
@@ -50,7 +113,7 @@
  #define	LINK_STATE_IS_DOWN(_s)						\
  	(!LINK_STATE_IS_UP((_s)) && (_s) != LINK_STATE_UNKNOWN)
  
-@@ -584,6 +584,44 @@
+@@ -584,6 +607,44 @@
  	}
  }
  
@@ -95,7 +158,7 @@
  /*
   * Fetch the current link states.
   */
-@@ -593,26 +631,31 @@
+@@ -593,26 +654,31 @@
  	struct ifaddrs *ifap, *ifa;
  	char *oname = NULL;
  	int sock = socket(AF_INET, SOCK_DGRAM, 0);
@@ -135,3 +198,17 @@
  	}
  	freeifaddrs(ifap);
  	close(sock);
+@@ -707,3 +773,13 @@
+ 	}
+ 	free(expression);
+ }
++
++void
++remove_pidfile(int code)
++{
++	if ((pidfile != NULL) && unlink(pidfile)) {
++		log_warnx("could not remove pidfile");
++	}
++
++	exit(code);
++}

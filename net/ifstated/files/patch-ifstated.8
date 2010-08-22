@@ -1,0 +1,32 @@
+--- ifstated.8.orig	2010-06-11 12:20:08.000000000 -0500
++++ ifstated.8	2010-07-30 22:15:08.518460671 -0500
+@@ -29,6 +29,7 @@
+ .Ar macro Ns = Ns Ar value Oc
+ .Xc
+ .Op Fl f Ar file
++.Op Fl p Ar pidfile
+ .Ek
+ .Sh DESCRIPTION
+ The
+@@ -61,6 +62,10 @@
+ Specify an alternate location,
+ .Ar file ,
+ for the configuration file.
++.It Fl p Ar pidfile
++Specify the location,
++.Ar pidfile ,
++for the PID file.
+ .It Fl h
+ Print help message.
+ .It Fl i
+@@ -78,8 +83,8 @@
+ .Nm
+ reloads the configuration file.
+ .Sh FILES
+-.Bl -tag -width "/etc/ifstated.conf" -compact
+-.It Pa /etc/ifstated.conf
++.Bl -tag -width "/usr/local/etc/ifstated.conf" -compact
++.It Pa /usr/local/etc/ifstated.conf
+ .Nm
+ configuration file.
+ .El
