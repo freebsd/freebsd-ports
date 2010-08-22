@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.zeroc.com/download/Ice/3.4/
 PKGNAMEPREFIX=	php5-
 DISTNAME=	Ice-${PORTVERSION}
 
-MAINTAINER=	dirk.ye@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Ice (Internet Communications Engine) language mapping for PHP
 
 LIB_DEPENDS=	Ice.${LIB_VRS}:${PORTSDIR}/devel/ice
