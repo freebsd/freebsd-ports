@@ -39,7 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>openttd</name>
-	<range><gt>1.0.1</gt><lt>1.0.3</lt></range>
+	<range><ge>1.0.1</ge><lt>1.0.3</lt></range>
       </package>
     </affects>
     <description>
@@ -50,7 +50,7 @@ Note:  Please add new entries to the beginning of this file.
 	     in the next game tick and an client joins the server can get into
 	     an infinite loop. With the default settings triggering this bug
 	     is difficult (if not impossible), however the larger value of 
-	     the "frame_freq" setting is easier it is to trigger the bug. </p>
+	     the "frame_freq" setting is easier it is to trigger the bug.</p>
 	</blockquote>
       </body>
     </description>
