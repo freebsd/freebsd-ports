@@ -7,7 +7,7 @@
 
 PORTNAME=	ifstated
 PORTVERSION=	4.7
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://christianserving.org/ports/net/ifstated/
@@ -28,7 +28,7 @@ USE_RC_SUBR=	ifstated
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/ifstated.c ${WRKSRC}/ifstated.8 ${WRKSRC}/ifstated.conf.5
+	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/ifstated.conf.5
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ifstated ${PREFIX}/sbin
