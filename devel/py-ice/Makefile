@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.zeroc.com/download/Ice/3.4/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Ice-${PORTVERSION}
 
-MAINTAINER=	dirk.ye@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Ice (Internet Communications Engine) language mapping for Python
 
 BUILD_DEPENDS=	mcpp:${PORTSDIR}/devel/mcpp
