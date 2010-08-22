@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	DBIx-Class-QueryLog
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andrey@kostenko.name
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Log queries for later analysis
 
-RUN_DEPENDS=	p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class	\
+RUN_DEPENDS=	p5-DBIx-Class>=0.07000:${PORTSDIR}/databases/p5-DBIx-Class	\
 		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes	\
-		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
+		p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
