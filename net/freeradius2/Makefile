@@ -55,7 +55,8 @@ OPTIONS=	USER		"Run as user freeradius, group freeradius" on \
 		OCI8		"With Oracle support (currently experimental)" off \
 		RUBY		"With Ruby support (EXPERIMENTAL)" off \
 		DHCP		"With DHCP support (EXPERIMENTAL)" off \
-		EXPERIMENTAL	"Build experimental modules" off
+		EXPERIMENTAL	"Build experimental modules" off \
+		UDPFROMTO	"Compile in UDPFROMTO support" off
 
 .include <bsd.port.options.mk>
 
@@ -236,6 +237,11 @@ PLIST_SUB+=	EXPM="@comment "
 CONFIGURE_ARGS+=--enable-developer
 # Turn off compiler optimisations
 CFLAGS!=	${ECHO} ${CFLAGS} | ${SED} -Ee 's:-O[0-9]?[[:space:]]*::g'
+.endif
+
+# Compile in UDPFROMTO support
+.ifdef(WITH_UDPFROMTO)
+CONFIGURE_ARGS+=--with-udpfromto
 .endif
 
 .include <bsd.port.pre.mk>
