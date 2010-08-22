@@ -19,8 +19,6 @@ COMMENT=	Multiple Streaming Engine
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ogg.7:${PORTSDIR}/audio/libogg
 
-BROKEN=		does not compile
-
 USE_GETTEXT=	yes
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
@@ -36,6 +34,10 @@ OPTIONS=	X11	"Build with X11 support" on \
 		SNDFILE	"Build with sndfile support" on
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800501
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-broken-scandir
+.endif
 
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
