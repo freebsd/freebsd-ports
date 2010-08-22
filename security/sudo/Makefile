@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sudo
-PORTVERSION=	1.7.4.2
-PORTREVISION=	1
+PORTVERSION=	1.7.4.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://obsd.isc.org/pub/sudo/ \
@@ -15,7 +14,7 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://boulder.tele.dk/pub/sudo/ \
 		ftp://core.ring.gr.jp/pub/misc/sudo/ \
 		ftp://ftp.wiretapped.net/pub/security/host-security/sudo/
-DISTNAME=	${PORTNAME}-1.7.4p2
+DISTNAME=	${PORTNAME}-1.7.4p3
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Allow others to run commands as root
@@ -89,11 +88,15 @@ post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's/$$(DESTDIR)$$(sudoersdir) $$(DESTDIR)$$(docdir)/$$(DESTDIR)$$(sudoersdir)/' \
 		${WRKSRC}/Makefile.in
-
 	@${REINPLACE_CMD} -e '/for f in ChangeLog/d' ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
+	${INSTALL_DATA} ${FILESDIR}/pam.conf ${PREFIX}/etc/pam.d/sudo.default
+	if [ ! -f ${PREFIX}/etc/pam.d/sudo ]; then \
+		${CP} -p ${PREFIX}/etc/pam.d/sudo.default \
+		${PREFIX}/etc/pam.d/sudo ; \
+	fi
 	if [ ! -f ${PREFIX}/etc/sudoers ]; then \
 		${CP} -p ${PREFIX}/etc/sudoers.sample ${PREFIX}/etc/sudoers; \
 	fi

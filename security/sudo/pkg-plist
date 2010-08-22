@@ -4,6 +4,9 @@ bin/sudoreplay
 @unexec if cmp -s %D/etc/sudoers.sample %D/etc/sudoers; then rm -f %D/etc/sudoers; fi
 etc/sudoers.sample
 @exec if [ ! -f %D/etc/sudoers ] ; then cp -p %D/%F %B/sudoers; fi
+@unexec if cmp -s %D/etc/pam.d/sudo.default %D/etc/pam.d/sudo; then rm -f %D/etc/pam.d/sudo ; fi
+etc/pam.d/sudo.default
+@exec if [ ! -f %D/etc/pam.d/sudo ] ; then cp -p %D/%F %B/pam.d/sudo; fi
 libexec/sudo_noexec.so
 sbin/visudo
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -20,3 +23,4 @@ sbin/visudo
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.OpenLDAP
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/sudoers2ldif
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry etc/sudoers.d
