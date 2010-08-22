@@ -135,6 +135,7 @@
     SUBDIR += p-interp
     SUBDIR += parallels-tools
     SUBDIR += pcemu
+    SUBDIR += pcsxr
     SUBDIR += pearpc
     SUBDIR += prodosemu
     SUBDIR += psim-freebsd

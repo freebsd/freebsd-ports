@@ -1,0 +1,8 @@
+--- pixmaps/Makefile.am.orig	2010-05-26 05:59:40.935976220 +0000
++++ pixmaps/Makefile.am	2010-05-26 05:59:52.223938796 +0000
+@@ -1,4 +1,4 @@
+-pixmapdir = "$(datadir)/pcsx"
++pixmapdir = "$(datadir)/pcsxr"
+ pixmap_DATA = pcsx.jpg
+ 
+ icondir = "$(datadir)/pixmaps"

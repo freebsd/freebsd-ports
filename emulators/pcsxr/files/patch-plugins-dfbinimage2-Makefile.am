@@ -1,0 +1,35 @@
+--- plugins/dfbinimage2/Makefile.am.orig	2009-03-29 02:25:30.000000000 +0000
++++ plugins/dfbinimage2/Makefile.am	2010-05-21 17:20:40.227057628 +0000
+@@ -1,17 +1,18 @@
+-INCLUDES = -DPACKAGE_DATA_DIR=\"${datadir}/pcsx/\" \
++INCLUDES = -DPACKAGE_DATA_DIR=\"${datadir}/pcsxr/\" \
+ 	-DPIXMAPDIR=\"${datadir}/pixmaps/\" \
+ 	-DLOCALE_DIR=\"${datadir}/locale/\" \
+ 	-D__LINUX__ \
+ 	-DREVISION=3 \
+ 	-DBUILD=0 \
+-	-DDATADIR=\"${datadir}/psemu/\" \
++	-DDATADIR=\"${datadir}/pcsxr/\" \
+ 	`pkg-config --cflags sdl vorbisfile libglade-2.0 gtk+-2.0`
+ 
+-libdir = $(prefix)/lib/games/psemu/
++libdir = @libdir@/pcsxr/
+ lib_LTLIBRARIES = libDFBinImage2.la
+-libDFBinImage2_la_LIBADD  = -lstdc++ -lz -lbz2 -lpthread -lvorbis
++libDFBinImage2_la_LIBADD  = -lstdc++ -lz -lbz2 -lvorbis
+ libDFBinImage2_la_LDFLAGS = -module -avoid-version \
+-	`pkg-config --libs sdl vorbisfile libglade-2.0 gtk+-2.0`
++	`pkg-config --libs sdl vorbisfile libglade-2.0 gtk+-2.0` \
++	-pthread
+ libDFBinImage2_la_SOURCES = About.cpp PlayCDDAData.cpp \
+ 	CDDAData.hpp ConfigCallbacks.cpp ConfigCallbacks.hpp \
+ 	ConfigFunctions.cpp TrackParser.cpp TrackParser.hpp \
+@@ -23,7 +24,7 @@
+ 	defines.h externs.h
+ 
+ glade_DATA = dfbinimage.glade2
+-gladedir = $(datadir)/psemu/
++gladedir = $(datadir)/pcsxr/
+ EXTRA_DIST = $(glade_DATA) CDInterface.hpp CDTime.hpp Exception.hpp \
+ 	Frame.hpp TimeCache.hpp TrackInfo.hpp \
+ 	OGG_README.txt notes.txt

@@ -1,0 +1,9 @@
+--- data/Makefile.am.orig	2010-05-26 06:02:22.954270724 +0000
++++ data/Makefile.am	2010-05-26 06:02:46.484204835 +0000
+@@ -1,5 +1,5 @@
+ glade_DATA = pcsx.glade2
+-gladedir = $(datadir)/pcsx
++gladedir = $(datadir)/pcsxr
+ 
+ desktopdir = $(datadir)/applications
+ desktop_DATA = pcsx.desktop
