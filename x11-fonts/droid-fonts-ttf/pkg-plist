@@ -1,0 +1,17 @@
+%%FONTDIR%%/DroidSans-Bold.ttf
+%%FONTDIR%%/DroidSans.ttf
+%%FONTDIR%%/DroidSansArabic.ttf
+%%FONTDIR%%/DroidSansFallback.ttf
+%%FONTDIR%%/DroidSansFallbackLegacy.ttf
+%%FONTDIR%%/DroidSansHebrew.ttf
+%%FONTDIR%%/DroidSansJapanese.ttf
+%%FONTDIR%%/DroidSansMono.ttf
+%%FONTDIR%%/DroidSansThai.ttf
+%%FONTDIR%%/DroidSerif-Bold.ttf
+%%FONTDIR%%/DroidSerif-BoldItalic.ttf
+%%FONTDIR%%/DroidSerif-Italic.ttf
+%%FONTDIR%%/DroidSerif-Regular.ttf
+%%FONTDIR%%/fonts.dir
+%%FONTDIR%%/fonts.scale
+@unexec rm %D/%%FONTDIR%%/fonts.cache-1 2>/dev/null || true
+@dirrm %%FONTDIR%%
