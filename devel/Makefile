@@ -137,6 +137,7 @@
     SUBDIR += bullet
     SUBDIR += bunny
     SUBDIR += byaccj
+    SUBDIR += bzr-builder
     SUBDIR += bzr-explorer
     SUBDIR += bzr-grep
     SUBDIR += bzr-gtk

@@ -1,0 +1,7 @@
+A "recipe" specifies a number of branches to combine in a certain way. This
+plugin will take the recipe and give you the resulting branch.
+
+It also has a command to then build a source package from the resulting branch
+and optionally upload it somewhere.
+
+WWW: https://launchpad.net/bzr-builder
