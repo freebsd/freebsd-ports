@@ -1,0 +1,46 @@
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/branch.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/branch.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/branch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/commands.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/commands.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/commands.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/loom_io.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/loom_io.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/loom_io.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/loom_state.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/loom_state.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/loom_state.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/revspec.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/revspec.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/revspec.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/blackbox.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/blackbox.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/blackbox.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/test_branch.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/test_branch.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/test_branch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/test_loom_io.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/test_loom_io.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/test_loom_io.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/test_loom_state.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/test_loom_state.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/test_loom_state.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/test_revspec.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/test_revspec.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/test_revspec.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/test_tree.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/test_tree.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests/test_tree.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tree.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tree.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tree.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom/tests
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/loom
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib
