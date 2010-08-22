@@ -1092,6 +1092,7 @@ blender                         ports/graphics/blender
 blender-doc                     ports/graphics/blender-doc
 bless                           ports/editors/bless
 blimitd                         ports/sysutils/blimitd
+blindelephant                   ports/security/blindelephant
 blinkensisters                  ports/games/blinkensisters
 blitz++                         ports/math/blitz++
 blobby                          ports/games/blobby
@@ -5331,6 +5332,7 @@ hashcash                        ports/mail/hashcash
 haskell-mode.el                 ports/lang/haskell-mode.el
 hastymail                       ports/www/hastymail
 hatari                          ports/emulators/hatari
+hatop                           ports/sysutils/hatop
 havp                            ports/www/havp
 hawknl                          ports/net/hawknl
 hawknl-devel                    ports/net/hawknl-devel
@@ -21190,7 +21192,6 @@ py-tables                       ports/devel/py-tables
 py-tagfu                        ports/deskutils/py-tagfu
 py-taglib                       ports/audio/py-taglib
 py-tagpy                        ports/audio/py-tagpy
-py-tarfile                      ports/archivers/py-tarfile
 py-tconfpy                      ports/devel/py-tconfpy
 py-tempita                      ports/textproc/py-Tempita
 py-testgears                    ports/devel/py-testgears
@@ -25447,6 +25448,7 @@ x11amp                          ports/audio/x11amp
 x11iraf                         ports/science/x11iraf
 x11perf                         ports/x11/x11perf
 x11vnc                          ports/net/x11vnc
+x12arima                        ports/math/x12arima
 x264                            ports/multimedia/x264
 x264-devel                      ports/multimedia/x264-devel
 x2goclient                      ports/net/x2goclient
