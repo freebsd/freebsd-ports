@@ -140,6 +140,7 @@
     SUBDIR += bzr-explorer
     SUBDIR += bzr-grep
     SUBDIR += bzr-gtk
+    SUBDIR += bzr-loom
     SUBDIR += bzrtools
     SUBDIR += c2lib
     SUBDIR += c2man
