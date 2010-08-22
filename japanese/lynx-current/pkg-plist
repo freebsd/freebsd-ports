@@ -2,9 +2,9 @@ bin/lynx
 @unexec if [ -f %D/etc/lynx.cfg ] && cmp -s %D/etc/lynx.cfg %D/etc/lynx.cfg.default; then rm -f %D/etc/lynx.cfg; fi
 etc/lynx.cfg.default
 @exec if [ ! -f %D/etc/lynx.cfg ] ; then cp -p %D/%F %B/lynx.cfg; fi
-%%ENABLE_COLOR_STYLE%%@unexec if [ -f %D/etc/lynx.lss ] && cmp -s %D/etc/lynx.lss %D/etc/lynx.lss.default; then rm -f %D/etc/lynx.lss; fi
-%%ENABLE_COLOR_STYLE%%etc/lynx.lss.default
-%%ENABLE_COLOR_STYLE%%@exec if [ ! -f %D/etc/lynx.lss ] ; then cp -p %D/%F %B/lynx.lss; fi
+%%WITH_COLOR_STYLE%%@unexec if [ -f %D/etc/lynx.lss ] && cmp -s %D/etc/lynx.lss %D/etc/lynx.lss.default; then rm -f %D/etc/lynx.lss; fi
+%%WITH_COLOR_STYLE%%etc/lynx.lss.default
+%%WITH_COLOR_STYLE%%@exec if [ ! -f %D/etc/lynx.lss ] ; then cp -p %D/%F %B/lynx.lss; fi
 @exec mkdir -p %D/share/lynx_help
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYHEADER
@@ -27,9 +27,12 @@ etc/lynx.cfg.default
 %%PORTDOCS%%%%DOCSDIR%%/docs/OS-390.announce
 %%PORTDOCS%%%%DOCSDIR%%/docs/README.TRST
 %%PORTDOCS%%%%DOCSDIR%%/docs/README.chartrans
+%%PORTDOCS%%%%DOCSDIR%%/docs/README.cookies
 %%PORTDOCS%%%%DOCSDIR%%/docs/README.defines
 %%PORTDOCS%%%%DOCSDIR%%/docs/README.jp
 %%PORTDOCS%%%%DOCSDIR%%/docs/README.metrics
+%%PORTDOCS%%%%DOCSDIR%%/docs/README.options
+%%PORTDOCS%%%%DOCSDIR%%/docs/README.release
 %%PORTDOCS%%%%DOCSDIR%%/docs/README.rootcerts
 %%PORTDOCS%%%%DOCSDIR%%/docs/README.ssl
 %%PORTDOCS%%%%DOCSDIR%%/docs/README.sslcerts
@@ -55,6 +58,7 @@ etc/lynx.cfg.default
 %%PORTDOCS%%%%DOCSDIR%%/samples/lynx-keymaps
 %%PORTDOCS%%%%DOCSDIR%%/samples/lynx.bat
 %%PORTDOCS%%%%DOCSDIR%%/samples/lynx.com
+%%PORTDOCS%%%%DOCSDIR%%/samples/lynx.ico
 %%PORTDOCS%%%%DOCSDIR%%/samples/lynx.lss
 %%PORTDOCS%%%%DOCSDIR%%/samples/lynx_bookmarks.htm
 %%PORTDOCS%%%%DOCSDIR%%/samples/lynxdump
@@ -69,10 +73,15 @@ etc/lynx.cfg.default
 %%PORTDOCS%%%%DOCSDIR%%/test/ISO_LATIN1_test.html
 %%PORTDOCS%%%%DOCSDIR%%/test/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/test/TestComment.html
+%%PORTDOCS%%%%DOCSDIR%%/test/bad-html.html
 %%PORTDOCS%%%%DOCSDIR%%/test/c1.html
+%%PORTDOCS%%%%DOCSDIR%%/test/cp-1252.html
+%%PORTDOCS%%%%DOCSDIR%%/test/cp-1252a.html
 %%PORTDOCS%%%%DOCSDIR%%/test/index.html
 %%PORTDOCS%%%%DOCSDIR%%/test/iso-8859-1.html
+%%PORTDOCS%%%%DOCSDIR%%/test/iso-8859-1a.html
 %%PORTDOCS%%%%DOCSDIR%%/test/iso-8859-2.html
+%%PORTDOCS%%%%DOCSDIR%%/test/iso-8859-2a.html
 %%PORTDOCS%%%%DOCSDIR%%/test/koi8-r.html
 %%PORTDOCS%%%%DOCSDIR%%/test/quickbrown.html
 %%PORTDOCS%%%%DOCSDIR%%/test/raw8bit.html
