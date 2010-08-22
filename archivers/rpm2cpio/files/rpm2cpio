@@ -44,16 +44,12 @@ if ($#ARGV == -1) {
 	exit 0;
 }
 
-# gobble the file up
-undef $/;
-$|=1;
-
 read $f, $rpm, 96;
 
 my ($magic, $major, undef) = unpack("NCC", $rpm);
 
 die "Not an RPM\n" if $magic != 0xedabeedb;
-die "Not a version 3 or 4 RPM\n" if $major != 3 && $major != 4;
+die "Not a version 3 or 4 RPM\n" if $major != 3 and $major != 4;
 
 read $f, $rpm, 16 or die "No header\n";
 while(1) {
@@ -73,7 +69,7 @@ while(1) {
 		last;
 	}
 	# 0xFD, '7zXZ', 0x0
-	if ($smagic == 0xfd37 and $smagic2== 0x7a585a00) {
+	if ($smagic == 0xfd37 and $smagic2 == 0x7a585a00) {
 		$filter = "xz -cd";
 		last;
 	}
@@ -84,7 +80,7 @@ while(1) {
 	}
 
 	# skip the headers
-	seek $f, 16*$sections+$bytes, 1 or die "File is too small\n";
+	seek $f, 16 * $sections + $bytes, 1 or die "File is too small\n";
 	do {
 		read $f, $rpm, 1 or die "No header\n" ;
 	} while(0 == unpack("C", $rpm));
