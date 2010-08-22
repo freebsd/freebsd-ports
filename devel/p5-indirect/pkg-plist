@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/indirect.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/indirect/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/indirect/indirect.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/indirect/indirect.bs
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/indirect
