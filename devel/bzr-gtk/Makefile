@@ -6,31 +6,27 @@
 #
 
 PORTNAME=	bzr-gtk
-PORTVERSION=	0.98.0
+PORTVERSION=	0.99.0
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpadlibrarian.net/39697819/
+MASTER_SITES=	http://launchpadlibrarian.net/53657034/ \
+		http://www.c-s.li/ports/
 
 MAINTAINER=	c-s@c-s.li
 COMMENT=	GTK interface to Bazaar-NG VCS
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
 		bzr:${PORTSDIR}/devel/bazaar-ng
 
-IGNORE=		does not run with latest version of bzr
-
 USE_GETTEXT=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 USE_PYDISTUTILS=	yes
 INSTALLS_ICONS=	yes
 
 OPTIONS=	GTKSOURCE "GTKSourceview support" OFF
-
-do-patch:
-		${REINPLACE_CMD} -e 's|/usr/share/olive/olive.glade|${PREFIX}/share/olive/olive.glade|' ${WRKSRC}/olive/guifiles.py
-		${REINPLACE_CMD} -e 's|/usr/share/olive/cmenu.ui|${PREFIX}/share/olive/cmenu.ui|' ${WRKSRC}/olive/guifiles.py
-		${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/olive-gtk.desktop
 
 .include <bsd.port.pre.mk>
 
