@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ctypes
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ COMMENT=	Python module allowing to create and manipulate C data types
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-ONLY_FOR_ARCHS=	i386 amd64 alpha powerpc sparc64
+ONLY_FOR_ARCHS=	amd64 ia64 i386 mips powerpc sparc64
 DEPRECATED=	only applies to Python2.4; you should upgrade to a newer Python
 
 .include <bsd.port.pre.mk>
