@@ -1,0 +1,31 @@
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/bzrlibbackports.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/bzrlibbackports.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/bzrlibbackports.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/cmds.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/cmds.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/cmds.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/ppa.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/ppa.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/ppa.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/recipe.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/recipe.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/recipe.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/tests/test_blackbox.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/tests/test_blackbox.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/tests/test_blackbox.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/tests/test_ppa.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/tests/test_ppa.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/tests/test_ppa.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/tests/test_recipe.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/tests/test_recipe.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/tests/test_recipe.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder/tests
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/builder
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib
