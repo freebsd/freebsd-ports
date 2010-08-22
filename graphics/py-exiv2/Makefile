@@ -13,7 +13,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/49194059/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	dindin@dindin.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for exiv2
 
 LIB_DEPENDS=	exiv2.9:${PORTSDIR}/graphics/exiv2\

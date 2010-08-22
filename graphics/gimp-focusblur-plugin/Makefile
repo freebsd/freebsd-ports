@@ -14,7 +14,7 @@ MASTER_SITES=	http://sudakyo.hp.infoseek.co.jp/gimp/fblur/ \
 PKGNAMEPREFIX=	gimp-
 PKGNAMESUFFIX=	-plugin
 
-MAINTAINER=	dindin@dindin.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gimp realistic focus blur plugin
 
 LIB_DEPENDS=	gimp-2.0:${PORTSDIR}/graphics/gimp-app \

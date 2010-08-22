@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.dindin.ru/download/ \
 DISTFILES=	Mueller7accentGPL.tgz yusupov_mf.tgz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dindin@dindin.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mueller English-Russian dictionary
 
 USE_GMAKE=	yes

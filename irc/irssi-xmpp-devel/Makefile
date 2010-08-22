@@ -10,7 +10,7 @@ MASTER_SITES=	http://dindin.ru/download/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION}
 
-MAINTAINER=	dindin@dindin.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Irssi-xmpp-snapshot is the irssi-xmmp cvs snapshot
 
 BUILD_DEPENDS=	irssi:${PORTSDIR}/irc/irssi

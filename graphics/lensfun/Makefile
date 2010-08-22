@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	BERLIOS
 
-MAINTAINER=	dindin@dindin.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for fixing lens geometry distortion
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
