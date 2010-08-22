@@ -1,5 +1,3 @@
-@comment $FreeBSD$
-bin/olive-gtk
 bin/bzr-handle-patch
 bin/bzr-notify
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/__init__.py
@@ -23,6 +21,12 @@ bin/bzr-notify
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/annotate/spanselector.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/annotate/spanselector.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/annotate/spanselector.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branch.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branch.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branchbox.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branchbox.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branchbox.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branchview/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branchview/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branchview/__init__.pyo
@@ -38,12 +42,6 @@ bin/bzr-notify
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branchview/treeview.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branchview/treeview.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branchview/treeview.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branch.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branch.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branch.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branchbox.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branchbox.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branchbox.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/checkout.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/checkout.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/checkout.pyo
@@ -74,6 +72,9 @@ bin/bzr-notify
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/keyring.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/keyring.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/keyring.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/loom.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/loom.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/loom.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/merge.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/merge.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/merge.pyo
@@ -89,42 +90,6 @@ bin/bzr-notify
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/notify.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/notify.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/notify.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/__init__.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/__init__.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/__init__.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/add.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/add.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/add.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/bookmark.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/bookmark.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/bookmark.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/guifiles.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/guifiles.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/guifiles.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/info.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/info.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/info.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/info_helper.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/info_helper.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/info_helper.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/launch.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/launch.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/launch.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/menu.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/menu.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/menu.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/mkdir.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/mkdir.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/mkdir.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/move.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/move.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/move.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/remove.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/remove.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/remove.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/rename.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/rename.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/rename.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/preferences/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/preferences/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/preferences/__init__.pyo
@@ -155,6 +120,9 @@ bin/bzr-notify
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/seahorse.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/seahorse.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/seahorse.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/search.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/search.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/search.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/status.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/status.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/status.pyo
@@ -176,9 +144,9 @@ bin/bzr-notify
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_history.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_history.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_history.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_preferences.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_preferences.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_preferences.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_linegraph.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_linegraph.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_linegraph.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_revisionview.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_revisionview.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_revisionview.pyo
@@ -194,77 +162,48 @@ bin/bzr-notify
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/window.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/window.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/window.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/search.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/loom.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/window.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/window.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive/window.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_linegraph.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_linegraph.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests/test_linegraph.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/search.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/loom.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/search.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/loom.pyo
-share/locale/ca/LC_MESSAGES/olive-gtk.mo
-share/locale/cs/LC_MESSAGES/olive-gtk.mo
-share/locale/de/LC_MESSAGES/olive-gtk.mo
-share/locale/en_GB/LC_MESSAGES/olive-gtk.mo
-share/locale/es/LC_MESSAGES/olive-gtk.mo
-share/locale/fr/LC_MESSAGES/olive-gtk.mo
-share/locale/hu/LC_MESSAGES/olive-gtk.mo
-share/locale/id/LC_MESSAGES/olive-gtk.mo
-share/locale/it/LC_MESSAGES/olive-gtk.mo
-share/locale/pl/LC_MESSAGES/olive-gtk.mo
-share/locale/pt_BR/LC_MESSAGES/olive-gtk.mo
-share/locale/ru/LC_MESSAGES/olive-gtk.mo
-share/locale/sr/LC_MESSAGES/olive-gtk.mo
-share/locale/sv/LC_MESSAGES/olive-gtk.mo
-share/locale/ku/LC_MESSAGES/olive-gtk.mo
-share/bzr-gtk/icons/bug.png
-share/bzr-gtk/icons/bzr-icon-64.png
-share/bzr-gtk/icons/commit.png
-share/bzr-gtk/icons/commit16.png
-share/bzr-gtk/icons/diff.png
-share/bzr-gtk/icons/diff16.png
-share/bzr-gtk/icons/log.png
-share/bzr-gtk/icons/log16.png
-share/bzr-gtk/icons/olive-gtk.png
-share/bzr-gtk/icons/oliveicon2.png
-share/bzr-gtk/icons/pull.png
-share/bzr-gtk/icons/pull16.png
-share/bzr-gtk/icons/push.png
-share/bzr-gtk/icons/push16.png
-share/bzr-gtk/icons/refresh.png
-share/bzr-gtk/icons/sign-bad.png
-share/bzr-gtk/icons/sign-ok.png
-share/bzr-gtk/icons/sign-unknown.png
-share/bzr-gtk/icons/sign.png
-share/bzr-gtk/icons/tag-16.png
-share/bzr-gtk/credits.pickle
-share/olive/cmenu.ui
-share/icons/hicolor/scalable/emblems/emblem-bzr-added.svg
-share/icons/hicolor/scalable/emblems/emblem-bzr-ignored.svg
-share/icons/hicolor/scalable/emblems/emblem-bzr-conflict.svg
-share/icons/hicolor/scalable/emblems/emblem-bzr-controlled.svg
-share/icons/hicolor/scalable/emblems/emblem-bzr-modified.svg
-share/icons/hicolor/scalable/emblems/emblem-bzr-removed.svg
+share/application-registry/bzr-gtk.applications
 share/applications/bazaar-properties.desktop
 share/applications/bzr-handle-patch.desktop
 share/applications/bzr-notify.desktop
-share/applications/olive-gtk.desktop
-share/application-registry/bzr-gtk.applications
-share/pixmaps/olive-gtk.png
 share/pixmaps/bzr-icon-64.png
-@dirrm share/bzr-gtk/icons
-@dirrm share/bzr-gtk
-@dirrm share/olive
+%%DATADIR%%/icons/bug.png
+%%DATADIR%%/icons/bzr-icon-64.png
+%%DATADIR%%/icons/commit.png
+%%DATADIR%%/icons/commit16.png
+%%DATADIR%%/icons/diff.png
+%%DATADIR%%/icons/diff16.png
+%%DATADIR%%/icons/log.png
+%%DATADIR%%/icons/log16.png
+%%DATADIR%%/icons/pull.png
+%%DATADIR%%/icons/pull16.png
+%%DATADIR%%/icons/push.png
+%%DATADIR%%/icons/push16.png
+%%DATADIR%%/icons/refresh.png
+%%DATADIR%%/icons/sign-bad.png
+%%DATADIR%%/icons/sign-ok.png
+%%DATADIR%%/icons/sign-unknown.png
+%%DATADIR%%/icons/sign.png
+%%DATADIR%%/icons/tag-16.png
+share/icons/hicolor/scalable/emblems/emblem-bzr-added.svg
+share/icons/hicolor/scalable/emblems/emblem-bzr-conflict.svg
+share/icons/hicolor/scalable/emblems/emblem-bzr-controlled.svg
+share/icons/hicolor/scalable/emblems/emblem-bzr-ignored.svg
+share/icons/hicolor/scalable/emblems/emblem-bzr-modified.svg
+share/icons/hicolor/scalable/emblems/emblem-bzr-removed.svg
+@dirrmtry share/icons/hicolor/scalable/emblems
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrmtry share/application-registry
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/annotate
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branchview
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/olive
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/preferences
-@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/viz
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tests
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/preferences
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/branchview
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/annotate
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib
