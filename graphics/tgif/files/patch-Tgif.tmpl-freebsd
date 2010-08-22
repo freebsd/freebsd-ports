@@ -1,0 +1,10 @@
+--- Tgif.tmpl-freebsd.orig	2009-11-17 09:57:20.000000000 +0900
++++ Tgif.tmpl-freebsd	2010-08-22 01:37:01.000000000 +0900
+@@ -54,4 +54,6 @@
+ LOCAL_LIBRARIES	= $(XLIB)
+ XCOMM LOCAL_LIBRARIES	= $(XMULIB) $(XTOOLLIB) $(XLIB)
+ XCOMM SYS_LIBRARIES	= -ldl -lm -lz
+-SYS_LIBRARIES	= -lm -lz
++SYS_LIBRARIES	= -lm -lz ${PTHREAD_LIBS}
++
++#include "Tgif.tmpl-freebsdports"
