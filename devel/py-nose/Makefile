@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	nose
-PORTVERSION=	0.11.3
+PORTVERSION=	0.11.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://somethingaboutorange.com/mrl/projects/nose/ \
-		${MASTER_SITE_LOCAL} \
-		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	dryice
+		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A discovery-based unittest extension
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 MAN1=		nosetests.1
 
