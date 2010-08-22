@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	jgraphx
-PORTVERSION=	1.3.0.0
+PORTVERSION=	1.4.0.9
 CATEGORIES=	java graphics
-MASTER_SITES=	http://www.jgraph.com/downloads/jgraphx/archive/ \
-		http://www.bayofrum.net/dist/jgraphx/
+MASTER_SITES=	http://www.bayofrum.net/dist/jgraphx/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\./_/g}
 
 MAINTAINER=	utisoft@gmail.com
@@ -53,15 +52,15 @@ do-install: do-install-jar do-install-javadoc
 
 do-install-jar:
 	@${ECHO_CMD} -n  ">> Installing .jar file..."
-	@${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	@${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}.jar \
+		${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_CMD} " [DONE]"
 
 do-install-javadoc:
 .if !defined(NOPORTDOCS)
 	@${ECHO_CMD} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/docs && ${FIND} . \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR}
 	@${ECHO_CMD} " [DONE]"
 .endif
 
