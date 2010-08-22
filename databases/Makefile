@@ -189,6 +189,7 @@
     SUBDIR += msql
     SUBDIR += msql3
     SUBDIR += mtop
+    SUBDIR += my2cego
     SUBDIR += mydbf2mysql
     SUBDIR += mydumper
     SUBDIR += mylibrary
