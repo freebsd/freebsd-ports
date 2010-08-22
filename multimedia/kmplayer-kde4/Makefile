@@ -15,6 +15,7 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	kris@pcbsd.org
 COMMENT=	KDE frontend to Phonon / KDE4
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		cairo.2:${PORTSDIR}/graphics/cairo
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
@@ -25,6 +26,10 @@ USE_CMAKE=	yes
 USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build
-USE_LDCONFIG=	${KDE4_PREFIX}/lib ${KDE4_PREFIX}/lib/kde4
+
+post-patch:
+#Fix build with kdelibs>=4.5.0
+	${REINPLACE_CMD} -e 's,V4.1.2-Based,V4.2-Based,g' \
+		${WRKSRC}/doc/index.docbook
 
 .include <bsd.port.mk>
