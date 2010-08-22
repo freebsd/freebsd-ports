@@ -1,0 +1,16 @@
+Index: rssdler.py
+===================================================================
+--- rssdler.py	(revision 169)
++++ rssdler.py	(working copy)
+@@ -363,9 +363,9 @@ def percentUnQuote( sStr, p=percentunQuoteDict, re
+       replaced in order of the sequence"""
+     for search in p:
+         if search in reserved: continue
+-        sStr = sStr.replace( search, p[search] )
++        sStr = re.sub('(?i)' + re.escape(search), p[search], sStr)
+     for search in reserved:
+-        sStr = sStr.replace( search, p[search])
++        sStr = re.sub('(?i)' + re.escape(search), p[search], sStr)
+     return sStr
+ 
+ def percentQuote(sStr, urlPart=(2,), pd=percentQuoteDict):
