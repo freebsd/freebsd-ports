@@ -17,7 +17,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flo@kasimir.com
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
 .if defined(NOPORTDOCS)
