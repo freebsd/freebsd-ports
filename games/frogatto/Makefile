@@ -7,7 +7,7 @@
 
 PORTNAME=	frogatto
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.frogatto.com/files/
 
@@ -35,16 +35,20 @@ post-patch:
 # Point to the right location where look for the resources on FreeBSD
 	@${REINPLACE_CMD} -e 's,HAVE_CONFIG_H,__FreeBSD__,' \
 		-e 's,DATADIR,"${DATADIR}",' ${WRKSRC}/src/filesystem.cpp
+	@${REINPLACE_CMD} -E 's,(music|sounds)/,${DATADIR}/&,' \
+		${WRKSRC}/src/sound.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/game ${PREFIX}/bin/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/server ${PREFIX}/bin/${PORTNAME}-server
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "data images music sounds" \
 		${DATADIR}
+# Fix permissions on DATADIR after COPYTREE_SHARE (cpio(1) defaults to 700)
+	${CHMOD} 755 ${DATADIR}
 # Dynamically generate part of the PLIST for game resources (lots of them)
-	${FIND} ${DATADIR} -not -type d | \
+	@${FIND} ${DATADIR} -not -type d | \
 		${SED} 's,^${PREFIX}/,,' | ${SORT} >> ${TMPPLIST}
-	${FIND} ${DATADIR} -type d | \
+	@${FIND} ${DATADIR} -type d | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' | ${SORT} -r >> ${TMPPLIST}
 
 .include <bsd.port.mk>
