@@ -69,6 +69,7 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		LDAP_TLS "Use LDAP TLS (Requires LDAP, OPENSSL)" off\
 		MYSQL "MySQL auth (Can be combined)" off \
 		PGSQL "Postgres auth (Can be combined)" off \
+		SHAPER "Shaper module" off \
 		SQLITE "SQLite auth (Can be combined)" off \
 		ODBC "ODBC (Can be combined)" off \
 		OPENSSL "Include mod_tls" on \
@@ -133,6 +134,10 @@ MODULES:=${MODULES}:mod_wrap2_sql
 
 .if defined(WITH_RADIUS)
 MODULES:=${MODULES}:mod_radius
+.endif
+
+.if defined(WITH_SHAPER)
+MODULES:=${MODULES}:mod_shaper
 .endif
 
 .if defined(WITH_QUOTATAB_RADIUS)
