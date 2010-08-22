@@ -54,6 +54,7 @@ OPTIONS=	A52 "A52 DVD audio decoder" On \
 		OCFLAGS "Optimized CFLAGS" Off \
 		OGG "Ogg audio decoder support" On \
 		OPENGL "OpenGL acceleration support" Off \
+		PLUGIN "VLC Mozilla Plugin" Off \
 		PNG "PNG graphics format support" On \
 		PORTAUDIO "Portaudio library support" Off \
 		PULSE "Pulse Audio support" Off \
@@ -87,7 +88,8 @@ OPTIONS=	A52 "A52 DVD audio decoder" On \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5_BUILD=yes
+MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
 
 FAKEDIR=	${WRKDIR}/fake${PREFIX}
@@ -436,6 +438,19 @@ CONFIGURE_ARGS+=--enable-opengl
 CONFIGURE_ARGS+=--disable-opengl
 .endif
 
+.if defined(WITH_PLUGIN)
+USE_GECKO=	libxul
+USE_WEBPLUGINS=	gecko*
+WEBPLUGINS_FILES=libvlcplugin.so
+.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
+CONFIGURE_ENV+=	MOZILLA_CONFIG="${GECKO_CONFIG}" \
+		XPIDL="${XPIDL}" \
+		XPIDL_INCL="${XPIDL_INCL}"
+CONFIGURE_ARGS+=--enable-mozilla
+.else
+CONFIGURE_ARGS+=--disable-mozilla
+.endif
+
 .if defined(WITHOUT_PNG)
 CONFIGURE_ARGS+=--disable-png
 .else
@@ -646,6 +661,11 @@ post-patch:
 		${WRKSRC}/include/vlc_config.h
 	${REINPLACE_CMD} -e 's|portaudio\.h|portaudio2/&|g' \
 		${WRKSRC}/modules/audio_output/portaudio.c
+.if defined(WITH_PLUGIN)
+	@${REINPLACE_CMD} -e 's|npvlcdir = $$(libdir)/mozilla/plugins|npvlcdir = ${WEBPLUGINS_DIR}|g' \
+		${WRKSRC}/projects/mozilla/Makefile.am \
+		${WRKSRC}/projects/mozilla/Makefile.in
+.endif
 
 pre-install:
 	${RM} -rf ${PLIST} ${FAKEDIR}
@@ -666,6 +686,14 @@ pre-install:
 .if !defined(WITH_UNSAFE_PLUGINS)
 	${RM} -f ${FAKEDIR}/lib/vlc/plugins/services_discovery/libsap_plugin.la
 	${RM} -f ${FAKEDIR}/lib/vlc/plugins/services_discovery/libsap_plugin.so
+.endif
+.if defined(WITH_PLUGIN)
+.for ext in so la
+	${ECHO_CMD} "${WEBPLUGINS_DIR}/libvlcplugin.${ext}" | \
+		${SED} -e 's|${PREFIX}/||' >> ${PLIST}
+.endfor
+	${ECHO_CMD} "@dirrmtry ${WEBPLUGINS_DIR}" | \
+		${SED} -e 's|${PREFIX}/||' >> ${PLIST}
 .endif
 	cd ${FAKEDIR}/lib && ${FIND} -s * -type f -o -type l| \
 		${SED} -e 's|^|lib/|' >> ${PLIST} \
@@ -722,6 +750,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/vlc-config.1 ${MANPREFIX}/man/man1/
 	if [ ! -d ${PREFIX}/share/applications ]; then \
 		${MKDIR} ${PREFIX}/share/applications ; \
-	fi
+fi
 
 .include <bsd.port.post.mk>
