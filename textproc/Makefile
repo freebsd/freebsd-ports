@@ -307,6 +307,7 @@
     SUBDIR += lexxia
     SUBDIR += libcroco
     SUBDIR += libcsv
+    SUBDIR += libcue
     SUBDIR += libebml
     SUBDIR += libextractor
     SUBDIR += libkmfl
