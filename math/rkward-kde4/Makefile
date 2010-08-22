@@ -39,6 +39,10 @@ NLS=		""
 .endif
 PLIST_SUB+=	NLS=${NLS}
 
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+.endif
+
 PHP2FIX=	rkward/settings/rksettingsmodulephp.cpp
 
 .if defined(WITH_DEBUG)
@@ -53,6 +57,10 @@ pre-configure:
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's|ADD_SUBDIRECTORY(doc)|#ADD_SUBDIRECTORY(doc)|'	\
 		${WRKSRC}/CMakeLists.txt
+.else
+#Fix build with kdelibs>=4.5.0
+	${REINPLACE_CMD} -e 's,V4.1-Based Variant V1.0,V4.2-Based Variant V1.1,g' \
+		${WRKSRC}/doc/rkward/index.docbook
 .endif
 .if defined(WITHOUT_NLS)
 	${REINPLACE_CMD} -e 's|ADD_SUBDIRECTORY(po)|#ADD_SUBDIRECTORY(po)|'	\
