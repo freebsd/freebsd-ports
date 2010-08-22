@@ -821,6 +821,7 @@
     SUBDIR += py-avahi
     SUBDIR += py-cloudfiles
     SUBDIR += py-dpkt
+    SUBDIR += py-eventlet
     SUBDIR += py-google
     SUBDIR += py-impacket
     SUBDIR += py-iplib
