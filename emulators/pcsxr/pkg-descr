@@ -1,0 +1,10 @@
+Pcsx-reloaded is a Playstation (PSX) emulator.
+
+It is an improved version of pcsx-df, which is
+itself of fork of pcsx.
+
+The FreeBSD port includes the dfbinimage2 plugin,
+allowing the use of your favorite backups as .bin
+image files.
+
+WWW: http://pcsxr.codeplex.com

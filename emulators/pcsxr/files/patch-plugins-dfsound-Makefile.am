@@ -1,0 +1,33 @@
+--- plugins/dfsound/Makefile.am.orig	2009-12-25 18:26:41.000000000 +0000
++++ plugins/dfsound/Makefile.am	2010-05-21 17:21:11.042375497 +0000
+@@ -1,11 +1,11 @@
+ INCLUDES = -DPIXMAPDIR=\"${datadir}/pixmaps/\" \
+ 	-DLOCALE_DIR=\"${datadir}/locale/\" \
+-	-DDATADIR=\"${datadir}/psemu/\" \
++	-DDATADIR=\"${datadir}/pcsxr/\" \
+ 	$(GTK2_CFLAGS) $(GLADE2_CFLAGS) \
+ 	-I../../include
+ 
+-bindir = @libdir@/games/psemu/
+-libdir = @libdir@/games/psemu/
++bindir = @libdir@/pcsxr/
++libdir = @libdir@/pcsxr/
+ 
+ lib_LTLIBRARIES = libDFSound.la
+ 
+@@ -13,7 +13,7 @@
+ 	alsa.c oss.c nullsnd.c
+ 
+ libDFSound_la_CFLAGS =
+-libDFSound_la_LDFLAGS = -module -avoid-version -lpthread -lm
++libDFSound_la_LDFLAGS = -module -avoid-version -pthread -lm
+ 
+ if HAVE_ALSA
+ libDFSound_la_CFLAGS += -DUSEALSA=1
+@@ -29,5 +29,5 @@
+ cfgDFSound_LDADD = $(GTK2_LIBS) $(GLADE2_LIBS)
+ 
+ glade_DATA = spucfg-0.1df/dfsound.glade2
+-gladedir = $(datadir)/psemu/
++gladedir = $(datadir)/pcsxr/
+ EXTRA_DIST = $(glade_DATA)

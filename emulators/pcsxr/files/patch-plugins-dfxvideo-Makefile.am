@@ -1,0 +1,26 @@
+--- plugins/dfxvideo/Makefile.am.orig	2010-05-25 06:01:00.630057102 +0000
++++ plugins/dfxvideo/Makefile.am	2010-05-25 05:59:52.000000000 +0000
+@@ -8,13 +8,13 @@
+ 
+ INCLUDES = -DPIXMAPDIR=\"${datadir}/pixmaps/\" \
+ 	-DLOCALE_DIR=\"${datadir}/locale/\" \
+-	-DDATADIR=\"${datadir}/psemu/\" \
++	-DDATADIR=\"${datadir}/pcsxr/\" \
+ 	$(GTK2_CFLAGS) $(GLADE2_CFLAGS) -I/usr/X11R6/include \
+ 	-I../../libpcsxcore \
+ 	-I../../include
+ 
+-bindir = @libdir@/games/psemu/
+-libdir = @libdir@/games/psemu/
++bindir = @libdir@/pcsxr/
++libdir = @libdir@/pcsxr/
+ 
+ lib_LTLIBRARIES = libDFXVideo.la
+ 
+@@ -32,5 +32,5 @@
+ cfgDFXVideo_LDADD = $(GTK2_LIBS) $(GLADE2_LIBS) -L/usr/X11R6/lib -lXext
+ 
+ glade_DATA = gpucfg-0.1df/dfxvideo.glade2
+-gladedir = $(datadir)/psemu/
++gladedir = $(datadir)/pcsxr/
+ EXTRA_DIST = $(glade_DATA)

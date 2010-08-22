@@ -1,0 +1,8 @@
+--- Makefile.am.orig	2010-05-20 17:39:27.936729388 +0000
++++ Makefile.am	2010-05-20 17:40:11.929625133 +0000
+@@ -1,4 +1,4 @@
+-SUBDIRS = data doc po libpcsxcore gui pixmaps plugins/dfinput plugins/dfsound plugins/dfxvideo plugins/dfcdrom
++SUBDIRS = data doc po libpcsxcore gui pixmaps plugins/dfinput plugins/dfsound plugins/dfxvideo plugins/dfbinimage2
+ SUBDIRS += $(PEOPSXGL)
+ 
+ EXTRA_DIST = AUTHORS COPYING INSTALL NEWS README ChangeLog ChangeLog.df

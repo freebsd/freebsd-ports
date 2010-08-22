@@ -1,0 +1,24 @@
+--- plugins/peopsxgl/Makefile.am.orig	2010-05-25 06:02:09.577693393 +0000
++++ plugins/peopsxgl/Makefile.am	2010-05-25 06:00:10.000000000 +0000
+@@ -1,11 +1,11 @@
+ INCLUDES = -DPIXMAPDIR=\"${datadir}/pixmaps/\" \
+ 	-DLOCALE_DIR=\"${datadir}/locale/\" \
+-	-DDATADIR=\"${datadir}/psemu/\" \
++	-DDATADIR=\"${datadir}/pcsxr/\" \
+ 	$(GTK2_CFLAGS) $(GLADE2_CFLAGS) -I/usr/X11R6/include \
+ 	-I../../libpcsxcore -I../../include -fPIC
+ 
+-bindir = @libdir@/games/psemu/
+-libdir = @libdir@/games/psemu/
++bindir = @libdir@/pcsxr/
++libdir = @libdir@/pcsxr/
+ 
+ lib_LTLIBRARIES = libpeopsxgl.la
+ 
+@@ -20,5 +20,5 @@
+ cfgpeopsxgl_LDADD = $(GTK2_LIBS) $(GLADE2_LIBS)
+ 
+ #glade_DATA = gpucfg-0.1df/peopsxgl.glade2
+-#gladedir = $(datadir)/psemu/
++#gladedir = $(datadir)/pcsxr/
+ #EXTRA_DIST = $(glade_DATA)

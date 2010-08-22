@@ -1,0 +1,19 @@
+--- configure.ac.orig	2009-12-25 18:27:52.000000000 +0000
++++ configure.ac	2010-06-08 06:01:19.057047473 +0000
+@@ -8,6 +8,7 @@
+ AC_CONFIG_HEADERS([include/config.h:include/config.h.in])
+ 
+ AC_PROG_CC
++AC_PROG_CXX
+ AC_PROG_RANLIB
+ AC_DISABLE_STATIC
+ AC_PROG_LIBTOOL
+@@ -34,7 +35,7 @@
+ AC_SUBST(GLADE2_CFLAGS)
+ AC_SUBST(GLADE2_LIBS)
+ 
+-AC_CONFIG_FILES([Makefile data/Makefile doc/Makefile libpcsxcore/Makefile gui/Makefile plugins/dfinput/Makefile plugins/dfsound/Makefile plugins/dfxvideo/Makefile plugins/dfcdrom/Makefile pixmaps/Makefile po/Makefile.in])
++AC_CONFIG_FILES([Makefile data/Makefile doc/Makefile libpcsxcore/Makefile gui/Makefile plugins/dfinput/Makefile plugins/dfsound/Makefile plugins/dfxvideo/Makefile plugins/dfbinimage2/Makefile pixmaps/Makefile po/Makefile.in])
+ 
+ dnl Check for -fno-dse option support
+ saved_CFLAGS="$CFLAGS"

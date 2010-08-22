@@ -1,0 +1,36 @@
+bin/pcsx
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pcsx.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pcsx.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pcsx.mo
+share/pcsxr/dfbinimage.glade2
+share/pcsxr/dfsound.glade2
+share/pcsxr/dfxvideo.glade2
+share/pcsxr/dfinput.glade2
+share/pcsxr/pcsx.glade2
+share/pcsxr/pcsx.jpg
+@dirrm share/pcsxr
+share/pixmaps/pcsx-icon.png
+share/applications/pcsx.desktop
+@dirrmtry share/applications
+lib/pcsxr/cfgDFXVideo
+lib/pcsxr/cfgpeopsxgl
+lib/pcsxr/cfgDFInput
+lib/pcsxr/cfgDFSound
+lib/pcsxr/libDFXVideo.a
+lib/pcsxr/libDFXVideo.la
+lib/pcsxr/libDFXVideo.so
+lib/pcsxr/libpeopsxgl.a
+lib/pcsxr/libpeopsxgl.la
+lib/pcsxr/libpeopsxgl.so
+lib/pcsxr/libDFInput.a
+lib/pcsxr/libDFInput.la
+lib/pcsxr/libDFInput.so
+lib/pcsxr/libDFSound.a
+lib/pcsxr/libDFSound.la
+lib/pcsxr/libDFSound.so
+lib/pcsxr/libDFBinImage2.a
+lib/pcsxr/libDFBinImage2.la
+lib/pcsxr/libDFBinImage2.so
+@dirrm lib/pcsxr
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
