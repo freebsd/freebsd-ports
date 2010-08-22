@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	tgif
-PORTVERSION=	4.1.45
-PORTREVISION=	8
+PORTVERSION=	4.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.usc.edu/pub/tgif/ \
 		http://groups.yahoo.com/group/tgif4-announce/files/ \
 		SF
-
 DISTNAME=	${PORTNAME}-QPL-${PORTVERSION}
 
 MAINTAINER=	bmc@clapper.org
@@ -26,6 +24,8 @@ OPTIONS=	NLS "Enable native language support" on \
 USE_IMAKE=	yes
 PORTDOCS=	HISTORY README
 USE_XORG=	x11 xext xt sm ice
+MAKE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 MAN1=		tgif.1
 
@@ -50,9 +50,8 @@ EXAMPLES.spice=	README BZ.mod DN.mod DN.sym MN.mod MN.sym MP.mod MP.sym \
 		resistor.0tc.sym resistor.2tc.sym resistor.h.2tc.sym \
 		resistor.h.sym resistor.sym
 
-post-extract:
-		${CP} -f ${WRKDIR}/${DISTNAME}/Tgif.tmpl-freebsd \
-		      ${WRKSRC}/Tgif.tmpl
+pre-configure:
+		cd ${WRKSRC} && ${INSTALL_DATA} Tgif.tmpl-freebsd Tgif.tmpl
 		( for D in ${IMAKEDEFINES}; do \
 			${ECHO_CMD} "#define $${D}"; \
 		  done; \

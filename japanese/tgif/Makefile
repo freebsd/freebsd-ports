@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tgif-resource
-PORTVERSION=	4.1.45
-PORTREVISION=	8
+PORTVERSION=	4.2.2
 CATEGORIES=	japanese graphics
 MASTER_SITES=	# empty
 DISTFILES=	# empty
