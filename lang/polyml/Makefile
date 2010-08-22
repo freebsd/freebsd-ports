@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polyml
-PORTVERSION=	5.2.1
+PORTVERSION=	5.3
 CATEGORIES=	lang
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -14,6 +14,9 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Fast open-source implementation of Standard ML
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-x
@@ -27,7 +30,7 @@ PLIST_FILES=	bin/poly		\
 		lib/libpolyml.a		\
 		lib/libpolyml.la	\
 		lib/libpolyml.so	\
-		lib/libpolyml.so.1
+		lib/libpolyml.so.2
 
 MAN1=		poly.1 polyimport.1
 MANCOMPRESSED=	no
