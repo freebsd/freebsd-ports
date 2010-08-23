@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Software-License
-PORTVERSION=	0.016
+PORTVERSION=	0.101410
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/R/RJ/RJBS
@@ -18,7 +18,10 @@ COMMENT=	Packages that provide templated software licenses
 BUILD_DEPENDS=	p5-Data-Section>=0:${PORTSDIR}/devel/p5-Data-Section \
 		p5-Sub-Install>=0:${PORTSDIR}/devel/p5-Sub-Install \
 		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Data-Section>=0:${PORTSDIR}/devel/p5-Data-Section \
+		p5-Sub-Install>=0:${PORTSDIR}/devel/p5-Sub-Install \
+		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template \
+		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
 
 PERL_CONFIGURE=	yes
 
