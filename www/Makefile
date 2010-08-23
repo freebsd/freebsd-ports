@@ -1810,7 +1810,6 @@
     SUBDIR += wiliki
     SUBDIR += wml
     SUBDIR += wnews
-    SUBDIR += woadaptor
     SUBDIR += woadaptor-cgi
     SUBDIR += woof
     SUBDIR += wordpress

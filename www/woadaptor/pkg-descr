@@ -1,7 +1,0 @@
-WOAdaptor is a collection of WebObjects WebServer Adaptors. 
-These include an Apache Module, CGI and FastCGI adaptors
-
-This is a subproject of Project Wonder and is an effort to pool enhancements
-and bug fixes for Apple's open source codebase.
-
-WWW: http://wonder.sourceforge.net/WOAdaptor.html
