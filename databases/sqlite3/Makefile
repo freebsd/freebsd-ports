@@ -7,7 +7,7 @@
 
 PORTNAME=	sqlite3
 PORTVERSION=	3.6.23.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 DISTNAME=	sqlite-${PORTVERSION}
@@ -33,7 +33,7 @@ OPTIONS=	DEBUG		"Enable debugging & verbose explain"	off \
 		TCLWRAPPER	"Enable TCL wrapper"			off \
 		METADATA	"Enable column metadata"		on \
 		THREADSAFE	"Build thread-safe library"		on \
-		EXTENSION	"Allow loadable extensions"		off
+		EXTENSION	"Allow loadable extensions"		on
 
 .include <bsd.port.pre.mk>
 
