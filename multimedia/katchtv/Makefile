@@ -20,6 +20,8 @@ COMMENT=	An Internet TV application (for KDE)
 RUN_DEPENDS=	kdepyuic:${PORTSDIR}/x11-toolkits/py-kde \
 		kaffeine:${PORTSDIR}/multimedia/kaffeine
 
+BROKEN=		does not work with new kaffeine
+
 NO_BUILD=	yes
 USE_BZIP2=	yes
 
