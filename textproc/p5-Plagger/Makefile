@@ -16,8 +16,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	A pluggable RSS/Atom feed aggregator written in Perl
 
-BROKEN=		missing dependency on Yaml
-
 USE_PERL5=	yes
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
@@ -43,7 +41,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accesso
 		${SITE_PERL}/${PERL_ARCH}/Template/Toolkit.pod:${PORTSDIR}/www/p5-Template-Toolkit \
 		${SITE_PERL}/Template/Provider/Encoding.pm:${PORTSDIR}/www/p5-Template-Provider-Encoding \
 		${SITE_PERL}/HTML/ResolveLink.pm:${PORTSDIR}/www/p5-HTML-ResolveLink \
-		${SITE_PERL}/URI/Fetch.pm:${PORTSDIR}/www/p5-URI-Fetch
+		${SITE_PERL}/URI/Fetch.pm:${PORTSDIR}/www/p5-URI-Fetch \
+		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 
 OPTIONS=	BETTERENCODING "Better Encoding detection Support" on \
 		PODTESTING "POD Testing Support" off \
