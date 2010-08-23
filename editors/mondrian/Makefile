@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION:S/.b/beta/}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Mondrian Ruby IDE
 
+BROKEN=		Does not run with the supported versions of the FOX toolkit
+
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/fox12.so:${PORTSDIR}/x11-toolkits/ruby-fox12
 
 NO_BUILD=	yes
