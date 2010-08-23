@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	asunder
-PORTVERSION=	1.9.3
-PORTREVISION?=	1
+PORTVERSION=	2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://littlesvr.ca/asunder/releases/
 
@@ -20,7 +19,8 @@ OPTIONS=	LAME "lame support" on \
 		OGG "ogg-vorbis support" on \
 		FLAC "FLAC support" on \
 		WAVPACK "WavPack support" off \
-		MONKEYAUDIO "Monkey's Audio support" off
+		MONKEYAUDIO "Monkey's Audio support" off \
+		WINDOWS_CHARS "Allow Windows special chars in filenames" off
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -48,6 +48,11 @@ RUN_DEPENDS+=	wavpack:${PORTSDIR}/audio/wavpack
 
 .if defined(WITH_MONKEYAUDIO)
 RUN_DEPENDS+=	mac:${PORTSDIR}/audio/mac
+.endif
+
+post-patch:
+.if defined(WITH_WINDOWS_CHARS)
+	@${REINPLACE_CMD} -e 's^#define[[:blank:]]*BADCHARS.*^#define BADCHARS "/"^' ${WRKSRC}/src/util.h
 .endif
 
 post-install:
