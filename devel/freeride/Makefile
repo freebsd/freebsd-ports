@@ -23,6 +23,8 @@ DISTNAME=	${MASTERPORTNAME}-${PORTVERSION}
 USE_RUBY=	yes
 NO_BUILD=	yes
 
+BROKEN=		Does not run with the supported versions of the FOX toolkit
+
 # IF >>>>>>
 
 .if ${PORTNAME} == ${MASTERPORTNAME}
