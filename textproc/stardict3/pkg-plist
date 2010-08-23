@@ -55,13 +55,6 @@ share/stardict/pixmaps/index_translate.png
 share/stardict/pixmaps/splash.png
 share/stardict/sounds/menushow.wav
 share/stardict/sounds/buttonactive.wav
-share/stardict/data/advertisement/advertisement.txt
-share/stardict/data/advertisement/huzheng.png
-share/stardict/data/advertisement/linux_logo.jpg
-share/stardict/data/advertisement/redhat_linux_logo.gif
-share/stardict/data/advertisement/redhat_logo.jpg
-share/stardict/data/advertisement/wenjing.jpg
-share/stardict/data/advertisement/wenjing2.jpg
 share/locale/ar/LC_MESSAGES/stardict.mo
 share/locale/cs/LC_MESSAGES/stardict.mo
 share/locale/de/LC_MESSAGES/stardict.mo
@@ -86,12 +79,8 @@ share/locale/zh_CN/LC_MESSAGES/stardict.mo
 share/locale/zh_TW/LC_MESSAGES/stardict.mo
 lib/stardict/plugins/stardict_dictdotcn.so
 lib/stardict/plugins/stardict_dictdotcn.la
-lib/stardict/plugins/advertisement.so
-lib/stardict/plugins/advertisement.la
 lib/stardict/plugins/stardict_man.so
 lib/stardict/plugins/stardict_man.la
-lib/stardict/plugins/stardict_update_info.so
-lib/stardict/plugins/stardict_update_info.la
 lib/stardict/plugins/stardict_html_parsedata.so
 lib/stardict/plugins/stardict_html_parsedata.la
 lib/stardict/plugins/stardict_xdxf_parsedata.so
@@ -157,8 +146,6 @@ lib/stardict/plugins/stardict_qqwry.la
 @dirrm share/stardict/sounds
 @dirrm share/stardict/pixmaps
 @dirrm share/stardict/treedict
-@dirrm share/stardict/data/advertisement
-@dirrmtry share/stardict/data
 @dirrmtry share/stardict/dic
 @dirrmtry share/stardict
 %%GNOME%%@dirrm share/omf/stardict
@@ -178,3 +165,5 @@ lib/stardict/plugins/stardict_qqwry.la
 %%GNOME%%@dirrm share/gnome/help/stardict/nl
 %%GNOME%%@dirrm share/gnome/help/stardict
 @dirrmtry share/applications
+@exec mkdir -p %D/share/stardict/treedict
+@exec mkdir -p %D/share/stardict/dic
