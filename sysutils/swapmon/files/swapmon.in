@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# swapmon - add / remove swap as needed
+#  
+# PROVIDE: swapmon
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable swapmon:
+#
+#swapmon_enable="YES"
+#
+. /etc/rc.subr
+
+name=swapmon
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/${name}"
+command_interpreter="/bin/sh"
+
+CONFIG=%%PREFIX%%/etc/${name}rc
+if [ -r "${CONFIG}" ]
+then	. "${CONFIG}"
+fi
+pidfile=${PIDFILE:-"/var/run/${name}.pid"}
+swapmon_enable=${swapmon_enable:-"NO"}
+
+load_rc_config ${name}
+start_precmd='command_args="-F <&- 2>&1 >/dev/null &"'
+stop_postcmd='rm $pidfile'
+
+run_rc_command "$1"
+

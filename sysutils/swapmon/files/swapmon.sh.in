@@ -1,0 +1,187 @@
+#!/bin/sh
+#
+# swapmon - add / remove swap as needed
+#  
+# Copyright (C) 2010 Alexander Kuehn. All rights reserved.
+# 
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+# 
+# THIS SOFTWARE IS PROVIDED BY AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+# 
+
+CONFIG=%%PREFIX%%/etc/swapmonrc
+VERSION="1.4"
+
+if [ -r "${CONFIG}" ]
+then	. "${CONFIG}"
+fi
+
+# where to create swapfiles 
+: ${SM_HOME=/usr/.swap}
+# if the swap usage is higher than that (percentage) new swap will be added 
+: ${SWAP_HIGH=75}
+# if the swap usage is lower than that then a previously added swapfile will be removed
+: ${SWAP_LOW=45}
+# if swap is running low we will increase the swapspace by this many percent
+: ${SWAP_STEP=$(( 100 - ${SWAP_HIGH} ))}
+# if running as daemon how long to wait between checks
+: ${DELAY=30}
+# if running as daemon where to log messages
+: ${LOGGER=/usr/bin/logger}
+# if running as daemon where to put pidfile
+: ${PIDFILE=/var/run/swapmon.pid}
+
+LOCKF=$SM_HOME/lock
+SWAPFILE=$SM_HOME/swap.XXXX
+SWAPLIST=$SM_HOME/swapfiles
+MKTEMP=/usr/bin/mktemp
+TRUNCATE=/usr/bin/truncate
+TOUCH=/usr/bin/touch
+CHMOD=/bin/chmod
+MDCONFIG=/sbin/mdconfig
+SWAPON=/sbin/swapon
+SWAPOFF=/sbin/swapoff
+SWAPCTL=/sbin/swapctl
+RM=/bin/rm
+SED=/usr/bin/sed
+umask 0077
+
+if [ $(/usr/bin/id -u) -gt 0 ]
+then	echo "I'm not running as root (uid=0) this probably wont work."
+#	exit 1
+fi
+
+if [ \! -d ${SM_HOME} ]
+then	/bin/mkdir -p ${SM_HOME} || { echo "Error creating ${SM_HOME}!" ; exit 1; }
+fi
+$TOUCH ${SWAPLIST} || { echo "Can't write to ${SWAPLIST} aborting." ; exit 1; }
+# add a 1MB swapfile to check if we have the permissions to do so
+NSWAP=$($MKTEMP ${SWAPFILE})
+$TRUNCATE -s 1M "${NSWAP}" || { echo "Error creating swapfile ${NSWAP}, aborting." ; exit 1; }
+$CHMOD 600 "${NSWAP}"
+MDEV=$($MDCONFIG -a -t vnode -f "${NSWAP}")
+if [ -n "$MDEV" ]
+then
+	$SWAPON /dev/${MDEV} || { echo "error activating swapdevice /dev/${MDEV}."; exit 1; }
+	$SWAPOFF "/dev/${MDEV}"
+	$MDCONFIG -d -u ${MDEV} >/dev/null
+	$RM -f "${NSWAP}"
+else
+	echo "error configuring memory disk ($MDCONFIG -a -t vnode -f \"${NSWAP}\")"
+	$RM -f "${NSWAP}"
+	exit
+fi
+
+if [ ${SWAP_LOW} -ge $(( $(($SWAP_HIGH * 100)) / $((100 + $SWAP_STEP)) )) ]
+then	echo "SWAP_LOW(${SWAP_LOW}) schould be lower than $(( $(($SWAP_HIGH * 100)) / $((100 + $SWAP_STEP)) )) to be useful."
+		echo "Swapmon $VERSION."
+		exit 1
+fi
+
+check_swap()
+{
+	SWAPCTLSK=$($SWAPCTL -sk)
+	SWAPTOTAL=${SWAPCTLSK#* }
+	SWAPTOTAL=${SWAPTOTAL% *}
+	SWAPUSAGE=$(( ${SWAPCTLSK##* } * 100 / $SWAPTOTAL ))
+	if [ ${SWAPUSAGE} -gt ${SWAP_HIGH} ]
+	then	NSWAP=$($MKTEMP ${SWAPFILE})
+		BLOCKS=$(( $(( ${SWAPTOTAL} * ${SWAP_STEP} +1023)) / 102400 ))
+		# make sure we can write to the swaplist
+		$TOUCH "${SWAPLIST}" || { echo "swapmon$VERSION[$$] Error modifying ${SWAPLIST} exiting."|$LOGGER; exit 1; }
+		$TRUNCATE -s ${BLOCKS}M "${NSWAP}"
+		$CHMOD 0600 "${NSWAP}"
+		if [ -s "${NSWAP}" ]
+		then	MDEV=$($MDCONFIG -a -t vnode -f "${NSWAP}")
+			printf "${MDEV} ${NSWAP}\n" >>"${SWAPLIST}"
+			echo "swapmon$VERSION[$$] Swapusage ${SWAPUSAGE}%($((${SWAPCTLSK##* }/1024))/$(($SWAPTOTAL/1024)) M), activated new swapdevice ${MDEV} backed by ${NSWAP}."|$LOGGER
+			$SWAPON /dev/${MDEV}
+			$SWAPCTL -lh|$SED -e "s/^/swapmon$VERSION[$$] /g"|$LOGGER
+		else	echo "swapmon$VERSION[$$] Creating swapfile ${NSWAP} failed! :("|$LOGGER
+		fi
+	fi
+	while [ \( ${SWAPUSAGE} -lt ${SWAP_LOW} \) -a -s "${SWAPLIST}" ]
+	do	MDEV=$(/usr/bin/tail -1 "${SWAPLIST}")
+		SWAPF=${MDEV#* }
+		MDEV=${MDEV%% *}
+		if [ -s "${SWAPF}" ]
+		then	if [ "${SWAPF}" = "$($MDCONFIG -l -u ${MDEV}|/usr/bin/awk '{print $4}')" ]
+			then	if [ -n "$($SWAPCTL -l|$SED -n '1!p'|/usr/bin/grep '/dev/'${MDEV})" ]
+				then	echo "swapmon$VERSION[$$] Swapusage ${SWAPUSAGE}%($((${SWAPCTLSK##* }/1024))/$(($SWAPTOTAL/1024)) M), deactivating swapdevice ${MDEV}."|$LOGGER
+					$SWAPCTL -lh|$SED -e "s/^/swapmon$VERSION[$$] /g"|$LOGGER
+					$SWAPOFF "/dev/${MDEV}"
+				fi
+				echo "swapmon$VERSION[$$] Detaching vnode ${MDEV}."|$LOGGER
+				$MDCONFIG -d -u ${MDEV} >/dev/null
+				$RM -f "${SWAPF}"
+			else	echo "swapmon$VERSION[$$] Swapfile ${SWAPF} is not attached to ${MDEV} as it should be!?"|$LOGGER
+				for MDEV in $($MDCONFIG -l)
+				do	echo "swapmon$VERSION[$$] $($MDCONFIG -l -u ${MDEV})"|$LOGGER
+				done
+			fi
+		else	echo "swapmon$VERSION[$$] ${SWAPF} is not a valid swapfile."|$LOGGER
+		fi
+		$SED -I '' -n '$!p' "${SWAPLIST}"
+		SWAPCTLSK=$($SWAPCTL -sk)
+		SWAPTOTAL=${SWAPCTLSK#* }
+		SWAPTOTAL=${SWAPTOTAL% *}
+		SWAPUSAGE=$(( ${SWAPCTLSK##* } * 100 / $SWAPTOTAL ))
+	done
+}
+
+case "$1" in
+	start)
+		$0 -F <&- 2>&1 >/dev/null &
+		;;
+	stop)
+		if [ -s "${PIDFILE}" ]
+		then
+			PID=$(/bin/cat ${PIDFILE})
+			if ( /bin/ps -p $PID|grep -q $0 )
+			then	/bin/kill $PID
+			fi
+			$RM "${PIDFILE}"
+		fi
+		;;
+	-F)
+		echo $$ >"${PIDFILE}"
+		echo "swapmon$VERSION[$$] Writing pid $$ to pidfile ${PIDFILE}."|$LOGGER
+		cd / || exit 1
+		while [ -f "${PIDFILE}" ]
+		do	check_swap
+			sleep ${DELAY}
+		done
+		;;
+	'')
+		if [ -r "${LOCKF}" ]
+		then
+			echo "${LOCKF} exists"
+			exit 1;
+		else
+			echo $$ >"${LOCKF}"
+			LOGGER="|/bin/cat"
+			check_swap
+		fi
+		$RM -f "${LOCKF}"
+		;;
+	*)
+		echo "$* not supported"
+		;;
+esac
