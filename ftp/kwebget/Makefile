@@ -17,6 +17,9 @@ COMMENT=	A KDE frontend to wget
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
+DEPRECATED=	Development has ceased.
+EXPIRATION_DATE=	2010-11-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
