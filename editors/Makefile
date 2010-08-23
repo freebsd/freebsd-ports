@@ -173,7 +173,6 @@
     SUBDIR += mined
     SUBDIR += mlview
     SUBDIR += mode-info
-    SUBDIR += mondrian
     SUBDIR += morla
     SUBDIR += mousepad
     SUBDIR += mp
