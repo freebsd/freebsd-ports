@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	luasec
-PORTVERSION=	0.3.3
+PORTVERSION=	0.4
 CATEGORIES=	security
-MASTER_SITES=	http://luaforge.net/frs/download.php/4160/
+MASTER_SITES=	http://www.inf.puc-rio.br/~brunoos/luasec/download/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	kelly.hays@jkhfamily.org

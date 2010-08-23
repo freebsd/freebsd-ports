@@ -1,2 +1,4 @@
 %%LUA_MODLIBDIR%%/ssl.so
 %%LUA_MODSHAREDIR%%/ssl.lua
+%%LUA_MODSHAREDIR%%/ssl/https.lua
+@dirrm %%LUA_MODSHAREDIR%%/ssl
