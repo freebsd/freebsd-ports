@@ -62,7 +62,7 @@ USE_APACHE=	1.3+
 .if ${APACHE_VERSION} == 13
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 .else
-RUN_DEPENDS+=	mod_perl2>=2.0:${PORTSDIR}/www/mod_perl2
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 .endif
 .endif
 
