@@ -7,7 +7,7 @@
 
 PORTNAME=	nspluginwrapper
 PORTVERSION=	1.3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www linux emulators
 MASTER_SITES=	LOCAL/jkim
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BINFILE}${EXTRACT_SUFX}
@@ -21,7 +21,7 @@ LATEST_LINK=	${PORTNAME}-devel
 
 CONFLICTS=	nspluginwrapper-1.2.*
 
-BINFILE=	${PORTNAME}-i386-${PORTVERSION}-2
+BINFILE=	${PORTNAME}-i386-${PORTVERSION}-3
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -46,6 +46,9 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 PLIST_SUB=	LIBDIR="${LIBDIR:C/^${PREFIX}\///}" HOST_ARCH="${HOST_ARCH}"
 
+SUB_FILES=	npviewer
+SUB_LIST+=	NSPLUGINWRAPPER="${LIBDIR}"
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
@@ -54,22 +57,16 @@ HOST_ARCH=	x86_64
 HOST_ARCH=	${ARCH}
 .endif
 
-# We must manually extract, modify, and install the Linux version of npviewer.
-post-extract:
-	${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' \
-	    ${WRKDIR}/usr/lib/nspluginwrapper/i386/linux/npviewer
-	@${RM} ${WRKDIR}/usr/lib/nspluginwrapper/i386/linux/npviewer.bak
-	@${MV} ${WRKDIR}/usr ${WRKSRC}
-
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
 	    ${WRKSRC}/src/npw-config.c
-	@${RM} ${WRKSRC}/usr/lib/nspluginwrapper/i386/linux/npviewer.orig
 
 post-install:
 	${MKDIR} ${LIBDIR}/i386/linux
-	${INSTALL_SCRIPT} ${WRKSRC}/usr/lib/nspluginwrapper/i386/linux/* \
-	     ${LIBDIR}/i386/linux/
+	${INSTALL_PROGRAM} ${WRKDIR}/usr/lib/nspluginwrapper/i386/linux/*.bin \
+	    ${WRKDIR}/usr/lib/nspluginwrapper/i386/linux/*.so \
+	    ${LIBDIR}/i386/linux/
+	${INSTALL_SCRIPT} ${WRKDIR}/npviewer ${LIBDIR}/i386/linux/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
