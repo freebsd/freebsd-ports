@@ -15,6 +15,9 @@ DISTFILES=	${PORTNAME}-${PORTVERSION:R}-FreeBSD-${PORTVERSION:E}.i386.tgz \
 DIST_SUBDIR=	sybase
 EXTRACT_ONLY=
 
+DEPRECATED=	no SHA256 in distinfo file
+EXPIRATION_DATE=	2010-09-01
+
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Headers and static libraries of Sybase OpenClient
 

@@ -13,6 +13,9 @@ MASTER_SITES=	# fetch manually
 PKGNAMEPREFIX=	linux-
 DISTNAME=	Linux-ACU-Driver-v${PORTVERSION}
 
+DEPRECATED=	no SHA256 in distinfo file
+EXPIRATION_DATE=	2010-09-01
+
 MAINTAINER=	matt@peterson.org
 COMMENT=	Aironet Cisco Utilities for 802.11 wireless NIC's
 
