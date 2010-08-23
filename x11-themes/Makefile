@@ -174,7 +174,6 @@
     SUBDIR += kde4-style-nitrogen
     SUBDIR += kde4-style-polyester
     SUBDIR += kde4-style-skulpture
-    SUBDIR += kde4-windeco-aurorae
     SUBDIR += kde4-windeco-crystal
     SUBDIR += kde4-windeco-dekorator
     SUBDIR += kde4-windeco-nitrogen
