@@ -7,7 +7,6 @@ keys or data are over a hundred bytes or so, bad things may happen to
 your dbm files. Never mind all the extra features....
 
 WWW: http://search.cpan.org/dist/BerkeleyDB/
-WWW: http://www.sleepycat.com/
 
 Bill Wells
 bill@twwells.com
