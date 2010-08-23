@@ -78,7 +78,7 @@ post-patch:
 post-build:
 	@${REINPLACE_CMD} -e "s/ lib / /g" ${WRKSRC}/Makefile
 
-regression-test: build
-	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} check)
+#regression-test: build
+#	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} check)
 
 .include <bsd.port.post.mk>
