@@ -72,6 +72,7 @@
     SUBDIR += jstrack
     SUBDIR += kmovisto
     SUBDIR += kst
+    SUBDIR += kst2
     SUBDIR += lamprop
     SUBDIR += libctl
     SUBDIR += libghemical
