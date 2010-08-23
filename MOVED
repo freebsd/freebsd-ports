@@ -4494,3 +4494,4 @@ x11-toolkits/fxscintilla-fox12||2010-08-23|Removed
 x11-toolkits/fox12||2010-08-23|Has expired: Unsupported, please use x11-toolkits/fox14 or x11-toolkits/fox16 instead.
 editors/mondrian||2010-08-23|Removed
 devel/freeride||2010-08-23|Removed
+devel/freebase||2010-08-23|Removed
