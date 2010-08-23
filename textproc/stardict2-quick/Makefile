@@ -7,7 +7,7 @@
 
 PORTNAME=	stardict
 PORTVERSION=	2.4.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dictionaries-quick/${PORTVERSION}
 PKGNAMESUFFIX=	-quick
@@ -15,8 +15,6 @@ DIST_SUBDIR=	stardict
 
 MAINTAINER=	timur@FreeBSD.org
 COMMENT=	Dictionaries from Quick for StarDict
-
-RUN_DEPENDS=	stardict:${PORTSDIR}/textproc/stardict2
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
