@@ -21,7 +21,8 @@ USE_BZIP2=	yes
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
-DICTDIR=	share/stardict/dic
+STARDICT_DIR=	share/stardict
+DICTDIR=	${STARDICT_DIR}/dic
 
 DISTSUFFIX=	-dictd_www.mova.org
 
@@ -71,5 +72,6 @@ do-install:
 .endfor
 .endfor
 	    @${ECHO_CMD} "@unexec ${RMDIR} %D/${DICTDIR} 2>/dev/null || true" >> ${TMPPLIST}
+	    @${ECHO_CMD} "@unexec ${RMDIR} %D/${STARDICT_DIR} 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
