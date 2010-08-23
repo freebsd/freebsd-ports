@@ -9,15 +9,13 @@ PORTNAME=	moonshine
 PORTVERSION=	0.7
 PORTREVISION=	1
 CATEGORIES=	www multimedia
-MASTER_SITES=	http://github.com/abock/moonshine/tarball/${PORTVERSION}/
+MASTER_SITES=	http://romain.blogreen.org/distfiles/
 DISTNAME=	abock-${PORTNAME}-${GITCOMMIT}
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Windows Media playback through Moonlight and Firefox
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-FETCH_BEFORE_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
-FETCH_ARGS=	-apRr
 GITCOMMIT=	35085a4
 
 USE_GMAKE=	yes
