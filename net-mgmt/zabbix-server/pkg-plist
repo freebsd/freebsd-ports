@@ -33,10 +33,10 @@ sbin/zabbix_%%ZABBIX_BUILD%%
 %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/mysql/patch.sql
 %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/oracle/patch.sql
 %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/postgresql/patch.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.8/mysql/patch.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.8/mysql/upgrade
 %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.8/oracle/patch.sql
 %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.8/postgresql/patch.sql
-%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.8/mysql/upgrade
-%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.8/mysql/patch.sql
 @dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.8/postgresql
 @dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.8/oracle
 @dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.8/mysql

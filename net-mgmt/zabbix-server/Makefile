@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zabbix
-PORTVERSION=	1.8.2
-PORTREVISION?=	2
+PORTVERSION=	1.8.3
 PORTEPOCH=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
@@ -26,6 +25,7 @@ ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
 .if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
 .if ${ZABBIX_BUILD} != "agent"
+USE_ICONV=	yes
 MAN8=		${PORTNAME}_${ZABBIX_BUILD}.8
 USE_RC_SUBR=	${PORTNAME}_${ZABBIX_BUILD}
 .else
@@ -59,11 +59,14 @@ OPTIONS=	MYSQL "Use MySQL backend" on \
 		PGSQL "Use PostgreSQL backend" off \
 		SQLITE "Use SQLite backend" off \
 		IPV6 "Support for IPv6" on \
+		FPING "Use fping for pinging hosts" on \
+		JABBER "Support for jabber media type" on \
+		CURL "Support web monitoring with cURL" on \
 		LDAP "Support for checking LDAP servers" on \
 		IPMI "Support for IPMI" off \
-		JABBER "Use jabber media type" on \
-		FPING "Use fping for pinging hosts" on \
-		SSH "Use libssh2 for SSH-based checks" off
+		SSH "Support for SSH-based checks" off \
+		IODBC "Support for iODBC" off \
+		UNIXODBC "Support for unixODBC" off
 
 .include <bsd.port.options.mk>
 
@@ -81,6 +84,10 @@ USE_SQLITE=	3
 CONFIGURE_ARGS+=	--with-sqlite3
 .else
 IGNORE=		zabbix requires a database backend
+.endif
+
+.ifdef WITHOUT_CURL
+CONFIGURE_ARGS+=	--without-libcurl
 .endif
 
 .ifndef WITHOUT_LDAP
@@ -105,6 +112,20 @@ RUN_DEPENDS+=	fping:${PORTSDIR}/net/fping
 .ifdef WITH_SSH
 LIB_DEPENDS+=	ssh2:${PORTSDIR}/security/libssh2
 CONFIGURE_ARGS+=	--with-ssh2
+.endif
+
+.if defined(WITH_IODBC) && defined(WITH_UNIXODBC)
+IGNORE=	cannot build with both iODBC and unixODBC
+.endif
+
+.ifdef WITH_IODBC
+LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
+CONFIGURE_ARGS+=	--with-iodbc
+.endif
+
+.ifdef WITH_UNIXODBC
+LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
+CONFIGURE_ARGS+=	--with-unixodbc
 .endif
 .endif # if ${ZABBIX_BUILD} != "agent"
 
