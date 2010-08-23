@@ -6,16 +6,13 @@
 #
 
 PORTNAME=	Object-Simple
-PORTVERSION=	3.0608
+PORTVERSION=	3.0611
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple class builder
-
-BUILD_DEPENDS=	p5-Scalar-List-Utils>=1.14:${PORTSDIR}/lang/p5-Scalar-List-Utils
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 MAN3=	Object::Simple.3
