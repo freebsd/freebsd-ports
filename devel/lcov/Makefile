@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	lcov
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	devel
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=ltp/Coverage%20Analysis/LCOV-1.8
+MASTER_SITE_SUBDIR=ltp/Coverage%20Analysis/LCOV-${PORTVERSION}
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	The Linux Test Project GCOV extension
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
+LICENSE=	GPLv1
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
