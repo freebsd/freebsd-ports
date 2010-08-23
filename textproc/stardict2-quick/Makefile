@@ -21,7 +21,8 @@ USE_BZIP2=	yes
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
-DICTDIR=	share/stardict/dic
+STARDICT_DIR=	share/stardict
+DICTDIR=	${STARDICT_DIR}/dic
 
 DICTIONARIES=	afr-eng afr-swe bul-swe dan-deu dan-eng dan-fin dan-fra \
 		dan-hun dan-ind dan-ita dan-jpn dan-lat dan-nld dan-nor \
@@ -76,5 +77,6 @@ post-install:
 		${FIND} -s . -type f -o -type l | ${SED} -e 's|^\.|${DICTDIR}|' >> ${TMPPLIST}
 .endfor
 		@${ECHO_CMD} "@unexec ${RMDIR} %D/${DICTDIR} 2>/dev/null || true" >> ${TMPPLIST}
+		@${ECHO_CMD} "@unexec ${RMDIR} %D/${STARDICT_DIR} 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
