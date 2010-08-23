@@ -6,21 +6,28 @@
 %%WWWDIR%%/app/controllers/application_controller.rb
 %%WWWDIR%%/app/controllers/attachments_controller.rb
 %%WWWDIR%%/app/controllers/auth_sources_controller.rb
+%%WWWDIR%%/app/controllers/auto_completes_controller.rb
 %%WWWDIR%%/app/controllers/boards_controller.rb
+%%WWWDIR%%/app/controllers/calendars_controller.rb
+%%WWWDIR%%/app/controllers/context_menus_controller.rb
 %%WWWDIR%%/app/controllers/custom_fields_controller.rb
 %%WWWDIR%%/app/controllers/documents_controller.rb
 %%WWWDIR%%/app/controllers/enumerations_controller.rb
+%%WWWDIR%%/app/controllers/gantts_controller.rb
 %%WWWDIR%%/app/controllers/groups_controller.rb
 %%WWWDIR%%/app/controllers/issue_categories_controller.rb
+%%WWWDIR%%/app/controllers/issue_moves_controller.rb
 %%WWWDIR%%/app/controllers/issue_relations_controller.rb
 %%WWWDIR%%/app/controllers/issue_statuses_controller.rb
 %%WWWDIR%%/app/controllers/issues_controller.rb
 %%WWWDIR%%/app/controllers/journals_controller.rb
+%%WWWDIR%%/app/controllers/ldap_auth_sources_controller.rb
 %%WWWDIR%%/app/controllers/mail_handler_controller.rb
 %%WWWDIR%%/app/controllers/members_controller.rb
 %%WWWDIR%%/app/controllers/messages_controller.rb
 %%WWWDIR%%/app/controllers/my_controller.rb
 %%WWWDIR%%/app/controllers/news_controller.rb
+%%WWWDIR%%/app/controllers/previews_controller.rb
 %%WWWDIR%%/app/controllers/projects_controller.rb
 %%WWWDIR%%/app/controllers/queries_controller.rb
 %%WWWDIR%%/app/controllers/reports_controller.rb
@@ -49,6 +56,7 @@
 %%WWWDIR%%/app/helpers/enumerations_helper.rb
 %%WWWDIR%%/app/helpers/groups_helper.rb
 %%WWWDIR%%/app/helpers/issue_categories_helper.rb
+%%WWWDIR%%/app/helpers/issue_moves_helper.rb
 %%WWWDIR%%/app/helpers/issue_relations_helper.rb
 %%WWWDIR%%/app/helpers/issue_statuses_helper.rb
 %%WWWDIR%%/app/helpers/issues_helper.rb
@@ -156,15 +164,17 @@
 %%WWWDIR%%/app/views/attachments/_links.rhtml
 %%WWWDIR%%/app/views/attachments/diff.rhtml
 %%WWWDIR%%/app/views/attachments/file.rhtml
-%%WWWDIR%%/app/views/auth_sources/_form.rhtml
+%%WWWDIR%%/app/views/auth_sources/_form.html.erb
 %%WWWDIR%%/app/views/auth_sources/edit.rhtml
-%%WWWDIR%%/app/views/auth_sources/list.rhtml
+%%WWWDIR%%/app/views/auth_sources/index.html.erb
 %%WWWDIR%%/app/views/auth_sources/new.rhtml
+%%WWWDIR%%/app/views/auto_completes/issues.html.erb
 %%WWWDIR%%/app/views/boards/_form.rhtml
 %%WWWDIR%%/app/views/boards/edit.rhtml
 %%WWWDIR%%/app/views/boards/index.rhtml
 %%WWWDIR%%/app/views/boards/new.rhtml
 %%WWWDIR%%/app/views/boards/show.rhtml
+%%WWWDIR%%/app/views/calendars/show.html.erb
 %%WWWDIR%%/app/views/common/403.rhtml
 %%WWWDIR%%/app/views/common/404.rhtml
 %%WWWDIR%%/app/views/common/_calendar.rhtml
@@ -173,6 +183,7 @@
 %%WWWDIR%%/app/views/common/_preview.rhtml
 %%WWWDIR%%/app/views/common/_tabs.rhtml
 %%WWWDIR%%/app/views/common/feed.atom.rxml
+%%WWWDIR%%/app/views/context_menus/issues.html.erb
 %%WWWDIR%%/app/views/custom_fields/_form.rhtml
 %%WWWDIR%%/app/views/custom_fields/_index.rhtml
 %%WWWDIR%%/app/views/custom_fields/edit.rhtml
@@ -189,6 +200,7 @@
 %%WWWDIR%%/app/views/enumerations/edit.rhtml
 %%WWWDIR%%/app/views/enumerations/list.rhtml
 %%WWWDIR%%/app/views/enumerations/new.rhtml
+%%WWWDIR%%/app/views/gantts/show.html.erb
 %%WWWDIR%%/app/views/groups/_form.html.erb
 %%WWWDIR%%/app/views/groups/_general.html.erb
 %%WWWDIR%%/app/views/groups/_memberships.html.erb
@@ -201,10 +213,12 @@
 %%WWWDIR%%/app/views/issue_categories/_form.rhtml
 %%WWWDIR%%/app/views/issue_categories/destroy.rhtml
 %%WWWDIR%%/app/views/issue_categories/edit.rhtml
+%%WWWDIR%%/app/views/issue_categories/new.html.erb
+%%WWWDIR%%/app/views/issue_moves/new.rhtml
 %%WWWDIR%%/app/views/issue_relations/_form.rhtml
 %%WWWDIR%%/app/views/issue_statuses/_form.rhtml
 %%WWWDIR%%/app/views/issue_statuses/edit.rhtml
-%%WWWDIR%%/app/views/issue_statuses/list.rhtml
+%%WWWDIR%%/app/views/issue_statuses/index.html.erb
 %%WWWDIR%%/app/views/issue_statuses/new.rhtml
 %%WWWDIR%%/app/views/issues/_action_menu.rhtml
 %%WWWDIR%%/app/views/issues/_attributes.rhtml
@@ -219,16 +233,14 @@
 %%WWWDIR%%/app/views/issues/_relations.rhtml
 %%WWWDIR%%/app/views/issues/_sidebar.rhtml
 %%WWWDIR%%/app/views/issues/bulk_edit.rhtml
-%%WWWDIR%%/app/views/issues/calendar.rhtml
 %%WWWDIR%%/app/views/issues/changes.rxml
-%%WWWDIR%%/app/views/issues/context_menu.rhtml
 %%WWWDIR%%/app/views/issues/destroy.rhtml
 %%WWWDIR%%/app/views/issues/edit.rhtml
-%%WWWDIR%%/app/views/issues/gantt.rhtml
 %%WWWDIR%%/app/views/issues/index.rhtml
-%%WWWDIR%%/app/views/issues/move.rhtml
+%%WWWDIR%%/app/views/issues/index.xml.builder
 %%WWWDIR%%/app/views/issues/new.rhtml
 %%WWWDIR%%/app/views/issues/show.rhtml
+%%WWWDIR%%/app/views/issues/show.xml.builder
 %%WWWDIR%%/app/views/journals/_notes_form.rhtml
 %%WWWDIR%%/app/views/journals/edit.rjs
 %%WWWDIR%%/app/views/journals/update.rjs
@@ -236,6 +248,7 @@
 %%WWWDIR%%/app/views/layouts/base.rhtml
 %%WWWDIR%%/app/views/layouts/mailer.text.html.erb
 %%WWWDIR%%/app/views/layouts/mailer.text.plain.erb
+%%WWWDIR%%/app/views/ldap_auth_sources/_form.rhtml
 %%WWWDIR%%/app/views/mailer/_issue_text_html.rhtml
 %%WWWDIR%%/app/views/mailer/_issue_text_plain.rhtml
 %%WWWDIR%%/app/views/mailer/account_activated.text.html.rhtml
@@ -292,16 +305,17 @@
 %%WWWDIR%%/app/views/news/index.rhtml
 %%WWWDIR%%/app/views/news/new.rhtml
 %%WWWDIR%%/app/views/news/show.rhtml
+%%WWWDIR%%/app/views/previews/issue.html.erb
 %%WWWDIR%%/app/views/projects/_edit.rhtml
 %%WWWDIR%%/app/views/projects/_form.rhtml
+%%WWWDIR%%/app/views/projects/_members_box.html.erb
 %%WWWDIR%%/app/views/projects/activity.rhtml
 %%WWWDIR%%/app/views/projects/add.rhtml
 %%WWWDIR%%/app/views/projects/add_file.rhtml
-%%WWWDIR%%/app/views/projects/add_issue_category.rhtml
-%%WWWDIR%%/app/views/projects/add_version.rhtml
 %%WWWDIR%%/app/views/projects/copy.rhtml
 %%WWWDIR%%/app/views/projects/destroy.rhtml
 %%WWWDIR%%/app/views/projects/index.rhtml
+%%WWWDIR%%/app/views/projects/index.xml.builder
 %%WWWDIR%%/app/views/projects/list_files.rhtml
 %%WWWDIR%%/app/views/projects/list_members.rhtml
 %%WWWDIR%%/app/views/projects/roadmap.rhtml
@@ -315,6 +329,7 @@
 %%WWWDIR%%/app/views/projects/settings/_versions.rhtml
 %%WWWDIR%%/app/views/projects/settings/_wiki.rhtml
 %%WWWDIR%%/app/views/projects/show.rhtml
+%%WWWDIR%%/app/views/projects/show.xml.builder
 %%WWWDIR%%/app/views/queries/_columns.rhtml
 %%WWWDIR%%/app/views/queries/_filters.rhtml
 %%WWWDIR%%/app/views/queries/_form.rhtml
@@ -342,7 +357,7 @@
 %%WWWDIR%%/app/views/repositories/stats.rhtml
 %%WWWDIR%%/app/views/roles/_form.rhtml
 %%WWWDIR%%/app/views/roles/edit.rhtml
-%%WWWDIR%%/app/views/roles/list.rhtml
+%%WWWDIR%%/app/views/roles/index.html.erb
 %%WWWDIR%%/app/views/roles/new.rhtml
 %%WWWDIR%%/app/views/roles/report.rhtml
 %%WWWDIR%%/app/views/search/index.rhtml
@@ -364,7 +379,7 @@
 %%WWWDIR%%/app/views/timelog/report.rhtml
 %%WWWDIR%%/app/views/trackers/_form.rhtml
 %%WWWDIR%%/app/views/trackers/edit.rhtml
-%%WWWDIR%%/app/views/trackers/list.rhtml
+%%WWWDIR%%/app/views/trackers/index.html.erb
 %%WWWDIR%%/app/views/trackers/new.rhtml
 %%WWWDIR%%/app/views/users/_form.rhtml
 %%WWWDIR%%/app/views/users/_general.rhtml
@@ -378,6 +393,7 @@
 %%WWWDIR%%/app/views/versions/_issue_counts.rhtml
 %%WWWDIR%%/app/views/versions/_overview.rhtml
 %%WWWDIR%%/app/views/versions/edit.rhtml
+%%WWWDIR%%/app/views/versions/new.html.erb
 %%WWWDIR%%/app/views/versions/show.rhtml
 %%WWWDIR%%/app/views/watchers/_watchers.rhtml
 %%WWWDIR%%/app/views/welcome/index.rhtml
@@ -425,8 +441,10 @@
 %%WWWDIR%%/config/locales/da.yml
 %%WWWDIR%%/config/locales/de.yml
 %%WWWDIR%%/config/locales/el.yml
+%%WWWDIR%%/config/locales/en-GB.yml
 %%WWWDIR%%/config/locales/en.yml
 %%WWWDIR%%/config/locales/es.yml
+%%WWWDIR%%/config/locales/eu.yml
 %%WWWDIR%%/config/locales/fi.yml
 %%WWWDIR%%/config/locales/fr.yml
 %%WWWDIR%%/config/locales/gl.yml
@@ -438,6 +456,8 @@
 %%WWWDIR%%/config/locales/ja.yml
 %%WWWDIR%%/config/locales/ko.yml
 %%WWWDIR%%/config/locales/lt.yml
+%%WWWDIR%%/config/locales/lv.yml
+%%WWWDIR%%/config/locales/mn.yml
 %%WWWDIR%%/config/locales/nl.yml
 %%WWWDIR%%/config/locales/no.yml
 %%WWWDIR%%/config/locales/pl.yml
@@ -447,6 +467,7 @@
 %%WWWDIR%%/config/locales/ru.yml
 %%WWWDIR%%/config/locales/sk.yml
 %%WWWDIR%%/config/locales/sl.yml
+%%WWWDIR%%/config/locales/sr-YU.yml
 %%WWWDIR%%/config/locales/sr.yml
 %%WWWDIR%%/config/locales/sv.yml
 %%WWWDIR%%/config/locales/th.yml
@@ -624,6 +645,10 @@
 %%WWWDIR%%/db/migrate/20091225164732_remove_enumerations_opt.rb
 %%WWWDIR%%/db/migrate/20091227112908_change_wiki_contents_text_limit.rb
 %%WWWDIR%%/db/migrate/20100221100219_add_index_on_changesets_scmid.rb
+%%WWWDIR%%/db/migrate/20100313132032_add_issues_nested_sets_columns.rb
+%%WWWDIR%%/db/migrate/20100313171051_add_index_on_issues_nested_set.rb
+%%WWWDIR%%/db/migrate/20100705164950_change_changes_path_length_limit.rb
+%%WWWDIR%%/db/migrate/20100819172912_enable_calendar_and_gantt_modules_where_appropriate.rb
 %%WWWDIR%%/doc/CHANGELOG
 %%WWWDIR%%/doc/COPYING
 %%WWWDIR%%/doc/INSTALL
@@ -693,6 +718,7 @@
 %%WWWDIR%%/lib/redmine/core_ext/string.rb
 %%WWWDIR%%/lib/redmine/core_ext/string/conversions.rb
 %%WWWDIR%%/lib/redmine/core_ext/string/inflections.rb
+%%WWWDIR%%/lib/redmine/custom_field_format.rb
 %%WWWDIR%%/lib/redmine/default_data/loader.rb
 %%WWWDIR%%/lib/redmine/export/pdf.rb
 %%WWWDIR%%/lib/redmine/helpers/calendar.rb
@@ -705,6 +731,7 @@
 %%WWWDIR%%/lib/redmine/mime_type.rb
 %%WWWDIR%%/lib/redmine/platform.rb
 %%WWWDIR%%/lib/redmine/plugin.rb
+%%WWWDIR%%/lib/redmine/pop3.rb
 %%WWWDIR%%/lib/redmine/scm/adapters/abstract_adapter.rb
 %%WWWDIR%%/lib/redmine/scm/adapters/bazaar_adapter.rb
 %%WWWDIR%%/lib/redmine/scm/adapters/cvs_adapter.rb
@@ -715,7 +742,9 @@
 %%WWWDIR%%/lib/redmine/scm/adapters/mercurial/hg-template-1.0.tmpl
 %%WWWDIR%%/lib/redmine/scm/adapters/mercurial_adapter.rb
 %%WWWDIR%%/lib/redmine/scm/adapters/subversion_adapter.rb
+%%WWWDIR%%/lib/redmine/scm/base.rb
 %%WWWDIR%%/lib/redmine/search.rb
+%%WWWDIR%%/lib/redmine/syntax_highlighting.rb
 %%WWWDIR%%/lib/redmine/themes.rb
 %%WWWDIR%%/lib/redmine/unified_diff.rb
 %%WWWDIR%%/lib/redmine/utils.rb
@@ -727,21 +756,25 @@
 %%WWWDIR%%/lib/redmine/wiki_formatting/textile/formatter.rb
 %%WWWDIR%%/lib/redmine/wiki_formatting/textile/helper.rb
 %%WWWDIR%%/lib/tabular_form_builder.rb
+%%WWWDIR%%/lib/tasks/ci.rake
 %%WWWDIR%%/lib/tasks/deprecated.rake
 %%WWWDIR%%/lib/tasks/email.rake
 %%WWWDIR%%/lib/tasks/extract_fixtures.rake
 %%WWWDIR%%/lib/tasks/fetch_changesets.rake
 %%WWWDIR%%/lib/tasks/initializers.rake
+%%WWWDIR%%/lib/tasks/jdbc.rake
 %%WWWDIR%%/lib/tasks/load_default_data.rake
 %%WWWDIR%%/lib/tasks/locales.rake
 %%WWWDIR%%/lib/tasks/metrics.rake
 %%WWWDIR%%/lib/tasks/migrate_from_mantis.rake
 %%WWWDIR%%/lib/tasks/migrate_from_trac.rake
 %%WWWDIR%%/lib/tasks/migrate_plugins.rake
+%%WWWDIR%%/lib/tasks/permissions.rake
 %%WWWDIR%%/lib/tasks/plugins.rake
 %%WWWDIR%%/lib/tasks/reminder.rake
 %%WWWDIR%%/lib/tasks/testing.rake
 %%WWWDIR%%/lib/tasks/watchers.rake
+%%WWWDIR%%/lib/tasks/yardoc.rake
 %%WWWDIR%%/log/delete.me
 %%WWWDIR%%/public/.htaccess
 %%WWWDIR%%/public/404.html
@@ -757,12 +790,9 @@
 %%WWWDIR%%/public/images/2downarrow.png
 %%WWWDIR%%/public/images/2uparrow.png
 %%WWWDIR%%/public/images/add.png
-%%WWWDIR%%/public/images/arrow_bw.png
 %%WWWDIR%%/public/images/arrow_collapsed.png
 %%WWWDIR%%/public/images/arrow_down.png
 %%WWWDIR%%/public/images/arrow_expanded.png
-%%WWWDIR%%/public/images/arrow_from.png
-%%WWWDIR%%/public/images/arrow_to.png
 %%WWWDIR%%/public/images/attachment.png
 %%WWWDIR%%/public/images/bullet_add.png
 %%WWWDIR%%/public/images/bullet_arrow_left.png
@@ -770,6 +800,9 @@
 %%WWWDIR%%/public/images/bullet_black.png
 %%WWWDIR%%/public/images/bullet_blue.png
 %%WWWDIR%%/public/images/bullet_delete.png
+%%WWWDIR%%/public/images/bullet_diamond.png
+%%WWWDIR%%/public/images/bullet_end.png
+%%WWWDIR%%/public/images/bullet_go.png
 %%WWWDIR%%/public/images/bullet_orange.png
 %%WWWDIR%%/public/images/bullet_purple.png
 %%WWWDIR%%/public/images/bullet_toggle_minus.png
@@ -841,14 +874,14 @@
 %%WWWDIR%%/public/images/reload.png
 %%WWWDIR%%/public/images/report.png
 %%WWWDIR%%/public/images/save.png
+%%WWWDIR%%/public/images/server_key.png
 %%WWWDIR%%/public/images/sort_asc.png
 %%WWWDIR%%/public/images/sort_desc.png
 %%WWWDIR%%/public/images/stats.png
-%%WWWDIR%%/public/images/sticky.png
-%%WWWDIR%%/public/images/sub.gif
 %%WWWDIR%%/public/images/table_multiple.png
 %%WWWDIR%%/public/images/task_done.png
 %%WWWDIR%%/public/images/task_late.png
+%%WWWDIR%%/public/images/task_parent_end.png
 %%WWWDIR%%/public/images/task_todo.png
 %%WWWDIR%%/public/images/text_list_bullets.png
 %%WWWDIR%%/public/images/textfield.png
@@ -878,8 +911,10 @@
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-cs.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-da.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-de.js
+%%WWWDIR%%/public/javascripts/calendar/lang/calendar-en-gb.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-en.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-es.js
+%%WWWDIR%%/public/javascripts/calendar/lang/calendar-eu.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-fi.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-fr.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-gl.js
@@ -891,7 +926,9 @@
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-ja.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-ko.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-lt.js
+%%WWWDIR%%/public/javascripts/calendar/lang/calendar-lv.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-mk.js
+%%WWWDIR%%/public/javascripts/calendar/lang/calendar-mn.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-nl.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-no.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-pl.js
@@ -901,6 +938,7 @@
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-ru.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-sk.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-sl.js
+%%WWWDIR%%/public/javascripts/calendar/lang/calendar-sr-yu.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-sr.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-sv.js
 %%WWWDIR%%/public/javascripts/calendar/lang/calendar-th.js
@@ -920,8 +958,10 @@
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-cs.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-da.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-de.js
+%%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-en-gb.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-en.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-es.js
+%%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-eu.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-fi.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-fr.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-gl.js
@@ -933,7 +973,9 @@
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-ja.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-ko.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-lt.js
+%%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-lv.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-mk.js
+%%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-mn.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-nl.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-no.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-pl.js
@@ -943,6 +985,7 @@
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-ru.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-sk.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-sl.js
+%%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-sr-yu.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-sr.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-sv.js
 %%WWWDIR%%/public/javascripts/jstoolbar/lang/jstoolbar-th.js
@@ -958,8 +1001,10 @@
 %%WWWDIR%%/public/stylesheets/application.css
 %%WWWDIR%%/public/stylesheets/calendar.css
 %%WWWDIR%%/public/stylesheets/context_menu.css
+%%WWWDIR%%/public/stylesheets/context_menu_rtl.css
 %%WWWDIR%%/public/stylesheets/csshover.htc
 %%WWWDIR%%/public/stylesheets/jstoolbar.css
+%%WWWDIR%%/public/stylesheets/rtl.css
 %%WWWDIR%%/public/stylesheets/scm.css
 %%WWWDIR%%/public/themes/README
 %%WWWDIR%%/public/themes/alternate/stylesheets/application.css
@@ -990,12 +1035,14 @@
 %%WWWDIR%%/test/exemplars/comment_exemplar.rb
 %%WWWDIR%%/test/exemplars/custom_field_exemplar.rb
 %%WWWDIR%%/test/exemplars/custom_value_exemplar.rb
+%%WWWDIR%%/test/exemplars/document_category_exemplar.rb
 %%WWWDIR%%/test/exemplars/document_exemplar.rb
 %%WWWDIR%%/test/exemplars/enabled_module_exemplar.rb
 %%WWWDIR%%/test/exemplars/enumeration_exemplar.rb
 %%WWWDIR%%/test/exemplars/group_exemplar.rb
 %%WWWDIR%%/test/exemplars/issue_category_exemplar.rb
 %%WWWDIR%%/test/exemplars/issue_exemplar.rb
+%%WWWDIR%%/test/exemplars/issue_priority_exemplar.rb
 %%WWWDIR%%/test/exemplars/issue_status_exemplar.rb
 %%WWWDIR%%/test/exemplars/journal_exemplar.rb
 %%WWWDIR%%/test/exemplars/member_exemplar.rb
@@ -1043,6 +1090,9 @@
 %%WWWDIR%%/test/fixtures/issues.yml
 %%WWWDIR%%/test/fixtures/journal_details.yml
 %%WWWDIR%%/test/fixtures/journals.yml
+%%WWWDIR%%/test/fixtures/ldap/slapd.conf
+%%WWWDIR%%/test/fixtures/ldap/test-ldap.ldif
+%%WWWDIR%%/test/fixtures/mail_handler/japanese_keywords_iso_2022_jp.eml
 %%WWWDIR%%/test/fixtures/mail_handler/message_reply.eml
 %%WWWDIR%%/test/fixtures/mail_handler/message_reply_by_subject.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_by_empty_user.eml
@@ -1056,6 +1106,7 @@
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_attributes.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_cc.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_custom_fields.eml
+%%WWWDIR%%/test/fixtures/mail_handler/ticket_with_long_subject.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_with_spaces_between_attribute_and_separator.eml
 %%WWWDIR%%/test/fixtures/mail_handler/ticket_without_from_header.eml
 %%WWWDIR%%/test/fixtures/member_roles.yml
@@ -1090,21 +1141,30 @@
 %%WWWDIR%%/test/functional/admin_controller_test.rb
 %%WWWDIR%%/test/functional/application_controller_test.rb
 %%WWWDIR%%/test/functional/attachments_controller_test.rb
+%%WWWDIR%%/test/functional/auth_sources_controller_test.rb
+%%WWWDIR%%/test/functional/auto_completes_controller_test.rb
 %%WWWDIR%%/test/functional/boards_controller_test.rb
+%%WWWDIR%%/test/functional/calendars_controller_test.rb
+%%WWWDIR%%/test/functional/context_menus_controller_test.rb
 %%WWWDIR%%/test/functional/custom_fields_controller_test.rb
 %%WWWDIR%%/test/functional/documents_controller_test.rb
 %%WWWDIR%%/test/functional/enumerations_controller_test.rb
+%%WWWDIR%%/test/functional/gantts_controller_test.rb
 %%WWWDIR%%/test/functional/groups_controller_test.rb
 %%WWWDIR%%/test/functional/issue_categories_controller_test.rb
+%%WWWDIR%%/test/functional/issue_moves_controller_test.rb
 %%WWWDIR%%/test/functional/issue_relations_controller_test.rb
 %%WWWDIR%%/test/functional/issue_statuses_controller_test.rb
 %%WWWDIR%%/test/functional/issues_controller_test.rb
+%%WWWDIR%%/test/functional/issues_controller_transaction_test.rb
 %%WWWDIR%%/test/functional/journals_controller_test.rb
+%%WWWDIR%%/test/functional/ldap_auth_sources_controller.rb
 %%WWWDIR%%/test/functional/mail_handler_controller_test.rb
 %%WWWDIR%%/test/functional/members_controller_test.rb
 %%WWWDIR%%/test/functional/messages_controller_test.rb
 %%WWWDIR%%/test/functional/my_controller_test.rb
 %%WWWDIR%%/test/functional/news_controller_test.rb
+%%WWWDIR%%/test/functional/previews_controller_test.rb
 %%WWWDIR%%/test/functional/projects_controller_test.rb
 %%WWWDIR%%/test/functional/queries_controller_test.rb
 %%WWWDIR%%/test/functional/reports_controller_test.rb
@@ -1136,9 +1196,13 @@
 %%WWWDIR%%/test/integration/disabled_rest_api_test.rb
 %%WWWDIR%%/test/integration/http_basic_login_test.rb
 %%WWWDIR%%/test/integration/http_basic_login_with_api_token_test.rb
+%%WWWDIR%%/test/integration/issues_api_test.rb
 %%WWWDIR%%/test/integration/issues_test.rb
+%%WWWDIR%%/test/integration/layout_test.rb
 %%WWWDIR%%/test/integration/lib/redmine/menu_manager_test.rb
+%%WWWDIR%%/test/integration/projects_api_test.rb
 %%WWWDIR%%/test/integration/projects_test.rb
+%%WWWDIR%%/test/integration/routing_test.rb
 %%WWWDIR%%/test/mocks/open_id_authentication_mock.rb
 %%WWWDIR%%/test/object_daddy_helpers.rb
 %%WWWDIR%%/test/test_helper.rb
@@ -1156,16 +1220,17 @@
 %%WWWDIR%%/test/unit/document_test.rb
 %%WWWDIR%%/test/unit/enabled_module_test.rb
 %%WWWDIR%%/test/unit/enumeration_test.rb
-%%WWWDIR%%/test/unit/filesystem_adapter_test.rb
-%%WWWDIR%%/test/unit/git_adapter_test.rb
 %%WWWDIR%%/test/unit/group_test.rb
 %%WWWDIR%%/test/unit/helpers/application_helper_test.rb
 %%WWWDIR%%/test/unit/helpers/custom_fields_helper_test.rb
+%%WWWDIR%%/test/unit/helpers/issue_moves_helper_test.rb
+%%WWWDIR%%/test/unit/helpers/issues_helper_test.rb
 %%WWWDIR%%/test/unit/helpers/projects_helper_test.rb
 %%WWWDIR%%/test/unit/helpers/search_helper_test.rb
 %%WWWDIR%%/test/unit/helpers/sort_helper_test.rb
 %%WWWDIR%%/test/unit/helpers/timelog_helper_test.rb
 %%WWWDIR%%/test/unit/issue_category_test.rb
+%%WWWDIR%%/test/unit/issue_nested_set_test.rb
 %%WWWDIR%%/test/unit/issue_priority_test.rb
 %%WWWDIR%%/test/unit/issue_relation_test.rb
 %%WWWDIR%%/test/unit/issue_status_test.rb
@@ -1180,14 +1245,18 @@
 %%WWWDIR%%/test/unit/lib/redmine/menu_manager_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/mime_type_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/plugin_test.rb
+%%WWWDIR%%/test/unit/lib/redmine/scm/adapters/filesystem_adapter_test.rb
+%%WWWDIR%%/test/unit/lib/redmine/scm/adapters/git_adapter_test.rb
+%%WWWDIR%%/test/unit/lib/redmine/scm/adapters/mercurial_adapter_test.rb
+%%WWWDIR%%/test/unit/lib/redmine/scm/adapters/subversion_adapter_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/unified_diff_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/wiki_formatting.rb
 %%WWWDIR%%/test/unit/lib/redmine/wiki_formatting/macros_test.rb
+%%WWWDIR%%/test/unit/lib/redmine/wiki_formatting/textile_formatter_test.rb
 %%WWWDIR%%/test/unit/lib/redmine_test.rb
 %%WWWDIR%%/test/unit/mail_handler_test.rb
 %%WWWDIR%%/test/unit/mailer_test.rb
 %%WWWDIR%%/test/unit/member_test.rb
-%%WWWDIR%%/test/unit/mercurial_adapter_test.rb
 %%WWWDIR%%/test/unit/message_test.rb
 %%WWWDIR%%/test/unit/news_test.rb
 %%WWWDIR%%/test/unit/principal_test.rb
@@ -1205,7 +1274,6 @@
 %%WWWDIR%%/test/unit/role_test.rb
 %%WWWDIR%%/test/unit/search_test.rb
 %%WWWDIR%%/test/unit/setting_test.rb
-%%WWWDIR%%/test/unit/subversion_adapter_test.rb
 %%WWWDIR%%/test/unit/testing_test.rb
 %%WWWDIR%%/test/unit/time_entry_activity_test.rb
 %%WWWDIR%%/test/unit/time_entry_test.rb
@@ -1323,56 +1391,68 @@
 %%WWWDIR%%/vendor/plugins/classic_pagination/test/helper.rb
 %%WWWDIR%%/vendor/plugins/classic_pagination/test/pagination_helper_test.rb
 %%WWWDIR%%/vendor/plugins/classic_pagination/test/pagination_test.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/FOLDERS
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/LICENSE
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/README
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/bin/coderay
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/bin/coderay_stylesheet
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/duo.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoder.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders/_map.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders/count.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders/debug.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders/div.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders/html.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders/html/css.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders/html/numerization.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders/html/output.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders/null.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders/page.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders/span.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders/statistic.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders/text.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders/tokens.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders/xml.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders/yaml.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/helpers/file_type.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/helpers/gzip_simple.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/helpers/plugin.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/helpers/word_list.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanner.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanners/_map.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanners/c.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanners/debug.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanners/delphi.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanners/html.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanners/java.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanners/javascript.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanners/nitro_xhtml.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanners/php.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanners/plaintext.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanners/rhtml.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanners/ruby.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanners/ruby/patterns.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanners/scheme.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanners/xml.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/style.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/styles/_map.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/styles/cycnus.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/styles/murphy.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/token_classes.rb
-%%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/tokens.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/LICENSE
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/README
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/duo.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoder.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/_map.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/comment_filter.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/count.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/debug.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/div.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/filter.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/html.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/html/css.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/html/numerization.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/html/output.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/json.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/lines_of_code.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/null.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/page.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/span.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/statistic.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/term.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/text.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/token_class_filter.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/xml.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/yaml.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/for_redcloth.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/helpers/file_type.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/helpers/gzip_simple.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/helpers/plugin.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/helpers/word_list.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanner.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/_map.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/c.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/cpp.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/css.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/debug.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/delphi.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/diff.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/groovy.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/html.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/java.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/java/builtin_types.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/java_script.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/json.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/nitro_xhtml.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/php.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/plaintext.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/python.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/rhtml.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/ruby.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/ruby/patterns.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/scheme.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/sql.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/xml.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/yaml.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/style.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/styles/_map.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/styles/cycnus.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/styles/murphy.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/token_classes.rb
+%%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/tokens.rb
 %%WWWDIR%%/vendor/plugins/engines/.gitignore
 %%WWWDIR%%/vendor/plugins/engines/CHANGELOG
 %%WWWDIR%%/vendor/plugins/engines/MIT-LICENSE
@@ -1558,6 +1638,8 @@
 %%WWWDIR%%/vendor/plugins/ruby-net-ldap-0.0.4/tests/testldap.rb
 %%WWWDIR%%/vendor/plugins/ruby-net-ldap-0.0.4/tests/testldif.rb
 %%WWWDIR%%/vendor/plugins/ruby-net-ldap-0.0.4/tests/testpsw.rb
+%%WWWDIR%%/vendor/rails/.gitignore
+%%WWWDIR%%/vendor/rails/REVISION_ae2c60734a0f71593709608710a0c7507bb8699e
 %%WWWDIR%%/vendor/rails/actionmailer/CHANGELOG
 %%WWWDIR%%/vendor/rails/actionmailer/MIT-LICENSE
 %%WWWDIR%%/vendor/rails/actionmailer/README
@@ -1911,6 +1993,7 @@
 %%WWWDIR%%/vendor/rails/actionpack/test/fixtures/layout_tests/layouts/item.rhtml
 %%WWWDIR%%/vendor/rails/actionpack/test/fixtures/layout_tests/layouts/layout_test.rhtml
 %%WWWDIR%%/vendor/rails/actionpack/test/fixtures/layout_tests/layouts/multiple_extensions.html.erb
+%%WWWDIR%%/vendor/rails/actionpack/test/fixtures/layout_tests/layouts/symlinked
 %%WWWDIR%%/vendor/rails/actionpack/test/fixtures/layout_tests/layouts/third_party_template_library.mab
 %%WWWDIR%%/vendor/rails/actionpack/test/fixtures/layout_tests/views/hello.rhtml
 %%WWWDIR%%/vendor/rails/actionpack/test/fixtures/layouts/_column.html.erb
@@ -2094,10 +2177,45 @@
 %%WWWDIR%%/vendor/rails/actionpack/test/testing_sandbox.rb
 %%WWWDIR%%/vendor/rails/actionpack/test/view/safe_buffer_test.rb
 %%WWWDIR%%/vendor/rails/actionpack/test/view/test_case_test.rb
+%%WWWDIR%%/vendor/rails/activemodel/CHANGES
+%%WWWDIR%%/vendor/rails/activemodel/README
+%%WWWDIR%%/vendor/rails/activemodel/Rakefile
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/base.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/callbacks.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/core.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/deprecated_error_methods.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/errors.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/observing.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/state_machine.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/state_machine/event.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/state_machine/machine.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/state_machine/state.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/state_machine/state_transition.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/acceptance.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/associated.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/confirmation.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/exclusion.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/format.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/inclusion.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/length.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/numericality.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/presence.rb
+%%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations/uniqueness.rb
+%%WWWDIR%%/vendor/rails/activemodel/test/observing_test.rb
+%%WWWDIR%%/vendor/rails/activemodel/test/state_machine/event_test.rb
+%%WWWDIR%%/vendor/rails/activemodel/test/state_machine/machine_test.rb
+%%WWWDIR%%/vendor/rails/activemodel/test/state_machine/state_test.rb
+%%WWWDIR%%/vendor/rails/activemodel/test/state_machine/state_transition_test.rb
+%%WWWDIR%%/vendor/rails/activemodel/test/state_machine_test.rb
+%%WWWDIR%%/vendor/rails/activemodel/test/test_helper.rb
 %%WWWDIR%%/vendor/rails/activerecord/CHANGELOG
+%%WWWDIR%%/vendor/rails/activerecord/MIT-LICENSE
 %%WWWDIR%%/vendor/rails/activerecord/README
 %%WWWDIR%%/vendor/rails/activerecord/RUNNING_UNIT_TESTS
 %%WWWDIR%%/vendor/rails/activerecord/Rakefile
+%%WWWDIR%%/vendor/rails/activerecord/examples/.gitignore
 %%WWWDIR%%/vendor/rails/activerecord/examples/associations.png
 %%WWWDIR%%/vendor/rails/activerecord/examples/performance.rb
 %%WWWDIR%%/vendor/rails/activerecord/install.rb
@@ -2261,6 +2379,7 @@
 %%WWWDIR%%/vendor/rails/activerecord/test/connections/native_sqlite3/connection.rb
 %%WWWDIR%%/vendor/rails/activerecord/test/connections/native_sqlite3/in_memory_connection.rb
 %%WWWDIR%%/vendor/rails/activerecord/test/connections/native_sybase/connection.rb
+%%WWWDIR%%/vendor/rails/activerecord/test/fixtures/.gitignore
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/accounts.yml
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/all/developers.yml
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/all/people.csv
@@ -2286,10 +2405,6 @@
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/developers_projects.yml
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/edges.yml
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/entrants.yml
-%%WWWDIR%%/vendor/rails/activerecord/test/fixtures/fixture_database.sqlite
-%%WWWDIR%%/vendor/rails/activerecord/test/fixtures/fixture_database.sqlite3
-%%WWWDIR%%/vendor/rails/activerecord/test/fixtures/fixture_database_2.sqlite
-%%WWWDIR%%/vendor/rails/activerecord/test/fixtures/fixture_database_2.sqlite3
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/fk_test_has_fk.yml
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/fk_test_has_pk.yml
 %%WWWDIR%%/vendor/rails/activerecord/test/fixtures/funny_jokes.yml
@@ -2429,6 +2544,7 @@
 %%WWWDIR%%/vendor/rails/activerecord/test/schema/schema2.rb
 %%WWWDIR%%/vendor/rails/activerecord/test/schema/sqlite_specific_schema.rb
 %%WWWDIR%%/vendor/rails/activeresource/CHANGELOG
+%%WWWDIR%%/vendor/rails/activeresource/MIT-LICENSE
 %%WWWDIR%%/vendor/rails/activeresource/README
 %%WWWDIR%%/vendor/rails/activeresource/Rakefile
 %%WWWDIR%%/vendor/rails/activeresource/lib/active_resource.rb
@@ -2451,7 +2567,6 @@
 %%WWWDIR%%/vendor/rails/activeresource/test/base_errors_test.rb
 %%WWWDIR%%/vendor/rails/activeresource/test/base_test.rb
 %%WWWDIR%%/vendor/rails/activeresource/test/connection_test.rb
-%%WWWDIR%%/vendor/rails/activeresource/test/debug.log
 %%WWWDIR%%/vendor/rails/activeresource/test/fixtures/beast.rb
 %%WWWDIR%%/vendor/rails/activeresource/test/fixtures/customer.rb
 %%WWWDIR%%/vendor/rails/activeresource/test/fixtures/person.rb
@@ -2460,7 +2575,11 @@
 %%WWWDIR%%/vendor/rails/activeresource/test/format_test.rb
 %%WWWDIR%%/vendor/rails/activeresource/test/setter_trap.rb
 %%WWWDIR%%/vendor/rails/activesupport/CHANGELOG
+%%WWWDIR%%/vendor/rails/activesupport/MIT-LICENSE
 %%WWWDIR%%/vendor/rails/activesupport/README
+%%WWWDIR%%/vendor/rails/activesupport/Rakefile
+%%WWWDIR%%/vendor/rails/activesupport/bin/generate_tables
+%%WWWDIR%%/vendor/rails/activesupport/install.rb
 %%WWWDIR%%/vendor/rails/activesupport/lib/active_support.rb
 %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/all.rb
 %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/backtrace_cleaner.rb
@@ -2806,6 +2925,117 @@
 %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/xml_mini/nokogiri.rb
 %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/xml_mini/rexml.rb
 %%WWWDIR%%/vendor/rails/activesupport/lib/activesupport.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/abstract_unit.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/a/b.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/a/c/d.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/a/c/e/f.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/application.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/class_folder.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/class_folder/class_folder_subclass.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/class_folder/inline_class.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/class_folder/nested_class.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/conflict.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/counting_loader.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/cross_site_dependency.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/e.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/module_folder/inline_class.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/module_folder/nested_class.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/module_folder/nested_sibling.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/module_with_custom_const_missing/a/b.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/multiple_constant_file.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/raises_name_error.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/raises_no_method_error.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/buffered_logger_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/caching_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/callbacks_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/clean_backtrace_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/clean_logger_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/array_ext_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/base64_ext_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/bigdecimal.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/blank_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/cgi_ext_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/class/attribute_accessor_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/class/class_inheritable_attributes_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/class/delegating_attributes_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/class_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/date_ext_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/date_time_ext_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/duplicable_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/duration_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/enumerable_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/exception_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/file_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/float_ext_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/hash_ext_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/integer_ext_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/kernel_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/load_error_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/module/attr_accessor_with_default_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/module/attr_internal_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/module/attribute_accessor_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/module/attribute_aliasing_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/module/model_naming_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/module/synchronization_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/module_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/name_error_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/numeric_ext_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/object_and_class_ext_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/object_ext_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/pathname_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/proc_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/range_ext_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/string_ext_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/symbol_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/time_ext_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/time_with_zone_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/core_ext/uri_ext_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/check_warnings.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/conflict.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/cross_site_depender.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/mutual_one.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/mutual_two.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/raises_exception.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/requires_nonexistent0.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/requires_nonexistent1.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/service_one.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/dependencies/service_two.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/dependencies_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/deprecation_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/flush_cache_on_private_memoization_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/gzip_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/i18n_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/inflector_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/inflector_test_cases.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/json/decoding_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/json/encoding_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/memoizable_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/message_encryptor_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/message_verifier_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/multibyte_chars_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/multibyte_conformance.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/multibyte_test_helpers.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/multibyte_unicode_database_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/multibyte_utils_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/option_merger_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/ordered_hash_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/ordered_options_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/rescuable_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/secure_random_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/string_inquirer_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/test_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/time_zone_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/whiny_nil_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/xml_mini/jdom_engine_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/xml_mini/nokogiri_engine_test.rb
+%%WWWDIR%%/vendor/rails/activesupport/test/xml_mini/rexml_engine_test.rb
+%%WWWDIR%%/vendor/rails/ci/ci_build.rb
+%%WWWDIR%%/vendor/rails/ci/ci_setup_notes.txt
+%%WWWDIR%%/vendor/rails/ci/cruise_config.rb
+%%WWWDIR%%/vendor/rails/ci/geminstaller.yml
+%%WWWDIR%%/vendor/rails/ci/site.css
+%%WWWDIR%%/vendor/rails/ci/site_config.rb
+%%WWWDIR%%/vendor/rails/doc/template/horo.rb
 %%WWWDIR%%/vendor/rails/railties/CHANGELOG
 %%WWWDIR%%/vendor/rails/railties/MIT-LICENSE
 %%WWWDIR%%/vendor/rails/railties/README
@@ -3125,6 +3355,187 @@
 %%WWWDIR%%/vendor/rails/railties/lib/tasks/tmp.rake
 %%WWWDIR%%/vendor/rails/railties/lib/test_help.rb
 %%WWWDIR%%/vendor/rails/railties/lib/webrick_server.rb
+%%WWWDIR%%/vendor/rails/railties/test/abstract_unit.rb
+%%WWWDIR%%/vendor/rails/railties/test/backtrace_cleaner_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/boot_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/console_app_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/fcgi_dispatcher_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/about_yml_plugins/bad_about_yml/about.yml
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/about_yml_plugins/bad_about_yml/init.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/about_yml_plugins/plugin_without_about_yml/init.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/eager/zoo.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/eager/zoo/reptile_house.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/environment_with_constant.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_class/missing_class_generator.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_class/templates/.gitignore
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_generator/templates/.gitignore
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_templates/.gitignore
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/working/working_generator.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/multiplemetals/app/metal/metal_a.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/multiplemetals/app/metal/metal_b.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/pluralmetal/app/metal/legacy_routes.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/singlemetal/app/metal/foo_metal.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/subfolders/app/metal/Folder/metal_a.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/subfolders/app/metal/Folder/metal_b.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/alternate/a/generators/a_generator/a_generator.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/alternate/a/lib/.gitignore
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/acts/acts_as_chunky_bacon/lib/.gitignore
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/empty/.gitignore
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/gemlike/init.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/gemlike/lib/gemlike.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/gemlike/rails/init.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/plugin_with_no_lib_dir/init.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/stubby/about.yml
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/stubby/generators/stubby_generator/stubby_generator.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/stubby/init.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/stubby/lib/stubby_mixin.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/app/controllers/engine_controller.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/app/metal/engine_metal.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/app/models/engine_model.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/config/locales/en.yml
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/config/routes.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/init.rb
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/public/foo/bar.html
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/public/foo/index.html
+%%WWWDIR%%/vendor/rails/railties/test/fixtures/public/index.html
+%%WWWDIR%%/vendor/rails/railties/test/gem_dependency_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/generator_lookup_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/generators/generator_test_helper.rb
+%%WWWDIR%%/vendor/rails/railties/test/generators/rails_controller_generator_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/generators/rails_helper_generator_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/generators/rails_mailer_generator_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/generators/rails_model_generator_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/generators/rails_resource_generator_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/generators/rails_scaffold_generator_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/generators/rails_template_runner_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/initializer_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/metal_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/mocks/routes.rb
+%%WWWDIR%%/vendor/rails/railties/test/plugin_loader_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/plugin_locator_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/plugin_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/plugin_test_helper.rb
+%%WWWDIR%%/vendor/rails/railties/test/rack_static_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/rails_generator_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/rails_info_controller_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/rails_info_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/secret_key_generation_test.rb
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-a-0.4.0/.specification
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-a-0.4.0/lib/dummy-gem-a.rb
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-b-0.4.0/.specification
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-b-0.4.0/lib/dummy-gem-b.rb
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-b-0.6.0/.specification
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-b-0.6.0/lib/dummy-gem-b.rb
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-c-0.4.0/.specification
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-c-0.4.0/lib/dummy-gem-c.rb
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-c-0.6.0/.specification
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-c-0.6.0/lib/dummy-gem-c.rb
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-d-1.0.0/lib/dummy-gem-d.rb
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-e-1.0.0/.specification
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-e-1.0.0/lib/dummy-gem-e.rb
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-f-1.0.0/.specification
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-f-1.0.0/lib/dummy-gem-f.rb
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-g-1.0.0/.specification
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-g-1.0.0/lib/dummy-gem-g.rb
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-h-1.0.0/.specification
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-h-1.0.0/lib/dummy-gem-h.rb
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-i-1.0.0/.specification
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-i-1.0.0/ext/dummy-gem-i/Makefile
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-i-1.0.0/lib/dummy-gem-i.rb
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-j-1.0.0/.specification
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-j-1.0.0/lib/dummy-gem-j.rb
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-k-1.0.0/.specification
+%%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-k-1.0.0/lib/dummy-gem-k.rb
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-k-1.0.0/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-k-1.0.0
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-j-1.0.0/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-j-1.0.0
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-i-1.0.0/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-i-1.0.0/ext/dummy-gem-i
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-i-1.0.0/ext
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-i-1.0.0
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-h-1.0.0/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-h-1.0.0
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-g-1.0.0/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-g-1.0.0
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-f-1.0.0/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-f-1.0.0
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-e-1.0.0/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-e-1.0.0
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-d-1.0.0/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-d-1.0.0
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-c-0.6.0/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-c-0.6.0
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-c-0.4.0/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-c-0.4.0
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-b-0.6.0/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-b-0.6.0
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-b-0.4.0/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-b-0.4.0
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-a-0.4.0/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems/dummy-gem-a-0.4.0
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor/gems
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/vendor
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/mocks
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/generators
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/public/foo
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/public
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/config/locales
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/config
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/app/models
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/app/metal
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/app/controllers
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine/app
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines/engine
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/engines
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/stubby/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/stubby/generators/stubby_generator
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/stubby/generators
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/stubby
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/plugin_with_no_lib_dir
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/gemlike/rails
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/gemlike/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/gemlike
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/empty
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/acts/acts_as_chunky_bacon/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/acts/acts_as_chunky_bacon
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default/acts
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/default
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/alternate/a/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/alternate/a/generators/a_generator
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/alternate/a/generators
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/alternate/a
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins/alternate
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/plugins
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/subfolders/app/metal/Folder
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/subfolders/app/metal
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/subfolders/app
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/subfolders
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/singlemetal/app/metal
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/singlemetal/app
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/singlemetal
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/pluralmetal/app/metal
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/pluralmetal/app
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/pluralmetal
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/multiplemetals/app/metal
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/multiplemetals/app
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal/multiplemetals
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/metal
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/working
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_templates
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_generator/templates
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_generator
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_class/templates
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators/missing_class
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/lib/generators
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/lib
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/eager/zoo
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/eager
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/about_yml_plugins/plugin_without_about_yml
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/about_yml_plugins/bad_about_yml
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures/about_yml_plugins
+@dirrm %%WWWDIR%%/vendor/rails/railties/test/fixtures
+@dirrm %%WWWDIR%%/vendor/rails/railties/test
 @dirrm %%WWWDIR%%/vendor/rails/railties/lib/tasks
 @dirrm %%WWWDIR%%/vendor/rails/railties/lib/rails_generator/scripts
 @dirrm %%WWWDIR%%/vendor/rails/railties/lib/rails_generator/generators/components/session_migration/templates
@@ -3193,6 +3604,24 @@
 @dirrm %%WWWDIR%%/vendor/rails/railties/bin/performance
 @dirrm %%WWWDIR%%/vendor/rails/railties/bin
 @dirrm %%WWWDIR%%/vendor/rails/railties
+@dirrm %%WWWDIR%%/vendor/rails/doc/template
+@dirrm %%WWWDIR%%/vendor/rails/doc
+@dirrm %%WWWDIR%%/vendor/rails/ci
+@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/xml_mini
+@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/json
+@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/dependencies
+@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/core_ext/module
+@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/core_ext/class
+@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/core_ext
+@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/module_with_custom_const_missing/a
+@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/module_with_custom_const_missing
+@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/module_folder
+@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/class_folder
+@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/a/c/e
+@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/a/c
+@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures/a
+@dirrm %%WWWDIR%%/vendor/rails/activesupport/test/autoloading_fixtures
+@dirrm %%WWWDIR%%/vendor/rails/activesupport/test
 @dirrm %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/xml_mini
 @dirrm %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/vendor/tzinfo-0.3.12/tzinfo/definitions/Pacific
 @dirrm %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/vendor/tzinfo-0.3.12/tzinfo/definitions/Europe
@@ -3249,6 +3678,7 @@
 @dirrm %%WWWDIR%%/vendor/rails/activesupport/lib/active_support/cache
 @dirrm %%WWWDIR%%/vendor/rails/activesupport/lib/active_support
 @dirrm %%WWWDIR%%/vendor/rails/activesupport/lib
+@dirrm %%WWWDIR%%/vendor/rails/activesupport/bin
 @dirrm %%WWWDIR%%/vendor/rails/activesupport
 @dirrm %%WWWDIR%%/vendor/rails/activeresource/test/fixtures
 @dirrm %%WWWDIR%%/vendor/rails/activeresource/test/base
@@ -3309,6 +3739,13 @@
 @dirrm %%WWWDIR%%/vendor/rails/activerecord/lib
 @dirrm %%WWWDIR%%/vendor/rails/activerecord/examples
 @dirrm %%WWWDIR%%/vendor/rails/activerecord
+@dirrm %%WWWDIR%%/vendor/rails/activemodel/test/state_machine
+@dirrm %%WWWDIR%%/vendor/rails/activemodel/test
+@dirrm %%WWWDIR%%/vendor/rails/activemodel/lib/active_model/validations
+@dirrm %%WWWDIR%%/vendor/rails/activemodel/lib/active_model/state_machine
+@dirrm %%WWWDIR%%/vendor/rails/activemodel/lib/active_model
+@dirrm %%WWWDIR%%/vendor/rails/activemodel/lib
+@dirrm %%WWWDIR%%/vendor/rails/activemodel
 @dirrm %%WWWDIR%%/vendor/rails/actionpack/test/view
 @dirrm %%WWWDIR%%/vendor/rails/actionpack/test/template
 @dirrm %%WWWDIR%%/vendor/rails/actionpack/test/fixtures/topics
@@ -3536,16 +3973,16 @@
 @dirrm %%WWWDIR%%/vendor/plugins/engines/generators/plugin_migration
 @dirrm %%WWWDIR%%/vendor/plugins/engines/generators
 @dirrm %%WWWDIR%%/vendor/plugins/engines
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/styles
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanners/ruby
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/scanners
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/helpers
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders/html
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay/encoders
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib/coderay
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/lib
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.7.6.227/bin
-@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.7.6.227
+@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/styles
+@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/ruby
+@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners/java
+@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/scanners
+@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/helpers
+@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders/html
+@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay/encoders
+@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib/coderay
+@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2/lib
+@dirrm %%WWWDIR%%/vendor/plugins/coderay-0.9.2
 @dirrm %%WWWDIR%%/vendor/plugins/classic_pagination/test/fixtures
 @dirrm %%WWWDIR%%/vendor/plugins/classic_pagination/test
 @dirrm %%WWWDIR%%/vendor/plugins/classic_pagination/lib
@@ -3600,6 +4037,8 @@
 @dirrmtry %%WWWDIR%%/tmp/cache
 @dirrmtry %%WWWDIR%%/tmp
 @dirrm %%WWWDIR%%/test/unit/lib/redmine/wiki_formatting
+@dirrm %%WWWDIR%%/test/unit/lib/redmine/scm/adapters
+@dirrm %%WWWDIR%%/test/unit/lib/redmine/scm
 @dirrm %%WWWDIR%%/test/unit/lib/redmine/menu_manager
 @dirrm %%WWWDIR%%/test/unit/lib/redmine
 @dirrm %%WWWDIR%%/test/unit/lib
@@ -3615,6 +4054,7 @@
 @dirrm %%WWWDIR%%/test/fixtures/repositories
 @dirrm %%WWWDIR%%/test/fixtures/mailer
 @dirrm %%WWWDIR%%/test/fixtures/mail_handler
+@dirrm %%WWWDIR%%/test/fixtures/ldap
 @dirrm %%WWWDIR%%/test/fixtures/files
 @dirrm %%WWWDIR%%/test/fixtures/encoding
 @dirrm %%WWWDIR%%/test/fixtures/diffs
@@ -3624,6 +4064,8 @@
 @dirrm %%WWWDIR%%/script/process
 @dirrm %%WWWDIR%%/script/performance
 @dirrm %%WWWDIR%%/script
+@dirrm %%WWWDIR%%/public/themes/rtl/stylesheets
+@dirrm %%WWWDIR%%/public/themes/rtl
 @dirrm %%WWWDIR%%/public/themes/classic/stylesheets
 @dirrm %%WWWDIR%%/public/themes/classic/images
 @dirrm %%WWWDIR%%/public/themes/classic
@@ -3713,24 +4155,31 @@
 @dirrm %%WWWDIR%%/app/views/queries
 @dirrm %%WWWDIR%%/app/views/projects/settings
 @dirrm %%WWWDIR%%/app/views/projects
+@dirrm %%WWWDIR%%/app/views/previews
 @dirrm %%WWWDIR%%/app/views/news
 @dirrm %%WWWDIR%%/app/views/my/blocks
 @dirrm %%WWWDIR%%/app/views/my
 @dirrm %%WWWDIR%%/app/views/messages
 @dirrm %%WWWDIR%%/app/views/members
 @dirrm %%WWWDIR%%/app/views/mailer
+@dirrm %%WWWDIR%%/app/views/ldap_auth_sources
 @dirrm %%WWWDIR%%/app/views/layouts
 @dirrm %%WWWDIR%%/app/views/journals
 @dirrm %%WWWDIR%%/app/views/issues
 @dirrm %%WWWDIR%%/app/views/issue_statuses
 @dirrm %%WWWDIR%%/app/views/issue_relations
+@dirrm %%WWWDIR%%/app/views/issue_moves
 @dirrm %%WWWDIR%%/app/views/issue_categories
 @dirrm %%WWWDIR%%/app/views/groups
+@dirrm %%WWWDIR%%/app/views/gantts
 @dirrm %%WWWDIR%%/app/views/enumerations
 @dirrm %%WWWDIR%%/app/views/documents
 @dirrm %%WWWDIR%%/app/views/custom_fields
+@dirrm %%WWWDIR%%/app/views/context_menus
 @dirrm %%WWWDIR%%/app/views/common
+@dirrm %%WWWDIR%%/app/views/calendars
 @dirrm %%WWWDIR%%/app/views/boards
+@dirrm %%WWWDIR%%/app/views/auto_completes
 @dirrm %%WWWDIR%%/app/views/auth_sources
 @dirrm %%WWWDIR%%/app/views/attachments
 @dirrm %%WWWDIR%%/app/views/admin
