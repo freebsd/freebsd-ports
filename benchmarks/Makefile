@@ -50,6 +50,7 @@
     SUBDIR += postmark
     SUBDIR += pybench
     SUBDIR += raidtest
+    SUBDIR += randomio
     SUBDIR += rawio
     SUBDIR += rubygem-railsbench
     SUBDIR += scimark2
