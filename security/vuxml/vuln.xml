@@ -95,11 +95,11 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>phpMyAdmin</name>
-	<range><lt>3.3.5</lt></range>
+	<range><lt>3.3.5.1</lt></range>
       </package>
       <package>
         <name>phpMyAdmin211</name>
-	<range><lt>2.11.10</lt></range>
+	<range><lt>2.11.10.1</lt></range>
       </package>
     </affects>
     <description>
