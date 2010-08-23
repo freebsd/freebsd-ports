@@ -1,9 +1,0 @@
-%%RUBY_SITELIBDIR%%/freebase/readers.rb
-%%RUBY_SITELIBDIR%%/freebase/properties.rb
-%%RUBY_SITELIBDIR%%/freebase/plugin.rb
-%%RUBY_SITELIBDIR%%/freebase/logger.rb
-%%RUBY_SITELIBDIR%%/freebase/freebase.rb
-%%RUBY_SITELIBDIR%%/freebase/databus.rb
-%%RUBY_SITELIBDIR%%/freebase/core.rb
-%%RUBY_SITELIBDIR%%/freebase/configuration.rb
-@dirrm %%RUBY_SITELIBDIR%%/freebase

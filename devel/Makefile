@@ -426,7 +426,6 @@
     SUBDIR += fpc-symbolic
     SUBDIR += fpc-zlib
     SUBDIR += fpp
-    SUBDIR += freebase
     SUBDIR += freelibiberty
     SUBDIR += frink
     SUBDIR += fsmgenerator
