@@ -70,6 +70,6 @@ fcgiwrap_enable=${fcgiwrap_enable:-"NO"}
 fcgiwrap_fib=${fcgiwrap_fib:-"NONE"}
 fcgiwrap_socket=${fcgiwrap_port:-"unix:/var/run/fcgiwrap/fcgiwrap.sock"}
 
-command_args="-f -p ${pidfile} ${procname} -s ${fcgiwrap_socket} ${fcgiwrap_flags}"
+command_args="-f -p ${pidfile} ${procname} -s ${fcgiwrap_socket}"
 
 run_rc_command "$1"
