@@ -15,7 +15,7 @@ DISTNAME=	de.jayefem.${PORTNAME}_free_${PORTVERSION}
 EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	sugimura@jp.FreeBSD.ORG
+MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	Eclipse plugin to use logger easily in Java projects
 
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
