@@ -16,6 +16,8 @@ bin/mk-merge-mqd-results
 bin/mk-parallel-dump
 bin/mk-parallel-restore
 bin/mk-profile-compact
+bin/mk-purge-logs
+bin/mk-query-advisor
 bin/mk-query-digest
 bin/mk-query-profiler
 bin/mk-show-grants
@@ -28,5 +30,6 @@ bin/mk-table-checksum
 bin/mk-table-sync
 bin/mk-upgrade
 bin/mk-visual-explain
+bin/mk-variable-advisor
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/maatkit/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/maatkit
