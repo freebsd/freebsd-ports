@@ -809,6 +809,7 @@
     SUBDIR += su2
     SUBDIR += superiotool
     SUBDIR += swapd
+    SUBDIR += swapmon
     SUBDIR += symlinks
     SUBDIR += symon
     SUBDIR += synergy
