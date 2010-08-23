@@ -6,7 +6,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	4.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R}.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
@@ -18,6 +18,8 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		nss3:${PORTSDIR}/security/nss \
 		lzma:${PORTSDIR}/archivers/xz
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
+
+OPTIONS=	PYTHON "Build Python rpm module" Off
 
 USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
@@ -34,14 +36,16 @@ CPPFLAGS+=	-I${LOCALBASE}/include/nspr -I${LOCALBASE}/include/nss/nss \
 LDFLAGS+=	-L${LOCALBASE}/lib/nss -L${BDB_LIB_DIR} -L${LUA_LIBDIR}
 CONFIGURE_ARGS+=--with-external-db
 
+.include <bsd.port.options.mk>
+
 .ifdef	WITH_PYTHON
-CONFIGURE_ARGS+=--with-python=auto
-USE_PYTHON=	yes
+CONFIGURE_ARGS+=--enable-python
+USE_PYTHON=	2.6+
 PLIST_SUB+=	PYTHON=""
 CPPFLAGS+=	-I${PYTHON_INCLUDEDIR}
 LDFLAGS+=	-L${PYTHON_LIBDIR}
 .else
-CONFIGURE_ARGS+=--without-python
+CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
