@@ -1,18 +1,24 @@
-kst is a program for looking at data streams. It can plot:
- 
-   - x-y plots
-   - power spectra
-   - histograms
-   - equations (including equations of data streams). 
-   - data in files which are being updated as data is being logged,
-     in which case it can act as a plotter for a chart recorder.
-   - much more
- 
-You can use the mouse to rapidly zoom into interesting parts of the plots.
- 
-In addition to a complete GUI, kst has a convenient command line interface
-for rapid access to plotting data in files. kst can read data from stdin.
-It provides a DCOP interface for remote manipulation, and supports several
-file formats in use in scientific projects around the world.
+Kst is a fast real-time large-dataset viewing and plotting tool
+with basic data analysis functionality. Kst contains many powerful
+built-in features and is expandable with plugins and extensions.
 
-WWW: http://kst.kde.org/
+Features of Kst include:
+
+- Robust plotting of live "streaming" data.
+- Powerful keyboard and mouse plot manipulation.
+- Large selection of built-in plotting and data manipulation functions,
+  such as histograms, equations, and power spectra.
+- Color mapping and contour mapping capabilities for three-dimensional
+  data, as well as matrix and image support.
+- Monitoring of events and notifications support.
+- Built-in filtering and curve fitting capabilities.
+- Convenient command-line interface.
+- Powerful graphical user interface.
+- Support for several popular data formats.
+- Extended annotation objects similar to vector graphics applications.
+
+This port provide Kst 2, which is based on Qt4. It still lacks scripting
+support and backward compatibility with Kst 1.x series (you can't open
+kst-1 files in Kst 2).
+
+WWW:	http://kst.kde.org
