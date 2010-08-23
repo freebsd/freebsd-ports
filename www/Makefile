@@ -1532,6 +1532,7 @@
     SUBDIR += rubygem-amazon-ecs
     SUBDIR += rubygem-anemone
     SUBDIR += rubygem-bluecloth
+    SUBDIR += rubygem-domainatrix
     SUBDIR += rubygem-emk-sinatra-url-for
     SUBDIR += rubygem-erubis
     SUBDIR += rubygem-feed-normalizer
