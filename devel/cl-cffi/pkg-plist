@@ -3,6 +3,9 @@
 %%LIB32DIR%%/common-lisp/cffi/cffi.asd
 %%LIB32DIR%%/common-lisp/cffi/grovel/asdf.lisp
 %%LIB32DIR%%/common-lisp/cffi/grovel/grovel.lisp
+%%LIB32DIR%%/common-lisp/cffi/grovel/invoke.lisp
+%%LIB32DIR%%/common-lisp/cffi/grovel/package.lisp
+%%LIB32DIR%%/common-lisp/cffi/src/cffi-abcl.lisp
 %%LIB32DIR%%/common-lisp/cffi/src/cffi-allegro.lisp
 %%LIB32DIR%%/common-lisp/cffi/src/cffi-clisp.lisp
 %%LIB32DIR%%/common-lisp/cffi/src/cffi-cmucl.lisp
