@@ -13,7 +13,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	XML-Xerces-${PORTVERSION}-0
 
-MAINTAINER=	kenm@icarz.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Perl API to the Apache project's Xerces XML parser
 
 LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2
