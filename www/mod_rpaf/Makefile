@@ -15,7 +15,7 @@ COMMENT=	Make proxied requests appear with client IP
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE?=	1.3+
+USE_APACHE?=	1.3
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 
