@@ -17,6 +17,9 @@ DISTNAME=	so51a_lnx_49
 EXTRACT_SUFX=	.tar
 DISTFILES=	applicat.rdb.gz libofa517li.so libsdb517li.so
 
+DEPRECATED=	no SHA256 in distinfo file
+EXPIRATION_DATE=	2010-09-01
+
 MAINTAINER=	mb@imp.ch
 COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 

@@ -13,6 +13,9 @@ MASTER_SITES=	# bundled with VMware itself
 PKGNAMEPREFIX=	linux-
 DISTNAME=	vmware-linux-tools
 
+DEPRECATED=	no SHA256 in distinfo file
+EXPIRATION_DATE=	2010-09-01
+
 MAINTAINER=	matusita@FreeBSD.org
 COMMENT=VMware toolbox for guest OS (for VMware 2.x, Linux version)
 
