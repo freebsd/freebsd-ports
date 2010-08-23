@@ -10,7 +10,7 @@ PORTVERSION=	0.4.5.1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.smuxi.org/jaws/data/files/
 
-MAINTAINER=	romain@blogreen.org
+MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Multi-layered IRC library
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
