@@ -5,6 +5,8 @@
 ### Pod::Usage       1.33                 core
 ### Scalar::Util     1.18                 core
 ### Text::ParseWords 3.24                 core
+### Term::ReadLine	 					  core
+### Term::ReadKey	 					  core
 
 CLI_DEPS=	p5-Term-ReadKey>=2.30:${PORTSDIR}/devel/p5-Term-ReadKey \
   			p5-Getopt-Long>=2.24:${PORTSDIR}/devel/p5-Getopt-Long \
@@ -12,7 +14,7 @@ CLI_DEPS=	p5-Term-ReadKey>=2.30:${PORTSDIR}/devel/p5-Term-ReadKey \
 			p5-ReadLine-Perl>=1.0302:${PORTSDIR}/devel/p5-ReadLine-Perl \
 			p5-Net-SSLeay>=1.35:${PORTSDIR}/security/p5-Net-SSLeay
 
-CORE_DEPS=	p5-Encode>=2.13:${PORTSDIR}/converters/p5-Encode \
+CORE_DEPS=	p5-Encode>=2.21:${PORTSDIR}/converters/p5-Encode \
 			p5-Class-ReturnValue>=0.55:${PORTSDIR}/devel/p5-Class-ReturnValue \
   			p5-Text-Quoted>=2.05:${PORTSDIR}/textproc/p5-Text-Quoted \
 			p5-CSS-Squish>=0.07:${PORTSDIR}/textproc/p5-CSS-Squish \
@@ -22,18 +24,18 @@ CORE_DEPS=	p5-Encode>=2.13:${PORTSDIR}/converters/p5-Encode \
 			p5-File-Temp>=0.18:${PORTSDIR}/devel/p5-File-Temp \
 			p5-Tree-Simple>=1.04:${PORTSDIR}/devel/p5-Tree-Simple \
 			p5-HTML-Scrubber>=0.08:${PORTSDIR}/www/p5-HTML-Scrubber \
-			p5-DBIx-SearchBuilder>=1.53:${PORTSDIR}/databases/p5-DBIx-SearchBuilder \
+			p5-DBIx-SearchBuilder>=1.54:${PORTSDIR}/databases/p5-DBIx-SearchBuilder \
 			p5-Mail-Tools>=1.57:${PORTSDIR}/mail/p5-Mail-Tools \
 			p5-File-ShareDir>=1.00:${PORTSDIR}/devel/p5-File-ShareDir \
 			p5-Cache-Simple-TimedExpiry>=0.27:${PORTSDIR}/devel/p5-Cache-Simple-TimedExpiry \
-			${SITE_PERL}/Log/Dispatch.pm:${PORTSDIR}/devel/p5-Log-Dispatch \
+			p5-Text-Template>=1.44:${PORTSDIR}/textproc/p5-Text-Template \
+			p5-Log-Dispatch>=2.0:${PORTSDIR}/devel/p5-Log-Dispatch \
+			p5-Locale-Maketext>=1.06:${PORTSDIR}/devel/p5-Locale-Maketext \
+			p5-Locale-Maketext-Lexicon>=0.32:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
+			p5-MIME-Tools>=5.425:${PORTSDIR}/mail/p5-MIME-Tools \
 			${SITE_PERL}/Email/Address.pm:${PORTSDIR}/mail/p5-Email-Address \
 			${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-			${SITE_PERL}/MIME/Entity.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-			${SITE_PERL}/Locale/Maketext/Lexicon.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 			${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
-			${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext \
-			${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
 			${SITE_PERL}/Calendar/Simple.pm:${PORTSDIR}/devel/p5-Calendar-Simple \
 			${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common \
 			${SITE_PERL}/Locale/Maketext/Fuzzy.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Fuzzy \
@@ -57,7 +59,11 @@ DEV_DEPS=	${SITE_PERL}/Log/Dispatch/Perl.pm:${PORTSDIR}/devel/p5-Log-Dispatch-Pe
 			${SITE_PERL}/Test/Expect.pm>=0.31:${PORTSDIR}/devel/p5-Test-Expect \
 			${SITE_PERL}/Test/WWW/Mechanize.pm>=1.04:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
 			${SITE_PERL}/Test/HTTP/Server/Simple.pm>=0.09:${PORTSDIR}/www/p5-Test-HTTP-Server-Simple \
-			${SITE_PERL}/Test/Simple.pm>=0.77:${PORTSDIR}/devel/p5-Test-Simple
+			${SITE_PERL}/Test/Simple.pm>=0.77:${PORTSDIR}/devel/p5-Test-Simple \
+			${SITE_PERL}/${PERL_ARCH}/HTML/TokeParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+			${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn \
+			${SITE_PERL}/Test/MockTime.pm:${PORTSDIR}/devel/p5-Test-MockTime \
+			${SITE_PERL}/HTTP/Server/Simple/Mason.pm:${PORTSDIR}/www/p5-HTTP-Server-Simple-Mason
 
 GD_DEPS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 			${SITE_PERL}/GD/Text.pm:${PORTSDIR}/graphics/p5-GD-TextUtil \
@@ -67,6 +73,7 @@ GPG_DEPS=	${SITE_PERL}/${PERL_ARCH}/PerlIO/eol.pm:${PORTSDIR}/devel/p5-PerlIO-eo
   			${SITE_PERL}/GnuPG/Interface.pm:${PORTSDIR}/security/p5-GnuPG-Interface 
 
 GRAPHVIZ_DEPS=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run \
+			${SITE_PERL}/IPC/Run/SafeHandles.pm:${PORTSDIR}/devel/p5-IPC-Run-SafeHandles \
 			${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz
 
 ICAL_DEPS=	${SITE_PERL}/Data/ICal.pm:${PORTSDIR}/deskutils/p5-Data-ICal
@@ -84,7 +91,6 @@ MASON_DEPS=	p5-Storable>=2.08:${PORTSDIR}/devel/p5-Storable \
 			p5-Apache-Session>=1.53:${PORTSDIR}/www/p5-Apache-Session \
 			p5-Devel-StackTrace>=1.19:${PORTSDIR}/devel/p5-Devel-StackTrace \
 			p5-CGI.pm>=1.20:${PORTSDIR}/www/p5-CGI.pm \
-			p5-Text-WikiFormat>=0.76:${PORTSDIR}/textproc/p5-Text-WikiFormat \
 			p5-XML-RSS>=1.05:${PORTSDIR}/textproc/p5-XML-RSS \
 			p5-HTML-Mason>=1.36:${PORTSDIR}/www/p5-HTML-Mason
 

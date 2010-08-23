@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 @unexec if cmp -s %D/etc/rt38/RT_SiteConfig.pm %D/etc/rt38/RT_SiteConfig.pm-dist; then rm -f %D/etc/rt38/RT_SiteConfig.pm; fi
 @exec [ -f %D/etc/rt38/RT_SiteConfig.pm ] || cp %D/rt38/RT_SiteConfig.pm-dist %D/etc/rt38/RT_SiteConfig.pm
+bin/fastcgi_server
 bin/mason_handler.fcgi
 bin/mason_handler.scgi
 bin/mason_handler.svc
@@ -125,9 +126,11 @@ etc/rt38/schema.mysql-4.1
 %%SITE_PERL%%/RT/I18N/ja.po
 %%SITE_PERL%%/RT/I18N/nb.po
 %%SITE_PERL%%/RT/I18N/nl.po
+%%SITE_PERL%%/RT/I18N/nn.po
 %%SITE_PERL%%/RT/I18N/pl.po
 %%SITE_PERL%%/RT/I18N/pt.po
 %%SITE_PERL%%/RT/I18N/pt_BR.po
+%%SITE_PERL%%/RT/I18N/pt_PT.po
 %%SITE_PERL%%/RT/I18N/rt.pot
 %%SITE_PERL%%/RT/I18N/ru.pm
 %%SITE_PERL%%/RT/I18N/ru.po
@@ -274,6 +277,9 @@ sbin/rt-shredder
 sbin/rt-test-dependencies
 sbin/rt-validator
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/rt38/fonts/Droid.README
+share/rt38/fonts/DroidSans.ttf
+share/rt38/fonts/DroidSansFallback.ttf
 share/rt38/html/Admin/CustomFields/GroupRights.html
 share/rt38/html/Admin/CustomFields/Modify.html
 share/rt38/html/Admin/CustomFields/Objects.html
@@ -432,6 +438,7 @@ share/rt38/html/Elements/EditCustomFieldSelect
 share/rt38/html/Elements/EditCustomFieldText
 share/rt38/html/Elements/EditCustomFieldWikitext
 share/rt38/html/Elements/EditLinks
+share/rt38/html/Elements/EditPassword
 share/rt38/html/Elements/EditTimeValue
 share/rt38/html/Elements/EmailInput
 share/rt38/html/Elements/Error
@@ -463,6 +470,7 @@ share/rt38/html/Elements/QueryString
 share/rt38/html/Elements/QueueSummary
 share/rt38/html/Elements/QuickCreate
 share/rt38/html/Elements/Quicksearch
+share/rt38/html/Elements/RT__CustomField/ColumnMap
 share/rt38/html/Elements/RT__Group/ColumnMap
 share/rt38/html/Elements/RT__Queue/ColumnMap
 share/rt38/html/Elements/RT__Scrip/ColumnMap
@@ -487,13 +495,13 @@ share/rt38/html/Elements/SelectLinkType
 share/rt38/html/Elements/SelectMatch
 share/rt38/html/Elements/SelectNewTicketQueue
 share/rt38/html/Elements/SelectOwner
+share/rt38/html/Elements/SelectPriority
 share/rt38/html/Elements/SelectQueue
 share/rt38/html/Elements/SelectResultsPerPage
 share/rt38/html/Elements/SelectSortOrder
 share/rt38/html/Elements/SelectStatus
 share/rt38/html/Elements/SelectTicketSortBy
 share/rt38/html/Elements/SelectTicketTypes
-share/rt38/html/Elements/SelectPriority
 share/rt38/html/Elements/SelectTimeUnits
 share/rt38/html/Elements/SelectTimezone
 share/rt38/html/Elements/SelectUsers
@@ -507,6 +515,7 @@ share/rt38/html/Elements/ShowCustomFields
 share/rt38/html/Elements/ShowLink
 share/rt38/html/Elements/ShowLinks
 share/rt38/html/Elements/ShowMemberships
+share/rt38/html/Elements/ShowRelationLabel
 share/rt38/html/Elements/ShowSearch
 share/rt38/html/Elements/ShowUser
 share/rt38/html/Elements/ShowUserConcise
@@ -908,12 +917,14 @@ share/rt38/html/NoAuth/css/3.5-default/ticket.css
 share/rt38/html/NoAuth/css/3.5-default/titlebox.css
 share/rt38/html/NoAuth/css/3.5-default/transactions.css
 share/rt38/html/NoAuth/css/autohandler
+share/rt38/html/NoAuth/css/base/misc.css
 share/rt38/html/NoAuth/css/dhandler
 share/rt38/html/NoAuth/css/print.css
 share/rt38/html/NoAuth/css/web2/InHeader
 share/rt38/html/NoAuth/css/web2/admin.css
 share/rt38/html/NoAuth/css/web2/base.css
 share/rt38/html/NoAuth/css/web2/boxes.css
+share/rt38/html/NoAuth/css/web2/collection.css
 share/rt38/html/NoAuth/css/web2/forms.css
 share/rt38/html/NoAuth/css/web2/images/dhandler
 share/rt38/html/NoAuth/css/web2/images/source/background-gradient.png
@@ -976,6 +987,7 @@ share/rt38/html/NoAuth/js/scriptaculous/effects.js
 share/rt38/html/NoAuth/js/scriptaculous/scriptaculous.js
 share/rt38/html/NoAuth/js/titlebox-state.js
 share/rt38/html/NoAuth/js/util.js
+share/rt38/html/NoAuth/rss/dhandler
 share/rt38/html/Prefs/Elements/Tabs
 share/rt38/html/Prefs/MyRT.html
 share/rt38/html/Prefs/Other.html
@@ -1027,6 +1039,7 @@ share/rt38/html/Search/Elements/PickBasics
 share/rt38/html/Search/Elements/PickCFs
 share/rt38/html/Search/Elements/PickCriteria
 share/rt38/html/Search/Elements/ResultViews
+share/rt38/html/Search/Elements/ResultsRSSView
 share/rt38/html/Search/Elements/SearchPrivacy
 share/rt38/html/Search/Elements/SearchesForObject
 share/rt38/html/Search/Elements/SelectAndOr
@@ -1146,10 +1159,11 @@ share/rt38/html/autohandler
 share/rt38/html/dhandler
 share/rt38/html/index.html
 share/rt38/html/l
-@dirrm share/rt38/etc
+@dirrmtry www/rt38
+@dirrm share/rt38/po
 @exec mkdir -p %D/share/rt38/plugins
 @dirrm share/rt38/plugins
-@dirrm share/rt38/po
+@dirrm share/rt38/lib
 @dirrm share/rt38/html/Widgets/Form
 @dirrm share/rt38/html/Widgets
 @dirrm share/rt38/html/User/Groups
@@ -1184,6 +1198,7 @@ share/rt38/html/l
 @dirrm share/rt38/html/REST
 @dirrm share/rt38/html/Prefs/Elements
 @dirrm share/rt38/html/Prefs
+@dirrm share/rt38/html/NoAuth/rss
 @dirrm share/rt38/html/NoAuth/js/scriptaculous
 @dirrm share/rt38/html/NoAuth/js/prototype
 @dirrm share/rt38/html/NoAuth/js/IE7
@@ -1194,9 +1209,11 @@ share/rt38/html/l
 @dirrm share/rt38/html/NoAuth/css/web2/images/source
 @dirrm share/rt38/html/NoAuth/css/web2/images
 @dirrm share/rt38/html/NoAuth/css/web2
+@dirrm share/rt38/html/NoAuth/css/base
 @dirrm share/rt38/html/NoAuth/css/3.5-default
 @dirrm share/rt38/html/NoAuth/css/3.4-compat
 @dirrm share/rt38/html/NoAuth/css
+@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/wsc
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver/images
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/silver
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/skins/office2003/images
@@ -1237,7 +1254,6 @@ share/rt38/html/l
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/images
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/css/behaviors
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/css
-@dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/wsc
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/internals
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/commandclasses
 @dirrm share/rt38/html/NoAuth/RichText/FCKeditor/editor/_source/classes
@@ -1257,6 +1273,7 @@ share/rt38/html/l
 @dirrm share/rt38/html/Elements/RT__Scrip
 @dirrm share/rt38/html/Elements/RT__Queue
 @dirrm share/rt38/html/Elements/RT__Group
+@dirrm share/rt38/html/Elements/RT__CustomField
 @dirrm share/rt38/html/Elements/GnuPG
 @dirrm share/rt38/html/Elements/CollectionAsTable
 @dirrm share/rt38/html/Elements
@@ -1283,7 +1300,8 @@ share/rt38/html/l
 @dirrm share/rt38/html/Admin/CustomFields
 @dirrm share/rt38/html/Admin
 @dirrm share/rt38/html
-@dirrm share/rt38/lib
+@dirrm share/rt38/fonts
+@dirrm share/rt38/etc
 @dirrm share/rt38
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/RT/URI
@@ -1312,4 +1330,3 @@ share/rt38/html/l
 @dirrm %%SITE_PERL%%/RT/Action
 @dirrm %%SITE_PERL%%/RT
 @dirrm etc/rt38
-@dirrmtry www/rt38

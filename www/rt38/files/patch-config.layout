@@ -1,6 +1,6 @@
---- config.layout.orig	2010-04-01 14:52:01.000000000 +0200
-+++ config.layout	2010-04-01 14:54:23.000000000 +0200
-@@ -88,26 +88,27 @@
+--- config.layout.orig	2010-08-22 04:48:20.000000000 +0200
++++ config.layout	2010-08-22 04:50:50.000000000 +0200
+@@ -91,27 +91,28 @@
  </Layout>
  
  <Layout FreeBSD>
@@ -17,6 +17,7 @@
    datadir:		${prefix}/share+
    htmldir:		${datadir}/html
 +  sharedir:		${prefix}/share+
+   fontdir:		${datadir}/fonts
    manualdir:		${prefix}/share/doc+
    logfiledir:		/var/log
    localstatedir:	/var/run+

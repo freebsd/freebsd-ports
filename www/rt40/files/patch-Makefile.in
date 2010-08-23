@@ -1,5 +1,5 @@
---- Makefile.in.orig	2009-12-04 17:30:18.000000000 -0500
-+++ Makefile.in	2009-12-04 17:33:01.000000000 -0500
+--- Makefile.in.orig	2010-05-05 13:09:21.000000000 -0700
++++ Makefile.in	2010-08-05 13:11:47.000000000 -0700
 @@ -58,7 +58,7 @@
  
  CONFIG_FILE_PATH	=	@CONFIG_FILE_PATH_R@
@@ -9,28 +9,28 @@
  
  
  RT_VERSION_MAJOR	=	@RT_VERSION_MAJOR@
-@@ -107,7 +107,7 @@
- RT_VAR_PATH		=	@RT_VAR_PATH_R@
+@@ -108,7 +108,7 @@
  RT_DOC_PATH		=	@RT_DOC_PATH_R@
+ RT_FONT_PATH		=	@RT_FONT_PATH_R@
  RT_LOCAL_PATH		=	@RT_LOCAL_PATH_R@
 -LOCAL_PLUGIN_PATH	=	@RT_LOCAL_PATH_R@/plugins
 +LOCAL_PLUGIN_PATH	=	@RT_LOCAL_PATH_R@/share/rt38/plugins
  LOCAL_ETC_PATH		=	@LOCAL_ETC_PATH_R@
  LOCAL_LIB_PATH		=	@LOCAL_LIB_PATH_R@
  LOCAL_LEXICON_PATH	=	@LOCAL_LEXICON_PATH_R@
-@@ -282,9 +282,9 @@
+@@ -286,9 +286,9 @@
  	@echo "    $(RT_SBIN_PATH)/rt-setup-database --dba $(DB_DBA) --prompt-for-dba-password --action upgrade"
  
  
 -upgrade: testdeps config-install dirs files-install fixperms upgrade-instruct
 +upgrade:  config-install dirs files-install fixperms upgrade-instruct
  
--upgrade-noclobber: config-install dirs libs-install html-install bin-install local-install doc-install fixperms
-+upgrade-noclobber: config-install dirs libs-install html-install bin-install local-install doc-install
+-upgrade-noclobber: config-install dirs libs-install html-install bin-install local-install doc-install font-install fixperms
++upgrade-noclobber: config-install dirs libs-install html-install bin-install local-install doc-install font-install
  
  
  # {{{ dependencies
-@@ -302,13 +302,6 @@
+@@ -306,13 +306,6 @@
  
  # {{{ fixperms
  fixperms:
@@ -44,15 +44,15 @@
  	chmod $(RT_READABLE_DIR_MODE) $(DESTDIR)$(RT_BIN_PATH)
  
  	chmod 0755 $(DESTDIR)$(RT_ETC_PATH)
-@@ -362,9 +355,9 @@
+@@ -367,9 +360,9 @@
  	$(INSTALL) -m 0755 -d $(DESTDIR)$(LOCAL_LEXICON_PATH)
  # }}}
  
 -install: testdeps config-install dirs files-install fixperms instruct
 +install: config-install dirs files-install fixperms instruct
  
--files-install: libs-install etc-install config-install bin-install sbin-install html-install local-install doc-install
-+files-install: libs-install etc-install config-install bin-install sbin-install html-install doc-install
+-files-install: libs-install etc-install config-install bin-install sbin-install html-install local-install doc-install font-install
++files-install: libs-install etc-install config-install bin-install sbin-install html-install doc-install font-install
  
  config-install:
  @COMMENT_INPLACE_LAYOUT@	$(INSTALL) -m 0755 -o $(BIN_OWNER) -g $(RTGROUP) -d $(DESTDIR)$(CONFIG_FILE_PATH)
