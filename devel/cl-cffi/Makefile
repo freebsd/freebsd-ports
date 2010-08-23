@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	cffi
-PORTVERSION=	0.10.5
+PORTVERSION=	0.10.6
 CATEGORIES=	devel lisp
 MASTER_SITES=	http://common-lisp.net/project/cffi/releases/:src \
 		http://common-lisp.net/project/cffi/manual/:manual \
@@ -19,7 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
 		cffi-sys-spec.html:spec \
 		cffi-sys-spec.txt:spec \
 		cffi-sys-spec.pdf:spec
-DIST_SUBDIR=	cffi
+DIST_SUBDIR=	cffi/${PORTVERSION}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
