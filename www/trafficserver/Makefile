@@ -36,6 +36,10 @@ BUILD_DEPENDS+=	xz>0:${PORTSDIR}/archivers/xz
 RUN_DEPENDS+=	xz>0:${PORTSDIR}/archivers/xz
 .endif
 
+.if ${OSVERSION} < 700000
+IGNORE=		only supports 7.0 and above
+.endif
+
 pre-configure:
 	@cd ${WRKSRC} && ${AUTORECONF} -i
 
