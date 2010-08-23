@@ -16,8 +16,7 @@ MASTER_SITE_SUBDIR=	MySQLGUITools
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The MySQL Administrator, Query Browser and Workbench GUI tools
 
-LIB_DEPENDS=	mysqlclient.15:${PORTSDIR}/databases/mysql50-client \
-		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
+LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
@@ -28,6 +27,7 @@ USE_AUTOTOOLS=	autoconf:262 libtool:22 automake:110
 USE_GNOME=	libgnome libglade2 gtkhtml3 libgnomeprint intlhack gtksourceview
 USE_GL=		gl glut
 USE_GMAKE=	yes
+USE_MYSQL=	yes
 
 DATADIR=	${PREFIX}/share/mysql-gui
 
