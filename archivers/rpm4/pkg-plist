@@ -123,6 +123,14 @@ lib/rpm/tgpg
 %%NLS%%share/locale/sv/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/rpm.mo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmmodule.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmmodule.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmmodule.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmbmodule.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmbmodule.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmbmodule.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/transaction.py
 libdata/pkgconfig/rpm.pc
 @dirrm lib/rpm
 @dirrm include/rpm
@@ -151,3 +159,4 @@ libdata/pkgconfig/rpm.pc
 @dirrmtry src
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr@latin
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/rpm
