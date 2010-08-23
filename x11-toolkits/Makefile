@@ -245,7 +245,6 @@
     SUBDIR += renaissance
     SUBDIR += rep-gtk
     SUBDIR += rep-gtk2
-    SUBDIR += ruby-fox12
     SUBDIR += ruby-fox16
     SUBDIR += ruby-gnomeprintui
     SUBDIR += ruby-gtk
