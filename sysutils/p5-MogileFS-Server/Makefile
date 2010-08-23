@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mogilefs-server
-PORTVERSION=	2.34
-PORTREVISION=	1
+PORTVERSION=	2.36
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DO/DORMANDO
@@ -23,7 +22,9 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IO/AIO.pm:${PORTSDIR}/devel/p5-IO-AIO \
 		${SITE_PERL}/Gearman/Server.pm:${PORTSDIR}/devel/p5-Gearman-Server \
 		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
 		${SITE_PERL}/Perlbal.pm:${PORTSDIR}/www/perlbal \
-		${SITE_PERL}/Sys/Syscall.pm:${PORTSDIR}/devel/p5-Sys-Syscall
+		${SITE_PERL}/Sys/Syscall.pm:${PORTSDIR}/devel/p5-Sys-Syscall \
+		${SITE_PERL}/MogileFS/Client.pm:${PORTSDIR}/sysutils/p5-MogileFS-Client \
+		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 
 PERL_CONFIGURE=	yes
 
