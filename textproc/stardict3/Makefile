@@ -7,7 +7,7 @@
 
 PORTNAME=	stardict
 PORTVERSION=	3.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 DIST_SUBDIR=	stardict
@@ -23,7 +23,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-festival \
 		--disable-gucharmap \
-		--disable-espeak
+		--disable-espeak \
+		--disable-advertisement \
+		--disable-updateinfo
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix
@@ -51,6 +53,10 @@ MAN1=		stardict.1
 .if (${OSVERSION} < 700109)
 EXTRA_PATCHES+=	${FILESDIR}/src_conf.h
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' \
+		${WRKSRC}/src/conf.cpp
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
