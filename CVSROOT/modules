@@ -883,6 +883,7 @@ balazarbrothers                 ports/games/balazarbrothers
 balsa                           ports/mail/balsa
 bamg                            ports/math/bamg
 bandwidthd                      ports/net-mgmt/bandwidthd
+bangarang                       ports/multimedia/bangarang
 banihstypos                     ports/games/banihstypos
 bannerfilter                    ports/www/bannerfilter
 banshee                         ports/multimedia/banshee
@@ -1644,6 +1645,7 @@ clamav                          ports/security/clamav
 clamav-devel                    ports/security/clamav-devel
 clamav-unofficial-sigs          ports/security/clamav-unofficial-sigs
 clamcour                        ports/security/clamcour
+clamd-stream-client             ports/security/clamd-stream-client
 clamfilter                      ports/mail/clamfilter
 clamsmtp                        ports/security/clamsmtp
 clamtk                          ports/security/clamtk
@@ -2593,6 +2595,7 @@ drivel                          ports/deskutils/drivel
 drizzle                         ports/databases/drizzle
 drjava                          ports/editors/drjava
 drm                             ports/games/drm
+droid-fonts-ttf                 ports/x11-fonts/droid-fonts-ttf
 drood                           ports/www/drood
 dropbear                        ports/security/dropbear
 drpython                        ports/devel/drpython
@@ -3994,6 +3997,7 @@ fusefs-curlftpfs                ports/sysutils/fusefs-curlftpfs
 fusefs-encfs                    ports/sysutils/fusefs-encfs
 fusefs-funionfs                 ports/sysutils/fusefs-funionfs
 fusefs-fur                      ports/sysutils/fusefs-fur
+fusefs-fusexmp_fh               ports/sysutils/fusefs-fusexmp_fh
 fusefs-gnome-vfs                ports/sysutils/fusefs-gnome-vfs
 fusefs-gphotofs                 ports/graphics/fusefs-gphotofs
 fusefs-gstfs                    ports/sysutils/fusefs-gstfs
@@ -4214,6 +4218,7 @@ gdesklets-tasklist              ports/x11/gdesklets-tasklist
 gdialog                         ports/multimedia/gdialog
 gdict                           ports/textproc/gdict
 gdis                            ports/science/gdis
+gdisk                           ports/sysutils/gdisk
 gdk-pixbuf                      ports/graphics/gdk-pixbuf
 gdkxft                          ports/x11/gdkxft
 gdl                             ports/x11-toolkits/gdl
@@ -9042,6 +9047,7 @@ matwm2                          ports/x11-wm/matwm2
 maude                           ports/lang/maude
 mavbiff                         ports/mail/mavbiff
 maven                           ports/devel/maven
+maven-ant-tasks                 ports/devel/maven-ant-tasks
 maven2                          ports/devel/maven2
 maverik                         ports/graphics/maverik
 mawk                            ports/lang/mawk
@@ -9781,6 +9787,7 @@ mx4j                            ports/java/mx4j
 mxico                           ports/x11/mxico
 mxml                            ports/textproc/mxml
 mxp                             ports/graphics/mxp
+my2cego                         ports/databases/my2cego
 mybashburn                      ports/sysutils/mybashburn
 mybb                            ports/www/mybb
 mybudget                        ports/finance/mybudget
@@ -16449,6 +16456,7 @@ p5-imdb-film                    ports/www/p5-IMDB-Film
 p5-imdb-movie                   ports/www/p5-IMDB-Movie
 p5-imlib2                       ports/graphics/p5-Imlib2
 p5-include                      ports/devel/p5-Include
+p5-indirect                     ports/devel/p5-indirect
 p5-inline                       ports/devel/p5-Inline
 p5-inline-asm                   ports/devel/p5-Inline-ASM
 p5-inline-cpp                   ports/devel/p5-Inline-CPP
@@ -18745,6 +18753,7 @@ pcre                            ports/devel/pcre
 pcre++                          ports/devel/pcre++
 pcrs                            ports/textproc/pcrs
 pcsc-lite                       ports/devel/pcsc-lite
+pcsxr                           ports/emulators/pcsxr
 pd                              ports/audio/pd
 pdb                             ports/net/pdb
 pdbar                           ports/palm/pdbar
@@ -20701,6 +20710,7 @@ py-enthoughtbase                ports/devel/py-EnthoughtBase
 py-epsilon                      ports/devel/py-epsilon
 py-errorhandler                 ports/textproc/py-errorhandler
 py-event                        ports/devel/py-event
+py-eventlet                     ports/net/py-eventlet
 py-excelerator                  ports/textproc/py-excelerator
 py-exif                         ports/graphics/py-exif
 py-exiv2                        ports/graphics/py-exiv2
@@ -21114,6 +21124,7 @@ py-rpyc                         ports/devel/py-RPyC
 py-rrdpipe                      ports/databases/py-rrdpipe
 py-rrdtool_lgpl                 ports/databases/py-rrdtool_lgpl
 py-rss2gen                      ports/textproc/py-rss2gen
+py-rssdler                      ports/www/py-rssdler
 py-rt                           ports/net/py-rt
 py-rtf                          ports/print/py-rtf
 py-rtree                        ports/devel/py-rtree
@@ -21216,6 +21227,7 @@ py-traits                       ports/devel/py-traits
 py-traitsbackendwx              ports/x11-toolkits/py-traitsbackendwx
 py-traitsgui                    ports/x11-toolkits/py-traitsgui
 py-transaction                  ports/devel/py-transaction
+py-transmissionrpc              ports/net-p2p/py-transmissionrpc
 py-trml2pdf                     ports/print/py-trml2pdf
 py-trustedpickle                ports/security/py-trustedpickle
 py-turbocheetah                 ports/devel/py-turbocheetah
@@ -22048,7 +22060,6 @@ rsnapshot                       ports/sysutils/rsnapshot
 rsplib                          ports/net/rsplib
 rss2email                       ports/mail/rss2email
 rss2html                        ports/textproc/rss2html
-rssdler                         ports/www/rssdler
 rssh                            ports/shells/rssh
 rssowl                          ports/www/rssowl
 rsstail                         ports/www/rsstail
@@ -22573,6 +22584,7 @@ rubygem-mongrel                 ports/www/rubygem-mongrel
 rubygem-mongrel_cluster         ports/www/rubygem-mongrel_cluster
 rubygem-msgpack                 ports/devel/rubygem-msgpack
 rubygem-needle                  ports/devel/rubygem-needle
+rubygem-net-ldap                ports/net/rubygem-net-ldap
 rubygem-net-netrc               ports/net/rubygem-net-netrc
 rubygem-net-scp                 ports/security/rubygem-net-scp
 rubygem-net-sftp                ports/security/rubygem-net-sftp
