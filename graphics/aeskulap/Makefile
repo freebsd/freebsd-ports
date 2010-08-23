@@ -37,8 +37,19 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not link on 6.X
+.if ${OSVERSION} < 701000
+post-patch:
+	${REINPLACE_CMD} -e 's|-lrt||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
+
+post-install:
+.if exists(${PREFIX}/lib/aeskulap/libconfiguration.so)
+	${RM} ${PREFIX}/lib/aeskulap/libconfiguration.so
+.endif
+.if exists(${PREFIX}/lib/aeskulap/libimagepool.so)
+	${RM} ${PREFIX}/lib/aeskulap/libimagepool.so
+.endif
+	${LN} -sf libconfiguration.so.0.0 ${PREFIX}/lib/aeskulap/libconfiguration.so
+	${LN} -sf libimagepool.so.0.0 ${PREFIX}/lib/aeskulap/libimagepool.so
 
 .include <bsd.port.post.mk>

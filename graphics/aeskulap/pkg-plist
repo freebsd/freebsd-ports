@@ -2,9 +2,11 @@ bin/aeskulap
 lib/aeskulap/libconfiguration.a
 lib/aeskulap/libconfiguration.la
 lib/aeskulap/libconfiguration.so.0.0
+lib/aeskulap/libconfiguration.so
 lib/aeskulap/libimagepool.a
 lib/aeskulap/libimagepool.la
 lib/aeskulap/libimagepool.so.0.0
+lib/aeskulap/libimagepool.so
 share/applications/aeskulap.desktop
 %%DATADIR%%/glade/aeskulap.glade
 %%DATADIR%%/images/aeskulap.png
