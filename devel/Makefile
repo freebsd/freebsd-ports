@@ -428,7 +428,6 @@
     SUBDIR += fpp
     SUBDIR += freebase
     SUBDIR += freelibiberty
-    SUBDIR += freeride
     SUBDIR += frink
     SUBDIR += fsmgenerator
     SUBDIR += ftjam
