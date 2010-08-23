@@ -5,65 +5,48 @@
 # $FreeBSD$
 
 PORTNAME=	kst
-PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	science kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/apps/KDE3.x/scientific
+MASTER_SITES=	SF/${PORTNAME}/Kst%20${PORTVERSION}/
 
 MAINTAINER=	makc@FreeBSD.org
-COMMENT=	Data viewing program for KDE
+COMMENT=	Data viewing and plotting tool
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
 LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio \
 		gsl.15:${PORTSDIR}/math/gsl
 
-USE_KDELIBS_VER=3
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:262:env libtool:22
+LATEST_LINK=	kst2
+
+USE_QT_VER=	4
+QT_COMPONENTS=	gui xml designer svg opengl \
+		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
-USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	NETCDF "Enable netcdf data support" off \
-		CDF "Enable cdf data support" off \
-		KDEBASE "Enable JavaScript console" off
+QMAKE_ARGS+=	-unix -recursive
+CONFIGURE_ENV+=	INSTALL_PREFIX=${PREFIX}
 
-MAN1=		kst.1
+STRIP_FILES=	bin/kst2 lib/libkst2*.so.1.0.0 lib/kst/libkst2*.so
 
-.include <bsd.port.options.mk>
+DESKTOP_ENTRIES=	"Kst 2" \
+			"Data viewing and plotting tool" \
+			"${PREFIX}/share/pixmaps/kst.png" \
+			"kst2" \
+			"" \
+			false
 
-.if defined(WITH_NETCDF)
-LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
-PLIST_SUB+=	NETCDF=""
-.else
-CONFIGURE_ARGS+=	--without-netcdf
-PLIST_SUB+=	NETCDF="@comment "
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 700042
+IGNORE=	does not compile on 6.x
 .endif
 
-.if defined(WITH_CDF)
-CONFIGURE_ARGS+=LDFLAGS="-lm"
-LIB_DEPENDS+=	cdf.0:${PORTSDIR}/science/cdf
-PLIST_SUB+=	CDF=""
-.else
-CONFIGURE_ARGS+=	--without-cdf
-PLIST_SUB+=	CDF="@comment "
-.endif
+do-configure:
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS} ${QMAKEFLAGS}
 
-.if defined(WITH_KDEBASE)
-RUN_DEPENDS+=	${KDE_PREFIX}/lib/kde3/libkonsolepart.so:${PORTSDIR}/x11/kdebase3
-.endif
+post-install:
+	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
+	${MKDIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/src/images/kst.png ${PREFIX}/share/pixmaps
 
-pre-configure:
-	@(cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${SH} admin/cvs.sh dist)
-	@${REINPLACE_CMD} -e 's|@kde_widgetdir@|@prefix@/lib/kde3/plugins/designer|' \
-		${WRKSRC}/kst/src/widgets/Makefile.in
-	@${REINPLACE_CMD} -e '/^SUBDIRS/s|et||;/^SUBDIRS/s|pt||' ${WRKSRC}/doc/Makefile.in
-.if !defined(WITH_NETCDF)
-	@${REINPLACE_CMD} -e 's| netcdf||g' ${WRKSRC}/kst/src/datasources/Makefile.in
-.endif
-.if !defined(WITH_CDF)
-	@${REINPLACE_CMD} -e 's| cdf||g' ${WRKSRC}/kst/src/datasources/Makefile.in
-.endif
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
