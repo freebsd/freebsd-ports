@@ -10,7 +10,8 @@ bin/WebSearch
 %%SITE_PERL%%/WWW/Search/Simple.pm
 %%SITE_PERL%%/WWW/Search/Test.pm
 %%SITE_PERL%%/WWW/SearchResult.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW-Search/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW-Search
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrm %%SITE_PERL%%/WWW/Search/Null
