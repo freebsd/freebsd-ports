@@ -32,7 +32,6 @@
     SUBDIR += fpc-gtk2
     SUBDIR += fpc-xforms
     SUBDIR += fxscintilla
-    SUBDIR += fxscintilla-fox12
     SUBDIR += fxscintilla-fox14
     SUBDIR += gai
     SUBDIR += gal
