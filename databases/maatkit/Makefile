@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maatkit
-PORTVERSION=	6457
+PORTVERSION=	6839
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -38,6 +38,8 @@ MAN1=	maatkit.1p \
 	mk-parallel-dump.1p \
 	mk-parallel-restore.1p \
 	mk-profile-compact.1p \
+	mk-purge-logs.1p \
+	mk-query-advisor.1p \
 	mk-query-digest.1p \
 	mk-query-profiler.1p \
 	mk-show-grants.1p \
@@ -49,6 +51,7 @@ MAN1=	maatkit.1p \
 	mk-table-checksum.1p \
 	mk-table-sync.1p \
 	mk-upgrade.1p \
+	mk-variable-advisor.1p \
 	mk-visual-explain.1p
 
 .include <bsd.port.mk>
