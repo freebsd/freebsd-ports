@@ -4489,3 +4489,4 @@ www/rssdler|www/py-rssdler|2010-08-21|Rename to consistency with other Python po
 www/mod_webobjects||2010-08-23|Broken for 6+ months, unmaintained
 www/woadaptor||2010-08-23|Broken for 6+ months, unmaintained
 www/woadaptor-cgi||2010-08-23|Broken for 6+ months, unmaintained
+x11-toolkits/ruby-fox12||2010-08-23|Removed
