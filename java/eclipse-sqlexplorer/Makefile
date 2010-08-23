@@ -15,7 +15,7 @@ DISTNAME=	net.sourceforge.${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	sugimura@jp.FreeBSD.ORG
+MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	A visual database query tool for Eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
