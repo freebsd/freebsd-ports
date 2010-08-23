@@ -21,17 +21,12 @@ CONFIGURE_ARGS+=	--enable-shared --disable-static \
 USE_LDCONFIG=	yes
 
 .if !defined(MASTERDIR)
-OPTIONS=	FOX12 "FOX1.2 support (FOX1.6 by default)" off
 OPTIONS+=	FOX14 "FOX1.4 support (FOX1.6 by default)" off
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_FOX12)
-FOX_LIB_VER=	1.2
-LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox12
-CONFIGURE_ARGS+=	--with-fox-1-2
-.elif defined(WITH_FOX14)
+.if defined(WITH_FOX14)
 FOX_LIB_VER=	1.4
 LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox14
 CONFIGURE_ARGS+=	--with-fox-1-4
