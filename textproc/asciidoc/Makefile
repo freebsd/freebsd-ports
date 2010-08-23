@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	asciidoc
-PORTVERSION=	8.5.3
+PORTVERSION=	8.6.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.methods.co.nz/asciidoc/ \
-		SF
+MASTER_SITES=	SF
 
 MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	A text document format for writing short documents and man pages

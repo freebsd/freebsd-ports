@@ -63,6 +63,10 @@ etc/asciidoc/lang-pt-BR.conf
 etc/asciidoc/lang-ru.conf
 etc/asciidoc/latex.conf
 etc/asciidoc/stylesheets/docbook-xsl.css
+etc/asciidoc/stylesheets/pygments.css
+etc/asciidoc/stylesheets/volnitsky.css
+etc/asciidoc/stylesheets/volnitsky-manpage.css
+etc/asciidoc/stylesheets/volnitsky-quirks.css
 etc/asciidoc/stylesheets/xhtml11-manpage.css
 etc/asciidoc/stylesheets/xhtml11-quirks.css
 etc/asciidoc/stylesheets/xhtml11.css
