@@ -1,0 +1,4 @@
+Randomio is a multithreaded disk i/o microbenchmark. It
+requires O_DIRECT, pread/pwrite, and pthreads.
+
+WWW: http://www.arctic.org/~dean/randomio/
