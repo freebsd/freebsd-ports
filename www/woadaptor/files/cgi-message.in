@@ -1,9 +1,0 @@
-*****************************************************************************
-The CGI version of WOAdaptor has been installed into 
-%%PREFIX%%/libexec/WebObjects
-
-You will need to either configure your chosen web server to reference this
-directly, or copy it into the appropriate cgi-bin location.
-
-Some example configuration files have been provided in %%DATADIR%%
-*****************************************************************************
