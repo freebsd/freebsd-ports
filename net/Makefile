@@ -1056,7 +1056,6 @@
     SUBDIR += throttled
     SUBDIR += tightvnc
     SUBDIR += tintin++
-    SUBDIR += tintin++-devel
     SUBDIR += tinyfugue
     SUBDIR += tinyldap
     SUBDIR += tn5250
