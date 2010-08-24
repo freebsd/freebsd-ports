@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fxscintilla
-PORTVERSION=	1.71
-PORTREVISION=	15
+PORTVERSION=	2.11.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,30 +14,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Fox toolkit reimplementation of Scintilla editing widget
 
-USE_AUTOTOOLS=	libtool:22
-CONFIGURE_ARGS+=	--enable-shared --disable-static \
-			--includedir=${LOCALBASE}/include
+LIB_DEPENDS+=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
 
-.if !defined(MASTERDIR)
-OPTIONS+=	FOX14 "FOX1.4 support (FOX1.6 by default)" off
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_FOX14)
-FOX_LIB_VER=	1.4
-LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox14
-CONFIGURE_ARGS+=	--with-fox-1-4
-.else
-FOX_LIB_VER=	1.6
-LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox16
-CONFIGURE_ARGS+=	--with-fox-1-6
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lFOX-${FOX_LIB_VER}|"-lFOX-${FOX_LIB_VER} ${PTHREAD_LIBS}"|' \
-		${WRKSRC}/configure ${WRKSRC}/tests/Makefile.in
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
