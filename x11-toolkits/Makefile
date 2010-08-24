@@ -26,6 +26,7 @@
     SUBDIR += flvw
     SUBDIR += fox14
     SUBDIR += fox16
+    SUBDIR += fox17
     SUBDIR += fpc-gnome1
     SUBDIR += fpc-gtk1
     SUBDIR += fpc-gtk2
