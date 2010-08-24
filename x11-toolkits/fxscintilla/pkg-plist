@@ -11,4 +11,5 @@ lib/libfxscintilla.a
 lib/libfxscintilla.la
 lib/libfxscintilla.so
 lib/libfxscintilla.so.21
+libdata/pkgconfig/fxscintilla.pc
 @dirrm include/fxscintilla

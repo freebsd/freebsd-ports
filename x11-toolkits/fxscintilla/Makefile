@@ -16,6 +16,7 @@ COMMENT=	A Fox toolkit reimplementation of Scintilla editing widget
 
 LIB_DEPENDS+=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16
 
+USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
