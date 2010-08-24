@@ -4498,3 +4498,4 @@ devel/freebase||2010-08-23|Removed
 x11-themes/kde4-windeco-aurorae||2010-08-23|Intergated into x11/kdebase4-workspace
 x11-toolkits/fxscintilla-fox14||2010-08-23|Removed
 net/tintin++-devel|net/tintin++|2010-08-24|net/tintin++-devel is no longer devel, merged back to net/tintin++
+audio/gmm|audio/gogglesmm|2010-08-24|Project was renamed
