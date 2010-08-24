@@ -34,4 +34,14 @@ post-patch:
 	${REINPLACE_CMD} -e 's|-lrt||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 
+post-install:
+.if exists(${PREFIX}/lib/libconfiguration.so)
+	${RM} ${PREFIX}/lib/libconfiguration.so
+.endif
+.if exists(${PREFIX}/lib/libimagepool.so)
+	${RM} ${PREFIX}/lib/libimagepool.so
+.endif
+	${LN} -sf ${PREFIX}/lib/libconfiguration.so.0.0 ${PREFIX}/lib/libconfiguration.so
+	${LN} -sf ${PREFIX}/lib/libimagepool.so.0.0 ${PREFIX}/lib/libimagepool.so
+
 .include <bsd.port.post.mk>
