@@ -19,6 +19,9 @@ COMMENT=	Multiple repositories Trac version
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi-devel>=0.6:${PORTSDIR}/textproc/py-genshi-devel
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+DEPRECATED=	Multiple repositories support has been merged in trunk, please use Trac 0.12+ (www/trac) instead
+EXPIRATION_DATE=	2010-10-10
+
 OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
 		DOCUTILS   "Allow additional text markup" On \
 		PYGMENTS   "Use generic syntax highlighter" On \
