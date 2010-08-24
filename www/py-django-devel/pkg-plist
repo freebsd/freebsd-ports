@@ -305,6 +305,16 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/conf/locale/hu/formats.py
 %%PYTHON_SITELIBDIR%%/django/conf/locale/hu/formats.pyc
 %%PYTHON_SITELIBDIR%%/django/conf/locale/hu/formats.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/id/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/id/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/id/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/id/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/id/__init__.py
+%%PYTHON_SITELIBDIR%%/django/conf/locale/id/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/locale/id/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/id/formats.py
+%%PYTHON_SITELIBDIR%%/django/conf/locale/id/formats.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/locale/id/formats.pyo
 %%PYTHON_SITELIBDIR%%/django/conf/locale/is/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/django/conf/locale/is/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/django/conf/locale/is/LC_MESSAGES/djangojs.mo
@@ -405,6 +415,16 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/conf/locale/mk/formats.py
 %%PYTHON_SITELIBDIR%%/django/conf/locale/mk/formats.pyc
 %%PYTHON_SITELIBDIR%%/django/conf/locale/mk/formats.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ml/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ml/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ml/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ml/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ml/__init__.py
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ml/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ml/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ml/formats.py
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ml/formats.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ml/formats.pyo
 %%PYTHON_SITELIBDIR%%/django/conf/locale/mn/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/django/conf/locale/mn/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/django/conf/locale/mn/LC_MESSAGES/djangojs.mo
@@ -3183,6 +3203,8 @@ bin/django-admin.py
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/nb
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/mn/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/mn
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ml/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ml
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/mk/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/mk
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/lv/LC_MESSAGES
@@ -3203,6 +3225,8 @@ bin/django-admin.py
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/it
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/is/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/is
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/id/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/id
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/hu/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/hu
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/hr/LC_MESSAGES
