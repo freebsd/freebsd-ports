@@ -6,7 +6,15 @@ lib/aeskulap/libconfiguration.so
 lib/aeskulap/libimagepool.a
 lib/aeskulap/libimagepool.la
 lib/aeskulap/libimagepool.so.0.0
-lib/aeskulap/libimagepool.so
+lib/aeskulap/libofstd.so
+lib/aeskulap/libdcmdata.so
+lib/aeskulap/libdcmnet.so
+lib/aeskulap/libdcmimgle.so
+lib/aeskulap/libdcmimage.so
+lib/aeskulap/libijg8.so
+lib/aeskulap/libijg12.so
+lib/aeskulap/libijg16.so
+lib/aeskulap/libdcmjpeg.so
 share/applications/aeskulap.desktop
 %%DATADIR%%/glade/aeskulap.glade
 %%DATADIR%%/images/aeskulap.png
