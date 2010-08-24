@@ -9,7 +9,6 @@ bin/convert-ly
 bin/etf2ly
 bin/midi2ly
 lib/lilypond/%%PORTVERSION%%/python/midi.so
-%%DATADIR%%/%%PORTVERSION%%/dvips/ps
 %%DATADIR%%/%%PORTVERSION%%/fonts/otf/CenturySchL-Bold.otf
 %%DATADIR%%/%%PORTVERSION%%/fonts/otf/CenturySchL-BoldItal.otf
 %%DATADIR%%/%%PORTVERSION%%/fonts/otf/CenturySchL-Ital.otf
@@ -201,7 +200,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/scm/auto-beam.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/autochange.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/backend-library.scm
-%%DATADIR%%/%%PORTVERSION%%/scm/beam-settings.scm
+%%DATADIR%%/%%PORTVERSION%%/scm/bezier-tools.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/c++.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/chord-entry.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/chord-generic-names.scm
@@ -219,7 +218,9 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/scm/define-music-properties.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/define-music-types.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/define-stencil-commands.scm
+%%DATADIR%%/%%PORTVERSION%%/scm/define-woodwind-diagrams.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/display-lily.scm
+%%DATADIR%%/%%PORTVERSION%%/scm/display-woodwind-diagrams.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/document-backend.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/document-functions.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/document-identifiers.scm
@@ -273,6 +274,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/scm/standalone.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/stencil.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/tablature.scm
+%%DATADIR%%/%%PORTVERSION%%/scm/time-signature-settings.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/titling.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/to-xml.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/translation-functions.scm
@@ -348,9 +350,9 @@ share/locale/zh_TW/LC_MESSAGES/lilypond.mo
 @dirrm %%DATADIR%%/%%PORTVERSION%%/fonts/source
 @dirrm %%DATADIR%%/%%PORTVERSION%%/fonts/otf
 @dirrm %%DATADIR%%/%%PORTVERSION%%/fonts
-@dirrm %%DATADIR%%/%%PORTVERSION%%/dvips
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrm %%DATADIR%%
 %%DOCS%%@dirrm share/omf/lilypond/%%PORTVERSION%%
 %%DOCS%%@dirrm share/omf/lilypond
 %%DOCS%%@dirrm share/omf
+
