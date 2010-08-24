@@ -1,0 +1,8 @@
+FOX is a C++ based Toolkit for developing Graphical User Interfaces easily and
+effectively. It offers a wide, and growing, collection of Controls, and
+provides state of the art facilities such as drag and drop, selection, as well
+as OpenGL widgets for 3D graphical manipulation. FOX also implements icons,
+images, and user-convenience features such as status line help, and tooltips.
+Tooltips may even be used for 3D objects!
+
+WWW: http://www.fox-toolkit.org/
