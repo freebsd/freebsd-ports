@@ -1,0 +1,44 @@
+Fix a bug in imlib so that kuickshow works.
+https://bugs.kde.org/show_bug.cgi?id=248431
+
+
+--- Imlib/misc.c
++++ Imlib/misc.c
+@@ -423,6 +423,8 @@
+ 	      if (xvir[i].depth > max)
+ 		max = xvir[i].depth;
+ 	    }
++	  if (max > 24)
++	    max = 24;
+ 	  if (max > 8)
+ 	    {
+ 	      id->x.depth = max;
+@@ -1026,6 +1028,8 @@
+ 	      if (xvir[i].depth > max)
+ 		max = xvir[i].depth;
+ 	    }
++	  if (max > 24)
++	    max = 24;
+ 	  if (max > 8)
+ 	    {
+ 	      id->x.depth = max;
+--- gdk_imlib/misc.c
++++ gdk_imlib/misc.c
+@@ -455,6 +455,8 @@
+ 	      if (xvir[i].depth > max)
+ 		max = xvir[i].depth;
+ 	    }
++	  if (max > 24)
++	    max = 24;
+ 	  if (max > 8)
+ 	    {
+ 	      id->x.depth = max;
+@@ -1004,6 +1006,8 @@
+ 	      if (xvir[i].depth > max)
+ 		max = xvir[i].depth;
+ 	    }
++	  if (max > 24)
++	    max = 24;
+ 	  if (max > 8)
+ 	    {
+ 	      id->x.depth = max;
