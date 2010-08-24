@@ -152,7 +152,7 @@ pre-fetch:
 	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
 	@${ECHO} "				(use it if you need even more speed)."
 	@${ECHO} "	WITHOUT_THR_ALARM=yes	Disable signals (this reduces kernel lock"
-	@${ECHO} "				contention on SMP, but has the side effect
+	@${ECHO} "				contention on SMP, but has the side effect"
 	@${ECHO} "				that you can't kill clients that are sleeping)."
 	@${ECHO} "	WITHOUT_INNODB=yes	Disable support for InnoDB table handler."
 	@${ECHO} "	WITH_ARCHIVE=yes	Enable support for Archive Storage Engine."
