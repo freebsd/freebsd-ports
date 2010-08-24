@@ -26,9 +26,10 @@ PLIST_FILES=	libexec/cblog.fcgi \
 MAN1=		cblog.fcgi.1
 
 post-patch:
-	@${REINPLACE_CMD} "s#^INCLUDES=.*#INCLUDES=-I${LOCALBASE}/include#g" ${WRKSRC}/config.mk
-	@${REINPLACE_CMD} "s#^LIBDIR=.*#LIBDIR=-L${LOCALBASE}/lib#g" ${WRKSRC}/config.mk
-	@${REINPLACE_CMD} "s#^CSINCLUDES=.*#CSINCLUDES=-I${LOCALBASE}/include/ClearSilver#g" ${WRKSRC}/config.mk
+	@${REINPLACE_CMD} -e "s#^INCLUDES=.*#INCLUDES=-I${LOCALBASE}/include#g" \
+		-e "s#^LIBDIR=.*#LIBDIR=-L${LOCALBASE}/lib#g" \
+		-e "s#^CSINCLUDES=.*#CSINCLUDES=-I${LOCALBASE}/include/ClearSilver#g" \
+		${WRKSRC}/config.mk
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cblog.cgi ${PREFIX}/libexec/cblog.fcgi
