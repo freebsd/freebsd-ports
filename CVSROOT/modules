@@ -24302,6 +24302,7 @@ tomcat-native                   ports/www/tomcat-native
 tomcat41                        ports/www/tomcat41
 tomcat55                        ports/www/tomcat55
 tomcat6                         ports/www/tomcat6
+tomcat7                         ports/www/tomcat7
 tome                            ports/games/tome
 tomsfastmath                    ports/math/tomsfastmath
 tonicpoint-viewer               ports/graphics/tonicpoint-viewer
