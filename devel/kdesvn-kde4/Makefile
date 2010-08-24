@@ -32,10 +32,18 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		kdesvn.1 kdesvnaskpass.1
 
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+.endif
+
 post-patch:
 	${RM} ${WRKSRC}/src/kiosvn/svn*.protocol
 .if defined(NOPORTDOCS)
 	${ECHO} "ADD_SUBDIRECTORY(man)" > ${WRKSRC}/doc/CMakeLists.txt
+.else
+#Fix build with kdelibs>=4.5.0
+	${REINPLACE_CMD} -e 's,V4.1.2-Based,V4.2-Based,g' \
+		${WRKSRC}/doc/nl/index.docbook
 .endif
 
 post-install:
