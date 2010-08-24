@@ -1650,6 +1650,7 @@
     SUBDIR += tomcat41
     SUBDIR += tomcat55
     SUBDIR += tomcat6
+    SUBDIR += tomcat7
     SUBDIR += trac
     SUBDIR += trac-accountmanager
     SUBDIR += trac-addcomment
