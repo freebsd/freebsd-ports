@@ -5,11 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gmm
+PORTNAME=	gogglesmm
 PORTVERSION=	0.10.26
 CATEGORIES=	audio
-MASTER_SITES=	http://gogglesmm.googlecode.com/files/
-DISTNAME=	gogglesmm-${PORTVERSION}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Music collection manager and player
