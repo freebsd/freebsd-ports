@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20100810
+PORTVERSION=	20100824
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
@@ -32,6 +32,8 @@ MAKE_JOBS_SAFE=		yes
 USE_LDCONFIG=		yes
 USE_RC_SUBR=		clamav-clamd clamav-freshclam
 CONF_FILES=		clamd freshclam
+
+LICENSE=	GPLv2
 
 PORTDOCS=	*
 
