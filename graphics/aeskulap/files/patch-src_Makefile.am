@@ -1,0 +1,19 @@
+--- src/Makefile.am.orig	2010-08-23 17:40:05.000000000 +0200
++++ src/Makefile.am	2010-08-23 17:40:14.000000000 +0200
+@@ -25,14 +25,14 @@
+ 
+ 
+ aeskulap_LDADD = \
++	$(DCMTK_LIBS) \
+ 	$(GTKMM_LIBS) \
+ 	$(GLADEMM_LIBS) \
+ 	$(GTHREAD_LIBS) \
+ 	../widgets/libgtkdicom.la \
+ 	../imagepool/libimagepool.la \
+ 	../configuration/libconfiguration.la \
+-	$(GCONFMM_LIBS) \
+-	$(DCMTK_LIBS)
++	$(GCONFMM_LIBS)
+ 
+ aeskulap_LDFLAGS = \
+ 	-Wl,-rpath,${prefix}/lib/aeskulap
