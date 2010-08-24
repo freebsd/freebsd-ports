@@ -18,7 +18,7 @@ USE_LDCONFIG=	${PREFIX}/lib \
 		${PREFIX}/lib/gdcm-${GDCM_MAJ}
 
 GDCM_MAJ=	2.0
-GDCM_MIN=	15
+GDCM_MIN=	16
 
 PLIST_SUB+=	GDCM_MAJ="${GDCM_MAJ}" \
 		GDCM_MIN="${GDCM_MIN}"
@@ -31,7 +31,7 @@ CMAKE_ARGS+=	-DGDCM_BUILD_APPLICATIONS:BOOL=YES \
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
-    		pdflatex:${PORTSDIR}/print/teTeX-base
+   		pdflatex:${PORTSDIR}/print/teTeX-base
 CMAKE_ARGS+=	-DGDCM_DOCUMENTATION:BOOL=YES \
 		-DGDCM_INSTALL_MAN_DIR:STRING=${MAN1PREFIX}/man
 MAN1=		gdcm2vtk.1 gdcmconv.1 gdcmanon.1 gdcmgendir.1 \

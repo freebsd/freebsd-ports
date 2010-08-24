@@ -123,7 +123,6 @@ include/gdcm-2.0/gdcmModuleEntry.h
 include/gdcm-2.0/gdcmModules.h
 include/gdcm-2.0/gdcmNestedModuleEntries.h
 include/gdcm-2.0/gdcmObject.h
-include/gdcm-2.0/gdcmOpenJPEG2Codec.h
 include/gdcm-2.0/gdcmOrientation.h
 include/gdcm-2.0/gdcmOverlay.h
 include/gdcm-2.0/gdcmPDBElement.h
