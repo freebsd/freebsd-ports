@@ -2769,3 +2769,4 @@ share/applications/xfp.desktop
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/es_AR/LC_MESSAGES
 @dirrmtry share/locale/es_AR
+@dirrmtry share/applications
