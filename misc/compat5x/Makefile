@@ -10,11 +10,10 @@
 # misc/localedata works out of the box if installed in default PREFIX.
 
 PORTNAME=	compat5x
-PORTVERSION=	5.4.0.8
-PORTREVISION=	11
+PORTVERSION=	5.4.0.8.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=lesi/compat5x
+MASTER_SITE_SUBDIR=amdmi3/compat5x
 PKGNAMESUFFIX=	-${ARCH}
 DISTNAME=	${PORTNAME}-${ARCH}-${PORTVERSION}
 
@@ -31,8 +30,6 @@ ONLY_FOR_ARCHS=	alpha amd64 i386 sparc64
 TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat
 USE_LDCONFIG=	${TARGET_DIR}
-
-EXTRACT_PRESERVE_OWNERSHIP=	yes	# Files in archive have scfg-flag set
 
 .include <bsd.port.pre.mk>
 
@@ -65,9 +62,6 @@ PLIST_SUB+=	SPARC64=""
 .else
 PLIST_SUB+=	SPARC64="@comment "
 .endif
-
-post-extract:
-	@chflags -R noschg ${WRKSRC} || ${TRUE}
 
 do-install:
 	@${MKDIR} ${TARGET_DIR}
