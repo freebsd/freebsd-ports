@@ -5,7 +5,7 @@
 # Generated with portupload. Do not edit directly, please
 
 PORTNAME=	HTML-FormHandler
-PORTVERSION=	0.32001
+PORTVERSION=	0.32002
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -15,18 +15,22 @@ MAINTAINER=	az@FreeBSD.org
 COMMENT=	Form handler written in Moose
 
 BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean \
+		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
 		p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
-		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased \
-		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
-		p5-MooseX-Traits>=0:${PORTSDIR}/devel/p5-MooseX-Traits \
+		p5-Locale-Maketext>=1.09:${PORTSDIR}/devel/p5-Locale-Maketext \
+		p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Getopt>=0.16:${PORTSDIR}/devel/p5-MooseX-Getopt \
+		p5-MooseX-Traits>=0:${PORTSDIR}/devel/p5-MooseX-Traits \
 		p5-MooseX-Types>=0.20:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-MooseX-Types-Common>=0:${PORTSDIR}/devel/p5-MooseX-Types-Common \
-		p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose \
-		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
-		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
+		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased \
+		p5-namespace-autoclean>=0.09:${PORTSDIR}/devel/p5-namespace-autoclean \
+		p5-File-ShareDir-Install>=0.3:${PORTSDIR}/devel/p5-File-ShareDir-Install
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
 PERL_CONFIGURE=	5.8.0+
 MAN3=	HTML::FormHandler.3 HTML::FormHandler::BuildFields.3 \
@@ -70,6 +74,35 @@ MAN3=	HTML::FormHandler.3 HTML::FormHandler::BuildFields.3 \
 	HTML::FormHandler::Widget::Form::Table.3 \
 	HTML::FormHandler::Widget::Wrapper::Simple.3 \
 	HTML::FormHandler::TraitFor::Captcha.3 \
-	HTML::FormHandler::Widget::Wrapper::Fieldset.3
+	HTML::FormHandler::Widget::Wrapper::Fieldset.3 \
+	HTML::FormHandler::Widget::Field::NoRender.3 \
+	HTML::FormHandler::Widget::Field::Textarea.3 \
+	HTML::FormHandler::Widget::Field::Password.3 \
+	HTML::FormHandler::Widget::Field::Select.3 \
+	HTML::FormHandler::I18N::ua_ua.3 \
+	HTML::FormHandler::I18N::ru_ru.3 \
+	HTML::FormHandler::Widget::Field::Hidden.3 \
+	HTML::FormHandler::I18N.3 \
+	HTML::FormHandler::Widget::ApplyRole.3 \
+	HTML::FormHandler::I18N::hu_hu.3 \
+	HTML::FormHandler::Widget::Field::Checkbox.3 \
+	HTML::FormHandler::Model::Object.3 \
+	HTML::FormHandler::Widget::Field::Reset.3 \
+	HTML::FormHandler::I18N::de_de.3 \
+	HTML::FormHandler::Widget::Field::Role::HTMLAttributes.3 \
+	HTML::FormHandler::Widget::Field::Role::SelectedOption.3 \
+	HTML::FormHandler::Widget::Field::Compound.3 \
+	HTML::FormHandler::Widget::Field::Text.3 \
+	HTML::FormHandler::Widget::Form::Role::HTMLAttributes.3 \
+	HTML::FormHandler::Widget::Field::RadioGroup.3 \
+	HTML::FormHandler::Widget::Field::Upload.3 \
+	HTML::FormHandler::I18N::tr_tr.3 \
+	HTML::FormHandler::I18N::en_us.3 \
+	HTML::FormHandler::Widget::Wrapper::Table.3 \
+	HTML::FormHandler::Widget::Field::CheckboxGroup.3 \
+	HTML::FormHandler::Widget::Field::Submit.3 \
+	HTML::FormHandler::Widget::Wrapper::None.3 \
+	HTML::FormHandler::Widget::Wrapper::Base.3 \
+	HTML::FormHandler::Params.3
 
 .include <bsd.port.mk>
