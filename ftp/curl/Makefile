@@ -17,8 +17,6 @@ MASTER_SITE_SUBDIR=	curl
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers
 
-RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
-
 LICENSE=	MIT
 
 PATCH_STRIP=	-p1
@@ -69,6 +67,7 @@ OPTIONS=	CARES "Asynchronous DNS resolution via c-ares" off \
 		LIBSSH2 "SCP/SFTP support via libssh2" off \
 		NTLM "NTLM authentication" off \
 		OPENSSL "OpenSSL support" on \
+		CA_BUNDLE "Install CA bundle for OpenSSL" on \
 		PROXY "Proxy support" on \
 		TRACKMEMORY "Enable curl memory diagnostic output" off
 
@@ -98,10 +97,18 @@ IGNORE=			only supports LDAPS with SSL (OpenSSL or GNUTLS)
 
 .if !defined(WITHOUT_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
-CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE} \
-			--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
+.if !defined(WITHOUT_CA_BUNDLE)
+RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+CONFIGURE_ARGS+=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
+.else
+CONFIGURE_ARGS+=	--without-ca-bundle
+.endif
 .else
 CONFIGURE_ARGS+=	--without-ssl
+.if defined(WITH_CA_BUNDLE)
+IGNORE=			only supports CA bundle with OpenSSL
+.endif
 .endif
 
 .if defined(WITH_CARES)
