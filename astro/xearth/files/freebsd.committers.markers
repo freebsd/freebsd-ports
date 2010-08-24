@@ -266,6 +266,7 @@
  29.7925,	-95.8225,	"dwcjr"				# Katy, TX, USA
  30.508,	-97.679,	"scf"				# Round Rock, TX, USA
  30.343,	-97.881,	"          ,linimon"		# Austin, TX, USA
+ 30.404158,	-97.735479,	"ade"				# Austin, TX, USA
  37.972,	-100.872,	"mezz"				# Garden City, KS, USA
  39.897418,	-104.981891,	"brd"				# Northglenn, CO, USA
  39.897418,	-105.074891,	"will"				# Westminster, CO, USA
@@ -316,7 +317,6 @@
  37.05,		-122.52,	"np"				# Cupertino, CA, USA
  45.5,		-122.6,		"dg"				# near Portland, OR, USA
  47.643,	-122.614,	"glewis"			# Bremerton, WA, USA
- 42.29,		-122.89,	"ade"				# Medford, OR, USA
  49.27705,	-122.91385,	"cperciva"			# Burnaby, BC, Canada
  49.204533,	-122.919931,	"sobomax"			# New Westminster, BC, Canada
  48.482814,	-122.94369,	"jdp"				# Lopez Island, WA, USA
