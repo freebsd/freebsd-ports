@@ -1,0 +1,190 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: tomcat7
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Configuration settings for tomcat7 in /etc/rc.conf:
+#
+# tomcat7_enable (bool):
+#   Set to "NO" by default.
+#   Set it to "YES" to enable tomcat7
+#
+# tomcat7_flags (str):
+#   Set to "" by default.
+#   Extra flags passed to start command
+#
+# tomcat7_catalina_base (str)
+#   Set to "%%TOMCAT_HOME%%" by default.
+#   Set the CATALINA_BASE variable for the Tomcat process
+#
+# tomcat7_catalina_tmpdir (str)
+#   Set to "%%TOMCAT_HOME%%/temp" by default.
+#   Set the CATALINA_TMPDIR variable for the Tomcat process
+#
+# tomcat7_stdout_log (str)
+#   Set to "%%TOMCAT_HOME%%/logs/stdout.txt" by default.
+#   Set the location for the Tomcat process log (standard output)
+#
+# tomcat7_stderr_log (str)
+#   Set to "%%TOMCAT_HOME%%/logs/stderr.txt" by default.
+#   Set the location for the Tomcat process log (error output)
+#
+# tomcat7_stop_timeout (num)
+#   Set to "10" by default.
+#   Sets the timeout in seconds to allow tomcat to shutdown.
+#   After the timeout has elapsed, tomcat will be killed.
+#
+# tomcat7_java_home (str):
+# tomcat7_java_vendor (str):
+# tomcat7_java_version (str):
+# tomcat7_java_os (str):
+#   Specify the requirements of the Java VM to use. See javavm(1).
+#
+# tomcat7_classpath (str):
+#   Set to "" by default.
+#   Addtional classes to add to the CLASSPATH
+#
+# tomcat7_java_opts (str):
+#   Set to "" by default.
+#   Java VM args to use.
+#
+
+tomcat7_enable="${tomcat7_enable:-"NO"}"
+tomcat7_java_version="${tomcat7_java_version:-"%%JAVA_VERSION%%"}"
+tomcat7_user="${tomcat7_user:-"%%TOMCAT_USER%%"}"
+tomcat7_catalina_home="%%TOMCAT_HOME%%"
+tomcat7_catalina_base="${tomcat7_catalina_base:-"%%TOMCAT_HOME%%"}"
+tomcat7_catalina_tmpdir="${tomcat7_catalina_tmpdir:-"%%TOMCAT_HOME%%/temp"}"
+tomcat7_stdout_log="${tomcat7_stdout_log:-"%%TOMCAT_HOME%%/logs/stdout.txt"}"
+tomcat7_stderr_log="${tomcat7_stderr_log:-"%%TOMCAT_HOME%%/logs/stderr.txt"}"
+tomcat7_stop_timeout="${tomcat7_stop_timeout:-"10"}"
+
+. /etc/rc.subr
+
+name="tomcat7"
+rcvar=`set_rcvar`
+pidfile="/var/run/tomcat7.pid"
+
+load_rc_config "${name}"
+
+if [ -n "${tomcat7_java_home}" ] ; then
+	export JAVA_HOME="${tomcat7_java_home}"
+fi
+
+if [ -n "${tomcat7_java_version}" ] ; then
+	export JAVA_VERSION="${tomcat7_java_version}"
+fi
+
+if [ -n "${tomcat7_java_vendor}" ] ; then
+	export JAVA_VENDOR="${tomcat7_java_vendor}"
+fi
+
+if [ -n "${tomcat7_java_os}" ] ; then
+	export JAVA_OS="${tomcat7_java_os}"
+fi
+
+java_class="org.apache.catalina.startup.Bootstrap"
+java_command="%%LOCALBASE%%/bin/java \
+	${tomcat7_java_opts} \
+	-Djava.endorsed.dirs=%%TOMCAT_HOME%%/endorsed \
+	-classpath %%TOMCAT_HOME%%/bin/bootstrap.jar:%%TOMCAT_HOME%%/bin/tomcat-juli.jar${tomcat7_classpath} \
+	-Dcatalina.home=${tomcat7_catalina_home} \
+	-Dcatalina.base=${tomcat7_catalina_base} \
+	-Djava.io.tmpdir=${tomcat7_catalina_tmpdir} \
+	${java_class}"
+
+log_args=">> ${tomcat7_stdout_log} \
+	2>> ${tomcat7_stderr_log} "
+
+required_files="${tomcat7_catalina_base}/conf/server.xml"
+
+command="/usr/sbin/daemon"
+flags="-p ${pidfile} ${java_command} start ${tomcat7_flags} ${log_args}"
+
+start_precmd="pid_touch"
+stop_cmd="tomcat_stop"
+status_cmd="tomcat_status"
+poll_cmd="tomcat_poll"
+
+pid_touch() {
+	touch $pidfile
+	chown $tomcat7_user $pidfile
+}
+
+tomcat_stop() {
+	rc_pid=$(tomcat_check_pidfile $pidfile)
+
+	if [ -z "$rc_pid" ]; then
+		[ -n "$rc_fast" ] && return 0
+		echo "${name} not running? (check $pidfile)."
+		return 1
+	fi
+	
+	echo "Stopping ${name}."
+	${java_command} stop
+	tomcat_wait_max_for_pid ${tomcat7_stop_timeout} ${rc_pid}
+	kill -KILL ${rc_pid} 2> /dev/null && echo "Killed."
+	rm -f ${pidfile}
+}
+
+tomcat_status() {
+	rc_pid=$(tomcat_check_pidfile $pidfile)
+
+	if [ -z "$rc_pid" ]; then
+		[ -n "$rc_fast" ] && return 0
+		echo "${name} not running? (check $pidfile)."
+		return 1
+	fi
+}
+
+tomcat_poll() {
+	while (true) ; do
+		rc_pid=$(tomcat_check_pidfile $pidfile)
+		[ -z "$rc_pid" ] && break
+		sleep 2
+	done
+}
+
+tomcat_check_pidfile() {
+	_pidfile=$1
+	if [ -z "$_pidfile" ]; then
+		err 3 'USAGE: tomcat_check_pidfile pidfile'
+	fi
+	if [ ! -f $_pidfile ]; then
+		debug "pid file ($_pidfile): not readable."
+		return
+	fi
+	read _pid _junk < $_pidfile
+	if [ -z "$_pid" ]; then
+		debug "pid file ($_pidfile): no pid in file."
+		return
+	fi
+	if [ -n "`%%LOCALBASE%%/bin/jps -l | grep -e "^$_pid $java_class\$"`" ]; then
+		echo -n $_pid
+	fi
+}
+
+tomcat_wait_max_for_pid() {
+	_timeout=$1
+	shift
+	_pid=$1
+	_prefix=
+	while [ $_timeout -gt 0 ] ; do
+		echo -n ${_prefix:-"Waiting (max $_timeout secs) for PIDS: "}$_pid
+		_prefix=", "
+		sleep 2
+		kill -0 $_pid 2> /dev/null || break
+		_timeout=$(($_timeout-2))
+	done
+	if [ -n "$_prefix" ]; then
+		echo "."
+	fi
+}
+
+run_rc_command "$1"

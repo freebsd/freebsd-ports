@@ -1,4 +1,4 @@
-@stopdaemon tomcat6
+@stopdaemon tomcat7
 %%T%%/LICENSE
 %%T%%/NOTICE
 %%T%%/RELEASE-NOTES
@@ -42,17 +42,19 @@
 %%T%%/lib/catalina-ha.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
+%%T%%/lib/ecj-3.6.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jasper-el.jar
-%%T%%/lib/jasper-jdt.jar
 %%T%%/lib/jasper.jar
 %%T%%/lib/jsp-api.jar
 %%T%%/lib/servlet-api.jar
+%%T%%/lib/tomcat-api.jar
 %%T%%/lib/tomcat-coyote.jar
 %%T%%/lib/tomcat-dbcp.jar
 %%T%%/lib/tomcat-i18n-es.jar
 %%T%%/lib/tomcat-i18n-fr.jar
 %%T%%/lib/tomcat-i18n-ja.jar
+%%T%%/lib/tomcat-util.jar
 %%T%%/lib/tools.jar
 %%T%%/temp/safeToDelete.tmp
 %%T%%/webapps/ROOT/RELEASE-NOTES.txt
@@ -61,7 +63,6 @@
 %%T%%/webapps/ROOT/build.xml
 %%T%%/webapps/ROOT/favicon.ico
 %%T%%/webapps/ROOT/index.html
-%%T%%/webapps/ROOT/index.jsp
 %%T%%/webapps/ROOT/tomcat-power.gif
 %%T%%/webapps/ROOT/tomcat.gif
 %%T%%/webapps/ROOT/tomcat.svg
@@ -117,10 +118,12 @@
 %%T%%/webapps/docs/config/context.html
 %%T%%/webapps/docs/config/engine.html
 %%T%%/webapps/docs/config/executor.html
+%%T%%/webapps/docs/config/filter.html
 %%T%%/webapps/docs/config/globalresources.html
 %%T%%/webapps/docs/config/host.html
 %%T%%/webapps/docs/config/http.html
 %%T%%/webapps/docs/config/index.html
+%%T%%/webapps/docs/config/jar-scanner.html
 %%T%%/webapps/docs/config/listeners.html
 %%T%%/webapps/docs/config/loader.html
 %%T%%/webapps/docs/config/manager.html
@@ -134,12 +137,12 @@
 %%T%%/webapps/docs/default-servlet.html
 %%T%%/webapps/docs/deployer-howto.html
 %%T%%/webapps/docs/developers.html
+%%T%%/webapps/docs/elapi/index.html
 %%T%%/webapps/docs/extras.html
 %%T%%/webapps/docs/funcspecs/fs-admin-apps.html
 %%T%%/webapps/docs/funcspecs/fs-admin-objects.html
 %%T%%/webapps/docs/funcspecs/fs-admin-opers.html
 %%T%%/webapps/docs/funcspecs/fs-default.html
-%%T%%/webapps/docs/funcspecs/fs-invoker.html
 %%T%%/webapps/docs/funcspecs/fs-jdbc-realm.html
 %%T%%/webapps/docs/funcspecs/fs-jndi-realm.html
 %%T%%/webapps/docs/funcspecs/fs-memory-realm.html
@@ -162,6 +165,7 @@
 %%T%%/webapps/docs/jasper-howto.html
 %%T%%/webapps/docs/jndi-datasource-examples-howto.html
 %%T%%/webapps/docs/jndi-resources-howto.html
+%%T%%/webapps/docs/jspapi/index.html
 %%T%%/webapps/docs/logging.html
 %%T%%/webapps/docs/manager-howto.html
 %%T%%/webapps/docs/maven-jars.html
@@ -169,7 +173,9 @@
 %%T%%/webapps/docs/monitoring.html
 %%T%%/webapps/docs/proxy-howto.html
 %%T%%/webapps/docs/realm-howto.html
+%%T%%/webapps/docs/security-howto.html
 %%T%%/webapps/docs/security-manager-howto.html
+%%T%%/webapps/docs/servletapi/index.html
 %%T%%/webapps/docs/setup.html
 %%T%%/webapps/docs/ssi-howto.html
 %%T%%/webapps/docs/ssl-howto.html
@@ -195,6 +201,23 @@
 %%T%%/webapps/examples/WEB-INF/classes/RequestParamExample.java
 %%T%%/webapps/examples/WEB-INF/classes/SessionExample.class
 %%T%%/webapps/examples/WEB-INF/classes/SessionExample.java
+%%T%%/webapps/examples/WEB-INF/classes/async/Async0$1.class
+%%T%%/webapps/examples/WEB-INF/classes/async/Async0.class
+%%T%%/webapps/examples/WEB-INF/classes/async/Async0.java
+%%T%%/webapps/examples/WEB-INF/classes/async/Async1$1.class
+%%T%%/webapps/examples/WEB-INF/classes/async/Async1.class
+%%T%%/webapps/examples/WEB-INF/classes/async/Async1.java
+%%T%%/webapps/examples/WEB-INF/classes/async/Async2$1.class
+%%T%%/webapps/examples/WEB-INF/classes/async/Async2.class
+%%T%%/webapps/examples/WEB-INF/classes/async/Async2.java
+%%T%%/webapps/examples/WEB-INF/classes/async/Async3.class
+%%T%%/webapps/examples/WEB-INF/classes/async/Async3.java
+%%T%%/webapps/examples/WEB-INF/classes/async/AsyncStockServlet.class
+%%T%%/webapps/examples/WEB-INF/classes/async/AsyncStockServlet.java
+%%T%%/webapps/examples/WEB-INF/classes/async/Stockticker$Stock.class
+%%T%%/webapps/examples/WEB-INF/classes/async/Stockticker$TickListener.class
+%%T%%/webapps/examples/WEB-INF/classes/async/Stockticker.class
+%%T%%/webapps/examples/WEB-INF/classes/async/Stockticker.java
 %%T%%/webapps/examples/WEB-INF/classes/cal/Entries.class
 %%T%%/webapps/examples/WEB-INF/classes/cal/Entries.java
 %%T%%/webapps/examples/WEB-INF/classes/cal/Entry.class
@@ -232,16 +255,18 @@
 %%T%%/webapps/examples/WEB-INF/classes/examples/LogTag.java
 %%T%%/webapps/examples/WEB-INF/classes/examples/ShowSource.class
 %%T%%/webapps/examples/WEB-INF/classes/examples/ShowSource.java
+%%T%%/webapps/examples/WEB-INF/classes/examples/ValuesTag.class
+%%T%%/webapps/examples/WEB-INF/classes/examples/ValuesTag.java
 %%T%%/webapps/examples/WEB-INF/classes/filters/ExampleFilter.class
 %%T%%/webapps/examples/WEB-INF/classes/filters/ExampleFilter.java
-%%T%%/webapps/examples/WEB-INF/classes/filters/RequestDumperFilter.class
-%%T%%/webapps/examples/WEB-INF/classes/filters/RequestDumperFilter.java
 %%T%%/webapps/examples/WEB-INF/classes/filters/SetCharacterEncodingFilter.class
 %%T%%/webapps/examples/WEB-INF/classes/filters/SetCharacterEncodingFilter.java
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.class
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.java
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/FooBean.class
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/FooBean.java
+%%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/ValuesBean.class
+%%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/ValuesBean.java
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/el/Functions.class
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/el/Functions.java
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/EchoAttributesTag.class
@@ -282,6 +307,12 @@
 %%T%%/webapps/examples/WEB-INF/tags/xhtmlbasic.tag
 %%T%%/webapps/examples/WEB-INF/web.xml
 %%T%%/webapps/examples/index.html
+%%T%%/webapps/examples/jsp/async/async1.jsp
+%%T%%/webapps/examples/jsp/async/async1.jsp.html
+%%T%%/webapps/examples/jsp/async/async3.jsp
+%%T%%/webapps/examples/jsp/async/async3.jsp.html
+%%T%%/webapps/examples/jsp/async/index.jsp
+%%T%%/webapps/examples/jsp/async/index.jsp.html
 %%T%%/webapps/examples/jsp/cal/Entries.java.html
 %%T%%/webapps/examples/jsp/cal/Entry.java.html
 %%T%%/webapps/examples/jsp/cal/JspCalendar.java.html
@@ -335,12 +366,17 @@
 %%T%%/webapps/examples/jsp/include/include.jsp.html
 %%T%%/webapps/examples/jsp/index.html
 %%T%%/webapps/examples/jsp/jsp2/el/Functions.java.html
+%%T%%/webapps/examples/jsp/jsp2/el/ValuesBean.java.html
+%%T%%/webapps/examples/jsp/jsp2/el/ValuesTag.java.html
 %%T%%/webapps/examples/jsp/jsp2/el/basic-arithmetic.html
 %%T%%/webapps/examples/jsp/jsp2/el/basic-arithmetic.jsp
 %%T%%/webapps/examples/jsp/jsp2/el/basic-arithmetic.jsp.html
 %%T%%/webapps/examples/jsp/jsp2/el/basic-comparisons.html
 %%T%%/webapps/examples/jsp/jsp2/el/basic-comparisons.jsp
 %%T%%/webapps/examples/jsp/jsp2/el/basic-comparisons.jsp.html
+%%T%%/webapps/examples/jsp/jsp2/el/composite.html
+%%T%%/webapps/examples/jsp/jsp2/el/composite.jsp
+%%T%%/webapps/examples/jsp/jsp2/el/composite.jsp.html
 %%T%%/webapps/examples/jsp/jsp2/el/functions.html
 %%T%%/webapps/examples/jsp/jsp2/el/functions.jsp
 %%T%%/webapps/examples/jsp/jsp2/el/functions.jsp.html
@@ -460,6 +496,9 @@
 %%T%%/webapps/examples/servlets/reqinfo.html
 %%T%%/webapps/examples/servlets/reqparams.html
 %%T%%/webapps/examples/servlets/sessions.html
+%%T%%/webapps/host-manager/401.jsp
+%%T%%/webapps/host-manager/403.jsp
+%%T%%/webapps/host-manager/404.jsp
 %%T%%/webapps/host-manager/META-INF/context.xml
 %%T%%/webapps/host-manager/WEB-INF/web.xml
 %%T%%/webapps/host-manager/images/add.gif
@@ -471,8 +510,11 @@
 %%T%%/webapps/host-manager/images/tomcat.gif
 %%T%%/webapps/host-manager/images/update.gif
 %%T%%/webapps/host-manager/images/void.gif
+%%T%%/webapps/host-manager/index.jsp
 %%T%%/webapps/host-manager/manager.xml
 %%T%%/webapps/manager/401.jsp
+%%T%%/webapps/manager/403.jsp
+%%T%%/webapps/manager/404.jsp
 %%T%%/webapps/manager/META-INF/context.xml
 %%T%%/webapps/manager/WEB-INF/jsp/sessionDetail.jsp
 %%T%%/webapps/manager/WEB-INF/jsp/sessionsList.jsp
@@ -486,6 +528,7 @@
 %%T%%/webapps/manager/images/tomcat.gif
 %%T%%/webapps/manager/images/update.gif
 %%T%%/webapps/manager/images/void.gif
+%%T%%/webapps/manager/index.jsp
 %%T%%/webapps/manager/status.xsd
 %%T%%/webapps/manager/xform.xsl
 @exec mkdir %D/%%T%%/endorsed 2>/dev/null || true
@@ -531,6 +574,7 @@
 @dirrm %%T%%/webapps/examples/jsp/checkbox
 @dirrm %%T%%/webapps/examples/jsp/chat
 @dirrm %%T%%/webapps/examples/jsp/cal
+@dirrm %%T%%/webapps/examples/jsp/async
 @dirrm %%T%%/webapps/examples/jsp
 @dirrm %%T%%/webapps/examples/WEB-INF/tags
 @dirrm %%T%%/webapps/examples/WEB-INF/lib
@@ -555,12 +599,16 @@
 @dirrm %%T%%/webapps/examples/WEB-INF/classes/checkbox
 @dirrm %%T%%/webapps/examples/WEB-INF/classes/chat
 @dirrm %%T%%/webapps/examples/WEB-INF/classes/cal
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/async
 @dirrm %%T%%/webapps/examples/WEB-INF/classes
 @dirrm %%T%%/webapps/examples/WEB-INF
 @dirrm %%T%%/webapps/examples
 @dirrm %%T%%/webapps/docs/tribes
+@dirrm %%T%%/webapps/docs/servletapi
+@dirrm %%T%%/webapps/docs/jspapi
 @dirrm %%T%%/webapps/docs/images
 @dirrm %%T%%/webapps/docs/funcspecs
+@dirrm %%T%%/webapps/docs/elapi
 @dirrm %%T%%/webapps/docs/config
 @dirrm %%T%%/webapps/docs/architecture/startup
 @dirrm %%T%%/webapps/docs/architecture/requestProcess
