@@ -9,7 +9,7 @@ CATEGORIES?=	chinese
 
 MAINTAINER=	sunpoet@sunpoet.net
 
-MASTERDIR=	${.CURDIR}/../../net/tintin++-devel
+MASTERDIR=	${.CURDIR}/../../net/tintin++
 
 CONFIGURE_ARGS=	--enable-big5
 
