@@ -1321,9 +1321,11 @@ byaccj                          ports/devel/byaccj
 bygfoot                         ports/games/bygfoot
 bzflag                          ports/games/bzflag
 bzip                            ports/archivers/bzip
+bzr-builder                     ports/devel/bzr-builder
 bzr-explorer                    ports/devel/bzr-explorer
 bzr-grep                        ports/devel/bzr-grep
 bzr-gtk                         ports/devel/bzr-gtk
+bzr-loom                        ports/devel/bzr-loom
 bzrtools                        ports/devel/bzrtools
 c-a-i-r                         ports/graphics/c-a-i-r
 c-ares                          ports/dns/c-ares
@@ -3679,7 +3681,6 @@ foswiki                         ports/www/foswiki
 fotaq                           ports/games/fotaq
 fotofix                         ports/graphics/fotofix
 fourcdns                        ports/dns/fourcdns
-fox12                           ports/x11-toolkits/fox12
 fox14                           ports/x11-toolkits/fox14
 fox16                           ports/x11-toolkits/fox16
 fpc                             ports/lang/fpc
@@ -3822,7 +3823,6 @@ fraqtive                        ports/graphics/fraqtive
 free-sa                         ports/www/free-sa
 free-sa-devel                   ports/www/free-sa-devel
 freealut                        ports/audio/freealut
-freebase                        ports/devel/freebase
 freebsd-carddeck-kde4           ports/games/freebsd-carddeck-kde4
 freebsd-doc-all                 ports/misc/freebsd-doc-all
 freebsd-doc-bn                  ports/misc/freebsd-doc-bn
@@ -3887,7 +3887,6 @@ freeradius-client               ports/net/freeradius-client
 freeradius-mysql                ports/net/freeradius-mysql
 freeradius2                     ports/net/freeradius2
 freerdp                         ports/net/freerdp
-freeride                        ports/devel/freeride
 freesbie                        ports/sysutils/freesbie
 freesci                         ports/games/freesci
 freesweep                       ports/games/freesweep
@@ -4039,7 +4038,6 @@ fwlogwatch                      ports/security/fwlogwatch
 fwtk                            ports/security/fwtk
 fxload                          ports/misc/fxload
 fxscintilla                     ports/x11-toolkits/fxscintilla
-fxscintilla-fox12               ports/x11-toolkits/fxscintilla-fox12
 fxscintilla-fox14               ports/x11-toolkits/fxscintilla-fox14
 fxsudoku                        ports/games/fxsudoku
 fxt                             ports/math/fxt
@@ -7743,6 +7741,7 @@ libcoyotl                       ports/devel/libcoyotl
 libcroco                        ports/textproc/libcroco
 libcsv                          ports/textproc/libcsv
 libctl                          ports/science/libctl
+libcue                          ports/textproc/libcue
 libcwd                          ports/devel/libcwd
 libdaemon                       ports/devel/libdaemon
 libdap                          ports/devel/libdap
@@ -9494,7 +9493,6 @@ mod_vdbh                        ports/www/mod_vdbh
 mod_vhost_ldap                  ports/www/mod_vhost_ldap
 mod_vhs                         ports/www/mod_vhs
 mod_webkit                      ports/www/mod_webkit
-mod_webobjects                  ports/www/mod_webobjects
 mod_wsgi                        ports/www/mod_wsgi
 mod_wsgi3                       ports/www/mod_wsgi3
 mod_xmlns                       ports/www/mod_xmlns
@@ -9507,7 +9505,6 @@ moinmoin                        ports/www/moinmoin
 mol2ps                          ports/science/mol2ps
 molden                          ports/biology/molden
 momspider                       ports/www/momspider
-mondrian                        ports/editors/mondrian
 mondulkiri                      ports/x11-fonts/mondulkiri
 mongodb                         ports/databases/mongodb
 mongodb-devel                   ports/databases/mongodb-devel
@@ -21781,6 +21778,7 @@ ramond                          ports/net-mgmt/ramond
 rancid                          ports/net-mgmt/rancid
 rancid-devel                    ports/net-mgmt/rancid-devel
 rand                            ports/textproc/rand
+randomio                        ports/benchmarks/randomio
 randrproto                      ports/x11/randrproto
 ranpwd                          ports/security/ranpwd
 raop_play                       ports/audio/raop_play
@@ -22259,7 +22257,6 @@ ruby-flexmock                   ports/devel/ruby-flexmock
 ruby-flvtool2                   ports/multimedia/ruby-flvtool2
 ruby-format                     ports/textproc/ruby-format
 ruby-formvalidator              ports/textproc/ruby-formvalidator
-ruby-fox12                      ports/x11-toolkits/ruby-fox12
 ruby-fox16                      ports/x11-toolkits/ruby-fox16
 ruby-freedb                     ports/audio/ruby-freedb
 ruby-frontbase                  ports/databases/ruby-frontbase
@@ -22499,6 +22496,7 @@ rubygem-dnsruby                 ports/dns/rubygem-dnsruby
 rubygem-do_mysql                ports/databases/rubygem-do_mysql
 rubygem-do_postgres             ports/databases/rubygem-do_postgres
 rubygem-do_sqlite3              ports/databases/rubygem-do_sqlite3
+rubygem-domainatrix             ports/www/rubygem-domainatrix
 rubygem-echoe                   ports/devel/rubygem-echoe
 rubygem-elif                    ports/devel/rubygem-elif
 rubygem-emk-sinatra-url-for     ports/www/rubygem-emk-sinatra-url-for
@@ -22703,6 +22701,7 @@ rubygem-turing                  ports/graphics/rubygem-turing
 rubygem-twitter                 ports/net/rubygem-twitter
 rubygem-twitter4r               ports/net/rubygem-twitter4r
 rubygem-tzinfo                  ports/devel/rubygem-tzinfo
+rubygem-unicode                 ports/devel/rubygem-unicode
 rubygem-uuid                    ports/devel/rubygem-uuid
 rubygem-uuidtools               ports/devel/rubygem-uuidtools
 rubygem-validatable             ports/devel/rubygem-validatable
@@ -23782,6 +23781,7 @@ swaks                           ports/mail/swaks
 swami                           ports/audio/swami
 swank-clojure                   ports/devel/swank-clojure
 swapd                           ports/sysutils/swapd
+swapmon                         ports/sysutils/swapmon
 swarp                           ports/x11/swarp
 swatch                          ports/security/swatch
 swe                             ports/astro/swe
@@ -25365,8 +25365,6 @@ wmxss                           ports/x11/wmxss
 wmymail                         ports/mail/wmymail
 wmzazof                         ports/sysutils/wmzazof
 wnews                           ports/www/wnews
-woadaptor                       ports/www/woadaptor
-woadaptor-cgi                   ports/www/woadaptor-cgi
 wol                             ports/net/wol
 wolf3d                          ports/games/wolf3d
 wolfpack                        ports/games/wolfpack
