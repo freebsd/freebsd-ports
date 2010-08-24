@@ -43,7 +43,7 @@ MAN1=		reswrap.1 shutterbug.1 adie.1 PathFinder.1 calculator.1 \
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == "aplha" || ${ARCH} == "sparc64") && ${OSVERSION} < 700000
+.if (${ARCH} == "alpha" || ${ARCH} == "sparc64") && ${OSVERSION} < 700000
 THREAD_LIBS=	-lthr
 .else
 THREAD_LIBS=	${PTHREAD_LIBS}
