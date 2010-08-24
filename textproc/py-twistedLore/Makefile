@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twistedLore
-PORTVERSION=	9.0.0
+PORTVERSION=	10.1.0
 CATEGORIES=	textproc python
 MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Lore/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

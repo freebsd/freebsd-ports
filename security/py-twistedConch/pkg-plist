@@ -110,9 +110,6 @@ bin/tkconch
 %%PYTHON_SITELIBDIR%%/twisted/conch/ssh/agent.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/ssh/agent.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/ssh/agent.pyo
-%%PYTHON_SITELIBDIR%%/twisted/conch/ssh/asn1.py
-%%PYTHON_SITELIBDIR%%/twisted/conch/ssh/asn1.pyc
-%%PYTHON_SITELIBDIR%%/twisted/conch/ssh/asn1.pyo
 %%PYTHON_SITELIBDIR%%/twisted/conch/ssh/channel.py
 %%PYTHON_SITELIBDIR%%/twisted/conch/ssh/channel.pyc
 %%PYTHON_SITELIBDIR%%/twisted/conch/ssh/channel.pyo

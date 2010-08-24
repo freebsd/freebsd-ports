@@ -100,6 +100,9 @@
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_domhelpers.py
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_domhelpers.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_domhelpers.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_error.py
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_error.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_error.pyo
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_http.py
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_http.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_http.pyo
@@ -130,6 +133,9 @@
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_tap.py
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_tap.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_tap.pyo
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_util.py
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_util.pyc
+%%PYTHON_SITELIBDIR%%/twisted/web/test/test_util.pyo
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_vhost.py
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_vhost.pyc
 %%PYTHON_SITELIBDIR%%/twisted/web/test/test_vhost.pyo

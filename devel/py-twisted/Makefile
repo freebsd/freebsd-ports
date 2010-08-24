@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twisted
-PORTVERSION=	9.0.0
+PORTVERSION=	10.1.0
 CATEGORIES=	devel net python
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,7 +30,6 @@ OPTIONS=	CONCH	"SSH and SFTP protocol" on \
 		NEWS	"NNTP protocol" on \
 		RUNNER	"Process management" on \
 		WEB	"HTTP protocol" on \
-		WEB2	"HTTP/1.1 Server Framework" on \
 		WORDS	"Chat and Instant Messaging" on
 
 do-install:

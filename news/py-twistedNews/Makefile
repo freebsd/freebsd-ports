@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twistedNews
-PORTVERSION=	9.0.0
+PORTVERSION=	10.1.0
 CATEGORIES=	news devel python
 MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/News/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ MAINTAINER=	neal@nelson.name
 COMMENT=	An NNTP protocol implementation with client and server
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes

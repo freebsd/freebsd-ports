@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twistedCore
-PORTVERSION=	9.0.0
+PORTVERSION=	10.1.0
 CATEGORIES=	devel net python
 MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Core/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

@@ -104,6 +104,9 @@
 %%PYTHON_SITELIBDIR%%/twisted/words/test/__init__.py
 %%PYTHON_SITELIBDIR%%/twisted/words/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/twisted/words/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/twisted/words/test/test_basechat.py
+%%PYTHON_SITELIBDIR%%/twisted/words/test/test_basechat.pyc
+%%PYTHON_SITELIBDIR%%/twisted/words/test/test_basechat.pyo
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_basesupport.py
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_basesupport.pyc
 %%PYTHON_SITELIBDIR%%/twisted/words/test/test_basesupport.pyo
