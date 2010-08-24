@@ -23,6 +23,7 @@ USE_GNOME=	gconf2
 GCONF_SCHEMAS=	aeskulap.schemas
 USE_LDCONFIG=	${PREFIX}/lib/aeskulap
 
+CXXFLAGS+=	-fPIC \
 		-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 
