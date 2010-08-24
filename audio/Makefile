@@ -228,7 +228,6 @@
     SUBDIR += glurp
     SUBDIR += gmidimonitor
     SUBDIR += gmixer
-    SUBDIR += gmm
     SUBDIR += gmpc
     SUBDIR += gmpc-alarm
     SUBDIR += gmpc-albumview
