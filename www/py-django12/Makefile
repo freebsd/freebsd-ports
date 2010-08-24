@@ -66,8 +66,22 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}flup>0:${PORTSDIR}/www/py-flup
 .endif
 
 .if defined(WITH_DOCS)
+EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-sphinx
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx
 PORTDOCS=	*
+.endif
+
+pre-patch:
+.if defined(WITH_DOCS)
+	${MKDIR} ${WRKSRC}/docs/_theme/djangodocs
+	${MKDIR} ${WRKSRC}/docs/_theme/static
+.endif
+
+post-patch:
+.if defined(WITH_DOCS)
+.	for f in docicons-behindscenes.png docicons-note.png docicons-philosophy.png
+		${MV} ${WRKSRC}/docs/_static/${f} ${WRKSRC}/docs/_theme/djangodocs/static/
+.	endfor
 .endif
 
 post-build:
