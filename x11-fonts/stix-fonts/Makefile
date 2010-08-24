@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	STIX-fonts
-PORTVERSION=	0.20071031
+PORTNAME=	stixfonts
+PORTVERSION=	1.0.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.mozilla.org/projects/mathml/fonts/stix/
-DISTNAME=	STIXBeta
+MASTER_SITES=	SF/${PORTNAME}/CurrentRelease/
+# http://freefr.dl.sourceforge.net/project/stixfonts/CurrentRelease/STIXv1.0.0.zip
+DISTNAME=	STIXv${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A comprehensive set of fonts for scientific and engineering purposes
@@ -21,7 +22,10 @@ RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 USE_ZIP=	yes
 USE_XORG=	x11
 
-NO_WRKSUBDIR=	yes
+LICENSE=	OFL
+LICENSE_NAME=	Open Font License
+LICENSE_FILE=	${WRKSRC}/License/STIX\ Font\ License\ 2010.pdf
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"	\
 		FCCACHE='${FCCACHE}'
@@ -32,23 +36,19 @@ SUB_LIST=	FONTDIR=${FONTDIR}
 
 FONTNAME=	stix
 FONTDIR=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-INSTDAT=	License.txt Readme.txt fonts.dir fonts.scale
 
 MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
 MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
 FCCACHE=	${LOCALBASE}/bin/fc-cache -f -v
 
 do-build:
-	cd ${WRKSRC} &&	\
-	${MKFONTSCL_CMD}
-	${REINPLACE_CMD} -e 's|-misc-|-stix-|' ${WRKSRC}/fonts.scale
-	cd ${WRKSRC} &&	\
-	${MKFONTDIR_CMD}
+	cd ${WRKSRC}/Fonts && ${MKFONTSCL_CMD}
+	${REINPLACE_CMD} -e 's|-misc-|-stix-|' ${WRKSRC}/Fonts/fonts.scale
+	cd ${WRKSRC}/Fonts && ${MKFONTDIR_CMD}
 
 do-install:
 	${MKDIR} ${FONTDIR}
-	cd ${WRKSRC} &&	\
-	${INSTALL_DATA} ${INSTDAT} *.otf ${FONTDIR}
+	cd ${WRKSRC}/Fonts && ${INSTALL_DATA} fonts.dir fonts.scale *.otf ${FONTDIR}
 
 post-install:
 	@${ECHO_MSG} "===> Running fc-cache"
