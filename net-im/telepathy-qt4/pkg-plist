@@ -7,6 +7,7 @@ include/telepathy-1.0/TelepathyQt4/Account
 include/telepathy-1.0/TelepathyQt4/AccountInterface
 include/telepathy-1.0/TelepathyQt4/AccountManager
 include/telepathy-1.0/TelepathyQt4/AccountManagerInterface
+include/telepathy-1.0/TelepathyQt4/AccountSet
 include/telepathy-1.0/TelepathyQt4/CapabilitiesBase
 include/telepathy-1.0/TelepathyQt4/Channel
 include/telepathy-1.0/TelepathyQt4/ChannelDispatchOperation
@@ -41,11 +42,18 @@ include/telepathy-1.0/TelepathyQt4/Connection
 include/telepathy-1.0/TelepathyQt4/ConnectionCapabilities
 include/telepathy-1.0/TelepathyQt4/ConnectionInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceAliasingInterface
+include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceAnonymityInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceAvatarsInterface
+include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceBalanceInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceCapabilitiesInterface
+include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceCellularInterface
+include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceContactCapabilitiesInterface
+include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceContactInfoInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceContactsInterface
+include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceLocationInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfacePresenceInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceRequestsInterface
+include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceServicePointInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceSimplePresenceInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionManager
 include/telepathy-1.0/TelepathyQt4/ConnectionManagerInterface
@@ -84,6 +92,7 @@ include/telepathy-1.0/TelepathyQt4/PendingChannelRequest
 include/telepathy-1.0/TelepathyQt4/PendingComposite
 include/telepathy-1.0/TelepathyQt4/PendingConnection
 include/telepathy-1.0/TelepathyQt4/PendingContactAttributes
+include/telepathy-1.0/TelepathyQt4/PendingContactInfo
 include/telepathy-1.0/TelepathyQt4/PendingContacts
 include/telepathy-1.0/TelepathyQt4/PendingFailure
 include/telepathy-1.0/TelepathyQt4/PendingHandles
@@ -128,6 +137,7 @@ include/telepathy-1.0/TelepathyQt4/_gen/types.h
 include/telepathy-1.0/TelepathyQt4/abstract-client.h
 include/telepathy-1.0/TelepathyQt4/abstract-interface.h
 include/telepathy-1.0/TelepathyQt4/account-manager.h
+include/telepathy-1.0/TelepathyQt4/account-set.h
 include/telepathy-1.0/TelepathyQt4/account.h
 include/telepathy-1.0/TelepathyQt4/capabilities-base.h
 include/telepathy-1.0/TelepathyQt4/channel-dispatch-operation.h
@@ -166,6 +176,7 @@ include/telepathy-1.0/TelepathyQt4/pending-channel-request.h
 include/telepathy-1.0/TelepathyQt4/pending-channel.h
 include/telepathy-1.0/TelepathyQt4/pending-connection.h
 include/telepathy-1.0/TelepathyQt4/pending-contact-attributes.h
+include/telepathy-1.0/TelepathyQt4/pending-contact-info.h
 include/telepathy-1.0/TelepathyQt4/pending-contacts.h
 include/telepathy-1.0/TelepathyQt4/pending-handles.h
 include/telepathy-1.0/TelepathyQt4/pending-operation.h
@@ -186,11 +197,11 @@ include/telepathy-1.0/TelepathyQt4/types.h
 lib/libtelepathy-qt4-farsight.a
 lib/libtelepathy-qt4-farsight.la
 lib/libtelepathy-qt4-farsight.so
-lib/libtelepathy-qt4-farsight.so.4
+lib/libtelepathy-qt4-farsight.so.8
 lib/libtelepathy-qt4.a
 lib/libtelepathy-qt4.la
 lib/libtelepathy-qt4.so
-lib/libtelepathy-qt4.so.4
+lib/libtelepathy-qt4.so.8
 libdata/pkgconfig/TelepathyQt4.pc
 libdata/pkgconfig/TelepathyQt4Farsight.pc
 @dirrm include/telepathy-1.0/TelepathyQt4/_gen

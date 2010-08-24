@@ -5,12 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	telepathy-qt4
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.7
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	High-level Qt 4 binding for Telepathy
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	telepathy-farsight.0:${PORTSDIR}/net-im/telepathy-farsight \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
@@ -26,7 +29,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO html
+PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README html
 
 PORTEXAMPLES=	Makefile accounts call extensions \
 		file-transfer protocols roster
@@ -38,7 +41,7 @@ BROKEN=		does not build on 6.X
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -E -e 's:(^pkgconfigdir =).*:\1 ${PREFIX}/libdata/pkgconfig:' \
+	${REINPLACE_CMD} -E -e 's:(^pkgconfigdir =).*:\1 ${PREFIX}/libdata/pkgconfig:' \
 		${WRKSRC}/TelepathyQt4/Makefile.in
 
 pre-install:
@@ -54,6 +57,8 @@ post-install:
 .endfor
 .endif
 .ifndef(NOPORTEXAMPLES)
+	${RM} -r ${WRKSRC}/examples/*/.deps
+	${RM} -r ${WRKSRC}/examples/*/.libs
 	${MKDIR} ${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} ${f} ${EXAMPLESDIR}
