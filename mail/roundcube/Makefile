@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	roundcube
-DISTVERSION=	0.4-beta
+DISTVERSION=	0.4
 PORTEPOCH=	1
 CATEGORIES?=	mail www
-MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail-beta/${DISTVERSION}
+MASTER_SITES=	SF/${PORTNAME}mail/${PORTNAME}mail/${DISTVERSION}
 DISTNAME=	${PORTNAME}mail-${DISTVERSION}
 
 MAINTAINER?=	ale@FreeBSD.org
@@ -18,7 +18,7 @@ COMMENT=	Fully skinnable XHTML/CSS webmail written in PHP
 NO_BUILD=	yes
 CONFLICTS=	ja-roundcube-[0-9]*
 
-RCUBECOMP=	SQL bin config index.php logs plugins program robots.txt skins temp
+RCUBECOMP=	SQL config index.php logs plugins program robots.txt skins temp
 PORTDOCS=	CHANGELOG INSTALL LICENSE README UPGRADING
 
 SCRIPTS_ENV=	SHAREOWN=${SHAREOWN} SHAREGRP=${SHAREGRP} \
@@ -93,7 +93,6 @@ post-extract:
 .endif
 
 post-patch:
-	@${RM} ${WRKSRC}/bin/*.sh
 	@${FIND} ${WRKSRC} -name \*.orig -type f -delete
 .if defined(WITH_AUTOCOMP)
 	@${REINPLACE_CMD} "s/ autocomplete=\"off\"//g" \
