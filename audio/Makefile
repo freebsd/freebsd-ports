@@ -254,6 +254,7 @@
     SUBDIR += gnump3d
     SUBDIR += gnupod
     SUBDIR += gnustep-cdplayer
+    SUBDIR += gogglesmm
     SUBDIR += gogo
     SUBDIR += gogo-petit
     SUBDIR += goobox
