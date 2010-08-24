@@ -7,6 +7,7 @@ share/locale/ca/LC_MESSAGES/xfe.mo
 share/locale/cs/LC_MESSAGES/xfe.mo
 share/locale/da/LC_MESSAGES/xfe.mo
 share/locale/de/LC_MESSAGES/xfe.mo
+share/locale/el/LC_MESSAGES/xfe.mo
 share/locale/es/LC_MESSAGES/xfe.mo
 share/locale/es_AR/LC_MESSAGES/xfe.mo
 share/locale/fr/LC_MESSAGES/xfe.mo
@@ -26,12 +27,24 @@ share/pixmaps/xfi.png
 share/pixmaps/xfp.png
 share/pixmaps/xfv.png
 share/pixmaps/xfw.png
+share/pixmaps/xfe.xpm
+share/pixmaps/xfv.xpm
+share/pixmaps/xfi.xpm
+share/pixmaps/xfp.xpm
+share/pixmaps/xfw.xpm
+share/applications/xfe.desktop
+share/applications/xfw.desktop
+share/applications/xfi.desktop
+share/applications/xfv.desktop
+share/applications/xfp.desktop
 %%DATADIR%%/icons/blue-theme/a_16x16.png
 %%DATADIR%%/icons/blue-theme/a_32x32.png
 %%DATADIR%%/icons/blue-theme/ace_16x16.png
 %%DATADIR%%/icons/blue-theme/ace_32x32.png
 %%DATADIR%%/icons/blue-theme/archadd.png
 %%DATADIR%%/icons/blue-theme/archext.png
+%%DATADIR%%/icons/blue-theme/arj_16x16.png
+%%DATADIR%%/icons/blue-theme/arj_32x32.png
 %%DATADIR%%/icons/blue-theme/attrib.png
 %%DATADIR%%/icons/blue-theme/bak_16x16.png
 %%DATADIR%%/icons/blue-theme/bak_32x32.png
@@ -111,6 +124,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/blue-theme/filedelete_perm.png
 %%DATADIR%%/icons/blue-theme/filedialog.png
 %%DATADIR%%/icons/blue-theme/fileopen.png
+%%DATADIR%%/icons/blue-theme/filerestore.png
 %%DATADIR%%/icons/blue-theme/filter.png
 %%DATADIR%%/icons/blue-theme/find_again.png
 %%DATADIR%%/icons/blue-theme/fliplr.png
@@ -121,6 +135,8 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/blue-theme/gif_32x32.png
 %%DATADIR%%/icons/blue-theme/gotobig.png
 %%DATADIR%%/icons/blue-theme/gotoline.png
+%%DATADIR%%/icons/blue-theme/graybutton.png
+%%DATADIR%%/icons/blue-theme/greenbutton.png
 %%DATADIR%%/icons/blue-theme/gz_16x16.png
 %%DATADIR%%/icons/blue-theme/gz_32x32.png
 %%DATADIR%%/icons/blue-theme/h_16x16.png
@@ -143,6 +159,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/blue-theme/java_32x32.png
 %%DATADIR%%/icons/blue-theme/jpeg_16x16.png
 %%DATADIR%%/icons/blue-theme/jpeg_32x32.png
+%%DATADIR%%/icons/blue-theme/keybindings.png
 %%DATADIR%%/icons/blue-theme/link_big.png
 %%DATADIR%%/icons/blue-theme/location.png
 %%DATADIR%%/icons/blue-theme/lowercase.png
@@ -166,6 +183,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/blue-theme/minifolderlocked.png
 %%DATADIR%%/icons/blue-theme/minifolderopen.png
 %%DATADIR%%/icons/blue-theme/minifolderup.png
+%%DATADIR%%/icons/blue-theme/minikeybindings.png
 %%DATADIR%%/icons/blue-theme/minilink.png
 %%DATADIR%%/icons/blue-theme/minipipe.png
 %%DATADIR%%/icons/blue-theme/minishell.png
@@ -219,6 +237,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/blue-theme/reload.png
 %%DATADIR%%/icons/blue-theme/renameit.png
 %%DATADIR%%/icons/blue-theme/replace.png
+%%DATADIR%%/icons/blue-theme/restore_big.png
 %%DATADIR%%/icons/blue-theme/revert.png
 %%DATADIR%%/icons/blue-theme/rotateleft.png
 %%DATADIR%%/icons/blue-theme/rotateright.png
@@ -326,6 +345,8 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/brown-theme/ace_32x32.png
 %%DATADIR%%/icons/brown-theme/archadd.png
 %%DATADIR%%/icons/brown-theme/archext.png
+%%DATADIR%%/icons/brown-theme/arj_16x16.png
+%%DATADIR%%/icons/brown-theme/arj_32x32.png
 %%DATADIR%%/icons/brown-theme/attrib.png
 %%DATADIR%%/icons/brown-theme/bak_16x16.png
 %%DATADIR%%/icons/brown-theme/bak_32x32.png
@@ -405,6 +426,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/brown-theme/filedelete_perm.png
 %%DATADIR%%/icons/brown-theme/filedialog.png
 %%DATADIR%%/icons/brown-theme/fileopen.png
+%%DATADIR%%/icons/brown-theme/filerestore.png
 %%DATADIR%%/icons/brown-theme/filter.png
 %%DATADIR%%/icons/brown-theme/find_again.png
 %%DATADIR%%/icons/brown-theme/fliplr.png
@@ -415,6 +437,8 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/brown-theme/gif_32x32.png
 %%DATADIR%%/icons/brown-theme/gotobig.png
 %%DATADIR%%/icons/brown-theme/gotoline.png
+%%DATADIR%%/icons/brown-theme/graybutton.png
+%%DATADIR%%/icons/brown-theme/greenbutton.png
 %%DATADIR%%/icons/brown-theme/gz_16x16.png
 %%DATADIR%%/icons/brown-theme/gz_32x32.png
 %%DATADIR%%/icons/brown-theme/h_16x16.png
@@ -437,6 +461,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/brown-theme/java_32x32.png
 %%DATADIR%%/icons/brown-theme/jpeg_16x16.png
 %%DATADIR%%/icons/brown-theme/jpeg_32x32.png
+%%DATADIR%%/icons/brown-theme/keybindings.png
 %%DATADIR%%/icons/brown-theme/link_big.png
 %%DATADIR%%/icons/brown-theme/location.png
 %%DATADIR%%/icons/brown-theme/lowercase.png
@@ -460,6 +485,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/brown-theme/minifolderlocked.png
 %%DATADIR%%/icons/brown-theme/minifolderopen.png
 %%DATADIR%%/icons/brown-theme/minifolderup.png
+%%DATADIR%%/icons/brown-theme/minikeybindings.png
 %%DATADIR%%/icons/brown-theme/minilink.png
 %%DATADIR%%/icons/brown-theme/minipipe.png
 %%DATADIR%%/icons/brown-theme/minishell.png
@@ -513,6 +539,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/brown-theme/reload.png
 %%DATADIR%%/icons/brown-theme/renameit.png
 %%DATADIR%%/icons/brown-theme/replace.png
+%%DATADIR%%/icons/brown-theme/restore_big.png
 %%DATADIR%%/icons/brown-theme/revert.png
 %%DATADIR%%/icons/brown-theme/rotateleft.png
 %%DATADIR%%/icons/brown-theme/rotateright.png
@@ -620,6 +647,8 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/gnome-theme/ace_32x32.png
 %%DATADIR%%/icons/gnome-theme/archadd.png
 %%DATADIR%%/icons/gnome-theme/archext.png
+%%DATADIR%%/icons/gnome-theme/arj_16x16.png
+%%DATADIR%%/icons/gnome-theme/arj_32x32.png
 %%DATADIR%%/icons/gnome-theme/attrib.png
 %%DATADIR%%/icons/gnome-theme/bak_16x16.png
 %%DATADIR%%/icons/gnome-theme/bak_32x32.png
@@ -699,6 +728,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/gnome-theme/filedelete_perm.png
 %%DATADIR%%/icons/gnome-theme/filedialog.png
 %%DATADIR%%/icons/gnome-theme/fileopen.png
+%%DATADIR%%/icons/gnome-theme/filerestore.png
 %%DATADIR%%/icons/gnome-theme/filter.png
 %%DATADIR%%/icons/gnome-theme/find_again.png
 %%DATADIR%%/icons/gnome-theme/fliplr.png
@@ -709,6 +739,8 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/gnome-theme/gif_32x32.png
 %%DATADIR%%/icons/gnome-theme/gotobig.png
 %%DATADIR%%/icons/gnome-theme/gotoline.png
+%%DATADIR%%/icons/gnome-theme/graybutton.png
+%%DATADIR%%/icons/gnome-theme/greenbutton.png
 %%DATADIR%%/icons/gnome-theme/gz_16x16.png
 %%DATADIR%%/icons/gnome-theme/gz_32x32.png
 %%DATADIR%%/icons/gnome-theme/h_16x16.png
@@ -731,6 +763,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/gnome-theme/java_32x32.png
 %%DATADIR%%/icons/gnome-theme/jpeg_16x16.png
 %%DATADIR%%/icons/gnome-theme/jpeg_32x32.png
+%%DATADIR%%/icons/gnome-theme/keybindings.png
 %%DATADIR%%/icons/gnome-theme/link_big.png
 %%DATADIR%%/icons/gnome-theme/location.png
 %%DATADIR%%/icons/gnome-theme/lowercase.png
@@ -754,6 +787,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/gnome-theme/minifolderlocked.png
 %%DATADIR%%/icons/gnome-theme/minifolderopen.png
 %%DATADIR%%/icons/gnome-theme/minifolderup.png
+%%DATADIR%%/icons/gnome-theme/minikeybindings.png
 %%DATADIR%%/icons/gnome-theme/minilink.png
 %%DATADIR%%/icons/gnome-theme/minipipe.png
 %%DATADIR%%/icons/gnome-theme/minishell.png
@@ -807,6 +841,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/gnome-theme/reload.png
 %%DATADIR%%/icons/gnome-theme/renameit.png
 %%DATADIR%%/icons/gnome-theme/replace.png
+%%DATADIR%%/icons/gnome-theme/restore_big.png
 %%DATADIR%%/icons/gnome-theme/revert.png
 %%DATADIR%%/icons/gnome-theme/rotateleft.png
 %%DATADIR%%/icons/gnome-theme/rotateright.png
@@ -914,6 +949,8 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/gnomeblue-theme/ace_32x32.png
 %%DATADIR%%/icons/gnomeblue-theme/archadd.png
 %%DATADIR%%/icons/gnomeblue-theme/archext.png
+%%DATADIR%%/icons/gnomeblue-theme/arj_16x16.png
+%%DATADIR%%/icons/gnomeblue-theme/arj_32x32.png
 %%DATADIR%%/icons/gnomeblue-theme/attrib.png
 %%DATADIR%%/icons/gnomeblue-theme/bak_16x16.png
 %%DATADIR%%/icons/gnomeblue-theme/bak_32x32.png
@@ -993,6 +1030,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/gnomeblue-theme/filedelete_perm.png
 %%DATADIR%%/icons/gnomeblue-theme/filedialog.png
 %%DATADIR%%/icons/gnomeblue-theme/fileopen.png
+%%DATADIR%%/icons/gnomeblue-theme/filerestore.png
 %%DATADIR%%/icons/gnomeblue-theme/filter.png
 %%DATADIR%%/icons/gnomeblue-theme/find_again.png
 %%DATADIR%%/icons/gnomeblue-theme/fliplr.png
@@ -1003,6 +1041,8 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/gnomeblue-theme/gif_32x32.png
 %%DATADIR%%/icons/gnomeblue-theme/gotobig.png
 %%DATADIR%%/icons/gnomeblue-theme/gotoline.png
+%%DATADIR%%/icons/gnomeblue-theme/graybutton.png
+%%DATADIR%%/icons/gnomeblue-theme/greenbutton.png
 %%DATADIR%%/icons/gnomeblue-theme/gz_16x16.png
 %%DATADIR%%/icons/gnomeblue-theme/gz_32x32.png
 %%DATADIR%%/icons/gnomeblue-theme/h_16x16.png
@@ -1025,6 +1065,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/gnomeblue-theme/java_32x32.png
 %%DATADIR%%/icons/gnomeblue-theme/jpeg_16x16.png
 %%DATADIR%%/icons/gnomeblue-theme/jpeg_32x32.png
+%%DATADIR%%/icons/gnomeblue-theme/keybindings.png
 %%DATADIR%%/icons/gnomeblue-theme/link_big.png
 %%DATADIR%%/icons/gnomeblue-theme/location.png
 %%DATADIR%%/icons/gnomeblue-theme/lowercase.png
@@ -1048,6 +1089,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/gnomeblue-theme/minifolderlocked.png
 %%DATADIR%%/icons/gnomeblue-theme/minifolderopen.png
 %%DATADIR%%/icons/gnomeblue-theme/minifolderup.png
+%%DATADIR%%/icons/gnomeblue-theme/minikeybindings.png
 %%DATADIR%%/icons/gnomeblue-theme/minilink.png
 %%DATADIR%%/icons/gnomeblue-theme/minipipe.png
 %%DATADIR%%/icons/gnomeblue-theme/minishell.png
@@ -1101,6 +1143,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/gnomeblue-theme/reload.png
 %%DATADIR%%/icons/gnomeblue-theme/renameit.png
 %%DATADIR%%/icons/gnomeblue-theme/replace.png
+%%DATADIR%%/icons/gnomeblue-theme/restore_big.png
 %%DATADIR%%/icons/gnomeblue-theme/revert.png
 %%DATADIR%%/icons/gnomeblue-theme/rotateleft.png
 %%DATADIR%%/icons/gnomeblue-theme/rotateright.png
@@ -1208,6 +1251,8 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/kde-theme/ace_32x32.png
 %%DATADIR%%/icons/kde-theme/archadd.png
 %%DATADIR%%/icons/kde-theme/archext.png
+%%DATADIR%%/icons/kde-theme/arj_16x16.png
+%%DATADIR%%/icons/kde-theme/arj_32x32.png
 %%DATADIR%%/icons/kde-theme/attrib.png
 %%DATADIR%%/icons/kde-theme/bak_16x16.png
 %%DATADIR%%/icons/kde-theme/bak_32x32.png
@@ -1287,6 +1332,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/kde-theme/filedelete_perm.png
 %%DATADIR%%/icons/kde-theme/filedialog.png
 %%DATADIR%%/icons/kde-theme/fileopen.png
+%%DATADIR%%/icons/kde-theme/filerestore.png
 %%DATADIR%%/icons/kde-theme/filter.png
 %%DATADIR%%/icons/kde-theme/find_again.png
 %%DATADIR%%/icons/kde-theme/fliplr.png
@@ -1297,6 +1343,8 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/kde-theme/gif_32x32.png
 %%DATADIR%%/icons/kde-theme/gotobig.png
 %%DATADIR%%/icons/kde-theme/gotoline.png
+%%DATADIR%%/icons/kde-theme/graybutton.png
+%%DATADIR%%/icons/kde-theme/greenbutton.png
 %%DATADIR%%/icons/kde-theme/gz_16x16.png
 %%DATADIR%%/icons/kde-theme/gz_32x32.png
 %%DATADIR%%/icons/kde-theme/h_16x16.png
@@ -1319,6 +1367,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/kde-theme/java_32x32.png
 %%DATADIR%%/icons/kde-theme/jpeg_16x16.png
 %%DATADIR%%/icons/kde-theme/jpeg_32x32.png
+%%DATADIR%%/icons/kde-theme/keybindings.png
 %%DATADIR%%/icons/kde-theme/link_big.png
 %%DATADIR%%/icons/kde-theme/location.png
 %%DATADIR%%/icons/kde-theme/lowercase.png
@@ -1342,6 +1391,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/kde-theme/minifolderlocked.png
 %%DATADIR%%/icons/kde-theme/minifolderopen.png
 %%DATADIR%%/icons/kde-theme/minifolderup.png
+%%DATADIR%%/icons/kde-theme/minikeybindings.png
 %%DATADIR%%/icons/kde-theme/minilink.png
 %%DATADIR%%/icons/kde-theme/minipipe.png
 %%DATADIR%%/icons/kde-theme/minishell.png
@@ -1395,6 +1445,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/kde-theme/reload.png
 %%DATADIR%%/icons/kde-theme/renameit.png
 %%DATADIR%%/icons/kde-theme/replace.png
+%%DATADIR%%/icons/kde-theme/restore_big.png
 %%DATADIR%%/icons/kde-theme/revert.png
 %%DATADIR%%/icons/kde-theme/rotateleft.png
 %%DATADIR%%/icons/kde-theme/rotateright.png
@@ -1502,6 +1553,8 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/tango-theme/ace_32x32.png
 %%DATADIR%%/icons/tango-theme/archadd.png
 %%DATADIR%%/icons/tango-theme/archext.png
+%%DATADIR%%/icons/tango-theme/arj_16x16.png
+%%DATADIR%%/icons/tango-theme/arj_32x32.png
 %%DATADIR%%/icons/tango-theme/attrib.png
 %%DATADIR%%/icons/tango-theme/bak_16x16.png
 %%DATADIR%%/icons/tango-theme/bak_32x32.png
@@ -1581,6 +1634,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/tango-theme/filedelete_perm.png
 %%DATADIR%%/icons/tango-theme/filedialog.png
 %%DATADIR%%/icons/tango-theme/fileopen.png
+%%DATADIR%%/icons/tango-theme/filerestore.png
 %%DATADIR%%/icons/tango-theme/filter.png
 %%DATADIR%%/icons/tango-theme/find_again.png
 %%DATADIR%%/icons/tango-theme/fliplr.png
@@ -1591,6 +1645,8 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/tango-theme/gif_32x32.png
 %%DATADIR%%/icons/tango-theme/gotobig.png
 %%DATADIR%%/icons/tango-theme/gotoline.png
+%%DATADIR%%/icons/tango-theme/graybutton.png
+%%DATADIR%%/icons/tango-theme/greenbutton.png
 %%DATADIR%%/icons/tango-theme/gz_16x16.png
 %%DATADIR%%/icons/tango-theme/gz_32x32.png
 %%DATADIR%%/icons/tango-theme/h_16x16.png
@@ -1613,6 +1669,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/tango-theme/java_32x32.png
 %%DATADIR%%/icons/tango-theme/jpeg_16x16.png
 %%DATADIR%%/icons/tango-theme/jpeg_32x32.png
+%%DATADIR%%/icons/tango-theme/keybindings.png
 %%DATADIR%%/icons/tango-theme/link_big.png
 %%DATADIR%%/icons/tango-theme/location.png
 %%DATADIR%%/icons/tango-theme/lowercase.png
@@ -1636,6 +1693,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/tango-theme/minifolderlocked.png
 %%DATADIR%%/icons/tango-theme/minifolderopen.png
 %%DATADIR%%/icons/tango-theme/minifolderup.png
+%%DATADIR%%/icons/tango-theme/minikeybindings.png
 %%DATADIR%%/icons/tango-theme/minilink.png
 %%DATADIR%%/icons/tango-theme/minipipe.png
 %%DATADIR%%/icons/tango-theme/minishell.png
@@ -1689,6 +1747,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/tango-theme/reload.png
 %%DATADIR%%/icons/tango-theme/renameit.png
 %%DATADIR%%/icons/tango-theme/replace.png
+%%DATADIR%%/icons/tango-theme/restore_big.png
 %%DATADIR%%/icons/tango-theme/revert.png
 %%DATADIR%%/icons/tango-theme/rotateleft.png
 %%DATADIR%%/icons/tango-theme/rotateright.png
@@ -1796,6 +1855,8 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/windows-theme/ace_32x32.png
 %%DATADIR%%/icons/windows-theme/archadd.png
 %%DATADIR%%/icons/windows-theme/archext.png
+%%DATADIR%%/icons/windows-theme/arj_16x16.png
+%%DATADIR%%/icons/windows-theme/arj_32x32.png
 %%DATADIR%%/icons/windows-theme/attrib.png
 %%DATADIR%%/icons/windows-theme/bak_16x16.png
 %%DATADIR%%/icons/windows-theme/bak_32x32.png
@@ -1875,6 +1936,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/windows-theme/filedelete_perm.png
 %%DATADIR%%/icons/windows-theme/filedialog.png
 %%DATADIR%%/icons/windows-theme/fileopen.png
+%%DATADIR%%/icons/windows-theme/filerestore.png
 %%DATADIR%%/icons/windows-theme/filter.png
 %%DATADIR%%/icons/windows-theme/find_again.png
 %%DATADIR%%/icons/windows-theme/fliplr.png
@@ -1885,6 +1947,8 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/windows-theme/gif_32x32.png
 %%DATADIR%%/icons/windows-theme/gotobig.png
 %%DATADIR%%/icons/windows-theme/gotoline.png
+%%DATADIR%%/icons/windows-theme/graybutton.png
+%%DATADIR%%/icons/windows-theme/greenbutton.png
 %%DATADIR%%/icons/windows-theme/gz_16x16.png
 %%DATADIR%%/icons/windows-theme/gz_32x32.png
 %%DATADIR%%/icons/windows-theme/h_16x16.png
@@ -1907,6 +1971,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/windows-theme/java_32x32.png
 %%DATADIR%%/icons/windows-theme/jpeg_16x16.png
 %%DATADIR%%/icons/windows-theme/jpeg_32x32.png
+%%DATADIR%%/icons/windows-theme/keybindings.png
 %%DATADIR%%/icons/windows-theme/link_big.png
 %%DATADIR%%/icons/windows-theme/location.png
 %%DATADIR%%/icons/windows-theme/lowercase.png
@@ -1930,6 +1995,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/windows-theme/minifolderlocked.png
 %%DATADIR%%/icons/windows-theme/minifolderopen.png
 %%DATADIR%%/icons/windows-theme/minifolderup.png
+%%DATADIR%%/icons/windows-theme/minikeybindings.png
 %%DATADIR%%/icons/windows-theme/minilink.png
 %%DATADIR%%/icons/windows-theme/minipipe.png
 %%DATADIR%%/icons/windows-theme/minishell.png
@@ -1983,6 +2049,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/windows-theme/reload.png
 %%DATADIR%%/icons/windows-theme/renameit.png
 %%DATADIR%%/icons/windows-theme/replace.png
+%%DATADIR%%/icons/windows-theme/restore_big.png
 %%DATADIR%%/icons/windows-theme/revert.png
 %%DATADIR%%/icons/windows-theme/rotateleft.png
 %%DATADIR%%/icons/windows-theme/rotateright.png
@@ -2090,6 +2157,8 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/xfce-theme/ace_32x32.png
 %%DATADIR%%/icons/xfce-theme/archadd.png
 %%DATADIR%%/icons/xfce-theme/archext.png
+%%DATADIR%%/icons/xfce-theme/arj_16x16.png
+%%DATADIR%%/icons/xfce-theme/arj_32x32.png
 %%DATADIR%%/icons/xfce-theme/attrib.png
 %%DATADIR%%/icons/xfce-theme/bak_16x16.png
 %%DATADIR%%/icons/xfce-theme/bak_32x32.png
@@ -2169,6 +2238,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/xfce-theme/filedelete_perm.png
 %%DATADIR%%/icons/xfce-theme/filedialog.png
 %%DATADIR%%/icons/xfce-theme/fileopen.png
+%%DATADIR%%/icons/xfce-theme/filerestore.png
 %%DATADIR%%/icons/xfce-theme/filter.png
 %%DATADIR%%/icons/xfce-theme/find_again.png
 %%DATADIR%%/icons/xfce-theme/fliplr.png
@@ -2179,6 +2249,8 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/xfce-theme/gif_32x32.png
 %%DATADIR%%/icons/xfce-theme/gotobig.png
 %%DATADIR%%/icons/xfce-theme/gotoline.png
+%%DATADIR%%/icons/xfce-theme/graybutton.png
+%%DATADIR%%/icons/xfce-theme/greenbutton.png
 %%DATADIR%%/icons/xfce-theme/gz_16x16.png
 %%DATADIR%%/icons/xfce-theme/gz_32x32.png
 %%DATADIR%%/icons/xfce-theme/h_16x16.png
@@ -2201,6 +2273,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/xfce-theme/java_32x32.png
 %%DATADIR%%/icons/xfce-theme/jpeg_16x16.png
 %%DATADIR%%/icons/xfce-theme/jpeg_32x32.png
+%%DATADIR%%/icons/xfce-theme/keybindings.png
 %%DATADIR%%/icons/xfce-theme/link_big.png
 %%DATADIR%%/icons/xfce-theme/location.png
 %%DATADIR%%/icons/xfce-theme/lowercase.png
@@ -2224,6 +2297,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/xfce-theme/minifolderlocked.png
 %%DATADIR%%/icons/xfce-theme/minifolderopen.png
 %%DATADIR%%/icons/xfce-theme/minifolderup.png
+%%DATADIR%%/icons/xfce-theme/minikeybindings.png
 %%DATADIR%%/icons/xfce-theme/minilink.png
 %%DATADIR%%/icons/xfce-theme/minipipe.png
 %%DATADIR%%/icons/xfce-theme/minishell.png
@@ -2277,6 +2351,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/xfce-theme/reload.png
 %%DATADIR%%/icons/xfce-theme/renameit.png
 %%DATADIR%%/icons/xfce-theme/replace.png
+%%DATADIR%%/icons/xfce-theme/restore_big.png
 %%DATADIR%%/icons/xfce-theme/revert.png
 %%DATADIR%%/icons/xfce-theme/rotateleft.png
 %%DATADIR%%/icons/xfce-theme/rotateright.png
@@ -2384,6 +2459,8 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/xfe-theme/ace_32x32.png
 %%DATADIR%%/icons/xfe-theme/archadd.png
 %%DATADIR%%/icons/xfe-theme/archext.png
+%%DATADIR%%/icons/xfe-theme/arj_16x16.png
+%%DATADIR%%/icons/xfe-theme/arj_32x32.png
 %%DATADIR%%/icons/xfe-theme/attrib.png
 %%DATADIR%%/icons/xfe-theme/bak_16x16.png
 %%DATADIR%%/icons/xfe-theme/bak_32x32.png
@@ -2463,6 +2540,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/xfe-theme/filedelete_perm.png
 %%DATADIR%%/icons/xfe-theme/filedialog.png
 %%DATADIR%%/icons/xfe-theme/fileopen.png
+%%DATADIR%%/icons/xfe-theme/filerestore.png
 %%DATADIR%%/icons/xfe-theme/filter.png
 %%DATADIR%%/icons/xfe-theme/find_again.png
 %%DATADIR%%/icons/xfe-theme/fliplr.png
@@ -2473,6 +2551,8 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/xfe-theme/gif_32x32.png
 %%DATADIR%%/icons/xfe-theme/gotobig.png
 %%DATADIR%%/icons/xfe-theme/gotoline.png
+%%DATADIR%%/icons/xfe-theme/graybutton.png
+%%DATADIR%%/icons/xfe-theme/greenbutton.png
 %%DATADIR%%/icons/xfe-theme/gz_16x16.png
 %%DATADIR%%/icons/xfe-theme/gz_32x32.png
 %%DATADIR%%/icons/xfe-theme/h_16x16.png
@@ -2495,6 +2575,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/xfe-theme/java_32x32.png
 %%DATADIR%%/icons/xfe-theme/jpeg_16x16.png
 %%DATADIR%%/icons/xfe-theme/jpeg_32x32.png
+%%DATADIR%%/icons/xfe-theme/keybindings.png
 %%DATADIR%%/icons/xfe-theme/link_big.png
 %%DATADIR%%/icons/xfe-theme/location.png
 %%DATADIR%%/icons/xfe-theme/lowercase.png
@@ -2518,6 +2599,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/xfe-theme/minifolderlocked.png
 %%DATADIR%%/icons/xfe-theme/minifolderopen.png
 %%DATADIR%%/icons/xfe-theme/minifolderup.png
+%%DATADIR%%/icons/xfe-theme/minikeybindings.png
 %%DATADIR%%/icons/xfe-theme/minilink.png
 %%DATADIR%%/icons/xfe-theme/minipipe.png
 %%DATADIR%%/icons/xfe-theme/minishell.png
@@ -2571,6 +2653,7 @@ share/pixmaps/xfw.png
 %%DATADIR%%/icons/xfe-theme/reload.png
 %%DATADIR%%/icons/xfe-theme/renameit.png
 %%DATADIR%%/icons/xfe-theme/replace.png
+%%DATADIR%%/icons/xfe-theme/restore_big.png
 %%DATADIR%%/icons/xfe-theme/revert.png
 %%DATADIR%%/icons/xfe-theme/rotateleft.png
 %%DATADIR%%/icons/xfe-theme/rotateright.png
