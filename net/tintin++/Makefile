@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tintin++
-PORTVERSION=	2.00.1
+PORTVERSION=	2.00.3
 CATEGORIES+=	net games
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	SF/tintin/TinTin%2B%2B%20Source%20Code/${PORTVERSION}/
 DISTNAME=	tintin-${PORTVERSION}
 
 MAINTAINER=	sunpoet@sunpoet.net
@@ -18,16 +18,16 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 CONFIGURE_ARGS+=--includedir=${LOCALBASE}/include --libdir=${LOCALBASE}/lib \
 		--prefix=${PREFIX}
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
+		ac_cv_file__dev_ptmx=no
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/tt++
-PORTDOCS=	${DOCS:T}
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/tt/src
 
 DOCS=		CREDITS FAQ README SCRIPTS TODO \
 		docs/chat_protocol.txt docs/tintin19.txt
-PROJECTHOST=	tintin-mud-client
+PLIST_FILES=	bin/tt++
+PORTDOCS=	${DOCS:T}
 
 .include <bsd.port.pre.mk>
 
