@@ -23,6 +23,8 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_RC_SUBR=	rabbitmq
 
+MANUAL_PACKAGE_BUILD=	erlang beam.smp hangs on pointyhat
+
 RABBITMQ_GID=	135
 RABBITMQ_GROUP=	rabbitmq
 RABBITMQ_UID=	135
