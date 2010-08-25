@@ -9,5 +9,6 @@
 # Edit this file to suit your needs (for example, setting your OpenERP
 # web client home directory)
 
+export PYTHON_EGG_CACHE="/tmp"
 cd /usr/local/openerp-web
-./openerp-web.py $@ & > /dev/null
+./openerp-server.py $@ >> /var/log/openerp-web.log 2> /var/log/openerp-web.err &

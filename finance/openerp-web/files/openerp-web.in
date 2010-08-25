@@ -48,7 +48,7 @@ openerpweb_logdir=${openerpweb_logdir:-"/var/log/openerp-web"}
 openerpweb_flags=${openerpweb_flags:-"--config=${openerpweb_config}"}
 
 start_precmd="${name}_prestart"
-stop_cmd="${name}_poststop"
+stop_cmd="${name}_stop"
 
 openerpweb_prestart()
 {
@@ -73,7 +73,14 @@ openerpweb_stop()
         echo "Stopping ${name}."
         kill -15 `cat ${openerpweb_pidfile}`
     else
-        echo "${name} not running? (pidfile not found)"
+        openerpweb_pid=`pgrep -f "openerp-web.py ${openerpweb_flags}"`
+        if [ ${openerpweb_pid} ]
+        then
+            echo "Stopping ${name}."
+             kill -15 ${openerpweb_pid}
+        else
+            echo "${name} not running? (pidfile not found)"
+        fi
     fi
 }
 
