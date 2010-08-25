@@ -919,6 +919,7 @@
     SUBDIR += vegastrike
     SUBDIR += vegastrike-data
     SUBDIR += violetland
+    SUBDIR += viruskiller
     SUBDIR += vitetris
     SUBDIR += volleyball
     SUBDIR += vor
