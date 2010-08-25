@@ -7,7 +7,7 @@
 
 PORTNAME=	php5
 PORTVERSION=	5.3.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -33,6 +33,7 @@ CONFIGURE_ARGS=	\
 		--enable-libxml \
 		--with-libxml-dir=${LOCALBASE} \
 		--with-pcre-regex=${LOCALBASE} \
+		--with-zlib-dir=/usr \
 		--program-prefix=""
 
 USE_GNOME=	libxml2
@@ -66,8 +67,7 @@ PLIST_SUB+=	SUHOSIN="@comment "
 .endif
 
 .if defined(WITH_MAILHEAD)
-#PATCHFILES+=	php-${PORTVERSION}-mail-header.patch:mail
-PATCHFILES+=	php-5.3.2-mail-header.patch:mail
+PATCHFILES+=	php-${PORTVERSION}-mail-header.patch:mail
 PATCH_SITES+=	http://choon.net/opensource/php/:mail
 .endif
 
@@ -140,7 +140,8 @@ CONFIGURE_ARGS+=--with-zend-vm=GOTO
 CONFIGURE_ENV+=	ac_cv_pthreads_lib="" \
 		ac_cv_pthreads_cflags="" \
 		pthreads_working="yes" \
-		lt_cv_path_SED="sed"
+		lt_cv_path_SED="sed" \
+		PHP_MYSQLND_ENABLED="yes"
 
 .if defined(WITH_LINKTHR)
 CONFIGURE_ENV+=	LIBS="${LIBS} ${PTHREAD_LIBS}"

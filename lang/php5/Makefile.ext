@@ -179,17 +179,11 @@ CONFIGURE_ARGS+=--with-mssql=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "mysql"
-CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} \
-		--with-zlib-dir=/usr
-
-USE_MYSQL=	yes
+OPTIONS=	MYSQLND "Use MySQL Native Driver" off
 .endif
 
 .if ${PHP_MODNAME} == "mysqli"
-CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
-
-USE_MYSQL=	yes
-BROKEN_WITH_MYSQL=	323 40
+OPTIONS=	MYSQLND "Use MySQL Native Driver" off
 .endif
 
 .if ${PHP_MODNAME} == "odbc"
@@ -232,10 +226,7 @@ USE_FIREBIRD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "pdo_mysql"
-CONFIGURE_ARGS+=--with-pdo-mysql=${LOCALBASE} \
-		--with-zlib-dir=/usr
-
-USE_MYSQL=	yes
+OPTIONS=	MYSQLND "Use MySQL Native Driver" off
 
 USE_PHP=	pdo
 USE_PHP_BUILD=	yes
@@ -493,6 +484,28 @@ CONFIGURE_ARGS+=--with-onig=${LOCALBASE}
 .	endif
 .endif
 
+.if ${PHP_MODNAME} == "mysql"
+.	if defined(WITH_MYSQLND)
+CONFIGURE_ARGS+=--with-mysql=mysqlnd
+.	else
+CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} \
+		--with-zlib-dir=/usr
+
+USE_MYSQL=	yes
+.	endif
+.endif
+
+.if ${PHP_MODNAME} == "mysqli"
+.	if defined(WITH_MYSQLND)
+CONFIGURE_ARGS+=--with-mysqli=mysqlnd
+.	else
+CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
+
+USE_MYSQL=	yes
+BROKEN_WITH_MYSQL=	323 40
+.	endif
+.endif
+
 .if ${PHP_MODNAME} == "openssl"
 post-extract:
 	@${MV} ${WRKSRC}/config0.m4 ${WRKSRC}/config.m4
@@ -504,6 +517,19 @@ LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds-msdblib
 .else
 LIB_DEPENDS+=	ct.4:${PORTSDIR}/databases/freetds
 .endif
+.endif
+
+.if ${PHP_MODNAME} == "pdo_mysql"
+.	if defined(WITH_MYSQLND)
+CONFIGURE_ARGS+=--with-pdo-mysql=mysqlnd
+
+USE_PHP+=	mysql
+.	else
+CONFIGURE_ARGS+=--with-pdo-mysql=${LOCALBASE} \
+		--with-zlib-dir=/usr
+
+USE_MYSQL=	yes
+.	endif
 .endif
 
 .if ${PHP_MODNAME} == "sqlite"
