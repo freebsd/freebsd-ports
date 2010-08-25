@@ -3683,6 +3683,7 @@ fotofix                         ports/graphics/fotofix
 fourcdns                        ports/dns/fourcdns
 fox14                           ports/x11-toolkits/fox14
 fox16                           ports/x11-toolkits/fox16
+fox17                           ports/x11-toolkits/fox17
 fpc                             ports/lang/fpc
 fpc-a52                         ports/audio/fpc-a52
 fpc-aspell                      ports/textproc/fpc-aspell
@@ -4036,9 +4037,9 @@ fwipe                           ports/security/fwipe
 fwknop                          ports/security/fwknop
 fwlogwatch                      ports/security/fwlogwatch
 fwtk                            ports/security/fwtk
+fxite                           ports/editors/fxite
 fxload                          ports/misc/fxload
 fxscintilla                     ports/x11-toolkits/fxscintilla
-fxscintilla-fox14               ports/x11-toolkits/fxscintilla-fox14
 fxsudoku                        ports/games/fxsudoku
 fxt                             ports/math/fxt
 fxtv                            ports/multimedia/fxtv
@@ -4558,7 +4559,6 @@ gmimms                          ports/multimedia/gmimms
 gmines                          ports/games/gmines
 gmixer                          ports/audio/gmixer
 gml                             ports/mail/gml
-gmm                             ports/audio/gmm
 gmm++                           ports/math/gmm++
 gmp                             ports/math/gmp
 gmp-ecm                         ports/math/gmp-ecm
@@ -4828,6 +4828,7 @@ goffice06                       ports/devel/goffice06
 goffice1                        ports/devel/goffice1
 gofish                          ports/net/gofish
 goggles                         ports/multimedia/goggles
+gogglesmm                       ports/audio/gogglesmm
 gogo                            ports/audio/gogo
 gogo-petit                      ports/audio/gogo-petit
 gok                             ports/accessibility/gok
@@ -7049,7 +7050,6 @@ kde4-style-bespin               ports/x11-themes/kde4-style-bespin
 kde4-style-nitrogen             ports/x11-themes/kde4-style-nitrogen
 kde4-style-polyester            ports/x11-themes/kde4-style-polyester
 kde4-style-skulpture            ports/x11-themes/kde4-style-skulpture
-kde4-windeco-aurorae            ports/x11-themes/kde4-windeco-aurorae
 kde4-windeco-crystal            ports/x11-themes/kde4-windeco-crystal
 kde4-windeco-dekorator          ports/x11-themes/kde4-windeco-dekorator
 kde4-windeco-nitrogen           ports/x11-themes/kde4-windeco-nitrogen
@@ -7437,6 +7437,7 @@ ksqlanalyzer                    ports/databases/ksqlanalyzer
 ksqlshell                       ports/databases/ksqlshell
 kssh                            ports/security/kssh
 kst                             ports/science/kst
+kst2                            ports/science/kst2
 kstreamripper                   ports/audio/kstreamripper
 ksubeditor                      ports/multimedia/ksubeditor
 ksudoku                         ports/games/ksudoku
@@ -24176,7 +24177,6 @@ tinker                          ports/biology/tinker
 tint                            ports/x11/tint
 tintfu                          ports/graphics/tintfu
 tintin++                        ports/net/tintin++
-tintin++-devel                  ports/net/tintin++-devel
 tinyca                          ports/security/tinyca
 tinycdb                         ports/databases/tinycdb
 tinyerp-server                  ports/finance/tinyerp-server
