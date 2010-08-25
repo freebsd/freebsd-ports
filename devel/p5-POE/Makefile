@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE
-PORTVERSION=	1.289
+PORTVERSION=	1.292
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Multitasking and networking framework for perl
 
-BUILD_DEPENDS=	\
-		p5-IO-Tty>=1.08:${PORTSDIR}/devel/p5-IO-Tty \
+BUILD_DEPENDS=	p5-IO-Tty>=1.08:${PORTSDIR}/devel/p5-IO-Tty \
 		p5-POE-Test-Loops>=1.031:${PORTSDIR}/devel/p5-POE-Test-Loops
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
