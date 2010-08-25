@@ -35,13 +35,13 @@ post-patch:
 .endif
 
 post-install:
-.if exists(${PREFIX}/lib/libconfiguration.so)
-	${RM} ${PREFIX}/lib/libconfiguration.so
+.if exists(${PREFIX}/lib/aeskulap/libconfiguration.so)
+	${RM} ${PREFIX}/lib/aeskulap/libconfiguration.so
 .endif
-.if exists(${PREFIX}/lib/libimagepool.so)
-	${RM} ${PREFIX}/lib/libimagepool.so
+.if exists(${PREFIX}/lib/aeskulap/libimagepool.so)
+	${RM} ${PREFIX}/lib/aeskulap/libimagepool.so
 .endif
-	${LN} -sf ${PREFIX}/lib/libconfiguration.so.0.0 ${PREFIX}/lib/libconfiguration.so
-	${LN} -sf ${PREFIX}/lib/libimagepool.so.0.0 ${PREFIX}/lib/libimagepool.so
+	${LN} -sf ${PREFIX}/lib/aeskulap/libconfiguration.so.0.0 ${PREFIX}/lib/aeskulap/libconfiguration.so
+	${LN} -sf ${PREFIX}/lib/aeskulap/libimagepool.so.0.0 ${PREFIX}/lib/aeskulap/libimagepool.so
 
 .include <bsd.port.post.mk>
