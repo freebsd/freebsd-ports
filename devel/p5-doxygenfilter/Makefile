@@ -7,7 +7,7 @@
 
 PORTNAME=	doxygenfilter
 PORTVERSION=	1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/bigsister/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
@@ -21,4 +21,12 @@ PERL_CONFIGURE=	yes
 
 MAN3=		DoxyGen::Filter.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-install:
+	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
+	@${CP} ${WRKSRC}/examples/* ${PREFIX}/share/examples/${PORTNAME}/
+	@cd ${WRKSRC} ; ${FIND} -s examples \! -type d | ${SED} -E 's;^examples;share/examples/${PORTNAME};' >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm share/examples/${PORTNAME}" >> ${TMPPLIST}
+
+.include <bsd.port.post.mk>
