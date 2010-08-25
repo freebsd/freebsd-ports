@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-Schema-Loader
-PORTVERSION=	0.07000
-PORTREVISION=	1
+PORTVERSION=	0.07001
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,12 +21,12 @@ RUN_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Class-Unload>=0:${PORTSDIR}/devel/p5-Class-Unload \
 		p5-DBIx-Class>=0.08114:${PORTSDIR}/databases/p5-DBIx-Class \
 		p5-Data-Dump>=1.06:${PORTSDIR}/devel/p5-Data-Dump \
-		p5-Data-Dumper-Concise>0:${PORTSDIR}/devel/p5-Data-Dumper-Concise \
 		p5-File-Slurp>=9999.13:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Lingua-EN-Inflect-Number>=1.1:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Number \
 		p5-Lingua-EN-Inflect-Phrase>=0.02:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Phrase \
-		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
+		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 
 OPTIONS=	SQLITE "SQLite Support" Off \
 		MYSQL "MySQL Support" Off \
@@ -46,7 +45,7 @@ USE_MYSQL=	yes
 USE_PGSQL=	yes
 .endif
 .if defined(WITH_ORACLE)
-RUN_DEPENDS+=  p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
+RUN_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
 .endif
 
 PERL_CONFIGURE=	5.8.0+
@@ -75,6 +74,7 @@ MAN3=	DBIx::Class::Schema::Loader.3 \
 	DBIx::Class::Schema::Loader::DBI::mysql.3 \
 	DBIx::Class::Schema::Loader::Manual::UpgradingFromV4.3 \
 	DBIx::Class::Schema::Loader::RelBuilder.3 \
+	DBIx::Class::Schema::Loader::Optional::Dependencies.3 \
 	DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_040.3 \
 	DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_05.3 \
 	DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_06.3
