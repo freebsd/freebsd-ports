@@ -79,4 +79,10 @@ do-install:
 		${INSTALL_SCRIPT} ExactImage.py ${PYTHONPREFIX_SITELIBDIR}/&&\
 		${INSTALL_PROGRAM} _ExactImage.so ${PYTHONPREFIX_SITELIBDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+BROKEN=	does not build
+.endif
+
+.include <bsd.port.post.mk>
