@@ -143,13 +143,9 @@ etc/pear.conf
 %%DATADIR%%/data/PEAR/package.dtd
 %%DATADIR%%/data/PEAR/template.spec
 %%DATADIR%%/data/Structures_Graph/LICENSE
-%%DATADIR%%/data/Structures_Graph/genpackage.xml.pl
-%%DATADIR%%/data/Structures_Graph/package.sh
-%%DATADIR%%/data/Structures_Graph/publish.sh
 %%DATADIR%%/pearcmd.php
 %%DATADIR%%/peclcmd.php
-%%DATADIR%%/tests/Structures_Graph/tests/README
-%%DATADIR%%/tests/Structures_Graph/tests/all-tests.php
+%%DATADIR%%/tests/Structures_Graph/tests/AllTests.php
 %%DATADIR%%/tests/Structures_Graph/tests/testCase/BasicGraph.php
 @dirrm %%DOCSDIR%%/Archive_Tar/docs
 @dirrm %%DOCSDIR%%/Archive_Tar
