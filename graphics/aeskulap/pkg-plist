@@ -6,6 +6,7 @@ lib/aeskulap/libconfiguration.so
 lib/aeskulap/libimagepool.a
 lib/aeskulap/libimagepool.la
 lib/aeskulap/libimagepool.so.0.0
+lib/aeskulap/libimagepool.so
 lib/aeskulap/libofstd.so
 lib/aeskulap/libdcmdata.so
 lib/aeskulap/libdcmnet.so
