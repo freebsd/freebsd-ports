@@ -1,6 +1,6 @@
 --- qmake.inc.in.orig	2010-01-26 15:58:20.000000000 -0800
 +++ qmake.inc.in	2010-05-02 23:23:06.953322354 -0700
-@@ -68,10 +68,6 @@
+@@ -68,11 +68,7 @@
          LIBS += $$LIBS_FWBUILDER @LIBS@
  
          CONFIG += warn_on debug
@@ -8,6 +8,7 @@
 -        QMAKE_CFLAGS_RELEASE += -Wno-unused-parameter
 -        QMAKE_CXXFLAGS_DEBUG += -Wno-unused-parameter
 -        QMAKE_CXXFLAGS_RELEASE += -Wno-unused-parameter
+
      }
  }
  

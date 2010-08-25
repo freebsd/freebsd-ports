@@ -20,10 +20,12 @@ share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/update_pfsync
 share/fwbuilder-%%BUILD_VERSION%%/configlets/bsd/update_vlans
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs/installer_commands_reg_user
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs/installer_commands_root
+share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs/routing_functions
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs/script_skeleton
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-jffs/top_comment
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/installer_commands_reg_user
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/installer_commands_root
+share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/routing_functions
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/script_skeleton
 share/fwbuilder-%%BUILD_VERSION%%/configlets/dd-wrt-nvram/top_comment
 share/fwbuilder-%%BUILD_VERSION%%/configlets/freebsd/installer_commands_reg_user
@@ -52,6 +54,7 @@ share/fwbuilder-%%BUILD_VERSION%%/configlets/ipf/top_comment
 share/fwbuilder-%%BUILD_VERSION%%/configlets/ipfw/script_skeleton
 share/fwbuilder-%%BUILD_VERSION%%/configlets/ipfw/top_comment
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/automatic_rules
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/block_action
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/check_utilities
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/conntrack
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/constants
@@ -63,6 +66,7 @@ share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/load_modules
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/prolog_epilog_functions
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/reset_iptables
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/routing_functions
+share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/run_time_address_tables
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/run_time_wrappers
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/script_body_iptables_restore
 share/fwbuilder-%%BUILD_VERSION%%/configlets/linux24/script_body_single_rule
@@ -155,6 +159,9 @@ share/fwbuilder-%%BUILD_VERSION%%/help/en_US/pix-failover-groups-mapping.png
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/pix-statesync-group-1.png
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/pix-statesync-group-mapping.png
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.0.0.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.0.1.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.1.0.html
+share/fwbuilder-%%BUILD_VERSION%%/help/en_US/release_notes_4.1.1.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/state_sync_configuration.png
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/summary.html
 share/fwbuilder-%%BUILD_VERSION%%/help/en_US/tip01.html
