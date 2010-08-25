@@ -1,0 +1,5 @@
+levmar is a GPL-licensed library written in C, that implements the
+Levenberg-Marquardt (LM) optimization algorithm, one of the most
+effective methods for solving nonlinear least squares problems.
+
+WWW: http://www.ics.forth.gr/~lourakis/levmar/

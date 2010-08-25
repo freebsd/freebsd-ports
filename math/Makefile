@@ -155,6 +155,7 @@
     SUBDIR += laspack
     SUBDIR += ldouble
     SUBDIR += lensnns
+    SUBDIR += levmar
     SUBDIR += libRmath
     SUBDIR += libjbigi
     SUBDIR += liblbfgs

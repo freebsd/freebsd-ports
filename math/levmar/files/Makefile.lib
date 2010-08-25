@@ -1,0 +1,13 @@
+# makefile for levmar sources
+
+LIB =		levmar
+LIBDIR =	$(PREFIX)/lib
+SHLIB_MAJOR=	2
+SHLIB_MINOR=	5
+
+SRCS=	lm.c Axb.c misc.c lmlec.c lmbc.c lmblec.c lmbleic.c
+
+beforeinstall:
+	${BSD_INSTALL_DATA} ${.CURDIR}/levmar.h ${PREFIX}/include
+
+.include <bsd.lib.mk>
