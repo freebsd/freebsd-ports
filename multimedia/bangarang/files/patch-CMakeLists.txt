@@ -1,0 +1,11 @@
+--- ./CMakeLists.txt.orig	2010-02-11 12:41:51.000000000 +1000
++++ ./CMakeLists.txt	2010-08-23 03:04:24.256979215 +1100
+@@ -18,7 +18,7 @@
+     ${NEPOMUK_INCLUDE_DIR} 
+     ${TAGLIB_INCLUDES} 
+     ${TAGLIB_INCLUDES}/.. 
+-    /usr/include/taglib 
++    ${CMAKE_SOURCE_DIR}/src/platform 
+ )
+ 
+ add_subdirectory( icons )
