@@ -8,7 +8,7 @@
 
 PORTNAME=	xmltools
 PORTVERSION=	1.4.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc python
 MASTER_SITES=	LOGILAB
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,8 +22,7 @@ USE_PYDISTUTILS=	yes
 
 .include <bsd.port.pre.mk>
 
-RUN_DEPENDS=	${PYXML} \
-		${PYTHON_SITELIBDIR}/_xmlplus/xpath/__init__.py:${PORTSDIR}/textproc/py-4suite
+RUN_DEPENDS=	${PYXML}
 
 post-patch:
 	${REINPLACE_CMD} 's/from.*import.*nested_scopes//' ${WRKSRC}/setup.py
