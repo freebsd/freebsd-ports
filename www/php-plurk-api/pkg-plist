@@ -3,7 +3,29 @@
 %%WWWDIR%%/config.php
 %%WWWDIR%%/constant.php
 %%WWWDIR%%/cookie
+%%WWWDIR%%/documents/classtrees_php-plurk-api.html
+%%WWWDIR%%/documents/elementindex.html
+%%WWWDIR%%/documents/elementindex_php-plurk-api.html
+%%WWWDIR%%/documents/errors.html
+%%WWWDIR%%/documents/index.html
+%%WWWDIR%%/documents/li_php-plurk-api.html
+%%WWWDIR%%/documents/media/background.png
+%%WWWDIR%%/documents/media/empty.png
+%%WWWDIR%%/documents/media/style.css
+%%WWWDIR%%/documents/php-plurk-api/_config.php.html
+%%WWWDIR%%/documents/php-plurk-api/_constant.php.html
+%%WWWDIR%%/documents/php-plurk-api/_example.php.html
+%%WWWDIR%%/documents/php-plurk-api/_plurk_api.php.html
+%%WWWDIR%%/documents/php-plurk-api/plurk_api.html
+%%WWWDIR%%/documents/ric_ChangeLog.html
+%%WWWDIR%%/documents/ric_README.html
+%%WWWDIR%%/documents/todolist.html
 %%WWWDIR%%/example.php
 %%WWWDIR%%/log
 %%WWWDIR%%/plurk_api.php
+@dirrm %%WWWDIR%%/documents/php-plurk-api
+@dirrm %%WWWDIR%%/documents/media/images
+@dirrm %%WWWDIR%%/documents/media
+@dirrm %%WWWDIR%%/documents/default
+@dirrm %%WWWDIR%%/documents
 @dirrm %%WWWDIR%%
