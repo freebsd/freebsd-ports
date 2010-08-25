@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	awesome
-PORTVERSION=	3.4.6
+PORTVERSION=	3.4.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/ \
 		http://redundancy.redundancy.org/mirror/
@@ -39,6 +39,8 @@ USE_EFL=	imlib2
 USE_GNOME=	glib20 pango
 USE_LUA=	5.1+
 USE_XORG=	pixman x11 xau xdmcp xext xft xinerama xrandr xrender xproto
+
+LICENSE=	GPLv2
 
 MAN1=	awesome.1 \
 	awesome-client.1 \
