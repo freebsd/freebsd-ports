@@ -1667,6 +1667,7 @@
     SUBDIR += trac-datefield
     SUBDIR += trac-discussion
     SUBDIR += trac-down
+    SUBDIR += trac-downloads
     SUBDIR += trac-email2trac
     SUBDIR += trac-estimator
     SUBDIR += trac-fivestarvote

@@ -1,0 +1,11 @@
+This plugin provides downloads section which may contain releases or
+other files. It is administrated via WebAdminPlugin and there is an
+interface to the trac-admin tool that may help during automatic server
+maintenance. The Downloads section of Trac displays a table with
+information about the uploaded files such as description, component,
+version, size, architecture, type and optionally assigned tags which the
+download is related to. It also collects information about number of
+downloads which can be displayed on wiki page together with direct links
+to the specified download.
+
+WWW: http://trac-hacks.org/wiki/DownloadsPlugin
