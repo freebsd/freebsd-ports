@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rnews
-PORTVERSION=	0.92
+PORTVERSION=	1.01
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -34,6 +34,8 @@ USE_PHP+=	gd
 RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 .endif
 
+RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	CHANGELOG INSTALL LICENSE README UPGRADE
 .endif
@@ -44,18 +46,23 @@ do-install:
 	@${FIND} -s ${WRKSRC} -type  d | ${SED} -e 's,^${WRKSRC},${WWWDIR},' \
 		| ${XARGS} ${MKDIR}
 	${INSTALL_DATA} -v ${WRKSRC}/*.php ${WWWDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.css ${WWWDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.js ${WWWDIR}
+	${INSTALL_DATA} -v ${WRKSRC}/*.css ${WWWDIR}
+	${INSTALL_DATA} -v ${WRKSRC}/*.js ${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/.htaccess ${WWWDIR}
+	${INSTALL_DATA} ${WRKSRC}/tmp/.htaccess ${WWWDIR}/tmp
+	${INSTALL_DATA} ${WRKSRC}/favicon.ico ${WWWDIR}
+	${INSTALL_DATA} ${WRKSRC}/help.html ${WWWDIR}
 	${INSTALL_DATA} -v ${WRKSRC}/img/*.gif ${WWWDIR}/img
-	${INSTALL_DATA} ${WRKSRC}/img/*.png ${WWWDIR}/img
-	${INSTALL_DATA} ${WRKSRC}/img/*.jpg ${WWWDIR}/img
+	${INSTALL_DATA} -v ${WRKSRC}/img/*.png ${WWWDIR}/img
+	${INSTALL_DATA} -v ${WRKSRC}/img/*.jpg ${WWWDIR}/img
 	( ${FIND} ${WRKSRC}/inc -type f -not -name config_user.php -a -not -name config.php; ${ECHO} ${WWWDIR}/inc ) \
 		| ${XARGS} ${INSTALL_DATA} -v
 	${INSTALL_DATA} -v ${WRKSRC}/magpierss/*.inc ${WWWDIR}/magpierss
 	${INSTALL_DATA} ${WRKSRC}/magpierss/extlib/Snoopy.class.inc ${WWWDIR}/magpierss/extlib
+	${INSTALL_DATA} -v ${WRKSRC}/opml/*.opml ${WWWDIR}/opml
 	@${CHOWN} ${WWWOWN} ${WWWDIR}/magpierss/cache
 	@${CHOWN} ${WWWOWN} ${WWWDIR}/img/feeds
+	@${CHOWN} ${WWWOWN} ${WWWDIR}/tmp
 .for FILE in ${CONFIGS}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${WWWDIR}/${FILE}.sample
 .endfor
@@ -78,7 +85,8 @@ post-install:
 
 create-plist:
 	@${FIND} -s ${WRKSRC} \( -name "*.php" -o -name "*.inc" -o -name "*.js" -o -name "*.css" -o -name "*.jpg" \
-		-o -name "*.gif" -o -name "*.png" -o -name ".htaccess" \) -and -not -name config_user.php \
+		-o -name "*.gif" -o -name "*.png" -o -name ".htaccess" -o -name "help.html" -o -name "favicon.ico" -o -name "*.opml" \) \
+		-and -not -name config_user.php -and -not -name config.php \
 		| ${SED} -e 's,^${WRKSRC},%%WWWDIR%%,' > ${PLIST}
 .for FILE in ${CONFIGS}
 	@${ECHO_CMD} '@exec if [ ! -f %D/%%WWWDIR%%/${FILE} ]; then \

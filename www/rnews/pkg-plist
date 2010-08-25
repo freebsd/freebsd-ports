@@ -3,11 +3,15 @@
 %%WWWDIR%%/add_user.php
 %%WWWDIR%%/ajax.js
 %%WWWDIR%%/ajax.php
+%%WWWDIR%%/all.js
 %%WWWDIR%%/auth.php
 %%WWWDIR%%/book.php
+%%WWWDIR%%/cron.php
 %%WWWDIR%%/export.php
+%%WWWDIR%%/favicon.ico
 %%WWWDIR%%/foot.php
 %%WWWDIR%%/functions.js
+%%WWWDIR%%/help.html
 %%WWWDIR%%/img/b1-add_hv.png
 %%WWWDIR%%/img/b1-add_nm.png
 %%WWWDIR%%/img/b1-block.png
@@ -16,6 +20,12 @@
 %%WWWDIR%%/img/b1-blockw.png
 %%WWWDIR%%/img/b1-blockw_hv.png
 %%WWWDIR%%/img/b1-blockw_nm.png
+%%WWWDIR%%/img/b1-filt-all.png
+%%WWWDIR%%/img/b1-filt-all_hv.png
+%%WWWDIR%%/img/b1-filt-all_nm.png
+%%WWWDIR%%/img/b1-filt-new.png
+%%WWWDIR%%/img/b1-filt-new_hv.png
+%%WWWDIR%%/img/b1-filt-new_nm.png
 %%WWWDIR%%/img/b1-list.png
 %%WWWDIR%%/img/b1-list_hv.png
 %%WWWDIR%%/img/b1-list_nm.png
@@ -37,22 +47,40 @@
 %%WWWDIR%%/img/b2-x_nm.png
 %%WWWDIR%%/img/feedhdbg.png
 %%WWWDIR%%/img/hdrbg.png
+%%WWWDIR%%/img/ib-bg.png
+%%WWWDIR%%/img/ib-delete_hv.png
+%%WWWDIR%%/img/ib-delete_nm.png
+%%WWWDIR%%/img/ib-fontbg_hv.png
+%%WWWDIR%%/img/ib-fontbg_nm.png
+%%WWWDIR%%/img/ib-fontsm_hv.png
+%%WWWDIR%%/img/ib-fontsm_nm.png
+%%WWWDIR%%/img/ib-link_hv.png
+%%WWWDIR%%/img/ib-link_nm.png
+%%WWWDIR%%/img/ib-mark_hv.png
+%%WWWDIR%%/img/ib-mark_nm.png
+%%WWWDIR%%/img/ib-marked_hv.png
+%%WWWDIR%%/img/ib-marked_nm.png
+%%WWWDIR%%/img/ib-markold_hv.png
+%%WWWDIR%%/img/ib-markold_nm.png
+%%WWWDIR%%/img/ib-star_hv.png
+%%WWWDIR%%/img/ib-star_nm.png
+%%WWWDIR%%/img/ib-unstar_hv.png
+%%WWWDIR%%/img/ib-unstar_nm.png
 %%WWWDIR%%/img/loading.gif
-%%WWWDIR%%/img/more-seen.png
-%%WWWDIR%%/img/more.png
+%%WWWDIR%%/img/more_hv.png
+%%WWWDIR%%/img/more_nm.png
 %%WWWDIR%%/img/morew_hv.png
 %%WWWDIR%%/img/morew_nm.png
 %%WWWDIR%%/img/rnews-logo.png
-%%WWWDIR%%/img/screenshot-0.90-sm-g.jpg
+%%WWWDIR%%/img/screenshot-sm-g.jpg
 %%WWWDIR%%/img/xml.png
 %%WWWDIR%%/inc/.htaccess
 %%WWWDIR%%/inc/cl_cat.php
-%%WWWDIR%%/inc/cl_config.php
+%%WWWDIR%%/inc/cl_configw.php
 %%WWWDIR%%/inc/cl_db.php
 %%WWWDIR%%/inc/cl_feed.php
 %%WWWDIR%%/inc/cl_feedlink.php
 %%WWWDIR%%/inc/cl_user.php
-%%WWWDIR%%/inc/config.php
 %%WWWDIR%%/inc/functions.php
 %%WWWDIR%%/inc/kses.php
 %%WWWDIR%%/inc/opml.php
@@ -67,12 +95,19 @@
 %%WWWDIR%%/magpierss/rss_fetch.inc
 %%WWWDIR%%/magpierss/rss_parse.inc
 %%WWWDIR%%/magpierss/rss_utils.inc
+%%WWWDIR%%/opml/amusement.opml
+%%WWWDIR%%/opml/deals.opml
+%%WWWDIR%%/opml/language.opml
+%%WWWDIR%%/opml/news.opml
+%%WWWDIR%%/opml/photos.opml
+%%WWWDIR%%/opml/tech.opml
 %%WWWDIR%%/prefs.php
 %%WWWDIR%%/redirect.php
 %%WWWDIR%%/rnews-ie6.css
 %%WWWDIR%%/rnews-side.css
 %%WWWDIR%%/rollover.js
 %%WWWDIR%%/search.php
+%%WWWDIR%%/tmp/.htaccess
 @exec if [ ! -f %D/%%WWWDIR%%/inc/config.php ]; then  install  -o root -g wheel -m 444 %D/%%WWWDIR%%/inc/config.php.sample %D/%%WWWDIR%%/inc/config.php;  /usr/sbin/chown www %D/%%WWWDIR%%/inc/config.php;  /bin/chmod u+w %D/%%WWWDIR%%/inc/config.php; fi
 @exec if [ ! -f %D/%%WWWDIR%%/inc/config_user.php ]; then  install  -o root -g wheel -m 444 %D/%%WWWDIR%%/inc/config_user.php.sample %D/%%WWWDIR%%/inc/config_user.php;  /usr/sbin/chown www %D/%%WWWDIR%%/inc/config_user.php;  /bin/chmod u+w %D/%%WWWDIR%%/inc/config_user.php; fi
 @unexec if cmp -s %D/%%WWWDIR%%/inc/config.php.sample %D/%%WWWDIR%%/inc/config.php;  then /bin/rm -f %D/%%WWWDIR%%/inc/config.php; fi
@@ -85,4 +120,6 @@
 @dirrm %%WWWDIR%%/magpierss/cache
 @dirrm %%WWWDIR%%/magpierss/extlib
 @dirrm %%WWWDIR%%/magpierss
+@dirrm %%WWWDIR%%/opml
+@dirrm %%WWWDIR%%/tmp
 @dirrm %%WWWDIR%%
