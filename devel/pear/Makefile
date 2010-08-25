@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	pear
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 CATEGORIES=	devel
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mm
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR framework for PHP
@@ -22,10 +23,13 @@ USE_PHP=	pcre xml
 PEARDIR=	${PREFIX}/share/pear
 
 post-patch:
-	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/go-pear
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" \
+		-e "s|%%BUNDLEDIR%%|${WRKSRC}/go-pear-bundle|" \
+		-e "s|%%TMPDIR%%|${TMPDIR}/go-pear|" \
+		${WRKSRC}/go-pear
 
 do-install:
-	@${LOCALBASE}/bin/php -q ${WRKSRC}/go-pear
+	@cd ${WRKSRC} && ${LOCALBASE}/bin/php -q ./go-pear
 	@${SED} -i "" "s|<?php|<?php dl('pcre.so'); dl('xml.so');|" \
 		${PEARDIR}/peclcmd.php
 

@@ -1,5 +1,5 @@
---- go-pear.orig	2009-04-08 12:20:28.000000000 +0200
-+++ go-pear	2009-04-26 20:51:39.000000000 +0200
+--- go-pear.orig	2010-08-05 23:26:55.000000000 +0200
++++ go-pear	2010-08-13 15:05:29.753811744 +0200
 @@ -116,7 +116,7 @@
  );
  
@@ -54,7 +54,7 @@
  if (!WEBINSTALLER) {
      $msg = "The following PEAR packages are bundled with PHP: " .
          implode(', ', array_keys($pfc_packages));
-@@ -571,7 +571,7 @@
+@@ -571,17 +571,17 @@
      $install_optional_packages = array();
      print "\n";
  }
@@ -63,9 +63,13 @@
  ####
  # Download
  ####
-@@ -581,7 +581,7 @@
+ 
+ if (function_exists('set_include_path')) {
+-   set_include_path($ptmp);
++   set_include_path($ptmp . PATH_SEPARATOR . "%%BUNDLEDIR%%");
  } else {
-    ini_set('include_path', $ptmp);
+-   ini_set('include_path', $ptmp);
++   ini_set('include_path', $ptmp . PATH_SEPARATOR . "%%BUNDLEDIR%%");
  }
 -
 +/*
@@ -94,6 +98,18 @@
  }
  
  // gopear_bundle usage
+@@ -655,9 +656,9 @@
+ if ($nobootstrap) {
+     print('Using previously install ... ');
+     if (function_exists('set_include_path')) {
+-        set_include_path($php_dir);
++        set_include_path($php_dir . PATH_SEPARATOR . "%%BUNDLEDIR%%");
+     } else {
+-        ini_set('include_path', $php_dir);
++        ini_set('include_path', $php_dir . PATH_SEPARATOR . "%%BUNDLEDIR%%");
+     }
+     include_once 'PEAR.php';
+     print "ok\n";
 @@ -750,7 +751,7 @@
  if (WEBINSTALLER || isset($_SERVER['argv'][1]) && $_SERVER['argv'][1] == 'local') {
      $config = &PEAR_Config::singleton($prefix."/pear.conf", '');
@@ -140,7 +156,7 @@
          $test_dir  = '$php_dir/tests';
 -        $temp_dir   = '$prefix/temp';
 -
-+  	$temp_dir   = '/tmp/go-pear';
++  	$temp_dir   = '%%TMPDIR%%';
 +/*
          // check if the user has installed PHP with PHP or GNU layout
          if (@is_dir("$prefix/lib/php/.registry")) {
