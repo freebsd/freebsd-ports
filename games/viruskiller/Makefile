@@ -7,6 +7,7 @@
 
 PORTNAME=	viruskiller
 PORTVERSION=	1.03
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.parallelrealities.co.uk/download/viruskiller/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
@@ -26,6 +27,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
 
 post-patch:
+	# Remove non-free restricted files:
+	${RM} -f ${WRKSRC}/music/* ${WRKSRC}/sound/*
+
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e "s|^.*install.*DOCS.*||g" \
 		-e "s|^.*mkdir.*DOCDIR.*||g" \
