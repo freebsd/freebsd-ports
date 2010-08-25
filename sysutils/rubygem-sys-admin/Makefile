@@ -15,14 +15,14 @@ COMMENT=	Unified, cross platform replacement for the Etc module
 
 RUN_DEPENDS=	rubygem-test-unit>=2.0.3:${PORTSDIR}/devel/rubygem-test-unit
 
+USE_RUBY=		yes
+USE_RUBYGEMS=		yes
+RUBYGEM_AUTOPLIST=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900007
 BROKEN=	umpt.h has been removed
 .endif
-
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
-RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.post.mk>
