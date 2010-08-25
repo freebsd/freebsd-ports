@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="167953a4-b01c-11df-9a98-0015587e2cc1">
+    <topic>quagga -- stack overflow and DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>quagga</name>
+	<range><lt>0.99.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Red Hat security team reported two vulnerabilities:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2010/08/24/3">
+	  <p>A stack buffer overflow flaw was found in the way Quagga's bgpd
+	    daemon processed Route-Refresh messages. A configured
+	    Border Gateway Protocol (BGP) peer could send a
+	    Route-Refresh message with specially-crafted Outbound
+	    Route Filtering (ORF) record, which would cause the
+	    master BGP daemon (bgpd) to crash or, possibly, execute
+	    arbitrary code with the privileges of the user running
+	    bgpd.</p>
+	  <p>A NULL pointer dereference flaw was found in the way
+	    Quagga's bgpd daemon parsed paths of autonomous systems
+	    (AS). A configured BGP peer could send a BGP update AS
+	    path request with unknown AS type, which could lead to
+	    denial of service (bgpd daemon crash). </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.openwall.com/lists/oss-security/2010/08/24/3</url>
+      <url>http://www.quagga.net/news2.php?y=2010&amp;m=8&amp;d=19#id1282241100</url>
+    </references>
+    <dates>
+      <discovery>2010-08-24</discovery>
+      <entry>2010-08-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8cbf4d65-af9a-11df-89b8-00151735203a">
     <topic>bugzilla -- information disclosure, denial of service</topic>
     <affects>
