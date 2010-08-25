@@ -14,10 +14,13 @@ MASTER_SITES=	http://fungi.yuggoth.org/weather/src/ \
 MAINTAINER=	sunpoet@sunpoet.net
 COMMENT=	An utility to provide current weather conditions and forecasts
 
-USE_PYTHON=	-2.6
+USE_PYTHON=	-2.7
 
 MAN1=		weather.1
 MAN5=		weatherrc.5
+PLIST_FILES=	bin/weather \
+		%%PYTHON_SITELIBDIR%%/${PORTNAME}.py \
+		%%PYTHON_SITELIBDIR%%/${PORTNAME}.pyc
 
 post-patch:
 	@${REINPLACE_CMD} -e '1 s/python/${PYTHON_VERSION}/' ${WRKSRC}/weather
