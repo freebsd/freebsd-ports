@@ -1,4 +1,0 @@
-@comment $FreeBSD$
-bin/weather
-%%PYTHON_SITELIBDIR%%/weather.py
-%%PYTHON_SITELIBDIR%%/weather.pyc
