@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quagga
-PORTVERSION=	0.99.16
+PORTVERSION=	0.99.17
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/ \
 		http://www.ru.quagga.net/download/ \
@@ -22,7 +22,7 @@ COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4, IS-IS route software
 
 CONFLICTS=	openbgpd-[0-9]* zebra-0*
 
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool:22 autoheader:262
 USE_GMAKE=		yes
 USE_LDCONFIG=		yes
 USE_PERL5_BUILD=	yes
@@ -46,7 +46,7 @@ OPTIONS=	ISISD		"Enable experimental ISIS daemon"	off \
 
 CFLAGS+=	-I${LOCALBASE}/include
 .if ${OSVERSION} >= 800000
-LDFLAGS+=      -fstack-protector
+LDFLAGS+=	-fstack-protector
 .endif
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include --enable-exampledir=${PREFIX}/share/examples/quagga
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
