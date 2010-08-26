@@ -10,7 +10,7 @@ PORTVERSION=	0.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides a registry of file types
 
 USE_RUBY=	yes

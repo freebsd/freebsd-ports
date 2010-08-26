@@ -9,7 +9,7 @@ PORTVERSION=	0.2.3
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An extension of Prawn that allows inline formatting
 
 RUN_DEPENDS=	rubygem-prawn-core>=0:${PORTSDIR}/print/rubygem-prawn-core

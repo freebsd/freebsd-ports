@@ -10,7 +10,7 @@ PORTVERSION=	3.13.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	The Database Toolkit for Ruby
 
 USE_RUBY=	yes

@@ -9,7 +9,7 @@ PORTVERSION=	0.6.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Library that Makes HTTP Fun Again
 
 RUN_DEPENDS=	rubygem-crack>=0.1.7:${PORTSDIR}/devel/rubygem-crack

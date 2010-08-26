@@ -10,7 +10,7 @@ PORTVERSION=	1.48
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A pure Ruby DNS client library
 
 USE_RUBY=	yes

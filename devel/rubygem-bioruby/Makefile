@@ -12,7 +12,7 @@ MASTER_SITES=	RG \
 		http://rubyforge.org/frs/download.php/68266/
 DISTNAME=	bio-${PORTVERSION}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Integrated environment for Bioinformatics written in Ruby
 
 PLIST_FILES=	bin/bioruby \

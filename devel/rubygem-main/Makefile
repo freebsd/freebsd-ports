@@ -10,7 +10,7 @@ PORTVERSION=	4.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Class Factory and Dsl for Generating Command Line Programs
 
 RUN_DEPENDS=	rubygem-fattr>=1.0.3:${PORTSDIR}/devel/rubygem-fattr \
