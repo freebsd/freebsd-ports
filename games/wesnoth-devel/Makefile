@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.8
-PORTREVISION=	2
+PORTVERSION=	1.9.0
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}/${PORTNAME}-${PORTVERSION}.0 \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/
 PKGNAMESUFFIX=	-devel
 
@@ -18,40 +17,45 @@ COMMENT=	A fantasy turn-based strategy game
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 CONFLICTS=	wesnoth-[0-9]*
 
-USE_GCC=	4.2+
 USE_SDL=	image mixer net ttf
-USE_GNOME=	desktopfileutils gnometarget pango
+USE_GNOME=	gnometarget pango
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
 USE_BZIP2=	yes
-USE_LUA=	5.1
 USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262
 ACLOCAL_ARGS=	-Im4
 AUTOMAKE_ARGS=	--add-missing --copy
+CONFIGURE_ENV=	PKG_CONFIG="${PKG_CONFIG}" \
+		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--localstatedir=/var \
+		--with-boost=${LOCALBASE} \
 		--with-icondir=${PREFIX}/share/pixmaps \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-localedir=${PREFIX}/share/locale
+PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
 
-MANLANG_GAME=	gl zh_TW
-MANLANG=	"" cs de en_GB es et fi fr hu it ja lt pl pt_BR sk \
-		sr sr@ijekavian sr@ijekavianlatin sr@latin tr zh_CN
+MANLANG=	"" cs de en_GB es et fi fr gl hu it ja lt pl pt_BR sk \
+		sr sr@ijekavian sr@ijekavianlatin sr@latin tr zh_CN zh_TW
 
 MAN6=		wesnoth.6
 
 PORTDOCS=	*
 PORTDATA=	*
 
-OPTIONS=	BWMON	 "Enable bandwidth monitoring for server" Off \
+OPTIONS=	ANA	 "Enable Asynchronous Network API (WIP)" On \
+		BWMON	 "Enable bandwidth monitoring for server" Off \
 		CAMPAIGN "Enable campaign server"	On \
 		EDITOR	 "Enable map editor"		On \
 		FRIBIDI	 "Enable bidirectional support"	On \
 		LOWMEM	 "Reduce memory usage (disables animations)" Off \
-		NLS	 "Enable localization"		On \
 		NOTIFY	 "Enable desktop notifications"	On \
 		POOLALLOC "Use wesnoth own memory allocator" Off \
 		PYTHON	 "Enable python developer tools" On \
@@ -67,17 +71,6 @@ OPTIONS=	BWMON	 "Enable bandwidth monitoring for server" Off \
 BROKEN=		does not compile
 .endif
 
-# workaround: compress and add to plist disobedient man pages
-.for manlang in ${MANLANG_GAME}
-MAN6_${manlang:U}=	wesnoth.6
-
-.if defined(NO_MANCOMPRESS)
-PLIST_FILES+=	man/${manlang}/man6/wesnoth.6
-.else
-PLIST_FILES+=	man/${manlang}/man6/wesnoth.6.gz
-.endif
-.endfor
-
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
@@ -89,6 +82,12 @@ CONFIGURE_ARGS+=	--enable-profile
 # XXX: breaks compilation because of -Werror
 .if !defined(WITH_STRICT)
 CONFIGURE_ARGS+=	--disable-strict-compilation
+.endif
+
+.if defined(WITHOUT_ANA)
+CONFIGURE_ARGS+=	--disable-ana
+.else
+CONFIGURE_ARGS+=	--enable-ana
 .endif
 
 .if defined(WITHOUT_BWMON)
@@ -198,26 +197,20 @@ CONFIGURE_ARGS+=	--enable-tools
 PLIST_SUB+=		TOOLS=""
 .endif
 
-.if (defined(WITH_CAMPAIGN) || defined(WITH_SERVER) || defined(WITH_TOOLS)) && defined(WITHOUT_NLS)
-BROKEN=		you need NLS support for `campaignd' or `wesnothd' or tools to link against gettext
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=	--docdir=${WRKDIR}/docs
 .endif
 
-.if defined(NOPORTDOCS) || defined(NOPORTDATA)
-BROKEN=		NOPORT(DOCS|DATA) is not supported
+.if defined(NOPORTDATA)
+IGNORE=		game data is required, undefine NOPORTDATA
 .endif
 
-post-patch:
+post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|png_voidp_NULL|NULL|g' \
 		-e 's|png_error_ptr_NULL|NULL|g' \
 		${WRKSRC}/src/tools/exploder_utils.cpp
 
-post-install:	.SILENT
-	-update-desktop-database
-
-.if !defined(NO_MANCOMPRESS)
-.	for manlang in ${MANLANG_GAME}
-		${GZIP_CMD} ${PREFIX}/man/${manlang}/man6/wesnoth.6
-.	endfor
-.endif
+post-install:
+	-update-desktop-database ${PREFIX}/share/applications
 
 .include <bsd.port.post.mk>
