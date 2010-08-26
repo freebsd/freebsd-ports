@@ -18,14 +18,21 @@
  	tests/main.cpp \
  	tests/utils/fake_display.cpp \
  	tests/utils/fake_event_source.cpp \
-@@ -362,8 +362,8 @@ test_SOURCES =  \
+@@ -450,12 +450,12 @@ test_SOURCES =  \
  	tests/gui/test_save_dialog.cpp \
  	$(wesnoth_source)
  
--test_LDADD = $(INTERNALLIBS) $(THELIBS) $(BOOST_UNIT_TEST_FRAMEWORK_LIBS) $(PANGO_LIBS) $(FONTCONFIG_LIBS)
--test_DEPENDENCIES=libwesnoth-core.a libwesnoth.a
-+wesnoth_test_LDADD = $(INTERNALLIBS) $(THELIBS) $(BOOST_UNIT_TEST_FRAMEWORK_LIBS) $(PANGO_LIBS) $(FONTCONFIG_LIBS)
-+wesnoth_test_DEPENDENCIES=libwesnoth-core.a libwesnoth.a
+-test_LDADD = $(INTERNALLIBS) $(THELIBS) $(BOOST_UNIT_TEST_FRAMEWORK_LIBS) $(PANGO_LIBS) $(FONTCONFIG_LIBS) lua/liblua.a
+-test_DEPENDENCIES=libwesnoth-core.a libwesnoth.a lua/liblua.a
++wesnoth_test_LDADD = $(INTERNALLIBS) $(THELIBS) $(BOOST_UNIT_TEST_FRAMEWORK_LIBS) $(PANGO_LIBS) $(FONTCONFIG_LIBS) lua/liblua.a
++wesnoth_test_DEPENDENCIES=libwesnoth-core.a libwesnoth.a lua/liblua.a
+ if ANA
+-test_LDADD += $(BOOST_SYSTEM_LIBS) $(BOOST_THREAD_LIBS) -lana
+-test_DEPENDENCIES += libana.a
+-test_SOURCES += network_worker.cpp
++wesnoth_test_LDADD += $(BOOST_SYSTEM_LIBS) $(BOOST_THREAD_LIBS) -lana
++wesnoth_test_DEPENDENCIES += libana.a
++wesnoth_test_SOURCES += network_worker.cpp
+ endif
  
  #############################################################################
- #    Headers                                                                #

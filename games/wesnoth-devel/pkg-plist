@@ -34,12 +34,11 @@ bin/wesnoth
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wmltools.pyo
 share/applications/wesnoth.desktop
 %%EDITOR%%share/applications/wesnoth_editor.desktop
-share/pixmaps/wesnoth-icon.png
-%%EDITOR%%share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/af/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-httt.mo
@@ -63,6 +62,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-httt.mo
@@ -86,6 +86,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wesnoth-httt.mo
@@ -109,6 +110,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wesnoth-httt.mo
@@ -132,6 +134,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/ca_ES@valencia/LC_MESSAGES/wesnoth-httt.mo
@@ -155,6 +158,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wesnoth-httt.mo
@@ -178,6 +182,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/da/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/da/LC_MESSAGES/wesnoth-httt.mo
@@ -201,6 +206,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/de/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/de/LC_MESSAGES/wesnoth-httt.mo
@@ -224,6 +230,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/el/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/el/LC_MESSAGES/wesnoth-httt.mo
@@ -247,6 +254,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/en@shaw/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/en@shaw/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/en@shaw/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/en@shaw/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/en@shaw/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/en@shaw/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/en@shaw/LC_MESSAGES/wesnoth-httt.mo
@@ -270,6 +278,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/wesnoth-httt.mo
@@ -293,6 +302,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/wesnoth-httt.mo
@@ -316,6 +326,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/es/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/es/LC_MESSAGES/wesnoth-httt.mo
@@ -339,6 +350,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/et/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/et/LC_MESSAGES/wesnoth-httt.mo
@@ -362,6 +374,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/wesnoth-httt.mo
@@ -385,6 +398,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/wesnoth-httt.mo
@@ -408,6 +422,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/wesnoth-httt.mo
@@ -431,6 +446,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/fur_IT/LC_MESSAGES/wesnoth-httt.mo
@@ -454,6 +470,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/wesnoth-httt.mo
@@ -477,6 +494,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/he/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/he/LC_MESSAGES/wesnoth-httt.mo
@@ -500,6 +518,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/wesnoth-httt.mo
@@ -523,6 +542,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/wesnoth-httt.mo
@@ -546,6 +566,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/id/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/id/LC_MESSAGES/wesnoth-httt.mo
@@ -569,6 +590,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/is/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/is/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/is/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/is/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/is/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/is/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/is/LC_MESSAGES/wesnoth-httt.mo
@@ -592,6 +614,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/it/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/it/LC_MESSAGES/wesnoth-httt.mo
@@ -615,6 +638,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/wesnoth-httt.mo
@@ -638,6 +662,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/wesnoth-httt.mo
@@ -661,6 +686,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/la/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/la/LC_MESSAGES/wesnoth-httt.mo
@@ -684,6 +710,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/wesnoth-httt.mo
@@ -707,6 +734,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/wesnoth-httt.mo
@@ -730,6 +758,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/mk/LC_MESSAGES/wesnoth-httt.mo
@@ -753,6 +782,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/mr/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/mr/LC_MESSAGES/wesnoth-httt.mo
@@ -776,6 +806,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/wesnoth-httt.mo
@@ -799,6 +830,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wesnoth-httt.mo
@@ -822,6 +854,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/wesnoth-httt.mo
@@ -845,6 +878,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/wesnoth-httt.mo
@@ -868,6 +902,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/wesnoth-httt.mo
@@ -891,6 +926,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/racv/LC_MESSAGES/wesnoth-httt.mo
@@ -914,6 +950,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/wesnoth-httt.mo
@@ -937,6 +974,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wesnoth-httt.mo
@@ -960,6 +998,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/wesnoth-httt.mo
@@ -983,6 +1022,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/wesnoth-httt.mo
@@ -1006,6 +1046,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/wesnoth-httt.mo
@@ -1029,6 +1070,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/sr@ijekavian/LC_MESSAGES/wesnoth-httt.mo
@@ -1052,6 +1094,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/sr@ijekavianlatin/LC_MESSAGES/wesnoth-httt.mo
@@ -1075,6 +1118,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/wesnoth-httt.mo
@@ -1098,6 +1142,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/wesnoth-httt.mo
@@ -1121,6 +1166,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/tl/LC_MESSAGES/wesnoth-httt.mo
@@ -1144,6 +1190,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/wesnoth-httt.mo
@@ -1167,6 +1214,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/vi/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/wesnoth-httt.mo
@@ -1190,6 +1238,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/wesnoth-httt.mo
@@ -1213,6 +1262,7 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-did.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-dw.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-editor.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-ei.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-httt.mo
@@ -1232,6 +1282,8 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-units.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-utbs.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
+share/pixmaps/wesnoth-icon.png
+%%EDITOR%%share/pixmaps/wesnoth_editor-icon.png
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/wesnoth
 @dirrmtry man/af/man6
 @dirrmtry man/af
@@ -1358,6 +1410,6 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%@dirrmtry share/locale/sr@latin
 %%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/tl
+@exec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
+@unexec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
 %%SERVER%%@unexec rmdir /var/run/wesnothd 2>/dev/null || echo "If you are permanently removing this port, you should do a 'rm -rf /var/run/wesnothd' to remove it." | fmt
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
