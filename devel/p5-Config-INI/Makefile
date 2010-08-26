@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-INI
-PORTVERSION=	0.014
+PORTVERSION=	0.015
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,9 @@ BUILD_DEPENDS=	${SITE_PERL}/Mixin/Linewise/Readers.pm:${PORTSDIR}/devel/p5-Mixin
 RUN_DEPENDS+=	${SITE_PERL}/Mixin/Linewise/Readers.pm:${PORTSDIR}/devel/p5-Mixin-Linewise
 
 PERL_CONFIGURE=	yes
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 MAN3=		Config::INI.3 \
 		Config::INI::Reader.3 \
