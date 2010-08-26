@@ -20,15 +20,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAKE_JOBS_SAFE=	yes
 
-##
-# Use the following quirks to choose which sendmail to use (ports or system):
-#
-#   WITH_SENDMAIL_BASE=yes
-# or
-#   WITH_SENDMAIL_PORT=yes
-#
-# If unspecified, give base precedence.
-#
+OPTIONS=	ADDAUTH_PATCH "Bypass checks for SMTP AUTH connections" off \
+		REJECTTEXT_PATCH "Customize SMTP reject message" off \
+		LDAP "LDAP support" off \
+		SENDMAIL_PORT "Build against sendmail port" off
 
 .include <bsd.port.pre.mk>
 
@@ -47,6 +42,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rejecttext2
 
 .if exists(${LOCALBASE}/lib/libldap.so)
 WITH_LDAP=yes
+.undef WITHOUT_LDAP
 .endif
 
 .if !defined(WITHOUT_LDAP) && defined(WITH_LDAP)
@@ -55,8 +51,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
-.if !defined(WITH_SENDMAIL_BASE) && \
-    !defined(WITH_SENDMAIL_PORT) && \
+.if !defined(WITH_SENDMAIL_BASE) && !defined(WITH_SENDMAIL_PORT)
 WITH_SENDMAIL_BASE=yes
 .endif
 
@@ -90,30 +85,6 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 SUB_FILES=	pkg-message
 
 MAN1=		spamass-milter.1
-
-pre-patch:
-
-.if !defined(WITH_SENDMAIL_PORT)
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "By default, ${PORTNAME} builds against the base system."
-	@${ECHO_CMD} "If you want to use the sendmail port please set the environment"
-	@${ECHO_CMD} "variable WITH_SENDMAIL_PORT"
-	@${ECHO_CMD} ""
-.endif
-
-.if !defined(WITH_ADDAUTH_PATCH)
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "You may set environment variable WITH_ADDAUTH_PATCH to bypass"
-	@${ECHO_CMD} "checks if a connection authenticated via SMTP."
-	@${ECHO_CMD} ""
-.endif
-
-.if !defined(WITH_REJECTTEXT_PATCH)
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "You may set environment variable WITH_REJECTTEXT_PATCH to be"
-	@${ECHO_CMD} "able to customize the SMTP reject message."
-	@${ECHO_CMD} ""
-.endif
 
 post-patch:
 	@${SED} -e's,%%PREFIX%%,${PREFIX},g' \
