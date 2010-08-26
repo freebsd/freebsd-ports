@@ -9,7 +9,7 @@ PORTVERSION=	0.1.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Library of Simple JSON and XML Parsing
 
 USE_RUBY=	yes

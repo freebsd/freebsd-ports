@@ -10,7 +10,7 @@ CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 DISTNAME=	KirbyBase-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Small and Plain-text DBMS Written in Ruby
 
 USE_RUBY=	yes
