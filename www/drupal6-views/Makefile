@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	views
-DISTVERSION=	6.x-2.9
+DISTVERSION=	6.x-2.11
 CATEGORIES=	www
 
 MAINTAINER=	rea-fbsd@codelabs.ru
