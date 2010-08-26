@@ -7,6 +7,7 @@
 
 PORTNAME=	luasocket
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://luaforge.net/frs/download.php/2664/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
