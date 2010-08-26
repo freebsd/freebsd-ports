@@ -7,7 +7,7 @@
 
 PORTNAME=	xpad
 PORTVERSION=	3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpad.net/xpad/stable/${PORTVERSION}/+download/
 
