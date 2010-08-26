@@ -1,0 +1,29 @@
+%%SITE_PERL%%/Net/Google/Code.pm
+%%SITE_PERL%%/Net/Google/Code/AtomParser.pm
+%%SITE_PERL%%/Net/Google/Code/DateTime.pm
+%%SITE_PERL%%/Net/Google/Code/Download.pm
+%%SITE_PERL%%/Net/Google/Code/Issue.pm
+%%SITE_PERL%%/Net/Google/Code/Issue/Attachment.pm
+%%SITE_PERL%%/Net/Google/Code/Issue/Base.pm
+%%SITE_PERL%%/Net/Google/Code/Issue/Comment.pm
+%%SITE_PERL%%/Net/Google/Code/Issue/Search.pm
+%%SITE_PERL%%/Net/Google/Code/Issue/Util.pm
+%%SITE_PERL%%/Net/Google/Code/Role/Authentication.pm
+%%SITE_PERL%%/Net/Google/Code/Role/Fetchable.pm
+%%SITE_PERL%%/Net/Google/Code/Role/HTMLTree.pm
+%%SITE_PERL%%/Net/Google/Code/Role/Pageable.pm
+%%SITE_PERL%%/Net/Google/Code/Role/Predefined.pm
+%%SITE_PERL%%/Net/Google/Code/Role/URL.pm
+%%SITE_PERL%%/Net/Google/Code/TypicalRoles.pm
+%%SITE_PERL%%/Net/Google/Code/Wiki.pm
+%%SITE_PERL%%/Net/Google/Code/Wiki/Comment.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/Code/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/Code
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/Google/Code/Issue
+@dirrmtry %%SITE_PERL%%/Net/Google/Code/Role
+@dirrmtry %%SITE_PERL%%/Net/Google/Code/Wiki
+@dirrmtry %%SITE_PERL%%/Net/Google/Code
+@dirrmtry %%SITE_PERL%%/Net/Google
+@dirrmtry %%SITE_PERL%%/Net
