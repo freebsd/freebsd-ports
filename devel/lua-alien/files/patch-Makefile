@@ -1,0 +1,31 @@
+--- Makefile~
++++ Makefile
+@@ -1,22 +1,14 @@
+ 
+ all: src/alien/core.so src/alien/struct.so tests/libalientest$(LIB_EXT)
+ 
+-src/alien/core.o: src/alien/core.c libffi/include/ffi.h
+-	$(CC) -c $(CFLAGS) -Ilibffi/include -o src/alien/core.o src/alien/core.c
++src/alien/core.o: src/alien/core.c
++	$(CC) -c $(CFLAGS) -o src/alien/core.o src/alien/core.c
+ 
+-libffi/include/ffi.h:
+-	cat executables | xargs chmod +x
+-	cd libffi && ./configure --disable-shared CC=gcc
+-
+-libffi/Makefile:
+-	cat executables | xargs chmod +x
+-	cd libffi && ./configure --disable-shared CC=gcc
++src/alien/struct.o: src/alien/struct.c
++	$(CC) -c $(CFLAGS) -o src/alien/struct.o src/alien/struct.c
+ 
+-libffi/.libs/libffi.a: libffi/Makefile
+-	cd libffi && make CC=gcc
+-
+-src/alien/core.so: src/alien/core.o libffi/.libs/libffi.a
+-	export MACOSX_DEPLOYMENT_TARGET=10.3; $(CC) $(LIB_OPTION) -o src/alien/core.so src/alien/core.o -lgcc -Llibffi/.libs -lffi
++src/alien/core.so: src/alien/core.o
++	export MACOSX_DEPLOYMENT_TARGET=10.3; $(CC) $(LIB_OPTION) -o src/alien/core.so src/alien/core.o -lgcc -lffi
+ 
+ src/alien/struct.so: src/alien/struct.o 
+ 	export MACOSX_DEPLOYMENT_TARGET=10.3; $(CC) $(LIB_OPTION) -o src/alien/struct.so src/alien/struct.o
