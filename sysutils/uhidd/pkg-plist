@@ -3,7 +3,8 @@
 %%PL_DEVD%%@exec if [ ! -f %D/etc/devd/uhidd-devd.conf ]; then mkdir -p %B; cp -p %D/%F %B/uhidd-devd.conf; fi
 %%PL_DEVD%%@dirrmtry etc/devd
 sbin/uhidd
-@cwd /boot/modules
+@cwd %%KMODDIR%%
 uvhid.ko
+@rmtry uvhid.ko.symbols
 @exec kldxref %D
 @unexec kldxref %D

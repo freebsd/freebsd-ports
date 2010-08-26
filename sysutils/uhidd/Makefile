@@ -18,9 +18,14 @@ NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 
 OPTIONS=	DEVD "Install devd files" on
 
+MAKE_ENV+=	SYSDIR=${SYSDIR}
 KMODDIR?=	/boot/modules
+SRC_BASE?=	/usr/src
+SYSDIR?=	${SRC_BASE}/sys
 
 USE_RC_SUBR=	uhidd
+SUB_FILES=	pkg-message
+PLIST_SUB=	KMODDIR=${KMODDIR}
 
 MAN4=		uvhid.4
 MAN5=		uhidd.conf.5
@@ -28,11 +33,15 @@ MAN8=		uhidd.8
 
 .include <bsd.port.pre.mk>
 
+.if defined(DEBUG_FLAGS)
+MAKE_ENV+=	DEBUG_FLAGS='${DEBUG_FLAGS}'
+.endif
+
 .if ${OSVERSION} < 800069
 IGNORE=		does not build with the old USB stack
 .endif
 
-.if !exists(/usr/src/sys/Makefile)
+.if !(exists(${SYSDIR}/Makefile) || exists(${SRC_BASE}/sys/Makefile))
 IGNORE=		requires kernel source files
 .endif
 
@@ -42,11 +51,17 @@ PLIST_SUB+=	PL_DEVD=""
 PLIST_SUB+=	PL_DEVD="@comment "
 .endif
 
-SUB_FILES+=	pkg-message
+post-patch:	.SILENT
+	${FIND} ${WRKSRC}/uhidd -type f -exec ${REINPLACE_CMD} \
+		's|/usr/local|${PREFIX}|g' {} +
+	${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/uhidd/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/uhidd/uhidd ${PREFIX}/sbin/uhidd
 	${INSTALL_KLD} ${WRKSRC}/uvhid/uvhid.ko ${KMODDIR}/uvhid.ko
+.if exists(${WRKSRC}/uvhid/uvhid.ko.symbols)
+	${INSTALL_KLD} ${WRKSRC}/uvhid/uvhid.ko.symbols ${KMODDIR}/uvhid.ko.symbols
+.endif
 	${INSTALL_MAN} ${WRKSRC}/uhidd/uhidd.8 ${PREFIX}/man/man8/uhidd.8
 	${INSTALL_MAN} ${WRKSRC}/uhidd/uhidd.conf.5 ${PREFIX}/man/man5/uhidd.conf.5
 	${INSTALL_MAN} ${WRKSRC}/uvhid/uvhid.4 ${PREFIX}/man/man4/uvhid.4
