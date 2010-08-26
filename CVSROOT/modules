@@ -7609,6 +7609,7 @@ lep                             ports/security/lep
 leptonlib                       ports/graphics/leptonlib
 lesspipe                        ports/misc/lesspipe
 lesstif                         ports/x11-toolkits/lesstif
+levmar                          ports/math/levmar
 lexi                            ports/devel/lexi
 lexter                          ports/games/lexter
 lexxia                          ports/textproc/lexxia
@@ -24364,6 +24365,7 @@ trac-customroadmap              ports/www/trac-customroadmap
 trac-datefield                  ports/www/trac-datefield
 trac-discussion                 ports/www/trac-discussion
 trac-down                       ports/www/trac-down
+trac-downloads                  ports/www/trac-downloads
 trac-email2trac                 ports/www/trac-email2trac
 trac-estimator                  ports/www/trac-estimator
 trac-fivestarvote               ports/www/trac-fivestarvote
@@ -24970,6 +24972,7 @@ virtualbox-ose-additions        ports/emulators/virtualbox-ose-additions
 virtualbox-ose-kmod             ports/emulators/virtualbox-ose-kmod
 virtualmin                      ports/sysutils/virtualmin
 virtuoso                        ports/databases/virtuoso
+viruskiller                     ports/games/viruskiller
 vis5d+                          ports/science/vis5d+
 visionegg                       ports/graphics/visionegg
 visionworkbench                 ports/graphics/visionworkbench
