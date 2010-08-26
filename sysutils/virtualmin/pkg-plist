@@ -221,6 +221,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/bandwidth_bw_notify.html
 %%LIB32DIR%%/webmin/virtual-server/help/bandwidth_bw_owner.html
 %%LIB32DIR%%/webmin/virtual-server/help/bandwidth_bw_past.html
+%%LIB32DIR%%/webmin/virtual-server/help/bandwidth_bw_step.html
 %%LIB32DIR%%/webmin/virtual-server/help/bandwidth_bw_template.html
 %%LIB32DIR%%/webmin/virtual-server/help/bandwidth_bw_warn.html
 %%LIB32DIR%%/webmin/virtual-server/help/bandwidth_ftplog_def.html
@@ -968,6 +969,7 @@
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.78/2-uploadrestore
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.78/3-apachelog
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.79/1-htmldir
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.80/1-aliasdns
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
@@ -1096,6 +1098,7 @@
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl
+@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.80
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.79
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.78
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.77
