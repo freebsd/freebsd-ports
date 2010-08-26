@@ -9,7 +9,7 @@ PORTVERSION=	0.6.3
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Core of Rubygem-prawn
 
 USE_RUBY=	yes

@@ -9,7 +9,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An extension of Prawn
 
 USE_RUBY=	yes

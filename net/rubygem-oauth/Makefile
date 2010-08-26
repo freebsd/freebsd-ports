@@ -10,7 +10,7 @@ PORTVERSION=	0.4.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rubygem for Creating both OAuth Consumers and Service Providers
 
 RUN_DEPENDS=	${RUBY_PKGNAMEPREFIX}hmac>=0.3.2:${PORTSDIR}/security/ruby-hmac

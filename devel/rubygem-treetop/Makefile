@@ -1,6 +1,6 @@
 # New ports collection makefile for:	treetop
 # Date created:		11 Oct, 2009
-# Whom:			Wen Heping <wen@FreeBSD.org>
+# Whom:			Wen Heping <ruby@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby-based DSL for text parsing and interpretation
 
 RUN_DEPENDS=	rubygem-polyglot>=0.3.1:${PORTSDIR}/devel/rubygem-polyglot

@@ -9,7 +9,7 @@ PORTVERSION=	0.6.3
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast pure Ruby PDF generator
 
 RUN_DEPENDS=	rubygem-prawn-layout>=0.3.1:${PORTSDIR}/print/rubygem-prawn-layout \

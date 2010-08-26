@@ -10,7 +10,7 @@ PORTVERSION=	2.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	UUID Generator for Ruby
 
 RUN_DEPENDS=	rubygem-macaddr>=1.0.0:${PORTSDIR}/net/rubygem-macaddr

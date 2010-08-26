@@ -9,7 +9,7 @@ PORTVERSION=	0.3.2
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An Prawn Extension to Provides Table Support and Other Layout
 
 USE_RUBY=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	ruby-asp
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Interface to the GraphViz Graphing Tool
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gxl2dot:${PORTSDIR}/graphics/graphviz \

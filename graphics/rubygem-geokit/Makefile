@@ -9,7 +9,7 @@ PORTVERSION=	1.5.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby gem for maps-based apps
 
 USE_RUBY=	yes
