@@ -25,7 +25,7 @@ MAKEFILE=		Makefile.linux
 USE_LDCONFIG=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-DiTIFF|-DiTIFF -DTIFF_VERSION=42|' \
+	@${REINPLACE_CMD} -e 's|-DiTIFF|-DiTIFF -DTIFF_VERSION=TIFF_VERSION_CLASSIC|' \
 		${WRKSRC}/Makefile.linux
 
 .include <bsd.port.mk>
