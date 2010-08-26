@@ -31,10 +31,12 @@ SUB_FILES=	vtk.3
 USE_CMAKE=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
+USE_XORG=	xt
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${PORTVERSION:R}
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	VTKMPEG2	"Install patented MPEG2 encoder module" Off \
+OPTIONS=	SHARED		"Build shared libraries" On \
+		VTKMPEG2	"Install patented MPEG2 encoder module" Off \
 		GL2PS           "Install support conversion OpenGL to PostScript" On \
 		OSMESA		"Use Mesa for off-screen rendering" Off \
 		QT		"Enable Qt gui support" On \
@@ -42,7 +44,7 @@ OPTIONS=	VTKMPEG2	"Install patented MPEG2 encoder module" Off \
 		WRAP_PYTHON	"Enable Python wrapping" On \
 		WRAP_TCLTK	"Enable Tcl/Tk wrapping" On
 
-PLIST_SUB=	VER1="${PORTVERSION}" \
+PLIST_SUB+=	VER1="${PORTVERSION}" \
 		VER2="${PORTVERSION:R}" \
 		VER3="${PORTVERSION:R:R}"
 
@@ -54,8 +56,7 @@ CMAKE_OUTSOURCE=	yes
 
 # Set this when testing port changes
 #-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
-CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON \
-		-DBUILD_DOCUMENTATION:BOOL=ON \
+CMAKE_ARGS+=	-DBUILD_DOCUMENTATION:BOOL=ON \
 		-DBUILD_TESTING:BOOL=OFF \
 		-DKWSYS_LFS_DISABLE:BOOL=ON \
 		-DVTK_USE_PARALLEL:BOOL=ON \
@@ -72,6 +73,16 @@ CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON \
 		-DOPENGL_glu_LIBRARY:FILEPATH=${LOCALBASE}/lib/libGLU.so
 
 .include <bsd.port.options.mk>
+
+.if defined(WITH_SHARED)
+CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON
+PLIST_SUB+=	SHARED="" \
+		STATIC="@comment "
+.else
+CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=OFF
+PLIST_SUB+=	SHARED="@comment " \
+		STATIC=""
+.endif
 
 .if defined(WITH_VTKMPEG2)
 LIB_DEPENDS+=	vtkMPEG2Encode.5:${PORTSDIR}/multimedia/vtkmpeg2encode
@@ -117,6 +128,10 @@ PLIST_SUB+=	QT="@comment "
 .endif
 
 .if defined(WITH_WRAP_PYTHON)
+.if !defined(WITH_SHARED)
+IGNORE=		python wrapping requires shared libraries.\
+		Run make config again and enable the SHARED option
+.endif
 USE_PYTHON=	yes
 PYDISTUTILS_PKGNAME=	VTK
 INSTALLS_EGGINFO=	yes
@@ -150,6 +165,13 @@ PLIST_SUB+=	WRAP_PYTHON_OR_TCLTK="@comment "
 .endif
 
 .if defined(WITH_WRAP_JAVA)
+.if !defined(WITH_SHARED)
+IGNORE=		java wrapping requires shared libraries.\
+		Run make config again and enable the SHARED option
+.endif
+.if ${ARCH} == "amd64"
+CXXFLAGS+=	-fPIC
+.endif
 USE_JAVA=	yes
 JAVA_VENDOR=	freebsd
 JAVA_VERSION=	1.5+
@@ -157,8 +179,8 @@ CMAKE_ARGS+=	-DVTK_WRAP_JAVA:BOOL=ON \
     		-DJAVA_AWT_INCLUDE_PATH:FILEPATH=${JAVA_HOME}/include \
     		-DJAVA_INCLUDE_PATH:FILEPATH=${JAVA_HOME}/include \
     		-DJAVA_INCLUDE_PATH2:FILEPATH=${JAVA_HOME}/include/freebsd \
-		-DJAVA_AWT_LIBRARY:FILEPATH=${JAVA_HOME}/jre/lib/${ARCH}/libawt.so \
-		-DJAVA_JVM_LIBRARY:FILEPATH=${JAVA_HOME}/jre/lib/${ARCH}/client/libjvm.so
+		-DJAVA_AWT_LIBRARY:FILEPATH=${JAVA_HOME}/jre/lib/${ARCH}/libjawt.so \
+		-DJAVA_JVM_LIBRARY:FILEPATH=${JAVA_HOME}/jre/lib/${ARCH}/server/libjvm.so
 PLIST_SUB+=	JAVA=""
 .else
 PLIST_SUB+=	JAVA="@comment "
@@ -182,7 +204,7 @@ post-patch:
 
 post-configure:
 .if defined(WITH_WRAP_JAVA)
-	${REINPLACE_CMD} -e 's|$$|-L/usr/local/${JAVA_HOME}/jre/lib/${ARCH} -ljawt|' \
+	${REINPLACE_CMD} -e 's|-ljawt$$||' \
 	    ${CONFIGURE_WRKSRC}/Wrapping/Java/CMakeFiles/VTKJavaExecutable.dir/link.txt
 .endif
 
@@ -200,6 +222,7 @@ pre-install:
 post-install:
 # Ports system wants us to conform to lib.so.x format, but VTK5
 # only installs lib.so.x.y and lib.so.x.y.z.
+.if defined(WITH_SHARED)
 	@for lib in ${PREFIX}/lib/vtk-${PORTVERSION:R}/libvtk*.so; do \
 	    ${RM} -f $$lib; \
 	    ${LN} -sf $$lib.${PORTVERSION} $$lib; \
@@ -211,6 +234,7 @@ post-install:
 	    ${LN} -sf $$lib.${PORTVERSION} $$lib; \
 	    ${LN} -sf $$lib.${PORTVERSION} $$lib.${PORTVERSION:R:R}; \
 	done
+.endif
 .endif
 .if defined(WITH_VTKMPEG2)
 	@${ECHO_CMD}
