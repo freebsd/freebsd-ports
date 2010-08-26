@@ -17,7 +17,7 @@ COMMENT=	SMS::Send driver for www.emome.net
 RUN_DEPENDS=	p5-SMS-Send>=0.03:${PORTSDIR}/comms/p5-SMS-Send \
   		p5-Crypt-SSLeay>=0.57:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-WWW-Mechanize>=1.20:${PORTSDIR}/www/p5-WWW-Mechanize \
-		p5-Text-Iconv>=1.50:${PORTSDIR}/converters/p5-Text-Iconv
+		p5-Text-Iconv>=:${PORTSDIR}/converters/p5-Text-Iconv
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
