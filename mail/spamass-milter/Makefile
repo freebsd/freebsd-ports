@@ -27,17 +27,22 @@ OPTIONS=	ADDAUTH_PATCH "Bypass checks for SMTP AUTH connections" off \
 
 .include <bsd.port.pre.mk>
 
+ORIG_ARGS=	fd:mMp:P:r:u:D:i:b:B:e:x
+NEW_ARGS:=	${ORIG_ARGS}
+
 .if defined(WITH_ADDAUTH_PATCH)
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-addauth
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-addauth
+NEW_ARGS:=	${NEW_ARGS}a
 .endif
 
 .if defined(WITH_REJECTTEXT_PATCH)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rejecttext1
-.if defined(WITH_ADDAUTH_PATCH)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rejecttext2a
-.else
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rejecttext2
+NEW_ARGS:=	${NEW_ARGS}R:
 .endif
+
+# extra-patch-options is modified in pre-patch
+.if ${ORIG_ARGS} != ${NEW_ARGS}
+EXTRA_PATCHES+=	${WRKDIR}/extra-patch-options
 .endif
 
 .if exists(${LOCALBASE}/lib/libldap.so)
@@ -85,6 +90,11 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 SUB_FILES=	pkg-message
 
 MAN1=		spamass-milter.1
+
+pre-patch:
+.if ${ORIG_ARGS} != ${NEW_ARGS}
+	@${SED} -e 's|%NEW_ARGS%|${NEW_ARGS}|' ${FILESDIR}/extra-patch-options > ${WRKDIR}/extra-patch-options
+.endif
 
 post-patch:
 	@${SED} -e's,%%PREFIX%%,${PREFIX},g' \

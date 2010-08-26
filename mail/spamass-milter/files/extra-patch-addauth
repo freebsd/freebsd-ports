@@ -22,15 +22,6 @@ diff -u orig/spamass-milter.cpp spamass-milter.cpp
  
  #if defined(__FreeBSD__) /* popen bug - see PR bin/50770 */
  static pthread_mutex_t popen_mutex = PTHREAD_MUTEX_INITIALIZER;
-@@ -181,7 +182,7 @@
- main(int argc, char* argv[])
- {
-    int c, err = 0;
--   const char *args = "fd:mMp:P:r:u:D:i:b:B:e:x";
-+   const char *args = "fd:mMp:P:r:u:D:i:b:B:e:xa";
-    char *sock = NULL;
-    bool dofork = false;
-    char *pidfilename = NULL;
 @@ -196,6 +197,9 @@
  	/* Process command line options */
  	while ((c = getopt(argc, argv, args)) != -1) {
