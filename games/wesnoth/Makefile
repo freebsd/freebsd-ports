@@ -55,7 +55,6 @@ OPTIONS=	BWMON	 "Enable bandwidth monitoring for server" Off \
 		EDITOR	 "Enable map editor"		On \
 		FRIBIDI	 "Enable bidirectional support"	On \
 		LOWMEM	 "Reduce memory usage (disables animations)" Off \
-		NLS	 "Enable localization"		On \
 		NOTIFY	 "Enable desktop notifications"	On \
 		POOLALLOC "Use wesnoth own memory allocator" Off \
 		PYTHON	 "Enable python developer tools" On \
@@ -193,10 +192,6 @@ PLIST_SUB+=		TOOLS=""
 
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--docdir=${WRKDIR}/docs
-.endif
-
-.if (defined(WITH_CAMPAIGN) || defined(WITH_SERVER) || defined(WITH_TOOLS)) && defined(WITHOUT_NLS)
-BROKEN=		you need NLS support for `campaignd' or `wesnothd' or tools to link against gettext
 .endif
 
 .if defined(NOPORTDATA)
