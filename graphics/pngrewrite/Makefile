@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	pngrewrite
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://entropymine.com/jason/pngrewrite/ \
 		http://mirror.roe.ch/dist/pngrewrite/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A PNG palette optimizer
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
@@ -24,7 +23,7 @@ PLIST_FILES=	bin/pngrewrite
 
 do-build:
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
-		-o ${WRKSRC}/pngrewrite ${WRKSRC}/pngrewrite.c -lpng -lz -lm
+		-o ${WRKSRC}/pngrewrite ${WRKSRC}/pngrewrite.c ${WRKSRC}/libpngrewrite.c -lpng -lz -lm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pngrewrite ${PREFIX}/bin
