@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kawa
-PORTVERSION=	1.9.90
+PORTVERSION=	1.10
 CATEGORIES=	lang scheme java
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	kawa
@@ -28,11 +28,9 @@ PLIST_FILES=	bin/kawa bin/qexo share/java/kawa.jar \
 		share/java/kawa-${PORTVERSION}.jar
 
 pre-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|JAR = jar|JAR = ${JAR}|g;'
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
+		-e '/^JAR =/s|[a-zA-Z]*$$|${JAR}|g;'
 	@${REINPLACE_CMD} -e 's|{JAVAC-javac}|{JAVAC-${JAVAC}}|g;' \
-		-e 's|{JAVA-java}|{JAVA-${JAVA}}|g; 4912d;' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|--mode=install|--mode=install install|g' \
-	    ${WRKSRC}/bin/Makefile.am ${WRKSRC}/bin/Makefile.in
+		-e 's|{JAVA-java}|{JAVA-${JAVA}}|g; 4555d;' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
