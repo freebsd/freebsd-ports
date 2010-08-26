@@ -113,6 +113,7 @@
     SUBDIR += gxmessage
     SUBDIR += gxneur
     SUBDIR += hamster-applet
+    SUBDIR += hebcal
     SUBDIR += helpviewer
     SUBDIR += horde-hermes
     SUBDIR += horde-kronolith
