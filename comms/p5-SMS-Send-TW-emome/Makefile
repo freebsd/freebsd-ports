@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SMS-Send-TW-emome
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	comms perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	SMS::Send driver for www.emome.net
 
-RUN_DEPENDS=	p5-SMS-Send>=0:${PORTSDIR}/comms/p5-SMS-Send \
-  		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
-		p5-Text-Iconv>=0:${PORTSDIR}/converters/p5-Text-Iconv
+RUN_DEPENDS=	p5-SMS-Send>=0.03:${PORTSDIR}/comms/p5-SMS-Send \
+  		p5-Crypt-SSLeay>=1.20:${PORTSDIR}/security/p5-Crypt-SSLeay \
+		p5-WWW-Mechanize>=1.50:${PORTSDIR}/www/p5-WWW-Mechanize \
+		p5-Text-Iconv>=0.57:${PORTSDIR}/converters/p5-Text-Iconv
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
