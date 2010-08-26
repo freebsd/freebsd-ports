@@ -602,6 +602,7 @@
     SUBDIR += sa-stats
     SUBDIR += sa-utils
     SUBDIR += sastatd
+    SUBDIR += scam-backscatter
     SUBDIR += sccmilter
     SUBDIR += scmail
     SUBDIR += sendmail

@@ -1,0 +1,21 @@
+===> IMPORTANT NOTE
+
+    A sample configuration file has been installed in %%PREFIX%%/etc/mail
+    directory. Copy and edit it to suit your needs before launching
+    scam-backscatter milter.
+
+    Add the following lines to your /etc/mail/<your_host>.mc configuration.
+
+    define(`confMILTER_MACROS_ENVRCPT', `{rcpt_mailer}, {rcpt_host}, {rcpt_addr}'')dnl
+    INPUT_MAIL_FILTER(`scam-back', `S=unix:/var/scam-back/scam-back.sock, F=T, T=S:240s;R:240s;E:5m')dnl
+
+    If you are already using another milter, you might have
+    confMILTER_MACROS_ENVRCPT already defined. In that case you
+    should ensure that it includes the macros listed above (and add
+    any missing ones).
+
+    To run scam-backscatter from startup, add scambackscatter_enable="YES"
+    in your /etc/rc.conf or your /etc/rc.conf.local
+
+    See %%DOCSDIR%%/INSTALL for configuration details.
+

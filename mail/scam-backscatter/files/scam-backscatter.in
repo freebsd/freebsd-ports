@@ -1,0 +1,56 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: scambackscatter
+# REQUIRE: LOGIN
+# BEFORE: mail
+
+# This file should be installed as %%PREFIX%%/etc/rc.d/scam-backscatter
+#
+# Define scambackscatter_* variables in one of these files:
+# 	/etc/rc.conf
+# 	/etc/rc.conf.local
+#	/etc/rc.conf.d/scambackscatter
+#
+# Add the following line to enable:
+# 	scambackscatter_enable="YES"
+#
+# DO NOT CHANGE THE DEFAULT VALUES BELOW
+#
+
+. /etc/rc.subr
+
+name="scambackscatter"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/libexec/scam-back"
+start_precmd="${name}_prestart"
+
+scambackscatter_user=${scambackscatter_user-"mailnull"}
+scambackscatter_group=${scambackscatter_group-"mailnull"}
+
+scambackscatter_enable=${scambackscatter_enable-"NO"}
+scambackscatter_dir=${scambackscatter_dir-"/var/scam-back"}
+scambackscatter_runas=${scambackscatter_runas-"$scambackscatter_user"}
+scambackscatter_pidfile=${scambackscatter_pidfile-"/var/run/scam-back.pid"}
+scambackscatter_sockfile=${scambackscatter_sockfile-"$scambackscatter_dir/scam-back.sock"}
+scambackscatter_cfgfile=${scambackscatter_cfgfile-"%%PREFIX%%/etc/mail/scam-back.conf"}
+scambackscatter_flags=${scambackscatter_flags-"-p unix:$scambackscatter_sockfile \
+-f $scambackscatter_cfgfile -u $scambackscatter_runas -P $scambackscatter_pidfile \
+-b $scambackscatter_dir/backscatter.txt -D"}
+
+load_rc_config ${name}
+
+scambackscatter_prestart()
+{
+	if [ ! -d "${scambackscatter_dir}/." ]; then
+		mkdir ${scambackscatter_dir}
+		chown ${scambackscatter_user}:${scambackscatter_group} ${scambackscatter_dir}
+		chmod 700 ${scambackscatter_dir}
+	fi
+	if [ ! -f "${scambackscatter_pidfile}" ]; then
+		touch ${scambackscatter_pidfile}
+		chown ${scambackscatter_user}:${scambackscatter_group} ${scambackscatter_pidfile}
+	fi
+}
+
+run_rc_command "$1"
