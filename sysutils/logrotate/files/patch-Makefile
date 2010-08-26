@@ -1,7 +1,8 @@
-diff -ruN logrotate-3.7.7-orig/Makefile logrotate-3.7.7/Makefile
---- logrotate-3.7.7-orig/Makefile	Mon May 19 10:25:54 2008
-+++ logrotate-3.7.7/Makefile	Sun Jun 22 21:49:41 2008
-@@ -51,6 +51,13 @@
+diff --git a/Makefile b/Makefile
+index adb97f2..a2d51f7 100644
+--- a/Makefile
++++ b/Makefile
+@@ -53,6 +53,13 @@ ifeq ($(OS_NAME),Linux)
      BASEDIR = /usr
  endif
  
@@ -15,16 +16,18 @@ diff -ruN logrotate-3.7.7-orig/Makefile logrotate-3.7.7/Makefile
  ifneq ($(POPT_DIR),)
      CFLAGS += -I$(POPT_DIR)
      LOADLIBES += -L$(POPT_DIR)
-@@ -103,10 +110,13 @@
- 	if [ "$(OS_NAME)" = HP-UX ]; then \
+@@ -107,11 +114,15 @@ install:
  	$(INSTALL) $(PROG) $(PREFIX)/$(BINDIR) 0755 bin bin; \
  	$(INSTALL) $(MAN) $(PREFIX)/$(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"` 0644 bin bin; \
+ 	$(INSTALL) $(MAN5) $(PREFIX)/$(MANDIR)/man`echo $(MAN5) | sed "s/.*\.//"` 0644 bin bin; \
 +	else if [ "$(OS_NAME)" = FreeBSD ]; then \
 +	$(BSD_INSTALL_PROGRAM) $(PROG) $(BINDIR); \
 +	$(BSD_INSTALL_MAN) $(MAN) $(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"`/$(MAN); \
++	$(BSD_INSTALL_MAN) $(MAN5) $(MANDIR)/man`echo $(MAN5) | sed "s/.*\.//"`/$(MAN5); \
  	else \
  	$(INSTALL) -m 755 $(PROG) $(PREFIX)/$(BINDIR); \
  	$(INSTALL) -m 644 $(MAN) $(PREFIX)/$(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"`/$(MAN); \
+ 	$(INSTALL) -m 644 $(MAN5) $(PREFIX)/$(MANDIR)/man`echo $(MAN5) | sed "s/.*\.//"`/$(MAN5); \
 -	fi
 +	fi; fi
  

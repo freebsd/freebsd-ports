@@ -1,7 +1,8 @@
-diff -ruN logrotate-3.7.7-orig/logrotate.8 logrotate-3.7.7/logrotate.8
---- logrotate-3.7.7-orig/logrotate.8	Wed May 14 08:12:14 2008
-+++ logrotate-3.7.7/logrotate.8	Sun Jun 22 22:22:41 2008
-@@ -46,14 +46,14 @@
+diff --git a/logrotate.8 b/logrotate.8
+index f18c522..33f9a32 100644
+--- a/logrotate.8
++++ b/logrotate.8
+@@ -48,14 +48,14 @@ correctly.
  Tells \fBlogrotate\fR which command to use when mailing logs. This
  command should accept two arguments: 1) the subject of the message, and
  2) the recipient. The command must then read a message on standard input
@@ -18,7 +19,7 @@ diff -ruN logrotate-3.7.7-orig/logrotate.8 logrotate-3.7.7/logrotate.8
  
  .TP
  \fB-\-usage\fR
-@@ -456,10 +456,10 @@
+@@ -473,10 +473,10 @@ Log files are rotated if the current year is not the same as the last rotation.
  .SH FILES
  .PD 0
  .TP 27
