@@ -1,0 +1,17 @@
+%%LUA_MODLIBDIR%%/alien/core.so
+%%LUA_MODLIBDIR%%/alien/struct.so
+%%PORTDATA%%%%DATADIR%%/constants
+%%PORTDATA%%%%DATADIR%%/tests/alientest.c
+%%PORTDATA%%%%DATADIR%%/tests/libalientest.so
+%%PORTDATA%%%%DATADIR%%/tests/test_alien.lua
+%%PORTDOCS%%%%DOCSDIR%%/alien.md
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtk.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/libc.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/string_array.lua
+%%LUA_MODSHAREDIR%%/alien.lua
+@dirrm %%LUA_MODLIBDIR%%/alien
+%%PORTDATA%%@dirrm %%DATADIR%%/tests
+%%PORTDATA%%@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
