@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		logrotate
-PORTVERSION=		3.7.7
-PORTREVISION=		1
+PORTVERSION=		3.7.9
 CATEGORIES=		sysutils
 MASTER_SITES=		https://fedorahosted.org/releases/l/o/logrotate/
 DISTNAME=		${PORTNAME}-${PORTVERSION}
@@ -17,11 +16,11 @@ COMMENT=		Daemon to rotate, compress, remove and mail system log files
 
 LIB_DEPENDS=		popt.0:${PORTSDIR}/devel/popt
 
+PATCH_STRIP=		-p1
 USE_GMAKE=	yes
 MAKE_ENV=	"BASEDIR=${PREFIX}"
-PATCH_WRKSRC=		${WRKDIR}
-WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+MAN5=		logrotate.conf.5
 MAN8=		logrotate.8
 MANCOMPRESSED=	no
 
