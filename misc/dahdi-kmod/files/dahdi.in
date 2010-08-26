@@ -12,7 +12,18 @@
 #
 # dahdi_enable (bool):			YES/NO (default: NO)
 # dahdi_modules (list of strings):	dahdi modules to load at boot (default: dahdi)
-#	Valid modules are: dahdi, wct4xxp, wcb4xxp
+#
+# Valid modules are:
+# - dahdi
+# - dahdi_transcode
+# - wcb4xxp
+# - wcfxo
+# - wct4xxp
+# - wctc4xxp
+# - wctdm
+# - wctdm24xxp
+# - wcte11xp
+# - wcte12xp
 #
 # Example:
 #
