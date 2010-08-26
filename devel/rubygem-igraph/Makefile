@@ -10,7 +10,7 @@ PORTVERSION=	0.9.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ruby@FreeBSDD.org
 COMMENT=	A Ruby extension for using the igraph library
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libigraph.so:${PORTSDIR}/math/igraph

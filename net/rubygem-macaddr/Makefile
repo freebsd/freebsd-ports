@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Cross Platform Mac Address Determination for Ruby
 
 USE_RUBY=	yes

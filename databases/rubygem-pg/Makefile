@@ -11,7 +11,7 @@ CATEGORIES=		databases rubygems
 MASTER_SITES=		RF
 MASTER_SITE_SUBDIR=	ruby-pg
 
-MAINTAINER=		wenheping@gmail.com
+MAINTAINER=		ruby@FreeBSD.org
 COMMENT=		Ruby interface to PostgreSQL library
 
 USE_PGSQL=		yes

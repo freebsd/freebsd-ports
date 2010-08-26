@@ -10,7 +10,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	rocky-hacks
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Sorts an Array in Column Order
 
 USE_RUBY=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	3.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A library intended to aid developers working with deprecated code
 
 USE_RUBY=	yes
