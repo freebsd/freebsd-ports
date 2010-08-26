@@ -1,0 +1,13 @@
+exmpp is a fast and scalable library for the Extensible Messaging and Presence
+Protocol (XMPP) written in Erlang/OTP.
+
+Main features:
+ - Based on Erlang message reception and pattern matching. The programming
+   style is close to Erlang approach and lead to very short pieces of code.
+ - Support for both formating of client and server packets.
+ - Based on Erlang atoms and binary to limit memory consumption. It can be
+   used to write a highly scalable XMPP proxy or XMPP server.
+ - SSL support.
+ - Several different XML parsers can be used (expat, libxml2).
+
+WWW: https://support.process-one.net/doc/display/EXMPP/exmpp+home

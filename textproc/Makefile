@@ -158,6 +158,7 @@
     SUBDIR += europass-xsl
     SUBDIR += exempi
     SUBDIR += exml
+    SUBDIR += exmpp
     SUBDIR += expat2
     SUBDIR += exslt
     SUBDIR += ezxml
