@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+libexec/scam-back
+etc/mail/scam-back.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/License
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry etc/mail
+@unexec [ -f /var/scam-back/backscatter.txt ] || /bin/rmdir /var/scam-back 2>/dev/null || true
