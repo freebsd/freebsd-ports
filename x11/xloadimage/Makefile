@@ -7,7 +7,7 @@
 
 VERSION=	4.1
 REVISION=	16
-PORTREVISION=	7
+PORTREVISION=	8
 
 PORTNAME=	xloadimage
 PORTVERSION=	${VERSION}.${REVISION}
@@ -41,6 +41,8 @@ post-patch:
 	@${CHMOD} a+rx ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
 		${WRKSRC}/png.c
+	@${REINPLACE_CMD} -e 's|TIFFHeader|TIFFHeaderClassic|g' \
+		${WRKSRC}/tiff.c
 	@cd ${WRKSRC}; ${MV} xloadimage.man xloadimage.man.old; \
 		${SED} -e s:/etc/X11/Xloadimage:${PREFIX}/etc/xloadimagerc: \
 		       -e s:/usr/lib/xloadimagerc:${PREFIX}/etc/xloadimagerc: \
