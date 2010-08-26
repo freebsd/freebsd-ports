@@ -836,6 +836,7 @@
     SUBDIR += stegdetect
     SUBDIR += steghide
     SUBDIR += strobe
+    SUBDIR += strongswan
     SUBDIR += stunnel
     SUBDIR += subweb
     SUBDIR += sud

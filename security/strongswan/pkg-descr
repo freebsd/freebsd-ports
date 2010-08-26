@@ -1,0 +1,4 @@
+Strongswan is an open source IPsec-based VPN solution.
+Strongswan for FreeBSD supports IKEv2 but NOT IKEv1.
+
+WWW: http://www.strongswan.org

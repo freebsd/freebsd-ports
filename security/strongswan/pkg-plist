@@ -1,0 +1,109 @@
+etc/ipsec.conf
+%%ETCDIR%%.conf
+lib/libcharon.a
+lib/libcharon.la
+lib/libcharon.so
+lib/libcharon.so.0
+lib/libhydra.a
+lib/libhydra.la
+lib/libhydra.so
+lib/libhydra.so.0
+lib/libstrongswan.a
+lib/libstrongswan.la
+lib/libstrongswan.so
+lib/libstrongswan.so.0
+libexec/ipsec/_copyright
+libexec/ipsec/_updown
+libexec/ipsec/_updown_espmark
+libexec/ipsec/charon
+libexec/ipsec/plugins/libstrongswan-aes.a
+libexec/ipsec/plugins/libstrongswan-aes.la
+libexec/ipsec/plugins/libstrongswan-aes.so
+libexec/ipsec/plugins/libstrongswan-attr.a
+libexec/ipsec/plugins/libstrongswan-attr.la
+libexec/ipsec/plugins/libstrongswan-attr.so
+libexec/ipsec/plugins/libstrongswan-des.a
+libexec/ipsec/plugins/libstrongswan-des.la
+libexec/ipsec/plugins/libstrongswan-des.so
+libexec/ipsec/plugins/libstrongswan-dnskey.a
+libexec/ipsec/plugins/libstrongswan-dnskey.la
+libexec/ipsec/plugins/libstrongswan-dnskey.so
+libexec/ipsec/plugins/libstrongswan-fips-prf.a
+libexec/ipsec/plugins/libstrongswan-fips-prf.la
+libexec/ipsec/plugins/libstrongswan-fips-prf.so
+libexec/ipsec/plugins/libstrongswan-gmp.a
+libexec/ipsec/plugins/libstrongswan-gmp.la
+libexec/ipsec/plugins/libstrongswan-gmp.so
+libexec/ipsec/plugins/libstrongswan-hmac.a
+libexec/ipsec/plugins/libstrongswan-hmac.la
+libexec/ipsec/plugins/libstrongswan-hmac.so
+libexec/ipsec/plugins/libstrongswan-kernel-pfkey.a
+libexec/ipsec/plugins/libstrongswan-kernel-pfkey.la
+libexec/ipsec/plugins/libstrongswan-kernel-pfkey.so
+libexec/ipsec/plugins/libstrongswan-kernel-pfroute.a
+libexec/ipsec/plugins/libstrongswan-kernel-pfroute.la
+libexec/ipsec/plugins/libstrongswan-kernel-pfroute.so
+libexec/ipsec/plugins/libstrongswan-md5.a
+libexec/ipsec/plugins/libstrongswan-md5.la
+libexec/ipsec/plugins/libstrongswan-md5.so
+libexec/ipsec/plugins/libstrongswan-pem.a
+libexec/ipsec/plugins/libstrongswan-pem.la
+libexec/ipsec/plugins/libstrongswan-pem.so
+libexec/ipsec/plugins/libstrongswan-pgp.a
+libexec/ipsec/plugins/libstrongswan-pgp.la
+libexec/ipsec/plugins/libstrongswan-pgp.so
+libexec/ipsec/plugins/libstrongswan-pkcs1.a
+libexec/ipsec/plugins/libstrongswan-pkcs1.la
+libexec/ipsec/plugins/libstrongswan-pkcs1.so
+libexec/ipsec/plugins/libstrongswan-pubkey.a
+libexec/ipsec/plugins/libstrongswan-pubkey.la
+libexec/ipsec/plugins/libstrongswan-pubkey.so
+libexec/ipsec/plugins/libstrongswan-random.a
+libexec/ipsec/plugins/libstrongswan-random.la
+libexec/ipsec/plugins/libstrongswan-random.so
+libexec/ipsec/plugins/libstrongswan-resolve.a
+libexec/ipsec/plugins/libstrongswan-resolve.la
+libexec/ipsec/plugins/libstrongswan-resolve.so
+libexec/ipsec/plugins/libstrongswan-sha1.a
+libexec/ipsec/plugins/libstrongswan-sha1.la
+libexec/ipsec/plugins/libstrongswan-sha1.so
+libexec/ipsec/plugins/libstrongswan-sha2.a
+libexec/ipsec/plugins/libstrongswan-sha2.la
+libexec/ipsec/plugins/libstrongswan-sha2.so
+libexec/ipsec/plugins/libstrongswan-socket-default.a
+libexec/ipsec/plugins/libstrongswan-socket-default.la
+libexec/ipsec/plugins/libstrongswan-socket-default.so
+libexec/ipsec/plugins/libstrongswan-stroke.a
+libexec/ipsec/plugins/libstrongswan-stroke.la
+libexec/ipsec/plugins/libstrongswan-stroke.so
+libexec/ipsec/plugins/libstrongswan-updown.a
+libexec/ipsec/plugins/libstrongswan-updown.la
+libexec/ipsec/plugins/libstrongswan-updown.so
+libexec/ipsec/plugins/libstrongswan-x509.a
+libexec/ipsec/plugins/libstrongswan-x509.la
+libexec/ipsec/plugins/libstrongswan-x509.so
+libexec/ipsec/plugins/libstrongswan-xcbc.a
+libexec/ipsec/plugins/libstrongswan-xcbc.la
+libexec/ipsec/plugins/libstrongswan-xcbc.so
+libexec/ipsec/starter
+libexec/ipsec/stroke
+sbin/ipsec
+@dirrm libexec/ipsec/plugins
+@dirrm libexec/ipsec
+@dirrm etc/ipsec.d/reqs
+@dirrm etc/ipsec.d/private
+@dirrm etc/ipsec.d/ocspcerts
+@dirrm etc/ipsec.d/crls
+@dirrm etc/ipsec.d/certs
+@dirrm etc/ipsec.d/cacerts
+@dirrm etc/ipsec.d/acerts
+@dirrm etc/ipsec.d/aacerts
+@dirrm etc/ipsec.d
+@exec mkdir -p %D/etc/ipsec.d/reqs
+@exec mkdir -p %D/etc/ipsec.d/private
+@exec mkdir -p %D/etc/ipsec.d/ocspcerts
+@exec mkdir -p %D/etc/ipsec.d/crls
+@exec mkdir -p %D/etc/ipsec.d/certs
+@exec mkdir -p %D/etc/ipsec.d/cacerts
+@exec mkdir -p %D/etc/ipsec.d/acerts
+@exec mkdir -p %D/etc/ipsec.d/aacerts
