@@ -7,7 +7,7 @@
 
 PORTNAME=		liblug
 PORTVERSION=		1.0.6
-PORTREVISION=	4
+PORTREVISION=		5
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/graphics
@@ -23,5 +23,9 @@ USE_XORG=		x11
 WRKSRC=			${WRKDIR}/lug
 MAKEFILE=		Makefile.linux
 USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-DiTIFF|-DiTIFF -DTIFF_VERSION=42|' \
+		${WRKSRC}/Makefile.linux
 
 .include <bsd.port.mk>
