@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MongoDB
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/K/KR/KRISTINA
@@ -24,7 +24,7 @@ BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash \
 		p5-boolean>=0:${PORTSDIR}/devel/p5-boolean \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -41,6 +41,7 @@ MAN3=		MongoDB.3 \
 		MongoDB::GridFS::File.3 \
 		MongoDB::Indexing.3 \
 		MongoDB::OID.3 \
+		MongoDB::Timestamp.3 \
 		MongoDB::Tutorial.3
 
 .include <bsd.port.mk>
