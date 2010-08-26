@@ -1,0 +1,50 @@
+diff -ru bufio.c.orig bufio.c
+--- bufio.c.orig	1994-04-13 09:22:21.000000000 -0700
++++ bufio.c	2010-08-24 21:45:48.000000000 -0700
+@@ -35,9 +35,6 @@
+ static void	adjust();
+ static void	trim_high_water();
+ 
+-extern char *	malloc();
+-extern char *	calloc();
+-
+ /************************************************************************
+ *									*
+ *   local constants							*
+diff -ru error.c.orig error.c
+--- error.c.orig	1994-04-13 09:22:22.000000000 -0700
++++ error.c	2010-08-24 21:46:53.000000000 -0700
+@@ -16,6 +16,7 @@
+ *									*
+ ************************************************************************/
+ #include <stdio.h>
++#include "xmx.h"
+ 
+ static int print = 1;
+ 
+diff -ru xmx.h.orig xmx.h
+--- xmx.h.orig	1994-04-13 09:22:24.000000000 -0700
++++ xmx.h	2010-08-24 21:46:14.000000000 -0700
+@@ -38,6 +38,11 @@
+ 
+ #define REQHISTORY	64	/* size of per client history */
+ 
++#include <stdlib.h>
++#include <stdio.h>
++#include <string.h>
++#include <strings.h>
++
+ typedef unsigned long rid_t;
+ typedef unsigned long atom_t;
+ typedef unsigned long pixel_t;
+@@ -104,10 +109,6 @@
+ *									*
+ ************************************************************************/
+ 
+-/* system */
+-char *		malloc();
+-char *		calloc();
+-
+ /* bufio.c */
+ 
+ void		buf_init();
