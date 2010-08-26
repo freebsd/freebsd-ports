@@ -9,15 +9,3 @@
  test_build=yes
  if test $svn_in_version = 0 
  then
-@@ -428,9 +428,9 @@ if test "x$fribidi" != "xno"; then
- 					AC_MSG_RESULT(no)
- 				])
- 		])
--	AM_CONDITIONAL([FRIBIDI], [test "x$fribidifound" = xyes])
--	AM_CONDITIONAL([OLD_FRIBIDI], [test "x$oldfribidi" = xyes])
- fi
-+AM_CONDITIONAL([FRIBIDI], [test "x$fribidifound" = xyes])
-+AM_CONDITIONAL([OLD_FRIBIDI], [test "x$oldfribidi" = xyes])
- 
- # python
- AC_PATH_PROG(PYTHON, python, none)

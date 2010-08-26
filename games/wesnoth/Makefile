@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.8.3
-PORTREVISION=	1
+PORTVERSION=	1.8.4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/
@@ -24,7 +23,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 CONFLICTS=	wesnoth-devel-[0-9]*
 
 USE_SDL=	image mixer net ttf
-USE_GNOME=	desktopfileutils gnometarget pango
+USE_GNOME=	gnometarget pango
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
@@ -33,7 +32,7 @@ USE_LUA=	5.1
 USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262
 ACLOCAL_ARGS=	-Im4
 AUTOMAKE_ARGS=	--add-missing --copy
-CONFIGURE_ENV=	PKG_CONFIG=${LOCALBASE}/bin/pkg-config \
+CONFIGURE_ENV=	PKG_CONFIG="${PKG_CONFIG}" \
 		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-boost=${LOCALBASE} \
@@ -41,6 +40,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-localedir=${PREFIX}/share/locale
+PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
 
 MANLANG=	"" cs de en_GB es et fi fr gl hu it ja lt pl pt_BR sk \
 		sr sr@ijekavian sr@ijekavianlatin sr@latin tr zh_CN zh_TW
@@ -203,7 +203,7 @@ post-patch:	.SILENT
 		-e 's|png_error_ptr_NULL|NULL|g' \
 		${WRKSRC}/src/tools/exploder_utils.cpp
 
-post-install:	.SILENT
-	-update-desktop-database
+post-install:
+	-update-desktop-database ${PREFIX}/share/applications
 
 .include <bsd.port.post.mk>

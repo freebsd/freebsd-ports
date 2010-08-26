@@ -34,8 +34,6 @@ bin/wesnoth
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wmltools.pyo
 share/applications/wesnoth.desktop
 %%EDITOR%%share/applications/wesnoth_editor.desktop
-share/pixmaps/wesnoth-icon.png
-%%EDITOR%%share/pixmaps/wesnoth_editor-icon.png
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-did.mo
@@ -1232,6 +1230,8 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-units.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-utbs.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
+share/pixmaps/wesnoth-icon.png
+%%EDITOR%%share/pixmaps/wesnoth_editor-icon.png
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/wesnoth
 @dirrmtry man/af/man6
 @dirrmtry man/af
@@ -1358,6 +1358,6 @@ share/pixmaps/wesnoth-icon.png
 %%NLS%%@dirrmtry share/locale/sr@latin
 %%NLS%%@dirrmtry share/locale/tl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/tl
+@exec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
+@unexec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
 %%SERVER%%@unexec rmdir /var/run/wesnothd 2>/dev/null || echo "If you are permanently removing this port, you should do a 'rm -rf /var/run/wesnothd' to remove it." | fmt
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
