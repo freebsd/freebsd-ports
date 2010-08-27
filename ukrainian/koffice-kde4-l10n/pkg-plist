@@ -6,8 +6,8 @@ share/doc/HTML/uk/kchart/index.cache.bz2
 share/doc/HTML/uk/kchart/index.docbook
 share/doc/HTML/uk/kexi/basics.docbook
 share/doc/HTML/uk/kexi/building.docbook
-share/doc/HTML/uk/kexi/comparing.docbook
 share/doc/HTML/uk/kexi/common
+share/doc/HTML/uk/kexi/comparing.docbook
 share/doc/HTML/uk/kexi/configuration.docbook
 share/doc/HTML/uk/kexi/credits.docbook
 share/doc/HTML/uk/kexi/database.docbook
@@ -22,13 +22,6 @@ share/doc/HTML/uk/kexi/querydesigning.docbook
 share/doc/HTML/uk/kformula/common
 share/doc/HTML/uk/kformula/index.cache.bz2
 share/doc/HTML/uk/kformula/index.docbook
-share/doc/HTML/uk/kivio/common
-share/doc/HTML/uk/kivio/credits.docbook
-share/doc/HTML/uk/kivio/index.cache.bz2
-share/doc/HTML/uk/kivio/index.docbook
-share/doc/HTML/uk/kivio/introduction.docbook
-share/doc/HTML/uk/kivio/usage.docbook
-share/doc/HTML/uk/kivio/working.docbook
 share/doc/HTML/uk/koffice/common
 share/doc/HTML/uk/koffice/index.cache.bz2
 share/doc/HTML/uk/koffice/index.docbook
@@ -110,7 +103,6 @@ share/locale/uk/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/uk/kspread
 @dirrm share/doc/HTML/uk/kpresenter
 @dirrm share/doc/HTML/uk/koffice
-@dirrm share/doc/HTML/uk/kivio
 @dirrm share/doc/HTML/uk/kformula
 @dirrm share/doc/HTML/uk/kexi
 @dirrm share/doc/HTML/uk/kchart
