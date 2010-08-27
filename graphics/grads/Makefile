@@ -57,7 +57,7 @@ PLIST_SUB+=		NETCDF="@comment " HDF=""
 .endif
 
 .if defined(WITH_NETCDF)
-LIB_DEPENDS+=		netcdf.1:${PORTSDIR}/science/netcdf
+LIB_DEPENDS+=		netcdf.4:${PORTSDIR}/science/netcdf
 CONFIGURE_ARGS+=	--with-nc
 PLIST_SUB+=		NETCDF="" HDF="@comment "
 .endif
