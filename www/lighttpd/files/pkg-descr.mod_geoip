@@ -1,4 +1,4 @@
-mod_geoip is an Apache module that looks up the country code for the
-IP address making the request without using reverse DNS.
+mod_geoip is an lighttpd module that looks up the country code
+for the IP address making the request without using reverse DNS.
 
-WWW:	http://www.maxmind.com/app/mod_geoip
+WWW:	http://redmine.lighttpd.net/wiki/1/Docs:ModGeoip
