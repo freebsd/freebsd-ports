@@ -16,6 +16,7 @@ share/arirang/network.uxe
 share/arirang/nimda.uxe
 share/arirang/nt.uxe
 share/arirang/nt_head.uxe
+share/arirang/request.uxe
 share/arirang/rule.uxe
 share/arirang/server.uxe
 share/arirang/unix.uxe

@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	arirang
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 PORTEPOCH=	1
 CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
 		http://monkey.org/~pilot/arirang/
 MASTER_SITE_SUBDIR=	UNIX/cgi-scanners
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Powerful webserver security scanner
+
+LICENSE=	BSD
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arirang ${PREFIX}/sbin
