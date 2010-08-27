@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	extlib
-PORTVERSION=	0.9.14
+PORTVERSION=	0.9.15
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	General Ruby extensions
 
 USE_RUBY=	yes
