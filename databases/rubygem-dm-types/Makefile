@@ -10,7 +10,7 @@ PORTVERSION=	0.10.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jyyou@cs.nctu.edu.tw
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataMapper plugin providing extra data types
 
 RUN_DEPENDS=	rubygem-dm-core=0.10.1:${PORTSDIR}/databases/rubygem-dm-core

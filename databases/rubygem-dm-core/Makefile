@@ -10,7 +10,7 @@ PORTVERSION=	0.10.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	jyyou@cs.nctu.edu.tw
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An Object/Relational Mapper for Ruby
 
 RUN_DEPENDS=	rubygem-extlib>=0.9.13:${PORTSDIR}/devel/rubygem-extlib \
