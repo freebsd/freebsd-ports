@@ -1,0 +1,6 @@
+@unexec if cmp -s %D/etc/lighttpd/conf.d/geoip.conf %D/etc/lighttpd/conf.d/geoip.conf.sample; then rm -f %D/etc/lighttpd/conf.d/geoip.conf; fi
+etc/lighttpd/conf.d/geoip.conf.sample
+@exec [ -f %B/geoip.conf ] || cp %B/%f %B/geoip.conf
+lib/lighttpd/mod_geoip.a
+lib/lighttpd/mod_geoip.la
+lib/lighttpd/mod_geoip.so

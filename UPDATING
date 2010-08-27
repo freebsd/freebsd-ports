@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100817:
+  AFFECTS: users of www/lighttpd
+  AUTHOR: mm@FreeBSD.org
+
+  The modules mod_geoip and mod_h264_streaming have been moved into slave
+  ports: www/lighttpd-mod_geoip and www/lighttpd-mod_h264_streaming
+
 20100818:
   AFFECTS: users of www/lighttpd
   AUTHOR: mm@FreeBSD.org
