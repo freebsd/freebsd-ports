@@ -21,7 +21,8 @@ LIB_DEPENDS=	GraphicsMagick++:${PORTSDIR}/graphics/GraphicsMagick
 USE_BISON=	build
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-MAKE_ARGS=	-j`${SYSCTL} -n hw.ncpu` CXX="${CXX}" \
+MAKE_JOBS_UNSAFE=	yes
+MAKE_ARGS=	CXX="${CXX}" \
 		CXXFLAGS="${CXXFLAGS} -DUNIX \
 		    `GraphicsMagick++-config --cppflags`"
 
