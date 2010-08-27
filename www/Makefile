@@ -369,6 +369,7 @@
     SUBDIR += lifetype
     SUBDIR += lightsquid
     SUBDIR += lighttpd
+    SUBDIR += lighttpd-mod_geoip
     SUBDIR += lighttpd-mysqlauth
     SUBDIR += lilurl
     SUBDIR += limesurvey
