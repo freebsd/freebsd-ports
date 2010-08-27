@@ -29,7 +29,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_ARGS+=	--with-facedetect
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+USE_GCC=	4.2+
+.endif
+
 post-patch:
 	@${TOUCH} ${WRKSRC}/cvconfig.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
