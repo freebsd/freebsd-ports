@@ -5,26 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	koffice-i18n
-PORTVERSION=	1.6.3
-PORTREVISION=	4
-CATEGORIES?=	russian kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/koffice-${PORTVERSION}/src/koffice-l10n
-PKGNAMEPREFIX=	ru-
-DIST_SUBDIR=	KDE
+PORTNAME=	koffice-l10n
+PORTVERSION=	${KOFFICE2_VERSION}
+CATEGORIES=	russian editors kde
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Russian messages and documentation for koffice
+COMMENT=	Russian messages and documentation for KOffice2
 
-BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
+KOFFICE2_L10N=	ru
 
-USE_KDELIBS_VER=3
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-KDE_I18N=	yes
-
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-
+.include "${.CURDIR}/../../editors/koffice-kde4-l10n/files/bsd.l10n.mk"
 .include <bsd.port.mk>
