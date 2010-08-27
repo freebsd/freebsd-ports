@@ -3278,6 +3278,7 @@ exiv2                           ports/graphics/exiv2
 exmars                          ports/games/exmars
 exmh2                           ports/mail/exmh2
 exml                            ports/textproc/exml
+exmpp                           ports/textproc/exmpp
 expat2                          ports/textproc/expat2
 expect                          ports/lang/expect
 expect-devel                    ports/lang/expect-devel
@@ -5354,6 +5355,7 @@ hdf5-18                         ports/science/hdf5-18
 hdup                            ports/sysutils/hdup
 healthd                         ports/sysutils/healthd
 heartbeat                       ports/sysutils/heartbeat
+hebcal                          ports/deskutils/hebcal
 hedgewars                       ports/games/hedgewars
 heimdal                         ports/security/heimdal
 heirloom                        ports/sysutils/heirloom
@@ -6029,7 +6031,6 @@ irssi-otr                       ports/irc/irssi-otr
 irssi-scripts                   ports/irc/irssi-scripts
 irssi-themes                    ports/x11-themes/irssi-themes
 irssi-xmpp                      ports/irc/irssi-xmpp
-irssi-xmpp-devel                ports/irc/irssi-xmpp-devel
 irssistats                      ports/irc/irssistats
 irstlm                          ports/textproc/irstlm
 is-aspell                       ports/textproc/is-aspell
@@ -8846,6 +8847,7 @@ ltris                           ports/games/ltris
 lttoolbox                       ports/textproc/lttoolbox
 ltxml                           ports/textproc/ltxml
 lua                             ports/lang/lua
+lua-alien                       ports/devel/lua-alien
 lua-bitlib                      ports/devel/lua-bitlib
 lua-filename                    ports/devel/lua-filename
 lua-gettext                     ports/devel/lua-gettext
@@ -13138,6 +13140,7 @@ p5-Net-Gnats                    ports/net/p5-Net-Gnats
 p5-Net-Google                   ports/net/p5-Net-Google
 p5-Net-Google-AuthSub           ports/net/p5-Net-Google-AuthSub
 p5-Net-Google-Calendar          ports/net/p5-Net-Google-Calendar
+p5-Net-Google-Code              ports/net/p5-Net-Google-Code
 p5-Net-Google-DataAPI           ports/net/p5-Net-Google-DataAPI
 p5-Net-Google-Spreadsheets      ports/net/p5-Net-Google-Spreadsheets
 p5-Net-Gopher                   ports/net/p5-Net-Gopher
@@ -17079,6 +17082,7 @@ p5-net-gnats                    ports/net/p5-Net-Gnats
 p5-net-google                   ports/net/p5-Net-Google
 p5-net-google-authsub           ports/net/p5-Net-Google-AuthSub
 p5-net-google-calendar          ports/net/p5-Net-Google-Calendar
+p5-net-google-code              ports/net/p5-Net-Google-Code
 p5-net-google-dataapi           ports/net/p5-Net-Google-DataAPI
 p5-net-google-spreadsheets      ports/net/p5-Net-Google-Spreadsheets
 p5-net-gopher                   ports/net/p5-Net-Gopher
@@ -22832,6 +22836,7 @@ sc-aspell                       ports/textproc/sc-aspell
 scala                           ports/lang/scala
 scalapack                       ports/math/scalapack
 scale2x                         ports/graphics/scale2x
+scam-backscatter                ports/mail/scam-backscatter
 scamp                           ports/security/scamp
 scamper                         ports/net/scamper
 scan_ffs                        ports/sysutils/scan_ffs
@@ -23695,6 +23700,7 @@ stress                          ports/sysutils/stress
 strigi                          ports/deskutils/strigi
 stringencoders                  ports/devel/stringencoders
 strobe                          ports/security/strobe
+strongswan                      ports/security/strongswan
 stroq                           ports/games/stroq
 structuresynth                  ports/graphics/structuresynth
 stuffit                         ports/archivers/stuffit
