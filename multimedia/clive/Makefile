@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	2.2.11
+PORTVERSION=	2.2.13
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Command line video extraction tool for YouTube and others
 
 RUN_DEPENDS=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA \
@@ -23,6 +23,8 @@ RUN_DEPENDS=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA \
 
 # deskutils/ljclive, multimedia/clive1 (same executable/manpage/distfile name)
 CONFLICTS=	clive-[0-1]* ljclive-[0-9]*
+
+LICENSE=	GPLv3
 
 OPTIONS=	CACHE	 "With video page cache" off \
 		SIGWINCH "With resizing progressbar" on
