@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	minbif
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	irc net-im
-MASTER_SITES=	http://symlink.me/attachments/download/45/
+MASTER_SITES=	http://minbif.im/attachments/download/50/
 
 MAINTAINER=	steinex@nognu.de
 COMMENT=	An IRC to instant messaging gateway
@@ -28,7 +27,7 @@ PLIST_DIRS=	%%ETCDIR%%
 
 USE_EFL=	imlib2
 USE_CMAKE=	yes
-CMAKE_ARGS=	-DENABLE_IMLIB:BOOL=ON
+CMAKE_ARGS=	-DENABLE_IMLIB:BOOL=ON -DCMAKE_CXX_FLAGS=-DX_DISPLAY_MISSING
 USE_RC_SUBR=	minbif
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PORTDOCS=	*
