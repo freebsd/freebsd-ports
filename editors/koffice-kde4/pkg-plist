@@ -397,7 +397,6 @@ lib/kde4/kritacolorgenerator.so
 lib/kde4/kritacolorrange.so
 lib/kde4/kritacolorsfilters.so
 lib/kde4/kritacolorspaceconversion.so
-lib/kde4/kritacomplexbrush.so
 lib/kde4/kritaconvolutionfilters.so
 lib/kde4/kritacurvepaintop.so
 lib/kde4/kritadefaultdockers.so
@@ -600,7 +599,6 @@ lib/libkdeinit4_krita.so
 lib/libkdeinit4_kspread.so
 lib/libkdeinit4_kthesaurus.so
 lib/libkdeinit4_kword.so
-lib/libkdeinit_kformula.so
 lib/libkexicore.so
 lib/libkexicore.so.7
 lib/libkexicore.so.7.0.0
@@ -729,7 +727,6 @@ lib/libpigmentcms.so.7.0.0
 share/applications/kde4/KThesaurus.desktop
 share/applications/kde4/karbon.desktop
 share/applications/kde4/kexi.desktop
-share/applications/kde4/kformula.desktop
 share/applications/kde4/koffice.desktop
 share/applications/kde4/kplato.desktop
 share/applications/kde4/kplatowork.desktop
@@ -1662,7 +1659,6 @@ share/apps/krita/images/krita-duplicate.png
 share/apps/krita/images/krita-dyna.png
 share/apps/krita/images/krita-eraser.png
 share/apps/krita/images/krita-filterop.png
-share/apps/krita/images/krita-mixing.png
 share/apps/krita/images/krita-paintbrush.png
 share/apps/krita/images/krita-pencil.png
 share/apps/krita/images/krita-smudgebrush.png
@@ -1788,6 +1784,8 @@ share/apps/krita/pics/lowerlayer.png
 share/apps/krita/pics/newlayer.png
 share/apps/krita/pics/novisible.png
 share/apps/krita/pics/openhand_cursor.xpm
+share/apps/krita/pics/paintop_settings_01.png
+share/apps/krita/pics/paintop_settings_02.png
 share/apps/krita/pics/polyline.png
 share/apps/krita/pics/raiselayer.png
 share/apps/krita/pics/rotate_cursor.xpm
@@ -2712,7 +2710,6 @@ share/kde4/services/kritacolorgenerator.desktop
 share/kde4/services/kritacolorrange.desktop
 share/kde4/services/kritacolorsfilter.desktop
 share/kde4/services/kritacolorspaceconversion.desktop
-share/kde4/services/kritacomplexbrush.desktop
 share/kde4/services/kritaconvolutionfilters.desktop
 share/kde4/services/kritacurvepaintop.desktop
 share/kde4/services/kritadefaultdockers.desktop
@@ -2883,10 +2880,10 @@ share/templates/Illustration.desktop
 share/templates/Presentation.desktop
 share/templates/SpreadSheet.desktop
 share/templates/TextDocument.desktop
-@dirrm share/kde4/services/kformdesigner
-@dirrm share/kde4/services/kexi
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
+@dirrm share/kde4/services/kformdesigner
+@dirrm share/kde4/services/kexi
 @dirrmtry share/icons/hicolor/45x45/mimetypes
 @dirrmtry share/icons/hicolor/45x45
 @dirrm share/doc/HTML/en/thesaurus
@@ -2973,12 +2970,12 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/krita/templates
 %%GTL%%@dirrm share/apps/krita/shiva/kernels
 %%GTL%%@dirrm share/apps/krita/shiva
+@dirrm share/apps/krita/shaders
 @dirrm share/apps/krita/scripts/filters
 @dirrm share/apps/krita/scripts/extensions
 @dirrm share/apps/krita/scripts/dockers
 @dirrm share/apps/krita/scripts/decorations
 @dirrm share/apps/krita/scripts
-@dirrm share/apps/krita/shaders
 @dirrm share/apps/krita/pics
 @dirrm share/apps/krita/patterns
 @dirrm share/apps/krita/palettes
@@ -2997,11 +2994,6 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/krita/brushes
 @dirrm share/apps/krita/backgrounds
 @dirrm share/apps/krita
-@dirrm share/apps/koproperty/icons/hicolor/16x16/actions
-@dirrm share/apps/koproperty/icons/hicolor/16x16
-@dirrm share/apps/koproperty/icons/hicolor
-@dirrm share/apps/koproperty/icons
-@dirrm share/apps/koproperty
 @dirrm share/apps/kpresenter/templates/Screen/.source
 @dirrm share/apps/kpresenter/templates/Screen
 @dirrm share/apps/kpresenter/templates
@@ -3055,6 +3047,11 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kplato/icons
 @dirrm share/apps/kplato/about
 @dirrm share/apps/kplato
+@dirrm share/apps/koproperty/icons/hicolor/16x16/actions
+@dirrm share/apps/koproperty/icons/hicolor/16x16
+@dirrm share/apps/koproperty/icons/hicolor
+@dirrm share/apps/koproperty/icons
+@dirrm share/apps/koproperty
 @dirrm share/apps/koffice/thesaurus
 @dirrm share/apps/koffice/icons/oxygen/22x22/actions
 @dirrm share/apps/koffice/icons/oxygen/22x22
@@ -3161,8 +3158,5 @@ share/templates/TextDocument.desktop
 @dirrm include/kexi/forms
 @dirrm include/kexi
 @dirrm include/changetracker
-@dirrmtry share/apps/cmake/modules
-@dirrmtry share/apps/cmake
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true
-@unexec rm -f %%PREFIX%%/lib/libKritaRulerAssistantCommon.so.5
