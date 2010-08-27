@@ -4,6 +4,21 @@ share/doc/HTML/nl/karbon/index.docbook
 share/doc/HTML/nl/kchart/common
 share/doc/HTML/nl/kchart/index.cache.bz2
 share/doc/HTML/nl/kchart/index.docbook
+share/doc/HTML/nl/kexi/basics.docbook
+share/doc/HTML/nl/kexi/building.docbook
+share/doc/HTML/nl/kexi/common
+share/doc/HTML/nl/kexi/comparing.docbook
+share/doc/HTML/nl/kexi/configuration.docbook
+share/doc/HTML/nl/kexi/credits.docbook
+share/doc/HTML/nl/kexi/database.docbook
+share/doc/HTML/nl/kexi/designingforms.docbook
+share/doc/HTML/nl/kexi/enteringdataintotables.docbook
+share/doc/HTML/nl/kexi/enteringdatausingforms.docbook
+share/doc/HTML/nl/kexi/index.cache.bz2
+share/doc/HTML/nl/kexi/index.docbook
+share/doc/HTML/nl/kexi/intro.docbook
+share/doc/HTML/nl/kexi/menus.docbook
+share/doc/HTML/nl/kexi/querydesigning.docbook
 share/doc/HTML/nl/kformula/additional_fonts1.png
 share/doc/HTML/nl/kformula/ambiguous-string.png
 share/doc/HTML/nl/kformula/common
@@ -38,13 +53,6 @@ share/doc/HTML/nl/kformula/shortcut1.png
 share/doc/HTML/nl/kformula/sin.png
 share/doc/HTML/nl/kformula/toolbars.png
 share/doc/HTML/nl/kformula/upper-index.png
-share/doc/HTML/nl/kivio/common
-share/doc/HTML/nl/kivio/credits.docbook
-share/doc/HTML/nl/kivio/index.cache.bz2
-share/doc/HTML/nl/kivio/index.docbook
-share/doc/HTML/nl/kivio/introduction.docbook
-share/doc/HTML/nl/kivio/usage.docbook
-share/doc/HTML/nl/kivio/working.docbook
 share/doc/HTML/nl/koffice/common
 share/doc/HTML/nl/koffice/index.cache.bz2
 share/doc/HTML/nl/koffice/index.docbook
@@ -198,7 +206,7 @@ share/locale/nl/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/nl/kspread
 @dirrm share/doc/HTML/nl/kpresenter
 @dirrm share/doc/HTML/nl/koffice
-@dirrm share/doc/HTML/nl/kivio
 @dirrm share/doc/HTML/nl/kformula
+@dirrm share/doc/HTML/nl/kexi
 @dirrm share/doc/HTML/nl/kchart
 @dirrm share/doc/HTML/nl/karbon

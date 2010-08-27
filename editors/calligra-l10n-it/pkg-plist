@@ -23,13 +23,6 @@ share/doc/HTML/it/kexi/querydesigning.docbook
 share/doc/HTML/it/kformula/common
 share/doc/HTML/it/kformula/index.cache.bz2
 share/doc/HTML/it/kformula/index.docbook
-share/doc/HTML/it/kivio/common
-share/doc/HTML/it/kivio/credits.docbook
-share/doc/HTML/it/kivio/index.cache.bz2
-share/doc/HTML/it/kivio/index.docbook
-share/doc/HTML/it/kivio/introduction.docbook
-share/doc/HTML/it/kivio/usage.docbook
-share/doc/HTML/it/kivio/working.docbook
 share/doc/HTML/it/koffice/common
 share/doc/HTML/it/koffice/index.cache.bz2
 share/doc/HTML/it/koffice/index.docbook
@@ -111,7 +104,6 @@ share/locale/it/LC_MESSAGES/thesaurus_tool.mo
 @dirrm share/doc/HTML/it/kspread
 @dirrm share/doc/HTML/it/kpresenter
 @dirrm share/doc/HTML/it/koffice
-@dirrm share/doc/HTML/it/kivio
 @dirrm share/doc/HTML/it/kformula
 @dirrm share/doc/HTML/it/kexi
 @dirrm share/doc/HTML/it/kchart

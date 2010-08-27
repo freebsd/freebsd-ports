@@ -13,6 +13,7 @@ share/locale/pl/LC_MESSAGES/PathShapes.mo
 share/locale/pl/LC_MESSAGES/PictureShape.mo
 share/locale/pl/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/pl/LC_MESSAGES/TextShape.mo
+share/locale/pl/LC_MESSAGES/VariablesPlugin.mo
 share/locale/pl/LC_MESSAGES/desktop_koffice.mo
 share/locale/pl/LC_MESSAGES/karbon.mo
 share/locale/pl/LC_MESSAGES/kchart.mo
