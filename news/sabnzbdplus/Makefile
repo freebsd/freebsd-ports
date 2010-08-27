@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	0.4.12
-PORTREVISION=	2
+PORTVERSION=	0.5.3
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/sabnzbd-${PORTVERSION}
 DISTNAME=	SABnzbd-${PORTVERSION}-src
@@ -16,7 +15,7 @@ MAINTAINER=	daniel@netwalk.org
 COMMENT=	A web-interface based binary newsgrabber in python, with nzb support
 
 RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah \
-		${PYTHON_SITELIBDIR}/cherrypy/__init__.py:${PORTSDIR}/www/py-cherrypy-old \
+		${PYTHON_SITELIBDIR}/cherrypy/__init__.py:${PORTSDIR}/www/py-cherrypy \
 		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:${PORTSDIR}/devel/py-utils
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
@@ -33,6 +32,7 @@ CONFLICTS=	sabzndb-0.*
 OPTIONS=	PAR2CMDLINE "Required for postprocessing of par files." on \
 		UNRAR "Often required for unpacking many downloads." on \
 		FEEDPARSER "rss-feed support." on \
+		YENC "yenc support." on \
 		OPENSSL "SSL support" on
 
 .include <bsd.port.pre.mk>
@@ -47,6 +47,10 @@ RUN_DEPENDS+=	par2repair:${PORTSDIR}/archivers/par2cmdline
 
 .if !defined(WITHOUT_FEEDPARSER)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl
+.endif
+
+.if !defined(WITHOUT_YENC)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_yenc.so:${PORTSDIR}/news/py-yenc
 .endif
 
 .if !defined(WITHOUT_OPENSSL)
@@ -71,6 +75,7 @@ do-install:
 	${CP} -rp ${WRKSRC}/sabnzbd ${PYTHONPREFIX_SITELIBDIR}/
 	${INSTALL} -d ${DATADIR}
 	${CP} -rp ${WRKSRC}/interfaces ${DATADIR}
+	${CP} -rp ${WRKSRC}/language ${DATADIR}
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -79,5 +84,5 @@ post-install:
 	${CP} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
-	@${CAT} pkg-message
+
 .include <bsd.port.post.mk>
