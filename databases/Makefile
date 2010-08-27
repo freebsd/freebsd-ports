@@ -693,6 +693,7 @@
     SUBDIR += rubygem-activerecord
     SUBDIR += rubygem-activerecord-jdbc-adapter
     SUBDIR += rubygem-activerecord-jdbcmysql-adapter
+    SUBDIR += rubygem-bigrecord
     SUBDIR += rubygem-data_objects
     SUBDIR += rubygem-datamapper
     SUBDIR += rubygem-dm-aggregates
