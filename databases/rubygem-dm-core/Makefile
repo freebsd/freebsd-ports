@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	dm-core
-PORTVERSION=	0.10.1
+PORTVERSION=	1.0.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An Object/Relational Mapper for Ruby
 
-RUN_DEPENDS=	rubygem-extlib>=0.9.13:${PORTSDIR}/devel/rubygem-extlib \
+RUN_DEPENDS=	rubygem-extlib>=0.9.15:${PORTSDIR}/devel/rubygem-extlib \
 		rubygem-addressable>=2.1:${PORTSDIR}/www/rubygem-addressable
 
 USE_RUBY=	yes
-
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 

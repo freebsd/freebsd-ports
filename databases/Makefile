@@ -696,8 +696,14 @@
     SUBDIR += rubygem-data_objects
     SUBDIR += rubygem-datamapper
     SUBDIR += rubygem-dm-aggregates
+    SUBDIR += rubygem-dm-constraints
     SUBDIR += rubygem-dm-core
+    SUBDIR += rubygem-dm-migrations
+    SUBDIR += rubygem-dm-serializer
+    SUBDIR += rubygem-dm-timestamps
+    SUBDIR += rubygem-dm-transactions
     SUBDIR += rubygem-dm-types
+    SUBDIR += rubygem-dm-validations
     SUBDIR += rubygem-do_mysql
     SUBDIR += rubygem-do_postgres
     SUBDIR += rubygem-do_sqlite3
