@@ -29,19 +29,15 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 701000
+.if ${OSVERSION} >= 701000
+PLIST_SUB=	SHVER=""
+post-install:
+	${LN} -s libimagepool.so.0.0 ${PREFIX}/lib/aeskulap/libimagepool.so
+	${LN} -s libconfiguration.so.0.0 ${PREFIX}/lib/aeskulap/libconfiguration.so
+.else
+PLIST_SUB=	SHVER="@comment "
 post-patch:
 	${REINPLACE_CMD} -e 's|-lrt||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
-
-post-install:
-.if exists(${PREFIX}/lib/aeskulap/libconfiguration.so)
-	${RM} ${PREFIX}/lib/aeskulap/libconfiguration.so
-.endif
-.if exists(${PREFIX}/lib/aeskulap/libimagepool.so)
-	${RM} ${PREFIX}/lib/aeskulap/libimagepool.so
-.endif
-	${LN} -sf ${PREFIX}/lib/aeskulap/libconfiguration.so.0.0 ${PREFIX}/lib/aeskulap/libconfiguration.so
-	${LN} -sf ${PREFIX}/lib/aeskulap/libimagepool.so.0.0 ${PREFIX}/lib/aeskulap/libimagepool.so
 
 .include <bsd.port.post.mk>
