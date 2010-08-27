@@ -1,0 +1,6 @@
+@unexec if cmp -s %D/etc/lighttpd/conf.d/h264_streaming.conf %D/etc/lighttpd/conf.d/h264_streaming.conf.sample; then rm -f %D/etc/lighttpd/conf.d/h264_streaming.conf; fi
+etc/lighttpd/conf.d/h264_streaming.conf.sample
+@exec [ -f %B/h264_streaming.conf ] || cp %B/%f %B/h264_streaming.conf
+lib/lighttpd/mod_h264_streaming.a
+lib/lighttpd/mod_h264_streaming.la
+lib/lighttpd/mod_h264_streaming.so

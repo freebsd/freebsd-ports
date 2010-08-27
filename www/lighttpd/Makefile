@@ -5,26 +5,36 @@
 # $FreeBSD$
 #
 
-PORTNAME=	lighttpd
+PORTNAME?=	lighttpd
 PORTVERSION=	1.4.28
-CATEGORIES=	www
-MASTER_SITES=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
+PORTREVISION=	1
+CATEGORIES?=	www
+MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
-MAINTAINER=	mm@FreeBSD.org
-COMMENT=	A secure, fast, compliant, and very flexible Web Server
+MAINTAINER?=	mm@FreeBSD.org
+COMMENT?=	A secure, fast, compliant, and very flexible Web Server
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 USE_GNOME=	lthack
-USE_RC_SUBR=	lighttpd.sh
-CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/lighttpd --enable-static
+.if defined(_BUILDING_LIGHTTPD_MODULE)
+USE_AUTOTOOLS?=	libtool:22
+CONFIGURE_ARGS?=	--libdir=${PREFIX}/lib/lighttpd --enable-static
+.else
+USE_AUTOTOOLS=	libtool:22
+CONFIGURE_ARGS=		--libdir=${PREFIX}/lib/lighttpd --enable-static
+.endif # defined(_BUILDING_LIGHTTPD_MODULE)
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+
+.if !defined(_BUILDING_LIGHTTPD_MODULE)
+USE_RC_SUBR=	lighttpd.sh
 
 MAN8=		lighttpd.8
 
@@ -32,8 +42,6 @@ OPTIONS=	BZIP2		"Enable Bzip2 support" off \
 		CML		"Enable Cache Meta Language support" off \
 		FAM		"Enable fam/gamin support" off \
 		GDBM		"Enable gdbm storage support" off \
-		GEOIP		"Enable GeoIP support" off \
-		H264		"Enable H.264 streaming" off \
 		IPV6		"Enable IPV6 support" on \
 		LIBEV		"Enable libev support" off \
 		MAGNET		"Enable magnet support" off \
@@ -54,7 +62,7 @@ CONF_FILES=	lighttpd.conf modules.conf
 
 CONFD_FILES=	access_log.conf auth.conf cgi.conf cml.conf \
 		compress.conf debug.conf dirlisting.conf \
-		evhost.conf expire.conf fastcgi.conf geoip.conf \
+		evhost.conf expire.conf fastcgi.conf \
 		magnet.conf mime.conf mysql_vhost.conf proxy.conf \
 		rrdtool.conf scgi.conf secdownload.conf \
 		simple_vhost.conf ssi.conf status.conf \
@@ -71,34 +79,13 @@ PLIST_SUB+=		LOGROOT="${LIGHTTPD_LOGROOT}" \
 			MKDIR="${MKDIR}" \
 			CHOWN="${CHOWN}"
 
+.endif # !defined(_BUILDING_LIGHTTPD_MODULE)
+
 .include <bsd.port.pre.mk>
 
+.if !defined(_BUILDING_LIGHTTPD_MODULE)
 # Default REQUIRE to rc.d script
 _REQUIRE=	DAEMON
-
-.if defined(WITH_H264) || defined(WITH_GEOIP)
-PATCH_SITES+=		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR+=	mm
-USE_AUTOTOOLS+=		autoconf:262 autoheader:262 aclocal:110 automake:110
-ACLOCAL_ARGS+=		-I m4
-.endif
-
-.if defined(WITH_H264)
-PATCHFILES+=		lighttpd-1.4.26_mod_h264_streaming-2.2.9.patch.gz
-PORTDOCS+=		COPYING_H264
-#MANUAL_PACKAGE_BUILD=	free for non-commercial use only
-PLIST_SUB+=		H264=""
-.else
-PLIST_SUB+=		H264="@comment "
-.endif
-
-.if defined(WITH_GEOIP)
-PATCHFILES+=		lighttpd-1.4.26_mod_geoip.patch.gz
-LIB_DEPENDS+=		GeoIP.5:${PORTSDIR}/net/GeoIP
-PLIST_SUB+=		GEOIP=""
-.else
-PLIST_SUB+=		GEOIP="@comment "
-.endif
 
 .if !defined(WITHOUT_OPENSSL)
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
@@ -204,10 +191,6 @@ post-patch:
 		${WRKSRC}/doc/config/lighttpd.conf
 	@${ECHO} "\$$SERVER[\"socket\"] == \"0.0.0.0:80\" { }" >> \
 		${WRKSRC}/doc/config/lighttpd.conf
-.if defined(WITH_H264)
-	@${CAT} ${WRKSRC}/COPYING_H264
-	@sleep 10
-.endif
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/lighttpd/conf.d ${PREFIX}/etc/lighttpd/vhosts.d
@@ -238,5 +221,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
 . endfor
 .endif
+.endif # !defined(_BUILDING_LIGHTTPD_MODULE)
 
 .include <bsd.port.post.mk>
