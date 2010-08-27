@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-FormFu
-PORTVERSION=	0.07001
+PORTVERSION=	0.07002
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-
 		p5-DateTime>=0.38:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-Format-Builder>=0.79.01:${PORTSDIR}/devel/p5-DateTime-Format-Builder \
 		p5-DateTime-Format-Strptime>=0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
-		p5-DateTime-Locale>=0:${PORTSDIR}/devel/p5-DateTime-Locale \
+		p5-DateTime-Locale>=0.45:${PORTSDIR}/devel/p5-DateTime-Locale \
 		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
 		p5-File-ShareDir>=0.04:${PORTSDIR}/devel/p5-File-ShareDir \
 		p5-Hash-Flatten>=0:${PORTSDIR}/devel/p5-Hash-Flatten \
@@ -37,11 +37,9 @@ BUILD_DEPENDS=	p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
-		p5-Regexp-Copy>=0:${PORTSDIR}/textproc/p5-Regexp-Copy \
 		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-Test-NoWarnings>=0.083:${PORTSDIR}/devel/p5-Test-NoWarnings \
 		p5-YAML-LibYAML>=0.32:${PORTSDIR}/textproc/p5-YAML-LibYAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
