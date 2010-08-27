@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Ocsinventory
-PORTVERSION=	1.02
-PORTREVISION=	1
+PORTVERSION=	1.1.2
+PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/${PORTNAME:L}/OCS%20Inventory%20NG/${PORTVERSION}
+MASTER_SITES=	http://launchpad.net/ocsinventory-unix-agent/stable/ocsinventory-unix-agent-${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-Agent
-DISTNAME=	OCSNG_UNIX_AGENT-${PORTVERSION}
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Keep track of the computers configuration and software
@@ -23,11 +23,12 @@ RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 BUILD_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode \
 		lspci:${PORTSDIR}/sysutils/pciutils
 
+FETCH_ARGS=
+LICENSE=	GPLv2
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 IS_INTERACTIVE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-1.0.1
-
+WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAN1=		ocsinventory-agent.1
 
 .include <bsd.port.mk>
