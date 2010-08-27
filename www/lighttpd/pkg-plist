@@ -35,9 +35,6 @@ etc/lighttpd/conf.d/expire.conf.sample
 @unexec if cmp -s %D/etc/lighttpd/conf.d/fastcgi.conf %D/etc/lighttpd/conf.d/fastcgi.conf.sample; then rm -f %D/etc/lighttpd/conf.d/fastcgi.conf; fi
 etc/lighttpd/conf.d/fastcgi.conf.sample
 @exec [ -f %B/fastcgi.conf ] || cp %B/%f %B/fastcgi.conf
-@unexec if cmp -s %D/etc/lighttpd/conf.d/geoip.conf %D/etc/lighttpd/conf.d/geoip.conf.sample; then rm -f %D/etc/lighttpd/conf.d/geoip.conf; fi
-etc/lighttpd/conf.d/geoip.conf.sample
-@exec [ -f %B/geoip.conf ] || cp %B/%f %B/geoip.conf
 @unexec if cmp -s %D/etc/lighttpd/conf.d/magnet.conf %D/etc/lighttpd/conf.d/magnet.conf.sample; then rm -f %D/etc/lighttpd/conf.d/magnet.conf; fi
 etc/lighttpd/conf.d/magnet.conf.sample
 @exec [ -f %B/magnet.conf ] || cp %B/%f %B/magnet.conf
@@ -120,12 +117,6 @@ lib/lighttpd/mod_fastcgi.so
 lib/lighttpd/mod_flv_streaming.a
 lib/lighttpd/mod_flv_streaming.la
 lib/lighttpd/mod_flv_streaming.so
-%%GEOIP%%lib/lighttpd/mod_geoip.a
-%%GEOIP%%lib/lighttpd/mod_geoip.la
-%%GEOIP%%lib/lighttpd/mod_geoip.so
-%%H264%%lib/lighttpd/mod_h264_streaming.a
-%%H264%%lib/lighttpd/mod_h264_streaming.la
-%%H264%%lib/lighttpd/mod_h264_streaming.so
 lib/lighttpd/mod_indexfile.a
 lib/lighttpd/mod_indexfile.la
 lib/lighttpd/mod_indexfile.so
