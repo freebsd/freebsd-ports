@@ -1,4 +1,4 @@
-The H264 Streaming Module is a plugin for your lighttpd webserver.
+This is the H264 Streaming Module for the lighttpd webserver.
 Its features are as follows:
 
   * Timeshifting seek
