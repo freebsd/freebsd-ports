@@ -21,4 +21,9 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 PLIST_FILES=	bin/fxite
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 701101
+BROKEN=		does not build on pre 701101; needs strndup
+.endif
+
+.include <bsd.port.post.mk>
