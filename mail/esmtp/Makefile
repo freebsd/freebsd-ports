@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	esmtp
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -14,6 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Relay-only Mail Transfer Agent with sendmail compatible syntax
 
 LIB_DEPENDS=	esmtp.6:${PORTSDIR}/mail/libesmtp
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
