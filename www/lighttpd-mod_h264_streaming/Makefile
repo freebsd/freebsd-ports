@@ -26,8 +26,6 @@ MANUAL_PACKAGE_BUILD=	free for non-commercial use only
 PATCH_SITES+=	${MASTER_SITE_LOCAL}
 PATCHFILES+=	lighttpd-1.4.26_mod_h264_streaming-2.2.9.patch.gz
 PATCH_SITE_SUBDIR+=	mm
-USE_AUTOTOOLS+=	autoconf:262 autoheader:262 aclocal:110 automake:110
-ACLOCAL_ARGS+=	-I m4
 
 BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	${PORTNAME}.la
