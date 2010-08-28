@@ -68,6 +68,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/_socket_nodns.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/_socket_nodns.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/_socket_nodns.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/asynchat.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/asynchat.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/asynchat.pyo
@@ -173,6 +176,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/support/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/support/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/support/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/support/greendns.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/support/greendns.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/support/greendns.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/support/greenlets.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/support/greenlets.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/support/greenlets.pyo
