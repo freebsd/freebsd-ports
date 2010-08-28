@@ -1,4 +1,4 @@
-bin/pip
+bin/pip-perl
 %%SITE_PERL%%/Module/Plan/Base.pm
 %%SITE_PERL%%/Module/Plan/Lite.pm
 %%SITE_PERL%%/Module/Plan/Archive.pm
