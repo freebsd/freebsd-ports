@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Unicode-Encoding
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
