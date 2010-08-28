@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	eventlet
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.12
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Concurrent networking library for Python
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}greenlet>=0:${PORTSDIR}/devel/py-greenlet
