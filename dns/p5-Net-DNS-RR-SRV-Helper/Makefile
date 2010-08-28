@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-DNS-RR-SRV-Helper
 PORTVERSION=	0.0.0
+PORTREVISION=	1
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
@@ -14,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Orders SRV records by priority and weight for Net::DNS
+
+RUN_DEPENDS=	${SITE_PERL}/mach/Net/DNS/RR.pm:${PORTSDIR}/dns/p5-Net-DNS \
+	${SITE_PERL}/Sort/Naturally.pm:${PORTSDIR}/textproc/p5-Sort-Naturally
 
 PERL_CONFIGURE=	yes
 
