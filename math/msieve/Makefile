@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	msieve
-PORTVERSION=	1.38
-PORTREVISION=	2
+PORTVERSION=	1.46
 CATEGORIES=	math
-MASTER_SITES=	http://www.boo.net/~jasonp/ \
-		http://mirror.roe.ch/dist/msieve/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	\
+	${PORTNAME}/${PORTNAME}/${PORTNAME:C/^m/M/}%20v${PORTVERSION}/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Fast factorization of big integers using MPQS and GNFS
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libecm.a:${PORTSDIR}/math/gmp-ecm
-
-BROKEN=		does not build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
@@ -37,7 +35,7 @@ OPTIONS=	OCFLAGS "Enable optimized CFLAGS" On
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_OCFLAGS)
-CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer -D_FILE_OFFSET_BITS=64
+CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer -DNDEBUG -D_FILE_OFFSET_BITS=64
 .else
 CFLAGS+=	-D_FILE_OFFSET_BITS=64
 .endif
