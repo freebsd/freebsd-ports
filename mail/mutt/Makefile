@@ -30,6 +30,19 @@ MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mail User Agents (part Elm, Pine, Mush, mh, etc.)
 
 CONFLICTS=	mutt-devel-*
+
+OPTIONS=	NLS "Native Language Support via gettext utilities" on \
+ SLANG "Adds display/screen management via S-Lang" off \
+ NCURSES "Adds ncurses console graphics support" off \
+ SGML_DOCS "Enable mutt SGML documentation" off \
+ LOCALES_FIX "Enable locales fixes" off \
+ MUTT_XFACE "Adds mutt X-Face" off \
+ MUTT_FLOCK "Enable mutt flock" on \
+ MUTT_ICONV "Enable mutt iconv" on \
+ GSSAPI "GSSAPI (Kerberos) support" on
+
+USE_OPENSSL=	yes
+
 .include <bsd.port.pre.mk>
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
@@ -42,17 +55,17 @@ USE_GMAKE=	yes
 .endif
 .if defined (MUTT_LITE)
 PKGNAMESUFFIX=	-lite
-WITH_SGML_DOCS:=no
-.elif ${MACHINE_ARCH} != "alpha"
+WITH_SGML_DOCS:="no"
+.elif ${ARCH} == "alpha"
 #  coredump in sgmls
-WITH_SGML_DOCS?=yes
+WITH_SGML_DOCS:="no"
 .endif
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 .if defined(WITHOUT_MUTT_ICONV)
-.error the WITHOUT_MUTT_ICONV knob of the mutt port only works if \
+IGNORE=	the WITHOUT_MUTT_ICONV knob of the mutt port only works if \
 	WITHOUT_NLS is also given
 .endif
 .elif !defined(WITHOUT_MUTT_ICONV)
@@ -61,12 +74,12 @@ USE_ICONV=	yes
 
 .if defined(WITH_SLANG)
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
-.elif defined(WITH_NCURSES_PORT)
+.elif defined(WITH_NCURSES)
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
 .if !defined (MUTT_LITE)
 .if defined(WITH_MUTT_CYRUS_SASL)
-IGNORE=	The SASL support for mutt has been withdrawn. Please use the mutt-devel port instead
+IGNORE=	the SASL support for mutt has been withdrawn. Please use the mutt-devel port instead
 .endif
 .if defined(WITH_SGML_DOCS) && ${WITH_SGML_DOCS} != "no"
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
@@ -79,7 +92,6 @@ RUN_DEPENDS+=	slrnface:${PORTSDIR}/news/slrnface
 
 DIST_SUBDIR=	mutt
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:19 autoconf:262
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -113,7 +125,7 @@ CONFIGURE_ARGS+=	--with-libiconv-prefix=${PREFIX}
 .endif
 .if defined(WITH_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
-.elif defined(WITH_NCURSES_PORT)
+.elif defined(WITH_NCURSES)
 CONFIGURE_ARGS+=	--with-curses=${PREFIX}
 CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
 .endif
