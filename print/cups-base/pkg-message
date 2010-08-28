@@ -6,9 +6,13 @@ r/w access to printer device:
 1) Add following to /etc/devfs.rules (create if it doesn't exist):
 
 [system=10]
+# FreeBSD 7.x
 add path 'unlpt*' mode 0660 group cups
 add path 'ulpt*' mode 0660 group cups
 add path 'lpt*' mode 0660 group cups
+# FreeBSD 8.x
+add path 'usb*' mode 0770 group cups
+add path 'ugen*' mode 0660 group cups
 
 2) And following to /etc/rc.conf:
 
