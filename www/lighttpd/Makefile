@@ -7,7 +7,7 @@
 
 PORTNAME?=	lighttpd
 PORTVERSION=	1.4.28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -43,6 +43,7 @@ OPTIONS=	BZIP2		"Enable Bzip2 support" off \
 		MAGNET		"Enable magnet support" off \
 		MEMCACHE	"Enable memory caching support" off \
 		MYSQL		"Enable MYSQL support" off \
+		MYSQLAUTH	"Enable mysql auth (requires WITH_MYSQL)" off \
 		NODELAY		"Set TCP_NODELAY on listening sockets" off \
 		OPENLDAP	"Enable LDAP support" off \
 		OPENSSL		"Enable SSL support" on \
@@ -51,7 +52,8 @@ OPTIONS=	BZIP2		"Enable Bzip2 support" off \
 		WEBDAV		"Enable WebDAV support"	off
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	AUTHORS COPYING INSTALL NEWS README
+DOCS=		AUTHORS COPYING INSTALL NEWS README
+PORTDOCS=	${DOCS}
 .endif
 
 CONF_FILES=	lighttpd.conf modules.conf
@@ -137,6 +139,15 @@ CONFIGURE_ARGS+=	--with-mysql
 _REQUIRE+=		mysql
 .endif
 
+.if defined(WITH_MYSQLAUTH) && !defined(WITH_MYSQL)
+IGNORE=		WITH_MYSQLAUTH requires WITH_MYSQL
+.endif
+
+.if defined(WITH_MYSQLAUTH)
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-mysqlauth
+PORTDOCS+=		README.mysqlauth mysql_auth.sql
+.endif
+
 .if defined(WITH_NODELAY)
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-nodelay
 .endif
@@ -213,8 +224,13 @@ post-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-. for FILE in ${PORTDOCS}
+. for FILE in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
+. endfor
+.endif
+.if defined(WITH_MYSQLAUTH)
+. for FILE in README.mysqlauth mysql_auth.sql
+	@${INSTALL_DATA} ${FILESDIR}/${FILE} ${DOCSDIR}/${FILE}
 . endfor
 .endif
 .endif # !defined(_BUILDING_LIGHTTPD_MODULE)
