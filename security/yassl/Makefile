@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyassl
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.yassl.com/
 
@@ -32,8 +32,6 @@ post-configure:
 		${WRKSRC}/Makefile
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/src/.libs/libcyassl.so.0 ${PREFIX}/lib/cyassl/libcyassl.so.0
-	${LN} -s libcyassl.so.0 ${PREFIX}/lib/cyassl/libcyassl.so
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
