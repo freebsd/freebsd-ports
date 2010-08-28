@@ -15,7 +15,6 @@ EXTRACT_SUFX=	.jar
 MAINTAINER=	utisoft@gmail.com
 COMMENT=	Allows Maven's artifact handling to be used from within an Ant build
 
-BUILD_DEPENDS=	mvn:${PORTSDIR}/devel/maven2
 RUN_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
 
 LICENSE=	ASL
