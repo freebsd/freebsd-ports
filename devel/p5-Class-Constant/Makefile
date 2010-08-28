@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Class-Constant
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build constant classes
 
 PERL_MODBUILD=	yes
