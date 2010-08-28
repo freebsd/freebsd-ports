@@ -4500,3 +4500,4 @@ x11-toolkits/fxscintilla-fox14||2010-08-23|Removed
 net/tintin++-devel|net/tintin++|2010-08-24|net/tintin++-devel is no longer devel, merged back to net/tintin++
 audio/gmm|audio/gogglesmm|2010-08-24|Project was renamed
 irc/irssi-xmpp-devel||2010-08-25|Devel is unmaintained and older than stable
+www/lighttpd-mysqlauth|www/lighttpd|2010-08-28|Integrated into www/lighttpd

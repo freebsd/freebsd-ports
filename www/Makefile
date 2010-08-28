@@ -371,7 +371,6 @@
     SUBDIR += lighttpd
     SUBDIR += lighttpd-mod_geoip
     SUBDIR += lighttpd-mod_h264_streaming
-    SUBDIR += lighttpd-mysqlauth
     SUBDIR += lilurl
     SUBDIR += limesurvey
     SUBDIR += linkcheck
