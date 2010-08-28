@@ -6,6 +6,7 @@
 
 PORTNAME=	fusexmp_fh
 PORTVERSION=	2.7.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/fuse/fuse-2.X/${PORTVERSION}
 PKGNAMEPREFIX=	fusefs-
@@ -26,6 +27,11 @@ CONFIGURE_ARGS=	--disable-kernel-module --prefix=${PREFIX} \
 		--enable-example
 
 PLIST_FILES=	bin/${PORTNAME}
+
+post-patch:
+	${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},' \
+		${WRKSRC}/lib/Makefile.in \
+		${WRKSRC}/example/Makefile.in
 
 do-build:
 	cd ${WRKSRC}/lib \
