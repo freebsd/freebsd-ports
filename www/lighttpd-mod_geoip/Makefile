@@ -25,8 +25,6 @@ LATEST_LINK=	lighttpd-${PORTNAME}
 PATCH_SITES+=	${MASTER_SITE_LOCAL}
 PATCHFILES+=	lighttpd-1.4.26_mod_geoip.patch.gz
 PATCH_SITE_SUBDIR+=	mm
-USE_AUTOTOOLS+=	autoconf:262 autoheader:262 aclocal:110 automake:110
-ACLOCAL_ARGS+=	-I m4
 
 BUILD_WRKSRC=	${WRKSRC}/src
 ALL_TARGET=	${PORTNAME}.la
