@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vboxgtk
-PORTVERSION=	0.5.0
-PORTREVISION=	3
+PORTVERSION=	0.5.2
 CATEGORIES=	deskutils emulators gnome
 MASTER_SITES=	SF
 
@@ -28,8 +27,6 @@ PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-IGNORE=		does not work with virtualbox-3.0.51.r22683
 
 post-patch:
 .if defined(WITHOUT_NLS)
