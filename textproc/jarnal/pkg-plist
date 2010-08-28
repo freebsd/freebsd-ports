@@ -17,6 +17,5 @@ bin/jarnalannotate.sh
 %%JAVAJARDIR%%/lib/lbouncy_license.html
 %%JAVAJARDIR%%/lib/lib-ver.txt
 @dirrmtry %%JAVAJARDIR%%/lib
-@dirrmtry %%JAVAJARDIR%%
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%
