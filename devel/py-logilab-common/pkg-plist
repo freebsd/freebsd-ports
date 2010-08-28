@@ -60,6 +60,9 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/graph.py
 %%PYTHON_SITELIBDIR%%/logilab/common/graph.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/graph.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/hg.py
+%%PYTHON_SITELIBDIR%%/logilab/common/hg.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/hg.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/html.py
 %%PYTHON_SITELIBDIR%%/logilab/common/html.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/html.pyo
@@ -118,6 +121,9 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/content_differ_dir/README
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/content_differ_dir/subdir/coin
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/content_differ_dir/subdir/toto.txt
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/deprecation.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/deprecation.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/deprecation.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/file_differ_dir/NOTHING
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/file_differ_dir/README
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/file_differ_dir/subdir/toto.txt
