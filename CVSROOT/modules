@@ -8366,6 +8366,8 @@ lifetype                        ports/www/lifetype
 lightspark-devel                ports/graphics/lightspark-devel
 lightsquid                      ports/www/lightsquid
 lighttpd                        ports/www/lighttpd
+lighttpd-mod_geoip              ports/www/lighttpd-mod_geoip
+lighttpd-mod_h264_streaming     ports/www/lighttpd-mod_h264_streaming
 lighttpd-mysqlauth              ports/www/lighttpd-mysqlauth
 lila-xfwm4                      ports/x11-themes/lila-xfwm4
 lilurl                          ports/www/lilurl
@@ -22147,6 +22149,7 @@ ru-gimp-help                    ports/russian/gimp-help
 ru-kde3-i18n                    ports/russian/kde3-i18n
 ru-kde4-l10n                    ports/russian/kde4-l10n
 ru-koffice-i18n                 ports/russian/koffice-i18n
+ru-koffice-kde4-l10n            ports/russian/koffice-kde4-l10n
 ru-koi2koi                      ports/russian/koi2koi
 ru-koi8r-ps                     ports/russian/koi8r-ps
 ru-ksocrat                      ports/russian/ksocrat
@@ -22471,6 +22474,7 @@ rubygem-archive-tar-minitar     ports/archivers/rubygem-archive-tar-minitar
 rubygem-arrayfields             ports/devel/rubygem-arrayfields
 rubygem-augeas                  ports/textproc/rubygem-augeas
 rubygem-authlogic               ports/devel/rubygem-authlogic
+rubygem-bigrecord               ports/databases/rubygem-bigrecord
 rubygem-bioruby                 ports/devel/rubygem-bioruby
 rubygem-bluecloth               ports/www/rubygem-bluecloth
 rubygem-builder                 ports/devel/rubygem-builder
@@ -22496,8 +22500,14 @@ rubygem-diff-lcs                ports/textproc/rubygem-diff-lcs
 rubygem-directory_watcher       ports/devel/rubygem-directory_watcher
 rubygem-ditz                    ports/devel/rubygem-ditz
 rubygem-dm-aggregates           ports/databases/rubygem-dm-aggregates
+rubygem-dm-constraints          ports/databases/rubygem-dm-constraints
 rubygem-dm-core                 ports/databases/rubygem-dm-core
+rubygem-dm-migrations           ports/databases/rubygem-dm-migrations
+rubygem-dm-serializer           ports/databases/rubygem-dm-serializer
+rubygem-dm-timestamps           ports/databases/rubygem-dm-timestamps
+rubygem-dm-transactions         ports/databases/rubygem-dm-transactions
 rubygem-dm-types                ports/databases/rubygem-dm-types
+rubygem-dm-validations          ports/databases/rubygem-dm-validations
 rubygem-dnsruby                 ports/dns/rubygem-dnsruby
 rubygem-do_mysql                ports/databases/rubygem-do_mysql
 rubygem-do_postgres             ports/databases/rubygem-do_postgres
