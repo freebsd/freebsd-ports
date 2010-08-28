@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	mlmmj
-PORTVERSION=	1.2.17
+PORTVERSION=	1.2.17.1
 CATEGORIES=	mail
-MASTER_SITES=	http://mlmmj.mmj.dk/files/ \
+MASTER_SITES=	http://mlmmj.org/releases/ \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	miwi
+MASTER_SITE_SUBDIR=	brix
 
 MAINTAINER=	xi@borderworlds.dk
 COMMENT=	Mailing list managing made joyful
+
+LICENSE=	MIT
 
 .if defined(WITH_PHP_WEBINTERFACE)
 USE_PHP=	yes

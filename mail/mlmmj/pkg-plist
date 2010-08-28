@@ -11,7 +11,6 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/cz/access
 %%DATADIR%%/text.skel/cz/bounce-probe
 %%DATADIR%%/text.skel/cz/digest
-%%DATADIR%%/text.skel/cz/list.txt
 %%DATADIR%%/text.skel/cz/listhelp
 %%DATADIR%%/text.skel/cz/listsubs
 %%DATADIR%%/text.skel/cz/moderation
@@ -38,7 +37,6 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/da/access
 %%DATADIR%%/text.skel/da/bounce-probe
 %%DATADIR%%/text.skel/da/digest
-%%DATADIR%%/text.skel/da/list.txt
 %%DATADIR%%/text.skel/da/listfaq
 %%DATADIR%%/text.skel/da/listhelp
 %%DATADIR%%/text.skel/da/listsubs
@@ -73,7 +71,7 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/de/access
 %%DATADIR%%/text.skel/de/bounce-probe
 %%DATADIR%%/text.skel/de/digest
-%%DATADIR%%/text.skel/de/list.txt
+%%DATADIR%%/text.skel/de/listfaq
 %%DATADIR%%/text.skel/de/listhelp
 %%DATADIR%%/text.skel/de/listsubs
 %%DATADIR%%/text.skel/de/maxmailsize
@@ -88,6 +86,8 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/de/sub-confirm
 %%DATADIR%%/text.skel/de/sub-confirm-digest
 %%DATADIR%%/text.skel/de/sub-confirm-nomail
+%%DATADIR%%/text.skel/de/sub-deny-digest
+%%DATADIR%%/text.skel/de/sub-deny-nomail
 %%DATADIR%%/text.skel/de/sub-ok
 %%DATADIR%%/text.skel/de/sub-ok-digest
 %%DATADIR%%/text.skel/de/sub-ok-nomail
@@ -105,7 +105,6 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/en/access
 %%DATADIR%%/text.skel/en/bounce-probe
 %%DATADIR%%/text.skel/en/digest
-%%DATADIR%%/text.skel/en/list.txt
 %%DATADIR%%/text.skel/en/listfaq
 %%DATADIR%%/text.skel/en/listhelp
 %%DATADIR%%/text.skel/en/listsubs
@@ -140,7 +139,6 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/es/access
 %%DATADIR%%/text.skel/es/bounce-probe
 %%DATADIR%%/text.skel/es/digest
-%%DATADIR%%/text.skel/es/list.txt
 %%DATADIR%%/text.skel/es/listfaq
 %%DATADIR%%/text.skel/es/listhelp
 %%DATADIR%%/text.skel/es/listsubs
@@ -170,7 +168,6 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/fr/access
 %%DATADIR%%/text.skel/fr/bounce-probe
 %%DATADIR%%/text.skel/fr/digest
-%%DATADIR%%/text.skel/fr/list.txt
 %%DATADIR%%/text.skel/fr/listhelp
 %%DATADIR%%/text.skel/fr/listsubs
 %%DATADIR%%/text.skel/fr/moderation
@@ -199,7 +196,6 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/it/access
 %%DATADIR%%/text.skel/it/bounce-probe
 %%DATADIR%%/text.skel/it/digest
-%%DATADIR%%/text.skel/it/list.txt
 %%DATADIR%%/text.skel/it/listfaq
 %%DATADIR%%/text.skel/it/listhelp
 %%DATADIR%%/text.skel/it/listsubs
@@ -234,7 +230,6 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/nl/access
 %%DATADIR%%/text.skel/nl/bounce-probe
 %%DATADIR%%/text.skel/nl/digest
-%%DATADIR%%/text.skel/nl/list.txt
 %%DATADIR%%/text.skel/nl/listfaq
 %%DATADIR%%/text.skel/nl/listhelp
 %%DATADIR%%/text.skel/nl/listsubs
@@ -269,7 +264,6 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/ru/access
 %%DATADIR%%/text.skel/ru/bounce-probe
 %%DATADIR%%/text.skel/ru/digest
-%%DATADIR%%/text.skel/ru/list.txt
 %%DATADIR%%/text.skel/ru/listfaq
 %%DATADIR%%/text.skel/ru/listhelp
 %%DATADIR%%/text.skel/ru/listsubs
@@ -301,6 +295,40 @@ bin/mlmmj-unsub
 %%DATADIR%%/text.skel/ru/unsub-ok
 %%DATADIR%%/text.skel/ru/unsub-ok-digest
 %%DATADIR%%/text.skel/ru/unsub-ok-nomail
+%%DATADIR%%/text.skel/tr/access
+%%DATADIR%%/text.skel/tr/bounce-probe
+%%DATADIR%%/text.skel/tr/digest
+%%DATADIR%%/text.skel/tr/listfaq
+%%DATADIR%%/text.skel/tr/listhelp
+%%DATADIR%%/text.skel/tr/listsubs
+%%DATADIR%%/text.skel/tr/maxmailsize
+%%DATADIR%%/text.skel/tr/moderation
+%%DATADIR%%/text.skel/tr/notifysub
+%%DATADIR%%/text.skel/tr/notifysub-digest
+%%DATADIR%%/text.skel/tr/notifysub-nomail
+%%DATADIR%%/text.skel/tr/notifyunsub
+%%DATADIR%%/text.skel/tr/notifyunsub-digest
+%%DATADIR%%/text.skel/tr/notifyunsub-nomail
+%%DATADIR%%/text.skel/tr/notintocc
+%%DATADIR%%/text.skel/tr/sub-confirm
+%%DATADIR%%/text.skel/tr/sub-confirm-digest
+%%DATADIR%%/text.skel/tr/sub-confirm-nomail
+%%DATADIR%%/text.skel/tr/sub-deny-digest
+%%DATADIR%%/text.skel/tr/sub-deny-nomail
+%%DATADIR%%/text.skel/tr/sub-ok
+%%DATADIR%%/text.skel/tr/sub-ok-digest
+%%DATADIR%%/text.skel/tr/sub-ok-nomail
+%%DATADIR%%/text.skel/tr/sub-subscribed
+%%DATADIR%%/text.skel/tr/submod-moderator
+%%DATADIR%%/text.skel/tr/submod-requester
+%%DATADIR%%/text.skel/tr/subonlypost
+%%DATADIR%%/text.skel/tr/unsub-confirm
+%%DATADIR%%/text.skel/tr/unsub-confirm-digest
+%%DATADIR%%/text.skel/tr/unsub-confirm-nomail
+%%DATADIR%%/text.skel/tr/unsub-notsubscribed
+%%DATADIR%%/text.skel/tr/unsub-ok
+%%DATADIR%%/text.skel/tr/unsub-ok-digest
+%%DATADIR%%/text.skel/tr/unsub-ok-nomail
 %%PERLWEB%%www/mlmmj/perl-admin/README
 %%PERLWEB%%www/mlmmj/perl-admin/conf/config.pl
 %%PERLWEB%%www/mlmmj/perl-admin/conf/tunables.pl
@@ -329,7 +357,7 @@ bin/mlmmj-unsub
 %%PHPWEB%%www/mlmmj/php-admin/README
 %%PHPWEB%%www/mlmmj/php-admin/conf/config.php
 %%PHPWEB%%www/mlmmj/php-admin/conf/tunables.pl
-%%PHPWEB%%www/mlmmj/php-admin/htdocs/class.FastTemplate.php
+%%PHPWEB%%www/mlmmj/php-admin/htdocs/class.rFastTemplate.php
 %%PHPWEB%%www/mlmmj/php-admin/htdocs/dot.htaccess
 %%PHPWEB%%www/mlmmj/php-admin/htdocs/edit.php
 %%PHPWEB%%www/mlmmj/php-admin/htdocs/index.php
@@ -363,5 +391,6 @@ bin/mlmmj-unsub
 @dirrm %%DATADIR%%/text.skel/it
 @dirrm %%DATADIR%%/text.skel/nl
 @dirrm %%DATADIR%%/text.skel/ru
+@dirrm %%DATADIR%%/text.skel/tr
 @dirrm %%DATADIR%%/text.skel
 @dirrm %%DATADIR%%
