@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	staticmatic
-PORTVERSION=	0.10.7
+PORTVERSION=	0.10.8
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
