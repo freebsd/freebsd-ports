@@ -1,0 +1,45 @@
+References:
+http://redmine.lighttpd.net/issues/752
+http://redmine.lighttpd.net/attachments/1012/03_all_lighttpd-1.4.23-mysql_auth.diff
+http://redmine.lighttpd.net/attachments/download/1012/03_all_lighttpd-1.4.23-mysql_auth.diff
+
+This patch allows lighttpd to authenticate users against mySQL DBbr
+NOTE: Only basic auth is implemented. Passwords are stored as MD5 hash in DB
+
+make mysql db and user (read mySQL doc's if you don't know how)
+import lighttpd-1.4.11-mysql_auth.sql
+
+open lighttpd.conf and add
+(be sure that you comment out any other auth - according to lighttpd docs)
+
+auth.backend                                   = "mysql" 
+auth.backend.mysql.host                        = "localhost" 
+auth.backend.mysql.user                        = "db_user" 
+auth.backend.mysql.pass                        = "db_pass" 
+auth.backend.mysql.db                          = "db_name" 
+auth.backend.mysql.port                        = "0" # (for default port 0, always needed)
+auth.backend.mysql.socket                      = ""  # (for default leave blank, always needed)
+auth.backend.mysql.users_table                 = "users_table" 
+auth.backend.mysql.col_user                    = "col_name_username" 
+auth.backend.mysql.col_pass                    = "col_name_password" # (md5 hash of password)
+auth.backend.mysql.col_realm                   = "col_realm_name" 
+
+configure lighttpd to use it (same as every other auth)
+
+auth.require = ( "/some_path" =>
+    (
+        "method"  => "basic",
+        "realm"   => "some_realm",
+        "require" => "some_user",
+    )
+)
+
+start lighttpd
+
+P.S. patch include more complicated setup with separate table for domains.
+If you are interested please contact with me to obtain more information.
+
+Bugs, Patches and Suggestions
+Send me E-Mail: drJeckyll@Jeckyll.net
+
+-- drJeckyll
