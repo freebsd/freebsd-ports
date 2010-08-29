@@ -6610,6 +6610,7 @@ jamvm                           ports/java/jamvm
 jansson                         ports/devel/jansson
 jargon                          ports/misc/jargon
 jarl                            ports/net-im/jarl
+jarnal                          ports/textproc/jarnal
 jasmin                          ports/java/jasmin
 jasper                          ports/graphics/jasper
 jasperreports                   ports/databases/jasperreports
@@ -8368,7 +8369,6 @@ lightsquid                      ports/www/lightsquid
 lighttpd                        ports/www/lighttpd
 lighttpd-mod_geoip              ports/www/lighttpd-mod_geoip
 lighttpd-mod_h264_streaming     ports/www/lighttpd-mod_h264_streaming
-lighttpd-mysqlauth              ports/www/lighttpd-mysqlauth
 lila-xfwm4                      ports/x11-themes/lila-xfwm4
 lilurl                          ports/www/lilurl
 lilypond                        ports/print/lilypond
