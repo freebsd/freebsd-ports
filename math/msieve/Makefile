@@ -20,10 +20,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libecm.a:${PORTSDIR}/math/gmp-ecm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		ECM=1
+CFLAGS+=	-D_FILE_OFFSET_BITS=64 -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV=	LDFLAGS="${LDFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}" ECM=1
 
 PLIST_FILES=	bin/msieve lib/libmsieve.a include/msieve/msieve.h \
 		include/msieve/mp.h include/msieve/util.h
@@ -35,9 +34,7 @@ OPTIONS=	OCFLAGS "Enable optimized CFLAGS" On
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_OCFLAGS)
-CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer -DNDEBUG -D_FILE_OFFSET_BITS=64
-.else
-CFLAGS+=	-D_FILE_OFFSET_BITS=64
+CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer -DNDEBUG
 .endif
 
 .if ${OSVERSION} >= 700042 && ${ARCH} == "sparc64"
