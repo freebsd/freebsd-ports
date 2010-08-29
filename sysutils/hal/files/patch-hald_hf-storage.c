@@ -1,5 +1,5 @@
 --- hald/freebsd/hf-storage.c.orig	2009-08-24 08:42:29.000000000 -0400
-+++ hald/freebsd/hf-storage.c	2010-02-26 08:29:38.000000000 -0500
++++ hald/freebsd/hf-storage.c	2010-08-29 12:22:03.000000000 -0400
 @@ -30,6 +30,7 @@
  #include <limits.h>
  #include <inttypes.h>
@@ -20,8 +20,8 @@
 +      if ((! strcmp(fields[1], "LABEL") ||
 +          ! strcmp(fields[1], "BSD") ||
 +	  ! strcmp(fields[1], "PART")) &&
-+          ! (strncmp(fields[2], "ufsid/", strlen("ufsid/")) ||
-+	  !  strncmp(fields[2], "ufs/", strlen("ufs/"))))
++          (! strncmp(fields[2], "ufsid/", strlen("ufsid/")) ||
++	   !  strncmp(fields[2], "ufs/", strlen("ufs/"))))
 +        {
 +          g_strfreev(fields);
 +	  continue;
@@ -50,12 +50,14 @@
        geom_obj->type = -1;	/* We use -1 here to denote a missing type. */
        geom_obj->hash = hash;
  
-@@ -589,11 +621,16 @@ hf_storage_devd_notify (const char *syst
+@@ -589,11 +621,18 @@ hf_storage_devd_notify (const char *syst
    char *conftxt;
    GSList *new_disks;
  
 -  if (strcmp(system, "DEVFS") || strcmp(subsystem, "CDEV") ||
 +  if (! data || strcmp(system, "DEVFS") || strcmp(subsystem, "CDEV") ||
++      ! strncmp(data, "cdev=ufs/", strlen("cdev=ufs/")) ||
++      ! strncmp(data, "cdev=ufsid/", strlen("cdev=ufsid/")) ||
        (strcmp(type, "CREATE") && strcmp(type, "DESTROY")))
      return FALSE;
  
@@ -68,7 +70,7 @@
    new_disks = hf_storage_parse_conftxt(conftxt);
    g_free(conftxt);
  
-@@ -669,7 +706,7 @@ hf_storage_conftxt_timeout_cb (gpointer 
+@@ -669,7 +708,7 @@ hf_storage_conftxt_timeout_cb (gpointer 
    if (hf_is_waiting)
      return TRUE;
  
