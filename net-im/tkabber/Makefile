@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	tkabber
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://files.jabber.ru/tkabber/
 
-MAINTAINER=	lme@FreeBSD.org
+MAINTAINER=	c.kworr@gmail.com
 COMMENT=	Tcl/Tk based jabber client
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
+RUN_DEPENDS=	wish8.5:${PORTSDIR}/x11-toolkits/tk85 \
 		dtplite:${PORTSDIR}/devel/tcllib \
 		${LOCALBASE}/lib/tls/pkgIndex.tcl:${PORTSDIR}/devel/tcltls \
 		${LOCALBASE}/lib/bwidget/pkgIndex.tcl:${PORTSDIR}/x11-toolkits/bwidget
@@ -21,11 +21,11 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	yes
 
-SUBDIRS=	contrib doc emoticons examples ifacetk jabberlib-tclxml mclistbox \
-		msgs pixmaps plugins sounds trans
+SUBDIRS=	contrib doc emoticons examples ifacetk jabberlib mclistbox \
+		msgs pixmaps plugins sounds tclxml trans
 
 do-install:
-	${ECHO} -e "#!/bin/sh\nexec wish8.4 ${DATADIR}/tkabber.tcl \
+	${ECHO} -e "#!/bin/sh\nexec wish8.5 ${DATADIR}/tkabber.tcl \
 		-name tkabber \"\$$@\"\n" > ${PREFIX}/bin/tkabber
 	${CHMOD} +x ${PREFIX}/bin/tkabber
 	${MKDIR} ${DATADIR}
