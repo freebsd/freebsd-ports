@@ -408,8 +408,12 @@
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/AbstractReplicationStrategy.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/DatacenterEndPointSnitch.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/DatacenterShardStategy.html
+%%DATADIR%%/javadoc/org/apache/cassandra/locator/DynamicEndpointSnitch.html
+%%DATADIR%%/javadoc/org/apache/cassandra/locator/DynamicEndpointSnitchMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/EndPointSnitch.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/IEndPointSnitch.html
+%%DATADIR%%/javadoc/org/apache/cassandra/locator/ILatencyPublisher.html
+%%DATADIR%%/javadoc/org/apache/cassandra/locator/ILatencySubscriber.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/RackAwareStrategy.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/RackUnawareStrategy.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/TokenMetadata.html
@@ -417,8 +421,12 @@
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/AbstractReplicationStrategy.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/DatacenterEndPointSnitch.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/DatacenterShardStategy.html
+%%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/DynamicEndpointSnitch.html
+%%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/DynamicEndpointSnitchMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/EndPointSnitch.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/IEndPointSnitch.html
+%%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/ILatencyPublisher.html
+%%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/ILatencySubscriber.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/RackAwareStrategy.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/RackUnawareStrategy.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/TokenMetadata.html
@@ -836,6 +844,7 @@
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/BitSetSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/BloomFilter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/BoundedStatsDeque.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/CLibrary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/CloseableIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/DestructivePQIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/EstimatedHistogram.html
@@ -859,6 +868,7 @@
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/BitSetSerializer.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/BloomFilter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/BoundedStatsDeque.html
+%%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/CLibrary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/CloseableIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/DestructivePQIterator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/utils/class-use/EstimatedHistogram.html
