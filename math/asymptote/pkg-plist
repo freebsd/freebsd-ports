@@ -102,7 +102,6 @@ bin/xasy
 %%DATADIR%%/annotate.asy
 %%DATADIR%%/asy-init.el
 %%DATADIR%%/asy-kate.sh
-%%DATADIR%%/asy-keywords.el
 %%DATADIR%%/asy-mode.el
 %%DATADIR%%/asy.vim
 %%DATADIR%%/asymptote.py
@@ -236,6 +235,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/annotation.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arrows3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/axis3.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bars3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basealign.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bezier.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bezier2.asy
@@ -246,6 +246,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/brokenaxis.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/buildcycle.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cardioid.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cards.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/centroidfg.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cheese.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/circles.asy
@@ -335,10 +336,13 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/label3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/label3ribbon.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/label3solid.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/label3zoom.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/labelbox.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/labelsquare.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/laserlattice.asy
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/latexusage.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/latexusage-1.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/latexusage-2.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/latexusage-3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/latexusage.tex
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/latticeshading.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/layers.asy
@@ -368,6 +372,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/markers1.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/markers2.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/markregular.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mergeExample.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mexicanhat.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/monthaxis.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mosaic.asy
@@ -383,12 +388,14 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parametricgraph.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parametricsurface.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/partialsurface.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/partitionExample.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathintersectsurface.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pdb.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/penimage.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/phase.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/piicon.eps
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pipeintersection.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pipes.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pixel.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/planeproject.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/planes.asy
@@ -400,6 +407,7 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/projectelevation.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/projectrevolution.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quartercircle.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/quilt.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rainbow.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/randompath3.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ring.asy
@@ -423,7 +431,6 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sinc.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sinxlex.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slidedemo.asy
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slidemovies.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/slopefield1.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/smoothelevation.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/soccerball.asy
@@ -485,7 +492,9 @@ bin/xasy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/westnile.csv
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/workcone.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/worksheet.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/worldmap.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xsin1x.asy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xstitch.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xxsq01.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xxsq01x-1.asy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xxsq01y.asy
@@ -498,6 +507,7 @@ bin/xasy
 share/texmf-local/tex/context/third/asymptote/colo-asy.tex
 share/texmf-local/tex/latex/asymptote/asycolors.sty
 share/texmf-local/tex/latex/asymptote/asymptote.sty
+share/texmf-local/tex/latex/asymptote/latexmkrc
 share/texmf-local/tex/latex/asymptote/ocg.sty
 @dirrm %%DATADIR%%/GUI
 @dirrm %%DATADIR%%
