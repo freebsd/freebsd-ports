@@ -1,7 +1,0 @@
-bin/jfduke3d
-bin/jfduke3d-build
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/duke3d.def.sample
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%%%DOCSDIR%%/releasenotes.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

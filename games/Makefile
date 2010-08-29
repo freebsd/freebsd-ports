@@ -395,7 +395,6 @@
     SUBDIR += jaggedalliance2
     SUBDIR += jchessboard
     SUBDIR += jetpack
-    SUBDIR += jfduke3d
     SUBDIR += jfk
     SUBDIR += jfsw
     SUBDIR += jigsaw
