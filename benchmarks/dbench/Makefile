@@ -6,18 +6,26 @@
 #
 
 PORTNAME=	dbench
-PORTVERSION=	3.04
-PORTREVISION=	2
+PORTVERSION=	4.0
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://samba.org/ftp/tridge/dbench/
+MASTER_SITES=	SAMBA
+MASTER_SITE_SUBDIR=	../../ftp/tridge/dbench
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kimelto@gmail.com
 COMMENT=	A simulation of the Ziff-Davis netbench benchmark
 
-GNU_CONFIGURE=	yes
+LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
 
-MAN1=	dbench.1
-MLINKS=	dbench.1 tbench.1 dbench.1 tbench_srv.1
+LICENSE=	GPLv3
+
+CFLAGS+=	-I${LOCALBASE}/include
+USE_AUTOTOOLS=	autoconf:262
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=--datadir=${DATADIR}
+
+MAN1=		dbench.1
+MLINKS=		dbench.1 tbench.1 dbench.1 tbench_srv.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,$$(mandir),$$(mandir)/man1,' \
