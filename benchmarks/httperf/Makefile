@@ -8,10 +8,12 @@
 PORTNAME=	httperf
 PORTVERSION=	0.9.0
 CATEGORIES=	benchmarks www
-MASTER_SITES=	ftp://ftp.hpl.hp.com/pub/httperf/
+MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kimelto@gmail.com
 COMMENT=	A tool for measuring webserver performance
+
+LICENSE=	GPLv2
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
