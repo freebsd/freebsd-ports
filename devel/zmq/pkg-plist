@@ -4,6 +4,7 @@ bin/zmq_queue
 bin/zmq_streamer
 include/zmq.h
 include/zmq.hpp
+include/zmq_utils.h
 lib/libzmq.a
 lib/libzmq.la
 lib/libzmq.so
