@@ -221,6 +221,7 @@
     SUBDIR += octave-forge-communications
     SUBDIR += octave-forge-control
     SUBDIR += octave-forge-data-smoothing
+    SUBDIR += octave-forge-dataframe
     SUBDIR += octave-forge-econometrics
     SUBDIR += octave-forge-engine
     SUBDIR += octave-forge-es
