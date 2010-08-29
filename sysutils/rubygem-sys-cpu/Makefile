@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sys-cpu
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
