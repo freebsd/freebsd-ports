@@ -2,6 +2,7 @@
 
 # PROVIDE: mongod
 # REQUIRE: NETWORK
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
