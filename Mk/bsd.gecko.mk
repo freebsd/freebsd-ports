@@ -505,9 +505,19 @@ gecko-post-patch:
 			${MOZSRC}/build/unix/mozilla-config.in
 .endif
 	@${REINPLACE_CMD} -e 's|<iconv.h>|\"${LOCALBASE}/include/iconv.h\"|g' \
-		${WRKSRC}/configure \
-		${MOZSRC}/intl/uconv/native/nsNativeUConvService.cpp \
-		${MOZSRC}/xpcom/io/nsNativeCharsetUtils.cpp
+		${WRKSRC}/configure
+.for subdir in config/system_wrappers nsprpub/config/system_wrappers js/src/config/system_wrappers_js
+	@${MKDIR} ${MOZSRC}/${subdir}
+	@${ECHO_CMD} "#pragma GCC system_header" >> ${MOZSRC}/${subdir}/iconv.h
+	@${ECHO_CMD} "#pragma GCC visibility push(default)" >> ${MOZSRC}/${subdir}/iconv.h
+	@${ECHO_CMD} "#include \"${LOCALBASE}/include/iconv.h\"" >> ${MOZSRC}/${subdir}/iconv.h
+	@${ECHO_CMD} "#pragma GCC visibility pop" >> ${MOZSRC}/${subdir}/iconv.h
+.endfor
+.for subdir in "" nsprpub js/src
+	@if [ -f ${MOZSRC}/${subdir}/config/system-headers ] ; then \
+		${ECHO_CMD} "fenv.h" >> ${MOZSRC}/${subdir}/config/system-headers ; \
+	fi
+.endfor
 	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
 		${WRKSRC}/config/autoconf.mk.in
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
