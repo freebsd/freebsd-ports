@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	feedzirra
-PORTVERSION=	0.0.23
+PORTVERSION=	0.0.24
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	A feed fetching and parsing library
 
-RUN_DEPENDS=	rubygem-activesupport>=2.0.0:${PORTSDIR}/devel/rubygem-activesupport \
+RUN_DEPENDS=	rubygem-activesupport>=2.3.8:${PORTSDIR}/devel/rubygem-activesupport \
 	rubygem-builder>=2.1.2:${PORTSDIR}/devel/rubygem-builder \
 	rubygem-nokogiri>=0.0.0:${PORTSDIR}/textproc/rubygem-nokogiri \
 	rubygem-loofah>=0.3.1:${PORTSDIR}/textproc/rubygem-loofah \
