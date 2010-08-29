@@ -27,7 +27,6 @@ bin/tkabber
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xrdb/warm.xrdb
 %%DATADIR%%/Tclx.tcl
 %%DATADIR%%/balloon.tcl
-%%DATADIR%%/browser.tcl
 %%DATADIR%%/chats.tcl
 %%DATADIR%%/configdir.tcl
 %%DATADIR%%/contrib/extract-translations/extract.tcl
@@ -40,13 +39,13 @@ bin/tkabber
 %%DATADIR%%/disco.tcl
 %%DATADIR%%/doc/tkabber.html
 %%DATADIR%%/doc/tkabber.xml
-%%DATADIR%%/emoticons/default/FaceIronic.gif
-%%DATADIR%%/emoticons/default/FaceStartled.gif
-%%DATADIR%%/emoticons/default/FaceStraight.gif
 %%DATADIR%%/emoticons/default/beer.gif
 %%DATADIR%%/emoticons/default/facegrinning.gif
 %%DATADIR%%/emoticons/default/facehappy.gif
+%%DATADIR%%/emoticons/default/faceironic.gif
 %%DATADIR%%/emoticons/default/facesad.gif
+%%DATADIR%%/emoticons/default/facestartled.gif
+%%DATADIR%%/emoticons/default/facestraight.gif
 %%DATADIR%%/emoticons/default/facewinking.gif
 %%DATADIR%%/emoticons/default/faceyukky.gif
 %%DATADIR%%/emoticons/default/icondef.xml
@@ -80,6 +79,7 @@ bin/tkabber
 %%DATADIR%%/hooks.tcl
 %%DATADIR%%/iface.tcl
 %%DATADIR%%/ifacetk/bwidget_workarounds.tcl
+%%DATADIR%%/ifacetk/buttonbar.tcl
 %%DATADIR%%/ifacetk/default.xrdb
 %%DATADIR%%/ifacetk/idefault.tcl
 %%DATADIR%%/ifacetk/iface.tcl
@@ -89,30 +89,25 @@ bin/tkabber
 %%DATADIR%%/ifacetk/unix.xrdb
 %%DATADIR%%/iq.tcl
 %%DATADIR%%/itemedit.tcl
-%%DATADIR%%/jabberlib-tclxml/idna.tcl
-%%DATADIR%%/jabberlib-tclxml/jabberlib.tcl
-%%DATADIR%%/jabberlib-tclxml/jlibauth.tcl
-%%DATADIR%%/jabberlib-tclxml/jlibcomponent.tcl
-%%DATADIR%%/jabberlib-tclxml/jlibcompress.tcl
-%%DATADIR%%/jabberlib-tclxml/jlibdns.tcl
-%%DATADIR%%/jabberlib-tclxml/jlibsasl.tcl
-%%DATADIR%%/jabberlib-tclxml/jlibtls.tcl
-%%DATADIR%%/jabberlib-tclxml/namespaces.tcl
-%%DATADIR%%/jabberlib-tclxml/ntlm.tcl
-%%DATADIR%%/jabberlib-tclxml/pkgIndex.tcl
-%%DATADIR%%/jabberlib-tclxml/stanzaerror.tcl
-%%DATADIR%%/jabberlib-tclxml/streamerror.tcl
-%%DATADIR%%/jabberlib-tclxml/tclxml/pkgIndex.tcl
-%%DATADIR%%/jabberlib-tclxml/tclxml/sgml-8.1.tcl
-%%DATADIR%%/jabberlib-tclxml/tclxml/sgmlparser.tcl
-%%DATADIR%%/jabberlib-tclxml/tclxml/tclparser-8.1.tcl
-%%DATADIR%%/jabberlib-tclxml/tclxml/xml-8.1.tcl
-%%DATADIR%%/jabberlib-tclxml/tclxml/xml__tcl.tcl
-%%DATADIR%%/jabberlib-tclxml/tclxml/xmldep.tcl
-%%DATADIR%%/jabberlib-tclxml/tclxml/xpath.tcl
-%%DATADIR%%/jabberlib-tclxml/transports.tcl
-%%DATADIR%%/jabberlib-tclxml/wrapper.tcl
-%%DATADIR%%/jidlink.tcl
+%%DATADIR%%/jabberlib/autoconnect.tcl
+%%DATADIR%%/jabberlib/https.tcl
+%%DATADIR%%/jabberlib/idna.tcl
+%%DATADIR%%/jabberlib/jabberlib.tcl
+%%DATADIR%%/jabberlib/jlibauth.tcl
+%%DATADIR%%/jabberlib/jlibcomponent.tcl
+%%DATADIR%%/jabberlib/jlibcompress.tcl
+%%DATADIR%%/jabberlib/jlibdns.tcl
+%%DATADIR%%/jabberlib/jlibsasl.tcl
+%%DATADIR%%/jabberlib/jlibtls.tcl
+%%DATADIR%%/jabberlib/namespaces.tcl
+%%DATADIR%%/jabberlib/ntlm.tcl
+%%DATADIR%%/jabberlib/pkgIndex.tcl
+%%DATADIR%%/jabberlib/socks4.tcl
+%%DATADIR%%/jabberlib/socks5.tcl
+%%DATADIR%%/jabberlib/stanzaerror.tcl
+%%DATADIR%%/jabberlib/streamerror.tcl
+%%DATADIR%%/jabberlib/transports.tcl
+%%DATADIR%%/jabberlib/wrapper.tcl
 %%DATADIR%%/joingrdialog.tcl
 %%DATADIR%%/login.tcl
 %%DATADIR%%/mclistbox/mclistbox.tcl
@@ -135,14 +130,17 @@ bin/tkabber
 %%DATADIR%%/msgs/uk.rc
 %%DATADIR%%/muc.tcl
 %%DATADIR%%/negotiate.tcl
+%%DATADIR%%/pep.tcl
 %%DATADIR%%/pixmaps.tcl
 %%DATADIR%%/pixmaps/default-blue/docking/available-away.gif
 %%DATADIR%%/pixmaps/default-blue/docking/available-chat.gif
+%%DATADIR%%/pixmaps/default-blue/docking/available-dnd.gif
 %%DATADIR%%/pixmaps/default-blue/docking/available.gif
 %%DATADIR%%/pixmaps/default-blue/docking/tkabber.ico
 %%DATADIR%%/pixmaps/default-blue/icondef.xml
 %%DATADIR%%/pixmaps/default-blue/roster/available-away.gif
 %%DATADIR%%/pixmaps/default-blue/roster/available-chat.gif
+%%DATADIR%%/pixmaps/default-blue/roster/available-dnd.gif
 %%DATADIR%%/pixmaps/default-blue/roster/available.gif
 %%DATADIR%%/pixmaps/default/docking/available-away.gif
 %%DATADIR%%/pixmaps/default/docking/available-chat.gif
@@ -327,6 +325,7 @@ bin/tkabber
 %%DATADIR%%/plugins/chat/clear.tcl
 %%DATADIR%%/plugins/chat/complete_last_nick.tcl
 %%DATADIR%%/plugins/chat/completion.tcl
+%%DATADIR%%/plugins/chat/disco.tcl
 %%DATADIR%%/plugins/chat/draw_error.tcl
 %%DATADIR%%/plugins/chat/draw_info.tcl
 %%DATADIR%%/plugins/chat/draw_message.tcl
@@ -355,10 +354,11 @@ bin/tkabber
 %%DATADIR%%/plugins/chat/unisymbols.tcl
 %%DATADIR%%/plugins/chat/update_tab.tcl
 %%DATADIR%%/plugins/filetransfer/http.tcl
-%%DATADIR%%/plugins/filetransfer/jidlink.tcl
 %%DATADIR%%/plugins/filetransfer/si.tcl
 %%DATADIR%%/plugins/general/autoaway.tcl
 %%DATADIR%%/plugins/general/avatars.tcl
+%%DATADIR%%/plugins/general/caps.tcl
+%%DATADIR%%/plugins/general/challenge.tcl
 %%DATADIR%%/plugins/general/clientinfo.tcl
 %%DATADIR%%/plugins/general/copy_jid.tcl
 %%DATADIR%%/plugins/general/headlines.tcl
@@ -380,15 +380,21 @@ bin/tkabber
 %%DATADIR%%/plugins/iq/oob.tcl
 %%DATADIR%%/plugins/iq/ping.tcl
 %%DATADIR%%/plugins/iq/time.tcl
+%%DATADIR%%/plugins/iq/time2.tcl
 %%DATADIR%%/plugins/iq/version.tcl
-%%DATADIR%%/plugins/jidlink/dtcp.tcl
-%%DATADIR%%/plugins/jidlink/ibb.tcl
+%%DATADIR%%/plugins/pep/user_activity.tcl
+%%DATADIR%%/plugins/pep/user_location.tcl
+%%DATADIR%%/plugins/pep/user_mood.tcl
+%%DATADIR%%/plugins/pep/user_tune.tcl
 %%DATADIR%%/plugins/richtext/chatlog.tcl
 %%DATADIR%%/plugins/richtext/emoticons.tcl
 %%DATADIR%%/plugins/richtext/highlight.tcl
 %%DATADIR%%/plugins/richtext/stylecodes.tcl
 %%DATADIR%%/plugins/richtext/urls.tcl
 %%DATADIR%%/plugins/roster/annotations.tcl
+%%DATADIR%%/plugins/roster/backup.tcl
+%%DATADIR%%/plugins/roster/bkup_annotations.tcl
+%%DATADIR%%/plugins/roster/bkup_conferences.tcl
 %%DATADIR%%/plugins/roster/cache_categories.tcl
 %%DATADIR%%/plugins/roster/conferenceinfo.tcl
 %%DATADIR%%/plugins/roster/conferences.tcl
@@ -418,14 +424,18 @@ bin/tkabber
 %%DATADIR%%/plugins/windows/taskbar.tcl
 %%DATADIR%%/presence.tcl
 %%DATADIR%%/privacy.tcl
+%%DATADIR%%/private.tcl
 %%DATADIR%%/pubsub.tcl
 %%DATADIR%%/register.tcl
 %%DATADIR%%/richtext.tcl
 %%DATADIR%%/roster.tcl
 %%DATADIR%%/search.tcl
 %%DATADIR%%/si.tcl
+%%DATADIR%%/sounds/default/chat_my_message.wav
 %%DATADIR%%/sounds/default/chat_their_message.wav
 %%DATADIR%%/sounds/default/connected.wav
+%%DATADIR%%/sounds/default/disconnected.wav
+%%DATADIR%%/sounds/default/groupchat_my_message.wav
 %%DATADIR%%/sounds/default/groupchat_server_message.wav
 %%DATADIR%%/sounds/default/groupchat_their_message.wav
 %%DATADIR%%/sounds/default/groupchat_their_message_to_me.wav
@@ -439,6 +449,12 @@ bin/tkabber
 %%DATADIR%%/sounds/psi/presence_available.wav
 %%DATADIR%%/sounds/psi/presence_unavailable.wav
 %%DATADIR%%/splash.tcl
+%%DATADIR%%/tclxml/pkgIndex.tcl
+%%DATADIR%%/tclxml/sgml-8.1.tcl
+%%DATADIR%%/tclxml/sgmlparser.tcl
+%%DATADIR%%/tclxml/tclparser-8.1.tcl
+%%DATADIR%%/tclxml/xml-8.1.tcl
+%%DATADIR%%/tclxml/xml__tcl.tcl
 %%DATADIR%%/tkabber.tcl
 %%DATADIR%%/trans.tcl
 %%DATADIR%%/trans/de.msg
@@ -450,6 +466,7 @@ bin/tkabber
 %%DATADIR%%/utils.tcl
 %%DATADIR%%/xmppmime.tcl
 @dirrm %%DATADIR%%/trans
+@dirrm %%DATADIR%%/tclxml
 @dirrm %%DATADIR%%/sounds/psi
 @dirrm %%DATADIR%%/sounds/default
 @dirrm %%DATADIR%%/sounds
@@ -459,7 +476,7 @@ bin/tkabber
 @dirrm %%DATADIR%%/plugins/search
 @dirrm %%DATADIR%%/plugins/roster
 @dirrm %%DATADIR%%/plugins/richtext
-@dirrm %%DATADIR%%/plugins/jidlink
+@dirrm %%DATADIR%%/plugins/pep
 @dirrm %%DATADIR%%/plugins/iq
 @dirrm %%DATADIR%%/plugins/general
 @dirrm %%DATADIR%%/plugins/filetransfer
@@ -488,8 +505,7 @@ bin/tkabber
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/msgs
 @dirrm %%DATADIR%%/mclistbox
-@dirrm %%DATADIR%%/jabberlib-tclxml/tclxml
-@dirrm %%DATADIR%%/jabberlib-tclxml
+@dirrm %%DATADIR%%/jabberlib
 @dirrm %%DATADIR%%/ifacetk
 @dirrm %%DATADIR%%/examples/xrdb
 @dirrm %%DATADIR%%/examples/tools
