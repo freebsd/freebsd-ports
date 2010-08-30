@@ -10,7 +10,7 @@ PORTVERSION=	2.10.1.1
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
