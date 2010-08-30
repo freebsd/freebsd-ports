@@ -139,6 +139,7 @@
     SUBDIR += byaccj
     SUBDIR += bzr-builder
     SUBDIR += bzr-explorer
+    SUBDIR += bzr-externals
     SUBDIR += bzr-grep
     SUBDIR += bzr-gtk
     SUBDIR += bzr-loom

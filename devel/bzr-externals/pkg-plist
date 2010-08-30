@@ -1,0 +1,12 @@
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/externals/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/externals/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/externals/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/externals/commands.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/externals/commands.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/externals/commands.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/externals/externals.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/externals/externals.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/externals/externals.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/externals
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib

@@ -1,0 +1,10 @@
+This is a plugin for bzr. Using hooks, this plugin supports external branches
+for the following commands:
+* branch
+* checkout
+* commit
+* pull
+* push
+* update
+
+WWW:	https://launchpad.net/bzr-externals
