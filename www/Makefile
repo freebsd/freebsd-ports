@@ -131,7 +131,6 @@
     SUBDIR += dojo-shrinksafe
     SUBDIR += dokeos
     SUBDIR += dokuwiki
-    SUBDIR += dokuwiki-devel
     SUBDIR += dotclear
     SUBDIR += dotproject
     SUBDIR += dpsearch
