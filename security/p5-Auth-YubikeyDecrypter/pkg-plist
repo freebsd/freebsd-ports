@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Auth/Yubikey_Decrypter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Auth/Yubikey_Decrypter/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Auth/Yubikey_Decrypter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Auth
+@dirrmtry %%SITE_PERL%%/Auth
