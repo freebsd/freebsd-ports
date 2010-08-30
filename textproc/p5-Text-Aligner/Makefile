@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	Text-Aligner
-PORTVERSION=	0.03
+PORTVERSION=	0.06
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Align text in columns
+
+RUN_DEPENDS=	p5-Term-ANSIColor>=2.01:${PORTSDIR}/devel/p5-Term-ANSIColor
 
 PERL_CONFIGURE=	yes
 
