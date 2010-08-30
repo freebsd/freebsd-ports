@@ -597,6 +597,7 @@
     SUBDIR += ruby-rmail
     SUBDIR += ruby-tmail
     SUBDIR += rubygem-actionmailer
+    SUBDIR += rubygem-mail
     SUBDIR += rubygem-mailfactory
     SUBDIR += rubygem-tmail
     SUBDIR += sa-stats
