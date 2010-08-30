@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	system-tools-backends
-PORTVERSION=	2.10.0
+PORTVERSION=	2.10.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
