@@ -1,0 +1,15 @@
+Decrypt the output from the yubikey token
+
+The hardware can be found at
+
+http://www.yubico.com/home/index/
+
+The decryption module does only one thing - decrypt the AES encrypted
+OTP from the Yubikey. To this, it requires the OTP, and the AES
+key.
+
+Please note - this module does not perform authentication - it is
+a required component to decrypt the token first before authentication
+can be performed.
+
+WWW: http://search.cpan.org/~massyn/Auth-Yubikey_Decrypter-0.07/
