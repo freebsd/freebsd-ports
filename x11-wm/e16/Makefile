@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	e16
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}/
 
@@ -20,9 +20,10 @@ USE_XORG=	compositeproto damageproto xextproto x11 xbitmaps xcomposite xdamage \
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_EFL=	imlib2
+USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-esdtest --disable-dependency-tracking \
-		--disable-rpath --enable-mans SHELL=${LOCALBASE}/bin/bash
+		--disable-rpath --enable-mans SHELL=/bin/sh
 
 .if !defined(WITHOUT_ESOUND)
 USE_GNOME=	esound
