@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sharutils
-PORTVERSION=	4.9
-PORTREVISION=	1
+PORTVERSION=	4.10
 CATEGORIES=	archivers
 MASTER_SITES=	GNU
 
@@ -22,6 +21,8 @@ CONFIGURE_ARGS=	--program-prefix=g --disable-uucode
 INSTALL_TARGET=	install install-man
 MAN1=		gshar.1 gunshar.1
 INFO=		sharutils
+
+LICENSE=	GPLv3
 
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
