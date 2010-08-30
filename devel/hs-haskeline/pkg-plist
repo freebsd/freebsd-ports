@@ -1,10 +1,10 @@
 @comment $FreeBSD$
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Backend.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Backend/DumbTerm.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Backend/IConv.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Backend/Posix.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Backend/WCWidth.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command/Completion.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Command/History.hi
@@ -26,6 +26,7 @@
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Term.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Console/Haskeline/Vi.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/include/h_iconv.h
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
 %%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/LICENSE
