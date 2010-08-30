@@ -7,7 +7,7 @@
 
 PORTNAME=	tor
 DISTVERSION=	0.2.1.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.cypherpunks.at/dist/ \
@@ -18,7 +18,6 @@ MASTER_SITES=	http://www.torproject.org/dist/ \
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An anonymizing overlay network for TCP
 
-RUN_DEPENDS=	tsocks:${PORTSDIR}/net/tsocks
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
@@ -33,8 +32,7 @@ OPTIONS=	BUFFREELISTS "freelists for buffer RAM" on \
 		INSTR_DOWNLOADS "instrument downloads for analysis" off \
 		TCMALLOC "use the tcmalloc memory allocation library" off \
 		THREADS "multi-threading support" on \
-		TRANSPARENT "transparent proxy support" on \
-		VIDALIA "Vidalia graphical Tor controller" off
+		TRANSPARENT "transparent proxy support" on
 
 USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
@@ -43,6 +41,9 @@ CONFLICTS=	tor-devel-[0-9]*
 
 MANCOMPRESSED=	no
 MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 .include <bsd.port.pre.mk>
 
@@ -82,10 +83,6 @@ CONFIGURE_ARGS+=	--enable-transparent
 CONFIGURE_ARGS+=	--disable-transparent
 .endif
 
-.ifdef(WITH_VIDALIA)
-RUN_DEPENDS+=	vidalia:${PORTSDIR}/net-mgmt/vidalia
-.endif
-
 post-patch:
 	@${MV} ${WRKSRC}/contrib/tor-tsocks.conf \
 		${WRKSRC}/contrib/tor-tsocks.conf.sample
@@ -99,7 +96,7 @@ post-patch:
 		-e 's|netinet/in6|netinet6/in6|g'
 
 post-configure:
-	@${FIND} -X ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
+	@${FIND} -X ${WRKSRC} -type f -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
 		"s|-lpthread|${PTHREAD_LIBS}|g"
 
 pre-su-install:
@@ -115,7 +112,7 @@ post-install:
 	${CHOWN} _tor:_tor /var/db/tor
 	${CAT} ${PKGMESSAGE}
 
-regression-test: build
+check regression-test test: build
 	@( cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} \
 	${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check )
 
