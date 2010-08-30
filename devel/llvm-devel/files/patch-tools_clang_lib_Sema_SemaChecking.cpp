@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- tools/clang/lib/Sema/SemaChecking.cpp.orig
 +++ tools/clang/lib/Sema/SemaChecking.cpp
-@@ -1275,6 +1275,39 @@
+@@ -1511,6 +1511,39 @@
      CoveredArgs.set(argIndex);
    }
  
@@ -22,7 +22,7 @@ $FreeBSD$
 +      S.Diag(getLocationOfByte(CS.getStart()),
 +             diag::warn_printf_conversion_argument_type_mismatch)
 +        << ATR.getRepresentativeType(S.Context) << Ex->getType()
-+        << getFormatSpecifierRange(startSpecifier, specifierLen)
++        << getSpecifierRange(startSpecifier, specifierLen)
 +        << Ex->getSourceRange();
 +
 +    // Now type check the data expression that matches the
@@ -33,7 +33,7 @@ $FreeBSD$
 +      S.Diag(getLocationOfByte(CS.getStart()),
 +             diag::warn_printf_conversion_argument_type_mismatch)
 +        << ATR2.getRepresentativeType(S.Context) << Ex->getType()
-+        << getFormatSpecifierRange(startSpecifier, specifierLen)
++        << getSpecifierRange(startSpecifier, specifierLen)
 +        << Ex->getSourceRange();
 +
 +     return true;
