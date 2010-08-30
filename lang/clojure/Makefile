@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	clojure
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 PORTEPOCH=	2
 CATEGORIES=	lang lisp java
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	http://cloud.github.com/downloads/clojure/clojure/
 
 MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	A dynamic programming language for the JVM
@@ -23,6 +22,9 @@ NO_BUILD=	yes
 SUB_FILES=	clojure-bin
 OPTIONS=	JLINE "Enable jline support for the REPL" on
 
+PLIST_FILES=	bin/clojure \
+		%%JAVAJARDIR%%/clojure-1.2.0.jar
+
 .include <bsd.port.pre.mk>
 
 .ifdef(WITH_JLINE)
@@ -33,7 +35,7 @@ CLOJURE_JLINE_RUNNER=jline.ConsoleRunner
 SUB_LIST+=	CLOJURE_JLINE_RUNNER=${CLOJURE_JLINE_RUNNER}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/clojure-bin ${PREFIX}/bin/clojure
-	${INSTALL_DATA} ${WRKSRC}/clojure.jar ${JAVAJARDIR}/clojure.jar
+	@${INSTALL_SCRIPT} ${WRKDIR}/clojure-bin ${PREFIX}/bin/clojure
+	@${INSTALL_DATA} ${WRKSRC}/clojure.jar ${JAVAJARDIR}/clojure-1.2.0.jar
 
 .include <bsd.port.post.mk>
