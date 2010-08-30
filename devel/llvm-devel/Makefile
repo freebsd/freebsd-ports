@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=	--disable-assertions \
 
 CONFIGURE_ARGS+=	--enable-bindings=none
 
-OPTIONS=	NO_ASSERTS "Disable assertions" off
+OPTIONS=	ASSERTS "Enable assertions (thread unsafe)" off
 
 MAN1=		bugpoint.1 clang.1 lit.1 llc.1 lli.1 llvmc.1 llvm-ar.1 \
 		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 \
@@ -78,10 +78,10 @@ CONFIGURE_ARGS+=	--enable-pic --with-pic
 CONFIGURE_ARGS+=	--with-optimize-option=-O2
 .endif
 
-.ifdef(WITH_NO_ASSERTS)
-CONFIGURE_ARGS+=	--disable-assertions
-.else
+.ifdef(WITH_ASSERTS)
 CONFIGURE_ARGS+=	--enable-assertions
+.else
+CONFIGURE_ARGS+=	--disable-assertions
 .endif
 
 .if defined(BOOTSTRAP) || defined(SVN_FETCH)
@@ -140,7 +140,7 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			bin/opt \
 			bin/scan-build \
 			bin/tblgen \
-			lib/LLVMHello.so \
+			lib/libBugpointPasses.so \
 			lib/libCompilerDriver.a \
 			lib/libEnhancedDisassembly.so \
 			lib/libEnhancedDisassembly.a \
@@ -148,8 +148,7 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			lib/libLLVM* \
 			lib/libUnitTestMain.a \
 			lib/libclang* \
-			lib/libplugin_llvmc* \
-			lib/profile_rt.so
+			lib/libprofile_rt.so
 PLIST_DIR_LIST=		include/clang \
 			include/clang-c \
 			include/llvm-c \

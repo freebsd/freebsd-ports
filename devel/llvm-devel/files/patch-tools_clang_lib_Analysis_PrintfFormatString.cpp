@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- tools/clang/lib/Analysis/PrintfFormatString.cpp.orig
 +++ tools/clang/lib/Analysis/PrintfFormatString.cpp
-@@ -369,11 +369,19 @@
+@@ -192,11 +192,20 @@
      case '@': k = ConversionSpecifier::ObjCObjArg; break;
      // Glibc specific.
      case 'm': k = ConversionSpecifier::PrintErrno; break;
@@ -12,8 +12,9 @@ $FreeBSD$
 +    case 'r': k = ConversionSpecifier::xArg; break;
 +    case 'y': k = ConversionSpecifier::iArg; break;
 +    case 'D': k = ConversionSpecifier::DArg; break; /* check for u_char * pointer and a char * string */
++
    }
-   ConversionSpecifier CS(conversionPosition, k);
+   PrintfConversionSpecifier CS(conversionPosition, k);
    FS.setConversionSpecifier(CS);
    if (CS.consumesDataArgument() && !FS.usesPositionalArg())
      FS.setArgIndex(argIndex++);
