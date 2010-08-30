@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hxt
-PORTVERSION=	8.5.2
-PORTREVISION=	1
+PORTVERSION=	8.5.4
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
