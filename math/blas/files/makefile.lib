@@ -1,18 +1,9 @@
 #	@(#)Makefile	5.7 (Berkeley) 6/27/91
-FFLAGS=	@FFLAGS@
 
 LIBDIR= ${PREFIX}/lib
-.if (${OSVERSION} > 600007)
-NO_PROFILE= no
-.else
-NOPROFILE= no
-.endif
-
-SHLIB_MAJOR= 2
 
 # BLAS sources
 LIB=blas
-#NOPROFILE=1
 SRCS =	caxpy.f  ccopy.f  cdotc.f  cdotu.f  cgbmv.f  cgemm.f  cgemv.f	\
 	cgerc.f  cgeru.f  chbmv.f  chemm.f  chemv.f  cher.f   cher2.f	\
 	cher2k.f cherk.f  chpmv.f  chpr.f   chpr2.f  crotg.f  cscal.f	\
