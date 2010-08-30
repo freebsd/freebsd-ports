@@ -4,7 +4,7 @@ bin/encfssh
 %%LIB32DIR%%/libencfs.a
 %%LIB32DIR%%/libencfs.la
 %%LIB32DIR%%/libencfs.so
-%%LIB32DIR%%/libencfs.so.5
+%%LIB32DIR%%/libencfs.so.6
 %%NLS%%share/locale/ar/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/be/LC_MESSAGES/encfs.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/encfs.mo
