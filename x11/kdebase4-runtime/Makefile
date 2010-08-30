@@ -8,6 +8,7 @@
 
 PORTNAME=	kdebase-runtime
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -16,10 +17,13 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
-LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine \
+LIB_DEPENDS=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
+		exiv2.9:${PORTSDIR}/graphics/exiv2 \
+		xine.1:${PORTSDIR}/multimedia/libxine \
 		slp.1:${PORTSDIR}/net/openslp \
-		attica.0:${PORTSDIR}/x11-toolkits/attica \
-		ssh.4:${PORTSDIR}/security/libssh
+		smbclient.0:${PORTSDIR}/net/samba-libsmbclient \
+		ssh.4:${PORTSDIR}/security/libssh \
+		attica.0:${PORTSDIR}/x11-toolkits/attica
 #explicitly depend on libssh to avoid interference with ssh.4 from compat7x
 BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
 
