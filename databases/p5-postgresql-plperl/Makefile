@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	postgresql
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 PKGNAMESUFFIX=	-plperl
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Write SQL functions for PostgreSQL using Perl5
 
-MASTERDIR=	${.CURDIR}/../postgresql${PGSQL_VER}-server
+MASTERDIR=	${.CURDIR}/../../databases/postgresql${PGSQL_VER}-server
 
-RUN_DEPENDS=	postgres:${.CURDIR}/../postgresql${PGSQL_VER}-server
+RUN_DEPENDS=	postgres:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
-DEFAULT_PGSQL_VER?=74
+DEFAULT_PGSQL_VER?=82
 
 # can't include <bsd.port.pre.mk> in a slave port
 # so set these instead:
