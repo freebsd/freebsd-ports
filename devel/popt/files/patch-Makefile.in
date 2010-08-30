@@ -1,15 +1,15 @@
---- Makefile.in.old	2009-05-07 15:17:31.000000000 -0500
-+++ Makefile.in	2009-05-07 15:21:28.000000000 -0500
-@@ -70,7 +70,7 @@
- 	"$(DESTDIR)$(includedir)"
- usrlibLTLIBRARIES_INSTALL = $(INSTALL)
+--- Makefile.in.orig	2010-05-05 04:55:59.000000000 +0800
++++ Makefile.in	2010-06-16 00:29:47.000000000 +0800
+@@ -92,7 +92,7 @@
+ am__installdirs = "$(DESTDIR)$(usrlibdir)" "$(DESTDIR)$(man3dir)" \
+ 	"$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(includedir)"
  LTLIBRARIES = $(usrlib_LTLIBRARIES)
 -libpopt_la_LIBADD =
 +libpopt_la_LIBADD = $(LTLIBINTL)
  am_libpopt_la_OBJECTS = popt.lo poptparse.lo poptconfig.lo popthelp.lo \
  	poptint.lo
  libpopt_la_OBJECTS = $(am_libpopt_la_OBJECTS)
-@@ -287,13 +287,13 @@
+@@ -349,16 +349,16 @@
  noinst_HEADERS = poptint.h system.h
  test1_SOURCES = test1.c
  test1_LDFLAGS = 
@@ -19,10 +19,14 @@
  test2_LDFLAGS = 
 -test2_LDADD = $(usrlib_LTLIBRARIES)
 +test2_LDADD = $(usrlib_LTLIBRARIES) $(LTLIBICONV)
- test3_SOURCES = test3.c
- test3_LDFLAGS = 
--test3_LDADD = $(usrlib_LTLIBRARIES)
-+test3_LDADD = $(usrlib_LTLIBRARIES) $(LTLIBICONV)
+ #test3_SOURCES = test3.c
+ #test3_LDFLAGS = 
+-#test3_LDADD = $(usrlib_LTLIBRARIES)
++#test3_LDADD = $(usrlib_LTLIBRARIES) $(LTLIBICONV)
+ tdict_SOURCES = tdict.c
+ tdict_LDFLAGS = 
+-tdict_LDADD = $(usrlib_LTLIBRARIES)
++tdict_LDADD = $(usrlib_LTLIBRARIES) $(LTLIBICONV)
  noinst_SCRIPTS = testit.sh
  TESTS_ENVIRONMENT = \
- test1="./test1"
+ test1="$(top_builddir)/test1"
