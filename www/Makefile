@@ -387,7 +387,6 @@
     SUBDIR += linux-nvu
     SUBDIR += linux-opera
     SUBDIR += linux-seamonkey
-    SUBDIR += linux-seamonkey-devel
     SUBDIR += linuxpluginwrapper
     SUBDIR += lionwiki
     SUBDIR += ljdeps
