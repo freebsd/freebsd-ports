@@ -24,6 +24,12 @@ LDFLAGS+=	-L${OPENSSLLIB}
 
 SUB_FILES=	pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 700000
+BROKEN=	Does not build on 6.X
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/dma,${PREFIX}/etc/dma,g' \
 		${WRKSRC}/dma.8 \
@@ -51,4 +57,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
