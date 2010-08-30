@@ -6696,7 +6696,6 @@ jewel                           ports/x11-wm/jewel
 jext                            ports/editors/jext
 jfbterm                         ports/sysutils/jfbterm
 jfconv                          ports/palm/jfconv
-jfduke3d                        ports/games/jfduke3d
 jffnms                          ports/net-mgmt/jffnms
 jfk                             ports/games/jfk
 jflex                           ports/java/jflex
@@ -10374,6 +10373,7 @@ octave-forge-combinatorics      ports/math/octave-forge-combinatorics
 octave-forge-communications     ports/math/octave-forge-communications
 octave-forge-control            ports/math/octave-forge-control
 octave-forge-data-smoothing     ports/math/octave-forge-data-smoothing
+octave-forge-dataframe          ports/math/octave-forge-dataframe
 octave-forge-econometrics       ports/math/octave-forge-econometrics
 octave-forge-engine             ports/math/octave-forge-engine
 octave-forge-es                 ports/math/octave-forge-es
