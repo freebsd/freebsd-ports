@@ -1,12 +1,13 @@
 @comment $FreeBSD$
-%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Handler.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Handler/Growl.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Handler/Log4jXML.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Handler/Simple.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Handler/Syslog.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Formatter.hi
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/System/Log/Logger.hi
+%%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/HS%%PORTNAME%%-%%PORTVERSION%%.o
 %%LIBDIR_REL%%/ghc-%%GHC_VERSION%%/libHS%%PORTNAME%%-%%PORTVERSION%%.a
 %%LIBDIR_REL%%/register.sh
 %%NOPORTDOCS%%%%DOCSDIR%%/COPYRIGHT
