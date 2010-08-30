@@ -134,7 +134,6 @@
     SUBDIR += dokuwiki-devel
     SUBDIR += dotclear
     SUBDIR += dotproject
-    SUBDIR += dotproject-devel
     SUBDIR += dpsearch
     SUBDIR += drood
     SUBDIR += drraw
