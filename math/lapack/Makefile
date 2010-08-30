@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lapack
-PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTVERSION=	3.2.2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/lapack/ \
 		http://netlib.org/lapack/ \
@@ -36,11 +35,18 @@ MAKE_JOBS_SAFE=	yes
 MANSRC=${WRKDIR}/lapack-3.2.0
 WRKSRC_SHARED=${WRKSRC}_shared
 FFLAGS_SHARED=${FPIC}
+.if !(defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE))
 WRKSRC_PROFILE=${WRKSRC}_profile
 FFLAGS_PROFILE=-pg
+PLIST_SUB+=	PROFILE=""
+.else
+PLIST_SUB+=	PROFILE="@comment "
+.endif
 
 SVERSION=4
-BLAS=	-L${LOCALBASE}/lib -lblas
+BLAS?=	-L${LOCALBASE}/lib -lblas
+RANLIB=	${LOCALBASE}/bin/ranlib
+AR=	${LOCALBASE}/bin/ar
 
 pre-fetch:
 	@${ECHO} "You can override F77 and FFLAGS on the command line."
@@ -55,46 +61,51 @@ post-patch:
 	${REINPLACE_CMD} -Ee \
 		's,cd ([^ ;]+) *; *\$$\(MAKE\) *([[:alnum:]]*) *,${MAKE} -C \1 ${_MAKE_JOBS} \2,' \
 		${WRKSRC}/TESTING/Makefile
-	@${REINPLACE_CMD} -e 's,%%F77%%,${F77},g' \
-			  -e 's,%%FFLAGS%%,${FFLAGS},g' \
-			  -e 's,%%BLAS%%,${BLAS},g' \
+	@${REINPLACE_CMD} -e 's;%%F77%%;${F77};g' \
+			  -e 's;%%FFLAGS%%;${FFLAGS};g' \
+			  -e 's;%%LDFLAGS%%;${LDFLAGS};g' \
+			  -e 's;%%RANLIB%%;${RANLIB};g' \
+			  -e 's;%%BLAS%%;${BLAS};g' \
 				${WRKSRC}/make.inc
 	@${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
+.if !(defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE))
 	@${CP} -r ${WRKSRC} ${WRKSRC_PROFILE}
+.endif
 	@${REINPLACE_CMD} -e 's,%%EXTRAFLAGS%%,,g' \
 				${WRKSRC}/make.inc
 	@${REINPLACE_CMD} -e 's,%%EXTRAFLAGS%%,${FFLAGS_SHARED},g' \
 				${WRKSRC_SHARED}/make.inc
+.if !(defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE))
 	@${REINPLACE_CMD} -e 's,%%EXTRAFLAGS%%,${FFLAGS_PROFILE},g' \
 				${WRKSRC_PROFILE}/make.inc
+.endif
 
 do-build:
 	@${ECHO_CMD} "Building static lapack library"
-	${MAKE} -C ${WRKSRC} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH=ar
+	${MAKE} -C ${WRKSRC} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH="${AR}"
 	@${ECHO_CMD} "Building shared lapack library"
-	${MAKE} -C ${WRKSRC_SHARED} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH=ar
+	${MAKE} -C ${WRKSRC_SHARED} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH="${AR}"
+.if !(defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE))
 	@${ECHO_CMD} "Building profile lapack library"
-	${MAKE} -C ${WRKSRC_PROFILE} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH=ar
+	${MAKE} -C ${WRKSRC_PROFILE} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH="${AR}"
+.endif
 
 post-build:
-	${CP} ${WRKSRC}/lapack_FREEBSD.a ${WRKSRC}/liblapack.a
-	${CP} ${WRKSRC}/tmglib_FREEBSD.a ${WRKSRC}/libtmglib.a
-	${CP} ${WRKSRC_SHARED}/lapack_FREEBSD.a ${WRKSRC_SHARED}/liblapack.a
-	${CP} ${WRKSRC_SHARED}/tmglib_FREEBSD.a ${WRKSRC_SHARED}/libtmglib.a
-	${CP} ${WRKSRC_PROFILE}/lapack_FREEBSD.a ${WRKSRC_PROFILE}/liblapack_p.a
-	${CP} ${WRKSRC_PROFILE}/tmglib_FREEBSD.a ${WRKSRC_PROFILE}/libtmglib_p.a
-	cd ${WRKSRC_SHARED} ; ld -Bshareable -o liblapack.so.${SVERSION} -x -soname liblapack.so.${SVERSION} --whole-archive liblapack.a ; ${LN} -s liblapack.so.${SVERSION} liblapack.so
-	cd ${WRKSRC_SHARED} ; ld -Bshareable -o libtmglib.so.${SVERSION} -x -soname libtmglib.so.${SVERSION} --whole-archive libtmglib.a ; ${LN} -s libtmglib.so.${SVERSION} libtmglib.so
+.for lib in lapack tmglib
+	cd ${WRKSRC_SHARED} ; ${FC} ${FFLAGS} ${FFLAGS_SHARED} ${LDFLAGS} -shared \
+	-o lib${lib}.so.${SVERSION} -Wl,-x -Wl,-soname,lib${lib}.so.${SVERSION} \
+	-Wl,--whole-archive lib${lib}.a -Wl,--no-whole-archive -Wl,--as-needed ${BLAS}
+.endfor
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/liblapack.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libtmglib.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC_SHARED}/liblapack.so.${SVERSION} ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC_SHARED}/libtmglib.so.${SVERSION} ${PREFIX}/lib
-	${LN} -sf liblapack.so.${SVERSION} ${PREFIX}/lib/liblapack.so
-	${LN} -sf libtmglib.so.${SVERSION} ${PREFIX}/lib/libtmglib.so
-	${INSTALL_DATA} ${WRKSRC_PROFILE}/liblapack_p.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC_PROFILE}/libtmglib_p.a ${PREFIX}/lib
+.for lib in lapack tmglib
+	${INSTALL_DATA} ${WRKSRC}/lib${lib}.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC_SHARED}/lib${lib}.so.${SVERSION} ${PREFIX}/lib
+	${LN} -sf lib${lib}.so.${SVERSION} ${PREFIX}/lib/lib${lib}.so
+.if !(defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE))
+	${INSTALL_DATA} ${WRKSRC_PROFILE}/lib${lib}.a ${PREFIX}/lib/lib${lib}_p.a
+.endif
+.endfor
 	${INSTALL_MAN} ${MANSRC}/manpages/man/manl/[a-c]*.l ${PREFIX}/man/manl
 	${INSTALL_MAN} ${MANSRC}/manpages/man/manl/[d-l]*.l ${PREFIX}/man/manl
 	${INSTALL_MAN} ${MANSRC}/manpages/man/manl/[m-s]*.l ${PREFIX}/man/manl
@@ -102,6 +113,6 @@ do-install:
 
 regression-test check test: build
 	@${ECHO_CMD} "Testing static lapack library"
-	${MAKE} -C ${WRKSRC}/TESTING ${.MAKEFLAGS} ARCH=ar
+	${MAKE} -C ${WRKSRC}/TESTING ${.MAKEFLAGS} ARCH="${AR}"
 
 .include <bsd.port.post.mk>

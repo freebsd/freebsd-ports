@@ -1,6 +1,18 @@
---- TESTING/LIN/Makefile	2009-02-11 02:23:05.000000000 +0900
-+++ TESTING/LIN/Makefile	2009-05-20 06:11:11.000000000 +0900
-@@ -71,13 +71,13 @@
+--- TESTING/LIN/Makefile.orig	2010-06-18 18:48:07.000000000 -0400
++++ TESTING/LIN/Makefile	2010-08-29 10:55:41.000000000 -0400
+@@ -34,11 +34,6 @@
+ #
+ #######################################################################
+ 
+-ifneq ($(strip $(VARLIB)),)
+-    LAPACKLIB :=  $(VARLIB) ../../$(LAPACKLIB)
+-endif
+-
+-
+ ALINTST = \
+    aladhd.o alaerh.o alaesm.o alahd.o alareq.o \
+    alasum.o alasvm.o chkxer.o icopy.o ilaenv.o xlaenv.o xerbla.o
+@@ -76,13 +71,13 @@
     strt02.o strt03.o strt05.o strt06.o \
     stzt01.o stzt02.o sgennd.o
  
@@ -17,7 +29,7 @@
  
  CLINTST = cchkaa.o \
     cchkeq.o cchkgb.o cchkge.o cchkgt.o \
-@@ -111,13 +111,13 @@
+@@ -116,13 +111,13 @@
     ctrt02.o ctrt03.o ctrt05.o ctrt06.o \
     ctzt01.o ctzt02.o sget06.o cgennd.o
  
@@ -34,7 +46,7 @@
  
  DLINTST = dchkaa.o \
     dchkeq.o dchkgb.o dchkge.o dchkgt.o \
-@@ -148,13 +148,13 @@
+@@ -153,13 +148,13 @@
     dtrt02.o dtrt03.o dtrt05.o dtrt06.o \
     dtzt01.o dtzt02.o dgennd.o
  
@@ -51,7 +63,7 @@
  
  ZLINTST = zchkaa.o \
     zchkeq.o zchkgb.o zchkge.o zchkgt.o \
-@@ -188,13 +188,13 @@
+@@ -193,13 +188,13 @@
     ztrt02.o ztrt03.o ztrt05.o ztrt06.o \
     ztzt01.o ztzt02.o dget06.o zgennd.o
  
@@ -68,10 +80,12 @@
  
  DSLINTST = dchkab.o \
  	ddrvab.o ddrvac.o derrab.o derrac.o dget08.o          \
-@@ -246,5 +246,5 @@
+@@ -250,7 +245,7 @@
+         ../../$(TMGLIB) ../../$(LAPACKLIB) $(XBLASLIB)  $(BLASLIB) -o xlintstc && mv xlintstc $@
   
  ../xlintstd : $(ALINTST) $(DLINTST) $(DZLNTST)
 -	$(LOADER) $(LOADOPTS) $^ \
-+	$(LOADER) $(LOADOPTS) ${.ALLSRC} \
++	$(LOADER) $(LOADOPTS) $(ALINTST) $(DLINTST) $(DZLNTST) \
          ../../$(TMGLIB) ../../$(LAPACKLIB) $(XBLASLIB) $(BLASLIB) -o xlintstd && mv xlintstd $@
   
+ ../xlintstz : $(ALINTST) $(ZLINTST) $(DZLNTST)
