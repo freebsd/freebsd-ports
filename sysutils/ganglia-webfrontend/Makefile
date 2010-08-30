@@ -7,7 +7,7 @@
 
 PORTNAME=	webfrontend
 PORTVERSION=	3.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils net parallel www
 MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}%20%28Wien%29
 PKGNAMEPREFIX=	ganglia-
@@ -16,7 +16,7 @@ DISTNAME=	ganglia-${PORTVERSION}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, web frontend
 
-BUILD_DEPENDS+=	apr-1-config:${PORTSDIR}/devel/apr1
+LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr1
 RUN_DEPENDS+=	${LOCALBASE}/sbin/gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core
 
 PKGINSTALL=	${WRKDIR}/pkg-install
