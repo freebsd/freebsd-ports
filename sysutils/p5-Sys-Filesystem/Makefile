@@ -33,4 +33,10 @@ MAN3=		Sys::Filesystem::Mswin32.3 \
 		Sys::Filesystem::Hpux.3 \
 		Sys::Filesystem::Netbsd.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+MANUAL_PACKAGE_BUILD=	accesses /etc/fstab during configure phase
+.endif
+
+.include <bsd.port.post.mk>
