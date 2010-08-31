@@ -126,6 +126,7 @@ lib/eaglemode/etc/emCore/FpPlugins/emGif.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emIlbm.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emJpeg.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emMines.emFpPlugin
+lib/eaglemode/etc/emCore/FpPlugins/emNetwalk.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emPcx.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emPng.emFpPlugin
 lib/eaglemode/etc/emCore/FpPlugins/emPnm.emFpPlugin
@@ -259,6 +260,7 @@ lib/eaglemode/etc/emMain/VcItemFiles/License.emFileLink
 lib/eaglemode/etc/emMain/VcItemFiles/Mandelbrot.emFractal
 lib/eaglemode/etc/emMain/VcItemFiles/Mines1.emMines
 lib/eaglemode/etc/emMain/VcItemFiles/MultiJulia.emFractal
+lib/eaglemode/etc/emMain/VcItemFiles/Netwalk1.emNetwalk
 lib/eaglemode/etc/emMain/VcItemFiles/SystemRequirements.emFileLink
 lib/eaglemode/etc/emMain/VcItemFiles/TestPanel.emTestPanel
 lib/eaglemode/etc/emMain/VcItemFiles/emFileManCustomization.emFileLink
@@ -289,6 +291,7 @@ lib/eaglemode/etc/emMain/VcItems/License.emVcItem
 lib/eaglemode/etc/emMain/VcItems/Mandelbrot.emVcItem
 lib/eaglemode/etc/emMain/VcItems/Mines1.emVcItem
 lib/eaglemode/etc/emMain/VcItems/MultiJulia.emVcItem
+lib/eaglemode/etc/emMain/VcItems/Netwalk1.emVcItem
 lib/eaglemode/etc/emMain/VcItems/SystemRequirements.emVcItem
 lib/eaglemode/etc/emMain/VcItems/TestPanel.emVcItem
 lib/eaglemode/etc/emMain/VcItems/emFileManCustomization.emVcItem
@@ -393,6 +396,9 @@ lib/eaglemode/include/emMain/emVirtualCosmos.h
 lib/eaglemode/include/emMines/emMinesControlPanel.h
 lib/eaglemode/include/emMines/emMinesFileModel.h
 lib/eaglemode/include/emMines/emMinesPanel.h
+lib/eaglemode/include/emNetwalk/emNetwalkControlPanel.h
+lib/eaglemode/include/emNetwalk/emNetwalkModel.h
+lib/eaglemode/include/emNetwalk/emNetwalkPanel.h
 lib/eaglemode/include/emPcx/emPcxImageFileModel.h
 lib/eaglemode/include/emPng/emPngImageFileModel.h
 lib/eaglemode/include/emPnm/emPnmImageFileModel.h
@@ -446,6 +452,7 @@ lib/eaglemode/lib/libemGif.so
 lib/eaglemode/lib/libemIlbm.so
 lib/eaglemode/lib/libemJpeg.so
 lib/eaglemode/lib/libemMines.so
+lib/eaglemode/lib/libemNetwalk.so
 lib/eaglemode/lib/libemPcx.so
 lib/eaglemode/lib/libemPng.so
 lib/eaglemode/lib/libemPnm.so
@@ -554,6 +561,7 @@ lib/eaglemode/res/icons/em-error-unknown-icon.tga
 @dirrm lib/eaglemode/include/emPnm
 @dirrm lib/eaglemode/include/emPng
 @dirrm lib/eaglemode/include/emPcx
+@dirrm lib/eaglemode/include/emNetwalk
 @dirrm lib/eaglemode/include/emMines
 @dirrm lib/eaglemode/include/emMain
 @dirrm lib/eaglemode/include/emJpeg
