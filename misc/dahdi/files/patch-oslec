@@ -1,0 +1,29 @@
+diff -ru freebsd/drivers/staging/echo/echo.c.orig freebsd/drivers/staging/echo/echo.c.orig
+--- freebsd/drivers/staging/echo/echo.c.orig	2010-08-27 06:47:12.000000000 +0700
++++ freebsd/drivers/staging/echo/echo.c	2010-08-31 14:45:48.000000000 +0700
+@@ -102,9 +102,15 @@
+    Mark, Pawel, and Pavel.
+ */
+ 
++#if defined(__FreeBSD__)
++#include <sys/types.h>
++#include <sys/libkern.h>
++#include <dahdi/compat/bsd.h>
++#else
+ #include <linux/kernel.h>
+ #include <linux/module.h>
+ #include <linux/slab.h>
++#endif /* !__FreeBSD__ */
+ 
+ #include "echo.h"
+ 
+@@ -656,7 +662,9 @@
+ }
+ EXPORT_SYMBOL_GPL(oslec_hpf_tx);
+ 
++#if !defined(__FreeBSD__)
+ MODULE_LICENSE("GPL");
+ MODULE_AUTHOR("David Rowe");
+ MODULE_DESCRIPTION("Open Source Line Echo Canceller");
+ MODULE_VERSION("0.3.0");
++#endif /* !__FreeBSD__ */

@@ -1,3 +1,8 @@
+# Translate the D channels to a standard channel data.
+# The HFC chipset provides us the D channel as data, but
+# Zaptel expects it as a standard channel with 1000 samples
+# per second.
+
 Index: freebsd/include/dahdi/dahdi_config.h
 ===================================================================
 --- freebsd/include/dahdi/dahdi_config.h	(revision 8781)

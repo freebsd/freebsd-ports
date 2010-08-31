@@ -12,6 +12,10 @@ CATEGORIES=	misc kld
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fjoe
 DISTNAME=	${PORTNAME}-freebsd-complete-${DAHDI_VERSION}+${DAHDI_TOOLS_VERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}\
+		oslec-linux-${OSLEC_VERSION}${EXTRACT_SUFX}\
+		zaphfc-${ZAPHFC_VERSION}${EXTRACT_SUFX}
+EXTRA_PATCHES=	${WRKDIR}/zaphfc-${ZAPHFC_VERSION}
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Digium/Asterisk Hardware Device Interface
@@ -19,8 +23,10 @@ COMMENT=	Digium/Asterisk Hardware Device Interface
 BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 LIB_DEPENDS=	newt.52:${PORTSDIR}/devel/newt
 
-DAHDI_VERSION=		2.4.0-rc3
+DAHDI_VERSION=		2.4.0-rc4
 DAHDI_TOOLS_VERSION=	2.4.0-rc1
+OSLEC_VERSION=		2.6.35.4
+ZAPHFC_VERSION=		r5
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
 GNU_CONFIGURE=	yes
@@ -28,6 +34,7 @@ CONFIGURE_ARGS=	--with-dahdi=../freebsd --sysconfdir=${PREFIX}/etc --with-newt=$
 CONFIGURE_ENV=	WGET=/usr/bin/fetch
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	dahdi
+MAKE_ARGS=	ADDITIONAL_DRIVERS="wcb1xxp"
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 CONFLICTS=	zaptel-[0-9]*
@@ -57,6 +64,10 @@ pre-everything::
 		${ECHO_MSG} ">> Please install FreeBSD kernel source code in /usr/src/sys."; \
 		${FALSE}; \
 	fi
+
+post-extract:
+	@${LN} -s ../../../linux-${OSLEC_VERSION}/drivers/staging ${WRKSRC}/freebsd/drivers
+	@${REINPLACE_CMD} -E -e 's,(new|old)/,freebsd/,g' ${WRKDIR}/zaphfc-${ZAPHFC_VERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}/etc,g'\
