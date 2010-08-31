@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rake
-PORTVERSION=	0.8.7
+PORTVERSION=	${RAKE_VER}
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,20 +15,17 @@ COMMENT=	Ruby Make
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-PLIST_FILES=	bin/rake
 
 MANCOMPRESSED=	yes
 MAN1=		rake.1
 
 .include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} == 1.9
-IGNORE=	already included in ruby distribution
+.if ${RUBY_VER} == 1.8
+PLIST_FILES=	bin/rake
 .endif
 
 post-install:
-	${MV} ${PREFIX}/${GEM_LIB_DIR}/doc/rake.1.gz \
-		${PREFIX}/man/man1
+	${MV} ${PREFIX}/${GEM_LIB_DIR}/doc/rake.1.gz ${PREFIX}/man/man1
 	${CHMOD} ${MANMODE} ${PREFIX}/man/man1/rake.1.gz
 	${CHOWN} ${MANOWN}:${MANGRP} ${PREFIX}/man/man1/rake.1.gz
 
