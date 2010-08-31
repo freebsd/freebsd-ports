@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	POE-Component-Client-HTTP
-PORTVERSION=	0.8200
-PORTREVISION=	1
+PORTVERSION=	0.8950
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	POE component for non-blocking/concurrent HTTP queries
 
-BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/HTTP/Request.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/POE/Component/Client/Keepalive.pm:${PORTSDIR}/net/p5-POE-Component-Client-Keepalive
+BUILD_DEPENDS=	p5-POE>=1.280:${PORTSDIR}/devel/p5-POE \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes \
+		p5-URI>=1.24:${PORTSDIR}/net/p5-URI \
+		p5-POE-Component-Client-Keepalive>=0.261:${PORTSDIR}/net/p5-POE-Component-Client-Keepalive
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
