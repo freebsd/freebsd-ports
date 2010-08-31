@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	forks
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	SOAP/RYBSKEJ
@@ -15,10 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Drop-in replacement for Perl threads using fork()
 
-RUN_DEPENDS=	${SITE_PERL}/reaper.pm:${PORTSDIR}/devel/p5-reaper \
-		p5-Devel-Required>=0:${PORTSDIR}/devel/p5-Devel-Required \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Acme-Damn>=0:${PORTSDIR}/devel/p5-Acme-Damn \
+  p5-Attribute-Handlers>=0:${PORTSDIR}/devel/p5-Attribute-Handlers \
+  p5-Devel-Symdump>=0:${PORTSDIR}/devel/p5-Devel-Symdump \
+  p5-List-MoreUtils>=:${PORTSDIR}/lang/p5-List-MoreUtils \
+  p5-Sys-SigAction>=0.11:${PORTSDIR}/devel/p5-Sys-SigAction
 
 PERL_CONFIGURE=	yes
 
