@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Unicode-Encoding
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Unicode aware Catalyst
 
-BUILD_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.8000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-libwww>=5.828:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=1.36:${PORTSDIR}/net/p5-URI
