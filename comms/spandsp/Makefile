@@ -6,30 +6,29 @@
 #
 
 PORTNAME=	spandsp
-DISTVERSION=	0.0.3
-PORTREVISION=	2
+PORTVERSION=	0.0.5
 CATEGORIES=	comms
 MASTER_SITES=	http://www.soft-switch.org/downloads/spandsp/ \
 		http://www.soft-switch.org/downloads/spandsp/old/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Fax DSP library for Asterisk
+COMMENT=	A DSP library and software FAX machine
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/pre.*$//}
-
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 
-USE_AUTOTOOLS=	libtool:22
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_LDCONFIG=	yes
 
-post-patch:
-	@${FIND} ${WRKSRC} -name *.c | ${XARGS} ${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|'
+CONFLICTS=	spandsp-devel-[0-9]*
 
 .include <bsd.port.mk>
