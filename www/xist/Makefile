@@ -22,6 +22,8 @@ RUN_DEPENDS=	${PYXML} \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.5:${PORTSDIR}/www/py-cssutils
 
+BROKEN=		bad plist
+
 USE_PYTHON=		2.4+
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
