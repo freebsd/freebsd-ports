@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	2ManDVD
-PORTVERSION=	1.2
-PORTREVISION=	4
+PORTVERSION=	1.3.5
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://download.tuxfamily.org/2mandvd/
 
 MAINTAINER=	trebestie@gmail.com
 COMMENT=	Create your own video dvd
 
-RUN_DEPENDS=	sox>=14.0:${PORTSDIR}/audio/sox \
+RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		netpbm>=10.26:${PORTSDIR}/graphics/netpbm \
@@ -24,9 +23,10 @@ RUN_DEPENDS=	sox>=14.0:${PORTSDIR}/audio/sox \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		notify-send:${PORTSDIR}/devel/libnotify \
 		tcprobe:${PORTSDIR}/multimedia/transcode \
-		xine:${PORTSDIR}/multimedia/xine
+		xine:${PORTSDIR}/multimedia/xine \
+		ffmpeg>=0.5:${PORTSDIR}/multimedia/ffmpeg
 
-BROKEN=		does not fetch
+LICENSE=	GPLv2
 
 USE_QT_VER=	4
 USE_CDRTOOLS=	true
