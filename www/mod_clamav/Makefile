@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_clamav
 PORTVERSION=	0.23
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www security
 MASTER_SITES=	http://software.othello.ch/mod_clamav/ \
 		http://www.kommunity.net/download/mod_clamav/
@@ -16,11 +16,15 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	tmueko@kommunity.net
 COMMENT=	Scans content delivered by the Apache20 proxy module for viruses
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 USE_AUTOTOOLS=	libtool:22
 USE_APACHE=	2.2
 GNU_CONFIGURE=	yes
+
+OPTIONS=	CLAMAVDEVEL	"Use development version of CLAMAV" off
+
+.include <bsd.port.options.mk>
 
 .if defined(WITH_CLAMAVDEVEL)
 LIB_DEPENDS+=	clamav.7:${PORTSDIR}/security/clamav-devel
