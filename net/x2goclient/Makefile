@@ -25,6 +25,12 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui network svg qmake_build moc_build uic_build rcc_build
 USE_OPENLDAP=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 post-patch:
 	cd ${WRKSRC}; ${REINPLACE_CMD} -e "s,Q_OS_LINUX,Q_OS_FREEBSD," \
 		embedwidget.cpp onmainwindow.cpp ongetpass.cpp \
@@ -39,4 +45,4 @@ do-configure:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/x2goclient ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
