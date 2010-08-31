@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bpython
-PORTVERSION=	0.9.6.2
+PORTVERSION=	0.9.7.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://bpython-interpreter.org/releases/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
