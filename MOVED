@@ -4513,3 +4513,4 @@ net/Sockets-devel||2010-08-31|Older than stable port and unmaintained
 sysutils/logtool-devel||2010-08-31|Older than stable port and unmaintained
 textproc/smartdoc-devel||2010-08-31|Older than stable port and unmaintained
 comms/spandsp-devel5||2010-08-31|Older than stable port and unmaintained
+french/pluxml-devel||2010-08-31|Stable was removed 2 years ago, doesn't make sense to keep -devel
