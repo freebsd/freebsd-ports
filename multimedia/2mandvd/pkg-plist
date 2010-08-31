@@ -1,26 +1,17 @@
 bin/2ManDVD
 share/pixmaps/mandvdico.png
 %%DATADIR%%/2ManDVD
+%%DATADIR%%/2mandvd_cs.qm
 %%DATADIR%%/2mandvd_de.qm
 %%DATADIR%%/2mandvd_en.qm
-%%DATADIR%%/2mandvd_he.qm
 %%DATADIR%%/2mandvd_it.qm
-%%DATADIR%%/2mandvd_pl.qm
-%%DATADIR%%/2mandvd_pt.qm
 %%DATADIR%%/2mandvd_ru.qm
-%%DATADIR%%/Bibliotheque/Animations/bebe_005.gif
-%%DATADIR%%/Bibliotheque/Animations/chien_018.gif
-%%DATADIR%%/Bibliotheque/Animations/perroquet_008.gif
-%%DATADIR%%/Bibliotheque/Animations/mouette_005.gif
-%%DATADIR%%/Bibliotheque/Animations/mouette_003.gif
-%%DATADIR%%/Bibliotheque/Animations/oiseau_022.gif
-%%DATADIR%%/Bibliotheque/Animations/fete_divers_006.gif
-%%DATADIR%%/Bibliotheque/Animations/chandelle_014.gif
-%%DATADIR%%/Bibliotheque/Animations/explosif_011.gif
-%%DATADIR%%/Bibliotheque/Animations/tweety1.gif
-%%DATADIR%%/Bibliotheque/Animations/earth.gif
-%%DATADIR%%/Bibliotheque/Animations/cheval_001.gif
-%%DATADIR%%/Bibliotheque/Animations/espace_038.gif
+%%DATADIR%%/Bibliotheque/Animations/doll_001.gif
+%%DATADIR%%/Bibliotheque/Animations/doll_002.gif
+%%DATADIR%%/Bibliotheque/Animations/flower_001.gif
+%%DATADIR%%/Bibliotheque/Animations/flower_002.gif
+%%DATADIR%%/Bibliotheque/Animations/mouette_001.gif
+%%DATADIR%%/Bibliotheque/Animations/mouette_002.gif
 %%DATADIR%%/Bibliotheque/Luma/Blinds_001.png
 %%DATADIR%%/Bibliotheque/Luma/Blinds_002.png
 %%DATADIR%%/Bibliotheque/Luma/Brule_001.png
@@ -125,6 +116,11 @@ share/pixmaps/mandvdico.png
 %%DATADIR%%/Bibliotheque/Luma/Zigzag_003.png
 %%DATADIR%%/Bibliotheque/Luma/Zigzag_004.png
 %%DATADIR%%/Bibliotheque/Luma/crossfade.png
+%%DATADIR%%/Bibliotheque/Luma/hatched_1.png
+%%DATADIR%%/Bibliotheque/Luma/hourglass_1.png
+%%DATADIR%%/Bibliotheque/Luma/hourglass_2.png
+%%DATADIR%%/Bibliotheque/Luma/hourglass_3.png
+%%DATADIR%%/Bibliotheque/Luma/hourglass_4.png
 %%DATADIR%%/Bibliotheque/Luma/marc1.png
 %%DATADIR%%/Bibliotheque/Luma/marc2.png
 %%DATADIR%%/Bibliotheque/Luma/marc3.png
@@ -151,6 +147,9 @@ share/pixmaps/mandvdico.png
 %%DATADIR%%/Bibliotheque/Luma/polar.png
 %%DATADIR%%/Bibliotheque/Luma/reliefwipedown.png
 %%DATADIR%%/Bibliotheque/Luma/snakerelief.png
+%%DATADIR%%/Bibliotheque/Luma/spiral_abstract_1.png
+%%DATADIR%%/Bibliotheque/Luma/spiral_abstract_2.png
+%%DATADIR%%/Bibliotheque/Luma/star_2.png
 %%DATADIR%%/Bibliotheque/Masks/2t_Holmes_001.png
 %%DATADIR%%/Bibliotheque/Masks/2t_Stop_001.png
 %%DATADIR%%/Bibliotheque/Masks/2t_ampoule_001.png
@@ -159,6 +158,7 @@ share/pixmaps/mandvdico.png
 %%DATADIR%%/Bibliotheque/Masks/2t_bird_001.png
 %%DATADIR%%/Bibliotheque/Masks/2t_cadre_001.png
 %%DATADIR%%/Bibliotheque/Masks/2t_cadre_002.png
+%%DATADIR%%/Bibliotheque/Masks/2t_cadre_003.png
 %%DATADIR%%/Bibliotheque/Masks/2t_camera_001.png
 %%DATADIR%%/Bibliotheque/Masks/2t_cd_001.png
 %%DATADIR%%/Bibliotheque/Masks/2t_chien_001.png
@@ -205,6 +205,7 @@ share/pixmaps/mandvdico.png
 %%DATADIR%%/Bibliotheque/Masks/bird_001.png
 %%DATADIR%%/Bibliotheque/Masks/cadre_001.png
 %%DATADIR%%/Bibliotheque/Masks/cadre_002.png
+%%DATADIR%%/Bibliotheque/Masks/cadre_003.png
 %%DATADIR%%/Bibliotheque/Masks/camera_001.png
 %%DATADIR%%/Bibliotheque/Masks/cd_001.png
 %%DATADIR%%/Bibliotheque/Masks/chien_001.png
@@ -257,152 +258,22 @@ share/pixmaps/mandvdico.png
 %%DATADIR%%/Bibliotheque/Masks/trèfle_001.png
 %%DATADIR%%/Bibliotheque/Masks/tux_001.png
 %%DATADIR%%/Bibliotheque/Masks/vache_001.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux/Chevaux/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux/Chevaux/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux/Goeland 3 boutons/Copyleft.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux/Goeland 3 boutons/LicenceArtLibre.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux/Goeland 3 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux/Goeland 3 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux/Jeux sur la plage/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux/Jeux sur la plage/licence.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux/Jeux sur la plage/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Candle 2 boutons/candlef.mpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Candle 2 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Candle 2 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Eyes (2 boutons)/0.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Eyes (2 boutons)/1.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Eyes (2 boutons)/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Eyes (2 boutons)/licence.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Eyes (2 boutons)/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Mouvement/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Mouvement/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Souvenirs 2 boutons/0.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Souvenirs 2 boutons/1.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Souvenirs 2 boutons/2t_0.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Souvenirs 2 boutons/2t_1.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Souvenirs 2 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Souvenirs 2 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Tasse a café (1 bouton)/0.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Tasse a café (1 bouton)/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Tasse a café (1 bouton)/licence.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Tasse a café (1 bouton)/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/blue-light-fyre/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/blue-light-fyre/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Enfants/Allongee sur la pelouse (3 bouons)/0.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Enfants/Allongee sur la pelouse (3 bouons)/1.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Enfants/Allongee sur la pelouse (3 bouons)/2.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Enfants/Allongee sur la pelouse (3 bouons)/2t_0.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Enfants/Allongee sur la pelouse (3 bouons)/2t_1.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Enfants/Allongee sur la pelouse (3 bouons)/2t_2.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Enfants/Allongee sur la pelouse (3 bouons)/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Enfants/Allongee sur la pelouse (3 bouons)/licence.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Enfants/Allongee sur la pelouse (3 bouons)/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Enfants/Garçon dans les nuages/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Enfants/Garçon dans les nuages/licence.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Enfants/Garçon dans les nuages/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Monuments/Maisons 3 boutons/Copyleft.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Monuments/Maisons 3 boutons/LicenceArtLibre.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Monuments/Maisons 3 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Monuments/Maisons 3 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Monuments/Mont-Saint-Michel 3 boutons/Copyleft.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Monuments/Mont-Saint-Michel 3 boutons/LicenceArtLibre.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Monuments/Mont-Saint-Michel 3 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Monuments/Mont-Saint-Michel 3 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Monuments/Ville de nuit (1 bouton)/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Monuments/Ville de nuit (1 bouton)/licence.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Monuments/Ville de nuit (1 bouton)/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Naissance/Naissance 3 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Naissance/Naissance 3 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Neige/Baton de ski 001 ( 3 boutons )/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Neige/Baton de ski 001 ( 3 boutons )/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Neige/Neige 001/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Neige/Neige 001/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Neige/Neige 002/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Neige/Neige 002/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Neige/Paysage de neige 001 ( 3 boutons )/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Neige/Paysage de neige 001 ( 3 boutons )/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Carnac 3 boutons/Copyleft.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Carnac 3 boutons/LicenceArtLibre.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Carnac 3 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Carnac 3 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Crepuscule 2 3 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Crepuscule 2 3 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Crepuscule 3 3 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Crepuscule 3 3 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Crepuscule 3 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Crepuscule 3 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Desert 3 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Desert 3 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Ete 2 boutons/0.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Ete 2 boutons/1.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Ete 2 boutons/2t_0.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Ete 2 boutons/2t_1.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Ete 2 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Ete 2 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Lac 1 bouton/0.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Lac 1 bouton/2t_0.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Lac 1 bouton/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Lac 1 bouton/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Montagne 3 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Montagne 3 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Nature 3 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Nature 3 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Plage 3 boutons/Copyleft.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Plage 3 boutons/LicenceArtLibre.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Plage 3 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Plage 3 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Port 3 boutons/Copyleft.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Port 3 boutons/LicenceArtLibre.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Port 3 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Port 3 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Quiberon/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Quiberon/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Sene/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Sene/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Sunset (2 boutons)/0.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Sunset (2 boutons)/1.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Sunset (2 boutons)/2t_0.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Sunset (2 boutons)/2t_1.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Sunset (2 boutons)/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Sunset (2 boutons)/licence.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Sunset (2 boutons)/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Tropiques 3 boutons/Copyleft.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Tropiques 3 boutons/LicenceArtLibre.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Tropiques 3 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Tropiques 3 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/sene-hdtv/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/sene-hdtv/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Plantes/Fleur01 3 boutons/Copyleft.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Plantes/Fleur01 3 boutons/LicenceArtLibre.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Plantes/Fleur01 3 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Plantes/Fleur01 3 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Plantes/Fleur01 6 boutons/Copyleft.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Plantes/Fleur01 6 boutons/LicenceArtLibre.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Plantes/Fleur01 6 boutons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Plantes/Fleur01 6 boutons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Poissons/Aquarium/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Poissons/Aquarium/poissons.mpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Poissons/Aquarium/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Poissons/Poissons 2/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Poissons/Poissons 2/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Poissons/Poissons 3/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Poissons/Poissons 3/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Poissons/Poissons/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Poissons/Poissons/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Summer/Enfant sur la plage (3 boutons)/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Summer/Enfant sur la plage (3 boutons)/licence.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Summer/Enfant sur la plage (3 boutons)/theme.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Summer/Verre (2 boutons)/0.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Summer/Verre (2 boutons)/2t_0.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Summer/Verre (2 boutons)/2t_3.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Summer/Verre (2 boutons)/3.png
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Summer/Verre (2 boutons)/fd.jpg
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Summer/Verre (2 boutons)/licence.txt
-%%DATADIR%%/Bibliotheque/Themes/FOLD_Summer/Verre (2 boutons)/theme.txt
+%%DATADIR%%/Bibliotheque/Themes/FOLD_Vacances/Diapos sur bois/dia.png
+%%DATADIR%%/Bibliotheque/Themes/FOLD_Vacances/Diapos sur bois/fd.jpg
+%%DATADIR%%/Bibliotheque/Themes/FOLD_Vacances/Diapos sur bois/theme.jpg
+%%DATADIR%%/Bibliotheque/Themes/FOLD_Vacances/Diapos sur bois/theme.txt
 %%DATADIR%%/Interface/action.png
+%%DATADIR%%/Interface/anim.png
 %%DATADIR%%/Interface/apropos.png
+%%DATADIR%%/Interface/arbo32.png
+%%DATADIR%%/Interface/archive.png
 %%DATADIR%%/Interface/back.png
+%%DATADIR%%/Interface/back_transparent.png
+%%DATADIR%%/Interface/bottom.png
 %%DATADIR%%/Interface/btimg.png
+%%DATADIR%%/Interface/btmed32.png
+%%DATADIR%%/Interface/btpro32.png
+%%DATADIR%%/Interface/btthe32.png
 %%DATADIR%%/Interface/cancel.png
 %%DATADIR%%/Interface/cancel1.png
 %%DATADIR%%/Interface/cancel2.png
@@ -410,16 +281,16 @@ share/pixmaps/mandvdico.png
 %%DATADIR%%/Interface/capture1.png
 %%DATADIR%%/Interface/capture2.png
 %%DATADIR%%/Interface/case.png
+%%DATADIR%%/Interface/case1.png
+%%DATADIR%%/Interface/case2.png
+%%DATADIR%%/Interface/case3.png
+%%DATADIR%%/Interface/case4.png
 %%DATADIR%%/Interface/case_menu.png
 %%DATADIR%%/Interface/case_menu_select.png
 %%DATADIR%%/Interface/chapitrage.png
 %%DATADIR%%/Interface/chapitrage1.png
-%%DATADIR%%/Interface/chapitrage3.png
-%%DATADIR%%/Interface/close.png
-%%DATADIR%%/Interface/close1.png
-%%DATADIR%%/Interface/close2.png
-%%DATADIR%%/Interface/close3.png
-%%DATADIR%%/Interface/combo.png
+%%DATADIR%%/Interface/color.png
+%%DATADIR%%/Interface/configure.png
 %%DATADIR%%/Interface/contours.png
 %%DATADIR%%/Interface/coord.png
 %%DATADIR%%/Interface/copy.png
@@ -427,39 +298,30 @@ share/pixmaps/mandvdico.png
 %%DATADIR%%/Interface/default_bt.png
 %%DATADIR%%/Interface/dvd_empty.png
 %%DATADIR%%/Interface/dvd_theme.png
+%%DATADIR%%/Interface/dvd_theme_full.png
 %%DATADIR%%/Interface/dvdformat.png
-%%DATADIR%%/Interface/dvdnext.png
 %%DATADIR%%/Interface/dvdok.png
 %%DATADIR%%/Interface/dvdok1.png
 %%DATADIR%%/Interface/dvdok2.png
-%%DATADIR%%/Interface/dvdpause.png
-%%DATADIR%%/Interface/dvdplay.png
-%%DATADIR%%/Interface/dvdprevious.png
 %%DATADIR%%/Interface/edit.png
 %%DATADIR%%/Interface/edit_menu.png
-%%DATADIR%%/Interface/effets.png
-%%DATADIR%%/Interface/emblem1.png
-%%DATADIR%%/Interface/emblem2.png
-%%DATADIR%%/Interface/emblem3.png
 %%DATADIR%%/Interface/equerre.png
 %%DATADIR%%/Interface/eraser.png
 %%DATADIR%%/Interface/error.png
 %%DATADIR%%/Interface/execute.png
 %%DATADIR%%/Interface/exit.png
-%%DATADIR%%/Interface/fd_point.png
+%%DATADIR%%/Interface/f1.png
+%%DATADIR%%/Interface/f2.png
 %%DATADIR%%/Interface/fd_transparent.png
 %%DATADIR%%/Interface/finder.png
 %%DATADIR%%/Interface/folder.png
-%%DATADIR%%/Interface/folder1.png
-%%DATADIR%%/Interface/folder2.png
-%%DATADIR%%/Interface/folder3.png
 %%DATADIR%%/Interface/folder_theme.png
+%%DATADIR%%/Interface/foldersys24.png
 %%DATADIR%%/Interface/fond_media.png
 %%DATADIR%%/Interface/fond_options_1.png
 %%DATADIR%%/Interface/fond_pb.png
 %%DATADIR%%/Interface/fond_pb2.png
 %%DATADIR%%/Interface/fond_preview.png
-%%DATADIR%%/Interface/fond_window_mdi.png
 %%DATADIR%%/Interface/format-justify-center.png
 %%DATADIR%%/Interface/format-justify-left.png
 %%DATADIR%%/Interface/format-justify-right.png
@@ -467,6 +329,7 @@ share/pixmaps/mandvdico.png
 %%DATADIR%%/Interface/format-text-italic.png
 %%DATADIR%%/Interface/format-text-underline.png
 %%DATADIR%%/Interface/front.png
+%%DATADIR%%/Interface/go.png
 %%DATADIR%%/Interface/goto.png
 %%DATADIR%%/Interface/goto_previous.png
 %%DATADIR%%/Interface/grab.png
@@ -475,6 +338,7 @@ share/pixmaps/mandvdico.png
 %%DATADIR%%/Interface/grab3.png
 %%DATADIR%%/Interface/home.png
 %%DATADIR%%/Interface/hruler.png
+%%DATADIR%%/Interface/info.png
 %%DATADIR%%/Interface/intro.png
 %%DATADIR%%/Interface/intro1.png
 %%DATADIR%%/Interface/introdvd.png
@@ -482,7 +346,11 @@ share/pixmaps/mandvdico.png
 %%DATADIR%%/Interface/label1.png
 %%DATADIR%%/Interface/label2.png
 %%DATADIR%%/Interface/label3.png
+%%DATADIR%%/Interface/left.png
+%%DATADIR%%/Interface/ligne.png
 %%DATADIR%%/Interface/locked.png
+%%DATADIR%%/Interface/lstmenu32.png
+%%DATADIR%%/Interface/lstmenuadd32.png
 %%DATADIR%%/Interface/mandvd.png
 %%DATADIR%%/Interface/mandvdico.png
 %%DATADIR%%/Interface/map0.png
@@ -492,6 +360,7 @@ share/pixmaps/mandvdico.png
 %%DATADIR%%/Interface/map4.png
 %%DATADIR%%/Interface/map5.png
 %%DATADIR%%/Interface/map6.png
+%%DATADIR%%/Interface/map7.png
 %%DATADIR%%/Interface/mask.png
 %%DATADIR%%/Interface/media.png
 %%DATADIR%%/Interface/media1.png
@@ -516,9 +385,6 @@ share/pixmaps/mandvdico.png
 %%DATADIR%%/Interface/newm3.png
 %%DATADIR%%/Interface/newpro.png
 %%DATADIR%%/Interface/next.png
-%%DATADIR%%/Interface/next1.png
-%%DATADIR%%/Interface/next2.png
-%%DATADIR%%/Interface/next3.png
 %%DATADIR%%/Interface/oclose.png
 %%DATADIR%%/Interface/oclose1.png
 %%DATADIR%%/Interface/oclose2.png
@@ -526,36 +392,37 @@ share/pixmaps/mandvdico.png
 %%DATADIR%%/Interface/open.png
 %%DATADIR%%/Interface/open1.png
 %%DATADIR%%/Interface/open2.png
-%%DATADIR%%/Interface/palntsc.png
 %%DATADIR%%/Interface/paste.png
+%%DATADIR%%/Interface/pathbar1.png
+%%DATADIR%%/Interface/pathbar2.png
 %%DATADIR%%/Interface/pencil.png
-%%DATADIR%%/Interface/picture.png
 %%DATADIR%%/Interface/play.png
 %%DATADIR%%/Interface/play1.png
 %%DATADIR%%/Interface/play2.png
 %%DATADIR%%/Interface/play3.png
 %%DATADIR%%/Interface/plot.png
+%%DATADIR%%/Interface/poubelle.png
 %%DATADIR%%/Interface/preferences.png
 %%DATADIR%%/Interface/prev.png
-%%DATADIR%%/Interface/prev1.png
-%%DATADIR%%/Interface/prev2.png
-%%DATADIR%%/Interface/prev3.png
-%%DATADIR%%/Interface/progress.png
 %%DATADIR%%/Interface/question.png
 %%DATADIR%%/Interface/quoifaire.png
 %%DATADIR%%/Interface/rectangle.png
 %%DATADIR%%/Interface/reencode.png
 %%DATADIR%%/Interface/reload.png
-%%DATADIR%%/Interface/remote.png
+%%DATADIR%%/Interface/render.png
+%%DATADIR%%/Interface/render1.png
+%%DATADIR%%/Interface/right.png
 %%DATADIR%%/Interface/rond.png
 %%DATADIR%%/Interface/rotate.png
 %%DATADIR%%/Interface/rotate1.png
 %%DATADIR%%/Interface/rotate2.png
 %%DATADIR%%/Interface/rotate3.png
 %%DATADIR%%/Interface/save.png
+%%DATADIR%%/Interface/scalemedia.png
 %%DATADIR%%/Interface/select.png
 %%DATADIR%%/Interface/select1.png
 %%DATADIR%%/Interface/select2.png
+%%DATADIR%%/Interface/select3.png
 %%DATADIR%%/Interface/shear.png
 %%DATADIR%%/Interface/shear1.png
 %%DATADIR%%/Interface/shear2.png
@@ -572,73 +439,20 @@ share/pixmaps/mandvdico.png
 %%DATADIR%%/Interface/subtitle.png
 %%DATADIR%%/Interface/subtitle2.png
 %%DATADIR%%/Interface/tabulation.png
-%%DATADIR%%/Interface/tagmenu.png
+%%DATADIR%%/Interface/tools32.png
+%%DATADIR%%/Interface/top.png
 %%DATADIR%%/Interface/trash.png
 %%DATADIR%%/Interface/trash1.png
 %%DATADIR%%/Interface/trash3.png
 %%DATADIR%%/Interface/tree.png
 %%DATADIR%%/Interface/vruler.png
-%%DATADIR%%/Interface/wdownup.png
-%%DATADIR%%/Interface/wdownup1.png
-%%DATADIR%%/Interface/wdownup2.png
 %%DATADIR%%/Interface/world.png
 %%DATADIR%%/Interface/zoom.png
 %%DATADIR%%/Interface/zoom1.png
 %%DATADIR%%/Interface/zoom2.png
 %%DATADIR%%/Interface/zoom3.png
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Enfants/Garçon dans les nuages
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Enfants/Allongee sur la pelouse (3 bouons)
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Summer/Enfant sur la plage (3 boutons)
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Summer/Verre (2 boutons)
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Monuments/Ville de nuit (1 bouton)
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Monuments/Mont-Saint-Michel 3 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Monuments/Maisons 3 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Poissons/Aquarium
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Poissons/Poissons 3
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Poissons/Poissons 2
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Poissons/Poissons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Tasse a café (1 bouton)
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Eyes (2 boutons)
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Mouvement
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/blue-light-fyre
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Candle 2 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Divers/Souvenirs 2 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux/Jeux sur la plage
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux/Chevaux
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux/Goeland 3 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Sunset (2 boutons)
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Sene
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/sene-hdtv
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Lac 1 bouton
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Montagne 3 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Tropiques 3 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Crepuscule 3 3 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Desert 3 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Crepuscule 3 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Crepuscule 2 3 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Ete 2 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Quiberon
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Plage 3 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Nature 3 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Port 3 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages/Carnac 3 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Naissance/Naissance 3 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Plantes/Fleur01 6 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Plantes/Fleur01 3 boutons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Neige/Neige 002
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Neige/Neige 001
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Neige/Paysage de neige 001 ( 3 boutons )
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Neige/Baton de ski 001 ( 3 boutons )
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Neige
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Enfants
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Plantes
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Naissance
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Paysages
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Animaux
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Divers
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Poissons
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Summer
-@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Monuments
+@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Vacances/Diapos sur bois
+@dirrm %%DATADIR%%/Bibliotheque/Themes/FOLD_Vacances
 @dirrm %%DATADIR%%/Bibliotheque/Themes
 @dirrm %%DATADIR%%/Bibliotheque/Luma
 @dirrm %%DATADIR%%/Bibliotheque/Masks
