@@ -1,11 +1,17 @@
---- config/Makefile.in.orig	2008-07-31 08:57:42.000000000 +0000
-+++ config/Makefile.in	2009-12-09 08:40:24.020226284 +0000
-@@ -252,7 +252,7 @@
+--- config/Makefile.in.orig	2010-08-25 01:32:29.007194513 +0200
++++ config/Makefile.in	2010-08-25 01:58:14.194467567 +0200
+@@ -304,11 +304,9 @@
+ 	@list='$(spdconf_DATA)'; test -n "$(spdconfdir)" || list=; \
+ 	for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f=$(am__strip_dir) \
- 	  echo " $(spdconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(spdconfdir)/$$f'"; \
--	  $(spdconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(spdconfdir)/$$f"; \
-+	  $(spdconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(spdconfdir)/$$f.sample"; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(spdconfdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(spdconfdir)" || exit $$?; \
++	  $(am__strip_dir) \
++	  echo " $(INSTALL_DATA) $$d$$p '$(DESTDIR)$(spdconfdir)/$$f'"; \
++	  $(INSTALL_DATA) $$d$$p "$(DESTDIR)$(spdconfdir)/$$f.sample" || exit $$?; \
  	done
  
  uninstall-spdconfDATA:

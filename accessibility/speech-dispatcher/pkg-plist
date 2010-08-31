@@ -55,7 +55,7 @@ include/libspeechd.h
 lib/libspeechd.a
 lib/libspeechd.la
 lib/libspeechd.so
-lib/libspeechd.so.3
+lib/libspeechd.so.4
 lib/speech-dispatcher-modules/sd_cicero
 lib/speech-dispatcher-modules/sd_dummy
 %%ESPEAK%%lib/speech-dispatcher-modules/sd_espeak
@@ -67,9 +67,10 @@ lib/speech-dispatcher/libsdaudio.la
 lib/speech-dispatcher/libsdaudio.so
 lib/speech-dispatcher/libsdaudio.so.2
 share/sounds/speech-dispatcher/dummy-message.wav
-share/sounds/speech-dispatcher/test.wav
+%%PYTHON%%share/sounds/speech-dispatcher/test.wav
 %%DATADIR%%/conf/clients/emacs.conf
 %%DATADIR%%/conf/clients/gnome-speech.conf
+%%PYTHON%%%%DATADIR%%/conf/desktop/speechd.desktop
 %%DATADIR%%/conf/modules/cicero.conf
 %%DATADIR%%/conf/modules/dtk-generic.conf
 %%DATADIR%%/conf/modules/epos-generic.conf
@@ -84,11 +85,12 @@ share/sounds/speech-dispatcher/test.wav
 %%DATADIR%%/conf/modules/swift-generic.conf
 %%DATADIR%%/conf/speechd.conf
 @dirrm %%DATADIR%%/conf/modules
+%%PYTHON%%@dirrm %%DATADIR%%/conf/desktop
 @dirrm %%DATADIR%%/conf/clients
 @dirrm %%DATADIR%%/conf
 @dirrm %%DATADIR%%
 @dirrm share/sounds/speech-dispatcher
-@dirrmtry share/sounds
+%%GNOMEHIER%%@dirrmtry share/sounds
 @dirrm lib/speech-dispatcher-modules
 @dirrm lib/speech-dispatcher
 @dirrmtry %%ETCDIR%%/modules
