@@ -19,6 +19,8 @@ COMMENT=	Perl interface to the Apache scoreboard structure
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PORTSCOUT=	limit:^0
+
 CFLAGS+=	-I${LOCALBASE}/include
 
 PERL_CONFIGURE=	YES
