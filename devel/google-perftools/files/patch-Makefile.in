@@ -1,6 +1,6 @@
---- Makefile.in.orig	2009-08-02 19:57:40.000000000 -0700
-+++ Makefile.in	2009-08-02 19:57:47.000000000 -0700
-@@ -1165,7 +1165,7 @@
+--- Makefile.in.orig	2010-08-04 20:17:38.000000000 +0000
++++ Makefile.in	2010-08-27 14:22:38.000000000 +0000
+@@ -1514,7 +1514,7 @@
  build_vendor = @build_vendor@
  datadir = @datadir@
  datarootdir = @datarootdir@
@@ -9,3 +9,12 @@
  dvidir = @dvidir@
  exec_prefix = @exec_prefix@
  host = @host@
+@@ -1609,7 +1609,7 @@
+ # noinst doesn't seem to work with data.  I separate them out anyway, in case
+ # one day we figure it out.  Regardless, installing the dot files isn't the
+ # end of the world.
+-dist_doc_DATA = AUTHORS COPYING ChangeLog INSTALL NEWS README \
++dist_doc_DATA = AUTHORS ChangeLog INSTALL NEWS README \
+ 	README_windows.txt TODO doc/index.html doc/designstyle.css \
+ 	$(am__append_12) doc/tcmalloc.html doc/overview.gif \
+ 	doc/pageheap.gif doc/spanmap.gif doc/threadheap.gif \

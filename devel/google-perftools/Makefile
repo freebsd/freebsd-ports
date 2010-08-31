@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	google-perftools
-PORTVERSION=	1.5
-PORTREVISION=	2
+PORTVERSION=	1.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL}
@@ -20,6 +19,9 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAN1=		pprof.1
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 post-patch:
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e \
@@ -29,7 +31,8 @@ post-patch:
 
 post-build:
 	@${ECHO}
-	@${ECHO} "Be aware that 3 (sampling_test.sh,profiledata_unittest,profiler_unittest.sh) out of 38 self tests is known to fail."
+	@${ECHO} "Be aware that 6 (tcmalloc_minimal_unittest tcmalloc_minimal_debug_unittest tcmalloc_unittest tcmalloc_both_unittest tcmalloc_debug_unittest tcmalloc_and_profiler_unittest) out of 38 self tests is known to fail."
+	@${ECHO} "Perftools developers were notified: http://code.google.com/p/google-perftools/issues/detail?id=212"
 	@${ECHO} "Run 'make check' and try to fix that. Thanks!"
 	@${ECHO} "Be aware that another self test (profiler_unittest) can randomly fail on the loaded system."
 	@${ECHO}
