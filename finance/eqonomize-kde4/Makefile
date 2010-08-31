@@ -15,6 +15,8 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	cm@therek.net
 COMMENT=	A personal accounting software
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus gui network svg xml qmake_build moc_build uic_build rcc_build
@@ -25,5 +27,10 @@ INSTALLS_ICONS=	yes
 
 DATADIR=	${PREFIX}/share/apps/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc
+
+post-patch:
+#Fix build with kdelibs>=4.5.0
+	${REINPLACE_CMD} -e 's,V4.1.2-Based,V4.2-Based,g' \
+		${WRKSRC}/doc/*/index.docbook
 
 .include <bsd.port.mk>
