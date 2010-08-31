@@ -10,10 +10,20 @@
 #
 # lighttpd_enable (bool):	Set it to "YES" to enable lighttpd
 #				Default is "NO".
-# lighttpd_conf (path):		Set full path to config file.
+# lighttpd_conf (path):		Set full path to configuration file.
 #				Default is "%%PREFIX%%/etc/lighttpd/lighttpd.conf".
 # lighttpd_pidfile (path):	Set full path to pid file.
 #				Default is "/var/run/lighttpd.pid".
+#
+# Add the following lines to /etc/rc.conf for multiple instances:
+# (overrides lighttpd_conf and lighttpd_pidfile from above)
+#
+# lighttpd_instances (string):	Instances of lighttpd
+#				Default is "" (no instances).
+# lighttpd_${i}_conf (path):	Set full path to instance configuration file.
+#				Default is "%%PREFIX%%/etc/lighttpd/${i}.conf".
+# lighttpd_${i}_pidfile (path):	Set full path to instance pid file
+#				Default is "/var/run/lighttpd_${i}.pid".
 #
 
 . /etc/rc.subr
@@ -26,6 +36,7 @@ load_rc_config $name
 : ${lighttpd_enable="NO"}
 : ${lighttpd_conf=""}
 : ${lighttpd_pidfile="/var/run/${name}.pid"}
+: ${lighttpd_instances=""}
 
 # Compatibility for old configuration file location
 deprecated_conf=
@@ -39,10 +50,6 @@ if [ -z "${lighttpd_conf}" ]; then
 fi
 
 command=%%PREFIX%%/sbin/lighttpd
-command_args="-f ${lighttpd_conf}"
-pidfile=${lighttpd_pidfile}
-required_files=${lighttpd_conf}
-start_precmd="check_deprecated"
 stop_postcmd=stop_postcmd
 restart_precmd="checkconfig"
 reload_precmd=reload_precmd
@@ -50,6 +57,9 @@ reload_postcmd=reload_postcmd
 sig_reload="INT"
 check_cmd="checkconfig"
 extra_commands="reload check"
+command_args="-f ${lighttpd_conf}"
+pidfile=${lighttpd_pidfile}
+required_files=${lighttpd_conf}
 
 check_deprecated()
 {
@@ -88,4 +98,44 @@ reload_postcmd()
 	run_rc_command start
 }
 
-run_rc_command "$1"
+run_instance()
+{
+	_i="$1"
+	_rcmd="$2"
+	name=${_orig_name}_${_i}
+	eval ${name}_enable=${lighttpd_enable}
+	eval lighttpd_conf=\"\${lighttpd_${_i}_conf:-"%%PREFIX%%/etc/lighttpd/${_i}.conf"}\"
+	eval lighttpd_pidfile=\"\${lighttpd_${_i}_pidfile:-"/var/run/lighttpd_${_i}.pid"}\"
+	command_args="-f ${lighttpd_conf}"
+	pidfile=${lighttpd_pidfile}
+	required_files=${lighttpd_conf}
+	run_rc_command ${_rcmd}
+}
+
+if [ -n "${lighttpd_instances}" ]; then
+	_orig_name="${name}"
+	_run_cmd="$1"
+	if [ $# -gt 0 ]; then
+		shift
+	fi
+	if [ -n "$*" ]; then
+		_run_instances="$*"
+	fi
+	if [ -n "${_run_instances}" ]; then
+		for _a in $_run_instances; do
+			for _in in ${lighttpd_instances}; do
+				if [ "$_a" = "$_in" ]; then
+					_runlist="${_runlist} ${_a}"
+				fi
+			done
+		done
+	else
+		_runlist="${lighttpd_instances}"
+	fi
+	for _in in ${_runlist}; do
+		run_instance $_in $_run_cmd
+	done
+else
+	start_precmd="check_deprecated"
+	run_rc_command "$1"
+fi
