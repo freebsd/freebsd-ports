@@ -23,4 +23,10 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
 MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+USE_GCC=	4.2+
+.endif
+
+.include <bsd.port.post.mk>
