@@ -1,6 +1,7 @@
 bin/remmina-applet
 libdata/bonobo/servers/Remmina_Applet.server
 %%NLS%%share/locale/bg/LC_MESSAGES/remmina-gnome.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/remmina-gnome.mo
 %%NLS%%share/locale/de/LC_MESSAGES/remmina-gnome.mo
 %%NLS%%share/locale/el/LC_MESSAGES/remmina-gnome.mo
 %%NLS%%share/locale/es/LC_MESSAGES/remmina-gnome.mo
