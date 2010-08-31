@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-SemiAffordanceAccessor
-PORTVERSION=	0.05
+PORTVERSION=	0.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DR/DROLSKY
@@ -15,12 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Name your accessors foo() and set_foo()
 
-RUN_DEPENDS=	p5-Moose>=0.85:${PORTSDIR}/devel/p5-Moose
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-Moose>=0.94:${PORTSDIR}/devel/p5-Moose
+RUN_DEPENDS=	p5-Moose>=0.94:${PORTSDIR}/devel/p5-Moose
 
 MAN3=		MooseX::SemiAffordanceAccessor.3 \
 		MooseX::SemiAffordanceAccessor::Role::Attribute.3
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>
