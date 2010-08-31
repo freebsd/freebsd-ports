@@ -66,6 +66,7 @@ OPTIONS=	PAM		"Enable pam(3) support"				on \
 		HPN		"Enable HPN-SSH patch"				off \
 		LPK		"Enable LDAP Public Key (LPK) patch"		off \
 		X509		"Enable x509 certificate patch"			off \
+		FILECONTROL	"Enable file control patch"			off \
 		OVERWRITE_BASE	"OpenSSH overwrite base"			off
 
 .include <bsd.port.pre.mk>
@@ -189,6 +190,11 @@ PATCHFILES+=		openssh-5.2p1+x509-6.2.diff.gz
 PLIST_SUB+=		X509=""
 .else
 PLIST_SUB+=		X509="@comment "
+.endif
+
+# See http://sftpfilecontrol.sourceforge.net/
+.if defined(WITH_FILECONTROL)
+EXTRA_PATCHES+=		${FILESDIR}/openssh-${DISTVERSION}.sftpfilecontrol-v1.3.patch
 .endif
 
 .if defined(WITH_OVERWRITE_BASE)
