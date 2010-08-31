@@ -18,10 +18,18 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 MAKE_JOBS_SAFE=	yes
 
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		uni2ascii.1 ascii2uni.1
 PLIST_FILES=	bin/uni2ascii bin/ascii2uni
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800067
+LIB_DEPENDS=	getline.1:${PORTSDIR}/devel/libgetline
+LDFLAGS+=	-lgetline
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+.endif
 
 do-install:
 .for f in ${PORTNAME} ascii2uni
@@ -29,4 +37,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${f}.1 ${MAN1PREFIX}/man/man1
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
