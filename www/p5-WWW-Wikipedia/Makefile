@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	WWW-Wikipedia
-PORTVERSION=	1.9.4
+PORTVERSION=	1.97
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl module of Automated interface to the Wikipedia
