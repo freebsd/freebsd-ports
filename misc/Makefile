@@ -207,7 +207,6 @@
     SUBDIR += kbdscan
     SUBDIR += kbfx
     SUBDIR += kcd
-    SUBDIR += kcd-devel
     SUBDIR += kde-xdg-env
     SUBDIR += kde3-i18n
     SUBDIR += kde3-i18n-af
