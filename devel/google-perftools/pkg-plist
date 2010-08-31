@@ -33,12 +33,11 @@ lib/libtcmalloc_minimal_debug.la
 lib/libtcmalloc_minimal_debug.so
 lib/libtcmalloc_minimal_debug.so.0
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.windows
+%%PORTDOCS%%%%DOCSDIR%%/README_windows.txt
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/cpuprofile-fileformat.html
 %%PORTDOCS%%%%DOCSDIR%%/cpuprofile.html
