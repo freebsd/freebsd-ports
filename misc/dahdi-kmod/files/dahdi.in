@@ -51,13 +51,17 @@ done
 
 dahdi_start()
 {
-	echo -n " ${name}"
+	echo "Starting ${name}."
 
 	kldconfig -mf ${kmod_dir}
 	for m in ${dahdi_modules}; do
 		kldload $m || exit 1
 	done
 	%%PREFIX%%/sbin/dahdi_cfg
+	if [ -r %%PREFIX%%/etc/fxotune.conf ]; then
+		echo "Starting fxotune."
+		%%PREFIX%%/sbin/fxotune -s
+	fi
 }
 
 dahdi_stop()
