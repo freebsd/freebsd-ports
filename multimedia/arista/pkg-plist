@@ -1,14 +1,89 @@
 bin/arista-gtk
 bin/arista-transcode
+lib/nautilus/extensions-2.0/python/arista-nautilus.py
+share/applications/arista.desktop
+share/doc/arista/AUTHORS
+share/doc/arista/LICENSE
+share/doc/arista/README.md
+share/locale/ar/LC_MESSAGES/arista.mo
+share/locale/ast/LC_MESSAGES/arista.mo
+share/locale/bg/LC_MESSAGES/arista.mo
+share/locale/ca/LC_MESSAGES/arista.mo
+share/locale/cs/LC_MESSAGES/arista.mo
+share/locale/de/LC_MESSAGES/arista.mo
+share/locale/en_GB/LC_MESSAGES/arista.mo
+share/locale/es/LC_MESSAGES/arista.mo
+share/locale/eu/LC_MESSAGES/arista.mo
+share/locale/fi/LC_MESSAGES/arista.mo
+share/locale/fr/LC_MESSAGES/arista.mo
+share/locale/gl/LC_MESSAGES/arista.mo
+share/locale/hu/LC_MESSAGES/arista.mo
+share/locale/it/LC_MESSAGES/arista.mo
+share/locale/ja/LC_MESSAGES/arista.mo
+share/locale/kn/LC_MESSAGES/arista.mo
+share/locale/nl/LC_MESSAGES/arista.mo
+share/locale/pl/LC_MESSAGES/arista.mo
+share/locale/pt/LC_MESSAGES/arista.mo
+share/locale/pt_BR/LC_MESSAGES/arista.mo
+share/locale/ro/LC_MESSAGES/arista.mo
+share/locale/ru/LC_MESSAGES/arista.mo
+share/locale/sl/LC_MESSAGES/arista.mo
+share/locale/sv/LC_MESSAGES/arista.mo
+share/locale/tr/LC_MESSAGES/arista.mo
+share/locale/zh_TW/LC_MESSAGES/arista.mo
+share/locale/templates/arista.pot
+share/pixmaps/arista.svg
+%%DATADIR%%/presets/android-droid.png
+%%DATADIR%%/presets/android-g1.png
+%%DATADIR%%/presets/android-nexus-one.svg
+%%DATADIR%%/presets/android.json
+%%DATADIR%%/presets/android.svg
+%%DATADIR%%/presets/computer.json
+%%DATADIR%%/presets/computer-webm.svg
+%%DATADIR%%/presets/computer-live.svg
+%%DATADIR%%/presets/dvd.json
+%%DATADIR%%/presets/ipad.json
+%%DATADIR%%/presets/ipad.svg
+%%DATADIR%%/presets/ipod-iphone.svg
+%%DATADIR%%/presets/ipod-nano.svg
+%%DATADIR%%/presets/ipod-touch.svg
+%%DATADIR%%/presets/ipod-video.svg
+%%DATADIR%%/presets/ipod.json
+%%DATADIR%%/presets/nokia-nseries.json
+%%DATADIR%%/presets/ps3.json
+%%DATADIR%%/presets/psp.json
+%%DATADIR%%/presets/web-flv.png
+%%DATADIR%%/presets/web-webm.svg
+%%DATADIR%%/presets/web.json
+%%DATADIR%%/presets/web.svg
+%%DATADIR%%/presets/computer.svg
+%%DATADIR%%/presets/dvd.svg
+%%DATADIR%%/presets/nokia-nseries.svg
+%%DATADIR%%/presets/ps3.svg
+%%DATADIR%%/presets/psp.svg
+%%DATADIR%%/ui/about.ui
+%%DATADIR%%/ui/error.svg
+%%DATADIR%%/ui/icon-small.svg
+%%DATADIR%%/ui/icon.svg
+%%DATADIR%%/ui/logo.svg
+%%DATADIR%%/ui/main.ui
+%%DATADIR%%/ui/prefs.ui
+%%DATADIR%%/ui/props.ui
 %%PYTHON_SITELIBDIR%%/arista/__init__.py
 %%PYTHON_SITELIBDIR%%/arista/__init__.pyc
 %%PYTHON_SITELIBDIR%%/arista/__init__.pyo
 %%PYTHON_SITELIBDIR%%/arista/discoverer.py
 %%PYTHON_SITELIBDIR%%/arista/discoverer.pyc
 %%PYTHON_SITELIBDIR%%/arista/discoverer.pyo
-%%PYTHON_SITELIBDIR%%/arista/inputs.py
-%%PYTHON_SITELIBDIR%%/arista/inputs.pyc
-%%PYTHON_SITELIBDIR%%/arista/inputs.pyo
+%%PYTHON_SITELIBDIR%%/arista/inputs/__init__.py
+%%PYTHON_SITELIBDIR%%/arista/inputs/__init__.pyc
+%%PYTHON_SITELIBDIR%%/arista/inputs/__init__.pyo
+%%PYTHON_SITELIBDIR%%/arista/inputs/haldisco.py
+%%PYTHON_SITELIBDIR%%/arista/inputs/haldisco.pyc
+%%PYTHON_SITELIBDIR%%/arista/inputs/haldisco.pyo
+%%PYTHON_SITELIBDIR%%/arista/inputs/udevdisco.py
+%%PYTHON_SITELIBDIR%%/arista/inputs/udevdisco.pyc
+%%PYTHON_SITELIBDIR%%/arista/inputs/udevdisco.pyo
 %%PYTHON_SITELIBDIR%%/arista/presets.py
 %%PYTHON_SITELIBDIR%%/arista/presets.pyc
 %%PYTHON_SITELIBDIR%%/arista/presets.pyo
@@ -21,73 +96,39 @@ bin/arista-transcode
 %%PYTHON_SITELIBDIR%%/arista/utils.py
 %%PYTHON_SITELIBDIR%%/arista/utils.pyc
 %%PYTHON_SITELIBDIR%%/arista/utils.pyo
-share/applications/arista.desktop
-share/pixmaps/arista.svg
-%%DATADIR%%/locale/de/LC_MESSAGES/arista.mo
-%%DATADIR%%/locale/es/LC_MESSAGES/arista.mo
-%%DATADIR%%/locale/fr/LC_MESSAGES/arista.mo
-%%DATADIR%%/locale/it/LC_MESSAGES/arista.mo
-%%DATADIR%%/locale/pt_BR/LC_MESSAGES/arista.mo
-%%DATADIR%%/locale/ca/LC_MESSAGES/arista.mo
-%%DATADIR%%/locale/ar/LC_MESSAGES/arista.mo
-%%DATADIR%%/locale/pl/LC_MESSAGES/arista.mo
-%%DATADIR%%/locale/fi/LC_MESSAGES/arista.mo
-%%DATADIR%%/locale/ja/LC_MESSAGES/arista.mo
-%%DATADIR%%/locale/ast/LC_MESSAGES/arista.mo
-%%DATADIR%%/locale/templates/arista.pot
-%%DATADIR%%/presets/computer.svg
-%%DATADIR%%/presets/computer.xml
-%%DATADIR%%/presets/d2.svg
-%%DATADIR%%/presets/d2.xml
-%%DATADIR%%/presets/dvd.svg
-%%DATADIR%%/presets/dvd.xml
-%%DATADIR%%/presets/ipod.svg
-%%DATADIR%%/presets/ipod.xml
-%%DATADIR%%/presets/ps3.svg
-%%DATADIR%%/presets/ps3.xml
-%%DATADIR%%/presets/psp.svg
-%%DATADIR%%/presets/psp.xml
-%%DATADIR%%/presets/pda.png
-%%DATADIR%%/presets/pda.xml
-%%DATADIR%%/presets/nwz-818.svg
-%%DATADIR%%/presets/nokia-nseries.svg
-%%DATADIR%%/presets/nokia-nseries.xml
-%%DATADIR%%/presets/nwz-818.xml
-%%DATADIR%%/ui/props.ui
-%%DATADIR%%/ui/about.ui
-%%DATADIR%%/ui/icon-small.svg
-%%DATADIR%%/ui/icon.svg
-%%DATADIR%%/ui/logo.svg
-%%DATADIR%%/ui/main.ui
-%%DATADIR%%/ui/prefs.ui
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrmtry %%PYTHON_SITELIBDIR%%/arista
-@dirrmtry share/applications
-@dirrmtry %%DATADIR%%/locale/fr/LC_MESSAGES
-@dirrmtry %%DATADIR%%/locale/it/LC_MESSAGES
-@dirrmtry %%DATADIR%%/locale/de/LC_MESSAGES
-@dirrmtry %%DATADIR%%/locale/es/LC_MESSAGES
-@dirrmtry %%DATADIR%%/locale/ca/LC_MESSAGES
-@dirrmtry %%DATADIR%%/locale/pt_BR/LC_MESSAGES
-@dirrmtry %%DATADIR%%/locale/ar/LC_MESSAGES
-@dirrmtry %%DATADIR%%/locale/pl/LC_MESSAGES
-@dirrmtry %%DATADIR%%/locale/fi/LC_MESSAGES
-@dirrmtry %%DATADIR%%/locale/ja/LC_MESSAGES
-@dirrmtry %%DATADIR%%/locale/ast/LC_MESSAGES
-@dirrmtry %%DATADIR%%/locale/fr
-@dirrmtry %%DATADIR%%/locale/it
-@dirrmtry %%DATADIR%%/locale/de
-@dirrmtry %%DATADIR%%/locale/es
-@dirrmtry %%DATADIR%%/locale/ca
-@dirrmtry %%DATADIR%%/locale/pt_BR
-@dirrmtry %%DATADIR%%/locale/ar
-@dirrmtry %%DATADIR%%/locale/pl
-@dirrmtry %%DATADIR%%/locale/fi
-@dirrmtry %%DATADIR%%/locale/ja
-@dirrmtry %%DATADIR%%/locale/ast
-@dirrmtry %%DATADIR%%/locale/templates
-@dirrmtry %%DATADIR%%/locale
+@dirrmtry lib/nautilus/extensions-2.0/python
+@dirrmtry %%DATADIR%%/arista/presets
+@dirrmtry %%DATADIR%%/arista
+@dirrmtry share/locale/ar/LC_MESSAGES
+@dirrmtry share/locale/ar
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/de/LC_MESSAGES
+@dirrmtry share/locale/de
+@dirrmtry share/locale/es/LC_MESSAGES
+@dirrmtry share/locale/es
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/fr
+@dirrmtry share/locale/it/LC_MESSAGES
+@dirrmtry share/locale/it
+@dirrmtry share/locale/ja/LC_MESSAGES
+@dirrmtry share/locale/ja
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pt_BR/LC_MESSAGES
+@dirrmtry share/locale/pt_BR
+@dirrmtry share/locale/templates
+@dirrmtry share/locale
 @dirrmtry %%DATADIR%%/presets
 @dirrmtry %%DATADIR%%/ui
 @dirrmtry %%DATADIR%%
+@dirrmtry %%PYTHON_SITELIBDIR%%/arista/inputs
+@dirrmtry %%PYTHON_SITELIBDIR%%/arista
+@dirrmtry share/applications
+@dirrmtry share/doc/arista
