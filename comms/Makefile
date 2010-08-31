@@ -133,7 +133,6 @@
     SUBDIR += soundmodem
     SUBDIR += spandsp
     SUBDIR += spandsp-devel
-    SUBDIR += spandsp-devel5
     SUBDIR += splat
     SUBDIR += sredird
     SUBDIR += syncterm
