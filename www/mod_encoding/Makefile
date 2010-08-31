@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://webdav.todo.gr.jp/download/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for non-ascii filename interoperability
 
 MAKE_JOBS_SAFE=  yes
