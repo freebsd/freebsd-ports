@@ -1171,6 +1171,7 @@
     SUBDIR += sgrep2
     SUBDIR += silvercity
     SUBDIR += simplehtmldom
+    SUBDIR += simplexml
     SUBDIR += sk-aspell
     SUBDIR += sk-ispell
     SUBDIR += skim
