@@ -308,7 +308,6 @@
     SUBDIR += muttzilla
     SUBDIR += nbsmtp
     SUBDIR += newmail
-    SUBDIR += ngmp
     SUBDIR += nmh
     SUBDIR += nmzmail
     SUBDIR += noattach
