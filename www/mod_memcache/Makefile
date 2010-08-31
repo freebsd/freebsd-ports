@@ -21,4 +21,8 @@ GNU_CONFIGURE=	yes
 PROJECTHOST=	modmemcache
 USE_APACHE=	2.2+
 
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+SRC_FILE=	src/${PORTNAME}.c
+
 .include <bsd.port.mk>
