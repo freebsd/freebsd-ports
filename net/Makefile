@@ -11,7 +11,6 @@
     SUBDIR += DarwinStreamingServer
     SUBDIR += GeoIP
     SUBDIR += Sockets
-    SUBDIR += Sockets-devel
     SUBDIR += abills
     SUBDIR += activemq
     SUBDIR += acx100
