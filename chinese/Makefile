@@ -46,7 +46,6 @@
     SUBDIR += gb2ps
     SUBDIR += gbscript
     SUBDIR += gcin
-    SUBDIR += gcin-devel
     SUBDIR += gimp-help-zh_CN
     SUBDIR += gugod-clean
     SUBDIR += hanzim
