@@ -14,24 +14,27 @@ MASTER_SITES=	http://code.suckless.org/dl/tools/ \
 MAINTAINER=	kimelto@gmail.com
 COMMENT=	A minimalist FIFO and filesystem-based IRC client
 
+LICENSE=	MIT
+
 MAN1=	ii.1
 PLIST_FILES=	bin/ii
-PORTDOCS=	CHANGES README FAQ LICENSE
+PORTDOCS=	CHANGES README FAQ
 PORTEXAMPLES=	query.sh
 
-post-install:
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/ii ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/ii.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/CHANGES ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/FAQ ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/LICENSE ${DOCSDIR}
+.for DOCFILE in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${DOCFILE} ${DOCSDIR}
+.endfor
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${ECHO_MSG} "installing additional examples to ${EXAMPLESDIR}"
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_MAN} ${WRKSRC}/query.sh ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/query.sh ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
