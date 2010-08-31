@@ -14,6 +14,7 @@ lib/dahdi/dahdi_dynamic_ethmf.ko
 lib/dahdi/dahdi_dynamic_loc.ko
 lib/dahdi/dahdi_echocan_jpah.ko
 lib/dahdi/dahdi_echocan_kb1.ko
+lib/dahdi/dahdi_echocan_oslec.ko
 lib/dahdi/dahdi_echocan_mg2.ko
 lib/dahdi/dahdi_echocan_sec.ko
 lib/dahdi/dahdi_echocan_sec2.ko
@@ -22,6 +23,7 @@ lib/dahdi/dahdi_voicebus.ko
 %%X86%%lib/dahdi/dahdi_vpmadt032_loader.ko
 lib/dahdi/linker.hints
 lib/dahdi/ng_dahdi_netdev.ko
+lib/dahdi/wcb1xxp.ko
 lib/dahdi/wcb4xxp.ko
 lib/dahdi/wcfxo.ko
 lib/dahdi/wct4xxp.ko
