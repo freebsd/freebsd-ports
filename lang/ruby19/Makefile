@@ -63,11 +63,6 @@ PKGNAMESUFFIX=	#empty
 CFLAGS+=	${PTHREAD_CFLAGS}	# Keep this, else ruby will fail to load
 LDFLAGS+=	${PTHREAD_LIBS}		# libraries dependent op libpthread.
 
-.if defined(WITH_DEBUG)
-CFLAGS+=	-g
-STRIP=		# none
-.endif
-
 #
 # Disable doc generation if requested or docs disabled at all
 #
@@ -78,7 +73,8 @@ CONFIGURE_ARGS+=	--disable-install-doc
 .endif
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
-		LIBS="${LDFLAGS}"
+		LIBS="${LDFLAGS}" \
+		debugflags=
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 MLINKS=		${RUBY_NAME}.1 ruby.1

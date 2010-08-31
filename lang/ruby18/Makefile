@@ -83,11 +83,6 @@ PLIST_SUB+=	ONIGURUMA=""
 PLIST_SUB+=	ONIGURUMA="@comment "
 .endif
 
-.if defined(WITH_DEBUG)
-CFLAGS+=	-g
-STRIP=		# none
-.endif
-
 #
 # Disable doc generation if requested or docs disabled at all
 #
