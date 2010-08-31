@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	Net-Server
-PORTVERSION=	0.97
+PORTVERSION=	0.99
 CATEGORIES=	net perl5
-MASTER_SITES=	http://seamons.com/projects/perl/net_server/ \
-		CPAN
+MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A configurable base class for writing internet servers in Perl
 
 RUN_DEPENDS=	${SITE_PERL}/IO/Multiplex.pm:${PORTSDIR}/devel/p5-IO-Multiplex
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::Server.3 \
 		Net::Server::Daemonize.3\
 		Net::Server::Fork.3 \
+		Net::Server::HTTP.3 \
 		Net::Server::INET.3 \
 		Net::Server::MultiType.3 \
 		Net::Server::Multiplex.3 \
@@ -30,6 +29,7 @@ MAN3=		Net::Server.3 \
 		Net::Server::PreForkSimple.3\
 		Net::Server::Proto.3\
 		Net::Server::Proto::SSL.3\
+		Net::Server::Proto::SSLEAY.3\
 		Net::Server::Proto::TCP.3\
 		Net::Server::Proto::UDP.3\
 		Net::Server::Proto::UNIX.3\

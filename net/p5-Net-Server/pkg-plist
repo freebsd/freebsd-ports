@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Net/Server.pod
 %%SITE_PERL%%/Net/Server/Daemonize.pm
 %%SITE_PERL%%/Net/Server/Fork.pm
+%%SITE_PERL%%/Net/Server/HTTP.pm
 %%SITE_PERL%%/Net/Server/INET.pm
 %%SITE_PERL%%/Net/Server/MultiType.pm
 %%SITE_PERL%%/Net/Server/Multiplex.pm
@@ -10,6 +11,7 @@
 %%SITE_PERL%%/Net/Server/PreForkSimple.pm
 %%SITE_PERL%%/Net/Server/Proto.pm
 %%SITE_PERL%%/Net/Server/Proto/SSL.pm
+%%SITE_PERL%%/Net/Server/Proto/SSLEAY.pm
 %%SITE_PERL%%/Net/Server/Proto/TCP.pm
 %%SITE_PERL%%/Net/Server/Proto/UDP.pm
 %%SITE_PERL%%/Net/Server/Proto/UNIX.pm
