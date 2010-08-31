@@ -1,11 +1,17 @@
---- config/modules/Makefile.in.orig	2009-12-09 08:34:23.051988348 +0000
-+++ config/modules/Makefile.in	2009-12-09 08:38:28.256188947 +0000
-@@ -238,7 +238,7 @@
+--- config/modules/Makefile.in.orig	2010-08-25 02:02:45.920937579 +0200
++++ config/modules/Makefile.in	2010-08-25 02:04:07.949176894 +0200
+@@ -262,11 +262,9 @@
+ 	@list='$(dist_moduleconf_DATA)'; test -n "$(moduleconfdir)" || list=; \
+ 	for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f=$(am__strip_dir) \
- 	  echo " $(dist_moduleconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(moduleconfdir)/$$f'"; \
--	  $(dist_moduleconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(moduleconfdir)/$$f"; \
-+	  $(dist_moduleconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(moduleconfdir)/$$f.sample"; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(moduleconfdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(moduleconfdir)" || exit $$?; \
++	  $(am__strip_dir) \
++	  echo " $(INSTALL_DATA) $$d$$p '$(DESTDIR)$(moduleconfdir)/$$f'"; \
++	  $(INSTALL_DATA) $$d$$p "$(DESTDIR)$(moduleconfdir)/$$f.sample" || exit $$?; \
  	done
  
  uninstall-dist_moduleconfDATA:

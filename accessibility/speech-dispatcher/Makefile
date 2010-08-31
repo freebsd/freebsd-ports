@@ -5,24 +5,23 @@
 # $FreeBSD$
 
 PORTNAME=	speech-dispatcher
-PORTVERSION=	0.6.7
-PORTREVISION=	2
+PORTVERSION=	0.7
 CATEGORIES=	accessibility audio
 MASTER_SITES=	http://www.freebsoft.org/pub/projects/speechd/
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Common interface to speech synthesis
 
-LIB_DEPENDS=	dotconf.0:${PORTSDIR}/devel/dotconf
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
-SUB_FILES=	pkg-message
+LIB_DEPENDS=	dotconf.0:${PORTSDIR}/devel/dotconf \
+		sndfile.1:${PORTSDIR}/audio/libsndfile
 
-USE_RC_SUBR=	speechd
 USE_GNOME=	glib20 pkgconfig
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--without-ibmtts --without-alsa --without-ivona
 USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
@@ -35,19 +34,27 @@ CONFFILES=	clients/emacs.conf clients/gnome-speech.conf \
 		modules/ivona.conf modules/llia_phon-generic.conf \
 		modules/swift-generic.conf speechd.conf
 
-PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
+PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
 
 INFO=		spd-say ${PORTNAME}-cs ${PORTNAME} ssip
 
-OPTIONS=	ESPEAK	"eSpeak output module" on \
+OPTIONS=	ALSA	"ALSA support" off \
+		ESPEAK	"eSpeak output module" on \
 		FESTIVAL	"Festival output module" off \
+		FLITE	"Festival Lite output module" off \
+		LIBAO	"libao support" off \
 		NAS	"Network Audio System support" off \
-		PULSEAUDIO	"PulseAudio support" off
+		PULSEAUDIO	"PulseAudio support (broken on FreeBSD 6.X)" off \
+		PYTHON	"Python support" off
 
-# no *.so library installed to link to
-#FLITE	"Festival Lite output module" off \
+.include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
+.ifdef(WITH_ALSA)
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+CONFIGURE_ARGS+=	--with-alsa
+.else
+CONFIGURE_ARGS+=	--without-alsa
+.endif
 
 .ifndef(WITHOUT_ESPEAK)
 LIB_DEPENDS+=	espeak.1:${PORTSDIR}/audio/espeak
@@ -63,15 +70,22 @@ RUN_DEPENDS+=	festival:${PORTSDIR}/audio/festival \
 		${LOCALBASE}/share/festival/lib/${PORTNAME}.scm:${PORTSDIR}/audio/festival-freebsoft-utils
 .endif
 
-#.ifdef(WITH_FLITE)
-#BUILD_DEPENDS+=	flite:${PORTSDIR}/audio/flite
-#RUN_DEPENDS+=	flite:${PORTSDIR}/audio/flite
-#CONFIGURE_ARGS+=	--with-flite
-#PLIST_SUB+=	FLITE=""
-#.else
+.ifdef(WITH_FLITE)
+BUILD_DEPENDS+=	flite:${PORTSDIR}/audio/flite
+RUN_DEPENDS+=	flite:${PORTSDIR}/audio/flite
+CONFIGURE_ARGS+=	--with-flite
+PLIST_SUB+=	FLITE=""
+.else
 CONFIGURE_ARGS+=	--without-flite
 PLIST_SUB+=	FLITE="@comment "
-#.endif
+.endif
+
+.ifdef(WITH_LIBAO)
+LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
+CONFIGURE_ARGS+=	--with-libao
+.else
+CONFIGURE_ARGS+=	--without-libao
+.endif
 
 .ifdef(WITH_NAS)
 LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
@@ -80,11 +94,22 @@ CONFIGURE_ARGS+=	--with-nas
 CONFIGURE_ARGS+=	--without-nas
 .endif
 
-.ifdef(WITH_PULSEAUDIO)
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
-CONFIGURE_ARGS+=	--with-pulseaudio
+.ifdef(WITH_PYTHON)
+USE_PYTHON=	yes
+PLIST_SUB+=	PYTHON=""
 .else
-CONFIGURE_ARGS+=	--without-pulseaudio
+PLIST_SUB+=	PYTHON="@comment "
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PULSEAUDIO) && ${OSVERSION} >= 700041
+LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+CONFIGURE_ARGS+=	--with-pulse
+PLIST_SUB+=	GNOMEHIER="@comment "
+.else
+CONFIGURE_ARGS+=	--without-pulse
+PLIST_SUB+=	GNOMEHIER=""
 .endif
 
 .if ${OSVERSION} < 800067
@@ -105,20 +130,19 @@ post-extract:
 .endif
 
 post-patch:
-.if ${OSVERSION} < 700042
-	@${REINPLACE_CMD} -E -e 's/^(LDFLAGS =.+)/\1 ${PTHREAD_LIBS}/' \
-		${WRKSRC}/src/c/clients/say/Makefile.in \
-		${WRKSRC}/src/tests/Makefile.in
-.endif
-	@${REINPLACE_CMD} -e 's/-pthread/${PTHREAD_LIBS}/g' \
+	${REINPLACE_CMD} -e 's/-pthread/${PTHREAD_LIBS}/g' \
 		${WRKSRC}/ltmain.sh
-	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \
+	${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/src/audio/Makefile.in \
 		${WRKSRC}/src/c/api/Makefile.in \
 		${WRKSRC}/src/c/clients/spdsend/Makefile.in \
 		${WRKSRC}/src/modules/Makefile.in \
 		${WRKSRC}/src/server/Makefile.in
+.ifndef(WITH_PYTHON)
+	${REINPLACE_CMD} -e 's/python[^ ]*//g' \
+		${WRKSRC}/src/Makefile.in
+.endif
 
 post-install:
 .for f in ${CONFFILES}
@@ -132,6 +156,5 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

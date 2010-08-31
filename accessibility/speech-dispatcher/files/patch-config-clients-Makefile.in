@@ -1,11 +1,17 @@
---- config/clients/Makefile.in.orig	2009-12-09 08:31:05.740198777 +0000
-+++ config/clients/Makefile.in	2009-12-09 08:31:26.505338395 +0000
-@@ -238,7 +238,7 @@
+--- config/clients/Makefile.in.orig	2010-08-25 02:00:47.363039128 +0200
++++ config/clients/Makefile.in	2010-08-25 02:02:07.456297674 +0200
+@@ -262,11 +262,9 @@
+ 	@list='$(dist_clientconf_DATA)'; test -n "$(clientconfdir)" || list=; \
+ 	for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f=$(am__strip_dir) \
- 	  echo " $(dist_clientconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(clientconfdir)/$$f'"; \
--	  $(dist_clientconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(clientconfdir)/$$f"; \
-+	  $(dist_clientconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(clientconfdir)/$$f.sample"; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(clientconfdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(clientconfdir)" || exit $$?; \
++	  $(am__strip_dir) \
++	  echo " $(INSTALL_DATA) $$d$$p '$(DESTDIR)$(clientconfdir)/$$f'"; \
++	  $(INSTALL_DATA) $$d$$p "$(DESTDIR)$(clientconfdir)/$$f.sample" || exit $$?; \
  	done
  
  uninstall-dist_clientconfDATA:
