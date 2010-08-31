@@ -17,6 +17,7 @@ share/applications/remmina.desktop
 %%DATADIR%%/icons/hicolor/22x22/actions/remmina-switch-page.png
 %%DATADIR%%/icons/hicolor/22x22/emblems/remmina-sftp.png
 %%NLS%%share/locale/bg/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/de/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/el/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/es/LC_MESSAGES/remmina.mo
