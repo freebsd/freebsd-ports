@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.4.19
+PORTVERSION=	1.4.20
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
@@ -35,6 +35,8 @@ PLIST_FILES=	bin/mhwaveedit \
 		share/pixmaps/mhwaveedit.xpm
 
 PLIST_DIRS=	share/applications
+
+MAN1=		mhwaveedit.1
 
 OPTIONS=	DOUBLE_SAMPLES "increase quality for 24/32-bit samplerates" off \
 		SNDFILE "libsndfile support" on \
