@@ -41,6 +41,7 @@ MAN8=		pcscd.8
 . if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 USBBASE=	${LOCALBASE}
+BROKEN=		does not configure
 . else
 USBBASE=	/usr
 CONFIGURE_ENV+=	LIBUSB_LIBS="-lusb"
