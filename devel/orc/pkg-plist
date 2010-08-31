@@ -9,6 +9,7 @@ include/orc-0.4/orc/orc-stdint.h
 include/orc-0.4/orc/orc.h
 include/orc-0.4/orc/orcarm.h
 include/orc-0.4/orc/orcdebug.h
+include/orc-0.4/orc/orcemulateopcodes.h
 include/orc-0.4/orc/orcfunctions.h
 include/orc-0.4/orc/orcmmx.h
 include/orc-0.4/orc/orcneon.h
