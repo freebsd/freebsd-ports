@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Crypt-SSLeay
-PORTVERSION=	0.57
-PORTREVISION=	1
+PORTVERSION=	0.58
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,17 +14,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to allow p5-libwww LWP to make https connections
 
-BUILD_DEPENDS=		${SITE_PERL}/URI/URL.pm:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+		${SITE_PERL}/URI/URL.pm:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--lib=${OPENSSLBASE}
+CONFIGURE_ARGS+=	--lib=${OPENSSLBASE} --no-live-tests
 MAKE_ARGS+=	PASTHRU_INC=-I${OPENSSLINC}
 USE_OPENSSL=	yes
 
 MAN3=		Crypt::SSLeay.3 Net::SSL.3
-
-post-patch:
-	${RM} ${WRKSRC}/lib/Net/SSL.pm.orig
 
 .include <bsd.port.mk>
