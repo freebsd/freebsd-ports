@@ -962,7 +962,6 @@
     SUBDIR += xfig-devel
     SUBDIR += xfpovray
     SUBDIR += xfractint
-    SUBDIR += xfractint-devel
     SUBDIR += xglurbules
     SUBDIR += xgrasp
     SUBDIR += xli
