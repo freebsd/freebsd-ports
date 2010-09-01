@@ -58,6 +58,7 @@
     SUBDIR += ktorrent2
     SUBDIR += libbt
     SUBDIR += liberator
+    SUBDIR += libktorrent
     SUBDIR += libpdtp
     SUBDIR += libtorrent
     SUBDIR += libtorrent-devel
