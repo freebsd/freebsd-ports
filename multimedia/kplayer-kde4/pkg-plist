@@ -1,8 +1,6 @@
 bin/kplayer
-lib/kde3/libkplayerpart.a
-lib/kde3/libkplayerpart.la
-lib/kde3/libkplayerpart.so
-share/applications/kde/kplayer.desktop
+lib/kde4/libkplayerpart.so
+share/applications/kde4/kplayer.desktop
 share/apps/konqueror/servicemenus/kplayer-actions.desktop
 share/apps/konqueror/servicemenus/kplayer-directory.desktop
 share/apps/konqueror/servicemenus/kplayer-next.desktop
@@ -10,67 +8,22 @@ share/apps/konqueror/servicemenus/kplayer-play-queue.desktop
 share/apps/kplayer/COPYING
 share/apps/kplayer/icons/hicolor/16x16/actions/brightness.png
 share/apps/kplayer/icons/hicolor/16x16/actions/contrast.png
-share/apps/kplayer/icons/hicolor/16x16/actions/fileopen.png
-share/apps/kplayer/icons/hicolor/16x16/actions/fileopenurl.png
 share/apps/kplayer/icons/hicolor/16x16/actions/hue.png
-share/apps/kplayer/icons/hicolor/16x16/actions/lock.png
 share/apps/kplayer/icons/hicolor/16x16/actions/loop.png
-share/apps/kplayer/icons/hicolor/16x16/actions/mute.png
-share/apps/kplayer/icons/hicolor/16x16/actions/player_fwd.png
-share/apps/kplayer/icons/hicolor/16x16/actions/player_pause.png
-share/apps/kplayer/icons/hicolor/16x16/actions/player_play.png
-share/apps/kplayer/icons/hicolor/16x16/actions/player_rew.png
-share/apps/kplayer/icons/hicolor/16x16/actions/player_stop.png
-share/apps/kplayer/icons/hicolor/16x16/actions/properties.png
 share/apps/kplayer/icons/hicolor/16x16/actions/saturation.png
 share/apps/kplayer/icons/hicolor/16x16/actions/shuffle.png
-share/apps/kplayer/icons/hicolor/16x16/actions/viewmag+.png
-share/apps/kplayer/icons/hicolor/16x16/actions/viewmag-.png
-share/apps/kplayer/icons/hicolor/16x16/actions/viewmagfit.png
-share/apps/kplayer/icons/hicolor/16x16/actions/volume.png
-share/apps/kplayer/icons/hicolor/16x16/actions/window_fullscreen.png
 share/apps/kplayer/icons/hicolor/22x22/actions/brightness.png
 share/apps/kplayer/icons/hicolor/22x22/actions/contrast.png
-share/apps/kplayer/icons/hicolor/22x22/actions/fileopen.png
-share/apps/kplayer/icons/hicolor/22x22/actions/fileopenurl.png
 share/apps/kplayer/icons/hicolor/22x22/actions/hue.png
-share/apps/kplayer/icons/hicolor/22x22/actions/lock.png
 share/apps/kplayer/icons/hicolor/22x22/actions/loop.png
-share/apps/kplayer/icons/hicolor/22x22/actions/mute.png
-share/apps/kplayer/icons/hicolor/22x22/actions/player_fwd.png
-share/apps/kplayer/icons/hicolor/22x22/actions/player_pause.png
-share/apps/kplayer/icons/hicolor/22x22/actions/player_play.png
-share/apps/kplayer/icons/hicolor/22x22/actions/player_rew.png
-share/apps/kplayer/icons/hicolor/22x22/actions/player_stop.png
-share/apps/kplayer/icons/hicolor/22x22/actions/properties.png
 share/apps/kplayer/icons/hicolor/22x22/actions/saturation.png
 share/apps/kplayer/icons/hicolor/22x22/actions/shuffle.png
-share/apps/kplayer/icons/hicolor/22x22/actions/viewmag+.png
-share/apps/kplayer/icons/hicolor/22x22/actions/viewmag-.png
-share/apps/kplayer/icons/hicolor/22x22/actions/viewmagfit.png
-share/apps/kplayer/icons/hicolor/22x22/actions/volume.png
-share/apps/kplayer/icons/hicolor/22x22/actions/window_fullscreen.png
 share/apps/kplayer/icons/hicolor/32x32/actions/brightness.png
 share/apps/kplayer/icons/hicolor/32x32/actions/contrast.png
-share/apps/kplayer/icons/hicolor/32x32/actions/fileopen.png
-share/apps/kplayer/icons/hicolor/32x32/actions/fileopenurl.png
 share/apps/kplayer/icons/hicolor/32x32/actions/hue.png
-share/apps/kplayer/icons/hicolor/32x32/actions/lock.png
 share/apps/kplayer/icons/hicolor/32x32/actions/loop.png
-share/apps/kplayer/icons/hicolor/32x32/actions/mute.png
-share/apps/kplayer/icons/hicolor/32x32/actions/player_fwd.png
-share/apps/kplayer/icons/hicolor/32x32/actions/player_pause.png
-share/apps/kplayer/icons/hicolor/32x32/actions/player_play.png
-share/apps/kplayer/icons/hicolor/32x32/actions/player_rew.png
-share/apps/kplayer/icons/hicolor/32x32/actions/player_stop.png
-share/apps/kplayer/icons/hicolor/32x32/actions/properties.png
 share/apps/kplayer/icons/hicolor/32x32/actions/saturation.png
 share/apps/kplayer/icons/hicolor/32x32/actions/shuffle.png
-share/apps/kplayer/icons/hicolor/32x32/actions/viewmag+.png
-share/apps/kplayer/icons/hicolor/32x32/actions/viewmag-.png
-share/apps/kplayer/icons/hicolor/32x32/actions/viewmagfit.png
-share/apps/kplayer/icons/hicolor/32x32/actions/volume.png
-share/apps/kplayer/icons/hicolor/32x32/actions/window_fullscreen.png
 share/apps/kplayer/input.conf
 share/apps/kplayer/kplayerpartui.rc
 share/apps/kplayer/kplayerui.rc
@@ -84,6 +37,7 @@ share/doc/HTML/da/kplayer/howto-configuration.docbook
 share/doc/HTML/da/kplayer/howto-devices.docbook
 share/doc/HTML/da/kplayer/howto-full-screen.docbook
 share/doc/HTML/da/kplayer/howto-installation.docbook
+share/doc/HTML/da/kplayer/howto-library.docbook
 share/doc/HTML/da/kplayer/howto-playlist.docbook
 share/doc/HTML/da/kplayer/howto-properties.docbook
 share/doc/HTML/da/kplayer/howto-settings.docbook
@@ -166,6 +120,7 @@ share/doc/HTML/es/kplayer/howto-configuration.docbook
 share/doc/HTML/es/kplayer/howto-devices.docbook
 share/doc/HTML/es/kplayer/howto-full-screen.docbook
 share/doc/HTML/es/kplayer/howto-installation.docbook
+share/doc/HTML/es/kplayer/howto-library.docbook
 share/doc/HTML/es/kplayer/howto-playlist.docbook
 share/doc/HTML/es/kplayer/howto-properties.docbook
 share/doc/HTML/es/kplayer/howto-settings.docbook
@@ -212,6 +167,7 @@ share/doc/HTML/it/kplayer/howto-configuration.docbook
 share/doc/HTML/it/kplayer/howto-devices.docbook
 share/doc/HTML/it/kplayer/howto-full-screen.docbook
 share/doc/HTML/it/kplayer/howto-installation.docbook
+share/doc/HTML/it/kplayer/howto-library.docbook
 share/doc/HTML/it/kplayer/howto-playlist.docbook
 share/doc/HTML/it/kplayer/howto-properties.docbook
 share/doc/HTML/it/kplayer/howto-settings.docbook
@@ -236,6 +192,7 @@ share/doc/HTML/pt/kplayer/howto-configuration.docbook
 share/doc/HTML/pt/kplayer/howto-devices.docbook
 share/doc/HTML/pt/kplayer/howto-full-screen.docbook
 share/doc/HTML/pt/kplayer/howto-installation.docbook
+share/doc/HTML/pt/kplayer/howto-library.docbook
 share/doc/HTML/pt/kplayer/howto-playlist.docbook
 share/doc/HTML/pt/kplayer/howto-properties.docbook
 share/doc/HTML/pt/kplayer/howto-settings.docbook
@@ -261,6 +218,7 @@ share/doc/HTML/sv/kplayer/howto-configuration.docbook
 share/doc/HTML/sv/kplayer/howto-devices.docbook
 share/doc/HTML/sv/kplayer/howto-full-screen.docbook
 share/doc/HTML/sv/kplayer/howto-installation.docbook
+share/doc/HTML/sv/kplayer/howto-library.docbook
 share/doc/HTML/sv/kplayer/howto-playlist.docbook
 share/doc/HTML/sv/kplayer/howto-properties.docbook
 share/doc/HTML/sv/kplayer/howto-settings.docbook
@@ -302,9 +260,7 @@ share/icons/hicolor/22x22/apps/kplayer.png
 share/icons/hicolor/32x32/apps/kplayer.png
 share/icons/hicolor/48x48/apps/kplayer.png
 share/icons/hicolor/64x64/apps/kplayer.png
-share/icons/locolor/16x16/apps/kplayer.png
-share/icons/locolor/22x22/apps/kplayer.png
-share/icons/locolor/32x32/apps/kplayer.png
+share/kde4/services/kplayerpart.desktop
 share/locale/be/LC_MESSAGES/kplayer.mo
 share/locale/br/LC_MESSAGES/kplayer.mo
 share/locale/ca/LC_MESSAGES/kplayer.mo
@@ -316,6 +272,7 @@ share/locale/el/LC_MESSAGES/kplayer.mo
 share/locale/en_GB/LC_MESSAGES/kplayer.mo
 share/locale/es/LC_MESSAGES/kplayer.mo
 share/locale/et/LC_MESSAGES/kplayer.mo
+share/locale/eu/LC_MESSAGES/kplayer.mo
 share/locale/fi/LC_MESSAGES/kplayer.mo
 share/locale/fr/LC_MESSAGES/kplayer.mo
 share/locale/ga/LC_MESSAGES/kplayer.mo
@@ -325,7 +282,9 @@ share/locale/hu/LC_MESSAGES/kplayer.mo
 share/locale/it/LC_MESSAGES/kplayer.mo
 share/locale/ja/LC_MESSAGES/kplayer.mo
 share/locale/nb/LC_MESSAGES/kplayer.mo
+share/locale/nds/LC_MESSAGES/kplayer.mo
 share/locale/nl/LC_MESSAGES/kplayer.mo
+share/locale/oc/LC_MESSAGES/kplayer.mo
 share/locale/pa/LC_MESSAGES/kplayer.mo
 share/locale/pl/LC_MESSAGES/kplayer.mo
 share/locale/pt/LC_MESSAGES/kplayer.mo
@@ -336,7 +295,6 @@ share/locale/sr@Latn/LC_MESSAGES/kplayer.mo
 share/locale/sv/LC_MESSAGES/kplayer.mo
 share/locale/tr/LC_MESSAGES/kplayer.mo
 share/locale/zh_CN/LC_MESSAGES/kplayer.mo
-share/services/kplayerpart.desktop
 @dirrm share/doc/HTML/sv/kplayer
 @dirrm share/doc/HTML/pt/kplayer
 @dirrm share/doc/HTML/it/kplayer
@@ -352,4 +310,6 @@ share/services/kplayerpart.desktop
 @dirrm share/apps/kplayer/icons/hicolor
 @dirrm share/apps/kplayer/icons
 @dirrm share/apps/kplayer
+@dirrmtry share/apps/konqueror/servicemenus
+@dirrmtry share/apps/konqueror
 @dirrmtry share/applications/kde
