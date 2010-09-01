@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	idnits
-PORTVERSION=	2.12.04
+PORTVERSION=	2.12.05
 CATEGORIES=	textproc
 MASTER_SITES=	http://tools.ietf.org/tools/idnits/ \
 		http://sunpoet.net/distfiles/
@@ -16,12 +16,12 @@ COMMENT=	Looks for problems in internet draft formatting
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-NO_BUILD=	YES
+NO_BUILD=	yes
 
 PLIST_FILES=	bin/idnits
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^#!/bin/bash|#!${LOCALBASE}/bin/bash|g' \
+	@${REINPLACE_CMD} -e '1 s|^#!/bin/bash|#!${LOCALBASE}/bin/bash|g' \
 		${WRKSRC}/${PORTNAME}
 
 do-install:
