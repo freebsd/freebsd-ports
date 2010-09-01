@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arirang
-PORTVERSION=	1.7
+PORTVERSION=	1.77
 PORTEPOCH=	1
 CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
 MASTER_SITE_SUBDIR=	UNIX/cgi-scanners
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	Powerful webserver security scanner
+COMMENT=	Powerful webserver security scanner for network
 
 LICENSE=	BSD
 
