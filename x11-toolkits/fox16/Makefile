@@ -7,7 +7,6 @@
 
 PORTNAME=	fox
 PORTVERSION=	${MAJORVER}.${SHVER}
-PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
@@ -27,10 +26,10 @@ CONFLICTS=	fox-1.4.* fox-1.7.*
 LATEST_LINK=	fox16
 
 MAJORVER=	1.6
-SHVER=		37
+SHVER=		40
 PLIST_SUB+=	MAJORVER=${MAJORVER} SHVER=${SHVER}
 
-USE_GNOME=	lthack
+USE_GNOME=	lthack gnomehack
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
