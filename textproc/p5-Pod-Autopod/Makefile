@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	Pod-Autopod
-PORTVERSION=	1.08
+PORTVERSION=	1.10
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generates pod documentation by analysing perl modules
 
 BUILD_DEPENDS=	p5-Pod-Abstract>=0.19:${PORTSDIR}/textproc/p5-Pod-Abstract
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PERL_CONFIGURE=	yes
 
