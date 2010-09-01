@@ -244,6 +244,7 @@
     SUBDIR += rolo
     SUBDIR += rox-memo
     SUBDIR += rubrica
+    SUBDIR += sciplore-mindmapping
     SUBDIR += silence
     SUBDIR += simpleagenda
     SUBDIR += sliderule
