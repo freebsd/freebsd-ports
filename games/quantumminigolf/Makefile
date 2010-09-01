@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	quantumminigolf
-PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTVERSION=	1.1.1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -23,6 +22,13 @@ USE_SDL=	sdl ttf
 MAKE_ARGS=	CXX=${CXX}
 
 PORTDOCS=	README THANKS
+
+DESKTOP_ENTRIES="Quantum Minigolf" \
+		"A game of minigolf where the ball obeys the laws of quantum mechanics" \
+		"${DATADIR}/gfx/icon.bmp" \
+		"quantumminigolf" \
+		"Game;ArcadeGame;" \
+		false
 
 OPTIONS=	OCFLAGS	"Use optimized compiler flags" on
 
