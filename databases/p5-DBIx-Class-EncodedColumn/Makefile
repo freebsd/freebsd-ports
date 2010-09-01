@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-EncodedColumn
-PORTVERSION=	0.00009
+PORTVERSION=	0.00010
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,9 +22,11 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=	DBIx::Class::EncodedColumn.3 \
+	DBIx::Class::EncodedColumn::Crypt.3 \
 	DBIx::Class::EncodedColumn::Crypt::Eksblowfish::Bcrypt.3 \
 	DBIx::Class::EncodedColumn::Crypt::OpenPGP.3 \
 	DBIx::Class::EncodedColumn::Digest.3
+
 
 post-extract:
 	@${PERL} -i -ne 'print unless m,^build_requires, || m,^feature, .. m,;,' ${WRKSRC}/Makefile.PL
