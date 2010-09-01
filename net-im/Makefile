@@ -125,6 +125,7 @@
     SUBDIR += pidgin-msn-pecan
     SUBDIR += pidgin-osd
     SUBDIR += pidgin-pidgimpd
+    SUBDIR += pidgin-privacy-please
     SUBDIR += pidgin-rhythmbox
     SUBDIR += pidgin-sipe
     SUBDIR += pidgin-twitter

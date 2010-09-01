@@ -1,0 +1,6 @@
+lib/locale/de/LC_MESSAGES/pidgin-privacy-please.mo
+lib/pidgin/libpidgin_pp.la
+lib/pidgin/libpidgin_pp.so
+@dirrmtry lib/locale/de/LC_MESSAGES
+@dirrmtry lib/locale/de
+@dirrmtry lib/locale
