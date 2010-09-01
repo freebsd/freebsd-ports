@@ -105,6 +105,12 @@ bin/sqlobject-admin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/postgres/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/postgres/pgconnection.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/postgres/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/rdbhost/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/rdbhost/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/rdbhost/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/rdbhost/rdbhostconnection.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/rdbhost/rdbhostconnection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/rdbhost/rdbhostconnection.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/sqlite/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/sqlite/sqliteconnection.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/sqlite/__init__.pyc
@@ -172,6 +178,7 @@ bin/sqlobject-admin
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/mysql
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/mssql
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/postgres
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/rdbhost
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/sqlite
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/sybase
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlobject/util
