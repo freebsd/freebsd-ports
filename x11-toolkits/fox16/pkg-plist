@@ -1,5 +1,6 @@
 %%APPS%%bin/PathFinder
 %%APPS%%bin/adie
+%%APPS%%bin/Adie.stx
 %%APPS%%bin/calculator
 bin/reswrap
 bin/shutterbug
