@@ -7,23 +7,20 @@
 
 PORTNAME=	ved
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.berlios.de/pub/ved/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small and fast screen-oriented editor
 
-USE_GMAKE=	yes
+BUILD_DEPENDS=	smake:${PORTSDIR}/devel/smake
 
 MAN1=		ved.1
 PLIST_FILES=	bin/ved %%DATADIR%%/ved.help
 PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800030
-BROKEN=		does not compile
-.endif
 
 .if ${ARCH} == "ia64"
 BROKEN=		does not compile on ia64
@@ -32,6 +29,9 @@ BROKEN=		does not compile on ia64
 post-patch:
 	${REINPLACE_CMD} -e 's|^COPTOPT=.*$$|COPTOPT= ${CFLAGS}|g ; \
 		 s| gcc| ${CC}|g' ${WRKSRC}/RULES/i386-freebsd-cc.rul
+	${REINPLACE_CMD} -e 's|fexecve|fexecve_ved|g' ${WRKSRC}/include/schily.h
+	${REINPLACE_CMD} -e 's|fexecve|fexecve_ved|g' ${WRKSRC}/libschily/fexec.c
+
 .for file in ved.h ved.1
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/ved/${file}
 .endfor
@@ -39,6 +39,9 @@ post-patch:
 	cd ${WRKSRC}/RULES \
 		&& ${LN} -sf i386-freebsd-cc.rul ${arch}-freebsd-cc.rul
 .endfor
+
+do-build:
+	(cd ${WRKSRC} && smake)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ved/OBJ/${ARCH}-freebsd-cc/ved \
