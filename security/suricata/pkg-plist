@@ -1,0 +1,15 @@
+lib/libhtp.a
+lib/libhtp-0.2.so
+lib/libhtp-0.2.so.1
+libdata/pkgconfig/htp.pc
+lib/libhtp.la
+lib/libhtp.so
+bin/suricata
+etc/suricata/suricata.yaml
+etc/suricata/suricata.yaml-sample
+etc/suricata/classification.config-sample
+etc/suricata/classification.config
+@unexec /bin/rmdir %D/etc/suricata/rules 2>/dev/null || true
+@unexec /bin/rmdir %D/etc/suricata 2>/dev/null || true
+@unexec echo "completely uninstalling %D/include/htp"
+@unexec /bin/rm -rf %D/include/htp 2>/dev/null || true

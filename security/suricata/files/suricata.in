@@ -1,0 +1,42 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: suricata
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable suricata:
+# suricata_enable (bool):	Set to YES to enable suricata
+# 				Default: NO
+# suricata_flags (str):		Extra flags passed to suricata
+#				Default: -D -q
+# suricata_interface (str):	Network interface to sniff
+#				Default: "" 
+# suricata_conf (str):		Suricata configuration file
+#				Default: ${PREFIX}/etc/suricata/suricata.yaml
+# suricata_divertport (int):	Port to create divert socket (Inline Mode)
+#				Default: 8000
+
+
+. /etc/rc.subr
+
+name="suricata"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/suricata"
+
+load_rc_config $name
+
+[ -z "$suricata_enable" ]	&& suricata_enable="NO"
+[ -z "$suricata_conf" ]		&& suricata_conf="%%PREFIX%%/etc/suricata/suricata.yaml"
+[ -z "$suricata_flags" ]	&& suricata_flags="-D"
+[ -z "$suricata_divertport" ]	&& suricata_divertport="8000"
+
+[ -n "$suricata_interface" ]	&& suricata_flags="$suricata_flags -i $suricata_interface --pidfile /var/run/suricata_${suricata_interface}.pid" \
+				&& pidfile="/var/run/suricata_${suricata_interface}.pid"
+[ -z "$suricata_interface" ]	&& suricata_flags="$suricata_flags -d $suricata_divertport --pidfile /var/run/suricata_inline.pid" \
+				&& pidfile="/var/run/suricata_inline.pid" && info "Inline Mode on divert port $suricata_divertport (suricata_interface not defined)"
+[ -n "$suricata_conf" ]		&& suricata_flags="$suricata_flags -c $suricata_conf"
+
+run_rc_command "$1"
