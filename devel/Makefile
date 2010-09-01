@@ -753,6 +753,7 @@
     SUBDIR += libdaemon
     SUBDIR += libdap
     SUBDIR += libdasm
+    SUBDIR += libdbusmenu-qt
     SUBDIR += libdfui
     SUBDIR += libdict
     SUBDIR += libdisasm
