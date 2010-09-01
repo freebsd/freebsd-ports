@@ -1,5 +1,5 @@
 
-Please note that you have just installed ThunderCache 4 on
+Please note that you have just installed ThunderCache Pro on
 
 	%%PREFIX%%/thunder
 
@@ -40,5 +40,4 @@ the following line to rc.conf:
 
 	thundercache_enable="YES" 
 
-And start it from %%PREFIX%%/etc/rc.d/thundercache 
-
+And start it from %%PREFIX%%/etc/rc.d/thundercache

@@ -3,76 +3,6 @@ thunder/etc/thunder.conf
 thunder/etc/thunder.php
 thunder/logs/error.log
 thunder/logs/access.log
-thunder/plugins/youtube.com.so
-thunder/plugins/xvideos.com.so
-thunder/plugins/vimeo.com.so
-thunder/plugins/rapidshare.com.so
-thunder/plugins/grisoft.com.so
-thunder/plugins/avg.com.so
-thunder/plugins/dailymotion.com.so
-thunder/plugins/viddler.com.so
-thunder/plugins/globo.com.so
-thunder/plugins/windowsupdate.com.so
-thunder/plugins/terra.com.so
-thunder/plugins/ziddu.com.so
-thunder/plugins/photobucket.com.so
-thunder/plugins/video.msn.com.so
-thunder/plugins/avgate.com.so
-thunder/plugins/etrustdownloads.ca.com.so
-thunder/plugins/update.nai.com.so
-thunder/plugins/metacafe.com.so
-thunder/plugins/avgate.net.so
-thunder/plugins/kaspersky-labs.com.so
-thunder/plugins/pornhub.com.so
-thunder/plugins/nai.com.so
-thunder/plugins/mediafire.com.so
-thunder/plugins/bitgravity.com.so
-thunder/plugins/pop6.com.so
-thunder/plugins/freeav.com.so
-thunder/plugins/googlevideo.com.so
-thunder/plugins/edgecastcdn.net.so
-thunder/plugins/freeav.net.so
-thunder/plugins/tube8.com.so
-thunder/plugins/microsoft.com.so
-thunder/plugins/sambatech.com.br.so
-thunder/plugins/grisoft.cz.so
-thunder/plugins/symantecliveupdate.com.so
-thunder/plugins/megavideo.com.so
-thunder/plugins/kaspersky.com.so
-thunder/plugins/orkut.com.so
-thunder/plugins/uol.com.br.so
-thunder/plugins/avast.com.so
-thunder/plugins/eset.com.so
-thunder/plugins/xtube.com.so
-thunder/plugins/redtube.com.so
-thunder/plugins/4shared.com.so
-thunder/plugins/pornotube.com.so
-thunder/plugins/orkut.com.br.so
-thunder/plugins/megaupload.com.so
-thunder/plugins/mccont.com.so
-thunder/plugins/megarotic.com.so
-thunder/plugins/2shared.com.so
-thunder/plugins/palco.fm.so
-thunder/plugins/cabobranco.tv.br.so
-thunder/plugins/depositfiles.com.so
-thunder/plugins/euvoupassar.com.br.so
-thunder/plugins/filefactory.com.so
-thunder/plugins/hotfile.com.so
-thunder/plugins/keezmovies.com.so
-thunder/plugins/sendspace.com.so
-thunder/plugins/videolog.tv.so
-thunder/plugins/zshare.net.so
-thunder/plugins/adobe.com.so
-thunder/plugins/macromedia.com.so
-thunder/plugins/files.com.so
-thunder/plugins/badongo.com.so
-thunder/plugins/turboupload.com.so
-thunder/plugins/xxx.com.so
-thunder/plugins/youporn.com.so
-thunder/plugins/extremetube.com.so
-thunder/plugins/bangbros.com.so
-thunder/plugins/youjizz.com.so
-thunder/plugins/flvporn.com.so
 thunder/sbin/thunderlog.php
 thunder/sbin/diskinfo
 thunder/sbin/thunder
@@ -80,7 +10,6 @@ thunder/sbin/log.sh
 @dirrm thunder/etc
 @dirrm thunder/logs/tmp
 @dirrm thunder/logs
-@dirrm thunder/plugins
 @dirrm thunder/sbin
 @dirrm thunder/cache
 @dirrm thunder
