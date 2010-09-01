@@ -97,7 +97,7 @@ MAKE_ENV+=	WITH_FREETDS=1
 PLIST_SUB+=	WITH_FAX="@comment "
 .else
 MAKE_ENV+=	WITH_FAX=1
-LIB_DEPENDS+=	spandsp.0:${PORTSDIR}/comms/spandsp
+LIB_DEPENDS+=	spandsp.1:${PORTSDIR}/comms/spandsp
 PLIST_SUB+=	WITH_FAX=""
 .endif
 
