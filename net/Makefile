@@ -75,6 +75,7 @@
     SUBDIR += bwn-firmware-kmod
     SUBDIR += bwping
     SUBDIR += c3270
+    SUBDIR += cagibi
     SUBDIR += callgen323
     SUBDIR += callweaver
     SUBDIR += cap
