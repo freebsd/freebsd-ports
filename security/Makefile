@@ -847,6 +847,7 @@
     SUBDIR += sudosh2
     SUBDIR += sudosh3
     SUBDIR += super
+    SUBDIR += suricata
     SUBDIR += swatch
     SUBDIR += switzerland
     SUBDIR += symbion-sslproxy

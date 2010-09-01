@@ -1,0 +1,22 @@
+The Suricata Engine is an Open Source Next Generation Intrusion Detection and
+Prevention Engine developed by the Open Information Security Foundation (OISF).
+
+This engine is not intended to just replace or emulate the existing tools in
+the industry, but will bring new ideas and technologies to the field.
+
+OISF is part of and funded by the Department of Homeland Security's Directorate
+for Science and Technology HOST program (Homeland Open Security Technology),
+by the the Navy's Space and Naval Warfare Systems Command (SPAWAR), as well as
+through the very generous support of the members of the OISF Consortium.
+
+More information about the Consortium is available, as well as a list of our
+current Consortium Members. 
+
+The Suricata Engine and the HTP Library are available to use under the GPLv2. 
+
+The HTP Library is an HTTP normalizer and parser written by Ivan Ristic of
+Mod Security fame for the OISF. This integrates and provides very advanced
+processing of HTTP streams for Suricata. The HTP library is required by the
+engine but may also be used independently in a range of applications and tools. 
+
+WWW: http://openinfosecfoundation.org
