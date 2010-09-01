@@ -31,6 +31,7 @@
     SUBDIR += dns_mre
     SUBDIR += dnscap
     SUBDIR += dnscheck
+    SUBDIR += dnscheckengine
     SUBDIR += dnsdoctor
     SUBDIR += dnsflood
     SUBDIR += dnshijacker
