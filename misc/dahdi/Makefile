@@ -7,9 +7,10 @@
 
 PORTNAME=	dahdi
 PORTVERSION=	${DAHDI_VERSION:S/-//g}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	misc kld
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}\
+		http://downloads.digium.com/pub/telephony/firmware/releases/:firmware
 MASTER_SITE_SUBDIR=	fjoe
 DISTNAME=	${PORTNAME}-freebsd-complete-${DAHDI_VERSION}+${DAHDI_TOOLS_VERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}\
@@ -27,6 +28,15 @@ DAHDI_TOOLS_VERSION=	2.4.0-rc1
 OSLEC_VERSION=		2.6.35.4
 ZAPHFC_VERSION=		r5
 
+FIRMWARES=		OCT6114_064 OCT6114_128 TC400M HX8 ${_vpmadt032}
+OCT6114_064_VERSION=	1.05.01
+OCT6114_128_VERSION=	1.05.01
+TC400M_VERSION=		MR6.12
+HX8_VERSION=		2.06
+VPMADT032_NAME=		dahdi-fwload-vpmadt032
+VPMADT032_DIR=		dahdi_vpmadt032_loader
+VPMADT032_VERSION=	1.25.0
+
 EXTRA_PATCHES=	${WRKDIR}/zaphfc-${ZAPHFC_VERSION}
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
 GNU_CONFIGURE=	yes
@@ -34,7 +44,7 @@ CONFIGURE_ARGS=	--with-dahdi=../freebsd --sysconfdir=${PREFIX}/etc --with-newt=$
 CONFIGURE_ENV=	WGET=/usr/bin/fetch
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	dahdi
-MAKE_ARGS=	ADDITIONAL_DRIVERS="wcb1xxp"
+MAKE_ARGS=	ADDITIONAL_DRIVERS="wcb1xxp" NO_FETCH=yes
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 CONFLICTS=	zaptel-[0-9]*
@@ -54,9 +64,17 @@ IGNORE=		requires firmware(9) support for kernel modules with hyphens
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 PLIST_SUB+=	X86=""
+_vpmadt032=	VPMADT032
 .else
 PLIST_SUB+=	X86="@comment "
 .endif
+
+.for _f in ${FIRMWARES}
+${_f}_NAME?=	dahdi-fw-${_f:L:S/_/-/g}
+${_f}_DIR?=	${${_f}_NAME}.bin
+${_f}_DISTFILE=	${${_f}_NAME}-${${_f}_VERSION}.tar.gz
+DISTFILES+=	${${_f}_DISTFILE}:firmware
+.endfor
 
 pre-everything::
 	@if [ ! -f /usr/src/sys/Makefile ]; then \
@@ -68,6 +86,9 @@ pre-everything::
 post-extract:
 	@${LN} -s ../../../linux-${OSLEC_VERSION}/drivers/staging ${WRKSRC}/freebsd/drivers
 	@${REINPLACE_CMD} -E -e 's,(new|old)/,freebsd/,g' ${WRKDIR}/zaphfc-${ZAPHFC_VERSION}
+.for _f in ${FIRMWARES}
+	${CP} ${DISTDIR}/${${_f}_DISTFILE} ${WRKSRC}/freebsd/freebsd/${${_f}_DIR}
+.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}/etc,g'\
@@ -79,5 +100,10 @@ pre-su-install:
 
 post-install:
 	@${TOUCH} ${PREFIX}/lib/dahdi/linker.hints
+
+fw-versions: extract
+.for _v in ${FIRMWARES:=_VERSION}
+	@${ECHO_CMD} "${_v}=`${MAKE} -V ${_v} -f ${WRKSRC}/freebsd/firmware.mk`"
+.endfor
 
 .include <bsd.port.post.mk>
