@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	1.10
+PORTVERSION=	1.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/../../authors/id/D/DR/DROLSKY
 PKGNAMEPREFIX=	p5-
@@ -25,7 +25,8 @@ BUILD_DEPENDS=	\
 	p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+		p5-Test-Exception>=0.27:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires
 
 PERL_CONFIGURE=	5.8.4+
 
