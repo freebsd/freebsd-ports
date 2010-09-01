@@ -45,6 +45,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.ParserElement-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.QuotedString-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.RecursiveGrammarException-class.html
+%%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.Regex.compiledREtype-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.Regex-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.SkipTo-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.StringEnd-class.html
@@ -58,6 +59,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.WordEnd-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.WordStart-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.ZeroOrMore-class.html
+%%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/redirect.html
 %%PORTDOCS%%%%DOCSDIR%%/toc-everything.html
 %%PORTDOCS%%%%DOCSDIR%%/toc-pyparsing.pyparsing-module.html
@@ -69,10 +71,13 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/SingleForm.dfm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/TAP.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adventureEngine.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/apicheck.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cLibHeader.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chemicalFormulas.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/commasep.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/configParse.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cpp_enum_parser.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/deltaTime.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dfmparse.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dhcpd_leases_parser.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dictExample.py
