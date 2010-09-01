@@ -45,8 +45,8 @@ LUA_TEST=	README bisect.lua cf.lua echo.lua env.lua factorial.lua \
 post-patch:
 	@${REINPLACE_CMD} -Ee \
 		'/^INSTALL_.*=/s/INSTALL_TOP/prefix/ ; \
-		 s|^(CC=).*|\1 ${CC}| ; \
-		 s|^(CFLAGS=)|\1 ${CFLAGS}| ; \
+		 s|^(CC\|AR\|RANLIB)=|\1?=| ; \
+		 /^CFLAGS=/ { s/=/+=/; s/-O2//; } ; \
 		 s|/usr/local|${PREFIX}|' \
 		 ${WRKSRC}/Makefile ${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} -i '' -Ee \
