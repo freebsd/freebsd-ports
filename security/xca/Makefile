@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	xca
-PORTVERSION=	0.8.1
-PORTREVISION=	2
+PORTVERSION=	0.9.0
 CATEGORIES=	security
 MASTER_SITES=	SF
 
 MAINTAINER=	freebsd@nagilum.org
 COMMENT=	Graphical certification authority
+
+RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
@@ -24,6 +25,8 @@ CXX?=		g++
 
 MAN1=		xca.1
 MANCOMPRESSED=	yes
+
+LICENSE=	BSD
 
 .include <bsd.port.pre.mk>
 
@@ -52,5 +55,8 @@ post-patch:
 	@echo "#define VER \"${PORTVERSION}\"" >> ${WRKSRC}/local.h
 	@echo "#define DOCDIR \"${DOCSDIR}\"" >> ${WRKSRC}/local.h
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/lib/import.cpp
+
+post-install:
+	@-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.post.mk>
