@@ -27,4 +27,10 @@ MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=        ${WRKDIR}/bangarang-bangarang
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		does not compile
+.endif
+
+.include <bsd.port.post.mk>
