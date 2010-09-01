@@ -1,0 +1,3 @@
+bin/cagibid
+libdata/pkgconfig/cagibi.pc
+share/dbus-1/services/org.kde.Cagibi.service
