@@ -137,6 +137,7 @@
     SUBDIR += kmplayer-kde4
     SUBDIR += konverter
     SUBDIR += kplayer
+    SUBDIR += kplayer-kde4
     SUBDIR += ksubeditor
     SUBDIR += ldvd
     SUBDIR += libdc1394
