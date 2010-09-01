@@ -59,6 +59,10 @@ PLIST_SUB+=	ADMINISTRATOR="@comment "
 IGNORE=	please run 'make config' again and select at least one component
 .endif
 
+.if ${ARCH} == "amd64"
+BROKEN=		does not compile
+.endif
+
 post-patch:
 # switch to new directory name not complete
 	(cd ${WRKSRC} && ${LN} -sf common mysql-gui-common)
