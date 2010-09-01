@@ -87,8 +87,10 @@ post-extract:
 
 post-install:
 .for file in freebsd.committers.markers freebsd.ftp.markers
+.if exists(${PORTSDIR}/astro/xearth/files/${file})
 	@${INSTALL_DATA} ${PORTSDIR}/astro/xearth/files/${file} \
 		${DATADIR}/markers
+.endif
 .endfor
 	@${FIND} ${DATADIR} -type f | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
