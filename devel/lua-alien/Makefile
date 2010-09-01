@@ -20,11 +20,11 @@ LICENSE=	MIT
 USE_LUA=	5.1
 
 CFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR} \
-		-DBSD -fPIC -fno-stack-protector
+		-DBSD -fPIC #-fno-stack-protector
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR} -llua -shared
 MAKE_ENV+=	LIB_OPTION="${LDFLAGS}" LIB_EXT=".so" LUA="${LUA_CMD}"
 
-# add lua prefix in pkgname
+# add lua prefix to directories
 .for p in data: docs:doc/ examples:examples/
 ${p:C/:.*//:U}DIR_REL=	share/${p:C/.*://}${LUA_PKGNAMEPREFIX}${PORTNAME}
 ${p:C/:.*//:U}DIR=	${PREFIX}/${${p:C/:.*//:U}DIR_REL}
