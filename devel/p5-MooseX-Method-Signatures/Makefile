@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Method-Signatures
-PORTVERSION=	0.30
+PORTVERSION=	0.36
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,9 +15,9 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Method declarations with type constraints and no source filter
 
 BUILD_DEPENDS=	p5-Moose>=0.89:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-LazyRequire>=0.04:${PORTSDIR}/devel/p5-MooseX-LazyRequire \
+		p5-MooseX-LazyRequire>=0.06:${PORTSDIR}/devel/p5-MooseX-LazyRequire \
 		p5-MooseX-Types>=0.19:${PORTSDIR}/devel/p5-MooseX-Types \
-		p5-MooseX-Types-Structured>=0.12:${PORTSDIR}/devel/p5-MooseX-Types-Structured \
+		p5-MooseX-Types-Structured>=0.20:${PORTSDIR}/devel/p5-MooseX-Types-Structured \
 		p5-MooseX-Meta-TypeConstraint-ForceCoercion>=0:${PORTSDIR}/devel/p5-MooseX-Meta-TypeConstraint-ForceCoercion \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-aliased>=0:${PORTSDIR}/devel/p5-aliased \
@@ -32,6 +32,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		MooseX::Method::Signatures.3
+MAN3=		MooseX::Method::Signatures.3 \
+		MooseX::Method::Signatures::Types.3 \
+		MooseX::Method::Signatures::Meta::Method.3
 
 .include <bsd.port.mk>
