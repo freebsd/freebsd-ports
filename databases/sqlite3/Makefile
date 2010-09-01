@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.6.23.1
-PORTREVISION=	3
+PORTVERSION=	3.7.2
 CATEGORIES=	databases
-MASTER_SITES=	http://www.sqlite.org/
+MASTER_SITES=	http://www.sqlite.org/ http://www2.sqlite.org/
 DISTNAME=	sqlite-${PORTVERSION}
 
 MAINTAINER=	pol@opk.ru
 COMMENT=	An SQL database engine in a C library
+
+LICENSE=	unknown
+LICENSE_NAME=	Public Domain
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://www.sqlite.org/copyright.html
 
 CONFLICTS=	sqlite34-[0-9]*
 
@@ -26,16 +30,33 @@ CONFIGURE_ENV+=	TCLSH_CMD="${TCLSH}" \
 		TCLLIBDIR="${PREFIX}/lib/${PORTNAME}" \
 		ac_cv_search_pthread_create=""
 
-OPTIONS=	DEBUG		"Enable debugging & verbose explain"	off \
-		FTS3		"Enable FTS3 (Full Text Search) module"	off \
+# Compilation Options For SQLite http://www.sqlite.org/compile.html
+OPTIONS=	\
+		FTS3		"Enable FTS3 (Full Text Search) module"	on \
+		ICU		"Enable built with \"ICU\""		off \
 		RTREE		"Enable R*Tree module"			off \
 		RAMTABLE	"Store temporary tables in RAM"		off \
-		TCLWRAPPER	"Enable TCL wrapper"			off \
+		UPD_DEL_LIMIT	"ORDER BY and LIMIT on UPDATE and DELETE" off \
+		SOUNDEX		"Enables the soundex() SQL function"	off \
 		METADATA	"Enable column metadata"		on \
+		STAT2		"Help SQLite to chose a better query plan" off \
+		MEMMAN		"Allows it to release unused memory"	off \
+		SECURE_DELETE	"Overwrite deleted information with zeros" on \
+		UNLOCK_NOTIFY	"Enable notification on unlocking"	on \
 		THREADSAFE	"Build thread-safe library"		on \
-		EXTENSION	"Allow loadable extensions"		on
+		OVERRIDE_LOCK	"Threads can override each others locks" on \
+		XTHREAD		"Allow connection sharing across threads" off \
+		EXTENSION	"Allow loadable extensions"		on \
+		TCLWRAPPER	"Enable TCL wrapper"			off \
+		DEBUG		"Enable debugging & verbose explain"	off \
+		GCOV		"Enable coverage testing using gcov"	off \
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
+PLIST_FILES=	bin/sqlite3 include/sqlite3.h include/sqlite3ext.h \
+		lib/libsqlite3.a lib/libsqlite3.la lib/libsqlite3.so \
+		lib/libsqlite3.so.8 libdata/pkgconfig/sqlite3.pc
+PORTDOCS=	*
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=		sqlite3.1
@@ -47,32 +68,71 @@ EXTRA_PATCHES+=		${FILESDIR}/pthread_equal_stub
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
+CFLAGS+=		-Wall
+.endif
+
+.if defined(WITH_GCOV)
+CONFIGURE_ARGS+=	--enable-gcov
+LDFLAGS+=		-fstack-protector
+.endif
+
+.if defined(WITH_MEMMAN)
+CFLAGS+=		-DSQLITE_ENABLE_MEMORY_MANAGEMENT=1
+.endif
+
+.if defined(WITH_UPD_DEL_LIMIT)
+CFLAGS+=		-DSQLITE_ENABLE_UPDATE_DELETE_LIMIT=1
+.endif
+
+.if defined(WITH_SOUNDEX)
+CFLAGS+=		-DSQLITE_SOUNDEX=1
+.endif
+
+.if defined(WITH_STAT2)
+CFLAGS+=		-DSQLITE_ENABLE_STAT2=1
 .endif
 
 .if defined(WITH_FTS3)
-CFLAGS+=		-DSQLITE_ENABLE_FTS3=1
+CFLAGS+=		-DSQLITE_ENABLE_FTS3=1 -DSQLITE_ENABLE_FTS3_PARENTHESIS=1
 .endif
 
 .if defined(WITH_RTREE)
 CFLAGS+=		-DSQLITE_ENABLE_RTREE=1
 .endif
 
+.if defined(WITH_ICU)
+BUILD_DEPENDS+=		${LOCALBASE}/bin/icu-config:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=		icudata.38:${PORTSDIR}/devel/icu
+CFLAGS+=		-DSQLITE_ENABLE_ICU=1
+CPPFLAGS+=		`${LOCALBASE}/bin/icu-config --cppflags`
+LDFLAGS+=		`${LOCALBASE}/bin/icu-config --ldflags`
+.endif
+
 .if defined(WITH_RAMTABLE)
 CONFIGURE_ARGS+=	--enable-tempstore=yes
+.endif
+
+.if defined(WITH_SECURE_DELETE)
+CFLAGS+=		-DSQLITE_SECURE_DELETE=1
+.endif
+
+.if defined(WITH_UNLOCK_NOTIFY)
+CFLAGS+=		-DSQLITE_ENABLE_UNLOCK_NOTIFY=1
 .endif
 
 .if defined(WITH_TCLWRAPPER)
 CATEGORIES+=		lang tcl
 COMMENT+=		with TCL Wrapper
-USE_TCL_BUILD=		84+
 USE_TCL_RUN=		84+
-CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR}
-PLIST_SUB+=		WITH_TCLWRAPPER=""
 ALL_TARGET=		all tclsqlite3
 INSTALL_TARGET=		install tcl_install
+CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR}
+PORTEXAMPLES+=		example.tcl
+PLIST_DIRS+=		lib/sqlite3
+PLIST_FILES+=		bin/tclsqlite3 lib/sqlite3/libtclsqlite3.so \
+			lib/sqlite3/pkgIndex.tcl
 .else
 CONFIGURE_ARGS+=	--disable-tcl
-PLIST_SUB+=		WITH_TCLWRAPPER="@comment "
 .endif
 
 .if !defined(WITHOUT_METADATA)
@@ -80,8 +140,13 @@ CFLAGS+=		-DSQLITE_ENABLE_COLUMN_METADATA=1
 .endif
 
 .if !defined(WITHOUT_THREADSAFE)
-CONFIGURE_ARGS+=	--enable-threadsafe \
-			--enable-threads-override-locks
+CONFIGURE_ARGS+=	--enable-threadsafe
+.if !defined(WITHOUT_XTHREAD)
+CONFIGURE_ARGS+=	--enable-threads-override-locks
+.endif
+.if !defined(WITHOUT_OVERRIDE_LOCK)
+CONFIGURE_ARGS+=	--enable-cross-thread-connections
+.endif
 .else
 CONFIGURE_ARGS+=	--disable-threadsafe
 .endif
@@ -92,6 +157,9 @@ CONFIGURE_ARGS+=	--enable-load-extension
 CONFIGURE_ARGS+=	--disable-load-extension
 .endif
 
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
 post-install:
 .if defined(WITH_TCLWRAPPER)
 	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/tclsqlite3 ${PREFIX}/bin
@@ -101,5 +169,19 @@ post-install:
 .if !defined(NO_INSTALL_MANPAGES)
 	@${INSTALL_MAN} ${WRKSRC}/sqlite3.1 ${MANPREFIX}/man/man1
 .endif
+.ifndef NOPORTDOCS
+.ifdef WITH_FTS3
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ext/fts3/README.syntax ${WRKSRC}/ext/fts3/README.tokenizers ${DOCSDIR}
+.endif
+.ifdef WITH_RTREE
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ext/rtree/README ${DOCSDIR}
+.endif
+.ifdef WITH_ICU
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ext/icu/README.txt ${DOCSDIR}
+.endif
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
