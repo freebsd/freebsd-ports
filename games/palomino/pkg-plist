@@ -473,6 +473,7 @@ bin/palomino
 %%DATADIR%%/scripts/mission_carrier.lua
 %%DATADIR%%/scripts/mission_ossim.lua
 %%DATADIR%%/scripts/module.txt
+%%DATADIR%%/scripts/module_lua_coding.txt
 %%DATADIR%%/scripts/replay.lua
 %%DATADIR%%/scripts/scene.lua
 %%DATADIR%%/scripts/scene_GoldenGate.lua
