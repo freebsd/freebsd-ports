@@ -16,6 +16,7 @@
     SUBDIR += cfitsio
     SUBDIR += dgpsip
     SUBDIR += ephem
+    SUBDIR += fowsr
     SUBDIR += gaia
     SUBDIR += gkrellmoon
     SUBDIR += gkrellmoon2

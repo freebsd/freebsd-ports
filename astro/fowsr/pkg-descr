@@ -1,0 +1,23 @@
+fowsr is an application that reads from wireless weather stations
+    * WH1080 / WH1081 / WH1090 / WH1091 / WH2080 / WH2081
+    * Watson W-8681
+    * Scientific Sales Pro Touch Screen Weather Station
+    * TOPCOM NATIONAL GEOGRAPHIC 265NE
+    * PCE-FWS 20
+    * ...
+and other similar USB devices from Fine Offset Electronics Co., LTD.
+compatible with the EasyWeather application .
+
+The result is a weather history log file that can be uploaded to a central
+server for further processing. Example script files for uploads is included.
+So far the following formats are supported:
+    * Weather Underground
+    * pywws
+    * XML 
+
+fowsr performs a complete read out of the weather station memory using its
+USB port, and stores the result in a cache file to speed up later read-outs.
+Rain data is then calculated per hour, day, week and month if data for these
+periods exist. No further data processing is performed. This makes fowsr
+very small and well suited for running in embedded devices at remote
+locations.
