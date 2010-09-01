@@ -19,6 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}\
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Digium/Asterisk Hardware Device Interface
 
+BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 LIB_DEPENDS=	newt.52:${PORTSDIR}/devel/newt
 
 DAHDI_VERSION=		2.4.0-rc4
@@ -31,7 +32,6 @@ NO_PACKAGE=	Should be in sync with the kernel to work correctly
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dahdi=../freebsd --sysconfdir=${PREFIX}/etc --with-newt=${LOCALBASE}
 CONFIGURE_ENV=	WGET=/usr/bin/fetch
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	dahdi
 MAKE_ARGS=	ADDITIONAL_DRIVERS="wcb1xxp"
