@@ -8,7 +8,7 @@
 
 PORTNAME=	dbus
 PORTVERSION?=	1.2.24
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
