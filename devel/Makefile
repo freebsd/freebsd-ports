@@ -460,6 +460,7 @@
     SUBDIR += gdbmods
     SUBDIR += gdcm
     SUBDIR += geany
+    SUBDIR += geany-plugins
     SUBDIR += gearmand
     SUBDIR += generate
     SUBDIR += gengameng
