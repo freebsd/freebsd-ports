@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qimageblitz
-PORTVERSION=	0.0.4
-PORTREVISION=	4
+PORTVERSION=	0.0.6
 CATEGORIES=	x11
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/QImageBlitz%20${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Graphical effects and filters library for KDE4
@@ -22,7 +22,7 @@ USE_CMAKE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e \
-	    's,$${LIB_INSTALL_DIR}/pkgconfig,libdata/pkgconfig,' \
-	    ${WRKSRC}/blitz/CMakeLists.txt
+		's,$${LIB_INSTALL_DIR}/pkgconfig,libdata/pkgconfig,' \
+		${WRKSRC}/blitz/CMakeLists.txt
 
 .include <bsd.port.mk>
