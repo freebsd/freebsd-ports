@@ -1,0 +1,40 @@
+libexec/dnscheck/dnscheck
+libexec/dnscheck/dnscheck-12hourmailer
+libexec/dnscheck/dnscheck-dispatcher
+libexec/dnscheck/dnscheck-hostsyntax
+libexec/dnscheck/dnscheck-preflight
+libexec/dnscheck/dnscheck-zonediff
+@dirrm libexec/dnscheck
+bin/dnscheckengine
+%%PORTDOCS%%%%DOCSDIR%%/DNSCheck Lib Descriptions.pdf
+%%SITE_PERL%%/DNSCheck.pm
+%%SITE_PERL%%/DNSCheck/Test/Address.pm
+%%SITE_PERL%%/DNSCheck/Test/Consistency.pm
+%%SITE_PERL%%/DNSCheck/Test/Host.pm
+%%SITE_PERL%%/DNSCheck/Test/SMTP.pm
+%%SITE_PERL%%/DNSCheck/Test/Common.pm
+%%SITE_PERL%%/DNSCheck/Test/DNSSEC.pm
+%%SITE_PERL%%/DNSCheck/Test/Mail.pm
+%%SITE_PERL%%/DNSCheck/Test/SOA.pm
+%%SITE_PERL%%/DNSCheck/Test/Connectivity.pm
+%%SITE_PERL%%/DNSCheck/Test/Delegation.pm
+%%SITE_PERL%%/DNSCheck/Test/Nameserver.pm
+%%SITE_PERL%%/DNSCheck/Test/Zone.pm
+%%SITE_PERL%%/DNSCheck/Config.pm
+%%SITE_PERL%%/DNSCheck/Logger.pm
+%%SITE_PERL%%/DNSCheck/Locale.pm
+%%SITE_PERL%%/DNSCheck/Overview.pod
+%%SITE_PERL%%/DNSCheck/Lookup/ASN.pm
+%%SITE_PERL%%/DNSCheck/Lookup/DNS.pm
+%%SITE_PERL%%/DNSCheck/Lookup/Resolver.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DNSCheck/.packlist
+@dirrm %%SITE_PERL%%/DNSCheck/Test
+@dirrm %%SITE_PERL%%/DNSCheck/Lookup
+@dirrm %%SITE_PERL%%/DNSCheck
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNSCheck
+share/dnscheck/locale/en.yaml
+share/dnscheck/locale/sv.yaml
+share/dnscheck/config.yaml
+share/dnscheck/policy.yaml
+@dirrmtry share/dnscheck/locale
+@dirrmtry share/dnscheck
