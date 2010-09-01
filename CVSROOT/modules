@@ -1323,6 +1323,7 @@ bzflag                          ports/games/bzflag
 bzip                            ports/archivers/bzip
 bzr-builder                     ports/devel/bzr-builder
 bzr-explorer                    ports/devel/bzr-explorer
+bzr-externals                   ports/devel/bzr-externals
 bzr-grep                        ports/devel/bzr-grep
 bzr-gtk                         ports/devel/bzr-gtk
 bzr-loom                        ports/devel/bzr-loom
@@ -2143,7 +2144,6 @@ dangerdeep                      ports/games/dangerdeep
 dangerdeep-data                 ports/games/dangerdeep-data
 danpei                          ports/graphics/danpei
 dansguardian                    ports/www/dansguardian
-dansguardian-devel              ports/www/dansguardian-devel
 dante                           ports/net/dante
 dap                             ports/audio/dap
 dar                             ports/sysutils/dar
@@ -2534,7 +2534,6 @@ dojo                            ports/www/dojo
 dojo-shrinksafe                 ports/www/dojo-shrinksafe
 dokeos                          ports/www/dokeos
 dokuwiki                        ports/www/dokuwiki
-dokuwiki-devel                  ports/www/dokuwiki-devel
 dolly                           ports/sysutils/dolly
 dolly+                          ports/sysutils/dolly+
 dolphin                         ports/x11-fm/dolphin
@@ -2565,7 +2564,6 @@ dotconf                         ports/devel/dotconf
 dotconf++                       ports/devel/dotconf++
 dotfile                         ports/misc/dotfile
 dotproject                      ports/www/dotproject
-dotproject-devel                ports/www/dotproject-devel
 dotter                          ports/biology/dotter
 dovecot                         ports/mail/dovecot
 dovecot-antispam                ports/mail/dovecot-antispam
@@ -8668,7 +8666,6 @@ linux-sdl_image                 ports/graphics/linux-sdl_image
 linux-sdl_mixer                 ports/audio/linux-sdl_mixer
 linux-sdl_ttf                   ports/graphics/linux-sdl_ttf
 linux-seamonkey                 ports/www/linux-seamonkey
-linux-seamonkey-devel           ports/www/linux-seamonkey-devel
 linux-sha-1_collision_search_graz  ports/math/linux-SHA-1_collision_search_graz
 linux-shoutcast                 ports/audio/linux-shoutcast
 linux-skulltag                  ports/games/linux-skulltag
@@ -10932,6 +10929,7 @@ p5-Audio-Scan                   ports/audio/p5-Audio-Scan
 p5-Audio-Scrobbler              ports/audio/p5-Audio-Scrobbler
 p5-Audio-WMA                    ports/audio/p5-Audio-WMA
 p5-Audio-Wav                    ports/audio/p5-Audio-Wav
+p5-Auth-YubikeyDecrypter        ports/security/p5-Auth-YubikeyDecrypter
 p5-AuthCAS                      ports/security/p5-AuthCAS
 p5-Authen-Bitcard               ports/security/p5-Authen-Bitcard
 p5-Authen-Captcha               ports/security/p5-Authen-Captcha
@@ -14827,6 +14825,7 @@ p5-audio-scan                   ports/audio/p5-Audio-Scan
 p5-audio-scrobbler              ports/audio/p5-Audio-Scrobbler
 p5-audio-wav                    ports/audio/p5-Audio-Wav
 p5-audio-wma                    ports/audio/p5-Audio-WMA
+p5-auth-yubikeydecrypter        ports/security/p5-Auth-YubikeyDecrypter
 p5-authcas                      ports/security/p5-AuthCAS
 p5-authen-bitcard               ports/security/p5-Authen-Bitcard
 p5-authen-captcha               ports/security/p5-Authen-Captcha
@@ -22579,6 +22578,7 @@ rubygem-logging                 ports/devel/rubygem-logging
 rubygem-loofah                  ports/textproc/rubygem-loofah
 rubygem-loquacious              ports/devel/rubygem-loquacious
 rubygem-macaddr                 ports/net/rubygem-macaddr
+rubygem-mail                    ports/mail/rubygem-mail
 rubygem-mailfactory             ports/mail/rubygem-mailfactory
 rubygem-main                    ports/devel/rubygem-main
 rubygem-markaby                 ports/textproc/rubygem-markaby
@@ -22624,6 +22624,7 @@ rubygem-pg                      ports/databases/rubygem-pg
 rubygem-piston                  ports/devel/rubygem-piston
 rubygem-platform                ports/devel/rubygem-platform
 rubygem-polyglot                ports/devel/rubygem-polyglot
+rubygem-pony                    ports/mail/rubygem-pony
 rubygem-postgres                ports/databases/rubygem-postgres
 rubygem-prawn                   ports/print/rubygem-prawn
 rubygem-prawn-core              ports/print/rubygem-prawn-core
@@ -23174,6 +23175,7 @@ simplemod                       ports/audio/simplemod
 simpleproxy                     ports/net/simpleproxy
 simpletest                      ports/devel/simpletest
 simplevaders                    ports/games/simplevaders
+simplexml                       ports/textproc/simplexml
 simplicity                      ports/java/simplicity
 simplog                         ports/www/simplog
 simscan                         ports/mail/simscan
