@@ -1,25 +1,9 @@
---- assp.pl.orig	2009-05-22 03:05:20.000000000 -0400
-+++ assp.pl	2009-08-06 11:44:01.000000000 -0400
-@@ -1,4 +1,4 @@
--#!/usr/bin/perl --
-+#!/usr/local/bin/perl --
- #use lib 'path/to/my/perlmods';
- # anti spam smtp proxy
- # (c) John Hanna, John Calvi, Robert Orso, AJ 2004 under the terms of the GPL
-@@ -1016,8 +1016,7 @@
- ['ScanNP','Scan NoProcessing Messages',0,\&checkbox,'','(.*)',undef,''],
- ['ScanLocal','Scan Local Senders',0,\&checkbox,'','(.*)',undef,''],
- ['ScanCC','Scan Copied Spam Mails',0,\&checkbox,'','(.*)',undef,''],
--['AvError','Reply Code to Refuse Infected Messages',80,\&textinput,'554
--5.7.1 Mail appears infected with INFECTION.','([25]\d\d .*)',undef,'Reply
-+['AvError','Reply Code to Refuse Infected Messages',80,\&textinput,'554 5.7.1 Mail appears infected with INFECTION.','([25]\d\d .*)',undef,'Reply
- code to refuse infected messages. The string $infection is replaced with
- the name of the detected virus.<br />  For example: 554 5.7.1 Mail appears
- infected with INFECTION -- disinfect and resend.'],
-@@ -1654,11 +1653,11 @@
- 
- [0,0,0,'heading','Server Setup'],
- ['AsAService','Run ASSP as a Windows Service',0,\&checkbox,'','(.*)',undef,'In Windows NT/2000/XP/2003 ASSP can be installed as a service. This setting tells ASSP that this has been done -- it does not install the Windows service for you. Installing ASSP as a service requires several steps which are detailed in the <a href="http://apps.sourceforge.net/mediawiki/assp/index.php?title=Win32">Quick Start for Win32</a> doku page.<br /> <span class="negative"> requires ASSP restart</span>'],
+--- assp.pl.orig	2010-08-08 14:29:19.000000000 -0500
++++ assp.pl	2010-08-08 14:30:13.000000000 -0500
+@@ -2029,11 +2029,11 @@
+  'Set the characterset/codepage for the maillog output to your local needs. Default (and best) on non Windows systems is "UTF-8" if available or "System Default" - no conversion. On Windows systems set it to your local codepage or UTF-8 (chcp 65001). To display nonASCII characters in the subject line and maillog files names setup decodeMIME2UTF8 . <span class=\'negative\'>Restart is required!</span>'],
+ ['decodeMIME2UTF8','Decode MIME Words To UTF-8',1,\&checkbox,'1','(.*)',undef,'If selected, ASSP decodes MIME encoded words to UTF8. This enables support for national languages to be used in Bombs , Scripts , Spamdb , Logging. If not selected, only US-ASCII characters will be used for this functions. This requires an installed <a href="http://search.cpan.org/search?query=Email::MIME::Modifier" rel="external">Email::MIME::Modifier</a> module in PERL.'],
+ ['AsAService','Run ASSP as a Windows Service',0,\&checkbox,'','(.*)',undef,'In Windows NT/2000/XP/2003 ASSP can be installed as a service. This setting tells ASSP that this has been done -- it does not install the Windows service for you. Installing ASSP as a service requires several steps which are detailed in the <a href="http://apps.sourceforge.net/mediawiki/assp/index.php?title=Win32">Quick Start for Win32</a> doku page.<br /> Information about the Win32::Daemon module which which is necessary can be found here: <a href="http://www.roth.net/perl/Daemon/">The Official Win32::Daemon Home Page</a><br /><span class="negative"> requires ASSP restart</span>'],
 -['AsADaemon','Run ASSP as a Daemon',0,\&checkbox,'','(.*)',undef,'In Linux/BSD/Unix/OSX fork and close file handles. Similar to the command "perl assp.pl &amp;", but better.<br />
 +['AsADaemon','Run ASSP as a Daemon',0,\&checkbox,1,'(.*)',undef,'In Linux/BSD/Unix/OSX fork and close file handles. Similar to the command "perl assp.pl &amp;", but better.<br />
    <span class="negative"> requires ASSP restart</span>'],
