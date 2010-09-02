@@ -82,6 +82,9 @@ lib/libgphoto2/%%VERSION%%/jd11.so
 lib/libgphoto2/%%VERSION%%/jl2005a.a
 lib/libgphoto2/%%VERSION%%/jl2005a.la
 lib/libgphoto2/%%VERSION%%/jl2005a.so
+lib/libgphoto2/%%VERSION%%/jl2005c.a
+lib/libgphoto2/%%VERSION%%/jl2005c.la
+lib/libgphoto2/%%VERSION%%/jl2005c.so
 lib/libgphoto2/%%VERSION%%/kodak_dc120.a
 lib/libgphoto2/%%VERSION%%/kodak_dc120.la
 lib/libgphoto2/%%VERSION%%/kodak_dc120.so
@@ -254,6 +257,7 @@ share/doc/libgphoto2/camlibs/README.jl2005c
 share/doc/libgphoto2/camlibs/README.konica
 share/doc/libgphoto2/camlibs/README.largan-lmini
 share/doc/libgphoto2/camlibs/README.lg_gsm
+share/doc/libgphoto2/camlibs/README.jl2005bcd-compression
 share/doc/libgphoto2/camlibs/README.mars
 share/doc/libgphoto2/camlibs/README.minolta-dimagev
 share/doc/libgphoto2/camlibs/README.mustek
