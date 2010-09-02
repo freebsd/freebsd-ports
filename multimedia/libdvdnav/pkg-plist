@@ -1,17 +1,14 @@
 bin/dvdnav-config
-include/dvdnav/dvd_reader.h
 include/dvdnav/dvd_types.h
 include/dvdnav/dvdnav.h
 include/dvdnav/dvdnav_events.h
-include/dvdnav/ifo_print.h
-include/dvdnav/ifo_read.h
-include/dvdnav/ifo_types.h
-include/dvdnav/nav_print.h
-include/dvdnav/nav_read.h
-include/dvdnav/nav_types.h
 lib/libdvdnav.a
-lib/libdvdnav.la
 lib/libdvdnav.so
 lib/libdvdnav.so.4
-share/aclocal/dvdnav.m4
+lib/libdvdnav.so.4.1.3
+lib/libdvdnavmini.so
+lib/libdvdnavmini.so.4
+lib/libdvdnavmini.so.4.1.3
+libdata/pkgconfig/dvdnav.pc
+libdata/pkgconfig/dvdnavmini.pc
 @dirrm include/dvdnav

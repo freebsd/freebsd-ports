@@ -1,0 +1,16 @@
+--- Makefile.orig	2008-10-04 12:25:15.145677557 +0200
++++ Makefile	2008-10-04 12:36:23.806607647 +0200
+@@ -131,10 +131,9 @@
+ 	$(pcedit) $< > $@
+ 
+ install-pkgconfig: $(.OBJDIR)/dvdnav.pc $(.OBJDIR)/dvdnavmini.pc
+-	install -d $(DESTDIR)$(libdir)/pkgconfig
+-	install -m 0644 $(.OBJDIR)/dvdnav.pc $(DESTDIR)$(libdir)/pkgconfig
+-	install -m 0644 $(.OBJDIR)/dvdnavmini.pc \
+-	  $(DESTDIR)$(libdir)/pkgconfig
++	install -d $(DESTDIR)$(libdatadir)
++	install -m 0644 $(.OBJDIR)/dvdnav.pc $(DESTDIR)$(libdatadir)
++	install -m 0644 $(.OBJDIR)/dvdnavmini.pc $(DESTDIR)$(libdatadir)
+ 
+ distclean: clean
+ 	find . -name "*~" | xargs rm -rf
