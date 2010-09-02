@@ -6,29 +6,56 @@
 #
 
 PORTNAME=	hex-a-hop
-PORTVERSION=	1.0.0
-PORTREVISION=	4
+PORTVERSION=	1.1.0
 CATEGORIES=	games
-MASTER_SITES=	http://ftp.bishopston.net/freebsd/distfiles/ \
-		ftp://ftp.bishopston.net/freebsd/distfiles/ \
-		http://critical.ch/distfiles/
+MASTER_SITES=	SF/${PORTNAME:S/-//g}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	jamie@bishopston.net
 COMMENT=	A puzzle game based on hexagonal tiles
 
 USE_SDL=	sdl
-MAKEFILE=	Makefile.FreeBSD
-ALL_TARGET=	${PORTNAME}
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAKE_ARGS+=	SYSTEM_INSTALL_DIR="${DATADIR}/"
+CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+OPTIONS=	PANGO "Use sdl_pango instead of sdl_ttf" off \
+		SOUND "Compile sound support" on
+
 DESKTOP_ENTRIES="Hex-a-Hop" "A puzzle game based on hexagonal tiles" \
-		"${DATADIR}/graphics/icon.bmp" \
+		"${DATADIR}/icon.bmp" \
 		"hex-a-hop" "Application;LogicGame;Game;" false
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hex-a-hop ${PREFIX}/bin
-	${MKDIR} ${DATADIR}/graphics
-	${INSTALL_DATA} ${WRKSRC}/graphics/* ${DATADIR}/graphics/
-	${INSTALL_DATA} ${WRKSRC}/levels.dat ${DATADIR}/
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if !defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--disable-debug
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ENV+=	ac_cv_header_libintl_h=yes
+LDFLAGS+=	-lintl
+.else
+CONFIGURE_ENV+=	ac_cv_header_libintl_h=no
+.endif
+
+.if !defined(WITHOUT_PANGO)
+USE_SDL+=	pango
+CONFIGURE_ARGS+=--disable-sdlttf
+.else
+USE_SDL+=	ttf
+.endif
+
+.if !defined(WITHOUT_SOUND)
+USE_SDL+=	mixer
+.else
+CONFIGURE_ARGS+=--disable-sound
+.endif
+
+post-patch:	.SILENT
+	${REINPLACE_CMD} -E '/CFLAGS|CXXFLAGS/s/-g//' ${WRKSRC}/configure
+
+.include <bsd.port.post.mk>
