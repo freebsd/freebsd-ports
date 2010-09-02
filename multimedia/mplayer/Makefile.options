@@ -84,10 +84,16 @@ LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=	--disable-theora
 .endif
 
+.if defined(WITH_VPX)
+LIB_DEPENDS+=		vpx.0:${PORTSDIR}/multimedia/libvpx
+.else
+CONFIGURE_ARGS+=	--disable-libvpx-lavc
+.endif
+
 .if defined(WITH_SCHROEDINGER)
 LIB_DEPENDS+=		schroedinger-1.0.3:${PORTSDIR}/multimedia/schroedinger
 .else
-CONFIGURE_ARGS+=	--disable-libschroedinger
+CONFIGURE_ARGS+=	--disable-libschroedinger-lavc
 .endif
 
 .if defined(WITH_LIBMPCDEC)

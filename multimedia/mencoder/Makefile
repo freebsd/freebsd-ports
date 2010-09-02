@@ -6,6 +6,7 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
+PORTREVISION=	1
 COMMENT=	Convenient video file and movie encoder
 RESTRICTED=	Port has restricted dependencies
 
@@ -34,6 +35,7 @@ OPTIONS+=	WIN32 "Enable win32 codec set on the IA32 arch" on
 OPTIONS+=	THEORA "Enable ogg theora video support" off
 OPTIONS+=	XVID "Enable XVID video codec support" on
 OPTIONS+=	X264 "Enable x264 (H.264) video codec support" on
+OPTIONS+=	VPX "Enable VP8 video via libvpx" off
 OPTIONS+=	DIRAC "Enable dirac video codec support" off
 OPTIONS+=	SCHROEDINGER "Dirac codec via libschroedinger" off
 OPTIONS+=	REALPLAYER "Enable real player plugin" off
@@ -45,7 +47,7 @@ OPTIONS+=	CDPARANOIA "Enable cdparanoia support" off
 OPTIONS+=	LIBLZO "Enable external liblzo library" off
 OPTIONS+=	V4L "Enable Video4Linux TV support" off
 
-MLINKS=		mplayer.1 mencoder.1
+MAN1=		mencoder.1
 
 PATCHDIR=	${.CURDIR}/../mplayer/files
 DATADIR=	${PREFIX}/share/mplayer
@@ -61,8 +63,6 @@ TOOLFILES=	aconvert.sh binary_codecs.sh calcbpp.pl \
 .include <bsd.port.pre.mk>
 
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
-BUILD_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
-RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 CONFIGURE_ARGS+=	--disable-mplayer \
 			--disable-libdca \
@@ -157,6 +157,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mencoder ${PREFIX}/bin
 
 post-install:
+	@${INSTALL_MAN} ${WRKSRC}/DOCS/man/en/mplayer.1 ${MAN1PREFIX}/man/man1/mencoder.1
 	@${MKDIR} ${DATADIR}
 	@${CHMOD} 755 ${DATADIR}
 	@${MKDIR} ${DATADIR}/tools

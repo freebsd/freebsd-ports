@@ -24,7 +24,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		TMPDIR="${WRKSRC}"
-CONFIGURE_ARGS= --disable-bitmap-font
+CONFIGURE_ARGS= --disable-bitmap-font \
+		--disable-liba52
 
 WANT_GNOME=	yes
 WANT_SDL=	yes
