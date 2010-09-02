@@ -654,10 +654,6 @@ share/locale/zh_TW/LC_MESSAGES/amarokcollectionscanner_qt.mo
 share/locale/zh_TW/LC_MESSAGES/amarokpkg.mo
 @dirrmtry share/locale/x-test/LC_MESSAGES
 @dirrmtry share/locale/x-test
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/sr@ijekavianlatin/LC_MESSAGES
-@dirrmtry share/locale/sr@ijekavianlatin
 @dirrmtry share/apps/desktoptheme/Amarok-Mockup/widgets
 @dirrmtry share/apps/desktoptheme/Amarok-Mockup
 @dirrm share/apps/amarok/scripts/script_console

@@ -555,10 +555,6 @@ share/mime/packages/x-k3b.xml
 share/sounds/k3b_error1.wav
 share/sounds/k3b_success1.wav
 share/sounds/k3b_wait_media1.wav
-@dirrm share/locale/sr@latin/LC_MESSAGES
-@dirrm share/locale/sr@latin
-@dirrm share/locale/sr@ijekavianlatin/LC_MESSAGES
-@dirrm share/locale/sr@ijekavianlatin
 @dirrm share/apps/k3b/pics/quant
 @dirrm share/apps/k3b/pics/crystal
 @dirrm share/apps/k3b/pics/RobsTheme

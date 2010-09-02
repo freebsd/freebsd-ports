@@ -7,7 +7,7 @@
 
 PORTNAME=	subtitlecomposer
 PORTVERSION=	0.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SF/subcomposer/subcomposer/${PORTNAME}-${PORTVERSION}
 

@@ -6,6 +6,7 @@
 
 PORTNAME=	kaffeine
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	kaffeine/kaffeine/${DISTNAME}
