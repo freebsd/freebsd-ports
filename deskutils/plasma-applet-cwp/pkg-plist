@@ -51,6 +51,4 @@ share/locale/sr/LC_MESSAGES/plasma_applet_cwp.mo
 share/locale/sr@latin/LC_MESSAGES/plasma_applet_cwp.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_cwp.mo
 share/locale/zh_CN/LC_MESSAGES/plasma_applet_cwp.mo
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
 @dirrm share/apps/plasma-cwp
