@@ -1,0 +1,5 @@
+--- ./ruby/plasma/CMakeLists.txt.orig	2009-12-31 16:35:17.000000000 +0300
++++ ./ruby/plasma/CMakeLists.txt	2010-06-29 23:53:54.555676654 +0400
+@@ -1,2 +1 @@
+-add_subdirectory( examples )
+ add_subdirectory( src )

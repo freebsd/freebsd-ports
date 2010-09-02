@@ -14,6 +14,7 @@ include/KDE/Akonadi/AttributeFactory
 include/KDE/Akonadi/CachePolicy
 include/KDE/Akonadi/ChangeRecorder
 include/KDE/Akonadi/Collection
+include/KDE/Akonadi/CollectionComboBox
 include/KDE/Akonadi/CollectionCopyJob
 include/KDE/Akonadi/CollectionCreateJob
 include/KDE/Akonadi/CollectionDeleteJob
@@ -31,10 +32,24 @@ include/KDE/Akonadi/CollectionStatisticsDelegate
 include/KDE/Akonadi/CollectionStatisticsJob
 include/KDE/Akonadi/CollectionStatisticsModel
 include/KDE/Akonadi/CollectionView
+include/KDE/Akonadi/Contact/ContactDefaultActions
+include/KDE/Akonadi/Contact/ContactEditor
+include/KDE/Akonadi/Contact/ContactEditorDialog
+include/KDE/Akonadi/Contact/ContactGroupEditor
+include/KDE/Akonadi/Contact/ContactGroupEditorDialog
+include/KDE/Akonadi/Contact/ContactGroupExpandJob
+include/KDE/Akonadi/Contact/ContactGroupSearchJob
+include/KDE/Akonadi/Contact/ContactGroupViewer
+include/KDE/Akonadi/Contact/ContactGroupViewerDialog
+include/KDE/Akonadi/Contact/ContactSearchJob
+include/KDE/Akonadi/Contact/ContactViewer
+include/KDE/Akonadi/Contact/ContactViewerDialog
+include/KDE/Akonadi/Contact/RecentContactsCollectionRequestJob
 include/KDE/Akonadi/Control
 include/KDE/Akonadi/Entity
 include/KDE/Akonadi/EntityDisplayAttribute
 include/KDE/Akonadi/EntityListView
+include/KDE/Akonadi/EntityMimeTypeFilterModel
 include/KDE/Akonadi/EntityTreeModel
 include/KDE/Akonadi/EntityTreeView
 include/KDE/Akonadi/Exception
@@ -48,10 +63,19 @@ include/KDE/Akonadi/ItemModel
 include/KDE/Akonadi/ItemModifyJob
 include/KDE/Akonadi/ItemMonitor
 include/KDE/Akonadi/ItemMoveJob
+include/KDE/Akonadi/ItemSearchJob
 include/KDE/Akonadi/ItemSerializerPlugin
 include/KDE/Akonadi/ItemSync
 include/KDE/Akonadi/ItemView
 include/KDE/Akonadi/Job
+include/KDE/Akonadi/KCal/IncidenceMimeTypeVisitor
+include/KDE/Akonadi/KMime/AddressAttribute
+include/KDE/Akonadi/KMime/MessageFolderAttribute
+include/KDE/Akonadi/KMime/MessageModel
+include/KDE/Akonadi/KMime/MessageThreaderProxyModel
+include/KDE/Akonadi/KMime/MessageThreadingAttribute
+include/KDE/Akonadi/KMime/SpecialMailCollections
+include/KDE/Akonadi/KMime/SpecialMailCollectionsRequestJob
 include/KDE/Akonadi/LinkJob
 include/KDE/Akonadi/Monitor
 include/KDE/Akonadi/PreprocessorBase
@@ -98,6 +122,7 @@ include/KDE/KABC/Sound
 include/KDE/KABC/StdAddressBook
 include/KDE/KABC/TimeZone
 include/KDE/KABC/VCardConverter
+include/KDE/KABC/VCardDrag
 include/KDE/KABC/VCardFormat
 include/KDE/KBlog/Blog
 include/KDE/KBlog/BlogComment
@@ -227,6 +252,7 @@ include/KDE/KMime/KMimeMessage
 include/KDE/KMime/MDN
 include/KDE/KMime/Message
 include/KDE/KMime/NewsArticle
+include/KDE/KMime/Util
 include/KDE/KPIMIdentities/Identity
 include/KDE/KPIMIdentities/IdentityCombo
 include/KDE/KPIMIdentities/IdentityManager
@@ -298,6 +324,7 @@ include/akonadi/agentinstancecreatejob.h
 include/akonadi/agentinstancemodel.h
 include/akonadi/agentinstancewidget.h
 include/akonadi/agentmanager.h
+include/akonadi/agentsearchinterface.h
 include/akonadi/agenttype.h
 include/akonadi/agenttypedialog.h
 include/akonadi/agenttypemodel.h
@@ -328,6 +355,7 @@ include/akonadi/collectionstatisticsdelegate.h
 include/akonadi/collectionstatisticsjob.h
 include/akonadi/collectionstatisticsmodel.h
 include/akonadi/collectionview.h
+include/akonadi/contact/abstractcontactformatter.h
 include/akonadi/contact/akonadi-contact_export.h
 include/akonadi/contact/contactdefaultactions.h
 include/akonadi/contact/contacteditor.h
@@ -340,9 +368,15 @@ include/akonadi/contact/contactgroupsearchjob.h
 include/akonadi/contact/contactgroupviewer.h
 include/akonadi/contact/contactgroupviewerdialog.h
 include/akonadi/contact/contactsearchjob.h
+include/akonadi/contact/contactsfilterproxymodel.h
+include/akonadi/contact/contactstreemodel.h
 include/akonadi/contact/contactviewer.h
 include/akonadi/contact/contactviewerdialog.h
+include/akonadi/contact/emailaddressselection.h
+include/akonadi/contact/emailaddressselectiondialog.h
+include/akonadi/contact/emailaddressselectionwidget.h
 include/akonadi/contact/recentcontactscollectionrequestjob.h
+include/akonadi/contact/standardcontactformatter.h
 include/akonadi/control.h
 include/akonadi/entity.h
 include/akonadi/entitydisplayattribute.h
@@ -376,6 +410,7 @@ include/akonadi/kcal/akonadi-kcal_export.h
 include/akonadi/kcal/incidencemimetypevisitor.h
 include/akonadi/kmime/addressattribute.h
 include/akonadi/kmime/akonadi-kmime_export.h
+include/akonadi/kmime/messageflags.h
 include/akonadi/kmime/messagefolderattribute.h
 include/akonadi/kmime/messagemodel.h
 include/akonadi/kmime/messageparts.h
@@ -387,6 +422,7 @@ include/akonadi/linkjob.h
 include/akonadi/mimetypechecker.h
 include/akonadi/monitor.h
 include/akonadi/partfetcher.h
+include/akonadi/persistentsearchattribute.h
 include/akonadi/preprocessorbase.h
 include/akonadi/private/collectionpathresolver_p.h
 include/akonadi/qtest_akonadi.h
@@ -437,6 +473,7 @@ include/gpgme++/scdgetinfoassuantransaction.h
 include/gpgme++/signingresult.h
 include/gpgme++/trustitem.h
 include/gpgme++/verificationresult.h
+include/gpgme++/vfsmountresult.h
 include/kabc/address.h
 include/kabc/addressbook.h
 include/kabc/addressee.h
@@ -471,6 +508,7 @@ include/kabc/stdaddressbook.h
 include/kabc/timezone.h
 include/kabc/vcard.h
 include/kabc/vcardconverter.h
+include/kabc/vcarddrag.h
 include/kabc/vcardformat.h
 include/kabc/vcardline.h
 include/kabc/vcardparser.h
@@ -540,6 +578,8 @@ include/kcal/todo.h
 include/kcal/vcaldrag.h
 include/kcal/vcalformat.h
 include/kholidays/astroseasons.h
+include/kholidays/holiday.h
+include/kholidays/holidayregion.h
 include/kholidays/holidays.h
 include/kholidays/kholidays_export.h
 include/kholidays/lunarphase.h
@@ -627,6 +667,7 @@ include/kpimidentities/signatureconfigurator.h
 include/kpimtextedit/emailquotehighlighter.h
 include/kpimtextedit/kpimtextedit_export.h
 include/kpimtextedit/textedit.h
+include/kpimtextedit/textutils.h
 include/kpimutils/email.h
 include/kpimutils/kfileio.h
 include/kpimutils/kpimutils_export.h
@@ -785,13 +826,13 @@ lib/libakonadi-kmime.so.5
 lib/libakonadi-kmime.so.5.0.1
 %%WITH_PTH%%lib/libgpgme++-pth.so
 %%WITH_PTH%%lib/libgpgme++-pth.so.2
-%%WITH_PTH%%lib/libgpgme++-pth.so.2.4.0
+%%WITH_PTH%%lib/libgpgme++-pth.so.2.6.0
 lib/libgpgme++-pthread.so
 lib/libgpgme++-pthread.so.2
-lib/libgpgme++-pthread.so.2.4.0
+lib/libgpgme++-pthread.so.2.6.0
 lib/libgpgme++.so
 lib/libgpgme++.so.2
-lib/libgpgme++.so.2.4.0
+lib/libgpgme++.so.2.6.0
 lib/libkabc.so
 lib/libkabc.so.5
 lib/libkabc.so.5.0.1
@@ -851,6 +892,17 @@ lib/libsyndication.so.5
 lib/libsyndication.so.5.0.1
 share/apps/akonadi-kde/kcfg2dbus.xsl
 share/apps/akonadi/contact/data/zone.tab
+share/apps/akonadi/contact/icons/oxygen/16x16/apps/aim_protocol.png
+share/apps/akonadi/contact/icons/oxygen/16x16/apps/gadu_protocol.png
+share/apps/akonadi/contact/icons/oxygen/16x16/apps/groupwise_protocol.png
+share/apps/akonadi/contact/icons/oxygen/16x16/apps/icq_protocol.png
+share/apps/akonadi/contact/icons/oxygen/16x16/apps/irc_protocol.png
+share/apps/akonadi/contact/icons/oxygen/16x16/apps/jabber_protocol.png
+share/apps/akonadi/contact/icons/oxygen/16x16/apps/meanwhile_protocol.png
+share/apps/akonadi/contact/icons/oxygen/16x16/apps/msn_protocol.png
+share/apps/akonadi/contact/icons/oxygen/16x16/apps/skype_protocol.png
+share/apps/akonadi/contact/icons/oxygen/16x16/apps/sms_protocol.png
+share/apps/akonadi/contact/icons/oxygen/16x16/apps/yahoo_protocol.png
 share/apps/akonadi/contact/pics/world.jpg
 share/apps/cmake/modules/CheckTimezone.cmake
 share/apps/cmake/modules/FindAkonadi.cmake
@@ -863,63 +915,85 @@ share/apps/kabc/countrytransl.map
 share/apps/kabc/formats/binary.desktop
 share/apps/kconf_update/mailtransports.upd
 share/apps/kconf_update/migrate-transports.pl
-share/apps/libkholidays/holiday_BelgiumDutch
-share/apps/libkholidays/holiday_BelgiumFrench
-share/apps/libkholidays/holiday_BelgiumWalloon
-share/apps/libkholidays/holiday_Suedtirol
-share/apps/libkholidays/holiday_ar
-share/apps/libkholidays/holiday_at
-share/apps/libkholidays/holiday_au
-share/apps/libkholidays/holiday_bavarian
-share/apps/libkholidays/holiday_bg
-share/apps/libkholidays/holiday_br
-share/apps/libkholidays/holiday_ca
-share/apps/libkholidays/holiday_catalan
-share/apps/libkholidays/holiday_ch
-share/apps/libkholidays/holiday_cl
-share/apps/libkholidays/holiday_cn
-share/apps/libkholidays/holiday_co
-share/apps/libkholidays/holiday_cz
-share/apps/libkholidays/holiday_de
-share/apps/libkholidays/holiday_dk
-share/apps/libkholidays/holiday_ee
-share/apps/libkholidays/holiday_es
-share/apps/libkholidays/holiday_fi
-share/apps/libkholidays/holiday_fr
-share/apps/libkholidays/holiday_frswiss
-share/apps/libkholidays/holiday_gb
-share/apps/libkholidays/holiday_gr
-share/apps/libkholidays/holiday_gt
-share/apps/libkholidays/holiday_hu
-share/apps/libkholidays/holiday_ie
-share/apps/libkholidays/holiday_il
-share/apps/libkholidays/holiday_in
-share/apps/libkholidays/holiday_is
-share/apps/libkholidays/holiday_it
-share/apps/libkholidays/holiday_jm
-share/apps/libkholidays/holiday_jp
-share/apps/libkholidays/holiday_lt
-share/apps/libkholidays/holiday_luFrench
-share/apps/libkholidays/holiday_luLuxembourgish
-share/apps/libkholidays/holiday_mx
-share/apps/libkholidays/holiday_na
-share/apps/libkholidays/holiday_nl
-share/apps/libkholidays/holiday_no
-share/apps/libkholidays/holiday_nz
-share/apps/libkholidays/holiday_pl
-share/apps/libkholidays/holiday_pt
-share/apps/libkholidays/holiday_py
-share/apps/libkholidays/holiday_quebec
-share/apps/libkholidays/holiday_ro
-share/apps/libkholidays/holiday_ru
-share/apps/libkholidays/holiday_se
-share/apps/libkholidays/holiday_si
-share/apps/libkholidays/holiday_sk
-share/apps/libkholidays/holiday_th
-share/apps/libkholidays/holiday_ua
-share/apps/libkholidays/holiday_us
-share/apps/libkholidays/holiday_uy
-share/apps/libkholidays/holiday_za
+share/apps/libkholidays/plan2/holiday_ar_es
+share/apps/libkholidays/plan2/holiday_at_de
+share/apps/libkholidays/plan2/holiday_au-act_en-gb
+share/apps/libkholidays/plan2/holiday_au-nsw_en-gb
+share/apps/libkholidays/plan2/holiday_au-nt_en-gb
+share/apps/libkholidays/plan2/holiday_au-qld_en-gb
+share/apps/libkholidays/plan2/holiday_au-sa_en-gb
+share/apps/libkholidays/plan2/holiday_au-tas_en-gb
+share/apps/libkholidays/plan2/holiday_au-vic_en-gb
+share/apps/libkholidays/plan2/holiday_au-wa_en-gb
+share/apps/libkholidays/plan2/holiday_be_fr
+share/apps/libkholidays/plan2/holiday_be_nl
+share/apps/libkholidays/plan2/holiday_be_wa
+share/apps/libkholidays/plan2/holiday_bg_bg
+share/apps/libkholidays/plan2/holiday_br_pt-br
+share/apps/libkholidays/plan2/holiday_by_be
+share/apps/libkholidays/plan2/holiday_ca-qc_fr
+share/apps/libkholidays/plan2/holiday_ca_en-gb
+share/apps/libkholidays/plan2/holiday_ch_fr
+share/apps/libkholidays/plan2/holiday_cl_es
+share/apps/libkholidays/plan2/holiday_cn_zh-cn
+share/apps/libkholidays/plan2/holiday_co_es
+share/apps/libkholidays/plan2/holiday_cz_cs
+share/apps/libkholidays/plan2/holiday_de-by_de
+share/apps/libkholidays/plan2/holiday_de_de
+share/apps/libkholidays/plan2/holiday_dk_da
+share/apps/libkholidays/plan2/holiday_ee_et
+share/apps/libkholidays/plan2/holiday_es-ct_ca
+share/apps/libkholidays/plan2/holiday_es_es
+share/apps/libkholidays/plan2/holiday_fi_fi
+share/apps/libkholidays/plan2/holiday_fr_fr
+share/apps/libkholidays/plan2/holiday_gb-eaw_en-gb
+share/apps/libkholidays/plan2/holiday_gb-nir_en-gb
+share/apps/libkholidays/plan2/holiday_gb-sct_en-gb
+share/apps/libkholidays/plan2/holiday_gf_fr
+share/apps/libkholidays/plan2/holiday_gp_fr
+share/apps/libkholidays/plan2/holiday_gr_el
+share/apps/libkholidays/plan2/holiday_gt_es
+share/apps/libkholidays/plan2/holiday_hu_hu
+share/apps/libkholidays/plan2/holiday_ie_en-gb
+share/apps/libkholidays/plan2/holiday_ie_ga
+share/apps/libkholidays/plan2/holiday_il_en-us
+share/apps/libkholidays/plan2/holiday_il_he
+share/apps/libkholidays/plan2/holiday_in_en-gb
+share/apps/libkholidays/plan2/holiday_ir_en-us
+share/apps/libkholidays/plan2/holiday_ir_fa
+share/apps/libkholidays/plan2/holiday_is_is
+share/apps/libkholidays/plan2/holiday_it-bz_de
+share/apps/libkholidays/plan2/holiday_it_it
+share/apps/libkholidays/plan2/holiday_jm_en-gb
+share/apps/libkholidays/plan2/holiday_jp_en-us
+share/apps/libkholidays/plan2/holiday_jp_ja
+share/apps/libkholidays/plan2/holiday_lt_lt
+share/apps/libkholidays/plan2/holiday_lu_fr
+share/apps/libkholidays/plan2/holiday_lu_lb
+share/apps/libkholidays/plan2/holiday_mq_fr
+share/apps/libkholidays/plan2/holiday_mx_es
+share/apps/libkholidays/plan2/holiday_na_en-gb
+share/apps/libkholidays/plan2/holiday_nc_fr
+share/apps/libkholidays/plan2/holiday_nl_nl
+share/apps/libkholidays/plan2/holiday_no_nb
+share/apps/libkholidays/plan2/holiday_nz_en-gb
+share/apps/libkholidays/plan2/holiday_pf_fr
+share/apps/libkholidays/plan2/holiday_pl_pl
+share/apps/libkholidays/plan2/holiday_pt_pt
+share/apps/libkholidays/plan2/holiday_py_es
+share/apps/libkholidays/plan2/holiday_re_fr
+share/apps/libkholidays/plan2/holiday_ro_ro
+share/apps/libkholidays/plan2/holiday_ru_ru
+share/apps/libkholidays/plan2/holiday_se_sv
+share/apps/libkholidays/plan2/holiday_si_sl
+share/apps/libkholidays/plan2/holiday_sk_sk
+share/apps/libkholidays/plan2/holiday_th_en-gb
+share/apps/libkholidays/plan2/holiday_ua_uk
+share/apps/libkholidays/plan2/holiday_us_en-us
+share/apps/libkholidays/plan2/holiday_uy_es
+share/apps/libkholidays/plan2/holiday_wf_fr
+share/apps/libkholidays/plan2/holiday_yt_fr
+share/apps/libkholidays/plan2/holiday_za_en-gb
 share/config.kcfg/mailtransport.kcfg
 share/config.kcfg/recentcontactscollections.kcfg
 share/config.kcfg/specialmailcollections.kcfg
@@ -949,6 +1023,17 @@ share/doc/HTML/en/kioslave/sieve/index.docbook
 share/doc/HTML/en/kioslave/smtp/common
 share/doc/HTML/en/kioslave/smtp/index.cache.bz2
 share/doc/HTML/en/kioslave/smtp/index.docbook
+share/kde4/services/akonadi/contact/aimprotocol.desktop
+share/kde4/services/akonadi/contact/gaduprotocol.desktop
+share/kde4/services/akonadi/contact/groupwiseprotocol.desktop
+share/kde4/services/akonadi/contact/icqprotocol.desktop
+share/kde4/services/akonadi/contact/ircprotocol.desktop
+share/kde4/services/akonadi/contact/jabberprotocol.desktop
+share/kde4/services/akonadi/contact/meanwhileprotocol.desktop
+share/kde4/services/akonadi/contact/msnprotocol.desktop
+share/kde4/services/akonadi/contact/skypeprotocol.desktop
+share/kde4/services/akonadi/contact/smsprotocol.desktop
+share/kde4/services/akonadi/contact/yahooprotocol.desktop
 share/kde4/services/akonadicontact_actions.desktop
 share/kde4/services/imap4.protocol
 share/kde4/services/imaps.protocol
@@ -972,11 +1057,14 @@ share/kde4/services/pop3s.protocol
 share/kde4/services/sieve.protocol
 share/kde4/services/smtp.protocol
 share/kde4/services/smtps.protocol
+share/kde4/servicetypes/kaddressbookimprotocol.desktop
 share/kde4/servicetypes/kontactplugin.desktop
 share/kde4/servicetypes/kresources_manager.desktop
 share/kde4/servicetypes/kresources_plugin.desktop
 share/mime/application/x-vnd.kde.contactgroup.xml
 share/mime/packages/kdepimlibs-mime.xml
+@dirrm share/kde4/services/akonadi/contact
+@dirrm share/kde4/services/akonadi
 @dirrm share/doc/HTML/en/kioslave/smtp
 @dirrm share/doc/HTML/en/kioslave/sieve
 @dirrm share/doc/HTML/en/kioslave/pop3
@@ -985,8 +1073,13 @@ share/mime/packages/kdepimlibs-mime.xml
 @dirrm share/doc/HTML/en/kioslave/ldap
 @dirrm share/doc/HTML/en/kioslave/imap
 @dirrm share/doc/HTML/en/kcontrol/kresources
+@dirrm share/apps/libkholidays/plan2
 @dirrm share/apps/libkholidays
 @dirrm share/apps/akonadi/contact/pics
+@dirrm share/apps/akonadi/contact/icons/oxygen/16x16/apps
+@dirrm share/apps/akonadi/contact/icons/oxygen/16x16
+@dirrm share/apps/akonadi/contact/icons/oxygen
+@dirrm share/apps/akonadi/contact/icons
 @dirrm share/apps/akonadi/contact/data
 @dirrm share/apps/akonadi/contact
 @dirrm share/apps/akonadi-kde
@@ -1038,4 +1131,7 @@ share/mime/packages/kdepimlibs-mime.xml
 @dirrm include/KDE/KCal
 @dirrm include/KDE/KBlog
 @dirrm include/KDE/KABC
+@dirrm include/KDE/Akonadi/KMime
+@dirrm include/KDE/Akonadi/KCal
+@dirrm include/KDE/Akonadi/Contact
 @dirrm include/KDE/Akonadi

@@ -1,11 +1,6 @@
 bin/amor
 bin/kteatime
 bin/ktux
-bin/kweatherreport
-bin/kweatherservice
-lib/kde4/kcm_weather.so
-lib/kde4/kcm_weatherservice.so
-lib/libkdeinit4_kweatherreport.so
 share/applications/kde4/amor.desktop
 share/applications/kde4/kteatime.desktop
 share/apps/amor/billyrc
@@ -14,6 +9,7 @@ share/apps/amor/bonhommerc
 share/apps/amor/bsdrc
 share/apps/amor/eyesrc
 share/apps/amor/ghostrc
+share/apps/amor/nekokurorc
 share/apps/amor/nekorc
 share/apps/amor/pics/animated/blob/blob.png
 share/apps/amor/pics/animated/blob/blob_BeamDown1.png
@@ -176,6 +172,33 @@ share/apps/amor/pics/animated/ghost/ghost_z2.png
 share/apps/amor/pics/animated/ghost/ghost_z3.png
 share/apps/amor/pics/animated/ghost/ghost_z4.png
 share/apps/amor/pics/animated/ghost/ghost_z5.png
+share/apps/amor/pics/animated/neko-kuro/claw1.png
+share/apps/amor/pics/animated/neko-kuro/claw2.png
+share/apps/amor/pics/animated/neko-kuro/jump1.png
+share/apps/amor/pics/animated/neko-kuro/jump2.png
+share/apps/amor/pics/animated/neko-kuro/jump3.png
+share/apps/amor/pics/animated/neko-kuro/jump4.png
+share/apps/amor/pics/animated/neko-kuro/jumpl1.png
+share/apps/amor/pics/animated/neko-kuro/jumpl2.png
+share/apps/amor/pics/animated/neko-kuro/jumpl3.png
+share/apps/amor/pics/animated/neko-kuro/jumpl4.png
+share/apps/amor/pics/animated/neko-kuro/lick.png
+share/apps/amor/pics/animated/neko-kuro/lick2.png
+share/apps/amor/pics/animated/neko-kuro/run1.png
+share/apps/amor/pics/animated/neko-kuro/run2.png
+share/apps/amor/pics/animated/neko-kuro/run3.png
+share/apps/amor/pics/animated/neko-kuro/run4.png
+share/apps/amor/pics/animated/neko-kuro/scratch1.png
+share/apps/amor/pics/animated/neko-kuro/scratch2.png
+share/apps/amor/pics/animated/neko-kuro/scratch3.png
+share/apps/amor/pics/animated/neko-kuro/scratch4.png
+share/apps/amor/pics/animated/neko-kuro/sit.png
+share/apps/amor/pics/animated/neko-kuro/sitleft.png
+share/apps/amor/pics/animated/neko-kuro/sleep1.png
+share/apps/amor/pics/animated/neko-kuro/sleep2.png
+share/apps/amor/pics/animated/neko-kuro/surprise.png
+share/apps/amor/pics/animated/neko-kuro/tail.png
+share/apps/amor/pics/animated/neko-kuro/yawn.png
 share/apps/amor/pics/animated/neko/claw1.png
 share/apps/amor/pics/animated/neko/claw2.png
 share/apps/amor/pics/animated/neko/jump1.png
@@ -391,6 +414,7 @@ share/apps/amor/pics/preview/bonhomme.png
 share/apps/amor/pics/preview/bsd.png
 share/apps/amor/pics/preview/eyes.png
 share/apps/amor/pics/preview/ghost.png
+share/apps/amor/pics/preview/neko-kuro.png
 share/apps/amor/pics/preview/neko.png
 share/apps/amor/pics/preview/tao.png
 share/apps/amor/pics/preview/tux.png
@@ -420,49 +444,7 @@ share/apps/ktux/sprites/flare0002.png
 share/apps/ktux/sprites/spriterc
 share/apps/ktux/sprites/star0001.png
 share/apps/ktux/sprites/star0002.png
-share/apps/kweather/cloudy1.png
-share/apps/kweather/cloudy1_night.png
-share/apps/kweather/cloudy2.png
-share/apps/kweather/cloudy2_night.png
-share/apps/kweather/cloudy3.png
-share/apps/kweather/cloudy3_night.png
-share/apps/kweather/cloudy4.png
-share/apps/kweather/cloudy4_night.png
-share/apps/kweather/cloudy5.png
-share/apps/kweather/dunno.png
-share/apps/kweather/fog.png
-share/apps/kweather/fog_night.png
-share/apps/kweather/hail.png
-share/apps/kweather/light_rain.png
-share/apps/kweather/mist.png
-share/apps/kweather/mist_night.png
-share/apps/kweather/overcast.png
-share/apps/kweather/shower1.png
-share/apps/kweather/shower1_night.png
-share/apps/kweather/shower2.png
-share/apps/kweather/shower2_night.png
-share/apps/kweather/shower3.png
-share/apps/kweather/sleet.png
-share/apps/kweather/snow1.png
-share/apps/kweather/snow1_night.png
-share/apps/kweather/snow2.png
-share/apps/kweather/snow2_night.png
-share/apps/kweather/snow3.png
-share/apps/kweather/snow3_night.png
-share/apps/kweather/snow4.png
-share/apps/kweather/snow5.png
-share/apps/kweather/sunny.png
-share/apps/kweather/sunny_night.png
-share/apps/kweather/tstorm1.png
-share/apps/kweather/tstorm1_night.png
-share/apps/kweather/tstorm2.png
-share/apps/kweather/tstorm2_night.png
-share/apps/kweather/tstorm3.png
-share/apps/kweatherservice/stations.dat
-share/apps/kweatherservice/weather_stations.desktop
 share/dbus-1/interfaces/org.kde.amor.xml
-share/dbus-1/interfaces/org.kde.kweather.kweather.xml
-share/dbus-1/interfaces/org.kde.kweather.service.xml
 share/doc/HTML/en/amor/billy.png
 share/doc/HTML/en/amor/bonhomme.png
 share/doc/HTML/en/amor/bsd.png
@@ -482,34 +464,22 @@ share/doc/HTML/en/kteatime/common
 share/doc/HTML/en/kteatime/config.png
 share/doc/HTML/en/kteatime/index.cache.bz2
 share/doc/HTML/en/kteatime/index.docbook
-share/doc/HTML/en/kweather/common
-share/doc/HTML/en/kweather/index.cache.bz2
-share/doc/HTML/en/kweather/index.docbook
 share/icons/hicolor/128x128/apps/kteatime.png
 share/icons/hicolor/16x16/apps/amor.png
 share/icons/hicolor/16x16/apps/kteatime.png
 share/icons/hicolor/16x16/apps/ktux.png
-share/icons/hicolor/16x16/apps/kweather.png
 share/icons/hicolor/22x22/apps/amor.png
 share/icons/hicolor/22x22/apps/kteatime.png
 share/icons/hicolor/32x32/apps/amor.png
 share/icons/hicolor/32x32/apps/kteatime.png
 share/icons/hicolor/32x32/apps/ktux.png
-share/icons/hicolor/32x32/apps/kweather.png
 share/icons/hicolor/48x48/apps/amor.png
 share/icons/hicolor/48x48/apps/kteatime.png
-share/icons/hicolor/48x48/apps/kweather.png
 share/icons/hicolor/64x64/apps/kteatime.png
 share/icons/hicolor/scalable/apps/kteatime.svgz
 share/kde4/services/ScreenSavers/ktux.desktop
-share/kde4/services/kcmweather.desktop
-share/kde4/services/kcmweatherservice.desktop
-share/kde4/services/kweatherservice.desktop
-@dirrm share/doc/HTML/en/kweather
 @dirrm share/doc/HTML/en/kteatime
 @dirrm share/doc/HTML/en/amor
-@dirrm share/apps/kweatherservice
-@dirrm share/apps/kweather
 @dirrm share/apps/ktux/sprites
 @dirrm share/apps/ktux
 @dirrm share/apps/kteatime
@@ -518,6 +488,7 @@ share/kde4/services/kweatherservice.desktop
 @dirrm share/apps/amor/pics/animated/worm
 @dirrm share/apps/amor/pics/animated/tao
 @dirrm share/apps/amor/pics/animated/pingu
+@dirrm share/apps/amor/pics/animated/neko-kuro
 @dirrm share/apps/amor/pics/animated/neko
 @dirrm share/apps/amor/pics/animated/ghost
 @dirrm share/apps/amor/pics/animated/eyes

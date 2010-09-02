@@ -15,6 +15,7 @@ include/libkcddb/kcddb_export.h
 include/libkcddb/kcddbconfig.h
 include/libkcompactdisc/kcompactdisc.h
 lib/kde4/dragonpart.so
+lib/kde4/ffmpegthumbs.so
 lib/kde4/kcm_audiocd.so
 lib/kde4/kcm_cddb.so
 lib/kde4/kio_audiocd.so
@@ -75,7 +76,6 @@ share/apps/kscd/skin/Chrome.svg
 share/apps/kscd/skin/Obsidian-Coast.svg
 share/apps/kscd/skin/Steel.svg
 share/apps/kscd/skin/default.svg
-share/apps/profiles/kscd.profile.xml
 share/apps/solid/actions/dragonplayer-opendvd.desktop
 share/apps/solid/actions/kscd-play-audiocd.desktop
 share/apps/solid/actions/solid_audiocd.desktop
@@ -122,10 +122,12 @@ share/doc/HTML/en/kioslave/audiocd/index.docbook
 share/doc/HTML/en/kmix/common
 share/doc/HTML/en/kmix/index.cache.bz2
 share/doc/HTML/en/kmix/index.docbook
-share/doc/HTML/en/kmix/kmix-channel-playback.png
-share/doc/HTML/en/kmix/kmix-channel-record.png
-share/doc/HTML/en/kmix/kmix-channel-switches.png
-share/doc/HTML/en/kmix/kmix-window.png
+share/doc/HTML/en/kmix/kmix-channels.png
+share/doc/HTML/en/kmix/kmix-configure.png
+share/doc/HTML/en/kmix/kmix-file.png
+share/doc/HTML/en/kmix/kmix-master.png
+share/doc/HTML/en/kmix/kmix-options.png
+share/doc/HTML/en/kmix/kmix.png
 share/icons/hicolor/128x128/apps/dragonplayer.png
 share/icons/hicolor/128x128/apps/juk.png
 share/icons/hicolor/128x128/apps/kmix.png
@@ -159,6 +161,7 @@ share/kde4/services/ServiceMenus/jukservicemenu.desktop
 share/kde4/services/audiocd.desktop
 share/kde4/services/audiocd.protocol
 share/kde4/services/dragonplayer_part.desktop
+share/kde4/services/ffmpegthumbs.desktop
 share/kde4/services/kmixctrl_restore.desktop
 share/kde4/services/libkcddb.desktop
 share/kde4/services/videopreview.desktop

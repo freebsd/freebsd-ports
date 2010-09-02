@@ -12,7 +12,9 @@ MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Collection of entertaining, educational programs for KDE
+COMMENT=	Collection of entertaining programs for KDE
+
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 
 LATEST_LINK=	${PORTNAME}4
 

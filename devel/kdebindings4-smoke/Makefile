@@ -14,7 +14,8 @@ COMMENT=	SMOKE bindings for Qt/KDE
 
 LIB_DEPENDS=	qscintilla2.5:${PORTSDIR}/devel/qscintilla2 \
 		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
-		okularcore.1:${PORTSDIR}/graphics/kdegraphics4
+		okularcore.1:${PORTSDIR}/graphics/kdegraphics4 \
+		qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 
 BINDLANG=	smoke
 

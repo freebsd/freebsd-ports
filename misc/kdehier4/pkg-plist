@@ -1,6 +1,12 @@
+%%MTREE%%@cwd %%LOCALBASE%%
+%%MTREE%%etc/dbus-1/session-kde4.conf
+%%MTREE%%etc/dbus-1/system-kde4.conf
+%%MTREE%%@dirrmtry etc/dbus-1
+%%MTREE%%@cwd %%KDE4_PREFIX%%
 %%MTREE%%%%LDCONFIG_DIR%%
 %%MTREE%%%%LDCONFIG32_DIR%%
 %%MTREE%%libdata/pkgconfig
+%%MTREE%%share/PolicyKit/policy
 %%MTREE%%@exec mkdir -p %D/bin
 %%MTREE%%@exec mkdir -p %D/etc
 %%MTREE%%@exec mkdir -p %D/etc/pam.d
@@ -124,6 +130,7 @@
 %%MTREE%%@exec mkdir -p %D/man/ru.KOI8-R/mann
 %%MTREE%%@exec mkdir -p %D/sbin
 %%MTREE%%@exec mkdir -p %D/share
+%%MTREE%%@exec mkdir -p %D/share/PolicyKit
 %%MTREE%%@exec mkdir -p %D/share/aclocal
 %%MTREE%%@exec mkdir -p %D/share/dict
 %%MTREE%%@exec mkdir -p %D/share/doc
@@ -467,6 +474,9 @@
 %%MTREE%%@exec mkdir -p %D/share/skel
 %%MTREE%%@exec mkdir -p %D/share/xml
 %%MTREE%%@exec mkdir -p %D/www
+@exec mkdir -p %D/etc/dbus-1
+@exec mkdir -p %D/etc/dbus-1/session.d
+@exec mkdir -p %D/etc/dbus-1/system.d
 @exec mkdir -p %D/include/KDE
 @exec mkdir -p %D/lib/kconf_update_bin
 @exec mkdir -p %D/lib/kde4
@@ -522,6 +532,7 @@
 @exec mkdir -p %D/share/dbus-1
 @exec mkdir -p %D/share/dbus-1/interfaces
 @exec mkdir -p %D/share/dbus-1/services
+@exec mkdir -p %D/share/dbus-1/system-services
 @exec mkdir -p %D/share/doc/HTML
 @exec mkdir -p %D/share/doc/HTML/bg
 @exec mkdir -p %D/share/doc/HTML/ca
@@ -1095,6 +1106,10 @@
 @exec mkdir -p %D/share/locale/se/LC_MESSAGES
 @exec mkdir -p %D/share/locale/sr@ijekavian
 @exec mkdir -p %D/share/locale/sr@ijekavian/LC_MESSAGES
+@exec mkdir -p %D/share/locale/sr@ijekavianlatin
+@exec mkdir -p %D/share/locale/sr@ijekavianlatin/LC_MESSAGES
+@exec mkdir -p %D/share/locale/sr@latin
+@exec mkdir -p %D/share/locale/sr@latin/LC_MESSAGES
 @exec mkdir -p %D/share/locale/uz@cyrillic
 @exec mkdir -p %D/share/locale/uz@cyrillic/LC_MESSAGES
 @exec mkdir -p %D/share/locale/xh
@@ -1121,6 +1136,10 @@
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
 @dirrmtry share/locale/uz@cyrillic
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/sr@ijekavianlatin/LC_MESSAGES
+@dirrmtry share/locale/sr@ijekavianlatin
 @dirrmtry share/locale/sr@ijekavian/LC_MESSAGES
 @dirrmtry share/locale/sr@ijekavian
 @dirrmtry share/locale/se/LC_MESSAGES
@@ -1694,6 +1713,7 @@
 @dirrmtry share/doc/HTML/ca
 @dirrmtry share/doc/HTML/bg
 @dirrmtry share/doc/HTML
+@dirrmtry share/dbus-1/system-services
 @dirrmtry share/dbus-1/services
 @dirrmtry share/dbus-1/interfaces
 @dirrmtry share/dbus-1
@@ -1749,6 +1769,9 @@
 @dirrmtry lib/kde4
 @dirrmtry lib/kconf_update_bin
 @dirrmtry include/KDE
+@dirrmtry etc/dbus-1/system.d
+@dirrmtry etc/dbus-1/session.d
+@dirrmtry etc/dbus-1
 %%MTREE%%@dirrm www
 %%MTREE%%@dirrm share/xml
 %%MTREE%%@dirrm share/skel
@@ -2092,6 +2115,7 @@
 %%MTREE%%@dirrm share/doc
 %%MTREE%%@dirrm share/dict
 %%MTREE%%@dirrm share/aclocal
+%%MTREE%%@dirrm share/PolicyKit
 %%MTREE%%@dirrm share
 %%MTREE%%@dirrm sbin
 %%MTREE%%@dirrm man/ru.KOI8-R/mann

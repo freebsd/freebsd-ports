@@ -1,0 +1,17 @@
+--- ./jovie/CMakeLists.txt.orig	2010-07-30 11:04:09.892079431 +0400
++++ ./jovie/CMakeLists.txt	2010-07-30 11:04:27.027110608 +0400
+@@ -8,12 +8,12 @@
+ 
+ # if speechd was found use it
+ if (SPEECHD_FOUND)
+-  set (SPEECH_LIB speechd)
++  set (SPEECH_LIB ${SPEECHD_LIBRARY})
+ endif (SPEECHD_FOUND)
+ 
+ # prefer opentts if it was also found (or if it was the only one found)
+ if (OPENTTS_FOUND)
+-  set (SPEECH_LIB opentts)
++  set (SPEECH_LIB ${OPENTTS_LIBRARY})
+ endif (OPENTTS_FOUND)
+ 
+ # we found speechd or opentts, so continue

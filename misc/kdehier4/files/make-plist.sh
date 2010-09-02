@@ -1,14 +1,21 @@
 #!/bin/sh
 if [ ! -e dirlist -o ! -e ../Makefile ]; then
 	echo "Wrong directory; this script needs to be called from"
-	echo "/usr/ports/misc/kde4hier/files !"
+	echo "${PORTSDIR}/misc/kdehier4/files"
+	echo "directory!"
 	exit 1
 fi
 
+echo "%%MTREE%%@cwd %%LOCALBASE%%
+%%MTREE%%etc/dbus-1/session-kde4.conf
+%%MTREE%%etc/dbus-1/system-kde4.conf
+%%MTREE%%@dirrmtry etc/dbus-1
+%%MTREE%%@cwd %%KDE4_PREFIX%%" > ../pkg-plist
 
 echo "%%MTREE%%%%LDCONFIG_DIR%%
 %%MTREE%%%%LDCONFIG32_DIR%%
-%%MTREE%%libdata/pkgconfig" > ../pkg-plist
+%%MTREE%%libdata/pkgconfig
+%%MTREE%%share/PolicyKit/policy" >> ../pkg-plist
 
 (
 grep -v "^@comment" dirlist | sed -e "s,^,@exec mkdir -p %D/," ;

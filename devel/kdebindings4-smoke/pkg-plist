@@ -19,7 +19,6 @@ include/smoke/phonon_smoke.h
 include/smoke/plasma_smoke.h
 include/smoke/qimageblitz_smoke.h
 include/smoke/qsci_smoke.h
-include/smoke/qt_smoke.h
 include/smoke/qtcore_smoke.h
 include/smoke/qtdbus_smoke.h
 include/smoke/qtgui_smoke.h
@@ -34,6 +33,7 @@ include/smoke/qtuitools_smoke.h
 include/smoke/qtwebkit_smoke.h
 include/smoke/qtxml_smoke.h
 include/smoke/qtxmlpatterns_smoke.h
+include/smoke/qwt_smoke.h
 include/smoke/solid_smoke.h
 include/smoke/soprano_smoke.h
 include/smoke/sopranoclient_smoke.h
@@ -44,6 +44,9 @@ lib/libsmokeakonadi.so.3.0.0
 lib/libsmokeattica.so
 lib/libsmokeattica.so.3
 lib/libsmokeattica.so.3.0.0
+lib/libsmokebase.so
+lib/libsmokebase.so.3
+lib/libsmokebase.so.3.0.0
 lib/libsmokekdecore.so
 lib/libsmokekdecore.so.3
 lib/libsmokekdecore.so.3.0.0
@@ -95,9 +98,6 @@ lib/libsmokeqimageblitz.so.3.0.0
 lib/libsmokeqsci.so
 lib/libsmokeqsci.so.3
 lib/libsmokeqsci.so.3.0.0
-lib/libsmokeqt.so
-lib/libsmokeqt.so.3
-lib/libsmokeqt.so.3.0.0
 lib/libsmokeqtcore.so
 lib/libsmokeqtcore.so.3
 lib/libsmokeqtcore.so.3.0.0
@@ -140,6 +140,9 @@ lib/libsmokeqtxml.so.3.0.0
 lib/libsmokeqtxmlpatterns.so
 lib/libsmokeqtxmlpatterns.so.3
 lib/libsmokeqtxmlpatterns.so.3.0.0
+lib/libsmokeqwt.so
+lib/libsmokeqwt.so.3
+lib/libsmokeqwt.so.3.0.0
 lib/libsmokesolid.so
 lib/libsmokesolid.so.3
 lib/libsmokesolid.so.3.0.0

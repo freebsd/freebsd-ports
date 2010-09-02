@@ -14,6 +14,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Accessibility applications for KDE4
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+
 LATEST_LINK=	${PORTNAME}4
 
 USE_BZIP2=	yes
@@ -32,13 +34,13 @@ OPTIONS=	KTTS "Enable KTTS speech service" off
 .include <bsd.port.options.mk>
 
 .if defined(WITH_KTTS)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kttsd:${PORTSDIR}/accessibility/ktts
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/jovie:${PORTSDIR}/accessibility/ktts
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e '/macro_optional_add_subdirectory.*kttsd/d' \
+	${REINPLACE_CMD} -e '/macro_optional_add_subdirectory.*jovie/d' \
 		${PATCH_WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD} -e '/add_subdirectory.*kttsd/d' \
+	${REINPLACE_CMD} -e '/add_subdirectory.*jovie/d' \
 		${PATCH_WRKSRC}/doc/CMakeLists.txt
 
 .include <bsd.port.mk>

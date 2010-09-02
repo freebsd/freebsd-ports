@@ -16,12 +16,14 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for the KDE system
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz\
 		dbus-1.3:${PORTSDIR}/devel/dbus \
 		hal.1:${PORTSDIR}/sysutils/hal \
 		polkit-qt-core.0:${PORTSDIR}/sysutils/policykit-qt \
 		xklavier.12:${PORTSDIR}/x11/libxklavier \
-		gps.19:${PORTSDIR}/astro/gpsd
+		gps.19:${PORTSDIR}/astro/gpsd \
+		qalculate.5:${PORTSDIR}/math/libqalculate
 RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		xprop:${PORTSDIR}/x11/xprop \
@@ -48,7 +50,7 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		plasmaengineexplorer.1
 
-CONFLICTS=	kde4-windeco-aurorae-*
+CONFLICTS=	kde4-windeco-aurorae-* kdebase-runtime-4.4.*
 
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DWITH_BlueZ:BOOL=OFF \
@@ -83,18 +85,20 @@ LIB_DEPENDS+=	utempter:${PORTSDIR}/sysutils/libutempter
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's,/usr/lib/X11,${LOCALBASE}/lib/X11,g' \
+			  -e 's,/usr/share/X11,${LOCALBASE}/share/X11,g' \
+		${PATCH_WRKSRC}/kcontrol/keyboard/xkb_rules.cpp
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
 		${PATCH_WRKSRC}/startkde.cmake \
 		${PATCH_WRKSRC}/kcontrol/kfontinst/lib/KfiConstants.h \
 		${PATCH_WRKSRC}/kcontrol/kfontinst/kio/KioFonts.cpp \
-		${PATCH_WRKSRC}/kcontrol/kxkb/x11helper.cpp \
+		${PATCH_WRKSRC}/kcontrol/keyboard/x11_helper.cpp \
 		${PATCH_WRKSRC}/kdm/backend/client.c \
-		${PATCH_WRKSRC}/kdm/kfrontend/genkdmconf.c
+		${PATCH_WRKSRC}/kdm/kfrontend/genkdmconf.c \
+		${PATCH_WRKSRC}/CMakeLists.txt
 	${CP} ${FILESDIR}/uptime.* ${WRKSRC}/ksysguard/ksysguardd/FreeBSD/
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|sys/ptrace.h|signal.h|' \
-		${PATCH_WRKSRC}/libs/ksysguard/processui/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|<qhash.h>|<QHash>|' \
 		${PATCH_WRKSRC}/kwin/effects/thumbnailaside/thumbnailaside.h
 .for item in b2/b2client.cpp kwmtheme/kwmthemeclient.cpp \

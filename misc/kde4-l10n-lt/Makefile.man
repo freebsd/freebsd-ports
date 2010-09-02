@@ -1,0 +1,1 @@
+MAN1=	checkXML.1 kfind.1

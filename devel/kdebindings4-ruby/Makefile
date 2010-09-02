@@ -12,8 +12,9 @@ CATEGORIES=	devel kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Ruby bindings for Qt/KDE
 
-LIB_DEPENDS=	smokeqt.3:${PORTSDIR}/devel/kdebindings4-smoke \
-		okularcore.1:${PORTSDIR}/graphics/kdegraphics4
+LIB_DEPENDS=	smokebase.3:${PORTSDIR}/devel/kdebindings4-smoke \
+		okularcore.1:${PORTSDIR}/graphics/kdegraphics4 \
+		qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 
 BINDLANG=	ruby
 

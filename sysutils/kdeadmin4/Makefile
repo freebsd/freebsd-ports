@@ -14,6 +14,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Admin applications
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+
 LATEST_LINK=	${PORTNAME}4
 
 USE_BZIP2=	yes

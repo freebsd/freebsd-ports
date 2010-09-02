@@ -8,18 +8,17 @@ share/locale/kn/LC_MESSAGES/htmlsearch.mo
 share/locale/kn/LC_MESSAGES/imagerename_plugin.mo
 share/locale/kn/LC_MESSAGES/joystick.mo
 share/locale/kn/LC_MESSAGES/kaccess.mo
-share/locale/kn/LC_MESSAGES/kappfinder.mo
 share/locale/kn/LC_MESSAGES/kblankscrn.mo
 share/locale/kn/LC_MESSAGES/kcertpart.mo
 share/locale/kn/LC_MESSAGES/kcm_attica.mo
 share/locale/kn/LC_MESSAGES/kcm_autostart.mo
+share/locale/kn/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/kn/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/kn/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/kn/LC_MESSAGES/kcm_emoticons.mo
 share/locale/kn/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/kn/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/kn/LC_MESSAGES/kcm_memory.mo
-share/locale/kn/LC_MESSAGES/kcm_partition.mo
 share/locale/kn/LC_MESSAGES/kcm_pci.mo
 share/locale/kn/LC_MESSAGES/kcm_phonon.mo
 share/locale/kn/LC_MESSAGES/kcm_phononxine.mo
@@ -38,7 +37,6 @@ share/locale/kn/LC_MESSAGES/kcmicons.mo
 share/locale/kn/LC_MESSAGES/kcminfo.mo
 share/locale/kn/LC_MESSAGES/kcminit.mo
 share/locale/kn/LC_MESSAGES/kcminput.mo
-share/locale/kn/LC_MESSAGES/kcmioslaveinfo.mo
 share/locale/kn/LC_MESSAGES/kcmkclock.mo
 share/locale/kn/LC_MESSAGES/kcmkded.mo
 share/locale/kn/LC_MESSAGES/kcmkdnssd.mo
@@ -54,7 +52,6 @@ share/locale/kn/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/kn/LC_MESSAGES/kcmkwm.mo
 share/locale/kn/LC_MESSAGES/kcmlaunch.mo
 share/locale/kn/LC_MESSAGES/kcmlocale.mo
-share/locale/kn/LC_MESSAGES/kcmnic.mo
 share/locale/kn/LC_MESSAGES/kcmnotify.mo
 share/locale/kn/LC_MESSAGES/kcmopengl.mo
 share/locale/kn/LC_MESSAGES/kcmperformance.mo
@@ -63,7 +60,6 @@ share/locale/kn/LC_MESSAGES/kcmscreensaver.mo
 share/locale/kn/LC_MESSAGES/kcmshell.mo
 share/locale/kn/LC_MESSAGES/kcmsmartcard.mo
 share/locale/kn/LC_MESSAGES/kcmsmserver.mo
-share/locale/kn/LC_MESSAGES/kcmsolidproc.mo
 share/locale/kn/LC_MESSAGES/kcmstyle.mo
 share/locale/kn/LC_MESSAGES/kcmusb.mo
 share/locale/kn/LC_MESSAGES/kcmview1394.mo

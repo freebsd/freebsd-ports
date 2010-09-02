@@ -37,8 +37,10 @@ EXAMPLESDIR=		${PREFIX}/share/examples/pykde4
 .include "${.CURDIR}/../../devel/kdebindings4/files/Makefile.kdebindings"
 .include <bsd.port.pre.mk>
 
+post-patch:
 .if ${OSVERSION} < 800069
-BROKEN=		Fails to build with RTLD_NOLOAD
+	${REINPLACE_CMD} -e '/dlopen("kpythonpluginfactory.so"/s,RTLD_NOLOAD |,,' \
+		${PATCH_WRKSRC}/python/pykde4/kpythonpluginfactory/kpythonpluginfactory.cpp
 .endif
 
 pre-configure:

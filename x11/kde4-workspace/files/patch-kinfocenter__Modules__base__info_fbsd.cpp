@@ -1,5 +1,5 @@
---- ./apps/kinfocenter/base/info_fbsd.cpp.orig	2009-04-15 14:25:24.000000000 +0400
-+++ ./apps/kinfocenter/base/info_fbsd.cpp	2009-09-22 21:33:38.000000000 +0400
+--- ./kinfocenter/Modules/base/info_fbsd.cpp.orig	2009-04-15 14:25:24.000000000 +0400
++++ ./kinfocenter/Modules/base/info_fbsd.cpp	2009-09-22 21:33:38.000000000 +0400
 @@ -211,28 +211,17 @@
  	FILE *pipe;
  	QFile *pcicontrol;
