@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wifimgr
-PORTVERSION=	1.5
-PORTREVISION=	3
+PORTVERSION=	1.6
 CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	http://opal.com/freebsd/ports/net-mgmt/wifimgr/ \
 		LOCAL/pgollucci
