@@ -8,8 +8,7 @@ PORTNAME=	mongrel_cluster
 PORTVERSION=	1.0.5
 PORTREVISION=	1
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	mongrel
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Manages multiple Mongrel processes
