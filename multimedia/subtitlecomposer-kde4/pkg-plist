@@ -64,8 +64,6 @@ share/locale/pt_BR/LC_MESSAGES/subtitlecomposer.mo
 share/locale/sr/LC_MESSAGES/subtitlecomposer.mo
 share/locale/sr@latin/LC_MESSAGES/subtitlecomposer.mo
 share/mime/packages/subtitlecomposer.xml
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
 @dirrm share/apps/subtitlecomposer/scripts/api
 @dirrm share/apps/subtitlecomposer/scripts
 @dirrm share/apps/subtitlecomposer/pics
