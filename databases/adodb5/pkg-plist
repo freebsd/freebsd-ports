@@ -37,6 +37,7 @@
 %%ADODB_DIR%%/datadict/datadict-oci8.inc.php
 %%ADODB_DIR%%/datadict/datadict-postgres.inc.php
 %%ADODB_DIR%%/datadict/datadict-sapdb.inc.php
+%%ADODB_DIR%%/datadict/datadict-sqlite.inc.php
 %%ADODB_DIR%%/datadict/datadict-sybase.inc.php
 %%ADODB_DIR%%/drivers/adodb-access.inc.php
 %%ADODB_DIR%%/drivers/adodb-ado.inc.php
@@ -48,6 +49,7 @@
 %%ADODB_DIR%%/drivers/adodb-csv.inc.php
 %%ADODB_DIR%%/drivers/adodb-db2.inc.php
 %%ADODB_DIR%%/drivers/adodb-db2oci.inc.php
+%%ADODB_DIR%%/drivers/adodb-db2ora.inc.php
 %%ADODB_DIR%%/drivers/adodb-fbsql.inc.php
 %%ADODB_DIR%%/drivers/adodb-firebird.inc.php
 %%ADODB_DIR%%/drivers/adodb-ibase.inc.php
