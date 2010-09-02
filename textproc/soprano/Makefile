@@ -5,19 +5,19 @@
 # $FreeBSD$
 
 PORTNAME=	soprano
-PORTVERSION=	2.4.4
+PORTVERSION=	2.5.0
 CATEGORIES?=	textproc
 MASTER_SITES=	SF/${PORTNAME}/Soprano/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	QT4 RDF framework
+COMMENT=	Qt4 RDF framework
 
 LIB_DEPENDS=	clucene.0:${PORTSDIR}/textproc/clucene \
 		raptor.3:${PORTSDIR}/textproc/raptor \
 		rdf.0:${PORTSDIR}/textproc/redland \
 		iodbc.3:${PORTSDIR}/databases/libiodbc
 
-OPTIONS+=	SESAME2 "Use Sesame2 as storage backend (requires Java)" off
+OPTIONS=	SESAME2 "Use Sesame2 as storage backend (requires Java)" off
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
@@ -44,8 +44,7 @@ PLIST_SUB+=	SESAME2="@comment "
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} -E -e "s,$${LIB_SUFFIX}/pkgconfig,data/pkgconfig," \
-		-e 's,VERSION STR(LESS|EQUAL|GREATER) "([^"]+)",VERSION VERSION_\1 \2,g' \
+	${REINPLACE_CMD} -e "s,$${LIB_SUFFIX}/pkgconfig,data/pkgconfig," \
 		${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e "s,soprano/cmake,cmake/Modules," \
 		${WRKSRC}/cmake/modules/CMakeLists.txt
