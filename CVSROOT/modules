@@ -2481,6 +2481,7 @@ dns_balance                     ports/dns/dns_balance
 dns_mre                         ports/dns/dns_mre
 dnscap                          ports/dns/dnscap
 dnscheck                        ports/dns/dnscheck
+dnscheckengine                  ports/dns/dnscheckengine
 dnsdoctor                       ports/dns/dnsdoctor
 dnsflood                        ports/dns/dnsflood
 dnshijacker                     ports/dns/dnshijacker
@@ -3680,6 +3681,7 @@ foswiki                         ports/www/foswiki
 fotaq                           ports/games/fotaq
 fotofix                         ports/graphics/fotofix
 fourcdns                        ports/dns/fourcdns
+fowsr                           ports/astro/fowsr
 fox14                           ports/x11-toolkits/fox14
 fox16                           ports/x11-toolkits/fox16
 fox17                           ports/x11-toolkits/fox17
@@ -3811,7 +3813,6 @@ fr-med                          ports/french/med
 fr-mozilla-flp                  ports/french/mozilla-flp
 fr-php_doc                      ports/french/php_doc
 fr-plgrenouille                 ports/french/plgrenouille
-fr-pluxml-devel                 ports/french/pluxml-devel
 fr-staroffice52                 ports/french/staroffice52
 fr-verbiste                     ports/french/verbiste
 fr-xtel                         ports/french/xtel
@@ -4230,6 +4231,7 @@ gdt                             ports/cad/gdt
 gdtclft                         ports/graphics/gdtclft
 gdvrecv                         ports/multimedia/gdvrecv
 geany                           ports/devel/geany
+geany-plugins                   ports/devel/geany-plugins
 gearmand                        ports/devel/gearmand
 gecko-mediaplayer               ports/www/gecko-mediaplayer
 gecko-sharp20                   ports/www/gecko-sharp20
@@ -6874,7 +6876,6 @@ kbproto                         ports/x11/kbproto
 kbuild                          ports/devel/kBuild
 kcachegrind                     ports/devel/kcachegrind
 kcd                             ports/misc/kcd
-kcd-devel                       ports/misc/kcd-devel
 kcdlabel                        ports/print/kcdlabel
 kcheckers                       ports/games/kcheckers
 kcheckgmail                     ports/mail/kcheckgmail
@@ -7398,6 +7399,7 @@ kphotoalbum-kde4                ports/graphics/kphotoalbum-kde4
 kpicframer                      ports/games/kpicframer
 kpictorial                      ports/games/kpictorial
 kplayer                         ports/multimedia/kplayer
+kplayer-kde4                    ports/multimedia/kplayer-kde4
 kpogre                          ports/databases/kpogre
 kpopup                          ports/net-im/kpopup
 kports                          ports/ports-mgmt/kports
@@ -8795,7 +8797,6 @@ logrotate                       ports/sysutils/logrotate
 logserial                       ports/sysutils/logserial
 logsurfer                       ports/misc/logsurfer
 logtool                         ports/sysutils/logtool
-logtool-devel                   ports/sysutils/logtool-devel
 logtools                        ports/www/logtools
 logwatch                        ports/sysutils/logwatch
 loki                            ports/devel/loki
@@ -8818,7 +8819,6 @@ lpac                            ports/audio/lpac
 lpairs                          ports/games/lpairs
 lpc21isp                        ports/devel/lpc21isp
 lpe                             ports/editors/lpe
-lphoto                          ports/graphics/lphoto
 lplayer                         ports/audio/lplayer
 lpr-wrapper                     ports/print/lpr-wrapper
 lprng                           ports/sysutils/LPRng
@@ -10106,7 +10106,6 @@ nget                            ports/news/nget
 nginx                           ports/www/nginx
 nginx-devel                     ports/www/nginx-devel
 ngircd                          ports/irc/ngircd
-ngmp                            ports/mail/ngmp
 ngpt                            ports/devel/ngpt
 ngraph                          ports/math/ngraph
 ngrep                           ports/net/ngrep
@@ -22897,6 +22896,7 @@ scim-table-imengine             ports/textproc/scim-table-imengine
 scimark2                        ports/benchmarks/scimark2
 scimark2c                       ports/benchmarks/scimark2c
 scintilla                       ports/x11-toolkits/scintilla
+sciplore-mindmapping            ports/deskutils/sciplore-mindmapping
 sciplot                         ports/graphics/SciPlot
 scite                           ports/editors/scite
 scli                            ports/net-mgmt/scli
@@ -23287,7 +23287,6 @@ smake                           ports/devel/smake
 smalltalk                       ports/lang/smalltalk
 smap                            ports/security/smap
 smartdoc                        ports/textproc/smartdoc
-smartdoc-devel                  ports/textproc/smartdoc-devel
 smarteiffel                     ports/lang/smarteiffel
 smartirc4net                    ports/irc/smartirc4net
 smartmontools                   ports/sysutils/smartmontools
@@ -23428,7 +23427,6 @@ spamprobe                       ports/mail/spamprobe
 spamstats                       ports/mail/spamstats
 spandsp                         ports/comms/spandsp
 spandsp-devel                   ports/comms/spandsp-devel
-spandsp-devel5                  ports/comms/spandsp-devel5
 spar                            ports/math/spar
 sparc-rtems-binutils            ports/devel/sparc-rtems-binutils
 sparc-rtems-gcc                 ports/devel/sparc-rtems-gcc
@@ -23776,6 +23774,7 @@ supertuxkart                    ports/games/supertuxkart
 suphp                           ports/www/suphp
 surblhost                       ports/mail/surblhost
 surfraw                         ports/www/surfraw
+suricata                        ports/security/suricata
 susv2                           ports/misc/susv2
 susv3                           ports/misc/susv3
 suxus                           ports/x11-fonts/suxus
@@ -25804,7 +25803,6 @@ xforms                          ports/x11-toolkits/xforms
 xforms-i18n                     ports/x11-toolkits/xforms-i18n
 xfpovray                        ports/graphics/xfpovray
 xfractint                       ports/graphics/xfractint
-xfractint-devel                 ports/graphics/xfractint-devel
 xfree86_xkb_xml                 ports/x11/xfree86_xkb_xml
 xfrisk                          ports/games/xfrisk
 xfs                             ports/x11-fonts/xfs
@@ -26616,7 +26614,6 @@ zh-gb2jis                       ports/chinese/gb2jis
 zh-gb2ps                        ports/chinese/gb2ps
 zh-gbscript                     ports/chinese/gbscript
 zh-gcin                         ports/chinese/gcin
-zh-gcin-devel                   ports/chinese/gcin-devel
 zh-gimp-help-zh_CN              ports/chinese/gimp-help-zh_CN
 zh-gimp-help-zh_cn              ports/chinese/gimp-help-zh_CN
 zh-gugod-clean                  ports/chinese/gugod-clean
