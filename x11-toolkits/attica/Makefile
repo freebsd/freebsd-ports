@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	attica
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/attica/
+MASTER_SITE_SUBDIR=	stable/${PORTNAME}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Collaboration Services API library
