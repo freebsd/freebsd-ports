@@ -10,7 +10,7 @@ PORTVERSION=	0.5.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME/sources/${PORTNAME}/0.5/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GObject collection library
 
 GNU_CONFIGURE=	yes
