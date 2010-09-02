@@ -3109,6 +3109,7 @@
     SUBDIR += rubygem-systemu
     SUBDIR += rubygem-templater
     SUBDIR += rubygem-test-unit
+    SUBDIR += rubygem-thor
     SUBDIR += rubygem-transactionsimple
     SUBDIR += rubygem-treetop
     SUBDIR += rubygem-trollop
