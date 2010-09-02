@@ -1,6 +1,5 @@
 bin/datastudio.sh
 bin/runscript.sh
-%%DATADIR%%/License.txt
 %%DATADIR%%/changelog.txt
 %%DATADIR%%/datastudio-128x128.png
 %%DATADIR%%/datastudio-16x16.png
