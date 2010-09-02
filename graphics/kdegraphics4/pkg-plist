@@ -96,13 +96,13 @@ lib/libgwenviewlib.so.5
 lib/libgwenviewlib.so.5.0.1
 lib/libkdcraw.so
 lib/libkdcraw.so.8
-lib/libkdcraw.so.8.0.0
+lib/libkdcraw.so.8.1.0
 lib/libkexiv2.so
 lib/libkexiv2.so.8
-lib/libkexiv2.so.8.0.0
+lib/libkexiv2.so.8.1.0
 lib/libkipi.so
 lib/libkipi.so.7
-lib/libkipi.so.7.0.0
+lib/libkipi.so.7.1.0
 lib/libkolourpaint_lgpl.so
 lib/libkolourpaint_lgpl.so.5
 lib/libkolourpaint_lgpl.so.5.0.1
@@ -111,7 +111,7 @@ lib/libksane.so.0
 lib/libksane.so.0.2.0
 lib/libokularcore.so
 lib/libokularcore.so.1
-lib/libokularcore.so.1.4.0
+lib/libokularcore.so.1.5.0
 lib/strigi/strigiea_dvi.so
 lib/strigi/strigiea_tiff.so
 lib/strigi/strigila_mobi.so
@@ -333,6 +333,7 @@ share/doc/HTML/en/kcontrol/kamera/index.docbook
 share/doc/HTML/en/kcontrol/kgamma/common
 share/doc/HTML/en/kcontrol/kgamma/index.cache.bz2
 share/doc/HTML/en/kcontrol/kgamma/index.docbook
+share/doc/HTML/en/kolourpaint/KolourPaint.png
 share/doc/HTML/en/kolourpaint/brush_shapes.png
 share/doc/HTML/en/kolourpaint/color_box.png
 share/doc/HTML/en/kolourpaint/common
@@ -353,7 +354,6 @@ share/doc/HTML/en/kolourpaint/image_skew.png
 share/doc/HTML/en/kolourpaint/image_soften_sharpen.png
 share/doc/HTML/en/kolourpaint/index.cache.bz2
 share/doc/HTML/en/kolourpaint/index.docbook
-share/doc/HTML/en/kolourpaint/kolourpaint-main.png
 share/doc/HTML/en/kolourpaint/line_width.png
 share/doc/HTML/en/kolourpaint/lines_30_45_deg.png
 share/doc/HTML/en/kolourpaint/lines_30_deg.png
@@ -504,6 +504,8 @@ share/kde4/servicetypes/okularGenerator.desktop
 @dirrm share/apps/okular/icons/hicolor
 @dirrm share/apps/okular/icons
 @dirrm share/apps/okular
+@dirrm share/apps/libkexiv2/data
+@dirrm share/apps/libkexiv2
 @dirrm share/apps/libkdcraw/profiles
 @dirrm share/apps/libkdcraw
 @dirrm share/apps/kruler/sounds
@@ -527,8 +529,6 @@ share/kde4/servicetypes/okularGenerator.desktop
 @dirrm share/apps/kipi
 @dirrm share/apps/kgamma/pics
 @dirrm share/apps/kgamma
-@dirrm share/apps/libkexiv2/data
-@dirrm share/apps/libkexiv2
 @dirrm share/apps/gwenview/fullscreenthemes/blackglass
 @dirrm share/apps/gwenview/fullscreenthemes
 @dirrm share/apps/gwenview/cursors

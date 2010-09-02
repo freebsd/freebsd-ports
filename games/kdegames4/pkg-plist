@@ -158,6 +158,7 @@ lib/kde4/palathumbcreator.so
 lib/libiris_ksirk.so
 lib/libiris_ksirk.so.2
 lib/libiris_ksirk.so.2.0.0
+lib/libkcardgame.so
 lib/libkdegames.so
 lib/libkdegames.so.5
 lib/libkdegames.so.5.0.0
@@ -319,6 +320,9 @@ share/apps/carddecks/svg-nicu-white/AUTHORS
 share/apps/carddecks/svg-nicu-white/COPYING
 share/apps/carddecks/svg-nicu-white/index.desktop
 share/apps/carddecks/svg-nicu-white/white.svgz
+share/apps/carddecks/svg-oxygen-air/11.png
+share/apps/carddecks/svg-oxygen-air/index.desktop
+share/apps/carddecks/svg-oxygen-air/oxygen-air.svgz
 share/apps/carddecks/svg-oxygen-white/11.png
 share/apps/carddecks/svg-oxygen-white/index.desktop
 share/apps/carddecks/svg-oxygen-white/oxygen-white.svgz
@@ -452,6 +456,9 @@ share/apps/granatier/themes/clanbomber_preview.png
 share/apps/granatier/themes/granatier.desktop
 share/apps/granatier/themes/granatier.svgz
 share/apps/granatier/themes/granatier_preview.png
+share/apps/granatier/themes/waterbomb.desktop
+share/apps/granatier/themes/waterbomb.svgz
+share/apps/granatier/themes/waterbomb_preview.png
 share/apps/kapman/defaultmaze.xml
 share/apps/kapman/kapmanui.rc
 share/apps/kapman/themes/invisible.desktop
@@ -491,12 +498,12 @@ share/apps/kblocks/themes/oxygen.desktop
 share/apps/kblocks/themes/oxygen.svg
 share/apps/kblocks/themes/oxygen_preview.png
 share/apps/kbounce/kbounceui.rc
-share/apps/kbounce/sounds/death.au
-share/apps/kbounce/sounds/reflect.au
-share/apps/kbounce/sounds/seconds.au
-share/apps/kbounce/sounds/timeout.au
-share/apps/kbounce/sounds/wallend.au
-share/apps/kbounce/sounds/wallstart.au
+share/apps/kbounce/sounds/death.wav
+share/apps/kbounce/sounds/reflect.wav
+share/apps/kbounce/sounds/seconds.wav
+share/apps/kbounce/sounds/timeout.wav
+share/apps/kbounce/sounds/wallend.wav
+share/apps/kbounce/sounds/wallstart.wav
 share/apps/kbounce/themes/default.desktop
 share/apps/kbounce/themes/egyptian_bounce.png
 share/apps/kbounce/themes/egyptian_bounce.svgz
@@ -566,6 +573,7 @@ share/apps/kgoldrunner/system/game_MAZ.txt
 share/apps/kgoldrunner/system/game_cnt.txt
 share/apps/kgoldrunner/system/game_ende.txt
 share/apps/kgoldrunner/system/game_kgr.txt
+share/apps/kgoldrunner/system/game_lars.txt
 share/apps/kgoldrunner/system/game_plws.txt
 share/apps/kgoldrunner/system/game_plwv.txt
 share/apps/kgoldrunner/system/game_sot.txt
@@ -890,20 +898,31 @@ share/apps/kollision/sounds/you_lose.ogg
 share/apps/konquest/konquestui.rc
 share/apps/konquest/pics/default_theme.svgz
 share/apps/konquest/pics/konquest-splash.png
-share/apps/kpat/demos/demo_1.png
-share/apps/kpat/demos/demo_10.png
-share/apps/kpat/demos/demo_11.png
-share/apps/kpat/demos/demo_12.png
-share/apps/kpat/demos/demo_17.png
-share/apps/kpat/demos/demo_18.png
-share/apps/kpat/demos/demo_2.png
-share/apps/kpat/demos/demo_3.png
-share/apps/kpat/demos/demo_5.png
-share/apps/kpat/demos/demo_7.png
-share/apps/kpat/demos/demo_8.png
-share/apps/kpat/demos/demo_9.png
 share/apps/kpat/kpatui.rc
-share/apps/kpat/theme.svgz
+share/apps/kpat/previews/1.png
+share/apps/kpat/previews/10.png
+share/apps/kpat/previews/11.png
+share/apps/kpat/previews/12.png
+share/apps/kpat/previews/17.png
+share/apps/kpat/previews/18.png
+share/apps/kpat/previews/2.png
+share/apps/kpat/previews/3.png
+share/apps/kpat/previews/5.png
+share/apps/kpat/previews/7.png
+share/apps/kpat/previews/8.png
+share/apps/kpat/previews/9.png
+share/apps/kpat/themes/ancientegypt.desktop
+share/apps/kpat/themes/ancientegypt.png
+share/apps/kpat/themes/ancientegypt.svgz
+share/apps/kpat/themes/cleangreen.desktop
+share/apps/kpat/themes/cleangreen.png
+share/apps/kpat/themes/cleangreen.svgz
+share/apps/kpat/themes/greenblaze.desktop
+share/apps/kpat/themes/greenblaze.png
+share/apps/kpat/themes/greenblaze.svgz
+share/apps/kpat/themes/oldertheme.desktop
+share/apps/kpat/themes/oldertheme.png
+share/apps/kpat/themes/oldertheme.svgz
 share/apps/kreversi/kreversi.notifyrc
 share/apps/kreversi/kreversiui.rc
 share/apps/kreversi/pics/default_theme.svgz
@@ -1077,6 +1096,9 @@ share/apps/ktron/themes/neon.desktop
 share/apps/ktron/themes/neon.png
 share/apps/ktron/themes/neon.svg
 share/apps/ktuberling/ktuberlingui.rc
+share/apps/ktuberling/pics/butterflies.desktop
+share/apps/ktuberling/pics/butterflies.svgz
+share/apps/ktuberling/pics/butterflies.theme
 share/apps/ktuberling/pics/christmas.desktop
 share/apps/ktuberling/pics/christmas.svgz
 share/apps/ktuberling/pics/christmas.theme
@@ -1098,6 +1120,9 @@ share/apps/ktuberling/pics/potato-game.theme
 share/apps/ktuberling/pics/robin-tux.desktop
 share/apps/ktuberling/pics/robin-tux.svgz
 share/apps/ktuberling/pics/robin-tux.theme
+share/apps/ktuberling/pics/robot_workshop.desktop
+share/apps/ktuberling/pics/robot_workshop.svgz
+share/apps/ktuberling/pics/robot_workshop.theme
 share/apps/ktuberling/pics/train_valley.desktop
 share/apps/ktuberling/pics/train_valley.svgz
 share/apps/ktuberling/pics/train_valley.theme
@@ -1215,11 +1240,16 @@ share/apps/palapeli/backgrounds/Time-For-Lunch-2.jpg
 share/apps/palapeli/backgrounds/background.svg
 share/apps/palapeli/backgrounds/gon-defends-the-critters-1.jpg
 share/apps/palapeli/backgrounds/mahogany-handjob-1.jpg
-share/apps/palapeli/collection/castle-maintenon.puzzle
-share/apps/palapeli/collection/cincinnati-bridge.puzzle
-share/apps/palapeli/collection/citrus-fruits.puzzle
-share/apps/palapeli/collection/european-honey-bee.puzzle
-share/apps/palapeli/collection/panther-chameleon-female.puzzle
+share/apps/palapeli/collection/castle-maintenon.desktop
+share/apps/palapeli/collection/castle-maintenon.jpg
+share/apps/palapeli/collection/cincinnati-bridge.desktop
+share/apps/palapeli/collection/cincinnati-bridge.jpg
+share/apps/palapeli/collection/citrus-fruits.desktop
+share/apps/palapeli/collection/citrus-fruits.jpg
+share/apps/palapeli/collection/european-honey-bee.desktop
+share/apps/palapeli/collection/european-honey-bee.jpg
+share/apps/palapeli/collection/panther-chameleon-female.desktop
+share/apps/palapeli/collection/panther-chameleon-female.jpg
 share/apps/palapeli/palapeli-collectionui.rc
 share/apps/palapeli/palapeli-puzzletableui.rc
 share/apps/palapeli/palapeli.kcfg
@@ -1233,6 +1263,7 @@ share/config.kcfg/killbots.kcfg
 share/config.kcfg/kjumpingcube.kcfg
 share/config.kcfg/klines.kcfg
 share/config.kcfg/kmahjongg.kcfg
+share/config.kcfg/kpat.kcfg
 share/config.kcfg/kshisen.kcfg
 share/config.kcfg/ksirksettings.kcfg
 share/config.kcfg/ksirkskineditorsettings.kcfg
@@ -1242,11 +1273,13 @@ share/config.kcfg/ktron.kcfg
 share/config.kcfg/kwin4.kcfg
 share/config/katomic.knsrc
 share/config/kblocks.knsrc
+share/config/kcardtheme.knsrc
 share/config/kdiamond.knsrc
 share/config/kgoldrunner.knsrc
 share/config/kigo-games.knsrc
 share/config/kigo.knsrc
 share/config/kmines.knsrc
+share/config/kpat.knsrc
 share/config/ksirk.knsrc
 share/config/ksudokurc
 share/config/ktron.knsrc
@@ -1284,6 +1317,19 @@ share/doc/HTML/en/granatier/config_theme.png
 share/doc/HTML/en/granatier/granatier.png
 share/doc/HTML/en/granatier/index.cache.bz2
 share/doc/HTML/en/granatier/index.docbook
+share/doc/HTML/en/kajongg/common
+share/doc/HTML/en/kajongg/config_background.png
+share/doc/HTML/en/kajongg/config_play.png
+share/doc/HTML/en/kajongg/config_tiles.png
+share/doc/HTML/en/kajongg/differ.png
+share/doc/HTML/en/kajongg/enterhand.png
+share/doc/HTML/en/kajongg/explain.png
+share/doc/HTML/en/kajongg/gamescreen.png
+share/doc/HTML/en/kajongg/index.cache.bz2
+share/doc/HTML/en/kajongg/index.docbook
+share/doc/HTML/en/kajongg/penalty.png
+share/doc/HTML/en/kajongg/ruleseteditor.png
+share/doc/HTML/en/kajongg/scoretable.png
 share/doc/HTML/en/kapman/common
 share/doc/HTML/en/kapman/config.png
 share/doc/HTML/en/kapman/index.cache.bz2
@@ -1540,6 +1586,8 @@ share/icons/hicolor/128x128/apps/ktron.png
 share/icons/hicolor/128x128/apps/ktuberling.png
 share/icons/hicolor/128x128/apps/kubrick.png
 share/icons/hicolor/128x128/apps/lskat.png
+share/icons/hicolor/128x128/apps/palapeli.png
+share/icons/hicolor/128x128/mimetypes/application-x-palapeli.png
 share/icons/hicolor/128x128/mimetypes/application-x-tuberling.png
 share/icons/hicolor/16x16/apps/bovo.png
 share/icons/hicolor/16x16/apps/granatier.png
@@ -1577,6 +1625,8 @@ share/icons/hicolor/16x16/apps/ktron.png
 share/icons/hicolor/16x16/apps/ktuberling.png
 share/icons/hicolor/16x16/apps/kubrick.png
 share/icons/hicolor/16x16/apps/lskat.png
+share/icons/hicolor/16x16/apps/palapeli.png
+share/icons/hicolor/16x16/mimetypes/application-x-palapeli.png
 share/icons/hicolor/16x16/mimetypes/application-x-tuberling.png
 share/icons/hicolor/22x22/apps/bovo.png
 share/icons/hicolor/22x22/apps/granatier.png
@@ -1614,7 +1664,11 @@ share/icons/hicolor/22x22/apps/ktuberling.png
 share/icons/hicolor/22x22/apps/kubrick.png
 share/icons/hicolor/22x22/apps/lskat.png
 share/icons/hicolor/22x22/mimetypes/application-x-tuberling.png
+share/icons/hicolor/24x24/apps/kpat.png
+share/icons/hicolor/24x24/apps/palapeli.png
+share/icons/hicolor/24x24/mimetypes/application-x-palapeli.png
 share/icons/hicolor/256x256/apps/kdesnake.png
+share/icons/hicolor/256x256/apps/kpat.png
 share/icons/hicolor/32x32/apps/bomber.png
 share/icons/hicolor/32x32/apps/bovo.png
 share/icons/hicolor/32x32/apps/granatier.png
@@ -1652,6 +1706,8 @@ share/icons/hicolor/32x32/apps/ktron.png
 share/icons/hicolor/32x32/apps/ktuberling.png
 share/icons/hicolor/32x32/apps/kubrick.png
 share/icons/hicolor/32x32/apps/lskat.png
+share/icons/hicolor/32x32/apps/palapeli.png
+share/icons/hicolor/32x32/mimetypes/application-x-palapeli.png
 share/icons/hicolor/32x32/mimetypes/application-x-tuberling.png
 share/icons/hicolor/48x48/apps/bomber.png
 share/icons/hicolor/48x48/apps/bovo.png
@@ -1689,6 +1745,8 @@ share/icons/hicolor/48x48/apps/ktron.png
 share/icons/hicolor/48x48/apps/ktuberling.png
 share/icons/hicolor/48x48/apps/kubrick.png
 share/icons/hicolor/48x48/apps/lskat.png
+share/icons/hicolor/48x48/apps/palapeli.png
+share/icons/hicolor/48x48/mimetypes/application-x-palapeli.png
 share/icons/hicolor/48x48/mimetypes/application-x-tuberling.png
 share/icons/hicolor/64x64/apps/bomber.png
 share/icons/hicolor/64x64/apps/bovo.png
@@ -1726,6 +1784,8 @@ share/icons/hicolor/64x64/apps/ktron.png
 share/icons/hicolor/64x64/apps/ktuberling.png
 share/icons/hicolor/64x64/apps/kubrick.png
 share/icons/hicolor/64x64/apps/lskat.png
+share/icons/hicolor/64x64/apps/palapeli.png
+share/icons/hicolor/64x64/mimetypes/application-x-palapeli.png
 share/icons/hicolor/64x64/mimetypes/application-x-tuberling.png
 share/icons/hicolor/scalable/apps/bomber.svgz
 share/icons/hicolor/scalable/apps/bovo.svgz
@@ -1818,6 +1878,7 @@ share/sounds/kshisen/tile-touch.ogg
 @dirrm share/doc/HTML/en/kbattleship
 @dirrm share/doc/HTML/en/katomic
 @dirrm share/doc/HTML/en/kapman
+@dirrm share/doc/HTML/en/kajongg
 @dirrm share/doc/HTML/en/granatier
 @dirrm share/doc/HTML/en/bovo
 @dirrm share/doc/HTML/en/bomber
@@ -1875,7 +1936,8 @@ share/sounds/kshisen/tile-touch.ogg
 @dirrm share/apps/kreversi/sounds
 @dirrm share/apps/kreversi/pics
 @dirrm share/apps/kreversi
-@dirrm share/apps/kpat/demos
+@dirrm share/apps/kpat/themes
+@dirrm share/apps/kpat/previews
 @dirrm share/apps/kpat
 @dirrm share/apps/konquest/pics
 @dirrm share/apps/konquest
@@ -1953,6 +2015,7 @@ share/sounds/kshisen/tile-touch.ogg
 @dirrm share/apps/carddecks/svg-standard
 @dirrm share/apps/carddecks/svg-penguins
 @dirrm share/apps/carddecks/svg-oxygen-white
+@dirrm share/apps/carddecks/svg-oxygen-air
 @dirrm share/apps/carddecks/svg-oxygen
 @dirrm share/apps/carddecks/svg-nicu-white
 @dirrm share/apps/carddecks/svg-nicu-ornamental

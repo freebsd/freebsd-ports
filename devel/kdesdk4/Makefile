@@ -14,7 +14,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Development Kit
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ltdl.h:${PORTSDIR}/devel/libltdl22
+BUILD_DEPENDS=	${LOCALBASE}/include/ltdl.h:${PORTSDIR}/devel/libltdl22 \
+		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
@@ -22,9 +23,11 @@ LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion \
 
 LATEST_LINK=	${PORTNAME}4
 
+CONFLICTS=	kdebase-4.4.[1-5]
+
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier \
-		automoc4 akonadi
+		automoc4 akonadi kdebase
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	network gui svg qt3support \
@@ -33,6 +36,8 @@ QT_COMPONENTS=	network gui svg qt3support \
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
+
+OPTIONS+=	ANTLR	"Support for po2xml and swappo tools"	OFF
 
 MAN1=	adddebug.1 \
 	cervisia.1 \
@@ -59,5 +64,16 @@ MAN1=	adddebug.1 \
 	transxx.1 \
 	xml2pot.1 \
 	zonetab2pot.py.1
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_ANTLR)
+BUILD_DEPENDS+=	antlr:${PORTSDIR}/devel/antlr
+RUN_DEPENDS+=	antlr:${PORTSDIR}/devel/antlr
+PLIST_SUB+=	ANTLR=""
+.else
+CMAKE_ARGS+=	-DWITH_Antlr2:BOOL=off
+PLIST_SUB+=	ANTLR="@comment "
+.endif
 
 .include <bsd.port.mk>

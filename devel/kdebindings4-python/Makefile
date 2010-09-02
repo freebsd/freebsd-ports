@@ -11,6 +11,7 @@ CATEGORIES=	devel kde
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	-python
 DISTFILES=	# none
+UNIQUENAME?=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Meta port of Python bindings for KDE

@@ -8,7 +8,6 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -19,7 +18,10 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libhspell.a:${PORTSDIR}/hebrew/hspell \
-		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies
+		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies \
+		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
+		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+
 LIB_DEPENDS=	searchclient:${PORTSDIR}/deskutils/strigi \
 		soprano.4:${PORTSDIR}/textproc/soprano \
 		IlmImf:${PORTSDIR}/graphics/OpenEXR \
@@ -36,7 +38,8 @@ LIB_DEPENDS=	searchclient:${PORTSDIR}/deskutils/strigi \
 		qca.2:${PORTSDIR}/devel/qca \
 		attica.0:${PORTSDIR}/x11-toolkits/attica \
 		polkit-qt-core.0:${PORTSDIR}/sysutils/policykit-qt \
-		smbclient.0:${PORTSDIR}/net/samba-libsmbclient
+		smbclient.0:${PORTSDIR}/net/samba-libsmbclient \
+		dbusmenu-qt.2:${PORTSDIR}/devel/libdbusmenu-qt
 
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		${LOCALBASE}/share/ontology/core/rdf.ontology:${PORTSDIR}/x11-toolkits/shared-desktop-ontologies \
@@ -99,7 +102,7 @@ LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
+	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
 		${PATCH_WRKSRC}/kde3support/kdeui/k3sconfig.cpp \
 		${PATCH_WRKSRC}/kdecore/network/k3socks.cpp \
 		${PATCH_WRKSRC}/kdecore/kernel/kstandarddirs.cpp \

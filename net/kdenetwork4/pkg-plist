@@ -83,7 +83,7 @@ lib/browser_plugins/skypebuttons.so
 lib/kde4/fileshare_propsdlgplugin.so
 lib/kde4/kcm_fileshare.so
 lib/kde4/kcm_kcmsambaconf.so
-%%BTCORE%%lib/kde4/kcm_kget_bittorrentfactory.so
+lib/kde4/kcm_kget_bittorrentfactory.so
 lib/kde4/kcm_kget_checksumsearchfactory.so
 lib/kde4/kcm_kget_contentfetchfactory.so
 lib/kde4/kcm_kget_metalinkfactory.so
@@ -112,14 +112,14 @@ lib/kde4/kcm_kopete_webpresence.so
 lib/kde4/kcm_krdc_rdpplugin.so
 lib/kde4/kcm_krdc_vncplugin.so
 lib/kde4/kded_dnssdwatcher.so
-%%BTCORE%%lib/kde4/kget_bittorrentfactory.so
+lib/kde4/kget_bittorrentfactory.so
+lib/kde4/kget_browser_integration.so
 lib/kde4/kget_checksumsearchfactory.so
 lib/kde4/kget_contentfetchfactory.so
 lib/kde4/kget_kiofactory.so
 lib/kde4/kget_metalinkfactory.so
 lib/kde4/kget_mirrorsearchfactory.so
 lib/kde4/kget_multisegkiofactory.so
-lib/kde4/khtml_kget.so
 lib/kde4/kio_zeroconf.so
 lib/kde4/kopete_addbookmarks.so
 lib/kde4/kopete_aim.so
@@ -213,6 +213,7 @@ share/applications/kde4/kopete.desktop
 %%KPPP%%share/applications/kde4/kppplogview.desktop
 share/applications/kde4/krdc.desktop
 share/applications/kde4/krfb.desktop
+share/apps/dolphinpart/kpartplugins/kget_plug_in.rc
 share/apps/kconf_update/kopete-account-0.10.pl
 share/apps/kconf_update/kopete-account-kconf_update.sh
 share/apps/kconf_update/kopete-account-kconf_update.upd
@@ -1204,7 +1205,7 @@ share/apps/krdc/pics/pointcursor.png
 share/apps/krdc/pics/pointcursormask.png
 share/apps/krdc_rfb_approver/krdc_rfb_approver.notifyrc
 share/apps/krfb/krfb.notifyrc
-%%WEBKIT%%share/apps/kwebkitpart/kpartplugins/kget_plug_in.rc
+share/apps/kwebkitpart/kpartplugins/kget_plug_in.rc
 share/apps/remoteview/zeroconf.desktop
 share/config.kcfg/historyconfig.kcfg
 share/config.kcfg/kget.kcfg
@@ -1232,7 +1233,6 @@ share/dbus-1/services/org.freedesktop.Telepathy.Client.krdc_rfb_handler.service
 share/dbus-1/services/org.kde.kget.service
 share/doc/HTML/en/kget/common
 share/doc/HTML/en/kget/file.png
-share/doc/HTML/en/kget/fileopen.png
 share/doc/HTML/en/kget/import_link.png
 share/doc/HTML/en/kget/index.cache.bz2
 share/doc/HTML/en/kget/index.docbook
@@ -1300,15 +1300,12 @@ share/doc/HTML/en/krdc/view-restore.png
 share/doc/HTML/en/krdc/vnc_host_configuration.png
 share/doc/HTML/en/krdc/vnc_preferences.png
 share/doc/HTML/en/krfb/common
-share/doc/HTML/en/krfb/configuration_access.png
 share/doc/HTML/en/krfb/configuration_network.png
 share/doc/HTML/en/krfb/configuration_security.png
-share/doc/HTML/en/krfb/configuration_session.png
 share/doc/HTML/en/krfb/connection.png
 share/doc/HTML/en/krfb/email_invitation.png
 share/doc/HTML/en/krfb/index.cache.bz2
 share/doc/HTML/en/krfb/index.docbook
-share/doc/HTML/en/krfb/invitation_management.png
 share/doc/HTML/en/krfb/personal_invitation.png
 share/doc/HTML/en/krfb/screenshot.png
 share/icons/hicolor/128x128/apps/kget.png
@@ -1417,8 +1414,8 @@ share/kde4/services/kconfiguredialog/kopete_translator_config.desktop
 share/kde4/services/kconfiguredialog/kopete_urlpicpreview_config.desktop
 share/kde4/services/kconfiguredialog/kopete_webpresence_config.desktop
 share/kde4/services/kded/dnssdwatcher.desktop
-%%BTCORE%%share/kde4/services/kget_bittorrentfactory.desktop
-%%BTCORE%%share/kde4/services/kget_bittorrentfactory_config.desktop
+share/kde4/services/kget_bittorrentfactory.desktop
+share/kde4/services/kget_bittorrentfactory_config.desktop
 share/kde4/services/kget_checksumsearchfactory.desktop
 share/kde4/services/kget_checksumsearchfactory_config.desktop
 share/kde4/services/kget_contentfetchfactory.desktop
@@ -1503,8 +1500,8 @@ share/telepathy/clients/krdc_rfb_handler.client
 %%KPPP%%@dirrm share/doc/HTML/en/kppp
 @dirrm share/doc/HTML/en/kopete
 @dirrm share/doc/HTML/en/kget
-%%WEBKIT%%@dirrmtry share/apps/kwebkitpart/kpartplugins
-%%WEBKIT%%@dirrmtry share/apps/kwebkitpart
+@dirrmtry share/apps/kwebkitpart/kpartplugins
+@dirrmtry share/apps/kwebkitpart
 @dirrm share/apps/krfb
 @dirrm share/apps/krdc_rfb_approver
 @dirrm share/apps/krdc/pics

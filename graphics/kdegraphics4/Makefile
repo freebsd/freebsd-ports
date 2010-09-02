@@ -6,7 +6,6 @@
 
 PORTNAME=	kdegraphics
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -15,7 +14,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Graphics utilities for the KDE4 integrated X11 desktop
 
-BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX-base \
+		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype.9:${PORTSDIR}/print/freetype2 \

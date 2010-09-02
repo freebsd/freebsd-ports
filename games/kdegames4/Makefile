@@ -14,6 +14,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Games for the KDE integrated X11 desktop
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	ggzcore.9:${PORTSDIR}/games/ggz-client-libs \
 		qca.2:${PORTSDIR}/devel/qca
 

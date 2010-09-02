@@ -14,7 +14,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Collection of entertaining, educational programs for KDE
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/facile/facile.a:${PORTSDIR}/math/facile \
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml \
+		${LOCALBASE}/lib/ocaml/facile/facile.a:${PORTSDIR}/math/facile \
 		eigen>=2.0.b3:${PORTSDIR}/math/eigen2 \
 		gmm++>=3.0.4:${PORTSDIR}/math/gmm++ \
 		xplanet:${PORTSDIR}/astro/xplanet
@@ -37,7 +38,7 @@ QT_COMPONENTS=	gui svg qmake_build moc_build rcc_build uic_build
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
 USE_PYTHON=	yes
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		kalzium.1 \
 		kbruch.1 \
@@ -63,5 +64,7 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/bin/marble:${PORTSDIR}/astro/marble
 pre-configure:
 	${REINPLACE_CMD} -e '/macro_optional_add_subdirectory(marble)/d' \
 		${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e '/macro_optional_find_package(Avogadro 1.0.0)/d' \
+		${WRKSRC}/kalzium/KalziumConfigureChecks.cmake
 
 .include <bsd.port.mk>

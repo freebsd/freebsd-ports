@@ -59,35 +59,15 @@ include/libkiten/EntryList.h
 include/libkiten/HistoryPtrList.h
 include/libkiten/kromajiedit.h
 include/libkiten/libkitenexport.h
-lib/avogadro-kalzium/colors/libchargecolor.so
-lib/avogadro-kalzium/colors/libdistancecolor.so
-lib/avogadro-kalzium/colors/libindexcolor.so
-lib/avogadro-kalzium/colors/libresiduecolor.so
-lib/avogadro-kalzium/engines/libaxesengine.so
-lib/avogadro-kalzium/engines/libcartoonengine.so
-lib/avogadro-kalzium/engines/libdipoleengine.so
-lib/avogadro-kalzium/engines/libforceengine.so
-lib/avogadro-kalzium/engines/libhbondengine.so
-lib/avogadro-kalzium/engines/liblabelengine.so
-lib/avogadro-kalzium/engines/liborbitalengine.so
-lib/avogadro-kalzium/engines/liboverlayengine.so
-lib/avogadro-kalzium/engines/libpolygonengine.so
-lib/avogadro-kalzium/engines/libribbonengine.so
-lib/avogadro-kalzium/engines/libringengine.so
-lib/avogadro-kalzium/engines/libsimplewireengine.so
-lib/avogadro-kalzium/engines/libsphereengine.so
-lib/avogadro-kalzium/engines/libstickengine.so
-lib/avogadro-kalzium/engines/libsurfaceengine.so
-lib/avogadro-kalzium/engines/libwireengine.so
-lib/avogadro-kalzium/tools/libaligntool.so
-lib/avogadro-kalzium/tools/libautoopttool.so
-lib/avogadro-kalzium/tools/libautorotatetool.so
-lib/avogadro-kalzium/tools/libbondcentrictool.so
-lib/avogadro-kalzium/tools/libclickmeasuretool.so
-lib/avogadro-kalzium/tools/libdrawtool.so
-lib/avogadro-kalzium/tools/libmanipulatetool.so
-lib/avogadro-kalzium/tools/libnavigatetool.so
-lib/avogadro-kalzium/tools/libselectrotatetool.so
+include/rocs/DynamicPropertiesList.h
+include/rocs/edge.h
+include/rocs/graph.h
+include/rocs/graphDocument.h
+include/rocs/graphGroups.h
+include/rocs/krossBackend.h
+include/rocs/node.h
+include/rocs/qtScriptBackend.h
+include/rocs/threadDocument.h
 lib/kde4/cantor_creatematrixassistant.so
 lib/kde4/cantor_differentiateassistant.so
 lib/kde4/cantor_eigenvaluesassistant.so
@@ -113,7 +93,8 @@ lib/kde4/plasma_applet_kalgebra.so
 lib/kde4/plasma_applet_parley.so
 lib/kde4/plasma_engine_kalzium.so
 lib/kde4/plasma_engine_parley.so
-lib/kde4/plugins/designer/kalziumuiwidgets.so
+lib/kde4/rocs_makecompleteplugin.so
+lib/kde4/rocs_plaintxt.so
 lib/libSatLib.so
 lib/libSatLib.so.5
 lib/libSatLib.so.5.0.1
@@ -123,16 +104,10 @@ lib/libanalitza.so.5.0.1
 lib/libanalitzagui.so
 lib/libanalitzagui.so.5
 lib/libanalitzagui.so.5.0.1
-lib/libavogadro-kalzium.so
-lib/libavogadro-kalzium.so.0
-lib/libavogadro-kalzium.so.0.9.3
 lib/libcantor_config.so
 lib/libcantorlibs.so
-lib/libcantorlibs.so.0.0.1
+lib/libcantorlibs.so.0.0.2
 lib/libcantorlibs.so.1
-lib/libcompoundviewer.so
-lib/libcompoundviewer.so.5
-lib/libcompoundviewer.so.5.0.1
 lib/libhtmesh.a
 lib/libkdeeduui.so
 lib/libkdeeduui.so.5
@@ -143,6 +118,9 @@ lib/libkeduvocdocument.so.5.0.1
 lib/libkiten.so
 lib/libkiten.so.5
 lib/libkiten.so.5.0.1
+lib/librocslib.so
+lib/librocslib.so.5
+lib/librocslib.so.5.0.1
 lib/libscience.so
 lib/libscience.so.5
 lib/libscience.so.5.0.1
@@ -182,6 +160,7 @@ share/apps/cantor/cantor_invert_matrix_assistant.rc
 share/apps/cantor/cantor_plot2d_assistant.rc
 share/apps/cantor/cantor_plot3d_assistant.rc
 share/apps/cantor/cantor_runscript_assistant.rc
+share/apps/cantor/cantor_scripteditor.rc
 share/apps/cantor/cantor_shell.rc
 share/apps/cantor/cantor_solve_assistant.rc
 share/apps/cantorpart/cantor_part.rc
@@ -520,6 +499,7 @@ share/apps/kanagram/images/kanagram.svg
 share/apps/kanagram/sounds/chalk.ogg
 share/apps/kanagram/sounds/right.ogg
 share/apps/kanagram/sounds/wrong.ogg
+share/apps/katepart/syntax/kalgebra.xml
 share/apps/katepart/syntax/python-kig.xml
 share/apps/kbruch/AppMenuWidgetui.rc
 share/apps/kbruch/FractionRingWidgetui.rc
@@ -2456,6 +2436,7 @@ share/apps/parley/icons/oxygen/16x16/actions/list-remove-card.png
 share/apps/parley/icons/oxygen/16x16/actions/multiple-choice.png
 share/apps/parley/icons/oxygen/16x16/actions/practice-setup.png
 share/apps/parley/icons/oxygen/16x16/actions/practice-start.png
+share/apps/parley/icons/oxygen/16x16/actions/practice-stop.png
 share/apps/parley/icons/oxygen/16x16/actions/remove-duplicates.png
 share/apps/parley/icons/oxygen/16x16/actions/set-language.png
 share/apps/parley/icons/oxygen/22x22/actions/advanced-setup.png
@@ -2470,6 +2451,7 @@ share/apps/parley/icons/oxygen/22x22/actions/list-remove-card.png
 share/apps/parley/icons/oxygen/22x22/actions/multiple-choice.png
 share/apps/parley/icons/oxygen/22x22/actions/practice-setup.png
 share/apps/parley/icons/oxygen/22x22/actions/practice-start.png
+share/apps/parley/icons/oxygen/22x22/actions/practice-stop.png
 share/apps/parley/icons/oxygen/22x22/actions/remove-duplicates.png
 share/apps/parley/icons/oxygen/22x22/actions/set-language.png
 share/apps/parley/icons/oxygen/32x32/actions/advanced-setup.png
@@ -2484,6 +2466,7 @@ share/apps/parley/icons/oxygen/32x32/actions/list-remove-card.png
 share/apps/parley/icons/oxygen/32x32/actions/multiple-choice.png
 share/apps/parley/icons/oxygen/32x32/actions/practice-setup.png
 share/apps/parley/icons/oxygen/32x32/actions/practice-start.png
+share/apps/parley/icons/oxygen/32x32/actions/practice-stop.png
 share/apps/parley/icons/oxygen/32x32/actions/remove-duplicates.png
 share/apps/parley/icons/oxygen/32x32/actions/set-language.png
 share/apps/parley/icons/oxygen/48x48/actions/advanced-setup.png
@@ -2499,6 +2482,7 @@ share/apps/parley/icons/oxygen/48x48/actions/multiple-choice.png
 share/apps/parley/icons/oxygen/48x48/actions/parley-no-text.png
 share/apps/parley/icons/oxygen/48x48/actions/practice-setup.png
 share/apps/parley/icons/oxygen/48x48/actions/practice-start.png
+share/apps/parley/icons/oxygen/48x48/actions/practice-stop.png
 share/apps/parley/icons/oxygen/48x48/actions/remove-duplicates.png
 share/apps/parley/icons/oxygen/48x48/actions/set-language.png
 share/apps/parley/icons/oxygen/scalable/actions/advanced-setup.svgz
@@ -2541,9 +2525,20 @@ share/apps/parley/plugins/mwclient/simplejson/jsonfilter.py
 share/apps/parley/plugins/mwclient/simplejson/scanner.py
 share/apps/parley/plugins/wiktionary_sound.desktop
 share/apps/parley/plugins/wiktionary_sound.py
+share/apps/parley/practicesummaryui.rc
+share/apps/parley/practiceui.rc
+share/apps/parley/statisticsui.rc
+share/apps/parley/themes/bees_theme.desktop
+share/apps/parley/themes/bees_theme.svgz
+share/apps/parley/themes/bees_theme_preview.jpg
+share/apps/parley/themes/theme_reference.desktop
+share/apps/parley/themes/theme_reference.svgz
+share/apps/parley/themes/theme_reference_preview.jpg
 share/apps/parley/tips
+share/apps/parley/welcomescreenui.rc
 share/apps/parley/xslt/flashcards.xsl
 share/apps/parley/xslt/table.xsl
+share/apps/rocs/iconpacks/default.svg
 share/apps/rocs/rocsui.rc
 share/apps/step/examples/brownian.step
 share/apps/step/examples/doublependulum.step
@@ -2562,17 +2557,23 @@ share/apps/step/examples/softbody.step
 share/apps/step/examples/solar.step
 share/apps/step/examples/springs.step
 share/apps/step/examples/wave.step
+share/apps/step/objinfo/Anchor.html
 share/apps/step/objinfo/Box.html
 share/apps/step/objinfo/ChargedParticle.html
+share/apps/step/objinfo/CoulombForce.html
 share/apps/step/objinfo/Disk.html
 share/apps/step/objinfo/Gas.html
 share/apps/step/objinfo/GasLJForce.html
 share/apps/step/objinfo/GasParticle.html
+share/apps/step/objinfo/GravitationForce.html
+share/apps/step/objinfo/LinearMotor.html
 share/apps/step/objinfo/Meter.html
 share/apps/step/objinfo/Note.html
 share/apps/step/objinfo/Particle.html
+share/apps/step/objinfo/Pin.html
 share/apps/step/objinfo/Polygon.html
 share/apps/step/objinfo/Spring.html
+share/apps/step/objinfo/WeightForce.html
 share/apps/step/objinfo/World.html
 share/apps/step/stepui.rc
 share/apps/step/tutorials/tutorial1.step
@@ -2610,7 +2611,9 @@ share/config/kanagram.knsrc
 share/config/khangman.knsrc
 share/config/klettres.knsrc
 share/config/kstars.knsrc
+share/config/kturtle.knsrc
 share/config/kwordquiz.knsrc
+share/config/parley-themes.knsrc
 share/config/parley.knsrc
 share/config/step.knsrc
 share/dbus-1/interfaces/org.kde.kmplot.KmPlot.xml
@@ -2941,60 +2944,82 @@ share/doc/HTML/en/kwordquiz/kwq-editor.png
 share/doc/HTML/en/kwordquiz/kwq-flashcard.png
 share/doc/HTML/en/kwordquiz/kwq-multiple.png
 share/doc/HTML/en/kwordquiz/kwq-qanda.png
-share/doc/HTML/en/parley/art-query-dlg.png
+share/doc/HTML/en/parley/800px-Parley_mixed_letters_0-9-4_001.png
+share/doc/HTML/en/parley/Configure_blocking.png
+share/doc/HTML/en/parley/Configure_practice.png
+share/doc/HTML/en/parley/Configure_practice_conjugation.png
+share/doc/HTML/en/parley/Folder_with_sound_and_pictures.png
+share/doc/HTML/en/parley/Parley_articles_and_gender_0-9-4_001.png
+share/doc/HTML/en/parley/Parley_articles_and_gender_0-9-4_002.png
+share/doc/HTML/en/parley/Parley_articles_and_gender_0-9-4_003.png
+share/doc/HTML/en/parley/Parley_comparison_eng-deu_0-9-4_002.png
+share/doc/HTML/en/parley/Parley_comparison_eng-deu_0-9-4_003.png
+share/doc/HTML/en/parley/Parley_configure_advanced.png
+share/doc/HTML/en/parley/Parley_configure_parley_0-9-4_001.png
+share/doc/HTML/en/parley/Parley_configure_parley_0-9-4_002.png
+share/doc/HTML/en/parley/Parley_configure_parley_0-9-4_003.png
+share/doc/HTML/en/parley/Parley_configure_parley_0-9-4_004.png
+share/doc/HTML/en/parley/Parley_configure_thresholds.png
+share/doc/HTML/en/parley/Parley_create_new_exercise_collective_names1.png
+share/doc/HTML/en/parley/Parley_create_new_exercise_collective_names10.png
+share/doc/HTML/en/parley/Parley_create_new_exercise_collective_names1_1.png
+share/doc/HTML/en/parley/Parley_create_new_exercise_collective_names4.png
+share/doc/HTML/en/parley/Parley_create_new_exercise_collective_names5.png
+share/doc/HTML/en/parley/Parley_create_new_exercise_collective_names7.png
+share/doc/HTML/en/parley/Parley_create_new_exercise_collective_names8.png
+share/doc/HTML/en/parley/Parley_document_properties.png
+share/doc/HTML/en/parley/Parley_edit_comparison_form_1.png
+share/doc/HTML/en/parley/Parley_edit_comparison_form_2.png
+share/doc/HTML/en/parley/Parley_edit_comparison_form_3.png
+share/doc/HTML/en/parley/Parley_edit_conjugation_1.png
+share/doc/HTML/en/parley/Parley_edit_conjugation_2.png
+share/doc/HTML/en/parley/Parley_edit_main.png
+share/doc/HTML/en/parley/Parley_file_select_dialog_0-9-4.png
+share/doc/HTML/en/parley/Parley_get_new_stuff_0-9-4_001.png
+share/doc/HTML/en/parley/Parley_initial_screen_0-9-4.png
+share/doc/HTML/en/parley/Parley_mixed_letters_0-9-4_001.png
+share/doc/HTML/en/parley/Parley_mixed_letters_0-9-4_002.png
+share/doc/HTML/en/parley/Parley_mixed_letters_0-9-4_003.png
+share/doc/HTML/en/parley/Parley_mixed_letters_0-9-4_004.png
+share/doc/HTML/en/parley/Parley_multiple_choice_0-9-4_001.png
+share/doc/HTML/en/parley/Parley_multiple_choice_0-9-4_002.png
+share/doc/HTML/en/parley/Parley_multiple_choice_0-9-4_003.png
+share/doc/HTML/en/parley/Parley_new_document_lang_articles.png
+share/doc/HTML/en/parley/Parley_new_document_lang_general.png
+share/doc/HTML/en/parley/Parley_new_document_lang_personalpronouns.png
+share/doc/HTML/en/parley/Parley_new_document_lang_tenses.png
+share/doc/HTML/en/parley/Parley_new_lesson1.png
+share/doc/HTML/en/parley/Parley_new_lesson2.png
+share/doc/HTML/en/parley/Parley_practice_bees.png
+share/doc/HTML/en/parley/Parley_practice_conjugation.png
+share/doc/HTML/en/parley/Parley_practice_fluffy.png
+share/doc/HTML/en/parley/Parley_practice_grey_flash.png
+share/doc/HTML/en/parley/Parley_practice_grey_flash_solution.png
+share/doc/HTML/en/parley/Parley_practice_grey_written.png
+share/doc/HTML/en/parley/Parley_practice_grey_written_right.png
+share/doc/HTML/en/parley/Parley_practice_grey_written_wrong.png
+share/doc/HTML/en/parley/Parley_practice_icon_right.png
+share/doc/HTML/en/parley/Parley_practice_icon_wrong.png
+share/doc/HTML/en/parley/Parley_practice_summary.png
+share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_001.png
+share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_002.png
+share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_003.png
+share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_004.png
+share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_005.png
+share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_006.png
+share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_007.png
+share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_008.png
+share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_009.png
+share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_010.png
+share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_011.png
+share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_012.png
+share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_013.png
+share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_014.png
+share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_015.png
+share/doc/HTML/en/parley/Parley_welcome_screen.png
 share/doc/HTML/en/parley/common
-share/doc/HTML/en/parley/comp-query-dlg.png
-share/doc/HTML/en/parley/docprop1-dlg.png
-share/doc/HTML/en/parley/docprop2-dlg.png
-share/doc/HTML/en/parley/docprop6-dlg.png
-share/doc/HTML/en/parley/entry1-dlg.png
-share/doc/HTML/en/parley/entry2-dlg.png
-share/doc/HTML/en/parley/entry3-dlg.png
-share/doc/HTML/en/parley/entry4-dlg.png
-share/doc/HTML/en/parley/entry5-dlg.png
-share/doc/HTML/en/parley/entry6-dlg.png
-share/doc/HTML/en/parley/entry7-dlg.png
-share/doc/HTML/en/parley/get-new-stuff.png
 share/doc/HTML/en/parley/index.cache.bz2
 share/doc/HTML/en/parley/index.docbook
-share/doc/HTML/en/parley/lang1-dlg.png
-share/doc/HTML/en/parley/mainview.png
-share/doc/HTML/en/parley/mu-query-dlg.png
-share/doc/HTML/en/parley/options1-dlg.png
-share/doc/HTML/en/parley/options2-dlg.png
-share/doc/HTML/en/parley/options3-dlg.png
-share/doc/HTML/en/parley/options4-dlg.png
-share/doc/HTML/en/parley/options5-dlg.png
-share/doc/HTML/en/parley/options6-dlg.png
-share/doc/HTML/en/parley/options7-dlg.png
-share/doc/HTML/en/parley/parley-add-lesson.png
-share/doc/HTML/en/parley/parley-configure-practice-advanced-page-grammar.png
-share/doc/HTML/en/parley/parley-configure-practice-advanced-page.png
-share/doc/HTML/en/parley/parley-configure-practice-block-expire.png
-share/doc/HTML/en/parley/parley-configure-practice-threshold-page.png
-share/doc/HTML/en/parley/parley-configure-practice.png
-share/doc/HTML/en/parley/parley-download-basic-file-survival-training-selected.png
-share/doc/HTML/en/parley/parley-download-basic-file-survival-training-written-practice.png
-share/doc/HTML/en/parley/parley-download-basic-file.png
-share/doc/HTML/en/parley/parley-download-new.png
-share/doc/HTML/en/parley/parley-main-water.png
-share/doc/HTML/en/parley/parley-practice-multiple-choice.png
-share/doc/HTML/en/parley/parley-quick-start-first-start.png
-share/doc/HTML/en/parley/parley-search.png
-share/doc/HTML/en/parley/parley-show-lessons-in-test.png
-share/doc/HTML/en/parley/parley_first_start.png
-share/doc/HTML/en/parley/profiles.png
-share/doc/HTML/en/parley/pron-dlg.png
-share/doc/HTML/en/parley/query-dlg.png
-share/doc/HTML/en/parley/quick-1.png
-share/doc/HTML/en/parley/quick-2.png
-share/doc/HTML/en/parley/quick-3.png
-share/doc/HTML/en/parley/quick-4.png
-share/doc/HTML/en/parley/quick-5.png
-share/doc/HTML/en/parley/stat1-dlg.png
-share/doc/HTML/en/parley/stat2-dlg.png
-share/doc/HTML/en/parley/syn-query-dlg.png
-share/doc/HTML/en/parley/verb-query-dlg.png
 share/doc/HTML/en/rocs/common
 share/doc/HTML/en/rocs/index.cache.bz2
 share/doc/HTML/en/rocs/index.docbook
@@ -3230,12 +3255,17 @@ share/kde4/services/plasma-dataengine-kalzium.desktop
 share/kde4/services/plasma-dataengine-parley.desktop
 share/kde4/services/plasma_didyouknow.desktop
 share/kde4/services/plasma_parley.desktop
+share/kde4/services/rocs_makecompleteplugin.desktop
+share/kde4/services/rocs_plaintxtplugin.desktop
+share/kde4/servicetypes/RocsFilePlugin.desktop
+share/kde4/servicetypes/RocsToolsPlugin.desktop
 share/kde4/servicetypes/cantor_assistant.desktop
 share/kde4/servicetypes/cantor_backend.desktop
 @dirrm share/kde4/services/cantor
 @dirrm share/doc/HTML/en/step
 @dirrm share/doc/HTML/en/rocs
 @dirrm share/doc/HTML/en/parley
+@dirrm share/doc/HTML/en/marble
 @dirrm share/doc/HTML/en/kwordquiz
 @dirrm share/doc/HTML/en/kturtle
 @dirrm share/doc/HTML/en/ktouch
@@ -3256,8 +3286,10 @@ share/kde4/servicetypes/cantor_backend.desktop
 @dirrm share/apps/step/objinfo
 @dirrm share/apps/step/examples
 @dirrm share/apps/step
+@dirrm share/apps/rocs/iconpacks
 @dirrm share/apps/rocs
 @dirrm share/apps/parley/xslt
+@dirrm share/apps/parley/themes
 @dirrm share/apps/parley/plugins/mwclient/simplejson
 @dirrm share/apps/parley/plugins/mwclient
 @dirrm share/apps/parley/plugins
@@ -3443,9 +3475,6 @@ share/kde4/servicetypes/cantor_backend.desktop
 @dirrm share/apps/blinken/images
 @dirrm share/apps/blinken/fonts
 @dirrm share/apps/blinken
-@dirrm lib/avogadro-kalzium/tools
-@dirrm lib/avogadro-kalzium/engines
-@dirrm lib/avogadro-kalzium/colors
-@dirrm lib/avogadro-kalzium
+@dirrm include/rocs
 @dirrm include/libkiten
 @dirrm include/libkdeedu

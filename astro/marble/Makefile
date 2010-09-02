@@ -16,6 +16,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Virtual globe and world atlas for KDE
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	gps.19:${PORTSDIR}/astro/gpsd
 
 USE_BZIP2=	yes
@@ -25,7 +26,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 MD5_FILE=	${PORTSDIR}/misc/kdeedu4/distinfo
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/marble
 CMAKE_OUTSOURCE=	yes

@@ -6,7 +6,6 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -15,6 +14,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Multimedia applications
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia \
 		ogg.7:${PORTSDIR}/audio/libogg \
@@ -22,7 +22,8 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		tunepimp.5:${PORTSDIR}/audio/libtunepimp \
-		xine.1:${PORTSDIR}/multimedia/libxine
+		xine.1:${PORTSDIR}/multimedia/libxine \
+		swscale.1:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
 .if !defined(PACKAGE_BUILDING)
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame

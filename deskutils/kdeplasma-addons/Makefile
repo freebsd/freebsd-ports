@@ -38,7 +38,7 @@ OPTIONS=	MARBLE "Marble globe wallpaper for Plasma" on \
 .if defined(WITHOUT_MARBLE)
 PLIST_SUB+=	MARBLE="@comment "
 .else
-LIB_DEPENDS+=	marblewidget.5:${PORTSDIR}/astro/marble
+LIB_DEPENDS+=	marblewidget.10:${PORTSDIR}/astro/marble
 PLIST_SUB+=	MARBLE=""
 .endif
 
@@ -74,8 +74,7 @@ post-patch:
 .endif
 	#respect prefix, don't update mime when installing
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/d; /SharedMimeInfo/d' \
-		-e '/^set/s,DBUS_INTERFACES_INSTALL_DIR,KDE4_DBUS_INTERFACES_DIR,g' \
-		${WRKSRC}/applets/lancelot/app/src/CMakeLists.txt
+		${WRKSRC}/applets/lancelot/parts/CMakeLists.txt
 
 post-install:
 	@-update-mime-database ${PREFIX}/share/mime

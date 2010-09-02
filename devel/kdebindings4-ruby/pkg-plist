@@ -28,46 +28,55 @@ lib/libqtruby4shared.so.2.0.0
 %%RUBY_SITELIBDIR%%/akonadi/akonadi.rb
 %%RUBY_SITEARCHLIBDIR%%/akonadi.so
 %%RUBY_SITEARCHLIBDIR%%/khtml.so
+%%RUBY_SITEARCHLIBDIR%%/kio.so
 %%RUBY_SITEARCHLIBDIR%%/korundum4.so
 %%RUBY_SITEARCHLIBDIR%%/ktexteditor.so
 %%RUBY_SITEARCHLIBDIR%%/nepomuk.so
 %%RUBY_SITEARCHLIBDIR%%/okular.so
+%%RUBY_SITEARCHLIBDIR%%/phonon.so
 %%RUBY_SITEARCHLIBDIR%%/plasma_applet.so
+%%RUBY_SITEARCHLIBDIR%%/qscintilla.so
 %%RUBY_SITEARCHLIBDIR%%/qtruby4.so
 %%RUBY_SITEARCHLIBDIR%%/qtscript.so
 %%RUBY_SITEARCHLIBDIR%%/qttest.so
 %%RUBY_SITEARCHLIBDIR%%/qtuitools.so
 %%RUBY_SITEARCHLIBDIR%%/qtwebkit.so
+%%RUBY_SITEARCHLIBDIR%%/qwt.so
 %%RUBY_SITEARCHLIBDIR%%/solid.so
 %%RUBY_SITEARCHLIBDIR%%/soprano.so
 %%RUBY_SITELIBDIR%%/khtml/khtml.rb
+%%RUBY_SITELIBDIR%%/kio/kio.rb
 %%RUBY_SITELIBDIR%%/ktexteditor/ktexteditor.rb
 %%RUBY_SITELIBDIR%%/nepomuk/nepomuk.rb
 %%RUBY_SITELIBDIR%%/okular/okular.rb
+%%RUBY_SITELIBDIR%%/phonon/phonon.rb
+%%RUBY_SITELIBDIR%%/qscintilla/qscintilla.rb
 %%RUBY_SITELIBDIR%%/qtscript/qtscript.rb
 %%RUBY_SITELIBDIR%%/qttest/qttest.rb
 %%RUBY_SITELIBDIR%%/qtuitools/qtuitools.rb
 %%RUBY_SITELIBDIR%%/qtwebkit/qtwebkit.rb
+%%RUBY_SITELIBDIR%%/qwt/qwt.rb
 %%RUBY_SITELIBDIR%%/solid/solid.rb
 %%RUBY_SITELIBDIR%%/soprano/soprano.rb
-share/applications/kde4/dbpedia_references.desktop
-share/apps/dbpedia_references/dbpedia_references.rb
-@dirrm share/apps/dbpedia_references
 @dirrm %%RUBY_SITELIBDIR%%/soprano
 @dirrm %%RUBY_SITELIBDIR%%/solid
+@dirrm %%RUBY_SITELIBDIR%%/qwt
 @dirrm %%RUBY_SITELIBDIR%%/qtwebkit
 @dirrm %%RUBY_SITELIBDIR%%/qtuitools
 @dirrm %%RUBY_SITELIBDIR%%/qttest
 @dirrm %%RUBY_SITELIBDIR%%/qtscript
+@dirrm %%RUBY_SITELIBDIR%%/qscintilla
+@dirrm %%RUBY_SITELIBDIR%%/phonon
 @dirrm %%RUBY_SITELIBDIR%%/okular
 @dirrm %%RUBY_SITELIBDIR%%/nepomuk
 @dirrm %%RUBY_SITELIBDIR%%/ktexteditor
+@dirrm %%RUBY_SITELIBDIR%%/kio
 @dirrm %%RUBY_SITELIBDIR%%/khtml
-@dirrm %%RUBY_SITEARCHLIBDIR%%
+@dirrmtry %%RUBY_SITEARCHLIBDIR%%
 @dirrm %%RUBY_SITELIBDIR%%/akonadi
 @dirrm %%RUBY_SITELIBDIR%%/Qt
 @dirrm %%RUBY_SITELIBDIR%%/KDE
-@dirrm %%RUBY_SITELIBDIR%%
+@dirrmtry %%RUBY_SITELIBDIR%%
 @dirrmtry lib/ruby/site_ruby
 @dirrmtry lib/ruby
 @dirrm include/qtruby

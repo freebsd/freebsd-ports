@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdehier4
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.6
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -23,8 +23,10 @@ USE_KDE4=	kdeprefix
 .if ${KDE4_PREFIX} != ${LOCALBASE}
 PLIST_SUB+=	MTREE="" \
 		LDCONFIG_DIR="${LDCONFIG_DIR}" \
-		LDCONFIG32_DIR="${LDCONFIG32_DIR}" \
-		KDE4_PREFIX="${KDE4_PREFIX}"
+		LDCONFIG32_DIR="${LDCONFIG32_DIR}"
+SUB_FILES=	session-kde4.conf \
+		system-kde4.conf
+SUB_LIST=	KDE4_PREFIX="${KDE4_PREFIX}"
 .else
 PLIST_SUB+=	MTREE="@comment "
 .endif
@@ -45,8 +47,15 @@ do-install:
 	${LN} -sf ${LOCALBASE}/${LDCONFIG_DIR} ${KDE4_PREFIX}/libdata/
 	${LN} -sf ${LOCALBASE}/${LDCONFIG32_DIR} ${KDE4_PREFIX}/libdata/
 	${LN} -sf ${LOCALBASE}/libdata/pkgconfig ${KDE4_PREFIX}/libdata/
+	${LN} -sf ${LOCALBASE}/share/PolicyKit/policy ${KDE4_PREFIX}/share/PolicyKit/
 	${ECHO_CMD} ${KDE4_PREFIX}/lib > \
 		${LOCALBASE}/${LDCONFIG_DIR}/kdehier4
+	${MKDIR} ${LOCALBASE}/etc/dbus-1
+	${INSTALL_DATA} ${WRKDIR}/session-kde4.conf ${LOCALBASE}/etc/dbus-1
+	${INSTALL_DATA} ${WRKDIR}/system-kde4.conf ${LOCALBASE}/etc/dbus-1
 .endif
+
+maintainer-generate-plist:
+	cd ${FILESDIR} && ${SH} make-plist.sh
 
 .include <bsd.port.post.mk>

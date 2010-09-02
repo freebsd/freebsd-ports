@@ -12,7 +12,7 @@ CATEGORIES=	misc kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Marathi messages and documentation for KDE4
 
-IGNORE=		unfetchable and unmaintained upstream
+IGNORE=		is not included in KDE SC ${KDE4_VERSION}
 EXPIRATION_DATE=	2010-04-01
 
 KDE4_L10N=	mr

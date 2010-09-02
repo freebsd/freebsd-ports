@@ -8,7 +8,6 @@
 
 PORTNAME=	kdebase-runtime
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -25,9 +24,11 @@ LIB_DEPENDS=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		ssh.4:${PORTSDIR}/security/libssh \
 		attica.0:${PORTSDIR}/x11-toolkits/attica
 #explicitly depend on libssh to avoid interference with ssh.4 from compat7x
-BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
+BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh \
+		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+RUN_DEPENDS=	cagibid:${PORTSDIR}/net/cagibi
 
-USE_KDE4=	kdelibs kdeprefix kdehier automoc4 #pimlibs
+USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4
@@ -37,10 +38,11 @@ USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		kdesu.1
+MAN8=		nepomukserver.8 nepomukservicestub.8
 
 SUB_FILES=	nepomuk-env.sh
 
-OPTIONS=	PULSEAUDIO "Enable playback via PulseAudio soundserver" off \
+OPTIONS=	PULSEAUDIO "Enable playback via PulseAudio sound server" off \
 		VIRTUOSO "Install Virtuoso server (required for Nepomuk)" off
 
 # Explicitly disable alsa, see for details:
@@ -62,15 +64,6 @@ CMAKE_ARGS+=	-DWITH_PulseAudio:BOOL=OFF
 
 .if defined(WITH_VIRTUOSO)
 RUN_DEPENDS+=	${LOCALBASE}/bin/virtuoso-t:${PORTSDIR}/databases/virtuoso
-.endif
-
-.if exists(${LOCALBASE}/lib/soprano/libsoprano_virtuosobackend.so)
-CMAKE_ARGS+=	-DWITH_Nepomuk:BOOL=ON
-MAN8=		nepomukserver.8 nepomukservicestub.8
-PLIST_SUB+=	NEPOMUK=""
-.else
-CMAKE_ARGS+=	-DWITH_Nepomuk:BOOL=OFF
-PLIST_SUB+=	NEPOMUK="@comment "
 .endif
 
 post-patch:

@@ -7,7 +7,6 @@
 
 PORTNAME=	kde4
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	3
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -87,7 +86,7 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kcalc:${PORTSDIR}/misc/kdeutils4
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/klinkstatus:${PORTSDIR}/www/kdewebdev4
 .endif
 .if !defined(WITHOUT_KTTS)
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kttsd:${PORTSDIR}/accessibility/ktts
+RUN_DEPENDS+=	${KDE4_PREFIX}/bin/jovie:${PORTSDIR}/accessibility/ktts
 .endif
 .if !defined(WITHOUT_MARBLE)
 RUN_DEPENDS+=	${KDE4_PREFIX}/bin/marble:${PORTSDIR}/astro/marble
