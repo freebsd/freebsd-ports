@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	phplot
-PORTVERSION=	5.1.2
+PORTVERSION=	5.1.3
 CATEGORIES=	graphics www
 MASTER_SITES=	SF:source1 \
 		SF/${PORTNAME}/Manual/20100628:source2
@@ -25,7 +25,7 @@ NO_BUILD=	YES
 
 PHPLOT_DIR=	${PREFIX}/include/php/phplot
 
-LIBS=		phplot.php phplot_data.php rgb.inc.php
+LIBS=		phplot.php rgb.inc.php
 
 OPTIONS=	FONTS "Install TrueType fonts" on
 

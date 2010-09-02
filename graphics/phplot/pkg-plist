@@ -1,5 +1,4 @@
 include/php/phplot/phplot.php
-include/php/phplot/phplot_data.php
 include/php/phplot/rgb.inc.php
 @dirrmtry include/php/phplot
 %%PORTDOCS%%%%DOCSDIR%%/DrawGraph.html
