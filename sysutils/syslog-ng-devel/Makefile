@@ -18,6 +18,7 @@ COMMENT=	A powerful syslogd replacement
 
 OPTIONS=	SSL "Build with OpenSSL support (from ports)" off \
 		TCP_WRAPPERS "Build with TCP Wrappers" off \
+		SQL "Build with SQL support" off \
 		SPOOF "Build with spoof source support" on \
 		IPV6 "Build with IPV6 support" on \
 		PCRE "Build with PCRE support" on \
@@ -85,6 +86,13 @@ CONFIGURE_ENV+=		LIBDBI_LIBS="-ldbi"
 CONFIGURE_ARGS+=	--enable-sql
 .else
 CONFIGURE_ARGS+=	--disable-sql
+.endif
+
+.if defined(WITH_SQL)
+CONFIGURE_ARGS+=--enable-sql
+LIB_DEPENDS+= dbi.0:${PORTSDIR}/databases/libdbi
+CONFIGURE_ENV+= LIBDBI_CFLAGS="-I/usr/local/include" \
+		LIBDBI_LIBS=" -ldbi"
 .endif
 
 .include <bsd.port.pre.mk>
