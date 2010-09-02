@@ -31,7 +31,7 @@ OPTIONS= \
 	MONGRELCLUSTER	"Mongrel Cluster backend"	Off \
 	PASSENGER		"Passenger backend"			Off \
 	MEMCACHE_CLIENT "MemCache-Client support" 	Off
-OPTIONSFILE=	{PORT_DBDIR}/rubygem-${PORTNAME}/options
+OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
 .include <bsd.port.options.mk>
 
@@ -54,5 +54,12 @@ RUN_DEPENDS+=	rubygem-mongre_clusterl>=1.0.5:${PORTSDIR}/www/rubygem-mongrel_clu
 .if defined(WITH_PASSENGER)
 RUN_DEPENDS+=	rubygem-passenger>=2.2.15:${PORTSDIR}/www/rubygem-passenger
 .endif
+
+# XXX: overridden here b/c rails gem no longer has a lib/ dir
+# XXX: which breaks devel/ruby-gems
+do-install:
+.for _D in ${GEMFILES}
+	-${SETENV} ${GEM_ENV} ${RUBYGEMBIN} install ${RUBYGEM_ARGS} ${DISTDIR}/${DIST_SUBDIR}/${_D} -- --build-args ${CONFIGURE_ARGS}
+.endfor
 
 .include <bsd.port.mk>
