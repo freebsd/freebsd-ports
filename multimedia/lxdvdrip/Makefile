@@ -7,7 +7,7 @@
 
 PORTNAME=	lxdvdrip
 PORTVERSION=	1.62
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.berlios.de/lxdvdrip/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
@@ -52,9 +52,6 @@ PORTDOCS=	Changelog.de Changelog.en Changelog.fr \
 		README.dvdwizard.DE README.dvdwizard.EN README.dvdwizard.FR \
 		TODO freebsd.doc
 MAN1=		lxdvdrip.1
-
-PLIST_FILES=	bin/vamps_${PORTNAME} \
-		bin/play_cell_${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
