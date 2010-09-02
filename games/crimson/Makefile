@@ -10,7 +10,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://crimson.seul.org/files/
 
-MAINTAINER=	steinex@nognu.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tactical war game in the tradition of Battle Isle
 
 GNU_CONFIGURE=	yes

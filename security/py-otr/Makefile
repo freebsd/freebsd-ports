@@ -11,7 +11,7 @@ MASTER_SITES=	http://python-otr.pentabarf.de/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-otr-${PORTVERSION}
 
-MAINTAINER=	steinex@nognu.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of python bindings for libotr
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13

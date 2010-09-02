@@ -10,7 +10,7 @@ CATEGORIES=	audio net
 MASTER_SITES=	http://yp.shoutcast.com/downloads/sc1-9-8/
 DISTNAME=	sc_serv_${PORTVERSION}_FreeBSD5
 
-MAINTAINER=	steinex@nognu.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nullsoft's streaming audio server (binary port)
 
 LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x

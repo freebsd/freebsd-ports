@@ -10,7 +10,7 @@ PORTVERSION=	1.0.3
 CATEGORIES=	irc net-im
 MASTER_SITES=	http://minbif.im/attachments/download/50/
 
-MAINTAINER=	steinex@nognu.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IRC to instant messaging gateway
 
 LIB_DEPENDS=	purple.7:${PORTSDIR}/net-im/libpurple

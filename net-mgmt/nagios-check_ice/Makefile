@@ -10,7 +10,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://nognu.de/s/FreeBSD/distfiles/
 PKGNAMEPREFIX=	nagios-
 
-MAINTAINER=	steinex@nognu.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plug-in to check a shoutcast or icecast server
 
 do-build:
