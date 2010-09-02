@@ -44,8 +44,6 @@ OPTIONS=	\
 		SECURE_DELETE	"Overwrite deleted information with zeros" on \
 		UNLOCK_NOTIFY	"Enable notification on unlocking"	on \
 		THREADSAFE	"Build thread-safe library"		on \
-		OVERRIDE_LOCK	"Threads can override each others locks" on \
-		XTHREAD		"Allow connection sharing across threads" off \
 		EXTENSION	"Allow loadable extensions"		on \
 		TCLWRAPPER	"Enable TCL wrapper"			off \
 		DEBUG		"Enable debugging & verbose explain"	off \
@@ -141,12 +139,6 @@ CFLAGS+=		-DSQLITE_ENABLE_COLUMN_METADATA=1
 
 .if !defined(WITHOUT_THREADSAFE)
 CONFIGURE_ARGS+=	--enable-threadsafe
-.if !defined(WITHOUT_XTHREAD)
-CONFIGURE_ARGS+=	--enable-threads-override-locks
-.endif
-.if !defined(WITHOUT_OVERRIDE_LOCK)
-CONFIGURE_ARGS+=	--enable-cross-thread-connections
-.endif
 .else
 CONFIGURE_ARGS+=	--disable-threadsafe
 .endif
