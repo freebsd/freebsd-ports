@@ -6,6 +6,7 @@
 
 PORTNAME=	kwebkitpart
 PORTVERSION=	0.9.6.b1
+PORTREVISION=	1
 CATEGORIES=	www kde
 MASTER_SITES=	http://opendesktop.org/CONTENT/content-files/
 DISTNAME=	127960-${PORTNAME}-0.9.6

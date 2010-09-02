@@ -53,8 +53,4 @@ share/locale/tr/LC_MESSAGES/kwebkitpart.mo
 share/locale/uk/LC_MESSAGES/kwebkitpart.mo
 share/locale/zh_CN/LC_MESSAGES/kwebkitpart.mo
 share/locale/zh_TW/LC_MESSAGES/kwebkitpart.mo
-@dirrmtry share/locale/sr@latin/LC_MESSAGES
-@dirrmtry share/locale/sr@latin
-@dirrmtry share/locale/sr@ijekavianlatin/LC_MESSAGES
-@dirrmtry share/locale/sr@ijekavianlatin
 @dirrmtry share/apps/kwebkitpart
