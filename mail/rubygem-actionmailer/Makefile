@@ -5,14 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	actionmailer
-PORTVERSION=	2.3.8
+PORTVERSION=	3.0.0
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Easy email delivery and testing for Ruby
 
-RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/actionpack-${PORTVERSION}.gemspec:${PORTSDIR}/www/rubygem-actionpack
+RUN_DEPENDS=	rubygem-actionpack>=${PORTVERSION}:${PORTSDIR}/www/rubygem-actionpack \
+  rubygem-mail>=2.2.5:${PORTSDIR}/mail/rubygem-mail
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

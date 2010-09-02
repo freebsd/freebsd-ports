@@ -1551,6 +1551,7 @@
     SUBDIR += rubygem-rack-mount
     SUBDIR += rubygem-rack-test
     SUBDIR += rubygem-rails
+    SUBDIR += rubygem-railties
     SUBDIR += rubygem-rails-app-installer
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-redcloth

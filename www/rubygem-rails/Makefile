@@ -5,31 +5,35 @@
 # $FreeBSD$
 
 PORTNAME=	rails
-PORTVERSION=	2.3.8
+PORTVERSION=	3.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	MVC web application framework
 
-RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-${PORTVERSION}.gemspec:${PORTSDIR}/devel/rubygem-activesupport \
-		${LOCALBASE}/${SPEC_DIR}/activerecord-${PORTVERSION}.gemspec:${PORTSDIR}/databases/rubygem-activerecord \
-		${LOCALBASE}/${SPEC_DIR}/actionpack-${PORTVERSION}.gemspec:${PORTSDIR}/www/rubygem-actionpack \
-		${LOCALBASE}/${SPEC_DIR}/actionmailer-${PORTVERSION}.gemspec:${PORTSDIR}/mail/rubygem-actionmailer \
-		${LOCALBASE}/${SPEC_DIR}/activeresource-${PORTVERSION}.gemspec:${PORTSDIR}/www/rubygem-activeresource
+RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
+		rubygem-activerecord>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activerecord \
+		rubygem-actionpack>=${PORTVERSION}:${PORTSDIR}/www/rubygem-actionpack \
+		rubygem-actionmailer>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-actionmailer \
+		rubygem-activeresource>=${PORTVERSION}:${PORTSDIR}/www/rubygem-activeresource \
+		rubygem-railties>=${PORTVERSION}:${PORTSDIR}/www/rubygem-railties \
+		rubygem-bundler>=1.0.0:${PORTSDIR}/sysutils/rubygem-bundler
 
-OPTIONS=	FCGI "FastCGI support" Off\
-		MEMCACHE_CLIENT "MemCache-Client support" Off
-OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
-
-# to get RUBY_SITEARCHLIBDIR
 USE_RUBY=	yes
-USE_RAKE=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+RUBYGEM_AUTOPLIST=  yes
 PLIST_FILES=	bin/rails
 
-.include <bsd.port.pre.mk>
+OPTIONS= \
+	FCGI 			"FastCGI backend" 			Off \
+	MONGREL			"Mongrel backend"			Off \
+	MONGRELCLUSTER	"Mongrel Cluster backend"	Off \
+	PASSENGER		"Passenger backend"			Off \
+	MEMCACHE_CLIENT "MemCache-Client support" 	Off
+OPTIONSFILE=	{PORT_DBDIR}/rubygem-${PORTNAME}/options
+
+.include <bsd.port.options.mk>
 
 .if defined(WITH_FCGI)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/fcgi.so:${PORTSDIR}/www/ruby-fcgi
@@ -39,4 +43,16 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/fcgi.so:${PORTSDIR}/www/ruby-fcgi
 RUN_DEPENDS+=	rubygem-memcache-client>=1.2.0:${PORTSDIR}/databases/rubygem-memcache-client
 .endif
 
-.include <bsd.port.post.mk>
+.if defined(WITH_MONGREL)
+RUN_DEPENDS+=	rubygem-mongrel>=1.1.5:${PORTSDIR}/www/rubygem-mongrel
+.endif
+
+.if defined(WITH_MONGRELCLUSTER)
+RUN_DEPENDS+=	rubygem-mongre_clusterl>=1.0.5:${PORTSDIR}/www/rubygem-mongrel_cluster
+.endif
+
+.if defined(WITH_PASSENGER)
+RUN_DEPENDS+=	rubygem-passenger>=2.2.15:${PORTSDIR}/www/rubygem-passenger
+.endif
+
+.include <bsd.port.mk>

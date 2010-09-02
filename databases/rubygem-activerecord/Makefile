@@ -5,29 +5,32 @@
 # $FreeBSD$
 
 PORTNAME=	activerecord
-PORTVERSION=	2.3.8
+PORTVERSION=	3.0.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Object-relational mapping layer for Rails MVC Framework
 
-RUN_DEPENDS=	rubygem-activesupport>=2.3.4:${PORTSDIR}/devel/rubygem-activesupport
+RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
+  rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activemodel \
+  rubygem-tzinfo>=0.3.23:${PORTSDIR}/devel/rubygem-tzinfo \
+  rubygem-arel>=1.0.0:${PORTSDIR}/databases/rubygem-arel
 
-OPTIONS=	NATIVE_MYSQL "Use native MySQL bindings" Off\
-		NATIVE_POSTGRESQL "Use native PostgreSQL bindings" Off\
-		NATIVE_SQLITE3 "Use native SQLite3 bindings" Off
-OPTIONSFILE=	${PORT_DBDIR}/rubygem-${PORTNAME}/options
+USE_RUBY=   yes
+USE_RUBYGEMS=   yes
+RUBYGEM_AUTOPLIST=  yes
 
-# to get RUBY_SITEARCHLIBDIR
-USE_RUBY=	yes
-USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=	yes
+OPTIONS= \
+	NATIVE_MYSQL 		"Use native MySQL bindings" 		Off \
+	NATIVE_POSTGRESQL 	"Use native PostgreSQL bindings" 	Off \
+	NATIVE_SQLITE3 		"Use native SQLite3 bindings" 		Off
+OPTIONSFILE=   ${PORT_DBDIR}/rubygem-${PORTNAME}/options
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_NATIVE_MYSQL)
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/mysql.so:${PORTSDIR}/databases/ruby-mysql
+RUN_DEPENDS+=	${RUBY_PKGNAMEPREFIX}mysql>0:${PORTSDIR}/databases/ruby-mysql
 .endif
 
 .if defined(WITH_NATIVE_POSTGRESQL)
@@ -38,4 +41,4 @@ RUN_DEPENDS+=	rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
 RUN_DEPENDS+=	rubygem-sqlite3>=1.2.1:${PORTSDIR}/databases/rubygem-sqlite3
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
