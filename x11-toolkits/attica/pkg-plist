@@ -23,6 +23,6 @@ include/attica/providermanager.h
 include/attica/version.h
 lib/libattica.so
 lib/libattica.so.0
-lib/libattica.so.0.1.3
+lib/libattica.so.0.1.4
 libdata/pkgconfig/libattica.pc
 @dirrmtry include/attica
