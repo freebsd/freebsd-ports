@@ -5,15 +5,21 @@
 # $FreeBSD$
 
 PORTNAME=	actionpack
-PORTVERSION=	2.3.8
+PORTVERSION=	3.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Action Controller and Action View of Rails MVC Framework
 
-RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/activesupport-${PORTVERSION}.gemspec:${PORTSDIR}/devel/rubygem-activesupport \
-  				rubygem-rack>=1.1.0:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
+	rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activemodel \
+	rubygem-tzinfo>=0.3.23:${PORTSDIR}/devel/rubygem-tzinfo \
+	rubygem-erubis>=2.6.6:${PORTSDIR}/www/rubygem-erubis \
+	rubygem-rack-mount>=0.6.12:${PORTSDIR}/www/rubygem-rack-mount \
+	rubygem-rack-test>=0.5.4:${PORTSDIR}/www/rubygem-rack-test \
+	rubygem-builder>=2.1.2:${PORTSDIR}/devel/rubygem-builder \
+	rubygem-i18n>=0.4.1:${PORTSDIR}/devel/rubygem-i18n
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
