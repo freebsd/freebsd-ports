@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-
+PORTREVISION=	1
 COMMENT=	High performance media player supporting many formats
 
 .include "${.CURDIR}/Makefile.shared"
@@ -47,6 +47,7 @@ OPTIONS+=	LIBMPCDEC "Enable libmpcdec support" off
 OPTIONS+=	LADSPA "Enable LADSPA plugin support" off
 OPTIONS+=	SPEEX "Enable speex audio codec support" on
 OPTIONS+=	THEORA "Enable ogg theora video support" off
+OPTIONS+=	VPX "Enable VP8 video via libvpx" off
 OPTIONS+=	SCHROEDINGER "Dirac codec via libschroedinger" off
 .if !defined(PACKAGE_BUILDING)
 OPTIONS+=	WIN32 "Enable win32 codec set on the IA32 arch" on
