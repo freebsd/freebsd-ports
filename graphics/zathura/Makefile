@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	zathura
-PORTVERSION=	0.0.7
+PORTVERSION=	0.0.8.1
 CATEGORIES=	graphics print
-MASTER_SITES=	http://pwmt.org/zathura/download/
+MASTER_SITES=	http://pwmt.org/attachments/download/10/
 
 MAINTAINER=	acieroid@awesom.eu
 COMMENT=	Customizable lightweight pdf viewer
@@ -24,14 +24,15 @@ PLIST_FILES=	bin/zathura
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|man1|man/man1|g' \
-		-e '/CC/s/-s[[:space:]]/${STRIP} /' \
+		-e '/CC/s/$${SFLAGS}/${STRIP} /' \
 		-e '/CFLAGS/!s/$${LDFLAGS}/$${CFLAGS} &/' \
 		-e 's/{DFLAGS/{DEBUG_FLAGS/g' \
 		-e 's/755/${BINMODE}/' \
 		-e 's/644/${MANMODE}/' \
 		-e '/echo[[:space:]]CC/d' \
-		-e '/echo/!s/@//' \
+		-e '/echo/!s/^\([[:space:]]*\)@/\1/' \
 		-e '/^all:/s/options//' \
+		-e 's/cp[[:space:]]$$</cp $$>/' \
 		-e 's/\(include\)[[:space:]]\(.*\)/.\1 "\2"/' \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
