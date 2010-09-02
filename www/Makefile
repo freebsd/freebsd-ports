@@ -1548,6 +1548,7 @@
     SUBDIR += rubygem-nicovideo
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-rack
+    SUBDIR += rubygem-rack-mount
     SUBDIR += rubygem-rack-test
     SUBDIR += rubygem-rails
     SUBDIR += rubygem-rails-app-installer
