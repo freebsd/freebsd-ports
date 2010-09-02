@@ -1,4 +1,16 @@
 @comment $FreeBSD$
+%%FCDIR_REL%%/20-unhint-small-dejavu-sans-mono.conf
+%%FCDIR_REL%%/20-unhint-small-dejavu-sans.conf
+%%FCDIR_REL%%/20-unhint-small-dejavu-serif.conf
+%%FCDIR_REL%%/57-dejavu-sans-mono.conf
+%%FCDIR_REL%%/57-dejavu-sans.conf
+%%FCDIR_REL%%/57-dejavu-serif.conf
+%%FCDIR_LINKS%%/20-unhint-small-dejavu-sans-mono.conf
+%%FCDIR_LINKS%%/20-unhint-small-dejavu-sans.conf
+%%FCDIR_LINKS%%/20-unhint-small-dejavu-serif.conf
+%%FCDIR_LINKS%%/57-dejavu-sans-mono.conf
+%%FCDIR_LINKS%%/57-dejavu-sans.conf
+%%FCDIR_LINKS%%/57-dejavu-serif.conf
 %%FONTSDIR_REL%%/DejaVuSans-Bold.ttf
 %%FONTSDIR_REL%%/DejaVuSans-BoldOblique.ttf
 %%FONTSDIR_REL%%/DejaVuSans-ExtraLight.ttf
