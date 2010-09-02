@@ -8,7 +8,7 @@
 
 PORTNAME=	totem
 PORTVERSION=	2.30.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -45,8 +45,6 @@ CONFIGURE_ARGS=	--with-plugins="${TOTEM_PLUGINS}"
 MAN1=		totem.1 totem-video-thumbnailer.1
 GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \
 		totem.schemas
-
-WITHOUT_DVDNAV=	yes
 
 OPTIONS=	LIRC "Enable lirc support" off \
 		GALAGO "Enable Galago support" off \
@@ -113,10 +111,6 @@ CONFIGURE_ARGS+=--disable-browser-plugins \
 		--disable-gmp-plugin \
 		--disable-narrowspace-plugin
 PLIST_SUB+=	BROWSER_PLUGINS="@comment "
-.endif
-
-.if defined(WITH_DVDNAV) && !defined(WITHOUT_DVDNAV)
-LIB_DEPENDS+=	dvdnav.4:${PORTSDIR}/multimedia/libdvdnav
 .endif
 
 .if defined(WITH_DVD_DEVICE)
