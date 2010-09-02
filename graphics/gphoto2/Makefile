@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gphoto2
-PORTVERSION=	2.4.9
+PORTVERSION=	2.4.10
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/gphoto/${PORTVERSION}
 
