@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Nipper%20${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	steinex@nognu.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netdev config analyzer
 
 PLIST_FILES=	bin/${PORTNAME} etc/nipper.conf.sample

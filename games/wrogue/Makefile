@@ -10,7 +10,7 @@ PORTVERSION=	0.8.0
 CATEGORIES=	games
 MASTER_SITES=	SF/todoom/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	steinex@nognu.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gothic science fantasy roguelike game
 
 USE_BZIP2=	yes

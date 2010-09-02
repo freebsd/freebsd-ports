@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://micans.org/apparix/src/
 DISTNAME=	${PORTNAME}-08-331
 
-MAINTAINER=	steinex@nognu.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bookmark directories and apparate inside them
 
 GNU_CONFIGURE=	yes

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	steinex@nognu.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and fast Twitter and Identi.ca client
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/valac:${PORTSDIR}/lang/vala

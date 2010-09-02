@@ -11,7 +11,7 @@ MASTER_SITES=	http://yp.shoutcast.com/downloads/sc${PORTVERSION:S|.|-|g}/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	sc_serv_${PORTVERSION}_Linux
 
-MAINTAINER=	steinex@nognu.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nullsoft's streaming audio server (Linux binary port)
 
 CONFLICTS=	shoutcast-[0-9]*
