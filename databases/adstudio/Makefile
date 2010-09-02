@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adstudio
-PORTVERSION=	8.0.22
+PORTVERSION=	8.0.24
 CATEGORIES=	databases devel java
 MASTER_SITES=	http://download.aquafold.com/download/v${PORTVERSION:R}.0/java/
 DISTNAME=	ads-java-novm-${PORTVERSION}
@@ -24,12 +24,18 @@ NO_BUILD=	yes
 RESTRICTED=	See <http://www.aquafold.com/licensing.html>
 NO_CDROM=	${RESTRICTED}
 
+LICENSE=	EULA
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_NAME=	EULA
+LICENSE_FILE=	${WRKSRC}/${INSTLICENSE}
+
 WRKSRC=		${WRKDIR}/datastudio
 
-INSTFILES=	License.txt changelog.txt datastudio-*.png datastudio.gif	\
+INSTFILES=	changelog.txt datastudio-*.png datastudio.gif	\
 		datastudio.ico lib license
 INSTSCRIPTS=	datastudio runscript
-EXTRACT_AFTER_ARGS=|${TAR} -xpf - ${INSTSCRIPTS:S|^|./datastudio/|:S|$|.sh|}
+INSTLICENSE=	License.txt
+EXTRACT_AFTER_ARGS=|${TAR} -xpf - ${INSTSCRIPTS:S|^|./datastudio/|:S|$|.sh|} ${INSTLICENSE:S|^|./datastudio/|}
 
 pre-configure:
 	${REINPLACE_CMD} -e "s|%%ADS_HOME%%|${DATADIR}|"	\
