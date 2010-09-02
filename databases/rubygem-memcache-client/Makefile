@@ -5,20 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	memcache-client
-PORTVERSION=	1.7.5
+PORTVERSION=	1.8.5
 CATEGORIES=	databases rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	seattlerb
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for MemCached
 
-RUN_DEPENDS=	rubygem-zentest>=3.4.2:${PORTSDIR}/devel/rubygem-zentest \
-		rubygem-hoe>=1.3.0:${PORTSDIR}/devel/rubygem-hoe
-
 USE_RUBY=	yes
-USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/memcached_top
 
 .include <bsd.port.mk>
