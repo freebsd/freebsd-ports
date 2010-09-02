@@ -188,6 +188,11 @@ BROKEN=	VLC 1.1.0 does not work on FreeBSD 6.x
 .if ${PERL_LEVEL} < 500800
 BROKEN=	Does not compile with perl ${PERL_VERSION}
 .endif
+
+.if ${ARCH} == "powerpc64"
+CONFIGURE_ARGS+= --enable-altivec # VLC's config script doesn't know to do this
+.endif
+
 # End OS specific hacks
 
 # User tunables
