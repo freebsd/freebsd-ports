@@ -1,4 +1,4 @@
-# New ports collection makefile for:	drill
+# New ports collection makefile for:	ldns
 # Date created:        29 December 2005
 # Whom:                Konstantin Saurbier <saurbier@math.uni-bielefeld.de>
 #
@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	ldns
-PORTVERSION=	1.6.5
+PORTVERSION=	1.6.6
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/
 
 MAINTAINER=	konstantin@saurbier.net
 COMMENT=	A library for programs conforming to DNS RFCs and drafts
+
+LICENSE=	BSD
 
 USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
@@ -19,7 +21,8 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS=	DOCS "With documentation" Off \
-		EXAMPLES "With example programs" Off
+		EXAMPLES "With example programs" Off \
+		GOST "With GOST signing enabled (requires openssl 1.0.0)" Off
 
 .include <bsd.port.pre.mk>
 
@@ -216,6 +219,11 @@ MAN3=	ldns_bget_token.3 ldns_bgetc.3 ldns_bskipcs.3 ldns_buffer.3 \
 	ldns_zone_print.3 ldns_zone_push_rr.3 ldns_zone_push_rr_list.3 \
 	ldns_zone_rr_count.3 ldns_zone_rrs.3 ldns_zone_set_rrs.3 \
 	ldns_zone_set_soa.3 ldns_zone_soa.3 ldns_zone_sort.3
+.endif
+
+.if defined(WITH_GOST)
+BUILD_DEPENDS+=	openssl>=1.0:${PORTSDIR}/security/openssl
+CONFIGURE_ARGS+=	--enable-gost
 .endif
 
 .if defined(WITH_EXAMPLES)
