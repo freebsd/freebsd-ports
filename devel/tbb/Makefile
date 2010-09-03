@@ -20,6 +20,7 @@ ONLY_FOR_ARCHS_REASON=	has not been ported to this platform
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	default
+MAKE_ENV=	CPLUS=${CXX}
 
 WRKSRC=	${WRKDIR}/tbb30_018oss
 
