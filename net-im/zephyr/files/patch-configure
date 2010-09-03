@@ -1,0 +1,45 @@
+--- configure.orig	2009-11-12 08:19:57.000000000 +0000
++++ configure	2009-11-12 08:32:53.000000000 +0000
+@@ -24651,15 +24651,15 @@
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_resolv_res_send" >&5
+ echo "${ECHO_T}$ac_cv_lib_resolv_res_send" >&6; }
+ if test $ac_cv_lib_resolv_res_send = yes; then
+-  LIBZEPHYR_LIBS="-lresolv $LIBZEPHYR_LIBS"
++  LIBZEPHYR_LIBS="-lc $LIBZEPHYR_LIBS"
+ else
+-  { echo "$as_me:$LINENO: checking for __res_send in -lresolv" >&5
+-echo $ECHO_N "checking for __res_send in -lresolv... $ECHO_C" >&6; }
++  { echo "$as_me:$LINENO: checking for res_send in -lc" >&5
++echo $ECHO_N "checking for res_send in -lc... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_resolv___res_send+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lresolv  $LIBS"
++LIBS="-lc  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -24673,11 +24673,11 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char __res_send ();
++char res_send ();
+ int
+ main ()
+ {
+-return __res_send ();
++return res_send ();
+   ;
+   return 0;
+ }
+@@ -24715,7 +24715,7 @@
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_resolv___res_send" >&5
+ echo "${ECHO_T}$ac_cv_lib_resolv___res_send" >&6; }
+ if test $ac_cv_lib_resolv___res_send = yes; then
+-  LIBZEPHYR_LIBS="-lresolv $LIBZEPHYR_LIBS"
++  LIBZEPHYR_LIBS="$LIBZEPHYR_LIBS"
+ else
+   { { echo "$as_me:$LINENO: error: Zephyr requires libresolv along with Kerberos V." >&5
+ echo "$as_me: error: Zephyr requires libresolv along with Kerberos V." >&2;}

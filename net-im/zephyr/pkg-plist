@@ -1,0 +1,26 @@
+@unexec %D/etc/rc.d/zhm stop > /dev/null 2>&1 || true
+bin/zaway
+bin/zctl
+bin/zleave
+bin/zlocate
+bin/znol
+bin/zstat
+bin/zwrite
+bin/zwgc
+etc/zephyr/default.subscriptions
+include/zephyr/mit-copyright.h
+include/zephyr/zephyr.h
+include/zephyr/zephyr_err.h
+lib/libzephyr.a
+lib/libzephyr.so.4.0
+lib/libzephyr.la
+sbin/zshutdown_notify
+sbin/zephyrd
+sbin/zhm
+%%DATADIR%%/zwgc.desc
+%%DATADIR%%/zwgc_resources
+@exec mkdir -p %D/etc/zephyr/acl
+@dirrm etc/zephyr/acl
+@dirrm etc/zephyr
+@dirrm include/zephyr
+@dirrm %%DATADIR%%
