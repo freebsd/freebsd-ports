@@ -17,23 +17,21 @@ COMMENT=	An easy-to-use mailing list system
 OPTIONS+=	ANALOG "Enable quickml-analog" on \
 		LIMIT  "Enable Creators and Members Limitation Patch" off
 
-PKGINSTALL=	${WRKDIR}/pkg-install
-SUB_FILES+=	pkg-install
+USERS=	quickml
+GROUPS=	quickml
 
-QUICKML_USER=	quickml
-QUICKML_GROUP=	quickml
+LICENSE=	GPLv2
 
 USE_AUTOTOOLS=	autoconf:262
 GNU_CONFIGURE=	yes
 USE_RUBY=	yes
 
 USE_RC_SUBR=	${PORTNAME}
-SUB_LIST+=	USER=${QUICKML_USER} GROUP=${QUICKML_GROUP} RUBY=${RUBY}
 
 CONFIGURE_ARGS+=	--datadir="${PREFIX}/share/quickml"
 CONFIGURE_ARGS+=	--with-ruby="${RUBY}"
-CONFIGURE_ARGS+=	--with-user="${QUICKML_USER}"
-CONFIGURE_ARGS+=	--with-group="${QUICKML_GROUP}"
+CONFIGURE_ARGS+=	--with-user="${USERS}"
+CONFIGURE_ARGS+=	--with-group="${GROUPS}"
 CONFIGURE_ARGS+=	--with-rubydir="${RUBY_LIBDIR}"
 
 .include <bsd.port.pre.mk>
@@ -60,9 +58,6 @@ post-patch:
 .if defined(WITHOUT_ANALOG)
 	${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/without_quickml-analog
 .endif
-
-pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	${MKDIR} ${DATADIR}
