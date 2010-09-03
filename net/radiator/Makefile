@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Radiator
-PORTVERSION=	3.17.1
+PORTVERSION=	4.7
 CATEGORIES=	net
 MASTER_SITES=	# fetch manually
 EXTRACT_SUFX=	.tgz
@@ -15,7 +15,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Radiator Radius Server by Open System Consultants
 
-OPTIONS=        MYSQL "MySQL Support" off
+OPTIONS=	MYSQL "MySQL Support" off
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 RUN_DEPENDS=	${BUILD_DEPENDS}
