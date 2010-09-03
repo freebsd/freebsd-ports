@@ -1,5 +1,5 @@
---- ./snapshot.orig	2009-08-01 11:34:34.000000000 -0400
-+++ ./snapshot	2010-01-14 18:14:06.940846133 -0500
+--- snapshot.orig	2009-12-08 20:14:13.000000000 +0000
++++ snapshot	2010-08-31 13:50:34.000000000 +0000
 @@ -29,7 +29,9 @@
  ##
  
@@ -19,3 +19,12 @@
      if checkyesno zfs_enable; then \
          echo 'yes'; \
      else \
+@@ -491,7 +494,7 @@
+             echo "snapshot:ERROR: unable to create directory \"$mnt\"" 1>&2
+             exit 1
+         fi
+-        system mdconfig -a -t vnode -f $fs_dir/.snap/$fs_tag.$fs_gen -u $num
++        system mdconfig -a -t vnode -o readonly -f $fs_dir/.snap/$fs_tag.$fs_gen -u $num
+         if [ $? -ne 0 ]; then
+             echo "snapshot:ERROR: unable to attach \"$fs_dir/.snap/$fs_tag.$fs_gen\" to \"/dev/md$num\"" 1>&2
+             exit 1
