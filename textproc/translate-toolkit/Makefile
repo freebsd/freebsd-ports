@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	translate-toolkit
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	textproc
 MASTER_SITES=	SF/translate/Translate%20Toolkit/${PORTVERSION} \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Converts between many translation formats
 
 BUILD_DEPENDS=	py*-pysqlite>=2.3:${PORTSDIR}/databases/py-pysqlite23 \
@@ -34,7 +33,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 MAN1=		csv2po.1 csv2tbx.1 html2po.1 ical2po.1 ini2po.1 \
-		lookupservice.1 moz2po.1 odf2xliff.1 oo2po.1 oo2xliff.1 \
+		moz2po.1 odf2xliff.1 oo2po.1 oo2xliff.1 \
 		php2po.1 po2csv.1 po2html.1 po2ical.1 po2ini.1 \
 		po2moz.1 po2oo.1 po2php.1 po2prop.1 po2rc.1 \
 		po2symb.1 po2tiki.1 po2tmx.1 po2ts.1 po2txt.1 \
