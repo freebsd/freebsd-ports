@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application and libraries for encoding DVDs into DivX/OGM files
 
 BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder \
+		mplayer:${PORTSDIR}/multimedia/mplayer \
 		gsed:${PORTSDIR}/textproc/gsed
 LIB_DEPENDS=	enca.5:${PORTSDIR}/converters/enca \
 		png.6:${PORTSDIR}/graphics/png \
@@ -23,6 +24,7 @@ LIB_DEPENDS=	enca.5:${PORTSDIR}/converters/enca \
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
+		mplayer:${PORTSDIR}/multimedia/mplayer \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools
 
 OPTIONS=	GUI      "Build the GTK+ GUI"                           on  \
