@@ -41,9 +41,9 @@ USE_RC_SUBR?=	bacula-dir bacula-sd
 .endif
 
 .if defined(WITH_CLIENT_ONLY)
-SUB_FILES+=	pkg-message.client
+SUB_FILES+=	pkg-install.client pkg-deinstall.client pkg-message.client
 .else
-SUB_FILES+=	pkg-message.server
+SUB_FILES+=	pkg-install.server pkg-deinstall.server pkg-message.server
 .endif
 
 # The user/group IDs below are registered, see
@@ -103,16 +103,16 @@ CONFIGURE_ARGS+=	--disable-nls
 .endif
 
 # overridden if client install
-PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.server
-PKGINSTALL=	${PKGDIR}/pkg-install.server
+PKGDEINSTALL=	${FILESDIR}/pkg-deinstall.server
+PKGINSTALL=	${FILESDIR}/pkg-install.server
 
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
 CONFFILES=	fd
 # --disable-xattr is temporary to allow build with 8-current
 CONFIGURE_ARGS+=	--enable-client-only --disable-xattr
-PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.client
-PKGINSTALL=	${PKGDIR}/pkg-install.client
+PKGDEINSTALL=	${FILESDIR}/pkg-deinstall.client
+PKGINSTALL=	${FILESDIR}/pkg-install.client
 # Build a static fd binary.
 .if defined(WITH_SFDAEMON)
 CONFIGURE_ARGS+=	--enable-static-fd
