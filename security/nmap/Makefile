@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nmap
-PORTVERSION=	5.21
-PORTREVISION=	1
+DISTVERSION=	5.35DC1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		http://nmap.ucsd.edu/dist/ \
@@ -34,16 +33,23 @@ CONFIGURE_ENV=	LUA_INCDIR="${LUA_INCDIR}" LUA_LIBDIR="${LUA_LIBDIR}"
 
 MANLANG=	"" de es fr hr hu it jp pl pt_BR pt_PT ro ru sk zh
 MAN1=		nmap.1
-MAN1_EN=	ncat.1
-PLIST_SUB=	NCATDATADIR=share/ncat
+MAN1_EN=	ncat.1 nping.1
+PLIST_SUB+=	NCATDATADIR=share/ncat \
+		NPINGDIR=share/nping
 
 .ifndef WITHOUT_SSL
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -I${OPENSSLINC}"
+PLIST_SUB+=		WITHSSL=""
 .else
 CONFIGURE_ARGS+=	--without-openssl
+PLIST_SUB+=		WITHSSL="@comment "
 .endif
+
+# XXX limit results if we do a grep in the sources!
+post-patch:
+	@${RM} -rf ${WRKSRC}/mswin32
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|^DESTDIR *=|& ${DESTDIR}|" ${WRKSRC}/Makefile

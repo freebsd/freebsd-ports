@@ -1,182 +1,244 @@
-bin/nmap
 bin/ncat
-%%DATADIR%%/scripts/script.db
-%%DATADIR%%/scripts/whois.nse
-%%DATADIR%%/scripts/upnp-info.nse
-%%DATADIR%%/scripts/telnet-brute.nse
-%%DATADIR%%/scripts/sslv2.nse
-%%DATADIR%%/scripts/sshv1.nse
-%%DATADIR%%/scripts/ssh-hostkey.nse
-%%DATADIR%%/scripts/sql-injection.nse
-%%DATADIR%%/scripts/socks-open-proxy.nse
-%%DATADIR%%/scripts/snmp-sysdescr.nse
-%%DATADIR%%/scripts/snmp-brute.nse
-%%DATADIR%%/scripts/sniffer-detect.nse
-%%DATADIR%%/scripts/smtp-strangeport.nse
-%%DATADIR%%/scripts/smtp-open-relay.nse
-%%DATADIR%%/scripts/smtp-commands.nse
-%%DATADIR%%/scripts/smb-system-info.nse
-%%DATADIR%%/scripts/smb-server-stats.nse
-%%DATADIR%%/scripts/smb-security-mode.nse
-%%DATADIR%%/scripts/smb-os-discovery.nse
-%%DATADIR%%/scripts/smb-enum-users.nse
-%%DATADIR%%/scripts/smb-enum-shares.nse
-%%DATADIR%%/scripts/smb-enum-sessions.nse
-%%DATADIR%%/scripts/smb-enum-processes.nse
-%%DATADIR%%/scripts/smb-enum-domains.nse
-%%DATADIR%%/scripts/smb-check-vulns.nse
-%%DATADIR%%/scripts/smb-brute.nse
-%%DATADIR%%/scripts/skypev2-version.nse
-%%DATADIR%%/scripts/robots.txt.nse
-%%DATADIR%%/scripts/rpcinfo.nse
-%%DATADIR%%/scripts/realvnc-auth-bypass.nse
-%%DATADIR%%/scripts/pptp-version.nse
-%%DATADIR%%/scripts/pop3-capabilities.nse
-%%DATADIR%%/scripts/pop3-brute.nse
-%%DATADIR%%/scripts/p2p-conficker.nse
-%%DATADIR%%/scripts/nbstat.nse
-%%DATADIR%%/scripts/mysql-info.nse
-%%DATADIR%%/scripts/ms-sql-info.nse
-%%DATADIR%%/scripts/irc-info.nse
-%%DATADIR%%/scripts/imap-capabilities.nse
-%%DATADIR%%/scripts/iax2-version.nse
-%%DATADIR%%/scripts/http-trace.nse
-%%DATADIR%%/scripts/http-passwd.nse
-%%DATADIR%%/scripts/http-open-proxy.nse
-%%DATADIR%%/scripts/http-auth.nse
-%%DATADIR%%/scripts/http-iis-webdav-vuln.nse
-%%DATADIR%%/scripts/html-title.nse
-%%DATADIR%%/scripts/ftp-brute.nse
-%%DATADIR%%/scripts/ftp-bounce.nse
-%%DATADIR%%/scripts/ftp-anon.nse
-%%DATADIR%%/scripts/finger.nse
-%%DATADIR%%/scripts/dns-zone-transfer.nse
-%%DATADIR%%/scripts/dns-recursion.nse
-%%DATADIR%%/scripts/dns-random-txid.nse
-%%DATADIR%%/scripts/dns-random-srcport.nse
-%%DATADIR%%/scripts/daytime.nse
-%%DATADIR%%/scripts/banner.nse
-%%DATADIR%%/scripts/auth-spoof.nse
-%%DATADIR%%/scripts/auth-owners.nse
-%%DATADIR%%/scripts/asn-query.nse
-%%DATADIR%%/scripts/citrix-brute-xml.nse
-%%DATADIR%%/scripts/citrix-enum-apps-xml.nse
-%%DATADIR%%/scripts/citrix-enum-apps.nse
-%%DATADIR%%/scripts/citrix-enum-servers-xml.nse
-%%DATADIR%%/scripts/citrix-enum-servers.nse
-%%DATADIR%%/scripts/db2-info.nse
-%%DATADIR%%/scripts/dhcp-discover.nse
-%%DATADIR%%/scripts/http-date.nse
-%%DATADIR%%/scripts/http-enum.nse
-%%DATADIR%%/scripts/http-favicon.nse
-%%DATADIR%%/scripts/http-headers.nse
-%%DATADIR%%/scripts/http-malware-host.nse
-%%DATADIR%%/scripts/http-userdir-enum.nse
-%%DATADIR%%/scripts/nfs-showmount.nse
-%%DATADIR%%/scripts/ntp-info.nse
-%%DATADIR%%/scripts/oracle-sid-brute.nse
-%%DATADIR%%/scripts/pjl-ready-message.nse
-%%DATADIR%%/scripts/smb-enum-groups.nse
-%%DATADIR%%/scripts/smb-psexec.nse
-%%DATADIR%%/scripts/smbv2-enabled.nse
-%%DATADIR%%/scripts/ssl-cert.nse
-%%DATADIR%%/scripts/x11-access.nse
-@dirrm %%DATADIR%%/scripts
-%%DATADIR%%/nselib/data/psexec/backdoor.lua
-%%DATADIR%%/nselib/data/psexec/drives.lua
-%%DATADIR%%/nselib/data/psexec/nmap_service.exe
-%%DATADIR%%/nselib/data/psexec/network.lua
-%%DATADIR%%/nselib/data/psexec/nmap_service.c
-%%DATADIR%%/nselib/data/psexec/experimental.lua
-%%DATADIR%%/nselib/data/psexec/pwdump.lua
-%%DATADIR%%/nselib/data/psexec/default.lua
-%%DATADIR%%/nselib/data/psexec/nmap_service.vcproj
-%%DATADIR%%/nselib/data/psexec/encoder.c
-%%DATADIR%%/nselib/data/psexec/examples.lua
-%%DATADIR%%/nselib/data/psexec/README
-@dirrm %%DATADIR%%/nselib/data/psexec
-%%DATADIR%%/nselib/data/usernames.lst
-%%DATADIR%%/nselib/data/favicon-db
-%%DATADIR%%/nselib/data/http-fingerprints
-%%DATADIR%%/nselib/data/folders.lst
-%%DATADIR%%/nselib/data/oracle-sids
-%%DATADIR%%/nselib/data/passwords.lst
-%%DATADIR%%/nselib/data/yokoso-fingerprints
-@dirrm %%DATADIR%%/nselib/data
-%%DATADIR%%/nselib/citrixxml.lua
-%%DATADIR%%/nselib/proxy.lua
-%%DATADIR%%/nselib/strict.lua
-%%DATADIR%%/nselib/http.lua
-%%DATADIR%%/nselib/ipOps.lua
-%%DATADIR%%/nselib/strbuf.lua
-%%DATADIR%%/nselib/stdnse.lua
-%%DATADIR%%/nselib/shortport.lua
-%%DATADIR%%/nselib/packet.lua
-%%DATADIR%%/nselib/match.lua
-%%DATADIR%%/nselib/listop.lua
-%%DATADIR%%/nselib/url.lua
-%%DATADIR%%/nselib/tab.lua
-%%DATADIR%%/nselib/datafiles.lua
-%%DATADIR%%/nselib/comm.lua
-%%DATADIR%%/nselib/base64.lua
-%%DATADIR%%/nselib/unpwdb.lua
-%%DATADIR%%/nselib/snmp.lua
-%%DATADIR%%/nselib/pop3.lua
-%%DATADIR%%/nselib/dns.lua
-%%DATADIR%%/nselib/ssh2.lua
-%%DATADIR%%/nselib/ssh1.lua
-%%DATADIR%%/nselib/smbauth.lua
-%%DATADIR%%/nselib/smb.lua
-%%DATADIR%%/nselib/nsedebug.lua
-%%DATADIR%%/nselib/netbios.lua
-%%DATADIR%%/nselib/msrpctypes.lua
-%%DATADIR%%/nselib/msrpcperformance.lua
-%%DATADIR%%/nselib/msrpc.lua
-%%DATADIR%%/nselib/imap.lua
-@dirrm %%DATADIR%%/nselib
-%%DATADIR%%/nse_main.lua
+bin/nmap
+bin/nping
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/nmap.dtd
+%%WITHSSL%%%%NCATDATADIR%%/ca-bundle.crt
 %%DATADIR%%/nmap-mac-prefixes
 %%DATADIR%%/nmap-os-db
+%%DATADIR%%/nmap-payloads
 %%DATADIR%%/nmap-protocols
 %%DATADIR%%/nmap-rpc
 %%DATADIR%%/nmap-service-probes
 %%DATADIR%%/nmap-services
 %%DATADIR%%/nmap.dtd
 %%DATADIR%%/nmap.xsl
+%%DATADIR%%/nse_main.lua
+%%DATADIR%%/nselib/afp.lua
+%%DATADIR%%/nselib/asn1.lua
+%%DATADIR%%/nselib/base64.lua
+%%DATADIR%%/nselib/citrixxml.lua
+%%DATADIR%%/nselib/comm.lua
+%%DATADIR%%/nselib/data/favicon-db
+%%DATADIR%%/nselib/data/folders.lst
+%%DATADIR%%/nselib/data/http-fingerprints
+%%DATADIR%%/nselib/data/oracle-sids
+%%DATADIR%%/nselib/data/passwords.lst
+%%DATADIR%%/nselib/data/psexec/README
+%%DATADIR%%/nselib/data/psexec/backdoor.lua
+%%DATADIR%%/nselib/data/psexec/default.lua
+%%DATADIR%%/nselib/data/psexec/drives.lua
+%%DATADIR%%/nselib/data/psexec/examples.lua
+%%DATADIR%%/nselib/data/psexec/experimental.lua
+%%DATADIR%%/nselib/data/psexec/network.lua
+%%DATADIR%%/nselib/data/psexec/nmap_service.c
+%%DATADIR%%/nselib/data/psexec/nmap_service.vcproj
+%%DATADIR%%/nselib/data/psexec/pwdump.lua
+%%DATADIR%%/nselib/data/usernames.lst
+%%DATADIR%%/nselib/data/yokoso-fingerprints
+%%DATADIR%%/nselib/datafiles.lua
+%%DATADIR%%/nselib/db2.lua
+%%DATADIR%%/nselib/dns.lua
+%%DATADIR%%/nselib/http.lua
+%%DATADIR%%/nselib/imap.lua
+%%DATADIR%%/nselib/ipOps.lua
+%%DATADIR%%/nselib/json.lua
+%%DATADIR%%/nselib/ldap.lua
+%%DATADIR%%/nselib/listop.lua
+%%DATADIR%%/nselib/match.lua
+%%DATADIR%%/nselib/mongodb.lua
+%%DATADIR%%/nselib/msrpc.lua
+%%DATADIR%%/nselib/msrpcperformance.lua
+%%DATADIR%%/nselib/msrpctypes.lua
+%%DATADIR%%/nselib/mssql.lua
+%%DATADIR%%/nselib/mysql.lua
+%%DATADIR%%/nselib/netbios.lua
+%%DATADIR%%/nselib/nsedebug.lua
+%%DATADIR%%/nselib/packet.lua
+%%DATADIR%%/nselib/pgsql.lua
+%%DATADIR%%/nselib/pop3.lua
+%%DATADIR%%/nselib/proxy.lua
+%%DATADIR%%/nselib/rpc.lua
+%%DATADIR%%/nselib/shortport.lua
+%%DATADIR%%/nselib/smb.lua
+%%DATADIR%%/nselib/smbauth.lua
+%%DATADIR%%/nselib/snmp.lua
+%%DATADIR%%/nselib/ssh1.lua
+%%DATADIR%%/nselib/ssh2.lua
+%%DATADIR%%/nselib/stdnse.lua
+%%DATADIR%%/nselib/strbuf.lua
+%%DATADIR%%/nselib/strict.lua
+%%DATADIR%%/nselib/tab.lua
+%%DATADIR%%/nselib/unpwdb.lua
+%%DATADIR%%/nselib/url.lua
+%%DATADIR%%/scripts/afp-brute.nse
+%%DATADIR%%/scripts/afp-path-vuln.nse
+%%DATADIR%%/scripts/afp-serverinfo.nse
+%%DATADIR%%/scripts/afp-showmount.nse
+%%DATADIR%%/scripts/asn-query.nse
+%%DATADIR%%/scripts/auth-owners.nse
+%%DATADIR%%/scripts/auth-spoof.nse
+%%DATADIR%%/scripts/banner.nse
+%%DATADIR%%/scripts/citrix-brute-xml.nse
+%%DATADIR%%/scripts/citrix-enum-apps-xml.nse
+%%DATADIR%%/scripts/citrix-enum-apps.nse
+%%DATADIR%%/scripts/citrix-enum-servers-xml.nse
+%%DATADIR%%/scripts/citrix-enum-servers.nse
+%%DATADIR%%/scripts/couchdb-databases.nse
+%%DATADIR%%/scripts/couchdb-stats.nse
+%%DATADIR%%/scripts/daap-get-library.nse
+%%DATADIR%%/scripts/daytime.nse
+%%DATADIR%%/scripts/db2-brute.nse
+%%DATADIR%%/scripts/db2-das-info.nse
+%%DATADIR%%/scripts/db2-info.nse
+%%DATADIR%%/scripts/dhcp-discover.nse
+%%DATADIR%%/scripts/dns-cache-snoop.nse
+%%DATADIR%%/scripts/dns-fuzz.nse
+%%DATADIR%%/scripts/dns-random-srcport.nse
+%%DATADIR%%/scripts/dns-random-txid.nse
+%%DATADIR%%/scripts/dns-recursion.nse
+%%DATADIR%%/scripts/dns-service-discovery.nse
+%%DATADIR%%/scripts/dns-zone-transfer.nse
+%%DATADIR%%/scripts/finger.nse
+%%DATADIR%%/scripts/ftp-anon.nse
+%%DATADIR%%/scripts/ftp-bounce.nse
+%%DATADIR%%/scripts/ftp-brute.nse
+%%DATADIR%%/scripts/ftp-libopie.nse
+%%DATADIR%%/scripts/html-title.nse
+%%DATADIR%%/scripts/http-auth.nse
+%%DATADIR%%/scripts/http-date.nse
+%%DATADIR%%/scripts/http-enum.nse
+%%DATADIR%%/scripts/http-favicon.nse
+%%DATADIR%%/scripts/http-headers.nse
+%%DATADIR%%/scripts/http-iis-webdav-vuln.nse
+%%DATADIR%%/scripts/http-malware-host.nse
+%%DATADIR%%/scripts/http-methods.nse
+%%DATADIR%%/scripts/http-open-proxy.nse
+%%DATADIR%%/scripts/http-passwd.nse
+%%DATADIR%%/scripts/http-php-version.nse
+%%DATADIR%%/scripts/http-trace.nse
+%%DATADIR%%/scripts/http-userdir-enum.nse
+%%DATADIR%%/scripts/http-vmware-path-vuln.nse
+%%DATADIR%%/scripts/iax2-version.nse
+%%DATADIR%%/scripts/imap-capabilities.nse
+%%DATADIR%%/scripts/ipidseq.nse
+%%DATADIR%%/scripts/irc-info.nse
+%%DATADIR%%/scripts/irc-unrealircd-backdoor.nse
+%%DATADIR%%/scripts/jdwp-version.nse
+%%DATADIR%%/scripts/ldap-brute.nse
+%%DATADIR%%/scripts/ldap-rootdse.nse
+%%DATADIR%%/scripts/ldap-search.nse
+%%DATADIR%%/scripts/lexmark-config.nse
+%%DATADIR%%/scripts/mongodb-databases.nse
+%%DATADIR%%/scripts/mongodb-info.nse
+%%DATADIR%%/scripts/ms-sql-brute.nse
+%%DATADIR%%/scripts/ms-sql-config.nse
+%%DATADIR%%/scripts/ms-sql-empty-password.nse
+%%DATADIR%%/scripts/ms-sql-hasdbaccess.nse
+%%DATADIR%%/scripts/ms-sql-info.nse
+%%DATADIR%%/scripts/ms-sql-query.nse
+%%DATADIR%%/scripts/ms-sql-tables.nse
+%%DATADIR%%/scripts/ms-sql-xp-cmdshell.nse
+%%DATADIR%%/scripts/mysql-brute.nse
+%%DATADIR%%/scripts/mysql-databases.nse
+%%DATADIR%%/scripts/mysql-empty-password.nse
+%%DATADIR%%/scripts/mysql-info.nse
+%%DATADIR%%/scripts/mysql-users.nse
+%%DATADIR%%/scripts/mysql-variables.nse
+%%DATADIR%%/scripts/nbstat.nse
+%%DATADIR%%/scripts/nfs-ls.nse
+%%DATADIR%%/scripts/nfs-showmount.nse
+%%DATADIR%%/scripts/nfs-statfs.nse
+%%DATADIR%%/scripts/ntp-info.nse
+%%DATADIR%%/scripts/ntp-monlist.nse
+%%DATADIR%%/scripts/oracle-sid-brute.nse
+%%DATADIR%%/scripts/p2p-conficker.nse
+%%DATADIR%%/scripts/pgsql-brute.nse
+%%DATADIR%%/scripts/pjl-ready-message.nse
+%%DATADIR%%/scripts/pop3-brute.nse
+%%DATADIR%%/scripts/pop3-capabilities.nse
+%%DATADIR%%/scripts/pptp-version.nse
+%%DATADIR%%/scripts/qscan.nse
+%%DATADIR%%/scripts/realvnc-auth-bypass.nse
+%%DATADIR%%/scripts/robots.txt.nse
+%%DATADIR%%/scripts/rpcinfo.nse
+%%DATADIR%%/scripts/script.db
+%%DATADIR%%/scripts/skypev2-version.nse
+%%DATADIR%%/scripts/smb-brute.nse
+%%DATADIR%%/scripts/smb-check-vulns.nse
+%%DATADIR%%/scripts/smb-enum-domains.nse
+%%DATADIR%%/scripts/smb-enum-groups.nse
+%%DATADIR%%/scripts/smb-enum-processes.nse
+%%DATADIR%%/scripts/smb-enum-sessions.nse
+%%DATADIR%%/scripts/smb-enum-shares.nse
+%%DATADIR%%/scripts/smb-enum-users.nse
+%%DATADIR%%/scripts/smb-os-discovery.nse
+%%DATADIR%%/scripts/smb-psexec.nse
+%%DATADIR%%/scripts/smb-security-mode.nse
+%%DATADIR%%/scripts/smb-server-stats.nse
+%%DATADIR%%/scripts/smb-system-info.nse
+%%DATADIR%%/scripts/smbv2-enabled.nse
+%%DATADIR%%/scripts/smtp-commands.nse
+%%DATADIR%%/scripts/smtp-enum-users.nse
+%%DATADIR%%/scripts/smtp-open-relay.nse
+%%DATADIR%%/scripts/smtp-strangeport.nse
+%%DATADIR%%/scripts/sniffer-detect.nse
+%%DATADIR%%/scripts/snmp-brute.nse
+%%DATADIR%%/scripts/snmp-interfaces.nse
+%%DATADIR%%/scripts/snmp-netstat.nse
+%%DATADIR%%/scripts/snmp-processes.nse
+%%DATADIR%%/scripts/snmp-sysdescr.nse
+%%DATADIR%%/scripts/snmp-win32-services.nse
+%%DATADIR%%/scripts/snmp-win32-shares.nse
+%%DATADIR%%/scripts/snmp-win32-software.nse
+%%DATADIR%%/scripts/snmp-win32-users.nse
+%%DATADIR%%/scripts/socks-open-proxy.nse
+%%DATADIR%%/scripts/sql-injection.nse
+%%DATADIR%%/scripts/ssh-hostkey.nse
+%%DATADIR%%/scripts/sshv1.nse
+%%DATADIR%%/scripts/ssl-cert.nse
+%%DATADIR%%/scripts/ssl-enum-ciphers.nse
+%%DATADIR%%/scripts/sslv2.nse
+%%DATADIR%%/scripts/telnet-brute.nse
+%%DATADIR%%/scripts/upnp-info.nse
+%%DATADIR%%/scripts/whois.nse
+%%DATADIR%%/scripts/x11-access.nse
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/nselib/data/psexec
+@dirrm %%DATADIR%%/nselib/data
+@dirrm %%DATADIR%%/nselib
 @dirrm %%DATADIR%%
-%%NCATDATADIR%%/ca-bundle.crt
+@dirrm %%NPINGDIR%%
 @dirrm %%NCATDATADIR%%
-@dirrmtry man/de/man1
-@dirrmtry man/de
-@dirrmtry man/es/man1
-@dirrmtry man/es
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
-@dirrmtry man/hr/man1
-@dirrmtry man/hr
-@dirrmtry man/hu/man1
-@dirrmtry man/hu
-@dirrmtry man/it/man1
-@dirrmtry man/it
-@dirrmtry man/jp/man1
-@dirrmtry man/jp
-@dirrmtry man/pl/man1
-@dirrmtry man/pl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry man/zh/man1
+@dirrmtry man/zh
+@dirrmtry man/sk/man1
+@dirrmtry man/sk
+@dirrmtry man/ru/man1
+@dirrmtry man/ru
+@dirrmtry man/ro/man1
+@dirrmtry man/ro
 @dirrmtry man/pt_PT/man1
 @dirrmtry man/pt_PT
 @dirrmtry man/pt_BR/man1
 @dirrmtry man/pt_BR
-@dirrmtry man/pt/man1
-@dirrmtry man/pt
-@dirrmtry man/ro/man1
-@dirrmtry man/ro
-@dirrmtry man/ro/man1
-@dirrmtry man/ro
-@dirrmtry man/sk/man1
-@dirrmtry man/sk
-@dirrmtry man/zh/man1
-@dirrmtry man/zh
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/HACKING
-%%PORTDOCS%%%%DOCSDIR%%/nmap.dtd
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry man/pl/man1
+@dirrmtry man/pl
+@dirrmtry man/jp/man1
+@dirrmtry man/jp
+@dirrmtry man/it/man1
+@dirrmtry man/it
+@dirrmtry man/hu/man1
+@dirrmtry man/hu
+@dirrmtry man/hr/man1
+@dirrmtry man/hr
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry man/es/man1
+@dirrmtry man/es
+@dirrmtry man/de/man1
+@dirrmtry man/de
+@exec mkdir -p %D/%%NCATDATADIR%%
+@exec mkdir -p %D/%%NPINGDIR%%
