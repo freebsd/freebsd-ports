@@ -3274,6 +3274,7 @@
     SUBDIR += viewvc
     SUBDIR += vstr
     SUBDIR += vtcl
+    SUBDIR += vxlog
     SUBDIR += wand-libconfig
     SUBDIR += websvn
     SUBDIR += wininfo
