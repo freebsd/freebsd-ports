@@ -5,12 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	aMule
-PORTVERSION=	10266
+PORTNAME=	amule
+PORTVERSION=	10275
 CATEGORIES=	net-p2p
-MASTER_SITES=	ftp://ftp.lissyara.su/users/Guest/distfiles/ \
-		http://repo.or.cz/w/${PORTNAME:L}.git/snapshot/
-DISTNAME=	${PORTNAME:L}-svn-r${PORTVERSION}
+MASTER_SITES=	http://repo.or.cz/w/${PORTNAME}.git/snapshot/
+DISTNAME=	${PORTNAME}-svn-r${PORTVERSION}
 
 MAINTAINER=	swell.k@gmail.com
 COMMENT=	The all-platform eMule p2p client
@@ -18,10 +17,10 @@ COMMENT=	The all-platform eMule p2p client
 BUILD_DEPENDS=	${FLEX}:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
 
-LATEST_LINK=	aMule2
-CONFLICTS=	aMule-1.* aMule-devel-[0-9]* ed2k-hash-1.*
+LATEST_LINK=	amule2
+CONFLICTS=	aMule-[0-9]* aMule-devel-[0-9]* ed2k-hash-[0-9]*
 
-WRKSRC=		${WRKDIR}/${PORTNAME:L}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
@@ -30,16 +29,15 @@ USE_QT_VER=	4
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-included-gettext \
-		--with-libintl-prefix=${LOCALBASE} \
-		--with-libiconv-prefix=${LOCALBASE} \
-		--with-crypto-prefix=${LOCALBASE} \
-		--with-denoise-level=0
+CONFIGURE_ARGS=	--with-denoise-level=0
 
 CONFIGURE_ENV=	LEX="${FLEX}" PKG_CONFIG="${PKG_CONFIG}" \
 		docdir='$${prefix}/${DOCSDIR_REL}' \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
+		LDFLAGS="${LDFLAGS}"
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 
 OPTIONS=	ALC "Compile aMule Link Creator (+GUI)" on \
 		AMULECMD "Compile aMule command line client" on \
@@ -55,8 +53,6 @@ OPTIONS=	ALC "Compile aMule Link Creator (+GUI)" on \
 		WXUNICODE "Enable Unicode support" on \
 		XAS "Install XChat2 plugin" on
 
-DATADIR_REL=	share/${PORTNAME:L}
-DOCSDIR_REL=	share/doc/${PORTNAME:L}
 PORTDOCS=	ABOUT-NLS Changelog EC_Protocol.txt \
 		ED2K-Links.HOWTO INSTALL README TODO \
 		amule-win32.HOWTO.txt amulesig.txt license.txt socks4.protocol
@@ -106,7 +102,6 @@ PLIST_SUB+=		AMULEDAEMON="@comment "
 .if !defined(WITHOUT_AMULEGUI)
 CONFIGURE_ARGS+=	--enable-amule-gui
 PLIST_SUB+=		AMULEGUI=""
-USE_RC_SUBR=		amuled.sh
 .else
 CONFIGURE_ARGS+=	--disable-amule-gui
 PLIST_SUB+=		AMULEGUI="@comment "
@@ -154,7 +149,6 @@ PLIST_SUB+=		PLASMAMULE="@comment "
 .endif
 
 .if !defined(WITHOUT_UPNP)
-CONFIGURE_ARGS+=	--with-libupnp-prefix=${LOCALBASE}
 LIB_DEPENDS+=		upnp.3:${PORTSDIR}/devel/upnp
 .else
 CONFIGURE_ARGS+=	--disable-upnp
