@@ -8,7 +8,8 @@
 PORTNAME=	amule
 PORTVERSION=	10275
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://repo.or.cz/w/${PORTNAME}.git/snapshot/
+MASTER_SITES=	LOCAL/pav \
+		http://repo.or.cz/w/${PORTNAME}.git/snapshot/
 DISTNAME=	${PORTNAME}-svn-r${PORTVERSION}
 
 MAINTAINER=	swell.k@gmail.com
