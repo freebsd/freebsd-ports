@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mk-configure
-PORTVERSION=	0.17.0
+PORTVERSION=	0.18.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,7 +16,7 @@ COMMENT=	Lightweight, easy to use replacement for GNU autotools
 BUILD_DEPENDS=	${BMAKE}:${PORTSDIR}/devel/bmake
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAKE_JOBS_UNSAFE=	yes
+LICENSE=	BSD
 
 BMAKE?=		${LOCALBASE}/bin/bmake
 INSTALL_TARGET=	installdirs install
