@@ -1,0 +1,16 @@
+
+************************************************
+*  THIS IS THE DEVELOPMENT BRANCH OF HAPROXY!  *
+************************************************
+
+Please use the main port (net/haproxy) for the
+stable branch of haproxy for general production
+use of the software.
+
+Check the following directories for further info:
+  documentation:  '%%DOCSDIR%%'   
+  examples:       '%%EXAMPLESDIR%%'
+
+rc.conf variables listing can be found in:
+  '%%PREFIX%%/etc/rc.d/haproxy'
+

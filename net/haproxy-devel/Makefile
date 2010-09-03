@@ -6,41 +6,54 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.3.25
+PORTVERSION=	1.5.d2
+DISTVERSION=	1.5-dev2
 CATEGORIES=	net
-MASTER_SITES=	http://haproxy.1wt.eu/download/1.3/src/
+MASTER_SITES=	http://haproxy.1wt.eu/download/1.5/src/devel/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	freebsd@linepoint.com
-COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
+COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer - development branch
 
-CONFLICTS=	haproxy-1.[24]*
+LICENSE_COMB=	multi
+LICENSE=	GPLv2 LGPL21
+
+CONFLICTS=	haproxy-1.[24]\.*
 USE_RC_SUBR=	haproxy
+USE_GMAKE=	YES
+SUB_FILES=	pkg-message
+MAN1=		haproxy.1
 
-MAKEFILE=	Makefile.bsd
+OPTIONS=	PCRE		"Use PCRE regex library"        On\
+		STATIC_PCRE	"Use static PCRE regex library" Off
+
+.include <bsd.port.options.mk>
+
+MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS
+
+.if defined(WITH_PCRE)
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+MAKE_ARGS+=	"USE_PCRE=1"
+.endif
+
+.if defined(WITH_STATIC_PCRE)
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+MAKE_ARGS+=	"USE_STATIC_PCRE=1"
+.endif
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${PREFIX}/sbin
-
+	@${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${PREFIX}/sbin/
+	@${INSTALL_MAN} ${WRKSRC}/doc/haproxy.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/design-thoughts
-	@${MKDIR} ${DOCSDIR}/internals
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}/
-	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} internals ${DOCSDIR}/)
-	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} design-thoughts ${DOCSDIR}/)
+	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
-	@${INSTALL_DATA} ${WRKSRC}/examples/haproxy.cfg \
-				${PREFIX}/etc/haproxy.conf-dist
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+.endif
 
 post-install:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "${PORTNAME} is now installed."
-	@${ECHO_MSG} "To configure it, rename ${PREFIX}/etc/haproxy.conf-dist"
-	@${ECHO_MSG} "and add haproxy_enable=\"YES\" to /etc/rc.conf"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} ""
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
