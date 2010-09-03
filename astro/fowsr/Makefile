@@ -34,4 +34,10 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fowsr ${PREFIX}/bin/
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+.endif
+
+.include <bsd.port.post.mk>
