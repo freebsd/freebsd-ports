@@ -1,5 +1,7 @@
 @comment $FreeBSD$
-%%ETCDIR%%/fastcgi_params
+@unexec if cmp -s %D/%%ETCDIR%%/fastcgi_params-dist %D/%%ETCDIR%%/fastcgi_params; then rm -f %D/%%ETCDIR%%/fastcgi_params; fi
+%%ETCDIR%%/fastcgi_params-dist
+@exec if [ ! -f %D/%%ETCDIR%%/fastcgi_params ] ; then cp -p %D/%F %B/fastcgi_params; fi
 %%ETCDIR%%/koi-utf
 %%ETCDIR%%/koi-win
 %%ETCDIR%%/win-utf

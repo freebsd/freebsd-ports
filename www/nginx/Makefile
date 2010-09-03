@@ -7,6 +7,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	0.7.67
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -18,7 +19,7 @@ COMMENT=	Robust and small WWW server
 
 LICENSE=	BSD
 
-OPTIONS=	DEBUG			"Build with debug" off \
+OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		DEBUGLOG		"Enable debug log (--with-debug)" off \
 		IPV6			"Enable IPv6" off \
 		GOOGLE_PERFTOOLS	"Enable google perftools module" off \
@@ -490,10 +491,10 @@ do-install:
 	${MKDIR} ${ETCDIR} ${NGINX_TMPDIR}
 	${CHOWN} ${WWWOWN}:${WWWGRP} ${NGINX_TMPDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/nginx ${PREFIX}/sbin
-.for i in koi-win koi-utf win-utf fastcgi_params
+.for i in koi-utf koi-win win-utf
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}
 .endfor
-.for i in mime.types nginx.conf
+.for i in fastcgi_params mime.types nginx.conf
 	[ -f ${ETCDIR}/${i} ] || \
 		${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}/${i}-dist
