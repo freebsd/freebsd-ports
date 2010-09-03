@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	swank-clojure
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	devel lisp java
-MASTER_SITES=	http://download.github.com/
-DISTNAME=	technomancy-${PORTNAME}-${PORTVERSION}-0-ga0c9a2c
+MASTER_SITES=	http://download.github.com/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=olgeni
+DISTNAME=	technomancy-${PORTNAME}-${PORTVERSION}-0-g0af258a
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Swank/SLIME support for Clojure
@@ -18,9 +19,9 @@ COMMENT=	Swank/SLIME support for Clojure
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 
-WRKSRC=		${WRKDIR}/technomancy-swank-clojure-a0c9a2c
+WRKSRC=		${WRKDIR}/technomancy-swank-clojure-0af258a
 
-PLIST_FILES=	%%JAVAJARDIR%%/swank-clojure-1.2.0.jar
+PLIST_FILES=	%%JAVAJARDIR%%/swank-clojure-1.2.1.jar
 
 do-build:
 	@cd ${WRKSRC} && ${JAR} cf ${PORTNAME}-${PORTVERSION}.jar -C src swank
