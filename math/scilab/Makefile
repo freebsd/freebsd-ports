@@ -7,7 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz
@@ -95,7 +95,7 @@ BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant \
 		${JAVALIBDIR}/skinlf.jar:${PORTSDIR}/x11-toolkits/skinlf \
 		${JAVALIBDIR}/jrosetta-API.jar:${PORTSDIR}/java/jrosetta \
 		${JAVALIBDIR}/jhall.jar:${PORTSDIR}/java/javahelp \
-		${JAVALIBDIR}/jlatexmath-0.8.9.jar:${PORTSDIR}/math/jlatexmath \
+		${JAVALIBDIR}/jlatexmath.jar:${PORTSDIR}/math/jlatexmath \
 		fop:${PORTSDIR}/textproc/fop \
 		${LOCALBASE}/share/java/batik/batik.jar:${PORTSDIR}/graphics/batik \
 		foprep:${PORTSDIR}/math/jeuclid \
@@ -117,7 +117,7 @@ RUN_DEPENDS+=	${JAVALIBDIR}/flexdock-0.5.1.jar:${PORTSDIR}/devel/flexdock \
 		${JAVALIBDIR}/skinlf.jar:${PORTSDIR}/x11-toolkits/skinlf \
 		${JAVALIBDIR}/jrosetta-API.jar:${PORTSDIR}/java/jrosetta \
 		${JAVALIBDIR}/jhall.jar:${PORTSDIR}/java/javahelp \
-		${JAVALIBDIR}/jlatexmath-0.8.9.jar:${PORTSDIR}/math/jlatexmath \
+		${JAVALIBDIR}/jlatexmath.jar:${PORTSDIR}/math/jlatexmath \
 		fop:${PORTSDIR}/textproc/fop \
 		${LOCALBASE}/share/java/batik/batik.jar:${PORTSDIR}/graphics/batik \
 		foprep:${PORTSDIR}/math/jeuclid \
