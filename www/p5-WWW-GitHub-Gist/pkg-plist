@@ -1,0 +1,7 @@
+bin/gist.pl
+%%SITE_PERL%%/WWW/GitHub/Gist.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/GitHub/Gist/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/GitHub/Gist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/GitHub
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
+@dirrmtry %%SITE_PERL%%/WWW/GitHub
