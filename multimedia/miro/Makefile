@@ -7,6 +7,7 @@
 
 PORTNAME=	miro
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/	\
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
@@ -21,7 +22,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb	\
 		${PYTHON_SITELIBDIR}/dbus/glib.py:${PORTSDIR}/devel/py-dbus	\
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:${PORTSDIR}/devel/py-notify	\
 		${PYTHON_SITELIBDIR}/libtorrent.so:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15-python \
-		${PYTHON_SITELIBDIR}/webkit/webkit.so:${PORTSDIR}/www/py-webkitgtk
+		${PYTHON_SITELIBDIR}/webkit/webkit.so:${PORTSDIR}/www/py-webkitgtk \
+		${PYTHON_SITELIBDIR}/gtk-2.0/gconf.so:${PORTSDIR}/x11-toolkits/py-gnome2
 
 BUILD_WRKSRC=	${WRKSRC}/platform/gtk-x11
 INSTALL_WRKSRC=	${WRKSRC}/platform/gtk-x11
