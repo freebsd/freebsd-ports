@@ -5,14 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	KPackageKit
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	ports-mgmt sysutils kde
-MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
-DISTNAME=	84745-${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://opendesktop.org/CONTENT/content-files/
+DISTNAME=	84745-${PORTNAME:L}-${PORTVERSION}
 EXTRACT_SUFX=	.7z
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE interface for PackageKit
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 EXTRACT_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 LIB_DEPENDS=	packagekit-qt.14:${PORTSDIR}/ports-mgmt/packagekit-qt4
@@ -30,10 +33,6 @@ USE_CMAKE=	yes
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-pre-install:
-	${REINPLACE_CMD} -e 's/$${_install_dir}/$${DBUS_SERVICES_INSTALL_DIR}/' \
-		${WRKSRC}/cmake/modules/PkgConfigGetVar.cmake
+WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
 
 .include <bsd.port.mk>
