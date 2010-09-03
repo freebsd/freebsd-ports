@@ -7,12 +7,12 @@
 
 PORTNAME=	xlockmore
 PORTVERSION=	5.31
-CATEGORIES?=	x11
+CATEGORIES=	x11
 MASTER_SITES=	ftp://ibiblio.org/pub/Linux/X11/screensavers/ \
 		http://www.tux.org/~bagleyd/xlock/${PORTNAME}-${PORTVERSION}/ \
 		CRITICAL
 
-MAINTAINER?=	marius@nuenneri.ch
+MAINTAINER=	marius@nuenneri.ch
 COMMENT=	Like XLock session locker/screen saver, but just more
 
 USE_BZIP2=	yes
@@ -31,6 +31,8 @@ KRB5LIB=	-L${KRB5_HOME}/lib
 .endif
 USE_GNOME=	#
 USE_XORG=	x11 xaw ice
+
+LIB_DEPENDS+= freetype:${PORTSDIR}/print/freetype2
 
 MAN1=		xlock.1
 PLIST_FILES=	bin/xlock lib/X11/app-defaults/XLock
