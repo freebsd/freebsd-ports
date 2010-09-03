@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-Cover
-PORTVERSION=	0.68
+PORTVERSION=	0.70
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -58,7 +58,7 @@ MAN3=		Devel::Cover.3 \
 		Devel::Cover::Web.3
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	BUGS CHANGES README TODO
+PORTDOCS=	README
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
