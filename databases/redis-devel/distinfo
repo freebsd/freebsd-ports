@@ -1,3 +1,3 @@
-MD5 (redis-2.0.0-rc4.tar.gz) = 700b6475c168e9116fd80a5c8643db47
-SHA256 (redis-2.0.0-rc4.tar.gz) = 6096278a2ea64b7b6f75606f620cbf3df5b1de06e7a3a7dc4b34a97485fc3e22
-SIZE (redis-2.0.0-rc4.tar.gz) = 346479
+MD5 (redis-2.0.0.tar.gz) = 81caf0e629a5907cb0a7552630b3fd95
+SHA256 (redis-2.0.0.tar.gz) = b553850a287bafb9c9aae7c14eece1e0a2e0c8b65f7e13b2da454ccbde51d057
+SIZE (redis-2.0.0.tar.gz) = 346735
