@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@bebik.net
 COMMENT=	An all-in-one sequencer, drum machine, sampler and more
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
@@ -53,10 +53,6 @@ MANCOMPRESSED=	yes
 MAN1=		lmms.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800501
-BROKEN=		does not build
-.endif
 
 .if defined(WITH_JACK)
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
