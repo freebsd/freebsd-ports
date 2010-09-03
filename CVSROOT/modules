@@ -832,6 +832,7 @@ avinfo                          ports/multimedia/avinfo
 avis                            ports/java/avis
 avltree                         ports/devel/avltree
 avogadro                        ports/science/avogadro
+avp-demo                        ports/games/avp-demo
 avr-binutils                    ports/devel/avr-binutils
 avr-gcc                         ports/devel/avr-gcc
 avr-gcc-3                       ports/devel/avr-gcc-3
@@ -1356,6 +1357,7 @@ cacti                           ports/net-mgmt/cacti
 cacti-spine                     ports/net-mgmt/cacti-spine
 cadaver                         ports/www/cadaver
 cadubi                          ports/graphics/cadubi
+cagibi                          ports/net/cagibi
 cairo                           ports/graphics/cairo
 cairo-clock                     ports/x11-clocks/cairo-clock
 cairo-dock                      ports/deskutils/cairo-dock
@@ -7751,6 +7753,7 @@ libdap                          ports/devel/libdap
 libdasm                         ports/devel/libdasm
 libdbi                          ports/databases/libdbi
 libdbi-drivers                  ports/databases/libdbi-drivers
+libdbusmenu-qt                  ports/devel/libdbusmenu-qt
 libdc1394                       ports/multimedia/libdc1394
 libdca                          ports/multimedia/libdca
 libdfui                         ports/devel/libdfui
@@ -7966,6 +7969,7 @@ libkipi                         ports/graphics/libkipi
 libkmfl                         ports/textproc/libkmfl
 libkml                          ports/science/libkml
 libksba                         ports/security/libksba
+libktorrent                     ports/net-p2p/libktorrent
 liblas                          ports/devel/liblas
 liblastfm                       ports/audio/liblastfm
 liblbfgs                        ports/math/liblbfgs
@@ -19866,6 +19870,7 @@ pidgin-musictracker             ports/audio/pidgin-musictracker
 pidgin-osd                      ports/net-im/pidgin-osd
 pidgin-otr                      ports/security/pidgin-otr
 pidgin-pidgimpd                 ports/net-im/pidgin-pidgimpd
+pidgin-privacy-please           ports/net-im/pidgin-privacy-please
 pidgin-rhythmbox                ports/net-im/pidgin-rhythmbox
 pidgin-sipe                     ports/net-im/pidgin-sipe
 pidgin-twitter                  ports/net-im/pidgin-twitter
@@ -21846,6 +21851,7 @@ rdiff-backup10                  ports/sysutils/rdiff-backup10
 rdigest                         ports/security/rdigest
 rdist6                          ports/net/rdist6
 rdup                            ports/sysutils/rdup
+re2                             ports/devel/re2
 re2c                            ports/devel/re2c
 re_graph                        ports/textproc/re_graph
 readline                        ports/devel/readline
@@ -22459,6 +22465,7 @@ ruby19                          ports/lang/ruby19
 rubygem-abstract                ports/devel/rubygem-abstract
 rubygem-actionmailer            ports/mail/rubygem-actionmailer
 rubygem-actionpack              ports/www/rubygem-actionpack
+rubygem-activemodel             ports/databases/rubygem-activemodel
 rubygem-activerecord            ports/databases/rubygem-activerecord
 rubygem-activerecord-jdbc-adapter  ports/databases/rubygem-activerecord-jdbc-adapter
 rubygem-activerecord-jdbcmysql-adapter  ports/databases/rubygem-activerecord-jdbcmysql-adapter
@@ -22469,6 +22476,7 @@ rubygem-amazon-ecs              ports/www/rubygem-amazon-ecs
 rubygem-analogger               ports/devel/rubygem-analogger
 rubygem-anemone                 ports/www/rubygem-anemone
 rubygem-archive-tar-minitar     ports/archivers/rubygem-archive-tar-minitar
+rubygem-arel                    ports/databases/rubygem-arel
 rubygem-arrayfields             ports/devel/rubygem-arrayfields
 rubygem-augeas                  ports/textproc/rubygem-augeas
 rubygem-authlogic               ports/devel/rubygem-authlogic
@@ -22552,6 +22560,7 @@ rubygem-htmlentities            ports/textproc/rubygem-htmlentities
 rubygem-htmltools               ports/textproc/rubygem-htmltools
 rubygem-httparty                ports/www/rubygem-httparty
 rubygem-httpclient              ports/www/rubygem-httpclient
+rubygem-i18n                    ports/devel/rubygem-i18n
 rubygem-icalendar               ports/devel/rubygem-icalendar
 rubygem-igraph                  ports/devel/rubygem-igraph
 rubygem-imagesize               ports/graphics/rubygem-imagesize
@@ -22632,10 +22641,13 @@ rubygem-prawn-layout            ports/print/rubygem-prawn-layout
 rubygem-prawn-security          ports/print/rubygem-prawn-security
 rubygem-ptreloaded              ports/devel/rubygem-ptreloaded
 rubygem-rack                    ports/www/rubygem-rack
+rubygem-rack-mount              ports/www/rubygem-rack-mount
+rubygem-rack-test               ports/www/rubygem-rack-test
 rubygem-railroad                ports/graphics/rubygem-railroad
 rubygem-rails                   ports/www/rubygem-rails
 rubygem-rails-app-installer     ports/www/rubygem-rails-app-installer
 rubygem-railsbench              ports/benchmarks/rubygem-railsbench
+rubygem-railties                ports/www/rubygem-railties
 rubygem-rak                     ports/textproc/rubygem-rak
 rubygem-rake                    ports/devel/rubygem-rake
 rubygem-ramaze                  ports/www/rubygem-ramaze
@@ -22708,6 +22720,7 @@ rubygem-termcolor               ports/textproc/rubygem-termcolor
 rubygem-termtter                ports/net-im/rubygem-termtter
 rubygem-test-unit               ports/devel/rubygem-test-unit
 rubygem-thin                    ports/www/rubygem-thin
+rubygem-thor                    ports/devel/rubygem-thor
 rubygem-tidy                    ports/textproc/rubygem-tidy
 rubygem-tmail                   ports/mail/rubygem-tmail
 rubygem-transactionsimple       ports/devel/rubygem-transactionsimple
