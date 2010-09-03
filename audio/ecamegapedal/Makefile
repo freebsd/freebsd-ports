@@ -14,6 +14,10 @@ MASTER_SITES=	http://ecasound.seul.org/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Realtime audio processor
 
+DEPRECATED=     Abandonned since 2004, please use audio/jack-rack or audio/creox instead.
+EXPIRATION_DATE=        2012-10-03
+
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libecasound.a:${PORTSDIR}/audio/ecasound
 
 BROKEN=		does not compile
