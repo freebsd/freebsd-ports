@@ -13,6 +13,7 @@
 %%DATADIR%%/readme_ja.txt
 %%DATADIR%%/readme_it.txt
 %%DATADIR%%/readme_hu.txt
+%%DATADIR%%/readme_gl.txt
 %%DATADIR%%/readme_fr.txt
 %%DATADIR%%/readme_eu.txt
 %%DATADIR%%/readme_es.txt
@@ -55,37 +56,66 @@
 %%DATADIR%%/docs/zh_TW/version.properties
 %%DATADIR%%/docs/zh_TW/instantStartGuideNoTOC.html
 %%DATADIR%%/docs/zh_TW/images/NewProject.png
+%%DATADIR%%/docs/zh_CN/xindex.html
 %%DATADIR%%/docs/zh_CN/website.html
 %%DATADIR%%/docs/zh_CN/version.properties
 %%DATADIR%%/docs/zh_CN/userInterface.html
 %%DATADIR%%/docs/zh_CN/translationMemories.html
 %%DATADIR%%/docs/zh_CN/translationEditing.html
+%%DATADIR%%/docs/zh_CN/spellchecker.html
 %%DATADIR%%/docs/zh_CN/segmentation.html
 %%DATADIR%%/docs/zh_CN/searches.html
+%%DATADIR%%/docs/zh_CN/regexp.html
 %%DATADIR%%/docs/zh_CN/projectProperties.html
 %%DATADIR%%/docs/zh_CN/preventingDataLoss.html
 %%DATADIR%%/docs/zh_CN/plainText.html
 %%DATADIR%%/docs/zh_CN/menu.html
 %%DATADIR%%/docs/zh_CN/license.txt
 %%DATADIR%%/docs/zh_CN/legalNotices.html
+%%DATADIR%%/docs/zh_CN/languages.html
 %%DATADIR%%/docs/zh_CN/keyboardShortcuts.html
 %%DATADIR%%/docs/zh_CN/instantStartGuideNoTOC.html
 %%DATADIR%%/docs/zh_CN/instantStartGuide.html
+%%DATADIR%%/docs/zh_CN/installingAndRunning.html
 %%DATADIR%%/docs/zh_CN/index.html
+%%DATADIR%%/docs/zh_CN/images/tagged_segment_target.png
+%%DATADIR%%/docs/zh_CN/images/tagged_segment.png
+%%DATADIR%%/docs/zh_CN/images/saveglossary.png
 %%DATADIR%%/docs/zh_CN/images/Undock.gif
+%%DATADIR%%/docs/zh_CN/images/TextSearch.png
+%%DATADIR%%/docs/zh_CN/images/TagValidator.png
+%%DATADIR%%/docs/zh_CN/images/SpellcheckingText.png
+%%DATADIR%%/docs/zh_CN/images/SpellcheckerSetup2.png
 %%DATADIR%%/docs/zh_CN/images/Restore.gif
+%%DATADIR%%/docs/zh_CN/images/RegexTester.png
+%%DATADIR%%/docs/zh_CN/images/Omegatproject.png
+%%DATADIR%%/docs/zh_CN/images/OmegaT_projects_and_subdirectories.png
+%%DATADIR%%/docs/zh_CN/images/OmegaT_panes.png
+%%DATADIR%%/docs/zh_CN/images/OmegaT_icon.png
 %%DATADIR%%/docs/zh_CN/images/NewProject.png
+%%DATADIR%%/docs/zh_CN/images/MobyDick.png
 %%DATADIR%%/docs/zh_CN/images/Minimize.gif
 %%DATADIR%%/docs/zh_CN/images/Maximize.gif
+%%DATADIR%%/docs/zh_CN/images/MatchesPane.png
+%%DATADIR%%/docs/zh_CN/images/Main_pane_counters.png
+%%DATADIR%%/docs/zh_CN/images/Glossary_pane.png
 %%DATADIR%%/docs/zh_CN/images/Dock.gif
+%%DATADIR%%/docs/zh_CN/images/DictMerriamWebster.png
+%%DATADIR%%/docs/zh_CN/images/AsciiFilteroptions.png
 %%DATADIR%%/docs/zh_CN/images/AppleKey.gif
 %%DATADIR%%/docs/zh_CN/glossaries.html
 %%DATADIR%%/docs/zh_CN/formattedText.html
 %%DATADIR%%/docs/zh_CN/fontSettings.html
 %%DATADIR%%/docs/zh_CN/filesToTranslate.html
+%%DATADIR%%/docs/zh_CN/filesAndDirectories.html
 %%DATADIR%%/docs/zh_CN/fileFormats.html
 %%DATADIR%%/docs/zh_CN/fileFilters.html
+%%DATADIR%%/docs/zh_CN/dictionaries.html
+%%DATADIR%%/docs/zh_CN/consoleMode.html
+%%DATADIR%%/docs/zh_CN/commandlineArguments.html
 %%DATADIR%%/docs/zh_CN/aboutOmegaT.html
+%%DATADIR%%/docs/zh_CN/OmegaT.css
+%%DATADIR%%/docs/zh_CN/GoogleTranslate.html
 %%DATADIR%%/docs/tr/version.properties
 %%DATADIR%%/docs/tr/instantStartGuideNoTOC.html
 %%DATADIR%%/docs/tr/images/tagged_segment_target.png
@@ -267,7 +297,6 @@
 %%DATADIR%%/docs/ru/projectProperties.html
 %%DATADIR%%/docs/ru/preventingDataLoss.html
 %%DATADIR%%/docs/ru/plainText.html
-%%DATADIR%%/docs/ru/omegat.css
 %%DATADIR%%/docs/ru/menu.html
 %%DATADIR%%/docs/ru/license.txt
 %%DATADIR%%/docs/ru/legalNotices.html
@@ -285,16 +314,19 @@
 %%DATADIR%%/docs/ru/images/SpellcheckingText.png
 %%DATADIR%%/docs/ru/images/SpellcheckerSetup2.png
 %%DATADIR%%/docs/ru/images/Restore.gif
+%%DATADIR%%/docs/ru/images/RegexTester.png
 %%DATADIR%%/docs/ru/images/Omegatproject.png
 %%DATADIR%%/docs/ru/images/OmegaT_projects_and_subdirectories.png
 %%DATADIR%%/docs/ru/images/OmegaT_panes.png
 %%DATADIR%%/docs/ru/images/OmegaT_icon.png
 %%DATADIR%%/docs/ru/images/NewProject.png
+%%DATADIR%%/docs/ru/images/MobyDick.png
 %%DATADIR%%/docs/ru/images/Minimize.gif
 %%DATADIR%%/docs/ru/images/Maximize.gif
 %%DATADIR%%/docs/ru/images/MatchesPane.png
 %%DATADIR%%/docs/ru/images/Glossary_pane.png
 %%DATADIR%%/docs/ru/images/Dock.gif
+%%DATADIR%%/docs/ru/images/DictMerriamWebster.png
 %%DATADIR%%/docs/ru/images/AsciiFilteroptions.jpg
 %%DATADIR%%/docs/ru/images/AppleKey.gif
 %%DATADIR%%/docs/ru/glossaries.html
@@ -303,9 +335,13 @@
 %%DATADIR%%/docs/ru/filesToTranslate.html
 %%DATADIR%%/docs/ru/filesAndDirectories.html
 %%DATADIR%%/docs/ru/fileFilters.html
+%%DATADIR%%/docs/ru/dictionaries.html
+%%DATADIR%%/docs/ru/consoleMode.html
 %%DATADIR%%/docs/ru/aboutOmegaT.html
 %%DATADIR%%/docs/ru/Segmentation.html
 %%DATADIR%%/docs/ru/Searches.html
+%%DATADIR%%/docs/ru/OmegaT.css
+%%DATADIR%%/docs/ru/GoogleTranslate.html
 %%DATADIR%%/docs/pt_BR/website.html
 %%DATADIR%%/docs/pt_BR/version.properties
 %%DATADIR%%/docs/pt_BR/userInterface.html
@@ -557,6 +593,13 @@
 %%DATADIR%%/docs/hu/aboutOmegaT.html
 %%DATADIR%%/docs/hu/OmegaT.css
 %%DATADIR%%/docs/hu/GoogleTranslate.html
+%%DATADIR%%/docs/gl/license.txt
+%%DATADIR%%/docs/gl/instantStartGuideNoTOC.html
+%%DATADIR%%/docs/gl/images/tagged_segment_target.png
+%%DATADIR%%/docs/gl/images/tagged_segment.png
+%%DATADIR%%/docs/gl/images/NewProject.png
+%%DATADIR%%/docs/gl/images/MatchesPane.png
+%%DATADIR%%/docs/gl/OmegaT.css
 %%DATADIR%%/docs/fr/version.properties
 %%DATADIR%%/docs/fr/omegat.css
 %%DATADIR%%/docs/fr/license.txt
@@ -1023,6 +1066,8 @@
 @dirrm %%DATADIR%%/docs/it
 @dirrm %%DATADIR%%/docs/hu/images
 @dirrm %%DATADIR%%/docs/hu
+@dirrm %%DATADIR%%/docs/gl/images
+@dirrm %%DATADIR%%/docs/gl
 @dirrm %%DATADIR%%/docs/fr/images
 @dirrm %%DATADIR%%/docs/fr
 @dirrm %%DATADIR%%/docs/eu/images
