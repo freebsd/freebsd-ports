@@ -13,6 +13,7 @@ include/msgpack/type.hpp
 include/msgpack/type/bool.hpp
 include/msgpack/type/define.hpp
 include/msgpack/type/deque.hpp
+include/msgpack/type/fixint.hpp
 include/msgpack/type/float.hpp
 include/msgpack/type/int.hpp
 include/msgpack/type/list.hpp
