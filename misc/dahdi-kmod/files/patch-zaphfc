@@ -1,6 +1,6 @@
 diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/base.c
 --- freebsd/drivers/dahdi/zaphfc.orig/base.c	2010-09-01 00:55:30.000000000 +0700
-+++ freebsd/drivers/dahdi/zaphfc/base.c	2010-09-01 03:03:20.000000000 +0700
++++ freebsd/drivers/dahdi/zaphfc/base.c	2010-09-02 19:19:45.000000000 +0700
 @@ -23,6 +23,50 @@
   * Please read the README file for important infos.
   */
@@ -136,16 +136,29 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  			spin_unlock(&chan->lock);
  			return -EBUSY;
  		}
-@@ -437,7 +508,7 @@
+@@ -437,7 +508,6 @@
  	}
  
  	chan->open_by_zaptel = TRUE;
 -	try_module_get(THIS_MODULE);
-+	(void) try_module_get(THIS_MODULE);
  	spin_unlock(&chan->lock);
  
  	switch (chan->number) {
-@@ -509,12 +580,12 @@
+@@ -484,7 +554,13 @@
+ 	hfc_outb(card, hfc_SCTRL, card->regs.sctrl);
+ 	hfc_outb(card, hfc_SCTRL_R, card->regs.sctrl_r);
+ 
++#if defined(__FreeBSD__)
++	bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_POSTREAD);
++#endif
+ 	hfc_update_fifo_state(card);
++#if defined(__FreeBSD__)
++	bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_PREWRITE);
++#endif
+ 
+ 	printk(KERN_INFO hfc_DRIVER_PREFIX
+ 		"card %d: "
+@@ -509,12 +585,12 @@
  
  	spin_lock(&chan->lock);
  
@@ -160,7 +173,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  	chan->open_by_zaptel = FALSE;
  
  	spin_unlock(&chan->lock);
-@@ -538,8 +609,8 @@
+@@ -538,8 +614,8 @@
  	break;
  	}
  
@@ -171,7 +184,23 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  		card->regs.m2 &= ~hfc_M2_PROC_TRANS;
  
  	hfc_outb(card, hfc_INT_M2, card->regs.m2);
-@@ -591,7 +662,7 @@
+@@ -548,9 +624,13 @@
+ 	hfc_outb(card, hfc_SCTRL, card->regs.sctrl);
+ 	hfc_outb(card, hfc_SCTRL_R, card->regs.sctrl_r);
+ 
++#if defined(__FreeBSD__)
++	bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_POSTREAD);
++#endif
+ 	hfc_update_fifo_state(card);
+-
+-	module_put(THIS_MODULE);
++#if defined(__FreeBSD__)
++	bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_PREWRITE);
++#endif
+ 
+ 	printk(KERN_INFO hfc_DRIVER_PREFIX
+ 		"card %d: "
+@@ -591,7 +671,7 @@
  
  static int hfc_zap_startup(struct dahdi_span *span)
  {
@@ -180,7 +209,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
      struct hfc_card *hfctmp = zthfc->card;
      int alreadyrunning;
  
-@@ -642,6 +713,20 @@
+@@ -642,6 +722,20 @@
  	return 0;
  }
  
@@ -201,7 +230,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  static int hfc_zap_initialize(struct dahdi_hfc *hfccard)
  {
  	 struct hfc_card *hfctmp = hfccard->card;
-@@ -655,23 +740,14 @@
+@@ -655,23 +749,14 @@
  			hfctmp->nt_mode ? "NT" : "TE");
  	hfccard->span.spantype = hfctmp->nt_mode ? "NT" : "TE";
  	hfccard->span.manufacturer = "Cologne Chips";
@@ -229,7 +258,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  	hfccard->span.chans = hfccard->_chans;
  	hfccard->span.channels = 3;
  	for (i = 0; i < hfccard->span.channels; i++)
-@@ -680,7 +756,6 @@
+@@ -680,7 +765,6 @@
  	hfccard->span.linecompat = DAHDI_CONFIG_AMI | DAHDI_CONFIG_CCS;
  	hfccard->span.offset = 0;
  	init_waitqueue_head(&hfccard->span.maintq);
@@ -237,7 +266,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  
  	for (i = 0; i < hfccard->span.channels; i++) {
  		memset(&hfccard->chans[i], 0x0, sizeof(struct dahdi_chan));
-@@ -760,22 +835,20 @@
+@@ -760,22 +844,20 @@
  static void hfc_frame_arrived(struct hfc_chan_duplex *chan);
  static void hfc_handle_voice(struct hfc_card *card);
  
@@ -263,7 +292,114 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  
  	spin_lock_irqsave(&card->lock, flags);
  	status = hfc_inb(card, hfc_STATUS);
-@@ -1179,7 +1252,9 @@
+@@ -832,21 +914,40 @@
+ 			/*
+ 			 * D chan RX (bit 5)
+ 			 */
++#if defined(__FreeBSD__)
++			bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_POSTREAD);
++#endif
+ 			hfc_frame_arrived(&card->chans[D]);
++
++#if defined(__FreeBSD__)
++			bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_PREWRITE);
++#endif
+ 		}
+ 
+ 		if (s1 & hfc_INTS_B1REC) {
+ 			/*
+ 			 * B1 chan RX (bit 3)
+ 			 */
++#if defined(__FreeBSD__)
++			bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_POSTREAD);
++#endif
+ 			hfc_frame_arrived(&card->chans[B1]);
++#if defined(__FreeBSD__)
++			bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_PREWRITE);
++#endif
+ 		}
+ 
+ 		if (s1 & hfc_INTS_B2REC) {
+ 			/*
+ 			 * B2 chan RX (bit 4)
+ 			 */
++#if defined(__FreeBSD__)
++			bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_POSTREAD);
++#endif
+ 			hfc_frame_arrived(&card->chans[B2]);
++#if defined(__FreeBSD__)
++			bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_PREWRITE);
++#endif
+ 		}
+ 
+ 		if (s1 & hfc_INTS_DTRANS) {
+@@ -940,7 +1041,13 @@
+ 		card->regs.ctmt &= ~hfc_CTMT_TIMER_MASK;
+ 		hfc_outb(card, hfc_CTMT, card->regs.ctmt);
+ 
++#if defined(__FreeBSD__)
++		bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_POSTREAD);
++#endif
+ 		hfc_resume_fifo(card);
++#if defined(__FreeBSD__)
++		bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_PREWRITE);
++#endif
+ 	}
+ }
+ 
+@@ -971,11 +1078,17 @@
+ 			hfc_outb(card, hfc_STATES, hfc_STATES_LOAD_STATE | 3);
+ 		}
+ 
++#if defined(__FreeBSD__)
++		bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_POSTREAD);
++#endif
+ 		if (new_state == 3 && card->l1_state != 3)
+ 			hfc_resume_fifo(card);
+ 
+ 		if (new_state != 3 && card->l1_state == 3)
+ 			hfc_suspend_fifo(card);
++#if defined(__FreeBSD__)
++		bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_PREWRITE);
++#endif
+ 
+ 	} else {
+ 		if (new_state == 3) {
+@@ -1015,7 +1128,13 @@
+ 			/*
+ 			 * TE has become inactive, disable FIFO
+ 			 */
++#if defined(__FreeBSD__)
++			bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_POSTREAD);
++#endif
+ 			hfc_suspend_fifo(card);
++#if defined(__FreeBSD__)
++			bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_PREWRITE);
++#endif
+ 		}
+ 	}
+ 
+@@ -1040,6 +1159,9 @@
+ 		available_bytes >= DAHDI_CHUNKSIZE + hfc_RX_FIFO_PRELOAD) {
+ 		card->ticks = 0;
+ 
++#if defined(__FreeBSD__)
++		bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_POSTREAD);
++#endif
+ 		if (available_bytes > DAHDI_CHUNKSIZE*2 + hfc_RX_FIFO_PRELOAD) {
+ 			card->late_irqs++;
+ 			/*
+@@ -1064,6 +1186,9 @@
+ 		} else {
+ 			hfc_handle_voice(card);
+ 		}
++#if defined(__FreeBSD__)
++		bus_dmamap_sync(card->dma_tag, card->dma_map, BUS_DMASYNC_PREWRITE);
++#endif
+ 	}
+ 
+ 	card->ticks++;
+@@ -1179,7 +1304,9 @@
  {
  	struct hfc_card *card = chan->card;
  	int antiloop = 16;
@@ -273,7 +409,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  
  	while (hfc_fifo_has_frames(&chan->rx) && --antiloop) {
  		int frame_size = hfc_fifo_get_frame_size(&chan->rx);
-@@ -1229,6 +1304,7 @@
+@@ -1229,6 +1356,7 @@
  				 break;
  		}
  
@@ -281,7 +417,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  		skb = dev_alloc_skb(frame_size - 3);
  
  		if (!skb) {
-@@ -1254,6 +1330,7 @@
+@@ -1254,6 +1382,7 @@
  #else
  		skb->ip_summed = CHECKSUM_HW;
  #endif
@@ -289,7 +425,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  
  		if (chan->open_by_zaptel) {
  			card->chans[D].rx.ugly_framebuf_size = frame_size - 1;
-@@ -1261,20 +1338,26 @@
+@@ -1261,20 +1390,26 @@
  			if (hfc_fifo_get_frame(&card->chans[D].rx,
  				card->chans[D].rx.ugly_framebuf,
  				frame_size - 1) == -1) {
@@ -316,7 +452,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  		}
  	}
  
-@@ -1289,8 +1372,12 @@
+@@ -1289,8 +1424,12 @@
   * Module initialization and cleanup
   ******************************************/
  
@@ -329,7 +465,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  {
  	static int cardnum;
  	int err;
-@@ -1298,6 +1385,12 @@
+@@ -1298,6 +1437,12 @@
  
  	struct hfc_card *card = NULL;
  	struct dahdi_hfc *zthfc = NULL;
@@ -342,7 +478,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  	card = kmalloc(sizeof(struct hfc_card), GFP_KERNEL);
  	if (!card) {
  		printk(KERN_CRIT hfc_DRIVER_PREFIX
-@@ -1307,10 +1400,48 @@
+@@ -1307,10 +1452,48 @@
  	}
  
  	memset(card, 0x00, sizeof(struct hfc_card));
@@ -392,7 +528,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  	pci_set_drvdata(pci_dev, card);
  
  	err = pci_enable_device(pci_dev);
-@@ -1403,6 +1534,7 @@
+@@ -1403,6 +1586,7 @@
  			card->cardnum);
  		goto err_request_irq;
  	}
@@ -400,7 +536,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  
  	card->nt_mode = FALSE;
  
-@@ -1419,7 +1551,7 @@
+@@ -1419,7 +1603,7 @@
  	 */
  	card->chans[D].card = card;
  	card->chans[D].name = "D";
@@ -409,7 +545,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  	card->chans[D].number = D;
  	spin_lock_init(&card->chans[D].lock);
  
-@@ -1460,7 +1592,7 @@
+@@ -1460,7 +1644,7 @@
  	 */
  	card->chans[B1].card = card;
  	card->chans[B1].name = "B1";
@@ -418,7 +554,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  	card->chans[B1].number = B1;
  	card->chans[B1].protocol = 0;
  	spin_lock_init(&card->chans[B1].lock);
-@@ -1502,7 +1634,7 @@
+@@ -1502,7 +1686,7 @@
  	 */
  	card->chans[B2].card = card;
  	card->chans[B2].name = "B2";
@@ -427,7 +563,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  	card->chans[B2].number = B2;
  	card->chans[B2].protocol = 0;
  	spin_lock_init(&card->chans[B2].lock);
-@@ -1555,14 +1687,17 @@
+@@ -1555,14 +1739,17 @@
  	hfc_zap_initialize(zthfc);
  	card->ztdev = zthfc;
  
@@ -445,7 +581,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  	printk(KERN_INFO hfc_DRIVER_PREFIX
  		"card %d configured for %s mode at mem %#lx (0x%p) IRQ %u\n",
  		card->cardnum,
-@@ -1570,28 +1705,103 @@
+@@ -1570,28 +1757,106 @@
  		card->io_bus_mem,
  		card->io_mem,
  		card->pcidev->irq);
@@ -520,6 +656,9 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
 +{
 +	struct hfc_card *card = device_get_softc(dev);
 +
++	if (dahdi_module_usecount(THIS_MODULE) > 0)
++		return (EBUSY);
++
 +	hfc_softreset(card);
 +	dahdi_unregister(&card->ztdev->span);
 +	hfc_release_resources(card);
@@ -542,14 +681,14 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
 +
 +static devclass_t wcb1xxp_devclass;
 +
-+DAHDI_DRIVER_MODULE(wcb1xxp, pci, wcb1xxp_pci_driver, wcb1xxp_devclass, 0, 0);
++DAHDI_DRIVER_MODULE(wcb1xxp, pci, wcb1xxp_pci_driver, wcb1xxp_devclass);
 +MODULE_DEPEND(wcb1xxp, pci, 1, 1, 1);
 +MODULE_DEPEND(wcb1xxp, dahdi, 1, 1, 1);
 +#else
  static void __devexit hfc_remove(struct pci_dev *pci_dev)
  {
  	struct hfc_card *card = pci_get_drvdata(pci_dev);
-@@ -1671,8 +1881,6 @@
+@@ -1671,8 +1936,6 @@
  
  module_exit(hfc_module_exit);
  
@@ -558,7 +697,7 @@ diff -ruN freebsd/drivers/dahdi/zaphfc.orig/base.c freebsd/drivers/dahdi/zaphfc/
  MODULE_DESCRIPTION(hfc_DRIVER_DESCR);
  MODULE_AUTHOR("Jens Wilke <jw_vzaphfc@headissue.com>, "
  		"Daniele (Vihai) Orlandi <daniele@orlandi.com>, "
-@@ -1681,15 +1889,18 @@
+@@ -1681,15 +1944,18 @@
  #ifdef MODULE_LICENSE
  MODULE_LICENSE("GPL");
  #endif
