@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	wireshark
-PORTVERSION=	1.2.10
+PORTVERSION=	1.4.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
     		http://wireshark.osmirror.nl/download/src/ \
@@ -41,22 +41,13 @@ CFLAGS+=	-funit-at-a-time
 
 WIRESHARK_LIBS=
 
-.for x in capinfos editcap idl2wrs mergecap rawshark text2pcap
+.for x in capinfos editcap idl2wrs mergecap rawshark text2pcap dftest randpkt
 .if defined(LITE)
 PLIST_SUB+=		${x:U}="@comment $x not installed"
 CONFIGURE_ARGS+=	--enable-$x=no
 .else
 PLIST_SUB+=		${x:U}=bin/$x
 MAN1+=			$x.1
-.endif
-.endfor
-
-.for x in dftest randpkt
-.if defined(LITE)
-PLIST_SUB+=	${x:U}="@comment $x not installed"
-CONFIGURE_ARGS+=	--enable-$x=no
-.else
-PLIST_SUB+=	${x:U}=bin/$x
 .endif
 .endfor
 
