@@ -19,7 +19,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Macros/Main.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Macros/Package_Foo.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Macros/README
-share/java/classes/jlatexmath.jar
+%%JAVAJARDIR%%/jlatexmath.jar
 %%FOP%%share/java/classes/jlatexmath-fop.jar
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Macros/bin
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/Macros
