@@ -13,6 +13,9 @@ MASTER_SITES=	http://linuxtesting.org/downloads/
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Quickly generate sanity tests for the API of a C/C++ shared library
 
+LICENSE=	LGPL20 GPLv2
+LICENSE_COMB=	dual
+
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
