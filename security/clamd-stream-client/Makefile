@@ -10,7 +10,7 @@ DISTVERSION=	1.3
 CATEGORIES=	security
 MASTER_SITES=	SF/clamd-stream-cl/${PORTNAME}/${DISTVERSION}
 
-MAINTAINER=	glen.j.barber@gmail.com
+MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	Standalone clamav client
 
 HAS_CONFIGURE=	yes

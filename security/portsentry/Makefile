@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	security
 MASTER_SITES=	SF/sentrytools/${PORTNAME}%201.x/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	glen.j.barber@gmail.com
+MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	Port scan detection and active defense
 
 SUB_FILES=	portsentry.sh

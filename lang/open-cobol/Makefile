@@ -12,7 +12,7 @@ PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
-MAINTAINER=	glen.j.barber@gmail.com
+MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	An open-source COBOL compiler
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
