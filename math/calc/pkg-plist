@@ -97,6 +97,7 @@ lib/libcustcalc.so.%%VER3%%
 %%DATADIR%%/custom/register.cal
 %%DATADIR%%/deg.cal
 %%DATADIR%%/dotest.cal
+%%DATADIR%%/dms.cal
 %%DATADIR%%/ellip.cal
 %%DATADIR%%/hello.cal
 %%DATADIR%%/help/COPYING
@@ -431,6 +432,7 @@ lib/libcustcalc.so.%%VER3%%
 %%DATADIR%%/help/version
 %%DATADIR%%/help/wishlist
 %%DATADIR%%/help/xor
+%%DATADIR%%/hms.cal
 %%DATADIR%%/intfile.cal
 %%DATADIR%%/linear.cal
 %%DATADIR%%/lucas.cal
