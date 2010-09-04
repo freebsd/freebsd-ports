@@ -20,6 +20,8 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		tiff:${PORTSDIR}/graphics/tiff \
 		ungif:${PORTSDIR}/graphics/libungif
 
+BROKEN=		does not compile with new tiff
+
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
