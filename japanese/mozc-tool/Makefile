@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozc-tool
-PORTVERSION=	0.11.383.102
+PORTVERSION=	0.12.434.102
 CATEGORIES=	japanese
 MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
 DISTNAME=	mozc-${PORTVERSION}
@@ -16,6 +16,7 @@ MAINTAINER=	daichi@freebsd.org
 COMMENT=	Mozc tool for IBus, SCIM and others
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
+		${LOCALBASE}/bin/grep:${PORTSDIR}/textproc/gnugrep \
 		gyp:${PORTSDIR}/devel/py-gyp-devel
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gtest.0:${PORTSDIR}/devel/googletest \
@@ -38,6 +39,8 @@ REPLACE_FILES=	${WRKSRC}/build_mozc.py \
 		${WRKSRC}/gyp/common.gypi \
 		${WRKSRC}/base/util.cc \
 		${WRKSRC}/base/process.cc \
+		${WRKSRC}/gui/about_dialog/about_dialog.cc \
+		${WRKSRC}/gui/about_dialog/version_image_widget.cc
 
 post-patch:
 	@for FILE in ${REPLACE_FILES}; \
@@ -49,14 +52,20 @@ post-patch:
 do-build:
 	@cd ${WRKSRC}/; \
 		${PYTHON_CMD} build_mozc.py gyp --gypdir=${LOCALBASE}/bin; \
-		${SED} -i .bak -e "s/sed/gsed/g" Makefile; \
 		${PYTHON_CMD} build_mozc.py build_tools -c Release; \
 		${PYTHON_CMD} build_mozc.py build -c Release \
 			gui/gui.gyp:mozc_tool
 
 do-install:
 	@${INSTALL} -o 0 -g 0 -m 555 \
-		${WRKSRC}/out/Release/mozc_tool \
+		${WRKSRC}/out_linux/Release/mozc_tool \
 		${LOCALBASE}/bin/mozc_tool
+	@${MKDIR} ${LOCALBASE}/share/mozc-tool/icons
+	@${INSTALL} -o 0 -g 0 -m 444 \
+		${WRKSRC}/data/images/unix/ime_product_icon_opensource-32.png \
+		${LOCALBASE}/share/mozc-tool/icons/product_logo.png
+	@${INSTALL} -o 0 -g 0 -m 444 \
+		${WRKSRC}/data/images/unix/ime_product_icon_opensource-32.png \
+		${LOCALBASE}/share/mozc-tool/icons/update_uptodate.png
 
 .include <bsd.port.post.mk>

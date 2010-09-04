@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozc-server
-PORTVERSION=	0.11.383.102
+PORTVERSION=	0.12.434.102
 CATEGORIES=	japanese
 MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
 DISTNAME=	mozc-${PORTVERSION}
@@ -16,6 +16,7 @@ MAINTAINER=	daichi@freebsd.org
 COMMENT=	Mozc server for IBus, SCIM and others
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
+		${LOCALBASE}/bin/grep:${PORTSDIR}/textproc/gnugrep \
 		gyp:${PORTSDIR}/devel/py-gyp-devel
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gtest.0:${PORTSDIR}/devel/googletest \
@@ -29,7 +30,7 @@ USE_PYTHON=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800107
-BROKEN=	Does not compile on FreeBSD 7.X
+BROKEN=		Does not compile on FreeBSD 7.X
 .endif
 
 .if ${ARCH} == "sparc64"
@@ -45,17 +46,20 @@ WITH_DIC_UT_JINMEI=yes
 WITH_DIC_UT_MEISHI=yes
 WITH_DIC_UT_JINMEI=yes
 WITH_DIC_UT_KAOMOJI=yes
+WITH_DIC_UT_JIGYOSHO=yes
+WITH_DIC_UT_ZIPCODE=yes
 WITH_DIC_UT_EDICTKATAKANAGO=yes
-WITH_DIC_UT_GCANNAKIHONMEISHI=yes
 .endif
 
 .if defined(WITH_DIC_UT_MEISHI) || \
     defined(WITH_DIC_UT_JINMEI) || \
     defined(WITH_DIC_UT_KAOMOJI) || \
-    defined(WITH_DIC_UT_EDICTKATAKANAGO) || \
-    defined(WITH_DIC_UT_GCANNAKIHONMEISHI)
-DISTFILES+=     mozcdic-ut-20100617.tar.bz2
-WRKUTDICSRC=	${WRKDIR}/mozcdic-ut-20100617
+    defined(WITH_DIC_UT_JIGYOSHO) || \
+    defined(WITH_DIC_UT_ZIPCODE) || \
+    defined(WITH_DIC_UT_EDICTKATAKANAGO)
+DISTFILES+=     mozcdic-ut-devel-20100731.tar.bz2
+MASTER_SITES+=	http://www.geocities.jp/ep3797/snapshot/mozc/
+WRKUTDICSRC=    ${WRKDIR}/mozcdic-ut-devel-20100731
 .endif
 
 REPLACE_FILES=	${WRKSRC}/build_mozc.py \
@@ -70,37 +74,40 @@ post-patch:
 	    $${FILE}; \
 	done;
 .if defined(WITH_DIC_UT_MEISHI)
-	${CAT} ${WRKUTDICSRC}/mozcdic-ut-meisi-20100612.txt \
+	${CAT} ${WRKUTDICSRC}/mozcdic-ut-meisi-20100731.txt \
 		>> ${WRKSRC}/data/dictionary/dictionary1.txt
 .endif
 .if defined(WITH_DIC_UT_JINMEI)
-	${CAT} ${WRKUTDICSRC}/mozcdic-ut-jinmei-20100609.txt \
+	${CAT} ${WRKUTDICSRC}/mozcdic-ut-jinmei-20100731.txt \
 		>> ${WRKSRC}/data/dictionary/dictionary1.txt
 .endif
 .if defined(WITH_DIC_UT_KAOMOJI)
-	${CAT} ${WRKUTDICSRC}/kaomoji/mozcdic-ut-kaomoji-20100611.txt \
+	${CAT} ${WRKUTDICSRC}/mozcdic-ut-kaomoji-20100611.txt \
 		>> ${WRKSRC}/data/dictionary/dictionary1.txt
+.endif
+.if defined(WITH_DIC_UT_JIGYOSHO)
+	${CAT} ${WRKUTDICSRC}/mozcdic-ut-jigyosyo-20100731.txt \
+		>> ${WRKSRC}/data/dictionary/dictionary1.txt
+.endif
+.if defined(WITH_DIC_UT_ZIPCODE)
+	${CAT} ${WRKUTDICSRC}/mozcdic-ut-zipcode-20100731.txt \
+ 		>> ${WRKSRC}/data/dictionary/dictionary1.txt
 .endif
 .if defined(WITH_DIC_UT_EDICTKATAKANAGO)
-	${CAT} ${WRKUTDICSRC}/edict-katakanago/mozcdic-ut-edict-katakanago-20100609.txt \
-		>> ${WRKSRC}/data/dictionary/dictionary1.txt
-.endif
-.if defined(WITH_DIC_UT_GCANNAKIHONMEISHI)
-	${CAT} ${WRKUTDICSRC}/mozcdic-ut-gcanna-kihonmeisi-20100612.txt \
-		>> ${WRKSRC}/data/dictionary/dictionary1.txt
+	${CAT} ${WRKUTDICSRC}/mozcdic-ut-edict-katakanago-20100711.txt \
+ 		>> ${WRKSRC}/data/dictionary/dictionary1.txt
 .endif
 
 do-build:
 	@cd ${WRKSRC}/; \
 		${PYTHON_CMD} build_mozc.py gyp --gypdir=${LOCALBASE}/bin; \
-		${SED} -i .bak -e "s/sed/gsed/g" Makefile; \
 		${PYTHON_CMD} build_mozc.py build_tools -c Release; \
 		${PYTHON_CMD} build_mozc.py build -c Release \
 			server/server.gyp:mozc_server
 
 do-install:
 	@${INSTALL} -o 0 -g 0 -m 555 \
-		${WRKSRC}/out/Release/mozc_server \
+		${WRKSRC}/out_linux/Release/mozc_server \
 		${LOCALBASE}/bin/mozc_server
 
 .include <bsd.port.post.mk>
