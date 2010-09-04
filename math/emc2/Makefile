@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	emc2
-PORTVERSION=	2.15
-PORTREVISION=	5
+DISTVERSIONPREFIX=v
+DISTVERSION=	2.16c
 CATEGORIES=	math science
-MASTER_SITES=	http://pauillac.inria.fr/cdrom_a_graver/ftp/emc2/
-DISTFILES=	${PORTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://www.ann.jussieu.fr/~hecht/ftp/emc2/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 .if !defined(NOPORTDOCS)
-DISTFILES+=	${PORTNAME}-doc-en.ps.gz ${PORTNAME}-doc-fr.ps.gz
-EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
+DISTFILES+=	RTemc2_fr.pdf RTemc2_gb.pdf
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A graphic editor of two dimensional geometry and mesh
+COMMENT=	A graphical editor of two-dimensional mesh geometries
 
+LICENSE=	INRIA
+LICENSE_NAME=	INRIA license, perhaps specific to emc2
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_PERMS=	no-dist-sell no-pkg-sell
 RESTRICTED=	No resale, contact author for commercial usage
-
-BROKEN=		size mismatch
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XORG=	x11
 USE_GMAKE=	yes
@@ -33,19 +33,28 @@ ALL_TARGET=	${PORTNAME}
 CFLAGS+=	-DFRENCH
 .endif
 
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/emc2
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${DOCSDIR}
-	@${GZCAT} ${DISTDIR}/${PORTNAME}-doc-en.ps.gz > ${DOCSDIR}/${PORTNAME}-en.ps
-	@${GZCAT} ${DISTDIR}/${PORTNAME}-doc-fr.ps.gz > ${DOCSDIR}/${PORTNAME}-fr.ps
-	@${ECHO_MSG} "===>  Documentation installed in ${DOCSDIR}."
+PORTDOCS=	${DISTFILES:M*.pdf}
+.endif
+
+.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	*
+.endif
+
+PLIST_FILES=	bin/emc2 bin/prf_f3d
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/emc2 ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/prf_f3d ${PREFIX}/bin
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${DISTDIR} && ${INSTALL_MAN} ${PORTDOCS} ${DOCSDIR})
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-	@${ECHO_MSG} "===>  Examples installed in ${EXAMPLESDIR}."
 .endif
 
 .include <bsd.port.mk>
