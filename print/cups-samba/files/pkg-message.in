@@ -1,97 +1,53 @@
 **********************************************************************
-**********************************************************************
-MANUAL INSTALL INSTRUCTIONS:
-==============================
 
-To complete the installation of print/cups-samba, do in order:
+To complete the installation of print/cups-samba follow cupsaddsmb(8)
+manual page as below:
 
-SAMBA
--------
+1. Follow section "SAMBA CONFIGURATION" with following remarks:
 
-1) edit the [global] section of smb.conf and make sure it has these
-   lines (see 'man cupsaddsmb' for more info):
+   Adjust path for [print$].
+   
+   There is no standard directory so you should create one, you may pick
+   any directory but it must NOT be %%PREFIX%%/share/cups/drivers as
+   suggested in the past nor anything under %%PREFIX%%/etc/samba which
+   is not world readable.
+   It must be writeable by printer admin[2] (i.e. root) and world readable.
+   
+   Recommended
+   # mkdir -p  /var/lib/samba/drivers
+   # chmod 755 /var/lib/samba/drivers
+   
+2. Follow section "MICROSOFT POSTSCRIPT DRIVERS FOR WINDOWS"
 
-[global]
-	load printers = yes
-	printing = cups
-	printcap name = cups
+   You may skip 64-bit drivers if you don't need them.
+   
+3. Follow section "CUPS POSTSCRIPT DRIVERS FOR WINDOWS"
 
-2) edit the [printers] section of smb.conf and make sure it has these
-   lines:
+   Nothing needs to be done here as you should already have all files.
+   NOTE: 64-bit CUPS drivers were not yet released[1].
+   If you have 64-bit Windows machines, for now you have to fetch CUPS
+   drivers from SVN:
+   
+   # svn export http://svn.easysw.com/public/windows/trunk/x64 %%PREFIX%%/share/cups/drivers/x64
 
-[printers]
-	comment = All Printers
-	path = /var/spool/samba
-	browseable = no
-	public = yes
-	guest ok = yes
-	writable = no
-	printable = yes
-	printer admin = root
+4. Run cupsaddsmb
 
-3) edit the [print$] section of smb.conf and make sure it has these
-   lines:
+   To export all printers to MS Windows NT clients:
+   # cupsaddsmb -v -a
+   
+   You will be prompted for the password of samba user named root.
+   If you have not set it already do it before running cupsaddsmb:
+   # smbpasswd -a
 
-[print$]
-	comment = Printer Drivers
-	path = %%PREFIX%%/share/cups/drivers
-	browseable = yes
-	# guest ok = yes works too
-	guest ok = no
-	read only = yes
-	write list = root
-
-4) restart Samba
-
-____________
-NOTE:  Samba needs to know about the passwords for printer admin and
-write list or authentication will fail.
+5. On your Windows machine, browse for a network printer as usual.
+   Opening it should automagically install drivers.
 
 
-CUPS-LPR
-----------
+For more uses please refer to cupsaddsmb(8).
 
-1) Copy following files from your MS Windows system:
+More resources:
+[1] 64-bit clients: http://www.cups.org/str.php?L2566
+[2] http://wiki.samba.org/index.php/Samba_as_a_print_server#how_to_configure_printer_admin
+[3] chapters 17 & 18 of %%PREFIX%%/share/doc/samba/Samba-HOWTO-Collection.pdf
 
-  ps5ui.dll
-  pscript5.dll
-  pscript.hlp
-  pscript.ntf
-
-They are located somewhere in C:\WINDOWS\system32\spool\drivers\w32x86.
-Put them to %%PREFIX%%/share/cups/drivers and correct permissions (chmod -wx).
-
-2) Run cupsaddsmb
-
-If only a subset of your printers will be installed as exportable to
-MS Windows NT/XP/2000/2003 clients:
-
-#cupsaddsmb -U root cups_printer_1 cups_printer_2 ...
-
-To export all printers to MS Windows NT/XP/2000/2003 clients:
-
-#cupsaddsmb -U root -a
-
-In either case, you will be prompted for the root password.
-
-WINDOWS
----------
-
-1) Browse and install for a network printer as usual.  The drivers
-will be automagically installed.
-
-____________
-NOTE:  Other settings in smb.conf may work, but your REALLY need to
-know what your are doing.  :)
-
-64-bit Windows clients are not yet supported however you may find your luck
-with drivers from: http://www.cups.org/str.php?L2566
-
-On later Samba versions, "printer admin" is deprecated, instead your admin
-user should have SePrintOperatorPrivilege. Use "net rpc rights" to add them.
-
-%%PREFIX%%/share/doc/samba/Samba-HOWTO-Collection.pdf has some
-valuable information on this topic, especially chapters 17 and 18.
-
-**********************************************************************
 **********************************************************************
