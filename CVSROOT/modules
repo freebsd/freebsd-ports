@@ -7019,6 +7019,7 @@ kde4-l10n-gu                    ports/misc/kde4-l10n-gu
 kde4-l10n-hi                    ports/misc/kde4-l10n-hi
 kde4-l10n-hne                   ports/misc/kde4-l10n-hne
 kde4-l10n-hr                    ports/misc/kde4-l10n-hr
+kde4-l10n-ia                    ports/misc/kde4-l10n-ia
 kde4-l10n-id                    ports/misc/kde4-l10n-id
 kde4-l10n-is                    ports/misc/kde4-l10n-is
 kde4-l10n-it                    ports/misc/kde4-l10n-it
@@ -7785,7 +7786,6 @@ libdv                           ports/multimedia/libdv
 libdvbpsi                       ports/multimedia/libdvbpsi
 libdvdcss                       ports/multimedia/libdvdcss
 libdvdnav                       ports/multimedia/libdvdnav
-libdvdnav-mplayer               ports/multimedia/libdvdnav-mplayer
 libdvdplay                      ports/multimedia/libdvdplay
 libdvdread                      ports/multimedia/libdvdread
 libdwarf                        ports/devel/libdwarf
@@ -14374,6 +14374,7 @@ p5-WWW-Dilbert                  ports/www/p5-WWW-Dilbert
 p5-WWW-Facebook-API             ports/www/p5-WWW-Facebook-API
 p5-WWW-FreeProxy                ports/www/p5-WWW-FreeProxy
 p5-WWW-GMail                    ports/mail/p5-WWW-GMail
+p5-WWW-GitHub-Gist              ports/www/p5-WWW-GitHub-Gist
 p5-WWW-Google-Calculator        ports/www/p5-WWW-Google-Calculator
 p5-WWW-Google-News              ports/www/p5-WWW-Google-News
 p5-WWW-Google-News-TW           ports/www/p5-WWW-Google-News-TW
@@ -18382,6 +18383,7 @@ p5-www-dhl                      ports/www/p5-WWW-DHL
 p5-www-dilbert                  ports/www/p5-WWW-Dilbert
 p5-www-facebook-api             ports/www/p5-WWW-Facebook-API
 p5-www-freeproxy                ports/www/p5-WWW-FreeProxy
+p5-www-github-gist              ports/www/p5-WWW-GitHub-Gist
 p5-www-gmail                    ports/mail/p5-WWW-GMail
 p5-www-google-calculator        ports/www/p5-WWW-Google-Calculator
 p5-www-google-news              ports/www/p5-WWW-Google-News
@@ -19846,6 +19848,7 @@ picasm                          ports/devel/picasm
 pickwick                        ports/net-im/pickwick
 picmonger                       ports/news/PicMonger
 pico-alpine                     ports/editors/pico-alpine
+picoc                           ports/lang/picoc
 picocom                         ports/comms/picocom
 picp                            ports/devel/picp
 picprog                         ports/devel/picprog
@@ -21215,6 +21218,7 @@ py-tconfpy                      ports/devel/py-tconfpy
 py-tempita                      ports/textproc/py-Tempita
 py-testgears                    ports/devel/py-testgears
 py-testoob                      ports/devel/py-testoob
+py-testtools                    ports/devel/py-testtools
 py-textile                      ports/www/py-textile
 py-texttable                    ports/textproc/py-texttable
 py-tftpy                        ports/ftp/py-tftpy
@@ -25095,6 +25099,7 @@ vultures-eye                    ports/games/vultures-eye
 vuxml                           ports/security/vuxml
 vuze                            ports/net-p2p/vuze
 vvv                             ports/graphics/vvv
+vxlog                           ports/devel/vxlog
 vxquery                         ports/security/vxquery
 vxtools                         ports/emulators/vxtools
 vym                             ports/deskutils/vym
@@ -26569,6 +26574,7 @@ zenity                          ports/x11/zenity
 zenmap                          ports/security/zenmap
 zenphoto                        ports/www/zenphoto
 zephulor                        ports/games/zephulor
+zephyr                          ports/net-im/zephyr
 zeroer                          ports/sysutils/zeroer
 zeroinstall-injector            ports/devel/zeroinstall-injector
 zerowait-httpd                  ports/www/zerowait-httpd
