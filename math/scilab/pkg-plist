@@ -5704,6 +5704,7 @@ libdata/pkgconfig/scilab.pc
 %%GUI%%%%DATADIR%%/modules/javasci/tests/unit_tests/javac.sci
 %%GUI%%%%DATADIR%%/modules/javasci/tests/unit_tests/test_java.sci
 %%GUI%%%%DATADIR%%/modules/javasci/version.xml
+%%GUI%%%%DATADIR%%/modules/jgraphx.jar
 %%DATADIR%%/modules/jvm/changelog.txt
 %%DATADIR%%/modules/jvm/etc/jvm.quit
 %%DATADIR%%/modules/jvm/etc/jvm.start
