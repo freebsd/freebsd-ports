@@ -23,7 +23,7 @@ COMMENT=	Digium/Asterisk Hardware Device Interface
 BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 LIB_DEPENDS=	newt.52:${PORTSDIR}/devel/newt
 
-DAHDI_VERSION=		2.4.0-rc4
+DAHDI_VERSION=		2.4.0-rc5
 DAHDI_TOOLS_VERSION=	2.4.0-rc1
 OSLEC_VERSION=		2.6.35.4
 ZAPHFC_VERSION=		r5
