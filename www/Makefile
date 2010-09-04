@@ -1172,6 +1172,7 @@
     SUBDIR += p5-Template-Plugin-VMethods
     SUBDIR += p5-Template-Provider-Encoding
     SUBDIR += p5-Template-Provider-FromDATA
+    SUBDIR += p5-Template-Stash-AutoEscape
     SUBDIR += p5-Template-Timer
     SUBDIR += p5-Template-Toolkit
     SUBDIR += p5-Template-Toolkit-Simple

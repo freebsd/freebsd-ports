@@ -1,0 +1,11 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Stash/AutoEscape/.packlist
+%%SITE_PERL%%/Template/Stash/AutoEscape.pm
+%%SITE_PERL%%/Template/Stash/AutoEscape/Escaped/Base.pm
+%%SITE_PERL%%/Template/Stash/AutoEscape/Escaped/HTML.pm
+%%SITE_PERL%%/Template/Stash/AutoEscape/Escaped/YourCode.pm
+%%SITE_PERL%%/Template/Stash/AutoEscape/RawString.pm
+@dirrm %%SITE_PERL%%/Template/Stash/AutoEscape/Escaped
+@dirrm %%SITE_PERL%%/Template/Stash/AutoEscape
+@dirrmtry %%SITE_PERL%%/Template/Stash
+@dirrmtry %%SITE_PERL%%/Template
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Stash/AutoEscape
