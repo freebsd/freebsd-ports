@@ -68,7 +68,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>wget</name>
 	<name>wget-devel</name>
-	<range><lt>1.12_1</lt></range>
+	<range><le>1.12_1</le></range>
       </package>
     </affects>
     <description>
