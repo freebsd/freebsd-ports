@@ -90,6 +90,7 @@ lib/X11/app-defaults/XPaint_fr
 %%DATADIR%%/include/XPaint.ad.h
 %%DATADIR%%/include/Xpaint.h
 %%DATADIR%%/include/Xpaint3d.h
+%%DATADIR%%/include/bitmap.h
 %%DATADIR%%/include/color.h
 %%DATADIR%%/include/crc32.h
 %%DATADIR%%/include/graphic.h

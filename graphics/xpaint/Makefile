@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	xpaint
-PORTVERSION=	2.9.1.4
+PORTVERSION=	2.9.4
 CATEGORIES=	graphics
-MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
+MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A simple paint program
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		openjpeg:${PORTSDIR}/graphics/openjpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_BZIP2=	yes
