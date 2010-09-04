@@ -1,0 +1,3 @@
+A Plack Middleware for rate-limiting incoming HTTP requests.
+
+WWW: http://search.cpan.org/dist/Plack-Middleware-Throttle/
