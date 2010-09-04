@@ -27,6 +27,7 @@ lib/ocaml/site-lib/num-top/num_top.cma
 lib/ocaml/site-lib/num-top/num_top.cmi
 lib/ocaml/site-lib/num-top/num_top_printers.cmi
 lib/ocaml/site-lib/num/META
+lib/ocaml/site-lib/ocamlbuild/META
 lib/ocaml/site-lib/stdlib/META
 lib/ocaml/site-lib/str/META
 lib/ocaml/site-lib/threads/META
