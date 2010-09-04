@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scim-mozc
-PORTVERSION=	0.11.383.102
+PORTVERSION=	0.12.434.102
 CATEGORIES=	japanese
 MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
 DISTNAME=	mozc-${PORTVERSION}
@@ -16,6 +16,7 @@ MAINTAINER=	daichi@freebsd.org
 COMMENT=	Mozc engine for SCIM
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
+		${LOCALBASE}/bin/grep:${PORTSDIR}/textproc/gnugrep \
 		gyp:${PORTSDIR}/devel/py-gyp-devel \
 		scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
@@ -56,7 +57,6 @@ post-patch:
 do-build:
 	@cd ${WRKSRC}/; \
 		${PYTHON_CMD} build_mozc.py gyp --gypdir=${LOCALBASE}/bin; \
-		${SED} -i .bak -e "s/sed/gsed/g" Makefile; \
 		${PYTHON_CMD} build_mozc.py build_tools -c Release; \
 		${PYTHON_CMD} build_mozc.py build -c Release \
 			unix/scim/scim.gyp:scim_mozc \
@@ -64,11 +64,42 @@ do-build:
 
 do-install:
 	@${INSTALL} -o 0 -g 0 -m 555 \
-		${WRKSRC}/out/Release/lib.target/libscim_mozc.so \
+		${WRKSRC}/out_linux/Release/lib.target/libscim_mozc.so \
 		${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/mozc.so
 	@${INSTALL} -o 0 -g 0 -m 555 \
-		${WRKSRC}/out/Release/lib.target/libscim_mozc_setup.so \
+		${WRKSRC}/out_linux/Release/lib.target/libscim_mozc_setup.so \
 		${LOCALBASE}/lib/scim-1.0/1.4.0/SetupUI/mozc_setup.so
+	@${MKDIR} ${LOCALBASE}/share/scim-mozc/icons
+	@${INSTALL} -o 0 -g 0 -m 444 \
+	        ${WRKSRC}/data/images/unix/ui-alpha_full.png \
+	        ${LOCALBASE}/share/scim-mozc/icons/scim-mozc-alpha_full.png
+	@${INSTALL} -o 0 -g 0 -m 444 \
+		${WRKSRC}/data/images/unix/ui-alpha_half.png \
+		${LOCALBASE}/share/scim-mozc/icons/scim-mozc-alpha_half.png
+	@${INSTALL} -o 0 -g 0 -m 444 \
+		${WRKSRC}/data/images/unix/ui-dictionary.png \
+		${LOCALBASE}/share/scim-mozc/icons/scim-mozc-dictionary.png
+	@${INSTALL} -o 0 -g 0 -m 444 \
+		${WRKSRC}/data/images/unix/ui-direct.png \
+		${LOCALBASE}/share/scim-mozc/icons/scim-mozc-direct.png
+	@${INSTALL} -o 0 -g 0 -m 444 \
+		${WRKSRC}/data/images/unix/ui-hiragana.png \
+		${LOCALBASE}/share/scim-mozc/icons/scim-mozc-hiragana.png
+	@${INSTALL} -o 0 -g 0 -m 444 \
+		${WRKSRC}/data/images/unix/ui-katakana_full.png \
+		${LOCALBASE}/share/scim-mozc/icons/scim-mozc-katakana_full.png
+	@${INSTALL} -o 0 -g 0 -m 444 \
+		${WRKSRC}/data/images/unix/ui-katakana_half.png \
+		${LOCALBASE}/share/scim-mozc/icons/scim-mozc-katakana_half.png
+	@${INSTALL} -o 0 -g 0 -m 444 \
+		${WRKSRC}/data/images/unix/ui-properties.png \
+		${LOCALBASE}/share/scim-mozc/icons/scim-mozc-properties.png
+	@${INSTALL} -o 0 -g 0 -m 444 \
+		${WRKSRC}/data/images/unix/ui-tool.png \
+		${LOCALBASE}/share/scim-mozc/icons/scim-mozc-tool.png
+	@${INSTALL} -o 0 -g 0 -m 444 \
+		${WRKSRC}/data/images/unix/ime_product_icon_opensource-32.png \
+		${LOCALBASE}/share/scim-mozc/icons/scim-mozc.png
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

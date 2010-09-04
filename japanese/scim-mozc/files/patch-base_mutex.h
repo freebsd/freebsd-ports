@@ -1,0 +1,11 @@
+--- base/mutex.h	2010-08-13 19:48:05.000000000 +0900
++++ base/mutex.h	2010-09-03 11:20:50.849065252 +0900
+@@ -87,7 +87,7 @@
+ #endif
+ 
+ #ifdef OS_LINUX
+-#define PTHREAD_MUTEX_RECURSIVE_VALUE PTHREAD_MUTEX_RECURSIVE_NP
++#define PTHREAD_MUTEX_RECURSIVE_VALUE PTHREAD_MUTEX_RECURSIVE
+ #endif
+ 
+     pthread_mutexattr_t attr;

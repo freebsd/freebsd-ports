@@ -1,0 +1,11 @@
+--- base/iconv.cc.org	2010-08-13 19:48:06.000000000 +0900
++++ base/iconv.cc	2010-09-03 11:18:15.807359114 +0900
+@@ -52,7 +52,7 @@
+   size_t olen_org = olen;
+   iconv(ic, 0, &ilen, 0, &olen);  // reset iconv state
+   while (ilen != 0) {
+-    if (iconv(ic, reinterpret_cast<char **>(&ibuf), &ilen, &obuf, &olen)
++    if (iconv(ic, (const char **)(&ibuf), &ilen, &obuf, &olen)
+         == static_cast<size_t>(-1)) {
+       return;
+     }
