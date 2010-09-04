@@ -1,0 +1,21 @@
+--- etc/librarypath.xml.orig	2010-08-18 22:12:51.000000000 -0700
++++ etc/librarypath.xml	2010-08-18 22:15:41.000000000 -0700
+@@ -29,16 +29,11 @@
+ <path value="$SCILAB/modules/xpad/.libs"/>
+ <path value="$SCILAB/.libs"/>
+ 
+-<!-- Default path to the JNI classes under some Linux (JoGL under Debian for example) -->
+-<path value="/usr/lib/jni/"/>
+-
+ <!-- Make install with prefix -->
+ <path value="$SCILAB/../../lib/scilab/"/>
+ 
+ <!-- Standard path -->
+-<path value="/usr/lib/scilab/"/>
+-
+-<!-- Standard path for 64 bits -->
+-<path value="/usr/lib64/scilab/"/>
++<path value="%%JAVALIBDIR%%/"/>
++<path value="%%PREFIX%%/lib/"/>
+ 
+ </librarypaths>

@@ -9,8 +9,12 @@ PORTNAME=	scilab
 PORTVERSION=	5.2.2
 PORTREVISION=	3
 CATEGORIES=	math cad parallel java
-MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
-EXTRACT_SUFX=	-src.tar.gz
+MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/:scilab \
+		http://www.bayofrum.net/dist/jgraphx/:jgraphx \
+		http://cerberus.bayofrum.net/dist/jgraphx/:jgraphx \
+		http://www.predatorlabs.net/dl/:jgraphx
+DISTFILES=	${DISTNAME}-src.tar.gz:scilab
+EXTRACT_ONLY=	${DISTNAME}-src.tar.gz
 
 MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	Scientific software package for numerical computations
@@ -21,7 +25,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		readline.6:${PORTSDIR}/devel/readline
 
-MAKE_JOBS_UNSAFE=	yes
+MAKE_JOBS_SAFE=	yes
 
 USE_FORTRAN=	yes
 USE_GETTEXT=	yes
@@ -84,13 +88,16 @@ PLIST_SUB+=	GUI="@comment "
 PLIST_SUB+=	NOGUI=""
 NOPORTDOCS=	YES
 .else
+DISTFILES+=	${JGRAPHX_JAR}:jgraphx
+JGRAPHX_VERSION=	1.3.0.0
+JGRAPHX_JAR=	jgraphx-${JGRAPHX_VERSION:C/\./_/g}.jar
+
 LIB_DEPENDS+=	hdf5.6:${PORTSDIR}/science/hdf5-18
 
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant \
 		${JAVALIBDIR}/flexdock-0.5.1.jar:${PORTSDIR}/devel/flexdock \
 		${JAVALIBDIR}/jogl.jar:${PORTSDIR}/graphics/jogl \
 		${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
-		${JAVALIBDIR}/jgraphx.jar:${PORTSDIR}/java/jgraphx \
 		${JAVALIBDIR}/looks.jar:${PORTSDIR}/devel/looks \
 		${JAVALIBDIR}/skinlf.jar:${PORTSDIR}/x11-toolkits/skinlf \
 		${JAVALIBDIR}/jrosetta-API.jar:${PORTSDIR}/java/jrosetta \
@@ -112,7 +119,6 @@ BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant \
 RUN_DEPENDS+=	${JAVALIBDIR}/flexdock-0.5.1.jar:${PORTSDIR}/devel/flexdock \
 		${JAVALIBDIR}/jogl.jar:${PORTSDIR}/graphics/jogl \
 		${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
-		${JAVALIBDIR}/jgraphx.jar:${PORTSDIR}/java/jgraphx \
 		${JAVALIBDIR}/looks.jar:${PORTSDIR}/devel/looks \
 		${JAVALIBDIR}/skinlf.jar:${PORTSDIR}/x11-toolkits/skinlf \
 		${JAVALIBDIR}/jrosetta-API.jar:${PORTSDIR}/java/jrosetta \
@@ -209,6 +215,9 @@ post-patch:
 	${REINPLACE_CMD} -e 's|$$jardir/batik.jar|${LOCALBASE}/share/java/batik/batik.jar|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|$$jardir/fop.jar|${LOCALBASE}/share/java/fop/build/fop.jar|' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|$$jardir/jeuclid-core*.jar|${LOCALBASE}/share/java/jeuclid/repo/jeuclid-core*.jar|' ${WRKSRC}/configure
+	${MKDIR} ${WRKSRC}/thirdparty
+	${CP} ${DISTDIR}/${JGRAPHX_JAR} ${WRKSRC}/thirdparty/jgraphx.jar
+	${REINPLACE_CMD} -e 's|@JGRAPHX@|${DATADIR}/modules/jgraphx.jar|g' ${WRKSRC}/etc/classpath.xml.in
 	# Build fixes
 	${REINPLACE_CMD} -e 's|$$(CFLAGS:-O%=)|-I${LOCALBASE}/include -L${LOCALBASE}/lib|' ${WRKSRC}/modules/elementary_functions/Makefile.in
 	${REINPLACE_CMD} -e 's|freebsd|__FreeBSD__|g' ${WRKSRC}/modules/sparse/includes/spConfig.h
@@ -223,6 +232,9 @@ post-patch:
 		${WRKSRC}/modules/call_scilab/examples/call_scilab/NET/VB.NET/My_Project/
 	${REINPLACE_CMD} -e 's|My Project|My_Project|g' ${WRKSRC}/modules/call_scilab/examples/call_scilab/NET/VB.NET/VB.NET.vbproj
 	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
+	# Run fixes
+	${REINPLACE_CMD} -e 's|%%JAVALIBDIR%%|${JAVALIBDIR}|' ${WRKSRC}/etc/librarypath.xml
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/etc/librarypath.xml
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/%%PORTDOCS%%/d' ${WRKSRC}/Makefile.in
 .else
@@ -233,5 +245,6 @@ pre-install:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 	@${FIND} ${WRKSRC} -name \*.bak -delete
 	@${FIND} ${WRKSRC} -name .cvsignore -delete
+	@${MKDIR} ${DATADIR}/modules && ${INSTALL_DATA} ${DISTDIR}/${JGRAPHX_JAR} ${DATADIR}/modules/jgraphx.jar
 
 .include <bsd.port.mk>
