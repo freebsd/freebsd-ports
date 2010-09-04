@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsnes
-PORTVERSION=	0.67
+PORTVERSION=	0.68
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}
@@ -97,22 +97,22 @@ IGNORE=	you have to choose at least an input driver first
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|VIDEO|${VIDEO_DRIVER}|' ${WRKSRC}/src/ui_qt/Makefile
-	${REINPLACE_CMD} -e 's|AUDIO|${AUDIO_DRIVER}|' ${WRKSRC}/src/ui_qt/Makefile
-	${REINPLACE_CMD} -e 's|INPUT|${INPUT_DRIVER}|' ${WRKSRC}/src/ui_qt/Makefile
+	${REINPLACE_CMD} -e 's|VIDEO|${VIDEO_DRIVER}|' ${WRKSRC}/bsnes/qt/Makefile
+	${REINPLACE_CMD} -e 's|AUDIO|${AUDIO_DRIVER}|' ${WRKSRC}/bsnes/qt/Makefile
+	${REINPLACE_CMD} -e 's|INPUT|${INPUT_DRIVER}|' ${WRKSRC}/bsnes/qt/Makefile
 
 do-build:
-	(cd ${WRKSRC}/src && ${GMAKE} ${MAKE_ENV})
+	(cd ${WRKSRC}/bsnes && ${GMAKE} ${MAKE_ENV})
 	(cd ${WRKSRC}/snesreader && ${GMAKE} ${MAKE_ENV})
 	(cd ${WRKSRC}/snesfilter && ${GMAKE} ${MAKE_ENV})
 	(cd ${WRKSRC}/supergameboy && ${GMAKE} ${MAKE_ENV})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/bsnes/out/bsnes-compatibility ${PREFIX}/bin/bsnes
 	${MKDIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/src/data/bsnes.png ${PREFIX}/share/pixmaps/bsnes.png
+	${INSTALL_DATA} ${WRKSRC}/bsnes/qt/data/bsnes.png ${PREFIX}/share/pixmaps/bsnes.png
 	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/src/data/bsnes.desktop ${PREFIX}/share/applications/bsnes.desktop
+	${INSTALL_DATA} ${WRKSRC}/bsnes/qt//data/bsnes.desktop ${PREFIX}/share/applications/bsnes.desktop
 	${INSTALL_DATA} ${WRKSRC}/snesreader/libsnesreader.so ${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/snesfilter/libsnesfilter.so ${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/supergameboy/libsupergameboy.so ${PREFIX}/lib/

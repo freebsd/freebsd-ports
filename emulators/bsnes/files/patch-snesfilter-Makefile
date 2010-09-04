@@ -1,5 +1,5 @@
---- snesfilter/Makefile.orig	2010-02-28 08:05:38.000000000 +0100
-+++ snesfilter/Makefile	2010-05-17 08:18:59.000000000 +0200
+--- snesfilter/Makefile.orig	2010-09-02 13:28:07.000000000 +0200
++++ snesfilter/Makefile	2010-09-02 13:28:17.000000000 +0200
 @@ -3,8 +3,8 @@
  qtlibs := QtCore QtGui
  include nall/qt/Makefile
