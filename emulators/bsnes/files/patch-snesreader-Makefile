@@ -1,5 +1,5 @@
---- snesreader/Makefile.orig	2010-05-17 07:48:27.000000000 +0200
-+++ snesreader/Makefile	2010-05-17 07:48:45.000000000 +0200
+--- snesreader/Makefile.orig	2010-09-02 13:26:29.000000000 +0200
++++ snesreader/Makefile	2010-09-02 13:26:42.000000000 +0200
 @@ -3,8 +3,8 @@
  qtlibs := QtCore QtGui
  include nall/qt/Makefile
