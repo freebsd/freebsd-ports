@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Devel-StackTrace
-PORTVERSION=	1.23
+PORTVERSION=	1.24
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,6 @@ COMMENT=	Stack trace and stack trace frame objects
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Devel::StackTrace.3
+MAN3=		Devel::StackTrace.3 Devel::StackTrace::Frame.3
 
 .include <bsd.port.mk>
