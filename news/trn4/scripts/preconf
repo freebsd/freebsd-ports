@@ -15,15 +15,14 @@ echo "It assumes a few things."
 echo "1. You are accessing news via NNTP, and you set the NNTPSERVER"
 echo "   environment variable to the name of your news server"
 echo "2. You have access to the threads databases (either xover or xthread)"
-echo "3. You have a inews program, otherwise you cannot post."
-echo "   The inews program can be obtained from the inn port."
 echo ""
 
 echo ""
-echo "You now have two possible choices:"
+echo "You now have three possible choices:"
 echo ""
-echo " 1) use my configuration as default, run Configure on top of it."
-echo " 2) run Configure from scratch."
+echo " 1) use my configuration as default, run Configure on top of it (recommended)."
+echo " 2) run Configure from scratch, using trn defaults."
+echo " 3) use my defaults and don't do any manual configuration (non-interactive)."
 echo ""
 echo "Due to a check done iside the Trn Configure script, I cannot run"
 echo "it automagically.  If you want to pick up the default configura-"
@@ -40,8 +39,12 @@ if [ ! ${foo} ] ; then
 	foo=1
 fi
 
-if [ ${foo} -eq 1 ] ; then
-	ConfigArgs='-f config.sh'
+if [ ${foo} -eq 1 -o ${foo} -eq 3 ] ; then
+	if [ ${foo} -eq 1 ] ; then
+		ConfigArgs='-f config.sh'
+	else
+		ConfigArgs='-der -f config.sh'
+	fi
 	#DON'T ALTER INDENTATION
 	cat > ${WrkSrc}/config.sh << 'EOF'
 #
@@ -69,7 +72,7 @@ basename='/usr/bin/basename'
 bash=''
 bin='/PREFIX/bin'
 binexp='/PREFIX/bin'
-byacc=''
+byacc='/usr/bin/byacc'
 c=''
 cat='/bin/cat'
 cc='__CC__'
@@ -104,7 +107,7 @@ d_getpwent='define'
 d_gettimeod='define'
 d_getwd='define'
 d_gnulibc='undef'
-d_havetlib='undef'
+d_havetlib='define'
 d_ignoreorg='undef'
 d_inews='define'
 d_internet='define'
@@ -152,12 +155,13 @@ echo='/bin/echo'
 ed='/bin/ed'
 egrep='/usr/bin/egrep'
 eunicefix=':'
+exe_ext=''
 expr='/bin/expr'
 extrainews=''
 filexp='/PREFIX/lib/trn/filexp'
 find=''
 firstmakefile=''
-gccversion='2.7.2.1'
+gccversion='4.2.1'
 glibpth='/shlib /usr/shlib /lib/pa1.1 /usr/lib/large /lib /usr/lib /usr/lib/386 /lib/386 /lib/large /usr/lib/small /lib/small /usr/ccs/lib /usr/ucblib /usr/local/lib'
 grep='/usr/bin/grep'
 groupdesc=''
@@ -194,11 +198,13 @@ ispell_prg=''
 jobslib=''
 ksh=''
 ldflags=''
-less=''
-libc='/usr/lib/libc.so.3.1'
+less='/usr/bin/less'
+lib_ext='.a'
+libc='/usr/lib/libc.a'
 libndir=''
 libpth='/usr/lib /PREFIX/lib'
 libs=' '
+libswanted='malloc resolv socket net hdb bbn str nls nsl intl x ucb'
 lint=''
 lns='/bin/ln -s'
 locdist='none'
@@ -228,10 +234,12 @@ newsadmin='news'
 newslib='/tmp'
 newslibexp='/tmp'
 newsspool='none'
+nm='/usr/bin/nm'
 nm_opt=''
 nm_so_opt=''
 nroff='/usr/bin/nroff'
-optimize='none'
+obj_ext='.o'
+optimize=' '
 orgdist='none'
 orgname='/etc/organization'
 osname='freebsd'
@@ -240,6 +248,7 @@ overviewdir='remote'
 overviewfmt='none'
 package='trn'
 pager='/usr/bin/more'
+path_sep=':'
 perl='/usr/bin/perl'
 perlpath='/usr/bin/perl'
 pg='pg'
@@ -278,7 +287,8 @@ strn='define'
 subscriptions=''
 sysman='/usr/share/man/man1'
 tail='/usr/bin/tail'
-termlib='-ltermlib'
+tee=''
+termlib='-lcursus'
 test='/bin/test'
 threaddir='remote'
 tk='undef'
@@ -287,6 +297,7 @@ tklibs=''
 tr='/usr/bin/tr'
 trn_init='FALSE'
 trn_select='TRUE'
+trnl='\n'
 uname='/usr/bin/uname'
 uniq='/usr/bin/uniq'
 useinews='/PREFIX/bin/inews'
@@ -299,7 +310,9 @@ void=''
 vspell=''
 who='/usr/bin/who'
 xlibpth='/usr/lib/386 /lib/386'
-PATCHLEVEL="4.0-test64 (30 April 1998)"
+yacc='/usr/bin/byacc'
+yaccflags=''
+PATCHLEVEL="4.0-test77 (Sep 1, 2010)"
 CONFIG=true
 EOF
 
