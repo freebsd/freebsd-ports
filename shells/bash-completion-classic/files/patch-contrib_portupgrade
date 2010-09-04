@@ -1,0 +1,15 @@
+--- contrib/portupgrade.orig	2010-09-04 02:35:04.000000000 -0400
++++ contrib/portupgrade	2010-09-04 02:38:00.000000000 -0400
+@@ -26,11 +26,7 @@
+ 
+     portsdir=${PORTSDIR:-/usr/ports}/
+     _get_comp_words_by_ref cur prev
+-    # First try INDEX-5
+-    indexfile=$portsdir/INDEX-5
+-    # Then INDEX if INDEX-5 does not exist or system is not FreeBSD 5.x
+-    [[ "${OSTYPE%.*}" == freebsd5 && -f $indexfile ]] ||
+-        indexfile=$portsdir/INDEX
++	indexfile="$(portsdir)/INDEX-${OSTYPE:8:1}"
+ 
+     [[ "$prev" == -l || "$prev" == -L || "$prev" == -o ]] && return 0
+ 
