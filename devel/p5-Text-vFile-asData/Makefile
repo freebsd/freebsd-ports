@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Text-vFile-asData
-PORTVERSION=	0.05
-PORTREVISION=	2
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,9 +17,8 @@ COMMENT=	Parse vFile formatted files into data structures
 RUN_DEPENDS=	p5-Class-Accessor-Chained>0:${PORTSDIR}/devel/p5-Class-Accessor-Chained
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
-MAN1=		holidays_ical.1 rota_ical.cgi.1
 MAN3=		Text::vFile::asData.3
 
 .include <bsd.port.mk>
