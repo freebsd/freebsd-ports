@@ -12,8 +12,6 @@
 # X.Y.  To request a specific version omit the trailing + sign.  Use of
 # a Fortran compiler is declared by the USE_FORTRAN knob, not USE_GCC.
 #
-# As of 2010-06-06, USE_GCC=4.3+ is transparently rewritten to USE_GCC=4.4+.
-#
 # Examples:
 #   USE_GCC=	4.2+		# port requires GCC 4.2 or later.
 #   USE_GCC=	4.5			# port requires GCC 4.5.
@@ -114,10 +112,6 @@ MAKE_ENV+=		F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
 
 
 .if defined(USE_GCC)
-
-.if ${USE_GCC} == "4.3+"
-USE_GCC=4.4+
-.endif
 
 # See if we can use a later version
 _USE_GCC:=	${USE_GCC:S/+//}
