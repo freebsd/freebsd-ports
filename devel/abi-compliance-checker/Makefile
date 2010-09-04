@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abi-compliance-checker
-PORTVERSION=	1.21
+PORTVERSION=	1.21.3
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://linuxtesting.org/downloads/
 
@@ -36,7 +36,6 @@ post-patch:
 			s%\"gcc\"%\"${CC}\"%g; }" \
 		-e "s%-shared%& -fPIC%g" \
 		-e "s%detailes%details%g" \
-		-e "\%which% s%or.*and%or%" \
 		${WRKSRC}/${PORTNAME}.pl
 
 do-install:
