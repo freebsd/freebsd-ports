@@ -13,7 +13,7 @@ MASTER_SITES=	http://freebsd.dev-urandom.com/distfiles/demime/ \
 		http://www.glenbarber.us/ports/mail/demime/
 DISTFILES=	${PORTNAME}.${PORTVERSION} demime_junkmail.cf
 
-MAINTAINER=	glen.j.barber@gmail.com
+MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	A tool to scrub mime from mailing lists
 
 RUN_DEPENDS=	${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \

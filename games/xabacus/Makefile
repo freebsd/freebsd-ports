@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.tux.org/~bagleyd/abacus/ \
 		http://ftp.tux.org/pub/tux/bagleyd/xabacus/ \
 		SUNSITE/apps/math
 
-MAINTAINER=	glen.j.barber@gmail.com
+MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	Abacus for X Window System
 
 USE_BZIP2=	yes

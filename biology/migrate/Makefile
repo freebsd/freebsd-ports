@@ -11,7 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://people.sc.fsu.edu/~beerli/popgen/currentversion/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	glen.j.barber@gmail.com
+MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	A program to estimate population sizes and migration rates
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src

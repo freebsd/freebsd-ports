@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/defendguin/src/
 
-MAINTAINER=	glen.j.barber@gmail.com
+MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	Another shoot-the-Bill game
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

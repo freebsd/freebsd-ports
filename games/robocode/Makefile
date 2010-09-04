@@ -12,7 +12,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-setup
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	glen.j.barber@gmail.com
+MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	A game for learning Java[tm] programming language
 
 USE_JAVA=	yes
