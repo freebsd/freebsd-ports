@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build
-USE_KDE4=	kdehier kdeprefix kdelibs
+USE_KDE4=	kdehier kdeprefix kdelibs automoc4
 
 post-extract:
 .for lang in da en es it pt sv
