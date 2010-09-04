@@ -92,7 +92,6 @@
     SUBDIR += gawk
     SUBDIR += gcc34
     SUBDIR += gcc42
-    SUBDIR += gcc43
     SUBDIR += gcc44
     SUBDIR += gcc45
     SUBDIR += gcc46
