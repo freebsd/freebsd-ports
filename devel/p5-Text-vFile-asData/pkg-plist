@@ -1,7 +1,7 @@
-bin/holidays_ical
-bin/rota_ical.cgi
-bin/v2yaml
-bin/wgo
 %%SITE_PERL%%/Text/vFile/asData.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/vFile/asData/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/vFile/asData
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/vFile
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrmtry %%SITE_PERL%%/Text/vFile
 @dirrmtry %%SITE_PERL%%/Text
