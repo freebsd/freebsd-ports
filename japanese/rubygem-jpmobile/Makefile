@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	jpmobile
-PORTVERSION=	0.0.7
+PORTVERSION=	0.1.0
 CATEGORIES=	japanese www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A Rails plugin for Japanese mobile-phones
-
-RUN_DEPENDS=	rubygem-actionpack>=2.3.8:${PORTSDIR}/www/rubygem-actionpack
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
