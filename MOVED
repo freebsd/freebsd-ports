@@ -4516,3 +4516,4 @@ french/pluxml-devel||2010-08-31|Stable was removed 2 years ago, doesn't make sen
 graphics/lphoto||2010-08-31|Has expired: broken
 mail/ngmp||2010-08-31|Has expired: does not compile and no longer supported by upstream
 multimedia/libdvdnav-mplayer||2010-09-02|Removed in favour of updated multimedia/libdvdnav
+lang/gcc43|lang/gcc44|2010-09-04|Superseded by gcc44 or gcc45
