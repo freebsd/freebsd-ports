@@ -17,7 +17,6 @@
     SUBDIR += koffice-kde4-l10n
     SUBDIR += koffice-kde4-l10n-pt_BR
     SUBDIR += php_doc-br
-    SUBDIR += staroffice52
     SUBDIR += webalizer-pt_BR
     SUBDIR += webalizer-pt_PT
 

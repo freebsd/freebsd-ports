@@ -37,9 +37,6 @@
     SUBDIR += php_doc
     SUBDIR += schwobifyer
     SUBDIR += selfhtml
-    SUBDIR += staroffice5
-    SUBDIR += staroffice52
-    SUBDIR += staroffice70
     SUBDIR += steak
     SUBDIR += tipp10
     SUBDIR += unix-connect

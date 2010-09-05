@@ -737,7 +737,6 @@
     SUBDIR += sqlrelay
     SUBDIR += sqsh
     SUBDIR += squirrel-sql
-    SUBDIR += sybase-ocsd
     SUBDIR += sybase_ase
     SUBDIR += sybtcl
     SUBDIR += tablelog

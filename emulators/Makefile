@@ -78,7 +78,6 @@
     SUBDIR += linux-pete-mesagpu
     SUBDIR += linux-pete-xgl2gpu
     SUBDIR += linux-systemsimcell
-    SUBDIR += linux-vmware-toolbox2
     SUBDIR += linux-vmware-toolbox4
     SUBDIR += linux-vmware-toolbox5
     SUBDIR += linux-vmware-toolbox6

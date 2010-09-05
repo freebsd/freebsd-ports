@@ -1,3 +1,0 @@
-[Environment]
-InstallationMode = PATCH
-DestinationPath = %%PREFIX%%/%%SOVERSION%%

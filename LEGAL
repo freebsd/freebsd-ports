@@ -27,15 +27,6 @@ ventrilo_srv-*		audio/ventrilo-server	May not be redistributed.
 						Crypto; export-controlled.
 						For personal use only.
 						Must accept license to download.
-112887-04.tar		editors/staroffice60	Must be bought and downloaded
-						directly from Sun via WWW
-						interface
-116518-*		editors/staroffice70	Must be bought and downloaded
-						directly from Sun via WWW
-						interface
-116518-*		german/staroffice70	Must be bought and downloaded
-						directly from Sun via WWW
-						interface
 aacplusenc-*		audio/aacplusenc	Unclear legal status
 ac3dlx*			graphics/linux-ac3d	Commercial license, no
 						distribution
@@ -381,7 +372,6 @@ libdvdcss-*.tar.bz2	multimedia/libdvdcss	CSS code may violate the DMCA
 ecw_jpeg_2000_*.zip	graphics/libecwj2	Must be downloaded manually from Ermapper site
 libidea-*		security/libidea	Crypto; export-controlled
 libots-*.alpha.rpm	lang/compaq-cc		Distribution not allowed
-Linux-ACU-Driver-v*	sysutils/linux-acu	Redistribution not allowed
 Linux_MegaCli_*		sysutils/linux-megacli	Redistribution not allowed
 2*Linux_CLI*        sysutils/linux-megacli2 Redistribution not allowed
 *_FreeBSD_MegaCLI.zip   sysutils/megacli    May not be distrubuted in binary form
@@ -395,8 +385,6 @@ l0phtcrack/*		security/l0phtcrack	Parts are under GPL, so
 lpac-*			audio/lpac		No commercial use
 lsh*			security/lsh		Crypto; export-controlled
 l_cc_p*_*.*.*.tar.gz	lang/icc		No redistribution allowed
-l_cc_p*_*.*.*.tar	lang/icc7		No redistribution allowed
-l_fc_p*_*.*.*.tar	lang/ifc7		No redistribution allowed
 l_fc_p*_*.*.*.tar.gz	lang/ifc		No redistribution allowed
 macopix-*.tar.gz	games/macopix		Contains commercial character
 						data
@@ -533,22 +521,12 @@ shoutcast-*		audio/shoutcast		No redistribution allowed
 shoutcast-*		audio/linux-shoutcast	No redistribution allowed
 sid-milter-*		mail/sid-milter		May incorporate intellectual
 						property, possible patent issues
-simpjava.tar.gz		java/simplicity		Restrictive license
 ski-*.i386.rpm		emulators/ski		Restrictive license
 skype*			net/skype		Not for redistribution
 slimserver/*		audio/slimserver	Version 6.0 and above contain
 						non-redistributable firmware,
 						images, and documentation.  See
 						License.txt in the distribution
-so-*-ga-bin-linux-en.*	editors/staroffice60	Must be bought and downloaded
-						directly from Sun via WWW
-						interface
-so-7-ga-bin-linux-de.*	german/staroffice70	Must be bought and downloaded
-						directly from Sun via WWW
-						interface
-so-7-ga-bin-linux-en.*	editors/staroffice70	Must be bought and downloaded
-						directly from Sun via WWW
-						interface
 socks5-*		net/socks5		No commercial use
 sof-*-cdrom-x86.run	games/linux-sof		Redistribution is limited
 SpaceAryarya-KXL-*	games/spacearyarya	Possible copyright infringement
@@ -562,8 +540,6 @@ sscli_*			lang/cli		License is *very* restrictive --
 						before using the software
 ssh-*			security/ssh*		Crypto; export-controlled
 *mod_ssl*		www/apache13-modssl	Crypto; export-controlled
-staroffice5/*		editors/staroffice5	May not be distributed
-staroffice52/*		editors/staroffice52	May not be distributed
 stat.tar.Z		math/unixstat		License does not allow
 						redistribution of binaries
 STonX-*			emulators/stonx		Contains ROM (C) by Atari
@@ -638,8 +614,6 @@ vmware-freebsd-tools.*	emulators/vmware-guestd3	Not sure if we can
 vmware-freebsd-tools.*	emulators/vmware-guestd4	Not sure if we can
 						redistribute this
 vmware-freebsd-tools.*	emulators/vmware-tools3	Not sure if we can
-						redistribute this
-vmware-linux-tools.*	emulators/linux-vmware-toolbox2	Not sure if we can
 						redistribute this
 vmware-linux-tools.*	emulators/linux-vmware-toolbox4	Not sure if we can
 						redistribute this

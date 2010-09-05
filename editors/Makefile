@@ -217,10 +217,6 @@
     SUBDIR += speedbar
     SUBDIR += ssam
     SUBDIR += ssed
-    SUBDIR += staroffice5
-    SUBDIR += staroffice52
-    SUBDIR += staroffice60
-    SUBDIR += staroffice70
     SUBDIR += sted
     SUBDIR += tamago
     SUBDIR += tamago-emacs21
