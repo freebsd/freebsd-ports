@@ -1,11 +1,11 @@
-.TH NC 1 
+.TH NETCAT 1 
 .SH NAME
-nc \- TCP/IP swiss army knife
+netcat \- TCP/IP swiss army knife
 .SH SYNOPSIS
-.B nc
+.B netcat
 .I "[-options] hostname port[s] [ports] ..."
 .br
-.B nc
+.B netcat
 .I "-l -p port [-options] [hostname] [port]"
 .SH "DESCRIPTION"
 .B netcat
@@ -15,11 +15,11 @@ reliable "back-end" tool that can be used directly or easily driven by
 other programs and scripts.  At the same time, it is a feature-rich
 network debugging and exploration tool, since it can create almost any
 kind of connection you would need and has several interesting built-in
-capabilities.  Netcat, or "nc" as the actual program is named, should
+capabilities.  Netcat, or "netcat" as the actual program is named, should
 have been supplied long ago as another one of those cryptic but
 standard Unix tools.
 .P
-In the simplest usage, "nc host port" creates a TCP connection to the
+In the simplest usage, "netcat host port" creates a TCP connection to the
 given port on the given target host.  Your standard input is then sent
 to the host, and anything that comes back across the connection is
 sent to your standard output.  This continues indefinitely, until the

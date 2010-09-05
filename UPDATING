@@ -5,6 +5,12 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100904
+  AFFECTS: net/netcat
+  AUTHOR: pgollucci@FreeBSD.org
+
+  Rename nc to netcat to prevent /usr/bin/nc shadowing /usr/local/bin/nc
+
 20100902:
   AFFECTS: users of KDE4
   AUTHOR: kde@FreeBSD.org
