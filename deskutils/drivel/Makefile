@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	drivel
-PORTVERSION=	2.0.2
-PORTREVISION=	13
+PORTVERSION=	3.0.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/${PORTNAME}/Drivel%20%28stable%29/${PORTVERSION}
 
@@ -18,23 +17,16 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui intlhack gtksourceview
+USE_GNOME=	glib20 gtk20 gconf2 gnomevfs2 gtksourceview2 libxml2 gnomedocutils
+USE_GSTREAMER=	soup
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool:22 autoconf:262:env automake:110:env
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 GCONF_SCHEMAS=	drivel.schemas
-
-.ifndef(WITHOUT_RHYTHMBOX)
-CONFIGURE_ARGS+=	--with-rhythmbox
-BUILD_DEPENDS+=		rhythmbox:${PORTSDIR}/audio/rhythmbox
-RUN_DEPENDS+=		${BUILD_DEPENDS}
-.else
-CONFIGURE_ARGS+=	--without-rhythmbox
-.endif
 
 .ifndef(WITHOUT_GTKSPELL)
 LIB_DEPENDS+=		gtkspell.0:${PORTSDIR}/textproc/gtkspell
@@ -44,13 +36,10 @@ CONFIGURE_ARGS+=	--without-gtkspell
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define WITHOUT_RHYTHMBOX=yes to disable rhythmbox backend"
 	@${ECHO_MSG} "Define WITHOUT_GTKSPELL=yes to disable gtkspell"
 	@${ECHO_MSG} ""
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|;;|;|g' \
-		${WRKSRC}/src/journal.c \
-		${WRKSRC}/src/msg_queue.c
+pre-configure:
+	( cd ${WRKSRC} ; autoreconf )
 
 .include <bsd.port.mk>

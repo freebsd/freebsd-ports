@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2010-08-29 00:53:06.632333365 -0400
++++ Makefile.am	2010-08-29 00:53:13.143217679 -0400
+@@ -9,7 +9,7 @@
+ distuninstallcheck_listfiles = find . -type f -print | grep -v '^\./var/scrollkeeper'
+ 
+ all-local: Makefile
+-	make -C po $(PACKAGE).pot
++	gmake -C po $(PACKAGE).pot
+ 
+ clean-local: Makefile
+ 	find . -name '*~' -delete

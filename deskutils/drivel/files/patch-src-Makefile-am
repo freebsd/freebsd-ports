@@ -1,0 +1,12 @@
+--- src/Makefile.am.orig	2010-08-29 00:47:37.560980649 -0400
++++ src/Makefile.am	2010-08-29 00:47:43.680408814 -0400
+@@ -61,8 +61,7 @@
+ 
+ drivel_LDADD = \
+ 	$(DRIVEL_LIBS) \
+-	$(INTLLIBS) \
+-	-ldl
++	$(INTLLIBS)
+ 
+ gladedir   = $(pkgdatadir)/glade
+ glade_DATA = drivel-gtk.glade
