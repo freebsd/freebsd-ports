@@ -42,7 +42,8 @@ MAKE_ARGS+=	SUBDIRS="${SUBDIRS}"
 
 post-patch:
 	@${REINPLACE_CMD} \
+		-E -e '/LIBS/s/-lrt(\ )*//; /LIBRT/s/-lrt//' \
 		-e 's|pkgconfigdir=.*|pkgconfigdir=\"\\$$(prefix)/libdata/pkgconfig\"|g' \
-		${WRKSRC}/configure ${WRKSRC}/configure.ac
+		${WRKSRC}/configure 
 
 .include <bsd.port.post.mk>
