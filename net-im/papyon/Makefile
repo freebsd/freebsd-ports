@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	papyon
-PORTVERSION=	0.4.9
+PORTVERSION=	0.5.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,10 +16,14 @@ COMMENT=	A fork of pymsn to support the telepathy MSN connection manager
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject \
 		${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl \
-		${PYTHON_SITELIBDIR}/Crypto/Hash/SHA.py:${PORTSDIR}/security/py-pycrypto
+		${PYTHON_SITELIBDIR}/Crypto/Hash/SHA.py:${PORTSDIR}/security/py-pycrypto \
+		${LOCALBASE}/lib/gstreamer-0.10/libgstpython.so:${PORTSDIR}/multimedia/py-gstreamer \
+		${PYTHON_SITELIBDIR}/farsight.so:${PORTSDIR}/net-im/farsight2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject \
 		${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl \
-		${PYTHON_SITELIBDIR}/Crypto/Hash/SHA.py:${PORTSDIR}/security/py-pycrypto
+		${PYTHON_SITELIBDIR}/Crypto/Hash/SHA.py:${PORTSDIR}/security/py-pycrypto \
+		${LOCALBASE}/lib/gstreamer-0.10/libgstpython.so:${PORTSDIR}/multimedia/py-gstreamer \
+		${PYTHON_SITELIBDIR}/farsight.so:${PORTSDIR}/net-im/farsight2
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
