@@ -24,6 +24,13 @@ share/balsa/hicolor/16x16/apps/balsa-signature-bad.png
 share/balsa/hicolor/16x16/apps/balsa-signature-good.png
 share/balsa/hicolor/16x16/apps/balsa-signature-notrust.png
 share/balsa/hicolor/16x16/apps/balsa-signature-unknown.png
+share/balsa/hicolor/16x16/apps/mail-inbox.png
+share/balsa/hicolor/16x16/apps/mail-outbox.png
+share/balsa/hicolor/16x16/apps/stock_book_open.png
+share/balsa/hicolor/16x16/apps/stock_book_red.png
+share/balsa/hicolor/16x16/apps/stock_contact.png
+share/balsa/hicolor/16x16/apps/stock_mail-receive.png
+share/balsa/hicolor/16x16/apps/stock_mail.png
 share/balsa/hicolor/22x22
 share/balsa/hicolor/24x24/apps/balsa-crypt-check.png
 share/balsa/hicolor/24x24/apps/balsa-encrypt.png
@@ -45,6 +52,15 @@ share/balsa/hicolor/24x24/apps/balsa-signature-good.png
 share/balsa/hicolor/24x24/apps/balsa-signature-notrust.png
 share/balsa/hicolor/24x24/apps/balsa-signature-unknown.png
 share/balsa/hicolor/24x24/apps/balsa-trash-empty.png
+share/balsa/hicolor/24x24/apps/stock_book_blue.png
+share/balsa/hicolor/24x24/apps/stock_book_green.png
+share/balsa/hicolor/24x24/apps/stock_book_open.png
+share/balsa/hicolor/24x24/apps/stock_book_red.png
+share/balsa/hicolor/24x24/apps/stock_book_yellow.png
+share/balsa/hicolor/24x24/apps/stock_contact.png
+share/balsa/hicolor/24x24/apps/stock_mail-receive.png
+share/balsa/hicolor/24x24/apps/stock_mail.png
+share/balsa/hicolor/24x24/apps/stock_view-fields.png
 share/balsa/pixmaps/attachment.png
 share/balsa/pixmaps/balsa-logo.png
 share/balsa/pixmaps/balsa-top.png
@@ -54,7 +70,6 @@ share/balsa/pixmaps/balsa_logo.png
 share/gnome/help/balsa/C/balsa.xml
 share/gnome/help/balsa/C/figures/address-book-ldap.png
 share/gnome/help/balsa/C/figures/address-book-modify.png
-share/gnome/help/balsa/C/figures/address-book-start.png
 share/gnome/help/balsa/C/figures/address-book-vcard.png
 share/gnome/help/balsa/C/figures/address-book.png
 share/gnome/help/balsa/C/figures/balsa_logo.png
@@ -73,7 +88,6 @@ share/gnome/help/balsa/C/figures/spell-check.png
 share/gnome/help/balsa/de/balsa.xml
 share/gnome/help/balsa/de/figures/address-book-ldap.png
 share/gnome/help/balsa/de/figures/address-book-modify.png
-share/gnome/help/balsa/de/figures/address-book-start.png
 share/gnome/help/balsa/de/figures/address-book-vcard.png
 share/gnome/help/balsa/de/figures/address-book.png
 share/gnome/help/balsa/de/figures/balsa_logo.png
@@ -92,7 +106,6 @@ share/gnome/help/balsa/de/figures/spell-check.png
 share/gnome/help/balsa/es/balsa.xml
 share/gnome/help/balsa/es/figures/address-book-ldap.png
 share/gnome/help/balsa/es/figures/address-book-modify.png
-share/gnome/help/balsa/es/figures/address-book-start.png
 share/gnome/help/balsa/es/figures/address-book-vcard.png
 share/gnome/help/balsa/es/figures/address-book.png
 share/gnome/help/balsa/es/figures/balsa_logo.png
@@ -145,6 +158,7 @@ share/locale/eu/LC_MESSAGES/balsa.mo
 share/locale/fi/LC_MESSAGES/balsa.mo
 share/locale/fr/LC_MESSAGES/balsa.mo
 share/locale/ga/LC_MESSAGES/balsa.mo
+share/locale/gl/LC_MESSAGES/balsa.mo
 share/locale/he/LC_MESSAGES/balsa.mo
 share/locale/hi/LC_MESSAGES/balsa.mo
 share/locale/hr/LC_MESSAGES/balsa.mo
