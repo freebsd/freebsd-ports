@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	libticalcs2
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.1.5
 CATEGORIES=	comms
-MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.11
-DISTNAME=	tilibs2-20080328
+MASTER_SITES=	http://lpg.ticalc.org/prj_tilp/download/ \
+		http://tijl.fastmail.fm/mirror/
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI calculator library
 
-LIB_DEPENDS=	ticables2.1:${PORTSDIR}/comms/libticables2 \
-		ticonv.3:${PORTSDIR}/converters/libticonv \
-		tifiles2.5:${PORTSDIR}/devel/libtifiles2
+LIB_DEPENDS=	ticables2.4:${PORTSDIR}/comms/libticables2 \
+		ticonv.4:${PORTSDIR}/converters/libticonv \
+		tifiles2.6:${PORTSDIR}/devel/libtifiles2
 
 USE_AUTOTOOLS=	libtool:22
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack pkgconfig
 USE_LDCONFIG=	yes
@@ -34,10 +34,5 @@ PLIST_SUB=	NLS="@comment "
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"\
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-post-extract:
-	@cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/tilibs2/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
 
 .include <bsd.port.mk>
