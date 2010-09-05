@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.olmosconsulting.com/ http://meatwad.mouf.net/~steve/
 DISTNAME=	m2ts
 
-MAINTAINER=	steve@mouf.net
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Utility which eases conversion of AVCHD (m2ts) to AVI
 
 RUN_DEPENDS=	xporthdmv:${PORTSDIR}/multimedia/xporthdmv \

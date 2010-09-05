@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/H/HM/HMBRAND
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	steve@mouf.net
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Read the data from a spreadsheet
 
 BUILD_DEPENDS=	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \

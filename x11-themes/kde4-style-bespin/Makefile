@@ -12,7 +12,7 @@ CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://meatwad.mouf.net/~steve/
 PKGNAMEPREFIX=	kde4-style-
 
-MAINTAINER=	steve@mouf.net
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A configurable KDE style
 
 WRKSRC=		${WRKDIR}/cloudcity

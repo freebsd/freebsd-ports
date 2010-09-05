@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.w6rz.net/
 DISTNAME=	xport
 
-MAINTAINER=	steve@mouf.net
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	The xport Transport Stream Demuxer
 
 USE_ZIP=	yes

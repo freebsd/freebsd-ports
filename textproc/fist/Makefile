@@ -10,7 +10,7 @@ PORTVERSION=	4.0
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.fourmilab.ch/pub/fist/
 
-MAINTAINER=	steve@mouf.net
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	An emphatic message generator
 
 GNU_CONFIGURE=	yes
