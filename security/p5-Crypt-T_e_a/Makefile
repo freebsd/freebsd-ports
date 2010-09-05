@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/P/PJ/PJB
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Crypt-Tea-${PORTVERSION}
 
-MAINTAINER=	steve@mouf.net
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	The Tiny Encryption Algorithm in Perl and JavaScript
 
 PERL_CONFIGURE=	yes

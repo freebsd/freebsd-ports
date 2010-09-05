@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/I/IT/ITUB
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	steve@mouf.net
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Detect bonds in a molecule and assign formal bond orders
 
 BUILD_DEPENDS=	${SITE_PERL}/Chemistry/Mol.pm:${PORTSDIR}/science/p5-Chemistry-Mol

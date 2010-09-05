@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde4-style-
 DISTFILES=	59031-skulpture-${PORTVERSION}.tar.bz2
 
-MAINTAINER=	steve@mouf.net
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	KDE style featuring 3d artwork and enhanced the visual experience
 
 USE_BZIP2=	yes

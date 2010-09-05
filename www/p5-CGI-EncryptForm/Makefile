@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MA/MARAL
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	steve@mouf.net
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Implement trusted stateful CGI Form Data using cryptography
 
 PERL_CONFIGURE=	yes

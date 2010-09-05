@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://programmer-art.org/media/releases/arista-transcoder/ \
 		http://launchpadlibrarian.net/28489828/
 
-MAINTAINER=	steve@mouf.net
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	An easy to use multimedia transcoder for the GNOME Desktop
 
 USE_GETTEXT=	yes

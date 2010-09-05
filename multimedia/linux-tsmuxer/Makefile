@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.smlabs.net/tsMuxer/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	tsMuxeR_${PORTVERSION}
 
-MAINTAINER=	steve@mouf.net
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Utility to create TS and M2TS files for IP broadcasting
 
 USE_LINUX=	yes

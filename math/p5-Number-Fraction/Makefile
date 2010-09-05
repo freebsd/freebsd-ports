@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/D/DA/DAVECROSS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	steve@mouf.net
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl extension to model fractions
 
 PERL_CONFIGURE=	yes
