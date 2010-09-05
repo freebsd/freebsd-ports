@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	tilp2
-PORTVERSION=	1.11
-PORTREVISION=	4
+PORTVERSION=	1.14
 CATEGORIES=	comms
-MASTER_SITES=	SF/tilp/${PORTNAME}-linux/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://lpg.ticalc.org/prj_tilp/download/ \
+		http://tijl.fastmail.fm/mirror/
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI Linking Program
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS=	ticables2.1:${PORTSDIR}/comms/libticables2 \
-		tifiles2.5:${PORTSDIR}/devel/libtifiles2 \
-		ticalcs2.7:${PORTSDIR}/comms/libticalcs2 \
-		ticonv.3:${PORTSDIR}/converters/libticonv
+LIB_DEPENDS=	ticables2.4:${PORTSDIR}/comms/libticables2 \
+		tifiles2.6:${PORTSDIR}/devel/libtifiles2 \
+		ticalcs2.8:${PORTSDIR}/comms/libticalcs2 \
+		ticonv.4:${PORTSDIR}/converters/libticonv
 
 USE_AUTOTOOLS=	libtool:22
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
 
@@ -41,7 +42,5 @@ MAN1=	tilp.1
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/configure ${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|#define .*_DISABLE_DEPRECATED||g' \
-		${WRKSRC}/src/device.c ${WRKSRC}/src/toolbar.c
 
 .include <bsd.port.mk>
