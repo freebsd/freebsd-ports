@@ -20,6 +20,11 @@ RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-act
 		rubygem-railties>=${PORTVERSION}:${PORTSDIR}/www/rubygem-railties \
 		rubygem-bundler>=1.0.0:${PORTSDIR}/sysutils/rubygem-bundler
 
+# XXX: rails3 gem no longer has a lib/ dir
+# XXX: which breaks devel/ruby-gems specification.
+# XXX: and thus rdoc
+NOPORTDOCS=yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=  yes
@@ -54,12 +59,5 @@ RUN_DEPENDS+=	rubygem-mongre_clusterl>=1.0.5:${PORTSDIR}/www/rubygem-mongrel_clu
 .if defined(WITH_PASSENGER)
 RUN_DEPENDS+=	rubygem-passenger>=2.2.15:${PORTSDIR}/www/rubygem-passenger
 .endif
-
-# XXX: overridden here b/c rails gem no longer has a lib/ dir
-# XXX: which breaks devel/ruby-gems
-do-install:
-.for _D in ${GEMFILES}
-	-${SETENV} ${GEM_ENV} ${RUBYGEMBIN} install ${RUBYGEM_ARGS} ${DISTDIR}/${DIST_SUBDIR}/${_D} -- --build-args ${CONFIGURE_ARGS}
-.endfor
 
 .include <bsd.port.mk>
