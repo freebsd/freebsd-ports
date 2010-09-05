@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hplip
-PORTVERSION=	3.10.5
-PORTREVISION=	1
+PORTVERSION=	3.10.6
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -15,94 +14,127 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Drivers and utilities for HP Printers and All-in-One devices
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		sane.1:${PORTSDIR}/graphics/sane-backends \
 		cupsdriver.1:${PORTSDIR}/print/cups-base \
 		cups.2:${PORTSDIR}/print/cups-client \
-		cupsimage.2:${PORTSDIR}/print/cups-image
-		
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2 \
-		espgs:${PORTSDIR}/print/cups-pstoraster \
+		cupsimage.2:${PORTSDIR}/print/cups-image \
+		dbus-1.3:${PORTSDIR}/devel/dbus
+RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster \
 		foomatic-rip:${PORTSDIR}/print/foomatic-filters \
-		mDNSClientPosix:${PORTSDIR}/net/mDNSResponder
+		${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject \
+		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus
 
-LATEST_LINK=	${PORTNAME}3
-CONFLICTS=	hpijs-[0-9]* hplip-2*
+CONFLICTS=	hpijs-[0-9]*
+
+USE_GHOSTSCRIPT_RUN=	yes
+USE_PYTHON=	2.5+
+USE_GNOME=	pkgconfig
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-dependency-tracking \
-		--disable-pp-build \
-		--enable-foomatic-ppd-install \
+CONFIGURE_ARGS=	--enable-foomatic-ppd-install \
 		--enable-foomatic-rip-hplip-install \
 		--enable-hpijs-install \
-		--with-icondir=${LOCALBASE}/share/applications \
-		--with-cupsbackenddir=${LOCALBASE}/libexec/cups/backend \
-		--with-cupsfilterdir=${LOCALBASE}/libexec/cups/filter \
-		--with-drvdir=${LOCALBASE}/libexec/cups/driver \
-		--with-hpppddir=${LOCALBASE}/share/ppd/HP \
-		--with-mimedir=${LOCALBASE}/etc/cups \
-		--with-docdir=${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+		--with-cupsbackenddir=${PREFIX}/libexec/cups/backend \
+		--with-cupsfilterdir=${PREFIX}/libexec/cups/filter \
+		--with-icondir=${DESKTOPDIR} \
+		--with-systraydir=${PREFIX}/etc/xdg/autostart \
+		--with-hpppddir=${PREFIX}/share/ppd/HP \
+		--with-mimedir=${PREFIX}/etc/cups \
+		--with-docdir=${DOCSDIR} \
+		--with-drvdir=${PREFIX}/libexec/cups/driver
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 USE_LDCONFIG=	yes
-USE_GHOSTSCRIPT_RUN=	yes
-USE_PYTHON=	25+
-USE_RC_SUBR=	hpssd
 MAKE_JOBS_SAFE=	yes
+
 SUB_FILES=	pkg-message
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=.+\.(c|cpp|h|py)$
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lcompat
+FILES4FIX=	Makefile.in \
+		base/codes.py \
+		base/g.py \
+		base/pkit.py \
+		base/status.py \
+		base/utils.py \
+		check.py \
+		fax/backend/hpfax.py \
+		hplip.list.in \
+		installer/core_install.py \
+		installer/dcheck.py \
+		installer/distros.dat \
+		io/hpmud/hp-mkuri.c \
+		prnt/cups.py \
+		prnt/hpcups/HPCupsFilter.cpp \
+		prnt/hpcups/Utils.cpp \
+		prnt/hpijs/globals.cpp \
+		prnt/hpijs/hpcupsfax.cpp \
+		prnt/hpijs/hpijs.cpp \
+		setup.py \
+		ui/devmgr4.py \
+		ui/setupform.py \
+		ui4/devmgr5.py
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-
-OPTIONS=	QT "Build QT4 gui" off \
-		DBUS "D-Bus support (required for fax tools)" off \
-		XSANE "Scanning support via XSane" off \
-		SNMP "Support for Simple Network Management Protocol" off
+OPTIONS=	QT "Graphical User Interface (Qt4)" on \
+		FAX "PC Send Fax support" off \
+		SNMP "Network/JetDirect support" off \
+		SCAN "Scanning support" off \
+		XSANE "Install XSane for scanning (requires SCAN)" off
 
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
-.endif
-
-.if defined(WITH_SNMP) && (${ARCH} == i386)
-BROKEN=	can't link with libsnmp, net-mgmt/net-snmp should be fixed first
+USB_INCLUDE=	${LOCALBASE}/include
+.else
+USB_INCLUDE=	/usr/include
 .endif
 
 .if !defined(WITHOUT_QT)
-USE_QT_VER=	4
-QT_COMPONENTS=	gui
-CONFIGURE_ARGS+=	--enable-qt4
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
-LIB_DEPENDS+=	pyglib-2.0:${PORTSDIR}/devel/py-gobject
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
+		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:${PORTSDIR}/devel/py-qt4-dbus
+CONFIGURE_ARGS+=	--enable-qt4 \
+			--enable-gui-build
+PLIST_SUB+=	GUI=""
+.else
+CONFIGURE_ARGS+=	--disable-qt4 \
+			--disable-gui-build
+PLIST_SUB+=	GUI="@comment "
 .endif
 
-.if !defined(WITHOUT_DBUS)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:${PORTSDIR}/devel/py-qt4-dbus
-LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
-# fax added as, no dbus no fax
-CONFIGURE_ARGS+=	--enable-dbus-build \
-			--enable-fax-build
+.if defined(WITH_FAX)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2
+CONFIGURE_ARGS+=	--enable-fax-build
 PLIST_SUB+=	FAX=""
 .else
-CONFIGURE_ARGS+=	--disable-dbus-build \
-			--disable-fax-build
+CONFIGURE_ARGS+=	--disable-fax-build
 PLIST_SUB+=	FAX="@comment "
 .endif
 
-.if !defined(WITHOUT_XSANE)
-RUN_DEPENDS+=	xsane:${PORTSDIR}/graphics/xsane
-.endif
-
 .if defined(WITH_SNMP)
+USE_OPENSSL=	yes
 LIB_DEPENDS+=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--enable-network-build
+. if ${ARCH} == i386
+# http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/144833
+CONFIGURE_ENV+=	LIBS="-lssp_nonshared"
+. endif
 .else
 CONFIGURE_ARGS+=	--disable-network-build
+.endif
+
+.if defined(WITH_SCAN)
+. if defined(WITH_XSANE)
+RUN_DEPENDS+=	xsane:${PORTSDIR}/graphics/xsane
+. endif
+LIB_DEPENDS+=	sane.1:${PORTSDIR}/graphics/sane-backends
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
+CONFIGURE_ARGS+=	--enable-scan-build
+PLIST_SUB+=	SCAN=""
+.else
+CONFIGURE_ARGS+=	--disable-scan-build
+PLIST_SUB+=	SCAN="@comment "
 .endif
 
 .if defined(NOPORTDOCS)
@@ -110,37 +142,28 @@ CONFIGURE_ARGS+=	--enable-doc-build=no
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/hp|${LOCALBASE}/etc/hp|g ; \
-			s|/etc/sane.d|${LOCALBASE}/etc/sane.d|g' \
-		${WRKSRC}/Makefile.in \
-		${WRKSRC}/check.py ${WRKSRC}/hpssd.py \
-		${WRKSRC}/base/g.py ${WRKSRC}/fax/backend/hpfax.py \
-		${WRKSRC}/installer/distros.dat \
-		${WRKSRC}/installer/core_install.py \
-		${WRKSRC}/prnt/hpijs/ljzjs.cpp \
-		${WRKSRC}/prnt/hpijs/globals.cpp \
-		${WRKSRC}/ui/devmgr4.py \
-		${WRKSRC}/ui4/devmgr5.py
-	@${REINPLACE_CMD} -e 's|/etc/dbus-1/system.d|${LOCALBASE}/etc/dbus-1/system.d|g ; \
-			s|/usr/share/dbus-1/system-services|${LOCALBASE}/share/dbus-1/system-services|g' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} 's|/etc/xdg|${PREFIX}&|g; s|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|install-dist_prntSCRIPTS install-dist_rulesDATA|install-dist_prntSCRIPTS|g ; \
-			s|install-hpPROGRAMS install-hplip_confDATA|install-hpPROGRAMS|g' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|-ldld||g; s|-ldl||g; s|-dld||g' \
+	${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g' \
+		-e 's|-ldld||g; s|-ldl||g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${LOCALBASE}/bin/python|g' \
-		${WRKSRC}/hpssd.py
+	${REINPLACE_CMD} -e '/[[:space:]]install-dist_rulesDATA/ s,install-dist_rulesDATA,,' \
+		-e '/[[:space:]]install-hplip_confDATA/ s,install-hplip_confDATA,,' \
+		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's,/etc/hp,${PREFIX}&,g' \
+		-e 's,/etc/cups,${LOCALBASE}&,g' \
+		-e 's,/etc/init.d,${LOCALBASE}/etc/rc.d,g' \
+		-e 's,/etc/sane.d,${LOCALBASE}&,g' \
+		-e 's,/usr/share,${LOCALBASE}/share,g' \
+		-e 's,/usr/include,${LOCALBASE}/include,g' \
+		${FILES4FIX:S,^,${WRKSRC}/,}
+	${REINPLACE_CMD} -e 's,%USB_INCLUDE%,${USB_INCLUDE},' \
+		${WRKSRC}/installer/core_install.py
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e '/[[:space:]]install-docDATA/ s|install-docDATA||' \
+	${REINPLACE_CMD} -e '/[[:space:]]install-docDATA/ s|install-docDATA||' \
 		${WRKSRC}/Makefile.in
 .endif
 
 post-install:
-	${LN} -sf ${PREFIX}/share/hplip/hpssd.py ${PREFIX}/sbin/hpssd
 	${INSTALL_DATA} ${WRKSRC}/hplip-systray.desktop ${PREFIX}/etc/xdg/autostart/hplip-systray.desktop
 	${MKDIR} ${PREFIX}/etc/hp
 	${INSTALL_DATA} ${WRKSRC}/hplip.conf ${PREFIX}/etc/hp/hplip.conf.sample
@@ -148,7 +171,6 @@ post-install:
 		${INSTALL_DATA} ${PREFIX}/etc/hp/hplip.conf.sample \
 			${PREFIX}/etc/hp/hplip.conf; \
 	fi
-	${ECHO_CMD} hpaio >> ${PREFIX}/etc/sane.d/dll.conf
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
