@@ -7,6 +7,7 @@
 
 PORTNAME=	picoc
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -17,7 +18,7 @@ LICENSE=	BSD
 
 USE_BZIP2=	yes
 
-PLIST=	bin/picoc
+PLIST_FILES=	bin/picoc
 
 post-patch:
 	@${REINPLACE_CMD} -e "/-include/d" \
