@@ -37,6 +37,13 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc \
 			--with-quarantinedir=${QUARANTINEDIR} \
 			--prefix=${PREFIX}
 
+
+.if defined (MIMEDEFANG_DISABLE_CLAMAV)
+CONFIGURE_ARGS+=	--disable-antivirus \
+			--disable-clamav \
+			--disable-clamd 
+.endif
+
 MAN5=	mimedefang-filter.5
 MAN7=	mimedefang-notify.7 mimedefang-protocol.7
 MAN8=	mimedefang.8 mimedefang.pl.8 mimedefang-multiplexor.8 \
