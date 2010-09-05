@@ -1,5 +1,5 @@
---- Makefile.in.old	2010-03-28 15:07:10.000000000 -0600
-+++ Makefile.in	2010-03-28 15:08:01.000000000 -0600
+--- ./Makefile.in.orig	2010-07-19 06:20:23.000000000 +0400
++++ ./Makefile.in	2010-08-27 00:58:13.822031467 +0400
 @@ -89,8 +89,8 @@
  # ip library
  @HPLIP_BUILD_TRUE@am__append_1 = libhpmud.la libhpip.la
@@ -11,7 +11,7 @@
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@am__append_4 =  \
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	scan/sane/hpaio.desc \
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@	prnt/drv/hpijs.drv.in.template \
-@@ -2041,8 +2041,8 @@
+@@ -2084,8 +2084,8 @@
  	ppd/hpcups/hp-psc_950vr.ppd.gz ppd/hpcups/hp-psc_950xi.ppd.gz
  am__dist_prnt_DATA_DIST = prnt/cups.py prnt/__init__.py prnt/ldl.py \
  	prnt/pcl.py prnt/colorcal.py
@@ -22,7 +22,7 @@
  am__dist_scan_DATA_DIST = scan/__init__.py scan/sane.py
  am__dist_ui_DATA_DIST = ui/alignform.py ui/colorcalform_base.py \
  	ui/colorcalform.py ui/coloradjform_base.py ui/coloradjform.py \
-@@ -3777,11 +3777,11 @@
+@@ -3862,11 +3862,11 @@
  @HPLIP_BUILD_TRUE@hp_mkuri_CFLAGS = -DCONFDIR=\"$(hplip_confdir)\"
  
  # hpmud.rules
@@ -39,3 +39,26 @@
  
  # hplip.conf
  @HPLIP_BUILD_TRUE@hplip_confdir = /etc/hp
+@@ -3921,14 +3921,14 @@
+ 
+ # data
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@modelsdir = $(hplipdir)/data/models
+-@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@images_16x16dir = $(hplipdir)/data/images/16x16
+-@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@images_24x24dir = $(hplipdir)/data/images/24x24
+-@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@images_32x32dir = $(hplipdir)/data/images/32x32
+-@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@images_64x64dir = $(hplipdir)/data/images/64x64
+-@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@images_128x128dir = $(hplipdir)/data/images/128x128
+-@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@images_256x256dir = $(hplipdir)/data/images/256x256
+-@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@images_devicesdir = $(hplipdir)/data/images/devices
+-@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@images_otherdir = $(hplipdir)/data/images/other
++@FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@images_16x16dir = $(hplipdir)/data/images/16x16
++@FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@images_24x24dir = $(hplipdir)/data/images/24x24
++@FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@images_32x32dir = $(hplipdir)/data/images/32x32
++@FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@images_64x64dir = $(hplipdir)/data/images/64x64
++@FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@images_128x128dir = $(hplipdir)/data/images/128x128
++@FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@images_256x256dir = $(hplipdir)/data/images/256x256
++@FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@images_devicesdir = $(hplipdir)/data/images/devices
++@FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@images_otherdir = $(hplipdir)/data/images/other
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@pcldir = $(hplipdir)/data/pcl
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@ldldir = $(hplipdir)/data/ldl
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@postscriptdir = $(hplipdir)/data/ps
