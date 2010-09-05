@@ -19,7 +19,6 @@ name=thttpd
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/thttpd
-required_files=%%PREFIX%%/etc/thttpd.conf
 
 thttpd_enable=${thttpd_enable:-"NO"}
 thttpd_flags=${thttpd_flags:-"-C %%PREFIX%%/etc/thttpd.conf"}

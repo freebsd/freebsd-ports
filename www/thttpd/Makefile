@@ -7,7 +7,7 @@
 
 PORTNAME=	thttpd
 PORTVERSION=	2.25b
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/thttpd/ \
 		http://atreides.freenix.no/~anders/
