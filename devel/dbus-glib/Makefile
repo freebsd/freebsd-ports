@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dbus
-PORTVERSION=	0.86
-PORTREVISION=	1
+PORTVERSION=	0.88
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-glib/
 PKGNAMESUFFIX=	-glib
