@@ -109,7 +109,6 @@ graphics/xmps-win32-plugin|multimedia/xmps-win32-plugin|2002-11-28|new category
 editors/ooodict-pt_BR|portuguese/ooodict-pt_BR|2002-12-06|new category
 editors/ooodict-pt_PT|portuguese/ooodict-pt_PT|2002-12-06|new category
 editors/openoffice-pt|portuguese/openoffice|2002-12-06|new category
-editors/staroffice52-pt|portuguese/staroffice52|2002-12-06|new category
 www/frontpage-pt_BR|portuguese/frontpage-pt_BR|2002-12-06|new category
 audio/kdemultimedia3|multimedia/kdemultimedia3|2002-12-08|new category
 japanese/gn-mnews||2002-12-08|security vulnerability
@@ -263,7 +262,6 @@ misc/kde3-i18n-he|hebrew/kde3-i18n|2003-04-13|new category
 misc/kde3-i18n-hu|hungarian/kde3-i18n|2003-04-13|new category
 misc/kde3-i18n-vi|vietnamese/kde3-i18n|2003-04-13|new category
 sysutils/asrpages|misc/asr-manpages|2003-04-15|port revived
-emulators/linux-vmware-toolbox|emulators/linux-vmware-toolbox2|2003-04-19|port renamed
 emulators/vmware-guestd|emulators/vmware-guestd3|2003-04-19|port renamed
 archivers/ruby-zlib||2003-04-19|integrated into ruby16-shim-ruby18
 math/ruby-bigfloat||2003-04-19|integrated into ruby16-shim-ruby18
@@ -4517,3 +4515,17 @@ graphics/lphoto||2010-08-31|Has expired: broken
 mail/ngmp||2010-08-31|Has expired: does not compile and no longer supported by upstream
 multimedia/libdvdnav-mplayer||2010-09-02|Removed in favour of updated multimedia/libdvdnav
 lang/gcc43|lang/gcc44|2010-09-04|Superseded by gcc44 or gcc45
+databases/sybase-ocsd||2010-09-04|Distfile(s) no longer available
+editors/staroffice5||2010-09-04|Distfile(s) no longer available
+editors/staroffice52||2010-09-04|Distfile(s) no longer available
+editors/staroffice60||2010-09-04|Distfile(s) no longer available
+editors/staroffice70||2010-09-04|Distfile(s) no longer available
+emulators/linux-vmware-toolbox2||2010-09-04|Distfile(s) no longer available
+french/staroffice52||2010-09-04|Distfile(s) no longer available
+german/staroffice5||2010-09-04|Distfile(s) no longer available
+german/staroffice52||2010-09-04|Distfile(s) no longer available
+german/staroffice70||2010-09-04|Distfile(s) no longer available
+java/simplicity||2010-09-04|Distfile(s) no longer available
+lang/icc7||2010-09-04|Distfile(s) no longer available
+portuguese/staroffice52||2010-09-04|Distfile(s) no longer available
+sysutils/linux-acu||2010-09-04|Distfile(s) no longer available

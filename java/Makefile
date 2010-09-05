@@ -158,7 +158,6 @@
     SUBDIR += sablevm-classpath
     SUBDIR += servingxml
     SUBDIR += shujit
-    SUBDIR += simplicity
     SUBDIR += springframework
     SUBDIR += sqlitejdbc
     SUBDIR += subversion-java

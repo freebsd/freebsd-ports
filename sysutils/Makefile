@@ -445,7 +445,6 @@
     SUBDIR += lineak-xosdplugin
     SUBDIR += lineakd
     SUBDIR += linrename
-    SUBDIR += linux-acu
     SUBDIR += linux-afaapps
     SUBDIR += linux-megacli
     SUBDIR += linux-megamgr

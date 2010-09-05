@@ -5878,14 +5878,6 @@ you update your ports collection, before attempting any port upgrades.
   you to deinstall every Linux port, remove /compat/linux completely to
   make sure no cruft is left and reinstall everything you need.
 
-20060612:
-  AFFECTS: users of editors/staroffice60, editors/staroffice70 and
-	   german/staroffice70
-  AUTHOR: erwin@FreeBSD.org
-
-  The USE_CDROM knob was renamed to WITH_CDROM for consistency within the
-  Ports Tree.
-
 20060611:
   AFFECTS: users of www/c-icap
   AUTHOR: b3k@mail.ru
