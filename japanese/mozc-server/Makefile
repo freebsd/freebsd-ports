@@ -7,6 +7,7 @@
 
 PORTNAME=	mozc-server
 PORTVERSION=	0.12.434.102
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
 DISTNAME=	mozc-${PORTVERSION}
