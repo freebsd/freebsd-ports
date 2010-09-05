@@ -55,10 +55,10 @@ USE_GMAKE=	yes
 .endif
 .if defined (MUTT_LITE)
 PKGNAMESUFFIX=	-lite
-WITH_SGML_DOCS:="no"
+WITH_SGML_DOCS:=no
 .elif ${ARCH} == "alpha"
 #  coredump in sgmls
-WITH_SGML_DOCS:="no"
+WITH_SGML_DOCS:=no
 .endif
 
 .if !defined(WITHOUT_NLS)
