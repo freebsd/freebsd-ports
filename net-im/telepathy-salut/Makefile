@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	telepathy-salut
-PORTVERSION=	0.3.12
+PORTVERSION=	0.3.13
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
