@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	libtifiles2
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.3
 CATEGORIES=	devel
-MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.11
-DISTNAME=	tilibs2-20080328
+MASTER_SITES=	http://lpg.ticalc.org/prj_tilp/download/ \
+		http://tijl.fastmail.fm/mirror/
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI calculator file types library
 
-LIB_DEPENDS=	ticonv.3:${PORTSDIR}/converters/libticonv
+LIB_DEPENDS=	ticonv.4:${PORTSDIR}/converters/libticonv
 
 USE_AUTOTOOLS=	libtool:22
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack pkgconfig
 USE_LDCONFIG=	yes
@@ -32,10 +32,5 @@ PLIST_SUB=	NLS="@comment "
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"\
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-post-extract:
-	@cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/tilibs2/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
 
 .include <bsd.port.mk>
