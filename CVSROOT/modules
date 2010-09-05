@@ -4166,7 +4166,6 @@ gcalctool                       ports/math/gcalctool
 gcb                             ports/x11/gcb
 gcc34                           ports/lang/gcc34
 gcc42                           ports/lang/gcc42
-gcc43                           ports/lang/gcc43
 gcc44                           ports/lang/gcc44
 gcc45                           ports/lang/gcc45
 gcc46                           ports/lang/gcc46
@@ -13547,6 +13546,7 @@ p5-Plack-Middleware-Header      ports/www/p5-Plack-Middleware-Header
 p5-Plack-Middleware-JSConcat    ports/www/p5-Plack-Middleware-JSConcat
 p5-Plack-Middleware-ReverseProxy  ports/www/p5-Plack-Middleware-ReverseProxy
 p5-Plack-Middleware-Session     ports/www/p5-Plack-Middleware-Session
+p5-Plack-Middleware-Throttle    ports/www/p5-Plack-Middleware-Throttle
 p5-Plack-Server-AnyEvent        ports/www/p5-Plack-Server-AnyEvent
 p5-Plack-Server-Coro            ports/www/p5-Plack-Server-Coro
 p5-Plack-Server-POE             ports/www/p5-Plack-Server-POE
@@ -13970,6 +13970,7 @@ p5-Template-Plugin-XML-Escape   ports/textproc/p5-Template-Plugin-XML-Escape
 p5-Template-Provider-Encode     ports/devel/p5-Template-Provider-Encode
 p5-Template-Provider-Encoding   ports/www/p5-Template-Provider-Encoding
 p5-Template-Provider-FromDATA   ports/www/p5-Template-Provider-FromDATA
+p5-Template-Stash-AutoEscape    ports/www/p5-Template-Stash-AutoEscape
 p5-Template-Timer               ports/www/p5-Template-Timer
 p5-Template-Tiny                ports/textproc/p5-Template-Tiny
 p5-Template-Toolkit             ports/www/p5-Template-Toolkit
@@ -17414,6 +17415,7 @@ p5-plack-middleware-header      ports/www/p5-Plack-Middleware-Header
 p5-plack-middleware-jsconcat    ports/www/p5-Plack-Middleware-JSConcat
 p5-plack-middleware-reverseproxy  ports/www/p5-Plack-Middleware-ReverseProxy
 p5-plack-middleware-session     ports/www/p5-Plack-Middleware-Session
+p5-plack-middleware-throttle    ports/www/p5-Plack-Middleware-Throttle
 p5-plack-server-anyevent        ports/www/p5-Plack-Server-AnyEvent
 p5-plack-server-coro            ports/www/p5-Plack-Server-Coro
 p5-plack-server-poe             ports/www/p5-Plack-Server-POE
@@ -17945,6 +17947,7 @@ p5-template-plugin-xml-escape   ports/textproc/p5-Template-Plugin-XML-Escape
 p5-template-provider-encode     ports/devel/p5-Template-Provider-Encode
 p5-template-provider-encoding   ports/www/p5-Template-Provider-Encoding
 p5-template-provider-fromdata   ports/www/p5-Template-Provider-FromDATA
+p5-template-stash-autoescape    ports/www/p5-Template-Stash-AutoEscape
 p5-template-timer               ports/www/p5-Template-Timer
 p5-template-tiny                ports/textproc/p5-Template-Tiny
 p5-template-toolkit             ports/www/p5-Template-Toolkit
