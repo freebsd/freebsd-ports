@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	kdesvn
-DISTVERSION=	1.5.3
+DISTVERSION=	1.5.4
 CATEGORIES=	devel kde
 MASTER_SITES=	http://kdesvn.alwins-world.de/downloads/
-PKGNAMESUFFIX=	-kde4
 
 MAINTAINER=	naylor.b.david@gmail.com
 COMMENT=	KDE frontend for Subversion
@@ -27,7 +26,7 @@ USE_KDE4=	kdelibs kdeprefix automoc4
 USE_LDCONFIG=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui xml network dbus svg qt3support sql \
-		qmake_build moc_build rcc_build uic_build
+		qmake_build moc_build rcc_build uic_build linguist_build
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		kdesvn.1 kdesvnaskpass.1
