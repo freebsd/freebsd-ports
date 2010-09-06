@@ -1,0 +1,29 @@
+--- doc/wget.texi	2010-05-27 10:45:15 +0000
++++ doc/wget.texi	2010-07-28 19:22:22 +0000
+@@ -1498,6 +1498,13 @@
+ @code{Content-Disposition} headers to describe what the name of a
+ downloaded file should be.
+ 
++@cindex Trust server names
++@item --trust-server-names
++
++If this is set to on, on a redirect the last component of the
++redirection URL will be used as the local file name.  By default it is
++used the last component in the original URL.
++
+ @cindex authentication
+ @item --auth-no-challenge
+ 
+@@ -2810,6 +2817,10 @@
+ Turn on recognition of the (non-standard) @samp{Content-Disposition}
+ HTTP header---if set to @samp{on}, the same as @samp{--content-disposition}.
+ 
++@item trust_server_names = on/off
++If set to on, use the last component of a redirection URL for the local
++file name.
++
+ @item continue = on/off
+ If set to on, force continuation of preexistent partially retrieved
+ files.  See @samp{-c} before setting it.
+
+=== modified file 'src/ChangeLog'
