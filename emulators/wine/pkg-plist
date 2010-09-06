@@ -924,6 +924,7 @@ lib/wine/fakedlls/gameux.dll
 lib/wine/fakedlls/gdi.exe16
 lib/wine/fakedlls/gdi32.dll
 lib/wine/fakedlls/gdiplus.dll
+lib/wine/fakedlls/glu32.dll
 lib/wine/fakedlls/gphoto2.ds
 lib/wine/fakedlls/gpkcsp.dll
 lib/wine/fakedlls/hal.dll
@@ -1056,6 +1057,7 @@ lib/wine/fakedlls/olesvr.dll16
 lib/wine/fakedlls/olesvr32.dll
 lib/wine/fakedlls/olethk32.dll
 lib/wine/fakedlls/oleview.exe
+lib/wine/fakedlls/opengl32.dll
 lib/wine/fakedlls/pdh.dll
 lib/wine/fakedlls/pidgen.dll
 lib/wine/fakedlls/ping.exe
@@ -1234,6 +1236,7 @@ lib/wine/gameux.dll.so
 lib/wine/gdi.exe16.so
 lib/wine/gdi32.dll.so
 lib/wine/gdiplus.dll.so
+lib/wine/glu32.dll.so
 lib/wine/gphoto2.ds.so
 lib/wine/gpkcsp.dll.so
 lib/wine/hal.dll.so
@@ -1318,6 +1321,7 @@ lib/wine/libdxgi.def
 lib/wine/libdxguid.a
 lib/wine/libgdi32.def
 lib/wine/libgdiplus.def
+lib/wine/libglu32.def
 lib/wine/libhid.def
 lib/wine/libhlink.def
 lib/wine/libimagehlp.def
@@ -1361,6 +1365,7 @@ lib/wine/libolecli32.def
 lib/wine/liboledlg.def
 lib/wine/libolepro32.def
 lib/wine/libolesvr32.def
+lib/wine/libopengl32.def
 lib/wine/libpdh.def
 lib/wine/libpowrprof.def
 lib/wine/libpropsys.def
@@ -1518,6 +1523,7 @@ lib/wine/olesvr.dll16.so
 lib/wine/olesvr32.dll.so
 lib/wine/olethk32.dll.so
 lib/wine/oleview.exe.so
+lib/wine/opengl32.dll.so
 lib/wine/pdh.dll.so
 lib/wine/pidgen.dll.so
 lib/wine/ping.exe.so
