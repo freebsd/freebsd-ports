@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arirang
-PORTVERSION=	1.77
+PORTVERSION=	1.90
 PORTEPOCH=	1
 CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
@@ -17,6 +17,8 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Powerful webserver security scanner for network
 
 LICENSE=	BSD
+
+USE_OPENSSL=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arirang ${PREFIX}/sbin
