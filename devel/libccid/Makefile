@@ -34,11 +34,8 @@ MAN8=		Kobil_mIDentity_switch.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-.endif
-.if (${OSVERSION} >=800069 && ${OSVERSION} < 801000)
-BROKEN=		Basesystem libusb is missing some functions.		
+.if ${OSVERSION} < 801000
+IGNORE=		needs a complete libusb-1 implementation
 .endif
 
 post-patch:
