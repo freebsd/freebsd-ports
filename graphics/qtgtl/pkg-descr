@@ -10,7 +10,7 @@ implementations.
 - OpenCTL which is a GPL compatible of the Color Transformation Language, this
   language is dedicated at transforming the value of a single pixel (for
   instance brightness adjustement or desaturate). CTL is designed to be part of
-  the Color Management process. 
+  the Color Management process.
 - OpenShiva is inspired by Adobe's Hydra language from the AIF Toolkit, Shiva
   is a language that apply a kernel-like transformations on an image, that means
   it works using more than one pixel.
