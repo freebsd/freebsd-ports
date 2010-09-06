@@ -12,7 +12,7 @@ MASTER_SITES=	http://downloads.us.xiph.org/releases/libshout/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-python-${PORTVERSION}
 
-MAINTAINER=	duchateau.olivier@gmail.com
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python bindings for libshout2
 
 LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2
