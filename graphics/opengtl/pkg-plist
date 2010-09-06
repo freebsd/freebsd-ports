@@ -11,9 +11,10 @@ include/GTLCore/AbstractImage.h
 include/GTLCore/Array.h
 include/GTLCore/Buffer.h
 include/GTLCore/BufferImage.h
-include/GTLCore/CategoriesManager.h
-include/GTLCore/Category.h
-include/GTLCore/ErrorMessage.h
+include/GTLCore/ChannelsFlags.h
+include/GTLCore/Color.h
+include/GTLCore/CompilationMessage.h
+include/GTLCore/CompilationMessages.h
 include/GTLCore/Export.h
 include/GTLCore/Function.h
 include/GTLCore/Image.h
@@ -26,9 +27,10 @@ include/GTLCore/Parameter.h
 include/GTLCore/PixelDescription.h
 include/GTLCore/ProgressReport.h
 include/GTLCore/Region.h
-include/GTLCore/RegionF.h
 include/GTLCore/ScopedName.h
+include/GTLCore/StdTypes.h
 include/GTLCore/String.h
+include/GTLCore/Transform.h
 include/GTLCore/Type.h
 include/GTLCore/TypesManager.h
 include/GTLCore/Value.h
@@ -54,16 +56,16 @@ lib/GTLImageIO/Extensions/libPngDC.so
 lib/GTLImageIO/Extensions/libRawDC.so
 lib/libGTLCore.so
 lib/libGTLCore.so.0
-lib/libGTLCore.so.0.9.12
+lib/libGTLCore.so.0.9.14
 lib/libGTLImageIO.so
 lib/libGTLImageIO.so.0
-lib/libGTLImageIO.so.0.9.12
+lib/libGTLImageIO.so.0.9.14
 lib/libOpenCTL.so
 lib/libOpenCTL.so.0
-lib/libOpenCTL.so.0.9.12
+lib/libOpenCTL.so.0.9.14
 lib/libOpenShiva.so
 lib/libOpenShiva.so.0
-lib/libOpenShiva.so.0.9.12
+lib/libOpenShiva.so.0.9.14
 libdata/pkgconfig/GTLCore.pc
 libdata/pkgconfig/GTLImageIO.pc
 libdata/pkgconfig/OpenCTL.pc
@@ -71,9 +73,9 @@ libdata/pkgconfig/OpenShiva.pc
 share/OpenGTL/ctl/ctlstdlib.ctl
 share/OpenGTL/shiva/libraries/shivastdlib.shiva
 @dirrm share/OpenGTL/shiva/libraries
-@dirrm share/OpenGTL/shiva
+@dirrmtry share/OpenGTL/shiva
 @dirrm share/OpenGTL/ctl
-@dirrm share/OpenGTL
+@dirrmtry share/OpenGTL
 @dirrm lib/GTLImageIO/Extensions
 @dirrm lib/GTLImageIO
 @dirrm include/OpenShiva
