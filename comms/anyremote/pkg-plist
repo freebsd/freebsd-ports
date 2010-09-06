@@ -1,14 +1,11 @@
 @comment $FreeBSD$
 bin/anyremote
-%%DATADIR%%/cfg-data/Server-mode/kuickshow.cfg
 %%DATADIR%%/cfg-data/Server-mode/comix.cfg
 %%DATADIR%%/cfg-data/Server-mode/freevo.cfg
 %%DATADIR%%/cfg-data/Server-mode/aqualung.cfg
-%%DATADIR%%/cfg-data/Server-mode/kview.cfg
 %%DATADIR%%/cfg-data/Server-mode/gthumb.cfg
 %%DATADIR%%/cfg-data/Server-mode/xfmedia.cfg
 %%DATADIR%%/cfg-data/Server-mode/mouse.cfg
-%%DATADIR%%/cfg-data/Server-mode/kaffeine_dvbt.cfg
 %%DATADIR%%/cfg-data/Server-mode/fileManager2.cfg
 %%DATADIR%%/cfg-data/Server-mode/evince.cfg
 %%DATADIR%%/cfg-data/Server-mode/customizeClient3.cfg
@@ -16,21 +13,16 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Server-mode/customizeClient5.cfg
 %%DATADIR%%/cfg-data/Server-mode/ooimpress.cfg
 %%DATADIR%%/cfg-data/Server-mode/imageViewer.cfg
-%%DATADIR%%/cfg-data/Server-mode/keyboard.cfg
 %%DATADIR%%/cfg-data/Server-mode/all-in-one.cfg
 %%DATADIR%%/cfg-data/Server-mode/gmusicbrowser.cfg
 %%DATADIR%%/cfg-data/Server-mode/fileManager.cfg
 %%DATADIR%%/cfg-data/Server-mode/mpd.cfg
 %%DATADIR%%/cfg-data/Server-mode/rssReader.cfg
 %%DATADIR%%/cfg-data/Server-mode/fileManager3.cfg
-%%DATADIR%%/cfg-data/Server-mode/keyjnote.cfg
-%%DATADIR%%/cfg-data/Server-mode/kpdf.cfg
 %%DATADIR%%/cfg-data/Server-mode/xmms2.cfg
 %%DATADIR%%/cfg-data/Server-mode/amarok-v2.cfg
-%%DATADIR%%/cfg-data/Server-mode/kaboodle.cfg
 %%DATADIR%%/cfg-data/Server-mode/juk.cfg
 %%DATADIR%%/cfg-data/Server-mode/quodlibet.cfg
-%%DATADIR%%/cfg-data/Server-mode/noatun.cfg
 %%DATADIR%%/cfg-data/Server-mode/gnomeradio.cfg
 %%DATADIR%%/cfg-data/Server-mode/customizeClient2.cfg
 %%DATADIR%%/cfg-data/Server-mode/xmms.cfg
@@ -42,6 +34,7 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Server-mode/mplayer.cfg
 %%DATADIR%%/cfg-data/Server-mode/totem.cfg
 %%DATADIR%%/cfg-data/Server-mode/xdtv.cfg
+%%DATADIR%%/cfg-data/Server-mode/keyboard.cfg
 %%DATADIR%%/cfg-data/Server-mode/kmid.cfg
 %%DATADIR%%/cfg-data/Server-mode/amarok.cfg
 %%DATADIR%%/cfg-data/Server-mode/adminExample.cfg
@@ -49,7 +42,6 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Server-mode/nokia-e70.cfg
 %%DATADIR%%/cfg-data/Server-mode/customizeClient4.cfg
 %%DATADIR%%/cfg-data/Server-mode/nokia-e61.cfg
-%%DATADIR%%/cfg-data/Server-mode/kaffeine-v2.cfg
 %%DATADIR%%/cfg-data/Server-mode/bmp.cfg
 %%DATADIR%%/cfg-data/Server-mode/sound.cfg
 %%DATADIR%%/cfg-data/Server-mode/kdetv.cfg
@@ -67,54 +59,48 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Server-mode/myth-tv.cfg
 %%DATADIR%%/cfg-data/Server-mode/gwenview.cfg
 %%DATADIR%%/cfg-data/Server-mode/kplayer.cfg
-%%DATADIR%%/cfg-data/Server-mode/kopete.cfg
 %%DATADIR%%/cfg-data/Server-mode/decibel.cfg
 %%DATADIR%%/cfg-data/Server-mode/kaffeine.cfg
 %%DATADIR%%/cfg-data/Server-mode/listen.cfg
 %%DATADIR%%/cfg-data/Server-mode/exaile.cfg
 %%DATADIR%%/cfg-data/Server-mode/banshee-v2.cfg
-%%DATADIR%%/cfg-data/Server-mode/amarok2.cfg
-%%DATADIR%%/cfg-data/Server-mode/gwenview2.cfg
-%%DATADIR%%/cfg-data/Server-mode/juk2.cfg
 %%DATADIR%%/cfg-data/Server-mode/okular.cfg
 %%DATADIR%%/cfg-data/Server-mode/wmctrl.cfg
 %%DATADIR%%/cfg-data/Server-mode/xbmc.cfg
 %%DATADIR%%/cfg-data/Server-mode/alsaplayer.cfg
 %%DATADIR%%/cfg-data/Server-mode/digikam.cfg
-%%DATADIR%%/cfg-data/Server-mode/digikam2.cfg
 %%DATADIR%%/cfg-data/Server-mode/gpicview.cfg
 %%DATADIR%%/cfg-data/Server-mode/xmultimedia.cfg
 %%DATADIR%%/cfg-data/Server-mode/eog.cfg
-%%DATADIR%%/cfg-data/Server-mode/kscd2.cfg
 %%DATADIR%%/cfg-data/Server-mode/impressive.cfg
 %%DATADIR%%/cfg-data/Server-mode/autoUpload.cfg
 %%DATADIR%%/cfg-data/Server-mode/moovida.cfg
+%%DATADIR%%/cfg-data/Server-mode/amarok-v4.cfg
+%%DATADIR%%/cfg-data/Server-mode/boxee.cfg
+%%DATADIR%%/cfg-data/Server-mode/dragon.cfg
+%%DATADIR%%/cfg-data/Server-mode/keyboard-mouse.cfg
+%%DATADIR%%/cfg-data/Server-mode/nokia-e75.cfg
+%%DATADIR%%/cfg-data/Server-mode/qmmp.cfg
+%%DATADIR%%/cfg-data/Server-mode/qwerty-device-test.cfg
 %%DATADIR%%/cfg-data/Utils/gradient.png
 %%DATADIR%%/cfg-data/Utils/message.sh
 %%DATADIR%%/cfg-data/Utils/all-in-1.py
 %%DATADIR%%/cfg-data/Utils/xmms_is_playing
-%%DATADIR%%/cfg-data/Utils/winampgui.tar.gz
 %%DATADIR%%/cfg-data/Utils/aliases-at.cfg
 %%DATADIR%%/cfg-data/Utils/aliases-bemused.cfg
 %%DATADIR%%/cfg-data/Utils/aliases-server.cfg
+%%DATADIR%%/cfg-data/Utils/getPlayList.sh
 %%DATADIR%%/cfg-data/Bemused-emulation/exaile.cfg
-%%DATADIR%%/cfg-data/Bemused-emulation/juk.cfg
 %%DATADIR%%/cfg-data/Bemused-emulation/quodlibet.cfg
-%%DATADIR%%/cfg-data/Bemused-emulation/noatun.cfg
 %%DATADIR%%/cfg-data/Bemused-emulation/xmms.cfg
 %%DATADIR%%/cfg-data/Bemused-emulation/rhythmbox.cfg
 %%DATADIR%%/cfg-data/Bemused-emulation/totem.cfg
 %%DATADIR%%/cfg-data/Bemused-emulation/template.cfg
 %%DATADIR%%/cfg-data/Bemused-emulation/amarok.cfg
 %%DATADIR%%/cfg-data/Bemused-emulation/kdetv.cfg
-%%DATADIR%%/cfg-data/Bemused-emulation/kscd.cfg
 %%DATADIR%%/cfg-data/Bemused-emulation/tvtime.cfg
-%%DATADIR%%/cfg-data/Bemused-emulation/kplayer.cfg
-%%DATADIR%%/cfg-data/Bemused-emulation/kaffeine.cfg
 %%DATADIR%%/cfg-data/Bemused-emulation/mpd.cfg
-%%DATADIR%%/cfg-data/AT-mode/kuickshow.cfg
 %%DATADIR%%/cfg-data/AT-mode/aqualung.cfg
-%%DATADIR%%/cfg-data/AT-mode/kview.cfg
 %%DATADIR%%/cfg-data/AT-mode/xfmedia.cfg
 %%DATADIR%%/cfg-data/AT-mode/mouse.cfg
 %%DATADIR%%/cfg-data/AT-mode/kdialog.se.cfg
@@ -123,13 +109,10 @@ bin/anyremote
 %%DATADIR%%/cfg-data/AT-mode/xineForDvd.cfg
 %%DATADIR%%/cfg-data/AT-mode/gmusicbrowser.cfg
 %%DATADIR%%/cfg-data/AT-mode/mpd.cfg
-%%DATADIR%%/cfg-data/AT-mode/juk.cfg
 %%DATADIR%%/cfg-data/AT-mode/quodlibet.cfg
-%%DATADIR%%/cfg-data/AT-mode/noatun.cfg
 %%DATADIR%%/cfg-data/AT-mode/kdialog.sagem.cfg
 %%DATADIR%%/cfg-data/AT-mode/elisa.cfg
 %%DATADIR%%/cfg-data/AT-mode/xmms.cfg
-%%DATADIR%%/cfg-data/AT-mode/kmplayer.cfg
 %%DATADIR%%/cfg-data/AT-mode/kdialog.motorola.cfg
 %%DATADIR%%/cfg-data/AT-mode/banshee.cfg
 %%DATADIR%%/cfg-data/AT-mode/rhythmbox.cfg
@@ -141,12 +124,10 @@ bin/anyremote
 %%DATADIR%%/cfg-data/AT-mode/sound.cfg
 %%DATADIR%%/cfg-data/AT-mode/kdetv.cfg
 %%DATADIR%%/cfg-data/AT-mode/kdialog.cfg
-%%DATADIR%%/cfg-data/AT-mode/kscd.cfg
 %%DATADIR%%/cfg-data/AT-mode/multimode.cfg
 %%DATADIR%%/cfg-data/AT-mode/moc.cfg
 %%DATADIR%%/cfg-data/AT-mode/audacious.cfg
 %%DATADIR%%/cfg-data/AT-mode/tvtime.cfg
-%%DATADIR%%/cfg-data/AT-mode/kplayer.cfg
 %%DATADIR%%/cfg-data/AT-mode/kdialog.siemens.cfg
 %%DATADIR%%/cfg-data/AT-mode/kaffeine.cfg
 %%DATADIR%%/cfg-data/AT-mode/listen.cfg
@@ -196,8 +177,21 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Icons/64/record.png
 %%DATADIR%%/cfg-data/Icons/64/exit.png
 %%DATADIR%%/cfg-data/Icons/64/info.png
+%%DATADIR%%/cfg-data/Icons/128/bottom.png
+%%DATADIR%%/cfg-data/Icons/128/eject.png
+%%DATADIR%%/cfg-data/Icons/128/exit.png
+%%DATADIR%%/cfg-data/Icons/128/favorites.png
+%%DATADIR%%/cfg-data/Icons/128/first.png
+%%DATADIR%%/cfg-data/Icons/128/info.png
+%%DATADIR%%/cfg-data/Icons/128/last.png
+%%DATADIR%%/cfg-data/Icons/128/launch.png
+%%DATADIR%%/cfg-data/Icons/128/ok.png
+%%DATADIR%%/cfg-data/Icons/128/record.png
+%%DATADIR%%/cfg-data/Icons/128/top.png
+%%DATADIR%%/cfg-data/iViewer/amarok.cfg
+%%DATADIR%%/cfg-data/iViewer/kaffeine.cfg
+%%DATADIR%%/cfg-data/iViewer/xine.cfg
 %%DATADIR%%/cfg-data/iViewer/vlc.cfg
-%%DATADIR%%/cfg-data/iViewer/amarok2.cfg
 %%DATADIR%%/cfg-data/iViewer/xmms.cfg
 %%DATADIR%%/cfg-data/iViewer/banshee.cfg
 %%DATADIR%%/cfg-data/iViewer/rhythmbox.cfg
@@ -210,6 +204,7 @@ bin/anyremote
 @dirrm %%DATADIR%%/cfg-data/Icons/32
 @dirrm %%DATADIR%%/cfg-data/Icons/48
 @dirrm %%DATADIR%%/cfg-data/Icons/64
+@dirrm %%DATADIR%%/cfg-data/Icons/128
 @dirrm %%DATADIR%%/cfg-data/Icons
 @dirrm %%DATADIR%%/cfg-data/iViewer
 @dirrm %%DATADIR%%/cfg-data/Server-mode
