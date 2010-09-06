@@ -2269,9 +2269,6 @@ de-phone                        ports/german/phone
 de-php_doc                      ports/german/php_doc
 de-schwobifyer                  ports/german/schwobifyer
 de-selfhtml                     ports/german/selfhtml
-de-staroffice5                  ports/german/staroffice5
-de-staroffice52                 ports/german/staroffice52
-de-staroffice70                 ports/german/staroffice70
 de-steak                        ports/german/steak
 de-tipp10                       ports/german/tipp10
 de-unix-connect                 ports/german/unix-connect
@@ -3815,7 +3812,6 @@ fr-med                          ports/french/med
 fr-mozilla-flp                  ports/french/mozilla-flp
 fr-php_doc                      ports/french/php_doc
 fr-plgrenouille                 ports/french/plgrenouille
-fr-staroffice52                 ports/french/staroffice52
 fr-verbiste                     ports/french/verbiste
 fr-xtel                         ports/french/xtel
 fracplanet                      ports/graphics/fracplanet
@@ -5764,7 +5760,6 @@ icb                             ports/net-im/icb
 icbirc                          ports/irc/icbirc
 icbm3d                          ports/games/icbm3d
 icc                             ports/lang/icc
-icc7                            ports/lang/icc7
 ice                             ports/devel/ice
 iceauth                         ports/x11/iceauth
 icebreaker                      ports/games/icebreaker
@@ -8409,7 +8404,6 @@ linsmith                        ports/science/linsmith
 linux-SHA-1_collision_search_graz  ports/math/linux-SHA-1_collision_search_graz
 linux-XnViewMP                  ports/graphics/linux-XnViewMP
 linux-ac3d                      ports/graphics/linux-ac3d
-linux-acu                       ports/sysutils/linux-acu
 linux-adobesvg                  ports/graphics/linux-adobesvg
 linux-afaapps                   ports/sysutils/linux-afaapps
 linux-agsatellite               ports/net-p2p/linux-agsatellite
@@ -8699,7 +8693,6 @@ linux-ut                        ports/games/linux-ut
 linux-ut2003-demo               ports/games/linux-ut2003-demo
 linux-ut2004-demo               ports/games/linux-ut2004-demo
 linux-virtual-jay-peak          ports/games/linux-virtual-jay-peak
-linux-vmware-toolbox2           ports/emulators/linux-vmware-toolbox2
 linux-vmware-toolbox4           ports/emulators/linux-vmware-toolbox4
 linux-vmware-toolbox5           ports/emulators/linux-vmware-toolbox5
 linux-vmware-toolbox6           ports/emulators/linux-vmware-toolbox6
@@ -20482,7 +20475,6 @@ pt-koffice-kde4-l10n            ports/portuguese/koffice-kde4-l10n
 pt-koffice-kde4-l10n-pt_BR      ports/portuguese/koffice-kde4-l10n-pt_BR
 pt-koffice-kde4-l10n-pt_br      ports/portuguese/koffice-kde4-l10n-pt_BR
 pt-php_doc-br                   ports/portuguese/php_doc-br
-pt-staroffice52                 ports/portuguese/staroffice52
 pt-webalizer-pt_BR              ports/portuguese/webalizer-pt_BR
 pt-webalizer-pt_PT              ports/portuguese/webalizer-pt_PT
 pt-webalizer-pt_br              ports/portuguese/webalizer-pt_BR
@@ -23196,7 +23188,6 @@ simpleproxy                     ports/net/simpleproxy
 simpletest                      ports/devel/simpletest
 simplevaders                    ports/games/simplevaders
 simplexml                       ports/textproc/simplexml
-simplicity                      ports/java/simplicity
 simplog                         ports/www/simplog
 simscan                         ports/mail/simscan
 simulavr                        ports/devel/simulavr
@@ -23676,10 +23667,6 @@ stardict2-rptts                 ports/textproc/stardict2-rptts
 stardict3                       ports/textproc/stardict3
 starlanes                       ports/games/starlanes
 starlogo                        ports/lang/starlogo
-staroffice5                     ports/editors/staroffice5
-staroffice52                    ports/editors/staroffice52
-staroffice60                    ports/editors/staroffice60
-staroffice70                    ports/editors/staroffice70
 starplot                        ports/astro/starplot
 stars                           ports/astro/stars
 starttls                        ports/security/starttls
@@ -23846,7 +23833,6 @@ sxm                             ports/lang/sxm
 sxml                            ports/textproc/sxml
 sxpc                            ports/x11/sxpc
 sxsame                          ports/games/sxsame
-sybase-ocsd                     ports/databases/sybase-ocsd
 sybase_ase                      ports/databases/sybase_ase
 sybtcl                          ports/databases/sybtcl
 syck                            ports/textproc/syck
