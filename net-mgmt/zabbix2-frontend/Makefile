@@ -39,7 +39,7 @@ USE_PHP+=	pgsql
 .endif
 
 .ifdef WITH_SQLITE
-USE_PHP+=	sqlite
+RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/sqlite3.so:${PORTSDIR}/databases/php-sqlite3
 .endif
 
 do-install:
