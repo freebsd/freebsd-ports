@@ -151,6 +151,7 @@
     SUBDIR += filtermail
     SUBDIR += firemime
     SUBDIR += firepay
+    SUBDIR += firetray
     SUBDIR += freepops
     SUBDIR += ftrack
     SUBDIR += gambas2-gb-net-smtp
