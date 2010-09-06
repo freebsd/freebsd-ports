@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gammu
-PORTVERSION=	1.27.93
-PORTREVISION=	1
+PORTVERSION=	1.28.90
 CATEGORIES=	comms
 MASTER_SITES=	http://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com.nyud.net/gammu/releases/
@@ -17,8 +16,6 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	GNU All Mobile Management Utilities - Development version
 
 RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
-
-IGNORE=		the devel release are currently suspended, install comms/gammu, new release is 1.28.x
 
 CMAKE_ARGS+=	-DINSTALL_LIBDATA_DIR=${PREFIX}/libdata
 
