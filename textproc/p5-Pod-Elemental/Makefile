@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Pod-Elemental
-PORTVERSION=	0.101620
+PORTVERSION=	0.102360
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Treating a Pod documents as trees of elements
 
 BUILD_DEPENDS=	p5-Pod-Eventual>=0:${PORTSDIR}/textproc/p5-Pod-Eventual \
