@@ -1,0 +1,23 @@
+--- src/ChangeLog	2010-07-20 17:42:13 +0000
++++ src/ChangeLog	2010-07-28 19:22:22 +0000
+@@ -1,3 +1,18 @@
++2010-07-28  Giuseppe Scrivano  <gscrivano@gnu.org>
++
++	* http.h (http_loop): Add new argument `original_url'
++	* http.c (http_loop): Add new argument `original_url'.  Use
++	`original_url' to get a filename if `trustservernames' is false.
++
++	* init.c (commands): Add "trustservernames".
++
++	* options.h (library): Add variable `trustservernames'.
++
++	* main.c (option_data): Add trust-server-names.
++	(print_help): Describe --trust-server-names.
++
++	* retr.c (retrieve_url): Pass new argument to `http_loop'.
++
+ 2010-07-20  Alan Jenkins <alan-jenkins@tuffmail.co.uk> (tiny change)
+ 
+ 	* http.c (gethttp): Check content-length was set before trying to
+
+=== modified file 'src/http.c'
