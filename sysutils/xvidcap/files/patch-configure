@@ -1,5 +1,5 @@
---- configure.orig	Mon Oct 30 09:11:11 2006
-+++ configure	Tue Oct 31 19:26:30 2006
+--- configure.orig	2006-11-16 18:50:24.000000000 +0100
++++ configure	2010-09-05 22:17:41.000000000 +0200
 @@ -9078,7 +9078,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -18,12 +18,179 @@
  
  else
    unset ac_cv_lib_Xmu_XmuClientWindow; echo "Couldn't find libXmu in LD_LIBRARY_PATH, checking X11 paths"; echo "$as_me:$LINENO: checking for XmuClientWindow in -lXmu" >&5
-@@ -9513,7 +9513,7 @@
+@@ -9513,11 +9513,11 @@
  # if cache empty (not tested or failed) and want static avcodec (then it failed) ...
  if ( `test \( \( x${ac_cv_lib_avutil_av_rescale+set} = x \) -a \( x$static_avutil = xyes \) \)` ) ; then
  	# build embedded ffmpeg
 -	echo "${MAKE-make}-ing prerequisite ffmpeg libraries" && ( cd ./ffmpeg/ && ./configure --cc=${CC} --enable-gpl ${ac_my_ffmpeg_cfg_lame_switch} --enable-pthreads --enable-swscaler --disable-ffserver --disable-ffplay && ln -s libavcodec/avcodec.h && ln -s libavformat/avformat.h && ln -s libavformat/avio.h && ln -s libavformat/rt*.h ./ && ln -s libavutil/common.h ./ && ln -s libavutil/avutil.h ./ && ln -s libavutil/mathematics.h ./ && ln -s libavutil/int*.h ./ && ln -s libavutil/rational.h ./ && ln -s libswscale/swscale.h ./ && ln -s libswscale/rgb2rgb.h . && ${MAKE-make} )
-+	echo "${MAKE-make}-ing prerequisite ffmpeg libraries" && ( cd ./ffmpeg/ && ./configure --cc=${CC} --extra-libs=-lm --disable-opts --enable-gpl ${ac_my_ffmpeg_cfg_lame_switch} --enable-pthreads --enable-swscaler --disable-ffserver --disable-ffplay && ln -s libavcodec/avcodec.h && ln -s libavformat/avformat.h && ln -s libavformat/avio.h && ln -s libavformat/rt*.h ./ && ln -s libavutil/common.h ./ && ln -s libavutil/avutil.h ./ && ln -s libavutil/mathematics.h ./ && ln -s libavutil/int*.h ./ && ln -s libavutil/rational.h ./ && ln -s libswscale/swscale.h ./ && ln -s libswscale/rgb2rgb.h . && ${MAKE-make} )
++	echo "${MAKE-make}-ing prerequisite ffmpeg libraries" && ( cd ./ffmpeg/ && ./configure --cc=${CC} --extra-cflags=${CPPFLAGS} --extra-libs=-lm --disable-opts --disable-muxer=v4l --disable-muxer=v4l2 --enable-gpl ${ac_my_ffmpeg_cfg_lame_switch} --enable-pthreads --enable-swscaler --disable-ffserver --disable-ffplay && ln -s libavcodec/avcodec.h && ln -s libavformat/avformat.h && ln -s libavformat/avio.h && ln -s libavformat/rt*.h ./ && ln -s libavutil/common.h ./ && ln -s libavutil/avutil.h ./ && ln -s libavutil/mathematics.h ./ && ln -s libavutil/int*.h ./ && ln -s libavutil/rational.h ./ && ln -s libswscale/swscale.h ./ && ln -s libswscale/rgb2rgb.h . && ${MAKE-make} )
  	#echo "${MAKE-make}-ing prerequisite ffmpeg libraries" && ( cd ./ffmpeg/ && ./configure --cc=${CC} ${ac_my_ffmpeg_cfg_lame_switch} --enable-pthreads --disable-ffserver --disable-ffplay && ln -s libavcodec/avcodec.h && ln -s libavformat/avformat.h && ln -s libavformat/avio.h && ln -s libavformat/rt*.h ./ && ln -s libavutil/common.h ./ && ln -s libavutil/avutil.h ./ && ln -s libavutil/mathematics.h ./ && ln -s libavutil/int*.h ./ && ln -s libavutil/rational.h ./ && ${MAKE-make} )
  	# try to link it statically, or reset cache, set static_avcodec=no
  	top_srcdir=`pwd`
+-	ac_my_ldflags_save=${LDFLAGS} ; LDFLAGS="${LDFLAGS} -L$top_srcdir/ffmpeg/libavcodec -L$top_srcdir/ffmpeg/libavformat -L$top_srcdir/ffmpeg/libavutil -L$top_srcdir/ffmpeg/libswscale"
++	ac_my_ldflags_save=${LDFLAGS} ; LOCALLIBPATH="-L$top_srcdir/ffmpeg/libavcodec -L$top_srcdir/ffmpeg/libavformat -L$top_srcdir/ffmpeg/libavutil -L$top_srcdir/ffmpeg/libswscale"
+ 	ac_my_cflags_save=${CFLAGS} ; CFLAGS="${CFLAGS} -I $top_srcdir -I$top_srcdir/ffmpeg/libavcodec -I$top_srcdir/ffmpeg/libavformat -I$top_srcdir/ffmpeg/libavutil -I$top_srcdir/ffmpeg/libswscale"
+ 
+ 
+@@ -9532,7 +9532,7 @@
+ 
+ echo -n "(static?) ... "
+ ac_check_lib_save_LIBS=$LIBS
+-LIBS="-Wl,-Bstatic -lavutil -Wl,-Bdynamic  $LIBS"
++LIBS="-Wl,-Bstatic -L$top_srcdir/ffmpeg/libavutil -lavutil -Wl,-Bdynamic $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -9599,7 +9599,7 @@
+ #define HAVE_LIBAVUTIL 1
+ _ACEOF
+ 
+-		LIBS="-Wl,-Bstatic -lavutil -Wl,-Bdynamic $LIBS"
++		LIBS="-Wl,-Bstatic -L$top_srcdir/ffmpeg/libavutil -lavutil -Wl,-Bdynamic $LIBS"
+ 
+ else
+   unset ac_cv_lib_avutil_av_rescale ; static_avcodec=no ; LDFLAGS=$ac_my_ldflags_save ; CFLAGS=$ac_my_cflags_save
+@@ -9618,7 +9618,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lavutil  $LIBS"
++LIBS="-L$top_srcdir/ffmpeg/libavutil -lavutil $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -9680,7 +9680,7 @@
+ #define HAVE_LIBAVUTIL 1
+ _ACEOF
+ 
+-  LIBS="-lavutil $LIBS"
++  LIBS="-L$top_srcdir/ffmpeg/libavutil -lavutil $LIBS"
+ 
+ fi
+ 
+@@ -9703,7 +9703,7 @@
+ 
+ echo -n "(static?) ... "
+ ac_check_lib_save_LIBS=$LIBS
+-LIBS="-Wl,-Bstatic -lswscale -Wl,-Bdynamic $ac_my_swscale_libs $LIBS"
++LIBS="-Wl,-Bstatic -L$top_srcdir/ffmpeg/libswscale -lswscale -Wl,-Bdynamic $ac_my_swscale_libs $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -9770,7 +9770,7 @@
+ #define HAVE_LIBSWSCALE 1
+ _ACEOF
+ 
+-		LIBS="-Wl,-Bstatic -lswscale -Wl,-Bdynamic $LIBS"
++		LIBS="-Wl,-Bstatic -L$top_srcdir/ffmpeg/libswscale -lswscale -Wl,-Bdynamic $LIBS"
+ 
+ else
+   unset ac_cv_lib_swscale_sws_scale ; static_swscale=no ;
+@@ -9780,7 +9780,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lswscale $ac_my_swscale_libs $LIBS"
++LIBS="-L$top_srcdir/ffmpeg/libswscale -lswscale $ac_my_swscale_libs $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -9842,7 +9842,7 @@
+ #define HAVE_LIBSWSCALE 1
+ _ACEOF
+ 
+-  LIBS="-lswscale $LIBS"
++  LIBS="-L$top_srcdir/ffmpeg/libswscale -lswscale $LIBS"
+ 
+ fi
+ 
+@@ -9868,7 +9868,7 @@
+ 
+ echo -n "(static?) ... "
+ ac_check_lib_save_LIBS=$LIBS
+-LIBS="-Wl,-Bstatic -lavcodec -Wl,-Bdynamic $ac_my_avcodec_libs $LIBS"
++LIBS="-Wl,-Bstatic -L$top_srcdir/ffmpeg/libavcodec -lavcodec -Wl,-Bdynamic $ac_my_avcodec_libs $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -9935,7 +9935,7 @@
+ #define HAVE_LIBAVCODEC 1
+ _ACEOF
+ 
+-		LIBS="-Wl,-Bstatic -lavcodec -Wl,-Bdynamic $LIBS"
++		LIBS="-Wl,-Bstatic -L$top_srcdir/ffmpeg/libavcodec -lavcodec -Wl,-Bdynamic $LIBS"
+ 
+ else
+   unset ac_cv_lib_avcodec_avcodec_encode_video ; static_avcodec=no ;
+@@ -9945,7 +9945,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lavcodec $ac_my_avcodec_libs $LIBS"
++LIBS="-L$top_srcdir/ffmpeg/libavcodec -lavcodec $ac_my_avcodec_libs $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -10007,7 +10007,7 @@
+ #define HAVE_LIBAVCODEC 1
+ _ACEOF
+ 
+-  LIBS="-lavcodec $LIBS"
++  LIBS="-L$top_srcdir/ffmpeg/libavcodec -lavcodec $LIBS"
+ 
+ fi
+ 
+@@ -10033,7 +10033,7 @@
+ 
+ echo -n "(static?) ... "
+ ac_check_lib_save_LIBS=$LIBS
+-LIBS="-Wl,-Bstatic -lavformat -Wl,-Bdynamic $ac_my_avformat_libs $LIBS"
++LIBS="-Wl,-Bstatic -L$top_srcdir/ffmpeg/libavformat -lavformat -Wl,-Bdynamic $ac_my_avformat_libs $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -10100,7 +10100,7 @@
+ #define HAVE_LIBAVFORMAT 1
+ _ACEOF
+ 
+-		LIBS="-Wl,-Bstatic -lavformat -Wl,-Bdynamic $LIBS"
++		LIBS="-Wl,-Bstatic -L$top_srcdir/ffmpeg/libavformat -lavformat -Wl,-Bdynamic $LIBS"
+ 
+ else
+   unset ac_cv_lib_avformat_av_write_header ; static_avformat=no ;
+@@ -10110,7 +10110,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lavformat $ac_my_avformat_libs $LIBS"
++LIBS="-L$top_srcdir/ffmpeg/libavformat -lavformat $ac_my_avformat_libs $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -10172,7 +10172,7 @@
+ #define HAVE_LIBAVFORMAT 1
+ _ACEOF
+ 
+-  LIBS="-lavformat $LIBS"
++  LIBS="-L$top_srcdir/ffmpeg/libavformat -lavformat $LIBS"
+ 
+ fi
+ 
+@@ -10206,7 +10206,7 @@
+ 
+ echo -n "(static?) ... "
+ ac_check_lib_save_LIBS=$LIBS
+-LIBS="-Wl,-Bstatic -lavcodec -Wl,-Bdynamic $ac_my_avcodec_libs $LIBS"
++LIBS="-Wl,-Bstatic -L$top_srcdir/ffmpeg/libavcodec -lavcodec -Wl,-Bdynamic $ac_my_avcodec_libs $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -10277,7 +10277,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lavcodec $ac_my_avcodec_libs $LIBS"
++LIBS="-L$top_srcdir/ffmpeg/libavcodec -lavcodec $ac_my_avcodec_libs $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
