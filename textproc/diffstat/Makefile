@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	diffstat
-PORTVERSION=	1.51
-PORTREVISION=	1
+PORTVERSION=	1.53
 CATEGORIES=	textproc devel
 MASTER_SITES=	ftp://dickey.his.com/diffstat/
 EXTRACT_SUFX=	.tgz
@@ -20,9 +19,6 @@ MAKEFILE=	makefile
 
 MAN1=		diffstat.1
 PLIST_FILES=	bin/diffstat
-
-post-patch:	.SILENT
-	${REINPLACE_CMD} 's/lzcat/xz/' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/diffstat ${PREFIX}/bin
