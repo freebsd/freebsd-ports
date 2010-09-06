@@ -1,0 +1,20 @@
+--- components/SConscript.orig	2010-08-27 01:55:51.642176846 +0300
++++ components/SConscript	2010-08-27 02:00:10.042030350 +0300
+@@ -51,7 +51,7 @@ env.AppendENVPath('PATH', gecko_bin)
+ env.Append(BUILDERS = {'MozXPT' : bxpt, 'MozHeader' : bhdr })
+ 
+ # Add additional param for different platforms
+-if platform == 'linux2':
++if 1 or platform == 'linux2':
+     env.ParseConfig('pkg-config --static --cflags gtk+-2.0') # libnotify
+     env.AppendUnique(
+         CXXFLAGS = ['-include', 'xpcom-config.h', '-Wall', '-O2',
+@@ -73,7 +73,7 @@ xpts = [env.MozXPT('nsITray'), env.MozXP
+ headers = [env.MozHeader('nsITray')]
+ 
+ parts = []
+-if platform == 'linux2':
++if 1 or platform == 'linux2':
+     parts.extend(['nsTray.cpp', 'nsTrayModue.cpp'])
+ 
+ nptray_name = 'nptray' + lib_arch
