@@ -7,6 +7,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
@@ -38,7 +39,7 @@ CONFIGURE_ARGS+=	--enable-optimized
 
 CONFIGURE_ARGS+=	--enable-bindings=none
 
-OPTIONS=	NO_ASSERTS	"Disable assertions" off
+OPTIONS=	ASSERTS	"Enable assertions (thread unsafe)" off
 
 .if defined(NOPORTDOCS)
 DOCSRCDIR=
@@ -70,10 +71,10 @@ CONFIGURE_ARGS+=	--enable-pic --with-pic
 CONFIGURE_ARGS+=	--with-optimize-option=-O2
 .endif
 
-.ifdef(WITH_NO_ASSERTS)
-CONFIGURE_ARGS+=	--disable-assertions
-.else
+.ifdef(WITH_ASSERTS)
 CONFIGURE_ARGS+=	--enable-assertions
+.else
+CONFIGURE_ARGS+=	--disable-assertions
 .endif
 
 post-patch:
