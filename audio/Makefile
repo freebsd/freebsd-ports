@@ -266,6 +266,8 @@
     SUBDIR += gsm
     SUBDIR += gspeakers
     SUBDIR += gstreamer-plugins-a52dec
+    SUBDIR += gstreamer-plugins-amrnb
+    SUBDIR += gstreamer-plugins-amrwbdec
     SUBDIR += gstreamer-plugins-cdaudio
     SUBDIR += gstreamer-plugins-cdparanoia
     SUBDIR += gstreamer-plugins-esound
@@ -292,6 +294,7 @@
     SUBDIR += gstreamer-plugins-spc
     SUBDIR += gstreamer-plugins-speex
     SUBDIR += gstreamer-plugins-taglib
+    SUBDIR += gstreamer-plugins-twolame
     SUBDIR += gstreamer-plugins-vorbis
     SUBDIR += gstreamer-plugins-wavpack
     SUBDIR += gtick

@@ -14,7 +14,7 @@ BASE_GST_ALL_PLUGINS= \
 # bad
 BAD_GST_ALL_PLUGINS+= \
 		alsaspdif \
-		amrwbenc \
+		amrwb \
 		apexsink \
 		assrender \
 		bz2 \
@@ -118,7 +118,6 @@ CONFIGURE_ARGS+=--disable-tests \
 		--disable-examples \
 		--disable-1394 \
 		--disable-acm \
-		--disable-amrnb \
 		--disable-alsa \
 		--disable-dvb \
 		--disable-http \
@@ -162,6 +161,22 @@ gst_a52dec_DIST=	ugly
 gst_aalib_LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 gst_aalib_PLIST_FILES=	${GST_LIB_DIR}/libgstaasink.so \
 		${GST_LIB_DIR}/libgstaasink.la
+
+# amrnb
+gst_amrnb_LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
+gst_amrnb_PLIST_FILES=	${GST_LIB_DIR}/libgstamrnb.la \
+			${GST_LIB_DIR}/libgstamrnb.so \
+			share/gstreamer-${VERSION}/presets/GstAmrnbEnc.prs
+gst_amrnb_PLIST_DIRS=	share/gstreamer-${VERSION}/presets \
+			share/gstreamer-${VERSION}
+gst_amrnb_DIST=		ugly
+
+# amrwbdec
+gst_amrwbdec_LIB_DEPENDS+=	opencore-amrwb.0:${PORTSDIR}/audio/opencore-amr
+gst_amrwbdec_CONFIGURE_ARGS+=	--enable-amrwb
+gst_amrwbdec_PLIST_FILES=	${GST_LIB_DIR}/libgstamrwbdec.la \
+				${GST_LIB_DIR}/libgstamrwbdec.so
+gst_amrwbdec_DIST=	ugly
 
 # annodex
 gst_annodex_LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
@@ -451,6 +466,12 @@ gst_theora_LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 gst_theora_PLIST_FILES=		${GST_LIB_DIR}/libgsttheora.la \
 		${GST_LIB_DIR}/libgsttheora.so
 gst_theora_DIST=	base
+
+# twolame
+gst_twolame_LIB_DEPENDS+=	twolame.0:${PORTSDIR}/audio/twolame
+gst_twolame_PLIST_FILES=	${GST_LIB_DIR}/libgsttwolame.la \
+				${GST_LIB_DIR}/libgsttwolame.so
+gst_twolame_DIST=		ugly
 
 # gst_v4l2
 gst_gst_v4l2_LIB_DEPENDS+=	v4l2.0:${PORTSDIR}/multimedia/libv4l
