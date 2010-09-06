@@ -845,6 +845,8 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib-dynload/_csv.so
 %%PYTHON_LIBDIR%%/lib-dynload/_ctypes.so
 %%PYTHON_LIBDIR%%/lib-dynload/_ctypes_test.so
+%%PYTHON_LIBDIR%%/lib-dynload/_curses.so
+%%PYTHON_LIBDIR%%/lib-dynload/_curses_panel.so
 %%PYTHON_LIBDIR%%/lib-dynload/_elementtree.so
 %%PYTHON_LIBDIR%%/lib-dynload/_functools.so
 %%PYTHON_LIBDIR%%/lib-dynload/_hashlib.so
