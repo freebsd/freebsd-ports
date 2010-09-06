@@ -28,32 +28,6 @@
     * destination file. */
 -  file_name = url_file_name (u);
 +  file_name = url_file_name (opt.trustservernames ? u : original_url);
-   if (opt.timestamping && (file_exists_p (file_name)
-                            || opt.content_disposition))
-     send_head_first = true;
-@@ -3039,9 +3041,9 @@
- 
-           /* Remember that we downloaded the file for later ".orig" code. */
-           if (*dt & ADDED_HTML_EXTENSION)
--            downloaded_file(FILE_DOWNLOADED_AND_HTML_EXTENSION_ADDED, hstat.local_file);
-+            downloaded_file (FILE_DOWNLOADED_AND_HTML_EXTENSION_ADDED, hstat.local_file);
-           else
--            downloaded_file(FILE_DOWNLOADED_NORMALLY, hstat.local_file);
-+            downloaded_file (FILE_DOWNLOADED_NORMALLY, hstat.local_file);
- 
-           ret = RETROK;
-           goto exit;
-@@ -3072,9 +3074,9 @@
- 
-               /* Remember that we downloaded the file for later ".orig" code. */
-               if (*dt & ADDED_HTML_EXTENSION)
--                downloaded_file(FILE_DOWNLOADED_AND_HTML_EXTENSION_ADDED, hstat.local_file);
-+                downloaded_file (FILE_DOWNLOADED_AND_HTML_EXTENSION_ADDED, hstat.local_file);
-               else
--                downloaded_file(FILE_DOWNLOADED_NORMALLY, hstat.local_file);
-+                downloaded_file (FILE_DOWNLOADED_NORMALLY, hstat.local_file);
- 
-               ret = RETROK;
-               goto exit;
-
-=== modified file 'src/http.h'
+   if (opt.timestamping
+       && !opt.content_disposition
+       && file_exists_p (file_name))
