@@ -27,5 +27,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-GPL2
 
 post-patch:
 	${ECHO_CMD} >> ${WRKSRC}/applet/utils.h
+	${REINPLACE_CMD} -e 's|KDE_VERSION_MINOR == 4|KDE_VERSION_MINOR >= 4|g' \
+		`find ${WRKSRC} -name "*.h" -or -name "*.cpp"`
 
 .include <bsd.port.mk>
