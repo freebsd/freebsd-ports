@@ -32,6 +32,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI	\
 		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite		\
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
+.include <bsd.port.options.mk>
+
 .if defined(WITH_SQLITE3)
 USE_SQLITE=	3
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
