@@ -7,6 +7,7 @@
 
 PORTNAME=	koffice
 PORTVERSION=	${KOFFICE2_VERSION}
+PORTREVISION=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}-${PORTVERSION}/
@@ -58,14 +59,11 @@ CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include"
 
 LDFLAGS+=	"-L${LOCALBASE}/lib"
 
-OPTIONS+=	GTL	"Color transformations in Krita (broken with llvm-2.7)" off
+OPTIONS+=	GTL	"Color transformations in Krita" off
 OPTIONS+=	SYBASE	"SyBase support in Kexi" off
 OPTIONS+=	XBASE	"XBase support in Kexi" off
 
 .include <bsd.port.options.mk>
-
-# GTL support is broken with llvm-2.7
-WITHOUT_GTL=	yes
 
 .if !defined(WITHOUT_GTL) || exists (${LOCALBASE}/lib/libQtShiva.so)
 LIB_DEPENDS+=	OpenCTL.0:${PORTSDIR}/graphics/opengtl \
