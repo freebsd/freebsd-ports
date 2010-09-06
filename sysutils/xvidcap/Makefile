@@ -7,7 +7,7 @@
 
 PORTNAME=		xvidcap
 DISTVERSION=		1.1.4p1
-PORTREVISION=	8
+PORTREVISION=		9
 PORTEPOCH=		1
 CATEGORIES=		sysutils multimedia
 MASTER_SITES=		SF/${PORTNAME}/OldFiles
@@ -25,10 +25,10 @@ RUN_DEPENDS=		animate:${PORTSDIR}/graphics/ImageMagick
 
 GNU_CONFIGURE=		yes
 # Remove MAKE="${GMAKE}" after ffmpeg-devel's upgrade
-CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"	\
-			LDFLAGS="-L${LOCALBASE}/lib"	\
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include"	\
+			LOCALBASE="${LOCALBASE}"		\
 			MAKE="${GMAKE}"
-CONFIGURE_ARGS=		-with-forced-embedded-ffmpeg	# To be removed after ffmpeg-devel's upgrade
+CONFIGURE_ARGS=		--with-forced-embedded-ffmpeg	# To be removed after ffmpeg-devel's upgrade
 
 USE_GMAKE=		yes	# To be removed after ffmpeg-devel's upgrade
 USE_GNOME=		glib20 libglade2

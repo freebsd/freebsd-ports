@@ -1,0 +1,25 @@
+--- ffmpeg/Makefile.orig	2006-10-25 21:31:11.000000000 +0200
++++ ffmpeg/Makefile	2010-09-05 16:47:52.000000000 +0200
+@@ -6,7 +6,7 @@
+ 
+ VPATH=$(SRC_PATH)
+ 
+-CFLAGS=$(OPTFLAGS) -I$(BUILD_ROOT) -I$(SRC_PATH) -I$(SRC_PATH)/libavutil \
++CFLAGS=-I$(BUILD_ROOT) -I$(SRC_PATH) $(OPTFLAGS) -I$(SRC_PATH)/libavutil \
+        -I$(SRC_PATH)/libavcodec -I$(SRC_PATH)/libavformat -I$(SRC_PATH)/libswscale \
+        -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_ISOC9X_SOURCE
+ LDFLAGS+= -g
+@@ -55,11 +55,11 @@
+ OBJS = ffmpeg.o ffserver.o cmdutils.o ffplay.o
+ SRCS = $(OBJS:.o=.c) $(ASM_OBJS:.o=.s)
+ LDFLAGS := -L$(BUILD_ROOT)/libavformat -L$(BUILD_ROOT)/libavcodec -L$(BUILD_ROOT)/libavutil $(LDFLAGS)
+-EXTRALIBS := -lavformat$(BUILDSUF) -lavcodec$(BUILDSUF) -lavutil$(BUILDSUF) $(EXTRALIBS)
++EXTRALIBS := -L$(BUILD_ROOT)/libavformat -lavformat$(BUILDSUF) -L$(BUILD_ROOT)/libavcodec -lavcodec$(BUILDSUF) -L$(BUILD_ROOT)/libavutil -lavutil$(BUILDSUF) $(EXTRALIBS)
+ 
+ ifeq ($(CONFIG_SWSCALER),yes)
+ LDFLAGS+=-L./libswscale
+-EXTRALIBS+=-lswscale$(BUILDSUF)
++EXTRALIBS+=-L$(BUILD_ROOT)/libswscale -lswscale$(BUILDSUF)
+ endif
+ 
+ all: lib $(PROGS_G) $(PROGS) $(PROGTEST) $(VHOOK) $(QTFASTSTART) $(DOC)

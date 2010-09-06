@@ -1,0 +1,22 @@
+--- src/Makefile.in.orig	2006-11-16 18:50:23.000000000 +0100
++++ src/Makefile.in	2010-09-05 22:20:46.000000000 +0200
+@@ -62,8 +62,8 @@
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+-COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+-	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
++COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(AM_CPPFLAGS) \
++	$(AM_CFLAGS) $(CFLAGS) $(INCLUDES) $(CPPFLAGS)
+ CCLD = $(CC)
+ LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+ SOURCES = $(xvidcap_SOURCES)
+@@ -347,7 +347,7 @@
+ 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+ xvidcap$(EXEEXT): $(xvidcap_OBJECTS) $(xvidcap_DEPENDENCIES) 
+ 	@rm -f xvidcap$(EXEEXT)
+-	$(LINK) $(xvidcap_LDFLAGS) $(xvidcap_OBJECTS) $(xvidcap_LDADD) $(LIBS)
++	$(LINK) $(xvidcap_LDFLAGS) $(xvidcap_OBJECTS) $(LIBS) $(xvidcap_LDADD)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
