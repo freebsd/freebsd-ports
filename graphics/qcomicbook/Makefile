@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qcomicbook
-PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTVERSION=	0.6.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://qcomicbook.linux-projects.net/releases/
 
@@ -28,7 +27,18 @@ MAKE_JOBS_SAFE=	yes
 PLIST_FILES=	\
 		${DESKTOPDIR:S,^${PREFIX}/,,}/${PORTNAME}.desktop \
 		bin/qcomicbook \
-		share/pixmaps/qcomicbook.png
+		share/pixmaps/qcomicbook.png \
+		share/qcomicbook/i18n/qcomicbook_es_ES.qm \
+		share/qcomicbook/i18n/qcomicbook_it_IT.qm \
+		share/qcomicbook/i18n/qcomicbook_fi_FI.qm \
+		share/qcomicbook/i18n/qcomicbook_fr_FR.qm \
+		share/qcomicbook/i18n/qcomicbook_fr_CA.qm \
+		share/qcomicbook/i18n/qcomicbook_pl_PL.qm \
+		share/qcomicbook/i18n/qcomicbook_pt_BR.qm \
+		share/qcomicbook/i18n/qcomicbook_uk_UA.qm
+#
+PLIST_DIRS=	share/qcomicbook/i18n \
+		share/qcomicbook
 
 MAN1=		qcomicbook.1
 NO_MANCOMPRESS=	yes
