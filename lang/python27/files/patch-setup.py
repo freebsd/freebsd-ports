@@ -1,5 +1,5 @@
---- setup.py.orig	2010-06-07 09:55:38.000000000 +0800
-+++ setup.py	2010-06-07 10:03:30.000000000 +0800
+--- setup.py.orig	2010-06-27 20:36:16.000000000 +0800
++++ setup.py	2010-09-03 09:23:13.000000000 +0800
 @@ -21,7 +21,7 @@
  COMPILED_WITH_PYDEBUG = hasattr(sys, 'gettotalrefcount')
  
@@ -36,7 +36,7 @@
  
          # Modules that provide persistent dictionary-like semantics.  You will
          # probably want to arrange for at least one of them to be available on
-@@ -1085,7 +1087,7 @@
+@@ -1086,7 +1088,7 @@
                  sysroot = macosx_sdk_root()
                  f = os.path.join(sysroot, f[1:])
  
@@ -45,13 +45,11 @@
              data = open(f).read()
              m = re.search(r"#s*define\s+HASHVERSION\s+2\s*", data)
              if m is not None:
-@@ -1210,13 +1212,14 @@
-         # Curses support, requiring the System V version of curses, often
+@@ -1212,12 +1214,13 @@
          # provided by the ncurses library.
          panel_library = 'panel'
--        if curses_library.startswith('ncurses'):
+         if curses_library.startswith('ncurses'):
 -            if curses_library == 'ncursesw':
-+        if curses_library.startswith('xxxncurses'):
 +            if curses_library == 'xxxncursesw':
                  # Bug 1464056: If _curses.so links with ncursesw,
                  # _curses_panel.so must link with panelw.
@@ -62,7 +60,7 @@
                                     libraries = curses_libs) )
          elif curses_library == 'curses' and platform != 'darwin':
                  # OSX has an old Berkeley curses, not good enough for
-@@ -1229,6 +1232,7 @@
+@@ -1230,6 +1233,7 @@
                  curses_libs = ['curses']
  
              exts.append( Extension('_curses', ['_cursesmodule.c'],
@@ -70,7 +68,7 @@
                                     libraries = curses_libs) )
          else:
              missing.append('_curses')
-@@ -1397,7 +1401,7 @@
+@@ -1398,7 +1402,7 @@
              macros = dict()
              libraries = []
  
@@ -79,7 +77,7 @@
              # FreeBSD's P1003.1b semaphore support is very experimental
              # and has many known problems. (as of June 2008)
              macros = dict()
-@@ -1449,7 +1453,7 @@
+@@ -1450,7 +1454,7 @@
              missing.append('linuxaudiodev')
  
          if (platform in ('linux2', 'freebsd4', 'freebsd5', 'freebsd6',
@@ -88,7 +86,7 @@
              or platform.startswith("gnukfreebsd")):
              exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
          else:
-@@ -2031,9 +2035,7 @@
+@@ -2032,9 +2036,7 @@
            ext_modules=[Extension('_struct', ['_struct.c'])],
  
            # Scripts to install
