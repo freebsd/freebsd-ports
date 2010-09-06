@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Algorithm-KMeans
-PORTVERSION=	1.1.1
+PORTVERSION=	1.20
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN/../../authors/id/A/AV/AVIKAK/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Clustering multi-dimensional data with a pure-Perl implementation
 
 MAN3=		Algorithm::KMeans.3
