@@ -7,6 +7,7 @@
 
 PORTNAME=		bash-completion
 PORTVERSION=	1.2
+PORTREVISION=	1
 PORTEPOCH=		1
 CATEGORIES=		shells
 MASTER_SITES=	http://bash-completion.alioth.debian.org/files/
@@ -21,6 +22,15 @@ RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+AMD64_REMOVE_RSYNC=	/contrib\/rsync/d
+PLIST_SUB+=	NOAMD64="@comment "
+.else
+PLIST_SUB+=	NOAMD64=""
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g; \
 		s|/etc/bash_completion|${PREFIX}&|g; \
@@ -31,10 +41,11 @@ post-patch:
 		s|/usr/lib\(/aspell\)|${PREFIX}/share\1|g; \
 		s|/usr/share/info|&:${PREFIX}/info|g; \
 		s|\$$(sysconfdir)/profile.d|${PREFIX}/bin|g; \
-		s|\(FLAC\)|\1\|flv\|FLV|' \
+		s|\(FLAC\)|\1\|flv\|FLV|; \
+		${AMD64_REMOVE_RSYNC}' \
 		${WRKSRC}/bash_completion ${WRKSRC}/Makefile.in ${WRKSRC}/contrib/*
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
