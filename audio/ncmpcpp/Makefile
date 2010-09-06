@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncmpcpp
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	audio
 MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 		http://mirror.mcx2.org/
@@ -36,6 +36,10 @@ OPTIONS=	CURL "Enable fetching lyrics from the Internet" on \
 		VISUALIZER "Enable music visualizer screen" on
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=>>Does not compile on FreeBSD 6.X
+.endif
 
 .if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
 LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
