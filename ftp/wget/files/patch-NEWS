@@ -1,14 +1,12 @@
---- NEWS	2010-07-11 13:47:18 +0000
-+++ NEWS	2010-07-28 19:22:22 +0000
-@@ -33,6 +33,9 @@
- ** GNU TLS backend works again.
+--- NEWS.orig	2009-09-22 05:53:35.000000000 +0300
++++ NEWS	2010-09-06 20:09:17.000000000 +0300
+@@ -6,6 +6,9 @@
  
- ** Now --timestamping and --continue works well together.
-+
+ Please send GNU Wget bug reports to <bug-wget@gnu.org>.
+ 
 +** By default, on server redirects, use the original URL to get the
 +   local file name. Close CVE-2010-2252.
- 
++
  * Changes in Wget 1.12
  
-
-=== modified file 'doc/wget.texi'
+ ** Mailing list MOVED to bug-wget@gnu.org

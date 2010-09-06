@@ -5,9 +5,9 @@
      { "timestamping", 'N', OPT_BOOLEAN, "timestamping", -1 },
      { "tries", 't', OPT_VALUE, "tries", -1 },
 +    { "trust-server-names", 0, OPT_BOOLEAN, "trustservernames", -1 },
-     { "use-server-timestamps", 0, OPT_BOOLEAN, "useservertimestamps", -1 },
      { "user", 0, OPT_VALUE, "user", -1 },
      { "user-agent", 'U', OPT_VALUE, "useragent", -1 },
+     { "verbose", 'v', OPT_BOOLEAN, "verbose", -1 },
 @@ -680,6 +681,8 @@
      N_("\
    -I,  --include-directories=LIST  list of allowed directories.\n"),
