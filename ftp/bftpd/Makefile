@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bftpd
-PORTVERSION=	2.9
+PORTVERSION=	3.0
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -20,7 +20,7 @@ WRKSRC=	${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.conf.sample
 MAN8=		bftpd.8
-PORTDOCS=	en pl
+PORTDOCS=	en pl sk
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/bftpd.conf,${PREFIX}/etc/bftpd.conf,' \
