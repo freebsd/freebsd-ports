@@ -8,7 +8,7 @@
 
 PORTNAME=	wine
 DISTVERSION=	1.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -27,10 +27,10 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} --verbose --disable-tests \
-		--with-opengl --with-glu \
+		--with-glu --with-opengl --with-xrandr \
 		--without-capi --without-gphoto --without-gsm \
 		--without-mpg123 --without-openal --without-sane \
-		--without-xcomposite --without-xinerama --without-xrandr
+		--without-xcomposite --without-xinerama
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		FLEX="${LOCALBASE}/bin/flex"
@@ -44,7 +44,7 @@ USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		glu
-USE_XORG=	xcursor xpm xrender
+USE_XORG=	xcursor xpm xrandr xrender
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
