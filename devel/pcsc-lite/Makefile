@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.4
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/3329/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/3337/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A smartcard development library
@@ -27,7 +27,6 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	LIBS="${LIBS} ${PTHREAD_LIBS}" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 CONFIGURE_ARGS+=--enable-ipcdir=/var/tmp/ \
-		--enable-confdir=${PREFIX}/etc/ \
 		--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/ \
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -37,16 +36,9 @@ MAN8=		pcscd.8
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_USB)
-. if ${OSVERSION} < 800069
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-USBBASE=	${LOCALBASE}
-BROKEN=		does not configure
-. else
-USBBASE=	/usr
+.if !defined(WITHOUT_USB) && ${OSVERSION} >= 800069
 CONFIGURE_ENV+=	LIBUSB_LIBS="-lusb"
-. endif
-CONFIGURE_ARGS+=--enable-libusb=${USBBASE} \
+CONFIGURE_ARGS+=--enable-libusb=/usr \
 		--disable-libhal
 .else
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
@@ -60,7 +52,7 @@ post-patch:
 			${WRKSRC}/src/hotplug_libusb.c
 
 pre-everything::
-.if !defined(WITHOUT_USB)
+.if !defined(WITHOUT_USB) && ${OSVERSION} >= 800069
 	@${ECHO_MSG}
 	@${ECHO_MSG} "pcsc-lite has the following option(s):"
 	@${ECHO_MSG} "  WITHOUT_USB=yes            Disable USB support"
