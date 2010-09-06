@@ -1,20 +1,20 @@
 # New ports collection makefile for:	opengtl
 # Date created:				28 September 2009
 # Whom:					Alberto Villa <villa.alberto@gmail.com>
+#
 # $FreeBSD$
 
 PORTNAME=	opengtl
-PORTVERSION=	0.9.12
-PORTREVISION=	1
+PORTVERSION=	0.9.14
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://www.opengtl.org/download/
+MASTER_SITES=	http://www.${PORTNAME}.org/download/
 DISTNAME=	OpenGTL-${PORTVERSION}
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Graphics Transformation Languages
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	llvm>=2.5:${PORTSDIR}/devel/llvm
+BUILD_DEPENDS=	llvm>=2.7<2.8.*:${PORTSDIR}/devel/llvm
 
 USE_BZIP2=	yes
 USE_GCC=	4.2+
@@ -23,8 +23,6 @@ MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 CMAKE_USE_PTHREAD=	yes
-
-BROKEN=	does not build with LLVM 2.7
 
 post-patch:
 # disable latex doc, it's not ready yet
