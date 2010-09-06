@@ -28,9 +28,9 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} --verbose --disable-tests \
 		--with-opengl --with-glu \
-		--without-capi --without-gphoto \
-		--without-gsm --without-mpg123 --without-openal \
-		--without-sane
+		--without-capi --without-gphoto --without-gsm \
+		--without-mpg123 --without-openal --without-sane \
+		--without-xcomposite --without-xinerama --without-xrandr
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		FLEX="${LOCALBASE}/bin/flex"
