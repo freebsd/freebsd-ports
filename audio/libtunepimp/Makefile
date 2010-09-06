@@ -7,7 +7,7 @@
 
 PORTNAME=	libtunepimp
 PORTVERSION=	0.5.3
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/ \
@@ -24,7 +24,8 @@ LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
 		ogg:${PORTSDIR}/audio/libogg \
 		tag:${PORTSDIR}/audio/taglib \
 		vorbis:${PORTSDIR}/audio/libvorbis \
-		ofa:${PORTSDIR}/audio/libofa
+		ofa:${PORTSDIR}/audio/libofa \
+		mpcdec:${PORTSDIR}/audio/libmpcdec
 
 CONFLICTS=	trm-0*
 USE_GMAKE=	yes
