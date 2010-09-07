@@ -22,7 +22,7 @@ COMMENT=	A graphical editor of two-dimensional mesh geometries
 LICENSE=	INRIA
 LICENSE_NAME=	INRIA license, perhaps specific to emc2
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
-LICENSE_PERMS=	no-dist-sell no-pkg-sell
+LICENSE_PERMS=	auto-accept no-dist-sell no-pkg-sell
 RESTRICTED=	No resale, contact author for commercial usage
 
 USE_XORG=	x11
