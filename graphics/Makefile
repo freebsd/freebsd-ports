@@ -308,6 +308,7 @@
     SUBDIR += gstreamer-plugins-aalib
     SUBDIR += gstreamer-plugins-cairo
     SUBDIR += gstreamer-plugins-gdkpixbuf
+    SUBDIR += gstreamer-plugins-gl
     SUBDIR += gstreamer-plugins-jpeg
     SUBDIR += gstreamer-plugins-libcaca
     SUBDIR += gstreamer-plugins-libpng
