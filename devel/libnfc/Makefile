@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libnfc
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.9
 CATEGORIES=	devel
 MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/ \
     		http://romain.blogreen.org/distfiles/
@@ -14,8 +14,12 @@ MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/ \
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Near Field Communication (NFC) library
 
-OPTIONS=	PCSC "Compile with PC/SC Lite support" on \
-		USB  "Compile with libusb support" on
+OPTIONS=	ACR122      "Enable ACR122 driver"     on \
+		ARYGON      "Enable Arygon driver"     off \
+		PN531USB    "Enable PN531 USB driver"  on \
+		PN532UART   "Enable PN532 UART driver" on \
+		PN533USB    "Enable PN533 USB driver"  on \
+		SERIALPROBE "Enable serial auto-probe" off
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -23,22 +27,54 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack
 
 MAN1=		nfc-mfclassic.1 nfc-emulate.1 nfc-list.1 nfc-mfultralight.1 \
-		nfc-relay.1 nfc-anticol.1
+		nfc-relay.1 nfc-anticol.1 nfc-sam.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_PCSC)
-CONFIGURE_ARGS+=--disable-pcsc-lite
+.if !defined(WITHOUT_ACR122)
+ACR122_DRIVER=	acr122,
 .else
-LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
-RUN_DEPENDS+=	RSA_SecurID_getpasswd:${PORTSDIR}/devel/libccid
-CONFIGURE_ARGS+=--enable-pcsc-lite
+ACR122_DRIVER=
 .endif
 
-.if defined(WITHOUT_USB)
-CONFIGURE_ARGS+=--disable-libusb
+.if defined(WITH_ARYGON)
+ARYGON_DRIVER=	arygon,
 .else
-CONFIGURE_ARGS+=--enable-libusb
+ARYGON_DRIVER=
+.endif
+
+.if !defined(WITHOUT_PN531USB)
+PN531USB_DRIVER=pn531_usb,
+.else
+PN531USB_DRIVER=
+.endif
+
+.if !defined(WITHOUT_PN532UART)
+PN532UART_DRIVER=pn532_uart,
+.else
+PN532UART_DRIVER=
+.endif
+
+.if !defined(WITHOUT_PN533USB)
+PN533USB_DRIVER=pn533_usb,
+.else
+PN533USB_DRIVER=
+.endif
+
+CONFIGURE_ARGS+=--with-drivers="${ACR122_DRIVER}${ARYGON_DRIVER}${PN531USB_DRIVER}${PN532UART_DRIVER}${PN533USB_DRIVER}"
+
+.if defined(WITH_SERIALPROBE)
+CONFIGURE_ARGS+=--enable-serial-autoprobe
+.else
+CONFIGURE_ARGS+=--disable-serial-autoprobe
+.endif
+
+.if defined(WITH_ACR122)
+LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
+RUN_DEPENDS+=	RSA_SecurID_getpasswd:${PORTSDIR}/devel/libccid
+.endif
+
+.if defined(WITH_PN531USB) || defined(WITH_PN533USB)
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1:${PORTSDIR}/devel/libusb
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \

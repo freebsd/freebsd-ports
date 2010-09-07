@@ -4,11 +4,12 @@ bin/nfc-emulate
 bin/nfc-list
 bin/nfc-mfclassic
 bin/nfc-mfultralight
+bin/nfc-poll
 bin/nfc-relay
+bin/nfc-sam
 bin/nfcip-initiator
 bin/nfcip-target
-include/nfc/mifaretag.h
-include/nfc/mifareultag.h
+bin/pn53x-diagnose
 include/nfc/nfc-messages.h
 include/nfc/nfc-types.h
 include/nfc/nfc.h
