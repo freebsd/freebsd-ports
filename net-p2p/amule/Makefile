@@ -1,6 +1,6 @@
 # New ports collection makefile for:	amule2
 # Date created:		Wed Nov 05 09:30:00 UTC 2003
-# Whom:			Ganael LAPLANCHE <ganael.laplanche@martymac.com>
+# Whom:			Ganael LAPLANCHE <ganael.laplanche@martymac.org>
 #
 # $FreeBSD$
 #

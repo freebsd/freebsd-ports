@@ -1,6 +1,6 @@
 # New ports collection makefile for:    openalchemist
 # Date created:     Sat Oct 01 09:30:00 UTC 2003
-# Whom:         Ganael LAPLANCHE <ganael.laplanche@martymac.com>
+# Whom:         Ganael LAPLANCHE <ganael.laplanche@martymac.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	Tetris-like game
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	uhso-kmod
 # Date created:				28 December 2009
-# Whom:					Ganael Laplanche <ganael.laplanche@martymac.com>
+# Whom:					Ganael Laplanche <ganael.laplanche@martymac.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.shapeshifter.se/pub/hso/
 PKGNAMESUFFIX=	-kmod
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	Driver for Option HSDPA modem (USB2 version)
 
 CONFLICTS=	hso-kmod-[0-9]*

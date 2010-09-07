@@ -1,6 +1,6 @@
 # New ports collection makefile for:    evtViewer
 # Date created:		Sat Sep 01 09:30:00 UTC 2006
-# Whom:			Ganael LAPLANCHE <ganael.laplanche@martymac.com>
+# Whom:			Ganael LAPLANCHE <ganael.laplanche@martymac.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/evtViewer/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	PERL-based Event viewer
 
 USE_PERL5=	yes

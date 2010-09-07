@@ -1,6 +1,6 @@
 # New ports collection makefile for:	grsync
 # Date created:		24 August 2007
-# Whom:			Ganael Laplanche <ganael.laplanche@martymac.com>
+# Whom:			Ganael Laplanche <ganael.laplanche@martymac.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.opbyte.it/release/ \
 		GENTOO/distfiles \
 		LOCAL/chinsan
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	GTK frontend for rsync
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync

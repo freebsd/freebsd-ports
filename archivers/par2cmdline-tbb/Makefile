@@ -1,5 +1,5 @@
 # New ports collection makefile for:    par2cmdline-tbb
-# Whom:                                 Ganael Laplanche <ganael.laplanche@martymac.com>
+# Whom:                                 Ganael Laplanche <ganael.laplanche@martymac.org>
 # Date created:                         27 December 2007
 #
 # $FreeBSD$
@@ -12,7 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://chuchusoft.com/par2_tbb/
 DISTNAME=	par2cmdline-0.4-tbb-${PORTVERSION}
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	Tools for using Parity v2 Archive files (tbb version)
 
 LIB_DEPENDS=	tbb.3:${PORTSDIR}/devel/tbb

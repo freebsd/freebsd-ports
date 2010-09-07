@@ -1,6 +1,6 @@
 # New ports collection makefile for:	jfsw
 # Date Created:				11 March 2010
-# Whom:	Ganael Laplanche <ganael.laplanche@martymac.com>
+# Whom:	Ganael Laplanche <ganael.laplanche@martymac.org>
 #
 # $FreeBSD$
 
@@ -11,7 +11,7 @@ MASTER_SITES=	http://users.on.net/~jonof/buildport/
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}.zip \
 		jfbuild_src_${PORTVERSION}.zip
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	Jonathon Fowler's Shadow Warrior Port
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm

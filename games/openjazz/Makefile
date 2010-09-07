@@ -1,6 +1,6 @@
 # New ports collection makefile for: openjazz
 # Date created:					01 Apr 2008
-# Whom:							Ganael Laplanche <ganael.laplanche@martymac.com>
+# Whom:							Ganael Laplanche <ganael.laplanche@martymac.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://alister.eu/jazz/oj/
 DISTNAME=	OpenJazz-src-270410
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	Free re-implementation of the Jazz Jackrabbit(tm) game engine
 
 WRKSRC=	${WRKDIR}

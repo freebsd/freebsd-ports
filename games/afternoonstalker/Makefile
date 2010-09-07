@@ -10,7 +10,7 @@ PORTVERSION=	1.1.4
 CATEGORIES=	games
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	A clone of the 1981 Night Stalker video game
 
 LIB_DEPENDS=	flatzebra-0.1.2:${PORTSDIR}/devel/flatzebra

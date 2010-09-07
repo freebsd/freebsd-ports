@@ -17,7 +17,7 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/dvdnav/ \
 		ftp://ftp2.mplayerhq.hu/MPlayer/releases/dvdnav/
 DISTNAME=	libdvdnav-${PORTVERSION}
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	MPlayer version of the libdvdnav project
 
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread

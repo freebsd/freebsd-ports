@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pencil
 # Date created:		2008-04-16
-# Whom:			Ganael Laplanche <ganael.laplanche@martymac.com>
+# Whom:			Ganael Laplanche <ganael.laplanche@martymac.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}-planner/Pencil/${PORTVERSION}eta
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFFIX}
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	Pencil - a traditional 2D animation software
 
 LIB_DEPENDS+=	ming:${PORTSDIR}/graphics/ming \
