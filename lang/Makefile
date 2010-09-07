@@ -70,7 +70,7 @@
     SUBDIR += fasm
     SUBDIR += fbbi
     SUBDIR += ferite
-    SUBDIR += ficl-devel
+    SUBDIR += ficl
     SUBDIR += fpc
     SUBDIR += fpc-base
     SUBDIR += fpc-docs
