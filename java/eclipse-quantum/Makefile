@@ -18,7 +18,7 @@ MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	Database access and SQL editor for the Eclipse IDE
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
-                ${LOCALBASE}/lib/eclipse/features/org.eclipse.gef_3.3.2.v20080129/feature.xml:${PORTSDIR}/java/eclipse-gef
+                ${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -20,8 +20,8 @@ COMMENT=	Hibernate3 Tools for the Eclipse IDE
 ## XXX - Notify the maintainer if the dependencies on either
 ## java/eclipse-gef of java/eclipse-webtools change
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/lib/eclipse/features/org.eclipse.gef_3.3.2.v20080129/feature.xml:${PORTSDIR}/java/eclipse-gef \
-		${LOCALBASE}/lib/eclipse/features/org.eclipse.wst.common_core.feature_2.0.2.v200802150100-7C78EKOE_EkMNlO6f7cjpz0/feature.xml:${PORTSDIR}/java/eclipse-webtools
+		${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef \
+		${LOCALBASE}/share/eclipse/dropins/webtools:${PORTSDIR}/java/eclipse-webtools
 
 LICENSE=	EPL LGPL3
 LICENSE_COMB=	multi
