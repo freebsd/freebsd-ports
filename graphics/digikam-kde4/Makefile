@@ -52,7 +52,7 @@ LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 .endif
 
 .if defined(WITH_LENSFUN)
-LIB_DEPENDS+=	lensfun.0:${PORTSDIR}/graphics/lensfun
+LIB_DEPENDS+=	lensfun.2:${PORTSDIR}/graphics/lensfun
 .else
 CMAKE_ARGS+=	-DWITH_LensFun:BOOL=OFF
 .endif
