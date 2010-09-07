@@ -1,0 +1,19 @@
+--- ./genplist.orig	2010-08-13 20:57:55.000000000 +0200
++++ ./genplist	2010-09-05 23:01:20.000000000 +0200
+@@ -15,7 +15,7 @@
+     porttype="local"
+     portname=`awk '($1 == "PORTNAME=") || ($1 == "PORTNAME?=") { print $2 }' Makefile`
+     echo "PORTNAME = ${portname}"
+-    prefix=$1/${portname}
++    prefix=`echo $1/${portname} | tr -s '//' '/'`
+     echo "${prefix}" > genplist.prefix
+     echo "PREFIX = ${prefix}"
+     
+@@ -76,6 +76,7 @@
+     sed "s|share/${portname}|%%DATADIR%%|g" < pkg-plist.new \
+ 	    | sed "s|share/doc/${portname}|%%DOCSDIR%%|g" \
+ 	    | sed "s|share/examples/${portname}|%%EXAMPLESDIR%%|g" \
++	    | sed "s|share/java/classes|%%JAVAJARDIR%%|g" \
+ 	    | sed "s|www/${portname}|%%WWWDIR%%|g" \
+ 	    | sed "s|etc/${portname}|%%ETCDIR%%|g" \
+ 	    | awk -F '.' ' { if (($2 == "so") && (NF == 4)) \
