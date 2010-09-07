@@ -476,7 +476,7 @@ do-configure:
 .endif
 	@[ ! -f ${PKGDIR}/pkg-install ] || ${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-install > ${PKGINSTALL}
 	@${REINPLACE_CMD} -E ${SEDLIST} ${WRKSRC}/src/configure.default
-	@${REINPLACE_CMD} -e 's/$$(LDFLAGS)/$$(DUMMY_LDFLAGS)/' ${WRKSRC}/OS/Makefile-Base
+	@${REINPLACE_CMD} -e 's!$$(LDFLAGS)!$$(DUMMY_LDFLAGS) -L$${LOCALBASE}/lib!' ${WRKSRC}/OS/Makefile-Base
 	@${REINPLACE_CMD} -e 's/"(Exim $$version_number)\\n\\t"/"(Exim $$version_number (${OPSYS}))\\n\\t"/' \
 		${WRKSRC}/src/globals.c
 	@${REINPLACE_CMD} -e 's/Exim version %s \(#%s \)\{0,1\}/&(${OPSYS} ${OSREL}) /' ${WRKSRC}/src/exim.c
