@@ -6,37 +6,22 @@
 #
 
 PORTNAME=	emf
-PORTVERSION=	2.3.2
-PORTREVISION=	2
+PORTVERSION=	2.5.0
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/modeling/emf/emf/downloads/drops/,}
-MASTER_SITE_SUBDIR=${PORTVERSION}/R200802051830
+MASTER_SITE_SUBDIR=${PORTVERSION}/R200906151043
 PKGNAMEPREFIX=	eclipse-
-DISTNAME=	emf-sdo-xsd-SDK-${PORTVERSION}
+DISTNAME=	emf-xsd-SDK-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	freebsd-eclipse@FreeBSD.org
+MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Eclipse Modeling Framework
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
-DEPRECATED=	This plugin can be installed from within eclipse via the updater
-EXPIRATION_DATE=2010-01-19
-
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/eclipse
 USE_ZIP=	yes
-USE_JAVA=	yes
-JAVA_VERSION=	1.5+
-JAVA_OS=	native
 
-do-install:
-		@${MKDIR} ${PREFIX}/lib/eclipse
-		@${CP} -r ${WRKSRC}/eclipse/plugins ${PREFIX}/lib/eclipse
-		@${CP} -r ${WRKSRC}/eclipse/features ${PREFIX}/lib/eclipse
-		@(cd ${WRKSRC}; ${FIND} -s eclipse/features eclipse/plugins -not -type d) | ${SED} -e 's,^eclipse,lib/eclipse,' >> ${TMPPLIST}
-		@(cd ${WRKSRC}; ${FIND} -s -d eclipse/features eclipse/plugins -type d) \
-			| ${GREP} -vE 'eclipse/plugins$$|eclipse/features$$' \
-			| ${SED} -ne 's,^,@dirrm lib/,p' >> ${TMPPLIST}
+.include "${.CURDIR}/../eclipse/Makefile.plugins"
 
 .include <bsd.port.mk>
