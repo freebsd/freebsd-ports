@@ -31,8 +31,17 @@ CONFIGURE_ARGS+=--enable-bat \
 		--disable-build-stored \
 		--enable-client-only
 
+OPTIONS+=	OPENSSL "Enable OpenSSL for encrypted communication" on
+
 .include "${MASTERDIR}/Makefile"
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_OPENSSL)
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+.else
+CONFIGURE_ARGS+=	--with-openssl="no"
+.endif
 
 .if exists(${LOCALBASE}/lib/libbac.so.${PORTVERSION:R:R}) && exists(${LOCALBASE}/lib/libbaccfg.so.${PORTVERSION:R:R})
 LIB_DEPENDS+=	bac.${PORTVERSION:R:R}:${PORTSDIR}/sysutils/bacula-client
