@@ -35,7 +35,6 @@ OPTIONS=	MYSQL 		"Enable MySQL backend" 		on  \
 		SQLITE		"Enable SQLite backend" 	off \
 		DEV 		"Configure for Developers"	off \
 		STANDALONE	"Enable standalone server"	off \
-		MODPERL2	"Enable mod_perl2 support"	off  \
 		FASTCGI		"Enable FastCGI support" 	off \
 		GRAPHVIZ	"Enable GraphViz charts"	on
 
@@ -57,7 +56,6 @@ USE_PERL5=	5.8.3+
 USE_AUTOTOOLS=	autoconf:262
 
 .include <bsd.port.pre.mk>
-
 .if defined(WITH_DEV)
 BUILD_DEPENDS+=	${DEV_DEPS}
 RUN_DEPENDS+=	${DEV_DEPS}
@@ -68,7 +66,7 @@ BUILD_DEPENDS+=	${STANDALONE_DEPS}
 RUN_DEPENDS+=	${STANDALONE_DEPS}
 .endif
 
-.if defined(WITH_APACHE) || defined(WITH_FASTCGI)
+.if defined(WITH_APACHE) || defined(WITH_FASTCGI) || defined(WITH_MODPERL)
 USE_APACHE=	1.3+
 .endif
 
@@ -82,18 +80,22 @@ BUILD_DEPENDS+=	${GRAPVIZ_DEPS}
 RUN_DEPENDS+=	${GRAPVIZ_DEPS}
 .endif
 
-.if defined(WITH_MODPERL2)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2 \
-	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp2
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2 \
-	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp2
-.endif
+.if defined(WITH_MODPERL)
+WITH_APACHE=	yes
 
-.if defined(WITH_MODPERL) && !defined(WITH_MODPERL2)
+.include "${.CURDIR}/../../Mk/bsd.apache.mk"
+
+.	if ${APACHE_VERSION} == 13
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
 	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp1
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
 	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp1
+.	else
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2 \
+	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp2
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2 \
+	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp2
+.	endif
 .endif
 
 .if !defined(WITHOUT_MYSQL)
