@@ -165,7 +165,6 @@
     SUBDIR += libopensync-plugin-syncml
     SUBDIR += libopensync-plugin-vformat-devel
     SUBDIR += lightning
-    SUBDIR += linux-sunbird
     SUBDIR += ljcharm
     SUBDIR += ljclive
     SUBDIR += ljit
@@ -252,8 +251,6 @@
     SUBDIR += splashsetter
     SUBDIR += strigi
     SUBDIR += sugarcrm
-    SUBDIR += sunbird
-    SUBDIR += sunbird-i18n
     SUBDIR += superkaramba-lwp
     SUBDIR += superswitcher
     SUBDIR += systempreferences
