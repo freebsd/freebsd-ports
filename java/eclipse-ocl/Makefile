@@ -19,7 +19,7 @@ MAINTAINER=	vj562001@yahoo.de
 COMMENT=	Implementation of the OCL OMG standard for EMF-based models
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/lib/eclipse/features/org.eclipse.emf_2.3.2.v200802051830/feature.xml:${PORTSDIR}/java/eclipse-emf
+		${LOCALBASE}/share/eclipse/dropins/emf:${PORTSDIR}/java/eclipse-emf
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
