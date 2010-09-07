@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+bin/mifare-classic-format
+bin/mifare-classic-write-ndef
+bin/mifare-desfire-access
+bin/mifare-desfire-format
+bin/mifare-desfire-info
+bin/mifare-desfire-write-ndef
+include/freefare.h
+lib/libfreefare.a
+lib/libfreefare.la
+lib/libfreefare.so
+lib/libfreefare.so.0
+libdata/pkgconfig/libfreefare.pc
