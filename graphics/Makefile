@@ -232,6 +232,7 @@
     SUBDIR += geomview
     SUBDIR += geos
     SUBDIR += geoserver
+    SUBDIR += gexiv2
     SUBDIR += gfont
     SUBDIR += giblib
     SUBDIR += gif2png
