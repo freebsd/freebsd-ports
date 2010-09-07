@@ -1,6 +1,6 @@
 # New ports collection makefile for:	yzis
 # Date created:        Tue May 20 19:00:00 UTC 2008
-# Whom:                Ganael Laplanche <ganael.laplanche@martymac.com>
+# Whom:                Ganael Laplanche <ganael.laplanche@martymac.org>
 #
 # $FreeBSD$
 #
@@ -10,10 +10,10 @@ PORTVERSION=	1.0.a.1
 PORTREVISION=	6
 CATEGORIES=	editors
 MASTER_SITES=	http://labs.freehackers.org/attachments/download/45/ \
-		http://contribs.martymac.com/FreeBSD-ports/distfiles/
+		http://contribs.martymac.org/FreeBSD-ports/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a.1/-alpha1/}
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	Vi-like editor
 
 USE_BZIP2=	yes

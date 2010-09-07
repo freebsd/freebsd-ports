@@ -1,6 +1,6 @@
 # New ports collection makefile for: blobby
 # Date created:	01 Apr 2008
-# Whom:		Ganael Laplanche <ganael.laplanche@martymac.com>
+# Whom:		Ganael Laplanche <ganael.laplanche@martymac.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Blobby%20Volley%202%20%28Linux%29/Beta%200.9b
 DISTNAME=	blobby2-linux-${PORTVERSION}
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	Official continuation of the famous Blobby Volley 1.x game
 
 LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \

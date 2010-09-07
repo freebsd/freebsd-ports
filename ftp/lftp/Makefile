@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
 		ftp://ftp.yars.free.net/pub/source/lftp/old/
 EXTRACT_SUFX=	.tar.lzma
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	Shell-like command line ftp client
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

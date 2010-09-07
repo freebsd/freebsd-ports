@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ldapscripts
 # Date created:		Sat Oct 01 09:30:00 UTC 2003
-# Whom:			Ganael LAPLANCHE <ganael.laplanche@martymac.com>
+# Whom:			Ganael LAPLANCHE <ganael.laplanche@martymac.org>
 #
 # $FreeBSD$
 #
@@ -9,11 +9,11 @@ PORTNAME=	ldapscripts
 PORTVERSION=	1.9.0
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
-		http://contribs.martymac.com/ldapscripts/
+		http://contribs.martymac.org/ldapscripts/
 
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	Scripts to manage posix accounts in an OpenLDAP directory
 
 WANT_OPENLDAP_VER?=	23

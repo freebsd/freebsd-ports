@@ -1,6 +1,6 @@
 # New ports collection makefile for: jzintv
 # Date created:                      05 Apr 2008
-# Whom:                              Ganael Laplanche <ganael.laplanche@martymac.com>
+# Whom:                              Ganael Laplanche <ganael.laplanche@martymac.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://spatula-city.org/~im14u2c/intv/dl/
 DISTNAME=	jzintv-1.0-beta3-src
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	Portable Intellivision(TM) Emulator
 
 WRKSRC=		${WRKDIR}/jzintv-1.0-beta3

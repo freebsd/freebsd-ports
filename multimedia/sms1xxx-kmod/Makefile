@@ -1,6 +1,6 @@
 # New ports collection makefile for:	sms1xxx-kmod
 # Date created:				10 February 2010
-# Whom:					Ganael Laplanche <ganael.laplanche@martymac.com>
+# Whom:					Ganael Laplanche <ganael.laplanche@martymac.org>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ DISTNAME=	siano-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	Native FreeBSD driver for Siano-based USB DVB devices
 
 WRKSRC=	${WRKDIR}/siano-${PORTVERSION}

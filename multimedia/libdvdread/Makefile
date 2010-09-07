@@ -17,7 +17,7 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/dvdnav/ \
 		ftp://ftp1.mplayerhq.hu/MPlayer/releases/dvdnav/ \
 		ftp://ftp2.mplayerhq.hu/MPlayer/releases/dvdnav/
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	MPlayer version of the libdvdread project
 
 .if !defined(PACKAGE_BUILDING)

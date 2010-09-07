@@ -9,11 +9,11 @@ PORTNAME=	flightgear-atlas
 PORTVERSION=	0.3.1.20090529
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	http://contribs.martymac.com/FreeBSD-ports/distfiles/ \
+MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	Atlas-${PORTVERSION}
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	A map viewer for use with the FlightGear flight simulator
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \

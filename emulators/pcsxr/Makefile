@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pcsxr
 # Date created:		11 June 2010
-# Whom:			Ganael Laplanche <ganael.laplanche@martymac.com>
+# Whom:			Ganael Laplanche <ganael.laplanche@martymac.org>
 #
 # $FreeBSD$
 #
@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		pcsx-df-1.10-plugin-dfbinimage2${EXTRACT_SUFX}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ganael.laplanche@martymac.com
+MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	Playstation (PSX) emulator
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
