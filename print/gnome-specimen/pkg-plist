@@ -1,5 +1,4 @@
 bin/gnome-specimen
-etc/gconf/schemas/gnome-specimen.schemas
 lib/locale/ar/LC_MESSAGES/gnome-specimen.mo
 lib/locale/cs/LC_MESSAGES/gnome-specimen.mo
 lib/locale/ca/LC_MESSAGES/gnome-specimen.mo
