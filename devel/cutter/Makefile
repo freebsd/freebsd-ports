@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cutter
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -60,7 +60,7 @@ PLIST_SUB+=	GST="" GST_VERSION="${GST_VERSION}"
 .endif
 
 .if defined(WITH_LCOV)
-RUN_DEPENDS+=	lcov:${PORTSIDR}/devel/lcov
+RUN_DEPENDS+=	lcov:${PORTSDIR}/devel/lcov
 .endif
 
 .if defined(WITHOUT_SOUP)
