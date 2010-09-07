@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	cuneiform
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	graphics
-MASTER_SITES=	https://launchpad.net/cuneiform-linux/${PORTVERSION:R}/${PORTVERSION:R}/+download/
+MASTER_SITES=	http://launchpadlibrarian.net/51166054/
 DISTNAME=	${PORTNAME}-linux-${PORTVERSION}
 
 MAINTAINER=	samm@os2.kiev.ua
@@ -20,9 +19,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-linux-${PORTVERSION}/build
-CMAKE_SOURCE_PATH=..
+CMAKE_OUTSOURCE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
@@ -44,14 +41,18 @@ post-extract:
 	${MKDIR} ${WRKSRC}
 
 post-patch:
+	${MV} ${WRKSRC}/cuneiform_src/Kern/hrstr/strings.h \
+		${WRKSRC}/cuneiform_src/Kern/hrstr/cf_strings.h
+	${MV} ${WRKSRC}/cuneiform_src/Kern/hhh/tigerh/h/strings.h \
+		${WRKSRC}/cuneiform_src/Kern/hhh/tigerh/h/cf_strings.h
 .if !defined(WITH_IMAGEMAGICK)
 	@${REINPLACE_CMD} -e '/pkg_check_modules.*ImageMagick/ d' \
-		${WRKSRC}/../cuneiform_src/Kern/CMakeLists.txt
+		${WRKSRC}/cuneiform_src/Kern/CMakeLists.txt
 .endif
 .if ${OSVERSION} < 700000
 	@${REINPLACE_CMD} -e 's|malloc_np.h|dlmalloc/malloc.h|' \
-		${WRKSRC}/../cuneiform_src/Kern/cfcompat/cfcompat.c \
-		${WRKSRC}/../cuneiform_src/Kern/rbal/src/statsearchbl.cpp
+		${WRKSRC}/cuneiform_src/Kern/cfcompat/cfcompat.c \
+		${WRKSRC}/cuneiform_src/Kern/rbal/src/statsearchbl.cpp
 .endif
 
 .include <bsd.port.post.mk>
