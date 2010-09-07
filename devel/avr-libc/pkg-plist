@@ -1,7 +1,9 @@
 avr/include/alloca.h
 avr/include/assert.h
 avr/include/avr/boot.h
+avr/include/avr/builtins.h
 avr/include/avr/common.h
+avr/include/avr/cpufunc.h
 avr/include/avr/crc16.h
 avr/include/avr/delay.h
 avr/include/avr/eeprom.h
@@ -107,12 +109,14 @@ avr/include/avr/iomx8.h
 avr/include/avr/iomxx0_1.h
 avr/include/avr/iomxx4.h
 avr/include/avr/iomxxhva.h
+avr/include/avr/iotn10.h
 avr/include/avr/iotn11.h
 avr/include/avr/iotn12.h
 avr/include/avr/iotn13.h
 avr/include/avr/iotn13a.h
 avr/include/avr/iotn15.h
 avr/include/avr/iotn167.h
+avr/include/avr/iotn20.h
 avr/include/avr/iotn22.h
 avr/include/avr/iotn2313.h
 avr/include/avr/iotn2313a.h
@@ -123,6 +127,8 @@ avr/include/avr/iotn26.h
 avr/include/avr/iotn261.h
 avr/include/avr/iotn261a.h
 avr/include/avr/iotn28.h
+avr/include/avr/iotn4.h
+avr/include/avr/iotn40.h
 avr/include/avr/iotn4313.h
 avr/include/avr/iotn43u.h
 avr/include/avr/iotn44.h
@@ -131,12 +137,14 @@ avr/include/avr/iotn45.h
 avr/include/avr/iotn461.h
 avr/include/avr/iotn461a.h
 avr/include/avr/iotn48.h
+avr/include/avr/iotn5.h
 avr/include/avr/iotn84.h
 avr/include/avr/iotn85.h
 avr/include/avr/iotn861.h
 avr/include/avr/iotn861a.h
 avr/include/avr/iotn87.h
 avr/include/avr/iotn88.h
+avr/include/avr/iotn9.h
 avr/include/avr/iotnx4.h
 avr/include/avr/iotnx5.h
 avr/include/avr/iotnx61.h
@@ -149,6 +157,7 @@ avr/include/avr/iousb82.h
 avr/include/avr/iousbxx2.h
 avr/include/avr/iousbxx6_7.h
 avr/include/avr/iox128a1.h
+avr/include/avr/iox128a1u.h
 avr/include/avr/iox128a3.h
 avr/include/avr/iox128d3.h
 avr/include/avr/iox16a4.h
@@ -161,6 +170,7 @@ avr/include/avr/iox256d3.h
 avr/include/avr/iox32a4.h
 avr/include/avr/iox32d4.h
 avr/include/avr/iox64a1.h
+avr/include/avr/iox64a1u.h
 avr/include/avr/iox64a3.h
 avr/include/avr/iox64d3.h
 avr/include/avr/lock.h
@@ -388,6 +398,7 @@ avr/lib/avr6/libscanf_flt.a
 avr/lib/avr6/libscanf_min.a
 avr/lib/avrxmega2/crtx16a4.o
 avr/lib/avrxmega2/crtx16d4.o
+avr/lib/avrxmega2/crtx32a4.o
 avr/lib/avrxmega2/crtx32d4.o
 avr/lib/avrxmega2/libc.a
 avr/lib/avrxmega2/libm.a
@@ -395,13 +406,6 @@ avr/lib/avrxmega2/libprintf_flt.a
 avr/lib/avrxmega2/libprintf_min.a
 avr/lib/avrxmega2/libscanf_flt.a
 avr/lib/avrxmega2/libscanf_min.a
-avr/lib/avrxmega3/crtx32a4.o
-avr/lib/avrxmega3/libc.a
-avr/lib/avrxmega3/libm.a
-avr/lib/avrxmega3/libprintf_flt.a
-avr/lib/avrxmega3/libprintf_min.a
-avr/lib/avrxmega3/libscanf_flt.a
-avr/lib/avrxmega3/libscanf_min.a
 avr/lib/avrxmega4/crtx64a3.o
 avr/lib/avrxmega4/crtx64d3.o
 avr/lib/avrxmega4/libc.a
@@ -488,7 +492,6 @@ share/doc/avr-libc/LICENSE
 @dirrm avr/lib/avr51
 @dirrm avr/lib/avr6
 @dirrm avr/lib/avrxmega2
-@dirrm avr/lib/avrxmega3
 @dirrm avr/lib/avrxmega4
 @dirrm avr/lib/avrxmega5
 @dirrm avr/lib/avrxmega6
