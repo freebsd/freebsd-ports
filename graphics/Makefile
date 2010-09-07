@@ -879,6 +879,7 @@
     SUBDIR += separate
     SUBDIR += sharpconstruct
     SUBDIR += shim
+    SUBDIR += shotwell
     SUBDIR += show
     SUBDIR += showimg
     SUBDIR += silgraphite
