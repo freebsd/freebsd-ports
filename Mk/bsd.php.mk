@@ -275,7 +275,6 @@ dio_DEPENDS=	devel/php${PHP_VER}-dio
 dom_DEPENDS=	textproc/php${PHP_VER}-dom
 domxml_DEPENDS=	textproc/php${PHP_VER}-domxml
 exif_DEPENDS=	graphics/php${PHP_VER}-exif
-fileinfo_DEPENDS=	sysutils/pecl-fileinfo
 filepro_DEPENDS=databases/php${PHP_VER}-filepro
 filter_DEPENDS=	security/php${PHP_VER}-filter
 fribidi_DEPENDS=converters/pecl-fribidi
@@ -341,10 +340,16 @@ yaz_DEPENDS=	net/pecl-yaz
 yp_DEPENDS=	net/php${PHP_VER}-yp
 zlib_DEPENDS=	archivers/php${PHP_VER}-zlib
 .if ${PHP_VER} == 4
+fileinfo_DEPENDS=	sysutils/pecl-fileinfo
 hash_DEPENDS=	security/pecl-hash
 json_DEPENDS=	devel/pecl-json
 zip_DEPENDS=	archivers/pecl-zip
 .else
+.if ${PHP_VER} == 52
+fileinfo_DEPENDS=	sysutils/pecl-fileinfo
+.else
+fileinfo_DEPENDS=	sysutils/php${PHP_VER}-fileinfo
+.endif
 hash_DEPENDS=	security/php${PHP_VER}-hash
 json_DEPENDS=	devel/php${PHP_VER}-json
 zip_DEPENDS=	archivers/php${PHP_VER}-zip
