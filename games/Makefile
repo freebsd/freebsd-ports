@@ -15,7 +15,6 @@
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
     SUBDIR += abe
-    SUBDIR += abridge
     SUBDIR += abuse
     SUBDIR += abuse_sdl
     SUBDIR += acm

@@ -4530,3 +4530,4 @@ lang/icc7||2010-09-04|Distfile(s) no longer available
 portuguese/staroffice52||2010-09-04|Distfile(s) no longer available
 sysutils/linux-acu||2010-09-04|Distfile(s) no longer available
 lang/ficl-devel|lang/ficl|2010-09-07|Moved to lang/ficl since it's a stable version
+games/abridge||2010-09-07|Broken, abandoned upstream
