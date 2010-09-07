@@ -1,8 +1,12 @@
 @comment $FreeBSD$
 bin/smuxi-frontend-gnome
 bin/smuxi-server
-lib/smuxi/Twitterizer.Framework.dll
-lib/smuxi/Twitterizer.Framework.dll.mdb
+lib/smuxi/Meebey.SmartIrc4net.dll
+lib/smuxi/Meebey.SmartIrc4net.dll.mdb
+lib/smuxi/Newtonsoft.Json.dll
+lib/smuxi/Newtonsoft.Json.dll.mdb
+lib/smuxi/Twitterizer2.dll
+lib/smuxi/Twitterizer2.dll.mdb
 lib/smuxi/smuxi-common.dll
 lib/smuxi/smuxi-engine-irc.dll
 lib/smuxi/smuxi-engine-irc.dll.mdb
