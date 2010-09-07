@@ -6,50 +6,32 @@
 #
 
 PORTNAME=	webtools
-PORTVERSION=	2.0.3
-PORTREVISION=	3
+PORTVERSION=	3.1.2
 CATEGORIES=	java devel www
 MASTER_SITES=	${MASTER_SITE_ECLIPSE:S,/eclipse/downloads/drops/,/webtools/downloads/drops/,}
-MASTER_SITE_SUBDIR=	R2.0/R-${PORTVERSION}-20080710044639/
+MASTER_SITE_SUBDIR=	R3.1.2/R-${PORTVERSION}-20100211202452
 PKGNAMEPREFIX=	eclipse-
-DISTNAME=	wtp-R-${PORTVERSION}-20080710044639
+DISTNAME=	wtp-R-${PORTVERSION}-20100211202452
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	freebsd-eclipse@FreeBSD.org
+MAINTAINER=	zhoushuqun@gmail.com
 COMMENT=	Webtools for eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
-		${LOCALBASE}/lib/eclipse/features/org.eclipse.emf_2.3.2.v200802051830/feature.xml:${PORTSDIR}/java/eclipse-emf \
-		${LOCALBASE}/lib/eclipse/features/org.eclipse.gef_3.3.2.v20080129/feature.xml:${PORTSDIR}/java/eclipse-gef
+		${LOCALBASE}/share/eclipse/dropins/emf:${PORTSDIR}/java/eclipse-emf \
+		${LOCALBASE}/share/eclipse/dropins/gef:${PORTSDIR}/java/eclipse-gef
 
-CONFLICTS=	eclipse-lomboz-3.*
-
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/eclipse
 USE_ZIP=	yes
-USE_JAVA=	yes
-JAVA_VERSION=	1.5+
-JAVA_OS=	native
 
-# remove files that already exist on the RUN_DEPENDS java/eclipse port
-REMOVE_DUPLICATE_FILES=	\
-	eclipse/plugins/javax.servlet.jsp_2.0.0.v200706191603.jar \
-	eclipse/plugins/javax.servlet_2.4.0.v200706111738.jar \
-	eclipse/plugins/org.apache.commons.el_1.0.0.v200706111724.jar \
-	eclipse/plugins/org.apache.commons.logging_1.0.4.v200706111724.jar
+OPTIONS=	DTP "Enable support for EJB and JPT development" on
 
-post-extract:
-.for file in ${REMOVE_DUPLICATE_FILES}
-	@${RM} -f ${WRKSRC}/${file}
-.endfor
+.include <bsd.port.options.mk>
 
-do-install:
-		@${MKDIR} ${PREFIX}/lib/eclipse
-		@${CP} -r ${WRKSRC}/eclipse/plugins ${PREFIX}/lib/eclipse
-		@${CP} -r ${WRKSRC}/eclipse/features ${PREFIX}/lib/eclipse
-		@(cd ${WRKSRC}; ${FIND} -s eclipse/features eclipse/plugins -not -type d) | ${SED} -e 's,^eclipse,lib/eclipse,' >> ${TMPPLIST}
-		@(cd ${WRKSRC}; ${FIND} -s -d eclipse/features eclipse/plugins -type d) \
-			| ${GREP} -vE 'eclipse/plugins$$|eclipse/features$$' \
-			| ${SED} -ne 's,^,@dirrm lib/,p' >> ${TMPPLIST}
+.if defined(WITH_DTP)
+RUN_DEPENDS+=	${LOCALBASE}/share/eclipse/dropins/datatools:${PORTSDIR}/java/eclipse-datatools
+.endif
+
+.include "${.CURDIR}/../eclipse/Makefile.plugins"
 
 .include <bsd.port.mk>
