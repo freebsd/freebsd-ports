@@ -7,6 +7,7 @@
 
 PORTNAME=	genplist
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 		http://jbacon.dyndns.org/~bacon/Ports/distfiles/
