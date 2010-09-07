@@ -7,7 +7,7 @@
 
 PORTNAME=	atunes
 PORTVERSION=	1.13.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/aTunes%20${PORTVERSION}
 DISTNAME=	aTunes_${PORTVERSION}
@@ -65,7 +65,7 @@ DESKTOP_ENTRIES="aTunes" \
 		"Audio player and manager" \
 		"${DATADIR}/aTunes.ico" \
 		"aTunes" \
-		"Application;Audio;Player;" \
+		"Application;Audio;AudioVideo;Java;" \
 		false
 
 INSTALL_FILES=	aTunes.ico aTunes.jar build.properties changelog.txt \
