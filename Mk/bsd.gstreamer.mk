@@ -54,7 +54,7 @@ GST_SHLIB_VERSION=	1
 # These are the current supported gstreamer-plugins modules
 #
 _USE_GSTREAMER10_ALL=	a52dec aalib amrnb amrwbdec annodex bz2 cairo cdaudio cdparanoia dts \
-			dv dvd esound faac faad ffmpeg flac gconf gio gnomevfs \
+			dv dvd esound faac faad ffmpeg flac gconf gio gl gnomevfs \
 			gnonlin gsm hal jack jpeg ladspa lame \
 			libcaca libmms libpng libvisual mm mp3 mpeg2enc mpeg2dec \
 			musepack nas neon ogg pango pulse python sdl shout2 sidplay \
@@ -177,6 +177,8 @@ annodex_DEPENDS=	multimedia/gstreamer-plugins-annodex
 cairo_DEPENDS=	graphics/gstreamer-plugins-cairo
 
 gdkpixbuf_DEPENDS=	graphics/gstreamer-plugins-gdkpixbuf
+
+gl_DEPENDS=		graphics/gstreamer-plugins-gl
 
 hermes_DEPENDS=	graphics/gstreamer-plugins-hermes
 
