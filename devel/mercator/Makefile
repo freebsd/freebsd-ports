@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercator
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.8
 CATEGORIES=	devel
 MASTER_SITES=	SF/worldforge/Mercator%20%28terrain%20lib%29/${PORTVERSION}
 
