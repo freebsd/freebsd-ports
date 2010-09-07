@@ -1,0 +1,13 @@
+NO_BUILD=	yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.6
+JAVA_OS=	native
+
+REPO_DIRS?=	features plugins
+
+do-install:
+		@${MKDIR} ${PREFIX}/share/eclipse/dropins/${PORTNAME}/eclipse
+		@(cd ${WRKSRC}; ${COPYTREE_SHARE} "${REPO_DIRS}" ${PREFIX}/share/eclipse/dropins/${PORTNAME}/eclipse/)
+		@(cd ${PREFIX}; ${FIND} -s share/eclipse/dropins/${PORTNAME} -not -type d) >> ${TMPPLIST}
+		@(cd ${PREFIX}; ${FIND} -s -d share/eclipse/dropins/${PORTNAME} -type d) \
+			| ${SED} -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
