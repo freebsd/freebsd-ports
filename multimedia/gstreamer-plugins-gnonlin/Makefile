@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gstreamer-plugins-gnonlin
-PORTVERSION=	0.10.15
+PORTVERSION=	0.10.16
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gnonlin/
 DISTNAME=	gnonlin-${PORTVERSION}
@@ -23,5 +23,8 @@ USE_GSTREAMER=	yes
 
 PLIST_FILES=	lib/gstreamer-0.10/libgnl.la \
 		lib/gstreamer-0.10/libgnl.so
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
