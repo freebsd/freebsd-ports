@@ -3492,6 +3492,7 @@ firepay                         ports/mail/firepay
 fireprofile                     ports/databases/fireprofile
 firestring                      ports/misc/firestring
 firetalk                        ports/net-im/firetalk
+firetray                        ports/mail/firetray
 firewalk                        ports/security/firewalk
 fisg                            ports/irc/fisg
 fishsupper                      ports/games/fishsupper
