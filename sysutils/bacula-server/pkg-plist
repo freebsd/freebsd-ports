@@ -36,6 +36,7 @@ sbin/dbcheck
 %%DATADIR%%/bconsole
 %%DATADIR%%/btraceback.dbx
 %%DATADIR%%/btraceback.gdb
+%%DATADIR%%/btraceback.mdb
 %%DATADIR%%/create_bacula_database
 %%DATADIR%%/create_%%DBTYPE%%_database
 %%DATADIR%%/delete_catalog_backup

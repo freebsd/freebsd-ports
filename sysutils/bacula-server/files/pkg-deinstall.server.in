@@ -1,10 +1,15 @@
 #!/bin/sh
 
 PATH=/bin:/usr/bin:/usr/sbin
+
+# Note how to delete UID/GID
+USER=%%BACULA_USER%%
+GROUP=%%BACULA_GROUP%%
+UID=%%BACULA_UID%%
+GID=%%BACULA_UID%%
+BACULA_DIR=%%BACULA_DIR%%
+
 TMPFILE=/tmp/services-$RANDOM-$$
-if [ -z "${BACULA_DIR}" ]; then
-	BACULA_DIR=/var/db/bacula
-fi
 
 case "$2" in
 "DEINSTALL")
@@ -21,9 +26,6 @@ case "$2" in
 	    echo "Check if ${BACULA_DIR} is empty and delete it to permanently remove the bacula port."
 	fi
 
-	# Note how to delete UID/GID
-	USER=bacula
-	GROUP=${USER}
 	if pw usershow "${USER}" 2>/dev/null 1>&2; then
 	    echo "To delete Bacula user permanently, use 'pw userdel ${USER}'"
 	    echo "To delete Bacula group permanently, use 'pw groupdel ${GROUP}'"

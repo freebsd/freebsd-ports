@@ -1,9 +1,13 @@
 #!/bin/sh
 
 PATH=/bin:/usr/bin:/usr/sbin
-if [ -z "${BACULA_DIR}" ]; then
-	BACULA_DIR=/var/db/bacula
-fi
+
+# Install UID/GID
+USER=%%BACULA_USER%%
+GROUP=%%BACULA_GROUP%%
+UID=%%BACULA_UID%%
+GID=%%BACULA_UID%%
+BACULA_DIR=%%BACULA_DIR%%
 
 # Always add lines in /etc/services
 grep -q "bacula-dir" /etc/services
@@ -17,12 +21,6 @@ fi
 
 case $2 in
 PRE-INSTALL)
-	# Install UID/GID
-	USER=bacula
-	GROUP=${USER}
-	UID=910
-	GID=${UID}
-
 	if [ ! -d ${BACULA_DIR} ]; then
 		mkdir -p ${BACULA_DIR}
 	fi

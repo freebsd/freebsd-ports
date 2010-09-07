@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bacula
-DISTVERSION=	5.0.2
+DISTVERSION=	5.0.3
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 
@@ -20,6 +20,7 @@ UNIQUENAME?=	${PORTNAME}${PKGNAMESUFFIX}
 PLIST_SUB+=	MAJOR=${PORTVERSION:R:R}
 
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/readline -I${LOCALBASE}/include" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
@@ -46,13 +47,9 @@ SUB_FILES+=	pkg-install.client pkg-deinstall.client pkg-message.client
 SUB_FILES+=	pkg-install.server pkg-deinstall.server pkg-message.server
 .endif
 
-# The user/group IDs below are registered, see
-# http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#DADS-UID
-#
-BACULA_DIR?=/var/db/bacula
 #
 MANCOMPRESSED=	yes
-CONFIGURE_ARGS+=	--with-tcp-wrappers=/usr/lib \
+CONFIGURE_ARGS+=--with-tcp-wrappers=/usr/lib \
 		--enable-smartalloc \
 		--with-working-dir=${BACULA_DIR} \
 		--with-scriptdir=${PREFIX}/share/${PORTNAME} \
@@ -70,12 +67,12 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers=/usr/lib \
 		--with-baseport=9101
 
 .if defined(WITH_CLIENT_ONLY)
-CONFIGURE_ARGS+=		--with-fd-user=root \
+CONFIGURE_ARGS+=--with-fd-user=root \
 		--with-fd-group=wheel
 .else
-CONFIGURE_ARGS+=--with-dir-user=bacula \
-		--with-dir-group=bacula \
-		--with-sd-user=bacula \
+CONFIGURE_ARGS+=--with-dir-user=${BACULA_USER} \
+		--with-dir-group=${BACULA_GROUP} \
+		--with-sd-user=${BACULA_USER} \
 		--with-sd-group=operator
 .endif
 
@@ -83,19 +80,34 @@ CONFIGURE_ARGS+=--with-dir-user=bacula \
 OPTIONS=	WXCONSOLE "Build with wxGTK based GUI console: deprecated" off
 OPTIONS+=	SFDAEMON "Build with staticly compiled file daemon" off
 .else
-OPTIONS=	SQLITE3 "Use SqLite-3 database instead of SqLite-2" off
-OPTIONS+=	MYSQL "Use MySQL database instead of SqLite" off
-OPTIONS+=	POSTGRESQL "Use PostgreSQL database instead of SqLite" off
+OPTIONS=	SQLITE3 "Use SQLite-3 database" off
+OPTIONS+=	MYSQL "Use MySQL database" off
+OPTIONS+=	POSTGRESQL "Use PostgreSQL database" off
 OPTIONS+=	MTX "Install mtx for control of autochanger devices" off
 .endif
 OPTIONS+=	NLS "Native Language Support via gettext utilities" on
-OPTIONS+=	OPENSSL "Enable OpenSSL for encrypted communication" off
+OPTIONS+=	OPENSSL "Enable OpenSSL for encrypted communication" on
+
+# The user/group IDs below are registered, see
+# http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#DADS-UID
+#
+BACULA_USER?=	bacula
+BACULA_GROUP?=	${BACULA_USER}
+BACULA_UID?=	910
+BACULA_GID?=	${BACULA_UID}
+BACULA_DIR?=	/var/db/bacula
 
 PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
 
+SUB_LIST=	BACULA_USER=${BACULA_USER} \
+		BACULA_GROUP=${BACULA_GROUP} \
+		BACULA_UID=${BACULA_UID} \
+		BACULA_GID=${BACULA_GID} \
+		BACULA_DIR=${BACULA_DIR}
+
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_NLS)
+.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--enable-nls
 .else
@@ -130,27 +142,28 @@ CONFIGURE_ARGS+=	--enable-bwx-console
 CONFIGURE_ENV+=		WXCONFIG="${WX_CONFIG}"
 PLIST_SUB+=		WXCONS=""
 .else
-PLIST_SUB+=	 	WXCONS="@comment "
+PLIST_SUB+=		WXCONS="@comment "
 .endif
 .else
 # Server only Options
-PLIST_SUB+=	 	WXCONS="@comment "
+PLIST_SUB+=		WXCONS="@comment "
 CONFFILES=		sd dir
+# Server default database
 .if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--with-mysql=yes
 USE_MYSQL=		yes
 DBTYPE=			mysql
 SUB_LIST+=		REQ_MYSQL=mysql REQ_PGSQL=""
-.elif defined(WITH_POSTGRESQL)
+.elif defined(WITH_SQLITE)
+CONFIGURE_ARGS+=	--with-sqlite3=yes
+LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
+DBTYPE=			sqlite3
+.else
 DEFAULT_PGSQL_VER?=	83
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql=yes
 DBTYPE=			postgresql
 SUB_LIST+=		REQ_MYSQL="" REQ_PGSQL=postgresql
-.else
-CONFIGURE_ARGS+=	--with-sqlite3=yes
-LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
-DBTYPE=			sqlite3
 .endif
 PLIST_SUB+=		DBTYPE=${DBTYPE}
 # Install mtx
@@ -159,8 +172,11 @@ RUN_DEPENDS+=		${LOCALBASE}/sbin/mtx:${PORTSDIR}/misc/mtx
 .endif
 .endif
 
-.if defined(WITH_OPENSSL)
-CONFIGURE_ARGS+=	--with-openssl
+.if !defined(WITHOUT_OPENSSL)
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+.else
+CONFIGURE_ARGS+=	--with-openssl="no"
 .endif
 
 .if defined(WITH_CLIENT_ONLY)
@@ -180,12 +196,12 @@ pre-everything::
 	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes	if you only want the file daemon."
 	@${ECHO_MSG} "  WITH_WXCONSOLE=yes	if you only want a wxGTK based GUI console."
 	@${ECHO_MSG} "  WITH_MTX=yes		if you want to use mtx instead of chio for autochanger control."
-	@${ECHO_MSG} "  WITH_SQLITE3=yes  	if you want SqLite-3 instead of SqLite-2 as the database."
+	@${ECHO_MSG} "  WITH_SQLITE3=yes  	if you want SQLite-3 as the database (not recommended)."
 .if !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL)
-	@${ECHO_MSG} "  WITH_MYSQL=yes  	if you want MySQL instead of SqLite as the database."
-	@${ECHO_MSG} "  WITH_POSTGRESQL=yes	if you want PostgreSQL instead of SqLite as the database."
+	@${ECHO_MSG} "  WITH_MYSQL=yes  	if you want MySQL as the database."
+	@${ECHO_MSG} "  WITH_POSTGRESQL=yes	if you want PostgreSQL as the database."
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "The default DB is SQLite-2!"
+	@${ECHO_MSG} "The default DB is PostgreSQL!"
 .endif
 	@${ECHO_MSG} "  WITH_OPENSSL=yes  	Enable OpenSSL for encrypted communication."
 	@${ECHO_MSG} ""
