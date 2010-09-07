@@ -4531,3 +4531,6 @@ portuguese/staroffice52||2010-09-04|Distfile(s) no longer available
 sysutils/linux-acu||2010-09-04|Distfile(s) no longer available
 lang/ficl-devel|lang/ficl|2010-09-07|Moved to lang/ficl since it's a stable version
 games/abridge||2010-09-07|Broken, abandoned upstream
+deskutils/linux-sunbird|deskutils/lightning|2010-09-07|Upstream development discontinued
+deskutils/sunbird|deskutils/lightning|2010-09-07|Upstream development discontinued
+deskutils/sunbird-i18n||2010-09-07|Upstream development discontinued
