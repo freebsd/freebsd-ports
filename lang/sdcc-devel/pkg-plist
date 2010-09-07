@@ -388,6 +388,7 @@ bin/sdld
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f96j60.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f96j65.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18f97j60.h
+%%PIC16%%%%DATADIR%%/include/pic16/pic18fam.h
 %%PIC16%%%%DATADIR%%/include/pic16/pic18fregs.h
 %%PIC16%%%%DATADIR%%/include/pic16/sdcc-lib.h
 %%PIC16%%%%DATADIR%%/include/pic16/signal.h
