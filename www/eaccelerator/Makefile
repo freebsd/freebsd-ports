@@ -7,6 +7,7 @@
 
 PORTNAME=	eaccelerator
 PORTVERSION=	0.9.6.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/eAccelerator%20${PORTVERSION}/ \
 		http://bart.eaccelerator.net/source/${PORTVERSION}/
@@ -20,7 +21,11 @@ USE_PHP_BUILD=	yes
 IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS=	--enable-eaccelerator=shared \
-		--with-eaccelerator-userid=80
+		--with-eaccelerator-userid=80 \
+		--without-eaccelerator-use-inode
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 SUB_FILES=	pkg-message
