@@ -631,6 +631,7 @@
     SUBDIR += phantom
     SUBDIR += philesight
     SUBDIR += php4-posix
+    SUBDIR += php5-fileinfo
     SUBDIR += php5-posix
     SUBDIR += php52-posix
     SUBDIR += pidof

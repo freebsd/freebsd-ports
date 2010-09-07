@@ -61,6 +61,13 @@ USE_GNOME=	libxml2
 CONFIGURE_ARGS+=--enable-exif
 .endif
 
+.if ${PHP_MODNAME} == "fileinfo"
+CONFIGURE_ARGS+=--enable-fileinfo \
+		--with-pcre-dir=${LOCALBASE}
+
+PHP_HEADER_DIRS=	libmagic
+.endif
+
 .if ${PHP_MODNAME} == "filter"
 CONFIGURE_ARGS+=--enable-filter \
 		--with-pcre-dir=${LOCALBASE}

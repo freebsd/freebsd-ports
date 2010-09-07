@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100907
+  AFFECTS: sysutils/pecl-fileinfo
+  AUTHOR: ale@FreeBSD.org
+
+  If you are using php 5.3 (lang/php5) and fileinfo extension, you
+  should switch to sysutils/php5-fileinfo port:
+
+	portmaster -o sysutils/php5-fileinfo sysutils/pecl-fileinfo
+
 20100904
   AFFECTS: net/netcat
   AUTHOR: pgollucci@FreeBSD.org
