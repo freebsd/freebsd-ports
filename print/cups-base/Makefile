@@ -52,6 +52,7 @@ OPTIONS?=	GNUTLS		"Build with GNUTLS library" on \
 		XPDF		"Build pdftops with XPDF" off \
 		XDG_OPEN	"Build with XDG_OPEN as browser" off
 
+UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 CUPS_ETCDIR=	${PREFIX}/etc/cups
 CUPS_SPOOLDIR=	/var/spool/cups
 CUPS_SOCKET?=	/var/run/cups.sock
@@ -132,7 +133,7 @@ PLIST_SUB+=		PHP="@comment "
 
 .if !defined(CUPS_CLIENT) && !defined(CUPS_IMAGE) && !defined(WITHOUT_GHOSTSCRIPT)
 .if defined(WITH_XPDF)
-IGNORE=			"Pick ghostscript or xpdf, not both"
+IGNORE=			pick ghostscript or xpdf, not both
 .endif
 USE_GHOSTSCRIPT=	yes
 CONFIGURE_ARGS+=	--enable-pdftops --with-pdftops=${LOCALBASE}/bin/gs
