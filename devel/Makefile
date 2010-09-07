@@ -775,6 +775,7 @@
     SUBDIR += libexecinfo
     SUBDIR += libffi
     SUBDIR += libfirm
+    SUBDIR += libfreefare
     SUBDIR += libfs++
     SUBDIR += libftdi
     SUBDIR += libgalago
