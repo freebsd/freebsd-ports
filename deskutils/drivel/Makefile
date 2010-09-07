@@ -21,6 +21,7 @@ USE_GNOME=	glib20 gtk20 gconf2 gnomevfs2 gtksourceview2 libxml2 gnomedocutils
 USE_GSTREAMER=	soup
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 USE_AUTOTOOLS=	libtool:22 autoconf:262:env automake:110:env
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -40,6 +41,6 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 pre-configure:
-	( cd ${WRKSRC} ; autoreconf )
+	( cd ${WRKSRC} ; ${AUTORECONF} )
 
 .include <bsd.port.mk>
