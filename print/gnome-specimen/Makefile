@@ -15,6 +15,7 @@ COMMENT=	Gnome Specimen is a simple tool to preview and compare installed fonts
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	pygnomedesktop
+GCONF_SCHEMAS=	gnome-specimen.schemas
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
@@ -25,6 +26,6 @@ INSTALLS_ICONS=	yes
 .include <bsd.port.pre.mk>
 
 pre-configure:
-	( cd ${WRKSRC} ; autoreconf -fi ; automake )
+	( cd ${WRKSRC} ; ${AUTORECONF} ; ${AUTOMAKE} )
 
 .include <bsd.port.post.mk>
