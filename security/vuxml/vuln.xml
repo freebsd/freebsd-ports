@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="67b514c3-ba8f-11df-8f6e-000c29a67389">
+    <topic>sudo -- Flaw in Runas group matching</topic>
+    <affects>
+      <package>
+	<name>sudo</name>
+	<range><ge>1.7.0</ge><lt>1.7.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Todd Miller reports:</p>
+	<blockquote cite="http://www.sudo.ws/sudo/alerts/runas_group.html">
+	  <p>Beginning with sudo version 1.7.0 it has been possible to grant
+	    permission to run a command using a specified group via sudo -g
+	    option (run as group). A flaw exists in the logic that matches
+	    Runas groups in the sudoers file when the -u option is also
+	    specified (run as user). This flaw results in a positive match for
+	    the user specified via -u so long as the group specified via -g
+	    is allowed by the sudoers file.</p>
+	  <p>Exploitation of the flaw requires that Sudo be configured with
+	    sudoers entries that contain a Runas group. Entries that do not
+	    contain a Runas group, or only contain a Runas user are not
+	    affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-2956</cvename>
+      <url>http://www.sudo.ws/sudo/alerts/runas_group.html</url>
+    </references>
+    <dates>
+      <discovery>2010-09-07</discovery>
+      <entry>2010-09-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="29b7e3f4-b6a9-11df-ae63-f255a795cb21">
     <topic>lftp -- multiple HTTP client download filename vulnerability</topic>
     <affects>
