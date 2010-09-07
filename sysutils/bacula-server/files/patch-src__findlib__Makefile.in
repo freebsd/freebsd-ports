@@ -4,8 +4,8 @@
  
  libbacfind.la: Makefile $(LIBBACFIND_LOBJS) 
  	@echo "Making $@ ..."
--	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACFIND_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBACFIND_LT_CURRENT).$(LIBBACFIND_LT_REVISION).$(LIBBACFIND_LT_AGE)
-+	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACFIND_LOBJS) -export-dynamic -rpath $(libdir) -version-info $(LIBBACFIND_LT_CURRENT):$(LIBBACFIND_LT_REVISION):$(LIBBACFIND_LT_AGE)
+-	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACFIND_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBACFIND_LT_RELEASE)
++	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACFIND_LOBJS) -export-dynamic -rpath $(libdir) -version-info $(LIBBACFIND_LT_RELEASE:S/./:/g)
  
  Makefile: $(srcdir)/Makefile.in $(topdir)/config.status
  	cd $(topdir) \

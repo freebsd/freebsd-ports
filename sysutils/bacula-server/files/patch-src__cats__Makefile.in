@@ -4,8 +4,8 @@
  
  libbacsql.la: Makefile $(LIBBACSQL_LOBJS)
  	@echo "Making $@ ..."	  
--	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACSQL_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBACSQL_LT_CURRENT).$(LIBBACSQL_LT_REVISION).$(LIBBACSQL_LT_AGE) $(DB_LIBS)
-+	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACSQL_LOBJS) -export-dynamic -rpath $(libdir) -version-info $(LIBBACSQL_LT_CURRENT):$(LIBBACSQL_LT_REVISION):$(LIBBACSQL_LT_AGE) $(DB_LIBS)
+-	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACSQL_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBACSQL_LT_RELEASE) $(DB_LIBS)
++	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACSQL_LOBJS) -export-dynamic -rpath $(libdir) -version-info $(LIBBACSQL_LT_RELEASE:S/./:/g) $(DB_LIBS)
  
  Makefile: $(srcdir)/Makefile.in $(topdir)/config.status
  	cd $(topdir) \
