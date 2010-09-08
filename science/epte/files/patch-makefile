@@ -1,0 +1,28 @@
+--- makefile.orig	2010-09-01 10:41:27.655060824 +0200
++++ makefile	2010-09-01 10:46:21.341029572 +0200
+@@ -320,13 +320,13 @@ IS_INTERACTIVE= yes
+ #ifdef VMS
+ CC = cc 
+ #else
+-CC = gcc
++CC ?= gcc
+ #endif
+ 
+ #ifdef DEVELOPER
+-CC_OPTIONS = -c -g 
++CC_OPTIONS = -c -g ${CFLAGS}
+ #else
+-CC_OPTIONS = -c -g 
++CC_OPTIONS = -c -g ${CFLAGS}
+ #endif
+ 
+ 
+@@ -344,7 +344,7 @@ LIBS = -lcursesX -o epte
+ LIBS = -lncurses -o epte
+ #endif
+ 
+-DISTNAME=/usr/bin
++DISTNAME=${PREFIX}
+ 
+ MAIN = ask_user.o bell.o bold.o blink.o draw_blocks.o draw_table.o endprog.o listcommand.o epte.o make_coordinates.o reverse.o setaudio.o setinput.o table_key.o ttflush.o ttinp.o
+ 
