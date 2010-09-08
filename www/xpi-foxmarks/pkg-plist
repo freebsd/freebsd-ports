@@ -1,6 +1,3 @@
-%%XPI_XPIDIR%%/META-INF/manifest.mf
-%%XPI_XPIDIR%%/META-INF/zigbert.rsa
-%%XPI_XPIDIR%%/META-INF/zigbert.sf
 %%XPI_XPIDIR%%/chrome/.DS_Store
 %%XPI_XPIDIR%%/chrome/content/foxmarks-alert.xul
 %%XPI_XPIDIR%%/chrome/content/foxmarks-bookmark.js
@@ -217,7 +214,6 @@
 %%XPI_XPIDIR%%/components/foxmarks-service.xpt
 %%XPI_XPIDIR%%/defaults/preferences/prefs.js
 %%XPI_XPIDIR%%/install.rdf
-@dirrm %%XPI_XPIDIR%%/META-INF
 @dirrm %%XPI_XPIDIR%%/chrome/content/shared
 @dirrm %%XPI_XPIDIR%%/chrome/content
 @dirrm %%XPI_XPIDIR%%/chrome/locale/bg-BG

@@ -38,7 +38,7 @@ XPI_FILES=	GPL LGPL LICENSE MPL chrome/chrome.jar \
 XPI_DIRS=	chrome/icons/default chrome/icons chrome components \
 		defaults/preferences defaults modules
 
-post-extract:
+xpi-post-extract:
 	@${FIND} ${WRKSRC} -name .svn|${XARGS} ${RM} -rf
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"

@@ -7,6 +7,7 @@
 
 PORTNAME=	joga
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	CENKES
 # The unversioned dist is at http://dl.google.com/firefox/joga/companion.xpi
@@ -16,9 +17,8 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Joga.com Companion
 
 XPI_ID=		{06108483-1773-402e-a112-bfec19a73942}
-XPI_FILES=	META-INF/manifest.mf META-INF/zigbert.rsa META-INF/zigbert.sf chrome/joga.jar \
-		chrome.manifest defaults/preferences/joga.js install.rdf
-XPI_DIRS=	META-INF chrome defaults/preferences defaults
+XPI_FILES=	chrome/joga.jar chrome.manifest defaults/preferences/joga.js install.rdf
+XPI_DIRS=	chrome defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

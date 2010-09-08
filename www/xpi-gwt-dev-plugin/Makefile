@@ -39,7 +39,7 @@ do-fetch:
 		${FETCH_CMD} ${MASTER_SITES}${DISTFILES}?attredirects=0\&d=1 ; \
 	fi
 
-post-extract:
+xpi-post-extract:
 	${RM} -rf ${XPI_FILESDIR}/.svn ${XPI_FILESDIR}/*/.svn ${XPI_FILESDIR}/platform/*
 
 do-install:
