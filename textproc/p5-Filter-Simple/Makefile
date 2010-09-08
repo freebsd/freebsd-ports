@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Filter-Simple
-PORTVERSION=	0.84
+PORTVERSION=	0.85
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simplified source filtering
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE= yes
 
 PERL_CONFIGURE=	yes
 
