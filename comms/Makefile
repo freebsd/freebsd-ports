@@ -7,7 +7,6 @@
     SUBDIR += aldo
     SUBDIR += anyremote
     SUBDIR += aprsd
-    SUBDIR += asmodem
     SUBDIR += atslog
     SUBDIR += bfhist
     SUBDIR += bforce
@@ -78,7 +77,6 @@
     SUBDIR += lirc
     SUBDIR += locator
     SUBDIR += lrzsz
-    SUBDIR += ltmdm
     SUBDIR += mgetty+sendfax
     SUBDIR += minicom
     SUBDIR += mlan
@@ -163,7 +161,6 @@
     SUBDIR += xwota
     SUBDIR += yagiuda
     SUBDIR += yaps
-    SUBDIR += yawmppp
     SUBDIR += yfklog
     SUBDIR += zmtx-zmrx
     SUBDIR += zssh

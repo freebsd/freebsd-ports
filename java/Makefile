@@ -150,7 +150,6 @@
     SUBDIR += netrexx
     SUBDIR += openjdk6
     SUBDIR += openjdk7
-    SUBDIR += openjit
     SUBDIR += phpeclipse
     SUBDIR += poseidon
     SUBDIR += proguard

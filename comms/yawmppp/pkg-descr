@@ -1,9 +1,0 @@
-YAWMPPP (Yet Another Window Maker PPP dockapp) is a
-Window Maker dockapp that gets its inspiration from the
-original WMPPP.  It has an easy-to-use GUI configuration
-dialog and generates a chat script (as well as stop and
-start scripts) for use with pppd.  The dockapp shows
-how long you've been connected, current network traffic,
-and some fairly interesting lights.
-
-WWW: http://yawmppp.seul.org/

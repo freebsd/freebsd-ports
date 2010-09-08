@@ -976,7 +976,6 @@
     SUBDIR += xsu
     SUBDIR += xsysstats
     SUBDIR += xvidcap
-    SUBDIR += xwipower
     SUBDIR += xwlans
     SUBDIR += yawho
     SUBDIR += zeroer

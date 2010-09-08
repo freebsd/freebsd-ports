@@ -268,7 +268,6 @@
     SUBDIR += sysmon
     SUBDIR += tcpreplay
     SUBDIR += tcptrack
-    SUBDIR += tknetmon
     SUBDIR += tork
     SUBDIR += torrus
     SUBDIR += trafd

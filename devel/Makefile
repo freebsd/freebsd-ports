@@ -1934,7 +1934,6 @@
     SUBDIR += p5-Number-Bytes-Human
     SUBDIR += p5-OLE-Storage_Lite
     SUBDIR += p5-OOTools
-    SUBDIR += p5-ORBit
     SUBDIR += p5-Object-Accessor
     SUBDIR += p5-Object-Array
     SUBDIR += p5-Object-Declare

@@ -20,7 +20,6 @@
     SUBDIR += apinger
     SUBDIR += arp-scan
     SUBDIR += arp-sk
-    SUBDIR += arpd
     SUBDIR += arpdig
     SUBDIR += arping
     SUBDIR += arprelease
@@ -1113,7 +1112,6 @@
     SUBDIR += vnc2swf
     SUBDIR += vncreflector
     SUBDIR += vnstat
-    SUBDIR += vomit
     SUBDIR += vserver
     SUBDIR += vtun
     SUBDIR += vyqchat
