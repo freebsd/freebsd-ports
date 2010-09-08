@@ -1,9 +1,9 @@
-
-$FreeBSD$
-
---- ca-bundle.pl.orig
-+++ ca-bundle.pl
-@@ -3,30 +3,18 @@
+--- ca-bundle.pl.orig	2010-02-05 10:08:58.000000000 -0500
++++ ca-bundle.pl	2010-02-05 10:13:35.000000000 -0500
+@@ -1,32 +1,20 @@
+ ##
+-##  ca-bundle.pl -- Regenerate ca-bundle.crt from the Mozilla certdata.txt
++##  ca-bundle.pl -- Regenerate ca-root-nss.crt from the Mozilla certdata.txt
  ##
  
  #   configuration
@@ -14,7 +14,8 @@ $FreeBSD$
 -$date =~ s/\n$//s;
  print <<EOH;
  ##
- ##  ca-bundle.crt -- Bundle of CA Root Certificates
+-##  ca-bundle.crt -- Bundle of CA Root Certificates
++##  ca-root-nss.crt -- Bundle of CA Root Certificates
  ##
  ##  This is a bundle of X.509 certificates of public Certificate
  ##  Authorities (CA). These were automatically extracted from Mozilla's
