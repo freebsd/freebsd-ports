@@ -49,13 +49,28 @@ libexec/mc/extfs.d/ulha
 libexec/mc/extfs.d/urar
 libexec/mc/extfs.d/uzip
 libexec/mc/extfs.d/uzoo
+libexec/mc/fish/README.fish
+libexec/mc/fish/append
+libexec/mc/fish/chmod
+libexec/mc/fish/chown
+libexec/mc/fish/fexists
+libexec/mc/fish/get
+libexec/mc/fish/hardlink
+libexec/mc/fish/info
+libexec/mc/fish/ln
+libexec/mc/fish/ls
+libexec/mc/fish/mkdir
+libexec/mc/fish/mv
+libexec/mc/fish/rmdir
+libexec/mc/fish/send
+libexec/mc/fish/unlink
 libexec/mc/mc-wrapper.csh
 libexec/mc/mc-wrapper.sh
 libexec/mc/mc.csh
 libexec/mc/mc.sh
 %%NLS%%share/locale/az/LC_MESSAGES/mc.mo
-%%NLS%%share/locale/be-tarask/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/be/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/be@tarask/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/mc.mo
@@ -66,6 +81,7 @@ libexec/mc/mc.sh
 %%NLS%%share/locale/eu/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/mc.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/it/LC_MESSAGES/mc.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/mc.mo
@@ -187,8 +203,9 @@ libexec/mc/mc.sh
 %%EDITOR%%@dirrm %%DATADIR%%/syntax
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/be-tarask/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/be-tarask
+%%NLS%%@dirrm share/locale/be@tarask/LC_MESSAGES
+%%NLS%%@dirrm share/locale/be@tarask
+@dirrm libexec/mc/fish
 @dirrm libexec/mc/extfs.d
 @dirrm libexec/mc
 @dirrm etc/mc
