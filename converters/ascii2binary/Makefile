@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ascii2binary
-PORTVERSION=	2.13
-PORTREVISION=	2
+PORTVERSION=	2.14
 CATEGORIES=	converters
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
@@ -16,6 +15,8 @@ COMMENT=	Convert between textual representations of numbers and binary
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
+
+LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
