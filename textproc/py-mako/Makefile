@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mako
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	textproc www python
 MASTER_SITES=	http://www.makotemplates.org/downloads/ \
 		CHEESESHOP
@@ -17,6 +17,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Super-fast templating language in Python
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beaker>=0.9:${PORTSDIR}/www/py-beaker \
+		${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.11:${PORTSDIR}/textproc/py-MarkupSafe \
 		${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
