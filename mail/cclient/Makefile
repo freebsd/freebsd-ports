@@ -26,6 +26,12 @@ OPTIONS=	SSL "Compile with SSL support" on \
 
 MAKE_JOBS_UNSAFE=	yes
 
+.include <bsd.port.options.mk>
+
+.if ! defined(WITHOUT_SSL)
+USE_OPENSSL=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 USE_LDCONFIG=	yes
@@ -33,11 +39,10 @@ ALL_TARGET=	bsf
 .if defined(WITHOUT_SSL)
 MAKE_ARGS+=	SSLTYPE=none SSLDIR=${OPENSSLBASE}
 .else
-USE_OPENSSL=	yes
 .if defined(WITH_SSL_AND_PLAINTEXT)
-MAKE_ARGS+=	SSLTYPE=unix
+MAKE_ARGS+=	SSLTYPE=unix SSLDIR=${OPENSSLDIR}
 .else
-MAKE_ARGS+=	SSLTYPE=unix.nopwd
+MAKE_ARGS+=	SSLTYPE=unix.nopwd SSLDIR=${OPENSSLDIR}
 .endif
 .endif
 
@@ -46,7 +51,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 SHLIBBASE=	c-client4
 SHLIBMAJ=	9
 SHLIBNAME=	lib${SHLIBBASE}.so.${SHLIBMAJ}
-MAKE_ENV=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
+MAKE_ENV+=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 PLIST_SUB=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 
 post-patch:
@@ -55,6 +60,11 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e "s:/etc/ssl/certs:${PREFIX}/certs:g; \
 		s:/etc/ssl/private:${PREFIX}/certs:g" ${WRKSRC}/Makefile
+.if ! defined(WITHOUT_SSL)
+	@${REINPLACE_CMD} -e " \
+		s:SSLINCLUDE=/usr/include/openssl SSLLIB=/usr/lib:SSLINCLUDE=${OPENSSLINC} SSLLIB=${OPENSSLLIB}: \
+		" ${WRKSRC}/Makefile
+.endif
 .if !defined(WITHOUT_IPV6)
 	@${REINPLACE_CMD} -e "s|^IP=4|IP=6|" ${WRKSRC}/Makefile \
 		${WRKSRC}/src/osdep/unix/Makefile
