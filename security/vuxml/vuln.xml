@@ -34,6 +34,92 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4a21ce2c-bb13-11df-8e32-000f20797ede">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>3.6.*,1</gt><lt>3.6.9,1</lt></range>
+	<range><gt>3.5.*,1</gt><lt>3.5.12,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>3.6.9,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox-devel</name>
+	<range><lt>3.5.12</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><gt>2.0.*</gt><lt>2.0.7</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><ge>3.0</ge><lt>3.0.7</lt></range>
+	<range><ge>3.1</ge><lt>3.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2010-49 Miscellaneous memory safety hazards (rv:1.9.2.9/ 1.9.1.12)</p>
+	  <p>MFSA 2010-50 Frameset integer overflow vulnerability</p>
+	  <p>MFSA 2010-51 Dangling pointer vulnerability using DOM plugin array</p>
+	  <p>MFSA 2010-52 Windows XP DLL loading vulnerability</p>
+	  <p>MFSA 2010-53 Heap buffer overflow in nsTextFrameUtils::TransformText</p>
+	  <p>MFSA 2010-54 Dangling pointer vulnerability in nsTreeSelection</p>
+	  <p>MFSA 2010-55 XUL tree removal crash and remote code execution</p>
+	  <p>MFSA 2010-56 Dangling pointer vulnerability in nsTreeContentView</p>
+	  <p>MFSA 2010-57 Crash and remote code execution in normalizeDocument</p>
+	  <p>MFSA 2010-58 Crash on Mac using fuzzed font in data: URL</p>
+	  <p>MFSA 2010-59 SJOW creates scope chains ending in outer object</p>
+	  <p>MFSA 2010-60 XSS using SJOW scripted function</p>
+	  <p>MFSA 2010-61 UTF-7 XSS by overriding document charset using object type attribute</p>
+	  <p>MFSA 2010-62 Copy-and-paste or drag-and-drop into designMode document allows XSS</p>
+	  <p>MFSA 2010-63 Information leak via XMLHttpRequest statusText</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-2762</cvename>
+      <cvename>CVE-2010-2763</cvename>
+      <cvename>CVE-2010-2764</cvename>
+      <cvename>CVE-2010-2765</cvename>
+      <cvename>CVE-2010-2766</cvename>
+      <cvename>CVE-2010-2767</cvename>
+      <cvename>CVE-2010-2768</cvename>
+      <cvename>CVE-2010-2769</cvename>
+      <cvename>CVE-2010-2770</cvename>
+      <cvename>CVE-2010-2760</cvename>
+      <cvename>CVE-2010-3131</cvename>
+      <cvename>CVE-2010-3166</cvename>
+      <cvename>CVE-2010-3167</cvename>
+      <cvename>CVE-2010-3168</cvename>
+      <cvename>CVE-2010-3169</cvename>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-49.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-50.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-51.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-52.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-53.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-54.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-55.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-56.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-57.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-58.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-59.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-60.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-61.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-62.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-63.html</url>
+    </references>
+    <dates>
+      <discovery>2010-09-07</discovery>
+      <entry>2010-09-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="67b514c3-ba8f-11df-8f6e-000c29a67389">
     <topic>sudo -- Flaw in Runas group matching</topic>
     <affects>
