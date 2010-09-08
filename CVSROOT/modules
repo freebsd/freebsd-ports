@@ -264,7 +264,6 @@ abiword-docs                    ports/editors/abiword-docs
 abntex                          ports/print/abntex
 abook                           ports/mail/abook
 abraca                          ports/audio/abraca
-abridge                         ports/games/abridge
 abs                             ports/math/abs
 abuse                           ports/games/abuse
 abuse_sdl                       ports/games/abuse_sdl
@@ -3442,7 +3441,7 @@ fhttpd                          ports/www/fhttpd
 fi-acroread8                    ports/print/fi-acroread8
 fi-aspell                       ports/textproc/fi-aspell
 fib                             ports/devel/fib
-ficl-devel                      ports/lang/ficl-devel
+ficl                            ports/lang/ficl
 fidelio                         ports/net-p2p/fidelio
 fidogate                        ports/news/fidogate
 fidogate-ds                     ports/news/fidogate-ds
@@ -4307,6 +4306,7 @@ gettext                         ports/devel/gettext
 gettext-lint                    ports/devel/gettext-lint
 gettext-msghack                 ports/devel/gettext-msghack
 getxml                          ports/devel/getxml
+gexiv2                          ports/graphics/gexiv2
 gexpr                           ports/math/gexpr
 gfe                             ports/x11-fonts/gfe
 gff2ps                          ports/biology/gff2ps
@@ -5033,6 +5033,8 @@ gstreamer-plugins               ports/multimedia/gstreamer-plugins
 gstreamer-plugins-a52dec        ports/audio/gstreamer-plugins-a52dec
 gstreamer-plugins-aalib         ports/graphics/gstreamer-plugins-aalib
 gstreamer-plugins-all           ports/multimedia/gstreamer-plugins-all
+gstreamer-plugins-amrnb         ports/audio/gstreamer-plugins-amrnb
+gstreamer-plugins-amrwbdec      ports/audio/gstreamer-plugins-amrwbdec
 gstreamer-plugins-annodex       ports/multimedia/gstreamer-plugins-annodex
 gstreamer-plugins-bad           ports/multimedia/gstreamer-plugins-bad
 gstreamer-plugins-buzztard      ports/multimedia/gstreamer-plugins-buzztard
@@ -5054,6 +5056,7 @@ gstreamer-plugins-fluendo-mpegdemux  ports/multimedia/gstreamer-plugins-fluendo-
 gstreamer-plugins-gconf         ports/devel/gstreamer-plugins-gconf
 gstreamer-plugins-gdkpixbuf     ports/graphics/gstreamer-plugins-gdkpixbuf
 gstreamer-plugins-gio           ports/devel/gstreamer-plugins-gio
+gstreamer-plugins-gl            ports/graphics/gstreamer-plugins-gl
 gstreamer-plugins-gnomevfs      ports/devel/gstreamer-plugins-gnomevfs
 gstreamer-plugins-gnonlin       ports/multimedia/gstreamer-plugins-gnonlin
 gstreamer-plugins-good          ports/multimedia/gstreamer-plugins-good
@@ -5089,6 +5092,7 @@ gstreamer-plugins-spc           ports/audio/gstreamer-plugins-spc
 gstreamer-plugins-speex         ports/audio/gstreamer-plugins-speex
 gstreamer-plugins-taglib        ports/audio/gstreamer-plugins-taglib
 gstreamer-plugins-theora        ports/multimedia/gstreamer-plugins-theora
+gstreamer-plugins-twolame       ports/audio/gstreamer-plugins-twolame
 gstreamer-plugins-ugly          ports/multimedia/gstreamer-plugins-ugly
 gstreamer-plugins-v4l2          ports/multimedia/gstreamer-plugins-v4l2
 gstreamer-plugins-vorbis        ports/audio/gstreamer-plugins-vorbis
@@ -19655,6 +19659,7 @@ php5-dom                        ports/textproc/php5-dom
 php5-exif                       ports/graphics/php5-exif
 php5-extensions                 ports/lang/php5-extensions
 php5-ffmpeg                     ports/graphics/php5-ffmpeg
+php5-fileinfo                   ports/sysutils/php5-fileinfo
 php5-filter                     ports/security/php5-filter
 php5-ftp                        ports/ftp/php5-ftp
 php5-gd                         ports/graphics/php5-gd
