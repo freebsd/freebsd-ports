@@ -5,8 +5,8 @@ CP=/bin/cp
 MKDIR="/bin/mkdir -p"
 TOUCH=/usr/bin/touch
 
-LISTMGR_HOME=@@VARPREFIX@@
-PREFIX=@@INSPREFIX@@
+LISTMGR_HOME=%%LISTMANAGER_HOME%%
+PREFIX=%%PREFIX%%
 
 SUBDIRS="archives backup db files lists responses storage tmp"
 
