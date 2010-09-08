@@ -7,13 +7,14 @@
 
 PORTNAME=	unixODBC
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
 MAINTAINER=	jupengfei@gmail.com
 COMMENT=	ODBC library suite for Unix
 
-CONFLICTS=	firebird-client-* libiodbc-[0-9]* virtuoso-*
+CONFLICTS=	libiodbc-[0-9]* virtuoso-*
 
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
