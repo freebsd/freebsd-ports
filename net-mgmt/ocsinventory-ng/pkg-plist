@@ -42,6 +42,16 @@
 %%DATADIR%%/Apache/Ocsinventory/Server/Modperl2.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/System.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/System/Config.pm
+%%DATADIR%%/binutils/soap-client.pl
+%%DATADIR%%/binutils/soap-client.README
+%%DATADIR%%/binutils/ipdiscover-util.pl
+%%DATADIR%%/binutils/ipdiscover-util.README
+%%DATADIR%%/binutils/ocsinventory-injector.pl
+%%DATADIR%%/binutils/ocsinventory-injector.README
+%%DATADIR%%/binutils/ocsinventory-log.pl
+%%DATADIR%%/binutils/ocsinventory-log.README
+%%DATADIR%%/binutils/ocs-errors
+%%DATADIR%%/binutils/create-release-tarball.sh
 %%DATADIR%%/dtd/Interface/get_computers_V1-request.dtd
 %%DATADIR%%/dtd/file_request.dtd
 %%DATADIR%%/dtd/inventory_reply.dtd
@@ -50,6 +60,9 @@
 %%DATADIR%%/dtd/prolog_request.dtd
 %%DATADIR%%/dtd/update_reply.dtd
 %%DATADIR%%/dtd/update_request.dtd
+%%DATADIR%%/etc/ocsinventory/ocsinventory-reports.conf
+%%DATADIR%%/etc/ocsinventory/ocsinventory-server.conf
+%%DATADIR%%/etc/logrotate.d/ocsinventory-server
 %%DATADIR%%/ocsreports/admin_attrib.php
 %%DATADIR%%/ocsreports/admin_language.php
 %%DATADIR%%/ocsreports/ajout_maj.php
@@ -303,6 +316,10 @@
 @dirrm %%DATADIR%%/ocsreports/files
 @dirrm %%DATADIR%%/ocsreports/css
 @dirrm %%DATADIR%%/ocsreports
+@dirrm %%DATADIR%%/binutils
+@dirrm %%DATADIR%%/etc/ocsinventory
+@dirrm %%DATADIR%%/etc/logrotate.d
+@dirrm %%DATADIR%%/etc
 @dirrm %%DATADIR%%/dtd/Interface
 @dirrm %%DATADIR%%/dtd
 @dirrm %%DATADIR%%/Apache/Ocsinventory/Server/System
