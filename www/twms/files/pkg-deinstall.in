@@ -1,0 +1,17 @@
+#!/bin/sh
+
+USER=%%USER%%
+GROUP=%%GROUP%%
+CACHEDIR=%%CACHEDIR%%
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+	echo "===> Removing tWMS cache directory"
+	rm -rf "%%CACHEDIR%%" || exit 1
+
+	echo "===> Removing tWMS user and group"
+	if pw usershow "${USER}" >/dev/null 2>&1; then
+		pw userdel "${USER}" || exit 1
+	fi
+fi
+
+exit 0

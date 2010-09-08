@@ -1,0 +1,16 @@
+#!/bin/sh
+
+USER=%%USER%%
+GROUP=%%GROUP%%
+CACHEDIR=%%CACHEDIR%%
+
+if [ "$2" = "POST-INSTALL" ]; then
+	if [ ! -d "%%CACHEDIR%%" ]; then
+		mkdir -p "%%CACHEDIR%%/cache" || exit 1
+		mkdir -p "%%CACHEDIR%%/traces" || exit 1
+		chown -R "$USER:$GROUP" "%%CACHEDIR%%" || exit 1
+		chmod -R 0775 "%%CACHEDIR%%" || exit 1
+	fi
+fi
+
+exit 0
