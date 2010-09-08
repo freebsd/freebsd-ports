@@ -6,6 +6,7 @@
 
 PORTNAME=	ocsinventory-ng
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://launchpad.net/ocsinventory-server/stable-${PORTVERSION:R}/${PORTVERSION}/+download/
 DISTNAME=	OCSNG_UNIX_SERVER-${PORTVERSION}
@@ -33,7 +34,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 do-install:
 	@${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "Apache dtd ocsreports" ${DATADIR}/)
+	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "Apache binutils dtd etc ocsreports" ${DATADIR}/)
 	@${INSTALL_SCRIPT} ${WRKSRC}/setup.sh ${DATADIR}/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
