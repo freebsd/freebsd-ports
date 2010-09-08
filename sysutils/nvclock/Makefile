@@ -13,42 +13,55 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.8%20%28beta4%29
 DISTNAME=	nvclock${DISTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	The NVidia graphic card status and overclocking tool
+COMMENT=	NVidia graphic card status and overclocking tool
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig
-USE_AUTOTOOLS=	aclocal:19 autoheader:262 autoconf:262
 
 PLIST_FILES=	bin/nvclock \
 		bin/smartdimmer
 MAN1=		nvclock.1
 PORTDOCS=	ABOUT AUTHORS ChangeLog FAQ README
 
-OPTIONS=	GUI	"Build with GTK user interface"		on
+OPTIONS=	NVCONTROL	"Enable NV-CONTROL support"	on \
+		GTK2		"Build GTK user interface"	on \
+		QT		"Build Qt 3.x user interface"	off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITHOUT_GUI)
-CONFIGURE_ARGS+=--enable-gtk=no --enable-qt=no --enable-nvcontrol=no
-.else
+.if defined(WITH_NVCONTROL)
 USE_XORG=	xext
-USE_GNOME+=	gtk20
+USE_GNOME=	pkgconfig
+.else
+CONFIGURE_ARGS+=	--disable-nvcontrol
+.endif
+
+.if defined(WITH_GTK2)
+USE_GNOME=	gtk20
 PLIST_FILES+=	bin/nvclock_gtk
+.else
+CONFIGURE_ARGS+=	--disable-gtk
+.endif
+
+.if defined(WITH_QT)
+USE_QT_VER=	3
+CONFIGURE_ARGS+=	--enable-qt --with-qtdir=${LOCALBASE}
+PLIST_FILES+=	bin/nvclock_qt
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$(DISTDIR)||' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -E 's|^(C(XX)?FLAGS)=|\1+=|' \
+		${WRKSRC}/src/backend/Makefile.in \
+		${WRKSRC}/src/gtk/Makefile.in \
+		${WRKSRC}/src/qt/Makefile.in \
+		${WRKSRC}/src/nvcontrol/Makefile.in
 
 do-install:
 	${GMAKE} -C ${WRKSRC}/src install
 	${GMAKE} -C ${WRKSRC} install-man
-.if !defined(WITHOUT_GUI)
-	${GMAKE} -C ${WRKSRC}/src/gtk install
-.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${GMAKE} -C ${WRKSRC} install-docs
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
