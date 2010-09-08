@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Net-Whois-IP
-PORTVERSION=	1.04
+PORTVERSION=	1.10
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	frederic@culot.org
 COMMENT=	Perl extension for looking up the whois information for ip addresses
 
 MAN3=	Net::Whois::IP.3
