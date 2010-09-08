@@ -342,7 +342,6 @@
     SUBDIR += xmms-status-plugin
     SUBDIR += xmms-weasel
     SUBDIR += xmps
-    SUBDIR += xmps-win32-plugin
     SUBDIR += xporthdmv
     SUBDIR += xtheater
     SUBDIR += xvid

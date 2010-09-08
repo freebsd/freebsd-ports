@@ -57,8 +57,6 @@ annelid-*		games/annelid		Redistribution is limited
 apache_*ssl_*		www/apache13-ssl	Crypto; export-controlled
 apache_mod_smooth_streaming-*  www/mod_smooth_streaming Not for commerical use
 apache2/mod_traf_thief-*.c www/mod_traf_thief	No license
-apple_pascal_0.dsk.gz	emulators/p-interp	Redistribution rights for Apple
-						Pascal disk images are unclear
 AquaGatekeeper*		net/AquaGatekeeper	No redistribution allowed
 armyops*-linux.run	games/linux-americasarmy Redistribution is limited
 asWedit-*		www/aswedit		Commercial software
@@ -456,9 +454,6 @@ otojiro*		japanese/otojiro-fpw	The original dictionary is not
 						free
 ovt-*			science/ovt		Registration is needed to
 						download the tarball
-p-interp-*.tar.gz	emulators/p-interp	Redistribution rights for
-						Apple Pascal disk images are
-						unclear
 perforce/p4v-*		devel/p4v		Binary redistribution
 						restrictions in effect
 palmos-sdk-*-1.tar.gz	palm/palmos-sdk		License agreement is required

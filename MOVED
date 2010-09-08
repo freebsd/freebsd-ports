@@ -4534,3 +4534,20 @@ games/abridge||2010-09-07|Broken, abandoned upstream
 deskutils/linux-sunbird|deskutils/lightning|2010-09-07|Upstream development discontinued
 deskutils/sunbird|deskutils/lightning|2010-09-07|Upstream development discontinued
 deskutils/sunbird-i18n||2010-09-07|Upstream development discontinued
+audio/audacious-crossfade||2010-09-08|Broken for 6+ months, unmaintained
+audio/ecamegapedal||2010-09-08|Has expired: Abandonned since 2004, please use audio/jack-rack or audio/creox instead.
+comms/asmodem||2010-09-08|Broken for 6+ months, unmaintained
+comms/ltmdm||2010-09-08|Broken for 6+ months, unmaintained
+comms/yawmppp||2010-09-08|Broken for 6+ months, unmaintained
+devel/p5-ORBit||2010-09-08|Broken for 6+ months, unmaintained
+emulators/p-interp||2010-09-08|Broken for 6+ months, unmaintained
+graphics/visionegg||2010-09-08|Broken for 6+ months, unmaintained
+japanese/okphone||2010-09-08|Broken for 6+ months, unmaintained
+java/openjit||2010-09-08|Broken for 6+ months, unmaintained
+multimedia/xmps-win32-plugin||2010-09-08|Broken for 6+ months, unmaintained
+net-mgmt/tknetmon||2010-09-08|Broken for 6+ months, unmaintained
+net/arpd||2010-09-08|Broken for 6+ months, unmaintained
+net/vomit||2010-09-08|Broken for 6+ months, unmaintained
+security/xmlsec||2010-09-08|Broken for 6+ months, unmaintained
+sysutils/xwipower||2010-09-08|Broken for 6+ months, unmaintained
+www/lws||2010-09-08|Broken for 6+ months, unmaintained

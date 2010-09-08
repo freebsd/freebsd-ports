@@ -1,3 +1,0 @@
-@cwd %%KMODDIR%%
-ltmdm.ko
-@unexec kldxref %D

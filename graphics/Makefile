@@ -937,7 +937,6 @@
     SUBDIR += vigra
     SUBDIR += vindaloo
     SUBDIR += vips
-    SUBDIR += visionegg
     SUBDIR += visionworkbench
     SUBDIR += visprint
     SUBDIR += vp

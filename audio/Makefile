@@ -51,7 +51,6 @@
     SUBDIR += atunes
     SUBDIR += aube
     SUBDIR += aubio
-    SUBDIR += audacious-crossfade
     SUBDIR += audacious-dumb
     SUBDIR += audacity
     SUBDIR += audacity-devel
@@ -143,7 +142,6 @@
     SUBDIR += easytag-devel
     SUBDIR += eawpats
     SUBDIR += eawplus
-    SUBDIR += ecamegapedal
     SUBDIR += ecasound
     SUBDIR += ecawave
     SUBDIR += emms
