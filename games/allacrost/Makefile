@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	allacrost
-PORTVERSION=	0.2.2
-PORTREVISION=	8
+PORTVERSION=	1.0.1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-demo/${PORTVERSION}
-DISTNAME=	allacrost_demo_source_${PORTVERSION}
+DISTNAME=	${PORTNAME}_demo_source_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A single player 2D role-playing game
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libluabind.a:${PORTSDIR}/devel/luabind
+BUILD_DEPENDS=	${LOCALBASE}/lib/libluabind.so:${PORTSDIR}/devel/luabind
+RUN_DEPENDS=	${LOCALBASE}/lib/libluabind.so:${PORTSDIR}/devel/luabind
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		ogg.7:${PORTSDIR}/audio/libogg \
@@ -24,18 +24,16 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_OPENAL=	al
-USE_LUA=	5.0
+USE_LUA=	5.1
 USE_SDL=	sdl ttf net
 USE_GL=		yes
 USE_GCC=	4.2+
 USE_GETTEXT=	yes
+MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${LUA_LIBDIR}" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LUA_INCDIR}"
-USE_QT_VER=	4
-QT_COMPONENTS=	# none by default
-QT_NONSTANDARD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -43,9 +41,11 @@ PORTDOCS=	MANUAL
 
 OPTIONS=	EDITOR "Enable editor" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_EDITOR)
+USE_QT_VER=	4
+QT_NONSTANDARD=	yes
 QT_COMPONENTS+=	corelib gui opengl moc_build qt3support
 CONFIGURE_ARGS+=--enable-editor=yes
 PLIST_SUB=	EDITOR=""
@@ -80,4 +80,4 @@ post-install:
 .endif
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
