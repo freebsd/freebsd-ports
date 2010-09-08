@@ -8,6 +8,7 @@
 PORTNAME=	tabmixplus
 DISTVERSION=	0.3.8.4
 DISTVERSIONSUFFIX=	-fx
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,7 +16,7 @@ COMMENT=	Enhances tab browsing capabilities
 
 XPI_DISTNAME=	tab_mix_plus
 XPI_NUM=	1122
-XPI_ID=		{ec8030f7-c20a-464f-9b0e-13a3a9e97384}
+XPI_ID=		{dc572301-7619-498c-a57d-39143191b318}
 XPI_FILES=	chrome/tabmixplus.jar chrome.manifest \
 		defaults/preferences/tabmix.js install.rdf \
 		icon.png license.txt
