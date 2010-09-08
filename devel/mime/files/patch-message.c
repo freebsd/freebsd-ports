@@ -1,5 +1,5 @@
---- message.c.orig	Tue Sep 16 03:37:19 2003
-+++ message.c	Sun Oct 30 23:38:44 2005
+--- message.c.orig	Tue Aug 31 10:14:24 2010
++++ message.c	Tue Aug 31 10:14:10 2010
 @@ -89,7 +89,7 @@
  		 * XXX - need to be fixed to support "\r\n"
  		 */
@@ -9,9 +9,12 @@
  		free(bdcm);
  
  		if (bdlc != pos) {
-@@ -146,8 +146,8 @@
+@@ -144,10 +144,10 @@
+ 	len -= strlen(strstr(bdnorm, "--"));
+ 
  	for (;;) {
- 		ret = realloc(ret, sizeof *ret * *cnt + 1);
+-		ret = realloc(ret, sizeof *ret * *cnt + 1);
++		ret = realloc(ret, sizeof(*ret) * (*cnt + 1));
  
 -		if ((next = memmem(msg, len, bdnorm, bdnormlen)) == NULL)
 -			next = memmem(msg, len, bdtail, bdtaillen);
