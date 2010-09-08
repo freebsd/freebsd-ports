@@ -1549,6 +1549,7 @@
     SUBDIR += rubygem-nicovideo
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-rack
+    SUBDIR += rubygem-rack-cache
     SUBDIR += rubygem-rack-mount
     SUBDIR += rubygem-rack-test
     SUBDIR += rubygem-rails
