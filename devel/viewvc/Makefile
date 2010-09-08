@@ -7,6 +7,7 @@
 
 PORTNAME=	viewvc
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.viewvc.org/ \
 		LOCAL/glarkin
@@ -17,7 +18,8 @@ COMMENT=	Web-based Version Control Repository Browsing
 OPTIONS=	SUBVERSION "use svn binding" on \
 		APACHE "Use ${APACHE_PORT} as webserver" on \
 		LIGHTTPD "Use lighttpd as webserver" off \
-		MODPYTHON3 "Enable mod_python3 support" off \
+		MODPYTHON3 "Enable mod_python3 support (deprecated)" off \
+		MODWSGI3 "Enable mod_wsgi3 support" off \
 		MYSQL "Enable experimental MYSQL support" off
 
 NO_BUILD=	yes
@@ -55,6 +57,10 @@ RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 
 .if defined(WITH_MODPYTHON3)
 RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_python.so:${PORTSDIR}/www/mod_python3
+.endif
+
+.if defined(WITH_MODWSGI3)
+RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_wsig3.so:${PORTSDIR}/www/mod_wsgi3
 .endif
 
 # This feature is a clone of the Mozilla Project's Bonsai database.
