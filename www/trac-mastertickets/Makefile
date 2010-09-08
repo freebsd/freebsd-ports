@@ -6,24 +6,27 @@
 #
 
 PORTNAME=	mastertickets
-PORTVERSION=	2.1.3
-PORTREVISION=	2
+PORTVERSION=	3.0.1
 CATEGORIES=	www devel python
-MASTER_SITES=	http://www.gerritbeine.de/download/trac/
+MASTER_SITES=	http://dist.codelabs.ru/fbsd/ \
+		LOCAL/glarkin
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Support for ticket dependencies
 
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS+=	trac>=0.12:${PORTSDIR}/www/trac
 
-WRKSRC=		${WRKDIR}/${PORTNAME}plugin
-NO_BUILD=	yes
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHONVERSION=${_PYTHON_VERSION}
+WRKSRC=			${WRKDIR}/coderanger-trac-mastertickets-a72a4e2
+
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	TracMasterTickets
 PYDISTUTILS_NOEGGINFO=	yes
+
+PLIST_SUB+=		PORTVERSION=${PORTVERSION} \
+			PYTHONVERSION=${_PYTHON_VERSION}
+PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/TracMasterTickets-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg
 
 .include <bsd.port.mk>
