@@ -748,6 +748,7 @@
     SUBDIR += rubygem-sys-cpu
     SUBDIR += rubygem-sys-filesystem
     SUBDIR += rubygem-sys-host
+    SUBDIR += rubygem-sys-proctable
     SUBDIR += rubygem-sys-uname
     SUBDIR += rubygem-sys-uptime
     SUBDIR += runit
