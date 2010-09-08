@@ -16,8 +16,8 @@ COMMENT=	Converts embedded media to html links
 XPI_ID=		unplug@compunach
 XPI_NUM=	2254
 
-post-extract:
-	@${FIND} ${WRKSRC} -type d -name CVS|${XARGS} ${RM} -rf
+xpi-post-extract:
+	${FIND} ${WRKSRC} -type d -name CVS|${XARGS} ${RM} -rf
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

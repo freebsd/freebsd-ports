@@ -7,6 +7,7 @@
 
 PORTNAME=	google-notebook
 PORTVERSION=	1.0.0.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/chinsan/xpi
 # The unversioned dist is at http://dl.google.com/firefox/google-notebook.xpi

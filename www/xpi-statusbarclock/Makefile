@@ -20,7 +20,7 @@ XPI_DISTNAME=	statusbar_clock
 XPI_ID=		{3669edc0-b1ad-11d8-92e7-00d09e0179f2}
 XPI_NUM=	52
 
-post-extract:
+xpi-post-extract:
 	@${RM} -rf ${WRKSRC}/readme.txt
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"

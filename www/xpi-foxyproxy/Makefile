@@ -20,7 +20,7 @@ XPI_ID=		foxyproxy@eric.h.jung
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-post-extract:
+xpi-post-extract:
 	@${FIND} ${WRKSRC} -type f -name '*.js' |${XARGS} ${SED} -i '' -e 's/[[:space:]]*$$//g'
 	@${MV} ${WRKSRC}/LICENSE ${WRKSRC}/COPYING
 	@${GREP} -Rl LICENSE ${WRKSRC} |${XARGS} ${REINPLACE_CMD} -e s/LICENSE/COPYING/g

@@ -20,7 +20,7 @@ XPI_FILES=	chrome/mozgest.jar chrome.manifest components/mgIMouseService.xpt \
 		install/install.properties install.js install.rdf
 XPI_DIRS=	chrome components install
 
-post-extract:
+xpi-post-extract:
 	@${RM} -rf ${WRKSRC}/platform
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"

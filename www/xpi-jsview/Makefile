@@ -18,7 +18,7 @@ XPI_ID=		{cf15270e-cf08-4def-b4ea-6a5ac23f3bca}
 XPI_FILES=	chrome/jsview.jar chrome.manifest defaults/preferences/jsview.js install.js install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
 
-post-extract:
+xpi-post-extract:
 	@${RM} -rf ${WRKSRC}/temp
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
