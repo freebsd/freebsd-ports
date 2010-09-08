@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	paml
-PORTVERSION=	4.4a
+PORTVERSION=	4.4c
 CATEGORIES=	biology
 MASTER_SITES=	http://abacus.gene.ucl.ac.uk/software/
 DISTNAME=	${PORTNAME}${PORTVERSION}
