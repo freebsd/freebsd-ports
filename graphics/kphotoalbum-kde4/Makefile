@@ -35,7 +35,7 @@ OPTIONS=	MARBLE "Geolocation support (requires astro/marble)" off
 .include <bsd.port.options.mk>
 
 .if defined(WITH_MARBLE)
-LIB_DEPENDS+=	marblewidget.5:${PORTSDIR}/astro/marble
+LIB_DEPENDS+=	marblewidget.10:${PORTSDIR}/astro/marble
 .endif
 
 pre-configure:
