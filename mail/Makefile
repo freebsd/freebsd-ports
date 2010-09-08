@@ -600,6 +600,7 @@
     SUBDIR += rubygem-mail
     SUBDIR += rubygem-mailfactory
     SUBDIR += rubygem-pony
+    SUBDIR += rubygem-smtp_tls
     SUBDIR += rubygem-tmail
     SUBDIR += sa-stats
     SUBDIR += sa-utils
