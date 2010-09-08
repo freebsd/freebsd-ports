@@ -1,0 +1,5 @@
+etc/emacs/site-start.d/50magit.el
+@dirrmtry etc/emacs/site-start.d
+@dirrmtry etc/emacs
+share/emacs/site-lisp/magit.el
+share/emacs/site-lisp/magit.elc

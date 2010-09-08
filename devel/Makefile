@@ -968,6 +968,7 @@
     SUBDIR += m68k-rtems-binutils
     SUBDIR += m68k-rtems-gcc
     SUBDIR += m68k-rtems-gdb
+    SUBDIR += magit
     SUBDIR += make++
     SUBDIR += makedepend
     SUBDIR += makeplus
