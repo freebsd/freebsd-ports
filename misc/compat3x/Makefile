@@ -19,6 +19,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A convenience package to install the compat3x libraries
 
 FORBIDDEN=	"FreeBSD-SA-03:05.xdr, FreeBSD-SA-03:08.realpath  - not fixed / no lib available"
+DEPRECATED=	"Only FreeBSD 6.4+ are supported in ports"
+EXPIRATION_DATE=	2010-10-08
 
 ONLY_FOR_ARCHS=	i386
 
