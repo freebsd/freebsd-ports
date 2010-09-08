@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	2.7.2
+PORTVERSION=	2.7.3
 CATEGORIES=	misc kde
 MASTER_SITES=	SF/${PORTNAME}/BibleTime%202/BibleTime%202%20source%20code
 
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
 		clucene.0:${PORTSDIR}/textproc/clucene
 
+USE_BZIP2=	yes
 USE_OPENSSL=	yes
 USE_CMAKE=	yes
 USE_QT_VER=	4
