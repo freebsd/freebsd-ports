@@ -18,14 +18,10 @@ ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+SUB_FILES=	pkg-message wrapper.sh
+
 # source code version
 SOURCE_VERSION=	24.14
-
-post-patch:
-# prepare wrapper
-	@${SED} \
-		-e 's|%%PREFIX%%|${PREFIX}|' ${FILESDIR}/wrapper.sh > \
-		${WRKDIR}/wrapper.sh
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mprime ${PREFIX}/bin/mprime-real
@@ -36,6 +32,8 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e 's|/usr/local/|${PREFIX}/|' ${PKGMESSAGE}
+.if !defined(NOPORTDOCS)
+	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>
