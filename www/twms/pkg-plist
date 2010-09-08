@@ -1,0 +1,23 @@
+bin/twms
+@unexec if cmp -s %D/etc/twms.conf.default %D/etc/twms.conf; then rm -f %D/etc/twms.conf; fi
+etc/twms.conf.default
+@exec if [ ! -f %D/etc/twms.conf ] ; then cp -p %D/%F %B/twms.conf; fi
+%%PYTHON_SITELIBDIR%%/twms/__init__.py
+%%PYTHON_SITELIBDIR%%/twms/bbox.py
+%%PYTHON_SITELIBDIR%%/twms/canvas.py
+%%PYTHON_SITELIBDIR%%/twms/capabilities.py
+%%PYTHON_SITELIBDIR%%/twms/correctify.py
+%%PYTHON_SITELIBDIR%%/twms/drawing.py
+%%PYTHON_SITELIBDIR%%/twms/fetchers.py
+%%PYTHON_SITELIBDIR%%/twms/filter.py
+%%PYTHON_SITELIBDIR%%/twms/gpxparse.py
+%%PYTHON_SITELIBDIR%%/twms/overview.py
+%%PYTHON_SITELIBDIR%%/twms/projections.py
+%%PYTHON_SITELIBDIR%%/twms/reproject.py
+%%PYTHON_SITELIBDIR%%/twms/sketch.py
+%%PYTHON_SITELIBDIR%%/twms/twms.py
+%%DATADIR%%/irs_nxt.jpg
+%%DATADIR%%/yahoo_nxt.jpg
+%%DATADIR%%/yandex_nxt.jpg
+@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/twms

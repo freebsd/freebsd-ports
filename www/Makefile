@@ -1552,8 +1552,8 @@
     SUBDIR += rubygem-rack-mount
     SUBDIR += rubygem-rack-test
     SUBDIR += rubygem-rails
-    SUBDIR += rubygem-railties
     SUBDIR += rubygem-rails-app-installer
+    SUBDIR += rubygem-railties
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-redcloth
     SUBDIR += rubygem-rfacebook
@@ -1754,6 +1754,7 @@
     SUBDIR += twiki-TwistyPlugin
     SUBDIR += twiki-WysiwygPlugin
     SUBDIR += twill
+    SUBDIR += twms
     SUBDIR += typo
     SUBDIR += typo3
     SUBDIR += typolight
