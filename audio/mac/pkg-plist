@@ -8,6 +8,7 @@ include/mac/APEInfo.h
 include/mac/APELink.h
 include/mac/APETag.h
 include/mac/All.h
+include/mac/BitArray.h
 include/mac/CharacterHelper.h
 include/mac/CircleBuffer.h
 include/mac/GlobalFunctions.h
@@ -17,8 +18,10 @@ include/mac/MACLib.h
 include/mac/MACProgressHelper.h
 include/mac/MACUtils.h
 include/mac/NoWindows.h
+include/mac/Prepare.h
 include/mac/SmartPtr.h
 include/mac/StdLibFileIO.h
+include/mac/UnBitArrayBase.h
 include/mac/config.h
 lib/libmac.a
 lib/libmac.la
