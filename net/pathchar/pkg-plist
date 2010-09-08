@@ -1,6 +1,0 @@
-@comment $FreeBSD$
-bin/pathchar
-%%PORTDOCS%%%%DOCSDIR%%/README.pathchar
-%%PORTDOCS%%%%DOCSDIR%%/pathcharnotes.html
-%%PORTDOCS%%%%DOCSDIR%%/pathchar.mantxt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

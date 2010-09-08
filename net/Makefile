@@ -724,7 +724,6 @@
     SUBDIR += panoptis
     SUBDIR += paris-traceroute
     SUBDIR += passlogd
-    SUBDIR += pathchar
     SUBDIR += pathneck
     SUBDIR += pbnc
     SUBDIR += pcbsd-netmanager

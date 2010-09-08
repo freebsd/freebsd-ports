@@ -384,7 +384,6 @@
     SUBDIR += linux-flock
     SUBDIR += linux-libgtkembedmoz
     SUBDIR += linux-mplayer-plugin
-    SUBDIR += linux-nvu
     SUBDIR += linux-opera
     SUBDIR += linux-seamonkey
     SUBDIR += linuxpluginwrapper

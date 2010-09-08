@@ -51,7 +51,6 @@
     SUBDIR += hrktorrent
     SUBDIR += hx
     SUBDIR += i2p
-    SUBDIR += javadc
     SUBDIR += jigdo
     SUBDIR += kmldonkey
     SUBDIR += ktorrent
