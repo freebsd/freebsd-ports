@@ -4917,9 +4917,23 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Service/Twitter/Exception.php
 %%DATADIR%%/library/Zend/Service/Twitter/Search.php
 %%DATADIR%%/library/Zend/Service/WindowsAzure/Credentials/CredentialsAbstract.php
+%%DATADIR%%/library/Zend/Service/WindowsAzure/Credentials/Exception.php
 %%DATADIR%%/library/Zend/Service/WindowsAzure/Credentials/SharedAccessSignature.php
 %%DATADIR%%/library/Zend/Service/WindowsAzure/Credentials/SharedKey.php
 %%DATADIR%%/library/Zend/Service/WindowsAzure/Credentials/SharedKeyLite.php
+%%DATADIR%%/library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationDataSources.php
+%%DATADIR%%/library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationDiagnosticInfrastructureLogs.php
+%%DATADIR%%/library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationDirectories.php
+%%DATADIR%%/library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationInstance.php
+%%DATADIR%%/library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationLogs.php
+%%DATADIR%%/library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationObjectBaseAbstract.php
+%%DATADIR%%/library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationPerformanceCounters.php
+%%DATADIR%%/library/Zend/Service/WindowsAzure/Diagnostics/ConfigurationWindowsEventLog.php
+%%DATADIR%%/library/Zend/Service/WindowsAzure/Diagnostics/DirectoryConfigurationSubscription.php
+%%DATADIR%%/library/Zend/Service/WindowsAzure/Diagnostics/Exception.php
+%%DATADIR%%/library/Zend/Service/WindowsAzure/Diagnostics/LogLevel.php
+%%DATADIR%%/library/Zend/Service/WindowsAzure/Diagnostics/Manager.php
+%%DATADIR%%/library/Zend/Service/WindowsAzure/Diagnostics/PerformanceCounterSubscription.php
 %%DATADIR%%/library/Zend/Service/WindowsAzure/Exception.php
 %%DATADIR%%/library/Zend/Service/WindowsAzure/RetryPolicy/Exception.php
 %%DATADIR%%/library/Zend/Service/WindowsAzure/RetryPolicy/NoRetry.php
@@ -4934,10 +4948,13 @@ bin/zf.php
 %%DATADIR%%/library/Zend/Service/WindowsAzure/Storage/BlobContainer.php
 %%DATADIR%%/library/Zend/Service/WindowsAzure/Storage/BlobInstance.php
 %%DATADIR%%/library/Zend/Service/WindowsAzure/Storage/DynamicTableEntity.php
+%%DATADIR%%/library/Zend/Service/WindowsAzure/Storage/LeaseInstance.php
+%%DATADIR%%/library/Zend/Service/WindowsAzure/Storage/PageRegionInstance.php
 %%DATADIR%%/library/Zend/Service/WindowsAzure/Storage/Queue.php
 %%DATADIR%%/library/Zend/Service/WindowsAzure/Storage/QueueInstance.php
 %%DATADIR%%/library/Zend/Service/WindowsAzure/Storage/QueueMessage.php
 %%DATADIR%%/library/Zend/Service/WindowsAzure/Storage/SignedIdentifier.php
+%%DATADIR%%/library/Zend/Service/WindowsAzure/Storage/StorageEntityAbstract.php
 %%DATADIR%%/library/Zend/Service/WindowsAzure/Storage/Table.php
 %%DATADIR%%/library/Zend/Service/WindowsAzure/Storage/TableEntity.php
 %%DATADIR%%/library/Zend/Service/WindowsAzure/Storage/TableEntityQuery.php
@@ -8741,6 +8758,8 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/Credentials/SharedAccessSignatureTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/Credentials/SharedKeyLiteTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/Credentials/SharedKeyTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/Diagnostics/AllTests.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/Diagnostics/ManagerTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/DynamicTableEntityTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/QueueStorageTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/RetryPolicyTest.php
@@ -9374,6 +9393,7 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Session
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Yahoo
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/Diagnostics
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure/Credentials
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/WindowsAzure
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Service/Twitter/_files
@@ -10159,6 +10179,7 @@ bin/zf.php
 @dirrm %%DATADIR%%/library/Zend/Service/WindowsAzure/Storage/Blob
 @dirrm %%DATADIR%%/library/Zend/Service/WindowsAzure/Storage
 @dirrm %%DATADIR%%/library/Zend/Service/WindowsAzure/RetryPolicy
+@dirrm %%DATADIR%%/library/Zend/Service/WindowsAzure/Diagnostics
 @dirrm %%DATADIR%%/library/Zend/Service/WindowsAzure/Credentials
 @dirrm %%DATADIR%%/library/Zend/Service/WindowsAzure
 @dirrm %%DATADIR%%/library/Zend/Service/Twitter
