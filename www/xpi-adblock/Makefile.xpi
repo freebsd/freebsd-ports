@@ -188,11 +188,19 @@ relink-all:
 		${LN} -sf $$_xpi $$_app ${_Q} ; } ; }
 .endif
 
+.if !target(xpi-post-extract)
+xpi-post-extract:
+.endif
+
+post-extract: xpi-post-extract
+	@${RM} -rf ${WRKSRC}/META-INF
+
 # Maintainer section
 xpi-gen:	extract
 	@${ECHO_CMD} -n 'XPI_ID='
-	@${GREP} -Em1 'em:id|<id>' ${WRKSRC}/install.rdf | ${CUT} -f2- -d\> | \
-	${CUT} -f1 -d\< | ${CUT} -f2 -d\"
+	@${SED} -En '/<(RDF:)?Description (RDF:)?about="urn:mozilla:install-manifest"/,/>/p' ${WRKSRC}/install.rdf | \
+		${GREP} -Em1 'em:id|<id>' | ${CUT} -f2- -d\> | \
+		${CUT} -f1 -d\< | ${CUT} -f2 -d\"
 	@${ECHO_CMD} -n 'XPI_FILES='
 	@cd ${WRKSRC} && ${FIND} -s . -not -type d | cut -f2- -d/ | ${TR} '\n' ' '
 	@if [ -d ${FILESDIR} -a -f ${FILESDIR}/chrome.manifest ] ; \
