@@ -29,6 +29,13 @@ OPTIONS=	HEIMDAL	"Use Heimdal Kerberos for ss/com_err"	no
 
 .include <bsd.port.options.mk>
 
+# On 6.X zephyr install libzephyr.so.4 and libzephyr.so.4.0 for others
+.if ${OSVERSION} < 700000
+PLIST_SUB+=	ZEPHYR_SHVERSION=4
+.else
+PLIST_SUB+=	ZEPHYR_SHVERSION=4.0
+.endif
+
 .if defined(WITH_HEIMDAL)
 LIB_DEPENDS+=	ss.1:${PORTSDIR}/security/heimdal
 .if defined(HEIMDAL_HOME)
