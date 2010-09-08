@@ -979,6 +979,7 @@
     SUBDIR += py-4suite
     SUBDIR += py-4suite-xml
     SUBDIR += py-HyperText
+    SUBDIR += py-MarkupSafe
     SUBDIR += py-Pootle
     SUBDIR += py-Tempita
     SUBDIR += py-asv
