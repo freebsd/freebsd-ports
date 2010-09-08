@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gearmand
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gearmand/trunk/${PORTVERSION}/+download/ \
 		LOCAL/glarkin
@@ -17,7 +17,6 @@ COMMENT=	Gearman C Server and Library
 LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
-CONFIGURE_ARGS=	--disable-libdrizzle --disable-libtokyocabinet
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 FETCH_ARGS=	-pRr
 GNU_CONFIGURE=	yes
@@ -25,9 +24,11 @@ USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	gearmand.sh
 
-OPTIONS=	MEMCACHED "Enable memcached support" on \
+OPTIONS=	DRIZZLE "Enable libdrizzle support" off \
+		MEMCACHED "Enable memcached support" on \
 		PQ "Enable PostgreSQL support" off \
-		SQLITE3 "Enable SQLite3 support" off
+		SQLITE3 "Enable SQLite3 support" off \
+		TC "Enable Tokyo Cabinet support" off
 
 MAN1=		gearman.1
 MAN3=		gearman_bugreport.3 \
@@ -145,6 +146,13 @@ MAN8=		gearmand.8
 
 .include <bsd.port.pre.mk>
 
+.ifdef(WITH_DRIZZLE)
+CONFIGURE_ARGS+=	--with-libdrizzle-prefix
+LIB_DEPENDS+=		drizzle:${PORTSDIR}/databases/libdrizzle
+.else
+CONFIGURE_ARGS+=	--disable-libdrizzle
+.endif
+
 .ifdef(WITHOUT_MEMCACHED)
 CONFIGURE_ARGS+=	--disable-libmemcached
 .else
@@ -164,6 +172,13 @@ CONFIGURE_ARGS+=	--with-libsqlite3-prefix
 USE_SQLITE=	yes
 .else
 CONFIGURE_ARGS+=	--disable-libsqlite3
+.endif
+
+.ifdef(WITH_TC)
+CONFIGURE_ARGS+=	--with-libtokyocabinet-prefix
+LIB_DEPENDS+=		tokyocabinet:${PORTSDIR}/databases/tokyocabinet
+.else
+CONFIGURE_ARGS+=	--disable-libtokyocabinet
 .endif
 
 .include <bsd.port.post.mk>
