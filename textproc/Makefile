@@ -392,6 +392,7 @@
     SUBDIR += mk-aspell
     SUBDIR += mkcatalog
     SUBDIR += ml-aspell
+    SUBDIR += ml1
     SUBDIR += mn-aspell
     SUBDIR += modlogan
     SUBDIR += mr-aspell
