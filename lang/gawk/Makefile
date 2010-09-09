@@ -6,7 +6,7 @@
 
 PORTNAME=	gawk
 PORTVERSION=	3.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gawk
@@ -32,5 +32,8 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+post-extract:
+	@${RM} -f ${WRKSRC}/doc/*.info
 
 .include <bsd.port.mk>
