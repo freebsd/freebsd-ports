@@ -10,6 +10,7 @@
     SUBDIR += abcl
     SUBDIR += afnix
     SUBDIR += alisp
+    SUBDIR += algol68g
     SUBDIR += arena
     SUBDIR += asn1c
     SUBDIR += atlast
