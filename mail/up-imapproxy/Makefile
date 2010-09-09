@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	imapproxy
-PORTVERSION=	1.2.6
-PORTREVISION=	2
+PORTVERSION=	1.2.7
 CATEGORIES=	mail
-MASTER_SITES=	http://www.imapproxy.org/downloads/
+MASTER_SITES=	ftp://ftp.univie.ac.at/applications/www.imapproxy.org/downloads/
 PKGNAMEPREFIX=	up-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
