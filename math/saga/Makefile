@@ -33,12 +33,14 @@ MAN1=		saga_cmd.1 saga_gui.1
 DESKTOP_ENTRIES=	"SAGA GIS" "${COMMENT}" "${DATADIR}/saga_icon_32.xpm" \
 			"saga_gui" "Application;Math;" true
 
-OPTIONS=	UC "Enable Unicode Support" On \
+OPTIONS=	UNICODE "Enable Unicode Support" On \
 		HARU "Enable Haru Free PDF Library (optional)" Off
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_UC)
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_UNICODE)
 WITH_UNICODE=	yes
 CONFIGURE_ARGS+=	--enable-unicode
 .else
@@ -64,6 +66,10 @@ post-patch:
 		${WRKSRC}/src/modules_io/esri_e00/io_esri_e00/e00compr/cpl_port.h \
 		${WRKSRC}/src/modules_io/grid/io_grid_grib2/g2clib-1.0.4/enc_png.c \
 		${WRKSRC}/src/modules_projection/pj_georeference/pj_georeference/lmdif0.c
+.if ${ARCH} == "i386"
+	@${REINPLACE_CMD} -e 's|typedef unsigned long	DWORD;|typedef unsigned int	DWORD;|' \
+		${WRKSRC}/src/saga_core/saga_api/api_core.h
+.endif
 
 post-install:
 	${MKDIR} ${DATADIR}
@@ -71,4 +77,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/xpm/saga_icon_32.xpm ${DATADIR}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
