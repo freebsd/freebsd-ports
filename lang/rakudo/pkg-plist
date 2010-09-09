@@ -4,10 +4,6 @@ lib/parrot/%%PARROT_VERSION%%/dynext/perl6_group.so
 lib/parrot/%%PARROT_VERSION%%/dynext/perl6_ops.so
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Algorithm/Viterbi.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Algorithm/Viterbi.pm
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Config/INI.pir
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Config/INI.pm
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Config/INI/Writer.pir
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Config/INI/Writer.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Configure.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Configure.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/File/Find.pir
@@ -90,7 +86,12 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/perl6.pbc
 %%PORTDOCS%%%%DOCSDIR%%/ROADMAP
 %%PORTDOCS%%%%DOCSDIR%%/S11-Modules-proposal.pod
 %%PORTDOCS%%%%DOCSDIR%%/UsingPerl6-draft.pdf
+%%PORTDOCS%%%%DOCSDIR%%/announce/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/announce/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/announce/README
 %%PORTDOCS%%%%DOCSDIR%%/cheatsheet.txt
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/announce
+@dirrm %%PORTDOCS%%%%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/YAML
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/XML
@@ -108,8 +109,6 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/perl6.pbc
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Form
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/File
-@dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Config/INI
-@dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Config
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Algorithm
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6
