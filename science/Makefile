@@ -133,6 +133,7 @@
     SUBDIR += p5-Geo-ReadGRIB
     SUBDIR += p5-Geo-WebService-Elevation-USGS
     SUBDIR += p5-PerlMol
+    SUBDIR += p5-Physics-Unit
     SUBDIR += paje
     SUBDIR += paraview
     SUBDIR += pcp
