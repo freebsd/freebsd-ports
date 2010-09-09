@@ -42,6 +42,10 @@ LOGS_DIR=	/var/log/suricata
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not configure on 6.X
+.endif
+
 .if defined(WITH_PRELUDE)
 LIB_DEPENDS+=		prelude.20:${PORTSDIR}/security/libprelude
 CONFIGURE_ARGS+=	--enable-prelude
