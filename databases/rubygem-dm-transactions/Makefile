@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dm-transactions
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
