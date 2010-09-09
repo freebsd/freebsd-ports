@@ -9,8 +9,7 @@ PORTNAME=	postgres
 PORTVERSION=	0.7.9.2008.01.28
 PORTREVISION=	1
 CATEGORIES=	databases rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	ruby-pg
+MASTER_SITES=	RG
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ruby interface to PostgreSQL library

@@ -8,8 +8,7 @@
 PORTNAME=		pg
 PORTVERSION=		0.8.0
 CATEGORIES=		databases rubygems
-MASTER_SITES=		RF
-MASTER_SITE_SUBDIR=	ruby-pg
+MASTER_SITES=		RG
 
 MAINTAINER=		ruby@FreeBSD.org
 COMMENT=		Ruby interface to PostgreSQL library

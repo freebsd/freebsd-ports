@@ -7,8 +7,7 @@
 PORTNAME=	ruby-debug-ide
 PORTVERSION=	0.4.10
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	debug-commons
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	IDE interface for ruby-debug

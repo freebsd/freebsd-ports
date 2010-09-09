@@ -7,8 +7,7 @@
 PORTNAME=	archive-tar-minitar
 PORTVERSION=	0.5.2
 CATEGORIES=	archivers rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	ruwiki
+MASTER_SITES=	RG
 DISTNAME=	archive-tar-minitar-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org

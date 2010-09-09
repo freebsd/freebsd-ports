@@ -9,8 +9,7 @@ PORTNAME=	zoom
 PORTVERSION=	0.4.1
 PORTREVISION=	2
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
+MASTER_SITES=	RG
 
 MAINTAINER=	mitsuru@riken.jp
 COMMENT=	A Ruby binding to the Z39.50 Object-Orientation Model (ZOOM)

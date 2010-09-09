@@ -7,8 +7,7 @@
 PORTNAME=	colortools
 PORTVERSION=	1.3.0
 CATEGORIES=	print rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	ruby-pdf
+MASTER_SITES=	RG
 DISTNAME=	color-tools-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org

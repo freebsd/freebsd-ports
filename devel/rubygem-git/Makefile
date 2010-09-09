@@ -7,8 +7,7 @@
 PORTNAME=	git
 PORTVERSION=	1.2.5
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	gems
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A ruby wrapper library around git(1)

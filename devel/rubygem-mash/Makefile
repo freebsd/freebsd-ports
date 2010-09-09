@@ -9,8 +9,7 @@
 PORTNAME=	mash
 PORTVERSION=	0.0.3
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	mash-hash
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Mocking Hash library for Ruby

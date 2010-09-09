@@ -7,8 +7,7 @@
 PORTNAME=	sexp_processor
 PORTVERSION=	3.0.4
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	parsetree
+MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Generic sexp processing tools

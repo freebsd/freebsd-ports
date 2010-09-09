@@ -8,8 +8,7 @@
 PORTNAME=	rubyforge
 PORTVERSION=	2.0.4
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	codeforpeople
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simplistic script which automates rubyforge operations

@@ -7,8 +7,7 @@
 PORTNAME=	columnize
 PORTVERSION=	0.3.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	rocky-hacks
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Sorts an Array in Column Order

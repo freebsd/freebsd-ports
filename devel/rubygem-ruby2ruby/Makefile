@@ -8,8 +8,7 @@
 PORTNAME=	ruby2ruby
 PORTVERSION=	1.2.4
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	seattlerb
+MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A pure ruby code generator easily from ParseTree's Sexps # '

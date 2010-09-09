@@ -7,8 +7,7 @@
 PORTNAME=	fastthread
 PORTVERSION=	1.0.7
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	mongrel
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Optimized replacement for thread.rb primitives
