@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -8,57 +7,174 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/connectors/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/connectors/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/connectors/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/connectors/mxodbc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/connectors/mxodbc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/connectors/mxodbc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/connectors/pyodbc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/connectors/pyodbc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/connectors/pyodbc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/connectors/zxJDBC.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/connectors/zxJDBC.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/connectors/zxJDBC.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/access.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/access.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/access.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/firebird.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/firebird.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/firebird.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/information_schema.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/information_schema.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/information_schema.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/informix.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/informix.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/informix.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/maxdb.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/maxdb.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/maxdb.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/mssql.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/mssql.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/mssql.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/mxODBC.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/mxODBC.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/mxODBC.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/mysql.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/mysql.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/mysql.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/oracle.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/oracle.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/oracle.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/postgres.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/postgres.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/postgres.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/postgresql.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/postgresql.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/postgresql.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/sqlite.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/sqlite.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/sqlite.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/sybase.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/sybase.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases/sybase.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/access/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/access/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/access/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/access/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/access/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/access/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/firebird/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/firebird/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/firebird/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/firebird/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/firebird/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/firebird/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/firebird/kinterbasdb.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/firebird/kinterbasdb.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/firebird/kinterbasdb.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/informix/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/informix/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/informix/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/informix/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/informix/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/informix/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/informix/informixdb.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/informix/informixdb.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/informix/informixdb.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/maxdb/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/maxdb/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/maxdb/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/maxdb/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/maxdb/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/maxdb/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/maxdb/sapdb.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/maxdb/sapdb.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/maxdb/sapdb.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/adodbapi.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/adodbapi.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/adodbapi.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/information_schema.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/information_schema.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/information_schema.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/mxodbc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/mxodbc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/mxodbc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/pymssql.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/pymssql.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/pymssql.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/pyodbc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/pyodbc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/pyodbc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/zxjdbc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/zxjdbc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql/zxjdbc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/mysqlconnector.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/mysqlconnector.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/mysqlconnector.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/mysqldb.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/mysqldb.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/mysqldb.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/oursql.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/oursql.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/oursql.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/pyodbc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/pyodbc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/pyodbc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/zxjdbc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/zxjdbc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql/zxjdbc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/oracle/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/oracle/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/oracle/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/oracle/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/oracle/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/oracle/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/oracle/cx_oracle.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/oracle/cx_oracle.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/oracle/cx_oracle.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/oracle/zxjdbc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/oracle/zxjdbc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/oracle/zxjdbc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgres.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgres.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgres.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/pg8000.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/pg8000.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/pg8000.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/psycopg2.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/psycopg2.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/psycopg2.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/pypostgresql.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/pypostgresql.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/pypostgresql.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/zxjdbc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/zxjdbc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql/zxjdbc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sqlite/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sqlite/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sqlite/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sqlite/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sqlite/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sqlite/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sqlite/pysqlite.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sqlite/pysqlite.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sqlite/pysqlite.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sybase/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sybase/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sybase/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sybase/base.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sybase/base.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sybase/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sybase/mxodbc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sybase/mxodbc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sybase/mxodbc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sybase/pyodbc.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sybase/pyodbc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sybase/pyodbc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sybase/pysybase.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sybase/pysybase.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sybase/pysybase.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/base.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/base.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/base.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/ddl.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/ddl.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/ddl.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/default.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/default.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/default.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/reflection.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/reflection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/reflection.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/strategies.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/strategies.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine/strategies.pyo
@@ -83,6 +199,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/declarative.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/declarative.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/declarative.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/horizontal_shard.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/horizontal_shard.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/horizontal_shard.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/orderinglist.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/orderinglist.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext/orderinglist.pyo
@@ -155,15 +274,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/unitofwork.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/unitofwork.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/unitofwork.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/uowdumper.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/uowdumper.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/uowdumper.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm/util.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/pool.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/pool.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/pool.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/processors.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/processors.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/processors.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/queue.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/queue.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/queue.pyo
@@ -203,6 +322,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/engines.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/engines.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/engines.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/entities.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/entities.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/entities.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/noseplugin.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/noseplugin.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/noseplugin.pyo
@@ -224,6 +346,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/testing.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/testing.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/testing.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/util.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/util.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/util.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/topological.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/topological.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/topological.pyo
@@ -233,8 +358,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/util.pyo
-%%PORTDOCS%%%%DOCSDIR%%/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/dbengine.html
+%%PORTDOCS%%%%DOCSDIR%%/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/genindex.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/intro.html
@@ -249,12 +374,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/reference/dialects/mssql.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/dialects/mysql.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/dialects/oracle.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/dialects/postgres.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/dialects/postgresql.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/dialects/sqlite.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/dialects/sybase.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ext/associationproxy.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ext/compiler.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ext/declarative.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/ext/horizontal_shard.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ext/index.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ext/orderinglist.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/ext/serializer.html
@@ -270,23 +396,31 @@
 %%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/connections.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/expressions.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/index.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/inspector.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/interfaces.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/pooling.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/schema.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/types.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/util.html
 %%PORTDOCS%%%%DOCSDIR%%/search.html
 %%PORTDOCS%%%%DOCSDIR%%/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/session.html
 %%PORTDOCS%%%%DOCSDIR%%/sqlexpression.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adjacencytree/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adjacencytree/basic_tree.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adjacency_list/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/adjacency_list/adjacency_list.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/association/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/association/basic_association.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/association/proxied_association.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/collections/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/collections/large_collection.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/advanced.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/environment.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/fixture_data.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/helloworld.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/local_session_caching.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/meta.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/model.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/relation_caching.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom_attributes/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom_attributes/custom_management.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom_attributes/listen_for_events.py
@@ -302,47 +436,45 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/elementtree/test2.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/elementtree/test3.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphs/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphs/graph1.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphs/directed_graph.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inheritance/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inheritance/concrete.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inheritance/polymorph.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/inheritance/single.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/large_collection/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/large_collection/large_collection.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nested_sets/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nested_sets/nested_sets.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pickle/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pickle/custom_pickler.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/poly_assoc/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/poly_assoc/poly_assoc.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/poly_assoc/poly_assoc_fk.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/poly_assoc/poly_assoc_generic.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/polymorph/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/polymorph/concrete.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/polymorph/polymorph.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/polymorph/single.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/postgis/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/postgis/postgis.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/query_caching/__init__.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/query_caching/implicit.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/query_caching/per_session.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/query_caching/query_caching.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sharding/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sharding/attribute_shard.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/versioning/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/versioning/history_meta.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/versioning/test_versioning.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/dictlike-polymorphic.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/dictlike.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/vertical.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/vertical
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/versioning
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sharding
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/query_caching
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/postgis
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/polymorph
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/poly_assoc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pickle
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nested_sets
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/large_collection
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/inheritance
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/elementtree
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dynamic_dict
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/derived_attributes
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/custom_attributes
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/collections
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/beaker_caching
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/association
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/adjacencytree
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/adjacency_list
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/sqlalchemy
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/orm
@@ -355,7 +487,19 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/ext
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/engine
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sybase
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/sqlite
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/postgresql
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/oracle
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mysql
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/mssql
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/maxdb
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/informix
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/firebird
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects/access
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/dialects
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/databases
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/connectors
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
