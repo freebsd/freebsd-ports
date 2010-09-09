@@ -7,6 +7,7 @@
 
 PORTNAME=	Jinja2
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -17,6 +18,7 @@ COMMENT=	A fast, and easy to use stand-alone template engine
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	easy_install
+PYEASYINSTALL_ARCHDEP=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
