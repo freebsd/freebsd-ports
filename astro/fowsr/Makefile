@@ -38,6 +38,9 @@ do-install:
 
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
+CFLAGS+=	-I${PREFIX}/include
+LDFLAGS+=	"-L${PREFIX}/lib"
+MAKE_ENV+=	"LDFLAGS=${LDFLAGS}"
 .endif
 
 .include <bsd.port.post.mk>
