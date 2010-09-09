@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	timelimit
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/sysutils/timelimit/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Limit the absolute execution time of a process
 
+LICENSE=	BSD
 MAN1=		timelimit.1
 PLIST_FILES=	bin/timelimit
 
