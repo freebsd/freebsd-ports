@@ -7,7 +7,7 @@
 
 PORTNAME=	clamsmtp
 PORTVERSION=	1.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://memberwebs.com/stef/software/clamsmtp/
 
@@ -54,6 +54,10 @@ pre-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS}," ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,/var/run/clamav/clamd,/var/run/clamav/clamd.sock," \
+		${WRKSRC}/doc/clamsmtpd.conf \
+		${WRKSRC}/doc/clamsmtpd.conf.5 \
+		${WRKSRC}/src/clamsmtpd.c
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/clamsmtpd.conf ${PREFIX}/etc/clamsmtpd.conf-sample
