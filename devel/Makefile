@@ -2528,6 +2528,7 @@
     SUBDIR += pecl-uploadprogress
     SUBDIR += pecl-uuid
     SUBDIR += pecl-vld
+    SUBDIR += pecl-xhprof
     SUBDIR += pedisassem
     SUBDIR += performance
     SUBDIR += perlconsole
