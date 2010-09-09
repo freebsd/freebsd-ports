@@ -1,0 +1,10 @@
+PiTiVi relies on the GStreamer multimedia framework and the accompanying
+plugins to handle the various medias and their transformation. PiTiVi being
+a novelty usage of GStreamer, there are some problems with plugins not 
+handling completely/correctly the GStreamer API. These problems are in 
+the process of being corrected.
+
+This means that it is not guaranteed that all codecs, containers or effects
+work properly with PiTiVi.
+
+WWW: http://www.pitivi.org
