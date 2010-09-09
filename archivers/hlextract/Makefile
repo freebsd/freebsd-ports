@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	hlextract
-PORTVERSION=	2.0.8
+PORTVERSION=	2.3.0
 CATEGORIES=	archivers games
-MASTER_SITES=	http://nemesis.thewavelength.net/files/files/ \
-		http://freebsd.nsu.ru/distfiles/
+MASTER_SITES=	http://nemesis.thewavelength.net/files/files/
 DISTNAME=	hllib${PORTVERSION:S/.//g}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Utility to extract data from various Half-Life file formats
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	hl.2:${PORTSDIR}/games/hllib
 
