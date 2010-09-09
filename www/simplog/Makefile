@@ -8,16 +8,12 @@
 PORTNAME=	simplog
 PORTVERSION=	0.9.3.4
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.9.3.2:src \
-		http://www.simplog.org/dl/:update
-
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.9.3.2:src
 DISTFILES=	${PORTNAME}-0.9.3.2.tar.gz:src \
 		${PORTNAME}_update_only-${PORTVERSION}.tar.gz:update
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete and powerful blogging tool
-
-BROKEN=		bad checksum
 
 DATADIR=	${PREFIX}/www/simplog
 NO_BUILD=	yes
