@@ -26,6 +26,9 @@ PATCHFILES:=	${PATCHFILES:N6.4.${p}}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Vi "workalike", with many additional features
 
+DEPRECATED=	Outdated, superceded by editors/vim7 and has multiple security issues
+EXPIRATION_DATE=2010-09-17
+
 SLAVEDIRS=	editors/vim-lite
 
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
@@ -38,7 +41,7 @@ WITH_CSCOPE=	yes
 USE_BZIP2=	yes
 DIST_SUBDIR=	vim
 WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/\.[0-9]*$//:S/.//g}/src
-PATCH_DIST_ARGS= -d ${WRKSRC:S/src$//} --batch --forward --quiet -E ${PATCH_DIST_STRIP}
+PATCH_DIST_ARGS=	-d ${WRKSRC:S/src$//} --batch --forward --quiet -E ${PATCH_DIST_STRIP}
 # consider
 #PATCH_DIST_ARGS=	-t
 MAKE_ARGS+=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib ${CSCOPE_ARG}"

@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f866d2af-bbba-11df-8a8d-0008743bf21a">
+    <topic>vim6 -- heap-based overflow while parsing shell metacharacters</topic>
+    <affects>
+      <package>
+	<name>vim6</name>
+	<name>vim6+ruby</name>
+	<range><ge>6.2.429</ge><lt>6.3.62</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Description for CVE-2008-3432 says:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3432">
+	  <p>Heap-based buffer overflow in the mch_expand_wildcards
+	  function in os_unix.c in Vim 6.2 and 6.3 allows user-assisted
+	  attackers to execute arbitrary code via shell metacharacters
+	  in filenames, as demonstrated by the netrw.v3 test case.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2008-3432</cvename>
+      <url>http://www.openwall.com/lists/oss-security/2008/07/15/4</url>
+    </references>
+    <dates>
+      <discovery>2008-07-31</discovery>
+      <entry>2010-09-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4a21ce2c-bb13-11df-8e32-000f20797ede">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
