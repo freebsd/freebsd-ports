@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	toilet
-PORTVERSION=	0.1
-PORTREVISION=	3
+PORTVERSION=	0.2
 CATEGORIES=	misc
-MASTER_SITES=	http://libcaca.zoy.org/files/ CENKES
+MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/toilet/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced figlet(6)
 
-LIB_DEPENDS=	cucul.0:${PORTSDIR}/graphics/libcaca
+LIB_DEPENDS=	caca.0:${PORTSDIR}/graphics/libcaca
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=""
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS+=	-fno-strength-reduce
 MAN1=		${PORTNAME}.1
 PORT_VERBS=	${PORTNAME} caca2tlf share/figlet/*tlf
