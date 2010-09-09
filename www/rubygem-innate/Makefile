@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	innate
-PORTVERSION=	2010.04
-PORTREVISION=	1
+PORTVERSION=	2010.07
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -15,8 +14,6 @@ MAINTAINER=	jyyou@cs.nctu.edu.tw
 COMMENT=	Powerful web-framework wrapper for Rack
 
 RUN_DEPENDS=	rubygem-rack>=1.1.0:${PORTSDIR}/www/rubygem-rack
-
-BROKEN=	Depends on exact version of rack 1.1.0
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
