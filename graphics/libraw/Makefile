@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	libraw
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.su/data/
 DISTNAME=	LibRaw-${PORTVERSION}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Library for manipulating raw images
+
+LICENSE=	LGPL21 CDDL
+LICENSE_COMB=	dual
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable optimization" off \
 		SHARED_LIBS "Install shared libraries" off
