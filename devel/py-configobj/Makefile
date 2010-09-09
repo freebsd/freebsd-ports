@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	configobj
-PORTVERSION=	4.6.0
+PORTVERSION=	4.7.2
 CATEGORIES=	devel python
-MASTER_SITES=	SF \
+MASTER_SITES=	http://www.voidspace.org.uk/downloads/ \
+		SF \
 		${MASTER_SITE_GOOGLE_CODE}
 
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
