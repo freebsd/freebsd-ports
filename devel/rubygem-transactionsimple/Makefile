@@ -7,8 +7,7 @@
 PORTNAME=	transactionsimple
 PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	trans-simple
+MASTER_SITES=	RG
 DISTNAME=	transaction-simple-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org

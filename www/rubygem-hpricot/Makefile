@@ -7,8 +7,7 @@
 PORTNAME=	hpricot
 PORTVERSION=	0.8.2
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	gems
+MASTER_SITES=	RG
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Fast, Enjoyable HTML Parser for Ruby

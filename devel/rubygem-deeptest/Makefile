@@ -8,8 +8,7 @@
 PORTNAME=	deep_test
 PORTVERSION=	1.2.2
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	deep-test
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Enable tests to run in parallel using multiple processes

@@ -8,8 +8,7 @@
 PORTNAME=	echoe
 PORTVERSION=	3.2
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	fauna
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rake tasks for docs, extension compiling, testing and deployment

@@ -8,8 +8,7 @@
 PORTNAME=	snmp
 PORTVERSION=	1.0.2
 CATEGORIES=	net-mgmt rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	${PORTNAME}lib
+MASTER_SITES=	RG
 
 MAINTAINER=	mhjacks@swbell.net
 COMMENT=	SNMP library for Ruby

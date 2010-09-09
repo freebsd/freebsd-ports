@@ -7,8 +7,7 @@
 PORTNAME=	htauth
 PORTVERSION=	1.0.3
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	copiousfreetime
+MASTER_SITES=	RG
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Replacement for the Apache htdigest and htpasswd

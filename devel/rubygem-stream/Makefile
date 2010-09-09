@@ -9,8 +9,7 @@ PORTNAME=	stream
 PORTVERSION=	0.5
 PORTREVISION=	2
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	rgl
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Interface for external iterators

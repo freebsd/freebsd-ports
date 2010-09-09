@@ -8,8 +8,7 @@ PORTNAME=	gem_plugin
 PORTVERSION=	0.2.3
 PORTREVISION=	1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=     mongrel
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	Gem Based Plugin System

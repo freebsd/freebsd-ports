@@ -9,8 +9,7 @@ PORTNAME=	rascut
 PORTVERSION=	0.2.1
 PORTREVISION=	1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	hotchpotch
+MASTER_SITES=	RG
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Ruby ActionSCript UTility

@@ -8,8 +8,7 @@
 PORTNAME=	net-scp
 PORTVERSION=	1.0.2
 CATEGORIES=	security rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	net-ssh
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Non-interactive SCP processing

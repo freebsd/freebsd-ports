@@ -7,8 +7,7 @@
 PORTNAME=	jdbc-mysql
 PORTVERSION=	5.0.4
 CATEGORIES=	databases rubygems java
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	jruby-extras
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	MySQL JDBC driver for JRuby

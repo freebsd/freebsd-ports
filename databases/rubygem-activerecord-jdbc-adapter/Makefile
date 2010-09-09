@@ -7,8 +7,7 @@
 PORTNAME=	activerecord-jdbc-adapter
 PORTVERSION=	0.9.2
 CATEGORIES=	databases rubygems java
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	jruby-extras
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	JDBC adapter for ActiveRecord, for use within JRuby on Rails

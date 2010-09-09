@@ -7,8 +7,7 @@
 PORTNAME=	htmltools
 PORTVERSION=	1.10
 CATEGORIES=	textproc www rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	ruby-htmltools
+MASTER_SITES=	RG
 DISTNAME=	htmltools-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org

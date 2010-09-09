@@ -9,8 +9,7 @@ PORTNAME=	net-ssh-gateway
 PORTVERSION=	1.0.1
 PORTREVISION=	1
 CATEGORIES=	security rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	net-ssh
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Establish Net::SSH connections through firewalls

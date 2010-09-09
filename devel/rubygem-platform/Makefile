@@ -8,8 +8,7 @@
 PORTNAME=	platform
 PORTVERSION=	0.4.0
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	platform
+MASTER_SITES=	RG
 DISTNAME=	Platform-${PORTVERSION}
 
 MAINTAINER=	don@na.rim.or.jp

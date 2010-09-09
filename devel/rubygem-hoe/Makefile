@@ -7,8 +7,7 @@
 PORTNAME=	hoe
 PORTVERSION=	2.6.2
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	seattlerb
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A simple rake/rubygems helper for project Rakefiles

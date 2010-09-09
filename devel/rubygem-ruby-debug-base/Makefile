@@ -7,8 +7,7 @@
 PORTNAME=	ruby-debug-base
 PORTVERSION=	0.10.3
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	ruby-debug
+MASTER_SITES=	RG
 
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	Fast implementation of the standard Ruby debugger

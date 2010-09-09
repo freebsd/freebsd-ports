@@ -8,8 +8,7 @@
 PORTNAME=	httpclient
 PORTVERSION=	2.1.5.2
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	soap4r
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Yet another HTTP client implementation by NaHi

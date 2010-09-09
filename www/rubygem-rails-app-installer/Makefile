@@ -8,8 +8,7 @@
 PORTNAME=	rails-app-installer
 PORTVERSION=	0.2.0
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	rails-installer
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An installer for Rails apps

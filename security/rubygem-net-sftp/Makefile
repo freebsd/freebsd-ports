@@ -8,8 +8,7 @@
 PORTNAME=	net-sftp
 PORTVERSION=	2.0.3
 CATEGORIES=	security rubygems
-MASTER_SITES=	RF
-MASTER_SITE_SUBDIR=	net-ssh
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Implementation of the SFTP client protocol
