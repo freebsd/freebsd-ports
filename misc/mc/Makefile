@@ -7,7 +7,7 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.7.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	misc shells
 MASTER_SITES=	http://www.midnight-commander.org/downloads/ \
 		${MASTER_SITE_SUNSITE}
@@ -84,7 +84,7 @@ PLIST_SUB+=	EDITOR=""
 CONFIGURE_ARGS+=--with-screen=ncurses
 .else
 LIB_DEPENDS+=	slang.2:${PORTSDIR}/devel/libslang2
-CONFIGURE_ARGS+=--with-screen=slang
+CONFIGURE_ARGS+=--with-screen=slang --with-slang-includes=${LOCALBASE}/include
 .endif
 
 .if !defined(WITH_SUBSHELL) && (defined(WITHOUT_SUBSHELL) || defined(MINIMAL))
