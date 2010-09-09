@@ -7,18 +7,18 @@
 #
 
 PORTNAME=	rdflib
-PORTVERSION=	2.4.2
+PORTVERSION=	3.0.0
 CATEGORIES=	textproc python
-MASTER_SITES=	http://rdflib.net/
+MASTER_SITES=	http://www.rdflib.net/ \
+		http://www.c-s.li/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	A Python library for RDF manipulation
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-PYEASYINSTALL_ARCHDEP=	yes
+LICENSE=	BSD
 
-FETCH_ARGS=	-prR
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
