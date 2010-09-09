@@ -1,0 +1,25 @@
+%%SITE_PERL%%/Physics/Unit.pm
+%%SITE_PERL%%/Physics/UnitImpl.pm
+%%SITE_PERL%%/Physics/Unit/Scalar.pm
+%%SITE_PERL%%/Physics/Unit/ScalarImpl.pm
+%%SITE_PERL%%/Physics/Unit/ScalarSubtypes.pm
+%%SITE_PERL%%/Physics/Unit/Vector.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Physics/Unit/.packlist
+%%PORTDOCS%%%%DOCSDIR%%/UnitsByName.html
+%%PORTDOCS%%%%DOCSDIR%%/UnitsByType.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ScalarDebug.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ScalarMethods.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ScalarSimple.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/UnitDebug.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/UnitDocExamples.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/UnitGenPages.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/UnitLists.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/UnitSimple.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/VectorDebug.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/VectorSimple.pl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Physics/Unit
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Physics
+@dirrmtry %%SITE_PERL%%/Physics/Unit
+@dirrmtry %%SITE_PERL%%/Physics
