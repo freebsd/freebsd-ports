@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rabbitmq
-PORTVERSION=	1.8.0
+PORTVERSION=	2.0.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -17,13 +17,12 @@ COMMENT=	RabbitMQ is an implementation of AMQP
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang-lite \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson \
 		xmlto:${PORTSDIR}/textproc/xmlto
-RUN_DEPENDS=	erlc:${PORTSDIR}/lang/erlang-lite
+RUN_DEPENDS=	erlc:${PORTSDIR}/lang/erlang-lite \
+		sudo:${PORTSDIR}/security/sudo
 
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_RC_SUBR=	rabbitmq
-
-MANUAL_PACKAGE_BUILD=	erlang beam.smp hangs on pointyhat
 
 RABBITMQ_GID=	135
 RABBITMQ_GROUP=	rabbitmq
@@ -38,8 +37,7 @@ SUB_LIST=	RABBITMQ_GID=${RABBITMQ_GID} \
 		RABBITMQ_UID=${RABBITMQ_UID} \
 		RABBITMQ_USER=${RABBITMQ_USER}
 
-MAN1=		rabbitmq-multi.1 rabbitmq-server.1 rabbitmqctl.1 \
-		rabbitmq-activate-plugins.1 rabbitmq-deactivate-plugins.1
+MAN1=		rabbitmq-multi.1 rabbitmq-server.1 rabbitmqctl.1
 MAN5=		rabbitmq.conf.5
 MANCOMPRESSED=	yes
 
