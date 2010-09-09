@@ -27,8 +27,6 @@ OPTIONS=	MYSQL "Enable MySQL support" off \
 SUB_FILES+=	pkg-message README.FreeBSD.jabberd14 \
 		README.FreeBSD.jabberd2 README.FreeBSD.external
 
-CFLAGS+=	-I${LOCALBASE}/include
-
 DOCFILES=	AUTHORS COPYING ChangeLog FAQ LICENSE README TODO \
 		XEP0045_SUPPORT muc-default.xml style.css
 
@@ -82,7 +80,7 @@ SUB_LIST+=	JABBER_REQUIRE="${JABBER_REQUIRE}" \
 post-patch:
 	@${REINPLACE_CMD} -e 's/=$$(CFLAGS)/=/g;s/^CFLAGS[:]*=/CFLAGS+=/g' \
 		-e 's/^CC:*=/CC?=/g;s|gcc |$$(CC) |;s|-O2||g' \
-		-e 's#`pkg-config#`${LOCALBASE}/bin/pkg-config#g' \
+		-e 's#`pkg-config#-I${LOCALBASE}/include `${LOCALBASE}/bin/pkg-config#g' \
 		${WRKSRC}/Makefile ${WRKSRC}/*/Makefile \
 		${WRKSRC}/*/*/Makefile
 	@${REINPLACE_CMD} -e 's#<spool>\./spool/chat.localhost#<spool>${JABBER_SPOOLDIR}/conference.localhost#g' \
