@@ -7,7 +7,7 @@
 
 PORTNAME=	socket
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils net ipv6
 MASTER_SITES=	http://wolfram.schneider.org/src/
 
