@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	bsdconv
-PORTVERSION=	3.5
+PORTVERSION=	3.6.2
 CATEGORIES=	converters perl5
 MASTER_SITES=	http://security-hole.info/distfile/
 PKGNAMEPREFIX=	p5-
-DISTNAME=	buganini-bsdconv-c14ef1b
+DISTNAME=	buganini-bsdconv-3.6.2-0-g66aab4b
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Perl wrapper for bsdconv
@@ -21,7 +21,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		bsdconv.3
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/wrapper/perl
+WRKSRC=		${WRKDIR}/buganini-bsdconv-66aab4b/wrapper/perl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \

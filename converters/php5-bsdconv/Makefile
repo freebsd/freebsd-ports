@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	bsdconv
-PORTVERSION=	3.5
+PORTVERSION=	3.6.2
 CATEGORIES=	converters
 MASTER_SITES=	http://security-hole.info/distfile/
 PKGNAMEPREFIX=	php5-
-DISTNAME=	buganini-bsdconv-c14ef1b
+DISTNAME=	buganini-bsdconv-3.6.2-0-g66aab4b
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	PHP wrapper for bsdconv
@@ -24,6 +24,6 @@ USE_PHPEXT=	yes
 PHP_MODNAME=	bsdconv
 CONFIGURE_ARGS+=--with-bsdconv=${LOCALBASE}
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/wrapper/php
+WRKSRC=		${WRKDIR}/buganini-bsdconv-66aab4b/wrapper/php
 
 .include <bsd.port.mk>
