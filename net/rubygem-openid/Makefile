@@ -8,8 +8,7 @@
 PORTNAME=	openid
 PORTVERSION=	2.1.8
 CATEGORIES=	net rubygems
-MASTER_SITES=	http://www.openidenabled.com/files/ruby-openid/packages/ \
-		RG
+MASTER_SITES=	RG
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
