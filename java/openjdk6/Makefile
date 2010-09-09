@@ -147,8 +147,14 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 USE_DISPLAY=	yes
 .endif
 
-BUILD_JOBS_NUMBER!=	${SYSCTL} -n kern.smp.cpus
+.if !defined(DISABLE_MAKE_JOBS)
+.if defined(MAKE_JOBS_NUMBER)
+BUILD_JOBS_NUMBER=	${MAKE_JOBS_NUMBER}
+.else
+BUILD_JOBS_NUMBER=	`${SYSCTL} -n kern.smp.cpus`
+.endif
 MAKE_ENV+=	HOTSPOT_BUILD_JOBS=${BUILD_JOBS_NUMBER}
+.endif
 
 COPYDIRS=	\
 	hotspot/src/os/linux/launcher \
