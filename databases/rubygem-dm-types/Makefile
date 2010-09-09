@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	dm-types
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataMapper plugin providing extra data types
 
-RUN_DEPENDS=	rubygem-dm-core>=1.0.0:${PORTSDIR}/databases/rubygem-dm-core \
+RUN_DEPENDS=	rubygem-dm-core>=1.0.1:${PORTSDIR}/databases/rubygem-dm-core \
 				rubygem-stringex>=1.1.0:${PORTSDIR}/devel/rubygem-stringex \
 				rubygem-uuidtools>=2.1.1:${PORTSDIR}/devel/rubygem-uuidtools \
 				rubygem-json_pure>=1.4.3:${PORTSDIR}/devel/rubygem-json_pure \
