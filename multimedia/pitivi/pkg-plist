@@ -1,0 +1,406 @@
+bin/pitivi
+lib/pitivi/python/pitivi/__init__.py
+lib/pitivi/python/pitivi/__init__.pyc
+lib/pitivi/python/pitivi/__init__.pyo
+lib/pitivi/python/pitivi/action.py
+lib/pitivi/python/pitivi/action.pyc
+lib/pitivi/python/pitivi/action.pyo
+lib/pitivi/python/pitivi/application.py
+lib/pitivi/python/pitivi/application.pyc
+lib/pitivi/python/pitivi/application.pyo
+lib/pitivi/python/pitivi/check.py
+lib/pitivi/python/pitivi/check.pyc
+lib/pitivi/python/pitivi/check.pyo
+lib/pitivi/python/pitivi/configure.py
+lib/pitivi/python/pitivi/configure.pyc
+lib/pitivi/python/pitivi/configure.pyo
+lib/pitivi/python/pitivi/device.py
+lib/pitivi/python/pitivi/device.pyc
+lib/pitivi/python/pitivi/device.pyo
+lib/pitivi/python/pitivi/discoverer.py
+lib/pitivi/python/pitivi/discoverer.pyc
+lib/pitivi/python/pitivi/discoverer.pyo
+lib/pitivi/python/pitivi/effects.py
+lib/pitivi/python/pitivi/effects.pyc
+lib/pitivi/python/pitivi/effects.pyo
+lib/pitivi/python/pitivi/elements/__init__.py
+lib/pitivi/python/pitivi/elements/__init__.pyc
+lib/pitivi/python/pitivi/elements/__init__.pyo
+lib/pitivi/python/pitivi/elements/arraysink.py
+lib/pitivi/python/pitivi/elements/arraysink.pyc
+lib/pitivi/python/pitivi/elements/arraysink.pyo
+lib/pitivi/python/pitivi/elements/mixer.py
+lib/pitivi/python/pitivi/elements/mixer.pyc
+lib/pitivi/python/pitivi/elements/mixer.pyo
+lib/pitivi/python/pitivi/elements/singledecodebin.py
+lib/pitivi/python/pitivi/elements/singledecodebin.pyc
+lib/pitivi/python/pitivi/elements/singledecodebin.pyo
+lib/pitivi/python/pitivi/elements/thumbnailsink.py
+lib/pitivi/python/pitivi/elements/thumbnailsink.pyc
+lib/pitivi/python/pitivi/elements/thumbnailsink.pyo
+lib/pitivi/python/pitivi/elements/videofade.py
+lib/pitivi/python/pitivi/elements/videofade.pyc
+lib/pitivi/python/pitivi/elements/videofade.pyo
+lib/pitivi/python/pitivi/encode.py
+lib/pitivi/python/pitivi/encode.pyc
+lib/pitivi/python/pitivi/encode.pyo
+lib/pitivi/python/pitivi/factories/__init__.py
+lib/pitivi/python/pitivi/factories/__init__.pyc
+lib/pitivi/python/pitivi/factories/__init__.pyo
+lib/pitivi/python/pitivi/factories/base.py
+lib/pitivi/python/pitivi/factories/base.pyc
+lib/pitivi/python/pitivi/factories/base.pyo
+lib/pitivi/python/pitivi/factories/file.py
+lib/pitivi/python/pitivi/factories/file.pyc
+lib/pitivi/python/pitivi/factories/file.pyo
+lib/pitivi/python/pitivi/factories/operation.py
+lib/pitivi/python/pitivi/factories/operation.pyc
+lib/pitivi/python/pitivi/factories/operation.pyo
+lib/pitivi/python/pitivi/factories/test.py
+lib/pitivi/python/pitivi/factories/test.pyc
+lib/pitivi/python/pitivi/factories/test.pyo
+lib/pitivi/python/pitivi/factories/timeline.py
+lib/pitivi/python/pitivi/factories/timeline.pyc
+lib/pitivi/python/pitivi/factories/timeline.pyo
+lib/pitivi/python/pitivi/formatters/__init__.py
+lib/pitivi/python/pitivi/formatters/__init__.pyc
+lib/pitivi/python/pitivi/formatters/__init__.pyo
+lib/pitivi/python/pitivi/formatters/base.py
+lib/pitivi/python/pitivi/formatters/base.pyc
+lib/pitivi/python/pitivi/formatters/base.pyo
+lib/pitivi/python/pitivi/formatters/etree.py
+lib/pitivi/python/pitivi/formatters/etree.pyc
+lib/pitivi/python/pitivi/formatters/etree.pyo
+lib/pitivi/python/pitivi/formatters/format.py
+lib/pitivi/python/pitivi/formatters/format.pyc
+lib/pitivi/python/pitivi/formatters/format.pyo
+lib/pitivi/python/pitivi/formatters/playlist.py
+lib/pitivi/python/pitivi/formatters/playlist.pyc
+lib/pitivi/python/pitivi/formatters/playlist.pyo
+lib/pitivi/python/pitivi/instance.py
+lib/pitivi/python/pitivi/instance.pyc
+lib/pitivi/python/pitivi/instance.pyo
+lib/pitivi/python/pitivi/log/__init__.py
+lib/pitivi/python/pitivi/log/__init__.pyc
+lib/pitivi/python/pitivi/log/__init__.pyo
+lib/pitivi/python/pitivi/log/log.py
+lib/pitivi/python/pitivi/log/log.pyc
+lib/pitivi/python/pitivi/log/log.pyo
+lib/pitivi/python/pitivi/log/loggable.py
+lib/pitivi/python/pitivi/log/loggable.pyc
+lib/pitivi/python/pitivi/log/loggable.pyo
+lib/pitivi/python/pitivi/log/termcolor.py
+lib/pitivi/python/pitivi/log/termcolor.pyc
+lib/pitivi/python/pitivi/log/termcolor.pyo
+lib/pitivi/python/pitivi/log/test_log.py
+lib/pitivi/python/pitivi/log/test_log.pyc
+lib/pitivi/python/pitivi/log/test_log.pyo
+lib/pitivi/python/pitivi/pipeline.py
+lib/pitivi/python/pitivi/pipeline.pyc
+lib/pitivi/python/pitivi/pipeline.pyo
+lib/pitivi/python/pitivi/pitivigstutils.py
+lib/pitivi/python/pitivi/pitivigstutils.pyc
+lib/pitivi/python/pitivi/pitivigstutils.pyo
+lib/pitivi/python/pitivi/plugincore.py
+lib/pitivi/python/pitivi/plugincore.pyc
+lib/pitivi/python/pitivi/plugincore.pyo
+lib/pitivi/python/pitivi/pluginmanager.py
+lib/pitivi/python/pitivi/pluginmanager.pyc
+lib/pitivi/python/pitivi/pluginmanager.pyo
+lib/pitivi/python/pitivi/plumber.py
+lib/pitivi/python/pitivi/plumber.pyc
+lib/pitivi/python/pitivi/plumber.pyo
+lib/pitivi/python/pitivi/project.py
+lib/pitivi/python/pitivi/project.pyc
+lib/pitivi/python/pitivi/project.pyo
+lib/pitivi/python/pitivi/projectmanager.py
+lib/pitivi/python/pitivi/projectmanager.pyc
+lib/pitivi/python/pitivi/projectmanager.pyo
+lib/pitivi/python/pitivi/receiver.py
+lib/pitivi/python/pitivi/receiver.pyc
+lib/pitivi/python/pitivi/receiver.pyo
+lib/pitivi/python/pitivi/reflect.py
+lib/pitivi/python/pitivi/reflect.pyc
+lib/pitivi/python/pitivi/reflect.pyo
+lib/pitivi/python/pitivi/settings.py
+lib/pitivi/python/pitivi/settings.pyc
+lib/pitivi/python/pitivi/settings.pyo
+lib/pitivi/python/pitivi/signalgroup.py
+lib/pitivi/python/pitivi/signalgroup.pyc
+lib/pitivi/python/pitivi/signalgroup.pyo
+lib/pitivi/python/pitivi/signalinterface.py
+lib/pitivi/python/pitivi/signalinterface.pyc
+lib/pitivi/python/pitivi/signalinterface.pyo
+lib/pitivi/python/pitivi/sourcelist.py
+lib/pitivi/python/pitivi/sourcelist.pyc
+lib/pitivi/python/pitivi/sourcelist.pyo
+lib/pitivi/python/pitivi/sourcelist_undo.py
+lib/pitivi/python/pitivi/sourcelist_undo.pyc
+lib/pitivi/python/pitivi/sourcelist_undo.pyo
+lib/pitivi/python/pitivi/stream.py
+lib/pitivi/python/pitivi/stream.pyc
+lib/pitivi/python/pitivi/stream.pyo
+lib/pitivi/python/pitivi/threads.py
+lib/pitivi/python/pitivi/threads.pyc
+lib/pitivi/python/pitivi/threads.pyo
+lib/pitivi/python/pitivi/thumbnailcache.py
+lib/pitivi/python/pitivi/thumbnailcache.pyc
+lib/pitivi/python/pitivi/thumbnailcache.pyo
+lib/pitivi/python/pitivi/timeline/__init__.py
+lib/pitivi/python/pitivi/timeline/__init__.pyc
+lib/pitivi/python/pitivi/timeline/__init__.pyo
+lib/pitivi/python/pitivi/timeline/gap.py
+lib/pitivi/python/pitivi/timeline/gap.pyc
+lib/pitivi/python/pitivi/timeline/gap.pyo
+lib/pitivi/python/pitivi/timeline/timeline.py
+lib/pitivi/python/pitivi/timeline/timeline.pyc
+lib/pitivi/python/pitivi/timeline/timeline.pyo
+lib/pitivi/python/pitivi/timeline/timeline_undo.py
+lib/pitivi/python/pitivi/timeline/timeline_undo.pyc
+lib/pitivi/python/pitivi/timeline/timeline_undo.pyo
+lib/pitivi/python/pitivi/timeline/track.py
+lib/pitivi/python/pitivi/timeline/track.pyc
+lib/pitivi/python/pitivi/timeline/track.pyo
+lib/pitivi/python/pitivi/ui/__init__.py
+lib/pitivi/python/pitivi/ui/__init__.pyc
+lib/pitivi/python/pitivi/ui/__init__.pyo
+lib/pitivi/python/pitivi/ui/audiofxlist.py
+lib/pitivi/python/pitivi/ui/audiofxlist.pyc
+lib/pitivi/python/pitivi/ui/audiofxlist.pyo
+lib/pitivi/python/pitivi/ui/cam_capture.glade
+lib/pitivi/python/pitivi/ui/common.py
+lib/pitivi/python/pitivi/ui/common.pyc
+lib/pitivi/python/pitivi/ui/common.pyo
+lib/pitivi/python/pitivi/ui/controller.py
+lib/pitivi/python/pitivi/ui/controller.pyc
+lib/pitivi/python/pitivi/ui/controller.pyo
+lib/pitivi/python/pitivi/ui/curve.py
+lib/pitivi/python/pitivi/ui/curve.pyc
+lib/pitivi/python/pitivi/ui/curve.pyo
+lib/pitivi/python/pitivi/ui/defaultpropertyeditor.py
+lib/pitivi/python/pitivi/ui/defaultpropertyeditor.pyc
+lib/pitivi/python/pitivi/ui/defaultpropertyeditor.pyo
+lib/pitivi/python/pitivi/ui/dnd.py
+lib/pitivi/python/pitivi/ui/dnd.pyc
+lib/pitivi/python/pitivi/ui/dnd.pyo
+lib/pitivi/python/pitivi/ui/dynamic.py
+lib/pitivi/python/pitivi/ui/dynamic.pyc
+lib/pitivi/python/pitivi/ui/dynamic.pyo
+lib/pitivi/python/pitivi/ui/elementsettingsdialog.glade
+lib/pitivi/python/pitivi/ui/encodingdialog.glade
+lib/pitivi/python/pitivi/ui/encodingdialog.py
+lib/pitivi/python/pitivi/ui/encodingdialog.pyc
+lib/pitivi/python/pitivi/ui/encodingdialog.pyo
+lib/pitivi/python/pitivi/ui/exportsettingswidget.glade
+lib/pitivi/python/pitivi/ui/exportsettingswidget.py
+lib/pitivi/python/pitivi/ui/exportsettingswidget.pyc
+lib/pitivi/python/pitivi/ui/exportsettingswidget.pyo
+lib/pitivi/python/pitivi/ui/filelisterrordialog.glade
+lib/pitivi/python/pitivi/ui/filelisterrordialog.py
+lib/pitivi/python/pitivi/ui/filelisterrordialog.pyc
+lib/pitivi/python/pitivi/ui/filelisterrordialog.pyo
+lib/pitivi/python/pitivi/ui/glade.py
+lib/pitivi/python/pitivi/ui/glade.pyc
+lib/pitivi/python/pitivi/ui/glade.pyo
+lib/pitivi/python/pitivi/ui/gstwidget.py
+lib/pitivi/python/pitivi/ui/gstwidget.pyc
+lib/pitivi/python/pitivi/ui/gstwidget.pyo
+lib/pitivi/python/pitivi/ui/mainwindow.py
+lib/pitivi/python/pitivi/ui/mainwindow.pyc
+lib/pitivi/python/pitivi/ui/mainwindow.pyo
+lib/pitivi/python/pitivi/ui/mainwindow.xml
+lib/pitivi/python/pitivi/ui/net_capture.glade
+lib/pitivi/python/pitivi/ui/netstream_managerdialog.py
+lib/pitivi/python/pitivi/ui/netstream_managerdialog.pyc
+lib/pitivi/python/pitivi/ui/netstream_managerdialog.pyo
+lib/pitivi/python/pitivi/ui/pathwalker.py
+lib/pitivi/python/pitivi/ui/pathwalker.pyc
+lib/pitivi/python/pitivi/ui/pathwalker.pyo
+lib/pitivi/python/pitivi/ui/pluginmanagerdialog.glade
+lib/pitivi/python/pitivi/ui/pluginmanagerdialog.py
+lib/pitivi/python/pitivi/ui/pluginmanagerdialog.pyc
+lib/pitivi/python/pitivi/ui/pluginmanagerdialog.pyo
+lib/pitivi/python/pitivi/ui/point.py
+lib/pitivi/python/pitivi/ui/point.pyc
+lib/pitivi/python/pitivi/ui/point.pyo
+lib/pitivi/python/pitivi/ui/prefs.py
+lib/pitivi/python/pitivi/ui/prefs.pyc
+lib/pitivi/python/pitivi/ui/prefs.pyo
+lib/pitivi/python/pitivi/ui/preview.py
+lib/pitivi/python/pitivi/ui/preview.pyc
+lib/pitivi/python/pitivi/ui/preview.pyo
+lib/pitivi/python/pitivi/ui/previewer.py
+lib/pitivi/python/pitivi/ui/previewer.pyc
+lib/pitivi/python/pitivi/ui/previewer.pyo
+lib/pitivi/python/pitivi/ui/projectsettings.glade
+lib/pitivi/python/pitivi/ui/projectsettings.py
+lib/pitivi/python/pitivi/ui/projectsettings.pyc
+lib/pitivi/python/pitivi/ui/projectsettings.pyo
+lib/pitivi/python/pitivi/ui/projecttabs.py
+lib/pitivi/python/pitivi/ui/projecttabs.pyc
+lib/pitivi/python/pitivi/ui/projecttabs.pyo
+lib/pitivi/python/pitivi/ui/propertyeditor.py
+lib/pitivi/python/pitivi/ui/propertyeditor.pyc
+lib/pitivi/python/pitivi/ui/propertyeditor.pyo
+lib/pitivi/python/pitivi/ui/ruler.py
+lib/pitivi/python/pitivi/ui/ruler.pyc
+lib/pitivi/python/pitivi/ui/ruler.pyo
+lib/pitivi/python/pitivi/ui/screencast_manager.glade
+lib/pitivi/python/pitivi/ui/screencast_managerdialog.py
+lib/pitivi/python/pitivi/ui/screencast_managerdialog.pyc
+lib/pitivi/python/pitivi/ui/screencast_managerdialog.pyo
+lib/pitivi/python/pitivi/ui/sourcelist.py
+lib/pitivi/python/pitivi/ui/sourcelist.pyc
+lib/pitivi/python/pitivi/ui/sourcelist.pyo
+lib/pitivi/python/pitivi/ui/timeline.py
+lib/pitivi/python/pitivi/ui/timeline.pyc
+lib/pitivi/python/pitivi/ui/timeline.pyo
+lib/pitivi/python/pitivi/ui/timelinecanvas.py
+lib/pitivi/python/pitivi/ui/timelinecanvas.pyc
+lib/pitivi/python/pitivi/ui/timelinecanvas.pyo
+lib/pitivi/python/pitivi/ui/timelinecontrols.py
+lib/pitivi/python/pitivi/ui/timelinecontrols.pyc
+lib/pitivi/python/pitivi/ui/timelinecontrols.pyo
+lib/pitivi/python/pitivi/ui/track.py
+lib/pitivi/python/pitivi/ui/track.pyc
+lib/pitivi/python/pitivi/ui/track.pyo
+lib/pitivi/python/pitivi/ui/trackobject.py
+lib/pitivi/python/pitivi/ui/trackobject.pyc
+lib/pitivi/python/pitivi/ui/trackobject.pyo
+lib/pitivi/python/pitivi/ui/videofxlist.py
+lib/pitivi/python/pitivi/ui/videofxlist.pyc
+lib/pitivi/python/pitivi/ui/videofxlist.pyo
+lib/pitivi/python/pitivi/ui/view.py
+lib/pitivi/python/pitivi/ui/view.pyc
+lib/pitivi/python/pitivi/ui/view.pyo
+lib/pitivi/python/pitivi/ui/viewer.py
+lib/pitivi/python/pitivi/ui/viewer.pyc
+lib/pitivi/python/pitivi/ui/viewer.pyo
+lib/pitivi/python/pitivi/ui/webcam_managerdialog.py
+lib/pitivi/python/pitivi/ui/webcam_managerdialog.pyc
+lib/pitivi/python/pitivi/ui/webcam_managerdialog.pyo
+lib/pitivi/python/pitivi/ui/zoominterface.py
+lib/pitivi/python/pitivi/ui/zoominterface.pyc
+lib/pitivi/python/pitivi/ui/zoominterface.pyo
+lib/pitivi/python/pitivi/undo.py
+lib/pitivi/python/pitivi/undo.pyc
+lib/pitivi/python/pitivi/undo.pyo
+lib/pitivi/python/pitivi/utils.py
+lib/pitivi/python/pitivi/utils.pyc
+lib/pitivi/python/pitivi/utils.pyo
+share/applications/pitivi.desktop
+share/icons/hicolor/16x16/apps/pitivi.png
+share/icons/hicolor/22x22/apps/pitivi.png
+share/icons/hicolor/24x24/apps/pitivi.png
+share/icons/hicolor/32x32/apps/pitivi.png
+share/icons/hicolor/48x48/apps/pitivi.png
+share/icons/hicolor/scalable/apps/pitivi.svg
+share/locale/ar/LC_MESSAGES/pitivi.mo
+share/locale/ast/LC_MESSAGES/pitivi.mo
+share/locale/bg/LC_MESSAGES/pitivi.mo
+share/locale/ca/LC_MESSAGES/pitivi.mo
+share/locale/cs/LC_MESSAGES/pitivi.mo
+share/locale/da/LC_MESSAGES/pitivi.mo
+share/locale/de/LC_MESSAGES/pitivi.mo
+share/locale/dz/LC_MESSAGES/pitivi.mo
+share/locale/el/LC_MESSAGES/pitivi.mo
+share/locale/en_GB/LC_MESSAGES/pitivi.mo
+share/locale/es/LC_MESSAGES/pitivi.mo
+share/locale/et/LC_MESSAGES/pitivi.mo
+share/locale/fi/LC_MESSAGES/pitivi.mo
+share/locale/fr/LC_MESSAGES/pitivi.mo
+share/locale/gl/LC_MESSAGES/pitivi.mo
+share/locale/gu/LC_MESSAGES/pitivi.mo
+share/locale/hu/LC_MESSAGES/pitivi.mo
+share/locale/it/LC_MESSAGES/pitivi.mo
+share/locale/ja/LC_MESSAGES/pitivi.mo
+share/locale/ko/LC_MESSAGES/pitivi.mo
+share/locale/ku/LC_MESSAGES/pitivi.mo
+share/locale/lv/LC_MESSAGES/pitivi.mo
+share/locale/mr/LC_MESSAGES/pitivi.mo
+share/locale/nb/LC_MESSAGES/pitivi.mo
+share/locale/nds/LC_MESSAGES/pitivi.mo
+share/locale/nl/LC_MESSAGES/pitivi.mo
+share/locale/oc/LC_MESSAGES/pitivi.mo
+share/locale/pa/LC_MESSAGES/pitivi.mo
+share/locale/pl/LC_MESSAGES/pitivi.mo
+share/locale/pt/LC_MESSAGES/pitivi.mo
+share/locale/pt_BR/LC_MESSAGES/pitivi.mo
+share/locale/ro/LC_MESSAGES/pitivi.mo
+share/locale/ru/LC_MESSAGES/pitivi.mo
+share/locale/sl/LC_MESSAGES/pitivi.mo
+share/locale/sv/LC_MESSAGES/pitivi.mo
+share/locale/tr/LC_MESSAGES/pitivi.mo
+share/locale/uk/LC_MESSAGES/pitivi.mo
+share/locale/zh_CN/LC_MESSAGES/pitivi.mo
+share/locale/zh_HK/LC_MESSAGES/pitivi.mo
+share/locale/zh_TW/LC_MESSAGES/pitivi.mo
+share/mime/packages/pitivi.xml
+share/pitivi/pixmaps/busy.gif
+share/pitivi/pixmaps/invisible.png
+share/pitivi/pixmaps/pitivi-advanced-16.png
+share/pitivi/pixmaps/pitivi-advanced-22.png
+share/pitivi/pixmaps/pitivi-advanced-24.png
+share/pitivi/pixmaps/pitivi-group-24.svg
+share/pitivi/pixmaps/pitivi-group.svg
+share/pitivi/pixmaps/pitivi-keyframe-24.svg
+share/pitivi/pixmaps/pitivi-keyframe.svg
+share/pitivi/pixmaps/pitivi-relink-24.svg
+share/pitivi/pixmaps/pitivi-relink.svg
+share/pitivi/pixmaps/pitivi-render-16.png
+share/pitivi/pixmaps/pitivi-render-22.png
+share/pitivi/pixmaps/pitivi-render-24.png
+share/pitivi/pixmaps/pitivi-sound.png
+share/pitivi/pixmaps/pitivi-split-24.svg
+share/pitivi/pixmaps/pitivi-split.svg
+share/pitivi/pixmaps/pitivi-ungroup-24.svg
+share/pitivi/pixmaps/pitivi-ungroup.svg
+share/pitivi/pixmaps/pitivi-unlink-24.svg
+share/pitivi/pixmaps/pitivi-unlink.svg
+share/pitivi/pixmaps/pitivi-video.png
+share/pitivi/pixmaps/processing-clip.png
+share/pitivi/pixmaps/processing-clip.svg
+share/pitivi/pixmaps/trimbar-focused.png
+share/pitivi/pixmaps/trimbar-normal.png
+@dirrm share/pitivi/pixmaps
+@dirrm share/pitivi
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/applications
+@dirrm lib/pitivi/python/pitivi/ui
+@dirrm lib/pitivi/python/pitivi/timeline
+@dirrm lib/pitivi/python/pitivi/log
+@dirrm lib/pitivi/python/pitivi/formatters
+@dirrm lib/pitivi/python/pitivi/factories
+@dirrm lib/pitivi/python/pitivi/elements
+@dirrm lib/pitivi/python/pitivi
+@dirrm lib/pitivi/python
+@dirrm lib/pitivi

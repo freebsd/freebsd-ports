@@ -241,6 +241,7 @@
     SUBDIR += phonon-gstreamer
     SUBDIR += phonon-vlc
     SUBDIR += phonon-xine
+    SUBDIR += pitivi
     SUBDIR += playd
     SUBDIR += playd2
     SUBDIR += podcatcher
