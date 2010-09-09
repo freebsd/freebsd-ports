@@ -16,10 +16,12 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Python WSGI adapter module for Apache
 
+LICENSE=	ASL
+
 MAKE_JOBS_SAFE=	yes
 
 LATEST_LINK=	mod_wsgi2
-CONFLICTS=	mod_wsgi-3.*
+CONFLICTS=	${PKGNAMEPREFIX}mod_wsgi-3.*www/mod_wsgi-3.*
 
 PROJECTHOST=	modwsgi
 
@@ -30,7 +32,16 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-apxs="${APXS}" --with-python="${PYTHON_CMD}"
 
 SUB_FILES=	pkg-message
+
 PORTSCOUT=	limit:^2\.
+
+pre-everything::
+	@${ECHO_MSG} "======================= ATTENTION! ======================"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to use daemon mode you will need to make sure"
+	@${ECHO_MSG} "Apache and APR include thread support."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "========================================================="
 
 post-install:
 	@${APXS} -e -a -n "${SHORTMODNAME}" "${APACHEMODDIR}/${MODULENAME}.so"
