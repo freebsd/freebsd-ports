@@ -17,7 +17,7 @@ COMMENT=	A lightweight Midnight Commander clone
 
 RUN_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 
-CONFLICTS=	mc-4.6*
+CONFLICTS=	mc-4.7*
 
 OPTIONS=	NLS "Enable gettext support" on \
 		SUBSHELL "Build with subshell support (only for bash!)" off \
