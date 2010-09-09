@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	hllib
-PORTVERSION=	2.0.6
+PORTVERSION=	2.3.0
 CATEGORIES=	games devel
-MASTER_SITES=	http://nemesis.thewavelength.net/files/files/ \
-		http://freebsd.nsu.ru/distfiles/
-DISTNAME=	${PORTNAME}208
+MASTER_SITES=	http://nemesis.thewavelength.net/files/files/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Library to work with various Half-Life file formats
+
+LICENSE=	LGPL21
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	Makefile
