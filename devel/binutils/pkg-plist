@@ -52,6 +52,11 @@ lib/libopcodes.la
 %%NLS%%share/locale/ga/LC_MESSAGES/opcodes.mo
 %%NLS%%share/locale/id/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/id/LC_MESSAGES/opcodes.mo
+%%NLS%%share/locale/id/LC_MESSAGES/bfd.mo
+%%NLS%%share/locale/id/LC_MESSAGES/binutils.mo
+%%NLS%%share/locale/id/LC_MESSAGES/gas.mo
+%%NLS%%share/locale/id/LC_MESSAGES/ld.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/binutils.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/gprof.mo
