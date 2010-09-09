@@ -441,6 +441,7 @@ lib/parrot/%%PARROT_VER%%/tools/dev/create_language.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/gen_makefile.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/mk_language_shell.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/pbc_to_exe.pir
+lib/parrot/%%PARROT_VER%%/tools/dev/pprof2cg.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/reconfigure.pl
 lib/parrot/%%PARROT_VER%%/tools/lib/File/Which.pm
 lib/parrot/%%PARROT_VER%%/tools/lib/Parrot/BuildUtil.pm
