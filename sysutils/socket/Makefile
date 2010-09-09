@@ -18,8 +18,7 @@ MAKE_ENV+=	SWITCHES="-DUSE_INET6 -DHAVE_SYS_PARAM_H -Wall"
 MAN1=		socket.1
 
 post-install:
-
-	@${MKDIR} ${PREFIX}/share/doc/socket
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/socket
+	@${MKDIR} ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 
 .include <bsd.port.mk>
