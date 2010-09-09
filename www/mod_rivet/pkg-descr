@@ -1,0 +1,15 @@
+mod_rivet brings together the full power of the Tcl programming language
+and the Apache HTTP server. You can use Tcl to manage Apache, respond to
+requests for web pages and much more.
+
+mod_rivet gives you a persistent Tcl interpreter embedded in your web
+server. This lets you avoid the overhead of starting an external interpreter
+and avoids the penalty of Tcl start-up time, giving you super-fast
+dynamic content.
+
+As you'd expect from the Tcl community, there are hundreds of modules
+written for mod_rivet, everything from persistent database connections, to
+templating sytems, to complete XML content delivery systems. Web sites like
+FlightAware use mod_rivet. 
+
+WWW: http://tcl.apache.org/rivet/

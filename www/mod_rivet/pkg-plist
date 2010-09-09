@@ -1,0 +1,71 @@
+%%APACHEMODDIR%%/mod_rivet.la
+%%APACHEMODDIR%%/mod_rivet.so
+lib/rivet/librivet.so
+lib/rivet/librivet.la
+lib/rivet/librivetparser.so
+lib/rivet/librivetparser.la
+lib/rivet/rivet-tcl/wrap.tcl
+lib/rivet/rivet-tcl/import_keyvalue_pairs.tcl
+lib/rivet/rivet-tcl/read_file.tcl
+lib/rivet/rivet-tcl/rivet_command_document.tcl
+lib/rivet/rivet-tcl/html.tcl
+lib/rivet/rivet-tcl/lassign.tcl
+lib/rivet/rivet-tcl/incr0.tcl
+lib/rivet/rivet-tcl/load_cookies.tcl
+lib/rivet/rivet-tcl/parray.tcl
+lib/rivet/rivet-tcl/tclIndex
+lib/rivet/rivet-tcl/README
+lib/rivet/rivet-tcl/lmatch.tcl
+lib/rivet/rivet-tcl/lempty.tcl
+lib/rivet/rivet-tcl/cookie.tcl
+lib/rivet/rivet-tcl/load_response.tcl
+lib/rivet/rivet-tcl/import_switch_args.tcl
+lib/rivet/rivet-tcl/debug.tcl
+lib/rivet/rivet-tcl/random.tcl
+lib/rivet/packages/commserver/server.tcl
+lib/rivet/packages/commserver/commserver.tcl
+lib/rivet/packages/session/session-purge-mysql.sql
+lib/rivet/packages/session/session-drop.sql
+lib/rivet/packages/session/README.txt
+lib/rivet/packages/session/pkgIndex.tcl
+lib/rivet/packages/session/session-create-mysql.sql
+lib/rivet/packages/session/session-create-oracle.sql
+lib/rivet/packages/session/session-httpd.conf
+lib/rivet/packages/session/session-class.tcl
+lib/rivet/packages/session/session-create.sql
+lib/rivet/packages/session/session-demo.rvt
+lib/rivet/packages/tclrivet/tclrivet.tcl
+lib/rivet/packages/tclrivet/pkgIndex.tcl
+lib/rivet/packages/tclrivet/README
+lib/rivet/packages/tclrivet/parse.tcl
+lib/rivet/packages/tclrivet/tclrivetparser.tcl
+lib/rivet/packages/simpledb/pkgIndex.tcl
+lib/rivet/packages/simpledb/simpledb.test
+lib/rivet/packages/simpledb/simpledb.tcl
+lib/rivet/packages/dtcl/pkgIndex.tcl
+lib/rivet/packages/dtcl/dtcl.tcl
+lib/rivet/packages/rivet_ncgi/rivet_ncgi.tcl
+lib/rivet/packages/dio/pkgIndex.tcl
+lib/rivet/packages/dio/dio_Oracle.tcl
+lib/rivet/packages/dio/dio_Sqlite.tcl
+lib/rivet/packages/dio/dio_Postgresql.tcl
+lib/rivet/packages/dio/dio.tcl
+lib/rivet/packages/dio/dio_Mysql.tcl
+lib/rivet/packages/dio/diodisplay.tcl
+lib/rivet/packages/form/form.tcl
+lib/rivet/packages/form/pkgIndex.tcl
+lib/rivet/packages/README
+lib/rivet/pkgIndex.tcl
+lib/rivet/init.tcl
+lib/rivet/README
+@dirrm lib/rivet/packages/tclrivet
+@dirrm lib/rivet/packages/simpledb
+@dirrm lib/rivet/packages/session
+@dirrm lib/rivet/packages/rivet_ncgi
+@dirrm lib/rivet/packages/form
+@dirrm lib/rivet/packages/dtcl
+@dirrm lib/rivet/packages/dio
+@dirrm lib/rivet/packages/commserver
+@dirrm lib/rivet/packages
+@dirrm lib/rivet/rivet-tcl
+@dirrm lib/rivet
