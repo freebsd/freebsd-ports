@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	dm-constraints
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataMapper plugin constraining relationships
 
-RUN_DEPENDS=	rubygem-dm-migrations>=1.0.0:${PORTSDIR}/databases/rubygem-dm-migrations
+RUN_DEPENDS=	rubygem-dm-migrations>=1.0.1:${PORTSDIR}/databases/rubygem-dm-migrations
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
