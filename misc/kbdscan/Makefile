@@ -11,7 +11,7 @@ PORTVERSION=	20100427
 CATEGORIES=	misc
 MASTER_SITES=	http://hack.org/mc/hacks/${PORTNAME}/
 
-MAINTAINER=	eitanadlerlist@gmail.com
+MAINTAINER=	ports@eitanadler.com
 COMMENT=	Kbdscan shows the scancodes of keys pressed
 
 USE_BZIP2=	yes
