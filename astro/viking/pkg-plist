@@ -1,7 +1,12 @@
 bin/viking
 bin/viking-remote
 share/applications/viking.desktop
+share/gnome/help/viking/C/figures/properties_degree.png
+share/gnome/help/viking/C/figures/properties_units.png
+share/gnome/help/viking/C/legal.xml
+share/gnome/help/viking/C/viking.xml
 share/icons/hicolor/48x48/apps/viking.png
+share/icons/hicolor/icon-theme.cache
 %%NLS%%share/locale/cs/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/da/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/de/LC_MESSAGES/viking.mo
@@ -24,4 +29,9 @@ share/icons/hicolor/48x48/apps/viking.png
 %%NLS%%share/locale/sv/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/viking.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/viking.mo
+share/omf/viking/viking-C.omf
 @dirrmtry share/applications
+@dirrm share/omf/viking
+@dirrm share/gnome/help/viking/C/figures
+@dirrm share/gnome/help/viking/C
+@dirrm share/gnome/help/viking
