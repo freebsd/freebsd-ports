@@ -1169,6 +1169,7 @@
     SUBDIR += yaz
     SUBDIR += yaz++
     SUBDIR += yazproxy
+    SUBDIR += yconalyzer
     SUBDIR += yptransitd
     SUBDIR += ytalk
     SUBDIR += zebra
