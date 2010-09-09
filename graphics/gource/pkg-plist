@@ -2,6 +2,10 @@ bin/gource
 %%DATADIR%%/no_photo.png
 %%DATADIR%%/file.png
 %%DATADIR%%/beam.png
+%%DATADIR%%/bloom.tga
+%%DATADIR%%/bloom_alpha.tga
+%%DATADIR%%/cursor.png
+%%DATADIR%%/gource.style
 %%DATADIR%%/fonts/FreeSans.ttf
 %%DATADIR%%/fonts/README
 @dirrm %%DATADIR%%/fonts

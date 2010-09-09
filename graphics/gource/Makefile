@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gource
-PORTVERSION=	0.17
-PORTREVISION=	2
+PORTVERSION=	0.28
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +16,8 @@ COMMENT=	OpenGL-based 3D visualisation tool for source control repositories
 
 LIB_DEPENDS=	SDL_image:${PORTSDIR}/graphics/sdl_image \
 		ftgl:${PORTSDIR}/graphics/ftgl \
-		pcre:${PORTSDIR}/devel/pcre
+		pcre:${PORTSDIR}/devel/pcre \
+		GLEW:${PORTSDIR}/graphics/glew
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
