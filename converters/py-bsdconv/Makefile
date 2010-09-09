@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	bsdconv
-PORTVERSION=	3.5
+PORTVERSION=	3.6.2
 CATEGORIES=	converters python
 MASTER_SITES=	http://security-hole.info/distfile/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	buganini-bsdconv-c14ef1b
+DISTNAME=	buganini-bsdconv-3.6.2-0-g66aab4b
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Python wrapper for bsdconv
@@ -21,7 +21,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||g}
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/wrapper/python
+WRKSRC=		${WRKDIR}/buganini-bsdconv-66aab4b/wrapper/python
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
