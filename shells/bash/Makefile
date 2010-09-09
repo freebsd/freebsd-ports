@@ -9,7 +9,7 @@
 PORTNAME=		bash
 PATCHLEVEL=		7
 PORTVERSION=		4.1.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		1
+PORTREVISION?=		2
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU:S/$/:bash/} \
 			ftp://ftp.cwru.edu/pub/%SUBDIR%/:faq
@@ -45,7 +45,6 @@ INFO=			bash
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=		yes
 USE_BISON=		build
-USE_ICONV=		yes
 
 .if !defined(NOPORTDOCS)
 .if !defined(WITH_INCLUDED_FAQ)
@@ -84,6 +83,7 @@ PLIST_SUB+=		HELP=""
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .else
+USE_ICONV=		yes
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .endif
@@ -100,10 +100,16 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/bash.1
+.if defined(WITHOUT_NLS)
+	@${REINPLACE_CMD} -e "s|@LIBICONV@||g" ${WRKSRC}/Makefile.in
+.endif
 
 post-configure:
 	@${FIND} ${WRKSRC} -name Makefile -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e "s|^DESTDIR *=|& ${DESTDIR}|"
+.if defined(WITHOUT_NLS)
+	@${REINPLACE_CMD} -e "s|#define HAVE_ICONV 1|#undef HAVE_ICONV|g" ${WRKSRC}/config.h
+.endif
 
 pre-build:
 	@${ECHO_CMD} $$((${PORTREVISION}-1)) > ${WRKSRC}/.build
