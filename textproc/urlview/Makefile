@@ -33,9 +33,6 @@ USE_GECKO=	firefox-devel firefox35 seamonkey
 .elif defined(WITH_SEAMONKEY)
 RUN_DEPENDS+=	${LOCALBASE}/lib/seamonkey/seamonkey-bin:${PORTSDIR}/www/seamonkey
 GECKO=		seamonkey
-.else
-RUN_DEPENDS+=	${LOCALBASE}/lib/firefox3/firefox:${PORTSDIR}/www/firefox35
-GECKO=		firefox3
 .endif
 
 post-patch:
