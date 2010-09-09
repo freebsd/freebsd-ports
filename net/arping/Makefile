@@ -6,33 +6,24 @@
 #
 
 PORTNAME=	arping
-PORTVERSION=	2.08
+PORTVERSION=	2.09
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/
+MASTER_SITES=	http://www.habets.pp.se/synscan/files/
 
 MAINTAINER=	gavin@FreeBSD.org
 COMMENT=	ARP level "ping" utility
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
-LDFLAGS+=	-lpcap
-
-MAN8=		arping.8
-PLIST_FILES=	sbin/arping
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS+="`${LIBNET_CONFIG} --defines`" \
+		CPPFLAGS="-I${LOCALBASE}/include `${LIBNET_CONFIG} --cflags`" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBS="`${LIBNET_CONFIG} --libs` -lpcap"
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
-do-build:
-	cd ${WRKSRC} &&  \
-	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
-	-c `${LIBNET_CONFIG} --defines` \
-	`${LIBNET_CONFIG} --cflags` ${PORTNAME}-2/${PORTNAME}.c && \
-	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
-	-o ${PORTNAME} ${PORTNAME}.o \
-	`${LIBNET_CONFIG} --libs` ${LDFLAGS}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/arping ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/arping.8 ${PREFIX}/man/man8
+MAN8=		arping.8
+PLIST_FILES=	sbin/arping
 
 .include <bsd.port.mk>
