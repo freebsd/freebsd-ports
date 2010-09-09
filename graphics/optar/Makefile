@@ -28,5 +28,6 @@ PLIST_FILES=	bin/optar bin/unoptar bin/pgm2ps
 post-extract:
 	@${RM} -v ${WRKSRC}/font.h
 	@${CP} -v ${DISTDIR}/font.h ${WRKSRC}/font.h
-
+	@${SED} 's:/usr/local:${LOCALBASE}:g' ${WRKSRC}/Makefile > ${WRKSRC}/Makefile.new
+	@${MV} ${WRKSRC}/Makefile.new ${WRKSRC}/Makefile
 .include <bsd.port.mk>
