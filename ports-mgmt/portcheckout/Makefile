@@ -7,6 +7,7 @@
 
 PORTNAME=	portcheckout
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://wolfram.schneider.org/src/
 
@@ -19,6 +20,6 @@ MANCOMPRESSED=	maybe
 PLIST_FILES=	bin/portcheckout
 
 post-patch:
-	perl -pi -e 's^\#\!/usr/local/bin/perl^#!${PERL5}^' ${WRKSRC}/portcheckout.pl
+	${PERL} -pi -e 's^\#\!${PREFIX}/bin/perl^#!${PERL5}^' ${WRKSRC}/portcheckout.pl
 
 .include <bsd.port.mk>
