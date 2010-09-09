@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin211
-DISTVERSION=	2.11.10.1
+DISTVERSION=	2.11.11
 CATEGORIES=	databases www
 MASTER_SITES=	SF/phpmyadmin/phpMyAdmin/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/211//}-${DISTVERSION}-all-languages
