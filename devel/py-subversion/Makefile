@@ -13,9 +13,9 @@ COMMENT=	Python bindings for version control system
 MASTERDIR=	${.CURDIR}/../../devel/subversion
 PKGDIR=		${.CURDIR}
 
-USE_PYTHON=yes
+USE_PYTHON=	yes
 
-SVN_BUILD_BINDINGS=yes
+SVN_BUILD_BINDINGS=	yes
 
 .include "${MASTERDIR}/Makefile.common"
 
