@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde4-windeco-
 DISTNAME=	99551-${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}-Source
 
-MAINTAINER=	kmoore@freebsd.org
+MAINTAINER=	decept0@gmail.com
 COMMENT=	KDE4 window decoration
 
 USE_GZIP=	yes
