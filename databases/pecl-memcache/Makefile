@@ -7,6 +7,7 @@
 
 PORTNAME=	memcache
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
