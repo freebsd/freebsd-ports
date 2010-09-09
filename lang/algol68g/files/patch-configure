@@ -1,0 +1,43 @@
+--- configure.orig	2010-09-07 00:54:27.000000000 +0200
++++ configure	2010-09-09 23:01:01.000000000 +0200
+@@ -38,7 +38,7 @@ PWD=`pwd`
+ SYS_INC=/usr/include
+ SYS_LIB=/usr/lib
+ SYS_BIN=/usr/bin
+-SYS_LOC=/usr/local
++SYS_LOC=$LOCALBASE
+ LOC_INC=$SYS_LOC/include
+ LOC_LIB=$SYS_LOC/lib
+ A68G_CHECK="./regression-$VERSION_NUMBER"
+@@ -865,11 +865,11 @@ then
+ 		echo "SQL_DIR=$SQL_DIR">>$BUILD_FILE
+ 		echo "SQL_LIBS=-lpq" 1>>$BUILD_FILE
+ 		echo "SQL_FLAG=-DENABLE_POSTGRESQL" 1>>$BUILD_FILE
+-	elif [ -f $SYS_LIB/libpq.so -o -f $SYS_LIB/libpq.a -o -f $SYS_LIB/libpq.dylib ]
++	elif [ -f $LOC_LIB/libpq.so -o -f $SYS_LIB/libpq.a -o -f $SYS_LIB/libpq.dylib ]
+ 	then
+ 		libpostgresql=yes
+ 		echo "yes"
+-		echo "SQL_DIR=`dirname $SYS_LIB`">>$BUILD_FILE
++		echo "SQL_DIR=`dirname $LOC_LIB`">>$BUILD_FILE
+ 		echo "SQL_LIBS=-lpq" 1>>$BUILD_FILE
+ 		echo "SQL_FLAG=-DENABLE_POSTGRESQL" 1>>$BUILD_FILE
+ 	else
+@@ -996,7 +996,7 @@ FLAGS=$(CPPFLAGS) $(STD_CFLAGS) $(POSIX_
+ all:    a68g
+ a68g:   $(CS)
+ 	@echo "building a68g ..."
+-	@$(CC) $(CS) -Wl $(CFLAGS) $(STD_LD_FLAGS) $(POSIX_THREADS_LIBS) $(PLOTUTILS_LIBS) $(GSL_LIBS) $(CURSES_LIBS) $(SQL_LIBS) $(READLINE_LIBS) -lm -ldl $(LD_FLAGS) -o a68g
++	@$(CC) $(CS) -Wl $(CFLAGS) $(STD_LD_FLAGS) $(POSIX_THREADS_LIBS) $(PLOTUTILS_LIBS) $(GSL_LIBS) $(CURSES_LIBS) $(SQL_LIBS) $(READLINE_LIBS) -lm $(LD_FLAGS) -o a68g
+ $(CS): $(HS)
+ .c.o:
+ 	@echo "compiling $<"
+@@ -1142,7 +1142,7 @@ int main (int argc, char **argv) {
+ 	printf ("%s", PACKAGE_VERSION);
+ }
+ _ACEOF
+-		gcc pgvers.c -I$SQL_DIR/include -o pgvers
++		gcc pgvers.c -I$LOC_INC -o pgvers
+ 		echo "#define A68_PG_VERSION \"`./pgvers`\"" 1>>$CONFIG_FILE
+ 		rm pgvers*
+ 	else
