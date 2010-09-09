@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Time-Progress
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Elapsed and estimated finish time reporting
 
 MAN3=	Time::Progress.3
