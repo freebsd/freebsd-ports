@@ -7,6 +7,7 @@
 %%SITE_PERL%%/Net/FreshBooks/API/InvoiceLine.pm
 %%SITE_PERL%%/Net/FreshBooks/API/Iterator.pm
 %%SITE_PERL%%/Net/FreshBooks/API/Links.pm
+%%SITE_PERL%%/Net/FreshBooks/API/OAuth.pm
 %%SITE_PERL%%/Net/FreshBooks/API/Payment.pm
 %%SITE_PERL%%/Net/FreshBooks/API/Recurring.pm
 @dirrmtry %%SITE_PERL%%/Net/FreshBooks/API
