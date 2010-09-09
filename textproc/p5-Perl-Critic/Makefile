@@ -30,7 +30,7 @@ RUN_DEPENDS=	p5-B-Keywords>=1.05:${PORTSDIR}/devel/p5-B-Keywords \
 		p5-String-Format>=1.13:${PORTSDIR}/textproc/p5-String-Format \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-version>=0:${PORTSDIR}/devel/p5-version \
-		p5-PPIx-Utilities>=1.000:${PORTSDIR}/textproc/p5-PPIx-Utilitites \
+		p5-PPIx-Utilities>=1.000:${PORTSDIR}/textproc/p5-PPIx-Utilities \
 		perltidy:${PORTSDIR}/devel/perltidy
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
