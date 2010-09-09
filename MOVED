@@ -4553,3 +4553,4 @@ www/lws||2010-09-08|Broken for 6+ months, unmaintained
 net-p2p/javadc||2010-09-08|Has expired: is ancient, unmaintained, works only with JDK 1.3, no master site
 net/pathchar||2010-09-08|Has expired: has been broken for 2+ years, no sources available
 www/linux-nvu|www/kompozer|2010-09-08|Has expired: NVU 1.0 last release June 2005, use www/kompozer instead
+print/cupsddk||2010-09-09|Now part of print/cups-base

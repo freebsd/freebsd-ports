@@ -56,7 +56,6 @@
     SUBDIR += cups-pstoraster
     SUBDIR += cups-samba
     SUBDIR += cups-smb-backend
-    SUBDIR += cupsddk
     SUBDIR += detex
     SUBDIR += dk-acroread8
     SUBDIR += dvi2tty
