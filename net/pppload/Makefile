@@ -7,7 +7,7 @@
 
 PORTNAME=	pppload
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=		system/network/serial/ppp
@@ -27,9 +27,5 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/pppload.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800064
-BROKEN=		does not build
-.endif
 
 .include <bsd.port.post.mk>
