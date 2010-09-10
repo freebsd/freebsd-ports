@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	flo@kasimir.com
 COMMENT=	Perl Modules of ePerl package: Parse::ePerl, Apache::ePerl
 
+MAKE_JOBS_UNSAFE=	yes
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Parse::ePerl.3 Apache::ePerl.3
