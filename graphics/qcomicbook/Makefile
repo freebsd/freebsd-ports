@@ -13,6 +13,7 @@ MASTER_SITES=	http://qcomicbook.linux-projects.net/releases/
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	QT-based comic book archive viewer
 
+BUILD_DEPENDS=	lrelease-qt4:${PORTSDIR}/devel/qt4-linguist
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		unrar:${PORTSDIR}/archivers/unrar
 
