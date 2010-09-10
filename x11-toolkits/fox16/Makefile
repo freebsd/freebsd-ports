@@ -21,6 +21,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
+BROKEN=		size mismatch
+
 CONFLICTS=	fox-1.4.* fox-1.7.*
 
 LATEST_LINK=	fox16
