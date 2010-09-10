@@ -14,6 +14,7 @@ OPTIONS=		LANG_BE "Byelorussian"          off \
 				LANG_DE "German"                on \
 				LANG_FR "French"                on \
 				LANG_HU "Hungarian"             off \
+				LANG_IT "Italian"               on \
 				LANG_LT "Lithuanian"            off \
 				LANG_NB "Norwegian"             off \
 				LANG_PL "Polish"                off \

@@ -7,6 +7,7 @@
 
 PORTNAME=	seamonkey2-i18n
 PORTVERSION=	2.0.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	seamonkey/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
@@ -78,7 +79,7 @@ post-patch:
 
 List-Langs:
 	@fetch -o- "http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${PORTVERSION}/langpack"|\
-		${PERL} -ne 'if(/.*href="seamonkey-2.0.([a-zA-Z-]+).langpack.xpi"/){print "$$1\n"}' |\
+		${PERL} -ne 'if(/.*href="seamonkey-${PORTVERSION}.([a-zA-Z-]+).langpack.xpi"/){print "$$1\n"}' |\
 		${AWK} 'BEGIN{ORS=" "}{print $1}END{printf "\nNumber of languages: %d\n",NR}'
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"

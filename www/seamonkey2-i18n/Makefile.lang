@@ -4,9 +4,9 @@
 #
 # $FreeBSD$
 #
-# Currently, the following 17 languages are supported.
+# Currently, the following 19 languages are supported.
 #
-SEAMONKEY_I18N_ALL_=	be ca cs de es-AR es-ES fr gl hu \
+SEAMONKEY_I18N_ALL_=	be ca cs de es-AR es-ES fr gl hu it \
 			ka lt nb-NO nl pl pt-PT ru sk tr
 
 .if defined(SEAMONKEY_I18N_ALL) || defined(PACKAGE_BUILDING) || target(package)
@@ -38,6 +38,9 @@ SEAMONKEY_I18N+=  gl
 .endif
 .ifndef WITHOUT_LANG_HU
 SEAMONKEY_I18N+=  hu
+.endif
+.ifndef WITHOUT_LANG_IT
+SEAMONKEY_I18N+=  it
 .endif
 .ifndef WITHOUT_LANG_KA
 SEAMONKEY_I18N+=  ka
