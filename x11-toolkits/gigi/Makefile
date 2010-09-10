@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gigi
-PORTVERSION=	0.6.0.801
-PORTREVISION=	2
+PORTVERSION=	0.6.0.813
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -20,11 +19,9 @@ LIB_DEPENDS=	IL.2:${PORTSDIR}/graphics/devil \
 		boost_python.4:${PORTSDIR}/devel/boost-python-libs \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-BROKEN=		does not compile
-
 USE_GCC=	4.4+
 USE_SCONS=	yes
-SCONS_ARGS=	prefix="" pkgconfigdir=""
+SCONS_ARGS=	prefix="" pkgconfigdir="" build_tutorials=0
 USE_BZIP2=	yes
 USE_SDL=	sdl
 USE_LDCONFIG=	yes
@@ -61,6 +58,8 @@ post-patch:
 		-e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
 		${WRKSRC}/src/GIL/extension/io/png_dynamic_io.hpp \
 		${WRKSRC}/src/GIL/extension/io/png_io_private.hpp
+	@${REINPLACE_CMD} -e 's|Clr\.cpp|ClrConstants\.cpp|g' \
+		${WRKSRC}/src/SConscript
 
 post-build:
 	@${REINPLACE_CMD} -Ee 's,^(prefix|(lib|include)dir)=,&${PREFIX},' \
