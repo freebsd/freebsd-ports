@@ -1,0 +1,44 @@
+diff -ruN /tmp/Sigil-0.2.4-Code/src/ZipArchive/DirEnumerator.cpp ./src/ZipArchive/DirEnumerator.cpp
+--- /tmp/Sigil-0.2.4-Code/src/ZipArchive/DirEnumerator.cpp	2010-08-12 17:50:52.000000000 +1200
++++ ./src/ZipArchive/DirEnumerator.cpp	2010-09-07 22:01:02.000000000 +1200
+@@ -73,7 +73,7 @@
+ 				if (!entry)
+ 					break;								
+ 				CZipString path(m_szCurrentDirectory + entry->d_name);
+-	#if !defined __APPLE__ && !defined __CYGWIN__ && !defined __NetBSD__ 
++	#if !defined __APPLE__ && !defined __CYGWIN__ && !defined __NetBSD__ && !defined __FreeBSD__ 
+ 				struct stat64 sStats;
+ 				if (stat64(path, &sStats) == -1)
+ 	#else
+diff -ruN /tmp/Sigil-0.2.4-Code/src/ZipArchive/ZipFile_stl.cpp ./src/ZipArchive/ZipFile_stl.cpp
+--- /tmp/Sigil-0.2.4-Code/src/ZipArchive/ZipFile_stl.cpp	2010-08-12 17:50:52.000000000 +1200
++++ ./src/ZipArchive/ZipFile_stl.cpp	2010-09-07 22:01:02.000000000 +1200
+@@ -16,7 +16,7 @@
+ 
+ #if (defined _ZIP_IMPL_STL && (!defined _ZIP_FILE_IMPLEMENTATION || _ZIP_FILE_IMPLEMENTATION == ZIP_ZFI_DEFAULT)) || _ZIP_FILE_IMPLEMENTATION == ZIP_ZFI_STL
+ 
+-#if defined __APPLE__ || defined __CYGWIN__ || defined __NetBSD__ 
++#if defined __APPLE__ || defined __CYGWIN__ || defined __NetBSD__ || defined __FreeBSD__ 
+ 	#define FILE_FUNCTIONS_64B_BY_DEFAULT
+ #else
+ 	#undef FILE_FUNCTIONS_64B_BY_DEFAULT	
+diff -ruN /tmp/Sigil-0.2.4-Code/src/ZipArchive/ZipPlatform_lnx.cpp ./src/ZipArchive/ZipPlatform_lnx.cpp
+--- /tmp/Sigil-0.2.4-Code/src/ZipArchive/ZipPlatform_lnx.cpp	2010-08-12 17:50:52.000000000 +1200
++++ ./src/ZipArchive/ZipPlatform_lnx.cpp	2010-09-07 22:01:02.000000000 +1200
+@@ -16,7 +16,7 @@
+ 
+ #ifdef _ZIP_SYSTEM_LINUX
+ 
+-#if defined __APPLE__ || defined __CYGWIN__ || defined __NetBSD__ 
++#if defined __APPLE__ || defined __CYGWIN__ || defined __NetBSD__ || defined __FreeBSD__ 
+ 	#define FILE_FUNCTIONS_64B_BY_DEFAULT
+ #else
+ 	#undef FILE_FUNCTIONS_64B_BY_DEFAULT	
+@@ -34,7 +34,7 @@
+ 
+ #include <sys/types.h>
+ 
+-#if defined (__FreeBSD__) || defined (__APPLE__) || defined (__NetBSD__)
++#if defined (__FreeBSD__) || defined (__APPLE__) || defined (__NetBSD__) || defined (__FreeBSD__) 
+ 	#include <sys/param.h>
+ 	#include <sys/mount.h>
