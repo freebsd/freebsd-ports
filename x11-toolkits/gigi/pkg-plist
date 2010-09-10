@@ -4,6 +4,7 @@ include/GG/Base.h
 include/GG/BrowseInfoWnd.h
 include/GG/Button.h
 include/GG/Clr.h
+include/GG/ClrConstants.h
 include/GG/Config.h
 include/GG/Control.h
 include/GG/Cursor.h
