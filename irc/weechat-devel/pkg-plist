@@ -4,6 +4,7 @@ lib/weechat/plugins/alias.so
 lib/weechat/plugins/fifo.so
 lib/weechat/plugins/irc.so
 lib/weechat/plugins/logger.so
+lib/weechat/plugins/rmodifier.so
 lib/weechat/plugins/xfer.so
 libdata/pkgconfig/weechat.pc
 %%ASPELL%%lib/weechat/plugins/aspell.so
@@ -20,6 +21,7 @@ libdata/pkgconfig/weechat.pc
 %%DOCUMENTATION%%share/doc/weechat/weechat_faq.pl.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_plugin_api.en.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_plugin_api.fr.html
+%%DOCUMENTATION%%share/doc/weechat/weechat_plugin_api.it.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_quickstart.de.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_quickstart.en.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_quickstart.fr.html
@@ -27,13 +29,16 @@ libdata/pkgconfig/weechat.pc
 %%DOCUMENTATION%%share/doc/weechat/weechat_quickstart.it.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_quickstart.pl.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_quickstart.ru.html
+%%DOCUMENTATION%%share/doc/weechat/weechat_scripting.de.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_scripting.en.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_scripting.fr.html
+%%DOCUMENTATION%%share/doc/weechat/weechat_scripting.it.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_tester.de.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_tester.en.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_tester.fr.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_tester.it.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_tester.pl.html
+%%DOCUMENTATION%%share/doc/weechat/weechat_user.de.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_user.en.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_user.fr.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_user.it.html
@@ -47,5 +52,5 @@ libdata/pkgconfig/weechat.pc
 %%NLS%%share/locale/ru/LC_MESSAGES/weechat.mo
 @dirrmtry lib/weechat/plugins
 @dirrmtry lib/weechat
-@dirrmtry share/doc/weechat
+%%DOCUMENTATION%%@dirrmtry share/doc/weechat
 @dirrm include/weechat
