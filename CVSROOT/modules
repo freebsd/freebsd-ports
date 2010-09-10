@@ -9467,6 +9467,7 @@ mod_python                      ports/www/mod_python
 mod_python3                     ports/www/mod_python3
 mod_realip                      ports/www/mod_realip
 mod_remoteip                    ports/www/mod_remoteip
+mod_rivet                       ports/www/mod_rivet
 mod_roaming                     ports/www/mod_roaming
 mod_roaming2                    ports/www/mod_roaming2
 mod_rpaf                        ports/www/mod_rpaf
@@ -13517,6 +13518,7 @@ p5-Petal-CodePerl               ports/textproc/p5-Petal-CodePerl
 p5-Petal-Mail                   ports/textproc/p5-Petal-Mail
 p5-Petal-Utils                  ports/textproc/p5-Petal-Utils
 p5-Pg                           ports/databases/p5-Pg
+p5-Physics-Unit                 ports/science/p5-Physics-Unit
 p5-Pid-File-Flock               ports/devel/p5-Pid-File-Flock
 p5-Pipeline                     ports/devel/p5-Pipeline
 p5-PlRPC                        ports/net/p5-PlRPC
@@ -17386,6 +17388,7 @@ p5-pgp                          ports/security/p5-PGP
 p5-pgp-sign                     ports/security/p5-PGP-Sign
 p5-php-serialization            ports/devel/p5-PHP-Serialization
 p5-php-session                  ports/www/p5-PHP-Session
+p5-physics-unit                 ports/science/p5-Physics-Unit
 p5-pid-file-flock               ports/devel/p5-Pid-File-Flock
 p5-pip                          ports/devel/p5-pip
 p5-pipeline                     ports/devel/p5-Pipeline
@@ -19951,6 +19954,7 @@ pipsv700                        ports/print/pipsv700
 pipsv700-cups                   ports/print/pipsv700-cups
 pircbot                         ports/irc/pircbot
 pisg                            ports/irc/pisg
+pitivi                          ports/multimedia/pitivi
 pivot-weblog                    ports/www/pivot-weblog
 piwik                           ports/www/piwik
 pixelize                        ports/graphics/pixelize
@@ -22642,6 +22646,7 @@ rubygem-prawn-layout            ports/print/rubygem-prawn-layout
 rubygem-prawn-security          ports/print/rubygem-prawn-security
 rubygem-ptreloaded              ports/devel/rubygem-ptreloaded
 rubygem-rack                    ports/www/rubygem-rack
+rubygem-rack-cache              ports/www/rubygem-rack-cache
 rubygem-rack-mount              ports/www/rubygem-rack-mount
 rubygem-rack-test               ports/www/rubygem-rack-test
 rubygem-railroad                ports/graphics/rubygem-railroad
@@ -22696,6 +22701,7 @@ rubygem-sexp_processor          ports/devel/rubygem-sexp_processor
 rubygem-simple-rss              ports/www/rubygem-simple-rss
 rubygem-sinatra                 ports/www/rubygem-sinatra
 rubygem-sinatra-respond_to      ports/www/rubygem-sinatra-respond_to
+rubygem-smtp_tls                ports/mail/rubygem-smtp_tls
 rubygem-snmp                    ports/net-mgmt/rubygem-snmp
 rubygem-soap4r                  ports/devel/rubygem-soap4r
 rubygem-spreadsheet             ports/textproc/rubygem-spreadsheet
@@ -26504,6 +26510,7 @@ yaws                            ports/www/yaws
 yaz                             ports/net/yaz
 yaz++                           ports/net/yaz++
 yazproxy                        ports/net/yazproxy
+yconalyzer                      ports/net/yconalyzer
 yeahconsole                     ports/x11/yeahconsole
 yed                             ports/graphics/yed
 yell                            ports/audio/yell
