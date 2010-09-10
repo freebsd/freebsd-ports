@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	weechat
-PORTVERSION=	20100807
+PORTVERSION=	20100908
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/ \
 		http://freebsd.unixfreunde.de/sources/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	weechat-devel-6f063c95f1ed3f0f3c7071aeb4a6e2094439bc23
+DISTNAME=	weechat-devel-edb839732ebcd608f1b3a368b03e8b28528dc139
 
 MAINTAINER=	freebsd@beardz.net
 COMMENT=	A lightweight and user friendly ncurse based IRC client
@@ -38,7 +38,7 @@ OPTIONS=	RUBY		"Ruby scripting support."	Off	\
 		NLS		"NLS support."			On	\
 		DOCUMENTATION	"Build documentation."		Off
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-6f063c9
+WRKSRC=	${WRKDIR}/${PORTNAME}-edb8397
 
 .include <bsd.port.options.mk>
 
@@ -47,14 +47,14 @@ CMAKE_BUILD_TYPE=	Debug
 .endif
 
 .if defined(WITHOUT_CHARSET)
-CMAKE_ARGS+=	-DDISABLE_CHARSET=yes
+CMAKE_ARGS+=	-DENABLE_CHARSET=no
 PLIST_SUB+=	CHARSET="@comment "
 .else
 PLIST_SUB+=	CHARSET=""
 .endif
 
 .if defined(WITHOUT_NLS)
-CMAKE_ARGS+=	-DDISABLE_NLS=yes
+CMAKE_ARGS+=	-DENABLE_NLS=no
 PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
@@ -65,7 +65,7 @@ PLIST_SUB+=	NLS=""
 BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 PLIST_SUB+=	ASPELL=""
 .else
-CMAKE_ARGS+=	-DDISABLE_ASPELL=yes
+CMAKE_ARGS+=	-DENABLE_ASPELL=no
 PLIST_SUB+=	ASPELL="@comment "
 .endif
 
@@ -73,30 +73,29 @@ PLIST_SUB+=	ASPELL="@comment "
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON=""
 .else
-CMAKE_ARGS+=	-DDISABLE_PYTHON=yes
+CMAKE_ARGS+=	-DENABLE_PYTHON=no
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if defined(WITH_RUBY)
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
 USE_RUBY=	yes
 PLIST_SUB+=	RUBY=""
 .else
-CMAKE_ARGS+=	-DDISABLE_RUBY=yes
+CMAKE_ARGS+=	-DENABLE_RUBY=no
 PLIST_SUB+=	RUBY="@comment "
 .endif
 
 .if defined(WITH_GNUTLS)
 LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
 .else
-CMAKE_ARGS+=	-DDISABLE_GNUTLS=yes
+CMAKE_ARGS+=	-DENABLE_GNUTLS=no
 .endif
 
 .if defined(WITH_PERL)
 USE_PERL5=	yes
 PLIST_SUB+=	PERL=""
 .else
-CMAKE_ARGS+=	-DDISABLE_PERL=yes
+CMAKE_ARGS+=	-DENABLE_PERL=no
 PLIST_SUB+=	PERL="@comment "
 .endif
 
@@ -105,7 +104,7 @@ USE_TCL=	83+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 PLIST_SUB+=	TCL=""
 .else
-CMAKE_ARGS+=	-DDISABLE_TCL=yes
+CMAKE_ARGS+=	-DENABLE_TCL=no
 PLIST_SUB+=	TCL="@comment "
 .endif
 
@@ -113,7 +112,7 @@ PLIST_SUB+=	TCL="@comment "
 USE_LUA=	5.0+
 PLIST_SUB+=	LUA=""
 .else
-CMAKE_ARGS+=	-DDISABLE_LUA=yes
+CMAKE_ARGS+=	-DENABLE_LUA=no
 PLIST_SUB+=	LUA="@comment "
 .endif
 
@@ -122,7 +121,7 @@ BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc
 BUILD_DEPENDS+=	source-highlight:${PORTSDIR}/textproc/source-highlight
 PLIST_SUB+=	DOCUMENTATION=""
 .else
-CMAKE_ARGS+=	-DDISABLE_DOC=yes
+CMAKE_ARGS+=	-DENABLE_DOC=no
 PLIST_SUB+=	DOCUMENTATION="@comment "
 .endif
 
