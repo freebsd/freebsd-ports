@@ -66,6 +66,7 @@ lib/gcstar/GCLang/AR/GCModels/GCminicars.pm
 lib/gcstar/GCLang/AR/GCModels/GCmusics.pm
 lib/gcstar/GCLang/AR/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/AR/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/AR/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/AR/GCModels/GCstamps.pm
 lib/gcstar/GCLang/AR/GCModels/GCwines.pm
 lib/gcstar/GCLang/AR/GCstar.pm
@@ -95,6 +96,7 @@ lib/gcstar/GCLang/BG/GCModels/GCminicars.pm
 lib/gcstar/GCLang/BG/GCModels/GCmusics.pm
 lib/gcstar/GCLang/BG/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/BG/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/BG/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/BG/GCModels/GCstamps.pm
 lib/gcstar/GCLang/BG/GCModels/GCwines.pm
 lib/gcstar/GCLang/BG/GCstar.pm
@@ -124,6 +126,7 @@ lib/gcstar/GCLang/CA/GCModels/GCminicars.pm
 lib/gcstar/GCLang/CA/GCModels/GCmusics.pm
 lib/gcstar/GCLang/CA/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/CA/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/CA/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/CA/GCModels/GCstamps.pm
 lib/gcstar/GCLang/CA/GCModels/GCwines.pm
 lib/gcstar/GCLang/CA/GCstar.pm
@@ -153,6 +156,7 @@ lib/gcstar/GCLang/CS/GCModels/GCminicars.pm
 lib/gcstar/GCLang/CS/GCModels/GCmusics.pm
 lib/gcstar/GCLang/CS/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/CS/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/CS/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/CS/GCModels/GCstamps.pm
 lib/gcstar/GCLang/CS/GCModels/GCwines.pm
 lib/gcstar/GCLang/CS/GCstar.pm
@@ -182,6 +186,7 @@ lib/gcstar/GCLang/DE/GCModels/GCminicars.pm
 lib/gcstar/GCLang/DE/GCModels/GCmusics.pm
 lib/gcstar/GCLang/DE/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/DE/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/DE/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/DE/GCModels/GCstamps.pm
 lib/gcstar/GCLang/DE/GCModels/GCwines.pm
 lib/gcstar/GCLang/DE/GCstar.pm
@@ -211,6 +216,7 @@ lib/gcstar/GCLang/EL/GCModels/GCminicars.pm
 lib/gcstar/GCLang/EL/GCModels/GCmusics.pm
 lib/gcstar/GCLang/EL/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/EL/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/EL/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/EL/GCModels/GCstamps.pm
 lib/gcstar/GCLang/EL/GCModels/GCwines.pm
 lib/gcstar/GCLang/EL/GCstar.pm
@@ -240,6 +246,7 @@ lib/gcstar/GCLang/EN/GCModels/GCminicars.pm
 lib/gcstar/GCLang/EN/GCModels/GCmusics.pm
 lib/gcstar/GCLang/EN/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/EN/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/EN/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/EN/GCModels/GCstamps.pm
 lib/gcstar/GCLang/EN/GCModels/GCwines.pm
 lib/gcstar/GCLang/EN/GCstar.pm
@@ -269,6 +276,7 @@ lib/gcstar/GCLang/ES/GCModels/GCminicars.pm
 lib/gcstar/GCLang/ES/GCModels/GCmusics.pm
 lib/gcstar/GCLang/ES/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/ES/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/ES/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/ES/GCModels/GCstamps.pm
 lib/gcstar/GCLang/ES/GCModels/GCwines.pm
 lib/gcstar/GCLang/ES/GCstar.pm
@@ -298,6 +306,7 @@ lib/gcstar/GCLang/FR/GCModels/GCminicars.pm
 lib/gcstar/GCLang/FR/GCModels/GCmusics.pm
 lib/gcstar/GCLang/FR/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/FR/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/FR/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/FR/GCModels/GCstamps.pm
 lib/gcstar/GCLang/FR/GCModels/GCwines.pm
 lib/gcstar/GCLang/FR/GCstar.pm
@@ -328,6 +337,7 @@ lib/gcstar/GCLang/GL/GCModels/GCminicars.pm
 lib/gcstar/GCLang/GL/GCModels/GCmusics.pm
 lib/gcstar/GCLang/GL/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/GL/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/GL/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/GL/GCModels/GCstamps.pm
 lib/gcstar/GCLang/GL/GCModels/GCwines.pm
 lib/gcstar/GCLang/GL/GCstar.pm
@@ -357,6 +367,7 @@ lib/gcstar/GCLang/HU/GCModels/GCminicars.pm
 lib/gcstar/GCLang/HU/GCModels/GCmusics.pm
 lib/gcstar/GCLang/HU/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/HU/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/HU/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/HU/GCModels/GCstamps.pm
 lib/gcstar/GCLang/HU/GCModels/GCwines.pm
 lib/gcstar/GCLang/HU/GCstar.pm
@@ -386,6 +397,7 @@ lib/gcstar/GCLang/ID/GCModels/GCminicars.pm
 lib/gcstar/GCLang/ID/GCModels/GCmusics.pm
 lib/gcstar/GCLang/ID/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/ID/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/ID/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/ID/GCModels/GCstamps.pm
 lib/gcstar/GCLang/ID/GCModels/GCwines.pm
 lib/gcstar/GCLang/ID/GCstar.pm
@@ -415,6 +427,7 @@ lib/gcstar/GCLang/IT/GCModels/GCminicars.pm
 lib/gcstar/GCLang/IT/GCModels/GCmusics.pm
 lib/gcstar/GCLang/IT/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/IT/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/IT/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/IT/GCModels/GCstamps.pm
 lib/gcstar/GCLang/IT/GCModels/GCwines.pm
 lib/gcstar/GCLang/IT/GCstar.pm
@@ -445,6 +458,7 @@ lib/gcstar/GCLang/NL/GCModels/GCminicars.pm
 lib/gcstar/GCLang/NL/GCModels/GCmusics.pm
 lib/gcstar/GCLang/NL/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/NL/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/NL/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/NL/GCModels/GCstamps.pm
 lib/gcstar/GCLang/NL/GCModels/GCwines.pm
 lib/gcstar/GCLang/NL/GCstar.pm
@@ -474,6 +488,7 @@ lib/gcstar/GCLang/PL/GCModels/GCminicars.pm
 lib/gcstar/GCLang/PL/GCModels/GCmusics.pm
 lib/gcstar/GCLang/PL/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/PL/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/PL/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/PL/GCModels/GCstamps.pm
 lib/gcstar/GCLang/PL/GCModels/GCwines.pm
 lib/gcstar/GCLang/PL/GCstar.pm
@@ -503,6 +518,7 @@ lib/gcstar/GCLang/PT/GCModels/GCminicars.pm
 lib/gcstar/GCLang/PT/GCModels/GCmusics.pm
 lib/gcstar/GCLang/PT/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/PT/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/PT/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/PT/GCModels/GCstamps.pm
 lib/gcstar/GCLang/PT/GCModels/GCwines.pm
 lib/gcstar/GCLang/PT/GCstar.pm
@@ -533,6 +549,7 @@ lib/gcstar/GCLang/RO/GCModels/GCminicars.pm
 lib/gcstar/GCLang/RO/GCModels/GCmusics.pm
 lib/gcstar/GCLang/RO/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/RO/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/RO/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/RO/GCModels/GCstamps.pm
 lib/gcstar/GCLang/RO/GCModels/GCwines.pm
 lib/gcstar/GCLang/RO/GCstar.pm
@@ -562,6 +579,7 @@ lib/gcstar/GCLang/RU/GCModels/GCminicars.pm
 lib/gcstar/GCLang/RU/GCModels/GCmusics.pm
 lib/gcstar/GCLang/RU/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/RU/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/RU/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/RU/GCModels/GCstamps.pm
 lib/gcstar/GCLang/RU/GCModels/GCwines.pm
 lib/gcstar/GCLang/RU/GCstar.pm
@@ -591,6 +609,7 @@ lib/gcstar/GCLang/SR/GCModels/GCminicars.pm
 lib/gcstar/GCLang/SR/GCModels/GCmusics.pm
 lib/gcstar/GCLang/SR/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/SR/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/SR/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/SR/GCModels/GCstamps.pm
 lib/gcstar/GCLang/SR/GCModels/GCwines.pm
 lib/gcstar/GCLang/SR/GCstar.pm
@@ -620,6 +639,7 @@ lib/gcstar/GCLang/SV/GCModels/GCminicars.pm
 lib/gcstar/GCLang/SV/GCModels/GCmusics.pm
 lib/gcstar/GCLang/SV/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/SV/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/SV/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/SV/GCModels/GCstamps.pm
 lib/gcstar/GCLang/SV/GCModels/GCwines.pm
 lib/gcstar/GCLang/SV/GCstar.pm
@@ -649,6 +669,7 @@ lib/gcstar/GCLang/TR/GCModels/GCminicars.pm
 lib/gcstar/GCLang/TR/GCModels/GCmusics.pm
 lib/gcstar/GCLang/TR/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/TR/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/TR/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/TR/GCModels/GCstamps.pm
 lib/gcstar/GCLang/TR/GCModels/GCwines.pm
 lib/gcstar/GCLang/TR/GCstar.pm
@@ -678,6 +699,7 @@ lib/gcstar/GCLang/UK/GCModels/GCminicars.pm
 lib/gcstar/GCLang/UK/GCModels/GCmusics.pm
 lib/gcstar/GCLang/UK/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/UK/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/UK/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/UK/GCModels/GCstamps.pm
 lib/gcstar/GCLang/UK/GCModels/GCwines.pm
 lib/gcstar/GCLang/UK/GCstar.pm
@@ -707,6 +729,7 @@ lib/gcstar/GCLang/ZH/GCModels/GCminicars.pm
 lib/gcstar/GCLang/ZH/GCModels/GCmusics.pm
 lib/gcstar/GCLang/ZH/GCModels/GCperiodicals.pm
 lib/gcstar/GCLang/ZH/GCModels/GCsmartcards.pm
+lib/gcstar/GCLang/ZH/GCModels/GCsoftware.pm
 lib/gcstar/GCLang/ZH/GCModels/GCstamps.pm
 lib/gcstar/GCLang/ZH/GCModels/GCwines.pm
 lib/gcstar/GCLang/ZH/GCstar.pm
@@ -715,6 +738,7 @@ lib/gcstar/GCMainWindow.pm
 lib/gcstar/GCMenu.pm
 lib/gcstar/GCModel.pm
 lib/gcstar/GCModels/GCTVepisodes.gcm
+lib/gcstar/GCModels/GCTVseries.gcm
 lib/gcstar/GCModels/GCboardgames.gcm
 lib/gcstar/GCModels/GCbooks.gcm
 lib/gcstar/GCModels/GCcoins.gcm
@@ -725,6 +749,7 @@ lib/gcstar/GCModels/GCminicars.gcm
 lib/gcstar/GCModels/GCmusics.gcm
 lib/gcstar/GCModels/GCperiodicals.gcm
 lib/gcstar/GCModels/GCsmartcards.gcm
+lib/gcstar/GCModels/GCsoftware.gcm
 lib/gcstar/GCModels/GCstamps.gcm
 lib/gcstar/GCModels/GCwines.gcm
 lib/gcstar/GCOptions.pm
@@ -736,6 +761,12 @@ lib/gcstar/GCPlugins/GCTVepisodes/GCTvdb.pm
 lib/gcstar/GCPlugins/GCTVepisodes/GCTvdbES.pm
 lib/gcstar/GCPlugins/GCTVepisodes/GCTvdbFR.pm
 lib/gcstar/GCPlugins/GCTVepisodes/GCTvdbIT.pm
+lib/gcstar/GCPlugins/GCTVseries/GCTVseriesCommon.pm
+lib/gcstar/GCPlugins/GCTVseries/GCThemoviedb.pm
+lib/gcstar/GCPlugins/GCTVseries/GCTvdb.pm
+lib/gcstar/GCPlugins/GCTVseries/GCTvdbES.pm
+lib/gcstar/GCPlugins/GCTVseries/GCTvdbFR.pm
+lib/gcstar/GCPlugins/GCTVseries/GCTvdbIT.pm
 lib/gcstar/GCPlugins/GCboardgames/GCReservoirJeux.pm
 lib/gcstar/GCPlugins/GCboardgames/GCboardgamegeek.pm
 lib/gcstar/GCPlugins/GCboardgames/GCboardgamesCommon.pm
@@ -816,6 +847,9 @@ lib/gcstar/GCPlugins/GCfilms/GCOnet.pm
 lib/gcstar/GCPlugins/GCfilms/GCPortHU.pm
 lib/gcstar/GCPlugins/GCfilms/GCStopklatka.pm
 lib/gcstar/GCPlugins/GCfilms/GCThemoviedb.pm
+lib/gcstar/GCPlugins/GCfilms/GCThemoviedbDE.pm
+lib/gcstar/GCPlugins/GCfilms/GCThemoviedbES.pm
+lib/gcstar/GCPlugins/GCfilms/GCThemoviedbFR.pm
 lib/gcstar/GCPlugins/GCfilms/GCfilmsAmazonCommon.pm
 lib/gcstar/GCPlugins/GCfilms/GCfilmsCommon.pm
 lib/gcstar/GCPlugins/GCgames/GCAlapage.pm
@@ -1254,6 +1288,7 @@ share/pixmaps/gcstar.png
 @dirrm lib/gcstar/GCPlugins/GCcomics
 @dirrm lib/gcstar/GCPlugins/GCbooks
 @dirrm lib/gcstar/GCPlugins/GCboardgames
+@dirrm lib/gcstar/GCPlugins/GCTVseries
 @dirrm lib/gcstar/GCPlugins/GCTVepisodes
 @dirrm lib/gcstar/GCPlugins
 @dirrm lib/gcstar/GCModels
