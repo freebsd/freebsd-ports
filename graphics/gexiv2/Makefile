@@ -7,6 +7,7 @@
 
 PORTNAME=	gexiv2
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://yorba.org/download/gexiv2/${PORTVERSION:R}/
 DISTNAME=	libgexiv2-${PORTVERSION}
@@ -29,5 +30,8 @@ post-patch:
 		-e 's|^([[:space:]]+)m4[[:space:]]|\1gm4 |' \
 		-e 's|\$$\(LIB\)/pkgconfig|libdata/pkgconfig|g' \
 		${WRKSRC}/${MAKEFILE}
+
+pre-install:
+	@${MKDIR} ${PREFIX}/share/vala/vapi
 
 .include <bsd.port.mk>
