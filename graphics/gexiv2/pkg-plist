@@ -10,3 +10,5 @@ lib/libgexiv2.a
 libdata/pkgconfig/gexiv2.pc
 share/vala/vapi/gexiv2.vapi
 @dirrmtry include/gexiv2
+@dirrmtry share/vala/vapi
+@dirrmtry share/vala
