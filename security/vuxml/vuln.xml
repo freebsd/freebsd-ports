@@ -52,17 +52,17 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <cvename>CVE-1781</cvename>
-      <cvename>CVE-1782</cvename>
-      <cvename>CVE-1784</cvename>
-      <cvename>CVE-1785</cvename>
-      <cvename>CVE-1786</cvename>
-      <cvename>CVE-1787</cvename>
-      <cvename>CVE-1788</cvename>
-      <cvename>CVE-1790</cvename>
-      <cvename>CVE-1792</cvename>
-      <cvename>CVE-1793</cvename>
-      <cvename>CVE-2648</cvename>
+      <cvename>CVE-2010-1781</cvename>
+      <cvename>CVE-2010-1782</cvename>
+      <cvename>CVE-2010-1784</cvename>
+      <cvename>CVE-2010-1785</cvename>
+      <cvename>CVE-2010-1786</cvename>
+      <cvename>CVE-2010-1787</cvename>
+      <cvename>CVE-2010-1788</cvename>
+      <cvename>CVE-2010-1790</cvename>
+      <cvename>CVE-2010-1792</cvename>
+      <cvename>CVE-2010-1793</cvename>
+      <cvename>CVE-2010-2648</cvename>
       <url>http://gitorious.org/webkitgtk/stable/commit/9d07fda89aab7105962d933eef32ca15dda610d8</url>
     </references>
     <dates>
