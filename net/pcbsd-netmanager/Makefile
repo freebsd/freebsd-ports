@@ -21,16 +21,18 @@ WRKSRC=		${WRKDIR}/pcbsd-netmanager
 
 USE_GZIP=	yes
 USE_QMAKE=	yes
-USE_KDE4=	automoc4 kdehier kdeprefix kdelibs workspace
+USE_KDE4=	automoc4 kdehier kdeprefix kdelibs workspace 
+USE_LDCONFIG=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build linguist
 HAS_CONFIGURE=	yes
+MAKE_ARGS=	INSTALL_ROOT=${DESTDIR}
 
-QMAKE_ARGS=     -unix -recursive ${QMAKE_PRO}
-QMAKE_PRO=      pcbsdnetmanager.pro
+QMAKE_ARGS=	-unix -recursive ${QMAKE_PRO}
+QMAKE_PRO=	pcbsdnetmanager.pro
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local/kde4|${PREFIX}|g' \
 				 ${WRKSRC}/pcbsdnetmanager.pro \
 				 ${WRKSRC}/src/NetworkManager/NetworkManager.pro \
 				 ${WRKSRC}/src/NetworkManagerAdmin/NetworkManagerAdmin.pro \
