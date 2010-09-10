@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	openerp-server
-PORTVERSION=	5.0.11
+PORTVERSION=	5.0.14
 CATEGORIES=	finance python
-MASTER_SITES=	http://openerp.com/download/stable/source/
+MASTER_SITES=	http://www.openerp.com/download/stable/source/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Open source application ERP & CRM in Python using Postgresql
