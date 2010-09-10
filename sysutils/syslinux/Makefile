@@ -19,7 +19,7 @@ COMMENT=	Syslinux for FreeBSD
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 RUN_DEPENDS= mtools:${PORTSDIR}/emulators/mtools
 
-BROKEN=		Does not run; segfaults.
+IGNORE=		Does not run; segfaults.
 
 MAN1=		syslinux.1
 
