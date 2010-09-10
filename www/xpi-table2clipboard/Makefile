@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	table2clipboard
-PORTVERSION=	1.4
+PORTVERSION=	1.5.1
 DISTVERSIONSUFFIX=	-fx+tb+sm
 CATEGORIES=	www
 
