@@ -1,4 +1,9 @@
 bin/kccachetest
+bin/kcdirmgr
+bin/kcdirtest
+bin/kcforestmgr
+bin/kcforesttest
+bin/kcgrasstest
 bin/kchashmgr
 bin/kchashtest
 bin/kclangctest
@@ -14,19 +19,20 @@ include/kccommon.h
 include/kccompare.h
 include/kccompress.h
 include/kcdb.h
+include/kcdirdb.h
 include/kcfile.h
 include/kchashdb.h
 include/kclangc.h
 include/kcmap.h
+include/kcplantdb.h
 include/kcpolydb.h
 include/kcprotodb.h
 include/kcthread.h
-include/kctreedb.h
 include/kcutil.h
 lib/libkyotocabinet.a
 lib/libkyotocabinet.so
-lib/libkyotocabinet.so.2
-lib/libkyotocabinet.so.2.23.0
+lib/libkyotocabinet.so.4
+lib/libkyotocabinet.so.4.8.0
 libdata/pkgconfig/kyotocabinet.pc
 %%DATADIR%%/kyotocabinet.idl
 @dirrm %%DATADIR%%
