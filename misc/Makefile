@@ -503,6 +503,7 @@
     SUBDIR += spamcalc
     SUBDIR += splitvt
     SUBDIR += sshbuddy
+    SUBDIR += sssnips
     SUBDIR += stan
     SUBDIR += susv2
     SUBDIR += susv3
