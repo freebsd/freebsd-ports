@@ -83,9 +83,4 @@ post-install:
 		${SETENV} ${MAKE_ENV} ${GMAKE} -d ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 .endfor
 
-test:
-	@(cd ${WRKSRC}/Testing && . ${GNUSTEP_MAKEFILES}/GNUstep.sh; ${GMAKE})
-
-regression-test:	test
-
 .include <bsd.port.post.mk>
