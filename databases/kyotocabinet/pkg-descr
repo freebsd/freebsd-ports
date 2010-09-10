@@ -15,9 +15,10 @@ of Kyoto Cabinet is great. The database size can be up to 8EB (9.22e18
 bytes).
 
 Kyoto Cabinet is written in the C++ language, and provided as API of
-C++, C, and Ruby. Kyoto Cabinet is available on platforms which have
-API conforming to C++03 with the TR1 library extensions. Kyoto Cabinet
-is a free software licensed under the GNU General Public License.
+C++, C, Java, Python, Ruby, Perl, and Lua. Kyoto Cabinet is available
+on platforms which have API conforming to C++03 with the TR1 library
+extensions. Kyoto Cabinet is a free software licensed under the GNU
+General Public License.
 
-Author:	Mikio Hirabayashi <hirarin@gmail.com>
-WWW:	http://1978th.net/kyotocabinet/
+Author:	FAL Labs <info@fallabs.com>
+WWW:	http://fallabs.com/kyotocabinet/

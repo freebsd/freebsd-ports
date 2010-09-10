@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	kyotocabinet
-PORTVERSION=	1.0.1
+PORTVERSION=	1.2.7
 CATEGORIES=	databases
-MASTER_SITES=	http://1978th.net/kyotocabinet/
+MASTER_SITES=	http://fallabs.com/kyotocabinet/
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A straightforward implementation of DBM
@@ -36,6 +36,11 @@ PORTDOCS=	*
 .endif
 
 MAN1=		kccachetest.1 \
+		kcdirmgr.1 \
+		kcdirtest.1 \
+		kcforestmgr.1 \
+		kcforesttest.1 \
+		kcgrasstest.1 \
 		kchashmgr.1 \
 		kchashtest.1 \
 		kclangctest.1 \
@@ -55,7 +60,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/kyotocabinet.idl ${DATADIR}/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "COPYING ChangeLog THANKS doc" ${DOCSDIR}/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "COPYING ChangeLog doc" ${DOCSDIR}/
 .endif
 .if exists(${PKGMESSAGE})
 	@${CAT} ${PKGMESSAGE}

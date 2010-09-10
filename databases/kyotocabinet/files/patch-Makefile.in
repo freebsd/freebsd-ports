@@ -1,5 +1,5 @@
---- Makefile.in.orig	2010-05-30 08:51:42.000000000 +0900
-+++ Makefile.in	2010-06-08 11:05:38.570093000 +0900
+--- Makefile.in.orig	2010-08-22 13:27:43.835019488 +0200
++++ Makefile.in	2010-08-22 13:28:40.491750162 +0200
 @@ -117,13 +117,13 @@
  	cp -Rf $(LIBRARYFILES) $(DESTDIR)$(LIBDIR)
  	mkdir -p $(DESTDIR)$(BINDIR)
@@ -12,8 +12,8 @@
  	cd man && cp -Rf $(MAN1FILES) $(DESTDIR)$(MAN1DIR)
  	mkdir -p $(DESTDIR)$(PCDIR)
  	cp -Rf $(PCFILES) $(DESTDIR)$(PCDIR)
--	[ "$$UID" = 0 ] && ldconfig || true
-+#	[ "$$UID" = 0 ] && ldconfig || true
+-	-[ "$$UID" = 0 ] && PATH=/sbin:/usr/sbin:$(PATH) ldconfig 2>/dev/null || true
++#	-[ "$$UID" = 0 ] && PATH=/sbin:/usr/sbin:$(PATH) ldconfig 2>/dev/null || true
  	@printf '\n'
  	@printf '#================================================================\n'
  	@printf '# Thanks for using Kyoto Cabinet.\n'
