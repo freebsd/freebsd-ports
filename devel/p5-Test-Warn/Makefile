@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Warn
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,6 @@ RUN_DEPENDS=	p5-Array-Compare>=0:${PORTSDIR}/misc/p5-Array-Compare \
 		p5-Tree-DAG_Node>=0:${PORTSDIR}/devel/p5-Tree-DAG_Node
 
 PERL_CONFIGURE=	yes
-USE_ZIP=	yes
 
 MAN3=		Test::Warn.3
 
