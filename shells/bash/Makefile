@@ -31,6 +31,12 @@ COMMENT=		The GNU Project's Bourne Again SHell
 
 IGNOREFILES=		FAQ
 
+.if defined(WITH_OPTIONS) || defined(WITH_BASH_OPTIONS)
+.include "${.CURDIR}/../bash/options"
+.endif
+
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_IMPLICITCD)
 EXTRA_PATCHES+=		${PATCHDIR}/xpatch-implicitcd
 .endif
@@ -95,8 +101,6 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}" \
 			YACC="bison -y"
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/bash.1

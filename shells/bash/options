@@ -1,0 +1,6 @@
+OPTIONS=	IMPLICITCD "Use directory name alone to cd into it" on \
+		COLONBREAKSWORDS "Colons break words" on \
+		HELP "Install the help files" on \
+		INST_READL "Use readline from base, otherwise bash's" on \
+		NLS "National Language Support" on \
+		STATIC_BASH "Compile without shared libs" off
