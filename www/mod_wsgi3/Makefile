@@ -22,7 +22,7 @@ LICENSE=	ASL
 MAKE_JOBS_SAFE=	yes
 
 #LATEST_LINK=	mod_wsgi
-CONFLICTS=	${PKGNAMEPREFIX}mod_wsgi-2.*www/mod_wsgi-2.*
+CONFLICTS=	${PKGNAMEPREFIX}mod_wsgi-2.* mod_wsgi-2.*
 
 PROJECTHOST=	modwsgi
 
