@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	meld
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 

@@ -159,14 +159,8 @@ share/applications/meld.desktop
 %%DATADIR%%/icons/vc-remove-24.png
 %%DATADIR%%/icons/vc-resolve-24.png
 %%DATADIR%%/icons/vc-update-24.png
-share/gnome/help/meld/C/figures/dirdiff.png
-share/gnome/help/meld/C/figures/filediff.png
 share/gnome/help/meld/C/meld.xml
-share/gnome/help/meld/es/figures/dirdiff.png
-share/gnome/help/meld/es/figures/filediff.png
 share/gnome/help/meld/es/meld.xml
-share/gnome/help/meld/fr/figures/dirdiff.png
-share/gnome/help/meld/fr/figures/filediff.png
 share/gnome/help/meld/fr/meld.xml
 share/icons/hicolor/16x16/apps/meld.png
 share/icons/hicolor/22x22/apps/meld.png
@@ -215,11 +209,8 @@ share/pixmaps/meld.png
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrm share/gnome/help/meld/fr/figures
 @dirrm share/gnome/help/meld/fr
-@dirrm share/gnome/help/meld/es/figures
 @dirrm share/gnome/help/meld/es
-@dirrm share/gnome/help/meld/C/figures
 @dirrm share/gnome/help/meld/C
 @dirrm share/gnome/help/meld
 @dirrm lib/meld/meld/vc
