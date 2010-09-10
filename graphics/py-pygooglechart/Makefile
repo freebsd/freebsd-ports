@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	pygooglechart
-PORTVERSION=	0.2.1
-#PORTREVISION=	0
+PORTVERSION=	0.3.0
+PORTREVISION=	0
 CATEGORIES=	graphics python
 MASTER_SITES=	http://pygooglechart.slowchop.com/files/download/ \
 		LOCAL/nivit/${PORTNAME}/
