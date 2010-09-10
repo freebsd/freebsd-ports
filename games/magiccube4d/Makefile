@@ -22,10 +22,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION:S/./_/}
 DOCS=		ChangeLog Intro.txt MagicCube4D-unix.txt \
 		ideas.txt readme-unix.txt
 
-post-patch:
-	@${REINPLACE_CMD} -e 's/stickers)()/stickers)(0)/' \
-		${WRKSRC}/EventHandler.cpp
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/magiccube4d ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -36,11 +32,5 @@ do-install:
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
-.endif
 
 .include <bsd.port.post.mk>
