@@ -4,7 +4,7 @@
 # PROVIDE: zhm
 # REQUIRE: named
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="zhm"
 rcvar="zhm_enable"
