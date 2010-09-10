@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	Getopt-Euclid
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/K/KG/KGALINSKY
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Executable Uniform Command-Line Interface Descriptions
