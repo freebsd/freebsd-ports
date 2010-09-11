@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Tie/Hash/MultiValue.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Hash/MultiValue/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Hash/MultiValue
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Hash
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
+@dirrmtry %%SITE_PERL%%/Tie/Hash
+@dirrmtry %%SITE_PERL%%/Tie
