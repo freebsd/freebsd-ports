@@ -2218,6 +2218,7 @@
     SUBDIR += p5-Test-Module-Used
     SUBDIR += p5-Test-More-UTF8
     SUBDIR += p5-Test-Most
+    SUBDIR += p5-Test-Net-RabbitMQ
     SUBDIR += p5-Test-NoWarnings
     SUBDIR += p5-Test-Number-Delta
     SUBDIR += p5-Test-Object
