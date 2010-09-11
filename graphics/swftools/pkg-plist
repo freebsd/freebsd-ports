@@ -2,6 +2,7 @@ bin/as3compile
 bin/font2swf
 bin/gif2swf
 bin/jpeg2swf
+%%PDF%%bin/pdf2pdf
 bin/pdf2swf
 bin/png2swf
 bin/swfbbox
