@@ -477,6 +477,15 @@
 %%WWWDIR%%/admin/editor/plugins/paste/langs/en_dlg.js
 %%WWWDIR%%/admin/editor/plugins/paste/pastetext.htm
 %%WWWDIR%%/admin/editor/plugins/paste/pasteword.htm
+%%WWWDIR%%/admin/editor/plugins/phpmyfaq/img/phpmyfaq.gif
+%%WWWDIR%%/admin/editor/plugins/phpmyfaq/js/dialog.js
+%%WWWDIR%%/admin/editor/plugins/phpmyfaq/langs/de.js
+%%WWWDIR%%/admin/editor/plugins/phpmyfaq/langs/de_dlg.js
+%%WWWDIR%%/admin/editor/plugins/phpmyfaq/langs/en.js
+%%WWWDIR%%/admin/editor/plugins/phpmyfaq/langs/en_dlg.js
+%%WWWDIR%%/admin/editor/plugins/phpmyfaq/dialog.html
+%%WWWDIR%%/admin/editor/plugins/phpmyfaq/editor_plugin.js
+%%WWWDIR%%/admin/editor/plugins/phpmyfaq/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/preview/editor_plugin.js
 %%WWWDIR%%/admin/editor/plugins/preview/editor_plugin_src.js
 %%WWWDIR%%/admin/editor/plugins/preview/example.html
@@ -771,7 +780,6 @@
 %%WWWDIR%%/inc/PMF_DB/Mssql.php
 %%WWWDIR%%/inc/PMF_DB/Mysql.php
 %%WWWDIR%%/inc/PMF_DB/Mysqli.php
-%%WWWDIR%%/inc/PMF_DB/Oci8.php
 %%WWWDIR%%/inc/PMF_DB/Pgsql.php
 %%WWWDIR%%/inc/PMF_DB/Sqlite.php
 %%WWWDIR%%/inc/PMF_DB/Sqlsrv.php
@@ -802,7 +810,6 @@
 %%WWWDIR%%/inc/PMF_Search/Database/Mssql.php
 %%WWWDIR%%/inc/PMF_Search/Database/Mysql.php
 %%WWWDIR%%/inc/PMF_Search/Database/Mysqli.php
-%%WWWDIR%%/inc/PMF_Search/Database/Oci8.php
 %%WWWDIR%%/inc/PMF_Search/Database/Pgsql.php
 %%WWWDIR%%/inc/PMF_Search/Database/Sqlite.php
 %%WWWDIR%%/inc/PMF_Search/Database/Sqlsrv.php
@@ -811,7 +818,6 @@
 %%WWWDIR%%/inc/PMF_Search/Factory.php
 %%WWWDIR%%/inc/PMF_Search/Interface.php
 %%WWWDIR%%/inc/PMF_Search/Resultset.php
-%%WWWDIR%%/inc/PMF_Search/Resultset.php.orig
 %%WWWDIR%%/inc/PMF_String/Abstract.php
 %%WWWDIR%%/inc/PMF_String/Basic.php
 %%WWWDIR%%/inc/PMF_String/Mbstring.php
@@ -929,7 +935,6 @@
 %%WWWDIR%%/install/mysql.utf8migration.php
 %%WWWDIR%%/install/mysqli.sql.php
 %%WWWDIR%%/install/mysqli.utf8migration.php
-%%WWWDIR%%/install/oci8.sql.php
 %%WWWDIR%%/install/pgsql.sql.php
 %%WWWDIR%%/install/questionnaire.php
 %%WWWDIR%%/install/setup.php
@@ -1149,6 +1154,10 @@
 @dirrm %%WWWDIR%%/admin/editor/plugins/print
 @dirrm %%WWWDIR%%/admin/editor/plugins/preview/jscripts
 @dirrm %%WWWDIR%%/admin/editor/plugins/preview
+@dirrm %%WWWDIR%%/admin/editor/plugins/phpmyfaq/langs
+@dirrm %%WWWDIR%%/admin/editor/plugins/phpmyfaq/js
+@dirrm %%WWWDIR%%/admin/editor/plugins/phpmyfaq/img
+@dirrm %%WWWDIR%%/admin/editor/plugins/phpmyfaq
 @dirrm %%WWWDIR%%/admin/editor/plugins/paste/langs
 @dirrm %%WWWDIR%%/admin/editor/plugins/paste/js
 @dirrm %%WWWDIR%%/admin/editor/plugins/paste/css
