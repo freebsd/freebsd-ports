@@ -1,4 +1,9 @@
 @comment $FreeBSD$
+lib/eclipse/features/org.python.pydev.django_templates.feature_%%PORTVERSION%%/LICENSE.txt
+lib/eclipse/features/org.python.pydev.django_templates.feature_%%PORTVERSION%%/META-INF/APTANA.DSA
+lib/eclipse/features/org.python.pydev.django_templates.feature_%%PORTVERSION%%/META-INF/APTANA.SF
+lib/eclipse/features/org.python.pydev.django_templates.feature_%%PORTVERSION%%/META-INF/MANIFEST.MF
+lib/eclipse/features/org.python.pydev.django_templates.feature_%%PORTVERSION%%/feature.xml
 lib/eclipse/features/org.python.pydev.feature_%%PORTVERSION%%/LICENSE.txt
 lib/eclipse/features/org.python.pydev.feature_%%PORTVERSION%%/META-INF/APTANA.DSA
 lib/eclipse/features/org.python.pydev.feature_%%PORTVERSION%%/META-INF/APTANA.SF
@@ -195,6 +200,19 @@ lib/eclipse/plugins/org.python.pydev.django_%%PORTVERSION%%/icons/django_remove_
 lib/eclipse/plugins/org.python.pydev.django_%%PORTVERSION%%/plugin.xml
 lib/eclipse/plugins/org.python.pydev.django_%%PORTVERSION%%/pydev_django.jar
 lib/eclipse/plugins/org.python.pydev.django_%%PORTVERSION%%/retroweaver-rt.jar
+lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/META-INF/APTANA.DSA
+lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/META-INF/APTANA.SF
+lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/META-INF/MANIFEST.MF
+lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/django-templates.jar
+lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/icons/django.gif
+lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/icons/django_rev.gif
+lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/icons/django_templates.png
+lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/icons/element.gif
+lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/plugin.properties
+lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/plugin.xml
+lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/templates/default-templates-filters.xml
+lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/templates/default-templates-tags.xml
+lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/templates/default-templates.xml
 lib/eclipse/plugins/org.python.pydev.help_%%PORTVERSION%%/LICENSE.txt
 lib/eclipse/plugins/org.python.pydev.help_%%PORTVERSION%%/META-INF/APTANA.DSA
 lib/eclipse/plugins/org.python.pydev.help_%%PORTVERSION%%/META-INF/APTANA.SF
@@ -756,6 +774,10 @@ lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/retroweaver-rt.jar
 @dirrm lib/eclipse/plugins/org.python.pydev.help_%%PORTVERSION%%/html
 @dirrm lib/eclipse/plugins/org.python.pydev.help_%%PORTVERSION%%/META-INF
 @dirrm lib/eclipse/plugins/org.python.pydev.help_%%PORTVERSION%%
+@dirrm lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/templates
+@dirrm lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/icons
+@dirrm lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%/META-INF
+@dirrm lib/eclipse/plugins/org.python.pydev.django_templates_%%PORTVERSION%%
 @dirrm lib/eclipse/plugins/org.python.pydev.django_%%PORTVERSION%%/icons
 @dirrm lib/eclipse/plugins/org.python.pydev.django_%%PORTVERSION%%/META-INF
 @dirrm lib/eclipse/plugins/org.python.pydev.django_%%PORTVERSION%%
@@ -800,3 +822,5 @@ lib/eclipse/plugins/org.python.pydev_%%PORTVERSION%%/retroweaver-rt.jar
 @dirrm lib/eclipse/plugins/com.python.pydev.analysis_%%PORTVERSION%%
 @dirrm lib/eclipse/features/org.python.pydev.feature_%%PORTVERSION%%/META-INF
 @dirrm lib/eclipse/features/org.python.pydev.feature_%%PORTVERSION%%
+@dirrm lib/eclipse/features/org.python.pydev.django_templates.feature_%%PORTVERSION%%/META-INF
+@dirrm lib/eclipse/features/org.python.pydev.django_templates.feature_%%PORTVERSION%%
