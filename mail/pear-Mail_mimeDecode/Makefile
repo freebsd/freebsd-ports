@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail_mimeDecode
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.3
 CATEGORIES=	mail www pear
 DISTNAME=	Mail_mimeDecode-${PORTVERSION}
 
