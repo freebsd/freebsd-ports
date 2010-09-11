@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	virtualenvwrapper
-PORTVERSION=	2.1.1
-#PORTREVISION=	0
+PORTVERSION=	2.5
+PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.doughellmann.com/downloads/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
