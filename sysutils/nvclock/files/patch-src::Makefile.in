@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	2010-09-08 12:09:22.000000000 +0800
++++ src/Makefile.in	2010-09-07 22:23:40.000000000 +0800
+@@ -27,7 +27,7 @@
+ 	distclean install install-app install-recursive
+ 
+ 
+-all: all-recursive nvclock smartdimmer
++all: nvclock smartdimmer
+ 
+ 
+ nvclock: $(DEPS) $(LIB) nvclock.c
+@@ -36,6 +36,8 @@
+ smartdimmer: $(DEPS) $(LIB) smartdimmer.c
+ 	$(CC) -o smartdimmer $(smartdimmer_SOURCES) $(INCLUDES) $(LIBS)
+ 
++$(DEPS): all-recursive
++
+ 
+ clean: clean-recursive clean-app
+ clean-app:
