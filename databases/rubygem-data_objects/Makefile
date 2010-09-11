@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	data_objects
-PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTVERSION=	0.10.2
 CATEGORIES=	databases rubygems
-MASTER_SITES=	RUBYFORGE/dorb
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	RG
 
 MAINTAINER=	voldern@hoeggen.net
 COMMENT=	A unified Ruby API for popular databases
