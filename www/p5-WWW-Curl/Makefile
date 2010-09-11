@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	WWW-Curl
-PORTVERSION=	4.11
-PORTREVISION=	1
+PORTVERSION=	4.13
 CATEGORIES=	www ftp perl5
 MASTER_SITES=	CPAN \
 		http://curl.haxx.se/libcurl/perl/
@@ -20,6 +19,7 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl:install
 
 PERL_CONFIGURE=	yes
 
+LICENSE=	MIT
 MAN3=		WWW::Curl.3
 
 post-patch:
