@@ -35,6 +35,7 @@ lib/znc/autoreply.so
 lib/znc/awaynick.so
 lib/znc/blockuser.so
 lib/znc/buffextras.so
+lib/znc/certauth.so
 lib/znc/chansaver.so
 lib/znc/clientnotify.so
 lib/znc/disconkick.so
