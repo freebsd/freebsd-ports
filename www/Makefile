@@ -1680,6 +1680,7 @@
     SUBDIR += trac-graphviz
     SUBDIR += trac-hierwiki
     SUBDIR += trac-iniadmin
+    SUBDIR += trac-keywords
     SUBDIR += trac-ldap
     SUBDIR += trac-macropost
     SUBDIR += trac-mastertickets
