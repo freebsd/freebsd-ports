@@ -565,7 +565,6 @@ lib/scons-%%SCONS_VER%%/SCons/dblite.pyo
 lib/scons-%%SCONS_VER%%/SCons/exitfuncs.py
 lib/scons-%%SCONS_VER%%/SCons/exitfuncs.pyc
 lib/scons-%%SCONS_VER%%/SCons/exitfuncs.pyo
-lib/scons-%%SCONS_VER%%/scons-%%SCONS_VER%%-py2.6.egg-info
 @dirrm lib/scons-%%SCONS_VER%%/SCons/compat
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Variables
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Tool/packaging

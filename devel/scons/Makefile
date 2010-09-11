@@ -25,4 +25,10 @@ PYDISTUTILS_EGGINFODIR=	${PREFIX}/lib/scons-${PORTVERSION}
 
 PLIST_SUB+=	SCONS_VER=${PORTVERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined (NO_INSTALL_MANPAGES)
+PYDISTUTILS_INSTALLARGS+=	--no-install-man
+.endif
+
+.include <bsd.port.post.mk>
