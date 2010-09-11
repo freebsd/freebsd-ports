@@ -8,7 +8,8 @@
 PORTNAME=	steelstorm
 DISTVERSION=	beta-r1568
 CATEGORIES=	games
-MASTER_SITES=	http://download2.steel-storm.com/ \
+MASTER_SITES=	http://download1.steel-storm.com/ \
+		http://download2.steel-storm.com/ \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
