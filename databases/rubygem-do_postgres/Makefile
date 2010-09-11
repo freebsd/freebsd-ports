@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	do_postgres
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.2
 CATEGORIES=	databases rubygems
-MASTER_SITES=	RUBYFORGE/dorb
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	RG
 
 MAINTAINER=	voldern@hoeggen.net
 COMMENT=	Ruby DataObjects driver for PostgreSQL
 
-RUN_DEPENDS=	rubygem-data_objects>=0.10.0:${PORTSDIR}/databases/rubygem-data_objects
+RUN_DEPENDS=	rubygem-data_objects>=0.10.2:${PORTSDIR}/databases/rubygem-data_objects
 
 USE_PGSQL=	yes
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
