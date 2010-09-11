@@ -702,6 +702,7 @@
     SUBDIR += rubygem-dm-core
     SUBDIR += rubygem-dm-do-adapter
     SUBDIR += rubygem-dm-migrations
+    SUBDIR += rubygem-dm-mysql-adapter
     SUBDIR += rubygem-dm-serializer
     SUBDIR += rubygem-dm-timestamps
     SUBDIR += rubygem-dm-transactions
