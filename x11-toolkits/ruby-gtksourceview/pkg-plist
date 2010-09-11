@@ -1,3 +1,4 @@
+libdata/pkgconfig/ruby-gtksourceview.pc
 %%RUBY_SITELIBDIR%%/gtksourceview.rb
 %%RUBY_SITEARCHLIBDIR%%/gtksourceview.so
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB

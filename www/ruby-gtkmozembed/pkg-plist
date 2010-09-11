@@ -1,3 +1,4 @@
+libdata/pkgconfig/ruby-gtkmozembed.pc
 %%RUBY_SITELIBDIR%%/gtkmozembed.rb
 %%RUBY_SITEARCHLIBDIR%%/gtkmozembed.so
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB

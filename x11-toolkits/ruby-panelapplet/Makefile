@@ -8,7 +8,6 @@
 
 PORTNAME=	panelapplet
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	3
 CATEGORIES=	x11-toolkits gnome ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -24,10 +23,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gnome2.so:${PORTSD
 USE_RUBY=	yes
 USE_GNOME=	gnomepanel
 USE_RUBY_EXTCONF=	yes
-
-BROKEN=		does not build with GNOME 2.26.
-DEPRECATED=	has been broken for 7 months
-EXPIRATION_DATE=2010-01-08
+MAKE_JOBS_UNSAFE=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
@@ -43,6 +39,8 @@ post-patch: general-patch
 	@${REINPLACE_CMD} -e 's|bin/ruby|bin/env ruby|g' \
 		${WRKSRC}/sample/hello-applet.rb
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
+
+post-configure: general-configure
 
 post-install:
 .if !defined(NOPORTEXAMPLES)

@@ -1,3 +1,4 @@
+libdata/pkgconfig/ruby-gnomevfs.pc
 %%RUBY_SITELIBDIR%%/gnomevfs.rb
 %%RUBY_SITEARCHLIBDIR%%/gnomevfs.so
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB

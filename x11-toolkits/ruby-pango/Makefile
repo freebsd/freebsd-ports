@@ -8,7 +8,6 @@
 
 PORTNAME=	pango
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -39,6 +38,7 @@ post-patch: general-patch
 		${WRKSRC}/sample/layout.rb
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
+post-configure: general-configure
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${RUBY_MODEXAMPLESDIR}

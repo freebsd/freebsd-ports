@@ -1,3 +1,4 @@
+libdata/pkgconfig/ruby-glib2.pc
 %%RUBY_SITELIBDIR%%/glib-mkenums.rb
 %%RUBY_SITELIBDIR%%/glib2.rb
 %%RUBY_SITEARCHLIBDIR%%/glib2.so
@@ -5,6 +6,7 @@
 %%RUBY_SITEARCHLIBDIR%%/rbglib.h
 %%RUBY_SITEARCHLIBDIR%%/rbgobject.h
 %%RUBY_SITEARCHLIBDIR%%/rbgutil.h
+%%RUBY_SITEARCHLIBDIR%%/glib-enum-types.h
 %%RUBY_SITELIBDIR%%/mkmf-gnome2.rb
 %%RUBY_SITELIBDIR%%/pkg-config.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB

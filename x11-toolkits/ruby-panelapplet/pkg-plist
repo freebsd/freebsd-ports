@@ -1,4 +1,6 @@
+libdata/pkgconfig/ruby-panelapplet2.pc
 %%RUBY_SITEARCHLIBDIR%%/panelapplet2.so
+%%RUBY_SITEARCHLIBDIR%%/panelapplet2_main.so
 %%RUBY_SITELIBDIR%%/panelapplet2.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog

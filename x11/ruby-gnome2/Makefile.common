@@ -1,17 +1,17 @@
 # $FreeBSD$
 
-RUBY_GNOME_VERSION=		0.16.0.20080905 #YYYYMMDD
+RUBY_GNOME_VERSION=		0.19.4
 #RUBY_GNOME_SNAPSHOTDATE=	20061130
 .if defined(RUBY_GNOME_SNAPSHOTDATE)
 RUBY_GNOME_PORTVERSION=		${RUBY_GNOME_VERSION}.${RUBY_GNOME_SNAPSHOTDATE}
 .else
 RUBY_GNOME_PORTVERSION=		${RUBY_GNOME_VERSION}
 .endif
-#RUBY_GNOME_MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-#RUBY_GNOME_MASTER_SITE_SUBDIR=	ruby-gnome2
-RUBY_GNOME_MASTER_SITES=	${MASTER_SITE_LOCAL} \
-				http://people.freebsd.org/~mezz/distfiles/
-RUBY_GNOME_MASTER_SITE_SUBDIR=	mezz
+RUBY_GNOME_MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+RUBY_GNOME_MASTER_SITE_SUBDIR=	ruby-gnome2/ruby-gnome2/ruby-gnome2-${RUBY_GNOME_VERSION:S/r/rev/}
+#RUBY_GNOME_MASTER_SITES=	${MASTER_SITE_LOCAL} \
+#				http://people.freebsd.org/~mezz/distfiles/
+#RUBY_GNOME_MASTER_SITE_SUBDIR=	mezz
 RUBY_GNOME_DISTNAME=		ruby-gnome2-all-${RUBY_GNOME_VERSION:S/r/rev/}
 
 CONFIGURE_ARGS+=		--ruby=${RUBY}
@@ -28,3 +28,7 @@ MD5_FILE=		${RUBY_GNOME_PORTDIR}/distinfo
 general-patch:
 	@${FIND} ${WRKDIR} -name mkmf-gnome2.rb | ${XARGS} ${REINPLACE_CMD} -e \
 		's|CFLAGS}|CFLAGS} -I${LOCALBASE}/lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}|g'
+
+general-configure:
+	@${FIND} ${WRKDIR} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
+		's|$(libdir)/pkgconfig|$(libdir)data/pkgconfig|g'

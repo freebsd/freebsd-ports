@@ -32,6 +32,7 @@ INSTALL_TARGET=	site-install
 DOCS=		COPYING.LIB ChangeLog README
 
 post-patch: general-patch
+post-configure: general-configure
 
 post-install:
 .if !defined(NOPORTDOCS)

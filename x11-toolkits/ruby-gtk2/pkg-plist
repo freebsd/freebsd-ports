@@ -1,7 +1,12 @@
+libdata/pkgconfig/ruby-gtk2.pc
 %%RUBY_SITELIBDIR%%/gtk2.rb
 %%RUBY_SITELIBDIR%%/gtk2/base.rb
 %%RUBY_SITEARCHLIBDIR%%/gtk2.so
 %%RUBY_SITEARCHLIBDIR%%/rbgtk.h
+%%RUBY_SITEARCHLIBDIR%%/rbgdk.h
+%%RUBY_SITEARCHLIBDIR%%/rbgdkconversions.h
+%%RUBY_SITEARCHLIBDIR%%/rbgtkconversions.h
+%%RUBY_SITEARCHLIBDIR%%/rbgtkmacros.h
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README

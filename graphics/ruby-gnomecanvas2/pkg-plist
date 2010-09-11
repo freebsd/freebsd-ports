@@ -1,3 +1,4 @@
+libdata/pkgconfig/ruby-gnomecanvas2.pc
 %%RUBY_SITELIBDIR%%/gnomecanvas2.rb
 %%RUBY_SITEARCHLIBDIR%%/gnomecanvas2.so
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB

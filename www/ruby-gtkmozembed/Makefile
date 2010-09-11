@@ -8,7 +8,6 @@
 
 PORTNAME=	gtkmozembed
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	4
 CATEGORIES=	www ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -36,6 +35,8 @@ post-patch: general-patch
 	@${REINPLACE_CMD} -e 's|xulrunner-|${GECKO}-|g ; \
 		s|%%GECKO_PATH%%|${LOCALBASE}/lib/${GECKO}|g' \
 			${WRKSRC}/extconf.rb
+
+post-configure: general-configure
 
 post-install:
 .if !defined(NOPORTEXAMPLES)

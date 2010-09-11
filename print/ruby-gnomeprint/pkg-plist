@@ -1,5 +1,7 @@
+libdata/pkgconfig/ruby-gnomeprint2.pc
 %%RUBY_SITELIBDIR%%/gnomeprint2.rb
 %%RUBY_SITEARCHLIBDIR%%/gnomeprint2.so
+%%RUBY_SITEARCHLIBDIR%%/rblibgnomeprintversion.h
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
