@@ -6,17 +6,21 @@
 #
 
 PORTNAME=	uwsgi
-PORTVERSION=	0.9.5.3
+PORTVERSION=	0.9.6
 CATEGORIES=	www python
 MASTER_SITES=	http://projects.unbit.it/downloads/
 
 MAINTAINER=	danger@FreeBSD.org
 COMMENT=	Developer-friendly WSGI server which uses uwsgi protocol
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 MAKE_JOBS_SAFE=	yes
 
 USE_GNOME=	libxml2
 USE_PYTHON=	2.4+
+USE_RC_SUBR=	uwsgi
 
 PLIST_FILES=	bin/${PORTNAME}
 

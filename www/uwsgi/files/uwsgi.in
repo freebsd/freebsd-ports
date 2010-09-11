@@ -1,0 +1,59 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: uwsgi
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable uwsgi:
+#
+# uwsgi_enable (bool):		Set it to "YES" to enable uwsgi
+#				Default is "NO".
+# uwsgi_socket (path/str):	Set the path to the uwsgi unix socket
+#				Default is /tmp/uwsgi.sock.
+# uwsgi_logfile (path):		Set the path to the uwsgi log file
+#				Default is /var/log/uwsgi.log.
+# uwsgi_pidfile (path):		Set the path to the uwsgi pid file
+#				Default is /var/run/uwsgi/uwsgi.pid.
+# uwsgi_uid (int):		Set the UID of the process to run with
+#				Default is 80.
+# uwsgi_gid (int):		Set the GID of the process to run with
+#				Default is 80.
+# uwsgi_flags (str):		Set the uwsgi command line arguments
+#				Default is "-M -L".
+
+. /etc/rc.subr
+
+name="uwsgi"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${uwsgi_enable="NO"}
+: ${uwsgi_socket="/tmp/${name}.sock"}
+: ${uwsgi_logfile="/var/log/${name}.log"}
+: ${uwsgi_pidfile="/var/run/${name}.pid"}
+: ${uwsgi_uid="80"}
+: ${uwsgi_gid="80"}
+: ${uwsgi_flags="-M -L"}
+
+command=%%PREFIX%%/bin/uwsgi
+command_args="--pidfile ${uwsgi_pidfile} -s ${uwsgi_socket} -d ${uwsgi_logfile} --uid ${uwsgi_uid} --gid ${uwsgi_gid} ${uwsgi_flags}"
+stop_postcmd=stop_postcmd
+reload_precmd=reload_precmd
+sig_reload="TERM"
+sig_stop="KILL"
+extra_commands="reload"
+
+stop_postcmd()
+{
+	rm -f ${uwsgi_pidfile} ${uwsgi_socket}
+}
+
+reload_precmd()
+{
+	echo "Restarting ${name} gracefully without closing the main sockets."
+}
+
+run_rc_command "$1"
