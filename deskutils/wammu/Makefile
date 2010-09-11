@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		wammu
-PORTVERSION=		0.33
-PORTREVISION=	2
+PORTVERSION=		0.34
 CATEGORIES=		deskutils
 MASTER_SITES=		http://dl.cihar.com/wammu/v0/ \
 			http://dl.cihar.com.nyud.net/wammu/v0/
@@ -17,6 +16,8 @@ COMMENT=		GUI program to manage contacts, todos, calendar and messages in your p
 
 BUILD_DEPENDS+=		gammu:${PORTSDIR}/comms/gammu-python
 RUN_DEPENDS+=		gammu:${PORTSDIR}/comms/gammu-python
+
+LICENSE=		GPLv2
 
 USE_GETTEXT=		yes
 USE_PYTHON=		yes
