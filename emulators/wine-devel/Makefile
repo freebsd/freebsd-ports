@@ -29,7 +29,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} --verbose --disable-tests \
 		--with-glu --with-opengl --with-xrandr \
 		--without-capi --without-gphoto --without-gsm \
-		--without-mpg123 --without-openal --without-sane \
+		--without-mpg123 --without-sane \
 		--without-xcomposite --without-xinerama
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -54,6 +54,7 @@ OPTIONS=	CUPS	"Use CUPS (Common UNIX Printing System)"	Off \
 		HAL	"Use HAL (Hardware Abstraction Layer)"		Off \
 		LDAP	"Use LDAP"					Off \
 		LIBXSLT	"Use libxslt (only used by msxml3.dll)"		Off \
+		OPENAL	"Use OpenAL (3D audio library)"			Off \
 		WINEMAKER "Fully support winemaker (requires Perl)"	Off
 
 .include <bsd.port.pre.mk>
@@ -91,6 +92,13 @@ CONFIGURE_ARGS+=	--with-xslt
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 .else
 CONFIGURE_ARGS+=	--without-xslt
+.endif
+
+.ifdef WITH_OPENAL
+CONFIGURE_ARGS+=	--with-openal
+USE_OPENAL=		yes
+.else
+CONFIGURE_ARGS+=	--without-openal
 .endif
 
 .ifdef WITH_WINEMAKER
