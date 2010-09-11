@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	4.0.9
+PORTVERSION=	4.0.10
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/old/ \
@@ -17,7 +17,6 @@ MASTER_SITES=	ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
 		ftp://ftp.wiretapped.net/pub/mirrors/lftp/old/ \
 		ftp://ftp.yars.free.net/pub/source/lftp/ \
 		ftp://ftp.yars.free.net/pub/source/lftp/old/
-EXTRACT_SUFX=	.tar.lzma
 
 MAINTAINER=	ganael.laplanche@martymac.org
 COMMENT=	Shell-like command line ftp client
@@ -25,7 +24,7 @@ COMMENT=	Shell-like command line ftp client
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_ICONV=	yes
-USE_XZ=		yes
+USE_GZIP=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
