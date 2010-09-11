@@ -94,7 +94,7 @@ CONFIGURE_ARGS+=	--without-xslt
 .endif
 
 .ifdef WITH_WINEMAKER
-RUN_DEPENDS=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
+RUN_DEPENDS+=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 .endif
 
 .if ${OSVERSION} < 603000
