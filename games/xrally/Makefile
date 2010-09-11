@@ -18,6 +18,7 @@ COMMENT=	XRally is a Linux clone of the classic Rally X arcade game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_XORG=	x11 xi xpm
 USE_BZIP2=	yes
 USE_GMAKE=	yes
