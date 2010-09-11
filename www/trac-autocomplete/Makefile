@@ -7,7 +7,7 @@
 
 PORTNAME=	autocomplete
 PORTVERSION=	0.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www python
 MASTER_SITES=	http://dist.codelabs.ru/fbsd/
 PKGNAMEPREFIX=	trac-
@@ -26,7 +26,7 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	AutocompleteUsers
 PYDISTUTILS_NOEGGINFO=	yes
 WRKSRC=		${WRKDIR}/autocompleteusersplugin/0.11
-REL=		7227
+REL=		8451
 PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
 
 # We must fix file permissions -- ZIP file have 0000 for every file.
