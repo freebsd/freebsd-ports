@@ -8,7 +8,6 @@
 
 PORTNAME=	gtk2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	3
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -43,6 +42,8 @@ post-patch: general-patch
 	@${REINPLACE_CMD} -e 's|/usr/local/share|${LOCALBASE}/share|g' \
 			${WRKSRC}/sample/testgtk/testgtk*
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
+
+post-configure: general-configure
 
 # Have to do that to generate ruby-glib's glib-enum-types.h or
 # it will not build.

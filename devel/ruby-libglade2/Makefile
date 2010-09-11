@@ -8,7 +8,6 @@
 
 PORTNAME=	libglade2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	3
 CATEGORIES=	devel ruby gnome
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -35,6 +34,7 @@ RUBY_SHEBANG_FILES=	${WRKSRC}/bin/ruby-glade-create-template
 DOCS=		COPYING.LIB ChangeLog README
 
 post-patch: general-patch
+post-configure: general-configure
 
 post-install:
 .if !defined(NOPORTEXAMPLES)

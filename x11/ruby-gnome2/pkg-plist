@@ -1,3 +1,4 @@
+libdata/pkgconfig/ruby-gnome2.pc
 %%RUBY_SITELIBDIR%%/gnome2.rb
 %%RUBY_SITEARCHLIBDIR%%/gnome2.so
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS

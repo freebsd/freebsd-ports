@@ -34,6 +34,8 @@ post-patch: general-patch
 		${WRKSRC}/sample/utils.rb
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
+post-configure: general-configure
+
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${RUBY_MODEXAMPLESDIR}

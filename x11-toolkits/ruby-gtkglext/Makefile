@@ -8,7 +8,6 @@
 
 PORTNAME=	gtkglext
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	3
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -34,6 +33,7 @@ INSTALL_TARGET=	site-install
 DOCS=		ChangeLog README
 
 post-patch: general-patch
+post-configure: general-configure
 
 post-install:
 .if !defined(NOPORTEXAMPLES)

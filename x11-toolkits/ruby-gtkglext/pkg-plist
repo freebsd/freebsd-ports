@@ -1,3 +1,4 @@
+libdata/pkgconfig/ruby-gtkglext.pc
 %%RUBY_SITELIBDIR%%/gtkglext.rb
 %%RUBY_SITEARCHLIBDIR%%/gtkglext.so
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog

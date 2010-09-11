@@ -1,3 +1,4 @@
+libdata/pkgconfig/ruby-libart2.pc
 %%RUBY_SITEARCHLIBDIR%%/libart2.so
 %%RUBY_SITEARCHLIBDIR%%/rbart.h
 %%RUBY_SITELIBDIR%%/libart2.rb

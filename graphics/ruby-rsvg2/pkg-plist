@@ -1,3 +1,4 @@
+libdata/pkgconfig/ruby-rsvg2.pc
 %%RUBY_SITEARCHLIBDIR%%/rsvg2.so
 %%RUBY_SITELIBDIR%%/rsvg2.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB

@@ -1,3 +1,4 @@
+libdata/pkgconfig/ruby-gtkhtml2.pc
 %%RUBY_SITELIBDIR%%/gtkhtml2.rb
 %%RUBY_SITEARCHLIBDIR%%/gtkhtml2.so
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB

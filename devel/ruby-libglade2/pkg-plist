@@ -1,4 +1,5 @@
 bin/ruby-glade-create-template
+libdata/pkgconfig/ruby-libglade2.pc
 %%RUBY_SITEARCHLIBDIR%%/libglade2.so
 %%RUBY_SITELIBDIR%%/libglade2.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB

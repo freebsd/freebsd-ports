@@ -8,7 +8,6 @@
 
 PORTNAME=	gnomevfs
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	3
 CATEGORIES=	devel ruby gnome
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -36,6 +35,8 @@ post-patch: general-patch
 	@${REINPLACE_CMD} -e 's|/bin/ruby -w|/bin/env ruby|g' \
 		${WRKSRC}/tests/*.rb
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
+
+post-configure: general-configure
 
 post-install:
 .if !defined(NOPORTEXAMPLES)

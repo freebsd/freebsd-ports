@@ -1,3 +1,4 @@
+libdata/pkgconfig/ruby-gconf2.pc
 %%RUBY_SITELIBDIR%%/gconf2.rb
 %%RUBY_SITEARCHLIBDIR%%/gconf2.so
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB
