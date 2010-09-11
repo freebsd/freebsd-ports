@@ -8,6 +8,7 @@
 
 PORTNAME=	swftools
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.swftools.org/ \
 		http://www.c-s.li/ports/
@@ -18,18 +19,21 @@ COMMENT=	SWF manipulation and generation utilities
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
+		fftw3.5:${PORTSDIR}/math/fftw3 \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 LICENSE=	GPLv2
 
-OPTIONS=	LAME "LAME MP3 audio encoder support" off
+OPTIONS=	LAME "LAME MP3 audio encoder support" off \
+		PDF "PDFlib support" off
 
 USE_GNOME=	pkgconfig
 USE_GL=		glut
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		ac_cv_lib_zzip_zzip_file_open=no
 
 MAKE_JOBS_SAFE=	yes
 
@@ -45,7 +49,17 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .if defined(WITH_LAME)
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 .else
-CONFIGURE_ARGS+=	--disable-lame
+#CONFIGURE_ARGS+=	--disable-lame
+CONFIGURE_ENV+=	ac_cv_lib_mp3lame_lame_init=no
+.endif
+
+.if defined(WITH_PDF)
+LIB_DEPENDS+=	pdf.8:${PORTSDIR}/print/pdflib
+PLIST_SUB+=	PDF=""
+MAN1+=		pdf2pdf.1
+.else
+CONFIGURE_ENV+=	ac_cv_lib_pdf_PDF_open_file=no
+PLIST_SUB+=	PDF="@comment "
 .endif
 
 post-patch:
