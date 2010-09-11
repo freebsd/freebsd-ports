@@ -18,6 +18,7 @@ BUILD_DEPENDS=	etex:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	etex:${PORTSDIR}/print/teTeX-base
 
+MAKE_JOBS_UNSAFE=	yes
 MAKE_ENV=	TEXMFCNF=${FILESDIR}:${TEXMFDIR}/web2c
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
