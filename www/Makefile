@@ -1271,6 +1271,7 @@
     SUBDIR += p5-WebService-Bloglines
     SUBDIR += p5-WebService-BuzzurlAPI
     SUBDIR += p5-WebService-CIA
+    SUBDIR += p5-WebService-Google-Reader
     SUBDIR += p5-WebService-Google-Sets
     SUBDIR += p5-WebService-ISBNDB
     SUBDIR += p5-WebService-MusicBrainz
