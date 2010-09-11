@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	archivemail
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Archive or delete mail older than N days
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.3+
 NO_BUILD=	yes
 
-DOCS=		CHANGELOG FAQ README TODO archivemail.sgml
-EXAMPLES=	test_archivemail.py examples/archivemail_all
+DOCS=		CHANGELOG FAQ NEWS README TODO archivemail.sgml
+EXAMPLES=	test_archivemail examples/archivemail_all
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/archivemail ${PREFIX}/bin/archivemail
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${EXAMPLES} ${EXAMPLESDIR}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}

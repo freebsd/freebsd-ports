@@ -2,10 +2,11 @@
 bin/archivemail
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/archivemail.sgml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/archivemail_all
-%%EXAMPLESDIR%%/test_archivemail.py
-@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/archivemail_all
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_archivemail
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
