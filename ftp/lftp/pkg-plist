@@ -5,7 +5,7 @@ etc/lftp.conf.sample
 @exec if [ ! -f %D/etc/lftp.conf ]; then cp %B/%f %D/etc/lftp.conf; fi
 lib/liblftp-jobs.a
 lib/liblftp-tasks.a
-%%DATADIR%%/convert-netscape-cookies
+%%DATADIR%%/convert-mozilla-cookies
 %%DATADIR%%/import-ncftp
 %%DATADIR%%/import-netscape
 %%DATADIR%%/verify-file
