@@ -412,6 +412,7 @@ alevt                           ports/misc/alevt
 alexandria                      ports/deskutils/alexandria
 alf                             ports/devel/alf
 algae                           ports/math/algae
+algol68g                        ports/lang/algol68g
 algotutor                       ports/math/algotutor
 alienarena                      ports/games/alienarena
 alienarena-data                 ports/games/alienarena-data
@@ -2021,7 +2022,6 @@ cups-pk-helper                  ports/print/cups-pk-helper
 cups-pstoraster                 ports/print/cups-pstoraster
 cups-samba                      ports/print/cups-samba
 cups-smb-backend                ports/print/cups-smb-backend
-cupsddk                         ports/print/cupsddk
 curator                         ports/graphics/curator
 curl                            ports/ftp/curl
 curlpp                          ports/ftp/curlpp
@@ -19444,6 +19444,7 @@ pecl-uuid                       ports/devel/pecl-uuid
 pecl-vld                        ports/devel/pecl-vld
 pecl-wbxml                      ports/textproc/pecl-wbxml
 pecl-xdiff                      ports/textproc/pecl-xdiff
+pecl-xhprof                     ports/devel/pecl-xhprof
 pecl-xslcache                   ports/textproc/pecl-xslcache
 pecl-yaml                       ports/textproc/pecl-yaml
 pecl-yaz                        ports/net/pecl-yaz
@@ -23165,6 +23166,7 @@ sidplug                         ports/www/sidplug
 siege                           ports/benchmarks/siege
 sievelog                        ports/sysutils/sievelog
 sig2dot                         ports/security/sig2dot
+sigil                           ports/textproc/sigil
 sigit                           ports/mail/sigit
 signing-party                   ports/security/signing-party
 sigrot                          ports/mail/sigrot
@@ -23649,6 +23651,7 @@ sslwrap                         ports/security/sslwrap
 ssmping                         ports/net/ssmping
 ssmtp                           ports/mail/ssmtp
 ssserver                        ports/www/ssserver
+sssnips                         ports/misc/sssnips
 ssss                            ports/security/ssss
 sst                             ports/security/sst
 ssvnc                           ports/net/ssvnc
