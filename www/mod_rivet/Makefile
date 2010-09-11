@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${AP_VERSION} == 1.3
+.if ${APACHE_VERSION} == 1.3
 CONFIGURE_ARGS+=	--with-apache-version=1
 .else
 CONFIGURE_ARGS+=	--with-apache-version=2
