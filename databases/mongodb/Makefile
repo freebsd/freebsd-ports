@@ -21,8 +21,6 @@ LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
 		nspr4:${PORTSDIR}/devel/nspr \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo
 
-CONFLICTS=	mongodb-devel-[0-9]*
-
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than i386 and amd64"
 
