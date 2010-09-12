@@ -1,5 +1,5 @@
---- Python/thread_pthread.h.orig	2006-06-13 16:04:24.000000000 +0100
-+++ Python/thread_pthread.h	2009-03-12 10:55:49.000000000 +0000
+--- Python/thread_pthread.h.orig	2010-05-09 22:46:46.000000000 +0800
++++ Python/thread_pthread.h	2010-08-15 14:27:51.886823397 +0800
 @@ -26,13 +26,18 @@
  #endif
  #endif
@@ -10,9 +10,9 @@
 +
  /* The POSIX spec says that implementations supporting the sem_*
     family of functions must indicate this by defining
-    _POSIX_SEMAPHORES. */   
+    _POSIX_SEMAPHORES. */
  #ifdef _POSIX_SEMAPHORES
- /* On FreeBSD 4.x, _POSIX_SEMAPHORES is defined empty, so 
+ /* On FreeBSD 4.x, _POSIX_SEMAPHORES is defined empty, so
     we need to add 0 to make it work there as well. */
 -#if (_POSIX_SEMAPHORES+0) == -1
 +#if defined(__FreeBSD__) && __FreeBSD_version < 701104 && \
@@ -30,26 +30,26 @@
  #endif
 @@ -149,6 +153,7 @@
  {
- 	pthread_t th;
- 	int status;
-+	sigset_t set, oset;
+     pthread_t th;
+     int status;
++    sigset_t set, oset;
  #if defined(THREAD_STACK_SIZE) || defined(PTHREAD_SYSTEM_SCHED_SUPPORTED)
- 	pthread_attr_t attrs;
+     pthread_attr_t attrs;
  #endif
 @@ -177,6 +182,8 @@
  #if defined(PTHREAD_SYSTEM_SCHED_SUPPORTED)
-         pthread_attr_setscope(&attrs, PTHREAD_SCOPE_SYSTEM);
+     pthread_attr_setscope(&attrs, PTHREAD_SCOPE_SYSTEM);
  #endif
-+	sigfillset(&set);
-+	SET_THREAD_SIGMASK(SIG_BLOCK, &set, &oset);
++    sigfillset(&set);
++    SET_THREAD_SIGMASK(SIG_BLOCK, &set, &oset);
  
- 	status = pthread_create(&th, 
+     status = pthread_create(&th,
  #if defined(THREAD_STACK_SIZE) || defined(PTHREAD_SYSTEM_SCHED_SUPPORTED)
 @@ -188,6 +195,7 @@
- 				 (void *)arg
- 				 );
+                              (void *)arg
+                              );
  
-+	SET_THREAD_SIGMASK(SIG_SETMASK, &oset, NULL);
++    SET_THREAD_SIGMASK(SIG_SETMASK, &oset, NULL);
  #if defined(THREAD_STACK_SIZE) || defined(PTHREAD_SYSTEM_SCHED_SUPPORTED)
- 	pthread_attr_destroy(&attrs);
+     pthread_attr_destroy(&attrs);
  #endif
