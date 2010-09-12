@@ -4,7 +4,7 @@ It is possible for diary readers to add comments to your diary.
      -  require Ruby 1.8.2 or later
      -  currently supported: Japanese, English, Traditional-Chinese
 
-    tDiary is developed on http://sourceforge.net/projects/tdiary/ .
+    tDiary is developed on http://github.com/tdiary .
     See URL for more information.
 
 WWW: http://www.tdiary.org/
