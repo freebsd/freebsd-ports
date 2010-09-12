@@ -15,7 +15,7 @@
 # uwsgi_logfile (path):		Set the path to the uwsgi log file
 #				Default is /var/log/uwsgi.log.
 # uwsgi_pidfile (path):		Set the path to the uwsgi pid file
-#				Default is /var/run/uwsgi/uwsgi.pid.
+#				Default is /var/run/uwsgi.pid.
 # uwsgi_uid (int):		Set the UID of the process to run with
 #				Default is 80.
 # uwsgi_gid (int):		Set the GID of the process to run with
