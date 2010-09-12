@@ -1,11 +1,11 @@
 Description: Use fstat() instead of stat() to avoid a race condition.
 Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2010-06-11
+Last-Update: 2010-09-12
 
 --- a/src/main.c
 +++ b/src/main.c
-@@ -4658,33 +4658,34 @@
+@@ -4842,33 +4842,34 @@
              break;
            }
  
