@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Astro
-PORTVERSION=	0.71
+PORTVERSION=	0.73
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A collection of useful astronomical routines in Perl
 
 PERL_CONFIGURE=	yes
