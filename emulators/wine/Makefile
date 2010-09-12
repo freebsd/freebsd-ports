@@ -29,7 +29,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} --verbose --disable-tests \
 		--with-glu --with-opengl --with-xrandr \
 		--without-capi --without-gphoto --without-gsm \
-		--without-mpg123 --without-sane \
+		--without-v4l --without-mpg123 --without-sane \
 		--without-xcomposite --without-xinerama
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
