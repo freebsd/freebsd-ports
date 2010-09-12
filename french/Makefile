@@ -14,6 +14,7 @@
     SUBDIR += eficas_doc
     SUBDIR += eric4
     SUBDIR += facturier
+    SUBDIR += fortune-mod-zarathoustra
     SUBDIR += geonext
     SUBDIR += gfaim
     SUBDIR += gibi
