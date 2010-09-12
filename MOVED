@@ -4555,3 +4555,5 @@ net/pathchar||2010-09-08|Has expired: has been broken for 2+ years, no sources a
 www/linux-nvu|www/kompozer|2010-09-08|Has expired: NVU 1.0 last release June 2005, use www/kompozer instead
 print/cupsddk||2010-09-09|Now part of print/cups-base
 databases/mongodb-devel||2010-09-11|Older than databases/mongodb
+japanese/tdiary-devel||2010-09-12|Removed
+www/tdiary-devel||2010-09-12|Removed

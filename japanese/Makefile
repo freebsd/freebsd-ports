@@ -343,7 +343,6 @@
     SUBDIR += tcl76
     SUBDIR += tcl80
     SUBDIR += tdiary
-    SUBDIR += tdiary-devel
     SUBDIR += teTeX
     SUBDIR += texfamily
     SUBDIR += texfamily-vfn2a
