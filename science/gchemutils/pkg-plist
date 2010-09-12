@@ -67,6 +67,7 @@ share/applications/gchemtable-%%VER%%.desktop
 share/gchemutils/%%VER%%/elecprops.xml
 share/gchemutils/%%VER%%/elements.xml
 share/gchemutils/%%VER%%/space-groups.xml
+share/gchemutils/%%VER%%/ui/calc/gchemcalc.ui
 share/gchemutils/%%VER%%/ui/crystal/atoms.ui
 share/gchemutils/%%VER%%/ui/crystal/bonds.ui
 share/gchemutils/%%VER%%/ui/crystal/cell.ui
@@ -76,10 +77,10 @@ share/gchemutils/%%VER%%/ui/crystal/lines.ui
 share/gchemutils/%%VER%%/ui/crystal/prefs.ui
 share/gchemutils/%%VER%%/ui/crystal/size.ui
 share/gchemutils/%%VER%%/ui/crystal/view-settings.ui
-share/gchemutils/%%VER%%/ui/gchemcalc.ui
-share/gchemutils/%%VER%%/ui/gcuperiodic.ui
-share/gchemutils/%%VER%%/ui/image-resolution.ui
-share/gchemutils/%%VER%%/ui/image-size.ui
+share/gchemutils/%%VER%%/ui/libgcu/gcuperiodic.ui
+share/gchemutils/%%VER%%/ui/libgcu/image-resolution.ui
+share/gchemutils/%%VER%%/ui/libgcu/image-size.ui
+share/gchemutils/%%VER%%/ui/libgcu/print-setup.ui
 share/gchemutils/%%VER%%/ui/paint/H-pos.ui
 share/gchemutils/%%VER%%/ui/paint/arrow-object.ui
 share/gchemutils/%%VER%%/ui/paint/arrow.png
@@ -102,7 +103,6 @@ share/gchemutils/%%VER%%/ui/paint/preferences.ui
 share/gchemutils/%%VER%%/ui/paint/stringdlg.ui
 share/gchemutils/%%VER%%/ui/paint/tools.ui
 share/gchemutils/%%VER%%/ui/paint/zoom.ui
-share/gchemutils/%%VER%%/ui/print-setup.ui
 share/gchemutils/%%VER%%/ui/table/acidity.ui
 share/gchemutils/%%VER%%/ui/table/block.ui
 share/gchemutils/%%VER%%/ui/table/curve.ui
@@ -313,7 +313,6 @@ share/locale/zh_CN/LC_MESSAGES/gchemutils-%%VER%%.mo
 share/locale/zh_TW/LC_MESSAGES/gchemutils-%%VER%%.mo
 share/mime/packages/gchemutils.xml
 @dirrmtry share/applications
-@dirrm share/gchemutils/%%VER%%/ui/crystal
 @dirrm share/gchemutils/%%VER%%/ui/table
 @dirrm share/gchemutils/%%VER%%/ui/paint/plugins/text
 @dirrm share/gchemutils/%%VER%%/ui/paint/plugins/templates
@@ -325,6 +324,9 @@ share/mime/packages/gchemutils.xml
 @dirrm share/gchemutils/%%VER%%/ui/paint/plugins/arrows
 @dirrm share/gchemutils/%%VER%%/ui/paint/plugins
 @dirrm share/gchemutils/%%VER%%/ui/paint
+@dirrm share/gchemutils/%%VER%%/ui/libgcu
+@dirrm share/gchemutils/%%VER%%/ui/crystal
+@dirrm share/gchemutils/%%VER%%/ui/calc
 @dirrm share/gchemutils/%%VER%%/ui
 @dirrm share/gchemutils/%%VER%%/pixmaps
 @dirrm share/gchemutils/%%VER%%/paint/themes
