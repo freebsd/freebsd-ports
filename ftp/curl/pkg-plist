@@ -167,6 +167,7 @@ libdata/pkgconfig/libcurl.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evhiperfifo.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fileupload.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fopen.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftp-wildcard.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpget.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpgetinfo.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ftpgetresp.c

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.20.1
+PORTVERSION=	7.21.1
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/ \
@@ -53,7 +53,8 @@ PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-pop3 --enable-smtp --enable-imap --enable-rtsp
+CONFIGURE_ARGS+=--enable-pop3 --enable-smtp --enable-imap --enable-rtsp \
+		--disable-threaded-resolver
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	CARES "Asynchronous DNS resolution via c-ares" off \
@@ -69,7 +70,9 @@ OPTIONS=	CARES "Asynchronous DNS resolution via c-ares" off \
 		OPENSSL "OpenSSL support" on \
 		CA_BUNDLE "Install CA bundle for OpenSSL" on \
 		PROXY "Proxy support" on \
-		TRACKMEMORY "Enable curl memory diagnostic output" off
+		RTMP "RTMP streams support" off \
+		TRACKMEMORY "Enable curl memory diagnostic output" off \
+		WERROR "Treat compilation warnings as errors" on
 
 .include <bsd.port.pre.mk>
 
@@ -176,8 +179,17 @@ CONFIGURE_ARGS+=	--without-libssh2
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
+.if defined(WITH_RTMP)
+LIB_DEPENDS+=	rtmp.0:${PORTSDIR}/multimedia/rtmpdump
+CONFIGURE_ARGS+=	--with-librtmp=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-librtmp
+.endif
+
 .if defined(WITH_TRACKMEMORY)
 CONFIGURE_ARGS+=	--enable-curldebug
+.else
+CONFIGURE_ARGS+=	--disable-curldebug
 .endif
 
 .if defined(WITH_NTLM)
@@ -190,6 +202,12 @@ CONFIGURE_ARGS+=	--disable-ntlm
 CONFIGURE_ARGS+=	--enable-proxy
 .else
 CONFIGURE_ARGS+=	--disable-proxy
+.endif
+
+.if defined(WITH_WERROR)
+CONFIGURE_ARGS+=	--enable-werror
+.else
+CONFIGURE_ARGS+=	--disable-werror
 .endif
 
 .if defined(ADDFLAGS)

@@ -1,0 +1,16 @@
+Description: Fix a bashism - "test" uses "=", not "==".
+Forwarded: http://sourceforge.net/tracker/?func=detail&aid=3064939&group_id=976&atid=100976
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2010-09-12
+
+--- a/configure
++++ b/configure
+@@ -2992,7 +2992,7 @@
+ 
+ 
+ CURL_CFLAG_EXTRAS=""
+-if test X"$want_werror" == Xyes; then
++if test X"$want_werror" = Xyes; then
+   CURL_CFLAG_EXTRAS="-Werror"
+ fi
+ 
