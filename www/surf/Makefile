@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	www
 MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
 
-MAINTAINER=	jigboe@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple Web browser based on WebKit/Gtk+
 
 LIB_DEPENDS=	webkit-1.0:${PORTSDIR}/www/webkit-gtk2
