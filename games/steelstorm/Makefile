@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	steelstorm
-DISTVERSION=	beta-r1568
+DISTVERSION=	beta-r1591
 CATEGORIES=	games
 MASTER_SITES=	http://download1.steel-storm.com/ \
 		http://download2.steel-storm.com/ \
@@ -25,7 +25,7 @@ LICENSE_PERMS_CCbyNCSA3=dist-mirror pkg-mirror auto-accept
 LICENSE_FILE_CCbyNCSA3=	${WRKSRC}/cc-by-nc-sa-3.txt
 
 LICENSE_NAME_EULA=	Steel storm episode 1 limited user software license agreement
-LICENSE_PERMS_EULA=	dist-mirror pkg-mirror
+LICENSE_PERMS_EULA=	# none
 LICENSE_FILE_EULA=	${WRKSRC}/license.txt
 
 USE_GL=		gl
