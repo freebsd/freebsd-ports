@@ -697,9 +697,9 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/json/tool.py
 %%PYTHON_LIBDIR%%/keyword.py
 %%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/Grammar2.6.5.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/Grammar2.6.6.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.6.5.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.6.6.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/__init__.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_base.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_util.py
@@ -711,6 +711,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_dict.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_except.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_exec.py
+%%PYTHON_LIBDIR%%/lib2to3/fixes/fix_exitfunc.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_getcwdu.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_set_literal.py
 %%PYTHON_LIBDIR%%/lib2to3/fixes/fix_execfile.py
@@ -910,10 +911,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/pickletools.py
 %%PYTHON_LIBDIR%%/pipes.py
 %%PYTHON_LIBDIR%%/pkgutil.py
-%%PYTHON_LIBDIR%%/plat-freebsd4/IN.py
-%%PYTHON_LIBDIR%%/plat-freebsd4/regen
-%%PYTHON_LIBDIR%%/plat-freebsd5/IN.py
-%%PYTHON_LIBDIR%%/plat-freebsd5/regen
 %%PYTHON_LIBDIR%%/plat-freebsd6/IN.py
 %%PYTHON_LIBDIR%%/plat-freebsd6/regen
 %%PYTHON_LIBDIR%%/plat-freebsd7/IN.py
@@ -1194,6 +1191,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/sample_doctest.py
 %%PYTHON_LIBDIR%%/test/seq_tests.py
 %%PYTHON_LIBDIR%%/test/sgml_input.html
+%%PYTHON_LIBDIR%%/test/sha256.pem
 %%PYTHON_LIBDIR%%/test/sortperf.py
 %%PYTHON_LIBDIR%%/test/ssl_cert.pem
 %%PYTHON_LIBDIR%%/test/ssl_key.pem
@@ -2226,8 +2224,6 @@ lib/libpython2.6.a
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd8
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd7
 @dirrm %%PYTHON_LIBDIR%%/plat-freebsd6
-@dirrm %%PYTHON_LIBDIR%%/plat-freebsd5
-@dirrm %%PYTHON_LIBDIR%%/plat-freebsd4
 @dirrm %%PYTHON_LIBDIR%%/multiprocessing/dummy
 @dirrm %%PYTHON_LIBDIR%%/multiprocessing
 @dirrm %%PYTHON_LIBDIR%%/logging

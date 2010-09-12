@@ -1,5 +1,5 @@
---- Modules/_ctypes/libffi/configure.orig	2008-05-24 00:06:50.000000000 +0900
-+++ Modules/_ctypes/libffi/configure	2008-10-09 20:24:02.000000000 +0900
+--- Modules/_ctypes/libffi/configure.orig	2010-09-02 09:18:23.000000000 +0800
++++ Modules/_ctypes/libffi/configure	2010-09-02 09:18:49.000000000 +0800
 @@ -4725,7 +4725,7 @@
    rm -rf conftest*
    ;;
