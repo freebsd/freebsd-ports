@@ -6,22 +6,24 @@
 #
 
 PORTNAME=	tdiary
-PORTVERSION=	2.2.3
+PORTVERSION=	3.0.0
 CATEGORIES?=	www ruby
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
-		http://www.tdiary.org/download/
+MASTER_SITES=	http://www.tdiary.org/download/ \
+		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/tdiary|}
 DISTNAME=	${PORTNAME}-full-${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A Web-based diary system (like weblog) written in Ruby
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKDIR}/doc/COPYING
+
 NO_BUILD=	yes
 USE_RUBY=	yes
-RUBY_VER=	1.8
 RUBY_REQUIRE=	Ruby >= 182
-PORTSCOUT=	limitw:1,even
 
-RUBY_SHEBANG_FILES=	index.rb \
+RUBY_SHEBANG_FILES=	index.fcgi \
+			index.rb \
 			update.rb \
 			misc/convert2.rb \
 			misc/plugin/amazon/amazonimg.rb \
@@ -53,11 +55,16 @@ TDIARY_LANG=	en
 
 .include <bsd.port.pre.mk>
 
+.if ${RUBY_VER} == 1.9
 .if !defined(RUBY_PROVIDED)
-IGNORE=	requires Ruby 1.8.2 or later
+IGNORE=	requires Ruby 1.9.1 or later
+.endif
 .endif
 
 .if ${RUBY_VER} == 1.8
+.if !defined(RUBY_PROVIDED)
+IGNORE=	requires Ruby 1.8.2 or later
+.endif
 .if !defined(WITHOUT_TDIARY_NORA)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/web/escape_ext.so:${PORTSDIR}/www/ruby-nora
 .endif

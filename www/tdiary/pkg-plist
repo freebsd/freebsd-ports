@@ -1,6 +1,15 @@
 %%WWWDIR%%/dot.htaccess
+%%WWWDIR%%/index.fcgi
 %%WWWDIR%%/index.rb
+%%WWWDIR%%/js/00default.js
 %%WWWDIR%%/misc/convert2.rb
+%%WWWDIR%%/misc/filter/antispamservice.rb
+%%WWWDIR%%/misc/filter/limitdays.rb
+%%WWWDIR%%/misc/filter/linkcheck.rb
+%%WWWDIR%%/misc/filter/plugin/antispamservice.rb
+%%WWWDIR%%/misc/filter/plugin/en/antispamservice.rb
+%%WWWDIR%%/misc/filter/plugin/ja/antispamservice.rb
+%%WWWDIR%%/misc/filter/plugin/zh/antispamservice.rb
 %%WWWDIR%%/misc/i18n/HOWTO-write-tDiary-en.rd
 %%WWWDIR%%/misc/i18n/README-en.rd
 %%WWWDIR%%/misc/i18n/example1.html
@@ -8,10 +17,11 @@
 %%WWWDIR%%/misc/i18n/result.html
 %%WWWDIR%%/misc/i18n/tdiary.conf.sample-en
 %%WWWDIR%%/misc/lib/README
+%%WWWDIR%%/misc/lib/compatible.rb
 %%WWWDIR%%/misc/lib/hikidoc.rb
-%%WWWDIR%%/misc/plugin/ChangeLog
+%%WWWDIR%%/misc/migrate.rb
+%%WWWDIR%%/misc/plugin/ChangeLog.DO_NOT_UPDATE
 %%WWWDIR%%/misc/plugin/a.rb
-%%WWWDIR%%/misc/plugin/akismet.rb
 %%WWWDIR%%/misc/plugin/amazon.rb
 %%WWWDIR%%/misc/plugin/amazon/README.en
 %%WWWDIR%%/misc/plugin/amazon/README.ja
@@ -35,7 +45,6 @@
 %%WWWDIR%%/misc/plugin/dropdown_calendar.rb
 %%WWWDIR%%/misc/plugin/edit_today.rb
 %%WWWDIR%%/misc/plugin/en/a.rb
-%%WWWDIR%%/misc/plugin/en/akismet.rb
 %%WWWDIR%%/misc/plugin/en/amazon.rb
 %%WWWDIR%%/misc/plugin/en/append-css.rb
 %%WWWDIR%%/misc/plugin/en/bq.rb
@@ -74,7 +83,6 @@
 %%WWWDIR%%/misc/plugin/highlight.rb
 %%WWWDIR%%/misc/plugin/html_anchor.rb
 %%WWWDIR%%/misc/plugin/image.rb
-%%WWWDIR%%/misc/plugin/ja/akismet.rb
 %%WWWDIR%%/misc/plugin/ja/amazon.rb
 %%WWWDIR%%/misc/plugin/ja/bq.rb
 %%WWWDIR%%/misc/plugin/ja/calendar2.rb
@@ -114,6 +122,7 @@
 %%WWWDIR%%/misc/plugin/pingback.rb
 %%WWWDIR%%/misc/plugin/pingback/README
 %%WWWDIR%%/misc/plugin/pingback/pb.rb
+%%WWWDIR%%/misc/plugin/pre_wrap.rb
 %%WWWDIR%%/misc/plugin/random_google.rb
 %%WWWDIR%%/misc/plugin/recent_comment.rb
 %%WWWDIR%%/misc/plugin/recent_comment3.rb
@@ -145,7 +154,6 @@
 %%WWWDIR%%/misc/plugin/xmlrpc/README
 %%WWWDIR%%/misc/plugin/xmlrpc/xmlrpc.rb
 %%WWWDIR%%/misc/plugin/zh/a.rb
-%%WWWDIR%%/misc/plugin/zh/akismet.rb
 %%WWWDIR%%/misc/plugin/zh/amazon.rb
 %%WWWDIR%%/misc/plugin/zh/append-css.rb
 %%WWWDIR%%/misc/plugin/zh/bq.rb
@@ -195,18 +203,23 @@
 %%WWWDIR%%/plugin/05referer.rb
 %%WWWDIR%%/plugin/10spamfilter.rb
 %%WWWDIR%%/plugin/50sp.rb
+%%WWWDIR%%/plugin/60sf.rb
+%%WWWDIR%%/plugin/90migrate.rb
 %%WWWDIR%%/plugin/en/00default.rb
 %%WWWDIR%%/plugin/en/05referer.rb
 %%WWWDIR%%/plugin/en/10spamfilter.rb
 %%WWWDIR%%/plugin/en/50sp.rb
+%%WWWDIR%%/plugin/en/60sf.rb
 %%WWWDIR%%/plugin/ja/00default.rb
 %%WWWDIR%%/plugin/ja/05referer.rb
 %%WWWDIR%%/plugin/ja/10spamfilter.rb
 %%WWWDIR%%/plugin/ja/50sp.rb
+%%WWWDIR%%/plugin/ja/60sf.rb
 %%WWWDIR%%/plugin/zh/00default.rb
 %%WWWDIR%%/plugin/zh/05referer.rb
 %%WWWDIR%%/plugin/zh/10spamfilter.rb
 %%WWWDIR%%/plugin/zh/50sp.rb
+%%WWWDIR%%/plugin/zh/60sf.rb
 %%WWWDIR%%/skel/category.rhtml
 %%WWWDIR%%/skel/conf.rhtml
 %%WWWDIR%%/skel/day.rhtml
@@ -235,19 +248,19 @@
 %%WWWDIR%%/skel/preview.rhtml.en
 %%WWWDIR%%/skel/preview.rhtml.zh
 %%WWWDIR%%/skel/referer.rhtml
+%%WWWDIR%%/skel/search.rhtml
 %%WWWDIR%%/skel/show.rhtml
 %%WWWDIR%%/skel/tdiary.rconf
 %%WWWDIR%%/skel/update.rhtml
 %%WWWDIR%%/skel/update.rhtml.en
 %%WWWDIR%%/skel/update.rhtml.zh
+%%WWWDIR%%/spec/core/compatible_spec.rb
 %%WWWDIR%%/tdiary.conf.beginner
 %%WWWDIR%%/tdiary.conf.sample
 %%WWWDIR%%/tdiary.rb
 %%WWWDIR%%/tdiary/defaultio.rb
 %%WWWDIR%%/tdiary/filter/default.rb
 %%WWWDIR%%/tdiary/filter/spam.rb
-%%WWWDIR%%/tdiary/filter/spamakismet.rb
-%%WWWDIR%%/tdiary/filter/spamlinkcheck.rb
 %%WWWDIR%%/tdiary/lang/en.rb
 %%WWWDIR%%/tdiary/lang/ja.rb
 %%WWWDIR%%/tdiary/lang/zh.rb
@@ -917,6 +930,10 @@
 %%WWWDIR%%/theme/greentea3/README
 %%WWWDIR%%/theme/greentea3/greentea3.css
 %%WWWDIR%%/theme/greentea3/greentea3_back.jpg
+%%WWWDIR%%/theme/gustav/gustav.css
+%%WWWDIR%%/theme/gustav/gustav_back.jpg
+%%WWWDIR%%/theme/gustav/gustav_back_iphone.jpg
+%%WWWDIR%%/theme/gustav/gustav_update.jpg
 %%WWWDIR%%/theme/halloween/README
 %%WWWDIR%%/theme/halloween/admin.png
 %%WWWDIR%%/theme/halloween/footer.png
@@ -1032,6 +1049,7 @@
 %%WWWDIR%%/theme/himawari/himawari_anchor.gif
 %%WWWDIR%%/theme/himawari/himawari_bg.jpg
 %%WWWDIR%%/theme/himawari/himawari_canchor.gif
+%%WWWDIR%%/theme/hsbt/hsbt.css
 %%WWWDIR%%/theme/husen/README
 %%WWWDIR%%/theme/husen/husen.css
 %%WWWDIR%%/theme/husen/husen_back.gif
@@ -2032,6 +2050,7 @@
 @dirrm %%WWWDIR%%/theme/iris
 @dirrm %%WWWDIR%%/theme/hydrangea
 @dirrm %%WWWDIR%%/theme/husen
+@dirrm %%WWWDIR%%/theme/hsbt
 @dirrm %%WWWDIR%%/theme/himawari
 @dirrm %%WWWDIR%%/theme/hellali
 @dirrm %%WWWDIR%%/theme/hazakura
@@ -2062,6 +2081,7 @@
 @dirrm %%WWWDIR%%/theme/haru
 @dirrm %%WWWDIR%%/theme/happa
 @dirrm %%WWWDIR%%/theme/halloween
+@dirrm %%WWWDIR%%/theme/gustav
 @dirrm %%WWWDIR%%/theme/greentea3
 @dirrm %%WWWDIR%%/theme/green_leaves
 @dirrm %%WWWDIR%%/theme/green-tea
@@ -2185,6 +2205,8 @@
 @dirrm %%WWWDIR%%/tdiary/lang
 @dirrm %%WWWDIR%%/tdiary/filter
 @dirrm %%WWWDIR%%/tdiary
+@dirrm %%WWWDIR%%/spec/core
+@dirrm %%WWWDIR%%/spec
 @dirrm %%WWWDIR%%/skel
 @dirrm %%WWWDIR%%/plugin/zh
 @dirrm %%WWWDIR%%/plugin/ja
@@ -2206,5 +2228,11 @@
 @dirrm %%WWWDIR%%/misc/plugin
 @dirrm %%WWWDIR%%/misc/lib
 @dirrm %%WWWDIR%%/misc/i18n
+@dirrm %%WWWDIR%%/misc/filter/plugin/zh
+@dirrm %%WWWDIR%%/misc/filter/plugin/ja
+@dirrm %%WWWDIR%%/misc/filter/plugin/en
+@dirrm %%WWWDIR%%/misc/filter/plugin
+@dirrm %%WWWDIR%%/misc/filter
 @dirrm %%WWWDIR%%/misc
+@dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%
