@@ -15,6 +15,7 @@ bin/mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mapview2.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mapview3.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mapview4.mapyrus
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mapview5.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mapyrus.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/muc_freight.dat
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/piechart.mapyrus
@@ -46,9 +47,13 @@ bin/mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialdatasets9.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialeps1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialexisting1.mapyrus
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialfirst1-no-newpage.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialfirst1.mapyrus
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialfirst2-no-newpage.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialfirst2.mapyrus
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialfirst3-no-newpage.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialfirst3.mapyrus
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialfirst4-pdf.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialfirst4.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialflowlabel1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialflowlabel2.mapyrus
@@ -95,6 +100,7 @@ bin/mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialprocedures2.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialprocedures3.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialprocedures4.mapyrus
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialproj1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialprotect1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialprotect2.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialrand1.mapyrus
@@ -114,6 +120,6 @@ bin/mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialwordwrap1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vegetation.dat
 %%DATADIR%%/mapyrus.jar
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
