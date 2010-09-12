@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Term-Menus
-PORTVERSION=	1.46
+PORTVERSION=	1.49
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ COMMENT=	Create Powerful Terminal, Console and CMD Enviroment Menus
 BUILD_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		Term::Menus.3
 
