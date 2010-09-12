@@ -6,19 +6,15 @@
 #
 
 PORTNAME=	vimperator
-PORTVERSION=	1.2
+PORTVERSION=	2.3.1
+DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_MOZDEV}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	simon@olofsson.de
 COMMENT=	Vim look and feel for Firefox
 
 XPI_ID=		vimperator@mozdev.org
-XPI_FILES=	AUTHORS Donators License.txt Makefile Makefile.common \
-		NEWS TODO chrome/vimperator.jar chrome.manifest install.rdf
-XPI_DIRS=	chrome
+XPI_NUM=	4891
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
