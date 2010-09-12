@@ -7,6 +7,7 @@
 
 PORTNAME=	boehm-gc
 PORTVERSION=	7.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
 PKGNAMESUFFIX=	-${GC_VARIANT}
@@ -32,7 +33,8 @@ OPTIONS=	PARALLEL_MARK "Parallel-thread marking (faster for SMP)" off \
 		FULLDEBUG "Debugging support (see documentation)" off
 
 PLIST_FILES=	${INSTLIBS:S,^,lib/lib,g:S,$,-${GC_VARIANT}.so.${SOVER},g} \
-		${INSTLIBS:S,^,lib/lib,g:S,$,-${GC_VARIANT}.so,g}
+		${INSTLIBS:S,^,lib/lib,g:S,$,-${GC_VARIANT}.so,g} \
+		libdata/pkgconfig/bdw-gc-${GC_VARIANT}.pc
 
 .include <bsd.port.pre.mk>
 
@@ -54,6 +56,7 @@ post-patch:
 		-e 's,libgccpp\.la,libgccpp-${GC_VARIANT}.la,g' \
 		-e 's,libcord\.la,libcord-${GC_VARIANT}.la,g' \
 		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's,-lgc,-lgc-${GC_VARIANT},' ${WRKSRC}/bdw-gc.pc.in
 
 do-install:
 .for LIB in ${INSTLIBS}
@@ -62,5 +65,7 @@ do-install:
 	@(cd ${PREFIX}/lib && ${LN} -s lib${LIB}-${GC_VARIANT}.so.${SOVER} \
 	    lib${LIB}-${GC_VARIANT}.so)
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/bdw-gc.pc \
+		${PREFIX}/libdata/pkgconfig/bdw-gc-${GC_VARIANT}.pc
 
 .include <bsd.port.post.mk>
