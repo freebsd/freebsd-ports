@@ -9506,7 +9506,6 @@ molden                          ports/biology/molden
 momspider                       ports/www/momspider
 mondulkiri                      ports/x11-fonts/mondulkiri
 mongodb                         ports/databases/mongodb
-mongodb-devel                   ports/databases/mongodb-devel
 monit                           ports/sysutils/monit
 monitord                        ports/sysutils/monitord
 monitorix                       ports/sysutils/monitorix
@@ -12738,6 +12737,7 @@ p5-Log-Dispatch-Screen-Color    ports/devel/p5-Log-Dispatch-Screen-Color
 p5-Log-Dispatch-Scribe          ports/devel/p5-Log-Dispatch-Scribe
 p5-Log-Handler                  ports/devel/p5-Log-Handler
 p5-Log-Log4perl                 ports/devel/p5-Log-Log4perl
+p5-Log-Log4perl-Appender-RabbitMQ  ports/devel/p5-Log-Log4perl-Appender-RabbitMQ
 p5-Log-Message                  ports/devel/p5-Log-Message
 p5-Log-Message-Simple           ports/devel/p5-Log-Message-Simple
 p5-Log-Procmail                 ports/mail/p5-Log-Procmail
@@ -14036,6 +14036,7 @@ p5-Test-MockTime                ports/devel/p5-Test-MockTime
 p5-Test-Module-Used             ports/devel/p5-Test-Module-Used
 p5-Test-More-UTF8               ports/devel/p5-Test-More-UTF8
 p5-Test-Most                    ports/devel/p5-Test-Most
+p5-Test-Net-RabbitMQ            ports/devel/p5-Test-Net-RabbitMQ
 p5-Test-NoWarnings              ports/devel/p5-Test-NoWarnings
 p5-Test-Number-Delta            ports/devel/p5-Test-Number-Delta
 p5-Test-Object                  ports/devel/p5-Test-Object
@@ -14215,6 +14216,7 @@ p5-Tie-File                     ports/devel/p5-Tie-File
 p5-Tie-File-AsHash              ports/devel/p5-Tie-File-AsHash
 p5-Tie-FileLRUCache             ports/devel/p5-Tie-FileLRUCache
 p5-Tie-Hash-Indexed             ports/devel/p5-Tie-Hash-Indexed
+p5-Tie-Hash-MultiValue          ports/devel/p5-Tie-Hash-MultiValue
 p5-Tie-Hash-Regex               ports/devel/p5-Tie-Hash-Regex
 p5-Tie-Hash-Sorted              ports/devel/p5-Tie-Hash-Sorted
 p5-Tie-Hash-TwoWay              ports/devel/p5-Tie-Hash-TwoWay
@@ -14444,6 +14446,7 @@ p5-WebService-Basecamp          ports/www/p5-WebService-Basecamp
 p5-WebService-Bloglines         ports/www/p5-WebService-Bloglines
 p5-WebService-BuzzurlAPI        ports/www/p5-WebService-BuzzurlAPI
 p5-WebService-CIA               ports/www/p5-WebService-CIA
+p5-WebService-Google-Reader     ports/www/p5-WebService-Google-Reader
 p5-WebService-Google-Sets       ports/www/p5-WebService-Google-Sets
 p5-WebService-ISBNDB            ports/www/p5-WebService-ISBNDB
 p5-WebService-MusicBrainz       ports/www/p5-WebService-MusicBrainz
@@ -16674,6 +16677,7 @@ p5-log-dispatch-screen-color    ports/devel/p5-Log-Dispatch-Screen-Color
 p5-log-dispatch-scribe          ports/devel/p5-Log-Dispatch-Scribe
 p5-log-handler                  ports/devel/p5-Log-Handler
 p5-log-log4perl                 ports/devel/p5-Log-Log4perl
+p5-log-log4perl-appender-rabbitmq  ports/devel/p5-Log-Log4perl-Appender-RabbitMQ
 p5-log-message                  ports/devel/p5-Log-Message
 p5-log-message-simple           ports/devel/p5-Log-Message-Simple
 p5-log-procmail                 ports/mail/p5-Log-Procmail
@@ -18014,6 +18018,7 @@ p5-test-mocktime                ports/devel/p5-Test-MockTime
 p5-test-module-used             ports/devel/p5-Test-Module-Used
 p5-test-more-utf8               ports/devel/p5-Test-More-UTF8
 p5-test-most                    ports/devel/p5-Test-Most
+p5-test-net-rabbitmq            ports/devel/p5-Test-Net-RabbitMQ
 p5-test-nowarnings              ports/devel/p5-Test-NoWarnings
 p5-test-number-delta            ports/devel/p5-Test-Number-Delta
 p5-test-object                  ports/devel/p5-Test-Object
@@ -18197,6 +18202,7 @@ p5-tie-file                     ports/devel/p5-Tie-File
 p5-tie-file-ashash              ports/devel/p5-Tie-File-AsHash
 p5-tie-filelrucache             ports/devel/p5-Tie-FileLRUCache
 p5-tie-hash-indexed             ports/devel/p5-Tie-Hash-Indexed
+p5-tie-hash-multivalue          ports/devel/p5-Tie-Hash-MultiValue
 p5-tie-hash-regex               ports/devel/p5-Tie-Hash-Regex
 p5-tie-hash-sorted              ports/devel/p5-Tie-Hash-Sorted
 p5-tie-hash-twoway              ports/devel/p5-Tie-Hash-TwoWay
@@ -18354,6 +18360,7 @@ p5-webservice-basecamp          ports/www/p5-WebService-Basecamp
 p5-webservice-bloglines         ports/www/p5-WebService-Bloglines
 p5-webservice-buzzurlapi        ports/www/p5-WebService-BuzzurlAPI
 p5-webservice-cia               ports/www/p5-WebService-CIA
+p5-webservice-google-reader     ports/www/p5-WebService-Google-Reader
 p5-webservice-google-sets       ports/www/p5-WebService-Google-Sets
 p5-webservice-isbndb            ports/www/p5-WebService-ISBNDB
 p5-webservice-musicbrainz       ports/www/p5-WebService-MusicBrainz
@@ -22514,7 +22521,9 @@ rubygem-ditz                    ports/devel/rubygem-ditz
 rubygem-dm-aggregates           ports/databases/rubygem-dm-aggregates
 rubygem-dm-constraints          ports/databases/rubygem-dm-constraints
 rubygem-dm-core                 ports/databases/rubygem-dm-core
+rubygem-dm-do-adapter           ports/databases/rubygem-dm-do-adapter
 rubygem-dm-migrations           ports/databases/rubygem-dm-migrations
+rubygem-dm-mysql-adapter        ports/databases/rubygem-dm-mysql-adapter
 rubygem-dm-serializer           ports/databases/rubygem-dm-serializer
 rubygem-dm-timestamps           ports/databases/rubygem-dm-timestamps
 rubygem-dm-transactions         ports/databases/rubygem-dm-transactions
@@ -23472,6 +23481,7 @@ speedbar                        ports/editors/speedbar
 speedcrunch                     ports/math/speedcrunch
 speex                           ports/audio/speex
 spegla                          ports/ftp/spegla
+spek                            ports/audio/spek
 spellathon                      ports/games/spellathon
 spellcast                       ports/games/spellcast
 spellutils                      ports/textproc/spellutils
@@ -24408,6 +24418,7 @@ trac-gitplugin                  ports/www/trac-gitplugin
 trac-graphviz                   ports/www/trac-graphviz
 trac-hierwiki                   ports/www/trac-hierwiki
 trac-iniadmin                   ports/www/trac-iniadmin
+trac-keywords                   ports/www/trac-keywords
 trac-ldap                       ports/www/trac-ldap
 trac-macropost                  ports/www/trac-macropost
 trac-mastertickets              ports/www/trac-mastertickets
