@@ -117,7 +117,6 @@
     SUBDIR += bygfoot
     SUBDIR += bzflag
     SUBDIR += cake
-    SUBDIR += caph
     SUBDIR += cardpics
     SUBDIR += cave9
     SUBDIR += cavezofphear
