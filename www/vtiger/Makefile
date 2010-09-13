@@ -18,15 +18,16 @@ COMMENT=	Vtiger CRM is open source Customer Relationship Management software
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
+USE_PHP=	mysql gd imap session pcre xml
+WANT_PHP_WEB=	YES
+IGNORE_WITH_PHP=	4
+
 WRKSRC=		${WRKDIR}/vtigercrm
 
 OPTIONS=	MYSQLSERVER     "Use MySQL-Server on localhost" OFF
 
 .include <bsd.port.pre.mk>
 
-USE_PHP=	mysql gd imap session pcre xml
-WANT_PHP_WEB=	YES
-IGNORE_WITH_PHP=	4
 IGNORE_WITH_MYSQL=	323 40
 
 CONFLICTS=	vtiger-4.*

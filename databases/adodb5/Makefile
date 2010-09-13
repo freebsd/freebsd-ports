@@ -19,6 +19,8 @@ CONFLICTS=	adodb-4.*
 LATEST_LINK=	adodb5
 
 USE_PHP=	pcre
+DEFAULT_PHP_VER=5
+IGNORE_WITH_PHP=4
 
 WRKSRC=		${WRKDIR}/${PORTNAME}5
 NO_BUILD=	YES
@@ -31,9 +33,6 @@ ADODB_SUBDIRS=	contrib datadict drivers lang pear perf session xsl
 OPTIONS=	TESTS "Install tests" off
 
 .include <bsd.port.pre.mk>
-
-DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
 
 .if defined (WITH_TESTS)
 PLIST_SUB+=	TESTS=
