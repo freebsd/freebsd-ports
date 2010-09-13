@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncrack
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	security
 MASTER_SITES=	http://nmap.org/ncrack/dist/ \
 				http://redundancy.redundancy.org/mirror/
