@@ -7,6 +7,7 @@
 
 PORTNAME=	cyrus-sasl2
 PORTVERSION=	2.1.22
+PORTREVISION=	1
 CATEGORIES=	security linux
 PKGNAMEPREFIX=	linux-f10-
 DISTNAME=	cyrus-sasl-lib-${PORTVERSION}-${RPMVERSION}
@@ -25,6 +26,7 @@ DESCR=	${.CURDIR}/../${PORTNAME}/pkg-descr
 
 PLIST_DIRS=	etc/sasl2 usr/lib/sasl2
 PLIST_FILES=	usr/lib/libsasl2.so.2 usr/lib/libsasl2.so.2.0.22 usr/lib/sasl2/libanonymous.so usr/lib/sasl2/libanonymous.so.2 usr/lib/sasl2/libanonymous.so.2.0.22 usr/lib/sasl2/libsasldb.so usr/lib/sasl2/libsasldb.so.2 usr/lib/sasl2/libsasldb.so.2.0.22 usr/sbin/sasldblistusers2 usr/sbin/saslpasswd2
+PLIST_FILES+=	"@exec mkdir -p %D/etc/sasl2"
 DOCSDIR=	usr/share/doc/cyrus-sasl-lib-${PORTVERSION}
 PORTDOCS=	AUTHORS COPYING NEWS README advanced.html appconvert.html components.html gssapi.html index.html install.html macosx.html mechanisms.html options.html plugprog.html programming.html readme.html sysadmin.html upgrading.html windows.html
 
