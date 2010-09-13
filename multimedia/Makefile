@@ -243,7 +243,6 @@
     SUBDIR += phonon-xine
     SUBDIR += pitivi
     SUBDIR += playd
-    SUBDIR += playd2
     SUBDIR += podcatcher
     SUBDIR += poe
     SUBDIR += ppm2fli
