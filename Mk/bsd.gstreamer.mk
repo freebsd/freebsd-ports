@@ -53,13 +53,15 @@ GST_SHLIB_VERSION=	1
 #
 # These are the current supported gstreamer-plugins modules
 #
-_USE_GSTREAMER10_ALL=	a52dec aalib amrnb amrwbdec annodex bz2 cairo cdaudio cdparanoia dts \
-			dv dvd esound faac faad ffmpeg flac gconf gio gl gnomevfs \
-			gnonlin gsm hal jack jpeg ladspa lame \
-			libcaca libmms libpng libvisual mm mp3 mpeg2enc mpeg2dec \
-			musepack nas neon ogg pango pulse python sdl shout2 sidplay \
-			sndfile spc soundtouch soup speex taglib \
-			theora twolame v4l2 vorbis wavpack x264 xvid
+_USE_GSTREAMER10_ALL=	a52dec aalib amrnb amrwbdec annodex bz2 cairo \
+			cdaudio cdparanoia dts dv dvd esound faac faad \
+			ffmpeg flac gconf gio gl gnomevfs gnonlin \
+			gsm hal jack jpeg ladspa lame libcaca libmms \
+			libpng libvisual mm mp3 mpeg2enc mpeg2dec musepack \
+			nas neon ogg pango pulse python resindvd schroedinger \
+			sdl shout2 sidplay sndfile spc soundtouch soup \
+			speex taglib theora twolame v4l2 vorbis vdpau \
+			vp8 wavpack x264 xvid
 
 # other plugins
 OTHER_GSTREAMER_PLUGINS+=bad good ugly core yes ${_USE_GSTREAMER10_ALL} fluendo-mp3 mad
@@ -222,6 +224,8 @@ mplex_DEPENDS=	multimedia/gstreamer-plugins-mplex
 
 v4l2_DEPENDS=	multimedia/gstreamer-plugins-v4l2
 
+vp8_DEPENDS=	multimedia/gstreamer-plugins-vp8
+
 # XXX: This is a quick solution for ports with USE_GSTREAMER=python
 #      but without USE_PYTHON.
 PYTHON_PKGNAMEPREFIX?=	py*-
@@ -231,6 +235,10 @@ python_NAME=	gstreamer
 python_GST_PREFIX=      ${PYTHON_PKGNAMEPREFIX}
 python_GST_SUFX=        # empty
 python_GST_VERSION=     0.10.4
+
+resindvd_DEPENDS=	multimedia/gstreamer-plugins-resindvd
+
+schroedinger_DEPENDS=	multimedia/gstreamer-plugins-schroedinger
 
 theora_DEPENDS=	multimedia/gstreamer-plugins-theora
 
@@ -243,6 +251,10 @@ xvid_DEPENDS=	multimedia/gstreamer-plugins-xvid
 # Net Plugins Section
 
 libmms_DEPENDS=	net/gstreamer-plugins-libmms
+
+# X11 Plugin Section
+
+vdpau_DEPENDS=	x11/gstreamer-plugins-vdpau
 
 # X11-Toolkits Plugins Section
 pango_DEPENDS=	x11-toolkits/gstreamer-plugins-pango

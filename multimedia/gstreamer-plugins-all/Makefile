@@ -29,6 +29,7 @@ WITHOUT_FAAC=	yes	# Mp4 Dolby license , no package
 WITHOUT_LAME=	yes	# MP3 License , no package
 WITHOUT_SWFDEC=	yes	# Broken
 WITHOUT_MPEG2ENC=	yes	# Broken
+WITHOUT_VDPAU=	yes	# Needs to be build agains running kernel
 .endif
 .if ${ARCH}!="i386"
 WITHOUT_SPC=	yes	# i386 only

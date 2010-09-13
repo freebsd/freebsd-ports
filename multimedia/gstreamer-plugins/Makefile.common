@@ -26,8 +26,10 @@ BAD_GST_ALL_PLUGINS+= \
 		directfb \
 		divx \
 		dts \
+		exif \
 		faac \
 		faad \
+		flite \
 		gme \
 		gsm \
 		jack \
@@ -49,14 +51,17 @@ BAD_GST_ALL_PLUGINS+= \
 		ofa \
 		resindvd \
 		rsvg \
-		schroedinger \
+		schro \
 		sdl \
+		shm \
 		sndfile \
 		soundtouch \
 		spc \
 		swfdec \
-		theora \
+		theoradec \
 		timidity \
+		vdpau \
+		vp8 \
 		xvid \
 		zbar
 
@@ -116,10 +121,14 @@ CONFIGURE_ARGS+=	--enable-${GST_PLUGIN}
 
 CONFIGURE_ARGS+=--disable-tests \
 		--disable-examples \
-		--disable-1394 \
+		--disable-cd1394 \
 		--disable-acm \
+		--disable-apexsink \
 		--disable-alsa \
-		--disable-dvb \
+		--enable-cog \
+		--enable-dvb \
+		--disable-fbdev \
+		--disable-directfb \
 		--disable-http \
 		--enable-cdrom \
 		--disable-gconf \
@@ -132,12 +141,17 @@ CONFIGURE_ARGS+=--disable-tests \
 		--disable-directdrawsink \
 		--disable-directsoundsink \
 		--disable-tarkin \
+		--enable-shm \
 		--enable-static \
 		--disable-sunaudio \
+		--disable-wildmidi \
 		--disable-xine \
 		--enable-x \
 		--enable-xshm \
 		--enable-xvideo
+
+# we need glib 2.26 for this. (is from -bad)
+CONFIGURE_ARGS+=--disable-gsettings
 
 .if !defined(NO_GSTREAMER_COMMON)
 GST_PLUGIN_SUFFIX?=	-${GST_PLUGIN}
@@ -146,6 +160,7 @@ GST_PLUGIN_SUFFIX?=	-${GST_PLUGIN}
 
 CONFIGURE_ARGS:=${CONFIGURE_ARGS:S|--disable-${GST_PLUGIN}|--enable-${GST_PLUGIN}|}
 
+GST_INC_DIR=		include/gstreamer-${VERSION}
 GST_LIB_DIR=		lib/gstreamer-${VERSION}
 
 # Auto create PLIST
@@ -240,6 +255,13 @@ gst_esound_CONFIGURE_ENV+=	ESD_CFLAGS="`pkg-config --cflags esound`" \
 gst_esound_PLIST_FILES=	${GST_LIB_DIR}/libgstesd.so \
 		${GST_LIB_DIR}/libgstesd.la
 
+# exif
+# hmm not a real plugin, seems to be part of metadata?
+#gst_exif_LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
+#gst_exif_PLIST_FILES=	${GST_LIB_DIR}/libgstexif.la \
+#			${GST_LIB_DIR}/libgstexif.so
+#gst_exif_DIST=	bad
+
 # faac
 gst_faac_LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 gst_faac_PLIST_FILES=	${GST_LIB_DIR}/libgstfaac.la \
@@ -257,6 +279,12 @@ gst_faad_DIST=	bad
 gst_flac_LIB_DEPENDS+=	FLAC.10:${PORTSDIR}/audio/flac
 gst_flac_PLIST_FILES=	${GST_LIB_DIR}/libgstflac.la \
 			${GST_LIB_DIR}/libgstflac.so
+
+# flite
+gst_flite_BUILD_DEPENDS+=	${LOCALBASE}/lib/libflite.a:${PORTSDIR}/audio/flite
+gst_flite_PLIST_FILES=		${GST_LIB_DIR}/libgstflite.la \
+				${GST_LIB_DIR}/libgstflite.so
+gst_flite_DIST=			bad
 
 # gconf
 gst_gconf_USE_GNOME+=	gnomeprefix gconf2
@@ -406,6 +434,13 @@ gst_pulse_PLIST_FILES=	${GST_LIB_DIR}/libgstpulse.la \
 		${GST_LIB_DIR}/libgstpulse.so
 gst_pulse_DIST=	good
 
+# resindvd
+gst_resindvd_BUILD_DEPENDS+=	libdvdnav>=4.1.2:${PORTSDIR}/multimedia/libdvdnav
+gst_resindvd_RUN_DEPENDS+=	libdvdnav>=4.1.2:${PORTSDIR}/multimedia/libdvdnav
+gst_resindvd_PLIST_FILES=	${GST_LIB_DIR}/libresindvd.la \
+				${GST_LIB_DIR}/libresindvd.so
+gst_resindvd_DIST=		bad
+
 # sdl
 gst_sdl_USE_SDL+=	sdl
 gst_sdl_PLIST_FILES=	${GST_LIB_DIR}/libgstsdl.la \
@@ -452,6 +487,13 @@ gst_speex_LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
 gst_speex_PLIST_FILES=	${GST_LIB_DIR}/libgstspeex.la \
 			${GST_LIB_DIR}/libgstspeex.so
 
+# schro(edinger)
+gst_schroedinger_LIB_DEPENDS+=	schroedinger-1.0.3:${PORTSDIR}/multimedia/schroedinger
+gst_schroedinger_CONFIGURE_ARGS+=--enable-schro
+gst_schroedinger_PLIST_FILES=	${GST_LIB_DIR}/libgstschro.la \
+				${GST_LIB_DIR}/libgstschro.so
+gst_schroedinger_DIST=		bad
+
 # swfdec
 gst_swfdec_LIB_DEPENDS+=swfdec-0.4.1:${PORTSDIR}/graphics/swfdec
 gst_swfdec_DIST=	bad
@@ -484,6 +526,28 @@ gst_gst_v4l2_CONFIGURE_ARGS+=	--enable-gst_v4l2
 gst_gst_v4l2_GST_PLUGIN_DIR=sys/v4l2
 gst_gst_v4l2_DIST=	good
 
+# vdpau
+gst_vdpau_LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/x11/nvidia-driver
+gst_vdpau_GST_PLUGIN_DIR=sys/vdpau
+gst_vdpau_PLIST_FILES=	${GST_INC_DIR}/gst/vdpau/gstvdp.h \
+			${GST_INC_DIR}/gst/vdpau/gstvdpbuffer.h \
+			${GST_INC_DIR}/gst/vdpau/gstvdpbufferpool.h \
+			${GST_INC_DIR}/gst/vdpau/gstvdpdecoder.h \
+			${GST_INC_DIR}/gst/vdpau/gstvdpdevice.h \
+			${GST_INC_DIR}/gst/vdpau/gstvdpoutputbuffer.h \
+			${GST_INC_DIR}/gst/vdpau/gstvdpoutputbufferpool.h \
+			${GST_INC_DIR}/gst/vdpau/gstvdpoutputsrcpad.h \
+			${GST_INC_DIR}/gst/vdpau/gstvdputils.h \
+			${GST_INC_DIR}/gst/vdpau/gstvdpvideobuffer.h \
+			${GST_INC_DIR}/gst/vdpau/gstvdpvideobufferpool.h \
+			${GST_INC_DIR}/gst/vdpau/gstvdpvideosrcpad.h \
+			${GST_LIB_DIR}/libgstvdpau.la \
+			${GST_LIB_DIR}/libgstvdpau.so \
+			lib/libgstvdp-0.10.la \
+			lib/libgstvdp-0.10.so \
+			lib/libgstvdp-0.10.so.0
+gst_vdpau_DIST=		bad
+
 # vorbis
 gst_vorbis_USE_GSTREAMER+=	ogg
 gst_vorbis_LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
@@ -491,6 +555,13 @@ gst_vorbis_EXTRA_LIBS+=	-lgsttag-${VERSION} -lgstaudio-${VERSION}
 gst_vorbis_PLIST_FILES=	${GST_LIB_DIR}/libgstvorbis.la \
 		${GST_LIB_DIR}/libgstvorbis.so
 gst_vorbis_DIST=	base
+
+# vp8
+gst_vp8_LIB_DEPENDS+=	vpx.0:${PORTSDIR}/multimedia/libvpx
+gst_vp8_PLIST_FILES=	${GST_LIB_DIR}/libgstvp8.la \
+			${GST_LIB_DIR}/libgstvp8.a \
+			${GST_LIB_DIR}/libgstvp8.so
+gst_vp8_DIST=		bad
 
 # x264
 gst_x264_LIB_DEPENDS+=	x264.98:${PORTSDIR}/multimedia/x264

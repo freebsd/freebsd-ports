@@ -105,9 +105,12 @@
     SUBDIR += gstreamer-plugins-good
     SUBDIR += gstreamer-plugins-mpeg2dec
     SUBDIR += gstreamer-plugins-mpeg2enc
+    SUBDIR += gstreamer-plugins-resindvd
+    SUBDIR += gstreamer-plugins-schroedinger
     SUBDIR += gstreamer-plugins-theora
     SUBDIR += gstreamer-plugins-ugly
     SUBDIR += gstreamer-plugins-v4l2
+    SUBDIR += gstreamer-plugins-vp8
     SUBDIR += gstreamer-plugins-x264
     SUBDIR += gstreamer-plugins-xvid
     SUBDIR += gstreamermm
