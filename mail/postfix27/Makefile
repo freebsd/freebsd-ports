@@ -16,13 +16,12 @@ MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
 		ftp://ftp.samurai.com/pub/postfix/official/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/postfix/official/&,}
 MASTER_SITE_SUBDIR=	. old related/postfix
-DISTNAME=	postfix-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
-VDAVERSION=	2.6.5
+VDAVERSION=	2.7.0
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-68-9].* postfix-current-2.* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 
@@ -32,7 +31,7 @@ SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
 # back compat pull in settings from POSTFIX_OPTIONS for convenience when
 # make config is run (happens first time port is built, too)
-.for o in SASL2 SASLKRB5 SASLKRB5MIT TLS BDB MySQL PgSQL OpenLDAP CDB NIS VDA Test
+.for o in SASL2 SASLKRB5 SASLKRB5MIT TLS BDB MySQL PgSQL OpenLDAP CDB NIS VDA Test SPF
 STATUS_${o}=off
 .endfor
 .if defined(POSTFIX_OPTIONS)
@@ -55,6 +54,7 @@ OPTIONS=	PCRE		"Perl Compatible Regular Expressions"			on \
 		NIS		"NIS maps lookups"					${STATUS_NIS} \
 		VDA		"VDA (Virtual Delivery Agent 32Bit)"			${STATUS_VDA} \
 		TEST		"SMTP/LMTP test server and generator"			${STATUS_Test} \
+		SPF		"SPF support (via libspf2 1.2.x)"			${STATUS_SPF} \
 		INST_BASE	"Install into /usr and /etc/postfix"			off
 
 .include <bsd.port.options.mk>
@@ -150,6 +150,19 @@ POSTFIX_CCARGS+=	-DUSE_TLS -I${OPENSSLINC}
 POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 .endif
 
+.if defined(WITH_SPF)
+LIB_DEPENDS+=		spf2.3:${PORTSDIR}/mail/libspf2
+PATCH_SITES+=		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	mm
+PATCHFILES+=		postfix-2.7.1-libspf2-1.2.x.patch.gz
+PATCH_DIST_STRIP=	-p1
+POSTFIX_CCARGS+=	-DHAVE_NS_TYPE -I${LOCALBASE}/include
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lspf2
+PLIST_SUB+=		SPF=""
+.else
+PLIST_SUB+=		SPF="@comment "
+.endif
+
 .if defined(WITH_BDB)
 USE_BDB=		yes
 POSTFIX_CCARGS+=	-I${BDB_INCLUDE_DIR}
@@ -193,12 +206,12 @@ _REQUIRE+=		ypserv
 
 # 32Bit VDA patch (64Bit has different patch)
 .if defined(WITH_VDA)
-PATCH_SITES+=		http://vda.sourceforge.net/VDA/
-PATCHFILES+=		postfix-${VDAVERSION}-vda-ng.patch.gz
+PATCH_SITES+=		http://vda.sourceforge.net/VDA/:vda
+PATCHFILES+=		postfix-vda-${VDAVERSION}.patch:vda
 PATCH_DIST_STRIP=	-p1
-PLIST_SUB+=	VDA=""
+PLIST_SUB+=		VDA=""
 .else
-PLIST_SUB+=	VDA="@comment "
+PLIST_SUB+=		VDA="@comment "
 .endif
 
 .if defined(WITH_TEST)
@@ -295,6 +308,12 @@ post-patch:
 	@${ECHO} '$$html_directory/$f:f:root:-:644' \
 		>> ${WRKSRC}/conf/postfix-files
 .endfor
+.if defined(WITH_SPF)
+	@${ECHO} '$$readme_directory/SPF_README:f:root:-:644' \
+		>> ${WRKSRC}/conf/postfix-files
+	@${REINPLACE_CMD} -E -e '${REINPLACE}' \
+		${WRKSRC}/README_FILES/SPF_README
+.endif
 .if defined(WITH_VDA)
 	@${ECHO} '$$readme_directory/VDA_README:f:root:-:644' \
 		>> ${WRKSRC}/conf/postfix-files
