@@ -19,7 +19,7 @@ WRKSRC=			${WRKDIR}/rivet-${PORTVERSION}
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	1.3+
+USE_APACHE=	2.0+
 USE_AUTOTOOLS=	automake:110 autoconf:262
 USE_TCL=	84+
 GMAKE=		yes
@@ -28,13 +28,8 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${APACHE_VERSION} == 1.3
-CONFIGURE_ARGS+=	--with-apache-version=1
-.else
-CONFIGURE_ARGS+=	--with-apache-version=2
-.endif
-
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --with-apxs=${APXS} \
+CONFIGURE_ARGS+=	--with-apache-version=2 \
+			--prefix=${PREFIX} --with-apxs=${APXS} \
 			--with-tcl=${TCL_LIBDIR} --with-tclsh=${TCLSH} \
 			--with-rivet-target-dir=${PREFIX}/lib/rivet
 
