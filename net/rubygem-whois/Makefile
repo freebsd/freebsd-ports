@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	whois
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.5
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -16,5 +16,6 @@ COMMENT=	Ruby whois library
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=		bin/ruby-whois
 
 .include <bsd.port.mk>
