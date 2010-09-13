@@ -33,7 +33,7 @@ CFLAGS:=	${CFLAGS} -O2 -Wno-format
 BASE_PORTVERSION=	0.10.30
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
-BAD_PORTVERSION=	0.10.19
+BAD_PORTVERSION=	0.10.20
 BAD_DISTNAME=		gst-plugins-bad-${BAD_PORTVERSION}
 BAD_DISTFILE=		${BAD_DISTNAME}${EXTRACT_SUFX}
 GOOD_PORTVERSION=	0.10.25
@@ -133,12 +133,12 @@ post-patch:
 	s|$$(top_builddir)/gst-libs/gst/audio/libgstaudio-$$(GST_MAJORMINOR).la|${LOCALBASE}/lib/libgstaudio-@GST_MAJORMINOR@.la|; \
 	s|$$(top_builddir)/gst-libs/gst/riff/libgstriff-$$(GST_MAJORMINOR).la|${LOCALBASE}/lib/libgstriff-@GST_MAJORMINOR@.la|; \
 	s|$$(top_builddir)/gst-libs/gst/signalprocessor/libgstsignalprocessor-$$(GST_MAJORMINOR).la|${LOCALBASE}/lib/libgstsignalprocessor-@GST_MAJORMINOR@.la|; \
+	s|$$(top_builddir)/gst-libs/gst/video/libgstbasevideo-$$(GST_MAJORMINOR).la|${LOCALBASE}/lib/libgstbasevideo-@GST_MAJORMINOR@.la|; \
 	s|$$(top_builddir)/gst-libs/gst/video/libgstvideo-$$(GST_MAJORMINOR).la|${LOCALBASE}/lib/libgstvideo-@GST_MAJORMINOR@.la|; \
 	s|$$(top_builddir)/gst-libs/gst/cdda/libgstcdda-$$(GST_MAJORMINOR).la|${LOCALBASE}/lib/libgstcdda-@GST_MAJORMINOR@.la|'
 	@${FIND} ${WRKSRC} -type f | \
 	${XARGS} -n 10 ${REINPLACE_CMD} -e \
-	's|malloc\.h|stdlib.h|; \
-	 s|<stdint\.h|<inttypes.h|; \
+	 's|<stdint\.h|<inttypes.h|; \
 	 s|%%VERSION%%|${VERSION}|'
 	 @${FIND} ${WRKSRC}/ext -name Makefile.in | \
 	 ${XARGS} -n 10 ${REINPLACE_CMD} -e \
@@ -146,6 +146,7 @@ post-patch:
 	  s|$$(top_builddir)/gst-libs/gst/audio/libgstaudio-@GST_MAJORMINOR@.la|${LOCALBASE}/lib/libgstaudio-@GST_MAJORMINOR@.la|; \
 	  s|$$(top_builddir)/gst-libs/gst/riff/libgstriff-@GST_MAJORMINOR@.la|${LOCALBASE}/lib/libgstriff-@GST_MAJORMINOR@.la|; \
 	  s|$$(top_builddir)/gst-libs/gst/signalprocessor/libgstsignalprocessor-@GST_MAJORMINOR@.la|${LOCALBASE}/lib/libgstsignalprocessor-@GST_MAJORMINOR@.la|; \
+	  s|$$(top_builddir)/gst-libs/gst/video/libgstbasevideo-@GST_MAJORMINOR@.la|${LOCALBASE}/lib/libgstbasevideo-@GST_MAJORMINOR@.la|; \
 	  s|$$(top_builddir)/gst-libs/gst/video/libgstvideo-@GST_MAJORMINOR@.la|${LOCALBASE}/lib/libgstvideo-@GST_MAJORMINOR@.la|; \
 	  s|$$(top_builddir)/gst-libs/gst/cdda/libgstcdda-@GST_MAJORMINOR@.la|${LOCALBASE}/lib/libgstcdda-@GST_MAJORMINOR@.la|'
 	@${REINPLACE_CMD} -e 's|DEFAULT_AUDIOSINK="alsasink"|DEFAULT_AUDIOSINK="${DEFAULT_AUDIOSINK}"|; \

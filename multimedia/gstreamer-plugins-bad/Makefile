@@ -6,7 +6,7 @@
 #    $MCom: ports/multimedia/gstreamer-plugins-bad/Makefile,v 1.11 2008/03/19 14:05:35 ahze Exp $
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	multimedia
 
 COMMENT=	Bad gstreamer-plugins
@@ -16,8 +16,8 @@ GST_PLUGIN_SUFFIX=	-bad
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
-BUILD_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
-LIB_DEPENDS+=	oil-0.3.0:${PORTSDIR}/devel/liboil
+BUILD_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins \
+		v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat
 RUN_DEPENDS+=	gstreamer-plugins>=${GST_VERSION}${GST_MINOR_VERSION}:${PORTSDIR}/multimedia/gstreamer-plugins
 
 gst_bad_DIST=	bad
