@@ -21,4 +21,10 @@ USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700110
+BROKEN=	Requires cpuset support
+.endif
+
+.include <bsd.port.post.mk>
