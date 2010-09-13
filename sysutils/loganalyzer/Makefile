@@ -29,14 +29,17 @@ OPTIONS=	PHP_MYSQL "MySQL database support (PHP extension)" Off \
 		PDO_PGSQL "PostgreSQL PDO driver" Off \
 		PDO_SQLITE "SQLite PDO driver" Off
 
-.include <bsd.port.pre.mk>
-
 .if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	session pdo gd xml
 WANT_PHP_WEB=	YES
 IGNORE_WITH_PHP=4
 DEFAULT_PHP_VER=5
+.endif
 
+.include <bsd.port.pre.mk>
+
+
+.if !defined(WITHOUT_PHP_DEPENDS)
 .if defined(WITH_PHP_MYSQL)
 USE_PHP+=	mysql
 .endif
