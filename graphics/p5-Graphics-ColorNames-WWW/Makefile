@@ -7,7 +7,7 @@
 
 PORTNAME=	Graphics-ColorNames-WWW
 PORTVERSION=	1.13
-CATEGORIES=	graphics
+CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
