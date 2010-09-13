@@ -7,7 +7,7 @@
 
 PORTNAME=		f10
 PORTVERSION=		10
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	../updates/${PORTVERSION}/${LINUX_RPM_ARCH} \
@@ -31,7 +31,7 @@ BIN_DISTFILES=	basesystem-10.0-1.noarch.rpm \
 		db4-4.7.25-7.fc10.${LINUX_RPM_ARCH}.rpm \
 		e2fsprogs-1.41.4-6.fc10.${LINUX_RPM_ARCH}.rpm \
 		e2fsprogs-libs-1.41.4-6.fc10.${LINUX_RPM_ARCH}.rpm \
-		elfutils-0.141-1.fc10.${LINUX_RPM_ARCH}.rpm \
+		elfutils-0.142-1.fc10.${LINUX_RPM_ARCH}.rpm \
 		fedora-release-10-1.noarch.rpm \
 		filesystem-2.4.19-1.fc10.${LINUX_RPM_ARCH}.rpm \
 		freetype-2.3.7-3.fc10.${LINUX_RPM_ARCH}.rpm \
@@ -76,7 +76,7 @@ SRC_DISTFILES+=	acl-2.2.47-3.fc10.src.rpm \
 		coreutils-6.12-17.fc10.src.rpm \
 		db4-4.7.25-5.fc10.src.rpm \
 		e2fsprogs-1.41.4-6.fc10.src.rpm \
-		elfutils-0.141-1.fc10.src.rpm \
+		elfutils-0.142-1.fc10.src.rpm \
 		fedora-release-10-1.src.rpm \
 		filesystem-2.4.19-1.fc10.src.rpm \
 		freetype-2.3.7-1.fc10.src.rpm \
