@@ -7,12 +7,12 @@
 
 PORTNAME=	makepasswd
 PORTVERSION=	1.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-PATCHFILES=	${PORTNAME}_${PORTVERSION}-3.diff.gz
+PATCHFILES=	${PORTNAME}_${PORTVERSION}-5.diff.gz
 PATCH_SITES=	${MASTER_SITES}
 PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
 PATCH_DIST_STRIP=	-p1
@@ -23,7 +23,8 @@ COMMENT=	Random password generator
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-RUN_DEPENDS+=	${SITE_PERL}/Crypt/PasswdMD5.pm:${PORTSDIR}/security/p5-Crypt-PasswdMD5
+RUN_DEPENDS+=	${SITE_PERL}/Crypt/PasswdMD5.pm:${PORTSDIR}/security/p5-Crypt-PasswdMD5 \
+		${SITE_PERL}/${PERL_ARCH}/Crypt/OpenSSL/Random.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-Random
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -34,8 +35,6 @@ DOCS=		CHANGES README
 
 post-patch:
 	${REINPLACE_CMD} -e "s/use	bytes;/#use	bytes;/" ${WRKSRC}/makepasswd
-	${REINPLACE_CMD} -e "s/\/dev\/random/\/dev\/urandom/" ${WRKSRC}/makepasswd
-	${REINPLACE_CMD} -e "s/\/dev\/random/\/dev\/urandom/" ${WRKSRC}/makepasswd.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/makepasswd ${PREFIX}/bin
