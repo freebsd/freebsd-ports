@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	fceux
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4a
 CATEGORIES=	emulators
-MASTER_SITES=	SF/fceultra/Source%20Code/${PORTVERSION}%20src/
+MASTER_SITES=	SF/fceultra/Source%20Code/2.1.4%20src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	davide.italiano@gmail.com
 COMMENT=	A portable NES/Famicom emulator based on Bero's original FCE
 
 USE_BZIP2=	yes
@@ -20,7 +20,7 @@ USE_SDL=	sdl
 USE_DOS2UNIX=	yes
 USE_LUA=	yes
 
-WRKSRC=		${WRKDIR}/fceu
+WRKSRC=		${WRKDIR}/fceu${PORTVERSION}
 
 BUILD_DEPENDS+=	zenity:${PORTSDIR}/x11/zenity
 
