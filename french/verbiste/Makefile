@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	verbiste
-PORTVERSION=	0.1.27
-PORTREVISION=	1
+PORTVERSION=	0.1.31
 CATEGORIES=	french textproc
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
-MAINTAINER=	timbob@bigpond.com
+MAINTAINER=	dereckson@gmail.com
 COMMENT=	French verb conjugator/deconjugator
+LICENSE=	GPLv2
 
 OPTIONS=	GNOMEGUI	"With gnome gui"		no
 

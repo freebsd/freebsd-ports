@@ -33,6 +33,8 @@ libdata/pkgconfig/verbiste-0.1.pc
 %%DATADIR%%-0.1/COPYING
 %%DATADIR%%-0.1/conjugation-fr.xml
 %%DATADIR%%-0.1/verbs-fr.xml
+%%DATADIR%%-0.1/conjugation-it.xml
+%%DATADIR%%-0.1/verbs-it.xml
 @dirrm %%DATADIR%%-0.1
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DOCSDIR%%
