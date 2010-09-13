@@ -15,9 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	erik@smluc.org
 COMMENT=	Scheme script interpreter with multibyte character handling
 
-# Choices are: "pthreads" and "no", but it seems that FreeBSD does not
-# yet fully support threads with Boehm GC.
-GAUCHE_THREADS?=	no
+# Choices are: "pthreads" and "no"
+GAUCHE_THREADS?=	pthreads
 # Choices are: "utf-8", "euc-jp", "shift-jis" and "no"
 GAUCHE_ENCODING?=	utf-8
 
@@ -53,6 +52,11 @@ INFO=		gauche-refe gauche-refj
 
 .if (${ARCH} == "ia64") || (${ARCH} == "sparc64")
 BROKEN=		Does not compile on ${ARCH}
+.endif
+
+post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e 's|all: info|all:|' ${WRKSRC}/doc/Makefile.in
 .endif
 
 post-install:
