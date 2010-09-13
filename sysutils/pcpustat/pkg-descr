@@ -1,0 +1,3 @@
+pcpustat provides per-cpu usage statistics in a format that can be piped.
+
+WWW: http://chipstips.com/?tag=c_pcpustat

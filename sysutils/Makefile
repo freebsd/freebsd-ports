@@ -605,6 +605,7 @@
     SUBDIR += pbreg
     SUBDIR += pcfclock
     SUBDIR += pciutils
+    SUBDIR += pcpustat
     SUBDIR += pdixtract
     SUBDIR += pdsh
     SUBDIR += pdumpfs
