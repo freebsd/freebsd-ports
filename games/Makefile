@@ -117,6 +117,7 @@
     SUBDIR += bygfoot
     SUBDIR += bzflag
     SUBDIR += cake
+    SUBDIR += caph
     SUBDIR += cardpics
     SUBDIR += cave9
     SUBDIR += cavezofphear
@@ -820,6 +821,7 @@
     SUBDIR += spring
     SUBDIR += springlobby
     SUBDIR += starlanes
+    SUBDIR += steelstorm
     SUBDIR += stepbill
     SUBDIR += stepmania-devel
     SUBDIR += stonesoup
