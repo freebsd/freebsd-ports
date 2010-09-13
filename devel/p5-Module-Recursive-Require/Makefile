@@ -7,7 +7,7 @@
 
 PORTNAME=	Module-Recursive-Require
 PORTVERSION=	0.04
-CATEGORIES=	devel
+CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 

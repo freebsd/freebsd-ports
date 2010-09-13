@@ -7,7 +7,7 @@
 
 PORTNAME=	Music-Audioscrobbler-Submit
 PORTVERSION=	0.05
-CATEGORIES=	audio
+CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
