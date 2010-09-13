@@ -7,7 +7,7 @@
 
 PORTNAME=	moneta
 PORTVERSION=	0.6.0
-CATEGORIES=	devel
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com

@@ -6,7 +6,7 @@
 
 PORTNAME=	jekyll
 PORTVERSION=	0.7.0
-CATEGORIES=	www
+CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	peter.schuller@infidyne.com

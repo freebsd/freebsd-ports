@@ -7,7 +7,7 @@
 
 PORTNAME=	mixlib-log
 PORTVERSION=	1.1.0
-CATEGORIES=	devel
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com

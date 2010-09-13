@@ -7,7 +7,7 @@
 
 PORTNAME=	bunny
 PORTVERSION=	0.6.0
-CATEGORIES=	net
+CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
