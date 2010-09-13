@@ -6473,7 +6473,6 @@ ja-t2ps                         ports/japanese/t2ps
 ja-tcl76                        ports/japanese/tcl76
 ja-tcl80                        ports/japanese/tcl80
 ja-tdiary                       ports/japanese/tdiary
-ja-tdiary-devel                 ports/japanese/tdiary-devel
 ja-teTeX                        ports/japanese/teTeX
 ja-tetex                        ports/japanese/teTeX
 ja-texfamily                    ports/japanese/texfamily
@@ -24034,7 +24033,6 @@ tdetect                         ports/net/tdetect
 tdfsb                           ports/x11-fm/tdfsb
 tdhkit                          ports/textproc/tdhkit
 tdiary                          ports/www/tdiary
-tdiary-devel                    ports/www/tdiary-devel
 tdir                            ports/sysutils/tdir
 tdl                             ports/devel/tdl
 tdom                            ports/www/tdom
