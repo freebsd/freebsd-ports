@@ -7,7 +7,7 @@
 
 PORTNAME=	InlineEgg
 PORTVERSION=	1.08
-CATEGORIES=	devel security
+CATEGORIES=	devel security python
 MASTER_SITES=	http://oss.corest.com/repo/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

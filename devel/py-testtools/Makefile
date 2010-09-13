@@ -7,7 +7,7 @@
 
 PORTNAME=	testtools
 PORTVERSION=	0.9.6
-CATEGORIES=	devel
+CATEGORIES=	devel python
 MASTER_SITES=	http://launchpadlibrarian.net/54281358/ \
 		http://www.c-s.li/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
