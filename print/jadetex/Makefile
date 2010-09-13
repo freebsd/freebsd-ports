@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	SF
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	A TeX backend for Jade, for typesetting SGML documents
 
 BUILD_DEPENDS=	etex:${PORTSDIR}/print/teTeX-base
