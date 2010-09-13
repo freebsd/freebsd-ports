@@ -7,7 +7,7 @@
 
 PORTNAME=	systemu
 PORTVERSION=	1.2.0
-CATEGORIES=	devel
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com

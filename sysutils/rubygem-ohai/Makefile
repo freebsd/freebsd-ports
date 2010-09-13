@@ -7,7 +7,7 @@
 
 PORTNAME=	ohai
 PORTVERSION=	0.5.4
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com

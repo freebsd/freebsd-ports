@@ -7,7 +7,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	0.9.9
-CATEGORIES=	graphics ruby
+CATEGORIES=	graphics ruby rubygems
 MASTER_SITES=	RG
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 

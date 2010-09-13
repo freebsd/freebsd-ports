@@ -7,7 +7,7 @@
 
 PORTNAME=	mixlib-authentication
 PORTVERSION=	1.1.2
-CATEGORIES=	devel
+CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com

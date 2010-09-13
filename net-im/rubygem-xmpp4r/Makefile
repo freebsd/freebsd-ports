@@ -8,7 +8,7 @@
 PORTNAME=	xmpp4r
 PORTVERSION=	0.5
 PORTREVISION=	1
-CATEGORIES=	net-im ruby
+CATEGORIES=	net-im ruby rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	miwi@FreeBSD.org
