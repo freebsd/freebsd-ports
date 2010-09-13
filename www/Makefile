@@ -1418,6 +1418,7 @@
     SUBDIR += py-django-tagging
     SUBDIR += py-django-threaded-multihost
     SUBDIR += py-django11
+    SUBDIR += py-dojango
     SUBDIR += py-dtflickr
     SUBDIR += py-ez_web
     SUBDIR += py-fcgi
