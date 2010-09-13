@@ -7,7 +7,7 @@
 
 PORTNAME=	gitosis
 PORTVERSION=	0.2.20090917
-CATEGORIES=	devel
+CATEGORIES=	devel python
 MASTER_SITES=	http://apt.douglasthrift.net/files/${PORTNAME}/ \
 		http://code.douglasthrift.net/files/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

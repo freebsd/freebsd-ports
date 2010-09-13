@@ -7,7 +7,7 @@
 
 PORTNAME=	sslstrip
 PORTVERSION=	0.2
-CATEGORIES=	security
+CATEGORIES=	security python
 MASTER_SITES=	http://www.thoughtcrime.org/software/sslstrip/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}

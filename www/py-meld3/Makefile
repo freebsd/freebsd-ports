@@ -7,7 +7,7 @@
 
 PORTNAME=	meld3
 PORTVERSION=	0.6.5
-CATEGORIES=	www
+CATEGORIES=	www python
 MASTER_SITES=	http://www.plope.com/software/meld3/ \
 				http://0x746e.org.ua/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
