@@ -8,10 +8,12 @@
 PORTNAME=	hwstat
 PORTVERSION=	0.5.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://rhaamo.li/hwstat/
+MASTER_SITES=	http://pub.rhaamo.li/Archives/hwstat/
 
 MAINTAINER=	rhaamo@gruik.at
 COMMENT=	Command line tool to display CPU temp and battery infos
+
+LICENSE=	BSD
 
 PLIST_FILES=	bin/hwstat
 
