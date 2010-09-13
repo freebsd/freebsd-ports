@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	20100824
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
@@ -42,6 +43,7 @@ LOGDIR=		/var/log/clamav
 RUNDIR=		/var/run/clamav
 PLIST_SUB+=	DBDIR=${DBDIR} LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
 PY_NO_THREAD=	${WRKDIR}/.python-has-no-threads
+USE_AUTOTOOLS=	libltdl:22
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
