@@ -9,7 +9,7 @@
 SEAMONKEY_I18N_ALL_=	be ca cs de es-AR es-ES fr gl hu it \
 			ka lt nb-NO nl pl pt-PT ru sk tr
 
-.if defined(SEAMONKEY_I18N_ALL) || defined(PACKAGE_BUILDING) || target(package)
+.if defined(SEAMONKEY_I18N_ALL) || (defined(PACKAGE_BUILDING) && !exists(${OPTIONSFILE})) || make(makesum)
 SEAMONKEY_I18N=   ${SEAMONKEY_I18N_ALL_}
 .else
 .ifndef WITHOUT_LANG_BE

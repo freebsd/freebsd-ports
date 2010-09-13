@@ -25,13 +25,12 @@ WDIR=	langpack-*@seamonkey.mozilla.org
 
 XPI_DISTNAMES=	${SEAMONKEY_I18N_}
 
-.include "${.CURDIR}/Makefile.option"
-.include <bsd.port.pre.mk>
-
 .ifndef WITHOUT_SWITCHER
 RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
 .endif
 
+.include "${.CURDIR}/Makefile.option"
+.include <bsd.port.options.mk>
 .include "${.CURDIR}/Makefile.lang"
 
 SEAMONKEY_I18N_?=	${SEAMONKEY_I18N}
@@ -55,10 +54,6 @@ do-extract:
 			exit 1; \
 		fi \
 	done
-
-.if !exists(${OPTIONSFILE}) && !defined(PACKAGE_BUILDING)
-pre-configure: config
-.endif
 
 do-install:
 	@${INSTALL} -d ${XPI_LIBDIR} ${XPI_SLDIRS_ALL}
@@ -84,4 +79,4 @@ List-Langs:
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
