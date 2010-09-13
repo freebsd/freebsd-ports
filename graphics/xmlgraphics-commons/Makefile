@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlgraphics-commons
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4
 CATEGORIES=	graphics textproc java
 MASTER_SITES=	APACHE/xmlgraphics/commons/source
 EXTRACT_SUFX=	-src.tar.gz
