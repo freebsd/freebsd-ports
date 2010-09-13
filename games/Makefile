@@ -821,7 +821,6 @@
     SUBDIR += spring
     SUBDIR += springlobby
     SUBDIR += starlanes
-    SUBDIR += stelstorm
     SUBDIR += stepbill
     SUBDIR += stepmania-devel
     SUBDIR += stonesoup
