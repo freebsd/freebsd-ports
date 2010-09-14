@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	railsbench
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.9.8
 CATEGORIES=	benchmarks rubygems
 MASTER_SITES=	RG
 
