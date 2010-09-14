@@ -33,7 +33,6 @@
     SUBDIR += p5-XML-Parser-encodings
     SUBDIR += p5-cyrillic
     SUBDIR += pgp.language
-    SUBDIR += php_doc
     SUBDIR += prawda
     SUBDIR += pscyr
     SUBDIR += rubygem-russian

@@ -28,7 +28,6 @@
     SUBDIR += bricons
     SUBDIR += brightside
     SUBDIR += buttonbox
-    SUBDIR += chameleon
     SUBDIR += cnslock
     SUBDIR += compositeproto
     SUBDIR += damageproto

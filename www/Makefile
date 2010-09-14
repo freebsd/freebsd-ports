@@ -1111,7 +1111,6 @@
     SUBDIR += p5-Plack-Middleware-ReverseProxy
     SUBDIR += p5-Plack-Middleware-Session
     SUBDIR += p5-Plack-Middleware-Throttle
-    SUBDIR += p5-Plack-Server-AnyEvent
     SUBDIR += p5-Plack-Server-Coro
     SUBDIR += p5-Plack-Server-POE
     SUBDIR += p5-Plack-Server-ReverseHTTP
@@ -1847,9 +1846,7 @@
     SUBDIR += xpi-cssviewer
     SUBDIR += xpi-customizegoogle
     SUBDIR += xpi-cutemenus-crystalsvg
-    SUBDIR += xpi-dailymotiononwooztalk
     SUBDIR += xpi-deepestsender
-    SUBDIR += xpi-deezeronwooztalk
     SUBDIR += xpi-default_full_zoom_level
     SUBDIR += xpi-delicious
     SUBDIR += xpi-downthemall
@@ -1857,7 +1854,6 @@
     SUBDIR += xpi-fasterfox
     SUBDIR += xpi-firebug
     SUBDIR += xpi-firefox-showcase
-    SUBDIR += xpi-firefoxonwooztalk
     SUBDIR += xpi-firemobilesimulator
     SUBDIR += xpi-fission
     SUBDIR += xpi-flashblock
@@ -1871,7 +1867,6 @@
     SUBDIR += xpi-gbutts
     SUBDIR += xpi-gmail-manager
     SUBDIR += xpi-google-notebook
-    SUBDIR += xpi-googlevideoonwooztalk
     SUBDIR += xpi-grab_and_drag
     SUBDIR += xpi-greasemonkey
     SUBDIR += xpi-gwt-dev-plugin
@@ -1879,17 +1874,14 @@
     SUBDIR += xpi-httpfox
     SUBDIR += xpi-imagezoom
     SUBDIR += xpi-imdbpreview
-    SUBDIR += xpi-imeemonwooztalk
     SUBDIR += xpi-imglikeopera
     SUBDIR += xpi-infolister
     SUBDIR += xpi-informenter
     SUBDIR += xpi-inline-google-definitions
     SUBDIR += xpi-it_s_all_text
-    SUBDIR += xpi-jiwaonwooztalk
     SUBDIR += xpi-joga
     SUBDIR += xpi-jsview
     SUBDIR += xpi-jv
-    SUBDIR += xpi-lastfmonwooztalk
     SUBDIR += xpi-leechblock
     SUBDIR += xpi-linkification
     SUBDIR += xpi-live_http_headers
@@ -1935,14 +1927,12 @@
     SUBDIR += xpi-urllink
     SUBDIR += xpi-user_agent_switcher
     SUBDIR += xpi-videodownloader
-    SUBDIR += xpi-vimeoonwooztalk
     SUBDIR += xpi-vimperator
     SUBDIR += xpi-web_developer
     SUBDIR += xpi-wmlbrowser
     SUBDIR += xpi-xhtml-ruby-support
     SUBDIR += xpi-xmpp4moz
     SUBDIR += xpi-xpcom-component-viewer
-    SUBDIR += xpi-youtubeonwooztalk
     SUBDIR += xpi-yslow
     SUBDIR += xshttpd
     SUBDIR += xshttpd-devel
