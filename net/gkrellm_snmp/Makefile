@@ -18,6 +18,9 @@ LIB_DEPENDS=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
+DEPRECATED=	Depends of net-snmp4, that is deprecated also and will be removed soon.
+EXPIRATION_DATE=2010-10-14
+
 PLIST_FILES=	libexec/gkrellm/plugins/gkrellm_snmp.so
 USE_GNOME=	imlib
 MAKE_ENV=	GKRELLM_INCLUDE="-I${LOCALBASE}/include/gkrellm/" \
