@@ -1,5 +1,5 @@
---- src/convert_pwdb.c.orig	Tue Feb 14 12:43:20 2006
-+++ src/convert_pwdb.c	Mon Feb 12 06:53:53 2007
+--- ./src/convert_pwdb.c.orig	2006-02-14 11:43:20.000000000 +0000
++++ ./src/convert_pwdb.c	2010-09-14 02:40:40.027593504 +0000
 @@ -186,13 +186,32 @@
  write_password_node(xmlNodePtr root, Pw *pw)
  {
