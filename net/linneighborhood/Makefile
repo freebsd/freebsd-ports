@@ -7,14 +7,16 @@
 
 PORTNAME=	LinNeighborhood
 PORTVERSION=	0.6.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net
 MASTER_SITES=	http://www.bnro.de/~schmidjo/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ gui for browsing and mounting SMB filesystems
 
-RUN_DEPENDS=	smbclient:${PORTSDIR}/net/samba3
+RUN_DEPENDS=	smbclient:${PORTSDIR}/${SAMBA_PORT}
+
+SAMBA_PORT?=	net/samba34
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes

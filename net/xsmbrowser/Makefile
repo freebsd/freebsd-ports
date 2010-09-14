@@ -7,16 +7,18 @@
 
 PORTNAME=	xsmbrowser
 PORTVERSION=	3.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://nuxo1.free.fr/logiciel_reseau/visu_reso/ \
 		http://mirror.uni-c.dk/gentoo/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Tcl/Tk port of Windows' Network Neighborhood
+COMMENT=	Tcl/Tk port of Windows Network Neighborhood
 
-RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba3 \
+RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/${SAMBA_PORT} \
 		${LOCALBASE}/bin/expectk:${PORTSDIR}/lang/expect
+
+SAMBA_PORT?=	net/samba34
 
 USE_PERL5_BUILD=yes
 
