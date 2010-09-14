@@ -1,0 +1,65 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: netdisks
+# REQUIRE: NETWORKING sysctl
+# KEYWORD: nojail
+
+. /etc/rc.subr
+
+name="aoe"
+rcvar="`set_rcvar`"
+start_cmd="aoe_start"
+stop_cmd=":"
+
+# discover the AoE devices on requested interfaces and tell vinum
+# about the disks requested
+aoe_start()
+{
+	echo -n 1>&2 "Starting AoE:"
+	if [ -z "${aoe_iflist}" ]; then
+		echo 2>&1 " aoe_start: unset aoe_iflist."
+		return
+	fi
+	sysctl net.aoe > /dev/null 2>&1
+	if [ $? -eq 1 ]; then   
+		kldconfig -mf %%PREFIX%%/lib/aoe
+		kldload aoe > /dev/null 2>&1
+	fi
+	if [ $? -eq 0 ]; then
+		# Make sure the net interfaces are "up"
+		for i in ${aoe_iflist}; do
+			echo -n  1>&2 " $i"
+			ifconfig $i up
+		done
+		echo 1>&2 "."
+
+		# give the interfaces a chance to come up
+		sleep 3 
+		sysctl net.aoe.wc=${aoe_wc} > /dev/null 2>&1
+		sysctl net.aoe.iflist="${aoe_iflist}" > /dev/null 2>&1
+		sleep 1 
+		sysctl net.aoe.devices
+
+		# Needs to be updated for gvinum
+		#if checkyesno start_vinum; then
+		#if [ -n "${aoe_vinum_drives}" ]; then
+		#	vinum read "${aoe_vinum_drives}"
+		#fi
+                #fi
+		echo -n 1>&2 "Mounting AoE blades:"
+
+		for i in ${aoe_mounts}; do
+			echo -n  1>&2 " $i"
+			mount $i
+		done
+		echo 1>&2 "."
+	else
+		echo 1>&2 Failure initializing AoE
+	fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
