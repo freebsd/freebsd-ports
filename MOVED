@@ -4556,3 +4556,4 @@ databases/mongodb-devel||2010-09-11|Older than databases/mongodb
 japanese/tdiary-devel||2010-09-12|Removed
 www/tdiary-devel||2010-09-12|Removed
 multimedia/playd2|multimedia/playd|2010-09-13|Has expired: Use multimedia/playd instead
+mail/mailscanner-devel|mail/mailscanner|2010-09-14|Removed, mail/mailscanner is newer
