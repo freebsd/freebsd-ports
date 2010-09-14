@@ -7,14 +7,16 @@
 
 PORTNAME=	gsambad
 PORTVERSION=	0.1.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://mange.dynalias.org/linux/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk2 Frontend for samba daemon
 
-RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba3
+RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/${SAMBA_PORT}
+
+SAMBA_PORT?=	net/samba34
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:262
