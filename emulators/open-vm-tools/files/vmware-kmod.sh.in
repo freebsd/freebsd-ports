@@ -13,32 +13,40 @@
 checkvm_cmd="%%PREFIX%%/bin/vmware-checkvm > /dev/null"
 
 # Functions
-vmware_guest_vmmemctl_start()
+vmware_mod_load()
 {
-	echo 'Loading vmmemctl kernel module.'
-	kldload %%PREFIX%%/lib/vmware-tools/modules/drivers/vmmemctl.ko >/dev/null 2>&1
+	echo -n "Loading $1 kernel module: "
+	kldstat -n %%PREFIX%%/lib/vmware-tools/modules/drivers/$1.ko >/dev/null 2>&1
+	if [ "$?" = "0" ]; then
+		echo "already loaded."
+	else
+		kldload %%PREFIX%%/lib/vmware-tools/modules/drivers/$1.ko >/dev/null 2>&1
+		if [ "$?" = "0" ]; then
+			echo "done."
+		else
+			echo "failed."
+		fi
+	fi
 }
-vmware_guest_vmxnet_start()
+vmware_mod_status()
 {
-	echo 'Loading vmxnet kernel module.'
-	kldload %%PREFIX%%/lib/vmware-tools/modules/drivers/vmxnet.ko >/dev/null 2>&1
-}
-vmware_guest_vmblock_start()
-{
-	echo 'Loading vmblock kernel module.'
-	kldload %%PREFIX%%/lib/vmware-tools/modules/drivers/vmblock.ko >/dev/null 2>&1
-}
-vmware_guest_vmhgfs_start()
-{
-	echo 'Loading vmhgfs kernel module.'
-	kldload %%PREFIX%%/lib/vmware-tools/modules/drivers/vmhgfs.ko >/dev/null 2>&1
+	echo -n "Checking $1 kernel module: "
+	kldstat -n %%PREFIX%%/lib/vmware-tools/modules/drivers/$1.ko >/dev/null 2>&1
+	if [ "$?" = "0" ]; then
+		echo "loaded."
+	else
+		echo "not loaded"
+	fi
 }
 
 # VMware kernel module: vmmemctl
-name="vmware_guest_vmmemctl"
+kernel_mod="vmmemctl"
+name="vmware_guest_${kernel_mod}"
 rcvar=`set_rcvar`
+extra_commands="status"
+status_cmd="vmware_mod_status ${kernel_mod}"
 start_precmd="${checkvm_cmd}"
-start_cmd="vmware_guest_vmmemctl_start"
+start_cmd="vmware_mod_load ${kernel_mod}"
 stop_precmd="${checkvm_cmd}"
 stop_cmd=":"
 
@@ -48,10 +56,13 @@ load_rc_config $name
 run_rc_command "$1"
 
 # VMware kernel module: vmxnet
-name="vmware_guest_vmxnet"
+kernel_mod="vmxnet"
+name="vmware_guest_${kernel_mod}"
 rcvar=`set_rcvar`
+extra_commands="status"
+status_cmd="vmware_mod_status ${kernel_mod}"
 start_precmd="${checkvm_cmd}"
-start_cmd="vmware_guest_vmxnet_start"
+start_cmd="vmware_mod_load ${kernel_mod}"
 stop_precmd="${checkvm_cmd}"
 stop_cmd=":"
 
@@ -60,10 +71,13 @@ load_rc_config $name
 run_rc_command "$1"
 
 # VMware kernel module: vmblock
-name="vmware_guest_vmblock"
+kernel_mod="vmblock"
+name="vmware_guest_${kernel_mod}"
 rcvar=`set_rcvar`
+extra_commands="status"
+status_cmd="vmware_mod_status ${kernel_mod}"
 start_precmd="${checkvm_cmd}"
-start_cmd="vmware_guest_vmblock_start"
+start_cmd="vmware_mod_load ${kernel_mod}"
 stop_precmd="${checkvm_cmd}"
 stop_cmd=":"
 
@@ -72,10 +86,13 @@ load_rc_config $name
 run_rc_command "$1"
 
 # VMware kernel module: vmhgfs
-name="vmware_guest_vmhgfs"
+kernel_mod="vmhgfs"
+name="vmware_guest_${kernel_mod}"
 rcvar=`set_rcvar`
+extra_commands="status"
+status_cmd="vmware_mod_status ${kernel_mod}"
 start_precmd="${checkvm_cmd}"
-start_cmd="vmware_guest_vmhgfs_start"
+start_cmd="vmware_mod_load ${kernel_mod}"
 stop_precmd="${checkvm_cmd}"
 stop_cmd=":"
 
