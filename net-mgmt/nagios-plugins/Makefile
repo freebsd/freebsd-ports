@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	nagios-plugins
-PORTVERSION=	1.4.14
-PORTREVISION=	1
+PORTVERSION=	1.4.15
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagiosplug/nagiosplug/${PORTVERSION}
 
-MAINTAINER=	jarrod@netleader.com.au
+MAINTAINER=	jarrod@downtools.com.au
 COMMENT=	Plugins for Nagios
 
 USE_SUBMAKE=	yes
