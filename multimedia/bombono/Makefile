@@ -7,7 +7,7 @@
 
 PORTNAME=	bombono
 PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/bombono/bombono-dvd/${PORTVERSION} \
 		http://www.stasyan.com/devel/distfiles/

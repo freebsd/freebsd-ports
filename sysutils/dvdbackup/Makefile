@@ -7,7 +7,7 @@
 
 PORTNAME=	dvdbackup
 PORTVERSION=	0.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dvd-create.sourceforge.net/ GENTOO/distfiles
 
