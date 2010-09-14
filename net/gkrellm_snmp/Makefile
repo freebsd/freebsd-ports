@@ -11,7 +11,7 @@ PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	http://triq.net/gkrellm/
 
-MAINTAINER=	eike.bernhardt@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gkrellm SNMP Monitor
 
 LIB_DEPENDS=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
