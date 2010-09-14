@@ -65,6 +65,10 @@ bin/robocode
 %%DATADIR%%/javadoc/robocode/TeamRobot.html
 %%DATADIR%%/javadoc/robocode/TurnCompleteCondition.html
 %%DATADIR%%/javadoc/robocode/WinEvent.html
+%%DATADIR%%/javadoc/robocode/annotation/SafeStatic.html
+%%DATADIR%%/javadoc/robocode/annotation/package-frame.html
+%%DATADIR%%/javadoc/robocode/annotation/package-summary.html
+%%DATADIR%%/javadoc/robocode/annotation/package-tree.html
 %%DATADIR%%/javadoc/robocode/control/BattleSpecification.html
 %%DATADIR%%/javadoc/robocode/control/BattlefieldSpecification.html
 %%DATADIR%%/javadoc/robocode/control/IRobocodeEngine.html
@@ -138,14 +142,14 @@ bin/robocode
 %%DATADIR%%/javadoc/stylesheet.css
 %%DATADIR%%/libs/codesize-1.1.jar
 %%DATADIR%%/libs/picocontainer-2.6.jar
-%%DATADIR%%/libs/robocode.battle-1.7.2.0.jar
-%%DATADIR%%/libs/robocode.core-1.7.2.0.jar
-%%DATADIR%%/libs/robocode.host-1.7.2.0.jar
+%%DATADIR%%/libs/robocode.battle-1.7.2.1.jar
+%%DATADIR%%/libs/robocode.core-1.7.2.1.jar
+%%DATADIR%%/libs/robocode.host-1.7.2.1.jar
 %%DATADIR%%/libs/robocode.jar
-%%DATADIR%%/libs/robocode.repository-1.7.2.0.jar
-%%DATADIR%%/libs/robocode.sound-1.7.2.0.jar
-%%DATADIR%%/libs/robocode.ui-1.7.2.0.jar
-%%DATADIR%%/libs/robocode.ui.editor-1.7.2.0.jar
+%%DATADIR%%/libs/robocode.repository-1.7.2.1.jar
+%%DATADIR%%/libs/robocode.sound-1.7.2.1.jar
+%%DATADIR%%/libs/robocode.ui-1.7.2.1.jar
+%%DATADIR%%/libs/robocode.ui.editor-1.7.2.1.jar
 %%DATADIR%%/libs/roborumble.jar
 %%DATADIR%%/license/epl-v10.html
 %%DATADIR%%/robocode.ico
@@ -241,6 +245,7 @@ bin/robocode
 @dirrm %%DATADIR%%/javadoc/robocode/control/snapshot
 @dirrm %%DATADIR%%/javadoc/robocode/control/events
 @dirrm %%DATADIR%%/javadoc/robocode/control
+@dirrm %%DATADIR%%/javadoc/robocode/annotation
 @dirrm %%DATADIR%%/javadoc/robocode
 @dirrm %%DATADIR%%/javadoc/resources
 @dirrm %%DATADIR%%/javadoc
