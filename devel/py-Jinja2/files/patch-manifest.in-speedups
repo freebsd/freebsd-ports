@@ -1,9 +1,0 @@
---- MANIFEST.in.dist	2010-02-19 07:31:56.000000000 -0500
-+++ MANIFEST.in	2010-04-06 23:28:31.000000000 -0400
-@@ -1,4 +1,5 @@
--include MANIFEST.in Makefile CHANGES LICENSE AUTHORS jinja2/_speedups.c
-+include MANIFEST.in Makefile CHANGES LICENSE AUTHORS
-+exclude jinja2/_speedups.c
- recursive-include docs *
- recursive-include custom_fixers *
- recursive-include ext *

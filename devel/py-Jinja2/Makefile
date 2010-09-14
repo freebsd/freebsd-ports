@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	Jinja2
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.5.2
+PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -18,10 +18,12 @@ COMMENT=	A fast, and easy to use stand-alone template engine
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	easy_install
-PYEASYINSTALL_ARCHDEP=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+
+OPTIONS=	SPEEDUPS	"Enable speedups"	on
+OPTIONS+=	BABEL	"Enable Babel extension"	off
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -33,4 +35,14 @@ post-install:
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SPEEDUPS)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MarkupSafe>=0.11:${PORTSDIR}/textproc/py-MarkupSafe
+.endif
+
+.if defined(WITH_BABEL)
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Babel-0.9.5:${PORTSDIR}/devel/py-babel
+.endif
+
+.include <bsd.port.post.mk>
