@@ -1,0 +1,13 @@
+--- lib/puppet/provider/service/freebsd.rb.orig Wed Aug 18 20:14:42 2010
++++ lib/puppet/provider/service/freebsd.rb  Wed Aug 18 23:48:08 2010
+@@ -18,7 +18,9 @@
+   def rcvar
+     rcvar = execute([self.initscript, :rcvar], :failonfail => true, :squelch => false)
+     rcvar = rcvar.split("\n")
+-    rcvar.delete_if {|str| str !~ /^(#\s\S+|\w+enable=.*)$/ }
++    rcvar.delete_if {|str| str !~ /^(#\s\S+|\$?\w+enable=.*)$/ }
++    rcvar[1] = rcvar[1].gsub!(/^\$?(.*)/, '\1')
++    rcvar
+   end
+
+   # Extract service name
