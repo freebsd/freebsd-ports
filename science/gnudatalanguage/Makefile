@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnudatalanguage
-DISTVERSION=	0.9rc3
-PORTREVISION=	5
+DISTVERSION=	0.9
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
@@ -32,16 +31,18 @@ COMMENT?=	GDL, a free IDL compatible incremental compiler
 
 LIB_DEPENDS+=	plplotd.9:${PORTSDIR}/math/plplot	\
 		gsl.15:${PORTSDIR}/math/gsl		\
-		dps.0:${PORTSDIR}/x11/dgs		\
-		readline.6:${PORTSDIR}/devel/readline
+		dps.0:${PORTSDIR}/x11/dgs
 
-USE_AUTOTOOLS=	libtool:22
+USE_GCC=	4.4+
+USE_WX=		2.8
+GNU_CONFIGURE=	yes
+# Disable ncurses and readline from ports
+CONFIGURE_FLAGS=--with_ncursesdir=/usr --with_readlinedir=/usr
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/ImageMagick"	\
-		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
+		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"	\
+		wxConfig=${WX_CONFIG}
 
 SLAVEDIRS=	science/py-gnudatalanguage
-
-CONFLICTS=	antlr-2.*
 
 .if defined(BUILD_PYTHON_MODULE)
 CATEGORIES+=	python
@@ -49,6 +50,7 @@ CONFIGURE_ARGS+=--enable-python_module
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/GDL.so
 PLIST_SUB+=	MASTER="@comment "
 .else
+MAN1=		gdl.1
 PLIST_SUB+=	MASTER=""
 .endif
 
@@ -101,6 +103,10 @@ LIB_DEPENDS+=	fftw3.5:${PORTSDIR}/math/fftw3		\
 CONFIGURE_ARGS+=--with-fftw=${LOCALBASE}
 .endif
 
+pre-configure:
+	${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|g'	\
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+
 .if defined(BUILD_PYTHON_MODULE)
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/.libs/libgdl.so.0 ${PYTHON_SITELIBDIR}/GDL.so
@@ -110,7 +116,6 @@ do-install:
 post-install:
 . if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}/testsuite
-	(cd ${WRKSRC}/src/pro && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
 	(cd ${WRKSRC}/testsuite && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/testsuite/)
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 . endif
