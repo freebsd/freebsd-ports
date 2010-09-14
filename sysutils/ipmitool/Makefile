@@ -37,11 +37,6 @@ CFLAGS+=	-ggdb -Wall
 
 .if exists(/usr/include/sys/ipmi.h)
 CONFIGURE_ARGS+=	--enable-intf-open
-.elif defined(WITH_IPMI_KMOD) || \
-	exists(${LOCALBASE}/include/sys/ipmi.h)
-BUILD_DEPENDS+=	${LOCALBASE}/include/sys/ipmi.h:${PORTSDIR}/sysutils/ipmi-kmod
-CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS+=	--enable-intf-open
 .else
 CONFIGURE_ARGS+=	--disable-intf-open
 .endif
