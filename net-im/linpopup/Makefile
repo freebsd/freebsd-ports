@@ -7,7 +7,7 @@
 
 PORTNAME=	linpopup
 PORTVERSION=	1.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.chez.com/littleigloo/files/
 DISTNAME=	LinPopUp-${PORTVERSION}.src
@@ -15,9 +15,11 @@ DISTNAME=	LinPopUp-${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 port of WinPopup
 
-RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba3
+RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/${SAMBA_PORT}
 
 WRKSRC=		${WRKDIR}/LinPopUp-${PORTVERSION}/src
+
+SAMBA_PORT?=	net/samba34
 
 USE_XORG=	x11 xmu
 USE_GNOME=	gtk12
