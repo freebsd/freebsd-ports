@@ -9,7 +9,7 @@
 
 PORTNAME=	kpopup
 PORTVERSION=	0.9.8.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-im kde
 MASTER_SITES=	http://www.henschelsoft.de/kpopup/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
@@ -17,7 +17,9 @@ MASTER_SITES=	http://www.henschelsoft.de/kpopup/ \
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	KDE program for sending and receiving MS Windows WinPopup messages
 
-RUN_DEPENDS=	smbclient:${PORTSDIR}/net/samba3
+RUN_DEPENDS=	smbclient:${PORTSDIR}/${SAMBA_PORT}
+
+SAMBA_PORT?=	net/samba34
 
 SUB_FILES=	pkg-message
 
