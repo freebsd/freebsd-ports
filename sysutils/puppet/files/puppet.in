@@ -20,7 +20,7 @@ load_rc_config "$name"
 
 : ${puppet_enable="NO"}
 : ${puppet_rundir="%%PUPPET_RUNDIR%%"}
-: ${puppet_flags=""}
+: ${puppet_flags="--rundir=${puppet_rundir}"}
 
 command_interpreter="%%PREFIX%%/bin/ruby18"
 command="%%PREFIX%%/bin/puppet"
