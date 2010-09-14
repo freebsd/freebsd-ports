@@ -34,10 +34,6 @@ DATADIR=	${PREFIX}/share/desktopbsd
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 601101 || ( ${OSVERSION} >= 700000 && ${OSVERSION} < 700015 )
-RUN_DEPENDS+=	csup:${PORTSDIR}/net/csup
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		"/Installation/d; /Documentation/d; /InitialConf/d" \
