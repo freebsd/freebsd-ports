@@ -179,7 +179,6 @@
     SUBDIR += vacuum-im
     SUBDIR += vicq
     SUBDIR += vqcc-gtk
-    SUBDIR += wooztalk
     SUBDIR += xfce4-messenger-plugin
     SUBDIR += ysm
     SUBDIR += zephyr

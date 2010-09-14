@@ -373,7 +373,6 @@
     SUBDIR += installwatch
     SUBDIR += iograph
     SUBDIR += ipa
-    SUBDIR += ipmi-kmod
     SUBDIR += ipmitool
     SUBDIR += ipsc
     SUBDIR += isc-cron
