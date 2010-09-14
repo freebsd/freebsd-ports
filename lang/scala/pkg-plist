@@ -9,29 +9,35 @@ bin/sbaz-setup
 bin/scala
 bin/scalac
 bin/scaladoc
+bin/scalap
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/fsc
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/sbaz
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/sbaz-setup
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/scala
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/scalac
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/scaladoc
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/sbaz-tests.jar
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/sbaz.jar
+share/%%PORTNAME%%-%%PORTVERSION%%/bin/scalap
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/jline.jar
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/scala-compiler.jar
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/scala-dbc.jar
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/scala-library.jar
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/scala-swing.jar
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/scalap.jar
 share/%%PORTNAME%%-%%PORTVERSION%%/meta/available
 share/%%PORTNAME%%-%%PORTVERSION%%/meta/description
 share/%%PORTNAME%%-%%PORTVERSION%%/meta/installed
 share/%%PORTNAME%%-%%PORTVERSION%%/meta/universe
 share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz-testall/tests/sbaz
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz/config/sbaz.properties.example
 share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz/descriptors/README
 share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz/descriptors/lamp-rc
 share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz/descriptors/scala-dev
-share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz/scala-library.jar
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz/sbaz-tests.jar
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz/scala-bazaars.jar
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-devel/plugins/continuations.jar
 share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/a2ps/README
 share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/a2ps/scala.ssh
+share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/bash-completion/scala_completion.sh
 share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/bluefish/README
 share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/bluefish/highlighting
 share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/AUTHORS
@@ -133,9 +139,13 @@ share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/xcode/Specifications/
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs/contrib
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/emacs
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/bluefish
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/bash-completion
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support/a2ps
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-tool-support
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-devel/plugins
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/scala-devel
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz/descriptors
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz/config
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz-testall/tests
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz-testall
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/misc/sbaz

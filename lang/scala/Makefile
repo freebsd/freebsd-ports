@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	scala
-PORTVERSION=	2.7.7
+PORTVERSION=	2.8.0
 DISTVERSIONSUFFIX=	.final
 CATEGORIES=	lang java
 MASTER_SITES=	http://www.scala-lang.org/downloads/distrib/files/ \
 		LOCAL/glarkin
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mitsuru@riken.jp
+MAINTAINER=	mitsururike@gmail.com
 COMMENT=	The Scala Programming Language
 
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 
-MAN1=		fsc.1 sbaz.1 scala.1 scalac.1 scaladoc.1
+MAN1=		fsc.1 sbaz.1 scala.1 scalac.1 scaladoc.1 scalap.1
 
 SCALA_HOME?=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 SCALA_SHRDIRS=	lib meta misc
