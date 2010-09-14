@@ -58,6 +58,7 @@
     SUBDIR += cups-smb-backend
     SUBDIR += detex
     SUBDIR += dk-acroread8
+    SUBDIR += dot2tex
     SUBDIR += dvi2tty
     SUBDIR += dvi2xx
     SUBDIR += dvipdfmx

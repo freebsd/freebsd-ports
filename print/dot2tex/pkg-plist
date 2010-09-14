@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+bin/dot2tex
+%%PYTHON_SITELIBDIR%%/dot2tex/__init__.py
+%%PYTHON_SITELIBDIR%%/dot2tex/__init__.pyc
+%%PYTHON_SITELIBDIR%%/dot2tex/__init__.pyo
+%%PYTHON_SITELIBDIR%%/dot2tex/dot2tex.py
+%%PYTHON_SITELIBDIR%%/dot2tex/dot2tex.pyc
+%%PYTHON_SITELIBDIR%%/dot2tex/dot2tex.pyo
+%%PYTHON_SITELIBDIR%%/dot2tex/dotparsing.py
+%%PYTHON_SITELIBDIR%%/dot2tex/dotparsing.pyc
+%%PYTHON_SITELIBDIR%%/dot2tex/dotparsing.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/dot2tex
