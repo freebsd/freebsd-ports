@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	surf
-PORTVERSION=	0.4
+PORTVERSION=	0.4.1
 CATEGORIES=	www
 MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	davide.italiano@gmail.com
 COMMENT=	A simple Web browser based on WebKit/Gtk+
 
 LIB_DEPENDS=	webkit-1.0:${PORTSDIR}/www/webkit-gtk2
