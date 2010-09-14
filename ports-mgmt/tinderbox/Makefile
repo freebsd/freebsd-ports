@@ -70,12 +70,6 @@ IGNORE_WITH_MYSQL=	323 40
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER:S/323//}
 .endif
 
-.if ! (${OSVERSION} > 700014 || ( ${OSVERSION} >= 601101 && ${OSVERSION} < 700000 ))
-.if !defined(WITHOUT_CSUP)
-RUN_DEPENDS+=	csup:${PORTSDIR}/net/csup
-.endif
-.endif
-
 .if defined(WITH_CVSUP)
 RUN_DEPENDS+=	cvsup:${PORTSDIR}/net/cvsup-without-gui
 .endif
