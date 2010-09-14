@@ -96,7 +96,6 @@
     SUBDIR += crescendo
     SUBDIR += cryptcat
     SUBDIR += csocks
-    SUBDIR += csup
     SUBDIR += csync2
     SUBDIR += ct
     SUBDIR += ctrace
