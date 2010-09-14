@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	devel perl5
 MASTER_SITES=	ftp://ftp.trolltech.com/freebies/tmake/
 
-MAINTAINER=	jesse@cs.uni-magdeburg.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extremely portable perl-based make utility
 
 USE_PERL5=	yes
