@@ -23,7 +23,8 @@ USE_PYTHON_RUN=	yes
 USE_LDCONFIG=	yes
 
 JAM=		${LOCALBASE}/bin/jam
-JAM_ENV=	BINDIR="${PREFIX}/bin" \
+JAM_ENV=	PREFIX="${PREFIX}" \
+		BINDIR="${PREFIX}/bin" \
 		INCDIR="${PREFIX}/include/$(PORTNAME)" \
 		LIBDIR="${PREFIX}/lib" \
 		CC="${CC}" CCFLAGS="${CFLAGS}" \
