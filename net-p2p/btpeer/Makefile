@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.alhem.net/project/btpeer/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client functionality of bittorrent protocol, network only environment
 
+DEPRECATED=	Does not build with net/Sockets and is unmaintained.
+EXPIRATION_DATE=2010-10-14
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libSockets-devel.a:${PORTSDIR}/net/Sockets-devel
 
 USE_GMAKE=	yes

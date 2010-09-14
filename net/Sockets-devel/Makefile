@@ -14,6 +14,9 @@ PKGNAMESUFFIX?=	-devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ wrapper for BSD-style sockets
 
+DEPRECATED=	Older than net/Sockets and unmaintained.
+EXPIRATION_DATE=2010-10-14
+
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 WITH_OPENSSL_BASE=	yes
