@@ -24,6 +24,7 @@ lib/MailScanner/MailScanner/Antiword.pm
 lib/MailScanner/MailScanner/BinHex.pm
 lib/MailScanner/MailScanner/Config.pm
 lib/MailScanner/MailScanner/ConfigDefs.pl
+lib/MailScanner/MailScanner/ConfigSQL.pm
 lib/MailScanner/MailScanner/CustomConfig.pm
 lib/MailScanner/MailScanner/CustomFunctions/CustomAction.pm
 lib/MailScanner/MailScanner/CustomFunctions/GenericSpamScanner.pm
@@ -114,6 +115,8 @@ libexec/MailScanner/kaspersky-wrapper.sample
 libexec/MailScanner/kavdaemonclient-wrapper.sample
 libexec/MailScanner/mcafee-autoupdate.sample
 libexec/MailScanner/mcafee-wrapper.sample
+libexec/MailScanner/mcafee6-autoupdate.sample
+libexec/MailScanner/mcafee6-wrapper.sample
 libexec/MailScanner/nod32-autoupdate.sample
 libexec/MailScanner/nod32-wrapper.sample
 libexec/MailScanner/norman-autoupdate.sample
