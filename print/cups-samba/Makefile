@@ -9,7 +9,7 @@
 
 PORTNAME=	cups-samba
 PORTVERSION=	6.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print net
 MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=cups/windows
@@ -18,8 +18,10 @@ DISTNAME=	cups-windows-${PORTVERSION}-source
 MAINTAINER=	mwisnicki+freebsd@gmail.com
 COMMENT=	The Common UNIX Printing System:  MS Windows client drivers
 
-RUN_DEPENDS=	smbspool:${PORTSDIR}/net/samba3 \
+RUN_DEPENDS=	smbspool:${PORTSDIR}/${SAMBA_PORT} \
 		${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base
+
+SAMBA_PORT?=	net/samba34
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
