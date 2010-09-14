@@ -10,7 +10,7 @@ PORTVERSION=	0.13.59
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}13/${PORTVERSION}
 
-MAINTAINER=	ale@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to provide transparent read access to zipped files
 
 USE_BZIP2=	yes
@@ -18,6 +18,7 @@ USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 USE_PYTHON_BUILD=	yes
 USE_LDCONFIG=	yes
+CONFIGURE_ENV=	ac_cv_path_XMLTO=":"
 
 PORTSCOUT=	limit:^0\.
 
