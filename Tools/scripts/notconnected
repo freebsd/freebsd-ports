@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# MAINTAINER=   pgollucci@FreeBSD.org
+# all committers may commit to this file without approval
+
+PATH=/rescue:$PATH
+
+if [ -z "$PORTSDIR" ]; then
+  PORTSDIR=/usr/ports
+fi
+
+echo "****************** No entry for dir in category Makefile"
+#### dir -> Makefile
+cd $PORTSDIR
+
+ports=$(find $PORTSDIR -type d -depth 2 | egrep -v 'CVS|.git|Tools')
+for port in $ports; do
+  cat=$(echo $port  |awk -F'/' '{print $1}')
+  portname=$(echo $port |awk -F'/' '{print $2}')
+
+  rc=$(grep -c " $portname$" $PORTSDIR/$cat/Makefile)
+  if [ $rc -ne 1 ]; then
+    echo "$cat/$portname"
+  fi
+done
+
+echo "***************** No corresponding dir for category Makefile entry"
+#### Makefile -> dir
+cd $PORTSDIR
+categories=$(ls -1d * |grep -v [A-Z] |grep -v distfiles)
+
+for cat in $categories; do
+  cd $PORTSDIR/$cat
+  ports=$(grep SUBDIR Makefile |awk '{print $3}')
+  for port in $ports; do
+    if [ ! -d $port ]; then
+      echo "$cat/$port"
+    fi
+  done
+done
+
