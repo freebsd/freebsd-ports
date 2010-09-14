@@ -17,6 +17,9 @@ COMMENT=	P4 - Perl friendly OO interface to the Perforce SCM System
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/P4/UI.pm:${PORTSDIR}/devel/p5-P4-Client
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+DEPRECATED=	Depends of p5-P4-Client, which is DEPRECATED.
+EXPIRATION_DATE=2010-10-14
+
 PERL_CONFIGURE=	yes
 
 MAN3=		P4.3
