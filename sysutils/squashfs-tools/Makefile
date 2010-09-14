@@ -17,23 +17,25 @@ COMMENT=	Set of tools to manipulate squashfs images
 PLIST_FILES=	bin/mksquashfs \
 		bin/unsquashfs
 
+MAKE_JOBS_SAFE=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}/squashfs-tools
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/../COPYING
+
 .ifndef NOPORTDOCS
 PORTDOCS=	ACKNOWLEDGEMENTS CHANGES COPYING \
 		PERFORMANCE.README README README-4.0
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" \
-			${WRKSRC}/squashfs-tools/Makefile
+	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" \
+		${WRKSRC}/Makefile
 
-do-build:
-	@${MAKE} -C ${WRKSRC}/squashfs-tools
-
-do-install:
-	@${MAKE} -C ${WRKSRC}/squashfs-tools ${INSTALL}
 .ifndef NOPORTDOCS
+post-install:
 	@${MKDIR} ${DOCSDIR}
-	@for i in ${PORTDOCS}; do ${INSTALL_DATA} ${WRKSRC}/$$i ${DOCSDIR}; done
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC:H}/|} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

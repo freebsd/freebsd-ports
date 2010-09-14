@@ -1,0 +1,324 @@
+--- mksquashfs.c	2009-04-05 17:22:48.000000000 -0400
++++ mksquashfs.c	2010-09-11 16:04:26.000000000 -0400
+@@ -1746,10 +1746,11 @@
+ 
+ 
+-int add_pending_fragment(struct file_buffer *write_buffer, int c_byte,
++static void
++add_pending_fragment(struct file_buffer *write_buffer, int c_byte,
+ 	int fragment)
+ {
+ 	struct frag_locked *entry = malloc(sizeof(struct frag_locked));
+ 	if(entry == NULL)
+-		return FALSE;
++		return;
+ 	entry->buffer = write_buffer;
+ 	entry->c_byte = c_byte;
+@@ -1825,6 +1826,4 @@
+ 	char cbuffer[(SQUASHFS_METADATA_SIZE << 2) + 2];
+ 	
+-	long long obytes = bytes;
+-
+ 	for(i = 0; i < meta_blocks; i++) {
+ 		int avail_bytes = length > SQUASHFS_METADATA_SIZE ?
+@@ -3400,5 +3399,5 @@
+ 	struct pseudo_entry *pseudo_ent;
+ 	struct stat buf;
+-	static pseudo_ino = 1;
++	static int pseudo_ino = 1;
+ 	
+ 	if(dir == NULL && (dir = scan1_opendir("")) == NULL)
+@@ -3483,5 +3482,6 @@
+ 					INFO("file %s, uncompressed size %lld "
+ 						"bytes %s\n", filename,
+-						buf->st_size, duplicate_file ?
++						(long long)buf->st_size,
++						duplicate_file ?
+ 						"DUPLICATE" : "");
+ 					break;
+@@ -3558,5 +3558,5 @@
+ 							"size %lld bytes LINK"
+ 							"\n", filename,
+-							buf->st_size);
++							(long long)buf->st_size);
+ 					break;
+ 				case SQUASHFS_SYMLINK_TYPE:
+--- read_fs.c	2009-03-31 00:23:14.000000000 -0400
++++ read_fs.c	2010-09-11 16:07:48.000000000 -0400
+@@ -559,5 +559,8 @@
+ 
+ 	for(i = 0; i < indexes; i++) {
+-		int length = read_block(fd, fragment_table_index[i], NULL,
++#ifdef SQUASHFS_TRACE
++		int length =
++#endif
++		read_block(fd, fragment_table_index[i], NULL,
+ 			((unsigned char *) *fragment_table) +
+ 			(i * SQUASHFS_METADATA_SIZE), sBlk);
+@@ -595,5 +598,8 @@
+ 
+ 	for(i = 0; i <  indexes; i++) {
+-		int length = read_block(fd, index[i], NULL,
++#ifdef SQUASHFS_TRACE
++		int length =
++#endif
++		read_block(fd, index[i], NULL,
+ 			((unsigned char *) *inode_lookup_table) +
+ 			(i * SQUASHFS_METADATA_SIZE), sBlk);
+--- sort.c	2009-03-31 00:25:53.000000000 -0400
++++ sort.c	2010-09-11 16:10:16.000000000 -0400
+@@ -255,5 +255,5 @@
+ 				INFO("file %s, uncompressed size %lld bytes %s"
+ 					"\n", entry->dir->pathname,
+-					entry->dir->inode->buf.st_size,
++					(long long)entry->dir->inode->buf.st_size,
+ 					duplicate_file ? "DUPLICATE" : "");
+ 				entry->dir->inode->inode = inode;
+@@ -262,5 +262,5 @@
+ 				INFO("file %s, uncompressed size %lld bytes "
+ 					"LINK\n", entry->dir->pathname,
+-					entry->dir->inode->buf.st_size);
++					(long long)entry->dir->inode->buf.st_size);
+ 		}
+ }
+--- pseudo.c	2009-04-04 22:01:58.000000000 -0400
++++ pseudo.c	2010-09-11 16:11:23.000000000 -0400
+@@ -100,5 +104,5 @@
+ {
+ 	char targname[1024];
+-	int i, error;
++	int i;
+ 
+ 	target = get_component(target, targname);
+--- squashfs_compat.h	2009-03-16 00:27:27.000000000 -0400
++++ squashfs_compat.h	2010-09-11 16:19:18.000000000 -0400
+@@ -195,13 +195,5 @@
+  */
+ 
+-#define SQUASHFS_SWAP_START \
+-	int bits;\
+-	int b_pos;\
+-	unsigned long long val;\
+-	unsigned char *s;\
+-	unsigned char *d;
+-
+ #define SQUASHFS_SWAP_SUPER_BLOCK_3(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_MEMSET(s, d, sizeof(struct squashfs_super_block_3));\
+ 	SQUASHFS_SWAP((s)->s_magic, d, 0, 32);\
+@@ -243,10 +235,8 @@
+ 
+ #define SQUASHFS_SWAP_BASE_INODE_HEADER_3(s, d, n) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_3(s, d, n)\
+ }
+ 
+ #define SQUASHFS_SWAP_IPC_INODE_HEADER_3(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_3(s, d, \
+ 			sizeof(struct squashfs_ipc_inode_header_3))\
+@@ -255,5 +245,4 @@
+ 
+ #define SQUASHFS_SWAP_DEV_INODE_HEADER_3(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_3(s, d, \
+ 			sizeof(struct squashfs_dev_inode_header_3)); \
+@@ -263,5 +252,4 @@
+ 
+ #define SQUASHFS_SWAP_SYMLINK_INODE_HEADER_3(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_3(s, d, \
+ 			sizeof(struct squashfs_symlink_inode_header_3));\
+@@ -271,5 +259,4 @@
+ 
+ #define SQUASHFS_SWAP_REG_INODE_HEADER_3(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_3(s, d, \
+ 			sizeof(struct squashfs_reg_inode_header_3));\
+@@ -281,5 +268,4 @@
+ 
+ #define SQUASHFS_SWAP_LREG_INODE_HEADER_3(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_3(s, d, \
+ 			sizeof(struct squashfs_lreg_inode_header_3));\
+@@ -292,5 +278,4 @@
+ 
+ #define SQUASHFS_SWAP_DIR_INODE_HEADER_3(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_3(s, d, \
+ 			sizeof(struct squashfs_dir_inode_header_3));\
+@@ -303,5 +288,4 @@
+ 
+ #define SQUASHFS_SWAP_LDIR_INODE_HEADER_3(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_3(s, d, \
+ 			sizeof(struct squashfs_ldir_inode_header_3));\
+@@ -315,5 +299,4 @@
+ 
+ #define SQUASHFS_SWAP_DIR_INDEX_3(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_MEMSET(s, d, sizeof(struct squashfs_dir_index_3));\
+ 	SQUASHFS_SWAP((s)->index, d, 0, 32);\
+@@ -323,5 +306,4 @@
+ 
+ #define SQUASHFS_SWAP_DIR_HEADER_3(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_MEMSET(s, d, sizeof(struct squashfs_dir_header_3));\
+ 	SQUASHFS_SWAP((s)->count, d, 0, 8);\
+@@ -331,5 +313,4 @@
+ 
+ #define SQUASHFS_SWAP_DIR_ENTRY_3(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_MEMSET(s, d, sizeof(struct squashfs_dir_entry_3));\
+ 	SQUASHFS_SWAP((s)->offset, d, 0, 13);\
+@@ -344,5 +325,4 @@
+ 	int entry;\
+ 	int bit_position;\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_MEMSET(s, d, n * 2);\
+ 	for(entry = 0, bit_position = 0; entry < n; entry++, bit_position += \
+@@ -354,5 +334,4 @@
+ 	int entry;\
+ 	int bit_position;\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_MEMSET(s, d, n * 4);\
+ 	for(entry = 0, bit_position = 0; entry < n; entry++, bit_position += \
+@@ -364,5 +343,4 @@
+ 	int entry;\
+ 	int bit_position;\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_MEMSET(s, d, n * 8);\
+ 	for(entry = 0, bit_position = 0; entry < n; entry++, bit_position += \
+@@ -374,5 +352,4 @@
+ 	int entry;\
+ 	int bit_position;\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_MEMSET(s, d, n * bits / 8);\
+ 	for(entry = 0, bit_position = 0; entry < n; entry++, bit_position += \
+@@ -385,5 +362,4 @@
+ 
+ #define SQUASHFS_SWAP_FRAGMENT_ENTRY_3(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_MEMSET(s, d, sizeof(struct squashfs_fragment_entry_3));\
+ 	SQUASHFS_SWAP((s)->start_block, d, 0, 64);\
+@@ -494,10 +470,8 @@
+ 
+ #define SQUASHFS_SWAP_BASE_INODE_HEADER_1(s, d, n) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_1(s, d, n)\
+ }
+ 
+ #define SQUASHFS_SWAP_IPC_INODE_HEADER_1(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_1(s, d, \
+ 			sizeof(struct squashfs_ipc_inode_header_1));\
+@@ -507,5 +481,4 @@
+ 
+ #define SQUASHFS_SWAP_DEV_INODE_HEADER_1(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_1(s, d, \
+ 			sizeof(struct squashfs_dev_inode_header_1));\
+@@ -514,5 +487,4 @@
+ 
+ #define SQUASHFS_SWAP_SYMLINK_INODE_HEADER_1(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_1(s, d, \
+ 			sizeof(struct squashfs_symlink_inode_header_1));\
+@@ -521,5 +493,4 @@
+ 
+ #define SQUASHFS_SWAP_REG_INODE_HEADER_1(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_1(s, d, \
+ 			sizeof(struct squashfs_reg_inode_header_1));\
+@@ -530,5 +501,4 @@
+ 
+ #define SQUASHFS_SWAP_DIR_INODE_HEADER_1(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_1(s, d, \
+ 			sizeof(struct squashfs_dir_inode_header_1));\
+@@ -666,5 +636,4 @@
+ 
+ #define SQUASHFS_SWAP_BASE_INODE_HEADER_2(s, d, n) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_2(s, d, n)\
+ }
+@@ -674,5 +643,4 @@
+ 
+ #define SQUASHFS_SWAP_DEV_INODE_HEADER_2(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_2(s, d, \
+ 			sizeof(struct squashfs_dev_inode_header_2)); \
+@@ -681,5 +649,4 @@
+ 
+ #define SQUASHFS_SWAP_SYMLINK_INODE_HEADER_2(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_2(s, d, \
+ 			sizeof(struct squashfs_symlink_inode_header_2));\
+@@ -688,5 +655,4 @@
+ 
+ #define SQUASHFS_SWAP_REG_INODE_HEADER_2(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_2(s, d, \
+ 			sizeof(struct squashfs_reg_inode_header_2));\
+@@ -699,5 +665,4 @@
+ 
+ #define SQUASHFS_SWAP_DIR_INODE_HEADER_2(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_2(s, d, \
+ 			sizeof(struct squashfs_dir_inode_header_2));\
+@@ -709,5 +674,4 @@
+ 
+ #define SQUASHFS_SWAP_LDIR_INODE_HEADER_2(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_SWAP_BASE_INODE_CORE_2(s, d, \
+ 			sizeof(struct squashfs_ldir_inode_header_2));\
+@@ -720,5 +684,4 @@
+ 
+ #define SQUASHFS_SWAP_DIR_INDEX_2(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_MEMSET(s, d, sizeof(struct squashfs_dir_index_2));\
+ 	SQUASHFS_SWAP((s)->index, d, 0, 27);\
+@@ -727,5 +690,4 @@
+ }
+ #define SQUASHFS_SWAP_DIR_HEADER_2(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_MEMSET(s, d, sizeof(struct squashfs_dir_header_2));\
+ 	SQUASHFS_SWAP((s)->count, d, 0, 8);\
+@@ -734,5 +696,4 @@
+ 
+ #define SQUASHFS_SWAP_DIR_ENTRY_2(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_MEMSET(s, d, sizeof(struct squashfs_dir_entry_2));\
+ 	SQUASHFS_SWAP((s)->offset, d, 0, 13);\
+@@ -742,5 +703,4 @@
+ 
+ #define SQUASHFS_SWAP_FRAGMENT_ENTRY_2(s, d) {\
+-	SQUASHFS_SWAP_START\
+ 	SQUASHFS_MEMSET(s, d, sizeof(struct squashfs_fragment_entry_2));\
+ 	SQUASHFS_SWAP((s)->start_block, d, 0, 32);\
+--- unsquashfs.c	2009-04-05 17:23:06.000000000 -0400
++++ unsquashfs.c	2010-09-11 16:16:07.000000000 -0400
+@@ -1939,5 +1943,4 @@
+ 	int data_buffer_size = DATA_BUFFER_DEFAULT;
+ 	char *b;
+-	struct winsize winsize;
+ 
+ 	pthread_mutex_init(&screen_mutex, NULL);
+--- unsquash-3.c	2009-03-31 00:35:10.000000000 -0400
++++ unsquash-3.c	2010-09-11 16:24:16.000000000 -0400
+@@ -37,5 +37,5 @@
+ 
+ 	if(sBlk.fragments == 0)
+-		return;
++		return 0;
+ 
+ 	if((fragment_table = malloc(sBlk.fragments *
+--- unsquash-4.c	2009-03-31 00:38:31.000000000 -0400
++++ unsquash-4.c	2010-09-11 16:25:18.000000000 -0400
+@@ -39,5 +39,5 @@
+ 
+ 	if(sBlk.fragments == 0)
+-		return;
++		return 0;
+ 
+ 	if((fragment_table = malloc(sBlk.fragments *
