@@ -1393,6 +1393,7 @@ camserv                         ports/multimedia/camserv
 cantus                          ports/audio/cantus
 cantus_3                        ports/audio/cantus_3
 cap                             ports/net/cap
+caph                            ports/games/caph
 caps-plugins                    ports/audio/caps-plugins
 cardpics                        ports/games/cardpics
 caribbeanstud                   ports/games/CaribbeanStud
@@ -3794,6 +3795,7 @@ fr-eficas                       ports/french/eficas
 fr-eficas_doc                   ports/french/eficas_doc
 fr-eric4                        ports/french/eric4
 fr-facturier                    ports/french/facturier
+fr-fortune-mod-zarathoustra     ports/french/fortune-mod-zarathoustra
 fr-geonext                      ports/french/geonext
 fr-gfaim                        ports/french/gfaim
 fr-gibi                         ports/french/gibi
@@ -5080,6 +5082,8 @@ gstreamer-plugins-neon          ports/www/gstreamer-plugins-neon
 gstreamer-plugins-ogg           ports/audio/gstreamer-plugins-ogg
 gstreamer-plugins-pango         ports/x11-toolkits/gstreamer-plugins-pango
 gstreamer-plugins-pulse         ports/audio/gstreamer-plugins-pulse
+gstreamer-plugins-resindvd      ports/multimedia/gstreamer-plugins-resindvd
+gstreamer-plugins-schroedinger  ports/multimedia/gstreamer-plugins-schroedinger
 gstreamer-plugins-sdl           ports/devel/gstreamer-plugins-sdl
 gstreamer-plugins-shout2        ports/audio/gstreamer-plugins-shout2
 gstreamer-plugins-sidplay       ports/audio/gstreamer-plugins-sidplay
@@ -5093,7 +5097,9 @@ gstreamer-plugins-theora        ports/multimedia/gstreamer-plugins-theora
 gstreamer-plugins-twolame       ports/audio/gstreamer-plugins-twolame
 gstreamer-plugins-ugly          ports/multimedia/gstreamer-plugins-ugly
 gstreamer-plugins-v4l2          ports/multimedia/gstreamer-plugins-v4l2
+gstreamer-plugins-vdpau         ports/x11/gstreamer-plugins-vdpau
 gstreamer-plugins-vorbis        ports/audio/gstreamer-plugins-vorbis
+gstreamer-plugins-vp8           ports/multimedia/gstreamer-plugins-vp8
 gstreamer-plugins-wavpack       ports/audio/gstreamer-plugins-wavpack
 gstreamer-plugins-x264          ports/multimedia/gstreamer-plugins-x264
 gstreamer-plugins-xvid          ports/multimedia/gstreamer-plugins-xvid
@@ -8362,6 +8368,7 @@ liedentd                        ports/security/liedentd
 lifelines                       ports/misc/lifelines
 liferea                         ports/net/liferea
 lifetype                        ports/www/lifetype
+lightning-thunderbird           ports/deskutils/lightning-thunderbird
 lightspark-devel                ports/graphics/lightspark-devel
 lightsquid                      ports/www/lightsquid
 lighttpd                        ports/www/lighttpd
@@ -18760,6 +18767,7 @@ pclprint                        ports/print/pclprint
 pcmanfm                         ports/x11-fm/pcmanfm
 pcnfsd                          ports/net/pcnfsd
 pcp                             ports/science/pcp
+pcpustat                        ports/sysutils/pcpustat
 pcre                            ports/devel/pcre
 pcre++                          ports/devel/pcre++
 pcrs                            ports/textproc/pcrs
@@ -20044,7 +20052,6 @@ plasma-scriptengine-ruby        ports/x11/plasma-scriptengine-ruby
 platon                          ports/biology/platon
 play                            ports/audio/play
 playd                           ports/multimedia/playd
-playd2                          ports/multimedia/playd2
 playgsf                         ports/audio/playgsf
 playmidi                        ports/audio/playmidi
 plconfig                        ports/sysutils/plconfig
@@ -23697,6 +23704,7 @@ statcvs                         ports/devel/statcvs
 staticcharge                    ports/dns/staticcharge
 statsvn                         ports/devel/statsvn
 sted                            ports/editors/sted
+steelstorm                      ports/games/steelstorm
 stegdetect                      ports/security/stegdetect
 steghide                        ports/security/steghide
 stella                          ports/emulators/stella
