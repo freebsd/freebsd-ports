@@ -23,6 +23,8 @@ USE_OPENSSL=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
+SAMBA_PORT?=	net/samba34
+
 MAN1=		elinks.1
 MAN5=		elinkskeys.5 elinks.conf.5
 
@@ -114,8 +116,8 @@ CONFIGURE_ARGS+=	--enable-exmode
 .endif
 
 .if defined(WITH_SMB)
-RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba3
-BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/samba3
+RUN_DEPENDS+=	smbclient:${PORTSDIR}/${SAMBA_PORT}
+BUILD_DEPENDS+=	smbclient:${PORTSDIR}/${SAMBA_PORT}
 CONFIGURE_ARGS+=	--enable-smb
 .else
 CONFIGURE_ARGS+=	--disable-smb
