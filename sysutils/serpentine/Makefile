@@ -9,8 +9,7 @@ PORTNAME=	serpentine
 PORTVERSION=	0.7
 PORTREVISION=	7
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome Audio Cd Burner
@@ -25,11 +24,15 @@ USE_GMAKE=	yes
 USE_GSTREAMER=	core gnomevfs python
 USE_PYTHON=	2.4+
 
-OPTIONS=	MUINE "Cd-Burner Plugin for muine audio player (i386 only)" Off
-
 .include <bsd.port.pre.mk>
 
-.if (defined(WITH_MUINE) || exists(${LOCALBASE}/bin/muine)) && ${ARCH}=="i386"
+.if ${ARCH} == "i386"
+OPTIONS=	MUINE "Cd-Burner Plugin for muine audio player" Off
+.endif
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_MUINE)
 BUILD_DEPENDS+=	muine:${PORTSDIR}/audio/muine
 RUN_DEPENDS+=	muine:${PORTSDIR}/audio/muine
 PLIST_SUB+=	MUINE=""
