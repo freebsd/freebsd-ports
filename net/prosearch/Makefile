@@ -7,6 +7,7 @@
 
 PORTNAME=	prosearch
 PORTVERSION=	0.18.3
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://pro.setun.net/search/download/ SF/pro-search/pro-search/${PORTVERSION}
 
@@ -20,6 +21,8 @@ SUB_LIST=	SEARCHDIR=${SEARCHDIR}
 NO_BUILD=	yes
 SEARCHDIR?=	www/search
 PLIST_SUB+=	SEARCHDIR=${SEARCHDIR}
+
+SAMBA_PORT?=	net/samba34
 
 #todo
 # user and group for crawler
@@ -45,7 +48,7 @@ nmap:${PORTSDIR}/security/nmap
 .endif
 
 .if defined(WITH_SAMBA)
-RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba3
+RUN_DEPENDS+=	smbclient:${PORTSDIR}/${SAMBA_PORT}
 .endif
 
 .if defined(WITH_RSYNC)
