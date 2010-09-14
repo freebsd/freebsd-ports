@@ -7,7 +7,7 @@
 
 PORTNAME=	apsfilter
 PORTVERSION=	7.2.8
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 
@@ -19,6 +19,8 @@ DIST_SUBDIR=	apsfilter
 USE_SUBMAKE=	yes
 
 SUB_FILES+=	pkg-message
+
+SAMBA_PORT?=	net/samba34
 
 # special arrangement for package building, build stuff without X11
 # to make memory footprint of apsfilter package smaller
@@ -98,7 +100,7 @@ RUN_DEPENDS+=	wavplay:${PORTSDIR}/audio/wavplay
 .endif
 # all possible remote printing support
 RUN_DEPENDS+=	pap:${PORTSDIR}/net/netatalk
-RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba3
+RUN_DEPENDS+=	smbclient:${PORTSDIR}/${SAMBA_PORT}
 .elif defined(BATCH)
 #
 # in normal batch/portbuilding mode (without building all)

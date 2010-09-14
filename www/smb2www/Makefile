@@ -7,7 +7,7 @@
 
 PORTNAME=	smb2www
 PORTVERSION=	0.0.980804
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	smb2www
@@ -16,8 +16,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.0.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windows Network client that is accessible through a web browser
 
-RUN_DEPENDS=	smbclient:${PORTSDIR}/net/samba3 \
-				${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS=	smbclient:${PORTSDIR}/${SAMBA_PORT} \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+
+SAMBA_PORT?=	net/samba34
 
 MAKE_JOBS_SAFE=  yes
 
