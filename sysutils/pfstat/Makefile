@@ -7,7 +7,7 @@
 
 PORTNAME=	pfstat
 PORTVERSION=	2.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.benzedrine.cx/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -21,6 +21,7 @@ MAKE_ARGS=	"LD_GD=gd"
 MAKE_ENV+=	__MAKE_CONF=/dev/null
 USE_ICONV=	yes
 
+USE_RC_SUBR=	pfstatd
 MAN8=		pfstat.8 \
 		pfstatd.8
 
