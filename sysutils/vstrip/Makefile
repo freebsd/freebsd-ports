@@ -7,7 +7,7 @@
 
 PORTNAME=	vstrip
 DISTVERSION=	0.8f
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.digital-digest.com/downloads/files/encode/
 DISTNAME=	vStrip_${DISTVERSION:C/\.//g}

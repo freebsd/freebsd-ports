@@ -7,7 +7,7 @@
 
 PORTNAME=	ldvd
 PORTVERSION=	2.0.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 

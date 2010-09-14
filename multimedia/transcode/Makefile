@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.1.5
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://fromani.exit1.org/
