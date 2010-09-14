@@ -727,7 +727,6 @@
     SUBDIR += sqlcached
     SUBDIR += sqlclient
     SUBDIR += sqldeveloper
-    SUBDIR += sqlite-ext-inet
     SUBDIR += sqlite-ext-miscfuncs
     SUBDIR += sqlite-ext-mobigroup
     SUBDIR += sqlite2

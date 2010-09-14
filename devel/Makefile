@@ -215,7 +215,6 @@
     SUBDIR += coccinelle
     SUBDIR += cocktail
     SUBDIR += codeblocks
-    SUBDIR += codeville
     SUBDIR += codeworker
     SUBDIR += colorer
     SUBDIR += colorgcc

@@ -147,9 +147,7 @@
     SUBDIR += koffice-kde4-l10n-en_GB
     SUBDIR += koffice-kde4-l10n-es
     SUBDIR += koffice-kde4-l10n-et
-    SUBDIR += koffice-kde4-l10n-fy
     SUBDIR += koffice-kde4-l10n-gl
-    SUBDIR += koffice-kde4-l10n-hne
     SUBDIR += koffice-kde4-l10n-it
     SUBDIR += koffice-kde4-l10n-kk
     SUBDIR += koffice-kde4-l10n-nb
