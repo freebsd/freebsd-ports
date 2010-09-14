@@ -7,7 +7,7 @@
 
 PORTNAME=	lanbrowsing
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -18,7 +18,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Lanbrowsing facility and backend for KDE
 
-RUN_DEPENDS=	nmblookup:${PORTSDIR}/net/samba3
+RUN_DEPENDS=	nmblookup:${PORTSDIR}/${SAMBA_PORT}
+
+SAMBA_PORT?=	net/samba34
 
 USE_KDELIBS_VER=3
 
