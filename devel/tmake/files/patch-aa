@@ -1,6 +1,6 @@
---- lib/unix/generic.t	Mon Dec  4 03:26:06 2000
-+++ lib/unix/generic.t.new	Mon Jan 15 11:42:17 2001
-@@ -205,10 +205,10 @@
+--- lib/unix/generic.t.orig	2000-12-04 04:26:06.000000000 +0200
++++ lib/unix/generic.t	2010-08-27 22:54:27.797820407 +0300
+@@ -205,13 +205,13 @@
  
  ####### Compiler, tools and options
  
@@ -14,4 +14,8 @@
 +CXXFLAGS+=	#$ Expand("TMAKE_CXXFLAGS"); ExpandGlue("DEFINES","-D"," -D","");
  INCPATH	=	#$ ExpandPath("INCPATH","-I"," -I","");
  #$ Config("staticlib") && DisableOutput();
- LINK	=	#$ Expand("TMAKE_LINK");
+-LINK	=	#$ Expand("TMAKE_LINK");
++LINK	=	$(CXX)
+ LFLAGS	=	#$ Expand("TMAKE_LFLAGS");
+ LIBS	=	$(SUBLIBS) #$ Expand("TMAKE_LIBDIR_FLAGS"); Expand("TMAKE_LIBS");
+ #$ Config("staticlib") && EnableOutput();
