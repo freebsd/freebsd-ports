@@ -10,7 +10,7 @@ include/libbcc.h
 lib/libgrx20X.a
 lib/libgrx20X.so
 lib/libgrx20X.so.2
-lib/libgrx20X.so.2.4.6
+lib/libgrx20X.so.2.4.8
 %%DATADIR%%/fonts/char11.fnt
 %%DATADIR%%/fonts/char11b.fnt
 %%DATADIR%%/fonts/char11bi.fnt

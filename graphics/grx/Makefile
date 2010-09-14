@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	grx
-PORTVERSION=	2.4.6
-PORTREVISION=	3
+PORTVERSION=	2.4.8
 CATEGORIES=	graphics
 MASTER_SITES=	http://grx.gnu.de/download/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -15,7 +14,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A 2D graphics library
 
-USE_GCC=	3.4
 USE_GMAKE=	yes
 USE_XORG=	x11
 USE_LDCONFIG=	yes
@@ -100,6 +98,10 @@ CONFIGURE_ARGS+=--enable-zlib
 CONFIGURE_ARGS+=--disable-zlib
 .endif
 
+.if ${ARCH} == amd64
+CONFIGURE_ARGS+=--enable-x86_64
+.endif
+
 post-patch:
 	@${GREP} -ERl '<(malloc|alloca)\.h>' ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -Ee 's|<(malloc\|alloca)\.h>|<stdlib.h>|'
@@ -107,8 +109,10 @@ post-patch:
 		's|^(CC[[:blank:]]*=).*|\1 ${CC}|; \
 		 s|^(CCOPT =)|\1 ${CPPFLAGS} ${CFLAGS}|; \
 		 s|^(LDOPT =)|\1 ${LDFLAGS}|;' \
+		-e 's|lib64|lib|' \
 		${WRKSRC}/makedefs.grx
-	@${REINPLACE_CMD} -e 's/gcc/${CC}/' ${WRKSRC}/src/makefile.[lx]*
+	@${REINPLACE_CMD} -e 's/gcc/${CC}/' -e 's|lib64|lib|' \
+		 ${WRKSRC}/src/makefile.[lx]*
 
 post-install:
 .if defined(WITH_GPC)
