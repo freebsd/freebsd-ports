@@ -250,7 +250,6 @@
     SUBDIR += mailman
     SUBDIR += mailmgr
     SUBDIR += mailscanner
-    SUBDIR += mailscanner-devel
     SUBDIR += mailscanner-mrtg
     SUBDIR += mailsync
     SUBDIR += mailx
