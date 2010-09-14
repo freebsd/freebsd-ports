@@ -12,4 +12,21 @@
 %%PYTHON_SITELIBDIR%%/keyring/getpassbackend.py
 %%PYTHON_SITELIBDIR%%/keyring/getpassbackend.pyc
 %%PYTHON_SITELIBDIR%%/keyring/getpassbackend.pyo
+%%PYTHON_SITELIBDIR%%/keyring/tests/test_backend.py
+%%PYTHON_SITELIBDIR%%/keyring/tests/test_backend.pyc
+%%PYTHON_SITELIBDIR%%/keyring/tests/test_backend.pyo
+%%PYTHON_SITELIBDIR%%/keyring/tests/test_core.py
+%%PYTHON_SITELIBDIR%%/keyring/tests/test_core.pyc
+%%PYTHON_SITELIBDIR%%/keyring/tests/test_core.pyo
+%%PYTHON_SITELIBDIR%%/keyring/tests/test_util.py
+%%PYTHON_SITELIBDIR%%/keyring/tests/test_util.pyc
+%%PYTHON_SITELIBDIR%%/keyring/tests/test_util.pyo
+%%PYTHON_SITELIBDIR%%/keyring/util/__init__.py
+%%PYTHON_SITELIBDIR%%/keyring/util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/keyring/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/keyring/util/escape.py
+%%PYTHON_SITELIBDIR%%/keyring/util/escape.pyc
+%%PYTHON_SITELIBDIR%%/keyring/util/escape.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/keyring/tests
+@dirrm %%PYTHON_SITELIBDIR%%/keyring/util
 @dirrm %%PYTHON_SITELIBDIR%%/keyring
