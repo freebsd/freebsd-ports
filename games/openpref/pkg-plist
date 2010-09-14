@@ -1,0 +1,5 @@
+bin/openpref
+%%DATADIR%%/openpref.png
+%%DATADIR%%/i18n/openpref_ru.qm
+@dirrm %%DATADIR%%/i18n
+@dirrm %%DATADIR%%
