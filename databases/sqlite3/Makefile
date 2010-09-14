@@ -149,8 +149,8 @@ CONFIGURE_ARGS+=	--enable-load-extension
 CONFIGURE_ARGS+=	--disable-load-extension
 .endif
 
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-MAKE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=		CPPFLAGS="-I. -I./src ${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ENV+=		CPPFLAGS="-I. -I./src ${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 post-install:
 .if defined(WITH_TCLWRAPPER)
