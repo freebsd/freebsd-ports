@@ -3,17 +3,28 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/native_libs.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_speedups.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_speedups.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_speedups.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_speedups.so
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_debugsupport.c
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_bundle.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_bundle.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_bundle.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_constants.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_constants.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_constants.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_native.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_native.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/_native.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/tests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/tests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe/tests.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_stringdefs.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_stringdefs.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_stringdefs.pyo
@@ -195,6 +206,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/django/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/django/layout.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/djangoext.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/djangoext.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/genshi/helpers.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/genshi/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/genshi/layout.html
@@ -205,6 +217,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/mako/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/mako/layout.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/rwbench.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/rwbench.pyc
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rwbench/mako
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rwbench/jinja
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rwbench/genshi
@@ -220,6 +233,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/res/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/res
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/_markupsafe
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
