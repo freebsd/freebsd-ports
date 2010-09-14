@@ -10,7 +10,7 @@ PORTVERSION=	1.13.04
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 
-MAINTAINER=	jean-francois.dockes@wanadoo.fr
+MAINTAINER=	jf@dockes.org
 COMMENT=	A personal full text search package, based on QT and Xapian
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
