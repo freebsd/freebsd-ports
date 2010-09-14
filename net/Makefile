@@ -1103,6 +1103,7 @@
     SUBDIR += ushare
     SUBDIR += utftpd
     SUBDIR += v6eval
+    SUBDIR += vblade
     SUBDIR += vchat
     SUBDIR += vde
     SUBDIR += vde2

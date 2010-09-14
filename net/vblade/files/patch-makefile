@@ -1,0 +1,25 @@
+--- makefile.orig	2008-10-09 04:07:40.000000000 +0700
++++ makefile	2010-09-13 20:48:07.000000000 +0700
+@@ -3,10 +3,9 @@
+ # see README for others
+ PLATFORM=linux
+ 
+-prefix = /usr
++prefix = ${PREFIX}
+ sbindir = ${prefix}/sbin
+-sharedir = ${prefix}/share
+-mandir = ${sharedir}/man
++mandir = ${prefix}/man
+ 
+ O=aoe.o bpf.o ${PLATFORM}.o ata.o
+ CFLAGS += -Wall -g -O2
+@@ -38,6 +37,6 @@
+ 	rm -f $O vblade
+ 
+ install : vblade vbladed
+-	install vblade ${sbindir}/
+-	install vbladed ${sbindir}/
+-	install vblade.8 ${mandir}/man8/
++	${INSTALL_PROGRAM} vblade ${sbindir}/
++	${INSTALL_SCRIPT} vbladed ${sbindir}/
++	${INSTALL_MAN} vblade.8 ${mandir}/man8/
