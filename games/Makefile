@@ -606,6 +606,7 @@
     SUBDIR += openjazz
     SUBDIR += openlierox
     SUBDIR += openmortal
+    SUBDIR += openpref
     SUBDIR += opensonic
     SUBDIR += openttd
     SUBDIR += openyahtzee
