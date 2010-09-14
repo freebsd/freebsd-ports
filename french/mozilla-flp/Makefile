@@ -12,11 +12,13 @@ PORTEPOCH=	1
 CATEGORIES=	french www
 MASTER_SITES=	SF/frenchmozilla/French%20SeaMonkey/${PORTVERSION}	\
 		http://frenchmozilla.sourceforge.net/FTP/${PORTVERSION}${DISTURL}/
-
 DISTNAME=	${GECKO}-${PORTVERSION}.fr-FR.langpack
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	${GECKO} French Language Pack (FLP)
+
+DEPRECATED=	www/${GECKO} port is deprecated. Consider using the www/firefox-i18n.
+EXPIRATION_DATE=	2010-12-31
 
 WRKSRC=		${WRKDIR}/bin
 
