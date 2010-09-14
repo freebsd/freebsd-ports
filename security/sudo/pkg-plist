@@ -21,6 +21,8 @@ sbin/visudo
 %%PORTDOCS%%%%DOCSDIR%%/sample.syslog.conf
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/README.LDAP
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.OpenLDAP
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.iPlanet
+%%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.ActiveDirectory
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/sudoers2ldif
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 etc/sudoers.d/.keep-me
