@@ -212,6 +212,7 @@
     SUBDIR += cmph
     SUBDIR += cmunge
     SUBDIR += cobf
+    SUBDIR += coccinelle
     SUBDIR += cocktail
     SUBDIR += codeblocks
     SUBDIR += codeville
