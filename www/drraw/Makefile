@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	drraw
-PORTVERSION=	2.1.3
-PORTREVISION=	2
+DISTVERSION=	2.2b2
 CATEGORIES=	www
 MASTER_SITES=	http://web.taranis.org/drraw/dist/ \
 		http://christianserving.org/ports/mail/imapsync/
 
-MAINTAINER=	ports@christianserving.org
+MAINTAINER=	avg@icyb.net.ua
 COMMENT=	A simple web-based presentation front-end for RRDtool
 
 RUN_DEPENDS+=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool
+
+OPTIONS=	ZOOM_PATCH	"Zoom support using jQuery via external patch"	off
 
 USE_PERL5_RUN=	yes
 
 NO_BUILD=	yes
 
-PORTDOCS=	CHANGES INSTALL LICENSE README.EVENTS WISHLIST
+PORTDOCS=	CHANGES INSTALL LICENSE README.EVENTS
 
 CONFDIR?=	etc
 DATADIRS?=	"/var/db/rrdtool" => "[Label1] "
@@ -29,6 +30,13 @@ SAVEDDIR?=	/var/db/${PORTNAME}/saved
 TMPDIR?=	/var/db/${PORTNAME}/tmp
 
 PLIST_SUB+=	CONFDIR=${CONFDIR}
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_ZOOM_PATCH)
+PATCH_SITES+=	http://pero.blogs.aprilmayjune.org/files/2009/09/
+PATCHFILES+=	drraw.cgi.zoom_patch
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CONFDIR%%|${PREFIX}/${CONFDIR}|g' ${WRKSRC}/drraw.cgi
@@ -64,4 +72,4 @@ post-install:
 		${CP} -p ${PREFIX}/etc/drraw.conf-dist ${PREFIX}/etc/drraw.conf; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
