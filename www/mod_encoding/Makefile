@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for non-ascii filename interoperability
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 # This port will work with the following version of Apache and anything newer.
 # Mostly because of the dependency of mod_dav.
@@ -44,7 +44,7 @@ PLIST_FILES=	${APACHEMODDIR}/mod_encoding.so
 
 .if ${APACHE_VERSION} == 20
 EXTRA_PATCHES=	${PATCHDIR}/apache20_patch
-.elif ${APACHE_VERSION} >= 21
+.elif ${APACHE_VERSION} >= 22
 EXTRA_PATCHES=	${PATCHDIR}/apache22_patch
 .endif
 
@@ -55,7 +55,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/iconv_hook-20040430.patch
 .if defined(WITH_QUERYSTRING_FIX)
 .if ${APACHE_VERSION} <= 20
 EXTRA_PATCHES+=	${PATCHDIR}/queryfix-patch13
-.elif ${APACHE_VERSION} >= 21
+.elif ${APACHE_VERSION} >= 22
 EXTRA_PATCHES+=	${PATCHDIR}/queryfix-patch22
 .endif
 .endif
