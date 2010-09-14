@@ -11,13 +11,16 @@ PORTREVISION=	7
 CATEGORIES=	french comms emulators
 MASTER_SITES=	http://pficheux.free.fr/xtel/download/
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An emulator for the french Minitel
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+
+DEPRECATED=	Minitel services will be discontinued at the end of 2010.
+EXPIRATION_DATE=	2010-12-31
 
 # Remark: Xtel can serve a network, and emulate TVR and I-Minitel, but this is
 # the first release of this port, and these functionnalities have not (yet)
