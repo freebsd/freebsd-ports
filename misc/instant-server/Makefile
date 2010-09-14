@@ -18,10 +18,12 @@ COMMENT=	Instant server installs a typical set of ports for a server
 RUN_DEPENDS=	${LOCALBASE}/sbin/postfix:${PORTSDIR}/mail/postfix \
 		${LOCALBASE}/sbin/cvsupd:${PORTSDIR}/net/cvsup \
 		${LOCALBASE}/sbin/dhcpd:${PORTSDIR}/net/isc-dhcp41-server \
-		${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba3 \
+		${LOCALBASE}/sbin/smbd:${PORTSDIR}/${SAMBA_PORT} \
 		${LOCALBASE}/sbin/traceroute:${PORTSDIR}/net/traceroute \
 		cnewsdo:${PORTSDIR}/news/cnews \
 		${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
+
+SAMBA_PORT?=	net/samba34
 
 # Don't let stupid programs ask for configuration.
 
