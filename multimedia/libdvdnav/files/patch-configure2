@@ -1,5 +1,5 @@
---- configure2.orig	2008-10-04 12:27:58.564694499 +0200
-+++ configure2	2008-10-04 12:35:04.406225755 +0200
+--- configure2.orig	2010-09-06 11:37:21.000000000 +0000
++++ configure2	2010-09-07 12:58:47.440053134 +0000
 @@ -26,6 +26,7 @@
    echo "  --help                   print this message"
    echo "  --prefix=PREFIX          install in PREFIX [$PREFIX]"
@@ -17,8 +17,12 @@
    --shlibdir=*) shlibdir="$optval"
    ;;
    --incdir=*) incdir="$optval"
-@@ -100,6 +103,7 @@
- PREFIX=`cd $PREFIX && pwd`
+@@ -97,9 +100,10 @@
+   esac
+ done
+ 
+-PREFIX=`cd $PREFIX && pwd`
++#PREFIX=`cd $PREFIX && pwd`
  
  test -z "$libdir" && libdir=$PREFIX/lib
 +test -z "$libdatadir" && libdir=$PREFIX/lib/pkgconfig
