@@ -1,12 +1,19 @@
+www/postfixadmin/ADDITIONS/cyrus/Changelog
+www/postfixadmin/ADDITIONS/cyrus/cyrus-mailbox-postcreation.pl
+www/postfixadmin/ADDITIONS/cyrus/cyrus-mailbox-postdelete.pl
+www/postfixadmin/ADDITIONS/cyrus/cyrus-mailbox-postedit.pl
+www/postfixadmin/ADDITIONS/cyrus/cyrus.conf
+www/postfixadmin/ADDITIONS/cyrus/README.txt
+www/postfixadmin/ADDITIONS/cyrus/README-ES.txt
 www/postfixadmin/ADDITIONS/change_password.tgz
 www/postfixadmin/ADDITIONS/cleanupdirs.pl
 www/postfixadmin/ADDITIONS/convert-passwd-to-postfixadmin.pl
 www/postfixadmin/ADDITIONS/delete-mailq-by-domain.pl
 www/postfixadmin/ADDITIONS/fetchmail.pl
+www/postfixadmin/ADDITIONS/import_users_from_csv.py
 www/postfixadmin/ADDITIONS/mailbox_remover.pl
 www/postfixadmin/ADDITIONS/mkeveryone.pl
 www/postfixadmin/ADDITIONS/pfa_maildir_cleanup.pl
-www/postfixadmin/ADDITIONS/postfixadmin-0.3-1.4.tar.gz
 www/postfixadmin/ADDITIONS/postfixadmin-domain-postdeletion.sh
 www/postfixadmin/ADDITIONS/postfixadmin-mailbox-postcreation.sh
 www/postfixadmin/ADDITIONS/postfixadmin-mailbox-postdeletion.sh
@@ -179,6 +186,7 @@ www/postfixadmin/config.inc.php.sample
 %%PORTDOCS%%%%DOCSDIR%%/screenshots/postfixadmin-user-vacation.jpg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/screenshots
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm www/postfixadmin/ADDITIONS/cyrus
 @dirrm www/postfixadmin/ADDITIONS
 @dirrm www/postfixadmin/VIRTUAL_VACATION/tests
 @dirrm www/postfixadmin/VIRTUAL_VACATION
