@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libconfuse
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	devel
-MASTER_SITES=	http://bzero.se/confuse/
+MASTER_SITES=	SAVANNAH
 MASTER_SITE_SUBDIR=	confuse
 DISTNAME=	confuse-${PORTVERSION}
 
