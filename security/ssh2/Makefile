@@ -37,6 +37,9 @@ DISTNAME=	ssh-${PORTVERSION}
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Secure shell client and server for V.2 SSH protocol
 
+DEPRECATED=	abandoned upstream
+EXPIRATION_DATE=2010-10-15
+
 .if !defined(WITHOUT_X11)
 CONFLICTS=	openssh-* ssh-* ssh2-nox11-*
 .else
