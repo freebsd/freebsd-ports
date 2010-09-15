@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tumbler
-PORTVERSION=	0.1.1
-PORTREVISION=	3
+PORTVERSION=	0.1.2
 CATEGORIES=	graphics xfce
-MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/0.1/
+MASTER_SITES=	XFCE
+MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/0.1
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	D-Bus service for generating thumbnails
@@ -26,7 +26,9 @@ BUILD_DEPENDS=	dbus-binding-tool:${PORTSDIR}/devel/dbus-glib \
 
 OPTIONS=	GTK2	"Enable GdkPixBuf thumbnailer plugin" On \
 		JPEG	"Enable JPEG thumbnailer plugin with EXIF support"	On \
+		FFMPEG	"Enable FFMPEG thumbnailer plugin"	On \
 		FREETYPE	"Enable Freetype font thumbnailer plugin"	On \
+		POPPLER	"Enable Poppler PDF/PS thumbnailer plugin"	On \
 		XDG	"Enable freedesktop.org cache plugin"	On
 
 USE_BZIP2=	yes
@@ -36,6 +38,9 @@ USE_GNOME=	glib20 gnomehack
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 .include <bsd.port.options.mk>
 
@@ -59,6 +64,16 @@ CONFIGURE_ARGS+=	--disable-jpeg-thumbnailer
 PLIST_SUB+=	JPEG="@comment "
 .endif
 
+.if defined(WITH_FFMPEG)
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/libffmpegthumbnailer.pc:${PORTSDIR}/multimedia/ffmpegthumbnailer
+LIB_DEPENDS+=	ffmpegthumbnailer.4:${PORTSDIR}/multimedia/ffmpegthumbnailer
+PLIST_SUB+=	FFMPEG=""
+WITH_PLUGINS=	true
+.elif defined(WITHOUT_FFMPEG)
+CONFIGURE_ARGS+=	--disable-ffmpeg-thumbnailer
+PLIST_SUB+=	FFMPEG="@comment "
+.endif
+
 .if defined(WITH_FREETYPE)
 BUILD_DEPENDS+=	freetype-config:${PORTSDIR}/print/freetype2
 PLIST_SUB+=	FREETYPE=""
@@ -66,6 +81,17 @@ WITH_PLUGINS=	true
 .elif defined(WITHOUT_FREETYPE)
 CONFIGURE_ARGS+=	--disable-font-thumbnailer
 PLIST_SUB+=	FREETYPE="@comment "
+.endif
+
+.if defined(WITH_POPPLER)
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/poppler-glib.pc:${PORTSDIR}/graphics/poppler-gtk \
+		poppler-gtk>=0.12.0:${PORTSDIR}/graphics/poppler-gtk
+LIB_DEPENDS+=	poppler-glib.4:${PORTSDIR}/graphics/poppler-gtk
+PLIST_SUB+=	POPPLER=""
+WITH_PLUGINS=	true
+.elif defined(WITHOUT_POPPLER)
+CONFIGURE_ARGS+=	--disable-poppler-thumbnailer
+PLIST_SUB+=	POPPLER="@comment "
 .endif
 
 .if defined(WITHOUT_XDG)
