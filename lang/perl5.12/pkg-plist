@@ -1039,6 +1039,7 @@ lib/perl5/%%PERL_VER%%/pod/perl5114delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl5115delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl5120delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl5121delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5122delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl561delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl56delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl570delta.pod
