@@ -312,6 +312,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_GCC		- If set, this port requires this version of gcc, either in
 #				  the system or installed from a port.
 # USE_CSTD		- Override the default C language standard (gnu89, gnu99)
+# USE_BINUTILS	- Use binutils suite from port instead of the version in base.
 # USE_GMAKE		- If set, this port uses gmake.
 # GMAKE			- Set to path of GNU make if not in $PATH.
 #				  Default: gmake
@@ -1732,6 +1733,22 @@ CONFIGURE_ENV+=	MAKE=${GMAKE}
 
 .if defined(USE_GCC) || defined(USE_FORTRAN)
 .include "${PORTSDIR}/Mk/bsd.gcc.mk"
+.endif
+
+.if defined(USE_BINUTILS) && !defined(DISABLE_BINUTILS)
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+BINUTILS?=	ADDR2LINE AR AS CPPFILT GPROF LD NM OBJCOPY OBJDUMP RANLIB \
+	READELF SIZE STRINGS
+BINUTILS_NO_MAKE_ENV?=
+. for b in ${BINUTILS}
+${b}=	${LOCALBASE}/bin/${b:C/PP/++/:L}
+.  if defined(GNU_CONFIGURE) || defined(BINUTILS_CONFIGURE)
+CONFIGURE_ENV+=	${b}="${${b}}"
+.  endif
+.  if ${BINUTILS_NO_MAKE_ENV:M${b}} == ""
+MAKE_ENV+=	${b}="${${b}}"
+.  endif
+. endfor
 .endif
 
 .if defined(USE_OPENLDAP) || defined(WANT_OPENLDAP_VER)
