@@ -7,13 +7,13 @@
 
 PORTNAME=	haddock
 PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Documentation for Haddock
 
-USE_AUTOTOOLS=	autoconf:262:env
+USE_AUTOTOOLS=	autoconf:267:env
 
 DOCUMENTATION=	yes
 XMLDOCS=	doc/haddock:users_guide

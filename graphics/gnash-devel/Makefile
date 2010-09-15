@@ -7,7 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	20100218
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -34,7 +34,7 @@ USE_GCC=	4.2+	# triggers compiler error on gcc 3.4
 WANT_GSTREAMER=	yes
 USE_GNOME=	pkgconfig libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm
-USE_AUTOTOOLS=	libltdl:22 libtool:22:env autoconf:262:env automake:110:env
+USE_AUTOTOOLS=	libltdl:22 libtool:22:env autoconf:267:env automake:110:env
 MAKE_JOBS_SAFE=	yes
 
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \

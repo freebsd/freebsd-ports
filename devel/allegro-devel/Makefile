@@ -7,7 +7,7 @@
 
 PORTNAME=	allegro
 DISTVERSION=	4.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	SF/alleg/${PORTNAME}-unstable/${PORTVERSION}
 PKGNAMESUFFIX=	-devel
@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	A cross-platform library for games and multimedia programming
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 USE_GMAKE=	yes
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
 USE_LDCONFIG=	yes

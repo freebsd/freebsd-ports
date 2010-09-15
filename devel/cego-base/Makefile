@@ -6,6 +6,7 @@
 
 PORTNAME=	cego-base
 PORTVERSION=	1.1.32
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 DISTNAME=	base-${PORTVERSION}
@@ -17,6 +18,6 @@ LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/base
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf:262:env
+USE_AUTOTOOLS=	autoconf:267:env
 
 .include <bsd.port.mk>

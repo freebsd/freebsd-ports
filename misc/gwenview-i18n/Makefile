@@ -14,13 +14,12 @@ MASTER_SITES=	SF/gwenview/gwenview/${PORTVERSION}
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Localized messages and documentation for Gwenview
 
-BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
-
 CONFLICTS=	gwenview-0.[0-9]* gwenview-1.[0-3]*
 
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	build
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

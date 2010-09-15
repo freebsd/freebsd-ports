@@ -10,7 +10,7 @@
 
 PORTNAME=	libpano12
 PORTVERSION=	2.8.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics java
 MASTER_SITES=	SF/panotools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 
 USE_GNOME=	gtk20 glib20 pango atk
 
-USE_AUTOTOOLS=	autoconf:262:env autoheader:262:env aclocal:19:env \
+USE_AUTOTOOLS=	autoconf:267:env autoheader:267:env aclocal:19:env \
 		automake:19:env libtool:22:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/gtk-2.0 \

@@ -6,6 +6,7 @@
 
 PORTNAME=	scribe
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://cloud.github.com/downloads/facebook/scribe/
 
@@ -26,7 +27,7 @@ CONFIGURE_ARGS=	--with-boost-filesystem=boost_filesystem \
 		PY_PREFIX="${PREFIX}"
 PLIST_SUB+=	PYTHON_VERSION_SHORTNAME="${PYTHON_VERSION_SHORTNAME}"
 PYTHON_VERSION_SHORTNAME=	${PYTHON_VERSION:S/thon//}
-USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:262
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:267
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_RC_SUBR=	${PORTNAME}

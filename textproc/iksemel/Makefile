@@ -7,7 +7,7 @@
 
 PORTNAME=	iksemel
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -16,7 +16,7 @@ COMMENT=	XML parser library mainly designed for Jabber applications
 
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
 
-USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:22
+USE_AUTOTOOLS=	aclocal:110 autoheader:267 automake:110 autoconf:267 libtool:22
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

@@ -8,6 +8,7 @@
 PORTNAME=	fwbuilder
 DISTVERSION=	4.1.1
 PORTVERSION=	${DISTVERSION}
+PORTREVISION=	1
 CATEGORIES=	security
 .if defined(BUILD)
 MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-4.0/build-${BUILD}/
@@ -46,7 +47,7 @@ QTDIR?=		${QT_PREFIX}
 
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262 aclocal:110 libtool:22
+USE_AUTOTOOLS=	autoconf:267 aclocal:110 libtool:22
 CONFIGURE_SCRIPT=	autogen.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

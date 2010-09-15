@@ -7,6 +7,7 @@
 
 PORTNAME=	zetaback
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://labs.omniti.com/zetaback/tags/1.0/
 
@@ -15,7 +16,7 @@ COMMENT=	Zetaback ZFS backup and recovery management system
 
 USE_PERL5_RUN=	YES
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 
 MAN1=		zetaback.1 zetaback_agent.1
 

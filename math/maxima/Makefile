@@ -7,6 +7,7 @@
 
 PORTNAME=	maxima
 PORTVERSION=	5.22.1
+PORTREVISION=	1
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -23,7 +24,7 @@ LICENSE=		GPLv2
 USE_TK =		84+
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
-USE_AUTOTOOLS=		aclocal:110 autoconf:262
+USE_AUTOTOOLS=		aclocal:110 autoconf:267
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--with-posix-shell=${LOCALBASE}/bin/bash \
 			--with-wish=${WISH} \

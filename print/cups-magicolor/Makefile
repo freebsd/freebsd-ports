@@ -7,7 +7,7 @@
 
 PORTNAME=	cups-magicolor
 PORTVERSION=	1.5.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print
 MASTER_SITES=	http://printer.konicaminolta.net/drivers/linux/
 DISTNAME=	2430DL_sc_linux
@@ -23,7 +23,7 @@ RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster
 
 WRKSRC=		${WRKDIR}/magicolor2430DL-${PORTVERSION}
 
-USE_AUTOTOOLS=	automake:19:env autoconf:262
+USE_AUTOTOOLS=	automake:19:env autoconf:267
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk-gui
 PORTVERSION=	2.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk-gui/releases/
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk \
 		wget:${PORTSDIR}/ftp/wget
 
 PROJECTHOST=	asterisk-bsd
-USE_AUTOTOOLS=	autoconf:262 automake:19
+USE_AUTOTOOLS=	autoconf:267 automake:19
 USE_GMAKE=	yes
 SUB_FILES=	pkg-message
 

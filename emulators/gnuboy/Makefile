@@ -8,7 +8,7 @@
 
 PORTNAME=	gnuboy
 PORTVERSION=	1.0.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	emulators games
 MASTER_SITES=	http://gnuboy.unix-fu.org/src/ \
 		http://brightrain.aerifal.cx/~laguna/src/
@@ -20,7 +20,7 @@ LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 
 USE_SDL=	sdl
 USE_XORG=	x11
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--with-sdl

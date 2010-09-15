@@ -318,7 +318,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: gmake
 ##
 # USE_ICONV		- If set, this port uses libiconv.
-# USE_GETTEXT	- If set, this port uses GNU gettext (libintl).
+# USE_GETTEXT	- The port uses GNU gettext (libintl).
+#					'build'		as a build-time dependency
+#					'yes'		as a library dependency
+#					'run'		as a run-time dependency
 ##
 # USE_PERL5		- If set, this port uses perl5 in one or more of the extract,
 #				  patch, build, install or run phases.
@@ -1892,10 +1895,14 @@ LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 .endif
 
 .if defined(USE_GETTEXT)
-.	if ${USE_GETTEXT:L} == "yes"
+.	if ${USE_GETTEXT:L} == "build"
+BUILD_DEPENDS+=	xgettext:${PORTSDIR}/devel/gettext
+.	elif ${USE_GETTEXT:L} == "run"
+RUN_DEPENDS+=	xgettext:${PORTSDIR}/devel/gettext
+.	elif ${USE_GETTEXT:L} == "yes"
 LIB_DEPENDS+=	intl:${PORTSDIR}/devel/gettext
 .	else
-LIB_DEPENDS+=	intl.${USE_GETTEXT}:${PORTSDIR}/devel/gettext
+IGNORE=			USE_GETTEXT can be only one of build, run, or yes
 .	endif
 .endif
 

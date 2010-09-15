@@ -7,6 +7,7 @@
 
 PORTNAME=	raknet
 PORTVERSION=	3.5.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel net
 MASTER_SITES=	http://www.jenkinssoftware.com/raknet/downloads/ \
@@ -20,7 +21,7 @@ COMMENT=	Networking API that provides reliable UDP primarily for online games
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal:110 autoheader:262 autoconf:262 automake:110 libtool:22
+USE_AUTOTOOLS=	aclocal:110 autoheader:267 autoconf:267 automake:110 libtool:22
 AUTOMAKE_ARGS=	--add-missing
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} \
 	-I ${LOCALBASE}/share/aclocal \

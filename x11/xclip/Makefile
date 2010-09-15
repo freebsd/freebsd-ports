@@ -8,13 +8,14 @@
 
 PORTNAME=	xclip
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@eitanadler.com
 COMMENT=	An interface to X selections ("the clipboard") from the command line
 
-USE_AUTOTOOLS=	autoconf:262:env aclocal:19:env automake:19:env
+USE_AUTOTOOLS=	autoconf:267:env aclocal:19:env automake:19:env
 USE_XORG=	x11 xmu
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

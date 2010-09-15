@@ -8,7 +8,7 @@
 
 PORTNAME=	dbconnect
 PORTVERSION=	0.3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}/DBConnect%20API%200.3%20Source%20Code/DBConnect%20API%20${PORTVERSION}
 
@@ -17,7 +17,7 @@ COMMENT=	Use C++ object API to allow applications to connect to databases
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 USE_LDCONFIG=	yes
 
 CXXFLAGS+=	${PTHREAD_CFLAGS} -fPIC -DFREEBSD

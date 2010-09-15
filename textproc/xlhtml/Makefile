@@ -7,7 +7,7 @@
 
 PORTNAME=	xlhtml
 PORTVERSION=	0.5
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/chicago/${PORTNAME}/backend
@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Excel and PowerPoint files to HTML and text
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:262
+USE_AUTOTOOLS=	automake:14 autoconf:267
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 MAN1=		ppthtml.1 xlhtml.1

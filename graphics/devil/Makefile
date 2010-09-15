@@ -8,7 +8,7 @@
 PORTNAME=	devil
 PORTVERSION=	1.7.8
 PORTEPOCH=	1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/openil/DevIL/${PORTVERSION}
 DISTNAME=	DevIL-${PORTVERSION}
@@ -30,7 +30,7 @@ OPTIONS=	JPEG	"Enable JPEG support"		on \
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
 USE_GNOME=	pkgconfig
-USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:22
+USE_AUTOTOOLS=	aclocal:110 autoheader:267 automake:110 autoconf:267 libtool:22
 ACLOCAL_ARGS=	-I m4 -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

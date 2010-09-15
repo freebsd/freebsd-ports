@@ -7,7 +7,7 @@
 
 PORTNAME=	protocol-lib
 PORTVERSION=	12.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -21,7 +21,7 @@ ONLY_FOR_ARCHS=	i386
 USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:262:env libtool:22:env
+USE_AUTOTOOLS=	automake:19:env autoconf:267:env libtool:22:env
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 BUILDDIR=	${WRKSRC}/lib/iiimp

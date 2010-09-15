@@ -7,6 +7,7 @@
 
 PORTNAME=	libunwind
 PORTVERSION=	20100809
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
@@ -18,7 +19,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 \
+USE_AUTOTOOLS=	aclocal:110 autoheader:267 automake:110 autoconf:267 \
 		libtoolize libtool:22
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	-c -a

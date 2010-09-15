@@ -7,7 +7,7 @@
 
 PORTNAME=	freeswitch-core
 PORTVERSION=	1.0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://files.freeswitch.org/:1 \
 		http://files.freeswitch.org/downloads/libs/:2
@@ -38,7 +38,7 @@ WRKSRC=		${WRKDIR}/${BASE_PORTNAME}-${PORTVERSION}
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_AUTOTOOLS=	autoconf:262:env automake:110:env libtool:22:env
+USE_AUTOTOOLS=	autoconf:267:env automake:110:env libtool:22:env
 
 USE_PERL5_BUILD=yes
 

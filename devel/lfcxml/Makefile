@@ -6,6 +6,7 @@
 
 PORTNAME=	cego-xml
 PORTVERSION=	1.0.20
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 DISTNAME=	xml-${PORTVERSION}
@@ -21,6 +22,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf:262:env
+USE_AUTOTOOLS=	autoconf:267:env
 
 .include <bsd.port.mk>

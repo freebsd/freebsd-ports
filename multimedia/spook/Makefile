@@ -7,7 +7,7 @@
 
 PORTNAME=	spook
 PORTVERSION=	20050207
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.litech.org/spook/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -27,7 +27,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262 aclocal:18 automake:18
+USE_AUTOTOOLS=	autoconf:267 aclocal:18 automake:18
 
 NOMAN=		defined
 

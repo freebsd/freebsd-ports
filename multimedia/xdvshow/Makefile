@@ -7,7 +7,7 @@
 
 PORTNAME=	xdvshow
 PORTVERSION=	00.2003.09.03
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.sfc.wide.ad.jp/DVTS/software/xdvshow/
 DISTNAME=	${PORTNAME}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv
 
 PLIST_FILES=	bin/xdvshow
 GNU_CONFIGURE=		YES
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 USE_SDL=	sdl
 
 post-patch:

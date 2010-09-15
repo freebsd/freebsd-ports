@@ -9,6 +9,7 @@
 
 PORTNAME=	lilypond
 PORTVERSION=	2.13.30
+PORTREVISION=	1
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.13/:src \
     		${MASTER_SITE_LOCAL}/gahr/:fonts \
@@ -47,7 +48,7 @@ INFO=		lilypond-changes lilypond-contributor lilypond-essay \
 		lilypond-notation lilypond-usage lilypond-web \
 		music-glossary
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 USE_BISON=	build
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

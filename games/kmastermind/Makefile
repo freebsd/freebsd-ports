@@ -6,7 +6,7 @@
 
 PORTNAME=	kmastermind
 PORTVERSION=	2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games kde
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 DISTNAME=	20292-${PORTNAME}-${PORTVERSION}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=		${NONEXISTENT}:${PORTSDIR}/x11/kdelibs3:extract
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYING
 
-USE_AUTOTOOLS=		automake:19:env autoconf:262:env libtool:22
+USE_AUTOTOOLS=		automake:19:env autoconf:267:env libtool:22
 USE_PERL5_BUILD=	yes
 USE_KDELIBS_VER=	3
 USE_BZIP2=		yes

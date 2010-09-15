@@ -7,6 +7,7 @@
 
 PORTNAME=	kBuild
 DISTVERSION=	${KBUILD_VERSION}-p2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -14,7 +15,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Makefile framework
 
-USE_AUTOTOOLS=	automake:19 autoconf:262
+USE_AUTOTOOLS=	automake:19 autoconf:267
 USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}

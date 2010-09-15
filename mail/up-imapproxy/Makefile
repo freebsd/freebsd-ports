@@ -7,6 +7,7 @@
 
 PORTNAME=	imapproxy
 PORTVERSION=	1.2.7
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.univie.ac.at/applications/www.imapproxy.org/downloads/
 PKGNAMEPREFIX=	up-
@@ -15,7 +16,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	A caching IMAP proxy server
 
-USE_AUTOTOOLS=	autoheader:262
+USE_AUTOTOOLS=	autoheader:267
 
 USE_RC_SUBR=	imapproxyd.sh
 DOCS=		COPYING ChangeLog README README.debian \

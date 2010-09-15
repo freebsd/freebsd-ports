@@ -16,12 +16,11 @@ PKGNAMEPREFIX=	avr-
 MAINTAINER=	joerg@freebsd.org
 COMMENT=	GNU binutils for Atmel AVR 8-bit RISC cross-development
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-
 WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	build
 CONFIGURE_ARGS=	--target=avr
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+= CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

@@ -7,7 +7,7 @@
 
 PORTNAME=	quake2forge
 PORTVERSION=	0.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	https://www.spoerlein.net/pub/
 DISTNAME=	quake2-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	quake2-${PORTVERSION}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	First Person Shooter with many addons available
 
-USE_AUTOTOOLS=	autoconf:262 libtool:22
+USE_AUTOTOOLS=	autoconf:267 libtool:22
 USE_BZIP2=	yes
 
 CONFIGURE_ARGS=	--program-transform-name='s/^quake2$$/${PORTNAME}/' \

@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs-devel-mule
 PORTVERSION=	${XEMACS_VER:S/-/./}
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -53,7 +53,7 @@ XEMACS_ARCH=	${MACHINE_ARCH}--freebsd
 
 WRKSRC=		${WRKDIR}/xemacs-${XEMACS_VER:S/-b/./}
 STRIP=
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 CONFIGURE_TARGET=${XEMACS_ARCH}
 
 CONFIGURE_ARGS+=	--enable-mule \
@@ -110,6 +110,9 @@ CONFIGURE_ARGS+=--disable-kkcc --disable-mc-alloc --disable-newgc
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 USE_XORG+=	x11 xft xpm
 CONFIGURE_ARGS+=--with-xft=all
+# XXX: needed until port updated to work nicely with autoconf >= 2.64
+#      see files/patch-configure.ac for more details
+CFLAGS+=	-I${LOCALBASE}/include/freetype2
 .elif defined(WITH_GTK)
 CONFIGURE_ARGS+=--with-gtk
 WITH_XIM=

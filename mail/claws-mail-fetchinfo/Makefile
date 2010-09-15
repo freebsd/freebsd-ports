@@ -7,7 +7,7 @@
 
 PORTNAME=	fetchinfo
 PORTVERSION=	0.4.24
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	claws-mail>=3.7.6:${PORTSDIR}/mail/claws-mail
 RUN_DEPENDS=	claws-mail>=3.7.6:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 
 PLIST_FILES=	lib/claws-mail/plugins/fetchinfo_plugin.a \
 	lib/claws-mail/plugins/fetchinfo_plugin.la \

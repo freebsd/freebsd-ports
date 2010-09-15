@@ -7,7 +7,7 @@
 
 PORTNAME=		samba
 PORTVERSION?=		3.3.13
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
@@ -24,7 +24,7 @@ DEPRECATED=		Unsupported by the upstream. Please, consider to upgrade.
 USE_GMAKE=		yes
 USE_ICONV=		yes
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=		autoconf:262 autoheader:262
+USE_AUTOTOOLS=		autoconf:267 autoheader:267
 AUTOHEADER_ARGS=	-I${WRKSRC}/m4 -I${WRKSRC}/lib/replace
 AUTOCONF_ARGS=		-I${WRKSRC}/m4 -I${WRKSRC}/lib/replace
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	php4
 PORTVERSION=	4.4.9
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
 		http://downloads.php.net/ilia/:rc \
@@ -23,7 +23,7 @@ LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
 .if !defined(PKGNAMESUFFIX)
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 
 CONFIGURE_ARGS=	--enable-versioning \
 		--enable-memory-limit \
@@ -158,7 +158,11 @@ post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
 	@${REINPLACE_CMD} "s|^\(extension_dir\)|; \1|" ${WRKSRC}/php.ini-*
 
+# Work around issues with newer (>=2.64) autoconf
 pre-configure:
+	@${REINPLACE_CMD} -E 's:^((m4_)?divert)[(]([0-9]*)[)]:\1(600\3):' \
+		${WRKSRC}/configure.in `${FIND} ${WRKSRC} -name '*.m4'`
+	@${RM} ${WRKSRC}/configure
 	@${CAT} ${WRKSRC}/acinclude.m4 ${WRKSRC}/build/libtool.m4 > ${WRKSRC}/aclocal.m4
 
 post-build:

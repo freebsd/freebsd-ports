@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20100915:
+  AFFECTS: autoconf, automake
+  AUTHOR: autotools@FreeBSD.org
+
+  autoconf has been updated from 2.62 to 2.67 -- all ports depending on
+  autoconf-2.62 have had their PORTREVISIONs update, so a standard
+  port updating method will suffice.
+
+  USE_GETTEXT has been extended to also accept 'build' and 'run' for
+  ports which need devel/gettext as a BUILD- or RUN-time dependency only.
+  No port should now be directly depending on devel/gettext in Makefiles.
+
+20100915:
   AFFECTS: users of sysutils/cdrtools-cjk
   AUTHOR: marius@FreeBSD.org
 

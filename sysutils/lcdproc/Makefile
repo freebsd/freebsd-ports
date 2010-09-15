@@ -7,6 +7,7 @@
 
 PORTNAME=	lcdproc
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -15,7 +16,7 @@ COMMENT=	A client/server suite for LCD devices
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_AUTOTOOLS=	autoconf:262 automake:19 aclocal:19
+USE_AUTOTOOLS=	autoconf:267 automake:19 aclocal:19
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
 USE_RC_SUBR=	LCDd lcdproc lcdexec

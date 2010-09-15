@@ -7,7 +7,7 @@
 
 PORTNAME=	asir
 PORTVERSION=	20070806
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
 		ftp://ftp.asir.org/pub/asir/src/ \
@@ -22,7 +22,7 @@ LIB_DEPENDS=	pari-gmp.2:${PORTSDIR}/math/pari
 
 USE_XORG=	x11 xaw xext xt
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:15 autoconf:262
+USE_AUTOTOOLS=	automake:15 autoconf:267
 CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari
 ASIR_SRC_VERSION=	${PORTVERSION}
 ASIR_DOC_VERSION=	20070718

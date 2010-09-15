@@ -6,13 +6,14 @@
 
 PORTNAME=	alex
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Alex is a tool for generating lexical analysers in Haskell
 
 XMLDOCS=	doc/alex:html
-USE_AUTOTOOLS=	autoconf:262:env
+USE_AUTOTOOLS=	autoconf:267:env
 
 STANDALONE=	yes
 EXECUTABLE=	alex

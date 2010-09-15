@@ -7,7 +7,7 @@
 
 PORTNAME=	gnuradio
 PORTVERSION=	3.1.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	comms astro hamradio
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnuradio
@@ -31,7 +31,7 @@ USE_PYTHON=	2.4+
 USE_WX=		2.6+
 WX_COMPS=	wx wx:build wx:run python:build python:run
 USE_PERL5=	yes
-USE_AUTOTOOLS=	autoconf:262 libtool:22
+USE_AUTOTOOLS=	autoconf:267 libtool:22
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -56,7 +56,8 @@ LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.61|2.67|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|^GR_FORTRAN||g' ${WRKSRC}/configure.ac
 	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | ${XARGS} \
 		-n 10 ${REINPLACE_CMD} -E -e \
 		's!^(ACLOCAL|AUTOCONF|AUTOMAKE|AUTOHEADER).+$$!\1=${TRUE}!' \
@@ -64,6 +65,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LIBDATA%%|${PREFIX}/libdata|' \
 	    ${WRKSRC}/gnuradio-core/Makefile.in ${WRKSRC}/usrp/Makefile.in \
 	    ${WRKSRC}/omnithread/Makefile.in ${WRKSRC}/gr-atsc/Makefile.in
+
 pre-install:
 	@${CP}	${FILESDIR}/wxgui_src_python_init.py \
 		${WRKSRC}/gr-wxgui/src/python/__init__.py

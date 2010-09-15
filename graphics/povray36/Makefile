@@ -7,7 +7,7 @@
 
 PORTNAME=	povray
 PORTVERSION=	3.6.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.povray.org/pub/povray/%SUBDIR%/ \
@@ -29,7 +29,7 @@ USE_XORG=	x11
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 LATEST_LINK=	${PORTNAME}36
 
 .include <bsd.port.pre.mk>

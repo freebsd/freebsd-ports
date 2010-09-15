@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.3rc4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
@@ -53,7 +53,7 @@ PORTEXAMPLES=	ASCII.html CreateHome.html Filters.html SQL.html Umask.html \
 		FXP.html Regex.html Tracing.html
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	proftpd-1.[0-9].*

@@ -7,7 +7,7 @@
 
 PORTNAME=	quickml
 PORTVERSION=	0.7
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	mail
 MASTER_SITES=	http://0xcc.net/quickml/
 
@@ -22,7 +22,7 @@ GROUPS=	quickml
 
 LICENSE=	GPLv2
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 GNU_CONFIGURE=	yes
 USE_RUBY=	yes
 

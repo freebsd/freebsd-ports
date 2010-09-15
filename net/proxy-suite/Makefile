@@ -7,7 +7,7 @@
 
 PORTNAME=	proxy-suite
 PORTVERSION=	1.9.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.suse.com/pub/projects/proxy-suite/src/ \
 		ftp://ftp.gwdg.de/pub/linux/suse/ftp.suse.com/projects/proxy-suite/src/ \
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.suse.com/pub/projects/proxy-suite/src/ \
 MAINTAINER=	thomas@cuivre.fr.eu.org
 COMMENT=	The SuSE Proxy-Suite, a set of programs to enhance firewall security
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 
@@ -60,6 +60,15 @@ MAN5=		ftp-proxy.conf.5
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
+
+# XXX: newer autoconf's rely on the compiler result, not the preprocessor
+#      for checking headers, so the configure.in needs to be fixed upstream
+#      to properly include dependencies
+post-configure:
+	@${ECHO} "#define HAVE_NET_IF_H 1" >> ${WRKSRC}/config.h
+	@${ECHO} "#define HAVE_NETINET_IP_H 1" >> ${WRKSRC}/config.h
+	@${ECHO} "#define HAVE_NETINET_IP_FIL_H 1" >> ${WRKSRC}/config.h
+	@${ECHO} "#define HAVE_NETINET_IP_NAT_H 1" >> ${WRKSRC}/config.h
 
 pre-install:
 	@${STRIP_CMD} ${WRKSRC}/ftp-proxy/ftp-proxy

@@ -7,7 +7,7 @@
 
 PORTNAME=	gproftpd
 PORTVERSION=	8.3.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	ftp
 MASTER_SITES=	http://mange.dynalias.org/linux/gproftpd/
 
@@ -17,7 +17,7 @@ COMMENT=	Gtk2 Frontend for proftpd daemon
 RUN_DEPENDS=	proftpd:${PORTSDIR}/ftp/proftpd
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 pkgconfig
 

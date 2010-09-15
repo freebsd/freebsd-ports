@@ -7,7 +7,7 @@
 
 PORTNAME=	fcgiwrap
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://cloud.github.com/downloads/gnosek/fcgiwrap/
 
@@ -21,7 +21,7 @@ LICENSE=	MIT
 
 USE_RC_SUBR=	fcgiwrap
 
-USE_AUTOTOOLS=	autoconf:262:env autoheader:262
+USE_AUTOTOOLS=	autoconf:267:env autoheader:267
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes

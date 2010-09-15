@@ -16,9 +16,8 @@ MASTER_SITES=	http://www.cmartin.tk/${PORTNAME}/ \
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	A simple feed reader for GNOME
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext \
-		${LOCALBASE}/libdata/pkgconfig/webkit-sharp-1.0.pc:${PORTSDIR}/www/webkit-sharp
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/webkit-sharp-1.0.pc:${PORTSDIR}/www/webkit-sharp
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/webkit-sharp-1.0.pc:${PORTSDIR}/www/webkit-sharp
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	terminatorx
 PORTVERSION=	3.82
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 MASTER_SITES=	http://terminatorx.org/dist/
 DISTNAME=	terminatorX-${PORTVERSION}
@@ -27,7 +27,7 @@ USE_XORG=	x11 xext xi xxf86dga ice sm
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20 libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262 autoheader:262
+USE_AUTOTOOLS=	autoconf:267 autoheader:267
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--disable-alsa \

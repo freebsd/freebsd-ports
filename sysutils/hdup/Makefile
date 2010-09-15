@@ -7,7 +7,7 @@
 
 PORTNAME=	hdup
 PORTVERSION=	2.0.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.miek.nl/projects/hdup2/ \
 		http://www.miek.nl/projects/hdup2/previous/
@@ -28,7 +28,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 
 MAN1=		hdup.1
 MAN5=		hdup.conf.5

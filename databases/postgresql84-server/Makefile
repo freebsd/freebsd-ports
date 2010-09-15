@@ -57,7 +57,7 @@ INSTALL_DIRS?=	${BUILD_DIRS}
 
 .if !defined(CLIENT_ONLY) && !defined(SLAVE_ONLY)
 SERVER_ONLY=	yes
-PORTREVISION=	2
+PORTREVISION=	3
 USE_RC_SUBR=	postgresql
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	${PORTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
@@ -107,7 +107,7 @@ IGNORE=		options WITH_ICU and WITH_ICU4 are mutually exclusive
 .  endif
 
 .  if (defined(SERVER_ONLY) && (defined(WITH_ICU) || defined(WITH_ICU4))) || make(makesum)
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 CONFIGURE_ARGS+=--with-icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
 PATCHFILES+=	pg-840-icu-2009-09-15.diff.gz:icu

@@ -7,7 +7,7 @@
 
 PORTNAME=	php-gtk2
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gtk.php.net/distributions/ \
 		http://document-root.de/mirror/php-gtk/
@@ -18,7 +18,7 @@ COMMENT=	An extension to use gtk2 in PHP-applications
 
 BROKEN=		does not compile
 
-USE_AUTOTOOLS=	automake:19:env autoconf:262 libtool:22:env
+USE_AUTOTOOLS=	automake:19:env autoconf:267 libtool:22:env
 USE_PHP=	pcre
 USE_PHP_BUILD=	yes
 WANT_PHP_CLI=	yes

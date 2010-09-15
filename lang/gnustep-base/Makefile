@@ -8,10 +8,10 @@
 PORTNAME=	gnustep-base
 .if defined(WITH_GNUSTEP_DEVEL)
 PORTVERSION=	1.21.1
-PORTREVISION=	1
+PORTREVISION=	2
 .else
 PORTVERSION=	1.19.3
-PORTREVISION=	3
+PORTREVISION=	4
 .endif
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
@@ -31,7 +31,7 @@ BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 LICENSE_COMB=	multi
 LICENSE=	GPLv3 LGPL3
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-procfs --disable-openssl --enable-tls \
 		--with-tls-prefix=${LOCALBASE} TLS_CONFIG="pkg-config -gnutls"

@@ -7,6 +7,7 @@
 
 PORTNAME=	php52
 PORTVERSION=	5.2.14
+PORTREVISION=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -20,7 +21,7 @@ LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 USE_BZIP2=	yes
 MAKE_JOBS_SAFE=	yes
 .if !defined(PKGNAMESUFFIX)
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 
 CONFIGURE_ARGS=	\
 		--with-layout=GNU \
@@ -189,7 +190,11 @@ post-patch:
 		${WRKSRC}/sapi/cgi/config9.m4
 .endif
 
+# Work around issues with newer (>=2.64) autoconf
 pre-configure:
+	@${REINPLACE_CMD} -E 's:^((m4_)?divert)[(]([0-9]*)[)]:\1(600\3):' \
+		${WRKSRC}/configure.in `${FIND} ${WRKSRC} -name '*.m4'`
+	@${RM} ${WRKSRC}/configure
 	@${CAT} ${WRKSRC}/acinclude.m4 ${WRKSRC}/build/libtool.m4 > ${WRKSRC}/aclocal.m4
 
 post-build:

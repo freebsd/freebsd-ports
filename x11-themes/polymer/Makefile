@@ -7,7 +7,7 @@
 
 PORTNAME=	polymer
 PORTVERSION=	0.3.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://static.int.pl/~mig21/dev/releases/polymer/ \
 		${MASTER_SITE_LOCAL}
@@ -19,7 +19,7 @@ COMMENT=	Qt port of Plastik KDE theme
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoheader:262
+USE_AUTOTOOLS=	autoheader:267
 USE_QT_VER=	3
 USE_LDCONFIG=	yes
 

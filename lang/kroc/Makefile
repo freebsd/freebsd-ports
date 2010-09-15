@@ -7,7 +7,7 @@
 
 PORTNAME=	kroc
 PORTVERSION=	1.5.r6372
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.i-scream.org/pub/kroc/ \
 		ftp://ftp.i-scream.org/pub/kroc/
@@ -29,7 +29,7 @@ USE_MYSQL=	yes
 USE_PYTHON=	yes
 USE_SDL=	sdl sound
 USE_GNOME=	libxslt
-USE_AUTOTOOLS=	autoconf:262:env automake:110:env
+USE_AUTOTOOLS=	autoconf:267:env automake:110:env
 USE_XORG=	xmu xi
 GNU_CONFIGURE=	yes
 

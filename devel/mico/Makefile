@@ -7,7 +7,7 @@
 
 PORTNAME=	mico
 PORTVERSION=	2.3.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mico.org/
 
@@ -22,7 +22,7 @@ WRKSRC=			${WRKDIR}/${PORTNAME}
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		autoconf:262
+USE_AUTOTOOLS=		autoconf:267
 CONFIGURE_ENV+=		EGREP=`which egrep`
 
 OPTIONS=	NOSERVICES "Without services, plain ORB" off \

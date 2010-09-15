@@ -7,13 +7,14 @@
 
 PORTNAME=	swig
 PORTVERSION=	1.3.39
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Simplified Wrapper and Interface Generator
 
-USE_AUTOTOOLS=	autoconf:262:env libtool:22
+USE_AUTOTOOLS=	autoconf:267:env libtool:22
 
 MAN1=		ccache-swig.1
 

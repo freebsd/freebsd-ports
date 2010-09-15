@@ -7,7 +7,7 @@
 
 PORTNAME=	gps
 PORTVERSION=	1.005
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail security
 MASTER_SITES=	SF/greylist/greylist/${PORTVERSION}-bugfix
 PKGNAMEPREFIX=	postfix-
@@ -26,7 +26,7 @@ SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/release-${PORTVERSION}
 
-USE_AUTOTOOLS=	automake:19 autoconf:262
+USE_AUTOTOOLS=	automake:19 autoconf:267
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ARGS=	--bindir=${PREFIX}/libexec --includedir=${PREFIX}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"	\

@@ -7,7 +7,7 @@
 
 PORTNAME=	lesstif
 PORTVERSION=	0.95.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
@@ -20,7 +20,7 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 
 CONFLICTS?=	open-motif-*
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:262 libtool:22
+USE_AUTOTOOLS=	automake:19:env autoconf:267 libtool:22
 USE_XORG=	sm ice xt xp xext x11 xextproto xrender xft
 USE_LDCONFIG=	yes
 LIBTOOLFILES=	aclocal.m4 test/aclocal.m4

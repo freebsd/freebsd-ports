@@ -7,7 +7,7 @@
 
 PORTNAME=		tdb
 PORTVERSION=		1.2.0
-PORTREVISION=		0
+PORTREVISION=		1
 CATEGORIES=		databases
 MASTER_SITES=		ftp://ftp.samba.org/pub/%SUBDIR%/ \
 			ftp://ca.samba.org/pub/%SUBDIR%/ \
@@ -24,7 +24,7 @@ USE_GMAKE=		yes
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 USE_GNOME=		pkgconfig
-USE_AUTOTOOLS=		autoconf:262 autoheader:262
+USE_AUTOTOOLS=		autoconf:267 autoheader:267
 
 IPATHS=			-I${WRKSRC}/libreplace
 AUTOHEADER_ARGS=	${IPATHS}

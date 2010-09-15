@@ -7,6 +7,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	1.4.5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
@@ -19,7 +20,7 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 CONFLICTS=	memcached-1.2*
 
-USE_AUTOTOOLS=	autoconf:262 aclocal:110 automake:110
+USE_AUTOTOOLS=	autoconf:267 aclocal:110 automake:110
 AUTOMAKE_ARGS+=	--add-missing
 USE_RC_SUBR=	memcached
 GNU_CONFIGURE=	YES

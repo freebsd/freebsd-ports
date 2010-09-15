@@ -7,7 +7,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	3.3.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	http://www.ntop.org/trac/export/4103/trunk/ntop/3rd_party/ \
 		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -32,7 +32,7 @@ RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
 DBDIR?=		/var/db
 
 MAKE_JOBS_SAFE=	yes
-USE_AUTOTOOLS=	libtool:22 automake:19 autoconf:262
+USE_AUTOTOOLS=	libtool:22 automake:19 autoconf:267
 USE_GNOME=	libxml2
 USE_LUA=	5.1
 USE_GMAKE=	yes

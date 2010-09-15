@@ -6,7 +6,7 @@
 
 PORTNAME=	prelude-manager
 PORTVERSION=	0.9.14.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=   http://www.prelude-ids.com/download/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=     ${PORTNAME} ${PORTNAME}/old
@@ -19,7 +19,7 @@ LIB_DEPENDS+=	prelude.20:${PORTSDIR}/security/libprelude \
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 USE_RC_SUBR=	prelude-manager.sh
 CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc \
 			--localstatedir=/var

@@ -7,6 +7,7 @@
 
 PORTNAME=	dfu-util
 DISTVERSION=	0.1.snap${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.cran.org.uk/~brucec/software/
 
@@ -15,7 +16,7 @@ COMMENT=	Device firmware update (DFU) USB programmer
 
 MAN1=		dfu-util.1
 PLIST_FILES=	bin/dfu-util
-USE_AUTOTOOLS=	aclocal:19 automake:19 autoheader:262
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoheader:267
 AUTOMAKE_ARGS=	--add-missing --foreign --copy
 
 SNAPDATE=	20090212

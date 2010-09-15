@@ -7,7 +7,7 @@
 
 PORTNAME=	moftpd
 PORTVERSION=	1.2.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.morth.org/moftpd/ \
 		${MASTER_SITE_LOCAL}

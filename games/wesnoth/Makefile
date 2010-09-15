@@ -7,6 +7,7 @@
 
 PORTNAME=	wesnoth
 PORTVERSION=	1.8.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/
@@ -29,7 +30,7 @@ MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
 USE_BZIP2=	yes
 USE_LUA=	5.1
-USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262
+USE_AUTOTOOLS=	aclocal:110 autoheader:267 automake:110 autoconf:267
 ACLOCAL_ARGS=	-Im4
 AUTOMAKE_ARGS=	--add-missing --copy
 CONFIGURE_ENV=	PKG_CONFIG="${PKG_CONFIG}" \

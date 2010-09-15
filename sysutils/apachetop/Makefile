@@ -7,7 +7,7 @@
 
 PORTNAME=	apachetop
 PORTVERSION=	0.12.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webta.org/apachetop/
 

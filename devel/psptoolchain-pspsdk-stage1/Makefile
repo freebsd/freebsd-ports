@@ -7,6 +7,7 @@
 
 PORTNAME=		pspsdk
 PORTVERSION=		20090127
+PORTREVISION=	1
 CATEGORIES=		devel
 MASTER_SITES=		http://www.potion-studios.com/
 PKGNAMEPREFIX=		psptoolchain-
@@ -17,7 +18,7 @@ COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
 PSP_SDK_STAGE_PREFIX=	psp/stage1
 
-USE_AUTOTOOLS=		libtool:22:env aclocal:19:env autoheader:262:env automake:19:env autoconf:262:env
+USE_AUTOTOOLS=		libtool:22:env aclocal:19:env autoheader:267:env automake:19:env autoconf:267:env
 USE_GMAKE=		yes
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS?=	--prefix=${PREFIX}/${PSP_SDK_STAGE_PREFIX} --with-pspdev="${PREFIX}/${PSP_SDK_STAGE_PREFIX}"

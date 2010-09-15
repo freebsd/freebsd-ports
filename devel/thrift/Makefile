@@ -7,7 +7,7 @@
 
 PORTNAME=	thrift
 PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE
@@ -20,7 +20,7 @@ COMMENT=	Framework for scalable cross-language services development
 LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost-libs \
 		event-1.4:${PORTSDIR}/devel/libevent
 
-USE_AUTOTOOLS=	autoconf:262:env autoheader:262:env aclocal:19:env \
+USE_AUTOTOOLS=	autoconf:267:env autoheader:267:env aclocal:19:env \
 		automake:19:env libtool:22:env
 USE_GNOME=	pkgconfig
 USE_GCC=	4.2+

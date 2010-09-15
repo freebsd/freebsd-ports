@@ -7,7 +7,7 @@
 
 PORTNAME=	rssyl
 PORTVERSION=	0.27
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
@@ -20,7 +20,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	claws-mail>=3.7.6:${PORTSDIR}/mail/claws-mail
 RUN_DEPENDS=	claws-mail>=3.7.6:${PORTSDIR}/mail/claws-mail
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 USE_ICONV=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

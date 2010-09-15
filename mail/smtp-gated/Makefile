@@ -7,6 +7,7 @@
 
 PORTNAME=	smtp-gated
 PORTVERSION=	1.4.16.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://software.klolik.org/smtp-gated/files/
 
@@ -14,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This software block SMTP sessions used by e-mail worms and viruses
 
 HAS_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoheader:262
+USE_AUTOTOOLS=	autoheader:267
 
 OPTIONS=	NAT "NAT transparent proxy code" On \
 		CHUNKING "Enable support for SMTP CHUNKING extension" Off \

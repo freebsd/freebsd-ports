@@ -6,7 +6,7 @@
 
 PORTNAME=	torsocks
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	GOOGLE_CODE \
 		http://tor.reactor-xg.kiev.ua/files/
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-epsilon
 MAINTAINER=	andy.lavr@gmail.com
 COMMENT=	Most SOCKS-friendly applications way with Tor
 
-USE_AUTOTOOLS=	libtool:22 aclocal:110 autoconf:262
+USE_AUTOTOOLS=	libtool:22 aclocal:110 autoconf:267
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 
 USE_GMAKE=	yes

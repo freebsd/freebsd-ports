@@ -7,7 +7,7 @@
 
 PORTNAME=	kino
 PORTVERSION=	1.3.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -24,7 +24,7 @@ OPTIONS=	QUICKTIME "With Quicktime support" off	\
 		FFMPEG_KINO "With ffmpeg-kino" off
 
 USE_XORG=	x11 xv ice
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade2 libxml2

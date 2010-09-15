@@ -17,8 +17,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Comprehensive html/website development environment
 
-BUILD_DEPENDS=	cvsservice:${PORTSDIR}/devel/kdesdk3 \
-		xgettext:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	cvsservice:${PORTSDIR}/devel/kdesdk3
 RUN_DEPENDS=	cvsservice:${PORTSDIR}/devel/kdesdk3 \
 		tidy:${PORTSDIR}/www/tidy-lib
 
@@ -28,6 +27,7 @@ PREFIX=		${KDE_PREFIX}
 USE_BZIP2=	yes
 USE_XORG=	xpm
 USE_GMAKE=	yes
+USE_GETTEXT=	build
 USE_AUTOTOOLS=  libtool:22
 
 .include <${.CURDIR}/../../x11/kde3/Makefile.kde>

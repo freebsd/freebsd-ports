@@ -7,7 +7,7 @@
 
 PORTNAME=	php5
 PORTVERSION=	5.3.3
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -21,7 +21,7 @@ LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 USE_BZIP2=	yes
 MAKE_JOBS_SAFE=	yes
 .if !defined(PKGNAMESUFFIX)
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
@@ -167,7 +167,11 @@ post-patch:
 		${WRKSRC}/sapi/fpm/php-fpm.conf.in
 .endif
 
+# Work around issues with newer (>=2.64) autoconf
 pre-configure:
+	@${REINPLACE_CMD} -E 's:^((m4_)?divert)[(]([0-9]*)[)]:\1(600\3):' \
+		${WRKSRC}/configure.in `${FIND} ${WRKSRC} -name '*.m4'`
+	@${RM} ${WRKSRC}/configure
 	@${CAT} ${WRKSRC}/acinclude.m4 ${WRKSRC}/build/libtool.m4 > ${WRKSRC}/aclocal.m4
 
 post-build:

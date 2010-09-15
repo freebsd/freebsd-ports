@@ -7,6 +7,7 @@
 
 PORTNAME=	cle
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://kaolin.unice.fr/pub/Cle/
 

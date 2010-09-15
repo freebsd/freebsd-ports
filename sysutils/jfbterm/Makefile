@@ -6,6 +6,7 @@
 
 PORTNAME=	jfbterm
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ac.auone-net.jp/~baba/jfbterm/ \
 		http://chirashi-no-ura.net/files/
@@ -23,7 +24,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262 automake:14
+USE_AUTOTOOLS=	autoconf:267 automake:14
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		--mandir="${LOCALBASE}/man"

@@ -6,13 +6,14 @@
 
 PORTNAME=	happy
 PORTVERSION=	1.18.5
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	An LALR(1) parser generator for the functional language Haskell
 
 XMLDOCS=	doc/happy:html
-USE_AUTOTOOLS=	autoconf:262:env
+USE_AUTOTOOLS=	autoconf:267:env
 
 STANDALONE=	yes
 EXECUTABLE=	happy

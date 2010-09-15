@@ -7,7 +7,7 @@
 
 PORTNAME=	mlview
 PORTVERSION=	0.8
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tree oriented XML editor for Gnome
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoconf:262 libtool:22
+USE_AUTOTOOLS=	autoconf:267 libtool:22
 USE_GNOME=	eel2 gnomehack gnomeprefix gtksourceview libgnomeui
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

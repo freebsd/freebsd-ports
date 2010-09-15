@@ -7,7 +7,7 @@
 
 PORTNAME=	kbarcode
 PORTVERSION=	2.0.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION}
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 USE_KDELIBS_VER=	3
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:262:env libtool:22:env
+USE_AUTOTOOLS=	automake:19:env autoconf:267:env libtool:22:env
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 

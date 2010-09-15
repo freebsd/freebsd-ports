@@ -6,7 +6,7 @@
 
 PORTNAME=	kst
 PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/apps/KDE3.x/scientific
@@ -20,7 +20,7 @@ LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio \
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:262:env libtool:22
+USE_AUTOTOOLS=	automake:19:env autoconf:267:env libtool:22
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes

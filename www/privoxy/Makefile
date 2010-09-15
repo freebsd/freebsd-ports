@@ -7,7 +7,7 @@
 
 PORTNAME=	privoxy
 PORTVERSION=	3.0.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	SF/ijbswa/Sources/${PORTVERSION}%20%28stable%29
 DISTNAME=	privoxy-${PORTVERSION}-stable-src
@@ -20,7 +20,7 @@ LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 WRKSRC=		${WRKDIR}/privoxy-${PORTVERSION}-stable
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 
 USE_RC_SUBR=	privoxy
 SUB_FILES=	pkg-message

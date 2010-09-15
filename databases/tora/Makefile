@@ -7,6 +7,7 @@
 
 PORTNAME=	tora
 DISTVERSION=	2.1.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF
@@ -22,7 +23,7 @@ OPTIONS=	ORACLE "Build with Oracle support (i386 only)" off \
 		PGSQL  "Build with PostgreSQL support" on \
 		MYSQL  "Build with MySQL support" on
 
-USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:262 autoheader:262 libtool:22
+USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:267 autoheader:267 libtool:22
 USE_QT_VER=	4
 QT_COMPONENTS=	gui corelib sql xml network linguist moc_build uic_build rcc_build
 USE_GMAKE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	rapidsvn
 PORTVERSION=	0.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rapidsvn.org/download/release/0.12/
 DISTNAME=	${PORTNAME}-0.12.0-1
@@ -25,7 +25,7 @@ WX_CONF_ARGS=	absolute
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	autoconf:262 libtool:22 automake:19
+USE_AUTOTOOLS=	autoconf:267 libtool:22 automake:19
 CONFIGURE_TARGET=
 CONFIGURE_ARGS=	--with-apr-config=apr-1-config \
 	--with-apu-config=apu-1-config \

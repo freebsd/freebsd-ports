@@ -7,7 +7,7 @@
 
 PORTNAME=		samba4wins
 PORTVERSION=		1.0.7
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		net
 MASTER_SITES=		http://ftp.sernet.de/pub/samba4WINS/debian/pool/
 DISTNAME=		${PORTNAME}_${PORTVERSION}-2
@@ -20,7 +20,7 @@ CONFLICTS=		ja-samba-2.* ja-samba-4.* samba-2.* samba-4.* sharity-light-1.*
 USE_ICONV=		yes
 USE_PERL5=		yes
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=		autoconf:262 autoheader:262
+USE_AUTOTOOLS=		autoconf:267:env autoheader:267:env
 
 WRKSRC=			${WRKDIR}/${PORTNAME}/source
 

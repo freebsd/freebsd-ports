@@ -8,6 +8,7 @@
 
 PORTNAME=	rdup
 PORTVERSION=	1.1.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://miek.nl/projects/rdup/
 
@@ -21,7 +22,7 @@ LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20 \
 
 USE_BZIP2=	yes
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 

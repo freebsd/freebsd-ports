@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	2.3.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus/ \
 		http://ftp.andrew.cmu.edu/pub/cyrus/ \
@@ -125,7 +125,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure.in \
 .if ${OSVERSION} >= 800037
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal::sasl2.m4
 .endif
-USE_AUTOTOOLS=	autoconf:262 autoheader:262
+USE_AUTOTOOLS=	autoconf:267 autoheader:267
 CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif

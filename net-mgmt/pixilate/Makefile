@@ -6,6 +6,7 @@
 
 PORTNAME=	pixilate
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/winfingerprint/${PORTNAME}/${PORTVERSION}
 
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 WRKSRC=		${WRKDIR}/pixilate
 
-USE_AUTOTOOLS=	aclocal:110 autoconf:262 automake:110 libtool:22
+USE_AUTOTOOLS=	aclocal:110 autoconf:267 automake:110 libtool:22
 AUTOMAKE_ARGS=	--add-missing
 
 MAN1=		pixilate.1

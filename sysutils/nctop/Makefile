@@ -7,7 +7,7 @@
 
 PORTNAME=	nctop
 PORTVERSION=	0.23.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rz.uni-karlsruhe.de/~hj28/download.php?file=/
 

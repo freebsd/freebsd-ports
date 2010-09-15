@@ -7,6 +7,7 @@
 
 PORTNAME=	rabbitmq-c
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://hg.rabbitmq.com/rabbitmq-c/archive/:c \
 		http://hg.rabbitmq.com/rabbitmq-codegen/archive/:codegen
@@ -27,7 +28,7 @@ USE_GMAKE=	YES
 USE_PYTHON=	YES
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
-USE_AUTOTOOLS=	aclocal:110 autoconf:262 automake:110 autoheader:262 libtool:22
+USE_AUTOTOOLS=	aclocal:110 autoconf:267 automake:110 autoheader:267 libtool:22
 AUTOMAKE_ARGS=	-i --add-missing
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 

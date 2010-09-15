@@ -7,7 +7,7 @@
 
 PORTNAME?=	lighttpd
 PORTVERSION=	1.4.28
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -20,7 +20,7 @@ LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	lthack
-USE_AUTOTOOLS=	autoconf:262 autoheader:262 aclocal:110 automake:110 libtool:22
+USE_AUTOTOOLS=	autoconf:267 autoheader:267 aclocal:110 automake:110 libtool:22
 ACLOCAL_ARGS=	-I m4
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/lighttpd --enable-static
 

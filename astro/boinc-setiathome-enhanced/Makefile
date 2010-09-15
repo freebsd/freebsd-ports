@@ -6,7 +6,7 @@
 
 PORTNAME=	boinc-setiathome-enhanced
 PORTVERSION=	6.08
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	astro
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 DISTNAME=	setiathome-svn-412
@@ -24,7 +24,7 @@ RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoconf:262:env automake:18:env
+USE_AUTOTOOLS=	autoconf:267:env automake:18:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig

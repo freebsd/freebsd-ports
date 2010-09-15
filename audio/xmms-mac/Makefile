@@ -6,7 +6,7 @@
 
 PORTNAME=	mac
 PORTVERSION=	0.3.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://repository.slacky.eu/slackware-12.2/multimedia/${PKGNAMEPREFIX}${PORTNAME}/${PORTVERSION}/src/ \
 		http://ftp.hosteurope.de/mirror/ftp.frugalware.org/pub/frugalware/frugalware-testing/source/xlib-extra/${PKGNAMEPREFIX}${PORTNAME}/ \
@@ -25,7 +25,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	CPPFLAGS="${CPPFLAGS}"
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 USE_LDCONFIG=	yes
 

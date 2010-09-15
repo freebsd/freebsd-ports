@@ -6,6 +6,7 @@
 
 PORTNAME=	expect
 PORTVERSION=	5.44.1.15
+PORTREVISION=	1
 CATEGORIES=	lang tcl tk
 MASTER_SITES=	SF/wintcltk/Sources/Package%20Sources
 DISTNAME=	expect-cvs-20091231
@@ -16,7 +17,7 @@ COMMENT=	A sophisticated scripter based on tcl/tk
 CONFLICTS=	expect-5.43*
 LATEST_LINK=	expect-devel
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 
 EXPECT_VER=	${PORTVERSION}
 

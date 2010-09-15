@@ -7,6 +7,7 @@
 
 PORTNAME=	newsstar
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	SF
 
@@ -22,7 +23,7 @@ BROKEN=		does not build
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	automake:110 autoconf:262 aclocal:110
+USE_AUTOTOOLS=	automake:110 autoconf:267 aclocal:110
 
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-conf-dir=${PREFIX}/etc/newsstar \

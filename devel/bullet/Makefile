@@ -7,6 +7,7 @@
 
 PORTNAME=	bullet
 PORTVERSION=	2.75
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 EXTRACT_SUFX=	.tgz
@@ -16,7 +17,9 @@ COMMENT=	3D collision detection and rigid body dynamics library
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 
-USE_AUTOTOOLS=	automake:15:env autoconf:262:env libtool:22:env
+BROKEN=	Does not work with autoconf>=2.64 - upstream 2.76 has switched to cmake.
+
+USE_AUTOTOOLS=	automake:110:env autoconf:267:env libtool:22:env
 GNU_CONFIGURE=	yes
 USE_DOS2UNIX=	yes
 USE_GL=		glu glut

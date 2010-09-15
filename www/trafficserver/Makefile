@@ -7,7 +7,7 @@
 
 PORTNAME=	trafficserver
 PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	trafficserver
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	expat>0:${PORTSDIR}/textproc/expat2 \
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_AUTOTOOLS=	autoconf:262 automake:110 libtool:22
+USE_AUTOTOOLS=	autoconf:267 automake:110 libtool:22
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_OPENSSL=	yes

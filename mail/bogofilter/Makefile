@@ -7,7 +7,7 @@
 
 PORTNAME=	bogofilter
 PORTVERSION=	1.2.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	mail
 MASTER_SITES=	SF/bogofilter/bogofilter-current/bogofilter-${PORTVERSION}
 
@@ -28,7 +28,7 @@ USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
-USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:262 autoheader:262
+USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:267 autoheader:267
 ACLOCAL_ARGS=	-Im4
 
 .include <bsd.port.pre.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	autoconf-archive
 PORTVERSION=	0.${DISTDATE:C/-/./g}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://autoconf-archive.cryp.to/ \
 		http://mitglied.lycos.de/mkamm/distfiles/
@@ -17,7 +18,7 @@ COMMENT=	A set of useful GNU Autoconf macros
 
 DISTDATE=	2009-04-19
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoconf:262:env automake:110:env
+USE_AUTOTOOLS=	autoconf:267:env automake:110:env
 GNU_CONFIGURE=	yes
 
 PLIST_SUB=	MACRODIR=share/aclocal

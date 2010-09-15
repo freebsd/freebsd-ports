@@ -7,7 +7,7 @@
 
 PORTNAME=	nss_ldap
 PORTVERSION=	1.${NSS_LDAP_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://www.padl.com/download/
 DISTNAME=	${PORTNAME}-${NSS_LDAP_VERSION}
@@ -21,7 +21,7 @@ NSS_LDAP_VERSION=265
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:262 autoheader:262
+USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:267 autoheader:267
 USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
 
@@ -53,6 +53,14 @@ CFLAGS+="-DHAVE_LOGIN_CLASSES"
 
 post-extract:
 	${CP} ${FILESDIR}/bsdnss.c ${WRKSRC}
+
+# XXX: newer autoconf's rely on the compiler result, not the preprocessor
+#      for checking headers, so the configure.in needs to be fixed upstream
+#      to properly include dependencies
+post-configure:
+	@${ECHO} "#define HAVE_NETINET_IF_ETHER_H 1" >> ${WRKSRC}/config.h
+	@${ECHO} "#define HAVE_NET_ROUTE_H 1" >> ${WRKSRC}/config.h
+	@${ECHO} "#define HAVE_RESOLV_H 1" >> ${WRKSRC}/config.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nss_ldap.so ${PREFIX}/lib/nss_ldap.so.1

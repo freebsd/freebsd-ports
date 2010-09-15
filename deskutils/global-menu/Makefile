@@ -7,7 +7,7 @@
 
 PORTNAME=		gnome-globalmenu
 PORTVERSION=		0.7.5
-PORTREVISION=	5
+PORTREVISION=		6
 CATEGORIES=		deskutils
 MASTER_SITES=		http://gnome2-globalmenu.googlecode.com/files/
 
@@ -22,7 +22,7 @@ USE_BZIP2=		yes
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		libtool:22 automake:19:env autoheader:262:env
+USE_AUTOTOOLS=		libtool:22 automake:19:env autoheader:267:env
 INSTALLS_ICONS=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

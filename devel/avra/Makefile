@@ -7,6 +7,7 @@
 
 PORTNAME=	avra
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-src
 CATEGORIES=	devel
 MASTER_SITES=	SF
@@ -15,7 +16,7 @@ MAINTAINER=	wes@FreeBSD.org
 COMMENT=	Macro Assembler for Atmel AVR microcontrollers
 
 WRKSRC=		${WRKDIR}
-USE_AUTOTOOLS=	aclocal:110 autoconf:262 automake:110
+USE_AUTOTOOLS=	aclocal:110 autoconf:267 automake:110
 AUTOMAKE_ARGS=	-a
 
 PORTDOCS=	README

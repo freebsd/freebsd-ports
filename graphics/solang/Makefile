@@ -7,7 +7,7 @@
 
 PORTNAME=	solang
 PORTVERSION=	0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://rishi.fedorapeople.org/solang/
 
@@ -29,7 +29,7 @@ LIB_DEPENDS=	gegl-0.1:${PORTSDIR}/graphics/gegl \
 		gdamm-4.0.12:${PORTSDIR}/databases/libgdamm \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 USE_GMAKE=	yes
 USE_GNOME=	libgda4 intltool
 INSTALLS_ICONS=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	tnef
 PORTVERSION=	0.3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -22,7 +22,7 @@ LIB_DEPENDS=	ytnef.0:${PORTSDIR}/devel/libytnef
 
 USE_GMAKE=	yes
 USE_XORG=	x11
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

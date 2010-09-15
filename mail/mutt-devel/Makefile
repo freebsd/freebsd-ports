@@ -118,7 +118,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.20
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -167,7 +167,7 @@ CONFIGURE_ARGS=	--disable-fcntl --with-ssl=${OPENSSLBASE} \
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
 
-USE_AUTOTOOLS=	automake:110 autoconf:262
+USE_AUTOTOOLS=	automake:110 autoconf:267
 USE_OPENSSL=	yes
 
 PLIST=		${WRKDIR}/PLIST

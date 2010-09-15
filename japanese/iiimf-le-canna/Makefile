@@ -7,7 +7,7 @@
 
 PORTNAME=	le-canna
 PORTVERSION=	12.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -26,7 +26,7 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	automake:19:env autoconf:262:env libtool:22:env
+USE_AUTOTOOLS=	automake:19:env autoconf:267:env libtool:22:env
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 BUILDDIR=	${WRKSRC}/leif

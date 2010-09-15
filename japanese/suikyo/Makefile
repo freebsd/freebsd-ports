@@ -7,7 +7,7 @@
 
 PORTNAME=	suikyo
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://prime.sourceforge.jp/src/
 
@@ -18,7 +18,7 @@ USE_RUBY=	yes
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rubydir=${RUBY_SITELIBDIR}
-USE_AUTOTOOLS=	automake:19 autoconf:262
+USE_AUTOTOOLS=	automake:19 autoconf:267
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL})

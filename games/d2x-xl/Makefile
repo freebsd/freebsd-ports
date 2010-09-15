@@ -7,7 +7,7 @@
 
 PORTNAME=	d2x-xl
 PORTVERSION=	1.14.121
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/d2x-xl/Linux/Archive:source \
 		SF/d2x-xl/Linux:source \
@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--disable-debug --enable-release=yes \
 		--with-sharepath=${PREFIX}/share/d2x-xl
 USE_SDL=	sdl mixer image
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262
+USE_AUTOTOOLS=	aclocal:110 autoheader:267 automake:110 autoconf:267
 USE_MOTIF=	yes
 MAKE_JOBS_SAFE=	yes
 AUTOMAKE_ARGS=	--add-missing --copy

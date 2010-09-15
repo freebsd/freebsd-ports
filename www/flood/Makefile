@@ -7,7 +7,7 @@
 
 PORTNAME=	flood
 PORTVERSION=	0.20041105
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://dist.bsdlab.org/
 DISTNAME=	httpd-test_20041105052051
@@ -19,7 +19,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		apr-1:${PORTSDIR}/devel/apr1
 
 WRKSRC=		${WRKDIR}/httpd-test/flood
-USE_AUTOTOOLS=	autoconf:262 libtool:22:env
+USE_AUTOTOOLS=	autoconf:267 libtool:22:env
 CONFIGURE_ARGS=	--disable-shared \
 	--with-apr=${LOCALBASE}/bin/apr-1-config \
 	--with-apr-util=${LOCALBASE}/bin/apu-1-config

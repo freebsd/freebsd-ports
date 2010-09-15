@@ -7,7 +7,7 @@
 
 PORTNAME=	rep-gtk2
 PORTVERSION=	0.90.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/rep-gtk/rep-gtk/${PORTVERSION}
@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262:env automake:110:env libtool:22:env
+USE_AUTOTOOLS=	autoconf:267:env automake:110:env libtool:22:env
 CONFIGURE_SCRIPT=	autogen.sh
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

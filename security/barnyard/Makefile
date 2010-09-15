@@ -7,7 +7,7 @@
 
 PORTNAME=	barnyard
 PORTVERSION=	0.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	SF/barnyard/barnyard-0.2/${PORTVERSION}
 
@@ -22,7 +22,7 @@ OPTIONS=	MYSQL "Enable MySQL support" on \
 DEPRECATED=	Use security/barnyard2 instead
 EXPIRATION=	2010-12-31
 
-USE_AUTOTOOLS=	autoheader:262 aclocal:19
+USE_AUTOTOOLS=	autoheader:267 aclocal:19
 USE_RC_SUBR=	barnyard.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"

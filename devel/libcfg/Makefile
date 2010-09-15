@@ -7,7 +7,7 @@
 
 PORTNAME=	libcfg
 PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://platon.sk/upload/_projects/00003/
 DISTNAME=	${PORTNAME}+-${DISTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}+-${DISTVERSION}
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Library for command line and configuration file parsing
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkparasite
 PORTVERSION=	20090819
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
@@ -23,7 +23,7 @@ PORTDOCS=	USAGE
 PLIST_FILES=	lib/gtk-2.0/modules/libgtkparasite.a \
 		lib/gtk-2.0/modules/libgtkparasite.la \
 		lib/gtk-2.0/modules/libgtkparasite.so
-USE_AUTOTOOLS=	autoconf:262 automake:110 libtool:22
+USE_AUTOTOOLS=	autoconf:267 automake:110 libtool:22
 
 pre-configure:
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e '/.\/configure/d' ./autogen.sh \

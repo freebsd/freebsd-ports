@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 PORTVERSION?=	8.2.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -96,7 +96,7 @@ OPTIONS+=	DEBUG "Builds with debugging symbols" off
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
 
 # .  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
-# USE_AUTOTOOLS=	autoconf:262
+# USE_AUTOTOOLS=	autoconf:267
 # CONFIGURE_ARGS+=--with-icu
 # LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 # PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu

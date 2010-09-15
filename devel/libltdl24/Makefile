@@ -10,6 +10,8 @@ MASTERDIR=	${.CURDIR}/../../devel/libtool22
 
 COMMENT=	System independent dlopen wrapper
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${CONFIGURE_WRKSRC}/COPYING.LIB
 USE_GNOME=	ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22

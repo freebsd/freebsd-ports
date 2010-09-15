@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-specimen
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://uwstopia.nl/geek/projects/gnome-specimen/releases/
 
@@ -19,7 +20,7 @@ GCONF_SCHEMAS=	gnome-specimen.schemas
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	automake:110:env autoconf:262:env
+USE_AUTOTOOLS=	automake:110:env autoconf:267:env
 
 INSTALLS_ICONS=	yes
 

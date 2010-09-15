@@ -14,11 +14,10 @@ MASTER_SITES=	SF/k3b/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Localized messages and documentation for K3b
 
-BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
-
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	build
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

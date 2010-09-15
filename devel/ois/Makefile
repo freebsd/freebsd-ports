@@ -7,7 +7,7 @@
 
 PORTNAME=	ois
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF/wgois/Source%20Release/1.2
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	Object Oriented Input System
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
-USE_AUTOTOOLS=	libtool:22:env aclocal:19:env autoheader:262:env automake:19:env autoconf:262:env
+USE_AUTOTOOLS=	libtool:22:env aclocal:19:env autoheader:267:env automake:19:env autoconf:267:env
 USE_XORG=	x11 xaw
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes

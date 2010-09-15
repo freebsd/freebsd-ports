@@ -45,6 +45,7 @@ post-patch:
 		${WRKSRC}/libinfo/gem-uta.c
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/&|' ${WRKSRC}/src/*.c*
 	@${RM} -f ${WRKSRC}/config.guess
+	@${REINPLACE_CMD} -e 's|1.10.1|1.10.3|' ${WRKSRC}/aclocal.m4
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/spacejunk ${PREFIX}/libexec/

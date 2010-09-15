@@ -7,6 +7,7 @@
 
 PORTNAME=	dnswall
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	dns security
 MASTER_SITES=	GOOGLE_CODE CRITICAL
 
@@ -26,8 +27,8 @@ PORTDOCS=	README
 PLIST_FILES=	bin/dnswall
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|1.10|1.10.1|g' ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|1.10|1.10.3|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.61|2.67|g' ${WRKSRC}/aclocal.m4
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/^dist_doc_DATA/d' ${WRKSRC}/Makefile.am
 .endif

@@ -7,7 +7,7 @@
 
 PORTNAME=	openipmi
 PORTVERSION=	2.0.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/OpenIPMI%202.0%20Library/${PORTVERSION}
 DISTNAME=	OpenIPMI-${PORTVERSION}
@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig
-USE_AUTOTOOLS=	autoconf:262 autoheader:262 automake:110 aclocal:110 libtool:22
+USE_AUTOTOOLS=	autoconf:267 autoheader:267 automake:110 aclocal:110 libtool:22
 
 AUTOMAKE_ARGS+=	--add-missing --copy --foreign
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal

@@ -7,7 +7,7 @@
 
 PORTNAME=	aterm
 PORTVERSION=	0.4.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES+=	japanese x11
 MASTER_SITES=	SF
 
@@ -24,7 +24,7 @@ COMMENT=	A color vt102 terminal emulator with transparency support
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png
 
-USE_AUTOTOOLS=	autoconf:262:env
+USE_AUTOTOOLS=	autoconf:267:env
 USE_XORG=	xpm xmu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?= \

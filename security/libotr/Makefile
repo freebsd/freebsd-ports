@@ -8,7 +8,7 @@
 
 PORTNAME=	libotr
 PORTVERSION=	3.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.cypherpunks.ca/otr/ \
 		http://dougbarton.us/Downloads/
@@ -24,7 +24,7 @@ LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error \
 MAKE_JOBS_SAFE=	yes
 
 USE_GNOME=	pkgconfig
-USE_AUTOTOOLS=	autoconf:262 libtool:22
+USE_AUTOTOOLS=	autoconf:267 libtool:22
 USE_LDCONFIG=	yes
 
 MAN1=		otr_toolkit.1

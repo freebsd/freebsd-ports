@@ -7,7 +7,7 @@
 
 PORTNAME=	qpopper
 PORTVERSION=	4.0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/ \
 		http://core.ring.gr.jp/archives/net/mail/qpopper/
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	bc979@lafn.org
 COMMENT=	Berkeley POP 3 server (now maintained by Qualcomm)
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 USE_OPENSSL=	yes
 CONFIGURE_ENV=	LIBS="-lcrypt -lmd -lutil -L${LOCALBASE}/lib" \
 		OS_DEFS="-DSETPROCTITLE ${OS_DEFS}"

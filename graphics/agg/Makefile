@@ -7,7 +7,7 @@
 
 PORTNAME=	agg
 PORTVERSION=	2.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.antigrain.com/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -24,7 +24,7 @@ USE_GNOME=	pkgconfig gnomehack
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
-USE_AUTOTOOLS=	autoconf:262:env automake:15:env libtool:22:env
+USE_AUTOTOOLS=	autoconf:267:env automake:15:env libtool:22:env
 MAKE_ENV=	C="${CC}" AGGCXXFLAGS="${CXXFLAGS}"
 CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -I../include -L./
 

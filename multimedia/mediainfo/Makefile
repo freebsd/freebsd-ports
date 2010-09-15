@@ -7,6 +7,7 @@
 
 PORTNAME=		mediainfo
 PORTVERSION=		0.7.33
+PORTREVISION=		1
 DISTVERSIONSUFFIX=	_AllInclusive
 CATEGORIES=		multimedia
 MASTER_SITES=		SF/${PORTNAME}/source/${PORTNAME}/${PORTVERSION}
@@ -23,7 +24,7 @@ PLIST_FILES=	bin/mediainfo
 EXTRACT_CMD=	7z
 EXTRACT_BEFORE_ARGS=	x -o${WRKSRC}
 EXTRACT_AFTER_ARGS=	>/dev/null
-USE_AUTOTOOLS=	aclocal:110:env automake:110:env autoconf:262:env libtool:22:env
+USE_AUTOTOOLS=	aclocal:110:env automake:110:env autoconf:267:env libtool:22:env
 
 WRKSRC=		${WRKDIR}/MediaInfo${DISTVERSIONSUFFIX}
 

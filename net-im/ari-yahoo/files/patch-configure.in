@@ -1,0 +1,13 @@
+--- configure.in.orig	2010-02-01 12:40:34.000000000 -0200
++++ configure.in	2010-02-01 12:42:55.000000000 -0200
+@@ -16,8 +16,8 @@
+ AC_CHECK_HEADER(curses.h, , use_curses_default=no)
+ 
+ dnl Checks for library functions.
+-AC_CHECK_FUNC(socket, , AC_CHECK_LIB(socket, socket, , exit))
+-AC_CHECK_FUNC(gethostbyname, , AC_CHECK_LIB(nsl, gethostbyname, , exit))
++AC_CHECK_FUNC([socket], , [AC_CHECK_LIB(socket, socket, , exit)])
++AC_CHECK_FUNC([gethostbyname], , [AC_CHECK_LIB(nsl, gethostbyname, , exit)])
+ AC_CHECK_FUNCS(malloc free select htons fcntl atoi getpass, , exit)
+ 
+ dnl Checks for library files.

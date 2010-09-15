@@ -8,7 +8,7 @@
 
 PORTNAME=	orsa
 PORTVERSION=	0.7.0
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	gsl.15:${PORTSDIR}/math/gsl \
 USE_QT_VER=	3
 USE_GL=		gl
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262 libtool:22
+USE_AUTOTOOLS=	aclocal:110 autoheader:267 automake:110 autoconf:267 libtool:22
 ACLOCAL_ARGS=	-I macros -I ${LOCALBASE}/share/aclocal
 CONFIGURE_ENV=	ac_cv_c_inline=no
 USE_LDCONFIG=	yes

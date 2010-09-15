@@ -7,7 +7,7 @@
 
 PORTNAME=	links
 DISTVERSION=	2.2
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES=	http://links.twibright.com/download/
@@ -64,7 +64,7 @@ CONFIGURE_ARGS+=	--without-directfb
 .endif
 
 .if defined(WITH_IPV6)
-USE_AUTOTOOLS+=	autoconf:262
+USE_AUTOTOOLS+=	autoconf:267
 PATCH_SITES+=	http://xpisar.wz.cz/links-ipv6/:ipv6
 PATCHFILES+=	links-2.2-ipv6-2.diff:ipv6
 .endif
