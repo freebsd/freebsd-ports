@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--incdir="${PREFIX}/include/dvdread" \
 		--disable-opts \
 		--disable-debug \
-		--cc=${CC}
+		--cc="${CC}"
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

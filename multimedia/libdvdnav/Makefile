@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--incdir="${PREFIX}/include/dvdnav" \
 		--disable-opts \
 		--disable-debug \
-		--cc=${CC}
+		--cc="${CC}"
 USE_GMAKE=	yes
 CONFLICTS=	libdvdnav-mplayer-[0-9]*
 USE_LDCONFIG=	yes
