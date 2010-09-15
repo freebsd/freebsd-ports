@@ -15,6 +15,7 @@
 %%XPI_XPIDIR%%/chrome/content/firefoxOverlay-svg.xul
 %%XPI_XPIDIR%%/chrome/content/firefoxOverlay.xul
 %%XPI_XPIDIR%%/chrome/content/foxyproxy.css
+%%XPI_XPIDIR%%/chrome/content/foxyproxy-win.css
 %%XPI_XPIDIR%%/chrome/content/foxyproxySongbird.css
 %%XPI_XPIDIR%%/chrome/content/images/16x16.gif
 %%XPI_XPIDIR%%/chrome/content/images/arrow_refresh.png
@@ -145,6 +146,10 @@
 %%XPI_XPIDIR%%/chrome/locale/ja-JP/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/ja-JP/foxyproxy.properties
 %%XPI_XPIDIR%%/chrome/locale/ja-JP/torwizhelp.dtd
+%%XPI_XPIDIR%%/chrome/locale/lv-LV/amo.properties
+%%XPI_XPIDIR%%/chrome/locale/lv-LV/foxyproxy.dtd
+%%XPI_XPIDIR%%/chrome/locale/lv-LV/foxyproxy.properties
+%%XPI_XPIDIR%%/chrome/locale/lv-LV/torwizhelp.dtd
 %%XPI_XPIDIR%%/chrome/locale/nl/amo.properties
 %%XPI_XPIDIR%%/chrome/locale/nl/foxyproxy.dtd
 %%XPI_XPIDIR%%/chrome/locale/nl/foxyproxy.properties
@@ -232,6 +237,7 @@
 @dirrm %%XPI_XPIDIR%%/chrome/locale/pt-BR
 @dirrm %%XPI_XPIDIR%%/chrome/locale/pl-PL
 @dirrm %%XPI_XPIDIR%%/chrome/locale/nl
+@dirrm %%XPI_XPIDIR%%/chrome/locale/lv-LV
 @dirrm %%XPI_XPIDIR%%/chrome/locale/ja-JP
 @dirrm %%XPI_XPIDIR%%/chrome/locale/it-IT
 @dirrm %%XPI_XPIDIR%%/chrome/locale/hu-HU
