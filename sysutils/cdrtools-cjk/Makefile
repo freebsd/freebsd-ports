@@ -23,4 +23,6 @@ MASTERDIR=	${.CURDIR}/../cdrtools
 DESCR=		${.CURDIR}/pkg-descr
 MD5_FILE=	${.CURDIR}/distinfo
 
+BROKEN=		does not build and is obsolete, please use sysutils/cdrtools instead
+
 .include "${MASTERDIR}/Makefile"

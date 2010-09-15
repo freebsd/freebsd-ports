@@ -1,32 +1,68 @@
---- RULES/i386-freebsd-cc.rul.orig	Tue Oct 15 22:43:39 2002
-+++ RULES/i386-freebsd-cc.rul	Sun Oct 27 19:59:00 2002
-@@ -24,7 +24,8 @@
+###########################################################################
+# This patch was contributed by Marius Strobl.
+###########################################################################
+# The contents of this file are subject to the terms of the
+# Common Development and Distribution License, Version 1.0 only
+# (the "License").  You may not use this file except in compliance
+# with the License.
+#
+# See the file CDDL.Schily.txt in this distribution for details.
+#
+# When distributing Covered Code, include this CDDL HEADER in each
+# file and include the License file CDDL.Schily.txt from this distribution.
+###########################################################################
+# The file CDDL.Schily.txt can be found in the original cdrtools tarball,
+# which is mirrored at ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/.
+###########################################################################
+
+--- RULES/cc-gcc.rul.orig	Thu Jul  6 12:59:44 2006
++++ RULES/cc-gcc.rul	Sat Jul 22 03:55:52 2006
+@@ -20,8 +20,9 @@
  ###########################################################################
  
- CPPFLAGS=	$(CPPOPTS) $(CPPOPTX)
+ CPPFLAGS=	-DSCHILY_BUILD $(CPPOPTS) $(CPPOPTX)
 -CFLAGS=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(GCCOPTOPT) $(COPTX)
+-C++FLAGS=	$(C++OPTS) $(C++WARNOPTS) $(C++OPTOPT) $(G++OPTOPT) $(C++OPTX)
 +XCFLAGS:=	$(CFLAGS)
 +CFLAGS=		$(COPTS) $(CWARNOPTS) $(XCFLAGS) $(GCCOPTOPT) $(COPTX)
++C++FLAGS=	$(C++OPTS) $(C++WARNOPTS) $(XCFLAGS) $(G++OPTOPT) $(C++OPTX)
  
- CPPOPTS=	-I. -I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(OSDEFS)
+ CPPOPTS=	-I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(INCDIRSX:%=-I%) $(OSDEFS)
  COPTS=
-@@ -57,14 +58,14 @@
+@@ -29,12 +30,10 @@
+ CWOPTS=		-Wall -Wtraditional
+ CWOPTS=		-Wall -Wno-unknown-pragmas \
+ 		-Wshadow -Wmissing-prototypes -Wstrict-prototypes
+-COPTOPT=	-O
+ COPTDYN=	-fpic
+ COPTGPROF=	-pg
+ C++OPTS=
+ C++WOPTS=	$(CWOPTS)
+-C++OPTOPT=	$(COPTOPT)
+ C++OPTDYN=	-fpic
+ C++OPTGPROF=	-pg
+ 
+@@ -54,15 +53,15 @@
  
  FLOAT_OPTIONS=	
  
 -CC=		@echo "	==> COMPILING \"$@\""; gcc
+-CC++ =		@echo "	==> COMPILING \"$@\""; g++
 -LDCC=		@echo "	==> LINKING \"$@\""; gcc
+-LDCC++ =	@echo "	==> LINKING \"$@\""; g++
 -DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; gcc
--RANLIB=		@echo "	==> RANDOMIZING ARCHIVE \"$@\""; ranlib
-+CCCOM=		$(CC)
-+LDCC=		$(CCCOM)
-+DYNLD=		$(CCCOM)
-+RANLIB=		ranlib
- ARFLAGS=	cr
- LORDER=		lorder
- TSORT=		tsort
+-DYNLDC++ =	@echo "	==> LINKING dynamic library \"$@\""; g++
++CC_COM=		$(CC)
++CC++ =		$(CXX)
++LDCC=		$(CC)
++LDCC++ =	$(CXX)
++DYNLD=		$(CC)
++DYNLDC++ =	$(CXX)
  
  RMDEP=		:
 -MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); gcc -M
-+MKDEP=		$(CCCOM) -M
++MKDEP=		$(CC) -M
  MKDEP_OUT=
+-MKC++DEP=	@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); g++ -M
++MKC++DEP=	$(CXX) -M
+ MKC++DEP_OUT=
