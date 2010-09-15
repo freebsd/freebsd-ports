@@ -25,7 +25,7 @@
 .\" SUCH DAMAGE.
 .\"
 .\"
-.Dd January 31, 2010
+.Dd September 2, 2010
 .Dt BPKG 8
 .Os
 .Sh NAME
@@ -33,7 +33,7 @@
 .Nd a simple tool for displaying information about ports.
 .Sh SYNOPSIS
 .Nm
-.Op Fl abDdeFfgIijkLMmOopQqrSswz
+.Op Fl abDdeFfgIijkLMmOopQqrswz
 .Ar pkg-name ...
 .Nm
 .Op Fl BCchltvZ
@@ -75,9 +75,9 @@ installed port.
 .It Fl h
 display help.  [no arguments]
 .It Fl i
-display info about the port (priority - installed ports).
+display short description of the port (priority -- installed ports).
 .It Fl I
-display short info about the port (priority - installed ports).
+display info about the port.
 .It Fl j
 search the ports tree according to ports' descriptions.
 .It Fl k
@@ -95,7 +95,7 @@ remove config OPTIONS for the specified port.
 .It Fl o
 display config OPTIONS for the specified port.
 .It Fl p
-search the ports tree and display short info about the port.
+search the ports tree and display short info about each port.
 .It Fl Q
 display the latest available package in the FreeBSD repository.  
 [-STABLE]
@@ -104,8 +104,6 @@ display the latest available package in the FreeBSD repository.
 [-RELEASE]
 .It Fl r
 show the list of all port's dependencies.
-.It Fl S
-search the ports tree and display info about the port.
 .It Fl s
 show the total size occupied by files installed within the port.
 .It Fl t
@@ -123,16 +121,15 @@ display dynamic object dependencies for the specified port.
 .Sh EXIT STATUS
 .Ex -std
 .Sh EXAMPLES
-The following is an example of a typical usage
-of the
+The following is an example of a typical usage of the
 .Nm
 command:
 .Pp
 .Dl "$ bpkg -i foo" 
 .Pp
-Display info about port foo.
+Display short description about port foo.
 .Pp
-.Dl "$ bpkg -S 'foo[0-9]+$'"
+.Dl "$ bpkg -p foo$"
 .Pp
 Display all ports matching the regular expression.
 .Pp
@@ -142,7 +139,7 @@ Display 10 most recently installed ports.
 .Pp
 .Dl "$ bpkg -b 'foo bar'"
 .Pp
-Create backup packages of foo and bar in /var/tmp/bpkg/ directory.
+Create backup packages of foo and bar in /var/tmp/bpkg directory.
 .Sh SEE ALSO
 .Xr pkg_add 1 ,
 .Xr pkg_create 1 ,
