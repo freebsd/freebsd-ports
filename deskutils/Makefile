@@ -263,6 +263,7 @@
     SUBDIR += tel
     SUBDIR += thinkingrock
     SUBDIR += timer-applet
+    SUBDIR += tnote
     SUBDIR += todo
     SUBDIR += tomboy
     SUBDIR += tomboy-plugin-latex
