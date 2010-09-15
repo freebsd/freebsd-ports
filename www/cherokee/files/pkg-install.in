@@ -1,0 +1,42 @@
+#!/bin/sh
+
+PATH=/bin:/usr/bin:/usr/sbin
+
+FILEMODE=0640
+
+C_ACCESSLOG=${CHEROKEE_ACCESSLOG:-/var/log/cherokee.access}
+C_ERRORLOG=${CHEROKEE_ERRORLOG:-/var/log/cherokee.error}
+C_USER=${CHEROKEE_USER:-www}
+C_GROUP=${CHEROKEE_GROUP:-www}
+
+case $2 in
+
+POST-INSTALL)
+        echo "$2 for $1" 
+	echo "Adjusting ownership (${C_USER}:${C_GROUP}) and permissions (${FILEMODE}) on log files:"
+        echo "${C_ACCESSLOG}"
+        echo "${C_ERRORLOG}"
+
+	if [ ! -f  ${C_ACCESSLOG} ]; then
+		touch ${C_ACCESSLOG}
+        fi
+
+	if [ ! -f  ${C_ERRORLOG} ]; then
+		touch ${C_ERRORLOG}
+        fi
+
+	chown ${C_USER}:${C_GROUP} ${C_ACCESSLOG} ${C_ERRORLOG}
+	chmod ${FILEMODE} ${C_ACCESSLOG} ${C_ERRORLOG}
+	
+	;;
+
+
+PRE-INSTALL)
+	echo "Nothing to do in $2"
+	;;
+
+*)
+	exit 64
+	;;
+esac
+

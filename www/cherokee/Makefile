@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/1.0/${PORTVERSION}/ \
 		http://cherokee.osuosl.org/1.0/${PORTVERSION}/ \
@@ -51,13 +51,24 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 USE_RC_SUBR=	cherokee.sh
+SUB_FILES=	pkg-install pkg-message
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+CHEROKEE_VARDIR?=	/var
+CHEROKEE_LOGDIR?=	${CHEROKEE_VARDIR}/log
+CHEROKEE_ACCESSLOG?=	${CHEROKEE_LOGDIR}/cherokee.access
+CHEROKEE_ERRORLOG?=	${CHEROKEE_LOGDIR}/cherokee.error
+
+# Adjust this if you need to run Cherokee as a distinct user:group
+CHEROKEE_USER=	www
+CHEROKEE_GROUP=	www
+
 CONFIGURE_ARGS=	--with-wwwroot=${PREFIX}/www/cherokee \
-		--localstatedir=/var \
+		--localstatedir=${CHEROKEE_VARDIR} \
 		--disable-static
 DEFCONFS=	cherokee.conf
 CONFSUBDIRS=	ssl mods-available mods-enabled sites-available sites-enabled
@@ -65,17 +76,16 @@ MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee-admin.1 \
 		cherokee-tweak.1 cherokee-worker.1
 PORTDOCS=	*
 
-OPTIONS=	WWWUSER	"Run as www:www user"	on \
-		IPV6	"IPv6 support"	on	\
-		MYSQL	"MySQL Database"	off	\
-		LDAP	"LDAP Support"	off	\
-		GEOIP	"GeoIP Support (recommended)"	on	\
-		FFMPEG	"FFMpeg Support"	off	\
-		NLS	"NLS Support"	on	\
-		INTPCRE	"Use Internal PCRE Library"	off	\
-		ADMIN	"Build the Admin Interface"	on 	\
-		RRDTOOL "Usage Graphs Support"  off 	\
-		UWSGI   "uWSGI Support" off
+OPTIONS=	IPV6	  "IPv6 support"	on	\
+		MYSQL	  "MySQL Database"	off	\
+		LDAP	  "LDAP Support"	off	\
+		GEOIP	  "GeoIP Support (recommended)"	on	\
+		FFMPEG	  "FFMpeg Support"	off	\
+		NLS	  "NLS Support"	on	\
+		INTPCRE	  "Use Internal PCRE Library"	off	\
+		ADMIN	  "Build the Admin Interface"	on	\
+		RRDTOOL   "Usage Graphs Support"  off	\
+		UWSGI     "uWSGI Support" off
 
 .include <bsd.port.options.mk>
 
@@ -89,9 +99,7 @@ PLIST_SUB+=	ADMIN="@comment "
 
 .include <bsd.port.pre.mk>
 
-.ifdef WITH_WWWUSER
-CONFIGURE_ARGS+=	--with-wwwuser=www --with-wwwgroup=www
-.endif
+CONFIGURE_ARGS+=	--with-wwwuser=${CHEROKEE_USER} --with-wwwgroup=${CHEROKEE_GROUP}
 
 .ifdef WITHOUT_IPV6
 CONFIGURE_ARGS+=	--disable-ipv6
@@ -215,6 +223,13 @@ post-install:
 	@cd ${DATADIR}/admin && ${FIND} . -name "*.py" |\
 	${XARGS} ${PYTHON_CMD} ${PYTHON_LIBDIR}/py_compile.py
 .endif
+
+	@${SETENV} \
+	     CHEROKEE_USER=${CHEROKEE_USER} \
+	     CHEROKEE_GROUP=${CHEROKEE_GROUP} \
+	     CHEROKEE_ERRORLOG=${CHEROKEE_ERRORLOG} \
+	     CHEROKEE_ACCESSLOG=${CHEROKEE_ACCESSLOG} \
+	     ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 	@${ECHO_MSG} "==============================================================="
 	@${CAT} ${PKGMESSAGE}

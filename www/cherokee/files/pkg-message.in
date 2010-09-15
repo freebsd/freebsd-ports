@@ -1,0 +1,23 @@
+
+                 **** PLEASE READ THIS ****
+
+   o  To run Cherokee at startup or using the rc script, you need 
+      to add 
+
+      cherokee_enable="YES" 
+
+      in either /etc/rc.conf, /etc/rc.conf.local or 
+      /etc/rc.conf.d/cherokee.
+
+   o  To start the Cherokee administrative interface, run (as root) 
+
+      cherokee-admin
+
+      For more information on cherokee-admin(1), please refer to
+      the official documentation and manpage.
+
+
+   o  By default, the cherokee daemon runs as www:www user.
+      If you need it to run as another user, you'll need to manually
+      adjust Makefile and recompile the port.
+
