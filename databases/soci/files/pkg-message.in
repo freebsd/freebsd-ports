@@ -1,0 +1,2 @@
+If you use dynamically loaded backends, you have to set the environment variable
+SOCI_BACKENDS_PATH to %%PREFIX%%/lib

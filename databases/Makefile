@@ -722,6 +722,7 @@
     SUBDIR += skytools
     SUBDIR += slony1
     SUBDIR += slony1v2
+    SUBDIR += soci
     SUBDIR += spatialite
     SUBDIR += sqlbuddy
     SUBDIR += sqlcached
