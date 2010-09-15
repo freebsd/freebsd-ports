@@ -58,7 +58,6 @@
 %%WWWDIR%%/bug_actiongroup_update_product_build_inc.php
 %%WWWDIR%%/bug_actiongroup_update_severity_inc.php
 %%WWWDIR%%/bug_assign.php
-%%WWWDIR%%/bug_assign_reporter.php
 %%WWWDIR%%/bug_change_status_page.php
 %%WWWDIR%%/bug_file_add.php
 %%WWWDIR%%/bug_file_delete.php
@@ -94,10 +93,12 @@
 %%WWWDIR%%/bugnote_stats_inc.php
 %%WWWDIR%%/bugnote_update.php
 %%WWWDIR%%/bugnote_view_inc.php
+%%WWWDIR%%/build.xml
 %%WWWDIR%%/changelog_page.php
 %%WWWDIR%%/config_defaults_inc.php
 %%WWWDIR%%/config_filter_defaults_inc.php
 %%WWWDIR%%/config_inc.php.sample
+%%WWWDIR%%/core.php
 %%WWWDIR%%/core/.htaccess
 %%WWWDIR%%/core/access_api.php
 %%WWWDIR%%/core/ajax_api.php
@@ -174,7 +175,6 @@
 %%WWWDIR%%/core/version_api.php
 %%WWWDIR%%/core/wiki_api.php
 %%WWWDIR%%/core/xmlhttprequest_api.php
-%%WWWDIR%%/core.php
 %%WWWDIR%%/css/calendar-blue.css
 %%WWWDIR%%/css/default.css
 %%WWWDIR%%/css/rtl.css
@@ -556,7 +556,6 @@
 %%WWWDIR%%/library/disposable/readme.txt
 %%WWWDIR%%/library/disposable/readme_mantis.txt
 %%WWWDIR%%/library/ezc/Base/src/base.php
-%%WWWDIR%%/library/ezc/Base/src/base_autoload.php
 %%WWWDIR%%/library/ezc/Base/src/exceptions/autoload.php
 %%WWWDIR%%/library/ezc/Base/src/exceptions/double_class_repository_prefix.php
 %%WWWDIR%%/library/ezc/Base/src/exceptions/exception.php
@@ -580,12 +579,13 @@
 %%WWWDIR%%/library/ezc/Base/src/file.php
 %%WWWDIR%%/library/ezc/Base/src/init.php
 %%WWWDIR%%/library/ezc/Base/src/interfaces/configuration_initializer.php
+%%WWWDIR%%/library/ezc/Base/src/interfaces/exportable.php
 %%WWWDIR%%/library/ezc/Base/src/interfaces/persistable.php
+%%WWWDIR%%/library/ezc/Base/src/metadata.php
 %%WWWDIR%%/library/ezc/Base/src/metadata/pear.php
 %%WWWDIR%%/library/ezc/Base/src/metadata/tarball.php
-%%WWWDIR%%/library/ezc/Base/src/metadata.php
-%%WWWDIR%%/library/ezc/Base/src/options/autoload.php
 %%WWWDIR%%/library/ezc/Base/src/options.php
+%%WWWDIR%%/library/ezc/Base/src/options/autoload.php
 %%WWWDIR%%/library/ezc/Base/src/struct.php
 %%WWWDIR%%/library/ezc/Base/src/structs/file_find_context.php
 %%WWWDIR%%/library/ezc/Base/src/structs/repository_directory.php
@@ -595,6 +595,7 @@
 %%WWWDIR%%/library/ezc/Graph/src/axis/logarithmic.php
 %%WWWDIR%%/library/ezc/Graph/src/axis/numeric.php
 %%WWWDIR%%/library/ezc/Graph/src/charts/bar.php
+%%WWWDIR%%/library/ezc/Graph/src/charts/horizontal_bar.php
 %%WWWDIR%%/library/ezc/Graph/src/charts/line.php
 %%WWWDIR%%/library/ezc/Graph/src/charts/odometer.php
 %%WWWDIR%%/library/ezc/Graph/src/charts/pie.php
@@ -614,6 +615,7 @@
 %%WWWDIR%%/library/ezc/Graph/src/datasets/property/integer.php
 %%WWWDIR%%/library/ezc/Graph/src/datasets/property/string.php
 %%WWWDIR%%/library/ezc/Graph/src/driver/cairo.php
+%%WWWDIR%%/library/ezc/Graph/src/driver/cairo_oo.php
 %%WWWDIR%%/library/ezc/Graph/src/driver/flash.php
 %%WWWDIR%%/library/ezc/Graph/src/driver/gd.php
 %%WWWDIR%%/library/ezc/Graph/src/driver/svg.php
@@ -651,12 +653,12 @@
 %%WWWDIR%%/library/ezc/Graph/src/exceptions/unregular_steps.php
 %%WWWDIR%%/library/ezc/Graph/src/exceptions/unsupported_image_type.php
 %%WWWDIR%%/library/ezc/Graph/src/graph.php
-%%WWWDIR%%/library/ezc/Graph/src/graph_autoload.php
 %%WWWDIR%%/library/ezc/Graph/src/interfaces/axis_label_renderer.php
 %%WWWDIR%%/library/ezc/Graph/src/interfaces/chart.php
 %%WWWDIR%%/library/ezc/Graph/src/interfaces/dataset_property.php
 %%WWWDIR%%/library/ezc/Graph/src/interfaces/driver.php
 %%WWWDIR%%/library/ezc/Graph/src/interfaces/element.php
+%%WWWDIR%%/library/ezc/Graph/src/interfaces/horizontal_bar_renderer.php
 %%WWWDIR%%/library/ezc/Graph/src/interfaces/odometer_renderer.php
 %%WWWDIR%%/library/ezc/Graph/src/interfaces/palette.php
 %%WWWDIR%%/library/ezc/Graph/src/interfaces/radar_renderer.php
@@ -697,14 +699,15 @@
 %%WWWDIR%%/library/ezc/Graph/src/renderer/axis_label_none.php
 %%WWWDIR%%/library/ezc/Graph/src/renderer/axis_label_radar.php
 %%WWWDIR%%/library/ezc/Graph/src/renderer/axis_label_rotated.php
+%%WWWDIR%%/library/ezc/Graph/src/renderer/axis_label_rotated_boxed.php
+%%WWWDIR%%/library/ezc/Graph/src/renderer/horizontal_bar.php
 %%WWWDIR%%/library/ezc/Graph/src/structs/context.php
 %%WWWDIR%%/library/ezc/Graph/src/structs/coordinate.php
 %%WWWDIR%%/library/ezc/Graph/src/structs/step.php
 %%WWWDIR%%/library/ezc/Graph/src/tools.php
 %%WWWDIR%%/library/ezc/autoload/base_autoload.php
 %%WWWDIR%%/library/ezc/autoload/graph_autoload.php
-%%WWWDIR%%/library/ezc/forum_evolution.php
-%%WWWDIR%%/library/ezc/forum_evolution.svg
+%%WWWDIR%%/library/nusoap/0001-Fix-12312-NuSOAP-web-description-XSS-vulnerability.patch
 %%WWWDIR%%/library/nusoap/changelog
 %%WWWDIR%%/library/nusoap/class.nusoap_base.php
 %%WWWDIR%%/library/nusoap/class.soap_fault.php
@@ -894,14 +897,18 @@
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_afrikaans.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_arabic.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_breton.txt
+%%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_bulgarian.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_catalan.txt
+%%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_chinese_simplified.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_dutch.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_english.txt
+%%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_finnish.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_french.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_galician.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_german.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_hebrew.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_hungarian.txt
+%%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_italian.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_japanese.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_macedonian.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_norwegian_bokmal.txt
@@ -914,6 +921,7 @@
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_slovak.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_spanish.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_swissgerman.txt
+%%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_tagalog.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/pages/config.php
 %%WWWDIR%%/plugins/MantisCoreFormatting/pages/config_edit.php
 %%WWWDIR%%/plugins/MantisGraph/MantisGraph.php
@@ -980,30 +988,36 @@
 %%WWWDIR%%/plugins/MantisGraph/pages/summary_graph_imp_severity.php
 %%WWWDIR%%/plugins/MantisGraph/pages/summary_graph_imp_status.php
 %%WWWDIR%%/plugins/MantisGraph/pages/summary_jpgraph_page.php
+%%WWWDIR%%/plugins/XmlImportExport/ImportXml.php
 %%WWWDIR%%/plugins/XmlImportExport/ImportXml/Interface.php
 %%WWWDIR%%/plugins/XmlImportExport/ImportXml/Issue.php
 %%WWWDIR%%/plugins/XmlImportExport/ImportXml/Mapper.php
-%%WWWDIR%%/plugins/XmlImportExport/ImportXml.php
 %%WWWDIR%%/plugins/XmlImportExport/XmlImportExport.php
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_arabic.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_breton.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_catalan.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_chinese_simplified.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_dutch.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_english.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_finnish.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_french.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_galician.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_german.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_hebrew.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_hungarian.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_italian.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_japanese.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_macedonian.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_norwegian_bokmal.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_occitan.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_portuguese_brazil.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_portuguese_standard.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_ripoarisch.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_russian.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_slovak.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_spanish.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_swissgerman.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_tagalog.txt
 %%WWWDIR%%/plugins/XmlImportExport/mantis.dtd
 %%WWWDIR%%/plugins/XmlImportExport/pages/export.php
 %%WWWDIR%%/plugins/XmlImportExport/pages/import.php
@@ -1054,12 +1068,15 @@
 %%WWWDIR%%/tests/bootstrap.php.sample
 %%WWWDIR%%/tests/soap/AllTests.php
 %%WWWDIR%%/tests/soap/AttachmentTest.php
+%%WWWDIR%%/tests/soap/CategoryTest.php
+%%WWWDIR%%/tests/soap/CompressionTest.php
 %%WWWDIR%%/tests/soap/EnumTest.php
 %%WWWDIR%%/tests/soap/FilterTest.php
 %%WWWDIR%%/tests/soap/IssueAddTest.php
 %%WWWDIR%%/tests/soap/IssueNoteTest.php
 %%WWWDIR%%/tests/soap/IssueUpdateTest.php
 %%WWWDIR%%/tests/soap/LoginTest.php
+%%WWWDIR%%/tests/soap/ProjectTest.php
 %%WWWDIR%%/tests/soap/SoapBase.php
 %%WWWDIR%%/tests/test.php
 %%WWWDIR%%/tests/test_config_get_set.php
@@ -1072,97 +1089,97 @@
 %%WWWDIR%%/view_user_page.php
 %%WWWDIR%%/wiki.php
 %%WWWDIR%%/xmlhttprequest.php
-@dirrm %%WWWDIR%%/admin
-@dirrm %%WWWDIR%%/api/soap
-@dirrm %%WWWDIR%%/api
-@dirrm %%WWWDIR%%/core/cfdefs
-@dirrm %%WWWDIR%%/core/classes
-@dirrm %%WWWDIR%%/core
-@dirrm %%WWWDIR%%/css
-@dirrm %%WWWDIR%%/doc/en
-@dirrm %%WWWDIR%%/doc
-@dirrm %%WWWDIR%%/docbook/adminguide/en/build
-@dirrm %%WWWDIR%%/docbook/adminguide/en
-@dirrm %%WWWDIR%%/docbook/adminguide
+@dirrm %%WWWDIR%%/tests/soap
+@dirrm %%WWWDIR%%/tests/Mantis
+@dirrm %%WWWDIR%%/tests
+@dirrm %%WWWDIR%%/scripts
+@dirrm %%WWWDIR%%/plugins/XmlImportExport/pages
+@dirrm %%WWWDIR%%/plugins/XmlImportExport/lang
+@dirrm %%WWWDIR%%/plugins/XmlImportExport/ImportXml
+@dirrm %%WWWDIR%%/plugins/XmlImportExport
+@dirrm %%WWWDIR%%/plugins/MantisGraph/pages
+@dirrm %%WWWDIR%%/plugins/MantisGraph/lang
+@dirrm %%WWWDIR%%/plugins/MantisGraph/core
+@dirrm %%WWWDIR%%/plugins/MantisGraph
+@dirrm %%WWWDIR%%/plugins/MantisCoreFormatting/pages
+@dirrm %%WWWDIR%%/plugins/MantisCoreFormatting/lang
+@dirrm %%WWWDIR%%/plugins/MantisCoreFormatting
+@dirrm %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/library/utf8/utils
+@dirrm %%WWWDIR%%/library/utf8/native
+@dirrm %%WWWDIR%%/library/utf8/mbstring
+@dirrm %%WWWDIR%%/library/utf8/exp
+@dirrm %%WWWDIR%%/library/utf8
+@dirrm %%WWWDIR%%/library/rssbuilder/doc
+@dirrm %%WWWDIR%%/library/rssbuilder
+@dirrm %%WWWDIR%%/library/projax/classes
+@dirrm %%WWWDIR%%/library/projax
+@dirrm %%WWWDIR%%/library/phpmailer/language
+@dirrm %%WWWDIR%%/library/phpmailer
+@dirrm %%WWWDIR%%/library/nusoap
+@dirrm %%WWWDIR%%/library/ezc/autoload
+@dirrm %%WWWDIR%%/library/ezc/Graph/src/structs
+@dirrm %%WWWDIR%%/library/ezc/Graph/src/renderer
+@dirrm %%WWWDIR%%/library/ezc/Graph/src/palette
+@dirrm %%WWWDIR%%/library/ezc/Graph/src/options
+@dirrm %%WWWDIR%%/library/ezc/Graph/src/math
+@dirrm %%WWWDIR%%/library/ezc/Graph/src/interfaces
+@dirrm %%WWWDIR%%/library/ezc/Graph/src/exceptions
+@dirrm %%WWWDIR%%/library/ezc/Graph/src/element
+@dirrm %%WWWDIR%%/library/ezc/Graph/src/driver
+@dirrm %%WWWDIR%%/library/ezc/Graph/src/datasets/property
+@dirrm %%WWWDIR%%/library/ezc/Graph/src/datasets
+@dirrm %%WWWDIR%%/library/ezc/Graph/src/data_container
+@dirrm %%WWWDIR%%/library/ezc/Graph/src/colors
+@dirrm %%WWWDIR%%/library/ezc/Graph/src/charts
+@dirrm %%WWWDIR%%/library/ezc/Graph/src/axis
+@dirrm %%WWWDIR%%/library/ezc/Graph/src
+@dirrm %%WWWDIR%%/library/ezc/Graph
+@dirrm %%WWWDIR%%/library/ezc/Base/src/structs
+@dirrm %%WWWDIR%%/library/ezc/Base/src/options
+@dirrm %%WWWDIR%%/library/ezc/Base/src/metadata
+@dirrm %%WWWDIR%%/library/ezc/Base/src/interfaces
+@dirrm %%WWWDIR%%/library/ezc/Base/src/exceptions
+@dirrm %%WWWDIR%%/library/ezc/Base/src
+@dirrm %%WWWDIR%%/library/ezc/Base
+@dirrm %%WWWDIR%%/library/ezc
+@dirrm %%WWWDIR%%/library/disposable
+@dirrm %%WWWDIR%%/library/adodb/xsl
+@dirrm %%WWWDIR%%/library/adodb/session/old
+@dirrm %%WWWDIR%%/library/adodb/session
+@dirrm %%WWWDIR%%/library/adodb/perf
+@dirrm %%WWWDIR%%/library/adodb/lang
+@dirrm %%WWWDIR%%/library/adodb/drivers
+@dirrm %%WWWDIR%%/library/adodb/datadict
+@dirrm %%WWWDIR%%/library/adodb
+@dirrm %%WWWDIR%%/library
+@dirrm %%WWWDIR%%/lang
+@dirrm %%WWWDIR%%/javascript/min/projax
+@dirrm %%WWWDIR%%/javascript/min/jscalendar/lang
+@dirrm %%WWWDIR%%/javascript/min/jscalendar
+@dirrm %%WWWDIR%%/javascript/min
+@dirrm %%WWWDIR%%/javascript/dev/projax
+@dirrm %%WWWDIR%%/javascript/dev/jscalendar/lang
+@dirrm %%WWWDIR%%/javascript/dev/jscalendar
+@dirrm %%WWWDIR%%/javascript/dev
+@dirrm %%WWWDIR%%/javascript
+@dirrm %%WWWDIR%%/images/fileicons
+@dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/docbook/template
 @dirrm %%WWWDIR%%/docbook/developers/en/build
 @dirrm %%WWWDIR%%/docbook/developers/en
 @dirrm %%WWWDIR%%/docbook/developers
-@dirrm %%WWWDIR%%/docbook/template
+@dirrm %%WWWDIR%%/docbook/adminguide/en/build
+@dirrm %%WWWDIR%%/docbook/adminguide/en
+@dirrm %%WWWDIR%%/docbook/adminguide
 @dirrm %%WWWDIR%%/docbook
-@dirrm %%WWWDIR%%/images/fileicons
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/javascript/dev/jscalendar/lang
-@dirrm %%WWWDIR%%/javascript/dev/jscalendar
-@dirrm %%WWWDIR%%/javascript/dev/projax
-@dirrm %%WWWDIR%%/javascript/dev
-@dirrm %%WWWDIR%%/javascript/min/jscalendar/lang
-@dirrm %%WWWDIR%%/javascript/min/jscalendar
-@dirrm %%WWWDIR%%/javascript/min/projax
-@dirrm %%WWWDIR%%/javascript/min
-@dirrm %%WWWDIR%%/javascript
-@dirrm %%WWWDIR%%/lang
-@dirrm %%WWWDIR%%/library/adodb/datadict
-@dirrm %%WWWDIR%%/library/adodb/drivers
-@dirrm %%WWWDIR%%/library/adodb/lang
-@dirrm %%WWWDIR%%/library/adodb/perf
-@dirrm %%WWWDIR%%/library/adodb/session/old
-@dirrm %%WWWDIR%%/library/adodb/session
-@dirrm %%WWWDIR%%/library/adodb/xsl
-@dirrm %%WWWDIR%%/library/adodb
-@dirrm %%WWWDIR%%/library/disposable
-@dirrm %%WWWDIR%%/library/ezc/Base/src/exceptions
-@dirrm %%WWWDIR%%/library/ezc/Base/src/interfaces
-@dirrm %%WWWDIR%%/library/ezc/Base/src/metadata
-@dirrm %%WWWDIR%%/library/ezc/Base/src/options
-@dirrm %%WWWDIR%%/library/ezc/Base/src/structs
-@dirrm %%WWWDIR%%/library/ezc/Base/src
-@dirrm %%WWWDIR%%/library/ezc/Base
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/axis
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/charts
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/colors
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/data_container
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/datasets/property
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/datasets
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/driver
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/element
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/exceptions
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/interfaces
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/math
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/options
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/palette
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/renderer
-@dirrm %%WWWDIR%%/library/ezc/Graph/src/structs
-@dirrm %%WWWDIR%%/library/ezc/Graph/src
-@dirrm %%WWWDIR%%/library/ezc/Graph
-@dirrm %%WWWDIR%%/library/ezc/autoload
-@dirrm %%WWWDIR%%/library/ezc
-@dirrm %%WWWDIR%%/library/nusoap
-@dirrm %%WWWDIR%%/library/phpmailer/language
-@dirrm %%WWWDIR%%/library/phpmailer
-@dirrm %%WWWDIR%%/library/projax/classes
-@dirrm %%WWWDIR%%/library/projax
-@dirrm %%WWWDIR%%/library/rssbuilder/doc
-@dirrm %%WWWDIR%%/library/rssbuilder
-@dirrm %%WWWDIR%%/library/utf8/exp
-@dirrm %%WWWDIR%%/library/utf8/mbstring
-@dirrm %%WWWDIR%%/library/utf8/native
-@dirrm %%WWWDIR%%/library/utf8/utils
-@dirrm %%WWWDIR%%/library/utf8
-@dirrm %%WWWDIR%%/library
-@dirrm %%WWWDIR%%/plugins/MantisCoreFormatting/lang
-@dirrm %%WWWDIR%%/plugins/MantisCoreFormatting/pages
-@dirrm %%WWWDIR%%/plugins/MantisCoreFormatting
-@dirrm %%WWWDIR%%/plugins/MantisGraph/core
-@dirrm %%WWWDIR%%/plugins/MantisGraph/lang
-@dirrm %%WWWDIR%%/plugins/MantisGraph/pages
-@dirrm %%WWWDIR%%/plugins/MantisGraph
-@dirrm %%WWWDIR%%/plugins/XmlImportExport/ImportXml
-@dirrm %%WWWDIR%%/plugins/XmlImportExport/lang
-@dirrm %%WWWDIR%%/plugins/XmlImportExport/pages
-@dirrm %%WWWDIR%%/plugins/XmlImportExport
-@dirrm %%WWWDIR%%/plugins
-@dirrm %%WWWDIR%%/scripts
-@dirrm %%WWWDIR%%/tests/Mantis
-@dirrm %%WWWDIR%%/tests/soap
-@dirrm %%WWWDIR%%/tests
+@dirrm %%WWWDIR%%/doc/en
+@dirrm %%WWWDIR%%/doc
+@dirrm %%WWWDIR%%/css
+@dirrm %%WWWDIR%%/core/classes
+@dirrm %%WWWDIR%%/core/cfdefs
+@dirrm %%WWWDIR%%/core
+@dirrm %%WWWDIR%%/api/soap
+@dirrm %%WWWDIR%%/api
+@dirrm %%WWWDIR%%/admin
 @dirrm %%WWWDIR%%
