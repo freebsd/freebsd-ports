@@ -504,6 +504,7 @@ anubis                          ports/mail/anubis
 anyremote                       ports/comms/anyremote
 anyremote2html                  ports/www/anyremote2html
 anyterm                         ports/www/anyterm
+aoe                             ports/net/aoe
 aoi                             ports/graphics/aoi
 aolserver                       ports/www/aolserver
 aolserver-nsencrypt             ports/security/aolserver-nsencrypt
@@ -1522,7 +1523,6 @@ cgprof                          ports/devel/cgprof
 cgraph                          ports/graphics/Cgraph
 ch                              ports/shells/ch
 chaco                           ports/math/chaco
-chameleon                       ports/x11/chameleon
 chanta                          ports/games/chanta
 chaosreader                     ports/security/chaosreader
 chapping                        ports/games/chapping
@@ -1763,6 +1763,7 @@ cntlm                           ports/www/cntlm
 cnupm                           ports/net/cnupm
 cobf                            ports/devel/cobf
 coccinella                      ports/net-im/coccinella
+coccinelle                      ports/devel/coccinelle
 cocktail                        ports/devel/cocktail
 coco                            ports/textproc/coco
 cocoon                          ports/www/cocoon
@@ -1778,7 +1779,6 @@ codeblocks                      ports/devel/codeblocks
 codeeditor                      ports/editors/codeeditor
 codeigniter                     ports/www/codeigniter
 codelite                        ports/editors/codelite
-codeville                       ports/devel/codeville
 codeworker                      ports/devel/codeworker
 cog                             ports/sysutils/cog
 coin                            ports/graphics/Coin
@@ -2556,6 +2556,7 @@ doscan                          ports/security/doscan
 doscmd                          ports/emulators/doscmd
 dosdetector                     ports/net/dosdetector
 dosunix                         ports/converters/dosunix
+dot2tex                         ports/print/dot2tex
 dotclear                        ports/www/dotclear
 dotconf                         ports/devel/dotconf
 dotconf++                       ports/devel/dotconf++
@@ -5985,7 +5986,6 @@ ipgrab                          ports/net/ipgrab
 ipguard                         ports/security/ipguard
 iplike                          ports/databases/iplike
 iplog                           ports/net/iplog
-ipmi-kmod                       ports/sysutils/ipmi-kmod
 ipmitool                        ports/sysutils/ipmitool
 ipod-sharp                      ports/audio/ipod-sharp
 ipplan                          ports/net-mgmt/ipplan
@@ -6997,8 +6997,6 @@ kde4                            ports/x11/kde4
 kde4-icons-oxygen               ports/x11-themes/kde4-icons-oxygen
 kde4-l10n                       ports/misc/kde4-l10n
 kde4-l10n-bg                    ports/misc/kde4-l10n-bg
-kde4-l10n-bn_IN                 ports/misc/kde4-l10n-bn_IN
-kde4-l10n-bn_in                 ports/misc/kde4-l10n-bn_IN
 kde4-l10n-ca                    ports/misc/kde4-l10n-ca
 kde4-l10n-ca_valencia           ports/misc/kde4-l10n-ca_valencia
 kde4-l10n-cs                    ports/misc/kde4-l10n-cs
@@ -7017,7 +7015,6 @@ kde4-l10n-ga                    ports/misc/kde4-l10n-ga
 kde4-l10n-gl                    ports/misc/kde4-l10n-gl
 kde4-l10n-gu                    ports/misc/kde4-l10n-gu
 kde4-l10n-hi                    ports/misc/kde4-l10n-hi
-kde4-l10n-hne                   ports/misc/kde4-l10n-hne
 kde4-l10n-hr                    ports/misc/kde4-l10n-hr
 kde4-l10n-ia                    ports/misc/kde4-l10n-ia
 kde4-l10n-id                    ports/misc/kde4-l10n-id
@@ -7026,13 +7023,11 @@ kde4-l10n-it                    ports/misc/kde4-l10n-it
 kde4-l10n-kk                    ports/misc/kde4-l10n-kk
 kde4-l10n-km                    ports/misc/kde4-l10n-km
 kde4-l10n-kn                    ports/misc/kde4-l10n-kn
-kde4-l10n-ku                    ports/misc/kde4-l10n-ku
 kde4-l10n-lt                    ports/misc/kde4-l10n-lt
 kde4-l10n-lv                    ports/misc/kde4-l10n-lv
 kde4-l10n-mai                   ports/misc/kde4-l10n-mai
 kde4-l10n-mk                    ports/misc/kde4-l10n-mk
 kde4-l10n-ml                    ports/misc/kde4-l10n-ml
-kde4-l10n-mr                    ports/misc/kde4-l10n-mr
 kde4-l10n-nb                    ports/misc/kde4-l10n-nb
 kde4-l10n-nds                   ports/misc/kde4-l10n-nds
 kde4-l10n-nl                    ports/misc/kde4-l10n-nl
@@ -7361,9 +7356,7 @@ koffice-kde4-l10n-en_GB         ports/editors/koffice-kde4-l10n-en_GB
 koffice-kde4-l10n-en_gb         ports/editors/koffice-kde4-l10n-en_GB
 koffice-kde4-l10n-es            ports/editors/koffice-kde4-l10n-es
 koffice-kde4-l10n-et            ports/editors/koffice-kde4-l10n-et
-koffice-kde4-l10n-fy            ports/editors/koffice-kde4-l10n-fy
 koffice-kde4-l10n-gl            ports/editors/koffice-kde4-l10n-gl
-koffice-kde4-l10n-hne           ports/editors/koffice-kde4-l10n-hne
 koffice-kde4-l10n-it            ports/editors/koffice-kde4-l10n-it
 koffice-kde4-l10n-kk            ports/editors/koffice-kde4-l10n-kk
 koffice-kde4-l10n-nb            ports/editors/koffice-kde4-l10n-nb
@@ -8969,7 +8962,6 @@ mailgraph                       ports/mail/mailgraph
 mailman                         ports/mail/mailman
 mailmgr                         ports/mail/mailmgr
 mailscanner                     ports/mail/mailscanner
-mailscanner-devel               ports/mail/mailscanner-devel
 mailscanner-mrtg                ports/mail/mailscanner-mrtg
 mailsync                        ports/mail/mailsync
 mailx                           ports/mail/mailx
@@ -13546,7 +13538,6 @@ p5-Plack-Middleware-JSConcat    ports/www/p5-Plack-Middleware-JSConcat
 p5-Plack-Middleware-ReverseProxy  ports/www/p5-Plack-Middleware-ReverseProxy
 p5-Plack-Middleware-Session     ports/www/p5-Plack-Middleware-Session
 p5-Plack-Middleware-Throttle    ports/www/p5-Plack-Middleware-Throttle
-p5-Plack-Server-AnyEvent        ports/www/p5-Plack-Server-AnyEvent
 p5-Plack-Server-Coro            ports/www/p5-Plack-Server-Coro
 p5-Plack-Server-POE             ports/www/p5-Plack-Server-POE
 p5-Plack-Server-ReverseHTTP     ports/www/p5-Plack-Server-ReverseHTTP
@@ -17420,7 +17411,6 @@ p5-plack-middleware-jsconcat    ports/www/p5-Plack-Middleware-JSConcat
 p5-plack-middleware-reverseproxy  ports/www/p5-Plack-Middleware-ReverseProxy
 p5-plack-middleware-session     ports/www/p5-Plack-Middleware-Session
 p5-plack-middleware-throttle    ports/www/p5-Plack-Middleware-Throttle
-p5-plack-server-anyevent        ports/www/p5-Plack-Server-AnyEvent
 p5-plack-server-coro            ports/www/p5-Plack-Server-Coro
 p5-plack-server-poe             ports/www/p5-Plack-Server-POE
 p5-plack-server-reversehttp     ports/www/p5-Plack-Server-ReverseHTTP
@@ -20200,7 +20190,6 @@ ports_at                        ports/science/at
 ports_binutils                  ports/devel/binutils
 ports_bs                        ports/games/bs
 ports_bzip2                     ports/archivers/bzip2
-ports_csup                      ports/net/csup
 ports_ctags                     ports/devel/ctags
 ports_cut                       ports/devel/cut
 ports_dict                      ports/textproc/dict
@@ -20718,6 +20707,7 @@ py-django11                     ports/www/py-django11
 py-dns                          ports/dns/py-dns
 py-dnspython                    ports/dns/py-dnspython
 py-docutils                     ports/textproc/py-docutils
+py-dojango                      ports/www/py-dojango
 py-dosage                       ports/deskutils/py-dosage
 py-dpkt                         ports/net/py-dpkt
 py-dsv                          ports/textproc/py-dsv
@@ -22190,7 +22180,6 @@ ru-p5-cyrillic                  ports/russian/p5-cyrillic
 ru-p5-lingua-ru-charset         ports/russian/p5-Lingua-RU-Charset
 ru-p5-xml-parser-encodings      ports/russian/p5-XML-Parser-encodings
 ru-pgp.language                 ports/russian/pgp.language
-ru-php_doc                      ports/russian/php_doc
 ru-prawda                       ports/russian/prawda
 ru-pscyr                        ports/russian/pscyr
 ru-rubygem-russian              ports/russian/rubygem-russian
@@ -23548,7 +23537,6 @@ sqlclient                       ports/databases/sqlclient
 sqldeveloper                    ports/databases/sqldeveloper
 sqldjbdns                       ports/dns/sqldjbdns
 sqlgrey                         ports/mail/sqlgrey
-sqlite-ext-inet                 ports/databases/sqlite-ext-inet
 sqlite-ext-miscfuncs            ports/databases/sqlite-ext-miscfuncs
 sqlite-ext-mobigroup            ports/databases/sqlite-ext-mobigroup
 sqlite2                         ports/databases/sqlite2
@@ -24914,6 +24902,7 @@ vb2c                            ports/devel/vb2c
 vba                             ports/emulators/vba
 vbetool                         ports/sysutils/vbetool
 vbindiff                        ports/textproc/vbindiff
+vblade                          ports/net/vblade
 vboxgtk                         ports/deskutils/vboxgtk
 vbsfilter                       ports/mail/vbsfilter
 vcdgear                         ports/multimedia/vcdgear
@@ -25035,7 +25024,6 @@ vitunes                         ports/audio/vitunes
 viz                             ports/misc/viz
 vizone                          ports/dns/vizone
 vlc                             ports/multimedia/vlc
-vlconwooztalk                   ports/multimedia/vlconwooztalk
 vlock                           ports/security/vlock
 vlog                            ports/security/vlog
 vm                              ports/mail/vm
@@ -25423,7 +25411,6 @@ wol                             ports/net/wol
 wolf3d                          ports/games/wolf3d
 wolfpack                        ports/games/wolfpack
 woof                            ports/www/woof
-wooztalk                        ports/net-im/wooztalk
 wop                             ports/games/wop
 word2x                          ports/textproc/word2x
 wordgrinder                     ports/editors/wordgrinder
@@ -25538,8 +25525,6 @@ xapian-core                     ports/databases/xapian-core
 xapian-omega                    ports/www/xapian-omega
 xapply                          ports/sysutils/xapply
 xar                             ports/archivers/xar
-xaralx                          ports/graphics/xaralx
-xaralx-devel                    ports/graphics/xaralx-devel
 xaraya                          ports/www/xaraya
 xarchive                        ports/archivers/xarchive
 xarchiver                       ports/archivers/xarchiver
@@ -26183,9 +26168,7 @@ xpi-cookiesafe                  ports/www/xpi-cookiesafe
 xpi-cssviewer                   ports/www/xpi-cssviewer
 xpi-customizegoogle             ports/www/xpi-customizegoogle
 xpi-cutemenus-crystalsvg        ports/www/xpi-cutemenus-crystalsvg
-xpi-dailymotiononwooztalk       ports/www/xpi-dailymotiononwooztalk
 xpi-deepestsender               ports/www/xpi-deepestsender
-xpi-deezeronwooztalk            ports/www/xpi-deezeronwooztalk
 xpi-default_full_zoom_level     ports/www/xpi-default_full_zoom_level
 xpi-delicious                   ports/www/xpi-delicious
 xpi-displayquota                ports/mail/xpi-displayquota
@@ -26194,7 +26177,6 @@ xpi-errorzilla                  ports/www/xpi-errorzilla
 xpi-fasterfox                   ports/www/xpi-fasterfox
 xpi-firebug                     ports/www/xpi-firebug
 xpi-firefox-showcase            ports/www/xpi-firefox-showcase
-xpi-firefoxonwooztalk           ports/www/xpi-firefoxonwooztalk
 xpi-firemobilesimulator         ports/www/xpi-firemobilesimulator
 xpi-fission                     ports/www/xpi-fission
 xpi-flashblock                  ports/www/xpi-flashblock
@@ -26208,7 +26190,6 @@ xpi-gbrain                      ports/www/xpi-gbrain
 xpi-gbutts                      ports/www/xpi-gbutts
 xpi-gmail-manager               ports/www/xpi-gmail-manager
 xpi-google-notebook             ports/www/xpi-google-notebook
-xpi-googlevideoonwooztalk       ports/www/xpi-googlevideoonwooztalk
 xpi-grab_and_drag               ports/www/xpi-grab_and_drag
 xpi-greasemonkey                ports/www/xpi-greasemonkey
 xpi-gwt-dev-plugin              ports/www/xpi-gwt-dev-plugin
@@ -26216,17 +26197,14 @@ xpi-hit-a-hint                  ports/www/xpi-hit-a-hint
 xpi-httpfox                     ports/www/xpi-httpfox
 xpi-imagezoom                   ports/www/xpi-imagezoom
 xpi-imdbpreview                 ports/www/xpi-imdbpreview
-xpi-imeemonwooztalk             ports/www/xpi-imeemonwooztalk
 xpi-imglikeopera                ports/www/xpi-imglikeopera
 xpi-infolister                  ports/www/xpi-infolister
 xpi-informenter                 ports/www/xpi-informenter
 xpi-inline-google-definitions   ports/www/xpi-inline-google-definitions
 xpi-it_s_all_text               ports/www/xpi-it_s_all_text
-xpi-jiwaonwooztalk              ports/www/xpi-jiwaonwooztalk
 xpi-joga                        ports/www/xpi-joga
 xpi-jsview                      ports/www/xpi-jsview
 xpi-jv                          ports/www/xpi-jv
-xpi-lastfmonwooztalk            ports/www/xpi-lastfmonwooztalk
 xpi-leechblock                  ports/www/xpi-leechblock
 xpi-linkification               ports/www/xpi-linkification
 xpi-live_http_headers           ports/www/xpi-live_http_headers
@@ -26273,14 +26251,12 @@ xpi-unplug                      ports/www/xpi-unplug
 xpi-urllink                     ports/www/xpi-urllink
 xpi-user_agent_switcher         ports/www/xpi-user_agent_switcher
 xpi-videodownloader             ports/www/xpi-videodownloader
-xpi-vimeoonwooztalk             ports/www/xpi-vimeoonwooztalk
 xpi-vimperator                  ports/www/xpi-vimperator
 xpi-web_developer               ports/www/xpi-web_developer
 xpi-wmlbrowser                  ports/www/xpi-wmlbrowser
 xpi-xhtml-ruby-support          ports/www/xpi-xhtml-ruby-support
 xpi-xmpp4moz                    ports/www/xpi-xmpp4moz
 xpi-xpcom-component-viewer      ports/www/xpi-xpcom-component-viewer
-xpi-youtubeonwooztalk           ports/www/xpi-youtubeonwooztalk
 xpi-yslow                       ports/www/xpi-yslow
 xpilot                          ports/games/xpilot
 xpilot-ng-client                ports/games/xpilot-ng-client
