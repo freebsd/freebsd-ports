@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ebook-tools
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	textproc kde
 MASTER_SITES=	SF
 

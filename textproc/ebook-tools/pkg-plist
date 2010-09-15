@@ -2,6 +2,7 @@ bin/einfo
 bin/lit2epub
 include/epub.h
 include/epub_shared.h
+include/epub_version.h
 lib/libepub.so
 lib/libepub.so.0
-lib/libepub.so.0.1.0
+lib/libepub.so.0.2.1
