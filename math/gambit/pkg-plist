@@ -39,12 +39,4 @@ include/libgambit/stratitr.h
 include/libgambit/stratspt.h
 include/libgambit/vector.h
 include/libgambit/vector.imp
-lib/libgambit.a
-lib/libgambit.la
-lib/libgambit.so
-lib/libgambit.so.0
-lib/liblabenski.a
-lib/liblabenski.la
-lib/liblabenski.so
-lib/liblabenski.so.0
 @dirrm include/libgambit
