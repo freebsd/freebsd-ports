@@ -2685,6 +2685,7 @@
     SUBDIR += py-dexml
     SUBDIR += py-dialog
     SUBDIR += py-distorm
+    SUBDIR += py-distribute
     SUBDIR += py-distutils-extra
     SUBDIR += py-durus
     SUBDIR += py-dynrules
