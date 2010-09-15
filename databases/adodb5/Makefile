@@ -12,8 +12,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-php5-only/${PORTNAME}-${DISTVERSION:S/.
 DISTNAME=	${PORTNAME:S/5//}${DISTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joehorn@gmail.com
 COMMENT=	Database library for PHP
+
+LICENSE=	BSD
 
 CONFLICTS=	adodb-4.*
 LATEST_LINK=	adodb5
@@ -25,14 +27,13 @@ IGNORE_WITH_PHP=4
 WRKSRC=		${WRKDIR}/${PORTNAME}5
 NO_BUILD=	YES
 
-ADODB_DIR?=	share/adodb
-PLIST_SUB=	ADODB_DIR=${ADODB_DIR}
-
 ADODB_SUBDIRS=	contrib datadict drivers lang pear perf session xsl
 
 OPTIONS=	TESTS "Install tests" off
 
 .include <bsd.port.pre.mk>
+
+SUB_FILES+=	pkg-message
 
 .if defined (WITH_TESTS)
 PLIST_SUB+=	TESTS=
@@ -41,18 +42,18 @@ PLIST_SUB+=	TESTS="@comment "
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/${ADODB_DIR}
+	@${MKDIR} ${DATADIR}
 	@cd ${WRKSRC}; ${FIND} ${ADODB_SUBDIRS} -type d \
-		-exec ${MKDIR} ${PREFIX}/${ADODB_DIR}/{} \;
+		-exec ${MKDIR} ${DATADIR}/{} \;
 	@cd ${WRKSRC}; ${FIND} . ! -path './*/*' -type f \( -name '*.php' -or -name '*.dtd' -or -name '*.zip' \) \
-		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${PREFIX}/${ADODB_DIR}/{} \;
+		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${DATADIR}/{} \;
 	@cd ${WRKSRC}; ${FIND} ${ADODB_SUBDIRS} -type f \
-		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${PREFIX}/${ADODB_DIR}/{} \;
+		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${DATADIR}/{} \;
 
 .if defined (WITH_TESTS)
-	@${MKDIR} ${PREFIX}/${ADODB_DIR}/tests
+	@${MKDIR} ${DATADIR}/tests
 	@cd ${WRKSRC}; ${FIND} tests -type f \
-		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${PREFIX}/${ADODB_DIR}/{} \;
+		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${DATADIR}/{} \;
 .endif
 
 post-install:
