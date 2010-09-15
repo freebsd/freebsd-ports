@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Term-Menus
-PORTVERSION=	1.49
+PORTVERSION=	1.51
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	frederic@culot.org
 COMMENT=	Create Powerful Terminal, Console and CMD Enviroment Menus
 
 BUILD_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
