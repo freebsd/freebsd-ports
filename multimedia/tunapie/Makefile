@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	tunapie
-PORTVERSION=	2.1.17
-PORTREVISION=	5
+PORTVERSION=	2.1.18
+PORTREVISION=	0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/2.1
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,.r,rc,}
@@ -24,6 +24,8 @@ USE_WX=	2.6+
 WX_COMPS=	python:run
 
 OPTIONS=	ADULT	"non-censored TV listings" off \
+		AMAROK	"use amarok instead of mplayer" off \
+		TOTEM	"use totem instead of mplayer" off \
 		VLC	"use vlc instead of mplayer" off \
 		XINE	"use xine instead of mplayer" off \
 		AUDACIOUS	"use audacious instead of xmms" off \
@@ -61,7 +63,11 @@ ADULT_TVLIST=	--adult
 .endif
 
 # default VIDEOPLAYER
-.if defined(WITH_XINE)
+.if defined(WITH_AMAROK)
+RUN_DEPENDS+=	amarok:${PORTSDIR}/audio/amarok
+.elif defined(WITH_TOTEM)
+RUN_DEPENDS+=	totem:${PORTSDIR}/multimedia/totem
+.elif defined(WITH_XINE)
 RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine
 .elif defined(WITH_VLC)
 RUN_DEPENDS+=	vlc:${PORTSDIR}/multimedia/vlc
@@ -71,7 +77,7 @@ RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 # default AUDIOPLAYER
 .if defined(WITH_AUDACIOUS)
-RUN_DEPENDS+=	${PREFIX}/lib/audacious/Container/pls.so:${PORTSDIR}/multimedia/audacious-plugins
+RUN_DEPENDS+=	audacious:${PORTSDIR}/multimedia/audacious
 .elifdef(WITH_BEEP_MEDIA_PLAYER)
 RUN_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
 .else
