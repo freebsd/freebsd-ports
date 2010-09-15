@@ -1,180 +1,20 @@
+etc/pootle/localsettings.py
+etc/pootle/localsettings.py.sample
 bin/PootleServer
 bin/import_pootle_prefs
 bin/updatetm
-%%DATADIR%%/html/favicon.ico
-%%DATADIR%%/html/images/context.png
-%%DATADIR%%/html/images/cross.png
-%%DATADIR%%/html/images/cyan-bar.png
-%%DATADIR%%/html/images/edit.png
-%%DATADIR%%/html/images/error.png
-%%DATADIR%%/html/images/feed.png
-%%DATADIR%%/html/images/file.png
-%%DATADIR%%/html/images/folder.png
-%%DATADIR%%/html/images/footer-border.png
-%%DATADIR%%/html/images/gap.png
-%%DATADIR%%/html/images/good.png
-%%DATADIR%%/html/images/green-bar.png
-%%DATADIR%%/html/images/header-background-bottom.png
-%%DATADIR%%/html/images/header-background.png
-%%DATADIR%%/html/images/help.png
-%%DATADIR%%/html/images/information.png
-%%DATADIR%%/html/images/logo.png
-%%DATADIR%%/html/images/none.png
-%%DATADIR%%/html/images/page-bg.jpg
-%%DATADIR%%/html/images/purple-bar.png
-%%DATADIR%%/html/images/red-bar.png
-%%DATADIR%%/html/images/sarrow_down.png
-%%DATADIR%%/html/images/sarrow_down_rtl.png
-%%DATADIR%%/html/images/sarrow_up.png
-%%DATADIR%%/html/images/sarrow_up_rtl.png
-%%DATADIR%%/html/images/script_code.png
-%%DATADIR%%/html/images/search-arrow.png
-%%DATADIR%%/html/images/squiggle.png
-%%DATADIR%%/html/images/tick.png
-%%DATADIR%%/html/images/warning.png
-%%DATADIR%%/html/js/README
-%%DATADIR%%/html/js/autoexpand.js
-%%DATADIR%%/html/js/correctpng.js
-%%DATADIR%%/html/js/jquery/jquery.bidi.js
-%%DATADIR%%/html/js/jquery/jquery.min.js
-%%DATADIR%%/html/js/jquery/jquery.textarea-expander.js
-%%DATADIR%%/html/js/json2.min.js
-%%DATADIR%%/html/js/search.js
-%%DATADIR%%/html/js/sorttable.js
-%%DATADIR%%/html/js/translatepage.js
-%%DATADIR%%/html/style.css
-%%DATADIR%%/mo/README
-%%DATADIR%%/mo/af/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ak/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/am/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ar/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ast/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/az/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/be/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/bg/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/bn/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/bn_IN/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/bo/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/br/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ca/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ca@valencia/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/cs/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/da/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/de/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/dz/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/el/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/en/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/en_GB/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/en_ZA/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/eo/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/es/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/et/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/eu/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/fa/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/fi/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/fo/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/fr/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/fur/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ga/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/gl/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ha/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/he/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/hi/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/hr/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/hu/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/hy/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/id/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/is/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/it/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ja/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ka/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/kg/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/km/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/kn/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ko/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ku/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ky/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/lg/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ln/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/lt/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/lv/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/mg/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ml/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/mn/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/mr/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ms/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/mt/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/nap/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/nb/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ne/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/nl/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/nn/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/nso/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/pa/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/pap/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/pl/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/pt/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/pt_BR/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ru/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/sk/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/sl/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/son/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/sq/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/sr/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/st/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/sv/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ta/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/te/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/th/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/tl/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/tr/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/uk/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/ve/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/vi/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/wo/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/xh/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/zh_CN/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/zh_HK/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/zh_TW/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/zu/LC_MESSAGES/django.mo
-%%DATADIR%%/templates/403.html
-%%DATADIR%%/templates/404.html
-%%DATADIR%%/templates/500.html
-%%DATADIR%%/templates/admin/base_site.html
-%%DATADIR%%/templates/admin_profile_base.html
-%%DATADIR%%/templates/admin_profile_menu.html
-%%DATADIR%%/templates/base.html
-%%DATADIR%%/templates/docs.html
-%%DATADIR%%/templates/docs/howto.html
-%%DATADIR%%/templates/docs/index.html
-%%DATADIR%%/templates/docs/resources.html
-%%DATADIR%%/templates/language_base.html
-%%DATADIR%%/templates/language_menu.html
-%%DATADIR%%/templates/profiles/edit_personal.html
-%%DATADIR%%/templates/profiles/edit_profile.html
-%%DATADIR%%/templates/profiles/profile_detail.html
-%%DATADIR%%/templates/profiles/profile_list.html
-%%DATADIR%%/templates/project_base.html
-%%DATADIR%%/templates/project_menu.html
-%%DATADIR%%/templates/registration/activate.html
-%%DATADIR%%/templates/registration/activation_email.txt
-%%DATADIR%%/templates/registration/activation_email_subject.txt
-%%DATADIR%%/templates/registration/password_change_done.html
-%%DATADIR%%/templates/registration/password_change_form.html
-%%DATADIR%%/templates/registration/password_reset_complete.html
-%%DATADIR%%/templates/registration/password_reset_confirm.html
-%%DATADIR%%/templates/registration/password_reset_done.html
-%%DATADIR%%/templates/registration/password_reset_email.html
-%%DATADIR%%/templates/registration/password_reset_form.html
-%%DATADIR%%/templates/registration/registration_complete.html
-%%DATADIR%%/templates/registration/registration_form.html
-%%DATADIR%%/templates/tp_base.html
-%%DATADIR%%/templates/tp_base_admin.html
-%%DATADIR%%/templates/tp_base_extended.html
-%%DATADIR%%/templates/tp_menu.html
-%%DATADIR%%/templates/user_profile_base.html
-%%DATADIR%%/templates/user_profile_base_extended.html
-%%DATADIR%%/templates/user_profile_menu.html
+%%PYTHON_SITELIBDIR%%/contact_form_i18n/__init__.py
+%%PYTHON_SITELIBDIR%%/contact_form_i18n/__init__.pyc
+%%PYTHON_SITELIBDIR%%/contact_form_i18n/__init__.pyo
+%%PYTHON_SITELIBDIR%%/contact_form_i18n/forms.py
+%%PYTHON_SITELIBDIR%%/contact_form_i18n/forms.pyc
+%%PYTHON_SITELIBDIR%%/contact_form_i18n/forms.pyo
+%%PYTHON_SITELIBDIR%%/contact_form_i18n/urls.py
+%%PYTHON_SITELIBDIR%%/contact_form_i18n/urls.pyc
+%%PYTHON_SITELIBDIR%%/contact_form_i18n/urls.pyo
+%%PYTHON_SITELIBDIR%%/contact_form_i18n/views.py
+%%PYTHON_SITELIBDIR%%/contact_form_i18n/views.pyc
+%%PYTHON_SITELIBDIR%%/contact_form_i18n/views.pyo
 %%PYTHON_SITELIBDIR%%/djblets/__init__.py
 %%PYTHON_SITELIBDIR%%/djblets/__init__.pyc
 %%PYTHON_SITELIBDIR%%/djblets/__init__.pyo
@@ -235,6 +75,12 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/djblets/util/rooturl.py
 %%PYTHON_SITELIBDIR%%/djblets/util/rooturl.pyc
 %%PYTHON_SITELIBDIR%%/djblets/util/rooturl.pyo
+%%PYTHON_SITELIBDIR%%/djblets/util/testing.py
+%%PYTHON_SITELIBDIR%%/djblets/util/testing.pyc
+%%PYTHON_SITELIBDIR%%/djblets/util/testing.pyo
+%%PYTHON_SITELIBDIR%%/djblets/util/tests.py
+%%PYTHON_SITELIBDIR%%/djblets/util/tests.pyc
+%%PYTHON_SITELIBDIR%%/djblets/util/tests.pyo
 %%PYTHON_SITELIBDIR%%/djblets/util/templatetags/__init__.py
 %%PYTHON_SITELIBDIR%%/djblets/util/templatetags/__init__.pyc
 %%PYTHON_SITELIBDIR%%/djblets/util/templatetags/__init__.pyo
@@ -256,12 +102,6 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/djblets/util/templatetags/djblets_utils.py
 %%PYTHON_SITELIBDIR%%/djblets/util/templatetags/djblets_utils.pyc
 %%PYTHON_SITELIBDIR%%/djblets/util/templatetags/djblets_utils.pyo
-%%PYTHON_SITELIBDIR%%/djblets/util/testing.py
-%%PYTHON_SITELIBDIR%%/djblets/util/testing.pyc
-%%PYTHON_SITELIBDIR%%/djblets/util/testing.pyo
-%%PYTHON_SITELIBDIR%%/djblets/util/tests.py
-%%PYTHON_SITELIBDIR%%/djblets/util/tests.pyc
-%%PYTHON_SITELIBDIR%%/djblets/util/tests.pyo
 %%PYTHON_SITELIBDIR%%/pootle/PootleServer.py
 %%PYTHON_SITELIBDIR%%/pootle/PootleServer.pyc
 %%PYTHON_SITELIBDIR%%/pootle/PootleServer.pyo
@@ -271,15 +111,27 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle/__version__.py
 %%PYTHON_SITELIBDIR%%/pootle/__version__.pyc
 %%PYTHON_SITELIBDIR%%/pootle/__version__.pyo
+%%PYTHON_SITELIBDIR%%/pootle/depcheck.py
+%%PYTHON_SITELIBDIR%%/pootle/depcheck.pyc
+%%PYTHON_SITELIBDIR%%/pootle/depcheck.pyo
+%%PYTHON_SITELIBDIR%%/pootle/install_dirs.py
+%%PYTHON_SITELIBDIR%%/pootle/install_dirs.pyc
+%%PYTHON_SITELIBDIR%%/pootle/install_dirs.pyo
+%%PYTHON_SITELIBDIR%%/pootle/settings.py
+%%PYTHON_SITELIBDIR%%/pootle/settings.pyc
+%%PYTHON_SITELIBDIR%%/pootle/settings.pyo
+%%PYTHON_SITELIBDIR%%/pootle/tests.py
+%%PYTHON_SITELIBDIR%%/pootle/tests.pyc
+%%PYTHON_SITELIBDIR%%/pootle/tests.pyo
+%%PYTHON_SITELIBDIR%%/pootle/urls.py
+%%PYTHON_SITELIBDIR%%/pootle/urls.pyc
+%%PYTHON_SITELIBDIR%%/pootle/urls.pyo
 %%PYTHON_SITELIBDIR%%/pootle/auth/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle/auth/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle/auth/__init__.pyo
 %%PYTHON_SITELIBDIR%%/pootle/auth/ldap_backend.py
 %%PYTHON_SITELIBDIR%%/pootle/auth/ldap_backend.pyc
 %%PYTHON_SITELIBDIR%%/pootle/auth/ldap_backend.pyo
-%%PYTHON_SITELIBDIR%%/pootle/depcheck.py
-%%PYTHON_SITELIBDIR%%/pootle/depcheck.pyc
-%%PYTHON_SITELIBDIR%%/pootle/depcheck.pyo
 %%PYTHON_SITELIBDIR%%/pootle/i18n/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle/i18n/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle/i18n/__init__.pyo
@@ -292,9 +144,6 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle/i18n/override.py
 %%PYTHON_SITELIBDIR%%/pootle/i18n/override.pyc
 %%PYTHON_SITELIBDIR%%/pootle/i18n/override.pyo
-%%PYTHON_SITELIBDIR%%/pootle/install_dirs.py
-%%PYTHON_SITELIBDIR%%/pootle/install_dirs.pyc
-%%PYTHON_SITELIBDIR%%/pootle/install_dirs.pyo
 %%PYTHON_SITELIBDIR%%/pootle/legacy/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle/legacy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle/legacy/__init__.pyo
@@ -322,6 +171,9 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle/middleware/profile.py
 %%PYTHON_SITELIBDIR%%/pootle/middleware/profile.pyc
 %%PYTHON_SITELIBDIR%%/pootle/middleware/profile.pyo
+%%PYTHON_SITELIBDIR%%/pootle/middleware/setlocale.py
+%%PYTHON_SITELIBDIR%%/pootle/middleware/setlocale.pyc
+%%PYTHON_SITELIBDIR%%/pootle/middleware/setlocale.pyo
 %%PYTHON_SITELIBDIR%%/pootle/middleware/profiling/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle/middleware/profiling/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle/middleware/profiling/__init__.pyo
@@ -331,6 +183,12 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle/scripts/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle/scripts/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle/scripts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pootle/scripts/hooks.py
+%%PYTHON_SITELIBDIR%%/pootle/scripts/hooks.pyc
+%%PYTHON_SITELIBDIR%%/pootle/scripts/hooks.pyo
+%%PYTHON_SITELIBDIR%%/pootle/scripts/sumo.py
+%%PYTHON_SITELIBDIR%%/pootle/scripts/sumo.pyc
+%%PYTHON_SITELIBDIR%%/pootle/scripts/sumo.pyo
 %%PYTHON_SITELIBDIR%%/pootle/scripts/convert/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle/scripts/convert/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle/scripts/convert/__init__.pyo
@@ -343,15 +201,6 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle/scripts/convert/po2lang.py
 %%PYTHON_SITELIBDIR%%/pootle/scripts/convert/po2lang.pyc
 %%PYTHON_SITELIBDIR%%/pootle/scripts/convert/po2lang.pyo
-%%PYTHON_SITELIBDIR%%/pootle/scripts/hooks.py
-%%PYTHON_SITELIBDIR%%/pootle/scripts/hooks.pyc
-%%PYTHON_SITELIBDIR%%/pootle/scripts/hooks.pyo
-%%PYTHON_SITELIBDIR%%/pootle/scripts/sumo.py
-%%PYTHON_SITELIBDIR%%/pootle/scripts/sumo.pyc
-%%PYTHON_SITELIBDIR%%/pootle/scripts/sumo.pyo
-%%PYTHON_SITELIBDIR%%/pootle/settings.py
-%%PYTHON_SITELIBDIR%%/pootle/settings.pyc
-%%PYTHON_SITELIBDIR%%/pootle/settings.pyo
 %%PYTHON_SITELIBDIR%%/pootle/tools/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle/tools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle/tools/__init__.pyo
@@ -367,9 +216,6 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle/tools/updatetm.py
 %%PYTHON_SITELIBDIR%%/pootle/tools/updatetm.pyc
 %%PYTHON_SITELIBDIR%%/pootle/tools/updatetm.pyo
-%%PYTHON_SITELIBDIR%%/pootle/urls.py
-%%PYTHON_SITELIBDIR%%/pootle/urls.pyc
-%%PYTHON_SITELIBDIR%%/pootle/urls.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle_app/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/__init__.pyo
@@ -382,6 +228,21 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle_app/forms.py
 %%PYTHON_SITELIBDIR%%/pootle_app/forms.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/forms.pyo
+%%PYTHON_SITELIBDIR%%/pootle_app/project_tree.py
+%%PYTHON_SITELIBDIR%%/pootle_app/project_tree.pyc
+%%PYTHON_SITELIBDIR%%/pootle_app/project_tree.pyo
+%%PYTHON_SITELIBDIR%%/pootle_app/tests.py
+%%PYTHON_SITELIBDIR%%/pootle_app/tests.pyc
+%%PYTHON_SITELIBDIR%%/pootle_app/tests.pyo
+%%PYTHON_SITELIBDIR%%/pootle_app/url_manip.py
+%%PYTHON_SITELIBDIR%%/pootle_app/url_manip.pyc
+%%PYTHON_SITELIBDIR%%/pootle_app/url_manip.pyo
+%%PYTHON_SITELIBDIR%%/pootle_app/url_state.py
+%%PYTHON_SITELIBDIR%%/pootle_app/url_state.pyc
+%%PYTHON_SITELIBDIR%%/pootle_app/url_state.pyo
+%%PYTHON_SITELIBDIR%%/pootle_app/urls.py
+%%PYTHON_SITELIBDIR%%/pootle_app/urls.pyc
+%%PYTHON_SITELIBDIR%%/pootle_app/urls.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle_app/lib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/lib/__init__.pyo
@@ -406,90 +267,46 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle_app/management/commands/refresh_stats.py
 %%PYTHON_SITELIBDIR%%/pootle_app/management/commands/refresh_stats.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/management/commands/refresh_stats.pyo
+%%PYTHON_SITELIBDIR%%/pootle_app/management/commands/sync_stores.py
+%%PYTHON_SITELIBDIR%%/pootle_app/management/commands/sync_stores.pyc
+%%PYTHON_SITELIBDIR%%/pootle_app/management/commands/sync_stores.pyo
+%%PYTHON_SITELIBDIR%%/pootle_app/management/commands/update_stores.py
+%%PYTHON_SITELIBDIR%%/pootle_app/management/commands/update_stores.pyc
+%%PYTHON_SITELIBDIR%%/pootle_app/management/commands/update_stores.pyo
+%%PYTHON_SITELIBDIR%%/pootle_app/management/commands/update_from_templates.py
+%%PYTHON_SITELIBDIR%%/pootle_app/management/commands/update_from_templates.pyc
+%%PYTHON_SITELIBDIR%%/pootle_app/management/commands/update_from_templates.pyo
+%%PYTHON_SITELIBDIR%%/pootle_app/management/commands/updatedb.py
+%%PYTHON_SITELIBDIR%%/pootle_app/management/commands/updatedb.pyc
+%%PYTHON_SITELIBDIR%%/pootle_app/management/commands/updatedb.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/models/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle_app/models/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/models/__init__.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/models/directory.py
 %%PYTHON_SITELIBDIR%%/pootle_app/models/directory.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/models/directory.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/models/language.py
-%%PYTHON_SITELIBDIR%%/pootle_app/models/language.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/models/language.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/models/permissions.py
 %%PYTHON_SITELIBDIR%%/pootle_app/models/permissions.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/models/permissions.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/models/profile.py
-%%PYTHON_SITELIBDIR%%/pootle_app/models/profile.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/models/profile.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/models/project.py
-%%PYTHON_SITELIBDIR%%/pootle_app/models/project.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/models/project.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/models/search.py
-%%PYTHON_SITELIBDIR%%/pootle_app/models/search.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/models/search.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/models/signals.py
 %%PYTHON_SITELIBDIR%%/pootle_app/models/signals.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/models/signals.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/models/store_iteration.py
-%%PYTHON_SITELIBDIR%%/pootle_app/models/store_iteration.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/models/store_iteration.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/models/submission.py
-%%PYTHON_SITELIBDIR%%/pootle_app/models/submission.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/models/submission.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/models/suggestion.py
 %%PYTHON_SITELIBDIR%%/pootle_app/models/suggestion.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/models/suggestion.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/models/translation_project.py
-%%PYTHON_SITELIBDIR%%/pootle_app/models/translation_project.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/models/translation_project.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/project_tree.py
-%%PYTHON_SITELIBDIR%%/pootle_app/project_tree.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/project_tree.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/admin/admin_general.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/admin/admin_general_languages.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/admin/admin_general_permissions.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/admin/admin_general_projects.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/admin/admin_general_settings.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/admin/admin_general_users.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/index/about.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/index/index.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/index/login.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/language/item_block.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/language/item_stats.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/language/item_summary.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/language/item_title.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/language/language_admin.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/language/language_index.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/language/search.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/language/tp_admin_files.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/language/tp_admin_permissions.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/language/tp_overview.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/language/tp_review.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/language/tp_translate.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/language/translatepage.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/project/project.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/project/project_admin.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/project/projects.html
 %%PYTHON_SITELIBDIR%%/pootle_app/templates/top_contributers_table.html
-%%PYTHON_SITELIBDIR%%/pootle_app/templates/translation_summary_legend.html
-%%PYTHON_SITELIBDIR%%/pootle_app/tests.py
-%%PYTHON_SITELIBDIR%%/pootle_app/tests.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/tests.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/unit_update.py
-%%PYTHON_SITELIBDIR%%/pootle_app/unit_update.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/unit_update.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/url_manip.py
-%%PYTHON_SITELIBDIR%%/pootle_app/url_manip.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/url_manip.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/url_state.py
-%%PYTHON_SITELIBDIR%%/pootle_app/url_state.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/url_state.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/urls.py
-%%PYTHON_SITELIBDIR%%/pootle_app/urls.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/urls.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/views/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle_app/views/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/views/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pootle_app/views/base.py
+%%PYTHON_SITELIBDIR%%/pootle_app/views/base.pyc
+%%PYTHON_SITELIBDIR%%/pootle_app/views/base.pyo
+%%PYTHON_SITELIBDIR%%/pootle_app/views/pagelayout.py
+%%PYTHON_SITELIBDIR%%/pootle_app/views/pagelayout.pyc
+%%PYTHON_SITELIBDIR%%/pootle_app/views/pagelayout.pyo
+%%PYTHON_SITELIBDIR%%/pootle_app/views/top_stats.py
+%%PYTHON_SITELIBDIR%%/pootle_app/views/top_stats.pyc
+%%PYTHON_SITELIBDIR%%/pootle_app/views/top_stats.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/views/admin/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle_app/views/admin/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/views/admin/__init__.pyo
@@ -508,15 +325,18 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle_app/views/admin/adminusers.py
 %%PYTHON_SITELIBDIR%%/pootle_app/views/admin/adminusers.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/views/admin/adminusers.pyo
+%%PYTHON_SITELIBDIR%%/pootle_app/views/admin/dashboard.py
+%%PYTHON_SITELIBDIR%%/pootle_app/views/admin/dashboard.pyc
+%%PYTHON_SITELIBDIR%%/pootle_app/views/admin/dashboard.pyo
+%%PYTHON_SITELIBDIR%%/pootle_app/views/admin/permissions.py
+%%PYTHON_SITELIBDIR%%/pootle_app/views/admin/permissions.pyc
+%%PYTHON_SITELIBDIR%%/pootle_app/views/admin/permissions.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/views/admin/urls.py
 %%PYTHON_SITELIBDIR%%/pootle_app/views/admin/urls.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/views/admin/urls.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/views/admin/util.py
 %%PYTHON_SITELIBDIR%%/pootle_app/views/admin/util.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/views/admin/util.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/base.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/base.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/base.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/views/index/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle_app/views/index/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/views/index/__init__.pyo
@@ -526,12 +346,6 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle_app/views/index/index.py
 %%PYTHON_SITELIBDIR%%/pootle_app/views/index/index.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/views/index/index.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/index/login.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/index/login.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/index/login.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/index/logout.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/index/logout.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/index/logout.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/views/index/robots.py
 %%PYTHON_SITELIBDIR%%/pootle_app/views/index/robots.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/views/index/robots.pyo
@@ -541,84 +355,57 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/__init__.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/admin_files.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/admin_files.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/admin_files.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/admin_permissions.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/admin_permissions.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/admin_permissions.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/dispatch.py
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/dispatch.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/dispatch.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/item_dict.py
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/item_dict.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/item_dict.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/language_admin.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/language_admin.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/language_admin.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/language_index.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/language_index.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/language_index.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/navbar_dict.py
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/navbar_dict.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/navbar_dict.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/project_index.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/project_index.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/project_index.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/search_forms.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/search_forms.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/search_forms.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/tp_common.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/tp_common.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/tp_common.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/tp_review.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/tp_review.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/tp_review.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/tp_translate.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/tp_translate.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/tp_translate.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/translate_page.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/translate_page.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/language/translate_page.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/urls.py
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/urls.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/urls.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/view.py
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/view.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/views/language/view.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/pagelayout.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/pagelayout.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/pagelayout.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/profile/__init__.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/profile/__init__.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/profile/__init__.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/profile/view.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/profile/view.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/profile/view.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/project/__init__.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/project/__init__.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/project/__init__.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/project/project_admin.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/project/project_admin.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/project/project_admin.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/project/project_language_index.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/project/project_language_index.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/project/project_language_index.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/project/projects_index.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/project/projects_index.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/project/projects_index.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/project/urls.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/project/urls.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/project/urls.pyo
-%%PYTHON_SITELIBDIR%%/pootle_app/views/top_stats.py
-%%PYTHON_SITELIBDIR%%/pootle_app/views/top_stats.pyc
-%%PYTHON_SITELIBDIR%%/pootle_app/views/top_stats.pyo
+%%PYTHON_SITELIBDIR%%/pootle_app/templates/translation_summary_legend.html
+%%PYTHON_SITELIBDIR%%/pootle_app/templates/admin/admin_general.html
+%%PYTHON_SITELIBDIR%%/pootle_app/templates/admin/admin_general_languages.html
+%%PYTHON_SITELIBDIR%%/pootle_app/templates/admin/admin_general_permissions.html
+%%PYTHON_SITELIBDIR%%/pootle_app/templates/admin/admin_general_projects.html
+%%PYTHON_SITELIBDIR%%/pootle_app/templates/admin/admin_general_settings.html
+%%PYTHON_SITELIBDIR%%/pootle_app/templates/admin/admin_general_users.html
+%%PYTHON_SITELIBDIR%%/pootle_app/templates/admin/dashboard.html
+%%PYTHON_SITELIBDIR%%/pootle_app/templates/admin/rss_widget.html
+%%PYTHON_SITELIBDIR%%/pootle_app/templates/index/about.html
+%%PYTHON_SITELIBDIR%%/pootle_app/templates/index/index.html
+%%PYTHON_SITELIBDIR%%/pootle_app/templates/index/login.html
+%%PYTHON_SITELIBDIR%%/pootle_app/templates/language/item_block.html
+%%PYTHON_SITELIBDIR%%/pootle_app/templates/language/item_stats.html
+%%PYTHON_SITELIBDIR%%/pootle_app/templates/language/item_summary.html
+%%PYTHON_SITELIBDIR%%/pootle_app/templates/language/item_title.html
 %%PYTHON_SITELIBDIR%%/pootle_autonotices/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle_autonotices/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle_autonotices/__init__.pyo
 %%PYTHON_SITELIBDIR%%/pootle_autonotices/signals.py
 %%PYTHON_SITELIBDIR%%/pootle_autonotices/signals.pyc
 %%PYTHON_SITELIBDIR%%/pootle_autonotices/signals.pyo
+%%PYTHON_SITELIBDIR%%/pootle_language/__init__.py
+%%PYTHON_SITELIBDIR%%/pootle_language/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pootle_language/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pootle_language/models.py
+%%PYTHON_SITELIBDIR%%/pootle_language/models.pyc
+%%PYTHON_SITELIBDIR%%/pootle_language/models.pyo
+%%PYTHON_SITELIBDIR%%/pootle_language/urls.py
+%%PYTHON_SITELIBDIR%%/pootle_language/urls.pyc
+%%PYTHON_SITELIBDIR%%/pootle_language/urls.pyo
+%%PYTHON_SITELIBDIR%%/pootle_language/views.py
+%%PYTHON_SITELIBDIR%%/pootle_language/views.pyc
+%%PYTHON_SITELIBDIR%%/pootle_language/views.pyo
+%%PYTHON_SITELIBDIR%%/pootle_language/templates/language/language_admin.html
+%%PYTHON_SITELIBDIR%%/pootle_language/templates/language/language_index.html
 %%PYTHON_SITELIBDIR%%/pootle_misc/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle_misc/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle_misc/__init__.pyo
@@ -637,6 +424,15 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle_misc/dbupdate.py
 %%PYTHON_SITELIBDIR%%/pootle_misc/dbupdate.pyc
 %%PYTHON_SITELIBDIR%%/pootle_misc/dbupdate.pyo
+%%PYTHON_SITELIBDIR%%/pootle_misc/forms.py
+%%PYTHON_SITELIBDIR%%/pootle_misc/forms.pyc
+%%PYTHON_SITELIBDIR%%/pootle_misc/forms.pyo
+%%PYTHON_SITELIBDIR%%/pootle_misc/siteconfig.py
+%%PYTHON_SITELIBDIR%%/pootle_misc/siteconfig.pyc
+%%PYTHON_SITELIBDIR%%/pootle_misc/siteconfig.pyo
+%%PYTHON_SITELIBDIR%%/pootle_misc/util.py
+%%PYTHON_SITELIBDIR%%/pootle_misc/util.pyc
+%%PYTHON_SITELIBDIR%%/pootle_misc/util.pyo
 %%PYTHON_SITELIBDIR%%/pootle_misc/middleware/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle_misc/middleware/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle_misc/middleware/__init__.pyo
@@ -646,12 +442,12 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle_misc/middleware/errorpages.py
 %%PYTHON_SITELIBDIR%%/pootle_misc/middleware/errorpages.pyc
 %%PYTHON_SITELIBDIR%%/pootle_misc/middleware/errorpages.pyo
+%%PYTHON_SITELIBDIR%%/pootle_misc/middleware/pootle_path.py
+%%PYTHON_SITELIBDIR%%/pootle_misc/middleware/pootle_path.pyc
+%%PYTHON_SITELIBDIR%%/pootle_misc/middleware/pootle_path.pyo
 %%PYTHON_SITELIBDIR%%/pootle_misc/middleware/siteconfig.py
 %%PYTHON_SITELIBDIR%%/pootle_misc/middleware/siteconfig.pyc
 %%PYTHON_SITELIBDIR%%/pootle_misc/middleware/siteconfig.pyo
-%%PYTHON_SITELIBDIR%%/pootle_misc/siteconfig.py
-%%PYTHON_SITELIBDIR%%/pootle_misc/siteconfig.pyc
-%%PYTHON_SITELIBDIR%%/pootle_misc/siteconfig.pyo
 %%PYTHON_SITELIBDIR%%/pootle_misc/templatetags/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle_misc/templatetags/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle_misc/templatetags/__init__.pyo
@@ -664,9 +460,6 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle_misc/templatetags/render_pager.py
 %%PYTHON_SITELIBDIR%%/pootle_misc/templatetags/render_pager.pyc
 %%PYTHON_SITELIBDIR%%/pootle_misc/templatetags/render_pager.pyo
-%%PYTHON_SITELIBDIR%%/pootle_misc/util.py
-%%PYTHON_SITELIBDIR%%/pootle_misc/util.pyc
-%%PYTHON_SITELIBDIR%%/pootle_misc/util.pyo
 %%PYTHON_SITELIBDIR%%/pootle_notifications/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle_notifications/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle_notifications/__init__.pyo
@@ -676,38 +469,144 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle_notifications/models.py
 %%PYTHON_SITELIBDIR%%/pootle_notifications/models.pyc
 %%PYTHON_SITELIBDIR%%/pootle_notifications/models.pyo
-%%PYTHON_SITELIBDIR%%/pootle_notifications/templates/latest_news_snippet.html
-%%PYTHON_SITELIBDIR%%/pootle_notifications/templates/notice_body.html
-%%PYTHON_SITELIBDIR%%/pootle_notifications/templates/notice_title.html
-%%PYTHON_SITELIBDIR%%/pootle_notifications/templates/notices.html
-%%PYTHON_SITELIBDIR%%/pootle_notifications/templates/viewnotice.html
-%%PYTHON_SITELIBDIR%%/pootle_notifications/templatetags/__init__.py
-%%PYTHON_SITELIBDIR%%/pootle_notifications/templatetags/__init__.pyc
-%%PYTHON_SITELIBDIR%%/pootle_notifications/templatetags/__init__.pyo
-%%PYTHON_SITELIBDIR%%/pootle_notifications/templatetags/notification_tags.py
-%%PYTHON_SITELIBDIR%%/pootle_notifications/templatetags/notification_tags.pyc
-%%PYTHON_SITELIBDIR%%/pootle_notifications/templatetags/notification_tags.pyo
 %%PYTHON_SITELIBDIR%%/pootle_notifications/urls.py
 %%PYTHON_SITELIBDIR%%/pootle_notifications/urls.pyc
 %%PYTHON_SITELIBDIR%%/pootle_notifications/urls.pyo
 %%PYTHON_SITELIBDIR%%/pootle_notifications/views.py
 %%PYTHON_SITELIBDIR%%/pootle_notifications/views.pyc
 %%PYTHON_SITELIBDIR%%/pootle_notifications/views.pyo
+%%PYTHON_SITELIBDIR%%/pootle_notifications/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/pootle_notifications/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pootle_notifications/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pootle_notifications/templatetags/notification_tags.py
+%%PYTHON_SITELIBDIR%%/pootle_notifications/templatetags/notification_tags.pyc
+%%PYTHON_SITELIBDIR%%/pootle_notifications/templatetags/notification_tags.pyo
+%%PYTHON_SITELIBDIR%%/pootle_notifications/templates/latest_news_snippet.html
+%%PYTHON_SITELIBDIR%%/pootle_notifications/templates/notice_body.html
+%%PYTHON_SITELIBDIR%%/pootle_notifications/templates/notice_title.html
+%%PYTHON_SITELIBDIR%%/pootle_notifications/templates/notices.html
+%%PYTHON_SITELIBDIR%%/pootle_notifications/templates/viewnotice.html
+%%PYTHON_SITELIBDIR%%/pootle_profile/__init__.py
+%%PYTHON_SITELIBDIR%%/pootle_profile/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pootle_profile/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pootle_profile/models.py
+%%PYTHON_SITELIBDIR%%/pootle_profile/models.pyc
+%%PYTHON_SITELIBDIR%%/pootle_profile/models.pyo
+%%PYTHON_SITELIBDIR%%/pootle_profile/urls.py
+%%PYTHON_SITELIBDIR%%/pootle_profile/urls.pyc
+%%PYTHON_SITELIBDIR%%/pootle_profile/urls.pyo
+%%PYTHON_SITELIBDIR%%/pootle_profile/views.py
+%%PYTHON_SITELIBDIR%%/pootle_profile/views.pyc
+%%PYTHON_SITELIBDIR%%/pootle_profile/views.pyo
+%%PYTHON_SITELIBDIR%%/pootle_project/__init__.py
+%%PYTHON_SITELIBDIR%%/pootle_project/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pootle_project/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pootle_project/models.py
+%%PYTHON_SITELIBDIR%%/pootle_project/models.pyc
+%%PYTHON_SITELIBDIR%%/pootle_project/models.pyo
+%%PYTHON_SITELIBDIR%%/pootle_project/urls.py
+%%PYTHON_SITELIBDIR%%/pootle_project/urls.pyc
+%%PYTHON_SITELIBDIR%%/pootle_project/urls.pyo
+%%PYTHON_SITELIBDIR%%/pootle_project/views.py
+%%PYTHON_SITELIBDIR%%/pootle_project/views.pyc
+%%PYTHON_SITELIBDIR%%/pootle_project/views.pyo
+%%PYTHON_SITELIBDIR%%/pootle_project/templates/project/admin_permissions.html
+%%PYTHON_SITELIBDIR%%/pootle_project/templates/project/project.html
+%%PYTHON_SITELIBDIR%%/pootle_project/templates/project/project_admin.html
+%%PYTHON_SITELIBDIR%%/pootle_project/templates/project/projects.html
+%%PYTHON_SITELIBDIR%%/pootle_statistics/__init__.py
+%%PYTHON_SITELIBDIR%%/pootle_statistics/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pootle_statistics/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pootle_statistics/models.py
+%%PYTHON_SITELIBDIR%%/pootle_statistics/models.pyc
+%%PYTHON_SITELIBDIR%%/pootle_statistics/models.pyo
 %%PYTHON_SITELIBDIR%%/pootle_store/__init__.py
 %%PYTHON_SITELIBDIR%%/pootle_store/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pootle_store/__init__.pyo
 %%PYTHON_SITELIBDIR%%/pootle_store/fields.py
 %%PYTHON_SITELIBDIR%%/pootle_store/fields.pyc
 %%PYTHON_SITELIBDIR%%/pootle_store/fields.pyo
+%%PYTHON_SITELIBDIR%%/pootle_store/filetypes.py
+%%PYTHON_SITELIBDIR%%/pootle_store/filetypes.pyc
+%%PYTHON_SITELIBDIR%%/pootle_store/filetypes.pyo
+%%PYTHON_SITELIBDIR%%/pootle_store/forms.py
+%%PYTHON_SITELIBDIR%%/pootle_store/forms.pyc
+%%PYTHON_SITELIBDIR%%/pootle_store/forms.pyo
 %%PYTHON_SITELIBDIR%%/pootle_store/models.py
 %%PYTHON_SITELIBDIR%%/pootle_store/models.pyc
 %%PYTHON_SITELIBDIR%%/pootle_store/models.pyo
 %%PYTHON_SITELIBDIR%%/pootle_store/signals.py
 %%PYTHON_SITELIBDIR%%/pootle_store/signals.pyc
 %%PYTHON_SITELIBDIR%%/pootle_store/signals.pyo
+%%PYTHON_SITELIBDIR%%/pootle_store/tests.py
+%%PYTHON_SITELIBDIR%%/pootle_store/tests.pyc
+%%PYTHON_SITELIBDIR%%/pootle_store/tests.pyo
+%%PYTHON_SITELIBDIR%%/pootle_store/urls.py
+%%PYTHON_SITELIBDIR%%/pootle_store/urls.pyc
+%%PYTHON_SITELIBDIR%%/pootle_store/urls.pyo
 %%PYTHON_SITELIBDIR%%/pootle_store/util.py
 %%PYTHON_SITELIBDIR%%/pootle_store/util.pyc
 %%PYTHON_SITELIBDIR%%/pootle_store/util.pyo
+%%PYTHON_SITELIBDIR%%/pootle_store/views.py
+%%PYTHON_SITELIBDIR%%/pootle_store/views.pyc
+%%PYTHON_SITELIBDIR%%/pootle_store/views.pyo
+%%PYTHON_SITELIBDIR%%/pootle_store/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/pootle_store/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pootle_store/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pootle_store/templatetags/store_tags.py
+%%PYTHON_SITELIBDIR%%/pootle_store/templatetags/store_tags.pyc
+%%PYTHON_SITELIBDIR%%/pootle_store/templatetags/store_tags.pyo
+%%PYTHON_SITELIBDIR%%/pootle_store/templates/store/translate.html
+%%PYTHON_SITELIBDIR%%/pootle_store/templates/store/translate_end.html
+%%PYTHON_SITELIBDIR%%/pootle_store/templates/store/translate_table.html
+%%PYTHON_SITELIBDIR%%/pootle_store/templates/unit/edit.html
+%%PYTHON_SITELIBDIR%%/pootle_store/templates/unit/view.html
+%%PYTHON_SITELIBDIR%%/pootle_terminology/__init__.py
+%%PYTHON_SITELIBDIR%%/pootle_terminology/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pootle_terminology/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pootle_terminology/urls.py
+%%PYTHON_SITELIBDIR%%/pootle_terminology/urls.pyc
+%%PYTHON_SITELIBDIR%%/pootle_terminology/urls.pyo
+%%PYTHON_SITELIBDIR%%/pootle_terminology/views.py
+%%PYTHON_SITELIBDIR%%/pootle_terminology/views.pyc
+%%PYTHON_SITELIBDIR%%/pootle_terminology/views.pyo
+%%PYTHON_SITELIBDIR%%/pootle_terminology/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/pootle_terminology/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pootle_terminology/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pootle_terminology/templatetags/terminology_tags.py
+%%PYTHON_SITELIBDIR%%/pootle_terminology/templatetags/terminology_tags.pyc
+%%PYTHON_SITELIBDIR%%/pootle_terminology/templatetags/terminology_tags.pyo
+%%PYTHON_SITELIBDIR%%/pootle_terminology/templates/terminology/extract.html
+%%PYTHON_SITELIBDIR%%/pootle_terminology/templates/terminology/manage.html
+%%PYTHON_SITELIBDIR%%/pootle_terminology/templates/terminology/term_edit.html
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/__init__.py
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/forms.py
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/forms.pyc
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/forms.pyo
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/models.py
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/models.pyc
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/models.pyo
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/urls.py
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/urls.pyc
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/urls.pyo
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/views.py
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/views.pyc
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/views.pyo
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/templatetags/translation_project_tags.py
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/templatetags/translation_project_tags.pyc
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/templatetags/translation_project_tags.pyo
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/templates/translation_project/fileop_forms.html
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/templates/translation_project/search.html
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/templates/translation_project/tp_admin_files.html
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/templates/translation_project/tp_admin_permissions.html
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/templates/translation_project/tp_overview.html
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/templates/translation_project/tp_review.html
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/templates/translation_project/tp_translate.html
 %%PYTHON_SITELIBDIR%%/profiles/__init__.py
 %%PYTHON_SITELIBDIR%%/profiles/__init__.pyc
 %%PYTHON_SITELIBDIR%%/profiles/__init__.pyo
@@ -744,36 +643,233 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/registration/views.py
 %%PYTHON_SITELIBDIR%%/registration/views.pyc
 %%PYTHON_SITELIBDIR%%/registration/views.pyo
-@unexec if cmp -s %D/etc/pootle/localsettings.py %D/etc/pootle/localsettings.py.sample; then rm -f %D/etc/pootle/localsettings.py; fi
-etc/pootle/localsettings.py.sample
-@exec [ -f %B/localsettings.py ] || cp %B/%f %B/localsettings.py
+share/pootle/templates/403.html
+share/pootle/templates/404.html
+share/pootle/templates/500.html
+share/pootle/templates/admin_profile_base.html
+share/pootle/templates/admin_profile_menu.html
+share/pootle/templates/base.html
+share/pootle/templates/captcha.html
+share/pootle/templates/docs.html
+share/pootle/templates/language_base.html
+share/pootle/templates/language_menu.html
+share/pootle/templates/project_base.html
+share/pootle/templates/project_menu.html
+share/pootle/templates/tp_base.html
+share/pootle/templates/tp_base_admin.html
+share/pootle/templates/tp_base_extended.html
+share/pootle/templates/tp_base_terminology.html
+share/pootle/templates/tp_menu.html
+share/pootle/templates/user_profile_base.html
+share/pootle/templates/user_profile_base_extended.html
+share/pootle/templates/user_profile_menu.html
+share/pootle/templates/admin/base_site.html
+share/pootle/templates/contact_form/contact_form.html
+share/pootle/templates/contact_form/contact_form.txt
+share/pootle/templates/contact_form/contact_form_sent.html
+share/pootle/templates/contact_form/contact_form_subject.txt
+share/pootle/templates/docs/howto.html
+share/pootle/templates/docs/index.html
+share/pootle/templates/docs/resources.html
+share/pootle/templates/profiles/edit_personal.html
+share/pootle/templates/profiles/edit_profile.html
+share/pootle/templates/profiles/profile_detail.html
+share/pootle/templates/profiles/profile_list.html
+share/pootle/templates/registration/activate.html
+share/pootle/templates/registration/activation_email.html
+share/pootle/templates/registration/activation_email.txt
+share/pootle/templates/registration/activation_email_subject.txt
+share/pootle/templates/registration/password_change_done.html
+share/pootle/templates/registration/password_change_form.html
+share/pootle/templates/registration/password_reset_complete.html
+share/pootle/templates/registration/password_reset_confirm.html
+share/pootle/templates/registration/password_reset_done.html
+share/pootle/templates/registration/password_reset_email.html
+share/pootle/templates/registration/password_reset_form.html
+share/pootle/templates/registration/registration_complete.html
+share/pootle/templates/registration/registration_form.html
+share/pootle/html/admin.css
+share/pootle/html/favicon.ico
+share/pootle/html/style.css
+share/pootle/html/translate.css
+share/pootle/html/images/accept.png
+share/pootle/html/images/apertium.png
+share/pootle/html/images/arrow_refresh.png
+share/pootle/html/images/arrow_up.png
+share/pootle/html/images/asc.gif
+share/pootle/html/images/ascdesc.gif
+share/pootle/html/images/book_next.png
+share/pootle/html/images/comment_add.png
+share/pootle/html/images/context.png
+share/pootle/html/images/copy.png
+share/pootle/html/images/cross.png
+share/pootle/html/images/cyan-bar.png
+share/pootle/html/images/database_save.png
+share/pootle/html/images/desc.gif
+share/pootle/html/images/door_in.png
+share/pootle/html/images/drive_network.png
+share/pootle/html/images/edit.png
+share/pootle/html/images/email_go.png
+share/pootle/html/images/error.png
+share/pootle/html/images/feed.png
+share/pootle/html/images/folder.png
+share/pootle/html/images/gap.png
+share/pootle/html/images/footer-border.png
+share/pootle/html/images/good.png
+share/pootle/html/images/google-translate.png
+share/pootle/html/images/green-bar.png
+share/pootle/html/images/header-background-bottom.png
+share/pootle/html/images/header-background.png
+share/pootle/html/images/help.png
+share/pootle/html/images/information.png
+share/pootle/html/images/key_go.png
+share/pootle/html/images/logo.png
+share/pootle/html/images/newspaper_go.png
+share/pootle/html/images/next.png
+share/pootle/html/images/next2.png
+share/pootle/html/images/none.png
+share/pootle/html/images/page-bg.jpg
+share/pootle/html/images/page.png
+share/pootle/html/images/page_get.png
+share/pootle/html/images/page_refresh.png
+share/pootle/html/images/prev.png
+share/pootle/html/images/prev2.png
+share/pootle/html/images/purple-bar.png
+share/pootle/html/images/red-bar.png
+share/pootle/html/images/sarrow_down.png
+share/pootle/html/images/sarrow_down_rtl.png
+share/pootle/html/images/sarrow_up.png
+share/pootle/html/images/sarrow_up_rtl.png
+share/pootle/html/images/script_code.png
+share/pootle/html/images/search-arrow.png
+share/pootle/html/images/squiggle.png
+share/pootle/html/images/suggest.png
+share/pootle/html/images/throbber.gif
+share/pootle/html/images/tick.png
+share/pootle/html/images/user_comment.png
+share/pootle/html/images/user_go.png
+share/pootle/html/images/warning.png
+share/pootle/html/js/README
+share/pootle/html/js/admin.js
+share/pootle/html/js/correctpng.js
+share/pootle/html/js/json2.min.js
+share/pootle/html/js/search.js
+share/pootle/html/js/sorttable.js
+share/pootle/html/js/translatepage.js
+share/pootle/html/js/jquery/jquery.bidi.js
+share/pootle/html/js/jquery/jquery.caret.js
+share/pootle/html/js/jquery/jquery.cookie.js
+share/pootle/html/js/jquery/jquery.fieldselection.js
+share/pootle/html/js/jquery/jquery.min.js
+share/pootle/html/js/jquery/jquery.scrollTo.min.js
+share/pootle/html/js/jquery/jquery.textarea-expander.js
+share/pootle/html/js/mt/apertium.js
+share/pootle/html/js/mt/google-translate.js
+share/pootle/mo/README
+share/pootle/mo/af/LC_MESSAGES/django.mo
+share/pootle/mo/ak/LC_MESSAGES/django.mo
+share/pootle/mo/am/LC_MESSAGES/django.mo
+share/pootle/mo/ar/LC_MESSAGES/django.mo
+share/pootle/mo/ast/LC_MESSAGES/django.mo
+share/pootle/mo/az/LC_MESSAGES/django.mo
+share/pootle/mo/be/LC_MESSAGES/django.mo
+share/pootle/mo/bg/LC_MESSAGES/django.mo
+share/pootle/mo/bn/LC_MESSAGES/django.mo
+share/pootle/mo/bn_IN/LC_MESSAGES/django.mo
+share/pootle/mo/bo/LC_MESSAGES/django.mo
+share/pootle/mo/br/LC_MESSAGES/django.mo
+share/pootle/mo/ca/LC_MESSAGES/django.mo
+share/pootle/mo/ca@valencia/LC_MESSAGES/django.mo
+share/pootle/mo/cs/LC_MESSAGES/django.mo
+share/pootle/mo/da/LC_MESSAGES/django.mo
+share/pootle/mo/de/LC_MESSAGES/django.mo
+share/pootle/mo/dz/LC_MESSAGES/django.mo
+share/pootle/mo/el/LC_MESSAGES/django.mo
+share/pootle/mo/en_GB/LC_MESSAGES/django.mo
+share/pootle/mo/en_ZA/LC_MESSAGES/django.mo
+share/pootle/mo/eo/LC_MESSAGES/django.mo
+share/pootle/mo/es/LC_MESSAGES/django.mo
+share/pootle/mo/et/LC_MESSAGES/django.mo
+share/pootle/mo/eu/LC_MESSAGES/django.mo
+share/pootle/mo/fa/LC_MESSAGES/django.mo
+share/pootle/mo/fi/LC_MESSAGES/django.mo
+share/pootle/mo/fo/LC_MESSAGES/django.mo
+share/pootle/mo/fr/LC_MESSAGES/django.mo
+share/pootle/mo/fur/LC_MESSAGES/django.mo
+share/pootle/mo/ga/LC_MESSAGES/django.mo
+share/pootle/mo/gl/LC_MESSAGES/django.mo
+share/pootle/mo/ha/LC_MESSAGES/django.mo
+share/pootle/mo/he/LC_MESSAGES/django.mo
+share/pootle/mo/hi/LC_MESSAGES/django.mo
+share/pootle/mo/hr/LC_MESSAGES/django.mo
+share/pootle/mo/hu/LC_MESSAGES/django.mo
+share/pootle/mo/hy/LC_MESSAGES/django.mo
+share/pootle/mo/id/LC_MESSAGES/django.mo
+share/pootle/mo/is/LC_MESSAGES/django.mo
+share/pootle/mo/it/LC_MESSAGES/django.mo
+share/pootle/mo/ja/LC_MESSAGES/django.mo
+share/pootle/mo/ka/LC_MESSAGES/django.mo
+share/pootle/mo/kg/LC_MESSAGES/django.mo
+share/pootle/mo/km/LC_MESSAGES/django.mo
+share/pootle/mo/kn/LC_MESSAGES/django.mo
+share/pootle/mo/ko/LC_MESSAGES/django.mo
+share/pootle/mo/ku/LC_MESSAGES/django.mo
+share/pootle/mo/ky/LC_MESSAGES/django.mo
+share/pootle/mo/ln/LC_MESSAGES/django.mo
+share/pootle/mo/lt/LC_MESSAGES/django.mo
+share/pootle/mo/lv/LC_MESSAGES/django.mo
+share/pootle/mo/mg/LC_MESSAGES/django.mo
+share/pootle/mo/ml/LC_MESSAGES/django.mo
+share/pootle/mo/mn/LC_MESSAGES/django.mo
+share/pootle/mo/mr/LC_MESSAGES/django.mo
+share/pootle/mo/ms/LC_MESSAGES/django.mo
+share/pootle/mo/mt/LC_MESSAGES/django.mo
+share/pootle/mo/nap/LC_MESSAGES/django.mo
+share/pootle/mo/nb/LC_MESSAGES/django.mo
+share/pootle/mo/ne/LC_MESSAGES/django.mo
+share/pootle/mo/nl/LC_MESSAGES/django.mo
+share/pootle/mo/nn/LC_MESSAGES/django.mo
+share/pootle/mo/nso/LC_MESSAGES/django.mo
+share/pootle/mo/pa/LC_MESSAGES/django.mo
+share/pootle/mo/pap/LC_MESSAGES/django.mo
+share/pootle/mo/pl/LC_MESSAGES/django.mo
+share/pootle/mo/pt/LC_MESSAGES/django.mo
+share/pootle/mo/pt_BR/LC_MESSAGES/django.mo
+share/pootle/mo/ro/LC_MESSAGES/django.mo
+share/pootle/mo/ru/LC_MESSAGES/django.mo
+share/pootle/mo/sc/LC_MESSAGES/django.mo
+share/pootle/mo/sk/LC_MESSAGES/django.mo
+share/pootle/mo/sl/LC_MESSAGES/django.mo
+share/pootle/mo/son/LC_MESSAGES/django.mo
+share/pootle/mo/sq/LC_MESSAGES/django.mo
+share/pootle/mo/sr/LC_MESSAGES/django.mo
+share/pootle/mo/st/LC_MESSAGES/django.mo
+share/pootle/mo/sv/LC_MESSAGES/django.mo
+share/pootle/mo/ta/LC_MESSAGES/django.mo
+share/pootle/mo/te/LC_MESSAGES/django.mo
+share/pootle/mo/th/LC_MESSAGES/django.mo
+share/pootle/mo/tl/LC_MESSAGES/django.mo
+share/pootle/mo/tr/LC_MESSAGES/django.mo
+share/pootle/mo/ug/LC_MESSAGES/django.mo
+share/pootle/mo/uk/LC_MESSAGES/django.mo
+share/pootle/mo/ve/LC_MESSAGES/django.mo
+share/pootle/mo/vi/LC_MESSAGES/django.mo
+share/pootle/mo/wo/LC_MESSAGES/django.mo
+share/pootle/mo/xh/LC_MESSAGES/django.mo
+share/pootle/mo/zh_CN/LC_MESSAGES/django.mo
+share/pootle/mo/zh_HK/LC_MESSAGES/django.mo
+share/pootle/mo/zh_TW/LC_MESSAGES/django.mo
+share/pootle/mo/zu/LC_MESSAGES/django.mo
+
+
+
+
 @dirrmtry etc/pootle
-@dirrm %%PYTHON_SITELIBDIR%%/registration
-@dirrm %%PYTHON_SITELIBDIR%%/profiles
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_store
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_notifications/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_notifications/templates
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_notifications
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_misc/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_misc/middleware
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_misc
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_autonotices
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/views/project
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/views/profile
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/views/language
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/views/index
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/views/admin
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/views
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/templates/project
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/templates/language
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/templates/index
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/templates/admin
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/templates
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/models
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/management/commands
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/management
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/lib
-@dirrm %%PYTHON_SITELIBDIR%%/pootle_app
+@dirrm %%PYTHON_SITELIBDIR%%/contact_form_i18n
+@dirrm %%PYTHON_SITELIBDIR%%/djblets/util/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/djblets/util
+@dirrm %%PYTHON_SITELIBDIR%%/djblets/siteconfig
+@dirrm %%PYTHON_SITELIBDIR%%/djblets
 @dirrm %%PYTHON_SITELIBDIR%%/pootle/tools
 @dirrm %%PYTHON_SITELIBDIR%%/pootle/scripts/convert
 @dirrm %%PYTHON_SITELIBDIR%%/pootle/scripts
@@ -784,523 +880,249 @@ etc/pootle/localsettings.py.sample
 @dirrm %%PYTHON_SITELIBDIR%%/pootle/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/pootle/auth
 @dirrm %%PYTHON_SITELIBDIR%%/pootle
-@dirrm %%PYTHON_SITELIBDIR%%/djblets/util/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/djblets/util
-@dirrm %%PYTHON_SITELIBDIR%%/djblets/siteconfig
-@dirrm %%PYTHON_SITELIBDIR%%/djblets
-@dirrm %%DATADIR%%/html/js/jquery
-@dirrm %%DATADIR%%/html/js
-@dirrm %%DATADIR%%/html/images
-@dirrm %%DATADIR%%/html
-@dirrm %%DATADIR%%/templates/registration
-@dirrm %%DATADIR%%/templates/profiles
-@dirrm %%DATADIR%%/templates/docs
-@dirrm %%DATADIR%%/templates/admin
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/mo/zu/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/zu
-@dirrm %%DATADIR%%/mo/zh_TW/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/zh_TW
-@dirrm %%DATADIR%%/mo/zh_HK/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/zh_HK
-@dirrm %%DATADIR%%/mo/zh_CN/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/zh_CN
-@dirrm %%DATADIR%%/mo/xh/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/xh
-@dirrm %%DATADIR%%/mo/wo/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/wo
-@dirrm %%DATADIR%%/mo/vi/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/vi
-@dirrm %%DATADIR%%/mo/ve/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ve
-@dirrm %%DATADIR%%/mo/uk/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/uk
-@dirrm %%DATADIR%%/mo/tr/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/tr
-@dirrm %%DATADIR%%/mo/tl/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/tl
-@dirrm %%DATADIR%%/mo/th/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/th
-@dirrm %%DATADIR%%/mo/te/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/te
-@dirrm %%DATADIR%%/mo/ta/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ta
-@dirrm %%DATADIR%%/mo/sv/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/sv
-@dirrm %%DATADIR%%/mo/st/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/st
-@dirrm %%DATADIR%%/mo/sr/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/sr
-@dirrm %%DATADIR%%/mo/sq/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/sq
-@dirrm %%DATADIR%%/mo/son/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/son
-@dirrm %%DATADIR%%/mo/sl/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/sl
-@dirrm %%DATADIR%%/mo/sk/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/sk
-@dirrm %%DATADIR%%/mo/ru/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ru
-@dirrm %%DATADIR%%/mo/pt_BR/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/pt_BR
-@dirrm %%DATADIR%%/mo/pt/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/pt
-@dirrm %%DATADIR%%/mo/pl/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/pl
-@dirrm %%DATADIR%%/mo/pap/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/pap
-@dirrm %%DATADIR%%/mo/pa/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/pa
-@dirrm %%DATADIR%%/mo/nso/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/nso
-@dirrm %%DATADIR%%/mo/nn/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/nn
-@dirrm %%DATADIR%%/mo/nl/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/nl
-@dirrm %%DATADIR%%/mo/ne/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ne
-@dirrm %%DATADIR%%/mo/nb/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/nb
-@dirrm %%DATADIR%%/mo/nap/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/nap
-@dirrm %%DATADIR%%/mo/mt/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/mt
-@dirrm %%DATADIR%%/mo/ms/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ms
-@dirrm %%DATADIR%%/mo/mr/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/mr
-@dirrm %%DATADIR%%/mo/mn/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/mn
-@dirrm %%DATADIR%%/mo/ml/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ml
-@dirrm %%DATADIR%%/mo/mg/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/mg
-@dirrm %%DATADIR%%/mo/lv/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/lv
-@dirrm %%DATADIR%%/mo/lt/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/lt
-@dirrm %%DATADIR%%/mo/ln/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ln
-@dirrm %%DATADIR%%/mo/lg/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/lg
-@dirrm %%DATADIR%%/mo/ky/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ky
-@dirrm %%DATADIR%%/mo/ku/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ku
-@dirrm %%DATADIR%%/mo/ko/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ko
-@dirrm %%DATADIR%%/mo/kn/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/kn
-@dirrm %%DATADIR%%/mo/km/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/km
-@dirrm %%DATADIR%%/mo/kg/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/kg
-@dirrm %%DATADIR%%/mo/ka/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ka
-@dirrm %%DATADIR%%/mo/ja/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ja
-@dirrm %%DATADIR%%/mo/it/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/it
-@dirrm %%DATADIR%%/mo/is/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/is
-@dirrm %%DATADIR%%/mo/id/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/id
-@dirrm %%DATADIR%%/mo/hy/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/hy
-@dirrm %%DATADIR%%/mo/hu/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/hu
-@dirrm %%DATADIR%%/mo/hr/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/hr
-@dirrm %%DATADIR%%/mo/hi/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/hi
-@dirrm %%DATADIR%%/mo/he/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/he
-@dirrm %%DATADIR%%/mo/ha/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ha
-@dirrm %%DATADIR%%/mo/gl/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/gl
-@dirrm %%DATADIR%%/mo/ga/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ga
-@dirrm %%DATADIR%%/mo/fur/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/fur
-@dirrm %%DATADIR%%/mo/fr/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/fr
-@dirrm %%DATADIR%%/mo/fo/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/fo
-@dirrm %%DATADIR%%/mo/fi/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/fi
-@dirrm %%DATADIR%%/mo/fa/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/fa
-@dirrm %%DATADIR%%/mo/eu/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/eu
-@dirrm %%DATADIR%%/mo/et/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/et
-@dirrm %%DATADIR%%/mo/es/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/es
-@dirrm %%DATADIR%%/mo/eo/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/eo
-@dirrm %%DATADIR%%/mo/en_ZA/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/en_ZA
-@dirrm %%DATADIR%%/mo/en_GB/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/en_GB
-@dirrm %%DATADIR%%/mo/en/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/en
-@dirrm %%DATADIR%%/mo/el/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/el
-@dirrm %%DATADIR%%/mo/dz/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/dz
-@dirrm %%DATADIR%%/mo/de/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/de
-@dirrm %%DATADIR%%/mo/da/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/da
-@dirrm %%DATADIR%%/mo/cs/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/cs
-@dirrm %%DATADIR%%/mo/ca@valencia/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ca@valencia
-@dirrm %%DATADIR%%/mo/ca/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ca
-@dirrm %%DATADIR%%/mo/br/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/br
-@dirrm %%DATADIR%%/mo/bo/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/bo
-@dirrm %%DATADIR%%/mo/bn_IN/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/bn_IN
-@dirrm %%DATADIR%%/mo/bn/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/bn
-@dirrm %%DATADIR%%/mo/bg/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/bg
-@dirrm %%DATADIR%%/mo/be/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/be
-@dirrm %%DATADIR%%/mo/az/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/az
-@dirrm %%DATADIR%%/mo/ast/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ast
-@dirrm %%DATADIR%%/mo/ar/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ar
-@dirrm %%DATADIR%%/mo/am/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/am
-@dirrm %%DATADIR%%/mo/ak/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/ak
-@dirrm %%DATADIR%%/mo/af/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/af
-@dirrm %%DATADIR%%/mo
-@dirrm %%DATADIR%%
-@cwd %%POOTLEDBDIR%%
-po/pootle/af/pootle.po
-po/pootle/ak/pootle.po
-po/pootle/am/pootle.po
-po/pootle/ar/pootle.po
-po/pootle/az/pootle.po
-po/pootle/be/pootle.po
-po/pootle/bg/pootle.po
-po/pootle/bn/pootle.po
-po/pootle/bn_IN/pootle.po
-po/pootle/bo/pootle.po
-po/pootle/br/pootle.po
-po/pootle/ca/pootle.po
-po/pootle/ca@valencia/pootle.po
-po/pootle/cs/pootle.po
-po/pootle/da/pootle.po
-po/pootle/de/pootle.po
-po/pootle/dz/pootle.po
-po/pootle/el/pootle.po
-po/pootle/en/pootle.po
-po/pootle/en_GB/pootle.po
-po/pootle/en_ZA/pootle.po
-po/pootle/eo/pootle.po
-po/pootle/es/pootle.po
-po/pootle/et/pootle.po
-po/pootle/eu/pootle.po
-po/pootle/fa/pootle.po
-po/pootle/fi/pootle.po
-po/pootle/fo/pootle.po
-po/pootle/fr/pootle.po
-po/pootle/fur/pootle.po
-po/pootle/ga/pootle.po
-po/pootle/gl/pootle.po
-po/pootle/ha/pootle.po
-po/pootle/he/pootle.po
-po/pootle/hi/pootle.po
-po/pootle/hr/pootle.po
-po/pootle/ht/pootle.po
-po/pootle/hu/pootle.po
-po/pootle/hy/pootle.po
-po/pootle/id/pootle.po
-po/pootle/is/pootle.po
-po/pootle/it/pootle.po
-po/pootle/ja/pootle.po
-po/pootle/ka/pootle.po
-po/pootle/kg/pootle.po
-po/pootle/km/pootle.po
-po/pootle/kn/pootle.po
-po/pootle/ko/pootle.po
-po/pootle/ku/pootle.po
-po/pootle/ky/pootle.po
-po/pootle/ln/pootle.po
-po/pootle/lt/pootle.po
-po/pootle/lv/pootle.po
-po/pootle/mg/pootle.po
-po/pootle/ml/pootle.po
-po/pootle/mn/pootle.po
-po/pootle/mr/pootle.po
-po/pootle/ms/pootle.po
-po/pootle/mt/pootle.po
-po/pootle/nap/pootle.po
-po/pootle/nb/pootle.po
-po/pootle/ne/pootle.po
-po/pootle/nl/pootle.po
-po/pootle/nn/pootle.po
-po/pootle/nso/pootle.po
-po/pootle/pa/pootle.po
-po/pootle/pap/pootle.po
-po/pootle/pl/pootle.po
-po/pootle/ps/pootle.po
-po/pootle/pt/pootle.po
-po/pootle/pt_BR/pootle.po
-po/pootle/ro/pootle.po
-po/pootle/ru/pootle.po
-po/pootle/sk/pootle.po
-po/pootle/sl/pootle.po
-po/pootle/son/pootle.po
-po/pootle/sq/pootle.po
-po/pootle/sr/pootle.po
-po/pootle/st/pootle.po
-po/pootle/sv/pootle.po
-po/pootle/ta/pootle.po
-po/pootle/te/pootle.po
-po/pootle/templates/pootle.pot
-po/pootle/th/pootle.po
-po/pootle/tl/pootle.po
-po/pootle/tr/pootle.po
-po/pootle/uk/pootle.po
-po/pootle/ur/pootle.po
-po/pootle/uz/pootle.po
-po/pootle/ve/pootle.po
-po/pootle/vi/pootle.po
-po/pootle/wo/pootle.po
-po/pootle/xh/pootle.po
-po/pootle/zh_CN/pootle.po
-po/pootle/zh_HK/pootle.po
-po/pootle/zh_TW/pootle.po
-po/pootle/zu/pootle.po
-po/terminology/am/gnome/am.po
-po/terminology/ar/gnome/ar.po
-po/terminology/az/gnome/az.po
-po/terminology/ca/gnome/ca.po
-po/terminology/cs/gnome/cs.po
-po/terminology/da/gnome/da.po
-po/terminology/eo/gnome/eo.po
-po/terminology/es/gnome/es.po
-po/terminology/eu/gnome/eu.po
-po/terminology/fa/gnome/fa.po
-po/terminology/fr/gnome/fr.po
-po/terminology/hi/gnome/hi.po
-po/terminology/hu/gnome/hu.po
-po/terminology/it/gnome/it.po
-po/terminology/ja/gnome/ja.po
-po/terminology/kn/gnome/kn.po
-po/terminology/ku/gnome/ku.po
-po/terminology/mk/gnome/mk.po
-po/terminology/mr/gnome/mr.po
-po/terminology/ms/gnome/ms.po
-po/terminology/nb/gnome/nb.po
-po/terminology/nl/gnome/nl.po
-po/terminology/nn/gnome/nn.po
-po/terminology/pa/gnome/pa.po
-po/terminology/pl/gnome/pl.po
-po/terminology/pt/gnome/pt.po
-po/terminology/pt_BR/gnome/pt_BR.po
-po/terminology/rw/gnome/rw.po
-po/terminology/sk/gnome/sk.po
-po/terminology/sq/gnome/sq.po
-po/terminology/sv/gnome/sv.po
-po/terminology/th/gnome/th.po
-po/terminology/uk/gnome/uk.po
-po/terminology/vi/gnome/vi.po
-po/terminology/wa/gnome/wa.po
-po/terminology/zh_CN/gnome/zh_CN.po
-po/terminology/zh_HK/gnome/zh_HK.po
-po/terminology/zh_TW/gnome/zh_TW.po
-po/tutorial/templates/tutorial.pot
-@dirrmtry po/tutorial/templates
-@dirrmtry po/tutorial
-@dirrmtry po/terminology/zh_TW/gnome
-@dirrmtry po/terminology/zh_TW
-@dirrmtry po/terminology/zh_HK/gnome
-@dirrmtry po/terminology/zh_HK
-@dirrmtry po/terminology/zh_CN/gnome
-@dirrmtry po/terminology/zh_CN
-@dirrmtry po/terminology/wa/gnome
-@dirrmtry po/terminology/wa
-@dirrmtry po/terminology/vi/gnome
-@dirrmtry po/terminology/vi
-@dirrmtry po/terminology/uk/gnome
-@dirrmtry po/terminology/uk
-@dirrmtry po/terminology/th/gnome
-@dirrmtry po/terminology/th
-@dirrmtry po/terminology/sv/gnome
-@dirrmtry po/terminology/sv
-@dirrmtry po/terminology/sq/gnome
-@dirrmtry po/terminology/sq
-@dirrmtry po/terminology/sk/gnome
-@dirrmtry po/terminology/sk
-@dirrmtry po/terminology/rw/gnome
-@dirrmtry po/terminology/rw
-@dirrmtry po/terminology/pt_BR/gnome
-@dirrmtry po/terminology/pt_BR
-@dirrmtry po/terminology/pt/gnome
-@dirrmtry po/terminology/pt
-@dirrmtry po/terminology/pl/gnome
-@dirrmtry po/terminology/pl
-@dirrmtry po/terminology/pa/gnome
-@dirrmtry po/terminology/pa
-@dirrmtry po/terminology/nn/gnome
-@dirrmtry po/terminology/nn
-@dirrmtry po/terminology/nl/gnome
-@dirrmtry po/terminology/nl
-@dirrmtry po/terminology/nb/gnome
-@dirrmtry po/terminology/nb
-@dirrmtry po/terminology/ms/gnome
-@dirrmtry po/terminology/ms
-@dirrmtry po/terminology/mr/gnome
-@dirrmtry po/terminology/mr
-@dirrmtry po/terminology/mk/gnome
-@dirrmtry po/terminology/mk
-@dirrmtry po/terminology/ku/gnome
-@dirrmtry po/terminology/ku
-@dirrmtry po/terminology/kn/gnome
-@dirrmtry po/terminology/kn
-@dirrmtry po/terminology/ja/gnome
-@dirrmtry po/terminology/ja
-@dirrmtry po/terminology/it/gnome
-@dirrmtry po/terminology/it
-@dirrmtry po/terminology/hu/gnome
-@dirrmtry po/terminology/hu
-@dirrmtry po/terminology/hi/gnome
-@dirrmtry po/terminology/hi
-@dirrmtry po/terminology/fr/gnome
-@dirrmtry po/terminology/fr
-@dirrmtry po/terminology/fa/gnome
-@dirrmtry po/terminology/fa
-@dirrmtry po/terminology/eu/gnome
-@dirrmtry po/terminology/eu
-@dirrmtry po/terminology/es/gnome
-@dirrmtry po/terminology/es
-@dirrmtry po/terminology/eo/gnome
-@dirrmtry po/terminology/eo
-@dirrmtry po/terminology/da/gnome
-@dirrmtry po/terminology/da
-@dirrmtry po/terminology/cs/gnome
-@dirrmtry po/terminology/cs
-@dirrmtry po/terminology/ca/gnome
-@dirrmtry po/terminology/ca
-@dirrmtry po/terminology/az/gnome
-@dirrmtry po/terminology/az
-@dirrmtry po/terminology/ar/gnome
-@dirrmtry po/terminology/ar
-@dirrmtry po/terminology/am/gnome
-@dirrmtry po/terminology/am
-@dirrmtry po/terminology
-@dirrmtry po/pootle/zu
-@dirrmtry po/pootle/zh_TW
-@dirrmtry po/pootle/zh_HK
-@dirrmtry po/pootle/zh_CN
-@dirrmtry po/pootle/xh
-@dirrmtry po/pootle/wo
-@dirrmtry po/pootle/vi
-@dirrmtry po/pootle/ve
-@dirrmtry po/pootle/uz
-@dirrmtry po/pootle/ur
-@dirrmtry po/pootle/uk
-@dirrmtry po/pootle/tr
-@dirrmtry po/pootle/tl
-@dirrmtry po/pootle/th
-@dirrmtry po/pootle/templates
-@dirrmtry po/pootle/te
-@dirrmtry po/pootle/ta
-@dirrmtry po/pootle/sv
-@dirrmtry po/pootle/st
-@dirrmtry po/pootle/sr
-@dirrmtry po/pootle/sq
-@dirrmtry po/pootle/son
-@dirrmtry po/pootle/sl
-@dirrmtry po/pootle/sk
-@dirrmtry po/pootle/ru
-@dirrmtry po/pootle/ro
-@dirrmtry po/pootle/pt_BR
-@dirrmtry po/pootle/pt
-@dirrmtry po/pootle/ps
-@dirrmtry po/pootle/pl
-@dirrmtry po/pootle/pap
-@dirrmtry po/pootle/pa
-@dirrmtry po/pootle/nso
-@dirrmtry po/pootle/nn
-@dirrmtry po/pootle/nl
-@dirrmtry po/pootle/ne
-@dirrmtry po/pootle/nb
-@dirrmtry po/pootle/nap
-@dirrmtry po/pootle/mt
-@dirrmtry po/pootle/ms
-@dirrmtry po/pootle/mr
-@dirrmtry po/pootle/mn
-@dirrmtry po/pootle/ml
-@dirrmtry po/pootle/mg
-@dirrmtry po/pootle/lv
-@dirrmtry po/pootle/lt
-@dirrmtry po/pootle/ln
-@dirrmtry po/pootle/ky
-@dirrmtry po/pootle/ku
-@dirrmtry po/pootle/ko
-@dirrmtry po/pootle/kn
-@dirrmtry po/pootle/km
-@dirrmtry po/pootle/kg
-@dirrmtry po/pootle/ka
-@dirrmtry po/pootle/ja
-@dirrmtry po/pootle/it
-@dirrmtry po/pootle/is
-@dirrmtry po/pootle/id
-@dirrmtry po/pootle/hy
-@dirrmtry po/pootle/hu
-@dirrmtry po/pootle/ht
-@dirrmtry po/pootle/hr
-@dirrmtry po/pootle/hi
-@dirrmtry po/pootle/he
-@dirrmtry po/pootle/ha
-@dirrmtry po/pootle/gl
-@dirrmtry po/pootle/ga
-@dirrmtry po/pootle/fur
-@dirrmtry po/pootle/fr
-@dirrmtry po/pootle/fo
-@dirrmtry po/pootle/fi
-@dirrmtry po/pootle/fa
-@dirrmtry po/pootle/eu
-@dirrmtry po/pootle/et
-@dirrmtry po/pootle/es
-@dirrmtry po/pootle/eo
-@dirrmtry po/pootle/en_ZA
-@dirrmtry po/pootle/en_GB
-@dirrmtry po/pootle/en
-@dirrmtry po/pootle/el
-@dirrmtry po/pootle/dz
-@dirrmtry po/pootle/de
-@dirrmtry po/pootle/da
-@dirrmtry po/pootle/cs
-@dirrmtry po/pootle/ca@valencia
-@dirrmtry po/pootle/ca
-@dirrmtry po/pootle/br
-@dirrmtry po/pootle/bo
-@dirrmtry po/pootle/bn_IN
-@dirrmtry po/pootle/bn
-@dirrmtry po/pootle/bg
-@dirrmtry po/pootle/be
-@dirrmtry po/pootle/az
-@dirrmtry po/pootle/ar
-@dirrmtry po/pootle/am
-@dirrmtry po/pootle/ak
-@dirrmtry po/pootle/af
-@dirrmtry po/pootle
-@dirrmtry po
-@dirrmtry dbs
-@cwd /
-@dirrmtry %%POOTLEDBDIR%%
-@dirrmtry %%POOTLELOGDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/templates/language
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/templates/index
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/templates/admin
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/templates
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/views/language
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/views/index
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/views/admin
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/views
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/models
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/management/commands
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/management
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_app/lib
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_app
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_autonotices
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_language/templates/language
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_language/templates
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_language
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_misc/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_misc/middleware
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_misc
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_notifications/templates
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_notifications/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_notifications
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_profile
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_project/templates/project
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_project/templates
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_project
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_statistics
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_store/templates/unit
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_store/templates/store
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_store/templates
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_store/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_store
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_terminology/templates/terminology
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_terminology/templates
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_terminology/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_terminology
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_translationproject/templates/translation_project
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_translationproject/templates
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_translationproject/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/pootle_translationproject
+@dirrm %%PYTHON_SITELIBDIR%%/profiles
+@dirrm %%PYTHON_SITELIBDIR%%/registration
+@dirrmtry share/doc
+@dirrmtry share
+@dirrm share/pootle/html/js/mt
+@dirrm share/pootle/html/js/jquery
+@dirrm share/pootle/html/js
+@dirrm share/pootle/html/images
+@dirrm share/pootle/html
+@dirrm share/pootle/mo/zu/LC_MESSAGES
+@dirrm share/pootle/mo/zu
+@dirrm share/pootle/mo/zh_TW/LC_MESSAGES
+@dirrm share/pootle/mo/zh_TW
+@dirrm share/pootle/mo/zh_HK/LC_MESSAGES
+@dirrm share/pootle/mo/zh_HK
+@dirrm share/pootle/mo/zh_CN/LC_MESSAGES
+@dirrm share/pootle/mo/zh_CN
+@dirrm share/pootle/mo/xh/LC_MESSAGES
+@dirrm share/pootle/mo/xh
+@dirrm share/pootle/mo/wo/LC_MESSAGES
+@dirrm share/pootle/mo/wo
+@dirrm share/pootle/mo/vi/LC_MESSAGES
+@dirrm share/pootle/mo/vi
+@dirrm share/pootle/mo/ve/LC_MESSAGES
+@dirrm share/pootle/mo/ve
+@dirrm share/pootle/mo/uk/LC_MESSAGES
+@dirrm share/pootle/mo/uk
+@dirrm share/pootle/mo/ug/LC_MESSAGES
+@dirrm share/pootle/mo/ug
+@dirrm share/pootle/mo/tr/LC_MESSAGES
+@dirrm share/pootle/mo/tr
+@dirrm share/pootle/mo/tl/LC_MESSAGES
+@dirrm share/pootle/mo/tl
+@dirrm share/pootle/mo/th/LC_MESSAGES
+@dirrm share/pootle/mo/th
+@dirrm share/pootle/mo/te/LC_MESSAGES
+@dirrm share/pootle/mo/te
+@dirrm share/pootle/mo/ta/LC_MESSAGES
+@dirrm share/pootle/mo/ta
+@dirrm share/pootle/mo/sv/LC_MESSAGES
+@dirrm share/pootle/mo/sv
+@dirrm share/pootle/mo/st/LC_MESSAGES
+@dirrm share/pootle/mo/st
+@dirrm share/pootle/mo/sr/LC_MESSAGES
+@dirrm share/pootle/mo/sr
+@dirrm share/pootle/mo/sq/LC_MESSAGES
+@dirrm share/pootle/mo/sq
+@dirrm share/pootle/mo/son/LC_MESSAGES
+@dirrm share/pootle/mo/son
+@dirrm share/pootle/mo/sl/LC_MESSAGES
+@dirrm share/pootle/mo/sl
+@dirrm share/pootle/mo/sk/LC_MESSAGES
+@dirrm share/pootle/mo/sk
+@dirrm share/pootle/mo/sc/LC_MESSAGES
+@dirrm share/pootle/mo/sc
+@dirrm share/pootle/mo/ru/LC_MESSAGES
+@dirrm share/pootle/mo/ru
+@dirrm share/pootle/mo/ro/LC_MESSAGES
+@dirrm share/pootle/mo/ro
+@dirrm share/pootle/mo/pt_BR/LC_MESSAGES
+@dirrm share/pootle/mo/pt_BR
+@dirrm share/pootle/mo/pt/LC_MESSAGES
+@dirrm share/pootle/mo/pt
+@dirrm share/pootle/mo/pl/LC_MESSAGES
+@dirrm share/pootle/mo/pl
+@dirrm share/pootle/mo/pap/LC_MESSAGES
+@dirrm share/pootle/mo/pap
+@dirrm share/pootle/mo/pa/LC_MESSAGES
+@dirrm share/pootle/mo/pa
+@dirrm share/pootle/mo/nso/LC_MESSAGES
+@dirrm share/pootle/mo/nso
+@dirrm share/pootle/mo/nn/LC_MESSAGES
+@dirrm share/pootle/mo/nn
+@dirrm share/pootle/mo/nl/LC_MESSAGES
+@dirrm share/pootle/mo/nl
+@dirrm share/pootle/mo/ne/LC_MESSAGES
+@dirrm share/pootle/mo/ne
+@dirrm share/pootle/mo/nb/LC_MESSAGES
+@dirrm share/pootle/mo/nb
+@dirrm share/pootle/mo/nap/LC_MESSAGES
+@dirrm share/pootle/mo/nap
+@dirrm share/pootle/mo/mt/LC_MESSAGES
+@dirrm share/pootle/mo/mt
+@dirrm share/pootle/mo/ms/LC_MESSAGES
+@dirrm share/pootle/mo/ms
+@dirrm share/pootle/mo/mr/LC_MESSAGES
+@dirrm share/pootle/mo/mr
+@dirrm share/pootle/mo/mn/LC_MESSAGES
+@dirrm share/pootle/mo/mn
+@dirrm share/pootle/mo/ml/LC_MESSAGES
+@dirrm share/pootle/mo/ml
+@dirrm share/pootle/mo/mg/LC_MESSAGES
+@dirrm share/pootle/mo/mg
+@dirrm share/pootle/mo/lv/LC_MESSAGES
+@dirrm share/pootle/mo/lv
+@dirrm share/pootle/mo/lt/LC_MESSAGES
+@dirrm share/pootle/mo/lt
+@dirrm share/pootle/mo/ln/LC_MESSAGES
+@dirrm share/pootle/mo/ln
+@dirrm share/pootle/mo/ky/LC_MESSAGES
+@dirrm share/pootle/mo/ky
+@dirrm share/pootle/mo/ku/LC_MESSAGES
+@dirrm share/pootle/mo/ku
+@dirrm share/pootle/mo/ko/LC_MESSAGES
+@dirrm share/pootle/mo/ko
+@dirrm share/pootle/mo/kn/LC_MESSAGES
+@dirrm share/pootle/mo/kn
+@dirrm share/pootle/mo/km/LC_MESSAGES
+@dirrm share/pootle/mo/km
+@dirrm share/pootle/mo/kg/LC_MESSAGES
+@dirrm share/pootle/mo/kg
+@dirrm share/pootle/mo/ka/LC_MESSAGES
+@dirrm share/pootle/mo/ka
+@dirrm share/pootle/mo/ja/LC_MESSAGES
+@dirrm share/pootle/mo/ja
+@dirrm share/pootle/mo/it/LC_MESSAGES
+@dirrm share/pootle/mo/it
+@dirrm share/pootle/mo/is/LC_MESSAGES
+@dirrm share/pootle/mo/is
+@dirrm share/pootle/mo/id/LC_MESSAGES
+@dirrm share/pootle/mo/id
+@dirrm share/pootle/mo/hy/LC_MESSAGES
+@dirrm share/pootle/mo/hy
+@dirrm share/pootle/mo/hu/LC_MESSAGES
+@dirrm share/pootle/mo/hu
+@dirrm share/pootle/mo/hr/LC_MESSAGES
+@dirrm share/pootle/mo/hr
+@dirrm share/pootle/mo/hi/LC_MESSAGES
+@dirrm share/pootle/mo/hi
+@dirrm share/pootle/mo/he/LC_MESSAGES
+@dirrm share/pootle/mo/he
+@dirrm share/pootle/mo/ha/LC_MESSAGES
+@dirrm share/pootle/mo/ha
+@dirrm share/pootle/mo/gl/LC_MESSAGES
+@dirrm share/pootle/mo/gl
+@dirrm share/pootle/mo/ga/LC_MESSAGES
+@dirrm share/pootle/mo/ga
+@dirrm share/pootle/mo/fur/LC_MESSAGES
+@dirrm share/pootle/mo/fur
+@dirrm share/pootle/mo/fr/LC_MESSAGES
+@dirrm share/pootle/mo/fr
+@dirrm share/pootle/mo/fo/LC_MESSAGES
+@dirrm share/pootle/mo/fo
+@dirrm share/pootle/mo/fi/LC_MESSAGES
+@dirrm share/pootle/mo/fi
+@dirrm share/pootle/mo/fa/LC_MESSAGES
+@dirrm share/pootle/mo/fa
+@dirrm share/pootle/mo/eu/LC_MESSAGES
+@dirrm share/pootle/mo/eu
+@dirrm share/pootle/mo/et/LC_MESSAGES
+@dirrm share/pootle/mo/et
+@dirrm share/pootle/mo/es/LC_MESSAGES
+@dirrm share/pootle/mo/es
+@dirrm share/pootle/mo/eo/LC_MESSAGES
+@dirrm share/pootle/mo/eo
+@dirrm share/pootle/mo/en_ZA/LC_MESSAGES
+@dirrm share/pootle/mo/en_ZA
+@dirrm share/pootle/mo/en_GB/LC_MESSAGES
+@dirrm share/pootle/mo/en_GB
+@dirrm share/pootle/mo/el/LC_MESSAGES
+@dirrm share/pootle/mo/el
+@dirrm share/pootle/mo/dz/LC_MESSAGES
+@dirrm share/pootle/mo/dz
+@dirrm share/pootle/mo/de/LC_MESSAGES
+@dirrm share/pootle/mo/de
+@dirrm share/pootle/mo/da/LC_MESSAGES
+@dirrm share/pootle/mo/da
+@dirrm share/pootle/mo/cs/LC_MESSAGES
+@dirrm share/pootle/mo/cs
+@dirrm share/pootle/mo/ca@valencia/LC_MESSAGES
+@dirrm share/pootle/mo/ca@valencia
+@dirrm share/pootle/mo/ca/LC_MESSAGES
+@dirrm share/pootle/mo/ca
+@dirrm share/pootle/mo/br/LC_MESSAGES
+@dirrm share/pootle/mo/br
+@dirrm share/pootle/mo/bo/LC_MESSAGES
+@dirrm share/pootle/mo/bo
+@dirrm share/pootle/mo/bn_IN/LC_MESSAGES
+@dirrm share/pootle/mo/bn_IN
+@dirrm share/pootle/mo/bn/LC_MESSAGES
+@dirrm share/pootle/mo/bn
+@dirrm share/pootle/mo/bg/LC_MESSAGES
+@dirrm share/pootle/mo/bg
+@dirrm share/pootle/mo/be/LC_MESSAGES
+@dirrm share/pootle/mo/be
+@dirrm share/pootle/mo/az/LC_MESSAGES
+@dirrm share/pootle/mo/az
+@dirrm share/pootle/mo/ast/LC_MESSAGES
+@dirrm share/pootle/mo/ast
+@dirrm share/pootle/mo/ar/LC_MESSAGES
+@dirrm share/pootle/mo/ar
+@dirrm share/pootle/mo/am/LC_MESSAGES
+@dirrm share/pootle/mo/am
+@dirrm share/pootle/mo/ak/LC_MESSAGES
+@dirrm share/pootle/mo/ak
+@dirrm share/pootle/mo/af/LC_MESSAGES
+@dirrm share/pootle/mo/af
+@dirrm share/pootle/mo
+@dirrm share/pootle/templates/registration
+@dirrm share/pootle/templates/profiles
+@dirrm share/pootle/templates/docs
+@dirrm share/pootle/templates/contact_form
+@dirrm share/pootle/templates/admin
+@dirrm share/pootle/templates
+@dirrm share/pootle

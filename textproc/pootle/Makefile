@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pootle
-PORTVERSION=	2.0.5
+PORTVERSION=	2.1.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/translate/Pootle/${PORTVERSION}/
 DISTNAME=	Pootle-${PORTVERSION}
@@ -14,8 +14,9 @@ DISTNAME=	Pootle-${PORTVERSION}
 MAINTAINER=	catone@cpan.org
 COMMENT=	Pootle is a user-friendly web portal for simple translation process
 
-BUILD_DEPENDS=	py*-django>=1.1:${PORTSDIR}/www/py-django \
-		translate-toolkit>=1.6:${PORTSDIR}/textproc/translate-toolkit
+BUILD_DEPENDS=	py*-django>=1.2:${PORTSDIR}/www/py-django \
+		translate-toolkit>=1.8:${PORTSDIR}/textproc/translate-toolkit \
+		${PYTHON_SITELIBDIR}/South-0.7.1-py2.6.egg:${PORTSDIR}/databases/py-south
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -51,7 +52,29 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 
 PORTDOCS=	ChangeLog COPYING INSTALL README wsgi.py
 
+OPTIONS=	MYSQL		"MYSQL support"	on \
+		SUBVERSION	"SVN support"	on \
+		LUCENE		"py-lucene for faster searching"	on \
+		MEMCACHED	"Enable memcached support"	on
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+.endif
+
+.if defined(WITH_SUBVERSION)
+RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+.endif
+
+.if defined(WITH_LUCENE)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/lucene/_lucene.so:${PORTSDIR}/textproc/py-lucene
+.endif
+
+.if defined(WITH_MEMCACHED)
+LIB_DEPENDS+=	memcached:${PORTSDIR}/databases/libmemcached
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/python_memcached-1.45-py2.6.egg:${PORTSDIR}/databases/py-memcached
+.endif
 
 post-patch:
 	@${MV} ${WRKSRC}/localsettings.py ${WRKSRC}/localsettings.py.sample
