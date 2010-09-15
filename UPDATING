@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20100915:
+  AFFECTS: users of sysutils/cdrtools-cjk
+  AUTHOR: marius@FreeBSD.org
+
+  Version 3.00 of sysutils/cdrtools breaks but at the same time also
+  obsoletes sysutils/cdrtools-cjk as mkisofs now employs iconv for
+  character conversion. Consequently sysutils/cdrtools-cjk is marked
+  BROKEN and the use of USE_CDRTOOLS=cjk as well as USE_CDRTOOLS together
+  with the WITH_CJK knob left in a broken state until bsd.port.mk is
+  updated by portmgr@ accordingly. Once USE_CDRTOOLS is updated to no
+  longer refer to sysutils/cdrtools-cjk the latter will be removed.
+  Previous users of sysutils/cdrtools-cjk should switch to using
+  sysutils/cdrtools instead, which might require not using the WITH_CJK
+  knob until said update of bsd.port.mk has happened.
+
+20100915:
   AFFECTS: users of lang/perl5.12
   AUTHOR: skv@FreeBSD.org
 
