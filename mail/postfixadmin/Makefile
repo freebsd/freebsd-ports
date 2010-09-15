@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	postfixadmin
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.3.2
 CATEGORIES=	mail www
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${DISTNAME}
 
 MAINTAINER=	tabmow@freenode.net
 COMMENT=	PHP web-based management tool for Postfix virtual domains and users
@@ -47,9 +46,13 @@ IGNORE=	needs at least one database back-end
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
+pre-install:
+	@${RM} -rf ${WRKSRC}/ADDITIONS/squirrelmail-plugin
+
 do-install:
 	@${MKDIR} ${PREFIX}/www/postfixadmin/VIRTUAL_VACATION
 	@${MKDIR} ${PREFIX}/www/postfixadmin/ADDITIONS
+	@${MKDIR} ${PREFIX}/www/postfixadmin/ADDITIONS/cyrus
 	@${MKDIR} ${PREFIX}/www/postfixadmin/css
 	@${MKDIR} ${PREFIX}/www/postfixadmin/admin
 	@${MKDIR} ${PREFIX}/www/postfixadmin/images
@@ -63,7 +66,6 @@ do-install:
 	@${CP} -n ${WRKSRC}/config.inc.php ${PREFIX}/www/postfixadmin/config.inc.php
 	@${INSTALL_DATA} ${WRKSRC}/*.txt ${PREFIX}/www/postfixadmin
 	@${INSTALL_DATA} ${WRKSRC}/*.TXT ${PREFIX}/www/postfixadmin
-	@${INSTALL_DATA} ${WRKSRC}/ADDITIONS/* ${PREFIX}/www/postfixadmin/ADDITIONS
 	@${INSTALL_DATA} ${WRKSRC}/css/* ${PREFIX}/www/postfixadmin/css
 	@${INSTALL_DATA} ${WRKSRC}/admin/* ${PREFIX}/www/postfixadmin/admin
 	@${INSTALL_DATA} ${WRKSRC}/images/* ${PREFIX}/www/postfixadmin/images
@@ -72,6 +74,8 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/templates/* ${PREFIX}/www/postfixadmin/templates
 	@${INSTALL_DATA} ${WRKSRC}/users/* ${PREFIX}/www/postfixadmin/users
 	@${CP} -R ${WRKSRC}/VIRTUAL_VACATION/* ${PREFIX}/www/postfixadmin/VIRTUAL_VACATION
+	(cd ${WRKSRC}/ADDITIONS/ && \
+	${COPYTREE_SHARE} \* ${PREFIX}/www/postfixadmin/ADDITIONS/ "! -name squirrelmail-plugin")
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

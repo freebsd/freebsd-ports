@@ -17,3 +17,4 @@ INSTALL / UPGRADE
 - Postfixadmin has brought about some changes, all database install/update scripts are now php web based
 - Browse to the webroot and run setup.php to install or update your current postfixadmin installation
 - For detailed information please read the INSTALL.TXT
+
