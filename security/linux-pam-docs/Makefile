@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux-pam-docs
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	linux/libs/pam/documentation/
@@ -15,7 +15,7 @@ DISTNAME=	Linux-PAM-${PORTVERSION}-docs
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux-PAM offline documentation
 
-WRKSRC=		${WRKDIR}/Linux-PAM-${PORTVERSION} 
+WRKSRC=		${WRKDIR}/Linux-PAM-${PORTVERSION}
 NO_BUILD=	yes
 
 .if defined(NOPORTDOCS)
