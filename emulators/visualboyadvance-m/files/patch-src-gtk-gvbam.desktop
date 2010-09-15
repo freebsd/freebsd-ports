@@ -1,0 +1,7 @@
+--- src/gtk/gvbam.desktop.orig	2010-01-03 11:21:23.810842812 -0500
++++ src/gtk/gvbam.desktop	2010-01-03 11:22:48.352184026 -0500
+@@ -8,3 +8,4 @@
+ Exec=gvbam
+ Icon=vbam
+ Categories=Application;Game;Emulator;GTK
++MimeType=application/x-gameboy-rom;application/x-gba-rom;
