@@ -1,0 +1,6 @@
+bin/easy_install
+bin/easy_install-%%PYVER%%
+%%PYTHON_SITELIBDIR%%/distribute-%%VERSION%%-py%%PYVER%%.egg
+%%PYTHON_SITELIBDIR%%/easy-install.pth
+%%PYTHON_SITELIBDIR%%/setuptools-%%SETUPTOOLS_VER%%-py%%PYVER%%.egg-info
+%%PYTHON_SITELIBDIR%%/setuptools.pth
