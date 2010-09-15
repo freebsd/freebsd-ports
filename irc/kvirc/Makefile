@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kvirc
-PORTVERSION=	4.0.0
-PORTREVISION=	1
+PORTVERSION=	4.0.2
 CATEGORIES=	irc kde
 MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/%SUBDIR%/ \
 		http://kvirc.gmake.de/pub/kvirc/%SUBDIR%/ \
@@ -76,7 +75,7 @@ PLIST_SUB+=	QT="@comment " KDE=""
 .endif #defined(PKGNAMESUFFIX)
 
 .if defined(WITH_DEBUG)
-CMAKE_ARGS+=	-DWITH_DEBUG -DVERBOSE=yes
+CMAKE_ARGS+=	-DWITH_DEBUG=yes -DVERBOSE=yes
 .endif
 
 #audio support
