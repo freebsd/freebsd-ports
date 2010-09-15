@@ -1,0 +1,22 @@
+#!/bin/sh
+
+#
+# $FreeBSD$
+#
+
+# PROVIDE: pfstatd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable pfstatd:
+# pfstatd_enable (bool):      Set to "NO" by default.
+#                             Set it to "YES" to enable pfstatd
+. /etc/rc.subr
+
+name="pfstatd"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/${name}"
+
+load_rc_config ${name}
+run_rc_command "$1"
