@@ -7,7 +7,7 @@
 
 PORTNAME=	yabause
 PORTVERSION=	0.9.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	yes
-USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:262
+USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:267
 
 SUB_FILES=	pkg-message
 MAN1=	yabause.1

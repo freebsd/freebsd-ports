@@ -7,6 +7,7 @@
 
 PORTNAME=	check_memcached_paranoid
 PORTVERSION=	0.20091016
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -26,7 +27,7 @@ PLUGINS=	${PORTSDIR}/net-mgmt/nagios-plugins
 NDIR_CMD=	cd ${PLUGINS} && ${MAKE} -VWRKSRC
 # Needed for build target on net-mgmt/nagios-plugins
 EXTRA_DEPENDS=	automake>0:${PORTSDIR}/devel/automake19 \
-		autoconf>0:${PORTSDIR}/devel/autoconf262 \
+		autoconf>0:${PORTSDIR}/devel/autoconf267 \
 		libtool>0:${PORTSDIR}/devel/libtool22 \
 		gmake:${PORTSDIR}/devel/gmake
 

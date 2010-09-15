@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript8
 PORTVERSION=	8.71
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	http://ghostscript.com/releases/:gs_srcs \
 		SF/ghostscript/files/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -37,7 +37,7 @@ USE_XZ=		yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 

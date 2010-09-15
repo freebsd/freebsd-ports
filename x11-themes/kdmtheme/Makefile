@@ -7,7 +7,7 @@
 
 PORTNAME=	kdmtheme
 PORTVERSION=	1.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://beta.smileaf.org/files/kdmtheme/ \
 		${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/}
@@ -18,7 +18,7 @@ COMMENT=	KDM Theme Manager
 USE_KDEBASE_VER=3
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
-USE_AUTOTOOLS=	automake:19:env autoconf:262:env libtool:22
+USE_AUTOTOOLS=	automake:19:env autoconf:267:env libtool:22 autoheader:267:env
 USE_GMAKE=	yes
 
 pre-configure:

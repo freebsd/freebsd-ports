@@ -7,6 +7,7 @@
 
 PORTNAME=	nagios-plugins
 PORTVERSION=	1.4.15
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagiosplug/nagiosplug/${PORTVERSION}
@@ -17,7 +18,7 @@ COMMENT=	Plugins for Nagios
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_AUTOTOOLS=	libtool:22 aclocal:19 autoconf:262 automake:19
+USE_AUTOTOOLS=	libtool:22 aclocal:19 autoconf:267 automake:19
 ACLOCAL_ARGS=	-I m4 -I gl/m4
 
 OPTIONS=	QSTAT "Game server query support (check_game)" OFF \

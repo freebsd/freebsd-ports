@@ -7,14 +7,14 @@
 
 PORTNAME=	fish
 PORTVERSION=	1.23.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
 MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	A user friendly command line shell
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

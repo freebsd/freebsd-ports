@@ -7,6 +7,7 @@
 
 PORTNAME=	condor
 PORTVERSION=	7.0.0
+PORTREVISION=	1
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.cs.wisc.edu/condor/cgi-bin/downloads/sendfile.pl/freebsd-${OSREL}/v7.0/
 DISTNAME=	condor_src-${PORTVERSION}-all-all
@@ -21,7 +22,7 @@ WRKSRC=		${WRKDIR}/condor_src-${PORTVERSION}/src/
 OPTIONS=	SUBMIT_NODE "Configure system to be able to submit jobs" On \
 		EXECUTE_NODE "Configure system to execute jobs in pool" On \
 		MANAGER_NODE "Configure system as central manager node" On
-USE_AUTOTOOLS=	autoconf:262:env
+USE_AUTOTOOLS=	autoconf:267:env
 USE_BISON=	build
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

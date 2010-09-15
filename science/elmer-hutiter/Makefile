@@ -7,7 +7,7 @@
 
 PORTNAME=	hutiter
 PORTVERSION=	5.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/elmerfem/
 PKGNAMEPREFIX=	elmer-
@@ -39,7 +39,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|' -e 's|%%FC%%|${FC}|' ${WRKSRC}/configure.in
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 ALL_TARGET=
 
 PLIST_FILES=	include/huti_defs.h include/huti_fdefs.h lib/libhuti.a

@@ -1,5 +1,6 @@
 %%KDE%%bin/TaskJugglerUI
 bin/taskjuggler
+lib/libtaskjuggler.a
 lib/libtaskjuggler.la
 lib/libtaskjuggler.so
 lib/libtaskjuggler.so.3

@@ -7,7 +7,7 @@
 
 PORTNAME=	gsambad
 PORTVERSION=	0.1.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	http://mange.dynalias.org/linux/${PORTNAME}/
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/${SAMBA_PORT}
 SAMBA_PORT?=	net/samba34
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 pkgconfig
 
@@ -29,7 +29,7 @@ post-extract:
 	@${CP} ${FILESDIR}/crypt.h ${WRKSRC}/src/
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.61|2.67|g' ${WRKSRC}/aclocal.m4
 
 post-configure:
 	@${REINPLACE_CMD} -e "s:\<crypt.h\>:\"crypt.h\":" ${WRKSRC}/src/functions.c

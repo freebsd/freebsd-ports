@@ -7,7 +7,7 @@
 
 PORTNAME=	heartbeat
 PORTVERSION=	2.1.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	sysutils
 #MASTER_SITES=	http://hg.linux-ha.org/lha-2.1/archive/STABLE-2.1.4.tar.bz2
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -24,7 +24,7 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 		xml2:${PORTSDIR}/textproc/libxml2
 PATCH_DEPENDS=	${LOCALBASE}/bin/libtoolize:${PORTSDIR}/devel/libtool22
 
-USE_AUTOTOOLS=	autoconf:262 autoheader:262 automake:110 aclocal:110 \
+USE_AUTOTOOLS=	autoconf:267 autoheader:267 automake:110 aclocal:110 \
 		libtool:22 libltdl:22
 AUTOMAKE_ARGS+=	--add-missing --include-deps --copy
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal

@@ -7,7 +7,7 @@
 
 PORTNAME=		samba
 PORTVERSION?=		3.2.15
-PORTREVISION?=		1
+PORTREVISION?=		2
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
@@ -26,7 +26,7 @@ EXTRA_PATCHES=		${PATCHDIR}/CVE-2010-2063_samba-3.3.patch
 USE_GMAKE=		yes
 USE_ICONV=		yes
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=		autoconf:262 autoheader:262
+USE_AUTOTOOLS=		autoconf:267 autoheader:267
 AUTOHEADER_ARGS=	-I${WRKSRC}/m4 -I${WRKSRC}/lib/replace
 AUTOCONF_ARGS=		-I${WRKSRC}/m4 -I${WRKSRC}/lib/replace
 

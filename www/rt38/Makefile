@@ -13,6 +13,7 @@
 
 PORTNAME=	rt
 PORTVERSION=	3.8.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
@@ -53,7 +54,7 @@ BUILD_DEPENDS+=	${CORE_DEPS} \
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 USE_PERL5=	5.8.3+
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 
 .include <bsd.port.pre.mk>
 .if defined(WITH_DEV)

@@ -7,7 +7,7 @@
 
 PORTNAME=	moon-buggy
 PORTVERSION=	1.0.51
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://seehuhn.de/media/programs/
 .if defined (WITH_ESOUND)
@@ -27,7 +27,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	esd:${PORTSDIR}/audio/esound:install
 .endif
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--sharedstatedir=/var/games\
 		--with-setgid=games

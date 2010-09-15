@@ -20,9 +20,9 @@ MAINTAINER=	wxs@FreeBSD.org
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
 PATCHLEVEL=	P1
-PORTREVISION_SERVER=	2
-PORTREVISION_CLIENT=	0
-PORTREVISION_RELAY=	0
+PORTREVISION_SERVER=	3
+PORTREVISION_CLIENT=	1
+PORTREVISION_RELAY=	1
 
 SUBSYS?=	server
 
@@ -106,7 +106,7 @@ LDAP_SCRIPT=		${WRKDIR}/${LDAPPATCHDIST}/dhcpd-conf-to-ldap
 LDAP_SCHEMA=		${WRKDIR}/${LDAPPATCHDIST}/dhcp.schema
 USE_PERL5_RUN=		yes
 USE_OPENLDAP=		yes
-USE_AUTOTOOLS=		aclocal:110 libtoolize:226 autoconf:262 autoheader:262 automake:110
+USE_AUTOTOOLS=		aclocal:110 libtoolize:226 autoconf:267 autoheader:267 automake:110
 LIBTOOLIZE_ARG=		--copy --force
 AUTOMAKE_ARGS=		--foreign --add-missing --copy
 CFLAGS+=		-I${PREFIX}/include -L${PREFIX}/lib

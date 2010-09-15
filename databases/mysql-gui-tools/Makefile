@@ -8,7 +8,7 @@
 
 PORTNAME=	mysql-gui-tools
 PORTVERSION=	5.0r14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQLGUITools
@@ -23,7 +23,7 @@ LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 OPTIONS=	QUERY_BROWSER	"Build the MySQL Query Browser"	on \
 		ADMINISTRATOR	"Build the MySQL Administrator"	on
 
-USE_AUTOTOOLS=	autoconf:262 libtool:22 automake:110
+USE_AUTOTOOLS=	autoconf:267 libtool:22 automake:110
 USE_GNOME=	libgnome libglade2 gtkhtml3 libgnomeprint intlhack gtksourceview
 USE_GL=		gl glut
 USE_GMAKE=	yes

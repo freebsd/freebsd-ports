@@ -7,7 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.delorie.com/pub/djgpp/current/v2gnu/:djsource \
 		ftp://ftp.mirror.ac.uk/sites/www.delorie.com/current/v2gnu/:djsource \
@@ -26,10 +26,12 @@ EXTRACT_ONLY=	gcc410s2.zip
 MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	FSF gcc-4.1 for DJGPP cross-development
 
+BROKEN=		Does not work with autoconf>=2.64 - no upstream fix.
+
 BUILD_DEPENDS=	${TARGET}-as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		${LOCALBASE}/${TARGET}/bin/stubify:${PORTSDIR}/devel/${PKGNAMEPREFIX}crx \
 		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
-		autoconf-2.62:${PORTSDIR}/devel/autoconf262 \
+		autoconf-2.67:${PORTSDIR}/devel/autoconf267 \
 		aclocal-1.9:${PORTSDIR}/devel/automake19
 .if defined(WITH_FORTRAN)
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \

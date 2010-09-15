@@ -7,7 +7,7 @@
 
 PORTNAME=	openprinting
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=\
@@ -30,7 +30,7 @@ USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/libexec
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-USE_AUTOTOOLS=	aclocal:19 autoconf:262 autoheader:262 automake:19 libtool:22
+USE_AUTOTOOLS=	aclocal:19 autoconf:267 autoheader:267 automake:19 libtool:22
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS+=	-a -c
 

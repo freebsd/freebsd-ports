@@ -5,7 +5,7 @@
  (
    cd ./ext/ctemplate/ctemplate-src &&
 -  autoreconf -i -s; 
-+  autoreconf-2.62 -i; 
++  autoreconf-2.67 -i; 
    ./configure --prefix=$prefix --libdir=$libdir/mysql-workbench --disable-dependency-tracking
  )    
  

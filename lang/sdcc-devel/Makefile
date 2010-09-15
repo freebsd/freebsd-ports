@@ -7,6 +7,7 @@
 
 PORTNAME=	sdcc
 PORTVERSION=	2.9.7.2010.09.04
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF/sdcc/snapshot_builds/sdcc-src/ \
 		http://tijl.fastmail.fm/mirror/
@@ -48,7 +49,7 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 CONFIGURE_ARGS+=	--disable-51
 PLIST_SUB+=		MCS51DS390="@comment "
 .else
-USE_AUTOTOOLS+=		autoconf:262
+USE_AUTOTOOLS+=		autoconf:267
 PLIST_SUB+=		MCS51DS390=""
 .endif
 

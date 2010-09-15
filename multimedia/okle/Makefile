@@ -7,7 +7,7 @@
 
 PORTNAME=	okle
 PORTVERSION=	0.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://okle.sourceforge.net/
 
@@ -17,7 +17,7 @@ COMMENT=	A KDE frontend to the Ogle DVD player
 BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.11:${PORTSDIR}/multimedia/ogle
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 
-USE_AUTOTOOLS=	autoconf:262 libtool:22
+USE_AUTOTOOLS=	autoconf:267 libtool:22
 USE_KDELIBS_VER=3
 CONFIGURE_ARGS=	--with-ogle-dir=${LOCALBASE}/bin \
 		--with-ogle-includes=${LOCALBASE}/include \

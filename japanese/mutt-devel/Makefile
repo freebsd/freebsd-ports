@@ -9,7 +9,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.emaillab.org/mutt/${VERSION}/ \
 		http://www.emaillab.org/mutt/1.5/doc/:ja_doc \
@@ -70,7 +70,7 @@ FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	automake:19 autoconf:262
+USE_AUTOTOOLS=	automake:19 autoconf:267
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/mutt-${VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib

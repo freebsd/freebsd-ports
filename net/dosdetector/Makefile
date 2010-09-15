@@ -9,7 +9,7 @@
 
 PORTNAME=	dosdetector
 PORTVERSION=	20060621
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://darkzone.ma.cx/resources/unix/dosdetector/
 
@@ -17,7 +17,7 @@ MAINTAINER=	msciciel@dark-zone.eu
 COMMENT=	Detect suspicious network traffic
 
 HAS_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoheader:262
+USE_AUTOTOOLS=	autoheader:267
 
 PLIST_FILES=	bin/dosdetector
 MAN1=		dosdetector.1

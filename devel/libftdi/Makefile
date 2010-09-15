@@ -7,6 +7,7 @@
 
 PORTNAME=	libftdi
 PORTVERSION=	0.17
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.intra2net.com/en/developer/libftdi/download/
 
@@ -15,7 +16,7 @@ COMMENT=	A library (using libusb) to talk to FTDI chips
 
 OPTIONS=	BOOST	"Build with boost"	off
 
-USE_AUTOTOOLS=		autoconf:262 libtool:22 automake:110
+USE_AUTOTOOLS=		autoconf:267 libtool:22 automake:110
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 USE_LDCONFIG=		yes

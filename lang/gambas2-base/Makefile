@@ -7,7 +7,7 @@
 
 PORTNAME=	gambas2
 PORTVERSION=	2.15.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	lang kde
 MASTER_SITES=	SF/${PORTNAME:S/2//g}/${PORTNAME}/${PORTVERSION}
 PKGNAMESUFFIX?=	-base
@@ -19,7 +19,7 @@ COMMENT?=	A basic language with object extensions
 BUILD_DEPENDS=	xdg-mime:${PORTSDIR}/devel/xdg-utils
 LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi
 
-USE_AUTOTOOLS=		autoconf:262:env automake:19:env
+USE_AUTOTOOLS=		autoconf:267:env automake:19:env
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes

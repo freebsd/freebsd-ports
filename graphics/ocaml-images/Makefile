@@ -8,7 +8,7 @@
 
 PORTNAME=	images
 PORTVERSION=	3.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/cristal/caml-light/bazar-ocaml/ \
@@ -22,7 +22,7 @@ COMMENT=	Objective Caml image processing library
 
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ocaml.m4:${PORTSDIR}/lang/ocaml-autoconf
 
-USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262
+USE_AUTOTOOLS=	aclocal:110 autoheader:267 automake:110 autoconf:267
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 USE_OCAML=	yes

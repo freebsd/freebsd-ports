@@ -7,6 +7,7 @@
 
 PORTNAME=	unixcw
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.ibiblio.org/pub/linux/apps/ham/morse/ \
 		${MASTER_SITE_LOCAL}
@@ -31,7 +32,7 @@ PLIST_SUB+=	XCWCP="@comment "
 .endif
 MAN7=		cw.7 CW.7
 MANCOMPRESSED=	yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	tclspice
 PORTVERSION=	0.2.18
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
@@ -22,7 +22,7 @@ RUN_DEPENDS=	bltwish:${PORTSDIR}/x11-toolkits/blt \
 BROKEN=		does not compile
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:262 libtool:22
+USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:267 libtool:22
 AUTOMAKE_ARGS=	-c -a
 USE_GMAKE=	yes
 ALL_TARGET=	tcl

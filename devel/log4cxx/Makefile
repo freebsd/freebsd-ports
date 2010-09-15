@@ -6,7 +6,7 @@
 
 PORTNAME=	log4cxx
 PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	logging/${PORTNAME}/${PORTVERSION}
@@ -34,7 +34,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/boost/regex.hpp:${PORTSDIR}/devel/boost-lib
 .endif
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:15:env autoconf:262:env libtool:22:env
+USE_AUTOTOOLS=	automake:15:env autoconf:267:env libtool:22:env
 
 MAKE_JOBS_UNSAFE=	yes
 

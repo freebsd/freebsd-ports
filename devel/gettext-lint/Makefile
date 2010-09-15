@@ -15,8 +15,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check the validity and consistency of PO and POT files
 
-RUN_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-
+USE_GETTEXT=	run
 USE_PYTHON=	yes
 NO_BUILD=	yes
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	suricata
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://openinfosecfoundation.org/download/ \
 		http://www6.freebsdbrasil.com.br/~eksffa/l/dev/suricata/
@@ -21,7 +22,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 BUILD_DEPENDS+=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet \
 		pkg-config:${PORTSDIR}/devel/pkg-config
 
-USE_AUTOTOOLS=	automake110 autoconf:262 libtool:22
+USE_AUTOTOOLS=	automake110 autoconf:267 libtool:22
 
 USE_RC_SUBR=	suricata
 

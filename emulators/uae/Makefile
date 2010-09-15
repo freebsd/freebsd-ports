@@ -7,6 +7,7 @@
 
 PORTNAME=	uae
 PORTVERSION=	0.8.29
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.amigaemulator.org/files/sources/develop/
 
@@ -18,7 +19,7 @@ CONFLICTS=	e-uae-[0-9]*
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 CONFIGURE_ARGS=	--enable-sound
 USE_GNOME=	gtk20
 

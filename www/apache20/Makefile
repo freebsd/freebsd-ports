@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.63
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/$/:powerlogo/}
@@ -52,7 +52,7 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 #	THREADS                 "Enable threads in apr"                 Off
 
 USE_ICONV=		yes
-USE_AUTOTOOLS=		autoconf:262 libtool:22
+USE_AUTOTOOLS=		autoconf:267 libtool:22
 USE_PERL5=		yes
 USE_RC_SUBR=		apache2
 USE_APACHE=		common20

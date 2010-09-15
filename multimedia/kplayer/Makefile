@@ -7,7 +7,7 @@
 
 PORTNAME=	kplayer
 PORTVERSION=	0.6.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SF
 
@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_GETTEXT=	yes
 USE_PERL5_BUILD=yes
-USE_AUTOTOOLS=	automake:19:env autoconf:262:env libtool:22
+USE_AUTOTOOLS=	automake:19:env autoconf:267:env libtool:22
 
 pre-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${SH} admin/cvs.sh dist)

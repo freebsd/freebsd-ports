@@ -7,7 +7,7 @@
 
 PORTNAME=	dvts
 PORTVERSION=	1.0a
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.sfc.wide.ad.jp/DVTS/software/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -21,7 +21,7 @@ COMMENT=	An implementation of Digital Video Transport System
 
 CONFLICTS=	gdvrecv-[0-9]*
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 
 MAN1=		dvts.1 dvsend.1 dvrecv.1
 

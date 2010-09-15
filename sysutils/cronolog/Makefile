@@ -7,7 +7,7 @@
 
 PORTNAME=	cronolog
 PORTVERSION=	1.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cronolog.org/download/
 

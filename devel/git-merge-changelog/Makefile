@@ -18,7 +18,7 @@ COMMENT=	Git "merge" driver for GNU style ChangeLog files
 
 EXTRACT_DEPENDS=	${GNULIB_DIR}/lib/${PORTNAME}.c:${GNULIB_PORTDIR}	\
 			automake-1.10:${PORTSDIR}/devel/automake110		\
-			autoconf-2.62:${PORTSDIR}/devel/autoconf262
+			autoconf-2.67:${PORTSDIR}/devel/autoconf267
 
 GNU_CONFIGURE=	yes
 

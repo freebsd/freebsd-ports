@@ -7,7 +7,7 @@
 
 PORTNAME=	mpiosh
 PORTVERSION=	0.7.1.p2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/mpio/mpio%20pre-release/0.7.1-pre2
 DISTNAME=	mpio-${PORTVERSION:S|.p|_pre|}
@@ -19,7 +19,7 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:262 libtool:22
+USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:267 libtool:22
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \

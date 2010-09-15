@@ -7,7 +7,7 @@
 
 PORTNAME=	liquidsoap
 PORTVERSION=	0.9.2
-PORTREVISION?=	5
+PORTREVISION?=	6
 DISTVERSIONPREFIX=	full-
 CATEGORIES=	audio net
 MASTER_SITES=	SF/savonet/${PORTNAME}/${PORTVERSION}
@@ -51,7 +51,7 @@ USE_RC_SUBR=	liquidsoap.sh
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
 
-USE_AUTOTOOLS=	autoconf:262:env automake:110:env
+USE_AUTOTOOLS=	autoconf:267:env automake:110:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

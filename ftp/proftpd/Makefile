@@ -7,6 +7,7 @@
 
 PORTNAME=	proftpd
 PORTVERSION=	1.3.3a
+PORTREVISION=	1
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -33,7 +34,7 @@ PORTDOCS=	*
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	proftpd-devel-1.[0-9].*

@@ -7,7 +7,7 @@
 
 PORTNAME=		talloc
 PORTVERSION=		2.0.1
-PORTREVISION=		0
+PORTREVISION=		1
 PORTEPOCH=		0
 CATEGORIES=		devel
 MASTER_SITES=		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -23,7 +23,7 @@ CONFLICTS=		samba-3.3*
 USE_GMAKE=		yes
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=		autoconf:262 autoheader:262
+USE_AUTOTOOLS=		autoconf:267 autoheader:267
 
 IPATHS=			-I${WRKSRC}/libreplace
 AUTOHEADER_ARGS=	${IPATHS}

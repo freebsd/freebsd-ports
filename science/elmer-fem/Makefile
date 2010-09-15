@@ -7,7 +7,7 @@
 
 PORTNAME=	fem
 PORTVERSION=	5.4.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science tk
 MASTER_SITES=	http://garr.dl.sourceforge.net/sourceforge/elmerfem/
 PKGNAMEPREFIX=	elmer-
@@ -30,7 +30,7 @@ USE_FORTRAN=	yes
 FCFLAGS+=	-O3 -ffast-math
 .endif
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=

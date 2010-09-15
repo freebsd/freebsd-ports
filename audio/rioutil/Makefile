@@ -7,6 +7,7 @@
 
 PORTNAME=	rioutil
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -30,7 +31,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 .else
 EXTRA_PATCHES=  ${FILESDIR}/extra-patch-configure.ac
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 .endif
 
 post-extract:

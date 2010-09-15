@@ -7,7 +7,7 @@
 
 PORTNAME=	mird
 PORTVERSION=	1.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
 		http://grendel.firewall.com/caudium-pkg/ \
@@ -19,7 +19,7 @@ COMMENT=	A free database library with transaction support
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-USE_AUTOTOOLS=	autoconf:262:env
+USE_AUTOTOOLS=	autoconf:267:env
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-debug

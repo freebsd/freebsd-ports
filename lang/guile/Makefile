@@ -7,7 +7,7 @@
 
 PORTNAME=	guile
 PORTVERSION=	1.8.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	guile
@@ -17,7 +17,7 @@ COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
-USE_AUTOTOOLS=	autoconf:262 libltdl:22
+USE_AUTOTOOLS=	autoconf:267 libltdl:22
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
@@ -46,6 +46,6 @@ post-extract:
 post-patch:
 	@cd ${WRKSRC} ; \
 	  ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${REINPLACE_FILES}
-	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.61|2.67|g' ${WRKSRC}/aclocal.m4
 
 .include <bsd.port.post.mk>

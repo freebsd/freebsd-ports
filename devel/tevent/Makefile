@@ -7,7 +7,7 @@
 
 PORTNAME=		tevent
 PORTVERSION=		0.9.8
-PORTREVISION=		0
+PORTREVISION=		1
 PORTEPOCH=		0
 CATEGORIES=		devel
 MASTER_SITES=		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -26,7 +26,7 @@ USE_GMAKE=		yes
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 USE_GNOME=		pkgconfig
-USE_AUTOTOOLS=		autoconf:262 autoheader:262
+USE_AUTOTOOLS=		autoconf:267 autoheader:267
 
 IPATHS=			-I${WRKSRC}/libreplace
 AUTOHEADER_ARGS=	${IPATHS}

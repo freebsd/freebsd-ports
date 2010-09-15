@@ -9,6 +9,7 @@
 
 PORTNAME=	freeradius
 DISTVERSION=	2.1.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -33,7 +34,7 @@ CONFLICTS=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].* \
 		freeradius-mysql-[0-9].* freeradius-[013-9].*
 
 USE_RC_SUBR=	radiusd.sh
-USE_AUTOTOOLS=	libltdl:22 libtool:22 autoconf:262
+USE_AUTOTOOLS=	libltdl:22 libtool:22 autoconf:267
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -349,7 +350,7 @@ pre-configure:
 		${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" {} \;
 # Force the rebuild of some configures from configure.in, as we're patching
 # the configure.in
-# NOTE: ${WRKSRC}/configure is rebuilt automatically once autoconf:262 is
+# NOTE: ${WRKSRC}/configure is rebuilt automatically once autoconf:267 is
 # added to USE_AUTOTOOLS
 	@cd ${WRKSRC}/src/modules/rlm_ldap && ${AUTOCONF} -I ${WRKSRC}
 	@cd ${WRKSRC}/src/modules/rlm_sql/drivers/rlm_sql_mysql \

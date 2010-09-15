@@ -7,7 +7,7 @@
 
 PORTNAME=	db
 PORTVERSION=	20090530
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,$,acm/foomatic/,} \
 		${MASTER_SITE_GOOGLE_CODE}
@@ -24,7 +24,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 PROJECTHOST=	bsdistfiles
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_AUTOTOOLS=	automake:15:env autoconf:262
+USE_AUTOTOOLS=	automake:15:env autoconf:267
 
 GNU_CONFIGURE=	yes
 

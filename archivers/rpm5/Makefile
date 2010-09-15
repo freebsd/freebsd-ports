@@ -6,7 +6,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	5.0.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm5.org/files/rpm/rpm-5.0/
 PATCHFILES=	rpm-5.0.3.1.patch
@@ -42,7 +42,7 @@ LATEST_LINK=	rpm5
 CONFLICTS=	rpm-3.* rpm-4.*
 
 # need to autogen (for xz support)
-USE_AUTOTOOLS+=	aclocal:110 autoconf:262 automake:110 autoheader:262
+USE_AUTOTOOLS+=	aclocal:110 autoconf:267 automake:110 autoheader:267
 ACLOCAL_ARGS+=	-I m4 -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS+=	-a -c
 pre-configure:
@@ -131,6 +131,7 @@ post-patch::
 		${WRKSRC}/scripts/Makefile.am ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s:/bin/sh:/usr/bin/env bash:" \
 		${WRKSRC}/scripts/gendiff
+	@${REINPLACE_CMD} -e 's:AC_DEFUN:m4_define:g' ${WRKSRC}/configure.ac
 
 .if defined(WITH_PERL)
 post-configure:

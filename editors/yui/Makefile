@@ -7,7 +7,7 @@
 
 PORTNAME=	yui
 PORTVERSION=	3.2.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://openoffice.mirahost.ru/fileZ/software/ \
 		http://citycat4.land.ru/ \
@@ -17,7 +17,7 @@ MAINTAINER=	citycat4@ngs.ru
 COMMENT=	Rich-featured multi-windows console text editor
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 
 MAN1=		y.1
 

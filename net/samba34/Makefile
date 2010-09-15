@@ -7,7 +7,7 @@
 
 PORTNAME=		samba34
 PORTVERSION=		3.4.8
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
@@ -32,7 +32,7 @@ AUTOCONF_ARGS=		${IPATHS}
 USE_GMAKE=		yes
 USE_ICONV=		yes
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=		autoconf:262 autoheader:262
+USE_AUTOTOOLS=		autoconf:267 autoheader:267
 # directories
 VARDIR?=		/var
 SAMBA_SPOOL?=		${VARDIR}/spool/${PORTNAME}

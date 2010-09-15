@@ -7,7 +7,7 @@
 
 PORTNAME=	nagiosgrapher
 PORTVERSION=	1.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/NagiosGrapher-${PORTVERSION}/ \
 		https://www.nagiosforge.org/gf/download/frsrelease/135/285/
@@ -31,7 +31,7 @@ USE_RC_SUBR=	${PORTNAME}
 
 SUB_LIST=	NAME=${PORTNAME}
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 
 PERL_MODULES=	${SITE_PERL}
 

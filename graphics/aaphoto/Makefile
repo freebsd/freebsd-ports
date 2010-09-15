@@ -7,6 +7,7 @@
 
 PORTNAME=	aaphoto
 PORTVERSION=	0.39
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://log69.com/downloads/
 DISTNAME=	${PORTNAME}_sources_v${PORTVERSION}
@@ -20,7 +21,7 @@ LIB_DEPENDS=	jasper:${PORTSDIR}/graphics/jasper \
 
 LICENSE=	GPLv3
 
-USE_AUTOTOOLS=	autoheader:262
+USE_AUTOTOOLS=	autoheader:267
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

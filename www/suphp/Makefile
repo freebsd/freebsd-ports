@@ -7,7 +7,7 @@
 
 PORTNAME=	suphp
 PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|koitsu|}
@@ -16,7 +16,7 @@ MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	Securely execute PHP scripts under Apache
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal:110:env automake:110:env autoconf:262:env libtool:22:env
+USE_AUTOTOOLS=	aclocal:110:env automake:110:env autoconf:267:env libtool:22:env
 
 # Maintainer has not tested suPHP 0.6.x on Apache 1.3.
 USE_APACHE=	2.0+
@@ -40,7 +40,8 @@ CONFIGURE_ARGS+=	--with-setid-mode=${WITH_SETID_MODE}
 CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.61|2.62|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.61|2.67|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|1.10.1|1.10.3|g' ${WRKSRC}/aclocal.m4
 	@${CHMOD} 755 ${WRKSRC}/config/install-sh
 
 post-install:

@@ -7,6 +7,7 @@
 
 PORTNAME=	ufoai
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/UFO_AI%202.x/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/$/-/}${PORTVERSION}-source
@@ -24,7 +25,7 @@ LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
 		xvidcore.4:${PORTSDIR}/multimedia/xvid
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/base/default.cfg:${PORTSDIR}/games/ufoai-data
 
-USE_AUTOTOOLS=	aclocal:110 autoconf:262
+USE_AUTOTOOLS=	aclocal:110 autoconf:267
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_SDL=	sdl image mixer ttf

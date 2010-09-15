@@ -7,7 +7,7 @@
 
 PORTNAME=	aide
 PORTVERSION=	0.13.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF \
 		http://www.cs.tut.fi/~rammer/
@@ -22,7 +22,7 @@ LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
 
 USE_GMAKE=	yes
 USE_BISON=	build
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mhash \
 		--with-zlib \

@@ -7,6 +7,7 @@
 
 PORTNAME?=	tidy
 DISTVERSION=	090315-cvs
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 #MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
@@ -31,7 +32,7 @@ USE_GMAKE=	yes
 PLIST_SUB=	SHLIB="@comment " NSHLIB=""
 CONFLICTS=	tidy-20000804* tidy-lib-[0-9]*
 .else
-USE_AUTOTOOLS=	automake:15 autoconf:262 libtool:22
+USE_AUTOTOOLS=	automake:15 autoconf:267 libtool:22
 AUTOMAKE_ARGS+=	-a -c --foreign
 USE_LDCONFIG=	yes
 PLIST_SUB=	SHLIB="" NSHLIB="@comment "

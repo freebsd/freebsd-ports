@@ -8,7 +8,7 @@
 
 PORTNAME=	augeas
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://augeas.net/download/
 
@@ -17,7 +17,7 @@ COMMENT=	A configuration editing tool
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262 aclocal:110 autoheader:262 automake:110 libtool:22
+USE_AUTOTOOLS=	autoconf:267 aclocal:110 autoheader:267 automake:110 libtool:22
 ACLOCAL_ARGS=	-I . -I gnulib/m4 -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes

@@ -18,8 +18,7 @@ MAINTAINER?=	kde@FreeBSD.org
 COMMENT=	IDE for a wide variety of programming tasks
 
 BUILD_DEPENDS=	cervisia:${PORTSDIR}/devel/kdesdk3 \
-		dot:${PORTSDIR}/graphics/graphviz \
-		msgfmt:${PORTSDIR}/devel/gettext
+		dot:${PORTSDIR}/graphics/graphviz
 LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion
 RUN_DEPENDS=	extractrc:${PORTSDIR}/devel/kdesdk3 \
 		gdb66:${PORTSDIR}/devel/gdb6 \
@@ -52,6 +51,7 @@ USE_LDCONFIG=	yes
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	build
 USE_BDB=	yes
 USE_AUTOTOOLS=	libtool:22 autotools:run
 _NO_KDE_FINAL=	yes

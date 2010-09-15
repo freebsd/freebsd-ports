@@ -7,7 +7,7 @@
 
 PORTNAME=		pdbsql
 PORTVERSION=		0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		net
 MASTER_SITES=		SF
 PKGNAMEPREFIX=		samba-
@@ -20,7 +20,7 @@ USE_BZIP2=		yes
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 # Add a build dependency for Samba port
-USE_AUTOTOOLS=		autoconf:262 autoheader:262
+USE_AUTOTOOLS=		autoconf:267 autoheader:267
 WRKSRC=                 ${WRKDIR}/${DISTNAME}-samba
 
 SAMBA_PORT=		net/samba3

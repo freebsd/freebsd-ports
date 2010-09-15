@@ -7,7 +7,7 @@
 
 PORTNAME=	libmrss
 PORTVERSION=	0.19.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.autistici.org/bakunin/libmrss/
 
@@ -36,7 +36,7 @@ pre-patch:
 .if defined(WITH_PHPMRSS)
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
-USE_AUTOTOOLS+=	autoconf:262:env
+USE_AUTOTOOLS+=	autoconf:267:env
 post-install:
 		@(cd ${WRKSRC}/phpmrss; ${SETENV} ${SCRIPTS_ENV} ${LOCALBASE}/bin/phpize)
 		@(cd ${WRKSRC}/phpmrss; ./configure; ${MAKE} install)

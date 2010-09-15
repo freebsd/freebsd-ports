@@ -7,7 +7,7 @@
 
 PORTNAME=	scourge
 PORTVERSION=	0.21.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/.src/}
@@ -19,7 +19,7 @@ COMMENT=	S.C.O.U.R.G.E. is a rogue-like game
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${DATADIR}/config/scourge.cfg:${PORTSDIR}/games/scourge-data
 
-USE_AUTOTOOLS=	autoconf:262:env automake:19:env
+USE_AUTOTOOLS=	autoconf:267:env automake:19:env
 USE_GL=		gl
 USE_SDL=	sdl image mixer net ttf
 USE_GMAKE=	yes

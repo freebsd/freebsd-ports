@@ -7,6 +7,7 @@
 
 PORTNAME=	quagga
 PORTVERSION=	0.99.17
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/ \
 		http://www.ru.quagga.net/download/ \
@@ -22,7 +23,7 @@ COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4, IS-IS route software
 
 CONFLICTS=	openbgpd-[0-9]* zebra-0*
 
-USE_AUTOTOOLS=	libtool:22 autoheader:262
+USE_AUTOTOOLS=	libtool:22 autoheader:267
 USE_GMAKE=		yes
 USE_LDCONFIG=		yes
 USE_PERL5_BUILD=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	moonshine
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www multimedia
 MASTER_SITES=	http://romain.blogreen.org/distfiles/
 DISTNAME=	abock-${PORTNAME}-${GITCOMMIT}
@@ -20,7 +20,7 @@ GITCOMMIT=	35085a4
 
 USE_GMAKE=	yes
 USE_GECKO=	libxul
-USE_AUTOTOOLS=	libtool:22 libtoolize aclocal:110 autoconf:262 autoheader:262 automake:110
+USE_AUTOTOOLS=	libtool:22 libtoolize aclocal:110 autoconf:267 autoheader:267 automake:110
 LIBTOOLIZE_ARGS=	--force --copy --automake
 AUTOMAKE_ARGS=	--gnu --add-missing --force --copy -Wno-portability
 ACLOCAL_ARGS=	

@@ -7,6 +7,7 @@
 
 PORTNAME=	ngspice_rework
 PORTVERSION=	18
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	SF/ngspice/ng-spice-rework/${PORTVERSION}
 DISTNAME=	ng-spice-rework-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	ng-spice-rework-${PORTVERSION}
 MAINTAINER=	amakawa@jp.FreeBSD.org
 COMMENT=	A circuit simulator derived from spice3f5
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 USE_GMAKE=	yes
 
 #XSPICE doesn't build

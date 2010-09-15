@@ -6,6 +6,7 @@
 
 PORTNAME=	apr
 PORTVERSION=	2.0.${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://svn.apache.org/snapshots/apr/
 DISTNAME=	${PORTNAME}_${SNAPDATE}
@@ -34,7 +35,7 @@ OPTIONS=	THREADS "Enable Threads in apr"				on  \
 		DEVELOPER_ONLY "I want to test apr2 not the maintainer" off
 
 USE_ICONV=		yes
-USE_AUTOTOOLS=	automake:19 autoconf:262 libtool:22:env
+USE_AUTOTOOLS=	automake:19 autoconf:267 libtool:22:env
 USE_PERL5_BUILD=	yes
 USE_PYTHON_BUILD=	-2.7
 USE_LDCONFIG=		yes

@@ -7,13 +7,14 @@
 
 PORTNAME=	xrdp
 PORTVERSION=	0.5.0.20090811cvs
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/pav
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source Remote Desktop Protocol (RDP) server
 
-USE_AUTOTOOLS=	autoconf:262:env automake:110:env libtool:22
+USE_AUTOTOOLS=	autoconf:267:env automake:110:env libtool:22
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	xrdp
 

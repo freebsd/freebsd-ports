@@ -64,12 +64,13 @@
     SUBDIR += autoconf-archive
     SUBDIR += autoconf-wrapper
     SUBDIR += autoconf213
-    SUBDIR += autoconf262
+    SUBDIR += autoconf267
     SUBDIR += autodia
     SUBDIR += autodist
     SUBDIR += autogen
     SUBDIR += automake-wrapper
     SUBDIR += automake110
+    SUBDIR += automake111
     SUBDIR += automake14
     SUBDIR += automake15
     SUBDIR += automake16

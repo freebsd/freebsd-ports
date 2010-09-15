@@ -10,6 +10,14 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20100831:
+AUTHOR: autotools@FreeBSD.org
+
+  * USE_GETTEXT has been cleaned up.
+    	'build'		BUILD time dependency only
+	'run'		RUN time dependency only
+	'yes'		LIBRARY dependency
+
 20100606:
 AUTHOR: gerald@FreeBSD.org
 

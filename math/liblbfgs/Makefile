@@ -7,6 +7,7 @@
 
 PORTNAME=	liblbfgs
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.chokkan.org/software/dist/
 
@@ -14,7 +15,7 @@ MAINTAINER=	gaod@hychen.org
 COMMENT=	A library of Limited-memory Broyden-Fletcher-Goldfarb-Shanno
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262:env
+USE_AUTOTOOLS=	autoconf:267:en
 
 OPTIONS=	OPTIMIZED "Enable SSE2 optimization routines" Off
 

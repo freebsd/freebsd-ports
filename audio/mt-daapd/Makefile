@@ -7,7 +7,7 @@
 
 PORTNAME=	mt-daapd
 PORTVERSION=	0.2.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio japanese
 MASTER_SITES=	SF
 
@@ -25,7 +25,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=		--with-id3tag=${PREFIX} --with-gdbm-includes=${LOCALBASE}/include
 
-USE_AUTOTOOLS=	autoheader:262 autoconf:262:env
+USE_AUTOTOOLS=	autoheader:267 autoconf:267:env
 
 USE_ICONV=	yes
 PATCH_SITES+=	http://www.apionet.or.jp/~tomi/

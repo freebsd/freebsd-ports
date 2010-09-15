@@ -7,7 +7,7 @@
 
 PORTNAME=	nagios-snmp-plugins
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.softwareforge.de/releases/${PORTNAME}/
 
@@ -17,7 +17,7 @@ COMMENT=	Additional SNMP plugins for Nagios
 LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=	automake:14 autoheader:262 autoconf:262
+USE_AUTOTOOLS=	automake:14 autoheader:267 autoconf:267
 USE_GMAKE=		yes
 USE_PERL5=		yes
 

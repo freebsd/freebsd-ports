@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 DISTVERSION?=	8.4.3
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -105,7 +105,7 @@ IGNORE=		options WITH_ICU and WITH_ICU4 are mutually exclusive
 .  endif
 
 .  if (defined(SERVER_ONLY) && (defined(WITH_ICU) || defined(WITH_ICU4))) || make(makesum)
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 CONFIGURE_ARGS+=--with-icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
 PATCHFILES+=	pg-840-icu-2009-09-15.diff.gz:icu

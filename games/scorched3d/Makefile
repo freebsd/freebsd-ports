@@ -7,6 +7,7 @@
 
 PORTNAME=		scorched3d
 PORTVERSION=		0.${SCORCH_VERSION}${SCORCH_REVISION}
+PORTREVISION=		1
 CATEGORIES=		games
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/Version%20${SCORCH_VERSION}/
 DISTNAME=		Scorched3D-${SCORCH_VERSION}-src
@@ -31,7 +32,7 @@ USE_SDL=		mixer net sdl
 GNU_CONFIGURE=		yes
 USE_GL=			yes
 USE_GMAKE=		yes
-USE_AUTOTOOLS=	automake:15 autoconf:262
+USE_AUTOTOOLS=	automake:15 autoconf:267
 USE_PERL5=	yes
 USE_WX=		2.4+
 WX_CONF_ARGS=	absolute

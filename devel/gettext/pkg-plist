@@ -30,7 +30,7 @@ lib/libasprintf.a
 lib/libasprintf.la
 lib/libasprintf.so
 lib/libasprintf.so.0
-lib/libgettextlib-%%VERSION%%.so
+lib/libgettextlib-0.18.1.so
 lib/libgettextlib.la
 lib/libgettextlib.so
 lib/libgettextpo.a
@@ -38,16 +38,16 @@ lib/libgettextpo.la
 lib/libgettextpo.so
 lib/libgettextpo.so.5
 lib/libgettextsrc.la
-lib/libgettextsrc-%%VERSION%%.so
+lib/libgettextsrc-0.18.1.so
 lib/libgettextsrc.so
 lib/libintl.a
 lib/libintl.la
 lib/libintl.so
 lib/libintl.so.9
-libdata/gettext-tools/hostname
-libdata/gettext-tools/project-id
-libdata/gettext-tools/urlget
-libdata/gettext-tools/user-email
+lib/gettext/hostname
+lib/gettext/project-id
+lib/gettext/urlget
+lib/gettext/user-email
 share/aclocal/codeset.m4
 share/aclocal/gettext.m4
 share/aclocal/fcntl-o.m4
@@ -142,7 +142,7 @@ share/aclocal/xsize.m4
 share/emacs/site-lisp/po-compat.el
 share/emacs/site-lisp/po-mode.el
 %%DATADIR%%/ABOUT-NLS
-%%DATADIR%%/archive.cvs.tar.gz
+%%DATADIR%%/archive.dir.tar.gz
 %%DATADIR%%/config.rpath
 %%DATADIR%%/gettext.h
 %%DATADIR%%/intl/COPYING.LIB-2.0
@@ -332,7 +332,6 @@ share/locale/zh_TW/LC_MESSAGES/gettext-tools.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/csharpdoc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm libdata/gettext-tools
 @dirrm lib/gettext
 @dirrmtry share/locale/en@boldquot/LC_MESSAGES
 @dirrmtry share/locale/en@quot/LC_MESSAGES

@@ -7,7 +7,7 @@
 
 PORTNAME=	nss_mdns
 PORTVERSION=	0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://0pointer.de/lennart/projects/nss-mdns/
 DISTNAME=	nss-mdns-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	nss-mdns-${PORTVERSION}
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	NSS module implementing multicast DNS name resolution
 
-USE_AUTOTOOLS=	autoconf:262 automake:19 libtool:22
+USE_AUTOTOOLS=	autoconf:267 automake:19 libtool:22
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

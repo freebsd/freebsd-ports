@@ -7,13 +7,14 @@
 
 PORTNAME=	unfs3
 PORTVERSION=	0.9.22
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	A user-space implementation of the NFSv3 server specification
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 USE_BISON=	build
 
 MAN7=		tags.7

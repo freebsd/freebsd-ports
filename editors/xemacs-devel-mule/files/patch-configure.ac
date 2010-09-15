@@ -1,5 +1,5 @@
 --- configure.ac.orig	2007-05-21 03:50:13.000000000 +0000
-+++ configure.ac	2008-08-04 13:51:25.000000000 +0000
++++ configure.ac	2010-06-14 13:42:26.000000000 +0000
 @@ -389,5 +389,7 @@
  dnl
 +dnl m4_fst disappeared without a trace in autoconf 2.62
@@ -13,12 +13,38 @@
    *-*-linux*    ) opsys=linux ;;
 +  *-*-freebsd*	) opsys=freebsd ;;
    *-*-netbsd*   ) opsys=netbsd ;;
-@@ -3496,3 +3499,3 @@
-       for freetype_include_top in "/usr/X11R6/include/freetype2" \
+@@ -3487,26 +3490,7 @@
+ 
++  dnl XXX: autoconf > 2.64 AC_CHECK_HEADERS requires the headers to actually
++  dnl XXX: preprocess, and not just exist, so for now, we say 'yes'
++  dnl XXX: unconditionally if asked, and let it fall over elsewhere
+   if test "$with_xft_emacs" = "yes"; then
+-    AC_MSG_CHECKING([for Xrender, fontconfig, and Xft])
+-    xft_includes_found=no
+-    AC_CHECK_HEADERS([freetype/config/ftheader.h],
+-		     [xft_includes_found=yes],
+-		     [
+-      dnl #### How about /sw/include, and /opt/local/include?
+-      dnl these directories need to be the parent of the freetype directory
+-      for freetype_include_top in "/usr/X11R6/include/freetype2" \
 -				  "/usr/include/freetype2"
-+				  "$with_site_includes/freetype2"
-       do
-@@ -5420,3 +5423,3 @@
+-      do
+-	if test -d $freetype_include_top; then
+-	  AC_MSG_CHECKING([in ${freetype_include_top}/freetype2])
+-	  dnl disable autoconf's fucking cache; why these fuckheads think it
+-	  dnl is better to be broken than to be slow, I don't know!
+-	  dnl #### there's gotta be a better-looking way to do this!!
+-	  unset "$as_ac_Header"
+-          save_c_switch_site="$c_switch_site"
+-          c_switch_site="$c_switch_site -I${freetype_include_top}"
+-          AC_CHECK_HEADERS([freetype/config/ftheader.h],
+-			   [xft_includes_found=yes],
+-			   [c_switch_site=$save_c_switch_site])
+-	fi
+-      done])
++    xft_includes_found=yes
+     if test "$xft_includes_found" != "yes"; then
+@@ -5420,3 +5404,3 @@
    AC_MSG_CHECKING(for Berkeley db.h)
 -  for header in "db/db.h" "db.h"; do
 +  for header in "/usr/include/db.h" "db/db.h" "db.h"; do

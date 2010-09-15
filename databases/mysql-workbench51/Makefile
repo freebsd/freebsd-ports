@@ -7,7 +7,7 @@
 
 PORTNAME=	mysql-workbench-oss
 PORTVERSION?=	5.1.16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQLGUITools
@@ -28,7 +28,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=	PYTHON	"Enable Python scripting and modules" off
 
-USE_AUTOTOOLS=	autoheader:262 autoconf:262 automake:110 aclocal:110 libtool:22
+USE_AUTOTOOLS=	autoheader:267 autoconf:267 automake:110 aclocal:110 libtool:22
 AUTOMAKE_ARGS=	--add-missing --foreign
 ACLOCAL_ARGS=
 AUTOCONF_ARGS=

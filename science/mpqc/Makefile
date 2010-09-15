@@ -7,7 +7,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	science parallel
 MASTER_SITES=	SF
 
@@ -46,7 +46,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 
 USE_FORTRAN=	yes
 

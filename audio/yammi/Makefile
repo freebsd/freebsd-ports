@@ -7,7 +7,7 @@
 
 PORTNAME=	yammi
 PORTVERSION=	1.2.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -21,7 +21,7 @@ OPTIONS=	XMMS "XMMS backend support" off
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262:env automake:19:env libtool:22
+USE_AUTOTOOLS=	autoconf:267:env automake:19:env libtool:22
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gstreamer
 

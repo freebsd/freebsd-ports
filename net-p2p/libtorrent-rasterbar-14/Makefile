@@ -7,7 +7,7 @@
 
 PORTNAME=	libtorrent-rasterbar
 PORTVERSION=	0.14.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	libtorrent
@@ -24,7 +24,7 @@ CONFLICTS=	libtorrent-rasterbar-0.15.*
 
 USE_GNOME=	gnomehack
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:262 libtool:22
+USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:267 libtool:22
 ACLOCAL_ARGS=	-I m4
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug \

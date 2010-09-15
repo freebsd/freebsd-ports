@@ -7,7 +7,7 @@
 
 PORTNAME=	dkftpbench
 PORTVERSION=	0.45
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks ftp
 MASTER_SITES=	http://www.kegel.com/dkftpbench/
 
@@ -18,6 +18,6 @@ PLIST_FILES=	bin/dkftpbench
 
 GNU_CONFIGURE=	yes
 
-USE_AUTOTOOLS=	automake:14 autoconf:262
+USE_AUTOTOOLS=	automake:14 autoconf:267
 
 .include <bsd.port.mk>

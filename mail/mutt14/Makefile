@@ -8,7 +8,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.4.2.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -93,7 +93,7 @@ RUN_DEPENDS+=	slrnface:${PORTSDIR}/news/slrnface
 DIST_SUBDIR=	mutt
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:19 autoconf:262
+USE_AUTOTOOLS=	automake:19 autoconf:267
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-pop --enable-imap --disable-fcntl \

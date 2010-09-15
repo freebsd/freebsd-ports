@@ -7,6 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	0.9.18
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	claws-mail>=3.7.6:${PORTSDIR}/mail/claws-mail
 RUN_DEPENDS=	claws-mail>=3.7.6:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 USE_PERL5=	yes
 
 PLIST_FILES=	lib/claws-mail/plugins/perl_plugin.a \

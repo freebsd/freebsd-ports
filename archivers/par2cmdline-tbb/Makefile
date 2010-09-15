@@ -7,7 +7,7 @@
 
 PORTNAME=	par2cmdline-tbb
 PORTVERSION=	20100203
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	http://chuchusoft.com/par2_tbb/
 DISTNAME=	par2cmdline-0.4-tbb-${PORTVERSION}
@@ -21,7 +21,7 @@ ONLY_FOR_ARCHS=	i386 amd64 ia64
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:262
+USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:267
 USE_GCC=	4.2+
 
 PORTDOCS=	README

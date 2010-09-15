@@ -7,7 +7,7 @@
 
 PORTNAME=	gcvs
 PORTVERSION=	1.0
-PORTREVISION=	11
+PORTREVISION=	12
 PORTEPOCH=	1
 CATEGORIES=	devel tk
 MASTER_SITES=	SF/cvsgui/gCvs/${PORTNAME}-${PORTVERSION}
@@ -29,7 +29,7 @@ MAN1=		cvs.1
 MAN5=		cvs.5
 MAN8=		cvsbug.8
 INFO=		cvs cvsclient
-USE_AUTOTOOLS=	automake:15:env autoconf:262:env
+USE_AUTOTOOLS=	automake:15:env autoconf:267:env
 MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>

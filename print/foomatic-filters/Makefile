@@ -7,7 +7,7 @@
 
 PORTNAME=	foomatic-filters
 PORTVERSION=	4.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	http://www.linuxprinting.org/download/foomatic/ \
 		http://www.openprinting.org/download/foomatic/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.linuxprinting.org/download/foomatic/ \
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Foomatic wrapper scripts
 
-USE_AUTOTOOLS=	autoheader:262
+USE_AUTOTOOLS=	autoheader:267
 USE_PERL5=	yes
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes

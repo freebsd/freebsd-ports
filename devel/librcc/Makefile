@@ -7,7 +7,7 @@
 
 PORTNAME=	librcc
 PORTVERSION=	0.2.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF/rusxmms/Charset%20Conversion%20Library/${PORTVERSION} \
 		http://dside.dyndns.org/files/rusxmms/
@@ -25,7 +25,7 @@ USE_GNOME=	gnomehack lthack libxml2 glib12 gtk12
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoheader:262
+USE_AUTOTOOLS=	autoheader:267
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LIBS=		-L${LOCALBASE}/lib

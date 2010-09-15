@@ -7,6 +7,7 @@
 
 PORTNAME=	shibboleth-sp
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.internet2.edu/downloads/shibboleth/cppsp/${PORTVERSION}/
 
@@ -22,7 +23,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	shibboleth-sp
-USE_AUTOTOOLS=	autoconf:262 automake:110:env libtool:22:env
+USE_AUTOTOOLS=	autoconf:267 automake:110:env libtool:22:env
 WRKSRC=		${WRKDIR}/shibboleth-${PORTVERSION}
 
 LATEST_LINK=	shibboleth2-sp

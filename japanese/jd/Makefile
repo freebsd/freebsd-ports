@@ -7,6 +7,7 @@
 
 PORTNAME=		jd
 PORTVERSION=		2.7.0
+PORTREVISION=		1
 CATEGORIES=		japanese www
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	jd4linux/48699
@@ -19,7 +20,7 @@ COMMENT=	A 2ch browser
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:262 automake:110 libtool:22
+USE_AUTOTOOLS=	autoconf:267 automake:110 libtool:22
 
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls \
 		gtkmm:${PORTSDIR}/x11-toolkits/gtkmm24

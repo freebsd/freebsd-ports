@@ -7,7 +7,7 @@
 
 PORTNAME=	critterding
 DISTVERSION=	beta12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/sources
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:262:env aclocal:110:env automake:110:env libtool:22
+USE_AUTOTOOLS=	autoconf:267:env aclocal:110:env automake:110:env libtool:22
 USE_SDL=	sdl
 USE_GL=		gl
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \

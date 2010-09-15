@@ -116,7 +116,7 @@ CONFIGURE_ARGS+=	-U d_gnutls
 CONFIGURE_ARGS+=	-U d_nls
 .else
 CONFIGURE_ARGS+=	-D d_nls
-LIB_DEPENDS+=		intl:${PORTSDIR}/devel/gettext
+USE_GETTEXT=		yes
 PLIST_FILES=		share/locale/de/LC_MESSAGES/gtk-gnutella.mo \
 			share/locale/el/LC_MESSAGES/gtk-gnutella.mo \
 			share/locale/es/LC_MESSAGES/gtk-gnutella.mo \

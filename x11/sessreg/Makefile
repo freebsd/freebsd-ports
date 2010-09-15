@@ -7,6 +7,7 @@
 
 PORTNAME=	sessreg
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -17,7 +18,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/aclocal/xorg-macros.m4:${PORTSDIR}/devel/xorg
 XORG_CAT=	app
 USE_XORG=	x11
 
-USE_AUTOTOOLS=	aclocal:110 autoheader:262 automake:110 autoconf:262
+USE_AUTOTOOLS=	aclocal:110 autoheader:267 automake:110 autoconf:267
 ACLOCAL_ARGS=	-I${LOCALBASE}/share/aclocal
 
 PLIST_FILES=	bin/sessreg

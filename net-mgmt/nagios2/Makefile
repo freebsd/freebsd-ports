@@ -7,7 +7,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	2.12
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION}
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagio
 
 USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
-USE_AUTOTOOLS=	autoconf:262 libltdl:22
+USE_AUTOTOOLS=	autoconf:267 libltdl:22
 USE_RC_SUBR=	nagios
 
 CONFLICTS=	nagios-[13].* nagios-devel-*

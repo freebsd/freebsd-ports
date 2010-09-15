@@ -7,7 +7,7 @@
 
 PORTNAME=	sccmilter
 PORTVERSION=	0.95.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail sysutils
 MASTER_SITES=	http://openoffice.mirahost.ru/fileZ/ports/ \
 		http://citycat4.land.ru/
@@ -21,7 +21,7 @@ IGNORE=		requires Sendmail 8.12; upgrade the base system
 
 USE_BZIP2=		yes
 USE_RC_SUBR=		yes
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--localstatedir=/var

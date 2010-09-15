@@ -7,7 +7,7 @@
 
 PORTNAME=	xmlcopyeditor
 PORTVERSION=	1.2.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors
 MASTER_SITES=	SF/xml-copy-editor/${PORTNAME}-linux/${PORTVERSION}
 
@@ -45,7 +45,7 @@ post-extract:
 
 # iconv.m4 is located in ${LOCALBASE}/share/aclocal
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-USE_AUTOTOOLS=	aclocal:110 autoconf:262 automake:110 libtool:22
+USE_AUTOTOOLS=	aclocal:110 autoconf:267 automake:110 libtool:22
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include \

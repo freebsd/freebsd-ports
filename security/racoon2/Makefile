@@ -7,6 +7,7 @@
 
 PORTNAME=	racoon2
 PORTVERSION=	20100526a
+PORTREVISION=	1
 CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.racoon2.wide.ad.jp/pub/racoon2/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +18,7 @@ COMMENT=	Racoon2 IPsec daemon
 USE_RC_SUBR=	YES
 USE_OPENSSL=	YES
 
-USE_AUTOTOOLS=	autoconf:262
+USE_AUTOTOOLS=	autoconf:267
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/racoon2
 

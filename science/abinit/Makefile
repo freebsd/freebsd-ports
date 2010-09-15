@@ -7,7 +7,7 @@
 
 PORTNAME=	abinit
 PORTVERSION=	5.7.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.abinit.org/pub/abinitio/ABINIT_v${PORTVERSION}/
 
@@ -22,7 +22,7 @@ USE_FORTRAN=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_PERL5_BUILD=yes
-USE_AUTOTOOLS=	autoconf:262 automake:110
+USE_AUTOTOOLS=	autoconf:267 automake:110
 CONFIGURE_ENV=	WGET=${TRUE}
 CONFIGURE_ARGS=	--disable-wannier90 --disable-bigdft --disable-etsf-io	\
 		--with-plugins-tardir=/dev/null				\

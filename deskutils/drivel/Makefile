@@ -7,6 +7,7 @@
 
 PORTNAME=	drivel
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/${PORTNAME}/Drivel%20%28stable%29/${PORTVERSION}
 
@@ -23,7 +24,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
-USE_AUTOTOOLS=	libtool:22 autoconf:262:env automake:110:env
+USE_AUTOTOOLS=	libtool:22 autoconf:267:env automake:110:env
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

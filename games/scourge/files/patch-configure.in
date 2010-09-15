@@ -1,0 +1,10 @@
+--- configure.in.orig	2008-12-22 23:38:10.000000000 +0000
++++ configure.in	2010-06-14 11:57:29.000000000 +0000
+@@ -493,3 +493,6 @@
+ dnl Check for glext.h 
+-AC_CHECK_HEADERS( "GL/glext.h", have_glext_h=yes, have_glext_h=no )
++dnl XXX: which requires GL/gl.h, and autoconf > 2.64 is barfing on this
++dnk XXX: use following check to cover the bases
++dnl AC_CHECK_HEADERS( "GL/glext.h", have_glext_h=yes, have_glext_h=no )
++have_glext_h=yes
+ 

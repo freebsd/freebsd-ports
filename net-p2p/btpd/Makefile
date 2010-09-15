@@ -7,6 +7,7 @@
 
 PORTNAME=	btpd
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://cloud.github.com/downloads/btpd/btpd/
 
@@ -16,7 +17,7 @@ COMMENT=	Bittorrent client consisting of a daemon and client commands
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USE_AUTOTOOLS=	autoconf:262 aclocal:110
+USE_AUTOTOOLS=	autoconf:267 aclocal:110
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 

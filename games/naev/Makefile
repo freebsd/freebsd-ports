@@ -7,6 +7,7 @@
 
 PORTNAME=	naev
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	${PORTNAME}
@@ -18,7 +19,7 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/ndata-${PORTVERSION}:${PORTSDIR}/games/naev-data
 
-USE_AUTOTOOLS=	automake:19:env aclocal:19:env autoconf:262:env
+USE_AUTOTOOLS=	automake:19:env aclocal:19:env autoconf:267:env
 USE_BZIP2=	yes
 USE_DOS2UNIX=	conf.example
 GNU_CONFIGURE=	yes
