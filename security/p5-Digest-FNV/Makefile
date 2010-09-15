@@ -4,13 +4,16 @@
 # $FreeBSD$
 
 PORTNAME=	Digest-FNV
-PORTVERSION=	1.00
+PORTVERSION=	2.00
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension for Fowler/Noll/Vo hash algorithm
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
