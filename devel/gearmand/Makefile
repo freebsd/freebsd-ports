@@ -17,8 +17,8 @@ COMMENT=	Gearman C Server and Library
 LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent \
 		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
 
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 FETCH_ARGS=	-pRr
+USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
@@ -146,6 +146,16 @@ MAN8=		gearmand.8
 
 .include <bsd.port.pre.mk>
 
+# This hack is required for the test programs invoked by configure,
+# in the event that libmemcached was compiled with SASL support.
+.if exists(${LOCALBASE}/lib/libsasl.so)
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lsasl"
+.elif exists(${LOCALBASE}/lib/libsasl2.a)
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lsasl2"
+.else
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+.endif
+
 .ifdef(WITH_DRIZZLE)
 CONFIGURE_ARGS+=	--with-libdrizzle-prefix
 LIB_DEPENDS+=		drizzle:${PORTSDIR}/databases/libdrizzle
@@ -153,23 +163,23 @@ LIB_DEPENDS+=		drizzle:${PORTSDIR}/databases/libdrizzle
 CONFIGURE_ARGS+=	--disable-libdrizzle
 .endif
 
-.ifdef(WITHOUT_MEMCACHED)
-CONFIGURE_ARGS+=	--disable-libmemcached
+.ifdef(WITH_MEMCACHED)
+CONFIGURE_ARGS+=	--with-libmemcached-prefix
+LIB_DEPENDS+=		memcached:${PORTSDIR}/databases/libmemcached
 .else
-CONFIGURE_ARGS+=	--with-libmemcached-prefix --without-memcached
-LIB_DEPENDS+=	memcached:${PORTSDIR}/databases/libmemcached
+CONFIGURE_ARGS+=	--disable-libmemcached
 .endif
 
 .ifdef(WITH_PQ)
 CONFIGURE_ARGS+=	--with-libpq-prefix
-USE_PGSQL=	yes
+USE_PGSQL=		yes
 .else
 CONFIGURE_ARGS+=	--disable-libpq
 .endif
 
 .ifdef(WITH_SQLITE3)
 CONFIGURE_ARGS+=	--with-libsqlite3-prefix
-USE_SQLITE=	yes
+USE_SQLITE=		yes
 .else
 CONFIGURE_ARGS+=	--disable-libsqlite3
 .endif
