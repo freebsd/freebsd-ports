@@ -17,7 +17,7 @@ you update your ports collection, before attempting any port upgrades.
   If you want to switch to lang/perl5.12 from lang/perl5.{8,10} please
   follow instructions in the entry 20100715 in this file.
 
-20100912
+20100912:
   AFFECTS: ftp/curl
   AUTHOR: roam@FreeBSD.org
 
@@ -27,7 +27,7 @@ you update your ports collection, before attempting any port upgrades.
   problems building cURL, re-run "make config" in the ftp/curl
   directory and disable the WERROR knob.
 
-20100912
+20100912:
   AFFECTS: www/tdiary-devel, japanese/tdiary-devel
   AUTHOR: tota@FreeBSD.org
 
@@ -53,7 +53,7 @@ you update your ports collection, before attempting any port upgrades.
 
 	http://www.tdiary.org/20100828.html (written in Japanese)
 
-20100907
+20100907:
   AFFECTS: sysutils/pecl-fileinfo
   AUTHOR: ale@FreeBSD.org
 
@@ -62,7 +62,7 @@ you update your ports collection, before attempting any port upgrades.
 
 	portmaster -o sysutils/php5-fileinfo sysutils/pecl-fileinfo
 
-20100904
+20100904:
   AFFECTS: net/netcat
   AUTHOR: pgollucci@FreeBSD.org
 
