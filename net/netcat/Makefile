@@ -20,7 +20,7 @@ PATCH_SITES=	ftp://sith.mimuw.edu.pl/pub/users/baggins/IPv6/
 PATCHFILES=	nc-v6-20000918.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	sumikawa@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple utility which reads and writes data across network connections
 
 NO_WRKSUBDIR=	yes
@@ -50,9 +50,12 @@ XFLAGS+=	-DGAPING_SECURITY_HOLE
 
 MAKE_ENV=	XFLAGS="${XFLAGS}"
 
+post-patch:
+	${SED} -e 's|%%DOCSDIR%%|${DOCSDIR}|g' ${FILESDIR}/nc.1 > ${WRKDIR}/nc.1
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nc ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${FILESDIR}/nc.1 ${PREFIX}/man/man1/${MAN1}
+	${INSTALL_MAN} ${WRKDIR}/nc.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
