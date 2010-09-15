@@ -7,7 +7,8 @@
 
 PORTNAME=	stumpwm
 PORTVERSION=	0.9.7
-CATEGORIES=	x11-wm
+PORTREVISION=	1
+CATEGORIES=	x11-wm lisp
 MASTER_SITES=	SAVANNAH
 DISTFILES=	${DISTNAME}.tgz
 
@@ -15,10 +16,17 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tiling, keyboard driven Window Manager written in Common Lisp
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-contrib-dir=${DATADIR}
 MAKE_JOBS_UNSAFE=yes
 
-PLIST_FILES=	bin/${PORTNAME}
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+PLIST_FILES=	bin/stumpish \
+		bin/${PORTNAME}
 INFO=		${PORTNAME}
+PORTEXAMPLES=	sample-stumpwmrc.lisp
+PORTDATA=	*
 
 OPTIONS=	SBCL "Build with lang/sbcl (otherwise with lang/clisp)" on
 
@@ -30,10 +38,10 @@ DISTFILES+=	clx-0.7.4.tgz:clx
 .endif
 
 .if defined(WITH_SBCL)
-CONFIGURE_ARGS=	--with-lisp=sbcl
+CONFIGURE_ARGS+=	--with-lisp=sbcl
 BUILD_DEPENDS+=	sbcl:${PORTSDIR}/lang/sbcl
 .else
-CONFIGURE_ARGS=	--with-lisp=clisp
+CONFIGURE_ARGS+=	--with-lisp=clisp
 BUILD_DEPENDS+=	clisp:${PORTSDIR}/lang/clisp
 .endif
 
@@ -49,12 +57,27 @@ post-extract:	.SILENT
 	${LN} -sf ${WRKDIR}/clx*/*.asd ${WRKSRC}/cl-ppcre/*.asd ${WRKSRC}
 
 post-patch:	.SILENT
-	${REINPLACE_CMD} 's|sbcl_.*OPTS=|&--disable-debugger --no-userinit \
+	${REINPLACE_CMD} 's|sbcl_.*OPTS=|& \
+		--disable-debugger \
+		--no-userinit \
+		--no-sysinit \
 		--eval "(require :asdf)" \
-		--eval "(pop asdf:*central-registry*)" |' \
-		${WRKSRC}/Makefile.in
+		--eval "(pop asdf:*central-registry*)" \
+		|' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} 's/\(sb-introspect:function-\)arglist/\1lambda-list/' \
 		${WRKSRC}/manual.lisp
+.endif
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/stumpish ${PREFIX}/bin
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTEXAMPLES} ${EXAMPLESDIR}
+.endif
+.if !defined(NOPORTDATA)
+	${MKDIR} ${DATADIR}
+	${TAR} cf - -C${WRKSRC}/contrib --exclude stumpish\* . \
+		| ${TAR} xovf - -C${DATADIR}
 .endif
 
 .include <bsd.port.mk>
