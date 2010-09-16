@@ -10590,6 +10590,7 @@ openoffice.org-3-rc             ports/editors/openoffice.org-3-RC
 openoffice.org-vcltesttool      ports/editors/openoffice.org-vcltesttool
 openospfd                       ports/net/openospfd
 openpgpsdk                      ports/security/openpgpsdk
+openpref                        ports/games/openpref
 openprinting                    ports/print/openprinting
 openproj                        ports/deskutils/openproj
 openquicktime                   ports/multimedia/openquicktime
@@ -20572,7 +20573,6 @@ py-MySQLdb-devel                ports/databases/py-MySQLdb-devel
 py-PEAK-Rules                   ports/devel/py-PEAK-Rules
 py-PF                           ports/security/py-PF
 py-Pmw                          ports/x11-toolkits/py-Pmw
-py-Pootle                       ports/textproc/py-Pootle
 py-PyGreSQL                     ports/databases/py-PyGreSQL
 py-PySQLite10                   ports/databases/py-PySQLite10
 py-PySQLite11                   ports/databases/py-PySQLite11
@@ -20691,6 +20691,7 @@ py-dendropy                     ports/science/py-DendroPy
 py-dexml                        ports/devel/py-dexml
 py-dialog                       ports/devel/py-dialog
 py-distorm                      ports/devel/py-distorm
+py-distribute                   ports/devel/py-distribute
 py-distutils                    ports/misc/py-distutils
 py-distutils-extra              ports/devel/py-distutils-extra
 py-django                       ports/www/py-django
@@ -21008,7 +21009,6 @@ py-pmock                        ports/devel/py-pmock
 py-pmw                          ports/x11-toolkits/py-Pmw
 py-poker-eval                   ports/games/py-poker-eval
 py-polib                        ports/devel/py-polib
-py-pootle                       ports/textproc/py-Pootle
 py-poppler                      ports/graphics/py-poppler
 py-posix1e                      ports/security/py-posix1e
 py-postgresql                   ports/databases/py-postgresql
@@ -23393,6 +23393,7 @@ snx101util                      ports/graphics/snx101util
 soapui                          ports/devel/soapui
 sobby                           ports/net/sobby
 socat                           ports/net/socat
+soci                            ports/databases/soci
 socket                          ports/sysutils/socket
 socketbind                      ports/net/socketbind
 socketpipe                      ports/net/socketpipe
