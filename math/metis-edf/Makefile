@@ -6,22 +6,14 @@
 #
 
 PORTNAME=	metis-edf
-DISTVERSIONPREFIX=	full-src-
 DISTVERSION=	4.1-2
-DISTVERSIONSUFFIX=	.noarch
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
-MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
-DISTNAME=	aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meshes partionning tool used by Code_Aster
 
 CONFLICTS=	metis-[0-9]*
-
-ASTER_VER=	10.1.0
-ASTER_DISTVERSION=	${ASTER_VER}-4
-EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_VER}/SRC
 
 ALL_TARGET=	default
 MAKE_ENV+=	AR="${AR}" PICFLAG="${PICFLAG}"
@@ -32,7 +24,7 @@ USE_FORTRAN=	yes
 FFLAGS+=	-O2
 PICFLAG?=	-fPIC
 
-WRKSRC=		${WRKDIR}/${PORTNAME:C/-/_/}-${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 PROGS=		kmetis onmetis.exe pmetis
 DOCS=		CHANGES Doc/manual.ps README_Code_Aster
@@ -41,6 +33,7 @@ FORTRANLIBS=	-lgfortranbegin -lgfortran
 GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 .include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../french/aster/bsd.aster.mk"
 
 MACHINEARCH=	${ARCH}
 .if ${ARCH} == "i386"
@@ -49,10 +42,6 @@ PLIST_SUB+=	SHLIB=""
 .else
 PLIST_SUB+=	SHLIB="@comment "
 .endif
-
-post-extract:
-	(cd ${WRKDIR} &&	\
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${EXTRACT_WRKSRC}/${PORTNAME:C/-/_/}-${DISTVERSION}${DISTVERSIONSUFFIX}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS})
 
 pre-configure:
 .if ${MACHINEARCH} != "i386"
