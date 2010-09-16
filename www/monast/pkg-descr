@@ -1,0 +1,13 @@
+Monast is a monitoring interface which acts as an operator panel for AsteriskTM 
+to display extensions status and calls details going through your IP-PBX.
+
+It was develop in Python, PHP and uses prototype.js to handle AJAX calls and YUI
+(Yahoo User Interface).
+
+Monast can originate, transfer, park and hangup calls, Manage queue members
+(add, remove, pause and unpause members) and meetme conference rooms.
+(all using drag&drop feature from YUI)
+
+Licensed under BSD, it has been created by Diego Aguirre (DagMoller).
+
+WWW: http://monast.sf.net
