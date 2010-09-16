@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/extension
 USE_PHP=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
+ONLY_FOR_ARCHS=	i386 amd64
 
 .include <bsd.port.pre.mk>
 
