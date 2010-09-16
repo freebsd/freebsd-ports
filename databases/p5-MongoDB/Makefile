@@ -26,6 +26,8 @@ BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+MAKE_JOBS_UNSAFE=	yes
+
 PERL_CONFIGURE=	yes
 
 MAN3=		MongoDB.3 \
