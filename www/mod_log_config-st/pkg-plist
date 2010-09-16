@@ -1,0 +1,2 @@
+%%APACHEMODDIR%%/%%AP_MODULE%%
+@unexec /usr/bin/sed -i '' '/%%AP_NAME%%-st.so/d' %D/%%APACHEETCDIR%%/httpd.conf
