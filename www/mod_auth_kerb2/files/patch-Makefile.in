@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2010-09-16 04:14:47.235589487 +0000
++++ ./Makefile.in	2010-09-16 04:14:27.895241868 +0000
+@@ -16,7 +16,7 @@
+ 	./apxs.sh "${CPPFLAGS}" "${LDFLAGS}" "${SPNEGO_SRCS}" "${APXS}" "-c" "src/mod_auth_kerb.c"
+ 
+ install:
+-	./apxs.sh "${CPPFLAGS}" "${LDFLAGS}" "${SPNEGO_SRCS}" "${APXS}" "-c -i" "src/mod_auth_kerb.c"
++	./apxs.sh "${CPPFLAGS}" "${LDFLAGS}" "${SPNEGO_SRCS}" "${APXS}" "-c -i -a" "src/mod_auth_kerb.c"
+ 
+ clean:
+ 	for i in . src spnegokrb5; do \
