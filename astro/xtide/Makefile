@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xtide
-PORTVERSION=	2.10
-PORTREVISION=	4
+PORTVERSION=	2.11
 CATEGORIES=	astro geography
 MASTER_SITES=	ftp://ftp.flaterco.com/xtide/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -32,8 +31,8 @@ MAN8=		xttpd.8
 PLIST_DIRS=	%%DATADIR%%
 
 .if defined(WITHOUT_X11)
-PKGNAMESUFFIX=  -nox11
-ALL_TARGET= 	tide xttpd
+PKGNAMESUFFIX=	-nox11
+ALL_TARGET=	tide xttpd
 .else
 USE_XORG=	xpm xaw
 USE_GNOME=	gnometarget
@@ -47,8 +46,8 @@ LDFLAGS=	-L../libtcd-2.2.4/.libs -L${LOCALBASE}/lib
 .include <bsd.port.pre.mk>
 
 post-extract:
-	@cd $(DISTDIR);${TAR} xzf ${DISTDIR}/harmonics-dwf-20091227-free.tar.bz2
-	@$(MV) $(DISTDIR)/harmonics-dwf-20091227-free.tcd \
+	@cd ${DISTDIR};${TAR} xzf ${DISTDIR}/harmonics-dwf-20091227-free.tar.bz2
+	@${MV} ${DISTDIR}/harmonics-dwf-20091227-free.tcd \
 		 ${WRKSRC}/harmonics.tcd
 
 post-patch:
@@ -56,9 +55,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
 		-e 's|png_check_sig|png_sig_cmp|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure
-.for file in Global.cc HarmonicsPath.cc wvsrtv.cc
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${file}
-.endfor
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Global.cc
 
 pre-configure:
 	@cd ${WRKDIR}/libtcd-2.2.4 \
