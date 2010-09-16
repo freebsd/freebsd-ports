@@ -9,6 +9,7 @@ include/sbml/FunctionDefinition.h
 include/sbml/InitialAssignment.h
 include/sbml/KineticLaw.h
 include/sbml/ListOf.h
+include/sbml/LocalParameter.h
 include/sbml/Model.h
 include/sbml/Parameter.h
 include/sbml/Reaction.h
@@ -19,6 +20,7 @@ include/sbml/SBMLErrorLog.h
 include/sbml/SBMLErrorTable.h
 include/sbml/SBMLNamespaces.h
 include/sbml/SBMLReader.h
+include/sbml/SBMLTransforms.h
 include/sbml/SBMLTypeCodes.h
 include/sbml/SBMLTypes.h
 include/sbml/SBMLVisitor.h
@@ -79,6 +81,7 @@ include/sbml/validator/L2v1CompatibilityValidator.h
 include/sbml/validator/L2v2CompatibilityValidator.h
 include/sbml/validator/L2v3CompatibilityValidator.h
 include/sbml/validator/L2v4CompatibilityValidator.h
+include/sbml/validator/L3v1CompatibilityValidator.h
 include/sbml/validator/MathMLConsistencyValidator.h
 include/sbml/validator/ModelingPracticeValidator.h
 include/sbml/validator/OverdeterminedValidator.h
@@ -114,7 +117,7 @@ include/sbml/xml/XMLParser.h
 include/sbml/xml/XMLToken.h
 include/sbml/xml/XMLTokenizer.h
 include/sbml/xml/XMLTriple.h
-lib/libsbml.so.4
+lib/libsbml.so.5
 lib/libsbml.so
 lib/libsbml.la
 lib/libsbml.a
@@ -153,6 +156,8 @@ lib/libsbml.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/Makefile.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/addCVTerms.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/addingEvidenceCodes_1.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/addingEvidenceCodes_2.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/addModelHistory.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/appendAnnotation.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/c++/convertSBML.cpp
@@ -229,6 +234,23 @@ lib/libsbml.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/overdetermined.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/twodimensional.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-2/units.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/algebraicrules.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/assignmentrules.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/boundarycondition.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/conversionfactor1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/conversionfactor2.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/delay.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/dimerization.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/enzymekinetics.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/events.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/fullydeterminedevent.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/functiondef.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/membrane.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/multicomp.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/overdetermined.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/README.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/twoalgebraicrules.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample-models/from-spec/level-3/twodimensional.xml
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/c++
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/csharp
@@ -237,6 +259,7 @@ lib/libsbml.a
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/perl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/python
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ruby
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sample-models/from-spec/level-3
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sample-models/from-spec/level-2
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sample-models/from-spec
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sample-models
