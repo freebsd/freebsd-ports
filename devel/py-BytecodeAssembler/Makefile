@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	BytecodeAssembler
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate Python code objects by "assembling" bytecode
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}DecoratorTools>=1.7:${PORTSDIR}/devel/py-decoratortools \
