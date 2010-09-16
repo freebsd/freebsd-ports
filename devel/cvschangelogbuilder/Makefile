@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	cvschangelogbuilder
-PORTVERSION=	2.4
-PORTREVISION=	2
+PORTVERSION=	2.5
 CATEGORIES=	devel
 MASTER_SITES=	SF/cvschangelogb/CVSChangelogBuilder/${PORTVERSION}
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Utility to generate changelogs and reports from a CVS repository
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
 
