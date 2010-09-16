@@ -245,6 +245,15 @@
 %%SERV%%%%ASTKDIR%%/asrun/contrib/__init__.py
 %%SERV%%%%ASTKDIR%%/asrun/contrib/__init__.pyc
 %%SERV%%%%ASTKDIR%%/asrun/contrib/__init__.pyo
+%%SERV%%%%ASTKDIR%%/asrun/core/__init__.py
+%%SERV%%%%ASTKDIR%%/asrun/core/__init__.pyc
+%%SERV%%%%ASTKDIR%%/asrun/core/__init__.pyo
+%%SERV%%%%ASTKDIR%%/asrun/core/configuration.py
+%%SERV%%%%ASTKDIR%%/asrun/core/configuration.pyc
+%%SERV%%%%ASTKDIR%%/asrun/core/configuration.pyo
+%%SERV%%%%ASTKDIR%%/asrun/core/default_configuration.py
+%%SERV%%%%ASTKDIR%%/asrun/core/default_configuration.pyc
+%%SERV%%%%ASTKDIR%%/asrun/core/default_configuration.pyo
 %%SERV%%%%ASTKDIR%%/asrun/ctl/__init__.py
 %%SERV%%%%ASTKDIR%%/asrun/ctl/__init__.pyc
 %%SERV%%%%ASTKDIR%%/asrun/ctl/__init__.pyo
@@ -465,6 +474,7 @@
 %%SERV%%@dirrm %%ASTKDIR%%/bin
 %%SERV%%@dirrm %%ASTKDIR%%/asrun/dev
 %%SERV%%@dirrm %%ASTKDIR%%/asrun/ctl
+%%SERV%%@dirrm %%ASTKDIR%%/asrun/core
 %%SERV%%@dirrm %%ASTKDIR%%/asrun/contrib
 %%SERV%%@dirrm %%ASTKDIR%%/asrun/common
 %%SERV%%@dirrm %%ASTKDIR%%/asrun
