@@ -1,0 +1,13 @@
+--- ./src/Makefile.in.orig	2010-09-16 03:35:25.552884648 +0000
++++ ./src/Makefile.in	2010-09-16 03:35:03.705416865 +0000
+@@ -727,8 +727,8 @@
+ 
+ install: $(lib_LTLIBRARIES)
+ 	$(mkinstalldirs) "$(DESTDIR)$(libdir)"
+-@BUILD_FOR_APACHE2_TRUE@	$(APXS) -S LIBEXECDIR="$(DESTDIR)$(libdir)" -i -n musicindex mod_musicindex.la
+-@BUILD_FOR_APACHE2_FALSE@	$(APXS) -S LIBEXECDIR="$(DESTDIR)$(libdir)" -i -n musicindex .libs/mod_musicindex.so
++@BUILD_FOR_APACHE2_TRUE@	$(APXS) -S LIBEXECDIR="$(DESTDIR)$(libdir)" -i -a -n musicindex mod_musicindex.la
++@BUILD_FOR_APACHE2_FALSE@	$(APXS) -S LIBEXECDIR="$(DESTDIR)$(libdir)" -i -a -n musicindex .libs/mod_musicindex.so
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
