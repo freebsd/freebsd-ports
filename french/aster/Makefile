@@ -6,12 +6,8 @@
 #
 
 PORTNAME=		aster
-DISTVERSIONPREFIX=	full-src-
-DISTVERSION=		10.2.0-1
-DISTVERSIONSUFFIX=	.noarch
-PORTREVISION=	1
+DISTVERSION=		${ASTER_DISTVERSION}
 CATEGORIES=		french cad
-MASTER_SITES=		http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Code_Aster finite element method solver
@@ -48,6 +44,8 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/math/metis-edf		\
 		${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur
 
+LICENSE=	GPLv2
+
 USE_BISON=	build
 USE_PYTHON=	yes
 HAS_CONFIGURE=	yes
@@ -64,6 +62,7 @@ SUB_LIST=	tools_dir=${tools_dir}
 
 INTERACTIVE_SCRIPTS=	check_compilers.py setup.py
 
+.include "${.CURDIR}/../../french/aster/bsd.aster.mk"
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -145,7 +144,7 @@ HOME_MPI=	${LOCALBASE}
 USE_FORTRAN=	yes
 GCC_VER=	`${CC} -dumpversion`
 
-TK_VER?=	8.4
+TK_VER?=	8.5
 SHORT_TK_VER=	${TK_VER:S/.//}
 
 TCL_VER?=	${TK_VER}
