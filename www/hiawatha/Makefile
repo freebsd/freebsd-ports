@@ -7,12 +7,15 @@
 
 PORTNAME=	hiawatha
 PORTVERSION=	7.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.hiawatha-webserver.org/files/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	c-s@c-s.li
 COMMENT=	An advanced and secure webserver for Unix
+
+LICENSE=	GPLv2
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL
 PORTEXAMPLES=	hiawatha mkcert newroot php-fcgi
@@ -33,6 +36,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 OPTIONS=	COMMAND "Enable the Hiawatha CommandChannel" Off \
 		CACHE "Internal file caching support" On \
 		IPV6 "Enable IPv6 Support" On \
+		LARGEFILE "Support for large files" On \
 		MONITOR "Enable Hiawatha Monitor" On \
 		SSL "Support for Secure Sockets Layer (SSL)" On \
 		TOOLKIT "Enable URL Toolkit" On \
@@ -40,33 +44,43 @@ OPTIONS=	COMMAND "Enable the Hiawatha CommandChannel" Off \
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_SSL)
-CONFIGURE_ARGS+=	--disable-ssl
+.if defined(WITH_COMMAND)
+CONFIGURE_ARGS+=	--enable-command
+.else
+CONFIGURE_ARGS+=	--disable-command
 .endif
 
 .if !defined(WITH_CACHE)
 CONFIGURE_ARGS+=	--disable-cache
 .endif
 
-.if !defined(WITH_TOOLKIT)
-CONFIGURE_ARGS+=	--disable-toolkit
-.endif
-
-.if defined(WITH_COMMAND)
-CONFIGURE_ARGS+=	--enable-command
-.endif
-
 .if !defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
-.if !defined(WITH_MONITOR)
-CONFIGURE_ARGS+=	--disable-monitor
+.if !defined(WITH_LARGEFILE)
+CONFIGURE_ARGS+=	--disable-largefile
+.endif
+
+.if !defined(WITH_SSL)
+CONFIGURE_ARGS+=	--disable-ssl
+.endif
+
+.if !defined(WITH_TOOLKIT)
+CONFIGURE_ARGS+=	--disable-toolkit
 .endif
 
 .if !defined(WITH_XSLT)
 CONFIGURE_ARGS+=	--disable-xslt
 .else
+USE_GNOME+=	libxslt
+CPPFLAGS+=	-I${LOCALBASE}/include/libxml2
+.endif
+
+.if !defined(WITH_MONITOR)
+CONFIGURE_ARGS+=	--disable-monitor
+.else
+CONFIGURE_ARGS+=	--enable-xslt
 USE_GNOME+=	libxslt
 CPPFLAGS+=	-I${LOCALBASE}/include/libxml2
 .endif
