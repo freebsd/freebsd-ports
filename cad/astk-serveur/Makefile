@@ -6,17 +6,13 @@
 #
 
 PORTNAME=	astk
-PORTVERSION=	1.8.1
-DISTVERSIONPREFIX=	full-src-
-DISTVERSIONSUFFIX=	.noarch
+PORTVERSION=	1.8.3
 CATEGORIES=	cad
-MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 .if !defined(CLIENT_SEUL)
 PKGNAMESUFFIX=	-serveur
 .else
 PKGNAMESUFFIX=	-client
 .endif
-DISTNAME=	aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Graphical interface for Code_Aster (server side)
@@ -34,6 +30,8 @@ COMMENT?=	Graphical interface for Code_Aster (server side)
 # There exists a "logical" RUN_DEPENDS towards french/aster and french/eficas
 # for the server part, but it is not set to avoid circular dependences.
 RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}
+
+LICENSE=	GPLv2
 
 .if !defined(CLIENT_SEUL)
 USE_PYTHON=	yes
@@ -96,12 +94,11 @@ FILESDIR=	${PATCHDIR}
 
 SLAVEDIRS=	cad/astk-client
 
-TK_VER?=	8.4
+TK_VER?=	8.5
 TCL_VER?=	${TK_VER}
 SHORT_TK_VER=	${TK_VER:S/.//}
 BWidget_VER=	1.7.0
 
-ASTER_VER=	10.2.0
 vaster=		STA${ASTER_VER:R}
 ETCDIR=		${PREFIX}/aster/etc/codeaster
 
@@ -171,10 +168,6 @@ ASTK_LANG=	FR
 ASTK_LANG=	ENG
 .endif
 
-post-extract:
-	(cd ${WRKDIR} &&	\
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${EXTRACT_WRKSRC}/${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS})
-
 pre-configure:
 	${RM} ${PATCH2RM:C|^|${WRKSRC}/|:C|$|.orig|}
 
@@ -231,6 +224,8 @@ do-configure:
 	${REINPLACE_CMD} -e 's|%%MAKE_JOBS_NUMBER%%|1|'	${WRKSRC}/asrun/system.py
 . endif
 	${REINPLACE_CMD} -e 's|bash|${SHIA}|' ${WRKSRC}/asrun/system_command.py
+	${REINPLACE_CMD} -e 's|/usr/bin/|${LOCALBASE}/bin/|;s|LINUX|FREEBSD|'	\
+		${WRKSRC}/asrun/core/configuration.py
 .else
 # CLIENT_SEUL
 . for scripts in ${C_SCRIPTS}
@@ -283,4 +278,5 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
+.include "${.CURDIR}/../../french/aster/bsd.aster.mk"
 .include <bsd.port.post.mk>
