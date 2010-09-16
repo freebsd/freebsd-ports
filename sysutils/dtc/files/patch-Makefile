@@ -1,0 +1,37 @@
+--- Makefile.orig	2010-09-10 09:31:00.000000000 -0300
++++ Makefile	2010-09-16 09:40:01.000000000 -0300
+@@ -51,13 +51,13 @@
+ UNIX_TYPE?=debian
+ 
+ # /usr/share
+-APP_INST_DIR = $(DESTDIR)$(DTC_APP_DIR)/dtc
++APP_INST_DIR = $(DESTDIR)$(DTC_APP_DIR)
+ # /var/lib
+-GENFILES_DIRECTORY = $(DESTDIR)$(DTC_GEN_DIR)/dtc
++GENFILES_DIRECTORY = $(DESTDIR)$(DTC_GEN_DIR)
+ # /etc
+-DTC_ETC_DIRECTORY = $(DESTDIR)$(CONFIG_DIR)/dtc
++DTC_ETC_DIRECTORY = $(DESTDIR)$(CONFIG_DIR)
+ # /usr/share/doc
+-DOC_DIR = $(DESTDIR)$(DTC_DOC_DIR)/dtc
++DOC_DIR = $(DESTDIR)$(DTC_DOC_DIR)
+ # /usr/share/man
+ MAN_DIR = $(DESTDIR)$(MANUAL_DIR)
+ # /usr/bin
+@@ -372,7 +372,7 @@
+ 	# PHP scripts files served by web server
+ 	@echo "-> Creating destination folders for version "${VERS}
+ 	for i in $(CREATE_DIRS) ; do $(INSTALL_DIR) -m $(NORMAL_FOLDER) $(APP_INST_DIR)/$$i ; done
+-	$(INSTALL_DIR) -m $(NORMAL_FOLDER) $(MAN_DIR)/man8
++	$(INSTALL_DIR) $(MAN_DIR)/man8
+ 
+ 	@ echo "-> Installing scripts"
+ 	@for i in $(WEB_SCRIPT_FILES) ; do $(INSTALL) -m $(PHP_RIGHTS) $$i $(APP_INST_DIR)/$$i ; done
+@@ -395,6 +395,7 @@
+ 
+ 	# Copy all the graphics...
+ 	@$(INSTALL) -m $(PHP_RIGHTS) shared/404_template/logo.png $(APP_INST_DIR)/shared/404_template/logo.png
++	find shared/gfx -type d -exec install -d -m 0755 {} ${APP_INST_DIR}/{} \;
+ 	find shared/gfx -iname '*.png' -exec $(INSTALL) -m $(PHP_RIGHTS) {} $(APP_INST_DIR)/{} \;
+ 	find shared/gfx -iname '*.gif' -exec $(INSTALL) -m $(PHP_RIGHTS) {} $(APP_INST_DIR)/{} \;
+ 	find shared/gfx -iname '*.js' -exec $(INSTALL) -m $(PHP_RIGHTS) {} $(APP_INST_DIR)/{} \;

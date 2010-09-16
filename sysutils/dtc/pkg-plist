@@ -1,839 +1,1245 @@
-%%LOCALBASE%%/www/dtc/shared/visitors_template/visitors.php
-%%LOCALBASE%%/www/dtc/shared/vars/table_names.php
-%%LOCALBASE%%/www/dtc/shared/vars/locale/zh_CN/LC_MESSAGES/messages.mo
-%%LOCALBASE%%/www/dtc/shared/vars/locale/se_NO/LC_MESSAGES/messages.mo
-%%LOCALBASE%%/www/dtc/shared/vars/locale/ru_RU.UTF-8/LC_MESSAGES/messages.mo
-%%LOCALBASE%%/www/dtc/shared/vars/locale/pt_PT/LC_MESSAGES/messages.mo
-%%LOCALBASE%%/www/dtc/shared/vars/locale/pl_PL/LC_MESSAGES/messages.mo
-%%LOCALBASE%%/www/dtc/shared/vars/locale/nl_NL/LC_MESSAGES/messages.mo
-%%LOCALBASE%%/www/dtc/shared/vars/locale/it_IT/LC_MESSAGES/messages.mo
-%%LOCALBASE%%/www/dtc/shared/vars/locale/hu_HU/LC_MESSAGES/messages.mo
-%%LOCALBASE%%/www/dtc/shared/vars/locale/fr_FR/LC_MESSAGES/messages.mo
-%%LOCALBASE%%/www/dtc/shared/vars/locale/es_ES/LC_MESSAGES/messages.mo
-%%LOCALBASE%%/www/dtc/shared/vars/locale/de_DE/LC_MESSAGES/messages.mo
-%%LOCALBASE%%/www/dtc/shared/vars/lang.php
-%%LOCALBASE%%/www/dtc/shared/vars/global_vars.php
-%%LOCALBASE%%/www/dtc/shared/vars/clear_lang_array.php
-%%LOCALBASE%%/www/dtc/shared/template/logo_dtc.gif
-%%LOCALBASE%%/www/dtc/shared/template/index.php
-%%LOCALBASE%%/www/dtc/shared/template/favicon.ico
-%%LOCALBASE%%/www/dtc/shared/template/dtclogo.png
-%%LOCALBASE%%/www/dtc/shared/template/dtc_logo.gif
-%%LOCALBASE%%/www/dtc/shared/securepay/pay_functions.php
-%%LOCALBASE%%/www/dtc/shared/securepay/paiement.php
-%%LOCALBASE%%/www/dtc/shared/securepay/paiement_config.php
-%%LOCALBASE%%/www/dtc/shared/securepay/gateways/worldpay.php
-%%LOCALBASE%%/www/dtc/shared/securepay/gateways/paypal.php
-%%LOCALBASE%%/www/dtc/shared/securepay/gateways/enets.php
-%%LOCALBASE%%/www/dtc/shared/maxmind/TelephoneVerification.php
-%%LOCALBASE%%/www/dtc/shared/maxmind/LocationVerification.php
-%%LOCALBASE%%/www/dtc/shared/maxmind/HTTPBase.php
-%%LOCALBASE%%/www/dtc/shared/maxmind/CreditCardFraudDetection.php
-%%LOCALBASE%%/www/dtc/shared/inc/vps.php
-%%LOCALBASE%%/www/dtc/shared/inc/tree_mem_to_db.php
-%%LOCALBASE%%/www/dtc/shared/inc/submit_to_sql.php
-%%LOCALBASE%%/www/dtc/shared/inc/sql/vps.php
-%%LOCALBASE%%/www/dtc/shared/inc/sql/ticket.php
-%%LOCALBASE%%/www/dtc/shared/inc/sql/subdomain.php
-%%LOCALBASE%%/www/dtc/shared/inc/sql/ssh.php
-%%LOCALBASE%%/www/dtc/shared/inc/sql/reseller.php
-%%LOCALBASE%%/www/dtc/shared/inc/sql/lists.php
-%%LOCALBASE%%/www/dtc/shared/inc/sql/email.php
-%%LOCALBASE%%/www/dtc/shared/inc/sql/domain_stats.php
-%%LOCALBASE%%/www/dtc/shared/inc/sql/domain_info.php
-%%LOCALBASE%%/www/dtc/shared/inc/sql/dns.php
-%%LOCALBASE%%/www/dtc/shared/inc/sql/database.php
-%%LOCALBASE%%/www/dtc/shared/inc/skin.class.php
-%%LOCALBASE%%/www/dtc/shared/inc/nusoap.php
-%%LOCALBASE%%/www/dtc/shared/inc/HTTPRequestClass.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/vps.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/tools.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/ticket.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/subdomain.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/ssh.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/root_admin.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/reseller.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/packager.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/my_account.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/lists.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/invoices.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/ftp.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/email.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/domain_stats.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/domain_info.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/dns.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/dedicated.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/database.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/aliases.php
-%%LOCALBASE%%/www/dtc/shared/inc/forms/admin_stats.php
-%%LOCALBASE%%/www/dtc/shared/inc/fetch.php
-%%LOCALBASE%%/www/dtc/shared/inc/fetchmail.php
-%%LOCALBASE%%/www/dtc/shared/inc/draw.php
-%%LOCALBASE%%/www/dtc/shared/inc/domain_export.php
-%%LOCALBASE%%/www/dtc/shared/inc/delete_user.php
-%%LOCALBASE%%/www/dtc/shared/inc/dbconect.php
-%%LOCALBASE%%/www/dtc/shared/inc/accounting.php
-%%LOCALBASE%%/www/dtc/shared/gfx/wz_tooltip.js
-%%LOCALBASE%%/www/dtc/shared/gfx/stock_trash_24.png
-%%LOCALBASE%%/www/dtc/shared/gfx/stock_save_24.png
-%%LOCALBASE%%/www/dtc/shared/gfx/stock_apply_20.png
-%%LOCALBASE%%/www/dtc/shared/gfx/stock_add_24.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/tex/skin.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/tex/skin.css
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/tex/pagetop.html
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/tex/imgshort.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/tex/imglong.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/tex/bgwin.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/tex/bgtitlewin.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/tex/bgcolor.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/title_3_background.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/title_2_transi.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/title_1_icon.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/skin.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/skin.css
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/ruffdogs.css
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/border_bottom.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/bgcolor.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla/background.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/skin.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/skin.css
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/imgshort.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/imglong.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/corner_4.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/corner_3.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/corner_2.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/corner_1.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/border_4.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/border_3.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/border_2.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/border_1.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/bgcolor.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/background.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey/amp_style.css
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/skin.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/skin.css
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/imgshort.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/imglong.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/corner_top_right.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/corner_top_left.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/corner_bottom_right.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/corner_bottom_left.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/border_top.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/border_right.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/border_left.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/border_bottom.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/bgcolor.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal/background.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/skin.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/skin.css
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/title_4_end.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/title_3_background.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/title_2_transi.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/title_1_icon.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/skin.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/skin.css
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/no_title_title_3_background.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/no_title_corner_top_right.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/no_title_corner_top_left.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons/phpmyadmin.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons/icann-logo_small.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons/gplhost.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons/earth.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons/dtc_logo.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons/dtc.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons/dolar.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons/debian.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/corner_top_right.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/corner_top_left.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/corner_bottom_right.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/corner_bottom_left.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/border_right.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/border_left.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/border_bottom.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/bgcolor.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/background.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/corner_4.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/corner_3.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/corner_2.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/corner_1.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/border_4.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/border_3.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/border_2.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/border_1.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green/background.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/skin.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/skin.css
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/imgshort.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/imglong.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/corner_4.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/corner_3.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/corner_2.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/corner_1.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/border_4.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/border_3.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/border_2.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/border_1.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/green2/background.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/skin.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/skin.css
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/corner_4.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/corner_3.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/corner_2.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/corner_1.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/border_4.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/border_3.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/border_2.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/frame/border_1.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/default_layout.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/skin.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/skin.css
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/corner_4.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/corner_3.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/corner_2.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/corner_1.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/border_4.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/border_3.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/border_2.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/border_1.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/bgcolor.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue/background.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/skin.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/skin.css
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/pagetop.html
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/layout.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/imgshort.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/imglong.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_tree_plus.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_tree_minus.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_tree-finalbranch.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_tree-branch.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_select_left.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_open.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_openbottom.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_leaf_select.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_leaf-2s.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf-2s.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-whois.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-vpsservers.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-supporttickets.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-subdomains.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-statistics.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-sslservers.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-sshaccounts.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-servers.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-resellers.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-pastpayments.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-passwords.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-packageinstaller.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-nickhandles.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-nameservers.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-mxnsservers.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-mailinglists.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-mailgroups.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-mailboxes.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-help.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-general.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-ftpaccounts.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-domaintools.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-dedicatedservers.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-database.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-addadomainname.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/tabs/p_domainconfig.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/tabs/p_clientinterface.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/tabs/p_admineditor.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/tabs/box_wnb_content_nb_item_vsep.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/tabs/box_wnb_content_nb_item_select.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/tabs/box_wnb_content_nb_item.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/spacer.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/pixel_E4E6D9.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/usernavbarreplacement.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_user.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_server.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_renewal.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_product.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_daemon.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_customer.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_config.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_bandwith.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_item_background-select.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_item_background.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar/navbar_background.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/logo_dtc.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/h2_background.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx_defaults.php
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-vpsservers.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-supportickets.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-sslip.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-renewals.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-payementgateway.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-paths.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-namedzonefiles.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-mxnsservers.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-ipaddresses.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-invoicing.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-general.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-ftpbackup.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-domainnamereg.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-companies.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/input_btn_right.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/input_btn_mid.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/input_btn_left.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/input_btn_background-2s.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/btn_seepass.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/btn_p_ok.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/btn_p_delete.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/btn_p_background-2s.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/btn_p_add.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/btn_help.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons/btn_generatepass.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_title_right.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_title_left.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_title_background.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_item_select_left.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_item-2s.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_input_btn_right.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_input_btn_mid.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_input_btn_left.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_input_btn_background-2s.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_bottom.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_nb_background.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_content_top_right.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_content_nb_item_vsep.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_wnb_content_bottom.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_topright.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_topleft.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_bottomright.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/box_bottomleft.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/bgwin.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/bgtitlewin.png
-%%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/bgcolor.php
-%%LOCALBASE%%/www/dtc/shared/gfx/see_password.png
-%%LOCALBASE%%/www/dtc/shared/gfx/securepay/poweredByWorldPay.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/pagetop/logostart.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/pagetop/logofond.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/pagetop/logoend.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/pagetop/dtc_logo.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/pagetop/dtc_banner.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/pagetop/dtc_banner_end.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/menu/users.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/menu/user-editor.png
-%%LOCALBASE%%/www/dtc/shared/gfx/menu/renewals.png
-%%LOCALBASE%%/www/dtc/shared/gfx/menu/recycle.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/menu/product_manager.png
-%%LOCALBASE%%/www/dtc/shared/gfx/menu/domain-config.png
-%%LOCALBASE%%/www/dtc/shared/gfx/menu/daemons.png
-%%LOCALBASE%%/www/dtc/shared/gfx/menu/crm.png
-%%LOCALBASE%%/www/dtc/shared/gfx/menu/config_panel.png
-%%LOCALBASE%%/www/dtc/shared/gfx/menu/config.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/menu/client-interface.png
-%%LOCALBASE%%/www/dtc/shared/gfx/menu/bw_icon.png
-%%LOCALBASE%%/www/dtc/shared/gfx/menu/admins.png
-%%LOCALBASE%%/www/dtc/shared/gfx/language/zh.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/se.png
-%%LOCALBASE%%/www/dtc/shared/gfx/language/se.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/ru/pub/banner_alight.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/ru.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/ru/button_en.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/pt.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/pl.png
-%%LOCALBASE%%/www/dtc/shared/gfx/language/pl.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/nl/pub/banner_alight.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/nl.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/nl/button_en.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/it.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/hu.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/fr/pub/banner_alight.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/fr.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/fr/button_fr.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/es.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/en/pub/banner_alight.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/en.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/en/button_en.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/dtc.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/language/de.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/help.png
-%%LOCALBASE%%/www/dtc/shared/gfx/generate_pass.png
-%%LOCALBASE%%/www/dtc/shared/gfx/dtc/reinit_named.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/dtc_logo_small.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/dtc_logo.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/dtc/generate_web.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/dtc/generate_web2.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/dtc/generate_stats.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/dtc/generate_named.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/dtc/generate_mail.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/dtc/generate_backup.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/dtc.css
-%%LOCALBASE%%/www/dtc/shared/gfx/dtc/all_scripts.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/bar/start.png
-%%LOCALBASE%%/www/dtc/shared/gfx/bar/start.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/bar/middle_yellow.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/bar/middle_umpty.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/bar/middle_s.png
-%%LOCALBASE%%/www/dtc/shared/gfx/bar/middle_red.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/bar/middle_orange.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/bar/middle_n.png
-%%LOCALBASE%%/www/dtc/shared/gfx/bar/middle_green.gif
-%%LOCALBASE%%/www/dtc/shared/gfx/bar/end.png
-%%LOCALBASE%%/www/dtc/shared/gfx/bar/end.gif
-%%LOCALBASE%%/www/dtc/shared/dtc_version.php
-%%LOCALBASE%%/www/dtc/shared/dtc_stats_index.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/webnic.cc/webnic_submit.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/webnic.cc/webnic_settings.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/webnic.cc/webnic_base.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/webnic.cc/test.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/webnic.cc/domainRegistration.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/webnic.cc/domainQuery.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/submit_to_sql.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/srs/test.xml
-%%LOCALBASE%%/www/dtc/shared/dtcrm/srs/test.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/srs_registernames.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/srs/OPS.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/srs/ops.dtd
-%%LOCALBASE%%/www/dtc/shared/dtcrm/srs/openSRS.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/srs/openSRS_base.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/srs_nameserver.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/srs/country_codes.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/srs_base.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/RENAME_ME_srs_config.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/registry_calls.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/opensrs.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/draw_whois.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/draw_transferdomain.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/draw_register_forms.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/draw.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/draw_nameservers.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/draw_handle.php
-%%LOCALBASE%%/www/dtc/shared/dtcrm/draw_adddomain.php
-%%LOCALBASE%%/www/dtc/shared/dtc_lib.php
-%%LOCALBASE%%/www/dtc/shared/drawlib/tree_menu.php
-%%LOCALBASE%%/www/dtc/shared/drawlib/templates.php
-%%LOCALBASE%%/www/dtc/shared/drawlib/skin.php
-%%LOCALBASE%%/www/dtc/shared/drawlib/skinLib.php
-%%LOCALBASE%%/www/dtc/shared/drawlib/dtc_functions.php
-%%LOCALBASE%%/www/dtc/shared/drawlib/cc_code_popup.php
-%%LOCALBASE%%/www/dtc/shared/drawlib/anotherDtc.php
-%%LOCALBASE%%/www/dtc/shared/default_admin_site.php
-%%LOCALBASE%%/www/dtc/shared/cyradm.php
-%%LOCALBASE%%/www/dtc/shared/autoSQLconfig.php
-%%LOCALBASE%%/www/dtc/shared/404_template/logo.png
-%%LOCALBASE%%/www/dtc/shared/404_template/index.php
-%%LOCALBASE%%/www/dtc/shared/404_template/expired.php
-%%LOCALBASE%%/www/dtc/shared/404_template/404.php
-%%LOCALBASE%%/www/dtc/email/submit_to_sql_dtcemail.php
-%%LOCALBASE%%/www/dtc/email/login.php
-%%LOCALBASE%%/www/dtc/email/index.php
-%%LOCALBASE%%/www/dtc/email/inc/img.php
-%%LOCALBASE%%/www/dtc/email/inc/img_alt_skin.php
-%%LOCALBASE%%/www/dtc/email/inc/img_alt.php
-%%LOCALBASE%%/www/dtc/email/inc/domains.png
-%%LOCALBASE%%/www/dtc/email/inc/domain.png
-%%LOCALBASE%%/www/dtc/email/api.php
-%%LOCALBASE%%/www/dtc/client/vps_stats_swap.php
-%%LOCALBASE%%/www/dtc/client/vps_stats_network.php
-%%LOCALBASE%%/www/dtc/client/vps_stats_hdd.php
-%%LOCALBASE%%/www/dtc/client/vps_stats_cpu.php
-%%LOCALBASE%%/www/dtc/client/secpaycallback_worldpay.php
-%%LOCALBASE%%/www/dtc/client/paypal.php
-%%LOCALBASE%%/www/dtc/client/new_account_renewal.php
-%%LOCALBASE%%/www/dtc/client/new_account.php
-%%LOCALBASE%%/www/dtc/client/new_account_form.php
-%%LOCALBASE%%/www/dtc/client/login.php
-%%LOCALBASE%%/www/dtc/client/list_domains.php
-%%LOCALBASE%%/www/dtc/client/invoice.php
-%%LOCALBASE%%/www/dtc/client/index.php
-%%LOCALBASE%%/www/dtc/client/inc/virtual-server.png
-%%LOCALBASE%%/www/dtc/client/inc/tools.png
-%%LOCALBASE%%/www/dtc/client/inc/ticket.png
-%%LOCALBASE%%/www/dtc/client/inc/subdomains.png
-%%LOCALBASE%%/www/dtc/client/inc/stats.png
-%%LOCALBASE%%/www/dtc/client/inc/stat.png
-%%LOCALBASE%%/www/dtc/client/inc/ssh-accounts.png
-%%LOCALBASE%%/www/dtc/client/inc/reseller.png
-%%LOCALBASE%%/www/dtc/client/inc/password.png
-%%LOCALBASE%%/www/dtc/client/inc/package-installer.png
-%%LOCALBASE%%/www/dtc/client/inc/nickhandles.png
-%%LOCALBASE%%/www/dtc/client/inc/nameservers.png
-%%LOCALBASE%%/www/dtc/client/inc/my-account.png
-%%LOCALBASE%%/www/dtc/client/inc/man.png
-%%LOCALBASE%%/www/dtc/client/inc/mail.png
-%%LOCALBASE%%/www/dtc/client/inc/mailing-lists.png
-%%LOCALBASE%%/www/dtc/client/inc/mailboxs.png
-%%LOCALBASE%%/www/dtc/client/inc/mailaliasgroup.png
-%%LOCALBASE%%/www/dtc/client/inc/imgshort.png
-%%LOCALBASE%%/www/dtc/client/inc/img.php
-%%LOCALBASE%%/www/dtc/client/inc/imglong.png
-%%LOCALBASE%%/www/dtc/client/inc/img_alt_skin.php
-%%LOCALBASE%%/www/dtc/client/inc/img_alt.php
-%%LOCALBASE%%/www/dtc/client/inc/home.png
-%%LOCALBASE%%/www/dtc/client/inc/help.png
-%%LOCALBASE%%/www/dtc/client/inc/ftp-accounts.png
-%%LOCALBASE%%/www/dtc/client/inc/folder.png
-%%LOCALBASE%%/www/dtc/client/inc/floppy.png
-%%LOCALBASE%%/www/dtc/client/inc/domains.png
-%%LOCALBASE%%/www/dtc/client/inc/domain.png
-%%LOCALBASE%%/www/dtc/client/inc/dns.png
-%%LOCALBASE%%/www/dtc/client/inc/dedic-server.png
-%%LOCALBASE%%/www/dtc/client/inc/databases.png
-%%LOCALBASE%%/www/dtc/client/inc/database.png
-%%LOCALBASE%%/www/dtc/client/inc/adddomain.png
-%%LOCALBASE%%/www/dtc/client/get_vps_location_status.php
-%%LOCALBASE%%/www/dtc/client/favicon.ico
-%%LOCALBASE%%/www/dtc/client/enets_pay_icon.gif
-%%LOCALBASE%%/www/dtc/client/enets-notify.php
-%%LOCALBASE%%/www/dtc/client/dynip.php
-%%LOCALBASE%%/www/dtc/client/bw_per_month.php
-%%LOCALBASE%%/www/dtc/admin/vps_stats_swap.php
-%%LOCALBASE%%/www/dtc/admin/vps_stats_network.php
-%%LOCALBASE%%/www/dtc/admin/vps_stats_hdd.php
-%%LOCALBASE%%/www/dtc/admin/vps_stats_cpu.php
-%%LOCALBASE%%/www/dtc/admin/view_waitingusers.php
-%%LOCALBASE%%/www/dtc/admin/updateChroot.sh
-%%LOCALBASE%%/www/dtc/admin/tables/whois.sql
-%%LOCALBASE%%/www/dtc/admin/tables/whitelist.sql
-%%LOCALBASE%%/www/dtc/admin/tables/vps_stats.sql
-%%LOCALBASE%%/www/dtc/admin/tables/vps.sql
-%%LOCALBASE%%/www/dtc/admin/tables/vps_server.sql
-%%LOCALBASE%%/www/dtc/admin/tables/vps_ip.sql
-%%LOCALBASE%%/www/dtc/admin/tables/tik_queries.sql
-%%LOCALBASE%%/www/dtc/admin/tables/tik_cats.sql
-%%LOCALBASE%%/www/dtc/admin/tables/tik_admins.sql
-%%LOCALBASE%%/www/dtc/admin/tables/subdomain.sql
-%%LOCALBASE%%/www/dtc/admin/tables/ssl_ips.sql
-%%LOCALBASE%%/www/dtc/admin/tables/ssh_user_group.sql
-%%LOCALBASE%%/www/dtc/admin/tables/ssh_groups.sql
-%%LOCALBASE%%/www/dtc/admin/tables/ssh_access.sql
-%%LOCALBASE%%/www/dtc/admin/tables/smtp_logs.sql
-%%LOCALBASE%%/www/dtc/admin/tables/secpayconf.sql
-%%LOCALBASE%%/www/dtc/admin/tables/scheduled_updates.sql
-%%LOCALBASE%%/www/dtc/admin/tables/product.sql
-%%LOCALBASE%%/www/dtc/admin/tables/pop_access.sql
-%%LOCALBASE%%/www/dtc/admin/tables/pending_renewal.sql
-%%LOCALBASE%%/www/dtc/admin/tables/pending_queries.sql
-%%LOCALBASE%%/www/dtc/admin/tables/paiement.sql
-%%LOCALBASE%%/www/dtc/admin/tables/new_admin.sql
-%%LOCALBASE%%/www/dtc/admin/tables/nameservers.sql
-%%LOCALBASE%%/www/dtc/admin/tables/mailinglist.sql
-%%LOCALBASE%%/www/dtc/admin/tables/mailaliasgroup.sql
-%%LOCALBASE%%/www/dtc/admin/tables/ip_port_service.sql
-%%LOCALBASE%%/www/dtc/admin/tables/invoicing.sql
-%%LOCALBASE%%/www/dtc/admin/tables/http_accounting.sql
-%%LOCALBASE%%/www/dtc/admin/tables/handle.sql
-%%LOCALBASE%%/www/dtc/admin/tables/groups.sql
-%%LOCALBASE%%/www/dtc/admin/tables/ftp_logs.sql
-%%LOCALBASE%%/www/dtc/admin/tables/ftp_accounting.sql
-%%LOCALBASE%%/www/dtc/admin/tables/ftp_access.sql
-%%LOCALBASE%%/www/dtc/admin/tables/freeradius.sql
-%%LOCALBASE%%/www/dtc/admin/tables/fetchmail.sql
-%%LOCALBASE%%/www/dtc/admin/tables/email_accouting.sql
-%%LOCALBASE%%/www/dtc/admin/tables/domain.sql
-%%LOCALBASE%%/www/dtc/admin/tables/dedicated.sql
-%%LOCALBASE%%/www/dtc/admin/tables/cron_job.sql
-%%LOCALBASE%%/www/dtc/admin/tables/config.sql
-%%LOCALBASE%%/www/dtc/admin/tables/completedorders.sql
-%%LOCALBASE%%/www/dtc/admin/tables/companies.sql
-%%LOCALBASE%%/www/dtc/admin/tables/commande.sql
-%%LOCALBASE%%/www/dtc/admin/tables/clients.sql
-%%LOCALBASE%%/www/dtc/admin/tables/backup.sql
-%%LOCALBASE%%/www/dtc/admin/tables/admin.sql
-%%LOCALBASE%%/www/dtc/admin/sa-wrapper
-%%LOCALBASE%%/www/dtc/admin/rrdtool.sh
-%%LOCALBASE%%/www/dtc/admin/restor_db.php
-%%LOCALBASE%%/www/dtc/admin/reminders.php
-%%LOCALBASE%%/www/dtc/admin/queuegraph/createrrd.sh
-%%LOCALBASE%%/www/dtc/admin/queuegraph/count_qmail.sh
-%%LOCALBASE%%/www/dtc/admin/queuegraph/count_postfix.sh
-%%LOCALBASE%%/www/dtc/admin/patch_saslatuhd_startup
-%%LOCALBASE%%/www/dtc/admin/netusegraph.php
-%%LOCALBASE%%/www/dtc/admin/netusegraph/get_net_usage.sh
-%%LOCALBASE%%/www/dtc/admin/netusegraph/createrrd.sh
-%%LOCALBASE%%/www/dtc/admin/memgraph.php
-%%LOCALBASE%%/www/dtc/admin/memgraph/get_meminfo.sh
-%%LOCALBASE%%/www/dtc/admin/memgraph/createrrd.sh
-%%LOCALBASE%%/www/dtc/admin/maint_apache.php
-%%LOCALBASE%%/www/dtc/admin/mailgraph.php
-%%LOCALBASE%%/www/dtc/admin/ip_change.sh
-%%LOCALBASE%%/www/dtc/admin/install/uninstall
-%%LOCALBASE%%/www/dtc/admin/install/slack_config
-%%LOCALBASE%%/www/dtc/admin/install/redhat_config
-%%LOCALBASE%%/www/dtc/admin/install/osx_config
-%%LOCALBASE%%/www/dtc/admin/install/mk_root_mailbox.php
-%%LOCALBASE%%/www/dtc/admin/install/interactive_installer
-%%LOCALBASE%%/www/dtc/admin/install/install
-%%LOCALBASE%%/www/dtc/admin/install/gentoo_config
-%%LOCALBASE%%/www/dtc/admin/install/functions
-%%LOCALBASE%%/www/dtc/admin/install/debian_config
-%%LOCALBASE%%/www/dtc/admin/install/bsd_config
-%%LOCALBASE%%/www/dtc/admin/index.php
-%%LOCALBASE%%/www/dtc/admin/inc/virtual-server.png
-%%LOCALBASE%%/www/dtc/admin/inc/tools.png
-%%LOCALBASE%%/www/dtc/admin/inc/ticket.png
-%%LOCALBASE%%/www/dtc/admin/inc/submit_root_querys.php
-%%LOCALBASE%%/www/dtc/admin/inc/subdomains.png
-%%LOCALBASE%%/www/dtc/admin/inc/stats.png
-%%LOCALBASE%%/www/dtc/admin/inc/ssh-accounts.png
-%%LOCALBASE%%/www/dtc/admin/inc/reseller.png
-%%LOCALBASE%%/www/dtc/admin/inc/renewals.php
-%%LOCALBASE%%/www/dtc/admin/inc/password.png
-%%LOCALBASE%%/www/dtc/admin/inc/package-installer.png
-%%LOCALBASE%%/www/dtc/admin/inc/nickhandles.png
-%%LOCALBASE%%/www/dtc/admin/inc/nav.php
-%%LOCALBASE%%/www/dtc/admin/inc/nameservers.png
-%%LOCALBASE%%/www/dtc/admin/inc/my-account.png
-%%LOCALBASE%%/www/dtc/admin/inc/monitor.php
-%%LOCALBASE%%/www/dtc/admin/inc/mailing-lists.png
-%%LOCALBASE%%/www/dtc/admin/inc/mailboxs.png
-%%LOCALBASE%%/www/dtc/admin/inc/mailaliasgroup.png
-%%LOCALBASE%%/www/dtc/admin/inc/imgshort.png
-%%LOCALBASE%%/www/dtc/admin/inc/img.php
-%%LOCALBASE%%/www/dtc/admin/inc/imglong.png
-%%LOCALBASE%%/www/dtc/admin/inc/img_alt_skin.php
-%%LOCALBASE%%/www/dtc/admin/inc/img_alt.php
-%%LOCALBASE%%/www/dtc/admin/inc/help.png
-%%LOCALBASE%%/www/dtc/admin/inc/graphs.php
-%%LOCALBASE%%/www/dtc/admin/inc/ftp-accounts.png
-%%LOCALBASE%%/www/dtc/admin/inc/folder.png
-%%LOCALBASE%%/www/dtc/admin/inc/dtc_config.php
-%%LOCALBASE%%/www/dtc/admin/inc/draw_user_admin.php
-%%LOCALBASE%%/www/dtc/admin/inc/domains.png
-%%LOCALBASE%%/www/dtc/admin/inc/dedic-server.png
-%%LOCALBASE%%/www/dtc/admin/inc/databases.png
-%%LOCALBASE%%/www/dtc/admin/inc/adddomain.png
-%%LOCALBASE%%/www/dtc/admin/genfiles/remote_mail_list.php
-%%LOCALBASE%%/www/dtc/admin/genfiles/mailfilter_vacation_template
-%%LOCALBASE%%/www/dtc/admin/genfiles/gen_webalizer_stat.php
-%%LOCALBASE%%/www/dtc/admin/genfiles/gen_ssh_account.php
-%%LOCALBASE%%/www/dtc/admin/genfiles/gen_qmail_email_account.php
-%%LOCALBASE%%/www/dtc/admin/genfiles/gen_pro_vhost.php
-%%LOCALBASE%%/www/dtc/admin/genfiles/gen_pro_vhost_alt-wildcard.php
-%%LOCALBASE%%/www/dtc/admin/genfiles/gen_postfix_email_account.php
-%%LOCALBASE%%/www/dtc/admin/genfiles/gen_perso_vhost.php
-%%LOCALBASE%%/www/dtc/admin/genfiles/gen_named_files.php
-%%LOCALBASE%%/www/dtc/admin/genfiles/gen_named_files_alt-wildcard.php
-%%LOCALBASE%%/www/dtc/admin/genfiles/gen_maildrop_userdb.php
-%%LOCALBASE%%/www/dtc/admin/genfiles/genfiles.php
-%%LOCALBASE%%/www/dtc/admin/genfiles/gen_email_account.php
-%%LOCALBASE%%/www/dtc/admin/genfiles/gen_customer_ssl_cert.sh
-%%LOCALBASE%%/www/dtc/admin/genfiles/gen_backup_script.php
-%%LOCALBASE%%/www/dtc/admin/genfiles/gen_awstats.php
-%%LOCALBASE%%/www/dtc/admin/genfiles/change_debconf_ip.sh
-%%LOCALBASE%%/www/dtc/admin/genfiles/change_debconf_domain.sh
-%%LOCALBASE%%/www/dtc/admin/dtcrm/submit_to_sql.php
-%%LOCALBASE%%/www/dtc/admin/dtcrm/product_manager.php
-%%LOCALBASE%%/www/dtc/admin/dtcrm/main.php
-%%LOCALBASE%%/www/dtc/admin/dtc_db.php
-%%LOCALBASE%%/www/dtc/admin/dtc-chroot-shell
-%%LOCALBASE%%/www/dtc/admin/dkfilter.patch
-%%LOCALBASE%%/www/dtc/admin/deamons_state.php
-%%LOCALBASE%%/www/dtc/admin/cron.php
-%%LOCALBASE%%/www/dtc/admin/cpugraph.php
-%%LOCALBASE%%/www/dtc/admin/cpugraph/get_cpu_load.sh
-%%LOCALBASE%%/www/dtc/admin/cpugraph/createrrd.sh
-%%LOCALBASE%%/www/dtc/admin/checkbind.sh
-%%LOCALBASE%%/www/dtc/admin/bw_per_month.php
-%%LOCALBASE%%/www/dtc/admin/backup_db.php
-%%LOCALBASE%%/www/dtc/admin/accesslog.php
-%%LOCALBASE%%/www/dtc/admin/404.php
-%%LOCALBASE%%/share/doc/dtc/update_stable_rtag.sh
-%%LOCALBASE%%/share/doc/dtc/todo
-%%LOCALBASE%%/share/doc/dtc/README.gentoo
-%%LOCALBASE%%/share/doc/dtc/iglobalwall/mail_header.rar
-%%LOCALBASE%%/share/doc/dtc/iglobalwall/iglobalwall.tar.gz
-%%LOCALBASE%%/share/doc/dtc/iglobalwall/doc.txt
-%%LOCALBASE%%/share/doc/dtc/html/fr/page_top.html
-%%LOCALBASE%%/share/doc/dtc/html/fr/newadmin.png
-%%LOCALBASE%%/share/doc/dtc/html/fr/menudtc.png
-%%LOCALBASE%%/share/doc/dtc/html/fr/mailboxs.png
-%%LOCALBASE%%/share/doc/dtc/html/fr/index.php
-%%LOCALBASE%%/share/doc/dtc/html/fr/index.html
-%%LOCALBASE%%/share/doc/dtc/html/fr/ftps.png
-%%LOCALBASE%%/share/doc/dtc/html/fr/dtc.png
-%%LOCALBASE%%/share/doc/dtc/html/fr/dtc_logo.gif
-%%LOCALBASE%%/share/doc/dtc/html/fr/domainconf.png
-%%LOCALBASE%%/share/doc/dtc/html/fr/doc.css
-%%LOCALBASE%%/share/doc/dtc/html/fr/confzone.png
-%%LOCALBASE%%/share/doc/dtc/html/fr/confprinc.png
-%%LOCALBASE%%/share/doc/dtc/html/fr/conffilegen.png
-%%LOCALBASE%%/share/doc/dtc/html/fr/clientconfig.png
-%%LOCALBASE%%/share/doc/dtc/html/fr/addzone.png
-%%LOCALBASE%%/share/doc/dtc/html/fr/5.html
-%%LOCALBASE%%/share/doc/dtc/html/fr/4.html
-%%LOCALBASE%%/share/doc/dtc/html/fr/3.html
-%%LOCALBASE%%/share/doc/dtc/html/fr/2.html
-%%LOCALBASE%%/share/doc/dtc/html/fr/1.html
-%%LOCALBASE%%/share/doc/dtc/html/en/page_top.html
-%%LOCALBASE%%/share/doc/dtc/html/en/newadmin.png
-%%LOCALBASE%%/share/doc/dtc/html/en/menudtc.png
-%%LOCALBASE%%/share/doc/dtc/html/en/mailboxs.png
-%%LOCALBASE%%/share/doc/dtc/html/en/index.html
-%%LOCALBASE%%/share/doc/dtc/html/en/index.example.php
-%%LOCALBASE%%/share/doc/dtc/html/en/ftps.png
-%%LOCALBASE%%/share/doc/dtc/html/en/dtc.png
-%%LOCALBASE%%/share/doc/dtc/html/en/dtc_logo.gif
-%%LOCALBASE%%/share/doc/dtc/html/en/dtc_cluster.png
-%%LOCALBASE%%/share/doc/dtc/html/en/domainconf.png
-%%LOCALBASE%%/share/doc/dtc/html/en/doc.css
-%%LOCALBASE%%/share/doc/dtc/html/en/confzone.png
-%%LOCALBASE%%/share/doc/dtc/html/en/confprinc.png
-%%LOCALBASE%%/share/doc/dtc/html/en/conffilegen.png
-%%LOCALBASE%%/share/doc/dtc/html/en/clientconfig.png
-%%LOCALBASE%%/share/doc/dtc/html/en/addzone.png
-%%LOCALBASE%%/share/doc/dtc/html/en/5.html
-%%LOCALBASE%%/share/doc/dtc/html/en/4.html
-%%LOCALBASE%%/share/doc/dtc/html/en/3.html
-%%LOCALBASE%%/share/doc/dtc/html/en/2.html
-%%LOCALBASE%%/share/doc/dtc/html/en/1.html
-%%LOCALBASE%%/share/doc/dtc/dtc_storefront/README
-%%LOCALBASE%%/share/doc/dtc/dtc_storefront/gplhost-testimonials-validate.php
-%%LOCALBASE%%/share/doc/dtc/dtc_storefront/gplhost-testimonials-record.php
-%%LOCALBASE%%/share/doc/dtc/dtc_storefront/gplhost-testimonials.php
-%%LOCALBASE%%/share/doc/dtc/dtc_storefront/gplhost-testimonials-delete.php
-%%LOCALBASE%%/share/doc/dtc/dtc_storefront/dtc_storefront.php
-%%LOCALBASE%%/share/doc/dtc/dtc_storefront/dtc_storefront/dbconnect.php
-%%LOCALBASE%%/share/doc/dtc/dtc-chroot-shell.8
-%%LOCALBASE%%/share/doc/dtc/dns_transfer.sh
-%%LOCALBASE%%/share/doc/dtc/daemonconf_howto/qmail_anti_spam_measures
-%%LOCALBASE%%/share/doc/dtc/daemonconf_howto/my_init.d_qmail.startup.script
-%%LOCALBASE%%/share/doc/dtc/daemonconf_howto/ftp_http_logging_to_mysql
-%%LOCALBASE%%/share/doc/dtc/contrib/vps_mailling.php
-%%LOCALBASE%%/share/doc/dtc/contrib/tail_apache_logs_for_a_domain.php
-%%LOCALBASE%%/share/doc/dtc/contrib/reassing_bandwidth_for_vps_and_dedicated.php
-%%LOCALBASE%%/share/doc/dtc/contrib/dtc_recalc_webalizer_stats.sh
-%%LOCALBASE%%/share/doc/dtc/contrib/checkAmavis
-%%LOCALBASE%%/share/doc/dtc/contrib/check_all_system_file_md5sums.sh
-%%LOCALBASE%%/share/doc/dtc/changelog
-%%LOCALBASE%%/share/doc/dtc/build_debian_upload.sh
-%%LOCALBASE%%/man/man8/dtc-chroot-shell.8
-%%LOCALBASE%%/etc/logrotate.d/dtc
-%%LOCALBASE%%/etc/dtc/signature.txt
-%%LOCALBASE%%/etc/dtc/reminders_msg/vps_will_expire.txt
-%%LOCALBASE%%/etc/dtc/reminders_msg/vps_expired_today.txt
-%%LOCALBASE%%/etc/dtc/reminders_msg/vps_expired_shutdown.txt
-%%LOCALBASE%%/etc/dtc/reminders_msg/vps_expired_last_warning.txt
-%%LOCALBASE%%/etc/dtc/reminders_msg/vps_expired_already.txt
-%%LOCALBASE%%/etc/dtc/reminders_msg/shared_will_expire.txt
-%%LOCALBASE%%/etc/dtc/reminders_msg/shared_expired_today.txt
-%%LOCALBASE%%/etc/dtc/reminders_msg/shared_expired_shutdown.txt
-%%LOCALBASE%%/etc/dtc/reminders_msg/shared_expired_last_warning.txt
-%%LOCALBASE%%/etc/dtc/reminders_msg/shared_expired_already.txt
-%%LOCALBASE%%/etc/dtc/reminders_msg/server_will_expire.txt
-%%LOCALBASE%%/etc/dtc/reminders_msg/server_expired_today.txt
-%%LOCALBASE%%/etc/dtc/reminders_msg/server_expired_shutdown.txt
-%%LOCALBASE%%/etc/dtc/reminders_msg/server_expired_last_warning.txt
-%%LOCALBASE%%/etc/dtc/reminders_msg/server_expired_already.txt
-%%LOCALBASE%%/etc/dtc/registration_msg/vps_open.txt
-%%LOCALBASE%%/etc/dtc/registration_msg/shared_open.txt
-%%LOCALBASE%%/etc/dtc/registration_msg/dedicated_open.txt
-%%LOCALBASE%%/etc/dtc/messages_header.txt
-%%LOCALBASE%%/etc/dtc/logrotate.template
-%%LOCALBASE%%/etc/cron.d/dtc
-%%LOCALBASE%%/www/dtc/admin/gfx
-%%LOCALBASE%%/www/dtc/admin/imgcache
-%%LOCALBASE%%/www/dtc/client/gfx
-%%LOCALBASE%%/www/dtc/client/imgcache
+%%WWWDIR%%/shared/visitors_template/visitors.php
+%%WWWDIR%%/shared/vars/table_names.php
+%%WWWDIR%%/shared/vars/locale/zh_TW/LC_MESSAGES/messages.mo
+%%WWWDIR%%/shared/vars/locale/zh_CN/LC_MESSAGES/messages.mo
+%%WWWDIR%%/shared/vars/locale/sv_SE/LC_MESSAGES/messages.mo
+%%WWWDIR%%/shared/vars/locale/sr_RS/LC_MESSAGES/messages.mo
+%%WWWDIR%%/shared/vars/locale/ru_RU/LC_MESSAGES/messages.mo
+%%WWWDIR%%/shared/vars/locale/pt_PT/LC_MESSAGES/messages.mo
+%%WWWDIR%%/shared/vars/locale/pt_BR/LC_MESSAGES/messages.mo
+%%WWWDIR%%/shared/vars/locale/pl_PL/LC_MESSAGES/messages.mo
+%%WWWDIR%%/shared/vars/locale/nl_NL/LC_MESSAGES/messages.mo
+%%WWWDIR%%/shared/vars/locale/lv_LV/LC_MESSAGES/messages.mo
+%%WWWDIR%%/shared/vars/locale/it_IT/LC_MESSAGES/messages.mo
+%%WWWDIR%%/shared/vars/locale/hu_HU/LC_MESSAGES/messages.mo
+%%WWWDIR%%/shared/vars/locale/fr_FR/LC_MESSAGES/messages.mo
+%%WWWDIR%%/shared/vars/locale/fi_FI/LC_MESSAGES/messages.mo
+%%WWWDIR%%/shared/vars/locale/es_ES/LC_MESSAGES/messages.mo
+%%WWWDIR%%/shared/vars/locale/de_DE/LC_MESSAGES/messages.mo
+%%WWWDIR%%/shared/vars/locale/cs_CZ/LC_MESSAGES/messages.mo
+%%WWWDIR%%/shared/vars/lang.php
+%%WWWDIR%%/shared/vars/global_vars.php
+%%WWWDIR%%/shared/vars/clear_lang_array.php
+%%WWWDIR%%/shared/template/logo_dtc.gif
+%%WWWDIR%%/shared/template/index.php
+%%WWWDIR%%/shared/template/favicon.ico
+%%WWWDIR%%/shared/template/dtclogo.png
+%%WWWDIR%%/shared/template/dtc_logo.gif
+%%WWWDIR%%/shared/securepay/pay_functions.php
+%%WWWDIR%%/shared/securepay/modules/worldpay/main.php
+%%WWWDIR%%/shared/securepay/modules/wiretransfer/main.php
+%%WWWDIR%%/shared/securepay/modules/webmoney/main.php
+%%WWWDIR%%/shared/securepay/modules/paypal/main.php
+%%WWWDIR%%/shared/securepay/modules/moneybookers/main.php
+%%WWWDIR%%/shared/securepay/modules/enets/main.php
+%%WWWDIR%%/shared/securepay/modules/dineromail/main.php
+%%WWWDIR%%/shared/securepay/modules/cheque/main.php
+%%WWWDIR%%/shared/maxmind/TelephoneVerification.php
+%%WWWDIR%%/shared/maxmind/LocationVerification.php
+%%WWWDIR%%/shared/maxmind/HTTPBase.php
+%%WWWDIR%%/shared/maxmind/CreditCardFraudDetection.php
+%%WWWDIR%%/shared/inc/vps.php
+%%WWWDIR%%/shared/inc/tree_mem_to_db.php
+%%WWWDIR%%/shared/inc/submit_to_sql.php
+%%WWWDIR%%/shared/inc/sql/vps.php
+%%WWWDIR%%/shared/inc/sql/ticket.php
+%%WWWDIR%%/shared/inc/sql/subdomain.php
+%%WWWDIR%%/shared/inc/sql/ssh.php
+%%WWWDIR%%/shared/inc/sql/reseller.php
+%%WWWDIR%%/shared/inc/sql/lists.php
+%%WWWDIR%%/shared/inc/sql/email.php
+%%WWWDIR%%/shared/inc/sql/domain_stats.php
+%%WWWDIR%%/shared/inc/sql/domain_info.php
+%%WWWDIR%%/shared/inc/sql/dns.php
+%%WWWDIR%%/shared/inc/sql/dedicated.php
+%%WWWDIR%%/shared/inc/sql/database.php
+%%WWWDIR%%/shared/inc/skin.class.php
+%%WWWDIR%%/shared/inc/nusoap.php
+%%WWWDIR%%/shared/inc/HTTPRequestClass.php
+%%WWWDIR%%/shared/inc/forms/vps.php
+%%WWWDIR%%/shared/inc/forms/vps_monitoring.php
+%%WWWDIR%%/shared/inc/forms/vps_installation.php
+%%WWWDIR%%/shared/inc/forms/vps_graphs.php
+%%WWWDIR%%/shared/inc/forms/vps_dom0graphs.php
+%%WWWDIR%%/shared/inc/forms/tools.php
+%%WWWDIR%%/shared/inc/forms/ticket.php
+%%WWWDIR%%/shared/inc/forms/subdomain.php
+%%WWWDIR%%/shared/inc/forms/ssh.php
+%%WWWDIR%%/shared/inc/forms/root_admin.php
+%%WWWDIR%%/shared/inc/forms/reseller.php
+%%WWWDIR%%/shared/inc/forms/packager.php
+%%WWWDIR%%/shared/inc/forms/my_account.php
+%%WWWDIR%%/shared/inc/forms/lists.php
+%%WWWDIR%%/shared/inc/forms/invoices.php
+%%WWWDIR%%/shared/inc/forms/ftp.php
+%%WWWDIR%%/shared/inc/forms/email.php
+%%WWWDIR%%/shared/inc/forms/domain_stats.php
+%%WWWDIR%%/shared/inc/forms/domain_info.php
+%%WWWDIR%%/shared/inc/forms/dns.php
+%%WWWDIR%%/shared/inc/forms/dedicated.php
+%%WWWDIR%%/shared/inc/forms/database.php
+%%WWWDIR%%/shared/inc/forms/aliases.php
+%%WWWDIR%%/shared/inc/forms/admin_stats.php
+%%WWWDIR%%/shared/inc/fetch.php
+%%WWWDIR%%/shared/inc/fetchmail.php
+%%WWWDIR%%/shared/inc/draw.php
+%%WWWDIR%%/shared/inc/domain_export.php
+%%WWWDIR%%/shared/inc/delete_user.php
+%%WWWDIR%%/shared/inc/dbconect.php
+%%WWWDIR%%/shared/inc/accounting.php
+%%WWWDIR%%/shared/gfx/xanjaxXHR.js
+%%WWWDIR%%/shared/gfx/wz_tooltip.js
+%%WWWDIR%%/shared/gfx/toolstitles/virtual-server.png
+%%WWWDIR%%/shared/gfx/toolstitles/tst_icon.png
+%%WWWDIR%%/shared/gfx/toolstitles/tools.png
+%%WWWDIR%%/shared/gfx/toolstitles/tool.png
+%%WWWDIR%%/shared/gfx/toolstitles/ticket.png
+%%WWWDIR%%/shared/gfx/toolstitles/subdomains.png
+%%WWWDIR%%/shared/gfx/toolstitles/stats.png
+%%WWWDIR%%/shared/gfx/toolstitles/stat.png
+%%WWWDIR%%/shared/gfx/toolstitles/ssh-accounts.png
+%%WWWDIR%%/shared/gfx/toolstitles/reseller.png
+%%WWWDIR%%/shared/gfx/toolstitles/password.png
+%%WWWDIR%%/shared/gfx/toolstitles/package-installer.png
+%%WWWDIR%%/shared/gfx/toolstitles/nickhandles.png
+%%WWWDIR%%/shared/gfx/toolstitles/nameservers.png
+%%WWWDIR%%/shared/gfx/toolstitles/my-account.png
+%%WWWDIR%%/shared/gfx/toolstitles/man.png
+%%WWWDIR%%/shared/gfx/toolstitles/mail.png
+%%WWWDIR%%/shared/gfx/toolstitles/mailing-lists.png
+%%WWWDIR%%/shared/gfx/toolstitles/mailboxs.png
+%%WWWDIR%%/shared/gfx/toolstitles/mailaliasgroup.png
+%%WWWDIR%%/shared/gfx/toolstitles/imgshort.png
+%%WWWDIR%%/shared/gfx/toolstitles/imglong.png
+%%WWWDIR%%/shared/gfx/toolstitles/home.png
+%%WWWDIR%%/shared/gfx/toolstitles/help.png
+%%WWWDIR%%/shared/gfx/toolstitles/ftp-accounts.png
+%%WWWDIR%%/shared/gfx/toolstitles/folder.png
+%%WWWDIR%%/shared/gfx/toolstitles/floppy.png
+%%WWWDIR%%/shared/gfx/toolstitles/domains.png
+%%WWWDIR%%/shared/gfx/toolstitles/domain.png
+%%WWWDIR%%/shared/gfx/toolstitles/dns.png
+%%WWWDIR%%/shared/gfx/toolstitles/dedic-server.png
+%%WWWDIR%%/shared/gfx/toolstitles/databases.png
+%%WWWDIR%%/shared/gfx/toolstitles/database.png
+%%WWWDIR%%/shared/gfx/toolstitles/adddomain.png
+%%WWWDIR%%/shared/gfx/stock_trash_24.png
+%%WWWDIR%%/shared/gfx/stock_save_24.png
+%%WWWDIR%%/shared/gfx/stock_apply_20.png
+%%WWWDIR%%/shared/gfx/stock_add_24.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/skin.php
+%%WWWDIR%%/shared/gfx/skin/paperboard/skin.css
+%%WWWDIR%%/shared/gfx/skin/paperboard/pagetop.html
+%%WWWDIR%%/shared/gfx/skin/paperboard/layout.php
+%%WWWDIR%%/shared/gfx/skin/paperboard/imgshort.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/imglong.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/zh.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/tw.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_tv_tree_plus.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_tv_tree_minus.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_tv_leaf_tree-finalbranch.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_tv_leaf_tree-branch.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-whois.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-vpsservers.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-supporttickets.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-subdomains.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-statistics.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-sslservers.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-sslip.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-sshaccounts.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-servers.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-resellers.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-renewals.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-radius.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-payementgateway.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-paths.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-pastpayments.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-passwords.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-packageinstaller.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-nickhandles.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-nameservers.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-namedzonefiles.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-mxnsservers.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-mailinglists.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-mailgroups.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-mailboxes.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-ipaddresses.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-invoicing.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-help.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-general.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-ftpbackup.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-ftpaccounts.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-domaintools.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-domainnamereg.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-dedicatedservers.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-database.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-companies.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview/box_wnb_nb_picto-addadomainname.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/tabs/p_domainconfig.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/tabs/p_clientinterface.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/tabs/p_admineditor.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/tabs/box_wnb_content_nb_item_vsep.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/tabs/box_wnb_content_nb_item_select.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/tabs/box_wnb_content_nb_item.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/spacer.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/se.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/ru.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/pt.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/pl.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/p_domainconfig.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/p_clientinterface.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/p_bwoup.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/p_admineditor.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/nl.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/nb_background.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar/usernavbarreplacement.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar_p_void.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar_p_user.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar_p_server.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar_p_renewal.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar_p_product.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar_p_daemon.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar_p_customer.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar_p_config.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar_p_bandwith.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar/navbar_p_user.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar/navbar_p_server.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar/navbar_p_renewal.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar/navbar_p_product.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar/navbar_p_daemon.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar/navbar_p_customer.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar/navbar_p_config.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar/navbar_p_bandwith.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar/navbar_item_background-select.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar/navbar_item_background.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar/navbar_background.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar_item_background-select.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar_item_background.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar_background.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/logo_dtc-old.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/logo_dtc.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/it.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/input_btn_right.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/input_btn_mid.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/input_btn_left.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/input_btn_background-2s.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/hu.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/help.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/header_background.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/h2_background.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/fr.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/fi.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/es.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/en.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/de.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx_defaults.php
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/wnb_out_top_right.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/wnb_out_top_middle.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/wnb_out_top_left.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/wnb_out_middle_right.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/wnb_out_middle_left.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/wnb_out_bottom_right.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/wnb_out_bottom_middle.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/wnb_out_bottom_left.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/wnb_out_background.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/content_top_right.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/content_top_middle.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/content_top_left.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/content_right.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/content_left.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/content_bottom_right.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/content_bottom_middle.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/content_bottom_left.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css/content_background.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/config-icon/box_wnb_nb_picto-vpsservers.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/config-icon/box_wnb_nb_picto-supporttickets.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/config-icon/box_wnb_nb_picto-supportickets.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/config-icon/box_wnb_nb_picto-sslip.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/config-icon/box_wnb_nb_picto-renewals.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/config-icon/box_wnb_nb_picto-payementgateway.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/config-icon/box_wnb_nb_picto-paths.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/config-icon/box_wnb_nb_picto-namedzonefiles.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/config-icon/box_wnb_nb_picto-mxnsservers.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/config-icon/box_wnb_nb_picto-ipaddresses.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/config-icon/box_wnb_nb_picto-invoicing.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/config-icon/box_wnb_nb_picto-general.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/config-icon/box_wnb_nb_picto-ftpbackup.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/config-icon/box_wnb_nb_picto-domainnamereg.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/config-icon/box_wnb_nb_picto-dedicatedservers.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/config-icon/box_wnb_nb_picto-companies.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons/input_btn_right.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons/input_btn_mid.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons/input_btn_left.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons/input_btn_background-2s.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons/btn_seepass.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons/btn_p_ok.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons/btn_p_ok.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons/btn_p_delete.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons/btn_p_delete.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons/btn_p_background-2s.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons/btn_p_background-2s.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons/btn_p_add.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons/btn_p_add.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons/btn_help.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons/btn_help.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons/btn_generatepass.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/btn_seepass.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/btn_p_ok.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/btn_p_delete.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/btn_p_background-2s.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/btn_p_add.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/btn_help.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/btn_generatepass.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_tv_tree_plus.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_tv_tree_minus.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_tv_leaf_tree.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_tv_leaf_tree-finalbranch.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_tv_leaf_tree-branch.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_tv_leaf_select.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_tv_leaf-2s.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_tv_leaf_select_left.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_tv_leaf-select.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_tv_leaf_hover.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_tv_leaf.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-whois.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-vpsservers.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-supporttickets.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-subdomains.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-statistics.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-sslservers.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-sslip.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-sshaccounts.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-resellers.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-renewals.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-radius.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-payementgateway.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-paths.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-pastpayments.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-passwords.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-packageinstaller.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-nickhandles.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-nameservers.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-namedzonefiles.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-mxnsservers.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-mailinglists.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-mailboxes.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-ipaddresses.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-invoicing.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-help.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-general.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-ftpbackup.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-ftpaccounts.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-domaintools.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-domainnamereg.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-dedicatedservers.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-database.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-companies.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_picto-addadomainname.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_item_select_left.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_item-select.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_item.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_item-2s_hover.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_item-2s.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_input_btn_right.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_input_btn_mid.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_input_btn_left.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_input_btn_background-2s.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_input_btn_background-2s_hov.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_nb_input_btn_background-2s.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_content_nb_item_vsep.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_content_nb_item_select.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/gfx/box_wnb_content_nb_item.gif
+%%WWWDIR%%/shared/gfx/skin/paperboard/bgwin.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/bgtitlewin.png
+%%WWWDIR%%/shared/gfx/skin/paperboard/bgcolor.php
+%%WWWDIR%%/shared/gfx/skin/grayboard/skin.php
+%%WWWDIR%%/shared/gfx/skin/grayboard/pagetop.html
+%%WWWDIR%%/shared/gfx/skin/grayboard/layout.php
+%%WWWDIR%%/shared/gfx/skin/grayboard/js/slide.js
+%%WWWDIR%%/shared/gfx/skin/grayboard/js/pngfix/x.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/js/pngfix/supersleight-min.js
+%%WWWDIR%%/shared/gfx/skin/grayboard/js/mbTooltip.js
+%%WWWDIR%%/shared/gfx/skin/grayboard/js/jquery.uniform.min.js
+%%WWWDIR%%/shared/gfx/skin/grayboard/js/jquery.timers.js
+%%WWWDIR%%/shared/gfx/skin/grayboard/js/jquery.dropshadow.js
+%%WWWDIR%%/shared/gfx/skin/grayboard/js/IePower_fr.js
+%%WWWDIR%%/shared/gfx/skin/grayboard/js/IePower_en.js
+%%WWWDIR%%/shared/gfx/skin/grayboard/js/gradualfader.js
+%%WWWDIR%%/shared/gfx/skin/grayboard/js/general.js
+%%WWWDIR%%/shared/gfx/skin/grayboard/js/easing.js
+%%WWWDIR%%/shared/gfx/skin/grayboard/js/DD_roundies-min.js
+%%WWWDIR%%/shared/gfx/skin/grayboard/js/css_adds.js
+%%WWWDIR%%/shared/gfx/skin/grayboard/js/css_adds_IE.js
+%%WWWDIR%%/shared/gfx/skin/grayboard/imgshort.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/imglong.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/users.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/toggle_plus.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/toggle_minus.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/tab_r.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/tab_m.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/tab_l.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/tab_b.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/system-monitor.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/sprite.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/sprite-agent.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/shade.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/renew.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/plus.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/packs.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/minus.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/g_admin.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/g_admino.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/dtc_admin.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/domain.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/domaino.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/conf_gen.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/clients.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/client.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/cliento.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/bt_register.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/bt_open.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/btn2.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/bt_login.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/bt_close.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/black_arrow.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/images/bandwidth.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/zh.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/tw.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/treeview/box_wnb_tv_leaf_tree-finalbranch.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/treeview/box_wnb_tv_leaf_tree-branch.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/spacer.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/se.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/safari.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/ru.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/pt.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/pl.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/p_domainconfig.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/p_clientinterface.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/opera.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/nl.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/logo_dtc.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/it.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/hu.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/help.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/fr.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/flock.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/firefox.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/fi.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/es.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/en.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/de.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx_defaults.php
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/chrome.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/buttons/btn_seepass.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/buttons/btn_p_ok.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/buttons/btn_p_delete.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/buttons/btn_p_add.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/buttons/btn_help.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/buttons/btn_help.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/buttons/btn_generatepass.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/btn_seepass.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/btn_p_ok.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/btn_p_delete.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/btn_p_add.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/btn_help.png
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/btn_generatepass.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/box_wnb_tv_leaf_tree.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/box_wnb_tv_leaf_tree-finalbranch.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/gfx/box_wnb_tv_leaf_tree-branch.gif
+%%WWWDIR%%/shared/gfx/skin/grayboard/css/style.css
+%%WWWDIR%%/shared/gfx/skin/grayboard/css/slide.css
+%%WWWDIR%%/shared/gfx/skin/grayboard/css/skin.css
+%%WWWDIR%%/shared/gfx/skin/grayboard/bgcolor.php
+%%WWWDIR%%/shared/gfx/skin/default_layout.php
+%%WWWDIR%%/shared/gfx/skin/bwoup/skin.php
+%%WWWDIR%%/shared/gfx/skin/bwoup/skin.css
+%%WWWDIR%%/shared/gfx/skin/bwoup/pagetop.html
+%%WWWDIR%%/shared/gfx/skin/bwoup/layout.php
+%%WWWDIR%%/shared/gfx/skin/bwoup/imgshort.png
+%%WWWDIR%%/shared/gfx/skin/bwoup/imglong.png
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_tree_plus.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_tree_minus.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_tree-finalbranch.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_tree-branch.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_select_left.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_open.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_openbottom.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_leaf_select.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf_leaf-2s.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_tv_leaf-2s.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-whois.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-vpsservers.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-supporttickets.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-subdomains.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-statistics.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-sslservers.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-sshaccounts.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-servers.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-resellers.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-pastpayments.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-passwords.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-packageinstaller.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-nickhandles.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-nameservers.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-mxnsservers.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-mailinglists.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-mailgroups.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-mailboxes.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-help.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-general.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-ftpaccounts.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-domaintools.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-dedicatedservers.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-database.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview/box_wnb_nb_picto-addadomainname.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/tabs/p_domainconfig.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/tabs/p_clientinterface.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/tabs/p_admineditor.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/tabs/box_wnb_content_nb_item_vsep.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/tabs/box_wnb_content_nb_item_select.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/tabs/box_wnb_content_nb_item.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/spacer.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/pixel_E4E6D9.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/navbar/usernavbarreplacement.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_user.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_server.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_renewal.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_product.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_daemon.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_customer.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_config.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/navbar/navbar_p_bandwith.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/navbar/navbar_item_background-select.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/navbar/navbar_item_background.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/navbar/navbar_background.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/logo_dtc.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/h2_background.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx_defaults.php
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-vpsservers.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-supportickets.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-sslip.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-renewals.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-payementgateway.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-paths.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-namedzonefiles.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-mxnsservers.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-ipaddresses.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-invoicing.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-general.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-ftpbackup.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-domainnamereg.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-dedicatedservers.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/config-icon/box_wnb_nb_picto-companies.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/buttons/input_btn_right.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/buttons/input_btn_mid.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/buttons/input_btn_left.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/buttons/input_btn_background-2s.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/buttons/btn_seepass.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/buttons/btn_p_ok.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/buttons/btn_p_delete.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/buttons/btn_p_background-2s.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/buttons/btn_p_add.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/buttons/btn_help.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/buttons/btn_generatepass.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_wnb_nb_title_right.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_wnb_nb_title_left.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_wnb_nb_title_background.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_wnb_nb_item_select_left.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_wnb_nb_item-2s.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_wnb_nb_input_btn_right.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_wnb_nb_input_btn_mid.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_wnb_nb_input_btn_left.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_wnb_nb_input_btn_background-2s.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_wnb_nb_bottom.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_wnb_nb_background.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_wnb_content_top_right.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_wnb_content_nb_item_vsep.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_wnb_content_bottom.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_topright.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_topleft.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_bottomright.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/gfx/box_bottomleft.gif
+%%WWWDIR%%/shared/gfx/skin/bwoup/bgwin.png
+%%WWWDIR%%/shared/gfx/skin/bwoup/bgtitlewin.png
+%%WWWDIR%%/shared/gfx/skin/bwoup/bgcolor.php
+%%WWWDIR%%/shared/gfx/see_password.png
+%%WWWDIR%%/shared/gfx/securepay/poweredByWorldPay.gif
+%%WWWDIR%%/shared/gfx/pagetop/logostart.gif
+%%WWWDIR%%/shared/gfx/pagetop/logofond.gif
+%%WWWDIR%%/shared/gfx/pagetop/logoend.gif
+%%WWWDIR%%/shared/gfx/pagetop/dtc_logo.gif
+%%WWWDIR%%/shared/gfx/pagetop/dtc_banner.gif
+%%WWWDIR%%/shared/gfx/pagetop/dtc_banner_end.gif
+%%WWWDIR%%/shared/gfx/menu/users.gif
+%%WWWDIR%%/shared/gfx/menu/user-editor.png
+%%WWWDIR%%/shared/gfx/menu/renewals.png
+%%WWWDIR%%/shared/gfx/menu/recycle.gif
+%%WWWDIR%%/shared/gfx/menu/product_manager.png
+%%WWWDIR%%/shared/gfx/menu/domain-config.png
+%%WWWDIR%%/shared/gfx/menu/daemons.png
+%%WWWDIR%%/shared/gfx/menu/crm.png
+%%WWWDIR%%/shared/gfx/menu/config_panel.png
+%%WWWDIR%%/shared/gfx/menu/config.gif
+%%WWWDIR%%/shared/gfx/menu/client-interface.png
+%%WWWDIR%%/shared/gfx/menu/bw_icon.png
+%%WWWDIR%%/shared/gfx/menu/admins.png
+%%WWWDIR%%/shared/gfx/language/zh.gif
+%%WWWDIR%%/shared/gfx/language/tw.gif
+%%WWWDIR%%/shared/gfx/language/sv.gif
+%%WWWDIR%%/shared/gfx/language/sr.gif
+%%WWWDIR%%/shared/gfx/language/se.png
+%%WWWDIR%%/shared/gfx/language/ru/pub/banner_alight.gif
+%%WWWDIR%%/shared/gfx/language/ru.gif
+%%WWWDIR%%/shared/gfx/language/ru/button_en.gif
+%%WWWDIR%%/shared/gfx/language/pt.gif
+%%WWWDIR%%/shared/gfx/language/pt_br.gif
+%%WWWDIR%%/shared/gfx/language/pl.png
+%%WWWDIR%%/shared/gfx/language/pl.gif
+%%WWWDIR%%/shared/gfx/language/nl/pub/banner_alight.gif
+%%WWWDIR%%/shared/gfx/language/nl.gif
+%%WWWDIR%%/shared/gfx/language/nl/button_en.gif
+%%WWWDIR%%/shared/gfx/language/lv.png
+%%WWWDIR%%/shared/gfx/language/it.gif
+%%WWWDIR%%/shared/gfx/language/hu.gif
+%%WWWDIR%%/shared/gfx/language/fr/pub/banner_alight.gif
+%%WWWDIR%%/shared/gfx/language/fr.gif
+%%WWWDIR%%/shared/gfx/language/fr/button_fr.gif
+%%WWWDIR%%/shared/gfx/language/fi.gif
+%%WWWDIR%%/shared/gfx/language/es.gif
+%%WWWDIR%%/shared/gfx/language/en/pub/banner_alight.gif
+%%WWWDIR%%/shared/gfx/language/en.gif
+%%WWWDIR%%/shared/gfx/language/en/button_en.gif
+%%WWWDIR%%/shared/gfx/language/dtc.gif
+%%WWWDIR%%/shared/gfx/language/de.gif
+%%WWWDIR%%/shared/gfx/language/cz.png
+%%WWWDIR%%/shared/gfx/help.png
+%%WWWDIR%%/shared/gfx/generate_pass.png
+%%WWWDIR%%/shared/gfx/dtc/reinit_named.gif
+%%WWWDIR%%/shared/gfx/dtc_logo_small.gif
+%%WWWDIR%%/shared/gfx/dtc_logo.gif
+%%WWWDIR%%/shared/gfx/dtc/generate_web.gif
+%%WWWDIR%%/shared/gfx/dtc/generate_web2.gif
+%%WWWDIR%%/shared/gfx/dtc/generate_stats.gif
+%%WWWDIR%%/shared/gfx/dtc/generate_named.gif
+%%WWWDIR%%/shared/gfx/dtc/generate_mail.gif
+%%WWWDIR%%/shared/gfx/dtc/generate_backup.gif
+%%WWWDIR%%/shared/gfx/dtc.css
+%%WWWDIR%%/shared/gfx/dtc/all_scripts.gif
+%%WWWDIR%%/shared/gfx/border_2.gif
+%%WWWDIR%%/shared/gfx/bar/start.png
+%%WWWDIR%%/shared/gfx/bar/start.gif
+%%WWWDIR%%/shared/gfx/bar/middle_yellow.gif
+%%WWWDIR%%/shared/gfx/bar/middle_umpty.gif
+%%WWWDIR%%/shared/gfx/bar/middle_s.png
+%%WWWDIR%%/shared/gfx/bar/middle_red.gif
+%%WWWDIR%%/shared/gfx/bar/middle_orange.gif
+%%WWWDIR%%/shared/gfx/bar/middle_n.png
+%%WWWDIR%%/shared/gfx/bar/middle_green.gif
+%%WWWDIR%%/shared/gfx/bar/end.png
+%%WWWDIR%%/shared/gfx/bar/end.gif
+%%WWWDIR%%/shared/dtc_version.php
+%%WWWDIR%%/shared/dtc_stats_index.php
+%%WWWDIR%%/shared/dtcrm/submit_to_sql.php
+%%WWWDIR%%/shared/dtcrm/registry_modulator.php
+%%WWWDIR%%/shared/dtcrm/registry_calls.php
+%%WWWDIR%%/shared/dtcrm/modules/webnic/main.php
+%%WWWDIR%%/shared/dtcrm/modules/ovh/main.php
+%%WWWDIR%%/shared/dtcrm/modules/internetbs/main.php
+%%WWWDIR%%/shared/dtcrm/draw_whois.php
+%%WWWDIR%%/shared/dtcrm/draw_transferdomain.php
+%%WWWDIR%%/shared/dtcrm/draw_renewdomain.php
+%%WWWDIR%%/shared/dtcrm/draw_register_forms.php
+%%WWWDIR%%/shared/dtcrm/draw.php
+%%WWWDIR%%/shared/dtcrm/draw_nameservers.php
+%%WWWDIR%%/shared/dtcrm/draw_handle.php
+%%WWWDIR%%/shared/dtcrm/draw_adddomain.php
+%%WWWDIR%%/shared/dtc_lib.php
+%%WWWDIR%%/shared/drawlib/tree_menu.php
+%%WWWDIR%%/shared/drawlib/templates.php
+%%WWWDIR%%/shared/drawlib/skin.php
+%%WWWDIR%%/shared/drawlib/skinLib.php
+%%WWWDIR%%/shared/drawlib/dtc_functions.php
+%%WWWDIR%%/shared/drawlib/cc_code_popup.php
+%%WWWDIR%%/shared/drawlib/anotherDtc.php
+%%WWWDIR%%/shared/default_admin_site.php
+%%WWWDIR%%/shared/cyradm.php
+%%WWWDIR%%/shared/autoSQLconfig.php
+%%WWWDIR%%/shared/404_template/logo.png
+%%WWWDIR%%/shared/404_template/index.php
+%%WWWDIR%%/shared/404_template/expired.php
+%%WWWDIR%%/shared/404_template/406.php
+%%WWWDIR%%/shared/404_template/404.php
+%%WWWDIR%%/email/submit_to_sql_dtcemail.php
+%%WWWDIR%%/email/login.php
+%%WWWDIR%%/email/index.php
+%%WWWDIR%%/email/gfx
+%%WWWDIR%%/email/api.php
+%%WWWDIR%%/client/xanjaxXHR.js
+%%WWWDIR%%/client/wire.gif
+%%WWWDIR%%/client/webmoney.php
+%%WWWDIR%%/client/vps_stats_swap.php
+%%WWWDIR%%/client/vps_stats_network.php
+%%WWWDIR%%/client/vps_stats_hdd.php
+%%WWWDIR%%/client/vps_stats_cpu.php
+%%WWWDIR%%/client/vm-net.php
+%%WWWDIR%%/client/vm-net-all.php
+%%WWWDIR%%/client/vm-io.php
+%%WWWDIR%%/client/vm-io-all.php
+%%WWWDIR%%/client/vm-cpu.php
+%%WWWDIR%%/client/vm-cpu-all.php
+%%WWWDIR%%/client/secpaycallback_worldpay.php
+%%WWWDIR%%/client/recover_pass.php
+%%WWWDIR%%/client/paypal.php
+%%WWWDIR%%/client/new_account_renewal.php
+%%WWWDIR%%/client/new_account.php
+%%WWWDIR%%/client/new_account_form.php
+%%WWWDIR%%/client/moneybookers.php
+%%WWWDIR%%/client/moneybookers.gif
+%%WWWDIR%%/client/logPushlet.php
+%%WWWDIR%%/client/login.php
+%%WWWDIR%%/client/list_domains.php
+%%WWWDIR%%/client/invoice.php
+%%WWWDIR%%/client/index.php
+%%WWWDIR%%/client/gfx
+%%WWWDIR%%/client/get_vps_location_status.php
+%%WWWDIR%%/client/favicon.ico
+%%WWWDIR%%/client/enets_pay_icon.gif
+%%WWWDIR%%/client/enets-notify.php
+%%WWWDIR%%/client/dynip.php
+%%WWWDIR%%/client/cheques_and_transfers.php
+%%WWWDIR%%/client/cheque.gif
+%%WWWDIR%%/client/bw_per_month.php
+%%WWWDIR%%/admin/xanjaxXHR.js
+%%WWWDIR%%/admin/vps_stats_swap.php
+%%WWWDIR%%/admin/vps_stats_network.php
+%%WWWDIR%%/admin/vps_stats_hdd.php
+%%WWWDIR%%/admin/vps_stats_cpu.php
+%%WWWDIR%%/admin/vm-net.php
+%%WWWDIR%%/admin/vm-net-all.php
+%%WWWDIR%%/admin/vm-io.php
+%%WWWDIR%%/admin/vm-io-all.php
+%%WWWDIR%%/admin/vm-cpu.php
+%%WWWDIR%%/admin/vm-cpu-all.php
+%%WWWDIR%%/admin/view_waitingusers.php
+%%WWWDIR%%/admin/updateChroot.sh
+%%WWWDIR%%/admin/support-receive.php
+%%WWWDIR%%/admin/stat_total_active_prods.php
+%%WWWDIR%%/admin/sa-wrapper
+%%WWWDIR%%/admin/rrdtool.sh
+%%WWWDIR%%/admin/restor_db.php
+%%WWWDIR%%/admin/reminders.php
+%%WWWDIR%%/admin/queuegraph/createrrd.sh
+%%WWWDIR%%/admin/queuegraph/count_qmail.sh
+%%WWWDIR%%/admin/queuegraph/count_postfix.sh
+%%WWWDIR%%/admin/postfix_checks/relaying_stoplist
+%%WWWDIR%%/admin/postfix_checks/mime_header_checks
+%%WWWDIR%%/admin/postfix_checks/header_checks
+%%WWWDIR%%/admin/postfix_checks/body_checks
+%%WWWDIR%%/admin/patch_saslatuhd_startup
+%%WWWDIR%%/admin/patches/spamassassin_default_start.patch
+%%WWWDIR%%/admin/patches/phpmyadmin_htaccess.patch
+%%WWWDIR%%/admin/patches/phpmyadmin_cookie.auth.lib.php.patch
+%%WWWDIR%%/admin/netusegraph.php
+%%WWWDIR%%/admin/netusegraph/get_net_usage.sh
+%%WWWDIR%%/admin/netusegraph/createrrd.sh
+%%WWWDIR%%/admin/mod-security/modsecurity_dtc_web_apps.conf
+%%WWWDIR%%/admin/mod-security/modsecurity_crs_45_trojans.conf
+%%WWWDIR%%/admin/mod-security/modsecurity_crs_40_generic_attacks.conf
+%%WWWDIR%%/admin/mod-security/modsecurity_crs_35_bad_robots.conf
+%%WWWDIR%%/admin/mod-security/modsecurity_crs_30_http_policy.conf
+%%WWWDIR%%/admin/mod-security/modsecurity_crs_23_request_limits.conf
+%%WWWDIR%%/admin/mod-security/modsecurity_crs_21_protocol_anomalies.conf
+%%WWWDIR%%/admin/mod-security/modsecurity_crs_20_protocol_violations.conf
+%%WWWDIR%%/admin/mod-security/modsecurity_crs_10_config.conf
+%%WWWDIR%%/admin/memgraph.php
+%%WWWDIR%%/admin/memgraph/get_meminfo.sh
+%%WWWDIR%%/admin/memgraph/createrrd.sh
+%%WWWDIR%%/admin/maint_apache.php
+%%WWWDIR%%/admin/mailgraph.php
+%%WWWDIR%%/admin/logPushlet.php
+%%WWWDIR%%/admin/ip_change.sh
+%%WWWDIR%%/admin/install/uninstall
+%%WWWDIR%%/admin/install/slack_config
+%%WWWDIR%%/admin/install/redhat_config
+%%WWWDIR%%/admin/install/osx_config
+%%WWWDIR%%/admin/install/mk_root_mailbox.php
+%%WWWDIR%%/admin/install/interactive_installer
+%%WWWDIR%%/admin/install/install
+%%WWWDIR%%/admin/install/gentoo_config
+%%WWWDIR%%/admin/install/functions
+%%WWWDIR%%/admin/install/debian_config
+%%WWWDIR%%/admin/install/bsdsquirrelmail.conf
+%%WWWDIR%%/admin/install/bsdphpmyadmin.conf
+%%WWWDIR%%/admin/install/bsd_config
+%%WWWDIR%%/admin/index.php
+%%WWWDIR%%/admin/inc/submit_root_querys.php
+%%WWWDIR%%/admin/inc/renewals.php
+%%WWWDIR%%/admin/inc/nav.php
+%%WWWDIR%%/admin/inc/monitor.php
+%%WWWDIR%%/admin/inc/ip_usage_report.php
+%%WWWDIR%%/admin/inc/graphs.php
+%%WWWDIR%%/admin/inc/dtc_config.php
+%%WWWDIR%%/admin/inc/draw_user_admin.php
+%%WWWDIR%%/admin/gfx
+%%WWWDIR%%/admin/genfiles/remote_mail_list.php
+%%WWWDIR%%/admin/genfiles/mailfilter_vacation_template
+%%WWWDIR%%/admin/genfiles/gen_webalizer_stat.php
+%%WWWDIR%%/admin/genfiles/gen_ssh_account.php
+%%WWWDIR%%/admin/genfiles/gen_qmail_email_account.php
+%%WWWDIR%%/admin/genfiles/gen_pro_vhost.php
+%%WWWDIR%%/admin/genfiles/gen_postfix_email_account.php
+%%WWWDIR%%/admin/genfiles/gen_perso_vhost.php
+%%WWWDIR%%/admin/genfiles/gen_named_files.php
+%%WWWDIR%%/admin/genfiles/gen_nagios.php
+%%WWWDIR%%/admin/genfiles/gen_maildrop_userdb.php
+%%WWWDIR%%/admin/genfiles/genfiles.php
+%%WWWDIR%%/admin/genfiles/gen_fetchmail.php
+%%WWWDIR%%/admin/genfiles/gen_email_account.php
+%%WWWDIR%%/admin/genfiles/gen_customer_ssl_cert.sh
+%%WWWDIR%%/admin/genfiles/gen_backup_script.php
+%%WWWDIR%%/admin/genfiles/gen_awstats.php
+%%WWWDIR%%/admin/genfiles/change_debconf_ip.sh
+%%WWWDIR%%/admin/genfiles/change_debconf_domain.sh
+%%WWWDIR%%/admin/dtcrm/submit_to_sql.php
+%%WWWDIR%%/admin/dtcrm/product_manager.php
+%%WWWDIR%%/admin/dtcrm/main.php
+%%WWWDIR%%/admin/dtc_db.php
+%%WWWDIR%%/admin/dtc-chroot-shell
+%%WWWDIR%%/admin/dkfilter.patch
+%%WWWDIR%%/admin/deamons_state.php
+%%WWWDIR%%/admin/cron.php
+%%WWWDIR%%/admin/create_stat_total_active_prods_rrd.sh
+%%WWWDIR%%/admin/cpugraph.php
+%%WWWDIR%%/admin/cpugraph/get_cpu_load.sh
+%%WWWDIR%%/admin/cpugraph/createrrd.sh
+%%WWWDIR%%/admin/checkbind.sh
+%%WWWDIR%%/admin/bw_per_month.php
+%%WWWDIR%%/admin/backup_db.php
+%%WWWDIR%%/admin/authme.php
+%%WWWDIR%%/admin/active_prods_graph.php
+%%WWWDIR%%/admin/accesslog.php
+%%WWWDIR%%/admin/404.php
+%%DOCSDIR%%/todo
+%%DOCSDIR%%/README.gentoo
+%%DOCSDIR%%/more_chroot.sh
+%%DOCSDIR%%/iglobalwall/mail_header.rar
+%%DOCSDIR%%/iglobalwall/iglobalwall.tar.gz
+%%DOCSDIR%%/iglobalwall/doc.txt
+%%DOCSDIR%%/html/fr/page_top.html
+%%DOCSDIR%%/html/fr/newadmin.png
+%%DOCSDIR%%/html/fr/menudtc.png
+%%DOCSDIR%%/html/fr/mailboxs.png
+%%DOCSDIR%%/html/fr/index.php
+%%DOCSDIR%%/html/fr/index.html
+%%DOCSDIR%%/html/fr/ftps.png
+%%DOCSDIR%%/html/fr/dtc.png
+%%DOCSDIR%%/html/fr/dtc_logo.gif
+%%DOCSDIR%%/html/fr/domainconf.png
+%%DOCSDIR%%/html/fr/doc.css
+%%DOCSDIR%%/html/fr/confzone.png
+%%DOCSDIR%%/html/fr/confprinc.png
+%%DOCSDIR%%/html/fr/conffilegen.png
+%%DOCSDIR%%/html/fr/clientconfig.png
+%%DOCSDIR%%/html/fr/addzone.png
+%%DOCSDIR%%/html/fr/5.html
+%%DOCSDIR%%/html/fr/4.html
+%%DOCSDIR%%/html/fr/3.html
+%%DOCSDIR%%/html/fr/2.html
+%%DOCSDIR%%/html/fr/1.html
+%%DOCSDIR%%/html/en/page_top.html
+%%DOCSDIR%%/html/en/newadmin.png
+%%DOCSDIR%%/html/en/menudtc.png
+%%DOCSDIR%%/html/en/mailboxs.png
+%%DOCSDIR%%/html/en/index.html
+%%DOCSDIR%%/html/en/index.example.php
+%%DOCSDIR%%/html/en/ftps.png
+%%DOCSDIR%%/html/en/dtc.png
+%%DOCSDIR%%/html/en/dtc_logo.gif
+%%DOCSDIR%%/html/en/dtc_cluster.png
+%%DOCSDIR%%/html/en/domainconf.png
+%%DOCSDIR%%/html/en/doc.css
+%%DOCSDIR%%/html/en/confzone.png
+%%DOCSDIR%%/html/en/confprinc.png
+%%DOCSDIR%%/html/en/conffilegen.png
+%%DOCSDIR%%/html/en/clientconfig.png
+%%DOCSDIR%%/html/en/addzone.png
+%%DOCSDIR%%/html/en/5.html
+%%DOCSDIR%%/html/en/4.html
+%%DOCSDIR%%/html/en/3.html
+%%DOCSDIR%%/html/en/2.html
+%%DOCSDIR%%/html/en/1.html
+%%DOCSDIR%%/dtc_storefront/README
+%%DOCSDIR%%/dtc_storefront/gplhost-testimonials-validate.php
+%%DOCSDIR%%/dtc_storefront/gplhost-testimonials-record.php
+%%DOCSDIR%%/dtc_storefront/gplhost-testimonials.php
+%%DOCSDIR%%/dtc_storefront/gplhost-testimonials-delete.php
+%%DOCSDIR%%/dtc_storefront/dtc_storefront.php
+%%DOCSDIR%%/dtc_storefront/dtc_storefront/dbconnect.php
+%%DOCSDIR%%/dtc-chroot-shell.8
+%%DOCSDIR%%/dtc_autodeploy.8
+%%DOCSDIR%%/dns_transfer.sh
+%%DOCSDIR%%/daemonconf_howto/qmail_anti_spam_measures
+%%DOCSDIR%%/daemonconf_howto/my_init.d_qmail.startup.script
+%%DOCSDIR%%/daemonconf_howto/ftp_http_logging_to_mysql
+%%DOCSDIR%%/contrib/whcms_dtc.php
+%%DOCSDIR%%/contrib/vps_mailling.php
+%%DOCSDIR%%/contrib/upgrade-joomla.sh
+%%DOCSDIR%%/contrib/tail_apache_logs_for_a_domain.php
+%%DOCSDIR%%/contrib/start-stop-all-daemons
+%%DOCSDIR%%/contrib/re_rsync.sh
+%%DOCSDIR%%/contrib/reassing_bandwidth_for_vps_and_dedicated.php
+%%DOCSDIR%%/contrib/get-slave-zones-from-master-dns
+%%DOCSDIR%%/contrib/fix_tickets.php
+%%DOCSDIR%%/contrib/extplorer.htusers.php
+%%DOCSDIR%%/contrib/dtc_recalc_webalizer_stats.sh
+%%DOCSDIR%%/contrib/dtc_dpkg-set-selections_script
+%%DOCSDIR%%/contrib/dtc-client-0.1.tar.gz
+%%DOCSDIR%%/contrib/delete-from-mailq
+%%DOCSDIR%%/contrib/cpanel/cpanel_export_help
+%%DOCSDIR%%/contrib/cpanel/backup-9.4.2009_02-37-52_example.tar.gz
+%%DOCSDIR%%/contrib/checkAmavis
+%%DOCSDIR%%/contrib/check_all_system_file_md5sums.sh
+%%DOCSDIR%%/contrib/autodeploy/selection_config_file
+%%DOCSDIR%%/contrib/autodeploy/dtc-autodeploy
+%%DOCSDIR%%/changelog
+etc/logrotate.d/dtc-vhosts
+etc/logrotate.d/dtc
+%%ETCDIR%%/tickets/subject_admin_reply_zh_CN.txt
+%%ETCDIR%%/tickets/subject_admin_reply.txt
+%%ETCDIR%%/tickets/subject_admin_reply_sv_SE.txt
+%%ETCDIR%%/tickets/subject_admin_reply_ru_RU.txt
+%%ETCDIR%%/tickets/subject_admin_reply_pt_BR.txt
+%%ETCDIR%%/tickets/subject_admin_reply_fr_FR.txt
+%%ETCDIR%%/tickets/subject_admin_reply_es_ES.txt
+%%ETCDIR%%/tickets/subject_admin_reply_de_DE.txt
+%%ETCDIR%%/tickets/header_admin_reply_zh_CN.txt
+%%ETCDIR%%/tickets/header_admin_reply.txt
+%%ETCDIR%%/tickets/header_admin_reply_sv_SE.txt
+%%ETCDIR%%/tickets/header_admin_reply_ru_RU.txt
+%%ETCDIR%%/tickets/header_admin_reply_pt_BR.txt
+%%ETCDIR%%/tickets/header_admin_reply_fr_FR.txt
+%%ETCDIR%%/tickets/header_admin_reply_es_ES.txt
+%%ETCDIR%%/tickets/header_admin_reply_de_DE.txt
+%%ETCDIR%%/tickets/footer_admin_reply_no_close_zh_CN.txt
+%%ETCDIR%%/tickets/footer_admin_reply_no_close.txt
+%%ETCDIR%%/tickets/footer_admin_reply_no_close_sv_SE.txt
+%%ETCDIR%%/tickets/footer_admin_reply_no_close_ru_RU.txt
+%%ETCDIR%%/tickets/footer_admin_reply_no_close_pt_BR.txt
+%%ETCDIR%%/tickets/footer_admin_reply_no_close_fr_FR.txt
+%%ETCDIR%%/tickets/footer_admin_reply_no_close_es_ES.txt
+%%ETCDIR%%/tickets/footer_admin_reply_no_close_de_DE.txt
+%%ETCDIR%%/tickets/footer_admin_reply_close_zh_CN.txt
+%%ETCDIR%%/tickets/footer_admin_reply_close.txt
+%%ETCDIR%%/tickets/footer_admin_reply_close_sv_SE.txt
+%%ETCDIR%%/tickets/footer_admin_reply_close_ru_RU.txt
+%%ETCDIR%%/tickets/footer_admin_reply_close_pt_BR.txt
+%%ETCDIR%%/tickets/footer_admin_reply_close_fr_FR.txt
+%%ETCDIR%%/tickets/footer_admin_reply_close_es_ES.txt
+%%ETCDIR%%/tickets/footer_admin_reply_close_de_DE.txt
+%%ETCDIR%%/signature_zh_CN.txt
+%%ETCDIR%%/signature.txt
+%%ETCDIR%%/signature_sv_SE.txt
+%%ETCDIR%%/signature_ru_RU.txt
+%%ETCDIR%%/signature_pt_BR.txt
+%%ETCDIR%%/signature_fr_FR.txt
+%%ETCDIR%%/signature_es_ES.txt
+%%ETCDIR%%/signature_de_DE.txt
+%%ETCDIR%%/reminders_msg/vps_will_expire_zh_CN.txt
+%%ETCDIR%%/reminders_msg/vps_will_expire.txt
+%%ETCDIR%%/reminders_msg/vps_will_expire_sv_SE.txt
+%%ETCDIR%%/reminders_msg/vps_will_expire_pt_BR.txt
+%%ETCDIR%%/reminders_msg/vps_will_expire_fr_FR.txt
+%%ETCDIR%%/reminders_msg/vps_will_expire_es_ES.txt
+%%ETCDIR%%/reminders_msg/vps_will_expire_de_DE.txt
+%%ETCDIR%%/reminders_msg/vps_subject.txt
+%%ETCDIR%%/reminders_msg/vps_subject_fr_FR.txt
+%%ETCDIR%%/reminders_msg/vps_subject_es_ES.txt
+%%ETCDIR%%/reminders_msg/vps_subject_adm.txt
+%%ETCDIR%%/reminders_msg/vps_subject_adm_fr_FR.txt
+%%ETCDIR%%/reminders_msg/vps_subject_adm_es_ES.txt
+%%ETCDIR%%/reminders_msg/vps_expired_today_zh_CN.txt
+%%ETCDIR%%/reminders_msg/vps_expired_today.txt
+%%ETCDIR%%/reminders_msg/vps_expired_today_sv_SE.txt
+%%ETCDIR%%/reminders_msg/vps_expired_today_pt_BR.txt
+%%ETCDIR%%/reminders_msg/vps_expired_today_fr_FR.txt
+%%ETCDIR%%/reminders_msg/vps_expired_today_es_ES.txt
+%%ETCDIR%%/reminders_msg/vps_expired_today_de_DE.txt
+%%ETCDIR%%/reminders_msg/vps_expired_shutdown_zh_CN.txt
+%%ETCDIR%%/reminders_msg/vps_expired_shutdown.txt
+%%ETCDIR%%/reminders_msg/vps_expired_shutdown_sv_SE.txt
+%%ETCDIR%%/reminders_msg/vps_expired_shutdown_pt_BR.txt
+%%ETCDIR%%/reminders_msg/vps_expired_shutdown_fr_FR.txt
+%%ETCDIR%%/reminders_msg/vps_expired_shutdown_es_ES.txt
+%%ETCDIR%%/reminders_msg/vps_expired_shutdown_de_DE.txt
+%%ETCDIR%%/reminders_msg/vps_expired_last_warning_zh_CN.txt
+%%ETCDIR%%/reminders_msg/vps_expired_last_warning.txt
+%%ETCDIR%%/reminders_msg/vps_expired_last_warning_sv_SE.txt
+%%ETCDIR%%/reminders_msg/vps_expired_last_warning_pt_BR.txt
+%%ETCDIR%%/reminders_msg/vps_expired_last_warning_fr_FR.txt
+%%ETCDIR%%/reminders_msg/vps_expired_last_warning_es_ES.txt
+%%ETCDIR%%/reminders_msg/vps_expired_last_warning_de_DE.txt
+%%ETCDIR%%/reminders_msg/vps_expired_already_zh_CN.txt
+%%ETCDIR%%/reminders_msg/vps_expired_already.txt
+%%ETCDIR%%/reminders_msg/vps_expired_already_sv_SE.txt
+%%ETCDIR%%/reminders_msg/vps_expired_already_pt_BR.txt
+%%ETCDIR%%/reminders_msg/vps_expired_already_fr_FR.txt
+%%ETCDIR%%/reminders_msg/vps_expired_already_es_ES.txt
+%%ETCDIR%%/reminders_msg/vps_expired_already_de_DE.txt
+%%ETCDIR%%/reminders_msg/shared_will_expire_zh_CN.txt
+%%ETCDIR%%/reminders_msg/shared_will_expire.txt
+%%ETCDIR%%/reminders_msg/shared_will_expire_sv_SE.txt
+%%ETCDIR%%/reminders_msg/shared_will_expire_pt_BR.txt
+%%ETCDIR%%/reminders_msg/shared_will_expire_fr_FR.txt
+%%ETCDIR%%/reminders_msg/shared_will_expire_es_ES.txt
+%%ETCDIR%%/reminders_msg/shared_will_expire_de_DE.txt
+%%ETCDIR%%/reminders_msg/shared_subject.txt
+%%ETCDIR%%/reminders_msg/shared_subject_fr_FR.txt
+%%ETCDIR%%/reminders_msg/shared_subject_es_ES.txt
+%%ETCDIR%%/reminders_msg/shared_subject_adm.txt
+%%ETCDIR%%/reminders_msg/shared_subject_adm_fr_FR.txt
+%%ETCDIR%%/reminders_msg/shared_subject_adm_es_ES.txt
+%%ETCDIR%%/reminders_msg/shared_expired_today_zh_CN.txt
+%%ETCDIR%%/reminders_msg/shared_expired_today.txt
+%%ETCDIR%%/reminders_msg/shared_expired_today_sv_SE.txt
+%%ETCDIR%%/reminders_msg/shared_expired_today_pt_BR.txt
+%%ETCDIR%%/reminders_msg/shared_expired_today_fr_FR.txt
+%%ETCDIR%%/reminders_msg/shared_expired_today_es_ES.txt
+%%ETCDIR%%/reminders_msg/shared_expired_today_de_DE.txt
+%%ETCDIR%%/reminders_msg/shared_expired_shutdown_zh_CN.txt
+%%ETCDIR%%/reminders_msg/shared_expired_shutdown.txt
+%%ETCDIR%%/reminders_msg/shared_expired_shutdown_sv_SE.txt
+%%ETCDIR%%/reminders_msg/shared_expired_shutdown_pt_BR.txt
+%%ETCDIR%%/reminders_msg/shared_expired_shutdown_fr_FR.txt
+%%ETCDIR%%/reminders_msg/shared_expired_shutdown_es_ES.txt
+%%ETCDIR%%/reminders_msg/shared_expired_shutdown_de_DE.txt
+%%ETCDIR%%/reminders_msg/shared_expired_last_warning_zh_CN.txt
+%%ETCDIR%%/reminders_msg/shared_expired_last_warning.txt
+%%ETCDIR%%/reminders_msg/shared_expired_last_warning_sv_SE.txt
+%%ETCDIR%%/reminders_msg/shared_expired_last_warning_pt_BR.txt
+%%ETCDIR%%/reminders_msg/shared_expired_last_warning_fr_FR.txt
+%%ETCDIR%%/reminders_msg/shared_expired_last_warning_es_ES.txt
+%%ETCDIR%%/reminders_msg/shared_expired_last_warning_de_DE.txt
+%%ETCDIR%%/reminders_msg/shared_expired_already_zh_CN.txt
+%%ETCDIR%%/reminders_msg/shared_expired_already.txt
+%%ETCDIR%%/reminders_msg/shared_expired_already_sv_SE.txt
+%%ETCDIR%%/reminders_msg/shared_expired_already_pt_BR.txt
+%%ETCDIR%%/reminders_msg/shared_expired_already_fr_FR.txt
+%%ETCDIR%%/reminders_msg/shared_expired_already_es_ES.txt
+%%ETCDIR%%/reminders_msg/shared_expired_already_de_DE.txt
+%%ETCDIR%%/reminders_msg/server_will_expire_zh_CN.txt
+%%ETCDIR%%/reminders_msg/server_will_expire.txt
+%%ETCDIR%%/reminders_msg/server_will_expire_sv_SE.txt
+%%ETCDIR%%/reminders_msg/server_will_expire_pt_BR.txt
+%%ETCDIR%%/reminders_msg/server_will_expire_fr_FR.txt
+%%ETCDIR%%/reminders_msg/server_will_expire_es_ES.txt
+%%ETCDIR%%/reminders_msg/server_will_expire_de_DE.txt
+%%ETCDIR%%/reminders_msg/server_subject.txt
+%%ETCDIR%%/reminders_msg/server_subject_fr_FR.txt
+%%ETCDIR%%/reminders_msg/server_subject_es_ES.txt
+%%ETCDIR%%/reminders_msg/server_subject_adm.txt
+%%ETCDIR%%/reminders_msg/server_subject_adm_fr_FR.txt
+%%ETCDIR%%/reminders_msg/server_subject_adm_es_ES.txt
+%%ETCDIR%%/reminders_msg/server_expired_today_zh_CN.txt
+%%ETCDIR%%/reminders_msg/server_expired_today.txt
+%%ETCDIR%%/reminders_msg/server_expired_today_sv_SE.txt
+%%ETCDIR%%/reminders_msg/server_expired_today_pt_BR.txt
+%%ETCDIR%%/reminders_msg/server_expired_today_fr_FR.txt
+%%ETCDIR%%/reminders_msg/server_expired_today_es_ES.txt
+%%ETCDIR%%/reminders_msg/server_expired_today_de_DE.txt
+%%ETCDIR%%/reminders_msg/server_expired_shutdown_zh_CN.txt
+%%ETCDIR%%/reminders_msg/server_expired_shutdown.txt
+%%ETCDIR%%/reminders_msg/server_expired_shutdown_sv_SE.txt
+%%ETCDIR%%/reminders_msg/server_expired_shutdown_pt_BR.txt
+%%ETCDIR%%/reminders_msg/server_expired_shutdown_fr_FR.txt
+%%ETCDIR%%/reminders_msg/server_expired_shutdown_es_ES.txt
+%%ETCDIR%%/reminders_msg/server_expired_shutdown_de_DE.txt
+%%ETCDIR%%/reminders_msg/server_expired_last_warning_zh_CN.txt
+%%ETCDIR%%/reminders_msg/server_expired_last_warning.txt
+%%ETCDIR%%/reminders_msg/server_expired_last_warning_sv_SE.txt
+%%ETCDIR%%/reminders_msg/server_expired_last_warning_pt_BR.txt
+%%ETCDIR%%/reminders_msg/server_expired_last_warning_fr_FR.txt
+%%ETCDIR%%/reminders_msg/server_expired_last_warning_es_ES.txt
+%%ETCDIR%%/reminders_msg/server_expired_last_warning_de_DE.txt
+%%ETCDIR%%/reminders_msg/server_expired_already_zh_CN.txt
+%%ETCDIR%%/reminders_msg/server_expired_already.txt
+%%ETCDIR%%/reminders_msg/server_expired_already_sv_SE.txt
+%%ETCDIR%%/reminders_msg/server_expired_already_pt_BR.txt
+%%ETCDIR%%/reminders_msg/server_expired_already_fr_FR.txt
+%%ETCDIR%%/reminders_msg/server_expired_already_es_ES.txt
+%%ETCDIR%%/reminders_msg/server_expired_already_de_DE.txt
+%%ETCDIR%%/registration_msg/vps_open_zh_CN.txt
+%%ETCDIR%%/registration_msg/vps_open.txt
+%%ETCDIR%%/registration_msg/vps_open_sv_SE.txt
+%%ETCDIR%%/registration_msg/vps_open_ru_RU.txt
+%%ETCDIR%%/registration_msg/vps_open_pt_BR.txt
+%%ETCDIR%%/registration_msg/vps_open_fr_FR.txt
+%%ETCDIR%%/registration_msg/vps_open_es_ES.txt
+%%ETCDIR%%/registration_msg/vps_open_de_DE.txt
+%%ETCDIR%%/registration_msg/shared_open_zh_CN.txt
+%%ETCDIR%%/registration_msg/shared_open.txt
+%%ETCDIR%%/registration_msg/shared_open_sv_SE.txt
+%%ETCDIR%%/registration_msg/shared_open_ru_RU.txt
+%%ETCDIR%%/registration_msg/shared_open_pt_BR.txt
+%%ETCDIR%%/registration_msg/shared_open_fr_FR.txt
+%%ETCDIR%%/registration_msg/shared_open_es_ES.txt
+%%ETCDIR%%/registration_msg/shared_open_de_DE.txt
+%%ETCDIR%%/registration_msg/dedicated_open_zh_CN.txt
+%%ETCDIR%%/registration_msg/dedicated_open.txt
+%%ETCDIR%%/registration_msg/dedicated_open_sv_SE.txt
+%%ETCDIR%%/registration_msg/dedicated_open_ru_RU.txt
+%%ETCDIR%%/registration_msg/dedicated_open_pt_BR.txt
+%%ETCDIR%%/registration_msg/dedicated_open_fr_FR.txt
+%%ETCDIR%%/registration_msg/dedicated_open_es_ES.txt
+%%ETCDIR%%/registration_msg/dedicated_open_de_DE.txt
+%%ETCDIR%%/messages_header_zh_CN.txt
+%%ETCDIR%%/messages_header.txt
+%%ETCDIR%%/messages_header_sv_SE.txt
+%%ETCDIR%%/messages_header_ru_RU.txt
+%%ETCDIR%%/messages_header_pt_BR.txt
+%%ETCDIR%%/messages_header_fr_FR.txt
+%%ETCDIR%%/messages_header_es_ES.txt
+%%ETCDIR%%/messages_header_de_DE.txt
+%%ETCDIR%%/logrotate.template
+etc/cron.d/dtc
 sbin/dtc-install
 sbin/dtc-deinstall
-@dirrm %%LOCALBASE%%/www/dtc/shared/visitors_template
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/zh_CN/LC_MESSAGES
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/zh_CN
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/se_NO/LC_MESSAGES
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/se_NO
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/ru_RU.UTF-8/LC_MESSAGES
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/ru_RU.UTF-8
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/pt_PT/LC_MESSAGES
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/pt_PT
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/pl_PL/LC_MESSAGES
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/pl_PL
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/nl_NL/LC_MESSAGES
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/nl_NL
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/it_IT/LC_MESSAGES
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/it_IT
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/hu_HU/LC_MESSAGES
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/hu_HU
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/fr_FR/LC_MESSAGES
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/fr_FR
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/es_ES/LC_MESSAGES
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/es_ES
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/de_DE/LC_MESSAGES
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale/de_DE
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars/locale
-@dirrm %%LOCALBASE%%/www/dtc/shared/vars
-@dirrm %%LOCALBASE%%/www/dtc/shared/template
-@dirrm %%LOCALBASE%%/www/dtc/shared/securepay/gateways
-@dirrm %%LOCALBASE%%/www/dtc/shared/securepay
-@dirrm %%LOCALBASE%%/www/dtc/shared/maxmind
-@dirrm %%LOCALBASE%%/www/dtc/shared/inc/sql
-@dirrm %%LOCALBASE%%/www/dtc/shared/inc/forms
-@dirrm %%LOCALBASE%%/www/dtc/shared/inc
-@dirrm %%LOCALBASE%%/www/dtc/shared/imgcache
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/tex
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/ruffdogs_mozilla
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/muedgrey
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/iglobal
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl/icons
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/green_gpl
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/green2
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/green
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/frame
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/darkblue
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/treeview
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/tabs
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/navbar
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/config-icon
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx/buttons
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup/gfx
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin/bwoup
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/skin
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/securepay
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/pagetop
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/menu
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language/ru/pub
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language/ru
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language/nl/pub
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language/nl
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language/fr/pub
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language/fr
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language/en/pub
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language/en
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/language
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/dtc
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx/bar
-@dirrm %%LOCALBASE%%/www/dtc/shared/gfx
-@dirrm %%LOCALBASE%%/www/dtc/shared/dtcrm/webnic.cc
-@dirrm %%LOCALBASE%%/www/dtc/shared/dtcrm/srs
-@dirrm %%LOCALBASE%%/www/dtc/shared/dtcrm
-@dirrm %%LOCALBASE%%/www/dtc/shared/drawlib
-@dirrm %%LOCALBASE%%/www/dtc/shared/404_template
-@dirrm %%LOCALBASE%%/www/dtc/shared
-@dirrm %%LOCALBASE%%/www/dtc/email/inc
-@dirrm %%LOCALBASE%%/www/dtc/email
-@dirrm %%LOCALBASE%%/www/dtc/client/inc
-@dirrm %%LOCALBASE%%/www/dtc/client
-@dirrm %%LOCALBASE%%/www/dtc/admin/tables
-@dirrm %%LOCALBASE%%/www/dtc/admin/queuegraph
-@dirrm %%LOCALBASE%%/www/dtc/admin/netusegraph
-@dirrm %%LOCALBASE%%/www/dtc/admin/memgraph
-@dirrm %%LOCALBASE%%/www/dtc/admin/install
-@dirrm %%LOCALBASE%%/www/dtc/admin/inc
-@dirrm %%LOCALBASE%%/www/dtc/admin/genfiles
-@dirrm %%LOCALBASE%%/www/dtc/admin/dtcrm
-@dirrm %%LOCALBASE%%/www/dtc/admin/cpugraph
-@dirrm %%LOCALBASE%%/www/dtc/admin
-@dirrm %%LOCALBASE%%/www/dtc
-@dirrm %%LOCALBASE%%/www
-@dirrm %%LOCALBASE%%/var/dtc
-@dirrm %%LOCALBASE%%/var
-@dirrm %%LOCALBASE%%/share/doc/dtc/iglobalwall
-@dirrm %%LOCALBASE%%/share/doc/dtc/html/fr
-@dirrm %%LOCALBASE%%/share/doc/dtc/html/en
-@dirrm %%LOCALBASE%%/share/doc/dtc/html
-@dirrm %%LOCALBASE%%/share/doc/dtc/dtc_storefront/dtc_storefront
-@dirrm %%LOCALBASE%%/share/doc/dtc/dtc_storefront
-@dirrm %%LOCALBASE%%/share/doc/dtc/daemonconf_howto
-@dirrm %%LOCALBASE%%/share/doc/dtc/contrib
-@dirrm %%LOCALBASE%%/share/doc/dtc
-@dirrm %%LOCALBASE%%/share/doc
-@dirrm %%LOCALBASE%%/share
-@dirrm %%LOCALBASE%%/man/man8
-@dirrm %%DTCROOT%%/etc/zones
-@dirrm %%DTCROOT%%/etc
-@dirrm %%DTCROOT%%
+@dirrm %%WWWDIR%%/shared/visitors_template
+@dirrm %%WWWDIR%%/shared/vars/locale/zh_TW/LC_MESSAGES
+@dirrm %%WWWDIR%%/shared/vars/locale/zh_TW
+@dirrm %%WWWDIR%%/shared/vars/locale/zh_CN/LC_MESSAGES
+@dirrm %%WWWDIR%%/shared/vars/locale/zh_CN
+@dirrm %%WWWDIR%%/shared/vars/locale/sv_SE/LC_MESSAGES
+@dirrm %%WWWDIR%%/shared/vars/locale/sv_SE
+@dirrm %%WWWDIR%%/shared/vars/locale/sr_RS/LC_MESSAGES
+@dirrm %%WWWDIR%%/shared/vars/locale/sr_RS
+@dirrm %%WWWDIR%%/shared/vars/locale/ru_RU/LC_MESSAGES
+@dirrm %%WWWDIR%%/shared/vars/locale/ru_RU
+@dirrm %%WWWDIR%%/shared/vars/locale/pt_PT/LC_MESSAGES
+@dirrm %%WWWDIR%%/shared/vars/locale/pt_PT
+@dirrm %%WWWDIR%%/shared/vars/locale/pt_BR/LC_MESSAGES
+@dirrm %%WWWDIR%%/shared/vars/locale/pt_BR
+@dirrm %%WWWDIR%%/shared/vars/locale/pl_PL/LC_MESSAGES
+@dirrm %%WWWDIR%%/shared/vars/locale/pl_PL
+@dirrm %%WWWDIR%%/shared/vars/locale/nl_NL/LC_MESSAGES
+@dirrm %%WWWDIR%%/shared/vars/locale/nl_NL
+@dirrm %%WWWDIR%%/shared/vars/locale/lv_LV/LC_MESSAGES
+@dirrm %%WWWDIR%%/shared/vars/locale/lv_LV
+@dirrm %%WWWDIR%%/shared/vars/locale/it_IT/LC_MESSAGES
+@dirrm %%WWWDIR%%/shared/vars/locale/it_IT
+@dirrm %%WWWDIR%%/shared/vars/locale/hu_HU/LC_MESSAGES
+@dirrm %%WWWDIR%%/shared/vars/locale/hu_HU
+@dirrm %%WWWDIR%%/shared/vars/locale/fr_FR/LC_MESSAGES
+@dirrm %%WWWDIR%%/shared/vars/locale/fr_FR
+@dirrm %%WWWDIR%%/shared/vars/locale/fi_FI/LC_MESSAGES
+@dirrm %%WWWDIR%%/shared/vars/locale/fi_FI
+@dirrm %%WWWDIR%%/shared/vars/locale/es_ES/LC_MESSAGES
+@dirrm %%WWWDIR%%/shared/vars/locale/es_ES
+@dirrm %%WWWDIR%%/shared/vars/locale/de_DE/LC_MESSAGES
+@dirrm %%WWWDIR%%/shared/vars/locale/de_DE
+@dirrm %%WWWDIR%%/shared/vars/locale/cs_CZ/LC_MESSAGES
+@dirrm %%WWWDIR%%/shared/vars/locale/cs_CZ
+@dirrm %%WWWDIR%%/shared/vars/locale
+@dirrm %%WWWDIR%%/shared/vars
+@dirrm %%WWWDIR%%/shared/template
+@dirrm %%WWWDIR%%/shared/securepay/modules/worldpay
+@dirrm %%WWWDIR%%/shared/securepay/modules/wiretransfer
+@dirrm %%WWWDIR%%/shared/securepay/modules/webmoney
+@dirrm %%WWWDIR%%/shared/securepay/modules/paypal
+@dirrm %%WWWDIR%%/shared/securepay/modules/moneybookers
+@dirrm %%WWWDIR%%/shared/securepay/modules/enets
+@dirrm %%WWWDIR%%/shared/securepay/modules/dineromail
+@dirrm %%WWWDIR%%/shared/securepay/modules/cheque
+@dirrm %%WWWDIR%%/shared/securepay/modules
+@dirrm %%WWWDIR%%/shared/securepay
+@dirrm %%WWWDIR%%/shared/maxmind
+@dirrm %%WWWDIR%%/shared/inc/sql
+@dirrm %%WWWDIR%%/shared/inc/forms
+@dirrm %%WWWDIR%%/shared/inc
+@dirrm %%WWWDIR%%/shared/gfx/toolstitles
+@dirrm %%WWWDIR%%/shared/gfx/skin/paperboard/gfx/treeview
+@dirrm %%WWWDIR%%/shared/gfx/skin/paperboard/gfx/tabs
+@dirrm %%WWWDIR%%/shared/gfx/skin/paperboard/gfx/navbar
+@dirrm %%WWWDIR%%/shared/gfx/skin/paperboard/gfx/css
+@dirrm %%WWWDIR%%/shared/gfx/skin/paperboard/gfx/config-icon
+@dirrm %%WWWDIR%%/shared/gfx/skin/paperboard/gfx/buttons
+@dirrm %%WWWDIR%%/shared/gfx/skin/paperboard/gfx
+@dirrm %%WWWDIR%%/shared/gfx/skin/paperboard
+@dirrm %%WWWDIR%%/shared/gfx/skin/grayboard/js/pngfix
+@dirrm %%WWWDIR%%/shared/gfx/skin/grayboard/js
+@dirrm %%WWWDIR%%/shared/gfx/skin/grayboard/images
+@dirrm %%WWWDIR%%/shared/gfx/skin/grayboard/gfx/treeview
+@dirrm %%WWWDIR%%/shared/gfx/skin/grayboard/gfx/buttons
+@dirrm %%WWWDIR%%/shared/gfx/skin/grayboard/gfx
+@dirrm %%WWWDIR%%/shared/gfx/skin/grayboard/css
+@dirrm %%WWWDIR%%/shared/gfx/skin/grayboard
+@dirrm %%WWWDIR%%/shared/gfx/skin/bwoup/gfx/treeview
+@dirrm %%WWWDIR%%/shared/gfx/skin/bwoup/gfx/tabs
+@dirrm %%WWWDIR%%/shared/gfx/skin/bwoup/gfx/navbar
+@dirrm %%WWWDIR%%/shared/gfx/skin/bwoup/gfx/config-icon
+@dirrm %%WWWDIR%%/shared/gfx/skin/bwoup/gfx/buttons
+@dirrm %%WWWDIR%%/shared/gfx/skin/bwoup/gfx
+@dirrm %%WWWDIR%%/shared/gfx/skin/bwoup
+@dirrm %%WWWDIR%%/shared/gfx/skin
+@dirrm %%WWWDIR%%/shared/gfx/securepay
+@dirrm %%WWWDIR%%/shared/gfx/pagetop
+@dirrm %%WWWDIR%%/shared/gfx/menu
+@dirrm %%WWWDIR%%/shared/gfx/language/ru/pub
+@dirrm %%WWWDIR%%/shared/gfx/language/ru
+@dirrm %%WWWDIR%%/shared/gfx/language/nl/pub
+@dirrm %%WWWDIR%%/shared/gfx/language/nl
+@dirrm %%WWWDIR%%/shared/gfx/language/fr/pub
+@dirrm %%WWWDIR%%/shared/gfx/language/fr
+@dirrm %%WWWDIR%%/shared/gfx/language/en/pub
+@dirrm %%WWWDIR%%/shared/gfx/language/en
+@dirrm %%WWWDIR%%/shared/gfx/language
+@dirrm %%WWWDIR%%/shared/gfx/dtc
+@dirrm %%WWWDIR%%/shared/gfx/bar
+@dirrm %%WWWDIR%%/shared/gfx
+@dirrm %%WWWDIR%%/shared/dtcrm/webnic.cc
+@dirrm %%WWWDIR%%/shared/dtcrm/srs
+@dirrm %%WWWDIR%%/shared/dtcrm/modules/webnic
+@dirrm %%WWWDIR%%/shared/dtcrm/modules/ovh
+@dirrm %%WWWDIR%%/shared/dtcrm/modules/internetbs
+@dirrm %%WWWDIR%%/shared/dtcrm/modules
+@dirrm %%WWWDIR%%/shared/dtcrm
+@dirrm %%WWWDIR%%/shared/drawlib
+@dirrm %%WWWDIR%%/shared/404_template
+@dirrm %%WWWDIR%%/shared
+@dirrm %%WWWDIR%%/email
+@dirrm %%WWWDIR%%/client
+@dirrm %%WWWDIR%%/admin/tables
+@dirrm %%WWWDIR%%/admin/queuegraph
+@dirrm %%WWWDIR%%/admin/postfix_checks
+@dirrm %%WWWDIR%%/admin/patches
+@dirrm %%WWWDIR%%/admin/netusegraph
+@dirrm %%WWWDIR%%/admin/mod-security
+@dirrm %%WWWDIR%%/admin/memgraph
+@dirrm %%WWWDIR%%/admin/install
+@dirrm %%WWWDIR%%/admin/inc
+@dirrm %%WWWDIR%%/admin/genfiles
+@dirrm %%WWWDIR%%/admin/dtcrm
+@dirrm %%WWWDIR%%/admin/cpugraph
+@dirrm %%WWWDIR%%/admin
+@dirrm %%DOCSDIR%%/iglobalwall
+@dirrm %%DOCSDIR%%/html/fr
+@dirrm %%DOCSDIR%%/html/en
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%/dtc_storefront/dtc_storefront
+@dirrm %%DOCSDIR%%/dtc_storefront
+@dirrm %%DOCSDIR%%/daemonconf_howto
+@dirrm %%DOCSDIR%%/contrib/cpanel
+@dirrm %%DOCSDIR%%/contrib/autodeploy
+@dirrm %%DOCSDIR%%/contrib
+@dirrm %%DOCSDIR%%
+@dirrm etc/logrotate.d
+@dirrm %%ETCDIR%%/tickets
+@dirrm %%ETCDIR%%/reminders_msg
+@dirrm %%ETCDIR%%/registration_msg
+@dirrm %%ETCDIR%%
+@dirrm etc/cron.d
+@dirrmtry var/dtc/etc/slave_zones
+@dirrmtry var/dtc/etc/zones
+@dirrmtry var/dtc/etc
+@dirrmtry var/dtc
+@dirrmtry var
+@dirrmtry %%WWWDIR%%
