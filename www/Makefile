@@ -563,6 +563,7 @@
     SUBDIR += mod_xsendfile
     SUBDIR += moinmoin
     SUBDIR += momspider
+    SUBDIR += monast
     SUBDIR += monkey
     SUBDIR += moodle
     SUBDIR += moonshine
