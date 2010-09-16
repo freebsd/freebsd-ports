@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	viewvc
-PORTVERSION=	1.1.6
-PORTREVISION=	1
+PORTVERSION=	1.1.7
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.viewvc.org/ \
 		LOCAL/glarkin
