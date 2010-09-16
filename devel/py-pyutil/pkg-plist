@@ -203,6 +203,9 @@ bin/verinfo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_time_format.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_time_format.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_time_format.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_verlib.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_verlib.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_verlib.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_version_class.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_version_class.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/test/test_version_class.pyo
@@ -221,6 +224,9 @@ bin/verinfo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/twistedutil.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/twistedutil.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/twistedutil.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/verlib.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/verlib.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/verlib.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/version_class.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/version_class.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pyutil/version_class.pyo
