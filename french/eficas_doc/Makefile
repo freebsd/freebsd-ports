@@ -6,21 +6,14 @@
 #
 
 PORTNAME=	eficas-doc
-DISTVERSIONPREFIX=	full-src-
 DISTVERSION=	2.0.3-1
-DISTVERSIONSUFFIX=	.noarch
+PORTREVISION=	1
 CATEGORIES=	french cad
-MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
-DISTNAME=	aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	ASter Command FIle Editor - doc files
 
 RUN_DEPENDS=	eficas:${PORTSDIR}/french/eficas
-
-ASTER_VER=	10.2.0
-ASTER_DISTVERSION=	${ASTER_VER}-1
-EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_VER}/SRC
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:S/-doc//}-${PORTVERSION:R}/Aster
@@ -31,10 +24,6 @@ LEFICASDIR?=	apps/${PORTNAME:S/-doc//}
 EFICASDIR=	${PREFIX}/${LEFICASDIR}
 PLIST_SUB=	EFICASDIR=${LEFICASDIR}
 
-post-extract:
-	(cd ${WRKDIR} &&	\
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${EXTRACT_WRKSRC}/${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS})
-
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKG_INSTALL} ${PKGNAME} PRE-INSTALL
 
@@ -44,4 +33,5 @@ do-install:
 	(cd ${WRKSRC}/Cata &&	\
 		${COPYTREE_SHARE} \* ${EFICASDIR}/Aster/Cata)
 
+.include "${.CURDIR}/../../french/aster/bsd.aster.mk"
 .include <bsd.port.mk>
