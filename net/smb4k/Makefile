@@ -7,7 +7,7 @@
 
 PORTNAME=		smb4k
 PORTVERSION=		0.9.9
-PORTREVISION=	5
+PORTREVISION=		6
 CATEGORIES=		net kde
 MASTER_SITES=		${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	smb4k
@@ -16,7 +16,9 @@ MAINTAINER=		citycat4@ngs.ru
 COMMENT=		KDE 3.x SMB Network browser and SMB shares mounting center
 
 RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo \
-			smbstatus:${PORTSDIR}/net/samba3
+			smbstatus:${PORTSDIR}/${SAMBA_PORT}
+
+SAMBA_PORT?=	net/samba34
 
 USE_KDEBASE_VER=	3
 USE_GMAKE=	yes
