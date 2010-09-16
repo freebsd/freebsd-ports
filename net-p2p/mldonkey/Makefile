@@ -22,6 +22,8 @@ LICENSE_FILE=	${WRKSRC}/Copying.txt
 NO_LATEST_LINK=	yes
 CONFLICTS=	mldonkey{-{core,gui},}-devel-[0-9]*
 
+BROKEN=		does not build
+
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_AUTOTOOLS=	autoconf:267:env
