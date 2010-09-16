@@ -8,9 +8,9 @@
 
 PORTNAME=	distcc
 PORTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Distribute compilation of C(++) code acrosss machines on a network
@@ -51,8 +51,9 @@ CONFIGURE_ARGS+=	--enable-rfc2553
 .if defined(WITH_COMPILER_LINKS)
 CCLINKDIR?=		libexec/distcc
 PLIST_DIRS=		${CCLINKDIR}
-GNU_COMPILERS=		34 42 43 44 -ooo
+GNU_COMPILERS=		34 42 43 44 45 46 -ooo
 DISTCC_COMPILERS=	cc c++ gcc g++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
+DISTCC_COMPILERS+=	clang clang++ llvm-gcc llvm-c++ llvm-g++
 .if ${ARCH} == "i386"
 DISTCC_COMPILERS+=	icc icpc
 .endif
