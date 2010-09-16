@@ -7,6 +7,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://samba.org/ftp/ccache/ CRITICAL
 
@@ -38,6 +39,7 @@ CCACHE_COMPILERS+=	icc icpc
 .endif
 GNU_COMPILERS+=		34 42 43 44 45 46
 CCACHE_COMPILERS+=	cc c++ gcc g++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
+CCACHE_COMPILERS+=	clang clang++ llvm-gcc llvm-c++ llvm-g++
 .if defined(EXTRA_COMPILERS)
 CCACHE_COMPILERS+=	${EXTRA_COMPILERS}
 .endif
