@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pymol
-PORTVERSION=	1.0r2
-PORTREVISION=	5
+PORTVERSION=	${VERSION}.${SVNREVISION}
 CATEGORIES=	biology python
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|maho/pymol|}
 
@@ -19,6 +18,10 @@ RUN_DEPENDS=	${PYNUMERIC} \
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+VERSION=	1.3r1
+SVNREVISION=	3913
+
+USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/pymol-${PORTVERSION}
 USE_GL=		glut
 USE_GMAKE=	yes
@@ -35,5 +38,14 @@ do-install:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} install \
 	; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup2.py install)
 	@${INSTALL_SCRIPT} ${WRKSRC}/pymol ${PREFIX}/bin/pymol
+
+#maintainance
+do-fetch-svn:
+	#svn ls https://pymol.svn.sourceforge.net/svnroot/pymol/tags
+	#http://pymol.svn.sourceforge.net/viewvc/pymol/trunk/
+	${RM} -rf pymol-${VERSION}.${SVNREVISION}
+	svn -r ${SVNREVISION} export https://pymol.svn.sourceforge.net/svnroot/pymol/trunk/pymol pymol-${VERSION}.${SVNREVISION}
+	tar cvfj pymol-${VERSION}.${SVNREVISION}.tar.bz2 pymol-${VERSION}.${SVNREVISION}
+	scp pymol-${VERSION}.${SVNREVISION}.tar.bz2 freefall.freebsd.org:public_distfiles/pymol/
 
 .include <bsd.port.mk>
