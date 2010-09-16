@@ -6,45 +6,59 @@
 #
 
 PORTNAME=	dtc
-PORTVERSION=	0.28.2.1
-PORTREVISION=	5
+PORTVERSION=	0.32.0.1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.gplhost.com/pub/dtc/bsd/ \
+MASTER_SITES=	ftp://ftp.gplhost.sg/pub/dtc/bsd/ \
+		ftp://qala-sg.apt-proxy.gplhost.sg/pub/dtc/bsd/ \
+		ftp://601.apt-proxy.gplhost.com/pub/dtc/bsd/ \
+		ftp://seattle.apt-proxy.gplhost.com/pub/dtc/bsd/ \
+		ftp://ftp.gplhost.com/pub/dtc/bsd/ \
+		ftp://ftp.gplhost.co.uk/pub/dtc/bsd/ \
 		ftp://ftp.gplhost.fr/pub/dtc/bsd/ \
-		ftp://ftp.gplhost.sg/pub/dtc/bsd/
+		ftp://972.apt-proxy.gplhost.com/pub/dtc/bsd/ \
+		http://ftp.gplhost.fr/pub/dtc/bsd/
 
 MAINTAINER=	fkiernan@id.net.ar
 COMMENT=	A hosting web GUI for admin and accounting all hosting services
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql50-server \
-		${LOCALBASE}/libexec/apache22/mod_log_sql.so:${PORTSDIR}/www/mod_log_sql2-dtc \
+RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_log_sql.so:${PORTSDIR}/www/mod_log_sql2-dtc \
 		${LOCALBASE}/share/pear/Crypt/CBC.php:${PORTSDIR}/security/pear-Crypt_CBC \
+		${LOCALBASE}/share/pear/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializer \
+		${LOCALBASE}/share/pear/Net/IPv4.php:${PORTSDIR}/net/pear-Net_IPv4 \
 		${LOCALBASE}/www/cgi-bin/sbox:${PORTSDIR}/www/sbox-dtc \
 		${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo \
 		${LOCALBASE}/lib/nss_mysql.so:${PORTSDIR}/net/libnss-mysql \
 		${LOCALBASE}/sbin/chrootuid:${PORTSDIR}/security/chrootuid \
 		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
 		${LOCALBASE}/share/fpdf/fpdf.php:${PORTSDIR}/print/fpdf \
-		${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
-		${LOCALBASE}/lib/X11/fonts/webfonts/verdana.ttf:${PORTSDIR}/x11-fonts/webfonts \
+		${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
+		${X11BASE}/lib/X11/fonts/webfonts/verdana.ttf:${PORTSDIR}/x11-fonts/webfonts \
 		${LOCALBASE}/bin/mhonarc:${PORTSDIR}/www/mhonarc \
 		${LOCALBASE}/bin/mlmmj-list:${PORTSDIR}/mail/mlmmj \
 		${LOCALBASE}/bin/ncftpput:${PORTSDIR}/ftp/ncftp3 \
-		${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool
+		${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
+		${LOCALBASE}/sbin/logrotate:${PORTSDIR}/sysutils/logrotate \
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+
+CONFLICTS=	dtc-toaster-[0-9]* dtc-postfix-courier-[0-9]*
+
+USE_GETTEXT=	yes
+
+USE_GMAKE=	yes
+
+USE_MYSQL=	server
 
 NO_BUILD=	yes
 USE_PHP=	mysql pcre session
-
-BROKEN=		bad plist
-DEPRECATED=	has been broken for 17 months
-EXPIRATION_DATE=2010-09-09
+MAN8=		dtc-chroot-shell.8
+MANCOMPRESSED=	no
 
 .if defined(WITH_PHP5)
 DEFAULT_PHP_VER=5
 BROKEN_WITH_PHP=4
-RUN_DEPENDS+=    ${LOCALBASE}/bin/pear:${PORTSDIR}/devel/pear
+RUN_DEPENDS+=	${LOCALBASE}/bin/pear:${PORTSDIR}/devel/pear
 USE_PHP+=	bz2 gd mbstring mcrypt mysql mysqli openssl pcre \
-		session sockets xml zlib
+		session sockets xml zlib curl
 .endif
 
 .if defined(WITH_WEBALIZER)
@@ -67,16 +81,16 @@ RUN_DEPENDS+=	proftpd-mysql>=0:${PORTSDIR}/ftp/proftpd-mysql
 
 .if defined(WITH_POSTFIX)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix
+.endif
 .if defined(WITH_CYRUS_IMAPD)
 RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/deliver:${PORTSDIR}/mail/cyrus-imapd23
-.endif
 .elif defined(WITH_COURIER_IMAP)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/pop3login:${PORTSDIR}/mail/courier-imap \
-		${LOCALBASE}lib/courier-authlib/libauthmysql.a:${PORTSDIR}/databases/courier-authlib-mysql
+		${LOCALBASE}/lib/courier-authlib/libauthmysql.a:${PORTSDIR}/databases/courier-authlib-mysql
 .endif
 
 .if defined(WITH_MAILDROP)
-RUN_DEPENDS+=  ${LOCALBASE}/bin/maildrop:${PORTSDIR}/mail/maildrop
+RUN_DEPENDS+=	${LOCALBASE}/bin/maildrop:${PORTSDIR}/mail/maildrop
 .endif
 
 .if defined(WITH_CYRUS_SASL2)
@@ -100,25 +114,32 @@ RUN_DEPENDS+=	${LOCALBASE}/www/squirrelmail/src/login.php:${PORTSDIR}/mail/squir
 .endif
 
 .if defined(WITH_PHPMYADMIN)
-RUN_DEPENDS+=	${LOCALBASE}/www/phpMyAdmin/index.html:${PORTSDIR}/databases/phpmyadmin
+RUN_DEPENDS+=	${LOCALBASE}/www/phpMyAdmin/index.php:${PORTSDIR}/databases/phpmyadmin
 .endif
 
 .if defined(WITH_APACHE)
 USE_APACHE=	2.2+
 .endif
 
-DTCROOT?=	www/dtc
-DTCDIR=		${PREFIX}/${DTCROOT}
-PLIST_SUB+=	DTCROOT="${DTCROOT}"
+.if defined(WITH_DOVECOT)
+RUN_DEPENDS+=	${LOCALBASE}/sbin/dovecot:${PORTSDIR}/mail/dovecot
+.endif
+
+.if defined(WITH_FREERADIUS)
+RUN_DEPENDS+=	${LOCALBASE}/sbin/radiusd:${PORTSDIR}/net/freeradius2
+.endif
 
 SUB_FILES=	dtc-install dtc-deinstall
-SUB_LIST+=	QMAIL_DIR="${QMAIL_DIR}"
+SUB_LIST+=	WWWDIR="${WWWDIR}" QMAIL_DIR="${QMAIL_DIR}"
+
+.include <bsd.port.pre.mk>
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/dtc-install ${PREFIX}/sbin/dtc-install
 	@${INSTALL_SCRIPT} ${WRKDIR}/dtc-deinstall ${PREFIX}/sbin/dtc-deinstall
-	@${MAKE} -C ${WRKDIR}/dtc-0.28.2.1 install-dtc-common INSTALL=install DTC_APP_DIR=${LOCALBASE}/www DTC_GEN_DIR=${LOCALBASE}/var CONFIG_DIR=${LOCALBASE}/etc \
-		DTC_DOC_DIR=${LOCALBASE}/share/doc MANUAL_DIR=${LOCALBASE}/man BIN_DIR=${LOCALBASE}/bin UNIX_TYPE=bsd
+	@${GMAKE} -C ${WRKSRC} install-dtc-common INSTALL=install \
+		DTC_APP_DIR=${WWWDIR} DTC_GEN_DIR=${PREFIX}/var/dtc CONFIG_DIR=${PREFIX}/etc DTC_ETC_DIRECTORY=${ETCDIR} \
+		DTC_DOC_DIR=${DOCSDIR} MANUAL_DIR=${MANPREFIX}/man BIN_DIR=${PREFIX}/bin UNIX_TYPE=bsd VERS=0.32.0
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

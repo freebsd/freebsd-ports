@@ -10,8 +10,7 @@ PREFIX=%%PREFIX%%
 LOCALBASE=%%LOCALBASE%%
 QMAIL_DIR=%%QMAIL_DIR%%
 
-. ${LOCALBASE}/www/dtc/admin/install/bsd_config
-. ${LOCALBASE}/www/dtc/admin/install/functions
+. %%WWWDIR%%/admin/install/bsd_config
+. %%WWWDIR%%/admin/install/functions
 
-DTCsearchConfigFiles
-DTCuninstallPackage
+. %%WWWDIR%%/admin/install/uninstall
