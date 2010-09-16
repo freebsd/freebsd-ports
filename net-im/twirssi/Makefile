@@ -7,7 +7,7 @@
 
 PORTNAME=	twirssi
 PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://twirssi.com/
 EXTRACT_SUFX=	.pl
@@ -18,7 +18,8 @@ COMMENT=	Twitter script to irssi
 
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi \
 		${SITE_PERL}/Net/Twitter.pm:${PORTSDIR}/net/p5-Net-Twitter \
-		${SITE_PERL}/WWW/Shorten.pm:${PORTSDIR}/www/p5-WWW-Shorten
+		${SITE_PERL}/WWW/Shorten.pm:${PORTSDIR}/www/p5-WWW-Shorten \
+		${SITE_PERL}/WWW/Shorten/Bitly.pm:${PORTSDIR}/www/p5-WWW-Shorten-Bitly
 
 SUB_FILES=	pkg-message
 
