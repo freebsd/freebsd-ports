@@ -6,13 +6,9 @@
 #
 
 PORTNAME=	med
-DISTVERSIONPREFIX=	full-src-
 DISTVERSION=	2.3.6
-DISTVERSIONSUFFIX=	.noarch
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	french science
-MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
-DISTNAME=	aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modelisation et Echanges de Donnees
@@ -21,13 +17,11 @@ BUILD_DEPENDS=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
 LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5
 RUN_DEPENDS=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
 
-ASTER_VER=	10.1.0
-ASTER_DISTVERSION=	${ASTER_VER}-4
-EXTRACT_WRKSRC=	${WRKDIR}/aster-${DISTVERSIONPREFIX}${ASTER_VER}/SRC
+LICENSE=	GPLv3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-TK_VER?=	8.4
+TK_VER?=	8.5
 SHORT_TK_VER=	${TK_VER:S/.//}
 
 USE_FORTRAN=	yes
@@ -46,10 +40,6 @@ TST2FIX=	c f
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
-
-post-extract:
-	(cd ${WRKDIR} &&	\
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${EXTRACT_WRKSRC}/${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS})
 
 pre-configure:
 .for ext in am in
@@ -78,4 +68,5 @@ regression-test:
 	@(cd ${BUILD_WRKSRC}/tests;	\
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
+.include "${.CURDIR}/../../french/aster/bsd.aster.mk"
 .include <bsd.port.mk>
