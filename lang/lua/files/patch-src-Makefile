@@ -1,5 +1,5 @@
---- ./src/Makefile.orig	2008-01-19 17:37:58.000000000 -0200
-+++ ./src/Makefile	2008-08-10 16:00:41.000000000 -0300
+--- Makefile.orig	2008-01-19 17:37:58.000000000 -0200
++++ Makefile	2008-08-10 16:00:41.000000000 -0300
 @@ -9,7 +9,8 @@
  
  CC= gcc
@@ -30,7 +30,7 @@
  a:	$(ALL_A)
  
 +$(LUA_SO):	$(CORE_O) $(LIB_O)
-+	$(CC) -o $@ $(MYLDFLAGS) -shared -Wl,-soname=$(LUA_SONAME) $?
++	$(CC) -o $@ $(CFLAGS) $(LDFLAGS) $(MYLDFLAGS) -shared -Wl,-soname=$(LUA_SONAME) $?
 +
  $(LUA_A): $(CORE_O) $(LIB_O)
 -	$(AR) $@ $?
