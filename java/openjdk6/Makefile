@@ -7,7 +7,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		https://jaxp.dev.java.net/files/documents/913/150648/:jaxp \
@@ -18,6 +18,7 @@ MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://icedtea.classpath.org/builds/icedtea6/src/drops/:jaxws \
 		http://icedtea.classpath.org/builds/icedtea6/src/drops/:jaf \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
+		http://icedtea.classpath.org/download/source/:icedtea \
 		http://download.java.net/openjdk/jtreg/promoted/${JTREGVERSION}/:jtreg
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -44,12 +45,14 @@ OPENJDK_BUILDDATE=	21_jun_2010
 OPTIONS=	DEBUG "Enable legacy debugging support" off \
 		FASTDEBUG "Include fastdebug build" off \
 		IPV6 "Enable IPv6 support" off \
+		WEB "Enable the browser plugin and Java Web Start" off \
 		POLICY "Install the Unlimited Strength Policy Files" off \
 		TEST "Add support for running regression test" off
 
 # java extracts directly to the cwd
 WRKSRC=		${WRKDIR}
 
+WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_XORG=	xtst xi xt x11
@@ -61,6 +64,8 @@ JAXWS_BUILD=	b20
 JAXWSFILE=	jdk6-jaxws-${JAXWS_BUILD}.zip
 JAF_BUILD=	b20
 JAFFILE=	jdk6-jaf-${JAF_BUILD}.zip
+ICEDTEAVERSION=	1.9
+ICEDTEAFILE=	icedtea6-${ICEDTEAVERSION}${EXTRACT_SUFX}
 JTREGVERSION=	b03
 JTREGFILE=	jtreg-4_0-bin-${JTREGVERSION}-31_mar_2009.zip
 
@@ -138,6 +143,21 @@ ALL_TARGET=	debug_build
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}-debug
 .else
 OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
+.endif
+
+.if defined(WITH_WEB)
+DISTFILES+=	${ICEDTEAFILE}:icedtea
+EXTRACT_ONLY+=	${ICEDTEAFILE}
+EXTRA_PATCHES+=	${FILESDIR}/icedtea.patch ${FILESDIR}/plugin.patch
+USE_GECKO=	libxul
+USE_GNOME=	glib20 gtk20
+ICEDTEADIR=	${WRKDIR}/icedtea6-${ICEDTEAVERSION}
+ICEDTEA_JAVAC=	${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/bin/javac
+ICEDTEA_JAR=	${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/bin/jar
+.if defined(WITH_DEBUG)
+ICEDTEA_DEBUG_FLAGS=-g
+.endif
+ICEDTEA_JAVAC_FLAGS=${ICEDTEA_DEBUG_FLAGS} -encoding utf-8 -J-Xmx1024m -source 6 -target 6
 .endif
 
 .if defined(WITH_TEST)
@@ -221,8 +241,65 @@ post-patch:
 		${WRKSRC}/jdk/make/javax/crypto/Makefile
 .endif
 
-.if defined(WITH_TEST)
+.if defined(WITH_WEB) || defined(WITH_TEST)
 post-build:
+.if defined(WITH_WEB)
+	@${MKDIR} ${ICEDTEADIR}/build/lib
+	@( \
+		cd ${ICEDTEADIR}/plugin/icedteanp; \
+		${MAKE} -f ${FILESDIR}/Makefile.plugin depend all install \
+		    DEBUG_FLAGS="${ICEDTEA_DEBUG_FLAGS}" \
+		    LIBDIR=${ICEDTEADIR}/build/lib \
+		    LOCALBASE=${LOCALBASE} \
+		    JDK_UPDATE_VERSION=${PORTVERSION:S/^b//} \
+		    PLUGIN_VERSION="OpenJDK6 ${PORTVERSION}" \
+	)
+	@${FIND} -s ${ICEDTEADIR}/netx -name '*.java' > \
+	    ${ICEDTEADIR}/netx-source-files.txt
+	@${MKDIR} ${ICEDTEADIR}/netx.build/lib
+	@${ICEDTEA_JAVAC} ${ICEDTEA_JAVAC_FLAGS} -d ${ICEDTEADIR}/netx.build \
+	    @${ICEDTEADIR}/netx-source-files.txt
+	@${CP} -r ${ICEDTEADIR}/netx/net/sourceforge/jnlp/resources \
+	    ${ICEDTEADIR}/netx.build/net/sourceforge/jnlp
+	@( \
+		cd ${ICEDTEADIR}/netx.build; \
+		${ICEDTEA_JAR} cf ${ICEDTEADIR}/build/lib/netx.jar \
+		    javax/jnlp net \
+	)
+	@( \
+		cd ${ICEDTEADIR}/netx; \
+		${ICEDTEA_JAR} uf ${ICEDTEADIR}/build/lib/netx.jar \
+		    `${FIND} . -type f -not -name '*.java'` \
+	)
+	@${CP} ${ICEDTEADIR}/netx/net/sourceforge/jnlp/resources/about.jnlp \
+	    ${ICEDTEADIR}/build/lib
+	@${FIND} -s ${ICEDTEADIR}/plugin/icedteanp/java -name '*.java' > \
+	    ${ICEDTEADIR}/liveconnect-source-files.txt
+	@${MKDIR} ${ICEDTEADIR}/liveconnect/lib
+	@${ICEDTEA_JAVAC} ${ICEDTEA_JAVAC_FLAGS} -d ${ICEDTEADIR}/liveconnect \
+	    -classpath ${ICEDTEADIR}/netx.build \
+	    @${ICEDTEADIR}/liveconnect-source-files.txt
+	@( \
+		cd ${ICEDTEADIR}/liveconnect; \
+		${ICEDTEA_JAR} cf ${ICEDTEADIR}/build/lib/plugin.jar \
+		    netscape sun/applet \
+	)
+	@${FIND} -s ${ICEDTEADIR}/extra -name '*.java' > \
+	    ${ICEDTEADIR}/extra-source-files.txt
+	@${MKDIR} ${ICEDTEADIR}/extra-lib
+	@${ICEDTEA_JAVAC} ${ICEDTEA_JAVAC_FLAGS} -d ${ICEDTEADIR}/extra-lib \
+	    -classpath ${ICEDTEADIR}/netx.build \
+	    @${ICEDTEADIR}/extra-source-files.txt
+	@${CP} -r ${ICEDTEADIR}/extra/net/sourceforge/jnlp/about/resources \
+	    ${ICEDTEADIR}/extra-lib/net/sourceforge/jnlp/about
+	@( \
+		cd ${ICEDTEADIR}/extra-lib; \
+		${ICEDTEA_JAR} cf ${ICEDTEADIR}/build/lib/about.jar net \
+	)
+	@${CP} -Rp ${ICEDTEADIR}/build/lib \
+	    ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre
+.endif
+.if defined(WITH_TEST)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Run \"make test\" to execute regression test (it could take a few hours to complete)."
 .if defined(DISPLAY)
@@ -242,6 +319,7 @@ test: build-depends build
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can run \"make test\" again to re-execute only the failed tests."
 	@${ECHO_MSG} ""
+.endif
 .endif
 
 do-install:
