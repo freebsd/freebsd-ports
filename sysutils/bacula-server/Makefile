@@ -135,8 +135,9 @@ PLIST_SUB+=	NOSF="@comment "
 PLIST_SUB+=	SFDAEMON="@comment "
 PLIST_SUB+=	NOSF=""
 .endif
-# Build bwx-console
+#Build bwx-console is deprecated use bacula-bat instead 
 .if defined(WITH_WXCONSOLE)
+IGNORE=			Please use sysutils/bacula-bat instead of wxconsole 
 USE_WX=			2.4
 CONFIGURE_ARGS+=	--enable-bwx-console
 CONFIGURE_ENV+=		WXCONFIG="${WX_CONFIG}"
@@ -194,7 +195,7 @@ pre-everything::
 	@${ECHO_MSG} "You may use the following build options (or make config):"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes	if you only want the file daemon."
-	@${ECHO_MSG} "  WITH_WXCONSOLE=yes	if you only want a wxGTK based GUI console."
+#	@${ECHO_MSG} "  WITH_WXCONSOLE=yes	if you only want a wxGTK based GUI console."
 	@${ECHO_MSG} "  WITH_MTX=yes		if you want to use mtx instead of chio for autochanger control."
 	@${ECHO_MSG} "  WITH_SQLITE3=yes  	if you want SQLite-3 as the database (not recommended)."
 .if !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL)
