@@ -1,6 +1,15 @@
---- Global.cc.orig	Thu Mar 15 09:58:01 2007
-+++ Global.cc	Fri Mar 23 02:31:17 2007
-@@ -241,10 +241,10 @@
+--- Global.cc.orig	2010-09-14 16:49:16.000000000 +0200
++++ Global.cc	2010-09-14 16:50:18.000000000 +0200
+@@ -203,7 +203,7 @@
+ #ifdef UseLocalFiles
+   static const char confFile[] = "xtide.conf";
+ #else
+-  static const char confFile[] = "/etc/xtide.conf";
++  static const char confFile[] = "%%PREFIX%%/etc/xtide.conf";
+ #endif
+   static bool firstCall (true);
+   static SafeVector<Dstr> xtideConfLines (2U);
+@@ -390,10 +390,10 @@
      break;
    case Error::NO_HFILE_PATH:
      text_out += "NO_HFILE_PATH\n\
