@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	memtest
-PORTVERSION=	4.1.3
+PORTVERSION=	4.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}er/old-versions/
 DISTNAME=	${PORTNAME}er-${PORTVERSION}
 
 MAINTAINER=	question+fbsdports@closedsrc.org
 COMMENT=	Utility to test for faulty memory subsystem
+
+LICENSE=	GPLv2
 
 MAN8=		${PORTNAME}.8
 PLIST_FILES=	bin/memtest
