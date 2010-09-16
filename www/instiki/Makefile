@@ -27,6 +27,8 @@ INSTIKILOGDIR=	${INSTIKIDIR}/log
 INSTIKI_DB=	db/production.db.sqlite3
 INSTIKI_DB_FILE=	${INSTIKIDIR}/${INSTIKI_DB}
 
+IGNORE=		does not work
+
 .include <bsd.port.pre.mk>
 
 USE_RC_SUBR=	${PORTNAME}
