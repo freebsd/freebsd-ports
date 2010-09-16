@@ -95,6 +95,7 @@ do_cleanup_make_conf()
 {
 	echo -n "Cleaning up ${MAKE_CONF}..."
 	if [ -f ${MAKE_CONF} ] ; then
+		/bin/cp -p ${MAKE_CONF} ${MAKE_CONF}.new
 		/usr/bin/awk 's=0;
 			/^#.*use.perl/ { s=1; mode=1 }
 			/^#/ { s=1; if (mode != 1) { mode=0 } }
@@ -111,6 +112,7 @@ do_cleanup_manpath()
 {
 	echo -n "Cleaning up /etc/manpath.config..."
 	if [ -f /etc/manpath.config ] ; then
+		/bin/cp -p /etc/manpath.config /etc/manpath.config.new
 		/usr/bin/awk 's=0;
 			/^#.*use.perl/ { s=1; mode=1 }
 			/^#/ { s=1; if (mode != 1) { mode=0 } }
