@@ -208,6 +208,7 @@ R-cran-car                      ports/math/R-cran-car
 R-cran-gpclib                   ports/math/R-cran-gpclib
 R-cran-igraph                   ports/math/R-cran-igraph
 R-cran-inline                   ports/math/R-cran-inline
+R-cran-psych                    ports/math/R-cran-psych
 R-cran-sm                       ports/math/R-cran-sm
 R-cran-sp                       ports/math/R-cran-sp
 STk                             ports/lang/STk
@@ -773,7 +774,7 @@ autocd                          ports/audio/autocd
 autoconf-archive                ports/devel/autoconf-archive
 autoconf-wrapper                ports/devel/autoconf-wrapper
 autoconf213                     ports/devel/autoconf213
-autoconf262                     ports/devel/autoconf262
+autoconf267                     ports/devel/autoconf267
 autocutsel                      ports/deskutils/autocutsel
 autodia                         ports/devel/autodia
 autodist                        ports/devel/autodist
@@ -782,6 +783,7 @@ autoindex                       ports/www/autoindex
 autoindex2                      ports/www/autoindex2
 automake-wrapper                ports/devel/automake-wrapper
 automake110                     ports/devel/automake110
+automake111                     ports/devel/automake111
 automake14                      ports/devel/automake14
 automake15                      ports/devel/automake15
 automake16                      ports/devel/automake16
@@ -21760,6 +21762,7 @@ r-cran-car                      ports/math/R-cran-car
 r-cran-gpclib                   ports/math/R-cran-gpclib
 r-cran-igraph                   ports/math/R-cran-igraph
 r-cran-inline                   ports/math/R-cran-inline
+r-cran-psych                    ports/math/R-cran-psych
 r-cran-rsvgdevice               ports/math/R-cran-RSvgDevice
 r-cran-sm                       ports/math/R-cran-sm
 r-cran-sp                       ports/math/R-cran-sp
@@ -24314,6 +24317,7 @@ tnef2txt                        ports/textproc/tnef2txt
 tnftp                           ports/ftp/tnftp
 tnftpd                          ports/ftp/tnftpd
 tnl                             ports/games/tnl
+tnote                           ports/deskutils/tnote
 tnt                             ports/devel/tnt
 tochnog                         ports/cad/tochnog
 todo                            ports/deskutils/todo
@@ -25018,6 +25022,7 @@ vis5d+                          ports/science/vis5d+
 visionworkbench                 ports/graphics/visionworkbench
 visitors                        ports/www/visitors
 visprint                        ports/graphics/visprint
+visualboyadvance-m              ports/emulators/visualboyadvance-m
 visualos                        ports/emulators/visualos
 visualworks                     ports/lang/visualworks
 vitetris                        ports/games/vitetris
