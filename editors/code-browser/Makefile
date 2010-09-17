@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	code-browser
-PORTVERSION=	3.17
+PORTVERSION=	3.18
 CATEGORIES=	editors
 MASTER_SITES=	http://tibleiz.net/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

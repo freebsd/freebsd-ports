@@ -8,11 +8,9 @@ bin/code-browser
 %%PORTDOCS%%%%DOCSDIR%%/doc.css
 %%PORTDOCS%%%%DOCSDIR%%/doc.html
 %%PORTDOCS%%%%DOCSDIR%%/samples/files/code-browser.xml
-%%PORTDOCS%%%%DOCSDIR%%/samples/files/dictionary.cpp
 %%PORTDOCS%%%%DOCSDIR%%/samples/files/dictionary.h
 %%PORTDOCS%%%%DOCSDIR%%/samples/files/string.cpp
 %%PORTDOCS%%%%DOCSDIR%%/samples/files/string.h
-%%PORTDOCS%%%%DOCSDIR%%/samples/files/string2.cpp
 %%PORTDOCS%%%%DOCSDIR%%/samples/tutorial.txt
 @dirrm %%DATADIR%%/config-optional
 @dirrm %%DATADIR%%/config-default
