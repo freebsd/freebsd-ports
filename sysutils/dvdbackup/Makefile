@@ -7,6 +7,7 @@
 
 PORTNAME=	dvdbackup
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -22,13 +23,10 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-SUB_FILES=	pkg-message
-SUB_LIST=	DEFAULT_DVD_DEVICE="${DEFAULT_DVD_DEVICE}"
-
 MAN1=		dvdbackup.1
 PORTDOCS=	NEWS README
 
-DEFAULT_DVD_DEVICE?=	/dev/cd0
+DEFAULT_DVD_DEVICE?=	/dev/acd0
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -49,8 +47,5 @@ pre-configure:
 	@${REINPLACE_CMD} 's|^install-data-am: .*|install-data-am: |' \
 		${WRKSRC}/Makefile.in
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
