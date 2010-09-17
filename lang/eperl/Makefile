@@ -41,6 +41,9 @@ MAN1=	eperl.1
 .if ${OSVERSION} >= 701101
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-eperl_proto.h \
 		${PATCHDIR}/extra-patch-eperl_parse.c
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: duplicate definition of strndup
+.endif
 .endif
 
 test:
