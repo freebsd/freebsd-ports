@@ -31,7 +31,8 @@ CONFIGURE_ENV=	ACLOCAL="${TRUE}" \
 		EMACS="no"
 CONFIGURE_ARGS=	--disable-csharp --disable-threads --disable-openmp \
 		--with-included-gettext --with-included-glib \
-		--with-included-libcroco --with-included-libxml
+		--with-included-libcroco --with-included-libxml \
+		--without-git
 USE_LDCONFIG=	yes
 
 MAN1=		autopoint.1 envsubst.1 gettext.1 gettextize.1 msgattrib.1 \
