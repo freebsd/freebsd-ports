@@ -1,0 +1,9 @@
+--- xulrunner/installer/mozilla-plugin.pc.in.orig	2010-08-24 18:19:38.000000000 -0400
++++ xulrunner/installer/mozilla-plugin.pc.in	2010-09-16 22:02:35.000000000 -0400
+@@ -5,5 +5,4 @@
+ Name: Mozilla Plug-In API
+ Description: Mozilla Plug-In API
+ Version: %MOZILLA_VERSION%
+-Cflags: -I${includedir}/stable -DXP_UNIX %ojidef%
+-
++Cflags: -I${includedir} -DXP_UNIX %ojidef%
