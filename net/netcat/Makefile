@@ -51,11 +51,11 @@ XFLAGS+=	-DGAPING_SECURITY_HOLE
 MAKE_ENV=	XFLAGS="${XFLAGS}"
 
 post-patch:
-	${SED} -e 's|%%DOCSDIR%%|${DOCSDIR}|g' ${FILESDIR}/nc.1 > ${WRKDIR}/nc.1
+	${SED} -e 's|%%DOCSDIR%%|${DOCSDIR}|g' ${FILESDIR}/nc.1 > ${WRKDIR}/${PORTNAME}.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nc ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKDIR}/nc.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/${PORTNAME}.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
