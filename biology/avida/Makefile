@@ -36,8 +36,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc: invokes i386 asm
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile: invokes i386 asm
 .endif
 
 .include <bsd.port.post.mk>
