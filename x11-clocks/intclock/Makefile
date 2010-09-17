@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	intclock
-PORTVERSION=	2.12
-PORTREVISION=	5
+PORTVERSION=	2.13
 CATEGORIES=	x11-clocks perl5
 MASTER_SITES=	http://www.peterverthez.net/projects/${PORTNAME}/ CENKES
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	davide.italiano@gmail.com
 COMMENT=	Multi-timezone clock
 
 BUILD_DEPENDS=	p5-Gtk2>=1.144:${PORTSDIR}/x11-toolkits/p5-Gtk2

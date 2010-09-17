@@ -4,6 +4,7 @@ bin/intclock
 %%SITE_PERL%%/Intclock/L10N/en.pm
 %%SITE_PERL%%/Intclock/L10N/es.pm
 %%SITE_PERL%%/Intclock/L10N/fr.pm
+%%SITE_PERL%%/Intclock/L10N/it.pm
 %%SITE_PERL%%/Intclock/L10N/nl.pm
 %%SITE_PERL%%/Intclock/L10N/pl.pm
 %%SITE_PERL%%/Intclock/L10N/ru.pm
