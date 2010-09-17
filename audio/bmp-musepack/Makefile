@@ -15,6 +15,9 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Musepack decoder for beep-media-player
 
+DEPRECATED=	does not build with audio/musepack
+EXPIRATION_DATE=	2010-11-15
+
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
 		mpcdec:${PORTSDIR}/audio/libmpcdec \
 		tag:${PORTSDIR}/audio/taglib

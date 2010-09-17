@@ -15,6 +15,9 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module that provides the Musepack decoding interface
 
+DEPRECATED=	does not build with audio/musepack
+EXPIRATION_DATE=	2010-11-15
+
 LIB_DEPENDS=	mpcdec:${PORTSDIR}/audio/libmpcdec
 
 USE_PYTHON=	yes
