@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	weberp
-PORTVERSION=	3.11.3
-PORTREVISION=	1
+PORTVERSION=	3.11.4
 CATEGORIES=	finance www
 MASTER_SITES=	SF/web-erp/webERP/webERP_3.11
 DISTNAME=	webERP_${PORTVERSION}
@@ -18,7 +17,7 @@ COMMENT=	An Open-Source Web-Based ERP System
 USE_ZIP=	yes
 USE_PHP=	mysql gettext
 USE_GETTEXT=	yes
-WRKSRC=		${WRKDIR}/webERP-temp
+WRKSRC=		${WRKDIR}/webERP
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
