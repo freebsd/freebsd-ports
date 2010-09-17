@@ -635,6 +635,7 @@
     SUBDIR += py-sqlite3
     SUBDIR += py-sqlobject
     SUBDIR += py-sqlrelay
+    SUBDIR += py-swift
     SUBDIR += py-sybase
     SUBDIR += py25-bsddb
     SUBDIR += pydbdesigner
