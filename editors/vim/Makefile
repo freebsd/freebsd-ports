@@ -39,7 +39,7 @@ SLAVEDIRS=	editors/vim-lite
 .endif
 
 CONFLICTS=	vim6* vim*-lite
-MAKE_JOBS_UNSAFE= yes
+MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 DIST_SUBDIR=	vim
 WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/\.[0-9]*$//:S/.//g}/src
@@ -195,6 +195,9 @@ post-patch:
 		${REINPLACE_CMD} -e 's,ctags -R \.,${CTAGS_CMD},g')
 
 pre-configure:
+	# Fix dependency misspelling so that 'make -j#' will work.
+	@${REINPLACE_CMD} -e 's|\./auto/osdef\.h|auto/osdef.h|g' \
+		${WRKSRC}/Makefile
 	@(cd ${WRKSRC} ; ${MAKE} distclean)
 	@${REINPLACE_CMD} -e ' \
 		s|\$$gtk_config_prefix/bin/gtk-config|\$${GTK_CONFIG}|g; \
@@ -206,6 +209,9 @@ pre-configure:
 		s|/\* #define FEAT_XTERM_SAVE \*/|#define FEAT_XTERM_SAVE|g' \
 		${WRKSRC}/feature.h
 .endif
+
+post-configure:
+	@(cd ${WRKSRC} ; ${MAKE} scratch config)
 
 #	Clean up junk files to keep them from being installed.
 pre-install:
