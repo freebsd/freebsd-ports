@@ -34,6 +34,53 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3ff95dd3-c291-11df-b0dc-00215c6a37bb">
+    <topic>django -- cross-site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>py23-django</name>
+	<name>py24-django</name>
+	<name>py25-django</name>
+	<name>py26-django</name>
+	<name>py30-django</name>
+	<name>py31-django</name>
+	<range><gt>1.2</gt><lt>1.2.2</lt></range>
+      </package>
+      <package>
+	<name>py23-django-devel</name>
+	<name>py24-django-devel</name>
+	<name>py25-django-devel</name>
+	<name>py26-django-devel</name>
+	<name>py30-django-devel</name>
+	<name>py31-django-devel</name>
+	<range><lt>13698,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Django project reports:</p>
+	<blockquote cite="http://www.djangoproject.com/weblog/2010/sep/08/security-release/">
+	  <p>The provided template tag for inserting the CSRF
+	    token into forms -- {% csrf_token %} -- explicitly
+	    trusts the cookie value, and displays it as-is.
+	    Thus, an attacker who is able to tamper with the
+	    value of the CSRF cookie can cause arbitrary content
+	    to be inserted, unescaped, into the outgoing HTML of
+	    the form, enabling cross-site scripting (XSS) attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>43116</bid>
+      <cvename>CVE-2010-3082</cvename>
+      <url>http://xforce.iss.net/xforce/xfdb/61729</url>
+    </references>
+    <dates>
+      <discovery>2010-09-FIXME</discovery>
+      <entry>2010-09-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9bcfd7b6-bcda-11df-9a6a-0015f2db7bde">
     <topic>webkit-gtk2 -- Multiple vulnabilities</topic>
     <affects>
