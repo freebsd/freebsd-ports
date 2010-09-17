@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	flexdock
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	devel java
-MASTER_SITES=	https://flexdock.dev.java.net/files/documents/2037/52480/
+MASTER_SITES=	https://flexdock.dev.java.net/files/documents/2037/152436/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	otacilio.neto@bsd.com.br
@@ -18,8 +18,11 @@ USE_ZIP=	yes
 USE_ANT=	yes
 USE_JAVA=	yes
 
-MAKE_ARGS=	dist
+NO_WRKSUBDIR=	yes
 
+ALL_TARGET=	dist
+
+PLIST_FILES=	${JAVAJARDIR:C^${PREFIX}/^^}/${PORTNAME}.jar
 PORTDOCS=	"User Guide.pdf" api
 
 .include <bsd.port.pre.mk>
@@ -28,19 +31,14 @@ PORTDOCS=	"User Guide.pdf" api
 BROKEN=		does not install on 6.x
 .endif
 
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${UNZIP_CMD} ${DISTDIR}/${DISTFILES} -d ${WRKSRC}
-
 do-install:
-	${INSTALL_DATA}	${WRKSRC}/build/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}
+	${INSTALL_DATA}	${WRKSRC}/build/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation files..."
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/build/docs && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/\{} \;
-	@cd ${WRKSRC}/build/docs && ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
+	@(cd ${WRKSRC}/build/docs && ${COPYTREE_SHARE} \* ${DOCSDIR})
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
