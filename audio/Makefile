@@ -585,6 +585,7 @@
     SUBDIR += p5-Ogg-Vorbis-Header
     SUBDIR += p5-Ogg-Vorbis-Header-PurePerl
     SUBDIR += p5-Shout
+    SUBDIR += p5-Test-Corpus-Audio-MPD
     SUBDIR += p5-Xmms
     SUBDIR += p5-libvorbis
     SUBDIR += p5-tagged
