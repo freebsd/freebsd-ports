@@ -1,11 +1,11 @@
---- ../generic/tclPort.h.orig	Tue Jan 30 11:39:50 2007
-+++ ../generic/tclPort.h	Tue Jan 30 11:41:05 2007
+--- ../generic/tclPort.h.orig	2010-02-01 00:51:36.000000000 +0100
++++ ../generic/tclPort.h	2010-09-17 16:28:05.133598753 +0200
 @@ -24,7 +24,7 @@
- #if defined(__WIN32__)
- #   include "../win/tclWinPort.h"
- #else
+ #endif
+ #include "tcl.h"
+ #if !defined(_WIN32)
 -#   include "tclUnixPort.h"
 +#   include "../unix/tclUnixPort.h"
  #endif
  
- #if !defined(LLONG_MIN)
+ #if defined(__CYGWIN__)

@@ -1,5 +1,5 @@
---- Makefile.in.orig	2009-11-13 19:38:48.000000000 +0100
-+++ Makefile.in	2009-11-20 10:44:06.034436785 +0100
+--- Makefile.in.orig	2010-09-02 20:12:14.000000000 +0200
++++ Makefile.in	2010-09-17 16:52:49.592479499 +0200
 @@ -65,6 +65,8 @@
  
  # Directory in which to install the include file tk.h:
@@ -36,7 +36,7 @@
  
  # Flags to pass to the linker
  LDFLAGS_DEBUG		= @LDFLAGS_DEBUG@
-@@ -273,7 +275,7 @@
+@@ -271,7 +273,7 @@
  STLIB_LD		= @STLIB_LD@
  SHLIB_LD		= @SHLIB_LD@
  SHLIB_LD_LIBS		= @SHLIB_LD_LIBS@
@@ -45,7 +45,7 @@
  
  # Additional search flags needed to find the various shared libraries
  # at run-time.  The first symbol is for use when creating a binary
-@@ -556,6 +558,8 @@
+@@ -554,6 +556,8 @@
  	$(GENERIC_DIR)/tkIntPlatDecls.h $(GENERIC_DIR)/tkPort.h \
  	$(TTK_HDRS) $(@TK_WINDOWINGSYSTEM@_PRIVATE_HDRS)
  
@@ -54,7 +54,7 @@
  DEMOPROGS = browse hello ixset rmt rolodex tcolor timer widget
  
  SHELL_ENV = \
-@@ -581,6 +585,12 @@
+@@ -579,6 +583,12 @@
  ${LIB_FILE}: ${OBJS} ${STUB_LIB_FILE} @LIB_RSRC_FILE@
  	rm -f $@
  	@MAKE_LIB@
@@ -67,35 +67,34 @@
  
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
-@@ -679,7 +689,7 @@
- 	gdb ./wish --command=gdb.run
- 	rm gdb.run
+@@ -685,7 +695,7 @@
+ valgrindshell: tktest@EXEEXT@
+ 	$(SHELL_ENV) valgrind $(VALGRINDARGS) ./tktest@EXEEXT@ $(SCRIPT)
  
 -INSTALL_TARGETS = install-binaries install-libraries install-demos install-doc @EXTRA_INSTALL@
 +INSTALL_TARGETS = install-binaries install-libraries @EXTRA_INSTALL@
  
  install: $(INSTALL_TARGETS)
  
-@@ -692,7 +702,8 @@
+@@ -698,7 +708,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
--install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) wish
-+install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) \
-+	libtk${SHORT_TK_VER}.a wish
+-install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) wish@EXEEXT@
++install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) wish@EXEEXT@ libtk${SHORT_TK_VER}.a
  	@for i in "$(LIB_INSTALL_DIR)" "$(BIN_INSTALL_DIR)" \
  	    "$(PKG_INSTALL_DIR)" "$(CONFIG_INSTALL_DIR)" ; \
  	    do \
-@@ -724,10 +735,15 @@
- 	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
- 			"$(LIB_INSTALL_DIR)"/$(TK_EXP_FILE); \
- 	    fi
+@@ -725,10 +735,15 @@
+ 	@echo "Installing $(LIB_FILE) to $(LIB_INSTALL_DIR)/"
+ 	@@INSTALL_LIB@
+ 	@chmod 555 "$(LIB_INSTALL_DIR)"/$(LIB_FILE)
 +	@ln -sf $(LIB_INSTALL_DIR)/$(TK_LIB_FILE) $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.so
 +	@echo "Installing libtk${SHORT_TK_VER}.a"
 +	@$(INSTALL_DATA) libtk${SHORT_TK_VER}.a $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
 +	@chmod 555 $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
- 	@echo "Installing wish as $(BIN_INSTALL_DIR)/wish$(VERSION)"
- 	@$(INSTALL_PROGRAM) wish "$(BIN_INSTALL_DIR)"/wish$(VERSION)
+ 	@echo "Installing wish@EXEEXT@ as $(BIN_INSTALL_DIR)/wish$(VERSION)@EXEEXT@"
+ 	@$(INSTALL_PROGRAM) wish@EXEEXT@ "$(BIN_INSTALL_DIR)"/wish$(VERSION)@EXEEXT@
 -	@echo "Installing tkConfig.sh to $(CONFIG_INSTALL_DIR)/"
 -	@$(INSTALL_DATA) tkConfig.sh "$(CONFIG_INSTALL_DIR)"/tkConfig.sh
 +	@echo "Installing tkConfig.sh to $(CONFIG_INSTALL_DIR)/tk$(VERSION)"
@@ -104,7 +103,7 @@
  	@if test "$(STUB_LIB_FILE)" != "" ; then \
  	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    @INSTALL_STUB_LIB@ ; \
-@@ -738,6 +754,7 @@
+@@ -739,6 +754,7 @@
  	@if test "$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)" != ""; then \
  	    XLIB_INCLUDE_INSTALL_DIR="$(INCLUDE_INSTALL_DIR)"/X11; fi; \
  	for i in "$(INCLUDE_INSTALL_DIR)" "$${XLIB_INCLUDE_INSTALL_DIR}" \
@@ -112,7 +111,7 @@
  		"$(SCRIPT_INSTALL_DIR)" "$(SCRIPT_INSTALL_DIR)"/images \
  		"$(SCRIPT_INSTALL_DIR)"/msgs "$(SCRIPT_INSTALL_DIR)"/ttk; \
  	    do \
-@@ -752,10 +769,14 @@
+@@ -753,10 +769,14 @@
  	    chmod +x $(SRC_DIR)/install-sh; \
  	    fi
  	@echo "Installing header files";
@@ -130,7 +129,7 @@
  	@list='$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)'; for i in $$list ; \
  	    do \
  	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"/X11; \
-@@ -828,19 +849,15 @@
+@@ -829,19 +849,15 @@
  		else true; \
  		fi; \
  	    done;

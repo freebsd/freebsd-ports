@@ -192,6 +192,7 @@ lib/tk%%TK_VER%%/ttk/progress.tcl
 lib/tk%%TK_VER%%/ttk/scale.tcl
 lib/tk%%TK_VER%%/ttk/scrollbar.tcl
 lib/tk%%TK_VER%%/ttk/sizegrip.tcl
+lib/tk%%TK_VER%%/ttk/spinbox.tcl
 lib/tk%%TK_VER%%/ttk/treeview.tcl
 lib/tk%%TK_VER%%/ttk/ttk.tcl
 lib/tk%%TK_VER%%/ttk/utils.tcl
