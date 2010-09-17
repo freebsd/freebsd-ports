@@ -36,14 +36,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GCONF_SCHEMAS=	nautilus-cd-burner.schemas
 
-OPTIONS=	DVD "Enable DVD support" on \
-		CJK "Use cdrtools-cjk instead of cdrtools" off
+OPTIONS=	DVD "Enable DVD support" on
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_CJK)
-WITHOUT_DVD=	yes
-.endif
 
 .if !defined(WITHOUT_DVD)
 RUN_DEPENDS+=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
