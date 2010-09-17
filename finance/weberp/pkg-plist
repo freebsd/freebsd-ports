@@ -311,7 +311,6 @@
 %%WWWDIR%%/api/api_webERPsettings.php
 %%WWWDIR%%/api/api_workorders.php
 %%WWWDIR%%/api/api_xml-rpc.php
-%%WWWDIR%%/api.zip
 %%WWWDIR%%/companies/weberp-stable/logo.jpg
 %%WWWDIR%%/companies/weberp-stable/logo1.jpg
 %%WWWDIR%%/companies/weberp-stable/logo2.jpg
@@ -1166,6 +1165,7 @@
 @dirrm %%WWWDIR%%/Numbers/Words
 @dirrm %%WWWDIR%%/Numbers
 @dirrm %%WWWDIR%%/api
+@dirrm %%WWWDIR%%/companies/weberp_wasso
 @dirrm %%WWWDIR%%/companies/weberp-stable/part_pics
 @dirrm %%WWWDIR%%/companies/weberp-stable/pdf_append
 @dirrm %%WWWDIR%%/companies/weberp-stable/reportwriter
