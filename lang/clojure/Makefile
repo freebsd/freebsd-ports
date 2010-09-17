@@ -8,6 +8,7 @@
 
 PORTNAME=	clojure
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	lang lisp java
 MASTER_SITES=	http://cloud.github.com/downloads/clojure/clojure/
