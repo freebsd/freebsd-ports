@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100917:
+  AFFECTS: users of sysutils/cdrtools-cjk
+  AUTHOR: marius@FreeBSD.org
+
+  sysutils/cdrtools-cjk port has been removed, as the required functionality is
+  now available in cdrtools 3.0.0 in the standard sysutils/cdrtools port.
+ 
 20100915:
   AFFECTS: autoconf, automake
   AUTHOR: autotools@FreeBSD.org
