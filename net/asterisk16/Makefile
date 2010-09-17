@@ -13,7 +13,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	flo@kasimir.com
 COMMENT=	An Open Source PBX and telephony toolkit
 
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
