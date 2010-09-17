@@ -539,9 +539,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 ##
 # USE_APACHE	- If set, this port relies on an apache webserver.
 #
-# USE_CDRTOOLS	- If set, this port depends on sysutils/cdrtools, unless
-#				  cdrtools-cjk is present or USE_CDRTOOLS=cjk is set, then
-#				  it depends on sysutils/cdrtools-cjk.
+# USE_CDRTOOLS	- If set, this port depends on sysutils/cdrtools.
 #
 # Conflict checking.  Use if your port cannot be installed at the same time as
 # another package.
@@ -2238,13 +2236,8 @@ RUN_DEPENDS+=	gs:${PORTSDIR}/${GHOSTSCRIPT_PORT}
 
 # Set up the cdrtools.
 .if defined(USE_CDRTOOLS)
-.if exists(${DOCSDIR}/cdrtools-cjk/README) || defined(WITH_CJK) || ${USE_CDRTOOLS:L} == "cjk"
-BUILD_DEPENDS+=	cdrecord:${PORTSDIR}/sysutils/cdrtools-cjk
-RUN_DEPENDS+=	cdrecord:${PORTSDIR}/sysutils/cdrtools-cjk
-.else
 BUILD_DEPENDS+=	cdrecord:${PORTSDIR}/sysutils/cdrtools
 RUN_DEPENDS+=	cdrecord:${PORTSDIR}/sysutils/cdrtools
-.endif
 .endif
 
 # Macro for doing in-place file editing using regexps
