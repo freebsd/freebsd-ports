@@ -1,7 +1,0 @@
-=====================================================================
-
-%%DEFAULT_DVD_DEVICE%% is used as default DVD device. You may change
-this by defining DEFAULT_DVD_DEVICE to another device. Make sure you
-use a SCSI or atapicam(4) device, because an ATAPI device won't work.
-
-=====================================================================
