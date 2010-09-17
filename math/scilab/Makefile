@@ -7,7 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/:scilab \
 		http://www.bayofrum.net/dist/jgraphx/:jgraphx \
@@ -95,7 +95,7 @@ JGRAPHX_JAR=	jgraphx-${JGRAPHX_VERSION:C/\./_/g}.jar
 LIB_DEPENDS+=	hdf5.6:${PORTSDIR}/science/hdf5-18
 
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant \
-		${JAVALIBDIR}/flexdock-0.5.1.jar:${PORTSDIR}/devel/flexdock \
+		${JAVALIBDIR}/flexdock.jar:${PORTSDIR}/devel/flexdock \
 		${JAVALIBDIR}/jogl.jar:${PORTSDIR}/graphics/jogl \
 		${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
 		${JAVALIBDIR}/looks.jar:${PORTSDIR}/devel/looks \
@@ -116,7 +116,7 @@ BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant \
 		${LOCALBASE}/share/examples/saxon/data/books.dtd:${PORTSDIR}/textproc/saxon \
 		${JAVALIBDIR}/jhdf5.jar:${PORTSDIR}/science/hdf-java
 
-RUN_DEPENDS+=	${JAVALIBDIR}/flexdock-0.5.1.jar:${PORTSDIR}/devel/flexdock \
+RUN_DEPENDS+=	${JAVALIBDIR}/flexdock.jar:${PORTSDIR}/devel/flexdock \
 		${JAVALIBDIR}/jogl.jar:${PORTSDIR}/graphics/jogl \
 		${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
 		${JAVALIBDIR}/looks.jar:${PORTSDIR}/devel/looks \
