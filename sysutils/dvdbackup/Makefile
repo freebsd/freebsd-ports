@@ -6,29 +6,51 @@
 #
 
 PORTNAME=	dvdbackup
-PORTVERSION=	0.1.1
-PORTREVISION=	6
+PORTVERSION=	0.4.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://dvd-create.sourceforge.net/ GENTOO/distfiles
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Backup content from DVD to hard disk
 
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_FILES=	bin/dvdbackup
-PORTDOCS=	README
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
-do-build:
-	${CC} -o ${WRKSRC}/dvdbackup ${CFLAGS} -I${LOCALBASE}/include \
-		-L${LOCALBASE}/lib -ldvdread ${WRKSRC}/src/dvdbackup.c
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/dvdbackup ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+SUB_FILES=	pkg-message
+SUB_LIST=	DEFAULT_DVD_DEVICE="${DEFAULT_DVD_DEVICE}"
+
+MAN1=		dvdbackup.1
+PORTDOCS=	NEWS README
+
+DEFAULT_DVD_DEVICE?=	/dev/cd0
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=	--enable-nls
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} "s|/dev/dvd|${DEFAULT_DVD_DEVICE}|g" \
+		${WRKSRC}/src/main.c ${WRKSRC}/po/*.po ${WRKSRC}/po/*.pot \
+		${WRKSRC}/README ${WRKSRC}/man/dvdbackup.1
+
+pre-configure:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} 's|^install-data-am: .*|install-data-am: |' \
+		${WRKSRC}/Makefile.in
+.endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

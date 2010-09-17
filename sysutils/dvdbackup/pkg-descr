@@ -1,3 +1,4 @@
-Backup content from DVD to hard disk
+dvdbackup is a tool to rip video DVDs from the command line. It has the
+advantages of being small, fast, and easy to use.
 
-WWW:	http://dvd-create.sourceforge.net/
+WWW: http://dvdbackup.sourceforge.net/
