@@ -13,6 +13,9 @@ MASTER_SITES=	http://files.musepack.net/source/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	High quality audio compression format
 
+DEPRECATED=	superseded by audio/musepack
+EXPIRATION_DATE=	2010-11-15
+
 CONFLICTS=	musepack-[0-9]*
 
 USE_BZIP2=	yes
