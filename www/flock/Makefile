@@ -12,13 +12,14 @@ CATEGORIES=	www
 MASTER_SITES=	http://mirror4.flock.com/source/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	gecko@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 LIB_DEPENDS=	clucene.0:${PORTSDIR}/textproc/clucene \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 DEPRECATED=	Flock 3 moves from Firefox to Chromium
+EXPIRATION_DATE=	2010-12-31
 USE_GECKO=	gecko
 MOZILLA_NAME=	Flock
 USE_MOZILLA=	-png -nss -dbm -jpeg
