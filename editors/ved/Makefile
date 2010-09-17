@@ -25,6 +25,9 @@ PLIST_DIRS=	%%DATADIR%%
 .if ${ARCH} == "ia64"
 BROKEN=		does not compile on ia64
 .endif
+.if ${ARCH} == "sparc64" && ${OSVERSION} < 800000
+BROKEN=		does not install on sparc64-7
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^COPTOPT=.*$$|COPTOPT= ${CFLAGS}|g ; \
