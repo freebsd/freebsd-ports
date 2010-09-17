@@ -35,7 +35,6 @@ restart_precmd="apache_checkconfig"
 reload_precmd="apache_checkconfig"
 reload_cmd="apache_graceful"
 graceful_cmd="apache_graceful"
-gracefulstop_cmd="apache_gracefulstop"
 configtest_cmd="apache_checkconfig"
 command="%%PREFIX%%/sbin/httpd"
 _pidprefix="/var/run/httpd"
@@ -153,14 +152,7 @@ apache_graceful() {
 	apache_requirepidfile
 
 	echo "Performing a graceful restart"
-	eval ${command} ${apache_flags} -k graceful
-}
-
-apache_gracefulstop() {
-	apache_requirepidfile
-
-	echo "Performing a graceful stop"
-	eval ${command} ${apache_flags} -k graceful-stop
+	kill -USR1 "`check_pidfile ${pidfile} ${command}`"
 }
 
 apache_precmd() 
@@ -193,6 +185,6 @@ apache_prestart() {
 	apache_precmd
 }
 
-extra_commands="reload graceful gracefulstop configtest"
+extra_commands="reload graceful configtest"
 run_rc_command "$1"
 # eof
