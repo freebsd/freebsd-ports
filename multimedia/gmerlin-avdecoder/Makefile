@@ -7,7 +7,7 @@
 
 PORTNAME=	gmerlin-avdecoder
 PORTVERSION=	1.0.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
@@ -145,7 +145,7 @@ CONFIGURE_ARGS+=--disable-flac
 .endif
 
 .if !defined(WITHOUT_MUSEPACK)
-LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
+LIB_DEPENDS+=	mpcdec.7:${PORTSDIR}/audio/musepack
 .else
 CONFIGURE_ARGS+=--disable-musepack
 .endif
