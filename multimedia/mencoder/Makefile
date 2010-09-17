@@ -166,4 +166,8 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/TOOLS/${tool} ${DATADIR}/tools
 .endfor
 
+.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
+BROKEN=		Does not detect CPU correctly on ia64 or sparc64
+.endif
+
 .include <bsd.port.post.mk>
