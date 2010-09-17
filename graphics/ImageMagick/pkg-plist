@@ -1266,6 +1266,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/command-line-processing.html
 %%PORTDOCS%%%%DOCSDIR%%/www/command-line-tools.html
 %%PORTDOCS%%%%DOCSDIR%%/www/compare.html
+%%PORTDOCS%%%%DOCSDIR%%/www/compose.html
 %%PORTDOCS%%%%DOCSDIR%%/www/composite.html
 %%PORTDOCS%%%%DOCSDIR%%/www/conjure.html
 %%PORTDOCS%%%%DOCSDIR%%/www/contact.html
@@ -1306,6 +1307,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/stream.html
 %%PORTDOCS%%%%DOCSDIR%%/www/subversion.html
 %%PORTDOCS%%%%DOCSDIR%%/www/t-shirt.html
+%%PORTDOCS%%%%DOCSDIR%%/www/wand.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www/api/MagickCore
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www/api/MagickWand
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www/api
