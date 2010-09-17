@@ -4586,3 +4586,4 @@ textproc/py-Pootle||2010-09-15|Removed
 devel/autoconf262|devel/autoconf267|2010-09-15|Migration to autoconf-2.67
 editors/vim6||2010-09-17|Has expired: Outdated, superceded by editors/vim7 and has multiple security issues
 editors/vim6+ruby||2010-09-17|Has expired: Outdated, superceded by editors/vim7 and has multiple security issues
+sysutils/cdrtools-cjk|sysutils/cdrtools|2010-09-17|Obsoleted by iconv support in mainstream kit
