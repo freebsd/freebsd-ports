@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vde2
-PORTVERSION=	2.2.3
+PORTVERSION=	2.3.1
 CATEGORIES=	net
 MASTER_SITES=	SF/vde/${PORTNAME}/${PORTVERSION}
 
@@ -33,11 +33,19 @@ MAN8=		vde_tunctl.8
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000
-BROKEN=		Fails to Build
+BROKEN=		fails to build on 6.x
+.endif
+
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+MAKE_ENV+=	V=1
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/-Wall/s|-O2||g' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$(MAKE).*install-data-hook||g' \
 		${WRKSRC}/man/Makefile.in
+	@${REINPLACE_CMD} -e 's|^AM_CFLAGS|#AM_CFLAGS|g' \
+		${WRKSRC}/src/slirpvde/Makefile.in
 
 .include <bsd.port.post.mk>
