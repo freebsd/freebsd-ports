@@ -37,7 +37,7 @@ lib/libvdemgmt.so.0
 lib/libvdeplug.a
 lib/libvdeplug.la
 lib/libvdeplug.so
-lib/libvdeplug.so.2
+lib/libvdeplug.so.3
 lib/libvdesnmp.a
 lib/libvdesnmp.la
 lib/libvdesnmp.so
