@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-CheckLib
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ MAINTAINER=	frederic@culot.org
 COMMENT=	Perl5 module to check that a library is available
 
 BUILD_DEPENDS=	p5-IO-CaptureOutput>=1.08:${PORTSDIR}/devel/p5-IO-CaptureOutput
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
