@@ -32,6 +32,7 @@ OPTIONS=	HEIMDAL	"Use Heimdal Kerberos for ss/com_err"	no
 # On 6.X zephyr install libzephyr.so.4 and libzephyr.so.4.0 for others
 .if ${OSVERSION} < 700000
 PLIST_SUB+=	ZEPHYR_SHVERSION=4
+BROKEN=		bad plist
 .else
 PLIST_SUB+=	ZEPHYR_SHVERSION=4.0
 .endif
