@@ -19,6 +19,8 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		jbig2dec.0:${PORTSDIR}/graphics/jbig2dec \
 		openjpeg.2:${PORTSDIR}/graphics/openjpeg
 
+BROKEN=		does not build
+
 USE_GMAKE=	yes
 MAKE_ARGS+=	build=release prefix=${PREFIX}
 WRKSRC=		${WRKDIR}/${PORTNAME}
