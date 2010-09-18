@@ -9,3 +9,27 @@
  test_build=yes
  if test $svn_in_version = 0 
  then
+@@ -213,6 +213,11 @@ esac
+ AC_SUBST([FULLLOCALEDIR])
+ AC_SUBST([HAS_RELATIVE_LOCALEDIR])
+ 
++AC_ARG_WITH([docs],
++	         AS_HELP_STRING([--without-docs], [don't install wesnoth manual]),
++	      [docs=$withval],
++	      [docs=yes])
++AM_CONDITIONAL([INSTALLDOCS], [test x$docs = xyes])
+ 
+ AC_ARG_ENABLE([game],
+               AS_HELP_STRING([--disable-game], [disable compilation of game]),
+@@ -213,6 +213,11 @@ esac
+ AC_SUBST([FULLLOCALEDIR])
+ AC_SUBST([HAS_RELATIVE_LOCALEDIR])
+ 
++AC_ARG_WITH([docs],
++	         AS_HELP_STRING([--without-docs], [don't install wesnoth manual]),
++	      [docs=$withval],
++	      [docs=yes])
++AM_CONDITIONAL([INSTALLDOCS], [test x$docs = xyes])
+ 
+ AC_ARG_ENABLE([game],
+               AS_HELP_STRING([--disable-game], [disable compilation of game]),
