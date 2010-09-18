@@ -7,6 +7,7 @@
 
 PORTNAME=	ecasound
 PORTVERSION=	2.7.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
@@ -64,12 +65,14 @@ CONFIGURE_ARGS+=	--disable-jack
 
 .if defined(WITH_LO)
 LIB_DEPENDS+=	lo.7:${PORTSDIR}/audio/liblo
-CONFIGURE_ARGS+=	--enable-liblo
+.else
+CONFIGURE_ARGS+=	--disable-liblo
 .endif
 
 .if defined(WITH_OIL)
 LIB_DEPENDS+=	oil-0.3.0:${PORTSDIR}/devel/liboil
-CONFIGURE_ARGS+=	--enable-liboil
+.else
+CONFIGURE_ARGS+=	--disable-liboil
 .endif
 
 .if defined(WITH_SAMPLERATE)
