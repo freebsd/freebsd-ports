@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmedcon
-PORTVERSION=	0.10.5
-PORTREVISION=	2
+PORTVERSION=	0.10.6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/XMedCon-Source/${PORTVERSION}
 
@@ -100,8 +99,6 @@ LIB_DEPENDS+=		png.6:${PORTSDIR}/graphics/png
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpng12|-lpng|g' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|etc||g' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/^configheadersdir/s|=.*$$|= $$(includedir)|g' \
