@@ -168,6 +168,7 @@ lib/scm/slib/srfi-1.scm
 lib/scm/slib/srfi-11.scm
 lib/scm/slib/srfi-2.scm
 lib/scm/slib/srfi-23.scm
+lib/scm/slib/srfi-39.scm
 lib/scm/slib/srfi-61.scm
 lib/scm/slib/srfi-8.scm
 lib/scm/slib/srfi-9.scm
