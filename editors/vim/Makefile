@@ -211,7 +211,7 @@ pre-configure:
 .endif
 
 post-configure:
-	@(cd ${WRKSRC} ; ${MAKE} scratch config)
+	@(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} scratch config)
 
 #	Clean up junk files to keep them from being installed.
 pre-install:
