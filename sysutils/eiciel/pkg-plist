@@ -3,39 +3,39 @@ lib/nautilus/extensions-2.0/libeiciel-nautilus.a
 lib/nautilus/extensions-2.0/libeiciel-nautilus.la
 lib/nautilus/extensions-2.0/libeiciel-nautilus.so
 share/applications/eiciel.desktop
-%%DATADIR%%/img/others-default.png
-%%DATADIR%%/img/others.png
 %%DATADIR%%/img/group-acl-default.png
 %%DATADIR%%/img/group-acl.png
 %%DATADIR%%/img/group-default.png
 %%DATADIR%%/img/group.png
-%%DATADIR%%/img/mask-default.png
-%%DATADIR%%/img/mask.png
-%%DATADIR%%/img/user-acl-default.png
-%%DATADIR%%/img/user-acl.png
-%%DATADIR%%/img/user-default.png
-%%DATADIR%%/img/user.png
 %%DATADIR%%/img/icon_eiciel_16.png
 %%DATADIR%%/img/icon_eiciel_24.png
 %%DATADIR%%/img/icon_eiciel_32.png
 %%DATADIR%%/img/icon_eiciel_48.png
 %%DATADIR%%/img/icon_eiciel_64.png
+%%DATADIR%%/img/mask-default.png
+%%DATADIR%%/img/mask.png
+%%DATADIR%%/img/others-default.png
+%%DATADIR%%/img/others.png
+%%DATADIR%%/img/user-acl-default.png
+%%DATADIR%%/img/user-acl.png
+%%DATADIR%%/img/user-default.png
+%%DATADIR%%/img/user.png
 share/gnome/help/eiciel/C/eiciel.xml
-share/gnome/help/eiciel/C/figures/entrada_acl.png
-share/gnome/help/eiciel/C/figures/obrir_fitxer_nautilus.png
-share/gnome/help/eiciel/C/figures/obrir_fitxer.png
-share/gnome/help/eiciel/C/figures/permisos_acl.png
-share/gnome/help/eiciel/C/figures/permisos_ugo.png
 share/gnome/help/eiciel/C/figures/detall_mascara.png
-share/gnome/help/eiciel/C/figures/pantalla_ea.png
-share/gnome/help/eiciel/C/figures/others-default.png
-share/gnome/help/eiciel/C/figures/others.png
+share/gnome/help/eiciel/C/figures/entrada_acl.png
 share/gnome/help/eiciel/C/figures/group-acl-default.png
 share/gnome/help/eiciel/C/figures/group-acl.png
 share/gnome/help/eiciel/C/figures/group-default.png
 share/gnome/help/eiciel/C/figures/group.png
 share/gnome/help/eiciel/C/figures/mask-default.png
 share/gnome/help/eiciel/C/figures/mask.png
+share/gnome/help/eiciel/C/figures/obrir_fitxer.png
+share/gnome/help/eiciel/C/figures/obrir_fitxer_nautilus.png
+share/gnome/help/eiciel/C/figures/others-default.png
+share/gnome/help/eiciel/C/figures/others.png
+share/gnome/help/eiciel/C/figures/pantalla_ea.png
+share/gnome/help/eiciel/C/figures/permisos_acl.png
+share/gnome/help/eiciel/C/figures/permisos_ugo.png
 share/gnome/help/eiciel/C/figures/user-acl-default.png
 share/gnome/help/eiciel/C/figures/user-acl.png
 share/gnome/help/eiciel/C/figures/user-default.png
@@ -44,9 +44,9 @@ share/locale/ca/LC_MESSAGES/eiciel.mo
 share/locale/de/LC_MESSAGES/eiciel.mo
 share/locale/es/LC_MESSAGES/eiciel.mo
 share/locale/sv/LC_MESSAGES/eiciel.mo
-@dirrm %%DATADIR%%/img
-@dirrm %%DATADIR%%
 @dirrm share/gnome/help/eiciel/C/figures
 @dirrm share/gnome/help/eiciel/C
 @dirrm share/gnome/help/eiciel
+@dirrm %%DATADIR%%/img
+@dirrm %%DATADIR%%
 @dirrmtry share/applications
