@@ -6,47 +6,36 @@
 #
 
 PORTNAME=	termit
-PORTVERSION=	1.3.2
-PORTREVISION=	8
+PORTVERSION=	2.5.0
 CATEGORIES=	x11-toolkits gnome
-MASTER_SITES=	GOOGLE_CODE \
-		LOCAL/chinsan/${PORTNAME}/
+MASTER_SITES=	http://cloud.github.com/downloads/nonstop/termit/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small terminal emulator
 
+USE_BZIP2=	yes
+USE_GNOME=	vte
+USE_LUA=	yes
+USE_GETTEXT=	yes
+USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
-BUILD_DEPENDS=	vte:${PORTSDIR}/x11-toolkits/vte
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-USE_BZIP2=	yes
-USE_CMAKE=	yes
-CMAKE_ARGS=	-DCMAKE_INSTALL_PREFIX=${LOCALBASE}
-
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-.else
-CMAKE_ARGS+=	-DENABLE_NLS:BOOL=false
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-do-build:
-	@(cd ${BUILD_WRKSRC}; \
-	cmake ${CMAKE_ARGS} .; \
-	${MAKE})
+MAN1=		${PORTNAME}.1
 
 post-patch:
-.ifdef NOPORTDOCS
-	@${REINPLACE_CMD} -e '1,3 d' ${WRKSRC}/doc/CMakeLists.txt
-.endif
+	@${REINPLACE_CMD} -e '/doc/s|^|#|' ${WRKSRC}/CMakeLists.txt
 
-do-install:
-	@(cd ${BUILD_WRKSRC}; \
-	${MAKE} install)
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.desktop ${PREFIX}/share/applications
+	@${MKDIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/doc/${PORTNAME}.svg ${PREFIX}/share/pixmaps
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in README lua_api.txt rc.lua.example
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>

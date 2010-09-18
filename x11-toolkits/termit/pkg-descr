@@ -1,4 +1,4 @@
 Small terminal emulator. The only dependencies are Vte and Gtk2 libs.
 Termit supports tabs, bookmarks, encoding switching and sessions.
 
-WWW: http://code.google.com/p/termit/wiki/TermIt
+WWW: http://wiki.github.com/nonstop/termit/
