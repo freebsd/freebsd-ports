@@ -20,14 +20,20 @@ bin/gvimdiff
 @comment Insert PLIST.share-vim here
 @comment -=[ begin PLIST.share-vim ]=-
 @comment -=[ end PLIST.share-vim ]=-
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
 @dirrmtry man/fr.ISO8859-1/man1
 @dirrmtry man/fr.ISO8859-1
 @dirrmtry man/fr.UTF-8/man1
 @dirrmtry man/fr.UTF-8
+@dirrmtry man/it/man1
+@dirrmtry man/it
 @dirrmtry man/it.ISO8859-1/man1
 @dirrmtry man/it.ISO8859-1
 @dirrmtry man/it.UTF-8/man1
 @dirrmtry man/it.UTF-8
+@dirrmtry man/pl/man1
+@dirrmtry man/pl
 @dirrmtry man/pl.ISO8859-2/man1
 @dirrmtry man/pl.ISO8859-2
 @dirrmtry man/pl.UTF-8/man1
