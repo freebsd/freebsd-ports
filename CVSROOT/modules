@@ -1472,7 +1472,6 @@ cdrdao                          ports/sysutils/cdrdao
 cdrkit                          ports/sysutils/cdrkit
 cdroot                          ports/sysutils/cdroot
 cdrtools                        ports/sysutils/cdrtools
-cdrtools-cjk                    ports/sysutils/cdrtools-cjk
 cdrtools-devel                  ports/sysutils/cdrtools-devel
 cduce                           ports/lang/cduce
 cedet                           ports/devel/cedet
@@ -9504,6 +9503,7 @@ moinmoin                        ports/www/moinmoin
 mol2ps                          ports/science/mol2ps
 molden                          ports/biology/molden
 momspider                       ports/www/momspider
+monast                          ports/www/monast
 mondulkiri                      ports/x11-fonts/mondulkiri
 mongodb                         ports/databases/mongodb
 monit                           ports/sysutils/monit
@@ -21210,6 +21210,7 @@ py-supybot                      ports/irc/py-supybot
 py-supybot-plugins              ports/irc/py-supybot-plugins
 py-svglib                       ports/converters/py-svglib
 py-svgmath                      ports/math/py-svgmath
+py-swift                        ports/databases/py-swift
 py-sybase                       ports/databases/py-sybase
 py-syck                         ports/textproc/py-syck
 py-symboltype                   ports/devel/py-SymbolType
@@ -25003,8 +25004,6 @@ vils                            ports/sysutils/vils
 vim                             ports/editors/vim
 vim-lite                        ports/editors/vim-lite
 vim5                            ports/editors/vim5
-vim6                            ports/editors/vim6
-vim6+ruby                       ports/editors/vim6+ruby
 vinagre                         ports/net/vinagre
 vindaloo                        ports/graphics/vindaloo
 vinetto                         ports/security/vinetto
