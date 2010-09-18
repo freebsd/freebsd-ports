@@ -274,4 +274,7 @@ ckpl:
 lang:
 	${MAKE} WITH_LANG=yes
 
+ckmtree:
+	${MTREE_CMD} -f ${MTREE_FILE} -p ${PREFIX}
+
 .include <bsd.port.post.mk>
