@@ -8,13 +8,17 @@ bin/snmpkey
 %%SITE_PERL%%/Net/SNMP/Security/Community.pm
 %%SITE_PERL%%/Net/SNMP/Security/USM.pm
 %%SITE_PERL%%/Net/SNMP/Transport.pm
-%%SITE_PERL%%/Net/SNMP/Transport/TCP.pm
-%%SITE_PERL%%/Net/SNMP/Transport/TCP6.pm
-%%SITE_PERL%%/Net/SNMP/Transport/UDP.pm
-%%SITE_PERL%%/Net/SNMP/Transport/UDP6.pm
+%%SITE_PERL%%/Net/SNMP/Transport/IPv4.pm
+%%SITE_PERL%%/Net/SNMP/Transport/IPv4/TCP.pm
+%%SITE_PERL%%/Net/SNMP/Transport/IPv4/UDP.pm
+%%SITE_PERL%%/Net/SNMP/Transport/IPv6.pm
+%%SITE_PERL%%/Net/SNMP/Transport/IPv6/TCP.pm
+%%SITE_PERL%%/Net/SNMP/Transport/IPv6/UDP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SNMP/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SNMP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrm %%SITE_PERL%%/Net/SNMP/Transport/IPv6
+@dirrm %%SITE_PERL%%/Net/SNMP/Transport/IPv4
 @dirrm %%SITE_PERL%%/Net/SNMP/Transport
 @dirrm %%SITE_PERL%%/Net/SNMP/Security
 @dirrm %%SITE_PERL%%/Net/SNMP
