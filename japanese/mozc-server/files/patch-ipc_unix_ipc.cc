@@ -1,11 +1,11 @@
---- ipc/unix_ipc.cc.org	2010-09-03 11:29:17.747782268 +0900
-+++ ipc/unix_ipc.cc	2010-09-05 10:10:24.194440985 +0900
+--- ipc/unix_ipc.cc.org	2010-09-18 12:52:17.569066513 +0900
++++ ipc/unix_ipc.cc	2010-09-18 12:56:22.118871027 +0900
 @@ -41,7 +41,7 @@
  #include <sys/time.h>
  #include <sys/types.h>
  #include <sys/un.h>
 -#ifdef OS_MACOSX
-+#if defined(__FreeBSD__) || defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(__FreeBSD__)
  #include <sys/ucred.h>
  #endif
  #include <sys/wait.h>
@@ -14,7 +14,7 @@
    *pid = 0;
  
 -#ifdef OS_MACOSX
-+#if defined(__FreeBSD__) || defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(__FreeBSD__)
    // If the OS is MAC, we should validate the peer by using LOCAL_PEERCRED.
    struct xucred peer_cred;
    socklen_t peer_cred_len = sizeof(struct xucred);
@@ -23,7 +23,7 @@
  #endif
  
 -#ifdef OS_LINUX
-+#if !defined(__FreeBSD__) && defined(OS_LINUX)
++#if defined(OS_LINUX) && !defined(__FreeBSD__)
    // On ARM Linux, we do nothing and just return true since the platform (at
    // least the qemu emulator) doesn't support the getsockopt(sock, SOL_SOCKET,
    // SO_PEERCRED) system call.
@@ -32,7 +32,7 @@
      ::memcpy(address.sun_path, server_address.data(), server_address_length);
      address.sun_path[server_address_length] = '\0';
 -#ifdef OS_MACOSX
-+#if defined(__FreeBSD__) || defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(__FreeBSD__)
      address.sun_len = SUN_LEN(&address);
      const size_t sun_len = sizeof(address);
  #else
@@ -41,7 +41,7 @@
                 reinterpret_cast<char *>(&on),
                 sizeof(on));
 -#ifdef OS_MACOSX
-+#if defined(__FreeBSD__) || defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(__FreeBSD__)
    addr.sun_len = SUN_LEN(&addr);
    const size_t sun_len = sizeof(addr);
  #else

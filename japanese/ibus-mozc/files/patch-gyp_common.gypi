@@ -1,6 +1,6 @@
---- gyp/common.gypi.org	2010-09-03 11:27:13.818109921 +0900
-+++ gyp/common.gypi	2010-09-03 11:28:44.023549160 +0900
-@@ -397,6 +397,12 @@
+--- gyp/common.gypi.org	2010-09-18 12:48:37.180713244 +0900
++++ gyp/common.gypi	2010-09-18 12:49:57.723919434 +0900
+@@ -437,6 +437,12 @@
            '-lz',
            '<@(extra_linux_libs)',
          ],
@@ -11,5 +11,5 @@
 +          '-L@@LOCALBASE@@/lib'
 +        ],
          'conditions': [
-           ['chromeos==1', {
-             'defines': [
+           ['use_libgtest==0', {
+             'include_dirs': [

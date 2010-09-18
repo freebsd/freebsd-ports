@@ -1,19 +1,25 @@
---- unix/ibus/path_util.cc.org	2010-09-03 11:46:40.275135605 +0900
-+++ unix/ibus/path_util.cc	2010-09-03 11:47:34.058766206 +0900
-@@ -30,14 +30,14 @@
+--- unix/ibus/path_util.cc.org	2010-09-18 13:05:52.470217916 +0900
++++ unix/ibus/path_util.cc	2010-09-18 13:07:06.436608058 +0900
+@@ -30,14 +30,22 @@
  #include "unix/ibus/path_util.h"
  
  namespace {
--const char kInstalledDirectory[] = "/usr/share/ibus-mozc";
++#ifdef __FreeBSD__
 +const char kInstalledDirectory[] = "@@LOCALBASE@@/share/ibus-mozc";
++#else
+ const char kInstalledDirectory[] = "/usr/share/ibus-mozc";
++#endif
  }
  
  namespace mozc {
  namespace ibus {
  
  string GetIconPath(const string &icon_file) {
--  return kInstalledDirectory + string("/") + icon_file;
++#ifdef __FreeBSD__
 +  return string("@@LOCALBASE@@/share/ibus-mozc/icons/") + icon_file;
++#else
+   return kInstalledDirectory + string("/") + icon_file;
++#endif
  }
  
  }  // namespace ibus
