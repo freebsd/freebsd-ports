@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	scm
-PORTVERSION=	5e6
+PORTVERSION=	5e7
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/%SUBDIR%/ \
 		ftp://ftp.informatik.uni-hamburg.de/ftpmnt/inf1/pub/soft/lang/scheme/
 MASTER_SITE_SUBDIR=	. OLD
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} slib-3b2.zip slib-psd1-3.tar.gz
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} slib-3b2.zip
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} slib-3b3.zip slib-psd1-3.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} slib-3b3.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scheme interpreter
