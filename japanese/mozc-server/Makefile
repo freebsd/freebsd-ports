@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mozc-server
-PORTVERSION=	0.12.434.102
-PORTREVISION=	1
+PORTVERSION=	0.13.464.102
 CATEGORIES=	japanese
 MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
 DISTNAME=	mozc-${PORTVERSION}
@@ -58,9 +57,9 @@ WITH_DIC_UT_EDICTKATAKANAGO=yes
     defined(WITH_DIC_UT_JIGYOSHO) || \
     defined(WITH_DIC_UT_ZIPCODE) || \
     defined(WITH_DIC_UT_EDICTKATAKANAGO)
-DISTFILES+=     mozcdic-ut-devel-20100731.tar.bz2
+DISTFILES+=     mozcdic-ut-devel-20100911.tar.bz2
 MASTER_SITES+=	http://www.geocities.jp/ep3797/snapshot/mozc/
-WRKUTDICSRC=    ${WRKDIR}/mozcdic-ut-devel-20100731
+WRKUTDICSRC=    ${WRKDIR}/mozcdic-ut-devel-20100911
 .endif
 
 REPLACE_FILES=	${WRKSRC}/build_mozc.py \
@@ -75,27 +74,27 @@ post-patch:
 	    $${FILE}; \
 	done;
 .if defined(WITH_DIC_UT_MEISHI)
-	${CAT} ${WRKUTDICSRC}/mozcdic-ut-meisi-20100731.txt \
+	${CAT} ${WRKUTDICSRC}/mozcdic-ut-meisi-20100911.txt \
 		>> ${WRKSRC}/data/dictionary/dictionary1.txt
 .endif
 .if defined(WITH_DIC_UT_JINMEI)
-	${CAT} ${WRKUTDICSRC}/mozcdic-ut-jinmei-20100731.txt \
+	${CAT} ${WRKUTDICSRC}/mozcdic-ut-jinmei-20100911.txt \
 		>> ${WRKSRC}/data/dictionary/dictionary1.txt
 .endif
 .if defined(WITH_DIC_UT_KAOMOJI)
-	${CAT} ${WRKUTDICSRC}/mozcdic-ut-kaomoji-20100611.txt \
+	${CAT} ${WRKUTDICSRC}/mozcdic-ut-kaomoji-20100911.txt \
 		>> ${WRKSRC}/data/dictionary/dictionary1.txt
 .endif
 .if defined(WITH_DIC_UT_JIGYOSHO)
-	${CAT} ${WRKUTDICSRC}/mozcdic-ut-jigyosyo-20100731.txt \
+	${CAT} ${WRKUTDICSRC}/mozcdic-ut-jigyosyo-20100911.txt \
 		>> ${WRKSRC}/data/dictionary/dictionary1.txt
 .endif
 .if defined(WITH_DIC_UT_ZIPCODE)
-	${CAT} ${WRKUTDICSRC}/mozcdic-ut-zipcode-20100731.txt \
+	${CAT} ${WRKUTDICSRC}/mozcdic-ut-zipcode-20100911.txt \
  		>> ${WRKSRC}/data/dictionary/dictionary1.txt
 .endif
 .if defined(WITH_DIC_UT_EDICTKATAKANAGO)
-	${CAT} ${WRKUTDICSRC}/mozcdic-ut-edict-katakanago-20100711.txt \
+	${CAT} ${WRKUTDICSRC}/mozcdic-ut-edict-katakanago-20100911.txt \
  		>> ${WRKSRC}/data/dictionary/dictionary1.txt
 .endif
 

@@ -1,5 +1,5 @@
---- unix/scim/scim.gyp.org	2010-09-03 11:48:22.034373161 +0900
-+++ unix/scim/scim.gyp	2010-09-03 11:57:21.964398346 +0900
+--- unix/scim/scim.gyp.org	2010-09-18 13:07:44.032136540 +0900
++++ unix/scim/scim.gyp	2010-09-18 13:08:24.780919695 +0900
 @@ -44,7 +44,7 @@
        '../../session/session.gyp:session',
      ],

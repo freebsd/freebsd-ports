@@ -1,19 +1,20 @@
---- server/mozc_server.cc.org	2010-09-05 10:11:21.205396567 +0900
-+++ server/mozc_server.cc	2010-09-05 10:36:15.099047296 +0900
-@@ -29,6 +29,8 @@
- 
+--- server/mozc_server.cc.org	2010-09-18 12:57:52.229553251 +0900
++++ server/mozc_server.cc	2010-09-18 13:00:29.172975389 +0900
+@@ -30,6 +30,9 @@
  #ifdef OS_WINDOWS
  #include <windows.h>
-+#else
-+#include <signal.h>
  #endif
++#ifdef __FreeBSD__
++#include <signal.h>
++#endif
  
  #include "base/base.h"
-@@ -46,6 +48,23 @@
+ #include "base/process.h"
+@@ -46,6 +49,23 @@
  mozc::SessionServer *g_session_server = NULL;
  }
  
-+#ifndef OS_WINDOWS
++#ifdef __FreeBSD__
 +static void sig_func(int num)
 +{
 +  VLOG(1) << "signal " << num << " recieved.";
@@ -33,11 +34,11 @@
  namespace mozc {
  namespace {
  
-@@ -122,6 +141,12 @@
+@@ -122,6 +142,12 @@
        return -1;
      }
  
-+#ifndef OS_WINDOWS
++#ifdef __FreeBSD__
 +    ::signal(SIGINT, sig_func);
 +    ::signal(SIGHUP, sig_func);
 +    ::signal(SIGTERM, sig_func);
