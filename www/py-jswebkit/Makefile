@@ -19,6 +19,8 @@ BUILD_DEPENDS=		cython:${PORTSDIR}/lang/cython
 LIB_DEPENDS=		webkit:${PORTSDIR}/www/webkit-gtk2
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
+BROKEN=			does not build
+
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/jswebkit.so
 
 PROJECTHOST=		gwrite
