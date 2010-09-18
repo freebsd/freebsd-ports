@@ -1,0 +1,10 @@
+This is yet another module that lets you access or change the elements
+of a hash using methods with the same name as the element's key.  It
+follows in the footsteps of Hash::AsObject, Hash::Inflator,
+Data::OpenStruct::Deep, Object::AutoAccessor, and probably others. The
+main difference between this module and its forebears is that it
+supports tied hashes, in addition to regular hashes. This allows a
+modular division of labor: this class is generic and treats all hashes
+the same; any special semantics come from the tied hash.
+
+WWW: http://search.cpan.org/dist/Hash-AutoHash/
