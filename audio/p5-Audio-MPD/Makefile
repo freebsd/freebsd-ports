@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Audio-MPD
-PORTVERSION=	1.093170
+PORTVERSION=	1.102260
 CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,12 +17,15 @@ COMMENT=	Class to talk to MPD (Music Player Daemon) servers
 BUILD_DEPENDS=	p5-Audio-MPD-Common>=0:${PORTSDIR}/audio/p5-Audio-MPD-Common \
 		p5-Getopt-Euclid>=0:${PORTSDIR}/devel/p5-Getopt-Euclid \
 		p5-Proc-Daemon>=0:${PORTSDIR}/devel/p5-Proc-Daemon \
-		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
+		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-MooseX-SemiAffordanceAccessor>=0:${PORTSDIR}/devel/p5-MooseX-SemiAffordanceAccessor \
+		p5-Test-Corpus-Audio-MPD>0:${PORTSDIR}/audio/p5-Test-Corpus-Audio-MPD
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	YES
+PERL_MODBUILD=	YES
 
-MAN1=		mpd-dynamic.1
+MAN1=		mpd-dynamic.1 \
+		mpd-rate.1
 MAN3=		Audio::MPD.3 \
 		Audio::MPD::Collection.3 \
 		Audio::MPD::Playlist.3 \
