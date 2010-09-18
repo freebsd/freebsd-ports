@@ -1113,12 +1113,43 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/admin.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/admin.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/fixtures/sample_flatpages.json
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/middleware.py
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/middleware.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/middleware.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/models.py
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/models.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/models.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/templatetags/flatpages.py
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/templatetags/flatpages.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/templatetags/flatpages.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/csrf.py
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/csrf.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/csrf.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/forms.py
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/forms.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/forms.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/middleware.py
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/middleware.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/middleware.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/templates/404.html
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/templates/flatpages/default.html
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/templates/registration/login.html
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/templatetags.py
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/templatetags.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/templatetags.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/urls.py
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/urls.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/urls.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/views.py
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/views.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/views.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/urls.py
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/urls.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/urls.pyo
@@ -2148,8 +2179,20 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/management/commands/ping_google.py
 %%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/management/commands/ping_google.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/management/commands/ping_google.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/models.py
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/models.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/models.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/templates/sitemap.xml
 %%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/templates/sitemap_index.xml
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/tests/basic.py
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/tests/basic.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/tests/basic.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/tests/urls.py
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/tests/urls.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/tests/urls.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/views.py
 %%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/views.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/views.pyo
@@ -3011,6 +3054,7 @@ bin/django-admin.py
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/webdesign
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/syndication
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/sites
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/tests
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/templates
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/management/commands
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/management
@@ -3111,6 +3155,12 @@ bin/django-admin.py
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/formtools/templates/formtools
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/formtools/templates
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/formtools
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/templates/registration
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/templates/flatpages
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests/templates
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/tests
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/flatpages/fixtures
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/flatpages
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/databrowse/templates/databrowse
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/databrowse/templates
