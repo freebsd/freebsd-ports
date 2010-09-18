@@ -6,58 +6,89 @@
 #
 
 PORTNAME=	asc
-PORTVERSION=	1.16.4.0
-PORTREVISION=	6
+PORTVERSION=	2.4.0.0
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}-hq/ASC%20Source/1.16.4
-DISTNAME=	${PORTNAME}-source-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}-hq/ASC%20Source/${PORTVERSION:R} \
+		http://www.asc-hq.org/music/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ASC_MUSICS}
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A turn based, multiplayer strategic game with very nice graphics
 
-LIB_DEPENDS=	paragui.4:${PORTSDIR}/x11-toolkits/paragui \
-		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		${LOCALBASE}/lib/libloki.so:${PORTSDIR}/devel/loki
+LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
+		boost_regex.4:${PORTSDIR}/devel/boost-libs \
+		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
+		expat.6:${PORTSDIR}/textproc/expat2
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+OPTIONS=	MUSIC "Install extra music files" off \
+		XVID "Enable Xvid support" off
 
-USE_SDL=	image mm mixer sdl
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USE_SDL=	image mixer sound sdl
+USE_WX=		2.4+
+WX_CONF_ARGS=	absolute
+USE_LUA=	5.1
+LUA_COMPS=	lua
 USE_PERL5_BUILD=yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \
-		CXXFLAGS="-D_UNICODE_BROKEN_" \
-		LIBS="`${SDL_CONFIG} --libs` -lm"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CONFIGURE_ARGS=	--disable-paraguitest	\
-		--prefix=${PREFIX}
+MAN6=		asc.6 asc_demount.6 asc_mapedit.6 asc_mount.6 \
+		asc_weaponguide.6
+PLIST_FILES=	bin/asc bin/asc_demount bin/asc_mapedit bin/asc_mount \
+		bin/asc_weaponguide \
+		%%DATADIR%%/asc2_dlg.zip %%DATADIR%%/main.ascdat
+PLIST_DIRS=	${ASC_MUSICDIR} %%DATADIR%%
 
-OPTIONS=	MUSIC "Install extra music files" off
-
-MAN6=		asc.6 asc_demount.6 asc_mount.6 asc_mapedit.6 asc_makegfx.6 asc_weaponguide.6
+CFLAGS+=	-D_UNICODE_BROKEN_
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MUSIC)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} frontiers.mp3 time_to_strike.mp3 machine_wars.mp3
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-PLIST_SUB+=	MUSIC:=""
+ASC_MUSICS=	frontiers.ogg time_to_strike.ogg machine_wars.ogg
+ASC_MUSICDIR=	%%DATADIR%%/music
+.for file in ${ASC_MUSICS}
+PLIST_FILES+=	${ASC_MUSICDIR}/${file}
+.endfor
 .else
-PLIST_SUB+=	MUSIC:="@comment "
+.undef ASC_MUSICS
+.undef ASC_MUSICDIR
 .endif
 
-pre-configure:
+.if defined(WITH_XVID)
+LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
+.else
+CONFIGURE_ENV+=	ac_cv_lib_xvidcore_xvid_encore=no
+.endif
+
+post-extract:
 .if defined(WITH_MUSIC)
-	${CP}  ${DISTDIR}/frontiers.mp3 ${WRKSRC}/data/music
-	${CP}  ${DISTDIR}/time_to_strike.mp3 ${WRKSRC}/data/music
-	${CP}  ${DISTDIR}/machine_wars.mp3 ${WRKSRC}/data/music
+.for file in ${ASC_MUSICS}
+	@${TAR} -C ${DISTDIR}/${DIST_SUBDIR} -cf - ${file} | \
+		${TAR} -C ${WRKSRC}/data/music --unlink -xf -
+.endfor
 .endif
 
-pre-build:
-	@${FIND} ${WRKSRC}/source -name \*.cpp | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|<malloc.h>|<stdlib.h>|'
-	@${FIND} ${WRKSRC}/source -name \*.h | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|<malloc.h>|<stdlib.h>|'
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.cpp" -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e \
+		's|<malloc\.h>|<stdlib.h>|g'
+	@${FIND} ${WRKSRC} -name "Makefile.in" -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e \
+		's|/games/|/|g ; \
+		 s|$$(srcdir)/asc_makegfx.6||g'
+	@${REINPLACE_CMD} -e \
+		's|/games/|/|g ; \
+		 s|lua >=|lua-5.1 >=|g ; \
+		 /if test/s|==|=|g' ${WRKSRC}/configure
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
