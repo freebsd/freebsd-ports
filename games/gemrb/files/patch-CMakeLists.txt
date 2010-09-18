@@ -1,0 +1,21 @@
+--- CMakeLists.txt.orig	2010-08-20 10:49:10.000000000 -0700
++++ CMakeLists.txt	2010-09-05 23:18:12.000000000 -0700
+@@ -137,18 +137,6 @@
+ 	MESSAGE(FATAL_ERROR "Please install the Zlib library and headers first!")
+ ENDIF()
+ 
+-IF(UNIX)
+-	FIND_LIBRARY(DLD_LIBRARY_PATH dl dld)
+-	IF(DLD_LIBRARY_PATH)
+-		MESSAGE(STATUS "Looking for dl library: found")
+-	ELSE(DLD_LIBRARY_PATH)
+-		MESSAGE(FATAL_ERROR "Looking for dl library: not found!")
+-	ENDIF(DLD_LIBRARY_PATH)
+-
+-	SET(CMAKE_THREAD_PREFER_PTHREAD true)
+-	FIND_PACKAGE(Threads REQUIRED)
+-ENDIF(UNIX)
+-
+ INCLUDE(FindOpenAL)
+ IF(OPENAL_FOUND)
+ 	MESSAGE(STATUS "Looking for OpenAL: found")
