@@ -20,6 +20,7 @@ LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
 RUN_DEPENDS=	kqemu-kmod>1.3.0.p11:${PORTSDIR}/emulators/kqemu-kmod \
 		xwininfo:${PORTSDIR}/x11/xwininfo
 
+BROKEN=		does not fetch
 CONFLICTS=	Win4BSD-[0-9]*
 
 ONLY_FOR_ARCHS=	i386
