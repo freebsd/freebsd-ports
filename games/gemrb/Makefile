@@ -6,38 +6,38 @@
 #
 
 PORTNAME=	gemrb
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	games emulators
 MASTER_SITES=	SF/${PORTNAME}/GemRB%20Sources/GemRB%20${PORTVERSION}%20Sources
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	GemRB (Game engine made with preRendered Background)
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+	vorbis.4:${PORTSDIR}/audio/libvorbis
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	-libdir=${LOCALBASE}/lib \
-			-includedir=${LOCALBASE}/include
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GMAKE=	yes
-USE_SDL=	sdl
+USE_CMAKE=	yes
+USE_SDL=	sdl mixer
 USE_OPENAL=	al alut
 USE_LDCONFIG=	yes
 USE_PYTHON=	2.4+
+CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include
+CMAKE_C_FLAGS=	${CFLAGS}
+CMAKE_ARGS=	-DDOC_DIR="${LOCALBASE}/share/doc/gemrb" -DMAN_DIR="${LOCALBASE}/man/man6" -DDISABLE_WERROR=1
 
 MAN6=	gemrb.6
 
 post-patch:
 .if defined(NOPORTDOCS)
-# TODO: Yep I know this is a ugly way ;/
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-*
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-noportdocs-*
 .endif
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/gemrb.cfg ]; then \
-		${CP} ${PREFIX}/etc/GemRB.cfg.sample ${PREFIX}/etc/gemrb.cfg; \
+		${CP} ${WRKSRC}/gemrb/GemRB.cfg.sample ${PREFIX}/etc/gemrb.cfg; \
 	fi
 	@${CAT} ${PKGMESSAGE}
 

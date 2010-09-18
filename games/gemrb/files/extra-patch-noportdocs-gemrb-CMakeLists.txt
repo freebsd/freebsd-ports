@@ -1,0 +1,10 @@
+--- gemrb/CMakeLists.txt.orig	2010-08-20 10:49:10.000000000 -0700
++++ gemrb/CMakeLists.txt	2010-09-06 01:40:42.000000000 -0700
+@@ -2,7 +2,6 @@
+ ADD_SUBDIRECTORY( plugins )
+ ADD_SUBDIRECTORY( override )
+ ADD_SUBDIRECTORY( GUIScripts )
+-ADD_SUBDIRECTORY( docs )
+ ADD_SUBDIRECTORY( tests )
+ 
+ ADD_EXECUTABLE(gemrb GemRB.cpp )
