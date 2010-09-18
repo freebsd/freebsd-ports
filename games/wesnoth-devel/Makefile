@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTVERSION=	1.9.1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/
@@ -28,9 +27,8 @@ USE_SDL=	image mixer net ttf
 USE_GNOME=	gnometarget pango
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
-WANT_GNOME=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	aclocal:110 autoheader:267 automake:110 autoconf:267
+USE_AUTOTOOLS=	aclocal:111 autoheader:267 automake:111 autoconf:267
 ACLOCAL_ARGS=	-Im4
 AUTOMAKE_ARGS=	--add-missing --copy
 CONFIGURE_ENV=	PKG_CONFIG="${PKG_CONFIG}" \
@@ -43,7 +41,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-localedir=${PREFIX}/share/locale
 PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
 
-MANLANG=	"" cs de en_GB es et fi fr gl hu it ja lt pl pt_BR sk \
+MANLANG=	"" cs de en_GB es et fi fr gl hu id it ja lt pl pt_BR sk \
 		sr sr@ijekavian sr@ijekavianlatin sr@latin tr zh_CN zh_TW
 
 MAN6=		wesnoth.6
@@ -199,7 +197,7 @@ PLIST_SUB+=		TOOLS=""
 .endif
 
 .if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--docdir=${WRKDIR}/docs
+CONFIGURE_ARGS+=	--without-docs
 .endif
 
 .if defined(NOPORTDATA)
