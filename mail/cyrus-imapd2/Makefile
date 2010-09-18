@@ -40,7 +40,8 @@ CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-auth=unix \
 		--with-com_err \
 		--with-openssl=${OPENSSLBASE} \
-		--with-perl=${PERL5}
+		--with-perl=${PERL5} \
+		--with-ucdsnmp=no
 
 .if defined(WITH_BDB_VER)
 USE_BDB_VER=	${WITH_BDB_VER}
@@ -77,13 +78,6 @@ PLIST_SUB+=	MURDER="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_SNMP)
-LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
-CONFIGURE_ARGS+=--with-ucdsnmp=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-ucdsnmp=no
-.endif
 
 CYRUS_USER?=	cyrus
 CYRUS_GROUP?=	cyrus
