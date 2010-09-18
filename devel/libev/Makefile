@@ -24,6 +24,7 @@ MAN3=		ev.3
 post-patch:
 	@${REINPLACE_CMD} -e 's/if EV_MINIMAL/if defined(EV_MINIMAL) \&\& EV_MINIMAL/g' \
 		${WRKSRC}/ev.h \
+		${WRKSRC}/ev.c \
 		${WRKSRC}/ev++.h
 
 .include <bsd.port.mk>
