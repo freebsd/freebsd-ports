@@ -21,6 +21,8 @@ RUN_DEPENDS=	kqemu-kmod>1.3.0.p11:${PORTSDIR}/emulators/kqemu-kmod \
 		xwininfo:${PORTSDIR}/x11/xwininfo
 
 BROKEN=		does not fetch
+DEPRECATED=	Development has ceased and distfile is no longer available
+EXPIRATION_DATE=2010-12-31
 CONFLICTS=	Win4BSD-[0-9]*
 
 ONLY_FOR_ARCHS=	i386
