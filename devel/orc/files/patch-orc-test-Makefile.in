@@ -1,0 +1,10 @@
+--- orc-test/Makefile.in.orig	2010-09-19 00:02:22.545716366 +0200
++++ orc-test/Makefile.in	2010-09-19 00:02:29.607626255 +0200
+@@ -243,7 +243,6 @@
+ lib_LTLIBRARIES = liborc-test-@ORC_MAJORMINOR@.la
+ liborc_test_@ORC_MAJORMINOR@_la_LIBADD = $(ORC_LIBS)
+ liborc_test_@ORC_MAJORMINOR@_la_LDFLAGS = \
+-	-version-info $(ORC_LIBVERSION) \
+ 	-no-undefined -export-symbols-regex 'orc_'
+ 
+ liborc_test_@ORC_MAJORMINOR@_la_CFLAGS = $(ORC_CFLAGS) \
