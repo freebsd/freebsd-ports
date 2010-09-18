@@ -166,7 +166,7 @@ MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x --enable-multibyte"
 MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable-tclinterp --disable-rubyinterp"
 .endif	# LITE
 
-.if exists(${PREFIX}/lib/libiconv.so)
+.if exists(${LOCALBASE}/lib/libiconv.so)
 USE_ICONV=	yes
 .endif
 
