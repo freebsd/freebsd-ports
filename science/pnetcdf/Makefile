@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pnetcdf
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	science parallel
 MASTER_SITES=	http://ftp.mcs.anl.gov/pub/parallel-netcdf/
 DISTNAME=	parallel-netcdf-${PORTVERSION}
@@ -24,10 +24,10 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	M4FLAGS=""
 
-MAN1=		ncmpidump.1 ncmpigen.1
+MAN1=		ncmpidiff.1 ncmpidump.1 ncmpigen.1
 MAN3=		pnetcdf.3
 PORTDOCS=	COPYRIGHT INSTALL README
-PLIST_FILES=	bin/ncmpidump bin/ncmpigen bin/ncvalid \
+PLIST_FILES=	bin/ncmpidiff bin/ncmpidump bin/ncmpigen bin/ncvalid \
 		include/pnetcdf.h include/pnetcdf.inc include/pnetcdf.mod \
 		lib/libpnetcdf.a
 
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=--with-mpi=${LOCALBASE}
 .endif
 
 post-install:
-.for file in ncmpidump ncmpigen ncvalid
+.for file in ncmpidiff ncmpidump ncmpigen ncvalid
 	@${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
 .if !defined(NOPORTDOCS)
