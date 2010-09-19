@@ -366,6 +366,7 @@
     SUBDIR += jdraw
     SUBDIR += jgraph
     SUBDIR += jhead
+    SUBDIR += jogamp-jogl
     SUBDIR += jogl
     SUBDIR += jp2a
     SUBDIR += jpatch
