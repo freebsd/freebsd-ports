@@ -22,8 +22,6 @@ BUILD_DEPENDS=	openbabel:${PORTSDIR}/science/openbabel \
 LIB_DEPENDS+=	mpqc:${PORTSDIR}/science/mpqc \
 		f2c:${PORTSDIR}/lang/f2c
 
-BROKEN=		does not compile
-
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_GL=		gl
@@ -31,18 +29,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=   yes
 
 USE_FORTRAN=	yes
-USE_AUTOTOOLS=	autoconf:267 libtool:22 automake:110
 CONFIGURE_ARGS+=	--enable-mpqc
 PLIST_SUB=	LIBGHEMICAL_VERSION="${PORTVERSION}"
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|2.53|2.67|g; s|1.10.1|1.10.3|g' \
-		${WRKSRC}/aclocal.m4
-
-pre-build:
-	${RM} -f ${WRKSRC}/libtool
-	${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
