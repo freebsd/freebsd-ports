@@ -1,0 +1,15 @@
+--- gluegen/make/build.xml.orig	2010-09-18 13:33:32.000000000 +0200
++++ gluegen/make/build.xml	2010-09-18 13:33:44.000000000 +0200
+@@ -11,10 +11,10 @@
+   -->
+ <project name="GlueGen" basedir="." default="all">
+ 
+-  <fail message="Please build using Ant 1.8.0 or higher.">
++  <fail message="Please build using Ant 1.7.0 or higher.">
+       <condition>
+           <not>
+-              <antversion atleast="1.8.0"/>
++              <antversion atleast="1.7.0"/>
+           </not>
+       </condition>
+   </fail>
