@@ -1,0 +1,15 @@
+--- jogl/make/build-common.xml.orig	2010-09-12 18:59:12.000000000 +0200
++++ jogl/make/build-common.xml	2010-09-12 18:59:35.000000000 +0200
+@@ -4,10 +4,10 @@
+ 
+     <description>Common JOGL Stuff</description>
+ 
+-    <fail message="Please build using Ant 1.8.0 or higher.">
++    <fail message="Please build using Ant 1.7.0 or higher.">
+         <condition>
+             <not>
+-                <antversion atleast="1.8.0"/>
++                <antversion atleast="1.7.0"/>
+             </not>
+         </condition>
+     </fail>
