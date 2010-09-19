@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Tidy
-PORTVERSION=	1.52
+PORTVERSION=	1.54
 CATEGORIES=	textproc www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,7 +27,7 @@ post-patch:
 		${WRKSRC}/Makefile.PL
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	Changes README
+PORTDOCS=	Changes README.markdown
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
