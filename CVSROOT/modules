@@ -12477,6 +12477,7 @@ p5-HTTPD-Log-Filter             ports/www/p5-HTTPD-Log-Filter
 p5-HTTPD-User-Manage            ports/www/p5-HTTPD-User-Manage
 p5-Handel                       ports/www/p5-Handel
 p5-Hash-AsObject                ports/devel/p5-Hash-AsObject
+p5-Hash-AutoHash                ports/devel/p5-Hash-AutoHash
 p5-Hash-Case                    ports/devel/p5-Hash-Case
 p5-Hash-Flatten                 ports/devel/p5-Hash-Flatten
 p5-Hash-Merge                   ports/textproc/p5-Hash-Merge
@@ -13996,6 +13997,7 @@ p5-Test-Class                   ports/devel/p5-Test-Class
 p5-Test-ClassAPI                ports/devel/p5-Test-ClassAPI
 p5-Test-Cmd                     ports/devel/p5-Test-Cmd
 p5-Test-Compile                 ports/devel/p5-Test-Compile
+p5-Test-Corpus-Audio-MPD        ports/audio/p5-Test-Corpus-Audio-MPD
 p5-Test-Cukes                   ports/databases/p5-Test-Cukes
 p5-Test-Data                    ports/devel/p5-Test-Data
 p5-Test-Database                ports/databases/p5-Test-Database
@@ -16251,6 +16253,7 @@ p5-guard                        ports/devel/p5-Guard
 p5-gungho                       ports/www/p5-Gungho
 p5-handel                       ports/www/p5-Handel
 p5-hash-asobject                ports/devel/p5-Hash-AsObject
+p5-hash-autohash                ports/devel/p5-Hash-AutoHash
 p5-hash-case                    ports/devel/p5-Hash-Case
 p5-hash-flatten                 ports/devel/p5-Hash-Flatten
 p5-hash-merge                   ports/textproc/p5-Hash-Merge
@@ -17977,6 +17980,7 @@ p5-test-class                   ports/devel/p5-Test-Class
 p5-test-classapi                ports/devel/p5-Test-ClassAPI
 p5-test-cmd                     ports/devel/p5-Test-Cmd
 p5-test-compile                 ports/devel/p5-Test-Compile
+p5-test-corpus-audio-mpd        ports/audio/p5-Test-Corpus-Audio-MPD
 p5-test-cukes                   ports/databases/p5-Test-Cukes
 p5-test-data                    ports/devel/p5-Test-Data
 p5-test-database                ports/databases/p5-Test-Database
