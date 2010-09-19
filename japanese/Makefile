@@ -306,6 +306,7 @@
     SUBDIR += ruby-uconv
     SUBDIR += ruby-usersguide
     SUBDIR += rubygem-jpmobile
+    SUBDIR += rubygem-jpmobile-ipaddresses
     SUBDIR += rxvt
     SUBDIR += ryaku-fpw
     SUBDIR += samba3
