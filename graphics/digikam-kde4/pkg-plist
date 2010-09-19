@@ -55,6 +55,7 @@ include/digikam/photoinfocontainer.h
 include/digikam/previewwidget.h
 include/digikam/rawcameradlg.h
 include/digikam/refocusfilter.h
+include/digikam/rexpanderboxexclusive.h
 include/digikam/searchtextbar.h
 include/digikam/sharpenfilter.h
 include/digikam/sidebar.h
@@ -75,6 +76,7 @@ lib/kde4/kio_digikamalbums.so
 lib/kde4/kio_digikamdates.so
 lib/kde4/kio_digikamsearch.so
 lib/kde4/kio_digikamtags.so
+lib/kde4/libexec/digikamdatabaseserver
 %%MARBLE%%lib/kde4/plugins/marble/ExternalDraw.so
 lib/libdigikamcore.so
 lib/libdigikamcore.so.1
@@ -96,8 +98,14 @@ share/apps/digikam/data/assistant-rawimport.png
 share/apps/digikam/data/assistant-scancollection.png
 share/apps/digikam/data/assistant-tooltips.png
 share/apps/digikam/data/banner-digikam.png
+share/apps/digikam/data/bluejean-texture.png
 share/apps/digikam/data/bothhorz.png
 share/apps/digikam/data/bothvert.png
+share/apps/digikam/data/bricks-texture.png
+share/apps/digikam/data/bricks2-texture.png
+share/apps/digikam/data/burlap-texture.png
+share/apps/digikam/data/canvas-texture.png
+share/apps/digikam/data/cellwood-texture.png
 share/apps/digikam/data/centerheight.png
 share/apps/digikam/data/centerwidth.png
 share/apps/digikam/data/chalk-pattern.png
@@ -110,6 +118,7 @@ share/apps/digikam/data/curvemooth.png
 share/apps/digikam/data/dried-pattern.png
 share/apps/digikam/data/duplicatebothhorz.png
 share/apps/digikam/data/duplicatebothvert.png
+share/apps/digikam/data/fabric-texture.png
 share/apps/digikam/data/granit-pattern.png
 share/apps/digikam/data/histogram-lin.png
 share/apps/digikam/data/histogram-log.png
@@ -126,8 +135,15 @@ share/apps/digikam/data/logo-exiv2.png
 share/apps/digikam/data/logo-gphoto.png
 share/apps/digikam/data/logo-lcms.png
 share/apps/digikam/data/marble-pattern.png
+share/apps/digikam/data/marble-texture.png
+share/apps/digikam/data/marble2-texture.png
+share/apps/digikam/data/metalwire-texture.png
+share/apps/digikam/data/modern-texture.png
+share/apps/digikam/data/moss-texture.png
 share/apps/digikam/data/original.png
 share/apps/digikam/data/paper-pattern.png
+share/apps/digikam/data/paper-texture.png
+share/apps/digikam/data/paper2-texture.png
 share/apps/digikam/data/parque-pattern.png
 share/apps/digikam/data/pine-pattern.png
 share/apps/digikam/data/pink-pattern.png
@@ -135,11 +151,14 @@ share/apps/digikam/data/rain-pattern.png
 share/apps/digikam/data/rock-pattern.png
 share/apps/digikam/data/splash-digikam.png
 share/apps/digikam/data/stone-pattern.png
+share/apps/digikam/data/stone-texture.png
 share/apps/digikam/data/target.png
 share/apps/digikam/data/togglemouseover.png
-share/apps/digikam/data/topicset.iptc-subjectcode.xml
 share/apps/digikam/data/wall-pattern.png
+share/apps/digikam/data/wall-texture.png
 share/apps/digikam/data/wood-pattern.png
+share/apps/digikam/database/dbconfig.xml
+share/apps/digikam/database/mysql-global.conf
 share/apps/digikam/digikam.notifyrc
 share/apps/digikam/digikamimageplugin_color_ui.rc
 share/apps/digikam/digikamimageplugin_decorate_ui.rc
@@ -593,6 +612,7 @@ share/kde4/services/digikamsearch.protocol
 share/kde4/services/digikamtags.protocol
 share/kde4/servicetypes/digikamimageplugin.desktop
 share/locale/ar/LC_MESSAGES/digikam.mo
+share/locale/be/LC_MESSAGES/digikam.mo
 share/locale/bg/LC_MESSAGES/digikam.mo
 share/locale/ca/LC_MESSAGES/digikam.mo
 share/locale/ca@valencia/LC_MESSAGES/digikam.mo
@@ -600,20 +620,28 @@ share/locale/cs/LC_MESSAGES/digikam.mo
 share/locale/da/LC_MESSAGES/digikam.mo
 share/locale/de/LC_MESSAGES/digikam.mo
 share/locale/el/LC_MESSAGES/digikam.mo
+share/locale/en_GB/LC_MESSAGES/digikam.mo
 share/locale/eo/LC_MESSAGES/digikam.mo
 share/locale/es/LC_MESSAGES/digikam.mo
 share/locale/et/LC_MESSAGES/digikam.mo
 share/locale/eu/LC_MESSAGES/digikam.mo
+share/locale/fa/LC_MESSAGES/digikam.mo
 share/locale/fi/LC_MESSAGES/digikam.mo
 share/locale/fr/LC_MESSAGES/digikam.mo
+share/locale/ga/LC_MESSAGES/digikam.mo
+share/locale/gl/LC_MESSAGES/digikam.mo
 share/locale/he/LC_MESSAGES/digikam.mo
 share/locale/hi/LC_MESSAGES/digikam.mo
 share/locale/hne/LC_MESSAGES/digikam.mo
+share/locale/hr/LC_MESSAGES/digikam.mo
+share/locale/hu/LC_MESSAGES/digikam.mo
+share/locale/is/LC_MESSAGES/digikam.mo
 share/locale/it/LC_MESSAGES/digikam.mo
 share/locale/ja/LC_MESSAGES/digikam.mo
 share/locale/km/LC_MESSAGES/digikam.mo
 share/locale/ko/LC_MESSAGES/digikam.mo
 share/locale/lt/LC_MESSAGES/digikam.mo
+share/locale/lv/LC_MESSAGES/digikam.mo
 share/locale/nb/LC_MESSAGES/digikam.mo
 share/locale/nds/LC_MESSAGES/digikam.mo
 share/locale/ne/LC_MESSAGES/digikam.mo
@@ -623,6 +651,7 @@ share/locale/pa/LC_MESSAGES/digikam.mo
 share/locale/pl/LC_MESSAGES/digikam.mo
 share/locale/pt/LC_MESSAGES/digikam.mo
 share/locale/pt_BR/LC_MESSAGES/digikam.mo
+share/locale/ro/LC_MESSAGES/digikam.mo
 share/locale/ru/LC_MESSAGES/digikam.mo
 share/locale/se/LC_MESSAGES/digikam.mo
 share/locale/sk/LC_MESSAGES/digikam.mo
@@ -658,6 +687,7 @@ share/locale/zh_TW/LC_MESSAGES/digikam.mo
 @dirrm share/apps/digikam/icons/hicolor/128x128
 @dirrm share/apps/digikam/icons/hicolor
 @dirrm share/apps/digikam/icons
+@dirrm share/apps/digikam/database
 @dirrm share/apps/digikam/data
 @dirrm share/apps/digikam/about
 @dirrm share/apps/digikam
