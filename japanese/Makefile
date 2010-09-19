@@ -307,6 +307,7 @@
     SUBDIR += ruby-usersguide
     SUBDIR += rubygem-jpmobile
     SUBDIR += rubygem-jpmobile-ipaddresses
+    SUBDIR += rubygem-jpmobile-terminfo
     SUBDIR += rxvt
     SUBDIR += ryaku-fpw
     SUBDIR += samba3

@@ -1,0 +1,7 @@
+jpmobile-terminfo is a plugin for jpmobile.
+It is used to get terminal informations as bellows.
+
+ * display width
+ * display height
+
+WWW:	http://github.com/jpmobile/jpmobile-terminfo
