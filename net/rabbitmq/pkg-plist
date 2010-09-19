@@ -25,7 +25,11 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_backing_queue.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_basic.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_binary_generator.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_binary_parser.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_binding.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_channel.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_channel_sup.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_channel_sup_sup.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_connection_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_control.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_ctl_usage.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_dialyzer.beam
@@ -44,10 +48,8 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_framing_amqp_0_9_1.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_framing_channel.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_guid.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_heartbeat.beam
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_hooks.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_invariable_queue.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_limiter.beam
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_load.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_log.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_memory_monitor.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_misc.beam
@@ -73,7 +75,6 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_sasl_report_file_h.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_tests.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_tests_event_receiver.beam
-lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_tracer.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_types.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_variable_queue.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_writer.beam
