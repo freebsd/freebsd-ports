@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualenvwrapper
-PORTVERSION=	2.5
+PORTVERSION=	2.5.2
 PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.doughellmann.com/downloads/ \
