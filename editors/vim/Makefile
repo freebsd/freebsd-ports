@@ -193,6 +193,9 @@ CTAGS_CMD=	${FIND} . -type f \\|${XARGS} ctags
 post-patch:
 	@(${FIND} ${WRKSRC}/../runtime/ -name menu\*.vim -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e 's,ctags -R \.,${CTAGS_CMD},g')
+.if !defined(STRIP) || ${STRIP} == ""
+	${REINPLACE_CMD} '/$$(STRIP)/d' ${WRKSRC}/Makefile
+.endif
 
 pre-configure:
 	# Fix dependency misspelling so that 'make -j#' will work.
