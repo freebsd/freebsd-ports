@@ -7,6 +7,7 @@
 
 PORTNAME=	jogl
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	graphics devel java
 MASTER_SITES=http://download.java.net/media/jogl/builds/archive/jsr-231-1.1.1/
 EXTRACT_SUFX=	-src.zip
@@ -18,6 +19,8 @@ LIB_DEPENDS=	drm.2:${PORTSDIR}/graphics/libdrm
 BUILD_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper     \
 		${JAVALIBDIR}/antlr.jar:${PORTSDIR}/devel/antlr
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+
+CONFLICTS=	jogamp-jogl-*
 
 NO_WRKSUBDIR=	yes
 
