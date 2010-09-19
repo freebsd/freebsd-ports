@@ -1743,7 +1743,6 @@ share/applications/wine.desktop
 %%DATADIR%%/wine/fonts/vgasyst.fon
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.winedbg
 %%PORTDOCS%%%%DOCSDIR%%/README.winedump
