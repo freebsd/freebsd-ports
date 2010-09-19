@@ -94,7 +94,7 @@ post-build:
 .for lib in lapack tmglib
 	cd ${WRKSRC_SHARED} ; ${FC} ${FFLAGS} ${FFLAGS_SHARED} ${LDFLAGS} -shared \
 	-o lib${lib}.so.${SVERSION} -Wl,-x -Wl,-soname,lib${lib}.so.${SVERSION} \
-	-Wl,--whole-archive lib${lib}.a -Wl,--no-whole-archive -Wl,--as-needed ${BLAS}
+	-Wl,--whole-archive lib${lib}.a -Wl,--no-whole-archive
 .endfor
 
 do-install:
