@@ -25,6 +25,10 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		png.6:${PORTSDIR}/graphics/png \
 		xml2:${PORTSDIR}/textproc/libxml2
 
+LICENSE=	LGPL21 LGPL3
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} --verbose --disable-tests \
 		--with-glu --with-opengl --with-xrandr \
@@ -131,7 +135,7 @@ post-install:
 	${LN} -sf libwine.so.1 ${PREFIX}/lib/libwine.so
 .if !defined(NOPORTDOCS)
 	-@${MKDIR} ${DOCSDIR}
-.for i in README ANNOUNCE AUTHORS LICENSE
+.for i in README ANNOUNCE AUTHORS
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/programs/winedbg/README ${DOCSDIR}/README.winedbg
