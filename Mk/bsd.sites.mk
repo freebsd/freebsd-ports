@@ -951,7 +951,8 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.auckland.ac.nz/pub/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	http://backpan.cpan.org/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/%SUBDIR%/
+	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/%SUBDIR%/ \
+	http://cpan.nctu.edu.tw/modules/by-module/%SUBDIR%/
 .endif
 
 #
