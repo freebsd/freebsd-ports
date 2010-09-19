@@ -13,16 +13,15 @@ MASTER_SITES=	ftp://ftp.hylafax.org/source/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Fax software
 
-OPTIONS=	PAM "Include pam support" ON \
-		NLS "Native Language Support" ON \
-		GAWK "Use gawk for scripts" OFF \
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		jbig.1:${PORTSDIR}/graphics/jbigkit
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_GHOSTSCRIPT=yes
+HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-LIBTIFF="-L${LOCALBASE}/lib -ltiff -ljpeg" \
@@ -32,15 +31,12 @@ CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-REGEX=no --with-LIBREGEX='' --with-REGEXINC=-I/usr/include \
 		--with-DIR_HTML="${DOCSDIR}"
 CFLAGS+=	-D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED -Wall -L${LOCALBASE}/lib
-MAKE_JOBS_UNSAFE=	yes
+CONFIGURE_ENV=	ENVOPTS="${CFLAGS}"
+MAKE_ARGS+=	OPTIMIZER="" -EOPTIMIZER
 
 PORTDOCS=	RELEASENOTES-4.3.txt RELEASENOTES-4.4.txt RELEASENOTES-6.0.txt
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	hylafax.sh
-
-MAKE_ARGS+=	OPTIMIZER="" -EOPTIMIZER
-HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	ENVOPTS="${CFLAGS}"
 
 MAN1=	edit-faxcover.1 faxalter.1 faxcover.1 faxmail.1 faxrm.1 faxstat.1 \
 	hylafax-client.1 sendfax.1 sendpage.1 sgi2fax.1 textfmt.1
@@ -61,6 +57,10 @@ MAN8=	choptest.8c cqtest.8c dialtest.8c faxabort.8c faxaddmodem.8c \
 SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
 
+OPTIONS=	PAM "Include pam support" ON \
+		NLS "Native Language Support" ON \
+		GAWK "Use gawk for scripts" OFF \
+
 .include <bsd.port.pre.mk>
 
 # Defaults to "North American Letter".  Use "ISO A4" for A4.
@@ -80,6 +80,13 @@ PLIST_SUB+=	PORTDOCS=""
 .else
 PLIST_SUB+=	PORTDOCS="@comment "
 .endif
+
+# Redefine path for spool
+.if defined(HYLAFAX_SPOOL)
+CONFIGURE_ARGS+=--with-DIR_SPOOL="${HYLAFAX_SPOOL}"
+.endif
+HYLAFAX_SPOOL?=	/var/spool/hylafax
+PLIST_SUB+=	HYLAFAX_SPOOL=${HYLAFAX_SPOOL}
 
 .if defined(PACKAGE_BUILDING) || defined(BATCH)
 CONFIGURE_ARGS+=--nointeractive
