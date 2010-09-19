@@ -115,6 +115,7 @@
     SUBDIR += gstreamer-plugins-xvid
     SUBDIR += gstreamermm
     SUBDIR += gsubedit
+    SUBDIR += gtk-recordmydesktop
     SUBDIR += gtksubtitler
     SUBDIR += gxanim
     SUBDIR += gxine
