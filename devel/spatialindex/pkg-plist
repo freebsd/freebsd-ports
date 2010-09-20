@@ -1,5 +1,6 @@
 include/spatialindex/capi/BoundsQuery.h
 include/spatialindex/capi/CountVisitor.h
+include/spatialindex/capi/CustomStorage.h
 include/spatialindex/capi/DataStream.h
 include/spatialindex/capi/Error.h
 include/spatialindex/capi/IdVisitor.h

@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	spatialindex
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	devel
 MASTER_SITES=	http://download.osgeo.org/libspatialindex/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
