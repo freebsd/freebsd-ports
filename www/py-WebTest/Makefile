@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	WebTest
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	CHEESESHOP \
+		http://www.c-s.li/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	Helper to test WSGI applications
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webob>=0.9.6.1:${PORTSDIR}/www/py-webob
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webob>=0.9.6.1:${PORTSDIR}/www/py-webob
 
-USE_PYTHON=		2.5+
+LICENSE=	MIT
+
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.mk>
