@@ -30,6 +30,10 @@ PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]
 PGSQL_VER=	${DEFAULT_PGSQL_VER}
 .endif
 
+.if (${PGSQL_VER} == 90)
+BROKEN=		"not implemented yet"
+.endif
+ 
 NO_BUILD=	YES
 SLAVE_ONLY=	YES
 PATCHDIR=	mustnotexist
