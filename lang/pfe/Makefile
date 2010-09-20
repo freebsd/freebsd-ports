@@ -13,8 +13,6 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of ANSI Forth
 
-LATEST_LINK=	pfe-devel
-
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
 USE_GCC=	4.2+

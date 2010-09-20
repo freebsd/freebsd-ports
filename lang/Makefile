@@ -248,7 +248,7 @@
     SUBDIR += perl5.12
     SUBDIR += perl5.8
     SUBDIR += petite-chez
-    SUBDIR += pfe-devel
+    SUBDIR += pfe
     SUBDIR += phc
     SUBDIR += php-mode.el
     SUBDIR += php4
