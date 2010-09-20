@@ -11,16 +11,19 @@ PORTREVISION=	1
 CATEGORIES=	devel sysutils
 MASTER_SITES=	http://ftp.tux.org/pub/X-Windows/ftp.hungry.com/chrpath/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Tool to modify DT_RPATH in existing ELF binaries
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 
 MAN1=		chrpath.1
 
-PLIST_FILES=    bin/chrpath
+PLIST_FILES=	bin/chrpath
 
-PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
+PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -29,6 +32,5 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .	endfor
 .endif
-
 
 .include <bsd.port.mk>
