@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100920:
+  AFFECTS: users of security/stunnel
+  AUTHOR: roam@FreeBSD.org
+
+  In stunnel-4.34, the DH support is no longer configurable by the user,
+  but always enabled when OpenSSL supports it instead.  This means that
+  it will now most probably be enabled on the supported versions of FreeBSD.
+  If this leads to problems with old SSL clients, I will look into making
+  it configurable at build time again.
+
 20100917:
   AFFECTS: users of sysutils/cdrtools-cjk
   AUTHOR: marius@FreeBSD.org
