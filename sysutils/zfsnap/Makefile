@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	zfsnap
-PORTVERSION=	1.2.6
+PORTVERSION=	1.3.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://files.bsdroot.lv/FreeBSD/distfiles/
+MASTER_SITES=	http://files.bsdroot.lv/pub/FreeBSD/distfiles/
 DISTNAME=	zfSnap-${PORTVERSION}
 
 MAINTAINER=	aldis@bsdroot.lv
