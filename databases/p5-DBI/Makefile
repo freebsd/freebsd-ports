@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBI
-PORTVERSION=	1.613
+PORTVERSION=	1.614
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,6 +30,7 @@ MAN3=		Bundle::DBI.3 \
 		DBD::DBM.3 \
 		DBD::File.3 \
 		DBD::File::Developers.3 \
+		DBD::File::HowTo.3 \
 		DBD::File::Roadmap.3 \
 		DBD::Gofer.3 \
 		DBD::Gofer::Policy::Base.3 \
@@ -50,6 +51,8 @@ MAN3=		Bundle::DBI.3 \
 		DBI::DBD.3 \
 		DBI::DBD::Metadata.3 \
 		DBI::DBD::SqlEngine.3 \
+		DBI::DBD::SqlEngine::HowTo.3 \
+		DBI::DBD::SqlEngine::Developers.3 \
 		DBI::FAQ.3 \
 		DBI::Gofer::Execute.3 \
 		DBI::Gofer::Request.3 \
@@ -70,8 +73,6 @@ MAN3=		Bundle::DBI.3 \
 		DBI::SQL::Nano.3 \
 		DBI::Util::CacheMemory.3 \
 		DBI::W32ODBC.3 \
-		Roadmap.3 \
-		TASKS.3 \
 		Win32::DBIODBC.3
 
 .if !defined(WITH_PROXY)
