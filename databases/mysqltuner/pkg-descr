@@ -5,4 +5,4 @@ stability. Within seconds, it will display
 statistics about your MySQL installation and the
 areas where it can be improved.
 
-WWW:   http://wiki.mysqltuner.com/MySQLTuner
+WWW:   http://github.com/rackerhacker/MySQLTuner-perl
