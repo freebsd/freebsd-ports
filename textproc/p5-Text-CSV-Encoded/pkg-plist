@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Text/CSV/Encoded.pm
+%%SITE_PERL%%/Text/CSV/Encoded/Coder/Base.pm
+%%SITE_PERL%%/Text/CSV/Encoded/Coder/Encode.pm
+%%SITE_PERL%%/Text/CSV/Encoded/Coder/EncodeGuess.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/CSV/Encoded/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/CSV/Encoded
+@dirrm %%SITE_PERL%%/Text/CSV/Encoded/Coder
+@dirrm %%SITE_PERL%%/Text/CSV/Encoded
+@dirrmtry %%SITE_PERL%%/Text/CSV
+@dirrmtry %%SITE_PERL%%/Text
