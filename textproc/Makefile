@@ -668,6 +668,7 @@
     SUBDIR += p5-Text-BibTeX
     SUBDIR += p5-Text-Bind
     SUBDIR += p5-Text-CSV
+    SUBDIR += p5-Text-CSV-Encoded
     SUBDIR += p5-Text-CSV-Simple
     SUBDIR += p5-Text-CSV_XS
     SUBDIR += p5-Text-Capitalize
