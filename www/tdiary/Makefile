@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tdiary
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES?=	www ruby
 MASTER_SITES=	http://www.tdiary.org/download/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/tdiary|}
