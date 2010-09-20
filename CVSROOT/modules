@@ -5160,6 +5160,7 @@ gtk-qn-x11-theme                ports/x11-themes/gtk-qn-x11-theme
 gtk-qnxtheme                    ports/x11-themes/gtk-qnxtheme
 gtk-qt-engine                   ports/x11-themes/gtk-qt-engine
 gtk-qt4-engine                  ports/x11-themes/gtk-qt4-engine
+gtk-recordmydesktop             ports/multimedia/gtk-recordmydesktop
 gtk-send-pr                     ports/sysutils/gtk-send-pr
 gtk-sharp10                     ports/x11-toolkits/gtk-sharp10
 gtk-sharp20                     ports/x11-toolkits/gtk-sharp20
@@ -6443,6 +6444,8 @@ ja-ruby-slang                   ports/japanese/ruby-slang
 ja-ruby-uconv                   ports/japanese/ruby-uconv
 ja-ruby-usersguide              ports/japanese/ruby-usersguide
 ja-rubygem-jpmobile             ports/japanese/rubygem-jpmobile
+ja-rubygem-jpmobile-ipaddresses  ports/japanese/rubygem-jpmobile-ipaddresses
+ja-rubygem-jpmobile-terminfo    ports/japanese/rubygem-jpmobile-terminfo
 ja-rxvt                         ports/japanese/rxvt
 ja-ryaku-fpw                    ports/japanese/ryaku-fpw
 ja-samba3                       ports/japanese/samba3
@@ -6741,6 +6744,7 @@ jode                            ports/java/jode
 joe                             ports/editors/joe
 joe2                            ports/editors/joe2
 joequake                        ports/games/joequake
+jogamp-jogl                     ports/graphics/jogamp-jogl
 jogl                            ports/graphics/jogl
 john                            ports/security/john
 jomp                            ports/java/jomp
