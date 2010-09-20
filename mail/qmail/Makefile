@@ -642,6 +642,7 @@ post-patch:
 	@cd ${UCSPISRC} && package/compile
 	@cd ${WRKSRC} && ./install_spamcontrol.sh
 	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-spamcontrol-qmail-smtpd.c
+	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-spamcontrol-qmail-remote.c
 . if defined(WITH_SPF_PATCH) && defined(SPF_SPAMCONTROL_PATCH)
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SPF_SPAMCONTROL_PATCH}
 .  if defined(WITH_EXTTODO_PATCH) && defined(EXTTODO_PATCH)
