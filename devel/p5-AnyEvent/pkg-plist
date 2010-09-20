@@ -20,6 +20,10 @@
 %%SITE_PERL%%/AnyEvent/Socket.pm
 %%SITE_PERL%%/AnyEvent/Strict.pm
 %%SITE_PERL%%/AnyEvent/Util.pm
+%%SITE_PERL%%/AnyEvent/Util/idna.pl
+%%SITE_PERL%%/AnyEvent/Util/uts46data.pl
+%%SITE_PERL%%/AnyEvent/constants.pl
 @dirrmtry %%SITE_PERL%%/AnyEvent/Impl
+@dirrmtry %%SITE_PERL%%/AnyEvent/Util
 @dirrmtry %%SITE_PERL%%/AnyEvent
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
