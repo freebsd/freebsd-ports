@@ -1,7 +1,0 @@
-$FreeBSD$
-
---- src/native/unix/configure.dist	Mon Jul  9 10:35:45 2007
-+++ src/native/unix/configure	Mon Jul  9 10:36:04 2007
-@@ -2407 +2407 @@
--  freebsd4.?)
-+  freebsd*)

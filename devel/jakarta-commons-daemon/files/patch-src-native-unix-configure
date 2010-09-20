@@ -1,0 +1,20 @@
+--- src/native/unix/configure.orig	2010-07-30 11:18:01.000000000 +0200
++++ src/native/unix/configure	2010-08-16 22:55:54.000000000 +0200
+@@ -2441,7 +2441,7 @@
+   i?86)
+     CFLAGS="$CFLAGS -DCPU=\\\"i386\\\""
+     HOST_CPU=i386;;
+-  x86_64)
++  x86_64 | amd64)
+     CFLAGS="$CFLAGS -DCPU=\\\"amd64\\\""
+     HOST_CPU=amd64;;
+   bs2000)
+@@ -2980,7 +2980,7 @@
+    LDCMD="$CC"
+ fi
+ 
+-if test "$supported_os" == "linux"
++if test "$supported_os" = "linux"
+ then
+ 
+ echo "$as_me:$LINENO: checking for cap_init in -lcap" >&5

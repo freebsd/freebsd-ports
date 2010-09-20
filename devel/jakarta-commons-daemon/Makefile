@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	commons-daemon
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
 PKGNAMEPREFIX=	jakarta-
-DISTNAME=	daemon-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ronald@echteman.nl
-COMMENT=	Wrapper code to start/stop a Java application as a daemon.
+COMMENT=	Wrapper code to start/stop a Java application as a daemon
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.3+
 JAVA_OS=	native
 JAVA_BUILD=	jdk
 NEED_JAVAC=	yes
@@ -36,12 +36,9 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar bin/jsvc
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		Does not configure
-.endif
-
 post-build:
 	cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all
+	${MV} ${WRKSRC}/dist/${PORTNAME}-${PORTVERSION}.jar ${WRKSRC}/dist/${PORTNAME}.jar
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
