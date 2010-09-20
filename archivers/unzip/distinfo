@@ -4,3 +4,6 @@ SIZE (unzip60.tar.gz) = 1376845
 MD5 (unreduce_full.zip) = b7cde206d69b403e7551b9b0c25bd345
 SHA256 (unreduce_full.zip) = 1f4d93d2250dc1a1d1d2b8aac09d9989d4f9dd2cb0967373bf41fdf5f108cec1
 SIZE (unreduce_full.zip) = 2849
+MD5 (unzip60-alt-iconv-utf8.patch) = 4dcfb2084e9db5a3f411f470d92ab2a4
+SHA256 (unzip60-alt-iconv-utf8.patch) = 6abf9d5e538b948ddb43f11000162348ce46ac0fa93826e6c8edae4ffa488f00
+SIZE (unzip60-alt-iconv-utf8.patch) = 13369
