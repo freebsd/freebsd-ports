@@ -7,7 +7,7 @@
 
 PORTNAME=	lua
 PORTVERSION=	5.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
@@ -30,6 +30,7 @@ USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	LUA_SONAME="liblua-${LUA_VER}.so.${LUA_VER_SH}"
+USE_GMAKE=	yes
 
 MAN1=		lua-${LUA_VER}.1 luac-${LUA_VER}.1
 DOCSDIR=	${PREFIX}/share/doc/${LUA_SUBDIR}
@@ -45,6 +46,12 @@ LUA_TEST=	README bisect.lua cf.lua echo.lua env.lua factorial.lua \
 		fib.lua fibfor.lua globals.lua hello.lua life.lua luac.lua \
 		printf.lua readonly.lua sieve.lua sort.lua table.lua \
 		trace-calls.lua trace-globals.lua xd.lua
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "powerpc"
+CFLAGS+=	-fPIC
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -Ee \
@@ -118,8 +125,4 @@ do-install:
 	${MKDIR} ${LUA_MODLIBDIR}
 	${MKDIR} ${LUA_MODSHAREDIR}
 
-.if ${MACHINE_ARCH:L} == "amd64" || ${MACHINE_ARCH:L} == "powerpc"
-CFLAGS+=	-fPIC
-.endif
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
