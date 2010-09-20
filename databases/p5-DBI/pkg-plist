@@ -6,8 +6,9 @@ bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/DBM.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/ExampleP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/File.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/DBD/File/Roadmap.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/File/Developers.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/DBD/File/HowTo.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/DBD/File/Roadmap.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Gofer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Gofer/Policy/Base.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Gofer/Policy/classic.pm
@@ -29,6 +30,8 @@ bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/DBD.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/DBD/Metadata.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/DBD/SqlEngine.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/DBI/DBD/SqlEngine/Developers.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/DBI/DBD/SqlEngine/HowTo.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/FAQ.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Execute.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Request.pm
@@ -46,13 +49,10 @@ bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/ProfileSubs.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/ProxyServer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/PurePerl.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/DBI/Roadmap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/SQL/Nano.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Util/_accessor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Util/CacheMemory.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/W32ODBC.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Roadmap.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/TASKS.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Win32/DBIODBC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/DBI.bs
@@ -74,6 +74,7 @@ bin/dbiproxy
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Serializer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Transport
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBI/DBD/SqlEngine
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBI/DBD
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Const/GetInfo
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Const
