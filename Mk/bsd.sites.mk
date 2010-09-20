@@ -966,6 +966,7 @@ MASTER_SITE_PERL_CPAN+=	\
 #
 .if !defined(IGNORE_MASTER_SITE_PGSQL)
 MASTER_SITE_PGSQL+= \
+	ftp://ftp.se.postgresql.org/pub/databases/relational/postgresql/%SUBDIR%/ \
 	ftp://ftp9.us.postgresql.org/pub/mirrors/postgresql/%SUBDIR%/ \
 	ftp://ftp10.us.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/db/postgresql/&,} \
@@ -995,7 +996,6 @@ MASTER_SITE_PGSQL+= \
 	ftp://ftp2.ru.postgresql.org/pub/databases/postgresql/%SUBDIR%/ \
 	ftp://ftp3.ru.postgresql.org/pub/mirror/postgresql/pub/%SUBDIR%/ \
 	ftp://ftp5.es.postgresql.org/mirror/postgresql/%SUBDIR%/ \
-	ftp://ftp.se.postgresql.org/pub/databases/relational/postgresql/%SUBDIR%/ \
 	ftp://ftp3.tw.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp.postgresql.org/pub/%SUBDIR%/
 .endif

@@ -1,16 +1,28 @@
---- doc/Makefile.orig	2009-05-15 15:58:05.000000000 +0200
-+++ doc/Makefile	2009-05-15 15:58:18.000000000 +0200
-@@ -25,9 +25,10 @@
+--- doc/src/sgml/Makefile.orig	2010-06-12 23:40:31.000000000 +0200
++++ doc/src/sgml/Makefile	2010-09-19 22:07:11.210759927 +0200
+@@ -15,14 +15,14 @@
  
- .NOTPARALLEL:
+ # Make "html" the default target, since that is what most people tend
+ # to want to use.
+-html:
++man:
  
--ifneq ($(wildcard $(srcdir)/postgres.tar.gz),)
--found_html = yes
--endif
-+# FreeBSD has a separate port for installing the documentation
-+#ifneq ($(wildcard $(srcdir)/postgres.tar.gz),)
-+#found_html = yes
-+#endif
+ subdir = doc/src/sgml
+ top_builddir = ../../..
+ include $(top_builddir)/src/Makefile.global
  
- ifneq ($(wildcard $(srcdir)/man.tar.gz),)
- # SCO OpenServer's man system is sufficiently different to not bother.
+ 
+-all: html man
++all: man
+ 
+ distprep: html distprep-man
+ 
+@@ -285,7 +285,7 @@
+ ## Install
+ ##
+ 
+-install: install-html
++##install: install-html
+ 
+ ifneq ($(PORTNAME), sco)
+ install: install-man

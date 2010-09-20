@@ -1,6 +1,7 @@
 bin/oid2name
+bin/pg_archivecleanup
 bin/pg_standby
-bin/pgbench
+bin/pg_upgrade
 bin/vacuumlo
 lib/postgresql/_int.so
 lib/postgresql/adminpack.so
@@ -23,10 +24,12 @@ lib/postgresql/lo.so
 lib/postgresql/ltree.so
 lib/postgresql/moddatetime.so
 lib/postgresql/pageinspect.so
+lib/postgresql/passwordcheck.so
 lib/postgresql/pg_buffercache.so
 lib/postgresql/pg_freespacemap.so
 lib/postgresql/pg_stat_statements.so
 lib/postgresql/pg_trgm.so
+lib/postgresql/pg_upgrade_support.so
 lib/postgresql/pgcrypto.so
 lib/postgresql/pgrowlocks.so
 lib/postgresql/pgstattuple.so
@@ -38,6 +41,7 @@ lib/postgresql/tablefunc.so
 lib/postgresql/test_parser.so
 lib/postgresql/timetravel.so
 lib/postgresql/tsearch2.so
+lib/postgresql/unaccent.so
 %%DOCSDIR%%/README-contrib
 %%DOCSDIR%%/contrib/README
 %%DOCSDIR%%/contrib/autoinc.example
@@ -81,6 +85,7 @@ share/postgresql/contrib/tablefunc.sql
 share/postgresql/contrib/test_parser.sql
 share/postgresql/contrib/timetravel.sql
 share/postgresql/contrib/tsearch2.sql
+share/postgresql/contrib/unaccent.sql
 share/postgresql/contrib/uninstall__int.sql
 share/postgresql/contrib/uninstall_adminpack.sql
 share/postgresql/contrib/uninstall_btree_gin.sql
@@ -112,6 +117,8 @@ share/postgresql/contrib/uninstall_sslinfo.sql
 share/postgresql/contrib/uninstall_tablefunc.sql
 share/postgresql/contrib/uninstall_test_parser.sql
 share/postgresql/contrib/uninstall_tsearch2.sql
+share/postgresql/contrib/uninstall_unaccent.sql
+share/postgresql/tsearch_data/unaccent.rules
 share/postgresql/tsearch_data/xsyn_sample.rules
 @dirrmtry share/postgresql/tsearch_data >&2
 @dirrmtry share/postgresql/contrib >&2
