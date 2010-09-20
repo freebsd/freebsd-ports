@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.33
+PORTVERSION=	4.34
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/ \
@@ -21,29 +21,20 @@ USE_OPENSSL=	YES
 USE_RC_SUBR=	stunnel
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var/tmp --with-pem-dir=${PEM_DIR} \
+CONFIGURE_ARGS=	--localstatedir=/var/tmp \
 		--enable-static --disable-fips
 
 .if !defined(NOPORTDOCS)
 MAN8=		stunnel.8 stunnel.fr.8 stunnel.pl.8
 .endif
 
-PEM_DIR?=	${PREFIX}/etc
-
 OPTIONS=	FORK	"use the fork(3) threading model"	off \
 		PTHREAD	"use the pthread(3) threading model (default)"	on \
 		UCONTEXT	"use the ucontext(3) threading model"	off \
-		DH	"use Diffie-Hellman key negotiation" off \
 		IPV6	"enable IPv6 support" off \
 		LIBWRAP	"use TCP wrappers" on
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_DH)
-CONFIGURE_ARGS+=	--enable-dh
-.else
-CONFIGURE_ARGS+=	--disable-dh
-.endif
 
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
