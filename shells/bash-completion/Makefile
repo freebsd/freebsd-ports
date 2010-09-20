@@ -19,16 +19,14 @@ USE_BZIP2=		yes
 SUB_FILES=		pkg-message
 
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
+CONFLICTS+=		bash-completion-classic-[0-9]*
 
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-AMD64_REMOVE_RSYNC=	/contrib\/rsync/d
-PLIST_SUB+=	NOAMD64="@comment "
-.else
-PLIST_SUB+=	NOAMD64=""
+BROKEN=	Hostname completion on amd64 causes bash to freeze. Use shells/bash-completion-classic instead
 .endif
 
 post-patch:
@@ -41,8 +39,7 @@ post-patch:
 		s|/usr/lib\(/aspell\)|${PREFIX}/share\1|g; \
 		s|/usr/share/info|&:${PREFIX}/info|g; \
 		s|\$$(sysconfdir)/profile.d|${PREFIX}/bin|g; \
-		s|\(FLAC\)|\1\|flv\|FLV|; \
-		${AMD64_REMOVE_RSYNC}' \
+		s|\(FLAC\)|\1\|flv\|FLV|' \
 		${WRKSRC}/bash_completion ${WRKSRC}/Makefile.in ${WRKSRC}/contrib/*
 
 post-install:
