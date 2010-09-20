@@ -124,7 +124,7 @@ etc/bash_completion.d/rpcdebug
 etc/bash_completion.d/rpm
 etc/bash_completion.d/rpmcheck
 etc/bash_completion.d/rrdtool
-%%NOAMD64%%etc/bash_completion.d/rsync
+etc/bash_completion.d/rsync
 etc/bash_completion.d/rtcwake
 etc/bash_completion.d/samba
 etc/bash_completion.d/sbcl
