@@ -37,6 +37,7 @@ lib/chicken/5/utils.import.so
 lib/libchicken.a
 lib/libchicken.so
 lib/libchicken.so.5
+%%DATADIR%%/chicken.png
 %%DATADIR%%/setup.defaults
 %%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/NEWS
@@ -48,18 +49,20 @@ lib/libchicken.so.5
 %%DOCSDIR%%/manual/Bugs and limitations
 %%DOCSDIR%%/manual/C interface
 %%DOCSDIR%%/manual/Callbacks
+%%DOCSDIR%%/manual/Cross development
 %%DOCSDIR%%/manual/Data representation
 %%DOCSDIR%%/manual/Declarations
 %%DOCSDIR%%/manual/Deployment
 %%DOCSDIR%%/manual/Deviations from the standard
 %%DOCSDIR%%/manual/Embedding
+%%DOCSDIR%%/manual/Exceptions
 %%DOCSDIR%%/manual/Extensions
 %%DOCSDIR%%/manual/Extensions to the standard
 %%DOCSDIR%%/manual/Foreign type specifiers
 %%DOCSDIR%%/manual/Getting started
 %%DOCSDIR%%/manual/Interface to external functions and variables
 %%DOCSDIR%%/manual/Locations
-%%DOCSDIR%%/manual/Modules and macros
+%%DOCSDIR%%/manual/Modules
 %%DOCSDIR%%/manual/Non-standard macros and special forms
 %%DOCSDIR%%/manual/Non-standard read syntax
 %%DOCSDIR%%/manual/Other support procedures
