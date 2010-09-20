@@ -1,4 +1,5 @@
 bin/openal-info
+%%ETCDIR%%/alsoft.conf.sample
 include/AL/al.h
 include/AL/alc.h
 include/AL/alext.h
@@ -8,3 +9,4 @@ lib/libopenal.so.1
 lib/libopenal.so
 libdata/pkgconfig/openal.pc
 @dirrmtry include/AL
+@dirrmtry %%ETCDIR%%
