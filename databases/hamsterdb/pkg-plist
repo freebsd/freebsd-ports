@@ -2,7 +2,7 @@ lib/libhamsterdb.la
 lib/libhamsterdb.a
 lib/libhamsterdb.so
 lib/libhamsterdb.so.2
-include/ham/hamserver.h
+include/ham/hamsterdb_srv.h
 include/ham/hamsterdb.h
 include/ham/hamsterdb_int.h
 include/ham/hamsterdb_stats.h
