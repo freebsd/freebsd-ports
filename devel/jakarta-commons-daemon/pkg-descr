@@ -3,4 +3,4 @@ Daemon is made of 2 parts. One written in C that makes the
 interface to the operating system and the other in Java that
 provides the Daemon API.
 
-WWW: http://jakarta.apache.org/commons/daemon/
+WWW: http://commons.apache.org/daemon/
