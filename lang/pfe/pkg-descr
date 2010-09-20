@@ -6,9 +6,4 @@ Standard for the programming language Forth. Every word of every
 word set mentioned in the dpANS-6 document of June 1993 has been
 implemented.  Additionally it is compatible to Forth-83.
 
-This is a new development version of pfe 0.29.1 under a new
-developer.
-
 WWW: http://pfe.sourceforge.net/
-
-- patrick
