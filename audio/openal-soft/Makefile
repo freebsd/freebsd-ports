@@ -7,6 +7,7 @@
 
 PORTNAME=	openal-soft
 PORTVERSION=	1.12.854
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://kcat.strangesoft.net/openal-releases/
 
@@ -20,7 +21,7 @@ USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 CMAKE_USE_PTHREAD=	yes
 CMAKE_ARGS+=	-DALSA:BOOL=OFF -DPORTAUDIO:BOOL=OFF -DSOLARIS:BOOL=OFF \
-		-DDSOUND:BOOL=OFF
+		-DDSOUND:BOOL=OFF -DALSOFT_CONFIG:BOOL=ON
 
 OPTIONS=	PULSEAUDIO	"Enable sound streaming using PulseAudio" off
 
@@ -34,5 +35,12 @@ CMAKE_ARGS+=	-DPULSEAUDIO:BOOL=ON
 .else
 CMAKE_ARGS+=	-DPULSEAUDIO:BOOL=OFF
 .endif
+
+.post-patch:
+	@${REINPLACE_CMD} 's|/etc/openal|${ETCDIR}|' \
+		${WRKSRC}/Alc/alcConfig.c \
+		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} 's|alsoft.conf|alsoft.conf.sample|' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.post.mk>
