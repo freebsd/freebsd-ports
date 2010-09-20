@@ -306,6 +306,7 @@ include/wine/windows/ipifcons.h
 include/wine/windows/iprtrmib.h
 include/wine/windows/iptypes.h
 include/wine/windows/isguids.h
+include/wine/windows/knownfolders.h
 include/wine/windows/ks.h
 include/wine/windows/ksguid.h
 include/wine/windows/ksmedia.h
@@ -466,6 +467,7 @@ include/wine/windows/rasdlg.h
 include/wine/windows/raserror.h
 include/wine/windows/reason.h
 include/wine/windows/regstr.h
+include/wine/windows/restartmanager.h
 include/wine/windows/richedit.h
 include/wine/windows/richole.h
 include/wine/windows/richole.idl
@@ -944,6 +946,7 @@ lib/wine/fakedlls/imagehlp.dll
 lib/wine/fakedlls/imm.dll16
 lib/wine/fakedlls/imm32.dll
 lib/wine/fakedlls/inetcomm.dll
+lib/wine/fakedlls/inetcpl.cpl
 lib/wine/fakedlls/inetmib1.dll
 lib/wine/fakedlls/infosoft.dll
 lib/wine/fakedlls/initpki.dll
@@ -1256,6 +1259,7 @@ lib/wine/imagehlp.dll.so
 lib/wine/imm.dll16.so
 lib/wine/imm32.dll.so
 lib/wine/inetcomm.dll.so
+lib/wine/inetcpl.cpl.so
 lib/wine/inetmib1.dll.so
 lib/wine/infosoft.dll.so
 lib/wine/initpki.dll.so
