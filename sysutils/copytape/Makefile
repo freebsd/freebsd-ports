@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	unix/volume10
 DISTNAME=		copytape
 EXTRACT_SUFX=		.Z
 
-MAINTAINER=		sjr@comcast.net
+MAINTAINER=		sjroz@verizon.net
 COMMENT=		A program that is used to duplicate magtapes
 
 EXTRACT_DEPENDS=	gunshar:${PORTSDIR}/archivers/sharutils
