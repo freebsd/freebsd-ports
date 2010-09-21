@@ -7,7 +7,7 @@
 
 PORTNAME=	userneu
 PORTVERSION=	1.43
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://btw23.de/johannes/files/userneu/\
 		http://home.arcor.de/fehlner/fbsd_ports/\
@@ -20,8 +20,7 @@ COMMENT=	Account management and creation tool
 
 RUN_DEPENDS=	\
     ${SITE_PERL}/Crypt/PasswdMD5.pm:${PORTSDIR}/security/p5-Crypt-PasswdMD5/ \
-    ${SITE_PERL}/Crypt/RandPasswd.pm:${PORTSDIR}/security/p5-Crypt-RandPasswd/ \
-    ${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5/
+    ${SITE_PERL}/Crypt/RandPasswd.pm:${PORTSDIR}/security/p5-Crypt-RandPasswd/
 
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
@@ -36,6 +35,12 @@ LDOCS2=		README INSTALL userneu.pod userneu.conf.pod
 PORTDOCS=	${LDOCS1} ${LDOCS2}
 EXAMPLES=	userlist userneu.conf.example
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
+.endif
+
 do-install:
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN8} ${MANPREFIX}/man/man8
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN5} ${MANPREFIX}/man/man5
@@ -49,4 +54,4 @@ do-install:
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${LDOCS2} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

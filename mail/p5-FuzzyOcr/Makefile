@@ -7,7 +7,7 @@
 
 PORTNAME=	FuzzyOcr
 DISTVERSION=	2.3b
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://users.own-hero.net/~decoder/${PORTNAME:L}/
@@ -22,7 +22,6 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm			\
 		gocr:${PORTSDIR}/graphics/gocr				\
 		gif2ps:${PORTSDIR}/graphics/libungif			\
 		spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin	\
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5	\
 		${SITE_PERL}/${PERL_ARCH}/String/Approx.pm:${PORTSDIR}/devel/p5-String-Approx
 
 CONFLICTS=	p5-FuzzyOcr-devel-[0-9]*
@@ -51,6 +50,12 @@ PLIST_FILES=	${SA_CONFIGDIR}/FuzzyOcr.pm				\
 		%%EXAMPLESDIR%%/FuzzyOcr.cf %%EXAMPLESDIR%%/FuzzyOcr.words
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin,${LOCALBASE}/bin,g'		\
 	                  -e 's,/bin/grep,/usr/bin/grep,g'		\
@@ -77,4 +82,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

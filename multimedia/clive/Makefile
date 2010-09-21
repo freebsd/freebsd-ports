@@ -13,8 +13,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	geekounet@poildetroll.net
 COMMENT=	Command line video extraction tool for YouTube and others
 
-RUN_DEPENDS=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA \
-		p5-HTML-Parser>=3.59:${PORTSDIR}/www/p5-HTML-Parser \
+RUN_DEPENDS=	p5-HTML-Parser>=3.59:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-WWW-Curl>=4.05:${PORTSDIR}/www/p5-WWW-Curl \
 		p5-Class-Singleton>=1.4:${PORTSDIR}/devel/p5-Class-Singleton \
 		p5-Getopt-ArgvFile>=1.11:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
@@ -35,6 +34,10 @@ PERL_CONFIGURE=	yes
 USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA
+.endif
 
 .if defined(WITH_CACHE)
 RUN_DEPENDS+=	p5-BerkeleyDB>=0.36:${PORTSDIR}/databases/p5-BerkeleyDB

@@ -22,7 +22,6 @@ RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP				\
 		${SITE_PERL}/DB_File/Lock.pm:${PORTSDIR}/devel/p5-DB_File-Lock				\
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session			\
 		${SITE_PERL}/Net/NBName.pm:${PORTSDIR}/net/p5-Net-NBName				\
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5		\
 		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg			\
 		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test			\
 		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser		\
@@ -55,6 +54,10 @@ CONFIG_FILES=	netdisco.conf netdisco.crontab netdisco-topology.txt \
 		netdisco_apache.conf netdisco_apache_dir.conf
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
+.endif
 
 .if ${PERL_LEVEL} < 500903
 RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress

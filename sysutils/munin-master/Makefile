@@ -7,6 +7,7 @@
 
 PORTNAME=	munin
 PORTVERSION=	1.4.5
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable/${PORTVERSION}
 PKGNAMESUFFIX=	-master
@@ -16,7 +17,6 @@ COMMENT=	Collector part of Munin
 
 BUILD_DEPENDS=	${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build \
 		${SITE_PERL}/Munin/Common/Defaults.pm:${PORTSDIR}/sysutils/munin-common \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
 		${SITE_PERL}/${PERL_ARCH}/RRDs.pm:${PORTSDIR}/databases/rrdtool \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/converters/p5-Storable-AMF \
@@ -27,7 +27,6 @@ BUILD_DEPENDS=	${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build \
 		${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced
 RUN_DEPENDS=	${SITE_PERL}/Munin/Common/Defaults.pm:${PORTSDIR}/sysutils/munin-common \
 		${SITE_PERL}/${PERL_ARCH}/RRDs.pm:${PORTSDIR}/databases/rrdtool \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/converters/p5-Storable-AMF \
 		${SITE_PERL}/DateTime/HiRes.pm:${PORTSDIR}/devel/p5-DateTime-HiRes \
@@ -67,6 +66,13 @@ MAN8=		munin-cron.8 \
 PLIST_SUB=	DBDIR=${DBDIR}
 SUB_FILES=	pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
+BUILD_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
+.endif
+
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGDIR}/pkg-install ${PKGNAME} PRE-INSTALL
@@ -88,4 +94,4 @@ post-install:
 		${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

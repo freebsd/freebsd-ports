@@ -7,7 +7,7 @@
 
 PORTNAME=	majordomo
 PORTVERSION=	1.94.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		ftp://ftp.sgi.com/other/majordomo/1.94.5/ \
@@ -19,8 +19,6 @@ COMMENT=	A mailing list manager
 
 .if defined(WITH_SHA1_COOKIES)
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
-.else
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 .endif
 
 USE_PERL5=	yes
@@ -32,6 +30,14 @@ MAN8=		majordomo.8
 PKGMESSAGE=	${FILESDIR}/post-install-notes
 
 DOCSDIR=	${PREFIX}/${PORTNAME}/doc
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_SHA1_COOKIES)
+. if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+. endif
+.endif
 
 pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
@@ -103,4 +109,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

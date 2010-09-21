@@ -7,7 +7,7 @@
 
 PORTNAME=	v6eval
 PORTVERSION=	3.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tahi.org/release/v6eval/
@@ -15,8 +15,7 @@ MASTER_SITES=	http://www.tahi.org/release/v6eval/
 MAINTAINER=	Yukiyo.Akisada@jp.yokogawa.com
 COMMENT=		IPv6 Conformance Test Platform
 
-RUN_DEPENDS=	${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+RUN_DEPENDS=	${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect
 
 USE_PERL5=	yes
 USE_OPENSSL=	yes
@@ -29,6 +28,10 @@ MAKE_JOBS_UNSAFE=	yes
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
+.endif
 
 .if ${OSVERSION} > 900007
 BROKEN=		fails to build with new utmpx

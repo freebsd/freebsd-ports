@@ -7,15 +7,13 @@
 
 PORTNAME=	markdown
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://daringfireball.net/projects/downloads/
 DISTNAME=	Markdown_${PORTVERSION}
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A text-to-HTML conversion tool for web writers
-
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_ZIP=	yes
 USE_PERL5=	yes
@@ -38,4 +36,11 @@ do-install:
 	${INSTALL_DATA} "${WRKSRC}/Markdown Readme.text" ${DOCSDIR}/Markdown-Readme.text
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
+BUILD_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
+.endif
+
+.include <bsd.port.post.mk>

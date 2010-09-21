@@ -7,6 +7,7 @@
 
 PORTNAME=	pftabled
 PORTVERSION=	1.08
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.wolfermann.org/
 
@@ -26,7 +27,9 @@ OPTIONS=	PERLC "A Sample Perl Client" On
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PERLC)
-RUN_DEPEND=	p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5
+. if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
+. endif
 PLIST_FILES+=	bin/pftabled-client.pl bin/pftabled-client.py
 
 post-install:

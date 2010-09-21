@@ -7,6 +7,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	3.6.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -39,7 +40,6 @@ RUN_DEPENDS+=	\
 		p5-Template-Toolkit>=2.22:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-DateTime>=0.28:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-TimeZone>=0.71:${PORTSDIR}/devel/p5-DateTime-TimeZone \
-		p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-Email-Send>=2.00:${PORTSDIR}/mail/p5-Email-Send \
 		p5-Email-MIME>=1.861:${PORTSDIR}/mail/p5-Email-MIME
@@ -70,6 +70,10 @@ DATA_DIRS_LIST=	images js skins
 NO_BUILD=
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA
+.endif
 
 .ifdef WITH_MYSQL
 RUN_DEPENDS+=	p5-DBD-mysql>=2.9003:${PORTSDIR}/databases/p5-DBD-mysql

@@ -7,7 +7,7 @@
 
 PORTNAME=	cons
 PORTVERSION=	2.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 		http://www.gnu.org/software/cons/stable/ \
@@ -17,8 +17,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rv@gnu.org
 COMMENT=	A Perl-based Make Replacement
-
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 
 USE_PERL5=	yes
 NO_BUILD=	yes
@@ -30,6 +28,12 @@ DOCS=		CHANGES COPYING COPYRIGHT INSTALL MANIFEST README RELEASE \
 		cons.html TODO
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
+.endif
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cons ${PREFIX}/bin/cons
 	${INSTALL_MAN} ${WRKSRC}/cons.1.gz ${PREFIX}/man/man1/cons.1.gz
@@ -40,4 +44,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

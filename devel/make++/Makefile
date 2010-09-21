@@ -8,6 +8,7 @@
 
 PORTNAME=	make++
 PORTVERSION=	1.19
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	SF/makepp/makepp/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/+/p/g}-${PORTVERSION}
@@ -15,10 +16,14 @@ DISTNAME=	${PORTNAME:S/+/p/g}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A drop-in replacement for GNU make
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-
 USE_PERL5=	yes
 DATADIR=	${PREFIX}/share/makepp
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
+.endif
 
 do-build:
 	@${PERL} -pi -e "s|\@htmldir\@|${PREFIX}/share/makepp/html|g ; \
@@ -35,4 +40,4 @@ do-install:
 	@(cd ${WRKSRC} ; \
 	  ${FIND} . -name "*.mk" -exec ${INSTALL_SCRIPT} {} ${DATADIR} \;)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

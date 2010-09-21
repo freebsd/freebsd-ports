@@ -7,6 +7,7 @@
 
 PORTNAME=	DBIx-Class-EncodedColumn
 PORTVERSION=	0.00010
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -38,7 +39,9 @@ OPTIONS=	SHA "Digest::SHA Support" On \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SHA)
+. if ${PERL_LEVEL} < 501000
 RUN_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
+. endif
 .endif
 .if defined(WITH_BLOWFISH)
 RUN_DEPENDS+=	p5-Crypt-Eksblowfish>=0:${PORTSDIR}/security/p5-Crypt-Eksblowfish
