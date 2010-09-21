@@ -31,9 +31,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates/paste_deploy/docs/devel_config.ini_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates/paste_deploy/+package+/sampleapp.py_tmpl
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates/paste_deploy/+package+/wsgiapp.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/util/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/util/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/util/__init__.pyo
@@ -43,12 +40,33 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/util/threadinglocal.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/util/threadinglocal.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/util/threadinglocal.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/finddata.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/finddata.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/finddata.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/fixture.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/fixture.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/fixture.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_basic_app.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_basic_app.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_basic_app.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_config_middleware.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_config_middleware.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_config_middleware.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_filter.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_filter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_filter.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_load_package.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_load_package.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests/test_load_package.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/util
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates/paste_deploy/docs
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates/paste_deploy/+package+
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates/paste_deploy
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy/paster_templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/deploy
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
