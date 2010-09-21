@@ -27,6 +27,7 @@ LICENSE_FILE_CCbyNCSA3=	${WRKSRC}/cc-by-nc-sa-3.txt
 LICENSE_NAME_EULA=	Steel storm episode 1 limited user software license agreement
 LICENSE_PERMS_EULA=	# none
 LICENSE_FILE_EULA=	${WRKSRC}/license.txt
+MANUAL_PACKAGE_BUILD=	needs interactive license confirmation
 
 USE_GL=		gl
 MAKE_JOBS_SAFE=	yes
