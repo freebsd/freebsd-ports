@@ -20,4 +20,10 @@ USE_DOS2UNIX=	DirEnumerator.cpp ZipFile_stl.cpp ZipPlatform_lnx.cpp
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake gui svg webkit xml moc uic rcc
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
+.include <bsd.port.post.mk>
