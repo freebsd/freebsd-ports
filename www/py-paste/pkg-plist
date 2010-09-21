@@ -269,6 +269,78 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/wsgiwrappers.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/wsgiwrappers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/wsgiwrappers.pyo
+%%PORTDOCS%%%%DOCSDIR%%/DeveloperGuidelines.html
+%%PORTDOCS%%%%DOCSDIR%%/StyleGuide.html
+%%PORTDOCS%%%%DOCSDIR%%/community/index.html
+%%PORTDOCS%%%%DOCSDIR%%/community/mailing-list.html
+%%PORTDOCS%%%%DOCSDIR%%/community/repository.html
+%%PORTDOCS%%%%DOCSDIR%%/developer-features.html
+%%PORTDOCS%%%%DOCSDIR%%/do-it-yourself-framework.html
+%%PORTDOCS%%%%DOCSDIR%%/download/index.html
+%%PORTDOCS%%%%DOCSDIR%%/future.html
+%%PORTDOCS%%%%DOCSDIR%%/genindex.html
+%%PORTDOCS%%%%DOCSDIR%%/include/contact.html
+%%PORTDOCS%%%%DOCSDIR%%/include/reference_header.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/modindex.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/auth.auth_tkt.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/auth.basic.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/auth.cas.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/auth.cookie.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/auth.digest.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/auth.form.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/auth.grantip.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/auth.multi.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/auth.open_id.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/cascade.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/cgiapp.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/cgitb_catcher.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/debug.debugapp.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/debug.fsdiff.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/debug.prints.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/debug.profile.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/debug.watchthreads.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/debug.wdg_validate.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/errordocument.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/evalexception.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/fileapp.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/fixture.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/gzipper.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/httpexceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/httpheaders.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/httpserver.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/lint.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/pony.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/progress.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/proxy.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/recursive.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/registry.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/reloader.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/request.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/response.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/session.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/transaction.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/translogger.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/url.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/urlmap.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/urlparser.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/util.import_string.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/util.multidict.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/wsgilib.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/wsgiwrappers.html
+%%PORTDOCS%%%%DOCSDIR%%/news.html
+%%PORTDOCS%%%%DOCSDIR%%/paste-httpserver-threadpool.html
+%%PORTDOCS%%%%DOCSDIR%%/py-modindex.html
+%%PORTDOCS%%%%DOCSDIR%%/search.html
+%%PORTDOCS%%%%DOCSDIR%%/testing-applications.html
+%%PORTDOCS%%%%DOCSDIR%%/url-parsing-with-wsgi.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/modules
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/include
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/download
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/community
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/util
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/exceptions
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/paste/evalexception/media
