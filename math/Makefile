@@ -99,6 +99,7 @@
     SUBDIR += geonext
     SUBDIR += gexpr
     SUBDIR += ggobi
+    SUBDIR += giacxcas
     SUBDIR += glgraph
     SUBDIR += glpk
     SUBDIR += gmm++
