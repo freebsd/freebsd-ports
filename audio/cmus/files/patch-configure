@@ -1,0 +1,11 @@
+--- configure.orig	2010-09-10 23:37:55.577146100 +0200
++++ configure	2010-09-10 23:38:07.609090631 +0200
+@@ -135,7 +135,7 @@
+ {
+ 	check_header mpc/mpcdec.h
+ 	MPC_SV7=$?
+-	check_library MPC "" "-lmpcdec"
++	check_library MPC "" "-lmpcdec -lm"
+ 	return $?
+ }
+ 
