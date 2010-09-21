@@ -7,6 +7,7 @@
 
 PORTNAME=	redis
 DISTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
@@ -17,7 +18,7 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-CONFLICTS?=	redis1-1.*
+CONFLICTS?=	redis-1.*
 
 USE_GMAKE=	yes
 USE_RC_SUBR=	redis.sh
