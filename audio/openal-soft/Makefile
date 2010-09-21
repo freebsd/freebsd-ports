@@ -36,7 +36,7 @@ CMAKE_ARGS+=	-DPULSEAUDIO:BOOL=ON
 CMAKE_ARGS+=	-DPULSEAUDIO:BOOL=OFF
 .endif
 
-.post-patch:
+post-patch:
 	@${REINPLACE_CMD} 's|/etc/openal|${ETCDIR}|' \
 		${WRKSRC}/Alc/alcConfig.c \
 		${WRKSRC}/CMakeLists.txt
