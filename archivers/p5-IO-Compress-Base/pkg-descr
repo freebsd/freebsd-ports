@@ -1,4 +1,0 @@
-This module is the base class for all IO::Compress and IO::Uncompress
-modules.
-
-WWW: http://search.cpan.org/dist/IO-Compress-Base/

@@ -1,2 +1,0 @@
-A Perl5 interface to allow reading and writing of RFC 1950, 1951, 1952
-(i.e. gzip) and zip files/buffers.

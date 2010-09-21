@@ -1,4 +1,0 @@
-This module provides a Perl interface that allows writing bzip2
-compressed data to files or buffer.
-
-WWW:     http://search.cpan.org/dist/IO-Compress-Bzip2/

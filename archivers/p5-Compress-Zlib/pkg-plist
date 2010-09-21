@@ -1,8 +1,0 @@
-%%SITE_PERL%%/Compress/Zlib.pm
-%%SITE_PERL%%/auto/Compress/Zlib/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/Zlib/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/Zlib
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress
-@dirrmtry %%SITE_PERL%%/auto/Compress/Zlib
-@dirrmtry %%SITE_PERL%%/auto/Compress
-@dirrmtry %%SITE_PERL%%/Compress
