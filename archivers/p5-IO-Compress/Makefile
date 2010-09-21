@@ -11,7 +11,7 @@ CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	IO::Compress, IO::Uncompress and Compress::Zlib Perl5 modules
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Raw/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib \
