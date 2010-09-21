@@ -1,0 +1,19 @@
+--- bash_completion.old	Sat Sep 23 20:42:29 2006
++++ bash_completion	Sun Sep 24 10:55:26 2006
+@@ -5485,14 +5485,10 @@
+ 	local cur portsdir prev indexfile
+ 	local -a COMPREPLY2
+ 
+-	portsdir=${PORTSDIR:-/usr/ports}/
++	portsdir=${PORTSDIR:-/usr/ports}
+ 	cur=${COMP_WORDS[COMP_CWORD]}
+ 	prev=${COMP_WORDS[COMP_CWORD-1]}
+-	# First try INDEX-5
+-	indexfile=$portsdir/INDEX-5
+-	# Then INDEX if INDEX-5 does not exist or system is not FreeBSD 5.x
+-	[ "${OSTYPE%.*}" = "freebsd5" -a -f $indexfile ] ||
+-	  indexfile=$portsdir/INDEX
++	indexfile="${portsdir}/INDEX-${OSTYPE:7:1}"
+ 
+ 	[ "$prev" = "-l" -o "$prev" = "-L" -o "$prev" = "-o" ] && return 0
+ 

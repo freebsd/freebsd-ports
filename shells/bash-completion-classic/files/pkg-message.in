@@ -1,15 +1,9 @@
 
-=====================================================================
+The programmable completion library is not enabled by default for various
+reasons.  To use it, you should source %%PREFIX%%/etc/bash_completion from
+your .bashrc file.  For example:
 
-You must enable the bash programmable completion library yourself!
-
-	* source %%PREFIX%%/etc/bash_completion from your .bashrc file
-
-		if [ -f %%PREFIX%%/etc/bash_completion ]; then
-			. %%PREFIX%%/etc/bash_completion
-		fi
-	
-	* or, run %%PREFIX%%/bin/bash_completion.sh from your .bashrc
-
-=====================================================================
+    if [ -f %%PREFIX%%/etc/bash_completion ]; then
+        . %%PREFIX%%/etc/bash_completion
+    fi
 

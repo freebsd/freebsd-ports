@@ -1,5 +1,9 @@
-This is a programmable completion convenience library for the bash(1)
-shell. It features the ability to tab-complete arguments for many common
-programs.
+This is a programmable completion library for bash users. It features the
+ability to tab-complete arguments for many common programs.
 
-WWW: http://bash-completion.alioth.debian.org/
+This is the original project which became later shells/bash-completion. The new
+version is developed by a new group and has some very nice new features.
+Unfortunately, the new version currently causes problems on amd64 systems.
+People with amd64 systems may use this classic version as an alternative.
+
+WWW: http://www.caliban.org/bash/index.shtml
