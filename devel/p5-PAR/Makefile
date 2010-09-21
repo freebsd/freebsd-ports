@@ -7,6 +7,7 @@
 
 PORTNAME=	PAR
 PORTVERSION=	1.00.2
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,11 +16,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([0-9])$/\1/}
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Perl Archive Toolkit
 
-BUILD_DEPENDS=	p5-Archive-Zip>=1.00:${PORTSDIR}/archivers/p5-Archive-Zip \
+RUN_DEPENDS=	p5-Archive-Zip>=1.00:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-AutoLoader>=5.67:${PORTSDIR}/devel/p5-AutoLoader \
-		p5-Compress-Zlib>=1.30:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		p5-PAR-Dist>=0.32:${PORTSDIR}/devel/p5-PAR-Dist
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -30,7 +30,13 @@ MAN3=		PAR.3 \
 		PAR::SetupProgname.3 \
 		PAR::SetupTemp.3
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
 regression-test:
 	cd ${WRKSRC} && ${MAKE} test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

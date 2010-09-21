@@ -7,7 +7,7 @@
 
 PORTNAME=	CAD-Drawing
 PORTVERSION=	0.26
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,14 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Methods to create, load, and save vector graphics
 
-BUILD_DEPENDS=	${SITE_PERL}/Math/Vec.pm:${PORTSDIR}/math/p5-Math-Vec \
+RUN_DEPENDS=	${SITE_PERL}/Math/Vec.pm:${PORTSDIR}/math/p5-Math-Vec \
 		${SITE_PERL}/CAD/Calc.pm:${PORTSDIR}/math/p5-CAD-Calc \
 		${SITE_PERL}/Math/MatrixReal.pm:${PORTSDIR}/math/p5-MatrixReal \
 		${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
-		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/Stream/FileInputStream.pm:${PORTSDIR}/devel/p5-Stream \
 		${SITE_PERL}/Math/Geometry/Planar.pm:${PORTSDIR}/math/p5-Math-Geometry-Planar
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	CAD::Drawing.3 \
 	CAD::Drawing::Calculate.3 \
@@ -39,4 +38,10 @@ MAN3=	CAD::Drawing.3 \
 
 PERL_MODBUILD=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+.include <bsd.port.post.mk>

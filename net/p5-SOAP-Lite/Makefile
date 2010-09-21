@@ -7,7 +7,7 @@
 
 PORTNAME=	SOAP-Lite
 PORTVERSION=	0.712
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,6 @@ COMMENT=	SOAP::Lite - Client and server side SOAP implementation
 RUN_DEPENDS=	p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite \
 		p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		p5-Compress-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		p5-XML-Parser>=2.23:${PORTSDIR}/textproc/p5-XML-Parser \
@@ -62,8 +61,14 @@ MAN3=		Apache::SOAP.3 \
 		XMLRPC::Transport::POP3.3 \
 		XMLRPC::Transport::TCP.3
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|^#!.*perl|#!${PERL}|' \
 		${WRKSRC}/bin/* ${WRKSRC}/t/*.t ${WRKSRC}/t/*.pl
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

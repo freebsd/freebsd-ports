@@ -7,6 +7,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	4.81.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -26,7 +27,6 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
 	${SITE_PERL}/Net/Ident.pm:${PORTSDIR}/net/p5-Net-Ident \
 	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
 	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 	${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
@@ -58,6 +58,10 @@ MAN8=		MailScanner.8
 MLINKS=		MailScanner.8 mailscanner.8
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+BUILD_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
 
 .if defined(WITH_SPAMASSASSIN)
 RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin

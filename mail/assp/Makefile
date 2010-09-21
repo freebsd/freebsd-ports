@@ -7,6 +7,7 @@
 
 PORTNAME=	assp
 PORTVERSION=	1.7.5.7
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/ASSP%20Installation/${PORTNAME:U}%20${PORTVERSION}/
 DISTNAME=	${PORTNAME:U}_${PORTVERSION}-Install
@@ -87,7 +88,9 @@ RUN_DEPENDS+=	${SITE_PERL}/File/ReadBackwards.pm:${PORTSDIR}/devel/p5-File-ReadB
 .endif
 
 .if !defined(WITHOUT_ZLIB)
-RUN_DEPENDS+=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
+. if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
 .endif
 
 .if !defined(WITHOUT_CLAMAV)

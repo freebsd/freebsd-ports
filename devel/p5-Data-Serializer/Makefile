@@ -7,7 +7,7 @@
 
 PORTNAME=	Data-Serializer
 PORTVERSION=	0.49
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,10 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modules that serialize data structures
 
-BUILD_DEPENDS=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
+RUN_DEPENDS=	${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 
@@ -32,4 +31,10 @@ MAN3=		Data::Serializer.3 Data::Serializer::Config::General.3 \
 		Data::Serializer::XML::Simple.3 Data::Serializer::YAML.3 \
 		Data::Serializer::YAML::Syck.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+.include <bsd.port.post.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	Astro-SpaceTrack
 PORTVERSION=	0.048
+PORTREVISION=	1
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,7 +29,7 @@ MAN3=		Astro::SpaceTrack.3
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-Compress-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Zlib
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
 
 .include <bsd.port.post.mk>

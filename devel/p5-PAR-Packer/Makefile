@@ -7,6 +7,7 @@
 
 PORTNAME=	PAR-Packer
 PORTVERSION=	1.00.7
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,15 +16,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([0-9])$/\1/}
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	PAR Packager
 
-BUILD_DEPENDS=	p5-Archive-Zip>=1.00:${PORTSDIR}/archivers/p5-Archive-Zip \
-		p5-Compress-Zlib>=1.30:${PORTSDIR}/archivers/p5-Compress-Zlib \
+RUN_DEPENDS=	p5-Archive-Zip>=1.00:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-Getopt-ArgvFile>=1.07:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
 		p5-Module-ScanDeps>=0.96:${PORTSDIR}/devel/p5-Module-ScanDeps \
 		${SITE_PERL}/Module/Signature.pm:${PORTSDIR}/security/p5-Module-Signature \
 		p5-PAR-Dist>=0.22:${PORTSDIR}/devel/p5-PAR-Dist \
 		p5-PAR>=1.00.0:${PORTSDIR}/devel/p5-PAR \
 		${SITE_PERL}/B/Deobfuscate.pm:${PORTSDIR}/devel/p5-B-Deobfuscate
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFLICTS=	sketchy-*
 
@@ -44,4 +44,10 @@ MAN3=		pp.3 \
 		PAR::StrippedPARL::Dynamic.3 \
 		PAR::StrippedPARL::Static.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+.include <bsd.port.post.mk>

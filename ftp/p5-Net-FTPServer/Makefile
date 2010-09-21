@@ -8,7 +8,7 @@
 
 PORTNAME=	Net-FTPServer
 PORTVERSION=	1.122
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,6 @@ COMMENT=	A full-featured, secure, extensible and configurable Perl FTP server
 RUN_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-Authen-PAM>=0:${PORTSDIR}/security/p5-Authen-PAM \
 		p5-BSD-Resource>=0:${PORTSDIR}/devel/p5-BSD-Resource \
-		p5-Compress-Zlib>=1.14:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-File-Sync>=0:${PORTSDIR}/devel/p5-File-Sync \
 		p5-IO-stringy>=1.126:${PORTSDIR}/devel/p5-IO-stringy
@@ -56,6 +55,12 @@ DOCS=	FAQ README TODO doc/*
 PORTDOCS=	*
 PORTEXAMPLES=	ftpd.conf
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s/root,root/root,wheel/" \
 		-e "s,/usr/sbin,${PREFIX}/sbin," \
@@ -76,4 +81,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

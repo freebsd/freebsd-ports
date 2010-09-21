@@ -7,7 +7,7 @@
 
 PORTNAME=	svk
 PORTVERSION=	2.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
@@ -23,7 +23,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-L
 		${SITE_PERL}/App/CLI.pm:${PORTSDIR}/devel/p5-App-CLI \
 		${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw \
 		${SITE_PERL}/IO/Digest.pm:${PORTSDIR}/devel/p5-IO-Digest \
 		${SITE_PERL}/IO/Pager.pm:${PORTSDIR}/devel/p5-IO-Pager \
@@ -171,9 +170,11 @@ RUN_DEPENDS+=	p5-Getopt-Long>=2.35:${PORTSDIR}/devel/p5-Getopt-Long
 
 .if ${PERL_LEVEL} < 500903
 BUILD_DEPENDS+=	p5-Pod-Escapes>=0:${PORTSDIR}/textproc/p5-Pod-Escapes \
-		p5-Pod-Simple>=0:${PORTSDIR}/textproc/p5-Pod-Escapes
+		p5-Pod-Simple>=0:${PORTSDIR}/textproc/p5-Pod-Escapes \
+		p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
 RUN_DEPENDS+=	p5-Pod-Escapes>=0:${PORTSDIR}/textproc/p5-Pod-Escapes \
-		p5-Pod-Simple>=0:${PORTSDIR}/textproc/p5-Pod-Escapes
+		p5-Pod-Simple>=0:${PORTSDIR}/textproc/p5-Pod-Escapes \
+		p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
 
 pre-everything::

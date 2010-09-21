@@ -7,7 +7,7 @@
 
 PORTNAME=	Apache-PageKit
 PORTVERSION=	1.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,10 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	MVCC web framework using mod_perl, XML and HTML::Template
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
-		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/Data/FormValidator.pm:${PORTSDIR}/textproc/p5-Data-FormValidator \
 		${SITE_PERL}/HTML/FillInForm.pm:${PORTSDIR}/www/p5-HTML-FillInForm \
 		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
@@ -33,7 +32,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXSLT.pm:${PORTSDIR}/textproc/p5-XML-LibXSLT \
 		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 EXAMPLESDIR?=	${PREFIX}/share/examples/${PORTNAME}
 PERL_CONFIGURE=	5.8.0+
@@ -43,6 +42,12 @@ MAN3=		Apache::ErrorReport.3 \
 		Apache::PageKit::FAQ.3 \
 		Apache::PageKit::Model.3 \
 		Apache::PageKit::Session.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
 
 post-build:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
@@ -79,4 +84,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

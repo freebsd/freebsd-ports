@@ -7,7 +7,7 @@
 
 PORTNAME=	amphetadesk
 PORTVERSION=	0.93.1
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	www perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-src-v${PORTVERSION}
 DISTNAME=	${PORTNAME}-src-v${PORTVERSION}
@@ -16,7 +16,6 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	RSS client that serves HTTP to your local web browser
 
 RUN_DEPENDS=	\
-		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset \
@@ -43,6 +42,12 @@ SUB_LIST+=	PERL="${PERL}"
 .ifndef(NOPORTDOCS)
 PORTDOCS=	\
 		*
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
 
 post-patch:
@@ -118,4 +123,4 @@ do-install:
 		${INSTALL_DATA} {} ${DATADIR}/{}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -8,7 +8,7 @@
 
 PORTNAME=	FEAR-API
 PORTVERSION=	0.489
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/X/XE/XERN
@@ -17,8 +17,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web Scraping Zen
 
-BUILD_DEPENDS=	p5-Compress-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		p5-Email-Find>=0:${PORTSDIR}/mail/p5-Email-Find \
+RUN_DEPENDS=	p5-Email-Find>=0:${PORTSDIR}/mail/p5-Email-Find \
 		p5-Exporter-Lite>=0:${PORTSDIR}/devel/p5-Exporter-Lite \
 		p5-File-MMagic>=0:${PORTSDIR}/devel/p5-File-MMagic \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
@@ -45,7 +44,7 @@ BUILD_DEPENDS=	p5-Compress-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		p5-XML-RSS-SimpleGen>=0:${PORTSDIR}/textproc/p5-XML-RSS-SimpleGen \
 		p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -54,4 +53,10 @@ MAN3=	FEAR::API.3 \
 	FEAR::API::Filters.3 \
 	FEAR::API::Document.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+.include <bsd.port.post.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	Git-PurePerl
 PORTVERSION=	0.41
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/L/LB/LBROCARD
@@ -16,8 +17,6 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Pure Perl interface to Git repositories
 
 RUN_DEPENDS=	p5-Archive-Extract>=0:${PORTSDIR}/archivers/p5-Archive-Extract \
-		p5-Compress-Raw-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib \
-		p5-Compress-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		p5-Data-Stream-Bulk>=0:${PORTSDIR}/devel/p5-Data-Stream-Bulk \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-StrictConstructor>=0:${PORTSDIR}/devel/p5-MooseX-StrictConstructor \
@@ -28,4 +27,11 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Git::PurePerl.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+BUILD_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+.include <bsd.port.post.mk>

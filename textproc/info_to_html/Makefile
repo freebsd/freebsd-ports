@@ -8,19 +8,24 @@
 
 PORTNAME=	info_to_html
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://www.mons.net/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translate GNU info files into HTML pages
 
-RUN_DEPENDS=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
-
 PLIST_FILES=	bin/info_to_html
 USE_PERL5=	yes
 NO_BUILD=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/info_to_html ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

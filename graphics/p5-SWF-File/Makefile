@@ -7,6 +7,7 @@
 
 PORTNAME=	SWF-File
 PORTVERSION=	0.42
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics www perl5
 MASTER_SITES=	CPAN
@@ -15,9 +16,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Manipulating Flash movie (SWF) files
 
-BUILD_DEPENDS=	${SITE_PERL}/Data/TemporaryBag.pm:${PORTSDIR}/devel/p5-Data-TemporaryBag \
-		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/Data/TemporaryBag.pm:${PORTSDIR}/devel/p5-Data-TemporaryBag
+BUILD_DEPENDS=	${SITE_PERL}/Data/TemporaryBag.pm:${PORTSDIR}/devel/p5-Data-TemporaryBag
 
 PERL_CONFIGURE=	yes
 
@@ -32,4 +32,11 @@ post-patch:
 post-configure:
 	@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+BUILD_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+.include <bsd.port.post.mk>

@@ -8,6 +8,7 @@
 
 PORTNAME=	PDF-API2
 PORTVERSION=	0.73
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,10 +16,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	'The Next Generation' of Text::PDF::API
 
-BUILD_DEPENDS=	${PERL_SITELIBDIR}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_CONFIGURE=	5.8.0+
 PERL_SITELIBDIR=	${SITE_PERL}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+BUILD_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+.include <bsd.port.post.mk>
