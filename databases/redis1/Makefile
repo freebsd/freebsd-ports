@@ -7,7 +7,7 @@
 
 PORTNAME=	redis
 PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
@@ -18,10 +18,11 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-CONFLICTS?=     redis-devel-2.*
+CONFLICTS?=     redis-2.*
 
 USE_GMAKE=	yes
 USE_RC_SUBR=	redis.sh
+NO_LATEST_LINK=	yes
 BIN_FILES=	redis-server redis-benchmark redis-cli
 
 PKGINSTALL=	${WRKDIR}/pkg-install
