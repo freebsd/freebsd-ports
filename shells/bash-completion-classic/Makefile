@@ -5,45 +5,48 @@
 # $FreeBSD$
 #
 
-PORTNAME=		bash-completion
-PORTVERSION=	1.2
-PORTREVISION=	1
-PORTEPOCH=		1
-CATEGORIES=		shells
-MASTER_SITES=	http://bash-completion.alioth.debian.org/files/
+PORTNAME=	bash-completion-classic
+PORTVERSION=	20060301
+CATEGORIES=	shells
+MASTER_SITES=	http://www.caliban.org/files/bash/ \
+		CRITICAL
+DISTNAME=	${PORTNAME:C/\-classic//}-${PORTVERSION}
 
-MAINTAINER=		adamw@FreeBSD.org
-COMMENT=		Programmable completion library for Bash
+MAINTAINER=	ehaupt@critical.ch
+COMMENT=	Programmable completion library for Bash 2.04 and up
 
-USE_BZIP2=		yes
-SUB_FILES=		pkg-message
+WRKSRC=		${WRKDIR}/bash_completion
+NO_BUILD=	yes
 
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
+CONFLICTS=	bash-completion-[0-9]*
 
-GNU_CONFIGURE=	yes
+SUB_FILES=	pkg-message
+PLIST_FILES=	etc/bash_completion
+
+OPTIONS=	GSED	"Use GNU sed to enable additional completions"	off
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-AMD64_REMOVE_RSYNC=	/contrib\/rsync/d
-PLIST_SUB+=	NOAMD64="@comment "
-.else
-PLIST_SUB+=	NOAMD64=""
+RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
+
+.if defined(WITH_GSED)
+RUN_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g; \
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g; \
 		s|/etc/bash_completion|${PREFIX}&|g; \
-		s|/usr\(/sbin/postconf\)|${PREFIX}\1|g; \
-		s|/usr\(/lib/rpm/macros\)|${PREFIX}\1|g; \
+		s|/usr\(/sbin/postconf\)|${LOCALBASE}\1|g; \
+		s|/usr\(/lib/rpm/macros\)|${LOCALBASE}\1|g; \
 		s|/usr/share\(/ssl/openssl.cnf\)|/etc\1|g; \
 		s|/usr/ports|${PORTSDIR}|g; \
-		s|/usr/lib\(/aspell\)|${PREFIX}/share\1|g; \
-		s|/usr/share/info|&:${PREFIX}/info|g; \
-		s|\$$(sysconfdir)/profile.d|${PREFIX}/bin|g; \
-		s|\(FLAC\)|\1\|flv\|FLV|; \
-		${AMD64_REMOVE_RSYNC}' \
-		${WRKSRC}/bash_completion ${WRKSRC}/Makefile.in ${WRKSRC}/contrib/*
+		s|/usr/lib\(/aspell\)|${LOCALBASE}/share\1|g; \
+		s|/usr/share/info|&:${LOCALBASE}/info|g; \
+		s|\(FLAC\)|\1\|flv\|FLV|' \
+		${WRKSRC}/bash_completion
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/bash_completion ${PREFIX}/etc
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
