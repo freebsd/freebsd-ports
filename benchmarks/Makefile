@@ -30,6 +30,7 @@
     SUBDIR += nbench
     SUBDIR += netio
     SUBDIR += netperf
+    SUBDIR += netperfmeter
     SUBDIR += netpipe
     SUBDIR += nqueens
     SUBDIR += nttcp
