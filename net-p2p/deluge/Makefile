@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	deluge
-DISTVERSION=	1.3.0_rc2
+DISTVERSION=	1.3.0
 PORTEPOCH=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/source/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Bittorrent client using Python, GTK+2 and libtorrent-rasterbar
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0.6:${PORTSDIR}/devel/py-setuptools
@@ -36,8 +36,8 @@ USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 USE_PYTHON=	2.5+
 USE_TWISTED=	web
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_NOEGGINFO=	yes
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_BUILD_TARGET=	build bdist_egg
 
 OPTIONS=	PYGTK "Enable GUI and gtk dep (GUI files always installed)" on \
 		PSYCO "Enable devel/py-psyco optimization (i386 only)" off
@@ -46,13 +46,24 @@ MAN1=		deluge.1 deluge-console.1 deluge-gtk.1 deluge-web.1 deluged.1
 
 PORTDOCS=	*
 
-PLIST_SUB=	VERSION="${DISTVERSION}" PYTHON_VER="${PYTHON_VER}"
+DESKTOP_ENTRIES=	"Deluge" \
+			"A peer-to-peer file sharing program utilizing the Bittorrent protocol" \
+			"${PYTHONPREFIX_SITELIBDIR}/${PYEASYINSTALL_EGG}/share/pixmaps/deluge.png" \
+			"deluge" \
+			"Network;FileTransfer;P2P;" \
+			"true"
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
 .undef WITH_PSYCO
 WITHOUT_PSYCO=	yes
+.endif
+
+# only touch easy-install.pth if we installed it ourselves which
+# happens when PREFIX differs from LOCALBASE
+.if ${PREFIX} != ${LOCALBASE}
+PLIST_FILES+=	${PYTHON_SITELIBDIR:S;${LOCALBASE}/;;}/easy-install.pth
 .endif
 
 .if defined(WITH_PSYCO)
@@ -94,7 +105,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
+# install man pages
+.for man in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/docs/man/${man} ${MANPREFIX}/man/man1/
+.endfor
 # fix installation permissions
-	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/deluge -type f -exec ${CHMOD} ${SHAREMODE} {} \;
+	@${FIND} ${PYTHONPREFIX_SITELIBDIR}/${PYEASYINSTALL_EGG} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 
 .include <bsd.port.post.mk>
