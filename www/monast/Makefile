@@ -7,6 +7,7 @@
 
 PORTNAME=	monast
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	www net
 MASTER_SITES=	SF/monast/MonAst%20for%20Asterisk%201.4_1.6/1.4
 
