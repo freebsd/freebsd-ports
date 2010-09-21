@@ -22,6 +22,7 @@ LICENSE=	OWL
 LICENSE_NAME=	Open Works License
 LICENSE_PERMS=	none
 LICENSE_FILE=	${FILESDIR}/license.txt
+MANUAL_PACKAGE_BUILD=	needs interactive license confirmation
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
