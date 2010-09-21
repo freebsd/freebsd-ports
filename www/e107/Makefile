@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	e107
-PORTVERSION=	0.7.20
+PORTVERSION=	0.7.23
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20v${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_full
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A content management system written in PHP
 
 USE_PHP=	mysql xml
