@@ -7,6 +7,7 @@
 
 PORTNAME=	Radiator
 PORTVERSION=	4.7
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	# fetch manually
 EXTRACT_SUFX=	.tgz
@@ -17,14 +18,17 @@ COMMENT=	Radiator Radius Server by Open System Consultants
 
 OPTIONS=	MYSQL "MySQL Support" off
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_CONFIGURE=	yes
 
 RESTRICTED=	"Commercial software"
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500703
+RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
+BUILD_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
+.endif
+
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTFILES})
 IGNORE=		will not be automatically fetched due to licensing\
 		restrictions.  You MUST manually fetch the UNIX version after\

@@ -7,6 +7,7 @@
 
 PORTNAME=	OAuth-Lite
 PORTVERSION=	1.27
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/L/LY/LYOKATO
@@ -21,7 +22,6 @@ RUN_DEPENDS=	\
 	p5-Class-ErrorHandler>=0.01:${PORTSDIR}/devel/p5-Class-ErrorHandler \
 	p5-Crypt-OpenSSL-RSA>=0.25:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA \
 	p5-Crypt-OpenSSL-Random>=0.04:${PORTSDIR}/security/p5-Crypt-OpenSSL-Random \
-	p5-Digest-SHA>=5.45:${PORTSDIR}/security/p5-Digest-SHA \
 	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 	p5-List-MoreUtils>=0.21:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-UNIVERSAL-require>=0.11:${PORTSDIR}/devel/p5-UNIVERSAL-require \
@@ -46,4 +46,10 @@ MAN3=	OAuth::Lite.3 \
 	OAuth::Lite::Token.3 \
 	OAuth::Lite::Util.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA
+.endif
+
+.include <bsd.port.post.mk>

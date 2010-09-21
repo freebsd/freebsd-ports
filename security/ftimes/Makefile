@@ -29,7 +29,9 @@ OPTIONS=		DIG_TOOLS "install dig tools" on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_DIG_TOOLS) || defined(WITH_MAP_TOOLS)
+. if ${PERL_LEVEL} < 500703
 RUN_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+. endif
 .endif
 
 .if defined(WITH_DIG_TOOLS)
