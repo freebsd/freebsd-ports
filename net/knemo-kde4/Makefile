@@ -5,23 +5,23 @@
 # $FreeBSD$
 
 PORTNAME=	knemo
-PORTVERSION=	0.4.1
-PORTREVISION=	5
+PORTVERSION=	0.6.80
 CATEGORIES=	net kde
-MASTER_SITES=	http://www.eris23.de/knemo/
+MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
+DISTNAME=	12956-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Network monitor for KDE
 
+LATEST_LINK=	${PORTNAME}-kde4
+
 USE_BZIP2=	yes
-USE_KDELIBS_VER=3
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_CMAKE=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build
+USE_KDE4=	kdeprefix kdelibs automoc4
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+MAKE_JOBS_SAFE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>
