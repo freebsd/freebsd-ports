@@ -391,7 +391,7 @@ gst_mpeg2dec_PLIST_FILES=	${GST_LIB_DIR}/libgstmpeg2dec.la \
 gst_mpeg2dec_DIST=	ugly
 
 # musepack
-gst_musepack_LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
+gst_musepack_LIB_DEPENDS+=	mpcdec.7:${PORTSDIR}/audio/musepack
 gst_musepack_PLIST_FILES=	${GST_LIB_DIR}/libgstmusepack.la \
 		${GST_LIB_DIR}/libgstmusepack.so
 gst_musepack_DIST=	bad
