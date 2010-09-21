@@ -225,7 +225,7 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .if defined(USE_BDB)
 
-_DB_PORTS=	2 3 40 41 42 43 44 45 46 47 48 50 3+ 40+ 41+ 42+ 43+ 44+ 45+ 46+ 47+ 48+ 50+
+_DB_PORTS=	2 3 40 41 42 43 44 45 46 47 48 50 51 3+ 40+ 41+ 42+ 43+ 44+ 45+ 46+ 47+ 48+ 50+ 51+
 # Dependence lines for different db versions
 db2_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
 db3_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
@@ -239,6 +239,7 @@ db46_DEPENDS=	db-4.6.0:${PORTSDIR}/databases/db46
 db47_DEPENDS=	db-4.7.0:${PORTSDIR}/databases/db47
 db48_DEPENDS=	db-4.8.0:${PORTSDIR}/databases/db48
 db50_DEPENDS=	db-5.0.0:${PORTSDIR}/databases/db50
+db51_DEPENDS=	db-5.1.0:${PORTSDIR}/databases/db51
 # Detect db versions by finding some files
 db3_FIND=	${LOCALBASE}/include/db3/db.h
 db40_FIND=	${LOCALBASE}/include/db4/db.h
@@ -251,6 +252,7 @@ db46_FIND=	${LOCALBASE}/include/db46/db.h
 db47_FIND=	${LOCALBASE}/include/db47/db.h
 db48_FIND=	${LOCALBASE}/include/db48/db.h
 db50_FIND=	${LOCALBASE}/include/db50/db.h
+db51_FIND=	${LOCALBASE}/include/db51/db.h
 
 # For specifying [3, 40, 41, ..]+
 _DB_3P=		3 ${_DB_40P}
@@ -263,7 +265,8 @@ _DB_45P=	45 ${_DB_46P}
 _DB_46P=	46 ${_DB_47P}
 _DB_47P=	47 ${_DB_48P}
 _DB_48P=	48 ${_DB_50P}
-_DB_50P=	50
+_DB_50P=	50 ${_DB_51P}
+_DB_51P=	51
 
 # Override the global WITH_BDB_VER with the
 # port specific <UNIQUENAME>_WITH_BDB_VER
@@ -407,6 +410,10 @@ BDB_LIB_DIR=		${LOCALBASE}/lib/db48
 BDB_LIB_NAME=		db-5.0
 BDB_LIB_CXX_NAME=	db_cxx-5.0
 BDB_LIB_DIR=		${LOCALBASE}/lib/db50
+.  elif ${_BDB_VER} == 51
+BDB_LIB_NAME=		db-5.1
+BDB_LIB_CXX_NAME=	db_cxx-5.1
+BDB_LIB_DIR=		${LOCALBASE}/lib/db51
 .  endif
 BDB_LIB_NAME?=		db${_BDB_VER}
 BDB_LIB_CXX_NAME?=	db${_BDB_VER}_cxx
