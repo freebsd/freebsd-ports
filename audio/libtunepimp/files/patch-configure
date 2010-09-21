@@ -1,0 +1,56 @@
+--- configure.orig	2006-11-28 21:34:18.000000000 +0100
++++ configure	2010-09-11 11:46:56.333821556 +0200
+@@ -21669,9 +21669,9 @@
+   fi
+ 
+ 
+-{ echo "$as_me:$LINENO: checking for mpc_decoder_decode in -lmpcdec" >&5
+-echo $ECHO_N "checking for mpc_decoder_decode in -lmpcdec... $ECHO_C" >&6; }
+-if test "${ac_cv_lib_mpcdec_mpc_decoder_decode+set}" = set; then
++{ echo "$as_me:$LINENO: checking for mpc_demux_decode in -lmpcdec" >&5
++echo $ECHO_N "checking for mpc_demux_decode in -lmpcdec... $ECHO_C" >&6; }
++if test "${ac_cv_lib_mpcdec_mpc_demux_decode+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+@@ -21689,11 +21689,11 @@
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char mpc_decoder_decode ();
++char mpc_demux_decode ();
+ int
+ main ()
+ {
+-return mpc_decoder_decode ();
++return mpc_demux_decode ();
+   ;
+   return 0;
+ }
+@@ -21732,21 +21732,21 @@
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  ac_cv_lib_mpcdec_mpc_decoder_decode=yes
++  ac_cv_lib_mpcdec_mpc_demux_decode=yes
+ else
+   echo "$as_me: failed program was:" >&5
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
+-	ac_cv_lib_mpcdec_mpc_decoder_decode=no
++	ac_cv_lib_mpcdec_mpc_demux_decode=no
+ fi
+ 
+ rm -f core conftest.err conftest.$ac_objext \
+       conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ echo "$as_me:$LINENO: result: $ac_cv_lib_mpcdec_mpc_decoder_decode" >&5
+-echo "${ECHO_T}$ac_cv_lib_mpcdec_mpc_decoder_decode" >&6; }
+-if test $ac_cv_lib_mpcdec_mpc_decoder_decode = yes; then
++{ echo "$as_me:$LINENO: result: $ac_cv_lib_mpcdec_mpc_demux_decode" >&5
++echo "${ECHO_T}$ac_cv_lib_mpcdec_mpc_demux_decode" >&6; }
++if test $ac_cv_lib_mpcdec_mpc_demux_decode = yes; then
+   have_mpcdec=yes
+ fi
+ 

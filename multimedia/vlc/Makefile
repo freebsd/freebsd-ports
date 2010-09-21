@@ -398,11 +398,11 @@ LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 CONFIGURE_ARGS+=--enable-libmpeg2
 .endif
 
-.if defined(WITHOUT_MUSEPACK)
-CONFIGURE_ARGS+=--disable-mpc
-.else
-LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
+.if defined(WITH_MUSEPACK)
+LIB_DEPENDS+=	mpcdec.7:${PORTSDIR}/audio/musepack
 CONFIGURE_ARGS+=--enable-mpc
+.else
+CONFIGURE_ARGS+=--disable-mpc
 .endif
 
 .if defined(WITH_NCURSES)
