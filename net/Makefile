@@ -290,6 +290,7 @@
     SUBDIR += kissd
     SUBDIR += kmuddy
     SUBDIR += knemo
+    SUBDIR += knemo-kde4
     SUBDIR += kojoney
     SUBDIR += kphone
     SUBDIR += krdesktop
