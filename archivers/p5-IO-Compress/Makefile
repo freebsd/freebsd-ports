@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mm@FreeBSD.org
-COMMENT=	IO::Compress, IO::Uncompress and Compress::Zlib Perl5 modules
+COMMENT=	Perl5 compression modules (bzip2, deflate, gzip, zlib, zip)
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Raw/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Raw/Bzip2.pm:${PORTSDIR}/archivers/p5-Compress-Raw-Bzip2
