@@ -1,12 +1,12 @@
-# New ports collection makefile for:	db50
-# Date created:		2010-04-06
+# New ports collection makefile for:	db51
+# Date created:		2010-09-15
 # Whom:			Matthias Andree <mandree@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	db50
-PORTVERSION=	5.0.26.0
+PORTNAME=	db51
+PORTVERSION=	5.1.19.0
 CATEGORIES=	databases java
 MASTER_SITES=	http://download-west.oracle.com/berkeley-db/ \
 		http://download-east.oracle.com/berkeley-db/ \
@@ -16,7 +16,7 @@ DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
 
 MAINTAINER=	mandree@FreeBSD.org
-COMMENT=	The Oracle Berkeley DB, revision 5.0
+COMMENT=	The Oracle Berkeley DB, revision 5.1
 
 BDBVER=		${PORTVERSION:R:R}
 CONFIGURE_ARGS=	--enable-cxx --enable-stl \
