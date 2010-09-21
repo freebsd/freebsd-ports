@@ -124,7 +124,7 @@ lib/kde4/k3bexternalencoder.so
 %%LAME%%lib/kde4/k3blameencoder.so
 %%SNDFILE%%lib/kde4/k3blibsndfiledecoder.so
 %%MAD%%lib/kde4/k3bmaddecoder.so
-%%MPC%%lib/kde4/k3bmpcdecoder.so
+%%MUSEPACK%%lib/kde4/k3bmpcdecoder.so
 %%VORBIS_DEC%%lib/kde4/k3boggvorbisdecoder.so
 %%VORBIS_ENC%%lib/kde4/k3boggvorbisencoder.so
 %%SOX%%lib/kde4/k3bsoxencoder.so
@@ -319,7 +319,7 @@ share/kde4/services/k3bexternalencoder.desktop
 %%LAME%%share/kde4/services/k3blameencoder.desktop
 %%SNDFILE%%share/kde4/services/k3blibsndfiledecoder.desktop
 %%MAD%%share/kde4/services/k3bmaddecoder.desktop
-%%MPC%%share/kde4/services/k3bmpcdecoder.desktop
+%%MUSEPACK%%share/kde4/services/k3bmpcdecoder.desktop
 %%VORBIS_DEC%%share/kde4/services/k3boggvorbisdecoder.desktop
 %%VORBIS_ENC%%share/kde4/services/k3boggvorbisencoder.desktop
 %%SOX%%share/kde4/services/k3bsoxencoder.desktop

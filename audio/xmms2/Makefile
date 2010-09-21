@@ -242,7 +242,7 @@ PLIST_SUB+=	MPG123="@comment "
 .endif
 
 .if !defined(WITHOUT_MUSEPACK)
-LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
+LIB_DEPENDS+=	mpcdec.7:${PORTSDIR}/audio/musepack
 PLIST_SUB+=	MUSEPACK=""
 .else
 EXCLUDE+=	--without-plugins="musepack"
