@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100921:
+  AFFECTS: users of p5-Compress-Zlib, p5-IO-Compress-*
+  AUTHOR: mm@FreeBSD.org
+
+  The p5-Compress-Zlib, p5-IO-Compress-Base, p5-IO-Compress-Zlib and
+  p5-IO-Compress-Bzip2 ports have been replaced by p5-IO-Compress.
+  Users of Perl 5.10 and higher do not need to install this module
+  because it is already included in the standard perl distribution.
+
 20100920:
   AFFECTS: users of security/stunnel
   AUTHOR: roam@FreeBSD.org
