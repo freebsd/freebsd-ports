@@ -7,6 +7,7 @@
 
 PORTNAME=	libwww
 PORTVERSION=	5.836
+PORTREVISION=	1
 CATEGORIES=	www perl5 devel
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	LWP
@@ -38,7 +39,9 @@ MAN3=	Bundle::LWP.3 File::Listing.3 HTML::Form.3 HTTP::Config.3 \
 	WWW::RobotRules::AnyDBM_File.3 lwpcook.3 lwptut.3
 
 .include <bsd.port.pre.mk>
+
 .if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-Compress-Zlib>=1.10:${PORTSDIR}/archivers/p5-Compress-Zlib
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
+
 .include <bsd.port.post.mk>

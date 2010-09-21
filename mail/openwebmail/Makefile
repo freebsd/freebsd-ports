@@ -7,6 +7,7 @@
 
 PORTNAME=	openwebmail
 PORTVERSION=	2.53
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://openwebmail.acatysmoof.com/download/%SUBDIR%/ \
 		http://openwebmail.org/openwebmail/download/%SUBDIR%/
@@ -124,7 +125,9 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 .endif
 
 .if defined(WITH_ZLIB)
-RUN_DEPENDS+=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
+. if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Compress
+. endif
 .endif
 
 post-extract:

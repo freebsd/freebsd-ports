@@ -7,7 +7,7 @@
 
 PORTNAME=	URI-Fetch
 PORTVERSION=	0.080
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,7 +30,9 @@ MAN3=	URI::Fetch.3 \
 	URI::Fetch::Response.3
 
 .if !defined(WITHOUT_ZLIB)
-RUN_DEPENDS+=	p5-Compress-Zlib>=0:${PORTSDIR}/archivers/p5-Compress-Zlib
+. if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+. endif
 .endif
 
 .if defined(WITH_CACHE)

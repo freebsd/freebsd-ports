@@ -7,6 +7,7 @@
 
 PORTNAME=	cvsweb-converters
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.sbox.TUGraz.at/home/d/dada/distfiles/ \
 		http://mitglied.lycos.de/mkamm/distfiles/
@@ -14,11 +15,10 @@ MASTER_SITES=	http://www.sbox.TUGraz.at/home/d/dada/distfiles/ \
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	Create hyperlinks to cvsweb from cvs[up] output or FreeBSD commitlogs
 
-BUILD_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
+RUN_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles \
 		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
@@ -29,9 +29,15 @@ PLIST_FILES=	bin/commitlog2cvsweb bin/cvsrdiff2cvsweb \
 		bin/cvsuplog2cvsweb etc/cvsweb-converters.conf.sample
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
 post-install:
 	@${SED} -e 's|$${PREFIX}|${PREFIX}|g' -- \
 		${.CURDIR}/pkg-message >${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

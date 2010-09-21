@@ -7,6 +7,7 @@
 
 PORTNAME=	ljsm
 PORTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	www perl5 deskutils
 MASTER_SITES=	http://www.offtopia.net/ljsm/
 EXTRACT_SUFX=	.zip
@@ -14,8 +15,7 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Livejournal.com postings recusive copy utility
 
-RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
+RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 PLIST_FILES=	bin/ljsm
 NO_WRKSUBDIR=	yes
@@ -25,10 +25,16 @@ NO_BUILD=	yes
 
 EXTRACT_BEFORE_ARGS= -qoaa
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
 do-configure:
 	@${REINPLACE_CMD} -e 's|^#!perl|#!${PERL}|' ${WRKSRC}/ljsm.pl
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} ljsm.pl ${PREFIX}/bin/ljsm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

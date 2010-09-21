@@ -7,7 +7,7 @@
 
 PORTNAME=	Jifty
 PORTVERSION=	0.91117
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Jifty -- Just Do It -- Yet another web framework
 
-BUILD_DEPENDS=	\
+RUN_DEPENDS=	\
 		p5-App-CLI>=0.03:${PORTSDIR}/devel/p5-App-CLI \
 		p5-CGI-Cookie-Splitter>=0:${PORTSDIR}/www/p5-CGI-Cookie-Splitter \
 		p5-CSS-Squish>=0.05:${PORTSDIR}/textproc/p5-CSS-Squish \
@@ -27,7 +27,6 @@ BUILD_DEPENDS=	\
 		p5-Class-Data-Inheritable>0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-Class-Trigger>=0.12:${PORTSDIR}/devel/p5-Class-Trigger \
 		p5-Clone>0:${PORTSDIR}/devel/p5-Clone \
-		p5-Compress-Zlib>0:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		p5-Crypt-CBC>0:${PORTSDIR}/security/p5-Crypt-CBC \
 		p5-Crypt-Rijndael>0:${PORTSDIR}/security/p5-Crypt-Rijndael \
 		p5-DBD-SQLite>=1.11:${PORTSDIR}/databases/p5-DBD-SQLite \
@@ -93,12 +92,19 @@ BUILD_DEPENDS=	\
 		p5-YAML-Syck>=0.71:${PORTSDIR}/textproc/p5-YAML-Syck \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 		p5-version>0:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
+
+.include "Makefile.man"
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e '/auto_install/d' ${WRKSRC}/Makefile.PL
 
-.include "Makefile.man"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	POE-Filter-Zlib
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,7 +27,7 @@ MAN3=		POE::Filter::Zlib.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-Compress-Zlib>=1.34:${PORTSDIR}/archivers/p5-Compress-Zlib
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
 
 .include <bsd.port.post.mk>

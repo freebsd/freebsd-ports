@@ -7,7 +7,7 @@
 
 PORTNAME=	gpt
 PORTVERSION=	3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc archivers devel parallel
 MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/aces/gpt/releases/gpt-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -19,7 +19,6 @@ CONFLICTS=	gpt-*
 NO_LATEST_LINK=	YES
 
 RUN_DEPENDS+=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/IO/Zlib.pm:${PORTSDIR}/archivers/p5-IO-Zlib \
 		${LOCALBASE}/bin/gmake:${PORTSDIR}/devel/gmake \
 		${LOCALBASE}/bin/makepatch:${PORTSDIR}/textproc/makepatch
@@ -56,4 +55,10 @@ do-install:
 	@cd ${WRKSRC}; \
 	GPT_LOCATION=${PREFIX} ./build_gpt --with-perl=${PERL}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+.include <bsd.port.post.mk>

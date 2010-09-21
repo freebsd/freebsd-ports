@@ -7,6 +7,7 @@
 
 PORTNAME=	KinoSearch
 PORTVERSION=	0.165
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/C/CR/CREAMYG
@@ -17,8 +18,7 @@ COMMENT=	A Perl search engine library
 
 MODULE_DEPENDS=	p5-Lingua-StopWords>=0.02:${PORTSDIR}/textproc/p5-Lingua-StopWords \
 		p5-Lingua-Stem-Snowball>=0.94:${PORTSDIR}/textproc/p5-Lingua-Stem-Snowball \
-		p5-Clone>=0.18:${PORTSDIR}/devel/p5-Clone \
-		p5-Compress-Zlib>=2.008:${PORTSDIR}/archivers/p5-Compress-Zlib
+		p5-Clone>=0.18:${PORTSDIR}/devel/p5-Clone
 RUN_DEPENDS+=	${MODULE_DEPENDS}
 BUILD_DEPENDS+=	${MODULE_DEPENDS}
 
@@ -114,4 +114,11 @@ MAN3=	KinoSearch.3 \
 	KinoSearch::Util::ToolSet.3 \
 	KinoSearch::Util::VerifyArgs.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+BUILD_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
+
+.include <bsd.port.post.mk>

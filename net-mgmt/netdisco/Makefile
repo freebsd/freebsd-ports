@@ -7,7 +7,7 @@
 
 PORTNAME=	netdisco
 PORTVERSION=	0.95
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}_with_mibs
@@ -25,7 +25,6 @@ RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP				\
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5		\
 		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg			\
 		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test			\
-		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib	\
 		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser		\
 		${SITE_PERL}/MasonX/Request/WithApacheSession.pm:${PORTSDIR}/www/p5-MasonX-Request-WithApacheSession
 
@@ -56,6 +55,10 @@ CONFIG_FILES=	netdisco.conf netdisco.crontab netdisco-topology.txt \
 		netdisco_apache.conf netdisco_apache_dir.conf
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.endif
 
 .if ${APACHE_VERSION} >= 20
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2	\
