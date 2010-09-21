@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	sjr@comcast.net
+MAINTAINER=	sjroz@verizon.net
 COMMENT=	An X-based interface to the Berkeley mail program
 
 USE_IMAKE=	yes

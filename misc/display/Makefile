@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.ipsmart.com/src/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sjr@comcast.net
+MAINTAINER=	sjroz@verizon.net
 COMMENT=	Runs command repeatedly; shows output
 
 GNU_CONFIGURE=	yes

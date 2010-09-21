@@ -12,7 +12,7 @@ CATEGORIES=	mail tk
 MASTER_SITES=	http://tkrat.org/downloads/stable/ \
 		ftp://ftp.tkrat.org/pub/tkrat/
 
-MAINTAINER=	sjr@comcast.net
+MAINTAINER=	sjroz@verizon.net
 COMMENT=	A mail user agent for X with a Tcl/Tk user interface
 
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
