@@ -1,7 +1,8 @@
 #!/bin/sh
 #
+# $FreeBSD$
+#
 # PROVIDE: monast
-# REQUIRE: LOGIN
 # BEFORE: LOGIN
 # KEYWORD: shutdown
 #
