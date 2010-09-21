@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	pfe
-PORTVERSION=	0.33.70
+PORTVERSION=	0.33.71
 CATEGORIES=	lang
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Implementation of ANSI Forth
 
 USE_BZIP2=	yes
