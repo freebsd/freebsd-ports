@@ -1,0 +1,30 @@
+www/speedtest-mini/.PLIST.mktmp
+www/speedtest-mini/.build_done.speedtest-mini._usr_local
+www/speedtest-mini/.configure_done.speedtest-mini._usr_local
+www/speedtest-mini/.extract_done.speedtest-mini._usr_local
+www/speedtest-mini/.patch_done.speedtest-mini._usr_local
+www/speedtest-mini/crossdomain.xml
+www/speedtest-mini/index-asp.html
+www/speedtest-mini/index-aspx.html
+www/speedtest-mini/index-jsp.html
+www/speedtest-mini/index-php.html
+www/speedtest-mini/speedtest.swf
+www/speedtest-mini/speedtest/latency.txt
+www/speedtest-mini/speedtest/random1000x1000.jpg
+www/speedtest-mini/speedtest/random1500x1500.jpg
+www/speedtest-mini/speedtest/random2000x2000.jpg
+www/speedtest-mini/speedtest/random2500x2500.jpg
+www/speedtest-mini/speedtest/random3000x3000.jpg
+www/speedtest-mini/speedtest/random3500x3500.jpg
+www/speedtest-mini/speedtest/random350x350.jpg
+www/speedtest-mini/speedtest/random4000x4000.jpg
+www/speedtest-mini/speedtest/random500x500.jpg
+www/speedtest-mini/speedtest/random750x750.jpg
+www/speedtest-mini/speedtest/swfobject.js
+www/speedtest-mini/speedtest/upload.asp
+www/speedtest-mini/speedtest/upload.aspx
+www/speedtest-mini/speedtest/upload.jsp
+www/speedtest-mini/speedtest/upload.php
+www/speedtest-mini/troubleshooting.txt
+@dirrm www/speedtest-mini/speedtest
+@dirrm www/speedtest-mini

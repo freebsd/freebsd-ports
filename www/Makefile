@@ -225,9 +225,9 @@
     SUBDIR += ffproxy
     SUBDIR += fhttpd
     SUBDIR += firefox
-    SUBDIR += firefox-sync
     SUBDIR += firefox-i18n
     SUBDIR += firefox-remote
+    SUBDIR += firefox-sync
     SUBDIR += firefox3-devel
     SUBDIR += firefox35
     SUBDIR += firefox35-i18n
@@ -1607,6 +1607,7 @@
     SUBDIR += snarf
     SUBDIR += snownews
     SUBDIR += spawn-fcgi
+    SUBDIR += speedtest-mini
     SUBDIR += spip
     SUBDIR += spreadlogd
     SUBDIR += sqstat
