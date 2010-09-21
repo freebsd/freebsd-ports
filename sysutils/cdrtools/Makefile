@@ -23,12 +23,13 @@
 
 PORTNAME=	cdrtools
 PORTVERSION=	3.00
+PORTREVISION=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/
 
 MAINTAINER=	marius@FreeBSD.org
-COMMENT=	CD/DVD and ISO-9660 image creation and extraction tools
+COMMENT=	CD/DVD/BluRay and ISO-9660 image creation and extraction tools
 
 CONFLICTS=	cdrkit-* cdrtools-devel-* cjk-cdrtools-*
 
@@ -60,18 +61,31 @@ USE_GMAKE=	yes
 SUB_FILES=	pkg-message
 MAKE_JOBS_UNSAFE=	yes
 
+.if defined(WITH_CDDA2MP3)
+MAN1+=		cdda2mp3.1
+PLIST_SUB+=	CDDA2MP3=""
+RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
+.else
+PLIST_SUB+=	CDDA2MP3="@comment "
+.endif
+.if defined(WITH_CDDA2OGG)
+MAN1+=		cdda2ogg.1
+PLIST_SUB+=	CDDA2OGG=""
+RUN_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools
+.else
+PLIST_SUB+=	CDDA2OGG="@comment "
+.endif
 .if defined(WITH_RSCSI)
 MAN1+=		rscsi.1
 PKGINSTALL=	${PKGDIR}/pkg-install.rscsi
-PLIST_SUB=	RSCSI=""
+PLIST_SUB+=	RSCSI=""
 PKGNAMESUFFIX=	-rscsi
 .else
-PLIST_SUB=	RSCSI="@comment "
+PLIST_SUB+=	RSCSI="@comment "
 .endif
 
 # Hack to allow building with TARGET and TARGET_ARCH set in the environment
 # as done by the release building scripts.
-MAKE_ARGS=	-R
 SETENV=		/usr/bin/env -i -P ${PATH}
 
 MAKE_ENV=	CCOM=cc GMAKE_NOWARN=true INS_BASE=${LOCALBASE} \
@@ -88,15 +102,23 @@ USE_ICONV=	yes
 .endif
 
 pre-everything::
-.if !defined(WITH_RSCSI)
+.if !defined(WITH_CDDA2MP3) || !defined(CDDA2OGG) || !defined(WITH_RSCSI)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build option(s):"
 	@${ECHO_MSG} ""
+.if !defined(WITH_CDDA2MP3)
+	@${ECHO_MSG} "WITH_CDDA2MP3=yes	builds with cdda2mp3 (requires audio/lame)"
+.endif
+.if !defined(WITH_CDDA2OGG)
+	@${ECHO_MSG} "WITH_CDDA2OGG=yes	builds with cdda2ogg (requires audio/vorbis-tools)"
+.endif
+.if !defined(WITH_RSCSI)
 	@${ECHO_MSG} "WITH_RSCSI=yes		builds with the rscsi daemon which provides access to"
 	@${ECHO_MSG} "			local SCSI-devices over the network (the client-side"
 	@${ECHO_MSG} "			in cdda2wav, cdrecord, etc. is built unconditionally)."
 	@${ECHO_MSG} "			BEWARE:	The rscsi binary will be installed suid root"
 	@${ECHO_MSG} "				as this is the preferred way of setting it up."
+.endif
 	@${ECHO_MSG} ""
 .endif
 
@@ -116,14 +138,19 @@ post-patch:
 .if !defined(WITH_RSCSI)
 	@${RM} ${WRKSRC}/TARGETS/55rscsi
 .endif
-.for i in DEFAULTS/Defaults.freebsd btcflash/btcflash.1 cdda2wav/cdda2wav.1 \
+	@${REINPLACE_CMD} -e 's|\/opt\/schily\/bin\/|${PREFIX}\/etc\/|g' \
+		${WRKSRC}/cdda2wav/cdda2ogg.1
+.for i in DEFAULTS/Defaults.freebsd btcflash/btcflash.1 cdda2wav/cdda2mp3 \
+	cdda2wav/cdda2ogg cdda2wav/cdda2ogg.1 cdda2wav/cdda2wav.1 \
 	cdrecord/README.rscsi cdrecord/cdrecord.1 cdrecord/cdrecord.dfl \
 	include/schily/deflts.h libcdrdeflt/cdrdeflt.c librscg/scsi-remote.c \
 	readcd/readcd.1 rscsi/rscsi.1 rscsi/rscsi.c rscsi/rscsi.dfl \
 	scgcheck/scgcheck.1
 	@${REINPLACE_CMD} -e 's|\/opt\/schily|${PREFIX}|g; \
 		s|\/usr\/local|${PREFIX}|g; s|\/etc\/default|${PREFIX}\/etc|g; \
-		s|\/var\/adm\/messages|\/var\/run\/dmesg.boot|g' ${WRKSRC}/${i}
+		s|\/var\/adm\/messages|\/var\/run\/dmesg.boot|g; \
+		s|^CDDA2WAV=|&${PREFIX}\/bin\/|g; \
+		s|^MP_CODER=|&${LOCALBASE}\/bin\/|g' ${WRKSRC}/${i}
 .endfor
 	@${MV} -f ${WRKSRC}/libparanoia/cdda_paranoia.h \
 		${WRKSRC}/libparanoia/js_cdda_paranoia.h
@@ -139,6 +166,15 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/btcflash/OBJ/${CDRTLSTARGET}/btcflash \
 		${PREFIX}/bin
+.if defined(WITH_CDDA2MP3)
+	@${INSTALL_SCRIPT} ${WRKSRC}/cdda2wav/cdda2mp3 ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/cdda2wav/cdda2ogg.1 \
+		${PREFIX}/man/man1/cdda2mp3.1
+.endif
+.if defined(WITH_CDDA2OGG)
+	@${INSTALL_SCRIPT} ${WRKSRC}/cdda2wav/cdda2ogg ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/cdda2wav/cdda2ogg.1 ${PREFIX}/man/man1
+.endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/cdda2wav/OBJ/${CDRTLSTARGET}/cdda2wav \
 		${PREFIX}/bin
 	@${LN} -sf cdda2wav ${PREFIX}/bin/list_audio_tracks

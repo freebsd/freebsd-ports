@@ -1,4 +1,6 @@
 bin/btcflash
+%%CDDA2MP3%%bin/cdda2mp3
+%%CDDA2OGG%%bin/cdda2ogg
 bin/cdda2wav
 bin/cdrecord
 bin/devdump
