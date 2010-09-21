@@ -14102,6 +14102,7 @@ p5-Text-BibTeX                  ports/textproc/p5-Text-BibTeX
 p5-Text-Bidi                    ports/converters/p5-Text-Bidi
 p5-Text-Bind                    ports/textproc/p5-Text-Bind
 p5-Text-CSV                     ports/textproc/p5-Text-CSV
+p5-Text-CSV-Encoded             ports/textproc/p5-Text-CSV-Encoded
 p5-Text-CSV-Simple              ports/textproc/p5-Text-CSV-Simple
 p5-Text-CSV_XS                  ports/textproc/p5-Text-CSV_XS
 p5-Text-Capitalize              ports/textproc/p5-Text-Capitalize
@@ -18092,6 +18093,7 @@ p5-text-chomp                   ports/textproc/p5-Text-Chomp
 p5-text-context                 ports/textproc/p5-Text-Context
 p5-text-context-eitherside      ports/textproc/p5-Text-Context-EitherSide
 p5-text-csv                     ports/textproc/p5-Text-CSV
+p5-text-csv-encoded             ports/textproc/p5-Text-CSV-Encoded
 p5-text-csv-simple              ports/textproc/p5-Text-CSV-Simple
 p5-text-csv_xs                  ports/textproc/p5-Text-CSV_XS
 p5-text-decorator               ports/textproc/p5-Text-Decorator
@@ -19501,7 +19503,7 @@ pets                            ports/games/pets
 petsc                           ports/math/petsc
 petsc-mpich                     ports/math/petsc-mpich
 pfbtopfa                        ports/print/pfbtopfa
-pfe-devel                       ports/lang/pfe-devel
+pfe                             ports/lang/pfe
 pfflowd                         ports/net/pfflowd
 pfinger                         ports/net/pfinger
 pflogstats                      ports/mail/pflogstats
@@ -21892,7 +21894,7 @@ red5                            ports/www/red5
 redet                           ports/textproc/redet
 redir                           ports/net/redir
 redis                           ports/databases/redis
-redis-devel                     ports/databases/redis-devel
+redis1                          ports/databases/redis1
 redland                         ports/textproc/redland
 redland-bindings                ports/textproc/redland-bindings
 redland-bindings-python         ports/textproc/redland-bindings-python
