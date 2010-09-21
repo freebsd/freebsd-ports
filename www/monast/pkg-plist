@@ -1,7 +1,6 @@
 @unexec if cmp -s %D/etc/monast.conf %D/etc/monast.conf.default; then rm -f %D/etc/monast.conf; fi
 etc/monast.conf.default
 @exec [ -f %B/monast.conf ] || cp %B/%f %B/monast.conf
-etc/rc.d/monast
 monast/amapi/AsteriskManager.py
 monast/amapi/AsteriskManager.pyc
 monast/amapi/AsteriskManager.pyo
