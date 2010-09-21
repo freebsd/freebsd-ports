@@ -7,7 +7,7 @@
 
 PORTNAME=	k3b
 PORTVERSION=	2.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -38,7 +38,7 @@ OPTIONS=	CDRDAO "Burning: Use cdrdao" ON \
 		FFMPEG "Decoder: various (multimedia/ffmpeg)" OFF \
 		FLAC "Decoder: flac (audio/flac)" ON \
 		MAD "Decoder: mp3 (audio/libmad)" ON \
-		MPC "Decoder: musepack (audio/libmpcdec)" OFF \
+		MUSEPACK "Decoder: musepack (audio/musepack)" OFF \
 		SNDFILE "Decoder: various (audio/libsndfile)" ON \
 		VORBIS_DEC "Decoder: ogg/vorbis" ON \
 		LAME "Encoder: mp3 (audio/lame)" OFF \
@@ -92,13 +92,13 @@ CMAKE_ARGS+=	-DK3B_BUILD_MAD_DECODER_PLUGIN:BOOL=OFF
 PLIST_SUB+=	MAD="@comment "
 .endif
 
-.if defined(WITH_MPC)
+.if defined(WITH_MUSEPACK)
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
-LIB_DEPENDS+=	mpcdec:${PORTSDIR}/audio/libmpcdec
-PLIST_SUB+=	MPC=""
+LIB_DEPENDS+=	mpcdec:${PORTSDIR}/audio/musepack
+PLIST_SUB+=	MUSEPACK=""
 .else
 CMAKE_ARGS+=	-DK3B_BUILD_MUSE_DECODER_PLUGIN:BOOL=OFF
-PLIST_SUB+=	MPC="@comment "
+PLIST_SUB+=	MUSEPACK="@comment "
 .endif
 
 .if defined(WITH_SNDFILE)
