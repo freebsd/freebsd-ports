@@ -1,4 +1,3 @@
-
 # New ports collection makefile for:    astrometry
 # Date created:                         7 July 2009
 # Whom:                                 Dereckson <dereckson@gmail.com>
@@ -7,8 +6,7 @@
 #
 
 PORTNAME=	astrometry
-PORTVERSION=	0.25
-PORTREVISION=	3
+PORTVERSION=	0.34
 CATEGORIES=	astro
 MASTER_SITES=	http://www.astrometry.net/downloads/
 DISTNAME=	astrometry.net-${PORTVERSION}
