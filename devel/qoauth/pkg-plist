@@ -1,0 +1,12 @@
+include/QtOAuth/interface.h
+include/QtOAuth/qoauth_global.h
+include/QtOAuth/qoauth_namespace.h
+include/QtOAuth/QtOAuth
+lib/libqoauth.prl
+lib/libqoauth.so.1.0.1
+lib/libqoauth.so.1.0
+lib/libqoauth.so.1
+lib/libqoauth.so
+libdata/pkgconfig/qoauth.pc
+share/qt4/mkspecs/features/oauth.prf
+@dirrm include/QtOAuth
