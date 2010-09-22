@@ -856,6 +856,7 @@
     SUBDIR += librelp
     SUBDIR += libruin
     SUBDIR += libs11n
+    SUBDIR += libserver
     SUBDIR += libshbuf
     SUBDIR += libshhmsg
     SUBDIR += libshhopt
