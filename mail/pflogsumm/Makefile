@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://jimsun.LinxNet.com/downloads/ \
 		ftp://jimsun.LinxNet.com/pub/postfix_contrib/
 
-MAINTAINER=	flo@kasimir.com
+MAINTAINER=	flo@smeets.im
 COMMENT=	Postfix Log Entry Summarizer
 
 RUN_DEPENDS=	${SITE_PERL}//Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	tool/${PORTNAME}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	flo@kasimir.com
+MAINTAINER=	flo@smeets.im
 COMMENT=	Perl Modules of ePerl package: Parse::ePerl, Apache::ePerl
 
 MAKE_JOBS_UNSAFE=	yes

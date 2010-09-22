@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alfred
 
-MAINTAINER=	flo@kasimir.com
+MAINTAINER=	flo@smeets.im
 COMMENT=	Helper for multiple CVS repositories
 
 GNU_CONFIGURE=	yes
