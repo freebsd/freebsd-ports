@@ -1,0 +1,6 @@
+This is a Python module for generating objects that compute the Cyclic
+Redundancy Check (CRC).  It includes a (optional) C extension for fast
+calculation, as well as a pure Python implementation.  8, 16, 24, 32,
+and 64 bit CRC are supported.
+
+WWW: http://crcmod.sourceforge.net/

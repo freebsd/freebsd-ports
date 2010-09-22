@@ -2673,6 +2673,7 @@
     SUBDIR += py-configobj
     SUBDIR += py-construct
     SUBDIR += py-coverage
+    SUBDIR += py-crcmod
     SUBDIR += py-ctags
     SUBDIR += py-ctypes
     SUBDIR += py-cxx
