@@ -33,10 +33,6 @@ USE_RUBY=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
-IGNORE=	Depends on broken x11-toolkits/ruby-panelapplet which has not built in 14+ months
-DEPRECATED= ${IGNORE}
-EXPIRATION_DATE=	2010-09-22
-
 NO_BUILD=	yes
 
 do-install:
