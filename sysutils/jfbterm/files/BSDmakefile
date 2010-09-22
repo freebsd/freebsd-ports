@@ -1,0 +1,81 @@
+PROG = jfbterm
+MAN  = ${PROG}.1 ${PROG}.conf.5
+
+VERSION ?= 0.6.1
+
+ARCH         ?= ${MACHINE_ARCH}
+LOCALBASE    ?= /usr/local
+PREFIX       ?= ${LOCALBASE}
+LIBUTIL      ?= /usr/lib/libutil.a
+LIBARCH      ?= /usr/lib/lib${ARCH}.a
+LIBICONV     ?= ${LOCALBASE}/lib/libiconv.a
+LIBPNG       ?= ${LOCALBASE}/lib/libpng.a
+GUNZIP       ?= /usr/bin/gunzip
+
+CSTD    ?= gnu89
+CFLAGS  += -DVERSION=\"${VERSION}\"
+CFLAGS  += -DGUNZIP_PATH=\"${GUNZIP}\"
+CFLAGS  += -DSYSCONFDIR=\"${PREFIX}/etc\"
+LDFLAGS += -L${LOCALBASE}/lib
+LDADD   += ${DPADD:C|.*/lib(.*)\.a$|-l\1|}
+DPADD   += ${LIBUTIL}
+
+CFLAGS += -DENABLE_8BPP
+CFLAGS += -DENABLE_15BPP
+CFLAGS += -DENABLE_16BPP
+CFLAGS += -DENABLE_24BPP
+CFLAGS += -DENABLE_32BPP
+CFLAGS += -DENABLE_SPLASH_SCREEN
+CFLAGS += -DENABLE_256_COLOR
+
+SRCS  =	main.c console.c framebuffer.c memctl.c accessor.c palette.c \
+	eastasianwidth.c font.c picofont.c getcap.c pcf.c pen.c term.c \
+	utilities.c privilege.c csv.c vterm.c vtermlow.c cursor.c \
+	splash-bmp.c splash-png.c splash.c bell.c screensaver.c mouse.c \
+	clipboard.c keyboard.c
+
+.if !defined(OPSYS)
+OPSYS != uname -s
+.endif
+
+.if ${ARCH:Mamd64} || ${ARCH:Mx86_64} || ${ARCH:Mi386}
+. if ${OPSYS:MLinux} || ${OPSYS:MFreeBSD}
+CFLAGS += -DENABLE_VGA16FB
+. elif ${OPSYS:MNetBSD}
+DPADD += ${LIBARCH}
+. endif
+.endif
+
+.if exists(/usr/include/iconv.h) && ${OPSYS:MFreeBSD}
+CFLAGS  += -DLIBICONV_PLUG
+CFLAGS  += -nostdinc
+CFLAGS  += -isystem/usr/include
+.endif
+CFLAGS  += -isystem${LOCALBASE}/include
+
+.if exists(/usr/include/utmp.h)
+CFLAGS += -DHAVE_UTMP_H
+.endif
+
+.if defined(WITH_DEBUG)
+DEBUG_FLAGS ?= -g
+CFLAGS      += -DDEBUG
+CFLAGS      += -DPCF_DEBUG
+.endif
+
+.if !defined(WITHOUT_ICONV)
+CFLAGS  += -DENABLE_UTF8
+CFLAGS  += -DENABLE_OTHER_CODING_SYSTEM
+. if !${CFLAGS:M-DLIBICONV_PLUG} && ${OPSYS:MFreeBSD}
+DPADD   += ${LIBICONV}
+. endif
+.endif
+
+.if !defined(WITHOUT_PNG)
+CFLAGS  += -DWITH_LIBPNG
+DPADD   += ${LIBPNG}
+DPADD   += ${LIBM}
+DPADD   += ${LIBZ}
+.endif
+
+.include <bsd.prog.mk>
