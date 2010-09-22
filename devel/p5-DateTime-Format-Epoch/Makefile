@@ -7,7 +7,7 @@
 
 PORTNAME=	DateTime-Format-Epoch
 PORTVERSION=	0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,8 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert DateTimes to/from epoch seconds
 
 RUN_DEPENDS=	p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
-		p5-DateTime>=0.31:${PORTSDIR}/devel/p5-DateTime \
-		p5-Math-BigInt>=1.66:${PORTSDIR}/math/p5-Math-BigInt
+		p5-DateTime>=0.31:${PORTSDIR}/devel/p5-DateTime
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes

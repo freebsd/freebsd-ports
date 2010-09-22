@@ -8,15 +8,13 @@
 PORTNAME=	Math-Base36
 PORTVERSION=	0.07
 PORTEPOCH=	2
+PORTRESIVION=	1
 CATEGORIES=	math perl5 converters
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mhsin@mhsin.org
 COMMENT=	Encoding and decoding of base36 strings
-
-BUILD_DEPENDS=	p5-Math-BigInt>=1.60:${PORTSDIR}/math/p5-Math-BigInt
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
