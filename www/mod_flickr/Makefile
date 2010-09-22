@@ -16,6 +16,8 @@ COMMENT=		Apache module for Flickr API access
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
+MAKE_JOBS_SAFE=	yes
+
 XTRA_FLAGS=		-lcurl
 
 AP_INC=			${LOCALBASE}/include

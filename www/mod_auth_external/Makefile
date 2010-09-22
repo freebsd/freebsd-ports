@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.unixpapa.com/software/ \
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Enables the use of external mechanisms for user authentication
 
+MAKE_JOBS_SAFE=	yes
+
 PORTSCOUT=  limit:^2.1
 
 CONFLICTS=	apache-contrib-1.*

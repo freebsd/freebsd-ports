@@ -17,6 +17,8 @@ DIST_SUBDIR=	python
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache 1.3 module for integrating Python
 
+MAKE_JOBS_SAFE=	yes
+
 .if defined(PACKAGE_BUILDING)
 IGNORE=	Requires python WITHOUT_THREADS
 .endif
