@@ -17,8 +17,9 @@ MAN1=		echat.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|CFLAGS+=|g ; \
-		s|PREFIX=/usr/local|PREFIX=${PREFIX}|g ; \
-		s|CC=|CC?=|g' ${WRKSRC}/Makefile
+		s|PREFIX=|PREFIX?=|g ; s|CC=|CC?=|g; \
+		\|^CFLAGS| { s|-g||; s|-O2||; } ; \
+		\|CC|s|@||; \|install|s|-s|${STRIP}|' ${WRKSRC}/Makefile
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/.echatrc.sample ${PREFIX}/etc/echatrc.sample
