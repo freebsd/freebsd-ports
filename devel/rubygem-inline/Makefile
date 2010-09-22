@@ -5,6 +5,9 @@
 # $FreeBSD$
 #
 
+# XXX: note 3.8.5+ require EXACT (~> 4.3.0) versions of ZenTest 
+# XXX: currently at 4.4.0. This will break 5 other ports directly
+
 PORTNAME=	inline
 PORTVERSION=	3.8.4
 CATEGORIES=	devel rubygems
