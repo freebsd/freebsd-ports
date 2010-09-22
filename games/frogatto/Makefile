@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Frogatto
+# New ports collection makefile for:	Frogatto & Friends
 # Date created:				14 Jul 2010
 # Whom:					Alexey Dokuchaev <danfe@FreeBSD.org>
 #
@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	frogatto
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.0.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.frogatto.com/files/
 
@@ -31,8 +30,9 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's,(ccache )?g\+\+,$$(CXX) $$(CXXFLAGS),' \
 		-e 's,-O2,, ; s,-g,, ; s,/usr/X11R6,${LOCALBASE},' \
 		-e 's,-mt,,g ; /server/s,`.*mixer,${PTHREAD_LIBS},' \
+		-e 's,-L/usr/lib,, ; s,-L/sw/lib,,' \
 		-e '/server/s,-lX11,,' ${WRKSRC}/Makefile
-# Point to the right location where look for the resources on FreeBSD
+# Point to the right location where to look for resources on FreeBSD
 	@${REINPLACE_CMD} -e 's,HAVE_CONFIG_H,__FreeBSD__,' \
 		-e 's,DATADIR,"${DATADIR}",' ${WRKSRC}/src/filesystem.cpp
 	@${REINPLACE_CMD} -E 's,(music|sounds)/,${DATADIR}/&,' \
@@ -43,8 +43,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/server ${PREFIX}/bin/${PORTNAME}-server
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "data images music sounds" \
 		${DATADIR}
-# Fix permissions on DATADIR after COPYTREE_SHARE (cpio(1) defaults to 700)
-	${CHMOD} 755 ${DATADIR}
+# Fix permissions on DATADIR after COPYTREE_SHARE (cpio(1) defaults to 700
+# if target directory (${DATADIR}) does not exist)
+	@${CHMOD} 755 ${DATADIR}
 # Dynamically generate part of the PLIST for game resources (lots of them)
 	@${FIND} ${DATADIR} -not -type d | \
 		${SED} 's,^${PREFIX}/,,' | ${SORT} >> ${TMPPLIST}
