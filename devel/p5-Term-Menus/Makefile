@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Term-Menus
-PORTVERSION=	1.52
+PORTVERSION=	1.53
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,4 +21,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Term::Menus.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-Module-Load-Conditional>=0:${PORTSDIR}/devel/p5-Module-Load-Conditional
+.endif
+
+.include <bsd.port.post.mk>
