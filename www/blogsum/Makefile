@@ -23,7 +23,7 @@ PERL_MODULES=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-USE_APACHE=	1.3
+USE_APACHE=	1.3+
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
