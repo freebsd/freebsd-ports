@@ -62,7 +62,10 @@ do-install:
 	${TAR} cf - -C${WRKSRC}/samples . | ${TAR} xof - -C${EXAMPLESDIR}
 .endif
 
-regression-test:	install
-	cd ${DATADIR}/tests && ${LUA_CMD} test_alien.lua
+regression-test:	build
+	cd ${WRKSRC}/tests; \
+	${LN} -s ../src/alien* .; \
+	${LUA_CMD} test_alien.lua; \
+	${RM} alien alien.lua
 
 .include <bsd.port.mk>
