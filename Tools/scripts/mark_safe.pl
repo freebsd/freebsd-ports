@@ -3,6 +3,7 @@
 # $FreeBSD$
 #
 # MAINTAINER=   pgollucci@FreeBSD.org
+# all committers make commit to this file without approval
 
 ## core
 use strict;
