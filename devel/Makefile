@@ -2899,6 +2899,7 @@
     SUBDIR += qjson
     SUBDIR += qmake
     SUBDIR += qmake4
+    SUBDIR += qoauth
     SUBDIR += qprog
     SUBDIR += qsa
     SUBDIR += qscintilla2
