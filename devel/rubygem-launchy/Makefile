@@ -12,10 +12,10 @@ MASTER_SITES=	RG
 MAINTAINER=	rpsfa@rit.edu
 COMMENT=	A helper class for launching cross-platform applications
 
-RUN_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
-		rubygem-configuration>=1.1.0:${PORTSDIR}/devel/rubygem-configuration
+RUN_DEPENDS=	rubygem-configuration>=1.1.0:${PORTSDIR}/devel/rubygem-configuration
 
 USE_RUBY=	yes
+USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES+=	bin/launchy

@@ -14,10 +14,10 @@ COMMENT=	Rails internals bootup, plugins, generators, and rake tasks
 
 RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-actionpack>=${PORTVERSION}:${PORTSDIR}/www/rubygem-actionpack \
-		rubygem-thor>=0.14.0:${PORTSDIR}/devel/rubygem-thor \
-		rubygem-rake>=0.8.4:${PORTSDIR}/devel/rubygem-rake
+		rubygem-thor>=0.14.0:${PORTSDIR}/devel/rubygem-thor
 
 USE_RUBY=	yes
+USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=  yes
 
