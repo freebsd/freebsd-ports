@@ -5,20 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=	pyusb
-PORTVERSION=	0.4.2
+PORTNAME=	usb
+PORTVERSION=	0.4.3
 CATEGORIES=	devel python
-MASTER_SITES=	SF \
-		${MASTER_SITE_BERLIOS}
-
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	py${PORTNAME}/PyUSB%200.x/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sbrabez@gmail.com
 COMMENT=	Python wrapper around libusb
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/usb.so
+PYDISTUTILS_PKGNAME=	py${PORTNAME}
+
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -28,6 +30,12 @@ LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 post-patch:
 	${REINPLACE_CMD} 's,/usr/local,${LOCALBASE},' ${WRKSRC}/setup.py
 
+.endif
+
+post-install:
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
