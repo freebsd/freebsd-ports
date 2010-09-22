@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
-MAINTAINER=	flo@kasimir.com
+MAINTAINER=	flo@smeets.im
 COMMENT=	Compute molecular dynamics
 
 USE_GNOME=	libxml2

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.linuxftw.com/ezbounce/files/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	flo@kasimir.com
+MAINTAINER=	flo@smeets.im
 COMMENT=	A highly configurable IRC Proxy
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs

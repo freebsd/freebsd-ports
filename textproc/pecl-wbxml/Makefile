@@ -1,6 +1,6 @@
 # New ports collection makefile for:	pecl-wbxml
 # Date created:		2009-03-11
-# Whom:			Florian Smeets <flo@kasimir.com>
+# Whom:			Florian Smeets <flo@smeets.im>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	flo@kasimir.com
+MAINTAINER=	flo@smeets.im
 COMMENT=	A PECL extension that provides WBXML conversion capabilities
 
 LIB_DEPENDS=	wbxml2.0:${PORTSDIR}/textproc/wbxml2

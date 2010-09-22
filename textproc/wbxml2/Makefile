@@ -11,7 +11,7 @@ CATEGORIES=	textproc devel
 MASTER_SITES=	SF/libwbxml/libwbxml/${PORTVERSION}
 DISTNAME=	libwbxml-${PORTVERSION}
 
-MAINTAINER=	flo@kasimir.com
+MAINTAINER=	flo@smeets.im
 COMMENT=	Library & tools for converting wbxml<->xml
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

@@ -13,7 +13,7 @@ MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
 DISTNAME=	asterisk-addons-${DISTVERSION}
 
-MAINTAINER=	flo@kasimir.com
+MAINTAINER=	flo@smeets.im
 COMMENT=	GPL modules for the Asterisk Open Source PBX
 
 BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk16
