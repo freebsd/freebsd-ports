@@ -443,7 +443,6 @@
     SUBDIR += linux-mikmod
     SUBDIR += linux-musicipserver
     SUBDIR += linux-nas-libs
-    SUBDIR += linux-nerodigitalaudio
     SUBDIR += linux-openal
     SUBDIR += linux-sdl_mixer
     SUBDIR += linux-shoutcast
