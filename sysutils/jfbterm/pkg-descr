@@ -1,4 +1,5 @@
-Multilanguage can be displayed on the console in using the frame buffer.
+JFBTERM/ME takes advantages of framebuffer device to display
+multilingual text on console.
 
 jfbterm
 WWW: http://sourceforge.jp/projects/jfbterm
