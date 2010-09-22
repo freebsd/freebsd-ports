@@ -41,7 +41,7 @@ my $NoExec    = 0;
 my $Maintainer = "$ENV{USER}\@FreeBSD.org";
 my $Ports = 0;
 my $Safe = 1;
-my $Index = 'INDEX-8';
+my $Index = 'INDEX-9';
 
 # internals
 my $PORTSDIR = $ENV{PORTSDIR} || '/usr/ports';
