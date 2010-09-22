@@ -1,0 +1,3 @@
+WebMock allows stubbing HTTP requests and setting expectations on HTTP requests.
+
+WWW:    http://rubygems.org/gems/webmock
