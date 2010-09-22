@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/usb.so
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usbenum.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usbprint.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
