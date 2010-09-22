@@ -7,15 +7,16 @@
 
 PORTNAME=	newgem
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Bundle ruby libraries into gems
 
-RUN_DEPENDS=	rubygem-activesupport>=2.0.2:${PORTSDIR}/devel/rubygem-activesupport \
-  rubygem-rubigen>=1.5.1:${PORTSDIR}/devel/rubygem-rubigen \
-  rubygem-hoe>=1.8.0:${PORTSDIR}/devel/rubygem-hoe \
+RUN_DEPENDS=	rubygem-activesupport>=2.3.4:${PORTSDIR}/devel/rubygem-activesupport \
+  rubygem-rubigen>=1.5.3:${PORTSDIR}/devel/rubygem-rubigen \
+  rubygem-hoe>=2.4.0:${PORTSDIR}/devel/rubygem-hoe \
   rubygem-redcloth>=4.0.0:${PORTSDIR}/www/rubygem-redcloth \
   rubygem-syntax>=1.0.0:${PORTSDIR}/textproc/rubygem-syntax \
   rubygem-rubigen>=1.5.3:${PORTSDIR}/devel/rubygem-rubigen

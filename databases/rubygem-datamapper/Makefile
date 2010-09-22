@@ -7,19 +7,20 @@
 
 PORTNAME=	datamapper
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Fast, thread-safe, object-relational mapper
 
-RUN_DEPENDS=	rubygem-dm-aggregates>=1.0.1:${PORTSDIR}/databases/rubygem-dm-aggregates \
-	rubygem-dm-constraints>=1.0.1:${PORTSDIR}/databases/rubygem-dm-constraints \
-	rubygem-dm-transactions>=1.0.1:${PORTSDIR}/databases/rubygem-dm-transactions \
-	rubygem-dm-serializer>=1.0.1:${PORTSDIR}/databases/rubygem-dm-serializer \
-	rubygem-dm-timestamps>=1.0.1:${PORTSDIR}/databases/rubygem-dm-timestamps \
-	rubygem-dm-validations>=1.0.1:${PORTSDIR}/databases/rubygem-dm-validations \
-	rubygem-dm-types>=1.0.1:${PORTSDIR}/databases/rubygem-dm-types
+RUN_DEPENDS=	rubygem-dm-aggregates>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-aggregates \
+	rubygem-dm-constraints>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-constraints \
+	rubygem-dm-transactions>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-transactions \
+	rubygem-dm-serializer>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-serializer \
+	rubygem-dm-timestamps>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-timestamps \
+	rubygem-dm-validations>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-validations \
+	rubygem-dm-types>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-types
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

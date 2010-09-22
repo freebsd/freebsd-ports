@@ -6,13 +6,14 @@
 
 PORTNAME=	hoe
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A simple rake/rubygems helper for project Rakefiles
 
-RUN_DEPENDS=	rubygem-rubyforge>=1.3.1:${PORTSDIR}/devel/rubygem-rubyforge
+RUN_DEPENDS=	rubygem-rubyforge>=2.0.4:${PORTSDIR}/devel/rubygem-rubyforge
 
 USE_RUBY=	yes
 USE_RAKE=	yes
