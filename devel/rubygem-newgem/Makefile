@@ -21,6 +21,8 @@ RUN_DEPENDS=	rubygem-activesupport>=2.3.4:${PORTSDIR}/devel/rubygem-activesuppor
   rubygem-syntax>=1.0.0:${PORTSDIR}/textproc/rubygem-syntax \
   rubygem-rubigen>=1.5.3:${PORTSDIR}/devel/rubygem-rubigen
 
+BROKEN=	Depends on broken devel/rubygem-rubigen
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
