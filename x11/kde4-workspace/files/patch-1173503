@@ -1,0 +1,10 @@
+--- ./plasma/desktop/applets/kickoff/core/recentapplications.cpp	2010/09/09 15:15:03	1173502
++++ ./plasma/desktop/applets/kickoff/core/recentapplications.cpp	2010/09/09 15:15:22	1173503
+@@ -73,6 +73,7 @@
+         }
+ 
+         recentGroup.writeEntry("Applications", recentApplications);
++        recentGroup.config()->sync();
+     }
+     void addEntry(const QString& id, ServiceInfo& info) {
+         // if this service is already in the list then remove the existing
