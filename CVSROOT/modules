@@ -902,6 +902,7 @@ base                            ports/security/base
 base64                          ports/converters/base64
 bash                            ports/shells/bash
 bash-completion                 ports/shells/bash-completion
+bash-completion-classic         ports/shells/bash-completion-classic
 bash-static                     ports/shells/bash-static
 bash3                           ports/shells/bash3
 bash3-static                    ports/shells/bash3-static
@@ -2182,6 +2183,7 @@ db47                            ports/databases/db47
 db48                            ports/databases/db48
 db4o-mono                       ports/databases/db4o-mono
 db50                            ports/databases/db50
+db51                            ports/databases/db51
 dbXML                           ports/databases/dbXML
 dbacl                           ports/textproc/dbacl
 dbconnect                       ports/databases/dbconnect
@@ -4346,6 +4348,7 @@ ghostscript8                    ports/print/ghostscript8
 ghostscript8-nox11              ports/print/ghostscript8-nox11
 ghostview                       ports/print/ghostview
 ghtool                          ports/dns/ghtool
+giacxcas                        ports/math/giacxcas
 giblib                          ports/graphics/giblib
 gicq                            ports/net-im/gicq
 gif2png                         ports/graphics/gif2png
@@ -7218,6 +7221,7 @@ kmymoney-kde4                   ports/finance/kmymoney-kde4
 kmymoney2                       ports/finance/kmymoney2
 kmysqladmin                     ports/databases/kmysqladmin
 knemo                           ports/net/knemo
+knemo-kde4                      ports/net/knemo-kde4
 knews                           ports/news/knews
 knewsticker-scripts             ports/misc/knewsticker-scripts
 knightcap                       ports/games/KnightCap
@@ -10039,6 +10043,7 @@ netpanzer-data                  ports/games/netpanzer-data
 netpbm                          ports/graphics/netpbm
 netpbm-devel                    ports/graphics/netpbm-devel
 netperf                         ports/benchmarks/netperf
+netperfmeter                    ports/benchmarks/netperfmeter
 netpgp                          ports/security/netpgp
 netpipe                         ports/benchmarks/netpipe
 netpipes                        ports/net/netpipes
@@ -11481,7 +11486,6 @@ p5-Compress-LeadingBlankSpaces  ports/www/p5-Compress-LeadingBlankSpaces
 p5-Compress-Raw-Bzip2           ports/archivers/p5-Compress-Raw-Bzip2
 p5-Compress-Raw-Lzma            ports/archivers/p5-Compress-Raw-Lzma
 p5-Compress-Raw-Zlib            ports/archivers/p5-Compress-Raw-Zlib
-p5-Compress-Zlib                ports/archivers/p5-Compress-Zlib
 p5-Config-Any                   ports/devel/p5-Config-Any
 p5-Config-ApacheFormat          ports/devel/p5-Config-ApacheFormat
 p5-Config-Auto                  ports/devel/p5-Config-Auto
@@ -12515,10 +12519,8 @@ p5-IO-BufferedSelect            ports/devel/p5-IO-BufferedSelect
 p5-IO-CSVHeaderFile             ports/textproc/p5-IO-CSVHeaderFile
 p5-IO-Capture                   ports/devel/p5-IO-Capture
 p5-IO-CaptureOutput             ports/devel/p5-IO-CaptureOutput
-p5-IO-Compress-Base             ports/archivers/p5-IO-Compress-Base
-p5-IO-Compress-Bzip2            ports/archivers/p5-IO-Compress-Bzip2
+p5-IO-Compress                  ports/archivers/p5-IO-Compress
 p5-IO-Compress-Lzma             ports/archivers/p5-IO-Compress-Lzma
-p5-IO-Compress-Zlib             ports/archivers/p5-IO-Compress-Zlib
 p5-IO-Digest                    ports/devel/p5-IO-Digest
 p5-IO-Handle-Util               ports/devel/p5-IO-Handle-Util
 p5-IO-Interactive               ports/devel/p5-IO-Interactive
@@ -15383,7 +15385,6 @@ p5-compress-lzw                 ports/archivers/p5-Compress-LZW
 p5-compress-raw-bzip2           ports/archivers/p5-Compress-Raw-Bzip2
 p5-compress-raw-lzma            ports/archivers/p5-Compress-Raw-Lzma
 p5-compress-raw-zlib            ports/archivers/p5-Compress-Raw-Zlib
-p5-compress-zlib                ports/archivers/p5-Compress-Zlib
 p5-config-any                   ports/devel/p5-Config-Any
 p5-config-apacheformat          ports/devel/p5-Config-ApacheFormat
 p5-config-auto                  ports/devel/p5-Config-Auto
@@ -16488,10 +16489,8 @@ p5-io-async                     ports/devel/p5-IO-Async
 p5-io-bufferedselect            ports/devel/p5-IO-BufferedSelect
 p5-io-capture                   ports/devel/p5-IO-Capture
 p5-io-captureoutput             ports/devel/p5-IO-CaptureOutput
-p5-io-compress-base             ports/archivers/p5-IO-Compress-Base
-p5-io-compress-bzip2            ports/archivers/p5-IO-Compress-Bzip2
+p5-io-compress                  ports/archivers/p5-IO-Compress
 p5-io-compress-lzma             ports/archivers/p5-IO-Compress-Lzma
-p5-io-compress-zlib             ports/archivers/p5-IO-Compress-Zlib
 p5-io-csvheaderfile             ports/textproc/p5-IO-CSVHeaderFile
 p5-io-digest                    ports/devel/p5-IO-Digest
 p5-io-handle-util               ports/devel/p5-IO-Handle-Util
@@ -23489,6 +23488,7 @@ spectools                       ports/net-mgmt/spectools
 speech-dispatcher               ports/accessibility/speech-dispatcher
 speedbar                        ports/editors/speedbar
 speedcrunch                     ports/math/speedcrunch
+speedtest-mini                  ports/www/speedtest-mini
 speex                           ports/audio/speex
 spegla                          ports/ftp/spegla
 spek                            ports/audio/spek
