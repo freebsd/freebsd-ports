@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	nerodigitalaudio
-PORTVERSION=	1.1.34.2
+PORTNAME=	neroaaccodec
+PORTVERSION=	1.5.1
 CATEGORIES=	audio multimedia linux
 MASTER_SITES=	ftp://ftp6.nero.com/tools/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	NeroDigitalAudio
+DISTNAME=	NeroAACCodec-${PORTVERSION}
 
 MAINTAINER=	yaizawa@2004.jukuin.keio.ac.jp
 COMMENT=	Nero Digital Audio Reference MPEG-4 & 3GPP Audio Encoder
@@ -23,22 +23,26 @@ WRKSRC=		${WRKDIR}
 RESTRICTED=	forbidden by license considerations
 
 PLIST_FILES=	bin/neroAacDec \
-		bin/neroAacEnc
+		bin/neroAacEnc \
+		bin/neroAacTag
 .if !defined(NOPORTDOCS)
 PLIST_DIRS=	${DOCSDIR_REL}
 PLIST_FILES+=	${DOCSDIR_REL}/changelog.txt \
 		${DOCSDIR_REL}/license.txt \
-		${DOCSDIR_REL}/readme.txt
+		${DOCSDIR_REL}/readme.txt \
+		${DOCSDIR_REL}/NeroAAC_tut.pdf
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/linux/neroAacDec ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/linux/neroAacEnc ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/linux/neroAacTag ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/changelog.txt ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/license.txt ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/readme.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NeroAAC_tut.pdf ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
