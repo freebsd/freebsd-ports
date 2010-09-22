@@ -3,6 +3,7 @@ bin/xfi
 bin/xfp
 bin/xfv
 bin/xfw
+share/locale/bs/LC_MESSAGES/xfe.mo
 share/locale/ca/LC_MESSAGES/xfe.mo
 share/locale/cs/LC_MESSAGES/xfe.mo
 share/locale/da/LC_MESSAGES/xfe.mo
@@ -22,6 +23,7 @@ share/locale/ru/LC_MESSAGES/xfe.mo
 share/locale/sv/LC_MESSAGES/xfe.mo
 share/locale/tr/LC_MESSAGES/xfe.mo
 share/locale/zh_CN/LC_MESSAGES/xfe.mo
+share/locale/zh_TW/LC_MESSAGES/xfe.mo
 share/pixmaps/xfe.png
 share/pixmaps/xfi.png
 share/pixmaps/xfp.png
@@ -259,6 +261,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/blue-theme/showhidden.png
 %%DATADIR%%/icons/blue-theme/shownumbers.png
 %%DATADIR%%/icons/blue-theme/showthumb.png
+%%DATADIR%%/icons/blue-theme/sla_16x16.png
+%%DATADIR%%/icons/blue-theme/sla_32x32.png
 %%DATADIR%%/icons/blue-theme/smallicons.png
 %%DATADIR%%/icons/blue-theme/so_16x16.png
 %%DATADIR%%/icons/blue-theme/so_32x32.png
@@ -561,6 +565,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/brown-theme/showhidden.png
 %%DATADIR%%/icons/brown-theme/shownumbers.png
 %%DATADIR%%/icons/brown-theme/showthumb.png
+%%DATADIR%%/icons/brown-theme/sla_16x16.png
+%%DATADIR%%/icons/brown-theme/sla_32x32.png
 %%DATADIR%%/icons/brown-theme/smallicons.png
 %%DATADIR%%/icons/brown-theme/so_16x16.png
 %%DATADIR%%/icons/brown-theme/so_32x32.png
@@ -863,6 +869,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnome-theme/showhidden.png
 %%DATADIR%%/icons/gnome-theme/shownumbers.png
 %%DATADIR%%/icons/gnome-theme/showthumb.png
+%%DATADIR%%/icons/gnome-theme/sla_16x16.png
+%%DATADIR%%/icons/gnome-theme/sla_32x32.png
 %%DATADIR%%/icons/gnome-theme/smallicons.png
 %%DATADIR%%/icons/gnome-theme/so_16x16.png
 %%DATADIR%%/icons/gnome-theme/so_32x32.png
@@ -1165,6 +1173,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnomeblue-theme/showhidden.png
 %%DATADIR%%/icons/gnomeblue-theme/shownumbers.png
 %%DATADIR%%/icons/gnomeblue-theme/showthumb.png
+%%DATADIR%%/icons/gnomeblue-theme/sla_16x16.png
+%%DATADIR%%/icons/gnomeblue-theme/sla_32x32.png
 %%DATADIR%%/icons/gnomeblue-theme/smallicons.png
 %%DATADIR%%/icons/gnomeblue-theme/so_16x16.png
 %%DATADIR%%/icons/gnomeblue-theme/so_32x32.png
@@ -1467,6 +1477,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/kde-theme/showhidden.png
 %%DATADIR%%/icons/kde-theme/shownumbers.png
 %%DATADIR%%/icons/kde-theme/showthumb.png
+%%DATADIR%%/icons/kde-theme/sla_16x16.png
+%%DATADIR%%/icons/kde-theme/sla_32x32.png
 %%DATADIR%%/icons/kde-theme/smallicons.png
 %%DATADIR%%/icons/kde-theme/so_16x16.png
 %%DATADIR%%/icons/kde-theme/so_32x32.png
@@ -1769,6 +1781,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/tango-theme/showhidden.png
 %%DATADIR%%/icons/tango-theme/shownumbers.png
 %%DATADIR%%/icons/tango-theme/showthumb.png
+%%DATADIR%%/icons/tango-theme/sla_16x16.png
+%%DATADIR%%/icons/tango-theme/sla_32x32.png
 %%DATADIR%%/icons/tango-theme/smallicons.png
 %%DATADIR%%/icons/tango-theme/so_16x16.png
 %%DATADIR%%/icons/tango-theme/so_32x32.png
@@ -2071,6 +2085,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/windows-theme/showhidden.png
 %%DATADIR%%/icons/windows-theme/shownumbers.png
 %%DATADIR%%/icons/windows-theme/showthumb.png
+%%DATADIR%%/icons/windows-theme/sla_16x16.png
+%%DATADIR%%/icons/windows-theme/sla_32x32.png
 %%DATADIR%%/icons/windows-theme/smallicons.png
 %%DATADIR%%/icons/windows-theme/so_16x16.png
 %%DATADIR%%/icons/windows-theme/so_32x32.png
@@ -2373,6 +2389,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfce-theme/showhidden.png
 %%DATADIR%%/icons/xfce-theme/shownumbers.png
 %%DATADIR%%/icons/xfce-theme/showthumb.png
+%%DATADIR%%/icons/xfce-theme/sla_16x16.png
+%%DATADIR%%/icons/xfce-theme/sla_32x32.png
 %%DATADIR%%/icons/xfce-theme/smallicons.png
 %%DATADIR%%/icons/xfce-theme/so_16x16.png
 %%DATADIR%%/icons/xfce-theme/so_32x32.png
@@ -2675,6 +2693,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfe-theme/showhidden.png
 %%DATADIR%%/icons/xfe-theme/shownumbers.png
 %%DATADIR%%/icons/xfe-theme/showthumb.png
+%%DATADIR%%/icons/xfe-theme/sla_16x16.png
+%%DATADIR%%/icons/xfe-theme/sla_32x32.png
 %%DATADIR%%/icons/xfe-theme/smallicons.png
 %%DATADIR%%/icons/xfe-theme/so_16x16.png
 %%DATADIR%%/icons/xfe-theme/so_32x32.png
@@ -2770,3 +2790,7 @@ share/applications/xfp.desktop
 @dirrmtry share/locale/es_AR/LC_MESSAGES
 @dirrmtry share/locale/es_AR
 @dirrmtry share/applications
+
+
+
+
