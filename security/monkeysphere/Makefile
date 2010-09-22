@@ -26,6 +26,9 @@ MAN7=		monkeysphere.7
 MAN8=		monkeysphere-host.8 monkeysphere-authentication.8
 MANCOMPRESSED=	yes
 
+USERS=	monkeysphere
+GROUPS=	monkeysphere
+
 MAKE_ARGS=	ETCPREFIX=${PREFIX} MANPREFIX=${PREFIX}/man ETCSUFFIX=.sample
 
 # use proper system paths for FreeBSD instead of debian's:

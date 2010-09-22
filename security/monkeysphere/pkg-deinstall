@@ -19,9 +19,6 @@ POST-DEINSTALL)
 
 # (note: FreeBSD does not seem to want the package-specific user to be
 # purged at package removal)
-	if pw user show "${USER}" 2>/dev/null >/dev/null; then
-	    echo "Warning: If you will *NOT* use this package anymore, please remove the monkeysphere user manually."
-	fi
 	if [ -d "$VARLIB" ] ; then
 	    echo "Warning: You may want to remove monkeysphere's cached authentication data and keyrings in $VARLIB"
 	fi
