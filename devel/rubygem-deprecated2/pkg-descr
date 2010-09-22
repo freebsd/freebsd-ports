@@ -1,0 +1,9 @@
+rubygem-deprecated is a small library intended to aid developers working
+with deprecated code. The idea comes from the 'D' programming language,
+where developers can mark certain code as deprecated, and then
+allow/disallow the ability to execute deprecated code.
+
+This is a legacy copy in ports of the 2.x series for compatibility with
+some other Ruby ports.
+
+WWW:	http://rubyforge.org/projects/deprecated/
