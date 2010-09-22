@@ -3,6 +3,7 @@
 
     COMMENT = French support
 
+    SUBDIR += MT
     SUBDIR += acroread8
     SUBDIR += acroread9
     SUBDIR += alphabet_sounds_fr
