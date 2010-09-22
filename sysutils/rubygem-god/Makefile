@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	god
-PORTVERSION=	0.7.20
+PORTVERSION=	0.7.21
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
