@@ -142,7 +142,7 @@ sub mark {
               $i_maintainer > 0 ? $i_maintainer : print "Can't find location to insert", next;
 
     my @newlines = @lines[0..$loc];
-    push @newlines, "\n", "MAKE_JOBS_" . ($Safe ? "SAFE" : "UNSAFE")  . "=  yes\n";
+    push @newlines, "\n", "MAKE_JOBS_" . ($Safe ? "SAFE" : "UNSAFE")  . "=\tyes\n";
     push @newlines, @lines[$loc+1..$#lines];
 
     open my $mk_o, '>', $mfile or die "Can't open [$mfile] b/c [$!]";
