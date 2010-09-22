@@ -3093,6 +3093,7 @@
     SUBDIR += rubygem-rcov
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rparsec
+    SUBDIR += rubygem-rr
     SUBDIR += rubygem-rscm
     SUBDIR += rubygem-rspec
     SUBDIR += rubygem-rubigen
