@@ -7,6 +7,7 @@
 
 PORTNAME=	smstools
 PORTVERSION=	3.1.12
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://smstools3.kekekasvi.com/packages/
 DISTNAME=	smstools3-${PORTVERSION}
@@ -30,31 +31,6 @@ SUB_LIST+=	SPOOLDIR="${SPOOLDIR}" LOGDIR="${LOGDIR}" PIDDIR="${PIDDIR}" \
 		SMSD_USER="${SMSD_USER}" SMSD_GROUP="${SMSD_GROUP}"
 PLIST_SUB+=	SPOOLDIR="${SPOOLDIR}" LOGDIR="${LOGDIR}" PIDDIR="${PIDDIR}" \
 		SMSD_USER="${SMSD_USER}" SMSD_GROUP="${SMSD_GROUP}"
-
-DOCS=		at-commands.html blacklist.html book.html compiling.html \
-		configure.html configure2.html error-messages.html \
-		eventhandler.html faq.html fileformat.html gpl.html \
-		hardwarecomp.html history3.html index.html license.html \
-		localizing.html run.html statusmonitor.html udh.html \
-		windows.html
-
-SLIDESHOW=	blacklist.gif eventhandler.gif logfile.gif modem.gif \
-		move_l.gif move_r.gif page1.html page2.html page2.jpg \
-		page2b.html page3.html page4.html page5.html page6.html \
-		page7.html page8.html queue.gif sms.gif smstools3-small.jpg \
-		statistic.gif status.gif
-
-EXAMPLES=	.procmailrc .qmailrc language-ISO-8859-15.fi \
-		language-UTF-8.fi operator_logo1.sms operator_logo2.sms \
-		received_report.sms received_sms.sms send_sms.sms \
-		send_sms_unicode.sms smsd.conf.easy smsd.conf.full \
-		smsd.conf.net smsd.conf.non-root
-
-SCRIPTS=	callhandler checkhandler-utf-8 email2sms eventhandler-utf-8 \
-		eventhandler_report forwardsms hex2bin hex2dec \
-		load_balancing.sh mysmsd pkill regular_run sendsms sms2html \
-		sms2unicode sms2xml sms3 smsevent smsresend smstest.php \
-		sql_demo unicode2sms
 
 PORTDOCS=	*
 PORTEXAMPLES=	.procmailrc .qmailrc *
@@ -80,10 +56,14 @@ post-patch:
 		${WRKSRC}/examples/smsd.conf.easy \
 		${WRKSRC}/examples/smsd.conf.full \
 		${WRKSRC}/examples/smsd.conf.non-root
+	@${REINPLACE_CMD} 's|/bin/bash|/bin/sh|g' \
+		${WRKSRC}/scripts/*
 
 post-install:
 	@${MKDIR} ${DATADIR}
-	@${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/scripts/,} ${DATADIR}
+	@for file in `${FIND} ${WRKSRC}/scripts -type f ! -name 'README' ! -name '*.bak'`; do \
+		${INSTALL_SCRIPT} $$file ${DATADIR}/; \
+	done
 .for FILE in sendsms sms2html sms2unicode unicode2sms
 	@${LN} -sf ${DATADIR}/${FILE} ${PREFIX}/bin/${FILE}
 .endfor
@@ -95,12 +75,13 @@ post-install:
 	@${CHOWN} -R ${SMSD_USER}:${SMSD_GROUP} ${SPOOLDIR} ${LOGDIR} ${PIDDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/slideshow
-	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}/
-	@${INSTALL_DATA} ${SLIDESHOW:S,^,${WRKSRC}/doc/slideshow/,} \
-		${DOCSDIR}/slideshow
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/doc/slideshow/* ${DOCSDIR}/slideshow
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/examples/,} ${EXAMPLESDIR}/
+	@for file in `${FIND} ${WRKSRC}/examples -type f ! -name 'README'`; do \
+		${INSTALL_SCRIPT} $$file ${EXAMPLESDIR}/; \
+	done
 .endif
 .include <bsd.port.post.mk>
