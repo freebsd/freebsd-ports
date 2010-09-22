@@ -6,13 +6,14 @@
 
 PORTNAME=	ruby-debug-base
 PORTVERSION=	0.10.3
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	Fast implementation of the standard Ruby debugger
 
-RUN_DEPENDS=	rubygem-linecache>=0.30:${PORTSDIR}/devel/rubygem-linecache
+RUN_DEPENDS=	rubygem-linecache>=0.3:${PORTSDIR}/devel/rubygem-linecache
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
