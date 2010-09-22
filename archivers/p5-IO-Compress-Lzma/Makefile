@@ -12,7 +12,7 @@ CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Write lzma files/buffers
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Raw/Lzma.pm:${PORTSDIR}/archivers/p5-Compress-Raw-Lzma \

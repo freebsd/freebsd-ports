@@ -11,7 +11,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module to provide FIGlet abilities, akin to banner
 
 RUN_DEPENDS=	${LOCALBASE}/bin/figlet:${PORTSDIR}/misc/figlet

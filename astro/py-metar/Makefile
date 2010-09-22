@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.schwarzvogel.de/pkgs/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${REALPORTNAME}-${PORTVERSION}
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python module that provides access to NOAA's METAR weather reports
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

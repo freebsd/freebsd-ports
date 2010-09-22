@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/dict/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides a few data structures and helpful functions
 
 GNU_CONFIGURE=	yes

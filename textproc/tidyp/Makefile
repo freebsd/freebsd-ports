@@ -11,7 +11,7 @@ CATEGORIES=		textproc www
 MASTER_SITES=		http://cloud.github.com/downloads/petdance/tidyp/ \
 			http://sunpoet.net/distfiles/
 
-MAINTAINER=		sunpoet@sunpoet.net
+MAINTAINER=		sunpoet@FreeBSD.org
 COMMENT=		A library and program to validate and fix HTML
 
 GNU_CONFIGURE=		yes

@@ -7,7 +7,7 @@
 
 CATEGORIES?=	chinese
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../net/tintin++
 

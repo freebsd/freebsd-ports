@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/check/check/${PORTVERSION}
 DISTNAME=	check-${PORTVERSION}
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A unit test framework for C
 
 GNU_CONFIGURE=	yes

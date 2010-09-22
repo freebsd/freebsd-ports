@@ -7,7 +7,7 @@
 
 PORTNAME=	netcdf
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	NetCDF (network Common Data Form), with Fortran support
 
 LATEST_LINK=	netcdf3-ftn

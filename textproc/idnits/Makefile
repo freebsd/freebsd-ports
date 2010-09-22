@@ -11,7 +11,7 @@ MASTER_SITES=	http://tools.ietf.org/tools/idnits/ \
 		http://sunpoet.net/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Looks for problems in internet draft formatting
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash

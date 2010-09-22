@@ -11,7 +11,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	http://erislabs.net/ianb/projects/${PORTNAME}/ \
 		http://sunpoet.net/distfiles/
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module to manipulate filenames containing music metadata
 
 PERL_CONFIGURE=	yes

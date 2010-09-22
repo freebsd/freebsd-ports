@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TinyMCE/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	An open source Javascript HTML WYSIWYG editor for web sites
 
 NO_BUILD=	yes

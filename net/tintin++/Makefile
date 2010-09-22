@@ -11,7 +11,7 @@ CATEGORIES+=	net games
 MASTER_SITES=	SF/tintin/TinTin%2B%2B%20Source%20Code/${PORTVERSION}/
 DISTNAME=	tintin-${PORTVERSION}
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A client program to help playing MUDs
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre

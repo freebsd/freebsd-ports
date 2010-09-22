@@ -12,7 +12,7 @@ CATEGORIES=		science
 MASTER_SITES=		https://code.zmaw.de/attachments/download/307/ \
 			http://sunpoet.net/distfiles/
 
-MAINTAINER=		sunpoet@sunpoet.net
+MAINTAINER=		sunpoet@FreeBSD.org
 COMMENT=		Climate Data Operators
 
 GNU_CONFIGURE=		yes

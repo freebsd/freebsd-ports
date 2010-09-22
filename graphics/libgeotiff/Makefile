@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.osgeo.org/geotiff/libgeotiff/ \
 		ftp://ftp.remotesensing.org/geotiff/libgeotiff/ \
 		http://sunpoet.net/distfiles/
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for reading and writing GeoTIFF information tags
 
 LIB_DEPENDS=	jbig:${PORTSDIR}/graphics/jbigkit \

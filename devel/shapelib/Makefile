@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.osgeo.org/shapelib/ \
 		http://sunpoet.net/distfiles/
 DISTNAME=	${PORTNAME}-${SHAPELIB_VER}
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C API for reading and writing ArcView Shapefiles
 
 MAKE_JOBS_UNSAFE=	yes
