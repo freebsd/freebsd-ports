@@ -418,7 +418,7 @@ mypaedia-*		japanese/mypaedia-fpw	The original dictionary is not
 mysqlman.tar.gz		databases/mysqlman	Not redistributable, license
 						agreement required
 ncftpd-*		ftp/ncftpd		30 day evaluation license
-NeroDigitalAudio.zip	audio/linux-nerodigitalaudio Redistribution forbidden
+NeroDigitalAudio.zip	audio/linux-neroaaccodec Redistribution forbidden
 netbeans3-*		java/netbeans3		Restrictive copyright
 netbeans4-*		java/netbeans4		Restrictive copyright
 netbeans5-*		java/netbeans5		Restrictive copyright
