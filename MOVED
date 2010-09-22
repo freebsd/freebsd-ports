@@ -4593,3 +4593,4 @@ archivers/p5-Compress-Zlib|archivers/p5-IO-Compress|2010-09-21|Replaced by archi
 archivers/p5-IO-Compress-Base|archivers/p5-IO-Compress|2010-09-21|Replaced by archivers/p5-IO-Compress
 archivers/p5-IO-Compress-Bzip2|archivers/p5-IO-Compress|2010-09-21|Replaced by archivers/p5-IO-Compress
 archivers/p5-IO-Compress-Zlib|archivers/p5-IO-Compress|2010-09-21|Replaced by archivers/p5-IO-Compress
+audio/linux-nerodigitalaudio|audio/linux-neroaaccodec|2010-09-22|Project was renamed
