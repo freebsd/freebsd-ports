@@ -7,13 +7,14 @@
 
 PORTNAME=	dm-validations
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for performing validations on DM models and pure Ruby object
 
-RUN_DEPENDS=	rubygem-dm-core>=1.0.1:${PORTSDIR}/databases/rubygem-dm-core
+RUN_DEPENDS=	rubygem-dm-core>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-core
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

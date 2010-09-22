@@ -7,6 +7,7 @@
 
 PORTNAME=	capistrano
 PORTVERSION=	2.5.19
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +17,7 @@ COMMENT=	A utility for executing commands in parallel on multiple machines
 RUN_DEPENDS=	rubygem-net-ssh-gateway>=1.0.0:${PORTSDIR}/security/rubygem-net-ssh-gateway \
   	rubygem-net-sftp>=2.0.0:${PORTSDIR}/security/rubygem-net-sftp \
 	rubygem-net-scp>=1.0.0:${PORTSDIR}/security/rubygem-net-scp \
-	rubygem-highline>=1.4.0:${PORTSDIR}/devel/rubygem-highline \
+	rubygem-highline>=0:${PORTSDIR}/devel/rubygem-highline \
 	rubygem-echoe>0:${PORTSDIR}/devel/rubygem-echoe
 
 USE_RUBY=	yes
