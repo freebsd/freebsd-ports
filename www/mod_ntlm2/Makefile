@@ -18,6 +18,8 @@ COMMENT=	NTLM authentication module for the Apache2 webserver
 
 BUILD_DEPENDS=	smbclient:${PORTSDIR}/net/samba3
 
+MAKE_JOBS_SAFE=	yes
+
 USE_APACHE=	20+
 MAKE_ENV=	APXS=${APXS}
 

@@ -24,6 +24,8 @@ OPTIONS=	NLS "Native language support" on \
 		LIBARCHIVE "Archive downloading support" on \
 		FILECACHE "Caching support" on
 
+MAKE_JOBS_SAFE=	yes
+
 USE_APACHE=	2.0+
 
 GNU_CONFIGURE=	yes

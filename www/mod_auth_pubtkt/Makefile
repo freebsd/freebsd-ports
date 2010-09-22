@@ -15,6 +15,8 @@ DISTNAME=	mod_auth_pubtkt-${PORTVERSION}
 MAINTAINER=	mk@neon1.net
 COMMENT=	An Apache module to provide public key ticket based authentication
 
+MAKE_JOBS_SAFE=	yes
+
 USE_APACHE=	1.3+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--apxs=${APXS}

@@ -16,6 +16,8 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Virtual Hosting from ldap built on top of mod_ldap
 
+MAKE_JOBS_SAFE=	yes
+
 USE_BZIP2=	YES
 USE_OPENLDAP=	YES
 
