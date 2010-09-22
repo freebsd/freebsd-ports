@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://mirrors.evolva.ro/util/mtr/ \
 		http://sunpoet.net/distfiles/
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Traceroute and ping in a single graphical network diagnostic tool
 
 GNU_CONFIGURE=	yes

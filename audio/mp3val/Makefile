@@ -11,7 +11,7 @@ CATEGORIES=		audio
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 DISTNAME=		${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=		sunpoet@sunpoet.net
+MAINTAINER=		sunpoet@FreeBSD.org
 COMMENT=		A program for MPEG audio stream validation
 
 ALL_TARGET=		mp3val

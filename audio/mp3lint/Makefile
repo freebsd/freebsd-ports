@@ -11,7 +11,7 @@ CATEGORIES=	audio perl5
 MASTER_SITES=	http://erislabs.net/ianb/projects/${PORTNAME}/ \
 		http://sunpoet.net/distfiles/
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A configurable tool to check collections of audio files
 
 BUILD_DEPENDS=	${SITE_PERL}/MP3/Archive.pm:${PORTSDIR}/audio/libmp3-archive-perl

@@ -11,7 +11,7 @@ PORTVERSION=	214.3.2
 CATEGORIES=	net dns
 MASTER_SITES=	http://opensource.apple.com/tarballs/mDNSResponder/
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Apple's mDNSResponder
 
 LICENSE=	ASL BSD

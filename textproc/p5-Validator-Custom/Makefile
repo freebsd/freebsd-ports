@@ -11,7 +11,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Validator::Custom for simple data validation
 
 BUILD_DEPENDS=	p5-Object-Simple>=3.0302:${PORTSDIR}/devel/p5-Object-Simple

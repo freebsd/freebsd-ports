@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 MASTER_SITE_SUBDIR=	software/utils/pciutils
 DISTNAME=	pciutils-${PORTVERSION}
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PCI configuration space I/O made easy
 
 ALL_TARGET=	lib/libpci.a

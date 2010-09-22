@@ -11,7 +11,7 @@ CATEGORIES=	databases geography
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/2558/ \
 		http://sunpoet.net/distfiles/
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Spherical data types, functions, and operators for PostgreSQL
 
 DATADIR=	${PREFIX}/share/postgresql

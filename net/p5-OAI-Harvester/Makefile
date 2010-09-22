@@ -12,7 +12,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN/../../authors/id/T/TH/THB/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A module to harvest using the OAI protocol
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \

@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.opendap.org/pub/source/ \
 		http://sunpoet.net/distfiles/
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SDK which contains an implementation of DAP 2.0 and 3.1
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \

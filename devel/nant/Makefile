@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A .NET build tool inspired by Ant
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono

@@ -11,7 +11,7 @@ CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN/../../authors/id/O/OL/OLAF/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl extension for simulating simple Nameservers
 
 BUILD_DEPENDS=	p5-Net-DNS>0.64:${PORTSDIR}/dns/p5-Net-DNS \

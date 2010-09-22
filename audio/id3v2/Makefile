@@ -10,7 +10,7 @@ PORTVERSION=	0.1.12
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command line id3v2 tag editor
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib

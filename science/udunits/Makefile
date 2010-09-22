@@ -11,7 +11,7 @@ CATEGORIES=	science math
 MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/udunits/ \
 		http://sunpoet.net/distfiles/
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A library for manipulating units of physical quantities
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

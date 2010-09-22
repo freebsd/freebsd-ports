@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.httrack.com/ \
 		http://sunpoet.net/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([0-9]*)$/-\1/}C
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy-to-use offline browser utility and website copier
 
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}"

@@ -10,7 +10,7 @@ PORTVERSION=	0.6
 CATEGORIES=	archivers
 MASTER_SITES=	SF/synce/Unshield/${PORTVERSION}
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extract data from InstallShield CAB files
 
 USE_AUTOTOOLS=	libtool:22

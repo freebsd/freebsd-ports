@@ -11,7 +11,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN/../../authors/id/T/TI/TIMB/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple way to trace execution of Perl statements in PL/Perl
 
 PERL_CONFIGURE=	yes

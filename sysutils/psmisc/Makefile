@@ -10,7 +10,7 @@ PORTVERSION=	22.12
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A port of the Linux pstree, killall and pidof commands
 
 CONFLICTS=	pidof-[0-9]* pstree-2.[0-9]*

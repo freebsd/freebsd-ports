@@ -13,7 +13,7 @@ MASTER_SITES=	http://cyberelk.net/tim/data/pycups/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CUPS bindings for Python
 
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client

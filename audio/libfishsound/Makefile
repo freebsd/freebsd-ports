@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/libfishsound/ \
 		http://sunpoet.net/distfiles/
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A programing interface to decode/encode audio data
 
 LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \

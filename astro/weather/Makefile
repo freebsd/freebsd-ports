@@ -11,7 +11,7 @@ CATEGORIES=	astro python
 MASTER_SITES=	http://fungi.yuggoth.org/weather/src/ \
 		http://sunpoet.net/distfiles/
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	An utility to provide current weather conditions and forecasts
 
 USE_PYTHON=	-2.7

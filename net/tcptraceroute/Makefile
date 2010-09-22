@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://michael.toren.net/code/tcptraceroute/ \
 		http://sunpoet.net/distfiles/
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A traceroute implementation using TCP packets
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10

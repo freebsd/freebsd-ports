@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
 		http://sunpoet.net/distfiles/
 
-MAINTAINER=	sunpoet@sunpoet.net
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT?=	Library for machine-independent, array-oriented data access
 
 CONFLICTS=	hdf-4.* netcdf-4.*
