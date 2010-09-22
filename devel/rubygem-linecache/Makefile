@@ -7,8 +7,7 @@
 PORTNAME=	linecache
 PORTVERSION=	0.43
 CATEGORIES=	devel rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	rocky-hacks
+MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Caches(Ruby source) Files as Might Be Used in a Debugger
