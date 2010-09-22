@@ -34,6 +34,50 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8a34d9e6-c662-11df-b2e1-001b2134ef46">
+    <topic>linux-flashplugin -- remote code execution</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><lt>9.0r283</lt></range>
+      </package>
+      <package>
+	<name>linux-f8-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>10.1r85</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Product Security Incident Response Team reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/advisories/apsa10-03.html">
+	  <p>A critical vulnerability exists in Adobe Flash Player
+	    10.1.82.76 and earlier versions for Windows, Macintosh,
+	    Linux, Solaris, and Adobe Flash Player 10.1.92.10 for
+	    Android.  This vulnerability also affects Adobe Reader
+	    9.3.4 and earlier versions for Windows, Macintosh and
+	    UNIX, and Adobe Acrobat 9.3.4 and earlier versions for
+	    Windows and Macintosh.  This vulnerability (CVE-2010-2884)
+	    could cause a crash and potentially allow an attacker
+	    to take control of the affected system.  There are
+	    reports that this vulnerability is being actively
+	    exploited in the wild against Adobe Flash Player on
+	    Windows.  Adobe is not aware of any attacks exploiting
+	    this vulnerability against Adobe Reader or Acrobat to
+	    date.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-2884</cvename>
+      <url>http://www.adobe.com/support/security/advisories/apsa10-03.html</url>
+    </references>
+    <dates>
+      <discovery>2010-09-14</discovery>
+      <entry>2010-09-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3ff95dd3-c291-11df-b0dc-00215c6a37bb">
     <topic>django -- cross-site scripting vulnerability</topic>
     <affects>
