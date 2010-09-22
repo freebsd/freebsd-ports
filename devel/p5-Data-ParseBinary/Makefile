@@ -7,15 +7,13 @@
 
 PORTNAME=	Data-ParseBinary
 PORTVERSION=	0.28
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	Yet Another parser for binary structures
-
-BUILD_DEPENDS=	${SITE_PERL}/Math/BigInt.pm:${PORTSDIR}/math/p5-Math-BigInt
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
