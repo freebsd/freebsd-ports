@@ -4,8 +4,12 @@ USE_PYTHON=	2.4+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 SAL_MODULE=	${PKGNAMESUFFIX:S/-//}
-USE_FORTRAN=yes
 USE_GCC=        4.4
+FC:=		gfortran44
+F77:=		gfortran44
+CONFIGURE_ENV+=	F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
+MAKE_ENV+=	F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
+
 #SAL_MODULE_UPPER=	`${ECHO} ${SAL_MODULE} | ${AWK} '{ print(toupper($$1)); }'`
 #SAL_MODULE_UPPER=	YACS
 
