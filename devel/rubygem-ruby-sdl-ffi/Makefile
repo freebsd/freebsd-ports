@@ -7,13 +7,14 @@
 
 PORTNAME=		ruby-sdl-ffi
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=		devel rubygems
 MASTER_SITES=		RG
 
 MAINTAINER=	kick.christoph@googlemail.com
 COMMENT=	Low-level binding to SDL and related libraries using Ruby-FFI
 
-RUN_DEPENDS=	rubygem-nice-ffi>=0.3:${PORTSDIR}/devel/rubygem-nice-ffi
+RUN_DEPENDS=	rubygem-nice-ffi>=0.2:${PORTSDIR}/devel/rubygem-nice-ffi
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
