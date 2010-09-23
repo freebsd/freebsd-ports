@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	chora
-PORTVERSION=	2.1
+PORTVERSION=	2.1.1
 PORTREVISION=	5
 CATEGORIES=	devel www
 DIST_SUBDIR=	horde
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	davide.italiano@gmail.com
 COMMENT=	CVS web-viewer
 
 #-----------------------------------------------------------------------
