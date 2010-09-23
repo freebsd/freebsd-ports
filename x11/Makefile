@@ -159,6 +159,7 @@
     SUBDIR += kdelibs3
     SUBDIR += kdelibs3-nocups
     SUBDIR += kdelibs4
+    SUBDIR += keyboardcast
     SUBDIR += keylaunch
     SUBDIR += keynav
     SUBDIR += libICE
