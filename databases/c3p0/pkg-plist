@@ -1,0 +1,46 @@
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/allclasses-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/AbstractConnectionCustomizer.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/AbstractConnectionTester.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/C3P0ProxyConnection.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/C3P0ProxyStatement.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/C3P0Registry.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/ComboPooledDataSource.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/ConnectionCustomizer.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/ConnectionTester.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/DataSources.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/DriverManagerDataSource.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/DriverManagerDataSourceFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/FullQueryConnectionTester.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/JndiRefConnectionPoolDataSource.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/PoolBackedDataSource.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/PoolBackedDataSourceFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/PoolConfig.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/PooledDataSource.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/QueryConnectionTester.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/SQLWarnings.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/UnifiedConnectionTester.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/WrapperConnectionPoolDataSource.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/com/mchange/v2/c3p0/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/constant-values.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/deprecated-list.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/help-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/index-all.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/index.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/overview-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/package-list
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/resources/inherit.gif
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/serialized-form.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/stylesheet.css
+%%PORTDOCS%%%%DOCSDIR%%/arrow_sm.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%JAVAJARDIR%%/c3p0.jar
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/resources
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2/c3p0
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange/v2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com/mchange
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs/com
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/apidocs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
