@@ -1,5 +1,7 @@
 bin/spring
 bin/spring-dedicated
+bin/spring-headless
+bin/spring-multithreaded
 lib/libspringserver.so
 lib/libunitsync.so
 share/applications/spring.desktop
@@ -17,20 +19,17 @@ share/pixmaps/spring.png
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/help/example_mod.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/AA5.0project.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/AAIA10.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/BA695.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/BA696.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/BA701.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/BA704.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/BA.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/BOTA.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/BOTA_14.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/Balanced_Annihilation_V7.12.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/CA-BETA1.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/Expand_and_Exterminate_v_0.171.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/FF 1.21 S.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/FF_1.21_S.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/KuroTA-v047.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/PURE0.51.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/S44Lyuban_v106.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/StarWars01.cfg
-%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/XTAPEV958.cfg
+%%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/XTA.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/XTAPEV9585.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/gundam_1.1_epic.cfg
 %%DATADIR%%/AI/Skirmish/AAI/0.9/cfg/mod/gundam_1.1_tiny.cfg
@@ -38,18 +37,24 @@ share/pixmaps/spring.png
 %%DATADIR%%/AI/Skirmish/CppTestAI/0.1/AIInfo.lua
 %%DATADIR%%/AI/Skirmish/CppTestAI/0.1/AIOptions.lua
 %%DATADIR%%/AI/Skirmish/CppTestAI/0.1/libSkirmishAI.so
-%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/AIInfo.lua
-%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/AIOptions.lua
-%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/BA704-categorization.cfg
-%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/BA704-config.cfg
-%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/BA711-categorization.cfg
-%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/BA711-config.cfg
-%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/BOTA16b4-categorization.cfg
-%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/BOTA16b4-config.cfg
-%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/XTAPEV96-categorization.cfg
-%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/XTAPEV96-config.cfg
-%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs/template-config.cfg
-%%DATADIR%%/AI/Skirmish/E323AI/3.18.1/libSkirmishAI.so
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/AIInfo.lua
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/AIOptions.lua
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/configs/BA-categorization.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/configs/BA-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/configs/BOTA-categorization.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/configs/BOTA-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/configs/NOTA-categorization.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/configs/NOTA-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/configs/SA-categorization.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/configs/SA-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/configs/XTA-categorization.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/configs/XTA-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/configs/ca-categorization.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/configs/ca-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/configs/ct-categorization.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/configs/ct-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/configs/template-config.cfg
+%%DATADIR%%/AI/Skirmish/E323AI/3.22.3/libSkirmishAI.so
 %%DATADIR%%/AI/Skirmish/KAIK/0.13/AIInfo.lua
 %%DATADIR%%/AI/Skirmish/KAIK/0.13/AIOptions.lua
 %%DATADIR%%/AI/Skirmish/KAIK/0.13/libSkirmishAI.so
@@ -59,6 +64,14 @@ share/pixmaps/spring.png
 %%DATADIR%%/AI/Skirmish/RAI/0.601/AIInfo.lua
 %%DATADIR%%/AI/Skirmish/RAI/0.601/AIOptions.lua
 %%DATADIR%%/AI/Skirmish/RAI/0.601/libSkirmishAI.so
+%%DATADIR%%/CMakeFiles/CMakeDirectoryInformation.cmake
+%%DATADIR%%/CMakeFiles/gamedata.dir/DependInfo.cmake
+%%DATADIR%%/CMakeFiles/gamedata.dir/build.make
+%%DATADIR%%/CMakeFiles/gamedata.dir/cmake_clean.cmake
+%%DATADIR%%/CMakeFiles/gamedata.dir/depend.internal
+%%DATADIR%%/CMakeFiles/gamedata.dir/depend.make
+%%DATADIR%%/CMakeFiles/gamedata.dir/progress.make
+%%DATADIR%%/CMakeFiles/progress.marks
 %%DATADIR%%/LuaUI/CHANGELOG.txt
 %%DATADIR%%/LuaUI/Config/README.txt
 %%DATADIR%%/LuaUI/Fonts/FreeMonoBold_12.lua
@@ -108,11 +121,14 @@ share/pixmaps/spring.png
 %%DATADIR%%/LuaUI/Sounds/teamgrab.wav
 %%DATADIR%%/LuaUI/Widgets/camera_shake.lua
 %%DATADIR%%/LuaUI/Widgets/camera_smooth_move.lua
+%%DATADIR%%/LuaUI/Widgets/gui_buildspacing.lua
 %%DATADIR%%/LuaUI/Widgets/gui_comm_ends.lua
 %%DATADIR%%/LuaUI/Widgets/gui_hilight_unit.lua
 %%DATADIR%%/LuaUI/Widgets/gui_selbuttons.lua
 %%DATADIR%%/LuaUI/Widgets/gui_team_platter.lua
 %%DATADIR%%/LuaUI/Widgets/gui_xray_shader.lua
+%%DATADIR%%/LuaUI/Widgets/headless_setup.lua
+%%DATADIR%%/LuaUI/Widgets/ingame_lobby.example.lua
 %%DATADIR%%/LuaUI/Widgets/minimap_relative.lua
 %%DATADIR%%/LuaUI/Widgets/minimap_startbox.lua
 %%DATADIR%%/LuaUI/Widgets/unit_factory_guard.lua
@@ -135,11 +151,13 @@ share/pixmaps/spring.png
 %%DATADIR%%/LuaUI/tweakmode.lua
 %%DATADIR%%/LuaUI/utils.lua
 %%DATADIR%%/LuaUI/widgets.lua
+%%DATADIR%%/Makefile
 %%DATADIR%%/PALETTE.PAL
 %%DATADIR%%/base/cursors.sdz
 %%DATADIR%%/base/maphelper.sdz
 %%DATADIR%%/base/spring/bitmaps.sdz
 %%DATADIR%%/base/springcontent.sdz
+%%DATADIR%%/cmake_install.cmake
 %%DATADIR%%/cmdcolors.txt
 %%DATADIR%%/ctrlpanel.txt
 %%DATADIR%%/fonts/AUTHORS
@@ -149,6 +167,7 @@ share/pixmaps/spring.png
 %%DATADIR%%/fonts/README
 %%DATADIR%%/luaui.lua
 %%DATADIR%%/selectkeys.txt
+%%DATADIR%%/springrc-template-headless.txt
 %%DATADIR%%/teamcolors.lua
 %%DATADIR%%/uikeys.txt
 @dirrm %%DATADIR%%/fonts
@@ -163,14 +182,16 @@ share/pixmaps/spring.png
 @dirrm %%DATADIR%%/LuaUI/Fonts
 @dirrm %%DATADIR%%/LuaUI/Config
 @dirrm %%DATADIR%%/LuaUI
+@dirrm %%DATADIR%%/CMakeFiles/gamedata.dir
+@dirrm %%DATADIR%%/CMakeFiles
 @dirrm %%DATADIR%%/AI/Skirmish/RAI/0.601
 @dirrm %%DATADIR%%/AI/Skirmish/RAI
 @dirrm %%DATADIR%%/AI/Skirmish/NullAI/0.1
 @dirrm %%DATADIR%%/AI/Skirmish/NullAI
 @dirrm %%DATADIR%%/AI/Skirmish/KAIK/0.13
 @dirrm %%DATADIR%%/AI/Skirmish/KAIK
-@dirrm %%DATADIR%%/AI/Skirmish/E323AI/3.18.1/configs
-@dirrm %%DATADIR%%/AI/Skirmish/E323AI/3.18.1
+@dirrm %%DATADIR%%/AI/Skirmish/E323AI/3.22.3/configs
+@dirrm %%DATADIR%%/AI/Skirmish/E323AI/3.22.3
 @dirrm %%DATADIR%%/AI/Skirmish/E323AI
 @dirrm %%DATADIR%%/AI/Skirmish/CppTestAI/0.1
 @dirrm %%DATADIR%%/AI/Skirmish/CppTestAI

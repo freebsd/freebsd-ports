@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	spring
-PORTVERSION=	0.81.2.1
-PORTREVISION=	1
+PORTVERSION=	0.82.5.1
 CATEGORIES=	games
 MASTER_SITES=	SF/springrts/springrts/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
@@ -36,7 +35,9 @@ MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DDATADIR:STRING="share/${PORTNAME}" \
 		-DMARCH_FLAG:STRING= \
-		-DAIINTERFACES:STRING="NATIVE"
+		-DAI_TYPES:STRING="NATIVE" \
+		-DMANDIR:STRING="man" \
+		-DCREATE_MAN_PAGES:BOOL=false
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
@@ -45,6 +46,8 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SYNC_DEBUG)
+CFLAGS=		# empty
+CXXFLAGS=	# empty
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=DEBUG2 -DTRACE_SYNC=true -DSYNCDEBUG=true
 .endif
 
@@ -62,11 +65,16 @@ post-patch:
 		${WRKSRC}/rts/System/FPUCheck.h
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/rts/build/cmake/*.cmake
+	@${REINPLACE_CMD} -e 's|execinfo|${LOCALBASE}/lib/libexecinfo.so|' \
+		${WRKSRC}/rts/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
+		${WRKSRC}/rts/System/Platform/Misc.cpp
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/Documentation && ${COPYTREE_SHARE} . ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "userdocs DevGuide.html HowTo* \
+		SelectionKeys.txt StartScriptFormat.txt changelog.txt" ${DOCSDIR}/
 .endif
 	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 
