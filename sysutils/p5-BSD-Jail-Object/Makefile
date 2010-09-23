@@ -18,6 +18,8 @@ COMMENT=	An object oriented perl interface to jail(2)
 BUILD_DEPENDS=\
 	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline
 
+MAKE_JOBS_UNSAFE=	yes
+
 PERL_CONFIGURE=	5.8.6+
 
 MAN3=		BSD::Jail::Object.3

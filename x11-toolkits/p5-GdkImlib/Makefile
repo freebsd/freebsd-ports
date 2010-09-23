@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 
+MAKE_JOBS_UNSAFE=	yes
+
 PERL_CONFIGURE=	yes
 USE_GNOME=	imlib
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}

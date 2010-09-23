@@ -22,6 +22,8 @@ RUN_DEPENDS=		p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 			p5-XSLoader>0.1:${PORTSDIR}/devel/p5-XSLoader
 LIB_DEPENDS=		mecab.1:${PORTSDIR}/japanese/mecab
 
+MAKE_JOBS_UNSAFE=	yes
+
 MAN3=			Text::MeCab.3 \
 			Text::MeCab::Dict.3 \
 			Text::MeCab::Node.3

@@ -24,6 +24,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Cairo.pm:${PORTSDIR}/graphics/p5-Cairo \
 		${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2 \
 		${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
+MAKE_JOBS_UNSAFE=	yes
+
 MAN1=		perltetris.pl.1 perlmine.pl.1
 MAN3=		Goo::Canvas::Item.3 \
 		Goo::Canvas.3 \
