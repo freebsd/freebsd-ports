@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	easylatex
-PORTVERSION=	0.062
-PORTREVISION=	4
+PORTVERSION=	0.080
+PORTREVISION=	0
 CATEGORIES=	print textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Perl script which transforms "pseudo-LaTeX" into proper LaTeX
 
-RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
-PERL_RUN_DEPENDS=	Getopt-Declare:${PORTSDIR}/devel/p5-Getopt-Declare
+RUN_DEPENDS=	${SITE_PERL}/${SITE_ARCH}/Getopt/Declare.pm:${PORTSDIR}/devel/p5-Getopt-Declare
 
 NO_BUILD=	yes
 USE_PERL5=	yes
-
-FIND_DIRS=	.
-PORTDOCS=	TUTORIAL demo.txt demo-no-graph.txt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/lib/easylatex,${DATADIR},' \
@@ -30,15 +27,16 @@ post-patch:
 do-install:
 # script/data
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
-	cd ${WRKSRC}/${PORTNAME} && ${FIND} ${FIND_DIRS} -type d -exec ${MKDIR} ${DATADIR}/{} \;
-	cd ${WRKSRC}/${PORTNAME} && ${FIND} ${FIND_DIRS} -type f -name "*.pl" -exec ${INSTALL_SCRIPT} {} ${DATADIR}/{} \;
-	cd ${WRKSRC}/${PORTNAME} && ${FIND} ${FIND_DIRS} -type f -name "*.txt" -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-# docs
+	@${MKDIR} ${DATADIR}
+	cd ${WRKSRC}/${PORTNAME} && ${COPYTREE_SHARE} . ${DATADIR}
+# docs, examples
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-. for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-. endfor
+	${INSTALL_DATA} ${WRKSRC}/TUTORIAL ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/demo.txt ${WRKSRC}/demo-no-graph.txt ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

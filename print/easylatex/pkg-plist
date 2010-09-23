@@ -1,32 +1,44 @@
 @comment $FreeBSD$
 bin/easylatex
+%%PORTDOCS%%%%DOCSDIR%%/TUTORIAL
 %%DATADIR%%/disabled/30autoAlignEquationsOutsideOfMathMode.pl
 %%DATADIR%%/embed_transforms/25scriptedMatrix.pl
 %%DATADIR%%/math_mode_symbol_list.txt
+%%DATADIR%%/transforms/04seminarEnvAddSlide.pl
+%%DATADIR%%/transforms/05comment.pl
+%%DATADIR%%/transforms/05easyFigures.pl
+%%DATADIR%%/transforms/05wiki.pl
+%%DATADIR%%/transforms/10escapeSpecialChars.pl
 %%DATADIR%%/transforms/20escapeInsideGraphs.pl
 %%DATADIR%%/transforms/25autoLinefeedInMathMode.pl
-%%DATADIR%%/transforms/25wiki.pl
 %%DATADIR%%/transforms/30autoFractions.pl
 %%DATADIR%%/transforms/30dotsToLdots.pl
 %%DATADIR%%/transforms/30superSubscripts.pl
+%%DATADIR%%/transforms/69easyMatrices.pl
 %%DATADIR%%/transforms/70autoMathMode.pl
-%%DATADIR%%/transforms/80autoAlignEquations.pl
 %%DATADIR%%/transforms/80autoItemize.pl
-%%DATADIR%%/transforms/80easyMatrices.pl
+%%DATADIR%%/transforms/81autoAlignEquations.pl
 %%DATADIR%%/transforms/85sweepHalfEquationsIntoAdjacentMathMode.pl
+%%DATADIR%%/transforms/86combineAdjAligns.pl
 %%DATADIR%%/transforms/90addHeaderAndFooter.pl
 %%DATADIR%%/transforms/90doublePercentIsCommentSymbol.pl
-%%DATADIR%%/transforms/90easyFigures.pl
 %%DATADIR%%/transforms/90graphs.pl
 %%DATADIR%%/transforms/90numberSign.pl
+%%DATADIR%%/transforms/90recurseOnInclude.pl
 %%DATADIR%%/transforms/90removeWhitespaceAroundEquations.pl
+%%DATADIR%%/transforms/91beamerOptions.pl
+%%DATADIR%%/transforms/91beamerRemoveClashingPackages.pl
 %%DATADIR%%/transforms/91easyQuotes.pl
 %%DATADIR%%/transforms/91easySections.pl
 %%DATADIR%%/transforms/91seminarAddSlidesec.pl
-%%DATADIR%%/transforms/91seminarEnvAddSlide.pl
+%%DATADIR%%/transforms/91seminarEnvAddSlideHeaderFooter.pl
 %%DATADIR%%/transforms/92seminarFlushHeadingsTop.pl
 %%DATADIR%%/transforms/92tempKludges.pl
-@dirrm %%DATADIR%%/disabled
-@dirrm %%DATADIR%%/embed_transforms
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo-no-graph.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demo.txt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/transforms
+@dirrm %%DATADIR%%/embed_transforms
+@dirrm %%DATADIR%%/disabled
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
