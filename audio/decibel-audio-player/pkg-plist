@@ -1,0 +1,134 @@
+@comment $FreeBSD$
+bin/decibel-audio-player
+bin/decibel-audio-player-remote
+share/applications/decibel-audio-player.desktop
+share/locale/ar/LC_MESSAGES/decibel-audio-player.mo
+share/locale/bg/LC_MESSAGES/decibel-audio-player.mo
+share/locale/bs/LC_MESSAGES/decibel-audio-player.mo
+share/locale/ca/LC_MESSAGES/decibel-audio-player.mo
+share/locale/cs/LC_MESSAGES/decibel-audio-player.mo
+share/locale/da/LC_MESSAGES/decibel-audio-player.mo
+share/locale/de/LC_MESSAGES/decibel-audio-player.mo
+share/locale/el/LC_MESSAGES/decibel-audio-player.mo
+share/locale/en_GB/LC_MESSAGES/decibel-audio-player.mo
+share/locale/eo/LC_MESSAGES/decibel-audio-player.mo
+share/locale/es/LC_MESSAGES/decibel-audio-player.mo
+share/locale/fa/LC_MESSAGES/decibel-audio-player.mo
+share/locale/fr/LC_MESSAGES/decibel-audio-player.mo
+share/locale/ga/LC_MESSAGES/decibel-audio-player.mo
+share/locale/he/LC_MESSAGES/decibel-audio-player.mo
+share/locale/hr/LC_MESSAGES/decibel-audio-player.mo
+share/locale/hu/LC_MESSAGES/decibel-audio-player.mo
+share/locale/it/LC_MESSAGES/decibel-audio-player.mo
+share/locale/ja/LC_MESSAGES/decibel-audio-player.mo
+share/locale/kk/LC_MESSAGES/decibel-audio-player.mo
+share/locale/ko/LC_MESSAGES/decibel-audio-player.mo
+share/locale/nb/LC_MESSAGES/decibel-audio-player.mo
+share/locale/nl/LC_MESSAGES/decibel-audio-player.mo
+share/locale/nn/LC_MESSAGES/decibel-audio-player.mo
+share/locale/pl/LC_MESSAGES/decibel-audio-player.mo
+share/locale/pt/LC_MESSAGES/decibel-audio-player.mo
+share/locale/pt_BR/LC_MESSAGES/decibel-audio-player.mo
+share/locale/ro/LC_MESSAGES/decibel-audio-player.mo
+share/locale/ru/LC_MESSAGES/decibel-audio-player.mo
+share/locale/sl/LC_MESSAGES/decibel-audio-player.mo
+share/locale/sr/LC_MESSAGES/decibel-audio-player.mo
+share/locale/sv/LC_MESSAGES/decibel-audio-player.mo
+share/locale/tr/LC_MESSAGES/decibel-audio-player.mo
+share/locale/zh_CN/LC_MESSAGES/decibel-audio-player.mo
+share/pixmaps/decibel-audio-player.png
+%%DATADIR%%/pix/audioscrobbler.png
+%%DATADIR%%/pix/cover-gloss.png
+%%DATADIR%%/pix/cover-model.png
+%%DATADIR%%/pix/cover-none.png
+%%DATADIR%%/pix/decibel-audio-player-128.png
+%%DATADIR%%/pix/decibel-audio-player-16.png
+%%DATADIR%%/pix/decibel-audio-player-24.png
+%%DATADIR%%/pix/decibel-audio-player-32.png
+%%DATADIR%%/pix/decibel-audio-player-48.png
+%%DATADIR%%/pix/decibel-audio-player-64.png
+%%DATADIR%%/pix/decibel-audio-player.png
+%%DATADIR%%/res/AudioCD.glade
+%%DATADIR%%/res/AudioCDMenu.glade
+%%DATADIR%%/res/Authentication.glade
+%%DATADIR%%/res/Covers.glade
+%%DATADIR%%/res/DesktopNotification.glade
+%%DATADIR%%/res/Equalizer.glade
+%%DATADIR%%/res/FileExplorer.glade
+%%DATADIR%%/res/HelpDlg.glade
+%%DATADIR%%/res/IMStatus.glade
+%%DATADIR%%/res/Library.glade
+%%DATADIR%%/res/MainWindow.glade
+%%DATADIR%%/res/Preferences.glade
+%%DATADIR%%/res/Progress.glade
+%%DATADIR%%/res/SelectPath.glade
+%%DATADIR%%/res/StatusFile.glade
+%%DATADIR%%/res/StatusIconMenu.glade
+%%DATADIR%%/res/Twitter.glade
+%%DATADIR%%/src/decibel-audio-player.py
+%%DATADIR%%/src/gui/__init__.py
+%%DATADIR%%/src/gui/about.py
+%%DATADIR%%/src/gui/authentication.py
+%%DATADIR%%/src/gui/extListview.py
+%%DATADIR%%/src/gui/extTreeview.py
+%%DATADIR%%/src/gui/fileChooser.py
+%%DATADIR%%/src/gui/help.py
+%%DATADIR%%/src/gui/preferences.py
+%%DATADIR%%/src/gui/progressDlg.py
+%%DATADIR%%/src/gui/selectPath.py
+%%DATADIR%%/src/gui/window.py
+%%DATADIR%%/src/media/__init__.py
+%%DATADIR%%/src/media/audioplayer.py
+%%DATADIR%%/src/media/format/__init__.py
+%%DATADIR%%/src/media/format/asf.py
+%%DATADIR%%/src/media/format/flac.py
+%%DATADIR%%/src/media/format/monkeysaudio.py
+%%DATADIR%%/src/media/format/mp3.py
+%%DATADIR%%/src/media/format/mp4.py
+%%DATADIR%%/src/media/format/mpc.py
+%%DATADIR%%/src/media/format/ogg.py
+%%DATADIR%%/src/media/format/wavpack.py
+%%DATADIR%%/src/media/playlist.py
+%%DATADIR%%/src/media/track/__init__.py
+%%DATADIR%%/src/media/track/cdTrack.py
+%%DATADIR%%/src/media/track/fileTrack.py
+%%DATADIR%%/src/modules/AudioCD.py
+%%DATADIR%%/src/modules/AudioScrobbler.py
+%%DATADIR%%/src/modules/CommandLine.py
+%%DATADIR%%/src/modules/Covers.py
+%%DATADIR%%/src/modules/CtrlPanel.py
+%%DATADIR%%/src/modules/DBus.py
+%%DATADIR%%/src/modules/DesktopNotification.py
+%%DATADIR%%/src/modules/Equalizer.py
+%%DATADIR%%/src/modules/Explorer.py
+%%DATADIR%%/src/modules/FileExplorer.py
+%%DATADIR%%/src/modules/GSTPlayer.py
+%%DATADIR%%/src/modules/GnomeMediaKeys.py
+%%DATADIR%%/src/modules/IMStatus.py
+%%DATADIR%%/src/modules/Library.py
+%%DATADIR%%/src/modules/ReplayGain.py
+%%DATADIR%%/src/modules/StatusFile.py
+%%DATADIR%%/src/modules/StatusIcon.py
+%%DATADIR%%/src/modules/StatusbarTitlebar.py
+%%DATADIR%%/src/modules/TrackPanel.py
+%%DATADIR%%/src/modules/Tracklist.py
+%%DATADIR%%/src/modules/Twitter.py
+%%DATADIR%%/src/modules/Zeitgeist.py
+%%DATADIR%%/src/modules/__init__.py
+%%DATADIR%%/src/remote.py
+%%DATADIR%%/src/tools/__init__.py
+%%DATADIR%%/src/tools/consts.py
+%%DATADIR%%/src/tools/icons.py
+%%DATADIR%%/src/tools/log.py
+%%DATADIR%%/src/tools/prefs.py
+@dirrm %%DATADIR%%/src/tools
+@dirrm %%DATADIR%%/src/modules
+@dirrm %%DATADIR%%/src/media/track
+@dirrm %%DATADIR%%/src/media/format
+@dirrm %%DATADIR%%/src/media
+@dirrm %%DATADIR%%/src/gui
+@dirrm %%DATADIR%%/src
+@dirrm %%DATADIR%%/res
+@dirrm %%DATADIR%%/pix
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
