@@ -1723,6 +1723,7 @@
     SUBDIR += trafficserver
     SUBDIR += transmission-web
     SUBDIR += transproxy
+    SUBDIR += tt-rss
     SUBDIR += ttf2eot
     SUBDIR += twhttpd
     SUBDIR += twig

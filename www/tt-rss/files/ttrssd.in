@@ -1,0 +1,50 @@
+#! /bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: ttrssd
+# REQUIRE: LOGIN mysql postgresql
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable `ttrssd':
+#
+#ttrssd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="ttrssd"
+rcvar=`set_rcvar`
+
+# read settings, set default values
+load_rc_config "${name}"
+: ${ttrssd_enable="NO"}
+
+required_files="%%WWWDIR%%/config.php"
+pidfile="/var/run/${name}.pid"
+phpcli="%%LOCALBASE%%/bin/php"
+command_interpreter=$phpcli
+long_name="Tiny Tiny RSS updating feeds daemon."
+phpupd="update_daemon2.php"
+ttrssd_log="/var/log/${name}.log"
+
+start_cmd=${name}_start
+stop_cmd=${name}_stop
+
+ttrssd_start() {
+	[ -x $phpcli ] || (echo "$phpcli not found"; exit 1)
+	[ -f $pidfile ] && (echo "$name already running?"; exit 2)
+	echo "Starting $long_name"
+	(cd %%WWWDIR%% && ./$phpupd > $ttrssd_log &) && \
+	echo $$ > $pidfile
+}
+
+ttrssd_stop() {
+	[ -f $pidfile ] || (echo "$name not running?"; exit 1)
+	echo "Stopping $long_name"
+	kill `ps | grep $phpupd | grep -v grep | awk '{print $1}'`
+	rm -f $pidfile
+}
+
+run_rc_command "$1"
