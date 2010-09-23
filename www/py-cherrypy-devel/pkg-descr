@@ -10,3 +10,7 @@ the simplest ones to the most demanding ones.
 
 Author:	CherryPy Team <team@cherrypy.org>
 WWW:	http://www.cherrypy.org/
+
+NOTE: This package provides a release candidate version of CherryPy,
+  3.2.0rc1. It has been renamed 3.2.0.r1 to comply with FreeBSD's
+  package naming conventions.
