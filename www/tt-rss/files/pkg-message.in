@@ -1,0 +1,27 @@
+===============================================================================
+Tiny Tiny RSS is now installed, but it requires some additional setup.
+
+You now need to create the DB used by Tiny Tiny RSS as its back-end:
+create a database and a user, and source the script
+%%WWWDIR%%/schema/ttrss_schema_%%DB%%.sql .
+
+Then, you need to edit the configuration file
+%%WWWDIR%%/config.php
+
+You also need to add appropriate configuration directives to your apache
+configuration file (%%PREFIX%%/etc/apache(2)/httpd.conf).
+
+E.g., you could copy %%DATADIR%%/httpd-tt-rss.conf
+to %%LOCALBASE%%/etc/apache22/Includes/ if using apache22.
+
+Then, you should be able to check <http://localhost/tt-rss/> and
+<http://localhost/tt-rss/mobile/> with a browser.
+(the first time, the user is "admin", with the password "password")
+
+And to update your feeds, you have to enable the daemon ttrssd in
+/etc/rc.conf and start %%PREFIX%%/etc/rc.d/ttrssd . You may also add an entry
+for /var/log/ttrssd.log in your /etc/newsyslog.conf .
+
+Please read <http://tt-rss.org/redmine/wiki/tt-rss/InstallationNotes> and
+<http://tt-rss.org/redmine/wiki/tt-rss/UpdatingFeeds> for important points.
+===============================================================================

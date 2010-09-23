@@ -1,0 +1,15 @@
+# This is included in Apache's httpd.conf for Tiny Tiny RSS
+
+<Directory "%%WWWDIR%%">
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride None
+    Order allow,deny
+    Allow from all
+</Directory>
+
+<IfModule mod_alias.c>
+    Alias /tt-rss/ "%%WWWDIR%%/"
+</IfModule>
+
+# End of Tiny Tiny RSS configuration ================
+

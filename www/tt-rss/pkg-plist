@@ -1,0 +1,898 @@
+%%DATADIR%%/httpd-tt-rss.conf
+%%WWWDIR%%/README
+%%WWWDIR%%/api/index.php
+%%WWWDIR%%/backend.php
+%%WWWDIR%%/compat.php
+@unexec if cmp -s %D/%%WWWDIR%%/config.php %D/%%WWWDIR%%/config.php-dist; then rm -f %D/%%WWWDIR%%/config.php; fi
+%%WWWDIR%%/config.php-dist
+@exec [ -f %B/config.php ] || (cp %D/%F %B/config.php && chmod go-r %B/config.php && chown %%WWWOWN%% %B/config.php)
+%%WWWDIR%%/db-prefs.php
+%%WWWDIR%%/db.php
+%%WWWDIR%%/errors.php
+%%WWWDIR%%/extras/button/license.txt
+%%WWWDIR%%/extras/button/musicplayer.swf
+%%WWWDIR%%/extras/button/musicplayer_f6.swf
+%%WWWDIR%%/feedlist.js
+%%WWWDIR%%/functions.js
+%%WWWDIR%%/functions.php
+%%WWWDIR%%/gears_init.js
+%%WWWDIR%%/help/2.php
+%%WWWDIR%%/help/3.php
+%%WWWDIR%%/help/4.php
+%%WWWDIR%%/icons/.empty
+%%WWWDIR%%/image.php
+%%WWWDIR%%/images/archive.png
+%%WWWDIR%%/images/art-pub-note.png
+%%WWWDIR%%/images/art-set-unread.png
+%%WWWDIR%%/images/art-zoom.png
+%%WWWDIR%%/images/blank_icon.gif
+%%WWWDIR%%/images/button.png
+%%WWWDIR%%/images/button_pressed.png
+%%WWWDIR%%/images/c1.png
+%%WWWDIR%%/images/c2.png
+%%WWWDIR%%/images/c3.png
+%%WWWDIR%%/images/c4.png
+%%WWWDIR%%/images/cat-collapse.png
+%%WWWDIR%%/images/down_arrow.png
+%%WWWDIR%%/images/favicon.png
+%%WWWDIR%%/images/feed-icon-12x12.png
+%%WWWDIR%%/images/feed-icon-64x64.png
+%%WWWDIR%%/images/footer.png
+%%WWWDIR%%/images/fresh.png
+%%WWWDIR%%/images/fresh_sign.png
+%%WWWDIR%%/images/indicator_tiny.gif
+%%WWWDIR%%/images/indicator_white.gif
+%%WWWDIR%%/images/label.png
+%%WWWDIR%%/images/mark_set.gif
+%%WWWDIR%%/images/mark_set.png
+%%WWWDIR%%/images/mark_set.svg
+%%WWWDIR%%/images/mark_unset.gif
+%%WWWDIR%%/images/mark_unset.png
+%%WWWDIR%%/images/mark_unset.svg
+%%WWWDIR%%/images/new_version.png
+%%WWWDIR%%/images/offline-sync.gif
+%%WWWDIR%%/images/offline.png
+%%WWWDIR%%/images/online.png
+%%WWWDIR%%/images/overlay.png
+%%WWWDIR%%/images/piggie.png
+%%WWWDIR%%/images/piggie_icon.png
+%%WWWDIR%%/images/prefs-content.png
+%%WWWDIR%%/images/pub_set.gif
+%%WWWDIR%%/images/pub_set.png
+%%WWWDIR%%/images/pub_unset.gif
+%%WWWDIR%%/images/pub_unset.png
+%%WWWDIR%%/images/resize_handle_horiz.png
+%%WWWDIR%%/images/resize_horiz.png
+%%WWWDIR%%/images/resizer.png
+%%WWWDIR%%/images/score_half_high.png
+%%WWWDIR%%/images/score_half_low.png
+%%WWWDIR%%/images/score_high.png
+%%WWWDIR%%/images/score_low.png
+%%WWWDIR%%/images/score_neutral.png
+%%WWWDIR%%/images/shadow-grid.gif
+%%WWWDIR%%/images/shadow.png
+%%WWWDIR%%/images/shadow_dark.png
+%%WWWDIR%%/images/shadow_white.png
+%%WWWDIR%%/images/sign_excl.png
+%%WWWDIR%%/images/sign_info.png
+%%WWWDIR%%/images/sign_quest.png
+%%WWWDIR%%/images/small_question.png
+%%WWWDIR%%/images/tag.png
+%%WWWDIR%%/images/toolbar.png
+%%WWWDIR%%/images/ttrss_logo.png
+%%WWWDIR%%/images/ttrss_logo.svg
+%%WWWDIR%%/images/ttrss_logo_big.png
+%%WWWDIR%%/images/ttrss_logo_blackred.svg
+%%WWWDIR%%/images/updated.png
+%%WWWDIR%%/images/www.png
+%%WWWDIR%%/index.php
+%%WWWDIR%%/lib/MiniTemplator.class.php
+%%WWWDIR%%/lib/accept-to-gettext.php
+%%WWWDIR%%/lib/gettext/README
+%%WWWDIR%%/lib/gettext/gettext.inc
+%%WWWDIR%%/lib/gettext/gettext.php
+%%WWWDIR%%/lib/gettext/streams.php
+%%WWWDIR%%/lib/htmlpurifier/CREDITS
+%%WWWDIR%%/lib/htmlpurifier/LICENSE
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier.auto.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier.autoload.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier.func.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier.includes.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier.kses.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier.path.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier.safe-includes.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrCollections.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/AlphaValue.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Background.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/BackgroundPosition.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Border.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Color.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Composite.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/DenyElementDecorator.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Filter.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Font.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/FontFamily.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/ImportantDecorator.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Length.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/ListStyle.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Multiple.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Number.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Percentage.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/TextDecoration.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/URI.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/Enum.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Bool.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Color.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/FrameTarget.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/ID.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Length.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/LinkTypes.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/MultiLength.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Nmtokens.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Pixels.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/Integer.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/Lang.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/Switch.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/Text.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/URI.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/URI/Email.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/URI/Email/SimpleCheck.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/URI/Host.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/URI/IPv4.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/URI/IPv6.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/Background.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/BdoDir.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/BgColor.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/BoolToCSS.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/Border.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/EnumToCSS.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/ImgRequired.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/ImgSpace.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/Input.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/Lang.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/Length.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/Name.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeEmbed.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeObject.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeParam.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/ScriptRequired.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/Textarea.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTypes.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrValidator.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Bootstrap.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/CSSDefinition.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Chameleon.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Custom.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Empty.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Optional.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Required.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/StrictBlockquote.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Table.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Config.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Builder/ConfigSchema.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Builder/Xml.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Exception.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange/Directive.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange/Id.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange/Namespace.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/InterchangeBuilder.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Validator.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/ValidatorAtom.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema.ser
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedFrameTargets.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRel.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.AllowedRev.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultImageAlt.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImage.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultInvalidImageAlt.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.DefaultTextDir.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.EnableID.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklist.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefix.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefixLocal.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.AutoParagraph.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.Custom.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.DisplayLinkURI.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.Linkify.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.PurifierLinkify.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormatParam.PurifierLinkifyDocURL.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormatParam.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowedProperties.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.DefinitionRev.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.MaxImgLength.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.Proprietary.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.DefinitionImpl.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPath.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ConvertDocumentToFragment.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.DirectLexLineNumberSyncInterval.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.Encoding.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidChildren.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidTags.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeNonASCIICharacters.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.HiddenElements.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.Language.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.LexerImpl.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.MaintainLineNumbers.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveInvalidImg.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveScriptContents.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.Custom.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksEscaping.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksScope.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksTidyImpl.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/FilterParam.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedModules.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.BlockWrapper.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.CoreModules.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.CustomDoctype.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionID.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.DefinitionRev.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Doctype.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenAttributes.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.ForbiddenElements.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.MaxImgLength.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Parent.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Proprietary.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeEmbed.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeObject.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Strict.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyAdd.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyLevel.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyRemove.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Trusted.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.XHTML.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.CommentScriptContents.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.Newline.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.SortAttr.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.TidyFormat.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Test.ForceNoIconv.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Test.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.AllowedSchemes.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Base.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefaultScheme.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefinitionID.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefinitionRev.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Disable.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DisableExternal.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DisableExternalResources.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DisableResources.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Host.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.HostBlacklist.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MakeAbsolute.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Munge.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MungeResources.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.txt
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/info.ini
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ContentSets.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Context.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Definition.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Decorator.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Decorator/Cleanup.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Decorator/Memory.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Decorator/Template.php.in
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Null.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/HTML/3.3.0,100651a4228f7f5e2ed76d7bf716cc0c,1.ser
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/HTML/3.3.0,45b0517676cd053c6e36094a738f227d,1.ser
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/HTML/3.3.0,4a226eae658b18b7585dcf9b89faec84,1.ser
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/HTML/3.3.0,82083055ed354c59f36a803cf20c7427,1.ser
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/HTML/3.3.0,a76f5d9f2e01e9a480f6210288f9e4a9,1.ser
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/HTML/3.3.0,c7c3b486561915de4f65b513847bcd4d,1.ser
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/HTML/3.3.0,f60bb57a6b2f21caca005e22d34a48b9,1.ser
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/README
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/URI/3.3.0,05c766101e813c246917b022f97b5e6e,1.ser
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCacheFactory.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Doctype.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DoctypeRegistry.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ElementDef.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Encoder.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/EntityLookup.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/EntityLookup/entities.ser
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/EntityParser.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ErrorCollector.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ErrorStruct.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Exception.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Filter.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Filter/ExtractStyleBlocks.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Filter/YouTube.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Generator.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLDefinition.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Bdo.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/CommonAttributes.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Edit.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Forms.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Hypertext.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Image.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Legacy.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/List.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Name.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/NonXMLCommonAttributes.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Object.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Presentation.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Proprietary.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Ruby.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/SafeEmbed.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/SafeObject.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Scripting.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/StyleAttribute.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tables.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Target.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Text.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/Name.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/Proprietary.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/Strict.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/Transitional.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/XHTML.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/XHTMLAndHTML4.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/XMLCommonAttributes.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModuleManager.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/IDAccumulator.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Injector.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Injector/AutoParagraph.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Injector/DisplayLinkURI.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Injector/Linkify.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Injector/PurifierLinkify.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Injector/RemoveEmpty.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Injector/SafeObject.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Language.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Language/classes/en-x-test.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Language/messages/en-x-test.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Language/messages/en-x-testmini.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Language/messages/en.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/LanguageFactory.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Length.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Lexer.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Lexer/DOMLex.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Lexer/DirectLex.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Lexer/PEARSax3.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Lexer/PH5P.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/PercentEncoder.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Printer.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Printer/CSSDefinition.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Printer/ConfigForm.css
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Printer/ConfigForm.js
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Printer/ConfigForm.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Printer/HTMLDefinition.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/PropertyList.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/PropertyListIterator.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Strategy.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Strategy/Composite.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Strategy/Core.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Strategy/FixNesting.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Strategy/MakeWellFormed.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Strategy/RemoveForeignElements.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Strategy/ValidateAttributes.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/StringHash.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/StringHashParser.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/TagTransform.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/TagTransform/Font.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/TagTransform/Simple.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Token.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Token/Comment.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Token/Empty.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Token/End.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Token/Start.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Token/Tag.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Token/Text.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/TokenFactory.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URI.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIDefinition.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/DisableExternal.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/DisableExternalResources.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/HostBlacklist.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/MakeAbsolute.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter/Munge.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIParser.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme/ftp.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme/http.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme/https.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme/mailto.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme/news.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme/nntp.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URISchemeRegistry.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/UnitConverter.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/VarParser.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/VarParser/Flexible.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/VarParser/Native.php
+%%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/VarParserException.php
+%%WWWDIR%%/lib/iui/LICENSE.txt
+%%WWWDIR%%/lib/iui/NOTICE.txt
+%%WWWDIR%%/lib/iui/backButton.png
+%%WWWDIR%%/lib/iui/blueButton.png
+%%WWWDIR%%/lib/iui/cancel.png
+%%WWWDIR%%/lib/iui/grayButton.png
+%%WWWDIR%%/lib/iui/iui-logo-touch-icon.png
+%%WWWDIR%%/lib/iui/iui.css
+%%WWWDIR%%/lib/iui/iui.js
+%%WWWDIR%%/lib/iui/iuix.css
+%%WWWDIR%%/lib/iui/iuix.js
+%%WWWDIR%%/lib/iui/listArrow.png
+%%WWWDIR%%/lib/iui/listArrowSel.png
+%%WWWDIR%%/lib/iui/listGroup.png
+%%WWWDIR%%/lib/iui/loading.gif
+%%WWWDIR%%/lib/iui/pinstripes.png
+%%WWWDIR%%/lib/iui/redButton.png
+%%WWWDIR%%/lib/iui/selection.png
+%%WWWDIR%%/lib/iui/thumb.png
+%%WWWDIR%%/lib/iui/toggle.png
+%%WWWDIR%%/lib/iui/toggleOn.png
+%%WWWDIR%%/lib/iui/toolButton.png
+%%WWWDIR%%/lib/iui/toolbar.png
+%%WWWDIR%%/lib/iui/whiteButton.png
+%%WWWDIR%%/lib/magpierss/AUTHORS
+%%WWWDIR%%/lib/magpierss/README
+%%WWWDIR%%/lib/magpierss/extlib/Snoopy.class.inc
+%%WWWDIR%%/lib/magpierss/rss_cache.inc
+%%WWWDIR%%/lib/magpierss/rss_fetch.inc
+%%WWWDIR%%/lib/magpierss/rss_parse.inc
+%%WWWDIR%%/lib/magpierss/rss_utils.inc
+%%WWWDIR%%/lib/phpmailer/class.phpmailer.php
+%%WWWDIR%%/lib/phpmailer/class.smtp.php
+%%WWWDIR%%/lib/phpmailer/language/phpmailer.lang-en.php
+%%WWWDIR%%/lib/pngfix.js
+%%WWWDIR%%/lib/prototype.js
+%%WWWDIR%%/lib/scriptaculous/controls.js
+%%WWWDIR%%/lib/scriptaculous/dragdrop.js
+%%WWWDIR%%/lib/scriptaculous/effects.js
+%%WWWDIR%%/lib/scriptaculous/scriptaculous.js
+%%WWWDIR%%/lib/simplepie/simplepie.inc
+%%WWWDIR%%/lib/xmlrpc/.empty
+%%WWWDIR%%/lib/xmlrpc/README
+%%WWWDIR%%/lib/xmlrpc/filelist.txt
+%%WWWDIR%%/lib/xsl_mop-up.js
+@comment php-gettext is not required (replacement included)
+%%WWWDIR%%/locale/ca_CA/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ca_CA/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/de_DE/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/de_DE/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/es_ES/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/es_ES/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/fr_FR/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/fr_FR/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/hu_HU/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/hu_HU/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/it_IT/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/it_IT/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/ja_JP/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ja_JP/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/nb_NO/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/nb_NO/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/pt_BR/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/pt_BR/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/zh_CN/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/zh_CN/LC_MESSAGES/messages.po
+%%WWWDIR%%/localized_js.php
+%%WWWDIR%%/localized_schema.php
+%%WWWDIR%%/login_form.php
+%%WWWDIR%%/logout.php
+%%WWWDIR%%/manifest.json.php
+%%WWWDIR%%/mobile/article.php
+%%WWWDIR%%/mobile/backend.php
+%%WWWDIR%%/mobile/cat.php
+%%WWWDIR%%/mobile/classic/functions.php
+%%WWWDIR%%/mobile/classic/index.php
+%%WWWDIR%%/mobile/classic/login_form.php
+%%WWWDIR%%/mobile/classic/logout.php
+%%WWWDIR%%/mobile/classic/mobile.css
+%%WWWDIR%%/mobile/classic/mobile.js
+%%WWWDIR%%/mobile/feed.php
+%%WWWDIR%%/mobile/functions.php
+%%WWWDIR%%/mobile/home.php
+%%WWWDIR%%/mobile/index.php
+%%WWWDIR%%/mobile/login_form.php
+%%WWWDIR%%/mobile/logout.php
+%%WWWDIR%%/mobile/mobile.js
+%%WWWDIR%%/mobile/prefs.php
+%%WWWDIR%%/modules/backend-rpc.php
+%%WWWDIR%%/modules/help.php
+%%WWWDIR%%/modules/opml_domdoc.php
+%%WWWDIR%%/modules/opml_domxml.php
+%%WWWDIR%%/modules/popup-dialog.php
+%%WWWDIR%%/modules/pref-feeds.php
+%%WWWDIR%%/modules/pref-filters.php
+%%WWWDIR%%/modules/pref-labels.php
+%%WWWDIR%%/modules/pref-prefs.php
+%%WWWDIR%%/modules/pref-users.php
+%%WWWDIR%%/offline.js
+%%WWWDIR%%/opml.php
+%%WWWDIR%%/prefs.js
+%%WWWDIR%%/prefs.php
+%%WWWDIR%%/register.php
+%%WWWDIR%%/rss.xsl
+%%WWWDIR%%/sanity_check.php
+%%WWWDIR%%/schema/ttrss_schema_mysql.sql
+%%WWWDIR%%/schema/ttrss_schema_pgsql.sql
+%%WWWDIR%%/schema/versions/mysql/10.sql
+%%WWWDIR%%/schema/versions/mysql/11.sql
+%%WWWDIR%%/schema/versions/mysql/12.sql
+%%WWWDIR%%/schema/versions/mysql/13.sql
+%%WWWDIR%%/schema/versions/mysql/14.sql
+%%WWWDIR%%/schema/versions/mysql/15.sql
+%%WWWDIR%%/schema/versions/mysql/16.sql
+%%WWWDIR%%/schema/versions/mysql/17.sql
+%%WWWDIR%%/schema/versions/mysql/18.sql
+%%WWWDIR%%/schema/versions/mysql/19.sql
+%%WWWDIR%%/schema/versions/mysql/20.sql
+%%WWWDIR%%/schema/versions/mysql/21.sql
+%%WWWDIR%%/schema/versions/mysql/22.sql
+%%WWWDIR%%/schema/versions/mysql/23.sql
+%%WWWDIR%%/schema/versions/mysql/24.sql
+%%WWWDIR%%/schema/versions/mysql/25.sql
+%%WWWDIR%%/schema/versions/mysql/26.sql
+%%WWWDIR%%/schema/versions/mysql/27.sql
+%%WWWDIR%%/schema/versions/mysql/28.sql
+%%WWWDIR%%/schema/versions/mysql/29.sql
+%%WWWDIR%%/schema/versions/mysql/3.sql
+%%WWWDIR%%/schema/versions/mysql/30.sql
+%%WWWDIR%%/schema/versions/mysql/31.sql
+%%WWWDIR%%/schema/versions/mysql/32.sql
+%%WWWDIR%%/schema/versions/mysql/33.sql
+%%WWWDIR%%/schema/versions/mysql/34.sql
+%%WWWDIR%%/schema/versions/mysql/35.sql
+%%WWWDIR%%/schema/versions/mysql/36.sql
+%%WWWDIR%%/schema/versions/mysql/37.sql
+%%WWWDIR%%/schema/versions/mysql/38.sql
+%%WWWDIR%%/schema/versions/mysql/39.sql
+%%WWWDIR%%/schema/versions/mysql/4.sql
+%%WWWDIR%%/schema/versions/mysql/40.sql
+%%WWWDIR%%/schema/versions/mysql/41.sql
+%%WWWDIR%%/schema/versions/mysql/42.sql
+%%WWWDIR%%/schema/versions/mysql/43.sql
+%%WWWDIR%%/schema/versions/mysql/44.sql
+%%WWWDIR%%/schema/versions/mysql/45.sql
+%%WWWDIR%%/schema/versions/mysql/46.sql
+%%WWWDIR%%/schema/versions/mysql/47.sql
+%%WWWDIR%%/schema/versions/mysql/48.sql
+%%WWWDIR%%/schema/versions/mysql/49.sql
+%%WWWDIR%%/schema/versions/mysql/5.sql
+%%WWWDIR%%/schema/versions/mysql/50.sql
+%%WWWDIR%%/schema/versions/mysql/51.sql
+%%WWWDIR%%/schema/versions/mysql/52.sql
+%%WWWDIR%%/schema/versions/mysql/53.sql
+%%WWWDIR%%/schema/versions/mysql/54.sql
+%%WWWDIR%%/schema/versions/mysql/55.sql
+%%WWWDIR%%/schema/versions/mysql/56.sql
+%%WWWDIR%%/schema/versions/mysql/57.sql
+%%WWWDIR%%/schema/versions/mysql/58.sql
+%%WWWDIR%%/schema/versions/mysql/59.sql
+%%WWWDIR%%/schema/versions/mysql/6.sql
+%%WWWDIR%%/schema/versions/mysql/60.sql
+%%WWWDIR%%/schema/versions/mysql/61.sql
+%%WWWDIR%%/schema/versions/mysql/62.sql
+%%WWWDIR%%/schema/versions/mysql/63.sql
+%%WWWDIR%%/schema/versions/mysql/64.sql
+%%WWWDIR%%/schema/versions/mysql/65.sql
+%%WWWDIR%%/schema/versions/mysql/66.sql
+%%WWWDIR%%/schema/versions/mysql/7.sql
+%%WWWDIR%%/schema/versions/mysql/8.sql
+%%WWWDIR%%/schema/versions/mysql/9.sql
+%%WWWDIR%%/schema/versions/pgsql/10.sql
+%%WWWDIR%%/schema/versions/pgsql/11.sql
+%%WWWDIR%%/schema/versions/pgsql/12.sql
+%%WWWDIR%%/schema/versions/pgsql/13.sql
+%%WWWDIR%%/schema/versions/pgsql/14.sql
+%%WWWDIR%%/schema/versions/pgsql/15.sql
+%%WWWDIR%%/schema/versions/pgsql/16.sql
+%%WWWDIR%%/schema/versions/pgsql/17.sql
+%%WWWDIR%%/schema/versions/pgsql/18.sql
+%%WWWDIR%%/schema/versions/pgsql/19.sql
+%%WWWDIR%%/schema/versions/pgsql/20.sql
+%%WWWDIR%%/schema/versions/pgsql/21.sql
+%%WWWDIR%%/schema/versions/pgsql/22.sql
+%%WWWDIR%%/schema/versions/pgsql/23.sql
+%%WWWDIR%%/schema/versions/pgsql/24.sql
+%%WWWDIR%%/schema/versions/pgsql/25.sql
+%%WWWDIR%%/schema/versions/pgsql/26.sql
+%%WWWDIR%%/schema/versions/pgsql/27.sql
+%%WWWDIR%%/schema/versions/pgsql/28.sql
+%%WWWDIR%%/schema/versions/pgsql/29.sql
+%%WWWDIR%%/schema/versions/pgsql/3.sql
+%%WWWDIR%%/schema/versions/pgsql/30.sql
+%%WWWDIR%%/schema/versions/pgsql/31.sql
+%%WWWDIR%%/schema/versions/pgsql/32.sql
+%%WWWDIR%%/schema/versions/pgsql/33.sql
+%%WWWDIR%%/schema/versions/pgsql/34.sql
+%%WWWDIR%%/schema/versions/pgsql/35.sql
+%%WWWDIR%%/schema/versions/pgsql/36.sql
+%%WWWDIR%%/schema/versions/pgsql/37.sql
+%%WWWDIR%%/schema/versions/pgsql/38.sql
+%%WWWDIR%%/schema/versions/pgsql/39.sql
+%%WWWDIR%%/schema/versions/pgsql/4.sql
+%%WWWDIR%%/schema/versions/pgsql/40.sql
+%%WWWDIR%%/schema/versions/pgsql/41.sql
+%%WWWDIR%%/schema/versions/pgsql/42.sql
+%%WWWDIR%%/schema/versions/pgsql/43.sql
+%%WWWDIR%%/schema/versions/pgsql/44.sql
+%%WWWDIR%%/schema/versions/pgsql/45.sql
+%%WWWDIR%%/schema/versions/pgsql/46.sql
+%%WWWDIR%%/schema/versions/pgsql/47.sql
+%%WWWDIR%%/schema/versions/pgsql/48.sql
+%%WWWDIR%%/schema/versions/pgsql/49.sql
+%%WWWDIR%%/schema/versions/pgsql/5.sql
+%%WWWDIR%%/schema/versions/pgsql/50.sql
+%%WWWDIR%%/schema/versions/pgsql/51.sql
+%%WWWDIR%%/schema/versions/pgsql/52.sql
+%%WWWDIR%%/schema/versions/pgsql/53.sql
+%%WWWDIR%%/schema/versions/pgsql/54.sql
+%%WWWDIR%%/schema/versions/pgsql/55.sql
+%%WWWDIR%%/schema/versions/pgsql/56.sql
+%%WWWDIR%%/schema/versions/pgsql/57.sql
+%%WWWDIR%%/schema/versions/pgsql/58.sql
+%%WWWDIR%%/schema/versions/pgsql/59.sql
+%%WWWDIR%%/schema/versions/pgsql/6.sql
+%%WWWDIR%%/schema/versions/pgsql/60.sql
+%%WWWDIR%%/schema/versions/pgsql/61.sql
+%%WWWDIR%%/schema/versions/pgsql/62.sql
+%%WWWDIR%%/schema/versions/pgsql/63.sql
+%%WWWDIR%%/schema/versions/pgsql/64.sql
+%%WWWDIR%%/schema/versions/pgsql/65.sql
+%%WWWDIR%%/schema/versions/pgsql/66.sql
+%%WWWDIR%%/schema/versions/pgsql/7.sql
+%%WWWDIR%%/schema/versions/pgsql/8.sql
+%%WWWDIR%%/schema/versions/pgsql/9.sql
+%%WWWDIR%%/sessions.php
+%%WWWDIR%%/templates/digest_template.txt
+%%WWWDIR%%/templates/digest_template_html.txt
+%%WWWDIR%%/templates/resetpass_template.txt
+%%WWWDIR%%/themes/compact/theme.css
+%%WWWDIR%%/themes/compact/theme.ini
+%%WWWDIR%%/themes/graycube/images/grad_1.png
+%%WWWDIR%%/themes/graycube/images/resize_handle_horiz.png
+%%WWWDIR%%/themes/graycube/images/resize_horiz.png
+%%WWWDIR%%/themes/graycube/images/ttrss_logo.png
+%%WWWDIR%%/themes/graycube/images/ttrss_logo.svg
+%%WWWDIR%%/themes/graycube/theme.css
+%%WWWDIR%%/themes/graycube/theme.ini
+%%WWWDIR%%/themes/greentiny/images/blank_icon.gif
+%%WWWDIR%%/themes/greentiny/images/down_arrow.png
+%%WWWDIR%%/themes/greentiny/images/favicon.png
+%%WWWDIR%%/themes/greentiny/images/feed-icon-12x12.png
+%%WWWDIR%%/themes/greentiny/images/footer.png
+%%WWWDIR%%/themes/greentiny/images/fresh.png
+%%WWWDIR%%/themes/greentiny/images/fresh_new.png
+%%WWWDIR%%/themes/greentiny/images/indicator_white.gif
+%%WWWDIR%%/themes/greentiny/images/label.png
+%%WWWDIR%%/themes/greentiny/images/mark_set.gif
+%%WWWDIR%%/themes/greentiny/images/mark_set.png
+%%WWWDIR%%/themes/greentiny/images/mark_unset.gif
+%%WWWDIR%%/themes/greentiny/images/mark_unset.png
+%%WWWDIR%%/themes/greentiny/images/new_version.png
+%%WWWDIR%%/themes/greentiny/images/overlay.png
+%%WWWDIR%%/themes/greentiny/images/prefs-content.png
+%%WWWDIR%%/themes/greentiny/images/pub_set.gif
+%%WWWDIR%%/themes/greentiny/images/pub_set.png
+%%WWWDIR%%/themes/greentiny/images/pub_unset.gif
+%%WWWDIR%%/themes/greentiny/images/pub_unset.png
+%%WWWDIR%%/themes/greentiny/images/resize_handle_horiz.png
+%%WWWDIR%%/themes/greentiny/images/resize_horiz.png
+%%WWWDIR%%/themes/greentiny/images/resizer.png
+%%WWWDIR%%/themes/greentiny/images/score_half_high.png
+%%WWWDIR%%/themes/greentiny/images/score_half_low.png
+%%WWWDIR%%/themes/greentiny/images/score_high.png
+%%WWWDIR%%/themes/greentiny/images/score_low.png
+%%WWWDIR%%/themes/greentiny/images/score_neutral.png
+%%WWWDIR%%/themes/greentiny/images/sign_excl.png
+%%WWWDIR%%/themes/greentiny/images/sign_info.png
+%%WWWDIR%%/themes/greentiny/images/sign_quest.png
+%%WWWDIR%%/themes/greentiny/images/small_question.png
+%%WWWDIR%%/themes/greentiny/images/tag.png
+%%WWWDIR%%/themes/greentiny/images/toolbar.png
+%%WWWDIR%%/themes/greentiny/images/ttrss_logo.png
+%%WWWDIR%%/themes/greentiny/images/ttrss_logo_big.png
+%%WWWDIR%%/themes/greentiny/images/updated.png
+%%WWWDIR%%/themes/greentiny/theme.css
+%%WWWDIR%%/themes/greentiny/theme.ini
+%%WWWDIR%%/themes/neon/images/archive.png
+%%WWWDIR%%/themes/neon/images/art-pub-note.png
+%%WWWDIR%%/themes/neon/images/art-zoom.png
+%%WWWDIR%%/themes/neon/images/button.png
+%%WWWDIR%%/themes/neon/images/button_pressed.png
+%%WWWDIR%%/themes/neon/images/fresh.png
+%%WWWDIR%%/themes/neon/images/fresh_sign.png
+%%WWWDIR%%/themes/neon/images/indicator_white.gif
+%%WWWDIR%%/themes/neon/images/label.png
+%%WWWDIR%%/themes/neon/images/mark_set.png
+%%WWWDIR%%/themes/neon/images/mark_unset.png
+%%WWWDIR%%/themes/neon/images/pub_set.png
+%%WWWDIR%%/themes/neon/images/pub_unset.png
+%%WWWDIR%%/themes/neon/images/resize_handle_horiz.png
+%%WWWDIR%%/themes/neon/images/shadow_dark.png
+%%WWWDIR%%/themes/neon/images/sign_excl.png
+%%WWWDIR%%/themes/neon/images/sign_info.png
+%%WWWDIR%%/themes/neon/images/sign_quest.png
+%%WWWDIR%%/themes/neon/images/sign_quest.svg
+%%WWWDIR%%/themes/neon/images/small_question.png
+%%WWWDIR%%/themes/neon/images/tag.png
+%%WWWDIR%%/themes/neon/images/ttrss_logo.png
+%%WWWDIR%%/themes/neon/images/ttrss_logo.svg
+%%WWWDIR%%/themes/neon/theme.css
+%%WWWDIR%%/themes/neon/theme.ini
+%%WWWDIR%%/themes/neutral/images/button.png
+%%WWWDIR%%/themes/neutral/images/button_pressed.png
+%%WWWDIR%%/themes/neutral/images/fresh_sign.png
+%%WWWDIR%%/themes/neutral/images/prefs_tab.png
+%%WWWDIR%%/themes/neutral/images/resize_handle_horiz.png
+%%WWWDIR%%/themes/neutral/images/score_half_high.png
+%%WWWDIR%%/themes/neutral/images/score_high.png
+%%WWWDIR%%/themes/neutral/images/subtoolbar.png
+%%WWWDIR%%/themes/neutral/images/ttrss_logo.png
+%%WWWDIR%%/themes/neutral/images/ttrss_logo.svg
+%%WWWDIR%%/themes/neutral/theme.css
+%%WWWDIR%%/themes/neutral/theme.ini
+%%WWWDIR%%/themes/triple-pane/images/resize_handle_horiz.png
+%%WWWDIR%%/themes/triple-pane/images/resize_handle_vert.png
+%%WWWDIR%%/themes/triple-pane/images/resize_vert.png
+%%WWWDIR%%/themes/triple-pane/theme.css
+%%WWWDIR%%/themes/triple-pane/theme.ini
+%%WWWDIR%%/tt-rss.css
+%%WWWDIR%%/tt-rss.js
+%%WWWDIR%%/tt-rss.php
+%%WWWDIR%%/update-translations.sh
+%%WWWDIR%%/update.php
+%%WWWDIR%%/update_daemon.php
+%%WWWDIR%%/update_daemon2.php
+%%WWWDIR%%/update_daemon_loop.php
+%%WWWDIR%%/update_feedbrowser.php
+%%WWWDIR%%/update_feeds.php
+%%WWWDIR%%/utility.css
+%%WWWDIR%%/utils/create-release-tarball.sh
+%%WWWDIR%%/utils/extract-i18n-js.pl
+%%WWWDIR%%/utils/mysql_convert_unicode.php
+%%WWWDIR%%/utils/notifier/background.html
+%%WWWDIR%%/utils/notifier/images/alert.png
+%%WWWDIR%%/utils/notifier/images/error.png
+%%WWWDIR%%/utils/notifier/images/icon.png
+%%WWWDIR%%/utils/notifier/images/normal.png
+%%WWWDIR%%/utils/notifier/images/ttrss_logo.png
+%%WWWDIR%%/utils/notifier/lib/prototype.js
+%%WWWDIR%%/utils/notifier/lib/scriptaculous/controls.js
+%%WWWDIR%%/utils/notifier/lib/scriptaculous/dragdrop.js
+%%WWWDIR%%/utils/notifier/lib/scriptaculous/effects.js
+%%WWWDIR%%/utils/notifier/lib/scriptaculous/scriptaculous.js
+%%WWWDIR%%/utils/notifier/manifest.json
+%%WWWDIR%%/utils/notifier/options.html
+%%WWWDIR%%/utils/notifier/popup.html
+%%WWWDIR%%/utils/notifier/style.css
+%%WWWDIR%%/utils/stats.php
+%%WWWDIR%%/utils/update-js-translations.sh
+%%WWWDIR%%/utils/xml-export.php
+%%WWWDIR%%/utils/xml-import.php
+%%WWWDIR%%/utils/xml-rpc.php
+%%WWWDIR%%/version.php
+%%WWWDIR%%/viewfeed.js
+@dirrm %%WWWDIR%%/utils/notifier/lib/scriptaculous
+@dirrm %%WWWDIR%%/utils/notifier/lib
+@dirrm %%WWWDIR%%/utils/notifier/images
+@dirrm %%WWWDIR%%/utils/notifier
+@dirrm %%WWWDIR%%/utils
+@dirrm %%WWWDIR%%/themes/triple-pane/images
+@dirrm %%WWWDIR%%/themes/triple-pane
+@dirrm %%WWWDIR%%/themes/neutral/images
+@dirrm %%WWWDIR%%/themes/neutral
+@dirrm %%WWWDIR%%/themes/neon/images
+@dirrm %%WWWDIR%%/themes/neon
+@dirrm %%WWWDIR%%/themes/greentiny/images
+@dirrm %%WWWDIR%%/themes/greentiny
+@dirrm %%WWWDIR%%/themes/graycube/images
+@dirrm %%WWWDIR%%/themes/graycube
+@dirrm %%WWWDIR%%/themes/compact
+@dirrm %%WWWDIR%%/themes
+@dirrm %%WWWDIR%%/templates
+@dirrm %%WWWDIR%%/schema/versions/pgsql
+@dirrm %%WWWDIR%%/schema/versions/mysql
+@dirrm %%WWWDIR%%/schema/versions
+@dirrm %%WWWDIR%%/schema
+@dirrm %%WWWDIR%%/modules
+@dirrm %%WWWDIR%%/mobile/classic
+@dirrm %%WWWDIR%%/mobile
+@dirrm %%WWWDIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/zh_CN
+@dirrm %%WWWDIR%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ru_RU
+@dirrm %%WWWDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/pt_BR
+@dirrm %%WWWDIR%%/locale/nb_NO/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/nb_NO
+@dirrm %%WWWDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ja_JP
+@dirrm %%WWWDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/it_IT
+@dirrm %%WWWDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/hu_HU
+@dirrm %%WWWDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/fr_FR
+@dirrm %%WWWDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/es_ES
+@dirrm %%WWWDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/de_DE
+@dirrm %%WWWDIR%%/locale/ca_CA/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ca_CA
+@dirrm %%WWWDIR%%/locale
+@dirrm %%WWWDIR%%/lib/xmlrpc
+@dirrm %%WWWDIR%%/lib/simplepie
+@dirrm %%WWWDIR%%/lib/scriptaculous
+@dirrm %%WWWDIR%%/lib/phpmailer/language
+@dirrm %%WWWDIR%%/lib/phpmailer
+@dirrm %%WWWDIR%%/lib/magpierss/extlib
+@dirrm %%WWWDIR%%/lib/magpierss
+@dirrm %%WWWDIR%%/lib/iui
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/VarParser
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIScheme
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/URIFilter
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Token
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/TagTransform
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Strategy
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Printer
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Lexer
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Language/messages
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Language/classes
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Language
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Injector
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/HTMLModule
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/Filter
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/EntityLookup
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/URI
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer/HTML
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Serializer
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache/Decorator
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/DefinitionCache
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Builder
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/ChildDef
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrTransform
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/URI/Email
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/URI
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier/AttrDef
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier
+@dirrm %%WWWDIR%%/lib/htmlpurifier/library
+@dirrm %%WWWDIR%%/lib/htmlpurifier
+@dirrm %%WWWDIR%%/lib/gettext
+@dirrm %%WWWDIR%%/lib
+@dirrm %%WWWDIR%%/images
+@dirrmtry %%WWWDIR%%/icons
+@dirrm %%WWWDIR%%/help
+@dirrm %%WWWDIR%%/extras/button
+@dirrm %%WWWDIR%%/extras
+@dirrm %%WWWDIR%%/api
+@dirrmtry %%WWWDIR%%
+@dirrm %%DATADIR%%
