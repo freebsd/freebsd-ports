@@ -9,8 +9,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0.34.0
-PORTREVISION=	0
+PORTVERSION=	1.0.40.0
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R} \
 		ftp://ftp.SpringDaemons.com/soft/sbcl-binary/:binaries
@@ -113,9 +112,11 @@ post-patch:
 
 do-build:
 	@(cd ${WRKSRC} && ${SETENV} INSTALL_ROOT=${PREFIX} \
+		LISP_EXTRA_ARG="${LISP_EXTRA_ARG}" \
 		${SH} make.sh ${LISP_CMD})
 	@${RM} -rf ${WRKSRC}/contrib/sb-cover/test-output
-	@(cd ${WRKSRC}/doc/manual && \
+	@(cd ${WRKSRC}/doc/manual && ${SETENV} \
+		LISP_EXTRA_ARG="${LISP_EXTRA_ARG}" \
 		${GMAKE} MAKEINFO='makeinfo --no-split' info)
 
 do-install:
