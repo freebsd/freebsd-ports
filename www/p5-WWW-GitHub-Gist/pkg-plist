@@ -5,3 +5,4 @@ bin/gist.pl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/GitHub
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrmtry %%SITE_PERL%%/WWW/GitHub
+@dirrmtry %%SITE_PERL%%/WWW
