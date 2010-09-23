@@ -358,12 +358,18 @@ bin/violetland
 %%DATADIR%%/weapon/Remington-870/reload.ogg
 %%DATADIR%%/weapon/Remington-870/shot.ogg
 %%DATADIR%%/weapon/Remington-870/stats
+%%DATADIR%%/weapon/SawedOff-Shotgun/image.png
+%%DATADIR%%/weapon/SawedOff-Shotgun/player.png
+%%DATADIR%%/weapon/SawedOff-Shotgun/reload.ogg
+%%DATADIR%%/weapon/SawedOff-Shotgun/shot.ogg
+%%DATADIR%%/weapon/SawedOff-Shotgun/stats
 %%DATADIR%%/weapon/UZI/image.png
 %%DATADIR%%/weapon/UZI/player.png
 %%DATADIR%%/weapon/UZI/reload.ogg
 %%DATADIR%%/weapon/UZI/shot.ogg
 %%DATADIR%%/weapon/UZI/stats
 @dirrm %%DATADIR%%/weapon/UZI
+@dirrm %%DATADIR%%/weapon/SawedOff-Shotgun
 @dirrm %%DATADIR%%/weapon/Remington-870
 @dirrm %%DATADIR%%/weapon/PM
 @dirrm %%DATADIR%%/weapon/M-32
