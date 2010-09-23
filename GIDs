@@ -106,6 +106,7 @@ frontbase:*:276:
 mrtg:*:279:
 hobbit:*:280:
 prelude:*:281:
+backuppc:*:300:
 _sphinx:*:312:
 dkfilter:*:325:
 wildfire:*:340:

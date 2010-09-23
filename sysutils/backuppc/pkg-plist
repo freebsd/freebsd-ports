@@ -1,0 +1,140 @@
+bin/BackupPC
+bin/BackupPC_archive
+bin/BackupPC_archiveHost
+bin/BackupPC_archiveStart
+bin/BackupPC_attribPrint
+bin/BackupPC_dump
+bin/BackupPC_fixupBackupSummary
+bin/BackupPC_link
+bin/BackupPC_nightly
+bin/BackupPC_restore
+bin/BackupPC_sendEmail
+bin/BackupPC_serverMesg
+bin/BackupPC_tarCreate
+bin/BackupPC_tarExtract
+bin/BackupPC_tarPCCopy
+bin/BackupPC_trashClean
+bin/BackupPC_zcat
+bin/BackupPC_zipCreate
+lib/BackupPC/Attrib.pm
+lib/BackupPC/CGI/AdminOptions.pm
+lib/BackupPC/CGI/Archive.pm
+lib/BackupPC/CGI/ArchiveInfo.pm
+lib/BackupPC/CGI/Browse.pm
+lib/BackupPC/CGI/DirHistory.pm
+lib/BackupPC/CGI/EditConfig.pm
+lib/BackupPC/CGI/EmailSummary.pm
+lib/BackupPC/CGI/GeneralInfo.pm
+lib/BackupPC/CGI/HostInfo.pm
+lib/BackupPC/CGI/LOGlist.pm
+lib/BackupPC/CGI/Lib.pm
+lib/BackupPC/CGI/Queue.pm
+lib/BackupPC/CGI/RSS.pm
+lib/BackupPC/CGI/ReloadServer.pm
+lib/BackupPC/CGI/Restore.pm
+lib/BackupPC/CGI/RestoreFile.pm
+lib/BackupPC/CGI/RestoreInfo.pm
+lib/BackupPC/CGI/StartServer.pm
+lib/BackupPC/CGI/StartStopBackup.pm
+lib/BackupPC/CGI/StopServer.pm
+lib/BackupPC/CGI/Summary.pm
+lib/BackupPC/CGI/View.pm
+lib/BackupPC/Config.pm
+lib/BackupPC/Config/Meta.pm
+lib/BackupPC/FileZIO.pm
+lib/BackupPC/Lang/cz.pm
+lib/BackupPC/Lang/de.pm
+lib/BackupPC/Lang/en.pm
+lib/BackupPC/Lang/es.pm
+lib/BackupPC/Lang/fr.pm
+lib/BackupPC/Lang/it.pm
+lib/BackupPC/Lang/nl.pm
+lib/BackupPC/Lang/pl.pm
+lib/BackupPC/Lang/pt_br.pm
+lib/BackupPC/Lang/zh_CN.pm
+lib/BackupPC/Lib.pm
+lib/BackupPC/PoolWrite.pm
+lib/BackupPC/Storage.pm
+lib/BackupPC/Storage/Text.pm
+lib/BackupPC/View.pm
+lib/BackupPC/Xfer.pm
+lib/BackupPC/Xfer/Archive.pm
+lib/BackupPC/Xfer/Ftp.pm
+lib/BackupPC/Xfer/Protocol.pm
+lib/BackupPC/Xfer/Rsync.pm
+lib/BackupPC/Xfer/RsyncDigest.pm
+lib/BackupPC/Xfer/RsyncFileIO.pm
+lib/BackupPC/Xfer/Smb.pm
+lib/BackupPC/Xfer/Tar.pm
+lib/BackupPC/Zip/FileMember.pm
+lib/Net/FTP/AutoReconnect.pm
+lib/Net/FTP/RetrHandle.pm
+%%WWWDIR%%/0000000.gif
+%%WWWDIR%%/0000011.gif
+%%WWWDIR%%/0001000.gif
+%%WWWDIR%%/0010000.gif
+%%WWWDIR%%/0010001.gif
+%%WWWDIR%%/0011000.gif
+%%WWWDIR%%/0011001.gif
+%%WWWDIR%%/1000000.gif
+%%WWWDIR%%/1000100.gif
+%%WWWDIR%%/1001000.gif
+%%WWWDIR%%/1001100.gif
+%%WWWDIR%%/1010000.gif
+%%WWWDIR%%/1010001.gif
+%%WWWDIR%%/1011000.gif
+%%WWWDIR%%/1100000.gif
+%%WWWDIR%%/1100100.gif
+%%WWWDIR%%/1100101.gif
+%%WWWDIR%%/1100110.gif
+%%WWWDIR%%/1100111.gif
+%%WWWDIR%%/1101000.gif
+%%WWWDIR%%/1101100.gif
+%%WWWDIR%%/1101101.gif
+%%WWWDIR%%/1101110.gif
+%%WWWDIR%%/1101111.gif
+%%WWWDIR%%/1110000.gif
+%%WWWDIR%%/1110001.gif
+%%WWWDIR%%/1110100.gif
+%%WWWDIR%%/1110101.gif
+%%WWWDIR%%/1110110.gif
+%%WWWDIR%%/1110111.gif
+%%WWWDIR%%/1111000.gif
+%%WWWDIR%%/1111001.gif
+%%WWWDIR%%/1111100.gif
+%%WWWDIR%%/1111101.gif
+%%WWWDIR%%/1111110.gif
+%%WWWDIR%%/1111111.gif
+%%WWWDIR%%/BackupPC_stnd.css
+%%WWWDIR%%/BackupPC_stnd_orig.css
+%%WWWDIR%%/favicon.ico
+%%WWWDIR%%/icon-dir.png
+%%WWWDIR%%/icon-file.png
+%%WWWDIR%%/icon-hardlink.png
+%%WWWDIR%%/icon-symlink.png
+%%WWWDIR%%/logo.gif
+%%WWWDIR%%/sorttable.js
+www/cgi-bin/BackupPC_Admin
+%%ETCDIR%%/hosts
+%%ETCDIR%%/config.pl
+@dirrm %%ETCDIR%%
+@dirrmtry www/cgi-bin
+@dirrmtry %%WWWDIR%%
+@dirrmtry share/doc/backuppc
+@dirrmtry lib/Net/FTP
+@dirrmtry lib/Net
+@dirrm lib/BackupPC/Zip
+@dirrm lib/BackupPC/Xfer
+@dirrm lib/BackupPC/Storage
+@dirrm lib/BackupPC/Lang
+@dirrm lib/BackupPC/Config
+@dirrm lib/BackupPC/CGI
+@dirrm lib/BackupPC
+@unexec echo
+@unexec echo "If you are permanently removing BackupPC, you should manually delete:"
+@unexec echo
+@unexec echo "	1) the backuppc user/group:	pw userdel backuppc"
+@unexec echo "	2) BackupPC configuration:	rm -rf %%PREFIX%%/%%ETCDIR%%"
+@unexec echo "	3) BackupPC data directory:	rm -rf /data/BackupPC"
+@unexec echo "	4) BackupPC logs directory:	rm -rf /var/log/BackupPC"
+@unexec echo

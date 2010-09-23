@@ -47,6 +47,7 @@
     SUBDIR += avfs
     SUBDIR += b43-fwcutter
     SUBDIR += backupme
+    SUBDIR += backuppc
     SUBDIR += bacula-bat
     SUBDIR += bacula-client
     SUBDIR += bacula-docs
