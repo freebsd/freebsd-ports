@@ -82,6 +82,25 @@ lib/sbcl/sb-cltl2/sb-cltl2.fasl
 lib/sbcl/sb-cltl2/test-passed
 lib/sbcl/sb-cltl2/tests.fasl
 lib/sbcl/sb-cltl2/tests.lisp
+lib/sbcl/sb-concurrency/Makefile
+lib/sbcl/sb-concurrency/mailbox.fasl
+lib/sbcl/sb-concurrency/mailbox.lisp
+lib/sbcl/sb-concurrency/package.fasl
+lib/sbcl/sb-concurrency/package.lisp
+lib/sbcl/sb-concurrency/queue.fasl
+lib/sbcl/sb-concurrency/queue.lisp
+lib/sbcl/sb-concurrency/sb-concurrency.asd
+lib/sbcl/sb-concurrency/sb-concurrency.fasl
+lib/sbcl/sb-concurrency/sb-concurrency.texinfo
+lib/sbcl/sb-concurrency/test-passed
+lib/sbcl/sb-concurrency/tests/package.fasl
+lib/sbcl/sb-concurrency/tests/package.lisp
+lib/sbcl/sb-concurrency/tests/test-mailbox.fasl
+lib/sbcl/sb-concurrency/tests/test-mailbox.lisp
+lib/sbcl/sb-concurrency/tests/test-queue.fasl
+lib/sbcl/sb-concurrency/tests/test-queue.lisp
+lib/sbcl/sb-concurrency/tests/test-utils.fasl
+lib/sbcl/sb-concurrency/tests/test-utils.lisp
 lib/sbcl/sb-cover/.cvsignore
 lib/sbcl/sb-cover/Makefile
 lib/sbcl/sb-cover/cover.fasl
@@ -161,21 +180,20 @@ lib/sbcl/sb-posix/posix-tests.lisp
 lib/sbcl/sb-posix/sb-posix.asd
 lib/sbcl/sb-posix/sb-posix.fasl
 lib/sbcl/sb-posix/sb-posix.texinfo
-lib/sbcl/sb-posix/test-passed
 lib/sbcl/sb-posix/test-lab/.keep_me
+lib/sbcl/sb-posix/test-passed
 lib/sbcl/sb-queue/.cvsignore
 lib/sbcl/sb-queue/Makefile
-lib/sbcl/sb-queue/queue.fasl
-lib/sbcl/sb-queue/queue.lisp
+lib/sbcl/sb-queue/package.fasl
+lib/sbcl/sb-queue/package.lisp
 lib/sbcl/sb-queue/sb-queue.asd
-lib/sbcl/sb-queue/sb-queue.texinfo
 lib/sbcl/sb-queue/sb-queue.fasl
+lib/sbcl/sb-queue/sb-queue.texinfo
 lib/sbcl/sb-queue/test-passed
-lib/sbcl/sb-queue/test-queue.fasl
-lib/sbcl/sb-queue/test-queue.lisp
 lib/sbcl/sb-rotate-byte/.cvsignore
 lib/sbcl/sb-rotate-byte/Makefile
 lib/sbcl/sb-rotate-byte/README
+lib/sbcl/sb-rotate-byte/x86-64-vm.lisp
 lib/sbcl/sb-rotate-byte/compiler.fasl
 lib/sbcl/sb-rotate-byte/compiler.lisp
 lib/sbcl/sb-rotate-byte/package.fasl
@@ -216,6 +234,7 @@ lib/sbcl/sb-simple-streams/internal.fasl
 lib/sbcl/sb-simple-streams/internal.lisp
 lib/sbcl/sb-simple-streams/iodefs.fasl
 lib/sbcl/sb-simple-streams/iodefs.lisp
+lib/sbcl/sb-simple-streams/lp491087.txt
 lib/sbcl/sb-simple-streams/null.fasl
 lib/sbcl/sb-simple-streams/null.lisp
 lib/sbcl/sb-simple-streams/package.fasl
@@ -245,14 +264,16 @@ lib/sbcl/site-systems/.keep_me
 @dirrm lib/sbcl/sb-rt
 @dirrm lib/sbcl/sb-rotate-byte
 @dirrm lib/sbcl/sb-queue
-@dirrm lib/sbcl/sb-posix/alien
 @dirrm lib/sbcl/sb-posix/test-lab
+@dirrm lib/sbcl/sb-posix/alien
 @dirrm lib/sbcl/sb-posix
 @dirrm lib/sbcl/sb-md5
 @dirrm lib/sbcl/sb-introspect
 @dirrm lib/sbcl/sb-grovel
 @dirrm lib/sbcl/sb-executable
 @dirrm lib/sbcl/sb-cover
+@dirrm lib/sbcl/sb-concurrency/tests
+@dirrm lib/sbcl/sb-concurrency
 @dirrm lib/sbcl/sb-cltl2
 @dirrm lib/sbcl/sb-bsd-sockets/alien
 @dirrm lib/sbcl/sb-bsd-sockets
