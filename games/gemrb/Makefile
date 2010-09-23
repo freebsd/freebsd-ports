@@ -30,6 +30,12 @@ CMAKE_ARGS=	-DDOC_DIR="${LOCALBASE}/share/doc/gemrb" -DMAN_DIR="${LOCALBASE}/man
 
 MAN6=	gemrb.6
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+USE_GCC=	4.2+
+.endif
+
 post-patch:
 .if defined(NOPORTDOCS)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-noportdocs-*
@@ -41,4 +47,4 @@ post-install:
 	fi
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
