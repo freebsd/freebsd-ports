@@ -4594,3 +4594,6 @@ archivers/p5-IO-Compress-Base|archivers/p5-IO-Compress|2010-09-21|Replaced by ar
 archivers/p5-IO-Compress-Bzip2|archivers/p5-IO-Compress|2010-09-21|Replaced by archivers/p5-IO-Compress
 archivers/p5-IO-Compress-Zlib|archivers/p5-IO-Compress|2010-09-21|Replaced by archivers/p5-IO-Compress
 audio/linux-nerodigitalaudio|audio/linux-neroaaccodec|2010-09-22|Project was renamed
+devel/automake16||2010-09-22|Outdated, no longer required by any port
+devel/automake17||2010-09-22|Outdated, was not being used by any port
+devel/automake18||2010-09-22|Outdated, ports (2) migrated to automake19
