@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	portshaker
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 PORTREVISION?=	0
 CATEGORIES?=	ports-mgmt
 MASTER_SITES=	http://bsd-sharp.googlecode.com/files/ \
@@ -27,6 +27,7 @@ MAN5=		portshaker.conf.5 \
 MAN8=		portshaker.8
 .else
 OPTIONS=	BSDSHARP  "Enable BSD-sharp ports"                on \
+		ENLIGHTENMENT "Enable Enlightnement ports"        off \
 		MARCUSCOM "Enable GNOME development ports"        off \
 		TEXLIVE   "Enable TeXLive ports (Experimental)"   off
 .endif
@@ -52,6 +53,9 @@ RUN_DEPENDS+=	hg:${PORTSDIR}/devel/mercurial
 
 . if defined (WITH_BSDSHARP)
 MAKE_ENV+=	WITH_BSDSHARP=1
+. endif
+. if defined (WITH_ENLIGHTENMENT)
+MAKE_ENV+=	WITH_ENLIGHTENMENT=1
 . endif
 . if defined (WITH_MARCUSCOM)
 MAKE_ENV+=	WITH_MARCUSCOM=1
