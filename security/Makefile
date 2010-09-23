@@ -808,6 +808,7 @@
     SUBDIR += snortsms
     SUBDIR += snortsnarf
     SUBDIR += softhsm
+    SUBDIR += spass
     SUBDIR += spike-proxy
     SUBDIR += spybye
     SUBDIR += sqlmap
