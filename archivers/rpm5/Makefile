@@ -59,6 +59,7 @@ CONFIGURE_ARGS+=--without-lua
 
 .if defined(WITH_PERL)
 CONFIGURE_ARGS+=--with-perl
+CONFIGURE_ENV+=__PERL=${PERL}
 USE_PERL5=	yes
 PLIST_SUB+=	PERL=""
 .else
@@ -67,7 +68,8 @@ PLIST_SUB+=	PERL="@comment "
 .endif
 
 .if defined(WITH_PYTHON)
-CONFIGURE_ARGS+=--with-python
+CONFIGURE_ARGS+=--with-python=${PYTHON_VER}
+CONFIGURE_ENV+=__PYTHON=${PYTHON_CMD}
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON=""
 CPPFLAGS+=	-I${PYTHON_INCLUDEDIR}
@@ -137,6 +139,13 @@ post-patch::
 post-configure:
 	@cd ${CONFIGURE_WRKSRC}/perl && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
+.endif
+
+.if ${OSVERSION} < 700000
+# on FreeBSD 6.x, <sys/mount.h> first requires <sys/param.h> (for NGROUPS)
+post-configure::
+	@${REINPLACE_CMD} -e "s:/\* #undef HAVE_SYS_MOUNT_H \*/:#define HAVE_SYS_MOUNT_H 1:" \
+		${WRKSRC}/config.h
 .endif
 
 post-build:
