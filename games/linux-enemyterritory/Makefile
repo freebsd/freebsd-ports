@@ -7,9 +7,10 @@
 
 PORTNAME=	enemyterritory
 PORTVERSION=	2.60b
+PORTREVISION=	1
 CATEGORIES=	games linux
-MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|et/linux/:full|} \
-		${MASTER_SITE_IDSOFTWARE:S|$|et/:patch|}
+MASTER_SITES=		${MASTER_SITE_IDSOFTWARE:S|$|et/:patch|}
+#MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|et/linux/:full|}
 PKGNAMEPREFIX=	linux-
 DISTNAME=	et-linux-2.60b.x86
 DISTFILES=	et-linux-2.60.x86.run:full ET-2.60b.zip:patch
@@ -24,6 +25,7 @@ NO_CDROM=	Redistribution is limited, see license
 ETDIR=		${PREFIX}/lib/${PORTNAME}
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
 PATCH_260B_DIR=	Enemy Territory 2.60b
+USE_LINUX_APPS=	dri
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
