@@ -9,7 +9,7 @@
 PORTNAME=	darkice
 PORTVERSION=	1.0
 CATEGORIES=	audio net
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IceCast, IceCast2 and ShoutCast live audio streamer
@@ -19,16 +19,20 @@ OPTIONS=	VORBIS "Ogg Vorbis support" on \
 		TWOLAME "TwoLAME support for MP2" off \
 		FAAC "FAAC support for AAC" off \
 		JACK "Jack support" off \
+		AACPLUS "AAC HEv2 support" off \
 		SAMPLERATE "Libsamplerate support" off
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}" \
 		ac_cv_prog_acx_pthread_config=no
-CONFIGURE_ARGS=	--without-alsa --without-aacplus
+CONFIGURE_ARGS=	--without-alsa
+
+SUB_FILES=	pkg-message
+USE_RC_SUBR=	${PORTNAME}
 
 MAN1=		darkice.1
 MAN5=		darkice.cfg.5
-PLIST_FILES=	bin/darkice etc/darkice.cfg
+PLIST_FILES=	bin/darkice etc/darkice.cfg.dist
 
 .include <bsd.port.pre.mk>
 
@@ -67,6 +71,13 @@ CONFIGURE_ARGS+=	--with-jack-prefix=${LOCALBASE}
 CONFIGURE_ARGS+=	--without-jack
 .endif
 
+.if defined(WITH_AACPLUS)
+LIB_DEPENDS+=	aacplus.1:${PORTSDIR}/audio/libaacplus
+CONFIGURE_ARGS+=	--with-aacplus-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-aacplus
+.endif
+
 .if defined(WITH_SAMPLERATE)
 LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=	--with-samplerate-prefix=${LOCALBASE}
@@ -77,5 +88,12 @@ CONFIGURE_ARGS+=	--without-samplerate
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O2 -pedantic||g' ${WRKSRC}/src/Makefile.in
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.cfg ${PREFIX}/etc/${PORTNAME}.cfg.dist
+	@${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.cfg.5 ${MAN5PREFIX}/man/man5
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
