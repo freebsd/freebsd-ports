@@ -333,7 +333,7 @@ share/pixmaps/jokosher.png
 @dirrmtry share/locale/tl/LC_MESSAGES
 @dirrmtry share/locale/tl
 %%OMF%%@dirrm share/omf/jokosher
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
+@unexec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
