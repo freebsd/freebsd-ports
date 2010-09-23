@@ -18,13 +18,9 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+USE_GNOME=	gnomehier
 USE_GSTREAMER=	gnonlin good python
 INSTALLS_ICONS=	yes
-
-WANT_GNOME=	yes
-WANT_GSTREAMER=	yes
-
-BROKEN=	touches filesystem before make install
 
 OPTIONS=	DBUS	"D-Bus extension" on \
 		FLAC	"Flac export/import" on \
@@ -42,10 +38,6 @@ OPTIONS=	DBUS	"D-Bus extension" on \
 
 .if defined(WITH_DBUS)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
-.endif
-
-.if defined(WITH_GNOME) || ${HAVE_GNOME:Mgnomehier}!=""
-USE_GNOME+=	desktopfileutils gnomehier
 .endif
 
 .if defined(WITH_GNOME) || defined(WITH_PROFILES) \
@@ -76,7 +68,8 @@ USE_GSTREAMER+=${plugin}
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' -e \
-		'\|scrollkeeper-preinstall|s|HELPURI\[fileNum]|"file://" + &|' \
+		'\|scrollkeeper-preinstall|s|HELPURI\[fileNum]|"file://" + &|' -e \
+		's|"update-desktop-database"|&, "${PREFIX}/share/applications"|' \
 		${WRKSRC}/bin/${PORTNAME} ${WRKSRC}/${PYSETUP}
 
 .include <bsd.port.post.mk>
