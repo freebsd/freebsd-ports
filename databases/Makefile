@@ -206,6 +206,7 @@
     SUBDIR += mysql-udf
     SUBDIR += mysql-workbench51
     SUBDIR += mysql-workbench52
+    SUBDIR += mysql-xql
     SUBDIR += mysql2odbc
     SUBDIR += mysql2pgsql
     SUBDIR += mysql323-client
