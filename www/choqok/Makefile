@@ -13,6 +13,8 @@ MASTER_SITES=	http://d10xg45o6p6dbl.cloudfront.net/projects/c/choqok/
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE micro-blogging client
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	qjson.0:${PORTSDIR}/devel/qjson \
 		qoauth.1:${PORTSDIR}/devel/qoauth
 
