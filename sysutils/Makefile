@@ -600,6 +600,7 @@
     SUBDIR += p5-mogilefs-server
     SUBDIR += p5-reslog
     SUBDIR += paicc
+    SUBDIR += parallel
     SUBDIR += pax-utils
     SUBDIR += pbreg
     SUBDIR += pcfclock
