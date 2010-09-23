@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ruby_parser
-PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTVERSION=	2.0.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RUBYFORGE/parsetree
 
