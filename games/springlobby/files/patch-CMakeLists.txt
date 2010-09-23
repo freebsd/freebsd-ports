@@ -1,5 +1,5 @@
---- CMakeLists.txt.orig	2010-04-10 03:37:25.000000000 +0400
-+++ CMakeLists.txt	2010-04-15 19:08:24.000000000 +0400
+--- CMakeLists.txt.orig	2010-07-20 01:38:35.000000000 +0400
++++ CMakeLists.txt	2010-07-30 16:21:01.000000000 +0400
 @@ -92,7 +92,6 @@
  # Did we find wxWidgets ? This condition will fail for as long as the internal Vars do not point to the proper wxWidgets Configuration.
  IF(wxWidgets_FOUND)
@@ -27,7 +27,16 @@
  ELSE ( OPTION_SOUND )
      # Disable sound.
      ADD_DEFINITIONS( -DDISABLE_SOUND )
-@@ -174,6 +176,7 @@
+@@ -171,7 +173,7 @@
+ 	    IF( Boost_FOUND )
+ 		    link_directories( ${Boost_LIB_DIR} )
+ 		    INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIR} )
+-		    SET( SL_BOOST_LIBS boost_system-mt )
++		    SET( SL_BOOST_LIBS boost_system )
+ 	    ELSE()
+ 		    MESSAGE( FATAL_ERROR "boost library not found! Please install the package or toggle OPTION_TORRENT_SYSTEM to OFF")
+ 	    ENDIF()
+@@ -185,6 +187,7 @@
  	LIST( APPEND SLSharedWithSettings ${curlSRC} )
  ELSE( OPTION_TORRENT_SYSTEM )
  	ADD_DEFINITIONS( -DNO_TORRENT_SYSTEM )

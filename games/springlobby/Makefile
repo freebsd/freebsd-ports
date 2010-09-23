@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	springlobby
-PORTVERSION=	0.80
-PORTREVISION=	1
+PORTVERSION=	0.101
 CATEGORIES=	games net
 MASTER_SITES=	http://www.springlobby.info/tarballs/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -41,7 +40,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if !defined(WITHOUT_TORRENT)
-LIB_DEPENDS+=	torrent-rasterbar.5:${PORTSDIR}/net-p2p/libtorrent-rasterbar-14
+LIB_DEPENDS+=	torrent-rasterbar.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15
 .else
 CMAKE_ARGS+=	-DOPTION_TORRENT_SYSTEM:BOOL=OFF
 .endif
