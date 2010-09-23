@@ -2836,6 +2836,7 @@
     SUBDIR += py-sqlcc
     SUBDIR += py-statgrab
     SUBDIR += py-subversion
+    SUBDIR += py-subvertpy
     SUBDIR += py-tables
     SUBDIR += py-tconfpy
     SUBDIR += py-testgears
