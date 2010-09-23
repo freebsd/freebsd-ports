@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2009-10-09 05:58:21.000000000 +0900
++++ Makefile.am	2010-09-07 12:42:33.000000000 +0900
+@@ -14,7 +14,7 @@
+ LDADD = @FFTW3_LDFLAGS@
+
+ if HAVE_PKGCONFIG
+- pkgconfigdir = $(libdir)/pkgconfig
++ pkgconfigdir = $(prefix)/libdata/pkgconfig
+  pkgconfig_DATA = aacplus.pc
+ else
+  bin_SCRIPTS = aacplus-config
