@@ -1676,6 +1676,7 @@
     SUBDIR += p5-Geo-ShapeFile
     SUBDIR += p5-Getargs-Long
     SUBDIR += p5-Getopt-ArgvFile
+    SUBDIR += p5-Getopt-Compact
     SUBDIR += p5-Getopt-Declare
     SUBDIR += p5-Getopt-Euclid
     SUBDIR += p5-Getopt-GUI-Long
