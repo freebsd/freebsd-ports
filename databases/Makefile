@@ -18,6 +18,7 @@
     SUBDIR += bbdb
     SUBDIR += beansdb
     SUBDIR += buzhug
+    SUBDIR += c3p0
     SUBDIR += cassandra
     SUBDIR += cdb
     SUBDIR += cego
