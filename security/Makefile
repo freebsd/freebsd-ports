@@ -55,6 +55,7 @@
     SUBDIR += calife
     SUBDIR += calife-devel
     SUBDIR += ccrypt
+    SUBDIR += ccsrch
     SUBDIR += cfs
     SUBDIR += cfv
     SUBDIR += chaosreader

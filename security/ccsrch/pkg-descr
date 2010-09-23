@@ -1,0 +1,6 @@
+ccsrch is a tool that searches for and identifies unencrypted and
+contiguous credit card numbers (PAN) and track data on windows and
+UNIX operating systems. It will also identify the location of the
+PAN data in the files and record MAC times.
+
+WWW:	http://ccsrch.sourceforge.net/
