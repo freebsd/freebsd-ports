@@ -24,6 +24,8 @@ INSTALLS_ICONS=	yes
 WANT_GNOME=	yes
 WANT_GSTREAMER=	yes
 
+BROKEN=	touches filesystem before make install
+
 OPTIONS=	DBUS	"D-Bus extension" on \
 		FLAC	"Flac export/import" on \
 		GCONF	"Gnome Audio playback/record" on \
