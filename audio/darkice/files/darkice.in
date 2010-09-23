@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: darkice
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
+# KEYWORD: SHUTDOWN
+
+. "/etc/rc.subr"
+
+name="darkice"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/$name"
+command_args="& 1>/dev/null"
+required_files="%%ETCDIR%%.cfg"
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${darkice_enable="NO"}
+: ${darkice_flags="-c ${required_files}"}
+
+run_rc_command "$1"

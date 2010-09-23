@@ -1,0 +1,19 @@
+********************************************************************
+Unless this file already existed, a sample configuration file
+has been placed in %%ETCDIR%%.cfg.
+
+Please edit it according to your needs.
+
+********************************************************************
+
+The darkice will *not* be started automatically. To allow it
+to start, put this line in /etc/rc.conf:
+
+darkice_enable="YES"
+
+Then, it will be started on the next boot. If this line is already
+present, the client will be started now.  Otherwise, edit
+/etc/rc.conf and execute this command:
+
+    %%ETCDIR%%/rc.d/darkice start
+********************************************************************
