@@ -7,7 +7,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		https://jaxp.dev.java.net/files/documents/913/150648/:jaxp \
@@ -52,7 +52,6 @@ OPTIONS=	DEBUG "Enable legacy debugging support" off \
 # java extracts directly to the cwd
 WRKSRC=		${WRKDIR}
 
-WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_MOTIF=	yes
 USE_XORG=	xtst xi xt x11
@@ -149,8 +148,10 @@ OPENJDK_OSARCH=	bsd-${ARCH:S/i386/i586/}
 DISTFILES+=	${ICEDTEAFILE}:icedtea
 EXTRACT_ONLY+=	${ICEDTEAFILE}
 EXTRA_PATCHES+=	${FILESDIR}/icedtea.patch ${FILESDIR}/plugin.patch
-USE_GECKO=	libxul
-USE_GNOME=	glib20 gtk20
+BUILD_DEPENDS+= ${LOCALBASE}/bin/pkg-config:${PORTSDIR}/devel/pkg-config \
+		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc:${PORTSDIR}/devel/glib20 \
+		${LOCALBASE}/libdata/pkgconfig/gtk+-2.0.pc:${PORTSDIR}/x11-toolkits/gtk20 \
+		${LOCALBASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/libxul
 ICEDTEADIR=	${WRKDIR}/icedtea6-${ICEDTEAVERSION}
 ICEDTEA_JAVAC=	${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/bin/javac
 ICEDTEA_JAR=	${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/bin/jar

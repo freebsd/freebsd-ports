@@ -33,19 +33,18 @@ STRIP=		-s
 .error "PLUGIN_VERSION not defined"
 .endif
 
-MOZILLA_PKGS=	glib-2.0 gtk+-2.0 mozilla-plugin
 MOZILLA_VERSION!=${LOCALBASE}/bin/pkg-config --modversion mozilla-plugin
 MOZILLA_VERSION2!=/usr/bin/printf "%d%02d%02d%02d" ${MOZILLA_VERSION:C/\./ /g}
-PLUGIN_CFLAGS!=	${LOCALBASE}/bin/pkg-config --cflags ${MOZILLA_PKGS}
-PLUGIN_LIBS!=	${LOCALBASE}/bin/pkg-config --libs ${MOZILLA_PKGS}
+
+PLUGIN_PKG_INC=	glib-2.0 gtk+-2.0 mozilla-plugin
+PLUGIN_PKG_LIB=	glib-2.0 gtk+-2.0
+PLUGIN_CFLAGS!=	${LOCALBASE}/bin/pkg-config --cflags ${PLUGIN_PKG_INC}
+PLUGIN_LIBS!=	${LOCALBASE}/bin/pkg-config --libs ${PLUGIN_PKG_LIB}
 
 CFLAGS+=	-DJDK_UPDATE_VERSION="\"${JDK_UPDATE_VERSION}\"" \
 		-DPLUGIN_VERSION="\"${PLUGIN_VERSION}\"" \
-		-DMOZILLA_VERSION_COLLAPSED="${MOZILLA_VERSION2}"
-
-# XXX Need to fix in ports.
-CFLAGS+=	${PLUGIN_CFLAGS:S,/libxul/stable,/libxul,}
-
+		-DMOZILLA_VERSION_COLLAPSED="${MOZILLA_VERSION2}" \
+		${PLUGIN_CFLAGS}
 LDFLAGS+=	${PLUGIN_LIBS}
 
 .include <bsd.lib.mk>

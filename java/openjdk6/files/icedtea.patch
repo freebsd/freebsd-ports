@@ -1,70 +1,93 @@
 $FreeBSD$
 
-This patch works around POSIX thread anomalies in the IcedTea6 plugin.
-Somehow Linux can use mutexes and condition variables uninitialized.
+This patch works around POSIX thread implementation differences between
+FreeBSD's libthr and Linux's NPTL:
 
---- icedtea6-1.9/plugin/icedteanp/IcedTeaNPPlugin.cc.orig	2010-08-06 07:05:21.916103000 -0400
-+++ icedtea6-1.9/plugin/icedteanp/IcedTeaNPPlugin.cc	2010-09-13 12:39:38.000000000 -0400
-@@ -237,6 +237,7 @@ static guint appletviewer_watch_id = -1;
- int plugin_debug = getenv ("ICEDTEAPLUGIN_DEBUG") != NULL;
+- We do not support static allocations of mutex and condition variable.
+Thus, we must initialize them explicitly with pthread_mutex_init(3) and
+pthread_cond_init(3), respectively.
+
+- We must initialize mutex before calling pthread_cond_wait(3).  Otherwise,
+it fails with EINVAL.
+
+- We must lock mutex before calling pthread_cond_wait(3).  Otherwise, it
+fails with EPERM.
+
+- We must join threads via pthread_join(3) after calling pthread_cancel(3).
+Otherwise, we may destroy mutex or condition variable in use.
+
+--- icedtea6-1.9/plugin/icedteanp/IcedTeaNPPlugin.cc.orig	2010-09-23 09:40:49.000000000 -0400
++++ icedtea6-1.9/plugin/icedteanp/IcedTeaNPPlugin.cc	2010-09-23 15:31:27.000000000 -0400
+@@ -2369,6 +2369,10 @@ NP_Shutdown (void)
+   pthread_cancel(plugin_request_processor_thread2);
+   pthread_cancel(plugin_request_processor_thread3);
  
- pthread_cond_t cond_message_available = PTHREAD_COND_INITIALIZER;
-+pthread_mutex_t wait_mutex = PTHREAD_MUTEX_INITIALIZER;
- 
- // Functions prefixed by ITNP_ are instance functions.  They are called
- // by the browser and operate on instances of ITNPPluginData.
---- icedtea6-1.9/plugin/icedteanp/IcedTeaNPPlugin.h.orig	2010-08-06 07:05:21.942208000 -0400
-+++ icedtea6-1.9/plugin/icedteanp/IcedTeaNPPlugin.h	2010-09-13 12:39:13.000000000 -0400
-@@ -94,6 +94,7 @@ static pthread_t plugin_request_processo
- 
- // Condition on which the queue processor waits
- extern pthread_cond_t cond_message_available;
-+extern pthread_mutex_t wait_mutex;
- 
- // debug switch
- extern int plugin_debug;
---- icedtea6-1.9/plugin/icedteanp/IcedTeaPluginRequestProcessor.cc.orig	2010-08-06 07:05:21.996828000 -0400
-+++ icedtea6-1.9/plugin/icedteanp/IcedTeaPluginRequestProcessor.cc	2010-09-13 12:55:28.000000000 -0400
-@@ -63,6 +63,11 @@ PluginRequestProcessor::PluginRequestPro
++  pthread_join(plugin_request_processor_thread1, NULL);
++  pthread_join(plugin_request_processor_thread2, NULL);
++  pthread_join(plugin_request_processor_thread3, NULL);
++
+   java_to_plugin_bus->unSubscribe(plugin_req_proc);
+   plugin_to_java_bus->unSubscribe(java_req_proc);
+   //internal_bus->unSubscribe(java_req_proc);
+--- icedtea6-1.9/plugin/icedteanp/IcedTeaPluginRequestProcessor.cc.orig	2010-09-23 09:40:49.000000000 -0400
++++ icedtea6-1.9/plugin/icedteanp/IcedTeaPluginRequestProcessor.cc	2010-09-23 15:36:38.000000000 -0400
+@@ -63,6 +63,12 @@ PluginRequestProcessor::PluginRequestPro
      this->pendingRequests = new std::map<pthread_t, uintmax_t>();
  
      internal_req_ref_counter = 0;
++
 +    pthread_mutex_init(&message_queue_mutex, NULL);
 +    pthread_mutex_init(&syn_write_mutex, NULL);
 +    pthread_mutex_init(&tc_mutex, NULL);
-+    pthread_mutex_init(&wait_mutex, NULL);
++
 +    pthread_cond_init(&cond_message_available, NULL);
  }
  
  /**
-@@ -77,6 +82,11 @@ PluginRequestProcessor::~PluginRequestPr
+@@ -77,6 +83,12 @@ PluginRequestProcessor::~PluginRequestPr
  
      if (pendingRequests)
          delete pendingRequests;
++
 +    pthread_mutex_destroy(&message_queue_mutex);
 +    pthread_mutex_destroy(&syn_write_mutex);
 +    pthread_mutex_destroy(&tc_mutex);
-+    pthread_mutex_destroy(&wait_mutex);
++
 +    pthread_cond_destroy(&cond_message_available);
  }
  
  /**
-@@ -709,7 +719,6 @@ queue_processor(void* data)
+@@ -709,10 +721,12 @@ queue_processor(void* data)
      PluginRequestProcessor* processor = (PluginRequestProcessor*) data;
      std::vector<std::string*>* message_parts = NULL;
      std::string command;
 -    pthread_mutex_t wait_mutex = PTHREAD_MUTEX_INITIALIZER; // This is needed for API compat. and is unused
++    pthread_mutex_t wait_mutex = PTHREAD_MUTEX_INITIALIZER;
  
      PLUGIN_DEBUG("Queue processor initialized. Queue = %p\n", message_queue);
  
-@@ -780,7 +789,9 @@ queue_processor(void* data)
++    pthread_mutex_init(&wait_mutex, NULL);
++
+     while (true)
+     {
+         pthread_mutex_lock(&message_queue_mutex);
+@@ -780,13 +794,17 @@ queue_processor(void* data)
  
          } else
          {
 -        	pthread_cond_wait(&cond_message_available, &wait_mutex);
+-            pthread_testcancel();
 +	    pthread_mutex_lock(&wait_mutex);
 +	    pthread_cond_wait(&cond_message_available, &wait_mutex);
 +	    pthread_mutex_unlock(&wait_mutex);
-             pthread_testcancel();
++	    pthread_testcancel();
          }
+ 
+         message_parts = NULL;
+     }
+ 
++    pthread_mutex_destroy(&wait_mutex);
++
+     PLUGIN_DEBUG("Queue processing stopped.\n");
+ }
  
