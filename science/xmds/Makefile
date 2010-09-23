@@ -17,8 +17,8 @@ COMMENT=	XMDS is a code generator that integrates equations;
 MAN1=	loadxsil.1 xmds.1 xsil2graphics.1
 
 OPTIONS=	FFTW3 "Use fftw3 instead of fftw2" Off
-HAS_CONFIGURE=	YES
-USE_AUTOTOOLS=	automake:16
+
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
