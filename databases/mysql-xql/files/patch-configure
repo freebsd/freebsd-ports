@@ -1,0 +1,20 @@
+--- configure.org	2009-11-19 14:51:20.000000000 +0000
++++ configure		2009-12-28 00:24:17.000000000 +0000
+@@ -14555,7 +14555,7 @@
+ 
+ 
+ 
+-if test -n "$MYSQL_PLUGINDIR" && test "$libdir" == '${exec_prefix}/lib' ; then
++if test -n "$MYSQL_PLUGINDIR" ; then
+   { $as_echo "$as_me:${as_lineno-$LINENO}: setting libdir to mysql plugin dir $MYSQL_PLUGINDIR" >&5
+ $as_echo "$as_me: setting libdir to mysql plugin dir $MYSQL_PLUGINDIR" >&6;}
+   libdir=$MYSQL_PLUGINDIR
+@@ -14599,6 +14599,8 @@
+     for i in /usr /usr/local ; do
+       if test -f "$i/lib/xml2Conf.sh" ; then
+         XML2_CONFIG="$i/lib/xml2Conf.sh"
++      elif test -f "$i/etc/xml2Conf.sh" ; then
++        XML2_CONFIG="$i/etc/xml2Conf.sh"
+       elif test -f "$i/lib/libxml2.so"; then
+         XML2_DIR="$i"
+       fi

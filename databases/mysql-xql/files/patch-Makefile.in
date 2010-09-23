@@ -1,0 +1,11 @@
+--- Makefile.in.org	2009-11-20 13:25:51.000000000 +0000
++++ Makefile.in		2009-12-28 02:12:35.000000000 +0000
+@@ -226,7 +226,7 @@
+ includedir = @includedir@
+ infodir = @infodir@
+ install_sh = @install_sh@
+-libdir = @libdir@
++libdir = @MYSQL_PLUGINDIR@
+ libexecdir = @libexecdir@
+ localedir = @localedir@
+ localstatedir = @localstatedir@
