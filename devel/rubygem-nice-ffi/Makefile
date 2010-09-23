@@ -7,13 +7,14 @@
 
 PORTNAME=	nice-ffi
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	kick.christoph@googlemail.com
 COMMENT=	Nice-FFI is a layer on top of Ruby-FFI
 
-RUN_DEPENDS=	rubygem-ffi>=0.5.3:${PORTSDIR}/devel/rubygem-ffi
+RUN_DEPENDS=	rubygem-ffi>=0.5.0:${PORTSDIR}/devel/rubygem-ffi
 
 USE_RUBY=		yes
 USE_RUBYGEMS=	yes
