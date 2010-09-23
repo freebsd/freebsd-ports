@@ -128,6 +128,7 @@
     SUBDIR += darkice
     SUBDIR += dcd
     SUBDIR += deadbeef
+    SUBDIR += decibel-audio-player
     SUBDIR += dekagen
     SUBDIR += denemo
     SUBDIR += dir2ogg

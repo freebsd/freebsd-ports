@@ -1,0 +1,20 @@
+--- Makefile.orig	2010-06-27 11:29:12.000000000 +0200
++++ Makefile	2010-09-17 20:28:10.000000000 +0200
+@@ -8,7 +8,7 @@
+ PREFIX = $(DESTDIR)$(prefix)
+ 
+ BINDIR = $(PREFIX)/bin
+-MANDIR = $(PREFIX)/share/man/man1
++MANDIR = $(PREFIX)/man/man1
+ DATADIR = $(PREFIX)/share/decibel-audio-player
+ SRCDIR = $(DATADIR)/src
+ PIXDIR = $(DATADIR)/pix
+@@ -20,7 +20,7 @@
+ 
+ CONFIGURE_IN = sed -e 's!prefix!$(prefix)!g'
+ 
+-LANGUAGES = `find locale/ -maxdepth 1 -mindepth 1 -type d -printf "%f "`
++LANGUAGES = `cd locale/ && find . -maxdepth 1 -mindepth 1 -type d | tr -d ./`
+ 
+ help:
+ 	@echo Usage:
