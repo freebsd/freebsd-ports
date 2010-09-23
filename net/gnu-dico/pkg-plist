@@ -1,0 +1,43 @@
+bin/gdico
+etc/dicod.conf.sample
+include/dico/argcv.h
+include/dico/assoc.h
+include/dico/diag.h
+include/dico/dico.h
+include/dico/filter.h
+include/dico/list.h
+include/dico/markup.h
+include/dico/parseopt.h
+include/dico/strat.h
+include/dico/stream.h
+include/dico/types.h
+include/dico/url.h
+include/dico/utf8.h
+include/dico/util.h
+include/dico/xlat.h
+lib/dico/dictorg.a
+lib/dico/dictorg.la
+lib/dico/dictorg.so
+%%GUILE%%lib/dico/guile.a
+%%GUILE%%lib/dico/guile.la
+%%GUILE%%lib/dico/guile.so
+lib/dico/outline.a
+lib/dico/outline.la
+lib/dico/outline.so
+%%PYTHON%%lib/dico/python.a
+%%PYTHON%%lib/dico/python.la
+%%PYTHON%%lib/dico/python.so
+lib/libdico.a
+lib/libdico.la
+lib/libdico.so
+lib/libdico.so.0
+sbin/dicod
+%%DATADIR%%/%%PORTVERSION%%/include/pp-setup
+%%DATADIR%%/gjdict.xbm
+%%NLS%%share/locale/pl/LC_MESSAGES/dico.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/dico.mo
+@dirrm share/dico/%%PORTVERSION%%/include
+@dirrm share/dico/%%PORTVERSION%%
+@dirrm share/dico
+@dirrmtry lib/dico
+@dirrm include/dico

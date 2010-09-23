@@ -194,6 +194,7 @@
     SUBDIR += gnome-nettool
     SUBDIR += gnome-vnc
     SUBDIR += gnosamba
+    SUBDIR += gnu-dico
     SUBDIR += gnu-radius
     SUBDIR += gofish
     SUBDIR += googlecl
