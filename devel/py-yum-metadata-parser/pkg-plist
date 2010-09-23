@@ -1,0 +1,4 @@
+%%PYTHON_SITELIBDIR%%/sqlitecachec.py
+%%PYTHON_SITELIBDIR%%/sqlitecachec.pyc
+%%PYTHON_SITELIBDIR%%/sqlitecachec.pyo
+%%PYTHON_SITELIBDIR%%/_sqlitecache.so
