@@ -8164,6 +8164,7 @@ libsamplerate                   ports/audio/libsamplerate
 libsbml                         ports/biology/libsbml
 libsdb                          ports/databases/libsdb
 libsectok                       ports/security/libsectok
+libserver                       ports/devel/libserver
 libsexy                         ports/x11-toolkits/libsexy
 libsexymm                       ports/x11-toolkits/libsexymm
 libshbuf                        ports/devel/libshbuf
@@ -8631,7 +8632,6 @@ linux-mplayer-plugin            ports/www/linux-mplayer-plugin
 linux-musicipserver             ports/audio/linux-musicipserver
 linux-nas-libs                  ports/audio/linux-nas-libs
 linux-nero                      ports/sysutils/linux-nero
-linux-nerodigitalaudio          ports/audio/linux-nerodigitalaudio
 linux-nerogame                  ports/games/linux-nerogame
 linux-ningpo-demo               ports/games/linux-ningpo-demo
 linux-nwnclient                 ports/games/linux-nwnclient
@@ -20677,6 +20677,7 @@ py-configobj                    ports/devel/py-configobj
 py-construct                    ports/devel/py-construct
 py-coverage                     ports/devel/py-coverage
 py-crack                        ports/security/py-crack
+py-crcmod                       ports/devel/py-crcmod
 py-creole                       ports/textproc/py-creole
 py-cryptkit                     ports/security/py-cryptkit
 py-cssutils                     ports/www/py-cssutils
@@ -21577,6 +21578,7 @@ qmrtg                           ports/mail/qmrtg
 qnetchess                       ports/games/qnetchess
 qnetwalk                        ports/games/qnetwalk
 qnxstyle                        ports/x11-themes/qnxstyle
+qoauth                          ports/devel/qoauth
 qonk                            ports/games/qonk
 qore                            ports/lang/qore
 qorganizer                      ports/deskutils/qorganizer
@@ -22523,6 +22525,7 @@ rubygem-data_objects            ports/databases/rubygem-data_objects
 rubygem-datamapper              ports/databases/rubygem-datamapper
 rubygem-deeptest                ports/devel/rubygem-deeptest
 rubygem-deprecated              ports/devel/rubygem-deprecated
+rubygem-deprecated2             ports/devel/rubygem-deprecated2
 rubygem-diff-lcs                ports/textproc/rubygem-diff-lcs
 rubygem-directory_watcher       ports/devel/rubygem-directory_watcher
 rubygem-ditz                    ports/devel/rubygem-ditz
@@ -22564,6 +22567,7 @@ rubygem-formosa                 ports/textproc/rubygem-formosa
 rubygem-gd2                     ports/graphics/rubygem-gd2
 rubygem-gdata                   ports/devel/rubygem-gdata
 rubygem-gem_plugin              ports/devel/rubygem-gem_plugin
+rubygem-gemcutter               ports/devel/rubygem-gemcutter
 rubygem-geoip                   ports/net/rubygem-geoip
 rubygem-geokit                  ports/graphics/rubygem-geokit
 rubygem-georuby                 ports/devel/rubygem-georuby
@@ -22691,6 +22695,7 @@ rubygem-righthttpconnection     ports/net/rubygem-righthttpconnection
 rubygem-rightslicehost          ports/net/rubygem-rightslicehost
 rubygem-robots                  ports/www/rubygem-robots
 rubygem-rparsec                 ports/devel/rubygem-rparsec
+rubygem-rr                      ports/devel/rubygem-rr
 rubygem-rscm                    ports/devel/rubygem-rscm
 rubygem-rspec                   ports/devel/rubygem-rspec
 rubygem-rubigen                 ports/devel/rubygem-rubigen
@@ -22716,6 +22721,7 @@ rubygem-scrubyt                 ports/www/rubygem-scrubyt
 rubygem-scruffy                 ports/graphics/rubygem-scruffy
 rubygem-sequel                  ports/devel/rubygem-sequel
 rubygem-sexp_processor          ports/devel/rubygem-sexp_processor
+rubygem-shoulda                 ports/devel/rubygem-shoulda
 rubygem-simple-rss              ports/www/rubygem-simple-rss
 rubygem-sinatra                 ports/www/rubygem-sinatra
 rubygem-sinatra-respond_to      ports/www/rubygem-sinatra-respond_to
@@ -22762,6 +22768,7 @@ rubygem-uuidtools               ports/devel/rubygem-uuidtools
 rubygem-validatable             ports/devel/rubygem-validatable
 rubygem-warbler                 ports/devel/rubygem-warbler
 rubygem-webby                   ports/devel/rubygem-webby
+rubygem-webmock                 ports/www/rubygem-webmock
 rubygem-whois                   ports/net/rubygem-whois
 rubygem-xml-simple              ports/textproc/rubygem-xml-simple
 rubygem-xmpp4r                  ports/net-im/rubygem-xmpp4r
