@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# PROVIDE: dicod
+# REQUIRE: DAEMON
+#
+# Add the following line to /etc/rc.conf to enable dicod:
+#
+# dicod_enable="YES"
+#
+
+dicod_enable=${dicod_enable-"NO"}
+
+. %%RC_SUBR%%
+
+name=dicod
+rcvar=`set_rcvar`
+command=%%PREFIX%%/sbin/dicod
+
+load_rc_config $name
+run_rc_command "$1"
