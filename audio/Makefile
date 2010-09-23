@@ -334,6 +334,7 @@
     SUBDIR += jamin
     SUBDIR += jid3lib
     SUBDIR += jmusic
+    SUBDIR += jokosher
     SUBDIR += juk
     SUBDIR += juke
     SUBDIR += julius
