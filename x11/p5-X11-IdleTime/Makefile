@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
     		${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_XORG=	x11 xscrnsaver
 PERL_CONFIGURE=	5.8.0+
 

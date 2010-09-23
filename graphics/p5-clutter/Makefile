@@ -28,6 +28,8 @@ RUN_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depe
 		${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2 \
 		${SITE_PERL}/${PERL_ARCH}/Cairo.pm:${PORTSDIR}/graphics/p5-Cairo
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_BZIP2=	yes
 PERL_CONFIGURE=	yes
 

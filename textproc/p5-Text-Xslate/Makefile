@@ -22,6 +22,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
+MAKE_JOBS_UNSAFE=	yes
+
 PERL_CONFIGURE=	yes
 
 MAN1=	xslate.1
