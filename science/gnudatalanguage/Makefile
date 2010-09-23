@@ -94,6 +94,10 @@ CONFIGURE_ARGS+=--with-python=no
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 800000
+BROKEN=	Does not build on FreeBSD-7
+.endif
+
 .if defined(PACKAGE_BUILDING) || exists(${LOCALBASE}/lib/libfftw3.so)
 WITH_FFTW3=	yes
 .endif
