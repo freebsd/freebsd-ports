@@ -9,7 +9,9 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0.40.0
+PORTVERSION=	1.0.34.0
+PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R} \
 		ftp://ftp.SpringDaemons.com/soft/sbcl-binary/:binaries
