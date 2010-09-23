@@ -7,13 +7,14 @@
 
 PORTNAME=	rubygame
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	kick.christoph@googlemail.com
 COMMENT=	A game-development extension and library for the ruby language
 
-RUN_DEPENDS=	rubygem-ruby-sdl-ffi>=0.2:${PORTSDIR}/devel/rubygem-ruby-sdl-ffi
+RUN_DEPENDS=	rubygem-ruby-sdl-ffi>=0.1.0:${PORTSDIR}/devel/rubygem-ruby-sdl-ffi
 
 USE_SDL=		gfx image mixer ttf
 USE_RUBY=		yes
