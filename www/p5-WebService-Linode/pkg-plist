@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Linode/.packlist
+%%SITE_PERL%%/WebService/Linode.pm
+%%SITE_PERL%%/WebService/Linode/Base.pm
+%%SITE_PERL%%/WebService/Linode/DNS.pm
+@dirrmtry %%SITE_PERL%%/WebService/Linode
+@dirrmtry %%SITE_PERL%%/WebService
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Linode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
