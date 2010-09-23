@@ -1,0 +1,13 @@
+--- Makefile.orig	2010-07-21 17:35:58.000000000 +0400
++++ Makefile	2010-07-21 17:36:21.000000000 +0400
+@@ -29,8 +29,8 @@
+ #
+ # for *UNIX* the following tends to work
+ INCL	= -I./
+-CFLAGS	=-O2 -static
+-#CFLAGS	=-O2 # for linux
++#CFLAGS	=-O2 -static
++CFLAGS	=-O2 # for linux
+ #CFLAGS	=-DDEBUG # if you want a lot of noise
+ LDFLAGS	=-s
+ OBJS=  ccsrch.o
