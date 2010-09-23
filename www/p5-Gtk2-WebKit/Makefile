@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Gtk2-WebKit
-PORTVERSION=	0.07
-PORTREVISION=	2
+PORTVERSION=	0.08
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/F/FL/FLORA
@@ -22,6 +21,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2/CodeGen.pm:${PORTSDIR}/x11-toolkit
 		${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
 		${LOCALBASE}/libdata/pkgconfig/webkit-1.0.pc:${PORTSDIR}/www/webkit-gtk2
+
+MAKE_JOBS_UNSAFE=	yes
 
 NO_PACKAGE=	Man page creation hangs on some systems for unknown reasons
 
