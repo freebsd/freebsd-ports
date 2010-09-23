@@ -1,0 +1,339 @@
+bin/jokosher
+%%PYTHON_SITELIBDIR%%/Jokosher/AddInstrumentDialog.py
+%%PYTHON_SITELIBDIR%%/Jokosher/AddInstrumentDialog.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/AddInstrumentDialog.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/AudioBackend.py
+%%PYTHON_SITELIBDIR%%/Jokosher/AudioBackend.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/AudioBackend.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/AudioPreview.py
+%%PYTHON_SITELIBDIR%%/Jokosher/AudioPreview.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/AudioPreview.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/CompactMixView.py
+%%PYTHON_SITELIBDIR%%/Jokosher/CompactMixView.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/CompactMixView.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/ControlsBox.py
+%%PYTHON_SITELIBDIR%%/Jokosher/ControlsBox.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/ControlsBox.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/EffectPresets.py
+%%PYTHON_SITELIBDIR%%/Jokosher/EffectPresets.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/EffectPresets.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/Event.py
+%%PYTHON_SITELIBDIR%%/Jokosher/Event.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/Event.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/EventLaneViewer.py
+%%PYTHON_SITELIBDIR%%/Jokosher/EventLaneViewer.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/EventLaneViewer.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/EventViewer.py
+%%PYTHON_SITELIBDIR%%/Jokosher/EventViewer.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/EventViewer.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/Extension.py
+%%PYTHON_SITELIBDIR%%/Jokosher/Extension.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/Extension.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/ExtensionManager.py
+%%PYTHON_SITELIBDIR%%/Jokosher/ExtensionManager.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/ExtensionManager.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/ExtensionManagerDialog.py
+%%PYTHON_SITELIBDIR%%/Jokosher/ExtensionManagerDialog.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/ExtensionManagerDialog.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/Globals.py
+%%PYTHON_SITELIBDIR%%/Jokosher/Globals.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/Globals.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/IncrementalSave.py
+%%PYTHON_SITELIBDIR%%/Jokosher/IncrementalSave.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/IncrementalSave.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/Instrument.py
+%%PYTHON_SITELIBDIR%%/Jokosher/Instrument.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/Instrument.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/InstrumentConnectionsDialog.py
+%%PYTHON_SITELIBDIR%%/Jokosher/InstrumentConnectionsDialog.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/InstrumentConnectionsDialog.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/InstrumentEffectsDialog.py
+%%PYTHON_SITELIBDIR%%/Jokosher/InstrumentEffectsDialog.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/InstrumentEffectsDialog.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/InstrumentViewer.py
+%%PYTHON_SITELIBDIR%%/Jokosher/InstrumentViewer.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/InstrumentViewer.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/JokosherApp.py
+%%PYTHON_SITELIBDIR%%/Jokosher/JokosherApp.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/JokosherApp.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/LevelsList.py
+%%PYTHON_SITELIBDIR%%/Jokosher/LevelsList.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/LevelsList.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/MasterMixerStrip.py
+%%PYTHON_SITELIBDIR%%/Jokosher/MasterMixerStrip.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/MasterMixerStrip.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/MixdownActions.py
+%%PYTHON_SITELIBDIR%%/Jokosher/MixdownActions.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/MixdownActions.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/MixdownProfileDialog.py
+%%PYTHON_SITELIBDIR%%/Jokosher/MixdownProfileDialog.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/MixdownProfileDialog.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/MixdownProfileManager.py
+%%PYTHON_SITELIBDIR%%/Jokosher/MixdownProfileManager.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/MixdownProfileManager.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/MixdownProfiles.py
+%%PYTHON_SITELIBDIR%%/Jokosher/MixdownProfiles.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/MixdownProfiles.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/MixerStrip.py
+%%PYTHON_SITELIBDIR%%/Jokosher/MixerStrip.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/MixerStrip.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/NewProjectDialog.py
+%%PYTHON_SITELIBDIR%%/Jokosher/NewProjectDialog.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/NewProjectDialog.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/PlatformUtils/Unix.py
+%%PYTHON_SITELIBDIR%%/Jokosher/PlatformUtils/Unix.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/PlatformUtils/Unix.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/PlatformUtils/Windows.py
+%%PYTHON_SITELIBDIR%%/Jokosher/PlatformUtils/Windows.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/PlatformUtils/Windows.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/PlatformUtils/__init__.py
+%%PYTHON_SITELIBDIR%%/Jokosher/PlatformUtils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/PlatformUtils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/PreferencesDialog.py
+%%PYTHON_SITELIBDIR%%/Jokosher/PreferencesDialog.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/PreferencesDialog.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/Profiler.py
+%%PYTHON_SITELIBDIR%%/Jokosher/Profiler.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/Profiler.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/Project.py
+%%PYTHON_SITELIBDIR%%/Jokosher/Project.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/Project.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/ProjectManager.py
+%%PYTHON_SITELIBDIR%%/Jokosher/ProjectManager.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/ProjectManager.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/ProjectTemplate.py
+%%PYTHON_SITELIBDIR%%/Jokosher/ProjectTemplate.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/ProjectTemplate.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/ProjectTemplateDialog.py
+%%PYTHON_SITELIBDIR%%/Jokosher/ProjectTemplateDialog.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/ProjectTemplateDialog.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/RecordingView.py
+%%PYTHON_SITELIBDIR%%/Jokosher/RecordingView.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/RecordingView.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/TimeLine.py
+%%PYTHON_SITELIBDIR%%/Jokosher/TimeLine.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/TimeLine.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/TimeLineBar.py
+%%PYTHON_SITELIBDIR%%/Jokosher/TimeLineBar.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/TimeLineBar.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/TimeView.py
+%%PYTHON_SITELIBDIR%%/Jokosher/TimeView.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/TimeView.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/TransportManager.py
+%%PYTHON_SITELIBDIR%%/Jokosher/TransportManager.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/TransportManager.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/UndoSystem.py
+%%PYTHON_SITELIBDIR%%/Jokosher/UndoSystem.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/UndoSystem.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/Utils.py
+%%PYTHON_SITELIBDIR%%/Jokosher/Utils.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/Utils.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/VUWidget.py
+%%PYTHON_SITELIBDIR%%/Jokosher/VUWidget.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/VUWidget.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/WelcomeDialog.py
+%%PYTHON_SITELIBDIR%%/Jokosher/WelcomeDialog.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/WelcomeDialog.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/Workspace.py
+%%PYTHON_SITELIBDIR%%/Jokosher/Workspace.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/Workspace.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/__init__.py
+%%PYTHON_SITELIBDIR%%/Jokosher/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/elements/__init__.py
+%%PYTHON_SITELIBDIR%%/Jokosher/elements/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/elements/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/elements/singledecodebin.py
+%%PYTHON_SITELIBDIR%%/Jokosher/elements/singledecodebin.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/elements/singledecodebin.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/ui/EventLaneHSeparator.py
+%%PYTHON_SITELIBDIR%%/Jokosher/ui/EventLaneHSeparator.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/ui/EventLaneHSeparator.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/ui/MessageArea.py
+%%PYTHON_SITELIBDIR%%/Jokosher/ui/MessageArea.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/ui/MessageArea.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/ui/StatusBar.py
+%%PYTHON_SITELIBDIR%%/Jokosher/ui/StatusBar.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/ui/StatusBar.pyo
+%%PYTHON_SITELIBDIR%%/Jokosher/ui/__init__.py
+%%PYTHON_SITELIBDIR%%/Jokosher/ui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Jokosher/ui/__init__.pyo
+share/applications/jokosher.desktop
+share/gnome/help/jokosher/C/figures/add_instrument.png
+share/gnome/help/jokosher/C/figures/extension_manager.png
+share/gnome/help/jokosher/C/figures/instrument_effects.png
+share/gnome/help/jokosher/C/figures/instrument_features.png
+share/gnome/help/jokosher/C/figures/main_window.png
+share/gnome/help/jokosher/C/figures/mixing_window.png
+share/gnome/help/jokosher/C/figures/volume_fades.png
+share/gnome/help/jokosher/C/figures/welcome_dialog.png
+share/gnome/help/jokosher/C/jokosher.xml
+share/gnome/help/jokosher/C/legal.xml
+share/icons/hicolor/48x48/apps/jokosher.png
+%%DATADIR%%/Instruments/acousticguitar.instr
+%%DATADIR%%/Instruments/audiofile.instr
+%%DATADIR%%/Instruments/bassdrum.instr
+%%DATADIR%%/Instruments/bassguitar.instr
+%%DATADIR%%/Instruments/cello.instr
+%%DATADIR%%/Instruments/cymbal.instr
+%%DATADIR%%/Instruments/drumkit.instr
+%%DATADIR%%/Instruments/effect.instr
+%%DATADIR%%/Instruments/electricguitar.instr
+%%DATADIR%%/Instruments/harmonica.instr
+%%DATADIR%%/Instruments/images/acousticguitar.png
+%%DATADIR%%/Instruments/images/audiofile.png
+%%DATADIR%%/Instruments/images/bassdrum.png
+%%DATADIR%%/Instruments/images/bassguitar.png
+%%DATADIR%%/Instruments/images/cello.png
+%%DATADIR%%/Instruments/images/cymbal.png
+%%DATADIR%%/Instruments/images/drumkit.png
+%%DATADIR%%/Instruments/images/effect.png
+%%DATADIR%%/Instruments/images/electricguitar.png
+%%DATADIR%%/Instruments/images/harmonica.png
+%%DATADIR%%/Instruments/images/keyboard.png
+%%DATADIR%%/Instruments/images/other.png
+%%DATADIR%%/Instruments/images/saxophone.png
+%%DATADIR%%/Instruments/images/snare.png
+%%DATADIR%%/Instruments/images/tomtom.png
+%%DATADIR%%/Instruments/images/trumpet.png
+%%DATADIR%%/Instruments/images/violin.png
+%%DATADIR%%/Instruments/images/vocal.png
+%%DATADIR%%/Instruments/keyboard.instr
+%%DATADIR%%/Instruments/other.instr
+%%DATADIR%%/Instruments/saxophone.instr
+%%DATADIR%%/Instruments/snare.instr
+%%DATADIR%%/Instruments/tomtom.instr
+%%DATADIR%%/Instruments/trumpet.instr
+%%DATADIR%%/Instruments/violin.instr
+%%DATADIR%%/Instruments/vocal.instr
+%%DATADIR%%/Jokosher.glade
+%%DATADIR%%/extensions/ExtensionConsole-0.2-py2.5.egg
+%%DATADIR%%/extensions/FreesoundSearch-0.3-py2.6.egg
+%%DATADIR%%/extensions/GNOMEAudioProfiles.py
+%%DATADIR%%/extensions/InstrumentTypeManager-0.2-py2.4.egg
+%%DATADIR%%/extensions/Minimal-0.9-py2.4.egg
+%%DATADIR%%/extensions/PidginExtension-0.1-py2.5.egg
+%%DATADIR%%/extensions/SetTempo-0.1-py2.4.egg
+%%DATADIR%%/extensions/Fullscreen.py
+%%DATADIR%%/extensions/jokosher-dbus.py
+%%DATADIR%%/jokosher-logo.png
+%%DATADIR%%/pixmaps/effect_amplifiers.png
+%%DATADIR%%/pixmaps/effect_broken.png
+%%DATADIR%%/pixmaps/effect_chorus.png
+%%DATADIR%%/pixmaps/effect_compressors.png
+%%DATADIR%%/pixmaps/effect_delays.png
+%%DATADIR%%/pixmaps/effect_distortion.png
+%%DATADIR%%/pixmaps/effect_equalizers.png
+%%DATADIR%%/pixmaps/effect_filters.png
+%%DATADIR%%/pixmaps/effect_flangers.png
+%%DATADIR%%/pixmaps/effect_miscellaneous.png
+%%DATADIR%%/pixmaps/effect_modulators.png
+%%DATADIR%%/pixmaps/effect_oscillators.png
+%%DATADIR%%/pixmaps/effect_phasers.png
+%%DATADIR%%/pixmaps/effect_reverbs.png
+%%DATADIR%%/pixmaps/effect_simulators.png
+%%DATADIR%%/pixmaps/effect_stock_volume.png
+%%DATADIR%%/pixmaps/effect_unclassified.png
+%%DATADIR%%/pixmaps/icon_arm.png
+%%DATADIR%%/pixmaps/icon_cancel.png
+%%DATADIR%%/pixmaps/icon_click.png
+%%DATADIR%%/pixmaps/icon_disarm.png
+%%DATADIR%%/pixmaps/icon_effectsapply.png
+%%DATADIR%%/pixmaps/icon_fpdelete.png
+%%DATADIR%%/pixmaps/icon_fpsnap.png
+%%DATADIR%%/pixmaps/icon_group.png
+%%DATADIR%%/pixmaps/icon_mix.png
+%%DATADIR%%/pixmaps/icon_record.png
+%%DATADIR%%/pixmaps/icon_solo.png
+%%DATADIR%%/pixmaps/icon_split.png
+%%DATADIR%%/pixmaps/icon_trim.png
+%%DATADIR%%/pixmaps/jokosher-logo.png
+%%DATADIR%%/pixmaps/jokosher.png
+%%DATADIR%%/pixmaps/newproject.png
+%%DATADIR%%/pixmaps/stock_volume-mute.png
+%%DATADIR%%/pixmaps/stock_volume.png
+%%DATADIR%%/pixmaps/welcomeheader.png
+share/locale/ace/LC_MESSAGES/jokosher.mo
+share/locale/ar/LC_MESSAGES/jokosher.mo
+share/locale/bg/LC_MESSAGES/jokosher.mo
+share/locale/ca/LC_MESSAGES/jokosher.mo
+share/locale/cs/LC_MESSAGES/jokosher.mo
+share/locale/cy/LC_MESSAGES/jokosher.mo
+share/locale/da/LC_MESSAGES/jokosher.mo
+share/locale/de/LC_MESSAGES/jokosher.mo
+share/locale/el/LC_MESSAGES/jokosher.mo
+share/locale/en_AU/LC_MESSAGES/jokosher.mo
+share/locale/en_CA/LC_MESSAGES/jokosher.mo
+share/locale/en_GB/LC_MESSAGES/jokosher.mo
+share/locale/en_PH/LC_MESSAGES/jokosher.mo
+share/locale/eo/LC_MESSAGES/jokosher.mo
+share/locale/es/LC_MESSAGES/jokosher.mo
+share/locale/fa/LC_MESSAGES/jokosher.mo
+share/locale/fi/LC_MESSAGES/jokosher.mo
+share/locale/fr/LC_MESSAGES/jokosher.mo
+share/locale/gl/LC_MESSAGES/jokosher.mo
+share/locale/gu/LC_MESSAGES/jokosher.mo
+share/locale/he/LC_MESSAGES/jokosher.mo
+share/locale/hi/LC_MESSAGES/jokosher.mo
+share/locale/hu/LC_MESSAGES/jokosher.mo
+share/locale/id/LC_MESSAGES/jokosher.mo
+share/locale/it/LC_MESSAGES/jokosher.mo
+share/locale/ja/LC_MESSAGES/jokosher.mo
+share/locale/kk/LC_MESSAGES/jokosher.mo
+share/locale/lt/LC_MESSAGES/jokosher.mo
+share/locale/lv/LC_MESSAGES/jokosher.mo
+share/locale/mk/LC_MESSAGES/jokosher.mo
+share/locale/ml/LC_MESSAGES/jokosher.mo
+share/locale/mr/LC_MESSAGES/jokosher.mo
+share/locale/ms/LC_MESSAGES/jokosher.mo
+share/locale/nb/LC_MESSAGES/jokosher.mo
+share/locale/nl/LC_MESSAGES/jokosher.mo
+share/locale/pl/LC_MESSAGES/jokosher.mo
+share/locale/pt/LC_MESSAGES/jokosher.mo
+share/locale/pt_BR/LC_MESSAGES/jokosher.mo
+share/locale/ro/LC_MESSAGES/jokosher.mo
+share/locale/ru/LC_MESSAGES/jokosher.mo
+share/locale/sk/LC_MESSAGES/jokosher.mo
+share/locale/sl/LC_MESSAGES/jokosher.mo
+share/locale/sv/LC_MESSAGES/jokosher.mo
+share/locale/tl/LC_MESSAGES/jokosher.mo
+share/locale/tr/LC_MESSAGES/jokosher.mo
+share/locale/uk/LC_MESSAGES/jokosher.mo
+share/locale/zh_CN/LC_MESSAGES/jokosher.mo
+share/mime/application/x-jokosher.xml
+share/mime/packages/jokosher.xml
+%%OMF%%share/omf/jokosher/jokosher-C.omf
+share/pixmaps/jokosher.png
+@dirrm %%PYTHON_SITELIBDIR%%/Jokosher/PlatformUtils
+@dirrm %%PYTHON_SITELIBDIR%%/Jokosher/elements
+@dirrm %%PYTHON_SITELIBDIR%%/Jokosher/ui
+@dirrm %%PYTHON_SITELIBDIR%%/Jokosher
+@dirrmtry share/applications
+@dirrm %%DATADIR%%/Instruments/images
+@dirrm %%DATADIR%%/Instruments
+@dirrm %%DATADIR%%/extensions
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
+@dirrm share/gnome/help/jokosher/C/figures
+@dirrm share/gnome/help/jokosher/C
+@dirrm share/gnome/help/jokosher
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/mime/application
+@dirrmtry share/locale/ace/LC_MESSAGES
+@dirrmtry share/locale/ace
+@dirrmtry share/locale/en_PH/LC_MESSAGES
+@dirrmtry share/locale/en_PH
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/tl/LC_MESSAGES
+@dirrmtry share/locale/tl
+%%OMF%%@dirrm share/omf/jokosher
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
