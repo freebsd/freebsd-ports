@@ -39,6 +39,7 @@ LATEST_LINK=		openjdk7
 USE_GMAKE=	YES
 USE_ICONV=	YES
 USE_XORG+=	x11 xext xi xrender xt xtst
+MAKE_JOBS_UNSAFE=	yes
 
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
@@ -76,8 +77,13 @@ MAKE_ENV+=	LANG="C" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		MILESTONE="fcs"
 
-.if defined(HOTSPOT_BUILD_JOBS)
-MAKE_ENV+=	HOTSPOT_BUILD_JOBS="${HOTSPOT_BUILD_JOBS}"
+.if !defined(DISABLE_MAKE_JOBS)
+.if defined(MAKE_JOBS_NUMBER)
+BUILD_JOBS_NUMBER=	${MAKE_JOBS_NUMBER}
+.else
+BUILD_JOBS_NUMBER=	`${SYSCTL} -n kern.smp.cpus`
+.endif
+MAKE_ENV+=	HOTSPOT_BUILD_JOBS=${BUILD_JOBS_NUMBER}
 .endif
 
 BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk7 \
