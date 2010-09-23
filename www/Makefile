@@ -92,6 +92,7 @@
     SUBDIR += choqok
     SUBDIR += chpasswd
     SUBDIR += chtml
+    SUBDIR += ckeditor
     SUBDIR += cl-lml
     SUBDIR += cl-lml-clisp
     SUBDIR += cl-lml-sbcl

@@ -1,0 +1,785 @@
+%%WWWDIR%%/.htaccess
+%%WWWDIR%%/CHANGES.html
+%%WWWDIR%%/INSTALL.html
+%%WWWDIR%%/LICENSE.html
+%%WWWDIR%%/_samples/ajax.html
+%%WWWDIR%%/_samples/api.html
+%%WWWDIR%%/_samples/api_dialog.html
+%%WWWDIR%%/_samples/api_dialog/my_dialog.js
+%%WWWDIR%%/_samples/asp/advanced.asp
+%%WWWDIR%%/_samples/asp/events.asp
+%%WWWDIR%%/_samples/asp/index.html
+%%WWWDIR%%/_samples/asp/replace.asp
+%%WWWDIR%%/_samples/asp/replaceall.asp
+%%WWWDIR%%/_samples/asp/sample_posteddata.asp
+%%WWWDIR%%/_samples/asp/standalone.asp
+%%WWWDIR%%/_samples/assets/output_xhtml.css
+%%WWWDIR%%/_samples/autogrow.html
+%%WWWDIR%%/_samples/divreplace.html
+%%WWWDIR%%/_samples/enterkey.html
+%%WWWDIR%%/_samples/fullpage.html
+%%WWWDIR%%/_samples/index.html
+%%WWWDIR%%/_samples/jqueryadapter.html
+%%WWWDIR%%/_samples/output_html.html
+%%WWWDIR%%/_samples/output_xhtml.html
+%%WWWDIR%%/_samples/php/advanced.php
+%%WWWDIR%%/_samples/php/events.php
+%%WWWDIR%%/_samples/php/replace.php
+%%WWWDIR%%/_samples/php/replaceall.php
+%%WWWDIR%%/_samples/php/standalone.php
+%%WWWDIR%%/_samples/replacebyclass.html
+%%WWWDIR%%/_samples/replacebycode.html
+%%WWWDIR%%/_samples/sample.css
+%%WWWDIR%%/_samples/sample.js
+%%WWWDIR%%/_samples/sample_posteddata.php
+%%WWWDIR%%/_samples/sharedspaces.html
+%%WWWDIR%%/_samples/skins.html
+%%WWWDIR%%/_samples/ui_color.html
+%%WWWDIR%%/_samples/ui_languages.html
+%%WWWDIR%%/_source/adapters/jquery.js
+%%WWWDIR%%/_source/core/_bootstrap.js
+%%WWWDIR%%/_source/core/ajax.js
+%%WWWDIR%%/_source/core/ckeditor.js
+%%WWWDIR%%/_source/core/ckeditor_base.js
+%%WWWDIR%%/_source/core/ckeditor_basic.js
+%%WWWDIR%%/_source/core/command.js
+%%WWWDIR%%/_source/core/commanddefinition.js
+%%WWWDIR%%/_source/core/config.js
+%%WWWDIR%%/_source/core/dataprocessor.js
+%%WWWDIR%%/_source/core/dom.js
+%%WWWDIR%%/_source/core/dom/comment.js
+%%WWWDIR%%/_source/core/dom/document.js
+%%WWWDIR%%/_source/core/dom/documentfragment.js
+%%WWWDIR%%/_source/core/dom/domobject.js
+%%WWWDIR%%/_source/core/dom/element.js
+%%WWWDIR%%/_source/core/dom/elementpath.js
+%%WWWDIR%%/_source/core/dom/event.js
+%%WWWDIR%%/_source/core/dom/node.js
+%%WWWDIR%%/_source/core/dom/nodelist.js
+%%WWWDIR%%/_source/core/dom/range.js
+%%WWWDIR%%/_source/core/dom/rangelist.js
+%%WWWDIR%%/_source/core/dom/text.js
+%%WWWDIR%%/_source/core/dom/walker.js
+%%WWWDIR%%/_source/core/dom/window.js
+%%WWWDIR%%/_source/core/dtd.js
+%%WWWDIR%%/_source/core/editor.js
+%%WWWDIR%%/_source/core/editor_basic.js
+%%WWWDIR%%/_source/core/env.js
+%%WWWDIR%%/_source/core/event.js
+%%WWWDIR%%/_source/core/eventInfo.js
+%%WWWDIR%%/_source/core/focusmanager.js
+%%WWWDIR%%/_source/core/htmlparser.js
+%%WWWDIR%%/_source/core/htmlparser/basicwriter.js
+%%WWWDIR%%/_source/core/htmlparser/cdata.js
+%%WWWDIR%%/_source/core/htmlparser/comment.js
+%%WWWDIR%%/_source/core/htmlparser/element.js
+%%WWWDIR%%/_source/core/htmlparser/filter.js
+%%WWWDIR%%/_source/core/htmlparser/fragment.js
+%%WWWDIR%%/_source/core/htmlparser/text.js
+%%WWWDIR%%/_source/core/imagecacher.js
+%%WWWDIR%%/_source/core/lang.js
+%%WWWDIR%%/_source/core/loader.js
+%%WWWDIR%%/_source/core/plugindefinition.js
+%%WWWDIR%%/_source/core/plugins.js
+%%WWWDIR%%/_source/core/resourcemanager.js
+%%WWWDIR%%/_source/core/scriptloader.js
+%%WWWDIR%%/_source/core/skins.js
+%%WWWDIR%%/_source/core/themes.js
+%%WWWDIR%%/_source/core/tools.js
+%%WWWDIR%%/_source/core/ui.js
+%%WWWDIR%%/_source/core/xml.js
+%%WWWDIR%%/_source/lang/_languages.js
+%%WWWDIR%%/_source/lang/_translationstatus.txt
+%%WWWDIR%%/_source/lang/af.js
+%%WWWDIR%%/_source/lang/ar.js
+%%WWWDIR%%/_source/lang/bg.js
+%%WWWDIR%%/_source/lang/bn.js
+%%WWWDIR%%/_source/lang/bs.js
+%%WWWDIR%%/_source/lang/ca.js
+%%WWWDIR%%/_source/lang/cs.js
+%%WWWDIR%%/_source/lang/cy.js
+%%WWWDIR%%/_source/lang/da.js
+%%WWWDIR%%/_source/lang/de.js
+%%WWWDIR%%/_source/lang/el.js
+%%WWWDIR%%/_source/lang/en-au.js
+%%WWWDIR%%/_source/lang/en-ca.js
+%%WWWDIR%%/_source/lang/en-gb.js
+%%WWWDIR%%/_source/lang/en.js
+%%WWWDIR%%/_source/lang/eo.js
+%%WWWDIR%%/_source/lang/es.js
+%%WWWDIR%%/_source/lang/et.js
+%%WWWDIR%%/_source/lang/eu.js
+%%WWWDIR%%/_source/lang/fa.js
+%%WWWDIR%%/_source/lang/fi.js
+%%WWWDIR%%/_source/lang/fo.js
+%%WWWDIR%%/_source/lang/fr-ca.js
+%%WWWDIR%%/_source/lang/fr.js
+%%WWWDIR%%/_source/lang/gl.js
+%%WWWDIR%%/_source/lang/gu.js
+%%WWWDIR%%/_source/lang/he.js
+%%WWWDIR%%/_source/lang/hi.js
+%%WWWDIR%%/_source/lang/hr.js
+%%WWWDIR%%/_source/lang/hu.js
+%%WWWDIR%%/_source/lang/is.js
+%%WWWDIR%%/_source/lang/it.js
+%%WWWDIR%%/_source/lang/ja.js
+%%WWWDIR%%/_source/lang/km.js
+%%WWWDIR%%/_source/lang/ko.js
+%%WWWDIR%%/_source/lang/lt.js
+%%WWWDIR%%/_source/lang/lv.js
+%%WWWDIR%%/_source/lang/mn.js
+%%WWWDIR%%/_source/lang/ms.js
+%%WWWDIR%%/_source/lang/nb.js
+%%WWWDIR%%/_source/lang/nl.js
+%%WWWDIR%%/_source/lang/no.js
+%%WWWDIR%%/_source/lang/pl.js
+%%WWWDIR%%/_source/lang/pt-br.js
+%%WWWDIR%%/_source/lang/pt.js
+%%WWWDIR%%/_source/lang/ro.js
+%%WWWDIR%%/_source/lang/ru.js
+%%WWWDIR%%/_source/lang/sk.js
+%%WWWDIR%%/_source/lang/sl.js
+%%WWWDIR%%/_source/lang/sr-latn.js
+%%WWWDIR%%/_source/lang/sr.js
+%%WWWDIR%%/_source/lang/sv.js
+%%WWWDIR%%/_source/lang/th.js
+%%WWWDIR%%/_source/lang/tr.js
+%%WWWDIR%%/_source/lang/uk.js
+%%WWWDIR%%/_source/lang/vi.js
+%%WWWDIR%%/_source/lang/zh-cn.js
+%%WWWDIR%%/_source/lang/zh.js
+%%WWWDIR%%/_source/plugins/a11yhelp/dialogs/a11yhelp.js
+%%WWWDIR%%/_source/plugins/a11yhelp/lang/en.js
+%%WWWDIR%%/_source/plugins/a11yhelp/lang/he.js
+%%WWWDIR%%/_source/plugins/a11yhelp/plugin.js
+%%WWWDIR%%/_source/plugins/about/dialogs/about.js
+%%WWWDIR%%/_source/plugins/about/dialogs/logo_ckeditor.png
+%%WWWDIR%%/_source/plugins/about/plugin.js
+%%WWWDIR%%/_source/plugins/autogrow/plugin.js
+%%WWWDIR%%/_source/plugins/basicstyles/plugin.js
+%%WWWDIR%%/_source/plugins/bidi/plugin.js
+%%WWWDIR%%/_source/plugins/blockquote/plugin.js
+%%WWWDIR%%/_source/plugins/button/plugin.js
+%%WWWDIR%%/_source/plugins/clipboard/dialogs/paste.js
+%%WWWDIR%%/_source/plugins/clipboard/plugin.js
+%%WWWDIR%%/_source/plugins/colorbutton/plugin.js
+%%WWWDIR%%/_source/plugins/colordialog/dialogs/colordialog.js
+%%WWWDIR%%/_source/plugins/colordialog/plugin.js
+%%WWWDIR%%/_source/plugins/contextmenu/plugin.js
+%%WWWDIR%%/_source/plugins/dialog/dialogDefinition.js
+%%WWWDIR%%/_source/plugins/dialog/plugin.js
+%%WWWDIR%%/_source/plugins/dialogadvtab/plugin.js
+%%WWWDIR%%/_source/plugins/dialogui/plugin.js
+%%WWWDIR%%/_source/plugins/div/dialogs/div.js
+%%WWWDIR%%/_source/plugins/div/plugin.js
+%%WWWDIR%%/_source/plugins/domiterator/plugin.js
+%%WWWDIR%%/_source/plugins/editingblock/plugin.js
+%%WWWDIR%%/_source/plugins/elementspath/plugin.js
+%%WWWDIR%%/_source/plugins/enterkey/plugin.js
+%%WWWDIR%%/_source/plugins/entities/plugin.js
+%%WWWDIR%%/_source/plugins/fakeobjects/plugin.js
+%%WWWDIR%%/_source/plugins/filebrowser/plugin.js
+%%WWWDIR%%/_source/plugins/find/dialogs/find.js
+%%WWWDIR%%/_source/plugins/find/plugin.js
+%%WWWDIR%%/_source/plugins/flash/dialogs/flash.js
+%%WWWDIR%%/_source/plugins/flash/images/placeholder.png
+%%WWWDIR%%/_source/plugins/flash/plugin.js
+%%WWWDIR%%/_source/plugins/floatpanel/plugin.js
+%%WWWDIR%%/_source/plugins/font/plugin.js
+%%WWWDIR%%/_source/plugins/format/plugin.js
+%%WWWDIR%%/_source/plugins/forms/dialogs/button.js
+%%WWWDIR%%/_source/plugins/forms/dialogs/checkbox.js
+%%WWWDIR%%/_source/plugins/forms/dialogs/form.js
+%%WWWDIR%%/_source/plugins/forms/dialogs/hiddenfield.js
+%%WWWDIR%%/_source/plugins/forms/dialogs/radio.js
+%%WWWDIR%%/_source/plugins/forms/dialogs/select.js
+%%WWWDIR%%/_source/plugins/forms/dialogs/textarea.js
+%%WWWDIR%%/_source/plugins/forms/dialogs/textfield.js
+%%WWWDIR%%/_source/plugins/forms/images/hiddenfield.gif
+%%WWWDIR%%/_source/plugins/forms/plugin.js
+%%WWWDIR%%/_source/plugins/horizontalrule/plugin.js
+%%WWWDIR%%/_source/plugins/htmldataprocessor/plugin.js
+%%WWWDIR%%/_source/plugins/htmlwriter/plugin.js
+%%WWWDIR%%/_source/plugins/iframedialog/plugin.js
+%%WWWDIR%%/_source/plugins/image/dialogs/image.js
+%%WWWDIR%%/_source/plugins/image/plugin.js
+%%WWWDIR%%/_source/plugins/indent/plugin.js
+%%WWWDIR%%/_source/plugins/justify/plugin.js
+%%WWWDIR%%/_source/plugins/keystrokes/plugin.js
+%%WWWDIR%%/_source/plugins/link/dialogs/anchor.js
+%%WWWDIR%%/_source/plugins/link/dialogs/link.js
+%%WWWDIR%%/_source/plugins/link/images/anchor.gif
+%%WWWDIR%%/_source/plugins/link/plugin.js
+%%WWWDIR%%/_source/plugins/list/plugin.js
+%%WWWDIR%%/_source/plugins/listblock/plugin.js
+%%WWWDIR%%/_source/plugins/liststyle/dialogs/liststyle.js
+%%WWWDIR%%/_source/plugins/liststyle/plugin.js
+%%WWWDIR%%/_source/plugins/maximize/plugin.js
+%%WWWDIR%%/_source/plugins/menu/plugin.js
+%%WWWDIR%%/_source/plugins/menubutton/plugin.js
+%%WWWDIR%%/_source/plugins/newpage/plugin.js
+%%WWWDIR%%/_source/plugins/pagebreak/images/pagebreak.gif
+%%WWWDIR%%/_source/plugins/pagebreak/plugin.js
+%%WWWDIR%%/_source/plugins/panel/plugin.js
+%%WWWDIR%%/_source/plugins/panelbutton/plugin.js
+%%WWWDIR%%/_source/plugins/pastefromword/filter/default.js
+%%WWWDIR%%/_source/plugins/pastefromword/plugin.js
+%%WWWDIR%%/_source/plugins/pastetext/dialogs/pastetext.js
+%%WWWDIR%%/_source/plugins/pastetext/plugin.js
+%%WWWDIR%%/_source/plugins/popup/plugin.js
+%%WWWDIR%%/_source/plugins/preview/plugin.js
+%%WWWDIR%%/_source/plugins/print/plugin.js
+%%WWWDIR%%/_source/plugins/removeformat/plugin.js
+%%WWWDIR%%/_source/plugins/resize/plugin.js
+%%WWWDIR%%/_source/plugins/richcombo/plugin.js
+%%WWWDIR%%/_source/plugins/save/plugin.js
+%%WWWDIR%%/_source/plugins/scayt/dialogs/options.js
+%%WWWDIR%%/_source/plugins/scayt/dialogs/toolbar.css
+%%WWWDIR%%/_source/plugins/scayt/plugin.js
+%%WWWDIR%%/_source/plugins/selection/plugin.js
+%%WWWDIR%%/_source/plugins/showblocks/images/block_address.png
+%%WWWDIR%%/_source/plugins/showblocks/images/block_blockquote.png
+%%WWWDIR%%/_source/plugins/showblocks/images/block_div.png
+%%WWWDIR%%/_source/plugins/showblocks/images/block_h1.png
+%%WWWDIR%%/_source/plugins/showblocks/images/block_h2.png
+%%WWWDIR%%/_source/plugins/showblocks/images/block_h3.png
+%%WWWDIR%%/_source/plugins/showblocks/images/block_h4.png
+%%WWWDIR%%/_source/plugins/showblocks/images/block_h5.png
+%%WWWDIR%%/_source/plugins/showblocks/images/block_h6.png
+%%WWWDIR%%/_source/plugins/showblocks/images/block_p.png
+%%WWWDIR%%/_source/plugins/showblocks/images/block_pre.png
+%%WWWDIR%%/_source/plugins/showblocks/plugin.js
+%%WWWDIR%%/_source/plugins/showborders/plugin.js
+%%WWWDIR%%/_source/plugins/smiley/dialogs/smiley.js
+%%WWWDIR%%/_source/plugins/smiley/images/angel_smile.gif
+%%WWWDIR%%/_source/plugins/smiley/images/angry_smile.gif
+%%WWWDIR%%/_source/plugins/smiley/images/broken_heart.gif
+%%WWWDIR%%/_source/plugins/smiley/images/confused_smile.gif
+%%WWWDIR%%/_source/plugins/smiley/images/cry_smile.gif
+%%WWWDIR%%/_source/plugins/smiley/images/devil_smile.gif
+%%WWWDIR%%/_source/plugins/smiley/images/embaressed_smile.gif
+%%WWWDIR%%/_source/plugins/smiley/images/envelope.gif
+%%WWWDIR%%/_source/plugins/smiley/images/heart.gif
+%%WWWDIR%%/_source/plugins/smiley/images/kiss.gif
+%%WWWDIR%%/_source/plugins/smiley/images/lightbulb.gif
+%%WWWDIR%%/_source/plugins/smiley/images/omg_smile.gif
+%%WWWDIR%%/_source/plugins/smiley/images/regular_smile.gif
+%%WWWDIR%%/_source/plugins/smiley/images/sad_smile.gif
+%%WWWDIR%%/_source/plugins/smiley/images/shades_smile.gif
+%%WWWDIR%%/_source/plugins/smiley/images/teeth_smile.gif
+%%WWWDIR%%/_source/plugins/smiley/images/thumbs_down.gif
+%%WWWDIR%%/_source/plugins/smiley/images/thumbs_up.gif
+%%WWWDIR%%/_source/plugins/smiley/images/tounge_smile.gif
+%%WWWDIR%%/_source/plugins/smiley/images/whatchutalkingabout_smile.gif
+%%WWWDIR%%/_source/plugins/smiley/images/wink_smile.gif
+%%WWWDIR%%/_source/plugins/smiley/plugin.js
+%%WWWDIR%%/_source/plugins/sourcearea/plugin.js
+%%WWWDIR%%/_source/plugins/specialchar/dialogs/specialchar.js
+%%WWWDIR%%/_source/plugins/specialchar/plugin.js
+%%WWWDIR%%/_source/plugins/styles/plugin.js
+%%WWWDIR%%/_source/plugins/styles/styles/default.js
+%%WWWDIR%%/_source/plugins/stylescombo/plugin.js
+%%WWWDIR%%/_source/plugins/tab/plugin.js
+%%WWWDIR%%/_source/plugins/table/dialogs/table.js
+%%WWWDIR%%/_source/plugins/table/plugin.js
+%%WWWDIR%%/_source/plugins/tableresize/plugin.js
+%%WWWDIR%%/_source/plugins/tabletools/dialogs/tableCell.js
+%%WWWDIR%%/_source/plugins/tabletools/plugin.js
+%%WWWDIR%%/_source/plugins/templates/dialogs/templates.js
+%%WWWDIR%%/_source/plugins/templates/plugin.js
+%%WWWDIR%%/_source/plugins/templates/templates/default.js
+%%WWWDIR%%/_source/plugins/templates/templates/images/template1.gif
+%%WWWDIR%%/_source/plugins/templates/templates/images/template2.gif
+%%WWWDIR%%/_source/plugins/templates/templates/images/template3.gif
+%%WWWDIR%%/_source/plugins/toolbar/plugin.js
+%%WWWDIR%%/_source/plugins/uicolor/dialogs/uicolor.js
+%%WWWDIR%%/_source/plugins/uicolor/lang/en.js
+%%WWWDIR%%/_source/plugins/uicolor/plugin.js
+%%WWWDIR%%/_source/plugins/uicolor/uicolor.gif
+%%WWWDIR%%/_source/plugins/uicolor/yui/assets/hue_bg.png
+%%WWWDIR%%/_source/plugins/uicolor/yui/assets/hue_thumb.png
+%%WWWDIR%%/_source/plugins/uicolor/yui/assets/picker_mask.png
+%%WWWDIR%%/_source/plugins/uicolor/yui/assets/picker_thumb.png
+%%WWWDIR%%/_source/plugins/uicolor/yui/assets/yui.css
+%%WWWDIR%%/_source/plugins/uicolor/yui/yui.js
+%%WWWDIR%%/_source/plugins/undo/plugin.js
+%%WWWDIR%%/_source/plugins/wsc/dialogs/ciframe.html
+%%WWWDIR%%/_source/plugins/wsc/dialogs/tmpFrameset.html
+%%WWWDIR%%/_source/plugins/wsc/dialogs/wsc.css
+%%WWWDIR%%/_source/plugins/wsc/dialogs/wsc.js
+%%WWWDIR%%/_source/plugins/wsc/plugin.js
+%%WWWDIR%%/_source/plugins/wysiwygarea/plugin.js
+%%WWWDIR%%/_source/skins/kama/dialog.css
+%%WWWDIR%%/_source/skins/kama/editor.css
+%%WWWDIR%%/_source/skins/kama/elementspath.css
+%%WWWDIR%%/_source/skins/kama/icons.css
+%%WWWDIR%%/_source/skins/kama/icons.png
+%%WWWDIR%%/_source/skins/kama/images/dialog_sides.gif
+%%WWWDIR%%/_source/skins/kama/images/dialog_sides.png
+%%WWWDIR%%/_source/skins/kama/images/dialog_sides_rtl.png
+%%WWWDIR%%/_source/skins/kama/images/mini.gif
+%%WWWDIR%%/_source/skins/kama/images/noimage.png
+%%WWWDIR%%/_source/skins/kama/images/sprites.png
+%%WWWDIR%%/_source/skins/kama/images/sprites_ie6.png
+%%WWWDIR%%/_source/skins/kama/images/toolbar_start.gif
+%%WWWDIR%%/_source/skins/kama/mainui.css
+%%WWWDIR%%/_source/skins/kama/menu.css
+%%WWWDIR%%/_source/skins/kama/panel.css
+%%WWWDIR%%/_source/skins/kama/presets.css
+%%WWWDIR%%/_source/skins/kama/reset.css
+%%WWWDIR%%/_source/skins/kama/richcombo.css
+%%WWWDIR%%/_source/skins/kama/skin.js
+%%WWWDIR%%/_source/skins/kama/templates.css
+%%WWWDIR%%/_source/skins/kama/toolbar.css
+%%WWWDIR%%/_source/skins/office2003/dialog.css
+%%WWWDIR%%/_source/skins/office2003/editor.css
+%%WWWDIR%%/_source/skins/office2003/elementspath.css
+%%WWWDIR%%/_source/skins/office2003/icons.css
+%%WWWDIR%%/_source/skins/office2003/icons.png
+%%WWWDIR%%/_source/skins/office2003/images/dialog_sides.gif
+%%WWWDIR%%/_source/skins/office2003/images/dialog_sides.png
+%%WWWDIR%%/_source/skins/office2003/images/dialog_sides_rtl.png
+%%WWWDIR%%/_source/skins/office2003/images/mini.gif
+%%WWWDIR%%/_source/skins/office2003/images/noimage.png
+%%WWWDIR%%/_source/skins/office2003/images/sprites.png
+%%WWWDIR%%/_source/skins/office2003/images/sprites_ie6.png
+%%WWWDIR%%/_source/skins/office2003/mainui.css
+%%WWWDIR%%/_source/skins/office2003/menu.css
+%%WWWDIR%%/_source/skins/office2003/panel.css
+%%WWWDIR%%/_source/skins/office2003/presets.css
+%%WWWDIR%%/_source/skins/office2003/reset.css
+%%WWWDIR%%/_source/skins/office2003/richcombo.css
+%%WWWDIR%%/_source/skins/office2003/skin.js
+%%WWWDIR%%/_source/skins/office2003/templates.css
+%%WWWDIR%%/_source/skins/office2003/toolbar.css
+%%WWWDIR%%/_source/skins/v2/dialog.css
+%%WWWDIR%%/_source/skins/v2/editor.css
+%%WWWDIR%%/_source/skins/v2/elementspath.css
+%%WWWDIR%%/_source/skins/v2/icons.css
+%%WWWDIR%%/_source/skins/v2/icons.png
+%%WWWDIR%%/_source/skins/v2/images/dialog_sides.gif
+%%WWWDIR%%/_source/skins/v2/images/dialog_sides.png
+%%WWWDIR%%/_source/skins/v2/images/dialog_sides_rtl.png
+%%WWWDIR%%/_source/skins/v2/images/mini.gif
+%%WWWDIR%%/_source/skins/v2/images/noimage.png
+%%WWWDIR%%/_source/skins/v2/images/sprites.png
+%%WWWDIR%%/_source/skins/v2/images/sprites_ie6.png
+%%WWWDIR%%/_source/skins/v2/images/toolbar_start.gif
+%%WWWDIR%%/_source/skins/v2/mainui.css
+%%WWWDIR%%/_source/skins/v2/menu.css
+%%WWWDIR%%/_source/skins/v2/panel.css
+%%WWWDIR%%/_source/skins/v2/presets.css
+%%WWWDIR%%/_source/skins/v2/reset.css
+%%WWWDIR%%/_source/skins/v2/richcombo.css
+%%WWWDIR%%/_source/skins/v2/skin.js
+%%WWWDIR%%/_source/skins/v2/templates.css
+%%WWWDIR%%/_source/skins/v2/toolbar.css
+%%WWWDIR%%/_source/themes/default/theme.js
+%%WWWDIR%%/adapters/jquery.js
+%%WWWDIR%%/ckeditor.asp
+%%WWWDIR%%/ckeditor.js
+%%WWWDIR%%/ckeditor.pack
+%%WWWDIR%%/ckeditor.php
+%%WWWDIR%%/ckeditor_basic.js
+%%WWWDIR%%/ckeditor_basic_source.js
+%%WWWDIR%%/ckeditor_php4.php
+%%WWWDIR%%/ckeditor_php5.php
+%%WWWDIR%%/ckeditor_source.js
+%%WWWDIR%%/config.js
+%%WWWDIR%%/contents.css
+%%WWWDIR%%/images/spacer.gif
+%%WWWDIR%%/lang/_languages.js
+%%WWWDIR%%/lang/_translationstatus.txt
+%%WWWDIR%%/lang/af.js
+%%WWWDIR%%/lang/ar.js
+%%WWWDIR%%/lang/bg.js
+%%WWWDIR%%/lang/bn.js
+%%WWWDIR%%/lang/bs.js
+%%WWWDIR%%/lang/ca.js
+%%WWWDIR%%/lang/cs.js
+%%WWWDIR%%/lang/cy.js
+%%WWWDIR%%/lang/da.js
+%%WWWDIR%%/lang/de.js
+%%WWWDIR%%/lang/el.js
+%%WWWDIR%%/lang/en-au.js
+%%WWWDIR%%/lang/en-ca.js
+%%WWWDIR%%/lang/en-gb.js
+%%WWWDIR%%/lang/en.js
+%%WWWDIR%%/lang/eo.js
+%%WWWDIR%%/lang/es.js
+%%WWWDIR%%/lang/et.js
+%%WWWDIR%%/lang/eu.js
+%%WWWDIR%%/lang/fa.js
+%%WWWDIR%%/lang/fi.js
+%%WWWDIR%%/lang/fo.js
+%%WWWDIR%%/lang/fr-ca.js
+%%WWWDIR%%/lang/fr.js
+%%WWWDIR%%/lang/gl.js
+%%WWWDIR%%/lang/gu.js
+%%WWWDIR%%/lang/he.js
+%%WWWDIR%%/lang/hi.js
+%%WWWDIR%%/lang/hr.js
+%%WWWDIR%%/lang/hu.js
+%%WWWDIR%%/lang/is.js
+%%WWWDIR%%/lang/it.js
+%%WWWDIR%%/lang/ja.js
+%%WWWDIR%%/lang/km.js
+%%WWWDIR%%/lang/ko.js
+%%WWWDIR%%/lang/lt.js
+%%WWWDIR%%/lang/lv.js
+%%WWWDIR%%/lang/mn.js
+%%WWWDIR%%/lang/ms.js
+%%WWWDIR%%/lang/nb.js
+%%WWWDIR%%/lang/nl.js
+%%WWWDIR%%/lang/no.js
+%%WWWDIR%%/lang/pl.js
+%%WWWDIR%%/lang/pt-br.js
+%%WWWDIR%%/lang/pt.js
+%%WWWDIR%%/lang/ro.js
+%%WWWDIR%%/lang/ru.js
+%%WWWDIR%%/lang/sk.js
+%%WWWDIR%%/lang/sl.js
+%%WWWDIR%%/lang/sr-latn.js
+%%WWWDIR%%/lang/sr.js
+%%WWWDIR%%/lang/sv.js
+%%WWWDIR%%/lang/th.js
+%%WWWDIR%%/lang/tr.js
+%%WWWDIR%%/lang/uk.js
+%%WWWDIR%%/lang/vi.js
+%%WWWDIR%%/lang/zh-cn.js
+%%WWWDIR%%/lang/zh.js
+%%WWWDIR%%/plugins/a11yhelp/dialogs/a11yhelp.js
+%%WWWDIR%%/plugins/a11yhelp/lang/en.js
+%%WWWDIR%%/plugins/a11yhelp/lang/he.js
+%%WWWDIR%%/plugins/about/dialogs/about.js
+%%WWWDIR%%/plugins/about/dialogs/logo_ckeditor.png
+%%WWWDIR%%/plugins/autogrow/plugin.js
+%%WWWDIR%%/plugins/clipboard/dialogs/paste.js
+%%WWWDIR%%/plugins/colordialog/dialogs/colordialog.js
+%%WWWDIR%%/plugins/dialog/dialogDefinition.js
+%%WWWDIR%%/plugins/div/dialogs/div.js
+%%WWWDIR%%/plugins/find/dialogs/find.js
+%%WWWDIR%%/plugins/flash/dialogs/flash.js
+%%WWWDIR%%/plugins/flash/images/placeholder.png
+%%WWWDIR%%/plugins/forms/dialogs/button.js
+%%WWWDIR%%/plugins/forms/dialogs/checkbox.js
+%%WWWDIR%%/plugins/forms/dialogs/form.js
+%%WWWDIR%%/plugins/forms/dialogs/hiddenfield.js
+%%WWWDIR%%/plugins/forms/dialogs/radio.js
+%%WWWDIR%%/plugins/forms/dialogs/select.js
+%%WWWDIR%%/plugins/forms/dialogs/textarea.js
+%%WWWDIR%%/plugins/forms/dialogs/textfield.js
+%%WWWDIR%%/plugins/forms/images/hiddenfield.gif
+%%WWWDIR%%/plugins/iframedialog/plugin.js
+%%WWWDIR%%/plugins/image/dialogs/image.js
+%%WWWDIR%%/plugins/link/dialogs/anchor.js
+%%WWWDIR%%/plugins/link/dialogs/link.js
+%%WWWDIR%%/plugins/link/images/anchor.gif
+%%WWWDIR%%/plugins/liststyle/dialogs/liststyle.js
+%%WWWDIR%%/plugins/pagebreak/images/pagebreak.gif
+%%WWWDIR%%/plugins/pastefromword/filter/default.js
+%%WWWDIR%%/plugins/pastetext/dialogs/pastetext.js
+%%WWWDIR%%/plugins/scayt/dialogs/options.js
+%%WWWDIR%%/plugins/scayt/dialogs/toolbar.css
+%%WWWDIR%%/plugins/showblocks/images/block_address.png
+%%WWWDIR%%/plugins/showblocks/images/block_blockquote.png
+%%WWWDIR%%/plugins/showblocks/images/block_div.png
+%%WWWDIR%%/plugins/showblocks/images/block_h1.png
+%%WWWDIR%%/plugins/showblocks/images/block_h2.png
+%%WWWDIR%%/plugins/showblocks/images/block_h3.png
+%%WWWDIR%%/plugins/showblocks/images/block_h4.png
+%%WWWDIR%%/plugins/showblocks/images/block_h5.png
+%%WWWDIR%%/plugins/showblocks/images/block_h6.png
+%%WWWDIR%%/plugins/showblocks/images/block_p.png
+%%WWWDIR%%/plugins/showblocks/images/block_pre.png
+%%WWWDIR%%/plugins/smiley/dialogs/smiley.js
+%%WWWDIR%%/plugins/smiley/images/angel_smile.gif
+%%WWWDIR%%/plugins/smiley/images/angry_smile.gif
+%%WWWDIR%%/plugins/smiley/images/broken_heart.gif
+%%WWWDIR%%/plugins/smiley/images/confused_smile.gif
+%%WWWDIR%%/plugins/smiley/images/cry_smile.gif
+%%WWWDIR%%/plugins/smiley/images/devil_smile.gif
+%%WWWDIR%%/plugins/smiley/images/embaressed_smile.gif
+%%WWWDIR%%/plugins/smiley/images/envelope.gif
+%%WWWDIR%%/plugins/smiley/images/heart.gif
+%%WWWDIR%%/plugins/smiley/images/kiss.gif
+%%WWWDIR%%/plugins/smiley/images/lightbulb.gif
+%%WWWDIR%%/plugins/smiley/images/omg_smile.gif
+%%WWWDIR%%/plugins/smiley/images/regular_smile.gif
+%%WWWDIR%%/plugins/smiley/images/sad_smile.gif
+%%WWWDIR%%/plugins/smiley/images/shades_smile.gif
+%%WWWDIR%%/plugins/smiley/images/teeth_smile.gif
+%%WWWDIR%%/plugins/smiley/images/thumbs_down.gif
+%%WWWDIR%%/plugins/smiley/images/thumbs_up.gif
+%%WWWDIR%%/plugins/smiley/images/tounge_smile.gif
+%%WWWDIR%%/plugins/smiley/images/whatchutalkingabout_smile.gif
+%%WWWDIR%%/plugins/smiley/images/wink_smile.gif
+%%WWWDIR%%/plugins/specialchar/dialogs/specialchar.js
+%%WWWDIR%%/plugins/styles/styles/default.js
+%%WWWDIR%%/plugins/table/dialogs/table.js
+%%WWWDIR%%/plugins/tableresize/plugin.js
+%%WWWDIR%%/plugins/tabletools/dialogs/tableCell.js
+%%WWWDIR%%/plugins/templates/dialogs/templates.js
+%%WWWDIR%%/plugins/templates/templates/default.js
+%%WWWDIR%%/plugins/templates/templates/images/template1.gif
+%%WWWDIR%%/plugins/templates/templates/images/template2.gif
+%%WWWDIR%%/plugins/templates/templates/images/template3.gif
+%%WWWDIR%%/plugins/uicolor/dialogs/uicolor.js
+%%WWWDIR%%/plugins/uicolor/lang/en.js
+%%WWWDIR%%/plugins/uicolor/plugin.js
+%%WWWDIR%%/plugins/uicolor/uicolor.gif
+%%WWWDIR%%/plugins/uicolor/yui/assets/hue_bg.png
+%%WWWDIR%%/plugins/uicolor/yui/assets/hue_thumb.png
+%%WWWDIR%%/plugins/uicolor/yui/assets/picker_mask.png
+%%WWWDIR%%/plugins/uicolor/yui/assets/picker_thumb.png
+%%WWWDIR%%/plugins/uicolor/yui/assets/yui.css
+%%WWWDIR%%/plugins/uicolor/yui/yui.js
+%%WWWDIR%%/plugins/wsc/dialogs/ciframe.html
+%%WWWDIR%%/plugins/wsc/dialogs/tmpFrameset.html
+%%WWWDIR%%/plugins/wsc/dialogs/wsc.css
+%%WWWDIR%%/plugins/wsc/dialogs/wsc.js
+%%WWWDIR%%/skins/kama/dialog.css
+%%WWWDIR%%/skins/kama/editor.css
+%%WWWDIR%%/skins/kama/icons.png
+%%WWWDIR%%/skins/kama/images/dialog_sides.gif
+%%WWWDIR%%/skins/kama/images/dialog_sides.png
+%%WWWDIR%%/skins/kama/images/dialog_sides_rtl.png
+%%WWWDIR%%/skins/kama/images/mini.gif
+%%WWWDIR%%/skins/kama/images/noimage.png
+%%WWWDIR%%/skins/kama/images/sprites.png
+%%WWWDIR%%/skins/kama/images/sprites_ie6.png
+%%WWWDIR%%/skins/kama/images/toolbar_start.gif
+%%WWWDIR%%/skins/kama/skin.js
+%%WWWDIR%%/skins/kama/templates.css
+%%WWWDIR%%/skins/office2003/dialog.css
+%%WWWDIR%%/skins/office2003/editor.css
+%%WWWDIR%%/skins/office2003/icons.png
+%%WWWDIR%%/skins/office2003/images/dialog_sides.gif
+%%WWWDIR%%/skins/office2003/images/dialog_sides.png
+%%WWWDIR%%/skins/office2003/images/dialog_sides_rtl.png
+%%WWWDIR%%/skins/office2003/images/mini.gif
+%%WWWDIR%%/skins/office2003/images/noimage.png
+%%WWWDIR%%/skins/office2003/images/sprites.png
+%%WWWDIR%%/skins/office2003/images/sprites_ie6.png
+%%WWWDIR%%/skins/office2003/skin.js
+%%WWWDIR%%/skins/office2003/templates.css
+%%WWWDIR%%/skins/v2/dialog.css
+%%WWWDIR%%/skins/v2/editor.css
+%%WWWDIR%%/skins/v2/icons.png
+%%WWWDIR%%/skins/v2/images/dialog_sides.gif
+%%WWWDIR%%/skins/v2/images/dialog_sides.png
+%%WWWDIR%%/skins/v2/images/dialog_sides_rtl.png
+%%WWWDIR%%/skins/v2/images/mini.gif
+%%WWWDIR%%/skins/v2/images/noimage.png
+%%WWWDIR%%/skins/v2/images/sprites.png
+%%WWWDIR%%/skins/v2/images/sprites_ie6.png
+%%WWWDIR%%/skins/v2/images/toolbar_start.gif
+%%WWWDIR%%/skins/v2/skin.js
+%%WWWDIR%%/skins/v2/templates.css
+%%WWWDIR%%/themes/default/theme.js
+@dirrm %%WWWDIR%%/themes/default
+@dirrm %%WWWDIR%%/themes
+@dirrm %%WWWDIR%%/skins/v2/images
+@dirrm %%WWWDIR%%/skins/v2
+@dirrm %%WWWDIR%%/skins/office2003/images
+@dirrm %%WWWDIR%%/skins/office2003
+@dirrm %%WWWDIR%%/skins/kama/images
+@dirrm %%WWWDIR%%/skins/kama
+@dirrm %%WWWDIR%%/skins
+@dirrm %%WWWDIR%%/plugins/wsc/dialogs
+@dirrm %%WWWDIR%%/plugins/wsc
+@dirrm %%WWWDIR%%/plugins/uicolor/yui/assets
+@dirrm %%WWWDIR%%/plugins/uicolor/yui
+@dirrm %%WWWDIR%%/plugins/uicolor/lang
+@dirrm %%WWWDIR%%/plugins/uicolor/dialogs
+@dirrm %%WWWDIR%%/plugins/uicolor
+@dirrm %%WWWDIR%%/plugins/templates/templates/images
+@dirrm %%WWWDIR%%/plugins/templates/templates
+@dirrm %%WWWDIR%%/plugins/templates/dialogs
+@dirrm %%WWWDIR%%/plugins/templates
+@dirrm %%WWWDIR%%/plugins/tabletools/dialogs
+@dirrm %%WWWDIR%%/plugins/tabletools
+@dirrm %%WWWDIR%%/plugins/tableresize
+@dirrm %%WWWDIR%%/plugins/table/dialogs
+@dirrm %%WWWDIR%%/plugins/table
+@dirrm %%WWWDIR%%/plugins/styles/styles
+@dirrm %%WWWDIR%%/plugins/styles
+@dirrm %%WWWDIR%%/plugins/specialchar/dialogs
+@dirrm %%WWWDIR%%/plugins/specialchar
+@dirrm %%WWWDIR%%/plugins/smiley/images
+@dirrm %%WWWDIR%%/plugins/smiley/dialogs
+@dirrm %%WWWDIR%%/plugins/smiley
+@dirrm %%WWWDIR%%/plugins/showblocks/images
+@dirrm %%WWWDIR%%/plugins/showblocks
+@dirrm %%WWWDIR%%/plugins/scayt/dialogs
+@dirrm %%WWWDIR%%/plugins/scayt
+@dirrm %%WWWDIR%%/plugins/pastetext/dialogs
+@dirrm %%WWWDIR%%/plugins/pastetext
+@dirrm %%WWWDIR%%/plugins/pastefromword/filter
+@dirrm %%WWWDIR%%/plugins/pastefromword
+@dirrm %%WWWDIR%%/plugins/pagebreak/images
+@dirrm %%WWWDIR%%/plugins/pagebreak
+@dirrm %%WWWDIR%%/plugins/liststyle/dialogs
+@dirrm %%WWWDIR%%/plugins/liststyle
+@dirrm %%WWWDIR%%/plugins/link/images
+@dirrm %%WWWDIR%%/plugins/link/dialogs
+@dirrm %%WWWDIR%%/plugins/link
+@dirrm %%WWWDIR%%/plugins/image/dialogs
+@dirrm %%WWWDIR%%/plugins/image
+@dirrm %%WWWDIR%%/plugins/iframedialog
+@dirrm %%WWWDIR%%/plugins/forms/images
+@dirrm %%WWWDIR%%/plugins/forms/dialogs
+@dirrm %%WWWDIR%%/plugins/forms
+@dirrm %%WWWDIR%%/plugins/flash/images
+@dirrm %%WWWDIR%%/plugins/flash/dialogs
+@dirrm %%WWWDIR%%/plugins/flash
+@dirrm %%WWWDIR%%/plugins/find/dialogs
+@dirrm %%WWWDIR%%/plugins/find
+@dirrm %%WWWDIR%%/plugins/div/dialogs
+@dirrm %%WWWDIR%%/plugins/div
+@dirrm %%WWWDIR%%/plugins/dialog
+@dirrm %%WWWDIR%%/plugins/colordialog/dialogs
+@dirrm %%WWWDIR%%/plugins/colordialog
+@dirrm %%WWWDIR%%/plugins/clipboard/dialogs
+@dirrm %%WWWDIR%%/plugins/clipboard
+@dirrm %%WWWDIR%%/plugins/autogrow
+@dirrm %%WWWDIR%%/plugins/about/dialogs
+@dirrm %%WWWDIR%%/plugins/about
+@dirrm %%WWWDIR%%/plugins/a11yhelp/lang
+@dirrm %%WWWDIR%%/plugins/a11yhelp/dialogs
+@dirrm %%WWWDIR%%/plugins/a11yhelp
+@dirrm %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/lang
+@dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/adapters
+@dirrm %%WWWDIR%%/_source/themes/default
+@dirrm %%WWWDIR%%/_source/themes
+@dirrm %%WWWDIR%%/_source/skins/v2/images
+@dirrm %%WWWDIR%%/_source/skins/v2
+@dirrm %%WWWDIR%%/_source/skins/office2003/images
+@dirrm %%WWWDIR%%/_source/skins/office2003
+@dirrm %%WWWDIR%%/_source/skins/kama/images
+@dirrm %%WWWDIR%%/_source/skins/kama
+@dirrm %%WWWDIR%%/_source/skins
+@dirrm %%WWWDIR%%/_source/plugins/wysiwygarea
+@dirrm %%WWWDIR%%/_source/plugins/wsc/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/wsc
+@dirrm %%WWWDIR%%/_source/plugins/undo
+@dirrm %%WWWDIR%%/_source/plugins/uicolor/yui/assets
+@dirrm %%WWWDIR%%/_source/plugins/uicolor/yui
+@dirrm %%WWWDIR%%/_source/plugins/uicolor/lang
+@dirrm %%WWWDIR%%/_source/plugins/uicolor/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/uicolor
+@dirrm %%WWWDIR%%/_source/plugins/toolbar
+@dirrm %%WWWDIR%%/_source/plugins/templates/templates/images
+@dirrm %%WWWDIR%%/_source/plugins/templates/templates
+@dirrm %%WWWDIR%%/_source/plugins/templates/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/templates
+@dirrm %%WWWDIR%%/_source/plugins/tabletools/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/tabletools
+@dirrm %%WWWDIR%%/_source/plugins/tableresize
+@dirrm %%WWWDIR%%/_source/plugins/table/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/table
+@dirrm %%WWWDIR%%/_source/plugins/tab
+@dirrm %%WWWDIR%%/_source/plugins/stylescombo
+@dirrm %%WWWDIR%%/_source/plugins/styles/styles
+@dirrm %%WWWDIR%%/_source/plugins/styles
+@dirrm %%WWWDIR%%/_source/plugins/specialchar/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/specialchar
+@dirrm %%WWWDIR%%/_source/plugins/sourcearea
+@dirrm %%WWWDIR%%/_source/plugins/smiley/images
+@dirrm %%WWWDIR%%/_source/plugins/smiley/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/smiley
+@dirrm %%WWWDIR%%/_source/plugins/showborders
+@dirrm %%WWWDIR%%/_source/plugins/showblocks/images
+@dirrm %%WWWDIR%%/_source/plugins/showblocks
+@dirrm %%WWWDIR%%/_source/plugins/selection
+@dirrm %%WWWDIR%%/_source/plugins/scayt/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/scayt
+@dirrm %%WWWDIR%%/_source/plugins/save
+@dirrm %%WWWDIR%%/_source/plugins/richcombo
+@dirrm %%WWWDIR%%/_source/plugins/resize
+@dirrm %%WWWDIR%%/_source/plugins/removeformat
+@dirrm %%WWWDIR%%/_source/plugins/print
+@dirrm %%WWWDIR%%/_source/plugins/preview
+@dirrm %%WWWDIR%%/_source/plugins/popup
+@dirrm %%WWWDIR%%/_source/plugins/pastetext/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/pastetext
+@dirrm %%WWWDIR%%/_source/plugins/pastefromword/filter
+@dirrm %%WWWDIR%%/_source/plugins/pastefromword
+@dirrm %%WWWDIR%%/_source/plugins/panelbutton
+@dirrm %%WWWDIR%%/_source/plugins/panel
+@dirrm %%WWWDIR%%/_source/plugins/pagebreak/images
+@dirrm %%WWWDIR%%/_source/plugins/pagebreak
+@dirrm %%WWWDIR%%/_source/plugins/newpage
+@dirrm %%WWWDIR%%/_source/plugins/menubutton
+@dirrm %%WWWDIR%%/_source/plugins/menu
+@dirrm %%WWWDIR%%/_source/plugins/maximize
+@dirrm %%WWWDIR%%/_source/plugins/liststyle/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/liststyle
+@dirrm %%WWWDIR%%/_source/plugins/listblock
+@dirrm %%WWWDIR%%/_source/plugins/list
+@dirrm %%WWWDIR%%/_source/plugins/link/images
+@dirrm %%WWWDIR%%/_source/plugins/link/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/link
+@dirrm %%WWWDIR%%/_source/plugins/keystrokes
+@dirrm %%WWWDIR%%/_source/plugins/justify
+@dirrm %%WWWDIR%%/_source/plugins/indent
+@dirrm %%WWWDIR%%/_source/plugins/image/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/image
+@dirrm %%WWWDIR%%/_source/plugins/iframedialog
+@dirrm %%WWWDIR%%/_source/plugins/htmlwriter
+@dirrm %%WWWDIR%%/_source/plugins/htmldataprocessor
+@dirrm %%WWWDIR%%/_source/plugins/horizontalrule
+@dirrm %%WWWDIR%%/_source/plugins/forms/images
+@dirrm %%WWWDIR%%/_source/plugins/forms/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/forms
+@dirrm %%WWWDIR%%/_source/plugins/format
+@dirrm %%WWWDIR%%/_source/plugins/font
+@dirrm %%WWWDIR%%/_source/plugins/floatpanel
+@dirrm %%WWWDIR%%/_source/plugins/flash/images
+@dirrm %%WWWDIR%%/_source/plugins/flash/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/flash
+@dirrm %%WWWDIR%%/_source/plugins/find/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/find
+@dirrm %%WWWDIR%%/_source/plugins/filebrowser
+@dirrm %%WWWDIR%%/_source/plugins/fakeobjects
+@dirrm %%WWWDIR%%/_source/plugins/entities
+@dirrm %%WWWDIR%%/_source/plugins/enterkey
+@dirrm %%WWWDIR%%/_source/plugins/elementspath
+@dirrm %%WWWDIR%%/_source/plugins/editingblock
+@dirrm %%WWWDIR%%/_source/plugins/domiterator
+@dirrm %%WWWDIR%%/_source/plugins/div/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/div
+@dirrm %%WWWDIR%%/_source/plugins/dialogui
+@dirrm %%WWWDIR%%/_source/plugins/dialogadvtab
+@dirrm %%WWWDIR%%/_source/plugins/dialog
+@dirrm %%WWWDIR%%/_source/plugins/contextmenu
+@dirrm %%WWWDIR%%/_source/plugins/colordialog/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/colordialog
+@dirrm %%WWWDIR%%/_source/plugins/colorbutton
+@dirrm %%WWWDIR%%/_source/plugins/clipboard/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/clipboard
+@dirrm %%WWWDIR%%/_source/plugins/button
+@dirrm %%WWWDIR%%/_source/plugins/blockquote
+@dirrm %%WWWDIR%%/_source/plugins/bidi
+@dirrm %%WWWDIR%%/_source/plugins/basicstyles
+@dirrm %%WWWDIR%%/_source/plugins/autogrow
+@dirrm %%WWWDIR%%/_source/plugins/about/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/about
+@dirrm %%WWWDIR%%/_source/plugins/a11yhelp/lang
+@dirrm %%WWWDIR%%/_source/plugins/a11yhelp/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/a11yhelp
+@dirrm %%WWWDIR%%/_source/plugins
+@dirrm %%WWWDIR%%/_source/lang
+@dirrm %%WWWDIR%%/_source/core/htmlparser
+@dirrm %%WWWDIR%%/_source/core/dom
+@dirrm %%WWWDIR%%/_source/core
+@dirrm %%WWWDIR%%/_source/adapters
+@dirrm %%WWWDIR%%/_source
+@dirrm %%WWWDIR%%/_samples/php
+@dirrm %%WWWDIR%%/_samples/assets
+@dirrm %%WWWDIR%%/_samples/asp
+@dirrm %%WWWDIR%%/_samples/api_dialog
+@dirrm %%WWWDIR%%/_samples
+@dirrm %%WWWDIR%%
