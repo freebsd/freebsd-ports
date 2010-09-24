@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_src-${PORTVERSION}
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	jumper99@gmx.de
 COMMENT=	The typo3 content management system
 
 NO_BUILD=	yes
