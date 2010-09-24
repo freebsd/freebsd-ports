@@ -21,6 +21,8 @@
 %%SITE_PERL%%/CSS/DOM/Value.pm
 %%SITE_PERL%%/CSS/DOM/Value/List.pm
 %%SITE_PERL%%/CSS/DOM/Value/Primitive.pm
+%%SITE_PERL%%/CSS/DOM/Value/Primitive/colours.pl
+@dirrmtry %%SITE_PERL%%/CSS/DOM/Value/Primitive
 @dirrmtry %%SITE_PERL%%/CSS/DOM/Value
 @dirrmtry %%SITE_PERL%%/CSS/DOM/Rule
 @dirrmtry %%SITE_PERL%%/CSS/DOM
