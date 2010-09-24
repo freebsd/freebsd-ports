@@ -10,26 +10,19 @@
 @unexec mv -f %D/%%MODULESDIR%%/extensions/XXX-libglx.so.%%%%.%%XSERVVERSION%% %D/%%MODULESDIR%%/extensions/libglx.so
 @exec mv -f %D/lib/libGL.so.1 %D/lib/XXX-libGL.so.1.%%%%.%%LIBGLVERSION%%
 @unexec mv -f %D/lib/XXX-libGL.so.1.%%%%.%%LIBGLVERSION%% %D/lib/libGL.so.1
-include/vdpau/vdpau.h
-include/vdpau/vdpau_x11.h
-@dirrm include/vdpau
 lib/libnvidia-tls.so.1
 lib/libnvidia-tls.so
 lib/libnvidia-cfg.so.1
 lib/libnvidia-cfg.so
 lib/libGLcore.so.1
 lib/libGLcore.so
-lib/libvdpau.so.1
-lib/libvdpau.so
 lib/vdpau/libvdpau_nvidia.so.1
 lib/libvdpau_nvidia.so
-lib/vdpau/libvdpau_trace.so.1
-lib/libvdpau_trace.so
 lib/libXvMCNVIDIA.so.1
 lib/libXvMCNVIDIA.so
 lib/libXvMCNVIDIA.a
 lib/libXvMCNVIDIA_dynamic.so.1
-@dirrm lib/vdpau
+@dirrmtry lib/vdpau
 %%MODULESDIR%%/libnvidia-wfb.so.1
 %%MODULESDIR%%/drivers/nvidia_drv.so
 %%MODULESDIR%%/extensions/libglx.so.1

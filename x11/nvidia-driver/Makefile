@@ -7,7 +7,7 @@
 
 PORTNAME=	nvidia-driver
 DISTVERSION?=	195.36.15
-PORTREVISION?=	0			# As a reminder it can be overridden
+PORTREVISION?=	1			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
 ARCH_SUFX=	${ARCH:S/i386//:S/amd/_/}
@@ -144,8 +144,6 @@ post-install:
 .if ${NVVERSION} < 1802900
 	@${REINPLACE_CMD} '/vdpau/d' ${TMPPLIST}
 .else
-	@${MKDIR} ${PREFIX}/include/vdpau
-	@${LN} -sf ${DOCSDIR}/vdpau*.h ${PREFIX}/include/vdpau
 .endif
 .if ${NVVERSION} < 1851829
 	@${REINPLACE_CMD} '/libcuda/d' ${TMPPLIST}
