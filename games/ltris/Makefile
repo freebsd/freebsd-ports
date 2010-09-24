@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	ltris
-PORTVERSION=	1.0.14
-PORTREVISION=	2
+PORTVERSION=	1.0.15
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	davide.italiano@gmail.com
 COMMENT=	An another tetris clone but a good one with bunch of cool features
 
 USE_SDL=	mixer sdl

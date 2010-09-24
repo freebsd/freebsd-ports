@@ -2,6 +2,7 @@ bin/ltris
 share/applications/ltris.desktop
 %%NLS%%share/locale/de/LC_MESSAGES/ltris.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ltris.mo
+%%NLS%%share/locale/it/LC_MESSAGES/ltris.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/ltris.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/ltris.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/ltris.mo
