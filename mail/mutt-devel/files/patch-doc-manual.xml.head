@@ -8,12 +8,3 @@
  <book>
  
  <bookinfo>
-@@ -7271,7 +7271,7 @@
- <para>
- The built-in SMTP support supports encryption (the <literal>smtps</literal> protocol
- using SSL or TLS) as well as SMTP authentication using SASL. The authentication mechanisms
--for SASL are specified in <link linkend="smtp-authenticators">&dollar;smtp&lowbar;authenticators</link>
-+for SASL are specified in <literal>&dollar;smtp&lowbar;authenticators</literal>
- defaulting to an empty list which makes Mutt try all available methods
- from most-secure to least-secure.
- </para>

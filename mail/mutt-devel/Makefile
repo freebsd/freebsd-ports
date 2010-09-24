@@ -117,8 +117,8 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.20
-PORTREVISION?=	7
+PORTVERSION=	1.5.21
+PORTREVISION?=	0
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -145,9 +145,7 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://home.woolridge.ca/mutt/patches/:dw \
 		http://www.spinnaker.de/mutt/compressed/:rr \
-		http://www.emaillab.org/mutt/${AC_PATCH_VERSION}/:jp \
-		http://vc.org.ua/mutt/:vc \
-		http://yz.kiev.ua/mutt/:vc
+		http://www.emaillab.org/mutt/${AC_PATCH_VERSION}/:jp
 
 MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mail User Agents (development version)
@@ -178,7 +176,6 @@ SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
 
 DW_PATCH_VERSION=	1.5.6
 AC_PATCH_VERSION=	1.5.9
-VC_PATCH_VERSION=	1.5.16
 DW_MBOX_PATCH_VERSION=	1.5.18
 .if !defined(VVV_PATCH_VERSION)
 VVV_PATCH_VERSION=	${PORTVERSION}
@@ -194,9 +191,6 @@ DW_MBOX_PATCH_VERSION=	${DW_PATCH_VERSION}
 .endif
 .if !defined(AC_PATCH_VERSION)
 AC_PATCH_VERSION=	${PORTVERSION}
-.endif
-.if !defined(VC_PATCH_VERSION)
-VC_PATCH_VERSION=	${PORTVERSION}
 .endif
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
 WITH_MUTT_IMAP_HEADER_CACHE=	yes
@@ -438,7 +432,8 @@ post-patch::
 .endif
 .endif
 .if defined(WITH_MUTT_GREETING_PATCH)
-PATCHFILES+=	mutt-${VC_PATCH_VERSION}.vc.greeting:vc
+post-patch::
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-greeting
 .endif
 .if defined(WITH_MUTT_TRASH_PATCH)
 post-patch::
@@ -446,7 +441,7 @@ post-patch::
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
-MAN1=		mutt.1 mutt_dotlock.1 flea.1 muttbug.1
+MAN1=		mutt.1 mutt_dotlock.1 flea.1 muttbug.1 smime_keys.1
 MAN5=		muttrc.5
 .if !defined(WITHOUT_MUTT_MAILBOX_MANPAGES)
 MAN5+=		mbox.5 mmdf.5
