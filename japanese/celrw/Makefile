@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.nurs.or.jp/~kurati/celrw/
 MAINTAINER=	shuna@pop16.odn.ne.jp
 COMMENT=	Cellular phone-number read/write tool (in Japan only)
 
-USE_AUTOTOOLS=	automake:15:env
+USE_AUTOTOOLS=	automake:19:env
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=

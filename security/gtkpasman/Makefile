@@ -19,7 +19,7 @@ RUN_DEPENDS+=   gpgv:${PORTSDIR}/security/gnupg1
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:15 aclocal:15 autoconf:267
+USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:267
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message

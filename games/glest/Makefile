@@ -21,7 +21,7 @@ LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 RUN_DEPENDS=	${DATADIR}/servers.ini:${PORTSDIR}/games/glest-data
 
-USE_AUTOTOOLS=	automake:15:env autoconf:267:env
+USE_AUTOTOOLS=	automake:19:env autoconf:267:env
 USE_ZIP=	yes
 USE_OPENAL=	al alut
 USE_DOS2UNIX=	yes

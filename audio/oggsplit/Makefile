@@ -17,8 +17,9 @@ LIB_DEPENDS=	ogg.7:${PORTSDIR}/audio/libogg
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:15 autoconf:267
+USE_AUTOTOOLS=	automake:19 autoconf:267
 AUTOMAKE_ARGS=	--add-missing
+CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
 
 MAN1=		oggsplit.1
 PLIST_FILES=	bin/oggsplit
