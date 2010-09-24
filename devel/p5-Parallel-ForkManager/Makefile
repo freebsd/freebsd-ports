@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Parallel-ForkManager
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN \
 		http://hacks.dlux.hu/Parallel-ForkManager/download/
@@ -17,18 +17,5 @@ COMMENT=	A simple parallel processing fork manager
 PERL_CONFIGURE=	YES
 
 MAN3=		Parallel::ForkManager.3
-
-EXAMPLES=	samples/*
-
-post-extract:
-	@${MV} ${WRKSRC}/ForkManager ${WRKSRC}/samples
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-.for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}
-.endfor
-.endif
 
 .include <bsd.port.mk>
