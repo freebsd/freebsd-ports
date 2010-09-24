@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2010-03-14 23:36:45.000000000 -0400
++++ CMakeLists.txt	2010-06-02 01:01:46.192628838 -0400
+@@ -341,8 +341,7 @@
+ 
+     INSTALL(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/vbam DESTINATION bin)
+     INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/sdl/vbam.cfg-example
+-            DESTINATION ${SYSCONFDIR}
+-            RENAME vbam.cfg)
++            DESTINATION ${SYSCONFDIR})
+ 
+ ENDIF( CAN_BUILD_VBAM )
+
