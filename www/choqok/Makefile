@@ -7,6 +7,7 @@
 
 PORTNAME=	choqok
 PORTVERSION=	0.9.90
+PORTREVISION=	1
 CATEGORIES=	www kde
 MASTER_SITES=	http://d10xg45o6p6dbl.cloudfront.net/projects/c/choqok/
 
@@ -16,7 +17,7 @@ COMMENT=	KDE micro-blogging client
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	qjson.0:${PORTSDIR}/devel/qjson \
-		qoauth.1:${PORTSDIR}/devel/qoauth
+		qoauth.1:${PORTSDIR}/net/qoauth
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
