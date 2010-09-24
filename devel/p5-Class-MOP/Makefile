@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-MOP
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,7 @@ COMMENT=	A Meta Object Protocol for Perl 5
 BUILD_DEPENDS=	p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
 		p5-MRO-Compat>=0.05:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
+		p5-namespace-autoclean>=0.08:${PORTSDIR}/devel/p5-namespace-autoclean \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Try-Tiny>=0.02:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-Data-OptList>=0:${PORTSDIR}/devel/p5-Data-OptList \
