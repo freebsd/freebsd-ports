@@ -145,7 +145,7 @@ CONFIGURE_ARGS+=--disable-x11 \
 .endif
 
 .if defined(WITH_VDPAU)
-LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/x11/nvidia-driver
+LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
 .else
 CONFIGURE_ARGS+=	--disable-vdpau
 .endif

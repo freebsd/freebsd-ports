@@ -20,7 +20,6 @@ LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 BUILD_DEPENDS=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-SAX-Expat
 RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv \
-		${QT_PREFIX}/lib/qt4/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt4-mysql-plugin \
 		wget:${PORTSDIR}/ftp/wget
 
 CONFLICTS=	mythtv-frontend-[0-9]*
@@ -28,7 +27,7 @@ CONFLICTS=	mythtv-frontend-[0-9]*
 ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui sql network script linguist_build l10n \
+QT_COMPONENTS=	gui sql network script linguist_build l10n sql-mysql_run \
 		moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
 USE_MYSQL=	51
@@ -84,7 +83,7 @@ CONFIGURE_ARGS+=	--disable-opengl-video --disable-opengl-vsync
 .endif
 
 .if defined(WITH_VDPAU)
-LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/x11/nvidia-driver
+LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
 CONFIGURE_ARGS+=	--enable-vdpau
 .else
 CONFIGURE_ARGS+=	--disable-vdpau
