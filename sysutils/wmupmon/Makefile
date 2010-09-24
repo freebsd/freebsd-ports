@@ -16,7 +16,7 @@ COMMENT=	An uptime showing dockapp with a similar look to wmcpuload
 
 USE_BZIP2=	yes
 USE_XORG=	xpm
-USE_AUTOTOOLS=	automake:15 autoheader:267
+USE_AUTOTOOLS=	autoheader:267
 CONFIGURE_ARGS=	--program-prefix=""
 
 MAN1=		wmupmon.1
