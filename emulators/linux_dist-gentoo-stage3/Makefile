@@ -28,6 +28,8 @@ PKGMESSAGE=		${WRKDIR}/pkg-message
 PKGINSTALL=		${WRKDIR}/pkg-install
 PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
 
+BROKEN=		unfetchable
+
 .if defined(WITH_LINUXBASE)
 PKGNAMEPREFIX=	linux_base-
 CONFLICTS=	linux_base-7* linux_base-8* linux_base-debian* \
