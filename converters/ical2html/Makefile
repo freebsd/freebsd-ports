@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ical2html
-PORTVERSION=	0.4
-PORTREVISION=	4
+PORTVERSION=	2.0
 CATEGORIES=	converters
 MASTER_SITES=	http://www.w3.org/Tools/Ical2html/
 
