@@ -17,14 +17,13 @@ COMMENT=	MythTV is a homebrew PVR project
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		freetype.9:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	${QT_PREFIX}/lib/qt4/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt4-mysql-plugin
 
 CONFLICTS=	mythtv-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui sql network script linguist_build l10n \
+QT_COMPONENTS=	gui sql network script linguist_build l10n sql-mysql_run \
 		moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
 USE_GMAKE=	yes
@@ -80,7 +79,7 @@ CONFIGURE_ARGS+=	--disable-audio-pulseoutput
 .endif
 
 .if defined(WITH_VDPAU)
-LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/x11/nvidia-driver
+LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
 CONFIGURE_ARGS+=	--enable-vdpau
 .else
 CONFIGURE_ARGS+=	--disable-vdpau
