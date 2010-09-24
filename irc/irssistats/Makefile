@@ -10,7 +10,7 @@ PORTVERSION=	0.75
 CATEGORIES=	irc
 MASTER_SITES=	http://royale.zerezo.com/irssistats/
 
-MAINTAINER=	az@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate IRC statistics based on irssi logs
 
 MAKE_ARGS+=	DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}" EXAMPLESDIR="${EXAMPLESDIR}" PREFIX="${PREFIX}" \

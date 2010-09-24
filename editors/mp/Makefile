@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://triptico.com/download/
 
-MAINTAINER=	az@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A programming text editor
 
 HAS_CONFIGURE=	yes
