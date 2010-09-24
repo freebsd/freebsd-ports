@@ -869,6 +869,7 @@
     SUBDIR += pyrad
     SUBDIR += pythondirector
     SUBDIR += qadsl
+    SUBDIR += qoauth
     SUBDIR += qt4-network
     SUBDIR += quagga
     SUBDIR += queso
