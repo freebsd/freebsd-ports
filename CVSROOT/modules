@@ -786,9 +786,6 @@ automake110                     ports/devel/automake110
 automake111                     ports/devel/automake111
 automake14                      ports/devel/automake14
 automake15                      ports/devel/automake15
-automake16                      ports/devel/automake16
-automake17                      ports/devel/automake17
-automake18                      ports/devel/automake18
 automake19                      ports/devel/automake19
 automoc4                        ports/devel/automoc4
 automounter                     ports/sysutils/automounter
@@ -868,6 +865,7 @@ babl                            ports/x11/babl
 babytrans                       ports/deskutils/babytrans
 backfract                       ports/graphics/backfract
 backupme                        ports/sysutils/backupme
+backuppc                        ports/sysutils/backuppc
 bacula-bat                      ports/sysutils/bacula-bat
 bacula-client                   ports/sysutils/bacula-client
 bacula-docs                     ports/sysutils/bacula-docs
@@ -1344,6 +1342,7 @@ c2mdoc                          ports/devel/c2mdoc
 c2ps-a4                         ports/print/c2ps-a4
 c2ps-letter                     ports/print/c2ps-letter
 c3270                           ports/net/c3270
+c3p0                            ports/databases/c3p0
 c4                              ports/devel/c4
 c64bdf                          ports/x11-fonts/c64bdf
 c_c++_reference                 ports/devel/c_c++_reference
@@ -1439,6 +1438,7 @@ ccmsn                           ports/net-im/ccmsn
 ccrtp                           ports/devel/ccrtp
 ccrypt                          ports/security/ccrypt
 ccsm                            ports/x11-wm/ccsm
+ccsrch                          ports/security/ccsrch
 ccxstream                       ports/net/ccxstream
 ccze                            ports/sysutils/ccze
 cd-console                      ports/audio/cd-console
@@ -1602,6 +1602,7 @@ citrix_xenapp                   ports/net/citrix_xenapp
 cjc                             ports/net-im/cjc
 cjk-lyx                         ports/print/cjk-lyx
 ck4up                           ports/sysutils/ck4up
+ckeditor                        ports/www/ckeditor
 ckl                             ports/sysutils/ckl
 cksfv                           ports/security/cksfv
 cl-alexandria                   ports/devel/cl-alexandria
@@ -2235,6 +2236,7 @@ ddd                             ports/devel/ddd
 ddos_scan                       ports/security/ddos_scan
 ddrescue                        ports/sysutils/ddrescue
 de-BBBike                       ports/german/BBBike
+de-MT                           ports/german/MT
 de-acroread8                    ports/german/acroread8
 de-acroread9                    ports/german/acroread9
 de-alt-aspell                   ports/german/alt-aspell
@@ -2264,6 +2266,7 @@ de-koffice-kde4-l10n            ports/german/koffice-kde4-l10n
 de-ksteak                       ports/german/ksteak
 de-linux-eagle                  ports/german/linux-eagle
 de-manpages                     ports/german/manpages
+de-mt                           ports/german/MT
 de-pecl-konto_check             ports/german/pecl-konto_check
 de-phone                        ports/german/phone
 de-php_doc                      ports/german/php_doc
@@ -2279,6 +2282,7 @@ deadbeef                        ports/audio/deadbeef
 deal                            ports/games/deal
 deb2targz                       ports/archivers/deb2targz
 decibel                         ports/net-im/decibel
+decibel-audio-player            ports/audio/decibel-audio-player
 decomment                       ports/sysutils/decomment
 decss                           ports/www/decss
 decurs                          ports/x11/decurs
@@ -3788,6 +3792,7 @@ fpm                             ports/security/fpm
 fpp                             ports/devel/fpp
 fprint_demo                     ports/security/fprint_demo
 fprobe                          ports/net-mgmt/fprobe
+fr-MT                           ports/french/MT
 fr-acroread8                    ports/french/acroread8
 fr-acroread9                    ports/french/acroread9
 fr-alphabet_sounds_fr           ports/french/alphabet_sounds_fr
@@ -3813,6 +3818,7 @@ fr-koffice-i18n                 ports/french/koffice-i18n
 fr-koffice-kde4-l10n            ports/french/koffice-kde4-l10n
 fr-med                          ports/french/med
 fr-mozilla-flp                  ports/french/mozilla-flp
+fr-mt                           ports/french/MT
 fr-php_doc                      ports/french/php_doc
 fr-plgrenouille                 ports/french/plgrenouille
 fr-verbiste                     ports/french/verbiste
@@ -4754,6 +4760,7 @@ gnotepad+                       ports/editors/gnotepad+
 gnotime                         ports/deskutils/gnotime
 gnowavcut                       ports/audio/gnowavcut
 gns3                            ports/emulators/gns3
+gnu-dico                        ports/net/gnu-dico
 gnu-radius                      ports/net/gnu-radius
 gnu-regexp                      ports/java/gnu-regexp
 gnu-unifont                     ports/x11-fonts/gnu-unifont
@@ -6750,6 +6757,7 @@ joequake                        ports/games/joequake
 jogamp-jogl                     ports/graphics/jogamp-jogl
 jogl                            ports/graphics/jogl
 john                            ports/security/john
+jokosher                        ports/audio/jokosher
 jomp                            ports/java/jomp
 jools                           ports/games/jools
 joomla                          ports/www/joomla
@@ -7132,6 +7140,7 @@ kevedit                         ports/games/kevedit
 kexchange                       ports/finance/kexchange
 keximdb                         ports/databases/keximdb
 kexis                           ports/audio/kexis
+keyboardcast                    ports/x11/keyboardcast
 keychain                        ports/security/keychain
 keylaunch                       ports/x11/keylaunch
 keynav                          ports/x11/keynav
@@ -7682,6 +7691,7 @@ libXxf86misc                    ports/x11/libXxf86misc
 libXxf86vm                      ports/x11/libXxf86vm
 libYGP                          ports/devel/libYGP
 liba52                          ports/audio/liba52
+libaacplus                      ports/audio/libaacplus
 libadplug                       ports/audio/libadplug
 libafterbase                    ports/devel/libafterbase
 libafterimage                   ports/graphics/libafterimage
@@ -9819,6 +9829,7 @@ mysql-q4m                       ports/databases/mysql-q4m
 mysql-udf                       ports/databases/mysql-udf
 mysql-workbench51               ports/databases/mysql-workbench51
 mysql-workbench52               ports/databases/mysql-workbench52
+mysql-xql                       ports/databases/mysql-xql
 mysql2odbc                      ports/databases/mysql2odbc
 mysql2pgsql                     ports/databases/mysql2pgsql
 mysql323-client                 ports/databases/mysql323-client
@@ -12269,6 +12280,7 @@ p5-Geography-NationalGrid-TW    ports/misc/p5-Geography-NationalGrid-TW
 p5-Geometry-Primitive           ports/graphics/p5-Geometry-Primitive
 p5-Getargs-Long                 ports/devel/p5-Getargs-Long
 p5-Getopt-ArgvFile              ports/devel/p5-Getopt-ArgvFile
+p5-Getopt-Compact               ports/devel/p5-Getopt-Compact
 p5-Getopt-Declare               ports/devel/p5-Getopt-Declare
 p5-Getopt-Euclid                ports/devel/p5-Getopt-Euclid
 p5-Getopt-GUI-Long              ports/devel/p5-Getopt-GUI-Long
@@ -14458,6 +14470,7 @@ p5-WebService-CIA               ports/www/p5-WebService-CIA
 p5-WebService-Google-Reader     ports/www/p5-WebService-Google-Reader
 p5-WebService-Google-Sets       ports/www/p5-WebService-Google-Sets
 p5-WebService-ISBNDB            ports/www/p5-WebService-ISBNDB
+p5-WebService-Linode            ports/www/p5-WebService-Linode
 p5-WebService-MusicBrainz       ports/www/p5-WebService-MusicBrainz
 p5-WebService-NoPaste           ports/www/p5-WebService-NoPaste
 p5-WebService-Rakuten           ports/www/p5-WebService-Rakuten
@@ -16189,6 +16202,7 @@ p5-geography-nationalgrid-tw    ports/misc/p5-Geography-NationalGrid-TW
 p5-geometry-primitive           ports/graphics/p5-Geometry-Primitive
 p5-getargs-long                 ports/devel/p5-Getargs-Long
 p5-getopt-argvfile              ports/devel/p5-Getopt-ArgvFile
+p5-getopt-compact               ports/devel/p5-Getopt-Compact
 p5-getopt-declare               ports/devel/p5-Getopt-Declare
 p5-getopt-euclid                ports/devel/p5-Getopt-Euclid
 p5-getopt-gui-long              ports/devel/p5-Getopt-GUI-Long
@@ -18371,6 +18385,7 @@ p5-webservice-cia               ports/www/p5-WebService-CIA
 p5-webservice-google-reader     ports/www/p5-WebService-Google-Reader
 p5-webservice-google-sets       ports/www/p5-WebService-Google-Sets
 p5-webservice-isbndb            ports/www/p5-WebService-ISBNDB
+p5-webservice-linode            ports/www/p5-WebService-Linode
 p5-webservice-musicbrainz       ports/www/p5-WebService-MusicBrainz
 p5-webservice-nopaste           ports/www/p5-WebService-NoPaste
 p5-webservice-rakuten           ports/www/p5-WebService-Rakuten
@@ -18709,6 +18724,7 @@ par2cmdline-tbb                 ports/archivers/par2cmdline-tbb
 paraget                         ports/ftp/paraget
 paragui                         ports/x11-toolkits/paragui
 paragui-devel                   ports/x11-toolkits/paragui-devel
+parallel                        ports/sysutils/parallel
 parallels-tools                 ports/emulators/parallels-tools
 parano                          ports/security/parano
 paraview                        ports/science/paraview
@@ -21380,6 +21396,7 @@ py-yapsnmp                      ports/net-mgmt/py-yapsnmp
 py-ydbf                         ports/devel/py-ydbf
 py-yenc                         ports/news/py-yenc
 py-yolk                         ports/misc/py-yolk
+py-yum-metadata-parser          ports/devel/py-yum-metadata-parser
 py-zclockfile                   ports/devel/py-zclockfile
 py-zconfig                      ports/devel/py-zconfig
 py-zdaemon                      ports/sysutils/py-zdaemon
@@ -23058,6 +23075,7 @@ seejpeg                         ports/graphics/seejpeg
 selectwm                        ports/x11-wm/selectwm
 selenium                        ports/www/selenium
 semantic                        ports/devel/semantic
+semantik                        ports/deskutils/semantik
 semi                            ports/editors/semi
 semi-emacs21                    ports/editors/semi-emacs21
 semi-emacs22                    ports/editors/semi-emacs22
@@ -23479,6 +23497,7 @@ spar                            ports/math/spar
 sparc-rtems-binutils            ports/devel/sparc-rtems-binutils
 sparc-rtems-gcc                 ports/devel/sparc-rtems-gcc
 sparc-rtems-gdb                 ports/devel/sparc-rtems-gdb
+spass                           ports/security/spass
 spassgen                        ports/sysutils/spassgen
 spatialindex                    ports/devel/spatialindex
 spatialite                      ports/databases/spatialite
@@ -24554,6 +24573,7 @@ tsocks                          ports/net/tsocks
 tss                             ports/sysutils/tss
 tstools                         ports/multimedia/tstools
 tt                              ports/games/tt
+tt-rss                          ports/www/tt-rss
 tta                             ports/audio/tta
 ttbudget                        ports/net/ttbudget
 ttcp                            ports/benchmarks/ttcp
