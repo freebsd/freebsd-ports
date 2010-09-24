@@ -6,6 +6,7 @@
 #
 
 DISTVERSION=	173.14.25
+PORTREVISION=	0
 
 MASTERDIR=	${.CURDIR}/../nvidia-driver
 NO_LATEST_LINK=	yes
