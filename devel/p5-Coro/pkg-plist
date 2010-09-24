@@ -46,5 +46,4 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/Event
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro/EV
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Coro
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Coro

@@ -61,7 +61,6 @@ bin/use-devel-assertos
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CheckOS/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/CheckOS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/Devel/CheckOS
 @dirrmtry %%SITE_PERL%%/Devel/AssertOS/QNX
 @dirrmtry %%SITE_PERL%%/Devel/AssertOS/OSFeatures

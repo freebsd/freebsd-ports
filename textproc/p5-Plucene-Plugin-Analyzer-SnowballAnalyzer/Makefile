@@ -7,6 +7,7 @@
 
 PORTNAME=	Plucene-Plugin-Analyzer-SnowballAnalyzer
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/F/FA/FABPOT

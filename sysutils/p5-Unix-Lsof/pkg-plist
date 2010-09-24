@@ -3,6 +3,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Lsof/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Lsof
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/Unix/Lsof
 @dirrmtry %%SITE_PERL%%/Unix

@@ -48,7 +48,6 @@
 %%SITE_PERL%%/CGI/FormBuilder/Util.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/FormBuilder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrm %%SITE_PERL%%/CGI/FormBuilder/Field
 @dirrm %%SITE_PERL%%/CGI/FormBuilder/Template

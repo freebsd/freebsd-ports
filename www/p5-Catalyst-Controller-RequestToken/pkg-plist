@@ -6,7 +6,6 @@
 @dirrmtry %%SITE_PERL%%/mach/auto/Catalyst/Controller/RequestToken
 @dirrmtry %%SITE_PERL%%/mach/auto/Catalyst/Controller
 @dirrmtry %%SITE_PERL%%/mach/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/mach/auto
 @dirrmtry %%SITE_PERL%%/mach
 @dirrmtry %%SITE_PERL%%/Catalyst/Controller/RequestToken/Action
 @dirrmtry %%SITE_PERL%%/Catalyst/Controller/RequestToken

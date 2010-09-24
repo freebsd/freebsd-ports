@@ -7,6 +7,7 @@
 
 PORTNAME=	Nagios-Plugins-Memcached
 PORTVERSION=	0.02
+PORTREVISION=	1
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/Z/ZI/ZIGOROU

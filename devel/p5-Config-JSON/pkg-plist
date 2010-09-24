@@ -2,5 +2,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/JSON/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/JSON
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/Config

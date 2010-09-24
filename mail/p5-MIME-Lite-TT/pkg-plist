@@ -3,7 +3,6 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Lite/TT
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Lite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrmtry %%SITE_PERL%%/MIME/Lite
 @dirrmtry %%SITE_PERL%%/MIME

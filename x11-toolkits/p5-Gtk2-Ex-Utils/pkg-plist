@@ -4,6 +4,5 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Ex/Utils
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Ex
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/Gtk2/Ex
 @dirrmtry %%SITE_PERL%%/Gtk2

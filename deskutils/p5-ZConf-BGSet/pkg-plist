@@ -5,5 +5,4 @@ bin/zbgset-admin
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/BGSet/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/BGSet
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/ZConf

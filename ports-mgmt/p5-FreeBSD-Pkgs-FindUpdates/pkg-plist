@@ -5,6 +5,5 @@ bin/pkg_findupdates
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Pkgs/FindUpdates
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Pkgs
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/FreeBSD/Pkgs
 @dirrmtry %%SITE_PERL%%/FreeBSD

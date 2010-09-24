@@ -21,7 +21,6 @@
 @dirrm %%SITE_PERL%%/auto/share/dist/Jifty-Plugin-OpenID
 @dirrmtry %%SITE_PERL%%/auto/share/dist
 @dirrmtry %%SITE_PERL%%/auto/share
-@dirrmtry %%SITE_PERL%%/auto
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/Plugin/OpenID
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty

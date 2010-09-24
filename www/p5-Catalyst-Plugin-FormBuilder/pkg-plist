@@ -3,7 +3,6 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/FormBuilder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/Catalyst

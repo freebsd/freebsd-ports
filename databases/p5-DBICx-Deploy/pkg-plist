@@ -3,5 +3,4 @@ bin/dbicdeploy
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx/Deploy/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx/Deploy
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrm %%SITE_PERL%%/DBICx

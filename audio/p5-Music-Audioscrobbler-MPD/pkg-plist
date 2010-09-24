@@ -4,6 +4,5 @@ bin/musicmpdscrobble
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Music/Audioscrobbler/MPD
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Music/Audioscrobbler
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Music
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrm %%SITE_PERL%%/Music/Audioscrobbler
 @dirrm %%SITE_PERL%%/Music

@@ -2,7 +2,6 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Append/TempFile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Append
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 %%SITE_PERL%%/File/Append/TempFile.pm
 @dirrmtry %%SITE_PERL%%/File/Append
 @dirrmtry %%SITE_PERL%%/File
