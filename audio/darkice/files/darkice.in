@@ -1,14 +1,18 @@
 #!/bin/sh
-#
+
 # $FreeBSD$
 #
-
 # PROVIDE: darkice
-# REQUIRE: DAEMON
-# BEFORE:  LOGIN
+# REQUIRE: LOGIN
 # KEYWORD: SHUTDOWN
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# darkice_enable (bool):	Set to NO by default.
+#				Set it to YES to enable darkice.
 
-. "/etc/rc.subr"
+. /etc/rc.subr
 
 name="darkice"
 rcvar=`set_rcvar`
@@ -18,8 +22,9 @@ command_args="& 1>/dev/null"
 required_files="%%ETCDIR%%.cfg"
 
 # read configuration and set defaults
-load_rc_config "$name"
+load_rc_config $name
+
 : ${darkice_enable="NO"}
 : ${darkice_flags="-c ${required_files}"}
 
-run_rc_command "$1"
+run_rc_command $1
