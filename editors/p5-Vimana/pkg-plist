@@ -29,7 +29,7 @@
 %%SITE_PERL%%/Vimana/VimOnline/ScriptPage.pm
 %%SITE_PERL%%/Vimana/VimOnline/Search.pm
 %%SITE_PERL%%/Vimana/VimballInstall.pm
-%%SITE_PERL%%/mach/auto/Vimana/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Vimana/.packlist
 bin/vimana
 @dirrmtry %%SITE_PERL%%/Vimana/VimOnline
 @dirrmtry %%SITE_PERL%%/Vimana/Installer

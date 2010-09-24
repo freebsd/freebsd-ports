@@ -1,6 +1,6 @@
 %%SITE_PERL%%/Math/SigFigs.pm
 %%SITE_PERL%%/Math/SigFigs.pod
-%%SITE_PERL%%/mach/auto/Math/SigFigs/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/Math/SigFigs
-@dirrmtry %%SITE_PERL%%/mach/auto/Math
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SigFigs/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/SigFigs
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/Math

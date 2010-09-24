@@ -1,5 +1,5 @@
 %%SITE_PERL%%/CGI/EncryptForm.pm
-%%SITE_PERL%%/mach/auto/CGI/EncryptForm/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/CGI/EncryptForm
-@dirrmtry %%SITE_PERL%%/mach/auto/CGI
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/EncryptForm/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/EncryptForm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrmtry %%SITE_PERL%%/CGI

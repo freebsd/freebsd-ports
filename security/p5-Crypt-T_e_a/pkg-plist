@@ -1,6 +1,6 @@
 bin/tea
 %%SITE_PERL%%/Crypt/Tea.pm
-%%SITE_PERL%%/mach/auto/Crypt/Tea/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/Crypt/Tea
-@dirrmtry %%SITE_PERL%%/mach/auto/Crypt
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Tea/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Tea
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/Crypt

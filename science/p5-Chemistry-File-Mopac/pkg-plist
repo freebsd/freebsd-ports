@@ -1,5 +1,5 @@
-%%SITE_PERL%%/mach/auto/Chemistry/File/Mopac/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File/Mopac/.packlist
 %%SITE_PERL%%/Chemistry/File/Mopac.pm
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry/File/Mopac
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry/File
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File/Mopac
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry

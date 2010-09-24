@@ -2,10 +2,10 @@
 %%SITE_PERL%%/Catalyst/Controller/RequestToken/Action/CreateToken.pm
 %%SITE_PERL%%/Catalyst/Controller/RequestToken/Action/RemoveToken.pm
 %%SITE_PERL%%/Catalyst/Controller/RequestToken/Action/ValidateToken.pm
-%%SITE_PERL%%/mach/auto/Catalyst/Controller/RequestToken/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/Catalyst/Controller/RequestToken
-@dirrmtry %%SITE_PERL%%/mach/auto/Catalyst/Controller
-@dirrmtry %%SITE_PERL%%/mach/auto/Catalyst
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Controller/RequestToken/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Controller/RequestToken
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Controller
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
 @dirrmtry %%SITE_PERL%%/mach
 @dirrmtry %%SITE_PERL%%/Catalyst/Controller/RequestToken/Action
 @dirrmtry %%SITE_PERL%%/Catalyst/Controller/RequestToken

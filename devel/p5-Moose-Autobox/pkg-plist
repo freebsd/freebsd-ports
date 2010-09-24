@@ -12,8 +12,8 @@
 %%SITE_PERL%%/Moose/Autobox/String.pm
 %%SITE_PERL%%/Moose/Autobox/Undef.pm
 %%SITE_PERL%%/Moose/Autobox/Value.pm
-%%SITE_PERL%%/mach/auto/Moose/Autobox/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/Moose/Autobox
-@dirrmtry %%SITE_PERL%%/mach/auto/Moose
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Autobox/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Autobox
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose
 @dirrmtry %%SITE_PERL%%/Moose/Autobox
 @dirrmtry %%SITE_PERL%%/Moose

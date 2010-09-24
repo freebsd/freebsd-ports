@@ -1,7 +1,7 @@
 %%SITE_PERL%%/Chemistry/Bond/Find.pm
-%%SITE_PERL%%/mach/auto/Chemistry/Bond/Find/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Bond/Find/.packlist
 @dirrmtry %%SITE_PERL%%/Chemistry
 @dirrmtry %%SITE_PERL%%/Chemistry/Bond
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry/Bond/Find
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry/Bond
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Bond/Find
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Bond
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry

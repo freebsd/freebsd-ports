@@ -48,8 +48,8 @@ bin/xql.pl
 %%SITE_PERL%%/XML/XQL/Plus.pm
 %%SITE_PERL%%/XML/XQL/Parser.pm
 %%SITE_PERL%%/XML/XQL.pm
-%%SITE_PERL%%/mach/auto/libxml-enno/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/libxml-enno
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/libxml-enno/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/libxml-enno
 @dirrmtry %%SITE_PERL%%/XML/XQL
 @dirrmtry %%SITE_PERL%%/XML/Filter
 @dirrmtry %%SITE_PERL%%/XML/Checker

@@ -4,7 +4,7 @@ bin/validxml.pl
 %%SITE_PERL%%/XML/Validate/LibXML.pm
 %%SITE_PERL%%/XML/Validate/MSXML.pm
 %%SITE_PERL%%/XML/Validate/Xerces.pm
-%%SITE_PERL%%/mach/auto/XML/Validate/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Validate/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Validate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/Validate

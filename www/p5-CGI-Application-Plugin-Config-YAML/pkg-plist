@@ -1,7 +1,7 @@
-%%SITE_PERL%%/mach/auto/CGI/Application/Plugin/Config/YAML/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/Config/YAML/.packlist
 %%SITE_PERL%%/CGI/Application/Plugin/Config/YAML.pm
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Config
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin
-@dirrmtry %%SITE_PERL%%/mach/auto/CGI/Application/Plugin/Config/YAML
-@dirrmtry %%SITE_PERL%%/mach/auto/CGI/Application/Plugin/Config
-@dirrmtry %%SITE_PERL%%/mach/auto/CGI/Application/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/Config/YAML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin/Config
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/Plugin
