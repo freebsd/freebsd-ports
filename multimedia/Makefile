@@ -164,6 +164,7 @@
     SUBDIR += libtheora
     SUBDIR += libtuner
     SUBDIR += libv4l
+    SUBDIR += libvdpau
     SUBDIR += libvpx
     SUBDIR += libxine
     SUBDIR += libxspf
@@ -321,6 +322,7 @@
     SUBDIR += vcdimager
     SUBDIR += vcdpad
     SUBDIR += vcdtools
+    SUBDIR += vdpauinfo
     SUBDIR += vlc
     SUBDIR += vodcatcher
     SUBDIR += vstream-client
