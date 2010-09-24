@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/spamalyze
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RBLClient/.packlist
 %%SITE_PERL%%/Net/RBLClient.pm

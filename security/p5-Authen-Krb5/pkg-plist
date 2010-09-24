@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/Authen/Krb5.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Krb5/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Krb5/Krb5.bs

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/rtpdump.pl
 bin/rtplosslog.pl
 bin/rtpsend-pcmu.pl

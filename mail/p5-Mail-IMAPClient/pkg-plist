@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Mail/IMAPClient.pm
 %%SITE_PERL%%/Mail/IMAPClient.pod
 %%SITE_PERL%%/Mail/IMAPClient/BodyStructure.pm

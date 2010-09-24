@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/All/.packlist
 %%SITE_PERL%%/IO/All.pm
 %%SITE_PERL%%/IO/All.pod

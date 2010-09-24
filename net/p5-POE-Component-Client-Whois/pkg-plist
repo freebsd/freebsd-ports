@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Whois/.packlist
 %%SITE_PERL%%/POE/Component/Client/Whois.pm
 %%SITE_PERL%%/POE/Component/Client/Whois/IPBlks.pm

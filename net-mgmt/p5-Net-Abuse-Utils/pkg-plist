@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 sbin/ip-info.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Abuse/Utils/.packlist
 %%SITE_PERL%%/Net/Abuse/Utils.pm

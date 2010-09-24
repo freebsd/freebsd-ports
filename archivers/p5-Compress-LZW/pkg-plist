@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/LZW/.packlist
 %%SITE_PERL%%/Compress/LZW.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/LZW

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/mversion
 %%SITE_PERL%%/Module/Version.pm
 %%SITE_PERL%%/Module/Version/App.pm

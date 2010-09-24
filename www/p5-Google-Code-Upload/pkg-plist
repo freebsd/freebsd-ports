@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/googlecode_upload.pl
 %%SITE_PERL%%/Google/Code/Upload.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/Code/Upload/.packlist

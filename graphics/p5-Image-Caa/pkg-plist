@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%EXAMPLESDIR%%/curses.pl
 %%EXAMPLESDIR%%/kitten.jpg
 %%EXAMPLESDIR%%/kitten.pl

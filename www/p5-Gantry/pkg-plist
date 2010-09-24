@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%WWWDIR%%/bookerrata.html
 %%WWWDIR%%/control_wrapper.tt
 %%WWWDIR%%/data.tt

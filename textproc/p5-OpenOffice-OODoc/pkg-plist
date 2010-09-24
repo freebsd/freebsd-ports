@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenOffice/OODoc/.packlist
 %%SITE_PERL%%/OpenOffice/OODoc.pod
 %%SITE_PERL%%/OpenOffice/OODoc.pm

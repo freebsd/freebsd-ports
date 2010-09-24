@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/IO/Compress/Lzma.pm
 %%SITE_PERL%%/IO/Compress/Xz.pm
 %%SITE_PERL%%/IO/Compress/Adapter/Lzma.pm

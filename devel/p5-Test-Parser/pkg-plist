@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Parser/.packlist
 %%SITE_PERL%%/Test/Metadata.pm
 %%SITE_PERL%%/Test/Parser.pm

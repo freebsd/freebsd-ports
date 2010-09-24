@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/cassidy.pl
 %%SITE_PERL%%/Net/Cassandra/Easy.pm
 %%SITE_PERL%%/Net/Cassandra/cassidy.pl

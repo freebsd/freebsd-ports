@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gungho/.packlist
 %%SITE_PERL%%/Gungho.pm
 %%SITE_PERL%%/Gungho/Base.pm

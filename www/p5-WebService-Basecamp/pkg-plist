@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Basecamp/.packlist
 %%SITE_PERL%%/WebService/Basecamp.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Basecamp

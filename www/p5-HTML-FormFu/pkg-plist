@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/html_formfu_deploy.pl
 bin/html_formfu_dumpconf.pl
 man/man1/html_formfu_dumpconf.pl.1

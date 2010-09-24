@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/REST/Google/Apps/Provisioning.pm
 %%SITE_PERL%%/REST/Google/Apps/Provisioning.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/REST/Google/Apps/Provisioning/.packlist

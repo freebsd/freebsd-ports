@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/ODBC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/ODBC/Changes.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/ODBC/FAQ.pm

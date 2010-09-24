@@ -1,3 +1,2 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Algorithm/CurveFit.pm
 @dirrmtry %%SITE_PERL%%/Algorithm

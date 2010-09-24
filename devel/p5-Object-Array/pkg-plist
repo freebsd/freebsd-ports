@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Array/.packlist
 %%SITE_PERL%%/Object/Array.pm
 %%SITE_PERL%%/Object/Array/Plugin/Builtins.pm

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap/Share/.packlist
 %%SITE_PERL%%/IPC/Mmap/Share.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Mmap/Share

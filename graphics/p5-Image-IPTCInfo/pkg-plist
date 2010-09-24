@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PORTDOCS%%%%EXAMPLESDIR%%/burger_van.jpg
 %%PORTDOCS%%%%EXAMPLESDIR%%/dog.jpg
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/IPTCInfo/.packlist

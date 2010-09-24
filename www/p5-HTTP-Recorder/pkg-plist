@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/HTTP/Recorder.pm
 %%SITE_PERL%%/HTTP/Recorder/Logger.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Recorder/.packlist

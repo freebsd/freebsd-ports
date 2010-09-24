@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PORTDOCS%%%%DOCSDIR%%/Changes
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WDDX/.packlist
 %%SITE_PERL%%/WDDX.pm

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/Alak/.packlist
 %%SITE_PERL%%/Games/Alak.pm
 @dirrmtry %%SITE_PERL%%/Games

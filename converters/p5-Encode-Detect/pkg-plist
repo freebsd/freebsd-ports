@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/Detect.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/Detect/Detector.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Encode/Detect/Detector/Detector.bs

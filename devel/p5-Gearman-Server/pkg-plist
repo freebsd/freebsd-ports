@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/gearmand
 %%SITE_PERL%%/Gearman/Server/Job.pm
 %%SITE_PERL%%/Gearman/Server/Client.pm

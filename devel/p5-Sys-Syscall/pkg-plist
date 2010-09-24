@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Syscall/.packlist
 %%SITE_PERL%%/Sys/Syscall.pm
 %%SITE_PERL%%/Sys/README.pod

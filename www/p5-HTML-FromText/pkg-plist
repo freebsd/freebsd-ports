@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/text2html
 %%SITE_PERL%%/HTML/FromText.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FromText/.packlist

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/HTML/FormFu/Model/DBIC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu/Model/DBIC/.packlist
 @dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu/Model/DBIC

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Net/OpenSSH/Constants.pm
 %%SITE_PERL%%/Net/OpenSSH.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OpenSSH/.packlist

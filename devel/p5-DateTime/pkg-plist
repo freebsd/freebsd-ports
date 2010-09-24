@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Duration.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Helpers.pm

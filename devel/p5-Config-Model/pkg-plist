@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/config-edit
 bin/config-edit-popcon
 %%SITE_PERL%%/Config/Model.pm

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/AuthSub/.packlist
 %%SITE_PERL%%/Net/Google/AuthSub.pm
 %%SITE_PERL%%/Net/Google/AuthSub/Response.pm

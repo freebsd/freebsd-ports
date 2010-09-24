@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Samba/LDAP/.packlist
 %%SITE_PERL%%/Samba/LDAP.pm
 %%SITE_PERL%%/Samba/LDAP/Base.pm

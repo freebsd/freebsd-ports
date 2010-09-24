@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Test/Class.pm
 %%SITE_PERL%%/Test/Class/Load.pm
 %%SITE_PERL%%/Test/Class/MethodInfo.pm

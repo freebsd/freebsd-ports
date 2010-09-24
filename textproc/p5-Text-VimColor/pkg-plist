@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/text-vimcolor
 %%SITE_PERL%%/Text/VimColor.pm
 %%SITE_PERL%%/Text/VimColor/light.css

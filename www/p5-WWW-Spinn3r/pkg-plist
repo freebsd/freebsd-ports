@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Spinn3r/.packlist
 %%SITE_PERL%%/WWW/Spinn3r/item.pm
 %%SITE_PERL%%/WWW/Spinn3r/link.pm

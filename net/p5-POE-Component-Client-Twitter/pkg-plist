@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Twitter/.packlist
 %%SITE_PERL%%/POE/Component/Client/Twitter.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Twitter

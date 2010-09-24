@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Text/Report.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Report/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Report

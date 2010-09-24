@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/vcp
 %%SITE_PERL%%/RevML/Doctype.pm
 %%SITE_PERL%%/RevML/Doctype/v0_35.pm

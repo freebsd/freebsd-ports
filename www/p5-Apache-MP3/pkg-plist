@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Apache/MP3.pm
 %%SITE_PERL%%/Apache/MP3/L10N.pm
 %%SITE_PERL%%/Apache/MP3/L10N/Aliases.pm

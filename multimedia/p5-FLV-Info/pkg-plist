@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/flv2flv
 bin/flv2mp3
 bin/flv2swf

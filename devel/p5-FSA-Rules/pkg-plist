@@ -1,3 +1,2 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/FSA/Rules.pm
 @dirrmtry %%SITE_PERL%%/FSA

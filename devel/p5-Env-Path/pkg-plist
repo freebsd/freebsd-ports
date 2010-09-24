@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/envpath
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Env/Path/.packlist
 %%SITE_PERL%%/Env/Path.pm

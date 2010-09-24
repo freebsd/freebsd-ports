@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Catalyst/Plugin/Browser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Browser/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Browser

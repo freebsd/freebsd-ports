@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Exception/Class/DBI.pm
 @dirrmtry %%%SITE_PERL%%/Exception/Class
 @dirrmtry %%%SITE_PERL%%/Exception

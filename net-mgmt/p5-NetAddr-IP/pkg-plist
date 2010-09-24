@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/NetAddr/IP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/NetAddr/IP/Lite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/NetAddr/IP/Util.pm

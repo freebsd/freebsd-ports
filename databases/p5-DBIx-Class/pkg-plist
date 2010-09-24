@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/dbicadmin
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/.packlist
 %%SITE_PERL%%/DBIx/Class.pm

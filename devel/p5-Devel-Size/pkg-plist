@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Size.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Size/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Size/Size.bs

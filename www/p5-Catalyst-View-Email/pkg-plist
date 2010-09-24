@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/Email/.packlist
 %%SITE_PERL%%/Catalyst/View/Email.pm
 %%SITE_PERL%%/Catalyst/View/Email/Template.pm

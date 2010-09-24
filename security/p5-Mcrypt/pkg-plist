@@ -4,4 +4,3 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mcrypt/Mcrypt.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mcrypt/autosplit.ix
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mcrypt
-@comment $FreeBSD$

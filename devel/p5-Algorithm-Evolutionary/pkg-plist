@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/canonical-genetic-algorithm.pl
 bin/rectangle-coverage.pl
 bin/tide_bitstring.pl

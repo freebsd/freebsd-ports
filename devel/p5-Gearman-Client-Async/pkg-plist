@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/Client/Async/.packlist
 %%SITE_PERL%%/Gearman/Client/Async.pm
 %%SITE_PERL%%/Gearman/Client/Async/Connection.pm

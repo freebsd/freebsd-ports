@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/dbilogstrip
 bin/dbiprof
 bin/dbiproxy

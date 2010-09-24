@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/podtohtml
 %%SITE_PERL%%/Pod/HTML_Elements.pm
 %%SITE_PERL%%/Pod/Links.pm

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/net-bittorrent.pl
 %%SITE_PERL%%/Net/BitTorrent.pm
 %%SITE_PERL%%/Net/BitTorrent/ConfigData.pm

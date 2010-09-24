@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Hash/Case/.packlist
 %%SITE_PERL%%/Hash/Case.pm
 %%SITE_PERL%%/Hash/Case.pod

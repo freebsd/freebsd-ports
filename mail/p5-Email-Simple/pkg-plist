@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Email/Simple.pm
 %%SITE_PERL%%/Email/Simple/Creator.pm
 %%SITE_PERL%%/Email/Simple/Header.pm

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Image/Heatmap.pm
 %%SITE_PERL%%/Image/Heatmap/bolilla.png
 %%SITE_PERL%%/Image/Heatmap/colors.png

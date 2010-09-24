@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FreshBooks/API/.packlist
 %%SITE_PERL%%/Net/FreshBooks/API.pm
 %%SITE_PERL%%/Net/FreshBooks/API/Base.pm

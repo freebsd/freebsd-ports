@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/SQLite/Work.pm
 %%SITE_PERL%%/SQLite/Work/CGI.pm
 %%SITE_PERL%%/SQLite/Work/Mail.pm

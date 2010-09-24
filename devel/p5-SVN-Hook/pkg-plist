@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/svnhook
 %%SITE_PERL%%/SVN/Hook.pm
 %%SITE_PERL%%/SVN/Hook/CLI.pm

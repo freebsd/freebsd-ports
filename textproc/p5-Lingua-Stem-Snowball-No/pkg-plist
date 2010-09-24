@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/stemmer-no.pl
 %%SITE_PERL%%/Lingua/Stem/Snowball/No.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball/No/.packlist

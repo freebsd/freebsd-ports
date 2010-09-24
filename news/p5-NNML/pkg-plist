@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/nnmirror
 bin/nnsync
 bin/overview

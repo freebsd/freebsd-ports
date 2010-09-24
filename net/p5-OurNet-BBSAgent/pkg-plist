@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OurNet/BBSAgent/.packlist
 %%SITE_PERL%%/OurNet/BBSAgent.pm
 %%SITE_PERL%%/OurNet/BBSAgent/aquaphoto.bbs

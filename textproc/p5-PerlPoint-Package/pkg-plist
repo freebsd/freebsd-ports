@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/perlpoint
 bin/pp2sdf
 %%SITE_PERL%%/PerlPoint/Anchors.pm

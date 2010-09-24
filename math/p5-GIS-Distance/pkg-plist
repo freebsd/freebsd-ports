@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GIS/Distance/.packlist
 %%SITE_PERL%%/GIS/Distance.pm
 %%SITE_PERL%%/GIS/Distance/Formula.pm

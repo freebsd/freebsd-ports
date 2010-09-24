@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Devel/ebug.pm
 %%SITE_PERL%%/Devel/ebug/Backend.pm
 %%SITE_PERL%%/Devel/ebug/Backend/Plugin/ActionPoints.pm

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BBS/UserInfo/SOB/.packlist
 %%SITE_PERL%%/BBS/UserInfo/SOB.pm
 @dirrmtry %%SITE_PERL%%/BBS/UserInfo

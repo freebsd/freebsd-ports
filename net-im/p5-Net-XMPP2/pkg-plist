@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/XMPP2/.packlist
 %%SITE_PERL%%/Net/XMPP2.pm
 %%SITE_PERL%%/Net/XMPP2/Client.pm

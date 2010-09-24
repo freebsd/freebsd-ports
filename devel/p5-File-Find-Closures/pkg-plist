@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Find/Closures/.packlist
 %%SITE_PERL%%/File/Find/Closures.pm
 @dirrmtry %%SITE_PERL%%/File/Find

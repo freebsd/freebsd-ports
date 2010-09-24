@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PHP/Serialization/.packlist
 %%SITE_PERL%%/PHP/Serialization.pm
 @dirrmtry %%SITE_PERL%%/PHP
