@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e4dac715-c818-11df-a92c-0015587e2cc1">
+    <topic>squid -- Denial of service vulnerability in request handling</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><ge>3.0.1</ge><lt>3.0.25_3</lt></range>
+	<range><ge>3.1.0.1</ge><lt>3.1.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Squid security advisory 2010:3 reports:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2010_3.txt">
+	  <p>Due to an internal error in string handling Squid is
+	    vulnerable to a denial of service attack when processing
+	    specially crafted requests.</p>
+	  <p>This problem allows any trusted client to perform a
+	    denial of service attack on the Squid service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-3072</cvename>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2010_3.txt</url>
+    </references>
+    <dates>
+      <discovery>2010-08-30</discovery>
+      <entry>2010-09-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8a34d9e6-c662-11df-b2e1-001b2134ef46">
     <topic>linux-flashplugin -- remote code execution</topic>
     <affects>
