@@ -15,6 +15,7 @@ etc/nikto.conf.sample
 %%DATADIR%%/plugins/db_subdomains
 %%DATADIR%%/plugins/db_tests
 %%DATADIR%%/plugins/db_variables
+%%DATADIR%%/plugins/nikto_report_msf.plugin
 %%DATADIR%%/plugins/nikto_apache_expect_xss.plugin
 %%DATADIR%%/plugins/nikto_apacheusers.plugin
 %%DATADIR%%/plugins/nikto_auth.plugin
