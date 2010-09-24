@@ -19,6 +19,8 @@ BUILD_DEPENDS=	p5-DBI>=1.61:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	cego.1:${PORTSDIR}/databases/cego
 
+BROKEN=	does not compile, lots of bad c++/xs code
+
 LICENSE=	GPLv2
 WRKSRC=		${WRKDIR}/DBD-cego
 PERL_CONFIGURE=		yes
