@@ -34,7 +34,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/boost/regex.hpp:${PORTSDIR}/devel/boost-lib
 .endif
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:15:env autoconf:267:env libtool:22:env
+USE_AUTOTOOLS=	automake:19:env autoconf:267:env libtool:22:env
 
 MAKE_JOBS_UNSAFE=	yes
 
