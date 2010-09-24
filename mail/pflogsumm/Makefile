@@ -15,7 +15,7 @@ MASTER_SITES=	http://jimsun.LinxNet.com/downloads/ \
 MAINTAINER=	flo@smeets.im
 COMMENT=	Postfix Log Entry Summarizer
 
-RUN_DEPENDS=	${SITE_PERL}//Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
+RUN_DEPENDS=	${SITE_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
 
 NO_BUILD=	yes
 USE_PERL5=	yes
