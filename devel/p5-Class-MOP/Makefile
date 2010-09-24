@@ -26,6 +26,8 @@ BUILD_DEPENDS=	p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDe
 		p5-Package-Stash>=0:${PORTSDIR}/devel/p5-Package-Stash
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+BROKEN=		cyclic dependency
+
 MAKE_JOBS_UNSAFE=	yes
 
 PERL_CONFIGURE=	5.8.1+
