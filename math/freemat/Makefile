@@ -23,6 +23,8 @@ LIB_DEPENDS=		lapack.4:${PORTSDIR}/math/lapack	\
 			pcre.0:${PORTSDIR}/devel/pcre
 BUILD_DEPENDS=		pkg-config:${PORTSDIR}/devel/pkg-config
 
+LICENSE=		GPLv2
+
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}.1${DISTVERSIONSUFFIX}
 
 .ifdef WITH_MPI
@@ -61,6 +63,13 @@ LIB_DEPENDS+=	portaudio.0:${PORTSDIR}/audio/portaudio
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800023
+# Add math functions that didn't exist until 8.x
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libs__libFN__CMakeLists.txt \
+		${FILESDIR}/extra-patch-libs__libFN__mathfunc4.cpp \
+		${FILESDIR}/extra-patch-libs__libFN__FNFun.cpp
+.endif
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
@@ -101,11 +110,11 @@ post-extract:
 	@cd ${WRKSRC} && ${FIND} . -name \*.moc.cpp -delete
 
 pre-configure:
-	${RM} ${WRKSRC}/CMakeCache.txt
+	@${RM} ${WRKSRC}/CMakeCache.txt
 
 # Avoid conflict with QT3
 post-configure:
-	${FIND} ${WRKSRC} -name Makefile | ${XARGS}	\
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS}	\
 		${REINPLACE_CMD} -e '/^QT_CFLAGS/s|-I${LOCALBASE}/include ||'
 
 post-install:
