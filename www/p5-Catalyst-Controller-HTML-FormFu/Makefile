@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	az@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Catalyst FormFu Base Controller
 
 RUN_DEPENDS=	p5-HTML-FormFu>=0.04001:${PORTSDIR}/www/p5-HTML-FormFu \

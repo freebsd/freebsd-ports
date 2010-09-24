@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/eSvn/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=	az@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI frontend for the Subversion revision system
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

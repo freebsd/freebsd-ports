@@ -11,7 +11,7 @@ PORTREVISION=	9
 CATEGORIES=	audio
 MASTER_SITES=	http://thekonst.net/download/
 
-MAINTAINER=	az@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light-weight console UI audio player application
 
 RUN_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321
