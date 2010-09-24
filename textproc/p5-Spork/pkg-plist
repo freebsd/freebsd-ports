@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/spork
 %%SITE_PERL%%/Spork.pm
 %%SITE_PERL%%/Spork/Formatter.pm

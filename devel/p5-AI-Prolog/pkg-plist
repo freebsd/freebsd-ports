@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/aiprolog
 %%SITE_PERL%%/AI/Prolog/Introduction.pod
 %%SITE_PERL%%/AI/Prolog/Article.pod

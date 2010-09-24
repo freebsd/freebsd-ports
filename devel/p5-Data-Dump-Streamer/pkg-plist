@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump/Streamer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Data/Dump/Streamer/_/Printers.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump/Streamer/Streamer.bs

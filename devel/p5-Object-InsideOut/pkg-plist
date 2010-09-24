@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/InsideOut/.packlist
 %%SITE_PERL%%/Bundle/Object/InsideOut.pm
 %%SITE_PERL%%/Object/InsideOut.pm

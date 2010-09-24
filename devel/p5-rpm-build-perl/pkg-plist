@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/perl.prov
 bin/perl.prov.files
 bin/perl.req

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Xango.pm
 %%SITE_PERL%%/Xango/Broker.pm
 %%SITE_PERL%%/Xango/Broker/Base.pm

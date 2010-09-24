@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/SSH2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/SSH2/Channel.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/SSH2/Dir.pm

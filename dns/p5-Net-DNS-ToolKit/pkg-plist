@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/Debug.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/ToolKit/Question.pm

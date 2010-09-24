@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/CGI/Framework.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Framework/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Framework

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/flickr_upload
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Flickr/Upload/.packlist
 %%SITE_PERL%%/Flickr/Upload.pm

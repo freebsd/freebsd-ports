@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/Storable/AMF.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Storable/AMF0.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Storable/AMF3.pm

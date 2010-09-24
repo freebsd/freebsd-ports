@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/WebService/CIA.pm
 %%SITE_PERL%%/WebService/CIA/Parser.pm
 %%SITE_PERL%%/WebService/CIA/Source.pm

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/project_bin
 bin/project_dir
 lib/project_dir.mk

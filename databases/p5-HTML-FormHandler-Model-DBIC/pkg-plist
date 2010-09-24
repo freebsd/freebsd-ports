@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/form_generator.pl
 %%SITE_PERL%%/HTML/FormHandler/Generator/DBIC.pm
 %%SITE_PERL%%/HTML/FormHandler/Model/DBIC.pm

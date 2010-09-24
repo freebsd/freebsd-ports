@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/DBIx/Abstract.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Abstract/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Abstract

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/treescan
 %%SITE_PERL%%/%%PERL_ARCH%%/IO/AIO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/AIO/.packlist

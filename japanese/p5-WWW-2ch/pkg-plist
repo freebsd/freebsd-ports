@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/2ch/.packlist
 %%SITE_PERL%%/WWW/2ch.pm
 %%SITE_PERL%%/WWW/2ch/Cache.pm

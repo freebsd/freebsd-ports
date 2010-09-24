@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/Set/Object.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Set/Object/Weak.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Object/.packlist

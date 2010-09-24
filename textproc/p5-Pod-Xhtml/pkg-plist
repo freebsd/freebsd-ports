@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Xhtml/.packlist
 %%SITE_PERL%%/Pod/Hyperlink/BounceURL.pm
 %%SITE_PERL%%/Pod/Xhtml.pm

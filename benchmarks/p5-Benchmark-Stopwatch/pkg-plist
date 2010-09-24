@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Benchmark/Stopwatch/.packlist
 %%SITE_PERL%%/Benchmark/Stopwatch.pm
 %%SITE_PERL%%/Benchmark/example.pl

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Apache/Session/Wrapper.pm
 @dirrmtry %%SITE_PERL%%/Apache/Session
 @dirrmtry %%SITE_PERL%%/Apache

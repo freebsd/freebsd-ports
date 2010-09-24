@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Beep/.packlist
 %%SITE_PERL%%/Audio/Beep.pm
 %%SITE_PERL%%/Audio/Beep.pod

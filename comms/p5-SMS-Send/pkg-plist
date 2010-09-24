@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/SMS/Send.pm
 %%SITE_PERL%%/SMS/Send/AU/Test.pm
 %%SITE_PERL%%/SMS/Send/Driver.pm

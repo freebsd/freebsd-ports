@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/vnccapture
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/VNC/.packlist
 %%SITE_PERL%%/Net/VNC.pm

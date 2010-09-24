@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/SMS/Send/TW/Socket2Air.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/TW/Socket2Air/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/TW/Socket2Air

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Data/ParseBinary/Data/Cap.pm
 %%SITE_PERL%%/Data/ParseBinary/Data/Netflow.pm
 %%SITE_PERL%%/Data/ParseBinary/Executable/ELF32.pm

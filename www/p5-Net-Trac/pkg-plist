@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Trac/.packlist
 %%SITE_PERL%%/Net/Trac.pm
 %%SITE_PERL%%/Net/Trac/Connection.pm

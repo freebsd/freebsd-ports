@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/objcache
 %%SITE_PERL%%/Make/Cache.pm
 %%SITE_PERL%%/Make/Cache/Gcc.pm

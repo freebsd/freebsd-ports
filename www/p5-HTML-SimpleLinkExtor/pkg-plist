@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/linktractor
 %%SITE_PERL%%/HTML/SimpleLinkExtor.pm
 %%SITE_PERL%%/auto/HTML/SimpleLinkExtor/autosplit.ix

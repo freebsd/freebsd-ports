@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Parse/CSV.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/CSV/.packlist
 @dirrmtry %%SITE_PERL%%/Parse

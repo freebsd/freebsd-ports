@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/maketext
 %%SITE_PERL%%/Locale/Maketext/Gettext.pm
 %%SITE_PERL%%/Locale/Maketext/Gettext/Functions.pm

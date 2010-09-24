@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/pmkpasswd
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/IRC/.packlist
 %%SITE_PERL%%/POE/Component/Server/IRC.pm

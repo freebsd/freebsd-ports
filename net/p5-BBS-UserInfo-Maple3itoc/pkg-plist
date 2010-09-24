@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BBS/UserInfo/Maple3itoc/.packlist
 %%SITE_PERL%%/BBS/UserInfo/Maple3itoc.pm
 @dirrmtry %%SITE_PERL%%/BBS/UserInfo

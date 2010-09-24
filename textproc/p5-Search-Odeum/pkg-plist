@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Odeum.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Odeum/Document.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Odeum/Result.pm

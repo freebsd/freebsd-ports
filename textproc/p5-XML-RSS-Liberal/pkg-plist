@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/Liberal/.packlist
 %%SITE_PERL%%/XML/RSS/Liberal.pm
 @dirrmtry %%SITE_PERL%%/XML/RSS

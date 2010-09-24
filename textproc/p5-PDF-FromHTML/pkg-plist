@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/FromHTML/.packlist
 %%SITE_PERL%%/PDF/FromHTML.pm
 %%SITE_PERL%%/PDF/FromHTML/Template.pm

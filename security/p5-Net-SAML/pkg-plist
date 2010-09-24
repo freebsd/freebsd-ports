@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%EXAMPLESDIR%%/zxid.pl
 %%EXAMPLESDIR%%/zxidhlo.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/SAML.pm

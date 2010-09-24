@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/test_version
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/HasVersion/.packlist
 %%SITE_PERL%%/Test/HasVersion.pm

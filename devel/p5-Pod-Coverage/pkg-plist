@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PORTDOCS%%%%EXAMPLESDIR%%/check_installed
 %%PORTDOCS%%%%EXAMPLESDIR%%/script-covered
 %%SITE_PERL%%/Pod/Coverage.pm

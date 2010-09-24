@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FormValidator/Lite/.packlist
 %%SITE_PERL%%/FormValidator/Lite/Constraint/File.pm
 %%SITE_PERL%%/FormValidator/Lite/Constraint/Japanese.pm

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Compare/.packlist
 %%SITE_PERL%%/Image/Compare.pm
 %%SITE_PERL%%/Image/Compare/AVG_THRESHOLD.pm

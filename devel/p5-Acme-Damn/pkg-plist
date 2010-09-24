@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Damn/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Damn/Damn.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Damn/Damn.bs

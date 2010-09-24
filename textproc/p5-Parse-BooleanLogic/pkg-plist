@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Parse/BooleanLogic.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/BooleanLogic/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/BooleanLogic

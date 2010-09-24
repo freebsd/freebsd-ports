@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Vimana.pm
 %%SITE_PERL%%/Vimana/Accessor.pm
 %%SITE_PERL%%/Vimana/Archive.pm

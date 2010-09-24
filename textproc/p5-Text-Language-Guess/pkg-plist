@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/language-guess
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Language/Guess/.packlist
 %%SITE_PERL%%/Text/Language/Guess.pm

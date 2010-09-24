@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Han/Utils/.packlist
 %%SITE_PERL%%/Lingua/Han/Utils.pm
 @dirrmtry %%SITE_PERL%%/Lingua/Han

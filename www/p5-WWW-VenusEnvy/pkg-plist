@@ -1,3 +1,2 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/WWW/VenusEnvy.pm
 @dirrmtry %%SITE_PERL%%/WWW

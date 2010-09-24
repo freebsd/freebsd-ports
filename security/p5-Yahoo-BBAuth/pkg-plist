@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Yahoo/BBAuth/.packlist
 %%SITE_PERL%%/Yahoo/BBAuth.pm
 %%WWWDIR%%/cgi-bin/testMAIL.cgi

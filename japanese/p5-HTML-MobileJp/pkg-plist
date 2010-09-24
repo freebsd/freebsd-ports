@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/MobileJp/.packlist
 %%SITE_PERL%%/HTML/MobileJp/Plugin/EZweb/Object.pm
 %%SITE_PERL%%/HTML/MobileJp/Plugin/GPS.pm

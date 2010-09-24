@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/Parser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/Parser/Install/Files.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Hooks/Parser/Install/hook_parser.h

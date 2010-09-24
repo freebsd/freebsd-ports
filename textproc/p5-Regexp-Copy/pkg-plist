@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/Regexp/Storable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Regexp/Copy.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/Copy/Copy.so

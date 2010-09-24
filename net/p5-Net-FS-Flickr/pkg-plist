@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/flickrfs
 %%SITE_PERL%%/Net/FS/Flickr.pm
 %%SITE_PERL%%/Net/FS/Flickr/Access.pm

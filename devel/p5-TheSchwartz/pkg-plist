@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/check_schwartz
 bin/schwartzmon
 bin/thetop

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Module/Compile.pm
 %%SITE_PERL%%/Module/Install/Admin/PMC.pm
 %%SITE_PERL%%/Module/Install/PMC.pm

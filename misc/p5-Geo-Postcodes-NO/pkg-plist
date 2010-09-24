@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Postcodes/NO/.packlist
 %%SITE_PERL%%/Geo/Postcodes/NO.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Postcodes/NO

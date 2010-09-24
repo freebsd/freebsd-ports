@@ -1,3 +1,2 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Class/Inflate.pm
 @dirrmtry %%SITE_PERL%%/Class

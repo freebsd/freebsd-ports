@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/CGI/Minimal.pm
 %%SITE_PERL%%/CGI/Minimal.pod
 %%SITE_PERL%%/CGI/Minimal/Misc.pm

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Net/Blogger.pm
 %%SITE_PERL%%/Net/Blogger/API/Core.pm
 %%SITE_PERL%%/Net/Blogger/API/Extended.pm

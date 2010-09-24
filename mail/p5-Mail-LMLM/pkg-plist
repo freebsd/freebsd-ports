@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/COPYING
 %%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Hamakor.pm
 %%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Iglu.pm

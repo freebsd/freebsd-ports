@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/SAML/Response/.packlist
 %%SITE_PERL%%/Google/SAML/Response.pm
 @dirrmtry %%SITE_PERL%%/Google/SAML

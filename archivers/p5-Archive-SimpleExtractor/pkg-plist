@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Archive/SimpleExtractor/Zip.pm
 %%SITE_PERL%%/Archive/SimpleExtractor/Tar.pm
 %%SITE_PERL%%/Archive/SimpleExtractor/Rar.pm

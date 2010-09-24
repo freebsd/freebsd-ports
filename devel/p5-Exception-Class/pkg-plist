@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Exception/Class/.packlist
 %%SITE_PERL%%/Exception/Class.pm
 %%SITE_PERL%%/Exception/Class/Base.pm

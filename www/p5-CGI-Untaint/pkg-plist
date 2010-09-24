@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/CGI/Untaint.pm
 %%SITE_PERL%%/CGI/Untaint/hex.pm
 %%SITE_PERL%%/CGI/Untaint/integer.pm

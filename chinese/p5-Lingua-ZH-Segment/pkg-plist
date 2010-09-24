@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/ZH/Segment/.packlist
 %%SITE_PERL%%/Lingua/ZH/Segment.pm
 @dirrmtry %%SITE_PERL%%/Lingua/ZH

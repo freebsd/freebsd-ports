@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/Daemon/Generic.pod
 %%SITE_PERL%%/Daemon/Generic.pm
 %%SITE_PERL%%/Daemon/Generic/Event.pm

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/CNMap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/CNMap/cnmapwx.wdr
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/CNMap/cnmapwx_wdr.pl

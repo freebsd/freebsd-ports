@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/File/Slurp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Slurp/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Slurp

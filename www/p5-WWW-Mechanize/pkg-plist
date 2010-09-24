@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/mech-dump
 %%SITE_PERL%%/WWW/Mechanize.pm
 %%SITE_PERL%%/WWW/Mechanize/Cookbook.pod

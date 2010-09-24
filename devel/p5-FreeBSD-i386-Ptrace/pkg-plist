@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/FreeBSD/i386/Ptrace/Syscall.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/FreeBSD/i386/Ptrace.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/i386/Ptrace/Ptrace.so

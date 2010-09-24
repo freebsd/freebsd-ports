@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%EXAMPLESDIR%%/bench_decode.pl
 %%EXAMPLESDIR%%/bench_encode.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Convert/Bencode_XS.pm

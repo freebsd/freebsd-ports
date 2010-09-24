@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Data/ConfigHash/.packlist
 %%SITE_PERL%%/Class/Data/ConfigHash.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Data/ConfigHash

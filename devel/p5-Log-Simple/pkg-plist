@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Simple/.packlist
 %%SITE_PERL%%/Log/Simple.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Simple

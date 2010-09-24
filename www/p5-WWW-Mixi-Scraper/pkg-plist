@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mixi/Scraper/.packlist
 %%SITE_PERL%%/WWW/Mixi/Scraper.pm
 %%SITE_PERL%%/WWW/Mixi/Scraper/Utils.pm

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ObjectDriver/.packlist
 %%SITE_PERL%%/Data/ObjectDriver.pm
 %%SITE_PERL%%/Data/ObjectDriver/BaseObject.pm

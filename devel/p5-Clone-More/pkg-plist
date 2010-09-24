@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone/More/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone/More/More.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clone/More/More.so

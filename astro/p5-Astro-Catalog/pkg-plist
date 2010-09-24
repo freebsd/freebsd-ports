@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/etc/sss.cfg %D/etc/sss.cfg.default; then rm -f %D/etc/sss.cfg; fi
 etc/sss.cfg.default
 @exec [ -f %B/sss.cfg ] || cp %B/%f %B/sss.cfg

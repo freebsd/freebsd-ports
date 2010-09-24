@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/XML/WBXML.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/WBXML/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/WBXML/WBXML.bs

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/DBIx/Class/QueryLog/Analyzer.pm
 %%SITE_PERL%%/DBIx/Class/QueryLog/Transaction.pm
 %%SITE_PERL%%/DBIx/Class/QueryLog/Query.pm

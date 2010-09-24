@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PORTDOCS%%%%DOCSDIR%%/fsck-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/memcache-support.txt
 %%PORTDOCS%%%%DOCSDIR%%/pluggable-replication-policies.txt
