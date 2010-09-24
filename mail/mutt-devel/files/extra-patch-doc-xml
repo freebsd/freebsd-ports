@@ -1,11 +1,11 @@
---- doc/Makefile.am.orig2	Tue Mar  6 17:40:41 2007
-+++ doc/Makefile.am	Tue Mar  6 17:42:51 2007
-@@ -42,7 +42,7 @@
- all: ../makedoc$(EXEEXT)
- 	$(MAKE) makedoc-all
+--- doc/Makefile.am.orig	2010-09-17 16:23:30.000000000 +0200
++++ doc/Makefile.am	2010-09-17 16:25:01.000000000 +0200
+@@ -47,7 +47,7 @@
  
--makedoc-all: mutt.1 muttrc.man
-+makedoc-all: mutt.1 muttrc.man manual.html stamp-doc-chunked manual.txt
+ all: makedoc-all
+ 
+-makedoc-all: mutt.1 smime_keys.1 muttrc.man
++makedoc-all: mutt.1 smime_keys.1 muttrc.man manual.html stamp-doc-chunked manual.txt
  
  install-data-local: makedoc-all instdoc
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
