@@ -15,7 +15,7 @@ COMMENT=	Shows package dependencies in tree views
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	automake:15 autoconf:267
+USE_AUTOTOOLS=	automake:14 autoconf:267
 AUTOMAKE_ARGS=	--add-missing
 USE_GMAKE=	yes
 PLIST_FILES=	bin/gpkgdep
