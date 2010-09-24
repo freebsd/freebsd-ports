@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	brix
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	CGI search application built on Xapian
 
-LIB_DEPENDS=	xapian.21:${PORTSDIR}/databases/xapian-core
+LIB_DEPENDS=	xapian.23:${PORTSDIR}/databases/xapian-core
 
 LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
