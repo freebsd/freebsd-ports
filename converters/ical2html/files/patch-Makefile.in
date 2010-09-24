@@ -1,11 +1,11 @@
---- Makefile.in.orig	Wed Apr 13 12:49:01 2005
-+++ Makefile.in	Wed Apr 13 12:48:37 2005
-@@ -89,7 +89,7 @@
- am__quote = @am__quote@
+--- Makefile.in.orig	2010-09-24 09:06:46.749411950 +0200
++++ Makefile.in	2010-09-24 09:07:34.047574887 +0200
+@@ -145,7 +145,7 @@
  bindir = @bindir@
  build_alias = @build_alias@
+ builddir = @builddir@
 -datadir = @datadir@
 +datadir = @datadir@/ical2html
- exec_prefix = @exec_prefix@
- host_alias = @host_alias@
- includedir = @includedir@
+ datarootdir = @datarootdir@
+ docdir = @docdir@
+ dvidir = @dvidir@
