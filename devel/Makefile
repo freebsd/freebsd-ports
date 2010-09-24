@@ -72,7 +72,6 @@
     SUBDIR += automake110
     SUBDIR += automake111
     SUBDIR += automake14
-    SUBDIR += automake15
     SUBDIR += automake19
     SUBDIR += automoc4
     SUBDIR += autotools
