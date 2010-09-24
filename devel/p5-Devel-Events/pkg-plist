@@ -19,7 +19,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Events/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Events
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/Devel/Events/Handler/Log
 @dirrmtry %%SITE_PERL%%/Devel/Events/Handler
 @dirrmtry %%SITE_PERL%%/Devel/Events/Generator

@@ -4,7 +4,6 @@
 @dirrmtry %%SITE_PERL%%/mach/auto/Catalyst/Plugin/Unicode
 @dirrmtry %%SITE_PERL%%/mach/auto/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/mach/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/mach/auto
 @dirrmtry %%SITE_PERL%%/mach
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Unicode
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin

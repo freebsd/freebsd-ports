@@ -12,7 +12,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/TableMatrix/autosplit.ix
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/TableMatrix
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Tk/TableMatrix
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Tk

@@ -23,4 +23,3 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role/WithOverloading
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Role
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto

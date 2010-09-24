@@ -7,5 +7,4 @@
 @dirrmtry %%SITE_PERL%%/Plucene/Plugin/Analyzer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plucene
 @dirrmtry %%SITE_PERL%%/Plucene/Plugin
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/Plucene

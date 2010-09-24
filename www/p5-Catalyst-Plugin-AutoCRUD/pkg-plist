@@ -48,7 +48,6 @@
 @dirrmtry %%SITE_PERL%%/auto/Catalyst/Plugin/AutoCRUD
 @dirrmtry %%SITE_PERL%%/auto/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/auto
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/View
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Controller
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/AutoCRUD/Model
@@ -66,6 +65,5 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/AutoCRUD
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrmtry blib/script

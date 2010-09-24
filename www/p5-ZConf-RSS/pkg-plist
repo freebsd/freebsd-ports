@@ -8,6 +8,5 @@ bin/zcrss-managetemplates
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/RSS/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/RSS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/ZConf/RSS
 @dirrmtry %%SITE_PERL%%/ZConf

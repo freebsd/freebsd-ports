@@ -11,7 +11,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/USB/USB.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/USB
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Device/USB
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Device
 @dirrmtry %%SITE_PERL%%/mach

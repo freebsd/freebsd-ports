@@ -6,7 +6,6 @@
 @dirrmtry %%SITE_PERL%%/auto/HTML/FormFu/Imager
 @dirrmtry %%SITE_PERL%%/auto/HTML/FormFu
 @dirrmtry %%SITE_PERL%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/auto
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Validator/Imager
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Validator
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Transformer
@@ -17,6 +16,5 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu/Imager
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrmtry blib/script

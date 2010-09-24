@@ -2,5 +2,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx/MapMaker/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx/MapMaker
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/DBICx

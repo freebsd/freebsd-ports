@@ -5,6 +5,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FreeDB/autosplit.ix
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FreeDB
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%

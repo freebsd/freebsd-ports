@@ -10,7 +10,6 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate/URI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/auto/Data/Validate/URI
 @dirrmtry %%SITE_PERL%%/auto/Data/Validate
 @dirrmtry %%SITE_PERL%%/auto/Data
