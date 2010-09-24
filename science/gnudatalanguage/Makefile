@@ -33,6 +33,8 @@ LIB_DEPENDS+=	plplotd.9:${PORTSDIR}/math/plplot	\
 		gsl.15:${PORTSDIR}/math/gsl		\
 		dps.0:${PORTSDIR}/x11/dgs
 
+BROKEN=		does not build
+
 USE_GCC=	4.4+
 USE_WX=		2.8
 GNU_CONFIGURE=	yes
@@ -93,10 +95,6 @@ CONFIGURE_ARGS+=--with-python=no
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=	Does not build on FreeBSD-7
-.endif
 
 .if defined(PACKAGE_BUILDING) || exists(${LOCALBASE}/lib/libfftw3.so)
 WITH_FFTW3=	yes
