@@ -1,0 +1,11 @@
+include/vdpau/vdpau.h
+include/vdpau/vdpau_x11.h
+lib/libvdpau.la
+lib/libvdpau.so
+lib/libvdpau.so.1
+lib/vdpau/libvdpau_trace.la
+lib/vdpau/libvdpau_trace.so
+lib/vdpau/libvdpau_trace.so.1
+libdata/pkgconfig/vdpau.pc
+@dirrm include/vdpau
+@dirrmtry lib/vdpau
