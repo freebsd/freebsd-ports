@@ -1,6 +1,6 @@
-%%SITE_PERL%%/mach/auto/Chemistry/File/SLN/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File/SLN/.packlist
 %%SITE_PERL%%/Chemistry/File/SLN/Parser.pm
 %%SITE_PERL%%/Chemistry/File/SLN.pm
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry/File/SLN
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry/File
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File/SLN
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File
 @dirrmtry %%SITE_PERL%%/Chemistry/File/SLN

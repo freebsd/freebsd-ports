@@ -1,5 +1,5 @@
-%%SITE_PERL%%/mach/auto/Chemistry/FormulaPattern/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/FormulaPattern/.packlist
 %%SITE_PERL%%/Chemistry/File/FormulaPattern.pm
 %%SITE_PERL%%/Chemistry/FormulaPattern.pm
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry/FormulaPattern
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/FormulaPattern
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry

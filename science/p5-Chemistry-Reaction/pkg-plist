@@ -1,4 +1,4 @@
 %%SITE_PERL%%/Chemistry/Reaction.pm
-%%SITE_PERL%%/mach/auto/Chemistry/Reaction/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry/Reaction
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Reaction/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Reaction
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry

@@ -1,4 +1,4 @@
 %%SITE_PERL%%/Chemistry/Canonicalize.pm
-%%SITE_PERL%%/mach/auto/Chemistry/Canonicalize/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry/Canonicalize
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Canonicalize/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Canonicalize
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry

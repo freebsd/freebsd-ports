@@ -1,5 +1,5 @@
-%%SITE_PERL%%/mach/auto/Chemistry/Isotope/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Isotope/.packlist
 %%SITE_PERL%%/Chemistry/Isotope.pm
 @dirrmtry %%SITE_PERL%%/Chemistry
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry/Isotope
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Isotope
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry

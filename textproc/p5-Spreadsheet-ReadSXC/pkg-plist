@@ -1,5 +1,5 @@
-%%SITE_PERL%%/mach/auto/Spreadsheet/ReadSXC/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/ReadSXC/.packlist
 %%SITE_PERL%%/Spreadsheet/ReadSXC.pm
 @dirrmtry %%SITE_PERL%%/Spreadsheet
-@dirrmtry %%SITE_PERL%%/mach/auto/Spreadsheet/ReadSXC
-@dirrmtry %%SITE_PERL%%/mach/auto/Spreadsheet
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet/ReadSXC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Spreadsheet

@@ -1,9 +1,9 @@
 %%SITE_PERL%%/Catalyst/Plugin/Unicode/Encoding.pm
-%%SITE_PERL%%/mach/auto/Catalyst/Plugin/Unicode/Encoding/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/Catalyst/Plugin/Unicode/Encoding
-@dirrmtry %%SITE_PERL%%/mach/auto/Catalyst/Plugin/Unicode
-@dirrmtry %%SITE_PERL%%/mach/auto/Catalyst/Plugin
-@dirrmtry %%SITE_PERL%%/mach/auto/Catalyst
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Unicode/Encoding/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Unicode/Encoding
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Unicode
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
 @dirrmtry %%SITE_PERL%%/mach
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Unicode
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin

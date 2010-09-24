@@ -31,7 +31,7 @@
 %%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Counter.pm
 %%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Number.pm
 %%SITE_PERL%%/MooseX/AttributeHelpers/Trait/String.pm
-@dirrmtry %%SITE_PERL%%/mach/auto/MooseX
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
 @dirrmtry %%SITE_PERL%%/MooseX/AttributeHelpers/Trait/Collection
 @dirrmtry %%SITE_PERL%%/MooseX/AttributeHelpers/Trait
 @dirrmtry %%SITE_PERL%%/MooseX/AttributeHelpers/MethodProvider

@@ -1,5 +1,5 @@
-%%SITE_PERL%%/mach/auto/Chemistry/Ring/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Ring/.packlist
 %%SITE_PERL%%/Chemistry/Ring/Find.pm
 %%SITE_PERL%%/Chemistry/Ring.pm
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry/Ring
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Ring
 @dirrmtry %%SITE_PERL%%/Chemistry/Ring

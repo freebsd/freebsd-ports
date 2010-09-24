@@ -1,4 +1,4 @@
 bin/mok
 %%SITE_PERL%%/Chemistry/Mok.pm
-%%SITE_PERL%%/mach/auto/Chemistry/Mok/.packlist
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry/Mok
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Mok/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Mok

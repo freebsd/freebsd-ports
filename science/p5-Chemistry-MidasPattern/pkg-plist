@@ -1,5 +1,5 @@
-%%SITE_PERL%%/mach/auto/Chemistry/MidasPattern/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/MidasPattern/.packlist
 %%SITE_PERL%%/Chemistry/File/MidasPattern.pm
 %%SITE_PERL%%/Chemistry/MidasPattern.pm
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry/MidasPattern
-@dirrmtry %%SITE_PERL%%/mach/auto/Chemistry
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/MidasPattern
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry

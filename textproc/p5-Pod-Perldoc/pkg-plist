@@ -11,7 +11,7 @@
 %%SITE_PERL%%/Pod/Perldoc/ToXml.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Perldoc/.packlist
 %%SITE_PERL%%/perldoc.pod
-@dirrm %%SITE_PERL%%/mach/auto/Pod/Perldoc
-@dirrmtry %%SITE_PERL%%/mach/auto/Pod
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Perldoc
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod
 @dirrm %%SITE_PERL%%/Pod/Perldoc
 @dirrmtry %%SITE_PERL%%/Pod

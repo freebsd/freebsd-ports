@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Test/Net/RabbitMQ.pm
-%%SITE_PERL%%/mach/auto/Test/Net/RabbitMQ/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Net/RabbitMQ/.packlist
 @dirrmtry %%SITE_PERL%%/Test/Net
-@dirrmtry %%SITE_PERL%%/mach/auto/Test/Net/RabbitMQ
-@dirrmtry %%SITE_PERL%%/mach/auto/Test/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Net/RabbitMQ
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Net
