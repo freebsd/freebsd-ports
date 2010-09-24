@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to the Facebook API
 
 RUN_DEPENDS=	rubygem-hpricot>=0.6.0:${PORTSDIR}/www/rubygem-hpricot \
