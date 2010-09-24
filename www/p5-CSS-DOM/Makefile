@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CSS-DOM
-PORTVERSION=	0.10
+PORTVERSION=	0.13
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CSS
@@ -15,13 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Document Object Model for Cascading Style Sheets
 
-RUN_DEPENDS=	p5-constant-lexical>0:${PORTSDIR}/devel/p5-constant-lexical \
-		p5-Clone>=0.09:${PORTSDIR}/devel/p5-Clone \
-		p5-Graphics-ColorNames-WWW>=0:${PORTSDIR}/graphics/p5-Graphics-ColorNames-WWW \
-		p5-Tie-Util>=0:${PORTSDIR}/devel/p5-Tie-Util
+RUN_DEPENDS=	p5-Clone>=0.09:${PORTSDIR}/devel/p5-Clone
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
-USE_PERL5=	5.8.8+
+PERL_CONFIGURE=	5.8.2+
 
 MAN3=		CSS::DOM.3 \
 		CSS::DOM::Array.3 \
@@ -46,4 +43,10 @@ MAN3=		CSS::DOM.3 \
 		CSS::DOM::Value::List.3 \
 		CSS::DOM::Value::Primitive.3 \
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500807
+RUN_DEPENDS+=	p5-Encode>=2.1:${PORTSDIR}/converters/p5-Encode
+.endif
+
+.include <bsd.port.post.mk>
