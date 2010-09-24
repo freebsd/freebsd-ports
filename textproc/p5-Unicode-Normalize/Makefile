@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Unicode-Normalize
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN/../../authors/id/S/SA/SADAHIRO
 PKGNAMEPREFIX=	p5-
