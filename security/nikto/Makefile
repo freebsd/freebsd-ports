@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	nikto
-PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTVERSION=	2.1.3
 PORTEPOCH=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.cirt.net/${PORTNAME}/ \
