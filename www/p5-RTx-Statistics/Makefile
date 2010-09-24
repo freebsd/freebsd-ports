@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
 		${RT_PATH}/lib/RT.pm:${PORTSDIR}/www/rt36
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=	bad plist
+
 PERL_CONFIGURE=	5.8.3+
 
 RT_PATH?=	${LOCALBASE}/rt3
