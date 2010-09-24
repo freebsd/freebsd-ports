@@ -7,6 +7,7 @@
 
 PORTNAME=	visualboyadvance-m
 PORTVERSION=	1.8.0r${SVN_REV}
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://update.cooltrainer.org/emulators/visualboyadvance-m/
 
@@ -51,8 +52,14 @@ PLIST_SUB+=	GVBAM="@comment "
 CMAKE_ARGS+=	-DNO_GTK:BOOL=yes
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/CMakeScripts/FindSFML.cmake
+
 post-install:
 	-@update-desktop-database
+	@if [ ! -f ${PREFIX}/etc/vbam.cfg ]; then \
+		${CP} -p ${PREFIX}/etc/vbam.cfg-example ${PREFIX}/etc/vbam.cfg ; \
+	fi
 
 maint-gen-distfile:
 	@if [ -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \

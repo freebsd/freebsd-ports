@@ -1,6 +1,6 @@
 VisualBoyAdvance-M is an emulator of the Game Boy, Super Game Boy,
 Game Boy Color, and Game Boy Advance. The -M fork is a collection
 of community patches to the original VisualBoyAdvance. It includes an
-option GTK frontend.
+optional GTK frontend.
 
 WWW: http://vba-m.com/
