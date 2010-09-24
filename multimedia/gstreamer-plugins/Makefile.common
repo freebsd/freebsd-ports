@@ -527,7 +527,7 @@ gst_gst_v4l2_GST_PLUGIN_DIR=sys/v4l2
 gst_gst_v4l2_DIST=	good
 
 # vdpau
-gst_vdpau_LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/x11/nvidia-driver
+gst_vdpau_LIB_DEPENDS+=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
 gst_vdpau_GST_PLUGIN_DIR=sys/vdpau
 gst_vdpau_PLIST_FILES=	${GST_INC_DIR}/gst/vdpau/gstvdp.h \
 			${GST_INC_DIR}/gst/vdpau/gstvdpbuffer.h \
