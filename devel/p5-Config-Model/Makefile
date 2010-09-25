@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	1.206
+PORTVERSION=	1.209
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,24 +15,26 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Model to create configuration validation tool
 
-BUILD_DEPENDS=	p5-Carp-Assert-More>=0:${PORTSDIR}/devel/p5-Carp-Assert-More \
+RUN_DEPENDS=	p5-Carp-Assert-More>=0:${PORTSDIR}/devel/p5-Carp-Assert-More \
 		p5-Exception-Class>=0:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-Log-Log4perl>=1.11:${PORTSDIR}/devel/p5-Log-Log4perl \
-		p5-Parse-RecDescent>=1.90.0:${PORTSDIR}/devel/p5-Parse-RecDescent \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
-		p5-Config-Tiny>=0:${PORTSDIR}/devel/p5-Config-Tiny \
+		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
+		p5-Parse-RecDescent>=v1.90.0:${PORTSDIR}/devel/p5-Parse-RecDescent \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Warn>=0.11:${PORTSDIR}/devel/p5-Test-Warn \
 		p5-Text-Template>=0:${PORTSDIR}/textproc/p5-Text-Template
-RUN_DEPENDS:=	${BUILD_DEPENDS} p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
-TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Test-Warn>=0.11:${PORTSDIR}/devel/p5-Test-Warn
 
-PERL_MODBUILD=	yes
+PERL_MODBUILD=	5.8.0+
 
-MAN1=		config-edit.1 config-edit-popcon.1
+MAN1=		config-edit.1 config-edit-dep5.1 config-edit-popcon.1
+
 MAN3=		Config::Model.3 Config::Model::AnyId.3 \
 		Config::Model::Annotation.3 \
 		Config::Model::AnyThing.3 Config::Model::AutoRead.3 \
 		Config::Model::Backend::Any.3 \
+		Config::Model::Backend::Debian::Dep5.3 \
 		Config::Model::Backend::IniFile.3 \
 		Config::Model::Backend::ShellVar.3 \
 		Config::Model::Backend::Yaml.3 \
