@@ -15,10 +15,6 @@ include/kmymoney/kmymoney_export.h
 include/kmymoney/kmymoneyaccountcombo.h
 include/kmymoney/kmymoneyaccountcompletion.h
 include/kmymoney/kmymoneyaccountselector.h
-include/kmymoney/kmymoneyaccounttree.h
-include/kmymoney/kmymoneyaccounttreebase.h
-include/kmymoney/kmymoneyaccounttreebudget.h
-include/kmymoney/kmymoneyaccounttreeforecast.h
 include/kmymoney/kmymoneycategory.h
 include/kmymoney/kmymoneychecklistitem.h
 include/kmymoney/kmymoneycombo.h
@@ -28,7 +24,6 @@ include/kmymoney/kmymoneydateinput.h
 include/kmymoney/kmymoneyedit.h
 include/kmymoney/kmymoneyglobalsettings.h
 include/kmymoney/kmymoneylineedit.h
-include/kmymoney/kmymoneylistviewitem.h
 include/kmymoney/kmymoneymvccombo.h
 include/kmymoney/kmymoneyplugin.h
 include/kmymoney/kmymoneyreportconfigtabimpl.h
@@ -416,10 +411,8 @@ share/apps/kmymoney/icons/oxygen/scalable/apps/transaction-report.svgz
 share/apps/kmymoney/icons/oxygen/scalable/apps/transaction.svgz
 share/apps/kmymoney/kmymoneyui.rc
 share/apps/kmymoney/misc/financequote.pl
-share/apps/kmymoney/pics/l10n/de/.directory
 share/apps/kmymoney/pics/l10n/de/startlogo.png
 share/apps/kmymoney/pics/l10n/es/startlogo.png
-share/apps/kmymoney/pics/l10n/ro/.directory
 share/apps/kmymoney/pics/l10n/ro/startlogo.png
 share/apps/kmymoney/pics/l10n/ru/startlogo.png
 share/apps/kmymoney/pics/l10n/uk/startlogo.png
@@ -741,9 +734,6 @@ share/doc/HTML/en/kmymoney/accounts_view.png
 share/doc/HTML/en/kmymoney/accwiz1.png
 share/doc/HTML/en/kmymoney/accwiz10.png
 share/doc/HTML/en/kmymoney/accwiz2.png
-share/doc/HTML/en/kmymoney/accwiz3.png
-share/doc/HTML/en/kmymoney/accwiz4.png
-share/doc/HTML/en/kmymoney/accwiz5.png
 share/doc/HTML/en/kmymoney/accwiz6.png
 share/doc/HTML/en/kmymoney/accwiz7.png
 share/doc/HTML/en/kmymoney/accwiz8.1.png
@@ -765,13 +755,11 @@ share/doc/HTML/en/kmymoney/credits.docbook
 share/doc/HTML/en/kmymoney/currency_newpriceentry.png
 share/doc/HTML/en/kmymoney/currency_priceeditor.png
 share/doc/HTML/en/kmymoney/date_widget.png
-share/doc/HTML/en/kmymoney/default_prompt.png
 share/doc/HTML/en/kmymoney/details-accounts.docbook
 share/doc/HTML/en/kmymoney/details-budgets.docbook
 share/doc/HTML/en/kmymoney/details-categories.docbook
 share/doc/HTML/en/kmymoney/details-currencies.docbook
 share/doc/HTML/en/kmymoney/details-database.docbook
-share/doc/HTML/en/kmymoney/details-files.docbook
 share/doc/HTML/en/kmymoney/details-forecast.docbook
 share/doc/HTML/en/kmymoney/details-formats.docbook
 share/doc/HTML/en/kmymoney/details-impexp.docbook
@@ -787,6 +775,7 @@ share/doc/HTML/en/kmymoney/details-search.docbook
 share/doc/HTML/en/kmymoney/details-settings.docbook
 share/doc/HTML/en/kmymoney/details-widgets.docbook
 share/doc/HTML/en/kmymoney/enterschedule.png
+share/doc/HTML/en/kmymoney/faq.docbook
 share/doc/HTML/en/kmymoney/find-account.png
 share/doc/HTML/en/kmymoney/find-amount.png
 share/doc/HTML/en/kmymoney/find-category.png
@@ -794,7 +783,6 @@ share/doc/HTML/en/kmymoney/find-date.png
 share/doc/HTML/en/kmymoney/find-details.png
 share/doc/HTML/en/kmymoney/find-payee.png
 share/doc/HTML/en/kmymoney/find-text.png
-share/doc/HTML/en/kmymoney/finddlg.png
 share/doc/HTML/en/kmymoney/firsttime.docbook
 share/doc/HTML/en/kmymoney/forecast_view.png
 share/doc/HTML/en/kmymoney/generate_sql.png
@@ -804,6 +792,7 @@ share/doc/HTML/en/kmymoney/gnucash-select_price_source.png
 share/doc/HTML/en/kmymoney/home_view.png
 share/doc/HTML/en/kmymoney/index.cache.bz2
 share/doc/HTML/en/kmymoney/index.docbook
+share/doc/HTML/en/kmymoney/installation.docbook
 share/doc/HTML/en/kmymoney/institution_options.png
 share/doc/HTML/en/kmymoney/institution_view.png
 share/doc/HTML/en/kmymoney/institutions_view.png
@@ -814,9 +803,7 @@ share/doc/HTML/en/kmymoney/investment-onlineupdate.png
 share/doc/HTML/en/kmymoney/investment-transactionform.png
 share/doc/HTML/en/kmymoney/investments_summarytab.png
 share/doc/HTML/en/kmymoney/investments_view.png
-share/doc/HTML/en/kmymoney/kmt.png
 share/doc/HTML/en/kmymoney/ledger_more.png
-share/doc/HTML/en/kmymoney/ledgers.png
 share/doc/HTML/en/kmymoney/ledgers_view.png
 share/doc/HTML/en/kmymoney/ledgerview-numbered.png
 share/doc/HTML/en/kmymoney/mainwindow_numbered.png
@@ -843,16 +830,16 @@ share/doc/HTML/en/kmymoney/qif_report.png
 share/doc/HTML/en/kmymoney/qifimport-export.png
 share/doc/HTML/en/kmymoney/qifimport-qifprofiledate.png
 share/doc/HTML/en/kmymoney/qifimport-qifprofileeditor.png
-share/doc/HTML/en/kmymoney/qifimport.png
 share/doc/HTML/en/kmymoney/qifimportverify.png
 share/doc/HTML/en/kmymoney/qifopen.png
+share/doc/HTML/en/kmymoney/reconcile-redo.png
 share/doc/HTML/en/kmymoney/reconcile.png
 share/doc/HTML/en/kmymoney/reconcile1.png
 share/doc/HTML/en/kmymoney/reconcile2.png
 share/doc/HTML/en/kmymoney/reconcile3.png
 share/doc/HTML/en/kmymoney/reconcile4.png
+share/doc/HTML/en/kmymoney/reconcile5.png
 share/doc/HTML/en/kmymoney/reference.docbook
-share/doc/HTML/en/kmymoney/register.png
 share/doc/HTML/en/kmymoney/report_configuration-reporttab.png
 share/doc/HTML/en/kmymoney/report_configuration-rowscolumns.png
 share/doc/HTML/en/kmymoney/reports_view-all.png
@@ -860,7 +847,6 @@ share/doc/HTML/en/kmymoney/reports_view.png
 share/doc/HTML/en/kmymoney/schedcaltypes.png
 share/doc/HTML/en/kmymoney/schedmonthday.png
 share/doc/HTML/en/kmymoney/schedpopup.png
-share/doc/HTML/en/kmymoney/schedule.png
 share/doc/HTML/en/kmymoney/schedule_view.png
 share/doc/HTML/en/kmymoney/scheduleview.png
 share/doc/HTML/en/kmymoney/select_currency.png
@@ -873,6 +859,36 @@ share/doc/HTML/en/kmymoney/transactionform.png
 share/doc/HTML/en/kmymoney/translist.png
 share/doc/HTML/en/kmymoney/value_widget.png
 share/doc/HTML/en/kmymoney/whatsnew.docbook
+share/doc/HTML/es/kmymoney/common
+share/doc/HTML/es/kmymoney/credits.docbook
+share/doc/HTML/es/kmymoney/details-accounts.docbook
+share/doc/HTML/es/kmymoney/details-budgets.docbook
+share/doc/HTML/es/kmymoney/details-categories.docbook
+share/doc/HTML/es/kmymoney/details-currencies.docbook
+share/doc/HTML/es/kmymoney/details-database.docbook
+share/doc/HTML/es/kmymoney/details-files.docbook
+share/doc/HTML/es/kmymoney/details-forecast.docbook
+share/doc/HTML/es/kmymoney/details-formats.docbook
+share/doc/HTML/es/kmymoney/details-impexp.docbook
+share/doc/HTML/es/kmymoney/details-institutions.docbook
+share/doc/HTML/es/kmymoney/details-investments.docbook
+share/doc/HTML/es/kmymoney/details-ledgers.docbook
+share/doc/HTML/es/kmymoney/details-loans.docbook
+share/doc/HTML/es/kmymoney/details-payees.docbook
+share/doc/HTML/es/kmymoney/details-reconciliation.docbook
+share/doc/HTML/es/kmymoney/details-reports.docbook
+share/doc/HTML/es/kmymoney/details-schedules.docbook
+share/doc/HTML/es/kmymoney/details-search.docbook
+share/doc/HTML/es/kmymoney/details-settings.docbook
+share/doc/HTML/es/kmymoney/details-widgets.docbook
+share/doc/HTML/es/kmymoney/firsttime.docbook
+share/doc/HTML/es/kmymoney/index.cache.bz2
+share/doc/HTML/es/kmymoney/index.docbook
+share/doc/HTML/es/kmymoney/introduction.docbook
+share/doc/HTML/es/kmymoney/makemostof.docbook
+share/doc/HTML/es/kmymoney/man-kmymoney.1.docbook
+share/doc/HTML/es/kmymoney/reference.docbook
+share/doc/HTML/es/kmymoney/whatsnew.docbook
 share/doc/HTML/it/kmymoney/common
 share/doc/HTML/it/kmymoney/credits.docbook
 share/doc/HTML/it/kmymoney/details-accounts.docbook
@@ -880,7 +896,6 @@ share/doc/HTML/it/kmymoney/details-budgets.docbook
 share/doc/HTML/it/kmymoney/details-categories.docbook
 share/doc/HTML/it/kmymoney/details-currencies.docbook
 share/doc/HTML/it/kmymoney/details-database.docbook
-share/doc/HTML/it/kmymoney/details-files.docbook
 share/doc/HTML/it/kmymoney/details-forecast.docbook
 share/doc/HTML/it/kmymoney/details-formats.docbook
 share/doc/HTML/it/kmymoney/details-hbciofx.docbook
@@ -897,9 +912,11 @@ share/doc/HTML/it/kmymoney/details-schedules.docbook
 share/doc/HTML/it/kmymoney/details-search.docbook
 share/doc/HTML/it/kmymoney/details-settings.docbook
 share/doc/HTML/it/kmymoney/details-widgets.docbook
+share/doc/HTML/it/kmymoney/faq.docbook
 share/doc/HTML/it/kmymoney/firsttime.docbook
 share/doc/HTML/it/kmymoney/index.cache.bz2
 share/doc/HTML/it/kmymoney/index.docbook
+share/doc/HTML/it/kmymoney/installation.docbook
 share/doc/HTML/it/kmymoney/introduction.docbook
 share/doc/HTML/it/kmymoney/makemostof.docbook
 share/doc/HTML/it/kmymoney/man-kmymoney.1.docbook
@@ -913,13 +930,10 @@ share/doc/HTML/pt_BR/kmymoney/details-budgets.docbook
 share/doc/HTML/pt_BR/kmymoney/details-categories.docbook
 share/doc/HTML/pt_BR/kmymoney/details-currencies.docbook
 share/doc/HTML/pt_BR/kmymoney/details-database.docbook
-share/doc/HTML/pt_BR/kmymoney/details-files.docbook
 share/doc/HTML/pt_BR/kmymoney/details-forecast.docbook
 share/doc/HTML/pt_BR/kmymoney/details-formats.docbook
-share/doc/HTML/pt_BR/kmymoney/details-hbciofx.docbook
 share/doc/HTML/pt_BR/kmymoney/details-impexp.docbook
 share/doc/HTML/pt_BR/kmymoney/details-institutions.docbook
-share/doc/HTML/pt_BR/kmymoney/details-integrity.docbook
 share/doc/HTML/pt_BR/kmymoney/details-investments.docbook
 share/doc/HTML/pt_BR/kmymoney/details-ledgers.docbook
 share/doc/HTML/pt_BR/kmymoney/details-loans.docbook
@@ -930,13 +944,14 @@ share/doc/HTML/pt_BR/kmymoney/details-schedules.docbook
 share/doc/HTML/pt_BR/kmymoney/details-search.docbook
 share/doc/HTML/pt_BR/kmymoney/details-settings.docbook
 share/doc/HTML/pt_BR/kmymoney/details-widgets.docbook
+share/doc/HTML/pt_BR/kmymoney/faq.docbook
 share/doc/HTML/pt_BR/kmymoney/firsttime.docbook
 share/doc/HTML/pt_BR/kmymoney/index.cache.bz2
 share/doc/HTML/pt_BR/kmymoney/index.docbook
+share/doc/HTML/pt_BR/kmymoney/installation.docbook
 share/doc/HTML/pt_BR/kmymoney/introduction.docbook
 share/doc/HTML/pt_BR/kmymoney/makemostof.docbook
 share/doc/HTML/pt_BR/kmymoney/man-kmymoney.1.docbook
-share/doc/HTML/pt_BR/kmymoney/otherdoc.docbook
 share/doc/HTML/pt_BR/kmymoney/reference.docbook
 share/doc/HTML/pt_BR/kmymoney/whatsnew.docbook
 share/doc/HTML/sv/kmymoney/common
@@ -946,13 +961,10 @@ share/doc/HTML/sv/kmymoney/details-budgets.docbook
 share/doc/HTML/sv/kmymoney/details-categories.docbook
 share/doc/HTML/sv/kmymoney/details-currencies.docbook
 share/doc/HTML/sv/kmymoney/details-database.docbook
-share/doc/HTML/sv/kmymoney/details-files.docbook
 share/doc/HTML/sv/kmymoney/details-forecast.docbook
 share/doc/HTML/sv/kmymoney/details-formats.docbook
-share/doc/HTML/sv/kmymoney/details-hbciofx.docbook
 share/doc/HTML/sv/kmymoney/details-impexp.docbook
 share/doc/HTML/sv/kmymoney/details-institutions.docbook
-share/doc/HTML/sv/kmymoney/details-integrity.docbook
 share/doc/HTML/sv/kmymoney/details-investments.docbook
 share/doc/HTML/sv/kmymoney/details-ledgers.docbook
 share/doc/HTML/sv/kmymoney/details-loans.docbook
@@ -963,13 +975,14 @@ share/doc/HTML/sv/kmymoney/details-schedules.docbook
 share/doc/HTML/sv/kmymoney/details-search.docbook
 share/doc/HTML/sv/kmymoney/details-settings.docbook
 share/doc/HTML/sv/kmymoney/details-widgets.docbook
+share/doc/HTML/sv/kmymoney/faq.docbook
 share/doc/HTML/sv/kmymoney/firsttime.docbook
 share/doc/HTML/sv/kmymoney/index.cache.bz2
 share/doc/HTML/sv/kmymoney/index.docbook
+share/doc/HTML/sv/kmymoney/installation.docbook
 share/doc/HTML/sv/kmymoney/introduction.docbook
 share/doc/HTML/sv/kmymoney/makemostof.docbook
 share/doc/HTML/sv/kmymoney/man-kmymoney.1.docbook
-share/doc/HTML/sv/kmymoney/otherdoc.docbook
 share/doc/HTML/sv/kmymoney/reference.docbook
 share/doc/HTML/sv/kmymoney/whatsnew.docbook
 share/doc/HTML/uk/kmymoney/common
@@ -979,13 +992,10 @@ share/doc/HTML/uk/kmymoney/details-budgets.docbook
 share/doc/HTML/uk/kmymoney/details-categories.docbook
 share/doc/HTML/uk/kmymoney/details-currencies.docbook
 share/doc/HTML/uk/kmymoney/details-database.docbook
-share/doc/HTML/uk/kmymoney/details-files.docbook
 share/doc/HTML/uk/kmymoney/details-forecast.docbook
 share/doc/HTML/uk/kmymoney/details-formats.docbook
-share/doc/HTML/uk/kmymoney/details-hbciofx.docbook
 share/doc/HTML/uk/kmymoney/details-impexp.docbook
 share/doc/HTML/uk/kmymoney/details-institutions.docbook
-share/doc/HTML/uk/kmymoney/details-integrity.docbook
 share/doc/HTML/uk/kmymoney/details-investments.docbook
 share/doc/HTML/uk/kmymoney/details-ledgers.docbook
 share/doc/HTML/uk/kmymoney/details-loans.docbook
@@ -996,14 +1006,23 @@ share/doc/HTML/uk/kmymoney/details-schedules.docbook
 share/doc/HTML/uk/kmymoney/details-search.docbook
 share/doc/HTML/uk/kmymoney/details-settings.docbook
 share/doc/HTML/uk/kmymoney/details-widgets.docbook
+share/doc/HTML/uk/kmymoney/faq.docbook
 share/doc/HTML/uk/kmymoney/firsttime.docbook
 share/doc/HTML/uk/kmymoney/index.cache.bz2
 share/doc/HTML/uk/kmymoney/index.docbook
+share/doc/HTML/uk/kmymoney/installation.docbook
 share/doc/HTML/uk/kmymoney/introduction.docbook
+share/doc/HTML/uk/kmymoney/mainwindow_numbered.png
 share/doc/HTML/uk/kmymoney/makemostof.docbook
 share/doc/HTML/uk/kmymoney/man-kmymoney.1.docbook
-share/doc/HTML/uk/kmymoney/otherdoc.docbook
+share/doc/HTML/uk/kmymoney/newfile-2.png
+share/doc/HTML/uk/kmymoney/newfile-3.png
+share/doc/HTML/uk/kmymoney/newfile-4.png
+share/doc/HTML/uk/kmymoney/newfile-5.png
+share/doc/HTML/uk/kmymoney/newfile-6.png
+share/doc/HTML/uk/kmymoney/newfile.png
 share/doc/HTML/uk/kmymoney/reference.docbook
+share/doc/HTML/uk/kmymoney/tipofday.png
 share/doc/HTML/uk/kmymoney/whatsnew.docbook
 share/icons/locolor/16x16/apps/kmymoney.png
 share/icons/locolor/32x32/apps/kmymoney.png
@@ -1038,12 +1057,14 @@ share/locale/en_GB/LC_MESSAGES/kmymoney.mo
 share/locale/eo/LC_MESSAGES/kmymoney.mo
 share/locale/es/LC_MESSAGES/kmymoney.mo
 share/locale/et/LC_MESSAGES/kmymoney.mo
+share/locale/eu/LC_MESSAGES/kmymoney.mo
 share/locale/fi/LC_MESSAGES/kmymoney.mo
 share/locale/fr/LC_MESSAGES/kmymoney.mo
 share/locale/ga/LC_MESSAGES/kmymoney.mo
 share/locale/gl/LC_MESSAGES/kmymoney.mo
 share/locale/hu/LC_MESSAGES/kmymoney.mo
 share/locale/it/LC_MESSAGES/kmymoney.mo
+share/locale/ja/LC_MESSAGES/kmymoney.mo
 share/locale/lt/LC_MESSAGES/kmymoney.mo
 share/locale/ms/LC_MESSAGES/kmymoney.mo
 share/locale/nds/LC_MESSAGES/kmymoney.mo
@@ -1070,6 +1091,7 @@ share/mime/packages/x-kmymoney.xml
 @dirrm share/doc/HTML/sv/kmymoney
 @dirrm share/doc/HTML/pt_BR/kmymoney
 @dirrm share/doc/HTML/it/kmymoney
+@dirrm share/doc/HTML/es/kmymoney
 @dirrm share/doc/HTML/en/kmymoney
 @dirrm share/apps/kmymoney/templates/zh_TW
 @dirrm share/apps/kmymoney/templates/zh_HK

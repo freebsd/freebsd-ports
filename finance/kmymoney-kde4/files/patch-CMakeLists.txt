@@ -1,0 +1,24 @@
+--- ./CMakeLists.txt.orig	2010-08-16 06:55:14.000000000 -0400
++++ ./CMakeLists.txt	2010-08-23 03:51:38.000000000 -0400
+@@ -78,13 +78,6 @@
+   ADD_CUSTOM_TARGET(apidoc ${DOXYGEN} ${CMAKE_CURRENT_BINARY_DIR}/kmymoney.doxygen)
+ ENDIF(DOXYGEN_FOUND)
+ 
+-# check for PkgConfig
+-FIND_PACKAGE(PkgConfig)
+-# check for some modules we require
+-pkg_check_modules (PKGS libxml-2.0 libxml++-2.6 glib-2.0 glibmm-2.4)
+-# this sets variables like ${PKGS_INCLUDE_DIRS} ${PKGS_LIBRARY_DIRS}
+-# (cf. /usr/share/cmake/Modules/FindPkgConfig.cmake for more info)
+-
+ # check some functions
+ INCLUDE (CheckFunctionExists) 
+ CHECK_FUNCTION_EXISTS(atoll HAVE_ATOLL)
+@@ -113,7 +106,6 @@
+ CHECK_TYPE_SIZE(short SIZEOF_SHORT)
+ CHECK_TYPE_SIZE(size_t SIZEOF_SIZE_T)
+ CHECK_TYPE_SIZE("unsigned long" SIZEOF_UNSIGNED_LONG)
+-CHECK_TYPE_SIZE("long double" SIZEOF_LONG_DOUBLE)
+ 
+ MARK_AS_ADVANCED(
+   KDE4_KCFGC_EXECUTABLE KDE4_KDECORE_LIBRARY KDECONFIG_EXECUTABLE)

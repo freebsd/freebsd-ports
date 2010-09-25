@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	kmymoney
-PORTVERSION=	3.98.1
+PORTVERSION=	4.5
 CATEGORIES=	finance
-MASTER_SITES=	SF/${PORTNAME}2/KMyMoney-KDE4/3.98
+MASTER_SITES=	SF/${PORTNAME}2/KMyMoney-KDE4/${PORTVERSION}
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	KDE 4.x-based personal finance manager
@@ -19,7 +19,7 @@ LIB_DEPENDS=	boost_graph.4:${PORTSDIR}/devel/boost-libs
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus network phonon qt3support sql svg xml \
+QT_COMPONENTS=	gui dbus network phonon sql svg xml \
 		qmake_build moc_build rcc_build uic_build
 USE_KDE4=	kdehier kdeprefix automoc4 kdelibs pimlibs sharedmime
 USE_LDCONFIG=	yes
@@ -49,6 +49,7 @@ PLIST_SUB+=	WITH_CALENDAR="@comment "
 
 .if defined(WITH_KBANKING)
 LIB_DEPENDS+=	aqbanking.31:${PORTSDIR}/finance/aqbanking
+QT_COMPONENTS+=	qt3support
 CMAKE_ARGS+=	-DENABLE_KBANKING:BOOL=ON
 PLIST_SUB+=	WITH_KBANKING=""
 .else
@@ -66,7 +67,7 @@ PLIST_SUB+=	WITH_OFX="@comment "
 .endif
 
 .if defined(WITH_QUOTES)
-USE_PERL5=	yes
+USE_PERL5_RUN=	yes
 RUN_DEPENDS+=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 		${SITE_PERL}/Finance/Quote.pm:${PORTSDIR}/finance/p5-Finance-Quote \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
