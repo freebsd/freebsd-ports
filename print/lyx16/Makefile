@@ -20,6 +20,8 @@ COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG) (stable)
 
 LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs
 
+LICENSE=	GPLv2
+
 CONFLICTS=	lyx-1.4*
 MAJOR_VERSION=	1.6
 
