@@ -524,6 +524,9 @@ bin/zeopasswd
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/scripts/tests/test_doc.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/scripts/tests/test_doc.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/scripts/tests/test_doc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/scripts/tests/test_fstest.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/scripts/tests/test_fstest.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/scripts/tests/test_fstest.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/scripts/tests/test_repozo.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/scripts/tests/test_repozo.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ZODB/scripts/tests/test_repozo.pyo
