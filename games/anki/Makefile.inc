@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	anki
-PORTVERSION=	0.9.9.8.5
-PORTREVISION=	1
+PORTVERSION=	1.0.1
+PORTREVISION?=	0
 CATEGORIES=	games
-MASTER_SITES=	http://ichi2.net/anki/download/files/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
 
 USE_PYTHON=	yes
@@ -28,6 +28,12 @@ QT_COMPONENTS=	corelib gui
 PYDISTUTILS_PKGNAME=	ankiqt
 
 PORT_VERBS=	ankiqt
+DESKTOP_ENTRIES=	"${PORTNAME}" \
+		"${COMMENT}" \
+		"" \
+		"anki" \
+		"Education;Languages;Qt;" \
+		false
 .else
 BUILD_DEPENDS=	${PYNUMPY} \
 		py*-pysqlite>=0:${PORTSDIR}/databases/py-pysqlite23 \

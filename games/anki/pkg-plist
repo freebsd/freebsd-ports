@@ -93,27 +93,44 @@ bin/anki
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/icons_rc.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/icons_rc.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ar/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/az/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/bg/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/cs/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/da/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/de/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/el/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/en_GB/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/eo/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/es/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/et/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fa/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fi/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fr/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/gu/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/he/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/hu/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/it/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ja/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ko/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/lt/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/mn/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ms/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nb/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nl/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/oc/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pl/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt_BR/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ro/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ru/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sl/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sv/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tlh/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tr/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/uk/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/vi/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_CN/LC_MESSAGES/ankiqt.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_HK/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_TW/LC_MESSAGES/ankiqt.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui/__init__.pyc
@@ -196,24 +213,44 @@ bin/anki
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/ui
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_TW/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_TW
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_HK/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_HK
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_CN/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/vi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/vi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/uk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/uk
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tlh/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/tlh
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sv/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sv
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/sl
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ru/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ru
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ro/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ro
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt_BR/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pt
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pl/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/pl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/oc/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/oc
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nl/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nl
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nb/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/nb
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ms/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ms
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/mn/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/mn
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/lt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/lt
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ko/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ko
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ja/LC_MESSAGES
@@ -224,20 +261,34 @@ bin/anki
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/hu
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/he/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/he
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/gu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/gu
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fr/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fr
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fi/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fa/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/fa
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/et/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/et
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/es/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/es
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/eo/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/eo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/en_GB/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/en_GB
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/el/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/el
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/de/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/da/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/da
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/cs/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/cs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/bg/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/bg
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/az/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/az
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ar/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale/ar
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ankiqt/locale
