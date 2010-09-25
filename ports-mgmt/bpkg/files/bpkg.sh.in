@@ -81,7 +81,7 @@ pkg_info-xI()
 		info_fn
 	
 		if [ -z "$info" ]; then
-			pwd=`cat /usr/ports/INDEX-$re | grep /$e.*'|'/ |
+			pwd=`cat /usr/ports/INDEX-$re | grep /$e'|'/ |
 			    cut -d'|' -f2 | cut -d/ -f4,5`
 			echo "*** not installed ***"
 			for i in $pwd; do
@@ -193,7 +193,7 @@ pkg_info-xf()
 		info_fn
 	
 		if [ -z "$info" ]; then
-			pwd=`cat /usr/ports/INDEX-$re | grep /$e.*'|'/ |
+			pwd=`cat /usr/ports/INDEX-$re | grep /$e'|'/ |
 			    cut -d'|' -f2 | cut -d/ -f4,5`
 			echo "*** not installed ***"
 			for i in $pwd; do
@@ -262,7 +262,7 @@ pkg_path()
 	re=`uname -r | cut -d. -f1`
 
 	for e in $pkg; do
-		pwd=`cat /usr/ports/INDEX-$re | grep /$e.*'|'/ |
+		pwd=`cat /usr/ports/INDEX-$re | grep /$e'|'/ |
 		    cut -d'|' -f2 | cut -d/ -f4,5`
 		for i in $pwd; do
 			echo "$i: `cat /usr/ports/INDEX-$re |
@@ -402,9 +402,9 @@ pkg_clean()
 pkg_clean2()
 {
 	root
-	echo "Cleaning /usr/ports/distfiles/* and /usr/ports/*/*/work/"
+	echo "Cleaning /usr/ports/distfiles/* and /usr/ports/*/*/work"
 	rm -rf /usr/ports/distfiles/* 1>/dev/null 2>&1
-	rm -rf /usr/ports/*/*/work/ 1>/dev/null 2>&1
+	rm -rf /usr/ports/*/*/work 1>/dev/null 2>&1
 	echo "Done."
 	exit 0
 }
@@ -450,9 +450,9 @@ pkg_backup_all()
 	local e
 
 	root
-	echo "Creating backup packages in /var/tmp/bpkg/"
-	[ ! -d /var/tmp/bpkg/ ] && mkdir /var/tmp/bpkg/
-	cd /var/tmp/bpkg/
+	echo "Creating backup packages in /var/tmp/bpkg"
+	[ ! -d /var/tmp/bpkg/ ] && mkdir /var/tmp/bpkg
+	cd /var/tmp/bpkg
 
 	for e in `pkg_info -Ea`; do
 		pkg_create -b "$e" 1>/dev/null 2>&1
@@ -478,7 +478,7 @@ make_showc()
 		info_fn
 
 		if [ -z "$info" ]; then
-			pwd=`cat /usr/ports/INDEX-$re | grep /$e.*'|'/ |
+			pwd=`cat /usr/ports/INDEX-$re | grep /$e'|'/ |
 			    cut -d'|' -f2 | cut -d/ -f4,5`
 			for i in $pwd; do
 				echo "*** not installed ***"
@@ -522,7 +522,7 @@ make_rmc()
 		info_fn
 	
 		if [ -z "$info" ]; then
-			pwd=`cat /usr/ports/INDEX-$re | grep /$e.*'|'/ |
+			pwd=`cat /usr/ports/INDEX-$re | grep /$e'|'/ |
 			    cut -d'|' -f2 | cut -d/ -f4,5`
 			for i in $pwd; do
 				echo "*** not installed ***"
@@ -567,7 +567,7 @@ make_config()
 		info_fn
 
 		if [ -z "$info" ]; then
-			pwd=`cat /usr/ports/INDEX-$re | grep /$e.*'|'/ |
+			pwd=`cat /usr/ports/INDEX-$re | grep /$e'|'/ |
 			    cut -d'|' -f2 | cut -d/ -f4,5`
 			for i in $pwd; do
 				echo "*** not installed ***"
@@ -633,7 +633,7 @@ show_work()
 	for e in $pkg; do
 		info_fn
 		if [ -z "$info" ]; then
-			pwd=`cat /usr/ports/INDEX-$re | grep /$e.*'|'/ |
+			pwd=`cat /usr/ports/INDEX-$re | grep /$e'|'/ |
 			    cut -d'|' -f2 | cut -d/ -f4,5`
 			for i in $pwd; do
 				/usr/local/sbin/portmaster --show-work $i
