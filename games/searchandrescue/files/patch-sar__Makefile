@@ -3,15 +3,15 @@
 @@ -1,12 +1,12 @@
  # Platform Configurator generated Makefile
  #
--PREFIX = /usr
+-PREFIX = $(DESTDIR)/usr/
 +PREFIX = %%PREFIX%%
  
--CFLAGS = -Wall -O2 -funroll-loops -fomit-frame-pointer -ffast-math -finline-functions -fexpensive-optimizations -D__USE_BSD -DUSE_XSHM -DHAVE_MWMUTIL_H -DHAVE_LIBXPM -DHAVE_XF86_VIDMODE -Wno-write-strings -DHAVE_SDL_MIXER -I/usr/local/include
+-CFLAGS = -Wall -O6 -funroll-loops -fomit-frame-pointer -ffast-math -finline-functions -fexpensive-optimizations -D__USE_BSD -DHAVE_SDL_MIXER -Wno-write-strings -DUSE_XSHM -DHAVE_MWMUTIL_H -DHAVE_LIBXPM -DHAVE_XF86_VIDMODE
 +CFLAGS = -Wall -O6 -funroll-loops -fomit-frame-pointer -ffast-math -D__USE_BSD -DUSE_XSHM -DHAVE_MWMUTIL_H -DHAVE_LIBXPM -DHAVE_XF86_VIDMODE -DHAVE_SDL_MIXER -I/usr/local/include
  
  INC_DIRS =
  
--LIBS = -lm -lSM -lICE -lX11 -lXext -lXi -lXmu -lXpm -lXxf86vm -lGL -lGLU -lpthread -lSDL -lSDL_mixer
+-LIBS = -lm -lSDL -lSDL_mixer -lSM -lICE -lX11 -lXext -lXmu -lXpm -lXxf86vm -lGL -lGLU -lpthread
 +LIBS = -lm -lSM -lICE -lX11 -lXext -lXmu -lXpm -lXxf86vm -lGL -lGLU -lSDL -lSDL_mixer
  
  LIB_DIRS =  -L/usr/X11R6/lib/ -L/usr/X11R6/lib/ -L/usr/X11R6/lib/
@@ -24,16 +24,4 @@
 +LSFLAGS = -s -h -c
  RM      = rm
  RMFLAGS = -f
- 
-@@ -56,9 +56,8 @@
- 	@echo "Building program \"$(BIN)\"..."
- 
- postbuild:
--	@echo "Build done. To install..."
--	@echo "On Ubuntu and related distributions type \"sudo make install\"."
--	@echo "On most other distributions, type \"su\" to gain root privileges and then type \"make install\"."
-+	@echo "Build done."
-+	@echo "To install, type \"su\" (to gain root privileges) and then type \"make install\"."
- 
- all: $(BIN)
  
