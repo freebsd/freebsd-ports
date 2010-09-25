@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	Config-AutoConf
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to implement some of AutoConf macros
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Config::AutoConf.3 Config::AutoConf::Linker.3
+MAN3=		Config::AutoConf.3
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/AutoConf/.packlist
 %%SITE_PERL%%/Config/AutoConf.pm
-%%SITE_PERL%%/Config/AutoConf/Linker.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/AutoConf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config
 @dirrm %%SITE_PERL%%/Config/AutoConf
