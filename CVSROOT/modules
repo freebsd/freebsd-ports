@@ -785,7 +785,6 @@ automake-wrapper                ports/devel/automake-wrapper
 automake110                     ports/devel/automake110
 automake111                     ports/devel/automake111
 automake14                      ports/devel/automake14
-automake15                      ports/devel/automake15
 automake19                      ports/devel/automake19
 automoc4                        ports/devel/automoc4
 automounter                     ports/sysutils/automounter
@@ -21231,6 +21230,7 @@ py-sslstrip                     ports/security/py-sslstrip
 py-statgrab                     ports/devel/py-statgrab
 py-stripogram                   ports/textproc/py-stripogram
 py-subversion                   ports/devel/py-subversion
+py-subvertpy                    ports/devel/py-subvertpy
 py-supervisor                   ports/sysutils/py-supervisor
 py-supybot                      ports/irc/py-supybot
 py-supybot-plugins              ports/irc/py-supybot-plugins
@@ -21595,7 +21595,7 @@ qmrtg                           ports/mail/qmrtg
 qnetchess                       ports/games/qnetchess
 qnetwalk                        ports/games/qnetwalk
 qnxstyle                        ports/x11-themes/qnxstyle
-qoauth                          ports/devel/qoauth
+qoauth                          ports/net/qoauth
 qonk                            ports/games/qonk
 qore                            ports/lang/qore
 qorganizer                      ports/deskutils/qorganizer
