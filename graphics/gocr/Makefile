@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gocr
-PORTVERSION=	0.48
-PORTREVISION=	2
+PORTVERSION=	0.49
 CATEGORIES=	graphics
 MASTER_SITES=	http://www-e.uni-magdeburg.de/jschulen/ocr/
 
