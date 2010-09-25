@@ -1953,7 +1953,7 @@ bin/iReport
 %%JAVAJARDIR%%/iTextAsian.jar
 %%JAVAJARDIR%%/jasperreports-chart-themes-3.7.4.jar
 %%JAVAJARDIR%%/jasperreports-extensions-3.5.3.jar
-%%JAVAJARDIR%%/jasperreports-fonts-3.7.4.jar
+%%JAVAJARDIR%%/jasperreports-fonts-3.7.5.jar
 %%JAVAJARDIR%%/javacup.jar
 %%JAVAJARDIR%%/javassist-3.4.GA.jar
 %%JAVAJARDIR%%/jdt-compiler-3.1.1-LICENSE.html
@@ -1964,7 +1964,7 @@ bin/iReport
 %%JAVAJARDIR%%/js_wsdl4j-1.5.1.jar
 %%JAVAJARDIR%%/jta.jar
 %%JAVAJARDIR%%/jxl-2.6-LICENSE.txt
-%%JAVAJARDIR%%/jxl-2.6.jar
+%%JAVAJARDIR%%/jxl-2.6.10.jar
 %%JAVAJARDIR%%/mondrian-3.1.1.12687-Jaspersoft.jar
 %%JAVAJARDIR%%/mondrian-3.1.1.12687-LICENSE.html
 %%JAVAJARDIR%%/olap4j-0.9.7.145.jar
