@@ -25,6 +25,8 @@ USE_LINUX_APPS+=dri
 
 RESTRICTED=	no distribution permitted
 
+BROKEN=		does not fetch
+
 ONLY_FOR_ARCHS=	i386 amd64
 # needs f8 or higher
 USE_LINUX=	yes
