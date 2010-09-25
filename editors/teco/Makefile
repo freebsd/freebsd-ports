@@ -12,7 +12,7 @@ MASTER_SITES=	http://almy.us/files/
 DISTNAME=	tecoclinux${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
-COMMENT=	Powerful and compact editor with nongrafical user interface
+COMMENT=	Powerful and compact editor with nongraphical user interface
 
 MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/tecoc${PORTVERSION}
