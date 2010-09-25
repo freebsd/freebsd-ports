@@ -1,5 +1,5 @@
---- base/util.cc.org	2010-09-18 12:31:34.023397161 +0900
-+++ base/util.cc	2010-09-18 12:34:43.496234072 +0900
+--- base/util.cc.org	2010-09-25 11:03:37.453334648 +0900
++++ base/util.cc	2010-09-25 11:04:14.026334568 +0900
 @@ -1525,9 +1525,13 @@
    return MacUtil::GetServerDirectory();
  #endif  // OS_MACOSX
