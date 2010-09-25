@@ -52,7 +52,6 @@ OPTIONS?=	GNUTLS		"Build with GNUTLS library" on \
 		XPDF		"Build pdftops with XPDF" off \
 		XDG_OPEN	"Build with XDG_OPEN as browser" off
 
-UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 CUPS_ETCDIR=	${PREFIX}/etc/cups
 CUPS_SPOOLDIR=	/var/spool/cups
 CUPS_SOCKET?=	/var/run/cups.sock
