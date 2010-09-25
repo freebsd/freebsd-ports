@@ -1,5 +1,5 @@
---- ipc/unix_ipc.cc.org	2010-09-18 12:52:17.569066513 +0900
-+++ ipc/unix_ipc.cc	2010-09-18 12:56:22.118871027 +0900
+--- ipc/unix_ipc.cc.org	2010-09-25 11:11:08.117335240 +0900
++++ ipc/unix_ipc.cc	2010-09-25 11:14:56.074335641 +0900
 @@ -41,7 +41,7 @@
  #include <sys/time.h>
  #include <sys/types.h>
@@ -27,7 +27,7 @@
    // On ARM Linux, we do nothing and just return true since the platform (at
    // least the qemu emulator) doesn't support the getsockopt(sock, SOL_SOCKET,
    // SO_PEERCRED) system call.
-@@ -306,7 +306,7 @@
+@@ -311,7 +311,7 @@
      address.sun_family = AF_UNIX;
      ::memcpy(address.sun_path, server_address.data(), server_address_length);
      address.sun_path[server_address_length] = '\0';
@@ -36,7 +36,7 @@
      address.sun_len = SUN_LEN(&address);
      const size_t sun_len = sizeof(address);
  #else
-@@ -412,21 +412,21 @@
+@@ -431,21 +431,21 @@
                 SO_REUSEADDR,
                 reinterpret_cast<char *>(&on),
                 sizeof(on));
