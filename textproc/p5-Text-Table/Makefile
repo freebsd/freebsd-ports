@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Table
-PORTVERSION=	1.114
+PORTVERSION=	1.116
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Organize Data in Tables
 
-BUILD_DEPENDS=	${SITE_PERL}/Text/Aligner.pm:${PORTSDIR}/textproc/p5-Text-Aligner
+BUILD_DEPENDS=	p5-Text-Aligner>=0.05:${PORTSDIR}/textproc/p5-Text-Aligner
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
