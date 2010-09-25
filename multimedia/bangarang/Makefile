@@ -16,6 +16,8 @@ COMMENT=       A media player for KDE4
 
 LIB_DEPENDS=	kcddb.5:${PORTSDIR}/multimedia/kdemultimedia4
 
+BROKEN=		does not compile
+
 USE_CMAKE=     yes
 USE_GMAKE=     yes
 USE_QT_VER=    4
@@ -27,10 +29,4 @@ MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=        ${WRKDIR}/bangarang-bangarang
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
