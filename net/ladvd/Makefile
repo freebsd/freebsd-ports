@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	ladvd
-PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTVERSION=	0.9.2
 CATEGORIES=	net
-MASTER_SITES=	http://blinkenlights.nl/software/ladvd/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+		http://blinkenlights.nl/software/ladvd/
 
 MAINTAINER=	sten@blinkenlights.nl
-COMMENT=	A minimal CDP/LLDP daemon
+COMMENT=	A minimal LLDP/CDP daemon
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+
+LICENSE=	BSD
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-chroot-dir=/var/empty
