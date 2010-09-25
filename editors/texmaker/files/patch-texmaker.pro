@@ -1,6 +1,6 @@
---- ./texmaker.pro.orig	2009-05-12 14:43:45.000000000 +0400
-+++ ./texmaker.pro	2009-07-06 11:00:46.000000000 +0400
-@@ -200,13 +200,6 @@
+--- ./texmaker.pro.orig	2010-07-29 19:40:36.000000000 +0400
++++ ./texmaker.pro	2010-09-25 13:58:07.841559115 +0400
+@@ -222,13 +222,6 @@
  	utilities/AUTHORS \
  	utilities/COPYING \
  	utilities/CHANGELOG.txt \
@@ -11,10 +11,10 @@
 -	utilities/texmaker64x64.png \
 -	utilities/texmaker128x128.png \
 -	utilities/texmaker.svg \
+ 	locale/qt_cs.qm \
  	locale/qt_de.qm \
  	locale/qt_es.qm \
- 	locale/qt_fr.qm \
-@@ -246,6 +239,21 @@
+@@ -270,6 +263,21 @@
  icon.path = $${ICONDIR}
  icon.files = utilities/texmaker.png
  INSTALLS += icon
