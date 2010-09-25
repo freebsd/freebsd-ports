@@ -5,9 +5,10 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	0
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spaced-repetition memory training library
-PORTREVISION=	2
 
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MASTERDIR=	${.CURDIR}/../anki
