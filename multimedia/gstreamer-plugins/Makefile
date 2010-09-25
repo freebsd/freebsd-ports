@@ -95,6 +95,9 @@ WRKSRC=${WRKDIR}/${BAD_DISTNAME}
 PORTVERSION=	${BAD_PORTVERSION}
 DISTFILES+=	${BAD_DISTFILE}:bad
 PATCHDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins-bad/files
+.if ${OSVERSION} < 700000
+BROKEN=		does not configure properly on 6.X (shm plugin)
+.endif
 .elif ${DIST}=="ugly"
 EXTRACT_ONLY=${UGLY_DISTFILE}
 WRKSRC=${WRKDIR}/${UGLY_DISTNAME}
