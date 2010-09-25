@@ -8,6 +8,7 @@
 %%SITE_PERL%%/Geo/KML/xsd/kml-2.2-beta/kml22beta.xsd
 %%SITE_PERL%%/Geo/KML/xsd/kml-2.2.0/ReadMe.txt
 %%SITE_PERL%%/Geo/KML/xsd/kml-2.2.0/ogckml22.xsd
+%%SITE_PERL%%/Geo/KML/xsd/kml-2.2.0/kml22gx.xsd
 %%SITE_PERL%%/Geo/KML/xsd/xal-2.0/xAL.xsd
 %%SITE_PERL%%/Geo/KML/xsd/kml-2.1/kml21.xsd
 @dirrmtry %%SITE_PERL%%/Geo/KML/xsd/atom-2005
