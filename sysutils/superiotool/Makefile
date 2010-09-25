@@ -37,6 +37,8 @@ gen-dist:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/share/man/#/man/#g' -e 's#-ansi##g' \
+		-Ee '\#^(CC|INSTALL|PREFIX)#s#=#?=#' \
+		-e '\#^CFLAGS#s#=#+=#' -e 's#-O2##' \
 		${WRKSRC}/Makefile
 
 .include <bsd.port.pre.mk>
