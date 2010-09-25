@@ -26,6 +26,9 @@ ALL_TARGET=	jars all-jar
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 TARGET_DIR=	${WRKSRC}/${PORTNAME}-${PORTVERSION}
 
+# Prevent out of memory error during build
+MAKE_ENV+=	"ANT_OPTS=-Xmx512m"
+
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	javadoc
 .endif
