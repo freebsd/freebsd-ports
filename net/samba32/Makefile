@@ -81,6 +81,10 @@ OPTIONS=	LDAP		"With LDAP support" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+#EXTRA_PATCHES+=	${PATCHDIR}/autoconf267-on-freebsd6.patch
+.endif
+
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
