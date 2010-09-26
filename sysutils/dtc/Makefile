@@ -40,6 +40,8 @@ RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_log_sql.so:${PORTSDIR}/www/mod_log
 		${LOCALBASE}/sbin/logrotate:${PORTSDIR}/sysutils/logrotate \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 
+BROKEN=		bad dependency object
+
 CONFLICTS=	dtc-toaster-[0-9]* dtc-postfix-courier-[0-9]*
 
 USE_GETTEXT=	yes
