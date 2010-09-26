@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	squidclamav
-PORTVERSION=	5.3
-PORTREVISION=	1
+PORTVERSION=	5.4
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -23,6 +22,7 @@ NO_LATEST_LINK=	yes
 SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.dist
+MAN1=		${PORTNAME}.1
 
 post-configure:
 	@${REINPLACE_CMD} -E 's|^(LDFLAGS = ).*|\1-L${LOCALBASE}/lib|' \
@@ -31,6 +31,7 @@ post-configure:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/etc/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.dist
+	@${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${MANPREFIX}/man/man1/${PORTNAME}.1
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
