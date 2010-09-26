@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kid3
-PORTVERSION=	1.4
-PORTREVISION=	4
+PORTVERSION=	1.5
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-kde4
@@ -33,9 +32,5 @@ MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include" \
 		-DCMAKE_REQUIRED_LIBRARIES:STRING="${PTHREAD_LIBS}"
-
-post-patch:
-	${REINPLACE_CMD} -e 's,V4.1-Based Variant V1.0,V4.2-Based Variant V1.1,g' \
-		${WRKSRC}/doc/*/index.docbook
 
 .include <bsd.port.mk>
