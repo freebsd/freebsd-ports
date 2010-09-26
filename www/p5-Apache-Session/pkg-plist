@@ -27,9 +27,6 @@
 %%SITE_PERL%%/Apache/Session/Store/Postgres.pm
 %%SITE_PERL%%/Apache/Session/Store/Sybase.pm
 %%SITE_PERL%%/Apache/Session/Sybase.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
 @dirrm %%SITE_PERL%%/Apache/Session/Store
 @dirrm %%SITE_PERL%%/Apache/Session/Serialize
 @dirrm %%SITE_PERL%%/Apache/Session/Lock
