@@ -23,6 +23,7 @@ share/locale/nl/LC_MESSAGES/kid3.mo
 share/locale/pl/LC_MESSAGES/kid3.mo
 share/locale/ru/LC_MESSAGES/kid3.mo
 share/locale/tr/LC_MESSAGES/kid3.mo
+share/locale/zh_TW/LC_MESSAGES/kid3.mo
 @dirrm share/doc/HTML/en/kid3
 @dirrm share/doc/HTML/de/kid3
 @dirrm share/apps/kid3
