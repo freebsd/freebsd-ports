@@ -8285,6 +8285,7 @@ libvanessa_adt                  ports/devel/libvanessa_adt
 libvanessa_logger               ports/devel/libvanessa_logger
 libvanessa_socket               ports/devel/libvanessa_socket
 libvc                           ports/devel/libvc
+libvdpau                        ports/multimedia/libvdpau
 libvisual                       ports/graphics/libvisual
 libvisual-plugins               ports/graphics/libvisual-plugins
 libvisual04                     ports/graphics/libvisual04
@@ -24962,6 +24963,7 @@ vde2                            ports/net/vde2
 vdesk                           ports/x11/vdesk
 vdk                             ports/x11-toolkits/vdk
 vdkbuilder                      ports/x11-toolkits/vdkbuilder
+vdpauinfo                       ports/multimedia/vdpauinfo
 vdrift                          ports/games/vdrift
 vdrift-data                     ports/games/vdrift-data
 vectoroids                      ports/games/vectoroids
