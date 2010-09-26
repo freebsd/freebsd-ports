@@ -1013,6 +1013,7 @@
     SUBDIR += spread4
     SUBDIR += sprinkle
     SUBDIR += spserver
+    SUBDIR += sqtop
     SUBDIR += ss5
     SUBDIR += ssldump
     SUBDIR += sslh
