@@ -419,9 +419,9 @@ diff -ruN ../mutt-1.5.20.orig/pgp.c ./pgp.c
    mutt_mktemp (sigfile);
    if ((fp = safe_fopen (sigfile, "w")) == NULL)
 diff -ruN ../mutt-1.5.20.orig/po/zh_TW.po ./po/zh_TW.po
---- mutt-1.5.20.orig/po/zh_TW.po	2009-06-15 02:54:11.000000000 +0800
-+++ po/zh_TW.po	2009-06-29 09:51:38.000000000 +0800
-@@ -1802,7 +1802,7 @@
+--- po/zh_TW.po.orig	2010-09-16 01:10:03.000000000 +0800
++++ po/zh_TW.po	2010-09-27 04:14:32.000000000 +0800
+@@ -1820,7 +1820,7 @@
  "~w 檔案\t\t將訊息寫入檔案\n"
  "~x\t\t停止修改並離開編輯器\n"
  "~?\t\t這訊息\n"
@@ -430,7 +430,7 @@ diff -ruN ../mutt-1.5.20.orig/po/zh_TW.po ./po/zh_TW.po
  
  #: edit.c:52
  #, fuzzy
-@@ -1834,7 +1834,7 @@
+@@ -1852,7 +1852,7 @@
  "~w 檔案\t\t將訊息寫入檔案\n"
  "~x\t\t停止修改並離開編輯器\n"
  "~?\t\t這訊息\n"
@@ -439,7 +439,7 @@ diff -ruN ../mutt-1.5.20.orig/po/zh_TW.po ./po/zh_TW.po
  
  #: edit.c:187
  #, c-format
-@@ -1843,7 +1843,7 @@
+@@ -1861,7 +1861,7 @@
  
  #: edit.c:329
  msgid "(End message with a . on a line by itself)\n"
@@ -448,7 +448,7 @@ diff -ruN ../mutt-1.5.20.orig/po/zh_TW.po ./po/zh_TW.po
  
  #: edit.c:388
  msgid "No mailbox.\n"
-@@ -4634,7 +4634,7 @@
+@@ -4666,7 +4666,7 @@
  
  #: ../keymap_alldefs.h:43
  msgid "rename/move an attached file"
@@ -457,7 +457,7 @@ diff -ruN ../mutt-1.5.20.orig/po/zh_TW.po ./po/zh_TW.po
  
  #: ../keymap_alldefs.h:44
  msgid "send the message"
-@@ -4642,7 +4642,7 @@
+@@ -4674,7 +4674,7 @@
  
  #: ../keymap_alldefs.h:45
  msgid "toggle disposition between inline/attachment"
@@ -466,19 +466,19 @@ diff -ruN ../mutt-1.5.20.orig/po/zh_TW.po ./po/zh_TW.po
  
  #: ../keymap_alldefs.h:46
  msgid "toggle whether to delete file after sending it"
-@@ -5253,11 +5253,11 @@
+@@ -5289,11 +5289,11 @@
  
- #: ../keymap_alldefs.h:195
+ #: ../keymap_alldefs.h:196
  msgid "Select the previous element of the chain"
 -msgstr "選擇鏈結裏對上一個部份"
 +msgstr "選擇鏈結裡對上一個部份"
  
- #: ../keymap_alldefs.h:196
+ #: ../keymap_alldefs.h:197
  msgid "Select the next element of the chain"
 -msgstr "選擇鏈結裏跟著的一個部份"
 +msgstr "選擇鏈結裡跟著的一個部份"
  
- #: ../keymap_alldefs.h:197
+ #: ../keymap_alldefs.h:198
  msgid "send the message through a mixmaster remailer chain"
 diff -ruN ../mutt-1.5.20.orig/sendlib.c ./sendlib.c
 --- mutt-1.5.20.orig/sendlib.c	2009-06-14 23:46:11.000000000 +0800
