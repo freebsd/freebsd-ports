@@ -116,6 +116,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_tvtorrents.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_tvtorrents.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_tvtorrents.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo_content_size.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo_content_size.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo_content_size.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo_feed.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo_feed.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo_feed.pyo
@@ -251,9 +254,15 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_torrent_size.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_torrent_size.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_torrent_size.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_urlfix.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_urlfix.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_urlfix.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_urlrewriting.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_urlrewriting.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_urlrewriting.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_bakabt.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_bakabt.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_bakabt.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_btchat.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_btchat.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_btchat.pyo
@@ -287,6 +296,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_stmusic.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_stmusic.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_stmusic.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_torrentz.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_torrentz.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_torrentz.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_urlrewrite.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_urlrewrite.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_urlrewrite.pyo
