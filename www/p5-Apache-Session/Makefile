@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-Session
-PORTVERSION=	1.87
+PORTVERSION=	1.89
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A persistence framework for session data
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
-PERL_CONFIGURE=	yes
+RUN_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS+=	p5-Test-Deep>=0.082:${PORTSDIR}/devel/p5-Test-Deep \
+		p5-Test-Exception>=0.15:${PORTSDIR}/devel/p5-Test-Exception
+
+PERL_MODBUILD=  yes
 
 MAN3=		Apache::Session.3 \
 		Apache::Session::DB_File.3 \
