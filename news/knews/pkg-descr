@@ -20,3 +20,5 @@ reading MIME articles, except message/partial.
   o article prefetch cache and 'trailing' cache
   o Less restrictive locking of the interface
   o Message-id lookup of articles
+
+LICENSE: GLP2 or later
