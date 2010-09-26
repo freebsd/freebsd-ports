@@ -1,0 +1,25 @@
+FreeBSD does have support for utmp/utmpx, so include relevant files into
+a build.
+
+--- src/Makefile.am.orig	2010-01-04 06:46:29.000000000 +0100
++++ src/Makefile.am	2010-01-04 06:46:29.000000000 +0100
+@@ -7,7 +7,9 @@
+ 	conf.c \
+ 	ftpd.c \
+ 	ftpcmd.y \
+-	popen.c
++	popen.c \
++	logutmp.c \
++	logwtmp.c
+ 
+ tnftpd_CPPFLAGS = \
+ 	-DHAVE_TNFTPD_H=1 \
+@@ -45,8 +47,6 @@
+ 	extern.h \
+ 	ftpd.conf.manin \
+ 	ftpusers.manin \
+-	logutmp.c \
+-	logwtmp.c \
+ 	pathnames.h \
+ 	tnftpd.manin \
+ 	version.h

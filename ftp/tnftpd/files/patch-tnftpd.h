@@ -1,10 +1,19 @@
 
 FreeBSD does not have LOGIN_NAME_MAX, but it has MAXLOGNAME instead,
-so use it as much as possible.
+so use it as much as possible. Rewrite utmpx support.
 
---- tnftpd.h.orig	2008-06-08 21:24:51.000000000 -0400
-+++ tnftpd.h	2008-06-08 21:24:51.000000000 -0400
-@@ -548,8 +548,12 @@
+--- tnftpd.h.orig	2009-11-07 10:59:09.000000000 +0100
++++ tnftpd.h	2009-11-07 10:59:09.000000000 +0100
+@@ -119,6 +119,8 @@
+ #endif
+ #if defined(HAVE_UTMP_H)
+ # include <utmp.h>
++#else
++# include <utmpx.h>
+ #endif
+ 
+ #if defined(HAVE_POLL)
+@@ -561,8 +563,12 @@
  #define TM_YEAR_BASE	1900
  
  #if !defined(LOGIN_NAME_MAX)
