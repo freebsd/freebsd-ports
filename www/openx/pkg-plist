@@ -96,6 +96,9 @@
 %%WWWDIR%%/etc/changes/changes_tables_core_608.xml
 %%WWWDIR%%/etc/changes/changes_tables_core_609.xml
 %%WWWDIR%%/etc/changes/changes_tables_core_610.xml
+%%WWWDIR%%/etc/changes/changes_tables_core_611.xml
+%%WWWDIR%%/etc/changes/changes_tables_core_612.xml
+%%WWWDIR%%/etc/changes/changes_tables_core_613.xml
 %%WWWDIR%%/etc/changes/changes_tables_temp_priority_501.xml
 %%WWWDIR%%/etc/changes/changes_tables_temp_statistics_501.xml
 %%WWWDIR%%/etc/changes/migration_tables_core_100.php
@@ -173,6 +176,9 @@
 %%WWWDIR%%/etc/changes/migration_tables_core_608.php
 %%WWWDIR%%/etc/changes/migration_tables_core_609.php
 %%WWWDIR%%/etc/changes/migration_tables_core_610.php
+%%WWWDIR%%/etc/changes/migration_tables_core_611.php
+%%WWWDIR%%/etc/changes/migration_tables_core_612.php
+%%WWWDIR%%/etc/changes/migration_tables_core_613.php
 %%WWWDIR%%/etc/changes/migration_tables_temp_priority_501.php
 %%WWWDIR%%/etc/changes/openads_upgrade_2.0.11_to_2.3.32_beta.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_2.1.29_to_2.3.32_beta.xml
@@ -216,10 +222,12 @@
 %%WWWDIR%%/etc/changes/openads_upgrade_2.7.8-dev.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_2.8.1-rc10.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_2.8.1-rc4.xml
+%%WWWDIR%%/etc/changes/openads_upgrade_2.8.2-rc11.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_2.8.2-rc2.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_2.8.2-rc8.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_2.8.2-rc9.xml
-%%WWWDIR%%/etc/changes/openads_upgrade_2.8.2-rc11.xml
+%%WWWDIR%%/etc/changes/openads_upgrade_2.8.4-rc2.xml
+%%WWWDIR%%/etc/changes/openads_upgrade_2.8.4-rc4.xml
 %%WWWDIR%%/etc/changes/openads_upgrade_array.txt
 %%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.0.11_to_2.3.32_beta.php
 %%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.1.29_to_2.3.32_beta.php
@@ -234,8 +242,8 @@
 %%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.7.30-beta-rc5.php
 %%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.7.31-beta-rc1.php
 %%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.7.31-beta-rc4.php
-%%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.8.1-rc4.php
 %%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.8.1-rc10.php
+%%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.8.1-rc4.php
 %%WWWDIR%%/etc/changes/postscript_openads_upgrade_2.8.2-rc8.php
 %%WWWDIR%%/etc/changes/prescript_openads_upgrade_2.0.11_to_2.3.32_beta.php
 %%WWWDIR%%/etc/changes/prescript_openads_upgrade_2.3.33-beta-rc4.php
@@ -319,6 +327,9 @@
 %%WWWDIR%%/etc/changes/schema_tables_core_608.xml
 %%WWWDIR%%/etc/changes/schema_tables_core_609.xml
 %%WWWDIR%%/etc/changes/schema_tables_core_610.xml
+%%WWWDIR%%/etc/changes/schema_tables_core_611.xml
+%%WWWDIR%%/etc/changes/schema_tables_core_612.xml
+%%WWWDIR%%/etc/changes/schema_tables_core_613.xml
 %%WWWDIR%%/etc/changes/schema_tables_temp_priority_500.xml
 %%WWWDIR%%/etc/changes/schema_tables_temp_priority_501.xml
 %%WWWDIR%%/etc/changes/schema_tables_temp_statistics_500.xml
@@ -344,6 +355,8 @@
 %%WWWDIR%%/etc/plugins/openXMarket.zip
 %%WWWDIR%%/etc/plugins/openXMaxMindGeoIP.zip
 %%WWWDIR%%/etc/plugins/openXReports.zip
+%%WWWDIR%%/etc/plugins/openXVideoAds.zip
+%%WWWDIR%%/etc/plugins/openXWorkflow.zip
 %%WWWDIR%%/etc/sim.conf.php
 %%WWWDIR%%/etc/tables_core.xml
 %%WWWDIR%%/etc/tables_temp_priority.xml
@@ -423,6 +436,9 @@
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_changes-tables-core-608.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_changes-tables-core-609.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_changes-tables-core-610.bin
+%%WWWDIR%%/etc/xmlcache/cache_etc-changes_changes-tables-core-611.bin
+%%WWWDIR%%/etc/xmlcache/cache_etc-changes_changes-tables-core-612.bin
+%%WWWDIR%%/etc/xmlcache/cache_etc-changes_changes-tables-core-613.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_changes-tables-temp-priority-501.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_changes-tables-temp-statistics-501.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-core-049.bin
@@ -504,6 +520,9 @@
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-core-608.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-core-609.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-core-610.bin
+%%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-core-611.bin
+%%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-core-612.bin
+%%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-core-613.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-temp-priority-500.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-temp-priority-501.bin
 %%WWWDIR%%/etc/xmlcache/cache_etc-changes_schema-tables-temp-statistics-500.bin
@@ -735,8 +754,12 @@
 %%WWWDIR%%/lib/OA/Dll/Publisher.php
 %%WWWDIR%%/lib/OA/Dll/PublisherInfo.php
 %%WWWDIR%%/lib/OA/Dll/TargetingInfo.php
+%%WWWDIR%%/lib/OA/Dll/Tracker.php
+%%WWWDIR%%/lib/OA/Dll/TrackerInfo.php
 %%WWWDIR%%/lib/OA/Dll/User.php
 %%WWWDIR%%/lib/OA/Dll/UserInfo.php
+%%WWWDIR%%/lib/OA/Dll/Variable.php
+%%WWWDIR%%/lib/OA/Dll/VariableInfo.php
 %%WWWDIR%%/lib/OA/Dll/Zone.php
 %%WWWDIR%%/lib/OA/Dll/ZoneInfo.php
 %%WWWDIR%%/lib/OA/Email.php
@@ -760,6 +783,7 @@
 %%WWWDIR%%/lib/OA/Maintenance/Priority/DeliveryLimitation/Factory.php
 %%WWWDIR%%/lib/OA/Maintenance/Pruning.php
 %%WWWDIR%%/lib/OA/Maintenance/Regenerate.php
+%%WWWDIR%%/lib/OA/Maintenance/RollupStats.php
 %%WWWDIR%%/lib/OA/Maintenance/Status.php
 %%WWWDIR%%/lib/OA/PermanentCache.php
 %%WWWDIR%%/lib/OA/Permission.php
@@ -790,11 +814,36 @@
 %%WWWDIR%%/lib/OX.php
 %%WWWDIR%%/lib/OX/Admin/Redirect.php
 %%WWWDIR%%/lib/OX/Admin/Timezones.php
+%%WWWDIR%%/lib/OX/Admin/UI/Controller/BaseController.php
+%%WWWDIR%%/lib/OX/Admin/UI/Controller/Request.php
+%%WWWDIR%%/lib/OX/Admin/UI/Event/EventContext.php
+%%WWWDIR%%/lib/OX/Admin/UI/Event/EventDispatcher.php
+%%WWWDIR%%/lib/OX/Admin/UI/Hooks.php
+%%WWWDIR%%/lib/OX/Admin/UI/Install/AdminLoginForm.php
+%%WWWDIR%%/lib/OX/Admin/UI/Install/BaseForm.php
+%%WWWDIR%%/lib/OX/Admin/UI/Install/ConfigForm.php
+%%WWWDIR%%/lib/OX/Admin/UI/Install/DbForm.php
+%%WWWDIR%%/lib/OX/Admin/UI/Install/InstallController.php
+%%WWWDIR%%/lib/OX/Admin/UI/Install/InstallStatus.php
+%%WWWDIR%%/lib/OX/Admin/UI/Install/InstallUtils.php
+%%WWWDIR%%/lib/OX/Admin/UI/Install/SkipSsoForm.php
+%%WWWDIR%%/lib/OX/Admin/UI/Install/SsoErrorBuilder.php
+%%WWWDIR%%/lib/OX/Admin/UI/Install/SsoLoginForm.php
+%%WWWDIR%%/lib/OX/Admin/UI/Install/SsoSignupForm.php
+%%WWWDIR%%/lib/OX/Admin/UI/Install/SystemCheckModelBuilder.php
+%%WWWDIR%%/lib/OX/Admin/UI/Install/Wizard.php
 %%WWWDIR%%/lib/OX/Admin/UI/Minify/Server.php
+%%WWWDIR%%/lib/OX/Admin/UI/SessionStorage.php
+%%WWWDIR%%/lib/OX/Admin/UI/Storage.php
+%%WWWDIR%%/lib/OX/Admin/UI/ViewHooks.php
+%%WWWDIR%%/lib/OX/Admin/UI/Wizard.php
+%%WWWDIR%%/lib/OX/Admin/UI/WizardSteps.php
 %%WWWDIR%%/lib/OX/Dal/Maintenance/Statistics.php
 %%WWWDIR%%/lib/OX/Dal/Maintenance/Statistics/Factory.php
 %%WWWDIR%%/lib/OX/Dal/Maintenance/Statistics/Mysql.php
 %%WWWDIR%%/lib/OX/Dal/Maintenance/Statistics/Pgsql.php
+%%WWWDIR%%/lib/OX/Dal/Market/MarketPluginTools.php
+%%WWWDIR%%/lib/OX/Dal/Market/RegistrationClient.php
 %%WWWDIR%%/lib/OX/Extension.php
 %%WWWDIR%%/lib/OX/Extension/3rdPartyServers/3rdPartyServers.php
 %%WWWDIR%%/lib/OX/Extension/ExtensionCommon.php
@@ -844,6 +893,8 @@
 %%WWWDIR%%/lib/OX/M2M/M2MServiceImpl.php
 %%WWWDIR%%/lib/OX/M2M/M2MTicketProvider.php
 %%WWWDIR%%/lib/OX/M2M/M2MTicketProviderImpl.php
+%%WWWDIR%%/lib/OX/M2M/PearXmlRpcCustomClientException.php
+%%WWWDIR%%/lib/OX/M2M/PearXmlRpcCustomClientExecutor.php
 %%WWWDIR%%/lib/OX/M2M/XmlRpcErrorCodes.php
 %%WWWDIR%%/lib/OX/M2M/XmlRpcExecutor.php
 %%WWWDIR%%/lib/OX/M2M/ZendXmlRpcExecutor.php
@@ -863,6 +914,8 @@
 %%WWWDIR%%/lib/OX/Maintenance/Statistics/Task/SummariseIntermediate.php
 %%WWWDIR%%/lib/OX/Maintenance/Statistics/TestAndCorrect.php
 %%WWWDIR%%/lib/OX/OperationInterval.php
+%%WWWDIR%%/lib/OX/PC/API/SimpleClient.php
+%%WWWDIR%%/lib/OX/PC/API/SimpleClientException.php
 %%WWWDIR%%/lib/OX/Plugin/Component.php
 %%WWWDIR%%/lib/OX/Plugin/ComponentGroupManager.php
 %%WWWDIR%%/lib/OX/Plugin/ParserBase.php
@@ -872,10 +925,19 @@
 %%WWWDIR%%/lib/OX/Plugin/PluginManager.php
 %%WWWDIR%%/lib/OX/Plugin/UpgradeComponentGroup.php
 %%WWWDIR%%/lib/OX/Translation.php
+%%WWWDIR%%/lib/OX/Upgrade/InstallConfig.php
+%%WWWDIR%%/lib/OX/Upgrade/InstallPlugin/Controller.php
+%%WWWDIR%%/lib/OX/Upgrade/MarketClientFactory.php
+%%WWWDIR%%/lib/OX/Upgrade/PostUpgradeTask/Controller.php
+%%WWWDIR%%/lib/OX/Upgrade/PostUpgradeTask/MessagesCollector.php
+%%WWWDIR%%/lib/OX/Upgrade/Util/Job.php
+%%WWWDIR%%/lib/OX/Upgrade/Util/PlatformHashManager.php
 %%WWWDIR%%/lib/OX/Util/CodeMunger.php
+%%WWWDIR%%/lib/OX/Util/ConnectionUtils.php
 %%WWWDIR%%/lib/OX/Util/Utils.php
 %%WWWDIR%%/lib/Zend/Exception.php
 %%WWWDIR%%/lib/Zend/Http/Client.php
+%%WWWDIR%%/lib/Zend/Http/Client/Adapter/Curl.php
 %%WWWDIR%%/lib/Zend/Http/Client/Adapter/Exception.php
 %%WWWDIR%%/lib/Zend/Http/Client/Adapter/Interface.php
 %%WWWDIR%%/lib/Zend/Http/Client/Adapter/Proxy.php
@@ -2046,6 +2108,7 @@
 %%WWWDIR%%/lib/templates/admin/form/custom-campaign-remaining-conv.html
 %%WWWDIR%%/lib/templates/admin/form/custom-campaign-remaining-impr.html
 %%WWWDIR%%/lib/templates/admin/form/custom-campaign-type-note.html
+%%WWWDIR%%/lib/templates/admin/form/custom-capping-callout.html
 %%WWWDIR%%/lib/templates/admin/form/custom-contract-ecpm-note.html
 %%WWWDIR%%/lib/templates/admin/form/custom-country-language.html
 %%WWWDIR%%/lib/templates/admin/form/custom-date-campaign-date-limit-set-note.html
@@ -2190,12 +2253,17 @@
 %%WWWDIR%%/scripts/.htaccess
 %%WWWDIR%%/scripts/maintenance/maintenance-distributed.php
 %%WWWDIR%%/scripts/maintenance/maintenance.php
+%%WWWDIR%%/scripts/maintenance/plot-maintenance-times/README.txt
 %%WWWDIR%%/scripts/maintenance/plot-maintenance-times/extract
 %%WWWDIR%%/scripts/maintenance/plot-maintenance-times/plot
-%%WWWDIR%%/scripts/maintenance/plot-maintenance-times/README.txt
 %%WWWDIR%%/scripts/maintenance/tools/migrateBucketData.php
+%%WWWDIR%%/scripts/maintenance/tools/republish.php
+%%WWWDIR%%/scripts/maintenance/tools/rollupStats.php
 %%WWWDIR%%/scripts/maintenance/tools/statisticsTestAndCorrect.php
 %%WWWDIR%%/scripts/maintenance/translationStrings.php
+%%WWWDIR%%/scripts/rpm/core-upgrade.php
+%%WWWDIR%%/scripts/rpm/lib-rpm.php
+%%WWWDIR%%/scripts/rpm/plugin-upgrade.php
 %%WWWDIR%%/var/.htaccess
 %%WWWDIR%%/var/UPGRADE
 %%WWWDIR%%/var/cache/README.txt
@@ -2320,6 +2388,7 @@
 %%WWWDIR%%/www/admin/assets/images/content-bg.png
 %%WWWDIR%%/www/admin/assets/images/control-background.png
 %%WWWDIR%%/www/admin/assets/images/control-corners.png
+%%WWWDIR%%/www/admin/assets/images/corners.png
 %%WWWDIR%%/www/admin/assets/images/cropmark-bl.gif
 %%WWWDIR%%/www/admin/assets/images/cropmark-br.gif
 %%WWWDIR%%/www/admin/assets/images/cropmark-tl.gif
@@ -2580,6 +2649,7 @@
 %%WWWDIR%%/www/admin/assets/images/icon-advertiser-large.png
 %%WWWDIR%%/www/admin/assets/images/icon-advertiser-new.gif
 %%WWWDIR%%/www/admin/assets/images/icon-advertiser-oa.png
+%%WWWDIR%%/www/admin/assets/images/icon-advertiser-openx.png
 %%WWWDIR%%/www/admin/assets/images/icon-advertiser-remove.png
 %%WWWDIR%%/www/admin/assets/images/icon-advertiser-to-campaign.png
 %%WWWDIR%%/www/admin/assets/images/icon-advertiser.gif
@@ -2634,6 +2704,10 @@
 %%WWWDIR%%/www/admin/assets/images/icon-campaign-link.png
 %%WWWDIR%%/www/admin/assets/images/icon-campaign-list.png
 %%WWWDIR%%/www/admin/assets/images/icon-campaign-new.gif
+%%WWWDIR%%/www/admin/assets/images/icon-campaign-openx-add-large.png
+%%WWWDIR%%/www/admin/assets/images/icon-campaign-openx-add.png
+%%WWWDIR%%/www/admin/assets/images/icon-campaign-openx-large.png
+%%WWWDIR%%/www/admin/assets/images/icon-campaign-openx.png
 %%WWWDIR%%/www/admin/assets/images/icon-campaign-remove-large.png
 %%WWWDIR%%/www/admin/assets/images/icon-campaign-remove.png
 %%WWWDIR%%/www/admin/assets/images/icon-campaign-to-advertiser.png
@@ -2641,6 +2715,8 @@
 %%WWWDIR%%/www/admin/assets/images/icon-campaign.gif
 %%WWWDIR%%/www/admin/assets/images/icon-campaign.png
 %%WWWDIR%%/www/admin/assets/images/icon-campaigns-large.png
+%%WWWDIR%%/www/admin/assets/images/icon-campaigns-openx-large.png
+%%WWWDIR%%/www/admin/assets/images/icon-campaigns-openx.png
 %%WWWDIR%%/www/admin/assets/images/icon-campaigns.png
 %%WWWDIR%%/www/admin/assets/images/icon-channel-add.gif
 %%WWWDIR%%/www/admin/assets/images/icon-channel-d.gif
@@ -2701,6 +2777,7 @@
 %%WWWDIR%%/www/admin/assets/images/icon-probability.png
 %%WWWDIR%%/www/admin/assets/images/icon-recycle-d.gif
 %%WWWDIR%%/www/admin/assets/images/icon-recycle.gif
+%%WWWDIR%%/www/admin/assets/images/icon-refresh.png
 %%WWWDIR%%/www/admin/assets/images/icon-settings.gif
 %%WWWDIR%%/www/admin/assets/images/icon-setup.gif
 %%WWWDIR%%/www/admin/assets/images/icon-shortcut-website.png
@@ -2709,6 +2786,8 @@
 %%WWWDIR%%/www/admin/assets/images/icon-statistics-large.png
 %%WWWDIR%%/www/admin/assets/images/icon-statistics.gif
 %%WWWDIR%%/www/admin/assets/images/icon-statistics.png
+%%WWWDIR%%/www/admin/assets/images/icon-stop-large.png
+%%WWWDIR%%/www/admin/assets/images/icon-stop.gif
 %%WWWDIR%%/www/admin/assets/images/icon-tag-large.png
 %%WWWDIR%%/www/admin/assets/images/icon-tag.png
 %%WWWDIR%%/www/admin/assets/images/icon-targeting-channel-add-disabled.png
@@ -2734,6 +2813,7 @@
 %%WWWDIR%%/www/admin/assets/images/icon-tracker.gif
 %%WWWDIR%%/www/admin/assets/images/icon-tracker.png
 %%WWWDIR%%/www/admin/assets/images/icon-tracking-large.png
+%%WWWDIR%%/www/admin/assets/images/icon-warning-large.png
 %%WWWDIR%%/www/admin/assets/images/icon-warning.gif
 %%WWWDIR%%/www/admin/assets/images/icon-website-add-large.png
 %%WWWDIR%%/www/admin/assets/images/icon-website-add.png
@@ -2803,6 +2883,10 @@
 %%WWWDIR%%/www/admin/assets/images/install-tasks.png
 %%WWWDIR%%/www/admin/assets/images/install-terms.png
 %%WWWDIR%%/www/admin/assets/images/install-welcome.png
+%%WWWDIR%%/www/admin/assets/images/install/benefit_cash.png
+%%WWWDIR%%/www/admin/assets/images/install/benefit_forum.png
+%%WWWDIR%%/www/admin/assets/images/install/benefit_plugins.png
+%%WWWDIR%%/www/admin/assets/images/install/benefit_security.png
 %%WWWDIR%%/www/admin/assets/images/line-gradient.gif
 %%WWWDIR%%/www/admin/assets/images/listIcon.gif
 %%WWWDIR%%/www/admin/assets/images/listIconFirst.gif
@@ -2853,6 +2937,10 @@
 %%WWWDIR%%/www/admin/assets/images/ltr/tab-toprightcorner-eeeeee.gif
 %%WWWDIR%%/www/admin/assets/images/ltr/tab-toprightcorner-ffffff.gif
 %%WWWDIR%%/www/admin/assets/images/ltr/triangle-l.gif
+%%WWWDIR%%/www/admin/assets/images/market-auction.gif
+%%WWWDIR%%/www/admin/assets/images/market-campaign-optin.gif
+%%WWWDIR%%/www/admin/assets/images/market-welcome.gif
+%%WWWDIR%%/www/admin/assets/images/market-zone-optin.gif
 %%WWWDIR%%/www/admin/assets/images/message-arrow-d.gif
 %%WWWDIR%%/www/admin/assets/images/message-background.png
 %%WWWDIR%%/www/admin/assets/images/message.gif
@@ -2916,6 +3004,8 @@
 %%WWWDIR%%/www/admin/assets/images/warning.gif
 %%WWWDIR%%/www/admin/assets/images/watermark.gif
 %%WWWDIR%%/www/admin/assets/images/white-control-corners.png
+%%WWWDIR%%/www/admin/assets/images/wizard-lead-in.png
+%%WWWDIR%%/www/admin/assets/images/wizard-lead-out.png
 %%WWWDIR%%/www/admin/assets/images/wrench.gif
 %%WWWDIR%%/www/admin/assets/js/IE7.js
 %%WWWDIR%%/www/admin/assets/js/boxrow.js
@@ -2932,6 +3022,7 @@
 %%WWWDIR%%/www/admin/assets/js/jquery.ifixpng.js
 %%WWWDIR%%/www/admin/assets/js/jquery.jqmodal.js
 %%WWWDIR%%/www/admin/assets/js/jquery.metadata.js
+%%WWWDIR%%/www/admin/assets/js/jquery.simplemodal.min.js
 %%WWWDIR%%/www/admin/assets/js/jquery.tablesorter.js
 %%WWWDIR%%/www/admin/assets/js/jquery.typewatch.js
 %%WWWDIR%%/www/admin/assets/js/jquery.validate.js
@@ -3031,6 +3122,7 @@
 %%WWWDIR%%/www/admin/assets/js/ox.dropdown.js
 %%WWWDIR%%/www/admin/assets/js/ox.form.js
 %%WWWDIR%%/www/admin/assets/js/ox.help.js
+%%WWWDIR%%/www/admin/assets/js/ox.install.js
 %%WWWDIR%%/www/admin/assets/js/ox.jobs.js
 %%WWWDIR%%/www/admin/assets/js/ox.message.js
 %%WWWDIR%%/www/admin/assets/js/ox.multicheckbox.js
@@ -3071,6 +3163,7 @@
 %%WWWDIR%%/www/admin/dashboard.php
 %%WWWDIR%%/www/admin/index.php
 %%WWWDIR%%/www/admin/install-plugin.php
+%%WWWDIR%%/www/admin/install-runtask.php
 %%WWWDIR%%/www/admin/install.php
 %%WWWDIR%%/www/admin/inventory-retrieve.php
 %%WWWDIR%%/www/admin/lib-append.inc.php
@@ -3110,6 +3203,7 @@
 %%WWWDIR%%/www/admin/maintenance-storage-move.php
 %%WWWDIR%%/www/admin/maintenance-storage.php
 %%WWWDIR%%/www/admin/maintenance-updates-js.php
+%%WWWDIR%%/www/admin/market/stats.php
 %%WWWDIR%%/www/admin/md5.js
 %%WWWDIR%%/www/admin/numberFormat.js.php
 %%WWWDIR%%/www/admin/password-recovery.php
@@ -3130,26 +3224,24 @@
 %%WWWDIR%%/www/admin/stats-conversions.php
 %%WWWDIR%%/www/admin/stats-showgraph.php
 %%WWWDIR%%/www/admin/stats.php
-%%WWWDIR%%/www/admin/templates/install-adminsetup.html
-%%WWWDIR%%/www/admin/templates/install-appcheck.html
-%%WWWDIR%%/www/admin/templates/install-configsetup.html
-%%WWWDIR%%/www/admin/templates/install-dbsetup.html
-%%WWWDIR%%/www/admin/templates/install-finish.html
-%%WWWDIR%%/www/admin/templates/install-index.html
-%%WWWDIR%%/www/admin/templates/install-login.html
-%%WWWDIR%%/www/admin/templates/install-messages.html
-%%WWWDIR%%/www/admin/templates/install-plugins.html
-%%WWWDIR%%/www/admin/templates/install-policy.html
-%%WWWDIR%%/www/admin/templates/install-post.html
-%%WWWDIR%%/www/admin/templates/install-recovery.html
-%%WWWDIR%%/www/admin/templates/install-success.html
-%%WWWDIR%%/www/admin/templates/install-syscheck.html
-%%WWWDIR%%/www/admin/templates/install-sysinfosection.html
-%%WWWDIR%%/www/admin/templates/install-terms.html
-%%WWWDIR%%/www/admin/templates/install-welcome.html
+%%WWWDIR%%/www/admin/templates/install/check-step.html
+%%WWWDIR%%/www/admin/templates/install/configuration-step.html
+%%WWWDIR%%/www/admin/templates/install/database-step.html
+%%WWWDIR%%/www/admin/templates/install/error-step.html
+%%WWWDIR%%/www/admin/templates/install/finish-step.html
+%%WWWDIR%%/www/admin/templates/install/jobs-step.html
+%%WWWDIR%%/www/admin/templates/install/login-step.html
+%%WWWDIR%%/www/admin/templates/install/messages.html
+%%WWWDIR%%/www/admin/templates/install/recovery-step.html
+%%WWWDIR%%/www/admin/templates/install/register-step.html
+%%WWWDIR%%/www/admin/templates/install/registerConfirm-step.html
+%%WWWDIR%%/www/admin/templates/install/tracker.html
+%%WWWDIR%%/www/admin/templates/install/uptodate-step.html
+%%WWWDIR%%/www/admin/templates/install/welcome-step.html
 %%WWWDIR%%/www/admin/templates/logo.gif
 %%WWWDIR%%/www/admin/templates/welcome-advertiser.html
 %%WWWDIR%%/www/admin/templates/welcome-publisher.html
+%%WWWDIR%%/www/admin/templates/wizard-steps.html
 %%WWWDIR%%/www/admin/terms-and-conditions.html
 %%WWWDIR%%/www/admin/tracker-append.php
 %%WWWDIR%%/www/admin/tracker-campaigns.php
@@ -3208,7 +3300,9 @@
 %%WWWDIR%%/www/api/v2/common/BaseLogonService.php
 %%WWWDIR%%/www/api/v2/common/BasePublisherService.php
 %%WWWDIR%%/www/api/v2/common/BaseServiceImpl.php
+%%WWWDIR%%/www/api/v2/common/BaseTrackerService.php
 %%WWWDIR%%/www/api/v2/common/BaseUserService.php
+%%WWWDIR%%/www/api/v2/common/BaseVariableService.php
 %%WWWDIR%%/www/api/v2/common/BaseZoneService.php
 %%WWWDIR%%/www/api/v2/common/XmlRpcUtils.php
 %%WWWDIR%%/www/api/v2/xmlrpc/AdvertiserServiceImpl.php
@@ -3225,8 +3319,12 @@
 %%WWWDIR%%/www/api/v2/xmlrpc/LogonXmlRpcService.php
 %%WWWDIR%%/www/api/v2/xmlrpc/PublisherServiceImpl.php
 %%WWWDIR%%/www/api/v2/xmlrpc/PublisherXmlRpcService.php
+%%WWWDIR%%/www/api/v2/xmlrpc/TrackerServiceImpl.php
+%%WWWDIR%%/www/api/v2/xmlrpc/TrackerXmlRpcService.php
 %%WWWDIR%%/www/api/v2/xmlrpc/UserServiceImpl.php
 %%WWWDIR%%/www/api/v2/xmlrpc/UserXmlRpcService.php
+%%WWWDIR%%/www/api/v2/xmlrpc/VariableServiceImpl.php
+%%WWWDIR%%/www/api/v2/xmlrpc/VariableXmlRpcService.php
 %%WWWDIR%%/www/api/v2/xmlrpc/XmlRpcFrontController.php
 %%WWWDIR%%/www/api/v2/xmlrpc/ZoneServiceImpl.php
 %%WWWDIR%%/www/api/v2/xmlrpc/ZoneXmlRpcService.php
@@ -3263,377 +3361,390 @@
 %%WWWDIR%%/www/images/robots.txt
 %%WWWDIR%%/www/index.php
 %%WWWDIR%%/www/robots.txt
-@dirrm www/openx/www/images/layerstyles/simple
-@dirrm www/openx/www/images/layerstyles/geocities
-@dirrm www/openx/www/images/layerstyles
-@dirrm www/openx/www/images
-@dirrm www/openx/www/delivery
-@dirrm www/openx/www/api/v2/xmlrpc
-@dirrm www/openx/www/api/v2/common
-@dirrm www/openx/www/api/v2
-@dirrm www/openx/www/api/v1/xmlrpc
-@dirrm www/openx/www/api/v1/common
-@dirrm www/openx/www/api/v1
-@dirrm www/openx/www/api
-@dirrm www/openx/www/admin/templates
-@dirrm www/openx/www/admin/precheck
-@dirrm www/openx/www/admin/plugins
-@dirrm www/openx/www/admin/assets/js/jscalendar/skins/aqua
-@dirrm www/openx/www/admin/assets/js/jscalendar/skins
-@dirrm www/openx/www/admin/assets/js/jscalendar/lang
-@dirrm www/openx/www/admin/assets/js/jscalendar/doc/html
-@dirrm www/openx/www/admin/assets/js/jscalendar/doc
-@dirrm www/openx/www/admin/assets/js/jscalendar
-@dirrm www/openx/www/admin/assets/js
-@dirrm www/openx/www/admin/assets/images/rtl
-@dirrm www/openx/www/admin/assets/images/ltr
-@dirrm www/openx/www/admin/assets/images/flags
-@dirrm www/openx/www/admin/assets/images/dashboard
-@dirrm www/openx/www/admin/assets/images
-@dirrm www/openx/www/admin/assets/css
-@dirrm www/openx/www/admin/assets
-@dirrm www/openx/www/admin
-@dirrm www/openx/www
-@dirrm www/openx/var/templates_compiled
-@dirrm www/openx/var/plugins/recover
-@dirrm www/openx/var/plugins/DataObjects
-@dirrm www/openx/var/plugins
-@dirrm www/openx/var/cache
-@dirrm www/openx/var
-@dirrm www/openx/scripts/maintenance/plot-maintenance-times
-@dirrm www/openx/scripts/maintenance/tools
-@dirrm www/openx/scripts/maintenance
-@dirrm www/openx/scripts
-@dirrm www/openx/plugins/reports
-@dirrm www/openx/plugins/maintenanceStatisticsTask
-@dirrm www/openx/plugins/maintenancePriorityTask
-@dirrm www/openx/plugins/invocationTags
-@dirrm www/openx/plugins/geoTargeting
-@dirrm www/openx/plugins/etc
-@dirrm www/openx/plugins/deliveryLog
-@dirrm www/openx/plugins/deliveryLimitations
-@dirrm www/openx/plugins/deliveryDataPrepare
-@dirrm www/openx/plugins/deliveryCacheStore
-@dirrm www/openx/plugins/deliveryAdRender
-@dirrm www/openx/plugins/bannerTypeText
-@dirrm www/openx/plugins/bannerTypeHtml
-@dirrm www/openx/plugins/authentication
-@dirrm www/openx/plugins/api
-@dirrm www/openx/plugins/3rdPartyServers
-@dirrm www/openx/plugins
-@dirrm www/openx/maintenance
-@dirrm www/openx/lib/xmlrpc/php
-@dirrm www/openx/lib/xmlrpc/java/ApacheLib3/org/openads/proxy
-@dirrm www/openx/lib/xmlrpc/java/ApacheLib3/org/openads
-@dirrm www/openx/lib/xmlrpc/java/ApacheLib3/org
-@dirrm www/openx/lib/xmlrpc/java/ApacheLib3
-@dirrm www/openx/lib/xmlrpc/java/ApacheLib2/org/openads/proxy
-@dirrm www/openx/lib/xmlrpc/java/ApacheLib2/org/openads
-@dirrm www/openx/lib/xmlrpc/java/ApacheLib2/org
-@dirrm www/openx/lib/xmlrpc/java/ApacheLib2
-@dirrm www/openx/lib/xmlrpc/java
-@dirrm www/openx/lib/xmlrpc
-@dirrm www/openx/lib/xajax/xajax_js
-@dirrm www/openx/lib/xajax/lib
-@dirrm www/openx/lib/xajax
-@dirrm www/openx/lib/wact/db/interfaces
-@dirrm www/openx/lib/wact/db/drivers
-@dirrm www/openx/lib/wact/db
-@dirrm www/openx/lib/wact
-@dirrm www/openx/lib/util/file
-@dirrm www/openx/lib/util
-@dirrm www/openx/lib/templates/admin/options
-@dirrm www/openx/lib/templates/admin/layout
-@dirrm www/openx/lib/templates/admin/install
-@dirrm www/openx/lib/templates/admin/form
-@dirrm www/openx/lib/templates/admin/edit-table
-@dirrm www/openx/lib/templates/admin/dashboard
-@dirrm www/openx/lib/templates/admin/ajax
-@dirrm www/openx/lib/templates/admin
-@dirrm www/openx/lib/templates
-@dirrm www/openx/lib/smarty/plugins
-@dirrm www/openx/lib/smarty/internals
-@dirrm www/openx/lib/smarty
-@dirrm www/openx/lib/pear/XML/Tree
-@dirrm www/openx/lib/pear/XML/RPC
-@dirrm www/openx/lib/pear/XML/Parser
-@dirrm www/openx/lib/pear/XML
-@dirrm www/openx/lib/pear/Text
-@dirrm www/openx/lib/pear/Structures/Graph/Manipulator
-@dirrm www/openx/lib/pear/Structures/Graph
-@dirrm www/openx/lib/pear/Structures
-@dirrm www/openx/lib/pear/Spreadsheet/Excel/Writer
-@dirrm www/openx/lib/pear/Spreadsheet/Excel
-@dirrm www/openx/lib/pear/Spreadsheet
-@dirrm www/openx/lib/pear/Services/ExchangeRates
-@dirrm www/openx/lib/pear/Services
-@dirrm www/openx/lib/pear/Pager
-@dirrm www/openx/lib/pear/PEAR/Validator
-@dirrm www/openx/lib/pear/PEAR/Task/Windowseol
-@dirrm www/openx/lib/pear/PEAR/Task/Unixeol
-@dirrm www/openx/lib/pear/PEAR/Task/Replace
-@dirrm www/openx/lib/pear/PEAR/Task/Postinstallscript
-@dirrm www/openx/lib/pear/PEAR/Task
-@dirrm www/openx/lib/pear/PEAR/REST
-@dirrm www/openx/lib/pear/PEAR/PackageFile/v2
-@dirrm www/openx/lib/pear/PEAR/PackageFile/Parser
-@dirrm www/openx/lib/pear/PEAR/PackageFile/Generator
-@dirrm www/openx/lib/pear/PEAR/PackageFile
-@dirrm www/openx/lib/pear/PEAR/Installer/Role
-@dirrm www/openx/lib/pear/PEAR/Installer
-@dirrm www/openx/lib/pear/PEAR/Frontend
-@dirrm www/openx/lib/pear/PEAR/Downloader
-@dirrm www/openx/lib/pear/PEAR/Command
-@dirrm www/openx/lib/pear/PEAR/ChannelFile
-@dirrm www/openx/lib/pear/PEAR
-@dirrm www/openx/lib/pear/OS
-@dirrm www/openx/lib/pear/OLE/PPS
-@dirrm www/openx/lib/pear/OLE
-@dirrm www/openx/lib/pear/Numbers/Words
-@dirrm www/openx/lib/pear/Numbers
-@dirrm www/openx/lib/pear/Net
-@dirrm www/openx/lib/pear/Mail
-@dirrm www/openx/lib/pear/MDB2_Schema
-@dirrm www/openx/lib/pear/MDB2/Schema/Reserved
-@dirrm www/openx/lib/pear/MDB2/Schema
-@dirrm www/openx/lib/pear/MDB2/Driver/Reverse
-@dirrm www/openx/lib/pear/MDB2/Driver/Native
-@dirrm www/openx/lib/pear/MDB2/Driver/Manager
-@dirrm www/openx/lib/pear/MDB2/Driver/Function
-@dirrm www/openx/lib/pear/MDB2/Driver/Datatype
-@dirrm www/openx/lib/pear/MDB2/Driver
-@dirrm www/openx/lib/pear/MDB2
-@dirrm www/openx/lib/pear/Log
-@dirrm www/openx/lib/pear/Image/Graph/Plotarea
-@dirrm www/openx/lib/pear/Image/Graph/Plot/Smoothed
-@dirrm www/openx/lib/pear/Image/Graph/Plot/Fit
-@dirrm www/openx/lib/pear/Image/Graph/Plot
-@dirrm www/openx/lib/pear/Image/Graph/Marker/Pointing
-@dirrm www/openx/lib/pear/Image/Graph/Marker
-@dirrm www/openx/lib/pear/Image/Graph/Line
-@dirrm www/openx/lib/pear/Image/Graph/Layout
-@dirrm www/openx/lib/pear/Image/Graph/Images/Maps
-@dirrm www/openx/lib/pear/Image/Graph/Images/Icons
-@dirrm www/openx/lib/pear/Image/Graph/Images
-@dirrm www/openx/lib/pear/Image/Graph/Grid
-@dirrm www/openx/lib/pear/Image/Graph/Fill
-@dirrm www/openx/lib/pear/Image/Graph/Figure
-@dirrm www/openx/lib/pear/Image/Graph/Dataset
-@dirrm www/openx/lib/pear/Image/Graph/DataSelector
-@dirrm www/openx/lib/pear/Image/Graph/DataPreprocessor
-@dirrm www/openx/lib/pear/Image/Graph/Axis/Marker
-@dirrm www/openx/lib/pear/Image/Graph/Axis
-@dirrm www/openx/lib/pear/Image/Graph
-@dirrm www/openx/lib/pear/Image/Canvas/GD
-@dirrm www/openx/lib/pear/Image/Canvas/Fonts
-@dirrm www/openx/lib/pear/Image/Canvas
-@dirrm www/openx/lib/pear/Image
-@dirrm www/openx/lib/pear/HTTP
-@dirrm www/openx/lib/pear/HTML/docs
-@dirrm www/openx/lib/pear/HTML/Template/Flexy/templates
-@dirrm www/openx/lib/pear/HTML/Template/Flexy/Token
-@dirrm www/openx/lib/pear/HTML/Template/Flexy/Plugin
-@dirrm www/openx/lib/pear/HTML/Template/Flexy/Element
-@dirrm www/openx/lib/pear/HTML/Template/Flexy/Compiler/Standard
-@dirrm www/openx/lib/pear/HTML/Template/Flexy/Compiler/Regex
-@dirrm www/openx/lib/pear/HTML/Template/Flexy/Compiler/Flexy
-@dirrm www/openx/lib/pear/HTML/Template/Flexy/Compiler
-@dirrm www/openx/lib/pear/HTML/Template/Flexy
-@dirrm www/openx/lib/pear/HTML/Template
-@dirrm www/openx/lib/pear/HTML/QuickForm/Rule
-@dirrm www/openx/lib/pear/HTML/QuickForm/Renderer
-@dirrm www/openx/lib/pear/HTML/QuickForm
-@dirrm www/openx/lib/pear/HTML
-@dirrm www/openx/lib/pear/Date
-@dirrm www/openx/lib/pear/DB/QueryTool/Result
-@dirrm www/openx/lib/pear/DB/QueryTool
-@dirrm www/openx/lib/pear/DB/DataObject
-@dirrm www/openx/lib/pear/DB
-@dirrm www/openx/lib/pear/Console
-@dirrm www/openx/lib/pear/Config/Container
-@dirrm www/openx/lib/pear/Config
-@dirrm www/openx/lib/pear/Cache/Lite
-@dirrm www/openx/lib/pear/Cache
-@dirrm www/openx/lib/pear/Archive
-@dirrm www/openx/lib/pear
-@dirrm www/openx/lib/pclzip
-@dirrm www/openx/lib/minify/Solar
-@dirrm www/openx/lib/minify/Minify/Controller
-@dirrm www/openx/lib/minify/Minify/Cache
-@dirrm www/openx/lib/minify/Minify/CSS
-@dirrm www/openx/lib/minify/Minify
-@dirrm www/openx/lib/minify/HTTP
-@dirrm www/openx/lib/minify
-@dirrm www/openx/lib/max/resources
-@dirrm www/openx/lib/max/other/capping
-@dirrm www/openx/lib/max/other
-@dirrm www/openx/lib/max/language/zh_TW
-@dirrm www/openx/lib/max/language/zh_CN
-@dirrm www/openx/lib/max/language/unsupported
-@dirrm www/openx/lib/max/language/uk
-@dirrm www/openx/lib/max/language/tr
-@dirrm www/openx/lib/max/language/sv
-@dirrm www/openx/lib/max/language/sq
-@dirrm www/openx/lib/max/language/sl
-@dirrm www/openx/lib/max/language/sk
-@dirrm www/openx/lib/max/language/ru
-@dirrm www/openx/lib/max/language/ro
-@dirrm www/openx/lib/max/language/pt_PT
-@dirrm www/openx/lib/max/language/pt_BR
-@dirrm www/openx/lib/max/language/pl
-@dirrm www/openx/lib/max/language/nl
-@dirrm www/openx/lib/max/language/nb
-@dirrm www/openx/lib/max/language/ms
-@dirrm www/openx/lib/max/language/lt
-@dirrm www/openx/lib/max/language/ko
-@dirrm www/openx/lib/max/language/ja
-@dirrm www/openx/lib/max/language/it
-@dirrm www/openx/lib/max/language/id
-@dirrm www/openx/lib/max/language/hu
-@dirrm www/openx/lib/max/language/he
-@dirrm www/openx/lib/max/language/fr
-@dirrm www/openx/lib/max/language/fa
-@dirrm www/openx/lib/max/language/es
-@dirrm www/openx/lib/max/language/en
-@dirrm www/openx/lib/max/language/el
-@dirrm www/openx/lib/max/language/de
-@dirrm www/openx/lib/max/language/da
-@dirrm www/openx/lib/max/language/cy
-@dirrm www/openx/lib/max/language/cs
-@dirrm www/openx/lib/max/language/bg
-@dirrm www/openx/lib/max/language/ar
-@dirrm www/openx/lib/max/language
-@dirrm www/openx/lib/max/deliverycache
-@dirrm www/openx/lib/max/data
-@dirrm www/openx/lib/max/Util
-@dirrm www/openx/lib/max/Plugin
-@dirrm www/openx/lib/max/Delivery/templates
-@dirrm www/openx/lib/max/Delivery/Cache
-@dirrm www/openx/lib/max/Delivery
-@dirrm www/openx/lib/max/Dal/data
-@dirrm www/openx/lib/max/Dal/Inventory
-@dirrm www/openx/lib/max/Dal/DataObjects
-@dirrm www/openx/lib/max/Dal/Admin
-@dirrm www/openx/lib/max/Dal
-@dirrm www/openx/lib/max/Admin/data
-@dirrm www/openx/lib/max/Admin/UI/Field
-@dirrm www/openx/lib/max/Admin/UI
-@dirrm www/openx/lib/max/Admin/Invocation
-@dirrm www/openx/lib/max/Admin/Inventory/themes
-@dirrm www/openx/lib/max/Admin/Inventory
-@dirrm www/openx/lib/max/Admin
-@dirrm www/openx/lib/max
-@dirrm www/openx/lib/junit
-@dirrm www/openx/lib/java-xmlrpc-2.0
-@dirrm www/openx/lib/java-xmlrpc
-@dirrm www/openx/lib/fonts/Bitstream
-@dirrm www/openx/lib/fonts
-@dirrm www/openx/lib/Zend/XmlRpc/Value
-@dirrm www/openx/lib/Zend/XmlRpc/Server
-@dirrm www/openx/lib/Zend/XmlRpc/Response
-@dirrm www/openx/lib/Zend/XmlRpc/Request
-@dirrm www/openx/lib/Zend/XmlRpc/Client
-@dirrm www/openx/lib/Zend/XmlRpc
-@dirrm www/openx/lib/Zend/Validate/Hostname
-@dirrm www/openx/lib/Zend/Validate/Barcode
-@dirrm www/openx/lib/Zend/Validate
-@dirrm www/openx/lib/Zend/Uri
-@dirrm www/openx/lib/Zend/Translate/Adapter
-@dirrm www/openx/lib/Zend/Translate
-@dirrm www/openx/lib/Zend/Locale/Math
-@dirrm www/openx/lib/Zend/Locale/Data
-@dirrm www/openx/lib/Zend/Locale
-@dirrm www/openx/lib/Zend/Http/Client/Adapter
-@dirrm www/openx/lib/Zend/Http/Client
-@dirrm www/openx/lib/Zend/Http
-@dirrm www/openx/lib/Zend
-@dirrm www/openx/lib/OX/Util
-@dirrm www/openx/lib/OX/Plugin
-@dirrm www/openx/lib/OX/Maintenance/Statistics/Task
-@dirrm www/openx/lib/OX/Maintenance/Statistics
-@dirrm www/openx/lib/OX/Maintenance/Priority
-@dirrm www/openx/lib/OX/Maintenance
-@dirrm www/openx/lib/OX/M2M
-@dirrm www/openx/lib/OX/Extension/reports
-@dirrm www/openx/lib/OX/Extension/maintenanceStatisticsTask
-@dirrm www/openx/lib/OX/Extension/maintenancePriorityTask
-@dirrm www/openx/lib/OX/Extension/invocationTags
-@dirrm www/openx/lib/OX/Extension/geoTargeting
-@dirrm www/openx/lib/OX/Extension/deliveryLog/DB
-@dirrm www/openx/lib/OX/Extension/deliveryLog
-@dirrm www/openx/lib/OX/Extension/deliveryLimitations
-@dirrm www/openx/lib/OX/Extension/deliveryCacheStore
-@dirrm www/openx/lib/OX/Extension/deliveryAdRender
-@dirrm www/openx/lib/OX/Extension/deliveryAdSelect
-@dirrm www/openx/lib/OX/Extension/bannerTypeText
-@dirrm www/openx/lib/OX/Extension/bannerTypeHtml
-@dirrm www/openx/lib/OX/Extension/authentication
-@dirrm www/openx/lib/OX/Extension/api
-@dirrm www/openx/lib/OX/Extension/3rdPartyServers
-@dirrm www/openx/lib/OX/Extension
-@dirrm www/openx/lib/OX/Dal/Maintenance/Statistics
-@dirrm www/openx/lib/OX/Dal/Maintenance
-@dirrm www/openx/lib/OX/Dal/EntityService
-@dirrm www/openx/lib/OX/Dal/DB_DataObjects
-@dirrm www/openx/lib/OX/Dal
-@dirrm www/openx/lib/OX/Admin/UI/Minify
-@dirrm www/openx/lib/OX/Admin/UI
-@dirrm www/openx/lib/OX/Admin
-@dirrm www/openx/lib/OX
-@dirrm www/openx/lib/OA/Upgrade
-@dirrm www/openx/lib/OA/Task
-@dirrm www/openx/lib/OA/Permission
-@dirrm www/openx/lib/OA/Maintenance/Priority/DeliveryLimitation
-@dirrm www/openx/lib/OA/Maintenance/Priority/AdServer/Task
-@dirrm www/openx/lib/OA/Maintenance/Priority/AdServer
-@dirrm www/openx/lib/OA/Maintenance/Priority
-@dirrm www/openx/lib/OA/Maintenance
-@dirrm www/openx/lib/OA/Dll
-@dirrm www/openx/lib/OA/Dashboard/Widgets
-@dirrm www/openx/lib/OA/Dashboard
-@dirrm www/openx/lib/OA/Dal/Statistics
-@dirrm www/openx/lib/OA/Dal/Maintenance
-@dirrm www/openx/lib/OA/Dal/Delivery
-@dirrm www/openx/lib/OA/Dal/Central
-@dirrm www/openx/lib/OA/Dal
-@dirrm www/openx/lib/OA/DB/Table
-@dirrm www/openx/lib/OA/DB/DataObject
-@dirrm www/openx/lib/OA/DB/CustomDatatypes
-@dirrm www/openx/lib/OA/DB/Charset
-@dirrm www/openx/lib/OA/DB/AdvisoryLock
-@dirrm www/openx/lib/OA/DB
-@dirrm www/openx/lib/OA/Creative/File
-@dirrm www/openx/lib/OA/Creative
-@dirrm www/openx/lib/OA/Central
-@dirrm www/openx/lib/OA/Cache
-@dirrm www/openx/lib/OA/Algorithm/Dependency/Source
-@dirrm www/openx/lib/OA/Algorithm/Dependency
-@dirrm www/openx/lib/OA/Algorithm
-@dirrm www/openx/lib/OA/Admin/UI/model
-@dirrm www/openx/lib/OA/Admin/UI/component/rule
-@dirrm www/openx/lib/OA/Admin/UI/component/decorator
-@dirrm www/openx/lib/OA/Admin/UI/component
-@dirrm www/openx/lib/OA/Admin/UI/Field
-@dirrm www/openx/lib/OA/Admin/UI
-@dirrm www/openx/lib/OA/Admin/Statistics/themes
-@dirrm www/openx/lib/OA/Admin/Statistics/Fields/Delivery
-@dirrm www/openx/lib/OA/Admin/Statistics/Fields
-@dirrm www/openx/lib/OA/Admin/Statistics/Delivery/themes
-@dirrm www/openx/lib/OA/Admin/Statistics/Delivery/Controller
-@dirrm www/openx/lib/OA/Admin/Statistics/Delivery
-@dirrm www/openx/lib/OA/Admin/Statistics
-@dirrm www/openx/lib/OA/Admin/Reports
-@dirrm www/openx/lib/OA/Admin/Menu
-@dirrm www/openx/lib/OA/Admin
-@dirrm www/openx/lib/OA
-@dirrm www/openx/lib/JSON
-@dirrm www/openx/lib
-@dirrm www/openx/etc/xmlcache
-@dirrm www/openx/etc/plugins
-@dirrm www/openx/etc/permanentcache
-@dirrm www/openx/etc/changes/tools
-@dirrm www/openx/etc/changes/tasks
-@dirrm www/openx/etc/changes
-@dirrm www/openx/etc
-@dirrm www/openx/docs
+@dirrm %%WWWDIR%%/www/images/layerstyles/simple
+@dirrm %%WWWDIR%%/www/images/layerstyles/geocities
+@dirrm %%WWWDIR%%/www/images/layerstyles
+@dirrm %%WWWDIR%%/www/images
+@dirrm %%WWWDIR%%/www/delivery
+@dirrm %%WWWDIR%%/www/api/v2/xmlrpc
+@dirrm %%WWWDIR%%/www/api/v2/common
+@dirrm %%WWWDIR%%/www/api/v2
+@dirrm %%WWWDIR%%/www/api/v1/xmlrpc
+@dirrm %%WWWDIR%%/www/api/v1/common
+@dirrm %%WWWDIR%%/www/api/v1
+@dirrm %%WWWDIR%%/www/api
+@dirrm %%WWWDIR%%/www/admin/templates/install
+@dirrm %%WWWDIR%%/www/admin/templates
+@dirrm %%WWWDIR%%/www/admin/precheck
+@dirrm %%WWWDIR%%/www/admin/plugins
+@dirrm %%WWWDIR%%/www/admin/market
+@dirrm %%WWWDIR%%/www/admin/assets/js/jscalendar/skins/aqua
+@dirrm %%WWWDIR%%/www/admin/assets/js/jscalendar/skins
+@dirrm %%WWWDIR%%/www/admin/assets/js/jscalendar/lang
+@dirrm %%WWWDIR%%/www/admin/assets/js/jscalendar/doc/html
+@dirrm %%WWWDIR%%/www/admin/assets/js/jscalendar/doc
+@dirrm %%WWWDIR%%/www/admin/assets/js/jscalendar
+@dirrm %%WWWDIR%%/www/admin/assets/js
+@dirrm %%WWWDIR%%/www/admin/assets/images/rtl
+@dirrm %%WWWDIR%%/www/admin/assets/images/ltr
+@dirrm %%WWWDIR%%/www/admin/assets/images/install
+@dirrm %%WWWDIR%%/www/admin/assets/images/flags
+@dirrm %%WWWDIR%%/www/admin/assets/images/dashboard
+@dirrm %%WWWDIR%%/www/admin/assets/images
+@dirrm %%WWWDIR%%/www/admin/assets/css
+@dirrm %%WWWDIR%%/www/admin/assets
+@dirrm %%WWWDIR%%/www/admin
+@dirrm %%WWWDIR%%/www
+@dirrm %%WWWDIR%%/var/templates_compiled
+@dirrm %%WWWDIR%%/var/plugins/recover
+@dirrm %%WWWDIR%%/var/plugins/DataObjects
+@dirrm %%WWWDIR%%/var/plugins
+@dirrm %%WWWDIR%%/var/cache
+@dirrm %%WWWDIR%%/var
+@dirrm %%WWWDIR%%/scripts/rpm
+@dirrm %%WWWDIR%%/scripts/maintenance/tools
+@dirrm %%WWWDIR%%/scripts/maintenance/plot-maintenance-times
+@dirrm %%WWWDIR%%/scripts/maintenance
+@dirrm %%WWWDIR%%/scripts
+@dirrm %%WWWDIR%%/plugins/reports
+@dirrm %%WWWDIR%%/plugins/maintenanceStatisticsTask
+@dirrm %%WWWDIR%%/plugins/maintenancePriorityTask
+@dirrm %%WWWDIR%%/plugins/invocationTags
+@dirrm %%WWWDIR%%/plugins/geoTargeting
+@dirrm %%WWWDIR%%/plugins/etc
+@dirrm %%WWWDIR%%/plugins/deliveryLog
+@dirrm %%WWWDIR%%/plugins/deliveryLimitations
+@dirrm %%WWWDIR%%/plugins/deliveryDataPrepare
+@dirrm %%WWWDIR%%/plugins/deliveryCacheStore
+@dirrm %%WWWDIR%%/plugins/deliveryAdRender
+@dirrm %%WWWDIR%%/plugins/bannerTypeText
+@dirrm %%WWWDIR%%/plugins/bannerTypeHtml
+@dirrm %%WWWDIR%%/plugins/authentication
+@dirrm %%WWWDIR%%/plugins/api
+@dirrm %%WWWDIR%%/plugins/3rdPartyServers
+@dirrm %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/maintenance
+@dirrm %%WWWDIR%%/lib/xmlrpc/php
+@dirrm %%WWWDIR%%/lib/xmlrpc/java/ApacheLib3/org/openads/proxy
+@dirrm %%WWWDIR%%/lib/xmlrpc/java/ApacheLib3/org/openads
+@dirrm %%WWWDIR%%/lib/xmlrpc/java/ApacheLib3/org
+@dirrm %%WWWDIR%%/lib/xmlrpc/java/ApacheLib3
+@dirrm %%WWWDIR%%/lib/xmlrpc/java/ApacheLib2/org/openads/proxy
+@dirrm %%WWWDIR%%/lib/xmlrpc/java/ApacheLib2/org/openads
+@dirrm %%WWWDIR%%/lib/xmlrpc/java/ApacheLib2/org
+@dirrm %%WWWDIR%%/lib/xmlrpc/java/ApacheLib2
+@dirrm %%WWWDIR%%/lib/xmlrpc/java
+@dirrm %%WWWDIR%%/lib/xmlrpc
+@dirrm %%WWWDIR%%/lib/xajax/xajax_js
+@dirrm %%WWWDIR%%/lib/xajax/lib
+@dirrm %%WWWDIR%%/lib/xajax
+@dirrm %%WWWDIR%%/lib/wact/db/interfaces
+@dirrm %%WWWDIR%%/lib/wact/db/drivers
+@dirrm %%WWWDIR%%/lib/wact/db
+@dirrm %%WWWDIR%%/lib/wact
+@dirrm %%WWWDIR%%/lib/util/file
+@dirrm %%WWWDIR%%/lib/util
+@dirrm %%WWWDIR%%/lib/templates/admin/options
+@dirrm %%WWWDIR%%/lib/templates/admin/layout
+@dirrm %%WWWDIR%%/lib/templates/admin/install
+@dirrm %%WWWDIR%%/lib/templates/admin/form
+@dirrm %%WWWDIR%%/lib/templates/admin/edit-table
+@dirrm %%WWWDIR%%/lib/templates/admin/dashboard
+@dirrm %%WWWDIR%%/lib/templates/admin/ajax
+@dirrm %%WWWDIR%%/lib/templates/admin
+@dirrm %%WWWDIR%%/lib/templates
+@dirrm %%WWWDIR%%/lib/smarty/plugins
+@dirrm %%WWWDIR%%/lib/smarty/internals
+@dirrm %%WWWDIR%%/lib/smarty
+@dirrm %%WWWDIR%%/lib/pear/XML/Tree
+@dirrm %%WWWDIR%%/lib/pear/XML/RPC
+@dirrm %%WWWDIR%%/lib/pear/XML/Parser
+@dirrm %%WWWDIR%%/lib/pear/XML
+@dirrm %%WWWDIR%%/lib/pear/Text
+@dirrm %%WWWDIR%%/lib/pear/Structures/Graph/Manipulator
+@dirrm %%WWWDIR%%/lib/pear/Structures/Graph
+@dirrm %%WWWDIR%%/lib/pear/Structures
+@dirrm %%WWWDIR%%/lib/pear/Spreadsheet/Excel/Writer
+@dirrm %%WWWDIR%%/lib/pear/Spreadsheet/Excel
+@dirrm %%WWWDIR%%/lib/pear/Spreadsheet
+@dirrm %%WWWDIR%%/lib/pear/Services/ExchangeRates
+@dirrm %%WWWDIR%%/lib/pear/Services
+@dirrm %%WWWDIR%%/lib/pear/Pager
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Validator
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Task/Windowseol
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Task/Unixeol
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Task/Replace
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Task/Postinstallscript
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Task
+@dirrm %%WWWDIR%%/lib/pear/PEAR/REST
+@dirrm %%WWWDIR%%/lib/pear/PEAR/PackageFile/v2
+@dirrm %%WWWDIR%%/lib/pear/PEAR/PackageFile/Parser
+@dirrm %%WWWDIR%%/lib/pear/PEAR/PackageFile/Generator
+@dirrm %%WWWDIR%%/lib/pear/PEAR/PackageFile
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Installer/Role
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Installer
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Frontend
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Downloader
+@dirrm %%WWWDIR%%/lib/pear/PEAR/Command
+@dirrm %%WWWDIR%%/lib/pear/PEAR/ChannelFile
+@dirrm %%WWWDIR%%/lib/pear/PEAR
+@dirrm %%WWWDIR%%/lib/pear/OS
+@dirrm %%WWWDIR%%/lib/pear/OLE/PPS
+@dirrm %%WWWDIR%%/lib/pear/OLE
+@dirrm %%WWWDIR%%/lib/pear/Numbers/Words
+@dirrm %%WWWDIR%%/lib/pear/Numbers
+@dirrm %%WWWDIR%%/lib/pear/Net
+@dirrm %%WWWDIR%%/lib/pear/Mail
+@dirrm %%WWWDIR%%/lib/pear/MDB2_Schema
+@dirrm %%WWWDIR%%/lib/pear/MDB2/Schema/Reserved
+@dirrm %%WWWDIR%%/lib/pear/MDB2/Schema
+@dirrm %%WWWDIR%%/lib/pear/MDB2/Driver/Reverse
+@dirrm %%WWWDIR%%/lib/pear/MDB2/Driver/Native
+@dirrm %%WWWDIR%%/lib/pear/MDB2/Driver/Manager
+@dirrm %%WWWDIR%%/lib/pear/MDB2/Driver/Function
+@dirrm %%WWWDIR%%/lib/pear/MDB2/Driver/Datatype
+@dirrm %%WWWDIR%%/lib/pear/MDB2/Driver
+@dirrm %%WWWDIR%%/lib/pear/MDB2
+@dirrm %%WWWDIR%%/lib/pear/Log
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/Plotarea
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/Plot/Smoothed
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/Plot/Fit
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/Plot
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/Marker/Pointing
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/Marker
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/Line
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/Layout
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/Images/Maps
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/Images/Icons
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/Images
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/Grid
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/Fill
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/Figure
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/Dataset
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/DataSelector
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/DataPreprocessor
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/Axis/Marker
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph/Axis
+@dirrm %%WWWDIR%%/lib/pear/Image/Graph
+@dirrm %%WWWDIR%%/lib/pear/Image/Canvas/GD
+@dirrm %%WWWDIR%%/lib/pear/Image/Canvas/Fonts
+@dirrm %%WWWDIR%%/lib/pear/Image/Canvas
+@dirrm %%WWWDIR%%/lib/pear/Image
+@dirrm %%WWWDIR%%/lib/pear/HTTP
+@dirrm %%WWWDIR%%/lib/pear/HTML/docs
+@dirrm %%WWWDIR%%/lib/pear/HTML/Template/Flexy/templates
+@dirrm %%WWWDIR%%/lib/pear/HTML/Template/Flexy/Token
+@dirrm %%WWWDIR%%/lib/pear/HTML/Template/Flexy/Plugin
+@dirrm %%WWWDIR%%/lib/pear/HTML/Template/Flexy/Element
+@dirrm %%WWWDIR%%/lib/pear/HTML/Template/Flexy/Compiler/Standard
+@dirrm %%WWWDIR%%/lib/pear/HTML/Template/Flexy/Compiler/Regex
+@dirrm %%WWWDIR%%/lib/pear/HTML/Template/Flexy/Compiler/Flexy
+@dirrm %%WWWDIR%%/lib/pear/HTML/Template/Flexy/Compiler
+@dirrm %%WWWDIR%%/lib/pear/HTML/Template/Flexy
+@dirrm %%WWWDIR%%/lib/pear/HTML/Template
+@dirrm %%WWWDIR%%/lib/pear/HTML/QuickForm/Rule
+@dirrm %%WWWDIR%%/lib/pear/HTML/QuickForm/Renderer
+@dirrm %%WWWDIR%%/lib/pear/HTML/QuickForm
+@dirrm %%WWWDIR%%/lib/pear/HTML
+@dirrm %%WWWDIR%%/lib/pear/Date
+@dirrm %%WWWDIR%%/lib/pear/DB/QueryTool/Result
+@dirrm %%WWWDIR%%/lib/pear/DB/QueryTool
+@dirrm %%WWWDIR%%/lib/pear/DB/DataObject
+@dirrm %%WWWDIR%%/lib/pear/DB
+@dirrm %%WWWDIR%%/lib/pear/Console
+@dirrm %%WWWDIR%%/lib/pear/Config/Container
+@dirrm %%WWWDIR%%/lib/pear/Config
+@dirrm %%WWWDIR%%/lib/pear/Cache/Lite
+@dirrm %%WWWDIR%%/lib/pear/Cache
+@dirrm %%WWWDIR%%/lib/pear/Archive
+@dirrm %%WWWDIR%%/lib/pear
+@dirrm %%WWWDIR%%/lib/pclzip
+@dirrm %%WWWDIR%%/lib/minify/Solar
+@dirrm %%WWWDIR%%/lib/minify/Minify/Controller
+@dirrm %%WWWDIR%%/lib/minify/Minify/Cache
+@dirrm %%WWWDIR%%/lib/minify/Minify/CSS
+@dirrm %%WWWDIR%%/lib/minify/Minify
+@dirrm %%WWWDIR%%/lib/minify/HTTP
+@dirrm %%WWWDIR%%/lib/minify
+@dirrm %%WWWDIR%%/lib/max/resources
+@dirrm %%WWWDIR%%/lib/max/other/capping
+@dirrm %%WWWDIR%%/lib/max/other
+@dirrm %%WWWDIR%%/lib/max/language/zh_TW
+@dirrm %%WWWDIR%%/lib/max/language/zh_CN
+@dirrm %%WWWDIR%%/lib/max/language/unsupported
+@dirrm %%WWWDIR%%/lib/max/language/uk
+@dirrm %%WWWDIR%%/lib/max/language/tr
+@dirrm %%WWWDIR%%/lib/max/language/sv
+@dirrm %%WWWDIR%%/lib/max/language/sq
+@dirrm %%WWWDIR%%/lib/max/language/sl
+@dirrm %%WWWDIR%%/lib/max/language/sk
+@dirrm %%WWWDIR%%/lib/max/language/ru
+@dirrm %%WWWDIR%%/lib/max/language/ro
+@dirrm %%WWWDIR%%/lib/max/language/pt_PT
+@dirrm %%WWWDIR%%/lib/max/language/pt_BR
+@dirrm %%WWWDIR%%/lib/max/language/pl
+@dirrm %%WWWDIR%%/lib/max/language/nl
+@dirrm %%WWWDIR%%/lib/max/language/nb
+@dirrm %%WWWDIR%%/lib/max/language/ms
+@dirrm %%WWWDIR%%/lib/max/language/lt
+@dirrm %%WWWDIR%%/lib/max/language/ko
+@dirrm %%WWWDIR%%/lib/max/language/ja
+@dirrm %%WWWDIR%%/lib/max/language/it
+@dirrm %%WWWDIR%%/lib/max/language/id
+@dirrm %%WWWDIR%%/lib/max/language/hu
+@dirrm %%WWWDIR%%/lib/max/language/he
+@dirrm %%WWWDIR%%/lib/max/language/fr
+@dirrm %%WWWDIR%%/lib/max/language/fa
+@dirrm %%WWWDIR%%/lib/max/language/es
+@dirrm %%WWWDIR%%/lib/max/language/en
+@dirrm %%WWWDIR%%/lib/max/language/el
+@dirrm %%WWWDIR%%/lib/max/language/de
+@dirrm %%WWWDIR%%/lib/max/language/da
+@dirrm %%WWWDIR%%/lib/max/language/cy
+@dirrm %%WWWDIR%%/lib/max/language/cs
+@dirrm %%WWWDIR%%/lib/max/language/bg
+@dirrm %%WWWDIR%%/lib/max/language/ar
+@dirrm %%WWWDIR%%/lib/max/language
+@dirrm %%WWWDIR%%/lib/max/deliverycache
+@dirrm %%WWWDIR%%/lib/max/data
+@dirrm %%WWWDIR%%/lib/max/Util
+@dirrm %%WWWDIR%%/lib/max/Plugin
+@dirrm %%WWWDIR%%/lib/max/Delivery/templates
+@dirrm %%WWWDIR%%/lib/max/Delivery
+@dirrm %%WWWDIR%%/lib/max/Dal/data
+@dirrm %%WWWDIR%%/lib/max/Dal/Inventory
+@dirrm %%WWWDIR%%/lib/max/Dal/DataObjects
+@dirrm %%WWWDIR%%/lib/max/Dal/Admin
+@dirrm %%WWWDIR%%/lib/max/Dal
+@dirrm %%WWWDIR%%/lib/max/Admin/data
+@dirrm %%WWWDIR%%/lib/max/Admin/UI/Field
+@dirrm %%WWWDIR%%/lib/max/Admin/UI
+@dirrm %%WWWDIR%%/lib/max/Admin/Invocation
+@dirrm %%WWWDIR%%/lib/max/Admin/Inventory/themes
+@dirrm %%WWWDIR%%/lib/max/Admin/Inventory
+@dirrm %%WWWDIR%%/lib/max/Admin
+@dirrm %%WWWDIR%%/lib/max
+@dirrm %%WWWDIR%%/lib/junit
+@dirrm %%WWWDIR%%/lib/java-xmlrpc-2.0
+@dirrm %%WWWDIR%%/lib/java-xmlrpc
+@dirrm %%WWWDIR%%/lib/fonts/Bitstream
+@dirrm %%WWWDIR%%/lib/fonts
+@dirrm %%WWWDIR%%/lib/Zend/XmlRpc/Value
+@dirrm %%WWWDIR%%/lib/Zend/XmlRpc/Server
+@dirrm %%WWWDIR%%/lib/Zend/XmlRpc/Response
+@dirrm %%WWWDIR%%/lib/Zend/XmlRpc/Request
+@dirrm %%WWWDIR%%/lib/Zend/XmlRpc/Client
+@dirrm %%WWWDIR%%/lib/Zend/XmlRpc
+@dirrm %%WWWDIR%%/lib/Zend/Validate/Hostname
+@dirrm %%WWWDIR%%/lib/Zend/Validate/Barcode
+@dirrm %%WWWDIR%%/lib/Zend/Validate
+@dirrm %%WWWDIR%%/lib/Zend/Uri
+@dirrm %%WWWDIR%%/lib/Zend/Translate/Adapter
+@dirrm %%WWWDIR%%/lib/Zend/Translate
+@dirrm %%WWWDIR%%/lib/Zend/Locale/Math
+@dirrm %%WWWDIR%%/lib/Zend/Locale/Data
+@dirrm %%WWWDIR%%/lib/Zend/Locale
+@dirrm %%WWWDIR%%/lib/Zend/Http/Client/Adapter
+@dirrm %%WWWDIR%%/lib/Zend/Http/Client
+@dirrm %%WWWDIR%%/lib/Zend/Http
+@dirrm %%WWWDIR%%/lib/Zend
+@dirrm %%WWWDIR%%/lib/OX/Util
+@dirrm %%WWWDIR%%/lib/OX/Upgrade/Util
+@dirrm %%WWWDIR%%/lib/OX/Upgrade/PostUpgradeTask
+@dirrm %%WWWDIR%%/lib/OX/Upgrade/InstallPlugin
+@dirrm %%WWWDIR%%/lib/OX/Upgrade
+@dirrm %%WWWDIR%%/lib/OX/Plugin
+@dirrm %%WWWDIR%%/lib/OX/PC/API
+@dirrm %%WWWDIR%%/lib/OX/PC
+@dirrm %%WWWDIR%%/lib/OX/Maintenance/Statistics/Task
+@dirrm %%WWWDIR%%/lib/OX/Maintenance/Statistics
+@dirrm %%WWWDIR%%/lib/OX/Maintenance/Priority
+@dirrm %%WWWDIR%%/lib/OX/Maintenance
+@dirrm %%WWWDIR%%/lib/OX/M2M
+@dirrm %%WWWDIR%%/lib/OX/Extension/reports
+@dirrm %%WWWDIR%%/lib/OX/Extension/maintenanceStatisticsTask
+@dirrm %%WWWDIR%%/lib/OX/Extension/maintenancePriorityTask
+@dirrm %%WWWDIR%%/lib/OX/Extension/invocationTags
+@dirrm %%WWWDIR%%/lib/OX/Extension/geoTargeting
+@dirrm %%WWWDIR%%/lib/OX/Extension/deliveryLog/DB
+@dirrm %%WWWDIR%%/lib/OX/Extension/deliveryLog
+@dirrm %%WWWDIR%%/lib/OX/Extension/deliveryLimitations
+@dirrm %%WWWDIR%%/lib/OX/Extension/deliveryCacheStore
+@dirrm %%WWWDIR%%/lib/OX/Extension/deliveryAdSelect
+@dirrm %%WWWDIR%%/lib/OX/Extension/deliveryAdRender
+@dirrm %%WWWDIR%%/lib/OX/Extension/bannerTypeText
+@dirrm %%WWWDIR%%/lib/OX/Extension/bannerTypeHtml
+@dirrm %%WWWDIR%%/lib/OX/Extension/authentication
+@dirrm %%WWWDIR%%/lib/OX/Extension/api
+@dirrm %%WWWDIR%%/lib/OX/Extension/3rdPartyServers
+@dirrm %%WWWDIR%%/lib/OX/Extension
+@dirrm %%WWWDIR%%/lib/OX/Dal/Market
+@dirrm %%WWWDIR%%/lib/OX/Dal/Maintenance/Statistics
+@dirrm %%WWWDIR%%/lib/OX/Dal/Maintenance
+@dirrm %%WWWDIR%%/lib/OX/Dal/EntityService
+@dirrm %%WWWDIR%%/lib/OX/Dal/DB_DataObjects
+@dirrm %%WWWDIR%%/lib/OX/Dal
+@dirrm %%WWWDIR%%/lib/OX/Admin/UI/Minify
+@dirrm %%WWWDIR%%/lib/OX/Admin/UI/Install
+@dirrm %%WWWDIR%%/lib/OX/Admin/UI/Event
+@dirrm %%WWWDIR%%/lib/OX/Admin/UI/Controller
+@dirrm %%WWWDIR%%/lib/OX/Admin/UI
+@dirrm %%WWWDIR%%/lib/OX/Admin
+@dirrm %%WWWDIR%%/lib/OX
+@dirrm %%WWWDIR%%/lib/OA/Upgrade
+@dirrm %%WWWDIR%%/lib/OA/Task
+@dirrm %%WWWDIR%%/lib/OA/Permission
+@dirrm %%WWWDIR%%/lib/OA/Maintenance/Priority/DeliveryLimitation
+@dirrm %%WWWDIR%%/lib/OA/Maintenance/Priority/AdServer/Task
+@dirrm %%WWWDIR%%/lib/OA/Maintenance/Priority/AdServer
+@dirrm %%WWWDIR%%/lib/OA/Maintenance/Priority
+@dirrm %%WWWDIR%%/lib/OA/Maintenance
+@dirrm %%WWWDIR%%/lib/OA/Dll
+@dirrm %%WWWDIR%%/lib/OA/Dashboard/Widgets
+@dirrm %%WWWDIR%%/lib/OA/Dashboard
+@dirrm %%WWWDIR%%/lib/OA/Dal/Statistics
+@dirrm %%WWWDIR%%/lib/OA/Dal/Maintenance
+@dirrm %%WWWDIR%%/lib/OA/Dal/Delivery
+@dirrm %%WWWDIR%%/lib/OA/Dal/Central
+@dirrm %%WWWDIR%%/lib/OA/Dal
+@dirrm %%WWWDIR%%/lib/OA/DB/Table
+@dirrm %%WWWDIR%%/lib/OA/DB/DataObject
+@dirrm %%WWWDIR%%/lib/OA/DB/CustomDatatypes
+@dirrm %%WWWDIR%%/lib/OA/DB/Charset
+@dirrm %%WWWDIR%%/lib/OA/DB/AdvisoryLock
+@dirrm %%WWWDIR%%/lib/OA/DB
+@dirrm %%WWWDIR%%/lib/OA/Creative/File
+@dirrm %%WWWDIR%%/lib/OA/Creative
+@dirrm %%WWWDIR%%/lib/OA/Central
+@dirrm %%WWWDIR%%/lib/OA/Cache
+@dirrm %%WWWDIR%%/lib/OA/Algorithm/Dependency/Source
+@dirrm %%WWWDIR%%/lib/OA/Algorithm/Dependency
+@dirrm %%WWWDIR%%/lib/OA/Algorithm
+@dirrm %%WWWDIR%%/lib/OA/Admin/UI/model
+@dirrm %%WWWDIR%%/lib/OA/Admin/UI/component/rule
+@dirrm %%WWWDIR%%/lib/OA/Admin/UI/component/decorator
+@dirrm %%WWWDIR%%/lib/OA/Admin/UI/component
+@dirrm %%WWWDIR%%/lib/OA/Admin/UI/Field
+@dirrm %%WWWDIR%%/lib/OA/Admin/UI
+@dirrm %%WWWDIR%%/lib/OA/Admin/Statistics/themes
+@dirrm %%WWWDIR%%/lib/OA/Admin/Statistics/Fields/Delivery
+@dirrm %%WWWDIR%%/lib/OA/Admin/Statistics/Fields
+@dirrm %%WWWDIR%%/lib/OA/Admin/Statistics/Delivery/themes
+@dirrm %%WWWDIR%%/lib/OA/Admin/Statistics/Delivery/Controller
+@dirrm %%WWWDIR%%/lib/OA/Admin/Statistics/Delivery
+@dirrm %%WWWDIR%%/lib/OA/Admin/Statistics
+@dirrm %%WWWDIR%%/lib/OA/Admin/Reports
+@dirrm %%WWWDIR%%/lib/OA/Admin/Menu
+@dirrm %%WWWDIR%%/lib/OA/Admin
+@dirrm %%WWWDIR%%/lib/OA
+@dirrm %%WWWDIR%%/lib/JSON
+@dirrm %%WWWDIR%%/lib
+@dirrm %%WWWDIR%%/etc/xmlcache
+@dirrm %%WWWDIR%%/etc/plugins
+@dirrm %%WWWDIR%%/etc/permanentcache
+@dirrm %%WWWDIR%%/etc/changes/tools
+@dirrm %%WWWDIR%%/etc/changes/tasks
+@dirrm %%WWWDIR%%/etc/changes
+@dirrm %%WWWDIR%%/etc
+@dirrm %%WWWDIR%%/docs
 @dirrm www/openx
