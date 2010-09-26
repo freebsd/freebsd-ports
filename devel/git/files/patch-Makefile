@@ -1,6 +1,6 @@
---- ./Makefile.orig	2010-07-28 13:03:43.000000000 -0400
-+++ ./Makefile	2010-08-16 21:56:54.957322822 -0400
-@@ -255,8 +255,8 @@
+--- Makefile.orig	2010-09-18 19:43:54.000000000 -0400
++++ Makefile	2010-09-26 16:22:51.939180025 -0400
+@@ -257,8 +257,8 @@
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -11,7 +11,7 @@
  ALL_CFLAGS = $(CPPFLAGS) $(CFLAGS)
  ALL_LDFLAGS = $(LDFLAGS)
  STRIP ?= strip
-@@ -276,13 +276,13 @@
+@@ -278,13 +278,13 @@
  prefix = $(HOME)
  bindir_relative = bin
  bindir = $(prefix)/$(bindir_relative)
@@ -29,7 +29,7 @@
  ifeq ($(prefix),/usr)
  sysconfdir = /etc
  ETC_GITCONFIG = $(sysconfdir)/gitconfig
-@@ -296,18 +296,18 @@
+@@ -298,19 +298,19 @@
  
  export prefix bindir sharedir sysconfdir gitwebdir
  
@@ -45,6 +45,7 @@
 -TCLTK_PATH = wish
 -PTHREAD_LIBS = -lpthread
 -PTHREAD_CFLAGS =
+-GCOV = gcov
 +CC ?= gcc
 +AR ?= ar
 +RM ?= rm -f
@@ -57,10 +58,11 @@
 +TCLTK_PATH ?= wish
 +PTHREAD_LIBS ?= -lpthread
 +PTHREAD_CFLAGS ?=
++GCOV ?= gcov
  
  export TCL_PATH TCLTK_PATH
  
-@@ -1232,9 +1232,9 @@
+@@ -1245,9 +1245,9 @@
  endif
  ifndef NO_OPENSSL
  	OPENSSL_LIBSSL = -lssl
