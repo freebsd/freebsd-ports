@@ -15,6 +15,9 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Distribute compilation of C(++) code acrosss machines on a network
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
