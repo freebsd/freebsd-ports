@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="80b6d6cc-c970-11df-bb18-0015587e2cc1">
+    <topic>openx -- remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>openx</name>
+	<range><lt>2.8.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenX project reported:</p>
+	<blockquote cite="http://blog.openx.org/09/security-update/">
+	  <p>It has been brought to our attention that there is a vulnerability
+	  in the 2.8 downloadable version of OpenX that can result in a server
+	  running the downloaded version of OpenX being compromised.</p>
+	</blockquote>
+	<p>This vulnerability exists in the file upload functionality
+	  and allows attackers to upload and execute PHP code of
+	  their choice. </p>
+      </body>
+    </description>
+    <references>
+    <url>http://blog.openx.org/09/security-update/</url>
+    <url>http://www.h-online.com/security/news/item/Web-sites-distribute-malware-via-hacked-OpenX-servers-1079099.html</url>
+    </references>
+    <dates>
+      <discovery>2010-09-14</discovery>
+      <entry>2010-09-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e4dac715-c818-11df-a92c-0015587e2cc1">
     <topic>squid -- Denial of service vulnerability in request handling</topic>
     <affects>
