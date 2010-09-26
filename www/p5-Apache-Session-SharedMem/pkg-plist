@@ -2,3 +2,5 @@
 %%SITE_PERL%%/Apache/Session/Store/SharedMem.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session/SharedMem/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session/SharedMem
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
