@@ -1,0 +1,10 @@
+usr/bin/glewinfo
+usr/bin/visualinfo
+usr/lib/libGLEW.so.1.5.1
+%%PORTDOCS%%usr/%%DOCSDIR%%-1.5.1/LICENSE.txt
+%%PORTDOCS%%@dirrm usr/%%DOCSDIR%%-1.5.1
+@dirrm usr/share/doc
+@dirrm usr/share
+@dirrm usr/lib
+@dirrm usr/bin
+@dirrm usr
