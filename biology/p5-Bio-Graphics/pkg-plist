@@ -1,3 +1,4 @@
+bin/glyph_help.pl
 bin/contig_draw.pl
 bin/feature_draw.pl
 bin/frend.pl
