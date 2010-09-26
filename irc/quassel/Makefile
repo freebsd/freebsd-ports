@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quassel
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.quassel-irc.org/pub/
 
@@ -72,6 +72,12 @@ PLIST_SUB+=	CLIENT=""
 .else
 QUASSEL_CLIENT=	OFF
 PLIST_SUB+=	CLIENT="@comment "
+.endif
+
+.if defined(WITH_DEBUG)
+CMAKE_BUILD_TYPE=	RelWithDebugInfo
+.else
+CMAKE_BUILD_TYPE=	Release
 .endif
 
 pre-configure:
