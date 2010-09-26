@@ -1,7 +1,12 @@
 # Date created:		2009-01-25
 # Whom:			Wen Heping <wenheping@gmail.com>
+#
+# $FreeBSD$
+#
 
-.if defined(R_MOD)
+CRAN_Include_MAINTAINER=	wen@FreeBSD.org
+
+.if defined(USE_R_MOD)
 MASTER_CRAN_SITES+=	http://mirrors.geoexpat.com/cran/src/contrib/ \
 			http://cran.rakanu.com/src/contrib/ \
 			http://cran.cnr.berkeley.edu/src/contrib/
@@ -9,7 +14,7 @@ MASTER_CRAN_SITES+=	http://mirrors.geoexpat.com/cran/src/contrib/ \
 
 MASTER_SITES?=	${MASTER_CRAN_SITES}
 
-.if defined(R_MOD)
+.if defined(USE_R_MOD)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
 RUN_DEPENDS+=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
 .endif
@@ -22,11 +27,11 @@ R_COMMAND=	${LOCALBASE}/bin/R
 R_INS=		${R_COMMAND} CMD INSTALL
 
 do-install:
-.if defined(R_MOD)
+.if defined(USE_R_MOD)
 	@cd ${WRKDIR} && ${R_INS} ${PORTNAME}
 .endif
 
-.if defined(R_MOD) && defined(R_MOD_AUTOPLIST)
+.if defined(USE_R_MOD) && defined(R_MOD_AUTOPLIST)
 .if !target(post-install-script)
 post-install-script:
 	@${FIND} -ds ${PREFIX}/${R_MOD_DIR} -type f -print | ${SED} -E -e \

@@ -14,8 +14,7 @@ DISTNAME=	${PORTNAME}_3.4-8
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Everyone's Statistical Software
 
-R_MOD=	yes
+USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
-.include "${.CURDIR}/../../math/R-cran-sm/files/bsd.cran.mk"
 .include <bsd.port.mk>

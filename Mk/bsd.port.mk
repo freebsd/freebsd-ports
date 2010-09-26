@@ -448,6 +448,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Implies inclusion of bsd.python.mk. (Also see
 #				  that file for more information on USE_PYTHON_*
 #				  and USE_PYDISTUTILS).
+# USE_R_MOD	- If set, this port uses the Comprehensive R Archive Network.
+#		  See bsd.cran.mk for more details.
 # USE_RUBY		- If set, this port relies on the Ruby language.
 #				  Implies inclusion of bsd.ruby.mk.  (Also see
 #				  that file for more information on USE_RUBY_*).
@@ -1511,6 +1513,10 @@ PERL=		${LOCALBASE}/bin/perl
 
 .if defined(USE_JAVA)
 .include "${PORTSDIR}/Mk/bsd.java.mk"
+.endif
+
+.if defined(USE_R_MOD)
+.include "${PORTSDIR}/Mk/bsd.cran.mk"
 .endif
 
 .if defined(USE_RUBY) || defined(USE_LIBRUBY)

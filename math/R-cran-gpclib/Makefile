@@ -14,8 +14,7 @@ DISTNAME=	${PORTNAME}_1.5-1
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	General Polygon Clipping Library for R
 
-R_MOD=	yes
+USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
-.include "${.CURDIR}/../../math/R-cran-sm/files/bsd.cran.mk"
 .include <bsd.port.mk>

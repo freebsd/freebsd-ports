@@ -18,10 +18,8 @@ COMMENT=	R extension package for igraph
 
 BROKEN=		Does not build with R-2.11.0
 
-R_MOD=	yes
+USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
-
-.include "${.CURDIR}/../../math/R-cran-sm/files/bsd.cran.mk"
 
 .include <bsd.port.pre.mk>
 

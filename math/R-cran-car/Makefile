@@ -14,9 +14,7 @@ DISTNAME=	${PORTNAME}_1.2-16
 MAINTAINER=	naylor.b.david@gmail.com
 COMMENT=	Companion to Applied Regression for R
 
-R_MOD=	yes
+USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
-
-.include "${.CURDIR}/../../math/R-cran-sm/files/bsd.cran.mk"
 
 .include <bsd.port.mk>
