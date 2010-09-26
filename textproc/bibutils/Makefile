@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bibutils
-PORTVERSION=	4.9
+PORTVERSION=	4.11
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.scripps.edu/~cdputnam/software/bibutils/
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
