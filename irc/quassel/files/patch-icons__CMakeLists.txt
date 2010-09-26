@@ -1,0 +1,15 @@
+--- ./icons/CMakeLists.txt.orig	2010-09-05 14:08:49.000000000 +0400
++++ ./icons/CMakeLists.txt	2010-09-09 23:26:09.154616111 +0400
+@@ -37,7 +37,6 @@
+       install(DIRECTORY oxygen_kde/ DESTINATION ${DATA_INSTALL_DIR}/quassel/icons/oxygen)
+     endif(INSTALL_OXY)
+   endif(EMBED_DATA)
+-endif(WANT_MONO OR WANT_QTCLIENT)
+ 
+ # Application icon
+ 
+@@ -54,3 +53,4 @@
+ # endif((UNIX AND NOT APPLE) OR HAVE_KDE)
+  endif(HAVE_KDE OR NOT APPLE)
+ endif(HAVE_KDE OR UNIX)
++endif(WANT_MONO OR WANT_QTCLIENT)
