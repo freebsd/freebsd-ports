@@ -20,6 +20,8 @@ BUILD_DEPENDS=	nagios-plugins>0:${PLUGINS} \
 		${EXTRA_DEPENDS} \
 		${NONEXISTENT}:${PLUGINS}:build
 
+BROKEN=		does not build
+
 PLIST_FILES=	libexec/nagios/${PORTNAME}
 
 FILE=		${PORTNAME}.c
