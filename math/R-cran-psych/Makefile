@@ -14,9 +14,7 @@ DISTNAME=	${PORTNAME}_1.0-91
 MAINTAINER=	drue@therub.org
 COMMENT=	Psych package for the R project
 
-R_MOD=			yes
+USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
-
-.include "${.CURDIR}/../../math/R-cran-sm/files/bsd.cran.mk"
 
 .include <bsd.port.mk>

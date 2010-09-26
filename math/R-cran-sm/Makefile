@@ -14,8 +14,7 @@ DISTNAME=	${PORTNAME}_2.2-4
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Smoothing methods for nonparametric regression and density estimation
 
-R_MOD=	yes
+USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
 
-.include "${.CURDIR}/files/bsd.cran.mk"
 .include <bsd.port.mk>
