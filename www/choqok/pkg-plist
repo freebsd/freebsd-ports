@@ -88,11 +88,12 @@ share/apps/choqok_filter/filterui.rc
 share/apps/choqok_nowlistening/nowlisteningui.rc
 share/apps/choqok_searchaction/searchactionui.rc
 share/apps/cmake/modules/FindChoqok.cmake
-share/apps/cmake/modules/FindQJson.cmake
 share/apps/cmake/modules/FindQtOAuth.cmake
 share/apps/dbus-1/services/org.kde.choqok.service
 share/apps/khtml/kpartplugins/konqchoqok.desktop
 share/apps/khtml/kpartplugins/konqchoqok.rc
+share/apps/kwebkitpart/kpartplugins/konqchoqok.desktop
+share/apps/kwebkitpart/kpartplugins/konqchoqok.rc
 share/config.kcfg/bit_ly_settings.kcfg
 share/config.kcfg/choqokappearancesettings.kcfg
 share/config.kcfg/choqokbehaviorsettings.kcfg
@@ -184,6 +185,8 @@ share/locale/uk/LC_MESSAGES/choqok.mo
 share/locale/zh_CN/LC_MESSAGES/choqok.mo
 @dirrm include/choqok/twitterapihelper
 @dirrm include/choqok
+@dirrmtry share/apps/kwebkitpart/kpartplugins
+@dirrmtry share/apps/kwebkitpart
 @dirrm share/apps/choqok/images
 @dirrm share/apps/choqok_filter
 @dirrm share/apps/choqok_nowlistening
