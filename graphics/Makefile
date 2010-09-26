@@ -495,6 +495,7 @@
     SUBDIR += linux-f10-cairo
     SUBDIR += linux-f10-dri
     SUBDIR += linux-f10-gdk-pixbuf
+    SUBDIR += linux-f10-glew
     SUBDIR += linux-f10-imlib
     SUBDIR += linux-f10-jpeg
     SUBDIR += linux-f10-libGLU
