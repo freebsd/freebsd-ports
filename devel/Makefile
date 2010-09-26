@@ -3142,6 +3142,7 @@
     SUBDIR += rvi
     SUBDIR += rvm
     SUBDIR += sabre
+    SUBDIR += safe-iop
     SUBDIR += safestr
     SUBDIR += scandoc
     SUBDIR += scons
