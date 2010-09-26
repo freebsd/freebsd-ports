@@ -20,6 +20,7 @@
 %%WWWDIR%%/help/3.php
 %%WWWDIR%%/help/4.php
 %%WWWDIR%%/icons/.empty
+%%WWWDIR%%/infobox.css
 %%WWWDIR%%/image.php
 %%WWWDIR%%/images/archive.png
 %%WWWDIR%%/images/art-pub-note.png
@@ -93,7 +94,6 @@
 %%WWWDIR%%/lib/gettext/gettext.php
 %%WWWDIR%%/lib/gettext/streams.php
 %%WWWDIR%%/lib/htmlpurifier/CREDITS
-%%WWWDIR%%/lib/htmlpurifier/LICENSE
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier.auto.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier.autoload.php
 %%WWWDIR%%/lib/htmlpurifier/library/HTMLPurifier.func.php
@@ -516,6 +516,7 @@
 %%WWWDIR%%/mobile/index.php
 %%WWWDIR%%/mobile/login_form.php
 %%WWWDIR%%/mobile/logout.php
+%%WWWDIR%%/mobile/mobile.css
 %%WWWDIR%%/mobile/mobile.js
 %%WWWDIR%%/mobile/prefs.php
 %%WWWDIR%%/modules/backend-rpc.php

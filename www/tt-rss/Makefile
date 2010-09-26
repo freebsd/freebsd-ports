@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3.1
 CATEGORIES=	www
 MASTER_SITES=	http://tt-rss.org/download/
 
@@ -15,8 +15,7 @@ COMMENT=	Tiny Tiny RSS: web-based news feed (RSS/Atom) aggregator
 
 NO_BUILD=	yes
 
-USE_GETTEXT=	yes
-USE_PHP=	mbstring pcntl session xmlrpc
+USE_PHP=	json mbstring pcntl session xmlrpc
 WANT_PHP_WEB=	yes
 WANT_PHP_CLI=	yes
 REINPLACE_ARGS=	-i ""
@@ -62,6 +61,8 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/bin/php|${LOCALBASE}/bin/php|'	\
 		${WRKSRC}/${script}
 .endfor
+	${REINPLACE_CMD} -e 's|/usr/bin/curl|${LOCALBASE}/bin/curl|' \
+		${WRKSRC}/lib/magpierss/extlib/Snoopy.class.inc
 
 do-configure:
 .if !defined(WITH_PGSQL)
@@ -74,8 +75,7 @@ do-configure:
 
 do-install:
 	${MKDIR} ${WWWDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR})
-	${RM} ${WWWDIR}/LICENSE
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "*" ${WWWDIR} "! -name LICENSE")
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	${CHMOD} ug+x ${SCRIPTS:S|^|${WWWDIR}/|}
 	${INSTALL_DATA} ${WRKDIR}/httpd-tt-rss.conf ${DATADIR}
