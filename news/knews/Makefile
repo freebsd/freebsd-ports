@@ -7,7 +7,7 @@
 
 PORTNAME=	knews
 PORTVERSION=	1.0b.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	news
 MASTER_SITES=	http://www.matematik.su.se/~kjj/
 
@@ -18,6 +18,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		compface:${PORTSDIR}/mail/faces
 RUN_DEPENDS=	newsp:${PORTSDIR}/print/mp-letter
+
+LICENSE=	GPLv2
 
 USE_IMAKE=	yes
 USE_XORG=	xmu xpm xt sm ice xext x11
