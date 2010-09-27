@@ -3,10 +3,12 @@ $FreeBSD$
 
 --- configure.orig
 +++ configure
-@@ -5981,160 +5981,10 @@
+@@ -6041,170 +6041,6 @@
+   LIBSOUND=
+ fi
  
- 
- 
+-
+-
 -  ALSA_REQUIRED=1.0.0
 -  ALSA_MODULES="alsa >= $ALSA_REQUIRED"
 -
@@ -157,11 +159,18 @@ $FreeBSD$
 -$as_echo "#define HAVE_ALSA 1" >>confdefs.h
 -
 -  fi
- 
-         if test x$have_sound_header = xyes || test $HAVE_ALSA = yes; then
-      case "$opsys" in
+-
+-        if test x$have_sound_header = xyes || test $HAVE_ALSA = yes; then
+-     case "$opsys" in
 -              gnu-linux|freebsd|netbsd)
-+              gnu-linux|freebsd*|netbsd)
+-
+-$as_echo "#define HAVE_SOUND 1" >>confdefs.h
+-
+-         ;;
+-     esac
+-  fi
+-
+-
+ fi
  
- $as_echo "#define HAVE_SOUND 1" >>confdefs.h
- 
+ for ac_header in sys/select.h sys/timeb.h sys/time.h unistd.h utime.h \
