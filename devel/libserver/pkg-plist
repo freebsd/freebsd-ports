@@ -1,3 +1,3 @@
 include/server.h
 lib/libserver.so
-lib/libserver.so.1.0
+lib/libserver.so.1.1
