@@ -1,0 +1,26 @@
+--- doc/urxvtcd.1.man.orig	2010-09-26 22:16:01.000000000 +0200
++++ doc/urxvtcd.1.man	2010-09-26 22:16:01.000000000 +0200
+@@ -0,0 +1,23 @@
++.TH rxvt-unicode 1 "2006-04-27"
++.SH NAME
++urxvtcd \- start a urxvtc and/or urxvtd
++.SH SYNOPSIS
++.B urxvtcd
++.RI [ options ]
++.SH DESCRIPTION
++The
++.B urxvtcd
++script automatically starts
++.BR urxvtd (1)
++if it is not running, and then runs
++.BR urxvtc (1)
++with the specified arguments.
++.SH OPTIONS
++All options are passed to
++.BR urxvtc (1)
++as-is.
++.SH AUTHOR
++rxvt\-unicode was written by Marc Alexander Lehmann <rxvt\-unicode@schmorp.de>.
++.PP
++This manual page was written by Decklin Foster <decklin@red\-bean.com>,
++for the Debian project (but may be used by others).

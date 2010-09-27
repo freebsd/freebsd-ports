@@ -7,7 +7,7 @@
 
 PORTNAME=	rxvt-unicode
 PORTVERSION=	9.07
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -47,7 +47,7 @@ OPTIONS=	\
 
 .include <bsd.port.pre.mk>
 
-MAN1=		urxvt.1 urxvtc.1 urxvtd.1
+MAN1=		urxvt.1 urxvtc.1 urxvtcd.1 urxvtd.1
 MAN7=		urxvt.7
 
 PORTDOCS1=	Changes README.FAQ README.configure

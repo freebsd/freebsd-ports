@@ -1,5 +1,6 @@
 bin/urxvt
 bin/urxvtc
+bin/urxvtcd
 bin/urxvtd
 %%PERL%%lib/urxvt/perl/block-graphics-to-ascii
 %%PERL%%lib/urxvt/perl/digital-clock
