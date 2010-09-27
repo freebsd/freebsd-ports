@@ -22826,6 +22826,7 @@ sablevm-classpath               ports/java/sablevm-classpath
 sablotron                       ports/textproc/sablotron
 sabnzbdplus                     ports/news/sabnzbdplus
 sabre                           ports/devel/sabre
+safe-iop                        ports/devel/safe-iop
 safe-rm                         ports/sysutils/safe-rm
 safecat                         ports/sysutils/safecat
 saferpay                        ports/security/saferpay
@@ -23592,6 +23593,7 @@ sqlninja                        ports/security/sqlninja
 sqlrelay                        ports/databases/sqlrelay
 sqsh                            ports/databases/sqsh
 sqstat                          ports/www/sqstat
+sqtop                           ports/net/sqtop
 squall                          ports/net-p2p/squall
 squash                          ports/audio/squash
 squashfs-tools                  ports/sysutils/squashfs-tools
