@@ -12,7 +12,7 @@ MASTER_SITES=	http://eyed3.nicfit.net/releases/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	eyeD3-${PORTVERSION}
 
-MAINTAINER=	ports@fsck.ch
+MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	Python module for processing ID3 tags
 
 USE_PYTHON=	2.4-
