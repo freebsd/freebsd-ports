@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	orangehrm
-PORTVERSION=	2.6
+PORTVERSION=	2.6.0.1
 CATEGORIES=	www misc
 MASTER_SITES=	SF/${PORTNAME}/stable/2.6
 
