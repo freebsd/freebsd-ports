@@ -543,9 +543,10 @@ gst_vdpau_PLIST_FILES=	${GST_INC_DIR}/gst/vdpau/gstvdp.h \
 			${GST_INC_DIR}/gst/vdpau/gstvdpvideosrcpad.h \
 			${GST_LIB_DIR}/libgstvdpau.la \
 			${GST_LIB_DIR}/libgstvdpau.so \
-			lib/libgstvdp-0.10.la \
-			lib/libgstvdp-0.10.so \
-			lib/libgstvdp-0.10.so.0
+			lib/libgstvdp-${VERSION}.la \
+			lib/libgstvdp-${VERSION}.so \
+			lib/libgstvdp-${VERSION}.so.0
+gst_vdpau_PLIST_DIRS=	${GST_INC_DIR}/gst/vdpau
 gst_vdpau_DIST=		bad
 
 # vorbis
