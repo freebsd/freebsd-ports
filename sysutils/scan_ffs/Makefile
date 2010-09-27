@@ -8,7 +8,7 @@
 PORTNAME=	scan_ffs
 PORTVERSION=	1.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.ranner.jawa.at/stuff/
+MASTER_SITES=	http://www.ranner.eu/stuff/
 
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Scan_ffs recovers lost disklabel
