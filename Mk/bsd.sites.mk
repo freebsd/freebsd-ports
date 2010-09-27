@@ -120,7 +120,6 @@ MASTER_SITE_BERLIOS+=	\
 
 .if !defined(IGNORE_MASTER_SITE_CENKES)
 MASTER_SITE_CENKES+=	\
-	http://bsd.cenkes.org/%SUBDIR%/ \
 	http://bsd2.cenkes.org/%SUBDIR%/ \
 	http://bsd3.cenkes.org/%SUBDIR%/
 .endif
