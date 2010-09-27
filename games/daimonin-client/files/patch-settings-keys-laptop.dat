@@ -1,0 +1,25 @@
+--- ../../settings/keys-laptop.dat.orig	2010-08-05 15:36:27.000000000 -0400
++++ ../../settings/keys-laptop.dat	2010-09-20 23:47:37.000000000 -0400
+@@ -1,13 +1,13 @@
+ +"Movement"
+-265 1 "[9]" "?M_NORTH"
+-262 1 "[o]" "?M_NORTHEAST"
+-259 1 "[l]" "?M_EAST"
+-258 1 "[k]" "?M_SOUTHEAST"
+-257 1 "[j]" "?M_SOUTH"
+-260 1 "[u]" "?M_SOUTHWEST"
+-263 1 "[7]" "?M_WEST"
+-264 1 "[8]" "?M_NORTHWEST"
+-261 1 "[i]" "?M_STAY"
++265 1 "9" "?M_NORTH"
++262 1 "o" "?M_NORTHEAST"
++259 1 "l" "?M_EAST"
++258 1 "k" "?M_SOUTHEAST"
++257 1 "j" "?M_SOUTH"
++260 1 "u" "?M_SOUTHWEST"
++263 1 "7" "?M_WEST"
++264 1 "8" "?M_NORTHWEST"
++261 1 "i" "?M_STAY"
+ 091 1 "[" "/left"
+ 093 1 "]" "/right"
+ 

@@ -168,6 +168,7 @@
     SUBDIR += d2x
     SUBDIR += d2x-xl
     SUBDIR += daimonin-client
+    SUBDIR += daimonin-music
     SUBDIR += dangen
     SUBDIR += dangerdeep
     SUBDIR += dangerdeep-data

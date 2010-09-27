@@ -1,5 +1,15 @@
 #!/bin/sh
-mkdir -p ~/.daimonin
-chmod -R +w ~/.daimonin
-cp -R %%PREFIX%%/share/daimonin-%%PORTVERSION%%/ ~/.daimonin
-cd ~/.daimonin && ./daimonin $*
+# /usr/local/bin/daimonin
+#	FreeBSD wrapper to start daimonin
+
+PORTVERSION=%%PORTVERSION%%
+VERSION=${PORTVERSION%.*}
+
+# create home dir in ~/.daimonin/$VERSION and create logs subdir
+# to avoid errors from daimonin's own PhysFS code
+if [ ! -d ~/.daimonin/$VERSION/logs ]; then
+	mkdir -p ~/.daimonin/$VERSION/logs
+fi
+
+# start game
+exec %%PREFIX%%/share/daimonin/daimonin ${@+"$@"}

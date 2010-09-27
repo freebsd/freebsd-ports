@@ -1,0 +1,25 @@
+--- ../../settings/keys-rogue.dat.orig	2010-09-22 21:28:14.000000000 -0400
++++ ../../settings/keys-rogue.dat	2010-09-22 21:26:05.000000000 -0400
+@@ -1,13 +1,13 @@
+ +"Movement"
+-265 1 "[9]" "?M_NORTH"
+-262 1 "[o]" "?M_NORTHEAST"
+-259 1 "[l]" "?M_EAST"
+-258 1 "[k]" "?M_SOUTHEAST"
+-257 1 "[j]" "?M_SOUTH"
+-260 1 "[u]" "?M_SOUTHWEST"
+-263 1 "[7]" "?M_WEST"
+-264 1 "[8]" "?M_NORTHWEST"
+-261 1 "[i]" "?M_STAY"
++117 1 "u" "?M_NORTH"
++108 1 "l" "?M_NORTHEAST"
++110 1 "n" "?M_EAST"
++106 1 "j" "?M_SOUTHEAST"
++098 1 "b" "?M_SOUTH"
++104 1 "h" "?M_SOUTHWEST"
++121 1 "y" "?M_WEST"
++107 1 "k" "?M_NORTHWEST"
++105 1 "i" "?M_STAY"
+ 091 1 "[" "/left"
+ 093 1 "]" "/right"
+ 
