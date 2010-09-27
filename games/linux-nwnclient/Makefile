@@ -6,21 +6,24 @@
 #
 
 PORTNAME=	nwnclient
-PORTVERSION=	1.68
+PORTVERSION=	1.69
 CATEGORIES=	games linux
-MASTER_SITES=	http://bioware.vo.llnwd.net/o1/neverwinternights/updates/linux/${PORTVERSION:S/.//}/ \
-		http://nwdownloads.bioware.com/neverwinternights/linux/129/
+MASTER_SITES=	http://na.llnet.bioware.cdn.ea.com/u/f/eagames/bioware/neverwinternights/updates/linux/${PORTVERSION:S/.//}/:CLIENT \
+		http://nwdownloads.bioware.com/neverwinternights/linux/129/:ORIG \
+		http://nwdownloads.bioware.com/neverwinternights/linux/gold/:GOLD \
+		http://nwdownloads.bioware.com/neverwinternights/linux/161/:HOTU \
+		http://home.roadrunner.com/~nwmovies/nwmovies/:NWMOVIES \
+		http://www.radgametools.com/down/Bink/:BINK
 PKGNAMEPREFIX=	linux-
-DISTFILES=	nwclient129.tar.gz \
-		English_linuxclient${PORTVERSION:S/.//}_orig.tar.gz
+DISTFILES=	${CLIENT_FILES} \
+		${CLIENT_NWMOVIES}
 
-MAINTAINER=	sean-freebsd@farley.org
+MAINTAINER=	scf@FreeBSD.org
 COMMENT=	Neverwinter Nights Linux (x86) Client
 
-RUN_DEPENDS=	${LOCALBASE}/share/nwndata/NWNv129.txt:${PORTSDIR}/games/nwndata
+RUN_DEPENDS=	${LOCALBASE}/share/nwndata/docs/readme.txt:${PORTSDIR}/games/nwndata
 
 NO_BUILD=	yes
-ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 USE_LINUX_APPS=	sdl12 xorglibs
 NWNDATADIR=	${LOCALBASE}/share/nwndata
@@ -32,15 +35,48 @@ USE_LINUX_APPS+=libglu
 USE_LINUX_APPS+=dri
 .endif
 
-PLIST_SUB+=	NWNVERSION="${PORTVERSION:S/.//}"
+OPTIONS=	NWMOVIES	"Install support for movies using BinkPlayer"	off
+
+.include <bsd.port.pre.mk>
+
+# Client detection.  Currently, detects only original and Diamond editions.
+.if exists(${LOCALBASE}/share/nwndata/xp2.key)
+CLIENT_FILES=	nwclientgold.tar.gz:GOLD \
+		nwclienthotu.tar.gz:HOTU \
+		English_linuxclient169_xp2.tar.gz:CLIENT
+.if !defined(WITHOUT_NWMOVIES)
+NWMOVIESFILE=	nwmovies-v4-public.20090223.080954.tar.gz
+BINKPLAYERFILE=	BinkLinuxPlayer.zip
+CLIENT_NWMOVIES=${NWMOVIESFILE}:NWMOVIES \
+		${BINKPLAYERFILE}:BINK
+USE_LINUX_APPS+=sdlmixer
+PLIST_SUB+=	NWMOVIES=""
+.else
+PLIST_SUB+=	NWMOVIES="@comment"
+.endif
+PLIST_SUB+=	DIAMOND="" ORIGINAL="@comment "
+.else
+CLIENT_FILES=	nwclient129.tar.gz:ORIG \
+		English_linuxclient${PORTVERSION:S/.//}_orig.tar.gz:CLIENT
+PLIST_SUB+=	NWMOVIES="@comment" DIAMOND="@comment " ORIGINAL=""
+.endif
 
 do-extract:
 	${MKDIR} ${WRKSRC}
-.for _distfile in ${DISTFILES}
+.for _distfile in ${CLIENT_FILES:C/:.*$//g} ${BINKPLAYERFILE}
 	(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/${_distfile} ${EXTRACT_AFTER_ARGS})
 .endfor
-	${RM} ${WRKSRC}/lib/libSDL* ${WRKSRC}/fixinstall ${WRKSRC}/nwn
+.if !defined(WITHOUT_NWMOVIES)
+	(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${DISTDIR}/${NWMOVIESFILE} ${EXTRACT_AFTER_ARGS} \
+		nwmovies/binklib.so nwmovies/libdis/libdisasm.so \
+		nwmovies/nwmovies.so)
+	(cd ${WRKSRC} && ${MV} BinkPlayer nwmovies)
+.endif
+	${RM} ${WRKSRC}/lib/libSDL* ${WRKSRC}/SDL-1.2.5/* ${WRKSRC}/fixinstall \
+		${WRKSRC}/nwn
+	${RMDIR} ${WRKSRC}/SDL-1.2.5
 
 do-configure:
 	${SED} -e 's|%%NWNDATADIR%%|${NWNDATADIR}|' \
@@ -50,12 +86,15 @@ do-configure:
 do-install:
 	${MKDIR} ${DATADIR}
 	(cd ${WRKSRC} && ${FIND} . -print | \
-	    ${CPIO} -pdmuv -R${SHAREOWN}:${SHAREGRP} ${DATADIR})
-	${LN} -s ${LINUXBASE}/usr/lib/libstdc++-2-libc6.1-1-2.9.0.so \
-		${DATADIR}/lib/libstdc++-libc6.1-2.so.3
+		${CPIO} -pdmuv -R${SHAREOWN}:${SHAREGRP} ${DATADIR})
 	${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
 	${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644
 	(cd ${DATADIR} && ${CHMOD} 0755 dmclient nwmain nwserver)
+.if !defined(WITHOUT_NWMOVIES)
+	(cd ${DATADIR} && ${CHMOD} 0755 nwmovies/BinkPlayer)
+	(cd ${DATADIR}/nwmovies && ${LN} -s /compat/linux/usr/lib/libX11.so.6 libX11.so)
+	${INSTALL_SCRIPT} ${FILESDIR}/nwmovies.pl ${DATADIR}
+.endif
 	${INSTALL_SCRIPT} ${WRKDIR}/nwn ${PREFIX}/bin/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

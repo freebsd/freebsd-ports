@@ -10,24 +10,6 @@ LCDIRS="ambient data dmvault hak localvault music override portraits"
 
 set -e
 
-# Copy a directory structure and symlink its contents
-copydir() {
-	set -e
-	cd "$1"
-	find . -type d | cut -c 3- | while read dir ; do
-		[ -d "${NWNUSERDIR}/${dir}" ] ||
-			mkdir "${NWNUSERDIR}/${dir}"
-	done
-	find . -type l | cut -c 3- | while read file ; do
-		[ -L "${NWNUSERDIR}/${file}" ] ||
-			cp -R "${file}" "${NWNUSERDIR}/${file}"
-	done
-	find . -type f | cut -c 3- | while read file ; do
-		[ -e "${NWNUSERDIR}/${file}" ] ||
-			ln -s "${1}/${file}" "${NWNUSERDIR}/${file}"
-	done
-}
-
 # Print arguments in lowercase
 tolower() {
 	set -e
@@ -42,6 +24,40 @@ lowerdir() {
 	done
 }
 
+# Copy a directory structure and symlink its contents
+copydir() {
+	set -e
+	cd "$1"
+	find . -type d | cut -c 3- | while read dir ; do
+		[ -d "${NWNUSERDIR}/${dir}" ] ||
+			mkdir "${NWNUSERDIR}/${dir}"
+	done
+	find . -type l | cut -c 3- | while read file ; do
+		[ -L "${NWNUSERDIR}/${file}" ] ||
+			cp -R "${file}" "${NWNUSERDIR}/${file}"
+	done
+	find . -type f | cut -c 3- | while read file ; do
+		[ -e "${NWNUSERDIR}/${file}" -o \
+		-e "$(tolower ${NWNUSERDIR}/${file})" ] ||
+			ln -s "${1}/${file}" "${NWNUSERDIR}/${file}"
+	done
+}
+
+# Create user directory.  Will also update a user directory if anything is
+# different due to running NWN with different versions of the game.
+rebuilduserdir() {
+	# Copy ${NWNCLIENTDIR} first since it may contain files which
+	# override parts of ${NWNDATADIR}
+	copydir "${NWNCLIENTDIR}"
+	copydir "${NWNDATADIR}"
+
+	# Some files need to have their names converted to lowercase.  Create
+	# the directories if missing due to differences between versions of NWN.
+	cd "${NWNUSERDIR}"
+	mkdir -p ${LCDIRS}
+	lowerdir ${LCDIRS}
+}
+
 if [ ! -d "${NWNUSERDIR}" ] ; then
 	echo "Creating user directory"
 	mkdir "${NWNUSERDIR}"
@@ -54,30 +70,42 @@ if [ ! -d "${NWNUSERDIR}" ] ; then
 	# initally empty or missing
 	echo '[CDKEY]' >"${NWNUSERDIR}/nwncdkey.ini"
 
-	# Copy ${NWNCLIENTDIR} first since it may contain files which
-	# override parts of ${NWNDATADIR}
-	copydir "${NWNCLIENTDIR}"
-	copydir "${NWNDATADIR}"
-
-	# Some files need to have their names converted to lowercase
-	cd "${NWNUSERDIR}"
-	lowerdir ${LCDIRS}
+	rebuilduserdir
 
 	echo "Your Neverwinter Nights directory (~/.nwn) has now been"
 	echo "created and populated.  Press ENTER to start the game."
 	read dummy
+else
+	# Remove dead links from different versions (e.g., original versus
+	# Diamond Edition) of NWN as they could confuse the game.
+	find -L ${NWNUSERDIR} -type l -exec rm -- {} +
+
+	rebuilduserdir
 fi
 
 echo "Saved games will be stored in ${NWNUSERDIR}/saves/"
 
 cd "${NWNUSERDIR}"
 
+# Remove old movie log file.
+rm -f ${NWNUSERDIR}/nwmovies.log
+
+# Prevent flickering at beginning and ending of playing a movie.
+export NWMOVIES_GRAB_HACK=1
+
 # SDL settings
 export SDL_MOUSE_RELATIVE=0
 export SDL_VIDEO_X11_DGAMOUSE=0
+export SDL_AUDIODRIVER=${SDL_AUDIODRIVER:-"dsp"}
 
 # Library locations
 export LD_LIBRARY_PATH="${NWNUSERDIR}/lib:${NWNUSERDIR}/miles"
 
+# Prevent core files from NWN.
+ulimit -c 0
+
 echo "Starting Neverwinter Nights..."
-exec ./nwmain
+if [ -e ./nwmovies/nwmovies.so ] ; then
+	export LD_PRELOAD=./nwmovies/nwmovies.so
+fi
+./nwmain "${@}"
