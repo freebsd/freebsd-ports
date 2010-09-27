@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Tetris-like game
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip

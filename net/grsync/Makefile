@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.opbyte.it/release/ \
 		GENTOO/distfiles \
 		LOCAL/chinsan
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	GTK frontend for rsync
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync

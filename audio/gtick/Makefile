@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.antcom.de/gtick/download/ CENKES
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A metronome application
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile

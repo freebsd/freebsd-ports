@@ -12,7 +12,7 @@ PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.inf.bme.hu/~pts/
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Converts TIFF- sampled images to PNM image
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \

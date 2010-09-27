@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.de.flightgear.org/pub/fgfs/Shared/ \
 		ftp://ftp.flightgear.org/pub/fgfs/Shared/ \
 		ftp://ftp.is.co.za/pub/games/flightgear/ftp/Shared/
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	FlightGear scenery, textures and aircraft models
 
 NO_BUILD=	yes

@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \
 		ftp://ftp.flightgear.org/pub/fgfs/Source/ \
 		ftp://ftp.is.co.za/pub/games/flightgear/ftp/Source/
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	The FlightGear flight simulator
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs

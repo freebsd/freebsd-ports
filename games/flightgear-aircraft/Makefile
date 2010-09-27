@@ -223,7 +223,7 @@ DISTFILES=	14bis_20080922.zip \
 		x24b_20060114.zip
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Additional aircrafts for the FlightGear flight simulator
 
 RUN_DEPENDS=	${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/flightgear-data

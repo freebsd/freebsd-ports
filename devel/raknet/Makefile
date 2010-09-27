@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.jenkinssoftware.com/raknet/downloads/ \
 
 DISTNAME=	RakNet-3.52
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Networking API that provides reliable UDP primarily for online games
 
 USE_ZIP=	yes

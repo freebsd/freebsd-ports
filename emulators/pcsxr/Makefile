@@ -17,7 +17,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		pcsx-df-1.10-plugin-dfbinimage2${EXTRACT_SUFX}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Playstation (PSX) emulator
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk

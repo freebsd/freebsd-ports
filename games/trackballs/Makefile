@@ -11,7 +11,7 @@ PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	SDL-based Marble Madness clone
 
 LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile

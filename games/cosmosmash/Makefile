@@ -10,7 +10,7 @@ DISTVERSION=	1.4.5
 CATEGORIES=	games
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A clone of the Intellivision(TM) game Astrosmash(TM)
 
 LIB_DEPENDS=	flatzebra:${PORTSDIR}/devel/flatzebra \

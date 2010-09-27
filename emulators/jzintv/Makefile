@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://spatula-city.org/~im14u2c/intv/dl/
 DISTNAME=	jzintv-1.0-beta3-src
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Portable Intellivision(TM) Emulator
 
 WRKSRC=		${WRKDIR}/jzintv-1.0-beta3

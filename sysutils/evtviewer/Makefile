@@ -12,7 +12,7 @@ MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/evtViewer/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	PERL-based Event viewer
 
 USE_PERL5=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	1.9.0
 CATEGORIES=	games
 MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A BurgerTime clone
 
 LIB_DEPENDS=	flatzebra-0.1.2:${PORTSDIR}/devel/flatzebra

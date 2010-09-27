@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Scripts to manage posix accounts in an OpenLDAP directory
 
 WANT_OPENLDAP_VER?=	23

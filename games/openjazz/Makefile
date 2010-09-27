@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://alister.eu/jazz/oj/
 DISTNAME=	OpenJazz-src-270410
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Free re-implementation of the Jazz Jackrabbit(tm) game engine
 
 WRKSRC=	${WRKDIR}

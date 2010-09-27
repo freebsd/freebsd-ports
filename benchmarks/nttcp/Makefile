@@ -12,7 +12,7 @@ CATEGORIES=	benchmarks net
 MASTER_SITES=	http://freeware.sgi.com/source/nttcp/ \
 		http://reality.sgiweb.org/freeware/source/nttcp/
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A client/server program for testing network performance
 
 RESTRICTED=	No commercial use

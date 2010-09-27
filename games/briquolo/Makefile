@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://briquolo.free.fr/download/
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Breakout clone with an OpenGL 3D representation
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png

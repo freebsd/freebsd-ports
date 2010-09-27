@@ -13,7 +13,7 @@ MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		http://freebsd.unixfreunde.de/sources/
 DISTNAME=	Atlas-${PORTVERSION}
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A map viewer for use with the FlightGear flight simulator
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \

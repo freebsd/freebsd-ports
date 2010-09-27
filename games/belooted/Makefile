@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://boby.joe.free.fr/dev/belooted/files/
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A popular 32-card trick-taking game played in France
 
 USE_GNOME=	gtk20 desktopfileutils

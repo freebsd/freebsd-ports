@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.threadingbuildingblocks.org/uploads/78/154/3.0/
 DISTNAME=	tbb30_018oss_src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A library that provides thread building blocks
 
 ONLY_FOR_ARCHS=	amd64 i386 ia64
