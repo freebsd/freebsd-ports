@@ -8,7 +8,7 @@
 PORTNAME=	zonenotify
 PORTVERSION=	0.1
 CATEGORIES=	dns
-MASTER_SITES=	http://morettoni.net/bsd/ \
+MASTER_SITES=	http://www.morettoni.net/bsd/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
