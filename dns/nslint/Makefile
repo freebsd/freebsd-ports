@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nslint
-PORTVERSION=	3.0.a2
+PORTVERSION=	3.1
 CATEGORIES=	dns
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
 		CRITICAL
