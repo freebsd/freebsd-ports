@@ -79,7 +79,7 @@ do-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/manual.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/MANUAL.html ${DOCSDIR}
 .if !defined(WITHOUT_COMPILER_LINKS)
 	${INSTALL_DATA} ${WRKDIR}/${HOWTO} ${DOCSDIR}
 .endif
