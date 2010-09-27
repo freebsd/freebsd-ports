@@ -40,6 +40,12 @@ USE_PYTHON=	yes
 BROKEN=	Does not compile on FreeBSD 7.X
 .endif
 
+.if defined(WITH_DEBUG_CODE)
+BUILD_MODE=Debug
+.else
+BUILD_MODE=Release
+.endif
+
 REPLACE_FILES=	${WRKSRC}/build_mozc.py \
 		${WRKSRC}/gyp/common.gypi \
 		${WRKSRC}/unix/ibus/gen_mozc_xml.py \
@@ -58,13 +64,13 @@ post-patch:
 do-build:
 	@cd ${WRKSRC}/; \
 		${PYTHON_CMD} build_mozc.py gyp --gypdir=${LOCALBASE}/bin; \
-		${PYTHON_CMD} build_mozc.py build_tools -c Release; \
-		${PYTHON_CMD} build_mozc.py build -c Release \
+		${PYTHON_CMD} build_mozc.py build_tools -c ${BUILD_MODE}; \
+		${PYTHON_CMD} build_mozc.py build -c ${BUILD_MODE} \
 			unix/ibus/ibus.gyp:ibus_mozc
 
 do-install:
 	@${INSTALL} -o 0 -g 0 -m 555 \
-		${WRKSRC}/out_linux/Release/ibus_mozc \
+		${WRKSRC}/out_linux/${BUILD_MODE}/ibus_mozc \
 		${LOCALBASE}/libexec/ibus-engine-mozc
 	@${INSTALL} -o 0 -g 0 -m 444 \
 		${WRKSRC}/unix/ibus/mozc.xml \

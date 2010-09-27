@@ -35,6 +35,12 @@ QT_COMPONENTS=	gui dbus qmake_build moc_build uic_build rcc_build
 BROKEN=	Does not compile on FreeBSD 7.X
 .endif
 
+.if defined(WITH_DEBUG_CODE)
+BUILD_MODE=Debug
+.else
+BUILD_MODE=Release
+.endif
+
 REPLACE_FILES=	${WRKSRC}/build_mozc.py \
 		${WRKSRC}/gyp/common.gypi \
 		${WRKSRC}/base/util.cc \
@@ -52,13 +58,13 @@ post-patch:
 do-build:
 	@cd ${WRKSRC}/; \
 		${PYTHON_CMD} build_mozc.py gyp --gypdir=${LOCALBASE}/bin; \
-		${PYTHON_CMD} build_mozc.py build_tools -c Release; \
-		${PYTHON_CMD} build_mozc.py build -c Release \
+		${PYTHON_CMD} build_mozc.py build_tools -c ${BUILD_MODE}; \
+		${PYTHON_CMD} build_mozc.py build -c ${BUILD_MODE} \
 			gui/gui.gyp:mozc_tool
 
 do-install:
 	@${INSTALL} -o 0 -g 0 -m 555 \
-		${WRKSRC}/out_linux/Release/mozc_tool \
+		${WRKSRC}/out_linux/${BUILD_MODE}/mozc_tool \
 		${LOCALBASE}/bin/mozc_tool
 	@${MKDIR} ${LOCALBASE}/share/mozc-tool/icons
 	@${INSTALL} -o 0 -g 0 -m 444 \
