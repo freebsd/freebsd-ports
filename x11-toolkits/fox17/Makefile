@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fox
-PORTVERSION=	1.7.21
+PORTVERSION=	1.7.22
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/
@@ -35,7 +35,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-opengl=yes
 
-CPPFLAGS=	-I${LOCALBASE}/include
+CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
 LDFLAGS=	-L${LOCALBASE}/lib
 
 MAN1=		reswrap.1 shutterbug.1 adie.1 PathFinder.1 calculator.1 \
