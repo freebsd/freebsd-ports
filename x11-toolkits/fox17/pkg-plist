@@ -321,6 +321,7 @@ include/fox-%%MAJORVER%%/chart/chartdefs.h
 include/fox-%%MAJORVER%%/fx.h
 include/fox-%%MAJORVER%%/fx3d.h
 include/fox-%%MAJORVER%%/fxascii.h
+include/fox-%%MAJORVER%%/fxcpuid.h
 include/fox-%%MAJORVER%%/fxdefs.h
 include/fox-%%MAJORVER%%/fxkeys.h
 include/fox-%%MAJORVER%%/fxunicode.h
