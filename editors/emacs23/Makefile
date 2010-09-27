@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -18,9 +18,10 @@ COMMENT=	GNU editing macros
 
 MAKE_JOBS_UNSAFE=	yes
 
-CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* \
+CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-24.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
-		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
+		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
+		emacs-nox11-[0-9]*
 
 INSTALLS_ICONS=	yes
 
@@ -28,12 +29,17 @@ EMACS_VER=	23.2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--localstatedir=/var
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAN1=		b2m.1 ctags.1 ebrowse.1 emacs.1 emacsclient.1 etags.1 \
 		grep-changelog.1 rcs-checkin.1
-PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET}
+PLIST_SUB=	EMACS_VER=${EMACS_VER}
+
+EMACS_DIRS=	${DATADIR}/${EMACS_VER} ${PREFIX}/libexec/${PORTNAME}
 
 MAKE_ENV=	LC_ALL=C
 
@@ -44,32 +50,34 @@ INFO=		ada-mode auth autotype calc ccmode cl dbus dired-x \
 		org pcl-cvs pgg rcirc reftex remember sasl sc semantic ses sieve \
 		smtpmail speedbar tramp url vip viper widget woman
 
-OPTIONS=	DBUS	"DBus support"			ON \
+OPTIONS=	CANNA	"Canna support"			OFF \
+		DBUS	"DBus support"			ON \
 		GCONF	"GConf support"			ON \
-		GIF	"GIF support"			ON \
-		GTK2	"GTK+ support"			ON \
-		JPEG	"JPEG support"			ON \
+		GIF	"GIF images support"		ON \
+		JPEG	"JPEG images support"		ON \
 		M17N	"M17N support for text-shaping"	ON \
-		MOTIF	"Motif support"			OFF \
-		OTF	"Opentype Font"			ON \
-		PNG	"PNG support"			ON \
+		MOTIF	"Use Motif widgets"		OFF \
+		OTF	"Opentype fonts support"	ON \
+		PNG	"PNG images support"		ON \
 		SOUND	"Sound support"			ON \
 		SOURCES	"Install source code"		ON \
-		SVG	"SVG support"			ON \
-		TIFF	"TIFF support"			ON \
-		X11	"X11 support"			ON \
-		XAW	"XAW support"			OFF \
-		XAW3D	"XAW3D support"			OFF \
+		SVG	"SVG images support"		ON \
+		TIFF	"TIFF images support"		ON \
+		XAW	"Use Athena widgets"		OFF \
+		XAW3D	"Use Athena3D widgets"		OFF \
 		SYNC_INPUT	"Synchronously process asynchronous input"	ON \
 		SCROLLBARS	"Without toolkit scroll-bars"			ON \
-		XFT	"Xft support"			ON \
-		XIM	"XIM support"			ON \
-		XPM	"XPM support"			ON
+		XFT	"Freetype fonts support"	ON \
+		XIM	"X Input Method support"	ON \
+		XPM	"XPM images support"		ON
 
 .include <bsd.port.options.mk>
 
+DBUS_PTHREAD_LIBS=	${CC} -dumpspecs | ${GREP} -m 1 pthread: | ${SED} -e 's|^.*%{\!pg: %{pthread:||' -e 's|}.*$$||' || ${TRUE}
+
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x
+
 .else
 USE_XORG=	x11
 USE_GNOME=
@@ -160,12 +168,10 @@ LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 
 .if defined(WITHOUT_M17N)
 CONFIGURE_ARGS+=	--without-m17n-flt
-CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
 .else
 .if !defined(WITHOUT_XFT)
 LIB_DEPENDS+=	m17n.4:${PORTSDIR}/devel/m17n-lib
 .endif
-CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 .endif
 
 .if defined(WITHOUT_OTF)
@@ -186,6 +192,17 @@ USE_GNOME+=	gconf2
 CONFIGURE_ARGS+=	--without-xim
 .endif
 
+.if defined(WITH_CANNA)
+PATCH_SITES+=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR+=	nork
+PATCHFILES+=	emacs232canna-20100608.patch.gz
+PATCH_DIST_STRIP=	-p1
+CONFIGURE_ARGS+=	--with-canna \
+			--with-canna-includes=${LOCALBASE}/include \
+			--with-canna-libraries=${LOCALBASE}/lib
+LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/canna-lib
+.endif
+
 .endif
 
 .if defined(WITHOUT_SOUND)
@@ -195,35 +212,29 @@ CONFIGURE_ARGS+=	--without-sound
 .if defined(WITHOUT_DBUS)
 CONFIGURE_ARGS+=	--without-dbus
 .else
-LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 .endif
-
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
 
 .include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-.endif
-
-.if defined(WITHOUT_SOURCES)
-PLIST_SUB+=	SOURCES="@comment "
-.else
-PLIST_SUB+=	SOURCES=""
-.endif
 
 .if ${ARCH} == "ia64"
 BROKEN=	Emacs 23.X does not currently build on ia64
 .endif
 
-.if ${OSVERSION} < 700000 && defined(WITHOUT_X11) && defined(WITH_DBUS)
-BROKEN=	Does not currently build with dbus support but without X11
-.endif
-
 post-patch:
 	@${RM} -f ${WRKSRC}/info/*
 	@${REINPLACE_CMD} -e "s/%%EMACS_VER%%/${EMACS_VER}/g" -e "s/%%DATADIR%%/${DATADIR:C/\//\\\//g}/g" ${WRKSRC}/sources.el
+
+post-configure:
+	@${REINPLACE_CMD} -e "s/^\(DBUS_LIBS.*\)-pthread\(.*\)$$/\1$$(${DBUS_PTHREAD_LIBS})\2/" ${WRKSRC}/src/Makefile
+
+add-plist-data:
+.for i in ${EMACS_DIRS}
+	@${FIND} ${i} -type f |${SED} -e 's,${PREFIX}/,,g' >>${TMPPLIST}
+.endfor
+.for i in ${EMACS_DIRS}
+	@${FIND} ${i} -type d -depth |${SED} -e 's,^${PREFIX}/,@dirrm ,g' >>${TMPPLIST}
+.endfor
 
 .if defined(WITH_SOURCES)
 post-install:
@@ -231,5 +242,17 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/src/*.[ch] ${DATADIR}/${EMACS_VER}/src
 	@${INSTALL_DATA} ${WRKSRC}/sources.el ${DATADIR}/${EMACS_VER}/site-lisp/site-start.el
 .endif
+
+pre-everything::
+	@${ECHO_MSG}
+.if !defined(WITHOUT_X11)
+	@${ECHO_MSG} "====> To disable X11 support, define: WITHOUT_X11."
+.endif
+.if defined(WITH_CANNA)
+	@${ECHO_MSG} "====> Canna support is not part of standard distribution"
+	@${ECHO_MSG} "====> of GNU Emacs and is therefore not supported by GNU"
+	@${ECHO_MSG} "====> Emacs development team."
+.endif
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
