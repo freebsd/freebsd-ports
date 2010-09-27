@@ -8,7 +8,7 @@
 PORTNAME=	qmail-rblchk
 PORTVERSION=	2.4.1
 CATEGORIES=	mail
-MASTER_SITES=	http://morettoni.net/qmail/ \
+MASTER_SITES=	http://www.morettoni.net/qmail/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
