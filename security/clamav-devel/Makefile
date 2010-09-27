@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20100920
+PORTVERSION=	20100927
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
@@ -22,16 +22,17 @@ OPTIONS=	ARC "Enable arch archives support" On \
 		UNZOO "Enable zoo archives support" On \
 		UNRAR "Enable rar archives support" On \
 		LLVM "Enable JIT Bytecode compiler" On \
+		TESTS "Run compile-time tests (req. python)" On \
 		MILTER "Compile the milter interface" Off \
 		LDAP "libmilter was built with LDAP" Off \
 		ICONV "Enable ICONV support" Off \
 		STDERR "Print logs to stderr instead of stdout" Off
 
-GNU_CONFIGURE=		yes
-MAKE_JOBS_SAFE=		yes
-USE_LDCONFIG=		yes
-USE_RC_SUBR=		clamav-clamd clamav-freshclam
-CONF_FILES=		clamd freshclam
+GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+USE_LDCONFIG=	yes
+USE_RC_SUBR=	clamav-clamd clamav-freshclam
+CONF_FILES=	clamd freshclam
 
 LICENSE=	GPLv2
 
@@ -145,9 +146,10 @@ CONFIGURE_ARGS+=--without-iconv
 
 .if defined(WITH_LLVM) && ${ARCH} != "sparc64"
 CONFIGURE_ARGS+=--enable-llvm
+USE_GMAKE=	yes
+. if defined(WITH_TESTS)
 USE_PYTHON_BUILD=	yes
-USE_GMAKE=		yes
-USE_GCC=		4.2+
+. endif
 .else
 CONFIGURE_ARGS+=--disable-llvm
 .endif
@@ -202,7 +204,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|0x100000000|0x100000000ULL|g' \
 		${WRKSRC}/libclamunrar/unrar.c
 
-.if defined(WITH_LLVM)
+.if defined(WITH_LLVM) && defined(WITH_TESTS)
 pre-configure:
 	@if ! ${PYTHON_CMD} -c "import thread" >/dev/null 2>&1; then \
 		${ECHO_MSG} ""; \
@@ -215,7 +217,7 @@ pre-configure:
 	fi
 .endif
 
-.if ${OSVERSION} >= 700000
+.if defined(WITH_TESTS) && ${OSVERSION} >= 700000
 post-build:
 	@if [ -f "${PY_NO_THREAD}" ]; then \
 		${MAKE} -C ${WRKSRC} check; \
