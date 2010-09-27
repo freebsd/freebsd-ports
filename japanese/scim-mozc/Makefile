@@ -40,6 +40,12 @@ USE_PYTHON=	yes
 BROKEN=	Does not compile on FreeBSD 7.X
 .endif
 
+.if defined(WITH_DEBUG_CODE)
+BUILD_MODE=Debug
+.else
+BUILD_MODE=Release
+.endif
+
 REPLACE_FILES=	${WRKSRC}/build_mozc.py \
 		${WRKSRC}/gyp/common.gypi \
 		${WRKSRC}/base/util.cc \
@@ -57,17 +63,17 @@ post-patch:
 do-build:
 	@cd ${WRKSRC}/; \
 		${PYTHON_CMD} build_mozc.py gyp --gypdir=${LOCALBASE}/bin; \
-		${PYTHON_CMD} build_mozc.py build_tools -c Release; \
+		${PYTHON_CMD} build_mozc.py build_tools -c ${BUILD_MODE}; \
 		${PYTHON_CMD} build_mozc.py build -c Release \
 			unix/scim/scim.gyp:scim_mozc \
 			unix/scim/scim.gyp:scim_mozc_setup
 
 do-install:
 	@${INSTALL} -o 0 -g 0 -m 555 \
-		${WRKSRC}/out_linux/Release/lib.target/libscim_mozc.so \
+		${WRKSRC}/out_linux/${BUILD_MODE}/lib.target/libscim_mozc.so \
 		${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/mozc.so
 	@${INSTALL} -o 0 -g 0 -m 555 \
-		${WRKSRC}/out_linux/Release/lib.target/libscim_mozc_setup.so \
+		${WRKSRC}/out_linux/${BUILD_MODE}/lib.target/libscim_mozc_setup.so \
 		${LOCALBASE}/lib/scim-1.0/1.4.0/SetupUI/mozc_setup.so
 	@${MKDIR} ${LOCALBASE}/share/scim-mozc/icons
 	@${INSTALL} -o 0 -g 0 -m 444 \

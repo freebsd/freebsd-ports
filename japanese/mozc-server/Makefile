@@ -37,6 +37,12 @@ BROKEN=		Does not compile on FreeBSD 7.X
 BROKEN=		Does not compile on sparc64: segfault
 .endif
 
+.if defined(WITH_DEBUG_CODE)
+BUILD_MODE=Debug
+.else
+BUILD_MODE=Release
+.endif
+
 .if defined(WITH_DIC_UT)
 WITH_DIC_UT_MEISHI=yes
 WITH_DIC_UT_JINMEI=yes
@@ -101,13 +107,13 @@ post-patch:
 do-build:
 	@cd ${WRKSRC}/; \
 		${PYTHON_CMD} build_mozc.py gyp --gypdir=${LOCALBASE}/bin; \
-		${PYTHON_CMD} build_mozc.py build_tools -c Release; \
-		${PYTHON_CMD} build_mozc.py build -c Release \
+		${PYTHON_CMD} build_mozc.py build_tools -c ${BUILD_MODE}; \
+		${PYTHON_CMD} build_mozc.py build -c ${BUILD_MODE} \
 			server/server.gyp:mozc_server
 
 do-install:
 	@${INSTALL} -o 0 -g 0 -m 555 \
-		${WRKSRC}/out_linux/Release/mozc_server \
+		${WRKSRC}/out_linux/${BUILD_MODE}/mozc_server \
 		${LOCALBASE}/bin/mozc_server
 
 .include <bsd.port.post.mk>
