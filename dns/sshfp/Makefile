@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sshfp
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.5
 CATEGORIES=	dns security
 MASTER_SITES=	ftp://ftp.xelerance.com/sshfp/ \
 		CRITICAL
