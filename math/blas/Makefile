@@ -36,7 +36,7 @@ MAKE_ENV+=	LDADD="${LDADD}" LDFLAGS="${LDFLAGS}" \
 MAKE_ENV+=	${_u}="${LOCALBASE}/bin/${_u:L}"
 .endfor
 
-OPTIONS=	"PROFILE" "Build and install a profiling library" Off
+OPTIONS=	PROFILE "Build and install a profiling library" Off
 
 .include <bsd.port.options.mk>
 
@@ -50,7 +50,7 @@ base system profiling libraries
 .endif
 PLIST_FILES+=	lib/libblas_p.a
 .else
-MAKE_ENV+=	WITHOUT_PROFILE=
+MAKE_ENV+=	NO_PROFILE=
 .endif
 
 post-patch:
