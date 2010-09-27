@@ -7,6 +7,7 @@
 
 PORTNAME=	lapack
 PORTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/lapack/ \
 		http://netlib.org/lapack/ \
@@ -23,6 +24,8 @@ USE_FORTRAN=	yes
 DIST_SUBDIR=	lapack
 USE_LDCONFIG=	yes
 
+OPTIONS=	PROFILE "Build and install profiling libraries" Off
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
@@ -35,7 +38,13 @@ MAKE_JOBS_SAFE=	yes
 MANSRC=${WRKDIR}/lapack-3.2.0
 WRKSRC_SHARED=${WRKSRC}_shared
 FFLAGS_SHARED=${FPIC}
-.if !(defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE))
+.if defined(WITH_PROFILE)
+.if defined(WITHOUT_PROFILE)
+IGNORE =	you have defined both WITH_PROFILE and WITHOUT_PROFILE
+.elif !exists(/usr/lib/libc_p.a)
+IGNORE=	you have chosen WITH_PROFILE, but have not installed the\
+base system profiling libraries
+.endif
 WRKSRC_PROFILE=${WRKSRC}_profile
 FFLAGS_PROFILE=-pg
 PLIST_SUB+=	PROFILE=""
@@ -75,7 +84,7 @@ post-patch:
 				${WRKSRC}/make.inc
 	@${REINPLACE_CMD} -e 's,%%EXTRAFLAGS%%,${FFLAGS_SHARED},g' \
 				${WRKSRC_SHARED}/make.inc
-.if !(defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE))
+.if defined(WITH_PROFILE)
 	@${REINPLACE_CMD} -e 's,%%EXTRAFLAGS%%,${FFLAGS_PROFILE},g' \
 				${WRKSRC_PROFILE}/make.inc
 .endif
@@ -85,7 +94,7 @@ do-build:
 	${MAKE} -C ${WRKSRC} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH="${AR}"
 	@${ECHO_CMD} "Building shared lapack library"
 	${MAKE} -C ${WRKSRC_SHARED} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH="${AR}"
-.if !(defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE))
+.if defined(WITH_PROFILE)
 	@${ECHO_CMD} "Building profile lapack library"
 	${MAKE} -C ${WRKSRC_PROFILE} ${.MAKEFLAGS} ${_MAKE_JOBS} ARCH="${AR}"
 .endif
@@ -102,7 +111,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib${lib}.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC_SHARED}/lib${lib}.so.${SVERSION} ${PREFIX}/lib
 	${LN} -sf lib${lib}.so.${SVERSION} ${PREFIX}/lib/lib${lib}.so
-.if !(defined(NOPROFILE) || defined(NO_PROFILE) || defined(WITHOUT_PROFILE))
+.if defined(WITH_PROFILE)
 	${INSTALL_DATA} ${WRKSRC_PROFILE}/lib${lib}.a ${PREFIX}/lib/lib${lib}_p.a
 .endif
 .endfor
