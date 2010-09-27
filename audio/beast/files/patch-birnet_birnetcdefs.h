@@ -1,7 +1,7 @@
---- birnet/birnetcdefs.h.orig	2008-02-26 23:16:19.000000000 +0100
-+++ birnet/birnetcdefs.h	2008-02-26 23:16:44.000000000 +0100
+--- birnet/birnetcdefs.h.orig	2010-09-15 12:21:26.000000000 +0000
++++ birnet/birnetcdefs.h	2010-09-15 12:21:17.000000000 +0000
 @@ -24,6 +24,13 @@
- #include <sys/types.h>			/* uint, ssize */
+ #include <float.h>                      /* {FLT|DBL}_{MIN|MAX|EPSILON} */
  #include <birnet/birnetconfig.h>
  
 +/*
