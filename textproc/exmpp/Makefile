@@ -7,6 +7,7 @@
 
 PORTNAME=	exmpp
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	textproc net-im
 MASTER_SITES=	http://download.process-one.net/${PORTNAME}/
 
