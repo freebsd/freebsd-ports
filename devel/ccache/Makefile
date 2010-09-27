@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ccache
-PORTVERSION=	3.0.1
-PORTREVISION=	3
+PORTVERSION=	3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://samba.org/ftp/ccache/ CRITICAL
 
@@ -15,7 +14,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A tool to minimize the compile time of C/C++ programs
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/GPL-3.0.txt
 
 GNU_CONFIGURE=	yes
 
