@@ -20,7 +20,7 @@ MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/makc
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,r,,}
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	MPlayer version of the libdvdnav project
 
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread

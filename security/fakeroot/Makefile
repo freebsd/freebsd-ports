@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/f/fakeroot
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Simulate the root user behaviour
 
 GNU_CONFIGURE=	yes

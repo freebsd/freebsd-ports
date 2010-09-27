@@ -12,7 +12,7 @@ CATEGORIES=	deskutils textproc
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A hierarchical text notes manager
 
 USE_GMAKE=	yes

@@ -11,7 +11,7 @@ MASTER_SITES=	http://users.on.net/~jonof/buildport/
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}.zip \
 		jfbuild_src_${PORTVERSION}.zip
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Jonathon Fowler's Shadow Warrior Port
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm

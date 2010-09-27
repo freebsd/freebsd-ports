@@ -13,7 +13,7 @@ MASTER_SITES=	http://labs.freehackers.org/attachments/download/45/ \
 		http://contribs.martymac.org/FreeBSD-ports/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a.1/-alpha1/}
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Vi-like editor
 
 USE_BZIP2=	yes

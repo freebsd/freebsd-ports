@@ -14,7 +14,7 @@ DISTNAME=	siano-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Native FreeBSD driver for Siano-based USB DVB devices
 
 WRKSRC=	${WRKDIR}/siano-${PORTVERSION}

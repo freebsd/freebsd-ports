@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
 		ftp://ftp.yars.free.net/pub/source/lftp/ \
 		ftp://ftp.yars.free.net/pub/source/lftp/old/
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Shell-like command line ftp client
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

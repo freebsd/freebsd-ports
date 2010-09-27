@@ -11,7 +11,7 @@ CATEGORIES=	archivers linux
 MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH} ../extras/${LINUX_DIST_VER}/SRPMS
 DISTNAME=	${PORTNAME}-${PORTVERSION}-10.fc4
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Linux version of par2cmdline
 
 ONLY_FOR_ARCHS=	i386 amd64

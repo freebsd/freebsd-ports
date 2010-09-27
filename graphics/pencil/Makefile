@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}-planner/Pencil/${PORTVERSION}eta
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFFIX}
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Pencil - a traditional 2D animation software
 
 LIB_DEPENDS+=	ming:${PORTSDIR}/graphics/ming \

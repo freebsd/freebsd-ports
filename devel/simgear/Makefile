@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.de.simgear.org/pub/simgear/Source/ \
 		ftp://mirrors.ibiblio.org/pub/mirrors/simgear/ftp/Source/ \
 		ftp://goflyflightgear.com/simgear/Source/
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A toolkit for 3D games and simulations
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib

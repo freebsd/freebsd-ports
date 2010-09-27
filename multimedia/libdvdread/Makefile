@@ -20,7 +20,7 @@ MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/makc
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,r,,}
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	MPlayer version of the libdvdread project
 
 .if !defined(PACKAGE_BUILDING)

@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Blobby%20Volley%202%20%28Linux%29/Beta%200.9b
 DISTNAME=	blobby2-linux-${PORTVERSION}
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Official continuation of the famous Blobby Volley 1.x game
 
 LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs \

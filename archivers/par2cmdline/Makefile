@@ -12,7 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	SF/parchive/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Tools for using Parity v2 Archive files
 
 GNU_CONFIGURE=	yes

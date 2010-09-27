@@ -10,7 +10,7 @@ PORTVERSION=	2.2.2
 CATEGORIES=	security
 MASTER_SITES=	http://cthulhu.c3d2.de/~toidinamai/vlock/archive/
 
-MAINTAINER=	ganael.laplanche@martymac.org
+MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Locks a terminal
 
 USE_GMAKE=	yes
