@@ -43,7 +43,7 @@ MAKE_JOBS_SAFE=	yes
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 
-OPTIONS=	LTO     "Enable link-time optimizations (LTO)"  off \
+OPTIONS=	LTO	"Enable link-time optimizations (LTO)"	off \
 		JAVA	"Enable the Java frontend (i386 and amd64 only)"	on
 
 .include <bsd.port.pre.mk>
