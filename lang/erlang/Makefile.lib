@@ -1,59 +1,59 @@
 # $FreeBSD$
 
-ERTS_VSN=	5.7.5
-TOOLS_VSN=	2.6.5.1
-OTP_LIBS=	appmon-2.1.11 \
-		asn1-1.6.13 \
-		common_test-1.4.7 \
-		compiler-4.6.5 \
-		cosEvent-2.1.8 \
-		cosEventDomain-1.1.8 \
+ERTS_VSN=	5.8.1
+TOOLS_VSN=	2.6.6.1
+OTP_LIBS=	appmon-2.1.13 \
+		asn1-1.6.14.1 \
+		common_test-1.5.1 \
+		compiler-4.7.1 \
+		cosEvent-2.1.9 \
+		cosEventDomain-1.1.9 \
 		cosFileTransfer-1.1.10 \
-		cosNotification-1.1.13 \
-		cosProperty-1.1.11 \
-		cosTime-1.1.8 \
-		cosTransactions-1.2.9 \
-		crypto-1.6.4 \
-		debugger-3.2.2 \
-		dialyzer-2.2.0 \
-		docbuilder-0.9.8.7 \
-		edoc-0.7.6.6 \
-		erl_docgen-0.2 \
-		erl_interface-3.6.5 \
-		erts-5.7.5 \
-		et-1.4 \
+		cosNotification-1.1.14 \
+		cosProperty-1.1.12 \
+		cosTime-1.1.9 \
+		cosTransactions-1.2.10 \
+		crypto-2.0.1 \
+		debugger-3.2.4 \
+		dialyzer-2.3.1 \
+		docbuilder-0.9.8.8 \
+		edoc-0.7.6.7 \
+		erl_docgen-0.2.2 \
+		erl_interface-3.7.1 \
+		erts-5.8.1 \
+		et-1.4.1 \
 		eunit-2.1.5 \
-		gs-1.5.11 \
-		hipe-3.7.5 \
-		ic-4.2.24 \
-		inets-5.3 \
-		inviso-0.6.1 \
-		jinterface-1.5.3 \
-		kernel-2.13.5 \
-		megaco-3.14 \
-		mnesia-4.4.13 \
-		observer-0.9.8.2 \
-		odbc-2.10.7 \
-		orber-3.6.15 \
+		gs-1.5.13 \
+		hipe-3.7.7 \
+		ic-4.2.25 \
+		inets-5.5 \
+		inviso-0.6.2 \
+		jinterface-1.5.3.1 \
+		kernel-2.14.1 \
+		megaco-3.15 \
+		mnesia-4.4.15 \
+		observer-0.9.8.3 \
+		odbc-2.10.8 \
+		orber-3.6.17 \
 		os_mon-2.2.5 \
 		otp_mibs-1.0.6 \
-		parsetools-2.0.2 \
+		parsetools-2.0.4 \
 		percept-0.8.4 \
 		pman-2.7.1 \
-		public_key-0.5 \
-		reltool-0.5.3 \
-		runtime_tools-1.8.3 \
-		sasl-2.1.9 \
-		snmp-4.16 \
-		ssh-1.1.8 \
-		ssl-3.10.8 \
-		stdlib-1.16.5 \
-		syntax_tools-1.6.5 \
-		test_server-3.3.6 \
+		public_key-0.8 \
+		reltool-0.5.4 \
+		runtime_tools-1.8.4.1 \
+		sasl-2.1.9.2 \
+		snmp-4.18 \
+		ssh-2.0.1 \
+		ssl-4.0.1 \
+		stdlib-1.17.1 \
+		syntax_tools-1.6.6 \
+		test_server-3.4.1 \
 		toolbar-1.4.1 \
-                tools-2.6.5.1 \
-		tv-2.1.4.4 \
-		typer-0.1.7.4 \
-		webtool-0.8.6 \
-		wx-0.98.5 \
-		xmerl-1.2.4
+		tools-2.6.6.1 \
+		tv-2.1.4.6 \
+		typer-0.1.7.5 \
+		webtool-0.8.7 \
+		wx-0.98.7 \
+		xmerl-1.2.6

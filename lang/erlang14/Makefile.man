@@ -89,6 +89,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	auth.3 \
 	base64.3 \
 	beam_lib.3 \
+	binary.3 \
 	c.3 \
 	calendar.3 \
 	code.3 \
@@ -112,6 +113,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	ct_ftp.3 \
 	ct_master.3 \
 	ct_rpc.3 \
+	ct_slave.3 \
 	ct_snmp.3 \
 	ct_ssh.3 \
 	ct_telnet.3 \
@@ -156,6 +158,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	erl_lint.3 \
 	erl_malloc.3 \
 	erl_marshal.3 \
+	erl_nif.3 \
 	erl_parse.3 \
 	erl_pp.3 \
 	erl_prettypr.3 \
@@ -262,9 +265,9 @@ MAN3=	CosEventChannelAdmin.3 \
 	ms_transform.3 \
 	net_adm.3 \
 	net_kernel.3 \
-	new_ssl.3 \
 	nteventlog.3 \
 	odbc.3 \
+	old_ssl.3 \
 	orber.3 \
 	orber_acl.3 \
 	orber_diagnostics.3 \
@@ -342,6 +345,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	ssh_sftp.3 \
 	ssh_sftpd.3 \
 	ssl.3 \
+	ssl_session_cache_api.3 \
 	string.3 \
 	supervisor.3 \
 	supervisor_bridge.3 \
