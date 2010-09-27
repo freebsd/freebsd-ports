@@ -26,7 +26,7 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 INSTALLS_ICONS=	yes
 
 EMACS_VER=	24.0.50
-EMACS_REV=	100884
+EMACS_REV=	101606
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XZ=		yes
@@ -42,7 +42,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 MAN1=		b2m.1 ctags.1 ebrowse.1 emacs.1 emacsclient.1 etags.1 \
 		grep-changelog.1 rcs-checkin.1
 MANCOMPRESSED=	yes
-PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET}
+PLIST_SUB=	EMACS_VER=${EMACS_VER}
+
+EMACS_DIRS=	${DATADIR}/${EMACS_VER} ${PREFIX}/libexec/${PORTNAME}
 
 MAKE_ENV=	LC_ALL=C
 
@@ -72,7 +74,9 @@ OPTIONS=	DBUS	"DBus support"			ON \
 		SCROLLBARS	"Without toolkit scroll-bars"			ON \
 		XFT	"Freetype fonts support"	ON \
 		XIM	"X Input Method support"	ON \
-		XPM	"XPM images support"		ON
+		XML	"XML Parser support"		ON \
+		XPM	"XPM images support"		ON \
+		IMAGEMAGICK	"ImageMagick support"	OFF
 
 .include <bsd.port.options.mk>
 
@@ -206,22 +210,21 @@ CONFIGURE_ARGS+=	--without-dbus
 LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITHOUT_SOURCES)
-PLIST_SUB+=	SOURCES="@comment "
-.else
-PLIST_SUB+=	SOURCES=""
+.if defined(WITH_IMAGEMAGICK)
+CONFIGURE_ARGS+=	--with-imagemagick
+LIB_DEPENDS+=		MagickCore.4:${PORTSDIR}/graphics/ImageMagick
 .endif
+
+.if defined(WITHOUT_XML)
+CONFIGURE_ARGS+=	--without-xml2
+.else
+USE_GNOME+=		libxml2
+.endif
+
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
 BROKEN=	Emacs 24.X does not currently build on ia64
-.endif
-
-.if ${OSVERSION} > 900000
-PLIST_SUB+=	9X=""
-.else
-PLIST_SUB+=	9X="@comment "
 .endif
 
 post-patch:
@@ -230,6 +233,14 @@ post-patch:
 
 post-configure:
 	@${REINPLACE_CMD} -e "s/^\(DBUS_LIBS.*\)-pthread\(.*\)$$/\1$$(${DBUS_PTHREAD_LIBS})\2/" ${WRKSRC}/src/Makefile
+
+add-plist-data:
+.for i in ${EMACS_DIRS}
+	@${FIND} ${i} -type f |${SED} -e 's,${PREFIX}/,,g' >>${TMPPLIST}
+.endfor
+.for i in ${EMACS_DIRS}
+	@${FIND} ${i} -type d -depth |${SED} -e 's,^${PREFIX}/,@dirrm ,g' >>${TMPPLIST}
+.endfor
 
 .if defined(WITH_SOURCES)
 post-install:
