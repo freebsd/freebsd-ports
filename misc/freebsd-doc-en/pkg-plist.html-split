@@ -598,11 +598,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-ddd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-deadlocks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-gdb.html
-%%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-kld.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-online-ddb.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-online-gdb.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-options.html
-%%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug-post-mortem.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/kerneldebug.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/l10n.html
 %%DOCSDIR%%/%%DOCLANG%%/books/developers-handbook/policies-contributed.html
