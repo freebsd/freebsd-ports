@@ -9,9 +9,7 @@ PORTNAME=	gbsplay
 PORTVERSION=	0.0.8
 PORTREVISION=	5
 CATEGORIES=	audio
-MASTER_SITES=	http://www.cgarbs.de/stuff/ \
-		http://download.berlios.de/gbsplay/ \
-		CRITICAL
+MASTER_SITES=	BERLIOS CRITICAL
 PKGNAMEPREFIX?=
 
 MAINTAINER=	ehaupt@FreeBSD.org
