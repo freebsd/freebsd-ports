@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redmine
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -52,7 +52,7 @@ RUN_DEPENDS+=	passenger-config:${PORTSDIR}/www/rubygem-passenger
 .endif
 
 .if !defined(WITH_THIN) && !defined(WITH_PASSENGER)
-IGNORE=		Either Thin or Apache/Nginx WEB server option required. \
+IGNORE=		either Thin or Apache/Nginx WEB server option required. \
 		Please 'make config' again.
 .endif
 
