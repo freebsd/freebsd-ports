@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	beast
-PORTVERSION=	0.7.1
-PORTREVISION=	9
+PORTVERSION=	0.7.2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://beast.gtk.org/pub/beast/v0.7/ \
 		http://beast.gtk.org/beast-ftp/v0.7/
@@ -33,7 +32,9 @@ CONFIGURE_ARGS=	--disable-debug \
 		--enable-ossmidi=/dev/midi
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		beast.1 bsescm.1 sfidl.1
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+
+MAN1=		beast.1 bsescm.1 bsewavetool.1 sfidl.1
 MAN5=		bse.5
 
 post-patch:
@@ -45,10 +46,4 @@ post-patch:
 		${WRKSRC}/bse/Makefile.in \
 		${WRKSRC}/bse/zintern/Makefile.in
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

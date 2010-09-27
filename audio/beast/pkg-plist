@@ -1,16 +1,16 @@
 bin/beast
-bin/beast-0.7.1
+bin/beast-%%PORTVERSION%%
 bin/bsescm
-bin/bsescm-0.7.1
+bin/bsescm-%%PORTVERSION%%
+bin/bsewavetool
 bin/sfidl
 include/birnet/birnet.hh
 include/birnet/birnetcdefs.h
 include/birnet/birnetconfig.h
 include/birnet/birnetcpu.hh
+include/birnet/birnetdebugtools.hh
 include/birnet/birnetmath.hh
 include/birnet/birnetmsg.hh
-include/birnet/birnetsignal.hh
-include/birnet/birnetsignalvariants.hh
 include/birnet/birnettests.h
 include/birnet/birnetthread.hh
 include/birnet/birnetutf8.hh
@@ -161,137 +161,152 @@ include/sfi/sfiustore.h
 include/sfi/sfivalues.h
 include/sfi/sfivmarshal.h
 include/sfi/sfiwrapper.h
-lib/bse/v0.7.1/plugins/artsplugins.FPU.la
-lib/bse/v0.7.1/plugins/artsplugins.FPU.so
-lib/bse/v0.7.1/plugins/bseadder.FPU.la
-lib/bse/v0.7.1/plugins/bseadder.FPU.so
-lib/bse/v0.7.1/plugins/bseatandistort.FPU.la
-lib/bse/v0.7.1/plugins/bseatandistort.FPU.so
-lib/bse/v0.7.1/plugins/bseiirfilter.FPU.la
-lib/bse/v0.7.1/plugins/bseiirfilter.FPU.so
-lib/bse/v0.7.1/plugins/bsemixer.FPU.la
-lib/bse/v0.7.1/plugins/bsemixer.FPU.so
-lib/bse/v0.7.1/plugins/bsemult.FPU.la
-lib/bse/v0.7.1/plugins/bsemult.FPU.so
-lib/bse/v0.7.1/plugins/bseplugins.FPU.la
-lib/bse/v0.7.1/plugins/bseplugins.FPU.so
-lib/bse/v0.7.1/plugins/bsesequencer.FPU.la
-lib/bse/v0.7.1/plugins/bsesequencer.FPU.so
-lib/bse/v0.7.1/plugins/bsesimpleadsr.FPU.la
-lib/bse/v0.7.1/plugins/bsesimpleadsr.FPU.so
-lib/bse/v0.7.1/plugins/contribplugins.FPU.la
-lib/bse/v0.7.1/plugins/contribplugins.FPU.so
-lib/bse/v0.7.1/plugins/davcanyondelay.FPU.la
-lib/bse/v0.7.1/plugins/davcanyondelay.FPU.so
-lib/bse/v0.7.1/plugins/davorgan.FPU.la
-lib/bse/v0.7.1/plugins/davorgan.FPU.so
-lib/bse/v0.7.1/plugins/davplugins.FPU.la
-lib/bse/v0.7.1/plugins/davplugins.FPU.so
-lib/bse/v0.7.1/plugins/davsyndrum.FPU.la
-lib/bse/v0.7.1/plugins/davsyndrum.FPU.so
-lib/bse/v0.7.1/plugins/davxtalstrings.FPU.la
-lib/bse/v0.7.1/plugins/davxtalstrings.FPU.so
-lib/bse/v0.7.1/plugins/freeverb.la
-lib/bse/v0.7.1/plugins/freeverb.so
+lib/bse/v%%PORTVERSION%%/plugins/artsplugins.FPU.la
+lib/bse/v%%PORTVERSION%%/plugins/artsplugins.FPU.so
+lib/bse/v%%PORTVERSION%%/plugins/bseadder.FPU.la
+lib/bse/v%%PORTVERSION%%/plugins/bseadder.FPU.so
+lib/bse/v%%PORTVERSION%%/plugins/bseatandistort.FPU.la
+lib/bse/v%%PORTVERSION%%/plugins/bseatandistort.FPU.so
+lib/bse/v%%PORTVERSION%%/plugins/bseiirfilter.FPU.la
+lib/bse/v%%PORTVERSION%%/plugins/bseiirfilter.FPU.so
+lib/bse/v%%PORTVERSION%%/plugins/bsemixer.FPU.la
+lib/bse/v%%PORTVERSION%%/plugins/bsemixer.FPU.so
+lib/bse/v%%PORTVERSION%%/plugins/bsemult.FPU.la
+lib/bse/v%%PORTVERSION%%/plugins/bsemult.FPU.so
+lib/bse/v%%PORTVERSION%%/plugins/bseplugins.FPU.la
+lib/bse/v%%PORTVERSION%%/plugins/bseplugins.FPU.so
+lib/bse/v%%PORTVERSION%%/plugins/bsesequencer.FPU.la
+lib/bse/v%%PORTVERSION%%/plugins/bsesequencer.FPU.so
+lib/bse/v%%PORTVERSION%%/plugins/bsesimpleadsr.FPU.la
+lib/bse/v%%PORTVERSION%%/plugins/bsesimpleadsr.FPU.so
+lib/bse/v%%PORTVERSION%%/plugins/contribplugins.FPU.la
+lib/bse/v%%PORTVERSION%%/plugins/contribplugins.FPU.so
+lib/bse/v%%PORTVERSION%%/plugins/davcanyondelay.FPU.la
+lib/bse/v%%PORTVERSION%%/plugins/davcanyondelay.FPU.so
+lib/bse/v%%PORTVERSION%%/plugins/davorgan.FPU.la
+lib/bse/v%%PORTVERSION%%/plugins/davorgan.FPU.so
+lib/bse/v%%PORTVERSION%%/plugins/davplugins.FPU.la
+lib/bse/v%%PORTVERSION%%/plugins/davplugins.FPU.so
+lib/bse/v%%PORTVERSION%%/plugins/davsyndrum.FPU.la
+lib/bse/v%%PORTVERSION%%/plugins/davsyndrum.FPU.so
+lib/bse/v%%PORTVERSION%%/plugins/davxtalstrings.FPU.la
+lib/bse/v%%PORTVERSION%%/plugins/davxtalstrings.FPU.so
+lib/bse/v%%PORTVERSION%%/plugins/freeverb.la
+lib/bse/v%%PORTVERSION%%/plugins/freeverb.so
 lib/libbse-0.7.so
-lib/libbse-0.7.so.1
+lib/libbse-0.7.so.2
 lib/libbse.la
 lib/libbse.so
 libdata/pkgconfig/bse.pc
 share/application-registry/beast.applications
 share/applications/beast.desktop
-%%DATADIR%%/v0.7.1/docs/html/architecture.html
-%%DATADIR%%/v0.7.1/docs/html/beast-index.html
-%%DATADIR%%/v0.7.1/docs/html/beast.1.html
-%%DATADIR%%/v0.7.1/docs/html/bse-interface.html
-%%DATADIR%%/v0.7.1/docs/html/bse-objects.html
-%%DATADIR%%/v0.7.1/docs/html/bse.5.html
-%%DATADIR%%/v0.7.1/docs/html/bsescm.1.html
-%%DATADIR%%/v0.7.1/docs/html/coding-style.html
-%%DATADIR%%/v0.7.1/docs/html/engine-mplan.html
-%%DATADIR%%/v0.7.1/docs/html/faq.html
-%%DATADIR%%/v0.7.1/docs/html/images
-%%DATADIR%%/v0.7.1/docs/html/news-file.html
-%%DATADIR%%/v0.7.1/docs/html/plugin-devel.html
-%%DATADIR%%/v0.7.1/docs/html/quickstart.html
-%%DATADIR%%/v0.7.1/docs/html/sfidl-manual.html
-%%DATADIR%%/v0.7.1/docs/html/sfidl.1.html
-%%DATADIR%%/v0.7.1/docs/html/style/beast-dot.png
-%%DATADIR%%/v0.7.1/docs/html/style/beast-small.png
-%%DATADIR%%/v0.7.1/docs/html/style/beast-style.css
-%%DATADIR%%/v0.7.1/docs/html/style/doxer-style.css
-%%DATADIR%%/v0.7.1/docs/html/style/home-arrow-24x64.png
-%%DATADIR%%/v0.7.1/docs/html/style/plain.css
-%%DATADIR%%/v0.7.1/docs/html/style/title-arrow-24x64.png
-%%DATADIR%%/v0.7.1/images/beast-components.png
-%%DATADIR%%/v0.7.1/images/beast-mime.png
-%%DATADIR%%/v0.7.1/images/beast-progs.png
-%%DATADIR%%/v0.7.1/images/beast-splash.png
-%%DATADIR%%/v0.7.1/images/bse-mime.png
-%%DATADIR%%/v0.7.1/images/module-voices.png
-%%DATADIR%%/v0.7.1/keys/keyrc.de
-%%DATADIR%%/v0.7.1/keys/keyrc.us
-%%DATADIR%%/v0.7.1/skins/biogreen.skin
-%%DATADIR%%/v0.7.1/skins/blueimpress.skin
-%%DATADIR%%/v0.7.1/skins/brownforms.skin
-%%DATADIR%%/v0.7.1/skins/images/biogreen.jpg
-%%DATADIR%%/v0.7.1/skins/images/blueimpress.jpg
-%%DATADIR%%/v0.7.1/skins/images/brownforms.jpg
-%%DATADIR%%/v0.7.1/skins/images/moonpaper.png
-%%DATADIR%%/v0.7.1/skins/images/silvervein.png
-%%DATADIR%%/v0.7.1/skins/moonpaper.skin
-%%DATADIR%%/v0.7.1/skins/silvervein.skin
-%%DATADIR%%/v0.7.1/skins/white.skin
-share/bse/v0.7.1/demo/partymonster.bse
-share/bse/v0.7.1/demo/stereo-through.bse
-share/bse/v0.7.1/demo/x2-midi-test.bse
-share/bse/v0.7.1/effects/atan-canyon.bse
-share/bse/v0.7.1/effects/bqs-compressor.bse
-share/bse/v0.7.1/effects/bqs-reverb.bse
-share/bse/v0.7.1/effects/bqs-saturation-and-reverb.bse
-share/bse/v0.7.1/instruments/bqs-fretless-bass.bse
-share/bse/v0.7.1/instruments/bqs-merp-pad.bse
-share/bse/v0.7.1/instruments/bqs-moog-saw-bass.bse
-share/bse/v0.7.1/instruments/bqs-organ.bse
-share/bse/v0.7.1/instruments/bqs-queek-synth.bse
-share/bse/v0.7.1/instruments/bqs-syndrum.bse
-share/bse/v0.7.1/instruments/stw-iron-string.bse
-share/bse/v0.7.1/scripts/bse-scm-glue.boot
-share/bse/v0.7.1/scripts/mixer-splitup-by-track.scm
-share/bse/v0.7.1/scripts/modules2grid.scm
-share/bse/v0.7.1/scripts/part-harmonic-transposer.scm
-share/bse/v0.7.1/scripts/progressor-example.scm
-share/bse/v0.7.1/scripts/record-midi.scm
-share/bse/v0.7.1/scripts/song-parts-operations.scm
-share/locale/ar/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/az/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/bg/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/ca/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/cs/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/de/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/el/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/en_CA/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/en_GB/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/eo/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/es/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/eu/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/fi/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/fr/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/hr/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/it/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/ja/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/mn/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/ne/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/nl/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/pa/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/pt/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/pt_BR/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/ru/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/rw/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/sq/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/sr/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/sr@Latn/LC_MESSAGES/beast-v0.7.1.mo
-share/locale/sv/LC_MESSAGES/beast-v0.7.1.mo
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/Beast-Quickstart
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/architecture.html
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/beast-index.html
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/beast.1.html
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/beastdocs.css
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/bse-interface.html
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/bse-objects.html
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/bse.5.html
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/bsescm.1.html
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/bsewavetool.1.html
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/coding-style.html
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/engine-mplan.html
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/faq.html
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/images
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/news-file.html
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/plugin-devel.html
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/sfidl-manual.html
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/sfidl.1.html
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/style/beast-dot.png
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/style/beast-small.png
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/style/beast-style.css
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/style/doxer-style.css
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/style/home-arrow-24x64.png
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/style/plain.css
+%%DATADIR%%/v%%PORTVERSION%%/docs/html/style/title-arrow-24x64.png
+%%DATADIR%%/v%%PORTVERSION%%/images/beast-components.png
+%%DATADIR%%/v%%PORTVERSION%%/images/beast-mime.png
+%%DATADIR%%/v%%PORTVERSION%%/images/beast-progs.png
+%%DATADIR%%/v%%PORTVERSION%%/images/beast-splash.png
+%%DATADIR%%/v%%PORTVERSION%%/images/bse-mime.png
+%%DATADIR%%/v%%PORTVERSION%%/images/module-voices.png
+%%DATADIR%%/v%%PORTVERSION%%/keys/keyrc.de
+%%DATADIR%%/v%%PORTVERSION%%/keys/keyrc.us
+%%DATADIR%%/v%%PORTVERSION%%/skins/biogreen.skin
+%%DATADIR%%/v%%PORTVERSION%%/skins/blueimpress.skin
+%%DATADIR%%/v%%PORTVERSION%%/skins/brownforms.skin
+%%DATADIR%%/v%%PORTVERSION%%/skins/images/biogreen.jpg
+%%DATADIR%%/v%%PORTVERSION%%/skins/images/blueimpress.jpg
+%%DATADIR%%/v%%PORTVERSION%%/skins/images/brownforms.jpg
+%%DATADIR%%/v%%PORTVERSION%%/skins/images/moonpaper.png
+%%DATADIR%%/v%%PORTVERSION%%/skins/images/silvervein.png
+%%DATADIR%%/v%%PORTVERSION%%/skins/moonpaper.skin
+%%DATADIR%%/v%%PORTVERSION%%/skins/silvervein.skin
+%%DATADIR%%/v%%PORTVERSION%%/skins/white.skin
+share/bse/v%%PORTVERSION%%/demo/partymonster.bse
+share/bse/v%%PORTVERSION%%/demo/stereo-through.bse
+share/bse/v%%PORTVERSION%%/demo/x2-midi-test.bse
+share/bse/v%%PORTVERSION%%/effects/atan-canyon.bse
+share/bse/v%%PORTVERSION%%/effects/bqs-compressor.bse
+share/bse/v%%PORTVERSION%%/effects/bqs-reverb.bse
+share/bse/v%%PORTVERSION%%/effects/bqs-saturation-and-reverb.bse
+share/bse/v%%PORTVERSION%%/instruments/bqs-bass-drum-e8012.bse
+share/bse/v%%PORTVERSION%%/instruments/bqs-fretless-bass.bse
+share/bse/v%%PORTVERSION%%/instruments/bqs-merp-pad.bse
+share/bse/v%%PORTVERSION%%/instruments/bqs-moog-saw-bass.bse
+share/bse/v%%PORTVERSION%%/instruments/bqs-organ.bse
+share/bse/v%%PORTVERSION%%/instruments/bqs-queek-synth.bse
+share/bse/v%%PORTVERSION%%/instruments/bqs-slow-hum.bse
+share/bse/v%%PORTVERSION%%/instruments/bqs-syndrum.bse
+share/bse/v%%PORTVERSION%%/instruments/fsm-fresh-water-bass.bse
+share/bse/v%%PORTVERSION%%/instruments/fsm-growl-bass.bse
+share/bse/v%%PORTVERSION%%/instruments/fsm-synth-string-sweep.bse
+share/bse/v%%PORTVERSION%%/instruments/illus-vtremolo.bse
+share/bse/v%%PORTVERSION%%/instruments/stw-iron-string.bse
+share/bse/v%%PORTVERSION%%/samples/retrokit.bsewave
+share/bse/v%%PORTVERSION%%/scripts/bse-scm-glue.boot
+share/bse/v%%PORTVERSION%%/scripts/mixer-splitup-by-track.scm
+share/bse/v%%PORTVERSION%%/scripts/modules2grid.scm
+share/bse/v%%PORTVERSION%%/scripts/part-harmonic-transposer.scm
+share/bse/v%%PORTVERSION%%/scripts/progressor-example.scm
+share/bse/v%%PORTVERSION%%/scripts/record-midi.scm
+share/bse/v%%PORTVERSION%%/scripts/song-parts-operations.scm
+share/locale/ar/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/az/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/bg/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/ca/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/cs/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/da/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/de/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/el/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/en_CA/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/en_GB/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/eo/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/es/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/eu/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/fi/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/fr/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/hr/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/it/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/ja/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/mn/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/nb/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/ne/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/nl/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/oc/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/pa/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/pt/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/pt_BR/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/ru/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/rw/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/sl/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/sq/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/sr/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/sr@Latn/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/sv/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/uk/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
+share/locale/zh_CN/LC_MESSAGES/beast-v%%PORTVERSION%%.mo
 share/mime-info/bse.keys
 share/mime-info/bse.mime
 share/mime/audio/x-bse.xml
@@ -304,26 +319,27 @@ share/pixmaps/beast.png
 @dirrmtry share/mime
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrm share/bse/v0.7.1/scripts
-@dirrm share/bse/v0.7.1/instruments
-@dirrm share/bse/v0.7.1/effects
-@dirrm share/bse/v0.7.1/demo
-@dirrm share/bse/v0.7.1
+@dirrm share/bse/v%%PORTVERSION%%/scripts
+@dirrm share/bse/v%%PORTVERSION%%/samples
+@dirrm share/bse/v%%PORTVERSION%%/instruments
+@dirrm share/bse/v%%PORTVERSION%%/effects
+@dirrm share/bse/v%%PORTVERSION%%/demo
+@dirrm share/bse/v%%PORTVERSION%%
 @dirrm share/bse
-@dirrm %%DATADIR%%/v0.7.1/skins/images
-@dirrm %%DATADIR%%/v0.7.1/skins
-@dirrm %%DATADIR%%/v0.7.1/keys
-@dirrm %%DATADIR%%/v0.7.1/images
-@dirrm %%DATADIR%%/v0.7.1/docs/html/style
-@dirrm %%DATADIR%%/v0.7.1/docs/html
-@dirrm %%DATADIR%%/v0.7.1/docs
-@dirrm %%DATADIR%%/v0.7.1
+@dirrm %%DATADIR%%/v%%PORTVERSION%%/skins/images
+@dirrm %%DATADIR%%/v%%PORTVERSION%%/skins
+@dirrm %%DATADIR%%/v%%PORTVERSION%%/keys
+@dirrm %%DATADIR%%/v%%PORTVERSION%%/images
+@dirrm %%DATADIR%%/v%%PORTVERSION%%/docs/html/style
+@dirrm %%DATADIR%%/v%%PORTVERSION%%/docs/html
+@dirrm %%DATADIR%%/v%%PORTVERSION%%/docs
+@dirrm %%DATADIR%%/v%%PORTVERSION%%
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrmtry share/application-registry
 @dirrmtry share/mime-info
-@dirrm lib/bse/v0.7.1/plugins
-@dirrm lib/bse/v0.7.1
+@dirrm lib/bse/v%%PORTVERSION%%/plugins
+@dirrm lib/bse/v%%PORTVERSION%%
 @dirrm lib/bse
 @dirrm include/sfi
 @dirrm include/bse
