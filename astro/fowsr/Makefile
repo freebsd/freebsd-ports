@@ -43,8 +43,4 @@ LDFLAGS+=	"-L${PREFIX}/lib"
 MAKE_ENV+=	"LDFLAGS=${LDFLAGS}"
 .endif
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
 .include <bsd.port.post.mk>
