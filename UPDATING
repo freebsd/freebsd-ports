@@ -5,6 +5,29 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20100927:
+  AFFECTS: users of mail/postfix-current
+  AUTHOR: ohauer@FreeBSD.org
+
+  Incompatibility with snapshot 20100912
+  ======================================
+  - If your DNSBL queries have a "secret" in the domain name, you must
+    now censor this information from the postscreen(8) SMTP replies.
+  - The postscreen "continue" action is now called "ignore". The old
+    name is still supported but no longer documented.
+  - The postscreen_hangup_action parameter was removed. Postscreen
+    now always behaves as if "postscreen_hangup_action = drop".
+  - The postscreen_cache_retention_time default was increased from
+    1d to 7d, to avoid deleting results from expensive deep SMTP
+    protocol tests too quickly.
+
+  Incompatibility with snapshot 20100827
+  ======================================
+  - The Postfix SMTP client no longer appends the local domain when
+    looking up a DNS name without ".".
+    Specify "smtp_dns_resolver_options  = res_defnames" to get the old
+    behavior, which may produce unexpected results.
+
 20100924:
   AFFECTS: users of x11/nvidia-driver
   AUTHOR: makc@FreeBSD.org
