@@ -9,11 +9,13 @@ PORTNAME=	screenie
 PORTVERSION=	1.30.0
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://pubwww.fhzh.ch/~mgloor/data/ \
-		CRITICAL
+MASTER_SITES=	CRITICAL
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small and lightweight screen(1) wrapper
+
+DEPRECATED=	Development has been ceased, no longer maintained
+EXPIRATION_DATE=	2010-10-27
 
 RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen
 
