@@ -43,7 +43,6 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_websockets.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_xmlrpc.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_zlib.beam
-%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/include/erlsom.hrl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/include/soap.hrl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/include/yaws.hrl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/include/yaws_api.hrl
@@ -322,6 +321,7 @@ bin/yaws
 %%WWWDIR%%/yapp_intro.yaws
 %%WWWDIR%%/yaws-1.55_to_1.56.patch
 %%WWWDIR%%/ybed.erl
+%%WWWDIR%%/ybed_sup.erl
 %%WWWDIR%%/yman.yaws
 @dirrm %%WWWDIR%%/testdir
 @dirrm %%WWWDIR%%/ssi
