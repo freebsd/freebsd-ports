@@ -1,0 +1,171 @@
+From 4394826f36fad0ad36ea773b6d4525dfcfcd389b Mon Sep 17 00:00:00 2001
+From: Jonathan Matthew <jonathan@d14n.org>
+Date: Wed, 05 May 2010 12:58:26 +0000
+Subject: python: fix a number of python initialization problems (bug #617587)
+
+- pygtk.require("2.8") doesn't work - it's only after a major version,
+  so we should pass in "2.0" instead
+- init_pygobject() is deprecated, use pygobject_init (and pass in the
+  version we require) instead
+- init_pygtk() is a macro that returns from the current function on
+  error, so we need to call it from a separate function for our error
+  handling to work
+- if some aspect of python initialization failed, we were still using
+  the pygobject GIL macros, which were crashing
+---
+diff --git a/shell/main.c b/shell/main.c
+index 1f27fee..a4dd50a 100644
+--- shell/main.c
++++ shell/main.c
+@@ -35,6 +35,7 @@
+ #define NO_IMPORT_PYGOBJECT
+ #define NO_IMPORT_PYGTK
+ #include <pygobject.h>
++#include "rb-python-module.h"
+ 
+ /* make sure it's defined somehow */
+ #ifndef _XOPEN_SOURCE
+@@ -327,11 +328,15 @@ main (int argc, char **argv)
+ 
+ 		rb_profile_start ("mainloop");
+ #ifdef ENABLE_PYTHON
+-		pyg_begin_allow_threads;
+-#endif
++		if (rb_python_init_successful ()) {
++			pyg_begin_allow_threads;
++			gtk_main ();
++			pyg_end_allow_threads;
++		} else {
++			gtk_main ();
++		}
++#else
+ 		gtk_main ();
+-#ifdef ENABLE_PYTHON
+-		pyg_end_allow_threads;
+ #endif
+ 		rb_profile_end ("mainloop");
+ 
+diff --git a/shell/rb-python-module.c b/shell/rb-python-module.c
+index 9e14731..1995a42 100644
+--- shell/rb-python-module.c
++++ shell/rb-python-module.c
+@@ -84,8 +84,16 @@ extern PyMethodDef pyrb_functions[];
+ /* We retreive this to check for correct class hierarchy */
+ static PyTypeObject *PyRBPlugin_Type;
+ 
++static gboolean python_init_successful;
++
+ G_DEFINE_TYPE (RBPythonModule, rb_python_module, G_TYPE_TYPE_MODULE);
+ 
++static void
++actually_init_pygtk (void)
++{
++	init_pygtk ();
++}
++
+ void
+ rb_python_module_init_python (void)
+ {
+@@ -98,6 +106,7 @@ rb_python_module_init_python (void)
+ 	char *argv[] = { "rb", "rhythmdb", NULL };
+ 	GList *paths;
+ 
++	python_init_successful = FALSE;
+ 	if (Py_IsInitialized ()) {
+ 		g_warning ("Python Should only be initialized once, since it's in class_init");
+ 		g_return_if_reached ();
+@@ -130,7 +139,7 @@ rb_python_module_init_python (void)
+ 
+ 	PySys_SetArgv (1, argv);
+ 
+-	/* pygtk.require("2.8") */
++	/* pygtk.require("2.0") */
+ 	pygtk = PyImport_ImportModule ("pygtk");
+ 	if (pygtk == NULL) {
+ 		g_warning ("Could not import pygtk");
+@@ -140,11 +149,15 @@ rb_python_module_init_python (void)
+ 
+ 	mdict = PyModule_GetDict (pygtk);
+ 	require = PyDict_GetItemString (mdict, "require");
+-	PyObject_CallObject (require, Py_BuildValue ("(S)", PyString_FromString ("2.8")));
++	PyObject_CallObject (require, Py_BuildValue ("(S)", PyString_FromString ("2.0")));
++	if (PyErr_Occurred ()) {
++		g_warning ("pygtk.require(2.0) failed");
++		PyErr_Print();
++		return;
++	}
+ 
+ 	/* import gobject */
+-	init_pygobject ();
+-	if (PyErr_Occurred ()) {
++	if (pygobject_init (2, 16, 0) == NULL) {
+ 		g_warning ("Could not initialize pygobject");
+ 		PyErr_Print();
+ 		return;
+@@ -154,7 +167,7 @@ rb_python_module_init_python (void)
+ 	pyg_disable_warning_redirections ();
+ 
+ 	/* import gtk */
+-	init_pygtk ();
++	actually_init_pygtk ();
+ 	if (PyErr_Occurred ()) {
+ 		g_warning ("Could not initialize pygtk");
+ 		PyErr_Print();
+@@ -172,7 +185,7 @@ rb_python_module_init_python (void)
+ 
+ 	mdict = PyModule_GetDict (gtk);
+ 	pygtk_version = PyDict_GetItemString (mdict, "pygtk_version");
+-	pygtk_required_version = Py_BuildValue ("(iii)", 2, 4, 0);
++	pygtk_required_version = Py_BuildValue ("(iii)", 2, 8, 0);
+ 	if (PyObject_Compare (pygtk_version, pygtk_required_version) == -1) {
+ 		g_warning("PyGTK %s required, but %s found.",
+ 				  PyString_AsString (PyObject_Repr (pygtk_required_version)),
+@@ -264,6 +277,8 @@ rb_python_module_init_python (void)
+ 	gettext_args = Py_BuildValue ("ss", GETTEXT_PACKAGE, GNOMELOCALEDIR);
+ 	PyObject_CallObject (install, gettext_args);
+ 	Py_DECREF (gettext_args);
++
++	python_init_successful = TRUE;
+ }
+ 
+ static gboolean
+@@ -329,6 +344,11 @@ rb_python_module_load_with_gil (GTypeModule *module)
+ 	PyGILState_STATE state;
+ 	gboolean ret;
+ 
++	if (python_init_successful == FALSE) {
++		g_warning ("unable to load module as python runtime could not be initialized");
++		return FALSE;
++	}
++
+ 	state = pyg_gil_state_ensure ();
+ 	ret = rb_python_module_load (module);
+ 	pyg_gil_state_release (state);
+@@ -485,6 +505,12 @@ rb_python_module_new (const gchar *path,
+ 	return result;
+ }
+ 
++gboolean
++rb_python_init_successful (void)
++{
++	return python_init_successful;
++}
++
+ /* --- these are not module methods, they are here out of convenience --- */
+ 
+ #if 0
+diff --git a/shell/rb-python-module.h b/shell/rb-python-module.h
+index 5b2c152..30c1200 100644
+--- shell/rb-python-module.h
++++ shell/rb-python-module.h
+@@ -60,6 +60,8 @@ GObject			*rb_python_module_new_object		(RBPythonModule *module);
+ 
+ void			rb_python_module_init_python		(void);
+ 
++gboolean		rb_python_init_successful		(void);
++
+ void			rb_python_garbage_collect		(void);
+ 
+ void			rb_python_shutdown			(void);
+--
+cgit v0.8.3.1
