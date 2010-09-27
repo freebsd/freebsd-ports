@@ -11,7 +11,6 @@ PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.kapsi.fi/bloboats.dy.fi/ \
 		http://koti.mbnet.fi/makegho/c/blobtrox/ \
-		http://shoebox.ath.cx/~make/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org

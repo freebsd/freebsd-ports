@@ -9,7 +9,7 @@ PORTNAME=	bmp-fc
 PORTVERSION=	0.1
 PORTREVISION=	6
 CATEGORIES=	audio
-MASTER_SITES=	SF/xmms-fc/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A Future Composer input plug-in for beep-media-player
