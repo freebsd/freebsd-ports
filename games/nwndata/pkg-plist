@@ -1,5 +1,3 @@
-%%DATADIR%%/EULA.txt
-%%DATADIR%%/NWNv129.txt
 %%DATADIR%%/ambient/al_an_bughouse1.wav
 %%DATADIR%%/ambient/al_an_bughouse2.wav
 %%DATADIR%%/ambient/al_an_bugscave1.wav
@@ -85,10 +83,6 @@
 %%DATADIR%%/ambient/al_wt_rainlight1.wav
 %%DATADIR%%/ambient/al_wt_stormlg1.wav
 %%DATADIR%%/ambient/al_wt_stormsm1.wav
-%%DATADIR%%/ambient/al_wt_windforst1.wav
-%%DATADIR%%/ambient/al_wt_windmed1.wav
-%%DATADIR%%/ambient/al_wt_windsoft1.wav
-%%DATADIR%%/ambient/al_wt_windstrng1.wav
 %%DATADIR%%/chitin.key
 %%DATADIR%%/data/2da.bif
 %%DATADIR%%/data/aurora_gui.bif
@@ -110,14 +104,12 @@
 %%DATADIR%%/data/models_01.bif
 %%DATADIR%%/data/models_02.bif
 %%DATADIR%%/data/music.bif
-%%DATADIR%%/data/patch.bif
 %%DATADIR%%/data/scripts.bif
 %%DATADIR%%/data/sounds.bif
 %%DATADIR%%/data/templates.bif
 %%DATADIR%%/data/textures_01.bif
 %%DATADIR%%/data/textures_02.bif
 %%DATADIR%%/data/voicesets.bif
-%%DATADIR%%/dialog.tlk
 %%DATADIR%%/dmvault/dungeonmaster.bic
 %%DATADIR%%/docs/NWN_OnlineManual.pdf
 %%DATADIR%%/docs/readme.txt
@@ -149,8 +141,8 @@
 %%DATADIR%%/modules/DEMO - House of Doors.mod
 %%DATADIR%%/modules/DEMO - Thar be Rats! Yarrr!.mod
 %%DATADIR%%/modules/DEMO - The Cat Lady.mod
-%%DATADIR%%/modules/WW1-The Fields of Battle.mod
-%%DATADIR%%/modules/WW2-The Witch Hunters.mod
+%%ORIGINAL%%%%DATADIR%%/modules/WW1-The Fields of Battle.mod
+%%ORIGINAL%%%%DATADIR%%/modules/WW2-The Witch Hunters.mod
 %%DATADIR%%/music/mus_autorun.wav
 %%DATADIR%%/music/mus_bat_aribeth.bmu
 %%DATADIR%%/music/mus_bat_citboss.bmu
@@ -216,27 +208,176 @@
 %%DATADIR%%/nwm/Chapter3.nwm
 %%DATADIR%%/nwm/Chapter4.nwm
 %%DATADIR%%/nwm/Prelude.nwm
-%%DATADIR%%/override/iit_medkit_001.tga
-%%DATADIR%%/override/m1q6f06pedistal.dlg
-%%DATADIR%%/override/nw_s2_wholeness.ncs
-%%DATADIR%%/override/nw_s2_wholeness.nss
-%%DATADIR%%/override/options_sound.gui
-%%DATADIR%%/override/serverlist_page1.gui
-%%DATADIR%%/patch.key
+%%ORIGINAL%%%%DATADIR%%/override/iit_medkit_001.tga
+%%ORIGINAL%%%%DATADIR%%/override/m1q6f06pedistal.dlg
+%%ORIGINAL%%%%DATADIR%%/override/nw_s2_wholeness.ncs
+%%ORIGINAL%%%%DATADIR%%/override/nw_s2_wholeness.nss
+%%ORIGINAL%%%%DATADIR%%/override/options_sound.gui
+%%ORIGINAL%%%%DATADIR%%/override/serverlist_page1.gui
+%%ORIGINAL%%%%DATADIR%%/patch.key
 %%DATADIR%%/texturepacks/GUI_32bit.erf
 %%DATADIR%%/texturepacks/Textures_Tpa.erf
 %%DATADIR%%/texturepacks/Textures_Tpc.erf
 %%DATADIR%%/texturepacks/Tiles_Tpa.erf
 %%DATADIR%%/texturepacks/Tiles_Tpb.erf
 %%DATADIR%%/texturepacks/Tiles_Tpc.erf
+%%DIAMOND%%%%DATADIR%%/ambient/al_mg_x0rui1.wav
+%%DIAMOND%%%%DATADIR%%/ambient/al_mg_x0rui2.wav
+%%DIAMOND%%%%DATADIR%%/ambient/al_mg_x0rui3.wav
+%%DIAMOND%%%%DATADIR%%/ambient/al_mg_x0ssan.wav
+%%DIAMOND%%%%DATADIR%%/ambient/al_mg_x2evdrone.wav
+%%DIAMOND%%%%DATADIR%%/ambient/al_mg_x2fireplan.wav
+%%DIAMOND%%%%DATADIR%%/ambient/al_mg_x2frznhell.wav
+%%DIAMOND%%%%DATADIR%%/ambient/al_na_x0des1.wav
+%%DIAMOND%%%%DATADIR%%/ambient/al_na_x0des2.wav
+%%DIAMOND%%%%DATADIR%%/ambient/al_na_x0snw1.wav
+%%DIAMOND%%%%DATADIR%%/ambient/al_na_x0snw2.wav
+%%DIAMOND%%%%DATADIR%%/ambient/al_na_x0sstm1.wav
+%%DIAMOND%%%%DATADIR%%/ambient/al_na_x0sstm2.wav
+%%DIAMOND%%%%DATADIR%%/ambient/al_na_x2evcavlrg.wav
+%%DIAMOND%%%%DATADIR%%/ambient/al_na_x2evcavmed.wav
+%%DIAMOND%%%%DATADIR%%/ambient/al_na_x2evcavsml.wav
+%%DIAMOND%%%%DATADIR%%/ambient/al_pl_x2tavern.wav
+%%DIAMOND%%%%DATADIR%%/ambient/al_wt_windforst1.WAV
+%%DIAMOND%%%%DATADIR%%/ambient/al_wt_windmed1.WAV
+%%DIAMOND%%%%DATADIR%%/ambient/al_wt_windsoft1.WAV
+%%DIAMOND%%%%DATADIR%%/ambient/al_wt_windstrng1.WAV
+%%DIAMOND%%%%DATADIR%%/data/xp1.bif
+%%DIAMOND%%%%DATADIR%%/data/xp1_models.bif
+%%DIAMOND%%%%DATADIR%%/data/xp1_scripts.bif
+%%DIAMOND%%%%DATADIR%%/data/xp1_sounds.bif
+%%DIAMOND%%%%DATADIR%%/data/xp1_templates.bif
+%%DIAMOND%%%%DATADIR%%/data/xp1_textures.bif
+%%DIAMOND%%%%DATADIR%%/data/xp1_tiles.bif
+%%DIAMOND%%%%DATADIR%%/data/xp2.bif
+%%DIAMOND%%%%DATADIR%%/data/xp2_models.bif
+%%DIAMOND%%%%DATADIR%%/data/xp2_scripts.bif
+%%DIAMOND%%%%DATADIR%%/data/xp2_sounds.bif
+%%DIAMOND%%%%DATADIR%%/data/xp2_templates.bif
+%%DIAMOND%%%%DATADIR%%/data/xp2_textures.bif
+%%DIAMOND%%%%DATADIR%%/data/xp2_tiles.bif
+%%DIAMOND%%%%DATADIR%%/docs/HotUreadme.txt
+%%DIAMOND%%%%DATADIR%%/docs/NWN Hordes Install Guide.rtf
+%%DIAMOND%%%%DATADIR%%/docs/NWN Platinum Install Guide.rtf
+%%DIAMOND%%%%DATADIR%%/docs/NWNHordes_Manual.pdf
+%%DIAMOND%%%%DATADIR%%/docs/NWN_SoU_OnlineManual.pdf
+%%DIAMOND%%%%DATADIR%%/docs/SoUreadme.txt
+%%DIAMOND%%%%DATADIR%%/localvault/barbarian.bic
+%%DIAMOND%%%%DATADIR%%/localvault/bard.bic
+%%DIAMOND%%%%DATADIR%%/localvault/cleric.bic
+%%DIAMOND%%%%DATADIR%%/localvault/dragondis.bic
+%%DIAMOND%%%%DATADIR%%/localvault/druid.bic
+%%DIAMOND%%%%DATADIR%%/localvault/dwarfdefend.bic
+%%DIAMOND%%%%DATADIR%%/localvault/fighter.bic
+%%DIAMOND%%%%DATADIR%%/localvault/monk.bic
+%%DIAMOND%%%%DATADIR%%/localvault/paladin.bic
+%%DIAMOND%%%%DATADIR%%/localvault/palemaster.bic
+%%DIAMOND%%%%DATADIR%%/localvault/ranger.bic
+%%DIAMOND%%%%DATADIR%%/localvault/rogue.bic
+%%DIAMOND%%%%DATADIR%%/localvault/shifter.bic
+%%DIAMOND%%%%DATADIR%%/localvault/sorcerer.bic
+%%DIAMOND%%%%DATADIR%%/localvault/torm.bic
+%%DIAMOND%%%%DATADIR%%/localvault/weaponmaster.bic
+%%DIAMOND%%%%DATADIR%%/localvault/wizard.bic
+%%DIAMOND%%%%DATADIR%%/modules/The Dark Ranger's Treasure.mod
+%%DIAMOND%%%%DATADIR%%/modules/The Winds of Eremor.mod
+%%DIAMOND%%%%DATADIR%%/modules/To Heir is Human.mod
+%%DIAMOND%%%%DATADIR%%/movies/AtariLogo.bik
+%%DIAMOND%%%%DATADIR%%/movies/BiowareLogo.bik
+%%DIAMOND%%%%DATADIR%%/movies/Chap1_Chap2.bik
+%%DIAMOND%%%%DATADIR%%/movies/Chap2_Chap3.bik
+%%DIAMOND%%%%DATADIR%%/movies/Chap3_Chap4.bik
+%%DIAMOND%%%%DATADIR%%/movies/NWNintro.bik
+%%DIAMOND%%%%DATADIR%%/movies/WOTCLogo.bik
+%%DIAMOND%%%%DATADIR%%/movies/XP1_Chap1_Chap2.bik
+%%DIAMOND%%%%DATADIR%%/movies/XP1_Chap2_Chap3.bik
+%%DIAMOND%%%%DATADIR%%/movies/XP1_Closing.bik
+%%DIAMOND%%%%DATADIR%%/movies/XP1_Intro.bik
+%%DIAMOND%%%%DATADIR%%/movies/XP2_Intro.bik
+%%DIAMOND%%%%DATADIR%%/movies/credits.bik
+%%DIAMOND%%%%DATADIR%%/movies/ending.bik
+%%DIAMOND%%%%DATADIR%%/movies/fge_logo_black.bik
+%%DIAMOND%%%%DATADIR%%/movies/prelude.bik
+%%DIAMOND%%%%DATADIR%%/movies/prelude_chap1.bik
+%%DIAMOND%%%%DATADIR%%/music/mus_autorun2.wav
+%%DIAMOND%%%%DATADIR%%/music/mus_bat_x0desert.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_bat_x0winter.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_bat_x2boss1.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_bat_x2boss2.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_bat_x2hell.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_bat_x2large.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_bat_x2med.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_bat_x2small.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_x0desertday.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_x0desertngt.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_x0winterday.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_x2draco.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_x2fireplane.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_x2frozenhell.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_x2queen.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_x2rebelcamp.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_x2theme.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_x2undermtn.bmu
+%%DIAMOND%%%%DATADIR%%/music/mus_x2waterdeep.bmu
+%%DIAMOND%%%%DATADIR%%/nwm/XP1-Chapter 1.nwm
+%%DIAMOND%%%%DATADIR%%/nwm/XP1-Chapter 2.nwm
+%%DIAMOND%%%%DATADIR%%/nwm/XP1-Interlude.nwm
+%%DIAMOND%%%%DATADIR%%/nwm/XP2_Chapter1.nwm
+%%DIAMOND%%%%DATADIR%%/nwm/XP2_Chapter2.nwm
+%%DIAMOND%%%%DATADIR%%/nwm/XP2_Chapter3.nwm
+%%DIAMOND%%%%DATADIR%%/nwnplayer.ini
+%%DIAMOND%%%%DATADIR%%/nwtoolset.ini
+%%DIAMOND%%%%DATADIR%%/scripttemplates/Custom OnSpawn script nocomments.txt
+%%DIAMOND%%%%DATADIR%%/scripttemplates/Custom OnSpawn script.txt
+%%DIAMOND%%%%DATADIR%%/scripttemplates/Custom OnUserDefinedEvent script.txt
+%%DIAMOND%%%%DATADIR%%/scripttemplates/bard10.ini
+%%DIAMOND%%%%DATADIR%%/scripttemplates/cleric_evil_10.ini
+%%DIAMOND%%%%DATADIR%%/scripttemplates/cleric_evil_15.ini
+%%DIAMOND%%%%DATADIR%%/scripttemplates/cleric_evil_20.ini
+%%DIAMOND%%%%DATADIR%%/scripttemplates/cleric_good_20.ini
+%%DIAMOND%%%%DATADIR%%/scripttemplates/custom on spawn in.txt
+%%DIAMOND%%%%DATADIR%%/scripttemplates/default_ai.ini
+%%DIAMOND%%%%DATADIR%%/scripttemplates/fileheader.txt
+%%DIAMOND%%%%DATADIR%%/scripttemplates/functionheader.txt
+%%DIAMOND%%%%DATADIR%%/scripttemplates/paladin 15.ini
+%%DIAMOND%%%%DATADIR%%/scripttemplates/ranger 15.ini
+%%DIAMOND%%%%DATADIR%%/scripttemplates/set_xp1_henchmen.ini
+%%DIAMOND%%%%DATADIR%%/scripttemplates/set_xp2_henchmen.ini
+%%DIAMOND%%%%DATADIR%%/scripttemplates/user defined events.txt
+%%DIAMOND%%%%DATADIR%%/scripttemplates/wizard_melee_20.ini
+%%DIAMOND%%%%DATADIR%%/texturepacks/XP1_GUI.erf
+%%DIAMOND%%%%DATADIR%%/texturepacks/xp1_tex_tpa.erf
+%%DIAMOND%%%%DATADIR%%/texturepacks/xp1_tex_tpb.erf
+%%DIAMOND%%%%DATADIR%%/texturepacks/xp1_tex_tpc.erf
+%%DIAMOND%%%%DATADIR%%/texturepacks/xp2_gui.erf
+%%DIAMOND%%%%DATADIR%%/texturepacks/xp2_tex_tpa.erf
+%%DIAMOND%%%%DATADIR%%/texturepacks/xp2_tex_tpb.erf
+%%DIAMOND%%%%DATADIR%%/texturepacks/xp2_tex_tpc.erf
+%%DIAMOND%%%%DATADIR%%/xp1.key
+%%DIAMOND%%%%DATADIR%%/xp2.key
+%%ORIGINAL%%%%DATADIR%%/EULA.txt
+%%ORIGINAL%%%%DATADIR%%/NWNv129.txt
+%%ORIGINAL%%%%DATADIR%%/ambient/al_wt_windforst1.wav
+%%ORIGINAL%%%%DATADIR%%/ambient/al_wt_windmed1.wav
+%%ORIGINAL%%%%DATADIR%%/ambient/al_wt_windsoft1.wav
+%%ORIGINAL%%%%DATADIR%%/ambient/al_wt_windstrng1.wav
+%%ORIGINAL%%%%DATADIR%%/data/patch.bif
+%%ORIGINAL%%%%DATADIR%%/dialog.tlk
 @dirrm %%DATADIR%%/texturepacks
+%%DIAMOND%%@dirrm %%DATADIR%%/tempclient
+%%DIAMOND%%@dirrm %%DATADIR%%/temp
+%%DIAMOND%%@dirrm %%DATADIR%%/source
 @dirrm %%DATADIR%%/servervault
+%%DIAMOND%%@dirrm %%DATADIR%%/scripttemplates
 @dirrm %%DATADIR%%/saves
-@dirrm %%DATADIR%%/portraits
+%%ORIGINAL%%@dirrm %%DATADIR%%/portraits
+%%DIAMOND%%@dirrm %%DATADIR%%/patch
 @dirrm %%DATADIR%%/override
 @dirrm %%DATADIR%%/nwm
 @dirrm %%DATADIR%%/music
+%%DIAMOND%%@dirrm %%DATADIR%%/movies
 @dirrm %%DATADIR%%/modules
+%%DIAMOND%%@dirrm %%DATADIR%%/logs
 @dirrm %%DATADIR%%/localvault
 @dirrm %%DATADIR%%/hak
 @dirrm %%DATADIR%%/docs
