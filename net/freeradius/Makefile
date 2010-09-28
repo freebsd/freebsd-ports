@@ -180,7 +180,7 @@ WITH_EXPERIMENTAL=	yes
 .endif
 
 .ifdef(WITH_SNMP)
-LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
+LIB_DEPENDS+=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 .else
 CONFIGURE_ARGS+=--without-snmp
 .endif
