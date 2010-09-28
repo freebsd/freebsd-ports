@@ -59,3 +59,4 @@ share/applications/texmakerx.desktop
 %%DATADIR%%/th_fr_FR_v2.dat
 %%DATADIR%%/th_de_DE_v2.dat
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
