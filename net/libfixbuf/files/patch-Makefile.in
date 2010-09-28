@@ -1,11 +1,11 @@
---- Makefile.in.orig	2008-04-13 20:57:27.000000000 -0700
-+++ Makefile.in	2008-04-13 20:57:31.000000000 -0700
-@@ -195,7 +195,7 @@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
- SUBDIRS = src include doc
+--- Makefile.in.orig	2010-07-26 10:54:53.000000000 -0700
++++ Makefile.in	2010-09-27 16:37:20.864240662 -0700
+@@ -319,7 +319,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = src include
 -pkgconfigdir = $(libdir)/pkgconfig
 +pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = libfixbuf.pc
- all: all-recursive
- 
+ @DX_COND_doc_TRUE@@DX_COND_html_TRUE@DX_CLEAN_HTML = @DX_DOCDIR@/html
+ @DX_COND_chm_TRUE@@DX_COND_doc_TRUE@DX_CLEAN_CHM = @DX_DOCDIR@/chm
