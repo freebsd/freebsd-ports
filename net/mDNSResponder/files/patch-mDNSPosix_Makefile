@@ -40,3 +40,12 @@
  	cp $< $@
  	chmod 444 $@
  
+@@ -744,6 +744,8 @@
+ $(BUILDDIR)/dnsextd:                 $(DNSEXTDOBJ) $(OBJDIR)/dnsextd.c.threadsafe.o
+ 	$(CC) $+ -o $@ $(LINKOPTS) $(LINKOPTS_PTHREAD)
+ 
++$(OBJDIR)/dnsextd_lexer.l.o:         $(OBJDIR)/dnsextd_parser.y.o
++
+ #############################################################################
+ 
+ # Implicit rules
