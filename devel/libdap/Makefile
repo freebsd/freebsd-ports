@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	libdap
-PORTVERSION=	3.10.2
+PORTVERSION=	3.11.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opendap.org/pub/source/ \
 		http://sunpoet.net/distfiles/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SDK which contains an implementation of DAP 2.0 and 3.1
@@ -19,7 +21,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 CFLAGS=		-I${LOCALBASE}/include -L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CONFIGURE_ARGS+=--with-zlib=/usr
+CONFIGURE_ARGS=	--with-zlib=/usr
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
@@ -28,5 +30,8 @@ USE_LDCONFIG=	yes
 post-patch:
 	# do not alter ${PREFIX}/lib/charset.alias
 	@${REINPLACE_CMD} -e '/^install-exec-am: / s|install-exec-local||' ${WRKSRC}/gl/Makefile.in
+
+verify:	checksum
+	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig
 
 .include <bsd.port.mk>
