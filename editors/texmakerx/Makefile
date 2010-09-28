@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	texmakerx
-PORTVERSION=	1.9.3
-PORTREVISION=	1
+PORTVERSION=	1.9.9
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/TexMakerX%20${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -31,7 +30,7 @@ MAKE_JOBS_UNSAFE=	yes
 OPTIONS=	XDVI "view dvi with xdvi" On \
 		GV "view ps with gv" On
 
-WRKSRC=		${WRKDIR}/trunk
+#WRKSRC=		${WRKDIR}/runk
 
 .include <bsd.port.pre.mk>
 

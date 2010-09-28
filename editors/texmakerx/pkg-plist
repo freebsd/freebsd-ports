@@ -37,7 +37,7 @@ bin/texmakerx
 %%DATADIR%%/texmaker48x48.png
 %%DATADIR%%/texmaker64x64.png
 %%DATADIR%%/texmaker128x128.png
-%%DATADIR%%/texmaker.desktop
+share/applications/texmakerx.desktop
 %%DATADIR%%/texmaker.svg
 %%DATADIR%%/texmakerx_fr.qm
 %%DATADIR%%/texmakerx_de.qm
