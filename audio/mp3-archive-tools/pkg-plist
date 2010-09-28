@@ -8,4 +8,4 @@ bin/mp3id
 bin/pmv
 bin/update-music-symlinks
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/mp3-archive-tools/.packlist
-@dirrmtry lib/perl5/site_perl/5.10.1/mach/auto/mp3-archive-tools
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/mp3-archive-tools
