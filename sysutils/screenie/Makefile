@@ -11,11 +11,8 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	CRITICAL
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A small and lightweight screen(1) wrapper
-
-DEPRECATED=	Development has been ceased, no longer maintained
-EXPIRATION_DATE=	2010-10-27
 
 RUN_DEPENDS=	screen:${PORTSDIR}/sysutils/screen
 
