@@ -7,17 +7,18 @@
 
 PORTNAME=	formication
 PORTVERSION=	1.0.b1
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://www.villainy.com/downloads/ \
-		http://www.ranner.jawa.at/stuff/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	http://www.ranner.eu/stuff/ \
+		http://home.bluelife.at/ports/distfiles/
 
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Formular processing tool written in perl
 
-USE_APACHE=	1.3
+USE_APACHE=	1.3+
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	BLURB COPYING feedback.fcn feedback.html formication.txt
 PLIST_FILES=	www/cgi-bin/formication.pl
