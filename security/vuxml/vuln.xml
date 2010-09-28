@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6c4db192-cb23-11df-9c1b-0011098ad87f">
+    <topic>horde-imp -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>horde-imp</name>
+	<range><lt>4.3.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      	<p>The Horde team reports:</p>
+	<blockquote cite="http://article.gmane.org/gmane.comp.horde.announce/516">
+	  <p>Thanks to Naumann IT Security Consulting for reporting the XSS
+            vulnerability.</p>
+	  <p>The major changes compared to IMP version H3 (4.3.7) are:</p>
+          <p>* Fixed an XSS vulnerability in the Fetchmail configuration.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://article.gmane.org/gmane.comp.horde.announce/516</url>
+      <url>http://git.horde.org/diff.php/imp/docs/CHANGES?rt=horde&amp;r1=1.699.2.424&amp;r2=1.699.2.430&amp;ty=h</url>
+    </references>
+    <dates>
+      <discovery>2010-09.28</discovery>
+      <entry>2010-09-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8fc55043-cb1e-11df-9c1b-0011098ad87f">
     <topic>horde-base -- XSS and CSRF vulnerabilities</topic>
     <affects>
