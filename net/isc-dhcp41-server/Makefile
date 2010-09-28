@@ -20,7 +20,7 @@ MAINTAINER=	wxs@FreeBSD.org
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
 PATCHLEVEL=	P1
-PORTREVISION_SERVER=	3
+PORTREVISION_SERVER=	4
 PORTREVISION_CLIENT=	1
 PORTREVISION_RELAY=	1
 
@@ -130,9 +130,6 @@ SUB_LIST+=	PARANOIA=yes
 SUB_LIST+=	PARANOIA=no
 .endif
 
-post-extract:
-	@${CP} ${FILESDIR}/client::scripts::freebsd ${WRKSRC}/client/scripts/freebsd
-
 pre-patch:
 .if ${SUBSYS} == server && defined(WITH_DHCP_LDAP)
 	@cd ${WRKSRC} && ${PATCH} -p1 < ${WRKDIR}/${LDAPPATCHDIST}/${LDAPPATCHFILE}
@@ -143,7 +140,6 @@ post-patch:
 		${MSG_FILE} > ${PKGMESSAGE}
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/client/dhclient.conf \
-		${WRKSRC}/client/scripts/freebsd
 
 do-install:
 	${MAKE} -C ${WRKSRC}/${SUBSYS} install
