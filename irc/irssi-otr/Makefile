@@ -21,6 +21,9 @@ LIB_DEPENDS=	otr.4:${PORTSDIR}/security/libotr \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
