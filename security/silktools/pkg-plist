@@ -19,8 +19,10 @@ bin/rwgeoip2ccmap
 bin/rwgroup
 bin/rwidsquery
 bin/rwip2cc
+bin/rwipfix2silk
 bin/rwmatch
 bin/rwnetmask
+bin/rwp2yaf2silk
 bin/rwpcut
 bin/rwpdedupe
 bin/rwpmapbuild
@@ -39,6 +41,7 @@ bin/rwsetintersect
 bin/rwsetmember
 bin/rwsettool
 bin/rwsetunion
+bin/rwsilk2ipfix
 bin/rwsort
 bin/rwsplit
 bin/rwstats
@@ -57,6 +60,7 @@ include/silk/libflowsource.h
 include/silk/multiqueue.h
 include/silk/probeconf.h
 include/silk/redblack.h
+include/silk/rwascii.h
 include/silk/rwflowpack.h
 include/silk/rwpack.h
 include/silk/rwrec.h
