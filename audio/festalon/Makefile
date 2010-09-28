@@ -20,11 +20,12 @@ LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 
 USE_AUTOTOOLS=	libtool:22
 USE_BZIP2=	yes
+
 MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-ONLY_FOR_ARCHS=	i386 powerpc
+ONLY_FOR_ARCHS=	i386 amd64 powerpc
 
 .include <bsd.port.pre.mk>
 
