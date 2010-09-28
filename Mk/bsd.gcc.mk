@@ -182,7 +182,7 @@ _USE_GCC:=${_GCC_FOUND}
 .if defined(_USE_GCC)
 # A concrete version has been selected.  Determine if the installed OS 
 # features this version in the base, and if not then set proper ports
-# dependencies, CC, CXX, and flags.
+# dependencies, CC, CXX, CPP, and flags.
 .for v in ${GCCVERSIONS}
 . if ${_USE_GCC} == ${_GCCVERSION_${v}_V}
 .  if ${OSVERSION} < ${_GCCVERSION_${v}_L} || ${OSVERSION} > ${_GCCVERSION_${v}_R}
@@ -191,6 +191,7 @@ _GCC_BUILD_DEPENDS:=	gcc${V}
 _GCC_PORT_DEPENDS:=	gcc${V}
 CC:=			gcc${V}
 CXX:=			g++${V}
+CPP:=			cpp${V}
 .   if ${_USE_GCC} != 3.4
 CFLAGS+=		-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
 LDFLAGS+=		-Wl,-rpath=${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
@@ -228,7 +229,7 @@ test-gcc:
 .endfor
 	@echo Using GCC version ${_USE_GCC}
 .endif
-	@echo CC=${CC} - CXX=${CXX} - CFLAGS=\"${CFLAGS}\"
+	@echo CC=${CC} - CXX=${CXX} - CPP=${CPP} - CFLAGS=\"${CFLAGS}\"
 	@echo F77=${F77} - FC=${FC} - FFLAGS=\"${FFLAGS}\"
 	@echo LDFLAGS=\"${LDFLAGS}\"
 	@echo "BUILD_DEPENDS=${BUILD_DEPENDS}"
