@@ -7,7 +7,7 @@
 
 PORTNAME=	libpci
 PORTVERSION=	3.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
 		${MASTER_SITE_KERNEL_ORG} \
@@ -17,6 +17,8 @@ DISTNAME=	pciutils-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PCI configuration space I/O made easy
+
+RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
 
 ALL_TARGET=	lib/libpci.a
 MAKE_ENV=	LANG=C
