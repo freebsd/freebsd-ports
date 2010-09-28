@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=yes
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS=	DEBUG	"Enable debugging"	OFF \
 		POSTPROC	"Enable postprocessing"	ON \
@@ -73,9 +73,6 @@ CONFIGURE_ARGS+=	--target=ia64-linux-gcc
 .else
 IGNORE=	no support for ${ARCH} the moment. testing/patches are welcome
 .endif
-
-post-extract:
-	@${MV} ${WRKSRC}/LICENSE ${WRKSRC}/COPYING
 
 post-patch:
 	@${GREP} -Rl '^#!/bin/bash' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
