@@ -17,6 +17,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
 
+IGNORE=		latest version available in www/nginx
+
 LICENSE=	BSD
 
 OPTIONS=	DEBUG			"Enable nginx debugging" off \
@@ -95,7 +97,7 @@ HTTP_PORT?=	80
 NGINX_ACCESSLOG?=	${NGINX_LOGDIR}/nginx-access.log
 NGINX_ERRORLOG?=	${NGINX_LOGDIR}/nginx-error.log
 
-CONFLICTS?=	nginx-0.7.*
+CONFLICTS?=	nginx-0.8.*
 USE_RC_SUBR=	nginx.sh
 SUB_LIST+=	WWWOWN=${WWWOWN}
 

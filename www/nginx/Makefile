@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.7.67
-PORTREVISION=	1
+PORTVERSION=	0.8.51
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -21,6 +20,7 @@ LICENSE=	BSD
 
 OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		DEBUGLOG		"Enable debug log (--with-debug)" off \
+		FILE_AIO		"Enable file aio" off \
 		IPV6			"Enable IPv6" off \
 		GOOGLE_PERFTOOLS	"Enable google perftools module" off \
 		HTTP_MODULE		"Enable HTTP module" on \
@@ -122,6 +122,10 @@ STRIP=		#do not strip if nginx with debug information
 CONFIGURE_ARGS+=--with-debug
 .endif
 
+.if defined(WITH_FILE_AIO)
+CONFIGURE_ARGS+=--with-file-aio
+.endif
+
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=--with-ipv6
 CATEGORIES+=	ipv6
@@ -134,8 +138,10 @@ CONFIGURE_ARGS+=--with-google_perftools_module
 
 .if defined(WITH_HTTP_MODULE)
 CONFIGURE_ARGS+=--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
-		--http-proxy-temp-path=${NGINX_TMPDIR}/proxy_temp \
 		--http-fastcgi-temp-path=${NGINX_TMPDIR}/fastcgi_temp \
+		--http-proxy-temp-path=${NGINX_TMPDIR}/proxy_temp \
+		--http-scgi-temp-path=${NGINX_TMPDIR}/scgi_temp \
+		--http-uwsgi-temp-path=${NGINX_TMPDIR}/uwsgi_temp \
 		--http-log-path=${NGINX_ACCESSLOG}
 
 .if defined(WITH_HTTP_ACCEPT_LANGUAGE)
@@ -187,7 +193,6 @@ MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:echo/}
 MASTER_SITE_SUBDIR+=	osa/:echo
 DISTFILES+=	ngx_echo_module-${NGINX_ECHO_MODULE_VERSION}.tar.gz:echo
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_echo_module-${NGINX_ECHO_MODULE_VERSION}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_echo_time.c
 .endif
 
 .if defined(WITH_HEADERS_MORE_MODULE)
@@ -411,6 +416,7 @@ NGINX_UDPLOG_MODULE_VERSION=	1.0.0
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:udplog
 DISTFILES+=	nginx_udplog_module-${NGINX_UDPLOG_MODULE_VERSION}.tar.gz:udplog
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_udplog_module-${NGINX_UDPLOG_MODULE_VERSION}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_udplog_module.c
 .endif
 
 .if defined(WITH_WWW)
@@ -481,7 +487,7 @@ post-patch:
 			${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}/patches/ngx_http_upstream_fair_module.patch )
 	( cd ${WRKSRC} && \
 		${PATCH} -p0 < \
-			${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}/patches/ngx_http_upstream_init_busy-0.8.0.patch )
+			${WRKDIR}/ngx_supervisord-${NGINX_SUPERVISORD_MODULE_VERSION}/patches/ngx_http_upstream_init_busy-0.8.17.patch )
 .endif
 
 do-build:
@@ -494,7 +500,7 @@ do-install:
 .for i in koi-utf koi-win win-utf
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}
 .endfor
-.for i in fastcgi_params mime.types nginx.conf
+.for i in fastcgi_params mime.types nginx.conf scgi_params uwsgi_params
 	[ -f ${ETCDIR}/${i} ] || \
 		${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${ETCDIR}/${i}-dist

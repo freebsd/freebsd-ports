@@ -4,6 +4,12 @@
 @exec if [ ! -f %D/%%ETCDIR%%/fastcgi_params ] ; then cp -p %D/%F %B/fastcgi_params; fi
 %%ETCDIR%%/koi-utf
 %%ETCDIR%%/koi-win
+@unexec if cmp -s %D/%%ETCDIR%%/scgi_params-dist %D/%%ETCDIR%%/scgi_params; then rm -f %D/%%ETCDIR%%/scgi_params; fi
+%%ETCDIR%%/scgi_params-dist
+@exec if [ ! -f %D/%%ETCDIR%%/scgi_params ] ; then cp -p %D/%F %B/scgi_params; fi
+@unexec if cmp -s %D/%%ETCDIR%%/uwsgi_params-dist %D/%%ETCDIR%%/uwsgi_params; then rm -f %D/%%ETCDIR%%/uwsgi_params; fi
+%%ETCDIR%%/uwsgi_params-dist
+@exec if [ ! -f %D/%%ETCDIR%%/uwsgi_params ] ; then cp -p %D/%F %B/uwsgi_params; fi
 %%ETCDIR%%/win-utf
 @unexec if cmp -s %D/%%ETCDIR%%/mime.types-dist %D/%%ETCDIR%%/mime.types; then rm -f %D/%%ETCDIR%%/mime.types; fi
 %%ETCDIR%%/mime.types-dist
