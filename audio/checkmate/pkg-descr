@@ -3,4 +3,4 @@ Mpck reads mp3 files and tries to determine if they are valid.
 It displays statistics such as the bitrate. It is fast and supports
 recursive directory checking.
 
-WWW: http://checkmate.linuxonly.nl/
+WWW: http://checkmate.gissen.nl/
