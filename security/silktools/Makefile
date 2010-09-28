@@ -7,6 +7,7 @@
 
 PORTNAME=	silktools
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/ \
 		http://redundancy.redundancy.org/mirror/
@@ -16,7 +17,7 @@ MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Tools for large-scale network capture analysis
 
 LIB_DEPENDS=	lzo:${PORTSDIR}/archivers/lzo \
-				fixbuf:${PORTSDIR}/net/libfixbuf
+		fixbuf:${PORTSDIR}/net/libfixbuf
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lzo=${LOCALBASE} --enable-packing-tools --with-python
@@ -24,7 +25,7 @@ USE_PYTHON=	YES
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" GCC_FLAGS="" CFLAGS_RELEASE=""
 USE_LDCONFIG=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5_BUILD=yes
 
 MAN1=	mapsid.1 num2dot.1 rwaddrcount.1 rwappend.1 \
 	rwbag.1 rwbagbuild.1 rwbagcat.1 rwbagtool.1 \
@@ -49,9 +50,7 @@ MAN7=	silk.7
 MAN8=	flowcap.8 rwflowappend.8 rwflowpack.8 rwguess.8 \
 		rwpackchecker.8 rwreceiver.8 rwsender.8
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

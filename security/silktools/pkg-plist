@@ -77,10 +77,10 @@ include/silk/skiobuf.h
 include/silk/skipaddr.h
 include/silk/skipfix.h
 include/silk/skipset.h
-include/silk/skplugin.h
 include/silk/sklog.h
 include/silk/skmempool.h
 include/silk/skmsg.h
+include/silk/skplugin.h
 include/silk/skpolldir.h
 include/silk/skprefixmap.h
 include/silk/skprintnets.h
@@ -89,6 +89,7 @@ include/silk/skstream.h
 include/silk/skstringmap.h
 include/silk/skthread.h
 include/silk/sktimer.h
+include/silk/sktracemsg.h
 include/silk/skvector.h
 include/silk/utils.h
 lib/libflowsource.a
