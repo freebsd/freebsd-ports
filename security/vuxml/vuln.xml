@@ -34,6 +34,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8fc55043-cb1e-11df-9c1b-0011098ad87f">
+    <topic>horde-base -- XSS and CSRF vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>horde-base</name>
+	<range><lt>3.3.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      	<p>The Horde team reports:</p>
+	<blockquote cite="http://article.gmane.org/gmane.comp.horde.announce/515">
+	  <p>Thanks to Naumann IT Security Consulting for reporting the XSS
+            vulnerability.</p>
+	  <p>Thanks to Secunia for releasing an advisory for the new CSRF
+            protection in the preference interface</p>
+	  <p>The major changes compared to Horde version 3.3.8 are:</p>
+          <p>* Fixed XSS vulnerability in util/icon_browser.php.</p>
+          <p>* Protected preference forms against CSRF attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://article.gmane.org/gmane.comp.horde.announce/515</url>
+      <url>http://cvs.horde.org/diff.php/horde/docs/CHANGES?rt=horde&amp;r1=1.515.2.607&amp;r2=1.515.2.620&amp;ty=h</url>
+      <url>http://secunia.com/advisories/39860/</url>
+      <url>http://holisticinfosec.org/content/view/145/45/</url>
+    </references>
+    <dates>
+      <discovery>2010-06-03</discovery>
+      <entry>2010-09-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="80b6d6cc-c970-11df-bb18-0015587e2cc1">
     <topic>openx -- remote code execution vulnerability</topic>
     <affects>
