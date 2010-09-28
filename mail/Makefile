@@ -697,7 +697,6 @@
     SUBDIR += sylpheed
     SUBDIR += sylpheed3
     SUBDIR += sympa
-    SUBDIR += sympa-elixus
     SUBDIR += sympa5
     SUBDIR += synonym
     SUBDIR += t-prot

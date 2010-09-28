@@ -4599,3 +4599,4 @@ devel/automake17||2010-09-22|Outdated, was not being used by any port
 devel/automake18||2010-09-22|Outdated, ports (2) migrated to automake19
 devel/automake15||2010-09-23|Outdated, ports migrated to automake19
 www/xpi-gbutts|www/xpi-google_shortcuts|2010-09-28|Plugin was renamed
+mail/sympa-elixus||2010-09-28|Has expired: no longer maintained, no longer fetchable, no longer builds with sympa
