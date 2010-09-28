@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTVERSION}
 USE_GHOSTSCRIPT=yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui network xml moc_build qmake_build rcc_build \
-		uic_build qtestlib
+		uic_build qtestlib script
 HAS_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=	yes
