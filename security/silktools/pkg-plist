@@ -19,10 +19,8 @@ bin/rwgeoip2ccmap
 bin/rwgroup
 bin/rwidsquery
 bin/rwip2cc
-bin/rwipfix2silk
 bin/rwmatch
 bin/rwnetmask
-bin/rwp2yaf2silk
 bin/rwpcut
 bin/rwpdedupe
 bin/rwpmapbuild
@@ -41,7 +39,6 @@ bin/rwsetintersect
 bin/rwsetmember
 bin/rwsettool
 bin/rwsetunion
-bin/rwsilk2ipfix
 bin/rwsort
 bin/rwsplit
 bin/rwstats
@@ -97,11 +94,11 @@ lib/libflowsource.so.3
 lib/libsilk-thrd.a
 lib/libsilk-thrd.la
 lib/libsilk-thrd.so
-lib/libsilk-thrd.so.2
+lib/libsilk-thrd.so.3
 lib/libsilk.a
 lib/libsilk.la
 lib/libsilk.so
-lib/libsilk.so.4
+lib/libsilk.so.5
 lib/libskipfix.a
 lib/libskipfix.la
 lib/libskipfix.so
