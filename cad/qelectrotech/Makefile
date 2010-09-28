@@ -20,14 +20,11 @@ QT_COMPONENTS=	gui network svg xml \
 INSTALLS_ICONS=	yes
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAN1=		qelectrotech.1
 MANLANG=	"" es fr.ISO8859-1 fr.UTF-8 fr pt_PT
 MANCOMPRESSED=	yes
-
-post-extract:
-	@${CP} ${WRKSRC}/LICENSE ${WRKSRC}/COPYING
 
 do-configure:
 	${MV} ${WRKSRC}/man/files/pt ${WRKSRC}/man/files/pt_PT
