@@ -59,7 +59,7 @@ RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_python.so:${PORTSDIR}/www/mod_pyt
 .endif
 
 .if defined(WITH_MODWSGI3)
-RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_wsig3.so:${PORTSDIR}/www/mod_wsgi3
+RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_wsgi3.so:${PORTSDIR}/www/mod_wsgi3
 .endif
 
 # This feature is a clone of the Mozilla Project's Bonsai database.
