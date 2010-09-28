@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.13.30
-PORTREVISION=	1
+PORTVERSION=	2.13.34
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.13/:src \
     		${MASTER_SITE_LOCAL}/gahr/:fonts \
