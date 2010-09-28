@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.rsyslog.com/rsyslog/
 PKGNAMESUFFIX?=	-${MNAME}
 .endif
 
-MAINTAINER=	cristianorolim@hotmail.com
+MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT?=	Syslogd supporting SQL, TCP and TLS
 
 .ifdef MNAME
