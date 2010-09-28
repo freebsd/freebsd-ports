@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fd
-PORTVERSION=	3.00i
+PORTVERSION=	3.00j
 CATEGORIES=	shells net
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/ \
 		ftp://ftp.unixusers.net/src/fdclone/
@@ -19,6 +19,7 @@ MANLANG=	"" ja
 MAN1=		fd.1 fdsh.1
 MAKE_ENV=	LANG=ja
 MAKE_ARGS=	CC="${CC}" CONFDIR="${PREFIX}/etc"
+MAKE_JOBS_SAFE=	yes
 
 DOCS_EN=	FAQ.eng \
 		LICENSES.eng \
