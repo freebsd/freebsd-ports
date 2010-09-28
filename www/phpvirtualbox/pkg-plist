@@ -481,7 +481,9 @@
 %%WWWDIR%%/js/phpvirtualbox.js
 %%WWWDIR%%/js/utils.js
 %%WWWDIR%%/js/vboxweb.js
+%%WWWDIR%%/languages/de_de.php
 %%WWWDIR%%/languages/en_us.php
+%%WWWDIR%%/languages/fr_fr.php
 %%WWWDIR%%/lib/ajax.php
 %%WWWDIR%%/lib/cache.php
 %%WWWDIR%%/lib/jqueryFileTree.php
