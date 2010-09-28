@@ -214,6 +214,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/scm/define-grob-properties.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/define-grobs.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/define-markup-commands.scm
+%%DATADIR%%/%%PORTVERSION%%/scm/define-music-callbacks.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/define-music-display-methods.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/define-music-properties.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/define-music-types.scm
