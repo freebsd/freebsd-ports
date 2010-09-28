@@ -1,6 +1,6 @@
---- configure.am.orig	2010-07-06 20:37:18.000000000 +0200
-+++ configure.am	2010-07-16 11:11:48.000000000 +0200
-@@ -990,6 +990,8 @@
+--- configure.am.orig	2010-09-17 22:48:48.000000000 +0200
++++ configure.am	2010-09-27 16:39:47.000000000 +0200
+@@ -1011,6 +1011,8 @@
  MYSQL_BASE_VERSION
  MYSQL_NO_DASH_VERSION
  MYSQL_U_SCORE_VERSION
@@ -9,7 +9,16 @@
  TEST_NDBCLUSTER
  MAKEINDEX
  PDFLATEX
-@@ -12684,6 +12686,8 @@
+@@ -12717,7 +12719,7 @@
+ _ACEOF
+ 
+     case "$target_os" in
+-      *solaris*)
++      *solaris*|*freebsd*)
+         HAVE_DTRACE_DASH_G="yes"
+         ;;
+       *)
+@@ -12750,6 +12752,8 @@
  NDB_VERSION_MINOR=`echo $MYSQL_NUMERIC_VERSION | cut -d. -f2`
  NDB_VERSION_BUILD=`echo $MYSQL_NUMERIC_VERSION | cut -d. -f3`
  NDB_VERSION_STATUS=`echo $VERSION | sed 's/^[-.0-9]*//'`
@@ -18,7 +27,7 @@
  TEST_NDBCLUSTER=""
  
  
-@@ -25849,8 +25853,8 @@
+@@ -25752,8 +25756,8 @@
  # Some system specific hacks
  #
  
