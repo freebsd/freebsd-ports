@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}.pl
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	vlad@vlad.uz.ua
 COMMENT=	A Script Assist You with MySQL Configuration
 
 USE_PERL=	yes
