@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpvirtualbox
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -21,8 +21,6 @@ USE_PHP=	json session soap
 NO_BUILD=	yes
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(php|txt|js|css|html)
-
-EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${WWWDIR}
