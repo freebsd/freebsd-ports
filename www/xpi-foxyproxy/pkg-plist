@@ -1,4 +1,4 @@
-%%XPI_XPIDIR%%/COPYING
+%%XPI_XPIDIR%%/LICENSE
 %%XPI_XPIDIR%%/chrome.manifest
 %%XPI_XPIDIR%%/chrome/content/about.js
 %%XPI_XPIDIR%%/chrome/content/about.xul
