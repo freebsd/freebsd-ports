@@ -2136,6 +2136,7 @@ dagrab                          ports/audio/dagrab
 dahdi                           ports/misc/dahdi
 dailystrips                     ports/deskutils/dailystrips
 daimonin-client                 ports/games/daimonin-client
+daimonin-music                  ports/games/daimonin-music
 dalbum                          ports/www/dalbum
 damageproto                     ports/x11/damageproto
 danamics                        ports/net/danamics
@@ -8484,6 +8485,7 @@ linux-f10-flashplugin10         ports/www/linux-f10-flashplugin10
 linux-f10-fontconfig            ports/x11-fonts/linux-f10-fontconfig
 linux-f10-freealut              ports/audio/linux-f10-freealut
 linux-f10-gdk-pixbuf            ports/graphics/linux-f10-gdk-pixbuf
+linux-f10-glew                  ports/graphics/linux-f10-glew
 linux-f10-gtk                   ports/x11-toolkits/linux-f10-gtk
 linux-f10-gtk2                  ports/x11-toolkits/linux-f10-gtk2
 linux-f10-hicolor-icon-theme    ports/x11-themes/linux-f10-hicolor-icon-theme
