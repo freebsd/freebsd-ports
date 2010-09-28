@@ -77,10 +77,10 @@ include/silk/skiobuf.h
 include/silk/skipaddr.h
 include/silk/skipfix.h
 include/silk/skipset.h
+include/silk/skplugin.h
 include/silk/sklog.h
 include/silk/skmempool.h
 include/silk/skmsg.h
-include/silk/skplugin.h
 include/silk/skpolldir.h
 include/silk/skprefixmap.h
 include/silk/skprintnets.h
