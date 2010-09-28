@@ -14,7 +14,7 @@ MASTER_SITES=	http://depot.fsck.ch/mirror/distfiles/ \
 PKGNAMEPREFIX=	gkrellm-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@fsck.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM2 plugin to display definable icons as notifiers or launchers
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2

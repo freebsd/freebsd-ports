@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.code-monkey.de/pub/gkrellm-gift/ \
 PKGNAMEPREFIX=	gkrellm-
 DISTNAME=	${PKGNAMEPREFIX}giFT-${PORTVERSION}
 
-MAINTAINER=	ports@fsck.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM2 plugin that monitors active giFT transfers
 
 LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift

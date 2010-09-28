@@ -14,7 +14,7 @@ MASTER_SITES=	http://voidtrance.home.comcast.net/ \
 PKGNAMEPREFIX=	gkrellm-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-0.2.5a
 
-MAINTAINER=	ports@fsck.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM2 plugin that tracks tasks and to-do items
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2

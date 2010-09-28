@@ -14,7 +14,7 @@ MASTER_SITES=	http://triq.net/gkrellm_timers/ \
 PKGNAMEPREFIX=	gkrellm-
 DISTNAME=	gkrellm_${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@fsck.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM2 plugin that allows the setting of countdowns
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
