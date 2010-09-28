@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER= corky1951@comcast.net
+MAINTAINER=	corky1951@comcast.net
 COMMENT=	Desktop panel that includes a taskbar, pager, launchbar and more
 
 USE_XORG=	x11 xmu xpm
