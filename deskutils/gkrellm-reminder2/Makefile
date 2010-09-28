@@ -14,7 +14,7 @@ MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/Plugins/ \
 PKGNAMEPREFIX=	gkrellm-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@fsck.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM2 plugin that reminds you of important events
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2

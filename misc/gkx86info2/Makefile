@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://anchois.free.fr/ \
 		http://depot.fsck.ch/mirror/distfiles/
 
-MAINTAINER=	ports@fsck.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM2 plugin that simply prints the current clock speed
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
