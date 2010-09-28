@@ -14,11 +14,17 @@ MASTER_SITES=	CPAN/Device \
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Device-USB-${PORTVERSION}
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	josh.carroll@gmail.com
 COMMENT=	Perl wrapper for libusb
 
-LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 BUILD_DEPENDS=	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline
+
+.include <bsd.port.pre.mk>
+
+# libusb is in base for newer releases
+.if ${OSVERSION} < 800069
+LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
+.endif
 
 WRKSRC=		${WRKDIR}/Device-USB-${PORTVERSION}
 PERL_CONFIGURE=	yes
@@ -33,4 +39,4 @@ MAN3=		Device::USB.3 \
 		Device::USB::FAQ.3 \
 		Device::dump_usb.3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
