@@ -6,13 +6,13 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.5.5
-PORTREVISION?=	1
+PORTVERSION=	5.5.6
+PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	MySQL-5.5
 PKGNAMESUFFIX?=	-server
-DISTNAME=	${PORTNAME}-${PORTVERSION}-m3
+DISTNAME=	${PORTNAME}-${PORTVERSION}-rc
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
@@ -27,10 +27,9 @@ CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-libedit \
 		--with-libwrap \
 		--with-low-memory \
-		--with-plugins=max \
+		--with-plugins=max-no-ndb \
 		--with-comment='FreeBSD port: ${PKGNAME}' \
-		--enable-thread-safe-client \
-		--disable-dtrace
+		--enable-thread-safe-client
 
 .ifdef USE_MYSQL
 .error You have `USE_MYSQL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
@@ -44,6 +43,12 @@ CONFIGURE_ARGS+=--with-charset=${WITH_CHARSET}
 .endif
 .if defined(WITH_XCHARSET) && ${WITH_XCHARSET} != ""
 CONFIGURE_ARGS+=--with-extra-charsets=${WITH_XCHARSET}
+.endif
+.if defined(WITH_DTRACE)
+CONFIGURE_ARGS+=--enable-dtrace
+CONFIGURE_ENV+=	LDFLAGS=-lelf
+.else
+CONFIGURE_ARGS+=--disable-dtrace
 .endif
 .if defined(WITH_OPENSSL)
 .if !defined(WITHOUT_YASSL)
@@ -123,6 +128,7 @@ pre-fetch:
 	@${ECHO} "	WITH_CHARSET=charset	Define the primary built-in charset (latin1)."
 	@${ECHO} "	WITH_XCHARSET=list	Define other built-in charsets (may be 'all')."
 	@${ECHO} "	WITH_COLLATION=collate	Define default collation (latin1_swedish_ci)."
+	@${ECHO} "	WITH_DTRACE=yes		Enable DTrace."
 	@${ECHO} "	WITH_OPENSSL=yes	Enable secure connections"
 	@${ECHO} "				(define WITHOUT_YASSL for backward compatibility)."
 	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
