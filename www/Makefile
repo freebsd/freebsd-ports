@@ -1870,7 +1870,6 @@
     SUBDIR += xpi-foxmarks
     SUBDIR += xpi-foxyproxy
     SUBDIR += xpi-gbrain
-    SUBDIR += xpi-gbutts
     SUBDIR += xpi-gmail-manager
     SUBDIR += xpi-google-notebook
     SUBDIR += xpi-grab_and_drag
