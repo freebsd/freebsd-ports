@@ -180,6 +180,7 @@
     SUBDIR += dupfind
     SUBDIR += duplicity
     SUBDIR += duplicity-devel
+    SUBDIR += duply
     SUBDIR += dupmerge
     SUBDIR += durep
     SUBDIR += dvd+rw-tools
