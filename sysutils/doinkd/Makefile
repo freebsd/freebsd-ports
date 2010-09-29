@@ -1,34 +1,34 @@
-# New ports collection makefile for:	idled
+# New ports collection makefile for:	doinkd
 # Date created:			12 March 1997
 # Whom:		Andrew <andrew@ugh.net.au>, Iain Templeton <iain@ugh.net.au>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	idled
-PORTVERSION=	1.16
-PORTREVISION=	3
+PORTNAME=	doinkd
+PORTVERSION=	0.01
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.netsw.org/system/tools/process/
+MASTER_SITES=	SF/idled/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A daemon that logs out idle users and those users hogging resources
 
-NO_CDROM=	non-profit use and distribution only
+CONFLICTS=	idled-*
 MANCOMPRESSED=	yes
-MAN5=		idled.cf.5
-MAN8=		idled.8
+MAN5=		doinkd.cf.5
+MAN8=		doinkd.8
 
 USE_RC_SUBR=	${PORTNAME}
 
-PLIST_FILES=	etc/idled.cf.template libexec/idled
+PLIST_FILES=	etc/doinkd/doinkd.cf.template sbin/doinkd
+PLIST_DIRS=	etc/doinkd
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900006
 EXTRA_PATCHES=	${PATCHDIR}/utmpx-Makefile \
-		${PATCHDIR}/utmpx-idled.h \
-		${PATCHDIR}/utmpx-idled.c
+		${PATCHDIR}/utmpx-doinkd.h \
+		${PATCHDIR}/utmpx-doinkd.c
 .else
 EXTRA_PATCHES=	${PATCHDIR}/utmp-Makefile
 .endif
@@ -36,7 +36,10 @@ EXTRA_PATCHES=	${PATCHDIR}/utmp-Makefile
 post-extract:
 	(cd ${WRKSRC}; make clean)
 
+pre-install:
+	${MKDIR} ${PREFIX}/etc/doinkd
+
 post-install:
-	@${STRIP_CMD} ${PREFIX}/libexec/idled
+	@${STRIP_CMD} ${PREFIX}/sbin/doinkd
 
 .include <bsd.port.post.mk>
