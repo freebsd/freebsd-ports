@@ -21,12 +21,14 @@ bin/openlp-remoteclient.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/baselistwithdnd.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/baselistwithdnd.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/basemodel.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/basemodel.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/db.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/db.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/dockwidget.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/dockwidget.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/eventreceiver.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/eventreceiver.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/htmlbuilder.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/htmlbuilder.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/mediamanageritem.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/mediamanageritem.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/plugin.py
@@ -43,14 +45,12 @@ bin/openlp-remoteclient.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/settingsmanager.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/settingstab.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/settingstab.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/songxmlhandler.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/songxmlhandler.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/themexmlhandler.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/themexmlhandler.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/spelltextedit.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/spelltextedit.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/theme.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/theme.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/toolbar.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/toolbar.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/xmlrootclass.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/lib/xmlrootclass.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/resources.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/resources.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/theme/__init__.py
@@ -63,12 +63,16 @@ bin/openlp-remoteclient.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/aboutdialog.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/aboutform.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/aboutform.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/advancedtab.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/advancedtab.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/amendthemedialog.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/amendthemedialog.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/amendthemeform.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/amendthemeform.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/displaytab.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/displaytab.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/exceptiondialog.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/exceptiondialog.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/exceptionform.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/exceptionform.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/generaltab.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/generaltab.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui/maindisplay.py
@@ -109,6 +113,19 @@ bin/openlp-remoteclient.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/utils/languagemanager.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/utils/languagemanager.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/i18n/af.qm
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/i18n/de.qm
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/i18n/en.qm
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/i18n/en_GB.qm
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/i18n/en_ZA.qm
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/i18n/es.qm
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/i18n/et.qm
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/i18n/hu.qm
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/i18n/ja.qm
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/i18n/ko.qm
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/i18n/nb.qm
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/i18n/pt_BR.qm
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/i18n/sv.qm
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts/__init__.py
@@ -127,16 +144,8 @@ bin/openlp-remoteclient.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts/lib/alertsmanager.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts/lib/alertstab.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts/lib/alertstab.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts/lib/classes.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts/lib/classes.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts/lib/manager.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts/lib/manager.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts/lib/meta.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts/lib/meta.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts/lib/models.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts/lib/models.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts/lib/tables.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts/lib/tables.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts/lib/db.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts/lib/db.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/__init__.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/__init__.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/bibleplugin.py
@@ -151,8 +160,6 @@ bin/openlp-remoteclient.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/lib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/lib/biblestab.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/lib/biblestab.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/lib/common.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/lib/common.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/lib/csvbible.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/lib/csvbible.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/lib/db.py
@@ -163,8 +170,6 @@ bin/openlp-remoteclient.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/lib/manager.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/lib/mediaitem.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/lib/mediaitem.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/lib/models.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/lib/models.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/lib/opensong.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/lib/opensong.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/bibles/lib/osis.py
@@ -185,28 +190,20 @@ bin/openlp-remoteclient.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/forms/editcustomform.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/__init__.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/classes.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/classes.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/customtab.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/customtab.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/manager.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/manager.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/customxmlhandler.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/customxmlhandler.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/db.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/db.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/mediaitem.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/mediaitem.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/meta.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/meta.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/models.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/models.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/tables.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/custom/lib/tables.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/images/__init__.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/images/__init__.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/images/imageplugin.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/images/imageplugin.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/images/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/images/lib/__init__.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/images/lib/imagetab.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/images/lib/imagetab.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/images/lib/mediaitem.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/images/lib/mediaitem.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/media/__init__.py
@@ -242,6 +239,10 @@ bin/openlp-remoteclient.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/remotes/__init__.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/remotes/__init__.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/remotes/html/index.html
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/remotes/html/init.js
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/remotes/html/jquery.js
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/remotes/html/openlp.js
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/remotes/html/openlp.service.js
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/remotes/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/remotes/lib/__init__.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/remotes/lib/httpserver.py
@@ -284,18 +285,24 @@ bin/openlp-remoteclient.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/forms/topicsform.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/__init__.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/classes.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/classes.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/manager.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/manager.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/cclifileimport.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/cclifileimport.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/db.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/db.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/ewimport.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/ewimport.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/importer.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/importer.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/mediaitem.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/mediaitem.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/meta.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/meta.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/models.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/models.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/olp1import.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/olp1import.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/olpimport.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/olpimport.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/oooimport.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/oooimport.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/opensongimport.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/opensongimport.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/sofimport.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/sofimport.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/songimport.py
@@ -304,8 +311,14 @@ bin/openlp-remoteclient.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/songstab.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/songxml.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/songxml.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/tables.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/tables.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/test/test_import_file.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/test/test_import_file.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/test/test_importing_lots.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/test/test_importing_lots.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/test/test_opensongimport.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/test/test_opensongimport.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/wowimport.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/wowimport.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/xml.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/xml.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/songsplugin.py
@@ -324,21 +337,14 @@ bin/openlp-remoteclient.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/forms/songusagedetailform.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/lib/__init__.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/lib/__init__.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/lib/classes.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/lib/classes.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/lib/manager.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/lib/manager.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/lib/meta.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/lib/meta.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/lib/models.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/lib/models.pyc
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/lib/tables.py
-%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/lib/tables.pyc
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/lib/db.py
+%%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/lib/db.pyc
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/songusageplugin.py
 %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/songusageplugin.pyc
 @dirrm %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/lib
 @dirrm %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage/forms
 @dirrm %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songusage
+@dirrm %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib/test
 @dirrm %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/lib
 @dirrm %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs/forms
 @dirrm %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/songs
@@ -363,6 +369,7 @@ bin/openlp-remoteclient.py
 @dirrm %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts/forms
 @dirrm %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins/alerts
 @dirrm %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/plugins
+@dirrm %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/i18n
 @dirrm %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/utils
 @dirrm %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/ui
 @dirrm %%PYTHON_SITELIBDIR%%/OpenLP-%%VERSION%%-py%%PYTHON_VER%%.egg/openlp/core/theme
