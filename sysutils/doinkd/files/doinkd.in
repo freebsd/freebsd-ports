@@ -11,23 +11,23 @@
 #
 # Add the following lines to /etc/rc.conf to enable idled:
 #
-# idled_enable="YES"
-# idled_flags="<set as needed>"
+# doinkd_enable="YES"
+# doinkd_flags="<set as needed>"
 #
-# See idled(8) for flags
+# See doinkd(8) for flags
 #
 
 . /etc/rc.subr
 
-name=idled
+name=doinkd
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/libexec/idled
-required_files=%%PREFIX%%/etc/idled.cf
+command=%%PREFIX%%/libexec/doinkd
+required_files=%%PREFIX%%/etc/doinkd.cf
 
 # set defaults
 
-idled_enable=${idled_enable:-"NO"}
+doinkd_enable=${doinkd_enable:-"NO"}
 
 load_rc_config $name
 run_rc_command "$1"
