@@ -14,7 +14,6 @@ MASTER_SITES=	SF/idled/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A daemon that logs out idle users and those users hogging resources
 
-CONFLICTS=	idled-*
 MANCOMPRESSED=	yes
 MAN5=		doinkd.cf.5
 MAN8=		doinkd.8
