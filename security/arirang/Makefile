@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	arirang
-PORTVERSION=	1.90
+PORTVERSION=	1.95
 PORTEPOCH=	1
 CATEGORIES=	security www
-MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
-		http://monkey.org/~pilot/arirang/
+MASTER_SITES=	http://monkey.org/~pilot/arirang/
 MASTER_SITE_SUBDIR=	UNIX/cgi-scanners
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Powerful webserver security scanner for network
 
 LICENSE=	BSD
+
+USE_RUBY=	1.8+
+USE_RUBY_EXTCONF=	yes
+USE_LIBRUBY=	yes
 
 USE_OPENSSL=	yes
 
@@ -25,5 +28,6 @@ do-install:
 	${MKDIR} ${PREFIX}/share/arirang
 	${CHMOD} 755 ${PREFIX}/share/arirang
 	${INSTALL_DATA} ${WRKSRC}/scanrule/*.uxe ${PREFIX}/share/arirang
+	${INSTALL_DATA} ${WRKSRC}/script/*.rb ${PREFIX}/share/arirang
 
 .include <bsd.port.mk>
