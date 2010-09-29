@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.caliban.org/files/bash/ \
 		CRITICAL
 DISTNAME=	${PORTNAME:C/\-classic//}-${PORTVERSION}
 
-MAINTAINER=	ehaupt@critical.ch
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Programmable completion library for Bash 2.04 and up
 
 WRKSRC=		${WRKDIR}/bash_completion
