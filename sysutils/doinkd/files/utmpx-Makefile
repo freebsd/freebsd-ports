@@ -20,7 +20,7 @@
  SPECLIBS = 
  INSTTYPE = install4
  
-@@ -193,26 +193,22 @@
+@@ -193,26 +193,23 @@
  # You will need to delete parse.c before compiling!  You can either
  # do so by hand, or do a 'make clean' followed by the normal 'make'.
  #DEFS += -O -m486
@@ -42,6 +42,8 @@
 +DEST    = ${PREFIX}/sbin
 +CFDEST  = ${PREFIX}/etc/doinkd
 +MDEST   = ${PREFIX}/man
++LOGDEST = /var/log
+-#
 +MOWNER  = man
  #
 -#GROUP   = daemon
