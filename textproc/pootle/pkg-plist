@@ -1,5 +1,6 @@
-etc/pootle/localsettings.py
+@unexec if cmp -s %D/etc/pootle/localsettings.py %D/etc/pootle/localsettings.py.sample; then rm -f %D/etc/pootle/localsettings.py; fi
 etc/pootle/localsettings.py.sample
+@exec [ -f %B/localsettings.py ] || cp %B/%f %B/localsettings.py
 bin/PootleServer
 bin/import_pootle_prefs
 bin/updatetm
@@ -643,223 +644,223 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/registration/views.py
 %%PYTHON_SITELIBDIR%%/registration/views.pyc
 %%PYTHON_SITELIBDIR%%/registration/views.pyo
-share/pootle/templates/403.html
-share/pootle/templates/404.html
-share/pootle/templates/500.html
-share/pootle/templates/admin_profile_base.html
-share/pootle/templates/admin_profile_menu.html
-share/pootle/templates/base.html
-share/pootle/templates/captcha.html
-share/pootle/templates/docs.html
-share/pootle/templates/language_base.html
-share/pootle/templates/language_menu.html
-share/pootle/templates/project_base.html
-share/pootle/templates/project_menu.html
-share/pootle/templates/tp_base.html
-share/pootle/templates/tp_base_admin.html
-share/pootle/templates/tp_base_extended.html
-share/pootle/templates/tp_base_terminology.html
-share/pootle/templates/tp_menu.html
-share/pootle/templates/user_profile_base.html
-share/pootle/templates/user_profile_base_extended.html
-share/pootle/templates/user_profile_menu.html
-share/pootle/templates/admin/base_site.html
-share/pootle/templates/contact_form/contact_form.html
-share/pootle/templates/contact_form/contact_form.txt
-share/pootle/templates/contact_form/contact_form_sent.html
-share/pootle/templates/contact_form/contact_form_subject.txt
-share/pootle/templates/docs/howto.html
-share/pootle/templates/docs/index.html
-share/pootle/templates/docs/resources.html
-share/pootle/templates/profiles/edit_personal.html
-share/pootle/templates/profiles/edit_profile.html
-share/pootle/templates/profiles/profile_detail.html
-share/pootle/templates/profiles/profile_list.html
-share/pootle/templates/registration/activate.html
-share/pootle/templates/registration/activation_email.html
-share/pootle/templates/registration/activation_email.txt
-share/pootle/templates/registration/activation_email_subject.txt
-share/pootle/templates/registration/password_change_done.html
-share/pootle/templates/registration/password_change_form.html
-share/pootle/templates/registration/password_reset_complete.html
-share/pootle/templates/registration/password_reset_confirm.html
-share/pootle/templates/registration/password_reset_done.html
-share/pootle/templates/registration/password_reset_email.html
-share/pootle/templates/registration/password_reset_form.html
-share/pootle/templates/registration/registration_complete.html
-share/pootle/templates/registration/registration_form.html
-share/pootle/html/admin.css
-share/pootle/html/favicon.ico
-share/pootle/html/style.css
-share/pootle/html/translate.css
-share/pootle/html/images/accept.png
-share/pootle/html/images/apertium.png
-share/pootle/html/images/arrow_refresh.png
-share/pootle/html/images/arrow_up.png
-share/pootle/html/images/asc.gif
-share/pootle/html/images/ascdesc.gif
-share/pootle/html/images/book_next.png
-share/pootle/html/images/comment_add.png
-share/pootle/html/images/context.png
-share/pootle/html/images/copy.png
-share/pootle/html/images/cross.png
-share/pootle/html/images/cyan-bar.png
-share/pootle/html/images/database_save.png
-share/pootle/html/images/desc.gif
-share/pootle/html/images/door_in.png
-share/pootle/html/images/drive_network.png
-share/pootle/html/images/edit.png
-share/pootle/html/images/email_go.png
-share/pootle/html/images/error.png
-share/pootle/html/images/feed.png
-share/pootle/html/images/folder.png
-share/pootle/html/images/gap.png
-share/pootle/html/images/footer-border.png
-share/pootle/html/images/good.png
-share/pootle/html/images/google-translate.png
-share/pootle/html/images/green-bar.png
-share/pootle/html/images/header-background-bottom.png
-share/pootle/html/images/header-background.png
-share/pootle/html/images/help.png
-share/pootle/html/images/information.png
-share/pootle/html/images/key_go.png
-share/pootle/html/images/logo.png
-share/pootle/html/images/newspaper_go.png
-share/pootle/html/images/next.png
-share/pootle/html/images/next2.png
-share/pootle/html/images/none.png
-share/pootle/html/images/page-bg.jpg
-share/pootle/html/images/page.png
-share/pootle/html/images/page_get.png
-share/pootle/html/images/page_refresh.png
-share/pootle/html/images/prev.png
-share/pootle/html/images/prev2.png
-share/pootle/html/images/purple-bar.png
-share/pootle/html/images/red-bar.png
-share/pootle/html/images/sarrow_down.png
-share/pootle/html/images/sarrow_down_rtl.png
-share/pootle/html/images/sarrow_up.png
-share/pootle/html/images/sarrow_up_rtl.png
-share/pootle/html/images/script_code.png
-share/pootle/html/images/search-arrow.png
-share/pootle/html/images/squiggle.png
-share/pootle/html/images/suggest.png
-share/pootle/html/images/throbber.gif
-share/pootle/html/images/tick.png
-share/pootle/html/images/user_comment.png
-share/pootle/html/images/user_go.png
-share/pootle/html/images/warning.png
-share/pootle/html/js/README
-share/pootle/html/js/admin.js
-share/pootle/html/js/correctpng.js
-share/pootle/html/js/json2.min.js
-share/pootle/html/js/search.js
-share/pootle/html/js/sorttable.js
-share/pootle/html/js/translatepage.js
-share/pootle/html/js/jquery/jquery.bidi.js
-share/pootle/html/js/jquery/jquery.caret.js
-share/pootle/html/js/jquery/jquery.cookie.js
-share/pootle/html/js/jquery/jquery.fieldselection.js
-share/pootle/html/js/jquery/jquery.min.js
-share/pootle/html/js/jquery/jquery.scrollTo.min.js
-share/pootle/html/js/jquery/jquery.textarea-expander.js
-share/pootle/html/js/mt/apertium.js
-share/pootle/html/js/mt/google-translate.js
-share/pootle/mo/README
-share/pootle/mo/af/LC_MESSAGES/django.mo
-share/pootle/mo/ak/LC_MESSAGES/django.mo
-share/pootle/mo/am/LC_MESSAGES/django.mo
-share/pootle/mo/ar/LC_MESSAGES/django.mo
-share/pootle/mo/ast/LC_MESSAGES/django.mo
-share/pootle/mo/az/LC_MESSAGES/django.mo
-share/pootle/mo/be/LC_MESSAGES/django.mo
-share/pootle/mo/bg/LC_MESSAGES/django.mo
-share/pootle/mo/bn/LC_MESSAGES/django.mo
-share/pootle/mo/bn_IN/LC_MESSAGES/django.mo
-share/pootle/mo/bo/LC_MESSAGES/django.mo
-share/pootle/mo/br/LC_MESSAGES/django.mo
-share/pootle/mo/ca/LC_MESSAGES/django.mo
-share/pootle/mo/ca@valencia/LC_MESSAGES/django.mo
-share/pootle/mo/cs/LC_MESSAGES/django.mo
-share/pootle/mo/da/LC_MESSAGES/django.mo
-share/pootle/mo/de/LC_MESSAGES/django.mo
-share/pootle/mo/dz/LC_MESSAGES/django.mo
-share/pootle/mo/el/LC_MESSAGES/django.mo
-share/pootle/mo/en_GB/LC_MESSAGES/django.mo
-share/pootle/mo/en_ZA/LC_MESSAGES/django.mo
-share/pootle/mo/eo/LC_MESSAGES/django.mo
-share/pootle/mo/es/LC_MESSAGES/django.mo
-share/pootle/mo/et/LC_MESSAGES/django.mo
-share/pootle/mo/eu/LC_MESSAGES/django.mo
-share/pootle/mo/fa/LC_MESSAGES/django.mo
-share/pootle/mo/fi/LC_MESSAGES/django.mo
-share/pootle/mo/fo/LC_MESSAGES/django.mo
-share/pootle/mo/fr/LC_MESSAGES/django.mo
-share/pootle/mo/fur/LC_MESSAGES/django.mo
-share/pootle/mo/ga/LC_MESSAGES/django.mo
-share/pootle/mo/gl/LC_MESSAGES/django.mo
-share/pootle/mo/ha/LC_MESSAGES/django.mo
-share/pootle/mo/he/LC_MESSAGES/django.mo
-share/pootle/mo/hi/LC_MESSAGES/django.mo
-share/pootle/mo/hr/LC_MESSAGES/django.mo
-share/pootle/mo/hu/LC_MESSAGES/django.mo
-share/pootle/mo/hy/LC_MESSAGES/django.mo
-share/pootle/mo/id/LC_MESSAGES/django.mo
-share/pootle/mo/is/LC_MESSAGES/django.mo
-share/pootle/mo/it/LC_MESSAGES/django.mo
-share/pootle/mo/ja/LC_MESSAGES/django.mo
-share/pootle/mo/ka/LC_MESSAGES/django.mo
-share/pootle/mo/kg/LC_MESSAGES/django.mo
-share/pootle/mo/km/LC_MESSAGES/django.mo
-share/pootle/mo/kn/LC_MESSAGES/django.mo
-share/pootle/mo/ko/LC_MESSAGES/django.mo
-share/pootle/mo/ku/LC_MESSAGES/django.mo
-share/pootle/mo/ky/LC_MESSAGES/django.mo
-share/pootle/mo/ln/LC_MESSAGES/django.mo
-share/pootle/mo/lt/LC_MESSAGES/django.mo
-share/pootle/mo/lv/LC_MESSAGES/django.mo
-share/pootle/mo/mg/LC_MESSAGES/django.mo
-share/pootle/mo/ml/LC_MESSAGES/django.mo
-share/pootle/mo/mn/LC_MESSAGES/django.mo
-share/pootle/mo/mr/LC_MESSAGES/django.mo
-share/pootle/mo/ms/LC_MESSAGES/django.mo
-share/pootle/mo/mt/LC_MESSAGES/django.mo
-share/pootle/mo/nap/LC_MESSAGES/django.mo
-share/pootle/mo/nb/LC_MESSAGES/django.mo
-share/pootle/mo/ne/LC_MESSAGES/django.mo
-share/pootle/mo/nl/LC_MESSAGES/django.mo
-share/pootle/mo/nn/LC_MESSAGES/django.mo
-share/pootle/mo/nso/LC_MESSAGES/django.mo
-share/pootle/mo/pa/LC_MESSAGES/django.mo
-share/pootle/mo/pap/LC_MESSAGES/django.mo
-share/pootle/mo/pl/LC_MESSAGES/django.mo
-share/pootle/mo/pt/LC_MESSAGES/django.mo
-share/pootle/mo/pt_BR/LC_MESSAGES/django.mo
-share/pootle/mo/ro/LC_MESSAGES/django.mo
-share/pootle/mo/ru/LC_MESSAGES/django.mo
-share/pootle/mo/sc/LC_MESSAGES/django.mo
-share/pootle/mo/sk/LC_MESSAGES/django.mo
-share/pootle/mo/sl/LC_MESSAGES/django.mo
-share/pootle/mo/son/LC_MESSAGES/django.mo
-share/pootle/mo/sq/LC_MESSAGES/django.mo
-share/pootle/mo/sr/LC_MESSAGES/django.mo
-share/pootle/mo/st/LC_MESSAGES/django.mo
-share/pootle/mo/sv/LC_MESSAGES/django.mo
-share/pootle/mo/ta/LC_MESSAGES/django.mo
-share/pootle/mo/te/LC_MESSAGES/django.mo
-share/pootle/mo/th/LC_MESSAGES/django.mo
-share/pootle/mo/tl/LC_MESSAGES/django.mo
-share/pootle/mo/tr/LC_MESSAGES/django.mo
-share/pootle/mo/ug/LC_MESSAGES/django.mo
-share/pootle/mo/uk/LC_MESSAGES/django.mo
-share/pootle/mo/ve/LC_MESSAGES/django.mo
-share/pootle/mo/vi/LC_MESSAGES/django.mo
-share/pootle/mo/wo/LC_MESSAGES/django.mo
-share/pootle/mo/xh/LC_MESSAGES/django.mo
-share/pootle/mo/zh_CN/LC_MESSAGES/django.mo
-share/pootle/mo/zh_HK/LC_MESSAGES/django.mo
-share/pootle/mo/zh_TW/LC_MESSAGES/django.mo
-share/pootle/mo/zu/LC_MESSAGES/django.mo
+%%DATADIR%%/templates/403.html
+%%DATADIR%%/templates/404.html
+%%DATADIR%%/templates/500.html
+%%DATADIR%%/templates/admin_profile_base.html
+%%DATADIR%%/templates/admin_profile_menu.html
+%%DATADIR%%/templates/base.html
+%%DATADIR%%/templates/captcha.html
+%%DATADIR%%/templates/docs.html
+%%DATADIR%%/templates/language_base.html
+%%DATADIR%%/templates/language_menu.html
+%%DATADIR%%/templates/project_base.html
+%%DATADIR%%/templates/project_menu.html
+%%DATADIR%%/templates/tp_base.html
+%%DATADIR%%/templates/tp_base_admin.html
+%%DATADIR%%/templates/tp_base_extended.html
+%%DATADIR%%/templates/tp_base_terminology.html
+%%DATADIR%%/templates/tp_menu.html
+%%DATADIR%%/templates/user_profile_base.html
+%%DATADIR%%/templates/user_profile_base_extended.html
+%%DATADIR%%/templates/user_profile_menu.html
+%%DATADIR%%/templates/admin/base_site.html
+%%DATADIR%%/templates/contact_form/contact_form.html
+%%DATADIR%%/templates/contact_form/contact_form.txt
+%%DATADIR%%/templates/contact_form/contact_form_sent.html
+%%DATADIR%%/templates/contact_form/contact_form_subject.txt
+%%DATADIR%%/templates/docs/howto.html
+%%DATADIR%%/templates/docs/index.html
+%%DATADIR%%/templates/docs/resources.html
+%%DATADIR%%/templates/profiles/edit_personal.html
+%%DATADIR%%/templates/profiles/edit_profile.html
+%%DATADIR%%/templates/profiles/profile_detail.html
+%%DATADIR%%/templates/profiles/profile_list.html
+%%DATADIR%%/templates/registration/activate.html
+%%DATADIR%%/templates/registration/activation_email.html
+%%DATADIR%%/templates/registration/activation_email.txt
+%%DATADIR%%/templates/registration/activation_email_subject.txt
+%%DATADIR%%/templates/registration/password_change_done.html
+%%DATADIR%%/templates/registration/password_change_form.html
+%%DATADIR%%/templates/registration/password_reset_complete.html
+%%DATADIR%%/templates/registration/password_reset_confirm.html
+%%DATADIR%%/templates/registration/password_reset_done.html
+%%DATADIR%%/templates/registration/password_reset_email.html
+%%DATADIR%%/templates/registration/password_reset_form.html
+%%DATADIR%%/templates/registration/registration_complete.html
+%%DATADIR%%/templates/registration/registration_form.html
+%%DATADIR%%/html/admin.css
+%%DATADIR%%/html/favicon.ico
+%%DATADIR%%/html/style.css
+%%DATADIR%%/html/translate.css
+%%DATADIR%%/html/images/accept.png
+%%DATADIR%%/html/images/apertium.png
+%%DATADIR%%/html/images/arrow_refresh.png
+%%DATADIR%%/html/images/arrow_up.png
+%%DATADIR%%/html/images/asc.gif
+%%DATADIR%%/html/images/ascdesc.gif
+%%DATADIR%%/html/images/book_next.png
+%%DATADIR%%/html/images/comment_add.png
+%%DATADIR%%/html/images/context.png
+%%DATADIR%%/html/images/copy.png
+%%DATADIR%%/html/images/cross.png
+%%DATADIR%%/html/images/cyan-bar.png
+%%DATADIR%%/html/images/database_save.png
+%%DATADIR%%/html/images/desc.gif
+%%DATADIR%%/html/images/door_in.png
+%%DATADIR%%/html/images/drive_network.png
+%%DATADIR%%/html/images/edit.png
+%%DATADIR%%/html/images/email_go.png
+%%DATADIR%%/html/images/error.png
+%%DATADIR%%/html/images/feed.png
+%%DATADIR%%/html/images/folder.png
+%%DATADIR%%/html/images/gap.png
+%%DATADIR%%/html/images/footer-border.png
+%%DATADIR%%/html/images/good.png
+%%DATADIR%%/html/images/google-translate.png
+%%DATADIR%%/html/images/green-bar.png
+%%DATADIR%%/html/images/header-background-bottom.png
+%%DATADIR%%/html/images/header-background.png
+%%DATADIR%%/html/images/help.png
+%%DATADIR%%/html/images/information.png
+%%DATADIR%%/html/images/key_go.png
+%%DATADIR%%/html/images/logo.png
+%%DATADIR%%/html/images/newspaper_go.png
+%%DATADIR%%/html/images/next.png
+%%DATADIR%%/html/images/next2.png
+%%DATADIR%%/html/images/none.png
+%%DATADIR%%/html/images/page-bg.jpg
+%%DATADIR%%/html/images/page.png
+%%DATADIR%%/html/images/page_get.png
+%%DATADIR%%/html/images/page_refresh.png
+%%DATADIR%%/html/images/prev.png
+%%DATADIR%%/html/images/prev2.png
+%%DATADIR%%/html/images/purple-bar.png
+%%DATADIR%%/html/images/red-bar.png
+%%DATADIR%%/html/images/sarrow_down.png
+%%DATADIR%%/html/images/sarrow_down_rtl.png
+%%DATADIR%%/html/images/sarrow_up.png
+%%DATADIR%%/html/images/sarrow_up_rtl.png
+%%DATADIR%%/html/images/script_code.png
+%%DATADIR%%/html/images/search-arrow.png
+%%DATADIR%%/html/images/squiggle.png
+%%DATADIR%%/html/images/suggest.png
+%%DATADIR%%/html/images/throbber.gif
+%%DATADIR%%/html/images/tick.png
+%%DATADIR%%/html/images/user_comment.png
+%%DATADIR%%/html/images/user_go.png
+%%DATADIR%%/html/images/warning.png
+%%DATADIR%%/html/js/README
+%%DATADIR%%/html/js/admin.js
+%%DATADIR%%/html/js/correctpng.js
+%%DATADIR%%/html/js/json2.min.js
+%%DATADIR%%/html/js/search.js
+%%DATADIR%%/html/js/sorttable.js
+%%DATADIR%%/html/js/translatepage.js
+%%DATADIR%%/html/js/jquery/jquery.bidi.js
+%%DATADIR%%/html/js/jquery/jquery.caret.js
+%%DATADIR%%/html/js/jquery/jquery.cookie.js
+%%DATADIR%%/html/js/jquery/jquery.fieldselection.js
+%%DATADIR%%/html/js/jquery/jquery.min.js
+%%DATADIR%%/html/js/jquery/jquery.scrollTo.min.js
+%%DATADIR%%/html/js/jquery/jquery.textarea-expander.js
+%%DATADIR%%/html/js/mt/apertium.js
+%%DATADIR%%/html/js/mt/google-translate.js
+%%DATADIR%%/mo/README
+%%DATADIR%%/mo/af/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ak/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/am/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ar/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ast/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/az/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/be/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/bg/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/bn/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/bn_IN/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/bo/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/br/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ca/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ca@valencia/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/cs/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/da/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/de/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/dz/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/el/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/en_GB/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/en_ZA/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/eo/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/es/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/et/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/eu/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/fa/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/fi/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/fo/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/fr/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/fur/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ga/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/gl/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ha/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/he/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/hi/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/hr/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/hu/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/hy/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/id/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/is/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/it/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ja/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ka/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/kg/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/km/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/kn/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ko/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ku/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ky/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ln/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/lt/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/lv/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/mg/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ml/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/mn/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/mr/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ms/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/mt/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/nap/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/nb/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ne/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/nl/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/nn/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/nso/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/pa/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/pap/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/pl/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/pt/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/pt_BR/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ro/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ru/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/sc/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/sk/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/sl/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/son/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/sq/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/sr/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/st/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/sv/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ta/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/te/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/th/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/tl/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/tr/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ug/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/uk/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/ve/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/vi/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/wo/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/xh/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/zh_CN/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/zh_HK/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/zh_TW/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/zu/LC_MESSAGES/django.mo
 
 
 
@@ -925,204 +926,204 @@ share/pootle/mo/zu/LC_MESSAGES/django.mo
 @dirrm %%PYTHON_SITELIBDIR%%/registration
 @dirrmtry share/doc
 @dirrmtry share
-@dirrm share/pootle/html/js/mt
-@dirrm share/pootle/html/js/jquery
-@dirrm share/pootle/html/js
-@dirrm share/pootle/html/images
-@dirrm share/pootle/html
-@dirrm share/pootle/mo/zu/LC_MESSAGES
-@dirrm share/pootle/mo/zu
-@dirrm share/pootle/mo/zh_TW/LC_MESSAGES
-@dirrm share/pootle/mo/zh_TW
-@dirrm share/pootle/mo/zh_HK/LC_MESSAGES
-@dirrm share/pootle/mo/zh_HK
-@dirrm share/pootle/mo/zh_CN/LC_MESSAGES
-@dirrm share/pootle/mo/zh_CN
-@dirrm share/pootle/mo/xh/LC_MESSAGES
-@dirrm share/pootle/mo/xh
-@dirrm share/pootle/mo/wo/LC_MESSAGES
-@dirrm share/pootle/mo/wo
-@dirrm share/pootle/mo/vi/LC_MESSAGES
-@dirrm share/pootle/mo/vi
-@dirrm share/pootle/mo/ve/LC_MESSAGES
-@dirrm share/pootle/mo/ve
-@dirrm share/pootle/mo/uk/LC_MESSAGES
-@dirrm share/pootle/mo/uk
-@dirrm share/pootle/mo/ug/LC_MESSAGES
-@dirrm share/pootle/mo/ug
-@dirrm share/pootle/mo/tr/LC_MESSAGES
-@dirrm share/pootle/mo/tr
-@dirrm share/pootle/mo/tl/LC_MESSAGES
-@dirrm share/pootle/mo/tl
-@dirrm share/pootle/mo/th/LC_MESSAGES
-@dirrm share/pootle/mo/th
-@dirrm share/pootle/mo/te/LC_MESSAGES
-@dirrm share/pootle/mo/te
-@dirrm share/pootle/mo/ta/LC_MESSAGES
-@dirrm share/pootle/mo/ta
-@dirrm share/pootle/mo/sv/LC_MESSAGES
-@dirrm share/pootle/mo/sv
-@dirrm share/pootle/mo/st/LC_MESSAGES
-@dirrm share/pootle/mo/st
-@dirrm share/pootle/mo/sr/LC_MESSAGES
-@dirrm share/pootle/mo/sr
-@dirrm share/pootle/mo/sq/LC_MESSAGES
-@dirrm share/pootle/mo/sq
-@dirrm share/pootle/mo/son/LC_MESSAGES
-@dirrm share/pootle/mo/son
-@dirrm share/pootle/mo/sl/LC_MESSAGES
-@dirrm share/pootle/mo/sl
-@dirrm share/pootle/mo/sk/LC_MESSAGES
-@dirrm share/pootle/mo/sk
-@dirrm share/pootle/mo/sc/LC_MESSAGES
-@dirrm share/pootle/mo/sc
-@dirrm share/pootle/mo/ru/LC_MESSAGES
-@dirrm share/pootle/mo/ru
-@dirrm share/pootle/mo/ro/LC_MESSAGES
-@dirrm share/pootle/mo/ro
-@dirrm share/pootle/mo/pt_BR/LC_MESSAGES
-@dirrm share/pootle/mo/pt_BR
-@dirrm share/pootle/mo/pt/LC_MESSAGES
-@dirrm share/pootle/mo/pt
-@dirrm share/pootle/mo/pl/LC_MESSAGES
-@dirrm share/pootle/mo/pl
-@dirrm share/pootle/mo/pap/LC_MESSAGES
-@dirrm share/pootle/mo/pap
-@dirrm share/pootle/mo/pa/LC_MESSAGES
-@dirrm share/pootle/mo/pa
-@dirrm share/pootle/mo/nso/LC_MESSAGES
-@dirrm share/pootle/mo/nso
-@dirrm share/pootle/mo/nn/LC_MESSAGES
-@dirrm share/pootle/mo/nn
-@dirrm share/pootle/mo/nl/LC_MESSAGES
-@dirrm share/pootle/mo/nl
-@dirrm share/pootle/mo/ne/LC_MESSAGES
-@dirrm share/pootle/mo/ne
-@dirrm share/pootle/mo/nb/LC_MESSAGES
-@dirrm share/pootle/mo/nb
-@dirrm share/pootle/mo/nap/LC_MESSAGES
-@dirrm share/pootle/mo/nap
-@dirrm share/pootle/mo/mt/LC_MESSAGES
-@dirrm share/pootle/mo/mt
-@dirrm share/pootle/mo/ms/LC_MESSAGES
-@dirrm share/pootle/mo/ms
-@dirrm share/pootle/mo/mr/LC_MESSAGES
-@dirrm share/pootle/mo/mr
-@dirrm share/pootle/mo/mn/LC_MESSAGES
-@dirrm share/pootle/mo/mn
-@dirrm share/pootle/mo/ml/LC_MESSAGES
-@dirrm share/pootle/mo/ml
-@dirrm share/pootle/mo/mg/LC_MESSAGES
-@dirrm share/pootle/mo/mg
-@dirrm share/pootle/mo/lv/LC_MESSAGES
-@dirrm share/pootle/mo/lv
-@dirrm share/pootle/mo/lt/LC_MESSAGES
-@dirrm share/pootle/mo/lt
-@dirrm share/pootle/mo/ln/LC_MESSAGES
-@dirrm share/pootle/mo/ln
-@dirrm share/pootle/mo/ky/LC_MESSAGES
-@dirrm share/pootle/mo/ky
-@dirrm share/pootle/mo/ku/LC_MESSAGES
-@dirrm share/pootle/mo/ku
-@dirrm share/pootle/mo/ko/LC_MESSAGES
-@dirrm share/pootle/mo/ko
-@dirrm share/pootle/mo/kn/LC_MESSAGES
-@dirrm share/pootle/mo/kn
-@dirrm share/pootle/mo/km/LC_MESSAGES
-@dirrm share/pootle/mo/km
-@dirrm share/pootle/mo/kg/LC_MESSAGES
-@dirrm share/pootle/mo/kg
-@dirrm share/pootle/mo/ka/LC_MESSAGES
-@dirrm share/pootle/mo/ka
-@dirrm share/pootle/mo/ja/LC_MESSAGES
-@dirrm share/pootle/mo/ja
-@dirrm share/pootle/mo/it/LC_MESSAGES
-@dirrm share/pootle/mo/it
-@dirrm share/pootle/mo/is/LC_MESSAGES
-@dirrm share/pootle/mo/is
-@dirrm share/pootle/mo/id/LC_MESSAGES
-@dirrm share/pootle/mo/id
-@dirrm share/pootle/mo/hy/LC_MESSAGES
-@dirrm share/pootle/mo/hy
-@dirrm share/pootle/mo/hu/LC_MESSAGES
-@dirrm share/pootle/mo/hu
-@dirrm share/pootle/mo/hr/LC_MESSAGES
-@dirrm share/pootle/mo/hr
-@dirrm share/pootle/mo/hi/LC_MESSAGES
-@dirrm share/pootle/mo/hi
-@dirrm share/pootle/mo/he/LC_MESSAGES
-@dirrm share/pootle/mo/he
-@dirrm share/pootle/mo/ha/LC_MESSAGES
-@dirrm share/pootle/mo/ha
-@dirrm share/pootle/mo/gl/LC_MESSAGES
-@dirrm share/pootle/mo/gl
-@dirrm share/pootle/mo/ga/LC_MESSAGES
-@dirrm share/pootle/mo/ga
-@dirrm share/pootle/mo/fur/LC_MESSAGES
-@dirrm share/pootle/mo/fur
-@dirrm share/pootle/mo/fr/LC_MESSAGES
-@dirrm share/pootle/mo/fr
-@dirrm share/pootle/mo/fo/LC_MESSAGES
-@dirrm share/pootle/mo/fo
-@dirrm share/pootle/mo/fi/LC_MESSAGES
-@dirrm share/pootle/mo/fi
-@dirrm share/pootle/mo/fa/LC_MESSAGES
-@dirrm share/pootle/mo/fa
-@dirrm share/pootle/mo/eu/LC_MESSAGES
-@dirrm share/pootle/mo/eu
-@dirrm share/pootle/mo/et/LC_MESSAGES
-@dirrm share/pootle/mo/et
-@dirrm share/pootle/mo/es/LC_MESSAGES
-@dirrm share/pootle/mo/es
-@dirrm share/pootle/mo/eo/LC_MESSAGES
-@dirrm share/pootle/mo/eo
-@dirrm share/pootle/mo/en_ZA/LC_MESSAGES
-@dirrm share/pootle/mo/en_ZA
-@dirrm share/pootle/mo/en_GB/LC_MESSAGES
-@dirrm share/pootle/mo/en_GB
-@dirrm share/pootle/mo/el/LC_MESSAGES
-@dirrm share/pootle/mo/el
-@dirrm share/pootle/mo/dz/LC_MESSAGES
-@dirrm share/pootle/mo/dz
-@dirrm share/pootle/mo/de/LC_MESSAGES
-@dirrm share/pootle/mo/de
-@dirrm share/pootle/mo/da/LC_MESSAGES
-@dirrm share/pootle/mo/da
-@dirrm share/pootle/mo/cs/LC_MESSAGES
-@dirrm share/pootle/mo/cs
-@dirrm share/pootle/mo/ca@valencia/LC_MESSAGES
-@dirrm share/pootle/mo/ca@valencia
-@dirrm share/pootle/mo/ca/LC_MESSAGES
-@dirrm share/pootle/mo/ca
-@dirrm share/pootle/mo/br/LC_MESSAGES
-@dirrm share/pootle/mo/br
-@dirrm share/pootle/mo/bo/LC_MESSAGES
-@dirrm share/pootle/mo/bo
-@dirrm share/pootle/mo/bn_IN/LC_MESSAGES
-@dirrm share/pootle/mo/bn_IN
-@dirrm share/pootle/mo/bn/LC_MESSAGES
-@dirrm share/pootle/mo/bn
-@dirrm share/pootle/mo/bg/LC_MESSAGES
-@dirrm share/pootle/mo/bg
-@dirrm share/pootle/mo/be/LC_MESSAGES
-@dirrm share/pootle/mo/be
-@dirrm share/pootle/mo/az/LC_MESSAGES
-@dirrm share/pootle/mo/az
-@dirrm share/pootle/mo/ast/LC_MESSAGES
-@dirrm share/pootle/mo/ast
-@dirrm share/pootle/mo/ar/LC_MESSAGES
-@dirrm share/pootle/mo/ar
-@dirrm share/pootle/mo/am/LC_MESSAGES
-@dirrm share/pootle/mo/am
-@dirrm share/pootle/mo/ak/LC_MESSAGES
-@dirrm share/pootle/mo/ak
-@dirrm share/pootle/mo/af/LC_MESSAGES
-@dirrm share/pootle/mo/af
-@dirrm share/pootle/mo
-@dirrm share/pootle/templates/registration
-@dirrm share/pootle/templates/profiles
-@dirrm share/pootle/templates/docs
-@dirrm share/pootle/templates/contact_form
-@dirrm share/pootle/templates/admin
-@dirrm share/pootle/templates
-@dirrm share/pootle
+@dirrm %%DATADIR%%/html/js/mt
+@dirrm %%DATADIR%%/html/js/jquery
+@dirrm %%DATADIR%%/html/js
+@dirrm %%DATADIR%%/html/images
+@dirrm %%DATADIR%%/html
+@dirrm %%DATADIR%%/mo/zu/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/zu
+@dirrm %%DATADIR%%/mo/zh_TW/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/zh_TW
+@dirrm %%DATADIR%%/mo/zh_HK/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/zh_HK
+@dirrm %%DATADIR%%/mo/zh_CN/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/zh_CN
+@dirrm %%DATADIR%%/mo/xh/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/xh
+@dirrm %%DATADIR%%/mo/wo/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/wo
+@dirrm %%DATADIR%%/mo/vi/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/vi
+@dirrm %%DATADIR%%/mo/ve/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ve
+@dirrm %%DATADIR%%/mo/uk/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/uk
+@dirrm %%DATADIR%%/mo/ug/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ug
+@dirrm %%DATADIR%%/mo/tr/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/tr
+@dirrm %%DATADIR%%/mo/tl/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/tl
+@dirrm %%DATADIR%%/mo/th/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/th
+@dirrm %%DATADIR%%/mo/te/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/te
+@dirrm %%DATADIR%%/mo/ta/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ta
+@dirrm %%DATADIR%%/mo/sv/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/sv
+@dirrm %%DATADIR%%/mo/st/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/st
+@dirrm %%DATADIR%%/mo/sr/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/sr
+@dirrm %%DATADIR%%/mo/sq/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/sq
+@dirrm %%DATADIR%%/mo/son/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/son
+@dirrm %%DATADIR%%/mo/sl/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/sl
+@dirrm %%DATADIR%%/mo/sk/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/sk
+@dirrm %%DATADIR%%/mo/sc/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/sc
+@dirrm %%DATADIR%%/mo/ru/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ru
+@dirrm %%DATADIR%%/mo/ro/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ro
+@dirrm %%DATADIR%%/mo/pt_BR/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/pt_BR
+@dirrm %%DATADIR%%/mo/pt/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/pt
+@dirrm %%DATADIR%%/mo/pl/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/pl
+@dirrm %%DATADIR%%/mo/pap/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/pap
+@dirrm %%DATADIR%%/mo/pa/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/pa
+@dirrm %%DATADIR%%/mo/nso/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/nso
+@dirrm %%DATADIR%%/mo/nn/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/nn
+@dirrm %%DATADIR%%/mo/nl/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/nl
+@dirrm %%DATADIR%%/mo/ne/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ne
+@dirrm %%DATADIR%%/mo/nb/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/nb
+@dirrm %%DATADIR%%/mo/nap/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/nap
+@dirrm %%DATADIR%%/mo/mt/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/mt
+@dirrm %%DATADIR%%/mo/ms/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ms
+@dirrm %%DATADIR%%/mo/mr/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/mr
+@dirrm %%DATADIR%%/mo/mn/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/mn
+@dirrm %%DATADIR%%/mo/ml/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ml
+@dirrm %%DATADIR%%/mo/mg/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/mg
+@dirrm %%DATADIR%%/mo/lv/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/lv
+@dirrm %%DATADIR%%/mo/lt/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/lt
+@dirrm %%DATADIR%%/mo/ln/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ln
+@dirrm %%DATADIR%%/mo/ky/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ky
+@dirrm %%DATADIR%%/mo/ku/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ku
+@dirrm %%DATADIR%%/mo/ko/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ko
+@dirrm %%DATADIR%%/mo/kn/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/kn
+@dirrm %%DATADIR%%/mo/km/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/km
+@dirrm %%DATADIR%%/mo/kg/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/kg
+@dirrm %%DATADIR%%/mo/ka/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ka
+@dirrm %%DATADIR%%/mo/ja/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ja
+@dirrm %%DATADIR%%/mo/it/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/it
+@dirrm %%DATADIR%%/mo/is/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/is
+@dirrm %%DATADIR%%/mo/id/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/id
+@dirrm %%DATADIR%%/mo/hy/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/hy
+@dirrm %%DATADIR%%/mo/hu/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/hu
+@dirrm %%DATADIR%%/mo/hr/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/hr
+@dirrm %%DATADIR%%/mo/hi/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/hi
+@dirrm %%DATADIR%%/mo/he/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/he
+@dirrm %%DATADIR%%/mo/ha/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ha
+@dirrm %%DATADIR%%/mo/gl/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/gl
+@dirrm %%DATADIR%%/mo/ga/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ga
+@dirrm %%DATADIR%%/mo/fur/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/fur
+@dirrm %%DATADIR%%/mo/fr/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/fr
+@dirrm %%DATADIR%%/mo/fo/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/fo
+@dirrm %%DATADIR%%/mo/fi/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/fi
+@dirrm %%DATADIR%%/mo/fa/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/fa
+@dirrm %%DATADIR%%/mo/eu/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/eu
+@dirrm %%DATADIR%%/mo/et/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/et
+@dirrm %%DATADIR%%/mo/es/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/es
+@dirrm %%DATADIR%%/mo/eo/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/eo
+@dirrm %%DATADIR%%/mo/en_ZA/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/en_ZA
+@dirrm %%DATADIR%%/mo/en_GB/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/en_GB
+@dirrm %%DATADIR%%/mo/el/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/el
+@dirrm %%DATADIR%%/mo/dz/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/dz
+@dirrm %%DATADIR%%/mo/de/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/de
+@dirrm %%DATADIR%%/mo/da/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/da
+@dirrm %%DATADIR%%/mo/cs/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/cs
+@dirrm %%DATADIR%%/mo/ca@valencia/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ca@valencia
+@dirrm %%DATADIR%%/mo/ca/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ca
+@dirrm %%DATADIR%%/mo/br/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/br
+@dirrm %%DATADIR%%/mo/bo/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/bo
+@dirrm %%DATADIR%%/mo/bn_IN/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/bn_IN
+@dirrm %%DATADIR%%/mo/bn/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/bn
+@dirrm %%DATADIR%%/mo/bg/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/bg
+@dirrm %%DATADIR%%/mo/be/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/be
+@dirrm %%DATADIR%%/mo/az/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/az
+@dirrm %%DATADIR%%/mo/ast/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ast
+@dirrm %%DATADIR%%/mo/ar/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ar
+@dirrm %%DATADIR%%/mo/am/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/am
+@dirrm %%DATADIR%%/mo/ak/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/ak
+@dirrm %%DATADIR%%/mo/af/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/af
+@dirrm %%DATADIR%%/mo
+@dirrm %%DATADIR%%/templates/registration
+@dirrm %%DATADIR%%/templates/profiles
+@dirrm %%DATADIR%%/templates/docs
+@dirrm %%DATADIR%%/templates/contact_form
+@dirrm %%DATADIR%%/templates/admin
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%

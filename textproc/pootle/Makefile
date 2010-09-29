@@ -14,9 +14,9 @@ DISTNAME=	Pootle-${PORTVERSION}
 MAINTAINER=	catone@cpan.org
 COMMENT=	Pootle is a user-friendly web portal for simple translation process
 
-BUILD_DEPENDS=	py*-django>=1.2:${PORTSDIR}/www/py-django \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.2:${PORTSDIR}/www/py-django \
 		translate-toolkit>=1.8:${PORTSDIR}/textproc/translate-toolkit \
-		${PYTHON_SITELIBDIR}/South-0.7.1-py2.6.egg:${PORTSDIR}/databases/py-south
+		${PYTHON_PKGNAMEPREFIX}south>=0.7:${PORTSDIR}/databases/py-south
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -68,12 +68,12 @@ RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 .endif
 
 .if defined(WITH_LUCENE)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/lucene/_lucene.so:${PORTSDIR}/textproc/py-lucene
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}lucene>0:${PORTSDIR}/textproc/py-lucene
 .endif
 
 .if defined(WITH_MEMCACHED)
 LIB_DEPENDS+=	memcached:${PORTSDIR}/databases/libmemcached
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/python_memcached-1.45-py2.6.egg:${PORTSDIR}/databases/py-memcached
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}memcached>=1.45:${PORTSDIR}/databases/py-memcached
 .endif
 
 post-patch:
