@@ -10,21 +10,20 @@
 #  1. Redistributions of source code must retain the above copyright
 #     notice, this list of conditions and the following disclaimer.
 #  2. Redistributions in binary form must reproduce the above copyright
-#     notice, this list of conditions and the following disclaimer in
-#     the documentation and/or other materials provided with the
-#     distribution.
+#     notice, this list of conditions and the following disclaimer in the
+#     documentation and/or other materials provided with the distribution.
 #
-#  THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS''
-#  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
-#  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
-#  PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR
-#  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-#  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
-#  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-#  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
-#  OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-#  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-#  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#  THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+#  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+#  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+#  ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+#  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+#  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+#  OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+#  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+#  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+#  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+#  SUCH DAMAGE.
 
 trap trap_exit 2
 pkg=$@
@@ -81,12 +80,12 @@ pkg_info-xI()
 		info_fn
 	
 		if [ -z "$info" ]; then
-			pwd=`cat /usr/ports/INDEX-$re | grep /$e'|'/ |
-			    cut -d'|' -f2 | cut -d/ -f4,5`
+			pwd=`grep "/$e|" /usr/ports/INDEX-$re | cut -d'|' -f2 |
+			    cut -d/ -f4,5`
 			echo "*** not installed ***"
 			for i in $pwd; do
-				echo "$i: `cat /usr/ports/INDEX-$re |
-				    grep /$i'|' | cut -d'|' -f4`"
+				echo "$i: `grep "/$i|" /usr/ports/INDEX-$re |
+				    cut -d'|' -f4`"
 			done
 		else
 			echo "*** installed ***"
@@ -138,31 +137,31 @@ pkg_info-xr()
 		info_fn
 	
 		if [ -z "$info" ]; then
-			pwd=`cat /usr/ports/INDEX-$re | grep /$e'|'/ |
-			    cut -d'|' -f2 | cut -d/ -f4,5`
+			pwd=`grep "/$e|" /usr/ports/INDEX-$re | cut -d'|' -f2 |
+			    cut -d/ -f4,5`
 			for i in $pwd; do
 				echo "*** not installed ***"
-				echo "$i: `cat /usr/ports/INDEX-$re |
-				    grep /$i'|' | cut -d'|' -f4`"
+				echo "$i: `grep "/$i|" /usr/ports/INDEX-$re |
+				    cut -d'|' -f4`"
 				echo "Information in ports for `echo $i |
 				    cut -d/ -f2`:"
-				echo "B-deps: `cat /usr/ports/INDEX-$re |
-				    grep /$i'|'/ | cut -d'|' -f8`"
-				echo "R-deps: `cat /usr/ports/INDEX-$re |
-				    grep /$i'|'/ | cut -d'|' -f9`"
+				echo "B-deps: `grep "/$i|" \
+				    /usr/ports/INDEX-$re | cut -d'|' -f8`"
+				echo "R-deps: `grep "/$i|" \
+				    /usr/ports/INDEX-$re | cut -d'|' -f9`"
 				echo ""
 			done
 		else
 			echo "*** installed ***"
 			pkg_info -xrR $info
-			pwd=`cat /usr/ports/INDEX-$re | grep /$e'|'/ |
-			    cut -d'|' -f2 | cut -d/ -f4,5`
+			pwd=`grep "/$e|" /usr/ports/INDEX-$re | cut -d'|' -f2 |
+			    cut -d/ -f4,5`
 			for i in $pwd; do
 				echo "Information in ports for $i:"
-				echo "B-deps: `cat /usr/ports/INDEX-$re |
-				    grep /$i'|'/ | cut -d'|' -f8`"
-				echo "R-deps: `cat /usr/ports/INDEX-$re |
-				    grep /$i'|'/ | cut -d'|' -f9`"
+				echo "B-deps: `grep "/$i|" \
+				    /usr/ports/INDEX-$re | cut -d'|' -f8`"
+				echo "R-deps: `grep "/$i|" \
+				    /usr/ports/INDEX-$re |  cut -d'|' -f9`"
 				echo ""
 			done
 		fi
@@ -193,12 +192,12 @@ pkg_info-xf()
 		info_fn
 	
 		if [ -z "$info" ]; then
-			pwd=`cat /usr/ports/INDEX-$re | grep /$e'|'/ |
-			    cut -d'|' -f2 | cut -d/ -f4,5`
+			pwd=`grep "/$e|" /usr/ports/INDEX-$re | cut -d'|' -f2 |
+			    cut -d/ -f4,5`
 			echo "*** not installed ***"
 			for i in $pwd; do
-				echo "$i: `cat /usr/ports/INDEX-$re |
-				    grep /$i'|' | cut -d'|' -f4`"
+				echo "$i: `grep "/$i|" /usr/ports/INDEX-$re |
+				    cut -d'|' -f4`"
 				echo "Packing list:"
 				[ -d /usr/ports/$i ] &&
 				    cat /usr/ports/$i/pkg-plist
@@ -262,11 +261,11 @@ pkg_path()
 	re=`uname -r | cut -d. -f1`
 
 	for e in $pkg; do
-		pwd=`cat /usr/ports/INDEX-$re | grep /$e'|'/ |
-		    cut -d'|' -f2 | cut -d/ -f4,5`
+		pwd=`grep "/$e|" /usr/ports/INDEX-$re | cut -d'|' -f2 |
+		    cut -d/ -f4,5`
 		for i in $pwd; do
-			echo "$i: `cat /usr/ports/INDEX-$re |
-			    grep /$i'|' | cut -d'|' -f4`"
+			echo "$i: `grep "/$i|" /usr/ports/INDEX-$re |
+			    cut -d'|' -f4`"
 		done
 	done
 	exit 0
@@ -277,8 +276,7 @@ pkg_makefile()
 	local pwd re
 	re=`uname -r | cut -d. -f1`
 
-	pwd=`cat /usr/ports/INDEX-$re | grep /$pkg'|'/ | sed -n 1p |
-	    cut -d'|' -f2`
+	pwd=`grep "/$pkg|" /usr/ports/INDEX-$re | sed -n 1p | cut -d'|' -f2`
 	[ -z "$pwd" ] &&
 	    echo "bpkg: can't find the port in /usr/ports/" && exit 0
 
@@ -291,8 +289,7 @@ pkg_distinfo()
 	local pwd e re
 	re=`uname -r | cut -d. -f1`
 
-	pwd=`cat /usr/ports/INDEX-$re | grep /$pkg'|'/ | sed -n 1p |
-	    cut -d'|' -f2`
+	pwd=`grep "/$pkg|" /usr/ports/INDEX-$re | sed -n 1p | cut -d'|' -f2`
 	[ -z "$pwd" ] && echo "bpkg: can't find the port in /usr/ports/"
 
 	for e in `cat $pwd/distinfo 2>/dev/null | grep SIZE |
@@ -344,10 +341,9 @@ pkg_ftp()
 	n=1
 	for e in `cat /tmp/bpkg1.tmp | awk '{print $9}' | cut -d. -f1`
 	do
-		size_pkg=`cat /tmp/bpkg1.tmp | sed '/^[A-Z]/d' |
-		    sed -n ${n}p | awk '{print $11}' | cut -d/ -f3`
-		size=`cat /tmp/bpkg2.tmp | grep $size_pkg |
-		    awk '{print $5}'`
+		size_pkg=`cat /tmp/bpkg1.tmp | sed '/^[A-Z]/d' | sed -n ${n}p |
+		    awk '{print $11}' | cut -d/ -f3`
+		size=`cat /tmp/bpkg2.tmp | grep $size_pkg | awk '{print $5}'`
 		mtime=`cat /tmp/bpkg2.tmp | grep $size_pkg |
 		    awk '{print $6, $7, $8}'`
 		echo "$e -> $size_pkg `convert $size` [$mtime]"
@@ -377,10 +373,9 @@ pkg_latestftp()
 	n=1
 	for e in `cat /tmp/bpkg1.tmp | awk '{print $9}' | cut -d. -f1`
 	do
-		size_pkg=`cat /tmp/bpkg1.tmp | sed '/^[A-Z]/d' |
-		    sed -n ${n}p | awk '{print $11}' | cut -d/ -f3`
-		size=`cat /tmp/bpkg2.tmp | grep $size_pkg |
-		    awk '{print $5}'`
+		size_pkg=`cat /tmp/bpkg1.tmp | sed '/^[A-Z]/d' | sed -n ${n}p |
+		    awk '{print $11}' | cut -d/ -f3`
+		size=`cat /tmp/bpkg2.tmp | grep $size_pkg | awk '{print $5}'`
 		mtime=`cat /tmp/bpkg2.tmp | grep $size_pkg |
 		    awk '{print $6, $7, $8}'`
 		echo "$e -> $size_pkg `convert $size` [$mtime]"
@@ -431,8 +426,7 @@ pkg_backup()
 		exit 0
 	fi
 
-	pkg_install=`pkg_info -xoQ ^$pkg | cut -d: -f1 |
-	    awk '{ORS=" " ;print}'`
+	pkg_install=`pkg_info -xoQ ^$pkg | cut -d: -f1 | awk '{ORS=" " ;print}'`
 	echo "Creating backup package(s) "$pkg_install"in /var/tmp/bpkg/"
 	[ ! -d /var/tmp/bpkg/ ] && mkdir /var/tmp/bpkg/
 	cd /var/tmp/bpkg/
@@ -478,12 +472,12 @@ make_showc()
 		info_fn
 
 		if [ -z "$info" ]; then
-			pwd=`cat /usr/ports/INDEX-$re | grep /$e'|'/ |
-			    cut -d'|' -f2 | cut -d/ -f4,5`
+			pwd=`grep "/$e|" /usr/ports/INDEX-$re | cut -d'|' -f2 |
+			    cut -d/ -f4,5`
 			for i in $pwd; do
 				echo "*** not installed ***"
-				echo "$i: `cat /usr/ports/$i/Makefile |
-				    grep COMMENT | cut -d= -f2`"
+				echo "$i: `grep COMMENT \
+				    /usr/ports/$i/Makefile | cut -d= -f2`"
 				echo -n "Do you want to display config options recursively? [n] "
 				read key
 				case $key in
@@ -501,7 +495,7 @@ make_showc()
 				"Do you want to display config options recursively? [n] "
 				read key
 				case $key in
-				y) cd /usr/ports/$i && \
+				y) cd /usr/ports/$i &&
 				    make showconfig-recursive ;;
 				*) cd /usr/ports/$i && make showconfig ;;
 				esac
@@ -522,12 +516,12 @@ make_rmc()
 		info_fn
 	
 		if [ -z "$info" ]; then
-			pwd=`cat /usr/ports/INDEX-$re | grep /$e'|'/ |
-			    cut -d'|' -f2 | cut -d/ -f4,5`
+			pwd=`grep "/$e|" /usr/ports/INDEX-$re | cut -d'|' -f2 |
+			    cut -d/ -f4,5`
 			for i in $pwd; do
 				echo "*** not installed ***"
-				echo "$i: `cat /usr/ports/$i/Makefile |
-				    grep COMMENT | cut -d= -f2`"
+				echo "$i: `grep COMMENT \
+				    /usr/ports/$i/Makefile | cut -d= -f2`"
 				echo -n \
 				"Do you want to remove config options recursively? [n] "
 				read key
@@ -567,12 +561,12 @@ make_config()
 		info_fn
 
 		if [ -z "$info" ]; then
-			pwd=`cat /usr/ports/INDEX-$re | grep /$e'|'/ |
-			    cut -d'|' -f2 | cut -d/ -f4,5`
+			pwd=`grep "/$e|" /usr/ports/INDEX-$re | cut -d'|' -f2 |
+			    cut -d/ -f4,5`
 			for i in $pwd; do
 				echo "*** not installed ***"
-				echo "$i: `cat /usr/ports/$i/Makefile |
-				    grep COMMENT | cut -d= -f2`"
+				echo "$i: `grep COMMENT \
+				    /usr/ports/$i/Makefile | cut -d= -f2`"
 				echo -n \
 				"Do you want to set config options recursively? [n] "
 				read key
@@ -613,8 +607,8 @@ pkg_freshports()
 		echo "bpkg: text WWW browser required"
 	else
 		echo "Loading..."
-		pwd=`cd /usr/ports && make search path=/$pkg |
-		    grep -w Path | sed -n 1p | cut -d/ -f4,5`
+		pwd=`cd /usr/ports && make search path=/$pkg | grep -w Path |
+		    sed -n 1p | cut -d/ -f4,5`
 		$browser http://www.freshports.org/$pwd
 	fi
 	exit 0
@@ -633,8 +627,8 @@ show_work()
 	for e in $pkg; do
 		info_fn
 		if [ -z "$info" ]; then
-			pwd=`cat /usr/ports/INDEX-$re | grep /$e'|'/ |
-			    cut -d'|' -f2 | cut -d/ -f4,5`
+			pwd=`grep "/$e|" /usr/ports/INDEX-$re | cut -d'|' -f2 |
+			    cut -d/ -f4,5`
 			for i in $pwd; do
 				/usr/local/sbin/portmaster --show-work $i
 			done
