@@ -7,7 +7,7 @@
 
 PORTNAME=	ntl
 PORTVERSION=	5.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.shoup.net/ntl/
 
@@ -30,7 +30,8 @@ CONFIGURE_ARGS+=	AR="${AR}" \
 		LDFLAGS="${LDFLAGS}" NTL_STD_CXX=on \
 		PREFIX="${PREFIX}" RANLIB="${RANLIB}"
 
-WRKSRC=	${WRKDIR}/${DISTNAME}/src
+CFLAGS+=	-fPIC
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKEFILE=	makefile
 
 do-install:
