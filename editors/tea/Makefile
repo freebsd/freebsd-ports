@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	tea
-DISTVERSION=	28.1.1
+DISTVERSION=	28.1.2
 CATEGORIES=	editors
 MASTER_SITES=	SF/${PORTNAME}-editor/${PORTNAME}-editor/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	davide.italiano@gmail.com
 COMMENT=	A simple and powerful Qt4-based text editor
 
 LICENSE=	GPLv3
 
 USE_BZIP2=	yes
+USE_XLIB=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build corelib gui script svg xml
 
