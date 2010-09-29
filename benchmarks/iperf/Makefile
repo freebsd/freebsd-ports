@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	iperf
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	benchmarks ipv6
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20source
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=${PORTNAME}
 
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A tool to measure maximum TCP and UDP bandwidth
@@ -31,7 +32,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 .if defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--disable-threads
 .else
-CONFIGURE_ENV+=		CFLAGS=${PTHREAD_LIBS}
+CONFIGURE_ENV+=		CFLAGS+=${PTHREAD_LIBS}
 .endif
 
 post-install:
