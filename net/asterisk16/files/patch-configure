@@ -1,18 +1,16 @@
-
-$FreeBSD$
-
---- configure.orig
-+++ configure
-@@ -4432,8 +4432,6 @@
+--- ./configure.orig	2010-07-17 23:43:50.000000000 +0600
++++ ./configure	2010-08-24 09:37:46.000000000 +0600
+@@ -4147,9 +4147,6 @@
+ 
  case "${host_os}" in
       freebsd*)
-      ac_default_prefix=/usr/local
+-
 -     CPPFLAGS=-I/usr/local/include
 -     LDFLAGS=-L/usr/local/lib
       ;;
+      openbsd*)
  
-      darwin*)
-@@ -18784,7 +18782,7 @@
+@@ -34755,7 +34752,7 @@
  
  	fi
  
@@ -20,4 +18,4 @@ $FreeBSD$
 +	PLATFORM_OPENH323="h323_${OPENH323_SUFFIX}"
  
  	if test "${HAS_OPENH323:-unset}" != "unset"; then
- 	   { $as_echo "$as_me:${as_lineno-$LINENO}: checking OpenH323 installation validity" >&5
+ 	   { echo "$as_me:$LINENO: checking OpenH323 installation validity" >&5
