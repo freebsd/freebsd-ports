@@ -23,7 +23,7 @@ name=doinkd
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/doinkd
-required_files=%%PREFIX%%/etc/doinkd.cf
+required_files=%%PREFIX%%/etc/doinkd/doinkd.cf
 
 # set defaults
 
