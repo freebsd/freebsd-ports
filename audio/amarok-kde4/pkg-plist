@@ -804,6 +804,8 @@ share/locale/zh_CN/LC_MESSAGES/amarokpkg.mo
 @dirrm share/apps/amarok/icons/hicolor/48x48
 @dirrm share/apps/amarok/icons/hicolor/32x32/actions
 @dirrm share/apps/amarok/icons/hicolor/32x32
+@dirrm share/apps/amarok/icons/hicolor/24x24/actions
+@dirrm share/apps/amarok/icons/hicolor/24x24
 @dirrm share/apps/amarok/icons/hicolor/22x22/actions
 @dirrm share/apps/amarok/icons/hicolor/22x22
 @dirrm share/apps/amarok/icons/hicolor/16x16/actions
