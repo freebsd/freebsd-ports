@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A Folding Text Editor
 
+PORTSCOUT=	skipv:3.19 # Windows-only patch
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GNOME=	gtk20
