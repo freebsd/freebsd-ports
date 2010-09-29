@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	itools
-PORTVERSION=	0.61.3
+PORTVERSION=	0.62.2
 CATEGORIES=	devel python
-MASTER_SITES=	http://download.hforge.org/itools/0.61/
+MASTER_SITES=	http://download.hforge.org/itools/0.62/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
