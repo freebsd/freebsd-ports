@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-MobileAttribute
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -40,4 +40,3 @@ MAN3=		HTTP::MobileAttribute.3 \
 		HTTP::MobileAttribute::Plugin::XHTMLCompliant.3
 
 .include <bsd.port.mk>
-		
