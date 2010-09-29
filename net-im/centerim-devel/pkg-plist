@@ -1,4 +1,6 @@
 bin/centerim
+bin/cimformathistory
+bin/cimextracthistory.pl
 bin/cimconv
 bin/CenterIMLog2HTML.py
 %%DATADIR%%/email.wav

@@ -8,6 +8,7 @@
 
 PORTNAME=	centerim
 DISTVERSION=	4.22.9.33
+PORTRESION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.centerim.org/download/mobshots/ \
 		ftp://ftp.centerim.org/mobshots/
@@ -20,6 +21,8 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 LICENSE=	GPLv2
 
+USE_PERL5_RUN=	yes
+USE_PYTHON_RUN=	yes
 USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
