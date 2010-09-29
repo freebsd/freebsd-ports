@@ -1,0 +1,12 @@
+This program is used to send multiple system commands to a group of UNIX-like
+remote servers simultaneously using concurrent processes. Supported protocols:
+FTP, SFTP, TELNET, SSH and SCP. With telnet and ssh all system command are
+supported provided that they are not interactive.
+
+Its main usage is to send repetitive sysadmin tasks to a group of servers but
+you can also use it for automatic ftp or scp backup and much more.
+
+Commands are exactly those you type on your terminal. It also allow you to use
+'su -' to execute your commands under the TELNET and SSH protocols.
+
+WWW: http://massadmin.darold.net/

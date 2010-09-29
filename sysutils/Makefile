@@ -477,6 +477,7 @@
     SUBDIR += makefs
     SUBDIR += manck
     SUBDIR += mapchan
+    SUBDIR += massadmin
     SUBDIR += mbmon
     SUBDIR += mcron
     SUBDIR += mcweject
