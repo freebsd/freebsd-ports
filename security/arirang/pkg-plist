@@ -26,4 +26,14 @@ share/arirang/unix.uxe
 share/arirang/unix_bin.uxe
 share/arirang/unix_cgi.uxe
 share/arirang/unix_head.uxe
+share/arirang/allow.rb
+share/arirang/arirang.rb
+share/arirang/csv.rb
+share/arirang/file.rb
+share/arirang/iisver.rb
+share/arirang/nginx.rb
+share/arirang/robots.rb
+share/arirang/server.rb
+share/arirang/size.rb
+share/arirang/ssh.rb
 @dirrm share/arirang
