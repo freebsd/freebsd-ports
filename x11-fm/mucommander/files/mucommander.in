@@ -2,6 +2,7 @@
 
 cd %%PREFIX%%/share/mucommander
 JAVA_VERSION="%%JAVA_VERSION%%" exec %%LOCALBASE%%/bin/java \
+-Djava.system.class.loader=com.mucommander.file.AbstractFileClassLoader \
 -DGNOME_DESKTOP_SESSION_ID=$GNOME_DESKTOP_SESSION_ID \
 -DKDE_FULL_SESSION=$KDE_FULL_SESSION -DKDE_SESSION_VERSION=$KDE_SESSION_VERSION \
 -jar %%PREFIX%%/share/mucommander/mucommander.jar $@
