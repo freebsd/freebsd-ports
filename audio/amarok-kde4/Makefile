@@ -18,7 +18,8 @@ LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 		lastfm.0:${PORTSDIR}/audio/liblastfm \
 		qca.2:${PORTSDIR}/devel/qca
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator
+BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator \
+		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator
 
 LATEST_LINK=	${PORTNAME}-kde4
