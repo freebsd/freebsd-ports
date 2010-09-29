@@ -7,7 +7,7 @@
 
 PORTNAME=	e16-themes
 PORTVERSION=	1.0.1
-CATEGORIES=	x11-themes
+CATEGORIES=	x11-themes enlightenment
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org

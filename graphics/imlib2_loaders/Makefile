@@ -9,7 +9,7 @@ PORTNAME=	imlib2_loaders
 PORTVERSION=	1.4.1.000
 PORTREVISION=	3
 PORTEPOCH=	2
-CATEGORIES=	graphics
+CATEGORIES=	graphics enlightenment
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
 		http://download.enlightenment.org/snapshots/2008-01-25/
 
