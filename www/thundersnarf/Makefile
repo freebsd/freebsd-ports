@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	thundersnarf
-PORTVERSION=	1.02b
+PORTVERSION=	1.1
+PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/thunder/ \
+MASTER_SITES=	http://www.tracanelli.com.br/l/dev/thunder/ \
 		${MASTER_SITE_LOCAL}/jmelo
 
 MAINTAINER=	eksffa@freebsdbrasil.com.br
@@ -42,7 +43,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/datab
 .endif
 
 .if defined(WITH_PHP)
-USE_PHP+=	curl pcre bcmath pdo mcrypt mhash session pgsql spl dom xmlrpc ctype
+USE_PHP+=	curl pcre bcmath pdo mcrypt mhash session pgsql spl dom xmlrpc ctype openssl simplexml soap json
 .endif
 
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl:install
