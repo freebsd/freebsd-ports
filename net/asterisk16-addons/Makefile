@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	asterisk16-addons
-PORTVERSION=	1.6.0.4
-PORTREVISION=	2
+PORTNAME=	asterisk16
+PORTVERSION=	1.6.2.2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
-DISTNAME=	asterisk-addons-${DISTVERSION}
+PKGNAMESUFFIX=	-addons
+DISTNAME=	asterisk${PKGNAMESUFFIX}-${DISTVERSION}
 
 MAINTAINER=	flo@smeets.im
 COMMENT=	GPL modules for the Asterisk Open Source PBX

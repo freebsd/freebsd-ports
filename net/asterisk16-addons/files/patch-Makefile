@@ -1,5 +1,5 @@
---- Makefile.orig	2008-09-12 18:21:53.000000000 +0000
-+++ Makefile	2009-02-17 12:48:55.000000000 +0000
+--- Makefile.orig	2009-12-19 14:51:24.000000000 +0100
++++ Makefile	2010-09-21 16:03:27.000000000 +0200
 @@ -26,7 +26,9 @@
  ASTTOPDIR:=$(subst $(space),\$(space),$(CURDIR))
  
@@ -11,4 +11,27 @@
  
  # If the file .asteriskaddons.makeopts is present in your home directory, you can
  # include all of your favorite menuselect options so that every time you download
-
+@@ -218,19 +220,19 @@
+ samples: 
+ 	mkdir -p $(DESTDIR)$(ASTETCDIR)
+ 	for x in configs/*.sample; do \
+-		if [ -f $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample` ]; then \
++		if [ -f $(DESTDIR)$(ASTETCDIR)/`basename $$x` ]; then \
+ 			if [ "$(OVERWRITE)" = "y" ]; then \
+-				if cmp -s $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample` $$x ; then \
++				if cmp -s $(DESTDIR)$(ASTETCDIR)/`basename $$x` $$x ; then \
+ 					echo "Config file $$x is unchanged"; \
+ 					continue; \
+ 				fi ; \
+-				mv -f $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample` $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample`.old ; \
++				mv -f $(DESTDIR)$(ASTETCDIR)/`basename $$x` $(DESTDIR)$(ASTETCDIR)/`basename $$x`.old ; \
+ 			else \
+ 				echo "Skipping config file $$x"; \
+ 				continue; \
+ 			fi ;\
+ 		fi ; \
+-		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample` ;\
++		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`basename $$x` ;\
+ 	done
+ 
+ doc/addons-en_US.xml: $(foreach dir,$(MOD_SUBDIRS),$(wildcard $(dir)/*.c) $(wildcard $(dir)/*.cc))
