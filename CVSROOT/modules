@@ -23904,7 +23904,6 @@ symbion-sslproxy                ports/security/symbion-sslproxy
 symlinks                        ports/sysutils/symlinks
 symon                           ports/sysutils/symon
 sympa                           ports/mail/sympa
-sympa-elixus                    ports/mail/sympa-elixus
 sympa5                          ports/mail/sympa5
 symports                        ports/ports-mgmt/symports
 synaesthesia                    ports/graphics/synaesthesia
@@ -26235,7 +26234,6 @@ xpi-formfox                     ports/www/xpi-formfox
 xpi-foxmarks                    ports/www/xpi-foxmarks
 xpi-foxyproxy                   ports/www/xpi-foxyproxy
 xpi-gbrain                      ports/www/xpi-gbrain
-xpi-gbutts                      ports/www/xpi-gbutts
 xpi-gmail-manager               ports/www/xpi-gmail-manager
 xpi-google-notebook             ports/www/xpi-google-notebook
 xpi-grab_and_drag               ports/www/xpi-grab_and_drag
