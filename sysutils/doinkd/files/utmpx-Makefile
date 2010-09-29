@@ -1,5 +1,5 @@
---- Makefile.orig	1996-05-16 15:05:28.000000000 -0700
-+++ Makefile	2010-01-25 16:08:20.000000000 -0800
+--- Makefile.orig	2006-05-30 00:19:28.000000000 -0700
++++ Makefile	2010-08-27 12:42:08.661284827 -0700
 @@ -2,8 +2,8 @@
  #
  
@@ -11,31 +11,37 @@
  INCLUDE = 
  
  ######################################################################
-@@ -166,26 +166,26 @@
+@@ -81,7 +81,7 @@
+ ######################################################################
+ # UnixWare 7 -- SVR5 MP 
+ #DEFS = -DSYSV -DHAVE_PROC_FS -DUTMPPID -DHAVE_SETSID -DHAVE_UTMPX -DUTMPHOST -DUNIXWARE
+-DEFS = -DSYSV -DPS_HACK -DRUDE_KILL -DHAVE_SETSID -DHAVE_UTMPX -DUTMPHOST -DUNIXWARE
++DEFS = -DPS_HACK -DRUDE_KILL -DHAVE_SETSID -DUTMPHOST
+ SPECLIBS = 
+ INSTTYPE = install4
+ 
+@@ -193,26 +193,22 @@
  # You will need to delete parse.c before compiling!  You can either
  # do so by hand, or do a 'make clean' followed by the normal 'make'.
  #DEFS += -O -m486
 -#DEFS += -DBSD_OS2 -DHAVE_SETSID -DHAVE_YYRESTART -DPS_HACK
-+DEFS += -DBSD_OS2 -DHAVE_SETSID -DHAVE_YYRESTART -DPS_HACK -DHAVE_UTMPX -DSYSV
++DEFS += -DBSD_OS2 -DHAVE_SETSID -DHAVE_YYRESTART -DPS_HACK
  #DEFS += -DPROC_SEARCH_1
  #SPECLIBS = -lkvm
 -#INSTTYPE = install1a
 +INSTTYPE = install1a
  #
--#DEST    = /usr/local/libexec
--#CFDEST  = /usr/local/libexec
+-#DEST    = /usr/local/sbin
+-#CFDEST  = /etc/doinkd
 -#MDEST   = /usr/local/man
 -#LOGDEST = /var/log
-+DEST    = ${PREFIX}/libexec
-+CFDEST  = ${PREFIX}/etc
-+MDEST   = ${PREFIX}/man
-+LOGDEST = /var/log
- #
+-#
 -#OWNER   = root
 -#CFOWNER = root
 -#MOWNER  = man
-+OWNER   = root
-+CFOWNER = root
++DEST    = ${PREFIX}/sbin
++CFDEST  = ${PREFIX}/etc/doinkd
++MDEST   = ${PREFIX}/man
 +MOWNER  = man
  #
 -#GROUP   = daemon
@@ -47,59 +53,17 @@
 -#CFMODE  = 664
 -#MMODE   = 444
 +MODE    = 750
-+CFMODE  = 644
++CFMODE  = 664
 +MMODE   = 444
  
  ######################################################################
  ######################################################################
-@@ -215,25 +215,25 @@
- # SVR4  --  Solaris 2.x
- # Use install3 for /usr/sbin/install
- # and install1 for /usr/ucb/install
--DEFS += -DSYSV -DHAVE_PROC_FS -DUTMPPID -DHAVE_SETSID -DHAVE_UTMPX -DUTMPHOST -DRUDEKILL
--SPECLIBS = 
--INSTTYPE = install3
--
--DEST    = /usr/local/bin
--CFDEST  = /usr/local/lib
--MDEST   = /usr/local/man
--LOGDEST = /var/log
-+#DEFS += -DSYSV -DHAVE_PROC_FS -DUTMPPID -DHAVE_SETSID -DHAVE_UTMPX -DUTMPHOST -DRUDEKILL
-+#SPECLIBS = 
-+#INSTTYPE = install3
- 
--OWNER   = root
--CFOWNER = root
--MOWNER  = root
-+#DEST    = /usr/local/bin
-+#CFDEST  = /usr/local/lib
-+#MDEST   = /usr/local/man
-+#LOGDEST = /var/log
-+
-+#OWNER   = root
-+#CFOWNER = root
-+#MOWNER  = root
- 
--GROUP   = root
--CFGROUP = root
-+#GROUP   = root
-+#CFGROUP = root
- 
--MODE    = 750
--CFMODE  = 664
--MMODE   = 644
-+#MODE    = 750
-+#CFMODE  = 664
-+#MMODE   = 644
- 
- ######################################################################
- ######################################################################
-@@ -428,7 +428,7 @@
+@@ -456,7 +452,7 @@
  # HERE are the big CFLAGS
  # Add -g if you want debugging
  # Add -O or whatever variant for optimization
 -CFLAGS = ${DEFS} ${DEBUG} -DCONFIG=\"${CONFIG}\" -DLOGFILE=\"${LOGFILE}\" ${INCLUDE}
-+CFLAGS+= ${DEFS} ${DEBUG} -DCONFIG=\"${CONFIG}\" -DLOGFILE=\"${LOGFILE}\" ${INCLUDE}
++CFLAGS+= ${DEFS} ${DEBUG} -DCONFIG=\"${CONFIG}\" -DLOGFILE=\"${LOGFILE}\" ${INCLUDE} -DHAVE_UTMPX -DSYSV
  
  # For HP's ANSI C compiler (use -g instead of +O3 for debugging)
  # CFLAGS = +O3 -Aa -D_HPUX_SOURCE ${DEFS} ${DEBUG} -DCONFIG=\"${CONFIG}\" -DLOGFILE=\"${LOGFILE}\" ${INCLUDE}

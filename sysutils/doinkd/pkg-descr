@@ -1,4 +1,11 @@
-This is a port of idled by Michael P. Crider. Idled is a daemon that runs on a
-machine to keep an eye on current users.  If users have been idle for too long,
-or have been logged on for too long, or have logged in too many times, it will
-warn them and log them out appropriately.
+This is the  doinkd - user activity monitor  project ("idled")
+
+This project was registered on SourceForge.net on May 25, 2006, and is
+described by the project team as follows:
+
+The idle daemon (doinkd) monitors user activity and logs them off when
+predefined rules are met. These include session time, multiple logins,
+tty, idletime and group limits. Similar to the Unix idleout command,
+but much more configurable. Formerly idled.
+
+http://idled.sourceforge.net/
