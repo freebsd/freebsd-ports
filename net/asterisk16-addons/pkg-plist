@@ -4,5 +4,9 @@ lib/asterisk/modules/cdr_addon_mysql.so
 lib/asterisk/modules/res_config_mysql.so
 lib/asterisk/modules/format_mp3.so
 lib/asterisk/modules/chan_ooh323.so
-%%SAMPLE_CONFIG%%etc/asterisk/cdr_mysql.conf
-%%SAMPLE_CONFIG%%etc/asterisk/res_mysql.conf
+share/asterisk/documentation/addons-en_US.xml
+%%SAMPLE_CONFIG%%etc/asterisk/cdr_mysql.conf.sample
+%%SAMPLE_CONFIG%%etc/asterisk/mobile.conf.sample
+%%SAMPLE_CONFIG%%etc/asterisk/mysql.conf.sample
+%%SAMPLE_CONFIG%%etc/asterisk/ooh323.conf.sample
+%%SAMPLE_CONFIG%%etc/asterisk/res_mysql.conf.sample
