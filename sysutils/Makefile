@@ -167,6 +167,7 @@
     SUBDIR += djmount
     SUBDIR += dmg2img
     SUBDIR += dmidecode
+    SUBDIR += doinkd
     SUBDIR += dolly
     SUBDIR += dolly+
     SUBDIR += downtime
