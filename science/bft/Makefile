@@ -8,7 +8,7 @@
 PORTNAME=	bft
 PORTVERSION=	1.0.8
 CATEGORIES=	science parallel
-MASTER_SITES=	http://rd.edf.com/fichiers/fckeditor/File/EDF%20RD/Code_Saturne/Fichiers/
+MASTER_SITES=	http://research.edf.com/fichiers/fckeditor/Commun/Innovation/logiciels/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
