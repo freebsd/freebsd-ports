@@ -1,11 +1,21 @@
+@unexec if cmp -s %D/etc/asterisk/ais.conf %D/etc/asterisk/ais.conf-dist; then rm -f %D/etc/asterisk/ais.conf; fi
+etc/asterisk/ais.conf-dist
 @unexec if cmp -s %D/etc/asterisk/cdr_adaptive_odbc.conf %D/etc/asterisk/cdr_adaptive_odbc.conf-dist; then rm -f %D/etc/asterisk/cdr_adaptive_odbc.conf; fi
 etc/asterisk/cdr_adaptive_odbc.conf-dist
 @unexec if cmp -s %D/etc/asterisk/cdr_sqlite3_custom.conf %D/etc/asterisk/cdr_sqlite3_custom.conf-dist; then rm -f %D/etc/asterisk/cdr_sqlite3_custom.conf; fi
 etc/asterisk/cdr_sqlite3_custom.conf-dist
 @unexec if cmp -s %D/etc/asterisk/cli.conf %D/etc/asterisk/cli.conf-dist; then rm -f %D/etc/asterisk/cli.conf; fi
 etc/asterisk/cli.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cli_aliases.conf %D/etc/asterisk/cli_aliases.conf-dist; then rm -f %D/etc/asterisk/cli_aliases.conf; fi
+etc/asterisk/cli_aliases.conf-dist
+@unexec if cmp -s %D/etc/asterisk/cli_permissions.conf %D/etc/asterisk/cli_permissions.conf-dist; then rm -f %D/etc/asterisk/cli_permissions.conf; fi
+etc/asterisk/cli_permissions.conf-dist
 @unexec if cmp -s %D/etc/asterisk/console.conf %D/etc/asterisk/console.conf-dist; then rm -f %D/etc/asterisk/console.conf; fi
 etc/asterisk/console.conf-dist
+@unexec if cmp -s %D/etc/asterisk/dbsep.conf %D/etc/asterisk/dbsep.conf-dist; then rm -f %D/etc/asterisk/dbsep.conf; fi
+etc/asterisk/dbsep.conf-dist
+@unexec if cmp -s %D/etc/asterisk/dsp.conf %D/etc/asterisk/dsp.conf-dist; then rm -f %D/etc/asterisk/dsp.conf; fi
+etc/asterisk/dsp.conf-dist
 @unexec if cmp -s %D/etc/asterisk/extensions.lua %D/etc/asterisk/extensions.lua-dist; then rm -f %D/etc/asterisk/extensions.lua; fi
 etc/asterisk/extensions.lua-dist
 @unexec if cmp -s %D/etc/asterisk/extensions_minivm.conf %D/etc/asterisk/extensions_minivm.conf-dist; then rm -f %D/etc/asterisk/extensions_minivm.conf; fi
@@ -146,6 +156,8 @@ etc/asterisk/func_odbc.conf-dist
 etc/asterisk/followme.conf-dist
 @unexec if cmp -s %D/etc/asterisk/amd.conf %D/etc/asterisk/amd.conf-dist; then rm -f %D/etc/asterisk/amd.conf; fi
 etc/asterisk/amd.conf-dist
+@unexec if cmp -s %D/etc/asterisk/res_config_sqlite.conf %D/etc/asterisk/res_config_sqlite.conf-dist; then rm -f %D/etc/asterisk/res_config_sqlite.conf; fi
+etc/asterisk/res_config_sqlite.conf-dist
 @exec if test ! -e %D/etc/asterisk/cdr_adaptive_odbc.conf; then cp -p %D/etc/asterisk/cdr_adaptive_odbc.conf-dist %D/etc/asterisk/cdr_adaptive_odbc.conf; fi
 @exec if test ! -e %D/etc/asterisk/cdr_sqlite3_custom.conf; then cp -p %D/etc/asterisk/cdr_sqlite3_custom.conf-dist %D/etc/asterisk/cdr_sqlite3_custom.conf; fi
 @exec if test ! -e %D/etc/asterisk/cli.conf; then cp -p %D/etc/asterisk/cli.conf-dist %D/etc/asterisk/cli.conf; fi
@@ -250,7 +262,11 @@ include/asterisk/astobj2.h
 include/asterisk/astosp.h
 include/asterisk/audiohook.h
 include/asterisk/autoconfig.h
+include/asterisk/bridging.h
+include/asterisk/bridging_features.h
+include/asterisk/bridging_technology.h
 include/asterisk/build.h
+include/asterisk/buildinfo.h
 include/asterisk/buildopts.h
 include/asterisk/callerid.h
 include/asterisk/causes.h
@@ -262,8 +278,10 @@ include/asterisk/compat.h
 include/asterisk/compiler.h
 include/asterisk/config.h
 include/asterisk/crypto.h
+include/asterisk/datastore.h
 include/asterisk/devicestate.h
 include/asterisk/dial.h
+include/asterisk/dlinkedlists.h
 include/asterisk/dns.h
 include/asterisk/dnsmgr.h
 include/asterisk/doxyref.h
@@ -276,6 +294,7 @@ include/asterisk/file.h
 include/asterisk/frame.h
 include/asterisk/fskmodem.h
 include/asterisk/global_datastores.h
+include/asterisk/heap.h
 include/asterisk/http.h
 include/asterisk/image.h
 include/asterisk/indications.h
@@ -304,16 +323,20 @@ include/asterisk/rtp.h
 include/asterisk/say.h
 include/asterisk/sched.h
 include/asterisk/sha1.h
+include/asterisk/slin.h
 include/asterisk/slinfactory.h
 include/asterisk/smdi.h
 include/asterisk/speech.h
 include/asterisk/srv.h
 include/asterisk/stringfields.h
 include/asterisk/strings.h
+include/asterisk/taskprocessor.h
 include/asterisk/tdd.h
 include/asterisk/term.h
+include/asterisk/test.h
 include/asterisk/threadstorage.h
 include/asterisk/time.h
+include/asterisk/timing.h
 include/asterisk/transcap.h
 include/asterisk/translate.h
 include/asterisk/udptl.h
@@ -321,17 +344,30 @@ include/asterisk/ulaw.h
 include/asterisk/unaligned.h
 include/asterisk/utils.h
 include/asterisk/version.h
+include/asterisk/xml.h
+include/asterisk/xmldoc.h
+lib/asterisk/modules/app_confbridge.so
 lib/asterisk/modules/app_minivm.so
-lib/asterisk/modules/app_pickupchan.so
+lib/asterisk/modules/app_originate.so
+lib/asterisk/modules/app_playtones.so
 lib/asterisk/modules/app_readexten.so
 lib/asterisk/modules/app_waituntil.so
+lib/asterisk/modules/bridge_builtin_features.so
+lib/asterisk/modules/bridge_multiplexed.so
+lib/asterisk/modules/bridge_simple.so
+lib/asterisk/modules/bridge_softmix.so
 %%WITH_ODBC%%lib/asterisk/modules/cdr_adaptive_odbc.so
 %%WITH_JABBER%%lib/asterisk/modules/chan_jingle.so
+lib/asterisk/modules/chan_bridge.so
 lib/asterisk/modules/chan_unistim.so
 lib/asterisk/modules/codec_g722.so
 lib/asterisk/modules/format_sln16.so
+lib/asterisk/modules/format_siren14.so
+lib/asterisk/modules/format_siren7.so
+lib/asterisk/modules/func_aes.so
 lib/asterisk/modules/func_audiohookinherit.so
 lib/asterisk/modules/func_blacklist.so
+lib/asterisk/modules/func_config.so
 lib/asterisk/modules/func_devstate.so
 lib/asterisk/modules/func_dialgroup.so
 lib/asterisk/modules/func_dialplan.so
@@ -340,17 +376,23 @@ lib/asterisk/modules/func_iconv.so
 lib/asterisk/modules/func_lock.so
 lib/asterisk/modules/func_module.so
 lib/asterisk/modules/func_shell.so
+lib/asterisk/modules/func_speex.so
+lib/asterisk/modules/func_sprintf.so
 lib/asterisk/modules/func_sysinfo.so
 lib/asterisk/modules/func_version.so
 lib/asterisk/modules/func_vmcount.so
 lib/asterisk/modules/func_volume.so
 lib/asterisk/modules/res_ael_share.so
+lib/asterisk/modules/res_clialiases.so
+%%WITH_CURL%%lib/asterisk/modules/res_curl.so
 %%WITH_CURL%%lib/asterisk/modules/res_config_curl.so
 lib/asterisk/modules/res_config_ldap.so
 %%WITH_SQLITE%%lib/asterisk/modules/res_config_sqlite.so
 lib/asterisk/modules/res_limit.so
 lib/asterisk/modules/res_phoneprov.so
 lib/asterisk/modules/res_realtime.so
+%%WITH_DAHDI%%lib/asterisk/modules/res_timing_dahdi.so
+lib/asterisk/modules/res_timing_pthread.so
 lib/asterisk/modules/app_adsiprog.so
 lib/asterisk/modules/app_alarmreceiver.so
 lib/asterisk/modules/app_amd.so
@@ -481,7 +523,6 @@ lib/asterisk/modules/res_clioriginate.so
 %%WITH_POSTGRES%%lib/asterisk/modules/res_config_pgsql.so
 lib/asterisk/modules/res_convert.so
 lib/asterisk/modules/res_crypto.so
-lib/asterisk/modules/res_indications.so
 %%WITH_JABBER%%lib/asterisk/modules/res_jabber.so
 lib/asterisk/modules/res_monitor.so
 lib/asterisk/modules/res_musiconhold.so
@@ -498,6 +539,7 @@ sbin/astgenkey
 sbin/astman
 sbin/autosupport
 sbin/muted
+sbin/refcounter
 sbin/rasterisk
 sbin/safe_asterisk
 sbin/smsq
@@ -507,9 +549,11 @@ share/asterisk/agi-bin/agi-test.agi
 share/asterisk/agi-bin/eagi-sphinx-test
 share/asterisk/agi-bin/eagi-test
 share/asterisk/agi-bin/jukebox.agi
+share/asterisk/documentation/appdocsxml.dtd
+share/asterisk/documentation/core-en_US.xml
 share/asterisk/keys/freeworlddialup.pub
 share/asterisk/keys/iaxtel.pub
-share/asterisk/moh/.asterisk-moh-opsound-wav
+share/asterisk/moh/.asterisk-moh-opsound-wav-2.03
 share/asterisk/moh/CHANGES-asterisk-moh-opsound-wav
 share/asterisk/moh/CREDITS-asterisk-moh-opsound-wav
 share/asterisk/moh/LICENSE-asterisk-moh-opsound-wav
@@ -522,12 +566,19 @@ share/asterisk/phoneprov/000000000000-directory.xml
 share/asterisk/phoneprov/000000000000-phone.cfg
 share/asterisk/phoneprov/000000000000.cfg
 share/asterisk/phoneprov/polycom.xml
-share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.17
-share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.17
+share/asterisk/phoneprov/polycom_line.xml
+share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.19
+share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.19
+share/asterisk/sounds/en/ascending-2tone.gsm
 share/asterisk/sounds/en/conf-adminmenu-162.gsm
 share/asterisk/sounds/en/conf-extended.gsm
 share/asterisk/sounds/en/conf-nonextended.gsm
+share/asterisk/sounds/en/conf-now-muted.gsm
+share/asterisk/sounds/en/conf-now-recording.gsm
+share/asterisk/sounds/en/conf-now-unmuted.gsm
+share/asterisk/sounds/en/conf-roll-callcomplete.gsm
 share/asterisk/sounds/en/conf-usermenu-162.gsm
+share/asterisk/sounds/en/descending-2tone.gsm
 share/asterisk/sounds/en/spy-dahdi.gsm
 share/asterisk/sounds/en/vm-Urgent.gsm
 share/asterisk/sounds/en/vm-forward-multiple.gsm
@@ -538,8 +589,8 @@ share/asterisk/sounds/en/vm-pls-try-again.gsm
 share/asterisk/sounds/en/vm-record-prepend.gsm
 share/asterisk/sounds/en/vm-review-nonurgent.gsm
 share/asterisk/sounds/en/vm-review-urgent.gsm
-share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.17
-share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.17
+share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.19
+share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.19
 share/asterisk/sounds/en/dir-usingkeypad.gsm
 share/asterisk/sounds/en/dir-welcome.gsm
 share/asterisk/sounds/en/agent-alreadyon.gsm
@@ -633,6 +684,7 @@ share/asterisk/sounds/en/digits/9.gsm
 share/asterisk/sounds/en/digits/90.gsm
 share/asterisk/sounds/en/digits/a-m.gsm
 share/asterisk/sounds/en/digits/at.gsm
+share/asterisk/sounds/en/digits/billion.gsm
 share/asterisk/sounds/en/digits/day-0.gsm
 share/asterisk/sounds/en/digits/day-1.gsm
 share/asterisk/sounds/en/digits/day-2.gsm
@@ -657,11 +709,21 @@ share/asterisk/sounds/en/digits/h-20.gsm
 share/asterisk/sounds/en/digits/h-3.gsm
 share/asterisk/sounds/en/digits/h-30.gsm
 share/asterisk/sounds/en/digits/h-4.gsm
+share/asterisk/sounds/en/digits/h-40.gsm
 share/asterisk/sounds/en/digits/h-5.gsm
+share/asterisk/sounds/en/digits/h-50.gsm
 share/asterisk/sounds/en/digits/h-6.gsm
+share/asterisk/sounds/en/digits/h-60.gsm
 share/asterisk/sounds/en/digits/h-7.gsm
+share/asterisk/sounds/en/digits/h-70.gsm
 share/asterisk/sounds/en/digits/h-8.gsm
+share/asterisk/sounds/en/digits/h-80.gsm
 share/asterisk/sounds/en/digits/h-9.gsm
+share/asterisk/sounds/en/digits/h-90.gsm
+share/asterisk/sounds/en/digits/h-billion.gsm
+share/asterisk/sounds/en/digits/h-hundred.gsm
+share/asterisk/sounds/en/digits/h-million.gsm
+share/asterisk/sounds/en/digits/h-thousand.gsm
 share/asterisk/sounds/en/digits/hundred.gsm
 share/asterisk/sounds/en/digits/million.gsm
 share/asterisk/sounds/en/digits/minus.gsm
@@ -772,6 +834,7 @@ share/asterisk/sounds/en/letters/zed.gsm
 share/asterisk/sounds/en/minutes.gsm
 share/asterisk/sounds/en/pbx-invalid.gsm
 share/asterisk/sounds/en/pbx-invalidpark.gsm
+share/asterisk/sounds/en/pbx-parkingfailed.gsm
 share/asterisk/sounds/en/pbx-transfer.gsm
 share/asterisk/sounds/en/phonetic/9_p.gsm
 share/asterisk/sounds/en/phonetic/a_p.gsm
@@ -811,6 +874,7 @@ share/asterisk/sounds/en/privacy-unident.gsm
 share/asterisk/sounds/en/queue-callswaiting.gsm
 share/asterisk/sounds/en/queue-holdtime.gsm
 share/asterisk/sounds/en/queue-less-than.gsm
+share/asterisk/sounds/en/queue-minute.gsm
 share/asterisk/sounds/en/queue-minutes.gsm
 share/asterisk/sounds/en/queue-periodic-announce.gsm
 share/asterisk/sounds/en/queue-quantity1.gsm
@@ -991,6 +1055,10 @@ share/asterisk/static-http/prototype.js
 %%DOCSDIR%%/img3.png
 %%DOCSDIR%%/img4.png
 %%DOCSDIR%%/img5.png
+%%DOCSDIR%%/img6.png
+%%DOCSDIR%%/img7.png
+%%DOCSDIR%%/img8.png
+%%DOCSDIR%%/img9.png
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/internals.pl
 %%DOCSDIR%%/labels.pl
@@ -1195,6 +1263,25 @@ share/asterisk/static-http/prototype.js
 %%DOCSDIR%%/node278.html
 %%DOCSDIR%%/node279.html
 %%DOCSDIR%%/node28.html
+%%DOCSDIR%%/node280.html
+%%DOCSDIR%%/node281.html
+%%DOCSDIR%%/node282.html
+%%DOCSDIR%%/node283.html
+%%DOCSDIR%%/node284.html
+%%DOCSDIR%%/node285.html
+%%DOCSDIR%%/node286.html
+%%DOCSDIR%%/node287.html
+%%DOCSDIR%%/node288.html
+%%DOCSDIR%%/node289.html
+%%DOCSDIR%%/node290.html
+%%DOCSDIR%%/node291.html
+%%DOCSDIR%%/node292.html
+%%DOCSDIR%%/node293.html
+%%DOCSDIR%%/node294.html
+%%DOCSDIR%%/node295.html
+%%DOCSDIR%%/node296.html
+%%DOCSDIR%%/node297.html
+%%DOCSDIR%%/node298.html
 %%DOCSDIR%%/node29.html
 %%DOCSDIR%%/node3.html
 %%DOCSDIR%%/node30.html
@@ -1291,12 +1378,16 @@ share/asterisk/static-http/prototype.js
 @dirrm share/asterisk/keys
 @dirrm share/asterisk/firmware/iax
 @dirrm share/asterisk/firmware
+@dirrm share/asterisk/documentation/thirdparty
+@dirrm share/asterisk/documentation
 @dirrm share/asterisk/agi-bin
 @dirrm share/asterisk
 @dirrm lib/asterisk/modules
 @dirrm lib/asterisk
 @dirrm include/asterisk
 @dirrmtry etc/asterisk
+@exec mkdir -p %D/share/asterisk/firmware/iax
+@exec mkdir -p %D/share/asterisk/documentation/thirdparty
 @exec mkdir -p %D/share/asterisk/sounds/es
 @exec mkdir -p %D/share/asterisk/sounds/fr
 @cwd /var
@@ -1304,15 +1395,19 @@ spool/asterisk/voicemail/default/1234/en/busy.gsm
 spool/asterisk/voicemail/default/1234/en/unavail.gsm
 @exec mkdir -p %D/log/asterisk/cdr-csv
 @exec mkdir -p %D/log/asterisk/cdr-custom
-@exec mkdir -p %D/spool/asterisk/voicemail/default/1234/INBOX
 @exec mkdir -p %D/spool/asterisk/dictate
 @exec mkdir -p %D/spool/asterisk/meetme
 @exec mkdir -p %D/spool/asterisk/monitor
+@exec mkdir -p %D/spool/asterisk/outgoing
 @exec mkdir -p %D/spool/asterisk/system
+@exec mkdir -p %D/spool/asterisk/voicemail/default/1234/INBOX
+@exec mkdir -p %D/spool/asterisk/voicemail/default/1234/en
 @exec mkdir -p %D/spool/asterisk/tmp
+@exec mkdir -p %D/db/asterisk
 @dirrm spool/asterisk/dictate
 @dirrm spool/asterisk/meetme
 @dirrm spool/asterisk/monitor
+@dirrm spool/asterisk/outgoing
 @dirrm spool/asterisk/system
 @dirrm spool/asterisk/voicemail/default/1234/INBOX
 @dirrm spool/asterisk/voicemail/default/1234/en

@@ -11,10 +11,10 @@
 
 . /etc/rc.subr
 
-stop_precmd=asterisk_shutdown
-sig_stop=KILL
+stop_cmd=asterisk_shutdown
 asterisk_shutdown () {
-  %%PREFIX%%/sbin/asterisk -qrx 'stop now'
+  echo 'Stopping asterisk'
+  %%PREFIX%%/sbin/asterisk -qrx 'core stop now'
   sleep 1
   return 0
 }

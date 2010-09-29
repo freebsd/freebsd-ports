@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.6.0.21
-PORTREVISION=	4
-PKGNAMESUFFIX=	16
+PORTVERSION=	1.6.2.13
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
+PKGNAMESUFFIX=	16
 
 MAINTAINER=	flo@smeets.im
 COMMENT=	An Open Source PBX and telephony toolkit
@@ -26,9 +25,10 @@ ONLY_FOR_ARCHS=	i386 amd64
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gsm=${LOCALBASE}
+CONFIGURE_ARGS=	--with-gsm=${LOCALBASE} --localstatedir=/var
 CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 USE_GMAKE=	yes
+USE_GNOME=	libxml2
 USE_BISON=	build
 USE_RC_SUBR=	asterisk.sh
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
@@ -55,9 +55,7 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		GSM		"Enable GSM codec" on \
 		CURL		"Enable CURL support" on \
 		ILBC		"Enable iLBC codec" off \
-		SPANDSP		"Enable Spandsp faxing support" off \
-#		CODEC_PATCH	"Apply codec negotiation patch" off \
-#		MISC_PATCHES	"Apply additional patches" off
+		SPANDSP		"Enable Spandsp faxing support" off
 
 .include <bsd.port.pre.mk>
 
@@ -65,25 +63,25 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 OPTIONS+=	DAHDI		"Enable DAHDI support" on
 
 # Include this since we have altered OPTIONS.
-.include "$(PORTSDIR)/Mk/bsd.port.options.mk"
+.include <bsd.port.options.mk>
 .endif
 
 .if !defined(WITH_H323)
 PLIST_SUB+=	WITH_H323="@comment "
-CONFIGURE_ARGS+= --without-h323
+CONFIGURE_ARGS+=	--without-h323
 .else
 PLIST_SUB+=	WITH_H323=""
-CONFIGURE_ARGS+= --with-h323=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-h323=${LOCALBASE}
 LIB_DEPENDS+=	pt_r.1:${PORTSDIR}/devel/pwlib \
 		h323_r.1:${PORTSDIR}/net/openh323
 .endif
 
 .if !defined(WITH_DAHDI)
 PLIST_SUB+=	WITH_DAHDI="@comment "
-CONFIGURE_ARGS+= --without-dahdi
+CONFIGURE_ARGS+=	--without-dahdi
 .else
 PLIST_SUB+=	WITH_DAHDI=""
-CONFIGURE_ARGS+= --with-dahdi
+CONFIGURE_ARGS+=	--with-dahdi
 BUILD_DEPENDS+=	libpri>=1.4.10:${PORTSDIR}/misc/libpri \
 		${LOCALBASE}/include/dahdi/user.h:${PORTSDIR}/misc/dahdi
 LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri
@@ -95,75 +93,75 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/dahdi/dahdi.ko:${PORTSDIR}/misc/dahdi
 # similarly
 .if !defined(WITH_ODBC)
 PLIST_SUB+=	WITH_ODBC="@comment "
-CONFIGURE_ARGS+= --without-odbc
+CONFIGURE_ARGS+=	--without-unixodbc
 .else
 PLIST_SUB+=	WITH_ODBC=""
-CONFIGURE_ARGS+= --with-odbc --with-ltdl
-LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC \
-		ltdl.7:${PORTSDIR}/devel/libltdl22
+CONFIGURE_ARGS+=	--with-unixodbc --with-ltdl
+LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+USE_AUTOTOOLS=	libltdl
 .endif
 
 .if !defined(WITH_FREETDS)
 PLIST_SUB+=	WITH_FREETDS="@comment "
-CONFIGURE_ARGS+= --without-tds
+CONFIGURE_ARGS+=	--without-tds
 .else
 PLIST_SUB+=	WITH_FREETDS=""
-CONFIGURE_ARGS+= --with-tds=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-tds=${LOCALBASE}
 LIB_DEPENDS+=	tds.5:${PORTSDIR}/databases/freetds
 .endif
 
 .if !defined(WITH_POSTGRES)
 PLIST_SUB+=	WITH_POSTGRES="@comment "
-CONFIGURE_ARGS+= --without-postgres
+CONFIGURE_ARGS+=	--without-postgres
 .else
 PLIST_SUB+=	WITH_POSTGRES=""
 USE_PGSQL=	yes
-CONFIGURE_ARGS+= --with-postgres
+CONFIGURE_ARGS+=	--with-postgres
 .endif
 
 .if !defined(WITH_OGGVORBIS)
 PLIST_SUB+=	WITH_OGGVORBIS="@comment "
-CONFIGURE_ARGS+= --without-ogg
+CONFIGURE_ARGS+=	--without-ogg
 .else
 PLIST_SUB+=	WITH_OGGVORBIS=""
-CONFIGURE_ARGS+= --with-ogg
+CONFIGURE_ARGS+=	--with-ogg
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if !defined(WITH_RADIUS)
 PLIST_SUB+=	WITH_RADIUS="@comment "
-CONFIGURE_ARGS+= --without-radius
+CONFIGURE_ARGS+=	--without-radius
 .else
 PLIST_SUB+=	WITH_RADIUS=""
-CONFIGURE_ARGS+= --with-radius
+CONFIGURE_ARGS+=	--with-radius
 LIB_DEPENDS+=	radiusclient-ng.2:${PORTSDIR}/net/radiusclient
 .endif
 
 .if !defined(WITH_SNMP)
 PLIST_SUB+=	WITH_SNMP="@comment "
-CONFIGURE_ARGS+= --without-netsnmp
+CONFIGURE_ARGS+=	--without-netsnmp
 .else
 PLIST_SUB+=	WITH_SNMP=""
-CONFIGURE_ARGS+= --with-netsnmp
-LIB_DEPENDS+=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
+CONFIGURE_ARGS+=	--with-netsnmp
+LIB_DEPENDS+=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
 .if !defined(WITH_JABBER)
 PLIST_SUB+=	WITH_JABBER="@comment "
-CONFIGURE_ARGS+= --without-iksemel
+CONFIGURE_ARGS+=	--without-iksemel
 .else
 PLIST_SUB+=	WITH_JABBER=""
-CONFIGURE_ARGS+= --with-iksemel
+CONFIGURE_ARGS+=	--with-iksemel
 LIB_DEPENDS+=	iksemel.4:${PORTSDIR}/textproc/iksemel
 .endif
 
 .if !defined(WITH_SQLITE)
 PLIST_SUB+=	WITH_SQLITE="@comment "
 CONFIGURE_ARGS+=	--without-sqlite \
-		--with-sqlite3=no
+			--with-sqlite3=no
 .else
 PLIST_SUB+=	WITH_SQLITE=""
-CONFIGURE_ARGS+= --with-sqlite
+CONFIGURE_ARGS+=	--with-sqlite
 LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite2 \
 		sqlite3:${PORTSDIR}/databases/sqlite3
 .endif
@@ -177,39 +175,29 @@ EXTRA_PATCHES+=	${PATCHDIR}/ilbc_enable.diff
 
 .if !defined(WITH_GSM)
 PLIST_SUB+=	WITH_GSM="@comment "
-CONFIGURE_ARGS+= --without-gsm
+CONFIGURE_ARGS+=	--without-gsm
 .else
 PLIST_SUB+=	WITH_GSM=""
-CONFIGURE_ARGS+= --with-gsm
+CONFIGURE_ARGS+=	--with-gsm
 LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
 .endif
 
 .if !defined(WITH_CURL)
 PLIST_SUB+=	WITH_CURL="@comment "
-CONFIGURE_ARGS+= --with-curl=no \
-		--with-libcurl=no
+CONFIGURE_ARGS+=	--with-libcurl=no
 .else
 PLIST_SUB+=	WITH_CURL=""
-CONFIGURE_ARGS+= --with-curl \
-		--with-libcurl
+CONFIGURE_ARGS+=	--with-libcurl
 LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
 .endif
 
 .if !defined(WITH_SPANDSP)
 PLIST_SUB+=	WITH_SPANDSP="@comment "
-CONFIGURE_ARGS+= --without-spandsp
+CONFIGURE_ARGS+=	--without-spandsp
 .else
 PLIST_SUB+=	WITH_SPANDSP=""
-CONFIGURE_ARGS+= --with-spandsp
+CONFIGURE_ARGS+=	--with-spandsp
 LIB_DEPENDS+=	spandsp.2:${PORTSDIR}/comms/spandsp-devel
-.endif
-
-.if defined(WITH_CODEC_PATCH)
-PATCHFILES=	asterisk-1.4.22-codec-negotiation-20081110.diff.gz
-PATCH_SITES=	http://b2bua.org/chrome/site/
-EXTRA_PATCHES+=	${PATCHDIR}/codecnego-patch-Makefile
-.else
-EXTRA_PATCHES+=	${PATCHDIR}/nocodecnego-patch-Makefile
 .endif
 
 .if defined(WITH_MISC_PATCHES)
