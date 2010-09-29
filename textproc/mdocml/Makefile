@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mdocml
-PORTVERSION=	1.10.5
+PORTVERSION=	1.10.6
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
 		http://people.freebsd.org/~uqs/distfiles/
