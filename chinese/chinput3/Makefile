@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese GB2312,BIG5 code input server
 
 BROKEN=		does not build
+DEPRECATED=	Development has ceased.
+EXPIRATION_DATE=	2010-12-01
 
 LATEST_LINK=	zh-chinput3
 USE_XORG=	x11 xt
