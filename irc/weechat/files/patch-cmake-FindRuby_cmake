@@ -5,7 +5,7 @@
  IF(RUBY_EXECUTABLE)
    EXECUTE_PROCESS(
 -    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts Config::CONFIG['rubyhdrdir'] || Config::CONFIG['archdir']"
-+    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts Config::CONFIG['topdir']"
++    COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "puts Config::CONFIG['rubyhdrdir'] || Config::CONFIG['topdir']"
      OUTPUT_VARIABLE RUBY_ARCH_DIR
      )
  
