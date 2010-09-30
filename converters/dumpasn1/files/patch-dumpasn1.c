@@ -1,6 +1,14 @@
---- dumpasn1.c.orig	Tue Nov 15 12:12:53 2005
-+++ dumpasn1.c	Tue Nov 15 12:13:06 2005
-@@ -297,11 +297,13 @@
+--- dumpasn1.c.orig	2010-09-30 11:17:16.000000000 +0200
++++ dumpasn1.c	2010-09-30 11:18:35.000000000 +0200
+@@ -46,6 +46,7 @@
+ 
+ #include <ctype.h>
+ #include <limits.h>
++#include <stdarg.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -309,11 +310,13 @@
     beginning with a '$' uses the appropriate environment variable.  In
     addition under Unix we also walk down $PATH looking for it */
  
