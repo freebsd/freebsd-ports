@@ -634,6 +634,7 @@
     SUBDIR += hs-vector
     SUBDIR += hs-vector-algorithms
     SUBDIR += htable
+    SUBDIR += hyena
     SUBDIR += hypersrc
     SUBDIR += i386-rtems-binutils
     SUBDIR += i386-rtems-gcc
