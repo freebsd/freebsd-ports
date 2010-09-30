@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	grizzled
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.clapper.org/software/python/grizzled/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
