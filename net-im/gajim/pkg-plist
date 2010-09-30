@@ -1,8 +1,6 @@
 bin/gajim
 bin/gajim-history-manager
 bin/gajim-remote
-lib/gajim/trayicon.la
-lib/gajim/trayicon.so
 share/applications/gajim.desktop
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
@@ -220,69 +218,120 @@ share/applications/gajim.desktop
 %%DATADIR%%/data/emoticons/static/tongue.png
 %%DATADIR%%/data/emoticons/static/unhappy.png
 %%DATADIR%%/data/emoticons/static/wink.png
-%%DATADIR%%/data/glade/account_context_menu.glade
-%%DATADIR%%/data/glade/account_creation_wizard_window.glade
-%%DATADIR%%/data/glade/account_modification_window.glade
-%%DATADIR%%/data/glade/accounts_window.glade
-%%DATADIR%%/data/glade/add_new_contact_window.glade
-%%DATADIR%%/data/glade/adhoc_commands_window.glade
-%%DATADIR%%/data/glade/advanced_configuration_window.glade
-%%DATADIR%%/data/glade/advanced_menuitem_menu.glade
-%%DATADIR%%/data/glade/advanced_notifications_window.glade
-%%DATADIR%%/data/glade/atom_entry_window.glade
-%%DATADIR%%/data/glade/blocked_contacts_window.glade
-%%DATADIR%%/data/glade/change_activity_dialog.glade
-%%DATADIR%%/data/glade/change_mood_dialog.glade
-%%DATADIR%%/data/glade/change_password_dialog.glade
-%%DATADIR%%/data/glade/change_status_message_dialog.glade
-%%DATADIR%%/data/glade/chat_context_menu.glade
-%%DATADIR%%/data/glade/chat_to_muc_window.glade
-%%DATADIR%%/data/glade/choose_gpg_key_dialog.glade
-%%DATADIR%%/data/glade/contact_context_menu.glade
-%%DATADIR%%/data/glade/data_form_window.glade
-%%DATADIR%%/data/glade/dubbleinput_dialog.glade
-%%DATADIR%%/data/glade/edit_groups_dialog.glade
-%%DATADIR%%/data/glade/esession_info_window.glade
-%%DATADIR%%/data/glade/features_window.glade
-%%DATADIR%%/data/glade/filetransfers.glade
-%%DATADIR%%/data/glade/gajim_themes_window.glade
-%%DATADIR%%/data/glade/gc_control_popup_menu.glade
-%%DATADIR%%/data/glade/gc_occupants_menu.glade
-%%DATADIR%%/data/glade/groups_post_window.glade
-%%DATADIR%%/data/glade/history_manager.glade
-%%DATADIR%%/data/glade/history_window.glade
-%%DATADIR%%/data/glade/input_dialog.glade
-%%DATADIR%%/data/glade/input_text_dialog.glade
-%%DATADIR%%/data/glade/join_groupchat_window.glade
-%%DATADIR%%/data/glade/manage_accounts_window.glade
-%%DATADIR%%/data/glade/manage_bookmarks_window.glade
-%%DATADIR%%/data/glade/manage_pep_services_window.glade
-%%DATADIR%%/data/glade/manage_proxies_window.glade
-%%DATADIR%%/data/glade/manage_sounds_window.glade
-%%DATADIR%%/data/glade/message_window.glade
-%%DATADIR%%/data/glade/passphrase_dialog.glade
-%%DATADIR%%/data/glade/popup_notification_window.glade
-%%DATADIR%%/data/glade/preferences_window.glade
-%%DATADIR%%/data/glade/privacy_list_window.glade
-%%DATADIR%%/data/glade/privacy_lists_window.glade
-%%DATADIR%%/data/glade/profile_window.glade
-%%DATADIR%%/data/glade/progress_dialog.glade
-%%DATADIR%%/data/glade/remove_account_window.glade
-%%DATADIR%%/data/glade/roster_item_exchange_window.glade
-%%DATADIR%%/data/glade/roster_window.glade
-%%DATADIR%%/data/glade/search_window.glade
-%%DATADIR%%/data/glade/service_discovery_window.glade
-%%DATADIR%%/data/glade/service_registration_window.glade
-%%DATADIR%%/data/glade/single_message_window.glade
-%%DATADIR%%/data/glade/subscription_request_popup_menu.glade
-%%DATADIR%%/data/glade/subscription_request_window.glade
-%%DATADIR%%/data/glade/synchronise_select_account_dialog.glade
-%%DATADIR%%/data/glade/synchronise_select_contacts_dialog.glade
-%%DATADIR%%/data/glade/systray_context_menu.glade
-%%DATADIR%%/data/glade/vcard_information_window.glade
-%%DATADIR%%/data/glade/xml_console_window.glade
-%%DATADIR%%/data/glade/zeroconf_context_menu.glade
-%%DATADIR%%/data/glade/zeroconf_information_window.glade
+%%DATADIR%%/data/emoticons/tango/alien.png
+%%DATADIR%%/data/emoticons/tango/angel.png
+%%DATADIR%%/data/emoticons/tango/arrogant.png
+%%DATADIR%%/data/emoticons/tango/beer.png
+%%DATADIR%%/data/emoticons/tango/bomb.png
+%%DATADIR%%/data/emoticons/tango/clap.png
+%%DATADIR%%/data/emoticons/tango/confused.png
+%%DATADIR%%/data/emoticons/tango/cowboy.png
+%%DATADIR%%/data/emoticons/tango/crying.png
+%%DATADIR%%/data/emoticons/tango/curl-lip.png
+%%DATADIR%%/data/emoticons/tango/cute.png
+%%DATADIR%%/data/emoticons/tango/dance.png
+%%DATADIR%%/data/emoticons/tango/devil.png
+%%DATADIR%%/data/emoticons/tango/disapointed.png
+%%DATADIR%%/data/emoticons/tango/doh.png
+%%DATADIR%%/data/emoticons/tango/dont-know.png
+%%DATADIR%%/data/emoticons/tango/embarrassed.png
+%%DATADIR%%/data/emoticons/tango/emoticons.py
+%%DATADIR%%/data/emoticons/tango/fingers-crossed.png
+%%DATADIR%%/data/emoticons/tango/freaked-out.png
+%%DATADIR%%/data/emoticons/tango/giggle.png
+%%DATADIR%%/data/emoticons/tango/glasses-cool.png
+%%DATADIR%%/data/emoticons/tango/go-away.png
+%%DATADIR%%/data/emoticons/tango/good.png
+%%DATADIR%%/data/emoticons/tango/handshake.png
+%%DATADIR%%/data/emoticons/tango/hypnotized.png
+%%DATADIR%%/data/emoticons/tango/kiss.png
+%%DATADIR%%/data/emoticons/tango/laugh.png
+%%DATADIR%%/data/emoticons/tango/love.png
+%%DATADIR%%/data/emoticons/tango/mail.png
+%%DATADIR%%/data/emoticons/tango/musical-note.png
+%%DATADIR%%/data/emoticons/tango/party.png
+%%DATADIR%%/data/emoticons/tango/pissed-off.png
+%%DATADIR%%/data/emoticons/tango/question.png
+%%DATADIR%%/data/emoticons/tango/rose.png
+%%DATADIR%%/data/emoticons/tango/rotfl.png
+%%DATADIR%%/data/emoticons/tango/sad.png
+%%DATADIR%%/data/emoticons/tango/sarcastic.png
+%%DATADIR%%/data/emoticons/tango/shout.png
+%%DATADIR%%/data/emoticons/tango/shut-mouth.png
+%%DATADIR%%/data/emoticons/tango/sick.png
+%%DATADIR%%/data/emoticons/tango/silly.png
+%%DATADIR%%/data/emoticons/tango/sleepy.png
+%%DATADIR%%/data/emoticons/tango/smirk.png
+%%DATADIR%%/data/emoticons/tango/terror.png
+%%DATADIR%%/data/emoticons/tango/thinking.png
+%%DATADIR%%/data/emoticons/tango/tongue.png
+%%DATADIR%%/data/emoticons/tango/tremble.png
+%%DATADIR%%/data/emoticons/tango/victory.png
+%%DATADIR%%/data/emoticons/tango/wink.png
+%%DATADIR%%/data/gui/account_context_menu.ui
+%%DATADIR%%/data/gui/account_creation_wizard_window.ui
+%%DATADIR%%/data/gui/accounts_window.ui
+%%DATADIR%%/data/gui/add_new_contact_window.ui
+%%DATADIR%%/data/gui/adhoc_commands_window.ui
+%%DATADIR%%/data/gui/advanced_configuration_window.ui
+%%DATADIR%%/data/gui/advanced_menuitem_menu.ui
+%%DATADIR%%/data/gui/advanced_notifications_window.ui
+%%DATADIR%%/data/gui/atom_entry_window.ui
+%%DATADIR%%/data/gui/blocked_contacts_window.ui
+%%DATADIR%%/data/gui/change_activity_dialog.ui
+%%DATADIR%%/data/gui/change_mood_dialog.ui
+%%DATADIR%%/data/gui/change_password_dialog.ui
+%%DATADIR%%/data/gui/change_status_message_dialog.ui
+%%DATADIR%%/data/gui/chat_context_menu.ui
+%%DATADIR%%/data/gui/chat_control.ui
+%%DATADIR%%/data/gui/chat_to_muc_window.ui
+%%DATADIR%%/data/gui/choose_gpg_key_dialog.ui
+%%DATADIR%%/data/gui/contact_context_menu.ui
+%%DATADIR%%/data/gui/data_form_window.ui
+%%DATADIR%%/data/gui/dubbleinput_dialog.ui
+%%DATADIR%%/data/gui/edit_groups_dialog.ui
+%%DATADIR%%/data/gui/esession_info_window.ui
+%%DATADIR%%/data/gui/features_window.ui
+%%DATADIR%%/data/gui/filetransfers.ui
+%%DATADIR%%/data/gui/gajim_themes_window.ui
+%%DATADIR%%/data/gui/gc_control_popup_menu.ui
+%%DATADIR%%/data/gui/gc_occupants_menu.ui
+%%DATADIR%%/data/gui/groupchat_control.ui
+%%DATADIR%%/data/gui/groups_post_window.ui
+%%DATADIR%%/data/gui/history_manager.ui
+%%DATADIR%%/data/gui/history_window.ui
+%%DATADIR%%/data/gui/input_dialog.ui
+%%DATADIR%%/data/gui/input_text_dialog.ui
+%%DATADIR%%/data/gui/join_groupchat_window.ui
+%%DATADIR%%/data/gui/manage_bookmarks_window.ui
+%%DATADIR%%/data/gui/manage_pep_services_window.ui
+%%DATADIR%%/data/gui/manage_proxies_window.ui
+%%DATADIR%%/data/gui/manage_sounds_window.ui
+%%DATADIR%%/data/gui/message_window.ui
+%%DATADIR%%/data/gui/passphrase_dialog.ui
+%%DATADIR%%/data/gui/popup_notification_window.ui
+%%DATADIR%%/data/gui/preferences_window.ui
+%%DATADIR%%/data/gui/privacy_list_window.ui
+%%DATADIR%%/data/gui/privacy_lists_window.ui
+%%DATADIR%%/data/gui/profile_window.ui
+%%DATADIR%%/data/gui/progress_dialog.ui
+%%DATADIR%%/data/gui/remove_account_window.ui
+%%DATADIR%%/data/gui/roster_item_exchange_window.ui
+%%DATADIR%%/data/gui/roster_window.ui
+%%DATADIR%%/data/gui/search_window.ui
+%%DATADIR%%/data/gui/service_discovery_window.ui
+%%DATADIR%%/data/gui/service_registration_window.ui
+%%DATADIR%%/data/gui/single_message_window.ui
+%%DATADIR%%/data/gui/subscription_request_popup_menu.ui
+%%DATADIR%%/data/gui/subscription_request_window.ui
+%%DATADIR%%/data/gui/synchronise_select_account_dialog.ui
+%%DATADIR%%/data/gui/synchronise_select_contacts_dialog.ui
+%%DATADIR%%/data/gui/systray_context_menu.ui
+%%DATADIR%%/data/gui/vcard_information_window.ui
+%%DATADIR%%/data/gui/voip_call_received_dialog.ui
+%%DATADIR%%/data/gui/xml_console_window.ui
+%%DATADIR%%/data/gui/zeroconf_context_menu.ui
+%%DATADIR%%/data/gui/zeroconf_information_window.ui
 %%DATADIR%%/data/iconsets/dcraven/16x16/away.png
 %%DATADIR%%/data/iconsets/dcraven/16x16/chat.png
 %%DATADIR%%/data/iconsets/dcraven/16x16/closed.png
@@ -768,54 +817,7 @@ share/applications/gajim.desktop
 %%DATADIR%%/data/moods/default/worried.png
 %%DATADIR%%/data/other/cacerts.pem
 %%DATADIR%%/data/other/servers.xml
-%%DATADIR%%/data/pixmaps/agents/aim.png
-%%DATADIR%%/data/pixmaps/agents/bytestreams.png
-%%DATADIR%%/data/pixmaps/agents/conference.png
-%%DATADIR%%/data/pixmaps/agents/disc.png
-%%DATADIR%%/data/pixmaps/agents/error.png
-%%DATADIR%%/data/pixmaps/agents/facebook.png
-%%DATADIR%%/data/pixmaps/agents/gadu-gadu.png
-%%DATADIR%%/data/pixmaps/agents/http-ws.png
-%%DATADIR%%/data/pixmaps/agents/icq.png
-%%DATADIR%%/data/pixmaps/agents/irc.png
-%%DATADIR%%/data/pixmaps/agents/jabber.png
-%%DATADIR%%/data/pixmaps/agents/jud.png
-%%DATADIR%%/data/pixmaps/agents/mail.png
-%%DATADIR%%/data/pixmaps/agents/mrim.png
-%%DATADIR%%/data/pixmaps/agents/msn.png
-%%DATADIR%%/data/pixmaps/agents/pubsub.png
-%%DATADIR%%/data/pixmaps/agents/rss.png
-%%DATADIR%%/data/pixmaps/agents/sip.png
-%%DATADIR%%/data/pixmaps/agents/sms.png
-%%DATADIR%%/data/pixmaps/agents/tv.png
-%%DATADIR%%/data/pixmaps/agents/weather.png
-%%DATADIR%%/data/pixmaps/agents/yahoo.png
-%%DATADIR%%/data/pixmaps/events/chat_msg_recv.png
-%%DATADIR%%/data/pixmaps/events/connection_lost.png
-%%DATADIR%%/data/pixmaps/events/ft_done.png
-%%DATADIR%%/data/pixmaps/events/ft_error.png
-%%DATADIR%%/data/pixmaps/events/ft_request.png
-%%DATADIR%%/data/pixmaps/events/ft_stopped.png
-%%DATADIR%%/data/pixmaps/events/gc_invitation.png
-%%DATADIR%%/data/pixmaps/events/new_email_recv.png
-%%DATADIR%%/data/pixmaps/events/priv_msg_recv.png
-%%DATADIR%%/data/pixmaps/events/single_msg_recv.png
-%%DATADIR%%/data/pixmaps/events/subscription_request.png
-%%DATADIR%%/data/pixmaps/events/unsubscribed.png
 %%DATADIR%%/data/pixmaps/gajim.ico
-%%DATADIR%%/data/pixmaps/gajim.png
-%%DATADIR%%/data/pixmaps/gajim.svg
-%%DATADIR%%/data/pixmaps/gajim_about.png
-%%DATADIR%%/data/pixmaps/kbd_input.png
-%%DATADIR%%/data/pixmaps/muc_separator.png
-%%DATADIR%%/data/pixmaps/person.png
-%%DATADIR%%/data/pixmaps/receipt_missing.png
-%%DATADIR%%/data/pixmaps/security-high-big.png
-%%DATADIR%%/data/pixmaps/security-high.png
-%%DATADIR%%/data/pixmaps/security-low-big.png
-%%DATADIR%%/data/pixmaps/security-low.png
-%%DATADIR%%/data/pixmaps/upload.png
-%%DATADIR%%/data/pixmaps/warning.png
 %%DATADIR%%/data/sounds/bounce.wav
 %%DATADIR%%/data/sounds/connected.wav
 %%DATADIR%%/data/sounds/disconnected.wav
@@ -824,6 +826,60 @@ share/applications/gajim.desktop
 %%DATADIR%%/data/sounds/message1.wav
 %%DATADIR%%/data/sounds/message2.wav
 %%DATADIR%%/data/sounds/sent.wav
+%%DATADIR%%/icons/hicolor/128x128/apps/gajim-about.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gajim-cam_active.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gajim-cam_inactive.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gajim-earth.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gajim-kbd_input.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gajim-mic_active.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gajim-mic_inactive.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gajim-muc_separator.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gajim-receipt_missing.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gajim-security_high.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gajim-security_low.png
+%%DATADIR%%/icons/hicolor/16x16/actions/gajim-upload.png
+%%DATADIR%%/icons/hicolor/16x16/status/audio-mic-volume-high.png
+%%DATADIR%%/icons/hicolor/16x16/status/audio-mic-volume-low.png
+%%DATADIR%%/icons/hicolor/16x16/status/audio-mic-volume-medium.png
+%%DATADIR%%/icons/hicolor/16x16/status/audio-mic-volume-muted.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-aim.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-bytestreams.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-conference.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-disc.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-error.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-facebook.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-gadu-gadu.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-http-ws.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-icq.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-irc.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-jabber.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-jud.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-mail.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-mrim.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-msn.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-pubsub.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-rss.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-sip.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-sms.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-tv.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-weather.png
+%%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-yahoo.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gajim-chat_msg_recv.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gajim-connection_lost.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gajim-ft_done.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gajim-ft_error.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gajim-ft_request.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gajim-ft_stopped.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gajim-gc_invitation.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gajim-new_email_recv.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gajim-priv_msg_recv.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gajim-security_high.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gajim-security_low.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gajim-single_msg_recv.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gajim-subscription_request.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gajim-unsubscribed.png
+%%DATADIR%%/icons/hicolor/64x64/apps/gajim.png
+%%DATADIR%%/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/src/adhoc_commands.py
 %%DATADIR%%/src/adhoc_commands.pyc
 %%DATADIR%%/src/adhoc_commands.pyo
@@ -878,12 +934,15 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/common/__init__.py
 %%DATADIR%%/src/common/__init__.pyc
 %%DATADIR%%/src/common/__init__.pyo
+%%DATADIR%%/src/common/account.py
+%%DATADIR%%/src/common/account.pyc
+%%DATADIR%%/src/common/account.pyo
 %%DATADIR%%/src/common/atom.py
 %%DATADIR%%/src/common/atom.pyc
 %%DATADIR%%/src/common/atom.pyo
-%%DATADIR%%/src/common/caps.py
-%%DATADIR%%/src/common/caps.pyc
-%%DATADIR%%/src/common/caps.pyo
+%%DATADIR%%/src/common/caps_cache.py
+%%DATADIR%%/src/common/caps_cache.pyc
+%%DATADIR%%/src/common/caps_cache.pyo
 %%DATADIR%%/src/common/check_paths.py
 %%DATADIR%%/src/common/check_paths.pyc
 %%DATADIR%%/src/common/check_paths.pyo
@@ -932,6 +991,9 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/common/gajim.py
 %%DATADIR%%/src/common/gajim.pyc
 %%DATADIR%%/src/common/gajim.pyo
+%%DATADIR%%/src/common/ged.py
+%%DATADIR%%/src/common/ged.pyc
+%%DATADIR%%/src/common/ged.pyo
 %%DATADIR%%/src/common/helpers.py
 %%DATADIR%%/src/common/helpers.pyc
 %%DATADIR%%/src/common/helpers.pyo
@@ -941,18 +1003,39 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/common/idle.py
 %%DATADIR%%/src/common/idle.pyc
 %%DATADIR%%/src/common/idle.pyo
+%%DATADIR%%/src/common/jingle.py
+%%DATADIR%%/src/common/jingle.pyc
+%%DATADIR%%/src/common/jingle.pyo
+%%DATADIR%%/src/common/jingle_content.py
+%%DATADIR%%/src/common/jingle_content.pyc
+%%DATADIR%%/src/common/jingle_content.pyo
+%%DATADIR%%/src/common/jingle_rtp.py
+%%DATADIR%%/src/common/jingle_rtp.pyc
+%%DATADIR%%/src/common/jingle_rtp.pyo
+%%DATADIR%%/src/common/jingle_session.py
+%%DATADIR%%/src/common/jingle_session.pyc
+%%DATADIR%%/src/common/jingle_session.pyo
+%%DATADIR%%/src/common/jingle_transport.py
+%%DATADIR%%/src/common/jingle_transport.pyc
+%%DATADIR%%/src/common/jingle_transport.pyo
 %%DATADIR%%/src/common/kwalletbinding.py
 %%DATADIR%%/src/common/kwalletbinding.pyc
 %%DATADIR%%/src/common/kwalletbinding.pyo
 %%DATADIR%%/src/common/latex.py
 %%DATADIR%%/src/common/latex.pyc
 %%DATADIR%%/src/common/latex.pyo
+%%DATADIR%%/src/common/location_listener.py
+%%DATADIR%%/src/common/location_listener.pyc
+%%DATADIR%%/src/common/location_listener.pyo
 %%DATADIR%%/src/common/logger.py
 %%DATADIR%%/src/common/logger.pyc
 %%DATADIR%%/src/common/logger.pyo
 %%DATADIR%%/src/common/logging_helpers.py
 %%DATADIR%%/src/common/logging_helpers.pyc
 %%DATADIR%%/src/common/logging_helpers.pyo
+%%DATADIR%%/src/common/multimedia_helpers.py
+%%DATADIR%%/src/common/multimedia_helpers.pyc
+%%DATADIR%%/src/common/multimedia_helpers.pyo
 %%DATADIR%%/src/common/optparser.py
 %%DATADIR%%/src/common/optparser.pyc
 %%DATADIR%%/src/common/optparser.pyo
@@ -962,6 +1045,15 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/common/pep.py
 %%DATADIR%%/src/common/pep.pyc
 %%DATADIR%%/src/common/pep.pyo
+%%DATADIR%%/src/common/protocol/__init__.py
+%%DATADIR%%/src/common/protocol/__init__.pyc
+%%DATADIR%%/src/common/protocol/__init__.pyo
+%%DATADIR%%/src/common/protocol/bytestream.py
+%%DATADIR%%/src/common/protocol/bytestream.pyc
+%%DATADIR%%/src/common/protocol/bytestream.pyo
+%%DATADIR%%/src/common/protocol/caps.py
+%%DATADIR%%/src/common/protocol/caps.pyc
+%%DATADIR%%/src/common/protocol/caps.pyo
 %%DATADIR%%/src/common/proxy65_manager.py
 %%DATADIR%%/src/common/proxy65_manager.pyc
 %%DATADIR%%/src/common/proxy65_manager.pyo
@@ -1100,6 +1192,9 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/gtkspell.py
 %%DATADIR%%/src/gtkspell.pyc
 %%DATADIR%%/src/gtkspell.pyo
+%%DATADIR%%/src/gui_interface.py
+%%DATADIR%%/src/gui_interface.pyc
+%%DATADIR%%/src/gui_interface.pyo
 %%DATADIR%%/src/gui_menu_builder.py
 %%DATADIR%%/src/gui_menu_builder.pyc
 %%DATADIR%%/src/gui_menu_builder.pyo
@@ -1154,15 +1249,14 @@ share/applications/gajim.desktop
 %%DATADIR%%/src/statusicon.py
 %%DATADIR%%/src/statusicon.pyc
 %%DATADIR%%/src/statusicon.pyo
-%%DATADIR%%/src/systray.py
-%%DATADIR%%/src/systray.pyc
-%%DATADIR%%/src/systray.pyo
 %%DATADIR%%/src/tooltips.py
 %%DATADIR%%/src/tooltips.pyc
 %%DATADIR%%/src/tooltips.pyo
 %%DATADIR%%/src/vcard.py
 %%DATADIR%%/src/vcard.pyc
 %%DATADIR%%/src/vcard.pyo
+share/icons/hicolor/64x64/apps/gajim.png
+share/icons/hicolor/scalable/apps/gajim.svg
 %%NLS%%share/locale/be/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/be@latin/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/gajim.mo
@@ -1180,6 +1274,7 @@ share/applications/gajim.desktop
 %%NLS%%share/locale/hr/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gajim.mo
@@ -1194,20 +1289,33 @@ share/applications/gajim.desktop
 %%NLS%%share/locale/sv/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gajim.mo
-share/pixmaps/gajim.png
-share/pixmaps/gajim.svg
-share/pixmaps/gajim_about.png
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/be@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/be@latin
 @dirrm %%DATADIR%%/src/common/zeroconf
 @dirrm %%DATADIR%%/src/common/xmpp
+@dirrm %%DATADIR%%/src/common/protocol
 @dirrm %%DATADIR%%/src/common
 @dirrm %%DATADIR%%/src/command_system/implementation
 @dirrm %%DATADIR%%/src/command_system
 @dirrm %%DATADIR%%/src
+@dirrm %%DATADIR%%/icons/hicolor/scalable/apps
+@dirrm %%DATADIR%%/icons/hicolor/scalable
+@dirrm %%DATADIR%%/icons/hicolor/64x64/apps
+@dirrm %%DATADIR%%/icons/hicolor/64x64
+@dirrm %%DATADIR%%/icons/hicolor/48x48/actions
+@dirrm %%DATADIR%%/icons/hicolor/48x48
+@dirrm %%DATADIR%%/icons/hicolor/32x32/categories
+@dirrm %%DATADIR%%/icons/hicolor/32x32
+@dirrm %%DATADIR%%/icons/hicolor/16x16/status
+@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
+@dirrm %%DATADIR%%/icons/hicolor/16x16
+@dirrm %%DATADIR%%/icons/hicolor/128x128/apps
+@dirrm %%DATADIR%%/icons/hicolor/128x128
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/data/sounds
-@dirrm %%DATADIR%%/data/pixmaps/events
-@dirrm %%DATADIR%%/data/pixmaps/agents
 @dirrm %%DATADIR%%/data/pixmaps
 @dirrm %%DATADIR%%/data/other
 @dirrm %%DATADIR%%/data/moods/default
@@ -1283,7 +1391,8 @@ share/pixmaps/gajim_about.png
 @dirrm %%DATADIR%%/data/iconsets/dcraven/16x16
 @dirrm %%DATADIR%%/data/iconsets/dcraven
 @dirrm %%DATADIR%%/data/iconsets
-@dirrm %%DATADIR%%/data/glade
+@dirrm %%DATADIR%%/data/gui
+@dirrm %%DATADIR%%/data/emoticons/tango
 @dirrm %%DATADIR%%/data/emoticons/static-big
 @dirrm %%DATADIR%%/data/emoticons/static
 @dirrm %%DATADIR%%/data/emoticons/animated
@@ -1306,4 +1415,3 @@ share/pixmaps/gajim_about.png
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
 @dirrmtry share/applications
-@dirrm lib/gajim

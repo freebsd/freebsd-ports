@@ -1,141 +1,51 @@
---- src/Makefile.in.orig	2009-11-29 00:51:54.000000000 +0300
-+++ src/Makefile.in	2010-01-02 13:43:30.000000000 +0300
-@@ -286,26 +286,36 @@
+--- src/Makefile.in	2010-09-02 23:41:57.000000000 +0400
++++ src/Makefile.in	2010-09-26 02:52:26.000000000 +0400
+@@ -236,12 +236,26 @@
+ gajimsrcdir = $(gajim_srcdir)
+ nobase_dist_gajimsrc_PYTHON = \
+ 	$(srcdir)/*.py \
++	$(srcdir)/*.pyc \
++	$(srcdir)/*.pyo \
+ 	$(srcdir)/common/*.py \
++	$(srcdir)/common/*.pyc \
++	$(srcdir)/common/*.pyo \
+ 	$(srcdir)/common/protocol/*.py \
++	$(srcdir)/common/protocol/*.pyc \
++	$(srcdir)/common/protocol/*.pyo \
+ 	$(srcdir)/common/xmpp/*.py \
++	$(srcdir)/common/xmpp/*.pyc \
++	$(srcdir)/common/xmpp/*.pyo \
+ 	$(srcdir)/common/zeroconf/*.py \
++	$(srcdir)/common/zeroconf/*.pyc \
++	$(srcdir)/common/zeroconf/*.pyo \
+ 	$(srcdir)/command_system/*.py \
+-	$(srcdir)/command_system/implementation/*.py
++	$(srcdir)/command_system/*.pyc \
++	$(srcdir)/command_system/*.pyo \
++	$(srcdir)/command_system/implementation/*.py \
++	$(srcdir)/command_system/implementation/*.pyc \
++	$(srcdir)/command_system/implementation/*.pyo
  
- @BUILD_TRAYICON_TRUE@trayicon_la_CFLAGS = $(PYGTK_CFLAGS)
- gajimsrcdir = $(pkgdatadir)/src
--gajimsrc_PYTHON = $(srcdir)/*.py
-+gajimsrc_PYTHON = $(srcdir)/*.py $(srcdir)/*.pyc $(srcdir)/*.pyo
- gajimsrc1dir = $(pkgdatadir)/src/common
- gajimsrc1_PYTHON = \
--				$(srcdir)/common/*.py
-+				$(srcdir)/common/*.py \
-+				$(srcdir)/common/*.pyc \
-+				$(srcdir)/common/*.pyo
+ MAINTAINERCLEANFILES = Makefile.in
+ all: all-am
+@@ -298,13 +312,13 @@
+ 	      $(MKDIR_P) "$(DESTDIR)$(gajimsrcdir)/$$dir"; }; \
+ 	    echo " $(INSTALL_DATA) $$xfiles '$(DESTDIR)$(gajimsrcdir)/$$dir'"; \
+ 	    $(INSTALL_DATA) $$xfiles "$(DESTDIR)$(gajimsrcdir)/$$dir" || exit $$?; }; \
+-	  if test -n "$$dlist"; then \
+-	    if test -z "$(DESTDIR)"; then \
+-	      PYTHON=$(PYTHON) $(py_compile) --basedir "$(gajimsrcdir)" $$dlist; \
+-	    else \
+-	      PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(gajimsrcdir)" $$dlist; \
+-	    fi; \
+-	  else :; fi \
++#	  if test -n "$$dlist"; then \
++#	    if test -z "$(DESTDIR)"; then \
++#	      PYTHON=$(PYTHON) $(py_compile) --basedir "$(gajimsrcdir)" $$dlist; \
++#	    else \
++#	      PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(gajimsrcdir)" $$dlist; \
++#	    fi; \
++#	  else :; fi \
+ 	done
  
- gajimsrc2dir = $(pkgdatadir)/src/common/xmpp
- gajimsrc2_PYTHON = \
--				$(srcdir)/common/xmpp/*.py
-+				$(srcdir)/common/xmpp/*.py \
-+				$(srcdir)/common/xmpp/*.pyc \
-+				$(srcdir)/common/xmpp/*.pyo
- 
- gajimsrc3dir = $(pkgdatadir)/src/common/zeroconf
- gajimsrc3_PYTHON = \
--				$(srcdir)/common/zeroconf/*.py
-+				$(srcdir)/common/zeroconf/*.py \
-+				$(srcdir)/common/zeroconf/*.pyc \
-+				$(srcdir)/common/zeroconf/*.pyo
- 
- gajimsrc4dir = $(pkgdatadir)/src/command_system
- gajimsrc4_PYTHON = \
--				   $(srcdir)/command_system/*.py
-+				   $(srcdir)/command_system/*.py \
-+				   $(srcdir)/command_system/*.pyc \
-+				   $(srcdir)/command_system/*.pyo
- 
- gajimsrc5dir = $(pkgdatadir)/src/command_system/implementation
- gajimsrc5_PYTHON = \
--				   $(srcdir)/command_system/implementation/*.py
-+				   $(srcdir)/command_system/implementation/*.py \
-+				   $(srcdir)/command_system/implementation/*.pyc \
-+				   $(srcdir)/command_system/implementation/*.pyo
- 
- DISTCLEANFILES = 
- EXTRA_DIST = $(gajimsrc_PYTHON) \
-@@ -462,14 +472,7 @@
- 	while read files; do \
- 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(gajimsrcdir)'"; \
- 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(gajimsrcdir)" || exit $$?; \
--	done || exit $$?; \
--	if test -n "$$dlist"; then \
--	  if test -z "$(DESTDIR)"; then \
--	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(gajimsrcdir)" $$dlist; \
--	  else \
--	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(gajimsrcdir)" $$dlist; \
--	  fi; \
--	else :; fi
-+	done || exit $$?;
- 
- uninstall-gajimsrcPYTHON:
- 	@$(NORMAL_UNINSTALL)
-@@ -500,14 +503,7 @@
- 	while read files; do \
- 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(gajimsrc1dir)'"; \
- 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(gajimsrc1dir)" || exit $$?; \
--	done || exit $$?; \
--	if test -n "$$dlist"; then \
--	  if test -z "$(DESTDIR)"; then \
--	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(gajimsrc1dir)" $$dlist; \
--	  else \
--	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(gajimsrc1dir)" $$dlist; \
--	  fi; \
--	else :; fi
-+	done || exit $$?;
- 
- uninstall-gajimsrc1PYTHON:
- 	@$(NORMAL_UNINSTALL)
-@@ -538,14 +534,7 @@
- 	while read files; do \
- 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(gajimsrc2dir)'"; \
- 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(gajimsrc2dir)" || exit $$?; \
--	done || exit $$?; \
--	if test -n "$$dlist"; then \
--	  if test -z "$(DESTDIR)"; then \
--	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(gajimsrc2dir)" $$dlist; \
--	  else \
--	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(gajimsrc2dir)" $$dlist; \
--	  fi; \
--	else :; fi
-+	done || exit $$?;
- 
- uninstall-gajimsrc2PYTHON:
- 	@$(NORMAL_UNINSTALL)
-@@ -576,14 +565,7 @@
- 	while read files; do \
- 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(gajimsrc3dir)'"; \
- 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(gajimsrc3dir)" || exit $$?; \
--	done || exit $$?; \
--	if test -n "$$dlist"; then \
--	  if test -z "$(DESTDIR)"; then \
--	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(gajimsrc3dir)" $$dlist; \
--	  else \
--	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(gajimsrc3dir)" $$dlist; \
--	  fi; \
--	else :; fi
-+	done || exit $$?;
- 
- uninstall-gajimsrc3PYTHON:
- 	@$(NORMAL_UNINSTALL)
-@@ -614,14 +596,7 @@
- 	while read files; do \
- 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(gajimsrc4dir)'"; \
- 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(gajimsrc4dir)" || exit $$?; \
--	done || exit $$?; \
--	if test -n "$$dlist"; then \
--	  if test -z "$(DESTDIR)"; then \
--	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(gajimsrc4dir)" $$dlist; \
--	  else \
--	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(gajimsrc4dir)" $$dlist; \
--	  fi; \
--	else :; fi
-+	done || exit $$?;
- 
- uninstall-gajimsrc4PYTHON:
- 	@$(NORMAL_UNINSTALL)
-@@ -652,14 +627,7 @@
- 	while read files; do \
- 	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(gajimsrc5dir)'"; \
- 	  $(INSTALL_DATA) $$files "$(DESTDIR)$(gajimsrc5dir)" || exit $$?; \
--	done || exit $$?; \
--	if test -n "$$dlist"; then \
--	  if test -z "$(DESTDIR)"; then \
--	    PYTHON=$(PYTHON) $(py_compile) --basedir "$(gajimsrc5dir)" $$dlist; \
--	  else \
--	    PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(gajimsrc5dir)" $$dlist; \
--	  fi; \
--	else :; fi
-+	done || exit $$?;
- 
- uninstall-gajimsrc5PYTHON:
- 	@$(NORMAL_UNINSTALL)
+ uninstall-nobase_dist_gajimsrcPYTHON:
