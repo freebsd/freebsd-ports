@@ -195,6 +195,7 @@
     SUBDIR += libdmx
     SUBDIR += libdnd
     SUBDIR += libexo
+    SUBDIR += libfm
     SUBDIR += libgnome
     SUBDIR += libgnome-java
     SUBDIR += libgnome-reference
