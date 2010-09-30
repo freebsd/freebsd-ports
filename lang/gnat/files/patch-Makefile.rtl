@@ -1,10 +1,10 @@
---- gcc/ada/Makefile.rtl.orig	2009-06-22 09:24:44.000000000 -0400
-+++ gcc/ada/Makefile.rtl	2009-06-22 09:25:12.000000000 -0400
-@@ -479,6 +479,7 @@
-   s-maccod$(objext) \
-   s-mantis$(objext) \
-   s-mastop$(objext) \
-+  s-oscons$(objext) \
+--- gcc/ada/Makefile.rtl.orig	2010-03-27 12:44:36.000000000 -0400
++++ gcc/ada/Makefile.rtl	2010-09-28 11:18:21.000000000 -0400
+@@ -505,6 +505,7 @@
+   s-memory$(objext) \
+   s-objrea$(objext) \
    s-os_lib$(objext) \
++  s-oscons$(objext) \
    s-osprim$(objext) \
    s-pack03$(objext) \
+   s-pack05$(objext) \

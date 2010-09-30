@@ -13,18 +13,21 @@
 #   using symbolic links.
 
 PORTNAME=		gnat
-PORTVERSION=		2009
-PORTREVISION=	4
+PORTVERSION=		2010
+PORTREVISION=	        0
 CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_LOCAL}:boot
 MASTER_SITE_SUBDIR=	deischen/gcc/:boot
 DISTFILES=		${gcc_srcfile}:gcc ${gnat_srcfile}:gnat
 
-MAINTAINER=		eischen@vigrid.com
+MAINTAINER=		deischen@freebsd.org
 COMMENT=		The GNU Ada Compiler system
 
 LIB_DEPENDS=		gmp.10:${PORTSDIR}/math/gmp \
 			mpfr.4:${PORTSDIR}/math/mpfr
+
+LICENSE_COMB=	multi
+LICENSE=	GPLv3 LGPL3
 
 ONLY_FOR_ARCHS=		i386
 
@@ -41,20 +44,20 @@ MAN7=			${fsf_mans:S/$/${fsf_suffix}.7/}
 
 .include <bsd.port.pre.mk>
 
-gcc_version=		4.3.4
+gcc_version=		4.3.6
 fsf_mans=		fsf-funding gfdl gpl
 fsf_suffix=		-${PORTNAME}
 gnuhost=		${CONFIGURE_TARGET}
 targlib=		${PREFIX}/lib/gcc-gnat
 targlibexec=		${PREFIX}/libexec/gcc-gnat
-gcc_srcdir=		gcc-43-src
-gnat_srcdir=		gnat-gpl-2009-src
+gcc_srcdir=		gcc-4_3-branch-src
+gnat_srcdir=		gnat-gpl-2010-src
 gcc_wrksrc=		${WRKDIR}/${gcc_srcdir}
 gnat_wrksrc=		${WRKDIR}/${gnat_srcdir}
 # http://libre.adacore.com/:gcc
 # http://libre.adacore.com/:gnat
-gcc_srcfile=		gcc-43-branch-20090519-src.tgz
-gnat_srcfile=		gnat-gpl-2009-src.tgz
+gcc_srcfile=		gcc-4_3-branch-rev160200-src.tgz
+gnat_srcfile=		gnat-gpl-2010-src.tgz
 
 PATCH_WRKSRC=		${gcc_wrksrc}
 
@@ -117,11 +120,10 @@ CONFIGURE_ENV+=		${COMPILE_DATA} CC=${GNATGCC} PATH=${have_boot}
 MAKE_ENV+=		${COMPILE_DATA} PATH=${have_boot}
 
 # Shared library handling
-WANT_SHAREDLIBS=yes
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+=	--enable-shared
 USE_LDCONFIG=	${PREFIX}/lib ${targlib}
-LIBRARY_VERSION=	2009
+LIBRARY_VERSION=	2010
 PLIST_SUB+=		SHAREDLIB=""
 .else
 CONFIGURE_ARGS+=	--disable-shared
@@ -130,15 +132,14 @@ PLIST_SUB+=		SHAREDLIB="@comment "
 
 # Check for GNAT sources.
 .if !exists(${DISTDIR}/${gnat_srcfile}) && !defined(PACKAGE_BUILDING)
-IGNORE=	Because of licensing and registration restrictions, you must fetch the source distribution manually. Please access http://libre.adacore.com/ with a web browser, register (it's free), and log in.  Download the source files: ${gnat_srcfile} ${gcc_srcfile} and place them in ${DISTDIR}.
+IGNORE=	You must fetch the source distribution manually. Please access http://libre.adacore.com/ with a web browsern and download the source files: ${gnat_srcfile} ${gcc_srcfile} placing them in ${DISTDIR}.
 .endif
 
 pre-patch:
 	@${ECHO} "===>  Applying FreeBSD ports tree patches for gcc34."
 	@${ECHO} "===>  Applying GNAT supplied patches for gcc43."
 	@( cd ${gcc_wrksrc}/; \
-	    ${CAT} ${gnat_wrksrc}/src/gcc-43.dif \
-		| ${AWK} ' { sub("\r", ""); print $0 }' | ${PATCH} ${PATCH_ARGS} )
+	    ${CAT} ${gnat_wrksrc}/src/gcc-43.dif | ${PATCH} ${PATCH_ARGS} )
 	@${ECHO} "===>  Moving GNAT compiler sources into GCC tree."
 	@( ${MV} ${gnat_wrksrc}/src/ada ${gcc_wrksrc}/gcc )
 
