@@ -1,0 +1,5 @@
+bzr-svn is a plugin that adds support for foreign Subversion
+repositories. This allows committing changes to Subversion branches
+as if they were native Bazaar branches.
+
+www: https://launchpad.net/bzr-svn
