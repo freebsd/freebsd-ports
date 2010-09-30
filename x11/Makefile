@@ -219,6 +219,7 @@
     SUBDIR += lupe
     SUBDIR += lxde-meta
     SUBDIR += lxpanel
+    SUBDIR += menu-cache
     SUBDIR += metisse
     SUBDIR += mgapdesk
     SUBDIR += mkcomposecache
