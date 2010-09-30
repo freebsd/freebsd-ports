@@ -1036,12 +1036,6 @@ share/mimelnk/application/x-pcb-netlist.desktop
 %%DATADIR%%/newlib/tests/TO99fromLED
 %%DATADIR%%/newlib/tests/UART
 %%DATADIR%%/newlib/tests/monoblock_small
-%%DATADIR%%/examples/libraries/example.inc
-%%DATADIR%%/examples/libraries/example.list
-%%DATADIR%%/examples/libraries/example.m4
-%%DATADIR%%/examples/LED
-%%DATADIR%%/examples/LED.NET
-%%DATADIR%%/examples/LED2
 %%DATADIR%%/tools/apctools.zip
 %%DATADIR%%/tools/gerbertotk.c
 %%DATADIR%%/tools/pcb2ncap.tgz
@@ -1049,8 +1043,6 @@ share/mimelnk/application/x-pcb-netlist.desktop
 %%DATADIR%%/tools/MergePCBPS
 %%DATADIR%%/tools/Merge_dimPCBPS
 %%DATADIR%%/tools/PCB2HPGL
-%%DATADIR%%/tutorial/tut1.pcb
-@dirrm %%DATADIR%%/tutorial
 @dirrm %%DATADIR%%/tools
 @dirrm %%DATADIR%%/pcblib-newlib/pci
 @dirrm %%DATADIR%%/pcblib-newlib/panasonic
@@ -1083,6 +1075,4 @@ share/mimelnk/application/x-pcb-netlist.desktop
 @dirrm %%DATADIR%%/newlib/2_pin_thru-hole_packages
 @dirrm %%DATADIR%%/newlib
 @dirrm %%DATADIR%%/m4
-@dirrm %%DATADIR%%/examples/libraries
-@dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
