@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	0.13.4
-PORTREVISION=	1
+PORTVERSION=	0.14
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.gajim.org/downloads/0.13/
+MASTER_SITES=	http://www.gajim.org/downloads/0.14/
 
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Gajim is a Jabber client based on a plugin system
@@ -39,9 +38,9 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-MAN1=		gajim.1 gajim-remote.1
+MAN1=		gajim.1 gajim-remote.1 gajim-history-manager.1
 
-EMOTICONS=	animated static static-big
+EMOTICONS=	animated static static-big tango
 ICONSETS=	dcraven gnome goojim gota jabberbulb sun transports wroop
 
 pre-build:
