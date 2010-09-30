@@ -7,6 +7,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.org/files/src/
 
@@ -70,7 +71,6 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if defined(WITH_RUBY)
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
 USE_RUBY=	yes
 PLIST_SUB+=	RUBY=""
 .else
