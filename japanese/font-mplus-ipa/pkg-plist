@@ -78,10 +78,8 @@
 @dirrmtry %%LOCAL_FONTSDIR%%
 etc/fonts/conf.avail/20-unhint-mplus-ipa.conf
 etc/fonts/conf.avail/62-fonts-mplus-ipa.conf
-@exec ln -s -f ../conf.avail/20-unhint-mplus-ipa.conf %D/etc/fonts/conf.d/20-unhint-mplus-ipa.conf
-@exec ln -s -f ../conf.avail/62-fonts-mplus-ipa.conf %D/etc/fonts/conf.d/62-fonts-mplus-ipa.conf
-@unexec rm -f %D/etc/fonts/conf.d/20-unhint-mplus-ipa.conf
-@unexec rm -f %D/etc/fonts/conf.d/62-fonts-mplus-ipa.conf
+etc/fonts/conf.d/20-unhint-mplus-ipa.conf
+etc/fonts/conf.d/62-fonts-mplus-ipa.conf
 %%X_FONTSDIR%%/TTF/M+2VM+IPAG-circle.ttf
 %%X_FONTSDIR%%/TTF/M+2P+IPAG.ttf
 %%X_FONTSDIR%%/TTF/M+2P+IPAG-circle.ttf

@@ -170,10 +170,8 @@
 @dirrmtry %%LOCAL_FONTSDIR%%
 etc/fonts/conf.avail/20-unhint-mplus.conf
 etc/fonts/conf.avail/62-fonts-mplus.conf
-@exec ln -s -f ../conf.avail/20-unhint-mplus.conf %D/etc/fonts/conf.d/20-unhint-mplust.conf
-@exec ln -s -f ../conf.avail/62-fonts-mplus.conf %D/etc/fonts/conf.d/62-fonts-mplus.conf
-@unexec rm -f %D/etc/fonts/conf.d/20-unhint-mplus.conf
-@unexec rm -f %D/etc/fonts/conf.d/62-fonts-mplus.conf
+etc/fonts/conf.d/20-unhint-mplus.conf
+etc/fonts/conf.d/62-fonts-mplus.conf
 %%X_FONTSDIR%%/misc/mplus_f10b-euro.pcf.gz
 %%X_FONTSDIR%%/misc/mplus_f10b.pcf.gz
 %%X_FONTSDIR%%/misc/mplus_f10r-euro.pcf.gz

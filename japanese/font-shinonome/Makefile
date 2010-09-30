@@ -65,9 +65,9 @@ do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${FONTNAMES:C/$/.pcf.gz/} fonts.alias ${DATADIR}
 	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/shinonome
-	${LN} -s -f ${DATADIR}/*.pcf.gz ${LOCALBASE}/${LOCAL_FONTSDIR}/shinonome/
+	${LN} -s -f ${DATADIR}/*.pcf.gz ${PREFIX}/${LOCAL_FONTSDIR}/shinonome/
 	${MKDIR} ${PREFIX}/${X_FONTSDIR}/misc
-	${LN} -s -f ${DATADIR}/*.pcf.gz ${LOCALBASE}/${X_FONTSDIR}/misc/
+	${LN} -s -f ${DATADIR}/*.pcf.gz ${PREFIX}/${X_FONTSDIR}/misc/
 
 post-install:
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

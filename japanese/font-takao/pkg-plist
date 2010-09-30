@@ -16,10 +16,8 @@
 @dirrmtry %%LOCAL_FONTSDIR%%
 etc/fonts/conf.avail/20-unhint-takao.conf
 etc/fonts/conf.avail/62-fonts-takao.conf
-@exec ln -s -f ../conf.avail/20-unhint-ipa.conf %D/etc/fonts/conf.d/20-unhint-takao.conf
-@exec ln -s -f ../conf.avail/62-fonts-ipa.conf %D/etc/fonts/conf.d/62-fonts-takao.conf
-@unexec rm -f %D/etc/fonts/conf.d/20-unhint-takao.conf
-@unexec rm -f %D/etc/fonts/conf.d/62-fonts-takao.conf
+etc/fonts/conf.d/20-unhint-takao.conf
+etc/fonts/conf.d/62-fonts-takao.conf
 %%X_FONTSDIR%%/OTF/TakaoGothic.otf
 %%X_FONTSDIR%%/OTF/TakaoPGothic.otf
 %%X_FONTSDIR%%/OTF/TakaoExGothic.otf

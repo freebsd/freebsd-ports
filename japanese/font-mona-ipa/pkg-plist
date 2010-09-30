@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/japanese/font-mona-ipa/pkg-plist,v 1.1 2009-11-29 17:53:18 hrs Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/japanese/font-mona-ipa/pkg-plist,v 1.2 2010-09-30 19:40:16 hrs Exp $
 %%DATADIR%%/ppd/OPVP-HP-Color_LaserJet_5500.ppd
 %%DATADIR%%/ppd/OPVP-HP-Color_LaserJet_4600.ppd
 %%DATADIR%%/ppd/Makefile.in
@@ -95,10 +95,8 @@
 @dirrmtry %%LOCAL_FONTSDIR%%
 etc/fonts/conf.avail/20-unhint-mona-ipa.conf
 etc/fonts/conf.avail/62-fonts-mona-ipa.conf
-@exec ln -s -f ../conf.avail/20-unhint-mona-ipa.conf %D/etc/fonts/conf.d/20-unhint-mona-ipa.conf
-@exec ln -s -f ../conf.avail/62-fonts-mona-ipa.conf %D/etc/fonts/conf.d/62-fonts-mona-ipa.conf
-@unexec rm -f %D/etc/fonts/conf.d/20-unhint-mona-ipa.conf
-@unexec rm -f %D/etc/fonts/conf.d/62-fonts-mona-ipa.conf
+etc/fonts/conf.d/20-unhint-mona-ipa.conf
+etc/fonts/conf.d/62-fonts-mona-ipa.conf
 %%X_FONTSDIR%%/TTF/ipag-mona.ttf
 %%X_FONTSDIR%%/TTF/ipagp-mona.ttf
 %%X_FONTSDIR%%/TTF/ipagui-mona.ttf
