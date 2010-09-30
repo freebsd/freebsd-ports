@@ -1,58 +1,58 @@
---- pdns_recursor.1.orig	2010-02-11 11:28:22.000000000 +0100
-+++ pdns_recursor.1	2010-02-11 11:27:38.000000000 +0100
-@@ -5,7 +5,7 @@
- .\"    Manual: 
- .\"    Source: 
+--- pdns_recursor.1.orig	2010-09-21 18:22:09.000000000 +0200
++++ pdns_recursor.1	2010-09-27 09:24:15.000000000 +0200
+@@ -7,7 +7,7 @@
+ .\"    Source: [FIXME: source]
+ .\"  Language: English
  .\"
--.TH "PDNS_RECURSOR" "1" "03/22/2008" "" ""
-+.TH "PDNS_RECURSOR" "8" "03/22/2008" "" ""
- .\" disable hyphenation
- .nh
- .\" disable justification (adjust text to left margin only)
-@@ -16,7 +16,7 @@
+-.TH "PDNS_RECURSOR" "1" "02/10/2010" "[FIXME: source]" "[FIXME: manual]"
++.TH "PDNS_RECURSOR" "8" "02/10/2010" "[FIXME: source]" "[FIXME: manual]"
+ .\" -----------------------------------------------------------------
+ .\" * set default formatting
+ .\" -----------------------------------------------------------------
+@@ -25,7 +25,7 @@
  \fIpdns_recursor\fR [\-\-daemon] [\-\-local\-address] [\-\-help, \-h] [\-\-allow\-from]
- .sp
  .SH "DESCRIPTION"
--pdns_recursor(1) is a high performance, simple and secure recursing nameserver. It currently powers over two million internet connections.
-+pdns_recursor(8) is a high performance, simple and secure recursing nameserver. It currently powers over two million internet connections.
  .sp
- The recursor is configured via a configuration file, but each item in that file can be overridden on the command line.
+-pdns_recursor(1) is a high performance, simple and secure recursing nameserver\&. It currently powers over two million internet connections\&.
++pdns_recursor(8) is a high performance, simple and secure recursing nameserver\&. It currently powers over two million internet connections\&.
  .sp
-@@ -243,7 +243,7 @@
- Website: http://wiki.powerdns.com, http://www.powerdns.com
+ The recursor is configured via a configuration file, but each item in that file can be overridden on the command line\&.
  .sp
+@@ -264,7 +264,7 @@
+ Website: \m[blue]\fBhttp://wiki\&.powerdns\&.com\fR\m[], \m[blue]\fBhttp://www\&.powerdns\&.com\fR\m[]
  .SH "SEE ALSO"
+ .sp
 -rec_control(1)
 +rec_control(8)
- .sp
  .SH "COPYING"
- Copyright \(co 2006 PowerDNS.COM BV. Free use of this software is granted under the terms of the GNU General Public License (GPL) version 2.
---- rec_control.1.orig	2010-02-11 11:28:12.000000000 +0100
-+++ rec_control.1	2010-02-11 11:27:38.000000000 +0100
-@@ -5,7 +5,7 @@
- .\"    Manual: 
- .\"    Source: 
- .\"
--.TH "REC_CONTROL" "1" "09/22/2009" "" ""
-+.TH "REC_CONTROL" "8" "09/22/2009" "" ""
- .\" disable hyphenation
- .nh
- .\" disable justification (adjust text to left margin only)
-@@ -16,7 +16,7 @@
- \fIrec_control\fR [\-\-help] [\-\-socket\-dir] [\-\-socket\-pid] command \&.\&.
  .sp
+ Copyright \(co 2006 PowerDNS\&.COM BV\&. Free use of this software is granted under the terms of the GNU General Public License (GPL) version 2\&.
+--- rec_control.1.orig	2010-09-21 18:22:09.000000000 +0200
++++ rec_control.1	2010-09-27 09:22:54.000000000 +0200
+@@ -7,7 +7,7 @@
+ .\"    Source: [FIXME: source]
+ .\"  Language: English
+ .\"
+-.TH "REC_CONTROL" "1" "08/30/2010" "[FIXME: source]" "[FIXME: manual]"
++.TH "REC_CONTROL" "8" "08/30/2010" "[FIXME: source]" "[FIXME: manual]"
+ .\" -----------------------------------------------------------------
+ .\" * set default formatting
+ .\" -----------------------------------------------------------------
+@@ -25,7 +25,7 @@
+ \fIrec_control\fR [\-\-help] [\-\-socket\-dir] [\-\-socket\-pid] command \&.\&.
  .SH "DESCRIPTION"
+ .sp
 -rec_control(1) allows the operator to control a running instance of the pdns_recursor\&.
 +rec_control(8) allows the operator to control a running instance of the pdns_recursor\&.
  .sp
- The commands that can be passed to the recursor are described on http://doc\&.powerdns\&.com/rec\-control\&.html
- .sp
-@@ -110,7 +110,7 @@
- Website: http://wiki\&.powerdns\&.com, http://www\&.powerdns\&.com
- .sp
+ The commands that can be passed to the recursor are described on \m[blue]\fBhttp://doc\&.powerdns\&.com/rec\-control\&.html\fR\m[]
+ .SH "EXAMPLES"
+@@ -133,7 +133,7 @@
+ Website: \m[blue]\fBhttp://wiki\&.powerdns\&.com\fR\m[], \m[blue]\fBhttp://www\&.powerdns\&.com\fR\m[]
  .SH "SEE ALSO"
+ .sp
 -pdns_recursor(1)
 +pdns_recursor(8)
- .sp
  .SH "COPYING"
+ .sp
  Copyright \(co 2006 PowerDNS\&.COM BV\&. Free use of this software is granted under the terms of the GNU General Public License (GPL) version 2\&.
