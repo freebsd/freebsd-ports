@@ -16,7 +16,7 @@ PROG=	gds2gdt gdt2gds
 
 SRCS.gds2gdt=	sRemoveTrailingZeros.C get_field.c stoupper.c sfind.C \
 	match_string.C sRemoveSpaces.C sRemoveWhiteSpace.C \
-	gdsStream.C gds2gdt.C
+	mystrncpy.C gdsStream.C gds2gdt.C
 
 .for P in ${PROG}
 OBJS.${P}=	${SRCS.${P}:N*.h:R:S,$,.o,g}
@@ -24,7 +24,7 @@ OBJS.${P}=	${SRCS.${P}:N*.h:R:S,$,.o,g}
 
 SRCS.gdt2gds=	sRemoveWhiteSpace.C sRemoveTrailingZeros.C \
 		get_field.c stoupper.c sfind.C match_string.C \
-		sRemoveSpaces.C gdsStream.C gdt2gds.C	
+		sRemoveSpaces.C mystrncpy.C gdsStream.C gdt2gds.C	
 
 BSD_INSTALL_PROGRAM?=	install -s -m 555
 
