@@ -7,6 +7,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	0.8.52
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -95,7 +96,7 @@ HTTP_PORT?=	80
 NGINX_ACCESSLOG?=	${NGINX_LOGDIR}/nginx-access.log
 NGINX_ERRORLOG?=	${NGINX_LOGDIR}/nginx-error.log
 
-CONFLICTS?=	nginx-0.8.*
+CONFLICTS?=	nginx-0.*
 USE_RC_SUBR=	nginx.sh
 SUB_LIST+=	WWWOWN=${WWWOWN}
 
