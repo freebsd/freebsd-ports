@@ -2534,6 +2534,7 @@ docproj-nojadetex               ports/textproc/docproj-nojadetex
 docsis                          ports/net-mgmt/docsis
 doctorj                         ports/devel/doctorj
 dodgindiamond2                  ports/games/dodgindiamond2
+doinkd                          ports/sysutils/doinkd
 dojo                            ports/www/dojo
 dojo-shrinksafe                 ports/www/dojo-shrinksafe
 dokeos                          ports/www/dokeos
@@ -2710,6 +2711,7 @@ dupfind                         ports/sysutils/dupfind
 duplicity                       ports/sysutils/duplicity
 duplicity-devel                 ports/sysutils/duplicity-devel
 duplo                           ports/devel/duplo
+duply                           ports/sysutils/duply
 dupmerge                        ports/sysutils/dupmerge
 durep                           ports/sysutils/durep
 dv2jpg                          ports/multimedia/dv2jpg
@@ -9037,6 +9039,7 @@ mars                            ports/cad/mars
 mars_nwe                        ports/net/mars_nwe
 marsnomercy                     ports/games/marsnomercy
 masqmail                        ports/mail/masqmail
+massadmin                       ports/sysutils/massadmin
 massxpert                       ports/science/massxpert
 mastergear                      ports/emulators/mastergear
 masterserver                    ports/games/masterserver
