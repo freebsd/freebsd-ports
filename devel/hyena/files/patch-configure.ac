@@ -1,0 +1,15 @@
+
+$FreeBSD$
+
+--- configure.ac.orig
++++ configure.ac
+@@ -11,6 +11,9 @@
+         AC_MSG_ERROR([You need to install pkg-config])
+ fi
+ 
++m4_include([aclocal.m4])
++m4_include([expansions.m4])
++
+ SHAMROCK_EXPAND_LIBDIR
+ SHAMROCK_EXPAND_BINDIR
+ SHAMROCK_EXPAND_DATADIR
