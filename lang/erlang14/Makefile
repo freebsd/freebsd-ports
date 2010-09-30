@@ -83,6 +83,10 @@ ONLY_FOR_ARCHS=	i386 amd64 sparc64
 REINPLACE_ARGS=	-i
 MAKE_JOBS_UNSAFE=	yes
 
+.if (${OSVERSION} < 700000)
+USE_GCC=	4.2+
+.endif
+
 .if !defined(WITHOUT_ODBC)
 DRIVER_MANAGER?=	iodbc
 .if ${DRIVER_MANAGER} == "unixodbc"
