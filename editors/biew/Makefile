@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	biew
-PORTVERSION=	6.0.0
-PORTREVISION=	1
+PORTVERSION=	6.1.0
 CATEGORIES=	editors
-MASTER_SITES=	SF
+MASTER_SITES=	SF/beye/biew/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-src
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -30,6 +29,7 @@ PLIST_FILES=	bin/biew \
 		%%DATADIR%%/biew.hlp \
 		%%DATADIR%%/golded.skn \
 		%%DATADIR%%/insight.skn \
+		%%DATADIR%%/light.skn \
 		%%DATADIR%%/standard.skn
 PLIST_DIRS=	%%DATADIR%%
 
