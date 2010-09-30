@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	notify
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,5 +16,6 @@ COMMENT=	Provides notification functionalities on cross platforms
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes
+PLIST_FILES=	bin/notify
 
 .include <bsd.port.mk>
