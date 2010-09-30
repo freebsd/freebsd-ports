@@ -1,0 +1,24 @@
+etc/xdg/menus/lxde-applications.menu
+share/desktop-directories/lxde-audio-video.directory
+share/desktop-directories/lxde-development.directory
+share/desktop-directories/lxde-education.directory
+share/desktop-directories/lxde-game.directory
+share/desktop-directories/lxde-graphics.directory
+share/desktop-directories/lxde-hardware.directory
+share/desktop-directories/lxde-internet-and-network.directory
+share/desktop-directories/lxde-look-and-feel.directory
+share/desktop-directories/lxde-menu-applications.directory
+share/desktop-directories/lxde-menu-system.directory
+share/desktop-directories/lxde-network.directory
+share/desktop-directories/lxde-office.directory
+share/desktop-directories/lxde-other.directory
+share/desktop-directories/lxde-personal.directory
+share/desktop-directories/lxde-settings-system.directory
+share/desktop-directories/lxde-settings.directory
+share/desktop-directories/lxde-system-tools.directory
+share/desktop-directories/lxde-system.directory
+share/desktop-directories/lxde-utility-accessibility.directory
+share/desktop-directories/lxde-utility.directory
+@dirrmtry etc/xdg/menus
+@dirrmtry etc/xdg
+@dirrmtry share/desktop-directories
