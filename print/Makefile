@@ -221,6 +221,7 @@
     SUBDIR += pdflib
     SUBDIR += pdflib-perl
     SUBDIR += pdfmerge
+    SUBDIR += pdfmod
     SUBDIR += pdftk
     SUBDIR += pdq
     SUBDIR += pear-File_PDF
