@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	lxde-common
-PORTVERSION=	0.3.2.1
-PORTREVISION=	3
+PORTVERSION=	0.5.0
 CATEGORIES=	misc
-MASTER_SITES=	SF/lxde/${PORTNAME}%20%28default%20config%29/LXDE%20Common%20${PORTVERSION}
+MASTER_SITES=	SF/lxde/${PORTNAME}%20%28default%20config%29/lxde-common%20${PORTVERSION}
 
-MAINTAINER=	sahne@0x90.at
+MAINTAINER=	kmoore@freebsd.org
 COMMENT=	LXDE Common files
 
-USE_BZIP2=	YES
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_ICONV=	yes
@@ -29,10 +27,7 @@ DATADIR=	${PREFIX}/share/lxde
 INSTALLS_ICONS=	YES
 
 MAN1=	startlxde.1\
-	lxde-logout.1
-
-post-patch:
-	${RM} ${WRKSRC}/Makefile.in.orig
-	${RM} ${WRKSRC}/icon-theme/Makefile.in.orig
+	lxde-logout.1 \
+	openbox-lxde.1
 
 .include <bsd.port.mk>
