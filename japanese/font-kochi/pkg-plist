@@ -8,10 +8,8 @@
 @dirrmtry %%LOCAL_FONTSDIR%%
 etc/fonts/conf.avail/20-unhint-kochi.conf
 etc/fonts/conf.avail/62-fonts-kochi.conf
-@exec ln -s -f ../conf.avail/20-unhint-kochi.conf %D/etc/fonts/conf.d/20-unhint-kochi.conf
-@exec ln -s -f ../conf.avail/62-fonts-kochi.conf %D/etc/fonts/conf.d/62-fonts-kochi.conf
-@unexec rm -f %D/etc/fonts/conf.d/20-unhint-kochi.conf
-@unexec rm -f %D/etc/fonts/conf.d/62-fonts-kochi.conf
+etc/fonts/conf.d/20-unhint-kochi.conf
+etc/fonts/conf.d/62-fonts-kochi.conf
 %%X_FONTSDIR%%/TTF/kochi-mincho-subst.ttf
 %%X_FONTSDIR%%/TTF/kochi-gothic-subst.ttf
 @exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true

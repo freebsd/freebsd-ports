@@ -34,12 +34,12 @@ X_FONTSDIR=	lib/X11/fonts
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${DATADIR}
-	${MKDIR} ${LOCALBASE}/${LOCAL_FONTSDIR}/TTF
+	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TTF
 	${LN} -s -f \
-		${DATADIR}/*.ttf ${LOCALBASE}/${LOCAL_FONTSDIR}/TTF/
-	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/TTF
+		${DATADIR}/*.ttf ${PREFIX}/${LOCAL_FONTSDIR}/TTF/
+	${MKDIR} ${PREFIX}/${X_FONTSDIR}/TTF
 	${LN} -s -f \
-		${DATADIR}/*.ttf ${LOCALBASE}/${X_FONTSDIR}/TTF/
+		${DATADIR}/*.ttf ${PREFIX}/${X_FONTSDIR}/TTF/
 	${INSTALL_DATA} ${FILESDIR}/20-unhint-sazanami.conf \
 		${FILESDIR}/62-fonts-sazanami.conf \
 		${PREFIX}/etc/fonts/conf.avail
@@ -53,7 +53,7 @@ do-install:
 .endif
 
 post-install:
-	${LOCALBASE}/bin/fc-cache -s -f -v ${LOCALBASE}/${X_FONTSDIR}/TTF
+	${LOCALBASE}/bin/fc-cache -s -f -v ${PREFIX}/${X_FONTSDIR}/TTF
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

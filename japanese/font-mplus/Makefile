@@ -55,16 +55,16 @@ do-install-bitmap:
 		${SH} ${WRKDIR}/mplus_bitmap_fonts-2.2.4/install_mplus_fonts
 	${INSTALL_DATA} ${WRKDIR}/fonts.alias ${DATADIR}/bitmap
 	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/mplus
-	${LN} -s -f ${DATADIR}/bitmap/*.pcf.gz ${LOCALBASE}/${LOCAL_FONTSDIR}/mplus/
+	${LN} -s -f ${DATADIR}/bitmap/*.pcf.gz ${PREFIX}/${LOCAL_FONTSDIR}/mplus/
 	${MKDIR} ${PREFIX}/${X_FONTSDIR}/misc
-	${LN} -s -f ${DATADIR}/bitmap/*.pcf.gz ${LOCALBASE}/${X_FONTSDIR}/misc/
+	${LN} -s -f ${DATADIR}/bitmap/*.pcf.gz ${PREFIX}/${X_FONTSDIR}/misc/
 
 do-install-outline:
 	${INSTALL_DATA} ${WRKDIR}/mplus-TESTFLIGHT-031/*.ttf ${DATADIR}/TTF
 	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/TTF
-	${LN} -s -f ${DATADIR}/TTF/*.ttf ${LOCALBASE}/${LOCAL_FONTSDIR}/TTF/
-	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/TTF
-	${LN} -s -f ${DATADIR}/TTF/*.ttf ${LOCALBASE}/${X_FONTSDIR}/TTF/
+	${LN} -s -f ${DATADIR}/TTF/*.ttf ${PREFIX}/${LOCAL_FONTSDIR}/TTF/
+	${MKDIR} ${PREFIX}/${X_FONTSDIR}/TTF
+	${LN} -s -f ${DATADIR}/TTF/*.ttf ${PREFIX}/${X_FONTSDIR}/TTF/
 	${INSTALL_DATA} ${FILESDIR}/20-unhint-mplus.conf \
 		${FILESDIR}/62-fonts-mplus.conf \
 		${PREFIX}/etc/fonts/conf.avail

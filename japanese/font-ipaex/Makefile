@@ -38,11 +38,11 @@ do-install:
 	${MKDIR} ${PREFIX}/${LOCAL_FONTSDIR}/OTF
 	${LN} -s -f \
 		${DATADIR}/ipaex*.otf \
-		${LOCALBASE}/${LOCAL_FONTSDIR}/OTF/
-	${MKDIR} ${LOCALBASE}/${X_FONTSDIR}/OTF
+		${PREFIX}/${LOCAL_FONTSDIR}/OTF/
+	${MKDIR} ${PREFIX}/${X_FONTSDIR}/OTF
 	${LN} -s -f \
 		${DATADIR}/ipaex*.otf \
-		${LOCALBASE}/${X_FONTSDIR}/OTF/
+		${PREFIX}/${X_FONTSDIR}/OTF/
 	${INSTALL_DATA} ${FILESDIR}/20-unhint-ipaex.conf \
 		${FILESDIR}/62-fonts-ipaex.conf \
 		${PREFIX}/etc/fonts/conf.avail
@@ -56,7 +56,7 @@ do-install:
 .endif
 
 post-install:
-	${LOCALBASE}/bin/fc-cache -f -v ${LOCALBASE}/${X_FONTSDIR}/OTF
+	${LOCALBASE}/bin/fc-cache -f -v ${PREFIX}/${X_FONTSDIR}/OTF
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
