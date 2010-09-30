@@ -11,8 +11,10 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fourcalorieservers.com/ports/x11-toolkits/xscoop/ \
 		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}/sources/
 
-MAINTAINER=	rscheckelhoff@fourcalorieservers.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X library detective
+
+BROKEN=		does not fetch
 
 MAN7=		xscoop.7
 PLIST_FILES=	bin/xscoop
