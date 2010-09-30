@@ -1,15 +1,16 @@
---- src/plugins/cpu/cpu.c.orig	2008-06-21 13:06:29.000000000 +0800
-+++ src/plugins/cpu/cpu.c	2008-06-21 13:14:46.000000000 +0800
-@@ -18,14 +18,24 @@
+--- src/plugins/cpu/cpu.c.orig	2010-02-08 01:37:52.000000000 -0500
++++ src/plugins/cpu/cpu.c	2010-09-24 12:30:27.856886131 -0400
+@@ -19,12 +19,24 @@
   * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
   *
   */
 -/*A little bug fixed by Mykola <mykola@2ka.mipt.ru>:) */
++
 +/*
 + * A little bug fixed by Mykola <mykola@2ka.mipt.ru> :)
 + * FreeBSD support added by Andreas Wiese <aw@instandbesetzt.net>
 + */
- 
++
  
  #include <string.h>
  #include <sys/time.h>
@@ -19,17 +20,16 @@
 +# include <sys/types.h>
 +# include <sys/resource.h>
 +# include <sys/sysctl.h>
++# include <stdio.h>
 +#else
 +# include <sys/sysinfo.h>
 +#endif
  #include <stdlib.h>
-+#include <stdio.h>
  #include <glib/gi18n.h>
  
- #include "plugin.h"
-@@ -59,6 +69,38 @@
-     struct cpu_stat cpu_anterior;
- } cpu_t;
+@@ -65,6 +77,39 @@
+ static int cpu_constructor(Plugin * p, char ** fp);
+ static void cpu_destructor(Plugin * p);
  
 +#ifdef __FreeBSD__
 +static void
@@ -41,16 +41,16 @@
 +
 +
 +    if(init == 0) {
-+	struct clockinfo ci;
-+	j = sizeof(ci);
-+	sysctlbyname("kern.clockrate", &ci, &j, NULL, 0);
-+	realhz = ci.stathz ? ci.stathz : ci.hz;
++      struct clockinfo ci;
++      j = sizeof(ci);
++      sysctlbyname("kern.clockrate", &ci, &j, NULL, 0);
++      realhz = ci.stathz ? ci.stathz : ci.hz;
 +
-+	j = 2;
-+	sysctlnametomib("kern.cp_time", mib, &j);
++      j = 2;
++      sysctlnametomib("kern.cp_time", mib, &j);
 +
-+	init = 1;
-+	j = sizeof(ct);
++      init = 1;
++      j = sizeof(ct);
 +    }
 +
 +    sysctl(mib, 2, ct, &j, NULL, 0);
@@ -63,32 +63,31 @@
 +}
 +#endif
 +
++
+ /* Redraw after timer callback or resize. */
+ static void redraw_pixmap(CPUPlugin * c)
+ {
+@@ -99,11 +144,18 @@
+     {
+         /* Open statistics file and scan out CPU usage. */
+         struct cpu_stat cpu;
+-        FILE * stat = fopen("/proc/stat", "r");
+-        if (stat == NULL)
+-            return TRUE;
+-        int fscanf_result = fscanf(stat, "cpu %lu %lu %lu %lu", &cpu.u, &cpu.n, &cpu.s, &cpu.i);
+-        fclose(stat);
++        FILE * stat;
++
++	#ifdef __FreeBSD__
++	    get_procstat(&cpu.u, &cpu.n, &cpu.s, &cpu.i);
++	    int fscanf_result = 4;
++	#else
++	    stat = fopen("/proc/stat", "r");
++            if (stat == NULL)
++                return TRUE;
++            int fscanf_result = fscanf(stat, "cpu %lu %lu %lu %lu", &cpu.u, &cpu.n, &cpu.s, &cpu.i);
++            fclose(stat);
++	#endif
  
- static int
- cpu_update(cpu_t *c)
-@@ -66,18 +108,24 @@
-     int cpu_u=0, cpu_s=0, cpu_n=0, cpu_i=100;
-     unsigned int i;
-     struct cpu_stat cpu, cpu_r;
-+#ifndef __FreeBSD__
-     FILE *stat;
-+    #endif
-     float total;
- 
-     ENTER;
-     if(!c->pixmap)
-         RET(TRUE);
--
-+        
-+#ifdef __FreeBSD__
-+    get_procstat(&cpu.u, &cpu.n, &cpu.s, &cpu.i);
-+#else
-     stat = fopen("/proc/stat", "r");
-     if(!stat)
-         RET(TRUE);
-     fscanf(stat, "cpu %lu %lu %lu %lu", &cpu.u, &cpu.n, &cpu.s, &cpu.i);
-     fclose(stat);
-+#endif
- 
-     cpu_r.u = cpu.u - c->cpu_anterior.u;
-     cpu_r.n = cpu.n - c->cpu_anterior.n;
+         /* Ensure that fscanf succeeded. */
+         if (fscanf_result == 4)
