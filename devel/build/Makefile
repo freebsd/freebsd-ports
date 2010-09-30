@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	build
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	devel
 MASTER_SITES=	http://www.codesynthesis.com/download/${PORTNAME}/${PORTVERSION:R}/
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A massively-parallel build system implemented on top of GNU make 
-
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+COMMENT=	A massively-parallel build system implemented on top of GNU make
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
 
 MAKEFILE=	makefile
 NO_BUILD=	yes
