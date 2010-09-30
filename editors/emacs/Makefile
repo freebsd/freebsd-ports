@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -54,6 +54,7 @@ OPTIONS=	CANNA	"Canna support"			OFF \
 		DBUS	"DBus support"			ON \
 		GCONF	"GConf support"			ON \
 		GIF	"GIF images support"		ON \
+		GTK2	"Use GTK+ widgets"		ON \
 		JPEG	"JPEG images support"		ON \
 		M17N	"M17N support for text-shaping"	ON \
 		MOTIF	"Use Motif widgets"		OFF \
