@@ -2,31 +2,22 @@ bin/lxpanel
 bin/lxpanelctl
 lib/lxpanel/plugins/batt.so
 lib/lxpanel/plugins/cpu.so
+lib/lxpanel/plugins/cpufreq.so
 lib/lxpanel/plugins/deskno.so
 lib/lxpanel/plugins/kbled.so
 lib/lxpanel/plugins/netstatus.so
+lib/lxpanel/plugins/thermal.so
 lib/lxpanel/plugins/volume.so
-%%NLS%%share/locale/de/LC_MESSAGES/lxpanel.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/lxpanel.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/lxpanel.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/lxpanel.mo
-%%NLS%%share/locale/ko/LC_MESSAGES/lxpanel.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/lxpanel.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/lxpanel.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/lxpanel.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/lxpanel.mo
+lib/lxpanel/plugins/xkb.so
+libdata/pkgconfig/lxpanel.pc
+include/lxpanel/plugin.h
 %%DATADIR%%/images/background.png
+%%DATADIR%%/images/capslock-off.png
+%%DATADIR%%/images/capslock-on.png
+%%DATADIR%%/images/clock.png
+%%DATADIR%%/images/cpufreq-icon.png
 %%DATADIR%%/images/file-manager.png
-%%DATADIR%%/images/gnome-applications.png
-%%DATADIR%%/images/gnome-control-center.png
-%%DATADIR%%/images/gnome-devel.png
-%%DATADIR%%/images/gnome-fs-desktop.png
-%%DATADIR%%/images/gnome-globe.png
-%%DATADIR%%/images/gnome-graphics.png
-%%DATADIR%%/images/gnome-joystick.png
-%%DATADIR%%/images/gnome-multimedia.png
 %%DATADIR%%/images/gnome-logout.png
-%%DATADIR%%/images/gnome-settings.png
 %%DATADIR%%/images/gnome-netstatus-0-24.png
 %%DATADIR%%/images/gnome-netstatus-25-49.png
 %%DATADIR%%/images/gnome-netstatus-50-74.png
@@ -35,37 +26,166 @@ lib/lxpanel/plugins/volume.so
 %%DATADIR%%/images/gnome-netstatus-error.png
 %%DATADIR%%/images/gnome-netstatus-idle.png
 %%DATADIR%%/images/gnome-netstatus-rx.png
-%%DATADIR%%/images/gnome-netstatus-txrx.png
 %%DATADIR%%/images/gnome-netstatus-tx.png
-%%DATADIR%%/images/gnome-setting.png
-%%DATADIR%%/images/gnome-system.png
-%%DATADIR%%/images/gnome-util.png
+%%DATADIR%%/images/gnome-netstatus-txrx.png
 %%DATADIR%%/images/mute.png
+%%DATADIR%%/images/my-computer.png
 %%DATADIR%%/images/ns-bothrs.png
 %%DATADIR%%/images/ns-connected.png
 %%DATADIR%%/images/ns-disconnect.png
+%%DATADIR%%/images/ns-lock.png
 %%DATADIR%%/images/ns-problem.png
 %%DATADIR%%/images/ns-recvdata.png
 %%DATADIR%%/images/ns-senddata.png
-%%DATADIR%%/images/ns-lock.png
-%%DATADIR%%/images/capslock-on.png
-%%DATADIR%%/images/capslock-off.png
-%%DATADIR%%/images/numlock-on.png
 %%DATADIR%%/images/numlock-off.png
-%%DATADIR%%/images/scrllock-on.png
+%%DATADIR%%/images/numlock-on.png
 %%DATADIR%%/images/scrllock-off.png
-%%DATADIR%%/images/my-computer.png
-%%DATADIR%%/images/redhat-internet.png
+%%DATADIR%%/images/scrllock-on.png
 %%DATADIR%%/images/stock_volume.png
 %%DATADIR%%/images/volume.png
+%%DATADIR%%/images/window-manager.png
+%%DATADIR%%/images/xkb-flags/ae.png
+%%DATADIR%%/images/xkb-flags/am.png
+%%DATADIR%%/images/xkb-flags/ar.png
+%%DATADIR%%/images/xkb-flags/at.png
+%%DATADIR%%/images/xkb-flags/az.png
+%%DATADIR%%/images/xkb-flags/be.png
+%%DATADIR%%/images/xkb-flags/bg.png
+%%DATADIR%%/images/xkb-flags/bh.png
+%%DATADIR%%/images/xkb-flags/br.png
+%%DATADIR%%/images/xkb-flags/by.png
+%%DATADIR%%/images/xkb-flags/ca.png
+%%DATADIR%%/images/xkb-flags/ch.png
+%%DATADIR%%/images/xkb-flags/cu.png
+%%DATADIR%%/images/xkb-flags/cz.png
+%%DATADIR%%/images/xkb-flags/de.png
+%%DATADIR%%/images/xkb-flags/dj.png
+%%DATADIR%%/images/xkb-flags/dk.png
+%%DATADIR%%/images/xkb-flags/dz.png
+%%DATADIR%%/images/xkb-flags/ee.png
+%%DATADIR%%/images/xkb-flags/eg.png
+%%DATADIR%%/images/xkb-flags/es.png
+%%DATADIR%%/images/xkb-flags/eu.png
+%%DATADIR%%/images/xkb-flags/fi.png
+%%DATADIR%%/images/xkb-flags/fr.png
+%%DATADIR%%/images/xkb-flags/ge.png
+%%DATADIR%%/images/xkb-flags/gr.png
+%%DATADIR%%/images/xkb-flags/hr.png
+%%DATADIR%%/images/xkb-flags/hu.png
+%%DATADIR%%/images/xkb-flags/il.png
+%%DATADIR%%/images/xkb-flags/iq.png
+%%DATADIR%%/images/xkb-flags/is.png
+%%DATADIR%%/images/xkb-flags/it.png
+%%DATADIR%%/images/xkb-flags/jo.png
+%%DATADIR%%/images/xkb-flags/jp.png
+%%DATADIR%%/images/xkb-flags/km.png
+%%DATADIR%%/images/xkb-flags/kr.png
+%%DATADIR%%/images/xkb-flags/kw.png
+%%DATADIR%%/images/xkb-flags/la.png
+%%DATADIR%%/images/xkb-flags/lb.png
+%%DATADIR%%/images/xkb-flags/lt.png
+%%DATADIR%%/images/xkb-flags/ly.png
+%%DATADIR%%/images/xkb-flags/ma.png
+%%DATADIR%%/images/xkb-flags/mk.png
+%%DATADIR%%/images/xkb-flags/mn.png
+%%DATADIR%%/images/xkb-flags/mx.png
+%%DATADIR%%/images/xkb-flags/nl.png
+%%DATADIR%%/images/xkb-flags/no.png
+%%DATADIR%%/images/xkb-flags/om.png
+%%DATADIR%%/images/xkb-flags/pl.png
+%%DATADIR%%/images/xkb-flags/ps.png
+%%DATADIR%%/images/xkb-flags/pt.png
+%%DATADIR%%/images/xkb-flags/qa.png
+%%DATADIR%%/images/xkb-flags/qc.png
+%%DATADIR%%/images/xkb-flags/ro.png
+%%DATADIR%%/images/xkb-flags/ru.png
+%%DATADIR%%/images/xkb-flags/sa.png
+%%DATADIR%%/images/xkb-flags/sd.png
+%%DATADIR%%/images/xkb-flags/se.png
+%%DATADIR%%/images/xkb-flags/si.png
+%%DATADIR%%/images/xkb-flags/sk.png
+%%DATADIR%%/images/xkb-flags/so.png
+%%DATADIR%%/images/xkb-flags/sr.png
+%%DATADIR%%/images/xkb-flags/sy.png
+%%DATADIR%%/images/xkb-flags/th.png
+%%DATADIR%%/images/xkb-flags/tn.png
+%%DATADIR%%/images/xkb-flags/tr.png
+%%DATADIR%%/images/xkb-flags/ua.png
+%%DATADIR%%/images/xkb-flags/uk.png
+%%DATADIR%%/images/xkb-flags/un.png
+%%DATADIR%%/images/xkb-flags/us.png
+%%DATADIR%%/images/xkb-flags/uy.png
+%%DATADIR%%/images/xkb-flags/vn.png
+%%DATADIR%%/images/xkb-flags/ye.png
+%%DATADIR%%/images/xkb-flags/yu.png
+%%DATADIR%%/ui/launchbar.ui
+%%DATADIR%%/ui/netstatus.ui
+%%DATADIR%%/ui/panel-pref.ui
 %%DATADIR%%/profile/default/config
 %%DATADIR%%/profile/default/panels/panel
-%%DATADIR%%/ui/panel-pref.glade
-@dirrmtry lib/lxpanel/plugins
-@dirrmtry lib/lxpanel
-@dirrm %%DATADIR%%/ui
+%%NLS%%share/locale/af/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/bn_IN/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/da/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/de/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/el/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/es/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/es_VE/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/et/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/frp/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/he/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/id/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/it/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/ml/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/ps/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/ur_PK/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/lxpanel.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/lxpanel.mo
+@dirrm %%DATADIR%%/images/xkb-flags
+@dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/profile/default/panels
 @dirrm %%DATADIR%%/profile/default
 @dirrm %%DATADIR%%/profile
-@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
+@dirrm include/lxpanel
+@dirrmtry share/locale/es_VE/LC_MESSAGES
+@dirrmtry share/locale/es_VE
+@dirrmtry share/locale/frp/LC_MESSAGES
+@dirrmtry share/locale/frp
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
+@dirrmtry lib/lxpanel/plugins
+@dirrmtry lib/lxpanel
+@dirrmtry lib/pkgconfig

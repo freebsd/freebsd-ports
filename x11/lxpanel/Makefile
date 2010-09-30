@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	lxpanel
-PORTVERSION=	0.3.7
-PORTREVISION=	5
+PORTVERSION=	0.5.6
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION}
 
-MAINTAINER=	b89605222@ntu.edu.tw
+MAINTAINER=	kmoore@freebsd.org
 COMMENT=	LXPanel is a lightweight X11 desktop panel
+
+LIB_DEPENDS=	menu-cache.1:${PORTSDIR}/x11/menu-cache
+BUILD_DEPENDS=	${LOCALBASE}/share/desktop-directories/lxde-audio-video.directory:${PORTSDIR}/x11/lxmenu-data
 
 OPTIONS=	ALSA "enable ALSA audio architecture support" Off \
 		NLS "NLS support" On
 
 USE_XORG=	x11 xmu
-USE_GNOME=	gtk20 gnomedesktop gnomeprefix libgnome
+USE_GNOME=	gtk20 pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:110:env
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
@@ -28,12 +30,11 @@ CFLAGS+=	-I${WRKSRC}
 USE_GMAKE=	yes
 
 MAN1=		lxpanel.1 lxpanelctl.1
-WITH_ALSA=	yes
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ALSA)
-RUN_DEPENDS+=	${LINUXBASE}/lib/libasound.so.2:${PORTSDIR}/audio/linux-alsa-lib
+RUN_DEPENDS+=	${LINUXBASE}/lib/libasound.so.2:${PORTSDIR}/audio/linux-f10-alsa-lib
 .else
 CONFIGURE_ARGS+=--disable-alsa
 .endif
@@ -51,5 +52,13 @@ pre-patch:
 		${WRKSRC}/src/plugins/volume/volume-impl.c
 	@${REINPLACE_CMD} -e 's,$$(DATADIRNAME)/locale,share/locale,' \
 		${WRKSRC}/po/Makefile.in.in
+
+post-configure:
+	${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|(datadir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|(prefix)/lib/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
