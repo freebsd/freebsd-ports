@@ -67,16 +67,18 @@ do-extract:
 	(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/${_distfile} ${EXTRACT_AFTER_ARGS})
 .endfor
-.if !defined(WITHOUT_NWMOVIES)
+.if defined(BINKPLAYERFILE)
 	(cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/${NWMOVIESFILE} ${EXTRACT_AFTER_ARGS} \
 		nwmovies/binklib.so nwmovies/libdis/libdisasm.so \
 		nwmovies/nwmovies.so)
 	(cd ${WRKSRC} && ${MV} BinkPlayer nwmovies)
 .endif
-	${RM} ${WRKSRC}/lib/libSDL* ${WRKSRC}/SDL-1.2.5/* ${WRKSRC}/fixinstall \
-		${WRKSRC}/nwn
-	${RMDIR} ${WRKSRC}/SDL-1.2.5
+	${RM} ${WRKSRC}/lib/libSDL* ${WRKSRC}/fixinstall ${WRKSRC}/nwn
+	if [ -d ${WRKSRC}/SDL-1.2.5 ]; then \
+		${RM} ${WRKSRC}/SDL-1.2.5/*; \
+		${RMDIR} ${WRKSRC}/SDL-1.2.5; \
+	fi
 
 do-configure:
 	${SED} -e 's|%%NWNDATADIR%%|${NWNDATADIR}|' \
@@ -90,7 +92,7 @@ do-install:
 	${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
 	${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644
 	(cd ${DATADIR} && ${CHMOD} 0755 dmclient nwmain nwserver)
-.if !defined(WITHOUT_NWMOVIES)
+.if defined(BINKPLAYERFILE)
 	(cd ${DATADIR} && ${CHMOD} 0755 nwmovies/BinkPlayer)
 	(cd ${DATADIR}/nwmovies && ${LN} -s /compat/linux/usr/lib/libX11.so.6 libX11.so)
 	${INSTALL_SCRIPT} ${FILESDIR}/nwmovies.pl ${DATADIR}
