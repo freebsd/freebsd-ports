@@ -75,6 +75,8 @@ include/build-%%BUILD_VER%%/cxx/o-e.make
 include/build-%%BUILD_VER%%/cxx/o-l.make
 include/build-%%BUILD_VER%%/dialog.bash
 include/build-%%BUILD_VER%%/dir.make
+include/build-%%BUILD_VER%%/dist.make
+include/build-%%BUILD_VER%%/dist/functions.make
 include/build-%%BUILD_VER%%/frame.make
 include/build-%%BUILD_VER%%/git/gitignore
 include/build-%%BUILD_VER%%/git/gitignore.make
@@ -91,12 +93,47 @@ include/build-%%BUILD_VER%%/ld/configure-lib
 include/build-%%BUILD_VER%%/literals.make
 include/build-%%BUILD_VER%%/m4/m4.make
 include/build-%%BUILD_VER%%/message.make
+include/build-%%BUILD_VER%%/meta/autoconf
+include/build-%%BUILD_VER%%/meta/autoconf-functions.make
+include/build-%%BUILD_VER%%/meta/autoconf.m4
+include/build-%%BUILD_VER%%/meta/autoconf.make
+include/build-%%BUILD_VER%%/meta/automake
+include/build-%%BUILD_VER%%/meta/automake-functions.make
+include/build-%%BUILD_VER%%/meta/automake.m4
+include/build-%%BUILD_VER%%/meta/automake.make
+include/build-%%BUILD_VER%%/meta/common.m4
+include/build-%%BUILD_VER%%/meta/vc10proj
+include/build-%%BUILD_VER%%/meta/vc10proj-functions.make
+include/build-%%BUILD_VER%%/meta/vc10proj.m4
+include/build-%%BUILD_VER%%/meta/vc10proj.make
+include/build-%%BUILD_VER%%/meta/vc10sln-functions.make
+include/build-%%BUILD_VER%%/meta/vc10sln.make
+include/build-%%BUILD_VER%%/meta/vc9proj
+include/build-%%BUILD_VER%%/meta/vc9proj-functions.make
+include/build-%%BUILD_VER%%/meta/vc9proj.m4
+include/build-%%BUILD_VER%%/meta/vc9proj.make
+include/build-%%BUILD_VER%%/meta/vc9sln-functions.make
+include/build-%%BUILD_VER%%/meta/vc9sln.make
+include/build-%%BUILD_VER%%/meta/vcsln
+include/build-%%BUILD_VER%%/meta/vcsln.m4
+include/build-%%BUILD_VER%%/meta/vctest
+include/build-%%BUILD_VER%%/meta/vctest-functions.make
+include/build-%%BUILD_VER%%/meta/vctest.m4
+include/build-%%BUILD_VER%%/meta/vctest.make
+include/build-%%BUILD_VER%%/meta/windows-common.m4
 include/build-%%BUILD_VER%%/run-if-arg
 include/build-%%BUILD_VER%%/system.make
 include/build-%%BUILD_VER%%/system/config.guess
 include/build-%%BUILD_VER%%/system/config.sub
 include/build-%%BUILD_VER%%/system/configuration-rules.make
 include/build-%%BUILD_VER%%/system/configure
+@dirrm include/build-%%BUILD_VER%%/system
+@dirrm include/build-%%BUILD_VER%%/meta
+@dirrm include/build-%%BUILD_VER%%/m4
+@dirrm include/build-%%BUILD_VER%%/ld
+@dirrm include/build-%%BUILD_VER%%/install
+@dirrm include/build-%%BUILD_VER%%/git
+@dirrm include/build-%%BUILD_VER%%/dist
 @dirrm include/build-%%BUILD_VER%%/cxx/intel
 @dirrm include/build-%%BUILD_VER%%/cxx/gnu
 @dirrm include/build-%%BUILD_VER%%/cxx/generic
@@ -105,9 +142,4 @@ include/build-%%BUILD_VER%%/system/configure
 @dirrm include/build-%%BUILD_VER%%/c/gnu
 @dirrm include/build-%%BUILD_VER%%/c/generic
 @dirrm include/build-%%BUILD_VER%%/c
-@dirrm include/build-%%BUILD_VER%%/git
-@dirrm include/build-%%BUILD_VER%%/install
-@dirrm include/build-%%BUILD_VER%%/ld
-@dirrm include/build-%%BUILD_VER%%/m4
-@dirrm include/build-%%BUILD_VER%%/system
 @dirrm include/build-%%BUILD_VER%%
