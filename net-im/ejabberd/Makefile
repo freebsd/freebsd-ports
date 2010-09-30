@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ejabberd
-PORTVERSION=	2.1.4
-PORTREVISION=	1
+PORTVERSION=	2.1.5
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.process-one.net/downloads/ejabberd/${PORTVERSION}/
 
@@ -21,7 +20,6 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_OPENSSL=	yes
 USE_RC_SUBR=	${PORTNAME}
 NOPRECIOUSMAKEVARS=	yes
 
@@ -40,6 +38,14 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/COPYING
 
 .include <bsd.port.pre.mk>
+
+USE_OPENSSL=	yes
+
+.if ${OSVERSION} < 700000
+WITH_OPENSSL_PORT=      yes
+CONFIGURE_ARGS+=--with-openssl=${LOCALBASE}
+.endif
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
 .if defined(WITH_ODBC)
 CONFIGURE_ARGS+=--enable-odbc
