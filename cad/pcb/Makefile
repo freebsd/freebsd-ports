@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcb
-PORTVERSION=	20091103
+PORTVERSION=	20100929
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -26,7 +26,8 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		INSTALL_DATA="/usr/bin/install ${COPY} ${_SHROWNGRP} -m ${SHAREMODE}"
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} --disable-nls
 PORTDOCS= pcb.html pcb.ps refcard.ps pcb.pdf refcard.pdf pad.gif	\
-	puller.gif thermal.gif pad.png puller.png thermal.png
+	puller.gif thermal.gif pad.png puller.png thermal.png examples	\
+	tutorial
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-gui

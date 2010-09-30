@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig	2008-06-09 00:39:42.000000000 +0900
-+++ doc/Makefile.in	2008-06-09 00:40:06.000000000 +0900
-@@ -15,7 +15,7 @@
+--- doc/Makefile.in.orig	2010-09-30 05:52:39.000000000 +0900
++++ doc/Makefile.in	2010-10-01 03:54:10.000000000 +0900
+@@ -16,7 +16,7 @@
  @SET_MAKE@
  
  VPATH = @srcdir@
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(docdir)
- pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
- am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkglibexecdir = $(libexecdir)/@PACKAGE@
