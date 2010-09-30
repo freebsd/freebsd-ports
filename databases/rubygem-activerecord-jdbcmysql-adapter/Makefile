@@ -6,7 +6,7 @@
 
 PORTNAME=	activerecord-jdbcmysql-adapter
 PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases rubygems java
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ MAINTAINER=	avl@FreeBSD.org
 COMMENT=	An ActiveRecord driver for MySQL using JDBC running under JRuby
 
 RUN_DEPENDS=	rubygem-jdbc-mysql>=5.0.4:${PORTSDIR}/databases/rubygem-jdbc-mysql \
-		rubygem-activerecord-jdbc-adapter=0.9.2:${PORTSDIR}/databases/rubygem-activerecord-jdbc-adapter \
+		rubygem-activerecord-jdbc-adapter>=0.9.2:${PORTSDIR}/databases/rubygem-activerecord-jdbc-adapter \
 		jruby:${PORTSDIR}/lang/jruby
 
 USE_RUBY=	yes
