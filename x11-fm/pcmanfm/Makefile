@@ -7,17 +7,16 @@
 #
 
 PORTNAME=	pcmanfm
-PORTVERSION=	0.5.2
-PORTREVISION=	3
+PORTVERSION=	0.9.7
 CATEGORIES=	x11-fm
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/PCManFM%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/PCManFM2%20%2B%20Libfm%20%28experimental%29/PCManFM/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	PCMan File Manager
 
-LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
+		fm-gtk.0:${PORTSDIR}/x11/libfm
 
-USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
@@ -25,24 +24,10 @@ USE_FAM=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=--disable-desktop-integration \
-		--disable-hal
 
 OPTIONS=	NLS "Native Language Support (devel/gettext)" on
-#		HAL "Enable auto-mounthing with HAL (sysutils/hal and devel/dbus)" on
-# Disable HAL for now, it doesn't seem to work very well in this version
 
 .include <bsd.port.pre.mk>
-
-#.if !defined(WITHOUT_HAL)
-#LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal \
-#		dbus-1.3:${PORTSDIR}/devel/dbus
-#CONFIGURE_ARGS+=--enable-hal
-#PLIST_SUB+=	HAL=""
-#.else
-#CONFIGURE_ARGS+=--disable-hal
-#PLIST_SUB+=	HAL="@comment"
-#.endif
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
