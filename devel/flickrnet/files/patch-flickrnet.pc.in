@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- /dev/null
++++ flickrnet.pc.in
+@@ -0,0 +1,8 @@
++prefix=@prefix@
++exec_prefix=${prefix}
++libdir=${exec_prefix}/lib
++
++Name: Flickr .Net API Library
++Description: FlickrNet
++Version: 2.1.5
++Libs: -r:${libdir}/mono/flickrnet/FlickrNet.dll

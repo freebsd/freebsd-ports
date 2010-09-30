@@ -392,6 +392,7 @@
     SUBDIR += flexdock
     SUBDIR += flexjson
     SUBDIR += flick
+    SUBDIR += flickrnet
     SUBDIR += flowdesigner
     SUBDIR += flyspray
     SUBDIR += fnccheck
