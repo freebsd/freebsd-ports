@@ -473,6 +473,7 @@
     SUBDIR += lxinput
     SUBDIR += lxsplit
     SUBDIR += lxtask
+    SUBDIR += lxterminal
     SUBDIR += magicrescue
     SUBDIR += maint
     SUBDIR += makefs
