@@ -7,10 +7,9 @@
 
 PORTNAME=	pnp
 PORTVERSION=	0.4.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}4nagios/PNP/${PORTNAME}-${PORTVERSION}
-LICENSE=	GPLv2
 
 MAINTAINER=	rea-fbsd@codelabs.ru
 COMMENT=	Nagios performance data collector and grapher
@@ -19,12 +18,15 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool
 RUN_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
 		nagios:${PORTSDIR}/net-mgmt/nagios
 
+LICENSE=	GPLv2
+
 OPTIONS=	PDF "Use built-in fpdf library to produce PDF views" ON
 
 .include <bsd.port.options.mk>
 
 USE_PHP=	zlib gd xml pcre
 USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	'.*\.\(php\|js\|txt\)$$'
 WANT_PHP_WEB=	yes
 USE_RC_SUBR=	npcd.sh
 MAN1=		pnpsender.1
