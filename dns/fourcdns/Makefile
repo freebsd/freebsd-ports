@@ -10,8 +10,10 @@ PORTVERSION=	1.1.0
 CATEGORIES=	dns
 MASTER_SITES=	http://www.fourcalorieservers.com/ports/dns/fourcdns/
 
-MAINTAINER=	rscheckelhoff@fourcalorieservers.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple DNS server
+
+BROKEN=		does not fetch
 
 PLIST_FILES=	bin/fourcdns
 
