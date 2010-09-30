@@ -164,6 +164,7 @@
     SUBDIR += gir-repository-gnome-keyring
     SUBDIR += gnome-gpg
     SUBDIR += gnome-keyring
+    SUBDIR += gnome-keyring-sharp
     SUBDIR += gnome-password-generator
     SUBDIR += gnome-ssh-askpass
     SUBDIR += gnupg
