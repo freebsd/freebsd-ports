@@ -15,6 +15,8 @@ COMMENT=	A real-time stats parser for Half Life & its mods
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 
+BROKEN=		checksum mismatch
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USE_PHP=	yes
