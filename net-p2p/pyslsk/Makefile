@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.sensi.org/~ak/pyslsk/
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	Client for SoulSeek filesharing system
 
+DEPRECATED=	unmantaind upstream, use net-p2p/nicotine-plus
+EXPIRATION_DATE=	2010-11-24
+
 .if !defined(WITHOUT_VORBIS)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis
 .endif
