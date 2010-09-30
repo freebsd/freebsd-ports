@@ -139,7 +139,7 @@ post-patch:
 	@${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${MSG_FILE} > ${PKGMESSAGE}
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${WRKSRC}/client/dhclient.conf \
+		${WRKSRC}/client/dhclient.conf
 
 do-install:
 	${MAKE} -C ${WRKSRC}/${SUBSYS} install
