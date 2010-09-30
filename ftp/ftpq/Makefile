@@ -14,6 +14,8 @@ MASTER_SITES=	http://mark.tranchant.co.uk/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Upload queue manager for non-permanent connections
 
+BROKEN=		does not fetch
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAN1=		ftpq.1
