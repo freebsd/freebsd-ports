@@ -470,6 +470,7 @@
     SUBDIR += ltrace
     SUBDIR += luckybackup
     SUBDIR += luma
+    SUBDIR += lxinput
     SUBDIR += lxsplit
     SUBDIR += lxtask
     SUBDIR += magicrescue
