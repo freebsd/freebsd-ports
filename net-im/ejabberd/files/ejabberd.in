@@ -49,7 +49,7 @@ ejabberd_checkstatus()
 
 ejabberd_start()
 {
-    check_startmsgs && echo "Starting $name."
+    echo "Starting $name."
     su $EJABBERDUSER -c "$EJABBERDCTL --node $ejabberd_node start"
 }
 

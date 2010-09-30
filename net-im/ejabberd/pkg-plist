@@ -178,6 +178,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/captcha.sh
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/%%PORTNAME%%_zlib_drv.so
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/expat_erl.so
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/iconv_erl.so
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/sha_drv.so
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/stringprep_drv.so
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/lib/tls_drv.so
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/ca.msg
@@ -205,8 +206,11 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/vi.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/wa.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/zh.msg
 sbin/%%PORTNAME%%ctl
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/dev.html
 %%PORTDOCS%%%%DOCSDIR%%/discorus.png
 %%PORTDOCS%%%%DOCSDIR%%/guide.html
+%%PORTDOCS%%%%DOCSDIR%%/guide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_0.9.1.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_0.9.8.txt
@@ -228,6 +232,7 @@ sbin/%%PORTNAME%%ctl
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.2.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.3.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.4.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.5.txt
 %%PORTDOCS%%%%DOCSDIR%%/webadmmain.png
 %%PORTDOCS%%%%DOCSDIR%%/webadmmainru.png
 %%PORTDOCS%%%%DOCSDIR%%/yozhikheader.png
