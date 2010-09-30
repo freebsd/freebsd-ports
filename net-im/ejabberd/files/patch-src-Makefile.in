@@ -1,6 +1,6 @@
---- Makefile.in.orig	2010-03-12 11:40:41.000000000 +0100
-+++ Makefile.in	2010-04-08 17:23:18.000000000 +0200
-@@ -82,7 +82,7 @@
+--- Makefile.in.orig
++++ Makefile.in
+@@ -89,7 +89,7 @@
  SBINDIR = $(DESTDIR)@sbindir@
  
  # /lib/ejabberd/
@@ -9,7 +9,7 @@
  
  # /share/doc/ejabberd
  PACKAGE_TARNAME = @PACKAGE_TARNAME@
-@@ -108,7 +108,7 @@
+@@ -115,7 +115,7 @@
  MSGSDIR = $(PRIVDIR)/msgs
  
  # /var/lib/ejabberd/
@@ -18,7 +18,7 @@
  
  # /var/lock/ejabberdctl
  CTLLOCKDIR = $(DESTDIR)@localstatedir@/lock/ejabberdctl
-@@ -171,25 +171,22 @@
+@@ -178,25 +178,22 @@
  	#
  	# Configuration files
  	install -d -m 750 $(G_USER) $(ETCDIR)
@@ -51,3 +51,19 @@
  	#
  	# Init script
  	sed -e "s*@ctlscriptpath@*$(SBINDIR)*" \
+@@ -253,6 +250,7 @@
+ 	chmod -R 750 $(LOGDIR)
+ 	#
+ 	# Documentation
++ifndef NOPORTDOCS
+ 	install -d $(DOCDIR)
+ 	install -m 644 ../doc/dev.html $(DOCDIR)
+ 	install -m 644 ../doc/guide.html $(DOCDIR)
+@@ -262,6 +260,7 @@
+ 		&& install -m 644 ../doc/guide.pdf $(DOCDIR) \
+ 		|| echo "No ../doc/guide.pdf was built"
+ 	install -m 644 ../COPYING $(DOCDIR)
++endif
+ 
+ uninstall: uninstall-binary
+ 

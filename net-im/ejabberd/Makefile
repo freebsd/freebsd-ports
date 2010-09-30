@@ -54,10 +54,11 @@ PLIST_SUB+=	ODBC=""
 PLIST_SUB+=	ODBC="@comment "
 .endif
 
-post-patch:
-.ifdef NOPORTDOCS
-	@${REINPLACE_CMD} -e '/DOCDIR)$$/s/^/#/g' ${WRKSRC}/Makefile.in
+.if defined(NOPORTDOCS)
+MAKE_ARGS+=	NOPORTDOCS=${NOPORTDOCS}
 .endif
+
+post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/configure
 
 post-install:
