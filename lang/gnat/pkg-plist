@@ -7,7 +7,6 @@ bin/gnatfind
 bin/gnatgcc
 bin/gnatgccbug
 bin/gnatgcov
-bin/gnathtml.pl
 bin/gnatkr
 bin/gnatlink
 bin/gnatls
