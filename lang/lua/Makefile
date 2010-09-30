@@ -10,10 +10,7 @@ PORTVERSION=	5.1.4
 PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
-		ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
-		ftp://csg.uwaterloo.ca/pub/lhf/lua/ \
 		ftp://ftp.ntua.gr/pub/lang/lua/ \
-		ftp://ftp.uni-trier.de/pub/languages/lua/ \
 		ftp://ftp.gwdg.de/pub/languages/lua/
 
 PATCH_SITES=	http://www.lua.org/ftp/
