@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	20100116
-PORTREVISION=	3
+PORTVERSION=	20100926
 CATEGORIES=	net-im
-MASTER_SITES=	http://wizard.volgograd.ru/distfiles/
+MASTER_SITES=	http://www.bamus.cz/distfiles/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-2010-01-16
+DISTNAME=	${PORTNAME}-2010-09-26
 
-MAINTAINER=	dsh@wizard.volgograd.ru
+MAINTAINER=	dsh@bamus.cz
 COMMENT=	Gajim is a Jabber client based on a plugin system
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
@@ -40,9 +39,9 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.13.10.1-dev
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.14.0.1-c821dd3af25f
 
-MAN1=		gajim.1 gajim-remote.1
+MAN1=		gajim.1 gajim-history-manager.1 gajim-remote.1
 
 pre-build:
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src

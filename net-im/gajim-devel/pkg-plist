@@ -17,6 +17,8 @@ bin/gajim-remote
 %%NLS%%share/locale/gl/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gajim.mo
@@ -293,70 +295,73 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/data/emoticons/tango/tremble.png
 %%DATADIR%%/data/emoticons/tango/victory.png
 %%DATADIR%%/data/emoticons/tango/wink.png
-%%DATADIR%%/data/glade/account_context_menu.glade
-%%DATADIR%%/data/glade/account_creation_wizard_window.glade
-%%DATADIR%%/data/glade/account_modification_window.glade
-%%DATADIR%%/data/glade/accounts_window.glade
-%%DATADIR%%/data/glade/add_new_contact_window.glade
-%%DATADIR%%/data/glade/adhoc_commands_window.glade
-%%DATADIR%%/data/glade/advanced_configuration_window.glade
-%%DATADIR%%/data/glade/advanced_menuitem_menu.glade
-%%DATADIR%%/data/glade/advanced_notifications_window.glade
-%%DATADIR%%/data/glade/atom_entry_window.glade
-%%DATADIR%%/data/glade/blocked_contacts_window.glade
-%%DATADIR%%/data/glade/change_activity_dialog.glade
-%%DATADIR%%/data/glade/change_mood_dialog.glade
-%%DATADIR%%/data/glade/change_password_dialog.glade
-%%DATADIR%%/data/glade/change_status_message_dialog.glade
-%%DATADIR%%/data/glade/chat_context_menu.glade
-%%DATADIR%%/data/glade/chat_to_muc_window.glade
-%%DATADIR%%/data/glade/choose_gpg_key_dialog.glade
-%%DATADIR%%/data/glade/contact_context_menu.glade
-%%DATADIR%%/data/glade/data_form_window.glade
-%%DATADIR%%/data/glade/dubbleinput_dialog.glade
-%%DATADIR%%/data/glade/edit_groups_dialog.glade
-%%DATADIR%%/data/glade/esession_info_window.glade
-%%DATADIR%%/data/glade/features_window.glade
-%%DATADIR%%/data/glade/filetransfers.glade
-%%DATADIR%%/data/glade/gajim_themes_window.glade
-%%DATADIR%%/data/glade/gc_control_popup_menu.glade
-%%DATADIR%%/data/glade/gc_occupants_menu.glade
-%%DATADIR%%/data/glade/groups_post_window.glade
-%%DATADIR%%/data/glade/history_manager.glade
-%%DATADIR%%/data/glade/history_window.glade
-%%DATADIR%%/data/glade/input_dialog.glade
-%%DATADIR%%/data/glade/input_text_dialog.glade
-%%DATADIR%%/data/glade/join_groupchat_window.glade
-%%DATADIR%%/data/glade/manage_accounts_window.glade
-%%DATADIR%%/data/glade/manage_bookmarks_window.glade
-%%DATADIR%%/data/glade/manage_pep_services_window.glade
-%%DATADIR%%/data/glade/manage_proxies_window.glade
-%%DATADIR%%/data/glade/manage_sounds_window.glade
-%%DATADIR%%/data/glade/message_window.glade
-%%DATADIR%%/data/glade/passphrase_dialog.glade
-%%DATADIR%%/data/glade/popup_notification_window.glade
-%%DATADIR%%/data/glade/preferences_window.glade
-%%DATADIR%%/data/glade/privacy_list_window.glade
-%%DATADIR%%/data/glade/privacy_lists_window.glade
-%%DATADIR%%/data/glade/profile_window.glade
-%%DATADIR%%/data/glade/progress_dialog.glade
-%%DATADIR%%/data/glade/remove_account_window.glade
-%%DATADIR%%/data/glade/roster_item_exchange_window.glade
-%%DATADIR%%/data/glade/roster_window.glade
-%%DATADIR%%/data/glade/search_window.glade
-%%DATADIR%%/data/glade/service_discovery_window.glade
-%%DATADIR%%/data/glade/service_registration_window.glade
-%%DATADIR%%/data/glade/single_message_window.glade
-%%DATADIR%%/data/glade/subscription_request_popup_menu.glade
-%%DATADIR%%/data/glade/subscription_request_window.glade
-%%DATADIR%%/data/glade/synchronise_select_account_dialog.glade
-%%DATADIR%%/data/glade/synchronise_select_contacts_dialog.glade
-%%DATADIR%%/data/glade/systray_context_menu.glade
-%%DATADIR%%/data/glade/vcard_information_window.glade
-%%DATADIR%%/data/glade/voip_call_received_dialog.glade
-%%DATADIR%%/data/glade/xml_console_window.glade
-%%DATADIR%%/data/glade/zeroconf_context_menu.glade
-%%DATADIR%%/data/glade/zeroconf_information_window.glade
+%%DATADIR%%/data/gui/account_context_menu.ui
+%%DATADIR%%/data/gui/account_creation_wizard_window.ui
+%%DATADIR%%/data/gui/accounts_window.ui
+%%DATADIR%%/data/gui/add_new_contact_window.ui
+%%DATADIR%%/data/gui/adhoc_commands_window.ui
+%%DATADIR%%/data/gui/advanced_configuration_window.ui
+%%DATADIR%%/data/gui/advanced_menuitem_menu.ui
+%%DATADIR%%/data/gui/advanced_notifications_window.ui
+%%DATADIR%%/data/gui/archiving_preferences_window.ui
+%%DATADIR%%/data/gui/atom_entry_window.ui
+%%DATADIR%%/data/gui/blocked_contacts_window.ui
+%%DATADIR%%/data/gui/change_activity_dialog.ui
+%%DATADIR%%/data/gui/change_mood_dialog.ui
+%%DATADIR%%/data/gui/change_password_dialog.ui
+%%DATADIR%%/data/gui/change_status_message_dialog.ui
+%%DATADIR%%/data/gui/chat_context_menu.ui
+%%DATADIR%%/data/gui/chat_control.ui
+%%DATADIR%%/data/gui/chat_to_muc_window.ui
+%%DATADIR%%/data/gui/choose_gpg_key_dialog.ui
+%%DATADIR%%/data/gui/contact_context_menu.ui
+%%DATADIR%%/data/gui/data_form_window.ui
+%%DATADIR%%/data/gui/dubbleinput_dialog.ui
+%%DATADIR%%/data/gui/edit_groups_dialog.ui
+%%DATADIR%%/data/gui/esession_info_window.ui
+%%DATADIR%%/data/gui/features_window.ui
+%%DATADIR%%/data/gui/filetransfers.ui
+%%DATADIR%%/data/gui/gajim_themes_window.ui
+%%DATADIR%%/data/gui/gc_control_popup_menu.ui
+%%DATADIR%%/data/gui/gc_occupants_menu.ui
+%%DATADIR%%/data/gui/groupchat_control.ui
+%%DATADIR%%/data/gui/groups_post_window.ui
+%%DATADIR%%/data/gui/history_manager.ui
+%%DATADIR%%/data/gui/history_window.ui
+%%DATADIR%%/data/gui/input_dialog.ui
+%%DATADIR%%/data/gui/input_text_dialog.ui
+%%DATADIR%%/data/gui/item_archiving_preferences_window.ui
+%%DATADIR%%/data/gui/join_groupchat_window.ui
+%%DATADIR%%/data/gui/manage_bookmarks_window.ui
+%%DATADIR%%/data/gui/manage_pep_services_window.ui
+%%DATADIR%%/data/gui/manage_proxies_window.ui
+%%DATADIR%%/data/gui/manage_sounds_window.ui
+%%DATADIR%%/data/gui/message_window.ui
+%%DATADIR%%/data/gui/passphrase_dialog.ui
+%%DATADIR%%/data/gui/plugins_window.ui
+%%DATADIR%%/data/gui/popup_notification_window.ui
+%%DATADIR%%/data/gui/preferences_window.ui
+%%DATADIR%%/data/gui/privacy_list_window.ui
+%%DATADIR%%/data/gui/privacy_lists_window.ui
+%%DATADIR%%/data/gui/profile_window.ui
+%%DATADIR%%/data/gui/progress_dialog.ui
+%%DATADIR%%/data/gui/remove_account_window.ui
+%%DATADIR%%/data/gui/roster_item_exchange_window.ui
+%%DATADIR%%/data/gui/roster_window.ui
+%%DATADIR%%/data/gui/search_window.ui
+%%DATADIR%%/data/gui/service_discovery_window.ui
+%%DATADIR%%/data/gui/service_registration_window.ui
+%%DATADIR%%/data/gui/single_message_window.ui
+%%DATADIR%%/data/gui/subscription_request_popup_menu.ui
+%%DATADIR%%/data/gui/subscription_request_window.ui
+%%DATADIR%%/data/gui/synchronise_select_account_dialog.ui
+%%DATADIR%%/data/gui/synchronise_select_contacts_dialog.ui
+%%DATADIR%%/data/gui/systray_context_menu.ui
+%%DATADIR%%/data/gui/vcard_information_window.ui
+%%DATADIR%%/data/gui/voip_call_received_dialog.ui
+%%DATADIR%%/data/gui/xml_console_window.ui
+%%DATADIR%%/data/gui/zeroconf_context_menu.ui
+%%DATADIR%%/data/gui/zeroconf_information_window.ui
 %%DATADIR%%/data/iconsets/dcraven/16x16/away.png
 %%DATADIR%%/data/iconsets/dcraven/16x16/chat.png
 %%DATADIR%%/data/iconsets/dcraven/16x16/closed.png
@@ -863,6 +868,10 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/icons/hicolor/16x16/actions/gajim-security_high.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gajim-security_low.png
 %%DATADIR%%/icons/hicolor/16x16/actions/gajim-upload.png
+%%DATADIR%%/icons/hicolor/16x16/status/audio-mic-volume-high.png
+%%DATADIR%%/icons/hicolor/16x16/status/audio-mic-volume-low.png
+%%DATADIR%%/icons/hicolor/16x16/status/audio-mic-volume-medium.png
+%%DATADIR%%/icons/hicolor/16x16/status/audio-mic-volume-muted.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-aim.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-bytestreams.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-conference.png
@@ -885,7 +894,6 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-tv.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-weather.png
 %%DATADIR%%/icons/hicolor/32x32/categories/gajim-agent-yahoo.png
-%%DATADIR%%/icons/hicolor/64x64/apps/gajim.png
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-chat_msg_recv.png
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-connection_lost.png
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-ft_done.png
@@ -900,7 +908,77 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-single_msg_recv.png
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-subscription_request.png
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-unsubscribed.png
+%%DATADIR%%/icons/hicolor/64x64/apps/gajim.png
 %%DATADIR%%/icons/hicolor/scalable/apps/gajim.svg
+%%DATADIR%%/plugins/acronyms_expander/__init__.py
+%%DATADIR%%/plugins/acronyms_expander/__init__.pyc
+%%DATADIR%%/plugins/acronyms_expander/__init__.pyo
+%%DATADIR%%/plugins/acronyms_expander/acronyms_expander.py
+%%DATADIR%%/plugins/acronyms_expander/acronyms_expander.pyc
+%%DATADIR%%/plugins/acronyms_expander/acronyms_expander.pyo
+%%DATADIR%%/plugins/acronyms_expander/manifest.ini
+%%DATADIR%%/plugins/banner_tweaks/__init__.py
+%%DATADIR%%/plugins/banner_tweaks/__init__.pyc
+%%DATADIR%%/plugins/banner_tweaks/__init__.pyo
+%%DATADIR%%/plugins/banner_tweaks/config_dialog.ui
+%%DATADIR%%/plugins/banner_tweaks/manifest.ini
+%%DATADIR%%/plugins/banner_tweaks/plugin.py
+%%DATADIR%%/plugins/banner_tweaks/plugin.pyc
+%%DATADIR%%/plugins/banner_tweaks/plugin.pyo
+%%DATADIR%%/plugins/dbus_plugin/__init__.py
+%%DATADIR%%/plugins/dbus_plugin/__init__.pyc
+%%DATADIR%%/plugins/dbus_plugin/__init__.pyo
+%%DATADIR%%/plugins/dbus_plugin/manifest.ini
+%%DATADIR%%/plugins/dbus_plugin/plugin.py
+%%DATADIR%%/plugins/dbus_plugin/plugin.pyc
+%%DATADIR%%/plugins/dbus_plugin/plugin.pyo
+%%DATADIR%%/plugins/events_dump/__init__.py
+%%DATADIR%%/plugins/events_dump/__init__.pyc
+%%DATADIR%%/plugins/events_dump/__init__.pyo
+%%DATADIR%%/plugins/events_dump/manifest.ini
+%%DATADIR%%/plugins/events_dump/plugin.py
+%%DATADIR%%/plugins/events_dump/plugin.pyc
+%%DATADIR%%/plugins/events_dump/plugin.pyo
+%%DATADIR%%/plugins/google_translation/__init__.py
+%%DATADIR%%/plugins/google_translation/__init__.pyc
+%%DATADIR%%/plugins/google_translation/__init__.pyo
+%%DATADIR%%/plugins/google_translation/manifest.ini
+%%DATADIR%%/plugins/google_translation/plugin.py
+%%DATADIR%%/plugins/google_translation/plugin.pyc
+%%DATADIR%%/plugins/google_translation/plugin.pyo
+%%DATADIR%%/plugins/length_notifier/__init__.py
+%%DATADIR%%/plugins/length_notifier/__init__.pyc
+%%DATADIR%%/plugins/length_notifier/__init__.pyo
+%%DATADIR%%/plugins/length_notifier/config_dialog.ui
+%%DATADIR%%/plugins/length_notifier/length_notifier.py
+%%DATADIR%%/plugins/length_notifier/length_notifier.pyc
+%%DATADIR%%/plugins/length_notifier/length_notifier.pyo
+%%DATADIR%%/plugins/length_notifier/manifest.ini
+%%DATADIR%%/plugins/new_events_example/__init__.py
+%%DATADIR%%/plugins/new_events_example/__init__.pyc
+%%DATADIR%%/plugins/new_events_example/__init__.pyo
+%%DATADIR%%/plugins/new_events_example/manifest.ini
+%%DATADIR%%/plugins/new_events_example/plugin.py
+%%DATADIR%%/plugins/new_events_example/plugin.pyc
+%%DATADIR%%/plugins/new_events_example/plugin.pyo
+%%DATADIR%%/plugins/roster_buttons/__init__.py
+%%DATADIR%%/plugins/roster_buttons/__init__.pyc
+%%DATADIR%%/plugins/roster_buttons/__init__.pyo
+%%DATADIR%%/plugins/roster_buttons/manifest.ini
+%%DATADIR%%/plugins/roster_buttons/plugin.py
+%%DATADIR%%/plugins/roster_buttons/plugin.pyc
+%%DATADIR%%/plugins/roster_buttons/plugin.pyo
+%%DATADIR%%/plugins/roster_buttons/roster_buttons.ui
+%%DATADIR%%/plugins/snarl_notifications/PySnarl.py
+%%DATADIR%%/plugins/snarl_notifications/PySnarl.pyc
+%%DATADIR%%/plugins/snarl_notifications/PySnarl.pyo
+%%DATADIR%%/plugins/snarl_notifications/__init__.py
+%%DATADIR%%/plugins/snarl_notifications/__init__.pyc
+%%DATADIR%%/plugins/snarl_notifications/__init__.pyo
+%%DATADIR%%/plugins/snarl_notifications/manifest.ini
+%%DATADIR%%/plugins/snarl_notifications/plugin.py
+%%DATADIR%%/plugins/snarl_notifications/plugin.pyc
+%%DATADIR%%/plugins/snarl_notifications/plugin.pyo
 %%DATADIR%%/src/adhoc_commands.py
 %%DATADIR%%/src/adhoc_commands.pyc
 %%DATADIR%%/src/adhoc_commands.pyo
@@ -919,9 +997,9 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/src/command_system/__init__.py
 %%DATADIR%%/src/command_system/__init__.pyc
 %%DATADIR%%/src/command_system/__init__.pyo
-%%DATADIR%%/src/command_system/dispatching.py
-%%DATADIR%%/src/command_system/dispatching.pyc
-%%DATADIR%%/src/command_system/dispatching.pyo
+%%DATADIR%%/src/command_system/dispatcher.py
+%%DATADIR%%/src/command_system/dispatcher.pyc
+%%DATADIR%%/src/command_system/dispatcher.pyo
 %%DATADIR%%/src/command_system/errors.py
 %%DATADIR%%/src/command_system/errors.pyc
 %%DATADIR%%/src/command_system/errors.pyo
@@ -934,6 +1012,9 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/src/command_system/implementation/custom.py
 %%DATADIR%%/src/command_system/implementation/custom.pyc
 %%DATADIR%%/src/command_system/implementation/custom.pyo
+%%DATADIR%%/src/command_system/implementation/execute.py
+%%DATADIR%%/src/command_system/implementation/execute.pyc
+%%DATADIR%%/src/command_system/implementation/execute.pyo
 %%DATADIR%%/src/command_system/implementation/hosts.py
 %%DATADIR%%/src/command_system/implementation/hosts.pyc
 %%DATADIR%%/src/command_system/implementation/hosts.pyo
@@ -946,6 +1027,9 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/src/command_system/mapping.py
 %%DATADIR%%/src/command_system/mapping.pyc
 %%DATADIR%%/src/command_system/mapping.pyo
+%%DATADIR%%/src/command_system/tools.py
+%%DATADIR%%/src/command_system/tools.pyc
+%%DATADIR%%/src/command_system/tools.pyo
 %%DATADIR%%/src/common/GnuPG.py
 %%DATADIR%%/src/common/GnuPG.pyc
 %%DATADIR%%/src/common/GnuPG.pyo
@@ -982,6 +1066,9 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/src/common/connection_handlers.py
 %%DATADIR%%/src/common/connection_handlers.pyc
 %%DATADIR%%/src/common/connection_handlers.pyo
+%%DATADIR%%/src/common/connection_handlers_events.py
+%%DATADIR%%/src/common/connection_handlers_events.pyc
+%%DATADIR%%/src/common/connection_handlers_events.pyo
 %%DATADIR%%/src/common/contacts.py
 %%DATADIR%%/src/common/contacts.pyc
 %%DATADIR%%/src/common/contacts.pyo
@@ -1012,6 +1099,9 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/src/common/gajim.py
 %%DATADIR%%/src/common/gajim.pyc
 %%DATADIR%%/src/common/gajim.pyo
+%%DATADIR%%/src/common/ged.py
+%%DATADIR%%/src/common/ged.pyc
+%%DATADIR%%/src/common/ged.pyo
 %%DATADIR%%/src/common/helpers.py
 %%DATADIR%%/src/common/helpers.pyc
 %%DATADIR%%/src/common/helpers.pyo
@@ -1051,9 +1141,15 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/src/common/logging_helpers.py
 %%DATADIR%%/src/common/logging_helpers.pyc
 %%DATADIR%%/src/common/logging_helpers.pyo
+%%DATADIR%%/src/common/message_archiving.py
+%%DATADIR%%/src/common/message_archiving.pyc
+%%DATADIR%%/src/common/message_archiving.pyo
 %%DATADIR%%/src/common/multimedia_helpers.py
 %%DATADIR%%/src/common/multimedia_helpers.pyc
 %%DATADIR%%/src/common/multimedia_helpers.pyo
+%%DATADIR%%/src/common/nec.py
+%%DATADIR%%/src/common/nec.pyc
+%%DATADIR%%/src/common/nec.pyo
 %%DATADIR%%/src/common/optparser.py
 %%DATADIR%%/src/common/optparser.pyc
 %%DATADIR%%/src/common/optparser.pyo
@@ -1186,6 +1282,9 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/src/filetransfers_window.py
 %%DATADIR%%/src/filetransfers_window.pyc
 %%DATADIR%%/src/filetransfers_window.pyo
+%%DATADIR%%/src/gajim-remote-plugin.py
+%%DATADIR%%/src/gajim-remote-plugin.pyc
+%%DATADIR%%/src/gajim-remote-plugin.pyo
 %%DATADIR%%/src/gajim-remote.py
 %%DATADIR%%/src/gajim-remote.pyc
 %%DATADIR%%/src/gajim-remote.pyo
@@ -1246,9 +1345,27 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/src/notify.py
 %%DATADIR%%/src/notify.pyc
 %%DATADIR%%/src/notify.pyo
+%%DATADIR%%/src/plugins/__init__.py
+%%DATADIR%%/src/plugins/__init__.pyc
+%%DATADIR%%/src/plugins/__init__.pyo
+%%DATADIR%%/src/plugins/gui.py
+%%DATADIR%%/src/plugins/gui.pyc
+%%DATADIR%%/src/plugins/gui.pyo
+%%DATADIR%%/src/plugins/helpers.py
+%%DATADIR%%/src/plugins/helpers.pyc
+%%DATADIR%%/src/plugins/helpers.pyo
+%%DATADIR%%/src/plugins/plugin.py
+%%DATADIR%%/src/plugins/plugin.pyc
+%%DATADIR%%/src/plugins/plugin.pyo
+%%DATADIR%%/src/plugins/pluginmanager.py
+%%DATADIR%%/src/plugins/pluginmanager.pyc
+%%DATADIR%%/src/plugins/pluginmanager.pyo
 %%DATADIR%%/src/profile_window.py
 %%DATADIR%%/src/profile_window.pyc
 %%DATADIR%%/src/profile_window.pyo
+%%DATADIR%%/src/pycallgraph.py
+%%DATADIR%%/src/pycallgraph.pyc
+%%DATADIR%%/src/pycallgraph.pyo
 %%DATADIR%%/src/remote_control.py
 %%DATADIR%%/src/remote_control.pyc
 %%DATADIR%%/src/remote_control.pyo
@@ -1285,123 +1402,137 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%NLS%%@dirrmtry share/locale/be@latin
 %%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/gl
-@dirrm %%DATADIR%%/data/glade
-@dirrm %%DATADIR%%/data/pixmaps
-@dirrm %%DATADIR%%/data/other
-@dirrm %%DATADIR%%/data/sounds
-@dirrm %%DATADIR%%/data/activities/default/grooming
-@dirrm %%DATADIR%%/data/activities/default/eating
-@dirrm %%DATADIR%%/data/activities/default/relaxing
-@dirrm %%DATADIR%%/data/activities/default/working
-@dirrm %%DATADIR%%/data/activities/default/exercising
-@dirrm %%DATADIR%%/data/activities/default/traveling
-@dirrm %%DATADIR%%/data/activities/default/having_appointment
-@dirrm %%DATADIR%%/data/activities/default/inactive
-@dirrm %%DATADIR%%/data/activities/default/drinking
-@dirrm %%DATADIR%%/data/activities/default/unknown
-@dirrm %%DATADIR%%/data/activities/default/doing_chores
-@dirrm %%DATADIR%%/data/activities/default/talking
-@dirrm %%DATADIR%%/data/activities/default
-@dirrm %%DATADIR%%/data/activities
-@dirrm %%DATADIR%%/data/emoticons/animated
-@dirrm %%DATADIR%%/data/emoticons/static
-@dirrm %%DATADIR%%/data/emoticons/static-big
-@dirrm %%DATADIR%%/data/emoticons/tango
-@dirrm %%DATADIR%%/data/emoticons
-@dirrm %%DATADIR%%/data/iconsets/dcraven/48x48
-@dirrm %%DATADIR%%/data/iconsets/dcraven/16x16
-@dirrm %%DATADIR%%/data/iconsets/dcraven/32x32
-@dirrm %%DATADIR%%/data/iconsets/dcraven
-@dirrm %%DATADIR%%/data/iconsets/gnome/48x48
-@dirrm %%DATADIR%%/data/iconsets/gnome/16x16
-@dirrm %%DATADIR%%/data/iconsets/gnome/32x32
-@dirrm %%DATADIR%%/data/iconsets/gnome
-@dirrm %%DATADIR%%/data/iconsets/goojim/48x48
-@dirrm %%DATADIR%%/data/iconsets/goojim/16x16
-@dirrm %%DATADIR%%/data/iconsets/goojim/32x32
-@dirrm %%DATADIR%%/data/iconsets/goojim
-@dirrm %%DATADIR%%/data/iconsets/gota/48x48
-@dirrm %%DATADIR%%/data/iconsets/gota/16x16
-@dirrm %%DATADIR%%/data/iconsets/gota/32x32
-@dirrm %%DATADIR%%/data/iconsets/gota
-@dirrm %%DATADIR%%/data/iconsets/jabberbulb/48x48
-@dirrm %%DATADIR%%/data/iconsets/jabberbulb/16x16
-@dirrm %%DATADIR%%/data/iconsets/jabberbulb/32x32
-@dirrm %%DATADIR%%/data/iconsets/jabberbulb
-@dirrm %%DATADIR%%/data/iconsets/sun/48x48
-@dirrm %%DATADIR%%/data/iconsets/sun/16x16
-@dirrm %%DATADIR%%/data/iconsets/sun/32x32
-@dirrm %%DATADIR%%/data/iconsets/sun
-@dirrm %%DATADIR%%/data/iconsets/transports/mrim/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/mrim/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/mrim/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/mrim
-@dirrm %%DATADIR%%/data/iconsets/transports/msn/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/msn/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/msn/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/msn
-@dirrm %%DATADIR%%/data/iconsets/transports/tlen/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/tlen/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/tlen/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/tlen
-@dirrm %%DATADIR%%/data/iconsets/transports/aim/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/aim/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/aim/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/aim
-@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu
-@dirrm %%DATADIR%%/data/iconsets/transports/irc/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/irc/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/irc
-@dirrm %%DATADIR%%/data/iconsets/transports/facebook/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/facebook/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/facebook/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/facebook
-@dirrm %%DATADIR%%/data/iconsets/transports/icq/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/icq/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/icq/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/icq
-@dirrm %%DATADIR%%/data/iconsets/transports/yahoo/48x48
-@dirrm %%DATADIR%%/data/iconsets/transports/yahoo/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/yahoo/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/yahoo
-@dirrm %%DATADIR%%/data/iconsets/transports/weather/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/weather/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/weather
-@dirrm %%DATADIR%%/data/iconsets/transports/sms/16x16
-@dirrm %%DATADIR%%/data/iconsets/transports/sms/32x32
-@dirrm %%DATADIR%%/data/iconsets/transports/sms
-@dirrm %%DATADIR%%/data/iconsets/transports
-@dirrm %%DATADIR%%/data/iconsets/wroop/48x48
-@dirrm %%DATADIR%%/data/iconsets/wroop/16x16
-@dirrm %%DATADIR%%/data/iconsets/wroop/32x32
-@dirrm %%DATADIR%%/data/iconsets/wroop
-@dirrm %%DATADIR%%/data/iconsets
-@dirrm %%DATADIR%%/data/moods/default
-@dirrm %%DATADIR%%/data/moods
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/icons/hicolor/48x48/actions
-@dirrm %%DATADIR%%/icons/hicolor/48x48
-@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
-@dirrm %%DATADIR%%/icons/hicolor/16x16
-@dirrm %%DATADIR%%/icons/hicolor/32x32/categories
-@dirrm %%DATADIR%%/icons/hicolor/32x32
-@dirrm %%DATADIR%%/icons/hicolor/64x64/apps
-@dirrm %%DATADIR%%/icons/hicolor/64x64
-@dirrm %%DATADIR%%/icons/hicolor/scalable/apps
-@dirrm %%DATADIR%%/icons/hicolor/scalable
-@dirrm %%DATADIR%%/icons/hicolor/128x128/apps
-@dirrm %%DATADIR%%/icons/hicolor/128x128
-@dirrm %%DATADIR%%/icons/hicolor
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/src/common/protocol
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
 @dirrm %%DATADIR%%/src/common/xmpp
 @dirrm %%DATADIR%%/src/common/zeroconf
+@dirrm %%DATADIR%%/src/common/protocol
 @dirrm %%DATADIR%%/src/common
 @dirrm %%DATADIR%%/src/command_system/implementation
 @dirrm %%DATADIR%%/src/command_system
+@dirrm %%DATADIR%%/src/plugins
 @dirrm %%DATADIR%%/src
+@dirrm %%DATADIR%%/data/gui
+@dirrm %%DATADIR%%/data/emoticons/static-big
+@dirrm %%DATADIR%%/data/emoticons/static
+@dirrm %%DATADIR%%/data/emoticons/tango
+@dirrm %%DATADIR%%/data/emoticons/animated
+@dirrm %%DATADIR%%/data/emoticons
+@dirrm %%DATADIR%%/data/pixmaps
+@dirrm %%DATADIR%%/data/iconsets/transports/icq/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/icq/48x48
+@dirrm %%DATADIR%%/data/iconsets/transports/icq/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/icq
+@dirrm %%DATADIR%%/data/iconsets/transports/facebook/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/facebook/48x48
+@dirrm %%DATADIR%%/data/iconsets/transports/facebook/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/facebook
+@dirrm %%DATADIR%%/data/iconsets/transports/weather/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/weather/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/weather
+@dirrm %%DATADIR%%/data/iconsets/transports/mrim/48x48
+@dirrm %%DATADIR%%/data/iconsets/transports/mrim/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/mrim/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/mrim
+@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/48x48
+@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/gadu-gadu
+@dirrm %%DATADIR%%/data/iconsets/transports/aim/48x48
+@dirrm %%DATADIR%%/data/iconsets/transports/aim/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/aim/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/aim
+@dirrm %%DATADIR%%/data/iconsets/transports/tlen/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/tlen/48x48
+@dirrm %%DATADIR%%/data/iconsets/transports/tlen/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/tlen
+@dirrm %%DATADIR%%/data/iconsets/transports/msn/48x48
+@dirrm %%DATADIR%%/data/iconsets/transports/msn/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/msn/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/msn
+@dirrm %%DATADIR%%/data/iconsets/transports/sms/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/sms/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/sms
+@dirrm %%DATADIR%%/data/iconsets/transports/yahoo/48x48
+@dirrm %%DATADIR%%/data/iconsets/transports/yahoo/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/yahoo/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/yahoo
+@dirrm %%DATADIR%%/data/iconsets/transports/irc/32x32
+@dirrm %%DATADIR%%/data/iconsets/transports/irc/16x16
+@dirrm %%DATADIR%%/data/iconsets/transports/irc
+@dirrm %%DATADIR%%/data/iconsets/transports
+@dirrm %%DATADIR%%/data/iconsets/sun/48x48
+@dirrm %%DATADIR%%/data/iconsets/sun/32x32
+@dirrm %%DATADIR%%/data/iconsets/sun/16x16
+@dirrm %%DATADIR%%/data/iconsets/sun
+@dirrm %%DATADIR%%/data/iconsets/wroop/48x48
+@dirrm %%DATADIR%%/data/iconsets/wroop/32x32
+@dirrm %%DATADIR%%/data/iconsets/wroop/16x16
+@dirrm %%DATADIR%%/data/iconsets/wroop
+@dirrm %%DATADIR%%/data/iconsets/gnome/48x48
+@dirrm %%DATADIR%%/data/iconsets/gnome/32x32
+@dirrm %%DATADIR%%/data/iconsets/gnome/16x16
+@dirrm %%DATADIR%%/data/iconsets/gnome
+@dirrm %%DATADIR%%/data/iconsets/jabberbulb/48x48
+@dirrm %%DATADIR%%/data/iconsets/jabberbulb/32x32
+@dirrm %%DATADIR%%/data/iconsets/jabberbulb/16x16
+@dirrm %%DATADIR%%/data/iconsets/jabberbulb
+@dirrm %%DATADIR%%/data/iconsets/dcraven/48x48
+@dirrm %%DATADIR%%/data/iconsets/dcraven/32x32
+@dirrm %%DATADIR%%/data/iconsets/dcraven/16x16
+@dirrm %%DATADIR%%/data/iconsets/dcraven
+@dirrm %%DATADIR%%/data/iconsets/gota/48x48
+@dirrm %%DATADIR%%/data/iconsets/gota/32x32
+@dirrm %%DATADIR%%/data/iconsets/gota/16x16
+@dirrm %%DATADIR%%/data/iconsets/gota
+@dirrm %%DATADIR%%/data/iconsets/goojim/48x48
+@dirrm %%DATADIR%%/data/iconsets/goojim/32x32
+@dirrm %%DATADIR%%/data/iconsets/goojim/16x16
+@dirrm %%DATADIR%%/data/iconsets/goojim
+@dirrm %%DATADIR%%/data/iconsets
+@dirrm %%DATADIR%%/data/moods/default
+@dirrm %%DATADIR%%/data/moods
+@dirrm %%DATADIR%%/data/activities/default/working
+@dirrm %%DATADIR%%/data/activities/default/exercising
+@dirrm %%DATADIR%%/data/activities/default/eating
+@dirrm %%DATADIR%%/data/activities/default/grooming
+@dirrm %%DATADIR%%/data/activities/default/unknown
+@dirrm %%DATADIR%%/data/activities/default/talking
+@dirrm %%DATADIR%%/data/activities/default/drinking
+@dirrm %%DATADIR%%/data/activities/default/having_appointment
+@dirrm %%DATADIR%%/data/activities/default/traveling
+@dirrm %%DATADIR%%/data/activities/default/relaxing
+@dirrm %%DATADIR%%/data/activities/default/inactive
+@dirrm %%DATADIR%%/data/activities/default/doing_chores
+@dirrm %%DATADIR%%/data/activities/default
+@dirrm %%DATADIR%%/data/activities
+@dirrm %%DATADIR%%/data/other
+@dirrm %%DATADIR%%/data/sounds
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/plugins/dbus_plugin
+@dirrm %%DATADIR%%/plugins/acronyms_expander
+@dirrm %%DATADIR%%/plugins/roster_buttons
+@dirrm %%DATADIR%%/plugins/events_dump
+@dirrm %%DATADIR%%/plugins/length_notifier
+@dirrm %%DATADIR%%/plugins/snarl_notifications
+@dirrm %%DATADIR%%/plugins/google_translation
+@dirrm %%DATADIR%%/plugins/new_events_example
+@dirrm %%DATADIR%%/plugins/banner_tweaks
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/icons/hicolor/64x64/apps
+@dirrm %%DATADIR%%/icons/hicolor/64x64
+@dirrm %%DATADIR%%/icons/hicolor/128x128/apps
+@dirrm %%DATADIR%%/icons/hicolor/128x128
+@dirrm %%DATADIR%%/icons/hicolor/16x16/status
+@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
+@dirrm %%DATADIR%%/icons/hicolor/16x16
+@dirrm %%DATADIR%%/icons/hicolor/scalable/apps
+@dirrm %%DATADIR%%/icons/hicolor/scalable
+@dirrm %%DATADIR%%/icons/hicolor/32x32/categories
+@dirrm %%DATADIR%%/icons/hicolor/32x32
+@dirrm %%DATADIR%%/icons/hicolor/48x48/actions
+@dirrm %%DATADIR%%/icons/hicolor/48x48
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
