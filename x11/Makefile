@@ -219,6 +219,7 @@
     SUBDIR += luit
     SUBDIR += lupe
     SUBDIR += lxde-meta
+    SUBDIR += lxmenu-data
     SUBDIR += lxpanel
     SUBDIR += menu-cache
     SUBDIR += metisse
