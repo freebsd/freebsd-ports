@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	treeline
-PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTVERSION=	1.2.4
 CATEGORIES=	deskutils python
 MASTER_SITES=	${MASTER_SITE_BERLIOS}:treeline \
 		http://treeline.bellz.org/plugins/:plugins \
@@ -16,7 +15,7 @@ MASTER_SITE_SUBDIR=treeline
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:treeline
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@fsck.ch
+MAINTAINER=	c0rn@o2.pl
 COMMENT=	TreeLine is a structured information storage program
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
@@ -30,6 +29,11 @@ WRKSRC=		${WRKDIR}/TreeLine
 USE_QT_VER=	4
 USE_PYTHON=	2.4+
 NO_BUILD=	yes
+LICENSE=	GPLv2
+
+DESKTOP_ENTRIES=	"TreeLine" "Structured information storage program" \
+			"${DATADIR}/icons/tree/treeline.png" "treeline" \
+			"Utility;" false
 
 .include <bsd.port.pre.mk>
 
@@ -56,6 +60,7 @@ do-install:
 	@cd ${WRKSRC} && ${PYTHON_CMD} install.py \
 	-p ${PREFIX} -d ${DOCSDIR} -i ${DATADIR}/icons -x
 .if defined(WITH_HTTPLOAD)
+	@${INSTALL_DATA} -d ${PREFIX}/lib/${PORTNAME}/plugins/
 	@${INSTALL_DATA} ${DISTDIR}/httpload2.py ${PREFIX}/lib/${PORTNAME}/plugins/
 .endif
 

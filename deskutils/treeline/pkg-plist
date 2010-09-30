@@ -225,13 +225,12 @@ lib/treeline/undo.pyc
 %%PORTDOCS%%%%DOCSDIR%%/sample_intern_links.trl
 %%PORTDOCS%%%%DOCSDIR%%/sample_other_fields.trl
 %%PORTDOCS%%%%DOCSDIR%%/sample_table_booklist.trl
-@dirrm %%DATADIR%%/icons/toolbar/16x16
 @dirrm %%DATADIR%%/icons/toolbar/32x32
 @dirrm %%DATADIR%%/icons/toolbar
 @dirrm %%DATADIR%%/icons/tree
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%
-@dirrm lib/treeline/plugins
+%%HTTPLOAD%%@dirrm lib/treeline/plugins
 @dirrm lib/treeline
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
