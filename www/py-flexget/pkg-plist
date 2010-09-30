@@ -71,6 +71,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_series.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_series.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_series.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_series_premiere.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_series_premiere.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_series_premiere.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_thetvdb.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_thetvdb.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_thetvdb.pyo
@@ -128,6 +131,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo_quality.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo_quality.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo_quality.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo_series.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo_series.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/metainfo_series.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/modify_extension.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/modify_extension.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/modify_extension.pyo
