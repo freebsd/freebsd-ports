@@ -1395,9 +1395,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/scalable/apps/deluge.svg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/deluge.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/deluge.xpm
-%%PYTHON_SITELIBDIR%%/site.py
-%%PYTHON_SITELIBDIR%%/site.pyc
-%%PYTHON_SITELIBDIR%%/site.pyo
 bin/deluge
 bin/deluge-console
 bin/deluge-gtk

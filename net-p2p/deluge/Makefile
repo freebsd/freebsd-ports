@@ -7,6 +7,7 @@
 
 PORTNAME=	deluge
 DISTVERSION=	1.3.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/source/
@@ -60,10 +61,21 @@ DESKTOP_ENTRIES=	"Deluge" \
 WITHOUT_PSYCO=	yes
 .endif
 
-# only touch easy-install.pth if we installed it ourselves which
-# happens when PREFIX differs from LOCALBASE
+# things that happen when PREFIX differs from LOCALBASE
 .if ${PREFIX} != ${LOCALBASE}
+
+# only touch easy-install.pth if we installed it ourselves
+. if !exists(${PYTHONPREFIX_SITELIBDIR}/easy-install.pth)
 PLIST_FILES+=	${PYTHON_SITELIBDIR:S;${LOCALBASE}/;;}/easy-install.pth
+. endif
+
+# only touch site.py{,c,o} if we installed it ourselves
+. for file in site.py site.pyc site.pyo
+.  if !exists(${PYTHONPREFIX_SITELIBDIR}/${file})
+PLIST_FILES+=	${PYTHON_SITELIBDIR:S;${LOCALBASE}/;;}/${file}
+.  endif
+. endfor
+
 .endif
 
 .if defined(WITH_PSYCO)
