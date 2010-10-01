@@ -161,8 +161,6 @@
     SUBDIR += cdk
     SUBDIR += cdoc
     SUBDIR += cedet
-    SUBDIR += cego-base
-    SUBDIR += cego-xml
     SUBDIR += cflow
     SUBDIR += cflow2vcg
     SUBDIR += cgdb
@@ -715,6 +713,8 @@
     SUBDIR += leaktracer
     SUBDIR += lemon
     SUBDIR += lexi
+    SUBDIR += lfc
+    SUBDIR += lfcxml
     SUBDIR += lhs2TeX
     SUBDIR += libIDL
     SUBDIR += libPropList
