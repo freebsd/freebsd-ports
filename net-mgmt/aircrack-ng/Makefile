@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aircrack-ng
-DISTVERSION=	1.0
-PORTREVISION=	1
+DISTVERSION=	1.1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://download.aircrack-ng.org/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
