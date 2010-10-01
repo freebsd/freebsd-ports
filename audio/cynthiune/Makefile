@@ -7,7 +7,7 @@
 
 PORTNAME=	cynthiune
 PORTVERSION=	0.9.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio gnustep
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/c/cynthiune.app
@@ -18,7 +18,6 @@ COMMENT=	Romantic music player for GNUstep
 
 LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
 LIB_DEPENDS+=	tag.1:${PORTSDIR}/audio/taglib
-LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
 LIB_DEPENDS+=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
 LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
@@ -37,6 +36,6 @@ WRKSRC=		${WRKDIR}/cynthiune.app-${PORTVERSION}
 ADDITIONAL_INCLUDE_DIRS+=	-I${LOCALBASE}/include/libmodplug
 ADDITIONAL_LIB_DIRS+=	-L${WRKSRC}/Frameworks/Cynthiune/Cynthiune.framework/Versions/Current
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR=${GNUSTEP_LOCAL_ROOT}
-MAKE_FLAGS=	disable-windowsmedia=yes debug=no
+MAKE_FLAGS=	disable-windowsmedia=yes disable-musepack=yes debug=no
 
 .include <bsd.port.mk>

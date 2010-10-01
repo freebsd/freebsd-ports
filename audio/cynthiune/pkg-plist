@@ -99,9 +99,6 @@ GNUstep/Local/Library/Cynthiune/MP3.format/stamp.make
 GNUstep/Local/Library/Cynthiune/Mod.format/Mod
 GNUstep/Local/Library/Cynthiune/Mod.format/Resources/Info-gnustep.plist
 GNUstep/Local/Library/Cynthiune/Mod.format/stamp.make
-GNUstep/Local/Library/Cynthiune/Musepack.format/Musepack
-GNUstep/Local/Library/Cynthiune/Musepack.format/Resources/Info-gnustep.plist
-GNUstep/Local/Library/Cynthiune/Musepack.format/stamp.make
 GNUstep/Local/Library/Cynthiune/OSS.output/OSS
 GNUstep/Local/Library/Cynthiune/OSS.output/Resources/English.lproj/Localizable.strings
 GNUstep/Local/Library/Cynthiune/OSS.output/Resources/French.lproj/Localizable.strings
@@ -173,8 +170,6 @@ GNUstep/Local/Tools/Cynthiune
 @dirrm GNUstep/Local/Library/Cynthiune/OSS.output/Resources/English.lproj
 @dirrm GNUstep/Local/Library/Cynthiune/OSS.output/Resources
 @dirrm GNUstep/Local/Library/Cynthiune/OSS.output
-@dirrm GNUstep/Local/Library/Cynthiune/Musepack.format/Resources
-@dirrm GNUstep/Local/Library/Cynthiune/Musepack.format
 @dirrm GNUstep/Local/Library/Cynthiune/Mod.format/Resources
 @dirrm GNUstep/Local/Library/Cynthiune/Mod.format
 @dirrm GNUstep/Local/Library/Cynthiune/MP3.format/Resources
