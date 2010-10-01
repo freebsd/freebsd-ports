@@ -1,5 +1,5 @@
 --- Makefile.orig	2010-02-01 01:42:12.000000000 +0800
-+++ Makefile	2010-09-14 15:54:51.000000000 +0800
++++ Makefile	2010-09-29 20:31:29.000000000 +0800
 @@ -1,8 +1,7 @@
  # Makefile for The PCI Utilities
  # (c) 1998--2010 Martin Mares <mj@ucw.cz>
@@ -10,8 +10,12 @@
  
  VERSION=3.1.7
  DATE=2010-01-31
-@@ -28,7 +27,7 @@
- PREFIX=/usr/local
+@@ -25,10 +24,10 @@
+ ABI_VERSION=.3
+ 
+ # Installation directories
+-PREFIX=/usr/local
++PREFIX=%%PREFIX%%
  SBINDIR=$(PREFIX)/sbin
  SHAREDIR=$(PREFIX)/share
 -IDSDIR=$(SHAREDIR)

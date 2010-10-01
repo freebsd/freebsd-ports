@@ -32,6 +32,9 @@ LIBPCI_FILES=	include/pci/config.h include/pci/header.h include/pci/pci.h \
 		include/pci/types.h lib/libpci.a lib/libpci.so \
 		libdata/pkgconfig/libpci.pc
 
+post-patch:
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/Makefile
+
 post-build:
 	@${REINPLACE_CMD} 's|^#include "|&pci/|' ${WRKSRC}/lib/pci.h
 
