@@ -17,6 +17,8 @@ EXTRACT_SUFX=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs major mode to create HTML files from Emacs buffers (in colour!)
 
+BROKEN=		checksum mismatch
+
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 NO_WRKSUBDIR=	yes
