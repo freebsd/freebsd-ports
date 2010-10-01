@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Class, function, and metaclass decorators
 
-USE_PYTHON=	2.4-2.6
+USE_PYTHON=	2.4-2.7
 USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 
