@@ -21,6 +21,8 @@ COMMENT=	American English male voice for Festival speech synthesis system
 RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival \
  ${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:${PORTSDIR}/audio/festlex-ogi
 
+BROKEN=		does not fetch
+
 AECDIR=		share/festival/lib/voices/english/aec_diphone
 FHOME=		${PREFIX}/share/festival
 NO_BUILD=	y
