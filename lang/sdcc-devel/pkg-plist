@@ -101,6 +101,7 @@ bin/sdld
 %%MCS51%%%%DATADIR%%/include/mcs51/8051.h
 %%MCS51%%%%DATADIR%%/include/mcs51/8052.h
 %%MCS51%%%%DATADIR%%/include/mcs51/ADuC84x.h
+%%MCS51%%%%DATADIR%%/include/mcs51/AT89C513xA.h
 %%MCS51%%%%DATADIR%%/include/mcs51/C8051F000.h
 %%MCS51%%%%DATADIR%%/include/mcs51/C8051F018.h
 %%MCS51%%%%DATADIR%%/include/mcs51/C8051F020.h

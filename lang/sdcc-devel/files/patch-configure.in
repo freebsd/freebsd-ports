@@ -1,21 +1,6 @@
---- configure.in.orig	2010-03-25 00:36:28.000000000 +0100
-+++ configure.in	2010-04-20 17:38:29.000000000 +0200
-@@ -93,13 +93,12 @@
- # -----------------------
- # Shell function body for _AC_EXECUTE_IFELSE.
- m4_define([_bor_EXECUTE_IFELSE_BODY],
--[  AS_LINENO_PUSH([$[]1])
-+[
-   AS_IF([_AC_DO_STDERR([$1 $2]) > conftest.out && {
- 	 test ! -s conftest.err
-        }],
-       [ac_retval=0],
-       [ac_retval=1])
--  AS_LINENO_POP
- ])# _bor_EXECUTE_IFELSE_BODY
- 
- # bor_EXECUTE_IFELSE(COMMAND[ACTION-IF-TRUE], [ACTION-IF-FALSE])
-@@ -836,7 +835,7 @@
+--- configure.in.orig	2010-09-13 11:23:59.000000000 +0200
++++ configure.in	2010-09-26 12:37:08.000000000 +0200
+@@ -842,7 +842,7 @@
    test $OPT_DISABLE_DEVICE_LIB = 0 && AC_CONFIG_FILES([device/lib/hc08/Makefile])
  fi
  
