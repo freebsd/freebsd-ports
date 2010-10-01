@@ -43,9 +43,6 @@ bin/linkchecker-gui
 %%PYTHON_SITELIBDIR%%/linkcheck/cache/cookie.py
 %%PYTHON_SITELIBDIR%%/linkcheck/cache/cookie.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/cache/cookie.pyo
-%%PYTHON_SITELIBDIR%%/linkcheck/cache/geoip.py
-%%PYTHON_SITELIBDIR%%/linkcheck/cache/geoip.pyc
-%%PYTHON_SITELIBDIR%%/linkcheck/cache/geoip.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/cache/robots_txt.py
 %%PYTHON_SITELIBDIR%%/linkcheck/cache/robots_txt.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/cache/robots_txt.pyo
@@ -394,6 +391,9 @@ bin/linkchecker-gui
 %%PYTHON_SITELIBDIR%%/linkcheck/ftpparse.py
 %%PYTHON_SITELIBDIR%%/linkcheck/ftpparse.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/ftpparse.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/geoip.py
+%%PYTHON_SITELIBDIR%%/linkcheck/geoip.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/geoip.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/gui/__init__.py
 %%PYTHON_SITELIBDIR%%/linkcheck/gui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/gui/__init__.pyo
