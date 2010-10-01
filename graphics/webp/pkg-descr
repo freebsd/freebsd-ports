@@ -1,0 +1,8 @@
+WebP is a method of lossy compression that can be used on photographic
+images. The degree of compression is adjustable so a user can choose the
+trade-off between file size and image quality.
+
+webpconv is a command line tool for converting images to and from
+the WebP format.
+
+WWW: http://code.google.com/speed/webp/
