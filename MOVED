@@ -4608,3 +4608,5 @@ net-p2p/mutella||2010-10-01|Has expired: No longer under active development
 www/xpi-hit-a-hint||2010-10-01|Has expired: Development has been ceased and not compatible with Firefox > 2.
 www/xpi-preferential||2010-10-01|Has expired: Development has been ceased and not compatible with Firefox > 2.
 www/xpi-statusbarclock||2010-10-01|Has expired: Development has been ceased and not compatible with Firefox > 2.
+devel/cego-base|devel/lfc|2010-10-02|Project was renamed
+devel/cego-xml|devel/lfcxml|2010-10-02|Project was renamed
