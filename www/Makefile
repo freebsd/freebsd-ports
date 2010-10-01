@@ -1875,7 +1875,6 @@
     SUBDIR += xpi-grab_and_drag
     SUBDIR += xpi-greasemonkey
     SUBDIR += xpi-gwt-dev-plugin
-    SUBDIR += xpi-hit-a-hint
     SUBDIR += xpi-httpfox
     SUBDIR += xpi-imagezoom
     SUBDIR += xpi-imdbpreview
@@ -1906,7 +1905,6 @@
     SUBDIR += xpi-pdf_download
     SUBDIR += xpi-pencil
     SUBDIR += xpi-permatabs
-    SUBDIR += xpi-preferential
     SUBDIR += xpi-prism
     SUBDIR += xpi-quick-locale-switcher
     SUBDIR += xpi-quickproxy
@@ -1919,7 +1917,6 @@
     SUBDIR += xpi-sessionmanager
     SUBDIR += xpi-speed-dial
     SUBDIR += xpi-splash
-    SUBDIR += xpi-statusbarclock
     SUBDIR += xpi-stumbleupon
     SUBDIR += xpi-stylish
     SUBDIR += xpi-table2clipboard
