@@ -160,9 +160,6 @@ lib/kde3/libk3blibsndfiledecoder.so
 lib/kde3/libk3bmaddecoder.a
 lib/kde3/libk3bmaddecoder.la
 lib/kde3/libk3bmaddecoder.so
-%%MPC%%lib/kde3/libk3bmpcdecoder.a
-%%MPC%%lib/kde3/libk3bmpcdecoder.la
-%%MPC%%lib/kde3/libk3bmpcdecoder.so
 lib/kde3/libk3boggvorbisdecoder.a
 lib/kde3/libk3boggvorbisdecoder.la
 lib/kde3/libk3boggvorbisdecoder.so
@@ -365,7 +362,6 @@ share/apps/k3b/plugins/k3bexternalencoder.plugin
 %%LAME%%share/apps/k3b/plugins/k3blameencoder.plugin
 share/apps/k3b/plugins/k3blibsndfiledecoder.plugin
 share/apps/k3b/plugins/k3bmaddecoder.plugin
-%%MPC%%share/apps/k3b/plugins/k3bmpcdecoder.plugin
 share/apps/k3b/plugins/k3boggvorbisdecoder.plugin
 share/apps/k3b/plugins/k3boggvorbisencoder.plugin
 share/apps/k3b/plugins/k3bsoxencoder.plugin

@@ -7,7 +7,7 @@
 
 PORTNAME=	k3b
 PORTVERSION=	1.0.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	SF
 
@@ -20,7 +20,10 @@ LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:22
-CONFIGURE_ARGS=	--with-k3bsetup=no --without-resmgr --without-hal
+CONFIGURE_ARGS=	--with-k3bsetup=no \
+			--without-resmgr \
+			--without-hal \
+			--without-musepack
 USE_GMAKE=	yes
 USE_CDRTOOLS=	yes
 USE_LDCONFIG=	yes
@@ -30,7 +33,6 @@ OPTIONS=	FLAC "Add audio/flac decoder" On \
 		LAME "Add audio/lame encoder (for mp3 files)" On \
 		FFMPEG "Add multimedia/ffmpeg decoder (for wma files)" Off \
 		MUSICBRAINZ "Use audio/libmusicbrainz music meta database" Off \
-		MPC "Add audio/libmpcdec decoder (for musepack file)" Off \
 		LIBDVDREAD "Use libdvdread (for video dvd ripping)" On \
 		DVDPLUSRW "Add DVD+RW Tools (for DVD+/-R(W) burning)" On \
 		TRANSCODE "Add Transcode (for DVD ripping)" Off \
@@ -86,14 +88,6 @@ LIB_DEPENDS+=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz
 .else
 PLIST_SUB+=	MUSICBRAINZ="@comment "
 CONFIGURE_ARGS+=	--without-musicbrainz
-.endif
-
-.if defined(WITH_MPC)
-PLIST_SUB+=	MPC=""
-LIB_DEPENDS+=	mpcdec:${PORTSDIR}/audio/libmpcdec
-.else
-PLIST_SUB+=	MPC="@comment "
-CONFIGURE_ARGS+=	--without-musepack
 .endif
 
 .if defined(WITH_LIBDVDREAD)
