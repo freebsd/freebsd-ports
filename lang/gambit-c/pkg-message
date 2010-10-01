@@ -1,0 +1,10 @@
+======================================================================
+
+Because the usual name of Gambit-C's compiler clashes with
+ghostscript, the interpreter and compiler have been renamed
+"gsi-gambit" and "gsc-gambit" respectively.
+
+However, documentation is still accessible through "man gsi" or
+"info gambit-c"
+
+======================================================================
