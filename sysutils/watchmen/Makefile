@@ -7,6 +7,7 @@
 
 PORTNAME=	watchmen
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -48,7 +49,6 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 .endif
 
 .if defined(WITH_EMAIL)
-USE_PGSQL=	yes
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Email/Send.pm:${PORTSDIR}/mail/p5-Email-Send
 .endif
 
