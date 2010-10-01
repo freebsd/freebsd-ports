@@ -1,10 +1,11 @@
---- cpuid.c.orig	2008-12-16 22:09:47.000000000 +0300
-+++ cpuid.c	2008-12-30 22:36:09.000000000 +0300
-@@ -23,8 +23,15 @@
+--- cpuid.c.orig	2010-09-08 12:19:56.000000000 -0700
++++ cpuid.c	2010-10-01 04:06:00.000000000 -0700
+@@ -23,8 +23,16 @@
  #include <sched.h>
  
  #if defined(__FreeBSD__)
 +# include <sys/param.h>
++# include <sys/cpuset.h>
  # include <sys/ioctl.h>
 -# include <cpu.h>
 +# if __FreeBSD_version < 701102
@@ -17,31 +18,59 @@
  #endif
  
  #include "x86info.h"
-@@ -33,7 +40,9 @@
+@@ -45,7 +53,11 @@
  	unsigned int *eax, unsigned int *ebx,
  	unsigned int *ecx, unsigned int *edx)
  {
-+#if defined(__linux__)
- 	cpu_set_t set;
++#if defined(__FreeBSD__)
++	cpuset_t set, tmp_set;
++#else
+ 	cpu_set_t set, tmp_set;
 +#endif
  	unsigned int a = 0, b = 0, c = 0, d = 0;
+ 	int ret;
  
- 	if (eax != NULL)
-@@ -45,11 +54,13 @@
+@@ -58,15 +70,25 @@
  	if (edx != NULL)
  		d = *edx;
  
-+#if defined(__linux__)
- 	if (sched_getaffinity(getpid(), sizeof(set), &set) == 0) {
- 		CPU_ZERO(&set);
- 		CPU_SET(cpunr, &set);
- 		sched_setaffinity(getpid(), sizeof(set), &set);
- 	}
++#if defined(__FreeBSD__)
++	ret = cpuset_getaffinity(CPU_LEVEL_WHICH, CPU_WHICH_PID,
++	    -1, sizeof(set), &set);
++#else
+ 	ret = sched_getaffinity(getpid(), sizeof(set), &set);
 +#endif
+ 	if (ret)
+ 		return ret;
  
- 	asm("cpuid"
- 		: "=a" (a),
-@@ -79,7 +90,11 @@
+ 	/* man CPU_SET(3): To duplicate a CPU set, use memcpy(3) */
+-	memcpy(&tmp_set, &set, sizeof(cpu_set_t));
++	memcpy(&tmp_set, &set, sizeof(tmp_set));
+ 	CPU_ZERO(&set);
+ 	CPU_SET(cpunr, &set);
++#if defined(__FreeBSD__)
++	ret = cpuset_setaffinity(CPU_LEVEL_WHICH, CPU_WHICH_PID,
++	    -1, sizeof(set), &set);
++#else
+ 	ret = sched_setaffinity(getpid(), sizeof(set), &set);
++#endif
+ 	if (ret)
+ 		return ret;
+ 
+@@ -87,7 +109,12 @@
+ 		*edx = d;
+ 
+ 	/* Restore initial sched affinity */
++#if defined(__FreeBSD__)
++	ret = cpuset_setaffinity(CPU_LEVEL_WHICH, CPU_WHICH_PID,
++	    -1, sizeof(tmp_set), &tmp_set);
++#else
+ 	ret = sched_setaffinity(getpid(), sizeof(tmp_set), &tmp_set);
++#endif
+ 	if (ret)
+ 		return ret;
+ 	return 0;
+@@ -106,7 +133,11 @@
  	char cpuname[20];
  	unsigned char buffer[16];
  	int fh;
@@ -52,8 +81,8 @@
 +#endif
  
  	if (nodriver == 1) {
- 		native_cpuid(CPU_number, idx, eax,ebx,ecx,edx);
-@@ -88,10 +103,14 @@
+ 		if (native_cpuid(CPU_number, idx, eax,ebx,ecx,edx))
+@@ -116,10 +147,14 @@
  
  	args.level = idx;
  	/* Ok, use the /dev/CPU interface in preference to the _up code. */
@@ -69,16 +98,16 @@
  			perror(cpuname);
  			exit(EXIT_FAILURE);
  		}
-@@ -106,8 +125,6 @@
+@@ -134,8 +169,6 @@
  	} else {
  		/* Something went wrong, just do UP and hope for the best. */
  		nodriver = 1;
 -		if (!silent && nrCPUs != 1)
 -			perror(cpuname);
- 		used_UP = 1;
- 		native_cpuid(CPU_number, idx, eax,ebx,ecx,edx);
- 		return;
-@@ -154,7 +171,7 @@
+ 		if (native_cpuid(CPU_number, idx, eax,ebx,ecx,edx)) {
+ 			printf("%s", NATIVE_CPUID_FAILED_MSG);
+ 			used_UP = 1;
+@@ -187,7 +220,7 @@
  	fh = open(cpuname, O_RDONLY);
  	if (fh != -1) {
  #ifndef S_SPLINT_S
