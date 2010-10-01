@@ -16,6 +16,8 @@ COMMENT=	Checkservice is written to check the status of the services
 
 RUN_DEPENDS=	${SITE_PERL}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools
 
+BROKEN=		checksum mismatch
+
 USE_PERL5_RUN=	YES
 NO_BUILD=	YES
 
