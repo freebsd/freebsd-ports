@@ -6,14 +6,10 @@
 #
 
 PORTNAME=	gnash
-PORTVERSION=	0.8.7
-PORTREVISION=	4
+PORTVERSION=	0.8.8
 CATEGORIES=	graphics
-# getgnash.org is slow
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		http://mirror.amdmi3.ru/distfiles/ \
-		http://getgnash.org/packages/releases/
-MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	GNU/${PORTNAME}/${PORTVERSION}/ \
+		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	GNU Flash movie player
@@ -21,7 +17,8 @@ COMMENT=	GNU Flash movie player
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		curl.6:${PORTSDIR}/ftp/curl \
-		ungif.5:${PORTSDIR}/graphics/libungif
+		ungif.5:${PORTSDIR}/graphics/libungif \
+		speex.1:${PORTSDIR}/audio/speex
 
 CONFLICTS=	gnash-devel-[0-9]*
 
@@ -33,16 +30,19 @@ WANT_GNOME=	yes
 USE_GCC=	4.2+	# triggers compiler error on gcc 3.4
 WANT_GSTREAMER=	yes
 USE_GNOME=	pkgconfig libxml2
-USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm
+USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm xv
 USE_AUTOTOOLS=	libltdl:22
 MAKE_JOBS_SAFE=	yes
 
+# jemalloc leads to infinite recursion on FreeBSD
+# --enable-avm2 doesn't build (but consider for future)
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
-		--disable-testsuite --enable-avm2 \
+		--disable-testsuite --disable-avm2 \
 		--with-plugins-install=system \
 		--sysconfdir="${WRKDIR}/etc" \
-		--disable-jemalloc # leads to infinite recursion on FreeBSD
+		--disable-jemalloc \
+		--disable-silent-rules
 
 GNASHVER=	${PORTVERSION}
 CONFIG_FILES=	gnashpluginrc gnashrc
@@ -52,7 +52,7 @@ PLIST_SUB+=	GNASHVER="${GNASHVER}"
 
 USE_LDCONFIG=	${PREFIX}/lib/gnash
 
-MAN1=		cygnal.1 dumpshm.1 findmicrophones.1 findwebcams.1 \
+MAN1=		cygnal.1 findmicrophones.1 findwebcams.1 \
 		flvdumper.1 gnash.1 gprocessor.1 gtk-gnash.1 kde4-gnash.1 \
 		rtmpget.1 soldumper.1
 
@@ -65,8 +65,7 @@ OPTIONS=	PLUGIN		"Enable browser plugin" on \
 		OPENGL		"Renderer: OpenGL (broken)" off \
 		CAIRO		"Renderer: Cairo (experimental)" off \
 		FFMPEG		"Media handler: ffmpeg (+SDL sound output)" on \
-		GSTREAMER	"Media handler: GStreamer" off \
-		SPEEX		"Speex codec support" on
+		GSTREAMER	"Media handler: GStreamer" off
 
 .include <bsd.port.options.mk>
 
@@ -145,6 +144,7 @@ GNASH_GUIS+=	kde4
 PLIST_SUB+=	KDE4=""
 USE_QT_VER=	4
 QT_COMPONENTS=	moc_build
+QT_NONSTANDARD=	yes
 USE_KDE4=	kdehier kdelibs
 CONFIGURE_ENV+=	KDE4_CONFIG="${KDE4_PREFIX}/bin/kde4-config"
 .	if exists(${LOCALBASE}/lib/libkdeui.so)
@@ -162,35 +162,39 @@ IGNORE=		KDE and KDE4 GUIs are mutually exclusive. Please rerun 'make config' an
 IGNORE=		needs at least one GUI enabled. Please rerun 'make config' and enable GTK, KDE or KDE4
 .endif
 
-CONFIGURE_ARGS+=	--enable-gui=`${ECHO} ${GNASH_GUIS} | ${TR} ' ' ,`
+CONFIGURE_ARGS+=--enable-gui=`${ECHO} ${GNASH_GUIS} | ${TR} ' ' ,`
 
 #
 # Renderer options processing
 #
-.if defined(WITH_AGG) && !defined(WITH_OPENGL) && !defined(WITH_CAIRO)
+GNASH_RENDERERS=
+
+.if defined(WITH_AGG)
 LIB_DEPENDS+=		agg.2:${PORTSDIR}/graphics/agg
-CONFIGURE_ARGS+=	--enable-renderer=agg
-PLIST_SUB+=		AGG=""
-.elif !defined(WITH_AGG) && defined(WITH_OPENGL) && !defined(WITH_CAIRO)
-PLIST_SUB+=		AGG="@comment "
-.	if defined(WITH_KDE4)
-IGNORE=			doesn't support OpenGL renderer with KDE4 gui yet. Please rerun 'make config' and select different renderer or disable KDE4 GUI
-.	endif
+GNASH_RENDERERS+=	agg
+.endif
+
+.if defined(WITH_OPENGL)
 USE_GL=			yes
+GNASH_RENDERERS+=	ogl
 .	if !defined(WITHOUT_GTK)
 LIB_DEPENDS+=		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 .	endif
-CONFIGURE_ARGS+=	--enable-renderer=ogl
-.elif !defined(WITH_AGG) && !defined(WITH_OPENGL) && defined(WITH_CAIRO)
-PLIST_SUB+=		AGG="@comment "
+.endif
+
+.if defined(WITH_CAIRO)
 .	if defined(WITH_KDE) || defined(WITH_KDE4)
 IGNORE=			doesn't support Cairo renderer with KDE/KDE4 gui. Please rerun 'make config' and select different renderer or disable KDE/KDE4 GUIs
 .	endif
 LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
-CONFIGURE_ARGS+=	--enable-renderer=cairo
-.else
-IGNORE=			can't be built with multiple or without renderers enabled. Please rerun 'make config' and select exactly one renderer (agg|opengl|cairo)
+GNASH_RENDERERS+=	cairo
 .endif
+
+.if ${GNASH_RENDERERS} == ""
+IGNORE=			needs at least one renderer enabled. Please rerun 'make config' and enable AGG, OPENGL or CAIRO
+.endif
+
+CONFIGURE_ARGS+=	--enable-renderer=`${ECHO} ${GNASH_RENDERERS} | ${TR} ' ' ,`
 
 #
 # Media handler options processing
@@ -213,16 +217,6 @@ IGNORE=			can't be built with multiple media handlers enabled. Please rerun 'mak
 PLIST_SUB+=		GSTREAMER=""
 .else
 PLIST_SUB+=		GSTREAMER="@comment "
-.endif
-
-#
-# Other options
-#
-.if !defined(WITHOUT_SPEEX)
-LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
-CONFIGURE_ARGS+=	--enable-speex
-.else
-CONFIGURE_ARGS+=	--disable-speex
 .endif
 
 .include <bsd.port.pre.mk>
