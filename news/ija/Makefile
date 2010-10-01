@@ -18,6 +18,8 @@ COMMENT=	An interactive command line frontend of Deja
 RUN_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 
+BROKEN=		checksum mismatch
+
 USE_PERL5=	yes
 
 NO_WRKSUBDIR=	yes
