@@ -64,15 +64,9 @@ TZUPDATE_TZVERSION=	2010i
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_LINUX_BOOTSTRAP)
-NATIVE_BOOTSTRAP_JDKS=	${LOCALBASE}/diablo-jdk1.6.0 \
-			${LOCALBASE}/diablo-jdk1.5.0 \
-			${LOCALBASE}/jdk1.6.0 \
-			${LOCALBASE}/jdk1.5.0
-.endif
-
-LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.6.0 \
-			${LOCALBASE}/linux-sun-jdk1.5.0
+BOOTSTRAP_JDKS=	${LOCALBASE}/diablo-jdk1.6.0 \
+		${LOCALBASE}/jdk1.6.0 \
+		${LOCALBASE}/openjdk6
 
 .if defined(WITH_IPV6)
 CATEGORIES+=	ipv6
@@ -88,24 +82,12 @@ DISTFILES+=	${TZUPDATEFILE}
 EXTRACT_ONLY+=	${TZUPDATEFILE}
 .endif
 
-# do we have valid native jdk installed?
-.if !defined(WITH_LINUX_BOOTSTRAP)
-.for CJDK in ${NATIVE_BOOTSTRAP_JDKS}
+# do we have valid bootstrap jdk installed?
+.for CJDK in ${BOOTSTRAP_JDKS}
 .  if !defined(BOOTSTRAPJDKDIR) && exists(${CJDK}/bin/javac)
 BOOTSTRAPJDKDIR=	${CJDK}
 .  endif
 .endfor
-.endif
-
-# do we have valid linux jdk installed?
-.if !defined(BOOTSTRAPJDKDIR)
-.for CJDK in ${LINUX_BOOTSTRAP_JDKS}
-.  if !defined(BOOTSTRAPJDKDIR) && exists(${CJDK}/bin/javac)
-BOOTSTRAPJDKDIR=	${CJDK}
-WITH_LINUX_BOOTSTRAP=	YES
-.  endif
-.endfor
-.endif
 
 # if no valid jdk found, set dependency
 .if !defined(BOOTSTRAPJDKDIR)
@@ -241,12 +223,6 @@ pre-fetch:
 	@${ECHO_MSG} "IMPORTANT: To build the JDK 1.6.0 port, you should have at least"
 	@${ECHO_MSG} "2.5Gb of free disk space in the build area!"
 	@${ECHO_MSG}
-.if defined(WITH_LINUX_BOOTSTRAP)
-	@${ECHO_MSG} "IMPORTANT: To build the JDK 1.6.0 port, you should have linux emulation"
-	@${ECHO_MSG} "enabled in the kernel and the linux procfs (linprocfs) filesystem"
-	@${ECHO_MSG} "mounted."
-	@${ECHO_MSG}
-.endif
 .if defined(DISTFILE_INSTRUCTIONS)
 	@${PRINTF} "${DISTFILE_INSTRUCTIONS}"
 	@exit 1
@@ -305,45 +281,6 @@ post-patch:
 		${WRKSRC}/../../j2se/make/common/Defs-bsd.gmk
 .if defined(WITHOUT_WEB)
 	@${RM} ${WRKDIR}/deploy/make/Makefile
-.endif
-
-.if defined(WITH_LINUX_BOOTSTRAP)
-pre-build:
-	@if [ "$${WRKDIRPREFIX}" -a \
-	     -L "/compat/linux/$${WRKDIRPREFIX}" -a \
-	     x`${LS} -ld "/compat/linux/$${WRKDIRPREFIX}" 2>/dev/null | ${AWK} '/->/{print $$NF;exit 0}END{exit 1}'` = x"$${WRKDIRPREFIX}" ]; \
-	then \
-		${ECHO_MSG} "Please set WRKDIRPREFIX to something which doesn't"; \
-		${ECHO_MSG} "have a matching symbolic link in /compat/linux."; \
-		${ECHO_MSG} "This is known to cause problems during bootstrapping."; \
-		exit 1; \
-	fi
-	@if [ `${SYSCTL} -n compat.linux.osname` != "Linux" ]; \
-	then \
-		${ECHO_MSG} "Please set the value of the sysctl compat.linux.osname"; \
-		${ECHO_MSG} "to 'Linux' with the command:"; \
-		${ECHO_MSG} "	${SYSCTL} compat.linux.osname=Linux"; \
-		${ECHO_MSG} "Having it set to other values, such as 'FreeBSD',"; \
-		${ECHO_MSG} "is known to cause problems during bootstrapping."; \
-		exit 1; \
-	fi
-.if !defined(WITH_JAIL)#{
-	@if [ "`/sbin/mount | ${GREP} ^linprocfs`" = "" ]; \
-	then \
-		${ECHO_MSG} "ERROR: You must have LINPROCFS mounted before" ; \
-		${ECHO_MSG} "starting to build the native JDK 1.6.0." ; \
-		${ECHO_MSG} "" ; \
-		${ECHO_MSG} "You may do it with the following commands:" ; \
-		${ECHO_MSG} "" ; \
-		${ECHO_MSG} "# kldload linprocfs" ; \
-		${ECHO_MSG} "" ; \
-		${ECHO_MSG} "and" ; \
-		${ECHO_MSG} "" ; \
-		${ECHO_MSG} "# mount -t linprocfs linprocfs /compat/linux/proc" ; \
-		${ECHO_MSG} "" ; \
-		exit 1 ; \
-	fi
-.endif#}
 .endif
 
 do-build:
