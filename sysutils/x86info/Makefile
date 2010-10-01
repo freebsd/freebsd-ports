@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	x86info
-PORTVERSION=	1.25
+PORTVERSION=	1.27
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.codemonkey.org.uk/projects/x86info/ \
-		http://www.codemonkey.org.uk/projects/x86info/old/
+MASTER_SITES=	http://codemonkey.org.uk/projects/x86info/ \
+		http://codemonkey.org.uk/projects/x86info/old/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	stas@FreeBSD.org
