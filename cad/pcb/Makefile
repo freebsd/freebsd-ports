@@ -7,6 +7,7 @@
 
 PORTNAME=	pcb
 PORTVERSION=	20100929
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -14,7 +15,8 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	X11 interactive printed circuit board layout system
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
-RUN_DEPENDS=	m4>=1.4.11:${PORTSDIR}/devel/m4
+RUN_DEPENDS=	m4>=1.4.11:${PORTSDIR}/devel/m4 \
+		${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 GNU_CONFIGURE=	yes
@@ -23,7 +25,7 @@ USE_TK_RUN=	83
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
-		INSTALL_DATA="/usr/bin/install ${COPY} ${_SHROWNGRP} -m ${SHAREMODE}"
+		INSTALL_DATA="${INSTALL_DATA}"
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} --disable-nls
 PORTDOCS= pcb.html pcb.ps refcard.ps pcb.pdf refcard.pdf pad.gif	\
 	puller.gif thermal.gif pad.png puller.png thermal.png examples	\
