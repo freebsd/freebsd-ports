@@ -1,5 +1,5 @@
---- pwc.c.orig	2007-10-09 02:14:01.000000000 -0500
-+++ pwc.c	2010-05-17 14:44:45.000000000 -0500
+--- ./pwc.c.orig	2007-10-09 09:14:01.000000000 +0200
++++ ./pwc.c	2010-10-01 23:03:54.190935331 +0200
 @@ -28,7 +28,8 @@
  #include "pwc-dec1.h"
  #include "pwc-dec23.h"
@@ -426,7 +426,7 @@
 -	struct pwc_softc *sc;
 -	int unit = PWCUNIT(dev);
 +	struct pwc_softc *sc = dev->si_drv1;
-+	int unit = device_get_unit(sc->sc_dev);
++	/* int unit = device_get_unit(sc->sc_dev); */
  
 -	sc = devclass_get_softc(pwc_devclass, unit);
 -	if(sc == NULL)
@@ -442,17 +442,16 @@
 -	usb_endpoint_descriptor_t *edesc = NULL;
 -	u_int8_t nendpt;
 -	int i, j, err, ret;
--
++	int i, err, ret;
++
++	usbd_transfer_unsetup(sc->sc_xfer, MAX_ISO_BUFS);
+ 
 -	if(sc->sc_videopipe != NULL) {
 -		usbd_abort_pipe(sc->sc_videopipe);
 -		usbd_close_pipe(sc->sc_videopipe);
 -		sc->sc_videopipe = NULL;
 -	}
 -	
-+	int i, err, ret;
-+
-+	usbd_transfer_unsetup(sc->sc_xfer, MAX_ISO_BUFS);
-+
  	pwc_reset_buffers(sc);
  	
  	/* Try to set video mode... if that fails fallback to previous mode  */
@@ -525,19 +524,41 @@
  {
 -   	struct pwc_iso_buf *req = addr;
 -	struct pwc_softc *sc = req->sc;
+-	struct pwc_frame_buf *fbuf;
+-	unsigned char *fillptr = NULL;
+-	u_int32_t count;
+-	int awake = 0;
+-	int i;
+-	
+-	usbd_get_xfer_status(xfer, NULL, NULL, &count, NULL);
+-	Trace(TRACE_ISOC_VERBOSE, "pwc_isoc_handler: status=%d count=%u\n",status,count);
 +	uint8_t i;
-+
+ 
+-	if (status == USBD_CANCELLED) {
+-		Trace(TRACE_ISOC, "pwc_isoc_handler: status = cancelled\n");
+-		return;
+-	}
+-	if(status != USBD_NORMAL_COMPLETION) {
 +	switch(USB_GET_STATE(xfer)) {
 +	case USB_ST_TRANSFERRED:
 +		pwc_isoc_handler(xfer, xfer->priv_sc);
-+
+ 
+-		Trace(TRACE_ISOC, "pwc_isoc_handler called with status: %d\n",status);
 +		/* FALLTHROUGH */
-+
+ 
+-		if (++sc->visoc_errors > MAX_ISOC_ERRORS) {
+-			
+-			if(sc->error_status != EIO)
+-				printf("%s: Too many ISOC errors, bailing out.\n",device_get_nameunit(sc->sc_dev));
 +	case USB_ST_SETUP:
 +	tr_setup:
 +		for (i = 0; i != xfer->max_frame_count; i++)
 +			xfer->frlengths[i] = xfer->max_frame_size;
-+
+ 
+-			sc->error_status = EIO;
+-			awake = 1;
+-		}
+-		goto handler_end; // ugly, but practical
 +		xfer->nframes = xfer->max_frame_count;
 +		usbd_transfer_submit(xfer);
 +		break;
@@ -545,40 +566,18 @@
 +		if (xfer->error != USB_ERR_CANCELLED)
 +			goto tr_setup;
 +		break;
-+	}
+ 	}
 +}
 +
 +static void
 +pwc_isoc_handler(struct usb_xfer *xfer, void *addr)
 +{
 +	struct pwc_softc *sc = addr;
- 	struct pwc_frame_buf *fbuf;
- 	unsigned char *fillptr = NULL;
--	u_int32_t count;
- 	int awake = 0;
- 	int i;
--	
--	usbd_get_xfer_status(xfer, NULL, NULL, &count, NULL);
--	Trace(TRACE_ISOC_VERBOSE, "pwc_isoc_handler: status=%d count=%u\n",status,count);
--
--	if (status == USBD_CANCELLED) {
--		Trace(TRACE_ISOC, "pwc_isoc_handler: status = cancelled\n");
--		return;
--	}
--	if(status != USBD_NORMAL_COMPLETION) {
--
--		Trace(TRACE_ISOC, "pwc_isoc_handler called with status: %d\n",status);
--
--		if (++sc->visoc_errors > MAX_ISOC_ERRORS) {
--			
--			if(sc->error_status != EIO)
--				printf("%s: Too many ISOC errors, bailing out.\n",device_get_nameunit(sc->sc_dev));
- 
--			sc->error_status = EIO;
--			awake = 1;
--		}
--		goto handler_end; // ugly, but practical
--	}
++	struct pwc_frame_buf *fbuf;
++	unsigned char *fillptr = NULL;
++	int awake = 0;
++	int i;
++
 +	Trace(TRACE_ISOC_VERBOSE, "pwc_isoc_handler: count=%u\n", xfer->actlen);
  
  	/* Reset ISOC error counter. We did get here, after all. */
