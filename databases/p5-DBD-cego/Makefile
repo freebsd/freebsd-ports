@@ -5,26 +5,21 @@
 # $FreeBSD$
 
 PORTNAME=	DBD-cego
-PORTVERSION=	1.1.9
-PORTREVISION=	1
+PORTVERSION=	1.1.13
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.lemke-it.com/
 PKGNAMEPREFIX=	p5-
-DISTNAME=	DBD-cego-${PORTVERSION}
 
 MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	A Cego DBI driver for Perl 5
 
 BUILD_DEPENDS=	p5-DBI>=1.61:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	cego.1:${PORTSDIR}/databases/cego
 
-BROKEN=	does not compile, lots of bad c++/xs code
-
 LICENSE=	GPLv2
-WRKSRC=		${WRKDIR}/DBD-cego
-PERL_CONFIGURE=		yes
-CC=			g++
+PERL_CONFIGURE=	yes
+CC:=		${CXX}
 
 MAN3=		DBD::Cego.3
 
