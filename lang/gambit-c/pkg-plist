@@ -1,47 +1,45 @@
-bin/six
-bin/gsi-gambit
-bin/gsc-gambit
-bin/gsc-cc-o.bat
+bin/gambc-cc.bat
 bin/gambc-doc.bat
-bin/gsi-script
-bin/six-script
-bin/scheme-srfi-0
-bin/scheme-r5rs
-bin/scheme-r4rs
-bin/scheme-ieee-1178-1990
+bin/gsc-gambit
 bin/gsc-script
+bin/gsi-gambit
+bin/gsi-script
+bin/scheme-ieee-1178-1990
+bin/scheme-r4rs
+bin/scheme-r5rs
+bin/scheme-srfi-0
+bin/six
+bin/six-script
+include/gambit-c/gambit-not406000.h
 include/gambit-c/gambit.h
-include/gambit-c/gambit-not404003.h
-info/gambit-c.info
-info/gambit-c.info-1
-info/gambit-c.info-2
-info/gambit-c.info-3
-lib/gambit-c/_gambc.c
-lib/gambit-c/_kernel#.scm
-lib/gambit-c/_system#.scm
-lib/gambit-c/_num#.scm
-lib/gambit-c/_std#.scm
 lib/gambit-c/_eval#.scm
-lib/gambit-c/_io#.scm
-lib/gambit-c/_nonstd#.scm
-lib/gambit-c/_thread#.scm
-lib/gambit-c/_repl#.scm
+lib/gambit-c/_gambc.c
+lib/gambit-c/_gambcgsc.c
+lib/gambit-c/_gambcgsi.c
 lib/gambit-c/_gambit#.scm
-lib/gambit-c/gambit#.scm
-lib/gambit-c/r5rs#.scm
-lib/gambit-c/r4rs#.scm
+lib/gambit-c/_io#.scm
+lib/gambit-c/_kernel#.scm
+lib/gambit-c/_nonstd#.scm
+lib/gambit-c/_num#.scm
+lib/gambit-c/_repl#.scm
+lib/gambit-c/_std#.scm
+lib/gambit-c/_system#.scm
+lib/gambit-c/_thread#.scm
 lib/gambit-c/digest#.scm
 lib/gambit-c/digest.scm
-lib/gambit-c/syntax-case.scm
+lib/gambit-c/gambit#.scm
 lib/gambit-c/libgambc.a
-lib/gambit-c/_gambcgsi.c
-lib/gambit-c/libgambcgsi.a
-lib/gambit-c/_gambcgsc.c
 lib/gambit-c/libgambcgsc.a
-share/doc/gambit-c/gambit-c.pdf
-share/doc/gambit-c/gambit-c.html
-share/doc/gambit-c/gambit-c.txt
+lib/gambit-c/libgambcgsi.a
+lib/gambit-c/r4rs#.scm
+lib/gambit-c/r5rs#.scm
+lib/gambit-c/syntax-case.scm
+%%PORTDOCS%%%%DOCSDIR%%/gambit-c.html
+%%PORTDOCS%%%%DOCSDIR%%/gambit-c.pdf
+%%PORTDOCS%%%%DOCSDIR%%/gambit-c.txt
 share/emacs/site-lisp/gambit.el
-@dirrm include/gambit-c
+@dirrmtry share/emacs/site-lisp
+@dirrmtry share/emacs
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrm lib/gambit-c
-@dirrm share/doc/gambit-c
+@dirrm include/gambit-c
