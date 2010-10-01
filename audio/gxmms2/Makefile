@@ -18,6 +18,8 @@ COMMENT=	A GTK2 based XMMS2 client, written in C
 
 LIB_DEPENDS=	xmmsclient.5:${PORTSDIR}/audio/xmms2
 
+BROKEN=		does not fetch
+
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 
