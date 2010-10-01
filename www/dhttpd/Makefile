@@ -8,8 +8,7 @@
 PORTNAME=	dhttpd
 PORTVERSION=	1.02a
 CATEGORIES=	www
-MASTER_SITES=	http://ccca.nctu.edu.tw/~gslin/Software/ \
-		http://bsd-geek.de/FreeBSD/distfiles/
+MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lme@FreeBSD.org
