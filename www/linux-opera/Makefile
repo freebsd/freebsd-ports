@@ -25,8 +25,6 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.i386.linux
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
-CONFLICTS=	opera-[0-9]* # removes installed www/opera's file on make install
-
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 USE_BZIP2=	yes
@@ -102,7 +100,8 @@ post-patch:
 		s|opera-widget-manager)|${UNIQUENAME}-widget-manager)|g ; \
 		s|^.*rmdir.*mime/packages.*||g ; \
 		s|^.*GX - bin/uninstall-opera@.*||g ; \
-		s|[$$]tempdir/damaged|${WRKSRC}/damaged|g' \
+		s|[$$]tempdir/damaged|${WRKSRC}/damaged|g ; \
+		s|PREFIX/bin/uninstall-opera|PREFIX/bin/disabled-opera|g' \
 			${WRKSRC}/install
 	@${REINPLACE_CMD} -e '/^Name/s|$$| (Linux version)|g ; \
 		/Exec/s|opera|${UNIQUENAME}|g ; \
