@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.v-bridges.com/pub/archive/pro/releases/bsd/pro/${PORTVER
 DISTNAME=	Win4BSD-1.1_63918_i386-freebsd
 EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Win4BSD Virtual Machine for Windows under BSD
 
 LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
