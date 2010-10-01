@@ -96,12 +96,6 @@ LIB_DEPENDS+=		schroedinger-1.0.3:${PORTSDIR}/multimedia/schroedinger
 CONFIGURE_ARGS+=	--disable-libschroedinger-lavc
 .endif
 
-.if defined(WITH_LIBMPCDEC)
-LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
-.else
-CONFIGURE_ARGS+=	--disable-musepack
-.endif
-
 .if !defined(WITHOUT_SPEEX)
 LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
 .else
