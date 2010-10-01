@@ -9,7 +9,7 @@ PORTNAME=	pgsphere
 PORTVERSION=	1.1.1
 CATEGORIES=	databases geography
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/2558/ \
-		http://sunpoet.net/distfiles/
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Spherical data types, functions, and operators for PostgreSQL

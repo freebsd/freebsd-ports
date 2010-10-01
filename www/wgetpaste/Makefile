@@ -9,7 +9,7 @@ PORTNAME=	wgetpaste
 PORTVERSION=	2.18
 CATEGORIES=	www
 MASTER_SITES=	http://wgetpaste.zlin.dk/ \
-		http://sunpoet.net/distfiles/
+		LOCAL/sunpoet
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}.example zlin.conf
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 

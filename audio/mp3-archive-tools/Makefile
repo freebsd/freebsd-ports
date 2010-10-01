@@ -10,7 +10,7 @@ PORTVERSION=	0.9
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://erislabs.net/ianb/projects/${PORTNAME}/ \
-		http://sunpoet.net/distfiles/
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A set of tools to ease organising a collection of audio files

@@ -9,7 +9,7 @@ PORTNAME=	metar
 PORTVERSION=	0.16
 CATEGORIES=	astro python geography
 MASTER_SITES=	http://www.schwarzvogel.de/pkgs/ \
-		http://sunpoet.net/distfiles/
+		LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${REALPORTNAME}-${PORTVERSION}
 

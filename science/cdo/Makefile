@@ -10,7 +10,7 @@ PORTNAME=		cdo
 PORTVERSION=		1.4.5.1
 CATEGORIES=		science
 MASTER_SITES=		https://code.zmaw.de/attachments/download/307/ \
-			http://sunpoet.net/distfiles/
+			LOCAL/sunpoet
 
 MAINTAINER=		sunpoet@FreeBSD.org
 COMMENT=		Climate Data Operators

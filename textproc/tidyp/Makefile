@@ -9,7 +9,7 @@ PORTNAME=		tidyp
 PORTVERSION=		1.02
 CATEGORIES=		textproc www
 MASTER_SITES=		http://cloud.github.com/downloads/petdance/tidyp/ \
-			http://sunpoet.net/distfiles/
+			LOCAL/sunpoet
 
 MAINTAINER=		sunpoet@FreeBSD.org
 COMMENT=		A library and program to validate and fix HTML

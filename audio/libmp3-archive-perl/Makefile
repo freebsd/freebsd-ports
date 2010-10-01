@@ -9,7 +9,7 @@ PORTNAME=	libmp3-archive-perl
 PORTVERSION=	0.9
 CATEGORIES=	audio perl5
 MASTER_SITES=	http://erislabs.net/ianb/projects/${PORTNAME}/ \
-		http://sunpoet.net/distfiles/
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl module to manipulate filenames containing music metadata

@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	devel geography
 MASTER_SITES=	http://download.osgeo.org/shapelib/ \
 		ftp://ftp.remotesensing.org/shapelib/ \
-		http://sunpoet.net/distfiles/
+		LOCAL/sunpoet
 DISTNAME=	${PORTNAME}-${SHAPELIB_VER}
 
 MAINTAINER=	sunpoet@FreeBSD.org
