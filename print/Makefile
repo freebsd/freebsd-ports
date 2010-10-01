@@ -155,6 +155,7 @@
     SUBDIR += latex-feynmf
     SUBDIR += latex-keystroke
     SUBDIR += latex-logpap
+    SUBDIR += latex-logreq
     SUBDIR += latex-mathabx
     SUBDIR += latex-pgf
     SUBDIR += latex-prettyref
