@@ -5,16 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	mlt
-PORTVERSION=	0.5.6
-PORTREVISION=	1
+PORTVERSION=	0.5.10
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	A multimedia framework and video playout server for TV broadcasting
 
-LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	LGPL21 GPLv2
+LICENSE_COMB=	multi
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING
+LICENSE_FILE_GPLv2=	${WRKSRC}/GPL
 
 USE_GNOME=	libxml2 gnomehack
 USE_QT_VER=	4
@@ -37,7 +38,7 @@ OPTIONS=	AVFORMAT	"Avformat module" on \
 		DV	"Quasar DV Codec module" on \
 		FREI0R	"Frei0r module" on \
 		GTK2	"GTK2 module" on \
-		JACKRACK	"JACK Rack module" on \
+		JACKRACK	"JACK Rack module" off \
 		KINO	"Kino module" on \
 		MMX	"MMX support (might cause problems on x86-64)" off \
 		QIMAGE	"Qimage module" on \
@@ -78,8 +79,9 @@ PLIST_SUB+=	FREI0R="@comment "
 .endif
 
 .ifndef(WITHOUT_GTK2)
-CONFIGURE_ARGS+=	--enable-gtk2
+LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
 USE_GNOME+=	gdkpixbuf gtk20 pango
+CONFIGURE_ARGS+=	--enable-gtk2
 PLIST_SUB+=	GTK2=""
 .else
 CONFIGURE_ARGS+=	--disable-gtk2
@@ -113,10 +115,11 @@ CONFIGURE_ARGS+=	--disable-mmx
 .endif
 
 .ifndef(WITHOUT_QIMAGE)
+LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
+QT_COMPONENTS+=	gui svg xml
 CONFIGURE_ARGS+=	--enable-qimage \
 			--qimage-includedir="${QT_INCDIR}" \
 			--qimage-libdir="${QT_LIBDIR}"
-QT_COMPONENTS+=	gui svg xml
 PLIST_SUB+=	QIMAGE=""
 .else
 CONFIGURE_ARGS+=	--disable-qimage
@@ -180,8 +183,6 @@ pre-configure:
 		${WRKSRC}/src/framework/Makefile \
 		${WRKSRC}/src/melt/Makefile \
 		${WRKSRC}/src/modules/*/Makefile
-	${REINPLACE_CMD} -e 's|-ldl|$$(LIBDL)|g' \
-		${WRKSRC}/src/modules/avformat/Makefile
 	${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
 
