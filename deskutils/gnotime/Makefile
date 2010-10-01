@@ -19,6 +19,8 @@ COMMENT=	A time tracker for gnome2
 
 LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile
 
+BROKEN=		does not fetch
+
 USE_XORG=	xscrnsaver
 USE_GNOME=	gnomehack gnomeprefix gtkhtml3 intlhack libgnomeui
 USE_GETTEXT=	yes
