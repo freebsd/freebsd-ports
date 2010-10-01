@@ -143,6 +143,7 @@
     SUBDIR += jsmath
     SUBDIR += jsmath-fonts
     SUBDIR += jsmath-fonts-sprite
+    SUBDIR += jtransforms
     SUBDIR += jts
     SUBDIR += k3dsurf
     SUBDIR += kash3
