@@ -5,20 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	my2cego
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
 MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	Imports mysqldump files into cego
 
-LIB_DEPENDS=	Base.1:${PORTSDIR}/devel/cego-base \
-		XML.1:${PORTSDIR}/devel/cego-xml \
+LIB_DEPENDS=	lfc.1:${PORTSDIR}/devel/lfc \
+		lfcxml.1:${PORTSDIR}/devel/lfcxml \
 		cego.1:${PORTSDIR}/databases/cego
 
 LICENSE=	GPLv2
-WRKSRC=		${WRKDIR}/my2cego
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
