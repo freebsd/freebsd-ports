@@ -1,4 +1,4 @@
-# New ports collection makefile for:	x11-fm/menu-cache
+# New ports collection makefile for:	x11/menu-cache
 # Date created:				23 Sept 2010
 # Whom:					Kris Moore <kmoore@freebsd.org>
 #
@@ -7,7 +7,7 @@
 
 PORTNAME=	menu-cache
 PORTVERSION=	0.3.2
-CATEGORIES=	x11-fm
+CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/menu-cache/menu-cache%20${PORTVERSION}/
 
 MAINTAINER=	kmoore@FreeBSD.org
