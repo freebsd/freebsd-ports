@@ -26,10 +26,10 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 post-configure:
 	${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/libmenu-cache/Makefile.in
+		${WRKSRC}/libmenu-cache/Makefile.in ${WRKSRC}/libmenu-cache/Makefile
 	${REINPLACE_CMD} -e 's|(datadir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/libmenu-cache/Makefile.in
+		${WRKSRC}/libmenu-cache/Makefile.in ${WRKSRC}/libmenu-cache/Makefile
 	${REINPLACE_CMD} -e 's|(prefix)/lib/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/libmenu-cache/Makefile.in
+		${WRKSRC}/libmenu-cache/Makefile.in ${WRKSRC}/libmenu-cache/Makefile
 
 .include <bsd.port.post.mk>
