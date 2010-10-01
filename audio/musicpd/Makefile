@@ -7,6 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.15.12
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -126,7 +127,7 @@ LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 .endif
 
 .if defined(WITH_MUSEPACK)
-LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
+LIB_DEPENDS+=	mpcdec.7:${PORTSDIR}/audio/musepack
 .else
 CONFIGURE_ARGS+=--disable-mpc
 .endif
