@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tth
-PORTVERSION=	3.87
-PORTREVISION=	1
+PORTVERSION=	3.89
 CATEGORIES=	textproc
 MASTER_SITES=	http://hutchinson.belmont.ma.us/tth/tth-noncom/ \
 		http://redundancy.redundancy.org/mirror/
