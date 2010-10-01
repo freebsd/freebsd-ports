@@ -15,5 +15,6 @@ COMMENT=	Ruby library for implementing IRC server and client
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
