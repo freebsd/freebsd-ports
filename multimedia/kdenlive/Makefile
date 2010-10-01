@@ -5,15 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	kdenlive
-PORTVERSION=	0.7.7.1
-PORTREVISION=	2
+PORTVERSION=	0.7.8
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SF
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	A professional quality non-linear video editing suite for KDE
 
-LIB_DEPENDS=	mlt.2:${PORTSDIR}/multimedia/mlt
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	mlt>=0.5.10:${PORTSDIR}/multimedia/mlt
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GETTEXT=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix sharedmime
@@ -22,7 +25,6 @@ QT_COMPONENTS=	dbus gui network svg xml \
 		moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 USE_CMAKE=	yes
-CMAKE_ARGS=	-DNO_JOGSHUTTLE:BOOL=On
 
 MAN1=		kdenlive.1 kdenlive_render.1
 
