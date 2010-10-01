@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	atunes
-PORTVERSION=	1.13.6
-PORTREVISION=	4
+PORTVERSION=	2.0.1
 CATEGORIES=	audio java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/aTunes%20${PORTVERSION}
-DISTNAME=	aTunes_${PORTVERSION}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	A full-featured audio player and manager developed in Java
@@ -20,7 +18,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 SUB_FILES=	atunes
 
-WRKSRC=		${WRKDIR}/aTunes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-SNAPSHOT
 
 OPTIONS=	MPLAYER "Engine:  Use Mplayer" on \
 		XINE "Engine:  Use Xine" off \
@@ -65,29 +63,21 @@ DESKTOP_ENTRIES="aTunes" \
 		"Audio player and manager" \
 		"${DATADIR}/aTunes.ico" \
 		"aTunes" \
-		"Application;Audio;AudioVideo;Java;" \
+		"Application;;AudioVideo;Java;" \
 		false
 
-INSTALL_FILES=	aTunes.ico aTunes.jar build.properties changelog.txt \
-		extendedLog.properties license.txt log4j.properties \
-		presets.properties shortcutSpec.xml
+INSTALL_FILES=	aTunes.ico aTunes.jar license.txt
 
-PIXMAPS=	atunes125.png
+PIXMAPS=	atunes.png
 
 do-install:
 	@${MKDIR} ${DATADIR}
 	@${MKDIR} ${DATADIR}/lib
-	@${MKDIR} ${DATADIR}/settings
-	@${MKDIR} ${DATADIR}/translations
 	${INSTALL_SCRIPT} ${WRKDIR}/atunes ${PREFIX}/bin
 .for file in ${INSTALL_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}/${file}
 .endfor
-	cd ${WRKSRC} && ${FIND} translations -type f -exec ${INSTALL_DATA} {} \
-		${DATADIR}/{} \;
 	cd ${WRKSRC} && ${FIND} lib -type f -name "*.jar" -exec ${INSTALL_DATA} {} \
-		${DATADIR}/{} \;
-	cd ${WRKSRC} && ${FIND} settings -type f -exec ${INSTALL_DATA} {} \
 		${DATADIR}/{} \;
 	@${MKDIR} ${PREFIX}/share/pixmaps
 .for file in ${PIXMAPS}
