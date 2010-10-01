@@ -15,6 +15,8 @@ DISTFILES=	xyssl-${PORTVERSION}-bsd.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A liteweight SSL and TLS toolkit for C developers
 
+BROKEN=		does not fetch
+
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
