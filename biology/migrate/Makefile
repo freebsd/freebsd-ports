@@ -8,7 +8,8 @@
 PORTNAME=	migrate
 PORTVERSION=	3.1.6
 CATEGORIES=	biology
-MASTER_SITES=	http://people.sc.fsu.edu/~beerli/popgen/currentversion/
+MASTER_SITES=	http://people.sc.fsu.edu/~beerli/popgen/currentversion/ \
+		http://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	gjb@FreeBSD.org
