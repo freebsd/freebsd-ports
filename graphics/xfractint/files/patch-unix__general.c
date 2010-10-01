@@ -1,6 +1,6 @@
---- general.c.orig	Mon Sep  3 18:45:31 2007
-+++ general.c	Mon Sep  3 18:46:25 2007
-@@ -314,7 +314,7 @@
+--- ./unix/general.c.orig	2008-04-11 10:36:28.000000000 -0400
++++ ./unix/general.c	2010-01-27 13:52:46.000000000 -0500
+@@ -317,7 +317,7 @@
      static struct timeval delay;
      delay.tv_sec = delaytime/1000;
      delay.tv_usec = (delaytime%1000)*1000;
