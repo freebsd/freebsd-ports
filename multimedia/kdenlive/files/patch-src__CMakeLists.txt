@@ -1,0 +1,45 @@
+--- ./src/CMakeLists.txt.orig	2010-10-01 09:29:39.366437142 +0200
++++ ./src/CMakeLists.txt	2010-10-01 09:32:48.832414261 +0200
+@@ -3,21 +3,6 @@
+ 
+ macro_optional_find_package(Nepomuk)
+ 
+-if (Nepomuk_FOUND)
+-    INCLUDE_DIRECTORIES(NEPOMUK_INCLUDES )
+-    set( optional_libs ${NEPOMUK_LIBRARIES} )
+-    add_definitions(-DNEPOMUK)
+-endif (Nepomuk_FOUND)
+-
+-if (Q_WS_X11)
+-    include_directories (${X11_Xlib_INCLUDE_PATH} ) 
+-endif (Q_WS_X11)
+-
+-if (APPLE)
+-  find_package(OpenGL)
+-  set(QT_USE_QTOPENGL TRUE)
+-endif (APPLE)
+-
+ include_directories (
+     ${KDE4_INCLUDE_DIR}
+     ${KDE4_INCLUDE_DIR}/KDE
+@@ -38,7 +23,20 @@
+ ${optional_libs}
+ )
+ 
++if (Nepomuk_FOUND)
++    INCLUDE_DIRECTORIES(NEPOMUK_INCLUDES )
++    set( optional_libs ${NEPOMUK_LIBRARIES} )
++    add_definitions(-DNEPOMUK)
++endif (Nepomuk_FOUND)
++
++if (Q_WS_X11)
++    include_directories (${X11_Xlib_INCLUDE_PATH} ) 
++endif (Q_WS_X11)
+ 
++if (APPLE)
++  find_package(OpenGL)
++  set(QT_USE_QTOPENGL TRUE)
++endif (APPLE)
+ 
+ kde4_add_ui_files(kdenlive_UI
+   widgets/timeline_ui.ui
