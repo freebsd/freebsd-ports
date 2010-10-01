@@ -13,6 +13,8 @@ MASTER_SITES=	http://writequit.org/projects/nsm-console/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A framework for performing analysis on packet capture files
 
+BROKEN=		does not fetch
+
 USE_RUBY=	yes
 NO_BUILD=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
