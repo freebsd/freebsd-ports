@@ -249,6 +249,7 @@ include/wine/windows/endpointvolume.idl
 include/wine/windows/errorrep.h
 include/wine/windows/errors.h
 include/wine/windows/evcode.h
+include/wine/windows/evntprov.h
 include/wine/windows/evntrace.h
 include/wine/windows/excpt.h
 include/wine/windows/exdisp.h
@@ -288,6 +289,7 @@ include/wine/windows/icftypes.idl
 include/wine/windows/icm.h
 include/wine/windows/icmpapi.h
 include/wine/windows/idispids.h
+include/wine/windows/ifdef.h
 include/wine/windows/imagehlp.h
 include/wine/windows/imm.h
 include/wine/windows/imnact.h
@@ -960,6 +962,7 @@ lib/wine/fakedlls/jscript.dll
 lib/wine/fakedlls/kernel32.dll
 lib/wine/fakedlls/keyboard.drv16
 lib/wine/fakedlls/krnl386.exe16
+lib/wine/fakedlls/ktmw32.dll
 lib/wine/fakedlls/loadperf.dll
 lib/wine/fakedlls/localspl.dll
 lib/wine/fakedlls/localui.dll
@@ -978,6 +981,7 @@ lib/wine/fakedlls/mlang.dll
 lib/wine/fakedlls/mmdevapi.dll
 lib/wine/fakedlls/mmdevldr.vxd
 lib/wine/fakedlls/mmsystem.dll16
+lib/wine/fakedlls/mofcomp.exe
 lib/wine/fakedlls/monodebg.vxd
 lib/wine/fakedlls/mountmgr.sys
 lib/wine/fakedlls/mouse.drv16
@@ -1133,6 +1137,7 @@ lib/wine/fakedlls/sxs.dll
 lib/wine/fakedlls/system.drv16
 lib/wine/fakedlls/t2embed.dll
 lib/wine/fakedlls/tapi32.dll
+lib/wine/fakedlls/taskkill.exe
 lib/wine/fakedlls/taskmgr.exe
 lib/wine/fakedlls/termsv.exe
 lib/wine/fakedlls/toolhelp.dll16
@@ -1273,6 +1278,7 @@ lib/wine/jscript.dll.so
 lib/wine/kernel32.dll.so
 lib/wine/keyboard.drv16.so
 lib/wine/krnl386.exe16.so
+lib/wine/ktmw32.dll.so
 lib/wine/libaclui.def
 lib/wine/libactiveds.def
 lib/wine/libadsiid.a
@@ -1445,6 +1451,7 @@ lib/wine/mlang.dll.so
 lib/wine/mmdevapi.dll.so
 lib/wine/mmdevldr.vxd.so
 lib/wine/mmsystem.dll16.so
+lib/wine/mofcomp.exe.so
 lib/wine/monodebg.vxd.so
 lib/wine/mountmgr.sys.so
 lib/wine/mouse.drv16.so
@@ -1600,6 +1607,7 @@ lib/wine/sxs.dll.so
 lib/wine/system.drv16.so
 lib/wine/t2embed.dll.so
 lib/wine/tapi32.dll.so
+lib/wine/taskkill.exe.so
 lib/wine/taskmgr.exe.so
 lib/wine/termsv.exe.so
 lib/wine/toolhelp.dll16.so
