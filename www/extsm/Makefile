@@ -7,6 +7,7 @@
 
 PORTNAME=	extsm
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	SF/rxsm/rxsm/${PORTVERSION}
 DISTNAME=	xsm-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	xsm-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Extensible Site Manager (XSM)
 
-RUN_DEPENDS=	maven:${PORTSDIR}/devel/maven
+RUN_DEPENDS=	mvn:${PORTSDIR}/devel/maven2
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
@@ -61,7 +62,7 @@ do-install:
 	@${ECHO_CMD} "${DIR}/webapps/xsm.war" >> ${TMPPLIST}
 .if !exists(${PREFIX}/${DIR}/webapps)
 	${MKDIR} ${PREFIX}/${DIR}/webapps
-	@${ECHO_CMD} "@dirrm ${DIR}/webapps" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${DIR}/webapps 2>/dev/null || true" >> ${TMPPLIST}
 .endif
 	${INSTALL_DATA} ${WRKSRC}/xsm.war ${PREFIX}/${DIR}/webapps
 .endfor
