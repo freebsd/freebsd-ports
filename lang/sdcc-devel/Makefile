@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.9.7.2010.09.04
-PORTREVISION=	1
+PORTVERSION=	2.9.7.2010.09.25
 CATEGORIES=	lang
 MASTER_SITES=	SF/sdcc/snapshot_builds/sdcc-src/ \
 		http://tijl.fastmail.fm/mirror/
-DISTNAME=	${PORTNAME}-src-20100904-5948
+DISTNAME=	${PORTNAME}-src-20100925-5993
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	Small Device C Compiler
@@ -44,6 +43,10 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		lib_dir_suffix=lib
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+USE_GCC=	4.4+
+.endif
 
 .if defined(WITHOUT_MCS51) && defined(WITHOUT_DS390)
 CONFIGURE_ARGS+=	--disable-51
