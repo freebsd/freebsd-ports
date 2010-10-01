@@ -14,6 +14,8 @@ MASTER_SITES=	http://core.de/~coto/projects/xtu/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transparent analog clock for X11
 
+BROKEN=		does not fetch
+
 USE_IMAKE=	yes
 USE_XORG=	x11 xpm xext
 CPPFLAGS=	-DUSE_XPM
