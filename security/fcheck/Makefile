@@ -8,9 +8,9 @@
 PORTNAME=	fcheck
 PORTVERSION=	2.07.59
 CATEGORIES=	security
-MASTER_SITES=	http://www.geocities.com/fcheck2000/
+MASTER_SITES=	http://www.sourcefiles.org/Networking/Security/Intrusion_Detection/ \
+		http://bsd-geek.de/FreeBSD/distfiles/
 DISTNAME=	FCheck_${PORTVERSION}
-#EXTRACT_ONLY=	YES
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Intrusion detection and Policy enforcement / auditing software
