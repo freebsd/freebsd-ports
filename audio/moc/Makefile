@@ -7,7 +7,7 @@
 
 PORTNAME=	moc
 PORTVERSION=	2.4.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
 
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=	--without-mp3
 .endif
 
 .if defined(WITH_MUSEPACK)
-LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec \
+LIB_DEPENDS+=	mpcdec.7:${PORTSDIR}/audio/musepack \
 		tag_c.0:${PORTSDIR}/audio/taglib
 PLIST_FILES+=	lib/moc/decoder_plugins/libmusepack_decoder.a \
 		lib/moc/decoder_plugins/libmusepack_decoder.la \
