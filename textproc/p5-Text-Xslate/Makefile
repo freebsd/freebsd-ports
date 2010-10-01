@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Xslate
-PORTVERSION=	0.1051
+PORTVERSION=	0.2008
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,10 +30,15 @@ MAN1=	xslate.1
 MAN3=	Text::Xslate.3 \
 	Text::Xslate::Bridge.3 \
 	Text::Xslate::Compiler.3 \
+	Text::Xslate::Manual.3 \
+	Text::Xslate::Manual::Builtin.3 \
 	Text::Xslate::Manual::Cookbook.3 \
+	Text::Xslate::Manual::Debugging.3 \
 	Text::Xslate::Manual::FAQ.3 \
 	Text::Xslate::PP.3 \
 	Text::Xslate::PP::Booster.3 \
+	Text::Xslate::PP::Compiler.3 \
+	Text::Xslate::PP::Compiler::CodeGenerator.3 \
 	Text::Xslate::PP::Const.3 \
 	Text::Xslate::PP::Method.3 \
 	Text::Xslate::PP::Opcode.3 \
