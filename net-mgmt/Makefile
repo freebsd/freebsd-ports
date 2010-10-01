@@ -286,9 +286,5 @@
     SUBDIR += zabbix-frontend
     SUBDIR += zabbix-proxy
     SUBDIR += zabbix-server
-    SUBDIR += zabbix16-agent
-    SUBDIR += zabbix16-frontend
-    SUBDIR += zabbix16-proxy
-    SUBDIR += zabbix16-server
 
 .include <bsd.port.subdir.mk>

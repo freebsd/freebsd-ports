@@ -4600,3 +4600,11 @@ devel/automake18||2010-09-22|Outdated, ports (2) migrated to automake19
 devel/automake15||2010-09-23|Outdated, ports migrated to automake19
 www/xpi-gbutts|www/xpi-google_shortcuts|2010-09-28|Plugin was renamed
 mail/sympa-elixus||2010-09-28|Has expired: no longer maintained, no longer fetchable, no longer builds with sympa
+net-mgmt/zabbix16-server||2010-10-01|Has expired: Development has ceased. Please upgrade to Zabbix 1.8.
+net-mgmt/zabbix16-agent||2010-10-01|Has expired: Development has ceased. Please upgrade to Zabbix 1.8.
+net-mgmt/zabbix16-frontend||2010-10-01|Has expired: Development has ceased. Please upgrade to Zabbix 1.8.
+net-mgmt/zabbix16-proxy||2010-10-01|Has expired: Development has ceased. Please upgrade to Zabbix 1.8.
+net-p2p/mutella||2010-10-01|Has expired: No longer under active development
+www/xpi-hit-a-hint||2010-10-01|Has expired: Development has been ceased and not compatible with Firefox > 2.
+www/xpi-preferential||2010-10-01|Has expired: Development has been ceased and not compatible with Firefox > 2.
+www/xpi-statusbarclock||2010-10-01|Has expired: Development has been ceased and not compatible with Firefox > 2.
