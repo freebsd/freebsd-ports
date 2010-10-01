@@ -4,18 +4,15 @@
 #
 # $FreeBSD$
 
-PORTNAME=	cego-base
-PORTVERSION=	1.1.32
-PORTREVISION=	1
+PORTNAME=	lfc
+PORTVERSION=	1.1.34
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
-DISTNAME=	base-${PORTVERSION}
 
 MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	A collection of basic c++ classes, used for databases/cego
 
 LICENSE=	GPLv2
-WRKSRC=		${WRKDIR}/base
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf:267:env
