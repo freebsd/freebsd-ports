@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	arduino
-PORTVERSION=	0018
+PORTVERSION=	0019
 CATEGORIES=	devel java lang
 MASTER_SITES=	GOOGLE_CODE
 EXTRACT_SUFX=	.tgz
@@ -61,10 +61,6 @@ post-extract:
 
 	@${RM} ${WRKSRC}/lib/librxtxSerial.so
 	@${LN} -s ${JAVA_HOME}/lib/${ARCH}/librxtxSerial.so ${WRKSRC}/lib/
-
-# Bug workaround: pde.jar refers to faq.html, but the file is
-# named FAQ.html.  Will be fixed after arduino-0018
-	@${MV} ${WRKSRC}/reference/FAQ.html ${WRKSRC}/reference/faq.html
 
 	@${REINPLACE_CMD} 's|stk500|arduino|g' ${WRKSRC}/hardware/arduino/boards.txt
 	@${RM} ${WRKSRC}/hardware/arduino/boards.txt.bak
