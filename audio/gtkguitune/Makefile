@@ -17,6 +17,8 @@ COMMENT=	A guitar (and other instruments) tuner for GTK
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
+BROKEN=		does not fetch
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 GNU_CONFIGURE=	yes
