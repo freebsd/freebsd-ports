@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	devede
-DISTVERSION=	3.16.8
-PORTREVISION=	1
+DISTVERSION=	3.16.9
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.rastersoft.com/descargas/ \
-		http://www.bsd-geek.de/FreeBSD/distfiles/ \
 		${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/}
 
 MAINTAINER=	lme@FreeBSD.org
@@ -124,6 +122,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/po/es.mo ${PREFIX}/share/locale/es/LC_MESSAGES/devede.mo
 	${INSTALL_DATA} ${WRKSRC}/po/fr.mo ${PREFIX}/share/locale/fr/LC_MESSAGES/devede.mo
 	${INSTALL_DATA} ${WRKSRC}/po/gl.mo ${PREFIX}/share/locale/gl/LC_MESSAGES/devede.mo
+	${INSTALL_DATA} ${WRKSRC}/po/hu_HU.mo ${PREFIX}/share/locale/it/LC_MESSAGES/devede.mo
 	${INSTALL_DATA} ${WRKSRC}/po/it_IT.mo ${PREFIX}/share/locale/it/LC_MESSAGES/devede.mo
 	${INSTALL_DATA} ${WRKSRC}/po/nb_NO.mo ${PREFIX}/share/locale/nb/LC_MESSAGES/devede.mo
 	${INSTALL_DATA} ${WRKSRC}/po/nl.mo ${PREFIX}/share/locale/nl/LC_MESSAGES/devede.mo
