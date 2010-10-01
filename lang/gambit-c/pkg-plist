@@ -34,12 +34,12 @@ lib/gambit-c/libgambcgsi.a
 lib/gambit-c/r4rs#.scm
 lib/gambit-c/r5rs#.scm
 lib/gambit-c/syntax-case.scm
-%%PORTDOCS%%%%DOCSDIR%%/gambit-c.html
-%%PORTDOCS%%%%DOCSDIR%%/gambit-c.pdf
-%%PORTDOCS%%%%DOCSDIR%%/gambit-c.txt
+%%DOCSDIR%%/gambit-c.html
+%%DOCSDIR%%/gambit-c.pdf
+%%DOCSDIR%%/gambit-c.txt
 share/emacs/site-lisp/gambit.el
 @dirrmtry share/emacs/site-lisp
 @dirrmtry share/emacs
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrm %%DOCSDIR%%
 @dirrm lib/gambit-c
 @dirrm include/gambit-c
