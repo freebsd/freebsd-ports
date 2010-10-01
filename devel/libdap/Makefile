@@ -9,7 +9,7 @@ PORTNAME=	libdap
 PORTVERSION=	3.11.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opendap.org/pub/source/ \
-		http://sunpoet.net/distfiles/
+		LOCAL/sunpoet
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 

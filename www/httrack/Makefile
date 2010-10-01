@@ -10,7 +10,7 @@ PORTVERSION=	3.43.9
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.httrack.com/ \
-		http://sunpoet.net/distfiles/
+		LOCAL/sunpoet
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([0-9]*)$/-\1/}C
 
 MAINTAINER=	sunpoet@FreeBSD.org

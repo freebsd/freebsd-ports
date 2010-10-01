@@ -9,7 +9,7 @@ PORTNAME=	mp3lint
 PORTVERSION=	0.9
 CATEGORIES=	audio perl5
 MASTER_SITES=	http://erislabs.net/ianb/projects/${PORTNAME}/ \
-		http://sunpoet.net/distfiles/
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A configurable tool to check collections of audio files

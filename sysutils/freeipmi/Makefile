@@ -16,7 +16,7 @@ PORTVERSION=	0.8.9
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU/${PORTNAME}/ \
 		http://ftp.gluster.com/pub/${PORTNAME}/${PORTVERSION}/ \
-		http://sunpoet.net/distfiles/
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library and tools to support IPMI-capable hardware

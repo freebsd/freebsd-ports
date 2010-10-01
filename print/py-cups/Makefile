@@ -9,7 +9,7 @@ PORTNAME=	cups
 PORTVERSION=	1.9.51
 CATEGORIES=	print python
 MASTER_SITES=	http://cyberelk.net/tim/data/pycups/ \
-		http://sunpoet.net/distfiles/
+		LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 

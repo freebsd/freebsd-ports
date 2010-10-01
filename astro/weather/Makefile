@@ -9,7 +9,7 @@ PORTNAME=	weather
 PORTVERSION=	1.5
 CATEGORIES=	astro python
 MASTER_SITES=	http://fungi.yuggoth.org/weather/src/ \
-		http://sunpoet.net/distfiles/
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	An utility to provide current weather conditions and forecasts

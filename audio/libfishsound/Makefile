@@ -9,7 +9,7 @@ PORTNAME=	libfishsound
 PORTVERSION=	1.0.0
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/libfishsound/ \
-		http://sunpoet.net/distfiles/
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A programing interface to decode/encode audio data

@@ -8,7 +8,7 @@ PORTNAME=	idnits
 PORTVERSION=	2.12.05
 CATEGORIES=	textproc
 MASTER_SITES=	http://tools.ietf.org/tools/idnits/ \
-		http://sunpoet.net/distfiles/
+		LOCAL/sunpoet
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sunpoet@FreeBSD.org

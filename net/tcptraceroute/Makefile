@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://michael.toren.net/code/tcptraceroute/ \
-		http://sunpoet.net/distfiles/
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A traceroute implementation using TCP packets

@@ -9,7 +9,7 @@ PORTNAME=	udunits
 PORTVERSION=	2.1.19
 CATEGORIES=	science math
 MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/udunits/ \
-		http://sunpoet.net/distfiles/
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A library for manipulating units of physical quantities

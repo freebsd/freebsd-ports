@@ -10,7 +10,7 @@ PORTVERSION=	0.80
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://mirrors.evolva.ro/util/mtr/ \
-		http://sunpoet.net/distfiles/
+		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Traceroute and ping in a single graphical network diagnostic tool
