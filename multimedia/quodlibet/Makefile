@@ -7,7 +7,7 @@
 
 PORTNAME=	quodlibet
 PORTVERSION=	2.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -72,7 +72,7 @@ RUN_DEPENDS+=	${PYCTYPES}
 .endif
 
 .if !defined(WITHOUT_MUSEPACK)
-LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
+LIB_DEPENDS+=	mpcdec.7:${PORTSDIR}/audio/musepack
 USE_GSTREAMER+=	musepack
 .endif
 
