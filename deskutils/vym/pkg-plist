@@ -1,45 +1,21 @@
 bin/vym
+%%PORTDOCS%%%%DOCSDIR%%/vym.pdf
+%%DATADIR%%/demos/lifeforms.vym
+%%DATADIR%%/demos/math.vym
+%%DATADIR%%/demos/time-management.vym
+%%DATADIR%%/demos/vym-projectplan.vym
+%%DATADIR%%/exports/orange-blue.conf
 %%DATADIR%%/exports/template-orange-blue/META-INF/manifest.xml
 %%DATADIR%%/exports/template-orange-blue/Pictures/1000000000000040000000400142E835.png
 %%DATADIR%%/exports/template-orange-blue/Thumbnails/thumbnail.png
 %%DATADIR%%/exports/template-orange-blue/content-template.xml
 %%DATADIR%%/exports/template-orange-blue/content.xml
 %%DATADIR%%/exports/template-orange-blue/meta.xml
-%%DATADIR%%/exports/template-orange-blue/styles.xml
-%%DATADIR%%/exports/template-orange-blue/settings.xml
-%%DATADIR%%/exports/template-orange-blue/page-template.xml
 %%DATADIR%%/exports/template-orange-blue/mimetype
-%%DATADIR%%/exports/orange-blue.conf
-%%DATADIR%%/flags/freemind/attach.png
-%%DATADIR%%/flags/freemind/back.png
-%%DATADIR%%/flags/freemind/bell.png
-%%DATADIR%%/flags/freemind/bookmark.png
-%%DATADIR%%/flags/freemind/clanbomber.png
-%%DATADIR%%/flags/freemind/desktopnew.png
-%%DATADIR%%/flags/freemind/flag.png
-%%DATADIR%%/flags/freemind/forward.png
-%%DATADIR%%/flags/freemind/gohome.png
-%%DATADIR%%/flags/freemind/help.png
-%%DATADIR%%/flags/freemind/idea.png
-%%DATADIR%%/flags/freemind/kaddressbook.png
-%%DATADIR%%/flags/freemind/knotify.png
-%%DATADIR%%/flags/freemind/korn.png
-%%DATADIR%%/flags/freemind/mail.png
-%%DATADIR%%/flags/freemind/licq.png
-%%DATADIR%%/flags/freemind/password.png
-%%DATADIR%%/flags/freemind/pencil.png
-%%DATADIR%%/flags/freemind/penguin.png
-%%DATADIR%%/flags/freemind/priority-1.png
-%%DATADIR%%/flags/freemind/priority-2.png
-%%DATADIR%%/flags/freemind/priority-3.png
-%%DATADIR%%/flags/freemind/priority-4.png
-%%DATADIR%%/flags/freemind/priority-5.png
-%%DATADIR%%/flags/freemind/priority-6.png
-%%DATADIR%%/flags/freemind/priority-7.png
-%%DATADIR%%/flags/freemind/stop.png
-%%DATADIR%%/flags/freemind/warning.png
-%%DATADIR%%/flags/freemind/wizard.png
-%%DATADIR%%/flags/freemind/xmag.png
+%%DATADIR%%/exports/template-orange-blue/page-template.xml
+%%DATADIR%%/exports/template-orange-blue/section-template.xml
+%%DATADIR%%/exports/template-orange-blue/settings.xml
+%%DATADIR%%/exports/template-orange-blue/styles.xml
 %%DATADIR%%/flags/flag-arrow-2down.png
 %%DATADIR%%/flags/flag-arrow-2up.png
 %%DATADIR%%/flags/flag-arrow-down.png
@@ -71,6 +47,36 @@ bin/vym
 %%DATADIR%%/flags/flag-url.png
 %%DATADIR%%/flags/flag-vymlink.png
 %%DATADIR%%/flags/flags.xcf
+%%DATADIR%%/flags/freemind/attach.png
+%%DATADIR%%/flags/freemind/back.png
+%%DATADIR%%/flags/freemind/bell.png
+%%DATADIR%%/flags/freemind/bookmark.png
+%%DATADIR%%/flags/freemind/clanbomber.png
+%%DATADIR%%/flags/freemind/desktopnew.png
+%%DATADIR%%/flags/freemind/flag.png
+%%DATADIR%%/flags/freemind/forward.png
+%%DATADIR%%/flags/freemind/gohome.png
+%%DATADIR%%/flags/freemind/help.png
+%%DATADIR%%/flags/freemind/idea.png
+%%DATADIR%%/flags/freemind/kaddressbook.png
+%%DATADIR%%/flags/freemind/knotify.png
+%%DATADIR%%/flags/freemind/korn.png
+%%DATADIR%%/flags/freemind/licq.png
+%%DATADIR%%/flags/freemind/mail.png
+%%DATADIR%%/flags/freemind/password.png
+%%DATADIR%%/flags/freemind/pencil.png
+%%DATADIR%%/flags/freemind/penguin.png
+%%DATADIR%%/flags/freemind/priority-1.png
+%%DATADIR%%/flags/freemind/priority-2.png
+%%DATADIR%%/flags/freemind/priority-3.png
+%%DATADIR%%/flags/freemind/priority-4.png
+%%DATADIR%%/flags/freemind/priority-5.png
+%%DATADIR%%/flags/freemind/priority-6.png
+%%DATADIR%%/flags/freemind/priority-7.png
+%%DATADIR%%/flags/freemind/stop.png
+%%DATADIR%%/flags/freemind/warning.png
+%%DATADIR%%/flags/freemind/wizard.png
+%%DATADIR%%/flags/freemind/xmag.png
 %%DATADIR%%/icons/cursor.xcf
 %%DATADIR%%/icons/cursor16.xcf
 %%DATADIR%%/icons/cursorcolorpicker.png
@@ -145,20 +151,24 @@ bin/vym
 %%DATADIR%%/lang/vym_pt_BR.ts
 %%DATADIR%%/lang/vym_ru.qm
 %%DATADIR%%/lang/vym_ru.ts
+%%DATADIR%%/lang/vym_sv.qm
+%%DATADIR%%/lang/vym_sv.ts
 %%DATADIR%%/lang/vym_zh_CN.qm
 %%DATADIR%%/lang/vym_zh_CN.ts
-%%DATADIR%%/macros/macro-3.vys
+%%DATADIR%%/lang/vym_zh_TW.qm
+%%DATADIR%%/lang/vym_zh_TW.ts
 %%DATADIR%%/macros/macro-1.vys
-%%DATADIR%%/macros/macro-7.vys
-%%DATADIR%%/macros/macro-12.vys
-%%DATADIR%%/macros/macro-9.vys
-%%DATADIR%%/macros/macro-4.vys
-%%DATADIR%%/macros/macro-2.vys
-%%DATADIR%%/macros/macro-6.vys
-%%DATADIR%%/macros/macro-11.vys
-%%DATADIR%%/macros/macro-8.vys
-%%DATADIR%%/macros/macro-5.vys
 %%DATADIR%%/macros/macro-10.vys
+%%DATADIR%%/macros/macro-11.vys
+%%DATADIR%%/macros/macro-12.vys
+%%DATADIR%%/macros/macro-2.vys
+%%DATADIR%%/macros/macro-3.vys
+%%DATADIR%%/macros/macro-4.vys
+%%DATADIR%%/macros/macro-5.vys
+%%DATADIR%%/macros/macro-6.vys
+%%DATADIR%%/macros/macro-7.vys
+%%DATADIR%%/macros/macro-8.vys
+%%DATADIR%%/macros/macro-9.vys
 %%DATADIR%%/scripts/exportvym
 %%DATADIR%%/scripts/niceXML
 %%DATADIR%%/scripts/release-mac
@@ -173,25 +183,18 @@ bin/vym
 %%DATADIR%%/styles/vym2taskjuggler.xsl
 %%DATADIR%%/styles/vym2txt.xsl
 %%DATADIR%%/styles/vym2xhtml.xsl
-%%PORTDOCS%%%%DOCSDIR%%/vym_es.pdf
-%%PORTDOCS%%%%DOCSDIR%%/vym_fr.pdf
-%%PORTDOCS%%%%DOCSDIR%%/vym.pdf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lifeforms.vym
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/math.vym
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/time-management.vym
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/vym-projectplan.vym
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%/exports/template-orange-blue/Pictures
-@dirrm %%DATADIR%%/exports/template-orange-blue/META-INF
-@dirrm %%DATADIR%%/exports/template-orange-blue/Thumbnails
-@dirrm %%DATADIR%%/exports/template-orange-blue
-@dirrm %%DATADIR%%/exports
+@dirrm %%DATADIR%%/styles
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/macros
+@dirrm %%DATADIR%%/lang
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/flags/freemind
 @dirrm %%DATADIR%%/flags
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%/macros
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/styles
+@dirrm %%DATADIR%%/exports/template-orange-blue/Thumbnails
+@dirrm %%DATADIR%%/exports/template-orange-blue/Pictures
+@dirrm %%DATADIR%%/exports/template-orange-blue/META-INF
+@dirrm %%DATADIR%%/exports/template-orange-blue
+@dirrm %%DATADIR%%/exports
+@dirrm %%DATADIR%%/demos
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
