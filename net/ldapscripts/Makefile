@@ -7,27 +7,23 @@
 
 PORTNAME=	ldapscripts
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/ldapscripts/
-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Scripts to manage posix accounts in an OpenLDAP directory
 
-WANT_OPENLDAP_VER?=	23
-.if (${WANT_OPENLDAP_VER} != 21) && (${WANT_OPENLDAP_VER} != 22) && (${WANT_OPENLDAP_VER} != 23) && (${WANT_OPENLDAP_VER} != 24)
-BROKEN=	Incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
-.endif
+RUN_DEPENDS=	ldapadd:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client \
+		ldapsearch:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client \
+		ldapdelete:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client \
+		ldapmodify:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client \
+		ldapmodrdn:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client \
+		ldappasswd:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client
 
-RUN_DEPENDS=	ldapadd:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client \
-		ldapsearch:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client \
-		ldapdelete:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client \
-		ldapmodify:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client \
-		ldapmodrdn:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client \
-		ldappasswd:${PORTSDIR}/net/openldap${WANT_OPENLDAP_VER}-client
-
+USE_OPENLDAP=	yes
 USE_ICONV=	yes
 LIBDIR=${PREFIX}/lib/${PORTNAME}
 MAKE_ENV+=	MANDIR=${MANPREFIX}/man \
