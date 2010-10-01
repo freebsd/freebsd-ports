@@ -14,6 +14,8 @@ MASTER_SITES=	http://clay.ll.pl/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple hiragana/katakana drill tool
 
+BROKEN=		does not fetch
+
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
