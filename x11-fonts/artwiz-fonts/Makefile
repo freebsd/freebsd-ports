@@ -9,8 +9,8 @@ PORTNAME=	artwiz-fonts
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.xs4all.nl/~hanb/software/fluxbox/ \
-		http://www.cus.org.uk/~dom/distfiles/artwiz-fonts/
+MASTER_SITES=	http://kobyla.info/soft/distfiles/ \
+		LOCAL/garga/artwiz/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	garga@FreeBSD.org
