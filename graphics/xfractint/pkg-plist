@@ -1,21 +1,65 @@
 bin/xfractint
-share/fractint/altern.map
-share/fractint/cellular.par
-share/fractint/default.map
-share/fractint/demo.par
-share/fractint/fract18.par
-share/fractint/fract19.par
-share/fractint/fract200.frm
-share/fractint/fract200.par
-share/fractint/fractint.frm
-share/fractint/fractint.hlp
-share/fractint/fractint.ifs
-share/fractint/fractint.l
-share/fractint/fractint.par
-share/fractint/icons.par
-share/fractint/lyapunov.par
-share/fractint/music.par
-share/fractint/penrose.l
-share/fractint/phoenix.par
-share/fractint/tiling.l
-@dirrm share/fractint
+%%DATADIR%%/fractint.hlp
+%%DATADIR%%/sstools.ini
+%%DATADIR%%/formulas/fract001.frm
+%%DATADIR%%/formulas/fract002.frm
+%%DATADIR%%/formulas/fract003.frm
+%%DATADIR%%/formulas/fract196.frm
+%%DATADIR%%/formulas/fract200.frm
+%%DATADIR%%/formulas/fract_sy.frm
+%%DATADIR%%/formulas/fractint.frm
+%%DATADIR%%/formulas/ikenaga.frm
+%%DATADIR%%/formulas/julitile.frm
+%%DATADIR%%/formulas/new_if.frm
+%%DATADIR%%/formulas/newton.frm
+%%DATADIR%%/ifs/fract205.ifs
+%%DATADIR%%/ifs/fractint.ifs
+%%DATADIR%%/lsystem/fract205.l
+%%DATADIR%%/lsystem/fractint.l
+%%DATADIR%%/lsystem/penrose.l
+%%DATADIR%%/lsystem/tiling.l
+%%DATADIR%%/maps/altern.map
+%%DATADIR%%/maps/blues.map
+%%DATADIR%%/maps/chroma.map
+%%DATADIR%%/maps/default.map
+%%DATADIR%%/maps/defaultw.map
+%%DATADIR%%/maps/firestrm.map
+%%DATADIR%%/maps/froth3.map
+%%DATADIR%%/maps/froth316.map
+%%DATADIR%%/maps/froth6.map
+%%DATADIR%%/maps/froth616.map
+%%DATADIR%%/maps/gamma1.map
+%%DATADIR%%/maps/gamma2.map
+%%DATADIR%%/maps/glasses1.map
+%%DATADIR%%/maps/glasses2.map
+%%DATADIR%%/maps/goodega.map
+%%DATADIR%%/maps/green.map
+%%DATADIR%%/maps/grey.map
+%%DATADIR%%/maps/grid.map
+%%DATADIR%%/maps/headache.map
+%%DATADIR%%/maps/landscap.map
+%%DATADIR%%/maps/lyapunov.map
+%%DATADIR%%/maps/neon.map
+%%DATADIR%%/maps/paintjet.map
+%%DATADIR%%/maps/royal.map
+%%DATADIR%%/maps/topo.map
+%%DATADIR%%/maps/volcano.map
+%%DATADIR%%/pars/cellular.par
+%%DATADIR%%/pars/demo.par
+%%DATADIR%%/pars/fract18.par
+%%DATADIR%%/pars/fract19.par
+%%DATADIR%%/pars/fract200.par
+%%DATADIR%%/pars/fract205.par
+%%DATADIR%%/pars/fractint.par
+%%DATADIR%%/pars/icons.par
+%%DATADIR%%/pars/lyapunov.par
+%%DATADIR%%/pars/music.par
+%%DATADIR%%/pars/newphoen.par
+%%DATADIR%%/pars/orbits.par
+%%DATADIR%%/pars/phoenix.par
+@dirrm %%DATADIR%%/formulas
+@dirrm %%DATADIR%%/ifs
+@dirrm %%DATADIR%%/lsystem
+@dirrm %%DATADIR%%/maps
+@dirrm %%DATADIR%%/pars
+@dirrm %%DATADIR%%

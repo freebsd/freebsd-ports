@@ -1,6 +1,6 @@
---- fractalb.c.orig	Tue Sep  7 00:38:10 1999
-+++ fractalb.c	Sun Dec  7 10:40:04 2003
-@@ -10,7 +10,7 @@
+--- ./common/fractals.c.orig	2008-09-17 21:52:35.000000000 -0400
++++ ./common/fractals.c	2010-01-27 13:52:46.000000000 -0500
+@@ -41,7 +41,7 @@
  #include <string.h>
  #ifdef __TURBOC__
  #include <alloc.h>
