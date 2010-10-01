@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netdev config analyzer
 
+BROKEN=		does not fetch
+
 PLIST_FILES=	bin/${PORTNAME} etc/nipper.conf.sample
 PORTDOCS=	Changelog Readme TODO Features.txt Options.txt Quickstart.txt \
 		XML.txt
