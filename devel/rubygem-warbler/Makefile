@@ -6,7 +6,7 @@
 
 PORTNAME=	warbler
 PORTVERSION=	0.9.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel rubygems java
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A constructor of .war files of Rails applications
 
 RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby \
-		rubygem-jruby-jars>=1.3.1:${PORTSDIR}/devel/rubygem-jruby-jars
+		rubygem-jruby-jars>=1.4.0:${PORTSDIR}/devel/rubygem-jruby-jars
 
 USE_RUBY=	yes
 USE_RAKE=	yes
