@@ -19,6 +19,7 @@ MAINTAINER=	takefu@airport.fm
 COMMENT=	HE-AAC+ Codec as Shared Library
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 
