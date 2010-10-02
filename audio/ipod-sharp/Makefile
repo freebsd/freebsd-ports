@@ -8,7 +8,7 @@
 PORTNAME=	ipod-sharp
 PORTVERSION=	0.8.5
 CATEGORIES=	audio
-MASTER_SITES=	http://download.banshee-project.org/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	http://download.banshee.fm/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Manipulate iTunesDB used in Apple iPod devices

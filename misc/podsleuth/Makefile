@@ -8,7 +8,7 @@
 PORTNAME=	podsleuth
 PORTVERSION=	0.6.7
 CATEGORIES=	misc
-MASTER_SITES=	http://download.banshee-project.org/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	http://download.banshee.fm/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	A tool to discover detailed model information about an iPod
