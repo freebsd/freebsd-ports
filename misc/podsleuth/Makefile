@@ -7,6 +7,7 @@
 
 PORTNAME=	podsleuth
 PORTVERSION=	0.6.7
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://download.banshee.fm/${PORTNAME}/${PORTVERSION}/
 
@@ -25,5 +26,10 @@ CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^#!/bin/bash$$|#!/bin/sh|' \
+	    ${WRKSRC}/src/PodSleuth.Hal/hal-podsleuth.in \
+	    ${WRKSRC}/src/PodSleuth.Hal/podsleuth.in \
 
 .include <bsd.port.mk>
