@@ -8,7 +8,7 @@
 PORTNAME=	mono-zeroconf
 PORTVERSION=	0.9.0
 CATEGORIES=	net
-MASTER_SITES=	http://download.banshee-project.org/${PORTNAME}/
+MASTER_SITES=	http://download.banshee.fm/${PORTNAME}/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Cross platform Zero Configuration Networking library for Mono
