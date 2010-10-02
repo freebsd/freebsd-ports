@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zmq
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.9
 CATEGORIES=	devel net
 MASTER_SITES=	http://zeromq.wdfiles.com/local--files/area:download/
 DISTNAME=	zeromq-${DISTVERSION}
@@ -18,10 +18,12 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 
+MAN1=		zmq_forwarder.1 \
+		zmq_queue.1 \
+		zmq_streamer.1
 MAN3=		zmq_bind.3 \
 		zmq_close.3 \
 		zmq_connect.3 \
-		zmq_device.3 \
 		zmq_errno.3 \
 		zmq_getsockopt.3 \
 		zmq_init.3 \
