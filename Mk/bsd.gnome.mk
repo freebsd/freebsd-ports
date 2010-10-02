@@ -709,6 +709,11 @@ ltasneededhack_PRE_PATCH=	if [ -f ${WRKDIR}/gnome-libtool ]; then \
 									${WRKDIR}/gnome-libtool; \
 							fi
 
+# Set USE_CSTD for all ports that depend on glib12
+.if defined(_USE_GNOME) && !empty(_USE_GNOME:Mglib12)
+USE_CSTD=	gnu89
+.endif
+
 # Then traverse through all components, check which of them
 # exist in ${_USE_GNOME} and set variables accordingly
 .ifdef _USE_GNOME

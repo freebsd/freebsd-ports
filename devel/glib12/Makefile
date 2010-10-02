@@ -14,6 +14,7 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Some useful routines of C programming (previous stable version)
 
+USE_CSTD=	gnu89
 USE_AUTOTOOLS=	libtool:22
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
