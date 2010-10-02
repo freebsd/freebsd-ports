@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_BINARIES}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
 PKGNAMEPREFIX=	jakarta-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A Java library for locating resources (including classes)
 
 USE_JAVA=	YES
