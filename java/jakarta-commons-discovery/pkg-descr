@@ -1,5 +1,5 @@
 The Discovery Component is about discovering, or finding, implementations for
-pluggable interfaces. It provides facilities intantiating classes in general,
+pluggable interfaces. It provides facilities instantiating classes in general,
 and for lifecycle management of singleton (factory) classes.
 
 Fundamentally, Discovery locates classes that implement a given Java interface.
