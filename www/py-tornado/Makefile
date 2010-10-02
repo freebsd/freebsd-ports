@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tornado
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1
 CATEGORIES=	www python
 MASTER_SITES=	http://github.com/downloads/facebook/tornado/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
