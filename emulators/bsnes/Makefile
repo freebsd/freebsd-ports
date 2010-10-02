@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	bsnes
-PORTVERSION=	0.68
+PORTVERSION=	0.70
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}
@@ -22,7 +22,7 @@ USE_GCC=	4.4+
 
 ONLY_FOR_ARCHS=	i386 amd64
 WRKSRC=		${WRKDIR}/
-MAKE_ENV+=	moc=moc-qt4
+MAKE_ENV+=	moc=moc-qt4 c="${CC} -std=gnu99" cpp="${CXX} -std=gnu++0x"
 USE_LDCONFIG=	yes
 
 OPTIONS=	VIDEO_GLX "Build GLX Video Driver" on \
@@ -97,9 +97,9 @@ IGNORE=	you have to choose at least an input driver first
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|VIDEO|${VIDEO_DRIVER}|' ${WRKSRC}/bsnes/qt/Makefile
-	${REINPLACE_CMD} -e 's|AUDIO|${AUDIO_DRIVER}|' ${WRKSRC}/bsnes/qt/Makefile
-	${REINPLACE_CMD} -e 's|INPUT|${INPUT_DRIVER}|' ${WRKSRC}/bsnes/qt/Makefile
+	${REINPLACE_CMD} -e 's|VIDEO|${VIDEO_DRIVER}|' ${WRKSRC}/bsnes/ui-qt/Makefile
+	${REINPLACE_CMD} -e 's|AUDIO|${AUDIO_DRIVER}|' ${WRKSRC}/bsnes/ui-qt/Makefile
+	${REINPLACE_CMD} -e 's|INPUT|${INPUT_DRIVER}|' ${WRKSRC}/bsnes/ui-qt/Makefile
 
 do-build:
 	(cd ${WRKSRC}/bsnes && ${GMAKE} ${MAKE_ENV})
@@ -108,11 +108,11 @@ do-build:
 	(cd ${WRKSRC}/supergameboy && ${GMAKE} ${MAKE_ENV})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bsnes/out/bsnes-compatibility ${PREFIX}/bin/bsnes
+	${INSTALL_PROGRAM} ${WRKSRC}/bsnes/out/bsnes ${PREFIX}/bin/
 	${MKDIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/bsnes/qt/data/bsnes.png ${PREFIX}/share/pixmaps/bsnes.png
+	${INSTALL_DATA} ${WRKSRC}/bsnes/ui-qt/data/bsnes.png ${PREFIX}/share/pixmaps/
 	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/bsnes/qt//data/bsnes.desktop ${PREFIX}/share/applications/bsnes.desktop
+	${INSTALL_DATA} ${WRKSRC}/bsnes/ui-qt/data/bsnes.desktop ${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/snesreader/libsnesreader.so ${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/snesfilter/libsnesfilter.so ${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/supergameboy/libsupergameboy.so ${PREFIX}/lib/
