@@ -6,13 +6,14 @@
 
 PORTNAME=	authlogic
 PORTVERSION=	2.1.6
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A clean, simple, and unobtrusive Ruby authentication solution
 
-RUN_DEPENDS=	rubygem-activesupport>=2.0.2:${PORTSDIR}/devel/rubygem-activesupport
+RUN_DEPENDS=	rubygem-activesupport>=0:${PORTSDIR}/devel/rubygem-activesupport
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
