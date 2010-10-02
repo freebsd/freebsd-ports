@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	facter
-PORTVERSION=	1.5.7
-PORTREVISION=	1
+PORTVERSION=	1.5.8
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	http://www.reductivelabs.com/downloads/facter/
 

@@ -39,6 +39,9 @@ bin/facter
 %%RUBY_SITELIBDIR%%/facter/timezone.rb
 %%RUBY_SITELIBDIR%%/facter/uniqueid.rb
 %%RUBY_SITELIBDIR%%/facter/uptime.rb
+%%RUBY_SITELIBDIR%%/facter/uptime_days.rb
+%%RUBY_SITELIBDIR%%/facter/uptime_hours.rb
+%%RUBY_SITELIBDIR%%/facter/uptime_seconds.rb
 %%RUBY_SITELIBDIR%%/facter/util/collection.rb
 %%RUBY_SITELIBDIR%%/facter/util/confine.rb
 %%RUBY_SITELIBDIR%%/facter/util/fact.rb
@@ -55,7 +58,9 @@ bin/facter
 %%RUBY_SITELIBDIR%%/facter/util/uptime.rb
 %%RUBY_SITELIBDIR%%/facter/util/values.rb
 %%RUBY_SITELIBDIR%%/facter/util/virtual.rb
+%%RUBY_SITELIBDIR%%/facter/util/vlans.rb
 %%RUBY_SITELIBDIR%%/facter/virtual.rb
+%%RUBY_SITELIBDIR%%/facter/vlans.rb
 @dirrm %%RUBY_SITELIBDIR%%/facter/util/plist
 @dirrm %%RUBY_SITELIBDIR%%/facter/util
 @dirrm %%RUBY_SITELIBDIR%%/facter
