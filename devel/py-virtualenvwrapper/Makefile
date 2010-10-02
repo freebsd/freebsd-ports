@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	virtualenvwrapper
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.3
 PORTREVISION=	0
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.doughellmann.com/downloads/ \
+MASTER_SITES=	CHEESESHOP \
+		http://www.doughellmann.com/downloads/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
