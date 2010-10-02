@@ -7,13 +7,14 @@
 PORTNAME=	md5
 PORTVERSION=	1.8.5
 CATEGORIES=	security lisp
-MASTER_SITES=	http://files.b9.com/md5/
+MASTER_SITES=	http://ftp.de.debian.org/debian/pool/main/c/cl-md5/
+DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}_${PORTVERSION}.orig
 PKGNAMEPREFIX=	cl-
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A native MD5 implementation in Common Lisp
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-${DISTVERSION}
 NO_BUILD=	yes
 
 USE_ASDF=	yes
