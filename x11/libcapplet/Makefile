@@ -20,12 +20,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomelibs
 USE_LDCONFIG=	yes
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800071
-BROKEN=		does not build
-.endif
+USE_CSTD=	gnu89
 
 post-build:
 	@${REINPLACE_CMD} -e 's/-lgnugetopt //' ${WRKSRC}/cappletConf.sh
@@ -41,4 +36,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/control-center.idl ${PREFIX}/share/idl
 	${INSTALL_SCRIPT} ${WRKSRC}/cappletConf.sh ${PREFIX}/etc
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
