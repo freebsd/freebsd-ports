@@ -24,4 +24,10 @@ USE_KDE4=	kdeprefix kdelibs automoc4
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+BROKEN=		does not build on 7.X
+.endif
+
+.include <bsd.port.post.mk>
