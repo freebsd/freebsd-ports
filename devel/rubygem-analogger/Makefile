@@ -6,13 +6,14 @@
 
 PORTNAME=	analogger
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A fast, flexible, easy to use logging service for Ruby
 
-RUN_DEPENDS=	rubygem-eventmachine>=0.7.0:${PORTSDIR}/devel/rubygem-eventmachine
+RUN_DEPENDS=	rubygem-eventmachine>=0.0.0:${PORTSDIR}/devel/rubygem-eventmachine
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
