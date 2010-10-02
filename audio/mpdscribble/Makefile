@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpdscribble
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	audio
 MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
 
@@ -14,6 +14,8 @@ MAINTAINER=	kimelto@gmail.com
 COMMENT=	Musicpd last.fm client
 
 LIB_DEPENDS+=	mpdclient.2:${PORTSDIR}/audio/libmpdclient
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20 pkgconfig
