@@ -1,0 +1,4 @@
+******************************************************
+This ports works only if linprocfs is mounted. Ensure
+that linprocfs is mounted before running. 
+*****************************************************

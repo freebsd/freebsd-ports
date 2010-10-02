@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	lxtask
-PORTVERSION=	0.1
-PORTREVISION=	4
+PORTVERSION=	0.1.3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	SF/lxde/LXTask%20%28task%20manager%29/LXTask%20${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	davide.italiano@gmail.com
 COMMENT=	A lightweight desktop-independent task manager
 
 USE_GNOME=	gtk20 intlhack
@@ -30,5 +29,8 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+post-install:
+	@${ECHO_CMD} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
