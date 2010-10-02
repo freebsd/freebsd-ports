@@ -7,6 +7,7 @@
 
 PORTNAME=	x86info
 PORTVERSION=	1.27
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://codemonkey.org.uk/projects/x86info/ \
 		http://codemonkey.org.uk/projects/x86info/old/
