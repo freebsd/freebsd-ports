@@ -1,5 +1,5 @@
 --- cpuid.c.orig	2010-09-08 12:19:56.000000000 -0700
-+++ cpuid.c	2010-10-01 04:06:00.000000000 -0700
++++ cpuid.c	2010-10-01 21:37:48.000000000 -0700
 @@ -23,8 +23,16 @@
  #include <sched.h>
  
@@ -70,7 +70,12 @@
  	if (ret)
  		return ret;
  	return 0;
-@@ -106,7 +133,11 @@
+@@ -102,11 +129,15 @@
+ 	unsigned int *ecx,
+ 	unsigned int *edx)
+ {
+-	static int nodriver=0;
++	static int nodriver=1;
  	char cpuname[20];
  	unsigned char buffer[16];
  	int fh;
