@@ -26,12 +26,12 @@ RUN_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 		${SITE_PERL}/Finance/Quote.pm:${PORTSDIR}/finance/p5-Finance-Quote \
 		${SITE_PERL}/HTML/TableExtract.pm:${PORTSDIR}/www/p5-HTML-TableExtract \
-		${SITE_PERL}/Finance/QuoteHist.pm:${PORTSDIR}/finance/p5-Finance-QuoteHist \
-		${LOCALBASE}/share/omf/gnucash-docs/gnucash-guide-C.omf:${PORTSDIR}/finance/gnucash-docs
+		${SITE_PERL}/Finance/QuoteHist.pm:${PORTSDIR}/finance/p5-Finance-QuoteHist
 
-OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	off	\
-		OFX		"OFX support"				off	\
-		POSTGRESQL	"Enable Postgresql as Backend"		off
+OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	off \
+		OFX		"OFX support"				off \
+		POSTGRESQL	"Enable Postgresql as Backend"		off \
+		GCDOCS		"Install gnucash-docs"			on
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -100,6 +100,10 @@ GC_LIBS+=	-lpq
 .else
 CONFIGURE_ARGS+=--disable-sql
 PLIST_SUB+=	PGBACKEND="@comment "
+.endif
+
+.if !defined(WITHOUT_GCDOCS)
+RUN_DEPENDS+=	${LOCALBASE}/share/omf/gnucash-docs/gnucash-guide-C.omf:${PORTSDIR}/finance/gnucash-docs
 .endif
 
 CONFIGURE_ENV+=	LIBS="${GC_LIBS}"
