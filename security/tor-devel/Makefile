@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.2.15-alpha
-PORTREVISION=	1
+DISTVERSION=	0.2.2.17-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.cypherpunks.at/dist/ \
@@ -83,8 +82,10 @@ post-patch:
 		${WRKSRC}/contrib/tor-tsocks.conf.sample
 	@${REINPLACE_CMD} -e "s|tor-tsocks.conf|tor-tsocks.conf.sample|g" \
 		${WRKSRC}/contrib/Makefile.in
+	@${REINPLACE_CMD} -e '\|^install-data-am:|s|install-docDATA||' \
+		${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e '\|CFLAGS=|{s|-g||;s|-O[0-9]\{0,1\}||;}' \
-		-e 's|netinet/in6|netinet6/in6|g' ${WRKSRC}/configure
+		-e 's|netinet/in6||g' ${WRKSRC}/configure
 
 post-configure:
 	@${FIND} -X ${WRKSRC} -type f -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
