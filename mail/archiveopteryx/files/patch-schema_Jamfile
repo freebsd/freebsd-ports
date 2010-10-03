@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- schema/Jamfile.orig
++++ schema/Jamfile
+@@ -9,7 +9,7 @@
+     SEARCH on $(<) = $(SEARCH_SOURCE) ;
+     EngraveConfig $(e) : $(<) ;
+ 
+-    InstallFile $(INSTALLROOT)$(LIBDIR) : $(e) ;
++    InstallFile $(INSTALLROOT)$(LIBDATADIR) : $(e) ;
+ }
+ 
+ SchemaFile schema.pg ;

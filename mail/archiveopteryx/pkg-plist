@@ -1,0 +1,22 @@
+bin/aox
+bin/aoxexport
+bin/aoximport
+bin/deliver
+libdata/aox/downgrades
+libdata/aox/field-names
+libdata/aox/flag-names
+libdata/aox/fts.pg
+libdata/aox/schema.pg
+libexec/aox/contrib/rrdglue
+libexec/aox/installer
+sbin/archiveopteryx
+sbin/logd
+sbin/recorder
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/README
+%%DOCSDIR%%/bsd.txt
+@dirrm libexec/aox/contrib
+@dirrm libexec/aox
+@dirrm libdata/aox
+@dirrm %%ETCDIR%%
+@dirrm %%DOCSDIR%%

@@ -1,0 +1,28 @@
+#!/bin/sh
+
+PKGNAME=$1
+TARGET=$2
+
+MKDIR=/bin/mkdir
+CHOWN=/usr/sbin/chown
+CHMOD=/bin/chmod
+
+AOXGROUP=aox
+AOXUSER=aox
+
+if [ $# -ne 2 ]; then
+	echo "Usage: $0 [PKGNAME] [PRE-INSTALL | POST-INSTALL]"
+	exit 1
+fi
+
+if [ "$TARGET" = POST-INSTALL ]; then
+	for i in /var/db/aox/jail /var/db/aox/messages; do
+		${MKDIR} -m 700 -p ${i}
+		${CHOWN} ${AOXUSER}:${AOXGROUP} ${i}
+	done
+	${CHMOD} 700 /var/db/aox
+	${MKDIR} /var/run/aox
+	${CHOWN} ${AOXUSER}:${AOXGROUP} /var/db/aox /var/run/aox
+fi
+
+exit 0

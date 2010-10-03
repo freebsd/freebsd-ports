@@ -1,0 +1,46 @@
+
+$FreeBSD$
+
+--- Jamfile.orig
++++ Jamfile
+@@ -50,9 +50,9 @@
+ }
+ 
+ 
+-Prepare $(INSTALLROOT)$(JAILDIR) ;
+-Prepare $(INSTALLROOT)$(MESSAGEDIR) ;
+-Prepare $(INSTALLROOT)$(PIDFILEDIR) ;
++# Prepare $(INSTALLROOT)$(JAILDIR) ;
++# Prepare $(INSTALLROOT)$(MESSAGEDIR) ;
++# Prepare $(INSTALLROOT)$(PIDFILEDIR) ;
+ Prepare $(INSTALLROOT)$(CONFIGDIR) ;
+ Prepare $(INSTALLROOT)$(LIBDIR)/contrib ;
+ if ( $(LOGFILE:D) != "" && $(LOGFILE:D) != "syslog" ) {
+@@ -64,14 +64,14 @@
+ 
+ 
+ # if we make JAILDIR, we should chmod it so noone can read it:
+-MODE on $(INSTALLROOT)$(JAILDIR) = 700 ;
+-Chmod $(INSTALLROOT)$(JAILDIR) ;
++# MODE on $(INSTALLROOT)$(JAILDIR) = 700 ;
++# Chmod $(INSTALLROOT)$(JAILDIR) ;
+ 
+ # if we make MESSAGEDIR, we should chmod it similarly. AOXUSER needs to
+ # be able to write to it, but we can't chown here, because the user may
+ # not exist yet.
+-MODE on $(INSTALLROOT)$(MESSAGEDIR) = 700 ;
+-Chmod $(INSTALLROOT)$(MESSAGEDIR) ;
++# MODE on $(INSTALLROOT)$(MESSAGEDIR) = 700 ;
++# Chmod $(INSTALLROOT)$(MESSAGEDIR) ;
+ 
+ 
+ actions Message {
+@@ -95,7 +95,7 @@
+ EOM
+ }
+ 
+-Message install ;
++# Message install ;
+ 
+ 
+ if $(BUILDDOC) {

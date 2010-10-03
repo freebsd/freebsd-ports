@@ -140,6 +140,7 @@ pulse-access:*:564:
 _xsi:*:600:
 freeswitch:*:610:
 monkeysphere:*:641:
+aox:*:666:
 bnetd:*:700:
 bopm:*:717:
 openxpki:*:777:
