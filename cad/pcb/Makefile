@@ -25,7 +25,7 @@ USE_TK_RUN=	83
 INSTALLS_ICONS=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
-		INSTALL_DATA="${INSTALL_DATA}"
+		INSTALL_DATA="/usr/bin/install ${COPY} ${_SHROWNGRP} -m ${SHAREMODE}"
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} --disable-nls
 PORTDOCS= pcb.html pcb.ps refcard.ps pcb.pdf refcard.pdf pad.gif	\
 	puller.gif thermal.gif pad.png puller.png thermal.png examples	\
