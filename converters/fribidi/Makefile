@@ -15,10 +15,11 @@ MASTER_SITES=	http://fribidi.org/download/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A Free Implementation of the Unicode Bidirectional Algorithm
 
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-glib
 
 MAN3=		fribidi_charset_to_unicode.3 fribidi_debug_status.3 \
 		fribidi_get_bidi_type.3 fribidi_get_bidi_type_name.3 \
@@ -39,7 +40,7 @@ MAN3=		fribidi_charset_to_unicode.3 fribidi_debug_status.3 \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITH_DEBUG)
-CONFIGURE_ARGS=	--disable-debug
+CONFIGURE_ARGS+=--disable-debug
 .endif
 
 post-patch:
