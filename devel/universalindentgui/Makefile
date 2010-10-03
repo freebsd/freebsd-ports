@@ -9,7 +9,7 @@ PORTNAME=	universalindentgui
 PORTVERSION=	1.1.0
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	SF/universalindent/universalindent/UniversalIndentGUI_${PORTVERSION}
+MASTER_SITES=	SF/universalindent/uigui/UniversalIndentGUI_${PORTVERSION}
 
 MAINTAINER=	avg@icyb.net.ua
 COMMENT=	Graphical UI for multiple source code indent/format/beautify tools
