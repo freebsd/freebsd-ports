@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	commons-lang
-PORTVERSION=	2.3
-PORTREVISION=	2
+PORTVERSION=	2.5
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
@@ -18,7 +17,7 @@ MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Jakarta library with helper utilities for the java.lang API
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.3+
 
 USE_ANT=	yes
 USE_JIKES=	no
@@ -39,17 +38,16 @@ JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.? -maxdepth 1 -name api -type 
 
 .if ${JDK_API} != ""
 MAKE_ARGS+=	-Djdk.javadoc=${JDK_API}
-
 .endif
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${DESTJARFILE}..."
-	@${INSTALL_DATA} ${WRKSRC}/dist/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
+	@${INSTALL_DATA} ${WRKSRC}/target/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
 	@${ECHO_MSG} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
-	@cd ${WRKSRC}/dist/docs/api \
+	@cd ${WRKSRC}/target/apidocs \
 	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
 	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
