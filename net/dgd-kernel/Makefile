@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	dgd-kernel
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	net games
 MASTER_SITES=	http://ftp.dworkin.nl/kernellib/ \
 		http://ftp.dworkin.nl/kernellib/patches/
-DISTNAME=	kernellib-${PORTVERSION:S/.3$//}
-
-PATCHFILES=	${PORTVERSION:S/.3$//}-${PORTVERSION:S/.3$//}.1.gz \
-		${PORTVERSION:S/.3$//}.1-${PORTVERSION:S/.3$//}.2.gz \
-		${PORTVERSION:S/.3$//}.2-${PORTVERSION:S/.3$//}.3.gz
+DISTNAME=	kernellib-${PORTVERSION}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Kernel mudlib, for use with DGD
