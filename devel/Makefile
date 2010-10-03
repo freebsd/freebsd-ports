@@ -975,7 +975,6 @@
     SUBDIR += makedepend
     SUBDIR += makeplus
     SUBDIR += maketool
-    SUBDIR += maven
     SUBDIR += maven-ant-tasks
     SUBDIR += maven2
     SUBDIR += mcpp
