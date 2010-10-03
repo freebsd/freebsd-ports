@@ -7,9 +7,10 @@
 
 PORTNAME=	zerowait
 PORTVERSION=	0.8d
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.0w.ru/httpd/ \
-			http://mirror.mcx2.org/
+		http://mirror.mcx2.org/
 PKGNAMESUFFIX=	-httpd
 DISTNAME=	0W-httpd-${PORTVERSION}
 
@@ -25,10 +26,4 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --owner=${WWWOWN} --group=${WWWGRP}
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800108
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
