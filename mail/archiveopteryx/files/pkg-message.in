@@ -1,0 +1,23 @@
+********************************************************************************
+
+Please install PostgreSQL client/server (databases/postgresqlXX-client
+and databases/postgresqlXX-server) separately. The latest 8.x version
+is recommended but any version newer than 8.1.0 should work.
+
+To set up the database and generate a configuration file, run
+%%PREFIX%%/libexec/aox/installer as root. The new configuration file will be in
+%%ETCDIR%%/archiveopteryx.conf.
+
+%%PREFIX%%/libexec/aox/installer -n shows what it would do, without making any
+changes. (If you are just upgrading from an older version,
+%%PREFIX%%/bin/aox upgrade schema may be enough.
+%%PREFIX%%/bin/aox upgrade schema -n shows what it would do, without making
+any changes.)
+
+The logfile is syslog/mail by default.
+
+If you have any problems, the FAQ is at
+http://www.archiveopteryx.org/faq/ and you can always ask
+info@aox.org for help.
+
+********************************************************************************

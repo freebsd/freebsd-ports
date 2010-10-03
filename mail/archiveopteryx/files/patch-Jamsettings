@@ -1,0 +1,58 @@
+
+$FreeBSD$
+
+--- Jamsettings.orig
++++ Jamsettings
+@@ -12,7 +12,7 @@
+ 
+ # A convenient prefix used by most directory and file names,.
+ #
+-PREFIX ?= /usr/local/archiveopteryx ;
++PREFIX ?= %%PREFIX%% ;
+ 
+ # The directory for user and sysadmin tools
+ #
+@@ -28,32 +28,36 @@
+ 
+ # Supporting files
+ #
+-LIBDIR = $(PREFIX)/lib ;
++LIBDIR = $(PREFIX)/libexec/aox ;
++
++# Supporting files
++#
++LIBDATADIR = $(PREFIX)/libdata/aox ;
+ 
+ # The startup/shutdown script's directory
+ #
+-INITDIR = $(LIBDIR) ;
++INITDIR = $(PREFIX)/etc/rc.d ;
+ 
+ # Where to write pid files for the servers
+ #
+-PIDFILEDIR ?= $(PREFIX)/lib/pidfiles ;
++PIDFILEDIR ?= /var/run/aox ;
+ 
+ # The servers chroot to an empty, unreadable jail directory at
+ # startup.
+ #
+-JAILDIR = $(PREFIX)/jail ;
++JAILDIR = /var/db/aox/jail ;
+ 
+ # This is the default message-copy-directory.
+ #
+-MESSAGEDIR = $(PREFIX)/messages ;
++MESSAGEDIR = /var/db/aox/messages ;
+ 
+ # The directory where the configuration file is located.
+ #
+-CONFIGDIR = $(PREFIX) ;
++CONFIGDIR = $(PREFIX)/etc/archiveopteryx ;
+ 
+ # The directory where the README and other files are installed.
+ #
+-READMEDIR = $(PREFIX) ;
++READMEDIR = $(PREFIX)/share/doc/archiveopteryx ;
+ 
+ # The log file's default name. (This can be a file name or syslog/x,
+ # where x is a facility.)
