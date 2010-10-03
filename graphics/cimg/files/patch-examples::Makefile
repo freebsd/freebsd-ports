@@ -1,9 +1,9 @@
---- examples/Makefile.orig	2009-05-26 18:27:25.000000000 +0200
-+++ examples/Makefile	2009-05-29 21:57:25.000000000 +0200
-@@ -77,8 +77,8 @@
+--- examples/Makefile.orig	2010-10-01 15:26:30.000000000 +0200
++++ examples/Makefile	2010-10-03 15:09:36.000000000 +0200
+@@ -85,8 +85,8 @@
  # Set correct variables and paths
  #---------------------------------
- CIMG_VERSION = 1.31
+ CIMG_VERSION = 1.4.3
 -X11PATH      = /usr/X11R6
 -CC           = g++
 +#X11PATH      = /usr/X11R6
@@ -11,27 +11,51 @@
  CCVER        = `$(CC) -v 2>&1 | tail -n 1`
  EXEPFX       =
  
-@@ -105,7 +105,7 @@
+@@ -120,7 +120,7 @@
  ifeq ($(CC),icc)
  CIMG_OPT_CFLAGS = -O3 -ipo -no-prec-div
  else
--CIMG_OPT_CFLAGS = -O3 -ffast-math -fno-tree-pre
-+CIMG_OPT_CFLAGS = -ffast-math -fno-tree-pre
+-CIMG_OPT_CFLAGS = -O3 -fno-tree-pre
++CIMG_OPT_CFLAGS = -fno-tree-pre
  endif
  
  # Flags to enable OpenMP support.
-@@ -157,8 +157,8 @@
+@@ -131,7 +131,7 @@
+ endif
+ 
+ # Flags to enable OpenCV support.
+-CIMG_OPENCV_CFLAGS = -Dcimg_use_opencv -I/usr/include/opencv
++CIMG_OPENCV_CFLAGS = -Dcimg_use_opencv -I$(LOCALBASE)/include/opencv
+ CIMG_OPENCV_LDFLAGS = -lcv -lhighgui
+ 
+ # Flags used to disable display capablities of CImg
+@@ -141,7 +141,7 @@
+ # (X11 is used by CImg to handle display windows)
+ # !!! For 64bits systems : replace -L$(X11PATH)/lib by -L$(X11PATH)/lib64 !!!
+ CIMG_X11_CFLAGS = -I$(X11PATH)/include
+-CIMG_X11_LDFLAGS = -L$(X11PATH)/lib -lpthread -lX11
++CIMG_X11_LDFLAGS = -L$(X11PATH)/lib -lX11 $(PTHREAD_LIBS)
+ 
+ # Flags to enable fast image display, using the XSHM library (when using X11).
+ # !!! Seems to randomly crash when used on MacOSX, so do not use it on MacOSX !!!
+@@ -175,13 +175,13 @@
+ 
+ # Flags to enable native support for EXR image files, using the OpenEXR library.
+ # ( http://www.openexr.com/ )
+-CIMG_EXR_CFLAGS = -Dcimg_use_openexr -I/usr/include/OpenEXR
++CIMG_EXR_CFLAGS = -Dcimg_use_openexr -I$(LOCALBASE)/include/OpenEXR
+ CIMG_EXR_LDFLAGS = -lIlmImf
  
  # Flags to enable native support for various video files, using the FFMPEG library.
  # ( http://www.ffmpeg.org/ )
--CIMG_FFMPEG_CFLAGS = -Dcimg_use_ffmpeg -I/usr/include/ffmpeg
--CIMG_FFMPEG_LDFLAGS = -lavcodec -lavformat
-+#CIMG_FFMPEG_CFLAGS = -Dcimg_use_ffmpeg -I$(LOCALBASE)/include/ffmpeg
-+#CIMG_FFMPEG_LDFLAGS = -lavcodec -lavformat
+-CIMG_FFMPEG_CFLAGS = -Dcimg_use_ffmpeg -I/usr/include/libavcodec -I/usr/include/libavformat -I/usr/include/libswscale
+-CIMG_FFMPEG_LDFLAGS = -lavcodec -lavformat -lswscale
++#CIMG_FFMPEG_CFLAGS = -Dcimg_use_ffmpeg -I$(LOCALBASE)/include/libavcodec -I$(LOCALBASE)/include/libavformat -I$(LOCALBASE)/include/libswscale
++#CIMG_FFMPEG_LDFLAGS = -L$(LOCALBASE)/lib -lavcodec -lavformat -lswscale
  
  # Flags to enable native support for compressed .cimgz files, using the Zlib library.
  # ( http://www.zlib.net/ )
-@@ -167,8 +167,8 @@
+@@ -190,8 +190,8 @@
  
  # Flags to enable native support of most classical image file formats, using the Magick++ library.
  # ( http://www.imagemagick.org/Magick++/ )
@@ -42,7 +66,7 @@
  
  # Flags to enable faster Discrete Fourier Transform computation, using the FFTW3 library
  # ( http://www.fftw.org/ )
-@@ -181,14 +181,17 @@
+@@ -204,14 +204,17 @@
  
  # Flags to enable the use of LAPACK routines for matrix computation
  # ( http://www.netlib.org/lapack/ )
@@ -63,9 +87,9 @@
  # Flags to compile on Sun Solaris
  CIMG_SOLARIS_LDFLAGS = -R$(X11PATH)/lib -lrt -lnsl -lsocket
  
-@@ -226,6 +229,9 @@
- 	@echo "  > mlinux   : Linus/BSD/MacOSX target, no display, minimal features, optimizations enabled."
- 	@echo "  > Mlinux   : Linux/BSD/MacOSX target, X11 display, maximal features, optimizations enabled."
+@@ -245,6 +248,9 @@
+ 	@echo "  > mlinux   : Linus/BSD target, no display, minimal features, optimizations enabled."
+ 	@echo "  > Mlinux   : Linux/BSD target, X11 display, maximal features, optimizations enabled."
  	@echo
 +	@echo "  > dFreeBSD   : FreeBSD, X11 display, debug mode."
 +	@echo "  > oFreeBSD   : FreeBSD target, X11 display, maximal features for packages."
@@ -73,9 +97,9 @@
  	@echo "  > solaris  : Sun Solaris target, X11 display, optimizations disabled."
  	@echo "  > dsolaris : Sun Solaris target, X11 display, debug mode."
  	@echo "  > osolaris : Sun Solaris target, X11 display, optimizations enabled."
-@@ -393,6 +399,56 @@
+@@ -420,6 +426,56 @@
  "STRIP_EXE=true" \
- all use_jpeg_buffer gmic4gimp gmic
+ all $(CIMG_EXTRA_FILES)
  
 +# FreeBSD targets
 +dFreeBSD:
@@ -129,4 +153,4 @@
 +
  # Sun Solaris targets, with X11 display.
  solaris:
- 	@make \
+ 	@$(MAKE) \
