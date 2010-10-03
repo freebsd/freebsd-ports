@@ -669,6 +669,7 @@
     SUBDIR += jep
     SUBDIR += jiic
     SUBDIR += jline
+    SUBDIR += jna
     SUBDIR += jrtplib
     SUBDIR += jsap
     SUBDIR += jsl

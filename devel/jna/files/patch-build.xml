@@ -1,0 +1,24 @@
+
+$FreeBSD$
+
+--- build.xml.orig
++++ build.xml
+@@ -58,7 +58,7 @@
+   <!-- Miscellaneous -->
+   <property name="build.compiler.emacs" value="true"/>
+ 
+-  <target name="default" depends="test" description="Build and Test."/>
++  <target name="default" depends="jar,contrib-jars" description="Build and Test."/>
+ 
+   <!-- uncomment for netbeans profiling -->
+   <!--<import file="nbproject/profiler-build-impl.xml"/>-->
+@@ -437,9 +437,6 @@
+     <jar jarfile="${build}/jws/jnidispatch.jar">
+       <fileset dir="${build.native}" includes="*jnidispatch.*"/>
+     </jar>
+-    <signjar alias="jna" keystore="jna.keystore" storepass="jnadev" lazy="true"> 
+-      <fileset dir="${build}/jws" includes="jna.jar,jna-test.jar,junit.jar,jnidispatch.jar,clover.jar"/>
+-    </signjar>
+   </target>
+ 	
+   <!-- When running tests from an IDE, be sure to set jna.library.path -->
