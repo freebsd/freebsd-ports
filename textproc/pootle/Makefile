@@ -68,7 +68,7 @@ RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 .endif
 
 .if defined(WITH_LUCENE)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}lucene>0:${PORTSDIR}/textproc/py-lucene
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PyLucene>0:${PORTSDIR}/textproc/py-lucene
 .endif
 
 .if defined(WITH_MEMCACHED)
