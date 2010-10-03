@@ -1,18 +1,19 @@
 $FreeBSD$
 
---- src/Makefile.orig	2010-02-12 13:38:01.000000000 -0800
-+++ src/Makefile	2010-02-20 08:54:47.000000000 -0800
+--- src/Makefile.orig	2010-07-31 06:24:45.000000000 -0700
++++ src/Makefile	2010-10-02 10:50:17.000000000 -0700
 @@ -16,16 +16,15 @@
  # along with this program.  If not, see <http://www.gnu.org/licenses/>.
  #
  HOST=	DARWIN
--DEFINES=-D$(HOST) #-DNETWORK_EXTENSIONS #-DDUMP_FUNCS
+-DEFINES=-D$(HOST) #-DNETWORK_EXTENSIONS #-DLPC_EXTENSION #-DDUMP_FUNCS
 -DEBUG=	-O -g
-+DEFINES=-D$(HOST) $(EXTRA_DEFINES) #-DNETWORK_EXTENSIONS #-DDUMP_FUNCS
- CCFLAGS=$(DEFINES) $(DEBUG)
+-CCFLAGS=$(DEFINES) $(DEBUG)
++DEFINES=-D$(HOST) $(EXTRA_DEFINES) #-DNETWORK_EXTENSIONS #-DLPC_EXTENSION #-DDUMP_FUNCS
++CCFLAGS=$(DEFINES)
  CFLAGS=	-I. -Icomp -Ilex -Ied -Iparser -Ikfun $(CCFLAGS)
  LDFLAGS=
- LIBS=
+ LIBS=	#-ldl
  LINTFLAGS=-abcehpruz
 -CC=	gcc
 +CC?=	gcc
@@ -24,7 +25,7 @@ $FreeBSD$
  
 @@ -36,6 +35,8 @@
  COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o sdata.o data.o \
- 	interpret.o config.o
+ 	interpret.o config.o ext.o
  
 +all: a.out comp/a.out
 +

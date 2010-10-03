@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dgd
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.5
 CATEGORIES=	net lang games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|%SUBDIR%|${PORTNAME}-osr|} \
 		${MASTER_SITE_SOURCEFORGE:S|%SUBDIR%|${PORTNAME}-osr/old|}
@@ -14,8 +14,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|%SUBDIR%|${PORTNAME}-osr|} \
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Dworkin\'s Game Driver
 
+LICENSE=	GPLv3
+
 OPTIONS=	NETWORKING	"With networking kfuns"		off \
-		DUMP		"With dump kfuns"		off
+		DUMP		"With dump kfuns"		off \
+		LPC_EXTENSION	"With LPC extension interface"	off
 
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/dgd/src
@@ -38,6 +41,10 @@ EXTRA_DEFINES+=	-DNETWORK_EXTENSIONS
 
 .if defined(WITH_DUMP)
 EXTRA_DEFINES+=	-DDUMP_FUNCS
+.endif
+
+.if defined(WITH_LPC_EXTENSION)
+EXTRA_DEFINES+=	-DLPC_EXTENSION
 .endif
 
 post-patch:
