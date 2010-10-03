@@ -155,7 +155,7 @@ CONFIGURE_ARGS+=	--with-mysql=yes
 USE_MYSQL=		yes
 DBTYPE=			mysql
 SUB_LIST+=		REQ_MYSQL=mysql REQ_PGSQL=""
-.elif defined(WITH_SQLITE)
+.elif defined(WITH_SQLITE3)
 CONFIGURE_ARGS+=	--with-sqlite3=yes
 LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
 DBTYPE=			sqlite3
