@@ -25,7 +25,8 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${PYTHON_INCLUDEDIR}"
-CONFIGURE_ARGS=	--docdir=${DOCSDIR}
+CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
+		--disable-api-docs
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
