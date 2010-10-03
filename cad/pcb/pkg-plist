@@ -50,6 +50,9 @@ share/mimelnk/application/x-pcb-layout.desktop
 share/mimelnk/application/x-pcb-netlist.desktop
 @dirrmtry share/mimelnk/application
 @dirrmtry share/mimelnk
+share/gEDA/scheme/gnet-pcbfwd.scm
+@dirrmtry share/gEDA/scheme
+@dirrmtry share/gEDA
 %%DATADIR%%/default_font
 %%DATADIR%%/gpcb-menu.res
 %%DATADIR%%/pcb-menu.res
