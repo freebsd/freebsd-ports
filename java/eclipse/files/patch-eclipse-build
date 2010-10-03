@@ -122,7 +122,7 @@ $FreeBSD$
 -			<arg value="--no-target-directory" />
 -			<arg value="${buildDirectory}/installation" />
 -			<arg value="${destDir}${prefix}/${libDir}/eclipse" />
-+			<arg value="-R" />
++			<arg value="-RL" />
 +			<arg value="${buildDirectory}/installation/" />
 +			<arg value="${destDir}${prefix}/${libDir}/%%PORTNAME%%" />
  		</exec>

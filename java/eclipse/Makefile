@@ -183,6 +183,7 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e "s+=/usr/share/java/junit.jar+=${BUILD_WRKSRC}/bundles/junit.jar+" ${BUILD_WRKSRC}/nonosgidependencies.properties
 	@${REINPLACE_CMD} -e "s+=/usr/share/java/junit4.jar+=${BUILD_WRKSRC}/bundles/junit4.jar+" ${BUILD_WRKSRC}/nonosgidependencies.properties
+	@${REINPLACE_CMD} -e "s+/usr/share/java/junit4.jar+${BUILD_WRKSRC}/bundles/junit4.jar+" ${BUILD_WRKSRC}/build.xml
 .if defined(WITH_TESTS)
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} applyTestPatches)
 .endif
@@ -208,16 +209,6 @@ do-install:
 	  ${BUILD_WRKSRC}/eclipse.tmp
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/eclipse.tmp ${PREFIX}/bin/${PORTNAME}
-	@for f in `ls ${BUILD_WRKSRC}/bundles/*.jar`; do \
-		BASE=`basename $$f`; \
-		FILES=`find ${PORTDESTDIR}/plugins/ -name "$$BASE"`; \
-		if [ ! -z "$$FILES" ]; then \
-			for s in $$FILES; do \
-				${RM} "$$s"; \
-				${INSTALL_DATA} "$$f" "$$s"; \
-			done; \
-		fi; \
-	done
 	@${PREFIX}/bin/${PORTNAME} -initialize -consolelog
 	-@update-desktop-database
 	@(cd ${PREFIX}; ${FIND} -s lib/${PORTNAME} -not -type d) >> ${TMPPLIST}
