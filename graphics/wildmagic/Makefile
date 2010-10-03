@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Wild Magic Real-Time 3D Graphics Engine
 
+BROKEN=		does not fetch
+
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GL=		gl glut

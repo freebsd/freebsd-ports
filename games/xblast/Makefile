@@ -23,6 +23,8 @@ DIST_SUBDIR=	xblast
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-player real-time strategy game for X11
 
+BROKEN=		does not fetch
+
 WANT_SDL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -18,6 +18,8 @@ COMMENT=	Platformer game with rotational twist
 
 RUN_DEPENDS=	py*-game>=1.7.1:${PORTSDIR}/devel/py-game
 
+BROKEN=		does not fetch
+
 USE_PYTHON=	yes
 USE_ZIP=	yes
 PORTDOCS=	README.txt changelog.txt
