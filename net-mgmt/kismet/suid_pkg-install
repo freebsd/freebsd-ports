@@ -1,0 +1,22 @@
+#! /bin/sh
+
+PATH=/bin:/usr/sbin
+KISMET_GROUP=${KISMET_GROUP:-kismet}
+KISMET_GID=${KISMET_GID:-229}
+
+case $2 in
+PRE-INSTALL)
+
+	if pw group show "${KISMET_GROUP}" 2>/dev/null; then
+		echo "You already have a group \"${KISMET_GROUP}\", so I will use it."
+	else
+		if pw groupadd ${KISMET_GROUP} -g ${KISMET_GID}; then
+			echo "Added group \"${KISMET_GROUP}\"."
+		else
+			echo "Adding group \"${KISMET_GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+	
+	;;
+esac
