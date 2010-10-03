@@ -6,5 +6,4 @@ etc/tor/tor-tsocks.conf.sample
 etc/tor/torrc.sample
 %%DATADIR%%/geoip
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
 @dirrm etc/tor
