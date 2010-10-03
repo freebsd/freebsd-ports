@@ -7,14 +7,14 @@
 
 PORTNAME=	bacula2
 DISTVERSION=	2.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	sysutils
-MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
+MASTER_SITES=	SF/bacula/z-older-releases/bacula/${PORTVERSION}
+PKGNAMESUFFIX?=	-server
+DISTNAME=	bacula-${DISTVERSION}
 
 MAINTAINER=	v.haisman@sh.cvut.cz
 COMMENT?=	The network backup solution (server)
-
-PKGNAMESUFFIX?=	-server
 
 CONFLICTS=	bacula-server-devel-[0-9]* \
 		bacula-client-devel-[0-9]* \
@@ -22,10 +22,9 @@ CONFLICTS=	bacula-server-devel-[0-9]* \
 		bacula-server-[0-9]* \
 		bacula-client-[0-9]*
 
-UNIQUENAME?=${PORTNAME}${PKGNAMESUFFIX}
+UNIQUENAME?=	${PORTNAME}${PKGNAMESUFFIX}
 
-DISTFILES=	bacula-${DISTVERSION}.tar.gz
-WRKSRC=      ${WRKDIR}/bacula-${DISTVERSION}
+WRKSRC=		${WRKDIR}/bacula-${DISTVERSION}
 
 .if !defined(WITH_BAT)
 .if !defined(WITH_CLIENT_ONLY)
@@ -83,7 +82,7 @@ IS_INTERACTIVE=	yes
 OPTIONS=	WXCONSOLE "Build with wxGTK based GUI console: deprecated" off
 OPTIONS+=	GNOMECONSOLE "Build with GNOME based GUI console: deprecated" off
 .elif defined(WITH_BAT)
-OPTIONS=	
+OPTIONS=
 .else
 OPTIONS=	SQLITE3 "Use SqLite-3 database instead of SqLite-2" off
 OPTIONS+=	MYSQL "Use MySQL database instead of SqLite" off
@@ -92,7 +91,7 @@ OPTIONS+=	MTX "Install mtx for control of autochanger devices" off
 .endif
 
 OPTIONS+=	NLS "Native Language Support via gettext utilities" on
-OPTIONS+=	OPENSSL "Enable OpenSSL for encrypted communication" off
+OPTIONS+=	OPENSSL "Enable Use OpenSSL (broken for version >= 1.0.0)" off
 
 # Prepare if bgnome-console is selected this must be happen before
 # include of bsd.port.pre.mk!
@@ -177,8 +176,10 @@ RUN_DEPENDS+=		${LOCALBASE}/sbin/mtx:${PORTSDIR}/misc/mtx
 .endif
 .endif
 
-
 .if defined(WITH_OPENSSL)
+# bacula2 does not build with openssl from ports
+WITH_OPENSSL_BASE=	yes
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--with-openssl
 .endif
 
@@ -243,7 +244,6 @@ pre-install:
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
-
 
 .if !target(post-install)
 post-install:
