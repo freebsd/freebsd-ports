@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ganyremote
-PORTVERSION=	5.11.6
+PORTVERSION=	5.11.7
 CATEGORIES=	deskutils comms gnome
 MASTER_SITES=	SF/anyremote/${PORTNAME}/${PORTVERSION}
 
@@ -22,6 +22,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 PORTDOCS=	AUTHORS COPYING README ChangeLog
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 .include <bsd.port.pre.mk>
 
