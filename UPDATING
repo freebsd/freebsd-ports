@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101003:
+  AFFECTS: users of net-mgmt/kismet
+  AUTHOR: bf@FreeBSD.org
+
+  This update includes major changes in how Kismet works and is configured.
+  Clients, servers, drones, and configuration files must be updated to work
+  with the new version.  Map support has not yet been added.
+
+  See the kismet README for details.
+
 20100929:
   AFFECTS: users of sysutils/zfsnap
   AUTHOR: Aldis Berjoza <aldis@bsdroot.lv>

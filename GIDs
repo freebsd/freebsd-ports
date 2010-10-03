@@ -91,6 +91,7 @@ git:*:211:
 drizzle:*:213:
 bs:*:220:
 postgrey:*:225:
+kismet:*:229:
 aprsd:*:240:
 tnc:*:241:
 prosody:*:242:
