@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	cimg
-PORTVERSION=	1.3.1
-PORTREVISION=	5
+PORTVERSION=	1.4.3
 PORTEPOCH=	2
 CATEGORIES=	graphics devel
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
-DISTNAME=	CImg_${DISTVERSION}
+MASTER_SITES=	SF/${PORTNAME}		\
+		SF/${PORTNAME}/old
+DISTNAME=	CImg-${DISTVERSION}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION},${PORTEPOCH}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -20,14 +20,21 @@ COMMENT=	The C++ Template Image Processing Library
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"invokes i386 asm"
 
+LICENSE=	CeCILL_C CeCILL
+LICENSE_PERMS_CeCILL_C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_PERMS_CeCILL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_NAME_CeCILL_C=	CeCILL-C
+LICENSE_NAME_CeCILL=	CeCILL
+LICENSE_FILE_CeCILL_C=	${WRKSRC}/Licence_CeCILL-C_V1-en.txt
+LICENSE_FILE_CeCILL=	${WRKSRC}/Licence_CeCILL_V2-en.txt
+LICENSE_COMB=	dual
+
+USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:C/_/-/}
 BUILD_WRKSRC=	${WRKSRC}/examples
 MAKE_ENV=	CPPFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"	\
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"	\
-		X11PATH=${LOCALBASE}
-
-# Disable ffmpeg, does not build with ffmpeg 0.5
-WITHOUT_FFMPEG=	yes
+		X11PATH=${LOCALBASE} LOCALBASE=${LOCALBASE}
 
 .if !defined(NOPORTDOCS)
 USE_GMAKE=	yes
@@ -41,6 +48,8 @@ USE_FORTRAN=	yes
 LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png		\
 		jpeg:${PORTSDIR}/graphics/jpeg		\
 		tiff:${PORTSDIR}/graphics/tiff		\
+		cv:${PORTSDIR}/graphics/opencv		\
+		IlmImf:${PORTSDIR}/graphics/OpenEXR	\
 		gimp-2.0:${PORTSDIR}/graphics/gimp-app	\
 		fftw3:${PORTSDIR}/math/fftw3		\
 		GraphicsMagick++:${PORTSDIR}/graphics/GraphicsMagick
