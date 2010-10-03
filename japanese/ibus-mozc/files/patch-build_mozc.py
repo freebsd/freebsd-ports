@@ -1,5 +1,5 @@
 --- build_mozc.py.org	2010-09-25 11:04:25.422333501 +0900
-+++ build_mozc.py	2010-09-25 11:05:53.458336959 +0900
++++ build_mozc.py	2010-10-03 12:55:53.425314392 +0900
 @@ -69,7 +69,7 @@
  
  def IsLinux():
@@ -9,21 +9,3 @@
  
  
  # TODO(yukawa): Move this function to util.py (b/2715400)
-@@ -578,6 +578,8 @@
- 
-   # default Qt dir to support the current build procedure for Debian.
-   default_qtdir = '/usr/local/Trolltech/Qt-4.6.3'
-+  if os.uname()[0] == 'FreeBSD':
-+    default_qtdir = '@@LOCALBASE@@/lib/qt4'
-   if IsWindows():
-     default_qtdir = None
-   parser.add_option('--qtdir', dest='qtdir',
-@@ -629,6 +631,8 @@
-     target_names.append(target_name)
- 
-   make_command = os.getenv('BUILD_COMMAND', 'make')
-+  if os.uname()[0] == 'FreeBSD':
-+    make_command = os.getenv('BUILD_COMMAND', 'gmake')
-   # flags for building in Chrome OS chroot environment
-   envvars = [
-       'CFLAGS',

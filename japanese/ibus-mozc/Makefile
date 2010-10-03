@@ -63,9 +63,12 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC}/; \
+		export BUILD_COMMAND=${GMAKE}; \
 		${PYTHON_CMD} build_mozc.py gyp --gypdir=${LOCALBASE}/bin; \
-		${PYTHON_CMD} build_mozc.py build_tools -c ${BUILD_MODE}; \
-		${PYTHON_CMD} build_mozc.py build -c ${BUILD_MODE} \
+		${PYTHON_CMD} build_mozc.py build_tools \
+			-c ${BUILD_MODE} --qtdir=${QT_LIBDIR}; \
+		${PYTHON_CMD} build_mozc.py build \
+			-c ${BUILD_MODE} --qtdir=${QT_LIBDIR} \
 			unix/ibus/ibus.gyp:ibus_mozc
 
 do-install:
