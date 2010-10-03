@@ -1,11 +1,27 @@
---- Makefile.in.orig	2010-05-21 03:09:49.000000000 +0900
-+++ Makefile.in	2010-05-21 05:07:04.000000000 +0900
-@@ -282,11 +282,11 @@
- target_alias = @target_alias@
+--- Makefile.in.orig	2010-09-30 05:52:41.000000000 +0900
++++ Makefile.in	2010-10-03 22:23:20.000000000 +0900
+@@ -135,6 +135,7 @@
+ ECHO_N = @ECHO_N@
+ ECHO_T = @ECHO_T@
+ EGREP = @EGREP@
++EXAMPLE = @EXAMPLE@
+ EXEEXT = @EXEEXT@
+ FONTFILENAME = @FONTFILENAME@
+ GDLIB_CONFIG = @GDLIB_CONFIG@
+@@ -240,6 +241,7 @@
+ STRIP = @STRIP@
+ TEXI2DVI = @TEXI2DVI@
+ TOPDIRS = @TOPDIRS@
++TUTORIAL = @TUTORIAL@
+ UPDATE_DESKTOP_DATABASE = @UPDATE_DESKTOP_DATABASE@
+ UPDATE_MIME_DATABASE = @UPDATE_MIME_DATABASE@
+ USE_INCLUDED_LIBINTL = @USE_INCLUDED_LIBINTL@
+@@ -313,11 +315,11 @@
+ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -DIRS = win32 intl src data lib newlib example tools tutorial README_FILES po tests
-+DIRS = intl src data lib newlib example tools tutorial README_FILES po tests
++DIRS = intl src data lib newlib @EXAMPLE@ tools @TUTORIAL@ README_FILES po tests
  SUBDIRS = ${DIRS} @DOC@
  DIST_SUBDIRS = ${DIRS} doc
  INTLTOOL_FILES = intltool-extract.in intltool-merge.in  intltool-update.in
