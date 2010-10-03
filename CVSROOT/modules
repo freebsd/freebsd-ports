@@ -14442,7 +14442,6 @@ p5-WWW-NioTV                    ports/www/p5-WWW-NioTV
 p5-WWW-OpenSVN                  ports/www/p5-WWW-OpenSVN
 p5-WWW-OpenSearch               ports/www/p5-WWW-OpenSearch
 p5-WWW-Pastebin-PastebinCom-Create  ports/www/p5-WWW-Pastebin-PastebinCom-Create
-p5-WWW-Pastebin-RafbNet-Create  ports/www/p5-WWW-Pastebin-RafbNet-Create
 p5-WWW-Plurk                    ports/www/p5-WWW-Plurk
 p5-WWW-Robot                    ports/www/p5-WWW-Robot
 p5-WWW-RobotRules-Parser        ports/www/p5-WWW-RobotRules-Parser
@@ -18464,7 +18463,6 @@ p5-www-niotv                    ports/www/p5-WWW-NioTV
 p5-www-opensearch               ports/www/p5-WWW-OpenSearch
 p5-www-opensvn                  ports/www/p5-WWW-OpenSVN
 p5-www-pastebin-pastebincom-create  ports/www/p5-WWW-Pastebin-PastebinCom-Create
-p5-www-pastebin-rafbnet-create  ports/www/p5-WWW-Pastebin-RafbNet-Create
 p5-www-plurk                    ports/www/p5-WWW-Plurk
 p5-www-robot                    ports/www/p5-WWW-Robot
 p5-www-robotrules-parser        ports/www/p5-WWW-RobotRules-Parser
