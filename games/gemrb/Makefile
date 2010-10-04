@@ -33,7 +33,7 @@ MAN6=	gemrb.6
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000
-USE_GCC=	4.2+
+BROKEN=		does not build on 6.X
 .endif
 
 post-patch:
