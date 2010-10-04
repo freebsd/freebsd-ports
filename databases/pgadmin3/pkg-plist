@@ -126,7 +126,9 @@ bin/pgadmin3
 %%DATADIR%%/docs/de_DE/hints/fki.html
 %%DATADIR%%/docs/de_DE/hints/instrumentation.html
 %%DATADIR%%/docs/de_DE/hints/multiple.html
+%%DATADIR%%/docs/de_DE/hints/object-editing.html
 %%DATADIR%%/docs/de_DE/hints/pk.html
+%%DATADIR%%/docs/de_DE/hints/saving-passwords.html
 %%DATADIR%%/docs/de_DE/hints/vacuum.html
 %%DATADIR%%/docs/de_DE/hints/view-without-pk.html
 %%DATADIR%%/docs/en_US/appendices.html
@@ -441,8 +443,6 @@ bin/pgadmin3
 %%DATADIR%%/docs/zh_TW/hints/view-without-pk.html
 %%DATADIR%%/i18n/af_ZA/pgadmin3.mo
 %%DATADIR%%/i18n/af_ZA/wxstd.mo
-%%DATADIR%%/i18n/bg_BG/pgadmin3.mo
-%%DATADIR%%/i18n/bg_BG/wxstd.mo
 %%DATADIR%%/i18n/ca_ES/pgadmin3.mo
 %%DATADIR%%/i18n/ca_ES/wxstd.mo
 %%DATADIR%%/i18n/cs_CZ/pgadmin3.mo
@@ -451,28 +451,16 @@ bin/pgadmin3
 %%DATADIR%%/i18n/de_DE/wxstd.mo
 %%DATADIR%%/i18n/es_ES/pgadmin3.mo
 %%DATADIR%%/i18n/es_ES/wxstd.mo
-%%DATADIR%%/i18n/fi_FI/pgadmin3.mo
-%%DATADIR%%/i18n/fi_FI/wxstd.mo
 %%DATADIR%%/i18n/fr_FR/pgadmin3.mo
 %%DATADIR%%/i18n/fr_FR/wxstd.mo
-%%DATADIR%%/i18n/gl_ES/pgadmin3.mo
-%%DATADIR%%/i18n/gl_ES/wxstd.mo
 %%DATADIR%%/i18n/it_IT/pgadmin3.mo
 %%DATADIR%%/i18n/it_IT/wxstd.mo
 %%DATADIR%%/i18n/ja_JP/pgadmin3.mo
 %%DATADIR%%/i18n/ja_JP/wxstd.mo
-%%DATADIR%%/i18n/ko_KR/pgadmin3.mo
-%%DATADIR%%/i18n/ko_KR/wxstd.mo
-%%DATADIR%%/i18n/lv_LV/pgadmin3.mo
-%%DATADIR%%/i18n/lv_LV/wxstd.mo
-%%DATADIR%%/i18n/nl_NL/pgadmin3.mo
-%%DATADIR%%/i18n/nl_NL/wxstd.mo
 %%DATADIR%%/i18n/pg_settings.csv
 %%DATADIR%%/i18n/pgadmin3.lng
 %%DATADIR%%/i18n/pl_PL/pgadmin3.mo
 %%DATADIR%%/i18n/pl_PL/wxstd.mo
-%%DATADIR%%/i18n/pt_BR/pgadmin3.mo
-%%DATADIR%%/i18n/pt_BR/wxstd.mo
 %%DATADIR%%/i18n/pt_PT/pgadmin3.mo
 %%DATADIR%%/i18n/pt_PT/wxstd.mo
 %%DATADIR%%/i18n/ru_RU/pgadmin3.mo
@@ -491,21 +479,14 @@ bin/pgadmin3
 @dirrm %%DATADIR%%/i18n/sr_RS
 @dirrm %%DATADIR%%/i18n/ru_RU
 @dirrm %%DATADIR%%/i18n/pt_PT
-@dirrm %%DATADIR%%/i18n/pt_BR
 @dirrm %%DATADIR%%/i18n/pl_PL
-@dirrm %%DATADIR%%/i18n/nl_NL
-@dirrm %%DATADIR%%/i18n/lv_LV
-@dirrm %%DATADIR%%/i18n/ko_KR
 @dirrm %%DATADIR%%/i18n/ja_JP
 @dirrm %%DATADIR%%/i18n/it_IT
-@dirrm %%DATADIR%%/i18n/gl_ES
 @dirrm %%DATADIR%%/i18n/fr_FR
-@dirrm %%DATADIR%%/i18n/fi_FI
 @dirrm %%DATADIR%%/i18n/es_ES
 @dirrm %%DATADIR%%/i18n/de_DE
 @dirrm %%DATADIR%%/i18n/cs_CZ
 @dirrm %%DATADIR%%/i18n/ca_ES
-@dirrm %%DATADIR%%/i18n/bg_BG
 @dirrm %%DATADIR%%/i18n/af_ZA
 @dirrm %%DATADIR%%/i18n
 @dirrm %%DATADIR%%/docs/zh_TW/hints
