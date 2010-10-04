@@ -7,6 +7,7 @@
 
 PORTNAME=	tor
 DISTVERSION=	0.2.2.17-alpha
+PORTREVISION=	1
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		http://tor.cypherpunks.at/dist/ \
@@ -21,7 +22,6 @@ COMMENT=	An anonymizing overlay network for TCP
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}" --disable-asciidoc
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
@@ -46,6 +46,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 .if  ( ${OSVERSION} < 801000 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900011) )
 WITH_OPENSSL_PORT=	yes
 .endif
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
 .if defined(WITH_BUFFREELISTS)
 CONFIGURE_ARGS+=	--enable-buf-freelists
