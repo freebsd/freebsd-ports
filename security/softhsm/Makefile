@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	softhsm
-PORTVERSION=	1.1.4
+PORTVERSION=	1.2.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.opendnssec.org/files/source/
 
