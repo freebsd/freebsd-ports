@@ -20,10 +20,4 @@ PLIST_FILES=	include/libpri.h lib/libpri.a lib/libpri.so \
 
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

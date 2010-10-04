@@ -26,7 +26,7 @@ $FreeBSD$
 -CFLAGS=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g -fPIC $(ALERTING) $(LIBPRI_COUNTERS)
 -INSTALL_PREFIX=$(DESTDIR)
 -INSTALL_BASE=/usr
-+CFLAGS+=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS)
++CFLAGS+=-Wall -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS)
 +INSTALL_PREFIX=$(PREFIX)
 +INSTALL_BASE=
  libdir?=$(INSTALL_BASE)/lib
