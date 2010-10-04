@@ -20,6 +20,7 @@
 %%SITE_PERL%%/JE/Object/Proxy.pm
 %%SITE_PERL%%/JE/Object/RegExp.pm
 %%SITE_PERL%%/JE/Object/String.pm
+%%SITE_PERL%%/JE/Object/Number/maxvalue.pl
 %%SITE_PERL%%/JE/Parser.pm
 %%SITE_PERL%%/JE/Scope.pm
 %%SITE_PERL%%/JE/String.pm
@@ -31,6 +32,7 @@
 %%SITE_PERL%%/JavaScript/Engine.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/JE/.packlist
 @dirrmtry %%SITE_PERL%%/JE/Object/Error
+@dirrmtry %%SITE_PERL%%/JE/Object/Number
 @dirrmtry %%SITE_PERL%%/JE/Object
 @dirrmtry %%SITE_PERL%%/JE
 @dirrmtry %%SITE_PERL%%/JavaScript
