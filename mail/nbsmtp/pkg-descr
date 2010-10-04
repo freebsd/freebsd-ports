@@ -1,18 +1,3 @@
 No-Brainer SMTP is for people who just need a plain old SMTP outgoing delivery
 system. Nothing as fancy as qmail or, heaven forbid, sendmail. It just has 3
 required parameters (and 2 optional ones).
-
-Usage:
-nbsmtp -d domain -f from@addr -h host [-p port] [-l debuglevel]
-
-domain: The domain you want nbsmtp to say it belongs to.  This will
-almost invariably be the same as the domain in your email address.
-from@addr: This is the address you want nbsmtp to say the message is from. Note
-that this can be different than the "From:" line in your MUA.
-host: This is the smtp server you are sending to.
-port: The smtp port you want to connect to. 25 is standard, don't change it
-unless you know what you are doing.
-
-WWW: http://freshmeat.net/projects/nbsmtp/
-
-- Anders Nordby <anders@fix.no>
