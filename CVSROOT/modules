@@ -585,6 +585,7 @@ arc                             ports/archivers/arc
 arcconf                         ports/sysutils/arcconf
 archivemail                     ports/mail/archivemail
 archivemount                    ports/sysutils/archivemount
+archiveopteryx                  ports/mail/archiveopteryx
 archivers_deco                  ports/archivers/deco
 archivers_rvm                   ports/archivers/rvm
 archivers_szip                  ports/archivers/szip
@@ -6753,6 +6754,7 @@ jmol                            ports/science/jmol
 jmp                             ports/java/jmp
 jmref                           ports/multimedia/jmref
 jmusic                          ports/audio/jmusic
+jna                             ports/devel/jna
 jnettop                         ports/net-mgmt/jnettop
 jode                            ports/java/jode
 joe                             ports/editors/joe
@@ -9075,7 +9077,6 @@ matrixssl                       ports/security/matrixssl
 matwm2                          ports/x11-wm/matwm2
 maude                           ports/lang/maude
 mavbiff                         ports/mail/mavbiff
-maven                           ports/devel/maven
 maven-ant-tasks                 ports/devel/maven-ant-tasks
 maven2                          ports/devel/maven2
 maverik                         ports/graphics/maverik
