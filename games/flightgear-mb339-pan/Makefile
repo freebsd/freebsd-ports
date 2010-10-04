@@ -7,6 +7,7 @@
 
 PORTNAME=	flightgear-mb339-pan
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://hcilab.uniud.it/pan/downloads/
 DISTNAME=	mb339pan
@@ -21,6 +22,9 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 RESTRICTED=	Redistribution prohibited
 PLIST=		${WRKDIR}/.pkg-plist
+
+post-patch:
+	@${MV} ${WRKSRC}/${DISTNAME}/engines ${WRKDIR}/${DISTNAME}/Engines
 
 pre-install:
 	@${RM} -f ${PLIST}
