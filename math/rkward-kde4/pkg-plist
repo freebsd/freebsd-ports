@@ -528,6 +528,7 @@ share/icons/hicolor/scalable/apps/rkward.svgz
 %%NLS%%share/locale/es/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/it/LC_MESSAGES/rkward.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/rkward.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/rkward.mo
