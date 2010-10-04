@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rkward
-PORTVERSION=	0.5.3
-PORTREVISION=	2
+PORTVERSION=	0.5.4
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/Current_Stable_Releases
 PKGNAMESUFFIX=	-kde4
@@ -17,6 +16,8 @@ COMMENT=	IDE/GUI for the R-project
 
 LIB_DEPENDS=	R.0:${PORTSDIR}/math/R
 RUN_DEPENDS=	seq2:${PORTSDIR}/misc/seq2
+
+LICENSE=	GPLv2
 
 CONFLICTS=	rkward-0.4.*
 
