@@ -56,10 +56,7 @@ MASTER_SITE_AFTERSTEP+=	\
 MASTER_SITE_APACHE+=	\
 	http://www.apache.org/dist/%SUBDIR%/ \
 	http://archive.apache.org/dist/%SUBDIR%/ \
-	ftp://ftp.pop-mg.com.br/data/apache/dist/%SUBDIR%/ \
-	ftp://ftp.gin.cz/pub/mirrors/www.apache.org/dist/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.apache.org/dist/%SUBDIR%/ \
-	ftp://ftp.apache.de/mirrors/dev.apache.org/dist/%SUBDIR%/ \
 	ftp://mir1.ovh.net/ftp.apache.org/dist/%SUBDIR%/ \
 	ftp://ftp.forthnet.gr/pub/www/apache/%SUBDIR%/ \
 	ftp://xenia.sote.hu/pub/mirrors/www.apache.org/%SUBDIR%/ \
@@ -67,19 +64,11 @@ MASTER_SITE_APACHE+=	\
 	ftp://ftp.heanet.ie/mirrors/www.apache.org/dist/%SUBDIR%/ \
 	ftp://ftp.rhnet.is/pub/apache/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/&,} \
-	ftp://ftp.sogang.ac.kr/www/apache/dist/%SUBDIR%/ \
 	ftp://ftp.task.gda.pl/pub/www/apache/dist/%SUBDIR%/ \
 	ftp://sunsite.icm.edu.pl/pub/www/apache/dist/%SUBDIR%/ \
-	ftp://ftp.kappa.ro/pub/mirrors/ftp.apache.org/%SUBDIR%/ \
 	ftp://apache.rinet.ru/pub/mirror/apache.org/dist/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/WWW/apache/dist/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/www/servers/apache/dist/%SUBDIR%/ \
-	ftp://ftp.flirble.org/pub/web/apache/dist/%SUBDIR%/ \
-	ftp://mirrors.rmplc.co.uk/pub/apache/%SUBDIR%/ \
-	ftp://apache.secsup.org/pub/apache/dist/%SUBDIR%/ \
-	ftp://ftp.ccs.neu.edu/net/mirrors/Apache/dist/%SUBDIR%/ \
-	ftp://ftp.tux.org/pub/net/apache/dist/%SUBDIR%/ \
-	ftp://ftp.saix.net/pub/apache/dist/%SUBDIR%/
+	ftp://ftp.sunet.se/pub/www/servers/apache/dist/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_APACHE_COMMONS_BINARIES)
