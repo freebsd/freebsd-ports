@@ -19,104 +19,244 @@
 #  Length  |		|                   Length                   |
 
 A52			ATSC A/52 audio decoding (used in most DVDs)
+AALIB			Adds aalib support
+ADS			Adds Asyncronous DNS Support
+ALSA			Adds ALSA support
 APACHE			Include support for APACHE_PORT
 ARTS			aRts support via the KDE sound daemon
 ASPELL			Use textproc/aspell for spell checking
+ATLAS			Use ATLAS instead of BLAS/LAPACK
+AUDIOFILE		Adds audiofile support
+AVAHI			Adds Avahi support
 AVIFILE			Adds support for AVI multimedia
 BDB			Adds Berkeley DB Support
+BLAS			Use BLAS instead of ATLAS
 CACA			Libcaca colored ASCII graphics
+CAIRO			Adds CAIRO support
 CDDB			CDDB support
 CDPARANOIA		Support for cdparanoia CD extraction
+CGI			Adds CGI support
 CJK			Chinese, Japanese, and Korean language support
+CLAMAV			Adds clamav support
 CLIENT			Client component of a client/server package
+CLIENT_ONLY		Client component of a client/server package
+COMPILE			Do not use the pre-compiled .jar files
 CUPS			CUPS (Common Unix Printing System) support
 CURL			cURL generic file transfer library support
 DBUS			Adds support for D-Bus (Desktop Bus)
 DEBUG			Enables debugging support
+DEDICATED		Enables dedicated server
+DOCS			Install Documentation
+DOXYGEN			Build Doxygen Documentation
 DTS			DTS coherent acoustics decoding (some DVDs)
 DV			Digital Video used by many digital camcorders
 DVD			Enables General DVD support
 DVDNAV			Enables DVD Menu support
 DVDREAD			Enables DVD support
+EJABBERD		Adds support for the ejabberd jabber server
+EMACS			Adds support for Emacs
 ESOUND			Adds support for EsounD
 EXAMPLES		Installs optional example code, graphics, etc.
 EXIF			Support EXIF headers in JPEG and TIFF files
 FAAC			FAAC AAC and MP4 audio encoder support
 FAAD			FAAD AAC and MP4 audio decoder support
+FAM			Adds File Alteration Monitor support
+FASTCGI			Adds FastCGI support
+FFMPEG			Enables FFMPEG support
 FIREBIRD		Firebird (Interbase) database support
+FPING			Adds fping support
+FREETYPE		Adds Freetype support
+FRIBIDI			Adds fribidi support
 FLAC			Flac audio support
+FORTRAN			Adds FORTRAN support
 GCONF			Use GConf/GConf2
+GD			Adds support for gd
+GDBM			Use gdbm db instead of system bdb
+GEOIP			Adds GeoIP support
+GETTEXT			Adds gettext support
 GHC			Prefer/use Glasgow Haskell Compiler
+GHOSTSCRIPT		Adds ghostscript support
+GIF			Adds GIF support
+GL			Adds OpenGL support
+GLX			Adds OpenGL support
+GMP			Adds GMP support
 GNOME			Adds GNOME support
 GNUTLS			Adds GnuTLS support
 GPGME			Use security/gpgme for PGP support
+GRAPHVIZ		Adds graphviz support
 GSASL			Adds GSASL support
 GSM			GSM audio codec support
 GSSAPI			GSSAPI (Kerberos) support
 GSTREAMER		GStreamer multimedia support
+GTK			Adds Gtk support
 GTK1			Adds Gtk+1 support
 GTK2			Adds Gtk+2 support
+GTKSPELL		Enable Spell checking through GTKSpell
+GUI			Enable Graphical User Interface
+H323			Adds support for the H323 protocol
 HAL			Adds support for HAL
+HEIMDAL_KRB5		Adds Heimdal kerberos support
+ICONV			Adds iconv support
+ICU			Use ICU for unicode collation
+IDN			Adds support for International Domain Names
 IMAGEMAGICK		ImageMagick graphics support
 IMAP			Adds support for IMAP mail protocol
+IMLIB			Adds imlib support
 IODBC			Use iODBC as the ODBC driver
 IPV6			IPv6 internet protocol support
+IRC			Adds IRC support
 ISPELL			Use textproc/ispell for spell checking
+JABBER			Adds support for the Jabber protocol
+JACK			Adds suppor for the JACK Audio Connection Kit
 JAVA			Adds support for Java
+JOYSTICK		Adds joystick support
+JPEG			Adds JPEG support
 KDE			Adds KDE support
+KDE4			Adds KDE4 support
+KERBEROS		Adds Kerberos support
 LAME			LAME MP3 audio encoder support
+LADSPA			Adds LADSPA support
 LDAP			Adds LDAP support
+LIGHTTPD		Adds lighttpd support
 LINUX			Adds support for Linux
+LINUXTHREADS		Use the linuxthreads pthread library
+LIRC			Adds LIRC support
 LIVEMEDIA		LiveMedia rstp/rtp/sdp support
 LUA			Lua scripting support
 LZO			LZO data compression support
 MAD			Mad MP3 audio decoder support
+MANPAGES		Build and install man pages
+MIT_KRB5		Adds MIT kerberos support
 MATROSKA		Matroska multimedia container support
+MIKMOD			Adds mikmod support
+MILTER			Adds milter support
+MMAP			Enables MMAP support
 MMX			Adds support for x86 MMX optimizations
 MODPERL2		Use www/mod_perl2 port
 MODPYTHON3		Use www/mod_python3 port
+MOTIF			Adds MOTIF support
+MOZILLA			Adds Mozilla support
+MP3			Adds MP3 support
+MP4			Adds MP4 support
 MPEG4IP			MPEG4 multimedia support
+MPG123			Adds mpg123 support
+MPI			Use MPI
+MPLAYER			Adds Mplayer support
+MSN			Adds support for the MSN protocol
+MSSQL			Adds MSSQL Support
 MUSEPACK		Musepack (MPC, musicpd, libmpcdec) support
 MYSQL			MySQL database support
 NAS			Adds support for NAS (Network Audio Sound)
 NCURSES			Adds ncurses console graphics support
+NETCDF			Adds NetCDF support
 NHC98			Prefer/use nhc98 Haskell compiler
 NIS			Support for NIS/YP
 NLS			Native Language Support via gettext utilities
+NOTIFY			Adds support for libnotify
 NOUVEAU			Use MesaLib 7.4.4/libdrm 2.4.12 with xf86-video-nouveau
+NTLM			Adds NTLM support
+NVIDIA			Adds support for the nvidia driver
 NVIDIA_GL		Use libGL provided by NVidia binary drivers
+ODBC			Adds ODBC support
 OGG			OGG multimedia container format
 OPENAL			Adds OpenAL support
 OPENGL			Adds OpenGL support
+OPENLDAP		Adds OpenLDAP support
+OPENMPI			Adds OpenMPI support
+OPENSSL			Adds OpenSSL support
+OPTIMIZATION		Build with optimizations
+OPTIMIZED_CFLAGS	Enables optimized CFLAGS
+OPTIMIZED_FLAGS		Enables optimized compiler flags
+ORACLE			Adds Oracle database support
+OSS			Adds support for the Open Sound System
+PAM			Adds PAM support
+PCRE			Adds PCRE support
+PDF			Adds PDF support
 PERL			Adds Perl language/module support
 PGO			Enables Profile-Guided Optimization
 PGSQL			PostgreSQL database support
+PHP			Adds PHP support
+PLUGIN			Enables building of plugin
+PLUGINS			Enables building of plugins
+PNG			Adds PNG support
 POP3			Adds support for POP3 mail protocol
+PORTAUDIO		Adds Portaudio support
+POSTFIX			Adds support for the Postfix mta
 PSYCO			Adds Python Psyco optimization support
+PTHREADS		Enable pthreads support
+PULSEAUDIO		Adds support for the PulseAudio sound server
 PYTHON			Adds Python language/module support
 QT			Adds Qt support
-QUICKTIME 		QuickTime audio/video support
+QT4			Adds Qt4 support
+QUOTA			Adds support for quotas
+QUICKTIME		QuickTime audio/video support
+RADIUS			Adds RADIUS support
+READLINE		Adds Readline support
+REPLACE_BASE		Replace base software with this version
 RUBY			Adds Ruby language/module support
 SAMBA			Adds SAMBA support
+SAMPLERATE		Adds support for libsamplerate
+SASL			Adds SASL support
+SASL2			Adds SASL2 support
+SASLKRB5		Adds SASL Kerberos5 support
 SDL			Adds support for SDL media library
 SERVER			Server component of a client/server package
+SIEVE			Adds Sieve support
+SIGCHASE		Adds DNSSEC validation support
+SIMD			Enable x86 SIMD (3DNow!/MMX)
 SLANG			Adds display/screen management via S-Lang
 SLP			Adds SLP (Service Locator Protocol) support
+SMP			Adds Symetric MultiProcessor support
 SNDFILE			Adds support for libsndfile
+SNMP			Adds SNMP support
+SOCKS			Adds SOCKS support
+SOUND			Adds sound support
 SOX			SoX audio support
+SPAMASSASSIN		Adds Spamassassin support
 SPEEX			Speex audio codec support
 SQLITE			SQLite embedded SQL database support
 SSE			Adds support for x86 SSE optimizations
+SSE2			Adds support for x86 SSE2 optimizations
+SSH			Adds support for SSH
 SSL			Adds support for SSL (Secure Socket Layer)
 STATIC			Build statically linked executables
+SUBVERSION		Adds Subversion support
+SUID			Install with setuid bit set
+SVGALIB			Adds SVGALib support
+SVG			Adds SVG support
+SYSLOG			Adds Syslog support
+TAGLIB			Adds Taglib support
+TCL			Adds TCL support
+TCP_WRAPPERS		Adds TCP-Wrappers support
+TEST			Enable tests
 THEORA			Theora video codec support
+THREADS			Enable threads support
+TIFF			Adds TIFF support
+TLS			Adds TLS support
+TOOLS			Install additional tools
+TRACING			Enable tracing
 TREMOR			Tremor (integer-only Vorbis) audio support
+UNICODE			Adds unicode support
 UNIXODBC		Use UnixODBC as the ODBC driver
 USB			Add devel/libusb support for USB devices
+V4L			Adds Video 4 Linux support
+VIDEO			Enable video support
 VORBIS			OGG/Vorbis audio support
+WAVPACK			Adds WAVPACK support
 WX			wxWidgets (formerly wxWindows) support
 X11			Support for X11
 X264			H.264/AVC (MPEG4 part 10) multimedia codec
+X86_ASM			Enables assembly code (i386 only)
+XAW3D			Adds XAW3D support
+XFT			Adds XFT support
+XIM			Adds XIM support
 XINE			XINE multimedia support
+XINERAMA		Adds Xinerama support
+XML			Adds XML support through libxml
+XMMS			Adds XMMS support
+XPM			Adds XPM support
 XVID			XVID multimedia MPEG4 codec support
+YAHOO			Adds Yahoo! Messenger Protocol support
+ZIP			Adds ZIP support
+ZLIB			Adds Zlib support
 ZVBI			Adds support to access raw VBI capture devices
