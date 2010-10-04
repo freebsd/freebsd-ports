@@ -1,0 +1,12 @@
+
+$FreeBSD$
+
+--- src/Makefile.am.orig
++++ src/Makefile.am
+@@ -1,5 +1,5 @@
+ jarfile = zmq.jar
+-jardir = $(datadir)/java
++jardir = $(datadir)/java/classes
+ 
+ JZMQ_JAVA_FILES = \
+ 	org/zeromq/ZMQ.java

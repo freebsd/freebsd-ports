@@ -679,6 +679,7 @@
     SUBDIR += jtag
     SUBDIR += jude-community
     SUBDIR += judy
+    SUBDIR += jzmq
     SUBDIR += k8048
     SUBDIR += kBuild
     SUBDIR += kaptain
