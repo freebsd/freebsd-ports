@@ -7,7 +7,7 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc shells
 MASTER_SITES=	http://www.midnight-commander.org/downloads/ \
 		${MASTER_SITE_SUNSITE}
@@ -45,7 +45,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SAMBA) || !(defined(WITHOUT_SAMBA) || defined(MINIMAL))
-CONFIGURE_ARGS+=--with-samba --with-configdir=${LOCALBASE}/etc\
+CONFIGURE_ARGS+=--enable-vfs-smb --with-configdir=${LOCALBASE}/etc\
 		--with-codepagedir=${LOCALBASE}/etc/codepages
 .endif
 
