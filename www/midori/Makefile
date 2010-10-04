@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	midori
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.8
 CATEGORIES=	www xfce
-MASTER_SITES=	http://archive.xfce.org/src/apps/${PORTNAME}/${PORTVERSION:R}/
+MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	kwm@FreeBSD.org
@@ -33,7 +34,7 @@ MAKE_JOBS_SAFE=	yes
 HAS_CONFIGURE=	yes
 USE_PYTHON_BUILD=	yes
 USE_BZIP2=	yes
-USE_GNOME=	glib20 gtk20 intltool libxml2 pkgconfig
+USE_GNOME=	glib20 gtk20 intltool libxml2 pkgconfig desktopfileutils
 USE_XORG=	xscrnsaver
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
@@ -74,6 +75,7 @@ PLIST_SUB+=	APIDOCS="@comment "
 .endif
 
 post-install:
+	@-update-desktop-database
 .if defined(WITH_APIDOCS)
 	${MKDIR} ${DOCSDIR}/api/katze/html
 	${MKDIR} ${DOCSDIR}/api/midori/html

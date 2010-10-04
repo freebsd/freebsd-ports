@@ -16,8 +16,8 @@ lib/midori/libpage-holder.so
 lib/midori/libshortcuts.so
 lib/midori/libstatus-clock.so
 lib/midori/libstatusbar-features.so
-lib/midori/libtabs-minimized.so
 lib/midori/libtab-panel.so
+lib/midori/libtabs-minimized.so
 lib/midori/libtoolbar-editor.so
 lib/midori/libweb-cache.so
 share/applications/midori.desktop
@@ -113,6 +113,7 @@ share/icons/hicolor/scalable/status/news-feed.svg
 %%NLS%%share/locale/it/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/midori.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/no/LC_MESSAGES/midori.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/midori.mo
