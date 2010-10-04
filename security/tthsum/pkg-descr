@@ -1,4 +1,4 @@
-Tthsum generates and checks TTH checksums (root of the THEX hash tree).
+tthsum generates and checks TTH checksums (root of the THEX hash tree).
 
 The Merkle Hash Tree is a hash construct that exhibits desirable properties for
 verifying the integrity of files and file subranges in an incremental or
@@ -7,4 +7,4 @@ out-of-order fashion.
 The tool uses the Tiger hash algorithm for both the internal and the leaf
 nodes, and has an interface identical to md5sum.
 
-WWW: http://freshmeat.net/projects/tthsum/
+WWW: http://tthsum.devs.nu/
