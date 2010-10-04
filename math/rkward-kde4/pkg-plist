@@ -153,6 +153,12 @@ share/apps/rkward/analysis/wilcoxon/wilcoxon_exact_test.xml
 share/apps/rkward/analysis/wilcoxon/wilcoxon_test.js
 share/apps/rkward/analysis/wilcoxon/wilcoxon_test.rkh
 share/apps/rkward/analysis/wilcoxon/wilcoxon_test.xml
+share/apps/rkward/data.pluginmap
+share/apps/rkward/data/generate_random.js
+share/apps/rkward/data/generate_random.xml
+share/apps/rkward/data/sort.js
+share/apps/rkward/data/sort.xml
+share/apps/rkward/data/sort2.xml
 share/apps/rkward/descriptive/descriptive_statistics.js
 share/apps/rkward/descriptive/descriptive_statistics.rkh
 share/apps/rkward/descriptive/descriptive_statistics.xml
@@ -387,8 +393,11 @@ share/apps/rkward/irt.pluginmap
 share/apps/rkward/pages/rkward_console.rkh
 share/apps/rkward/pages/rkward_for_new_users.rkh
 share/apps/rkward/pages/rkward_for_r_users.rkh
+share/apps/rkward/pages/rkward_for_rkward_devs.rkh
 share/apps/rkward/pages/rkward_help.css
 share/apps/rkward/pages/rkward_output.rkh
+share/apps/rkward/pages/rkward_plot_history.rkh
+share/apps/rkward/pages/rkward_public_functions.rkh
 share/apps/rkward/pages/rkward_shortcuts.rkh
 share/apps/rkward/pages/rkward_trouble_shooting.rkh
 share/apps/rkward/pages/rkward_welcome.rkh
@@ -397,6 +406,7 @@ share/apps/rkward/php2js.js
 share/apps/rkward/phpfiles/common.js
 share/apps/rkward/phpfiles/common.php
 share/apps/rkward/phpfiles/php.ini
+share/apps/rkward/phpfiles/rkcomponentscripting.js
 share/apps/rkward/plots.pluginmap
 share/apps/rkward/plots/barplot.js
 share/apps/rkward/plots/barplot.rkh
@@ -451,7 +461,6 @@ share/apps/rkward/plots/plot.js
 share/apps/rkward/plots/plot.rkh
 share/apps/rkward/plots/plot.xml
 share/apps/rkward/plots/plot_options.js
-share/apps/rkward/plots/plot_options.js2
 share/apps/rkward/plots/plot_options.rkh
 share/apps/rkward/plots/plot_options.xml
 share/apps/rkward/plots/plot_stepfun_options.js
@@ -484,7 +493,6 @@ share/apps/rkward/rktoplevelwindowgui.rc
 share/apps/rkward/rkwardui.rc
 share/apps/rkward/simple_anova/code.js
 share/apps/rkward/simple_anova/description.xml
-share/apps/rkward/svncopy.sh
 share/apps/rkward/testing/test1.js
 share/apps/rkward/testing/test1.xml
 share/apps/rkward/testing/test2.js
@@ -542,6 +550,7 @@ share/icons/hicolor/scalable/apps/rkward.svgz
 @dirrm share/apps/rkward/distributions/tests
 @dirrm share/apps/rkward/distributions/clt
 @dirrm share/apps/rkward/distributions
+@dirrm share/apps/rkward/data
 @dirrm share/apps/rkward/analysis/wilcoxon
 @dirrm share/apps/rkward/analysis/variances
 @dirrm share/apps/rkward/analysis/time_series
