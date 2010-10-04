@@ -167,7 +167,7 @@
     SUBDIR += cuyo
     SUBDIR += d2x
     SUBDIR += d2x-xl
-    SUBDIR += daimonin-client
+    SUBDIR += daimonin
     SUBDIR += daimonin-music
     SUBDIR += dangen
     SUBDIR += dangerdeep
