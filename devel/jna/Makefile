@@ -16,6 +16,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Java access to native shared libraries
 
 USE_ANT=	yes
+USE_GMAKE=	yes
 USE_JAVA=	1.4+
 USE_ZIP=	yes
 
