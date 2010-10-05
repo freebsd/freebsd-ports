@@ -230,7 +230,7 @@ run-autotools::
 		${SETENV} ${CONFIGURE_ENV} ${SH} \
 		./configure ${CONFIGURE_ARGS} ${APR_CONF_ARGS}
 	cd ${APU_WRKDIR}; \
-		${SETENV} ${CONFIGURE_ENV} ${SH} \
+		${SETENV} ${CONFIGURE_ENV} CFLAGS="${CFLAGS}" ${SH} \
 		./configure ${CONFIGURE_ARGS} ${APU_CONF_ARGS}
 
 do-configure:
@@ -256,6 +256,6 @@ debug_autoconf:
 	@${ECHO} "LIBTOOL_LIBEXECDIR: ${LIBTOOL_LIBEXECDIR}"
 	@${ECHO} "LIBTOOL_M4: ${LIBTOOL_M4}"
 	@${ECHO} "${SETENV} ${CONFIGURE_ENV} ${SH} ./configure ${CONFIGURE_ARGS} ${APR_CONF_ARGS}"
-	@${ECHO} "${SETENV} ${CONFIGURE_ENV} ${SH} ./configure ${CONFIGURE_ARGS} ${APR_UTIL_CONF_ARGS}"
+	@${ECHO} "${SETENV} ${CONFIGURE_ENV} CFLAGS="${CFLAGS}" ${SH} ./configure ${CONFIGURE_ARGS} ${APR_UTIL_CONF_ARGS}"
 
 .include <bsd.port.mk>
