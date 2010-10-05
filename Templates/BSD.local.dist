@@ -1,4 +1,4 @@
-# $FreeBSD: /tmp/pcvs/ports/Templates/BSD.local.dist,v 1.1 2007-05-19 21:55:00 flz Exp $
+# $FreeBSD: /tmp/pcvs/ports/Templates/BSD.local.dist,v 1.2 2010-10-05 02:44:18 gordon Exp $
 #
 # Please see the file src/etc/mtree/README before making changes to this file.
 #
@@ -8,6 +8,8 @@
     bin
     ..
     etc
+        man.d
+        ..
         pam.d
         ..
         rc.d
