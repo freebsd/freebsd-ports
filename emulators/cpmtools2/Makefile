@@ -11,10 +11,12 @@ CATEGORIES=	emulators sysutils
 MASTER_SITES=	http://www.moria.de/~michael/cpmtools/ \
 		http://www.copei.de/freebsd-ports/
 
-MAINTAINER=	pixel@copei.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to access CP/M disks and disk images
 
 LIB_DEPENDS+=	dmalloc:${PORTSDIR}/devel/dmalloc
+
+BROKEN=		does not fetch
 
 LATEST_LINK=	cpmtools2
 
