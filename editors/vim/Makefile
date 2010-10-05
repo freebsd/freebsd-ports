@@ -7,6 +7,9 @@
 #
 
 PORTNAME?=	vim
+#		! _NEVER_ reduce or lower PATCHLEVEL, even if the PATCHLEVEL
+#		! value # is added to BADPATCHES.  Doing otherwise will cause
+#		! PORTEPOCH to be needed, which we do NOT want.
 PATCHLEVEL=	446
 PORTVERSION=	7.2.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
@@ -38,7 +41,7 @@ SLAVEDIRS=	editors/vim-lite
 .include "${.CURDIR}/../vim/options"
 .endif
 
-CONFLICTS=	vim6* vim*-lite
+CONFLICTS=	vim6* vim*-lite vim*-gtk1 vim*-gnome
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 DIST_SUBDIR=	vim
@@ -124,20 +127,20 @@ MAKE_ARGS+=	CONF_OPT_TCL="--enable-tclinterp --with-tclsh="${TCLSH:S/${LOCALBASE
 
 .if !defined(WITHOUT_X11)
 #	for now default the GUI to the GTK+ one
-. if !defined(WITH_X11_ONLY) && !defined(WITH_ATHENA) && !defined(WITH_MOTIF) && !defined(WITH_GNOME) && !defined(WITH_GTK) && !defined(WITH_GTK2)
-WITH_GTK=	yes
+. if !defined(WITH_X11_ONLY) && !defined(WITH_ATHENA) && !defined(WITH_MOTIF) && !defined(WITH_GNOME) && !defined(WITH_GTK1) && !defined(WITH_GTK2)
+WITH_GTK2=	yes
 . endif
 
 . if defined(WITH_ATHENA)
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena" ${I18N}
-. elif defined(WITH_GTK)
+. elif defined(WITH_GTK1)
 USE_GNOME=	gtk12
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${LOCALBASE}" ${I18N}
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 USE_XORG+=	xt
+PKGNAMESUFFIX=	-gtk1
 . elif defined(WITH_GTK2)
 USE_GNOME=	gtk20
-PKGNAMESUFFIX=	-gtk2
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk2 --with-gtk-prefix=${LOCALBASE}" ${I18N}
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 USE_XORG+=	xt
@@ -254,6 +257,12 @@ post-install:
 
 show-options:
 	@${MAKE} -DWITH_OPTIONS showconfig
+
+.if defined(WITH_GTK)
+.BEGIN:
+	@${ECHO_CMD} "WITH_GTK has been renamed WITH_GTK1."
+	@exit 1
+.endif
 
 cklatest:
 	-ncftpls \
