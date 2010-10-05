@@ -75,6 +75,17 @@ share/pixmaps/zaz.xpm
 %%DATADIR%%/level20.lvl
 %%DATADIR%%/level20_overlay.png
 %%DATADIR%%/level20_thumb.jpg
+%%DATADIR%%/level21.jpg
+%%DATADIR%%/level21.lvl
+%%DATADIR%%/level21_overlay.png
+%%DATADIR%%/level21_thumb.jpg
+%%DATADIR%%/level22.jpg
+%%DATADIR%%/level22.lvl
+%%DATADIR%%/level22_thumb.jpg
+%%DATADIR%%/level23.jpg
+%%DATADIR%%/level23.lvl
+%%DATADIR%%/level23_overlay.png
+%%DATADIR%%/level23_thumb.jpg
 %%DATADIR%%/level2_thumb.jpg
 %%DATADIR%%/level3.jpg
 %%DATADIR%%/level3.lvl
@@ -106,6 +117,9 @@ share/pixmaps/zaz.xpm
 %%DATADIR%%/mus4.ogg
 %%DATADIR%%/newcolor.ogg
 %%DATADIR%%/ouch.ogg
+%%DATADIR%%/phbx_logo.png
+%%DATADIR%%/phbx_logo_overlay.png
+%%DATADIR%%/phbx_snd.ogg
 %%DATADIR%%/player.png
 %%DATADIR%%/pro.set
 %%DATADIR%%/ptr.png
