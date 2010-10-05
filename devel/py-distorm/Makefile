@@ -7,8 +7,10 @@
 
 PORTNAME=	distorm
 PORTVERSION=	1.7.30
+PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.ragestorm.net/distorm/
+MASTER_SITES=	http://www.ragestorm.net/distorm/ \
+		LOCAL/bf
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PORTNAME}64-pkg${PORTVERSION}.tar.bz2 \
 		diSlib64.py
@@ -16,6 +18,8 @@ EXTRACT_ONLY=	${PORTNAME}64-pkg${PORTVERSION}.tar.bz2
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Fast x86 and x86-64 disassembler library with Python interface
+
+LICENSE=	BSD
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
