@@ -7,9 +7,7 @@
 PORTNAME=	color
 PORTVERSION=	1.4.1
 CATEGORIES=	print rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
-MASTER_SITE_SUBDIR=	color
-DISTNAME=	color-${PORTVERSION}
+MASTER_SITES=	RG
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Provides colour space definition and manpiulation

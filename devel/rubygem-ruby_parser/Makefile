@@ -9,7 +9,7 @@ PORTNAME=	ruby_parser
 PORTVERSION=	2.0.5
 PORTREVISION=	1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	RUBYFORGE/parsetree
+MASTER_SITES=	RG
 
 MAINTAINER=	voldern@hoeggen.net
 COMMENT=	A ruby parser written in pure ruby
