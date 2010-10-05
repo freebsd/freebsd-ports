@@ -1,0 +1,11 @@
+bin/gxmessage
+share/icons/hicolor/48x48/apps/gxmessage.png
+%%NLS%%share/locale/de/LC_MESSAGES/gxmessage.mo
+%%NLS%%share/locale/en_AU/LC_MESSAGES/gxmessage.mo
+%%NLS%%share/locale/en_CA/LC_MESSAGES/gxmessage.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/gxmessage.mo
+%%NLS%%share/locale/en_NZ/LC_MESSAGES/gxmessage.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/gxmessage.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gxmessage.mo
+%%NLS%%@dirrmtry share/locale/en_NZ/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en_NZ
