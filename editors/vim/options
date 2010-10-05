@@ -9,7 +9,7 @@ OPTIONS=	PERL "Enable Perl interpreter" off \
 		X11_ONLY "CLI-only Vim, but with basic X11 support" off \
 		XTERM_SAVE "Restore xterm screen after exit" off \
 		ATHENA "Athena GUI" off \
-		GTK "GTK+ 1.2 GUI" off \
+		GTK1 "GTK+ 1.2 GUI" off \
 		GTK2 "GTK2 GUI" off \
 		GNOME "Gnome1 GUI" off \
 		MOTIF "Motif GUI" off \
