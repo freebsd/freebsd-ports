@@ -496,6 +496,9 @@ share/doc/HTML/en/kdesu/man-kdesu.1.docbook
 share/doc/HTML/en/khelpcenter/background.png
 share/doc/HTML/en/khelpcenter/bgtable.png
 share/doc/HTML/en/khelpcenter/common
+share/doc/HTML/en/khelpcenter/documentationnotfound/common
+share/doc/HTML/en/khelpcenter/documentationnotfound/index.cache.bz2
+share/doc/HTML/en/khelpcenter/documentationnotfound/index.docbook
 share/doc/HTML/en/khelpcenter/glossary/common
 share/doc/HTML/en/khelpcenter/glossary/index.cache.bz2
 share/doc/HTML/en/khelpcenter/glossary/index.docbook
@@ -1928,6 +1931,7 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @dirrm share/doc/HTML/en/kioslave/bzip2
 @dirrm share/doc/HTML/en/kioslave/bookmarks
 @dirrm share/doc/HTML/en/khelpcenter/glossary
+@dirrm share/doc/HTML/en/khelpcenter/documentationnotfound
 @dirrm share/doc/HTML/en/khelpcenter
 @dirrm share/doc/HTML/en/kdesu
 @dirrm share/doc/HTML/en/kdebugdialog

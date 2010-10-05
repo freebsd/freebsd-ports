@@ -7,15 +7,3 @@
  project(Ruby)
  
  set(COMPILE_RUBY FALSE CACHE INTERNAL "")
-@@ -74,9 +77,9 @@
-             #include <ruby.h>
-             int main() { ruby_init(); return 0; }" RubyCompiles)
-         if(RubyCompiles)
--            if(ENABLE_KROSSRUBY AND RUBY_VERSION_MAJOR = 1 AND RUBY_VERSION_MINOR < 9)
-+            if(ENABLE_KROSSRUBY AND RUBY_VERSION_MAJOR EQUAL 1 AND RUBY_VERSION_MINOR LESS 9)
-                 set(BUILD_KrossRuby TRUE)
--            endif(ENABLE_KROSSRUBY AND RUBY_VERSION_MAJOR = 1 AND RUBY_VERSION_MINOR < 9)
-+            endif(ENABLE_KROSSRUBY AND RUBY_VERSION_MAJOR EQUAL 1 AND RUBY_VERSION_MINOR LESS 9)
-         else(RubyCompiles)
-             message(STATUS "Failed to compile a C++ program that embeds ruby.")
-         endif(RubyCompiles)

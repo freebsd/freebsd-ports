@@ -37,8 +37,8 @@ share/apps/knetworkconf/pixmaps/turbolinux.png
 share/apps/knetworkconf/pixmaps/vine.png
 share/apps/knetworkconf/pixmaps/yoper.png
 share/apps/ksystemlog/ksystemlogui.rc
-share/apps/kuser/icons/oxygen/22x22/actions/user-group-delete.png
-share/apps/kuser/icons/oxygen/22x22/actions/user-group-properties.png
+share/apps/kuser/icons/hicolor/22x22/actions/user-group-delete.png
+share/apps/kuser/icons/hicolor/22x22/actions/user-group-properties.png
 share/apps/kuser/kuserui.rc
 share/apps/kuser/pics/group.png
 share/apps/kuser/pics/user.png
@@ -50,10 +50,8 @@ share/doc/HTML/en/kcontrol/knetworkconf/04.png
 share/doc/HTML/en/kcontrol/knetworkconf/05.png
 share/doc/HTML/en/kcontrol/knetworkconf/06.png
 share/doc/HTML/en/kcontrol/knetworkconf/07.png
-share/doc/HTML/en/kcontrol/knetworkconf/08.png
 share/doc/HTML/en/kcontrol/knetworkconf/09.png
 share/doc/HTML/en/kcontrol/knetworkconf/11.png
-share/doc/HTML/en/kcontrol/knetworkconf/about1.png
 share/doc/HTML/en/kcontrol/knetworkconf/common
 share/doc/HTML/en/kcontrol/knetworkconf/index.cache.bz2
 share/doc/HTML/en/kcontrol/knetworkconf/index.docbook
@@ -93,9 +91,9 @@ share/kde4/services/kcm_knetworkconfmodule.desktop
 @dirrm share/doc/HTML/en/kcron
 @dirrm share/doc/HTML/en/kcontrol/knetworkconf
 @dirrm share/apps/kuser/pics
-@dirrm share/apps/kuser/icons/oxygen/22x22/actions
-@dirrm share/apps/kuser/icons/oxygen/22x22
-@dirrm share/apps/kuser/icons/oxygen
+@dirrm share/apps/kuser/icons/hicolor/22x22/actions
+@dirrm share/apps/kuser/icons/hicolor/22x22
+@dirrm share/apps/kuser/icons/hicolor
 @dirrm share/apps/kuser/icons
 @dirrm share/apps/kuser
 @dirrm share/apps/ksystemlog

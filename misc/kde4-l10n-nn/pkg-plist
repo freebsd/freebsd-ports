@@ -13,9 +13,6 @@ share/doc/HTML/nn/kcontrol/bell/index.docbook
 share/doc/HTML/nn/kollision/common
 share/doc/HTML/nn/kollision/index.cache.bz2
 share/doc/HTML/nn/kollision/index.docbook
-share/doc/HTML/nn/usb/common
-share/doc/HTML/nn/usb/index.cache.bz2
-share/doc/HTML/nn/usb/index.docbook
 share/locale/nn/LC_MESSAGES/akonadicontact.mo
 share/locale/nn/LC_MESSAGES/amor.mo
 share/locale/nn/LC_MESSAGES/ark.mo
@@ -591,7 +588,6 @@ share/locale/nn/entry.desktop
 @dirrm share/locale/nn/LC_SCRIPTS/step
 @dirrm share/locale/nn/LC_SCRIPTS/kdelibs4
 @dirrm share/locale/nn/LC_SCRIPTS
-@dirrm share/doc/HTML/nn/usb
 @dirrm share/doc/HTML/nn/kollision
 @dirrm share/doc/HTML/nn/kcontrol/bell
 @dirrm share/doc/HTML/nn/kcontrol

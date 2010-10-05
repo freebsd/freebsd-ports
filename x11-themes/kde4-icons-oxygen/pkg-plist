@@ -681,6 +681,7 @@ share/icons/oxygen/16x16/actions/dashboard-show.png
 share/icons/oxygen/16x16/actions/debug-execute-from-cursor.png
 share/icons/oxygen/16x16/actions/debug-execute-to-cursor.png
 share/icons/oxygen/16x16/actions/debug-run-cursor.png
+share/icons/oxygen/16x16/actions/debug-run.png
 share/icons/oxygen/16x16/actions/debug-step-instruction.png
 share/icons/oxygen/16x16/actions/debug-step-into-instruction.png
 share/icons/oxygen/16x16/actions/debug-step-into.png
@@ -1856,6 +1857,7 @@ share/icons/oxygen/22x22/actions/dashboard-show.png
 share/icons/oxygen/22x22/actions/debug-execute-from-cursor.png
 share/icons/oxygen/22x22/actions/debug-execute-to-cursor.png
 share/icons/oxygen/22x22/actions/debug-run-cursor.png
+share/icons/oxygen/22x22/actions/debug-run.png
 share/icons/oxygen/22x22/actions/debug-step-instruction.png
 share/icons/oxygen/22x22/actions/debug-step-into-instruction.png
 share/icons/oxygen/22x22/actions/debug-step-into.png
@@ -3033,7 +3035,6 @@ share/icons/oxygen/256x256/actions/tools-media-optical-format.png
 share/icons/oxygen/256x256/actions/tools-rip-audio-cd.png
 share/icons/oxygen/256x256/actions/tools-rip-video-cd.png
 share/icons/oxygen/256x256/apps/Charm.png
-share/icons/oxygen/256x256/apps/MameExecutor.png
 share/icons/oxygen/256x256/apps/accessories-calculator.png
 share/icons/oxygen/256x256/apps/accessories-dictionary.png
 share/icons/oxygen/256x256/apps/akonadi.png
@@ -3061,6 +3062,7 @@ share/icons/oxygen/256x256/apps/krita.png
 share/icons/oxygen/256x256/apps/kspread.png
 share/icons/oxygen/256x256/apps/kword.png
 share/icons/oxygen/256x256/apps/lokalize.png
+share/icons/oxygen/256x256/apps/mameexecutor.png
 share/icons/oxygen/256x256/apps/multimedia-volume-control.png
 share/icons/oxygen/256x256/apps/oxygen.png
 share/icons/oxygen/256x256/apps/partitionmanager.png
@@ -3321,6 +3323,7 @@ share/icons/oxygen/32x32/actions/dashboard-show.png
 share/icons/oxygen/32x32/actions/debug-execute-from-cursor.png
 share/icons/oxygen/32x32/actions/debug-execute-to-cursor.png
 share/icons/oxygen/32x32/actions/debug-run-cursor.png
+share/icons/oxygen/32x32/actions/debug-run.png
 share/icons/oxygen/32x32/actions/debug-step-instruction.png
 share/icons/oxygen/32x32/actions/debug-step-into-instruction.png
 share/icons/oxygen/32x32/actions/debug-step-into.png
@@ -4509,6 +4512,7 @@ share/icons/oxygen/48x48/actions/dashboard-show.png
 share/icons/oxygen/48x48/actions/debug-execute-from-cursor.png
 share/icons/oxygen/48x48/actions/debug-execute-to-cursor.png
 share/icons/oxygen/48x48/actions/debug-run-cursor.png
+share/icons/oxygen/48x48/actions/debug-run.png
 share/icons/oxygen/48x48/actions/debug-step-instruction.png
 share/icons/oxygen/48x48/actions/debug-step-into-instruction.png
 share/icons/oxygen/48x48/actions/debug-step-into.png

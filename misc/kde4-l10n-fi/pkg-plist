@@ -546,6 +546,7 @@ share/locale/fi/LC_MESSAGES/timezones4.mo
 share/locale/fi/LC_MESSAGES/umbrello.mo
 share/locale/fi/LC_MESSAGES/useraccount.mo
 share/locale/fi/LC_MESSAGES/xml_mimetypes.mo
+share/locale/fi/LC_SCRIPTS/kdelibs4/general.pmap
 share/locale/fi/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/fi/entry.desktop
 @dirrm share/locale/fi/LC_SCRIPTS/kdelibs4

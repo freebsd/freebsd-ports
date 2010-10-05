@@ -69,6 +69,7 @@ share/locale/is/LC_MESSAGES/kcm_pci.mo
 share/locale/is/LC_MESSAGES/kcm_phonon.mo
 share/locale/is/LC_MESSAGES/kcm_phononxine.mo
 share/locale/is/LC_MESSAGES/kcm_platform.mo
+share/locale/is/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/is/LC_MESSAGES/kcm_solid.mo
 share/locale/is/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/is/LC_MESSAGES/kcm_standard_actions.mo
@@ -254,6 +255,7 @@ share/locale/is/LC_MESSAGES/krcdnotifieritem.mo
 share/locale/is/LC_MESSAGES/krdb.mo
 share/locale/is/LC_MESSAGES/krdc.mo
 share/locale/is/LC_MESSAGES/kreadconfig.mo
+share/locale/is/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/is/LC_MESSAGES/kres_bugzilla.mo
 share/locale/is/LC_MESSAGES/kreversi.mo
 share/locale/is/LC_MESSAGES/krfb.mo

@@ -150,7 +150,7 @@ share/applications/kde4/kapptemplate.desktop
 share/applications/kde4/kate.desktop
 share/applications/kde4/kbugbuster.desktop
 share/applications/kde4/kcachegrind.desktop
-share/applications/kde4/kdesvn-build.desktop
+share/applications/kde4/kdesrc-build.desktop
 share/applications/kde4/kompare.desktop
 share/applications/kde4/ktesnippets_editor.desktop
 share/applications/kde4/kuiviewer.desktop
@@ -506,9 +506,9 @@ share/doc/HTML/en/kbugbuster/index.docbook
 share/doc/HTML/en/kcachegrind/common
 share/doc/HTML/en/kcachegrind/index.cache.bz2
 share/doc/HTML/en/kcachegrind/index.docbook
-share/doc/HTML/en/kdesvn-build/common
-share/doc/HTML/en/kdesvn-build/index.cache.bz2
-share/doc/HTML/en/kdesvn-build/index.docbook
+share/doc/HTML/en/kdesrc-build/common
+share/doc/HTML/en/kdesrc-build/index.cache.bz2
+share/doc/HTML/en/kdesrc-build/index.docbook
 share/doc/HTML/en/kompare/common
 share/doc/HTML/en/kompare/dock.png
 share/doc/HTML/en/kompare/index.cache.bz2
@@ -591,7 +591,7 @@ share/icons/hicolor/16x16/apps/kbugbuster.png
 share/icons/hicolor/16x16/apps/kompare.png
 share/icons/hicolor/16x16/apps/kuiviewer.png
 share/icons/hicolor/16x16/apps/umbrello.png
-share/icons/hicolor/16x16/mimetypes/umbrellofile.png
+share/icons/hicolor/16x16/mimetypes/application-x-uml.png
 share/icons/hicolor/22x22/actions/approved.png
 share/icons/hicolor/22x22/actions/catalogmanager.png
 share/icons/hicolor/22x22/actions/insert_arg.png
@@ -646,7 +646,7 @@ share/icons/hicolor/32x32/apps/kompare.png
 share/icons/hicolor/32x32/apps/kuiviewer.png
 share/icons/hicolor/32x32/apps/lokalize.png
 share/icons/hicolor/32x32/apps/umbrello.png
-share/icons/hicolor/32x32/mimetypes/umbrellofile.png
+share/icons/hicolor/32x32/mimetypes/application-x-uml.png
 share/icons/hicolor/48x48/actions/approved.png
 share/icons/hicolor/48x48/apps/cervisia.png
 share/icons/hicolor/48x48/apps/kapptemplate.png
@@ -851,7 +851,7 @@ share/strigi/fieldproperties/strigi_translation.fieldproperties
 @dirrm share/doc/HTML/en/umbrello
 @dirrm share/doc/HTML/en/lokalize
 @dirrm share/doc/HTML/en/kompare
-@dirrm share/doc/HTML/en/kdesvn-build
+@dirrm share/doc/HTML/en/kdesrc-build
 @dirrm share/doc/HTML/en/kcachegrind
 @dirrm share/doc/HTML/en/kbugbuster
 @dirrm share/doc/HTML/en/kate

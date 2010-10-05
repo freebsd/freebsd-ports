@@ -28,122 +28,10 @@ share/doc/HTML/ro/common/fdl-translated.html
 share/doc/HTML/ro/common/gpl-translated.html
 share/doc/HTML/ro/common/kde-localised.css
 share/doc/HTML/ro/common/lgpl-translated.html
-share/doc/HTML/ro/dma/common
-share/doc/HTML/ro/dma/index.cache.bz2
-share/doc/HTML/ro/dma/index.docbook
-share/doc/HTML/ro/interrupts/common
-share/doc/HTML/ro/interrupts/index.cache.bz2
-share/doc/HTML/ro/interrupts/index.docbook
-share/doc/HTML/ro/ioports/common
-share/doc/HTML/ro/ioports/index.cache.bz2
-share/doc/HTML/ro/ioports/index.docbook
-share/doc/HTML/ro/khelpcenter/common
-share/doc/HTML/ro/khelpcenter/contact.docbook
 share/doc/HTML/ro/khelpcenter/glossary/common
 share/doc/HTML/ro/khelpcenter/glossary/index.cache.bz2
 share/doc/HTML/ro/khelpcenter/glossary/index.docbook
 share/doc/HTML/ro/khelpcenter/glossary/kdeprintingglossary.docbook
-share/doc/HTML/ro/khelpcenter/help.docbook
-share/doc/HTML/ro/khelpcenter/index.cache.bz2
-share/doc/HTML/ro/khelpcenter/index.docbook
-share/doc/HTML/ro/khelpcenter/support.docbook
-share/doc/HTML/ro/khelpcenter/welcome.docbook
-share/doc/HTML/ro/khelpcenter/whatiskde.docbook
-share/doc/HTML/ro/kinfocenter/common
-share/doc/HTML/ro/kinfocenter/index.cache.bz2
-share/doc/HTML/ro/kinfocenter/index.docbook
-share/doc/HTML/ro/kioslave/kioslave/bzip.docbook
-share/doc/HTML/ro/kioslave/kioslave/bzip2.docbook
-share/doc/HTML/ro/kioslave/kioslave/cgi.docbook
-share/doc/HTML/ro/kioslave/kioslave/common
-share/doc/HTML/ro/kioslave/kioslave/data.docbook
-share/doc/HTML/ro/kioslave/kioslave/file.docbook
-share/doc/HTML/ro/kioslave/kioslave/finger.docbook
-share/doc/HTML/ro/kioslave/kioslave/fish.docbook
-share/doc/HTML/ro/kioslave/kioslave/floppy.docbook
-share/doc/HTML/ro/kioslave/kioslave/ftp.docbook
-share/doc/HTML/ro/kioslave/kioslave/gopher.docbook
-share/doc/HTML/ro/kioslave/kioslave/gzip.docbook
-share/doc/HTML/ro/kioslave/kioslave/help.docbook
-share/doc/HTML/ro/kioslave/kioslave/http.docbook
-share/doc/HTML/ro/kioslave/kioslave/https.docbook
-share/doc/HTML/ro/kioslave/kioslave/imap.docbook
-share/doc/HTML/ro/kioslave/kioslave/imaps.docbook
-share/doc/HTML/ro/kioslave/kioslave/index.cache.bz2
-share/doc/HTML/ro/kioslave/kioslave/index.docbook
-share/doc/HTML/ro/kioslave/kioslave/info.docbook
-share/doc/HTML/ro/kioslave/kioslave/lan.docbook
-share/doc/HTML/ro/kioslave/kioslave/ldap.docbook
-share/doc/HTML/ro/kioslave/kioslave/mac.docbook
-share/doc/HTML/ro/kioslave/kioslave/mailto.docbook
-share/doc/HTML/ro/kioslave/kioslave/man.docbook
-share/doc/HTML/ro/kioslave/kioslave/mrml.docbook
-share/doc/HTML/ro/kioslave/kioslave/news.docbook
-share/doc/HTML/ro/kioslave/kioslave/nfs.docbook
-share/doc/HTML/ro/kioslave/kioslave/nntp.docbook
-share/doc/HTML/ro/kioslave/kioslave/pop3.docbook
-share/doc/HTML/ro/kioslave/kioslave/pop3s.docbook
-share/doc/HTML/ro/kioslave/kioslave/print.docbook
-share/doc/HTML/ro/kioslave/kioslave/rlan.docbook
-share/doc/HTML/ro/kioslave/kioslave/rlogin.docbook
-share/doc/HTML/ro/kioslave/kioslave/sftp.docbook
-share/doc/HTML/ro/kioslave/kioslave/smb.docbook
-share/doc/HTML/ro/kioslave/kioslave/smtp.docbook
-share/doc/HTML/ro/kioslave/kioslave/tar.docbook
-share/doc/HTML/ro/kioslave/kioslave/telnet.docbook
-share/doc/HTML/ro/kioslave/kioslave/thumbnail.docbook
-share/doc/HTML/ro/kioslave/kioslave/webdav.docbook
-share/doc/HTML/ro/kioslave/kioslave/webdavs.docbook
-share/doc/HTML/ro/memory/common
-share/doc/HTML/ro/memory/index.cache.bz2
-share/doc/HTML/ro/memory/index.docbook
-share/doc/HTML/ro/opengl/common
-share/doc/HTML/ro/opengl/index.cache.bz2
-share/doc/HTML/ro/opengl/index.docbook
-share/doc/HTML/ro/pci/common
-share/doc/HTML/ro/pci/index.cache.bz2
-share/doc/HTML/ro/pci/index.docbook
-share/doc/HTML/ro/pcmcia/common
-share/doc/HTML/ro/pcmcia/index.cache.bz2
-share/doc/HTML/ro/pcmcia/index.docbook
-share/doc/HTML/ro/protocols/common
-share/doc/HTML/ro/protocols/index.cache.bz2
-share/doc/HTML/ro/protocols/index.docbook
-share/doc/HTML/ro/samba/common
-share/doc/HTML/ro/samba/index.cache.bz2
-share/doc/HTML/ro/samba/index.docbook
-share/doc/HTML/ro/scsi/common
-share/doc/HTML/ro/scsi/index.cache.bz2
-share/doc/HTML/ro/scsi/index.docbook
-share/doc/HTML/ro/usb/common
-share/doc/HTML/ro/usb/index.cache.bz2
-share/doc/HTML/ro/usb/index.docbook
-share/doc/HTML/ro/visualdict/common
-share/doc/HTML/ro/visualdict/index.cache.bz2
-share/doc/HTML/ro/visualdict/index.docbook
-share/doc/HTML/ro/visualdict/pict1.png
-share/doc/HTML/ro/visualdict/pict10.png
-share/doc/HTML/ro/visualdict/pict11.png
-share/doc/HTML/ro/visualdict/pict12.png
-share/doc/HTML/ro/visualdict/pict13.png
-share/doc/HTML/ro/visualdict/pict14.png
-share/doc/HTML/ro/visualdict/pict15.png
-share/doc/HTML/ro/visualdict/pict16.png
-share/doc/HTML/ro/visualdict/pict17.png
-share/doc/HTML/ro/visualdict/pict18.png
-share/doc/HTML/ro/visualdict/pict19.png
-share/doc/HTML/ro/visualdict/pict2.png
-share/doc/HTML/ro/visualdict/pict20.png
-share/doc/HTML/ro/visualdict/pict3.png
-share/doc/HTML/ro/visualdict/pict4.png
-share/doc/HTML/ro/visualdict/pict5.png
-share/doc/HTML/ro/visualdict/pict6.png
-share/doc/HTML/ro/visualdict/pict7.png
-share/doc/HTML/ro/visualdict/pict8.png
-share/doc/HTML/ro/visualdict/pict9.png
-share/doc/HTML/ro/xserver/common
-share/doc/HTML/ro/xserver/index.cache.bz2
-share/doc/HTML/ro/xserver/index.docbook
 share/locale/ro/LC_MESSAGES/amor.mo
 share/locale/ro/LC_MESSAGES/ark.mo
 share/locale/ro/LC_MESSAGES/attica_kde.mo
@@ -684,24 +572,8 @@ share/locale/ro/LC_MESSAGES/umbrello.mo
 share/locale/ro/LC_MESSAGES/useraccount.mo
 share/locale/ro/LC_MESSAGES/xml_mimetypes.mo
 share/locale/ro/entry.desktop
-@dirrm share/doc/HTML/ro/xserver
-@dirrm share/doc/HTML/ro/visualdict
-@dirrm share/doc/HTML/ro/usb
-@dirrm share/doc/HTML/ro/scsi
-@dirrm share/doc/HTML/ro/samba
-@dirrm share/doc/HTML/ro/protocols
-@dirrm share/doc/HTML/ro/pcmcia
-@dirrm share/doc/HTML/ro/pci
-@dirrm share/doc/HTML/ro/opengl
-@dirrm share/doc/HTML/ro/memory
-@dirrm share/doc/HTML/ro/kioslave/kioslave
-@dirrm share/doc/HTML/ro/kioslave
-@dirrm share/doc/HTML/ro/kinfocenter
 @dirrm share/doc/HTML/ro/khelpcenter/glossary
 @dirrm share/doc/HTML/ro/khelpcenter
-@dirrm share/doc/HTML/ro/ioports
-@dirrm share/doc/HTML/ro/interrupts
-@dirrm share/doc/HTML/ro/dma
 @dirrm share/doc/HTML/ro/common
 @dirrm share/apps/kvtml/ro
 @dirrm share/apps/kvtml

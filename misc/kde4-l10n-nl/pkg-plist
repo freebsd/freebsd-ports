@@ -176,6 +176,19 @@ share/doc/HTML/nl/kalzium/settings2.png
 share/doc/HTML/nl/kalzium/settings3.png
 share/doc/HTML/nl/kalzium/sidebar1.png
 share/doc/HTML/nl/kalzium/sidebar2.png
+share/doc/HTML/nl/kanagram/answer-highlight.png
+share/doc/HTML/nl/kanagram/common
+share/doc/HTML/nl/kanagram/general-settings.png
+share/doc/HTML/nl/kanagram/helpstates.png
+share/doc/HTML/nl/kanagram/index.cache.bz2
+share/doc/HTML/nl/kanagram/index.docbook
+share/doc/HTML/nl/kanagram/kanagram-hint.png
+share/doc/HTML/nl/kanagram/kanagram.png
+share/doc/HTML/nl/kanagram/newstuff-dialog.png
+share/doc/HTML/nl/kanagram/newstuff-settings.png
+share/doc/HTML/nl/kanagram/shortcuts-settings.png
+share/doc/HTML/nl/kanagram/vocab-editor.png
+share/doc/HTML/nl/kanagram/vocab-settings.png
 share/doc/HTML/nl/kbruch/common
 share/doc/HTML/nl/kbruch/index.cache.bz2
 share/doc/HTML/nl/kbruch/index.docbook
@@ -208,6 +221,9 @@ share/doc/HTML/nl/kcontrol/bookmarks/index.docbook
 share/doc/HTML/nl/kcontrol/cache/common
 share/doc/HTML/nl/kcontrol/cache/index.cache.bz2
 share/doc/HTML/nl/kcontrol/cache/index.docbook
+share/doc/HTML/nl/kcontrol/cddbretrieval/common
+share/doc/HTML/nl/kcontrol/cddbretrieval/index.cache.bz2
+share/doc/HTML/nl/kcontrol/cddbretrieval/index.docbook
 share/doc/HTML/nl/kcontrol/clock/common
 share/doc/HTML/nl/kcontrol/clock/index.cache.bz2
 share/doc/HTML/nl/kcontrol/clock/index.docbook
@@ -310,6 +326,9 @@ share/doc/HTML/nl/kcontrol/khtml-java-js/index.docbook
 share/doc/HTML/nl/kcontrol/khtml-plugins/common
 share/doc/HTML/nl/kcontrol/khtml-plugins/index.cache.bz2
 share/doc/HTML/nl/kcontrol/khtml-plugins/index.docbook
+share/doc/HTML/nl/kcontrol/kremotecontrol/common
+share/doc/HTML/nl/kcontrol/kremotecontrol/index.cache.bz2
+share/doc/HTML/nl/kcontrol/kremotecontrol/index.docbook
 share/doc/HTML/nl/kcontrol/kresources/common
 share/doc/HTML/nl/kcontrol/kresources/index.cache.bz2
 share/doc/HTML/nl/kcontrol/kresources/index.docbook
@@ -467,6 +486,9 @@ share/doc/HTML/nl/khangman/index.cache.bz2
 share/doc/HTML/nl/khangman/index.docbook
 share/doc/HTML/nl/khangman/man-khangman.6.docbook
 share/doc/HTML/nl/khelpcenter/common
+share/doc/HTML/nl/khelpcenter/documentationnotfound/common
+share/doc/HTML/nl/khelpcenter/documentationnotfound/index.cache.bz2
+share/doc/HTML/nl/khelpcenter/documentationnotfound/index.docbook
 share/doc/HTML/nl/khelpcenter/glossary/common
 share/doc/HTML/nl/khelpcenter/glossary/index.cache.bz2
 share/doc/HTML/nl/khelpcenter/glossary/index.docbook
@@ -889,6 +911,9 @@ share/doc/HTML/nl/marble/measure-1.png
 share/doc/HTML/nl/marble/quick-1.png
 share/doc/HTML/nl/marble/search-1.png
 share/doc/HTML/nl/marble/search-2.png
+share/doc/HTML/nl/okular/common
+share/doc/HTML/nl/okular/index.cache.bz2
+share/doc/HTML/nl/okular/index.docbook
 share/doc/HTML/nl/onlinehelp/common
 share/doc/HTML/nl/onlinehelp/index.cache.bz2
 share/doc/HTML/nl/onlinehelp/index.docbook
@@ -1525,6 +1550,7 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/printer-applet
 @dirrm share/doc/HTML/nl/plasma-desktop
 @dirrm share/doc/HTML/nl/onlinehelp
+@dirrm share/doc/HTML/nl/okular
 @dirrm share/doc/HTML/nl/marble
 @dirrm share/doc/HTML/nl/lskat
 @dirrm share/doc/HTML/nl/lokalize
@@ -1600,6 +1626,7 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/kimagemapeditor
 @dirrm share/doc/HTML/nl/kig
 @dirrm share/doc/HTML/nl/khelpcenter/glossary
+@dirrm share/doc/HTML/nl/khelpcenter/documentationnotfound
 @dirrm share/doc/HTML/nl/khelpcenter
 @dirrm share/doc/HTML/nl/khangman
 @dirrm share/doc/HTML/nl/kgpg
@@ -1639,6 +1666,7 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/kcontrol/kwindecoration
 @dirrm share/doc/HTML/nl/kcontrol/kwincompositing
 @dirrm share/doc/HTML/nl/kcontrol/kresources
+@dirrm share/doc/HTML/nl/kcontrol/kremotecontrol
 @dirrm share/doc/HTML/nl/kcontrol/khtml-plugins
 @dirrm share/doc/HTML/nl/kcontrol/khtml-java-js
 @dirrm share/doc/HTML/nl/kcontrol/khtml-general
@@ -1671,6 +1699,7 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/kcontrol/componentchooser
 @dirrm share/doc/HTML/nl/kcontrol/colors
 @dirrm share/doc/HTML/nl/kcontrol/clock
+@dirrm share/doc/HTML/nl/kcontrol/cddbretrieval
 @dirrm share/doc/HTML/nl/kcontrol/cache
 @dirrm share/doc/HTML/nl/kcontrol/bookmarks
 @dirrm share/doc/HTML/nl/kcontrol/blockdevices
@@ -1682,6 +1711,7 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/kcalc
 @dirrm share/doc/HTML/nl/kbugbuster
 @dirrm share/doc/HTML/nl/kbruch
+@dirrm share/doc/HTML/nl/kanagram
 @dirrm share/doc/HTML/nl/kalzium
 @dirrm share/doc/HTML/nl/kalgebra
 @dirrm share/doc/HTML/nl/juk

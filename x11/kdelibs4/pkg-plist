@@ -2000,6 +2000,7 @@ share/apps/LICENSES/LGPL_V2
 share/apps/LICENSES/LGPL_V3
 share/apps/LICENSES/QPL_V1.0
 share/apps/cmake/modules/BasicFindPackageVersion.cmake.in
+share/apps/cmake/modules/CMakeParseArguments.cmake
 share/apps/cmake/modules/CheckCXXSourceCompiles.cmake
 share/apps/cmake/modules/CheckCXXSourceRuns.cmake
 share/apps/cmake/modules/CheckCXXSymbolExists.cmake
@@ -2974,6 +2975,7 @@ share/apps/ksgmltools2/customization/pt/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/pt/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/pt/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/pt/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/pt/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/pt/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/pt/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/pt/lang.entities

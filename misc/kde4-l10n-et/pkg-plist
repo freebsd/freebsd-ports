@@ -53,9 +53,15 @@ share/doc/HTML/et/gwenview/interface.docbook
 share/doc/HTML/et/gwenview/introduction.docbook
 share/doc/HTML/et/gwenview/keybindings.docbook
 share/doc/HTML/et/gwenview/mouse.docbook
+share/doc/HTML/et/jovie/common
+share/doc/HTML/et/jovie/index.cache.bz2
+share/doc/HTML/et/jovie/index.docbook
 share/doc/HTML/et/juk/common
 share/doc/HTML/et/juk/index.cache.bz2
 share/doc/HTML/et/juk/index.docbook
+share/doc/HTML/et/kajongg/common
+share/doc/HTML/et/kajongg/index.cache.bz2
+share/doc/HTML/et/kajongg/index.docbook
 share/doc/HTML/et/kalgebra/common
 share/doc/HTML/et/kalgebra/index.cache.bz2
 share/doc/HTML/et/kalgebra/index.docbook
@@ -240,6 +246,9 @@ share/doc/HTML/et/kcontrol/khtml-plugins/index.docbook
 share/doc/HTML/et/kcontrol/knetworkconf/common
 share/doc/HTML/et/kcontrol/knetworkconf/index.cache.bz2
 share/doc/HTML/et/kcontrol/knetworkconf/index.docbook
+share/doc/HTML/et/kcontrol/kremotecontrol/common
+share/doc/HTML/et/kcontrol/kremotecontrol/index.cache.bz2
+share/doc/HTML/et/kcontrol/kremotecontrol/index.docbook
 share/doc/HTML/et/kcontrol/kresources/common
 share/doc/HTML/et/kcontrol/kresources/index.cache.bz2
 share/doc/HTML/et/kcontrol/kresources/index.docbook
@@ -327,13 +336,13 @@ share/doc/HTML/et/kdebugdialog/index.docbook
 share/doc/HTML/et/kdepasswd/common
 share/doc/HTML/et/kdepasswd/index.cache.bz2
 share/doc/HTML/et/kdepasswd/index.docbook
+share/doc/HTML/et/kdesrc-build/common
+share/doc/HTML/et/kdesrc-build/index.cache.bz2
+share/doc/HTML/et/kdesrc-build/index.docbook
 share/doc/HTML/et/kdesu/common
 share/doc/HTML/et/kdesu/index.cache.bz2
 share/doc/HTML/et/kdesu/index.docbook
 share/doc/HTML/et/kdesu/man-kdesu.1.docbook
-share/doc/HTML/et/kdesvn-build/common
-share/doc/HTML/et/kdesvn-build/index.cache.bz2
-share/doc/HTML/et/kdesvn-build/index.docbook
 share/doc/HTML/et/kdf/common
 share/doc/HTML/et/kdf/index.cache.bz2
 share/doc/HTML/et/kdf/index.docbook
@@ -355,6 +364,9 @@ share/doc/HTML/et/kfind/man-kfind.1.docbook
 share/doc/HTML/et/kfloppy/common
 share/doc/HTML/et/kfloppy/index.cache.bz2
 share/doc/HTML/et/kfloppy/index.docbook
+share/doc/HTML/et/kfontview/common
+share/doc/HTML/et/kfontview/index.cache.bz2
+share/doc/HTML/et/kfontview/index.docbook
 share/doc/HTML/et/kfourinline/common
 share/doc/HTML/et/kfourinline/index.cache.bz2
 share/doc/HTML/et/kfourinline/index.docbook
@@ -375,6 +387,9 @@ share/doc/HTML/et/khangman/index.cache.bz2
 share/doc/HTML/et/khangman/index.docbook
 share/doc/HTML/et/khangman/man-khangman.6.docbook
 share/doc/HTML/et/khelpcenter/common
+share/doc/HTML/et/khelpcenter/documentationnotfound/common
+share/doc/HTML/et/khelpcenter/documentationnotfound/index.cache.bz2
+share/doc/HTML/et/khelpcenter/documentationnotfound/index.docbook
 share/doc/HTML/et/khelpcenter/glossary/common
 share/doc/HTML/et/khelpcenter/glossary/index.cache.bz2
 share/doc/HTML/et/khelpcenter/glossary/index.docbook
@@ -834,6 +849,9 @@ share/doc/HTML/et/step/examples.docbook
 share/doc/HTML/et/step/index.cache.bz2
 share/doc/HTML/et/step/index.docbook
 share/doc/HTML/et/step/tutorials.docbook
+share/doc/HTML/et/sweeper/common
+share/doc/HTML/et/sweeper/index.cache.bz2
+share/doc/HTML/et/sweeper/index.docbook
 share/doc/HTML/et/systemsettings/common
 share/doc/HTML/et/systemsettings/index.cache.bz2
 share/doc/HTML/et/systemsettings/index.docbook
@@ -1438,6 +1456,7 @@ share/locale/et/LC_MESSAGES/xml_mimetypes.mo
 share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/umbrello
 @dirrm share/doc/HTML/et/systemsettings
+@dirrm share/doc/HTML/et/sweeper
 @dirrm share/doc/HTML/et/step
 @dirrm share/doc/HTML/et/sonnet
 @dirrm share/doc/HTML/et/rocs
@@ -1545,6 +1564,7 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kigo
 @dirrm share/doc/HTML/et/kig
 @dirrm share/doc/HTML/et/khelpcenter/glossary
+@dirrm share/doc/HTML/et/khelpcenter/documentationnotfound
 @dirrm share/doc/HTML/et/khelpcenter
 @dirrm share/doc/HTML/et/khangman
 @dirrm share/doc/HTML/et/kgpg
@@ -1552,14 +1572,15 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kget
 @dirrm share/doc/HTML/et/kgeography
 @dirrm share/doc/HTML/et/kfourinline
+@dirrm share/doc/HTML/et/kfontview
 @dirrm share/doc/HTML/et/kfloppy
 @dirrm share/doc/HTML/et/kfind
 @dirrm share/doc/HTML/et/kfilereplace
 @dirrm share/doc/HTML/et/kdm
 @dirrm share/doc/HTML/et/kdiamond
 @dirrm share/doc/HTML/et/kdf
-@dirrm share/doc/HTML/et/kdesvn-build
 @dirrm share/doc/HTML/et/kdesu
+@dirrm share/doc/HTML/et/kdesrc-build
 @dirrm share/doc/HTML/et/kdepasswd
 @dirrm share/doc/HTML/et/kdebugdialog
 @dirrm share/doc/HTML/et/kcron
@@ -1589,6 +1610,7 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kcontrol/kwindecoration
 @dirrm share/doc/HTML/et/kcontrol/kwincompositing
 @dirrm share/doc/HTML/et/kcontrol/kresources
+@dirrm share/doc/HTML/et/kcontrol/kremotecontrol
 @dirrm share/doc/HTML/et/kcontrol/knetworkconf
 @dirrm share/doc/HTML/et/kcontrol/khtml-plugins
 @dirrm share/doc/HTML/et/kcontrol/khtml-java-js
@@ -1647,7 +1669,9 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kanagram
 @dirrm share/doc/HTML/et/kalzium
 @dirrm share/doc/HTML/et/kalgebra
+@dirrm share/doc/HTML/et/kajongg
 @dirrm share/doc/HTML/et/juk
+@dirrm share/doc/HTML/et/jovie
 @dirrm share/doc/HTML/et/gwenview
 @dirrm share/doc/HTML/et/granatier
 @dirrm share/doc/HTML/et/dragonplayer

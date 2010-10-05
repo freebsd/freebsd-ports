@@ -2,29 +2,6 @@ share/doc/HTML/zh_TW/common/fdl-translated.html
 share/doc/HTML/zh_TW/common/gpl-translated.html
 share/doc/HTML/zh_TW/common/kde-localised.css
 share/doc/HTML/zh_TW/common/lgpl-translated.html
-share/doc/HTML/zh_TW/faq/about.docbook
-share/doc/HTML/zh_TW/faq/common
-share/doc/HTML/zh_TW/faq/configkde.docbook
-share/doc/HTML/zh_TW/faq/contrib.docbook
-share/doc/HTML/zh_TW/faq/desktop.docbook
-share/doc/HTML/zh_TW/faq/filemng.docbook
-share/doc/HTML/zh_TW/faq/getkde.docbook
-share/doc/HTML/zh_TW/faq/index.cache.bz2
-share/doc/HTML/zh_TW/faq/index.docbook
-share/doc/HTML/zh_TW/faq/install.docbook
-share/doc/HTML/zh_TW/faq/intro.docbook
-share/doc/HTML/zh_TW/faq/kdeapps.docbook
-share/doc/HTML/zh_TW/faq/misc.docbook
-share/doc/HTML/zh_TW/faq/moreinfo.docbook
-share/doc/HTML/zh_TW/faq/nonkdeapps.docbook
-share/doc/HTML/zh_TW/faq/notrelated.docbook
-share/doc/HTML/zh_TW/faq/panel.docbook
-share/doc/HTML/zh_TW/faq/qt.docbook
-share/doc/HTML/zh_TW/faq/questions.docbook
-share/doc/HTML/zh_TW/faq/sound.docbook
-share/doc/HTML/zh_TW/faq/tips.docbook
-share/doc/HTML/zh_TW/faq/webbrowse.docbook
-share/doc/HTML/zh_TW/faq/winmng.docbook
 share/locale/zh_TW/LC_MESSAGES/akonadicontact.mo
 share/locale/zh_TW/LC_MESSAGES/amor.mo
 share/locale/zh_TW/LC_MESSAGES/ark.mo
@@ -614,5 +591,4 @@ share/locale/zh_TW/LC_MESSAGES/umbrello.mo
 share/locale/zh_TW/LC_MESSAGES/useraccount.mo
 share/locale/zh_TW/LC_MESSAGES/xml_mimetypes.mo
 share/locale/zh_TW/entry.desktop
-@dirrm share/doc/HTML/zh_TW/faq
 @dirrm share/doc/HTML/zh_TW/common

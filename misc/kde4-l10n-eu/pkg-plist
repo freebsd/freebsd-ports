@@ -276,6 +276,7 @@ share/locale/eu/LC_MESSAGES/kstartperf.mo
 share/locale/eu/LC_MESSAGES/kstyle_config.mo
 share/locale/eu/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/eu/LC_MESSAGES/kstyle_phase_config.mo
+share/locale/eu/LC_MESSAGES/ksudoku.mo
 share/locale/eu/LC_MESSAGES/ksysguard.mo
 share/locale/eu/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/eu/LC_MESSAGES/ksystemlog.mo
@@ -290,6 +291,7 @@ share/locale/eu/LC_MESSAGES/ktron.mo
 share/locale/eu/LC_MESSAGES/ktuberling.mo
 share/locale/eu/LC_MESSAGES/kturtle.mo
 share/locale/eu/LC_MESSAGES/ktux.mo
+share/locale/eu/LC_MESSAGES/kubrick.mo
 share/locale/eu/LC_MESSAGES/kuiserver.mo
 share/locale/eu/LC_MESSAGES/kuiviewer.mo
 share/locale/eu/LC_MESSAGES/kurifilter.mo

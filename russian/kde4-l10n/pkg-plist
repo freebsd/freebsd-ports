@@ -33,6 +33,13 @@ share/doc/HTML/ru/cervisia/common
 share/doc/HTML/ru/cervisia/index.cache.bz2
 share/doc/HTML/ru/cervisia/index.docbook
 share/doc/HTML/ru/common/kde-localised.css
+share/doc/HTML/ru/gwenview/common
+share/doc/HTML/ru/gwenview/index.cache.bz2
+share/doc/HTML/ru/gwenview/index.docbook
+share/doc/HTML/ru/gwenview/interface.docbook
+share/doc/HTML/ru/gwenview/introduction.docbook
+share/doc/HTML/ru/gwenview/keybindings.docbook
+share/doc/HTML/ru/gwenview/mouse.docbook
 share/doc/HTML/ru/juk/common
 share/doc/HTML/ru/juk/index.cache.bz2
 share/doc/HTML/ru/juk/index.docbook
@@ -194,6 +201,9 @@ share/doc/HTML/ru/kig/text_label_wizard.png
 share/doc/HTML/ru/kinfocenter/common
 share/doc/HTML/ru/kinfocenter/index.cache.bz2
 share/doc/HTML/ru/kinfocenter/index.docbook
+share/doc/HTML/ru/kioslave/audiocd/common
+share/doc/HTML/ru/kioslave/audiocd/index.cache.bz2
+share/doc/HTML/ru/kioslave/audiocd/index.docbook
 share/doc/HTML/ru/kioslave/data/common
 share/doc/HTML/ru/kioslave/data/index.cache.bz2
 share/doc/HTML/ru/kioslave/data/index.docbook
@@ -209,6 +219,9 @@ share/doc/HTML/ru/kioslave/floppy/index.docbook
 share/doc/HTML/ru/kioslave/ftp/common
 share/doc/HTML/ru/kioslave/ftp/index.cache.bz2
 share/doc/HTML/ru/kioslave/ftp/index.docbook
+share/doc/HTML/ru/kioslave/gzip/common
+share/doc/HTML/ru/kioslave/gzip/index.cache.bz2
+share/doc/HTML/ru/kioslave/gzip/index.docbook
 share/doc/HTML/ru/kioslave/help/common
 share/doc/HTML/ru/kioslave/help/index.cache.bz2
 share/doc/HTML/ru/kioslave/help/index.docbook
@@ -242,6 +255,9 @@ share/doc/HTML/ru/kioslave/tar/index.docbook
 share/doc/HTML/ru/kioslave/telnet/common
 share/doc/HTML/ru/kioslave/telnet/index.cache.bz2
 share/doc/HTML/ru/kioslave/telnet/index.docbook
+share/doc/HTML/ru/kioslave/thumbnail/common
+share/doc/HTML/ru/kioslave/thumbnail/index.cache.bz2
+share/doc/HTML/ru/kioslave/thumbnail/index.docbook
 share/doc/HTML/ru/kjumpingcube/common
 share/doc/HTML/ru/kjumpingcube/index.cache.bz2
 share/doc/HTML/ru/kjumpingcube/index.docbook
@@ -266,6 +282,9 @@ share/doc/HTML/ru/kmines/index.docbook
 share/doc/HTML/ru/kmix/common
 share/doc/HTML/ru/kmix/index.cache.bz2
 share/doc/HTML/ru/kmix/index.docbook
+share/doc/HTML/ru/kmousetool/common
+share/doc/HTML/ru/kmousetool/index.cache.bz2
+share/doc/HTML/ru/kmousetool/index.docbook
 share/doc/HTML/ru/kmplot/commands.docbook
 share/doc/HTML/ru/kmplot/common
 share/doc/HTML/ru/kmplot/configuration.docbook
@@ -495,6 +514,7 @@ share/locale/ru/LC_MESSAGES/dolphin.mo
 share/locale/ru/LC_MESSAGES/dragonplayer.mo
 share/locale/ru/LC_MESSAGES/drkonqi.mo
 share/locale/ru/LC_MESSAGES/filetypes.mo
+share/locale/ru/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/ru/LC_MESSAGES/freespacenotifier.mo
 share/locale/ru/LC_MESSAGES/granatier.mo
 share/locale/ru/LC_MESSAGES/gwenview.mo
@@ -981,6 +1001,7 @@ share/locale/ru/LC_MESSAGES/plasma_engine_pastebin.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_rss.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/ru/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/ru/LC_MESSAGES/plasma_packagestructure_comic.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_CharacterRunner.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_audioplayercontrol.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
@@ -1051,7 +1072,9 @@ share/locale/ru/LC_MESSAGES/umbrello.mo
 share/locale/ru/LC_MESSAGES/useraccount.mo
 share/locale/ru/LC_MESSAGES/xml_mimetypes.mo
 share/locale/ru/LC_SCRIPTS/kdelibs4/kdelibs4.js
+share/locale/ru/LC_SCRIPTS/kgeography/kgeography.js
 share/locale/ru/entry.desktop
+@dirrm share/locale/ru/LC_SCRIPTS/kgeography
 @dirrm share/locale/ru/LC_SCRIPTS/kdelibs4
 @dirrm share/locale/ru/LC_SCRIPTS
 @dirrm share/doc/HTML/ru/sonnet
@@ -1087,6 +1110,7 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kolf
 @dirrm share/doc/HTML/ru/knetattach
 @dirrm share/doc/HTML/ru/kmplot
+@dirrm share/doc/HTML/ru/kmousetool
 @dirrm share/doc/HTML/ru/kmix
 @dirrm share/doc/HTML/ru/kmines
 @dirrm share/doc/HTML/ru/kmenuedit
@@ -1095,6 +1119,7 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/klines
 @dirrm share/doc/HTML/ru/klettres
 @dirrm share/doc/HTML/ru/kjumpingcube
+@dirrm share/doc/HTML/ru/kioslave/thumbnail
 @dirrm share/doc/HTML/ru/kioslave/telnet
 @dirrm share/doc/HTML/ru/kioslave/tar
 @dirrm share/doc/HTML/ru/kioslave/smtp
@@ -1106,11 +1131,13 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kioslave/ldap
 @dirrm share/doc/HTML/ru/kioslave/info
 @dirrm share/doc/HTML/ru/kioslave/help
+@dirrm share/doc/HTML/ru/kioslave/gzip
 @dirrm share/doc/HTML/ru/kioslave/ftp
 @dirrm share/doc/HTML/ru/kioslave/floppy
 @dirrm share/doc/HTML/ru/kioslave/finger
 @dirrm share/doc/HTML/ru/kioslave/file
 @dirrm share/doc/HTML/ru/kioslave/data
+@dirrm share/doc/HTML/ru/kioslave/audiocd
 @dirrm share/doc/HTML/ru/kioslave
 @dirrm share/doc/HTML/ru/kinfocenter
 @dirrm share/doc/HTML/ru/kig
@@ -1163,6 +1190,7 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kalzium
 @dirrm share/doc/HTML/ru/kalgebra
 @dirrm share/doc/HTML/ru/juk
+@dirrm share/doc/HTML/ru/gwenview
 @dirrm share/doc/HTML/ru/common
 @dirrm share/doc/HTML/ru/cervisia
 @dirrm share/doc/HTML/ru/blinken

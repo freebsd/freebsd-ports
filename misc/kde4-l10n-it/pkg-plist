@@ -311,6 +311,9 @@ share/doc/HTML/it/kcontrol/bookmarks/index.docbook
 share/doc/HTML/it/kcontrol/cache/common
 share/doc/HTML/it/kcontrol/cache/index.cache.bz2
 share/doc/HTML/it/kcontrol/cache/index.docbook
+share/doc/HTML/it/kcontrol/cddbretrieval/common
+share/doc/HTML/it/kcontrol/cddbretrieval/index.cache.bz2
+share/doc/HTML/it/kcontrol/cddbretrieval/index.docbook
 share/doc/HTML/it/kcontrol/clock/common
 share/doc/HTML/it/kcontrol/clock/index.cache.bz2
 share/doc/HTML/it/kcontrol/clock/index.docbook
@@ -512,13 +515,13 @@ share/doc/HTML/it/kdebugdialog/index.docbook
 share/doc/HTML/it/kdepasswd/common
 share/doc/HTML/it/kdepasswd/index.cache.bz2
 share/doc/HTML/it/kdepasswd/index.docbook
+share/doc/HTML/it/kdesrc-build/common
+share/doc/HTML/it/kdesrc-build/index.cache.bz2
+share/doc/HTML/it/kdesrc-build/index.docbook
 share/doc/HTML/it/kdesu/common
 share/doc/HTML/it/kdesu/index.cache.bz2
 share/doc/HTML/it/kdesu/index.docbook
 share/doc/HTML/it/kdesu/man-kdesu.1.docbook
-share/doc/HTML/it/kdesvn-build/common
-share/doc/HTML/it/kdesvn-build/index.cache.bz2
-share/doc/HTML/it/kdesvn-build/index.docbook
 share/doc/HTML/it/kdf/common
 share/doc/HTML/it/kdf/index.cache.bz2
 share/doc/HTML/it/kdf/index.docbook
@@ -1045,6 +1048,9 @@ share/doc/HTML/it/step/examples.docbook
 share/doc/HTML/it/step/index.cache.bz2
 share/doc/HTML/it/step/index.docbook
 share/doc/HTML/it/step/tutorials.docbook
+share/doc/HTML/it/sweeper/common
+share/doc/HTML/it/sweeper/index.cache.bz2
+share/doc/HTML/it/sweeper/index.docbook
 share/doc/HTML/it/systemsettings/common
 share/doc/HTML/it/systemsettings/index.cache.bz2
 share/doc/HTML/it/systemsettings/index.docbook
@@ -1649,6 +1655,7 @@ share/locale/it/LC_MESSAGES/xml_mimetypes.mo
 share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/umbrello
 @dirrm share/doc/HTML/it/systemsettings
+@dirrm share/doc/HTML/it/sweeper
 @dirrm share/doc/HTML/it/step
 @dirrm share/doc/HTML/it/sonnet
 @dirrm share/doc/HTML/it/rocs
@@ -1769,8 +1776,8 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/kdm
 @dirrm share/doc/HTML/it/kdiamond
 @dirrm share/doc/HTML/it/kdf
-@dirrm share/doc/HTML/it/kdesvn-build
 @dirrm share/doc/HTML/it/kdesu
+@dirrm share/doc/HTML/it/kdesrc-build
 @dirrm share/doc/HTML/it/kdepasswd
 @dirrm share/doc/HTML/it/kdebugdialog
 @dirrm share/doc/HTML/it/kcron
@@ -1838,6 +1845,7 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/kcontrol/componentchooser
 @dirrm share/doc/HTML/it/kcontrol/colors
 @dirrm share/doc/HTML/it/kcontrol/clock
+@dirrm share/doc/HTML/it/kcontrol/cddbretrieval
 @dirrm share/doc/HTML/it/kcontrol/cache
 @dirrm share/doc/HTML/it/kcontrol/bookmarks
 @dirrm share/doc/HTML/it/kcontrol/blockdevices

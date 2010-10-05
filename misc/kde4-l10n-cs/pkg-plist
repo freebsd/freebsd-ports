@@ -58,30 +58,9 @@ share/doc/HTML/cs/common/fdl-translated.html
 share/doc/HTML/cs/common/gpl-translated.html
 share/doc/HTML/cs/common/kde-localised.css
 share/doc/HTML/cs/common/lgpl-translated.html
-share/doc/HTML/cs/dma/common
-share/doc/HTML/cs/dma/index.cache.bz2
-share/doc/HTML/cs/dma/index.docbook
-share/doc/HTML/cs/interrupts/common
-share/doc/HTML/cs/interrupts/index.cache.bz2
-share/doc/HTML/cs/interrupts/index.docbook
-share/doc/HTML/cs/ioports/common
-share/doc/HTML/cs/ioports/index.cache.bz2
-share/doc/HTML/cs/ioports/index.docbook
 share/doc/HTML/cs/kcontrol/fonts/common
 share/doc/HTML/cs/kcontrol/fonts/index.cache.bz2
 share/doc/HTML/cs/kcontrol/fonts/index.docbook
-share/doc/HTML/cs/memory/common
-share/doc/HTML/cs/memory/index.cache.bz2
-share/doc/HTML/cs/memory/index.docbook
-share/doc/HTML/cs/pci/common
-share/doc/HTML/cs/pci/index.cache.bz2
-share/doc/HTML/cs/pci/index.docbook
-share/doc/HTML/cs/scsi/common
-share/doc/HTML/cs/scsi/index.cache.bz2
-share/doc/HTML/cs/scsi/index.docbook
-share/doc/HTML/cs/xserver/common
-share/doc/HTML/cs/xserver/index.cache.bz2
-share/doc/HTML/cs/xserver/index.docbook
 share/locale/cs/LC_MESSAGES/akonadicontact.mo
 share/locale/cs/LC_MESSAGES/amor.mo
 share/locale/cs/LC_MESSAGES/ark.mo
@@ -671,15 +650,8 @@ share/locale/cs/LC_MESSAGES/umbrello.mo
 share/locale/cs/LC_MESSAGES/useraccount.mo
 share/locale/cs/LC_MESSAGES/xml_mimetypes.mo
 share/locale/cs/entry.desktop
-@dirrm share/doc/HTML/cs/xserver
-@dirrm share/doc/HTML/cs/scsi
-@dirrm share/doc/HTML/cs/pci
-@dirrm share/doc/HTML/cs/memory
 @dirrm share/doc/HTML/cs/kcontrol/fonts
 @dirrm share/doc/HTML/cs/kcontrol
-@dirrm share/doc/HTML/cs/ioports
-@dirrm share/doc/HTML/cs/interrupts
-@dirrm share/doc/HTML/cs/dma
 @dirrm share/doc/HTML/cs/common
 @dirrm share/apps/kvtml/cs
 @dirrm share/apps/kvtml

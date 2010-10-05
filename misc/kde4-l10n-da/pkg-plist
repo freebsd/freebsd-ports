@@ -260,6 +260,54 @@ share/doc/HTML/da/khelpcenter/glossary/common
 share/doc/HTML/da/khelpcenter/glossary/index.cache.bz2
 share/doc/HTML/da/khelpcenter/glossary/index.docbook
 share/doc/HTML/da/khelpcenter/glossary/kdeprintingglossary.docbook
+share/doc/HTML/da/kioslave/data/common
+share/doc/HTML/da/kioslave/data/index.cache.bz2
+share/doc/HTML/da/kioslave/data/index.docbook
+share/doc/HTML/da/kioslave/file/common
+share/doc/HTML/da/kioslave/file/index.cache.bz2
+share/doc/HTML/da/kioslave/file/index.docbook
+share/doc/HTML/da/kioslave/finger/common
+share/doc/HTML/da/kioslave/finger/index.cache.bz2
+share/doc/HTML/da/kioslave/finger/index.docbook
+share/doc/HTML/da/kioslave/fish/common
+share/doc/HTML/da/kioslave/fish/index.cache.bz2
+share/doc/HTML/da/kioslave/fish/index.docbook
+share/doc/HTML/da/kioslave/floppy/common
+share/doc/HTML/da/kioslave/floppy/index.cache.bz2
+share/doc/HTML/da/kioslave/floppy/index.docbook
+share/doc/HTML/da/kioslave/ftp/common
+share/doc/HTML/da/kioslave/ftp/index.cache.bz2
+share/doc/HTML/da/kioslave/ftp/index.docbook
+share/doc/HTML/da/kioslave/info/common
+share/doc/HTML/da/kioslave/info/index.cache.bz2
+share/doc/HTML/da/kioslave/info/index.docbook
+share/doc/HTML/da/kioslave/ldap/common
+share/doc/HTML/da/kioslave/ldap/index.cache.bz2
+share/doc/HTML/da/kioslave/ldap/index.docbook
+share/doc/HTML/da/kioslave/mailto/common
+share/doc/HTML/da/kioslave/mailto/index.cache.bz2
+share/doc/HTML/da/kioslave/mailto/index.docbook
+share/doc/HTML/da/kioslave/nfs/common
+share/doc/HTML/da/kioslave/nfs/index.cache.bz2
+share/doc/HTML/da/kioslave/nfs/index.docbook
+share/doc/HTML/da/kioslave/nntp/common
+share/doc/HTML/da/kioslave/nntp/index.cache.bz2
+share/doc/HTML/da/kioslave/nntp/index.docbook
+share/doc/HTML/da/kioslave/rlogin/common
+share/doc/HTML/da/kioslave/rlogin/index.cache.bz2
+share/doc/HTML/da/kioslave/rlogin/index.docbook
+share/doc/HTML/da/kioslave/sftp/common
+share/doc/HTML/da/kioslave/sftp/index.cache.bz2
+share/doc/HTML/da/kioslave/sftp/index.docbook
+share/doc/HTML/da/kioslave/smtp/common
+share/doc/HTML/da/kioslave/smtp/index.cache.bz2
+share/doc/HTML/da/kioslave/smtp/index.docbook
+share/doc/HTML/da/kioslave/tar/common
+share/doc/HTML/da/kioslave/tar/index.cache.bz2
+share/doc/HTML/da/kioslave/tar/index.docbook
+share/doc/HTML/da/kioslave/telnet/common
+share/doc/HTML/da/kioslave/telnet/index.cache.bz2
+share/doc/HTML/da/kioslave/telnet/index.docbook
 share/doc/HTML/da/klinkstatus/common
 share/doc/HTML/da/klinkstatus/index.cache.bz2
 share/doc/HTML/da/klinkstatus/index.docbook
@@ -942,6 +990,23 @@ share/locale/da/entry.desktop
 @dirrm share/doc/HTML/da/kommander
 @dirrm share/doc/HTML/da/kmouth
 @dirrm share/doc/HTML/da/klinkstatus
+@dirrm share/doc/HTML/da/kioslave/telnet
+@dirrm share/doc/HTML/da/kioslave/tar
+@dirrm share/doc/HTML/da/kioslave/smtp
+@dirrm share/doc/HTML/da/kioslave/sftp
+@dirrm share/doc/HTML/da/kioslave/rlogin
+@dirrm share/doc/HTML/da/kioslave/nntp
+@dirrm share/doc/HTML/da/kioslave/nfs
+@dirrm share/doc/HTML/da/kioslave/mailto
+@dirrm share/doc/HTML/da/kioslave/ldap
+@dirrm share/doc/HTML/da/kioslave/info
+@dirrm share/doc/HTML/da/kioslave/ftp
+@dirrm share/doc/HTML/da/kioslave/floppy
+@dirrm share/doc/HTML/da/kioslave/fish
+@dirrm share/doc/HTML/da/kioslave/finger
+@dirrm share/doc/HTML/da/kioslave/file
+@dirrm share/doc/HTML/da/kioslave/data
+@dirrm share/doc/HTML/da/kioslave
 @dirrm share/doc/HTML/da/khelpcenter/glossary
 @dirrm share/doc/HTML/da/khelpcenter
 @dirrm share/doc/HTML/da/kfilereplace
@@ -958,5 +1023,6 @@ share/locale/da/entry.desktop
 @dirrm share/apps/klettres/da
 @dirrm share/apps/klettres
 @dirrm share/apps/khangman
+@dirrmtry man/da/man6
 @dirrmtry man/da/man1
 @dirrmtry man/da

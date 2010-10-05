@@ -101,6 +101,9 @@ share/doc/HTML/fr/cervisia/index.cache.bz2
 share/doc/HTML/fr/cervisia/index.docbook
 share/doc/HTML/fr/cervisia/logtree.png
 share/doc/HTML/fr/cervisia/mainview.png
+share/doc/HTML/fr/cervisia/patch.png
+share/doc/HTML/fr/cervisia/popup.png
+share/doc/HTML/fr/cervisia/repositories.png
 share/doc/HTML/fr/cervisia/resolve.png
 share/doc/HTML/fr/cervisia/updatetag.png
 share/doc/HTML/fr/common/fdl-translated.html
@@ -482,6 +485,9 @@ share/doc/HTML/fr/kgoldrunner/index.cache.bz2
 share/doc/HTML/fr/kgoldrunner/index.docbook
 share/doc/HTML/fr/kgoldrunner/select.png
 share/doc/HTML/fr/kgoldrunner/tute008.png
+share/doc/HTML/fr/kgpg/common
+share/doc/HTML/fr/kgpg/index.cache.bz2
+share/doc/HTML/fr/kgpg/index.docbook
 share/doc/HTML/fr/khangman/common
 share/doc/HTML/fr/khangman/getnewstuff.png
 share/doc/HTML/fr/khangman/index.cache.bz2
@@ -1800,6 +1806,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/khelpcenter/glossary
 @dirrm share/doc/HTML/fr/khelpcenter
 @dirrm share/doc/HTML/fr/khangman
+@dirrm share/doc/HTML/fr/kgpg
 @dirrm share/doc/HTML/fr/kgoldrunner
 @dirrm share/doc/HTML/fr/kget
 @dirrm share/doc/HTML/fr/kgeography

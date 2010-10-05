@@ -79,9 +79,6 @@ share/doc/HTML/wa/common/fdl-translated.html
 share/doc/HTML/wa/common/gpl-translated.html
 share/doc/HTML/wa/common/kde-localised.css
 share/doc/HTML/wa/common/lgpl-translated.html
-share/doc/HTML/wa/visualdict/common
-share/doc/HTML/wa/visualdict/index.cache.bz2
-share/doc/HTML/wa/visualdict/index.docbook
 share/locale/wa/LC_MESSAGES/attica_kde.mo
 share/locale/wa/LC_MESSAGES/audiorename_plugin.mo
 share/locale/wa/LC_MESSAGES/display.mo
@@ -430,7 +427,6 @@ share/locale/wa/LC_MESSAGES/systemsettings.mo
 share/locale/wa/LC_MESSAGES/timezones4.mo
 share/locale/wa/LC_MESSAGES/useraccount.mo
 share/locale/wa/entry.desktop
-@dirrm share/doc/HTML/wa/visualdict
 @dirrm share/doc/HTML/wa/common
 @dirrm share/apps/ktuberling/sounds/wa
 @dirrm share/apps/ktuberling/sounds
