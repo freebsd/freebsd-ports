@@ -1,6 +1,18 @@
 --- configure.orig
 +++ configure
-@@ -544,10 +544,10 @@
+@@ -583,10 +583,10 @@
+   _osldef="$_debug $_profile $_osldef"
+ elif test -z "$CFLAGS" ; then
+     _cdefos="-DNDEBUG=1 -O2 -ffast-math -fomit-frame-pointer $_cdefos"
+-    x86 && _cdefos="-mmmx -msse $_cdefos"
+ else
+     _cdefos="-DNDEBUG=1 $CFLAGS $_cdefos"
+ fi
++x86 && _cdefos="-mmmx -msse $_cdefos"
+ test -n "$LDFLAGS" && _osldef="$LDFLAGS $_osldef"
+ test -n "$LIBS" && _osldef="$LIBS $_osldef"
+ 
+@@ -656,10 +656,10 @@
  echocheck "slang.h"
  	check_header slang.h
  	enabled slang_h && _cdefos="-D_SLANG_ -D__OS_NAME__='\"Unix/Slang\"' $_cdefos"
@@ -13,7 +25,7 @@
  echocheck "curses.h"
  	cat > $TMPC << EOF
  	#include <curses.h>
-@@ -566,8 +566,10 @@
+@@ -678,8 +678,10 @@
  	fi
  echores "$_curses"
  	fi
