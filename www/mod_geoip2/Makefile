@@ -8,7 +8,7 @@
 PORTNAME=	mod_geoip2
 PORTVERSION=	1.2.5
 CATEGORIES=	www geography
-MASTER_SITES=	http://www.maxmind.com/download/geoip/api/mod_geoip2/
+MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/mod_geoip2/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	jau@iki.fi
