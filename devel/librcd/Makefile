@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	librcd
-PORTVERSION=	0.1.11
+PORTVERSION=	0.1.13
 CATEGORIES=	devel
 MASTER_SITES=	SF/rusxmms/Charset%20Detection%20Library/${PORTVERSION}
 
