@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	Object-InsideOut
-PORTVERSION=	3.67
+PORTVERSION=	3.69
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	frederic@culot.org
 COMMENT=	Object::InsideOut - Comprehensive inside-out object support module
 
 RUN_DEPENDS=	p5-Exception-Class>=1.29:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-Want>=0.12:${PORTSDIR}/devel/p5-Want \
-		p5-Scalar-List-Utils>=1.21:${PORTSDIR}/lang/p5-Scalar-List-Utils
+		p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
