@@ -21,7 +21,7 @@ BUILD_DEPENDS=	libtoolize:${PORTSDIR}/devel/libtool22
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:267 libtool:22
+USE_AUTOTOOLS=	aclocal:111 automake:111 autoconf:267 libtool:22
 AUTOMAKE_ARGS=	-c -a
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 

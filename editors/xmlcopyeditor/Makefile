@@ -39,15 +39,7 @@ LIB_DEPENDS+=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-# workaround for automake (it needs config.rpath)
-post-extract:
-	${TOUCH} ${WRKSRC}/config.rpath
-
-# iconv.m4 is located in ${LOCALBASE}/share/aclocal
-ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
-USE_AUTOTOOLS=	aclocal:110 autoconf:267 automake:110 libtool:22
-
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/libxml2 ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"

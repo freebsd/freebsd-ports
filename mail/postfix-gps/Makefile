@@ -26,7 +26,7 @@ SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/release-${PORTVERSION}
 
-USE_AUTOTOOLS=	automake:19 autoconf:267
+USE_AUTOTOOLS=	automake:111 autoconf:267
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ARGS=	--bindir=${PREFIX}/libexec --includedir=${PREFIX}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"	\

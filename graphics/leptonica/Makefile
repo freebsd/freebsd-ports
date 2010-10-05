@@ -21,7 +21,7 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 PROJECTHOST=	leptonica
 
 MAKE_JOBS_SAFE=	yes
-USE_AUTOTOOLS=	libtool:22 aclocal:110 automake:110 autoconf:267
+USE_AUTOTOOLS=	libtool:22 aclocal:111 automake:111 autoconf:267
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I${LOCALBASE}/share/aclocal
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib

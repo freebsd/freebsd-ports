@@ -15,7 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A daemon that filters out private IP addresses in DNS responses
 
 PROJECTHOST=	google-dnswall
-USE_AUTOTOOLS=	automake:110
+USE_AUTOTOOLS=	automake:111
 USE_DOS2UNIX=	yes
 MAKE_JOBS_SAFE=	yes
 
@@ -27,7 +27,7 @@ PORTDOCS=	README
 PLIST_FILES=	bin/dnswall
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|1.10|1.10.3|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|1.10|1.11.1|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|2.61|2.67|g' ${WRKSRC}/aclocal.m4
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/^dist_doc_DATA/d' ${WRKSRC}/Makefile.am

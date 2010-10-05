@@ -19,7 +19,7 @@ LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal
 CONFLICTS=	lxsession-[0-9]*
 
 USE_GNOME=	gtk20
-USE_AUTOTOOLS=	automake:110:env
+USE_AUTOTOOLS=	automake:111:env
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes

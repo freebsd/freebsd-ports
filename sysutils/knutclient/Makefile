@@ -17,11 +17,9 @@ COMMENT=	A visual client for UPS system NUT
 
 MAKE_JOBS_UNSAFE=	yes
 
-BUILD_DEPENDS=	automake>=0:${PORTSDIR}/devel/automake19
-
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool:22 automake:111:env aclocal:111:env
 CONFIGURE_ARGS=	--disable-fast-perl --enable-mt --program-transform-name=''
 
 post-patch:

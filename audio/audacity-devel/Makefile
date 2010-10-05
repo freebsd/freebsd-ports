@@ -22,7 +22,7 @@ CONFLICTS=	audacity-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}-beta
 
-USE_AUTOTOOLS=	aclocal:110 autoconf:267
+USE_AUTOTOOLS=	aclocal:111 autoconf:267
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GCC=	4.2+

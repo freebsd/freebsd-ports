@@ -20,8 +20,8 @@ COMMENT=	Framework for scalable cross-language services development
 LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost-libs \
 		event-1.4:${PORTSDIR}/devel/libevent
 
-USE_AUTOTOOLS=	autoconf:267:env autoheader:267:env aclocal:19:env \
-		automake:19:env libtool:22:env
+USE_AUTOTOOLS=	autoconf:267:env autoheader:267:env aclocal:111:env \
+		automake:111:env libtool:22:env
 USE_GNOME=	pkgconfig
 USE_GCC=	4.2+
 GNU_CONFIGURE=	yes

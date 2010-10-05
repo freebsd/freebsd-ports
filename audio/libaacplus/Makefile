@@ -28,7 +28,7 @@ CONFLICTS=	aacplusenc-0*
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22 libtoolize aclocal:110 autoheader:267 automake:110
+USE_AUTOTOOLS=	libtool:22 libtoolize aclocal:111 autoheader:267 automake:111
 GNU_CONFIGURE=	yes
 
 AUTOMAKE_ARGS=	--add-missing

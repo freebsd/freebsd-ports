@@ -15,7 +15,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A video game about traveling in 2D planetary systems
 
 USE_SDL=	sdl mixer image
-USE_AUTOTOOLS=	automake:110
+USE_AUTOTOOLS=	automake:111
 AUTOMAKE_ARGS=	-i --add-missing
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -45,7 +45,7 @@ post-patch:
 		${WRKSRC}/libinfo/gem-uta.c
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/&|' ${WRKSRC}/src/*.c*
 	@${RM} -f ${WRKSRC}/config.guess
-	@${REINPLACE_CMD} -e 's|1.10.1|1.10.3|' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|1.10.1|1.11.1|' ${WRKSRC}/aclocal.m4
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/spacejunk ${PREFIX}/libexec/

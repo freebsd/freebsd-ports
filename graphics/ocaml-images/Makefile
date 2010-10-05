@@ -22,7 +22,7 @@ COMMENT=	Objective Caml image processing library
 
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ocaml.m4:${PORTSDIR}/lang/ocaml-autoconf
 
-USE_AUTOTOOLS=	aclocal:110 autoheader:267 automake:110 autoconf:267
+USE_AUTOTOOLS=	aclocal:111 autoheader:267 automake:111 autoconf:267
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 USE_OCAML=	yes

@@ -26,7 +26,7 @@ LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoconf:267:env aclocal:110:env automake:110:env libtool:22
+USE_AUTOTOOLS=	autoconf:267:env aclocal:111:env automake:111:env libtool:22
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

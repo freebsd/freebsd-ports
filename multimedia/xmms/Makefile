@@ -23,7 +23,8 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	automake:19 autoconf:267 libtool:22
+USE_AUTOTOOLS=	automake:111 autoconf:267 libtool:22
+AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
@@ -158,6 +159,10 @@ post-patch:
 	${REINPLACE_CMD} -e '/AM_PATH_ESD/,/have_esd=no/d' ${WRKSRC}/configure.in
 .endif
 	@${CP} ${FILESDIR}/xmms.desktop.in ${WRKSRC}/xmms.desktop
+
+post-configure:
+	@${FIND} ${WRKSRC} -name Makefile | \
+		${XARGS} ${REINPLACE_CMD} -e 's|MKDIR_P|mkdir_p|g'
 
 post-install:
 	@${INSTALL} -d ${PREFIX}/share/xmms/Skins

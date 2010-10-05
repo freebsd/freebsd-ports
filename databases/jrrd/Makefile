@@ -23,7 +23,6 @@ JAVA_RUN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	automake:19
 
 PLIST_FILES=	%%JAVAJARDIR%%/jrrd.jar \
 		lib/libjrrd.la \

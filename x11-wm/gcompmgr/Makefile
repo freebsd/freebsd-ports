@@ -18,7 +18,7 @@ RUN_DEPENDS=	xcompmgr:${PORTSDIR}/x11-wm/xcompmgr
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:19:env
+USE_AUTOTOOLS=	automake:111:env
 
 DESKTOP_ENTRIES="gcompmgr" \
 		"Configure window effects" \

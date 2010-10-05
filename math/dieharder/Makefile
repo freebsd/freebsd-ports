@@ -20,7 +20,7 @@ LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
 MAKE_JOBS_UNSAFE=	yes
 
 USE_DOS2UNIX=	yes
-USE_AUTOTOOLS=	aclocal:110 autoheader:267 libtool:22
+USE_AUTOTOOLS=	aclocal:111 autoheader:267 libtool:22
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

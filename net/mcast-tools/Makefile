@@ -17,7 +17,8 @@ COMMENT=	IPv6 multicast routing daemons and tools
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:267
+USE_AUTOTOOLS=	automake:111 aclocal:111 autoconf:267
+AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ARGS=
 CONFIGURE_ENV=
 

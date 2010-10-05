@@ -38,7 +38,7 @@ USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -Wno-deprecated-declarations" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-werror --enable-ltdl-install=no --with-browser-plugins-dir=${LOCALBASE}/lib/browser_plugins
-USE_AUTOTOOLS=	libtool:22:env autoconf:267:env automake:110:env aclocal:110:env libltdl:22
+USE_AUTOTOOLS=	libtool:22:env autoconf:267:env automake:111:env aclocal:111:env libltdl:22
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack
 INSTALLS_ICONS=	yes

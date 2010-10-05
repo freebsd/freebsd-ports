@@ -15,7 +15,7 @@ DISTNAME=	llk_linux-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scarce recreation game
 
-USE_AUTOTOOLS=	automake:19:env
+USE_AUTOTOOLS=	automake:111:env
 USE_GNOME=	gtk20 esound
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

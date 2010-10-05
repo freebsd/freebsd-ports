@@ -28,7 +28,7 @@ USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
-USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:267 autoheader:267
+USE_AUTOTOOLS=	aclocal:111 automake:111 autoconf:267 autoheader:267
 ACLOCAL_ARGS=	-Im4
 
 .include <bsd.port.pre.mk>

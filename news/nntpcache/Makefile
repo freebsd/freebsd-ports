@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.xs4all.nl/~suelette/
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	News caching/anti-spam/server-merging system
 
-USE_AUTOTOOLS=	automake:19:env
+USE_AUTOTOOLS=	automake:111:env
 
 # This may be set interactively at install-time.  NNTPCache will
 # cache news articles and related data in ${SPOOLDIR}/nntpcache.

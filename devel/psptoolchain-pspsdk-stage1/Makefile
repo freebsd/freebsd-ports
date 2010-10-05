@@ -18,7 +18,7 @@ COMMENT=		PlayStation Portable development toolchain ${PORTNAME}
 
 PSP_SDK_STAGE_PREFIX=	psp/stage1
 
-USE_AUTOTOOLS=		libtool:22:env aclocal:19:env autoheader:267:env automake:19:env autoconf:267:env
+USE_AUTOTOOLS=		libtool:22:env aclocal:111:env autoheader:267:env automake:111:env autoconf:267:env
 USE_GMAKE=		yes
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS?=	--prefix=${PREFIX}/${PSP_SDK_STAGE_PREFIX} --with-pspdev="${PREFIX}/${PSP_SDK_STAGE_PREFIX}"

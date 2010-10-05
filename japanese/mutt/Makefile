@@ -34,7 +34,7 @@ FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	automake:19 autoconf:267
+USE_AUTOTOOLS=	automake:111 autoconf:267
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib

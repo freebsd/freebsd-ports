@@ -21,7 +21,7 @@ LIB_DEPENDS=	msgpack:${PORTSDIR}/devel/msgpack \
 RUN_DEPENDS=	rubygem-msgpack>0:${PORTSDIR}/devel/rubygem-msgpack
 
 LICENSE=	ASL
-USE_AUTOTOOLS=	libtool:22 autoheader:267 autoconf:267 automake:110 aclocal:110
+USE_AUTOTOOLS=	libtool:22 autoheader:267 autoconf:267 automake:111 aclocal:111
 ACLOCAL_ARGS=	# empty
 AUTOMAKE_ARGS=	--add-missing --copy
 CONFIGURE_ARGS=	--with-msgpack=${LOCALBASE} --with-tokyocabinet=${LOCALBASE}

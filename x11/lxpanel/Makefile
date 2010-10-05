@@ -22,7 +22,7 @@ OPTIONS=	ALSA "enable ALSA audio architecture support" Off \
 USE_XORG=	x11 xmu
 USE_GNOME=	gtk20 pkgconfig
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:110:env
+USE_AUTOTOOLS=	automake:111:env
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

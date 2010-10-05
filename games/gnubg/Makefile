@@ -38,7 +38,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 USE_GNOME=	gnomehack gnometarget libxml2
 USE_GMAKE=	yes
 USE_PYTHON=	2.0+
-USE_AUTOTOOLS=	libtool:22 automake:110
+USE_AUTOTOOLS=	libtool:22 automake:111
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 

@@ -1,20 +1,17 @@
---- ./admin/cvs.sh.orig	2006-11-10 01:42:52.000000000 +0300
-+++ ./admin/cvs.sh	2007-12-17 21:13:50.000000000 +0300
-@@ -32,7 +32,7 @@
- required_autoconf_version="2.53 or newer"
- AUTOCONF_VERSION=`$AUTOCONF --version | head -n 1`
+--- admin/cvs.sh.orig	2006-11-09 16:42:52.000000000 -0600
++++ admin/cvs.sh	2010-09-28 11:40:53.000000000 -0500
+@@ -34,3 +34,3 @@
  case $AUTOCONF_VERSION in
 -  Autoconf*2.5* | autoconf*2.5* ) : ;;
-+  Autoconf*2.5* | autoconf*2.5* | autoconf*2.6*) : ;;
++  autoconf*2.6*) : ;;
    "" )
-     echo "*** AUTOCONF NOT FOUND!."
-     echo "*** KDE requires autoconf $required_autoconf_version"
-@@ -47,7 +47,7 @@
- 
- AUTOHEADER_VERSION=`$AUTOHEADER --version | head -n 1`
+@@ -49,3 +49,3 @@
  case $AUTOHEADER_VERSION in
 -  Autoconf*2.5* | autoheader*2.5* ) : ;;
-+  Autoconf*2.5* | autoheader*2.5* | autoheader*2.6* ) : ;;
++  autoheader*2.6* ) : ;;
    "" )
-     echo "*** AUTOHEADER NOT FOUND!."
-     echo "*** KDE requires autoheader $required_autoconf_version"
+@@ -70,3 +70,3 @@
+     ;;
+-  automake*1.6.* | automake*1.7* | automake*1.8* | automake*1.9*)
++  automake*1.11* )
+     echo "*** $AUTOMAKE_STRING found."

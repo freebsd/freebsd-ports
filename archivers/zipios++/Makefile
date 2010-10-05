@@ -18,7 +18,7 @@ COMMENT=	A java.util.zip-like C++ library for reading and writing Zip files
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	automake:110:env
+USE_AUTOTOOLS=	automake:111:env
 CONFIGURE_ARGS+=--disable-static
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}+cvs.2004.02.07

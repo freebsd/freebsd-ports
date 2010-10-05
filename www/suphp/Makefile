@@ -16,7 +16,7 @@ MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	Securely execute PHP scripts under Apache
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal:110:env automake:110:env autoconf:267:env libtool:22:env
+USE_AUTOTOOLS=	aclocal:111:env automake:111:env autoconf:267:env libtool:22:env
 
 # Maintainer has not tested suPHP 0.6.x on Apache 1.3.
 USE_APACHE=	2.0+
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--with-apr=${LOCALBASE}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|2.61|2.67|g' ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e 's|1.10.1|1.10.3|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|1.10.1|1.11.1|g' ${WRKSRC}/aclocal.m4
 	@${CHMOD} 755 ${WRKSRC}/config/install-sh
 
 post-install:

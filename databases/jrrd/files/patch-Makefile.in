@@ -1,0 +1,7 @@
+--- Makefile.in.orig	2008-05-06 10:54:40.000000000 -0500
++++ Makefile.in	2010-10-02 18:06:58.000000000 -0500
+@@ -224,3 +224,3 @@
+ CLEANFILES = org_opennms_netmgt_rrd_rrdtool_Interface.h jrrd.jar
+-jardir = $(datadir)/java
++jardir = $(datadir)/java/classes
+ jar_DATA = jrrd.jar

@@ -7,7 +7,7 @@
 -	MY_AC_VER=259
 -	MY_AM_VER=19
 +	MY_AC_VER=-2.67
-+	MY_AM_VER=-1.9
++	MY_AM_VER=-1.11
  else	# linux case
  	MY_AC_VER=
  	MY_AM_VER=

@@ -32,7 +32,7 @@ USE_GMAKE=	yes
 PLIST_SUB=	SHLIB="@comment " NSHLIB=""
 CONFLICTS=	tidy-20000804* tidy-lib-[0-9]*
 .else
-USE_AUTOTOOLS=	automake:19 autoconf:267 libtool:22
+USE_AUTOTOOLS=	automake:111 autoconf:267 libtool:22
 AUTOMAKE_ARGS+=	-a -c --foreign
 USE_LDCONFIG=	yes
 PLIST_SUB=	SHLIB="" NSHLIB="@comment "

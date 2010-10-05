@@ -1,20 +1,17 @@
---- src/Makefile.in.orig	2009-11-08 13:39:45.000000000 +0100
-+++ src/Makefile.in	2009-12-18 17:12:56.000000000 +0100
-@@ -143,7 +143,7 @@
- LD = @LD@
- LDFLAGS = @LDFLAGS@
+--- src/Makefile.in.orig	2009-11-08 06:39:45.000000000 -0600
++++ src/Makefile.in	2010-10-02 15:56:22.000000000 -0500
+@@ -145,3 +145,3 @@
  LIBOBJS = @LIBOBJS@
 -LIBS = -ldl -lc -lresolv
 +LIBS = -lc
  LIBTOOL = @LIBTOOL@
- LIBTOOL_DEPS = @LIBTOOL_DEPS@
- LIPO = @LIPO@
-@@ -239,7 +239,7 @@
- 
- # Install configuration file
+@@ -207,3 +207,3 @@
+ install_sh = @install_sh@
+-libdir = @prefix@/lib/torsocks
++libdir = @prefix@/lib
+ libexecdir = @libexecdir@
+@@ -241,3 +241,3 @@
  usewithtorconfdir = $(CONFDIR)/
 -usewithtorconf_DATA = torsocks.conf
 +usewithtorconf_DATA = torsocks.conf.sample
  
- # Install invocation scripts
- bin_SCRIPTS = torsocks usewithtor

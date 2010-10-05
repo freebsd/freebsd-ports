@@ -15,7 +15,7 @@ DISTNAME=	nss-mdns-${PORTVERSION}
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	NSS module implementing multicast DNS name resolution
 
-USE_AUTOTOOLS=	autoconf:267 automake:19 libtool:22
+USE_AUTOTOOLS=	autoconf:267 automake:111 libtool:22
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
@@ -63,5 +63,9 @@ PORTDOCS=	README README.html
 .if defined(WITH_SEARCH_DOMAINS)
 CONFIGURE_ARGS+=	--enable-search-domains
 .endif
+
+post-configure:
+	@${FIND} ${WRKSRC} -name Makefile -print | \
+		${XARGS} ${REINPLACE_CMD} -e 's|MKDIR_P|mkdir_p|g'
 
 .include <bsd.port.post.mk>
