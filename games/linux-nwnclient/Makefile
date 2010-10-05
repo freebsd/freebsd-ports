@@ -7,6 +7,7 @@
 
 PORTNAME=	nwnclient
 PORTVERSION=	1.69
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://na.llnet.bioware.cdn.ea.com/u/f/eagames/bioware/neverwinternights/updates/linux/${PORTVERSION:S/.//}/:CLIENT \
 		http://nwdownloads.bioware.com/neverwinternights/linux/129/:ORIG \
@@ -49,16 +50,16 @@ NWMOVIESFILE=	nwmovies-v4-public.20090223.080954.tar.gz
 BINKPLAYERFILE=	BinkLinuxPlayer.zip
 CLIENT_NWMOVIES=${NWMOVIESFILE}:NWMOVIES \
 		${BINKPLAYERFILE}:BINK
-USE_LINUX_APPS+=sdlmixer
+USE_LINUX_APPS+=mikmod sdlmixer
 PLIST_SUB+=	NWMOVIES=""
 .else
-PLIST_SUB+=	NWMOVIES="@comment"
+PLIST_SUB+=	NWMOVIES="@comment "
 .endif
 PLIST_SUB+=	DIAMOND="" ORIGINAL="@comment "
 .else
 CLIENT_FILES=	nwclient129.tar.gz:ORIG \
 		English_linuxclient${PORTVERSION:S/.//}_orig.tar.gz:CLIENT
-PLIST_SUB+=	NWMOVIES="@comment" DIAMOND="@comment " ORIGINAL=""
+PLIST_SUB+=	NWMOVIES="@comment " DIAMOND="@comment " ORIGINAL=""
 .endif
 
 do-extract:

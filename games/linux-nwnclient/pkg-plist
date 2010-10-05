@@ -1,20 +1,19 @@
 bin/nwn
 %%ORIGINAL%%%%DATADIR%%/EULA.txt
-%%DATADIR%%/NWNv169.txt
-%%DIAMOND%%%%DATADIR%%/ambient/al_fanfare_horn.wav
-%%DIAMOND%%%%DATADIR%%/ambient/al_fanfare_trump.wav
-%%DIAMOND%%%%DATADIR%%/ambient/al_na_seawaves.wav
-%%DIAMOND%%%%DATADIR%%/ambient/al_na_seawaves2.wav
-%%DIAMOND%%%%DATADIR%%/ambient/al_wt_windcrows.wav
-%%DIAMOND%%%%DATADIR%%/ambient/al_wt_windcrows2.wav
-%%DIAMOND%%%%DATADIR%%/ambient/al_wt_windowls.wav
-%%DIAMOND%%%%DATADIR%%/ambient/al_wt_windowls2.wav
+%%DIAMOND%%%%DATADIR%%/NWNv169.txt
+%%DATADIR%%/ambient/al_fanfare_horn.wav
+%%DATADIR%%/ambient/al_fanfare_trump.wav
+%%DATADIR%%/ambient/al_na_seawaves.wav
+%%DATADIR%%/ambient/al_na_seawaves2.wav
+%%DATADIR%%/ambient/al_wt_windcrows.wav
+%%DATADIR%%/ambient/al_wt_windcrows2.wav
+%%DATADIR%%/ambient/al_wt_windowls.wav
+%%DATADIR%%/ambient/al_wt_windowls2.wav
 %%ORIGINAL%%%%DATADIR%%/data/patch.bif
 %%DIAMOND%%%%DATADIR%%/data/xp2patch.bif
-%%DIAMOND%%%%DATADIR%%/data/xp3.bif
+%%DATADIR%%/data/xp3.bif
 %%DATADIR%%/dialog.tlk
 %%DATADIR%%/dmclient
-%%ORIGINAL%%%%DATADIR%%/lib/libstdc++-libc6.1-2.so.3
 %%DATADIR%%/miles/libmss.so
 %%DATADIR%%/miles/libmss.so.6
 %%DATADIR%%/miles/libmss.so.6.5.2
@@ -24,26 +23,26 @@ bin/nwn
 %%DIAMOND%%%%DATADIR%%/movies-HotU.txt
 %%DATADIR%%/movies-OC.txt
 %%DIAMOND%%%%DATADIR%%/movies-SoU.txt
-%%DIAMOND%%%%DATADIR%%/music/mus_bat_wcbattle.bmu
-%%DIAMOND%%%%DATADIR%%/music/mus_bat_wcchase.bmu
-%%DIAMOND%%%%DATADIR%%/music/mus_dd_infdun.bmu
+%%DATADIR%%/music/mus_bat_wcbattle.bmu
+%%DATADIR%%/music/mus_bat_wcchase.bmu
+%%DATADIR%%/music/mus_dd_infdun.bmu
 %%DATADIR%%/music/mus_dd_islands.bmu
 %%DATADIR%%/music/mus_dd_kingmaker.bmu
 %%DATADIR%%/music/mus_dd_pirates.bmu
 %%DATADIR%%/music/mus_dd_shadowgua.bmu
 %%DATADIR%%/music/mus_dd_witchwake.bmu
-%%DIAMOND%%%%DATADIR%%/music/mus_wc_armchair.bmu
-%%DIAMOND%%%%DATADIR%%/music/mus_wc_knighted.bmu
-%%DIAMOND%%%%DATADIR%%/music/mus_wc_morfen.bmu
-%%DIAMOND%%%%DATADIR%%/music/mus_wc_ogma.bmu
-%%DIAMOND%%%%DATADIR%%/music/mus_wc_opening.bmu
-%%DIAMOND%%%%DATADIR%%/music/mus_wc_openroad.bmu
-%%DIAMOND%%%%DATADIR%%/music/mus_wc_rural.bmu
-%%DIAMOND%%%%DATADIR%%/music/mus_wc_ruralg.bmu
-%%DIAMOND%%%%DATADIR%%/music/mus_wc_smokeash.bmu
-%%DIAMOND%%%%DATADIR%%/music/mus_wc_solace.bmu
-%%DIAMOND%%%%DATADIR%%/music/mus_wc_tears.bmu
-%%DIAMOND%%%%DATADIR%%/music/mus_wc_theme.bmu
+%%DATADIR%%/music/mus_wc_armchair.bmu
+%%DATADIR%%/music/mus_wc_knighted.bmu
+%%DATADIR%%/music/mus_wc_morfen.bmu
+%%DATADIR%%/music/mus_wc_ogma.bmu
+%%DATADIR%%/music/mus_wc_opening.bmu
+%%DATADIR%%/music/mus_wc_openroad.bmu
+%%DATADIR%%/music/mus_wc_rural.bmu
+%%DATADIR%%/music/mus_wc_ruralg.bmu
+%%DATADIR%%/music/mus_wc_smokeash.bmu
+%%DATADIR%%/music/mus_wc_solace.bmu
+%%DATADIR%%/music/mus_wc_tears.bmu
+%%DATADIR%%/music/mus_wc_theme.bmu
 %%DATADIR%%/nwm/Chapter1.nwm
 %%DATADIR%%/nwm/Chapter1E.nwm
 %%DATADIR%%/nwm/Chapter2.nwm
@@ -69,17 +68,17 @@ bin/nwn
 %%DATADIR%%/nwserver
 %%ORIGINAL%%%%DATADIR%%/override/._iit_medkit_001.tga
 %%ORIGINAL%%%%DATADIR%%/override/iit_medkit_001.tga
-%%DIAMOND%%%%DATADIR%%/override/iit_midmisc_029.tga
+%%DATADIR%%/override/iit_midmisc_029.tga
 %%DATADIR%%/override/load_legal.tga
 %%DATADIR%%/override/load_legal2.tga
-%%DIAMOND%%%%DATADIR%%/override/ls_car_01.dds
-%%DIAMOND%%%%DATADIR%%/override/ls_car_01.tga
-%%DIAMOND%%%%DATADIR%%/override/ls_car_01s.dds
-%%DIAMOND%%%%DATADIR%%/override/ls_car_01s.tga
-%%DIAMOND%%%%DATADIR%%/override/ls_car_03.dds
-%%DIAMOND%%%%DATADIR%%/override/ls_car_03.tga
-%%DIAMOND%%%%DATADIR%%/override/ls_car_03s.dds
-%%DIAMOND%%%%DATADIR%%/override/ls_car_03s.tga
+%%DATADIR%%/override/ls_car_01.dds
+%%DATADIR%%/override/ls_car_01.tga
+%%DATADIR%%/override/ls_car_01s.dds
+%%DATADIR%%/override/ls_car_01s.tga
+%%DATADIR%%/override/ls_car_03.dds
+%%DATADIR%%/override/ls_car_03.tga
+%%DATADIR%%/override/ls_car_03s.dds
+%%DATADIR%%/override/ls_car_03s.tga
 %%DATADIR%%/override/soundprovider.2da
 %%ORIGINAL%%%%DATADIR%%/patch.key
 %%DIAMOND%%%%DATADIR%%/readme-GOLD.txt
@@ -89,7 +88,7 @@ bin/nwn
 %%DATADIR%%/readme.txt
 %%DIAMOND%%%%DATADIR%%/texturepacks/xp2_tex_tpa.erf
 %%DIAMOND%%%%DATADIR%%/xp2patch.key
-%%DIAMOND%%%%DATADIR%%/xp3.key
+%%DATADIR%%/xp3.key
 %%DIAMOND%%@dirrm %%DATADIR%%/texturepacks
 @dirrm %%DATADIR%%/override
 %%NWMOVIES%%@dirrm %%DATADIR%%/nwmovies/libdis
@@ -99,5 +98,5 @@ bin/nwn
 @dirrm %%DATADIR%%/miles
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/data
-%%DIAMOND%%@dirrm %%DATADIR%%/ambient
+@dirrm %%DATADIR%%/ambient
 @dirrm %%DATADIR%%
