@@ -1,22 +1,23 @@
---- Makefile.orig	2008-05-12 02:39:48.081089220 -0400
-+++ Makefile	2008-05-13 03:48:02.113028254 -0400
-@@ -5,8 +5,7 @@
- TARGET	= libdistorm64.so
- COBJS	= ../../src/x86defs.o ../../src/wstring.o ../../src/textdefs.o ../../src/prefix.o ../../src/operands.o ../../src/insts.o ../../src/instructions.o ../../src/distorm.o ../../src/decoder.o
- PYOBJS	= ../../src/x86defs.o ../../src/wstring.o ../../src/textdefs.o ../../src/pydistorm.o ../../src/prefix.o ../../src/operands.o ../../src/insts.o ../../src/instructions.o ../../src/decoder.o
+--- ./Makefile.orig	2010-10-04 23:38:43.000000000 -0400
++++ ./Makefile	2010-10-04 23:41:25.000000000 -0400
+@@ -4,8 +4,7 @@
+ 
+ TARGET	= libdistorm3.so
+ COBJS	= ../../mnemonics.o ../../src/wstring.o ../../src/textdefs.o ../../src/x86defs.o ../../src/prefix.o ../../src/operands.o ../../src/insts.o ../../src/instructions.o ../../src/distorm.o ../../src/decoder.o
 -CC	= gcc
--CFLAGS	= -O2 -Wall -fPIC -DSUPPORT_64BIT_OFFSET -D_DLL
-+CFLAGS	+= -fPIC -DSUPPORT_64BIT_OFFSET -D_DLL
+-CFLAGS	= -fPIC -O2 -Wall -DSUPPORT_64BIT_OFFSET -DLIBDISTORM
++CFLAGS	+= -fPIC -DSUPPORT_64BIT_OFFSET -DLIBDISTORM
  
- all: clib py
+ all: clib
  
-@@ -15,7 +14,8 @@
+@@ -13,8 +12,8 @@
+ 	/bin/rm -rf ../../src/*.o ${TARGET} ../../distorm3.a ../../mnemonics.o
  
  clib: ${COBJS}
- 	${CC} ${CFLAGS} ${VERSION} ${COBJS} -fPIC -shared -o ${TARGET}
--	ar rs ../../distorm64.a ${COBJS}
-+	ar rs libdistorm64.a ${COBJS}
-+	${CC} ${CFLAGS} -o disasm ../../linuxproj/main.c libdistorm64.a
+-	${CC} ${CFLAGS} ${VERSION} ${COBJS} -shared -o ${TARGET}
+-	ar rs ../../distorm3.a ${COBJS}
++	${CC} ${CFLAGS} ${LDFLAGS} ${COBJS} -shared -o ${TARGET}
++	${AR} rs libdistorm3.a ${COBJS}
  
- py: ${PYOBJS}
- 	${CC} ${CFLAGS} ${VERSION} ${PYOBJS} -fPIC -shared -o ${TARGET}
+ install: libdistorm3.so
+ 	install -s ${TARGET} /usr/local/lib

@@ -1,10 +1,9 @@
-diStorm is a binary stream disassembler. It's capable of disassembling
-80x86 instructions in 16, 32, and 64 bits (AMD64, X86-64). In
-addition, it disassembles FPU, MMX, SSE, SSE2, SSE3, SSE4, 3DNow!
-(with extensions), new x86-64 instruction sets, VMX, and AMD's SVM! 
-diStorm was written to decode every instruction quickly and accurately,
-with robust handling of valid and unused prefixes. It supports
-multi-threading, which means you can disassemble several streams 
-simultaneously.
+diStorm is a binary stream disassembler of x86 instructions. It can operate
+in 16, 32, and 64 bit modes, and supports FPU, MMX, SSE, SSE2, SSE3, SSE4,
+3DNow! (with extensions), x86-64, VMX, AMD SVM, and AVX instruction sets.
+diStorm was written to decode every instruction quickly and accurately, with
+robust handling of valid and unused prefixes. The output is a special structure
+that can describe any x86 instruction, and later be formatted into text for
+display.
 
-WWW: http://www.ragestorm.net/distorm/
+WWW: http://code.google.com/p/distorm/
