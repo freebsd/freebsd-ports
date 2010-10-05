@@ -1,0 +1,17 @@
+--- ./kdecore/CMakeLists.txt.orig	2010-08-11 20:17:01.854343811 +0400
++++ ./kdecore/CMakeLists.txt	2010-08-11 20:16:10.000000000 +0400
+@@ -15,11 +15,9 @@
+ 
+ check_include_files(sys/inotify.h SYS_INOTIFY_H_FOUND)
+ macro_bool_to_01(SYS_INOTIFY_H_FOUND HAVE_SYS_INOTIFY_H)
+-if(WIN32)
+- # currently for win32 only, since it doesn't support watching files that don't exist yet
+- option(USE_QFILESYSTEMWATCHER "Use QFileSystemWatcher instead polling for KDirWatch" ON)
+- macro_bool_to_01(USE_QFILESYSTEMWATCHER HAVE_QFILESYSTEMWATCHER)
+-endif(WIN32)
++
++option(USE_QFILESYSTEMWATCHER "Use QFileSystemWatcher instead polling for KDirWatch" ON)
++macro_bool_to_01(USE_QFILESYSTEMWATCHER HAVE_QFILESYSTEMWATCHER)
+ 
+ # Generate io/config-kdirwatch.h
+ include(io/ConfigureChecks.cmake)
