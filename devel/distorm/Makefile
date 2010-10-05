@@ -6,35 +6,30 @@
 #
 
 PORTNAME=	distorm
-PORTVERSION=	1.7.30
+PORTVERSION=	3.0.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.ragestorm.net/distorm/
-DISTNAME=	${PORTNAME}64-pkg${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+		LOCAL/bf
+DISTNAME=	${PORTNAME}${PORTVERSION:R:R}
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Fast x86 and x86-64 disassembler library
 
-USE_BZIP2=	yes
+LICENSE=	GPLv3
+
+USE_ZIP=	yes
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/distorm64/build/linux
+WRKSRC=		${WRKDIR}/distorm3/build/linux
 ALL_TARGET=	clib
-PLIST_FILES=	bin/disasm lib/libdistorm64.a lib/libdistorm64.so
+PLIST_FILES=	bin/disasm lib/libdistorm3.a lib/libdistorm3.so
 
-.ifndef(NOPORTDOCS)
-PORTDOCS=	distorm.html qa.txt vol1.html vol2.html
-.endif
+post-build:
+	${CC} ${CFLAGS} -o ${WRKSRC}/disasm ${WRKSRC}/../../linuxproj/main.c \
+		${WRKSRC}/libdistorm3.a
 
 do-install:
-	( cd ${WRKSRC} && ${INSTALL_PROGRAM} libdistorm64.a libdistorm64.so ${PREFIX}/lib \
+	( cd ${WRKSRC} && ${INSTALL_DATA} libdistorm3.a libdistorm3.so ${PREFIX}/lib \
 	&& ${INSTALL_PROGRAM} disasm ${PREFIX}/bin )
-
-.ifndef(NOPORTDOCS)
-post-install:
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKDIR}/distorm64/doc/${f} ${DOCSDIR}
-.endfor
-.endif
 
 .include <bsd.port.mk>
