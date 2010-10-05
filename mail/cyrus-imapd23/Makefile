@@ -38,7 +38,9 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-perl=${PERL5}
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	BDB		"Use Berkeley DB"			on \
+OPTIONS=	AUTOCREATE	"Use autocreate INBOX patch (UoA)"	off \
+		AUTOSIEVE	"Use autosievefolder patch (UoA)"	off \
+		BDB		"Use Berkeley DB"			on \
 		DRAC		"Enable DRAC support"			off \
 		IDLED		"Enable IMAP idled support"		off \
 		LDAP_PTLOADER	"Enable LDAP ptloader"			off \
@@ -53,6 +55,27 @@ OPTIONS=	BDB		"Use Berkeley DB"			on \
 		SNMP_5		"Enable SNMP support"			off
 
 .include <bsd.port.pre.mk>
+
+# Autocreate Inbox and Autosieve patches from UoA
+# WWW: http://email.uoa.gr/projects/cyrus/
+
+.if defined(WITH_AUTOCREATE) || defined(WITH_AUTOSIEVE)
+PATCH_DIST_STRIP=	-p1
+PATCH_SITES+=	http://email.uoa.gr/download/cyrus/${PORTNAME}-${PORTVERSION}/ 
+.endif
+
+.if defined(WITH_AUTOCREATE)
+AUTOCREATE_VERSION=	0.10-0
+PATCHFILES+=	${PORTNAME}-${PORTVERSION}-autocreate-${AUTOCREATE_VERSION}.diff
+PLIST_SUB+=	AUTOCREATE=""
+.else
+PLIST_SUB+=	AUTOCREATE="@comment "
+.endif
+
+.if defined(WITH_AUTOSIEVE)
+AUTOSIEVE_VERSION=	0.6.0
+PATCHFILES+=	${PORTNAME}-${PORTVERSION}-autosieve-${AUTOSIEVE_VERSION}.diff
+.endif
 
 .if defined(WITHOUT_BDB)
 BDB_LIB_NAME=	no
@@ -202,6 +225,8 @@ post-patch:
 		@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|g" \
 				  -e "s|/usr/sieve|/var/imap/sieve|g" \
 			${WRKSRC}/tools/masssievec
+		@${REINPLACE_CMD} -e "s|-lpthread|\$$(PTHREAD_LIBS)|g" \
+			${WRKSRC}/imap/Makefile.in
 .if defined(WITH_DRAC)
 		@${RM} -rf ${WRKSRC}/autom4te.cache
 .endif

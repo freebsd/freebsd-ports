@@ -15,19 +15,3 @@ diff -u imap/Makefile.in.orig imap/Makefile.in
  	done
  	ln -f $(DESTDIR)$(service_path)/pop3d $(DESTDIR)$(service_path)/pop3proxyd
  	ln -f $(DESTDIR)$(service_path)/imapd $(DESTDIR)$(service_path)/proxyd
-@@ -219,13 +219,13 @@
- 	$(CC) $(LDFLAGS) -o mupdate \
- 	 $(SERVICETHREAD) mupdate.o mupdate-slave.o mupdate-client.o \
- 	 mutex_pthread.o tls.o libimap.a \
--	 $(DEPLIBS) $(LIBS) $(LIB_WRAP) -lpthread
-+	 $(DEPLIBS) $(LIBS) $(LIB_WRAP) $(PTHREAD_LIBS)
- 
- mupdate.pure: mupdate.o mupdate-slave.o mupdate-client.o mutex_pthread.o \
- 	libimap.a $(DEPLIBS)
- 	$(PURIFY) $(PUREOPT) $(CC) $(LDFLAGS) -o mupdate.pure \
- 	 $(SERVICETHREAD) mupdate.o mupdate-slave.o mupdate-client.o \
--	 mutex_pthread.o libimap.a $(DEPLIBS) $(LIBS) $(LIB_WRAP) -lpthread
-+	 mutex_pthread.o libimap.a $(DEPLIBS) $(LIBS) $(LIB_WRAP) $(PTHREAD_LIBS)
- 
- pop3d: pop3d.o proxy.o backend.o tls.o mutex_fake.o libimap.a \
- 	$(DEPLIBS) $(SERVICE)
