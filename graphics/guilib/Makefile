@@ -19,7 +19,7 @@ USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	 aclocal:19:env
+USE_AUTOTOOLS=	 aclocal:111:env
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \

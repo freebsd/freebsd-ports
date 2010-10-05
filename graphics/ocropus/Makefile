@@ -27,7 +27,7 @@ OPTIONS=	SDL "Enable SDL for graphical debugging" off \
 
 MAKE_JOBS_UNSAFE=	yes
 USE_PYTHON_BUILD=	yes
-USE_AUTOTOOLS=	aclocal:110 automake:110 autoconf:267
+USE_AUTOTOOLS=	aclocal:111 automake:111 autoconf:267
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--without-fst --without-tesseract --with-iulib=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib

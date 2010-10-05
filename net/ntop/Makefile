@@ -32,7 +32,7 @@ RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
 DBDIR?=		/var/db
 
 MAKE_JOBS_SAFE=	yes
-USE_AUTOTOOLS=	libtool:22 automake:19 autoconf:267
+USE_AUTOTOOLS=	libtool:22 automake:111 autoconf:267
 USE_GNOME=	libxml2
 USE_LUA=	5.1
 USE_GMAKE=	yes

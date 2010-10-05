@@ -19,7 +19,7 @@ EXTRACT_DEPENDS=intltoolize:${PORTSDIR}/textproc/intltool
 
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui librsvg2
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoheader:267 automake:19 aclocal:19 autoconf:267
+USE_AUTOTOOLS=	autoheader:267 automake:111 aclocal:111 autoconf:267
 ACLOCAL_ARGS=	-I m4 -I ${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	-a -c -f
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

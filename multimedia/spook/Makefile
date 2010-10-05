@@ -27,7 +27,8 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:267 aclocal:19 automake:19
+USE_AUTOTOOLS=	autoconf:267 aclocal:111 automake:111
+AUTOMAKE_ARGS=	--add-missing
 
 NOMAN=		defined
 

@@ -17,7 +17,7 @@ COMMENT=	A simple, fast, and accurate algorithm to estimate large phylogenies
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/phyml
-USE_AUTOTOOLS=	automake:110 aclocal:110
+USE_AUTOTOOLS=	automake:111 aclocal:111
 AUTOMAKE_ARGS=	--add-missing
 
 .include <bsd.port.pre.mk>

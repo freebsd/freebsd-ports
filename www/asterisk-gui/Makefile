@@ -18,7 +18,7 @@ RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk \
 		wget:${PORTSDIR}/ftp/wget
 
 PROJECTHOST=	asterisk-bsd
-USE_AUTOTOOLS=	autoconf:267 automake:19
+USE_AUTOTOOLS=	autoconf:267 automake:111
 USE_GMAKE=	yes
 SUB_FILES=	pkg-message
 

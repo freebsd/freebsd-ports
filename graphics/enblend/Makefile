@@ -25,7 +25,7 @@ RUN_DEPENDS=	OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
 
 USE_BZIP2=	yes
 
-USE_AUTOTOOLS=	automake:110:env autoconf:267:env
+USE_AUTOTOOLS=	automake:111:env autoconf:267:env
 
 # GCC 4.2 has some problems, see
 # http://groups.google.com/group/hugin-ptx/browse_thread/thread/725b1581c9889e37/50abe3387d61541a#50abe3387d61541a

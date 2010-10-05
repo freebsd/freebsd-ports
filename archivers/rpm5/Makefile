@@ -42,7 +42,7 @@ LATEST_LINK=	rpm5
 CONFLICTS=	rpm-3.* rpm-4.*
 
 # need to autogen (for xz support)
-USE_AUTOTOOLS+=	aclocal:110 autoconf:267 automake:110 autoheader:267
+USE_AUTOTOOLS+=	aclocal:111 autoconf:267 automake:111 autoheader:267
 ACLOCAL_ARGS+=	-I m4 -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS+=	-a -c
 pre-configure:
@@ -134,6 +134,8 @@ post-patch::
 	@${REINPLACE_CMD} -e "s:/bin/sh:/usr/bin/env bash:" \
 		${WRKSRC}/scripts/gendiff
 	@${REINPLACE_CMD} -e 's:AC_DEFUN:m4_define:g' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e 's:pkgincHEADERS_INSTALL:INSTALL_HEADER:' \
+		${WRKSRC}/rpmdb/Makefile.am
 
 .if defined(WITH_PERL)
 post-configure:

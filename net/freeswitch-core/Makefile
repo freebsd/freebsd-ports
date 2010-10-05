@@ -38,7 +38,7 @@ WRKSRC=		${WRKDIR}/${BASE_PORTNAME}-${PORTVERSION}
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-USE_AUTOTOOLS=	autoconf:267:env automake:110:env libtool:22:env
+USE_AUTOTOOLS=	autoconf:267:env automake:111:env libtool:22:env
 
 USE_PERL5_BUILD=yes
 

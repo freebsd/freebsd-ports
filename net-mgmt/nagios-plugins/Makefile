@@ -18,7 +18,7 @@ COMMENT=	Plugins for Nagios
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_AUTOTOOLS=	libtool:22 aclocal:19 autoconf:267 automake:19
+USE_AUTOTOOLS=	libtool:22 aclocal:111 autoconf:267 automake:111
 ACLOCAL_ARGS=	-I m4 -I gl/m4
 
 OPTIONS=	QSTAT "Game server query support (check_game)" OFF \

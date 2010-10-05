@@ -27,7 +27,7 @@ USE_GNOME=	pkgconfig
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 
-USE_AUTOTOOLS=	libtool:22 aclocal:19
+USE_AUTOTOOLS=	libtool:22 aclocal:111
 LIBTOOLFILES=	acinclude.m4 configure
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS} -lintl -L${PREFIX}/lib"
 CONFIGURE_ARGS+=--with-qt-dir=${QT_PREFIX} \

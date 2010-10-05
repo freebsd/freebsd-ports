@@ -94,7 +94,7 @@ RUN_DEPENDS+=		${RESOURCEDIR}/visu:${PORTSDIR}/cad/salome-visu \
 #Dependency from other ports
 ###########################################################################
 #Dependency from autotools
-USE_AUTOTOOLS=	autoconf:267 automake:15 libtool:22 aclocal:19
+USE_AUTOTOOLS=	autoconf:267 automake:111 libtool:22 aclocal:111
 .if ${SAL_MODULE} == "kernel"
     ACLOCAL_ARGS=	-I salome_adm/unix/config_files
 .else

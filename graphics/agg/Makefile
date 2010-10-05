@@ -24,7 +24,7 @@ USE_GNOME=	pkgconfig gnomehack
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
-USE_AUTOTOOLS=	autoconf:267:env automake:19:env libtool:22:env
+USE_AUTOTOOLS=	autoconf:267:env automake:111:env libtool:22:env
 MAKE_ENV=	C="${CC}" AGGCXXFLAGS="${CXXFLAGS}"
 CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -I../include -L./
 

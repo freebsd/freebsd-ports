@@ -19,7 +19,7 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		freetype:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/ndata-${PORTVERSION}:${PORTSDIR}/games/naev-data
 
-USE_AUTOTOOLS=	automake:19:env aclocal:19:env autoconf:267:env
+USE_AUTOTOOLS=	automake:111:env aclocal:111:env autoconf:267:env
 USE_BZIP2=	yes
 USE_DOS2UNIX=	conf.example
 GNU_CONFIGURE=	yes

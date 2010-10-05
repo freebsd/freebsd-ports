@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:267:env automake:19:env libtool:22
+USE_AUTOTOOLS=	autoconf:267:env automake:111:env libtool:22
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_PERL5_BUILD=yes

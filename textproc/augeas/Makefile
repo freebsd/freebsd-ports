@@ -17,7 +17,7 @@ COMMENT=	A configuration editing tool
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:267 aclocal:110 autoheader:267 automake:110 libtool:22
+USE_AUTOTOOLS=	autoconf:267 aclocal:111 autoheader:267 automake:111 libtool:22
 ACLOCAL_ARGS=	-I . -I gnulib/m4 -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes

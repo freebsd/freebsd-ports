@@ -24,7 +24,7 @@ OPTIONS=	SDL "Enable SDL for graphical debugging" off \
 
 MAKE_JOBS_SAFE=	yes
 USE_PYTHON_BUILD=	yes
-USE_AUTOTOOLS=	libtool:22 aclocal:110 automake:110 autoconf:267
+USE_AUTOTOOLS=	libtool:22 aclocal:111 automake:111 autoconf:267
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes

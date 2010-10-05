@@ -21,7 +21,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 
 LATEST_LINK=	${PORTNAME}-devel
 
-USE_AUTOTOOLS=	automake:19:env
+USE_AUTOTOOLS=	automake:111:env
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_XORG=	x11

@@ -19,7 +19,7 @@ USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
-USE_AUTOTOOLS=	automake:19 aclocal:19 autoconf:267
+USE_AUTOTOOLS=	automake:111 aclocal:111 autoconf:267
 
 MAN1=	sysconftool.1 sysconftoolcheck.1
 MAN7=	sysconftool.7

@@ -19,7 +19,7 @@ CONFLICTS=	cal3d-devel-[0-9]*
 
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:19 autoheader:267 libtool:22
+USE_AUTOTOOLS=	automake:111 autoheader:267 libtool:22
 USE_LDCONFIG=	yes
 
 MAN1=	cal3d_converter.1
@@ -33,5 +33,9 @@ post-patch:
 		${WRKSRC}/src/cal3d/loader.h \
 		${WRKSRC}/src/cal3d/streamsource.h
 	@${REINPLACE_CMD} -e '/^all_libraries/d' ${WRKSRC}/src/cal3d/Makefile.am
+
+post-configure:
+	@${FIND} ${WRKSRC} -name Makefile -print | \
+		${XARGS} ${REINPLACE_CMD} -e 's|MKDIR_P|mkdir_p|g'
 
 .include <bsd.port.mk>

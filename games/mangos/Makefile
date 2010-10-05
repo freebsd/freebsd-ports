@@ -23,7 +23,7 @@ OPTIONS=	SCRIPTDEV2	"ScriptDev2"	on \
 		RA		"Remote Administration support" off \
 		DBC		"Install DBC files" on
 
-USE_AUTOTOOLS=	aclocal:19 libtoolize autoconf:267 autoheader:267 automake:19 libtool:22
+USE_AUTOTOOLS=	aclocal:111 libtoolize autoconf:267 autoheader:267 automake:111 libtool:22
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	-a
 USE_MYSQL=	yes

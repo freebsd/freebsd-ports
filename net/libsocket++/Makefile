@@ -20,7 +20,7 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	automake:19 autoconf:267 libtool:22
+USE_AUTOTOOLS=	automake:111 autoconf:267 libtool:22
 SCRIPTS_ENV+=	ACLOCAL_FLAGS="-I ${LOCALBASE}/share/aclocal/"
 
 INFO=	socket++

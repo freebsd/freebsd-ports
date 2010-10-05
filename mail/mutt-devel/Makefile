@@ -165,7 +165,7 @@ CONFIGURE_ARGS=	--disable-fcntl --with-ssl=${OPENSSLBASE} \
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
 
-USE_AUTOTOOLS=	automake:110 autoconf:267
+USE_AUTOTOOLS=	automake:111 autoconf:267
 USE_OPENSSL=	yes
 
 PLIST=		${WRKDIR}/PLIST

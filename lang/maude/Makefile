@@ -20,7 +20,6 @@ LIB_DEPENDS=	bdd:${PORTSDIR}/science/buddy \
 		gmp:${PORTSDIR}/math/gmp
 
 USE_BISON=	build
-USE_AUTOTOOLS= aclocal:19 automake:19
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--datadir=${DATADIR}

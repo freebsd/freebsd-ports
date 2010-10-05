@@ -24,7 +24,7 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 		xml2:${PORTSDIR}/textproc/libxml2
 PATCH_DEPENDS=	${LOCALBASE}/bin/libtoolize:${PORTSDIR}/devel/libtool22
 
-USE_AUTOTOOLS=	autoconf:267 autoheader:267 automake:110 aclocal:110 \
+USE_AUTOTOOLS=	autoconf:267 autoheader:267 automake:111 aclocal:111 \
 		libtool:22 libltdl:22
 AUTOMAKE_ARGS+=	--add-missing --include-deps --copy
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal

@@ -19,7 +19,7 @@ BUILD_DEPENDS=		${NONEXISTENT}:${PORTSDIR}/x11/kdelibs3:extract
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYING
 
-USE_AUTOTOOLS=		automake:19:env autoconf:267:env libtool:22
+USE_AUTOTOOLS=		automake:111:env autoconf:267:env libtool:22
 USE_PERL5_BUILD=	yes
 USE_KDELIBS_VER=	3
 USE_BZIP2=		yes
@@ -30,6 +30,7 @@ pre-configure:
 		`cd ${PORTSDIR}/x11/kdelibs3 && ${MAKE} -V WRKSRC`/admin \
 		${WRKSRC}/admin
 	${TOUCH} ${WRKSRC}/NEWS
+	@${REINPLACE_CMD} -e 's|1.10|1.11|' ${WRKSRC}/admin/cvs.sh
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} -f admin/Makefile.common cvs
 
 .include <bsd.port.mk>

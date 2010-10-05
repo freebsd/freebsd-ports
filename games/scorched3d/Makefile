@@ -32,7 +32,7 @@ USE_SDL=		mixer net sdl
 GNU_CONFIGURE=		yes
 USE_GL=			yes
 USE_GMAKE=		yes
-USE_AUTOTOOLS=	automake:19 autoconf:267
+USE_AUTOTOOLS=	automake:111 autoconf:267
 USE_PERL5=	yes
 USE_WX=		2.4+
 WX_CONF_ARGS=	absolute
@@ -61,6 +61,8 @@ post-patch:
 pre-configure:
 	@cd ${WRKSRC}/scripts && ${PERL} createAMMakefile.pl
 	@cd ${WRKSRC} && ${ACLOCAL}
+	@${INSTALL_SCRIPT} ${AUTOCONF_DIR}/install-sh ${WRKSRC}
+#	@${REINPLACE_CMD} -e 's/$$//' ${WRKSRC}/install-sh
 
 pre-install:
 	@${MKDIR} ${PREFIX}/games/scorched3d

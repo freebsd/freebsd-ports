@@ -17,7 +17,7 @@ COMMENT=	Thai language support library
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19 autoconf:267 libtool:22
+USE_AUTOTOOLS=	automake:111 autoconf:267 libtool:22
 MAKE_JOBS_UNSAFE=	yes
 
 ALL_TARGET=	all check
@@ -27,7 +27,7 @@ MAN3=	libthai.3 thctype.3 wtt.3
 post-patch:
 	@${REINPLACE_CMD} -E 's,^(pkgconfigdir = ).*$$,\1$$(prefix)/libdata/pkgconfig,' \
 		${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e 's,15,-1.9,' -e 's,259,-2.67,' \
+	@${REINPLACE_CMD} -e 's,15,-1.11,' -e 's,259,-2.67,' \
 		${WRKSRC}/autogen.sh
 
 pre-configure:

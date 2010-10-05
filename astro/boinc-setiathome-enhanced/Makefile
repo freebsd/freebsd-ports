@@ -24,7 +24,7 @@ RUN_DEPENDS=	boinc_client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoconf:267:env automake:19:env
+USE_AUTOTOOLS=	autoconf:267:env automake:111:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig

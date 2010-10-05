@@ -18,7 +18,7 @@ COMMENT=	Integer-only fully Ogg Vorbis compliant decoder library
 
 SNAP_DATE=	02132004
 WRKSRC=		${WRKDIR}/Tremor
-USE_AUTOTOOLS=	automake:19 autoconf:267 libtool:22
+USE_AUTOTOOLS=	automake:111 autoconf:267 libtool:22
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

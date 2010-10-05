@@ -20,7 +20,7 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 CONFLICTS=	memcached-1.2*
 
-USE_AUTOTOOLS=	autoconf:267 aclocal:110 automake:110
+USE_AUTOTOOLS=	autoconf:267 aclocal:111 automake:111
 AUTOMAKE_ARGS+=	--add-missing
 USE_RC_SUBR=	memcached
 GNU_CONFIGURE=	YES

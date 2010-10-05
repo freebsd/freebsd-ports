@@ -22,7 +22,7 @@ LIB_DEPENDS=	pciaccess.0:${PORTSDIR}/devel/libpciaccess
 
 XORG_CAT=	driver
 USE_XORG=	damageproto glproto videoproto xextproto xf86driproto
-USE_AUTOTOOLS=	aclocal:19 autoconf:267 libtool:22
+USE_AUTOTOOLS=	automake:111:env aclocal:111:env autoconf:267 libtool:22
 
 CONFLICTS=	xf86-video-radeonhd-[0-9]*
 
@@ -31,7 +31,7 @@ MAN4=		radeonhd.4x
 ACLOCAL_ARGS=	--acdir=${LOCALBASE}/share/aclocal
 
 pre-configure:
-	cd ${WRKSRC} && ${AUTORECONF} -i
+	cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} --force -v --install
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/utils/conntest/rhd_conntest ${PREFIX}/sbin

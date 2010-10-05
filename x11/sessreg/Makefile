@@ -18,7 +18,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/aclocal/xorg-macros.m4:${PORTSDIR}/devel/xorg
 XORG_CAT=	app
 USE_XORG=	x11
 
-USE_AUTOTOOLS=	aclocal:110 autoheader:267 automake:110 autoconf:267
+USE_AUTOTOOLS=	aclocal:111 autoheader:267 automake:111 autoconf:267
 ACLOCAL_ARGS=	-I${LOCALBASE}/share/aclocal
 
 PLIST_FILES=	bin/sessreg
