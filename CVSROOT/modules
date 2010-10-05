@@ -2135,7 +2135,7 @@ daemontools53                   ports/sysutils/daemontools53
 dagrab                          ports/audio/dagrab
 dahdi                           ports/misc/dahdi
 dailystrips                     ports/deskutils/dailystrips
-daimonin-client                 ports/games/daimonin-client
+daimonin                        ports/games/daimonin
 daimonin-music                  ports/games/daimonin-music
 dalbum                          ports/www/dalbum
 damageproto                     ports/x11/damageproto
@@ -6844,6 +6844,7 @@ jzintv                          ports/emulators/jzintv
 jzip                            ports/games/jzip
 jzip.org                        ports/archivers/jzip.org
 jzlib                           ports/archivers/jzlib
+jzmq                            ports/devel/jzmq
 k3b                             ports/sysutils/k3b
 k3b-i18n                        ports/misc/k3b-i18n
 k3b-kde4                        ports/sysutils/k3b-kde4
