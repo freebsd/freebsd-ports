@@ -7,7 +7,7 @@
 PORTNAME=	classifier
 PORTVERSION=	1.3.1
 CATEGORIES=	devel rubygems
-MASTER_SITES=	${MASTER_SITE_RUBYFORGE}/${PORTNAME}/
+MASTER_SITES=	RG
 
 MAINTAINER=	peter.schuller@infidyne.com
 COMMENT=	A classifier module for Bayesian and other types of classifications
