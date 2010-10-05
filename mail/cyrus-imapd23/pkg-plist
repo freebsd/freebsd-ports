@@ -11,6 +11,7 @@ bin/smtptest
 bin/synctest
 cyrus/bin/arbitron
 cyrus/bin/chk_cyrus
+%%AUTOCREATE%%cyrus/bin/compile_sieve
 cyrus/bin/ctl_cyrusdb
 cyrus/bin/ctl_deliver
 cyrus/bin/ctl_mboxlist
