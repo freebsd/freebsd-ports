@@ -9,7 +9,7 @@ PORTNAME=	ed2k
 PORTVERSION=	1.4
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.sdalu.com/download/software/tools/
-PKGNAMESUFFIX=	-hash${PKGNAMESUFFIX2}
+PKGNAMESUFFIX=	-hash${OPENSSLSUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	ed2k.c
 EXTRACT_SUFX=
 EXTRACT_ONLY=
@@ -17,26 +17,29 @@ EXTRACT_ONLY=
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Calculates 'eMule' hashes or producing ed2k:// file links
 
-CONFILTCS=	aMule-*
-WRKSRC=		${WRKDIR}
+CONFILTCS=	amule-*
+
+NO_WRKSUBDIR=	yes
 MAKEFILE=	/dev/null
 ALL_TARGET=	ed2k
 PLIST_FILES=	bin/ed2k
 
 .if defined(WITHOUT_OPENSSL)
-CPPFLAGS+=	-DWITH_RSA
-MAKE_ENV+=	LDLIBS="${CPPFLAGS}"
+OPENSSLSUFFIX=	-rsa
+CFLAGS+=	-DWITH_RSA
 .else
-USE_OPENSSL=	yes
 OPENSSLSUFFIX=	-openssl
+USE_OPENSSL=	yes
 LDLIBS+=	-lmd
-MAKE_ENV+=	LDLIBS="${LDLIBS}"
 .endif
+
+MAKE_ARGS+=	CFLAGS="${CFLAGS}"
+MAKE_ENV+=	LDLIBS="${LDLIBS}"
 
 post-extract:
 	${CP} -p ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} ${WRKSRC}/
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/ed2k ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/ed2k ${PREFIX}/bin/
 
 .include <bsd.port.mk>
