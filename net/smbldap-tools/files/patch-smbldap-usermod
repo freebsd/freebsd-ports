@@ -1,0 +1,81 @@
+--- smbldap-usermod.orig	2008-04-22 10:13:29.000000000 +0200
++++ smbldap-usermod	2010-10-05 12:05:23.220769671 +0200
+@@ -54,6 +54,7 @@
+     "U|shadowUnlock"         => \$Options{U},
+     "S|surname=s"            => \$Options{S},
+     "T|mailToAddress=s"      => \$Options{T},
++    "X|inputEncoding=s"      => \$Options{X},
+     "Z|attr=s"               => \$Options{Z},
+     "a|addsambaSAMAccount"   => \$Options{a},
+     "c|gecos=s"              => \$Options{c},
+@@ -73,7 +74,7 @@
+     "u|uid=s"                => \$Options{u}
+ );
+ 
+-#my $ok = getopts('A:B:C:D:E:F:H:IJM:N:S:PT:ame:f:u:g:G:d:l:r:s:c:ok:?h', \%Options);
++#my $ok = getopts('A:B:C:D:E:F:H:IJM:N:S:PT:X:Z:ame:f:u:g:G:d:l:r:s:c:ok:?h', \%Options);
+ 
+ if ( ( !$ok ) || ( @ARGV < 1 ) || ( $Options{'h'} ) ) {
+     print_banner;
+@@ -134,6 +135,8 @@
+ "  -I|--sambaDisable              disable an user. Can't be used with -H or -J\n";
+     print
+ "  -J|--sambaEnable               enable an user. Can't be used with -H or -I\n";
++    print
++"  -X|--inputEncoding             input encoding for givenname and surname (defaults to UTF-8)\n";
+     print "  -h|--help                      show this help message\n";
+     exit(1);
+ }
+@@ -146,6 +149,14 @@
+ # Read only first @ARGV
+ my $user = $ARGV[0];
+ 
++# Get the input encoding
++my $characterSet;
++if ( defined( $Options{'X'} ) ) {
++	$characterSet = $Options{'X'};
++} else {
++	$characterSet = "UTF-8";
++}
++
+ # Let's connect to the directory first
+ my $ldap_master = connect_ldap_master();
+ 
+@@ -322,11 +333,11 @@
+ # my givenname: Jerome
+ 
+ if ( defined( $tmp = $Options{'N'} ) ) {
+-    push( @mods, 'givenName' => utf8Encode($tmp) );
++    push( @mods, 'givenName' => utf8Encode($characterSet,$tmp) );
+ }
+ 
+ if ( defined( $tmp = $Options{'S'} ) ) {
+-    push( @mods, 'sn' => utf8Encode($tmp) );
++    push( @mods, 'sn' => utf8Encode($characterSet,$tmp) );
+ }
+ 
+ my $cn;
+@@ -340,7 +351,7 @@
+     $cn = "$Options{'N'}";
+     $cn .= " " . $Options{'S'}
+       unless ( $Options{'S'} eq $Options{'N'} and $Options{'N'} eq $user );
+-    my $push_val = utf8Encode($cn);
++    my $push_val = utf8Encode($characterSet,$cn);
+     push( @mods, 'cn' => $push_val );
+ 
+     # set displayName for Samba account
+@@ -841,12 +852,12 @@
+ # Then assume it has been set correctly with -N and -S before.
+     push( @mods, "cn" => $new_user )
+       unless ( $user_entry->get_value("cn")
+-        and $user_entry->get_value("cn") ne utf8Encode($user)
++        and $user_entry->get_value("cn") ne utf8Encode($characterSet,$user)
+         or $Options{'N'} and $Options{'S'} );
+     push( @mods, "displayName" => $new_user )
+       unless ( not $samba
+         or $user_entry->get_value("displayName")
+-        and $user_entry->get_value("displayName") ne utf8Encode($user)
++        and $user_entry->get_value("displayName") ne utf8Encode($characterSet,$user)
+         or $Options{'N'} and $Options{'S'} );
+ 
+     if ( @mods > 0 ) {    # only change if there is something to change

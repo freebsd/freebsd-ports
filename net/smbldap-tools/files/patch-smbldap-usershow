@@ -1,0 +1,44 @@
+--- smbldap-usershow.orig	2008-04-22 10:13:29.000000000 +0200
++++ smbldap-usershow	2010-10-05 12:06:07.679718377 +0200
+@@ -31,12 +31,13 @@
+ use Getopt::Std;
+ my %Options;
+ 
+-my $ok = getopts('?h',\%Options);
++my $ok = getopts('?hX:',\%Options);
+ 
+ if ( (!$ok) || (@ARGV < 1) || ($Options{'?'}) ) {
+     print_banner;
+     print "Usage: $0 [-h?] username\n";
+     print "  -h	print Samba dates in human-readable form\n";
++    print "  -X	output character set (default UTF-8)\n";
+     print "  -?	show this help message\n";
+     exit (1);
+ }
+@@ -44,6 +45,14 @@
+ # Read only first @ARGV
+ my $user = $ARGV[0];
+ 
++# Get the input encoding
++my $characterSet;
++if ( defined( $Options{'X'} ) ) {
++	$characterSet = $Options{'X'};
++} else {
++	$characterSet = "UTF-8";
++}
++
+ my $nscd_status = system "/etc/init.d/nscd status >/dev/null 2>&1";
+ if ($nscd_status == 0) {
+     system "/etc/init.d/nscd restart > /dev/null 2>&1";
+@@ -53,9 +62,9 @@
+ 
+ my $lines;
+ if ($Options{'h'}) {
+-	$lines = utf8Decode(read_user_human_readable($user));
++	$lines = utf8Decode($characterSet,read_user_human_readable($user));
+ } else {
+-	$lines = utf8Decode(read_user($user));
++	$lines = utf8Decode($characterSet,read_user($user));
+ }
+ 
+ if ($lines) {
