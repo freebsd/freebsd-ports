@@ -1,8 +1,8 @@
 bin/jovie
+lib/kde4/jovie_stringreplacerplugin.so
+lib/kde4/jovie_talkerchooserplugin.so
+lib/kde4/jovie_xmltransformerplugin.so
 lib/kde4/kcm_kttsd.so
-lib/kde4/libjovie_stringreplacerplugin.so
-lib/kde4/libjovie_talkerchooserplugin.so
-lib/kde4/libjovie_xmltransformerplugin.so
 lib/libkttsd.so
 lib/libkttsd.so.5
 lib/libkttsd.so.5.0.1

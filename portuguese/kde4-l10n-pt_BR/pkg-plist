@@ -265,10 +265,6 @@ share/doc/HTML/pt_BR/kcalc/commands.docbook
 share/doc/HTML/pt_BR/kcalc/common
 share/doc/HTML/pt_BR/kcalc/index.cache.bz2
 share/doc/HTML/pt_BR/kcalc/index.docbook
-share/doc/HTML/pt_BR/kcharselect/common
-share/doc/HTML/pt_BR/kcharselect/index.cache.bz2
-share/doc/HTML/pt_BR/kcharselect/index.docbook
-share/doc/HTML/pt_BR/kcharselect/kcharselect.png
 share/doc/HTML/pt_BR/kcontrol/attica/common
 share/doc/HTML/pt_BR/kcontrol/attica/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/attica/index.docbook
@@ -485,13 +481,13 @@ share/doc/HTML/pt_BR/kdepasswd/common
 share/doc/HTML/pt_BR/kdepasswd/index.cache.bz2
 share/doc/HTML/pt_BR/kdepasswd/index.docbook
 share/doc/HTML/pt_BR/kdepasswd/password.png
+share/doc/HTML/pt_BR/kdesrc-build/common
+share/doc/HTML/pt_BR/kdesrc-build/index.cache.bz2
+share/doc/HTML/pt_BR/kdesrc-build/index.docbook
 share/doc/HTML/pt_BR/kdesu/common
 share/doc/HTML/pt_BR/kdesu/index.cache.bz2
 share/doc/HTML/pt_BR/kdesu/index.docbook
 share/doc/HTML/pt_BR/kdesu/man-kdesu.1.docbook
-share/doc/HTML/pt_BR/kdesvn-build/common
-share/doc/HTML/pt_BR/kdesvn-build/index.cache.bz2
-share/doc/HTML/pt_BR/kdesvn-build/index.docbook
 share/doc/HTML/pt_BR/kdf/common
 share/doc/HTML/pt_BR/kdf/index.cache.bz2
 share/doc/HTML/pt_BR/kdf/index.docbook
@@ -1078,9 +1074,6 @@ share/doc/HTML/pt_BR/okular/configure.png
 share/doc/HTML/pt_BR/okular/embedded-files-bar.png
 share/doc/HTML/pt_BR/okular/index.cache.bz2
 share/doc/HTML/pt_BR/okular/index.docbook
-share/doc/HTML/pt_BR/onlinehelp/common
-share/doc/HTML/pt_BR/onlinehelp/index.cache.bz2
-share/doc/HTML/pt_BR/onlinehelp/index.docbook
 share/doc/HTML/pt_BR/palapeli/common
 share/doc/HTML/pt_BR/palapeli/index.cache.bz2
 share/doc/HTML/pt_BR/palapeli/index.docbook
@@ -1738,7 +1731,6 @@ share/locale/pt_BR/entry.desktop
 @dirrm share/doc/HTML/pt_BR/plasma-desktop
 @dirrm share/doc/HTML/pt_BR/parley
 @dirrm share/doc/HTML/pt_BR/palapeli
-@dirrm share/doc/HTML/pt_BR/onlinehelp
 @dirrm share/doc/HTML/pt_BR/okular
 @dirrm share/doc/HTML/pt_BR/okteta
 @dirrm share/doc/HTML/pt_BR/marble
@@ -1852,8 +1844,8 @@ share/locale/pt_BR/entry.desktop
 @dirrm share/doc/HTML/pt_BR/kdm
 @dirrm share/doc/HTML/pt_BR/kdiamond
 @dirrm share/doc/HTML/pt_BR/kdf
-@dirrm share/doc/HTML/pt_BR/kdesvn-build
 @dirrm share/doc/HTML/pt_BR/kdesu
+@dirrm share/doc/HTML/pt_BR/kdesrc-build
 @dirrm share/doc/HTML/pt_BR/kdepasswd
 @dirrm share/doc/HTML/pt_BR/kdebugdialog
 @dirrm share/doc/HTML/pt_BR/kcron
@@ -1925,7 +1917,6 @@ share/locale/pt_BR/entry.desktop
 @dirrm share/doc/HTML/pt_BR/kcontrol/autostart
 @dirrm share/doc/HTML/pt_BR/kcontrol/attica
 @dirrm share/doc/HTML/pt_BR/kcontrol
-@dirrm share/doc/HTML/pt_BR/kcharselect
 @dirrm share/doc/HTML/pt_BR/kcalc
 @dirrm share/doc/HTML/pt_BR/kcachegrind
 @dirrm share/doc/HTML/pt_BR/kbugbuster

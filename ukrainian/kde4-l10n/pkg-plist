@@ -623,13 +623,13 @@ share/doc/HTML/uk/kdebugdialog/index.docbook
 share/doc/HTML/uk/kdepasswd/common
 share/doc/HTML/uk/kdepasswd/index.cache.bz2
 share/doc/HTML/uk/kdepasswd/index.docbook
+share/doc/HTML/uk/kdesrc-build/common
+share/doc/HTML/uk/kdesrc-build/index.cache.bz2
+share/doc/HTML/uk/kdesrc-build/index.docbook
 share/doc/HTML/uk/kdesu/common
 share/doc/HTML/uk/kdesu/index.cache.bz2
 share/doc/HTML/uk/kdesu/index.docbook
 share/doc/HTML/uk/kdesu/man-kdesu.1.docbook
-share/doc/HTML/uk/kdesvn-build/common
-share/doc/HTML/uk/kdesvn-build/index.cache.bz2
-share/doc/HTML/uk/kdesvn-build/index.docbook
 share/doc/HTML/uk/kdf/common
 share/doc/HTML/uk/kdf/index.cache.bz2
 share/doc/HTML/uk/kdf/index.docbook
@@ -714,6 +714,9 @@ share/doc/HTML/uk/khangman/settings-general.png
 share/doc/HTML/uk/khangman/settings-languages.png
 share/doc/HTML/uk/khangman/settings-timers.png
 share/doc/HTML/uk/khelpcenter/common
+share/doc/HTML/uk/khelpcenter/documentationnotfound/common
+share/doc/HTML/uk/khelpcenter/documentationnotfound/index.cache.bz2
+share/doc/HTML/uk/khelpcenter/documentationnotfound/index.docbook
 share/doc/HTML/uk/khelpcenter/glossary/common
 share/doc/HTML/uk/khelpcenter/glossary/index.cache.bz2
 share/doc/HTML/uk/khelpcenter/glossary/index.docbook
@@ -1028,6 +1031,7 @@ share/doc/HTML/uk/krfb/index.docbook
 share/doc/HTML/uk/kruler/common
 share/doc/HTML/uk/kruler/index.cache.bz2
 share/doc/HTML/uk/kruler/index.docbook
+share/doc/HTML/uk/kruler/kruler-settings.png
 share/doc/HTML/uk/ksame/common
 share/doc/HTML/uk/ksame/index.cache.bz2
 share/doc/HTML/uk/ksame/index.docbook
@@ -2000,6 +2004,7 @@ share/locale/uk/entry.desktop
 @dirrm share/doc/HTML/uk/kigo
 @dirrm share/doc/HTML/uk/kig
 @dirrm share/doc/HTML/uk/khelpcenter/glossary
+@dirrm share/doc/HTML/uk/khelpcenter/documentationnotfound
 @dirrm share/doc/HTML/uk/khelpcenter
 @dirrm share/doc/HTML/uk/khangman
 @dirrm share/doc/HTML/uk/kgpg
@@ -2014,8 +2019,8 @@ share/locale/uk/entry.desktop
 @dirrm share/doc/HTML/uk/kdm
 @dirrm share/doc/HTML/uk/kdiamond
 @dirrm share/doc/HTML/uk/kdf
-@dirrm share/doc/HTML/uk/kdesvn-build
 @dirrm share/doc/HTML/uk/kdesu
+@dirrm share/doc/HTML/uk/kdesrc-build
 @dirrm share/doc/HTML/uk/kdepasswd
 @dirrm share/doc/HTML/uk/kdebugdialog
 @dirrm share/doc/HTML/uk/kcron

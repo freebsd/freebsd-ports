@@ -62,6 +62,9 @@ share/doc/HTML/pt/common/lgpl-translated.html
 share/doc/HTML/pt/dolphin/common
 share/doc/HTML/pt/dolphin/index.cache.bz2
 share/doc/HTML/pt/dolphin/index.docbook
+share/doc/HTML/pt/dragonplayer/common
+share/doc/HTML/pt/dragonplayer/index.cache.bz2
+share/doc/HTML/pt/dragonplayer/index.docbook
 share/doc/HTML/pt/granatier/common
 share/doc/HTML/pt/granatier/index.cache.bz2
 share/doc/HTML/pt/granatier/index.docbook
@@ -78,6 +81,9 @@ share/doc/HTML/pt/jovie/index.docbook
 share/doc/HTML/pt/juk/common
 share/doc/HTML/pt/juk/index.cache.bz2
 share/doc/HTML/pt/juk/index.docbook
+share/doc/HTML/pt/kajongg/common
+share/doc/HTML/pt/kajongg/index.cache.bz2
+share/doc/HTML/pt/kajongg/index.docbook
 share/doc/HTML/pt/kalgebra/common
 share/doc/HTML/pt/kalgebra/index.cache.bz2
 share/doc/HTML/pt/kalgebra/index.docbook
@@ -94,6 +100,19 @@ share/doc/HTML/pt/kapman/index.docbook
 share/doc/HTML/pt/kapptemplate/common
 share/doc/HTML/pt/kapptemplate/index.cache.bz2
 share/doc/HTML/pt/kapptemplate/index.docbook
+share/doc/HTML/pt/kate/advanced.docbook
+share/doc/HTML/pt/kate/common
+share/doc/HTML/pt/kate/configuring.docbook
+share/doc/HTML/pt/kate/fundamentals.docbook
+share/doc/HTML/pt/kate/highlighting.docbook
+share/doc/HTML/pt/kate/index.cache.bz2
+share/doc/HTML/pt/kate/index.docbook
+share/doc/HTML/pt/kate/man-kate.1.docbook
+share/doc/HTML/pt/kate/mdi.docbook
+share/doc/HTML/pt/kate/menus.docbook
+share/doc/HTML/pt/kate/part.docbook
+share/doc/HTML/pt/kate/plugins.docbook
+share/doc/HTML/pt/kate/regular-expressions.docbook
 share/doc/HTML/pt/katomic/common
 share/doc/HTML/pt/katomic/index.cache.bz2
 share/doc/HTML/pt/katomic/index.docbook
@@ -147,6 +166,9 @@ share/doc/HTML/pt/kcontrol/bookmarks/index.docbook
 share/doc/HTML/pt/kcontrol/cache/common
 share/doc/HTML/pt/kcontrol/cache/index.cache.bz2
 share/doc/HTML/pt/kcontrol/cache/index.docbook
+share/doc/HTML/pt/kcontrol/cddbretrieval/common
+share/doc/HTML/pt/kcontrol/cddbretrieval/index.cache.bz2
+share/doc/HTML/pt/kcontrol/cddbretrieval/index.docbook
 share/doc/HTML/pt/kcontrol/clock/common
 share/doc/HTML/pt/kcontrol/clock/index.cache.bz2
 share/doc/HTML/pt/kcontrol/clock/index.docbook
@@ -341,13 +363,13 @@ share/doc/HTML/pt/kdebugdialog/index.docbook
 share/doc/HTML/pt/kdepasswd/common
 share/doc/HTML/pt/kdepasswd/index.cache.bz2
 share/doc/HTML/pt/kdepasswd/index.docbook
+share/doc/HTML/pt/kdesrc-build/common
+share/doc/HTML/pt/kdesrc-build/index.cache.bz2
+share/doc/HTML/pt/kdesrc-build/index.docbook
 share/doc/HTML/pt/kdesu/common
 share/doc/HTML/pt/kdesu/index.cache.bz2
 share/doc/HTML/pt/kdesu/index.docbook
 share/doc/HTML/pt/kdesu/man-kdesu.1.docbook
-share/doc/HTML/pt/kdesvn-build/common
-share/doc/HTML/pt/kdesvn-build/index.cache.bz2
-share/doc/HTML/pt/kdesvn-build/index.docbook
 share/doc/HTML/pt/kdf/common
 share/doc/HTML/pt/kdf/index.cache.bz2
 share/doc/HTML/pt/kdf/index.docbook
@@ -777,6 +799,14 @@ share/doc/HTML/pt/ktuberling/common
 share/doc/HTML/pt/ktuberling/index.cache.bz2
 share/doc/HTML/pt/ktuberling/index.docbook
 share/doc/HTML/pt/ktuberling/technical-reference.docbook
+share/doc/HTML/pt/kturtle/common
+share/doc/HTML/pt/kturtle/getting-started.docbook
+share/doc/HTML/pt/kturtle/glossary.docbook
+share/doc/HTML/pt/kturtle/index.cache.bz2
+share/doc/HTML/pt/kturtle/index.docbook
+share/doc/HTML/pt/kturtle/programming-reference.docbook
+share/doc/HTML/pt/kturtle/translator-guide.docbook
+share/doc/HTML/pt/kturtle/using-kturtle.docbook
 share/doc/HTML/pt/kubrick/common
 share/doc/HTML/pt/kubrick/index.cache.bz2
 share/doc/HTML/pt/kubrick/index.docbook
@@ -1455,6 +1485,7 @@ share/locale/pt/entry.desktop
 @dirrm share/doc/HTML/pt/kwallet
 @dirrm share/doc/HTML/pt/kuser
 @dirrm share/doc/HTML/pt/kubrick
+@dirrm share/doc/HTML/pt/kturtle
 @dirrm share/doc/HTML/pt/ktuberling
 @dirrm share/doc/HTML/pt/ktron
 @dirrm share/doc/HTML/pt/ktouch
@@ -1557,8 +1588,8 @@ share/locale/pt/entry.desktop
 @dirrm share/doc/HTML/pt/kdm
 @dirrm share/doc/HTML/pt/kdiamond
 @dirrm share/doc/HTML/pt/kdf
-@dirrm share/doc/HTML/pt/kdesvn-build
 @dirrm share/doc/HTML/pt/kdesu
+@dirrm share/doc/HTML/pt/kdesrc-build
 @dirrm share/doc/HTML/pt/kdepasswd
 @dirrm share/doc/HTML/pt/kdebugdialog
 @dirrm share/doc/HTML/pt/kcron
@@ -1622,6 +1653,7 @@ share/locale/pt/entry.desktop
 @dirrm share/doc/HTML/pt/kcontrol/componentchooser
 @dirrm share/doc/HTML/pt/kcontrol/colors
 @dirrm share/doc/HTML/pt/kcontrol/clock
+@dirrm share/doc/HTML/pt/kcontrol/cddbretrieval
 @dirrm share/doc/HTML/pt/kcontrol/cache
 @dirrm share/doc/HTML/pt/kcontrol/bookmarks
 @dirrm share/doc/HTML/pt/kcontrol/blockdevices
@@ -1640,15 +1672,18 @@ share/locale/pt/entry.desktop
 @dirrm share/doc/HTML/pt/kblackbox
 @dirrm share/doc/HTML/pt/kbattleship
 @dirrm share/doc/HTML/pt/katomic
+@dirrm share/doc/HTML/pt/kate
 @dirrm share/doc/HTML/pt/kapptemplate
 @dirrm share/doc/HTML/pt/kapman
 @dirrm share/doc/HTML/pt/kanagram
 @dirrm share/doc/HTML/pt/kalzium
 @dirrm share/doc/HTML/pt/kalgebra
+@dirrm share/doc/HTML/pt/kajongg
 @dirrm share/doc/HTML/pt/juk
 @dirrm share/doc/HTML/pt/jovie
 @dirrm share/doc/HTML/pt/gwenview
 @dirrm share/doc/HTML/pt/granatier
+@dirrm share/doc/HTML/pt/dragonplayer
 @dirrm share/doc/HTML/pt/dolphin
 @dirrm share/doc/HTML/pt/common
 @dirrm share/doc/HTML/pt/cervisia

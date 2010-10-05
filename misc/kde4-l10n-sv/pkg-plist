@@ -471,13 +471,13 @@ share/doc/HTML/sv/kdepasswd/common
 share/doc/HTML/sv/kdepasswd/index.cache.bz2
 share/doc/HTML/sv/kdepasswd/index.docbook
 share/doc/HTML/sv/kdepasswd/password.png
+share/doc/HTML/sv/kdesrc-build/common
+share/doc/HTML/sv/kdesrc-build/index.cache.bz2
+share/doc/HTML/sv/kdesrc-build/index.docbook
 share/doc/HTML/sv/kdesu/common
 share/doc/HTML/sv/kdesu/index.cache.bz2
 share/doc/HTML/sv/kdesu/index.docbook
 share/doc/HTML/sv/kdesu/man-kdesu.1.docbook
-share/doc/HTML/sv/kdesvn-build/common
-share/doc/HTML/sv/kdesvn-build/index.cache.bz2
-share/doc/HTML/sv/kdesvn-build/index.docbook
 share/doc/HTML/sv/kdf/common
 share/doc/HTML/sv/kdf/index.cache.bz2
 share/doc/HTML/sv/kdf/index.docbook
@@ -560,6 +560,9 @@ share/doc/HTML/sv/khangman/index.cache.bz2
 share/doc/HTML/sv/khangman/index.docbook
 share/doc/HTML/sv/khangman/man-khangman.6.docbook
 share/doc/HTML/sv/khelpcenter/common
+share/doc/HTML/sv/khelpcenter/documentationnotfound/common
+share/doc/HTML/sv/khelpcenter/documentationnotfound/index.cache.bz2
+share/doc/HTML/sv/khelpcenter/documentationnotfound/index.docbook
 share/doc/HTML/sv/khelpcenter/glossary/common
 share/doc/HTML/sv/khelpcenter/glossary/index.cache.bz2
 share/doc/HTML/sv/khelpcenter/glossary/index.docbook
@@ -1952,6 +1955,7 @@ share/locale/sv/entry.desktop
 @dirrm share/doc/HTML/sv/kigo
 @dirrm share/doc/HTML/sv/kig
 @dirrm share/doc/HTML/sv/khelpcenter/glossary
+@dirrm share/doc/HTML/sv/khelpcenter/documentationnotfound
 @dirrm share/doc/HTML/sv/khelpcenter
 @dirrm share/doc/HTML/sv/khangman
 @dirrm share/doc/HTML/sv/kgpg
@@ -1966,8 +1970,8 @@ share/locale/sv/entry.desktop
 @dirrm share/doc/HTML/sv/kdm
 @dirrm share/doc/HTML/sv/kdiamond
 @dirrm share/doc/HTML/sv/kdf
-@dirrm share/doc/HTML/sv/kdesvn-build
 @dirrm share/doc/HTML/sv/kdesu
+@dirrm share/doc/HTML/sv/kdesrc-build
 @dirrm share/doc/HTML/sv/kdepasswd
 @dirrm share/doc/HTML/sv/kdebugdialog
 @dirrm share/doc/HTML/sv/kcron

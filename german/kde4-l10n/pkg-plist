@@ -270,6 +270,7 @@ share/doc/HTML/de/kajongg/index.docbook
 share/doc/HTML/de/kalgebra/common
 share/doc/HTML/de/kalgebra/index.cache.bz2
 share/doc/HTML/de/kalgebra/index.docbook
+share/doc/HTML/de/kalgebra/kalgebra-main-window.png
 share/doc/HTML/de/kalzium/common
 share/doc/HTML/de/kalzium/gradient.png
 share/doc/HTML/de/kalzium/index.cache.bz2
@@ -624,6 +625,9 @@ share/doc/HTML/de/kdepasswd/common
 share/doc/HTML/de/kdepasswd/index.cache.bz2
 share/doc/HTML/de/kdepasswd/index.docbook
 share/doc/HTML/de/kdepasswd/password.png
+share/doc/HTML/de/kdesrc-build/common
+share/doc/HTML/de/kdesrc-build/index.cache.bz2
+share/doc/HTML/de/kdesrc-build/index.docbook
 share/doc/HTML/de/kdesu/common
 share/doc/HTML/de/kdesu/index.cache.bz2
 share/doc/HTML/de/kdesu/index.docbook
@@ -729,6 +733,7 @@ share/doc/HTML/de/kgpg/keyprop.png
 share/doc/HTML/de/kgpg/keys.png
 share/doc/HTML/de/kgpg/keyserver.png
 share/doc/HTML/de/kgpg/options.png
+share/doc/HTML/de/kgpg/select-secret-key.png
 share/doc/HTML/de/khangman/common
 share/doc/HTML/de/khangman/getnewstuff.png
 share/doc/HTML/de/khangman/index.cache.bz2
@@ -740,6 +745,9 @@ share/doc/HTML/de/khangman/settings-general.png
 share/doc/HTML/de/khangman/settings-languages.png
 share/doc/HTML/de/khangman/settings-timers.png
 share/doc/HTML/de/khelpcenter/common
+share/doc/HTML/de/khelpcenter/documentationnotfound/common
+share/doc/HTML/de/khelpcenter/documentationnotfound/index.cache.bz2
+share/doc/HTML/de/khelpcenter/documentationnotfound/index.docbook
 share/doc/HTML/de/khelpcenter/glossary/common
 share/doc/HTML/de/khelpcenter/glossary/index.cache.bz2
 share/doc/HTML/de/khelpcenter/glossary/index.docbook
@@ -1100,6 +1108,7 @@ share/doc/HTML/de/kppp/wizard.docbook
 share/doc/HTML/de/krdc/address_input.png
 share/doc/HTML/de/krdc/bookmarks_menu.png
 share/doc/HTML/de/krdc/common
+share/doc/HTML/de/krdc/general_preferences.png
 share/doc/HTML/de/krdc/index.cache.bz2
 share/doc/HTML/de/krdc/index.docbook
 share/doc/HTML/de/krdc/krdc_mainwindow.png
@@ -1112,8 +1121,14 @@ share/doc/HTML/de/kreversi/index.cache.bz2
 share/doc/HTML/de/kreversi/index.docbook
 share/doc/HTML/de/kreversi/kreversi1.png
 share/doc/HTML/de/krfb/common
+share/doc/HTML/de/krfb/configuration_network.png
+share/doc/HTML/de/krfb/configuration_security.png
+share/doc/HTML/de/krfb/connection.png
+share/doc/HTML/de/krfb/email_invitation.png
 share/doc/HTML/de/krfb/index.cache.bz2
 share/doc/HTML/de/krfb/index.docbook
+share/doc/HTML/de/krfb/personal_invitation.png
+share/doc/HTML/de/krfb/screenshot.png
 share/doc/HTML/de/kruler/common
 share/doc/HTML/de/kruler/index.cache.bz2
 share/doc/HTML/de/kruler/index.docbook
@@ -1258,12 +1273,24 @@ share/doc/HTML/de/kteatime/config.png
 share/doc/HTML/de/kteatime/index.cache.bz2
 share/doc/HTML/de/kteatime/index.docbook
 share/doc/HTML/de/ktimer/common
+share/doc/HTML/de/ktimer/first.png
 share/doc/HTML/de/ktimer/index.cache.bz2
 share/doc/HTML/de/ktimer/index.docbook
+share/doc/HTML/de/ktimer/main.png
+share/doc/HTML/de/ktimer/running.png
+share/doc/HTML/de/ktimer/two.at.once.png
+share/doc/HTML/de/ktouch/color_options.png
 share/doc/HTML/de/ktouch/common
+share/doc/HTML/de/ktouch/general_options.png
 share/doc/HTML/de/ktouch/index.cache.bz2
 share/doc/HTML/de/ktouch/index.docbook
+share/doc/HTML/de/ktouch/keyboard_options.png
+share/doc/HTML/de/ktouch/main_screen_default_color.png
+share/doc/HTML/de/ktouch/main_window_german.png
 share/doc/HTML/de/ktouch/man-ktouch.1.docbook
+share/doc/HTML/de/ktouch/statistics_dialog.png
+share/doc/HTML/de/ktouch/statistics_dialog_chart.png
+share/doc/HTML/de/ktouch/training_options.png
 share/doc/HTML/de/ktron/common
 share/doc/HTML/de/ktron/index.cache.bz2
 share/doc/HTML/de/ktron/index.docbook
@@ -1302,14 +1329,22 @@ share/doc/HTML/de/kuser/index.cache.bz2
 share/doc/HTML/de/kuser/index.docbook
 share/doc/HTML/de/kuser/kuser.png
 share/doc/HTML/de/kwallet/common
+share/doc/HTML/de/kwallet/edit1.png
+share/doc/HTML/de/kwallet/edit2.png
+share/doc/HTML/de/kwallet/first-open-request.png
 share/doc/HTML/de/kwallet/index.cache.bz2
 share/doc/HTML/de/kwallet/index.docbook
+share/doc/HTML/de/kwallet/kwalletmanager.png
+share/doc/HTML/de/kwallet/openwallet-request.png
+share/doc/HTML/de/kwallet/save-login-information.png
 share/doc/HTML/de/kwordquiz/common
 share/doc/HTML/de/kwordquiz/index.cache.bz2
 share/doc/HTML/de/kwordquiz/index.docbook
 share/doc/HTML/de/kwordquiz/kwq-dlg-characters.png
+share/doc/HTML/de/kwordquiz/kwq-dlg-configure-appearance.png
 share/doc/HTML/de/kwordquiz/kwq-dlg-configure-characters.png
 share/doc/HTML/de/kwordquiz/kwq-dlg-configure-editor.png
+share/doc/HTML/de/kwordquiz/kwq-dlg-configure-general.png
 share/doc/HTML/de/kwordquiz/kwq-dlg-configure-quiz.png
 share/doc/HTML/de/kwordquiz/kwq-dlg-languages.png
 share/doc/HTML/de/kwordquiz/kwq-dlg-print-exam.png
@@ -1331,8 +1366,22 @@ share/doc/HTML/de/lskat/common
 share/doc/HTML/de/lskat/index.cache.bz2
 share/doc/HTML/de/lskat/index.docbook
 share/doc/HTML/de/marble/common
+share/doc/HTML/de/marble/configure-cacheproxy.png
+share/doc/HTML/de/marble/configure-navigation.png
+share/doc/HTML/de/marble/configure-plugins.png
+share/doc/HTML/de/marble/configure-view.png
+share/doc/HTML/de/marble/download-region-3.png
 share/doc/HTML/de/marble/index.cache.bz2
 share/doc/HTML/de/marble/index.docbook
+share/doc/HTML/de/marble/mapview-1.png
+share/doc/HTML/de/marble/measure-1.png
+share/doc/HTML/de/marble/quick-1.png
+share/doc/HTML/de/marble/routing-1.png
+share/doc/HTML/de/marble/routing-2.png
+share/doc/HTML/de/marble/routing-3.png
+share/doc/HTML/de/marble/routing-4.png
+share/doc/HTML/de/marble/search-1.png
+share/doc/HTML/de/marble/search-2.png
 share/doc/HTML/de/okteta/common
 share/doc/HTML/de/okteta/index.cache.bz2
 share/doc/HTML/de/okteta/index.docbook
@@ -1365,6 +1414,7 @@ share/doc/HTML/de/step/common
 share/doc/HTML/de/step/examples.docbook
 share/doc/HTML/de/step/index.cache.bz2
 share/doc/HTML/de/step/index.docbook
+share/doc/HTML/de/step/mainwindow.png
 share/doc/HTML/de/step/tutorials.docbook
 share/doc/HTML/de/sweeper/common
 share/doc/HTML/de/sweeper/index.cache.bz2
@@ -2099,6 +2149,7 @@ share/locale/de/entry.desktop
 @dirrm share/doc/HTML/de/kigo
 @dirrm share/doc/HTML/de/kig
 @dirrm share/doc/HTML/de/khelpcenter/glossary
+@dirrm share/doc/HTML/de/khelpcenter/documentationnotfound
 @dirrm share/doc/HTML/de/khelpcenter
 @dirrm share/doc/HTML/de/khangman
 @dirrm share/doc/HTML/de/kgpg
@@ -2114,6 +2165,7 @@ share/locale/de/entry.desktop
 @dirrm share/doc/HTML/de/kdiamond
 @dirrm share/doc/HTML/de/kdf
 @dirrm share/doc/HTML/de/kdesu
+@dirrm share/doc/HTML/de/kdesrc-build
 @dirrm share/doc/HTML/de/kdepasswd
 @dirrm share/doc/HTML/de/kdebugdialog
 @dirrm share/doc/HTML/de/kcron

@@ -93,6 +93,36 @@ share/doc/HTML/hu/common/fdl-translated.html
 share/doc/HTML/hu/common/gpl-translated.html
 share/doc/HTML/hu/common/kde-localised.css
 share/doc/HTML/hu/common/lgpl-translated.html
+share/doc/HTML/hu/kioslave/file/common
+share/doc/HTML/hu/kioslave/file/index.cache.bz2
+share/doc/HTML/hu/kioslave/file/index.docbook
+share/doc/HTML/hu/kioslave/ftp/common
+share/doc/HTML/hu/kioslave/ftp/index.cache.bz2
+share/doc/HTML/hu/kioslave/ftp/index.docbook
+share/doc/HTML/hu/kioslave/ldap/common
+share/doc/HTML/hu/kioslave/ldap/index.cache.bz2
+share/doc/HTML/hu/kioslave/ldap/index.docbook
+share/doc/HTML/hu/kioslave/mailto/common
+share/doc/HTML/hu/kioslave/mailto/index.cache.bz2
+share/doc/HTML/hu/kioslave/mailto/index.docbook
+share/doc/HTML/hu/kioslave/nfs/common
+share/doc/HTML/hu/kioslave/nfs/index.cache.bz2
+share/doc/HTML/hu/kioslave/nfs/index.docbook
+share/doc/HTML/hu/kioslave/nntp/common
+share/doc/HTML/hu/kioslave/nntp/index.cache.bz2
+share/doc/HTML/hu/kioslave/nntp/index.docbook
+share/doc/HTML/hu/kioslave/rlogin/common
+share/doc/HTML/hu/kioslave/rlogin/index.cache.bz2
+share/doc/HTML/hu/kioslave/rlogin/index.docbook
+share/doc/HTML/hu/kioslave/sftp/common
+share/doc/HTML/hu/kioslave/sftp/index.cache.bz2
+share/doc/HTML/hu/kioslave/sftp/index.docbook
+share/doc/HTML/hu/kioslave/tar/common
+share/doc/HTML/hu/kioslave/tar/index.cache.bz2
+share/doc/HTML/hu/kioslave/tar/index.docbook
+share/doc/HTML/hu/kioslave/telnet/common
+share/doc/HTML/hu/kioslave/telnet/index.cache.bz2
+share/doc/HTML/hu/kioslave/telnet/index.docbook
 share/doc/HTML/hu/kteatime/common
 share/doc/HTML/hu/kteatime/index.cache.bz2
 share/doc/HTML/hu/kteatime/index.docbook
@@ -537,6 +567,7 @@ share/locale/hu/LC_MESSAGES/plasma_applet_netpanel.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_news.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_newspaper.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_notes.mo
+share/locale/hu/LC_MESSAGES/plasma_applet_notifications.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_nowplaying.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_opendesktop.mo
@@ -660,6 +691,17 @@ share/locale/hu/LC_MESSAGES/useraccount.mo
 share/locale/hu/LC_MESSAGES/xml_mimetypes.mo
 share/locale/hu/entry.desktop
 @dirrm share/doc/HTML/hu/kteatime
+@dirrm share/doc/HTML/hu/kioslave/telnet
+@dirrm share/doc/HTML/hu/kioslave/tar
+@dirrm share/doc/HTML/hu/kioslave/sftp
+@dirrm share/doc/HTML/hu/kioslave/rlogin
+@dirrm share/doc/HTML/hu/kioslave/nntp
+@dirrm share/doc/HTML/hu/kioslave/nfs
+@dirrm share/doc/HTML/hu/kioslave/mailto
+@dirrm share/doc/HTML/hu/kioslave/ldap
+@dirrm share/doc/HTML/hu/kioslave/ftp
+@dirrm share/doc/HTML/hu/kioslave/file
+@dirrm share/doc/HTML/hu/kioslave
 @dirrm share/doc/HTML/hu/common
 @dirrm share/doc/HTML/hu/amor
 @dirrm share/apps/kvtml/hu

@@ -73,270 +73,56 @@ share/apps/kvtml/en_GB/sport.kvtml
 share/apps/kvtml/en_GB/transportation.kvtml
 share/apps/kvtml/en_GB/vegetables.kvtml
 share/apps/kvtml/en_GB/worldcapitals.kvtml
-share/doc/HTML/en_GB/cervisia/common
-share/doc/HTML/en_GB/cervisia/index.cache.bz2
-share/doc/HTML/en_GB/cervisia/index.docbook
 share/doc/HTML/en_GB/common/fdl-translated.html
 share/doc/HTML/en_GB/common/gpl-translated.html
 share/doc/HTML/en_GB/common/kde-localised.css
 share/doc/HTML/en_GB/common/lgpl-translated.html
-share/doc/HTML/en_GB/dma/common
-share/doc/HTML/en_GB/dma/index.cache.bz2
-share/doc/HTML/en_GB/dma/index.docbook
-share/doc/HTML/en_GB/faq/about.docbook
-share/doc/HTML/en_GB/faq/common
-share/doc/HTML/en_GB/faq/configkde.docbook
-share/doc/HTML/en_GB/faq/contrib.docbook
-share/doc/HTML/en_GB/faq/desktop.docbook
-share/doc/HTML/en_GB/faq/filemng.docbook
-share/doc/HTML/en_GB/faq/getkde.docbook
-share/doc/HTML/en_GB/faq/index.cache.bz2
-share/doc/HTML/en_GB/faq/index.docbook
-share/doc/HTML/en_GB/faq/install.docbook
-share/doc/HTML/en_GB/faq/intro.docbook
-share/doc/HTML/en_GB/faq/kdeapps.docbook
-share/doc/HTML/en_GB/faq/misc.docbook
-share/doc/HTML/en_GB/faq/moreinfo.docbook
-share/doc/HTML/en_GB/faq/nonkdeapps.docbook
-share/doc/HTML/en_GB/faq/notrelated.docbook
-share/doc/HTML/en_GB/faq/panel.docbook
-share/doc/HTML/en_GB/faq/tips.docbook
-share/doc/HTML/en_GB/faq/winmng.docbook
-share/doc/HTML/en_GB/interrupts/common
-share/doc/HTML/en_GB/interrupts/index.cache.bz2
-share/doc/HTML/en_GB/interrupts/index.docbook
-share/doc/HTML/en_GB/ioports/common
-share/doc/HTML/en_GB/ioports/index.cache.bz2
-share/doc/HTML/en_GB/ioports/index.docbook
 share/doc/HTML/en_GB/kbugbuster/common
 share/doc/HTML/en_GB/kbugbuster/index.cache.bz2
 share/doc/HTML/en_GB/kbugbuster/index.docbook
-share/doc/HTML/en_GB/kcachegrind/common
-share/doc/HTML/en_GB/kcachegrind/index.cache.bz2
-share/doc/HTML/en_GB/kcachegrind/index.docbook
-share/doc/HTML/en_GB/kcontrol/background/common
-share/doc/HTML/en_GB/kcontrol/background/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/background/index.docbook
-share/doc/HTML/en_GB/kcontrol/bell/common
-share/doc/HTML/en_GB/kcontrol/bell/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/bell/index.docbook
-share/doc/HTML/en_GB/kcontrol/cache/common
-share/doc/HTML/en_GB/kcontrol/cache/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/cache/index.docbook
-share/doc/HTML/en_GB/kcontrol/clock/common
-share/doc/HTML/en_GB/kcontrol/clock/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/clock/index.docbook
-share/doc/HTML/en_GB/kcontrol/colors/common
-share/doc/HTML/en_GB/kcontrol/colors/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/colors/index.docbook
-share/doc/HTML/en_GB/kcontrol/cookies/common
-share/doc/HTML/en_GB/kcontrol/cookies/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/cookies/index.docbook
-share/doc/HTML/en_GB/kcontrol/crypto/common
-share/doc/HTML/en_GB/kcontrol/crypto/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/crypto/index.docbook
-share/doc/HTML/en_GB/kcontrol/desktop/common
-share/doc/HTML/en_GB/kcontrol/desktop/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/desktop/index.docbook
-share/doc/HTML/en_GB/kcontrol/desktopbehavior/common
-share/doc/HTML/en_GB/kcontrol/desktopbehavior/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/desktopbehavior/index.docbook
-share/doc/HTML/en_GB/kcontrol/ebrowsing/common
-share/doc/HTML/en_GB/kcontrol/ebrowsing/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/ebrowsing/index.docbook
-share/doc/HTML/en_GB/kcontrol/email/common
-share/doc/HTML/en_GB/kcontrol/email/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/email/index.docbook
-share/doc/HTML/en_GB/kcontrol/energy/common
-share/doc/HTML/en_GB/kcontrol/energy/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/energy/index.docbook
-share/doc/HTML/en_GB/kcontrol/filemanager/common
-share/doc/HTML/en_GB/kcontrol/filemanager/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/filemanager/index.docbook
-share/doc/HTML/en_GB/kcontrol/filetypes/common
-share/doc/HTML/en_GB/kcontrol/filetypes/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/filetypes/index.docbook
-share/doc/HTML/en_GB/kcontrol/fonts/common
-share/doc/HTML/en_GB/kcontrol/fonts/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/fonts/index.docbook
-share/doc/HTML/en_GB/kcontrol/helpindex/common
-share/doc/HTML/en_GB/kcontrol/helpindex/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/helpindex/index.docbook
-share/doc/HTML/en_GB/kcontrol/icons/common
-share/doc/HTML/en_GB/kcontrol/icons/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/icons/index.docbook
-share/doc/HTML/en_GB/kcontrol/kcmaccess/common
-share/doc/HTML/en_GB/kcontrol/kcmaccess/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/kcmaccess/index.docbook
-share/doc/HTML/en_GB/kcontrol/kcmcss/common
-share/doc/HTML/en_GB/kcontrol/kcmcss/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/kcmcss/index.docbook
-share/doc/HTML/en_GB/kcontrol/kcmfontinst/common
-share/doc/HTML/en_GB/kcontrol/kcmfontinst/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/kcmfontinst/index.docbook
-share/doc/HTML/en_GB/kcontrol/kcmkonsole/common
-share/doc/HTML/en_GB/kcontrol/kcmkonsole/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/kcmkonsole/index.docbook
-share/doc/HTML/en_GB/kcontrol/kcmktalkd/common
-share/doc/HTML/en_GB/kcontrol/kcmktalkd/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/kcmktalkd/index.docbook
-share/doc/HTML/en_GB/kcontrol/kcmlaunch/common
-share/doc/HTML/en_GB/kcontrol/kcmlaunch/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/kcmlaunch/index.docbook
-share/doc/HTML/en_GB/kcontrol/kcmnotify/common
-share/doc/HTML/en_GB/kcontrol/kcmnotify/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/kcmnotify/index.docbook
-share/doc/HTML/en_GB/kcontrol/kcmsmserver/common
-share/doc/HTML/en_GB/kcontrol/kcmsmserver/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/kcmsmserver/index.docbook
-share/doc/HTML/en_GB/kcontrol/kcmstyle/common
-share/doc/HTML/en_GB/kcontrol/kcmstyle/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/kcmstyle/index.docbook
-share/doc/HTML/en_GB/kcontrol/kcmtaskbar/common
-share/doc/HTML/en_GB/kcontrol/kcmtaskbar/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/kcmtaskbar/index.docbook
-share/doc/HTML/en_GB/kcontrol/kdm/common
-share/doc/HTML/en_GB/kcontrol/kdm/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/kdm/index.docbook
-share/doc/HTML/en_GB/kcontrol/keyboard/common
-share/doc/HTML/en_GB/kcontrol/keyboard/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/keyboard/index.docbook
-share/doc/HTML/en_GB/kcontrol/keys/common
-share/doc/HTML/en_GB/kcontrol/keys/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/keys/index.docbook
-share/doc/HTML/en_GB/kcontrol/khtml/common
-share/doc/HTML/en_GB/kcontrol/khtml/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/khtml/index.docbook
-share/doc/HTML/en_GB/kcontrol/khtml/nsplugin.docbook
-share/doc/HTML/en_GB/kcontrol/kwindecoration/common
-share/doc/HTML/en_GB/kcontrol/kwindecoration/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/kwindecoration/index.docbook
-share/doc/HTML/en_GB/kcontrol/language/common
-share/doc/HTML/en_GB/kcontrol/language/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/language/index.docbook
-share/doc/HTML/en_GB/kcontrol/mouse/common
-share/doc/HTML/en_GB/kcontrol/mouse/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/mouse/index.docbook
-share/doc/HTML/en_GB/kcontrol/netpref/common
-share/doc/HTML/en_GB/kcontrol/netpref/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/netpref/index.docbook
-share/doc/HTML/en_GB/kcontrol/panel/common
-share/doc/HTML/en_GB/kcontrol/panel/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/panel/index.docbook
-share/doc/HTML/en_GB/kcontrol/panelappearance/common
-share/doc/HTML/en_GB/kcontrol/panelappearance/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/panelappearance/index.docbook
-share/doc/HTML/en_GB/kcontrol/passwords/common
-share/doc/HTML/en_GB/kcontrol/passwords/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/passwords/index.docbook
-share/doc/HTML/en_GB/kcontrol/proxy/common
-share/doc/HTML/en_GB/kcontrol/proxy/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/proxy/index.docbook
-share/doc/HTML/en_GB/kcontrol/proxy/socks.docbook
-share/doc/HTML/en_GB/kcontrol/screensaver/common
-share/doc/HTML/en_GB/kcontrol/screensaver/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/screensaver/index.docbook
-share/doc/HTML/en_GB/kcontrol/smb/common
-share/doc/HTML/en_GB/kcontrol/smb/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/smb/index.docbook
-share/doc/HTML/en_GB/kcontrol/useragent/common
-share/doc/HTML/en_GB/kcontrol/useragent/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/useragent/index.docbook
-share/doc/HTML/en_GB/kcontrol/windowmanagement/common
-share/doc/HTML/en_GB/kcontrol/windowmanagement/index.cache.bz2
-share/doc/HTML/en_GB/kcontrol/windowmanagement/index.docbook
-share/doc/HTML/en_GB/kdebugdialog/common
-share/doc/HTML/en_GB/kdebugdialog/index.cache.bz2
-share/doc/HTML/en_GB/kdebugdialog/index.docbook
-share/doc/HTML/en_GB/kdesu/common
-share/doc/HTML/en_GB/kdesu/index.cache.bz2
-share/doc/HTML/en_GB/kdesu/index.docbook
-share/doc/HTML/en_GB/kdm/common
-share/doc/HTML/en_GB/kdm/index.cache.bz2
-share/doc/HTML/en_GB/kdm/index.docbook
-share/doc/HTML/en_GB/kdm/kdmrc-ref.docbook
-share/doc/HTML/en_GB/kfind/common
-share/doc/HTML/en_GB/kfind/index.cache.bz2
-share/doc/HTML/en_GB/kfind/index.docbook
-share/doc/HTML/en_GB/khelpcenter/common
-share/doc/HTML/en_GB/khelpcenter/contact.docbook
 share/doc/HTML/en_GB/khelpcenter/glossary/common
 share/doc/HTML/en_GB/khelpcenter/glossary/index.cache.bz2
 share/doc/HTML/en_GB/khelpcenter/glossary/index.docbook
 share/doc/HTML/en_GB/khelpcenter/glossary/kdeprintingglossary.docbook
-share/doc/HTML/en_GB/khelpcenter/help.docbook
-share/doc/HTML/en_GB/khelpcenter/index.cache.bz2
-share/doc/HTML/en_GB/khelpcenter/index.docbook
-share/doc/HTML/en_GB/khelpcenter/support.docbook
-share/doc/HTML/en_GB/khelpcenter/welcome.docbook
-share/doc/HTML/en_GB/khelpcenter/whatiskde.docbook
-share/doc/HTML/en_GB/kinfocenter/common
-share/doc/HTML/en_GB/kinfocenter/index.cache.bz2
-share/doc/HTML/en_GB/kinfocenter/index.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/bzip.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/bzip2.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/cgi.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/common
-share/doc/HTML/en_GB/kioslave/kioslave/data.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/file.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/finger.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/fish.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/floppy.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/ftp.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/gopher.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/gzip.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/help.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/http.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/https.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/imap.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/imaps.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/index.cache.bz2
-share/doc/HTML/en_GB/kioslave/kioslave/index.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/info.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/lan.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/ldap.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/mac.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/mailto.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/man.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/mrml.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/news.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/nfs.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/nntp.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/pop3.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/pop3s.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/print.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/rlan.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/rlogin.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/sftp.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/smb.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/smtp.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/tar.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/telnet.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/thumbnail.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/webdav.docbook
-share/doc/HTML/en_GB/kioslave/kioslave/webdavs.docbook
-share/doc/HTML/en_GB/klipper/common
-share/doc/HTML/en_GB/klipper/index.cache.bz2
-share/doc/HTML/en_GB/klipper/index.docbook
-share/doc/HTML/en_GB/kmenuedit/common
-share/doc/HTML/en_GB/kmenuedit/index.cache.bz2
-share/doc/HTML/en_GB/kmenuedit/index.docbook
-share/doc/HTML/en_GB/kmplot/commands.docbook
-share/doc/HTML/en_GB/kmplot/common
-share/doc/HTML/en_GB/kmplot/configuration.docbook
-share/doc/HTML/en_GB/kmplot/credits.docbook
-share/doc/HTML/en_GB/kmplot/developer.docbook
-share/doc/HTML/en_GB/kmplot/firststeps.docbook
-share/doc/HTML/en_GB/kmplot/index.cache.bz2
-share/doc/HTML/en_GB/kmplot/index.docbook
-share/doc/HTML/en_GB/kmplot/install.docbook
-share/doc/HTML/en_GB/kmplot/introduction.docbook
-share/doc/HTML/en_GB/kmplot/menu.docbook
-share/doc/HTML/en_GB/kmplot/reference.docbook
-share/doc/HTML/en_GB/kmplot/using.docbook
-share/doc/HTML/en_GB/kompare/common
-share/doc/HTML/en_GB/kompare/index.cache.bz2
-share/doc/HTML/en_GB/kompare/index.docbook
+share/doc/HTML/en_GB/kioslave/file/common
+share/doc/HTML/en_GB/kioslave/file/index.cache.bz2
+share/doc/HTML/en_GB/kioslave/file/index.docbook
+share/doc/HTML/en_GB/kioslave/finger/common
+share/doc/HTML/en_GB/kioslave/finger/index.cache.bz2
+share/doc/HTML/en_GB/kioslave/finger/index.docbook
+share/doc/HTML/en_GB/kioslave/floppy/common
+share/doc/HTML/en_GB/kioslave/floppy/index.cache.bz2
+share/doc/HTML/en_GB/kioslave/floppy/index.docbook
+share/doc/HTML/en_GB/kioslave/ftp/common
+share/doc/HTML/en_GB/kioslave/ftp/index.cache.bz2
+share/doc/HTML/en_GB/kioslave/ftp/index.docbook
+share/doc/HTML/en_GB/kioslave/ldap/common
+share/doc/HTML/en_GB/kioslave/ldap/index.cache.bz2
+share/doc/HTML/en_GB/kioslave/ldap/index.docbook
+share/doc/HTML/en_GB/kioslave/mailto/common
+share/doc/HTML/en_GB/kioslave/mailto/index.cache.bz2
+share/doc/HTML/en_GB/kioslave/mailto/index.docbook
+share/doc/HTML/en_GB/kioslave/nfs/common
+share/doc/HTML/en_GB/kioslave/nfs/index.cache.bz2
+share/doc/HTML/en_GB/kioslave/nfs/index.docbook
+share/doc/HTML/en_GB/kioslave/nntp/common
+share/doc/HTML/en_GB/kioslave/nntp/index.cache.bz2
+share/doc/HTML/en_GB/kioslave/nntp/index.docbook
+share/doc/HTML/en_GB/kioslave/rlogin/common
+share/doc/HTML/en_GB/kioslave/rlogin/index.cache.bz2
+share/doc/HTML/en_GB/kioslave/rlogin/index.docbook
+share/doc/HTML/en_GB/kioslave/sftp/common
+share/doc/HTML/en_GB/kioslave/sftp/index.cache.bz2
+share/doc/HTML/en_GB/kioslave/sftp/index.docbook
+share/doc/HTML/en_GB/kioslave/smtp/common
+share/doc/HTML/en_GB/kioslave/smtp/index.cache.bz2
+share/doc/HTML/en_GB/kioslave/smtp/index.docbook
+share/doc/HTML/en_GB/kioslave/tar/common
+share/doc/HTML/en_GB/kioslave/tar/index.cache.bz2
+share/doc/HTML/en_GB/kioslave/tar/index.docbook
+share/doc/HTML/en_GB/kioslave/telnet/common
+share/doc/HTML/en_GB/kioslave/telnet/index.cache.bz2
+share/doc/HTML/en_GB/kioslave/telnet/index.docbook
 share/doc/HTML/en_GB/konqueror/basics.docbook
 share/doc/HTML/en_GB/konqueror/bookmarks.docbook
 share/doc/HTML/en_GB/konqueror/browser.docbook
@@ -353,54 +139,9 @@ share/doc/HTML/en_GB/konqueror/path-complete.docbook
 share/doc/HTML/en_GB/konqueror/plugins.docbook
 share/doc/HTML/en_GB/konqueror/save-settings.docbook
 share/doc/HTML/en_GB/konqueror/sidebar.docbook
-share/doc/HTML/en_GB/konsole/common
-share/doc/HTML/en_GB/konsole/index.cache.bz2
-share/doc/HTML/en_GB/konsole/index.docbook
-share/doc/HTML/en_GB/ksplashml/common
-share/doc/HTML/en_GB/ksplashml/index.cache.bz2
-share/doc/HTML/en_GB/ksplashml/index.docbook
 share/doc/HTML/en_GB/ksysguard/common
 share/doc/HTML/en_GB/ksysguard/index.cache.bz2
 share/doc/HTML/en_GB/ksysguard/index.docbook
-share/doc/HTML/en_GB/kwrite/common
-share/doc/HTML/en_GB/kwrite/index.cache.bz2
-share/doc/HTML/en_GB/kwrite/index.docbook
-share/doc/HTML/en_GB/kxkb/common
-share/doc/HTML/en_GB/kxkb/index.cache.bz2
-share/doc/HTML/en_GB/kxkb/index.docbook
-share/doc/HTML/en_GB/memory/common
-share/doc/HTML/en_GB/memory/index.cache.bz2
-share/doc/HTML/en_GB/memory/index.docbook
-share/doc/HTML/en_GB/opengl/common
-share/doc/HTML/en_GB/opengl/index.cache.bz2
-share/doc/HTML/en_GB/opengl/index.docbook
-share/doc/HTML/en_GB/pci/common
-share/doc/HTML/en_GB/pci/index.cache.bz2
-share/doc/HTML/en_GB/pci/index.docbook
-share/doc/HTML/en_GB/pcmcia/common
-share/doc/HTML/en_GB/pcmcia/index.cache.bz2
-share/doc/HTML/en_GB/pcmcia/index.docbook
-share/doc/HTML/en_GB/protocols/common
-share/doc/HTML/en_GB/protocols/index.cache.bz2
-share/doc/HTML/en_GB/protocols/index.docbook
-share/doc/HTML/en_GB/quickstart/common
-share/doc/HTML/en_GB/quickstart/index.cache.bz2
-share/doc/HTML/en_GB/quickstart/index.docbook
-share/doc/HTML/en_GB/samba/common
-share/doc/HTML/en_GB/samba/index.cache.bz2
-share/doc/HTML/en_GB/samba/index.docbook
-share/doc/HTML/en_GB/scsi/common
-share/doc/HTML/en_GB/scsi/index.cache.bz2
-share/doc/HTML/en_GB/scsi/index.docbook
-share/doc/HTML/en_GB/usb/common
-share/doc/HTML/en_GB/usb/index.cache.bz2
-share/doc/HTML/en_GB/usb/index.docbook
-share/doc/HTML/en_GB/visualdict/common
-share/doc/HTML/en_GB/visualdict/index.cache.bz2
-share/doc/HTML/en_GB/visualdict/index.docbook
-share/doc/HTML/en_GB/xserver/common
-share/doc/HTML/en_GB/xserver/index.cache.bz2
-share/doc/HTML/en_GB/xserver/index.docbook
 share/locale/en_GB/LC_MESSAGES/akonadicontact.mo
 share/locale/en_GB/LC_MESSAGES/amor.mo
 share/locale/en_GB/LC_MESSAGES/ark.mo
@@ -990,88 +731,26 @@ share/locale/en_GB/LC_MESSAGES/umbrello.mo
 share/locale/en_GB/LC_MESSAGES/useraccount.mo
 share/locale/en_GB/LC_MESSAGES/xml_mimetypes.mo
 share/locale/en_GB/entry.desktop
-@dirrm share/doc/HTML/en_GB/xserver
-@dirrm share/doc/HTML/en_GB/visualdict
-@dirrm share/doc/HTML/en_GB/usb
-@dirrm share/doc/HTML/en_GB/scsi
-@dirrm share/doc/HTML/en_GB/samba
-@dirrm share/doc/HTML/en_GB/quickstart
-@dirrm share/doc/HTML/en_GB/protocols
-@dirrm share/doc/HTML/en_GB/pcmcia
-@dirrm share/doc/HTML/en_GB/pci
-@dirrm share/doc/HTML/en_GB/opengl
-@dirrm share/doc/HTML/en_GB/memory
-@dirrm share/doc/HTML/en_GB/kxkb
-@dirrm share/doc/HTML/en_GB/kwrite
 @dirrm share/doc/HTML/en_GB/ksysguard
-@dirrm share/doc/HTML/en_GB/ksplashml
-@dirrm share/doc/HTML/en_GB/konsole
 @dirrm share/doc/HTML/en_GB/konqueror
-@dirrm share/doc/HTML/en_GB/kompare
-@dirrm share/doc/HTML/en_GB/kmplot
-@dirrm share/doc/HTML/en_GB/kmenuedit
-@dirrm share/doc/HTML/en_GB/klipper
-@dirrm share/doc/HTML/en_GB/kioslave/kioslave
+@dirrm share/doc/HTML/en_GB/kioslave/telnet
+@dirrm share/doc/HTML/en_GB/kioslave/tar
+@dirrm share/doc/HTML/en_GB/kioslave/smtp
+@dirrm share/doc/HTML/en_GB/kioslave/sftp
+@dirrm share/doc/HTML/en_GB/kioslave/rlogin
+@dirrm share/doc/HTML/en_GB/kioslave/nntp
+@dirrm share/doc/HTML/en_GB/kioslave/nfs
+@dirrm share/doc/HTML/en_GB/kioslave/mailto
+@dirrm share/doc/HTML/en_GB/kioslave/ldap
+@dirrm share/doc/HTML/en_GB/kioslave/ftp
+@dirrm share/doc/HTML/en_GB/kioslave/floppy
+@dirrm share/doc/HTML/en_GB/kioslave/finger
+@dirrm share/doc/HTML/en_GB/kioslave/file
 @dirrm share/doc/HTML/en_GB/kioslave
-@dirrm share/doc/HTML/en_GB/kinfocenter
 @dirrm share/doc/HTML/en_GB/khelpcenter/glossary
 @dirrm share/doc/HTML/en_GB/khelpcenter
-@dirrm share/doc/HTML/en_GB/kfind
-@dirrm share/doc/HTML/en_GB/kdm
-@dirrm share/doc/HTML/en_GB/kdesu
-@dirrm share/doc/HTML/en_GB/kdebugdialog
-@dirrm share/doc/HTML/en_GB/kcontrol/windowmanagement
-@dirrm share/doc/HTML/en_GB/kcontrol/useragent
-@dirrm share/doc/HTML/en_GB/kcontrol/smb
-@dirrm share/doc/HTML/en_GB/kcontrol/screensaver
-@dirrm share/doc/HTML/en_GB/kcontrol/proxy
-@dirrm share/doc/HTML/en_GB/kcontrol/passwords
-@dirrm share/doc/HTML/en_GB/kcontrol/panelappearance
-@dirrm share/doc/HTML/en_GB/kcontrol/panel
-@dirrm share/doc/HTML/en_GB/kcontrol/netpref
-@dirrm share/doc/HTML/en_GB/kcontrol/mouse
-@dirrm share/doc/HTML/en_GB/kcontrol/language
-@dirrm share/doc/HTML/en_GB/kcontrol/kwindecoration
-@dirrm share/doc/HTML/en_GB/kcontrol/khtml
-@dirrm share/doc/HTML/en_GB/kcontrol/keys
-@dirrm share/doc/HTML/en_GB/kcontrol/keyboard
-@dirrm share/doc/HTML/en_GB/kcontrol/kdm
-@dirrm share/doc/HTML/en_GB/kcontrol/kcmtaskbar
-@dirrm share/doc/HTML/en_GB/kcontrol/kcmstyle
-@dirrm share/doc/HTML/en_GB/kcontrol/kcmsmserver
-@dirrm share/doc/HTML/en_GB/kcontrol/kcmnotify
-@dirrm share/doc/HTML/en_GB/kcontrol/kcmlaunch
-@dirrm share/doc/HTML/en_GB/kcontrol/kcmktalkd
-@dirrm share/doc/HTML/en_GB/kcontrol/kcmkonsole
-@dirrm share/doc/HTML/en_GB/kcontrol/kcmfontinst
-@dirrm share/doc/HTML/en_GB/kcontrol/kcmcss
-@dirrm share/doc/HTML/en_GB/kcontrol/kcmaccess
-@dirrm share/doc/HTML/en_GB/kcontrol/icons
-@dirrm share/doc/HTML/en_GB/kcontrol/helpindex
-@dirrm share/doc/HTML/en_GB/kcontrol/fonts
-@dirrm share/doc/HTML/en_GB/kcontrol/filetypes
-@dirrm share/doc/HTML/en_GB/kcontrol/filemanager
-@dirrm share/doc/HTML/en_GB/kcontrol/energy
-@dirrm share/doc/HTML/en_GB/kcontrol/email
-@dirrm share/doc/HTML/en_GB/kcontrol/ebrowsing
-@dirrm share/doc/HTML/en_GB/kcontrol/desktopbehavior
-@dirrm share/doc/HTML/en_GB/kcontrol/desktop
-@dirrm share/doc/HTML/en_GB/kcontrol/crypto
-@dirrm share/doc/HTML/en_GB/kcontrol/cookies
-@dirrm share/doc/HTML/en_GB/kcontrol/colors
-@dirrm share/doc/HTML/en_GB/kcontrol/clock
-@dirrm share/doc/HTML/en_GB/kcontrol/cache
-@dirrm share/doc/HTML/en_GB/kcontrol/bell
-@dirrm share/doc/HTML/en_GB/kcontrol/background
-@dirrm share/doc/HTML/en_GB/kcontrol
-@dirrm share/doc/HTML/en_GB/kcachegrind
 @dirrm share/doc/HTML/en_GB/kbugbuster
-@dirrm share/doc/HTML/en_GB/ioports
-@dirrm share/doc/HTML/en_GB/interrupts
-@dirrm share/doc/HTML/en_GB/faq
-@dirrm share/doc/HTML/en_GB/dma
 @dirrm share/doc/HTML/en_GB/common
-@dirrm share/doc/HTML/en_GB/cervisia
 @dirrm share/apps/kvtml/en_GB
 @dirrm share/apps/kvtml
 @dirrm share/apps/kturtle/examples/en_GB

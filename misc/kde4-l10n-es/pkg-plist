@@ -396,6 +396,9 @@ share/doc/HTML/es/kcalc/index.docbook
 share/doc/HTML/es/kcharselect/common
 share/doc/HTML/es/kcharselect/index.cache.bz2
 share/doc/HTML/es/kcharselect/index.docbook
+share/doc/HTML/es/kcontrol/attica/common
+share/doc/HTML/es/kcontrol/attica/index.cache.bz2
+share/doc/HTML/es/kcontrol/attica/index.docbook
 share/doc/HTML/es/kcontrol/autostart/common
 share/doc/HTML/es/kcontrol/autostart/index.cache.bz2
 share/doc/HTML/es/kcontrol/autostart/index.docbook
@@ -405,6 +408,9 @@ share/doc/HTML/es/kcontrol/bell/index.docbook
 share/doc/HTML/es/kcontrol/blockdevices/common
 share/doc/HTML/es/kcontrol/blockdevices/index.cache.bz2
 share/doc/HTML/es/kcontrol/blockdevices/index.docbook
+share/doc/HTML/es/kcontrol/bookmarks/common
+share/doc/HTML/es/kcontrol/bookmarks/index.cache.bz2
+share/doc/HTML/es/kcontrol/bookmarks/index.docbook
 share/doc/HTML/es/kcontrol/cache/common
 share/doc/HTML/es/kcontrol/cache/index.cache.bz2
 share/doc/HTML/es/kcontrol/cache/index.docbook
@@ -414,9 +420,15 @@ share/doc/HTML/es/kcontrol/clock/index.docbook
 share/doc/HTML/es/kcontrol/colors/common
 share/doc/HTML/es/kcontrol/colors/index.cache.bz2
 share/doc/HTML/es/kcontrol/colors/index.docbook
+share/doc/HTML/es/kcontrol/componentchooser/common
+share/doc/HTML/es/kcontrol/componentchooser/index.cache.bz2
+share/doc/HTML/es/kcontrol/componentchooser/index.docbook
 share/doc/HTML/es/kcontrol/cookies/common
 share/doc/HTML/es/kcontrol/cookies/index.cache.bz2
 share/doc/HTML/es/kcontrol/cookies/index.docbook
+share/doc/HTML/es/kcontrol/desktop/common
+share/doc/HTML/es/kcontrol/desktop/index.cache.bz2
+share/doc/HTML/es/kcontrol/desktop/index.docbook
 share/doc/HTML/es/kcontrol/ebrowsing/common
 share/doc/HTML/es/kcontrol/ebrowsing/index.cache.bz2
 share/doc/HTML/es/kcontrol/ebrowsing/index.docbook
@@ -435,6 +447,9 @@ share/doc/HTML/es/kcontrol/fontinst/index.docbook
 share/doc/HTML/es/kcontrol/fonts/common
 share/doc/HTML/es/kcontrol/fonts/index.cache.bz2
 share/doc/HTML/es/kcontrol/fonts/index.docbook
+share/doc/HTML/es/kcontrol/history/common
+share/doc/HTML/es/kcontrol/history/index.cache.bz2
+share/doc/HTML/es/kcontrol/history/index.docbook
 share/doc/HTML/es/kcontrol/icons/common
 share/doc/HTML/es/kcontrol/icons/index.cache.bz2
 share/doc/HTML/es/kcontrol/icons/index.docbook
@@ -480,6 +495,9 @@ share/doc/HTML/es/kcontrol/kremotecontrol/index.docbook
 share/doc/HTML/es/kcontrol/kresources/common
 share/doc/HTML/es/kcontrol/kresources/index.cache.bz2
 share/doc/HTML/es/kcontrol/kresources/index.docbook
+share/doc/HTML/es/kcontrol/kwincompositing/common
+share/doc/HTML/es/kcontrol/kwincompositing/index.cache.bz2
+share/doc/HTML/es/kcontrol/kwincompositing/index.docbook
 share/doc/HTML/es/kcontrol/kwindecoration/common
 share/doc/HTML/es/kcontrol/kwindecoration/index.cache.bz2
 share/doc/HTML/es/kcontrol/kwindecoration/index.docbook
@@ -504,12 +522,18 @@ share/doc/HTML/es/kcontrol/screensaver/index.docbook
 share/doc/HTML/es/kcontrol/smb/common
 share/doc/HTML/es/kcontrol/smb/index.cache.bz2
 share/doc/HTML/es/kcontrol/smb/index.docbook
+share/doc/HTML/es/kcontrol/solid-hardware/common
+share/doc/HTML/es/kcontrol/solid-hardware/index.cache.bz2
+share/doc/HTML/es/kcontrol/solid-hardware/index.docbook
 share/doc/HTML/es/kcontrol/spellchecking/common
 share/doc/HTML/es/kcontrol/spellchecking/index.cache.bz2
 share/doc/HTML/es/kcontrol/spellchecking/index.docbook
 share/doc/HTML/es/kcontrol/splashscreen/common
 share/doc/HTML/es/kcontrol/splashscreen/index.cache.bz2
 share/doc/HTML/es/kcontrol/splashscreen/index.docbook
+share/doc/HTML/es/kcontrol/trash/common
+share/doc/HTML/es/kcontrol/trash/index.cache.bz2
+share/doc/HTML/es/kcontrol/trash/index.docbook
 share/doc/HTML/es/kcontrol/useragent/common
 share/doc/HTML/es/kcontrol/useragent/index.cache.bz2
 share/doc/HTML/es/kcontrol/useragent/index.docbook
@@ -533,13 +557,13 @@ share/doc/HTML/es/kdebugdialog/index.docbook
 share/doc/HTML/es/kdepasswd/common
 share/doc/HTML/es/kdepasswd/index.cache.bz2
 share/doc/HTML/es/kdepasswd/index.docbook
+share/doc/HTML/es/kdesrc-build/common
+share/doc/HTML/es/kdesrc-build/index.cache.bz2
+share/doc/HTML/es/kdesrc-build/index.docbook
 share/doc/HTML/es/kdesu/common
 share/doc/HTML/es/kdesu/index.cache.bz2
 share/doc/HTML/es/kdesu/index.docbook
 share/doc/HTML/es/kdesu/man-kdesu.1.docbook
-share/doc/HTML/es/kdesvn-build/common
-share/doc/HTML/es/kdesvn-build/index.cache.bz2
-share/doc/HTML/es/kdesvn-build/index.docbook
 share/doc/HTML/es/kdf/common
 share/doc/HTML/es/kdf/index.cache.bz2
 share/doc/HTML/es/kdf/index.docbook
@@ -1970,16 +1994,18 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kdm
 @dirrm share/doc/HTML/es/kdiamond
 @dirrm share/doc/HTML/es/kdf
-@dirrm share/doc/HTML/es/kdesvn-build
 @dirrm share/doc/HTML/es/kdesu
+@dirrm share/doc/HTML/es/kdesrc-build
 @dirrm share/doc/HTML/es/kdepasswd
 @dirrm share/doc/HTML/es/kdebugdialog
 @dirrm share/doc/HTML/es/kcron
 @dirrm share/doc/HTML/es/kcontrol/windowspecific
 @dirrm share/doc/HTML/es/kcontrol/windowbehaviour
 @dirrm share/doc/HTML/es/kcontrol/useragent
+@dirrm share/doc/HTML/es/kcontrol/trash
 @dirrm share/doc/HTML/es/kcontrol/splashscreen
 @dirrm share/doc/HTML/es/kcontrol/spellchecking
+@dirrm share/doc/HTML/es/kcontrol/solid-hardware
 @dirrm share/doc/HTML/es/kcontrol/smb
 @dirrm share/doc/HTML/es/kcontrol/screensaver
 @dirrm share/doc/HTML/es/kcontrol/proxy
@@ -1988,6 +2014,7 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kcontrol/netpref
 @dirrm share/doc/HTML/es/kcontrol/language
 @dirrm share/doc/HTML/es/kcontrol/kwindecoration
+@dirrm share/doc/HTML/es/kcontrol/kwincompositing
 @dirrm share/doc/HTML/es/kcontrol/kresources
 @dirrm share/doc/HTML/es/kcontrol/kremotecontrol
 @dirrm share/doc/HTML/es/kcontrol/knetworkconf
@@ -2003,19 +2030,24 @@ share/locale/es/entry.desktop
 @dirrm share/doc/HTML/es/kcontrol/kamera
 @dirrm share/doc/HTML/es/kcontrol/joystick
 @dirrm share/doc/HTML/es/kcontrol/icons
+@dirrm share/doc/HTML/es/kcontrol/history
 @dirrm share/doc/HTML/es/kcontrol/fonts
 @dirrm share/doc/HTML/es/kcontrol/fontinst
 @dirrm share/doc/HTML/es/kcontrol/filetypes
 @dirrm share/doc/HTML/es/kcontrol/filemanager
 @dirrm share/doc/HTML/es/kcontrol/emoticons
 @dirrm share/doc/HTML/es/kcontrol/ebrowsing
+@dirrm share/doc/HTML/es/kcontrol/desktop
 @dirrm share/doc/HTML/es/kcontrol/cookies
+@dirrm share/doc/HTML/es/kcontrol/componentchooser
 @dirrm share/doc/HTML/es/kcontrol/colors
 @dirrm share/doc/HTML/es/kcontrol/clock
 @dirrm share/doc/HTML/es/kcontrol/cache
+@dirrm share/doc/HTML/es/kcontrol/bookmarks
 @dirrm share/doc/HTML/es/kcontrol/blockdevices
 @dirrm share/doc/HTML/es/kcontrol/bell
 @dirrm share/doc/HTML/es/kcontrol/autostart
+@dirrm share/doc/HTML/es/kcontrol/attica
 @dirrm share/doc/HTML/es/kcontrol
 @dirrm share/doc/HTML/es/kcharselect
 @dirrm share/doc/HTML/es/kcalc

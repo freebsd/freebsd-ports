@@ -816,6 +816,8 @@ share/apps/plasma/dashboard/AppleClasses/AppleScrollArea.js
 share/apps/plasma/dashboard/AppleClasses/AppleScrollbar.js
 share/apps/plasma/dashboard/AppleClasses/AppleSlider.js
 share/apps/plasma/dashboard/button/genericButton.js
+share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper/contents/layout.js
+share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper/metadata.desktop
 share/apps/plasma/layout-templates/org.kde.plasma-desktop.defaultPanel/contents/layout.js
 share/apps/plasma/layout-templates/org.kde.plasma-desktop.defaultPanel/metadata.desktop
 share/apps/plasma/layout-templates/org.kde.plasma-netbook.defaultPage/contents/layout.js
@@ -2237,8 +2239,34 @@ share/wallpapers/Red_Leaf/contents/images/1600x1200.jpg
 share/wallpapers/Red_Leaf/contents/images/1920x1200.jpg
 share/wallpapers/Red_Leaf/contents/screenshot.png
 share/wallpapers/Red_Leaf/metadata.desktop
+share/wallpapers/stripes-freebsd-blue/contents/images/1024x768.jpg
+share/wallpapers/stripes-freebsd-blue/contents/images/1280x1024.jpg
+share/wallpapers/stripes-freebsd-blue/contents/images/1280x800.jpg
+share/wallpapers/stripes-freebsd-blue/contents/images/1440x900.jpg
+share/wallpapers/stripes-freebsd-blue/contents/images/1600x1200.jpg
+share/wallpapers/stripes-freebsd-blue/contents/images/1920x1080.jpg
+share/wallpapers/stripes-freebsd-blue/contents/images/1920x1200.jpg
+share/wallpapers/stripes-freebsd-blue/contents/images/800x600.jpg
+share/wallpapers/stripes-freebsd-blue/contents/screenshot.jpg
+share/wallpapers/stripes-freebsd-blue/metadata.desktop
+share/wallpapers/stripes-freebsd-red/contents/images/1024x768.jpg
+share/wallpapers/stripes-freebsd-red/contents/images/1280x1024.jpg
+share/wallpapers/stripes-freebsd-red/contents/images/1280x800.jpg
+share/wallpapers/stripes-freebsd-red/contents/images/1440x900.jpg
+share/wallpapers/stripes-freebsd-red/contents/images/1600x1200.jpg
+share/wallpapers/stripes-freebsd-red/contents/images/1920x1080.jpg
+share/wallpapers/stripes-freebsd-red/contents/images/1920x1200.jpg
+share/wallpapers/stripes-freebsd-red/contents/images/800x600.jpg
+share/wallpapers/stripes-freebsd-red/contents/screenshot.jpg
+share/wallpapers/stripes-freebsd-red/metadata.desktop
 share/wallpapers/stripes.png
 share/wallpapers/stripes.png.desktop
+@dirrm share/wallpapers/stripes-freebsd-red/contents/images
+@dirrm share/wallpapers/stripes-freebsd-red/contents
+@dirrm share/wallpapers/stripes-freebsd-red
+@dirrm share/wallpapers/stripes-freebsd-blue/contents/images
+@dirrm share/wallpapers/stripes-freebsd-blue/contents
+@dirrm share/wallpapers/stripes-freebsd-blue
 @dirrm share/wallpapers/Red_Leaf/contents/images
 @dirrm share/wallpapers/Red_Leaf/contents
 @dirrm share/wallpapers/Red_Leaf
@@ -2356,6 +2384,8 @@ share/wallpapers/stripes.png.desktop
 @dirrm share/apps/plasma/layout-templates/org.kde.plasma-netbook.defaultPage
 @dirrm share/apps/plasma/layout-templates/org.kde.plasma-desktop.defaultPanel/contents
 @dirrm share/apps/plasma/layout-templates/org.kde.plasma-desktop.defaultPanel
+@dirrm share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper/contents
+@dirrm share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper
 @dirrm share/apps/plasma/layout-templates
 @dirrm share/apps/plasma/dashboard/button
 @dirrm share/apps/plasma/dashboard/AppleClasses

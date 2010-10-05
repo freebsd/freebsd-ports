@@ -8,10 +8,14 @@
 
 PORTNAME=	kdebase-workspace
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	x11 kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+MASTER_SITES=	${MASTER_SITE_KDE} \
+		${MASTER_SITE_LOCAL:S/$/:stripes/} \
+		http://people.FreeBSD.org/~avilla/distfiles/:stripes
+MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src \
+			avilla:stripes
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		stripes-freebsd-1.0${EXTRACT_SUFX}:stripes
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -35,7 +39,7 @@ RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
 		xset:${PORTSDIR}/x11/xset \
 		setxkbmap:${PORTSDIR}/x11/setxkbmap
 
-SUB_FILES=	kdm
+SUB_FILES=	kdm layout.js
 USE_RC_SUBR=	kdm4
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4 oxygen
 KDE4_BUILDENV=	yes
@@ -112,10 +116,15 @@ pre-configure:
 post-install:
 	${CHGRP} kmem ${PREFIX}/bin/ksysguardd && \
 		${CHMOD} g+s ${PREFIX}/bin/ksysguardd
-	@${LN} -sf ${PREFIX}/bin/startkde ${PREFIX}/bin/startkde4
-	@${MV} ${PREFIX}/bin/kdm ${PREFIX}/bin/kdm-bin
-	@${MV} ${PREFIX}/lib/kde4/libexec/kdm_config ${PREFIX}/lib/kde4/libexec/kdm-bin_config
-	@${MV} ${PREFIX}/lib/kde4/libexec/kdm_greet ${PREFIX}/lib/kde4/libexec/kdm-bin_greet
-	@${INSTALL_SCRIPT} ${WRKDIR}/kdm ${PREFIX}/bin
+	${LN} -sf ${PREFIX}/bin/startkde ${PREFIX}/bin/startkde4
+	${MV} ${PREFIX}/bin/kdm ${PREFIX}/bin/kdm-bin
+	${MV} ${PREFIX}/lib/kde4/libexec/kdm_config ${PREFIX}/lib/kde4/libexec/kdm-bin_config
+	${MV} ${PREFIX}/lib/kde4/libexec/kdm_greet ${PREFIX}/lib/kde4/libexec/kdm-bin_greet
+	${INSTALL_SCRIPT} ${WRKDIR}/kdm ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper/contents
+	${INSTALL_DATA} ${FILESDIR}/metadata.desktop ${PREFIX}/share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper
+	${INSTALL_DATA} ${WRKDIR}/layout.js ${PREFIX}/share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper/contents
+	cd ${WRKDIR}/stripes-freebsd-1.0 && \
+		${COPYTREE_SHARE} . ${PREFIX}/share/wallpapers
 
 .include <bsd.port.mk>

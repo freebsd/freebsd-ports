@@ -44,14 +44,6 @@ share/doc/HTML/lt/kfind/man-kfind.1.docbook
 share/doc/HTML/lt/kgpg/common
 share/doc/HTML/lt/kgpg/index.cache.bz2
 share/doc/HTML/lt/kgpg/index.docbook
-share/doc/HTML/lt/khelpcenter/common
-share/doc/HTML/lt/khelpcenter/contact.docbook
-share/doc/HTML/lt/khelpcenter/help.docbook
-share/doc/HTML/lt/khelpcenter/index.cache.bz2
-share/doc/HTML/lt/khelpcenter/index.docbook
-share/doc/HTML/lt/khelpcenter/support.docbook
-share/doc/HTML/lt/khelpcenter/welcome.docbook
-share/doc/HTML/lt/khelpcenter/whatiskde.docbook
 share/doc/HTML/lt/kioslave/cgi/common
 share/doc/HTML/lt/kioslave/cgi/index.cache.bz2
 share/doc/HTML/lt/kioslave/cgi/index.docbook
@@ -683,7 +675,6 @@ share/locale/lt/entry.desktop
 @dirrm share/doc/HTML/lt/klipper
 @dirrm share/doc/HTML/lt/kioslave/cgi
 @dirrm share/doc/HTML/lt/kioslave
-@dirrm share/doc/HTML/lt/khelpcenter
 @dirrm share/doc/HTML/lt/kgpg
 @dirrm share/doc/HTML/lt/kfind
 @dirrm share/doc/HTML/lt/kdiamond

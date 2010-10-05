@@ -18,6 +18,7 @@ share/doc/HTML/pl/amor/common
 share/doc/HTML/pl/amor/index.cache.bz2
 share/doc/HTML/pl/amor/index.docbook
 share/doc/HTML/pl/amor/man-amor.6.docbook
+share/doc/HTML/pl/ark/ark-mainwindow.png
 share/doc/HTML/pl/ark/common
 share/doc/HTML/pl/ark/index.cache.bz2
 share/doc/HTML/pl/ark/index.docbook
@@ -97,6 +98,9 @@ share/doc/HTML/pl/kbruch/index.docbook
 share/doc/HTML/pl/kbruch/man-kbruch.1.docbook
 share/doc/HTML/pl/kbruch/reduced.png
 share/doc/HTML/pl/kbruch/settings.png
+share/doc/HTML/pl/kcontrol/attica/common
+share/doc/HTML/pl/kcontrol/attica/index.cache.bz2
+share/doc/HTML/pl/kcontrol/attica/index.docbook
 share/doc/HTML/pl/kcontrol/autostart/common
 share/doc/HTML/pl/kcontrol/autostart/index.cache.bz2
 share/doc/HTML/pl/kcontrol/autostart/index.docbook
@@ -127,6 +131,9 @@ share/doc/HTML/pl/kcontrol/cookies/index.docbook
 share/doc/HTML/pl/kcontrol/desktopthemedetails/common
 share/doc/HTML/pl/kcontrol/desktopthemedetails/index.cache.bz2
 share/doc/HTML/pl/kcontrol/desktopthemedetails/index.docbook
+share/doc/HTML/pl/kcontrol/ebrowsing/common
+share/doc/HTML/pl/kcontrol/ebrowsing/index.cache.bz2
+share/doc/HTML/pl/kcontrol/ebrowsing/index.docbook
 share/doc/HTML/pl/kcontrol/emoticons/common
 share/doc/HTML/pl/kcontrol/emoticons/emoticons.png
 share/doc/HTML/pl/kcontrol/emoticons/index.cache.bz2
@@ -152,6 +159,9 @@ share/doc/HTML/pl/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/pl/kcontrol/kcmcgi/common
 share/doc/HTML/pl/kcontrol/kcmcgi/index.cache.bz2
 share/doc/HTML/pl/kcontrol/kcmcgi/index.docbook
+share/doc/HTML/pl/kcontrol/kcmcss/common
+share/doc/HTML/pl/kcontrol/kcmcss/index.cache.bz2
+share/doc/HTML/pl/kcontrol/kcmcss/index.docbook
 share/doc/HTML/pl/kcontrol/kcmlaunch/common
 share/doc/HTML/pl/kcontrol/kcmlaunch/index.cache.bz2
 share/doc/HTML/pl/kcontrol/kcmlaunch/index.docbook
@@ -170,6 +180,18 @@ share/doc/HTML/pl/kcontrol/keyboard/index.docbook
 share/doc/HTML/pl/kcontrol/kgamma/common
 share/doc/HTML/pl/kcontrol/kgamma/index.cache.bz2
 share/doc/HTML/pl/kcontrol/kgamma/index.docbook
+share/doc/HTML/pl/kcontrol/khtml-adblock/common
+share/doc/HTML/pl/kcontrol/khtml-adblock/index.cache.bz2
+share/doc/HTML/pl/kcontrol/khtml-adblock/index.docbook
+share/doc/HTML/pl/kcontrol/khtml-behavior/common
+share/doc/HTML/pl/kcontrol/khtml-behavior/index.cache.bz2
+share/doc/HTML/pl/kcontrol/khtml-behavior/index.docbook
+share/doc/HTML/pl/kcontrol/khtml-java-js/common
+share/doc/HTML/pl/kcontrol/khtml-java-js/index.cache.bz2
+share/doc/HTML/pl/kcontrol/khtml-java-js/index.docbook
+share/doc/HTML/pl/kcontrol/khtml-plugins/common
+share/doc/HTML/pl/kcontrol/khtml-plugins/index.cache.bz2
+share/doc/HTML/pl/kcontrol/khtml-plugins/index.docbook
 share/doc/HTML/pl/kcontrol/knetworkconf/common
 share/doc/HTML/pl/kcontrol/knetworkconf/index.cache.bz2
 share/doc/HTML/pl/kcontrol/knetworkconf/index.docbook
@@ -201,12 +223,21 @@ share/doc/HTML/pl/kcontrol/paths/paths.png
 share/doc/HTML/pl/kcontrol/performance/common
 share/doc/HTML/pl/kcontrol/performance/index.cache.bz2
 share/doc/HTML/pl/kcontrol/performance/index.docbook
+share/doc/HTML/pl/kcontrol/phonon/common
+share/doc/HTML/pl/kcontrol/phonon/index.cache.bz2
+share/doc/HTML/pl/kcontrol/phonon/index.docbook
+share/doc/HTML/pl/kcontrol/proxy/common
+share/doc/HTML/pl/kcontrol/proxy/index.cache.bz2
+share/doc/HTML/pl/kcontrol/proxy/index.docbook
 share/doc/HTML/pl/kcontrol/screensaver/common
 share/doc/HTML/pl/kcontrol/screensaver/index.cache.bz2
 share/doc/HTML/pl/kcontrol/screensaver/index.docbook
 share/doc/HTML/pl/kcontrol/smb/common
 share/doc/HTML/pl/kcontrol/smb/index.cache.bz2
 share/doc/HTML/pl/kcontrol/smb/index.docbook
+share/doc/HTML/pl/kcontrol/solid-device-automounter/common
+share/doc/HTML/pl/kcontrol/solid-device-automounter/index.cache.bz2
+share/doc/HTML/pl/kcontrol/solid-device-automounter/index.docbook
 share/doc/HTML/pl/kcontrol/splashscreen/common
 share/doc/HTML/pl/kcontrol/splashscreen/index.cache.bz2
 share/doc/HTML/pl/kcontrol/splashscreen/index.docbook
@@ -1277,8 +1308,11 @@ share/locale/pl/entry.desktop
 @dirrm share/doc/HTML/pl/kcontrol/windowbehaviour
 @dirrm share/doc/HTML/pl/kcontrol/useragent
 @dirrm share/doc/HTML/pl/kcontrol/splashscreen
+@dirrm share/doc/HTML/pl/kcontrol/solid-device-automounter
 @dirrm share/doc/HTML/pl/kcontrol/smb
 @dirrm share/doc/HTML/pl/kcontrol/screensaver
+@dirrm share/doc/HTML/pl/kcontrol/proxy
+@dirrm share/doc/HTML/pl/kcontrol/phonon
 @dirrm share/doc/HTML/pl/kcontrol/performance
 @dirrm share/doc/HTML/pl/kcontrol/paths
 @dirrm share/doc/HTML/pl/kcontrol/netpref
@@ -1289,12 +1323,17 @@ share/locale/pl/entry.desktop
 @dirrm share/doc/HTML/pl/kcontrol/kwindecoration
 @dirrm share/doc/HTML/pl/kcontrol/kwincompositing
 @dirrm share/doc/HTML/pl/kcontrol/knetworkconf
+@dirrm share/doc/HTML/pl/kcontrol/khtml-plugins
+@dirrm share/doc/HTML/pl/kcontrol/khtml-java-js
+@dirrm share/doc/HTML/pl/kcontrol/khtml-behavior
+@dirrm share/doc/HTML/pl/kcontrol/khtml-adblock
 @dirrm share/doc/HTML/pl/kcontrol/kgamma
 @dirrm share/doc/HTML/pl/kcontrol/keyboard
 @dirrm share/doc/HTML/pl/kcontrol/kded
 @dirrm share/doc/HTML/pl/kcontrol/kcmsmserver
 @dirrm share/doc/HTML/pl/kcontrol/kcmnotify
 @dirrm share/doc/HTML/pl/kcontrol/kcmlaunch
+@dirrm share/doc/HTML/pl/kcontrol/kcmcss
 @dirrm share/doc/HTML/pl/kcontrol/kcmcgi
 @dirrm share/doc/HTML/pl/kcontrol/kcmaccess
 @dirrm share/doc/HTML/pl/kcontrol/kamera
@@ -1303,6 +1342,7 @@ share/locale/pl/entry.desktop
 @dirrm share/doc/HTML/pl/kcontrol/fonts
 @dirrm share/doc/HTML/pl/kcontrol/fontinst
 @dirrm share/doc/HTML/pl/kcontrol/emoticons
+@dirrm share/doc/HTML/pl/kcontrol/ebrowsing
 @dirrm share/doc/HTML/pl/kcontrol/desktopthemedetails
 @dirrm share/doc/HTML/pl/kcontrol/cookies
 @dirrm share/doc/HTML/pl/kcontrol/componentchooser
@@ -1313,6 +1353,7 @@ share/locale/pl/entry.desktop
 @dirrm share/doc/HTML/pl/kcontrol/blockdevices
 @dirrm share/doc/HTML/pl/kcontrol/bell
 @dirrm share/doc/HTML/pl/kcontrol/autostart
+@dirrm share/doc/HTML/pl/kcontrol/attica
 @dirrm share/doc/HTML/pl/kcontrol
 @dirrm share/doc/HTML/pl/kbruch
 @dirrm share/doc/HTML/pl/kbreakout

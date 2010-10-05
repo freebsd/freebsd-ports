@@ -448,39 +448,39 @@ share/apps/kcharselect/kcharselectui.rc
 share/apps/kconf_update/kcalcrc.upd
 share/apps/kconf_update/kcharselect.upd
 share/apps/kdf/kdfui.rc
-share/apps/kgpg/icons/oxygen/16x16/actions/document-export-key.png
-share/apps/kgpg/icons/oxygen/16x16/actions/document-import-key.png
-share/apps/kgpg/icons/oxygen/16x16/actions/document-properties-key.png
-share/apps/kgpg/icons/oxygen/16x16/status/key-group.png
-share/apps/kgpg/icons/oxygen/16x16/status/key-orphan.png
-share/apps/kgpg/icons/oxygen/16x16/status/key-pair.png
-share/apps/kgpg/icons/oxygen/16x16/status/key-single.png
-share/apps/kgpg/icons/oxygen/22x22/actions/document-export-key.png
-share/apps/kgpg/icons/oxygen/22x22/actions/document-import-key.png
-share/apps/kgpg/icons/oxygen/22x22/actions/document-properties-key.png
-share/apps/kgpg/icons/oxygen/22x22/actions/key-generate-pair.png
-share/apps/kgpg/icons/oxygen/22x22/actions/view-key-secret.png
-share/apps/kgpg/icons/oxygen/22x22/status/key-group.png
-share/apps/kgpg/icons/oxygen/22x22/status/key-pair.png
-share/apps/kgpg/icons/oxygen/22x22/status/key-single.png
-share/apps/kgpg/icons/oxygen/32x32/actions/document-export-key.png
-share/apps/kgpg/icons/oxygen/32x32/actions/document-import-key.png
-share/apps/kgpg/icons/oxygen/32x32/actions/document-properties-key.png
-share/apps/kgpg/icons/oxygen/32x32/status/key-group.png
-share/apps/kgpg/icons/oxygen/32x32/status/key-pair.png
-share/apps/kgpg/icons/oxygen/32x32/status/key-single.png
-share/apps/kgpg/icons/oxygen/48x48/actions/document-export-key.png
-share/apps/kgpg/icons/oxygen/48x48/actions/document-import-key.png
-share/apps/kgpg/icons/oxygen/48x48/actions/document-properties-key.png
-share/apps/kgpg/icons/oxygen/48x48/status/key-group.png
-share/apps/kgpg/icons/oxygen/48x48/status/key-pair.png
-share/apps/kgpg/icons/oxygen/48x48/status/key-single.png
-share/apps/kgpg/icons/oxygen/scalable/actions/document-export-key.svgz
-share/apps/kgpg/icons/oxygen/scalable/actions/document-import-key.svgz
-share/apps/kgpg/icons/oxygen/scalable/actions/document-properties-key.svgz
-share/apps/kgpg/icons/oxygen/scalable/status/key-group.svgz
-share/apps/kgpg/icons/oxygen/scalable/status/key-pair.svgz
-share/apps/kgpg/icons/oxygen/scalable/status/key-single.svgz
+share/apps/kgpg/icons/hicolor/16x16/actions/document-export-key.png
+share/apps/kgpg/icons/hicolor/16x16/actions/document-import-key.png
+share/apps/kgpg/icons/hicolor/16x16/actions/document-properties-key.png
+share/apps/kgpg/icons/hicolor/16x16/status/key-group.png
+share/apps/kgpg/icons/hicolor/16x16/status/key-orphan.png
+share/apps/kgpg/icons/hicolor/16x16/status/key-pair.png
+share/apps/kgpg/icons/hicolor/16x16/status/key-single.png
+share/apps/kgpg/icons/hicolor/22x22/actions/document-export-key.png
+share/apps/kgpg/icons/hicolor/22x22/actions/document-import-key.png
+share/apps/kgpg/icons/hicolor/22x22/actions/document-properties-key.png
+share/apps/kgpg/icons/hicolor/22x22/actions/key-generate-pair.png
+share/apps/kgpg/icons/hicolor/22x22/actions/view-key-secret.png
+share/apps/kgpg/icons/hicolor/22x22/status/key-group.png
+share/apps/kgpg/icons/hicolor/22x22/status/key-pair.png
+share/apps/kgpg/icons/hicolor/22x22/status/key-single.png
+share/apps/kgpg/icons/hicolor/32x32/actions/document-export-key.png
+share/apps/kgpg/icons/hicolor/32x32/actions/document-import-key.png
+share/apps/kgpg/icons/hicolor/32x32/actions/document-properties-key.png
+share/apps/kgpg/icons/hicolor/32x32/status/key-group.png
+share/apps/kgpg/icons/hicolor/32x32/status/key-pair.png
+share/apps/kgpg/icons/hicolor/32x32/status/key-single.png
+share/apps/kgpg/icons/hicolor/48x48/actions/document-export-key.png
+share/apps/kgpg/icons/hicolor/48x48/actions/document-import-key.png
+share/apps/kgpg/icons/hicolor/48x48/actions/document-properties-key.png
+share/apps/kgpg/icons/hicolor/48x48/status/key-group.png
+share/apps/kgpg/icons/hicolor/48x48/status/key-pair.png
+share/apps/kgpg/icons/hicolor/48x48/status/key-single.png
+share/apps/kgpg/icons/hicolor/scalable/actions/document-export-key.svgz
+share/apps/kgpg/icons/hicolor/scalable/actions/document-import-key.svgz
+share/apps/kgpg/icons/hicolor/scalable/actions/document-properties-key.svgz
+share/apps/kgpg/icons/hicolor/scalable/status/key-group.svgz
+share/apps/kgpg/icons/hicolor/scalable/status/key-pair.svgz
+share/apps/kgpg/icons/hicolor/scalable/status/key-single.svgz
 share/apps/kgpg/keysmanager.rc
 share/apps/kgpg/kgpgeditor.rc
 share/apps/kgpg/tips
@@ -495,8 +495,8 @@ share/apps/kremotecontrol/profiles/powermanagement.profile.xml
 share/apps/kremotecontrol/profiles/profile.xsd
 share/apps/kremotecontrol/profiles/vlc.profile.xml
 share/apps/kremotecontroldaemon/kremotecontroldaemon.notifyrc
-share/apps/kwalletmanager/icons/oxygen/22x22/actions/folder_closed.png
-share/apps/kwalletmanager/icons/oxygen/22x22/actions/folder_open.png
+share/apps/kwalletmanager/icons/hicolor/22x22/actions/folder_closed.png
+share/apps/kwalletmanager/icons/hicolor/22x22/actions/folder_open.png
 share/apps/kwalletmanager/kwalleteditor.rc
 share/apps/kwalletmanager/kwalletmanager.rc
 share/apps/okteta/oktetaui.rc
@@ -586,8 +586,6 @@ share/doc/HTML/en/kwallet/kwalletmanager.png
 share/doc/HTML/en/kwallet/openwallet-request.png
 share/doc/HTML/en/kwallet/oxygen48-status-wallet-closed.png
 share/doc/HTML/en/kwallet/oxygen48-status-wallet-open.png
-share/doc/HTML/en/kwallet/password1.png
-share/doc/HTML/en/kwallet/password2.png
 share/doc/HTML/en/kwallet/save-login-information.png
 share/doc/HTML/en/okteta/common
 share/doc/HTML/en/okteta/index.cache.bz2
@@ -724,27 +722,30 @@ share/mime/text/x-xxencode.xml
 @dirrm share/apps/kwalletmanager/icons/oxygen/22x22/actions
 @dirrm share/apps/kwalletmanager/icons/oxygen/22x22
 @dirrm share/apps/kwalletmanager/icons/oxygen
+@dirrm share/apps/kwalletmanager/icons/hicolor/22x22/actions
+@dirrm share/apps/kwalletmanager/icons/hicolor/22x22
+@dirrm share/apps/kwalletmanager/icons/hicolor
 @dirrm share/apps/kwalletmanager/icons
 @dirrm share/apps/kwalletmanager
 @dirrm share/apps/kremotecontroldaemon
 @dirrm share/apps/kremotecontrol/profiles
 @dirrm share/apps/kremotecontrol
-@dirrm share/apps/kgpg/icons/oxygen/scalable/status
-@dirrm share/apps/kgpg/icons/oxygen/scalable/actions
-@dirrm share/apps/kgpg/icons/oxygen/scalable
-@dirrm share/apps/kgpg/icons/oxygen/48x48/status
-@dirrm share/apps/kgpg/icons/oxygen/48x48/actions
-@dirrm share/apps/kgpg/icons/oxygen/48x48
-@dirrm share/apps/kgpg/icons/oxygen/32x32/status
-@dirrm share/apps/kgpg/icons/oxygen/32x32/actions
-@dirrm share/apps/kgpg/icons/oxygen/32x32
-@dirrm share/apps/kgpg/icons/oxygen/22x22/status
-@dirrm share/apps/kgpg/icons/oxygen/22x22/actions
-@dirrm share/apps/kgpg/icons/oxygen/22x22
-@dirrm share/apps/kgpg/icons/oxygen/16x16/status
-@dirrm share/apps/kgpg/icons/oxygen/16x16/actions
-@dirrm share/apps/kgpg/icons/oxygen/16x16
-@dirrm share/apps/kgpg/icons/oxygen
+@dirrm share/apps/kgpg/icons/hicolor/scalable/status
+@dirrm share/apps/kgpg/icons/hicolor/scalable/actions
+@dirrm share/apps/kgpg/icons/hicolor/scalable
+@dirrm share/apps/kgpg/icons/hicolor/48x48/status
+@dirrm share/apps/kgpg/icons/hicolor/48x48/actions
+@dirrm share/apps/kgpg/icons/hicolor/48x48
+@dirrm share/apps/kgpg/icons/hicolor/32x32/status
+@dirrm share/apps/kgpg/icons/hicolor/32x32/actions
+@dirrm share/apps/kgpg/icons/hicolor/32x32
+@dirrm share/apps/kgpg/icons/hicolor/22x22/status
+@dirrm share/apps/kgpg/icons/hicolor/22x22/actions
+@dirrm share/apps/kgpg/icons/hicolor/22x22
+@dirrm share/apps/kgpg/icons/hicolor/16x16/status
+@dirrm share/apps/kgpg/icons/hicolor/16x16/actions
+@dirrm share/apps/kgpg/icons/hicolor/16x16
+@dirrm share/apps/kgpg/icons/hicolor
 @dirrm share/apps/kgpg/icons
 @dirrm share/apps/kgpg
 @dirrm share/apps/kdf

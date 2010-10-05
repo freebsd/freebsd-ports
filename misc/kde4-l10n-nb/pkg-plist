@@ -51,15 +51,6 @@ share/doc/HTML/nb/common/fdl-translated.html
 share/doc/HTML/nb/common/gpl-translated.html
 share/doc/HTML/nb/common/kde-localised.css
 share/doc/HTML/nb/common/lgpl-translated.html
-share/doc/HTML/nb/dma/common
-share/doc/HTML/nb/dma/index.cache.bz2
-share/doc/HTML/nb/dma/index.docbook
-share/doc/HTML/nb/interrupts/common
-share/doc/HTML/nb/interrupts/index.cache.bz2
-share/doc/HTML/nb/interrupts/index.docbook
-share/doc/HTML/nb/ioports/common
-share/doc/HTML/nb/ioports/index.cache.bz2
-share/doc/HTML/nb/ioports/index.docbook
 share/doc/HTML/nb/kcontrol/bell/common
 share/doc/HTML/nb/kcontrol/bell/index.cache.bz2
 share/doc/HTML/nb/kcontrol/bell/index.docbook
@@ -75,48 +66,9 @@ share/doc/HTML/nb/kcontrol/colors/index.docbook
 share/doc/HTML/nb/kcontrol/cookies/common
 share/doc/HTML/nb/kcontrol/cookies/index.cache.bz2
 share/doc/HTML/nb/kcontrol/cookies/index.docbook
-share/doc/HTML/nb/kcontrol/crypto/common
-share/doc/HTML/nb/kcontrol/crypto/index.cache.bz2
-share/doc/HTML/nb/kcontrol/crypto/index.docbook
-share/doc/HTML/nb/kcontrol/desktop/common
-share/doc/HTML/nb/kcontrol/desktop/index.cache.bz2
-share/doc/HTML/nb/kcontrol/desktop/index.docbook
-share/doc/HTML/nb/kcontrol/desktopbehavior/common
-share/doc/HTML/nb/kcontrol/desktopbehavior/index.cache.bz2
-share/doc/HTML/nb/kcontrol/desktopbehavior/index.docbook
 share/doc/HTML/nb/kioslave/data/common
 share/doc/HTML/nb/kioslave/data/index.cache.bz2
 share/doc/HTML/nb/kioslave/data/index.docbook
-share/doc/HTML/nb/memory/common
-share/doc/HTML/nb/memory/index.cache.bz2
-share/doc/HTML/nb/memory/index.docbook
-share/doc/HTML/nb/opengl/common
-share/doc/HTML/nb/opengl/index.cache.bz2
-share/doc/HTML/nb/opengl/index.docbook
-share/doc/HTML/nb/pci/common
-share/doc/HTML/nb/pci/index.cache.bz2
-share/doc/HTML/nb/pci/index.docbook
-share/doc/HTML/nb/pcmcia/common
-share/doc/HTML/nb/pcmcia/index.cache.bz2
-share/doc/HTML/nb/pcmcia/index.docbook
-share/doc/HTML/nb/protocols/common
-share/doc/HTML/nb/protocols/index.cache.bz2
-share/doc/HTML/nb/protocols/index.docbook
-share/doc/HTML/nb/quickstart/common
-share/doc/HTML/nb/quickstart/index.cache.bz2
-share/doc/HTML/nb/quickstart/index.docbook
-share/doc/HTML/nb/samba/common
-share/doc/HTML/nb/samba/index.cache.bz2
-share/doc/HTML/nb/samba/index.docbook
-share/doc/HTML/nb/scsi/common
-share/doc/HTML/nb/scsi/index.cache.bz2
-share/doc/HTML/nb/scsi/index.docbook
-share/doc/HTML/nb/usb/common
-share/doc/HTML/nb/usb/index.cache.bz2
-share/doc/HTML/nb/usb/index.docbook
-share/doc/HTML/nb/xserver/common
-share/doc/HTML/nb/xserver/index.cache.bz2
-share/doc/HTML/nb/xserver/index.docbook
 share/locale/nb/LC_MESSAGES/akonadicontact.mo
 share/locale/nb/LC_MESSAGES/amor.mo
 share/locale/nb/LC_MESSAGES/ark.mo
@@ -707,30 +659,14 @@ share/locale/nb/LC_SCRIPTS/kdelibs4/kdelibs4.js
 share/locale/nb/entry.desktop
 @dirrm share/locale/nb/LC_SCRIPTS/kdelibs4
 @dirrm share/locale/nb/LC_SCRIPTS
-@dirrm share/doc/HTML/nb/xserver
-@dirrm share/doc/HTML/nb/usb
-@dirrm share/doc/HTML/nb/scsi
-@dirrm share/doc/HTML/nb/samba
-@dirrm share/doc/HTML/nb/quickstart
-@dirrm share/doc/HTML/nb/protocols
-@dirrm share/doc/HTML/nb/pcmcia
-@dirrm share/doc/HTML/nb/pci
-@dirrm share/doc/HTML/nb/opengl
-@dirrm share/doc/HTML/nb/memory
 @dirrm share/doc/HTML/nb/kioslave/data
 @dirrm share/doc/HTML/nb/kioslave
-@dirrm share/doc/HTML/nb/kcontrol/desktopbehavior
-@dirrm share/doc/HTML/nb/kcontrol/desktop
-@dirrm share/doc/HTML/nb/kcontrol/crypto
 @dirrm share/doc/HTML/nb/kcontrol/cookies
 @dirrm share/doc/HTML/nb/kcontrol/colors
 @dirrm share/doc/HTML/nb/kcontrol/clock
 @dirrm share/doc/HTML/nb/kcontrol/cache
 @dirrm share/doc/HTML/nb/kcontrol/bell
 @dirrm share/doc/HTML/nb/kcontrol
-@dirrm share/doc/HTML/nb/ioports
-@dirrm share/doc/HTML/nb/interrupts
-@dirrm share/doc/HTML/nb/dma
 @dirrm share/doc/HTML/nb/common
 @dirrm share/apps/kvtml/nb
 @dirrm share/apps/kvtml

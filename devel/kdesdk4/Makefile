@@ -50,7 +50,6 @@ MAN1=	adddebug.1 \
 	cvslastlog.1 \
 	cvsrevertlast.1 \
 	cxxmetric.1 \
-	demangle.1 \
 	extend_dmalloc.1 \
 	extractrc.1 \
 	fixincludes.1 \
