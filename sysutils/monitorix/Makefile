@@ -8,7 +8,7 @@
 PORTNAME=	monitorix
 PORTVERSION=	1.5.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://monitorix.org/
+MASTER_SITES=	http://www.monitorix.org/
 
 MAINTAINER=	admin@mjbrune.org
 COMMENT=	A web based monitoring system
