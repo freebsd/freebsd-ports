@@ -1,6 +1,49 @@
 --- smbldap-useradd.orig	2008-04-22 10:13:29.000000000 +0200
-+++ smbldap-useradd	2008-05-06 11:58:30.000000000 +0200
-@@ -461,7 +461,7 @@
++++ smbldap-useradd	2010-10-05 12:04:47.827698271 +0200
+@@ -35,7 +35,7 @@
+ my %Options;
+ 
+ my $ok =
+-  getopts( 'o:abnmwWiPG:u:g:d:s:c:k:t:A:B:C:D:E:F:H:L:M:N:S:T:?', \%Options );
++  getopts( 'o:abnmwWiPG:u:g:d:s:c:k:t:A:B:C:D:E:F:H:L:M:N:S:T:X:Z?', \%Options );
+ 
+ if ( ( !$ok ) || ( @ARGV < 1 ) || ( $Options{'?'} ) ) {
+     print_banner;
+@@ -74,6 +74,7 @@
+     print "  -P	ends by invoking smbldap-passwd\n";
+     print "  -S	surname (Family name)\n";
+     print "  -T	mailToAddress (forward address) (comma seperated)\n";
++    print "  -X input encoding for givenname and surname (default UTF-8)\n";
+     print "  -Z	set custom LDAP attributes, name=value pairs comma separated\n";
+     print "  -?	show this help message\n";
+     exit(1);
+@@ -92,6 +93,14 @@
+ # Read only first @ARGV
+ my $userName = $ARGV[0];
+ 
++# Get the input encoding
++my $characterSet;
++if ( defined( $Options{'X'} ) ) {
++	$characterSet = $Options{'X'};
++} else {
++	$characterSet = "UTF-8";
++}
++
+ # For computers account, add a trailing dollar if missing
+ if ( defined( $Options{'w'} ) or defined( $Options{'W'} ) ) {
+     if ( $userName =~ /[^\$]$/s ) {
+@@ -278,8 +287,8 @@
+ $config{userLoginShell} = $tmp if ( defined( $tmp = $Options{'s'} ) );
+ $config{userGecos}      = $tmp if ( defined( $tmp = $Options{'c'} ) );
+ $config{skeletonDir}    = $tmp if ( defined( $tmp = $Options{'k'} ) );
+-$givenName = ( utf8Encode( $Options{'N'} ) || $userName );
+-$userSN    = ( utf8Encode( $Options{'S'} ) || $userName );
++$givenName = ( utf8Encode( $characterSet, $Options{'N'} ) || $userName );
++$userSN    = ( utf8Encode( $characterSet, $Options{'S'} ) || $userName );
+ if ( $Options{'N'} and $Options{'S'} ) {
+     $displayName = $userCN = "$givenName" . " $userSN";
+ }
+@@ -461,7 +470,7 @@
          if ( !( -d $userHomeDirectory ) ) {
              if ( $config{skeletonDir} ne "" ) {
                  system
