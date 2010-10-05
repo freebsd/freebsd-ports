@@ -7,7 +7,7 @@
 
 PORTNAME=	librcc
 PORTVERSION=	0.2.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	SF/rusxmms/Charset%20Conversion%20Library/${PORTVERSION} \
 		http://dside.dyndns.org/files/rusxmms/
@@ -21,7 +21,7 @@ LIB_DEPENDS=	rcd.1:${PORTSDIR}/devel/librcd \
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack lthack libxml2 glib12 gtk12
+USE_GNOME=	gnomehack lthack libxml2
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
@@ -30,9 +30,14 @@ USE_AUTOTOOLS=	autoheader:267
 CPPFLAGS=	-I${LOCALBASE}/include
 LIBS=		-L${LOCALBASE}/lib
 
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LIBS="${LIBS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
+
 OPTIONS=	BDB "Translation database support" off \
 		TRANSLATE "Online translation support" off \
 		TOOLS "Install recode configuration utility" on \
+		GTK1 "Use Gtk1 library/frontend" on \
 		GTK2 "Use Gtk2 library/frontend" on
 
 .include <bsd.port.options.mk>
@@ -53,11 +58,19 @@ CONFIGURE_ARGS+=--enable-libtranslate
 CONFIGURE_ARGS+=--disable-libtranslate
 .endif
 
+.if defined(WITH_GTK1)
+USE_GNOME+=	glib12 gtk12
+PLIST_SUB+=	WITH_GTK1=""
+.else
+CONFIGURE_ENV+=	ac_cv_path_GTK_CONFIG=no GTK_CONFIG=no
+PLIST_SUB+=	WITH_GTK1="@comment "
+.endif
+
 .if defined(WITH_GTK2)
 USE_GNOME+=	gtk20
 PLIST_SUB+=	WITH_GTK2=""
 .else
-CONFIGURE_ARGS+=--disable-glib1 --disable-gtk1
+CONFIGURE_ARGS+=--disable-glib2 --disable-gtk2
 PLIST_SUB+=	WITH_GTK2="@comment "
 .endif
 
@@ -67,10 +80,6 @@ PLIST_SUB+=	TOOLS=""
 .else
 PLIST_SUB+=	TOOLS="@comment "
 .endif
-
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LIBS="${LIBS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 pre-everything::
 .if ${ARCH} == "i386"
