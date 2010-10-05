@@ -11,7 +11,7 @@ PORTVERSION=	1.0.16
 CATEGORIES=	java devel
 MASTER_SITES=	SF/jfreechart/3.%20JCommon/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A collection of useful classes used by JFreeChart and JFreeReport
 
 USE_JAVA=	yes
