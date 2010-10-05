@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	Number-WithError
-PORTVERSION=	0.08
-PORTREVISION=	1
+PORTVERSION=	1.01
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	frederic@culot.org
 COMMENT=	Numbers with error propagation and scientific rounding
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Util.pm:${PORTSDIR}/devel/p5-Params-Util \
 		${SITE_PERL}/prefork.pm:${PORTSDIR}/devel/p5-prefork
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAN3=	Number::WithError.3
 
