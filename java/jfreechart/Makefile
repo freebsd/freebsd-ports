@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	jfreechart
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.13
 CATEGORIES=	java graphics
 MASTER_SITES=	SF/${PORTNAME}/1.%20JFreeChart/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A free Java class library for generating charts
 
 RUN_DEPENDS=	${JAVALIBDIR}/jcommon.jar:${PORTSDIR}/java/jcommon
@@ -44,11 +44,7 @@ pre-fetch:
 
 do-install:
 	@${ECHO_MSG} -n  ">> Installing .jar files in ${JAVAJARDIR}/..."
-.if defined(WITHOUT_COMPILE)
 	@${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-.else
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-.endif
 	@${INSTALL_DATA} ${WRKSRC}/lib/gnujaxp.jar ${JAVAJARDIR}/gnujaxp.jar
 	@${ECHO_MSG} " [DONE]"
 .if !defined(NOPORTDOCS) && !defined(WITHOUT_COMPILE)
