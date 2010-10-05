@@ -6,7 +6,7 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 COMMENT=	Convenient video file and movie encoder
 RESTRICTED=	Port has restricted dependencies
 
@@ -27,7 +27,6 @@ OPTIONS+=	LIBDV "Enable libdv support" off
 OPTIONS+=	MAD "Enable mad MPEG audio engine support" off
 OPTIONS+=	AMR "Enable opencore AMR audio codec support" off
 OPTIONS+=	TWOLAME "Enable twolame MPEG audio codec support" off
-OPTIONS+=	LIBMPCDEC "Enable libmpcdec support" off
 OPTIONS+=	FAAC "Enable FAAC audio codec support" off
 OPTIONS+=	LADSPA "Enable LADSPA plugin support" off
 OPTIONS+=	SPEEX "Enable speex audio codec support" off
@@ -79,7 +78,8 @@ CONFIGURE_ARGS+=	--disable-mplayer \
 			--disable-aa \
 			--disable-joystick \
 			--disable-directfb \
-			--disable-ssse3
+			--disable-ssse3 \
+			--disable-musepack
 
 ALL_TARGET=	mencoder
 
