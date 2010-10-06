@@ -8,7 +8,8 @@
 PORTNAME=	librcd
 PORTVERSION=	0.1.13
 CATEGORIES=	devel
-MASTER_SITES=	SF/rusxmms/Charset%20Detection%20Library/${PORTVERSION}
+MASTER_SITES=	http://dside.dydnds.org/files/rusxmms/ \
+		SF/rusxmms/Charset%20Detection%20Library/${PORTVERSION}
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Library used by rusxmms for autodetection of russian charset
