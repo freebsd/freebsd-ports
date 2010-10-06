@@ -7,13 +7,14 @@
 
 PORTNAME=	html2tex
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.iwriteiam.nl/
 DISTNAME=	html2tex_c.txt
 EXTRACT_SUFX=	# empty
 
 MAINTAINER=	martin.dieringer@gmx.de
-COMMENT=	HTML to LaTeX converter, last modified 2008
+COMMENT=	HTML to LaTeX converter, last modified 2010
 
 PLIST_FILES=	bin/html2tex
 NO_WRKSUBDIR=	yes
