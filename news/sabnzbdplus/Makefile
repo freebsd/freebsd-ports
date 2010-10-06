@@ -7,6 +7,7 @@
 
 PORTNAME=	sabnzbdplus
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/sabnzbd-${PORTVERSION}
 DISTNAME=	SABnzbd-${PORTVERSION}-src
@@ -17,11 +18,10 @@ COMMENT=	A web-interface based binary newsgrabber in python, with nzb support
 RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah \
 		${PYTHON_SITELIBDIR}/cherrypy/__init__.py:${PORTSDIR}/www/py-cherrypy \
 		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:${PORTSDIR}/devel/py-utils
-BUILD_DEPENDS=	${RUN_DEPENDS}
+
+LICENSE=	GPLv2
 
 USE_PYTHON=	2.4+
-
-PYVERSION=	${PYTHON_VERSION:S/^python//}
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/SABnzbd-${PORTVERSION}
@@ -37,8 +37,14 @@ OPTIONS=	PAR2CMDLINE "Required for postprocessing of par files." on \
 
 .include <bsd.port.pre.mk>
 
-.if defined(PYTHON_VERSION) && ${PYVERSION:S/.//} < 25
+.if ${PYTHON_REL} < 250
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree
+.endif
+
+.if ${PYTHON_REL} < 250
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
+.else
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 .endif
 
 .if !defined(WITHOUT_PAR2CMDLINE)
