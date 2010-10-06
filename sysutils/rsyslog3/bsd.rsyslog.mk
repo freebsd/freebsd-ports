@@ -16,7 +16,7 @@ PKGNAMESUFFIX?=	-${MNAME}
 LATEST_LINK=	rsyslog3${PKGNAMESUFFIX}
 CONFIGURE_ARGS+=	--enable-${MNAME:S|gssapi|gssapi-krb5|} \
 			--disable-rsyslogd --disable-klog
-RUN_DEPENDS=	rsyslog>=3:${PORTSDIR}/sysutils/rsyslog3
+RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog3
 PLIST_FILES=	${MTYPES:S|^|lib/rsyslog/|:S|$|${MNAME}.so|}
 PLIST=	""
 DESCR?=		${.CURDIR}/../rsyslog3/pkg-descr
