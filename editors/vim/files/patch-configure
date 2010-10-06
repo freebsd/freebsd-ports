@@ -3,6 +3,16 @@
 @@ -882 +882 @@ localedir='${datarootdir}/locale'
 -mandir='${datarootdir}/man'
 +mandir='${prefix}/man'
+@@ -4710,2 +4710,3 @@ $as_echo "no" >&6; }
+     LUA_CFLAGS="-I${vi_cv_path_lua_pfx}/include${LUA_INC}"
++    LUA_CFLAGS="-I${LUA_INCDIR}"
+     LUA_SRC="if_lua.c"
+@@ -4725,3 +4726,4 @@ $as_echo "no" >&6; }
+       LUA_LIBS=""
+-      LUA_CFLAGS="-DDYNAMIC_LUA_DLL=\\\"liblua${vi_cv_version_lua}.so$LUA_SONAME\\\" $LUA_CFLAGS"
++      vi_cv_version_lua=${LUA_VER}
++      LUA_CFLAGS="-DDYNAMIC_LUA_DLL=\\\"liblua-${vi_cv_version_lua}.so.$LUA_VER_SH\\\" $LUA_CFLAGS"
+     fi
 @@ -5599,7 +5599,7 @@ $as_echo_n "checking for location of tcl
  $as_echo "$try/tclConfig.sh" >&6; }
  	    . $try/tclConfig.sh
