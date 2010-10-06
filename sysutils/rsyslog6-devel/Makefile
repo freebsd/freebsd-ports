@@ -18,11 +18,11 @@ COMMENT?=	Syslogd supporting SQL, TCP and TLS
 
 .ifdef MNAME
 RUN_DEPENDS=	rsyslog>=${PORTREVISION}:${PORTSDIR}/sysutils/rsyslog6-devel
-
 PLIST=		${.CURDIR}/pkg-plist
+LATEST_LINK=	rsyslog6-devel-${MNAME}
+.else
+LATEST_LINK=	rsyslog6-devel
 .endif
-
-NO_LATEST_LINK=	yes
 
 .ifdef WITH_MYSQL_MICROSECONDS
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mysql-microseconds
