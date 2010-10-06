@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jack_mixer
-PORTVERSION=	8
+PORTVERSION=	9
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/${PORTNAME:S/_//}/
 
