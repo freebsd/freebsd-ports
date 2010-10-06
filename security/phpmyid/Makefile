@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dan@langille.org
 COMMENT=	A single user Identity Provider for the OpenID framework
 
+DEPRECATED=	Development has ceased.
+EXPIRATION_DATE=	 2011-01-01
+
 NO_BUILD=	yes
 USE_PHP=	session
 
