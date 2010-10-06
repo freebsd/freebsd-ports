@@ -40,10 +40,20 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		tomboy.1
 GCONF_SCHEMAS=	tomboy.schemas
 
+OPTIONS=	APPLET "Enable GNOME panel applet" off
+
 # Restrict to stable (even) versions, indicated by the second component.
 PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_APPLET)
+CONFIGURE_ARGS+=--enable-panel-applet
+PLIST_SUB+=	APPLET=""
+.else
+CONFIGURE_ARGS+=--disable-panel-applet
+PLIST_SUB+=	APPLET="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|`$$PKG_CONFIG --variable=libdir libpanelapplet-2.0`|"$$libdir"|g; \
