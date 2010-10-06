@@ -50,6 +50,7 @@ include/freeipmi/interface/rmcp-interface.h
 include/freeipmi/locate/ipmi-locate.h
 include/freeipmi/record-format/ipmi-cipher-suite-record-format.h
 include/freeipmi/record-format/ipmi-fru-information-record-format.h
+include/freeipmi/record-format/ipmi-sdr-oem-record-format.h
 include/freeipmi/record-format/ipmi-sdr-record-format.h
 include/freeipmi/record-format/ipmi-sel-record-format.h
 include/freeipmi/sdr-cache/ipmi-sdr-cache.h
@@ -115,6 +116,7 @@ include/freeipmi/templates/ipmi-messaging-support-cmds-templates.h
 include/freeipmi/templates/ipmi-pef-and-alerting-cmds-templates.h
 include/freeipmi/templates/ipmi-rmcpplus-interface-templates.h
 include/freeipmi/templates/ipmi-rmcpplus-support-and-payload-cmds-templates.h
+include/freeipmi/templates/ipmi-sdr-oem-record-format-templates.h
 include/freeipmi/templates/ipmi-sdr-record-format-templates.h
 include/freeipmi/templates/ipmi-sdr-repository-cmds-templates.h
 include/freeipmi/templates/ipmi-sel-cmds-templates.h

@@ -8,11 +8,11 @@
 #
 # WITH_DEBUG   - Enable debugging features.
 # WITH_IOPERM  - Use i386_set_ioperm(2) instead of io(4) to gain access
-#                to I/O ports (i386 only).
+#                to I/O ports (i386/amd64 only).
 #
 
 PORTNAME=	freeipmi
-PORTVERSION=	0.8.9
+PORTVERSION=	0.8.10
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU/${PORTNAME}/ \
 		http://ftp.gluster.com/pub/${PORTNAME}/${PORTVERSION}/ \
@@ -24,13 +24,13 @@ COMMENT=	Library and tools to support IPMI-capable hardware
 LIB_DEPENDS=	argp:${PORTSDIR}/devel/argp-standalone \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
-CONFIGURE_ARGS+=--disable-init-scripts \
+CONFIGURE_ARGS=	--disable-init-scripts \
 		--disable-logdir \
 		--disable-logrotate-config \
 		--localstatedir=/var \
 		--sysconfdir=${CONF_DIR} \
 		--with-ipmi-monitoring-sdr-cache-dir=${CACHE_DIR}/ipmimonitoringsdrcache
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" PTHREAD_LIBS=${PTHREAD_LIBS}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" PTHREAD_LIBS=${PTHREAD_LIBS}
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -41,7 +41,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS=	DEBUG	"Debugging features" off \
-		IOPERM	"Use i386_set_ioperm (i386 only)" off
+		IOPERM	"Use i386_set_ioperm (i386/amd64 only)" off
 
 INFO=		freeipmi-faq
 MAN3=		libfreeipmi.3 libipmiconsole.3 libipmidetect.3 libipmimonitoring.3
@@ -78,10 +78,10 @@ CONFIGURE_ARGS+=--enable-debug --enable-trace
 .endif
 
 .if defined(WITH_IOPERM)
-.if ${ARCH} == "i386"
-CPPFLAGS+=	-DUSE_IOPERM
+.if ${ARCH} == "amd64" && ${OSVERSION} < 800000
+BROKEN=		IOPERM option is not available on FreeBSD/amd64 7.x and below
 .else
-BROKEN=		IOPERM option is only available on i386 and You are building for ${ARCH}
+CPPFLAGS+=	-DUSE_IOPERM
 .endif
 .endif
 
