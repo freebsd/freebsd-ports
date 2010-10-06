@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	5.4.0
-PORTREVISION=	1
+PORTVERSION=	5.7.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://download.rsyslog.com/rsyslog/
+MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 .ifdef MNAME
 PKGNAMESUFFIX?=	-${MNAME}
 .endif
@@ -76,8 +75,8 @@ IGNORE=	with gssapi module is only supported on FreeBSD 7.x or later
 
 CONFIGURE_ARGS+=	--disable-rsyslogd --disable-klog
 
-DESCR?=		${.CURDIR}/../rsyslog5/pkg-descr
-MD5_FILE?=	${.CURDIR}/../rsyslog5/distinfo
+DESCR?=		${.CURDIR}/../rsyslog5-devel/pkg-descr
+MD5_FILE?=	${.CURDIR}/../rsyslog5-devel/distinfo
 .endif
 
 .if ${OSVERSION} < 700042
