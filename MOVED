@@ -4613,3 +4613,12 @@ devel/cego-xml|devel/lfcxml|2010-10-02|Project was renamed
 www/p5-WWW-Pastebin-RafbNet-Create||2010-10-02|http://rafb.net service is dead
 devel/maven||2010-10-03|Has expired: Development has been ceased, superseded by devel/maven2.
 games/daimonin-client|games/daimonin|2010-10-04|Renamed
+sysutils/rsyslog55|sysutils/rsyslog5|2010-10-05|Renamed
+sysutils/rsyslog55-dbi|sysutils/rsyslog5-dbi|2010-10-05|Renamed
+sysutils/rsyslog55-gnutls|sysutils/rsyslog5-gnutls|2010-10-05|Renamed
+sysutils/rsyslog55-gssapi|sysutils/rsyslog5-gssapi|2010-10-05|Renamed
+sysutils/rsyslog55-mysql|sysutils/rsyslog5-mysql|2010-10-05|Renamed
+sysutils/rsyslog55-pgsql|sysutils/rsyslog5-pgsql|2010-10-05|Renamed
+sysutils/rsyslog55-relp|sysutils/rsyslog5-relp|2010-10-05|Renamed
+sysutils/rsyslog55-rfc3195|sysutils/rsyslog5-rfc3195|2010-10-05|Renamed
+sysutils/rsyslog55-snmpl|sysutils/rsyslog5-snmp|2010-10-05|Renamed
