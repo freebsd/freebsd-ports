@@ -9,4 +9,6 @@ The following features are supported through modules: logging to
 MySQL, PostgreSQL, any libdbi-supported backend; SNMP trap sender, GSS
 API, RELP.
 
+Tracking v3-stable
+
 WWW: http://www.rsyslog.com/

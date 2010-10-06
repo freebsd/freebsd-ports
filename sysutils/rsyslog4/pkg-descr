@@ -13,4 +13,6 @@ configuration file syntax. Its advanced features make it suitable for
 enterprise-class, encryption protected syslog relay chains while at the same
 time being very easy to setup for the novice user.
 
+Tracking v4-stable
+
 WWW: http://www.rsyslog.com/
