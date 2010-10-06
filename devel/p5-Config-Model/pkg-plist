@@ -1,5 +1,6 @@
 bin/config-edit
-bin/config-edit-dep5
+bin/config-edit-dpkg-control
+bin/config-edit-dpkg-copyright
 bin/config-edit-popcon
 %%SITE_PERL%%/Config/Model.pm
 %%SITE_PERL%%/Config/Model/Annotation.pm
@@ -7,7 +8,9 @@ bin/config-edit-popcon
 %%SITE_PERL%%/Config/Model/AnyThing.pm
 %%SITE_PERL%%/Config/Model/AutoRead.pm
 %%SITE_PERL%%/Config/Model/Backend/Any.pm
-%%SITE_PERL%%/Config/Model/Backend/Debian/Dep5.pm
+%%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg/Control.pm
+%%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg/Copyright.pm
+%%SITE_PERL%%/Config/Model/Backend/Debian/DpkgSyntax.pm
 %%SITE_PERL%%/Config/Model/Backend/IniFile.pm
 %%SITE_PERL%%/Config/Model/Backend/ShellVar.pm
 %%SITE_PERL%%/Config/Model/Backend/Yaml.pm
@@ -32,13 +35,19 @@ bin/config-edit-popcon
 %%SITE_PERL%%/Config/Model/WarpedNode.pm
 %%SITE_PERL%%/Config/Model/WarpedThing.pm
 %%SITE_PERL%%/Config/Model/WizardHelper.pm
-%%SITE_PERL%%/Config/Model/models/Debian/Dep5.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dep5/Content.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dep5/License.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control/Binary.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control/Source.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/Content.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/License.pl
 %%SITE_PERL%%/Config/Model/models/PopCon.pl
-@dirrmtry %%SITE_PERL%%/Config/Model/models/Debian/Dep5
+@dirrmtry %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright
+@dirrmtry %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control
+@dirrmtry %%SITE_PERL%%/Config/Model/models/Debian/Dpkg
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Debian
 @dirrmtry %%SITE_PERL%%/Config/Model/models
+@dirrmtry %%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg
 @dirrmtry %%SITE_PERL%%/Config/Model/Backend/Debian
 @dirrmtry %%SITE_PERL%%/Config/Model/Backend
 @dirrmtry %%SITE_PERL%%/Config/Model

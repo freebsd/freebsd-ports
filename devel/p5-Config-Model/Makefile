@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	1.209
+PORTVERSION=	1.210
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,13 +28,19 @@ BUILD_DEPENDS+=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 
 PERL_MODBUILD=	5.8.0+
 
-MAN1=		config-edit.1 config-edit-dep5.1 config-edit-popcon.1
+MAN1=		config-edit.1 \
+		config-edit-dpkg-control.1 \
+		config-edit-dpkg-copyright.1 \
+		config-edit-popcon.1
 
-MAN3=		Config::Model.3 Config::Model::AnyId.3 \
+MAN3=		Config::Model.3 \
+		Config::Model::AnyId.3 \
 		Config::Model::Annotation.3 \
 		Config::Model::AnyThing.3 Config::Model::AutoRead.3 \
 		Config::Model::Backend::Any.3 \
-		Config::Model::Backend::Debian::Dep5.3 \
+		Config::Model::Backend::Debian::DpkgSyntax.3 \
+		Config::Model::Backend::Debian::Dpkg::Control.3 \
+		Config::Model::Backend::Debian::Dpkg::Copyright.3 \
 		Config::Model::Backend::IniFile.3 \
 		Config::Model::Backend::ShellVar.3 \
 		Config::Model::Backend::Yaml.3 \
