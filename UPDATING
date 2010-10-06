@@ -224,7 +224,7 @@ you update your ports collection, before attempting any port upgrades.
 
 20100813:
   AFFECTS: www/opera
-  AUTHOR: dinoex@
+  AUTHOR: dinoex@FreeBSD.org
 
   If you run opera without gtk or kde4, the browser might crash on shutdown.
   In this case go to about:config and change "Dialog Toolkit" from 0 to 4.
@@ -646,7 +646,7 @@ you update your ports collection, before attempting any port upgrades.
     portupgrade -f -o multimedia/phonon multimedia/qt4-phonon
     portupgrade -f -o multimedia/phonon-gstreamer multimedia/qt4-phonon-gst
 
-201005010:
+20100510:
   AFFECTS: users of security/gnome-keyring
   AUTHOR: kwm@FreeBSD.org
 
@@ -1048,7 +1048,7 @@ you update your ports collection, before attempting any port upgrades.
 	$ fetch http://people.freebsd.org/~avl/script/grdc2remmina.sh
 	$ sh grdc2remmina.sh
 
-20091213
+20091213:
   AFFECTS: users of net-mgmt/zabbix, net-mgmt/zabbix-agent
   AUTHOR: Jim Riggs <ports@christianserving.org>
 
@@ -2718,7 +2718,7 @@ you update your ports collection, before attempting any port upgrades.
   Default logfile: /var/log/pgbouncer/pgbouncer.log
   Default pidfile: /var/run/pgbouncer/pgbouncer.pid
 
-20080808
+20080808:
   AFFECTS: users of chinese/phpbb-tw
   AUTHOR: chinsan@FreeBSD.org
 
@@ -3429,7 +3429,7 @@ you update your ports collection, before attempting any port upgrades.
     # portmaster gstreamer-plugins-good
 
 20080323:
-  AFFECTS: all GNOME users and ports depend on gnomehier
+  AFFECTS: all GNOME users and ports depend on misc/gnomehier
   AUTHOR: gnome@FreeBSD.org
 
   GNOME has been updated to 2.22.0.  You have to deinstall a few ports first
