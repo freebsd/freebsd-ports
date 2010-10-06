@@ -7,6 +7,7 @@
 
 PORTNAME=	wordpress
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	chinese www
 MASTER_SITES=	http://cn.wordpress.org/
 PKGNAMESUFFIX=	-zh_CN
