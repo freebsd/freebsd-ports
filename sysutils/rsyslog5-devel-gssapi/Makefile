@@ -6,7 +6,7 @@
 #
 
 COMMENT=	GSS API input/output module for rsyslog
-MASTERDIR=	${.CURDIR}/../rsyslog5
+MASTERDIR=	${.CURDIR}/../rsyslog5-devel
 
 MNAME=	gssapi
 

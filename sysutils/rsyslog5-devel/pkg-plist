@@ -51,8 +51,11 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/imfile.html
 %%PORTDOCS%%%%DOCSDIR%%/imgssapi.html
 %%PORTDOCS%%%%DOCSDIR%%/imklog.html
+%%PORTDOCS%%%%DOCSDIR%%/impstats.html
+%%PORTDOCS%%%%DOCSDIR%%/imptcp.html
 %%PORTDOCS%%%%DOCSDIR%%/imrelp.html
 %%PORTDOCS%%%%DOCSDIR%%/imtcp.html
+%%PORTDOCS%%%%DOCSDIR%%/imsolaris.html
 %%PORTDOCS%%%%DOCSDIR%%/imuxsock.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/install.html
@@ -70,10 +73,12 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/ommysql.html
 %%PORTDOCS%%%%DOCSDIR%%/omoracle.html
 %%PORTDOCS%%%%DOCSDIR%%/omrelp.html
+%%PORTDOCS%%%%DOCSDIR%%/omruleset.html
 %%PORTDOCS%%%%DOCSDIR%%/omsnmp.html
 %%PORTDOCS%%%%DOCSDIR%%/omstdout.html
 %%PORTDOCS%%%%DOCSDIR%%/omudpspoof.html
-%%PORTDOCS%%%%DOCSDIR%%/professional_support.html
+%%PORTDOCS%%%%DOCSDIR%%/omuxsock.html
+%%PORTDOCS%%%%DOCSDIR%%/pmlastmsg.html
 %%PORTDOCS%%%%DOCSDIR%%/property_replacer.html
 %%PORTDOCS%%%%DOCSDIR%%/queueWorkerLogic.jpg
 %%PORTDOCS%%%%DOCSDIR%%/queueWorkerLogic_small.jpg
@@ -93,6 +98,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_dropmsgswithmaliciousdnsptrrecords.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_droptrailinglfonreception.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_dynafilecachesize.html
+%%PORTDOCS%%%%DOCSDIR%%/rsconf1_escape8bitcharsonreceive.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_escapecontrolcharactersonreceive.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_failonchownfailure.html
 %%PORTDOCS%%%%DOCSDIR%%/rsconf1_filecreatemode.html
