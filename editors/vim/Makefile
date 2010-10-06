@@ -190,9 +190,6 @@ post-patch:
 .endif
 
 pre-configure:
-	# Fix dependency misspelling so that 'make -j#' will work.
-	@${REINPLACE_CMD} -e 's|\./auto/osdef\.h|auto/osdef.h|g' \
-		${WRKSRC}/Makefile
 	@(cd ${WRKSRC} ; ${MAKE} distclean)
 	@${REINPLACE_CMD} -e ' \
 		s|\$$gtk_config_prefix/bin/gtk-config|\$${GTK_CONFIG}|g; \
