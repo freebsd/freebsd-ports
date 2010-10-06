@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	rsyslog
-PORTREVISION=	2
 
 COMMENT=	Enhanced syslog daemon
 
@@ -25,8 +24,6 @@ CONFIGURE_ARGS+=--enable-klog --disable-static --enable-mail \
 CONFIGURE_ARGS+=--enable-rtinst --enable-debug
 .endif
 
-PORTSCOUT=	skipv:3.21.10,3.21.9,3.21.8,3.21.7,3.21.6,3.21.5,3.21.4,3.21.3,3.21.2,3.21.1,3.21.0
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/lib/rsyslog/|${PREFIX}/lib/rsyslog/|'\
@@ -43,10 +40,5 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include "${.CURDIR}/bsd.rsyslog.mk"
-.include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900007
-BROKEN=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

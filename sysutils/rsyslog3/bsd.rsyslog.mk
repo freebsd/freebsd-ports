@@ -1,7 +1,7 @@
 PORTNAME?=	rsyslog
-PORTVERSION?=	3.22.1
+PORTVERSION?=	3.22.2
 CATEGORIES?=	sysutils
-MASTER_SITES?=	http://download.rsyslog.com/rsyslog/
+MASTER_SITES?=	http://www.rsyslog.com/files/download/rsyslog/
 MAINTAINER?=	miwi@FreeBSD.org
 
 NO_LATEST_LINK=	yes
@@ -21,8 +21,6 @@ PLIST_FILES=	${MTYPES:S|^|lib/rsyslog/|:S|$|${MNAME}.so|}
 PLIST=	""
 DESCR?=		${.CURDIR}/../rsyslog3/pkg-descr
 MD5_FILE?=	${.CURDIR}/../rsyslog3/distinfo
-
-PORTSCOUT=	skipv:3.21.10,3.21.9,3.21.8,3.21.7,3.21.6,3.21.5,3.21.4,3.21.3,3.21.2,3.21.1,3.21.0
 
 do-install:
 	@${INSTALL} -d ${PREFIX}/lib/rsyslog/
