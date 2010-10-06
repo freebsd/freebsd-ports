@@ -52,6 +52,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/imrelp.html
 %%PORTDOCS%%%%DOCSDIR%%/imtcp.html
 %%PORTDOCS%%%%DOCSDIR%%/imuxsock.html
+%%PORTDOCS%%%%DOCSDIR%%/imsolaris.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/install.html
 %%PORTDOCS%%%%DOCSDIR%%/ipv6.html
