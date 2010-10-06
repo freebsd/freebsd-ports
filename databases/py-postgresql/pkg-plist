@@ -45,6 +45,10 @@
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/clientparameters.pyc
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/clientparameters.pyo
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/clientparameters.txt
+%%PYTHON_SITELIBDIR%%/postgresql/documentation/cluster.py
+%%PYTHON_SITELIBDIR%%/postgresql/documentation/cluster.pyc
+%%PYTHON_SITELIBDIR%%/postgresql/documentation/cluster.pyo
+%%PYTHON_SITELIBDIR%%/postgresql/documentation/cluster.txt
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/copyman.py
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/copyman.pyc
 %%PYTHON_SITELIBDIR%%/postgresql/documentation/copyman.pyo
