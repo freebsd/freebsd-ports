@@ -17,7 +17,7 @@ MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT?=	Syslogd supporting SQL, TCP and TLS
 
 .ifdef MNAME
-RUN_DEPENDS=	rsyslog>=${PORTREVISION}:${PORTSDIR}/sysutils/rsyslog6-devel
+RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog6-devel
 PLIST=		${.CURDIR}/pkg-plist
 LATEST_LINK=	rsyslog6-devel-${MNAME}
 .else

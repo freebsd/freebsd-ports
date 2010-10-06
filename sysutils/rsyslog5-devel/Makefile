@@ -17,7 +17,7 @@ MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT?=	Syslogd supporting SQL, TCP and TLS
 
 .ifdef MNAME
-RUN_DEPENDS=	rsyslog>=5:${PORTSDIR}/sysutils/rsyslog5
+RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog5
 PLIST=		${.CURDIR}/pkg-plist
 LATEST_LINK=	rsyslog5-devel-${MNAME}
 .else
