@@ -8,7 +8,7 @@
 PORTNAME=	librcd
 PORTVERSION=	0.1.13
 CATEGORIES=	devel
-MASTER_SITES=	http://dside.dydnds.org/files/rusxmms/ \
+MASTER_SITES=	http://dside.dyndns.org/files/rusxmms/ \
 		SF/rusxmms/Charset%20Detection%20Library/${PORTVERSION}
 
 MAINTAINER=	fluffy@FreeBSD.org
