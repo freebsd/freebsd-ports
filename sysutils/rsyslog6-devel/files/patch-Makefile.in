@@ -1,0 +1,19 @@
+--- ./Makefile.in.orig	2010-10-05 05:14:22.724781915 +0000
++++ ./Makefile.in	2010-10-05 05:14:41.908897529 +0000
+@@ -52,7 +52,6 @@
+ @ENABLE_PGSQL_TRUE@am__append_10 = plugins/ompgsql
+ @ENABLE_SNMP_TRUE@am__append_11 = plugins/omsnmp
+ @ENABLE_CUST1_TRUE@am__append_12 = plugins/cust1
+-@ENABLE_IMTEMPLATE_TRUE@am__append_13 = plugins/imtemplate
+ @ENABLE_OMSTDOUT_TRUE@am__append_14 = plugins/omstdout
+ @ENABLE_PMLASTMSG_TRUE@am__append_15 = plugins/pmlastmsg
+ @ENABLE_PMRFC3164SD_TRUE@am__append_16 = plugins/pmrfc3164sd
+@@ -194,7 +193,7 @@
+ 	plugins/imklog plugins/imsolaris plugins/omgssapi \
+ 	plugins/imgssapi plugins/omrelp plugins/imrelp plugins/ommysql \
+ 	plugins/omlibdbi plugins/ompgsql plugins/omsnmp plugins/cust1 \
+-	plugins/imtemplate plugins/omstdout plugins/pmlastmsg \
++	plugins/omstdout plugins/pmlastmsg \
+ 	plugins/pmrfc3164sd plugins/omruleset plugins/omdbalerting \
+ 	plugins/omudpspoof plugins/omuxsock plugins/omtemplate \
+ 	plugins/imfile plugins/imptcp plugins/imdiag plugins/ommail \
