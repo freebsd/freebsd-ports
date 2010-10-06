@@ -7,6 +7,7 @@
 
 PORTNAME=	biew
 PORTVERSION=	6.1.0
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	SF/beye/biew/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-src
@@ -21,17 +22,9 @@ CONFIGURE_ARGS=	--cc="${CC}" --with-extraincdir="${LOCALBASE}/include" \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
+USE_DOS2UNIX=	${PORTDOCS}
 MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
-
-PLIST_FILES=	bin/biew \
-		%%DATADIR%%/assembly.skn \
-		%%DATADIR%%/biew.hlp \
-		%%DATADIR%%/golded.skn \
-		%%DATADIR%%/insight.skn \
-		%%DATADIR%%/light.skn \
-		%%DATADIR%%/standard.skn
-PLIST_DIRS=	%%DATADIR%%
 
 MAN1=		biew.1
 PORTDOCS=	biew_en.txt biew_ru.txt develop.en develop.ru file_ini.en \
@@ -41,6 +34,10 @@ OPTIONS=	SLANG	"Use S-Lang based display renderer"	on
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile
+.endif
+
 .if defined(WITH_SLANG)
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 CONFIGURE_ARGS+=	--enable-slang
@@ -48,26 +45,29 @@ CONFIGURE_ARGS+=	--enable-slang
 CONFIGURE_ARGS+=	--enable-curses
 .endif
 
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},' ${WRKSRC}/configure
+# Allow it to find definition of `uintmax_t' (required at least for ia64)
+	@${REINPLACE_CMD} -e 's,<sys/types,<stdint,' \
+		${WRKSRC}/biewlib/sysdep/generic/__config.h
 
-post-build:
-	${LN} -sf ../../biewlib ${WRKSRC}/tools/biewhlp/biewlib
-	cd ${WRKSRC}/tools/biewhlp && ${GMAKE} ${MAKE_ARGS}
-	${LN} -sf ../../biewlib ${WRKSRC}/tools/lzss/biewlib
-	cd ${WRKSRC}/tools/lzss && ${GMAKE} ${MAKE_ARGS}
-	(cd ${WRKSRC}/hlp; ${LN} -sf ../tools/biewhlp/biewhlp; \
-	${LN} -sf ../tools/lzss/lzss; ./biewhlp biewhlp.prj)
+# Rebuilding of help file does not work at least on ia64; use precompiled
+# file provided by original vendor (MD5 sums of both match)
+#post-build:
+#	${LN} -sf ../../biewlib ${WRKSRC}/tools/biewhlp/biewlib
+#	cd ${WRKSRC}/tools/biewhlp && ${GMAKE} ${MAKE_ARGS}
+#	${LN} -sf ../../biewlib ${WRKSRC}/tools/lzss/biewlib
+#	cd ${WRKSRC}/tools/lzss && ${GMAKE} ${MAKE_ARGS}
+#	(cd ${WRKSRC}/hlp; ${LN} -sf ../tools/biewhlp/biewhlp; \
+#	${LN} -sf ../tools/lzss/lzss; ./biewhlp biewhlp.prj)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/biew ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/bin_rc/skn/*.skn ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/hlp/biew.hlp ${DATADIR}
+	@${MKDIR} ${DATADIR}/skn ${DATADIR}/syntax ${DATADIR}/xlt
+	${INSTALL_DATA} ${WRKSRC}/bin_rc/biew.hlp ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/bin_rc/skn/* ${DATADIR}/skn
+	${INSTALL_DATA} ${WRKSRC}/bin_rc/syntax/* ${DATADIR}/syntax
+	${INSTALL_DATA} ${WRKSRC}/bin_rc/xlt/russian/* ${DATADIR}/xlt
 	${INSTALL_MAN} ${WRKSRC}/doc/biew.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

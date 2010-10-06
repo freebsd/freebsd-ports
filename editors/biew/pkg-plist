@@ -1,0 +1,44 @@
+bin/biew
+%%DATADIR%%/biew.hlp
+%%DATADIR%%/skn/assembly.skn
+%%DATADIR%%/skn/golded.skn
+%%DATADIR%%/skn/insight.skn
+%%DATADIR%%/skn/light.skn
+%%DATADIR%%/skn/standard.skn
+%%DATADIR%%/syntax/awk.stx
+%%DATADIR%%/syntax/c.stx
+%%DATADIR%%/syntax/cpp.stx
+%%DATADIR%%/syntax/cxx.stx
+%%DATADIR%%/syntax/diff.stx
+%%DATADIR%%/syntax/fortran.stx
+%%DATADIR%%/syntax/html.stx
+%%DATADIR%%/syntax/java.stx
+%%DATADIR%%/syntax/makefile.stx
+%%DATADIR%%/syntax/pascal.stx
+%%DATADIR%%/syntax/perl.stx
+%%DATADIR%%/syntax/python.stx
+%%DATADIR%%/syntax/sh.stx
+%%DATADIR%%/syntax/sql.stx
+%%DATADIR%%/syntax/syntax.stx
+%%DATADIR%%/syntax/template.stx
+%%DATADIR%%/syntax/xml.stx
+%%DATADIR%%/xlt/alt2koi.xlt
+%%DATADIR%%/xlt/alt2mac.xlt
+%%DATADIR%%/xlt/alt2win.xlt
+%%DATADIR%%/xlt/e2a.xlt
+%%DATADIR%%/xlt/gost872a.xlt
+%%DATADIR%%/xlt/ibm2alt.xlt
+%%DATADIR%%/xlt/iso2alt.xlt
+%%DATADIR%%/xlt/koi02alt.xlt
+%%DATADIR%%/xlt/koi2alt.xlt
+%%DATADIR%%/xlt/koi72alt.xlt
+%%DATADIR%%/xlt/koi82_2a.xlt
+%%DATADIR%%/xlt/koi8a2a.xlt
+%%DATADIR%%/xlt/koi8e2a.xlt
+%%DATADIR%%/xlt/mac2alt.xlt
+%%DATADIR%%/xlt/mik2alt.xlt
+%%DATADIR%%/xlt/win2alt.xlt
+@dirrm %%DATADIR%%/xlt
+@dirrm %%DATADIR%%/syntax
+@dirrm %%DATADIR%%/skn
+@dirrm %%DATADIR%%
