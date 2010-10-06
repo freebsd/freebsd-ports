@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	0.9.15
+PORTVERSION=	0.9.16
 CATEGORIES=	graphics ruby rubygems
 MASTER_SITES=	RG
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
@@ -22,6 +22,6 @@ GEM_NAME=	${DISTNAME}
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-PLIST_FILES=	bin/ruby2gv bin/gem2gv bin/dot2ruby bin/git2gv
+PLIST_FILES=	bin/ruby2gv bin/gem2gv bin/dot2ruby bin/git2gv bin/xml2gv
 
 .include <bsd.port.mk>
