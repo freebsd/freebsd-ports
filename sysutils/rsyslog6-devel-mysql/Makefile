@@ -6,7 +6,7 @@
 #
 
 COMMENT=	MySQL output module for rsyslog
-MASTERDIR=	${.CURDIR}/../rsyslog55
+MASTERDIR=	${.CURDIR}/../rsyslog6-devel
 
 MNAME=	mysql
 USE_MYSQL=	yes

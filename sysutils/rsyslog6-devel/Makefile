@@ -1,4 +1,4 @@
-# New ports collection makefile for: rsyslog4
+# New ports collection makefile for: rsyslog6-devel
 # Date created:     29 December 2008
 # Whom:             Cristiano Rolim Pereira <cristianorolim@hotmail.com>
 #
@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	5.5.5
+PORTVERSION=	6.1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://download.rsyslog.com/rsyslog/
+MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 .ifdef MNAME
 PKGNAMESUFFIX?=	-${MNAME}
 .endif
@@ -17,7 +17,7 @@ MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT?=	Syslogd supporting SQL, TCP and TLS
 
 .ifdef MNAME
-RUN_DEPENDS=	rsyslog>=5.5.0:${PORTSDIR}/sysutils/rsyslog55
+RUN_DEPENDS=	rsyslog>=${PORTREVISION}:${PORTSDIR}/sysutils/rsyslog6-devel
 
 PLIST=		${.CURDIR}/pkg-plist
 .endif
@@ -32,7 +32,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mysql-microseconds
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sane-hostname
 .endif
 
-CONFLICTS=	rsyslog-[!5].[0-9]* rsyslog-5.4.*
+CONFLICTS=	rsyslog-[!6].[0-9]* 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
@@ -86,8 +86,8 @@ IGNORE=	with gssapi module is only supported on FreeBSD 7.x or later
 
 CONFIGURE_ARGS+=	--disable-rsyslogd --disable-klog
 
-DESCR?=		${.CURDIR}/../rsyslog55/pkg-descr
-MD5_FILE?=	${.CURDIR}/../rsyslog55/distinfo
+DESCR?=		${.CURDIR}/../rsyslog6-devel/pkg-descr
+MD5_FILE?=	${.CURDIR}/../rsyslog6-devel/distinfo
 .endif
 
 .if ${OSVERSION} < 700042

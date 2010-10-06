@@ -51,6 +51,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/imfile.html
 %%PORTDOCS%%%%DOCSDIR%%/imgssapi.html
 %%PORTDOCS%%%%DOCSDIR%%/imklog.html
+%%PORTDOCS%%%%DOCSDIR%%/imptcp.html
 %%PORTDOCS%%%%DOCSDIR%%/imrelp.html
 %%PORTDOCS%%%%DOCSDIR%%/imsolaris.html
 %%PORTDOCS%%%%DOCSDIR%%/imtcp.html
@@ -71,10 +72,12 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/ommysql.html
 %%PORTDOCS%%%%DOCSDIR%%/omoracle.html
 %%PORTDOCS%%%%DOCSDIR%%/omrelp.html
+%%PORTDOCS%%%%DOCSDIR%%/omruleset.html
 %%PORTDOCS%%%%DOCSDIR%%/omsnmp.html
 %%PORTDOCS%%%%DOCSDIR%%/omstdout.html
 %%PORTDOCS%%%%DOCSDIR%%/omudpspoof.html
-%%PORTDOCS%%%%DOCSDIR%%/professional_support.html
+%%PORTDOCS%%%%DOCSDIR%%/omuxsock.html
+%%PORTDOCS%%%%DOCSDIR%%/pmlastmsg.html
 %%PORTDOCS%%%%DOCSDIR%%/property_replacer.html
 %%PORTDOCS%%%%DOCSDIR%%/queueWorkerLogic.jpg
 %%PORTDOCS%%%%DOCSDIR%%/queueWorkerLogic_small.jpg
@@ -135,6 +138,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_secure_tls.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_stunnel.html
 %%PORTDOCS%%%%DOCSDIR%%/rsyslog_tls.html
+%%PORTDOCS%%%%DOCSDIR%%/scoping.html
 %%PORTDOCS%%%%DOCSDIR%%/syslog_parsing.html
 %%PORTDOCS%%%%DOCSDIR%%/syslog_protocol.html
 %%PORTDOCS%%%%DOCSDIR%%/tls_cert.jpg
