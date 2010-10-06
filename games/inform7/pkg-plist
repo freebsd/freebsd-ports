@@ -1,0 +1,138 @@
+bin/i7
+bin/inform6
+bin/ni
+%%DATADIR%%/Extensions/Emily Short/Glulx Entry Points.i7x
+%%DATADIR%%/Extensions/Emily Short/Plurality.i7x
+%%DATADIR%%/Extensions/Emily Short/._Basic Screen Effects.i7x
+%%DATADIR%%/Extensions/Emily Short/._Basic Help Menu.i7x
+%%DATADIR%%/Extensions/Emily Short/._Plurality.i7x
+%%DATADIR%%/Extensions/Emily Short/Punctuation Removal.i7x
+%%DATADIR%%/Extensions/Emily Short/Locksmith.i7x
+%%DATADIR%%/Extensions/Emily Short/._Glulx Text Effects.i7x
+%%DATADIR%%/Extensions/Emily Short/._Glulx Image Centering.i7x
+%%DATADIR%%/Extensions/Emily Short/Menus.i7x
+%%DATADIR%%/Extensions/Emily Short/._Locksmith.i7x
+%%DATADIR%%/Extensions/Emily Short/Glulx Text Effects.i7x
+%%DATADIR%%/Extensions/Emily Short/Case Management.i7x
+%%DATADIR%%/Extensions/Emily Short/Complex Listing.i7x
+%%DATADIR%%/Extensions/Emily Short/Glulx Image Centering.i7x
+%%DATADIR%%/Extensions/Emily Short/._Complex Listing.i7x
+%%DATADIR%%/Extensions/Emily Short/._Punctuation Removal.i7x
+%%DATADIR%%/Extensions/Emily Short/._Glulx Entry Points.i7x
+%%DATADIR%%/Extensions/Emily Short/._Menus.i7x
+%%DATADIR%%/Extensions/Emily Short/Basic Help Menu.i7x
+%%DATADIR%%/Extensions/Emily Short/._Case Management.i7x
+%%DATADIR%%/Extensions/Emily Short/Basic Screen Effects.i7x
+%%DATADIR%%/Extensions/Reserved/Templates/Parchment/._parchment.css
+%%DATADIR%%/Extensions/Reserved/Templates/Parchment/jquery.min.js
+%%DATADIR%%/Extensions/Reserved/Templates/Parchment/._(manifest).txt
+%%DATADIR%%/Extensions/Reserved/Templates/Parchment/parchment.min.js
+%%DATADIR%%/Extensions/Reserved/Templates/Parchment/._gnusto.min.js
+%%DATADIR%%/Extensions/Reserved/Templates/Parchment/parchment.css
+%%DATADIR%%/Extensions/Reserved/Templates/Parchment/gnusto.min.js
+%%DATADIR%%/Extensions/Reserved/Templates/Parchment/._zmachine.min.js
+%%DATADIR%%/Extensions/Reserved/Templates/Parchment/zmachine.min.js
+%%DATADIR%%/Extensions/Reserved/Templates/Parchment/._parchment.min.js
+%%DATADIR%%/Extensions/Reserved/Templates/Parchment/(manifest).txt
+%%DATADIR%%/Extensions/Reserved/Templates/Parchment/._jquery.min.js
+%%DATADIR%%/Extensions/Reserved/Templates/Standard/._index.html
+%%DATADIR%%/Extensions/Reserved/Templates/Standard/source.html
+%%DATADIR%%/Extensions/Reserved/Templates/Standard/play.html
+%%DATADIR%%/Extensions/Reserved/Templates/Standard/._play.html
+%%DATADIR%%/Extensions/Reserved/Templates/Standard/._source.html
+%%DATADIR%%/Extensions/Reserved/Templates/Standard/._style.css
+%%DATADIR%%/Extensions/Reserved/Templates/Standard/style.css
+%%DATADIR%%/Extensions/Reserved/Templates/Standard/index.html
+%%DATADIR%%/Extensions/Reserved/Templates/Classic/index.html
+%%DATADIR%%/Extensions/Reserved/Templates/Classic/source.html
+%%DATADIR%%/Extensions/Reserved/Templates/Classic/._source.html
+%%DATADIR%%/Extensions/Reserved/Templates/Classic/._index.html
+%%DATADIR%%/Extensions/Reserved/Templates/._Parchment
+%%DATADIR%%/Extensions/Reserved/WorldModel.i6t
+%%DATADIR%%/Extensions/Reserved/Utilities.i6t
+%%DATADIR%%/Extensions/Reserved/UnicodeData.i6t
+%%DATADIR%%/Extensions/Reserved/Time.i6t
+%%DATADIR%%/Extensions/Reserved/DefaultCover.jpg
+%%DATADIR%%/Extensions/Reserved/Tests.i6t
+%%DATADIR%%/Extensions/Reserved/Tables.i6t
+%%DATADIR%%/Extensions/Reserved/._DefaultCover.jpg
+%%DATADIR%%/Extensions/Reserved/._Templates
+%%DATADIR%%/Extensions/Reserved/StoredAction.i6t
+%%DATADIR%%/Extensions/Reserved/IntroductionToIF.pdf
+%%DATADIR%%/Extensions/Reserved/._Cover.jpg
+%%DATADIR%%/Extensions/Reserved/Sort.i6t
+%%DATADIR%%/Extensions/Reserved/WinExtensionFileModel.html
+%%DATADIR%%/Extensions/Reserved/._ExtensionFileModel.html
+%%DATADIR%%/Extensions/Reserved/Rulebooks.i6t
+%%DATADIR%%/Extensions/Reserved/._WinExtensionsModel.html
+%%DATADIR%%/Extensions/Reserved/Relations.i6t
+%%DATADIR%%/Extensions/Reserved/RelationKind.i6t
+%%DATADIR%%/Extensions/Reserved/RegExp.i6t
+%%DATADIR%%/Extensions/Reserved/WinExtensionsModel.html
+%%DATADIR%%/Extensions/Reserved/RTP.i6t
+%%DATADIR%%/Extensions/Reserved/Printing.i6t
+%%DATADIR%%/Extensions/Reserved/definitions.html
+%%DATADIR%%/Extensions/Reserved/Parser.i6t
+%%DATADIR%%/Extensions/Reserved/Output.i6t
+%%DATADIR%%/Extensions/Reserved/Small Cover.jpg
+%%DATADIR%%/Extensions/Reserved/OutOfWorld.i6t
+%%DATADIR%%/Extensions/Reserved/OrderOfPlay.i6t
+%%DATADIR%%/Extensions/Reserved/ExtensionsModel.html
+%%DATADIR%%/Extensions/Reserved/Number.i6t
+%%DATADIR%%/Extensions/Reserved/Main.i6t
+%%DATADIR%%/Extensions/Reserved/._WinExtensionFileModel.html
+%%DATADIR%%/Extensions/Reserved/MStack.i6t
+%%DATADIR%%/Extensions/Reserved/Load-Times.i6t
+%%DATADIR%%/Extensions/Reserved/._IntroductionToIF.pdf
+%%DATADIR%%/Extensions/Reserved/Cover.jpg
+%%DATADIR%%/Extensions/Reserved/Load-Sounds.i6t
+%%DATADIR%%/Extensions/Reserved/Lists.i6t
+%%DATADIR%%/Extensions/Reserved/Load-Scenes.i6t
+%%DATADIR%%/Extensions/Reserved/Load-Files.i6t
+%%DATADIR%%/Extensions/Reserved/Load-Figures.i6t
+%%DATADIR%%/Extensions/Reserved/Load-Core.i6t
+%%DATADIR%%/Extensions/Reserved/Load-Actions.i6t
+%%DATADIR%%/Extensions/Reserved/CblorbModel.html
+%%DATADIR%%/Extensions/Reserved/._ExtensionsModel.html
+%%DATADIR%%/Extensions/Reserved/ListWriter.i6t
+%%DATADIR%%/Extensions/Reserved/Light.i6t
+%%DATADIR%%/Extensions/Reserved/Language.i6t
+%%DATADIR%%/Extensions/Reserved/Introduction.i6t
+%%DATADIR%%/Extensions/Reserved/IndexedText.i6t
+%%DATADIR%%/Extensions/Reserved/Glulx.i6t
+%%DATADIR%%/Extensions/Reserved/Flex.i6t
+%%DATADIR%%/Extensions/Reserved/ExtensionFileModel.html
+%%DATADIR%%/Extensions/Reserved/._Small Cover.jpg
+%%DATADIR%%/Extensions/Reserved/FileIO.i6t
+%%DATADIR%%/Extensions/Reserved/Figures.i6t
+%%DATADIR%%/Extensions/Reserved/Definitions.i6t
+%%DATADIR%%/Extensions/Reserved/Combinations.i6t
+%%DATADIR%%/Extensions/Reserved/._CblorbModel.html
+%%DATADIR%%/Extensions/Reserved/Chronology.i6t
+%%DATADIR%%/Extensions/Reserved/Char.i6t
+%%DATADIR%%/Extensions/Reserved/BlockValues.i6t
+%%DATADIR%%/Extensions/Reserved/Activities.i6t
+%%DATADIR%%/Extensions/Reserved/Actions.i6t
+%%DATADIR%%/Extensions/Reserved/ZMachine.i6t
+%%DATADIR%%/Extensions/David Fisher/English.i7x
+%%DATADIR%%/Extensions/David Fisher/._English.i7x
+%%DATADIR%%/Extensions/Graham Nelson/._Standard Rules.i7x
+%%DATADIR%%/Extensions/Graham Nelson/Rideable Vehicles.i7x
+%%DATADIR%%/Extensions/Graham Nelson/._Metric Units.i7x
+%%DATADIR%%/Extensions/Graham Nelson/Metric Units.i7x
+%%DATADIR%%/Extensions/Graham Nelson/Standard Rules.i7x
+%%DATADIR%%/Extensions/Graham Nelson/._Rideable Vehicles.i7x
+%%DATADIR%%/Extensions/._Graham Nelson
+%%DATADIR%%/Extensions/._Emily Short
+%%DATADIR%%/Extensions/._David Fisher
+%%DATADIR%%/Extensions/._Reserved
+@dirrmtry %%DATADIR%%/Extensions/Reserved/Templates/Standard
+@dirrmtry %%DATADIR%%/Extensions/Reserved/Templates/Parchment
+@dirrmtry %%DATADIR%%/Extensions/Reserved/Templates/Classic
+@dirrmtry %%DATADIR%%/Extensions/Reserved/Templates
+@dirrmtry %%DATADIR%%/Extensions/Reserved
+@dirrmtry %%DATADIR%%/Extensions/Graham\ Nelson
+@dirrmtry %%DATADIR%%/Extensions/Emily\ Short
+@dirrmtry %%DATADIR%%/Extensions/David\ Fisher
+@dirrmtry %%DATADIR%%/Extensions
+@dirrmtry %%DATADIR%%

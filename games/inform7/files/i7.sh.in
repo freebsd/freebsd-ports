@@ -1,0 +1,123 @@
+#!/bin/sh
+# $FreeBSD$
+
+#
+#  Copyright (c) 2010 Andy Kosela <akosela@andykosela.com>
+#  All rights reserved.
+#
+#  Redistribution and use in source and binary forms, with or without
+#  modification, are permitted provided that the following conditions
+#  are met:
+#  1. Redistributions of source code must retain the above copyright
+#     notice, this list of conditions and the following disclaimer.
+#  2. Redistributions in binary form must reproduce the above copyright
+#     notice, this list of conditions and the following disclaimer in
+#     the documentation and/or other materials provided with the
+#     distribution.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS''
+#  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+#  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+#  PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR
+#  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+#  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+#  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+#  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+#  OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+#  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+#  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+ni=%%PREFIX%%/bin/ni
+inform=%%PREFIX%%/bin/inform6
+rules=%%DATADIR%%/Extensions
+
+main()
+{
+	mkdir -p $pkg.inform/Build $pkg.inform/Source $pkg.inform/Index
+	cp $pkg.ni $pkg.inform/Source
+	$ni --release --rules $rules --extension=$zsuf --package $pkg.inform
+	mv "$pkg.inform/Build/Debug log.txt" debug.log
+	if [ -s $pkg.inform/Build/auto.inf ]; then
+		echo ""
+		$inform $zopts $pkg.inform/Build/auto.inf -o $pkg.$zsuf
+		mv $pkg.inform/Build/Map.eps ${pkg}_map.eps
+	fi
+	rm gameinfo.dbg 2>/dev/null
+	rm -rf $pkg.inform "$pkg Materials" 2>/dev/null
+	exit 0
+}
+
+replay()
+{
+	story=$3
+	[ -z `echo "$story"` ] && story=`echo $pkg.[zu]*`
+
+	if [ -z "`grep 'script off' $pkg.$$.key`" ]; then
+		echo -e "\$a\nscript off\n.\nw" | ed - $pkg.$$.key
+	fi
+
+	echo -e \
+	"0a\nscript\n$pkg.$$.scr\n.\n\$a\nsave\n$pkg.$$.sav\nquit\ny\ny\n.\nw" |
+	    ed - $pkg.$$.key
+	cat $pkg.$$.key | frotz -S 72 $story 1>/dev/null 2>&1
+	echo -e \
+	"g/^script/d\ng/^quit/d\ng/^save/d\ng/.sav/d\ng/.scr/d\ng/^y$/d\nw" |
+	    ed - $pkg.$$.key
+
+	echo "$pkg.$$.scr -- replay transcript file"
+	echo "$pkg.$$.sav -- replay save file"
+	echo "$pkg.$$.key -- replay keys file"
+	exit 0
+}
+
+usage()
+{
+	echo "Usage: i7 story.ni"
+	echo "       i7 [-8g] story.ni"
+	echo "       i7 [-k] story.key story.z5"
+	echo "       i7 [-r] story.scr story.z5"
+	echo ""
+	echo "       -8 : create Z-code v8 release"
+	echo "       -g : create Glulx release"
+	echo "       -k : replay game from a keys or solution file"
+	echo "       -r : replay game from a transcript file"
+	echo ""
+	echo "By default i7 creates Z-code v5 releases."
+	exit 0
+}
+
+# Start of script
+
+if [ ! -z `echo $1 | grep '.ni'` ]; then
+	zsuf=z5
+	zopts=-kE2w~S~DC0xv5
+	pkg=`basename $1 | cut -d. -f1 2>/dev/null`
+	main
+elif [ -z "$1" ]; then
+	usage
+fi	
+
+while getopts 8:g:k:r:h opts
+do
+	pkg=`basename $OPTARG | cut -d. -f1 2>/dev/null`
+	case $opts in
+		8) zsuf=z8
+		   zopts=-kE2w~S~DC0xv8
+		   main
+		;;
+		g) zsuf=ulx
+		   zopts=-kE2w~S~DC0xG
+		   main
+		;;
+		h) usage
+		;;
+		k) cp `basename $OPTARG` $pkg.$$.key
+		   replay
+		;;
+	 	r) grep '>' `basename $OPTARG` | cut -d'>' -f2 > $pkg.$$.key
+		   replay
+		;;
+		*) usage
+		;;
+	esac
+done
