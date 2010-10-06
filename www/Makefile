@@ -1871,6 +1871,7 @@
     SUBDIR += xpi-gbrain
     SUBDIR += xpi-gmail-manager
     SUBDIR += xpi-google-notebook
+    SUBDIR += xpi-google_shortcuts
     SUBDIR += xpi-grab_and_drag
     SUBDIR += xpi-greasemonkey
     SUBDIR += xpi-gwt-dev-plugin
