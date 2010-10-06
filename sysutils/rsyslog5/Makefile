@@ -24,6 +24,14 @@ LATEST_LINK=	rsyslog5-${MNAME}
 LATEST_LINK=	rsyslog5
 .endif
 
+.ifdef WITH_MYSQL_MICROSECONDS
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-mysql-microseconds
+.endif
+
+.ifdef WITH_SANE_HOSTNAME
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-sane-hostname
+.endif
+
 CONFLICTS=	rsyslog-[!5].[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
