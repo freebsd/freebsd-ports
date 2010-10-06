@@ -724,6 +724,7 @@ ataidle                         ports/sysutils/ataidle
 atanks                          ports/games/atanks
 atari800                        ports/emulators/atari800
 aterm                           ports/x11/aterm
+atftp                           ports/ftp/atftp
 atitd                           ports/games/atitd
 atitvout                        ports/sysutils/atitvout
 atk                             ports/accessibility/atk
