@@ -24,7 +24,7 @@ LATEST_LINK=	rsyslog4-devel-${MNAME}
 LATEST_LINK=	rsyslog4-devel
 .endif
 
-CONFLICTS=	rsyslog-[!4].[0-9]*
+CONFLICTS=	rsyslog-devel-[!4].[!7].[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
