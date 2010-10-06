@@ -6,7 +6,7 @@
 
 PORTNAME=	freetds
 PORTVERSION=	0.82.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Sybase/Microsoft TDS protocol library
 
-WRKSRC=		${WRKDIR}/freetds-0.82.1.dev.20081111
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.dev.20100810
 TDS_VER?=	5.0
 USE_ICONV=	yes
 USE_GMAKE=	yes
@@ -43,7 +43,7 @@ OPTIONS=	OPENSSL "Use openssl" off       \
 
 CONFLICTS=	freetds-0.64.[0-9]
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
@@ -107,4 +107,4 @@ post-install:
 	@${ECHO_CMD} "Sample configuration files have been installed in ${PREFIX}/etc"
 	@${ECHO_CMD} "You should edit them and remove the .dist-suffix from their names"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
