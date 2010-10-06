@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rlwrap
-PORTVERSION=	0.36
+PORTVERSION=	0.37
 CATEGORIES=	devel
 MASTER_SITES=	http://utopia.knoware.nl/~hlub/uck/rlwrap/ \
 		${MASTER_SITE_LOCAL} \
@@ -18,12 +18,14 @@ MAINTAINER=	gamato@users.sf.net
 COMMENT=	Readline wrapper
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ENV+=		ptyttylib_cv_ptys=BSD LDFLAGS=-lutil
 
 MAN1=	rlwrap.1
 MAN3=	RlwrapFilter.3pm
 
 PORTDOCS=	AUTHORS BUGS NEWS PLEA README TODO
+
+post-patch:	.SILENT
+	${REINPLACE_CMD} 's|/dev/ptmx|${NONEXISTENT}|' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
