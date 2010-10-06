@@ -6,7 +6,7 @@
 
 PORTNAME=	mongrel
 PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 DISTFILES=	${PATCHNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}
@@ -14,7 +14,7 @@ DISTFILES=	${PATCHNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Fast HTTP 1.1 library and server for Ruby web applications
 
-RUN_DEPENDS=	rubygem-gem_plugin>0.2.3:${PORTSDIR}/devel/rubygem-gem_plugin \
+RUN_DEPENDS=	rubygem-gem_plugin>=0.2.3:${PORTSDIR}/devel/rubygem-gem_plugin \
 		rubygem-daemons>=1.0.3:${PORTSDIR}/devel/rubygem-daemons \
 		rubygem-fastthread>=1.0.1:${PORTSDIR}/devel/rubygem-fastthread
 
