@@ -15,9 +15,9 @@ MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/ \
 DISTNAME=	ncftp-${PORTVERSION}-src
 
 .if !defined(WITHOUT_NCFTP_IPV6) && !defined(WITHOUT_IPV6)
-PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	ncftp-323-v6-20091109.diff.gz
-PATCH_DIST_STRIP=	-p1
+#PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
+#PATCHFILES=	ncftp-323-v6-20091109.diff.gz
+#PATCH_DIST_STRIP=	-p1
 .endif
 
 MAINTAINER=	obrien@FreeBSD.org
