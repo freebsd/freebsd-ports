@@ -23,7 +23,7 @@ COMMENT=	A secure alternative to widely-used Sendmail
 
 VDAVERSION=	2.7.0
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-68-9].* postfix-current-2.* \
-		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
+		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.*
 
 USE_SUBMAKE=	yes
 USE_PERL5_BUILD=yes
@@ -154,9 +154,9 @@ POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 LIB_DEPENDS+=		spf2.3:${PORTSDIR}/mail/libspf2
 PATCH_SITES+=		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	mm
-PATCHFILES+=		postfix-2.7.1-libspf2-1.2.x-1.patch.gz
+PATCHFILES+=		postfix-2.7.1-libspf2-1.2.x-4.patch.gz
 PATCH_DIST_STRIP=	-p1
-POSTFIX_CCARGS+=	-DHAVE_NS_TYPE -I${LOCALBASE}/include
+POSTFIX_CCARGS+=	-DHAVE_NS_TYPE -DHAS_SPF -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lspf2
 PLIST_SUB+=		SPF=""
 .else
