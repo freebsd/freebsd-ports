@@ -6,7 +6,6 @@
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -31,7 +30,7 @@ OPTIONS=	THREADS "Enable Threads in apr"				on  \
 		DEVRANDOM "Use /dev/random or compatible in apr"	on
 
 APR_VERSION=	1.4.2
-APU_VERSION=	1.3.9
+APU_VERSION=	1.3.10
 
 USE_ICONV=		yes
 USE_AUTOTOOLS=	automake:111 autoconf:267 libtool:22:env
