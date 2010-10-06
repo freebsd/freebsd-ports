@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	5.4.0
-PORTREVISION=	1
+PORTVERSION=	5.5.7
 CATEGORIES=	sysutils
-MASTER_SITES=	http://download.rsyslog.com/rsyslog/
+MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 .ifdef MNAME
 PKGNAMESUFFIX?=	-${MNAME}
 .endif
