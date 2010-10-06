@@ -6,7 +6,7 @@
 #
 
 COMMENT=	RFC3195 input support for rsyslog
-MASTERDIR=	${.CURDIR}/../rsyslog55
+MASTERDIR=	${.CURDIR}/../rsyslog6-devel
 
 MNAME=	rfc3195
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config

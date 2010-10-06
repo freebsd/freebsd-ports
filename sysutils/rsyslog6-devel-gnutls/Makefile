@@ -6,7 +6,7 @@
 #
 
 COMMENT=	GNUTLS module for rsyslog
-MASTERDIR=	${.CURDIR}/../rsyslog55
+MASTERDIR=	${.CURDIR}/../rsyslog6-devel
 
 MNAME=	gnutls
 LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
