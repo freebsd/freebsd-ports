@@ -1,0 +1,148 @@
+.\" Copyright (c) 2010 Andy Kosela <akosela@andykosela.com>
+.\" All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in
+.\"    the documentation and/or other materials provided with the
+.\"    distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS''
+.\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+.\" TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+.\" PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR
+.\" CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+.\" SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+.\" LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+.\" USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+.\" ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+.\" OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+.\" OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.\"
+.Dd October 2, 2010
+.Dt I7 6
+.Os
+.Sh NAME
+.Nm i7
+.Nd Inform 7 programming language (CLI edition)
+.Sh SYNOPSIS
+.Nm
+.Ar story.ni
+.Nm
+.Op Fl 8g
+.Ar story.ni
+.Nm
+.Op Fl k
+.Ar story.key story.z5
+.Nm
+.Op Fl r
+.Ar story.scr story.z5
+.Nm
+.Op Fl h
+.Pp
+.Sh DESCRIPTION
+Inform7 for FreeBSD is a CLI implementation of the Inform 7 programming
+language and environment by Graham Nelson.  Inform is a design system
+for interactive fiction (IF) based on natural language.
+
+Interactive fiction is a literary form which involves programming a
+computer so that it presents a reader with a text which can be explored.
+Inform aims to make the burden of learning to program such texts as
+light as possible.  It is a tool for writers intrigued by computing, and
+computer programmers intrigued by writing.  Perhaps these are not so
+very different pursuits, in their rewards and pleasures:
+
+    The sheer joy of making things... the fascination of fashioning
+    complex puzzle-like objects of interlocking moving parts and
+    watching them work in subtle cycles... the delight of working in
+    such a tractable medium.  The programmer, like the poet, works only
+    slightly removed from pure thought-stuff.  He builds his castles in
+    the air, from air, creating by exertion of the imagination.
+    (Frederick P. Brooks, "The Mythical Man-Month", 1972)
+
+More resources:
+ http://www.inform7.com
+ http://www.brasslantern.com
+ http://www.ifarchive.org
+ http://en.wikipedia.org/wiki/Interactive_fiction
+
+Inform7 for FreeBSD (CLI edition) implements the same basic features of
+the GUI edition.  You can write, compile, debug, and replay your own
+interactive fiction stories.
+.Sh OPTIONS
+The following command line arguments are supported:
+.Bl -tag -width Fl
+.It Fl
+create Z-code v5 release.
+.It Fl 8
+create Z-code v8 release.
+.It Fl g
+create Glulx release.
+.It Fl h
+show usage.
+.It Fl k
+replay game from a keys or solution file.
+.It Fl r
+replay game from a transcript file.
+.Sh EXAMPLES
+.nf
+The most basic use of Inform7 for FreeBSD is:
+$ i7 story.ni
+which compiles your source story file into a Z-code v5 release.
+
+If you have a transcript file from game, you can use the -r option to
+replay it in story.z5
+$ i7 -r story.scr story.z5
+
+You will receive three files.
+story.$$.scr - new transcript file
+story.$$.key - keys file
+story.$$.sav - save game from a transcript file
+
+You can also construct a simple keys file and then automatically replay
+its sequence of commands in your stories.
+
+Example of a story.key
+VERBOSE
+L
+N
+W
+GET LAMP
+SCORE
+
+A keys file can be very short, meant just to test some sequence of
+commands within your story, or it can be a full solution walkthrough.
+
+$ i7 -k story.key story.z5
+
+Once again you will receive three files.
+story.$$.scr - new transcript file
+story.$$.key - keys file
+story.$$.sav - save game from a keys file
+.fi
+.Sh FILES
+.Bl -tag -width ".Pa /usr/local"
+.It Pa /usr/local/share/inform7/Extensions
+Directory where Inform extensions are stored.
+.Sh SEE ALSO
+.Xr frotz 6
+.Sh AUTHORS
+.An Graham Nelson <graham@gnelson.demon.co.uk> -- Inform programming
+language and compilers
+.An Andy Kosela <akosela@andykosela.com> -- CLI edition for FreeBSD
+.Sh CONTRIBUTORS
+.An Adam Thornton, Emily Short, David Fisher
+.Sh THANKS TO
+Will Crowther and Don Woods for creating the original Adventure, Infocom
+for the Z-machine standard and memorable titles like Zork, Graham Nelson
+for designing this beautiful engine for creating worlds in text, Adam
+Thornton for many suggestions and help with FreeBSD porting.
+
+rec.arts.int-fiction and rec.games.int-fiction community of IF authors
+and enthusiasts.

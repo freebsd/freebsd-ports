@@ -385,6 +385,7 @@
     SUBDIR += ifm
     SUBDIR += imaze
     SUBDIR += inform
+    SUBDIR += inform7
     SUBDIR += intensityengine
     SUBDIR += interlogic
     SUBDIR += ioquake3
