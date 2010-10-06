@@ -32,7 +32,7 @@ EXTRA_PATCHES+= ${FILESDIR}/extra-patch-mysql-microseconds
 EXTRA_PATCHES+= ${FILESDIR}/extra-patch-sane-hostname
 .endif
 
-CONFLICTS=	rsyslog-[!5].[0-9]*
+CONFLICTS=	rsyslog-[!5].[!5].[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
