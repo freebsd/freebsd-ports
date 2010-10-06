@@ -7,6 +7,7 @@ bin/rlwrap
 %%DATADIR%%/filters/censor_passwords
 %%DATADIR%%/filters/count_in_prompt
 %%DATADIR%%/filters/ftp_filter
+%%DATADIR%%/filters/history_format
 %%DATADIR%%/filters/listing
 %%DATADIR%%/filters/logger
 %%DATADIR%%/filters/null

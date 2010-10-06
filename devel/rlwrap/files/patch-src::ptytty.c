@@ -1,14 +1,5 @@
 --- src/ptytty.c.orig	2010-01-24 01:05:53.000000000 -0800
 +++ src/ptytty.c	2010-01-24 01:09:19.000000000 -0800
-@@ -41,7 +41,7 @@
- #ifdef HAVE_SYS_IOCTL_H
- # include <sys/ioctl.h>
- #endif
--#if defined(PTYS_ARE_PTMX) && !defined(__CYGWIN32__)
-+#if defined(PTYS_ARE_PTMX) && !defined(__CYGWIN32__) && !defined(__FreeBSD__)
- # include <sys/stropts.h>       /* for I_PUSH */
- #endif
- 
 @@ -159,11 +159,19 @@
      char pty_name[] = "/dev/pty??";
      char tty_name[] = "/dev/tty??";
