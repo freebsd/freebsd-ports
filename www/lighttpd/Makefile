@@ -20,8 +20,13 @@ LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	lthack
+
+.if !defined(_BUILDING_LIGHTTPD_MODULE)
+USE_AUTOTOOLS=	libtool:22
+.else
 USE_AUTOTOOLS=	autoconf:267 autoheader:267 aclocal:111 automake:111 libtool:22
 ACLOCAL_ARGS=	-I m4
+.endif
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/lighttpd --enable-static
 
 CFLAGS+=	-I${LOCALBASE}/include
