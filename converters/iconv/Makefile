@@ -22,7 +22,7 @@ MANCOMPRESSED=	yes
 MAN1=		biconv.1
 MAN3=		biconv.3 biconv_open.3 biconv_close.3
 
-.if defined(NO_PROFILE) || defined(NOPROFILE)
+.if defined(NO_PROFILE) || defined(NOPROFILE) || defined(WITHOUT_PROFILE)
 PLIST_SUB=	PROFILE:="@comment "
 .else
 PLIST_SUB=	PROFILE:=""
