@@ -130,11 +130,6 @@ IGNORE=	you must choose a database backend
 #IGNORE=	Select exactly one of WITH_MYSQL, WITH_POSTGRESQL, WITH_SQLITE, WITH_ORACLE
 #.endif
 
-### MODPERL or MODPERL2
-.if defined(WITH_MODPERL) && defined(WITH_MODPERL2)
-IGNORE=	options WITH_MODPERL and WITH_MODPERL2 are mutually exclusive
-.endif
-
 RT_ETC_PATH?=	${PREFIX}/etc/${PORTNAME}38
 RT_LAYOUT=	FreeBSD
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}38
