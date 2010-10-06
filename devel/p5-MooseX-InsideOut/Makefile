@@ -2,11 +2,10 @@
 # Whom: gugu
 # Date created: 03 December 2009
 # $FreeBSD$
-# Generated with portupload. Do not edit directly, please
+#
 
 PORTNAME=	MooseX-InsideOut
-PORTVERSION=	0.104
-PORTREVISION=	1
+PORTVERSION=	0.105
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +15,7 @@ COMMENT=	Inside-out objects with Moose
 
 BUILD_DEPENDS=	p5-Class-MOP>=0.80:${PORTSDIR}/devel/p5-Class-MOP \
 		p5-Hash-Util-FieldHash-Compat>=0:${PORTSDIR}/devel/p5-Hash-Util-FieldHash-Compat \
-		p5-Moose>=0.73:${PORTSDIR}/devel/p5-Moose \
+		p5-Moose>=0.94:${PORTSDIR}/devel/p5-Moose \
 		p5-namespace-clean>=0.11:${PORTSDIR}/devel/p5-namespace-clean
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
