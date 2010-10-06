@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	jetty
-DISTVERSION=	6.1.14
+DISTVERSION=	6.1.25
 CATEGORIES=	www java
 MASTER_SITES=	http://dist.codehaus.org/jetty/${PORTNAME}-${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Full-featured web server implemented entirely in java
 
 USE_RC_SUBR=	${PORTNAME}
