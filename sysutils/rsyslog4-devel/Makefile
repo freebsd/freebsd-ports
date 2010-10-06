@@ -1,4 +1,4 @@
-# New ports collection makefile for: rsyslog4
+# New ports collection makefile for: rsyslog4-devel
 # Date created:     29 December 2008
 # Whom:             Cristiano Rolim Pereira <cristianorolim@hotmail.com>
 #
@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	4.6.1
-PORTREVISION=	1
+PORTVERSION=	4.7.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.rsyslog.com/rsyslog/
 .ifdef MNAME
@@ -18,7 +17,7 @@ MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT?=	Syslogd supporting SQL, TCP and TLS
 
 .ifdef MNAME
-RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog4
+RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog4-devel
 
 PLIST=		${.CURDIR}/pkg-plist
 .endif
@@ -82,8 +81,8 @@ IGNORE=	with gssapi module is only supported on FreeBSD 7.x or later
 
 CONFIGURE_ARGS+=	--disable-rsyslogd --disable-klog
 
-DESCR?=		${.CURDIR}/../rsyslog4/pkg-descr
-MD5_FILE?=	${.CURDIR}/../rsyslog4/distinfo
+DESCR?=		${.CURDIR}/../rsyslog4-devel/pkg-descr
+MD5_FILE?=	${.CURDIR}/../rsyslog4-devel/distinfo
 .endif
 
 .include <bsd.port.post.mk>
