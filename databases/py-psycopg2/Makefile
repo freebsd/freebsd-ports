@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	psycopg2
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	databases python
-MASTER_SITES=	http://initd.org/pub/software/psycopg/ \
+MASTER_SITES=	http://initd.org/psycopg/tarballs/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	miwi
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
