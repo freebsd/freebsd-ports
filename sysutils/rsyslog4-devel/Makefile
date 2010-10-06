@@ -18,11 +18,11 @@ COMMENT?=	Syslogd supporting SQL, TCP and TLS
 
 .ifdef MNAME
 RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog4-devel
-
 PLIST=		${.CURDIR}/pkg-plist
+LATEST_LINK=	rsyslog4-devel-${MNAME}
+.else
+LATEST_LINK=	rsyslog4-devel
 .endif
-
-NO_LATEST_LINK=	yes
 
 CONFLICTS=	rsyslog-[!4].[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include

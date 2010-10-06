@@ -11,8 +11,6 @@ COMMENT=	Enhanced syslog daemon
 
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
 
-NO_LATEST_LINK=	yes
-
 USE_RC_SUBR=	${PORTNAME}d
 SUB_FILES=	pkg-message
 MAN8=	rsyslogd.8

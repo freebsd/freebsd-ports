@@ -18,8 +18,10 @@ COMMENT?=	Syslogd supporting SQL, TCP and TLS
 
 .ifdef MNAME
 RUN_DEPENDS=	rsyslog>=5:${PORTSDIR}/sysutils/rsyslog5
-
 PLIST=		${.CURDIR}/pkg-plist
+LATEST_LINK=	rsyslog5-devel-${MNAME}
+.else
+LATEST_LINK=	rsyslog5-devel
 .endif
 
 CONFLICTS=	rsyslog-[!5].[0-9]*

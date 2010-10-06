@@ -4,7 +4,6 @@ CATEGORIES?=	sysutils
 MASTER_SITES?=	http://www.rsyslog.com/files/download/rsyslog/
 MAINTAINER?=	miwi@FreeBSD.org
 
-NO_LATEST_LINK=	yes
 CONFLICTS=	rsyslog-2.[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -14,6 +13,7 @@ USE_GNOME+=	pkgconfig
 
 .ifdef MNAME
 PKGNAMESUFFIX?=	-${MNAME}
+LATEST_LINK=	rsyslog3${PKGNAMESUFFIX}
 CONFIGURE_ARGS+=	--enable-${MNAME:S|gssapi|gssapi-krb5|} \
 			--disable-rsyslogd --disable-klog
 RUN_DEPENDS=	rsyslog>=3:${PORTSDIR}/sysutils/rsyslog3
@@ -30,4 +30,6 @@ do-install:
 		${PREFIX}/lib/rsyslog/
 .endfor
 	@${ECHO_CMD} '@unexec rmdir %D/lib/rsyslog 2>/dev/null || true' >> ${TMPPLIST}
-.endif # def MNAME
+.else
+LATEST_LINK=	rsyslog3
+.endif
