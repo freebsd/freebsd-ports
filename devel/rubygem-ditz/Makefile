@@ -7,14 +7,14 @@
 
 PORTNAME=	ditz
 PORTVERSION=	0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Simple, light-weight distributed issue tracker
 
-RUN_DEPENDS=	rubygem-trollop>0:${PORTSDIR}/devel/rubygem-trollop
+RUN_DEPENDS=	rubygem-trollop>=1.9:${PORTSDIR}/devel/rubygem-trollop
 
 USE_RUBY=	yes
 USE_RAKE=	yes
