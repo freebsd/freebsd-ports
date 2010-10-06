@@ -65,7 +65,6 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/ommysql.html
 %%PORTDOCS%%%%DOCSDIR%%/omrelp.html
 %%PORTDOCS%%%%DOCSDIR%%/omsnmp.html
-%%PORTDOCS%%%%DOCSDIR%%/professional_support.html
 %%PORTDOCS%%%%DOCSDIR%%/property_replacer.html
 %%PORTDOCS%%%%DOCSDIR%%/queues.html
 %%PORTDOCS%%%%DOCSDIR%%/rainerscript.html
