@@ -6,6 +6,7 @@
 
 PORTNAME=	thin
 PORTVERSION=	1.2.7
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +14,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A fast and very simple Ruby web server
 
 RUN_DEPENDS=	rubygem-rack>=1.0.0:${PORTSDIR}/www/rubygem-rack \
-		rubygem-eventmachine>=0.8.1:${PORTSDIR}/devel/rubygem-eventmachine \
+		rubygem-eventmachine>=0.12.6:${PORTSDIR}/devel/rubygem-eventmachine \
 		rubygem-daemons>=1.0.9:${PORTSDIR}/devel/rubygem-daemons
 
 USE_RUBY=	yes
