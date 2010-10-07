@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	rvm
-PORTVERSION=	1.05
+PORTVERSION=	1.07
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	davide.italiano@gmail.com
 COMMENT=	An archive manager that uses rsync to manage backups
 
 BUILD_DEPENDS=	rsync:${PORTSDIR}/net/rsync
@@ -25,7 +25,8 @@ USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 USE_GCC=	4.4+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-default-config-file=${PREFIX}/etc/rvm.conf
+CONFIGURE_ARGS=	--with-default-config-file=${PREFIX}/etc/rvm.conf \
+		--enable-assume-stl-memory-exception
 MAKE_ARGS=	CXXFLAGS="${CXXFLAGS}"
 
 MAN1=		rvm.1
