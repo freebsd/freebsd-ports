@@ -4622,3 +4622,5 @@ sysutils/rsyslog55-pgsql|sysutils/rsyslog5-pgsql|2010-10-05|Renamed
 sysutils/rsyslog55-relp|sysutils/rsyslog5-relp|2010-10-05|Renamed
 sysutils/rsyslog55-rfc3195|sysutils/rsyslog5-rfc3195|2010-10-05|Renamed
 sysutils/rsyslog55-snmpl|sysutils/rsyslog5-snmp|2010-10-05|Renamed
+devel/automake19||2010-10-07|No longer required by any port
+devel/automake110||2010-10-07|No longer required by any port
