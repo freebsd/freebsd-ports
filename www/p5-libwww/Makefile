@@ -19,6 +19,14 @@ COMMENT=	Perl5 library for WWW access
 RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
+OPTIONS=	SSL	"Enable https support" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_SSL)
+RUN_DEPENDS+=	p5-security/p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay
+.endif
+
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	--aliases
 
