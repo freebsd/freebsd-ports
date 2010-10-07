@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.4.29
-PORTREVISION=	1
+PORTVERSION?=	7.4.30
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -37,10 +36,12 @@ GNU_CONFIGURE=	YES
 .undef GNU_CONFIGURE
 .endif
 
-CONFIGURE_ARGS+=--with-libraries=${LOCALBASE}/lib \
+LDFLAGS+=	-L${LOCALBASE}/lib
+INCLUDES+=	-I${LOCALBASE}/include
+CONFIGURE_ARGS+=--with-libraries=${PREFIX}/lib \
+		--with-includes=${PREFIX}/lib \
 		--docdir=${DOCSDIR}
-LDFLAGS+=	-L${PREFIX}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" INCLUDES="${INCLUDES}"
 
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
@@ -96,7 +97,7 @@ PATCHFILES+=	hier-Pg7.4-0.5.3.tar.gz:hier74053
 USE_BISON=	build
 .  endif
 
-.  if defined(SERVER_ONLY) && defined(WITH_PAM)
+.  if defined(WITH_PAM)
 CONFIGURE_ARGS+=--with-pam
 .  endif
 

@@ -650,6 +650,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Pacific/Apia
 %%TZDATA%%share/postgresql/timezone/Pacific/Auckland
 %%TZDATA%%share/postgresql/timezone/Pacific/Chatham
+%%TZDATA%%share/postgresql/timezone/Pacific/Chuuk
 %%TZDATA%%share/postgresql/timezone/Pacific/Easter
 %%TZDATA%%share/postgresql/timezone/Pacific/Efate
 %%TZDATA%%share/postgresql/timezone/Pacific/Enderbury
@@ -675,6 +676,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Pacific/Pago_Pago
 %%TZDATA%%share/postgresql/timezone/Pacific/Palau
 %%TZDATA%%share/postgresql/timezone/Pacific/Pitcairn
+%%TZDATA%%share/postgresql/timezone/Pacific/Pohnpei
 %%TZDATA%%share/postgresql/timezone/Pacific/Ponape
 %%TZDATA%%share/postgresql/timezone/Pacific/Port_Moresby
 %%TZDATA%%share/postgresql/timezone/Pacific/Rarotonga

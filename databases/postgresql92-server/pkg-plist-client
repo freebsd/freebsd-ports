@@ -546,12 +546,13 @@ lib/libecpg.so.6
 lib/libecpg_compat.a
 lib/libecpg_compat.so
 lib/libecpg_compat.so.3
+lib/libpgport.a
+lib/libpgtypes.a
+lib/libpgtypes.so
 lib/libpgtypes.so.3
 lib/libpq.a
 lib/libpq.so
 lib/libpq.so.5
-lib/libpgtypes.a
-lib/libpgtypes.so
 lib/postgresql/pgxs/config/install-sh
 lib/postgresql/pgxs/src/makefiles/pgxs.mk
 lib/postgresql/pgxs/src/Makefile.global
@@ -641,3 +642,5 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_config-9.0.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_dump-9.0.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pgscripts-9.0.mo
+@dirrm share/doc/postgresql/html
+@dirrm share/doc/postgresql
