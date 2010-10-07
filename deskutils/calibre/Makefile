@@ -59,8 +59,9 @@ MAKE_ENV+=	LDFLAGS="${LDFLAGS}" \
 		OVERRIDE_LDFLAGS="${LDFLAGS}"
 
 MAN1=	calibre-customize.1 calibre-debug.1 calibre-server.1 calibre-smtp.1 \
-	calibredb.1 ebook-convert.1 ebook-meta.1 fetch-ebook-metadata.1 \
-	librarything.1 lrf2lrs.1 lrs2lrf.1 pdfmanipulate.1 web2disk.1
+	calibredb.1 ebook-convert.1 ebook-meta.1 epub-fix.1 \
+	fetch-ebook-metadata.1 librarything.1 lrf2lrs.1 lrs2lrf.1 \
+	pdfmanipulate.1 web2disk.1
 MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>

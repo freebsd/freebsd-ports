@@ -12,6 +12,7 @@ bin/ebook-convert
 bin/ebook-device
 bin/ebook-meta
 bin/ebook-viewer
+bin/epub-fix
 bin/fetch-ebook-metadata
 bin/librarything
 bin/lrf2lrs
@@ -2030,6 +2031,7 @@ share/calibre/viewer/hyphenation.js
 share/calibre/viewer/images.js
 share/calibre/viewer/jquery_scrollTo.js
 share/calibre/viewer/referencing.js
+%%PYTHON_SITELIBDIR%%/init_calibre.py
 @dirrm share/calibre/viewer/hyphenate/patterns
 @dirrm share/calibre/viewer/hyphenate
 @dirrm share/calibre/viewer
