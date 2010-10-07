@@ -15,6 +15,7 @@ bin/rview
 bin/rvim
 bin/vimdiff
 bin/gvimdiff
+share/icons/hicolor/48x48/apps/gvim.png
 @comment bin/view
 @exec mkdir -p %D/share/vim/%%VIM_VER%%/lang
 @comment Insert PLIST.share-vim here
