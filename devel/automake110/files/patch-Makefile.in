@@ -1,6 +1,0 @@
---- Makefile.in.orig	Sun Oct 15 10:25:23 2006
-+++ Makefile.in	Sat Apr 14 16:04:04 2007
-@@ -591,3 +591,2 @@
- 	@$(NORMAL_INSTALL)
--	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
- 

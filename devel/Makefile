@@ -69,10 +69,8 @@
     SUBDIR += autodist
     SUBDIR += autogen
     SUBDIR += automake-wrapper
-    SUBDIR += automake110
     SUBDIR += automake111
     SUBDIR += automake14
-    SUBDIR += automake19
     SUBDIR += automoc4
     SUBDIR += autotools
     SUBDIR += avalon-framework
