@@ -17,6 +17,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	simon@FreeBSD.org
 COMMENT=	ISC's utility library
 
+DEPRECATED=	Unlikely to be used...
+EXPIRATION_DATE=2010-11-07
+
 # ISC releases things like 9.3.0rc1, which our versioning doesn't like
 ISCVERSION=	9.3.1
 
