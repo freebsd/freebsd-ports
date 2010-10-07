@@ -35,4 +35,4 @@ cd ${PORTSDIR}
 make -j4 ECHO_MSG=true clean-restricted-list \
   | sed -e "s!/usr/ports/packages/!${builddir}/packages/!g" \
   -e "s!/usr/ports/!${builddir}/ports/!g" \
-  > ${builddir}/restricted.sh
+  > ${builddir}/restricted.sh 2> /dev/null
