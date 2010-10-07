@@ -8,7 +8,8 @@
 PORTNAME=	rats
 PORTVERSION=	2.3
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.fortify.com/servlet/download/public/
+MASTER_SITES=	https://www.fortify.com/downloads2/public/ \
+				http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Source code auditing tool
