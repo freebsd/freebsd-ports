@@ -14,7 +14,7 @@ COMMENT=	PostgreSQL database (client)
 
 MASTERDIR=	${.CURDIR}/../postgresql90-server
 
-BUILD_DIRS=	config src/include src/interfaces \
+BUILD_DIRS=	config src/include src/interfaces src/port \
 		src/bin/pg_dump src/bin/psql src/bin/scripts src/bin/pg_config \
 		doc src/makefiles
 CLIENT_ONLY=	yes

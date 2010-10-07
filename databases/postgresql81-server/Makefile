@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.1.21
-PORTREVISION=	2
+PORTVERSION?=	8.1.22
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -37,12 +36,13 @@ GNU_CONFIGURE=	YES
 .undef GNU_CONFIGURE
 .endif
 
-CONFIGURE_ARGS+=--with-libraries=${LOCALBASE}/lib \
-		--with-includes=${LOCALBASE}/include \
+LDFLAGS+=	-L${LOCALBASE}/lib
+INCLUDES+=	-I${LOCALBASE}/include
+CONFIGURE_ARGS+=--with-libraries=${PREFIX}/lib \
+		--with-includes=${PREFIX}/include \
 		--enable-thread-safety \
 		--with-docdir=${DOCSDIR}
-LDFLAGS+=	-L${PREFIX}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" INCLUDES="${INCLUDES}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
@@ -113,7 +113,7 @@ PATCHFILES+=	pg-8121-icu-xx-2010-05-14.diff.gz:icu
 
 PATCH_DIST_STRIP=-p1
 
-.  if defined(SERVER_ONLY) && defined(WITH_PAM)
+.  if defined(WITH_PAM)
 CONFIGURE_ARGS+=--with-pam
 .  endif
 
@@ -270,6 +270,12 @@ pre-su-install:
 .if !defined(NO_BUILD)
 post-patch:
 	@${REINPLACE_CMD} s/@PTHREAD_LIBS@// ${WRKSRC}/src/Makefile.global.in
+.  if defined(WITH_ICU) || defined(WITH_ICU4)
+#m4_if(m4_defn([m4_PACKAGE_VERSION]), [2.62], [], [m4_fatal([Autoconf version 2.59 or 2.62 is required.
+	@${REINPLACE_CMD} -E -e \
+		"s|^(m4_.*)2.6[0-9](.*Autoconf version.*)2.6[0-9]|\1${AUTOCONF_VERSION:S/2/2./}\2${AUTOCONF_VERSION:S/2/2./}|g" \
+		${WRKSRC}/configure.in
+.  endif
 
 do-install:
 	@for dir in ${INSTALL_DIRS}; do \

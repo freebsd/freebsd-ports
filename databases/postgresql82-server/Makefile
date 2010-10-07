@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.2.17
-PORTREVISION=	2
+PORTVERSION?=	8.2.18
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -37,12 +36,13 @@ GNU_CONFIGURE=	YES
 .undef GNU_CONFIGURE
 .endif
 
-CONFIGURE_ARGS+=--with-libraries=${LOCALBASE}/lib \
-		--with-includes=${LOCALBASE}/include \
+LDFLAGS+=	-L${LOCALBASE}/lib
+INCLUDES+=	-I${LOCALBASE}/include
+CONFIGURE_ARGS+=--with-libraries=${PREFIX}/lib \
+		--with-includes=${PREFIX}/lib \
 		--enable-thread-safety \
 		--with-docdir=${DOCSDIR}
-LDFLAGS+=	-L${PREFIX}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" INCLUDES=${INCLUDES} \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
@@ -105,13 +105,15 @@ OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
 
 PATCH_DIST_STRIP=-p1
 
-.  if defined(SERVER_ONLY) && defined(WITH_PAM)
+.  if defined(WITH_PAM)
 CONFIGURE_ARGS+=--with-pam
 .  endif
 
-.  if defined(SERVER_ONLY) && defined(WITH_LDAP)
+.  if defined(WITH_LDAP)
 CONFIGURE_ARGS+=--with-ldap
+.    if defined (SERVER_ONLY)
 USE_OPENLDAP=	YES
+.    endif
 .  endif
 
 .  if defined(WITH_INTDATE)

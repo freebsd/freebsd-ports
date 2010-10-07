@@ -24,6 +24,7 @@ INSTALL_DIRS=	contrib
 SLAVE_ONLY=	yes
 CONFIGURE_ARGS+=--with-libxslt --with-libxml
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt xml2.5:${PORTSDIR}/textproc/libxml2
+LDFLAGS+=	${PTHREAD_LIBS} -L${PREFIX}/lib
 
 post-install:
 	@- ${INSTALL_DATA} ${WRKSRC}/contrib/README ${DOCSDIR}/contrib/README

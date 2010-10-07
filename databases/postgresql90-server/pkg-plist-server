@@ -5,17 +5,17 @@ bin/pg_resetxlog
 bin/postmaster
 bin/postgres
 etc/periodic/daily/502.pgsql
-lib/libpgport.a
 lib/postgresql/ascii_and_mic.so
 lib/postgresql/cyrillic_and_mic.so
 lib/postgresql/dict_snowball.so
-lib/postgresql/euc_cn_and_mic.so
 lib/postgresql/euc2004_sjis2004.so
+lib/postgresql/euc_cn_and_mic.so
 lib/postgresql/euc_jp_and_sjis.so
 lib/postgresql/euc_kr_and_mic.so
 lib/postgresql/euc_tw_and_big5.so
 lib/postgresql/latin2_and_win1250.so
 lib/postgresql/latin_and_mic.so
+lib/postgresql/libpqwalreceiver.so
 lib/postgresql/plpgsql.so
 lib/postgresql/utf8_and_ascii.so
 lib/postgresql/utf8_and_big5.so
@@ -85,6 +85,7 @@ share/postgresql/system_views.sql
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_resetxlog-9.0.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/plpgsql-9.0.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/postgres-9.0.mo
+%%GETTEXT%%share/locale/ro/LC_MESSAGES/initdb-9.0.mo
 %%GETTEXT%%share/locale/ro/LC_MESSAGES/pg_controldata-9.0.mo
 %%GETTEXT%%share/locale/ro/LC_MESSAGES/pg_resetxlog-9.0.mo
 %%GETTEXT%%share/locale/ro/LC_MESSAGES/plpgsql-9.0.mo

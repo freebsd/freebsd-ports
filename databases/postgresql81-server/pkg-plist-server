@@ -642,6 +642,7 @@ share/postgresql/timezone/PST8PDT
 share/postgresql/timezone/Pacific/Apia
 share/postgresql/timezone/Pacific/Auckland
 share/postgresql/timezone/Pacific/Chatham
+share/postgresql/timezone/Pacific/Chuuk
 share/postgresql/timezone/Pacific/Easter
 share/postgresql/timezone/Pacific/Efate
 share/postgresql/timezone/Pacific/Enderbury
@@ -667,6 +668,7 @@ share/postgresql/timezone/Pacific/Noumea
 share/postgresql/timezone/Pacific/Pago_Pago
 share/postgresql/timezone/Pacific/Palau
 share/postgresql/timezone/Pacific/Pitcairn
+share/postgresql/timezone/Pacific/Pohnpei
 share/postgresql/timezone/Pacific/Ponape
 share/postgresql/timezone/Pacific/Port_Moresby
 share/postgresql/timezone/Pacific/Rarotonga

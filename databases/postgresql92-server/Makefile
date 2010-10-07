@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-DISTVERSION?=	9.0.0
+DISTVERSION?=	9.0.1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -36,17 +36,21 @@ GNU_CONFIGURE=	YES
 PGUSER=		pgsql
 PGGROUP=	pgsql
 
-CONFIGURE_ARGS+=--with-libraries=${LOCALBASE}/lib \
-		--with-includes=${LOCALBASE}/include \
+LDFLAGS+=	-L${LOCALBASE}/lib
+INCLUDES+=	-I${LOCALBASE}/include
+CONFIGURE_ARGS+=--with-libraries=${PREFIX}/lib \
+		--with-includes=${PREFIX}/include \
 		--enable-thread-safety
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
+		INCLUDES="${INCLUDES}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
 
-BUILD_DIRS?=	src/port src/timezone src/backend src/backend/utils/mb/conversion_procs \
-		src/backend/snowball src/bin/initdb src/bin/pg_ctl \
+BUILD_DIRS?=	src/timezone src/backend src/backend/utils/mb/conversion_procs \
+		src/backend/snowball src/backend/replication/libpqwalreceiver \
+		src/bin/initdb src/bin/pg_ctl \
 		src/bin/pg_controldata src/bin/pg_resetxlog src/pl
 
 INSTALL_DIRS?=	${BUILD_DIRS}
@@ -89,6 +93,7 @@ OPTIONS+=	OPTIMIZED_CFLAGS "Builds with compiler optimizations (-O3)" off
 OPTIONS+=	XML "Build with XML data type (server)" on
 OPTIONS+=	TZDATA "Use internal timezone database (server)" on
 OPTIONS+=	DEBUG "Builds with debugging symbols" off
+OPTIONS+=	GSSAPI "BUild with GSSAPI support" on
 
 # See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
 OPTIONS+=	ICU	"Use ICU 3.x for unicode collation (server)" off
@@ -116,26 +121,30 @@ LIB_DEPENDS+=	icudata.38:${PORTSDIR}/devel/icu
 
 PATCH_DIST_STRIP=-p1
 
-.  if defined(SERVER_ONLY) && defined(WITH_DTRACE)
+.  if defined(WITH_DTRACE)
 CONFIGURE_ARGS+=--enable-dtrace
 LDFLAGS+=-lelf
 .  endif
 
-.  if defined(SERVER_ONLY) && defined(WITH_PAM)
+.  if defined(WITH_PAM)
 CONFIGURE_ARGS+=--with-pam
 .  endif
 
-.  if defined(SERVER_ONLY) && defined(WITH_LDAP)
+.  if defined(WITH_LDAP)
 CONFIGURE_ARGS+=--with-ldap
+.    if defined (SERVER_ONLY)
 USE_OPENLDAP=	YES
+.    endif
 .  endif
 
-.  if defined(SERVER_ONLY) && defined(WITH_XML)
+.  if defined(WITH_XML)
 CONFIGURE_ARGS+=--with-libxml
+.    if defined (SERVER_ONLY)
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
+.    endif
 .  endif
 
-.  if defined(SERVER_ONLY) && defined(WITH_TZDATA)
+.  if defined(WITH_TZDATA)
 PLIST_SUB+=	TZDATA=""
 .  else
 CONFIGURE_ARGS+=--with-system-tzdata=/usr/share/zoneinfo
@@ -165,6 +174,10 @@ INSTALL_TARGET=	install
 .  else
 INSTALL_TARGET=	install-strip
 .  endif
+
+.if (${OSVERSION} >= 700000) && !defined(WITHOUT_GSSAPI)
+CONFIGURE_ARGS+=--with-gssapi
+.endif
 
 .  if defined(WITH_MIT_KRB5)
 .    if exists(/usr/lib/libkrb5.so) || exists(/usr/bin/krb5-config)
@@ -313,6 +326,11 @@ pre-su-install:
 .if !defined(NO_BUILD)
 post-patch:
 	@${REINPLACE_CMD} s/@PTHREAD_LIBS@// ${WRKSRC}/src/Makefile.global.in
+.  if defined(WITH_ICU) || defined(WITH_ICU4)
+	@${REINPLACE_CMD} -E -e \
+		"s|^(m4_if.*)2.6[0-9](.*Autoconf version )2.6[0-9]|\1${AUTOCONF_VERSION:S/2/2./}\2${AUTOCONF_VERSION:S/2/2./}|g" \
+		${WRKSRC}/configure.in
+.  endif
 
 do-install:
 	@for dir in ${INSTALL_DIRS}; do \

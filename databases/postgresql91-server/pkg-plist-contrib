@@ -2,6 +2,7 @@ bin/oid2name
 bin/pg_archivecleanup
 bin/pg_standby
 bin/pg_upgrade
+bin/pgbench
 bin/vacuumlo
 lib/postgresql/_int.so
 lib/postgresql/adminpack.so

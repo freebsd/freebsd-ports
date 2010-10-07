@@ -590,6 +590,9 @@
     SUBDIR += postgresql84-client
     SUBDIR += postgresql84-server
     SUBDIR += postgresql84-contrib
+    SUBDIR += postgresql90-client
+    SUBDIR += postgresql90-server
+    SUBDIR += postgresql90-contrib
     SUBDIR += postgresql_autodoc
     SUBDIR += powerarchitect
     SUBDIR += puredb

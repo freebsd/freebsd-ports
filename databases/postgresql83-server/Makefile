@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-DISTVERSION?=	8.3.11
-PORTREVISION=	2
+DISTVERSION?=	8.3.12
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -39,12 +38,13 @@ GNU_CONFIGURE=	YES
 PGUSER=		pgsql
 PGGROUP=	pgsql
 
-CONFIGURE_ARGS+=--with-libraries=${LOCALBASE}/lib \
-		--with-includes=${LOCALBASE}/include \
+LDFLAGS+=	-L${LOCALBASE}/lib
+INCLUDES+=	-I${LOCALBASE}/include
+CONFIGURE_ARGS+=--with-libraries=${PREFIX}/lib \
+		--with-includes=${PREFIX}/lib \
 		--enable-thread-safety \
 		--with-docdir=${DOCSDIR}
-LDFLAGS+=	-L${PREFIX}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" INCLUDES="${INCLUDES}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
@@ -111,21 +111,23 @@ PATCHFILES+=	pg-8311-icu-xx-2010-05-14.diff.gz:icu
 
 PATCH_DIST_STRIP=-p1
 
-.  if defined(SERVER_ONLY) && defined(WITH_PAM)
+.  if  defined(WITH_PAM)
 CONFIGURE_ARGS+=--with-pam
 .  endif
 
-.  if defined(SERVER_ONLY) && defined(WITH_LDAP)
+.  if defined(WITH_LDAP)
 CONFIGURE_ARGS+=--with-ldap
+.    if defined (SERVER_ONLY)
 USE_OPENLDAP=	YES
+.    endif
 .  endif
 
-.  if defined(SERVER_ONLY) && defined(WITH_XML)
+.  if defined(WITH_XML)
 CONFIGURE_ARGS+=--with-libxml
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 .  endif
 
-.  if defined(SERVER_ONLY) && defined(WITH_TZDATA)
+.  if defined(WITH_TZDATA)
 PLIST_SUB+=	TZDATA=""
 .  else
 CONFIGURE_ARGS+=--with-system-tzdata=/usr/share/zoneinfo
@@ -279,6 +281,11 @@ pre-su-install:
 .if !defined(NO_BUILD)
 post-patch:
 	@${REINPLACE_CMD} s/@PTHREAD_LIBS@// ${WRKSRC}/src/Makefile.global.in
+.  if defined(WITH_ICU) || defined(WITH_ICU4)
+	@${REINPLACE_CMD} -E -e \
+		"s|^(m4_if.*)2.6[0-9](.*Autoconf version )2.6[0-9]|\1${AUTOCONF_VERSION:S/2/2./}\2${AUTOCONF_VERSION:S/2/2./}|g" \
+		${WRKSRC}/configure.in
+.  endif
 
 do-install:
 	@for dir in ${INSTALL_DIRS}; do \
