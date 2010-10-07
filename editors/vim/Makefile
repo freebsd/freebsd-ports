@@ -67,7 +67,7 @@ WITH_PERL=	yes
 WITH_PYTHON=	yes
 WITH_RUBY=	yes
 WITH_TCL=	yes
-WITH_LUNA=	yes
+WITH_LUA=	yes
 .endif
 
 .if defined(WITH_PYTHON)
