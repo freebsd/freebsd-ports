@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	calibre
-PORTVERSION=	0.6.27
-PORTREVISION=	6
+PORTVERSION=	0.7.22
+PORTREVISION=	0
 CATEGORIES=	deskutils python
-MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
-		http://calibre-ebook.googlecode.com/files/
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Ebook management application
@@ -18,11 +17,15 @@ COMMENT=	Ebook management application
 LIB_DEPENDS=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
-		wmflite:${PORTSDIR}/graphics/libwmf
+		wmflite:${PORTSDIR}/graphics/libwmf \
+		chm.0:${PORTSDIR}/misc/chmlib
 BUILD_DEPENDS=	py*-setuptools>=0:${PORTSDIR}/devel/py-setuptools \
 		py*-sip>=0:${PORTSDIR}/devel/py-sip \
 		py*-qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
-		py*-qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui
+		py*-qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
+		py*-cssutils>=0:${PORTSDIR}/www/py-cssutils \
+		py*-dateutil>=0:${PORTSDIR}/devel/py-dateutil \
+		py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
 		py*-dnspython>=0:${PORTSDIR}/dns/py-dnspython \
 		py*-dateutil>=0:${PORTSDIR}/devel/py-dateutil \
