@@ -9,10 +9,10 @@ PORTNAME=	fwipe
 PORTVERSION=	0.36
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://jeenyus.net/~budney/linux/software/fwipe/ \
+MASTER_SITES=	http://www.jeenyus.net/linux/software/fwipe/ \
 		http://redundancy.redundancy.org/mirror/
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A djb-style file wiping utility
 
 ALL_TARGET=	it

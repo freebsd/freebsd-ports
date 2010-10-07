@@ -9,8 +9,7 @@ PORTNAME=	publicfile
 PORTVERSION=	0.52
 PORTREVISION=	2
 CATEGORIES=	www ftp
-MASTER_SITES=	http://cr.yp.to/publicfile/ \
-		ftp://cr.yp.to/publicfile/
+MASTER_SITES=	http://cr.yp.to/publicfile/
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A secure, read-only, anonymous HTTP/FTP server
