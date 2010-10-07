@@ -1,6 +1,14 @@
---- smbldap-usermod.orig	2008-04-22 10:13:29.000000000 +0200
-+++ smbldap-usermod	2010-10-05 12:05:23.220769671 +0200
-@@ -54,6 +54,7 @@
+--- smbldap-usermod.orig	2010-10-07 13:29:58.221685434 +0200
++++ smbldap-usermod	2010-10-07 13:31:31.821463290 +0200
+@@ -48,12 +48,14 @@
+     "I|sambaDisable"         => \$Options{I},
+     "J|sambaEnable"          => \$Options{J},
+     "L|shadowLock"           => \$Options{L},
+-    "M|mailAddresses=s"      => \$Options{M},
++    "M|mail=s"               => \$Options{M},
+     "N|givenName=s"          => \$Options{N},
++    "O|mailLocalAddress=s"   => \$Options{O},
+     "P=s"                    => \$Options{P},
      "U|shadowUnlock"         => \$Options{U},
      "S|surname=s"            => \$Options{S},
      "T|mailToAddress=s"      => \$Options{T},
@@ -8,16 +16,33 @@
      "Z|attr=s"               => \$Options{Z},
      "a|addsambaSAMAccount"   => \$Options{a},
      "c|gecos=s"              => \$Options{c},
-@@ -73,7 +74,7 @@
+@@ -73,7 +75,7 @@
      "u|uid=s"                => \$Options{u}
  );
  
 -#my $ok = getopts('A:B:C:D:E:F:H:IJM:N:S:PT:ame:f:u:g:G:d:l:r:s:c:ok:?h', \%Options);
-+#my $ok = getopts('A:B:C:D:E:F:H:IJM:N:S:PT:X:Z:ame:f:u:g:G:d:l:r:s:c:ok:?h', \%Options);
++#my $ok = getopts('A:B:C:D:E:F:H:IJM:N:O:S:PT:X:Z:ame:f:u:g:G:d:l:r:s:c:ok:?h', \%Options);
  
  if ( ( !$ok ) || ( @ARGV < 1 ) || ( $Options{'h'} ) ) {
      print_banner;
-@@ -134,6 +135,8 @@
+@@ -92,11 +94,13 @@
+     print "  -N|--givenName <name>        given name (first name)\n";
+     print "  -S|--surname <suname>        surname (family name)\n";
+     print "  -P                           ends by invoking smbldap-passwd\n";
+-    print "  -M|--mailAddresses <mail,>   mailAddresses (comma seperated)\n";
++    print "  -M|--mail <mail,>            e-mail addresses (comma seperated)\n";
+     print
+-"  -T|--mailToAddress <mail,>   mailToAddress (forward address) (comma seperated)\n";
++"  -O|--mailLocalAddress <mail,> mailLocalAddress (comma separated)\n";
+     print
+-"  -e|--expire <date>           Sets both shadow and samba expiration date: like \"YYYY-MM-DD(HH:MM:SS)\", or \"yYmMdD\" to extand y year,m months and d days\n";
++"  -T|--mailToAddress <mail,>   mailToAddress (forward address) (comma separated)\n";
++    print
++"  -e|--expire <date>           Sets both shadow and samba expiration date: like \"YYYY-MM-DD(HH:MM:SS)\", or \"yYmMdD\" to extend y year,m months and d days\n";
+     print
+ "  --shadowExpire <date/n>      Shadow expiration date (like \"YYYY-MM-DD\") or 'n' days from today\n";
+     print
+@@ -134,6 +138,8 @@
  "  -I|--sambaDisable              disable an user. Can't be used with -H or -J\n";
      print
  "  -J|--sambaEnable               enable an user. Can't be used with -H or -I\n";
@@ -26,7 +51,7 @@
      print "  -h|--help                      show this help message\n";
      exit(1);
  }
-@@ -146,6 +149,14 @@
+@@ -146,6 +152,14 @@
  # Read only first @ARGV
  my $user = $ARGV[0];
  
@@ -41,7 +66,7 @@
  # Let's connect to the directory first
  my $ldap_master = connect_ldap_master();
  
-@@ -322,11 +333,11 @@
+@@ -322,11 +336,11 @@
  # my givenname: Jerome
  
  if ( defined( $tmp = $Options{'N'} ) ) {
@@ -55,7 +80,7 @@
  }
  
  my $cn;
-@@ -340,7 +351,7 @@
+@@ -340,7 +354,7 @@
      $cn = "$Options{'N'}";
      $cn .= " " . $Options{'S'}
        unless ( $Options{'S'} eq $Options{'N'} and $Options{'N'} eq $user );
@@ -64,7 +89,78 @@
      push( @mods, 'cn' => $push_val );
  
      # set displayName for Samba account
-@@ -841,12 +852,12 @@
+@@ -462,44 +476,53 @@
+     push( @mods, 'userPassword' => $tmp );
+ }
+ 
+-my $mailobj = 0;
+-if ( $tmp = $Options{'M'} ) {
++if ( $tmp = $Options{'M'} ) {    
+ 
+     # action si + or - for adding or deleting an entry
+     my $action = '';
+     if ( $tmp =~ s/^([+-])+\s*// ) {
+         $action = $1;
+     }
+-    my @userMailLocal = &split_arg_comma($tmp);
+-    my @mail;
+-    foreach my $m (@userMailLocal) {
++    my @mail = &split_arg_comma($tmp);
++    foreach my $m (@mail) {
+         my $domain = $config{mailDomain};
+-        if ( $m =~ /^(.+)@/ ) {
+-            push( @mail, $m );
+-
+-            # mailLocalAddress contains only the first part
+-            $m = $1;
+-        }
+-        else {
+-            push( @mail, $m . ( $domain ? '@' . $domain : '' ) );
++        if ( $m !~ /^(.+)@/ ) {
++            $m = $m . ( $domain ? '@' . $domain : '' );
+         }
+     }
+     if ($action) {
+-        my @old_MailLocal;
+         my @old_mail;
+         @old_mail      = $user_entry->get_value('mail');
++        if ( $action eq '+' ) {
++            @mail          = &list_union( \@old_mail,      \@mail );
++        }
++        elsif ( $action eq '-' ) {
++            @mail          = &list_minus( \@old_mail,      \@mail );
++        }
++    }
++    push( @mods, 'mail' => [@mail] );
++}
++
++my $mailobj = 0;
++if ( $tmp = $Options{'O'} ) {    
++
++    # action si + or - for adding or deleting an entry
++    my $action = '';
++    if ( $tmp =~ s/^([+-])+\s*// ) {
++        $action = $1;
++    }
++    my @userMailLocal = &split_arg_comma($tmp);
++    if ($action) {
++        my @old_MailLocal;
+         @old_MailLocal = $user_entry->get_value('mailLocalAddress');
+         if ( $action eq '+' ) {
+             @userMailLocal = &list_union( \@old_MailLocal, \@userMailLocal );
+-            @mail          = &list_union( \@old_mail,      \@mail );
+         }
+         elsif ( $action eq '-' ) {
+             @userMailLocal = &list_minus( \@old_MailLocal, \@userMailLocal );
+-            @mail          = &list_minus( \@old_mail,      \@mail );
+         }
+     }
+     push( @mods, 'mailLocalAddress', [@userMailLocal] );
+-    push( @mods, 'mail' => [@mail] );
+     $mailobj = 1;
+ }
+ 
+@@ -841,12 +864,12 @@
  # Then assume it has been set correctly with -N and -S before.
      push( @mods, "cn" => $new_user )
        unless ( $user_entry->get_value("cn")
