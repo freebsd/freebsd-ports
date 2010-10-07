@@ -35,7 +35,7 @@ OPTIONS=	THREADS "Enable Threads in apr"				on  \
 		DEVELOPER_ONLY "I want to test apr2 not the maintainer" off
 
 USE_ICONV=		yes
-USE_AUTOTOOLS=	automake:19 autoconf:267 libtool:22:env
+USE_AUTOTOOLS=	automake:111 autoconf:267 libtool:22:env
 USE_PERL5_BUILD=	yes
 USE_PYTHON_BUILD=	-2.7
 USE_LDCONFIG=		yes

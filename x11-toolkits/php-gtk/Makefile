@@ -15,7 +15,7 @@ MASTER_SITES=	http://gtk.php.net/distributions/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extension to use gtk in PHP-applications
 
-USE_AUTOTOOLS=	automake:19:env autoconf:267 libtool:22:env
+USE_AUTOTOOLS=	automake:111:env autoconf:267 libtool:22:env
 GNU_CONFIGURE=	yes
 USE_PHP=	pcre
 USE_PHP_BUILD=	yes

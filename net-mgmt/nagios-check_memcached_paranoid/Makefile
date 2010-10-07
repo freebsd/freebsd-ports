@@ -28,7 +28,7 @@ FILE=		${PORTNAME}.c
 PLUGINS=	${PORTSDIR}/net-mgmt/nagios-plugins
 NDIR_CMD=	cd ${PLUGINS} && ${MAKE} -VWRKSRC
 # Needed for build target on net-mgmt/nagios-plugins
-EXTRA_DEPENDS=	automake>0:${PORTSDIR}/devel/automake19 \
+EXTRA_DEPENDS=	automake>0:${PORTSDIR}/devel/automake111 \
 		autoconf>0:${PORTSDIR}/devel/autoconf267 \
 		libtool>0:${PORTSDIR}/devel/libtool22 \
 		gmake:${PORTSDIR}/devel/gmake
