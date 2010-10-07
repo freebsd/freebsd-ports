@@ -6,13 +6,18 @@
 #
 
 PORTNAME=	pydf
-PORTVERSION=	8
+PORTVERSION=	9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://kassiopeia.juls.savba.sk/~garabik/software/pydf/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	gwarf@gwarf.org
+MAINTAINER=	baptiste@bapt.name
 COMMENT=	A python implementation of df
+
+LICENSE=	unknown
+LICENSE_NAME=	Public Domain
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 SUB_FILES=	pkg-message
 
