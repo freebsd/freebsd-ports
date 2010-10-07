@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:267:env libtool:22:env
+USE_AUTOTOOLS=	automake:111:env autoconf:267:env libtool:22:env
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 BUILDDIR=	${WRKSRC}/lib/CSConv
@@ -42,6 +42,7 @@ post-patch:
 		${BUILDDIR}/csconv.h
 
 do-configure:
+	@${TOUCH} ${BUILDDIR}/config.rpath
 	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${GMAKE} reconfig
 	@${REINPLACE_CMD} -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
 			  -e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
