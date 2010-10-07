@@ -1991,6 +1991,7 @@
     SUBDIR += p5-Package-Stash
     SUBDIR += p5-PadWalker
     SUBDIR += p5-Parallel-ForkManager
+    SUBDIR += p5-Parallel-Iterator
     SUBDIR += p5-Parallel-Prefork
     SUBDIR += p5-Params-CallbackRequest
     SUBDIR += p5-Params-Check
