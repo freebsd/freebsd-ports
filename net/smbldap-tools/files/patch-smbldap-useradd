@@ -1,23 +1,30 @@
---- smbldap-useradd.orig	2008-04-22 10:13:29.000000000 +0200
-+++ smbldap-useradd	2010-10-05 12:04:47.827698271 +0200
+--- smbldap-useradd.orig	2010-10-07 13:29:52.246293547 +0200
++++ smbldap-useradd	2010-10-07 13:30:32.544088110 +0200
 @@ -35,7 +35,7 @@
  my %Options;
  
  my $ok =
 -  getopts( 'o:abnmwWiPG:u:g:d:s:c:k:t:A:B:C:D:E:F:H:L:M:N:S:T:?', \%Options );
-+  getopts( 'o:abnmwWiPG:u:g:d:s:c:k:t:A:B:C:D:E:F:H:L:M:N:S:T:X:Z?', \%Options );
++  getopts( 'o:abnmwWiPG:u:g:d:s:c:k:t:A:B:C:D:E:F:H:L:M:N:O:S:T:X:Z?', \%Options );
  
  if ( ( !$ok ) || ( @ARGV < 1 ) || ( $Options{'?'} ) ) {
      print_banner;
-@@ -74,6 +74,7 @@
+@@ -69,11 +69,13 @@
+     print "  -G	supplementary comma-separated groups\n";
+     print
+       "  -H	sambaAcctFlags (samba account control bits like '[NDHTUMWSLKI]')\n";
+-    print "  -M	local mailAddress (comma seperated)\n";
++    print "  -M	e-mail address (comma seperated)\n";
+     print "  -N	given name \n";
++    print "  -O	localMailAddress (comma separated)\n";
      print "  -P	ends by invoking smbldap-passwd\n";
      print "  -S	surname (Family name)\n";
      print "  -T	mailToAddress (forward address) (comma seperated)\n";
-+    print "  -X input encoding for givenname and surname (default UTF-8)\n";
++    print "  -X	input encoding for givenname and surname (default UTF-8)\n";
      print "  -Z	set custom LDAP attributes, name=value pairs comma separated\n";
      print "  -?	show this help message\n";
      exit(1);
-@@ -92,6 +93,14 @@
+@@ -92,6 +94,14 @@
  # Read only first @ARGV
  my $userName = $ARGV[0];
  
@@ -32,7 +39,15 @@
  # For computers account, add a trailing dollar if missing
  if ( defined( $Options{'w'} ) or defined( $Options{'W'} ) ) {
      if ( $userName =~ /[^\$]$/s ) {
-@@ -278,8 +287,8 @@
+@@ -256,6 +266,7 @@
+ 
+ my $userHomeDirectory;
+ my ( $givenName, $userCN, $userSN, $displayName );
++my @mail;
+ my @userMailLocal;
+ my @userMailTo;
+ my $tmp;
+@@ -278,8 +289,8 @@
  $config{userLoginShell} = $tmp if ( defined( $tmp = $Options{'s'} ) );
  $config{userGecos}      = $tmp if ( defined( $tmp = $Options{'c'} ) );
  $config{skeletonDir}    = $tmp if ( defined( $tmp = $Options{'k'} ) );
@@ -43,7 +58,17 @@
  if ( $Options{'N'} and $Options{'S'} ) {
      $displayName = $userCN = "$givenName" . " $userSN";
  }
-@@ -461,7 +470,7 @@
+@@ -287,7 +298,8 @@
+     $displayName = $userCN = $userName;
+ }
+ 
+-@userMailLocal = &split_arg_comma( $Options{'M'} );
++@mail = &split_arg_comma( $Options{'M'} );
++@userMailLocal = &split_arg_comma( $Options{'O'} );
+ @userMailTo    = &split_arg_comma( $Options{'T'} );
+ 
+ ########################
+@@ -461,7 +473,7 @@
          if ( !( -d $userHomeDirectory ) ) {
              if ( $config{skeletonDir} ne "" ) {
                  system
@@ -52,3 +77,79 @@
              }
              else {
                  system "mkdir $userHomeDirectory 2>/dev/null";
+@@ -483,31 +495,27 @@
+     }
+ }
+ 
+-# we start to defined mail adresses if option M or T is given in option
++# we start to defined mail adresses if option M, O or T are given
+ my @adds;
+-if (@userMailLocal) {
+-    my @mail;
+-    foreach my $m (@userMailLocal) {
++if ( @userMailLocal || @userMailTo ) {
++    push( @adds, 'objectClass' => 'inetLocalMailRecipient' );
++}
++if (@mail) {
++    foreach my $m (@mail) {
+         my $domain = $config{mailDomain};
+-        if ( $m =~ /^(.+)@/ ) {
+-            push( @mail, $m );
+-
+-            # mailLocalAddress contains only the first part
+-            $m = $1;
+-        }
+-        else {
+-            push( @mail, $m . ( $domain ? '@' . $domain : '' ) );
++        if ( $m !~ /^(.+)@/ ) {
++            $m = $m . ( $domain ? '@' . $domain : '' );
+         }
+     }
+-    push( @adds, 'mailLocalAddress' => [@userMailLocal] );
+     push( @adds, 'mail'             => [@mail] );
+ }
++
++if (@userMailLocal) {
++    push( @adds, 'mailLocalAddress' => [@userMailLocal] );
++}
+ if (@userMailTo) {
+     push( @adds, 'mailRoutingAddress' => [@userMailTo] );
+ }
+-if ( @userMailLocal || @userMailTo ) {
+-    push( @adds, 'objectClass' => 'inetLocalMailRecipient' );
+-}
+ 
+ # Custom modification - MPK
+ if ( $Options{'Z'} ) {
+@@ -623,6 +631,9 @@
+         push( @adds, 'sambaLMPassword'      => "XXX" );
+         push( @adds, 'sambaNTPassword'      => "XXX" );
+     }
++}
++
++if (@adds) {
+     my $modify =
+       $ldap_master->modify( "uid=$userName,$config{usersdn}", add => {@adds} );
+ 
+@@ -742,16 +753,19 @@
+    spaces and trailing bracket are ignored (samba account control bits like '[NDHTUMWSLKI]'
+ 
+ -M mail
+-   local mail aliases (multiple addresses are seperated by spaces)
++   e-mail adresses (multiple addresses are seperated by commas)
+ 
+ -N givenname
+    family name. Defaults to username
+ 
++-O localMailAddress
++   localMailAddresses (multiple addresses are seperated by commas)
++
+ -S surname
+    defaults to username
+ 
+ -T mailToAddress
+-   Forward address (multiple addresses are seperated by spaces)
++   Forward address (multiple addresses are seperated by commas)
+ 
+ -n
+    do not print banner message
