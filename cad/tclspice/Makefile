@@ -22,7 +22,7 @@ RUN_DEPENDS=	bltwish:${PORTSDIR}/x11-toolkits/blt \
 BROKEN=		does not compile
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:267 libtool:22
+USE_AUTOTOOLS=	aclocal:111 automake:111 autoconf:267 libtool:22
 AUTOMAKE_ARGS=	-c -a
 USE_GMAKE=	yes
 ALL_TARGET=	tcl

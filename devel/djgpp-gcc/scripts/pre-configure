@@ -4,8 +4,8 @@ AUTOCONF_OLD=autoconf-2.13
 AUTOHEADER_OLD=autoheader-2.13
 AUTOCONF=autoconf-2.67
 AUTOHEADER=autoheader-2.67
-ACLOCAL=aclocal-1.9
-AUTOMAKE=automake-1.9
+ACLOCAL=aclocal-1.11
+AUTOMAKE=automake-1.11
 
 #
 #  List of directories in which we should run autoconf or/and automake

@@ -19,7 +19,7 @@ BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 
 BROKEN=	Does not work with autoconf>=2.64 - upstream 2.76 has switched to cmake.
 
-USE_AUTOTOOLS=	automake:110:env autoconf:267:env libtool:22:env
+USE_AUTOTOOLS=	automake:111:env autoconf:267:env libtool:22:env
 GNU_CONFIGURE=	yes
 USE_DOS2UNIX=	yes
 USE_GL=		glu glut
