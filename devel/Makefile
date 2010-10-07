@@ -2572,6 +2572,7 @@
     SUBDIR += php5-sysvmsg
     SUBDIR += php5-sysvsem
     SUBDIR += php5-sysvshm
+    SUBDIR += php5-thrift
     SUBDIR += php5-tokenizer
     SUBDIR += php52-gettext
     SUBDIR += php52-json
