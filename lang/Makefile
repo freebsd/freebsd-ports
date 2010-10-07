@@ -112,6 +112,7 @@
     SUBDIR += gnat-gcc44
     SUBDIR += gnustep-base
     SUBDIR += gnustep-guile
+    SUBDIR += gnustep-libobjc
     SUBDIR += gnustep-objc
     SUBDIR += go
     SUBDIR += gpc

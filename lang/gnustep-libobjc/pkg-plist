@@ -1,0 +1,18 @@
+GNUstep/System/Library/Headers/objc/Availability.h
+GNUstep/System/Library/Headers/objc/Object.h
+GNUstep/System/Library/Headers/objc/Protocol.h
+GNUstep/System/Library/Headers/objc/blocks_runtime.h
+GNUstep/System/Library/Headers/objc/capabilities.h
+GNUstep/System/Library/Headers/objc/encoding.h
+GNUstep/System/Library/Headers/objc/hooks.h
+GNUstep/System/Library/Headers/objc/objc-api.h
+GNUstep/System/Library/Headers/objc/objc.h
+GNUstep/System/Library/Headers/objc/runtime.h
+GNUstep/System/Library/Headers/objc/slot.h
+GNUstep/System/Library/Headers/toydispatch/toydispatch.h
+GNUstep/System/Library/Libraries/libobjc.so
+GNUstep/System/Library/Libraries/libobjc.so.%%MAJORLIBVERSION%%
+GNUstep/System/Library/Libraries/libtoydispatch.so
+GNUstep/System/Library/Libraries/libtoydispatch.so.%%MAJORVERSION%%
+@dirrm GNUstep/System/Library/Headers/toydispatch
+@dirrm GNUstep/System/Library/Headers/objc
