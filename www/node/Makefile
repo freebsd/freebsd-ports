@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	node
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.3
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -28,8 +28,12 @@ MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST}
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 
+.if !defined(DISABLE_MAKE_JOBS)
+WAF_ARGS=	--jobs=${MAKE_JOBS_NUMBER}
+.endif
+
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} tools/waf-light --jobs=${MAKE_JOBS_NUMBER} build)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} tools/waf-light ${WAF_ARGS} build)
 
 post-install:
 	@${INSTALL_MAN}  ${WRKSRC}/doc/node.1 ${MANPREFIX}/man/man1
