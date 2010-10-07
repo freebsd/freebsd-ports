@@ -255,7 +255,6 @@ cklatest:
 	    ftp://ftp.vim.org/pub/vim/patches/${PORTVERSION:C/\.[0-9a-z]*$//}/ \
 		| ${SED} -n -e 's/${PORTVERSION:C/[0-9]*$//}\([0-9][0-9][0-9]\)$$/\1/p' \
 		| ${TAIL} -1
-	#${SED} -i '' -e 's/^PATCHLEVEL=	(.*)$/PATCHLEVEL=	${LATEST}/g' ./Makefile
 
 find-bad-patches:
 	@cd ${DISTDIR} ; egrep -l \
