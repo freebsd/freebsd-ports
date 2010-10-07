@@ -11,7 +11,10 @@
 # $FreeBSD$
 #
 
+PATH=/usr/bin:/bin:/usr/sbin:/usr/local/bin
+
 USER=%%USER%%
+GROUP=%%GROUP%%
 PID_FILE=%%PID_FILE%%
 
 # Make sure we're in the right stage of the process
@@ -21,7 +24,7 @@ if [ "$2" = "DEINSTALL" ]; then
 	if [ -s ${PID_FILE} ]; then
 		PID=`cat ${PID_FILE}`
 		echo -n ">> Killing Tomcat process (${PID})..."
-		/bin/kill ${PID} > /dev/null 2> /dev/null
+		kill ${PID} > /dev/null 2> /dev/null
 		if [ $? -eq 0 ]; then
 			echo " [ DONE ]"
 		else
@@ -38,10 +41,14 @@ if [ "$2" = "DEINSTALL" ]; then
 fi
 
 if [ "$2" = "POST-DEINSTALL" ]; then
-	# If the user exists, then display a message
+	# If the user/group exists, then display a message
 	if pw usershow "${USER}" 2>/dev/null 1>&2; then
 		echo "To delete the ${USER} user permanently, use 'pw userdel ${USER}'"
 	fi
+	
+	if pw groupshow "${GROUP}" 2>&1 >/dev/null; then
+    		echo "To delete the ${GROUP} group permanently, use 'pw groupdel ${GROUP}'"
+  	fi
 fi
 
 exit 0

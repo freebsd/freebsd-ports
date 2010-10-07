@@ -123,6 +123,7 @@ flags="-p ${pidfile} ${java_command} start ${tomcat%%TOMCAT_VERSION%%_flags} ${l
 
 start_precmd=pid_touch
 stop_cmd="tomcat%%TOMCAT_VERSION%%_stop"
+status_cmd="tomcat%%TOMCAT_VERSION%%_status"
 
 pid_touch ()
 {
@@ -133,9 +134,9 @@ pid_touch ()
 tomcat%%TOMCAT_VERSION%%_stop() {
 	rc_pid=$(check_pidfile $pidfile $procname)
 
-	if [ -z "$rc_pid" ]; then
-		[ -n "$rc_fast" ] && return 0
-		if [ -n "$pidfile" ]; then
+	if [ -z `cat $pidfile` ]; then
+		[ -n `cat $pidfile` ] && return 0
+		if [ -n `cat $pidfile` ]; then
 			echo "${name} not running? (check $pidfile)."
 		else
 			echo "${name} not running?"
@@ -145,9 +146,22 @@ tomcat%%TOMCAT_VERSION%%_stop() {
 	
 	echo "Stopping ${name}."
 	${java_command} stop
-	tomcat_wait_max_for_pid ${tomcat%%TOMCAT_VERSION%%_stop_timeout} ${rc_pid}
+	tomcat_wait_max_for_pid ${tomcat%%TOMCAT_VERSION%%_stop_timeout} `cat $pidfile`
 	kill -KILL ${rc_pid} 2> /dev/null && echo "Killed."
 	echo -n > ${pidfile}
+}
+
+tomcat%%TOMCAT_VERSION%%_status() {
+	if [ ! -f $pidfile ]; then
+          pid_touch
+        fi
+
+	if [ -z `cat $pidfile` ]; then
+	  echo "${name} is not running."
+	  return 1
+	else
+	  echo "${name} is running as pid `cat $pidfile`."
+	fi
 }
 
 tomcat_wait_max_for_pid() {

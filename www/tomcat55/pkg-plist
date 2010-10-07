@@ -46,15 +46,25 @@
 %%T%%/common/lib/servlet-api.jar
 %%T%%/common/lib/tools.jar
 %%T%%/conf/Catalina/localhost/host-manager.xml.%%CONF_EXT%%
+@exec if [ ! -f %D/%%T%%/conf/Catalina/localhost/host-manager.xml ]; then cp %D/%%T%%/conf/Catalina/localhost/host-manager.xml.%%CONF_EXT%% %D/%%T%%/conf/Catalina/localhost/host-manager.xml; fi
 %%T%%/conf/Catalina/localhost/manager.xml.%%CONF_EXT%%
+@exec if [ ! -f %D/%%T%%/conf/Catalina/localhost/manager.xml ]; then cp %D/%%T%%/conf/Catalina/localhost/manager.xml.%%CONF_EXT%% %D/%%T%%/conf/Catalina/localhost/manager.xml; fi
 %%T%%/conf/catalina.policy.%%CONF_EXT%%
+@exec if [ ! -f %D/%%T%%/conf/catalina.policy ]; then cp %D/%%T%%/conf/catalina.policy.%%CONF_EXT%% %D/%%T%%/conf/catalina.policy;fi
 %%T%%/conf/catalina.properties.%%CONF_EXT%%
+@exec if [ ! -f %D/%%T%%/conf/catalina.properties ]; then cp %D/%%T%%/conf/catalina.properties.%%CONF_EXT%% %D/%%T%%/conf/catalina.properties;fi
 %%T%%/conf/context.xml.%%CONF_EXT%%
+@exec if [ ! -f %D/%%T%%/conf/context.xml ]; then cp %D/%%T%%/conf/context.xml.%%CONF_EXT%% %D/%%T%%/conf/context.xml;fi
 %%T%%/conf/logging.properties.%%CONF_EXT%%
+@exec if [ ! -f %D/%%T%%/conf/logging.properties ]; then cp %D/%%T%%/conf/logging.properties.%%CONF_EXT%% %D/%%T%%/conf/logging.properties;fi
 %%T%%/conf/server-minimal.xml.%%CONF_EXT%%
+@exec if [ ! -f %D/%%T%%/conf/server-minimal.xml ]; then cp %D/%%T%%/conf/server-minimal.xml.%%CONF_EXT%% %D/%%T%%/conf/server-minimal.xml;fi
 %%T%%/conf/server.xml.%%CONF_EXT%%
+@exec [ -f %D/%%T%%/conf/server.xml ] || cp %D/%%T%%/conf/server.xml.%%CONF_EXT%% %D/%%T%%/conf/server.xml
 %%T%%/conf/tomcat-users.xml.%%CONF_EXT%%
+@exec if [ ! -f %D/%%T%%/conf/tomcat-users.xml ];then cp %D/%%T%%/conf/tomcat-users.xml.%%CONF_EXT%% %D/%%T%%/conf/tomcat-users.xml;fi
 %%T%%/conf/web.xml.%%CONF_EXT%%
+@exec if [ ! -f %D/%%T%%/conf/web.xml ];then cp %D/%%T%%/conf/web.xml.%%CONF_EXT%% %D/%%T%%/conf/web.xml;fi
 %%T%%/logs/stderr.log
 %%T%%/logs/stdout.log
 %%T%%/server/lib/catalina-ant-jmx.jar
