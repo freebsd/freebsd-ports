@@ -1,21 +1,57 @@
---- pydf.orig	2009-11-10 00:38:15.000000000 +0100
-+++ pydf	2009-11-10 02:13:13.000000000 +0100
-@@ -1,4 +1,4 @@
+--- pydf.old	2010-10-05 23:50:06.000000000 +0200
++++ pydf	2010-10-06 00:28:36.000000000 +0200
+@@ -1,6 +1,6 @@
 -#! /usr/bin/python
 +#! %%PYTHON_CMD%%
-
- import sys, os, string, types, commands, struct
+ 
+-import sys, os, string, subprocess, struct
++import sys, os, string, struct
  from optparse import OptionParser
-@@ -169,7 +169,7 @@
+ 
+ from math import log
+@@ -10,6 +10,14 @@
+     # will not give the same result for broken symbolic links, but who cares...
+     os.path.lexists = os.path.exists
+ 
++if sys.version_info < (3, 0):
++    # getoutput() and getstatusoutput() methods have
++    # been moved from commands to the subprocess module
++    # with Python >= 3.x
++    import commands as cmd
++else:
++    import subprocess as cmd
++
+ str_ljust = str.ljust
+ str_rjust = str.rjust
+ str_center = str.center
+@@ -61,7 +69,7 @@
+     
+ 
+ def get_terminal_width_resize():
+-    c = subprocess.getoutput('resize').split('\n')
++    c = cmd.getoutput('resize').split('\n')
+     c = [x for x in c if x.startswith('COLUMNS=')]
+     if c:
+         c = c[0]
+@@ -167,7 +175,7 @@
  #end of default definitions
  
  # read configuration file
 -for conffile in ["/etc/pydfrc", os.environ['HOME']+"/.pydfrc"]:
 +for conffile in ["%%PREFIX%/etc/pydfrc", os.environ['HOME']+"/.pydfrc"]:
      if os.path.isfile(conffile):
-         execfile(conffile)
+         exec(compile(open(conffile).read(), conffile, 'exec'))
  
-@@ -294,11 +294,12 @@
+@@ -290,7 +298,7 @@
+                 break
+         else:
+             # fallback, first try to parse mount output
+-            status, mout = subprocess.getstatusoutput('mount')
++            status, mout = cmd.getstatusoutput('mount')
+             if status !=0:
+                 return dummy_result
+             mlines = mout.split('\n')
+@@ -300,11 +308,16 @@
                      continue
                  device, on = line.split(' on ', 1)
                  device = device.split()[0]
@@ -23,28 +59,45 @@
 +                onparts = on.rstrip(")").split(" (")
                  on = onparts[0]
 -                # option format: (a,b,..)
--                opts = onparts[-1][1:-1].split(",")
--                r[on] = (device, '', opts)                
-+                # option format: (fstype, a, b, ..)
-+                typ, opts = onparts[1].split(", ", 1)
+-                opts = onparts[-1][1:-1].split(',')
+-                r[on] = (device, '', opts)
++                l = onparts[1].split(", ")
++                if len(l) == 2:
++                    typ, opts = l
++                else:
++                    typ = l[0]
++                    opts = ''
 +                opts = opts.split(", ")
 +                r[on] = (device, typ, opts)
  
              if r:
                  return r
-@@ -335,9 +336,9 @@
+@@ -334,7 +347,11 @@
+ def get_row_mp(mp):
+     if mp:
+         if mp in mountpoints:
+-            device, fstype, opts = mountpoints[mp]
++            if len(mountpoints[mp]) == 2:
++                device, fstype = mountpoints[mp]
++                opts = ''
++            else:
++                device, fstype, opts = mountpoints[mp]
+         else:
+             # oops, the mountpoint is not in /etc/mtab or equivalent
+             # return dummy values
+@@ -346,9 +363,9 @@
+             status = os.statvfs(mp)
          except (OSError, IOError):
-             status = 10*[0]
- 
--        fs_blocksize = status[F_BSIZE]
-+        fs_blocksize = status[F_FRSIZE]
+             status = DumbStatus()
+-        fs_blocksize = status.f_bsize
++        fs_blocksize = status.f_frsize
          if fs_blocksize == 0:
--            fs_blocksize = status[F_FRSIZE]
-+            fs_blocksize = status[F_BSIZE]
-         free = status[F_BFREE]
-         size = status[F_BLOCKS]
-         avail = status[F_BAVAIL]
-@@ -366,7 +367,7 @@
+-            fs_blocksize = status.f_frsize
++            fs_blocksize = status.f_bsize
+         free = status.f_bfree
+         size = status.f_blocks
+         avail = status.f_bavail
+@@ -377,7 +394,7 @@
              used_f = myformat(used, sizeformat, fs_blocksize)
              avail_f = myformat(avail, sizeformat, fs_blocksize)
              try:
@@ -53,12 +106,12 @@
                  perc_f = str(perc)
              except ZeroDivisionError:
                  perc = 0
-@@ -435,7 +436,7 @@
+@@ -446,7 +463,7 @@
      "test if fs (as type) is a special one"
      "in addition, a filesystem is special if it has number of blocks equal to 0"
      fs = fs.lower()
 -    return fs in [ "tmpfs", "devpts", "proc", "sysfs", "usbfs" ]
-+    return fs in [ "tmpfs", "devpts", "proc", "sysfs", "usbfs", "procfs", "devfs", "linprocfs" ]
++    return fs in [ "tmpfs", "devpts", "proc", "sysfs", "usbfs", "procfs", "devfs", "linprocfs", "fdescfs" ]
  
  def get_table(mps):
      "table is a list of rows"
