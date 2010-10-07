@@ -107,10 +107,6 @@ Error logs
 
 <dl>
 <dd>
-<img alt="*" src="/errorlogs/images/yellow-ball.gif">
-<a href="http://www.FreeBSD.org/~fenner/errorlogs/">By maintainer</a></dd>
-<br>
-<dd>
 <img alt="*" src="/errorlogs/images/yellow-ball.gif"> Last full run
 on 6.x-stable:
 <a href="amd64-6-full/">amd64</a>
@@ -440,8 +436,8 @@ build process, the distfiles are copied over to ftp.freebsd.org.
 This means if your port built successfully once, you will never see
 a "can't fetch distfile" error again.-->
 Please pay attention to
-<a href="http://people.freebsd.org/~fenner/portsurvey/bad.html">
-Bill Fenner's distfile checker</a>
+<a href="http://people.freebsd.org/~ehaupt/distilator/">
+Emanuel Haupt's distfile checker</a>
 for that.</li>
 
 <li>The ports are built on machines that are mostly running
