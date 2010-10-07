@@ -25,9 +25,9 @@ MAN8=		chilli.8
 
 CONFIGURE_ARGS=-localstatedir=/var
 GNU_CONFIGURE=	yes
+USE_PERL5_BUILD=yes		# for manual page building
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	coovachilli
-USE_AUTOTOOLS=	automake:19
 
 post-install:
 .if !defined(NOPORTEXAMPLES)

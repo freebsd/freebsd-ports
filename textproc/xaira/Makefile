@@ -18,7 +18,7 @@ LIB_DEPENDS=	xerces-c:${PORTSDIR}/textproc/xerces-c2 \
 		icuio:${PORTSDIR}/devel/icu
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal:19 autoconf:267 libtool:22
+USE_AUTOTOOLS=	aclocal:111 autoconf:267 libtool:22
 ACLOCAL_ARGS=	-I ${ACLOCAL_DIR} -I ${LOCALBASE}/share/aclocal -I .
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

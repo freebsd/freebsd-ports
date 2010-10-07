@@ -7,8 +7,8 @@
 -#LIBTOOLIZE = libtoolize --force --copy
 -#AUTOHEADER = autoheader
 -#AUTOCONF = autoconf
-+ACLOCAL = aclocal-1.9
-+AUTOMAKE = automake-1.9 --add-missing --copy
++ACLOCAL = aclocal-1.11
++AUTOMAKE = automake-1.11 --add-missing --copy
 +LIBTOOLIZE = libtoolize --force --copy
 +AUTOHEADER = autoheader-2.67
 +AUTOCONF = autoconf-2.67

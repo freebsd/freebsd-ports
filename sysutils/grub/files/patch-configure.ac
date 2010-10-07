@@ -1,0 +1,6 @@
+--- configure.ac.orig	2005-05-07 21:36:03.000000000 -0500
++++ configure.ac	2010-10-07 08:37:11.000000000 -0500
+@@ -58,2 +58,3 @@
+ AC_PROG_CC
++AM_PROG_AS
+ # We need this for older versions of Autoconf.
