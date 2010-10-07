@@ -34,7 +34,7 @@ rules=%%DATADIR%%/Extensions
 main()
 {
 	mkdir -p $pkg.inform/Build $pkg.inform/Source $pkg.inform/Index
-	cp $pkg.ni $pkg.inform/Source
+	cp $pkg.ni $pkg.inform/Source/story.ni
 	$ni --release --rules $rules --extension=$zsuf --package $pkg.inform
 	mv "$pkg.inform/Build/Debug log.txt" debug.log
 	if [ -s $pkg.inform/Build/auto.inf ]; then
