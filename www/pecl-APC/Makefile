@@ -27,7 +27,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFIGURE_ARGS=	--enable-apc
 CFLAGS=		-I${LOCALBASE}/include
 
-OPTIONS=	MMAP		"Enable mmap memory support (default: IPC shm)"	off \
+OPTIONS=	IPC		"Enable IPC shm memory support (default: mmap)"	off \
 		SEMAPHORES	"Enable sysv IPC semaphores (default: fcntl())"	off \
 		SPINLOCKS	"Enable spinlocks (experimental)"		off \
 		FILEHITS	"Enable per request cache info"			off
@@ -36,8 +36,8 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MMAP)
-CONFIGURE_ARGS+=	--enable-apc-mmap
+.if defined(WITH_IPC)
+CONFIGURE_ARGS+=	--disable-apc-mmap
 .endif
 
 .if defined(WITH_SEMAPHORES)
