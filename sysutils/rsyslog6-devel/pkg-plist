@@ -6,8 +6,6 @@ lib/rsyslog/immark.la
 lib/rsyslog/immark.so
 lib/rsyslog/imtcp.la
 lib/rsyslog/imtcp.so
-lib/rsyslog/imtemplate.la
-lib/rsyslog/imtemplate.so
 lib/rsyslog/imudp.la
 lib/rsyslog/imudp.so
 lib/rsyslog/imuxsock.la
