@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Storage
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Moose>=0.99:${PORTSDIR}/devel/p5-Moose \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-TempDir>=0.02:${PORTSDIR}/devel/p5-Test-TempDir \
 		p5-String-RewritePrefix>=0.004:${PORTSDIR}/textproc/p5-String-RewritePrefix
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
 
