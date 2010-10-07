@@ -11,10 +11,13 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.codecobra.com/pamsfs/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A PAM module to mount SFS home directories
 
 BUILD_DEPENDS=	sfskey:${PORTSDIR}/security/sfs
+
+DEPRECATED=	SFS is dead, this project is dead, and site is gone
+EXPIRATION_DATE=	2010-11-11
 
 ALL_TARGET=	pam-sfs
 WRKSRC=		${WRKDIR}/${PORTNAME}
