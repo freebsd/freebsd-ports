@@ -12,7 +12,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.afflib.org/downloads/
 
-MAINTAINER=	chris@securityforensics.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Advanced Forensics Format library and utilities
 
 LIB_DEPENDS=	fuse:${PORTSDIR}/sysutils/fusefs-libs \

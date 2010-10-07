@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.afflib.org/downloads/
 
-MAINTAINER=	chris@securityforensics.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced Disk Imager
 
 LIB_DEPENDS=	afflib:${PORTSDIR}/sysutils/afflib
