@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tomcat
-PORTVERSION=	5.5.30
+PORTVERSION=	5.5.31
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-5/v${PORTVERSION}/bin
@@ -32,6 +32,7 @@ TOMCAT_USER?=	www
 TOMCAT_GROUP?=	www
 TOMCAT_UID?=	80
 HTTP_PORT?=	8180
+HTTP_TIMEOUT?=	20000
 SHUTDOWN_PORT?=	8005
 AJP_1_3_PORT?=	8009
 STDOUT_LOG=	${LOG_DIR}/stdout.log
@@ -53,8 +54,12 @@ SUB_LIST=	AJP_1_3_PORT=${AJP_1_3_PORT} \
 		APP_TITLE="${APP_TITLE}" \
 		GROUP=${TOMCAT_GROUP} \
 		HTTP_PORT=${HTTP_PORT} \
+		HTTP_TIMEOUT=${HTTP_TIMEOUT} \
 		JAR_FILE=${JAR_FILE} \
+		JAVA_HOME=${JAVA_HOME} \
+		LOG_DIR=${LOG_DIR} \
 		PID_FILE=${PID_FILE} \
+		PORTNAME=${PORTNAME} \
 		SHUTDOWN_PORT=${SHUTDOWN_PORT} \
 		STDERR_LOG=${STDERR_LOG} \
 		STDOUT_LOG=${STDOUT_LOG} \
@@ -86,7 +91,7 @@ pre-patch:
 
 post-patch:
 	@${ECHO_MSG} -n ">> Removing unneeded files..."
-	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'` `${FIND} ${WRKSRC} -name '*.dll'`
+	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.bat' -or -name '*.dll' -or -name '*.exe' -or -name '*.orig' \) -delete
 	@${RMDIR} ${WRKSRC}/bin/[i,x]64
 	@${ECHO_MSG} " [ DONE ]"
 
@@ -95,9 +100,6 @@ post-patch:
 	@${SED} ${REPLACE_LIST_TEMP} ${file} > ${WRKDIR}/`basename ${file}`
 	@${ECHO_MSG} " [ DONE ]"
 .endfor
-
-pre-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	@${ECHO_MSG} -n ">> Creating destination directory..."
@@ -118,28 +120,9 @@ do-install:
 			fi; \
 		done
 	@${CP} -R ${WRKSRC}/* ${APP_HOME}
-	@${ECHO_MSG} " [ DONE ]"
 
-	@${ECHO_MSG} -n ">> Creating log files..."
-	@${INSTALL} -m 664 -o ${TOMCAT_USER} -g ${TOMCAT_GROUP} /dev/null ${STDOUT_LOG}
-	@${INSTALL} -m 664 -o ${TOMCAT_USER} -g ${TOMCAT_GROUP} /dev/null ${STDERR_LOG}
-	@${ECHO_MSG} " [ DONE ]"
-
-	@${ECHO_MSG} -n ">> Creating symlink to tools.jar..."
-	@${LN} -sf ${JAVA_HOME}/lib/tools.jar ${APP_HOME}/common/lib/tools.jar
-	@${ECHO_MSG} " [ DONE ]"
-
-	@${ECHO_MSG} -n ">> Fixing ownership settings..."
-	@${CHOWN} -R ${TOMCAT_USER}:${TOMCAT_GROUP} ${APP_HOME}/conf ${APP_HOME}/logs \
-		${APP_HOME}/temp ${APP_HOME}/work ${APP_HOME}/webapps
-	@${ECHO_MSG} " [ DONE ]"
-
-	@${ECHO_MSG} -n ">> Fixing permissions..."
-	@${FIND} ${APP_HOME} -type d | while read a; do\
-		${CHMOD} 755 "$$a"; \
-	done
-	@${ECHO_MSG} " [ DONE ]"
-
+# create missing directories and fix permissions
 post-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_MSG} "${APP_TITLE} ${PORTVERSION} has been installed in ${APP_HOME}."
 .include <bsd.port.post.mk>
