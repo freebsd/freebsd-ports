@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MySQLdb
-DISTVERSION=	1.2.2
+DISTVERSION=	1.2.3
 CATEGORIES=	databases python
 MASTER_SITES=	SF/mysql-python/mysql-python/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,14 +16,15 @@ MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	Access a MySQL database through Python
 
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 USE_MYSQL=		yes
 PYDISTUTILS_PKGNAME=	MySQL-python
-PYDISTUTILS_PKGVERSION=	1.2.2
+PYEASYINSTALL_ARCHDEP=	yes
 
 CONFLICTS=	py*-MySQLdb-devel-[0-9]*
 
 PORTDOCS=	*
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS=	MYSQLCLIENT_R "Use libmysqlclient_r (thread safe)" on
