@@ -8,7 +8,7 @@
 PORTNAME=	sselp
 PORTVERSION=	0.2
 CATEGORIES=	x11
-MASTER_SITES=	http://code.suckless.org/dl/tools/ \
+MASTER_SITES=	http://dl.suckless.org/tools/ \
 		http://laffaye.free.fr/distfiles/
 
 MAINTAINER=	kimelto@gmail.com
