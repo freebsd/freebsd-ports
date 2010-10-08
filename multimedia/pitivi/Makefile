@@ -7,6 +7,7 @@
 
 PORTNAME=	pitivi
 PORTVERSION=	0.13.4.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	GNOME
 
@@ -19,7 +20,7 @@ RUN_DEPENDS=	py*-zopeInterface>=0:${PORTSDIR}/devel/py-zopeInterface \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pygtk2 pkgconfig
-USE_GSTREAMER=	gnonlin python
+USE_GSTREAMER=	gnonlin python good
 USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
