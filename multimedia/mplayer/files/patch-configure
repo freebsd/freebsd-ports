@@ -101,3 +101,12 @@
      # TODO add some check
      def_joystick='#define CONFIG_JOYSTICK 1'
    else
+@@ -8560,7 +8555,7 @@
+ EXESUF      = $_exesuf
+ EXESUFS_ALL = .exe
+ 
+-ARCH = $arch
++MPLAYER_ARCH = $arch
+ $(mak_enable "$arch_all"    "$arch"    ARCH)
+ $(mak_enable "$subarch_all" "$subarch" ARCH)
+ $(mak_enable "$cpuexts_all" "$cpuexts" HAVE)
