@@ -30,6 +30,7 @@
     SUBDIR += gpsdrive
     SUBDIR += gpsman
     SUBDIR += gpstk
+    SUBDIR += gpxloggerd
     SUBDIR += jday
     SUBDIR += josm
     SUBDIR += libgal

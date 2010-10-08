@@ -1,0 +1,2 @@
+The gpxloggerd is a tiny daemon that connects to gpsd(8) and logs
+received fix information in the GPX format.
