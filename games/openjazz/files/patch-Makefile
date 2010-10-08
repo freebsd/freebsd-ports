@@ -1,11 +1,11 @@
---- Makefile.orig	2010-03-30 16:59:54.981199076 +0000
-+++ Makefile	2010-03-30 17:04:10.070142573 +0000
-@@ -21,10 +21,10 @@
+--- Makefile.orig	2010-10-05 16:47:06.968648948 +0000
++++ Makefile	2010-10-05 16:48:42.770653951 +0000
+@@ -27,10 +27,10 @@
  
  
  OpenJazz: $(objects)
--	cc -Wall -o OpenJazz -lSDL -lstdc++ $(objects)
-+	${CC} ${LDFLAGS} -Wall -o OpenJazz -lstdc++ $(objects)
+-	cc -Wall -o OpenJazz -lSDL -lstdc++ -lz $(objects)
++	${CC} ${LDFLAGS} -Wall -o OpenJazz -lstdc++ -lz $(objects)
  
  %.o: %.cpp
 -	cc -Wall -DUSE_SOCKETS -DSCALE -Isrc -O2 -c $< -o $@
