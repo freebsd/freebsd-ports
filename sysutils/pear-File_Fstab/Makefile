@@ -6,23 +6,21 @@
 #
 
 PORTNAME=	File_Fstab
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	sysutils devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	PEAR class to read and write fstab files
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CATEGORY=	File
-FILES=		Fstab.php Fstab/Entry.php
+#CATEGORY=	File
+FILES=		File/Fstab.php File/Fstab/Entry.php
 EXAMPLES=	example.php
 _EXAMPLESDIR=	.
 
 post-extract:
-	@${MKDIR} ${WRKSRC}/Fstab
-	@${MV} ${WRKSRC}/Entry.php ${WRKSRC}/Fstab
 .for file in ${FILES}
 	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|" ${WRKSRC}/${file}
 .endfor
