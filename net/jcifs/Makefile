@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jcifs
-PORTVERSION=	1.3.14
+PORTVERSION=	1.3.15
 PORTEPOCH=	1
 CATEGORIES=	net java
 MASTER_SITES=	http://jcifs.samba.org/src/
@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	The Java CIFS Client Library
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
