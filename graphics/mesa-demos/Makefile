@@ -13,7 +13,9 @@ PKGNAMEPREFIX=	mesa-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL demos distributed with Mesa
 
+.if !defined(WITHOUT_NOUVEAU)
 BROKEN=		does not fetch
+.endif
 
 USE_GL=		glu glut
 USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto
