@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	llvm
-PORTVERSION=	2.7
-PORTREVISION=	1
+PORTVERSION=	2.8
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
@@ -49,7 +48,7 @@ DOCSRCDIR=	docs
 
 .if !defined(NOPORTDOCS)
 MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvm-ar.1 \
-		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 \
+		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-diff.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
 		llvm-prof.1 llvm-ranlib.1 llvmc.1 llvmgcc.1 \
 		llvmgxx.1 opt.1 tblgen.1
@@ -100,13 +99,13 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			bin/llvm* \
 			bin/opt \
 			bin/tblgen \
+			lib/libBugpointPasses.so \
 			lib/libCompilerDriver.a \
 			lib/libEnhancedDisassembly.so \
 			lib/libEnhancedDisassembly.a \
 			lib/libLTO.* \
 			lib/libLLVM* \
 			lib/libUnitTestMain.a \
-			lib/libplugin_llvmc* \
 			lib/libprofile_rt.so
 PLIST_DIR_LIST=		include/llvm-c \
 			include/llvm
@@ -115,9 +114,12 @@ build-plist:
 	cd ${PREFIX} && \
 	    (ls ${PLIST_FILE_LIST}; ${FIND} ${PLIST_DIR_LIST} -type f) | \
 	    ${SORT} >> ${PLIST}
-	${FIND} ${DATADIR} ${DOCSDIR} -type f | \
-	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
-	     -e 's|${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | ${SORT} >> ${PLIST}
+#	${FIND} ${DATADIR} ${DOCSDIR} -type f | \
+#	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
+#	     -e 's|${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | ${SORT} >> ${PLIST}
+	${FIND} ${DOCSDIR} -type f | \
+	    ${SED} -e 's|${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
+	    ${SORT} >> ${PLIST}
 	cd ${PREFIX} && \
 	    ${FIND} ${PLIST_DIR_LIST} -type d | \
 	    ${SORT} -r | ${SED} -e 's|^|@dirrm |' >> ${PLIST}

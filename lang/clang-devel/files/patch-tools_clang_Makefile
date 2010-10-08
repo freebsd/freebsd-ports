@@ -3,10 +3,12 @@ $FreeBSD$
 
 --- tools/clang/Makefile.orig
 +++ tools/clang/Makefile
-@@ -1,5 +1,5 @@
- LEVEL = ../..
--DIRS := include lib tools docs
-+DIRS := include lib tools %%DOCSRCDIR%%
+@@ -14,7 +14,7 @@
+ 
+ IS_TOP_LEVEL := 1
+ CLANG_LEVEL := .
+-DIRS := include lib tools runtime docs
++DIRS := include lib tools runtime %%DOCSRCDIR%%
  
  PARALLEL_DIRS :=
  

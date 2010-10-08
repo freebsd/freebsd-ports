@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clang
-PORTVERSION=	2.7
-PORTREVISION=	2
+PORTVERSION=	2.8
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
@@ -26,6 +25,7 @@ LLVM_NAME=	llvm-${PORTVERSION}
 LLVM_SOURCE=	${LLVM_NAME}${EXTRACT_SUFX}
 
 WRKSRC=		${WRKDIR}/${LLVM_NAME}
+BUILD_WRKSRC=	${WRKSRC}/tools/clang
 INSTALL_WRKSRC=	${WRKSRC}/tools/clang
 
 BUILD_DEPENDS+=	llvm-as:${PORTSDIR}/devel/llvm
@@ -44,6 +44,10 @@ USE_LDCONFIG=	yes
 USE_PERL5=	yes
 USE_PYTHON=	yes
 MAKE_JOBS_SAFE=	yes
+
+MAKE_ARGS=	LLVMIncDir=${LOCALBASE}/include \
+		LLVMToolDir=${LOCALBASE}/bin \
+		LLVMLibDir=${LOCALBASE}/lib
 
 .if defined(MAINTAINER_MODE)
 CONFIGURE_ARGS+=	--with-f2c=${LOCALBASE}
@@ -84,6 +88,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|' \
 	    ${WRKSRC}/tools/clang/tools/scan-view/scan-view
 
+#@cd ${WRKSRC}/tools/clang && ${GMAKE} TBLGEN=/usr/local/bin/tblgen LLVM_OBJ_ROOT=/usr/local
+#do-build:
+#	@cd ${WRKSRC}/tools/clang && ${GMAKE} LLVMIncDir=/usr/local/include LLVMToolDir=/usr/local/bin LLVMLibDir=/usr/local/lib
+
 .if defined(NOPORTDOCS)
 post-build:
 	@cd ${WRKSRC}/tools/clang/docs/tools && ${GMAKE} clang.1
@@ -122,11 +130,11 @@ regression-test: ${BUILD_COOKIE}
 
 PLIST_FILE_LIST=	bin/ccc-analyzer \
 			bin/c++-analyzer \
+			bin/c-index-test \
 			bin/clang \
 			bin/clang++ \
 			bin/scan-build \
 			bin/scan-view \
-			lib/libCIndex.* \
 			lib/libclang*
 PLIST_DIR_LIST=		include/clang \
 			include/clang-c \
