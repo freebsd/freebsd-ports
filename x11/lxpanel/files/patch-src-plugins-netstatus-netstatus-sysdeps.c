@@ -1,5 +1,5 @@
---- src/plugins/netstatus/netstatus-sysdeps.c.orig	Wed Nov  8 23:12:06 2006
-+++ src/plugins/netstatus/netstatus-sysdeps.c	Mon Aug 13 11:24:42 2007
+--- ./src/plugins/netstatus/netstatus-sysdeps.c.orig	2010-02-08 07:37:52.000000000 +0100
++++ ./src/plugins/netstatus/netstatus-sysdeps.c	2010-10-08 17:10:02.591239839 +0200
 @@ -37,13 +37,26 @@
  
  #ifdef __FreeBSD__
@@ -166,7 +166,7 @@
        g_strncasecmp (iface, "ipw",  3) &&
        g_strncasecmp (iface, "iwi",  3) &&
 +      g_strncasecmp (iface, "rum",  3) &&
-+      g_strncasecmp (iface, "ray",  3) &&
++      g_strncasecmp (iface, "wlan", 4) &&
        g_strncasecmp (iface, "acx",  3))
      return error_message;
  
