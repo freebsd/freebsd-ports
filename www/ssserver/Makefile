@@ -18,6 +18,9 @@ LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 
+DEPRECATED=	Depends of misc/compat3x, that is deprecated and set to be removed
+EXPIRATION_DATE=	2010-11-08
+
 INSTALL_RWDATA=	${INSTALL} ${COPY} -o ${SHAREOWN} -g ${SHAREGRP} -m 666
 
 do-install:

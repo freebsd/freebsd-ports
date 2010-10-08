@@ -17,6 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Evaluation version of a DOS/Windows/Linux file virus scanner
 
 BROKEN=		Does not fetch
+DEPRECATED=	Depends of misc/compat3x, that is deprecated and set to be removed
+EXPIRATION_DATE=	2010-11-08
 
 # misc/compat3x is forbidden, but with FreeBSD 5.1 or later you can use
 # libmap.conf(5) to map against current libc. This may affect the system
