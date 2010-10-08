@@ -30,6 +30,9 @@ IS_INTERACTIVE=	yes
 RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
 
+DEPRECATED=	Depends of misc/compat3x, that is deprecated and set to be removed
+EXPIRATION_DATE=	2010-11-08
+
 VMWARE_VER=	3.2.1
 BUILD_VER=	2237
 
