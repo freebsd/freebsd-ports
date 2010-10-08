@@ -1,0 +1,4 @@
+CLX is to Common Lisp as Xlib is to C - it provides low-level X calls
+on top of which a Graphics Toolkit can be based.
+
+WWW: http://www.cliki.net/CLX

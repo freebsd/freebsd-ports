@@ -28,6 +28,8 @@
     SUBDIR += bricons
     SUBDIR += brightside
     SUBDIR += buttonbox
+    SUBDIR += cl-clx
+    SUBDIR += cl-clx-sbcl
     SUBDIR += cnslock
     SUBDIR += compositeproto
     SUBDIR += damageproto
