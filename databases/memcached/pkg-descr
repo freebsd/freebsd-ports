@@ -2,4 +2,4 @@ memcached is a high-performance, distributed memory object caching
 system, generic in nature, but intended for use in speeding up dynamic
 web applications by alleviating database load.
 
-WWW: http://www.danga.com/memcached/
+WWW: http://memcached.org/
