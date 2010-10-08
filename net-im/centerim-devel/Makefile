@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	centerim
-DISTVERSION=	4.22.9.33
-PORTREVISION=	1
+DISTVERSION=	4.22.9.40
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.centerim.org/download/mobshots/ \
 		ftp://ftp.centerim.org/mobshots/
