@@ -1,3 +1,5 @@
 Waf is a Python-based framework for configuring, compiling and
 installing applications. It is a replacement for other tools such
 as autotools, scons, cmake or Ant.
+
+WWW:	http://code.google.com/p/waf/
