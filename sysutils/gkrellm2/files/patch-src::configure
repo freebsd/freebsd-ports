@@ -1,44 +1,51 @@
 Index: src/configure
 diff -u src/configure.orig src/configure
---- src/configure.orig	2009-12-21 10:47:44.000000000 +0900
-+++ src/configure	2009-12-22 10:45:51.692711734 +0900
-@@ -60,8 +60,8 @@
- 	}
- EOF
+--- src/configure.orig	2010-09-14 23:40:38.000000000 +0900
++++ src/configure	2010-10-06 17:48:28.286565914 +0900
+@@ -46,8 +46,8 @@
+ echo -n "Checking for OpenSSL... "
+ echo "Checking for OpenSSL... " 1>& 5
  
--$CC ${CFLAGS} ${PKG_INCLUDE} -c test.c -o test.o 2>& 5
--$CC test.o -o test ${LINK_FLAGS} ${PKG_LIBS} -lssl -lcrypto 2>& 5
-+$CC ${PKG_INCLUDE} -I${OPENSSLINC} -c test.c -o test.o 2>& 5
-+$CC test.o -o test ${LINK_FLAGS} ${PKG_LIBS} -L${OPENSSLLIB} -lssl -lcrypto 2>& 5
- 
- if [ -x ./test ] && ./test
+-OPENSSL_INCLUDE="$(pkg-config openssl --cflags 2>& 5 || true)"
+-OPENSSL_LIBS="$(pkg-config openssl --libs 2>& 5 || true)"
++OPENSSL_INCLUDE="-I${OPENSSLINC}"
++OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
+ if [ -z "$OPENSSL_LIBS" ]
  then
-@@ -106,8 +106,8 @@
+ 	echo "OpenSSL not found via pkg-config, using hardcoded library names" 1>& 5
+@@ -69,7 +69,7 @@
  	}
  EOF
  
--$CC ${CFLAGS} ${PKG_INCLUDE} -c test.c -o test.o 2>& 5
--$CC test.o -o test ${LINK_FLAGS} ${PKG_LIBS} -lgnutls-openssl 2>& 5
-+$CC ${PKG_INCLUDE} -I${GNUTLSINC} -c test.c -o test.o 2>& 5
-+$CC test.o -o test ${LINK_FLAGS} ${PKG_LIBS} -L${GNUTLSLIB} -lgnutls-openssl 2>& 5
+-$CC ${CFLAGS} ${GTK_INCLUDE} ${OPENSSL_INCLUDE} -c test.c -o test.o 2>& 5 || true
++$CC ${GTK_INCLUDE} ${OPENSSL_INCLUDE} -c test.c -o test.o 2>& 5 || true
+ $CC test.o -o test ${LINK_FLAGS} ${GTK_LIBS} ${OPENSSL_LIBS} 2>& 5 || true
  
  if [ -x ./test ] && ./test
- then
-@@ -145,7 +145,7 @@
+@@ -117,7 +117,7 @@
  	}
  EOF
  
--$CC ${CFLAGS} ${PKG_INCLUDE} ${PKG_NTLM_INCLUDE} -c test.c -o test.o 2>& 5
-+$CC ${PKG_INCLUDE} ${PKG_NTLM_INCLUDE} -c test.c -o test.o 2>& 5
- $CC test.o -o test ${LINK_FLAGS} ${PKG_LIBS} ${PKG_NTLM_LIBS} -lntlm 2>& 5
+-${CC} ${CFLAGS} ${GTK_INCLUDE} ${GNUTLS_INCLUDE} -c test.c -o test.o 2>& 5 || true
++${CC} ${GTK_INCLUDE} ${GNUTLS_INCLUDE} -c test.c -o test.o 2>& 5 || true
+ ${CC} test.o -o test ${LINK_FLAGS} ${GTK_LIBS} ${GNUTLS_LIBS} 2>& 5 || true
  
  if [ -x ./test ] && ./test
-@@ -191,7 +191,7 @@
+@@ -159,7 +159,7 @@
  	}
  EOF
  
--$CC ${CFLAGS} ${PKG_INCLUDE} -c test.c -o test.o 2>& 5
-+$CC ${PKG_INCLUDE} -c test.c -o test.o 2>& 5
- $CC test.o -o test ${LINK_FLAGS} ${PKG_LIBS} -lsensors 2>& 5
+-${CC} ${CFLAGS} ${GTK_INCLUDE} ${PKG_NTLM_INCLUDE} -c test.c -o test.o 2>& 5 || true
++${CC} ${GTK_INCLUDE} ${PKG_NTLM_INCLUDE} -c test.c -o test.o 2>& 5 || true
+ ${CC} test.o -o test ${LINK_FLAGS} ${GTK_LIBS} ${PKG_NTLM_LIBS} 2>& 5 || true
+ 
+ if [ -x ./test ] && ./test
+@@ -209,7 +209,7 @@
+ 	}
+ EOF
+ 
+-${CC} ${CFLAGS} ${GTK_INCLUDE} -c test.c -o test.o 2>& 5 || true
++${CC} ${GTK_INCLUDE} -c test.c -o test.o 2>& 5 || true
+ ${CC} test.o -o test ${LINK_FLAGS} ${GTK_LIBS} -lsensors 2>& 5 || true
  
  if [ -x ./test ] && ./test

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	2.3.4
-PORTREVISION=	3
+PORTVERSION=	2.3.5
+#PORTREVISION=	0
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -22,7 +22,8 @@ USE_RC_SUBR=	gkrellmd.sh
 WANT_GNOME=	yes
 USE_OPENSSL=	yes		# cannot set after bsd.port.pre.mk
 
-WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	GKRELLM_CLIENT	"Enable GKrellM Client"			on  \
 		GNUTLS		"Use GnuTLS"				off \

@@ -1,60 +1,27 @@
 Index: src/Makefile
 diff -u src/Makefile.orig src/Makefile
---- src/Makefile.orig	2008-10-15 07:06:30.000000000 +0900
-+++ src/Makefile	2009-12-22 10:55:44.127838425 +0900
-@@ -51,7 +51,9 @@
- ifeq ($(without-ntlm),1)
+--- src/Makefile.orig	2010-10-03 01:21:01.000000000 +0900
++++ src/Makefile	2010-10-06 17:59:25.769707368 +0900
+@@ -53,7 +53,8 @@
  	CONFIGURE_ARGS += --without-ntlm
  endif
+ # run configure shell script
 -DUMMY_VAR := $(shell ./configure $(CONFIGURE_ARGS))
 +DUMMY_VAR := $(shell env OPENSSLINC=$(OPENSSLINC) OPENSSLLIB=$(OPENSSLLIB) \
-+		GNUTLSINC=$(GNUTLSINC) GNUTLSLIB=$(GNUTLSLIB) \
 +		./configure $(CONFIGURE_ARGS))
+ # pull in variables set by configure script
+ include configure.mk
  
- HAVE_GNUTLS = $(shell grep -c HAVE_GNUTLS configure.h)
- HAVE_SSL = $(shell grep -c HAVE_SSL configure.h)
-@@ -59,10 +61,10 @@
- HAVE_LIBSENSORS = $(shell grep -c HAVE_LIBSENSORS configure.h)
- 
- ifeq ($(HAVE_GNUTLS),1)
--    SSL_LIBS ?= -lgnutls-openssl
-+    SSL_LIBS ?= -L$(GNUTLSLIB) -lgnutls-openssl
- else
- ifeq ($(HAVE_SSL),1)
--    SSL_LIBS ?= -lssl -lcrypto
-+    SSL_LIBS ?= -L$(OPENSSLLIB) -lssl -lcrypto
- else
-     EXTRAOBJS ?= md5c.o
- endif
-@@ -85,9 +87,17 @@
+@@ -71,7 +72,7 @@
  PKG_INCLUDE = `$(PKG_CONFIG) --cflags gtk+-2.0 gthread-2.0`
  PKG_LIB = `$(PKG_CONFIG) --libs gtk+-2.0 gthread-2.0`
  
--FLAGS = -O2 -I.. -I$(SHARED_PATH) $(PKG_INCLUDE) $(GTOP_INCLUDE) $(PTHREAD_INC) \
-+FLAGS = -I.. -I$(SHARED_PATH) $(PKG_INCLUDE) $(GTOP_INCLUDE) $(PTHREAD_INC) \
-  ${NTLM_INCLUDES} -DGKRELLM_CLIENT
+-FLAGS = -O2 -I.. -I$(SHARED_PATH) $(PKG_INCLUDE) $(GTOP_INCLUDE) $(PTHREAD_INC)\
++FLAGS = -I.. -I$(SHARED_PATH) $(PKG_INCLUDE) $(GTOP_INCLUDE) $(PTHREAD_INC)\
+  ${SSL_INCLUDE} ${NTLM_INCLUDE} -DGKRELLM_CLIENT
  
-+ifeq ($(HAVE_GNUTLS),1)
-+    FLAGS+= -I$(GNUTLSINC)
-+else
-+ifeq ($(HAVE_SSL),1)
-+    FLAGS+= -I$(OPENSSLINC)
-+endif
-+endif
-+
- LIBS = $(PKG_LIB) $(GTOP_LIBS) $(SMC_LIBS) $(SYS_LIBS) $(SSL_LIBS) $(SENSORS_LIBS) \
-  $(NTLM_LIBS)
- 
-@@ -121,7 +131,7 @@
- endif
- 
- 
--override CC += -Wall $(FLAGS)
-+CFLAGS += -Wall $(FLAGS)
- 
- OBJS =	main.o alerts.o battery.o base64.o clock.o cpu.o disk.o fs.o \
- 	hostname.o inet.o mail.o mem.o net.o proc.o sensors.o uptime.o \
-@@ -146,13 +156,20 @@
+ LIBS = $(PKG_LIB) $(GTOP_LIBS) $(X11_LIBS) $(SYS_LIBS) $(SSL_LIBS) $(SENSORS_LIBS)\
+@@ -131,13 +132,20 @@
  	$(MAKE) EXTRAOBJS= SYS_LIBS="-lkvm -lmd" gkrellm
  endif
  
@@ -73,6 +40,6 @@ diff -u src/Makefile.orig src/Makefile
 +	$(MAKE) EXTRAOBJS= SYS_LIBS="-ldevstat -lmd" gkrellm
 +endif
 +
+ # Darwin target for systems that still have libkvm
  darwin: 
  ifeq ($(HAVE_SSL),1)
- 	$(MAKE) GTK_CONFIG=gtk-config STRIP= \
