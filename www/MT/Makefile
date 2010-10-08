@@ -7,9 +7,10 @@
 
 PORTNAME=	MT
 PORTVERSION?=	5.03
+PORTREVISION=	1
 CATEGORIES?=	www
 MASTER_SITES?=	http://movabletype.org/downloads/stable/
-DISTNAME?=	MTOS-${PORTVERSION}-en
+DISTNAME?=	MTOS-${PORTVERSION}${PORTREVISION}-en
 
 MAINTAINER?=	takefu@airport.fm
 COMMENT?=	A web-based personal publishing system for weblogs

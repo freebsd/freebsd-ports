@@ -7,7 +7,7 @@
 PORTNAME=	MT
 CATEGORIES=	japanese www
 PKGNAMEPREFIX=	ja-
-DISTNAME=	MTOS-${PORTVERSION}-ja
+DISTNAME=	MTOS-${PORTVERSION}${PORTREVISION}-ja
 
 COMMENT=	Japanese localization of the MovableType publishing system
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	MT
 CATEGORIES=	german www
-DISTNAME=	MTOS-${PORTVERSION}-de
+DISTNAME=	MTOS-${PORTVERSION}${PORTREVISION}-de
 PKGNAMEPREFIX=	de-
 
 COMMENT=	german localization of the MovableType publishing system
