@@ -32,21 +32,6 @@ bin/waf
 %%PYTHON_SITELIBDIR%%/wafadmin/TaskGen.py
 %%PYTHON_SITELIBDIR%%/wafadmin/TaskGen.pyc
 %%PYTHON_SITELIBDIR%%/wafadmin/TaskGen.pyo
-%%PYTHON_SITELIBDIR%%/wafadmin/Utils.py
-%%PYTHON_SITELIBDIR%%/wafadmin/Utils.pyc
-%%PYTHON_SITELIBDIR%%/wafadmin/Utils.pyo
-%%PYTHON_SITELIBDIR%%/wafadmin/ansiterm.py
-%%PYTHON_SITELIBDIR%%/wafadmin/ansiterm.pyc
-%%PYTHON_SITELIBDIR%%/wafadmin/ansiterm.pyo
-%%PYTHON_SITELIBDIR%%/wafadmin/__init__.py
-%%PYTHON_SITELIBDIR%%/wafadmin/__init__.pyc
-%%PYTHON_SITELIBDIR%%/wafadmin/__init__.pyo
-%%PYTHON_SITELIBDIR%%/wafadmin/pproc.py
-%%PYTHON_SITELIBDIR%%/wafadmin/pproc.pyc
-%%PYTHON_SITELIBDIR%%/wafadmin/pproc.pyo
-%%PYTHON_SITELIBDIR%%/wafadmin/py3kfixes.py
-%%PYTHON_SITELIBDIR%%/wafadmin/py3kfixes.pyc
-%%PYTHON_SITELIBDIR%%/wafadmin/py3kfixes.pyo
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/__init__.py
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/__init__.pyo
@@ -145,11 +130,11 @@ bin/waf
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/msvc.pyo
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/nasm.py
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/nasm.pyc
-%%PYTHON_SITELIBDIR%%/wafadmin/Tools/osx.py
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/nasm.pyo
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/ocaml.py
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/ocaml.pyc
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/ocaml.pyo
+%%PYTHON_SITELIBDIR%%/wafadmin/Tools/osx.py
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/osx.pyc
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/osx.pyo
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/perl.py
@@ -191,5 +176,20 @@ bin/waf
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/xlcxx.py
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/xlcxx.pyc
 %%PYTHON_SITELIBDIR%%/wafadmin/Tools/xlcxx.pyo
+%%PYTHON_SITELIBDIR%%/wafadmin/Utils.py
+%%PYTHON_SITELIBDIR%%/wafadmin/Utils.pyc
+%%PYTHON_SITELIBDIR%%/wafadmin/Utils.pyo
+%%PYTHON_SITELIBDIR%%/wafadmin/__init__.py
+%%PYTHON_SITELIBDIR%%/wafadmin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/wafadmin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/wafadmin/ansiterm.py
+%%PYTHON_SITELIBDIR%%/wafadmin/ansiterm.pyc
+%%PYTHON_SITELIBDIR%%/wafadmin/ansiterm.pyo
+%%PYTHON_SITELIBDIR%%/wafadmin/pproc.py
+%%PYTHON_SITELIBDIR%%/wafadmin/pproc.pyc
+%%PYTHON_SITELIBDIR%%/wafadmin/pproc.pyo
+%%PYTHON_SITELIBDIR%%/wafadmin/py3kfixes.py
+%%PYTHON_SITELIBDIR%%/wafadmin/py3kfixes.pyc
+%%PYTHON_SITELIBDIR%%/wafadmin/py3kfixes.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/wafadmin/Tools
 @dirrm %%PYTHON_SITELIBDIR%%/wafadmin
