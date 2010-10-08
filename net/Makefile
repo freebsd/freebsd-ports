@@ -638,6 +638,7 @@
     SUBDIR += p5-Net-Services
     SUBDIR += p5-Net-Subnets
     SUBDIR += p5-Net-TCLink
+    SUBDIR += p5-Net-TcpDumpLog
     SUBDIR += p5-Net-Telnet
     SUBDIR += p5-Net-Telnet-Netscreen
     SUBDIR += p5-Net-TiVo
