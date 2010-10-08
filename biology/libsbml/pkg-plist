@@ -12,6 +12,7 @@ include/sbml/ListOf.h
 include/sbml/LocalParameter.h
 include/sbml/Model.h
 include/sbml/Parameter.h
+include/sbml/Priority.h
 include/sbml/Reaction.h
 include/sbml/Rule.h
 include/sbml/SBMLDocument.h
@@ -117,7 +118,7 @@ include/sbml/xml/XMLParser.h
 include/sbml/xml/XMLToken.h
 include/sbml/xml/XMLTokenizer.h
 include/sbml/xml/XMLTriple.h
-lib/libsbml.so.5
+lib/libsbml.so.6
 lib/libsbml.so
 lib/libsbml.la
 lib/libsbml.a
