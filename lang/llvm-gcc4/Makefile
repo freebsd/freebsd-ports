@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcc4
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	lang devel
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	llvm-

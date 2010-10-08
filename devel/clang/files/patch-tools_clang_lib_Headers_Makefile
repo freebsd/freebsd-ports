@@ -1,5 +1,5 @@
 
-$FreeBSD: /tmp/pcvs/ports/devel/clang/files/Attic/patch-tools_clang_lib_Headers_Makefile,v 1.1 2010-02-16 18:27:16 brooks Exp $
+$FreeBSD: /tmp/pcvs/ports/devel/clang/files/Attic/patch-tools_clang_lib_Headers_Makefile,v 1.2 2010-10-08 14:00:31 brooks Exp $
 
 --- tools/clang/lib/Headers/Makefile.orig
 +++ tools/clang/lib/Headers/Makefile
