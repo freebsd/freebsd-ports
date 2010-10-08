@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-OSCAR
-PORTVERSION=	1.926
+PORTVERSION=	1.928
 CATEGORIES=	net-im perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for the AOL Instant Messenger OSCAR protocol
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=	Net::OSCAR.3 \
 	Net::OSCAR::Buddylist.3 \
