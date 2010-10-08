@@ -11,7 +11,7 @@ PORTVERSION=	1.2
 CATEGORIES=	x11
 MASTER_SITES=	http://ktown.kde.org/~seli/numlockx/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	simon@olofsson.de
 COMMENT=	Turns on numlock in X
 
 USE_XORG=	x11 xext xtst
