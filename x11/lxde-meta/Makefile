@@ -7,7 +7,7 @@
 
 PORTNAME=	lxde-meta
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -16,6 +16,7 @@ MAINTAINER=	kmoore@freebsd.org
 COMMENT=	The "meta-port" of the LXDE desktop slimmed down for FreeBSD releases
 
 RUN_DEPENDS=	openbox:${PORTSDIR}/x11-wm/openbox \
+		obconf:${PORTSDIR}/x11-wm/obconf \
 		lxsession:${PORTSDIR}/x11-wm/lxsession \
 		lxpanel:${PORTSDIR}/x11/lxpanel \
 		lxinput:${PORTSDIR}/sysutils/lxinput \
