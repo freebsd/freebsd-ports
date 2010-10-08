@@ -16,7 +16,7 @@ COMMENT=	The libFM backend library to PCManFM.
 LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
 		menu-cache.1:${PORTSDIR}/x11/menu-cache
 
-USE_GNOME=	gtk20 pkgconfig
+USE_GNOME=	gnomehack gtk20 pkgconfig
 USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
 USE_FAM=	yes
@@ -36,14 +36,6 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
-
-post-configure:
-	${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's|(datadir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's|(prefix)/lib/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
 
 pre-install:
 	cd ${WRKDIR}/libfm-${PORTVERSION} && ${CHMOD} 755 install-sh
