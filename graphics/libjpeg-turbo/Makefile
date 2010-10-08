@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libjpeg-turbo
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://openmoko.spb.ru/repository/ \
 		SF/${PORTNAME}/${PORTVERSION} \
