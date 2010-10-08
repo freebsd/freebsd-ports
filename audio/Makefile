@@ -604,6 +604,7 @@
     SUBDIR += pecl-id3
     SUBDIR += penguinsap
     SUBDIR += phatbeat
+    SUBDIR += pianobar
     SUBDIR += picard
     SUBDIR += pidgin-musictracker
     SUBDIR += pimp3

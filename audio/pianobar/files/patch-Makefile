@@ -1,0 +1,46 @@
+--- Makefile.orig	2010-10-07 01:54:32.000000000 -0700
++++ Makefile	2010-10-08 16:25:33.000000000 -0700
+@@ -3,8 +3,8 @@
+ PREFIX:=/usr/local
+ BINDIR:=${PREFIX}/bin
+ LIBDIR:=${PREFIX}/lib
+-MANDIR:=${PREFIX}/share/man
+-CFLAGS:=-Wall -g -std=c99 -pedantic
++MANDIR:=${PREFIX}/man
++CFLAGS:=-Wall -g -std=c99 -pedantic -I/usr/local/include
+ 
+ PIANOBAR_DIR=src
+ PIANOBAR_SRC=\
+@@ -58,8 +58,8 @@
+ LIBEZXML_RELOBJ=${LIBEZXML_SRC:.c=.lo}
+ LIBEZXML_INCLUDE=libezxml/src
+ 
+-LIBAO_INCLUDE=/usr/include
+-LIBAO_LIB=-lao
++LIBAO_INCLUDE=/usr/local/include
++LIBAO_LIB=-L/usr/local/lib -lao
+ 
+ LIBM_LIB=-lm
+ 
+@@ -68,8 +68,8 @@
+ 	LIBFAAD_LIB=
+ 	LIBFAAD_SWITCH=
+ else
+-	LIBFAAD_INCLUDE:=/usr/include
+-	LIBFAAD_LIB:=-lfaad
++	LIBFAAD_INCLUDE:=/usr/local/include
++	LIBFAAD_LIB:=-L/usr/local/lib -lfaad
+ 	LIBFAAD_SWITCH=-DENABLE_FAAD
+ endif
+ 
+@@ -78,8 +78,8 @@
+ 	LIBMAD_LIB=
+ 	LIBMAD_SWITCH=
+ else
+-	LIBMAD_INCLUDE:=/usr/include
+-	LIBMAD_LIB:=-lmad
++	LIBMAD_INCLUDE:=/usr/local/include
++	LIBMAD_LIB:=-L/usr/local/lib -lmad
+ 	LIBMAD_SWITCH=-DENABLE_MAD
+ endif
+ 
