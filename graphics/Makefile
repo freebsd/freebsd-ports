@@ -79,6 +79,7 @@
     SUBDIR += clutter-qt
     SUBDIR += comical
     SUBDIR += comix
+    SUBDIR += commons-utilities
     SUBDIR += compupic
     SUBDIR += corona
     SUBDIR += cosmoplayer
