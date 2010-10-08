@@ -784,10 +784,8 @@ autogen                         ports/devel/autogen
 autoindex                       ports/www/autoindex
 autoindex2                      ports/www/autoindex2
 automake-wrapper                ports/devel/automake-wrapper
-automake110                     ports/devel/automake110
 automake111                     ports/devel/automake111
 automake14                      ports/devel/automake14
-automake19                      ports/devel/automake19
 automoc4                        ports/devel/automoc4
 automounter                     ports/sysutils/automounter
 autopano-sift                   ports/graphics/autopano-sift
@@ -4817,6 +4815,7 @@ gnustep-ftp                     ports/ftp/gnustep-ftp
 gnustep-gui                     ports/x11-toolkits/gnustep-gui
 gnustep-guile                   ports/lang/gnustep-guile
 gnustep-ladder                  ports/games/gnustep-ladder
+gnustep-libobjc                 ports/lang/gnustep-libobjc
 gnustep-make                    ports/devel/gnustep-make
 gnustep-mplayer                 ports/multimedia/gnustep-mplayer
 gnustep-notebook                ports/deskutils/gnustep-notebook
@@ -13492,6 +13491,7 @@ p5-Palm                         ports/palm/p5-Palm
 p5-Palm-PalmDoc                 ports/palm/p5-Palm-PalmDoc
 p5-Pango                        ports/x11-toolkits/p5-Pango
 p5-Parallel-ForkManager         ports/devel/p5-Parallel-ForkManager
+p5-Parallel-Iterator            ports/devel/p5-Parallel-Iterator
 p5-Parallel-Prefork             ports/devel/p5-Parallel-Prefork
 p5-Parallel-Pvm                 ports/net/p5-Parallel-Pvm
 p5-ParallelUA                   ports/www/p5-ParallelUA
@@ -17350,6 +17350,7 @@ p5-par                          ports/devel/p5-PAR
 p5-par-dist                     ports/devel/p5-PAR-Dist
 p5-par-packer                   ports/devel/p5-PAR-Packer
 p5-parallel-forkmanager         ports/devel/p5-Parallel-ForkManager
+p5-parallel-iterator            ports/devel/p5-Parallel-Iterator
 p5-parallel-prefork             ports/devel/p5-Parallel-Prefork
 p5-parallel-pvm                 ports/net/p5-Parallel-Pvm
 p5-parallelua                   ports/www/p5-ParallelUA
@@ -19760,6 +19761,7 @@ php5-sybase_ct                  ports/databases/php5-sybase_ct
 php5-sysvmsg                    ports/devel/php5-sysvmsg
 php5-sysvsem                    ports/devel/php5-sysvsem
 php5-sysvshm                    ports/devel/php5-sysvshm
+php5-thrift                     ports/devel/php5-thrift
 php5-tidy                       ports/www/php5-tidy
 php5-tokenizer                  ports/devel/php5-tokenizer
 php5-wddx                       ports/textproc/php5-wddx
@@ -20356,6 +20358,9 @@ postgresql83-server             ports/databases/postgresql83-server
 postgresql84-client             ports/databases/postgresql84-client
 postgresql84-contrib            ports/databases/postgresql84-contrib
 postgresql84-server             ports/databases/postgresql84-server
+postgresql90-client             ports/databases/postgresql90-client
+postgresql90-contrib            ports/databases/postgresql90-contrib
+postgresql90-server             ports/databases/postgresql90-server
 postgresql_autodoc              ports/databases/postgresql_autodoc
 postgrey                        ports/mail/postgrey
 postmark                        ports/benchmarks/postmark
