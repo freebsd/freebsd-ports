@@ -11,7 +11,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Constructor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Generated.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Inlined.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Meta.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Wrapped.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/MiniTrait.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin/AttributeCore.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin/HasAttributes.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin/HasMethods.pm
