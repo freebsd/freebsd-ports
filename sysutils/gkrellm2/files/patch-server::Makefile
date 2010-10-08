@@ -1,7 +1,7 @@
 Index: server/Makefile
 diff -u server/Makefile.orig server/Makefile
---- server/Makefile.orig	2008-10-04 06:52:48.000000000 +0900
-+++ server/Makefile	2008-10-04 19:48:15.000000000 +0900
+--- server/Makefile.orig	2010-10-03 01:21:01.000000000 +0900
++++ server/Makefile	2010-10-06 17:37:18.470213785 +0900
 @@ -26,6 +26,7 @@
  MANMODE ?= 644
  MANDIRMODE ?= 755
@@ -10,7 +10,7 @@ diff -u server/Makefile.orig server/Makefile
  LINK_FLAGS ?= -Wl,-E
  EXTRAOBJS =
  
-@@ -56,18 +57,18 @@
+@@ -57,18 +58,18 @@
  PKG_INCLUDE = `$(PKG_CONFIG) --cflags glib-2.0 gthread-2.0`
  PKG_LIB = `$(PKG_CONFIG) --libs glib-2.0 gmodule-2.0 gthread-2.0`
  
@@ -35,18 +35,19 @@ diff -u server/Makefile.orig server/Makefile
  
  LIBS = $(PKG_LIB)
  ifeq ($(glib12),1)
-@@ -116,21 +117,33 @@
+@@ -115,20 +116,31 @@
  
  all:	gkrellmd
  
 -gkrellmd: $(OBJS) $(EXTRAOBJS)
 +gkrellmd: gkrellmd.pc $(OBJS) $(EXTRAOBJS)
- 	$(CC) $(OBJS) $(EXTRAOBJS) -o gkrellmd $(LIBS) $(LINK_FLAGS)
+ 	$(CC) $(OBJS) $(EXTRAOBJS) -o gkrellmd \
+ 		$(LDFLAGS) $(LIBS) $(LINK_FLAGS)
  
 -static: $(OBJS) $(EXTRAOBJS)
 +static: gkrellmd.pc $(OBJS) $(EXTRAOBJS)
  	$(CC) $(OBJS) $(EXTRAOBJS) -o gkrellmd.static -static \
- 		$(LIBS) $(LINK_FLAGS)
+ 		$(LDFLAGS) $(LIBS) $(LINK_FLAGS)
  
 +gkrellmd.pc: Makefile
 +	echo "prefix=$(INSTALLROOT)" > gkrellmd.pc
@@ -57,23 +58,20 @@ diff -u server/Makefile.orig server/Makefile
 +	echo "Cflags: -I$(INCLUDEDIR)" >> gkrellmd.pc
 +
  freebsd2:
- 	$(MAKE) GTK_CONFIG=gtk12-config \
- 		EXTRAOBJS= SYS_LIBS="-lkvm -lmd" gkrellmd
+ 	$(MAKE) EXTRAOBJS= SYS_LIBS="-lkvm -lmd" gkrellmd
  
 -freebsd3 freebsd:
 +freebsd3 freebsd4:
- 	$(MAKE) GTK_CONFIG=gtk12-config \
- 		EXTRAOBJS= SYS_LIBS="-lkvm -ldevstat -lmd" gkrellmd
+ 	$(MAKE) EXTRAOBJS= SYS_LIBS="-lkvm -ldevstat -lmd" gkrellmd
  
 +freebsd5 freebsd6 freebsd7 freebsd8 freebsd:
-+	$(MAKE) GTK_CONFIG=gtk12-config \
-+		EXTRAOBJS= SYS_LIBS="-ldevstat -lmd" gkrellmd
++	$(MAKE) EXTRAOBJS= SYS_LIBS="-ldevstat -lmd" gkrellmd
 +
+ # Darwin target for systems that still have libkvm
  darwin: 
- 	$(MAKE) GTK_CONFIG=gtk-config STRIP= \
- 		EXTRAOBJS= SYS_LIBS="-lkvm -lmd5" \
-@@ -175,7 +188,7 @@
- 		SYS_LIBS=" -llargeint -lws2_32 -lpdh -lnetapi32 -liphlpapi -lntdll -lintl" \
+ 	$(MAKE) STRIP= HAVE_GETADDRINFO=1 \
+@@ -176,7 +188,7 @@
+ 		SYS_LIBS="-lws2_32 -lwtsapi32 -lpdh -lnetapi32 -liphlpapi -lintl" \
  		gkrellmd
  
 -install: install_bin install_inc install_man
@@ -81,7 +79,7 @@ diff -u server/Makefile.orig server/Makefile
  
  install_bin:
  	$(INSTALL) -d -m $(INSTALLDIRMODE) $(SINSTALLDIR)
-@@ -187,15 +200,20 @@
+@@ -188,15 +200,20 @@
  
  install_man:
  	$(INSTALL) -d -m $(MANDIRMODE) $(SMANDIR)
@@ -103,7 +101,7 @@ diff -u server/Makefile.orig server/Makefile
  
  install_darwin install_darwin9 install_macosx:
  	$(MAKE) install STRIP=
-@@ -226,6 +244,7 @@
+@@ -227,6 +244,7 @@
  clean:
  	$(RM) *.o *~ *.bak configure.h configure.log gkrellmd gkrellmd.exe \
  		libgkrellmd.a core
