@@ -8,7 +8,7 @@
 PORTNAME=	ii
 PORTVERSION=	1.4
 CATEGORIES=	irc
-MASTER_SITES=	http://code.suckless.org/dl/tools/ \
+MASTER_SITES=	http://dl.suckless.org/tools/ \
 		http://laffaye.free.fr/distfiles/
 
 MAINTAINER=	kimelto@gmail.com
@@ -16,7 +16,7 @@ COMMENT=	A minimalist FIFO and filesystem-based IRC client
 
 LICENSE=	MIT
 
-MAN1=	ii.1
+MAN1=		ii.1
 PLIST_FILES=	bin/ii
 PORTDOCS=	CHANGES README FAQ
 PORTEXAMPLES=	query.sh
