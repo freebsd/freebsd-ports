@@ -9,7 +9,7 @@ PORTNAME=	MT
 CATEGORIES=	russian www
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	ru-
-DISTNAME=	MTOS-${PORTVERSION}-ru
+DISTNAME=	MTOS-${PORTVERSION}${PORTREVISION}-ru
 
 COMMENT=	Russian localization of the MovableType publishing system
 

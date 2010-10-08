@@ -7,7 +7,7 @@
 
 PORTNAME=	MT
 CATEGORIES=	french www
-DISTNAME=	MTOS-${PORTVERSION}-fr
+DISTNAME=	MTOS-${PORTVERSION}${PORTREVISION}-fr
 PKGNAMEPREFIX=	fr-
 
 COMMENT=	french localization of the MovableType publishing system
