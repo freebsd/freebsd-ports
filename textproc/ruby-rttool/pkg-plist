@@ -24,3 +24,4 @@ bin/rt2
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 @dirrm %%RUBY_SITELIBDIR%%/rt
+@dirrmtry %%RUBY_SITELIBDIR%%/rd
