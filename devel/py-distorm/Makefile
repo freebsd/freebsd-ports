@@ -19,10 +19,11 @@ EXTRACT_ONLY=	${PORTNAME}64-pkg${PORTVERSION}.tar.bz2
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Fast x86 and x86-64 disassembler library with Python interface
 
-LICENSE=	BSD
+RUN_DEPENDS=	${PYCTYPES}
 
 USE_BZIP2=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
+LICENSE=	BSD
 
 WRKSRC=		${WRKDIR}/distorm64/build/linux
 ALL_TARGET=	py
