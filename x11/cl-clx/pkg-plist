@@ -1,0 +1,54 @@
+%%ASDF_PATHNAME%%/attributes.lisp
+%%ASDF_PATHNAME%%/big-requests.lisp
+%%ASDF_PATHNAME%%/buffer.lisp
+%%ASDF_PATHNAME%%/bufmac.lisp
+%%ASDF_PATHNAME%%/clx.asd
+%%ASDF_PATHNAME%%/clx.lisp
+%%ASDF_PATHNAME%%/debug/debug.lisp
+%%ASDF_PATHNAME%%/debug/describe.lisp
+%%ASDF_PATHNAME%%/debug/event-test.lisp
+%%ASDF_PATHNAME%%/debug/keytrans.lisp
+%%ASDF_PATHNAME%%/debug/trace.lisp
+%%ASDF_PATHNAME%%/debug/util.lisp
+%%ASDF_PATHNAME%%/demo/bezier.lisp
+%%ASDF_PATHNAME%%/demo/beziertest.lisp
+%%ASDF_PATHNAME%%/demo/clclock.lisp
+%%ASDF_PATHNAME%%/demo/clipboard.lisp
+%%ASDF_PATHNAME%%/demo/clx-demos.lisp
+%%ASDF_PATHNAME%%/demo/gl-test.lisp
+%%ASDF_PATHNAME%%/demo/hello.lisp
+%%ASDF_PATHNAME%%/demo/mandel.lisp
+%%ASDF_PATHNAME%%/demo/menu.lisp
+%%ASDF_PATHNAME%%/demo/zoid.lisp
+%%ASDF_PATHNAME%%/depdefs.lisp
+%%ASDF_PATHNAME%%/dependent.lisp
+%%ASDF_PATHNAME%%/display.lisp
+%%ASDF_PATHNAME%%/dpms.lisp
+%%ASDF_PATHNAME%%/fonts.lisp
+%%ASDF_PATHNAME%%/gcontext.lisp
+%%ASDF_PATHNAME%%/gl.lisp
+%%ASDF_PATHNAME%%/glx.lisp
+%%ASDF_PATHNAME%%/graphics.lisp
+%%ASDF_PATHNAME%%/image.lisp
+%%ASDF_PATHNAME%%/input.lisp
+%%ASDF_PATHNAME%%/keysyms.lisp
+%%ASDF_PATHNAME%%/macros.lisp
+%%ASDF_PATHNAME%%/manager.lisp
+%%ASDF_PATHNAME%%/package.lisp
+%%ASDF_PATHNAME%%/requests.lisp
+%%ASDF_PATHNAME%%/resource.lisp
+%%ASDF_PATHNAME%%/screensaver.lisp
+%%ASDF_PATHNAME%%/shape.lisp
+%%ASDF_PATHNAME%%/test/image.lisp
+%%ASDF_PATHNAME%%/test/trapezoid.lisp
+%%ASDF_PATHNAME%%/text.lisp
+%%ASDF_PATHNAME%%/translate.lisp
+%%ASDF_PATHNAME%%/xinerama.lisp
+%%ASDF_PATHNAME%%/xrender.lisp
+%%ASDF_PATHNAME%%/xtest.lisp
+%%ASDF_PATHNAME%%/xvidmode.lisp
+%%ASDF_REGISTRY%%/clx.asd
+@dirrm %%ASDF_PATHNAME%%/debug
+@dirrm %%ASDF_PATHNAME%%/demo
+@dirrm %%ASDF_PATHNAME%%/test
+@dirrm %%ASDF_PATHNAME%%
