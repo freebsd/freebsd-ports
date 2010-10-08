@@ -190,7 +190,9 @@
 %%WWWDIR%%/libraries/comments.class.php
 %%WWWDIR%%/libraries/configuration.class.php
 %%WWWDIR%%/libraries/content.class.php
+%%WWWDIR%%/libraries/coupons.class.php
 %%WWWDIR%%/libraries/course.class.php
+%%WWWDIR%%/libraries/curriculums.class.php
 %%WWWDIR%%/libraries/database.php
 %%WWWDIR%%/libraries/deprecated.php
 %%WWWDIR%%/libraries/direction.class.php
@@ -263,11 +265,14 @@
 %%WWWDIR%%/libraries/forum.class.php
 %%WWWDIR%%/libraries/globals.php
 %%WWWDIR%%/libraries/glossary.class.php
+%%WWWDIR%%/libraries/graph.class.php
 %%WWWDIR%%/libraries/group.class.php
+%%WWWDIR%%/libraries/import_export.class.php
 %%WWWDIR%%/libraries/ims.class.php
 %%WWWDIR%%/libraries/includes/backup.php
 %%WWWDIR%%/libraries/includes/calendar.php
 %%WWWDIR%%/libraries/includes/catalog.php
+%%WWWDIR%%/libraries/includes/catalog_page.php
 %%WWWDIR%%/libraries/includes/categories.php
 %%WWWDIR%%/libraries/includes/chat.php
 %%WWWDIR%%/libraries/includes/check_status.php
@@ -282,11 +287,19 @@
 %%WWWDIR%%/libraries/includes/digests.php
 %%WWWDIR%%/libraries/includes/digital_library.php
 %%WWWDIR%%/libraries/includes/directions_tree.php
+%%WWWDIR%%/libraries/includes/emails.php
 %%WWWDIR%%/libraries/includes/entity.php
 %%WWWDIR%%/libraries/includes/file_manager.php
 %%WWWDIR%%/libraries/includes/forum.php
 %%WWWDIR%%/libraries/includes/glossary.php
 %%WWWDIR%%/libraries/includes/groups.php
+%%WWWDIR%%/libraries/includes/hcd/branches.php
+%%WWWDIR%%/libraries/includes/hcd/employees.php
+%%WWWDIR%%/libraries/includes/hcd/job_descriptions.php
+%%WWWDIR%%/libraries/includes/hcd/reports.php
+%%WWWDIR%%/libraries/includes/hcd/skill_categories.php
+%%WWWDIR%%/libraries/includes/hcd/skills.php
+%%WWWDIR%%/libraries/includes/hcd_users.php
 %%WWWDIR%%/libraries/includes/import_export.php
 %%WWWDIR%%/libraries/includes/ims.php
 %%WWWDIR%%/libraries/includes/languages.php
@@ -300,32 +313,47 @@
 %%WWWDIR%%/libraries/includes/messages.php
 %%WWWDIR%%/libraries/includes/metadata.php
 %%WWWDIR%%/libraries/includes/module.php
+%%WWWDIR%%/libraries/includes/module_search.php
+%%WWWDIR%%/libraries/includes/module_surveys.php
 %%WWWDIR%%/libraries/includes/module_tests.php
 %%WWWDIR%%/libraries/includes/modules.php
 %%WWWDIR%%/libraries/includes/news.php
 %%WWWDIR%%/libraries/includes/order.php
+%%WWWDIR%%/libraries/includes/personal/user_courses.php
 %%WWWDIR%%/libraries/includes/personal.php
 %%WWWDIR%%/libraries/includes/progress.php
 %%WWWDIR%%/libraries/includes/projects.php
+%%WWWDIR%%/libraries/includes/rtf_export.php
 %%WWWDIR%%/libraries/includes/rules.php
 %%WWWDIR%%/libraries/includes/scheduling.php
 %%WWWDIR%%/libraries/includes/scorm.php
 %%WWWDIR%%/libraries/includes/scorm_tools.php
+%%WWWDIR%%/libraries/includes/search_courses.php
+%%WWWDIR%%/libraries/includes/social.php
 %%WWWDIR%%/libraries/includes/sorted_table.php
+%%WWWDIR%%/libraries/includes/statistics/advanced_user_reports.php
 %%WWWDIR%%/libraries/includes/statistics/courses_stats.php
 %%WWWDIR%%/libraries/includes/statistics/lessons_stats.php
+%%WWWDIR%%/libraries/includes/statistics/stats_filters.php
 %%WWWDIR%%/libraries/includes/statistics/system_stats.php
 %%WWWDIR%%/libraries/includes/statistics/users_stats.php
 %%WWWDIR%%/libraries/includes/statistics.php
+%%WWWDIR%%/libraries/includes/system_config/appearance.php
+%%WWWDIR%%/libraries/includes/system_config/customization.php
+%%WWWDIR%%/libraries/includes/system_config/external.php
+%%WWWDIR%%/libraries/includes/system_config/general.php
+%%WWWDIR%%/libraries/includes/system_config/user.php
 %%WWWDIR%%/libraries/includes/system_config.php
 %%WWWDIR%%/libraries/includes/tests/add_question.php
 %%WWWDIR%%/libraries/includes/tests/add_test.php
+%%WWWDIR%%/libraries/includes/tests/show_skill_gap_tests.php
 %%WWWDIR%%/libraries/includes/tests/show_solved_test.php
 %%WWWDIR%%/libraries/includes/tests/show_unsolved_test.php
 %%WWWDIR%%/libraries/includes/tests.php
 %%WWWDIR%%/libraries/includes/themes.php
 %%WWWDIR%%/libraries/includes/user_types.php
 %%WWWDIR%%/libraries/includes/users.php
+%%WWWDIR%%/libraries/includes/webserver_registration.php
 %%WWWDIR%%/libraries/language/lang-albanian.php.inc
 %%WWWDIR%%/libraries/language/lang-arabic.php.inc
 %%WWWDIR%%/libraries/language/lang-brazilian.php.inc
@@ -347,9 +375,11 @@
 %%WWWDIR%%/libraries/language/lang-greek.php.inc
 %%WWWDIR%%/libraries/language/lang-hebrew.php.inc
 %%WWWDIR%%/libraries/language/lang-hindi.php.inc
+%%WWWDIR%%/libraries/language/lang-hungarian.php.inc
 %%WWWDIR%%/libraries/language/lang-indonesian.php.inc
 %%WWWDIR%%/libraries/language/lang-italian.php.inc
 %%WWWDIR%%/libraries/language/lang-japanese.php.inc
+%%WWWDIR%%/libraries/language/lang-korean.php.inc
 %%WWWDIR%%/libraries/language/lang-latvian.php.inc
 %%WWWDIR%%/libraries/language/lang-lithuanian.php.inc
 %%WWWDIR%%/libraries/language/lang-norwegian.php.inc
@@ -461,21 +491,15 @@
 %%WWWDIR%%/libraries/user.class.php
 %%WWWDIR%%/upload/.htaccess
 %%WWWDIR%%/www/add_files.php
-%%WWWDIR%%/www/administrator/social.php
 %%WWWDIR%%/www/administrator.php
 %%WWWDIR%%/www/administratorpage.php
 %%WWWDIR%%/www/api.php
+%%WWWDIR%%/www/api2.php
 %%WWWDIR%%/www/apidemo.php
-%%WWWDIR%%/www/ask_branches.php
+%%WWWDIR%%/www/apidemo2.php
+%%WWWDIR%%/www/ask.php
 %%WWWDIR%%/www/ask_chat.php
-%%WWWDIR%%/www/ask_courses.php
-%%WWWDIR%%/www/ask_groups.php
 %%WWWDIR%%/www/ask_information.php
-%%WWWDIR%%/www/ask_lessons.php
-%%WWWDIR%%/www/ask_projects.php
-%%WWWDIR%%/www/ask_suggestions.php
-%%WWWDIR%%/www/ask_tests.php
-%%WWWDIR%%/www/ask_users.php
 %%WWWDIR%%/www/certificate_templates/certificate1.rtf
 %%WWWDIR%%/www/certificate_templates/certificate2.rtf
 %%WWWDIR%%/www/change_account.php
@@ -544,7 +568,6 @@
 %%WWWDIR%%/www/editor/browse.php
 %%WWWDIR%%/www/editor/browsecontent.php
 %%WWWDIR%%/www/editor/dirwalk.php
-%%WWWDIR%%/www/editor/efront_init_tiny_mce.php
 %%WWWDIR%%/www/editor/icons/2.ico
 %%WWWDIR%%/www/editor/icons/3.ico
 %%WWWDIR%%/www/editor/icons/Thumbs.db
@@ -669,6 +692,7 @@
 %%WWWDIR%%/www/editor/tiny_mce/classes/util/UnitTester.js
 %%WWWDIR%%/www/editor/tiny_mce/classes/util/XHR.js
 %%WWWDIR%%/www/editor/tiny_mce/classes/xml/Parser.js
+%%WWWDIR%%/www/editor/tiny_mce/efront_init_tiny_mce.php
 %%WWWDIR%%/www/editor/tiny_mce/langs/ar.js
 %%WWWDIR%%/www/editor/tiny_mce/langs/bg.js
 %%WWWDIR%%/www/editor/tiny_mce/langs/ca.js
@@ -974,10 +998,917 @@
 %%WWWDIR%%/www/editor/tiny_mce/utils/mclayer.js
 %%WWWDIR%%/www/editor/tiny_mce/utils/mctabs.js
 %%WWWDIR%%/www/editor/tiny_mce/utils/validate.js
-%%WWWDIR%%/www/emails.php
+%%WWWDIR%%/www/editor/tiny_mce_new/efront_init_tiny_mce.php
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/ar.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/bg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/ca.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/ch_si.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/ch_td.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/cs.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/da.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/de.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/el.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/en.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/es.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/et.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/fa.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/fi.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/fr.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/gl.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/he.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/hi.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/hr.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/hu.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/id.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/it.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/ja.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/ka.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/lt.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/lv.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/nl.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/nn.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/no.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/pl.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/pt.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/ro.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/ru.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/sk.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/sl.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/sq.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/sr.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/sv.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/th.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/tr.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/vi.js
+%%WWWDIR%%/www/editor/tiny_mce_new/langs/zh.js
+%%WWWDIR%%/www/editor/tiny_mce_new/license.txt
+%%WWWDIR%%/www/editor/tiny_mce_new/php/FreeSerifItalic.ttf
+%%WWWDIR%%/www/editor/tiny_mce_new/php/asciisvgimg.php
+%%WWWDIR%%/www/editor/tiny_mce_new/php/imgs/0ff41aebcdba140278f53f6ba9fb10d5.png
+%%WWWDIR%%/www/editor/tiny_mce_new/php/imgs/ea26de889f1c9b3e9734c821e164703e.png
+%%WWWDIR%%/www/editor/tiny_mce_new/php/mathphp.php
+%%WWWDIR%%/www/editor/tiny_mce_new/php/svgimg.php
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/css/advhr.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/js/rule.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/ar_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/bg_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/ca_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/cs_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/da_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/de_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/el_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/en_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/es_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/et_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/fa_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/fi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/fr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/gl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/he_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/hi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/hr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/hu_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/id_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/it_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/ja_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/ka_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/lt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/lv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/nl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/nn_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/no_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/pl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/pt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/ro_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/ru_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/sk_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/sl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/sq_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/sr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/sv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/th_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/tr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/vi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs/zh_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/rule.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/css/advimage.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/image.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/image.php
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/img/sample.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/js/image.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/ar_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/bg_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/ca_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/cs_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/da_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/de_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/el_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/en_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/es_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/et_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/fa_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/fi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/fr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/gl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/he_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/hi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/hr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/hu_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/id_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/it_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/ja_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/ka_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/lt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/lv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/nl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/nn_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/no_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/pl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/pt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/ro_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/ru_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/sk_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/sl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/sq_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/sr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/sv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/th_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/tr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/vi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs/zh_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/css/advlink.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/js/advlink.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/ar_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/bg_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/ca_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/cs_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/da_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/de_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/el_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/en_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/es_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/et_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/fa_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/fi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/fr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/gl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/he_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/hi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/hr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/hu_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/id_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/it_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/ja_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/ka_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/lt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/lv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/nl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/nn_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/no_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/pl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/pt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/ro_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/ru_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/sk_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/sl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/sq_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/sr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/sv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/th_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/tr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/vi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs/zh_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/link.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/link.php
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlist/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlist/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciimath/amcharmap.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciimath/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciimath/img/Thumbs.db
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciimath/img/ed_mathformula.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciimath/img/ed_mathformula2.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciimath/js/ASCIIMathML2wMnGFallback.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciimath/js/ASCIIMathMLwFallback.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciimath/js/amcharmap.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciisvg/asciisvgdlg.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciisvg/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciisvg/img/Thumbs.db
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciisvg/img/ed_asciisvg.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciisvg/js/ASCIIsvgPI.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciisvg/js/asciisvgdlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciisvg/js/d.svg
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/autoresize/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/autoresize/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/autosave/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/autosave/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/autosave/langs/en.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/bbcode/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/bbcode/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/contextmenu/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/contextmenu/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/directionality/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/directionality/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/emotions.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/img/smiley-cool.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/img/smiley-cry.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/img/smiley-embarassed.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/img/smiley-foot-in-mouth.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/img/smiley-frown.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/img/smiley-innocent.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/img/smiley-kiss.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/img/smiley-laughing.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/img/smiley-money-mouth.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/img/smiley-sealed.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/img/smiley-smile.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/img/smiley-surprised.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/img/smiley-tongue-out.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/img/smiley-undecided.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/img/smiley-wink.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/img/smiley-yell.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/js/emotions.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/ar_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/bg_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/ca_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/cs_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/da_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/de_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/el_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/en_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/es_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/et_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/fa_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/fi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/fr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/gl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/he_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/hi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/hr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/hu_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/id_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/it_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/ja_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/ka_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/lt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/lv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/nl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/nn_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/no_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/pl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/pt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/ro_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/ru_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/sk_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/sl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/sq_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/sr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/sv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/th_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/tr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/vi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs/zh_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/example/dialog.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/example/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/example/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/example/img/example.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/example/js/dialog.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/example/langs/en.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/example/langs/en_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/css/fullpage.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/fullpage.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/js/fullpage.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/ar_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/bg_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/ca_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/cs_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/da_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/de_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/el_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/en_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/es_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/et_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/fa_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/fi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/fr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/gl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/he_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/hi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/hr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/hu_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/id_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/it_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/ja_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/ka_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/lt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/lv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/nl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/nn_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/no_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/pl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/pt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/ro_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/ru_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/sk_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/sl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/sq_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/sr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/sv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/th_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/tr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/vi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs/zh_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullscreen/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullscreen/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullscreen/fullscreen.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/iespell/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/iespell/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/inlinepopups/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/inlinepopups/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/inlinepopups/skins/clearlooks2/img/alert.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/inlinepopups/skins/clearlooks2/img/button.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/inlinepopups/skins/clearlooks2/img/buttons.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/inlinepopups/skins/clearlooks2/img/confirm.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/inlinepopups/skins/clearlooks2/img/corners.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/inlinepopups/skins/clearlooks2/img/horizontal.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/inlinepopups/skins/clearlooks2/img/vertical.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/inlinepopups/skins/clearlooks2/window.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/inlinepopups/template.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/insertdatetime/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/insertdatetime/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/java/css/java.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/java/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/java/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/java/img/java.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/java/java.php
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/java/js/java.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/java/langs/en_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/layer/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/layer/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/legacyoutput/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/legacyoutput/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/css/content.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/css/media.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/img/flash.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/img/flv_player.swf
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/img/quicktime.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/img/realmedia.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/img/shockwave.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/img/trans.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/img/windowsmedia.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/js/embed.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/js/media.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/ar_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/bg_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/ca_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/cs_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/da_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/de_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/el_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/en_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/es_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/et_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/fa_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/fi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/fr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/gl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/he_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/hi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/hr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/hu_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/id_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/it_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/ja_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/ka_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/lt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/lv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/nl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/nn_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/no_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/pl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/pt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/ro_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/ru_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/sk_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/sl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/sq_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/sr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/sv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/th_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/tr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/vi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs/zh_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/media.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/media.php
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/nonbreaking/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/nonbreaking/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/noneditable/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/noneditable/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/pagebreak/css/content.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/pagebreak/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/pagebreak/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/pagebreak/img/pagebreak.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/pagebreak/img/trans.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/js/pastetext.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/js/pasteword.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/ar_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/bg_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/ca_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/cs_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/da_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/de_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/el_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/en_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/es_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/et_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/fa_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/fi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/fr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/gl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/he_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/hi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/hr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/hu_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/id_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/it_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/ja_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/ka_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/lt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/lv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/nl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/nn_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/no_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/pl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/pt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/ro_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/ru_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/sk_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/sl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/sq_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/sr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/sv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/th_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/tr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/vi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs/zh_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/pastetext.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/pasteword.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/preview/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/preview/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/preview/example.html
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/preview/jscripts/embed.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/preview/preview.html
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/print/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/print/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/save/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/save/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/save_template/css/save_template.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/save_template/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/save_template/js/save_template.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/save_template/save_template.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/save_template/save_template.php
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/css/searchreplace.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/js/searchreplace.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/ar_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/bg_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/ca_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/cs_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/da_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/de_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/el_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/en_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/es_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/et_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/fa_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/fi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/fr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/gl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/he_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/hi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/hr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/hu_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/id_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/it_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/ja_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/ka_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/lt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/lv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/nl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/nn_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/no_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/pl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/pt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/ro_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/ru_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/sk_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/sl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/sq_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/sr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/sv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/th_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/tr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/vi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs/zh_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/searchreplace.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/spellchecker/css/content.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/spellchecker/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/spellchecker/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/spellchecker/img/wline.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/css/props.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/js/props.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/ar_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/bg_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/ca_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/cs_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/da_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/de_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/el_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/en_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/es_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/et_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/fa_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/fi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/fr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/gl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/he_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/hi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/hr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/hu_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/id_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/it_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/ja_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/ka_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/lt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/lv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/nl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/nn_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/no_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/pl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/pt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/ro_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/ru_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/sk_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/sl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/sq_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/sr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/sv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/th_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/tr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/vi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs/zh_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/props.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/tabfocus/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/tabfocus/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/cell.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/css/cell.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/css/row.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/css/table.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/js/cell.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/js/merge_cells.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/js/row.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/js/table.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/ar_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/bg_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/ca_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/cs_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/da_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/de_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/el_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/en_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/es_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/et_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/fa_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/fi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/fr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/gl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/he_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/hi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/hr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/hu_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/id_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/it_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/ja_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/ka_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/lt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/lv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/nl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/nn_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/no_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/pl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/pt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/ro_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/ru_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/sk_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/sl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/sq_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/sr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/sv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/th_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/tr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/vi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs/zh_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/merge_cells.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/row.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/table.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/blank.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/css/template.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/js/template.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/ar_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/bg_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/ca_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/cs_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/da_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/de_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/el_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/en_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/es_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/et_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/fa_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/fi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/fr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/gl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/he_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/hi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/hr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/hu_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/id_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/it_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/ja_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/ka_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/lt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/lv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/nl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/nn_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/no_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/pl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/pt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/ro_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/ru_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/sk_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/sl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/sq_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/sr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/sv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/th_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/tr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/vi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs/zh_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/template.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/visualchars/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/visualchars/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/wordcount/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/wordcount/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/abbr.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/acronym.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/attributes.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/cite.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/css/attributes.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/css/popup.css
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/del.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/editor_plugin.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/editor_plugin_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/ins.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/js/abbr.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/js/acronym.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/js/attributes.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/js/cite.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/js/del.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/js/element_common.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/js/ins.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/ar_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/bg_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/ca_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/cs_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/da_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/de_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/el_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/en_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/es_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/et_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/fa_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/fi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/fr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/gl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/he_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/hi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/hr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/hu_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/id_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/it_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/ja_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/ka_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/lt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/lv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/nl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/nn_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/no_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/pl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/pt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/ro_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/ru_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/sk_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/sl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/sq_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/sr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/sv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/th_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/tr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/vi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs/zh_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/about.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/anchor.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/charmap.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/color_picker.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/editor_template.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/editor_template_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/image.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/img/colorpicker.jpg
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/img/icons.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/js/about.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/js/anchor.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/js/charmap.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/js/color_picker.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/js/image.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/js/link.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/js/source_editor.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/ar.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/ar_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/bg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/bg_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/ca.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/ca_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/cs.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/cs_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/da.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/da_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/de.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/de_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/el.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/el_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/en.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/en_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/es.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/es_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/et.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/et_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/fa.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/fa_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/fi.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/fi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/fr.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/fr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/gl.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/gl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/he.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/he_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/hi.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/hi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/hr.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/hr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/hu.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/hu_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/id.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/id_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/it.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/it_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/ja.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/ja_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/ka.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/ka_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/lt.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/lt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/lv.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/lv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/nl.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/nl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/nn.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/nn_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/no.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/no_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/pl.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/pl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/pt.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/pt_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/ro.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/ro_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/ru.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/ru_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/sk.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/sk_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/sl.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/sl_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/sq.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/sq_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/sr.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/sr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/sv.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/sv_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/th.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/th_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/tr.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/tr_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/vi.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/vi_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/zh.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs/zh_dlg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/link.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/default/content.css
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/default/dialog.css
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/default/img/buttons.png
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/default/img/items.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/default/img/menu_arrow.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/default/img/menu_check.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/default/img/progress.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/default/img/tabs.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/default/ui.css
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/o2k7/content.css
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/o2k7/dialog.css
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/o2k7/img/button_bg.png
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/o2k7/img/button_bg_black.png
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/o2k7/img/button_bg_silver.png
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/o2k7/ui.css
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/o2k7/ui_black.css
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/o2k7/ui_silver.css
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/source_editor.htm
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/editor_template.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/editor_template_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/img/icons.gif
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/ar.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/bg.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/ca.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/cs.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/da.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/de.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/el.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/en.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/es.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/et.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/fa.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/fi.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/fr.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/gl.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/he.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/hi.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/hr.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/hu.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/id.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/it.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/ja.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/ka.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/lt.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/lv.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/nl.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/nn.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/no.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/pl.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/pt.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/ro.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/ru.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/sk.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/sl.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/sq.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/sr.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/sv.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/th.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/tr.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/vi.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs/zh.js
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/skins/default/content.css
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/skins/default/ui.css
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/skins/o2k7/content.css
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/skins/o2k7/img/button_bg.png
+%%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/skins/o2k7/ui.css
+%%WWWDIR%%/www/editor/tiny_mce_new/tiny_mce.js
+%%WWWDIR%%/www/editor/tiny_mce_new/tiny_mce_gzip.js
+%%WWWDIR%%/www/editor/tiny_mce_new/tiny_mce_gzip.php
+%%WWWDIR%%/www/editor/tiny_mce_new/tiny_mce_popup.js
+%%WWWDIR%%/www/editor/tiny_mce_new/tiny_mce_src.js
+%%WWWDIR%%/www/editor/tiny_mce_new/utils/editable_selects.js
+%%WWWDIR%%/www/editor/tiny_mce_new/utils/form_utils.js
+%%WWWDIR%%/www/editor/tiny_mce_new/utils/mctabs.js
+%%WWWDIR%%/www/editor/tiny_mce_new/utils/validate.js
 %%WWWDIR%%/www/external_survey.php
 %%WWWDIR%%/www/facebook/xd_receiver.htm
-%%WWWDIR%%/www/hcd_users.php
 %%WWWDIR%%/www/index.php
 %%WWWDIR%%/www/install/Greedy Algorithms.zip
 %%WWWDIR%%/www/install/How to be a programmer.zip
@@ -986,6 +1917,7 @@
 %%WWWDIR%%/www/install/insert_languages.php
 %%WWWDIR%%/www/install/install.php
 %%WWWDIR%%/www/install/phpinfo.php
+%%WWWDIR%%/www/install/post_install.php
 %%WWWDIR%%/www/install/sample_config.php
 %%WWWDIR%%/www/install/sample_unattended_config.txt
 %%WWWDIR%%/www/install/sql_mysql.txt
@@ -1012,6 +1944,7 @@
 %%WWWDIR%%/www/js/drag-drop-folder-tree.js
 %%WWWDIR%%/www/js/eF_scripts.js
 %%WWWDIR%%/www/js/efront_ajax.js
+%%WWWDIR%%/www/js/includes/advanced_user_reports.js
 %%WWWDIR%%/www/js/includes/archive.js
 %%WWWDIR%%/www/js/includes/catalog.js
 %%WWWDIR%%/www/js/includes/categories.js
@@ -1021,10 +1954,12 @@
 %%WWWDIR%%/www/js/includes/copy.js
 %%WWWDIR%%/www/js/includes/course_settings.js
 %%WWWDIR%%/www/js/includes/courses.js
+%%WWWDIR%%/www/js/includes/curriculum.js
 %%WWWDIR%%/www/js/includes/entity.js
 %%WWWDIR%%/www/js/includes/events.js
 %%WWWDIR%%/www/js/includes/filemanager.js
 %%WWWDIR%%/www/js/includes/forum.js
+%%WWWDIR%%/www/js/includes/graphs.js
 %%WWWDIR%%/www/js/includes/groups.js
 %%WWWDIR%%/www/js/includes/hcd.js
 %%WWWDIR%%/www/js/includes/import.js
@@ -1058,10 +1993,16 @@
 %%WWWDIR%%/www/js/print-script.js
 %%WWWDIR%%/www/js/professor/control_panel.js
 %%WWWDIR%%/www/js/professor/control_panel.php
+%%WWWDIR%%/www/js/scriptaculous/base64.js
 %%WWWDIR%%/www/js/scriptaculous/builder.js
+%%WWWDIR%%/www/js/scriptaculous/canvas2image.js
+%%WWWDIR%%/www/js/scriptaculous/canvastext.js
 %%WWWDIR%%/www/js/scriptaculous/controls.js
 %%WWWDIR%%/www/js/scriptaculous/dragdrop.js
 %%WWWDIR%%/www/js/scriptaculous/effects.js
+%%WWWDIR%%/www/js/scriptaculous/excanvas-compressed.js
+%%WWWDIR%%/www/js/scriptaculous/excanvas.js
+%%WWWDIR%%/www/js/scriptaculous/flotr.js
 %%WWWDIR%%/www/js/scriptaculous/prototype.js
 %%WWWDIR%%/www/js/scriptaculous/scriptaculous.js
 %%WWWDIR%%/www/js/scriptaculous/slider.js
@@ -1071,9 +2012,23 @@
 %%WWWDIR%%/www/js/sidebar.js
 %%WWWDIR%%/www/js/tabber.js
 %%WWWDIR%%/www/js/wz_tooltip.js
-%%WWWDIR%%/www/module_search.php
-%%WWWDIR%%/www/module_surveys.php
 %%WWWDIR%%/www/modules/.htaccess
+%%WWWDIR%%/www/modules/module_bbb/images/Thumbs.db
+%%WWWDIR%%/www/modules/module_bbb/images/bbb16.gif
+%%WWWDIR%%/www/modules/module_bbb/images/bbb16.png
+%%WWWDIR%%/www/modules/module_bbb/images/bbb32.png
+%%WWWDIR%%/www/modules/module_bbb/images/go_into.png
+%%WWWDIR%%/www/modules/module_bbb/images/server_client_exchange.gif
+%%WWWDIR%%/www/modules/module_bbb/images/server_client_exchange.png
+%%WWWDIR%%/www/modules/module_bbb/images/server_client_exchange_gray.gif
+%%WWWDIR%%/www/modules/module_bbb/images/server_client_exchange_gray.png
+%%WWWDIR%%/www/modules/module_bbb/lang-english.php
+%%WWWDIR%%/www/modules/module_bbb/lang-greek.php
+%%WWWDIR%%/www/modules/module_bbb/module.tpl
+%%WWWDIR%%/www/modules/module_bbb/module.xml
+%%WWWDIR%%/www/modules/module_bbb/module_InnerTable.tpl
+%%WWWDIR%%/www/modules/module_bbb/module_bbb.class.php
+%%WWWDIR%%/www/modules/module_bbb/module_bbb_finished.php
 %%WWWDIR%%/www/modules/module_billboard/images/Thumbs.db
 %%WWWDIR%%/www/modules/module_billboard/images/edit.png
 %%WWWDIR%%/www/modules/module_billboard/images/note_pinned16.gif
@@ -1104,6 +2059,7 @@
 %%WWWDIR%%/www/modules/module_billboard/lang-russian.php
 %%WWWDIR%%/www/modules/module_billboard/lang-spanish.php
 %%WWWDIR%%/www/modules/module_billboard/lang-swedish.php
+%%WWWDIR%%/www/modules/module_billboard/lang-turkish.php
 %%WWWDIR%%/www/modules/module_billboard/module.tpl
 %%WWWDIR%%/www/modules/module_billboard/module.xml
 %%WWWDIR%%/www/modules/module_billboard/module_InnerTable.tpl
@@ -1131,26 +2087,11 @@
 %%WWWDIR%%/www/modules/module_blogs/images/write.gif
 %%WWWDIR%%/www/modules/module_blogs/images/write.png
 %%WWWDIR%%/www/modules/module_blogs/lang-english.php
+%%WWWDIR%%/www/modules/module_blogs/lang-turkish.php
 %%WWWDIR%%/www/modules/module_blogs/module.tpl
 %%WWWDIR%%/www/modules/module_blogs/module.xml
 %%WWWDIR%%/www/modules/module_blogs/module_InnerTable.tpl
 %%WWWDIR%%/www/modules/module_blogs/module_blogs.class.php
-%%WWWDIR%%/www/modules/module_dimdim/images/Thumbs.db
-%%WWWDIR%%/www/modules/module_dimdim/images/dimdim16.gif
-%%WWWDIR%%/www/modules/module_dimdim/images/dimdim16.png
-%%WWWDIR%%/www/modules/module_dimdim/images/dimdim32.png
-%%WWWDIR%%/www/modules/module_dimdim/images/go_into.png
-%%WWWDIR%%/www/modules/module_dimdim/images/server_client_exchange.gif
-%%WWWDIR%%/www/modules/module_dimdim/images/server_client_exchange.png
-%%WWWDIR%%/www/modules/module_dimdim/images/server_client_exchange_gray.gif
-%%WWWDIR%%/www/modules/module_dimdim/images/server_client_exchange_gray.png
-%%WWWDIR%%/www/modules/module_dimdim/lang-english.php
-%%WWWDIR%%/www/modules/module_dimdim/lang-greek.php
-%%WWWDIR%%/www/modules/module_dimdim/module.tpl
-%%WWWDIR%%/www/modules/module_dimdim/module.xml
-%%WWWDIR%%/www/modules/module_dimdim/module_InnerTable.tpl
-%%WWWDIR%%/www/modules/module_dimdim/module_dimdim.class.php
-%%WWWDIR%%/www/modules/module_dimdim/module_dimdim_finished.php
 %%WWWDIR%%/www/modules/module_faq/images/add.png
 %%WWWDIR%%/www/modules/module_faq/images/edit.png
 %%WWWDIR%%/www/modules/module_faq/images/error_delete.png
@@ -1181,6 +2122,7 @@
 %%WWWDIR%%/www/modules/module_faq/lang-russian.php
 %%WWWDIR%%/www/modules/module_faq/lang-spanish.php
 %%WWWDIR%%/www/modules/module_faq/lang-swedish.php
+%%WWWDIR%%/www/modules/module_faq/lang-turkish.php
 %%WWWDIR%%/www/modules/module_faq/module.tpl
 %%WWWDIR%%/www/modules/module_faq/module.xml
 %%WWWDIR%%/www/modules/module_faq/module_InnerTable.tpl
@@ -1205,9 +2147,29 @@
 %%WWWDIR%%/www/modules/module_flashcards/images/search.png
 %%WWWDIR%%/www/modules/module_flashcards/images/success.png
 %%WWWDIR%%/www/modules/module_flashcards/lang-english.php
+%%WWWDIR%%/www/modules/module_flashcards/lang-turkish.php
 %%WWWDIR%%/www/modules/module_flashcards/module.tpl
 %%WWWDIR%%/www/modules/module_flashcards/module.xml
 %%WWWDIR%%/www/modules/module_flashcards/module_flashcards.class.php
+%%WWWDIR%%/www/modules/module_gradebook/images/add.png
+%%WWWDIR%%/www/modules/module_gradebook/images/arrow_right.png
+%%WWWDIR%%/www/modules/module_gradebook/images/compute_score.png
+%%WWWDIR%%/www/modules/module_gradebook/images/delete.png
+%%WWWDIR%%/www/modules/module_gradebook/images/edit.png
+%%WWWDIR%%/www/modules/module_gradebook/images/gradebook_logo.png
+%%WWWDIR%%/www/modules/module_gradebook/images/gradebook_logo16.gif
+%%WWWDIR%%/www/modules/module_gradebook/images/gradebook_logo16.png
+%%WWWDIR%%/www/modules/module_gradebook/images/import.png
+%%WWWDIR%%/www/modules/module_gradebook/images/progress1.gif
+%%WWWDIR%%/www/modules/module_gradebook/images/success.png
+%%WWWDIR%%/www/modules/module_gradebook/images/xls.png
+%%WWWDIR%%/www/modules/module_gradebook/lang-english.php
+%%WWWDIR%%/www/modules/module_gradebook/lang-greek.php
+%%WWWDIR%%/www/modules/module_gradebook/module.xml
+%%WWWDIR%%/www/modules/module_gradebook/module_gradebook.class.php
+%%WWWDIR%%/www/modules/module_gradebook/module_gradebook_admin.tpl
+%%WWWDIR%%/www/modules/module_gradebook/module_gradebook_professor.tpl
+%%WWWDIR%%/www/modules/module_gradebook/module_gradebook_student.tpl
 %%WWWDIR%%/www/modules/module_links/images/Thumbs.db
 %%WWWDIR%%/www/modules/module_links/images/link.png
 %%WWWDIR%%/www/modules/module_links/images/link16.bmp
@@ -1240,6 +2202,7 @@
 %%WWWDIR%%/www/modules/module_links/lang-russian.php
 %%WWWDIR%%/www/modules/module_links/lang-spanish.php
 %%WWWDIR%%/www/modules/module_links/lang-swedish.php
+%%WWWDIR%%/www/modules/module_links/lang-turkish.php
 %%WWWDIR%%/www/modules/module_links/module.php
 %%WWWDIR%%/www/modules/module_links/module.tpl
 %%WWWDIR%%/www/modules/module_links/module.xml
@@ -1269,6 +2232,7 @@
 %%WWWDIR%%/www/modules/module_quick_mails/lang-russian.php
 %%WWWDIR%%/www/modules/module_quick_mails/lang-spanish.php
 %%WWWDIR%%/www/modules/module_quick_mails/lang-swedish.php
+%%WWWDIR%%/www/modules/module_quick_mails/lang-turkish.php
 %%WWWDIR%%/www/modules/module_quick_mails/module.tpl
 %%WWWDIR%%/www/modules/module_quick_mails/module.xml
 %%WWWDIR%%/www/modules/module_quick_mails/module_InnerTable.tpl
@@ -1303,6 +2267,7 @@
 %%WWWDIR%%/www/modules/module_quote/lang-russian.php
 %%WWWDIR%%/www/modules/module_quote/lang-spanish.php
 %%WWWDIR%%/www/modules/module_quote/lang-swedish.php
+%%WWWDIR%%/www/modules/module_quote/lang-turkish.php
 %%WWWDIR%%/www/modules/module_quote/module.php
 %%WWWDIR%%/www/modules/module_quote/module.tpl
 %%WWWDIR%%/www/modules/module_quote/module.xml
@@ -1353,10 +2318,12 @@
 %%WWWDIR%%/www/modules/module_rss/lang-russian.php
 %%WWWDIR%%/www/modules/module_rss/lang-spanish.php
 %%WWWDIR%%/www/modules/module_rss/lang-swedish.php
+%%WWWDIR%%/www/modules/module_rss/lang-turkish.php
 %%WWWDIR%%/www/modules/module_rss/module.xml
 %%WWWDIR%%/www/modules/module_rss/module_rss.class.php
 %%WWWDIR%%/www/modules/module_rss/module_rss.tpl
 %%WWWDIR%%/www/modules/module_rss/module_rss_cpanel.tpl
+%%WWWDIR%%/www/modules/module_rss/rss.php
 %%WWWDIR%%/www/modules/module_rss/rss_reader.js
 %%WWWDIR%%/www/modules/module_youtube/images/Thumbs.db
 %%WWWDIR%%/www/modules/module_youtube/images/go_into.png
@@ -1387,12 +2354,12 @@
 %%WWWDIR%%/www/modules/module_youtube/lang-russian.php
 %%WWWDIR%%/www/modules/module_youtube/lang-spanish.php
 %%WWWDIR%%/www/modules/module_youtube/lang-swedish.php
+%%WWWDIR%%/www/modules/module_youtube/lang-turkish.php
 %%WWWDIR%%/www/modules/module_youtube/module.tpl
 %%WWWDIR%%/www/modules/module_youtube/module.xml
 %%WWWDIR%%/www/modules/module_youtube/module_InnerTable.tpl
 %%WWWDIR%%/www/modules/module_youtube/module_youtube.class.php
 %%WWWDIR%%/www/new_sidebar.php
-%%WWWDIR%%/www/nsso.php
 %%WWWDIR%%/www/periodic_updater.php
 %%WWWDIR%%/www/phplivedocx/docs/CHANGES
 %%WWWDIR%%/www/phplivedocx/docs/LICENSE
@@ -1433,14 +2400,10 @@
 %%WWWDIR%%/www/phplivedocx/samples/mail-merge/templates/upload.php
 %%WWWDIR%%/www/professor.php
 %%WWWDIR%%/www/professorpage.php
-%%WWWDIR%%/www/search_courses.php
 %%WWWDIR%%/www/send_notifications.php
-%%WWWDIR%%/www/sequencing.php
 %%WWWDIR%%/www/set_positions.php
 %%WWWDIR%%/www/show_avatars.php
 %%WWWDIR%%/www/smilies.php
-%%WWWDIR%%/www/social.php
-%%WWWDIR%%/www/student/tests.php
 %%WWWDIR%%/www/student.php
 %%WWWDIR%%/www/studentpage.php
 %%WWWDIR%%/www/themes/blue/css/css_global.css
@@ -1449,12 +2412,14 @@
 %%WWWDIR%%/www/themes/blue/external/1258919356.tpl
 %%WWWDIR%%/www/themes/blue/images/css_images/16x16map.png
 %%WWWDIR%%/www/themes/blue/images/css_images/32x32map.png
-%%WWWDIR%%/www/themes/blue/images/css_images/background.png
-%%WWWDIR%%/www/themes/blue/images/css_images/gradient.jpg
-%%WWWDIR%%/www/themes/blue/images/css_images/gradient_large.jpg
-%%WWWDIR%%/www/themes/blue/images/css_images/gradient_medium.jpg
+%%WWWDIR%%/www/themes/blue/images/css_images/background.gif
+%%WWWDIR%%/www/themes/blue/images/css_images/gradient.gif
+%%WWWDIR%%/www/themes/blue/images/css_images/gradient_large.gif
+%%WWWDIR%%/www/themes/blue/images/css_images/gradient_medium.gif
 %%WWWDIR%%/www/themes/blue/theme.xml
 %%WWWDIR%%/www/themes/default/css/css_global.css
+%%WWWDIR%%/www/themes/default/external/default_error_page.html
+%%WWWDIR%%/www/themes/default/external/default_unauthorized_page.html
 %%WWWDIR%%/www/themes/default/images/16x16/add.png
 %%WWWDIR%%/www/themes/default/images/16x16/analysis.png
 %%WWWDIR%%/www/themes/default/images/16x16/arrow_left.png
@@ -1488,6 +2453,10 @@
 %%WWWDIR%%/www/themes/default/images/16x16/examples_passed.png
 %%WWWDIR%%/www/themes/default/images/16x16/export.png
 %%WWWDIR%%/www/themes/default/images/16x16/facebook.png
+%%WWWDIR%%/www/themes/default/images/16x16/feedback.png
+%%WWWDIR%%/www/themes/default/images/16x16/feedback_failed.png
+%%WWWDIR%%/www/themes/default/images/16x16/feedback_incomplete.png
+%%WWWDIR%%/www/themes/default/images/16x16/feedback_passed.png
 %%WWWDIR%%/www/themes/default/images/16x16/file_explorer.png
 %%WWWDIR%%/www/themes/default/images/16x16/flag_blue.png
 %%WWWDIR%%/www/themes/default/images/16x16/flag_green.png
@@ -1518,6 +2487,7 @@
 %%WWWDIR%%/www/themes/default/images/16x16/mail.png
 %%WWWDIR%%/www/themes/default/images/16x16/message.png
 %%WWWDIR%%/www/themes/default/images/16x16/minus.png
+%%WWWDIR%%/www/themes/default/images/16x16/minus2.png
 %%WWWDIR%%/www/themes/default/images/16x16/navigate_down.png
 %%WWWDIR%%/www/themes/default/images/16x16/navigate_left.png
 %%WWWDIR%%/www/themes/default/images/16x16/navigate_right.png
@@ -1532,6 +2502,7 @@
 %%WWWDIR%%/www/themes/default/images/16x16/pin_green.png
 %%WWWDIR%%/www/themes/default/images/16x16/pin_red.png
 %%WWWDIR%%/www/themes/default/images/16x16/plus.png
+%%WWWDIR%%/www/themes/default/images/16x16/plus2.png
 %%WWWDIR%%/www/themes/default/images/16x16/printer.png
 %%WWWDIR%%/www/themes/default/images/16x16/projects.png
 %%WWWDIR%%/www/themes/default/images/16x16/projects_failed.png
@@ -1604,6 +2575,7 @@
 %%WWWDIR%%/www/themes/default/images/32x32/content_tree.png
 %%WWWDIR%%/www/themes/default/images/32x32/continue.png
 %%WWWDIR%%/www/themes/default/images/32x32/courses.png
+%%WWWDIR%%/www/themes/default/images/32x32/curriculum.png
 %%WWWDIR%%/www/themes/default/images/32x32/custom_reports.png
 %%WWWDIR%%/www/themes/default/images/32x32/directory.png
 %%WWWDIR%%/www/themes/default/images/32x32/edit.png
@@ -1613,6 +2585,7 @@
 %%WWWDIR%%/www/themes/default/images/32x32/exclamation.png
 %%WWWDIR%%/www/themes/default/images/32x32/export.png
 %%WWWDIR%%/www/themes/default/images/32x32/facebook.png
+%%WWWDIR%%/www/themes/default/images/32x32/feedback.png
 %%WWWDIR%%/www/themes/default/images/32x32/file_explorer.png
 %%WWWDIR%%/www/themes/default/images/32x32/folders.png
 %%WWWDIR%%/www/themes/default/images/32x32/forum.png
@@ -1622,6 +2595,7 @@
 %%WWWDIR%%/www/themes/default/images/32x32/graduation.png
 %%WWWDIR%%/www/themes/default/images/32x32/hide_left.png
 %%WWWDIR%%/www/themes/default/images/32x32/hide_right.png
+%%WWWDIR%%/www/themes/default/images/32x32/home.png
 %%WWWDIR%%/www/themes/default/images/32x32/import.png
 %%WWWDIR%%/www/themes/default/images/32x32/import_export.png
 %%WWWDIR%%/www/themes/default/images/32x32/information.png
@@ -1727,9 +2701,9 @@
 %%WWWDIR%%/www/themes/default/images/avatars/system_avatars/yinyang.png
 %%WWWDIR%%/www/themes/default/images/css_images/16x16map.png
 %%WWWDIR%%/www/themes/default/images/css_images/32x32map.png
-%%WWWDIR%%/www/themes/default/images/css_images/gradient.jpg
-%%WWWDIR%%/www/themes/default/images/css_images/gradient_large.jpg
-%%WWWDIR%%/www/themes/default/images/css_images/gradient_medium.jpg
+%%WWWDIR%%/www/themes/default/images/css_images/gradient.gif
+%%WWWDIR%%/www/themes/default/images/css_images/gradient_large.gif
+%%WWWDIR%%/www/themes/default/images/css_images/gradient_medium.gif
 %%WWWDIR%%/www/themes/default/images/favicon.png
 %%WWWDIR%%/www/themes/default/images/file_types/avi.png
 %%WWWDIR%%/www/themes/default/images/file_types/bmp.png
@@ -1826,6 +2800,7 @@
 %%WWWDIR%%/www/themes/default/templates/administratorpage.tpl
 %%WWWDIR%%/www/themes/default/templates/analyze_code.tpl
 %%WWWDIR%%/www/themes/default/templates/apidemo.tpl
+%%WWWDIR%%/www/themes/default/templates/apidemo2.tpl
 %%WWWDIR%%/www/themes/default/templates/browse.tpl
 %%WWWDIR%%/www/themes/default/templates/browsecontent.tpl
 %%WWWDIR%%/www/themes/default/templates/change_style.tpl
@@ -1840,6 +2815,7 @@
 %%WWWDIR%%/www/themes/default/templates/custom_plugins/function.eF_template_printCloseButton.php
 %%WWWDIR%%/www/themes/default/templates/custom_plugins/function.eF_template_printComments.php
 %%WWWDIR%%/www/themes/default/templates/custom_plugins/function.eF_template_printDoneQuestions.php
+%%WWWDIR%%/www/themes/default/templates/custom_plugins/function.eF_template_printForm.php
 %%WWWDIR%%/www/themes/default/templates/custom_plugins/function.eF_template_printForumMessages.php
 %%WWWDIR%%/www/themes/default/templates/custom_plugins/function.eF_template_printIconTable.php
 %%WWWDIR%%/www/themes/default/templates/custom_plugins/function.eF_template_printInnerTable.php
@@ -1881,7 +2857,6 @@
 %%WWWDIR%%/www/themes/default/templates/editor/online_users.tpl
 %%WWWDIR%%/www/themes/default/templates/email/default.tpl
 %%WWWDIR%%/www/themes/default/templates/emails.tpl
-%%WWWDIR%%/www/themes/default/templates/empty.tpl
 %%WWWDIR%%/www/themes/default/templates/external_survey.tpl
 %%WWWDIR%%/www/themes/default/templates/hcd_users.tpl
 %%WWWDIR%%/www/themes/default/templates/import_export.tpl
@@ -1908,18 +2883,29 @@
 %%WWWDIR%%/www/themes/default/templates/includes/check_status.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/closing.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/comments.tpl
+%%WWWDIR%%/www/themes/default/templates/includes/common/course_users_list.tpl
+%%WWWDIR%%/www/themes/default/templates/includes/common/courses_list.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/common_content.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/common_layout.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/control_panel.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/copy.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/course_settings.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/courses.tpl
+%%WWWDIR%%/www/themes/default/templates/includes/curriculums.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/digests.tpl
+%%WWWDIR%%/www/themes/default/templates/includes/editor.tpl
+%%WWWDIR%%/www/themes/default/templates/includes/editor_new.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/file_manager.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/footer_code.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/forum.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/glossary.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/groups.tpl
+%%WWWDIR%%/www/themes/default/templates/includes/hcd/branches.tpl
+%%WWWDIR%%/www/themes/default/templates/includes/hcd/employees.tpl
+%%WWWDIR%%/www/themes/default/templates/includes/hcd/job_descriptions.tpl
+%%WWWDIR%%/www/themes/default/templates/includes/hcd/reports.tpl
+%%WWWDIR%%/www/themes/default/templates/includes/hcd/skill_categories.tpl
+%%WWWDIR%%/www/themes/default/templates/includes/hcd/skills.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/header.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/header_code.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/horizontal_sidebar.tpl
@@ -1948,9 +2934,11 @@
 %%WWWDIR%%/www/themes/default/templates/includes/rules.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/scheduling.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/scorm.tpl
+%%WWWDIR%%/www/themes/default/templates/includes/statistics/advanced_user_reports.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/statistics/certificate_stats.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/statistics/courses_stats.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/statistics/lessons_stats.tpl
+%%WWWDIR%%/www/themes/default/templates/includes/statistics/stats_filters.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/statistics/system_stats.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/statistics/users_stats.tpl
 %%WWWDIR%%/www/themes/default/templates/includes/statistics.tpl
@@ -2009,6 +2997,7 @@
 %%WWWDIR%%/www/themes/mobile/images/css_images/gradient_large.jpg
 %%WWWDIR%%/www/themes/mobile/images/css_images/gradient_medium.jpg
 %%WWWDIR%%/www/themes/mobile/theme.xml
+%%WWWDIR%%/www/userpage.php
 %%WWWDIR%%/www/view_file.php
 %%WWWDIR%%/www/view_resource.php
 %%WWWDIR%%/www/view_test.php
@@ -2065,7 +3054,11 @@
 @dirrm %%WWWDIR%%/libraries/external/tcpdf/images
 @dirrm %%WWWDIR%%/libraries/external/tcpdf
 @dirrm %%WWWDIR%%/libraries/external
+@dirrm %%WWWDIR%%/libraries/includes/common
+@dirrm %%WWWDIR%%/libraries/includes/hcd
+@dirrm %%WWWDIR%%/libraries/includes/personal
 @dirrm %%WWWDIR%%/libraries/includes/statistics
+@dirrm %%WWWDIR%%/libraries/includes/system_config
 @dirrm %%WWWDIR%%/libraries/includes/tests
 @dirrm %%WWWDIR%%/libraries/includes
 @dirrm %%WWWDIR%%/libraries/language
@@ -2076,12 +3069,8 @@
 @dirrm %%WWWDIR%%/libraries/smarty/libs
 @dirrm %%WWWDIR%%/libraries/smarty/themes_cache
 @dirrm %%WWWDIR%%/libraries/smarty
-@dirrm %%WWWDIR%%/libraries/versions/educational
-@dirrm %%WWWDIR%%/libraries/versions/enterprise
-@dirrm %%WWWDIR%%/libraries/versions
 @dirrm %%WWWDIR%%/libraries
 @dirrm %%WWWDIR%%/upload
-@dirrm %%WWWDIR%%/www/administrator
 @dirrm %%WWWDIR%%/www/certificate_templates
 @dirrm %%WWWDIR%%/www/charts/js/json
 @dirrm %%WWWDIR%%/www/charts/js
@@ -2204,6 +3193,131 @@
 @dirrm %%WWWDIR%%/www/editor/tiny_mce/themes
 @dirrm %%WWWDIR%%/www/editor/tiny_mce/utils
 @dirrm %%WWWDIR%%/www/editor/tiny_mce
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/php/imgs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/php
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/css
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/advhr
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/css
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/img
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/advimage
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/css
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlink
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/advlist
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciimath/img
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciimath/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciimath
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciisvg/img
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciisvg/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/asciisvg
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/autoresize
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/autosave/images
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/autosave/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/autosave
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/bbcode
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/contextmenu
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/directionality
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/img
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/emotions
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/example/img
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/example/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/example/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/example
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/css
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullpage
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/fullscreen
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/iespell
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/inlinepopups/skins/clearlooks2/img
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/inlinepopups/skins/clearlooks2
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/inlinepopups/skins
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/inlinepopups
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/insertdatetime
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/java/css
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/java/img
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/java/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/java/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/java
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/layer
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/legacyoutput
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/css
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/img
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/media/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/media
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/nonbreaking
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/noneditable
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/pagebreak/css
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/pagebreak/img
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/pagebreak
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/paste
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/preview/jscripts
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/preview
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/print
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/save
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/save_template/css
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/save_template/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/save_template
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/css
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/searchreplace
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/spellchecker/classes/utils
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/spellchecker/classes
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/spellchecker/css
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/spellchecker/img
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/spellchecker/includes
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/spellchecker
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/css
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/style/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/style
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/tabfocus
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/css
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/table/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/table
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/css
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/template/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/template
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/visualchars
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/wordcount
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/css
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins/xhtmlxtras
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/plugins
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/img
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/js
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/default/img
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/default
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/o2k7/img
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins/o2k7
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced/skins
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/themes/advanced
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/img
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/langs
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/skins/default
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/skins/o2k7/img
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/skins/o2k7
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/themes/simple/skins
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/themes/simple
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/themes
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new/utils
+@dirrm %%WWWDIR%%/www/editor/tiny_mce_new
 @dirrm %%WWWDIR%%/www/editor
 @dirrm %%WWWDIR%%/www/facebook
 @dirrm %%WWWDIR%%/www/install
@@ -2214,16 +3328,18 @@
 @dirrm %%WWWDIR%%/www/js/professor
 @dirrm %%WWWDIR%%/www/js/scriptaculous
 @dirrm %%WWWDIR%%/www/js
+@dirrm %%WWWDIR%%/www/modules/module_bbb/images
+@dirrm %%WWWDIR%%/www/modules/module_bbb
 @dirrm %%WWWDIR%%/www/modules/module_billboard/images
 @dirrm %%WWWDIR%%/www/modules/module_billboard
 @dirrm %%WWWDIR%%/www/modules/module_blogs/images
 @dirrm %%WWWDIR%%/www/modules/module_blogs
-@dirrm %%WWWDIR%%/www/modules/module_dimdim/images
-@dirrm %%WWWDIR%%/www/modules/module_dimdim
 @dirrm %%WWWDIR%%/www/modules/module_faq/images
 @dirrm %%WWWDIR%%/www/modules/module_faq
 @dirrm %%WWWDIR%%/www/modules/module_flashcards/images
 @dirrm %%WWWDIR%%/www/modules/module_flashcards
+@dirrm %%WWWDIR%%/www/modules/module_gradebook/images
+@dirrm %%WWWDIR%%/www/modules/module_gradebook
 @dirrm %%WWWDIR%%/www/modules/module_links/images
 @dirrm %%WWWDIR%%/www/modules/module_links
 @dirrm %%WWWDIR%%/www/modules/module_quick_mails
@@ -2252,7 +3368,6 @@
 @dirrm %%WWWDIR%%/www/phplivedocx/samples/mail-merge
 @dirrm %%WWWDIR%%/www/phplivedocx/samples
 @dirrm %%WWWDIR%%/www/phplivedocx
-@dirrm %%WWWDIR%%/www/student
 @dirrm %%WWWDIR%%/www/themes/blue/css
 @dirrm %%WWWDIR%%/www/themes/blue/external
 @dirrm %%WWWDIR%%/www/themes/blue/images/css_images
@@ -2277,7 +3392,10 @@
 @dirrm %%WWWDIR%%/www/themes/default/templates/editor
 @dirrm %%WWWDIR%%/www/themes/default/templates/email
 @dirrm %%WWWDIR%%/www/themes/default/templates/includes/blocks
+@dirrm %%WWWDIR%%/www/themes/default/templates/includes/common
+@dirrm %%WWWDIR%%/www/themes/default/templates/includes/hcd
 @dirrm %%WWWDIR%%/www/themes/default/templates/includes/statistics
+@dirrm %%WWWDIR%%/www/themes/default/templates/includes/system_config
 @dirrm %%WWWDIR%%/www/themes/default/templates/includes/tests
 @dirrm %%WWWDIR%%/www/themes/default/templates/includes
 @dirrm %%WWWDIR%%/www/themes/default/templates/install
