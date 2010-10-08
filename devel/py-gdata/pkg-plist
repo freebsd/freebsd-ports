@@ -133,9 +133,6 @@
 %%PYTHON_SITELIBDIR%%/gdata/analytics/service.py
 %%PYTHON_SITELIBDIR%%/gdata/analytics/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/analytics/service.pyo
-%%PYTHON_SITELIBDIR%%/gdata/apps_property.py
-%%PYTHON_SITELIBDIR%%/gdata/apps_property.pyc
-%%PYTHON_SITELIBDIR%%/gdata/apps_property.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/__init__.pyo
@@ -145,6 +142,12 @@
 %%PYTHON_SITELIBDIR%%/gdata/apps/adminsettings/service.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/adminsettings/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/adminsettings/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/audit/__init__.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/audit/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/audit/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps/audit/service.py
+%%PYTHON_SITELIBDIR%%/gdata/apps/audit/service.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps/audit/service.pyo
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings/__init__.pyo
@@ -178,6 +181,9 @@
 %%PYTHON_SITELIBDIR%%/gdata/apps/service.py
 %%PYTHON_SITELIBDIR%%/gdata/apps/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/apps/service.pyo
+%%PYTHON_SITELIBDIR%%/gdata/apps_property.py
+%%PYTHON_SITELIBDIR%%/gdata/apps_property.pyc
+%%PYTHON_SITELIBDIR%%/gdata/apps_property.pyo
 %%PYTHON_SITELIBDIR%%/gdata/auth.py
 %%PYTHON_SITELIBDIR%%/gdata/auth.pyc
 %%PYTHON_SITELIBDIR%%/gdata/auth.pyo
@@ -580,6 +586,9 @@
 %%PYTHON_SITELIBDIR%%/gdata/youtube/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/youtube/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/youtube/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/youtube/client.py
+%%PYTHON_SITELIBDIR%%/gdata/youtube/client.pyc
+%%PYTHON_SITELIBDIR%%/gdata/youtube/client.pyo
 %%PYTHON_SITELIBDIR%%/gdata/youtube/data.py
 %%PYTHON_SITELIBDIR%%/gdata/youtube/data.pyc
 %%PYTHON_SITELIBDIR%%/gdata/youtube/data.pyo
@@ -618,6 +627,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/migration
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/groups
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/emailsettings
+@dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/audit
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps/adminsettings
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/apps
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/analytics
@@ -633,6 +643,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/atom
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/account_feed_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/data_feed_demo.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/analytics/mgmt_feed_demo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apps/adminsettings_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/authsub/secure_authsub.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/base/baseAttributesQueryExample.py

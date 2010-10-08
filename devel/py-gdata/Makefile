@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gdata
-DISTVERSION=	2.0.11.final
+PORTVERSION=	2.0.12
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -19,9 +19,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 LICENSE=	ASL
-
-WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION:S/.final//}
-PYDISTUTILS_PKGVERSION=	${DISTVERSION:S/.final//}
 
 # optional modules (see src/gdata/tlslite/utils/cryptomath.py)
 OPTIONS=	M2CRYPTO "Add cryptography and SSL toolkit for Python" off \
@@ -57,8 +54,8 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gmpy.so:${PORTSDIR}/math/py-gmpy
 
 .if !defined(NOPORTEXAMPLES)
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/samples/ ${EXAMPLESDIR}
+	${MKDIR} ${EXAMPLESDIR}/
+	${CP} -R ${WRKSRC}/samples/ ${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.post.mk>
