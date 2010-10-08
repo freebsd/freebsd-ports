@@ -5,6 +5,8 @@ bin/s9help
 bin/s9resolve
 bin/scm2html
 bin/scmpp
+%%DATADIR%%/S9Book
+%%DATADIR%%/S9Book-bw
 %%DATADIR%%/_template
 %%DATADIR%%/adjoin.scm
 %%DATADIR%%/amb.scm
@@ -520,6 +522,7 @@ bin/scmpp
 %%DATADIR%%/help/stats
 %%DATADIR%%/help/stream-any
 %%DATADIR%%/help/stream-eosp
+%%DATADIR%%/help/string-expand
 %%DATADIR%%/help/stream-extract
 %%DATADIR%%/help/stream-id
 %%DATADIR%%/help/stream-iota
@@ -833,6 +836,7 @@ bin/scmpp
 %%DATADIR%%/streams.scm
 %%DATADIR%%/string-case.scm
 %%DATADIR%%/string-digest.scm
+%%DATADIR%%/string-expand.scm
 %%DATADIR%%/string-find-last.scm
 %%DATADIR%%/string-find.scm
 %%DATADIR%%/string-last-position.scm
