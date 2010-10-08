@@ -2,7 +2,7 @@ bin/oscartest
 %%SITE_PERL%%/Net/OSCAR.pm
 %%SITE_PERL%%/Net/OSCAR/Buddylist.pm
 %%SITE_PERL%%/Net/OSCAR/Callbacks.pm
-%%SITE_PERL%%/Net/OSCAR/Callbacks/0/error.pm
+%%SITE_PERL%%/Net/OSCAR/Callbacks/INDEX
 %%SITE_PERL%%/Net/OSCAR/Callbacks/1/incoming_extended_information.pm
 %%SITE_PERL%%/Net/OSCAR/Callbacks/1/incoming_warning.pm
 %%SITE_PERL%%/Net/OSCAR/Callbacks/1/migrate.pm
@@ -53,7 +53,6 @@ bin/oscartest
 %%SITE_PERL%%/Net/OSCAR/Proxy.pm
 %%SITE_PERL%%/Net/OSCAR/Screenname.pm
 %%SITE_PERL%%/Net/OSCAR/ServerCallbacks.pm
-%%SITE_PERL%%/Net/OSCAR/ServerCallbacks/0/BOS_signon.pm
 %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/1/personal_info_request.pm
 %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/1/rate_acknowledgement.pm
 %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/1/rate_info_request.pm
@@ -74,10 +73,13 @@ bin/oscartest
 %%SITE_PERL%%/Net/OSCAR/TLV.pm
 %%SITE_PERL%%/Net/OSCAR/Utility.pm
 %%SITE_PERL%%/Net/OSCAR/XML.pm
-%%SITE_PERL%%/Net/OSCAR/XML/Protocol.parsed-xml
+%%SITE_PERL%%/Net/OSCAR/XML/Protocol.dtd
 %%SITE_PERL%%/Net/OSCAR/XML/Protocol.xml
 %%SITE_PERL%%/Net/OSCAR/XML/Template.pm
 %%SITE_PERL%%/Net/OSCAR/_BLInternal.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OSCAR/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/OSCAR
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/OSCAR/XML
 @dirrm %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/9
 @dirrm %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/4
@@ -86,7 +88,6 @@ bin/oscartest
 @dirrm %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/2
 @dirrm %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/19
 @dirrm %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/1
-@dirrm %%SITE_PERL%%/Net/OSCAR/ServerCallbacks/0
 @dirrm %%SITE_PERL%%/Net/OSCAR/ServerCallbacks
 @dirrm %%SITE_PERL%%/Net/OSCAR/Connection
 @dirrm %%SITE_PERL%%/Net/OSCAR/Callbacks/9
