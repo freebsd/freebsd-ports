@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	qtm
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	deskutils
-MASTER_SITES=	SF/catkin/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/catkin/${PORTNAME}-1.3
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	Blog management application based on Qt 4
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
