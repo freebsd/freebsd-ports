@@ -1,0 +1,29 @@
+*** ../txn/txn.c.orig	Tue Nov  1 06:50:03 2005
+--- ../txn/txn.c	Tue Jan 31 15:05:13 2006
+***************
+*** 1049,1060 ****
+--- 1049,1062 ----
+  		return (ret);
+  	memcpy(txn->name, name, len);
+  
++ 	TXN_SYSTEM_LOCK(dbenv);
+  	if (td->name != INVALID_ROFF) {
+  		__db_shalloc_free(
+  		    &mgr->reginfo, R_ADDR(&mgr->reginfo, td->name));
+  		td->name = INVALID_ROFF;
+  	}
+  	if ((ret = __db_shalloc(&mgr->reginfo, len, 0, &p)) != 0) {
++ 		TXN_SYSTEM_UNLOCK(dbenv);
+  		__db_err(dbenv,
+  		    "Unable to allocate memory for transaction name");
+  
+***************
+*** 1063,1068 ****
+--- 1065,1071 ----
+  
+  		return (ret);
+  	}
++ 	TXN_SYSTEM_UNLOCK(dbenv);
+  	td->name = R_OFFSET(&mgr->reginfo, p);
+  	memcpy(p, name, len);
+  

@@ -1,0 +1,27 @@
+*** ../qam/qam_files.c.orig	2005-10-20 11:57:12.000000000 -0700
+--- ../qam/qam_files.c	2006-01-27 13:38:38.000000000 -0800
+***************
+*** 411,416 ****
+--- 411,422 ----
+  	    DB_APP_DATA, buf, 0, NULL, &real_name)) != 0)
+  		goto err;
+  #endif
++ 
++ 	mpf = array->mpfarray[offset].mpf;
++ 	/* This extent my already be marked for delete and closed. */
++ 	if (mpf == NULL)
++ 		goto err;
++ 
+  	/*
+  	 * The log must be flushed before the file is deleted.  We depend on
+  	 * the log record of the last delete to recreate the file if we crash.
+***************
+*** 418,424 ****
+  	if (LOGGING_ON(dbenv) && (ret = __log_flush(dbenv, NULL)) != 0)
+  		goto err;
+  
+- 	mpf = array->mpfarray[offset].mpf;
+  	(void)__memp_set_flags(mpf, DB_MPOOL_UNLINK, 1);
+  	/* Someone could be real slow, let them close it down. */
+  	if (array->mpfarray[offset].pinref != 0)
+--- 424,429 ----
