@@ -38,7 +38,7 @@ OPTIONS=	DEBUG "Debugging support" off \
 		FASTEST "Fastest run" off \
 		LZMA "Enable LZMA codec" off \
 		LZO "Enable LZO codec" off \
-		PTHREAD "Disable POSIX thread support" on \
+		PTHREAD "Enable POSIX thread support" on \
 		PROFILE "Profiling build" off \
 		SHARED "Shared build" on \
 		SWAB "Swapping byte-orders build" off \
