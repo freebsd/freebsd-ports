@@ -1,0 +1,509 @@
+---
+ doc/man5/libvga.config.5  |   50 +++++++++++++++++++++++-----------------------
+ doc/man7/svgalib.7        |   12 +++++------
+ doc/man7/svgalib.chips.7  |    4 ---
+ doc/man7/svgalib.et4000.7 |   14 ++++++------
+ doc/man7/svgalib.faq.7    |    4 +--
+ doc/man7/svgalib.mach32.7 |   34 +++++++++++++++----------------
+ doc/man7/vgagl.7          |    2 -
+ 7 files changed, 59 insertions(+), 61 deletions(-)
+
+--- doc/man5/libvga.config.5.orig
++++ doc/man5/libvga.config.5
+@@ -12,7 +12,7 @@ and the end of the line is ignored. Empt
+ ignored. Since the driver you will use may not know all config options
+ here, unknown commands are silently ignored. Please think of that when
+ something does not work as you expect. I know this is a nuisance
+-because misformed configuration statements do not cause
++because malformed configuration statements do not cause
+ errors. Multiple commands are allowed in one line, and commands can
+ exceed lines.
+ 
+@@ -42,9 +42,9 @@ files before.
+ 
+ Configuration commands which control hardware settings that might cause
+ harm to your hardware are called
+-.BR priviledged . 
++.BR privileged .
+ By default the
+-.B priviledged
++.B privileged
+ commands can only be used in the
+ main configuration file
+ .I /etc/vga/libvga.config 
+@@ -65,7 +65,7 @@ except for debugging/testing purposes.
+ 
+ .SH REQUIRED CONFIGURATION
+ Please do not allow the vastness of options to confuse you. Generally
+-svgalib uses well choosen defaults and is able to autodetect
++svgalib uses well chosen defaults and is able to autodetect
+ everything. Thus generally you don't need to specify much. When
+ installing svgalib it provides a sample
+ .I /etc/vga/libvga.config
+@@ -131,7 +131,7 @@ if you have an Icd2061a clockchip.
+ if your Ramdac is not detected properly.
+ .TP
+ .BI "Dacspeed " speed
+-if the default choosen is not right (probably too restrictive).
++if the default chosen is not right (probably too restrictive).
+ .PP
+ The remaining options are really only to be used in case of problems
+ which you'll not generally encounter.
+@@ -252,8 +252,8 @@ Other mice might need
+ .B clearDTR
+ as well or one set and clear. Try yourself.
+ 
+-Note: Having crtscts handshake enabled on the mouse tty may interfer with this
+-options. Do not do that.
++Note: Having crtscts handshake enabled on the mouse tty may interfere with this
++option. Do not do that.
+ 
+ Finally, a special goodie for wheel mice:
+ 
+@@ -374,7 +374,7 @@ linear
+ The acceleration factor grows linear with the delta until it
+ reaches
+ .BR mouse_accel_thresh .
+-After that it is a simple mutiplication.
++After that it is a simple multiplication.
+ (I know that it can be done with setting
+ .B mouse_accel_power
+ to 1, but
+@@ -579,7 +579,7 @@ and a decimal point for this too:
+ .BR "monitor 40.0" " # equivalent to monitor 3"
+ 
+ This command is
+-.BR priviledged .
++.BR privileged .
+ 
+ .SS Mode timings
+ It is now possible to define modetimings for some cards (see the info on your card
+@@ -641,7 +641,7 @@ Sync polarity, interlace mode
+ Everything should be on one line.
+ The values for the horizontal timings must be multiples of eight.
+ 
+-These are prefered over the default timings (if monitor and chipset
++These are preferred over the default timings (if monitor and chipset
+ can handle them).
+ The format is identical to the one used by XFree86, but the label
+ following the modeline keyword is ignored by vgalib.
+@@ -714,7 +714,7 @@ to enforce autodetection.
+ 
+ Warning, incorrect settings may damage your hardware.
+ This command is
+-.BR priviledged .
++.BR privileged .
+ 
+ .TP
+ .BI "chipset " "type param1 param2"
+@@ -734,7 +734,7 @@ Note that there is a more convenient com
+ for enforcing specific memory-aperture configurations for Mach32
+ 
+ This command is
+-.BR priviledged .
++.BR privileged .
+ 
+ .SS Specific options required for the EGA-driver.
+ .TP
+@@ -745,7 +745,7 @@ Card is in monochrome emulation mode
+ Card is in color emulation mode
+ 
+ This command is
+-.BR priviledged .
++.BR privileged .
+ 
+ .SS RAMDAC configuration
+ Some chipsets (e.g. S3 and ARK) allow specifying a RAMDAC type. If
+@@ -821,7 +821,7 @@ Configure for a programmable clockchip.
+ .B ICD2061A
+ is the only one supported right now.
+ 
+-.SS Miscanellous options
++.SS Miscellaneous options
+ .TP
+ .B security revoke-all-privs
+ Make sure it is impossible to regain root access
+@@ -846,7 +846,7 @@ Allow (not enforce!) use of a linear mma
+ .TP
+ .B overrideenable
+ Allow
+-.B priviledged
++.B privileged
+ commands outside the main configuration file.
+ 
+ .SS Common options currently used by Mach32 only
+@@ -883,7 +883,7 @@ is 2000 to disable this feature.
+ The
+ .B maxclock
+ commands are
+-.BR priviledged .
++.BR privileged .
+ 
+ .TP
+ .BI "clocks " "list of clocks"
+@@ -940,7 +940,7 @@ for additional info on clocks.
+ The
+ .B clocks
+ command is
+-.BR priviledged .
++.BR privileged .
+ 
+ .TP
+ .B variablelinelength
+@@ -984,7 +984,7 @@ below.
+ The
+ linelength
+ commands are
+-.BR "not priviledged" .
++.BR "not privileged" .
+ 
+ In the following commands a mode is specified with
+ .IR horz X vert X colors .
+@@ -1006,7 +1006,7 @@ disallows the maybe toasted mach32 800x6
+ The
+ .B inhibit
+ command is
+-.BR "not priviledged" .
++.BR "not privileged" .
+ 
+ .TP
+ .BI "setlinelength " length " " mode1 " [" mode2 " " mode3 "...]"
+@@ -1029,7 +1029,7 @@ the Mach32 will generate a noisy video s
+ The
+ .B setlinelength
+ command is
+-.BR "not priviledged" .
++.BR "not privileged" .
+ 
+ .TP
+ .BI "define " mode1 " [" mode2 " " mode3 "...] " "clock horz_timing vert_timing flags"
+@@ -1091,7 +1091,7 @@ a 32K and 64K mode.
+ The
+ .B define
+ command is
+-.BR priviledged .
++.BR privileged .
+ 
+ .PP
+ There is one really dangerous option (except faking clocks). Please
+@@ -1132,7 +1132,7 @@ in the EEPROM.
+ The
+ .B setuplinear
+ command is
+-.BR priviledged .
++.BR privileged .
+ 
+ .TP
+ .BI "blit " "subcommand1 subcommand2" " ..."
+@@ -1144,7 +1144,7 @@ Valid
+ are
+ .BR bit ", " fill ", " image ", and " hlinelist .
+ They enable support for the
+-corresponding blit functions. Preceed them with
++corresponding blit functions. Precede them with
+ .B no
+ to turn them off (no space after
+ .B no
+@@ -1215,7 +1215,7 @@ Mach32 default is:
+ The
+ .B blit
+ command is
+-.BR "not priviledged" .
++.BR "not privileged" .
+ 
+ .PP
+ The Mach32 has also a few intermediate debug options for low level timing adjust.
+@@ -1248,7 +1248,7 @@ completely. For example:
+ For details about these options see
+ .BR svgalib.mach32 (7).
+ All of them are
+-.BR "priviledged" .
++.BR "privileged" .
+ 
+ .SH OBSOLETE COMMANDS
+ Very old svgalib versions used a different style configuration file. For compatibility,
+--- doc/man7/svgalib.7.orig
++++ doc/man7/svgalib.7
+@@ -62,7 +62,7 @@ text mode (after calling
+ .BR vga_init (3))
+ will also take place at this new console.
+ 
+-Alas, some games misuse their suid root priviledge and run as full root
++Alas, some games misuse their suid root privilege and run as full root
+ process. svgalib cannot detect this and allows Joe Blow User to open a new
+ VC on the console. If this annoys you,
+ .B ROOT_VC_SHORTCUT
+@@ -202,7 +202,7 @@ Please see
+ for details.
+ 
+ There are demos with sources available which will also help to get you started, in
+-recomended order of interest:
++recommended order of interest:
+ .BR vgatest (6),
+ .BR keytest (6),
+ .BR mousetest (6),
+@@ -247,7 +247,7 @@ calls before it returns to the debugger,
+ This will only work if your program and the debugger run in the same virtual linux console.
+ 
+ .SH 3. DESCRIPTION OF SVGALIB FUNCTIONS
+-Each function has it's own section 3 manual page. For a list of
++Each function has its own section 3 manual page. For a list of
+ .BR vgagl " functions see " vgagl (7).
+ 
+ .PD 0
+@@ -756,7 +756,7 @@ force noninterlaced.
+ .B bit0 = false
+ force interlaced which only matters on 8900's with at least 1M
+ since there is no 512K interlaced mode on the 8900 or any of the other cards.
+-.RH
++.RE
+ 
+ .SS Tseng ET4000/ET4000W32(i/p)
+ 
+@@ -859,7 +859,7 @@ Please see
+ .SS ATI Mach64
+ The rage.c driver works only on mach64 based cards with internal DAC.
+ The driver might misdetect the base frequency the card uses, so if when setting
+-any svgalib modes the screen blanks, or complains about out of bound freqencies,
++any svgalib modes the screen blanks, or complains about out of bound frequencies,
+ or the display is unsynced, then try adding the option
+ .BR RageDoubleClock
+ to the config file.
+@@ -920,7 +920,7 @@ Frodo Looijaard <frodol@dds.nl> to reena
+ right now if they might have broken OTI-087 support. The author of the '87
+ support Christopher Wiles <wileyc@moscow.com> owns no longer an OTI-087 card and
+ can thus no longer give optimal support to this driver. Thus you might be
+-better off contacting me or Frodo for questions. If you are a knowledgable
++better off contacting me or Frodo for questions. If you are a knowledgeable
+ OTI-087 user and experience problems you are welcome to provide fixes.
+ No user of a OTI-087 is currently
+ known to me, so if you are able to fix problems with the driver please do so
+--- doc/man7/svgalib.et4000.7.orig
++++ doc/man7/svgalib.et4000.7
+@@ -27,7 +27,7 @@ svgalib.et4000, libvga.et4000 \- Informa
+ 
+ .SH 1. BASICS OF ET4000 CARDS 
+ 
+-Basicly all ET4000 cards are equal, some are even more equal ...
++Basically all ET4000 cards are equal, some are even more equal ...
+ 
+ The Chipset is well documented (by Tseng Labs and eg. the vgadoc2.zip)
+ and all graphics functions can be used the same way on different cards
+@@ -52,7 +52,7 @@ VRAM equipped cards, please tell us abou
+ 
+ By now we found is no reliable way to detect the memory organisation/
+ timing and the DAC type/capabilities. Most modern card use a frequency
+-synthizier and provide the following pixel frequencies (in MHz):
++synthesizer and provide the following pixel frequencies (in MHz):
+ 
+ .RS
+ .B 50.350 56.644 65.0 72.0 80.0 89.8 63.0 75.0
+@@ -214,7 +214,7 @@ Most ET4000 cards provide 640x350 and 64
+ generates the related register sets. You may also use
+ .BR dumpreg (1)
+ from an X window to grab you favourite X graphics mode.
+-The X mode normaly isn't usable directly. See
++The X mode normally isn't usable directly. See
+ .I cardex.w32
+ for an example and
+ .I et4000.c
+@@ -232,7 +232,7 @@ register set to
+ 
+ In the
+ .I et4000/
+-subdir of teh svgalib distribution you'll find some sample register sets:
++subdir of the svgalib distribution you'll find some sample register sets:
+ 
+ .TP
+ .B cardex.w32
+@@ -269,8 +269,8 @@ the
+ 
+ Newer ET4000 chipsets (eg. W32 and W32i) allow up to 32 clock 
+ frequencies. Two additional register values were added just before the
+-old extened register value. The new registers are CRTC/30h and CRTC/31h.
+-The old register set had 71 values, the new growed to 73.
++old extended register value. The new registers are CRTC/30h and CRTC/31h.
++The old register set had 71 values, the new has grown to 73.
+ You may update your old register set by hand:
+ 
+ .IP -
+@@ -283,7 +283,7 @@ for each mode 
+ .RS
+ change the number of register values from 71 to 73
+ .br
+-add the values from dumreg output at front of last data line
++add the values from dumpreg output at front of last data line
+ .RE
+ .RE
+ .IP -
+--- doc/man7/svgalib.faq.7.orig
++++ doc/man7/svgalib.faq.7
+@@ -148,7 +148,7 @@ However, though logged in not directly f
+ am the owner of the console.
+ 
+ .SS A)
+-Alas, some programs use their suid root priviledge and become a full
++Alas, some programs use their suid root privilege and become a full
+ root owned process. svgalib thinks they are run by root which does
+ not own the current console.
+ Defining
+@@ -311,7 +311,7 @@ in that support.
+ Ok, just for completeness, what are your plans about svgalib anyway?
+ 
+ First, make svgalib cooperate nicely with kernel fb device. Then (and it should
+-be very similiar) make svgalib work on a secondary vga card.
++be very similar) make svgalib work on a secondary vga card.
+ 
+ A rewrite of the code for memory handling and virtual console handling is necessary
+ for the previous goals, but is also necessary in itself, and so will be done
+--- doc/man7/svgalib.mach32.7.orig
++++ doc/man7/svgalib.mach32.7
+@@ -13,7 +13,7 @@ svgalib.mach32 \- Information on the Mac
+ .br
+ .BR " 4. " "Third party cards"
+ .br
+-.BR " 5. " "Logical linewidth"
++.BR " 5. " "Logical line width"
+ .br
+ .BR " 6. " "Noisy video signals"
+ .br
+@@ -195,7 +195,7 @@ commands below (if they have problems wi
+ I had to learn that those cards seem
+ to use not only non standard clocks for the Mach32, but also for the included
+ SVGA. However, since people often like to use proprietary, non standard VGA
+-(read 80x25) textmodes, the Mach32 driver has to set the included SVGA to
++(read 80x25) text modes, the Mach32 driver has to set the included SVGA to
+ a VGA compatible clock frequency. Otherwise svgalib has problems using plain VGA
+ modes. This screws VGA modes up if these clocks have different values on third
+ party Mach32 cards.
+@@ -224,7 +224,7 @@ Often
+ is special in that the
+ driver will not touch any SVGA timings. This requires the Mach32 SVGA part to
+ be in a VGA compatible mode when the svgalib application is started, that is,
+-you must use 80x25 (maybe 80x50) console textmodes.
++you must use 80x25 (maybe 80x50) console text modes.
+ .PP
+ 
+ As I mentioned already,
+@@ -236,7 +236,7 @@ locks up the card & system. Fortunately
+ is only used for some DAC fine tuning (actually the setting you can
+ fine tune with the
+ .B blank
+-command) which is only of barely noticable effect to the screen.
++command) which is only of barely noticeable effect to the screen.
+ 
+ The following configuration commands exist to support AST cards:
+ 
+@@ -332,7 +332,7 @@ Ramdac type is queried from Mach32 chip.
+ 
+ .IP
+ .I memory
+-is the amount of videomemory in KB.
++is the amount of video memory in KB.
+ .PP
+ Note that the type of the ramdac can be set more conveniently with the
+ .B ramdac
+@@ -340,19 +340,19 @@ command.
+ 
+ .SH 5. LOGICAL LINEWIDTH
+ At least my VRAM card seems to be very peculiar about logical
+-linewidths. From my experience a multiple of 64 pels is needed.
++line widths. From my experience a multiple of 64 pels is needed.
+ Your mileage may vary. Use the config file options to adjust it
+ and tell me if your card needs a different value. Include the name and
+ model number of the card and what the correct numbers should be. This
+ is so that I can correct the auto configuration of the driver.
+ 
+ If some svgalib application has problems, note that you can
+-force the logical linewidth to the default value from the
+-configfile. Probably this will lead to glitches in some 800x600
++force the logical line width to the default value from the
++config file. Probably this will lead to glitches in some 800x600
+ resolutions. You can
+ .B inhibit
+-these resolutions from the configfile
+-as well. Apropos glitches, I found no guidelines as to what clockrates
++these resolutions from the config file
++as well. Apropos glitches, I found no guidelines as to what clock rates
+ to use due to memory restrictions. I adjusted the driver, such that
+ I get a stable pic in all resolutions. However sometimes the screen
+ is disturbed by heavy video memory accesses. If you don't like that,
+@@ -514,7 +514,7 @@ Then you can decide to use the partial i
+ 
+ .B mach32eeprom ignore usetimings
+ 
+-to use the videomodes that are defined in the EEPROM (if no better modes are
++to use the video modes that are defined in the EEPROM (if no better modes are
+ known by the driver). This is usually safe, because the driver knows
+ which modes are safe for your hardware (if
+ .BR clocks ", " monitor " and " ramdac
+@@ -589,17 +589,17 @@ are:
+ Don't complain about checksum and don't use any EEPROM contents.
+ .TP
+ .B useaperture
+-Use the configuration for the memoryaperture given in the EEPROM.
++Use the configuration for the memory aperture given in the EEPROM.
+ .TP
+ .B usetimings
+-Use videomodes found in the EEPROM of the board.
++Use video modes found in the EEPROM of the board.
+ .TP
+ .B nofile
+ Forget about any filename that maybe was already configured.
+ Don't read a file, don't create one.
+ .TP
+ .BI "file " filename
+-Newstyle form to specify the
++New style form to specify the
+ .IR filename ;
+ On contrary to the
+ .BI "mach32eeprom " filename
+@@ -672,7 +672,7 @@ cannot use that, use
+ to find the address in
+ .B MEM_CFG.
+ Then,
+-.BR "if it is a senseable setting for your system" ,
++.BR "if it is a sensible setting for your system" ,
+ enable a 4MB aperture at that address with
+ .BR setuplinear .
+ Ensure that no other card or memory uses the address range you choose.
+@@ -717,14 +717,14 @@ This is no hard restriction as the 16 cl
+ Thus if you setup some mode yourself try to use one of the divided clocks in
+ your timings and I can use the undivided clocks internally.
+ 
+-It is a real restriction for 16M colors. ATI themself only supports 25MHz
++It is a real restriction for 16M colors. ATI itself only supports 25MHz
+ (640x480) here by use of a 75MHz clock. Depending on your clock chip other
+ values may be usable as well. Even the doubled/tripled clocks have to be less
+ than the magic 80 MHz. However the driver does all this itself. It may just
+ happen that some of the predefined or one of your handmade mode-timings
+ can't be used because the clock that is used cannot be doubled/tripled.
+ Even though there is already some tolerance in the driver you may fix that by
+-slighty changing the clock values that you set with the
++slightly changing the clock values that you set with the
+ .B clocks
+ command. But
+ note that this will as well affect the ability of the driver to calculate
+--- doc/man7/svgalib.chips.7.orig
++++ doc/man7/svgalib.chips.7
+@@ -118,9 +118,7 @@ to use a different value that might be m
+ .TP
+ .B nolinear
+ This option disables the use of the linear framebuffer. This might
+-be useful for machines that have broken linear framebuffers. In
+-lar the linear framebuffer doesn't seem to work with the
+-achines.
++be useful for machines that have broken linear framebuffers.
+ 
+ .TP
+ .B linear
+--- doc/man7/vgagl.7.orig
++++ doc/man7/vgagl.7
+@@ -1,6 +1,6 @@
+ .TH vgagl 7 "2 Aug 1997" "Svgalib (>= 1.2.11)" "Svgalib User Manual"
+ .SH NAME
+-vgagl \- a fast framebuffer-level graphics library based ion svgalib
++vgagl \- a fast framebuffer-level graphics library based on svgalib
+ .SH TABLE OF CONTENTS
+ 
+ .BR 0. " Introduction"
