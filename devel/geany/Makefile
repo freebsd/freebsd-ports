@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	geany
-PORTVERSION=	0.18
-PORTREVISION=	3
-CATEGORIES=	devel
+PORTVERSION=	0.19.1
+CATEGORIES=	devel editors
 MASTER_SITES=	http://download.geany.org/ SF
 
 MAINTAINER=	ar@null.lv
