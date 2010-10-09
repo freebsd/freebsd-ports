@@ -1,5 +1,4 @@
 bin/geany
-include/geany/dialogs.h
 include/geany/document.h
 include/geany/editor.h
 include/geany/encodings.h
@@ -9,19 +8,16 @@ include/geany/geanyfunctions.h
 include/geany/geanyplugin.h
 include/geany/highlighting.h
 include/geany/keybindings.h
-include/geany/main.h
 include/geany/msgwindow.h
 include/geany/plugindata.h
-include/geany/pluginmacros.h
-include/geany/plugins.h
 include/geany/prefs.h
 include/geany/project.h
 include/geany/scintilla/SciLexer.h
 include/geany/scintilla/Scintilla.h
 include/geany/scintilla/Scintilla.iface
 include/geany/scintilla/ScintillaWidget.h
-include/geany/sciwrappers.h
 include/geany/search.h
+include/geany/stash.h
 include/geany/support.h
 include/geany/tagmanager/tm_file_entry.h
 include/geany/tagmanager/tm_project.h
@@ -68,12 +64,14 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%PORTDOCS%%%%DOCSDIR%%/ScintillaLicense.txt
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/html/images/build_menu_commands_dialog.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/find_dialog.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/find_in_files_dialog.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/main_window.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_edit_completions.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_edit_display.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_edit_indentation.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_edit_features.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_edit_indentation.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_files.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_gen_misc.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_gen_startup.png
@@ -89,6 +87,8 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt
 %%DATADIR%%/GPL-2
 %%DATADIR%%/filetype_extensions.conf
+%%DATADIR%%/filetypes.Genie.conf
+%%DATADIR%%/filetypes.abc
 %%DATADIR%%/filetypes.actionscript
 %%DATADIR%%/filetypes.ada
 %%DATADIR%%/filetypes.asm
@@ -116,6 +116,7 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%DATADIR%%/filetypes.latex
 %%DATADIR%%/filetypes.lua
 %%DATADIR%%/filetypes.makefile
+%%DATADIR%%/filetypes.markdown
 %%DATADIR%%/filetypes.matlab
 %%DATADIR%%/filetypes.nsis
 %%DATADIR%%/filetypes.pascal
@@ -129,18 +130,30 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%DATADIR%%/filetypes.sh
 %%DATADIR%%/filetypes.sql
 %%DATADIR%%/filetypes.tcl
+%%DATADIR%%/filetypes.txt2tags
 %%DATADIR%%/filetypes.vala
+%%DATADIR%%/filetypes.verilog
 %%DATADIR%%/filetypes.vhdl
 %%DATADIR%%/filetypes.xml
 %%DATADIR%%/filetypes.yaml
 %%DATADIR%%/c99.tags
 %%DATADIR%%/html_entities.tags
-%%DATADIR%%/latex.tags
 %%DATADIR%%/pascal.tags
 %%DATADIR%%/php.tags
 %%DATADIR%%/python.tags
 %%DATADIR%%/snippets.conf
 %%DATADIR%%/ui_toolbar.xml
+%%DATADIR%%/templates/files/file.html
+%%DATADIR%%/templates/files/file.php
+%%DATADIR%%/templates/files/file.rb
+%%DATADIR%%/templates/files/file.tex
+%%DATADIR%%/templates/files/main.c
+%%DATADIR%%/templates/files/main.cxx
+%%DATADIR%%/templates/files/main.d
+%%DATADIR%%/templates/files/main.java
+%%DATADIR%%/templates/files/main.py
+%%DATADIR%%/templates/files/program.pas
+%%NLS%%share/locale/ast/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/be/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/geany.mo
@@ -151,6 +164,7 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%NLS%%share/locale/es/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/it/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/geany.mo
@@ -158,8 +172,8 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%NLS%%share/locale/lb/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/geany.mo
-%%NLS%%share/locale/pt_PT/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/geany.mo
@@ -172,18 +186,12 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%NLS%%@dirrmtry share/locale/lb/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/lb
 @dirrm lib/geany
+@dirrm %%DATADIR%%/templates/files
+@dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 @dirrmtry share/applications
 @dirrm include/geany/tagmanager
 @dirrm include/geany/scintilla
