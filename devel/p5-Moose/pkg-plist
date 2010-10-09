@@ -53,12 +53,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Manual/Unsweetened.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Attribute.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Attribute/Native.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Attribute/Native/MethodProvider/Array.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Attribute/Native/MethodProvider/Bool.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Attribute/Native/MethodProvider/Code.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Attribute/Native/MethodProvider/Counter.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Attribute/Native/MethodProvider/Hash.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Attribute/Native/MethodProvider/String.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Attribute/Native/Trait.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Attribute/Native/Trait/Array.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Attribute/Native/Trait/Bool.pm
@@ -71,11 +65,86 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Class/Immutable/Trait.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Instance.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/natatime.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/set.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/sort.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/map.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/elements.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/join.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/shift.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/reduce.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/count.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/splice.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/grep.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/clear.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/uniq.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/accessor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/get.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/insert.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/is_empty.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/shuffle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/push.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/first.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/Writer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/delete.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/unshift.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/sort_in_place.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/pop.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Bool/set.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Bool/not.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Bool/toggle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Bool/unset.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Code/execute_method.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Code/execute.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Counter/dec.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Counter/reset.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Counter/Writer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Counter/inc.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Counter/set.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/Writer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/values.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/elements.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/clear.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/keys.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/set.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/count.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/delete.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/kv.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/accessor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/is_empty.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/exists.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/get.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/defined.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Number/abs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Number/mod.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Number/mul.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Number/sub.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Number/set.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Number/div.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Number/add.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/String/clear.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/String/append.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/String/chop.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/String/prepend.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/String/match.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/String/chomp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/String/inc.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/String/length.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/String/replace.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/String/substr.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Writer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Collection.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Reader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Augmented.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Constructor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Delegation.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Destructor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Meta.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Object/Trait.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Overridden.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Mixin/AttributeCore.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Role.pm
@@ -123,7 +192,17 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Role/Method
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Role/Application
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Role
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Object
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Mixin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Bool
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Code
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Counter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Number
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/String
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Class/Immutable
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Class
