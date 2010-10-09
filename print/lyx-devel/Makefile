@@ -6,26 +6,31 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	${MAJOR_VERSION}.7
+PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}.a6
 CATEGORIES=	print editors
-MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
-		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/${MAJOR_VERSION}.x/ \
-		ftp://gd.tuwien.ac.at/publishing/tex/lyx/stable/${MAJOR_VERSION}.x/ \
-		ftp://ftp.ntua.gr/pub/X11/LyX/stable/${MAJOR_VERSION}.x/ \
-		http://sunsite.icm.edu.pl/pub/unix/editors/lyx/stable/${MAJOR_VERSION}.x/ \
-		ftp://ftp.chg.ru/pub/X11/lyx/stable/${MAJOR_VERSION}.x/
+MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/devel/${PORTNAME}-${MAJOR_VERSION}/${PRERELEASE}/ \
+		http://www-ftp.lip6.fr/ftp/pub/lyx/devel/${PORTNAME}-${MAJOR_VERSION}/${PRERELEASE}/ \
+		ftp://gd.tuwien.ac.at/publishing/tex/lyx/devel/${PORTNAME}-${MAJOR_VERSION}/${PRERELEASE}/ \
+		ftp://ftp.ntua.gr/pub/X11/LyX/devel/${PORTNAME}-${MAJOR_VERSION}/${PRERELEASE}/ \
+		http://sunsite.icm.edu.pl/pub/unix/editors/lyx/devel/${PORTNAME}-${MAJOR_VERSION}/${PRERELEASE}/ \
+		ftp://ftp.chg.ru/pub/X11/lyx/devel/${PORTNAME}-${MAJOR_VERSION}/${PRERELEASE}/
+PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-${MAJOR_VERSION}.${MINOR_VERSION}${PRERELEASE}
 
 MAINTAINER=	aldis@bsdroot.lv
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG) (stable)
 
 LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs
 
+CONFLICTS=	lyx-1.[0-9]*
+MAJOR_VERSION=	2.0
+MINOR_VERSION=	0
+PRERELEASE=	alpha6
+
 LICENSE=	GPLv2
+CONFLICTS=	lyx-1.[0-9]*
 
-CONFLICTS=	lyx-1.4*
-MAJOR_VERSION=	1.6
-
-USE_BZIP=	yes
+USE_XZ=		yes
 USE_GMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui moc_build uic_build rcc_build
