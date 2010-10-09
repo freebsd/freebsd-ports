@@ -13,6 +13,8 @@ MASTER_SITES=	GNU
 MAINTAINER=	howeyc@gmail.com
 COMMENT=	GNU parallel is a shell tool for executing jobs in parallel
 
+CONFLICTS=	moreutils-[0-9]*
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datarootdir="${PREFIX}"\
 				--docdir="${PREFIX}/share/doc/${PORTNAME}"
