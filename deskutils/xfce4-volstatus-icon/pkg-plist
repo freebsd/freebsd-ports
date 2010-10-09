@@ -1,0 +1,16 @@
+bin/xfce4-volstatus-icon
+share/locale/en_GB/LC_MESSAGES/xfce4-volstatus-icon.mo
+share/locale/fr/LC_MESSAGES/xfce4-volstatus-icon.mo
+share/locale/hu/LC_MESSAGES/xfce4-volstatus-icon.mo
+share/locale/ja/LC_MESSAGES/xfce4-volstatus-icon.mo
+share/locale/pl/LC_MESSAGES/xfce4-volstatus-icon.mo
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ja/LC_MESSAGES
+@dirrmtry share/locale/ja
+@dirrmtry share/locale/hu/LC_MESSAGES
+@dirrmtry share/locale/hu
+@dirrmtry share/locale/fr/LC_MESSAGES
+@dirrmtry share/locale/fr
+@dirrmtry share/locale/en_GB/LC_MESSAGES
+@dirrmtry share/locale/en_GB

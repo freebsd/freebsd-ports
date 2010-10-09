@@ -1,0 +1,5 @@
+xfce4-volstatus-icon is a program that sits around and does nothing until 
+a removable device is inserted. It becomes an icon in the systray, which 
+allows you to unmount/eject this device.
+
+WWW:	http://goodies.xfce.org/projects/applications/xfce4-volstatus-icon
