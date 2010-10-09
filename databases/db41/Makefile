@@ -16,8 +16,8 @@ PKGNAMESUFFIX?=
 DISTNAME?=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
-PATCH_SITES=	http://www.oracle.com/technology/products/berkeley-db/db/update/${PORTVERSION}/
-PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2 patch.${PORTVERSION}.3
+#PATCH_SITES=	http://www.oracle.com/technology/products/berkeley-db/db/update/${PORTVERSION}/
+PATCHFILES=	patch.${PORTVERSION}.2
 PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 
 MAINTAINER=	mandree@FreeBSD.org
