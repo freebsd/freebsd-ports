@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yawp
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	deskutils kde
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	plasma-applet-
@@ -24,10 +24,5 @@ MAKE_JOBS_SAFE=	yes
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE-GPL2
-
-post-patch:
-	${ECHO_CMD} >> ${WRKSRC}/applet/utils.h
-	${REINPLACE_CMD} -e 's|KDE_VERSION_MINOR == 4|KDE_VERSION_MINOR >= 4|g' \
-		`find ${WRKSRC} -name "*.h" -or -name "*.cpp"`
 
 .include <bsd.port.mk>
