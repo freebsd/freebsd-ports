@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	corky1951@comcast.net
 COMMENT=	Additional Unix utilities
 
+CONFLICTS=	parallel-[0-9]*
+
 USE_PERL5=	yes
 
 PLIST_FILES=	bin/combine \
