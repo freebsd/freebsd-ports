@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Types/.packlist
+%%SITE_PERL%%/POEx/Types.pm
+@dirrmtry %%SITE_PERL%%/POEx
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Types
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx
