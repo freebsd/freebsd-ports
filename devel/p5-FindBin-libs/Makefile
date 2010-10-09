@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	FindBin-libs
-PORTVERSION=	1.4200
+PORTVERSION=	1.5100
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to locate and use lib directories
