@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dvtm
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.brain-dump.org/projects/dvtm/
 
