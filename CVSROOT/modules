@@ -1804,6 +1804,7 @@ comix                           ports/graphics/comix
 commonclipse                    ports/java/commonclipse
 commoncpp                       ports/devel/commoncpp
 commonist                       ports/www/commonist
+commons-utilities               ports/graphics/commons-utilities
 compaq-cc                       ports/lang/compaq-cc
 compat3x                        ports/misc/compat3x
 compat4x                        ports/misc/compat4x
@@ -4930,6 +4931,7 @@ gpt31                           ports/misc/gpt31
 gpte                            ports/sysutils/gpte
 gputils                         ports/devel/gputils
 gpxe                            ports/net/gpxe
+gpxloggerd                      ports/astro/gpxloggerd
 gq                              ports/net/gq
 gqlplus                         ports/databases/gqlplus
 gqmpeg                          ports/audio/gqmpeg
@@ -12369,6 +12371,7 @@ p5-HTML-Clean                   ports/www/p5-HTML-Clean
 p5-HTML-ContentExtractor        ports/www/p5-HTML-ContentExtractor
 p5-HTML-Copy                    ports/textproc/p5-HTML-Copy
 p5-HTML-DOM                     ports/www/p5-HTML-DOM
+p5-HTML-Declare                 ports/www/p5-HTML-Declare
 p5-HTML-Diff                    ports/www/p5-HTML-Diff
 p5-HTML-Display                 ports/www/p5-HTML-Display
 p5-HTML-Element-Extended        ports/www/p5-HTML-Element-Extended
@@ -13287,6 +13290,7 @@ p5-Net-SinFP                    ports/security/p5-Net-SinFP
 p5-Net-Stomp                    ports/net-im/p5-Net-Stomp
 p5-Net-Subnets                  ports/net/p5-Net-Subnets
 p5-Net-TCLink                   ports/net/p5-Net-TCLink
+p5-Net-TcpDumpLog               ports/net/p5-Net-TcpDumpLog
 p5-Net-Telnet                   ports/net/p5-Net-Telnet
 p5-Net-Telnet-Cisco-IOS         ports/net-mgmt/p5-Net-Telnet-Cisco-IOS
 p5-Net-Telnet-Netscreen         ports/net/p5-Net-Telnet-Netscreen
@@ -13355,6 +13359,7 @@ p5-Object-Enum                  ports/devel/p5-Object-Enum
 p5-Object-Event                 ports/devel/p5-Object-Event
 p5-Object-InsideOut             ports/devel/p5-Object-InsideOut
 p5-Object-MultiType             ports/devel/p5-Object-MultiType
+p5-Object-Pluggable             ports/devel/p5-Object-Pluggable
 p5-Object-Realize-Later         ports/devel/p5-Object-Realize-Later
 p5-Object-Signature             ports/devel/p5-Object-Signature
 p5-Object-Simple                ports/devel/p5-Object-Simple
@@ -16322,6 +16327,7 @@ p5-html-clean                   ports/www/p5-HTML-Clean
 p5-html-contentextractor        ports/www/p5-HTML-ContentExtractor
 p5-html-copy                    ports/textproc/p5-HTML-Copy
 p5-html-ctpp2                   ports/textproc/p5-HTML-CTPP2
+p5-html-declare                 ports/www/p5-HTML-Declare
 p5-html-diff                    ports/www/p5-HTML-Diff
 p5-html-display                 ports/www/p5-HTML-Display
 p5-html-dom                     ports/www/p5-HTML-DOM
@@ -17241,6 +17247,7 @@ p5-net-ssleay                   ports/security/p5-Net-SSLeay
 p5-net-stomp                    ports/net-im/p5-Net-Stomp
 p5-net-subnets                  ports/net/p5-Net-Subnets
 p5-net-tclink                   ports/net/p5-Net-TCLink
+p5-net-tcpdumplog               ports/net/p5-Net-TcpDumpLog
 p5-net-telnet                   ports/net/p5-Net-Telnet
 p5-net-telnet-cisco-ios         ports/net-mgmt/p5-Net-Telnet-Cisco-IOS
 p5-net-telnet-netscreen         ports/net/p5-Net-Telnet-Netscreen
@@ -17307,6 +17314,7 @@ p5-object-enum                  ports/devel/p5-Object-Enum
 p5-object-event                 ports/devel/p5-Object-Event
 p5-object-insideout             ports/devel/p5-Object-InsideOut
 p5-object-multitype             ports/devel/p5-Object-MultiType
+p5-object-pluggable             ports/devel/p5-Object-Pluggable
 p5-object-realize-later         ports/devel/p5-Object-Realize-Later
 p5-object-signature             ports/devel/p5-Object-Signature
 p5-object-simple                ports/devel/p5-Object-Simple
