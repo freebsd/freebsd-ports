@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-TCP
-PORTVERSION=	1.04
+PORTVERSION=	1.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for testing TCP program
 
 RUN_DEPENDS=	\
-	p5-Test-SharedFork>=0.12:${PORTSDIR}/devel/p5-Test-SharedFork
+	p5-Test-SharedFork>=0.14:${PORTSDIR}/devel/p5-Test-SharedFork
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
