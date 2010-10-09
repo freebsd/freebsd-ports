@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 lib/hyena/Hyena.dll
+lib/hyena/Hyena.dll.config
 lib/hyena/Hyena.dll.mdb
 lib/hyena/Mono.Data.Sqlite.dll
 lib/hyena/Mono.Data.Sqlite.dll.mdb
