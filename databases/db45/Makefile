@@ -36,6 +36,7 @@ CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 --enable-cxx \
 		--includedir=${PREFIX}/include/${PORTNAME} \
 		--libdir=${PREFIX}/lib/${PORTNAME} \
 		--bindir=${PREFIX}/bin/${PORTNAME}
+DEBUG_FLAGS=	-g -O1 # need -O1 for inline assembly
 CONFIGURE_SCRIPT=	../dist/configure
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
