@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/../../authors/id/D/DR/DROLSKY
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A complete modern object system for Perl 5
 
 BUILD_DEPENDS=	\
-	p5-Class-MOP>=1.05:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Class-MOP>=1.09:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-Package-DeprecationManager>=0.04:${PORTSDIR}/devel/p5-Package-DeprecationManager \
 	p5-List-MoreUtils>=0.12:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Sub-Exporter>=0.980:${PORTSDIR}/devel/p5-Sub-Exporter \
@@ -85,12 +85,6 @@ MAN3=	Moose.3 \
 	Moose::Manual::Unsweetened.3 \
 	Moose::Meta::Attribute.3 \
 	Moose::Meta::Attribute::Native.3 \
-	Moose::Meta::Attribute::Native::MethodProvider::Array.3 \
-	Moose::Meta::Attribute::Native::MethodProvider::Bool.3 \
-	Moose::Meta::Attribute::Native::MethodProvider::Code.3 \
-	Moose::Meta::Attribute::Native::MethodProvider::Counter.3 \
-	Moose::Meta::Attribute::Native::MethodProvider::Hash.3 \
-	Moose::Meta::Attribute::Native::MethodProvider::String.3 \
 	Moose::Meta::Attribute::Native::Trait.3 \
 	Moose::Meta::Attribute::Native::Trait::Array.3 \
 	Moose::Meta::Attribute::Native::Trait::Bool.3 \
@@ -108,8 +102,10 @@ MAN3=	Moose.3 \
 	Moose::Meta::Method::Constructor.3 \
 	Moose::Meta::Method::Delegation.3 \
 	Moose::Meta::Method::Destructor.3 \
+	Moose::Meta::Method::Meta.3 \
 	Moose::Meta::Method::Overridden.3 \
 	Moose::Meta::Mixin::AttributeCore.3 \
+	Moose::Meta::Object::Trait.3 \
 	Moose::Meta::Role.3 \
 	Moose::Meta::Role::Application.3 \
 	Moose::Meta::Role::Application::RoleSummation.3 \
