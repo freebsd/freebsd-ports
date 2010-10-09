@@ -1,0 +1,24 @@
+diff -r 3ff2556caa01 src/configure
+--- configure	Sat Sep 25 08:32:10 2010 +0200
++++ configure	Sat Sep 25 16:16:33 2010 +0200
+@@ -5159,8 +5159,9 @@
+   if test X$QMAKE = X ; then
+      QMAKE=qmake
+   fi
+-
+-  # Extract the first word of "$QMAKE", so it can be a program name with args.
++  case $QMAKE in
++    */*) QMAKEPATH=$QMAKE;;
++    *) # Extract the first word of "$QMAKE", so it can be a program name with args.
+ set dummy $QMAKE; ac_word=$2
+ { $as_echo "$as_me:$LINENO: checking for $ac_word" >&5
+ $as_echo_n "checking for $ac_word... " >&6; }
+@@ -5200,6 +5201,8 @@
+ $as_echo "no" >&6; }
+ fi
+
++;;
++  esac
+
+   if test X$QMAKEPATH = XNOTFOUND ; then
+      { { $as_echo "$as_me:$LINENO: error: Cannot find the qmake
