@@ -2947,6 +2947,6 @@ share/pixmaps/xcas.xpm
 @dirrm share/doc/giac/Exemples/analyse
 @dirrm share/doc/giac/Exemples
 @dirrm share/doc/giac
-@dirrm share/applications
-@dirrm share/application-registry
+@dirrmtry share/applications
+@dirrmtry share/application-registry
 @dirrm include/giac
