@@ -2,5 +2,6 @@ bin/vroom
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Vroom/.packlist
 %%SITE_PERL%%/Vroom.pm
 %%SITE_PERL%%/Vroom/Vroom.pm
+%%SITE_PERL%%/Vroom/OO.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Vroom
 @dirrm %%SITE_PERL%%/Vroom
