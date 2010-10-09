@@ -1,9 +1,13 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/HTML/FormFu/Constraint/DBIC/Unique.pm
 %%SITE_PERL%%/HTML/FormFu/Model/DBIC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu/Model/DBIC/.packlist
-@dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu/Model/DBIC
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu/Model/DBIC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu/Model
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint/DBIC
+@dirrmtry %%SITE_PERL%%/HTML/FormFu/Constraint
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Model
 @dirrmtry %%SITE_PERL%%/HTML/FormFu
 @dirrmtry %%SITE_PERL%%/HTML
