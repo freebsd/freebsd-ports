@@ -1,4 +1,4 @@
-# New ports collection makefile for:	svgalib
+# New ports collection makefile for:	SVGAlib
 # Date created:				24 August 2000
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
@@ -7,22 +7,27 @@
 
 PORTNAME=	svgalib
 PORTVERSION=	1.4.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.svgalib.org/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low level console graphics library
 
+ONLY_FOR_ARCHS=	i386 amd64
+
+USE_DOS2UNIX=	utils/gtf/gtf.h utils/gtf/scitech.h
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MANCOMPRESSED=	yes
 
 ALL_TARGET=	shared static
 
-ONLY_FOR_ARCHS=	i386
-
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+MAKE_ENV=	NO_ASM=y
+.endif
 
 .for i in 1 2 3 4 5 6 7 8 9
 .if exists(${FILESDIR}/man${i})
@@ -30,19 +35,22 @@ MAN${i}!=	${CAT} ${FILESDIR}/man${i}
 .endif
 .endfor
 
-pre-patch: .SILENT
-	for file in ${WRKSRC}/utils/gtf/*.h; do \
-		${TR} -d '\015' < $${file} > $${file}.new; \
-		${MV} $${file}.new $${file}; \
-	done
+post-patch: .SILENT
 	${MKDIR} ${WRKSRC}/include/linux
-	# Fix for GCC 4.1
-	${REINPLACE_CMD} '30d' ${WRKSRC}/src/vgabg.h
+# Fix for GCC 4.1
+	${REINPLACE_CMD} -e '30d' ${WRKSRC}/src/vgabg.h
 	${REINPLACE_CMD} -e 's,^   (unsigned [[:alpha:]]*),,' \
 		${WRKSRC}/src/apm.c
+# Allow to build on !i386
+	${REINPLACE_CMD} -e '29,36s,def __alpha__, defined(NO_ASSEMBLY),' \
+		${WRKSRC}/src/vgapix.c ${WRKSRC}/gl/driver.c
+# 024_vesa_not_print_crap.patch from Debian
+	${REINPLACE_CMD} -e '/^printf/d' ${WRKSRC}/src/vesa.c
+# Clean up after typo fixes in manpages
+	${FIND} ${WRKSRC}/doc -type f -name '*.[57].orig' -delete
 
 post-install:
-	${MKDIR} ${PREFIX}/include/linux
+	@${MKDIR} ${PREFIX}/include/linux
 	cd ${WRKSRC}/include/linux && \
 		${INSTALL_DATA} keyboard.h kd.h ${PREFIX}/include/linux
 

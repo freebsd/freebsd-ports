@@ -1,0 +1,56 @@
+--- src/libvga.h.orig
++++ src/libvga.h
+@@ -303,8 +303,8 @@ static __inline__ void port_outw(int val
+ 
+ static __inline__ void port_outl(int value, int port)
+ {
+-    __asm__ volatile ("outl %0,%1"
+-             ::"a" ((unsigned long)value), "d" ((unsigned short) port));
++    __asm__ volatile ("outl %0,%w1"
++             ::"a" ((unsigned int)value), "Nd" ((unsigned short) port));
+ }
+ 
+ static __inline__ int port_in(int port)
+@@ -328,9 +328,9 @@ static __inline__ int port_inw(int port)
+ static __inline__ int port_inl(int port)
+ {
+     unsigned int value;
+-    __asm__ volatile("inl %1,%0" :
++    __asm__ volatile("inl %w1,%0" :
+                	     "=a" (value) :
+-                     "d" ((unsigned short)port));
++                     "Nd" ((unsigned short)port));
+     return value;
+ }
+ 
+--- gl/inlstring.h.orig
++++ gl/inlstring.h
+@@ -98,7 +98,7 @@ static inline void *
+ 	       "cmpl $12,%%edx\n\t"
+ 	       "jl 1f\n\t"	/* if (count >= 12) */
+ 
+-	       "movzbl %%al,%%ax\n\t"
++	       "movzbl %%al,%%eax\n\t"
+ 	       "movl %%eax,%%ecx\n\t"
+ 	       "shll $8,%%ecx\n\t"	/* c |= c << 8 */
+ 	       "orl %%ecx,%%eax\n\t"
+@@ -236,7 +236,7 @@ static inline void *
+ 	       "cmpl $0,%%edx\n\t"	/* none left? */
+ 	       "jle 4f\n\t"	/* finished */
+ 
+-	       "mov %%ecx,%%eax\n\t"
++	       "movl %%ecx,%%eax\n\t"
+ 	       "shrl $8,%%ecx\n\t"	/* R in cl */
+ 
+ 	       "3:\n\t"		/* write last few pixels */
+--- gl/mem.S.orig
++++ gl/mem.S
+@@ -76,7 +76,7 @@ ENTRY(memcpy4to3)
+ 	jz 4f			/* none left */
+ 
+ 3:	movl (%esi),%eax
+-	movw %eax,(%edi)
++	movw %ax,(%edi)
+ 	shrl $16,%eax
+ 	movb %al,2(%edi)
+ 	addl $4,%esi
