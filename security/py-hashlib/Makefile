@@ -17,6 +17,8 @@ USE_PYTHON=	-2.4
 USE_OPENSSL=	yes
 USE_PYDISTUTILS=	yes
 
+FETCH_ARGS=	-pRr
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 250
