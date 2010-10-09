@@ -23,7 +23,7 @@ CONFLICTS=	cppunit*
 
 EXTRATC_ONLY?=	${OOOSRC} ${OOOEXTSRC}
 
-OOOEXTSRC=	ext_sources.20100718.tar.bz2:extsrc
+OOOEXTSRC=	ext_sources.20101009.tar.bz2:extsrc
 
 .if defined(CWS)
 PORTNAME:=	openoffice.org-${CWS}
@@ -79,11 +79,11 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 .endif
 
-MILESTONE?=		88
+MILESTONE?=		89
 OOOTAG?=		DEV300_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20100922
+SNAPDATE=		20101008
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org3
@@ -157,7 +157,6 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--enable-wiki-publisher				\
 			--enable-report-builder				\
 			--disable-gstreamer				\
-			--with-use-shell=bash				\
 			--with-vendor="FreeBSD ports system"
 #disable-gstreamer: simple build fix req'ed
 OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
