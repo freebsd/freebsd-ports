@@ -1,11 +1,11 @@
---- wscript.old	2010-05-25 15:01:05.352982411 +0300
-+++ wscript	2010-05-25 15:01:18.726007753 +0300
-@@ -95,7 +95,7 @@
+--- ./wscript.orig	2010-06-10 19:46:27.000000000 +0300
++++ ./wscript	2010-09-21 08:36:25.926749379 +0300
+@@ -99,7 +99,7 @@
  		 [ 'geanylua/geanylua.c' ], # the other source files are listed in build_lua()
  		 [ 'geanylua' ],
  		 # maybe you need to modify the package name of Lua, try one of these: lua5.1 lua51 lua-5.1
--		 [ [ 'lua', '5.1', True ] ])
-+		 [ [ 'lua-5.1', '5.1', True ] ])
- ]
- 
- '''
+-		 [ [ 'lua', '5.1', True ] ]),
++		 [ [ 'lua-5.1', '5.1', True ] ]),
+ 	Plugin('GeanyPrj', None, [ 'geanyprj/src' ]),
+ 	Plugin('Pretty-Printer', None, [ 'pretty-printer/src' ], [ [ 'libxml-2.0', '2.6.27', True ] ]),
+ 	Plugin('TreeBrowser', None, [ 'treebrowser/src' ], [ [ 'gio-2.0', '2.16', False ] ])
