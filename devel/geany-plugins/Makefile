@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	geany-plugins
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	devel
 MASTER_SITES=	http://plugins.geany.org/geany-plugins/
 
-MAINTAINER=	aldis@bsdroot.lv
+MAINTAINER=	ar@null.lv
 COMMENT=	Plugins for lightwidth editor - geany
 
 BUILD_DEPENDS=	geany:${PORTSDIR}/devel/geany
@@ -23,7 +23,7 @@ USE_PYTHON_BUILD=	2.6+
 
 OPTIONS=	GEANY_ADDONS		"ADDONS" on \
 		GEANY_GEANYDOC		"GEANYDOC" on \
-		GEANY_GEANYGDB		"GDB support" on \
+		GEANY_GEANYGDB		"GDB support (broken)" off \
 		GEANY_GEANYLATEX	"Improve work with LaTeX" on \
 		GEANY_GEANYLIPSUM	"GEANYLIPSUM" on \
 		GEANY_GEANYLUA		"LUA support" on \
@@ -31,36 +31,71 @@ OPTIONS=	GEANY_ADDONS		"ADDONS" on \
 		GEANY_GEANYSENDMAIL	"Sending mail from geany" on \
 		GEANY_GEANYVC		"Version-control systems support" on \
 		GEANY_SHIFTCOLUMN	"SHIFTCOLUMN" on \
-		GEANY_SPELLCHECK	"Spellchecker support" on
+		GEANY_SPELLCHECK	"Spellchecker support" on \
+		GEANY_CODENAV		"Siwtch between header and source" on \
+		GEANY_INSERTNUM		"geanyinsertnum" on \
+		GEANY_GEANYEXTRASEL	"geanyextrasel" on \
+		GEANY_TREEBROWSER	"Tree Browser" on \
+		GEANY_PRETTYPRINTER	"Pretty-printer" on
 
 .include <bsd.port.pre.mk>
+PLUGINS=
+
+.if !defined(WITHOUT_GEANY_TREEBROWSER)
+BUILD_PLUGINS+=	,treebrowser
+PLUGINS+=	treebrowser.so
+.endif
+
+.if !defined(WITHOUT_GEANY_CODENAV)
+BUILD_PLUGINS+=	,codenav
+PLUGINS+=	codenav.so
+.endif
+
+.if !defined(WITHOUT_GEANY_INSERTNUM)
+BUILD_PLUGINS+=	,geanyinsertnum
+PLUGINS+=	geanyinsertnum.so
+.endif
+
+.if !defined(WITHOUT_GEANY_GEANYEXTRASEL)
+BUILD_PLUGINS+=	,geanyextrasel
+PLUGINS+=	geanyextrasel.so
+.endif
+
+.if !defined(WITHOUT_GEANY_PRETTYPRINTER)
+BUILD_PLUGINS+=	,pretty-printer
+PLUGINS+=	pretty-printer.so
+.endif
 
 .if !defined(WITHOUT_GEANY_GEANYDOC)
 BUILD_PLUGINS+=	,geanydoc
-PLIST_FILES+=	lib/geany/geanydoc.so
+PLUGINS+=	geanydoc.so
 .endif
 
 .if !defined(WITHOUT_GEANY_ADDONS)
 BUILD_PLUGINS+=	,addons
-PLIST_FILES+=	lib/geany/addons.so
+PLUGINS+=	addons.so
 .endif
 
 .if !defined(WITHOUT_GEANY_GEANYGDB)
+# handle geanygdb manually
+BROKEN=	geanygdb plugins doesn't work
 BUILD_PLUGINS+=	,geanygdb
-PLIST_FILES+=	lib/geany/geanygdb.so
+PLIST_FILES+=	lib/geany/geanygdb.so \
+		libexec/geany-plugins/geanygdb/ttyhelper
 .endif
 
 .if !defined(WITHOUT_GEANY_GEANYLATEX)
 BUILD_PLUGINS+=	,geanylatex
-PLIST_FILES+=	lib/geany/geanylatex.so
+PLUGINS+=	geanylatex.so
 .endif
 
 .if !defined(WITHOUT_GEANY_GEANYLIPSUM)
 BUILD_PLUGINS+=	,geanylipsum
-PLIST_FILES+=	lib/geany/geanylipsum.so
+PLUGINS+=	geanylipsum.so
 .endif
 
 .if !defined(WITHOUT_GEANY_GEANYLUA)
+# I will handle geanulua manually
 BUILD_PLUGINS+=	,geanylua
 USE_LUA=	5.1
 PLIST_FILES+=	lib/geany/geanylua.so \
@@ -107,29 +142,29 @@ PLIST_DIRS+=	lib/geany-plugins/geanylua \
 
 .if !defined(WITHOUT_GEANY_GEANYPRJ)
 BUILD_PLUGINS+=	,geanyprj
-PLIST_FILES+=	lib/geany/geanyprj.so
+PLUGINS+=	geanyprj.so
 .endif
 
 .if !defined(WITHOUT_GEANY_GEANYVC)
 BUILD_PLUGINS+=	,geanyvc
 LIB_DEPENDS+=	gtkspell:${PORTSDIR}/textproc/gtkspell
-PLIST_FILES+=	lib/geany/geanyvc.so
+PLUGINS+=	geanyvc.so
 .endif
 
 .if !defined(WITHOUT_GEANY_GEANYSENDMAIL)
 BUILD_PLUGINS+=	,geanysendmail
-PLIST_FILES+=	lib/geany/geanysendmail.so
+PLUGINS+=	geanysendmail.so
 .endif
 
 .if !defined(WITHOUT_GEANY_SHIFTCOLUMN)
 BUILD_PLUGINS+=	,shiftcolumn
-PLIST_FILES+=	lib/geany/shiftcolumn.so
+PLUGINS+=	shiftcolumn.so
 .endif
 
 .if !defined(WITHOUT_GEANY_SPELLCHECK)
 BUILD_PLUGINS+=	,spellcheck
 LIBDEPENS+=	enchant:${PORTSDIR}/textproc/enchant
-PLIST_FILES+=	lib/geany/spellcheck.so
+PLUGINS+=	spellcheck.so
 .endif
 
 .if !defined(BUILD_PLUGINS)
@@ -137,63 +172,40 @@ IGNORE=	no plugins selected
 .endif
 
 .if !defined(WITHOUT_NLS)
-PLIST_FILES+=	share/locale/be/LC_MESSAGES/geany-plugins.mo \
-		share/locale/de/LC_MESSAGES/geany-plugins.mo \
-		share/locale/es/LC_MESSAGES/geany-plugins.mo \
-		share/locale/pt_PT/LC_MESSAGES/geany-plugins.mo \
-		share/locale/ru/LC_MESSAGES/geany-plugins.mo \
-		share/locale/tr/LC_MESSAGES/geany-plugins.mo
+PO_FILES=	be ca da de es fr gl ja pt pt_BR ru tr zh_CN
+.for i in ${PO_FILES}
+PLIST_FILES+=	share/locale/${i}/LC_MESSAGES/geany-plugins.mo
+.endfor
 .endif
+
+.for i in ${PLUGINS}
+PLIST_FILES+=	lib/geany/${i}
+.endfor
 
 do-configure:
 	BUILD_PLUGINS=$(${ECHO} ${BUILD_PLUGINS} | ${SED} -e 's/^,//')
-	${WRKSRC}/waf configure --enable-plugins="${BUILD_PLUGINS}" -b ${WRKSRC}/_build_
+	@${WRKSRC}/waf configure --enable-plugins="${BUILD_PLUGINS}" -b ${WRKSRC}/_build_
 
 do-install:
-.if !defined(WITHOUT_GEANY_GEANYDOC)
-	${INSTALL_PROGRAM} ${WRKSRC}/_build_/default/geanydoc.so ${PREFIX}/lib/geany/geanydoc.so
-.endif
-.if !defined(WITHOUT_GEANY_ADDONS)
-	${INSTALL_PROGRAM} ${WRKSRC}/_build_/default/addons.so ${PREFIX}/lib/geany/addons.so
-.endif
+.for i in ${PLUGINS}
+	@${INSTALL_PROGRAM} ${WRKSRC}/_build_/default/${i} ${PREFIX}/lib/geany/
+.endfor
 .if !defined(WITHOUT_GEANY_GEANYGDB)
-	${INSTALL_PROGRAM} ${WRKSRC}/_build_/default/geanygdb.so ${PREFIX}/lib/geany/geanygdb.so
-.endif
-.if !defined(WITHOUT_GEANY_GEANYLATEX)
-	${INSTALL_PROGRAM} ${WRKSRC}/_build_/default/geanylatex.so ${PREFIX}/lib/geany/geanylatex.so
-.endif
-.if !defined(WITHOUT_GEANY_GEANYLIPSUM)
-	${INSTALL_PROGRAM} ${WRKSRC}/_build_/default/geanylipsum.so ${PREFIX}/lib/geany/geanylipsum.so
+	@${MKDIR} ${PREFIX}/libexec/geany-plugins/geanygdb
+	@${INSTALL_PROGRAM} ${WRKSRC}/_build_/default/geanygdb.so ${PREFIX}/lib/geany/
+	@${INSTALL_PROGRAM} ${WRKSRC}/_build_/default/ttyhelper ${PREFIX}/libexec/geany-plugins/geanygdb/
 .endif
 .if !defined(WITHOUT_GEANY_GEANYLUA)
-	${MKDIR} ${PREFIX}/lib/geany-plugins/geanylua
-	${INSTALL_PROGRAM} ${WRKSRC}/_build_/default/libgeanylua.so ${PREFIX}/lib/geany-plugins/geanylua/libgeanylua.so
-	${INSTALL_PROGRAM} ${WRKSRC}/_build_/default/geanylua.so ${PREFIX}/lib/geany/geanylua.so
-	(cd ${WRKSRC}/geanylua/examples/ && ${COPYTREE_SHARE} \* ${PREFIX}/share/geany-plugins/geanylua/ "! -name Makefile.in -and ! -name Makefile.am")
-	(cd ${WRKSRC}/geanylua/docs/ && ${COPYTREE_SHARE} \* ${PREFIX}/share/doc/geany-plugins/geanylua/ "! -name Makefile.in -and ! -name Makefile.am")
-.endif
-.if !defined(WITHOUT_GEANY_GEANYPRJ)
-	${INSTALL_PROGRAM} ${WRKSRC}/_build_/default/geanyprj.so ${PREFIX}/lib/geany/geanyprj.so
-.endif
-.if !defined(WITHOUT_GEANY_GEANYVC)
-	${INSTALL_PROGRAM} ${WRKSRC}/_build_/default/geanyvc.so ${PREFIX}/lib/geany/geanyvc.so
-.endif
-.if !defined(WITHOUT_GEANY_GEANYSENDMAIL)
-	${INSTALL_PROGRAM} ${WRKSRC}/_build_/default/geanysendmail.so ${PREFIX}/lib/geany/geanysendmail.so
-.endif
-.if !defined(WITHOUT_GEANY_SHIFTCOLUMN)
-	${INSTALL_PROGRAM} ${WRKSRC}/_build_/default/shiftcolumn.so ${PREFIX}/lib/geany/shiftcolumn.so
-.endif
-.if !defined(WITHOUT_GEANY_SPELLCHECK)
-	${INSTALL_PROGRAM} ${WRKSRC}/_build_/default/spellcheck.so ${PREFIX}/lib/geany/spellcheck.so
+	@${MKDIR} ${PREFIX}/lib/geany-plugins/geanylua
+	@${INSTALL_PROGRAM} ${WRKSRC}/_build_/default/libgeanylua.so ${PREFIX}/lib/geany-plugins/geanylua/
+	@${INSTALL_PROGRAM} ${WRKSRC}/_build_/default/geanylua.so ${PREFIX}/lib/geany/
+	@(cd ${WRKSRC}/geanylua/examples/ && ${COPYTREE_SHARE} \* ${PREFIX}/share/geany-plugins/geanylua/ "! -name Makefile.in -and ! -name Makefile.am")
+	@(cd ${WRKSRC}/geanylua/docs/ && ${COPYTREE_SHARE} \* ${PREFIX}/share/doc/geany-plugins/geanylua/ "! -name Makefile.in -and ! -name Makefile.am")
 .endif
 .if !defined(WITHOUT_NLS)
-	${INSTALL_DATA} ${WRKSRC}/_build_/default/po/be.mo ${PREFIX}/share/locale/be/LC_MESSAGES/geany-plugins.mo
-	${INSTALL_DATA} ${WRKSRC}/_build_/default/po/de.mo ${PREFIX}/share/locale/de/LC_MESSAGES/geany-plugins.mo
-	${INSTALL_DATA} ${WRKSRC}/_build_/default/po/es.mo ${PREFIX}/share/locale/es/LC_MESSAGES/geany-plugins.mo
-	${INSTALL_DATA} ${WRKSRC}/_build_/default/po/pt_PT.mo ${PREFIX}/share/locale/pt_PT/LC_MESSAGES/geany-plugins.mo
-	${INSTALL_DATA} ${WRKSRC}/_build_/default/po/ru.mo ${PREFIX}/share/locale/ru/LC_MESSAGES/geany-plugins.mo
-	${INSTALL_DATA} ${WRKSRC}/_build_/default/po/tr.mo ${PREFIX}/share/locale/tr/LC_MESSAGES/geany-plugins.mo
+.for i in ${PO_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/_build_/default/po/${i}.mo ${PREFIX}/share/locale/${i}/LC_MESSAGES/geany-plugins.mo
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
