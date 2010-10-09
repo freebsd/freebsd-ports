@@ -15,29 +15,14 @@ PKGNAMESUFFIX?=
 DISTNAME=	db-4.4.20
 DIST_SUBDIR=	bdb
 
-PATCH_SITES=	http://www.oracle.com/technology/products/berkeley-db/db/update/4.4.20/
-PATCHFILES=	patch.4.4.20.1 patch.4.4.20.2 patch.4.4.20.3 patch.4.4.20.4
-PATCH_DIST_STRIP=	-d ..
-# * patch.4.4.20.1: -----------------------------------------------------------
-# Fix a bug that could cause a trap during recovery if multiple operations that
-# could remove the same extent were recovered. [#14061]
-# * patch.4.4.20.2: -----------------------------------------------------------
-# Fix a bug that could cause traps or hangs if the DB_TXN->set_name function is
-# used in a multithreaded application. [#14033]
-# * patch.4.4.20.3: -----------------------------------------------------------
-# Fix a bug where cursor lookups on secondary databases with off-page
-# duplicates could fail. [#14240]
-# * patch.4.4.20.4: -----------------------------------------------------------
-# Fix a bug where cache buffer retrieval could race with a checkpoint
-# call, potentially causing database environment recovery to fail. [#14657]
-
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	The Berkeley DB package, revision 4.4
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
 USE_LDCONFIG=		yes
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=		yes
+DEBUG_FLAGS=		-g -O1	# need -O1 for inline assembly
 CONFIGURE_SCRIPT=	../dist/configure
 LIBTOOLFILES=		${CONFIGURE_SCRIPT}
 BDBVER=			${PORTVERSION:R:R}
