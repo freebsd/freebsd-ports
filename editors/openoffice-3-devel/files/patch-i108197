@@ -1,9 +1,9 @@
---- testtools/source/bridgetest/makefile.mk	2010-01-10 19:40:41.000000000 +0900
-+++ testtools/source/bridgetest/makefile.mk	2010-01-10 19:49:30.000000000 +0900
-@@ -143,8 +143,8 @@
- #################################################################
+--- testtools/source/bridgetest/makefile.mk.orig	2010-10-05 11:12:22.000000000 +0900
++++ testtools/source/bridgetest/makefile.mk	2010-10-09 15:05:22.000000000 +0900
+@@ -138,8 +138,8 @@
  
- runtest : $(DLLDEST)$/uno_types.rdb $(DLLDEST)$/uno_services.rdb makefile.mk
+ runtest : $(DLLDEST)$/uno_types.rdb $(DLLDEST)$/uno_services.rdb makefile.mk \
+         $(SHL1TARGETN) $(SHL2TARGETN) $(SHL3TARGETN)
 -.IF "$(COM)$(OS)$(CPU)" == "GCCMACOSXP"
 -	@echo "Mac OSX PPC GCC fails this test!, likely broken UNO bridge. Fix me."
 +.IF "$(COM)$(OS)$(CPU)" == "GCCMACOSXP" || "$(COM)$(OS)$(CPU)" == "GCCFREEBSDI"
