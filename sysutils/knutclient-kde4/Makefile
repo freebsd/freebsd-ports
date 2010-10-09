@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	knutclient
-PORTVERSION=	1.0.p1
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	sysutils kde
 MASTER_SITES=	ftp://ftp.buzuluk.cz/pub/alo/knutclient/stable/ \
 		http://www.vg.kernel.org/pub/mirrors/gentoo/source/distfiles/
-DISTNAME=	${PORTNAME}-${DIST_VER}
 
 MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	A visual client for UPS system NUT
 
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	qimageblitz.4:${PORTSDIR}/x11/qimageblitz
 
 USE_CMAKE=	yes
@@ -24,8 +23,5 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 LATEST_LINK=	knutclient-kde4
-
-DIST_VER=	${PORTVERSION:S/.0.p1/_0_KDE4_pre1/}
-WRKSRC=		${WRKDIR}/${PORTNAME}_${DIST_VER}
 
 .include <bsd.port.mk>
