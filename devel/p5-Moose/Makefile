@@ -18,6 +18,7 @@ BUILD_DEPENDS=	\
 	p5-Class-MOP>=1.09:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-Package-DeprecationManager>=0.04:${PORTSDIR}/devel/p5-Package-DeprecationManager \
 	p5-List-MoreUtils>=0.12:${PORTSDIR}/lang/p5-List-MoreUtils \
+	p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util \
 	p5-Sub-Exporter>=0.980:${PORTSDIR}/devel/p5-Sub-Exporter \
 	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 	p5-Try-Tiny>=0.02:${PORTSDIR}/lang/p5-Try-Tiny \
