@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.t3x.org/misc/
 MAINTAINER=	nmh@t3x.org
 COMMENT=	A portable Scheme interpreter with a Unix interface
 
-LICENSE=	public-domain
-
 WRKSRC=		${WRKDIR}/s9
 
 MAN1=		s9.1
