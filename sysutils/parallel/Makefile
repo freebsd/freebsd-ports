@@ -15,19 +15,18 @@ COMMENT=	GNU parallel is a shell tool for executing jobs in parallel
 
 CONFLICTS=	moreutils-[0-9]*
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--datarootdir="${PREFIX}"\
-				--docdir="${PREFIX}/share/doc/${PORTNAME}"
-
-MAN1=	parallel.1 sem.1 sql.1
-MANCOMPRESSED=	no
+CONFIGURE_ARGS=	--docdir="${DOCSDIR}"
+GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
 
+MAN1=		parallel.1 sem.1 sql.1
+PLIST_FILES=	bin/parallel bin/sem bin/sql
 PORTDOCS=	parallel.html sem.html sql.html
 
-PLIST_FILES=	bin/parallel \
-	bin/sem \
-	bin/sql
+post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-docDATA||' ${WRKSRC}/src/Makefile.in
+.endif
 
 .include <bsd.port.mk>
