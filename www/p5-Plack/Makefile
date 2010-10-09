@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack
-PORTVERSION=	0.9946
+PORTVERSION=	0.9950
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/MI/MIYAGAWA
@@ -112,5 +112,8 @@ MAN3=	HTTP::Message::PSGI.3 \
 	Plack::Test::Suite.3 \
 	Plack::Util.3 \
 	Plack::Util::Accessor.3
+
+post-extract:
+	${RM} ${WRKSRC}/share/\#foo
 
 .include <bsd.port.mk>
