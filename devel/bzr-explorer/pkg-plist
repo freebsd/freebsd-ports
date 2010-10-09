@@ -196,6 +196,7 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/en_GB/LC_MESSAGES/explorer.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/es/LC_MESSAGES/explorer.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/et/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/fa/LC_MESSAGES/explorer.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/fi/LC_MESSAGES/explorer.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/fr/LC_MESSAGES/explorer.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/gl/LC_MESSAGES/explorer.mo
@@ -209,6 +210,7 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/nl/LC_MESSAGES/explorer.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/oc/LC_MESSAGES/explorer.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/pl/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/pt/LC_MESSAGES/explorer.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/pt_BR/LC_MESSAGES/explorer.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ru/LC_MESSAGES/explorer.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/sk/LC_MESSAGES/explorer.mo
@@ -278,6 +280,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ru
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/pt_BR/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/pt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/pt
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/pl/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/pl
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/oc/LC_MESSAGES
@@ -304,6 +308,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/fr
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/fi/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/fi
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/fa/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/fa
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/et/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/et
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/es/LC_MESSAGES
@@ -360,5 +366,5 @@
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/clothes/Bazaar support
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/clothes
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer
-@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib
 @dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib
