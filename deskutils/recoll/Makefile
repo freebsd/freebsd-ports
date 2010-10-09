@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	recoll
-PORTVERSION=	1.13.04
-PORTREVISION=	1
+PORTVERSION=	1.14.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/recoll/
 
 MAINTAINER=	jf@dockes.org
 COMMENT=	A personal full text search package, based on QT and Xapian
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-LIB_DEPENDS=	xapian.[1-2][0-9]:${PORTSDIR}/databases/xapian-core \
-		qt-mt.3:${PORTSDIR}/x11-toolkits/qt33
+LIB_DEPENDS=	xapian.[1-2][0-9]:${PORTSDIR}/databases/xapian-core
 
-USE_QT_VER=	3
-CONFIGURE_ENV=	QMAKESPEC="freebsd-g++"
-MAKE_ENV=	${CONFIGURE_ENV}
+USE_QT_VER=	4
+QT_COMPONENTS=	gui qmake_build uic_build moc_build rcc_build \
+		qt3support uic3_build porting
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
