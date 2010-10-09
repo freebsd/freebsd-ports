@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	195.36.15
-PORTREVISION?=	1			# As a reminder it can be overridden
+DISTVERSION?=	256.53
+PORTREVISION?=	0			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
 ARCH_SUFX=	${ARCH:S/i386//:S/amd/_/}
@@ -152,6 +152,10 @@ post-install:
 .endif
 .if ${NVVERSION} < 1851829
 	@${REINPLACE_CMD} '/libcuda/d' ${TMPPLIST}
+.endif
+.if ${NVVERSION} >= 2565300
+	@${REINPLACE_CMD} -E 's/libGLcore/libnvidia-glcore/ ; \
+		/usr.*(glcore|tls).*so\.1$$/d' ${TMPPLIST}
 .endif
 # Some applications need this symlink (see PR ports/72877)
 	@${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
