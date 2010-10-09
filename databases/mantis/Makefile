@@ -7,6 +7,7 @@
 
 PORTNAME=	mantis
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}bt/${PORTNAME}-stable/${PORTVERSION}
 DISTNAME=	mantisbt-${PORTVERSION}
@@ -16,18 +17,15 @@ COMMENT=	A bug tracking system written in PHP
 
 NO_BUILD=	yes
 USE_MYSQL=	yes
-USE_PHP=	pcre
+USE_PHP=	hash pcre session
 
 SUB_FILES=	pkg-message
 
-pre-everything::
-	@${ECHO_CMD} ${DMSG}
-
 do-install:
 	@${ECHO} "Installing in WWWDIR: ${WWWDIR}"
-	${MKDIR} ${WWWDIR}
-	${CP} -R ${WRKSRC}/* ${WWWDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	${MKDIR} ${WWWDIR}/
+	${CP} -R ${WRKSRC}/* ${WWWDIR}/
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
