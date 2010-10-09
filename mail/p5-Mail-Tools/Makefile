@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Tools
-PORTVERSION=	2.06
+PORTVERSION=	2.07
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl5 modules for dealing with Internet e-mail messages
 
 RUN_DEPENDS=	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
 
