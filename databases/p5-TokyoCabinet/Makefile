@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	TokyoCabinet
-PORTVERSION=	1.33
+PORTVERSION=	1.34
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://1978th.net/tokyocabinet/perlpkg/
