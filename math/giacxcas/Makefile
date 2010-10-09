@@ -7,9 +7,10 @@
 
 PORTNAME=	giacxcas
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	http://people.math.jussieu.fr/~han/xcas/sources/ \
-		http://www.institut.math.jussieu.fr/~han/xcas/sources/
+MASTER_SITES=	ftp://ftp-fourier.ujf-grenoble.fr/xcas/freebsd/ \
+		http://people.math.jussieu.fr/~han/xcas/sources/rev1/
 DISTFILES=	fltkdev.tgz CoCoALib.tgz giac-${PORTVERSION}.tar.gz
 DIST_SUBDIR=	${PORTNAME}
 
@@ -18,7 +19,9 @@ COMMENT=	Computer algebra system by Bernard Parisse
 
 BUILD_DEPENDS=	hevea:${PORTSDIR}/textproc/hevea \
 		latex:${PORTSDIR}/print/teTeX-base \
-		dvips:${PORTSDIR}/print/dvipsk-tetex\
+		dvips:${PORTSDIR}/print/dvipsk-tetex \
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
+		gettext:${PORTSDIR}/devel/gettext \
 		${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
 PATCH_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
@@ -37,6 +40,13 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${FLTKDEV-GIAC} -I${COCOALIB-GIAC}/include -I${LOCALBASE}/include
 LDFLAGS+=	-L${FLTKDEV-GIAC}/lib -L${COCOALIB-GIAC}/lib -L${LOCALBASE}/lib
 CXXFLAGS+=	-I${LOCALBASE}/include
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CXXFLAGS+=	-DSMARTPTR64 -D_I386_ -fPIC
+.endif
+
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 WRKSRC=		${WRKDIR}/giac-${PORTVERSION}
@@ -57,4 +67,4 @@ pre-configure:
 	./configure --prefix=${FLTKDEV-GIAC} \
 	&& ${MAKE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
