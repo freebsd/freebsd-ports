@@ -25,6 +25,7 @@ COMMENT?=	XML parser library for GNOME
 
 .if !defined(REFERENCE_PORT)
 
+USE_CSTD=	gnu89
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_ICONV=	yes
