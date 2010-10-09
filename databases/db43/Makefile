@@ -15,10 +15,6 @@ MASTER_SITES=	http://download-west.oracle.com/berkeley-db/ \
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
-PATCH_SITES=	http://www.oracle.com/technology/products/berkeley-db/db/update/${PORTVERSION}/
-PATCHFILES=	patch.${PORTVERSION}.1
-PATCH_DIST_STRIP=	-d ..
-
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	The Berkeley DB package, revision 4.3
 
