@@ -28,8 +28,12 @@ MAKE_ENV=	INSTALL_DIR=${PREFIX}/astrometry
 MAKE_JOBS_UNSAFE=	yes
 SUB_FILES=	pkg-message
 
+.include <bsd.port.pre.mk>
+
 post-extract:
-	${CP} ${FILESDIR}/gnu-specific-config.h ${WRKSRC}/util/
+.if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
+	${CP} ${FILESDIR}/os-features-config.h ${WRKSRC}/util/
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
@@ -37,8 +41,6 @@ post-patch:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not build on sparc64
