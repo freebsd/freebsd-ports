@@ -20,7 +20,7 @@ COMMENT=	NVidia graphics card binary drivers for hardware OpenGL rendering
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 USE_GL=		gl
 USE_LDCONFIG=	yes
-SUB_FILES+=	pkg-message
+SUB_FILES=	pkg-message
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 MODULESDIR=	lib/xorg/modules
 PORTDOCS=	*
@@ -115,6 +115,12 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E 's/undef (NV_USE_WBINVD)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
 .endif
+	${REINPLACE_CMD} -e '/exists/s/$$/ \&\& !defined(WITHOUT_LINUX)/' \
+		${WRKSRC}/lib/Makefile
+.if ${NVVERSION} >= 1802900
+	@${REINPLACE_CMD} -e '/libvdpau[[:blank:]_][^n]/d ; \
+		s/name libvdpau/&_nvidia/' ${WRKSRC}/lib/Makefile
+.endif
 # Don't build any binaries (nvidia-settings and nvidia-xconfig) and manuals
 .if ${NVVERSION} < 974600 || ${NVVERSION} >= 1952200
 	${REINPLACE_CMD} -E 's/(extension).*/\1/' ${WRKSRC}/x11/Makefile
@@ -143,7 +149,6 @@ post-install:
 .endif
 .if ${NVVERSION} < 1802900
 	@${REINPLACE_CMD} '/vdpau/d' ${TMPPLIST}
-.else
 .endif
 .if ${NVVERSION} < 1851829
 	@${REINPLACE_CMD} '/libcuda/d' ${TMPPLIST}
