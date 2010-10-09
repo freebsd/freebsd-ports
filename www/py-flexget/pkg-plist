@@ -80,6 +80,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_thetvdb_favorites.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_thetvdb_favorites.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_thetvdb_favorites.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input_apple_trailers.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input_apple_trailers.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input_apple_trailers.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_backlog.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_backlog.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_backlog.pyo
@@ -257,6 +260,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_nzb_size.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_nzb_size.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_nzb_size.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_patch_kickasstorrents.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_patch_kickasstorrents.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_patch_kickasstorrents.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_torrent_size.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_torrent_size.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_torrent_size.pyo
