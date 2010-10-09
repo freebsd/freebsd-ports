@@ -22,7 +22,6 @@ COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG) (stable)
 
 LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs
 
-CONFLICTS=	lyx-1.[0-9]*
 MAJOR_VERSION=	2.0
 MINOR_VERSION=	0
 PRERELEASE=	alpha6
