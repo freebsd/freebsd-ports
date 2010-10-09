@@ -13,7 +13,7 @@ MASTER_SITES=	http://pessoal.org/papercut/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Papercut is a news server written in Python, using a MySQL backend
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
