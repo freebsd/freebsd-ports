@@ -2902,6 +2902,7 @@
     SUBDIR += pythontidy
     SUBDIR += qbzr
     SUBDIR += qca
+    SUBDIR += qconf
     SUBDIR += qct
     SUBDIR += qdevelop
     SUBDIR += qgit
