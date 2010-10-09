@@ -1,0 +1,11 @@
+bin/qconf
+%%DATADIR%%/conf/conf.cpp
+%%DATADIR%%/conf/conf.pro
+%%DATADIR%%/conf/conf4.cpp
+%%DATADIR%%/conf/conf4.h
+%%DATADIR%%/conf/conf4.pro
+%%DATADIR%%/modules/qt31.qcm
+%%DATADIR%%/modules/qt41.qcm
+@dirrm %%DATADIR%%/modules
+@dirrm %%DATADIR%%/conf
+@dirrm %%DATADIR%%
