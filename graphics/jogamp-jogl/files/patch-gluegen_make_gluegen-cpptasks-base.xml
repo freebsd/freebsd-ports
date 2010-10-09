@@ -1,0 +1,13 @@
+--- gluegen/make/gluegen-cpptasks-base.xml.orig	2010-10-03 12:47:50.000000000 +0200
++++ gluegen/make/gluegen-cpptasks-base.xml	2010-10-03 12:48:27.000000000 +0200
+@@ -772,6 +772,10 @@
+     <linker id="linker.cfg.hpux" name="aCC">
+     </linker>
+ 
++    <linker id="linker.cfg.freebsd" name="gcc">
++      <linkerarg value="-m32"/>
++    </linker>
++
+     <linker id="linker.cfg.freebsd.x86" name="gcc">
+       <linkerarg value="-m32"/>
+     </linker>
