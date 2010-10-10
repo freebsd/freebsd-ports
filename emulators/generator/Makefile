@@ -37,18 +37,6 @@ PLIST_FILES=	bin/${PORTNAME}-gtk
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "amd64" && ${ARCH} != "i386"
-post-patch:
-# These architectures do not support "-minline-all-stringops"
-	@${REINPLACE_CMD} -e 's|-minline-all-stringops||g' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.   if ${ARCH} == "alpha"
-# "-ffast-math" does not work on alpha
-	@${REINPLACE_CMD} -e 's|-ffast-math||g' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.   endif
-.endif
-
 .if !defined(WITHOUT_OPTIMIZED_CFLAGS)
 CONFIGURE_ARGS+=--with-gcc=3
 .else
@@ -67,6 +55,16 @@ CONFIGURE_ARGS+=--with-sdl-audio
 .endif
 
 post-patch:
+.if ${ARCH} != "amd64" && ${ARCH} != "i386"
+# These architectures do not support "-minline-all-stringops"
+	@${REINPLACE_CMD} -e 's|-minline-all-stringops||g' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.   if ${ARCH} == "alpha"
+# "-ffast-math" does not work on alpha
+	@${REINPLACE_CMD} -e 's|-ffast-math||g' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.   endif
+.endif
 	@${REINPLACE_CMD} -e '/%define %1 @UNDERSCORE@%1 /d' \
 		${WRKSRC}/raze/raze.asm.in
 
