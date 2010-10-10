@@ -20,8 +20,6 @@ BUILD_DEPENDS=	nagios-plugins>0:${PLUGINS} \
 		${EXTRA_DEPENDS} \
 		${NONEXISTENT}:${PLUGINS}:build
 
-BROKEN=		does not build
-
 PLIST_FILES=	libexec/nagios/${PORTNAME}
 
 FILE=		${PORTNAME}.c
@@ -45,6 +43,7 @@ do-build:
 		-o ${PORTNAME} \
 		$${NDIR}/plugins/netutils.o $${NDIR}/plugins/utils.o \
 		$${NDIR}/lib/utils_base.o $${NDIR}/gl/getopt.o $${NDIR}/gl/getopt1.o \
+		$${NDIR}/gl/sha1.o \
 		-L${LOCALBASE}/lib -lintl -lmemcache ${FILE}
 
 do-install:
