@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-MessagePack
-PORTVERSION=	0.16
+PORTVERSION=	0.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	--xs
 
 MAN3=	Data::MessagePack.3 \
+	Data::MessagePack::PP.3 \
 	Data::MessagePack::Unpacker.3
 
 .include <bsd.port.mk>
