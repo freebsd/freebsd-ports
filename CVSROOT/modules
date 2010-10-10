@@ -1615,6 +1615,8 @@ cl-babel-sbcl                   ports/converters/cl-babel-sbcl
 cl-cffi                         ports/devel/cl-cffi
 cl-cffi-clisp                   ports/devel/cl-cffi-clisp
 cl-cffi-sbcl                    ports/devel/cl-cffi-sbcl
+cl-clx                          ports/x11/cl-clx
+cl-clx-sbcl                     ports/x11/cl-clx-sbcl
 cl-infix                        ports/devel/cl-infix
 cl-infix-clisp                  ports/devel/cl-infix-clisp
 cl-infix-sbcl                   ports/devel/cl-infix-sbcl
@@ -8942,6 +8944,7 @@ lyntin                          ports/net/lyntin
 lynx                            ports/www/lynx
 lynx-current                    ports/www/lynx-current
 lyx                             ports/print/lyx
+lyx-devel                       ports/print/lyx-devel
 lyx14                           ports/print/lyx14
 lzip                            ports/archivers/lzip
 lzlib                           ports/archivers/lzlib
@@ -13475,6 +13478,7 @@ p5-POE-Stage                    ports/devel/p5-POE-Stage
 p5-POE-Test-Loops               ports/devel/p5-POE-Test-Loops
 p5-POE-XS-Loop-Poll             ports/devel/p5-POE-XS-Loop-Poll
 p5-POE-XS-Queue-Array           ports/devel/p5-POE-XS-Queue-Array
+p5-POEx-Types                   ports/devel/p5-POEx-Types
 p5-POSIX-Regex                  ports/textproc/p5-POSIX-Regex
 p5-POSIX-strptime               ports/devel/p5-POSIX-strptime
 p5-PPI                          ports/textproc/p5-PPI
@@ -17585,6 +17589,7 @@ p5-poe-stage                    ports/devel/p5-POE-Stage
 p5-poe-test-loops               ports/devel/p5-POE-Test-Loops
 p5-poe-xs-loop-poll             ports/devel/p5-POE-XS-Loop-Poll
 p5-poe-xs-queue-array           ports/devel/p5-POE-XS-Queue-Array
+p5-poex-types                   ports/devel/p5-POEx-Types
 p5-posix-regex                  ports/textproc/p5-POSIX-Regex
 p5-posix-strptime               ports/devel/p5-POSIX-strptime
 p5-postgresql-plperl            ports/databases/p5-postgresql-plperl
@@ -19904,6 +19909,7 @@ phyml                           ports/biology/phyml
 physcalc                        ports/math/physcalc
 physfs                          ports/devel/physfs
 physfs-devel                    ports/devel/physfs-devel
+pianobar                        ports/audio/pianobar
 pib                             ports/ports-mgmt/pib
 pic2fig                         ports/print/pic2fig
 picard                          ports/audio/picard
@@ -25895,6 +25901,7 @@ xfce4-timer-out-plugin          ports/x11-clocks/xfce4-timer-out-plugin
 xfce4-timer-plugin              ports/x11-clocks/xfce4-timer-plugin
 xfce4-utils                     ports/sysutils/xfce4-utils
 xfce4-verve-plugin              ports/x11/xfce4-verve-plugin
+xfce4-volstatus-icon            ports/deskutils/xfce4-volstatus-icon
 xfce4-wavelan-plugin            ports/sysutils/xfce4-wavelan-plugin
 xfce4-weather-plugin            ports/misc/xfce4-weather-plugin
 xfce4-wm                        ports/x11-wm/xfce4-wm
