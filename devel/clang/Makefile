@@ -7,7 +7,7 @@
 
 PORTNAME=	clang
 PORTVERSION=	2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
@@ -83,6 +83,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%DOCSRCDIR%%|${DOCSRCDIR}|' \
 	    ${WRKSRC}/Makefile ${WRKSRC}/tools/clang/Makefile
 	${REINPLACE_CMD} -e 's|/usr/bin/env perl|${PERL}|' \
+	    -e 's|%%DATADIR%%|${DATADIR}|' \
 	    ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
 	    ${WRKSRC}/tools/clang/tools/scan-build/c++-analyzer \
 	    ${WRKSRC}/tools/clang/tools/scan-build/scan-build
