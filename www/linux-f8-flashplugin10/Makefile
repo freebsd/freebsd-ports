@@ -7,6 +7,7 @@
 
 PORTNAME=	flashplugin
 PORTVERSION=	10.1r85
+PORTREVISION=	1
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/:plugin \
 		http://tijl.ulyssis.fm/mirror/:suplib LOCAL/pav:suplib
@@ -20,7 +21,7 @@ COMMENT=	Adobe Flash Player NPAPI Plugin
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
-USE_LINUX_APPS=	openssl curl libssh2 libidn nspr nss
+USE_LINUX_APPS=	openssl curl libssh2 libidn nspr nss gtk2
 
 RESTRICTED=	Redistribution not allowed
 RESTRICTED_FILES=	${DISTFILES:Nlinux-f8-flashsupport*:C/:[^:]+$//}
