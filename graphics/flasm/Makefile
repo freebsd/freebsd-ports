@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	flasm
-PORTVERSION=	1.52
-PORTREVISION=	1
+PORTVERSION=	1.62
 CATEGORIES=	graphics
-#MASTER_SITES=	http://www.nowrap.de/download/
-MASTER_SITES=	http://dist.bsdlab.org/
-DISTNAME=	flasm152src
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://www.nowrap.de/download/
+MASTER_SITE_SUBDIR=	kuriyama
+DISTNAME=	flasm16src
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Command line assembler/disassembler of flash actionscript bytecode
@@ -19,11 +19,12 @@ COMMENT=	Command line assembler/disassembler of flash actionscript bytecode
 PLIST_FILES=	bin/flasm
 USE_ZIP=	YES
 USE_GMAKE=	YES
+USE_DOS2UNIX=	YES
 USE_BISON=	build
 NO_WRKSUBDIR=	YES
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/flasm ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/flasm ${PREFIX}/bin
 
 .include <bsd.port.mk>
