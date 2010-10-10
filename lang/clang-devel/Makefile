@@ -7,6 +7,7 @@
 
 PORTNAME=	clang
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
@@ -28,8 +29,8 @@ WRKSRC=		${WRKDIR}/${LLVM_NAME}
 BUILD_WRKSRC=	${WRKSRC}/tools/clang
 INSTALL_WRKSRC=	${WRKSRC}/tools/clang
 
-BUILD_DEPENDS+=	llvm-as:${PORTSDIR}/devel/llvm
-RUN_DEPENDS+=	llvm-as:${PORTSDIR}/devel/llvm
+BUILD_DEPENDS+=	llvm>=${PORTVERSION}:${PORTSDIR}/devel/llvm
+RUN_DEPENDS+=	llvm>=${PORTVERSION}:${PORTSDIR}/devel/llvm
 .if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
@@ -88,9 +89,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|' \
 	    ${WRKSRC}/tools/clang/tools/scan-view/scan-view
 
-#@cd ${WRKSRC}/tools/clang && ${GMAKE} TBLGEN=/usr/local/bin/tblgen LLVM_OBJ_ROOT=/usr/local
-#do-build:
-#	@cd ${WRKSRC}/tools/clang && ${GMAKE} LLVMIncDir=/usr/local/include LLVMToolDir=/usr/local/bin LLVMLibDir=/usr/local/lib
+pre-build:
+	${LN} -s ${LOCALBASE}/include/llvm/Intrinsics.gen ${WRKSRC}/include/llvm/
 
 .if defined(NOPORTDOCS)
 post-build:
