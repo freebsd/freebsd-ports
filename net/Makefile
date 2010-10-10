@@ -680,6 +680,7 @@
     SUBDIR += p5-POE-Component-Pcap
     SUBDIR += p5-POE-Component-Server-Twirc
     SUBDIR += p5-POE-Component-Spread
+    SUBDIR += p5-POEx-Role-TCPServer
     SUBDIR += p5-Parallel-Pvm
     SUBDIR += p5-PlRPC
     SUBDIR += p5-Queue-Beanstalk
