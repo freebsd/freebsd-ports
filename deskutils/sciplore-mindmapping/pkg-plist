@@ -80,13 +80,10 @@ share/java/sciplore-mindmapping/lib/freemind.jar
 share/java/sciplore-mindmapping/lib/intellij/annotations.jar
 share/java/sciplore-mindmapping/lib/intellij/forms_rt.jar
 share/java/sciplore-mindmapping/lib/javabib-bin.jar
-share/java/sciplore-mindmapping/lib/jersey/jersey-client-1.1.0-ea.jar
 share/java/sciplore-mindmapping/lib/jersey/jersey-client-1.1.5.1.jar
-share/java/sciplore-mindmapping/lib/jersey/jersey-core-1.1.0-ea.jar
 share/java/sciplore-mindmapping/lib/jersey/jersey-core-1.1.5.1.jar
 share/java/sciplore-mindmapping/lib/jersey/jersey-multipart-1.1.5.1.jar
 share/java/sciplore-mindmapping/lib/jersey/jsr311-api-1.1.1.jar
-share/java/sciplore-mindmapping/lib/jersey/jsr311-api-1.1.jar
 share/java/sciplore-mindmapping/lib/jersey/mimepull-1.3.jar
 share/java/sciplore-mindmapping/lib/jibx/jibx-run.jar
 share/java/sciplore-mindmapping/lib/jibx/xpp3.jar
@@ -94,6 +91,8 @@ share/java/sciplore-mindmapping/lib/jpod/iscwt.jar
 share/java/sciplore-mindmapping/lib/jpod/isrt.jar
 share/java/sciplore-mindmapping/lib/jpod/jPod.jar
 share/java/sciplore-mindmapping/lib/jpod/jbig2.jar
+share/java/sciplore-mindmapping/lib/sciplore/SciPloreDBAccess.jar
+share/java/sciplore-mindmapping/license
 share/java/sciplore-mindmapping/license.txt
 share/java/sciplore-mindmapping/patterns.xml
 share/java/sciplore-mindmapping/plugins/ExportSvg.xml
@@ -135,6 +134,7 @@ share/java/sciplore-mindmapping/plugins/svg/xml-apis.jar
 @dirrm share/java/sciplore-mindmapping/plugins/latex
 @dirrm share/java/sciplore-mindmapping/plugins/help
 @dirrm share/java/sciplore-mindmapping/plugins
+@dirrm share/java/sciplore-mindmapping/lib/sciplore
 @dirrm share/java/sciplore-mindmapping/lib/jpod
 @dirrm share/java/sciplore-mindmapping/lib/jibx
 @dirrm share/java/sciplore-mindmapping/lib/jersey
