@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZConf
-PORTVERSION=	3.1.0
+PORTVERSION=	4.0.0
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/V/VV/VVELOX
@@ -23,11 +23,12 @@ RUN_DEPENDS=	${SITE_PERL}/Net/LDAP/Entry.pm:${PORTSDIR}/net/p5-perl-ldap \
 		${SITE_PERL}/File/BaseDir.pm:${PORTSDIR}/devel/p5-File-BaseDir \
 		${SITE_PERL}/Net/LDAP/AutoDNs.pm:${PORTSDIR}/net/p5-Net-LDAP-AutoDNs \
 		${SITE_PERL}/Net/LDAP/AutoServer.pm:${PORTSDIR}/net/p5-Net-LDAP-AutoServer
-
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		ZConf.3
+MAN3=		ZConf.3 \
+		ZConf::backends::file.3 \
+		ZConf::backends::ldap.3
 
 .include <bsd.port.mk>
