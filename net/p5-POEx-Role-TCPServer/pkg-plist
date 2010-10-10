@@ -1,0 +1,4 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Role/TCPServer/.packlist
+%%SITE_PERL%%/POEx/Role/TCPServer.pm
+@dirrmtry %%SITE_PERL%%/POEx/Role
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Role/TCPServer

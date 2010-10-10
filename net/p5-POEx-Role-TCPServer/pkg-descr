@@ -1,0 +1,13 @@
+POEx::Role::TCPServer bundles up the lower level
+SocketFactory/ReadWrite combination of wheels into a simple
+Moose::Role. It builds upon other POEx modules such as
+POEx::Role::SessionInstantiation and POEx::Types.
+
+The events for SocketFactory for and for each ReadWrite instantiated
+are methods that can be advised in any way deemed fit. Advising these
+methods is actually encouraged and can simplify code for the consumer.
+
+The only method that must be provided by the consuming class is
+handle_inbound_data.
+
+WWW: http://search.cpan.org/dist/POEx-Role-TCPServer/
