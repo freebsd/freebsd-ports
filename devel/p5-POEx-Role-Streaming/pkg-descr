@@ -1,0 +1,13 @@
+POEx::Role::Streaming provides a common idiom for streaming data from
+one filehandle to another.  It accomplishes this by making good use of
+sysread and POE::Wheel::ReadWrite.  This Role errs on the side of
+doing as many blocking reads of the "input_handle" as possible up
+front (until the high water mark is hit on the Wheel).  If this
+default isn't suitable for the consumer, simply override
+"get_data_from_input_handle".  After Streamer has exhausted the
+source, and flushed the last of the output, it will clean up after
+itself by closing the wheel, the handles, and sending all of them out
+of scope. If an exception happens, it will clean up after itself, and
+let the DIE signal propagate.
+
+WWW: http://search.cpan.org/dist/POEx-Role-Streaming/

@@ -1,0 +1,4 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Role/Streaming/.packlist
+%%SITE_PERL%%/POEx/Role/Streaming.pm
+@comment @dirrmtry %%SITE_PERL%%/POEx/Role
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Role/Streaming
