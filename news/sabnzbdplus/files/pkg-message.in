@@ -1,0 +1,21 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+This port now includes an rc script:
+
+%%PREFIX%%/etc/rc.d/sabnzbd
+
+Add:
+
+sabnzbd_enable="YES"
+
+to /etc/rc.conf, then start it via:
+
+%%PREFIX%%/etc/rc.d/sabnzbd start
+
+Once started, visit:
+
+http://localhost:8080/sabnzbd/
+
+to configure.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
