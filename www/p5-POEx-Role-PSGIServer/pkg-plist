@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Role/PSGIServer/.packlist
+%%SITE_PERL%%/POEx/Role/PSGIServer.pm
+%%SITE_PERL%%/POEx/Role/PSGIServer/ProxyWriter.pm
+%%SITE_PERL%%/POEx/Role/PSGIServer/Streamer.pm
+%%SITE_PERL%%/POEx/Types/PSGIServer.pm
+@dirrmtry %%SITE_PERL%%/POEx/Types
+@dirrmtry %%SITE_PERL%%/POEx/Role/PSGIServer
+@dirrmtry %%SITE_PERL%%/POEx/Role
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Role/PSGIServer
