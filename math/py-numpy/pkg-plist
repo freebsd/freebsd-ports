@@ -23,6 +23,9 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/compat/_inspect.py
 %%PYTHON_SITELIBDIR%%/numpy/compat/_inspect.pyc
 %%PYTHON_SITELIBDIR%%/numpy/compat/_inspect.pyo
+%%PYTHON_SITELIBDIR%%/numpy/compat/py3k.py
+%%PYTHON_SITELIBDIR%%/numpy/compat/py3k.pyc
+%%PYTHON_SITELIBDIR%%/numpy/compat/py3k.pyo
 %%PYTHON_SITELIBDIR%%/numpy/compat/setup.py
 %%PYTHON_SITELIBDIR%%/numpy/compat/setup.pyc
 %%PYTHON_SITELIBDIR%%/numpy/compat/setup.pyo
@@ -68,7 +71,9 @@ bin/f2py
 %%FENV%%%%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/fenv/fenv.h
 %%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/multiarray_api.txt
 %%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/ndarrayobject.h
+%%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/ndarraytypes.h
 %%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/noprefix.h
+%%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/npy_3kcompat.h
 %%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/npy_common.h
 %%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/npy_cpu.h
 %%PYTHON_SITELIBDIR%%/numpy/core/include/numpy/npy_endian.h
@@ -122,6 +127,7 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/core/shape_base.pyo
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/data/astype_copy.pkl
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/data/recarray_from_file.fits
+%%PYTHON_SITELIBDIR%%/numpy/core/tests/test_arrayprint.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_blasdot.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_defchararray.py
 %%PYTHON_SITELIBDIR%%/numpy/core/tests/test_dtype.py
@@ -216,6 +222,9 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/distutils/command/sdist.py
 %%PYTHON_SITELIBDIR%%/numpy/distutils/command/sdist.pyc
 %%PYTHON_SITELIBDIR%%/numpy/distutils/command/sdist.pyo
+%%PYTHON_SITELIBDIR%%/numpy/distutils/compat.py
+%%PYTHON_SITELIBDIR%%/numpy/distutils/compat.pyc
+%%PYTHON_SITELIBDIR%%/numpy/distutils/compat.pyo
 %%PYTHON_SITELIBDIR%%/numpy/distutils/conv_template.py
 %%PYTHON_SITELIBDIR%%/numpy/distutils/conv_template.pyc
 %%PYTHON_SITELIBDIR%%/numpy/distutils/conv_template.pyo
@@ -514,6 +523,19 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/f2py/setupscons.pyo
 %%PYTHON_SITELIBDIR%%/numpy/f2py/src/fortranobject.c
 %%PYTHON_SITELIBDIR%%/numpy/f2py/src/fortranobject.h
+%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/src/array_from_pyobj/wrapmodule.c
+%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/src/mixed/foo.f
+%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/src/mixed/foo_fixed.f90
+%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/src/mixed/foo_free.f90
+%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/test_array_from_pyobj.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/test_callback.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/test_mixed.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/test_return_character.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/test_return_complex.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/test_return_integer.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/test_return_logical.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/test_return_real.py
+%%PYTHON_SITELIBDIR%%/numpy/f2py/tests/util.py
 %%PYTHON_SITELIBDIR%%/numpy/f2py/use_rules.py
 %%PYTHON_SITELIBDIR%%/numpy/f2py/use_rules.pyc
 %%PYTHON_SITELIBDIR%%/numpy/f2py/use_rules.pyo
@@ -570,9 +592,9 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/lib/info.py
 %%PYTHON_SITELIBDIR%%/numpy/lib/info.pyc
 %%PYTHON_SITELIBDIR%%/numpy/lib/info.pyo
-%%PYTHON_SITELIBDIR%%/numpy/lib/io.py
-%%PYTHON_SITELIBDIR%%/numpy/lib/io.pyc
-%%PYTHON_SITELIBDIR%%/numpy/lib/io.pyo
+%%PYTHON_SITELIBDIR%%/numpy/lib/npyio.py
+%%PYTHON_SITELIBDIR%%/numpy/lib/npyio.pyc
+%%PYTHON_SITELIBDIR%%/numpy/lib/npyio.pyo
 %%PYTHON_SITELIBDIR%%/numpy/lib/polynomial.py
 %%PYTHON_SITELIBDIR%%/numpy/lib/polynomial.pyc
 %%PYTHON_SITELIBDIR%%/numpy/lib/polynomial.pyo
@@ -726,6 +748,12 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/numarray/image.py
 %%PYTHON_SITELIBDIR%%/numpy/numarray/image.pyc
 %%PYTHON_SITELIBDIR%%/numpy/numarray/image.pyo
+%%PYTHON_SITELIBDIR%%/numpy/numarray/include/numpy/arraybase.h
+%%PYTHON_SITELIBDIR%%/numpy/numarray/include/numpy/cfunc.h
+%%PYTHON_SITELIBDIR%%/numpy/numarray/include/numpy/ieeespecial.h
+%%PYTHON_SITELIBDIR%%/numpy/numarray/include/numpy/libnumarray.h
+%%PYTHON_SITELIBDIR%%/numpy/numarray/include/numpy/numcomplex.h
+%%PYTHON_SITELIBDIR%%/numpy/numarray/include/numpy/nummacro.h
 %%PYTHON_SITELIBDIR%%/numpy/numarray/linear_algebra.py
 %%PYTHON_SITELIBDIR%%/numpy/numarray/linear_algebra.pyc
 %%PYTHON_SITELIBDIR%%/numpy/numarray/linear_algebra.pyo
@@ -744,12 +772,6 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/numarray/numerictypes.py
 %%PYTHON_SITELIBDIR%%/numpy/numarray/numerictypes.pyc
 %%PYTHON_SITELIBDIR%%/numpy/numarray/numerictypes.pyo
-%%PYTHON_SITELIBDIR%%/numpy/numarray/numpy/arraybase.h
-%%PYTHON_SITELIBDIR%%/numpy/numarray/numpy/cfunc.h
-%%PYTHON_SITELIBDIR%%/numpy/numarray/numpy/ieeespecial.h
-%%PYTHON_SITELIBDIR%%/numpy/numarray/numpy/libnumarray.h
-%%PYTHON_SITELIBDIR%%/numpy/numarray/numpy/numcomplex.h
-%%PYTHON_SITELIBDIR%%/numpy/numarray/numpy/nummacro.h
 %%PYTHON_SITELIBDIR%%/numpy/numarray/random_array.py
 %%PYTHON_SITELIBDIR%%/numpy/numarray/random_array.pyc
 %%PYTHON_SITELIBDIR%%/numpy/numarray/random_array.pyo
@@ -912,11 +934,15 @@ bin/f2py
 %%PYTHON_SITELIBDIR%%/numpy/testing/utils.pyc
 %%PYTHON_SITELIBDIR%%/numpy/testing/utils.pyo
 %%PYTHON_SITELIBDIR%%/numpy/tests/test_ctypeslib.py
+%%PYTHON_SITELIBDIR%%/numpy/tests/test_matlib.py
+%%PYTHON_SITELIBDIR%%/numpy/tools/py3tool.py
 %%PYTHON_SITELIBDIR%%/numpy/version.py
 %%PYTHON_SITELIBDIR%%/numpy/version.pyc
 %%PYTHON_SITELIBDIR%%/numpy/version.pyo
-%%PORTDOCS%%%%DOCSDIR%%/numpybook.pdf
+%%PORTDOCS%%%%DOCSDIR%%/numpy-ref.pdf
+%%PORTDOCS%%%%DOCSDIR%%/numpy-user.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/numpy/tools
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/tests
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/testing/tests
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/testing
@@ -926,7 +952,8 @@ bin/f2py
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/polynomial
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/oldnumeric/tests
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/oldnumeric
-@dirrm %%PYTHON_SITELIBDIR%%/numpy/numarray/numpy
+@dirrm %%PYTHON_SITELIBDIR%%/numpy/numarray/include/numpy
+@dirrm %%PYTHON_SITELIBDIR%%/numpy/numarray/include
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/numarray
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/matrixlib/tests
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/matrixlib
@@ -939,6 +966,10 @@ bin/f2py
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/lib
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/fft/tests
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/fft
+@dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/tests/src/mixed
+@dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/tests/src/array_from_pyobj
+@dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/tests/src
+@dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/tests
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/src
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/docs/usersguide
 @dirrm %%PYTHON_SITELIBDIR%%/numpy/f2py/docs
