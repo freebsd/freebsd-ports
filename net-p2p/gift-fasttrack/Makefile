@@ -14,6 +14,9 @@ MASTER_SITE_SUBDIR=	gift-fasttrack
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	A FastTrack plugin for giFT
 
+DEPRECATED=	unmaintained upstream
+EXPIRATION_DATE=	2010-11-24
+
 LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift
 
 USE_AUTOTOOLS=	libtool:22
