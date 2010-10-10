@@ -1,0 +1,11 @@
+POEx::Role::SessionInstantiation provides a nearly seamless
+integration for non-POE objects into a POE environment. It does this
+by handling the POE stuff behind the scenes including allowing per
+instances method changes, session registration to the Kernel, and
+providing some defaults like setting an alias if supplied via the
+attribute or constructor argument, or defining a _default that warns
+if your object receives an event that it does not have.
+
+This role exposes your class' methods as POE events.
+
+WWW: http://search.cpan.org/dist/POEx-Role-SessionInstantiation/

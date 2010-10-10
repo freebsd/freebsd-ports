@@ -1,0 +1,14 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Role/SessionInstantiation/.packlist
+%%SITE_PERL%%/POEx/Role/Event.pm
+%%SITE_PERL%%/POEx/Role/SessionInstantiation.pm
+%%SITE_PERL%%/POEx/Role/SessionInstantiation/Meta/POEState.pm
+%%SITE_PERL%%/POEx/Role/SessionInstantiation/Meta/Session/Events.pm
+%%SITE_PERL%%/POEx/Role/SessionInstantiation/Meta/Session/Implementation.pm
+%%SITE_PERL%%/POEx/Role/SessionInstantiation/Meta/Session/Magic.pm
+%%SITE_PERL%%/POEx/Role/SessionInstantiation/Meta/Session/Sugar.pm
+@dirrm %%SITE_PERL%%/POEx/Role/SessionInstantiation/Meta/Session
+@dirrm %%SITE_PERL%%/POEx/Role/SessionInstantiation/Meta
+@dirrm %%SITE_PERL%%/POEx/Role/SessionInstantiation
+@dirrmtry %%SITE_PERL%%/POEx/Role
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Role/SessionInstantiation
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POEx/Role
