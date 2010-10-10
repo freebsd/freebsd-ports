@@ -54,12 +54,4 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's,$$(DATADIRNAME)/locale,share/locale,' \
 		${WRKSRC}/po/Makefile.in.in
 
-post-configure:
-	${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's|(datadir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's|(prefix)/lib/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
-
 .include <bsd.port.post.mk>
