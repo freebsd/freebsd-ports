@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Generate/Generate.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Generate/Generate.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Generate/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/B/Generate.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B/Generate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/B
