@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	runawk
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -29,7 +29,8 @@ PORTEXAMPLES=	*
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/modules/* ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/modules/*.awk \
+		${WRKSRC}/modules/gawk/* ${DATADIR}
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1.gz ${MANPREFIX}/man/man1
 
 post-install:
@@ -41,7 +42,7 @@ post-install:
 	@${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m 555 -d ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
-	@(cd ${WRKSRC}/modules; ${FIND} -s *) \
+	@(cd ${DATADIR}; ${FIND} -s *) \
 		| ${SED} -ne 's,^,${DATADIR:S,^${PREFIX}/,,}/,p' >> ${TMPPLIST}
 	@${ECHO_CMD} '@dirrm ${DATADIR:S|${PREFIX}/||}' >> ${TMPPLIST}
 
