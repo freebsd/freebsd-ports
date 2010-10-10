@@ -1093,6 +1093,7 @@
     SUBDIR += p5-POE-Component-Server-SOAP
     SUBDIR += p5-POE-Component-Server-SimpleHTTP
     SUBDIR += p5-POE-Filter-HTTP-Parser
+    SUBDIR += p5-POEx-Role-PSGIServer
     SUBDIR += p5-PSGI
     SUBDIR += p5-ParallelUA
     SUBDIR += p5-Path-Class-URI

@@ -1,0 +1,8 @@
+POEx::Role::PSGIServer encapsulates the core PSGI server behaviors
+into an easy to consume and extend role.  It is based on previous POEx
+work such as POEx::Role::TCPServer which provides basic TCP socket
+multiplexing via POE::Wheel::SocketFactory and POE::Wheel::ReadWrite,
+and POEx::Role::SessionInstantiation which transforms plain Moose
+objects into POE sessions.
+
+WWW: http://search.cpan.org/dist/POEx-Role-PSGIServer/
