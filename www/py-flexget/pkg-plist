@@ -350,9 +350,6 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/utils/tools.py
 %%PYTHON_SITELIBDIR%%/flexget/utils/tools.pyc
 %%PYTHON_SITELIBDIR%%/flexget/utils/tools.pyo
-%%PYTHON_SITELIBDIR%%/flexget/utils/upgrader.py
-%%PYTHON_SITELIBDIR%%/flexget/utils/upgrader.pyc
-%%PYTHON_SITELIBDIR%%/flexget/utils/upgrader.pyo
 %%PYTHON_SITELIBDIR%%/flexget/validator.py
 %%PYTHON_SITELIBDIR%%/flexget/validator.pyc
 %%PYTHON_SITELIBDIR%%/flexget/validator.pyo
