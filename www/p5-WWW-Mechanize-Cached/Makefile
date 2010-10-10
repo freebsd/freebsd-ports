@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Mechanize-Cached
-PORTVERSION=	1.37
+PORTVERSION=	1.39
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,7 +21,8 @@ RUN_DEPENDS=	\
 	p5-Find-Lib>0:${PORTSDIR}/devel/p5-Find-Lib \
 	p5-Path-Class>0:${PORTSDIR}/devel/p5-Path-Class \
 	p5-Moose>0:${PORTSDIR}/devel/p5-Moose \
-	p5-WWW-Mechanize>0:${PORTSDIR}/www/p5-WWW-Mechanize
+	p5-WWW-Mechanize>0:${PORTSDIR}/www/p5-WWW-Mechanize \
+	p5-Storable>=2.21:${PORTSDIR}/devel/p5-Storable
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
