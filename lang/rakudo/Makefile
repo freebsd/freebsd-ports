@@ -41,6 +41,8 @@ PLIST_SUB+=	PARROT_VERSION=${PARROT_VERSION}
 
 EXTRA_DOCS=	UsingPerl6-draft.pdf cheatsheet.txt
 
+PORTDOCS=	${EXTRA_DOCS}
+
 do-configure:
 	cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 

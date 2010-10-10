@@ -87,20 +87,17 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/YAML.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/YAML/Dumper.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/YAML/Dumper.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/perl6.pbc
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/ROADMAP
-%%PORTDOCS%%%%DOCSDIR%%/S11-Modules-proposal.pod
-%%PORTDOCS%%%%DOCSDIR%%/UsingPerl6-draft.pdf
-%%PORTDOCS%%%%DOCSDIR%%/announce/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/announce/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/announce/README
-%%PORTDOCS%%%%DOCSDIR%%/cheatsheet.txt
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/announce
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DOCSDIR%%/CREDITS
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/README
+%%DOCSDIR%%/ROADMAP
+%%DOCSDIR%%/S11-Modules-proposal.pod
+%%DOCSDIR%%/announce/CREDITS
+%%DOCSDIR%%/announce/LICENSE
+%%DOCSDIR%%/announce/README
+@dirrm %%DOCSDIR%%/announce
+@dirrm %%DOCSDIR%%
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/YAML
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/XML
 @dirrm lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test
