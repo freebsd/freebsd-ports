@@ -1,0 +1,5 @@
+
+overlay	chrome://browser/content/browser.xul	chrome://searchstatus/content/searchstatus.xul
+content	searchstatus	jar:chrome/searchstatus.jar!/content/searchstatus/
+
+skin	searchstatus	classic/1.0	jar:chrome/searchstatus.jar!/skin/classic/searchstatus/

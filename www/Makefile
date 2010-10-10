@@ -1925,6 +1925,7 @@
     SUBDIR += xpi-table2clipboard
     SUBDIR += xpi-tabletools
     SUBDIR += xpi-tabmixplus
+    SUBDIR += xpi-tagzilla
     SUBDIR += xpi-togglewordwrap
     SUBDIR += xpi-torbutton
     SUBDIR += xpi-twitterfox
