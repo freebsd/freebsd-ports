@@ -17,7 +17,6 @@ include/parrot/%%PARROT_VER%%/parrot/atomic/sparc.h
 include/parrot/%%PARROT_VER%%/parrot/caches.h
 include/parrot/%%PARROT_VER%%/parrot/call.h
 include/parrot/%%PARROT_VER%%/parrot/cclass.h
-include/parrot/%%PARROT_VER%%/parrot/charset.h
 include/parrot/%%PARROT_VER%%/parrot/compiler.h
 include/parrot/%%PARROT_VER%%/parrot/config.h
 include/parrot/%%PARROT_VER%%/parrot/context.h
@@ -39,6 +38,7 @@ include/parrot/%%PARROT_VER%%/parrot/global_setup.h
 include/parrot/%%PARROT_VER%%/parrot/has_header.h
 include/parrot/%%PARROT_VER%%/parrot/hash.h
 include/parrot/%%PARROT_VER%%/parrot/hll.h
+include/parrot/%%PARROT_VER%%/parrot/imageio.h
 include/parrot/%%PARROT_VER%%/parrot/imcc.h
 include/parrot/%%PARROT_VER%%/parrot/interpreter.h
 include/parrot/%%PARROT_VER%%/parrot/io.h
@@ -118,9 +118,10 @@ include/parrot/%%PARROT_VER%%/pmc/pmc_handle.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_hash.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_hashiterator.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_hashiteratorkey.h
-include/parrot/%%PARROT_VER%%/pmc/pmc_imageio.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_imageiofreeze.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_imageiosize.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_imageiostrings.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_imageiothaw.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_integer.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_iterator.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_key.h
@@ -129,6 +130,7 @@ include/parrot/%%PARROT_VER%%/pmc/pmc_lexpad.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_managedstruct.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_multisub.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_namespace.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_nativepccmethod.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_nci.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_null.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_object.h
@@ -580,9 +582,10 @@ src/parrot/%%PARROT_VER%%/pmc/handle.dump
 src/parrot/%%PARROT_VER%%/pmc/hash.dump
 src/parrot/%%PARROT_VER%%/pmc/hashiterator.dump
 src/parrot/%%PARROT_VER%%/pmc/hashiteratorkey.dump
-src/parrot/%%PARROT_VER%%/pmc/imageio.dump
+src/parrot/%%PARROT_VER%%/pmc/imageiofreeze.dump
 src/parrot/%%PARROT_VER%%/pmc/imageiosize.dump
 src/parrot/%%PARROT_VER%%/pmc/imageiostrings.dump
+src/parrot/%%PARROT_VER%%/pmc/imageiothaw.dump
 src/parrot/%%PARROT_VER%%/pmc/integer.dump
 src/parrot/%%PARROT_VER%%/pmc/iterator.dump
 src/parrot/%%PARROT_VER%%/pmc/key.dump
@@ -591,6 +594,7 @@ src/parrot/%%PARROT_VER%%/pmc/lexpad.dump
 src/parrot/%%PARROT_VER%%/pmc/managedstruct.dump
 src/parrot/%%PARROT_VER%%/pmc/multisub.dump
 src/parrot/%%PARROT_VER%%/pmc/namespace.dump
+src/parrot/%%PARROT_VER%%/pmc/nativepccmethod.dump
 src/parrot/%%PARROT_VER%%/pmc/nci.dump
 src/parrot/%%PARROT_VER%%/pmc/null.dump
 src/parrot/%%PARROT_VER%%/pmc/object.dump
