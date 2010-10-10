@@ -113,6 +113,7 @@ dkfilter:*:325:
 wildfire:*:340:
 stunnel:*:341:
 openfire:*:342:
+_sabnzbd:*:350:
 _iodined:*:353:
 httptunnel:*:361:
 ldap:*:389:

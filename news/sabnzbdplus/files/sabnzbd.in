@@ -1,0 +1,77 @@
+#!/bin/sh
+#
+# PROVIDE: sabnzbd
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# sabnzbd_enable (bool):	Set to NO by default.
+#			Set it to YES to enable it.
+# sabnzbd_conf_dir:	Directory where sabnzbd configuration
+#			data is stored.
+#			Default: %%PREFIX%%/sabnzbd
+# sabnzbd_user:	    	The user account sabnzbd daemon runs as what
+#			you want it to be. It uses '_sabnzbd' user by
+#			default. Do not sets it as empty or it will run
+#			as root.
+# sabnzbd_group:    	The group account sabnzbd daemon runs as what
+#			you want it to be. It uses '_sabnzbd' group by
+#			default. Do not sets it as empty or it will run
+#			as wheel.
+
+. /etc/rc.subr
+
+name="sabnzbd"
+rcvar=${name}_enable
+
+load_rc_config ${name}
+
+: ${sabnzbd_enable:="NO"}
+: ${sabnzbd_user:="_sabnzbd"}
+: ${sabnzbd_group:="_sabnzbd"}
+: ${sabnzbd_conf_dir:="%%PREFIX%%/sabnzbd"}
+
+required_dirs=${sabnzbd_conf_dir}
+
+status_cmd="${name}_status"
+stop_cmd="${name}_stop"
+start_precmd=sabnzbd_check_dir
+
+command="/usr/sbin/daemon"
+command_args="-f %%PREFIX%%/bin/SABnzbd.py ${sabnzbd_flags} --daemon -b 0 -w 0 -l 0 -f ${sabnzbd_conf_dir}"
+
+# SABnzbd can only be cleanly stopped by calling the http api
+sabnzbd_stop() {
+    echo "Stopping $name"
+    if [ -f "${sabnzbd_conf_dir}/sabnzbd.ini" ]; then
+        apikey=`grep ^api_key ${sabnzbd_conf_dir}/sabnzbd.ini | tr -d " _"`
+        host=`grep -E '^host\ =\ [0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' ${sabnzbd_conf_dir}/sabnzbd.ini | tr -dc '[0-9].'`
+        if [ ${host} = "0.0.0.0" ] ; then host="localhost" ; fi
+        port=`grep -m1 ^port ${sabnzbd_conf_dir}/sabnzbd.ini | tr -dc '[0-9]'`
+        fetch -o /dev/null "http://${host}:${port}/api?mode=shutdown&${apikey}" > /dev/null 2>&1
+    else
+        sabnzbd_pid=`ps -U ${sabnzbd_user} | grep "python.*SABnzbd.py.*--daemon" | grep -v 'grep' | awk '{print $1}'`
+        if [ -n "${sabnzbd_pid}" ]; then
+            kill ${sabnzbd_pid}
+        fi
+    fi
+}
+
+sabnzbd_status() {
+    sabnzbd_pid=`ps -U ${sabnzbd_user} | grep "python.*SABnzbd.py.*--daemon" | grep -v 'grep' | awk '{print $1}'`
+    if [ -n "${sabnzbd_pid}" ]; then
+        echo "$name is running as ${sabnzbd_pid}"
+    else
+       echo "$name is not running"
+    fi
+}
+
+sabnzbd_check_dir() {
+    if [ ! -f "${required_dirs}" -a ! -d "${required_dirs}" -a ! -L "${required_dirs}" ]; then
+        mkdir -p ${required_dirs}
+        chown ${sabnzbd_user}:${sabnzbd_group} ${required_dirs}
+    fi
+}
+
+run_rc_command "$1"

@@ -322,3 +322,5 @@ bin/SABnzbd.py
 @dirrm share/sabnzbdplus/interfaces
 @dirrm share/sabnzbdplus/language
 @dirrm share/sabnzbdplus
+@dirrmtry sabnzbd
+@stopdaemon sabnzbd

@@ -7,7 +7,7 @@
 
 PORTNAME=	sabnzbdplus
 PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/sabnzbd-${PORTVERSION}
 DISTNAME=	SABnzbd-${PORTVERSION}-src
@@ -27,7 +27,12 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/SABnzbd-${PORTVERSION}
 PLIST_SUB=	PORTNAME=${PORTNAME}
 SUB_LIST+=	PORTNAME=${PORTNAME}
+SUB_FILES=	pkg-message
+USE_RC_SUBR=	sabnzbd
 CONFLICTS=	sabzndb-0.*
+
+USERS=		_sabnzbd
+GROUPS=		_sabnzbd
 
 OPTIONS=	PAR2CMDLINE "Required for postprocessing of par files." on \
 		UNRAR "Often required for unpacking many downloads." on \
@@ -90,5 +95,8 @@ post-install:
 	${CP} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
+	${MKDIR} ${PREFIX}/sabnzbd
+	${CHOWN} _sabnzbd:_sabnzbd ${PREFIX}/sabnzbd
+	@${CAT} ${WRKDIR}/pkg-message
 
 .include <bsd.port.post.mk>
