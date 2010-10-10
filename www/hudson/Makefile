@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hudson
-PORTVERSION=	1.379
+PORTVERSION=	1.380
 CATEGORIES=	www java devel
 MASTER_SITES=	http://download.hudson-labs.org/war/${PORTVERSION}/
 DISTNAME=	hudson
