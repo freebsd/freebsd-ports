@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox-sync
-PORTVERSION=	1.4.4
+PORTVERSION=	1.5
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	http://files.roorback.net/ \
