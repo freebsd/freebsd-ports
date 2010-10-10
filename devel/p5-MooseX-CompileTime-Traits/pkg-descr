@@ -1,0 +1,10 @@
+MooseX::CompileTime::Traits allows role application at compile time
+via use statements. What this class does is provide an import method
+that will apply each of the roles (along with any arguments for
+parameterized roles).
+
+Roles and their arguments should be provided as an ArrayRef of tuples.
+
+Simply 'with' the role to gain the functionality.
+
+WWW: http://search.cpan.org/dist/MooseX-CompileTime-Traits/
