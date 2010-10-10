@@ -7,6 +7,7 @@
 
 PORTNAME=	flashplugin
 PORTVERSION=	9.0r283
+PORTREVISION=	1
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://download.macromedia.com/pub/flashplayer/installers/current/9/:plugin \
 		http://tijl.ulyssis.fm/mirror/:suplib \
@@ -22,7 +23,7 @@ COMMENT=	Adobe Flash Player NPAPI Plugin
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
-USE_LINUX_APPS=	openssl
+USE_LINUX_APPS=	openssl gtk2
 
 RESTRICTED=	Redistribution not allowed
 RESTRICTED_FILES=	${DISTFILES:Nlibflashsupport*:C/:[^:]+$//}
