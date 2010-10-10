@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nickleby
-PORTVERSION=	1.61
+PORTVERSION=	1.62
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.mammothcheese.ca/
 
