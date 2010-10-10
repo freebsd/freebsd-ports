@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	B-Generate
-PORTVERSION=	1.27
+PORTVERSION=	1.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Create your own Perl op trees
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 USE_PERL5=	5.8.0+
 USE_PERL5_REASON=	fails tests with perl 5.6.X
 
