@@ -1,6 +1,6 @@
---- unflasm.c.orig	Tue Jun  1 23:05:40 2004
-+++ unflasm.c	Tue Jun  1 23:07:05 2004
-@@ -991,29 +991,11 @@
+--- unflasm.c.orig	2007-06-10 03:40:47.000000000 +0900
++++ unflasm.c	2010-07-22 12:09:29.000000000 +0900
+@@ -1012,29 +1012,11 @@
  			}
  
  		case SWFACTION_SETTARGET:
