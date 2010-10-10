@@ -37,6 +37,7 @@
 %%XPI_XPIDIR%%/modules/stores.js
 %%XPI_XPIDIR%%/modules/trackers.js
 %%XPI_XPIDIR%%/modules/util.js
+%%XPI_XPIDIR%%/modules/main.js
 %%XPI_XPIDIR%%/modules/log4moz.js
 %%XPI_XPIDIR%%/modules/engines.js
 %%XPI_XPIDIR%%/modules/identity.js
