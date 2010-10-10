@@ -1886,6 +1886,7 @@
     SUBDIR += xpi-inline-google-definitions
     SUBDIR += xpi-it_s_all_text
     SUBDIR += xpi-joga
+    SUBDIR += xpi-jslib
     SUBDIR += xpi-jsview
     SUBDIR += xpi-jv
     SUBDIR += xpi-leechblock
