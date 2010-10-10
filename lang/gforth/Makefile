@@ -59,13 +59,13 @@ BROKEN=		Does not compile
 .endif
 .endif
 
-.if ${ARCH} == i386
+.if ${ARCH} == i386 || ${ARCH} == "powerpc"
 WORDSIZE=32
 .else
 WORDSIZE=64
 .endif
 
-.if ${ARCH} == sparc64
+.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BYTEORDER=b
 .else
 BYTEORDER=l
