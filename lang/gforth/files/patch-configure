@@ -1,6 +1,16 @@
---- configure.orig	Sat Oct 21 02:49:22 2006
-+++ configure	Sat Oct 21 02:49:27 2006
-@@ -8079,8 +8079,8 @@
+--- configure.orig	2003-08-25 10:03:42.000000000 +0200
++++ configure	2010-10-09 20:40:43.000000000 +0200
+@@ -3584,9 +3584,6 @@
+ else
+   LIBOBJS="$LIBOBJS ../arch/power/_sync_cache_range.$ac_objext"
+ fi
+-
+-		#long long is broken on (at least) gcc-2.95.* for PPC
+-		test x$ac_cv_sizeof_long_long = x && ac_cv_sizeof_long_long=0
+ 		;;
+ 	*)
+ 		{ echo "$as_me:$LINENO: WARNING: Using a generic machine description" >&5
+@@ -8079,8 +8076,8 @@
    if (x) {
    label1:
      asm("$i");
@@ -9,4 +19,3 @@
 +  label2:
    return (&&label2)-(&&label1);
  }
- 
