@@ -1,0 +1,5 @@
+Log::Any is a generic adapter for writing logging into Perl modules; this
+adapter uses the Unix::Syslog module to direct that output into the standard
+Unix syslog system.
+
+WWW: http://search.cpan.org/dist/Log-Any-Adapter-Syslog/
