@@ -1,3 +1,0 @@
-Plack Server implementation that uses HTTP::Server::Simple.
-
-WWW: http://search.cpan.org/dist/Plack-Server-ServerSimple/

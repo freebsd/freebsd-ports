@@ -1118,7 +1118,6 @@
     SUBDIR += p5-Plack-Server-Coro
     SUBDIR += p5-Plack-Server-POE
     SUBDIR += p5-Plack-Server-ReverseHTTP
-    SUBDIR += p5-Plack-Server-ServerSimple
     SUBDIR += p5-Pod-Site
     SUBDIR += p5-PodToHTML
     SUBDIR += p5-REST-Google-Apps-Provisioning
