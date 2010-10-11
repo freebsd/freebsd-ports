@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.han.dds.nl/software/mg/
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	A small, fast Emacs-like editor
 
+BROKEN=     does not fetch. (website no longer online.)
+
 MAN1=	mg.1
 MANCOMPRESSED=	no
 
