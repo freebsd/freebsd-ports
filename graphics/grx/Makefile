@@ -27,7 +27,6 @@ INSTALL_TARGET=	install install-bin install-fonts install-info
 
 OPTIONS=	BGI "Enable BGI support" on \
 		BMP "Enable BMP support" on \
-		GPC "Install GNU Pascal Compiler unit" off \
 		JPEG "Enable JPEG support" off \
 		PNG "Enable PNG support" on \
 		PRINT "Enable printing support" on \
@@ -50,17 +49,6 @@ PLIST_SUB+=	BGI="@comment "
 CONFIGURE_ARGS+=--enable-bmp
 .else
 CONFIGURE_ARGS+=--disable-bmp
-.endif
-
-.if defined(WITH_GPC)
-RUN_DEPENDS+=	gpc:${PORTSDIR}/lang/gpc
-GCC_VER!=	cd ${PORTSDIR}/lang/gpc && ${MAKE} -V GCC_VER
-GNU_HOST!=	cd ${PORTSDIR}/lang/gpc && ${MAKE} -V GNU_HOST
-PLIST_SUB+=	GPC="" \
-		GCC_VER="${GCC_VER}" \
-		GNU_HOST="${GNU_HOST}"
-.else
-PLIST_SUB+=	GPC="@comment "
 .endif
 
 .if defined(WITH_JPEG)
@@ -106,22 +94,13 @@ post-patch:
 	@${GREP} -ERl '<(malloc|alloca)\.h>' ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -Ee 's|<(malloc\|alloca)\.h>|<stdlib.h>|'
 	@${REINPLACE_CMD} -Ee \
-		's|^(CC[[:blank:]]*=).*|\1 ${CC}|; \
+		's|-m32||; s|-m64||; \
+		 s|^(CC[[:blank:]]*=).*|\1 ${CC}|; \
 		 s|^(CCOPT =)|\1 ${CPPFLAGS} ${CFLAGS}|; \
 		 s|^(LDOPT =)|\1 ${LDFLAGS}|;' \
 		-e 's|lib64|lib|' \
 		${WRKSRC}/makedefs.grx
 	@${REINPLACE_CMD} -e 's/gcc/${CC}/' -e 's|lib64|lib|' \
 		 ${WRKSRC}/src/makefile.[lx]*
-
-post-install:
-.if defined(WITH_GPC)
-	${INSTALL_DATA} ${WRKSRC}/pascal/grx.pas \
-		${PREFIX}/lib/gpc/gcc/${GNU_HOST}/${GCC_VER}/units
-.if defined(WITH_BGI)
-	${INSTALL_DATA} ${WRKSRC}/pascal/bgi/graph.pas \
-		${PREFIX}/lib/gpc/gcc/${GNU_HOST}/${GCC_VER}/units
-.endif
-.endif
 
 .include <bsd.port.post.mk>
