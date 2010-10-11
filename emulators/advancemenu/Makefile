@@ -10,7 +10,7 @@ PORTVERSION=	2.4.14
 CATEGORIES=	emulators
 MASTER_SITES=	SF/advancemame/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AdvanceMENU is a frontend for AdvanceMAME, MAME, MESS, RAINE
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
