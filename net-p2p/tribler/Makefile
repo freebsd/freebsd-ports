@@ -12,7 +12,7 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Tribler%20V${PORTVERSION}
 DISTNAME=	Tribler_${PORTVERSION}_src
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Streaming capable P2P network client based on BitTorrent
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}m2crypto>=0.19.1:${PORTSDIR}/security/py-m2crypto \
