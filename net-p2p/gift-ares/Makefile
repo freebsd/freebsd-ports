@@ -22,4 +22,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
 
+DEPRECATED=	development has ceased; does not work
+EXPIRATION_DATE=	2011-04-11
+
 .include <bsd.port.mk>
