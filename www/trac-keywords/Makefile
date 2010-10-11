@@ -7,6 +7,7 @@
 
 PORTNAME=	keywords
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://dist.codelabs.ru/fbsd/
 PKGNAMEPREFIX=	trac-
