@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	cgal
-PORTVERSION=	3.4
-PORTREVISION=	5
+PORTVERSION=	3.6.1
 CATEGORIES=	math
-MASTER_SITES=	http://gforge.inria.fr/frs/download.php/15692/
+MASTER_SITES=	http://gforge.inria.fr/frs/download.php/27222/:source1 \
+		http://gforge.inria.fr/frs/download.php/27226/:source2 \
+		http://gforge.inria.fr/frs/download.php/27227/:source3
 DISTNAME=	CGAL-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${DISTNAME}-doc_html${EXTRACT_SUFX} \
-		${PORTNAME}_manual.pdf
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source1 \
+		${DISTNAME}-doc_html${EXTRACT_SUFX}:source2 \
+		${PORTNAME}_manual.pdf:source3
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-doc_html${EXTRACT_SUFX}
 
 MAINTAINER=	wenheping@gmail.com
@@ -24,6 +25,8 @@ RUN_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-
 LIB_DEPENDS=	GLU.1:${PORTSDIR}/graphics/libGLU \
 		gmp.10:${PORTSDIR}/math/gmp \
 		mpfr.4:${PORTSDIR}/math/mpfr
+
+FETCH_ARGS=	-pRr
 
 USE_LDCONFIG=		yes
 USE_CMAKE=		yes
