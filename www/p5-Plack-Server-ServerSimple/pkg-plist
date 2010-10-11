@@ -1,5 +1,0 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Server/ServerSimple/.packlist
-%%SITE_PERL%%/Plack/Server/ServerSimple.pm
-@dirrmtry %%SITE_PERL%%/Plack/Server
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Server/ServerSimple
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Server
