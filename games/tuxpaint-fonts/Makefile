@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-fonts/chinese-2003.0${PORTVERSION}.05
 PKGNAMESUFFIX=	-fonts
 DISTFILES=	#
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TuxPaint Localized Fonts
 
 RUN_DEPENDS=	tuxpaint:${PORTSDIR}/games/tuxpaint

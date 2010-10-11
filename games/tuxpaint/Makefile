@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drawing program designed for young children
 
 LIB_DEPENDS=	paper.2:${PORTSDIR}/print/libpaper \

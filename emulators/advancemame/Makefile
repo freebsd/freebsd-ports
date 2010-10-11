@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL MAME port with advanced TV and monitor video support
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

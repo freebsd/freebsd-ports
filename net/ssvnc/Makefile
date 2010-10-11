@@ -12,7 +12,7 @@ CATEGORIES=	net security
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced TightVNC Viewer (SSVNC: SSL/SSH VNC viewer)
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
