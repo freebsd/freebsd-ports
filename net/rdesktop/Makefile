@@ -21,6 +21,16 @@ GNU_CONFIGURE=	yes
 DOCS=		doc/AUTHORS doc/TODO doc/*.txt
 MAN1=		rdesktop.1
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libao.so) || defined(WITH_LIBAO)
+LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
+.endif
+
+.if exists(${LOCALBASE}/lib/libsamplerate.so) || defined(WITH_LIBSAMPLERATE)
+LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
+.endif
+
 .if !defined(WITHOUT_RDESKTOP_IPV6) && !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--with-ipv6
 .endif
@@ -53,4 +63,4 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
