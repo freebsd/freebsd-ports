@@ -31,6 +31,10 @@ CONFIGURE_ARGS+=	--enable-wide-chars --enable-luit
 CONFIGURE_ARGS+=	--enable-256-color
 .endif
 
+.if defined(WITH_DEC_LOCATOR)
+CONFIGURE_ARGS+=	--enable-dec-locator
+.endif
+
 MAN1=		resize.1 koi8rxterm.1 uxterm.1 xterm.1
 
 .include <bsd.port.pre.mk>
