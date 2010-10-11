@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-0.04
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	An 3D Air Hockey, which uses SDL & OpenGL
 
+DEPRECATED=	development has ceased
+EXPIRATION_DATE=	2011-04-11
+
 USE_GMAKE=	yes
 USE_SDL=	mixer net sdl
 USE_GL=		glut

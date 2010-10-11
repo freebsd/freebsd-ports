@@ -16,6 +16,9 @@ COMMENT=	Cross-platform PHP-driven web-based BitTorrent client
 
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
+DEPRECATED=	development has ceased, and last release is beta
+EXPIRATION_DATE=	2011-04-11
+
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+

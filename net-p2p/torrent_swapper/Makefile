@@ -18,6 +18,9 @@ COMMENT=	Sociable P2P network client based on Bittorrent
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}m2crypto>=0.19.1:${PORTSDIR}/security/py-m2crypto \
 		${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 
+DEPRECATED=	development has ceased (last release is of 2006)
+EXPIRATION_DATE=	2011-04-11
+
 USE_PYTHON=	2.4+
 USE_WX=		2.6+
 WX_COMPS=	python

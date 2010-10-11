@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	alepulver
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	SDLMAME frontend that has been written using Java
 
+DEPRECATED=	development has ceased; try emulators/qmc2 instead
+EXPIRATION_DATE=	2011-04-11
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_WRKSUBDIR=	yes

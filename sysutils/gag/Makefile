@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Graphical Boot Manager
 
+DEPRECATED=	no point in having it as a port, can be downloaded from the website and burned
+EXPIRATION_DATE=	2011-04-11
+
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 USE_ZIP=	yes
 NO_BUILD=	yes
