@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	autobox
-PORTVERSION=	2.70
+PORTVERSION=	2.71
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/C/CH/CHOCOLATE/
@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Call methods on native Perl types
 
-BUILD_DEPENDS=	p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard
-RUN_DEPENDS=	p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard
+BUILD_DEPENDS=	p5-Scope-Guard>=0.20:${PORTSDIR}/devel/p5-Scope-Guard
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
 
