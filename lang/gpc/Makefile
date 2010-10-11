@@ -22,6 +22,9 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed \
 		help2man:${PORTSDIR}/misc/help2man
 
+DEPRECATED=	development has ceased; use lang/fpc instead
+EXPIRATION_DATE=	2011-04-11
+
 USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
