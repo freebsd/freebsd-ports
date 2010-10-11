@@ -5,8 +5,6 @@ include/grx20.h
 include/grxkeys.h
 %%PRINT%%include/grxprint.h
 include/libbcc.h
-%%GPC%%%%BGI%%lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/graph.pas
-%%GPC%%lib/gpc/gcc/%%GNU_HOST%%/%%GCC_VER%%/units/grx.pas
 lib/libgrx20X.a
 lib/libgrx20X.so
 lib/libgrx20X.so.2
