@@ -22,6 +22,14 @@ RUN_DEPENDS=	\
 	p5-URI>0:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+OPTIONS=	YAML "Enable YAML implementation in Perl" On
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_YAML)
+RUN_DEPENDS+=	p5-YAML>=0.71:${PORTSDIR}/textproc/p5-YAML
+.endif
+
 PERL_CONFIGURE=	yes
 
 MAN1=	dancer.1
