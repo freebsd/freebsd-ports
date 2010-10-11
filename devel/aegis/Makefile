@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transaction-based software configuration management system
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
