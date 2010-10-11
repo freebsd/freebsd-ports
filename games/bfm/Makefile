@@ -18,6 +18,9 @@ COMMENT=	Battle for Mandicor is free RTS fantasy game using Stratagus
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		vorbisfile.6:${PORTSDIR}/audio/libvorbis
 
+DEPRECATED=	development has ceased; website disappeared
+EXPIRATION_DATE=	2011-04-11
+
 USE_GMAKE=	yes
 USE_LUA=	5.0
 USE_SDL=	sdl

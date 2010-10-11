@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.jar
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A Java unit testing framework
 
+DEPRECATED=	development has ceased; website disappeared
+EXPIRATION_DATE=	2011-04-11
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 USE_ANT=	yes
