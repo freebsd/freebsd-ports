@@ -2505,6 +2505,7 @@
     SUBDIR += pear-Validate_AU
     SUBDIR += pear-Validate_Finance
     SUBDIR += pear-Validate_Finance_CreditCard
+    SUBDIR += pear-Validate_US
     SUBDIR += pear-Var_Dump
     SUBDIR += pear-VersionControl_Git
     SUBDIR += pear-VersionControl_SVN
