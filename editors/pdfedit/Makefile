@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	editors
 MASTER_SITES=	SF
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free editor for manipulating PDF documents (QT3 GUI and CLI)
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
