@@ -5,14 +5,14 @@
 #
 
 PORTNAME=	ntfs
-PORTVERSION=	2010.3.6
+PORTVERSION=	2010.10.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://tuxera.com/opensource/
 PKGNAMEPREFIX=	fusefs-
 DISTNAME=	${PORTNAME}-3g-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mount NTFS partitions (read/write) and disk images
 
 BUILD_DEPENDS=	fusefs-libs>=2.7.2:${PORTSDIR}/sysutils/fusefs-libs
@@ -22,7 +22,8 @@ RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_ICONV=	yes
-CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
+CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \
+		--disable-mtab --with-fuse=external
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 OPTIONS=	LOCK "Lock the device when mounting (avoids access)" on \
@@ -50,6 +51,8 @@ post-patch:
 		${WRKSRC}/libntfs-3g/object_id.c \
 		${WRKSRC}/libntfs-3g/reparse.c \
 		${WRKSRC}/libntfs-3g/security.c
+	@${REINPLACE_CMD} -e 's|\($$(AM_CFLAGS)\) \(-I$$(top_srcdir)/include/ntfs-3g\)|\2 \1|' \
+		${WRKSRC}/libntfs-3g/Makefile.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -Ee 's|^(install-data-am:) .*|\1|' \
 		${WRKSRC}/Makefile.in
