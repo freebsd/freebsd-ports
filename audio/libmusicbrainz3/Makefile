@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libmusicbrainz3
-PORTVERSION=	3.0.2
-PORTREVISION=	4
+PORTVERSION=	3.0.3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
 		http://uk.musicbrainz.org/pub/musicbrainz/ \
@@ -26,7 +25,10 @@ USE_LDCONFIG=	yes
 
 MAKE_JOBS_SAFE=	yes
 
-pre-configure:
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
+
+post-patch:
 	${REINPLACE_CMD} -e '/pkgconfig/s|$${LIB_INSTALL_DIR}|libdata|' \
 		-e '/CppUnit/d' ${WRKSRC}/CMakeLists.txt
 

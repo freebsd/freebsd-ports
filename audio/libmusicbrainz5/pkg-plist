@@ -19,6 +19,7 @@ include/musicbrainz3/query.h
 include/musicbrainz3/relation.h
 include/musicbrainz3/release.h
 include/musicbrainz3/releaseevent.h
+include/musicbrainz3/releasegroup.h
 include/musicbrainz3/results.h
 include/musicbrainz3/tag.h
 include/musicbrainz3/track.h
@@ -27,6 +28,6 @@ include/musicbrainz3/utils.h
 include/musicbrainz3/webservice.h
 lib/libmusicbrainz3.so
 lib/libmusicbrainz3.so.6
-lib/libmusicbrainz3.so.6.2.0
+lib/libmusicbrainz3.so.6.3.0
 libdata/pkgconfig/libmusicbrainz3.pc
 @dirrm include/musicbrainz3
