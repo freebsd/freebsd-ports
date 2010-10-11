@@ -1,3 +1,4 @@
-This plugin allows for validating custom fields as dates in tickets.
+This plug-in allows you to add entries to the Keywords entry field
+from a configured list of keywords by clicking on them.
 
-WWW: http://trac-hacks.org/wiki/DateFieldPlugin
+WWW: http://trac-hacks.org/wiki/TracKeywordsPlugin
