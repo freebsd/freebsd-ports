@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	demjson
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://deron.meranda.us/python/demjson/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Encoder, Decoder, and Lint/Validator for JSON
 
 USE_PYTHON=	yes
