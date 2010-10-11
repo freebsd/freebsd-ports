@@ -1,0 +1,13 @@
+--- configure.orig	2010-10-11 00:13:35.000000000 -0700
++++ configure	2010-10-11 00:16:22.000000000 -0700
+@@ -316,7 +316,9 @@
+     path = File.join @llvm_prebuilt_path, @llvm_source
+ 
+     puts "  Downloading #{url}..."
+-    return false unless download(url, path)
++    if not File.exists?(path)
++      return false unless download(url, path)
++    end
+ 
+     if File.exists?(path)
+       print "  Unpacking prebuilt LLVM source: "
