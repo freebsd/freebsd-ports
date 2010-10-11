@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	yashin.dm@gmail.com
 COMMENT=	High performance peer-to-peer hub for the ADC network
 
-USE_PERL5=	yes
+USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 
 USE_RC_SUBR=	uhub.sh
