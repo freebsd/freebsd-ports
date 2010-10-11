@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.opendylan.org/downloads/opendylan/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-x86-FreeBSD6
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Dylan project native command-line compiler for Dylan
 
 IA32_BINARY_PORT=	yes
