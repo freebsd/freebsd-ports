@@ -17,6 +17,9 @@ COMMENT=	Easy-to-use password manager compatible with Password Safe
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+DEPRECATED=	development has ceased; try security/gorilla instead
+EXPIRATION_DATE=	2011-04-11
+
 USE_GMAKE=	yes
 USE_QT_VER=	3
 USE_XORG=	xscrnsaver
