@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	spine
-PORTVERSION=	0.8.7.e
-PORTREVISION=	1
+PORTVERSION=	0.8.7.g
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.cacti.net/downloads/${PORTNAME}/
-DISTNAME=	cacti-${PORTNAME}-0.8.7e
+DISTNAME=	cacti-${PORTNAME}-0.8.7g
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	A multithreaded poller for Cacti written in C
@@ -19,6 +18,8 @@ LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} --with-snmp=${LOCALBASE}
+CONFIGURE_ENV=	LDFLAGS="`net-snmp-config --libs`" \
+		CPPFLAGS="`net-snmp-config --cflags`"
 USE_MYSQL=	YES
 USE_OPENSSL=	YES
 USE_AUTOTOOLS=	libtool:22
@@ -32,8 +33,8 @@ pre-configure:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/spine ${PREFIX}/bin
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/spine.conf ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/spine.conf.dist ${EXAMPLESDIR}/spine.conf
 	@[ -e ${PREFIX}/etc/spine.conf ] || \
-		${INSTALL_DATA} ${EXAMPLESDIR}/spine.conf ${PREFIX}/etc/
+		${INSTALL_DATA} ${EXAMPLESDIR}/spine.conf.dist ${PREFIX}/etc/spine.conf
 
 .include <bsd.port.mk>
