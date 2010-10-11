@@ -6398,7 +6398,6 @@ ja-p5-encode-jp-mobile          ports/japanese/p5-Encode-JP-Mobile
 ja-p5-formvalidator-simple-plugin-number-phone-jp  ports/japanese/p5-FormValidator-Simple-Plugin-Number-Phone-JP
 ja-p5-html-mobilejp             ports/japanese/p5-HTML-MobileJp
 ja-p5-jcode                     ports/japanese/p5-Jcode
-ja-p5-jcode.pl                  ports/japanese/p5-jcode.pl
 ja-p5-lingua-ja-kana            ports/japanese/p5-Lingua-JA-Kana
 ja-p5-lingua-ja-numbers         ports/japanese/p5-Lingua-JA-Numbers
 ja-p5-lingua-ja-regular-unicode  ports/japanese/p5-Lingua-JA-Regular-Unicode
@@ -12975,6 +12974,7 @@ p5-Memoize                      ports/devel/p5-Memoize
 p5-Memoize-ExpireLRU            ports/devel/p5-Memoize-ExpireLRU
 p5-Metadata                     ports/databases/p5-Metadata
 p5-Method-Alias                 ports/devel/p5-Method-Alias
+p5-Method-Signatures-Simple     ports/devel/p5-Method-Signatures-Simple
 p5-Mixin-Linewise               ports/devel/p5-Mixin-Linewise
 p5-Mknod                        ports/devel/p5-Mknod
 p5-Modern-Perl                  ports/lang/p5-Modern-Perl
@@ -13039,6 +13039,7 @@ p5-MooseX-Async                 ports/devel/p5-MooseX-Async
 p5-MooseX-AttributeHelpers      ports/devel/p5-MooseX-AttributeHelpers
 p5-MooseX-ClassAttribute        ports/devel/p5-MooseX-ClassAttribute
 p5-MooseX-Clone                 ports/devel/p5-MooseX-Clone
+p5-MooseX-CompileTime-Traits    ports/devel/p5-MooseX-CompileTime-Traits
 p5-MooseX-ConfigFromFile        ports/devel/p5-MooseX-ConfigFromFile
 p5-MooseX-Daemonize             ports/devel/p5-MooseX-Daemonize
 p5-MooseX-Declare               ports/devel/p5-MooseX-Declare
@@ -13478,6 +13479,10 @@ p5-POE-Stage                    ports/devel/p5-POE-Stage
 p5-POE-Test-Loops               ports/devel/p5-POE-Test-Loops
 p5-POE-XS-Loop-Poll             ports/devel/p5-POE-XS-Loop-Poll
 p5-POE-XS-Queue-Array           ports/devel/p5-POE-XS-Queue-Array
+p5-POEx-Role-PSGIServer         ports/www/p5-POEx-Role-PSGIServer
+p5-POEx-Role-SessionInstantiation  ports/devel/p5-POEx-Role-SessionInstantiation
+p5-POEx-Role-Streaming          ports/devel/p5-POEx-Role-Streaming
+p5-POEx-Role-TCPServer          ports/net/p5-POEx-Role-TCPServer
 p5-POEx-Types                   ports/devel/p5-POEx-Types
 p5-POSIX-Regex                  ports/textproc/p5-POSIX-Regex
 p5-POSIX-strptime               ports/devel/p5-POSIX-strptime
@@ -16903,6 +16908,7 @@ p5-memoize                      ports/devel/p5-Memoize
 p5-memoize-expirelru            ports/devel/p5-Memoize-ExpireLRU
 p5-metadata                     ports/databases/p5-Metadata
 p5-method-alias                 ports/devel/p5-Method-Alias
+p5-method-signatures-simple     ports/devel/p5-Method-Signatures-Simple
 p5-midi                         ports/audio/p5-MIDI
 p5-mime-base32                  ports/converters/p5-MIME-Base32
 p5-mime-base64                  ports/converters/p5-MIME-Base64
@@ -16988,6 +16994,7 @@ p5-moosex-async                 ports/devel/p5-MooseX-Async
 p5-moosex-attributehelpers      ports/devel/p5-MooseX-AttributeHelpers
 p5-moosex-classattribute        ports/devel/p5-MooseX-ClassAttribute
 p5-moosex-clone                 ports/devel/p5-MooseX-Clone
+p5-moosex-compiletime-traits    ports/devel/p5-MooseX-CompileTime-Traits
 p5-moosex-configfromfile        ports/devel/p5-MooseX-ConfigFromFile
 p5-moosex-daemonize             ports/devel/p5-MooseX-Daemonize
 p5-moosex-declare               ports/devel/p5-MooseX-Declare
@@ -17589,6 +17596,10 @@ p5-poe-stage                    ports/devel/p5-POE-Stage
 p5-poe-test-loops               ports/devel/p5-POE-Test-Loops
 p5-poe-xs-loop-poll             ports/devel/p5-POE-XS-Loop-Poll
 p5-poe-xs-queue-array           ports/devel/p5-POE-XS-Queue-Array
+p5-poex-role-psgiserver         ports/www/p5-POEx-Role-PSGIServer
+p5-poex-role-sessioninstantiation  ports/devel/p5-POEx-Role-SessionInstantiation
+p5-poex-role-streaming          ports/devel/p5-POEx-Role-Streaming
+p5-poex-role-tcpserver          ports/net/p5-POEx-Role-TCPServer
 p5-poex-types                   ports/devel/p5-POEx-Types
 p5-posix-regex                  ports/textproc/p5-POSIX-Regex
 p5-posix-strptime               ports/devel/p5-POSIX-strptime
@@ -21564,6 +21575,7 @@ qcc                             ports/games/qcc
 qccx                            ports/games/qccx
 qcl                             ports/science/qcl
 qcomicbook                      ports/graphics/qcomicbook
+qconf                           ports/devel/qconf
 qconfirm                        ports/mail/qconfirm
 qcread                          ports/graphics/qcread
 qct                             ports/devel/qct
@@ -26310,6 +26322,7 @@ xpi-informenter                 ports/www/xpi-informenter
 xpi-inline-google-definitions   ports/www/xpi-inline-google-definitions
 xpi-it_s_all_text               ports/www/xpi-it_s_all_text
 xpi-joga                        ports/www/xpi-joga
+xpi-jslib                       ports/www/xpi-jslib
 xpi-jsview                      ports/www/xpi-jsview
 xpi-jv                          ports/www/xpi-jv
 xpi-leechblock                  ports/www/xpi-leechblock
@@ -26349,6 +26362,7 @@ xpi-stylish                     ports/www/xpi-stylish
 xpi-table2clipboard             ports/www/xpi-table2clipboard
 xpi-tabletools                  ports/www/xpi-tabletools
 xpi-tabmixplus                  ports/www/xpi-tabmixplus
+xpi-tagzilla                    ports/www/xpi-tagzilla
 xpi-togglewordwrap              ports/www/xpi-togglewordwrap
 xpi-torbutton                   ports/www/xpi-torbutton
 xpi-twitterfox                  ports/www/xpi-twitterfox
