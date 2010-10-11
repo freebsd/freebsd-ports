@@ -4626,3 +4626,4 @@ devel/automake19||2010-10-07|No longer required by any port
 devel/automake110||2010-10-07|No longer required by any port
 japanese/p5-jcode.pl|japanese/jcode.pl|2010-10-10|Duplicate port
 www/p5-Plack-Server-ServerSimple|www/p5-Plack|2010-10-11|Included in p5-Plack now
+www/trac-multirepos||2010-10-11|Has expired: Multiple repositories support has been merged in trunk, please use Trac 0.12+ (www/trac) instead
