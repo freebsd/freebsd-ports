@@ -47,6 +47,10 @@ To mount at startup you need to have the following line in /etc/rc.conf:
 
 fusefs_enable="YES"
 
+Then create the following symlink:
+
+$ ln -s `which ntfs-3g` /usr/sbin/mount_ntfs-3g
+
 And add the appropiate line to /etc/fstab: the filesystem should be "ntfs-3g"
 instead of "ntfs", and the additional "late" parameter is required. Example:
 

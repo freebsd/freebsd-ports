@@ -1,9 +1,8 @@
+bin/lowntfs-3g
 bin/ntfs-3g
 bin/ntfs-3g.probe
 bin/ntfs-3g.secaudit
 bin/ntfs-3g.usermap
-@exec ln -fs %D/%F /usr/sbin/mount_ntfs-3g
-@unexec rm -f /usr/sbin/mount_ntfs-3g
 include/ntfs-3g/acls.h
 include/ntfs-3g/attrib.h
 include/ntfs-3g/attrlist.h
@@ -41,7 +40,7 @@ include/ntfs-3g/volume.h
 lib/libntfs-3g.a
 lib/libntfs-3g.la
 lib/libntfs-3g.so
-lib/libntfs-3g.so.75
+lib/libntfs-3g.so.80
 libdata/pkgconfig/libntfs-3g.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD

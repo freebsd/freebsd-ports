@@ -1,6 +1,32 @@
---- src/Makefile.in.orig	2008-05-28 20:08:07.000000000 +0100
-+++ src/Makefile.in	2008-06-14 23:44:30.000000000 +0100
-@@ -638,7 +638,7 @@
+--- src/Makefile.in.orig	2010-03-06 13:12:36.000000000 -0300
++++ src/Makefile.in	2010-06-21 21:59:54.000000000 -0300
+@@ -255,10 +255,10 @@
+ ntfs_3g_LDADD = $(FUSE_LIBS) $(top_builddir)/libntfs-3g/libntfs-3g.la
+ @REALLYSTATIC_TRUE@ntfs_3g_LDFLAGS = $(AM_LDFLAGS) -all-static
+ ntfs_3g_CFLAGS = \
++	-I$(top_srcdir)/include/ntfs-3g \
+ 	$(AM_CFLAGS) 			\
+ 	-DFUSE_USE_VERSION=26 		\
+-	$(FUSE_CFLAGS) 			\
+-	-I$(top_srcdir)/include/ntfs-3g
++	$(FUSE_CFLAGS)
+ 
+ ntfs_3g_SOURCES = ntfs-3g.c
+ ntfs_3g_probe_LDADD = $(top_builddir)/libntfs-3g/libntfs-3g.la
+@@ -267,9 +267,9 @@
+ @REALLYSTATIC_TRUE@ntfs_3g_probe_LDFLAGS = $(AM_LDFLAGS) -all-static
+ @REALLYSTATIC_TRUE@ntfs_3g_usermap_LDFLAGS = $(AM_LDFLAGS) -all-static
+ @REALLYSTATIC_TRUE@ntfs_3g_secaudit_LDFLAGS = $(AM_LDFLAGS) -all-static
+-ntfs_3g_probe_CFLAGS = $(AM_CFLAGS) -I$(top_srcdir)/include/ntfs-3g
+-ntfs_3g_usermap_CFLAGS = $(AM_CFLAGS) -I$(top_srcdir)/include/ntfs-3g
+-ntfs_3g_secaudit_CFLAGS = $(AM_CFLAGS) -I$(top_srcdir)/include/ntfs-3g
++ntfs_3g_probe_CFLAGS = -I$(top_srcdir)/include/ntfs-3g $(AM_CFLAGS)
++ntfs_3g_usermap_CFLAGS = -I$(top_srcdir)/include/ntfs-3g $(AM_CFLAGS)
++ntfs_3g_secaudit_CFLAGS = -I$(top_srcdir)/include/ntfs-3g $(AM_CFLAGS)
+ ntfs_3g_probe_SOURCES = ntfs-3g.probe.c
+ ntfs_3g_usermap_SOURCES = usermap.c
+ ntfs_3g_secaudit_SOURCES = secaudit.c
+@@ -667,7 +667,7 @@
  
  info-am:
  
@@ -8,15 +34,4 @@
 +install-data-am: install-man \
  	install-rootbinPROGRAMS install-rootsbinDATA
  
- install-exec-am: install-binPROGRAMS install-exec-local
-@@ -699,8 +699,8 @@
- @RUN_LDCONFIG_TRUE@	$(LDCONFIG)
- 
- @ENABLE_MOUNT_HELPER_TRUE@install-exec-local:	install-rootbinPROGRAMS
--@ENABLE_MOUNT_HELPER_TRUE@	$(MKDIR_P) "$(DESTDIR)/sbin"
--@ENABLE_MOUNT_HELPER_TRUE@	$(LN_S) -f "$(rootbindir)/ntfs-3g" "$(DESTDIR)/sbin/mount.ntfs-3g"
-+@ENABLE_MOUNT_HELPER_TRUE@	$(MKDIR_P) "/usr/sbin"
-+@ENABLE_MOUNT_HELPER_TRUE@	$(LN_S) -f "$(rootbindir)/ntfs-3g" "/usr/sbin/mount_ntfs-3g"
- 
- install-data-local:	install-man8
- 	$(LN_S) -f ntfs-3g.8 "$(DESTDIR)$(man8dir)/mount.ntfs-3g.8"
+ install-dvi: install-dvi-am
