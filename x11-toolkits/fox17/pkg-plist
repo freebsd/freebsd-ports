@@ -219,6 +219,7 @@ include/fox-%%MAJORVER%%/FXPopup.h
 include/fox-%%MAJORVER%%/FXPrintDialog.h
 include/fox-%%MAJORVER%%/FXProgressBar.h
 include/fox-%%MAJORVER%%/FXProgressDialog.h
+include/fox-%%MAJORVER%%/FXPtrQueue.h
 include/fox-%%MAJORVER%%/FXQuatd.h
 include/fox-%%MAJORVER%%/FXQuatf.h
 include/fox-%%MAJORVER%%/FXRASIcon.h
