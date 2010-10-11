@@ -1,6 +1,15 @@
---- configure.in.orig	2009-01-19 12:25:38.000000000 +0300
-+++ configure.in	2009-06-19 15:35:22.000000000 +0400
-@@ -1020,7 +1020,7 @@
+--- configure.in.orig	2009-12-24 01:10:03.000000000 -0800
++++ configure.in	2010-10-10 23:21:07.000000000 -0700
+@@ -502,7 +502,7 @@
+ AC_CHECK_LIB(crypt, crypt)
+ AC_CHECK_LIB(dl, dlopen)	# Dynamic linking for SunOS/Solaris and SYSV
+ AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-UX
+-AC_CHECK_LIB(rt, clock_gettime)	# GNU/Linux
++AC_SEARCH_LIBS(clock_gettime, rt) # GNU/Linux
+ 
+ case "$target_cpu" in
+ alpha*)		case "$target_os"::"$GCC" in
+@@ -1021,7 +1021,7 @@
  	case $pthread_lib in
  	c)
  	    ;;
@@ -9,7 +18,14 @@
  	    MAINLIBS="-pthread $MAINLIBS"
  	    ;;
  	*)
-@@ -1037,6 +1037,14 @@
+@@ -1033,11 +1033,19 @@
+     fi
+     AC_CHECK_FUNCS(nanosleep)
+     if test x"$ac_cv_func_nanosleep" = xno; then
+-       AC_CHECK_LIB(rt, nanosleep)
+-       if test x"$ac_cv_lib_rt_nanosleep" = xyes; then
++       AC_SEARCH_LIBS(nanosleep, rt)
++       if test x"$ac_cv_search_nanosleep" != xno; then
             AC_DEFINE(HAVE_NANOSLEEP)
         fi
      fi
@@ -24,7 +40,7 @@
  fi
  if test x"$ac_cv_header_ucontext_h" = xyes; then
      if test x"$rb_with_pthread" = xyes; then
-@@ -1441,7 +1449,7 @@
+@@ -1446,7 +1454,7 @@
  SOLIBS=
  
  case "$target_os" in
