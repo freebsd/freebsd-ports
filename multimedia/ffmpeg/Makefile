@@ -224,7 +224,7 @@ CONFIGURE_ARGS+=	--disable-libopenjpeg
 
 # schroedinger
 .ifndef(WITHOUT_SCHROEDINGER)
-LIB_DEPENDS+=	schroedinger-1.0.3:${PORTSDIR}/multimedia/schroedinger
+LIB_DEPENDS+=	schroedinger-1.0.10:${PORTSDIR}/multimedia/schroedinger
 CONFIGURE_ARGS+=	--enable-libschroedinger
 .else
 CONFIGURE_ARGS+=	--disable-libschroedinger

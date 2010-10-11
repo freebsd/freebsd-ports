@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	schroedinger
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.10
 CATEGORIES=	multimedia
 MASTER_SITES=	http://diracvideo.org/download/schroedinger/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,6 +23,6 @@ MAKE_JOBS_SAFE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e 's|^pkgconfigdir=.*|pkgconfigdir="\\$$(prefix)/libdata/pkgconfig"|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^pkgconfigdir=.*|pkgconfigdir="\\$$(prefix)/libdata/pkgconfig"|' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

@@ -488,7 +488,7 @@ gst_speex_PLIST_FILES=	${GST_LIB_DIR}/libgstspeex.la \
 			${GST_LIB_DIR}/libgstspeex.so
 
 # schro(edinger)
-gst_schroedinger_LIB_DEPENDS+=	schroedinger-1.0.3:${PORTSDIR}/multimedia/schroedinger
+gst_schroedinger_LIB_DEPENDS+=	schroedinger-1.0.10:${PORTSDIR}/multimedia/schroedinger
 gst_schroedinger_CONFIGURE_ARGS+=--enable-schro
 gst_schroedinger_PLIST_FILES=	${GST_LIB_DIR}/libgstschro.la \
 				${GST_LIB_DIR}/libgstschro.so
