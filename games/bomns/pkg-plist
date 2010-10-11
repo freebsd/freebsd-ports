@@ -1,11 +1,14 @@
 bin/bomns
-%%EDITOR%%bin/bomnsedit
-%%LAUNCHER%%bin/bomnslauncher2
+bin/bomnsedit
+bin/bomnslauncher2
+share/applications/bomns.desktop
+%%DATADIR%%/graphics/bomn32.bmp
 %%DATADIR%%/graphics/editor_cursor.bmp
 %%DATADIR%%/graphics/editor_hud.bmp
 %%DATADIR%%/graphics/font.bmp
 %%DATADIR%%/graphics/hud.bmp
 %%DATADIR%%/graphics/intro.bmp
+%%DATADIR%%/graphics/objects-shiny.bmp
 %%DATADIR%%/graphics/objects.bmp
 %%DATADIR%%/graphics/players.bmp
 %%DATADIR%%/graphics/winscreen.bmp
@@ -25,6 +28,12 @@ bin/bomns
 %%DATADIR%%/sounds/invulnerable.wav
 %%DATADIR%%/sounds/warp.wav
 %%DATADIR%%/sounds/winner.wav
+share/icons/hicolor/128x128/apps/bomns.png
+share/icons/hicolor/16x16/apps/bomns.png
+share/icons/hicolor/256x256/apps/bomns.png
+share/icons/hicolor/32x32/apps/bomns.png
+share/icons/hicolor/48x48/apps/bomns.png
+share/icons/hicolor/64x64/apps/bomns.png
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/levels
 @dirrm %%DATADIR%%/graphics

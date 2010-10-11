@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bomns
-PORTVERSION=	0.99.1
-PORTREVISION=	9
+PORTVERSION=	0.99.2
 CATEGORIES=	games
 MASTER_SITES=	SF/greenridge/Bomns%20for%20Linux/Bomns%20for%20Linux%20${PORTVERSION}
 
@@ -17,6 +16,7 @@ COMMENT=	The best old-school deathmatch game EVER (only for two players)
 USE_BZIP2=	yes
 USE_SDL=	mixer sdl
 WANT_GNOME=	yes
+INSTALLS_ICONS=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \
