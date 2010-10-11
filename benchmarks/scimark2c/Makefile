@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	scimark2c
-PORTVERSION=	2.0
+DISTVERSION=	2_1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://math.nist.gov/scimark2/
-DISTNAME=	${PORTNAME}
+DISTNAME=	${PORTNAME:S/2/${DISTVERSION}/}
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	An ANSI C version of the SciMark2 benchmark
@@ -18,15 +18,8 @@ PLIST_FILES=	bin/scimark2
 WRKSRC=		${WRKDIR}
 USE_ZIP=	yes
 
-MALLOC2STD=	kernel.c Stopwatch.c Random.c array.c
-
-post-patch:
-.for file in ${MALLOC2STD}
-	@${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|" ${WRKSRC}/${file}
-.endfor
-
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/scimark2 ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/scimark2 ${PREFIX}/bin
 
 post-install:
 	@${ECHO} "*****************************************************************************"
