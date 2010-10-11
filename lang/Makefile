@@ -294,6 +294,7 @@
     SUBDIR += rexx-wrapper
     SUBDIR += rhino
     SUBDIR += rscheme
+    SUBDIR += rubinius
     SUBDIR += ruby-doc-stdlib
     SUBDIR += ruby-extensions
     SUBDIR += ruby-js

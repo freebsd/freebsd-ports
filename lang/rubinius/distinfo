@@ -1,0 +1,6 @@
+MD5 (rubinius-1.1.0.tar.gz) = e2ae16238b201de09975abe19da09ea9
+SHA256 (rubinius-1.1.0.tar.gz) = d9cb10b56729d536e7a7a971f988b9616d530b0080bc01642871e8612dcffbfb
+SIZE (rubinius-1.1.0.tar.gz) = 7966826
+MD5 (llvm-2.6-source.tar.bz2) = 9df277701ca3f30609ff964ef89bc853
+SHA256 (llvm-2.6-source.tar.bz2) = 58f9424bcb6dadddd33598c68cd5628c8a280a8e562be5c14e0dc0ce4d958543
+SIZE (llvm-2.6-source.tar.bz2) = 11067177
