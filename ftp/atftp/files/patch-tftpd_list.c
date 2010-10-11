@@ -1,11 +1,42 @@
---- tftpd_list.c.orig	2010-10-05 13:11:12.000000000 +0800
-+++ tftpd_list.c	2010-10-05 13:18:09.000000000 +0800
-@@ -149,7 +149,7 @@
+--- tftpd_list.c.orig	2010-10-11 12:44:39.000000000 +0800
++++ tftpd_list.c	2010-10-11 12:44:34.000000000 +0800
+@@ -137,23 +137,17 @@
+                                              struct thread_data *data,
+                                              struct client_info *client)
+ {
+-     struct thread_data *current = thread_data; /* head of the list */
++     struct thread_data *current;
+      struct tftp_opt *tftp_options = data->tftp_options;
+      struct client_info *tmp;
+-     char options[MAXLEN];
+-     char string[MAXLEN];
+-     char *index;
+-     int len;
  
-      opt_request_to_string(tftp_options, options, MAXLEN);
-      index = strstr(options, "multicast");
+      *thread = NULL;
+ 
+-     opt_request_to_string(tftp_options, options, MAXLEN);
+-     index = strstr(options, "multicast");
 -     len = (int)index - (int)options;
-+     len = strlen(options) - strlen(index);
- 
+-
       /* lock the whole list before walking it */
       pthread_mutex_lock(&thread_list_mutex);
+ 
++     current = thread_data; /* head of the list */ 
++
+      while (current)
+      {
+           if (current != data)
+@@ -162,9 +156,9 @@
+                pthread_mutex_lock(&current->client_mutex);
+                if (current->client_ready == 1)
+                {
+-                    opt_request_to_string(current->tftp_options, string, MAXLEN);
+-                    /* must have exact same option string */
+-                    if (strncmp(string, options, len) == 0)
++		    /* must have exact same mode and refer to the same file */
++		    if (opt_same_file(current->tftp_options,tftp_options) &&
++			opt_equal(&(current->tftp_options[OPT_MODE]), &(tftp_options[OPT_MODE])))
+                     {
+                          *thread = current;                         
+                          /* insert the new client at the end. If the client is already

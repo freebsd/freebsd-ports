@@ -1,39 +1,44 @@
 --- tftp_io.c.orig	2004-02-19 09:30:00.000000000 +0800
-+++ tftp_io.c	2010-10-04 18:45:56.000000000 +0800
-@@ -102,8 +102,8 @@
-      tftphdr.th_opcode = htons(ACK);
++++ tftp_io.c	2010-10-11 13:01:28.000000000 +0800
+@@ -103,7 +103,8 @@
       tftphdr.th_block = htons(block_number);
  
--     result = sendto(socket, &tftphdr, 4, 0, (struct sockaddr *)sa,
+      result = sendto(socket, &tftphdr, 4, 0, (struct sockaddr *)sa,
 -                     sizeof(*sa));
-+     result = write(socket, &tftphdr, 4);
++		     sizeof(*sa));
 +
       if (result < 0)
            return ERR;
       return OK;
-@@ -141,8 +141,8 @@
-           }
+@@ -142,7 +143,8 @@
       }
       /* send the buffer */
--     result = sendto(socket, buffer, index, 0, (struct sockaddr *)sa,
+      result = sendto(socket, buffer, index, 0, (struct sockaddr *)sa,
 -                     sizeof(*sa));
-+     result = write(socket, buffer, index);
++		     sizeof(*sa));
 +
       if (result < 0)
            return ERR;
       return OK;
-@@ -191,8 +191,8 @@
-      tftphdr->th_opcode = htons(DATA);
+@@ -171,6 +173,7 @@
+ 
+      result = sendto(socket, tftphdr, size, 0, (struct sockaddr *)sa,
+                      sizeof(*sa));
++
+      if (result < 0)
+           return ERR;
+      return OK;
+@@ -192,7 +195,8 @@
       tftphdr->th_block = htons(block_number);
  
--     result = sendto(socket, data, size, 0, (struct sockaddr *)sa,
+      result = sendto(socket, data, size, 0, (struct sockaddr *)sa,
 -                     sizeof(*sa));
-+     result = write(socket, data, size);
++		     sizeof(*sa));
 +
       if (result < 0)
            return ERR;
       return OK;
-@@ -214,7 +214,6 @@
+@@ -214,7 +218,6 @@
  
       struct msghdr msg;         /* used to get client's packet info */
       struct cmsghdr *cmsg;
@@ -41,7 +46,7 @@
       struct iovec iov;
       char cbuf[1024];
  
-@@ -284,11 +283,12 @@
+@@ -284,11 +287,12 @@
                      cmsg != NULL && cmsg->cmsg_len >= sizeof(*cmsg);
                      cmsg = CMSG_NXTHDR(&msg, cmsg))
                 {
