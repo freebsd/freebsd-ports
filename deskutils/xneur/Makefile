@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	xneur
-PORTVERSION=	0.9.4
-PORTREVISION=	2
+PORTVERSION=	0.10.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dists.xneur.ru/release-${DISTVERSION}/tgz/ \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	admin@lissyara.su
 COMMENT=	Auto keyboard switcher
+
+LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -89,9 +90,8 @@ LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS=/s|="|="$$CFLAGS |' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/^am__strip_dir/s#`;#|sed -Ee \
-		"s/^(dict.dist|proto|proto3|langdef|regexp|xneurrc|xneurrc-be|xneurrc-bg|xneurrc-cs|xneurrc-el|xneurrc-es|xneurrc-et|xneurrc-kk|xneurrc-lt|xneurrc-lv|xneurrc-pl|xneurrc-uz|xneurrc-uk|xneurrc-fr|xneurrc-ro|xneurrc-de|xneurrc-kz|dict)$$$$/\\1.dist/"`;#' \
-		${WRKSRC}/etc/Makefile.in ${WRKSRC}/etc/Makefile.am
+	@${REINPLACE_CMD} -e 's|	xneurrc	|xneurrc.dist|g' ${WRKSRC}/etc/Makefile.in
+	${CP} -np ${WRKSRC}/etc/xneurrc ${WRKSRC}/etc/xneurrc.dist
 
 post-install:
 	@for i in ${PREFIX}/etc/xneur/*.dist ;\
