@@ -9,8 +9,7 @@ PORTNAME=	watchfolder
 PORTVERSION=	0.3.3
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://dstunrea.sdf-eu.org/files/ \
-		CRITICAL
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Watch folders for new files and process them
