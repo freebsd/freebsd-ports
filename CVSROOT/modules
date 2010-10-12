@@ -12768,6 +12768,7 @@ p5-Log-Agent-Logger             ports/devel/p5-Log-Agent-Logger
 p5-Log-Any                      ports/devel/p5-Log-Any
 p5-Log-Any-Adapter              ports/devel/p5-Log-Any-Adapter
 p5-Log-Any-Adapter-Dispatch     ports/devel/p5-Log-Any-Adapter-Dispatch
+p5-Log-Any-Adapter-Syslog       ports/devel/p5-Log-Any-Adapter-Syslog
 p5-Log-Dispatch                 ports/devel/p5-Log-Dispatch
 p5-Log-Dispatch-Colorful        ports/devel/p5-Log-Dispatch-Colorful
 p5-Log-Dispatch-Config          ports/devel/p5-Log-Dispatch-Config
@@ -14502,6 +14503,7 @@ p5-WebService-Basecamp          ports/www/p5-WebService-Basecamp
 p5-WebService-Bloglines         ports/www/p5-WebService-Bloglines
 p5-WebService-BuzzurlAPI        ports/www/p5-WebService-BuzzurlAPI
 p5-WebService-CIA               ports/www/p5-WebService-CIA
+p5-WebService-GData             ports/www/p5-WebService-GData
 p5-WebService-Google-Reader     ports/www/p5-WebService-Google-Reader
 p5-WebService-Google-Sets       ports/www/p5-WebService-Google-Sets
 p5-WebService-ISBNDB            ports/www/p5-WebService-ISBNDB
@@ -16721,6 +16723,7 @@ p5-log-agent-logger             ports/devel/p5-Log-Agent-Logger
 p5-log-any                      ports/devel/p5-Log-Any
 p5-log-any-adapter              ports/devel/p5-Log-Any-Adapter
 p5-log-any-adapter-dispatch     ports/devel/p5-Log-Any-Adapter-Dispatch
+p5-log-any-adapter-syslog       ports/devel/p5-Log-Any-Adapter-Syslog
 p5-log-dispatch                 ports/devel/p5-Log-Dispatch
 p5-log-dispatch-colorful        ports/devel/p5-Log-Dispatch-Colorful
 p5-log-dispatch-config          ports/devel/p5-Log-Dispatch-Config
@@ -18430,6 +18433,7 @@ p5-webservice-basecamp          ports/www/p5-WebService-Basecamp
 p5-webservice-bloglines         ports/www/p5-WebService-Bloglines
 p5-webservice-buzzurlapi        ports/www/p5-WebService-BuzzurlAPI
 p5-webservice-cia               ports/www/p5-WebService-CIA
+p5-webservice-gdata             ports/www/p5-WebService-GData
 p5-webservice-google-reader     ports/www/p5-WebService-Google-Reader
 p5-webservice-google-sets       ports/www/p5-WebService-Google-Sets
 p5-webservice-isbndb            ports/www/p5-WebService-ISBNDB
@@ -19134,6 +19138,7 @@ pear-Validate                   ports/devel/pear-Validate
 pear-Validate_AU                ports/devel/pear-Validate_AU
 pear-Validate_Finance           ports/devel/pear-Validate_Finance
 pear-Validate_Finance_CreditCard  ports/devel/pear-Validate_Finance_CreditCard
+pear-Validate_US                ports/devel/pear-Validate_US
 pear-Var_Dump                   ports/devel/pear-Var_Dump
 pear-VersionControl_Git         ports/devel/pear-VersionControl_Git
 pear-VersionControl_SVN         ports/devel/pear-VersionControl_SVN
@@ -19419,6 +19424,7 @@ pear-validate                   ports/devel/pear-Validate
 pear-validate_au                ports/devel/pear-Validate_AU
 pear-validate_finance           ports/devel/pear-Validate_Finance
 pear-validate_finance_creditcard  ports/devel/pear-Validate_Finance_CreditCard
+pear-validate_us                ports/devel/pear-Validate_US
 pear-var_dump                   ports/devel/pear-Var_Dump
 pear-versioncontrol_git         ports/devel/pear-VersionControl_Git
 pear-versioncontrol_svn         ports/devel/pear-VersionControl_SVN
@@ -21050,6 +21056,7 @@ py-omniorb                      ports/devel/py-omniorb
 py-oops                         ports/databases/py-oops
 py-openal                       ports/audio/py-openal
 py-openbabel                    ports/science/py-openbabel
+py-openexr                      ports/graphics/py-openexr
 py-opengl                       ports/graphics/py-opengl
 py-openid                       ports/security/py-openid
 py-openlp                       ports/multimedia/py-openlp
