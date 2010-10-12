@@ -35,7 +35,7 @@ QMAKEFLAGS+=	USE_ASPELL=false
 
 post-patch:
 	@${REINPLACE_CMD} -e '/aspell/s,/usr,${LOCALBASE},' ${WRKSRC}/src.pro
-	@${REINPLACE_CMD} -e '/include <.usr.X11R6.include.X11.Xutil.h>/d' ${WRKSRC}/qxtwindowsystem_x11.cpp
+	@${REINPLACE_CMD} -e 's|/usr/X11R6/include/X11|X11|' ${WRKSRC}/qxtwindowsystem_x11.cpp
 
 do-configure:
 	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
