@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bluej
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	3.0.2
 CATEGORIES=	java editors
 MASTER_SITES=	http://www.bluej.org/download/files/ \
 		ftp://ftp.bluej.org/pub/bluej/
@@ -22,7 +21,7 @@ IS_INTERACTIVE=	yes
 NO_BUILD=	yes
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.6+
 
 do-install:
 	@${ECHO} Starting BlueJ graphical installer...  Please install to default path of

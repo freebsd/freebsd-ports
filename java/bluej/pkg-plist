@@ -1,19 +1,21 @@
 bin/bluej
+bluej/LICENSE.txt
+bluej/THIRDPARTYLICENSE.txt
 bluej/bluej
 bluej/examples/appletdemo/CaseConverter.java
 bluej/examples/appletdemo/README.TXT
-bluej/examples/appletdemo/bluej.pkg
+bluej/examples/appletdemo/package.bluej
 bluej/examples/debugdemo/Car.java
 bluej/examples/debugdemo/Demo.java
 bluej/examples/debugdemo/README.TXT
-bluej/examples/debugdemo/bluej.pkg
+bluej/examples/debugdemo/package.bluej
 bluej/examples/file-reader/FileReader.java
 bluej/examples/file-reader/README.TXT
-bluej/examples/file-reader/bluej.pkg
+bluej/examples/file-reader/package.bluej
 bluej/examples/file-reader/test.txt
 bluej/examples/hello/Hello.java
 bluej/examples/hello/README.TXT
-bluej/examples/hello/bluej.pkg
+bluej/examples/hello/package.bluej
 bluej/examples/people/Database.class
 bluej/examples/people/Database.ctxt
 bluej/examples/people/Database.java
@@ -27,29 +29,32 @@ bluej/examples/people/Staff.java
 bluej/examples/people/Student.class
 bluej/examples/people/Student.ctxt
 bluej/examples/people/Student.java
-bluej/examples/people/bluej.pkg
-bluej/examples/people/submitter.properties
+bluej/examples/people/package.bluej
 bluej/examples/people2/Address.java
 bluej/examples/people2/Database.java
 bluej/examples/people2/Person.java
 bluej/examples/people2/README.TXT
 bluej/examples/people2/Staff.java
 bluej/examples/people2/Student.java
-bluej/examples/people2/bluej.pkg
+bluej/examples/people2/package.bluej
 bluej/examples/picture/Canvas.java
 bluej/examples/picture/Circle.java
 bluej/examples/picture/Picture.java
 bluej/examples/picture/README.TXT
 bluej/examples/picture/Square.java
 bluej/examples/picture/Triangle.java
-bluej/examples/picture/bluej.pkg
+bluej/examples/picture/package.bluej
 bluej/examples/shapes/Canvas.java
 bluej/examples/shapes/Circle.java
 bluej/examples/shapes/README.TXT
 bluej/examples/shapes/Square.java
 bluej/examples/shapes/Triangle.java
-bluej/examples/shapes/bluej.pkg
-bluej/lib/MRJ141Stubs.jar
+bluej/examples/shapes/package.bluej
+bluej/icons/bluej-84-toned.jpg
+bluej/icons/bluej-icon-512-embossed.png
+bluej/icons/bluej-vista.ico
+bluej/icons/license.txt
+bluej/lib/AppleJavaExtensions.jar
 bluej/lib/afrikaans/dialogues
 bluej/lib/afrikaans/exception.help
 bluej/lib/afrikaans/javac.help
@@ -67,8 +72,6 @@ bluej/lib/afrikaans/templates/newclass/interface.tmpl
 bluej/lib/afrikaans/templates/newclass/stdclass.tmpl
 bluej/lib/afrikaans/templates/newclass/unittest.tmpl
 bluej/lib/afrikaans/templates/readme.tmpl
-bluej/lib/afrikaans/templates/readmeexp.tmpl
-bluej/lib/antlr.jar
 bluej/lib/bluej.defs
 bluej/lib/bluej.jar
 bluej/lib/bluejcore.jar
@@ -91,7 +94,6 @@ bluej/lib/catalan/templates/newclass/interface.tmpl
 bluej/lib/catalan/templates/newclass/stdclass.tmpl
 bluej/lib/catalan/templates/newclass/unittest.tmpl
 bluej/lib/catalan/templates/readme.tmpl
-bluej/lib/catalan/templates/readmeexp.tmpl
 bluej/lib/chinese/dialogues
 bluej/lib/chinese/exception.help
 bluej/lib/chinese/javac.help
@@ -109,7 +111,6 @@ bluej/lib/chinese/templates/newclass/interface.tmpl
 bluej/lib/chinese/templates/newclass/stdclass.tmpl
 bluej/lib/chinese/templates/newclass/unittest.tmpl
 bluej/lib/chinese/templates/readme.tmpl
-bluej/lib/chinese/templates/readmeexp.tmpl
 bluej/lib/czech/dialogues
 bluej/lib/czech/exception.help
 bluej/lib/czech/javac.help
@@ -126,10 +127,11 @@ bluej/lib/czech/templates/newclass/appletj.tmpl
 bluej/lib/czech/templates/newclass/emptyclass.tmpl
 bluej/lib/czech/templates/newclass/enum.tmpl
 bluej/lib/czech/templates/newclass/interface.tmpl
+bluej/lib/czech/templates/newclass/mainclass.tmpl
+bluej/lib/czech/templates/newclass/midlet.tmpl
 bluej/lib/czech/templates/newclass/stdclass.tmpl
 bluej/lib/czech/templates/newclass/unittest.tmpl
 bluej/lib/czech/templates/readme.tmpl
-bluej/lib/czech/templates/readmeexp.tmpl
 bluej/lib/danish/dialogues
 bluej/lib/danish/exception.help
 bluej/lib/danish/javac.help
@@ -147,7 +149,6 @@ bluej/lib/danish/templates/newclass/interface.tmpl
 bluej/lib/danish/templates/newclass/stdclass.tmpl
 bluej/lib/danish/templates/newclass/unittest.tmpl
 bluej/lib/danish/templates/readme.tmpl
-bluej/lib/danish/templates/readmeexp.tmpl
 bluej/lib/dutch/dialogues
 bluej/lib/dutch/exception.help
 bluej/lib/dutch/javac.help
@@ -165,7 +166,6 @@ bluej/lib/dutch/templates/newclass/interface.tmpl
 bluej/lib/dutch/templates/newclass/stdclass.tmpl
 bluej/lib/dutch/templates/newclass/unittest.tmpl
 bluej/lib/dutch/templates/readme.tmpl
-bluej/lib/dutch/templates/readmeexp.tmpl
 bluej/lib/english/dialogues
 bluej/lib/english/exception.help
 bluej/lib/english/javac.help
@@ -180,10 +180,10 @@ bluej/lib/english/templates/newclass/abstract.tmpl
 bluej/lib/english/templates/newclass/appletj.tmpl
 bluej/lib/english/templates/newclass/enum.tmpl
 bluej/lib/english/templates/newclass/interface.tmpl
+bluej/lib/english/templates/newclass/midlet.tmpl
 bluej/lib/english/templates/newclass/stdclass.tmpl
 bluej/lib/english/templates/newclass/unittest.tmpl
 bluej/lib/english/templates/readme.tmpl
-bluej/lib/english/templates/readmeexp.tmpl
 bluej/lib/extensions/submitter.jar
 bluej/lib/french/dialogues
 bluej/lib/french/exception.help
@@ -203,7 +203,6 @@ bluej/lib/french/templates/newclass/interface.tmpl
 bluej/lib/french/templates/newclass/stdclass.tmpl
 bluej/lib/french/templates/newclass/unittest.tmpl
 bluej/lib/french/templates/readme.tmpl
-bluej/lib/french/templates/readmeexp.tmpl
 bluej/lib/german/dialogues
 bluej/lib/german/exception.help
 bluej/lib/german/javac.help
@@ -218,10 +217,10 @@ bluej/lib/german/templates/newclass/abstract.tmpl
 bluej/lib/german/templates/newclass/appletj.tmpl
 bluej/lib/german/templates/newclass/enum.tmpl
 bluej/lib/german/templates/newclass/interface.tmpl
+bluej/lib/german/templates/newclass/midlet.tmpl
 bluej/lib/german/templates/newclass/stdclass.tmpl
 bluej/lib/german/templates/newclass/unittest.tmpl
 bluej/lib/german/templates/readme.tmpl
-bluej/lib/german/templates/readmeexp.tmpl
 bluej/lib/greek/dialogues
 bluej/lib/greek/exception.help
 bluej/lib/greek/javac.help
@@ -239,36 +238,45 @@ bluej/lib/greek/templates/newclass/interface.tmpl
 bluej/lib/greek/templates/newclass/stdclass.tmpl
 bluej/lib/greek/templates/newclass/unittest.tmpl
 bluej/lib/greek/templates/readme.tmpl
-bluej/lib/greek/templates/readmeexp.tmpl
 bluej/lib/images/about-logo.jpg
 bluej/lib/images/arrow_black_uml.gif
-bluej/lib/images/bluej-icon-edit.gif
-bluej/lib/images/bluej-icon-terminal.gif
-bluej/lib/images/bluej-icon.gif
-bluej/lib/images/bluej-logo.gif
+bluej/lib/images/bluej-icon-256.png
+bluej/lib/images/bluej-icon-32.png
+bluej/lib/images/bluej-icon-48.png
+bluej/lib/images/bluej-project.png
+bluej/lib/images/bluej_arrow_close.gif
+bluej/lib/images/bluej_arrow_naviview_close.gif
+bluej/lib/images/bluej_arrow_naviview_open.gif
+bluej/lib/images/bluej_arrow_open.gif
 bluej/lib/images/break.gif
-bluej/lib/images/broken-arrow.gif
-bluej/lib/images/classIcon.gif
+bluej/lib/images/broken-symbol.png
+bluej/lib/images/class-icon.png
 bluej/lib/images/continue.gif
-bluej/lib/images/corner_bottom_left.gif
-bluej/lib/images/corner_bottom_right.gif
-bluej/lib/images/corner_top_left.gif
-bluej/lib/images/corner_top_right.gif
+bluej/lib/images/cross.png
 bluej/lib/images/darrow_black_uml.gif
 bluej/lib/images/drag-object-noplus.gif
 bluej/lib/images/drag-object-plus.gif
-bluej/lib/images/empty.gif
 bluej/lib/images/error.gif
 bluej/lib/images/extmgr-info.gif
 bluej/lib/images/failure.gif
+bluej/lib/images/greenfoot-icon-256.png
+bluej/lib/images/greenfoot-icon-32.png
+bluej/lib/images/greenfoot-icon-48.png
+bluej/lib/images/greenfoot-project.png
 bluej/lib/images/greenfootvm.icns
-bluej/lib/images/help.gif
+bluej/lib/images/help.png
 bluej/lib/images/leftarrow.gif
+bluej/lib/images/me-default-icon.gif
+bluej/lib/images/naviview-frame.png
+bluej/lib/images/object-selected.png
+bluej/lib/images/object.png
 bluej/lib/images/objectref.gif
 bluej/lib/images/ok.gif
-bluej/lib/images/packageIcon.gif
+bluej/lib/images/package-icon.png
 bluej/lib/images/prompt-continue.gif
 bluej/lib/images/prompt.gif
+bluej/lib/images/readme-selected.png
+bluej/lib/images/readme.png
 bluej/lib/images/record.gif
 bluej/lib/images/rightarrow.gif
 bluej/lib/images/small-object.gif
@@ -300,7 +308,6 @@ bluej/lib/italian/templates/newclass/interface.tmpl
 bluej/lib/italian/templates/newclass/stdclass.tmpl
 bluej/lib/italian/templates/newclass/unittest.tmpl
 bluej/lib/italian/templates/readme.tmpl
-bluej/lib/italian/templates/readmeexp.tmpl
 bluej/lib/japanese/dialogues
 bluej/lib/japanese/exception.help
 bluej/lib/japanese/javac.help
@@ -319,8 +326,6 @@ bluej/lib/japanese/templates/newclass/interface.tmpl
 bluej/lib/japanese/templates/newclass/stdclass.tmpl
 bluej/lib/japanese/templates/newclass/unittest.tmpl
 bluej/lib/japanese/templates/readme.tmpl
-bluej/lib/japanese/templates/readmeexp.tmpl
-bluej/lib/jsch.jar
 bluej/lib/junit.jar
 bluej/lib/korean/dialogues
 bluej/lib/korean/exception.help
@@ -337,8 +342,8 @@ bluej/lib/korean/templates/newclass/appletj.tmpl
 bluej/lib/korean/templates/newclass/enum.tmpl
 bluej/lib/korean/templates/newclass/interface.tmpl
 bluej/lib/korean/templates/newclass/stdclass.tmpl
+bluej/lib/korean/templates/newclass/unittest.tmpl
 bluej/lib/korean/templates/readme.tmpl
-bluej/lib/korean/templates/readmeexp.tmpl
 bluej/lib/moe.defs
 bluej/lib/org-netbeans-lib-cvsclient.jar
 bluej/lib/portuguese/dialogues
@@ -358,7 +363,6 @@ bluej/lib/portuguese/templates/newclass/interface.tmpl
 bluej/lib/portuguese/templates/newclass/stdclass.tmpl
 bluej/lib/portuguese/templates/newclass/unittest.tmpl
 bluej/lib/portuguese/templates/readme.tmpl
-bluej/lib/portuguese/templates/readmeexp.tmpl
 bluej/lib/russian/dialogues
 bluej/lib/russian/exception.help
 bluej/lib/russian/javac.help
@@ -374,10 +378,10 @@ bluej/lib/russian/templates/newclass/abstract.tmpl
 bluej/lib/russian/templates/newclass/appletj.tmpl
 bluej/lib/russian/templates/newclass/enum.tmpl
 bluej/lib/russian/templates/newclass/interface.tmpl
+bluej/lib/russian/templates/newclass/midlet.tmpl
 bluej/lib/russian/templates/newclass/stdclass.tmpl
 bluej/lib/russian/templates/newclass/unittest.tmpl
 bluej/lib/russian/templates/readme.tmpl
-bluej/lib/russian/templates/readmeexp.tmpl
 bluej/lib/spanish/dialogues
 bluej/lib/spanish/exception.help
 bluej/lib/spanish/javac.help
@@ -386,6 +390,7 @@ bluej/lib/spanish/labels
 bluej/lib/spanish/moe.help
 bluej/lib/spanish/templates/README
 bluej/lib/spanish/templates/html.tmpl
+bluej/lib/spanish/templates/method.tmpl
 bluej/lib/spanish/templates/newclass/README
 bluej/lib/spanish/templates/newclass/abstract.tmpl
 bluej/lib/spanish/templates/newclass/appletj.tmpl
@@ -394,8 +399,8 @@ bluej/lib/spanish/templates/newclass/interface.tmpl
 bluej/lib/spanish/templates/newclass/stdclass.tmpl
 bluej/lib/spanish/templates/newclass/unittest.tmpl
 bluej/lib/spanish/templates/readme.tmpl
-bluej/lib/spanish/templates/readmeexp.tmpl
-bluej/lib/sshconnection.jar
+bluej/lib/svnkit-javahl.jar
+bluej/lib/svnkit.jar
 bluej/lib/swedish/dialogues
 bluej/lib/swedish/exception.help
 bluej/lib/swedish/javac.help
@@ -413,8 +418,9 @@ bluej/lib/swedish/templates/newclass/interface.tmpl
 bluej/lib/swedish/templates/newclass/stdclass.tmpl
 bluej/lib/swedish/templates/newclass/unittest.tmpl
 bluej/lib/swedish/templates/readme.tmpl
-bluej/lib/swedish/templates/readmeexp.tmpl
+bluej/lib/trilead.jar
 bluej/lib/userlib/README.TXT
+bluej/lib/windowtofront.js
 @dirrm bluej/lib/userlib
 @dirrm bluej/lib/swedish/templates/newclass
 @dirrm bluej/lib/swedish/templates
@@ -470,6 +476,7 @@ bluej/lib/userlib/README.TXT
 @dirrm bluej/lib/afrikaans/templates
 @dirrm bluej/lib/afrikaans
 @dirrm bluej/lib
+@dirrm bluej/icons
 @dirrm bluej/examples/shapes
 @dirrm bluej/examples/picture
 @dirrm bluej/examples/people2
