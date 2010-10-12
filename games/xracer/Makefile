@@ -18,6 +18,9 @@ COMMENT=	Awesome WipeOut clone for OpenGL and X11!
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
+DEPRECATED=	has not been developed for 10 years
+EXPIRATION_DATE=2011-04-11
+
 USE_GL=		glut
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:14 autoconf:213
