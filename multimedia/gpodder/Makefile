@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpodder
-PORTVERSION=	2.7
+PORTVERSION=	2.9
 CATEGORIES=	multimedia
 MASTER_SITES=	BERLIOS \
 		http://thpinfo.com/2010/mygpoclient/:mygpoclient
@@ -72,6 +72,9 @@ RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame \
 USE_GNOME+=	pygnomeextras
 .endif
 
+# ensure that setup.py can find mygpoclient module when installing gpodder
+MAKE_ENV+= PYTHONPATH="${PYTHONPREFIX_SITELIBDIR}"
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|make -C|$$(MAKE) -C|' ${WRKSRC}/Makefile
@@ -81,8 +84,9 @@ pre-build:
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${MGC_WRKSRC}
 
 pre-install:
-	@${MKDIR} ${PYTHON_SITELIBDIR}/mygpoclient
-	@(cd ${MGC_WRKSRC} && ${COPYTREE_SHARE} . ${PYTHON_SITELIBDIR}/mygpoclient)
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/mygpoclient
+	@(cd ${MGC_WRKSRC} && ${COPYTREE_SHARE} . ${PYTHONPREFIX_SITELIBDIR}/mygpoclient)
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in PKG-INFO README
