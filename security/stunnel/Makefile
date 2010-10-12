@@ -36,6 +36,10 @@ OPTIONS=	FORK	"use the fork(3) threading model"	off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
