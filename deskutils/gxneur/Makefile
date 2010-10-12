@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gxneur
-PORTVERSION=	0.9.4
-PORTREVISION=	4
+PORTVERSION=	0.10.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dists.xneur.ru/release-${PORTVERSION}/tgz/
 
@@ -21,7 +20,8 @@ MAKE_JOBS_SAFE=	yes
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 libglade2
+USE_GNOME=	desktopfileutils gconf2 gtk20 libglade2
+INSTALLS_ICONS=	yes
 
 MAN1=		${PORTNAME}.1
 
@@ -34,5 +34,8 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+post-install:
+	@-update-desktop-database
 
 .include <bsd.port.post.mk>

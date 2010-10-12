@@ -1,35 +1,60 @@
 bin/gxneur
-%%DATADIR%%/pixmaps/Armenian.png
-%%DATADIR%%/pixmaps/Bulgarian.png
-%%DATADIR%%/pixmaps/Czech.png
-%%DATADIR%%/pixmaps/Greek.png
-%%DATADIR%%/pixmaps/Estonian.png
-%%DATADIR%%/pixmaps/Lithuanian.png
-%%DATADIR%%/pixmaps/Latvian.png
-%%DATADIR%%/pixmaps/Poland.png
-%%DATADIR%%/pixmaps/Spanish.png
-%%DATADIR%%/pixmaps/Uzbek.png
-%%DATADIR%%/pixmaps/Russian.png
-%%DATADIR%%/pixmaps/Ukrainian.png
-%%DATADIR%%/pixmaps/English.png
-%%DATADIR%%/pixmaps/Belarusian.png
-%%DATADIR%%/pixmaps/French.png
-%%DATADIR%%/pixmaps/Romanian.png
-%%DATADIR%%/pixmaps/Kazakh.png
-%%DATADIR%%/pixmaps/German.png
+share/applications/gxneur.desktop
+%%DATADIR%%/pixmaps/am.png
+%%DATADIR%%/pixmaps/bg.png
+%%DATADIR%%/pixmaps/by.png
+%%DATADIR%%/pixmaps/cz.png
+%%DATADIR%%/pixmaps/de.png
+%%DATADIR%%/pixmaps/en.png
+%%DATADIR%%/pixmaps/es.png
+%%DATADIR%%/pixmaps/ee.png
+%%DATADIR%%/pixmaps/fi.png
+%%DATADIR%%/pixmaps/fr.png
+%%DATADIR%%/pixmaps/ge.png
+%%DATADIR%%/pixmaps/gr.png
 %%DATADIR%%/pixmaps/gxneur.png
-%%DATADIR%%/glade/config.glade
+%%DATADIR%%/pixmaps/hr.png
+%%DATADIR%%/pixmaps/hu.png
+%%DATADIR%%/pixmaps/is.png
+%%DATADIR%%/pixmaps/it.png
+%%DATADIR%%/pixmaps/kz.png
+%%DATADIR%%/pixmaps/lt.png
+%%DATADIR%%/pixmaps/lv.png
+%%DATADIR%%/pixmaps/no.png
+%%DATADIR%%/pixmaps/pl.png
+%%DATADIR%%/pixmaps/pt.png
+%%DATADIR%%/pixmaps/ro.png
+%%DATADIR%%/pixmaps/se.png
+%%DATADIR%%/pixmaps/si.png
+%%DATADIR%%/pixmaps/sk.png
+%%DATADIR%%/pixmaps/sr.png
+%%DATADIR%%/pixmaps/ru.png
+%%DATADIR%%/pixmaps/ua.png
+%%DATADIR%%/pixmaps/us.png
+%%DATADIR%%/pixmaps/uz.png
+%%DATADIR%%/pixmaps/x3.png
+%%DATADIR%%/glade/abbr_add.glade
 %%DATADIR%%/glade/about.glade
 %%DATADIR%%/glade/action_add.glade
-%%DATADIR%%/glade/list.glade
-%%DATADIR%%/glade/abbr_add.glade
+%%DATADIR%%/glade/app_add.glade
 %%DATADIR%%/glade/choose_file.glade
-%%NLS%%share/locale/ru/LC_MESSAGES/gxneur.mo
+%%DATADIR%%/glade/config.glade
+%%DATADIR%%/glade/list.glade
+share/icons/hicolor/16x16/apps/gxneur.png
+share/icons/hicolor/22x22/apps/gxneur.png
+share/icons/hicolor/24x24/apps/gxneur.png
+share/icons/hicolor/32x32/apps/gxneur.png
+share/icons/hicolor/48x48/apps/gxneur.png
+share/icons/hicolor/scalable/apps/gxneur.svg
 %%NLS%%share/locale/be/LC_MESSAGES/gxneur.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gxneur.mo
 %%NLS%%share/locale/he/LC_MESSAGES/gxneur.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/gxneur.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gxneur.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gxneur.mo
-@dirrmtry %%DATADIR%%/pixmaps
-@dirrmtry %%DATADIR%%/glade
-@dirrmtry %%DATADIR%%
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
