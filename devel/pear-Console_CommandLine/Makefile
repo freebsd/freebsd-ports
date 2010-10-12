@@ -7,6 +7,7 @@
 
 PORTNAME=	Console_CommandLine
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -26,7 +27,8 @@ FILES=		Console/CommandLine.php Console/CommandLine/Action.php Console/CommandLi
 		Console/CommandLine/Action/StoreInt.php Console/CommandLine/Action/StoreString.php \
 		Console/CommandLine/Action/StoreTrue.php Console/CommandLine/Action/Version.php \
 		Console/CommandLine/MessageProvider/Default.php Console/CommandLine/Outputter/Default.php \
-		Console/CommandLine/Renderer/Default.php
+		Console/CommandLine/Renderer/Default.php \
+		Console/CommandLine/CustomMessageProvider.php
 DATA=		xmlschema.rng
 EXAMPLES=	ex1.php ex2.php ex2.xml
 _EXAMPLESDIR=	docs/examples
