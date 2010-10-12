@@ -35,6 +35,6 @@ do-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/spine.conf.dist ${EXAMPLESDIR}/spine.conf
 	@[ -e ${PREFIX}/etc/spine.conf ] || \
-		${INSTALL_DATA} ${EXAMPLESDIR}/spine.conf.dist ${PREFIX}/etc/spine.conf
+		${INSTALL_DATA} ${EXAMPLESDIR}/spine.conf ${PREFIX}/etc/spine.conf
 
 .include <bsd.port.mk>
