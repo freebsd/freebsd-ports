@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	libpri
-PORTVERSION=	1.4.10.2
+PORTVERSION=	1.4.11.4
 CATEGORIES=	misc
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/libpri/releases/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A C implementation of the Primary Rate ISDN specification
 
 USE_GMAKE=	yes
