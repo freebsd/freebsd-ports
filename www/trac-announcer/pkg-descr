@@ -2,4 +2,4 @@ The AnnouncerPlugin is meant to provide an extensible,
 user-customizable notification system that can be used
 to completely replace Trac's default notifications.
 
-WWW: http://trac-hacks.org/wiki/AnnouncertPlugin
+WWW: http://trac-hacks.org/wiki/AnnouncerPlugin
