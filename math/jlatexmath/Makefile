@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jlatexmath
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	math java
 MASTER_SITES=	http://forge.scilab.org/upload/jlatexmath/files/ \
 		http://www.predatorlabs.net/dl/
@@ -50,7 +50,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr/share/java/fop.jar|${LOCALBASE}/share/java/fop/build/fop.jar|' ${WRKSRC}/fop.properties
 	${REINPLACE_CMD} -e 's|/usr/share/java/batik.jar|${LOCALBASE}/share/java/batik/batik.jar|' ${WRKSRC}/fop.properties
 	${REINPLACE_CMD} -e 's|/usr/share/java/|${JAVALIBDIR}/|' ${WRKSRC}/fop.properties
-
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/dist/jlatexmath-${PORTVERSION}.jar ${JAVAJARDIR}/jlatexmath.jar
