@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-RSS-LibXML
-PORTVERSION=	0.30.02
+PORTVERSION=	0.31.00
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	XML::RSS with XML::LibXML
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
+RUN_DEPENDS=	p5-XML-LibXML>=1.66:${PORTSDIR}/textproc/p5-XML-LibXML \
 		${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		${SITE_PERL}/DateTime/Format/Mail.pm:${PORTSDIR}/devel/p5-DateTime-Format-Mail \
 		${SITE_PERL}/DateTime/Format/W3CDTF.pm:${PORTSDIR}/devel/p5-DateTime-Format-W3CDTF \
