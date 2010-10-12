@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libltdl
-MASTERDIR=	${.CURDIR}/../../devel/libtool22
+MASTERDIR=	${.CURDIR}/../../devel/libtool24
 
 COMMENT=	System independent dlopen wrapper
 
@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${CONFIGURE_WRKSRC}/COPYING.LIB
 USE_GNOME=	ltverhack
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool:22
+USE_AUTOTOOLS=	libtool:24
 LIBTOOLFILES=	libltdl/configure
 CONFIGURE_ARGS=	--enable-ltdl-install
 
@@ -23,7 +23,7 @@ BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
-LATEST_LINK=	libltdl22
+LATEST_LINK=	libltdl24
 INFO=		# empty
 
 .include "${MASTERDIR}/Makefile"
