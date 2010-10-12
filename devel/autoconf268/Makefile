@@ -1,4 +1,4 @@
-# New ports collection makefile for:	autoconf267
+# New ports collection makefile for:	autoconf268
 # Date created:		7th December 2006
 # Whom:			ade@FreeBSD.org
 #
@@ -6,23 +6,27 @@
 #
 
 PORTNAME=	autoconf
-PORTVERSION=	2.67
+PORTVERSION=	2.68
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	autoconf
 DISTNAME=	autoconf-${PORTVERSION}
 
 MAINTAINER=	autotools@FreeBSD.org
-COMMENT=	Automatically configure source code on many Un*x platforms (2.67)
+COMMENT=	Automatically configure source code on many Un*x platforms (2.68)
+
+.if !defined(WITH_PSYCHOPATHIC_TENDENCIES)
+IGNORE=	You really do not want this yet.  Trust me.
+.endif
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		help2man:${PORTSDIR}/misc/help2man
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		autoconf-wrapper:${PORTSDIR}/devel/autoconf-wrapper
 
-BUILD_VERSION=	2.67
+BUILD_VERSION=	2.68
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
-LATEST_LINK=	autoconf267
+LATEST_LINK=	autoconf268
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
