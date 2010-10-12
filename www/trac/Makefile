@@ -7,6 +7,7 @@
 
 PORTNAME=	trac
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
@@ -15,7 +16,8 @@ DISTNAME=	Trac-${PORTVERSION}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	An enhanced wiki and issue tracking system for software projects
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:${PORTSDIR}/textproc/py-genshi
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:${PORTSDIR}/textproc/py-genshi \
+		${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
