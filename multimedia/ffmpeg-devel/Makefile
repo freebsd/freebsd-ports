@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2010-07-25
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mm
@@ -219,7 +219,7 @@ CONFIGURE_ARGS+=	--disable-libopenjpeg
 
 # schroedinger
 .ifndef(WITHOUT_SCHROEDINGER)
-LIB_DEPENDS+=	schroedinger-1.0.3:${PORTSDIR}/multimedia/schroedinger
+LIB_DEPENDS+=	schroedinger-1.0.10:${PORTSDIR}/multimedia/schroedinger
 CONFIGURE_ARGS+=	--enable-libschroedinger
 .else
 CONFIGURE_ARGS+=	--disable-libschroedinger
