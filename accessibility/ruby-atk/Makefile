@@ -18,7 +18,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for ATK
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/glib2.so:${PORTSDIR}/devel/ruby-glib2
+BUILD_DEPENDS+= rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/glib2.so:${PORTSDIR}/devel/ruby-glib2 \
+		rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config
 
 USE_RUBY=	yes
 USE_GNOME=	atk

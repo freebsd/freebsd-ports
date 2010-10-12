@@ -18,7 +18,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for GdkPixbuf2
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/glib2.so:${PORTSDIR}/devel/ruby-glib2
+BUILD_DEPENDS+=	rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/glib2.so:${PORTSDIR}/devel/ruby-glib2 \
+		rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config
 
 USE_RUBY=	yes
 USE_GNOME=	gtk20
@@ -26,7 +28,7 @@ USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
-WRKSRC=		${RUBY_GNOME_WRKSRC}/gdkpixbuf
+WRKSRC=		${RUBY_GNOME_WRKSRC}/gdk_pixbuf2
 INSTALL_TARGET=	site-install
 
 DOCS=		COPYING.LIB ChangeLog README

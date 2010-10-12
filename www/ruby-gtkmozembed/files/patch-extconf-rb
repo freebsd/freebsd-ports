@@ -1,0 +1,16 @@
+--- extconf.rb.orig	2010-09-25 04:26:28.000000000 -0400
++++ extconf.rb	2010-10-06 21:09:27.986446199 -0400
+@@ -20,12 +20,7 @@
+ $LOAD_PATH.unshift(mkmf_gnome2_dir.to_s)
+ 
+ module_name = "gtkmozembed"
+-package_ids = ["libxul-embedding-unstable",
+-               "libxul-embedding",
+-               "xulrunner-gtkmozembed",
+-               "firefox-gtkmozembed",
+-               "seamonkey-gtkmozembed",
+-               "mozilla-gtkmozembed"]
++package_ids = ["seamonkey-gtkmozembed"]
+ 
+ require 'mkmf-gnome2'
+ 

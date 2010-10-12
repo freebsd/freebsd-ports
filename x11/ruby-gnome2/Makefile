@@ -18,6 +18,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A set of Ruby bindings for GNOME2
 
+BUILD_DEPENDS+=	rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gnomecanvas2.so:${PORTSDIR}/graphics/ruby-gnomecanvas2
 
 USE_RUBY=	yes

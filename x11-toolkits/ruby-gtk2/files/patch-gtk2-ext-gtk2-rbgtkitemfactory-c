@@ -1,0 +1,11 @@
+--- ext/gtk2/rbgtkitemfactory.c.orig	2010-10-10 15:01:35.146315748 -0400
++++ ext/gtk2/rbgtkitemfactory.c	2010-10-10 15:01:45.129705841 -0400
+@@ -29,7 +29,7 @@
+ {
+     VALUE obj = rb_eval_string("eval('self', binding)");
+     G_RELATIVE(obj, self);
+-    RBGTK_INITIALIZE(self, gtk_item_factory_new(FIX2INT(type), RVAL2CSTR(path),
++    RBGTK_INITIALIZE(self, gtk_item_factory_new(NUM2UINT(type), RVAL2CSTR(path),
+                                                 RVAL2ACCEL(accel)));
+    
+     return Qnil;
