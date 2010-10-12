@@ -1768,7 +1768,6 @@
     SUBDIR += twms
     SUBDIR += typo
     SUBDIR += typo3
-    SUBDIR += typo343
     SUBDIR += typolight
     SUBDIR += udmsearch
     SUBDIR += ump
