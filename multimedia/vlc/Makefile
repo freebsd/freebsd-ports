@@ -498,7 +498,7 @@ CONFIGURE_ARGS+=--disable-smb
 .endif
 
 .if defined(WITH_SCHROED)
-LIB_DEPENDS+=	schroedinger-1.0.3:${PORTSDIR}/multimedia/schroedinger
+LIB_DEPENDS+=	schroedinger-1.0.10:${PORTSDIR}/multimedia/schroedinger
 CONFIGURE_ARGS+=--enable-schroedinger
 .else
 CONFIGURE_ARGS+=--disable-schroedinger
