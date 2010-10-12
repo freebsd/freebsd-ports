@@ -18,21 +18,22 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for GLib2
 
+BUILD_DEPENDS+=	rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config
+RUN_DEPENDS+=	${BUILD_DEPENDS}
+
 USE_RUBY=	yes
 USE_GNOME=	glib20
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
-WRKSRC=		${RUBY_GNOME_WRKSRC}/glib
+WRKSRC=		${RUBY_GNOME_WRKSRC}/glib2
 INSTALL_TARGET=	site-install
 
 DOCS=		COPYING.LIB ChangeLog README
 
 post-patch: general-patch
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		${WRKSRC}/sample/utils.rb
-	@${FIND} ${WRKSRC} -name '*.bak' -delete
+	@${RM} ${WRKSRC}/lib/gnome2-win32-binary-downloader.rb
 
 post-configure: general-configure
 

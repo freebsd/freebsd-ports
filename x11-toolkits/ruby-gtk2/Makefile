@@ -18,7 +18,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for GTK+2
 
-BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/pango.so:${PORTSDIR}/x11-toolkits/ruby-pango
+BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/pango.so:${PORTSDIR}/x11-toolkits/ruby-pango \
+		rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/atk.so:${PORTSDIR}/accessibility/ruby-atk \
 		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf2 \
 		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/pango.so:${PORTSDIR}/x11-toolkits/ruby-pango
@@ -29,7 +30,7 @@ USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
-WRKSRC=		${RUBY_GNOME_WRKSRC}/gtk
+WRKSRC=		${RUBY_GNOME_WRKSRC}/gtk2
 INSTALL_TARGET=	site-install
 
 DOCS=		COPYING.LIB ChangeLog README
@@ -48,7 +49,7 @@ post-configure: general-configure
 # Have to do that to generate ruby-glib's glib-enum-types.h or
 # it will not build.
 pre-configure:
-	@(cd ${RUBY_GNOME_WRKSRC}/glib ; ${SETENV} ${CONFIGURE_ENV} \
+	@(cd ${RUBY_GNOME_WRKSRC}/glib2 ; ${SETENV} ${CONFIGURE_ENV} \
 		${RUBY} ${RUBY_FLAGS} ${RUBY_EXTCONF} ${CONFIGURE_ARGS})
 
 post-install:

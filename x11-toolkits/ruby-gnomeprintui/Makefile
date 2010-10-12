@@ -18,6 +18,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for libgnomeprintui
 
+BUILD_DEPENDS+=	rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/gnomeprint2.so:${PORTSDIR}/print/ruby-gnomeprint
 

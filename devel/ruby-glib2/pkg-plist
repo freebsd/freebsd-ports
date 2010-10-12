@@ -8,7 +8,6 @@ libdata/pkgconfig/ruby-glib2.pc
 %%RUBY_SITEARCHLIBDIR%%/rbgutil.h
 %%RUBY_SITEARCHLIBDIR%%/glib-enum-types.h
 %%RUBY_SITELIBDIR%%/mkmf-gnome2.rb
-%%RUBY_SITELIBDIR%%/pkg-config.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README

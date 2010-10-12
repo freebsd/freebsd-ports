@@ -18,6 +18,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for libgnomeprint
 
+BUILD_DEPENDS+=	rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/libart2.so:${PORTSDIR}/graphics/ruby-libart2 \
 		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/pango.so:${PORTSDIR}/x11-toolkits/ruby-pango
 

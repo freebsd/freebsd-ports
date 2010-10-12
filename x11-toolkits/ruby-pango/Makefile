@@ -18,8 +18,10 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for Pango
 
-BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/cairo.so:${PORTSDIR}/graphics/ruby-cairo
+BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/cairo.so:${PORTSDIR}/graphics/ruby-cairo \
+		rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/glib2.so:${PORTSDIR}/devel/ruby-glib2 \
+		rubygem-pkg-config>=1.0.7:${PORTSDIR}/devel/rubygem-pkg-config \
 		${RUBY_SITEARCHLIBDIR:S/${PREFIX}/${LOCALBASE}/}/cairo.so:${PORTSDIR}/graphics/ruby-cairo
 
 USE_RUBY=	yes
