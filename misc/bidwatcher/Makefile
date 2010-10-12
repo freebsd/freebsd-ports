@@ -19,6 +19,9 @@ MASTER_SITES=	SF
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Bid monitor for eBay
 
+DEPRECATED=	Obsoleted by JBidwatcher and changes at http://ebay.com
+EXPIRATION_DATE= 2010-11-08
+
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 PLIST_FILES=	bin/bidwatcher
