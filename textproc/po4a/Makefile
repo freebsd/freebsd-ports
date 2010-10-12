@@ -16,7 +16,7 @@ COMMENT=	Brings gettext translation tools to all kinds of docs
 BUILD_DEPENDS=	p5-Term-ReadKey>=2.30:${PORTSDIR}/devel/p5-Term-ReadKey \
 		libtext-wrapi18n-perl>=0.06:${PORTSDIR}/textproc/libtext-wrapi18n-perl \
 		p5-SGMLSpm>=1.03:${PORTSDIR}/textproc/p5-SGMLSpm \
-		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
+		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
 		jade>=0:${PORTSDIR}/textproc/jade
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

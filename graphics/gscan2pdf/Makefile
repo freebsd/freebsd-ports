@@ -27,7 +27,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Test/Perl/Critic.pm:${PORTSDIR}/textproc/p5-Test-Per
 		${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
+		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
 		p5-Config-General>=0:${PORTSDIR}/devel/p5-Config-General \
 		cjb2:${PORTSDIR}/graphics/djvulibre-nox11 \
 		gocr:${PORTSDIR}/graphics/gocr \

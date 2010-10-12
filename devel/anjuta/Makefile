@@ -18,14 +18,14 @@ COMMENT=	Integrated Development Environment for C and C++
 
 BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
 		bash:${PORTSDIR}/shells/bash \
-		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
+		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		gladeui-1.9:${PORTSDIR}/devel/glade3 \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
 		gdl-1.3:${PORTSDIR}/x11-toolkits/gdl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		autogen:${PORTSDIR}/devel/autogen \
-		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
+		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext \
 		libtool:${PORTSDIR}/devel/libtool22 \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
 		exctags:${PORTSDIR}/devel/ctags \
