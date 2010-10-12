@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ipython
-PORTVERSION=	0.10
+PORTVERSION=	0.10.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://ipython.scipy.org/dist/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An enhanced Interactive Python shell
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pexpect.py:${PORTSDIR}/misc/py-pexpect \
