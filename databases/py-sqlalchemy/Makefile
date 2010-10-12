@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	sqlalchemy
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	databases python
 MASTER_SITES=	SF \
 		CHEESESHOP
-
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLAlchemy-${DISTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Python SQL toolkit and Object Relational Mapper
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	SQLAlchemy
 PYDISTUTILS_PKGVERSION=	${DISTVERSION}
@@ -32,11 +31,12 @@ OPTIONS+=	MYSQL "support MySql" on
 OPTIONS+=	POSTGRE "support PostGreSQL" on
 OPTIONS+=	SQLITE "support Sqlite" on
 
-DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 .if !defined(NOPORTDOCS)
 AL_PORTDOCS=	*.html *.js
+AL_PORTDOCS_SUBDIR=	core dialects orm
 .endif
 
 .include <bsd.port.pre.mk>
@@ -67,8 +67,10 @@ post-install:
 .for i in ${AL_PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
 .endfor
-	${MKDIR} ${DOCSDIR}/reference
-	@cd ${WRKSRC}/doc/reference && ${COPYTREE_SHARE} . ${DOCSDIR}/reference
+.for i in ${AL_PORTDOCS_SUBDIR}
+	${MKDIR} ${DOCSDIR}/${i}
+	@cd ${WRKSRC}/doc/${i} && ${COPYTREE_SHARE} . ${DOCSDIR}/${i}
+.endfor
 .endif
 
 .if !defined(NOPORTEXAMPLES)

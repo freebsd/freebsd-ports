@@ -358,54 +358,52 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/util.pyo
-%%PORTDOCS%%%%DOCSDIR%%/dbengine.html
-%%PORTDOCS%%%%DOCSDIR%%/examples.html
+%%PORTDOCS%%%%DOCSDIR%%/copyright.html
+%%PORTDOCS%%%%DOCSDIR%%/core/compiler.html
+%%PORTDOCS%%%%DOCSDIR%%/core/connections.html
+%%PORTDOCS%%%%DOCSDIR%%/core/engines.html
+%%PORTDOCS%%%%DOCSDIR%%/core/expression_api.html
+%%PORTDOCS%%%%DOCSDIR%%/core/index.html
+%%PORTDOCS%%%%DOCSDIR%%/core/interfaces.html
+%%PORTDOCS%%%%DOCSDIR%%/core/pooling.html
+%%PORTDOCS%%%%DOCSDIR%%/core/schema.html
+%%PORTDOCS%%%%DOCSDIR%%/core/serializer.html
+%%PORTDOCS%%%%DOCSDIR%%/core/tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/core/types.html
+%%PORTDOCS%%%%DOCSDIR%%/dialects/access.html
+%%PORTDOCS%%%%DOCSDIR%%/dialects/firebird.html
+%%PORTDOCS%%%%DOCSDIR%%/dialects/index.html
+%%PORTDOCS%%%%DOCSDIR%%/dialects/informix.html
+%%PORTDOCS%%%%DOCSDIR%%/dialects/maxdb.html
+%%PORTDOCS%%%%DOCSDIR%%/dialects/mssql.html
+%%PORTDOCS%%%%DOCSDIR%%/dialects/mysql.html
+%%PORTDOCS%%%%DOCSDIR%%/dialects/oracle.html
+%%PORTDOCS%%%%DOCSDIR%%/dialects/postgresql.html
+%%PORTDOCS%%%%DOCSDIR%%/dialects/sqlite.html
+%%PORTDOCS%%%%DOCSDIR%%/dialects/sybase.html
 %%PORTDOCS%%%%DOCSDIR%%/genindex.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/intro.html
-%%PORTDOCS%%%%DOCSDIR%%/mappers.html
-%%PORTDOCS%%%%DOCSDIR%%/metadata.html
-%%PORTDOCS%%%%DOCSDIR%%/ormtutorial.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/dialects/access.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/dialects/firebird.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/dialects/index.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/dialects/informix.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/dialects/maxdb.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/dialects/mssql.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/dialects/mysql.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/dialects/oracle.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/dialects/postgresql.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/dialects/sqlite.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/dialects/sybase.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/ext/associationproxy.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/ext/compiler.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/ext/declarative.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/ext/horizontal_shard.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/ext/index.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/ext/orderinglist.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/ext/serializer.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/ext/sqlsoup.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/index.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/orm/collections.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/orm/index.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/orm/interfaces.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/orm/mapping.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/orm/query.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/orm/sessions.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/orm/utilities.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/connections.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/expressions.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/index.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/inspector.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/interfaces.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/pooling.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/schema.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/types.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/sqlalchemy/util.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/collections.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/deprecated.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/examples.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/extensions/associationproxy.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/extensions/declarative.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/extensions/horizontal_shard.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/extensions/index.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/extensions/orderinglist.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/extensions/sqlsoup.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/index.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/inheritance.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/interfaces.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/loading.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/mapper_config.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/query.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/relationships.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/session.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/search.html
 %%PORTDOCS%%%%DOCSDIR%%/searchindex.js
-%%PORTDOCS%%%%DOCSDIR%%/session.html
-%%PORTDOCS%%%%DOCSDIR%%/sqlexpression.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adjacency_list/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adjacency_list/adjacency_list.py
@@ -414,11 +412,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/association/proxied_association.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/advanced.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/caching_query.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/environment.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/fixture_data.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/helloworld.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/local_session_caching.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/meta.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/model.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/beaker_caching/relation_caching.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/custom_attributes/__init__.py
@@ -459,29 +457,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/dictlike-polymorphic.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/dictlike.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/vertical
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/versioning
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sharding
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/postgis
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/poly_assoc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nested_sets
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/large_collection
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/inheritance
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/elementtree
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dynamic_dict
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/derived_attributes
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/custom_attributes
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/beaker_caching
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/association
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/adjacency_list
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/sqlalchemy
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/orm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/ext
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/dialects
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/sql
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm
@@ -503,3 +478,25 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/orm/extensions
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/orm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/dialects
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/core
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/vertical
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/versioning
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sharding
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/postgis
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/poly_assoc
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nested_sets
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/large_collection
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/inheritance
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/elementtree
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dynamic_dict
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/derived_attributes
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/custom_attributes
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/beaker_caching
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/association
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/adjacency_list
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
