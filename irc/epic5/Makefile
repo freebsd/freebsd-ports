@@ -17,6 +17,9 @@ MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-PRODUCTION/ \
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
 SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
