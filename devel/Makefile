@@ -3101,6 +3101,7 @@
     SUBDIR += rubygem-open4
     SUBDIR += rubygem-parsetree
     SUBDIR += rubygem-piston
+    SUBDIR += rubygem-pkg-config
     SUBDIR += rubygem-platform
     SUBDIR += rubygem-polyglot
     SUBDIR += rubygem-ptreloaded
