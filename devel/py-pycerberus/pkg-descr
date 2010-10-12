@@ -1,0 +1,23 @@
+Pycerberus is a framework to check user data thoroughly so that you can
+protect your application from malicious (or just garbled) input data.
+
+ * Remove stupid code which converts input values: After values are
+   validated, you can work with real Python types instead of strings -
+   e.g. 42 instead of '42', convert database IDs to model objects
+   transparently.
+ * Implement custom validation rules: Writing custom validators is
+   straightforward, everything is well documented and pycerberus only
+   uses very little Python magic.
+ * Focus on your value-adding application code: Save time by
+   implementing every input validation rule only once, but 100% right
+   instead of implementing a dozen different half-baked solutions.
+ * Ready for global business: i18n support (based on GNU gettext) is
+   built in, adding custom translations is easy.
+ * Tune it for your needs: You can implement custom behavior in your
+   validators, e.g. fetch translations from a database instead of using
+   gettext or define custom translations for built-in validators.
+ * Use it wherever you like: pycerberus is used in a SMTP server, trac
+   macros as well as web applications - there are no dependecies on a
+   specific context like web development.
+
+WWW: http://www.schwarz.eu/opensource/projects/pycerberus

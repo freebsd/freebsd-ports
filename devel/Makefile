@@ -2802,6 +2802,7 @@
     SUBDIR += py-pudb
     SUBDIR += py-px
     SUBDIR += py-pycallgraph
+    SUBDIR += py-pycerberus
     SUBDIR += py-pydasm
     SUBDIR += py-pygpx
     SUBDIR += py-pyke
