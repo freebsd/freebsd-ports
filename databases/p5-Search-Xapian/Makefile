@@ -18,6 +18,8 @@ COMMENT=	Perl XS frontend to the Xapian C++ search library
 BUILD_DEPENDS=	xapian-core>=1.0.10:${PORTSDIR}/databases/xapian-core
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		does not build
+
 PERL_CONFIGURE=	yes
 CC=		${CXX}
 
