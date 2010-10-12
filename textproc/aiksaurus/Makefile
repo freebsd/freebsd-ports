@@ -16,6 +16,7 @@ COMMENT?=	A set of libraries and applications which provide a thesaurus
 
 USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
+USE_CSTD=	gnu89
 USE_GNOME?=	gnomehack gnometarget
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
