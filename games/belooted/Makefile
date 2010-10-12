@@ -9,10 +9,13 @@ PORTNAME=	belooted
 PORTVERSION=	0.1.4.1
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://boby.joe.free.fr/dev/belooted/files/
+MASTER_SITES=	http://boby.joe.free.fr/dev/belooted/files/ \
+		LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A popular 32-card trick-taking game played in France
+
+LICENSE=	GPLv2
 
 USE_GNOME=	gtk20 desktopfileutils
 USE_GMAKE=	yes
