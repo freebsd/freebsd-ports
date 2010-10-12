@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Locale-Maketext
-PORTVERSION=	1.13
+PORTVERSION=	1.16
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,11 @@ COMMENT=	A framework for software localization and inheritance-based lexicons
 
 PERL_CONFIGURE=	YES
 
-MAN3=		Locale::Maketext.3 Locale::Maketext::TPJ13.3
+MAN3=		Locale::Maketext.3 \
+		Locale::Maketext::TPJ13.3 \
+		Locale::Maketext::GutsLoader.3 \
+		Locale::Maketext::Guts.3 \
+		Locale::Maketext::Cookbook.3
 
 .include <bsd.port.pre.mk>
 
