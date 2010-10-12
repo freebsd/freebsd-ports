@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	duplicity
-PORTVERSION=	0.6.09
-PORTREVISION=	1
+PORTVERSION=	0.6.10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.6-series/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-devel
