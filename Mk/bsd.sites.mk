@@ -459,7 +459,6 @@ MASTER_SITE_GENTOO+=	\
 	http://gentoo.inode.at/%SUBDIR%/ \
 	http://ftp.rhnet.is/pub/gentoo/%SUBDIR%/ \
 	http://gentoo.mirror.sdv.fr/%SUBDIR%/ \
-	http://mirror.gentoo.gr.jp/%SUBDIR%/ \
 	http://gentoo.gg3.net/%SUBDIR%/ \
 	http://gentoo.kems.net/%SUBDIR%/ \
 	ftp://ftp.gtlib.cc.gatech.edu/pub/gentoo/%SUBDIR%/ \
@@ -734,7 +733,6 @@ MASTER_SITE_MOZDEV+= \
 	http://mozdev.oregonstate.edu/%SUBDIR%/ \
 	http://ftp.ntua.gr/pub/www/mozdev/%SUBDIR%/ \
 	http://www.devlib.org/mozdev/%SUBDIR%/ \
-	http://mozdev.archive.hk/%SUBDIR%/ \
 	http://ftp.iasi.roedu.net/mirrors/mozdev.org/%SUBDIR%/ \
 	ftp://mozdev.secsup.org/pub/software/mozdev/%SUBDIR%/ \
 	ftp://ftp.heanet.ie/pub/mozdev/%SUBDIR%/ \
@@ -798,9 +796,7 @@ MASTER_SITE_MYSQL+=	\
 	http://mysql.dp.ua/Downloads/%SUBDIR%/ \
 	http://mysql.mirrored.ca/Downloads/%SUBDIR%/ \
 	ftp://mirror.services.wisc.edu/mirrors/mysql/Downloads/%SUBDIR%/ \
-	ftp://ftp.orst.edu/pub/mysql/Downloads/%SUBDIR%/ \
 	http://mysql.mirrors.pair.com/Downloads/%SUBDIR%/ \
-	ftp://mysql.bannerlandia.com.ar/mirrors/mysql/Downloads/%SUBDIR%/ \
 	ftp://ftp.linorg.usp.br/mysql/Downloads/%SUBDIR%/ \
 	ftp://ftp.cbn.net.id/mirror/mysql/Downloads/%SUBDIR%/ \
 	ftp://ftp.easynet.be/mysql/Downloads/%SUBDIR%/ \
@@ -1010,7 +1006,6 @@ MASTER_SITE_PYTHON+= \
 	http://python.holywar.net/%SUBDIR%/ \
 	http://python.cdpa.nsysu.edu.tw/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.python.org/pub/www.python.org/%SUBDIR%/ \
-	http://python.mirrors.pair.com/%SUBDIR%/ \
 	http://mirrors.ccs.neu.edu/Python/pub/www.python.org/%SUBDIR%/
 .endif
 
@@ -1134,7 +1129,6 @@ MASTER_SITE_SAMBA+= \
 	ftp://ca.samba.org/%SUBDIR%/ \
 	ftp://de.samba.org/samba.org/%SUBDIR%/ \
 	ftp://ftp.oss.eznetsols.org/samba/%SUBDIR%/ \
-	ftp://ru.samba.org/pub/samba/%SUBDIR%/ \
 	ftp://ftp.easynet.be/samba/%SUBDIR%/ \
 	ftp://ftp.linuxforum.net/ftp.samba.org/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/samba/&,}
@@ -1312,7 +1306,6 @@ MASTER_SITE_TUCOWS+= \
 	http://${mirror}.linux.tucows.com/files/%SUBDIR%/
 .endfor
 MASTER_SITE_TUCOWS+= \
-	http://linuxberg.nexicom.net/files/%SUBDIR%/ \
 	http://linuxberg.xs4all.nl/files/%SUBDIR%/
 .endif
 
@@ -1389,7 +1382,6 @@ MASTER_SITE_XEMACS+= \
 	ftp://ftp.dk.xemacs.org/pub/emacs/xemacs/%SUBDIR%/ \
 	ftp://ftp.fi.xemacs.org/pub/mirrors/ftp.xemacs.org/pub/tux/xemacs/%SUBDIR%/ \
 	ftp://ftp.fr.xemacs.org/pub/xemacs/%SUBDIR%/ \
-	ftp://ftp.hk.xemacs.org/pub/xemacsftp/%SUBDIR%/ \
 	ftp://ftp.ie.xemacs.org/mirrors/ftp.xemacs.org/pub/xemacs/%SUBDIR%/ \
 	ftp://ftp.it.xemacs.org/unix/packages/XEMACS/%SUBDIR%/ \
 	ftp://ftp.kr.xemacs.org/pub/tools/emacs/xemacs/%SUBDIR%/ \
