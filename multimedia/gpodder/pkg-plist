@@ -21,6 +21,8 @@ bin/gpodder-backup
 %%PYTHON_SITELIBDIR%%/gpodder/feedcore.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/gpodderosx.py
 %%PYTHON_SITELIBDIR%%/gpodder/gpodderosx.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/gpopymtp.py
+%%PYTHON_SITELIBDIR%%/gpodder/gpopymtp.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/gstreamer.py
 %%PYTHON_SITELIBDIR%%/gpodder/gstreamer.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/__init__.py
@@ -111,6 +113,8 @@ bin/gpodder-backup
 %%PYTHON_SITELIBDIR%%/gpodder/unittests.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/util.py
 %%PYTHON_SITELIBDIR%%/gpodder/util.pyc
+%%PYTHON_SITELIBDIR%%/gpodder/xspf.py
+%%PYTHON_SITELIBDIR%%/gpodder/xspf.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/youtube.py
 %%PYTHON_SITELIBDIR%%/gpodder/youtube.pyc
 %%PYTHON_SITELIBDIR%%/mygpoclient/__init__.py
@@ -192,10 +196,12 @@ share/icons/hicolor/scalable/apps/gpodder.svg
 share/locale/cs/LC_MESSAGES/gpodder.mo
 share/locale/da/LC_MESSAGES/gpodder.mo
 share/locale/de/LC_MESSAGES/gpodder.mo
+share/locale/el/LC_MESSAGES/gpodder.mo
 share/locale/es/LC_MESSAGES/gpodder.mo
 share/locale/fi/LC_MESSAGES/gpodder.mo
 share/locale/fr/LC_MESSAGES/gpodder.mo
 share/locale/gl/LC_MESSAGES/gpodder.mo
+share/locale/he/LC_MESSAGES/gpodder.mo
 share/locale/it/LC_MESSAGES/gpodder.mo
 share/locale/kk/LC_MESSAGES/gpodder.mo
 share/locale/nb/LC_MESSAGES/gpodder.mo
@@ -209,27 +215,15 @@ share/locale/ru/LC_MESSAGES/gpodder.mo
 share/locale/sv/LC_MESSAGES/gpodder.mo
 share/locale/uk/LC_MESSAGES/gpodder.mo
 share/pixmaps/gpodder.png
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
 @dirrm %%DATADIR%%/ui/desktop
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/mygpoclient
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/gtkui
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder
+@dirrm share/locale/kk/LC_MESSAGES
+@dirrm share/locale/kk
+@dirrmtry share/applications
