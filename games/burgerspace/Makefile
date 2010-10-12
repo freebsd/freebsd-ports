@@ -8,12 +8,15 @@
 PORTNAME=	burgerspace
 PORTVERSION=	1.9.0
 CATEGORIES=	games
-MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
+MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/ \
+		LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A BurgerTime clone
 
 LIB_DEPENDS=	flatzebra-0.1.2:${PORTSDIR}/devel/flatzebra
+
+LICENSE=	GPLv2
 
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
