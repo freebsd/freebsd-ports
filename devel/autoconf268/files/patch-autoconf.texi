@@ -3,10 +3,10 @@
 @@ -3,5 +3,5 @@
  @comment %**start of header
 -@setfilename autoconf.info
-+@setfilename autoconf-2.67.info
++@setfilename autoconf-2.68.info
  @include version.texi
 -@settitle Autoconf
-+@settitle Autoconf-2.67
++@settitle Autoconf-2.68
  @setchapternewpage odd
 @@ -205,25 +205,5 @@
  
@@ -34,5 +34,5 @@
 -                                Automatic update of @file{configure.ac}
 -* config.status: (autoconf)config.status Invocation. Recreating configurations.
 -* testsuite: (autoconf)testsuite Invocation.    Running an Autotest test suite.
-+* Autoconf-2.67: (autoconf-2.67).   Create source code configuration scripts.
++* Autoconf-2.68: (autoconf-2.68).   Create source code configuration scripts.
  @end direntry
