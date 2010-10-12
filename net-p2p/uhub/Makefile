@@ -7,7 +7,7 @@
 
 PORTNAME=	uhub
 PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.extatic.org/downloads/uhub/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
