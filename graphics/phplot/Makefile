@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	phplot
-PORTVERSION=	5.1.3
+PORTVERSION=	5.2.0
 CATEGORIES=	graphics www
 MASTER_SITES=	SF:source1 \
-		SF/${PORTNAME}/Manual/20100628:source2
+		SF/${PORTNAME}/Manual/20101003:source2
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:source1 \
-		${PORTNAME}docs-20100628.zip:source2
+		${PORTNAME}docs-20101003.zip:source2
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A PHP class for creating scientific and business charts

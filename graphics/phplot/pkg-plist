@@ -88,6 +88,7 @@ include/php/phplot/rgb.inc.php
 %%PORTDOCS%%%%DOCSDIR%%/SetXTickLabelPos.html
 %%PORTDOCS%%%%DOCSDIR%%/SetXTickLength.html
 %%PORTDOCS%%%%DOCSDIR%%/SetXTickPos.html
+%%PORTDOCS%%%%DOCSDIR%%/SetXTitleColor.html
 %%PORTDOCS%%%%DOCSDIR%%/SetXTimeFormat.html
 %%PORTDOCS%%%%DOCSDIR%%/SetXTitle.html
 %%PORTDOCS%%%%DOCSDIR%%/SetYAxisPosition.html
@@ -104,6 +105,7 @@ include/php/phplot/rgb.inc.php
 %%PORTDOCS%%%%DOCSDIR%%/SetYTickPos.html
 %%PORTDOCS%%%%DOCSDIR%%/SetYTimeFormat.html
 %%PORTDOCS%%%%DOCSDIR%%/SetYTitle.html
+%%PORTDOCS%%%%DOCSDIR%%/SetYTitleColor.html
 %%PORTDOCS%%%%DOCSDIR%%/callbacks-access.html
 %%PORTDOCS%%%%DOCSDIR%%/callbacks-drawing.html
 %%PORTDOCS%%%%DOCSDIR%%/callbacks-names.html
@@ -111,10 +113,11 @@ include/php/phplot/rgb.inc.php
 %%PORTDOCS%%%%DOCSDIR%%/callbacks.html
 %%PORTDOCS%%%%DOCSDIR%%/changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/conc-colors.html
+%%PORTDOCS%%%%DOCSDIR%%/conc-colors-datacolor-callback.html
 %%PORTDOCS%%%%DOCSDIR%%/conc-datatypes.html
 %%PORTDOCS%%%%DOCSDIR%%/conc-errors.html
-%%PORTDOCS%%%%DOCSDIR%%/conc-extradata.html
 %%PORTDOCS%%%%DOCSDIR%%/conc-labels.html
+%%PORTDOCS%%%%DOCSDIR%%/conc-otherelements.html
 %%PORTDOCS%%%%DOCSDIR%%/conc-overview.html
 %%PORTDOCS%%%%DOCSDIR%%/conc-plottypes.html
 %%PORTDOCS%%%%DOCSDIR%%/conc-text.html
@@ -130,6 +133,11 @@ include/php/phplot/rgb.inc.php
 %%PORTDOCS%%%%DOCSDIR%%/ex-bars2.html
 %%PORTDOCS%%%%DOCSDIR%%/ex-bars3.html
 %%PORTDOCS%%%%DOCSDIR%%/ex-bars4.html
+%%PORTDOCS%%%%DOCSDIR%%/ex-horizthinbarline.html
+%%PORTDOCS%%%%DOCSDIR%%/ex-horizstackedbar.html
+%%PORTDOCS%%%%DOCSDIR%%/ex-colorcallbackbars.html
+%%PORTDOCS%%%%DOCSDIR%%/ex-horizbar.html
+%%PORTDOCS%%%%DOCSDIR%%/ex-colorcallbackgradient.html
 %%PORTDOCS%%%%DOCSDIR%%/ex-linepoints1.html
 %%PORTDOCS%%%%DOCSDIR%%/ex-lines2.html
 %%PORTDOCS%%%%DOCSDIR%%/ex-pie1.html
@@ -153,7 +161,12 @@ include/php/phplot/rgb.inc.php
 %%PORTDOCS%%%%DOCSDIR%%/examples/bars2.png
 %%PORTDOCS%%%%DOCSDIR%%/examples/bars3.png
 %%PORTDOCS%%%%DOCSDIR%%/examples/bars4.png
-%%PORTDOCS%%%%DOCSDIR%%/examples/histogram.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/colorcallbackbars.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/colorcallbackgradient.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/histogram.jpg
+%%PORTDOCS%%%%DOCSDIR%%/examples/horizbar.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/horizstackedbar.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/horizthinbarline.png
 %%PORTDOCS%%%%DOCSDIR%%/examples/linepoints1.png
 %%PORTDOCS%%%%DOCSDIR%%/examples/lines1.png
 %%PORTDOCS%%%%DOCSDIR%%/examples/lines2.png
@@ -177,9 +190,12 @@ include/php/phplot/rgb.inc.php
 %%PORTDOCS%%%%DOCSDIR%%/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/images/alpha-blending.png
 %%PORTDOCS%%%%DOCSDIR%%/images/colors.png
+%%PORTDOCS%%%%DOCSDIR%%/images/drop.png
 %%PORTDOCS%%%%DOCSDIR%%/images/error-image.png
 %%PORTDOCS%%%%DOCSDIR%%/images/fonts.png
 %%PORTDOCS%%%%DOCSDIR%%/images/gdinfo.png
+%%PORTDOCS%%%%DOCSDIR%%/images/labels-bar.png
+%%PORTDOCS%%%%DOCSDIR%%/images/labels-horizbar.png
 %%PORTDOCS%%%%DOCSDIR%%/images/labels-pie.png
 %%PORTDOCS%%%%DOCSDIR%%/images/labels.png
 %%PORTDOCS%%%%DOCSDIR%%/images/layout.png
