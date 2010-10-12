@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	miniupnpd
-PORTVERSION=	1.4.20100511
+PORTVERSION=	1.4.20100921
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.tuxfamily.org/files/ \
 		http://miniupnp.free.fr/files/
@@ -24,6 +24,13 @@ PLIST_FILES=	etc/miniupnpd.conf.sample sbin/miniupnpd
 MAN8=		miniupnpd.8
 
 USE_RC_SUBR=	miniupnpd.sh
+
+OPTIONS=	PF_ENABLE_FILTER_RULES		"Enable pf generation of filter rules" off \
+
+.include <bsd.port.options.mk>
+.if defined(WITH_PF_ENABLE_FILTER_RULES)
+EXTRA_PATCHES=  ${PATCHDIR}/pf_enable_filter_rules.patch
+.endif
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/miniupnpd ${PREFIX}/sbin/miniupnpd
