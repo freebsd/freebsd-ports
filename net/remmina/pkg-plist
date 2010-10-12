@@ -18,6 +18,7 @@ share/applications/remmina.desktop
 %%DATADIR%%/icons/hicolor/22x22/emblems/remmina-sftp.png
 %%NLS%%share/locale/bg/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/da/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/de/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/el/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/es/LC_MESSAGES/remmina.mo
@@ -32,6 +33,7 @@ share/applications/remmina.desktop
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/remmina.mo
