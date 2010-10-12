@@ -8,12 +8,15 @@
 PORTNAME=	afternoonstalker
 PORTVERSION=	1.1.4
 CATEGORIES=	games
-MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
+MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/ \
+		LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A clone of the 1981 Night Stalker video game
 
 LIB_DEPENDS=	flatzebra-0.1.2:${PORTSDIR}/devel/flatzebra
+
+LICENSE=	GPLv2
 
 USE_SDL=	mixer sdl
 GNU_CONFIGURE=	yes
