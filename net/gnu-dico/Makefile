@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dico
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	net textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	gnu-
 MAINTAINER=	goran.tal@gmail.com
 COMMENT=	Flexible modular implementation of DICT server
 
+USE_XZ=		yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl:22 libtool:22
@@ -26,7 +27,8 @@ CONFIGURE_ARGS=	--localstatedir=/var
 
 OPTIONS=	PYTHON	"With PYTHON support" on \
 		GUILE	"With GUILE support" on \
-		GSASL	"With GSASL support" off
+		GSASL	"With GSASL support" off \
+		LDAP	"With LDAP support" off
 
 .include <bsd.port.options.mk>
 
@@ -53,6 +55,14 @@ CONFIGURE_ARGS+=--with-gsasl
 CONFIGURE_ARGS+=--without-gsasl
 .endif
 
+.if defined(WITH_LDAP)
+USE_OPENLDAP=	yes
+PLIST_SUB+=	LDAP=""
+.else
+CONFIGURE_ARGS+=--without-ldap
+PLIST_SUB+=	LDAP="@comment "
+.endif
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
@@ -70,7 +80,7 @@ USE_RC_SUBR=	dicod.sh
 post-patch:
 	@${REINPLACE_CMD} 's/ENODATA/EIO/' ${WRKSRC}/lib/utf8.c
 	@${REINPLACE_CMD} 's/@bindir@/@sbindir@/' ${WRKSRC}/dicod/Makefile.in
-	@${REINPLACE_CMD} 's/(bindir)\//(bindir)\/g/' ${WRKSRC}/dico/Makefile.in
+	@${REINPLACE_CMD} 's/(bindir)..dir/&\/gdico/' ${WRKSRC}/dico/Makefile.in
 	@${REINPLACE_CMD} '/INSTALL.*charset/d' ${WRKSRC}/gnu/Makefile.in
 
 post-install:

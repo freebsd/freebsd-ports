@@ -1,8 +1,9 @@
-Dico is an implementation of DICT server (RFC 2229).  It is fully
-modular: the daemon itself (dicod) provides only the server
-functionality, but it knows nothing about database formats.  Actual
-searches are performed by functions supplied in loadable modules.  A
-single module can serve one or more databases.  The package includes
-the following database modules: dictorg, guile, python, and outline.
+GNU Dico is a flexible modular implementation of DICT server (RFC 2229).
+It handles database accesses using loadable modules, and does not depend
+on particular database format. The package includes several loadable
+modules for interfacing with various database formats, among them a
+module for dict.org databases. New modules can be written in C, Guile or
+Python. The package also includes a console client program for querying
+remote dictionary servers.
 
 WWW: http://www.gnu.org/software/dico/

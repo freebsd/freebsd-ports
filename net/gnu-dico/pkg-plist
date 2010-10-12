@@ -11,6 +11,7 @@ include/dico/parseopt.h
 include/dico/strat.h
 include/dico/stream.h
 include/dico/types.h
+include/dico/udb.h
 include/dico/url.h
 include/dico/utf8.h
 include/dico/util.h
@@ -21,16 +22,25 @@ lib/dico/dictorg.so
 %%GUILE%%lib/dico/guile.a
 %%GUILE%%lib/dico/guile.la
 %%GUILE%%lib/dico/guile.so
+%%LDAP%%lib/dico/ldap.a
+%%LDAP%%lib/dico/ldap.la
+%%LDAP%%lib/dico/ldap.so
 lib/dico/outline.a
 lib/dico/outline.la
 lib/dico/outline.so
 %%PYTHON%%lib/dico/python.a
 %%PYTHON%%lib/dico/python.la
 %%PYTHON%%lib/dico/python.so
+lib/dico/stratall.a
+lib/dico/stratall.la
+lib/dico/stratall.so
+lib/dico/substr.a
+lib/dico/substr.la
+lib/dico/substr.so
 lib/libdico.a
 lib/libdico.la
 lib/libdico.so
-lib/libdico.so.0
+lib/libdico.so.1
 sbin/dicod
 %%DATADIR%%/%%PORTVERSION%%/include/pp-setup
 %%DATADIR%%/gjdict.xbm
@@ -41,3 +51,6 @@ sbin/dicod
 @dirrm share/dico
 @dirrmtry lib/dico
 @dirrm include/dico
+%%GUILE%%@exec mkdir -p %D/share/guile/site/dico
+%%GUILE%%@dirrmtry share/guile/site/dico
+%%GUILE%%@dirrmtry share/guile/site
