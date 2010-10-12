@@ -8,7 +8,7 @@
 PORTNAME=	mediawiki
 PORTVERSION=	1.16.0
 CATEGORIES=	www
-MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/1.15/
+MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/${PORTVERSION:R}/
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The wiki engine used by Wikipedia
