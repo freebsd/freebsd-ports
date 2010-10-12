@@ -8,7 +8,8 @@
 PORTNAME=	cosmosmash
 DISTVERSION=	1.4.5
 CATEGORIES=	games
-MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/
+MASTER_SITES=	http://perso.b2b2c.ca/sarrazip/dev/ \
+		LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A clone of the Intellivision(TM) game Astrosmash(TM)
@@ -17,6 +18,8 @@ LIB_DEPENDS=	flatzebra:${PORTSDIR}/devel/flatzebra \
 		aa:${PORTSDIR}/graphics/aalib \
 		mikmod:${PORTSDIR}/audio/libmikmod \
 		audiofile:${PORTSDIR}/audio/libaudiofile
+
+LICENSE=	GPLv2
 
 USE_SDL=	sdl image mixer
 USE_XORG=	x11 xau xdmcp
