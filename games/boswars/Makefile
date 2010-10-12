@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://boswars.org:8001/bos/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	alepulver@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A real-time strategy game
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
