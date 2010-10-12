@@ -15,6 +15,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Java access to native shared libraries
 
+BROKEN=		does not build
+
 USE_ANT=	yes
 USE_GMAKE=	yes
 USE_JAVA=	1.4+
