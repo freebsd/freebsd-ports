@@ -65,6 +65,7 @@
     SUBDIR += autoconf-wrapper
     SUBDIR += autoconf213
     SUBDIR += autoconf267
+    SUBDIR += autoconf268
     SUBDIR += autodia
     SUBDIR += autodist
     SUBDIR += autogen
@@ -812,6 +813,7 @@
     SUBDIR += liblouis
     SUBDIR += liblouisxml
     SUBDIR += libltdl22
+    SUBDIR += libltdl24
     SUBDIR += libmaa
     SUBDIR += libmatheval
     SUBDIR += libmba
@@ -880,6 +882,7 @@
     SUBDIR += libtifiles
     SUBDIR += libtifiles2
     SUBDIR += libtool22
+    SUBDIR += libtool24
     SUBDIR += libtpl
     SUBDIR += libublio
     SUBDIR += libukcprog
