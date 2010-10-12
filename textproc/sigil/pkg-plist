@@ -1,1 +1,3 @@
 bin/sigil
+share/sigil/sigil.png
+@dirrm share/sigil
