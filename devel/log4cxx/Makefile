@@ -48,6 +48,7 @@ pre-configure:
 	@${REINPLACE_CMD} -e '/^_LT_AC_SHELL_INIT/d' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.am
 	@(cd ${WRKSRC} && ./autogen.sh)
+	@${REINPLACE_CMD} -e 's|GREP "\\-L"|GREP "conftest\\.$$objext"|g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS) && defined(WITH_DOXYGEN)
