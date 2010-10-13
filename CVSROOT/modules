@@ -777,6 +777,7 @@ autoconf-archive                ports/devel/autoconf-archive
 autoconf-wrapper                ports/devel/autoconf-wrapper
 autoconf213                     ports/devel/autoconf213
 autoconf267                     ports/devel/autoconf267
+autoconf268                     ports/devel/autoconf268
 autocutsel                      ports/deskutils/autocutsel
 autodia                         ports/devel/autodia
 autodist                        ports/devel/autodist
@@ -8014,6 +8015,7 @@ liblqr-1                        ports/graphics/liblqr-1
 liblrdf                         ports/textproc/liblrdf
 liblscp                         ports/audio/liblscp
 libltdl22                       ports/devel/libltdl22
+libltdl24                       ports/devel/libltdl24
 liblug                          ports/graphics/liblug
 liblzxcomp                      ports/archivers/liblzxcomp
 libmaa                          ports/devel/libmaa
@@ -8266,6 +8268,7 @@ libtnl                          ports/net/libtnl
 libtomcrypt                     ports/security/libtomcrypt
 libtommath                      ports/math/libtommath
 libtool22                       ports/devel/libtool22
+libtool24                       ports/devel/libtool24
 libtorrent                      ports/net-p2p/libtorrent
 libtorrent-devel                ports/net-p2p/libtorrent-devel
 libtorrent-rasterbar-14         ports/net-p2p/libtorrent-rasterbar-14
@@ -9144,6 +9147,7 @@ mediawiki                       ports/www/mediawiki
 mediawiki112                    ports/www/mediawiki112
 mediawiki113                    ports/www/mediawiki113
 mediawiki114                    ports/www/mediawiki114
+mediawiki115                    ports/www/mediawiki115
 mediawiki16                     ports/www/mediawiki16
 medit                           ports/science/medit
 mednafen                        ports/emulators/mednafen
@@ -12040,6 +12044,7 @@ p5-Email-Obfuscate              ports/security/p5-Email-Obfuscate
 p5-Email-Reply                  ports/mail/p5-Email-Reply
 p5-Email-Send                   ports/mail/p5-Email-Send
 p5-Email-Sender                 ports/mail/p5-Email-Sender
+p5-Email-Sender-Transport-SQLite  ports/mail/p5-Email-Sender-Transport-SQLite
 p5-Email-Simple                 ports/mail/p5-Email-Simple
 p5-Email-Stuff                  ports/mail/p5-Email-Stuff
 p5-Email-Valid                  ports/mail/p5-Email-Valid
@@ -13598,7 +13603,6 @@ p5-Plack-Middleware-Throttle    ports/www/p5-Plack-Middleware-Throttle
 p5-Plack-Server-Coro            ports/www/p5-Plack-Server-Coro
 p5-Plack-Server-POE             ports/www/p5-Plack-Server-POE
 p5-Plack-Server-ReverseHTTP     ports/www/p5-Plack-Server-ReverseHTTP
-p5-Plack-Server-ServerSimple    ports/www/p5-Plack-Server-ServerSimple
 p5-Plagger                      ports/textproc/p5-Plagger
 p5-Plucene                      ports/textproc/p5-Plucene
 p5-Plucene-Analysis-CJKAnalyzer  ports/textproc/p5-Plucene-Analysis-CJKAnalyzer
@@ -15980,6 +15984,7 @@ p5-email-obfuscate              ports/security/p5-Email-Obfuscate
 p5-email-reply                  ports/mail/p5-Email-Reply
 p5-email-send                   ports/mail/p5-Email-Send
 p5-email-sender                 ports/mail/p5-Email-Sender
+p5-email-sender-transport-sqlite  ports/mail/p5-Email-Sender-Transport-SQLite
 p5-email-simple                 ports/mail/p5-Email-Simple
 p5-email-stuff                  ports/mail/p5-Email-Stuff
 p5-email-valid                  ports/mail/p5-Email-Valid
@@ -17482,7 +17487,6 @@ p5-plack-middleware-throttle    ports/www/p5-Plack-Middleware-Throttle
 p5-plack-server-coro            ports/www/p5-Plack-Server-Coro
 p5-plack-server-poe             ports/www/p5-Plack-Server-POE
 p5-plack-server-reversehttp     ports/www/p5-Plack-Server-ReverseHTTP
-p5-plack-server-serversimple    ports/www/p5-Plack-Server-ServerSimple
 p5-plagger                      ports/textproc/p5-Plagger
 p5-plp                          ports/www/p5-PLP
 p5-plrpc                        ports/net/p5-PlRPC
@@ -21128,6 +21132,7 @@ py-pyPgSQL                      ports/databases/py-pyPgSQL
 py-pyang                        ports/net-mgmt/py-pyang
 py-pybmp                        ports/multimedia/py-pybmp
 py-pycallgraph                  ports/devel/py-pycallgraph
+py-pycerberus                   ports/devel/py-pycerberus
 py-pycha                        ports/graphics/py-pycha
 py-pychess                      ports/games/py-pychess
 py-pyclamd                      ports/security/py-pyclamd
@@ -22316,6 +22321,7 @@ ru-xmms                         ports/russian/xmms
 ru-xpi-tabextensions            ports/russian/xpi-tabextensions
 ru-xruskb                       ports/russian/xruskb
 rubber                          ports/textproc/rubber
+rubinius                        ports/lang/rubinius
 rubix                           ports/games/rubix
 ruboard                         ports/www/ruboard
 rubrica                         ports/deskutils/rubrica
@@ -22756,6 +22762,7 @@ rubygem-passenger               ports/www/rubygem-passenger
 rubygem-pdfwriter               ports/print/rubygem-pdfwriter
 rubygem-pg                      ports/databases/rubygem-pg
 rubygem-piston                  ports/devel/rubygem-piston
+rubygem-pkg-config              ports/devel/rubygem-pkg-config
 rubygem-platform                ports/devel/rubygem-platform
 rubygem-polyglot                ports/devel/rubygem-polyglot
 rubygem-pony                    ports/mail/rubygem-pony
@@ -24515,6 +24522,7 @@ trac                            ports/www/trac
 trac-accountmanager             ports/www/trac-accountmanager
 trac-addcomment                 ports/www/trac-addcomment
 trac-advancedticketworkflow     ports/www/trac-advancedticketworkflow
+trac-announcer                  ports/www/trac-announcer
 trac-autocomplete               ports/www/trac-autocomplete
 trac-batchmodify                ports/www/trac-batchmodify
 trac-bzr                        ports/www/trac-bzr
@@ -24543,7 +24551,6 @@ trac-macropost                  ports/www/trac-macropost
 trac-mastertickets              ports/www/trac-mastertickets
 trac-math                       ports/www/trac-math
 trac-mercurial                  ports/www/trac-mercurial
-trac-multirepos                 ports/www/trac-multirepos
 trac-nav                        ports/www/trac-nav
 trac-navadd                     ports/www/trac-navadd
 trac-pagelist                   ports/www/trac-pagelist
