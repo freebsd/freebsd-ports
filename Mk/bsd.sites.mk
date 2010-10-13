@@ -231,7 +231,6 @@ MASTER_SITE_EXIM+=	\
 	ftp://sunsite.uio.no/pub/mail/exim/exim/%SUBDIR%/ \
 	http://www.no.exim.org/ftp/exim/%SUBDIR%/ \
 	http://sunsite.icm.edu.pl/pub/unix/mail/exim/exim/%SUBDIR%/ \
-	ftp://exim.directnet.ru/pub/exim/exim/%SUBDIR%/ \
 	ftp://ftp.is.co.za/networking/mail/mta/exim/%SUBDIR%/ \
 	ftp://ftp.reaper.org/pub/exim/exim/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/exim/exim/%SUBDIR%/ \
@@ -943,29 +942,21 @@ MASTER_SITE_PGSQL+= \
 	ftp://ftp9.us.postgresql.org/pub/mirrors/postgresql/%SUBDIR%/ \
 	ftp://ftp10.us.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/db/postgresql/&,} \
-	ftp://ftp.au.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp.at.postgresql.org/db/www.postgresql.org/pub/%SUBDIR%/ \
 	ftp://ftp.be.postgresql.org/postgresql/%SUBDIR%/ \
-	ftp://ftp.ba.postgresql.org/pub/postgresql/%SUBDIR%/ \
-	ftp://ftp.cz.postgresql.org/DATA/postgresql/%SUBDIR%/ \
 	ftp://ftp2.cz.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp.ee.postgresql.org/mirrors/postgresql/%SUBDIR%/ \
-	ftp://ftp.fr.postgresql.org/%SUBDIR%/ \
 	ftp://ftp.de.postgresql.org/mirror/postgresql/%SUBDIR%/ \
 	ftp://ftp3.de.postgresql.org/pub/Mirrors/ftp.postgresql.org/%SUBDIR%/ \
 	ftp://ftp.gr.postgresql.org/pub/databases/postgresql/%SUBDIR%/ \
-	ftp://ftp.hk.postgresql.org/postgresql/%SUBDIR%/ \
 	ftp://ftp.ie.postgresql.org/mirrors/ftp.postgresql.org/pub/%SUBDIR%/ \
 	ftp://ftp2.it.postgresql.org/mirrors/postgres/%SUBDIR%/ \
-	ftp://ftp.kr.postgresql.org/postgresql/%SUBDIR%/ \
 	http://ftp2.jp.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp.lv.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp2.nl.postgresql.org/mirror/postgresql/%SUBDIR%/ \
-	ftp://ftp4.nl.postgresql.org/postgresql.zeelandnet.nl/%SUBDIR%/ \
 	ftp://ftp6.pl.postgresql.org/pub/postgresql/%SUBDIR%/ \
 	ftp://ftp7.pl.postgresql.org/pub/mirror/ftp.postgresql.org/%SUBDIR%/ \
 	ftp://ftp6.ro.postgresql.org/pub/mirrors/ftp.postgresql.org/%SUBDIR%/ \
-	ftp://ftp.ru.postgresql.org/pub/unix/database/pgsql/%SUBDIR%/ \
 	ftp://ftp2.ru.postgresql.org/pub/databases/postgresql/%SUBDIR%/ \
 	ftp://ftp3.ru.postgresql.org/pub/mirror/postgresql/pub/%SUBDIR%/ \
 	ftp://ftp5.es.postgresql.org/mirror/postgresql/%SUBDIR%/ \
@@ -1016,32 +1007,23 @@ MASTER_SITE_QMAIL+= \
 	http://qmail.mirrors.summersault.com/%SUBDIR%/ \
 	http://qmail.cdsinet.net/%SUBDIR%/ \
 	http://qmail.glasswings.com.au/%SUBDIR%/ \
-	http://qmail.hostlink.com.hk/%SUBDIR%/ \
 	http://qmail.cbn.net.id/%SUBDIR%/ \
 	http://qmail.manic.co.kr/%SUBDIR%/ \
 	http://qmail.psshee.com/%SUBDIR%/ \
 	http://mirrors.kangaroot.net/qmail/%SUBDIR%/ \
 	http://mirrors.sunsite.dk/qmailwww/%SUBDIR%/ \
-	http://qmail.mirrors.Space.Net/%SUBDIR%/ \
-	http://qmail-mirror.hoermann-rawema.de/%SUBDIR%/ \
 	http://www.agria.hu/qmail/%SUBDIR%/ \
 	http://qmail.hu/%SUBDIR%/ \
 	http://qmail.rhnet.is/%SUBDIR%/ \
-	http://qmail.netsoc.ucd.ie/%SUBDIR%/ \
 	http://mirrors.dataloss.nl/www.qmail.org/%SUBDIR%/ \
-	http://qmail.basefreak.nl/%SUBDIR%/ \
 	http://www.math.ntnu.no/mirror/www.qmail.org/%SUBDIR%/ \
-	http://qmail.konnekt.org/%SUBDIR%/ \
 	http://qmail.netvisao.pt/%SUBDIR%/ \
 	http://qmail.ipg.sk/%SUBDIR%/ \
-	http://qmail.imasd.elmundo.es/%SUBDIR%/ \
 	http://qmail.omnis.ch/%SUBDIR%/ \
 	http://qmail.asylog.net/%SUBDIR%/ \
-	http://qmail.softflare.com/%SUBDIR%/ \
 	http://qmail.blueyonder.co.uk/%SUBDIR%/ \
 	http://qmail.usp.br/%SUBDIR%/ \
 	http://madhaus.utcs.utoronto.ca/qmail/%SUBDIR%/ \
-	http://qmail.ru.ac.za/%SUBDIR%/ \
 	http://www.qmail.org/%SUBDIR%/
 .endif
 
@@ -1231,7 +1213,6 @@ MASTER_SITE_SUSE+= 	\
 	ftp://ftp.rz.uni-wuerzburg.de/pub/linux/MIRROR.suse/%SUBDIR%/ \
 	ftp://ftp.freenet.de/pub/.disk1/ftp.suse.com/pub/suse/%SUBDIR%/ \
 	ftp://ftp.hu-berlin.de/pub/mirrors/ftp.suse.com/pub/suse/%SUBDIR%/ \
-	ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.gwdg.de/pub/linux/suse/ftp.suse.com/suse/%SUBDIR%/ \
 	ftp://ftp.rz.uni-kiel.de/pub2/linux/suse/%SUBDIR%/ \
 	http://mirrors.sth.sze.hu/linux/suse/%SUBDIR%/ \
 	ftp://ftp.heanet.ie/mirrors/ftp.suse.com/pub/suse/ftp.suse.com/suse/%SUBDIR%/ \
@@ -1260,7 +1241,6 @@ MASTER_SITE_SUSE+= 	\
 	ftp://ftp.is.co.za/linux/distributions/suse/%SUBDIR%/ \
 	http://ftp.sun.ac.za/ftp/mirrorsites/suse/%SUBDIR%/ \
 	ftp://ftp.rediris.es/pub/linux/distributions/suse/pub/suse/%SUBDIR%/ \
-	ftp://suse.grn.es/mirrors/suse/%SUBDIR%/ \
 	ftp://ftp.cb.spb.ru/.1/Linux-Distrib/Suse/%SUBDIR%/ \
 	ftp://ftp.neva.ru/.1/Linux-Distrib/Suse/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/Linux/SuSE/suse/%SUBDIR%/ \
