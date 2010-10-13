@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	SVN-Hooks
-PORTVERSION=	0.28
-PORTREVISION=	2
+PORTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +15,7 @@ MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A framework for implementing Subversion hooks
 
 RUN_DEPENDS=	p5-Email-Send>=0:${PORTSDIR}/mail/p5-Email-Send \
-		p5-Email-Simple>=0:${PORTSDIR}/mail/p5-Email-Simple \
+		p5-Email-Simple>=2.100_1:${PORTSDIR}/mail/p5-Email-Simple \
 		p5-SVN-Look>=0:${PORTSDIR}/devel/p5-SVN-Look \
 		p5-SVN-Notify>=0:${PORTSDIR}/devel/p5-SVN-Notify \
 		p5-JIRA-Client>=0:${PORTSDIR}/devel/p5-JIRA-Client \
