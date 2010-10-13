@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Compile-Cache
-PORTVERSION=	0.96
+PORTVERSION=	0.97
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,16 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cache Compiled XML Translators
 
-BUILD_DEPENDS=	p5-Log-Report>=0.17:${PORTSDIR}/devel/p5-Log-Report \
-		p5-XML-Compile-Tester>=0.04:${PORTSDIR}/devel/p5-XML-Compile-Tester \
-		p5-XML-Compile>=0.96:${PORTSDIR}/textproc/p5-XML-Compile \
-		p5-XML-LibXML-Simple>=0.13:${PORTSDIR}/textproc/p5-XML-LibXML-Simple \
-		p5-Test-Pod>=1.26:${PORTSDIR}/devel/p5-Test-Pod
-RUN_DEPENDS=	p5-Log-Report>=0.17:${PORTSDIR}/devel/p5-Log-Report \
-		p5-XML-Compile-Tester>=0.04:${PORTSDIR}/devel/p5-XML-Compile-Tester \
-		p5-XML-Compile>=0.96:${PORTSDIR}/textproc/p5-XML-Compile \
-		p5-XML-LibXML-Simple>=0.13:${PORTSDIR}/textproc/p5-XML-LibXML-Simple \
-		p5-Test-Pod>=1.26:${PORTSDIR}/devel/p5-Test-Pod
+RUN_DEPENDS=	p5-Log-Report>=0.19:${PORTSDIR}/devel/p5-Log-Report \
+		p5-Test-Pod>=1.00:${PORTSDIR}/devel/p5-Test-Pod \
+		p5-XML-Compile>=1.1:${PORTSDIR}/textproc/p5-XML-Compile \
+		p5-XML-Compile-Tester>=0.02:${PORTSDIR}/devel/p5-XML-Compile-Tester \
+		p5-XML-LibXML-Simple>=0.13:${PORTSDIR}/textproc/p5-XML-LibXML-Simple
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
