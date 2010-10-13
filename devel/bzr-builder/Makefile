@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bzr-builder
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpadlibrarian.net/54689925/ \
+MASTER_SITES=	http://launchpadlibrarian.net/56937826/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	c-s@c-s.li
@@ -24,8 +24,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr_builder
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|0.4|0.5|g' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
