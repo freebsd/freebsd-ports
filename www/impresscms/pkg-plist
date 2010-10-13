@@ -3086,7 +3086,6 @@
 %%WWWDIR%%/htdocs/plugins/csstidy/class.csstidy.php
 %%WWWDIR%%/htdocs/plugins/csstidy/class.csstidy_optimise.php
 %%WWWDIR%%/htdocs/plugins/csstidy/class.csstidy_print.php
-%%WWWDIR%%/htdocs/plugins/csstidy/css_optimiser.php
 %%WWWDIR%%/htdocs/plugins/csstidy/cssparse.css
 %%WWWDIR%%/htdocs/plugins/csstidy/data.inc.php
 %%WWWDIR%%/htdocs/plugins/csstidy/lang.inc.php
