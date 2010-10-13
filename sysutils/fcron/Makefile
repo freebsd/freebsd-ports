@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fcron
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.6
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://fcron.free.fr/archives/ \
@@ -45,6 +45,8 @@ DOCSRC=		${WRKSRC}/doc/${MANLANG}
 .else
 DOCSRC=		${WRKSRC}/doc/en
 .endif
+
+LICENSE=	GPLv2
 
 pre-su-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
