@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unidecode
-PORTVERSION=	0.04.3
+PORTVERSION=	0.04.4
 CATEGORIES=	converters python
 MASTER_SITES=	http://code.zemanta.com/tsolc/unidecode/releases/ \
 		http://apt.douglasthrift.net/files/${PORTNAME}/ \
@@ -16,6 +16,9 @@ DISTNAME=	Unidecode-${PORTVERSION}
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	ASCII transliterations of Unicode text
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
