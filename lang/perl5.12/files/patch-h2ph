@@ -1,0 +1,136 @@
+diff --git a/lib/h2ph.t b/lib/h2ph.t
+index 8d62d46..2b58f6a 100644
+--- a/lib/h2ph.t
++++ lib/h2ph.t
+@@ -18,7 +18,7 @@ if (!(-e $extracted_program)) {
+     exit 0;
+ }
+ 
+-plan(4);
++plan(5);
+ 
+ # quickly compare two text files
+ sub txt_compare {
+@@ -28,16 +28,18 @@ sub txt_compare {
+     $A cmp $B;
+ }
+ 
+-my $result = runperl( progfile => $extracted_program, 
++my $result = runperl( progfile => $extracted_program,
++                      stderr => 1,
+                       args => ['-d.', '-Q', 'lib/h2ph.h']);
++is( $result, '', "output is free of warnings" );
+ is( $?, 0, "$extracted_program runs successfully" );
+-    
+-is ( txt_compare("lib/h2ph.ph", "lib/h2ph.pht"), 
++
++is ( txt_compare("lib/h2ph.ph", "lib/h2ph.pht"),
+      0,
+      "generated file has expected contents" );
+-    
+-$result = runperl( progfile => 'lib/h2ph.pht', 
+-                   switches => ['-c'], 
++
++$result = runperl( progfile => 'lib/h2ph.pht',
++                   switches => ['-c'],
+                    stderr => 1 );
+ like( $result, qr/syntax OK$/, "output compiles");
+ 
+diff --git a/t/lib/h2ph.h b/t/lib/h2ph.h
+index 78429ca..8026394 100644
+--- a/t/lib/h2ph.h
++++ t/lib/h2ph.h
+@@ -132,6 +132,11 @@ enum flimflam {
+   flam                      
+  } flamflim;
+ 
++static __inline__ int blli_in_use(struct atm_blli blli)
++{
++  return blli.l2_proto || blli.l3_proto;
++}
++
+ /* Handle multi-line quoted strings: */
+ __asm__ __volatile__("
+     this
+diff --git a/t/lib/h2ph.pht b/t/lib/h2ph.pht
+index cda8d21..f068d6d 100644
+--- a/t/lib/h2ph.pht
++++ t/lib/h2ph.pht
+@@ -90,6 +90,10 @@ unless(defined(&_H2PH_H_)) {
+     }
+     eval("sub flim () { 0; }") unless defined(&flim);
+     eval("sub flam () { 1; }") unless defined(&flam);
++    eval 'sub blli_in_use {
++        my($blli) = @_;
++	    eval q({  ($blli->{l2_proto}) ||  ($blli->{l3_proto}); });
++    }' unless defined(&blli_in_use);
+     eval 'sub multiline () {"multilinestring";}' unless defined(&multiline);
+ }
+ 1;
+diff --git a/utils/h2ph.PL b/utils/h2ph.PL
+index 1255807..2228e1b 100644
+--- a/utils/h2ph.PL
++++ utils/h2ph.PL
+@@ -147,23 +147,7 @@ while (defined (my $file = next_file())) {
+ 		    s/^\s+//;
+ 		    expr();
+ 		    $new =~ s/(["\\])/\\$1/g;       #"]);
+-		  EMIT:
+-		    $new = reindent($new);
+-		    $args = reindent($args);
+-		    if ($t ne '') {
+-			$new =~ s/(['\\])/\\$1/g;   #']);
+-			if ($opt_h) {
+-			    print OUT $t,
+-                            "eval \"\\n#line $eval_index $outfile\\n\" . 'sub $name $proto\{\n$t    ${args}eval q($new);\n$t}' unless defined(\&$name);\n";
+-                            $eval_index++;
+-			} else {
+-			    print OUT $t,
+-                            "eval 'sub $name $proto\{\n$t    ${args}eval q($new);\n$t}' unless defined(\&$name);\n";
+-			}
+-		    } else {
+-                      print OUT "unless(defined(\&$name)) {\n    sub $name $proto\{\n\t${args}eval q($new);\n    }\n}\n";
+-		    }
+-		    %curargs = ();
++		    EMIT($proto);
+ 		} else {
+ 		    s/^\s+//;
+ 		    expr();
+@@ -380,7 +364,7 @@ while (defined (my $file = next_file())) {
+ 	    $new =~ s/&$_\b/\$$_/g for @local_variables;
+ 	    $new =~ s/(["\\])/\\$1/g;       #"]);
+ 	    # now that's almost like a macro (we hope)
+-	    goto EMIT;
++	    EMIT($proto);
+ 	}
+     }
+     $Is_converted{$file} = 1;
+@@ -400,6 +384,28 @@ if ($opt_e && (scalar(keys %bad_file) > 0)) {
+ 
+ exit $Exit;
+ 
++sub EMIT {
++    my $proto = shift;
++
++    $new = reindent($new);
++    $args = reindent($args);
++    if ($t ne '') {
++    $new =~ s/(['\\])/\\$1/g;   #']);
++    if ($opt_h) {
++        print OUT $t,
++                    "eval \"\\n#line $eval_index $outfile\\n\" . 'sub $name $proto\{\n$t    ${args}eval q($new);\n$t}' unless defined(\&$name);\n";
++                    $eval_index++;
++    } else {
++        print OUT $t,
++                    "eval 'sub $name $proto\{\n$t    ${args}eval q($new);\n$t}' unless defined(\&$name);\n";
++    }
++    } else {
++              print OUT "unless(defined(\&$name)) {\n    sub $name $proto\{\n\t${args}eval q($new);\n    }\n}\n";
++    }
++    %curargs = ();
++    return;
++}
++
+ sub expr {
+     if (/\b__asm__\b/) {	# freak out
+ 	$new = '"(assembly code)"';
