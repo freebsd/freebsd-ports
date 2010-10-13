@@ -288,12 +288,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # settable options.  (Setting USE_* in /etc/make.conf is always wrong).
 #
 # WITH_DEBUG            - If set, debugging flags are added to CFLAGS and the
-#                         binaries don't get stripped by INSTALL_PROGRAM.
-#                         Besides, individual ports might add their specific
-#                         to produce binaries for debugging purposes.
-#                         You can override the debug flags that are passed to
-#                         the compiler by setting DEBUG_FLAGS. It is set to
-#                         "-g" at default.
+#                         binaries don't get stripped by INSTALL_PROGRAM or
+#                         INSTALL_LIB. Besides, individual ports might
+#                         add their specific to produce binaries for debugging
+#                         purposes. You can override the debug flags that are
+#                         passed to the compiler by setting DEBUG_FLAGS. It is
+#                         set to "-g" at default.
 #
 # USE_BZIP2		- If set, this port tarballs use bzip2, not gzip, for
 #				  compression.
@@ -616,6 +616,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  default, also strips them, unless ${STRIP} is
 #				  overridden to be the empty string).
 # INSTALL_KLD	- As INSTALL_PROGRAM, but without the STRIP.
+# INSTALL_LIB	- As INSTALL_DATA, but also strips the file.
 # INSTALL_SCRIPT
 #				- A command to install executable scripts.
 # INSTALL_DATA	- A command to install sharable data.
@@ -970,6 +971,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: ${PORTSDIR}/Templates/BSD.local.dist or
 #				  /etc/mtree/BSD.usr.dist if ${PREFIX} == "/usr".
 # PLIST_DIRS	- Directories to be added to packing list
+# PLIST_DIRSTRY	- Directories to be added to packing list and try to remove them.
 # PLIST_FILES	- Files and symbolic links to be added to packing list
 #
 # PLIST			- Name of the `packing list' file.
@@ -2424,6 +2426,8 @@ INSTALL_PROGRAM= \
 	${INSTALL} ${COPY} ${STRIP} ${_BINOWNGRP} -m ${BINMODE}
 INSTALL_KLD= \
 	${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE}
+INSTALL_LIB= \
+	${INSTALL} ${COPY} ${STRIP} ${_SHROWNGRP} -m ${SHAREMODE} 
 INSTALL_SCRIPT= \
 	${INSTALL} ${COPY} ${_BINOWNGRP} -m ${BINMODE}
 INSTALL_DATA= \
@@ -2432,6 +2436,7 @@ INSTALL_MAN= \
 	${INSTALL} ${COPY} ${_MANOWNGRP} -m ${MANMODE}
 
 INSTALL_MACROS=	BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+			BSD_INSTALL_LIB="${INSTALL_LIB}" \
 			BSD_INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 			BSD_INSTALL_DATA="${INSTALL_DATA}" \
 			BSD_INSTALL_MAN="${INSTALL_MAN}"
@@ -3780,6 +3785,7 @@ do-configure:
 	    CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 	    INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
 	    INSTALL_DATA="${INSTALL_DATA}" \
+	    INSTALL_LIB="${INSTALL_LIB}" \
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; then \
@@ -5709,6 +5715,9 @@ generate-plist:
  
 .for dir in ${PLIST_DIRS}
 	@${ECHO_CMD} ${dir} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} -e 's,^,@dirrm ,' >> ${TMPPLIST}
+.endfor
+.for dir in ${PLIST_DIRSTRY}
+	@${ECHO_CMD} ${dir} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} -e 's,^,@dirrmtry ,' >> ${TMPPLIST}
 .endfor
 .if defined(USE_LINUX_PREFIX)
 .if defined(USE_LDCONFIG)
