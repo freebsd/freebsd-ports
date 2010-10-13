@@ -1,0 +1,11 @@
+Chromium is an open-source browser project that aims to build a safer,
+faster, and more stable way for all users to experience the web. The
+official site at http://www.chromium.org/Home contains design documents,
+architecture overviews, testing information, and more to help you learn
+to build and work with the Chromium source code.
+
+You can help support this port of Chromium to FreeBSD by subscribing at
+http://chromium.hybridsource.org.  This port was derived from older work
+extracted from the weekly subscriber builds.
+
+WWW: http://chromium.hybridsource.org

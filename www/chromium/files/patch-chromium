@@ -1,0 +1,4904 @@
+diff --git a/app/app_base.gypi b/app/app_base.gypi
+index 2eaa8f6..afbd919 100644
+--- app/app_base.gypi
++++ app/app_base.gypi
+@@ -164,7 +164,7 @@
+         'surface/io_surface_support_mac.cc',
+         'surface/io_surface_support_mac.h',
+         'surface/transport_dib.h',
+-        'surface/transport_dib_linux.cc',
++        'surface/transport_dib_freebsd.cc',
+         'surface/transport_dib_mac.cc',
+         'surface/transport_dib_win.cc',
+         'table_model.cc',
+diff --git a/app/resources/app_resources.grd b/app/resources/app_resources.grd
+index 65ba81c..0091169 100644
+--- app/resources/app_resources.grd
++++ app/resources/app_resources.grd
+@@ -31,7 +31,7 @@
+         <include name="IDR_MINIMIZE_P" file="minimize_p.png" type="BINDATA" />
+       </if>
+ 
+-      <if expr="os == 'linux2' or os == 'freebsd7' or os == 'openbsd4'">
++      <if expr="os == 'linux2' or os.find('bsd') != -1">
+         <!-- Window controls for Linux/BSD, in the style of Metacity -->
+         <include name="IDR_CLOSE" file="linux_close.png" type="BINDATA" />
+         <include name="IDR_CLOSE_H" file="linux_close_h.png" type="BINDATA" />
+diff --git a/app/surface/transport_dib.h b/app/surface/transport_dib.h
+index 7a60f08..5241873 100644
+--- app/surface/transport_dib.h
++++ app/surface/transport_dib.h
+@@ -7,7 +7,7 @@
+ 
+ #include "base/basictypes.h"
+ 
+-#if defined(OS_WIN) || defined(OS_MACOSX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_FREEBSD)
+ #include "base/shared_memory.h"
+ #endif
+ 
+@@ -73,7 +73,7 @@ class TransportDIB {
+   // Returns a default, invalid handle, that is meant to indicate a missing
+   // Transport DIB.
+   static Handle DefaultHandleValue() { return NULL; }
+-#elif defined(OS_MACOSX)
++#elif defined(OS_MACOSX) || defined(OS_FREEBSD)
+   typedef base::SharedMemoryHandle Handle;
+   // On Mac, the inode number of the backing file is used as an id.
+   typedef base::SharedMemoryId Id;
+@@ -81,7 +81,7 @@ class TransportDIB {
+   // Returns a default, invalid handle, that is meant to indicate a missing
+   // Transport DIB.
+   static Handle DefaultHandleValue() { return Handle(); }
+-#elif defined(USE_X11)
++#elif defined(OS_LINUX)
+   typedef int Handle;  // These two ints are SysV IPC shared memory keys
+   typedef int Id;
+ 
+@@ -136,11 +136,12 @@ class TransportDIB {
+ 
+  private:
+   TransportDIB();
+-#if defined(OS_WIN) || defined(OS_MACOSX)
++#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_FREEBSD)
+   explicit TransportDIB(base::SharedMemoryHandle dib);
+   base::SharedMemory shared_memory_;
+   uint32 sequence_num_;
+-#elif defined(USE_X11)
++#endif
++#if defined(USE_X11)
+   int key_;  // SysV shared memory id
+   void* address_;  // mapped address
+   XSharedMemoryId x_shm_;  // X id for the shared segment
+diff --git a/app/surface/transport_dib_freebsd.cc b/app/surface/transport_dib_freebsd.cc
+new file mode 100644
+index 0000000..b49ba71
+--- /dev/null
++++ app/surface/transport_dib_freebsd.cc
+@@ -0,0 +1,86 @@
++// Copyright (c) 2009 The Chromium Authors. All rights reserved.
++// Use of this source code is governed by a BSD-style license that can be
++// found in the LICENSE file.
++
++#include "app/surface/transport_dib.h"
++
++#include <unistd.h>
++#include <sys/stat.h>
++
++#include "base/eintr_wrapper.h"
++#include "base/shared_memory.h"
++#include "skia/ext/platform_canvas.h"
++
++TransportDIB::TransportDIB()
++    : size_(0) {
++}
++
++TransportDIB::TransportDIB(TransportDIB::Handle dib)
++    : shared_memory_(dib, false /* read write */),
++      size_(0) {
++}
++
++TransportDIB::~TransportDIB() {
++}
++
++// static
++TransportDIB* TransportDIB::Create(size_t size, uint32 sequence_num) {
++  TransportDIB* dib = new TransportDIB;
++  if (!dib->shared_memory_.Create(L"", false /* read write */,
++                                  false /* do not open existing */, size)) {
++    delete dib;
++    return NULL;
++  }
++
++  dib->size_ = size;
++  return dib;
++}
++
++// static
++TransportDIB* TransportDIB::Map(TransportDIB::Handle handle) {
++  if (!is_valid(handle))
++    return NULL;
++
++  TransportDIB* dib = new TransportDIB(handle);
++  struct stat st;
++  if ((fstat(handle.fd, &st) != 0) ||
++      (!dib->shared_memory_.Map(st.st_size))) {
++    delete dib;
++    HANDLE_EINTR(close(handle.fd));
++    return NULL;
++  }
++
++  dib->size_ = st.st_size;
++
++  return dib;
++}
++
++bool TransportDIB::is_valid(Handle dib) {
++  return dib.fd >= 0;
++}
++
++skia::PlatformCanvas* TransportDIB::GetPlatformCanvas(int w, int h) {
++  return new skia::PlatformCanvas(w, h, true,
++                                  reinterpret_cast<uint8_t*>(memory()));
++}
++
++void* TransportDIB::memory() const {
++  return shared_memory_.memory();
++}
++
++TransportDIB::Id TransportDIB::id() const {
++  return shared_memory_.id();
++}
++
++TransportDIB::Handle TransportDIB::handle() const {
++  return shared_memory_.handle();
++}
++
++XID TransportDIB::MapToX(Display* display) {
++  if (!x_shm_) {
++    x_shm_ = x11_util::AttachSharedMemory(display, key_);
++    display_ = display;
++  }
++
++  return x_shm_;
++}
+diff --git a/app/surface/transport_dib_linux.cc b/app/surface/transport_dib_linux.cc
+index 6c41a0c..a670938 100644
+--- app/surface/transport_dib_linux.cc
++++ app/surface/transport_dib_linux.cc
+@@ -27,6 +27,9 @@ TransportDIB::TransportDIB()
+ TransportDIB::~TransportDIB() {
+   if (address_ != kInvalidAddress) {
+     shmdt(address_);
++#if defined(OS_FREEBSD)
++    shmctl(key_, IPC_RMID, 0);
++#endif
+     address_ = kInvalidAddress;
+   }
+ 
+@@ -52,7 +55,13 @@ TransportDIB* TransportDIB::Create(size_t size, uint32 sequence_num) {
+   // Here we mark the shared memory for deletion. Since we attached it in the
+   // line above, it doesn't actually get deleted but, if we crash, this means
+   // that the kernel will automatically clean it up for us.
++#if !defined(OS_FREEBSD)
++// BSD: A shmctl IPC_RMID call here renders all future shared memory calls for
++// BSD: a particular key to fail on FreeBSD, so I moved this call to the
++// BSD: destructor.  Of course, this means chromium crashes on FreeBSD don't
++// BSD: clean up shared memory.
+   shmctl(shmkey, IPC_RMID, 0);
++#endif
+   if (address == kInvalidAddress)
+     return NULL;
+ 
+diff --git a/base/base.gyp b/base/base.gyp
+index 05f8a0f..607bf02 100644
+--- base/base.gyp
++++ base/base.gyp
+@@ -221,6 +221,13 @@
+         'test/test_file_util_posix.cc',
+         'test/test_file_util_win.cc',
+       ],
++      'conditions': [
++        [ 'OS == "freebsd"', {
++            # fdatasync is not implemented on FreeBSD
++            'sources/': [ ['exclude', '^test/test_file_util_linux.cc$'] ],
++          },
++        ],
++      ],
+     },
+     {
+       'target_name': 'test_support_perf',
+diff --git a/base/base.gypi b/base/base.gypi
+index df96e51..b51b6df 100644
+--- base/base.gypi
++++ base/base.gypi
+@@ -420,6 +420,9 @@
+           ],
+         },],
+         [ 'OS == "freebsd" or OS == "openbsd"', {
++             'sources!': [
++             'process_linux.cc',
++             ],
+             'link_settings': {
+               'libraries': [
+                 '-L/usr/local/lib -lexecinfo',
+diff --git a/base/base_paths_posix.cc b/base/base_paths_posix.cc
+index e44028e..9551c73 100644
+--- base/base_paths_posix.cc
++++ base/base_paths_posix.cc
+@@ -7,6 +7,9 @@
+ #include "base/base_paths.h"
+ 
+ #include <unistd.h>
++#if defined(OS_FREEBSD)
++#include <sys/sysctl.h>
++#endif
+ 
+ #include "base/env_var.h"
+ #include "base/file_path.h"
+@@ -23,8 +26,6 @@ namespace base {
+ const char kSelfExe[] = "/proc/self/exe";
+ #elif defined(OS_SOLARIS)
+ const char kSelfExe[] = getexecname();
+-#elif defined(OS_FREEBSD)
+-const char kSelfExe[] = "/proc/curproc/file";
+ #endif
+ 
+ bool PathProviderPosix(int key, FilePath* result) {
+@@ -32,6 +33,7 @@ bool PathProviderPosix(int key, FilePath* result) {
+   switch (key) {
+     case base::FILE_EXE:
+     case base::FILE_MODULE: {  // TODO(evanm): is this correct?
++#if defined(OS_LINUX)
+       char bin_dir[PATH_MAX + 1];
+       int bin_dir_size = readlink(kSelfExe, bin_dir, PATH_MAX);
+       if (bin_dir_size < 0 || bin_dir_size > PATH_MAX) {
+@@ -41,6 +43,26 @@ bool PathProviderPosix(int key, FilePath* result) {
+       bin_dir[bin_dir_size] = 0;
+       *result = FilePath(bin_dir);
+       return true;
++#elif defined(OS_FREEBSD)
++      char bin_dir[PATH_MAX + 1];
++      int error, name[4];
++      size_t length;
++
++      name[0] = CTL_KERN;
++      name[1] = KERN_PROC;
++      name[2] = KERN_PROC_PATHNAME;
++      name[3] = -1;
++
++      length = sizeof(bin_dir);
++      error = sysctl(name, 4, bin_dir, &length, NULL, 0);
++      if (error < 0 || length == 0 || strlen(bin_dir) == 0) {
++        NOTREACHED() << "Unable to resolve path.";
++        return false;
++      }
++      bin_dir[strlen(bin_dir)] = 0;
++      *result = FilePath(bin_dir);
++      return true;
++#endif
+     }
+     case base::DIR_SOURCE_ROOT:
+       // On POSIX, unit tests execute two levels deep from the source root.
+diff --git a/base/debug_util_posix.cc b/base/debug_util_posix.cc
+index 110cb20..4894cc7 100644
+--- base/debug_util_posix.cc
++++ base/debug_util_posix.cc
+@@ -225,8 +225,8 @@ bool DebugUtil::BeingDebugged() {
+ 
+ bool DebugUtil::BeingDebugged() {
+   // TODO(benl): can we determine this under FreeBSD?
+-  NOTIMPLEMENTED();
+-  return false;
++  LOG(WARNING) << "Don't know how to do this";
++  return true;
+ }
+ 
+ #endif  // defined(OS_FREEBSD)
+diff --git a/base/file_util_linux.cc b/base/file_util_linux.cc
+index 0f9795e..bf9bd97 100644
+--- base/file_util_linux.cc
++++ base/file_util_linux.cc
+@@ -25,7 +25,12 @@ bool GetTempDir(FilePath* path) {
+ }
+ 
+ bool GetShmemTempDir(FilePath* path) {
++#if defined(OS_LINUX)
+   *path = FilePath("/dev/shm");
++#else
++//BSD not sure this is the best way to do this but it works for now
++  *path = FilePath("/tmp");
++#endif
+   return true;
+ }
+ 
+diff --git a/base/leak_annotations.h b/base/leak_annotations.h
+index a402acf..85b4c7e 100644
+--- base/leak_annotations.h
++++ base/leak_annotations.h
+@@ -7,7 +7,7 @@
+ 
+ #include "build/build_config.h"
+ 
+-#if defined(OS_LINUX) && defined(USE_HEAPCHECKER)
++#if defined(OS_NIX) && defined(USE_HEAPCHECKER)
+ 
+ #include "third_party/tcmalloc/chromium/src/google/heap-checker.h"
+ 
+diff --git a/base/profiler.cc b/base/profiler.cc
+index e291117..a6f1486 100644
+--- base/profiler.cc
++++ base/profiler.cc
+@@ -5,7 +5,7 @@
+ #include "base/profiler.h"
+ #include "base/string_util.h"
+ 
+-#if defined(USE_TCMALLOC) && defined(OS_LINUX)
++#if defined(USE_TCMALLOC) && defined(OS_NIX)
+ #include "third_party/tcmalloc/chromium/src/google/profiler.h"
+ #endif
+ 
+@@ -24,7 +24,7 @@ namespace base {
+ void Profiler::StartRecording() {
+ #ifdef QUANTIFY
+   QuantifyStartRecordingData();
+-#elif defined(USE_TCMALLOC) && defined(OS_LINUX)
++#elif defined(USE_TCMALLOC) && defined(OS_NIX)
+   ProfilerStart("chrome-profile");
+ #endif
+ }
+@@ -32,13 +32,13 @@ void Profiler::StartRecording() {
+ void Profiler::StopRecording() {
+ #ifdef QUANTIFY
+   QuantifyStopRecordingData();
+-#elif defined(USE_TCMALLOC) && defined(OS_LINUX)
++#elif defined(USE_TCMALLOC) && defined(OS_NIX)
+   ProfilerStop();
+ #endif
+ }
+ 
+ void Profiler::Flush() {
+-#if defined(USE_TCMALLOC) && defined(OS_LINUX)
++#if defined(USE_TCMALLOC) && defined(OS_NIX)
+   ProfilerFlush();
+ #endif
+ }
+diff --git a/base/test/test_suite.h b/base/test/test_suite.h
+index a8dfdeb..d20f63a 100644
+--- base/test/test_suite.h
++++ base/test/test_suite.h
+@@ -59,7 +59,7 @@ class TestSuite {
+ #if defined(OS_POSIX) && !defined(OS_MACOSX)
+     g_thread_init(NULL);
+     gtk_init_check(&argc, &argv);
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_POSIX) && !defined(OS_MACOSX)
+     // Don't add additional code to this constructor.  Instead add it to
+     // Initialize().  See bug 6436.
+   }
+diff --git a/base/worker_pool_linux.cc b/base/worker_pool_linux.cc
+index b9c85b3..3dc08b9 100644
+--- base/worker_pool_linux.cc
++++ base/worker_pool_linux.cc
+@@ -17,7 +17,7 @@ namespace {
+ const int kIdleSecondsBeforeExit = 10 * 60;
+ // A stack size of 64 KB is too small for the CERT_PKIXVerifyCert
+ // function of NSS because of NSS bug 439169.
+-const int kWorkerThreadStackSize = 128 * 1024;
++const int kWorkerThreadStackSize = 256 * 1024;
+ 
+ class WorkerPoolImpl {
+  public:
+diff --git a/build/build_config.h b/build/build_config.h
+index c0a7bee..32e215c 100644
+--- build/build_config.h
++++ build/build_config.h
+@@ -47,6 +47,7 @@
+ 
+ #if defined(OS_LINUX) || defined(OS_FREEBSD) || defined(OS_OPENBSD) || \
+     defined(OS_SOLARIS)
++#define OS_NIX 1
+ #define USE_NSS 1  // Use NSS for crypto.
+ #define USE_X11 1  // Use X for graphics.
+ #endif
+@@ -61,12 +62,12 @@
+ #endif
+ 
+ // Use tcmalloc
+-#if (defined(OS_WIN) || defined(OS_LINUX)) && !defined(NO_TCMALLOC)
++#if (defined(OS_WIN) || defined(OS_NIX)) && !defined(NO_TCMALLOC)
+ #define USE_TCMALLOC 1
+ #endif
+ 
+ // Use heapchecker.
+-#if (defined(OS_WIN) || defined(OS_LINUX)) && !defined(NO_HEAPCHECKER)
++#if (defined(OS_WIN) || defined(OS_NIX)) && !defined(NO_HEAPCHECKER)
+ #define USE_HEAPCHECKER 1
+ #endif
+ 
+diff --git a/build/common.gypi b/build/common.gypi
+index 6990fcf..b369814 100644
+--- build/common.gypi
++++ build/common.gypi
+@@ -84,7 +84,7 @@
+       'linux_fpic%': 0,
+ 
+       # Python version.
+-      'python_ver%': '2.5',
++      'python_ver%': '2.6',
+ 
+       # Set ARM-v7 compilation flags
+       'armv7%': 0,
+@@ -203,10 +203,10 @@
+     'linux_strip_binary%': 0,
+ 
+     # Enable TCMalloc.
+-    'linux_use_tcmalloc%': 0,
++    'linux_use_tcmalloc%': 1,
+ 
+     # Disable TCMalloc's heapchecker.
+-    'linux_use_heapchecker%': 0,
++    'linux_use_heapchecker%': 1,
+ 
+     # Set to 1 to turn on seccomp sandbox by default.
+     # (Note: this is ignored for official builds.)
+@@ -217,7 +217,7 @@
+ 
+     # Used to disable Native Client at compile time, for platforms where it
+     # isn't supported
+-    'disable_nacl%': 0,
++    'disable_nacl%': 1,
+ 
+     # Set Thumb compilation flags.
+     'arm_thumb%': 0,
+@@ -232,7 +232,7 @@
+         # This is used to tweak build flags for gcc 4.4.
+         'gcc_version%': '<!(python <(DEPTH)/build/compiler_version.py)',
+         # Figure out the python architecture to decide if we build pyauto.
+-        'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)/usr/lib/libpython<(python_ver).so.1.0)',
++        'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)/usr/local/lib/libpython<(python_ver).so.1)',
+         'conditions': [
+           ['branding=="Chrome" or linux_chromium_breakpad==1', {
+             'linux_breakpad%': 1,
+@@ -493,7 +493,7 @@
+               ['exclude', '/(gtk|x11)_[^/]*\\.cc$'],
+             ],
+           }],
+-          ['OS!="linux"', {
++          ['OS!="linux" and OS!="freebsd" and OS!="openbsd"', {
+             'sources/': [
+               ['exclude', '_linux(_unittest)?\\.cc$'],
+               ['exclude', '/linux/'],
+diff --git a/build/linux/python_arch.sh b/build/linux/python_arch.sh
+index f364469..ba2d747 100755
+--- build/linux/python_arch.sh
++++ build/linux/python_arch.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ # Copyright (c) 2010 The Chromium Authors. All rights reserved.
+ # Use of this source code is governed by a BSD-style license that can be
+ # found in the LICENSE file.
+@@ -10,12 +10,7 @@
+ #  python_arch.sh /path/to/sysroot/usr/lib/libpython2.4.so.1.0
+ #
+ 
+-python=$(readlink -f "$1")
+-if [ ! -r "$python" ]; then
+-  echo unknown
+-  exit 0;
+-fi
+-file_out=$(file "$python")
++file_out=$(file "$1")
+ if [ $? -ne 0 ]; then
+   echo unknown
+   exit 0;
+diff --git a/build/linux/system.gyp b/build/linux/system.gyp
+index 4176719..f67130e 100644
+--- build/linux/system.gyp
++++ build/linux/system.gyp
+@@ -13,7 +13,7 @@
+         'pkg-config': 'pkg-config'
+       },
+     }],
+-    [ 'OS=="linux"', {
++    [ 'OS=="linux" or OS=="freebsd"', {
+       'variables': {
+         # We use our own copy of libssl, although we still need to link against
+         # the rest of NSS.
+diff --git a/chrome/app/chrome_dll_main.cc b/chrome/app/chrome_dll_main.cc
+index 3f54f04..351fafc 100644
+--- chrome/app/chrome_dll_main.cc
++++ chrome/app/chrome_dll_main.cc
+@@ -62,7 +62,7 @@
+ #include "base/nss_util.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include "chrome/browser/renderer_host/render_sandbox_host_linux.h"
+ #include "chrome/browser/zygote_host_linux.h"
+ #endif
+@@ -253,6 +253,7 @@ static void SetUpGLibLogHandler() {
+   }
+ }
+ 
++#if defined(OS_LINUX)
+ static void AdjustLinuxOOMScore(const std::string& process_type) {
+   const int kMiscScore = 7;
+   const int kPluginScore = 10;
+@@ -285,6 +286,7 @@ static void AdjustLinuxOOMScore(const std::string& process_type) {
+   if (score > -1)
+     base::AdjustOOMScore(base::GetCurrentProcId(), score);
+ }
++#endif  // defined(OS_LINUX)
+ #endif  // defined(OS_POSIX) && !defined(OS_MACOSX)
+ 
+ // Register the invalid param handler and pure call handler to be able to
+@@ -771,7 +773,7 @@ int ChromeMain(int argc, char** argv) {
+     NOTIMPLEMENTED();
+ #endif
+   } else if (process_type.empty()) {
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+     const char* sandbox_binary = NULL;
+     struct stat st;
+ 
+@@ -809,7 +811,7 @@ int ChromeMain(int argc, char** argv) {
+     // gtk_init() can change |argc| and |argv|.
+     gtk_init(&argc, &argv);
+     SetUpGLibLogHandler();
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_NIX)
+ 
+     rv = BrowserMain(main_params);
+   } else {
+diff --git a/chrome/app/chrome_exe_main_gtk.cc b/chrome/app/chrome_exe_main_gtk.cc
+index 0ed9e15..28d2870 100644
+--- chrome/app/chrome_exe_main_gtk.cc
++++ chrome/app/chrome_exe_main_gtk.cc
+@@ -17,11 +17,11 @@
+ extern "C" {
+ int ChromeMain(int argc, const char** argv);
+ 
+-#if defined(OS_LINUX) && defined(USE_TCMALLOC)
++#if defined(OS_NIX) && defined(USE_TCMALLOC)
+ 
+ int tc_set_new_mode(int mode);
+ 
+-#endif  // defined(OS_LINUX) && defined(USE_TCMALLOC)
++#endif  // defined(OS_NIX) && defined(USE_TCMALLOC)
+ }
+ 
+ int main(int argc, const char** argv) {
+@@ -34,7 +34,7 @@ int main(int argc, const char** argv) {
+   // dependency on TCMalloc.  Really, we ought to have our allocator shim code
+   // implement this EnableTerminationOnOutOfMemory() function.  Whateverz.  This
+   // works for now.
+-#if defined(OS_LINUX) && defined(USE_TCMALLOC)
++#if defined(OS_NIX) && defined(USE_TCMALLOC)
+   // For tcmalloc, we need to tell it to behave like new.
+   tc_set_new_mode(1);
+ #endif
+diff --git a/chrome/app/chrome_main_uitest.cc b/chrome/app/chrome_main_uitest.cc
+index 5ddfcca..a5cddb2 100644
+--- chrome/app/chrome_main_uitest.cc
++++ chrome/app/chrome_main_uitest.cc
+@@ -18,7 +18,7 @@ TEST_F(ChromeMainTest, AppLaunch) {
+   if (UITest::in_process_renderer()) {
+     EXPECT_EQ(1, UITest::GetBrowserProcessCount());
+   } else {
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+     // On Linux we'll have four processes: browser, renderer, zygote and
+     // sandbox helper.
+     EXPECT_EQ(4, UITest::GetBrowserProcessCount());
+diff --git a/chrome/app/generated_resources.grd b/chrome/app/generated_resources.grd
+index 02f9eca..2653791 100644
+--- chrome/app/generated_resources.grd
++++ chrome/app/generated_resources.grd
+@@ -2291,7 +2291,7 @@ each locale. -->
+       <message name="IDS_CREATE_SHORTCUTS_QUICK_LAUNCH_BAR_CHKBOX" desc="Label of the checkbox to create an application shortcut in quick launch bar.">
+         Quick launch bar
+       </message>
+-      <if expr="os == 'linux2' or os == 'openbsd4' or os=='freebsd6'">
++      <if expr="os == 'linux2' or os.find('bsd') != -1">
+         <message name="IDS_CREATE_SHORTCUTS_ERROR_TITLE" desc="Title of the error dialog box when creating an application shortcut failed.">
+           Failed to Create Application Shortcut
+         </message>
+@@ -5660,7 +5660,7 @@ Keep your key file in a safe place. You will need it to create new versions of y
+       <message name="IDS_THEMES_GROUP_NAME" desc="The title of the themes group">
+         Themes:
+       </message>
+-      <if expr="os == 'linux2' or os == 'openbsd4' or os == 'freebsd6'">
++      <if expr="os == 'linux2' or os.find('bsd') != -1">
+         <message name="IDS_APPEARANCE_GROUP_NAME" desc="In Title Case and without trailing colon: The title of the themes group">
+           Appearance
+         </message>
+diff --git a/chrome/app/resources/locale_settings.grd b/chrome/app/resources/locale_settings.grd
+index c591457..9c571f5 100644
+--- chrome/app/resources/locale_settings.grd
++++ chrome/app/resources/locale_settings.grd
+@@ -590,7 +590,7 @@
+       </message>
+ 
+       <!-- The width and height for the "create application shortcuts error" dialog. -->
+-      <if expr="os == 'linux2' or os == 'openbsd4' or os == 'freebsd6'">
++      <if expr="os == 'linux2' or os.find('bsd') != -1">
+         <message name="IDS_CREATE_SHORTCUTS_ERROR_DIALOG_WIDTH_CHARS" use_name_for_id="true">
+          60
+         </message>
+diff --git a/chrome/browser/app_modal_dialog.cc b/chrome/browser/app_modal_dialog.cc
+index e8f306d..c40701a 100644
+--- chrome/browser/app_modal_dialog.cc
++++ chrome/browser/app_modal_dialog.cc
+@@ -11,7 +11,7 @@
+ 
+ AppModalDialog::AppModalDialog(TabContents* tab_contents,
+                                const std::wstring& title)
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+     : dialog_(NULL),
+ #elif defined(OS_MACOSX)
+     :
+diff --git a/chrome/browser/app_modal_dialog.h b/chrome/browser/app_modal_dialog.h
+index 92ac494..092d428 100644
+--- chrome/browser/app_modal_dialog.h
++++ chrome/browser/app_modal_dialog.h
+@@ -92,7 +92,7 @@ class AppModalDialog {
+   virtual NativeDialog CreateNativeDialog() = 0;
+ 
+   // A reference to the platform native dialog box.
+-#if defined(OS_LINUX) || defined(OS_WIN)
++#if defined(OS_NIX) || defined(OS_WIN)
+   NativeDialog dialog_;
+ #endif
+ 
+diff --git a/chrome/browser/browser.cc b/chrome/browser/browser.cc
+index 09eee48..71fbc94 100644
+--- chrome/browser/browser.cc
++++ chrome/browser/browser.cc
+@@ -202,7 +202,7 @@ Browser::~Browser() {
+ 
+   BrowserList::RemoveBrowser(this);
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+   if (!BrowserList::HasBrowserWithProfile(profile_)) {
+     // We're the last browser window with this profile. We need to nuke the
+     // TabRestoreService, which will start the shutdown of the
+@@ -586,7 +586,7 @@ string16 Browser::GetWindowTitleForCurrentTab() const {
+   // On Mac or ChromeOS, we don't want to suffix the page title with
+   // the application name.
+   return title;
+-#elif defined(OS_WIN) || defined(OS_LINUX)
++#elif defined(OS_WIN) || defined(OS_NIX)
+   int string_id = IDS_BROWSER_WINDOW_TITLE_FORMAT;
+   // Don't append the app name to window titles on app frames and app popups
+   if (type_ & TYPE_APP)
+@@ -1161,9 +1161,9 @@ void Browser::ToggleFullscreenMode() {
+ 
+   UserMetrics::RecordAction(UserMetricsAction("ToggleFullscreen"), profile_);
+   window_->SetFullscreen(!window_->IsFullscreen());
+-  // On Linux, setting fullscreen mode is an async call to the X server, which
++  // On X11, setting fullscreen mode is an async call to the X server, which
+   // may or may not support fullscreen mode.
+-#if !defined(OS_LINUX)
++#if !defined(USE_X11)
+   UpdateCommandsForFullscreenMode(window_->IsFullscreen());
+ #endif
+ }
+@@ -1377,7 +1377,7 @@ void Browser::OpenFile() {
+ 
+ void Browser::OpenCreateShortcutsDialog() {
+   UserMetrics::RecordAction(UserMetricsAction("CreateShortcut"), profile_);
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+   TabContents* current_tab = GetSelectedTabContents();
+   DCHECK(current_tab && web_app::IsValidUrl(current_tab->GetURL())) <<
+       "Menu item should be disabled.";
+@@ -1993,7 +1993,7 @@ void Browser::DuplicateContentsAt(int index) {
+ }
+ 
+ void Browser::CloseFrameAfterDragSession() {
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+   // This is scheduled to run after we return to the message loop because
+   // otherwise the frame will think the drag session is still active and ignore
+   // the request.
+diff --git a/chrome/browser/browser_resources.grd b/chrome/browser/browser_resources.grd
+index 48d09f9..3d94009 100644
+--- chrome/browser/browser_resources.grd
++++ chrome/browser/browser_resources.grd
+@@ -13,13 +13,13 @@ without changes to the corresponding grd file. fbt1 -->
+     <includes>
+       <include name="IDR_ABOUT_VERSION_HTML" file="resources\about_version.html" flattenhtml="true" type="BINDATA" />
+ 
+-      <if expr="os == 'linux2' or os == 'freebsd7' or os == 'openbsd4'">
++      <if expr="os == 'linux2' or os.find('bsd') != -1">
+         <include name="IDR_ABOUT_MEMORY_HTML" file="resources\about_memory_linux.html" flattenhtml="true" type="BINDATA" />
+       </if>
+       <if expr="os == 'darwin'">
+         <include name="IDR_ABOUT_MEMORY_HTML" file="resources\about_memory_mac.html" flattenhtml="true" type="BINDATA" />
+       </if>
+-      <if expr="os != 'linux2' and os != 'darwin' and os != 'freebsd' and os != 'openbsd'">
++      <if expr="os != 'linux2' and os != 'darwin' and os.find('bsd') == -1">
+         <include name="IDR_ABOUT_MEMORY_HTML" file="resources\about_memory.html" flattenhtml="true" type="BINDATA" />
+       </if>
+ 
+diff --git a/chrome/browser/browser_theme_provider.h b/chrome/browser/browser_theme_provider.h
+index 0af39cb..86552e7 100644
+--- chrome/browser/browser_theme_provider.h
++++ chrome/browser/browser_theme_provider.h
+@@ -129,7 +129,7 @@ class BrowserThemeProvider : public NonThreadSafe,
+   virtual bool ShouldUseNativeFrame() const;
+   virtual bool HasCustomImage(int id) const;
+   virtual RefCountedMemory* GetRawData(int id) const;
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+   // GdkPixbufs returned by GetPixbufNamed and GetRTLEnabledPixbufNamed are
+   // shared instances owned by the theme provider and should not be freed.
+   virtual GdkPixbuf* GetPixbufNamed(int id) const;
+@@ -237,12 +237,12 @@ class BrowserThemeProvider : public NonThreadSafe,
+   // Remove preference values for themes that are no longer in use.
+   void RemoveUnusedThemes();
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+   // Loads an image and flips it horizontally if |rtl_enabled| is true.
+   GdkPixbuf* GetPixbufImpl(int id, bool rtl_enabled) const;
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+   typedef std::map<int, GdkPixbuf*> GdkPixbufMap;
+   mutable GdkPixbufMap gdk_pixbufs_;
+ #elif defined(OS_MACOSX)
+diff --git a/chrome/browser/child_process_host.cc b/chrome/browser/child_process_host.cc
+index 539670b..10b2c90 100644
+--- chrome/browser/child_process_host.cc
++++ chrome/browser/child_process_host.cc
+@@ -26,9 +26,9 @@
+ #include "chrome/common/result_codes.h"
+ #include "chrome/installer/util/google_update_settings.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include "base/linux_util.h"
+-#endif  // OS_LINUX
++#endif  // OS_NIX
+ 
+ #if defined(OS_POSIX)
+ // This is defined in chrome/browser/google_update_settings_posix.cc.  It's the
+diff --git a/chrome/browser/child_process_launcher.cc b/chrome/browser/child_process_launcher.cc
+index 534368b..e7532e5 100644
+--- chrome/browser/child_process_launcher.cc
++++ chrome/browser/child_process_launcher.cc
+@@ -16,7 +16,7 @@
+ 
+ #if defined(OS_WIN)
+ #include "chrome/common/sandbox_policy.h"
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+ #include "base/singleton.h"
+ #include "chrome/browser/crash_handler_host_linux.h"
+ #include "chrome/browser/zygote_host_linux.h"
+@@ -65,7 +65,7 @@ class ChildProcessLauncher::Context
+  public:
+   Context()
+       : starting_(true)
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+         , zygote_(false)
+ #endif
+         {
+@@ -135,7 +135,7 @@ class ChildProcessLauncher::Context
+     handle = sandbox::StartProcessWithAccess(cmd_line, exposed_dir);
+ #elif defined(OS_POSIX)
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+     if (use_zygote) {
+       base::GlobalDescriptors::Mapping mapping;
+       mapping.push_back(std::pair<uint32_t, int>(kPrimaryIPCChannel, ipcfd));
+@@ -155,7 +155,7 @@ class ChildProcessLauncher::Context
+           ipcfd,
+           kPrimaryIPCChannel + base::GlobalDescriptors::kBaseDescriptor));
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+       // On Linux, we need to add some extra file descriptors for crash handling
+       // and the sandbox.
+       bool is_renderer =
+@@ -187,7 +187,7 @@ class ChildProcessLauncher::Context
+             sandbox_fd,
+             kSandboxIPCChannel + base::GlobalDescriptors::kBaseDescriptor));
+       }
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_NIX)
+ 
+       // Actually launch the app.
+       bool launched;
+@@ -214,20 +214,20 @@ class ChildProcessLauncher::Context
+         NewRunnableMethod(
+             this,
+             &ChildProcessLauncher::Context::Notify,
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+             use_zygote,
+ #endif
+             handle));
+   }
+ 
+   void Notify(
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+       bool zygote,
+ #endif
+       base::ProcessHandle handle) {
+     starting_ = false;
+     process_.set_handle(handle);
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+     zygote_ = zygote;
+ #endif
+     if (client_) {
+@@ -247,7 +247,7 @@ class ChildProcessLauncher::Context
+         ChromeThread::PROCESS_LAUNCHER, FROM_HERE,
+         NewRunnableFunction(
+             &ChildProcessLauncher::Context::TerminateInternal,
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+             zygote_,
+ #endif
+             process_.handle()));
+@@ -255,7 +255,7 @@ class ChildProcessLauncher::Context
+   }
+ 
+   static void TerminateInternal(
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+       bool zygote,
+ #endif
+       base::ProcessHandle handle) {
+@@ -265,13 +265,13 @@ class ChildProcessLauncher::Context
+     process.Terminate(ResultCodes::NORMAL_EXIT);
+     // On POSIX, we must additionally reap the child.
+ #if defined(OS_POSIX)
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+     if (zygote) {
+       // If the renderer was created via a zygote, we have to proxy the reaping
+       // through the zygote process.
+       Singleton<ZygoteHost>()->EnsureProcessTerminated(handle);
+     } else
+-#endif  // OS_LINUX
++#endif  // OS_NIX
+     {
+       ProcessWatcher::EnsureProcessTerminated(handle);
+     }
+@@ -284,7 +284,7 @@ class ChildProcessLauncher::Context
+   base::Process process_;
+   bool starting_;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   bool zygote_;
+ #endif
+ };
+@@ -329,7 +329,7 @@ base::ProcessHandle ChildProcessLauncher::GetHandle() {
+ bool ChildProcessLauncher::DidProcessCrash() {
+   bool did_crash, child_exited;
+   base::ProcessHandle handle = context_->process_.handle();
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   if (context_->zygote_) {
+     did_crash = Singleton<ZygoteHost>()->DidProcessCrash(handle, &child_exited);
+   } else
+diff --git a/chrome/browser/cookie_modal_dialog.h b/chrome/browser/cookie_modal_dialog.h
+index 8e1d5e4..0139812 100644
+--- chrome/browser/cookie_modal_dialog.h
++++ chrome/browser/cookie_modal_dialog.h
+@@ -64,7 +64,7 @@ class CookiePromptModalDialog : public AppModalDialog {
+   static void RegisterPrefs(PrefService* prefs);
+ 
+   // AppModalDialog overrides.
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_POSIX)
+   virtual void CreateAndShowDialog();
+ #endif
+   virtual int GetDialogButtons();
+@@ -97,7 +97,7 @@ class CookiePromptModalDialog : public AppModalDialog {
+  protected:
+   // AppModalDialog overrides.
+   virtual NativeDialog CreateNativeDialog();
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+   virtual void HandleDialogResponse(GtkDialog* dialog, gint response_id);
+ #endif
+ 
+@@ -130,7 +130,7 @@ class CookiePromptModalDialog : public AppModalDialog {
+   // delegate could be deleted
+   CookiePromptModalDialogDelegate* delegate_;
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+   // The "remember this choice" radio button in the dialog.
+   GtkWidget* remember_radio_;
+ #endif
+diff --git a/chrome/browser/download/download_util.cc b/chrome/browser/download/download_util.cc
+index 720d203..e5c0d04 100644
+--- chrome/browser/download/download_util.cc
++++ chrome/browser/download/download_util.cc
+@@ -42,14 +42,14 @@
+ #include "views/drag_utils.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #if defined(TOOLKIT_VIEWS)
+ #include "app/drag_drop_types.h"
+ #include "views/widget/widget_gtk.h"
+ #elif defined(TOOLKIT_GTK)
+ #include "chrome/browser/gtk/custom_drag.h"
+ #endif  // defined(TOOLKIT_GTK)
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_NIX)
+ 
+ #if defined(OS_WIN)
+ #include "app/os_exchange_data_provider_win.h"
+@@ -335,7 +335,7 @@ void DragDownload(const DownloadItem* download,
+   DWORD effects;
+   DoDragDrop(OSExchangeDataProviderWin::GetIDataObject(data), drag_source.get(),
+              DROPEFFECT_COPY | DROPEFFECT_LINK, &effects);
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   GtkWidget* root = gtk_widget_get_toplevel(view);
+   if (!root)
+     return;
+@@ -346,13 +346,13 @@ void DragDownload(const DownloadItem* download,
+   widget->DoDrag(data, DragDropTypes::DRAG_COPY | DragDropTypes::DRAG_LINK);
+ #endif  // OS_WIN
+ }
+-#elif defined(OS_LINUX)
++#elif defined(USE_X11)
+ void DragDownload(const DownloadItem* download,
+                   SkBitmap* icon,
+                   gfx::NativeView view) {
+   DownloadItemDrag::BeginDrag(download, icon);
+ }
+-#endif  // OS_LINUX
++#endif // USE_X11
+ 
+ DictionaryValue* CreateDownloadItemValue(DownloadItem* download, int id) {
+   DictionaryValue* file_value = new DictionaryValue();
+diff --git a/chrome/browser/extensions/extension_process_manager.cc b/chrome/browser/extensions/extension_process_manager.cc
+index 7432102..c6cec8d 100644
+--- chrome/browser/extensions/extension_process_manager.cc
++++ chrome/browser/extensions/extension_process_manager.cc
+@@ -49,10 +49,10 @@ ExtensionProcessManager::ExtensionProcessManager(Profile* profile)
+                  NotificationService::AllSources());
+   registrar_.Add(this, NotificationType::RENDERER_PROCESS_CLOSED,
+                  NotificationService::AllSources());
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if !defined(OS_MACOSX)
+   registrar_.Add(this, NotificationType::BROWSER_CLOSED,
+                  NotificationService::AllSources());
+-#elif defined(OS_MACOSX)
++#else
+   registrar_.Add(this, NotificationType::APP_TERMINATING,
+                  NotificationService::AllSources());
+ #endif
+@@ -271,7 +271,7 @@ void ExtensionProcessManager::Observe(NotificationType type,
+       UnregisterExtensionProcess(host->id());
+       break;
+     }
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if !defined(OS_MACOSX)
+     case NotificationType::BROWSER_CLOSED: {
+       // Close background hosts when the last browser is closed so that they
+       // have time to shutdown various objects on different threads. Our
+@@ -281,7 +281,7 @@ void ExtensionProcessManager::Observe(NotificationType type,
+         CloseBackgroundHosts();
+       break;
+     }
+-#elif defined(OS_MACOSX)
++#else
+     case NotificationType::APP_TERMINATING: {
+       // Don't follow the behavior of having the last browser window closed
+       // being an indication that the app should close.
+diff --git a/chrome/browser/find_bar_host_browsertest.cc b/chrome/browser/find_bar_host_browsertest.cc
+index 8ac5a6c..1438b11 100644
+--- chrome/browser/find_bar_host_browsertest.cc
++++ chrome/browser/find_bar_host_browsertest.cc
+@@ -706,7 +706,7 @@ IN_PROC_BROWSER_TEST_F(FindInPageControllerTest,
+ 
+ #if defined(TOOLKIT_VIEWS)
+ // Make sure Find box grabs the Esc accelerator and restores it again.
+-#if defined(OS_LINUX)
++#if defined(USE_X11)
+ // TODO(oshima): On Gtk/Linux, a focus out event is asynchronous and
+ // hiding a find bar does not immediately update the target
+ // accelerator. The last condition fails in most cases due to this
+@@ -730,7 +730,7 @@ IN_PROC_BROWSER_TEST_F(FindInPageControllerTest,
+   // GetNativeView / GetNativewWindow methods on BrowserWindow.
+   // See http://crbug.com/26873.
+   gfx::NativeView browser_view = browser()->window()->GetNativeHandle();
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   gfx::NativeView browser_view =
+       GTK_WIDGET(browser()->window()->GetNativeHandle());
+ #else
+diff --git a/chrome/browser/geolocation/empty_device_data_provider.cc b/chrome/browser/geolocation/empty_device_data_provider.cc
+index 9e9fc27..371c281 100644
+--- chrome/browser/geolocation/empty_device_data_provider.cc
++++ chrome/browser/geolocation/empty_device_data_provider.cc
+@@ -12,7 +12,7 @@ RadioDataProviderImplBase* RadioDataProvider::DefaultFactoryFunction() {
+ }
+ 
+ // Only define for platforms that lack a real wifi data provider.
+-#if !defined(OS_WIN) && !defined(OS_MACOSX) && !defined(OS_LINUX)
++#if !defined(OS_WIN) && !defined(OS_MACOSX) && !defined(OS_NIX)
+ // static
+ template<>
+ WifiDataProviderImplBase* WifiDataProvider::DefaultFactoryFunction() {
+diff --git a/chrome/browser/memory_details.cc b/chrome/browser/memory_details.cc
+index 7c9a7d0..20dd6f4 100644
+--- chrome/browser/memory_details.cc
++++ chrome/browser/memory_details.cc
+@@ -18,7 +18,7 @@
+ #include "chrome/common/url_constants.h"
+ #include "grit/chromium_strings.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include "chrome/browser/zygote_host_linux.h"
+ #include "chrome/browser/renderer_host/render_sandbox_host_linux.h"
+ #endif
+@@ -73,7 +73,7 @@ void MemoryDetails::CollectChildInfoOnIOThread() {
+ void MemoryDetails::CollectChildInfoOnUIThread() {
+   DCHECK(ChromeThread::CurrentlyOn(ChromeThread::UI));
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   const pid_t zygote_pid = Singleton<ZygoteHost>()->pid();
+   const pid_t sandbox_helper_pid = Singleton<RenderSandboxHostLinux>()->pid();
+ #endif
+@@ -152,7 +152,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
+       }
+     }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+     if (process.pid == zygote_pid) {
+       process.type = ChildProcessInfo::ZYGOTE_PROCESS;
+     } else if (process.pid == sandbox_helper_pid) {
+diff --git a/chrome/browser/memory_purger.cc b/chrome/browser/memory_purger.cc
+index 60e4bbe..8ea3cca 100644
+--- chrome/browser/memory_purger.cc
++++ chrome/browser/memory_purger.cc
+@@ -137,7 +137,7 @@ void MemoryPurger::PurgeBrowser() {
+   // * Purge AppCache memory.  Not yet implemented sufficiently.
+   // * Browser-side DatabaseTracker.  Not implemented sufficiently.
+ 
+-#if (defined(OS_WIN) || defined(OS_LINUX)) && defined(USE_TCMALLOC)
++#if !defined(OS_MACOSX) && defined(USE_TCMALLOC)
+   // Tell tcmalloc to release any free pages it's still holding.
+   //
+   // TODO(pkasting): A lot of the above calls kick off actions on other threads.
+diff --git a/chrome/browser/options_util.cc b/chrome/browser/options_util.cc
+index 99f6d1e..a1a9cac 100644
+--- chrome/browser/options_util.cc
++++ chrome/browser/options_util.cc
+@@ -28,7 +28,7 @@ void OptionsUtil::ResetToDefaults(Profile* profile) {
+     prefs::kCookieBehavior,
+     prefs::kDefaultCharset,
+     prefs::kDnsPrefetchingEnabled,
+-#if defined(OS_LINUX) || defined(OS_FREEBSD) || defined(OS_OPENBSD)
++#if defined(OS_NIX)
+     prefs::kCertRevocationCheckingEnabled,
+     prefs::kSSL2Enabled,
+     prefs::kSSL3Enabled,
+diff --git a/chrome/browser/process_singleton_linux.cc b/chrome/browser/process_singleton_linux.cc
+index a012aea..fae088a 100644
+--- chrome/browser/process_singleton_linux.cc
++++ chrome/browser/process_singleton_linux.cc
+@@ -667,14 +667,14 @@ ProcessSingleton::NotifyResult ProcessSingleton::NotifyOtherProcessWithTimeout(
+       return PROFILE_IN_USE;
+     }
+ 
+-    FilePath other_chrome_path(base::GetProcessExecutablePath(pid));
++  /*  FilePath other_chrome_path(base::GetProcessExecutablePath(pid));
+     if (other_chrome_path.empty() ||
+         other_chrome_path.BaseName() !=
+         FilePath::FromWStringHack(chrome::kBrowserProcessExecutableName)) {
+       // Orphaned lockfile (no process with pid, or non-chrome process.)
+       UnlinkPath(lock_path_.value());
+       return PROCESS_NONE;
+-    }
++    }*/
+ 
+     if (retries == timeout_seconds) {
+       // Retries failed.  Kill the unresponsive chrome process and continue.
+diff --git a/chrome/browser/renderer_host/backing_store_x.cc b/chrome/browser/renderer_host/backing_store_x.cc
+index d88dca7..11281b6 100644
+--- chrome/browser/renderer_host/backing_store_x.cc
++++ chrome/browser/renderer_host/backing_store_x.cc
+@@ -48,6 +48,9 @@ static void DestroySharedImage(Display* display,
+   XShmDetach(display, shminfo);
+   XDestroyImage(image);
+   shmdt(shminfo->shmaddr);
++#if defined(OS_FREEBSD)
++  shmctl(shminfo->shmid, IPC_RMID, 0);
++#endif
+ }
+ 
+ BackingStoreX::BackingStoreX(RenderWidgetHost* widget,
+@@ -304,7 +307,9 @@ bool BackingStoreX::CopyFromBackingStore(const gfx::Rect& rect,
+     }
+ 
+     void* mapped_memory = shmat(shminfo.shmid, NULL, SHM_RDONLY);
++#if !defined(OS_FREEBSD)
+     shmctl(shminfo.shmid, IPC_RMID, 0);
++#endif
+     if (mapped_memory == (void*)-1) {
+       XDestroyImage(image);
+       return false;
+diff --git a/chrome/browser/renderer_host/browser_render_process_host.cc b/chrome/browser/renderer_host/browser_render_process_host.cc
+index 8f2e90c..d5ca1ca 100644
+--- chrome/browser/renderer_host/browser_render_process_host.cc
++++ chrome/browser/renderer_host/browser_render_process_host.cc
+@@ -312,11 +312,11 @@ bool BrowserRenderProcessHost::Init(bool is_extensions_process,
+     in_process_renderer_.reset(new RendererMainThread(channel_id));
+ 
+     base::Thread::Options options;
+-#if !defined(OS_LINUX)
++#if !defined(USE_X11)
+     // In-process plugins require this to be a UI message loop.
+     options.message_loop_type = MessageLoop::TYPE_UI;
+ #else
+-    // We can't have multiple UI loops on Linux, so we don't support
++    // We can't have multiple UI loops on X, so we don't support
+     // in-process plugins.
+     options.message_loop_type = MessageLoop::TYPE_DEFAULT;
+ #endif
+@@ -698,13 +698,13 @@ TransportDIB* BrowserRenderProcessHost::MapTransportDIB(
+   HANDLE section = win_util::GetSectionFromProcess(
+       dib_id.handle, GetHandle(), false /* read write */);
+   return TransportDIB::Map(section);
+-#elif defined(OS_MACOSX)
++#elif defined(OS_MACOSX) || defined(OS_FREEBSD)
+   // On OSX, the browser allocates all DIBs and keeps a file descriptor around
+   // for each.
+   return widget_helper_->MapTransportDIB(dib_id);
+ #elif defined(OS_LINUX)
+   return TransportDIB::Map(dib_id);
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_NIX)
+ }
+ 
+ TransportDIB* BrowserRenderProcessHost::GetTransportDIB(
+diff --git a/chrome/browser/renderer_host/mock_render_process_host.cc b/chrome/browser/renderer_host/mock_render_process_host.cc
+index 21fa34d..22e53ed 100644
+--- chrome/browser/renderer_host/mock_render_process_host.cc
++++ chrome/browser/renderer_host/mock_render_process_host.cc
+@@ -99,7 +99,7 @@ TransportDIB* MockRenderProcessHost::GetTransportDIB(TransportDIB::Id dib_id) {
+   DuplicateHandle(GetCurrentProcess(), dib_id.handle, GetCurrentProcess(),
+                   &duped, 0, TRUE, DUPLICATE_SAME_ACCESS);
+   transport_dib_ = TransportDIB::Map(duped);
+-#elif defined(OS_MACOSX)
++#elif defined(OS_MACOSX) || defined(OS_FREEBSD)
+   // On Mac, TransportDIBs are always created in the browser, so we cannot map
+   // one from a dib_id.
+   transport_dib_ = TransportDIB::Create(100 * 100 * 4, 0);
+diff --git a/chrome/browser/renderer_host/render_sandbox_host_linux.cc b/chrome/browser/renderer_host/render_sandbox_host_linux.cc
+index 53c736c..36baf1d 100644
+--- chrome/browser/renderer_host/render_sandbox_host_linux.cc
++++ chrome/browser/renderer_host/render_sandbox_host_linux.cc
+@@ -397,7 +397,12 @@ void RenderSandboxHostLinux::Init(const std::string& sandbox_path) {
+   // inherit some sockets. With PF_UNIX+SOCK_DGRAM, it can call sendmsg to send
+   // a datagram to any (abstract) socket on the same system. With
+   // SOCK_SEQPACKET, this is prevented.
++#if defined(OS_FREEBSD)
++  if (socketpair(AF_UNIX, SOCK_SEQPACKET, 0, fds) != 0)
++    CHECK(socketpair(AF_UNIX, SOCK_DGRAM, 0, fds) == 0);
++#else
+   CHECK(socketpair(AF_UNIX, SOCK_SEQPACKET, 0, fds) == 0);
++#endif
+ 
+   renderer_socket_ = fds[0];
+   const int browser_socket = fds[1];
+diff --git a/chrome/browser/renderer_host/render_view_host_delegate.cc b/chrome/browser/renderer_host/render_view_host_delegate.cc
+index f6a1c66..e6adf68 100644
+--- chrome/browser/renderer_host/render_view_host_delegate.cc
++++ chrome/browser/renderer_host/render_view_host_delegate.cc
+@@ -10,7 +10,7 @@
+ #include "googleurl/src/gurl.h"
+ #include "webkit/glue/webpreferences.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ #include "chrome/browser/gtk/gtk_util.h"
+ #endif
+ 
+diff --git a/chrome/browser/renderer_host/render_widget_helper.cc b/chrome/browser/renderer_host/render_widget_helper.cc
+index 5c379e7..52a6f7e 100644
+--- chrome/browser/renderer_host/render_widget_helper.cc
++++ chrome/browser/renderer_host/render_widget_helper.cc
+@@ -58,7 +58,7 @@ RenderWidgetHelper::~RenderWidgetHelper() {
+   // object, so we should not be destroyed unless pending_paints_ is empty!
+   DCHECK(pending_paints_.empty());
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_FREEBSD)
+   ClearAllocatedDIBs();
+ #endif
+ }
+@@ -249,7 +249,7 @@ void RenderWidgetHelper::OnCreateWidgetOnUI(
+     host->CreateNewWidget(route_id, popup_type);
+ }
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_FREEBSD)
+ TransportDIB* RenderWidgetHelper::MapTransportDIB(TransportDIB::Id dib_id) {
+   AutoLock locked(allocated_dibs_lock_);
+ 
+diff --git a/chrome/browser/renderer_host/render_widget_helper.h b/chrome/browser/renderer_host/render_widget_helper.h
+index 53b336c..427c0cc 100644
+--- chrome/browser/renderer_host/render_widget_helper.h
++++ chrome/browser/renderer_host/render_widget_helper.h
+@@ -108,7 +108,7 @@ class RenderWidgetHelper
+                         const base::TimeDelta& max_delay,
+                         IPC::Message* msg);
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_FREEBSD)
+   // Given the id of a transport DIB, return a mapping to it or NULL on error.
+   TransportDIB* MapTransportDIB(TransportDIB::Id dib_id);
+ #endif
+@@ -127,7 +127,7 @@ class RenderWidgetHelper
+                        WebKit::WebPopupType popup_type,
+                        int* route_id);
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_FREEBSD)
+   // Called on the IO thread to handle the allocation of a TransportDIB.  If
+   // |cache_in_browser| is |true|, then a copy of the shmem is kept by the
+   // browser, and it is the caller's repsonsibility to call
+@@ -177,7 +177,7 @@ class RenderWidgetHelper
+   // Called on the IO thread to resume a cross-site response.
+   void OnCrossSiteClosePageACK(ViewMsg_ClosePage_Params params);
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_FREEBSD)
+   // Called on destruction to release all allocated transport DIBs
+   void ClearAllocatedDIBs();
+ 
+diff --git a/chrome/browser/renderer_host/render_widget_host.cc b/chrome/browser/renderer_host/render_widget_host.cc
+index 5dc9bad..2dfce72 100644
+--- chrome/browser/renderer_host/render_widget_host.cc
++++ chrome/browser/renderer_host/render_widget_host.cc
+@@ -137,7 +137,7 @@ void RenderWidgetHost::OnMessageReceived(const IPC::Message &msg) {
+     IPC_MESSAGE_HANDLER(ViewHostMsg_FocusedNodeChanged, OnMsgFocusedNodeChanged)
+     IPC_MESSAGE_HANDLER(ViewHostMsg_SetCursor, OnMsgSetCursor)
+     IPC_MESSAGE_HANDLER(ViewHostMsg_ImeUpdateStatus, OnMsgImeUpdateStatus)
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+     IPC_MESSAGE_HANDLER(ViewHostMsg_CreatePluginContainer,
+                         OnMsgCreatePluginContainer)
+     IPC_MESSAGE_HANDLER(ViewHostMsg_DestroyPluginContainer,
+@@ -865,7 +865,7 @@ void RenderWidgetHost::OnMsgImeUpdateStatus(int control,
+   }
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ 
+ void RenderWidgetHost::OnMsgCreatePluginContainer(gfx::PluginWindowHandle id) {
+   // TODO(piman): view_ can only be NULL with delayed view creation in
+diff --git a/chrome/browser/renderer_host/render_widget_host.h b/chrome/browser/renderer_host/render_widget_host.h
+index f8b8218..5e2c2e3 100644
+--- chrome/browser/renderer_host/render_widget_host.h
++++ chrome/browser/renderer_host/render_widget_host.h
+@@ -445,7 +445,7 @@ class RenderWidgetHost : public IPC::Channel::Listener,
+   // having to bring in render_messages.h in a header file.
+   void OnMsgImeUpdateStatus(int control, const gfx::Rect& caret_rect);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   void OnMsgCreatePluginContainer(gfx::PluginWindowHandle id);
+   void OnMsgDestroyPluginContainer(gfx::PluginWindowHandle id);
+ #elif defined(OS_MACOSX)
+diff --git a/chrome/browser/renderer_host/render_widget_host_unittest.cc b/chrome/browser/renderer_host/render_widget_host_unittest.cc
+index e0ffe1a..20e062e 100644
+--- chrome/browser/renderer_host/render_widget_host_unittest.cc
++++ chrome/browser/renderer_host/render_widget_host_unittest.cc
+@@ -369,7 +369,7 @@ TEST_F(RenderWidgetHostTest, ResizeThenCrash) {
+ 
+ // Tests setting custom background
+ TEST_F(RenderWidgetHostTest, Background) {
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+   scoped_ptr<RenderWidgetHostView> view(
+       RenderWidgetHostView::CreateViewForWidget(host_.get()));
+   host_->set_view(view.get());
+diff --git a/chrome/browser/renderer_host/render_widget_host_view.h b/chrome/browser/renderer_host/render_widget_host_view.h
+index 7b516ed..9d7ab57 100644
+--- chrome/browser/renderer_host/render_widget_host_view.h
++++ chrome/browser/renderer_host/render_widget_host_view.h
+@@ -209,7 +209,7 @@ class RenderWidgetHostView {
+   virtual void DrawAcceleratedSurfaceInstances(CGLContextObj context) = 0;
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   virtual void CreatePluginContainer(gfx::PluginWindowHandle id) = 0;
+   virtual void DestroyPluginContainer(gfx::PluginWindowHandle id) = 0;
+ #endif
+diff --git a/chrome/browser/renderer_host/resource_message_filter.cc b/chrome/browser/renderer_host/resource_message_filter.cc
+index 6119c18..e2a74a9 100644
+--- chrome/browser/renderer_host/resource_message_filter.cc
++++ chrome/browser/renderer_host/resource_message_filter.cc
+@@ -498,7 +498,7 @@ bool ResourceMessageFilter::OnMessageReceived(const IPC::Message& msg) {
+ #if defined(OS_WIN)
+       IPC_MESSAGE_HANDLER(ViewHostMsg_DuplicateSection, OnDuplicateSection)
+ #endif
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_FREEBSD)
+       IPC_MESSAGE_HANDLER(ViewHostMsg_AllocatePDFTransport,
+                           OnAllocateSharedMemoryBuffer)
+ #endif
+@@ -522,7 +522,7 @@ bool ResourceMessageFilter::OnMessageReceived(const IPC::Message& msg) {
+       IPC_MESSAGE_HANDLER_DELAY_REPLY(ViewHostMsg_ScriptedPrint,
+                                       OnScriptedPrint)
+ #endif
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_FREEBSD)
+       IPC_MESSAGE_HANDLER(ViewHostMsg_AllocTransportDIB,
+                           OnAllocTransportDIB)
+       IPC_MESSAGE_HANDLER(ViewHostMsg_FreeTransportDIB,
+@@ -1257,7 +1257,7 @@ void ResourceMessageFilter::OnRendererHistograms(
+   HistogramSynchronizer::DeserializeHistogramList(sequence_number, histograms);
+ }
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_FREEBSD)
+ void ResourceMessageFilter::OnAllocTransportDIB(
+     size_t size, bool cache_in_browser, TransportDIB::Handle* handle) {
+   render_widget_helper_->AllocTransportDIB(size, cache_in_browser, handle);
+diff --git a/chrome/browser/renderer_host/test/test_render_view_host.h b/chrome/browser/renderer_host/test/test_render_view_host.h
+index a43af51..66e64a3 100644
+--- chrome/browser/renderer_host/test/test_render_view_host.h
++++ chrome/browser/renderer_host/test/test_render_view_host.h
+@@ -98,7 +98,7 @@ class TestRenderWidgetHostView : public RenderWidgetHostView {
+ #endif
+   virtual void SetVisuallyDeemphasized(bool deemphasized) { }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   virtual void CreatePluginContainer(gfx::PluginWindowHandle id) { }
+   virtual void DestroyPluginContainer(gfx::PluginWindowHandle id) { }
+ #endif
+diff --git a/chrome/browser/renderer_preferences_util.cc b/chrome/browser/renderer_preferences_util.cc
+index dd29afc..6fcafe7 100644
+--- chrome/browser/renderer_preferences_util.cc
++++ chrome/browser/renderer_preferences_util.cc
+@@ -6,7 +6,7 @@
+ 
+ #include "chrome/browser/profile.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ #include "chrome/browser/gtk/gtk_theme_provider.h"
+ #include "chrome/browser/gtk/gtk_util.h"
+ #endif
+@@ -14,7 +14,7 @@
+ namespace renderer_preferences_util {
+ 
+ void UpdateFromSystemSettings(RendererPreferences* prefs, Profile* profile) {
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   gtk_util::UpdateGtkFontSettings(prefs);
+ 
+ #if !defined(TOOLKIT_VIEWS)
+@@ -31,7 +31,7 @@ void UpdateFromSystemSettings(RendererPreferences* prefs, Profile* profile) {
+   prefs->inactive_selection_fg_color =
+       provider->get_inactive_selection_fg_color();
+ #endif  // !defined(TOOLKIT_VIEWS)
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_NIX)
+ }
+ 
+ }  // renderer_preferences_util
+diff --git a/chrome/browser/search_engines/template_url_prepopulate_data.cc b/chrome/browser/search_engines/template_url_prepopulate_data.cc
+index 9bc6632..3739f23 100644
+--- chrome/browser/search_engines/template_url_prepopulate_data.cc
++++ chrome/browser/search_engines/template_url_prepopulate_data.cc
+@@ -4,7 +4,7 @@
+ 
+ #include "chrome/browser/search_engines/template_url_prepopulate_data.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include <locale.h>
+ #endif
+ 
+diff --git a/chrome/browser/shell_integration_linux.cc b/chrome/browser/shell_integration_linux.cc
+index 19d1730..83c5036 100644
+--- chrome/browser/shell_integration_linux.cc
++++ chrome/browser/shell_integration_linux.cc
+@@ -131,6 +131,8 @@ void CreateShortcutOnDesktop(const FilePath& shortcut_filename,
+   if (!PathService::Get(chrome::DIR_USER_DESKTOP, &desktop_path))
+     return;
+ 
++#if !defined(OS_FREEBSD)
++// BSD: Linux-specific calls like openat are used so defined out for BSD.
+   int desktop_fd = open(desktop_path.value().c_str(), O_RDONLY | O_DIRECTORY);
+   if (desktop_fd < 0)
+     return;
+@@ -156,6 +158,7 @@ void CreateShortcutOnDesktop(const FilePath& shortcut_filename,
+   }
+ 
+   HANDLE_EINTR(close(desktop_fd));
++#endif  // !defined(OS_FREEBSD)
+ }
+ 
+ void CreateShortcutInApplicationsMenu(const FilePath& shortcut_filename,
+diff --git a/chrome/browser/shell_integration_unittest.cc b/chrome/browser/shell_integration_unittest.cc
+index 4776d8d..25049a5 100644
+--- chrome/browser/shell_integration_unittest.cc
++++ chrome/browser/shell_integration_unittest.cc
+@@ -18,13 +18,13 @@
+ #include "googleurl/src/gurl.h"
+ #include "testing/gtest/include/gtest/gtest.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include "base/env_var.h"
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_NIX)
+ 
+ #define FPL FILE_PATH_LITERAL
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ namespace {
+ 
+ // Provides mock environment variables values based on a stored map.
+diff --git a/chrome/browser/sync/engine/syncer_thread.cc b/chrome/browser/sync/engine/syncer_thread.cc
+index 20ba481..92ae148 100644
+--- chrome/browser/sync/engine/syncer_thread.cc
++++ chrome/browser/sync/engine/syncer_thread.cc
+@@ -221,7 +221,7 @@ void SyncerThread::ThreadMainLoop() {
+   bool initial_sync_for_thread = true;
+   bool continue_sync_cycle = false;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   idle_query_.reset(new IdleQueryLinux());
+ #endif
+ 
+@@ -300,7 +300,7 @@ void SyncerThread::ThreadMainLoop() {
+         static_cast<int>(vault_.current_wait_interval_.poll_delta.InSeconds()),
+         &user_idle_milliseconds, &continue_sync_cycle, nudged);
+   }
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   idle_query_.reset();
+ #endif
+ }
+@@ -704,7 +704,7 @@ int SyncerThread::UserIdleTime() {
+   } else {
+     return idle_time / 1000000;  // nano to milli
+   }
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+   if (idle_query_.get()) {
+     return idle_query_->IdleTime();
+   } else {
+diff --git a/chrome/browser/sync/engine/syncer_thread.h b/chrome/browser/sync/engine/syncer_thread.h
+index dddcac8..b6db53a 100644
+--- chrome/browser/sync/engine/syncer_thread.h
++++ chrome/browser/sync/engine/syncer_thread.h
+@@ -21,7 +21,7 @@
+ #include "base/time.h"
+ #include "base/waitable_event.h"
+ #include "chrome/browser/sync/engine/all_status.h"
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include "chrome/browser/sync/engine/idle_query_linux.h"
+ #endif
+ #include "chrome/browser/sync/sessions/sync_session.h"
+@@ -310,7 +310,7 @@ class SyncerThread : public base::RefCountedThreadSafe<SyncerThread>,
+   scoped_ptr<EventListenerHookup> directory_manager_hookup_;
+   scoped_ptr<EventListenerHookup> syncer_events_;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   // On Linux, we need this information in order to query idle time.
+   scoped_ptr<IdleQueryLinux> idle_query_;
+ #endif
+diff --git a/chrome/browser/sync/notifier/base/nethelpers.cc b/chrome/browser/sync/notifier/base/nethelpers.cc
+index e342479..f92b388 100644
+--- chrome/browser/sync/notifier/base/nethelpers.cc
++++ chrome/browser/sync/notifier/base/nethelpers.cc
+@@ -16,7 +16,7 @@ hostent* SafeGetHostByName(const char* hostname, hostent* host,
+   if (!result) {
+     *herrno = WSAGetLastError();
+   }
+-#elif OS_LINUX
++#elif OS_NIX
+   gethostbyname_r(hostname, host, buffer, buffer_len, &result, herrno);
+ #elif OS_MACOSX
+   result = getipnodebyname(hostname, AF_INET, AI_DEFAULT, herrno);
+@@ -31,7 +31,7 @@ hostent* SafeGetHostByName(const char* hostname, hostent* host,
+ void FreeHostEnt(hostent* host) {
+ #if WIN32
+   // No need to free anything, struct returned is static memory.
+-#elif OS_LINUX
++#elif OS_NIX
+   // No need to free anything, we pass in a pointer to a struct.
+ #elif OS_MACOSX
+   freehostent(host);
+diff --git a/chrome/browser/sync/notifier/base/network_status_detector_task_mt.cc b/chrome/browser/sync/notifier/base/network_status_detector_task_mt.cc
+index e9f5971..da4a1c3 100644
+--- chrome/browser/sync/notifier/base/network_status_detector_task_mt.cc
++++ chrome/browser/sync/notifier/base/network_status_detector_task_mt.cc
+@@ -25,6 +25,7 @@ void NetworkStatusDetectorTaskMT::OnNetworkAliveDone(
+ 
+ void NetworkStatusDetectorTaskMT::StartAsyncDetection(
+     PlatformNetworkInfo* previous_info) {
++#if !defined(OS_FREEBSD)
+   // Use the AsyncNetworkAlive to determine the network state (and changes in
+   // the network state).
+   AsyncNetworkAlive* network_alive = AsyncNetworkAlive::Create();
+@@ -37,6 +38,7 @@ void NetworkStatusDetectorTaskMT::StartAsyncDetection(
+   task->SignalWorkDone.connect(
+       this, &NetworkStatusDetectorTaskMT::OnNetworkAliveDone);
+   task->Start();
++#endif
+ }
+ 
+ NetworkStatusDetectorTask* NetworkStatusDetectorTask::Create(
+diff --git a/chrome/browser/sync/sync_setup_flow.cc b/chrome/browser/sync/sync_setup_flow.cc
+index 595b3a3..4262520 100644
+--- chrome/browser/sync/sync_setup_flow.cc
++++ chrome/browser/sync/sync_setup_flow.cc
+@@ -59,7 +59,7 @@ void FlowHandler::RegisterMessages() {
+       NewCallback(this, &FlowHandler::HandleUserClickedCustomize));
+   // On OS X, the customize dialog is modal to the HTML window so we
+   // don't need to hook up the two functions below.
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+   dom_ui_->RegisterMessageCallback("ClickCustomizeOk",
+       NewCallback(this, &FlowHandler::ClickCustomizeOk));
+   dom_ui_->RegisterMessageCallback("ClickCustomizeCancel",
+diff --git a/chrome/browser/sync/sync_setup_flow.h b/chrome/browser/sync/sync_setup_flow.h
+index 35ac55e..f7b8ec7 100644
+--- chrome/browser/sync/sync_setup_flow.h
++++ chrome/browser/sync/sync_setup_flow.h
+@@ -15,7 +15,7 @@
+ #include "chrome/browser/sync/sync_setup_wizard.h"
+ #if defined(OS_WIN)
+ #include "chrome/browser/views/options/customize_sync_window_view.h"
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_USES_GTK)
+ #include "chrome/browser/gtk/options/customize_sync_window_gtk.h"
+ #elif defined(OS_MACOSX)
+ #include "chrome/browser/cocoa/sync_customize_controller_cppsafe.h"
+@@ -87,7 +87,7 @@ class SyncSetupFlow : public HtmlDialogUIDelegate {
+   void OnUserClickedCustomize() {
+ #if defined(OS_WIN)
+     CustomizeSyncWindowView::Show(NULL, service_->profile());
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+     ShowCustomizeSyncWindow(service_->profile());
+ #elif defined(OS_MACOSX)
+     DCHECK(html_dialog_window_);
+@@ -98,7 +98,7 @@ class SyncSetupFlow : public HtmlDialogUIDelegate {
+   bool ClickCustomizeOk() {
+ #if defined(OS_WIN)
+     return CustomizeSyncWindowView::ClickOk();
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+     return CustomizeSyncWindowOk();
+ #else
+     return true;
+@@ -106,7 +106,7 @@ class SyncSetupFlow : public HtmlDialogUIDelegate {
+   void ClickCustomizeCancel() {
+ #if defined(OS_WIN)
+     CustomizeSyncWindowView::ClickCancel();
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+     CustomizeSyncWindowCancel();
+ #endif
+   }
+diff --git a/chrome/browser/sync/syncable/syncable.cc b/chrome/browser/sync/syncable/syncable.cc
+index 920090c..592e5e5 100644
+--- chrome/browser/sync/syncable/syncable.cc
++++ chrome/browser/sync/syncable/syncable.cc
+@@ -80,7 +80,7 @@ int64 Now() {
+   LARGE_INTEGER n;
+   memcpy(&n, &filetime, sizeof(filetime));
+   return n.QuadPart;
+-#elif defined(OS_LINUX) || defined(OS_MACOSX)
++#elif defined(OS_POSIX)
+   struct timeval tv;
+   gettimeofday(&tv, NULL);
+   return static_cast<int64>(tv.tv_sec);
+diff --git a/chrome/browser/tab_contents/interstitial_page.cc b/chrome/browser/tab_contents/interstitial_page.cc
+index 14eb26b..b82da15 100644
+--- chrome/browser/tab_contents/interstitial_page.cc
++++ chrome/browser/tab_contents/interstitial_page.cc
+@@ -483,7 +483,7 @@ void InterstitialPage::CancelForNavigation() {
+ }
+ 
+ void InterstitialPage::SetSize(const gfx::Size& size) {
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+   // When a tab is closed, we might be resized after our view was NULLed
+   // (typically if there was an info-bar).
+   if (render_view_host_->view())
+diff --git a/chrome/browser/tab_contents/render_view_context_menu.cc b/chrome/browser/tab_contents/render_view_context_menu.cc
+index 9a4f951..5d81c54 100644
+--- chrome/browser/tab_contents/render_view_context_menu.cc
++++ chrome/browser/tab_contents/render_view_context_menu.cc
+@@ -793,7 +793,7 @@ bool RenderViewContextMenu::IsItemCommandEnabled(int id) const {
+           WebContextMenuData::CheckableMenuItemEnabled;
+ #endif  // OS_MACOSX
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+     // Enable the input methods context menu if the content is editable.
+     // TODO(suzhe): It should not be enabled in password boxes. Anyway,
+     // it's not a big issue.
+diff --git a/chrome/browser/tab_contents/tab_contents.cc b/chrome/browser/tab_contents/tab_contents.cc
+index b783b2c..9220304 100644
+--- chrome/browser/tab_contents/tab_contents.cc
++++ chrome/browser/tab_contents/tab_contents.cc
+@@ -322,7 +322,7 @@ TabContents::TabContents(Profile* profile,
+                  NotificationService::AllSources());
+   registrar_.Add(this, NotificationType::RENDER_WIDGET_HOST_DESTROYED,
+                  NotificationService::AllSources());
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+   registrar_.Add(this, NotificationType::BROWSER_THEME_CHANGED,
+                  NotificationService::AllSources());
+ #endif
+@@ -2872,7 +2872,7 @@ void TabContents::Observe(NotificationType type,
+       break;
+     }
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+     case NotificationType::BROWSER_THEME_CHANGED: {
+       renderer_preferences_util::UpdateFromSystemSettings(
+           &renderer_preferences_, profile());
+diff --git a/chrome/browser/task_manager_resource_providers.cc b/chrome/browser/task_manager_resource_providers.cc
+index e9219a3..fa98ffe 100644
+--- chrome/browser/task_manager_resource_providers.cc
++++ chrome/browser/task_manager_resource_providers.cc
+@@ -847,7 +847,7 @@ TaskManagerBrowserProcessResource::TaskManagerBrowserProcessResource()
+       default_icon_ = IconUtil::CreateSkBitmapFromHICON(icon, icon_size);
+     }
+   }
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+   if (!default_icon_) {
+     ResourceBundle& rb = ResourceBundle::GetSharedInstance();
+     default_icon_ = rb.GetBitmapNamed(IDR_PRODUCT_LOGO_16);
+diff --git a/chrome/browser/unload_uitest.cc b/chrome/browser/unload_uitest.cc
+index 62072f9..a0b8b7b 100644
+--- chrome/browser/unload_uitest.cc
++++ chrome/browser/unload_uitest.cc
+@@ -166,7 +166,7 @@ class UnloadTest : public UITest {
+   }
+ 
+   void ClickModalDialogButton(MessageBoxFlags::DialogButton button) {
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+     bool modal_dialog_showing = false;
+     MessageBoxFlags::DialogButton available_buttons;
+     EXPECT_TRUE(automation()->WaitForAppModalDialog());
+diff --git a/chrome/browser/views/app_launcher.cc b/chrome/browser/views/app_launcher.cc
+index fd55086..63dde51 100644
+--- chrome/browser/views/app_launcher.cc
++++ chrome/browser/views/app_launcher.cc
+@@ -36,7 +36,7 @@
+ #if defined(OS_WIN)
+ #include "chrome/browser/autocomplete/autocomplete_edit_view_win.h"
+ #include "chrome/browser/renderer_host/render_widget_host_view_win.h"
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_USES_GTK)
+ #include "chrome/browser/autocomplete/autocomplete_edit_view_gtk.h"
+ #include "chrome/browser/renderer_host/render_widget_host_view_gtk.h"
+ #endif
+@@ -264,7 +264,7 @@ class NavigationBar : public views::View,
+   views::NativeViewHost* location_entry_view_;
+ #if defined(OS_WIN)
+   scoped_ptr<AutocompleteEditViewWin> location_entry_;
+-#elif defined(OS_LINUX) && defined(TOOLKIT_VIEWS)
++#elif defined(TOOLKIT_USES_GTK) && defined(TOOLKIT_VIEWS)
+   scoped_ptr<AutocompleteEditViewGtk> location_entry_;
+ #else
+   NOTIMPLEMENTED();
+@@ -396,7 +396,7 @@ AppLauncher::AppLauncher(Browser* browser)
+ 
+   // On Windows, we'll create the RWHV HWND once we are attached as we need
+   // to be parented for CreateWindow to work.
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_USES_GTK)
+   RenderWidgetHostViewGtk* view_gtk =
+       static_cast<RenderWidgetHostViewGtk*>(rwhv_);
+   view_gtk->InitAsChild();
+@@ -449,7 +449,7 @@ void AppLauncher::InfoBubbleClosing(InfoBubble* info_bubble,
+ }
+ 
+ void AppLauncher::RequestMove(const gfx::Rect& new_bounds) {
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_USES_GTK)
+   // Invoking PositionChild results in a gtk signal that triggers attempting to
+   // to resize the window. We need to set the size request so that it resizes
+   // correctly when this happens.
+diff --git a/chrome/browser/views/bug_report_view.cc b/chrome/browser/views/bug_report_view.cc
+index b5e5f2a..0b4339a 100644
+--- chrome/browser/views/bug_report_view.cc
++++ chrome/browser/views/bug_report_view.cc
+@@ -30,7 +30,7 @@
+ #include "views/window/client_view.h"
+ #include "views/window/window.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(USE_X11)
+ #include "app/x11_util.h"
+ #else
+ #include "app/win_util.h"
+@@ -98,7 +98,7 @@ void ShowBugReportView(views::Window* parent,
+   // rendered--do not re-render, and include windowed plugins).
+   std::vector<unsigned char> *screenshot_png = new std::vector<unsigned char>;
+ 
+-#if defined(OS_LINUX)
++#if defined(USE_X11)
+   x11_util::GrabWindowSnapshot(parent->GetNativeWindow(), screenshot_png);
+ #else
+   win_util::GrabWindowSnapshot(parent->GetNativeWindow(), screenshot_png);
+@@ -169,7 +169,7 @@ void BugReportView::SetupControl() {
+ 
+   description_label_ = new views::Label(
+       l10n_util::GetString(IDS_BUGREPORT_DESCRIPTION_LABEL));
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+   // TODO(davemoore) Remove this when gtk textfields support multiline.
+   description_text_ = new views::Textfield;
+ #else
+diff --git a/chrome/browser/views/content_blocked_bubble_contents.cc b/chrome/browser/views/content_blocked_bubble_contents.cc
+index 79c4bbe..79be833 100644
+--- chrome/browser/views/content_blocked_bubble_contents.cc
++++ chrome/browser/views/content_blocked_bubble_contents.cc
+@@ -4,7 +4,7 @@
+ 
+ #include "chrome/browser/views/content_blocked_bubble_contents.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ #include <gdk/gdk.h>
+ #endif
+ 
+@@ -87,7 +87,7 @@ gfx::NativeCursor ContentSettingBubbleContents::Favicon::GetCursorForPoint(
+   if (!g_hand_cursor)
+     g_hand_cursor = LoadCursor(NULL, IDC_HAND);
+   return g_hand_cursor;
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   return gdk_cursor_new(GDK_HAND2);
+ #endif
+ }
+diff --git a/chrome/browser/views/create_application_shortcut_view.cc b/chrome/browser/views/create_application_shortcut_view.cc
+index 0d3f6e2..2610a41 100644
+--- chrome/browser/views/create_application_shortcut_view.cc
++++ chrome/browser/views/create_application_shortcut_view.cc
+@@ -267,7 +267,7 @@ void CreateApplicationShortcutView::Init() {
+         l10n_util::GetString(IDS_PIN_TO_TASKBAR_CHKBOX) :
+         l10n_util::GetString(IDS_CREATE_SHORTCUTS_QUICK_LAUNCH_BAR_CHKBOX),
+       profile->GetPrefs()->GetBoolean(prefs::kWebAppCreateInQuickLaunchBar));
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+   menu_check_box_ = AddCheckbox(
+       l10n_util::GetString(IDS_CREATE_SHORTCUTS_MENU_CHKBOX),
+       profile->GetPrefs()->GetBoolean(prefs::kWebAppCreateInAppsMenu));
+diff --git a/chrome/browser/views/download_item_view.cc b/chrome/browser/views/download_item_view.cc
+index 3127813..b499837 100644
+--- chrome/browser/views/download_item_view.cc
++++ chrome/browser/views/download_item_view.cc
+@@ -258,7 +258,7 @@ DownloadItemView::DownloadItemView(DownloadItem* download,
+ 
+     // Extract the file extension (if any).
+     FilePath filepath(download->original_name());
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+     std::wstring extension = base::SysNativeMBToWide(filepath.Extension());
+ #else
+     std::wstring extension = filepath.Extension();
+@@ -267,7 +267,7 @@ DownloadItemView::DownloadItemView(DownloadItem* download,
+     // Remove leading '.'
+     if (extension.length() > 0)
+       extension = extension.substr(1);
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+     std::wstring rootname =
+         base::SysNativeMBToWide(filepath.BaseName().RemoveExtension().value());
+ #else
+diff --git a/chrome/browser/views/dropdown_bar_host.cc b/chrome/browser/views/dropdown_bar_host.cc
+index 963a81e..40d95dc 100644
+--- chrome/browser/views/dropdown_bar_host.cc
++++ chrome/browser/views/dropdown_bar_host.cc
+@@ -20,7 +20,7 @@
+ #include "views/focus/view_storage.h"
+ #include "views/widget/widget.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ #include "app/scoped_handle_gtk.h"
+ #endif
+ 
+diff --git a/chrome/browser/views/extensions/extension_popup.cc b/chrome/browser/views/extensions/extension_popup.cc
+index ab0032a..529d15b 100644
+--- chrome/browser/views/extensions/extension_popup.cc
++++ chrome/browser/views/extensions/extension_popup.cc
+@@ -22,7 +22,7 @@
+ #include "views/widget/root_view.h"
+ #include "views/window/window.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ #include "views/widget/widget_gtk.h"
+ #endif
+ 
+@@ -97,7 +97,7 @@ ExtensionPopup::ExtensionPopup(ExtensionHost* host,
+   // The bubble chrome requires a separate window, so construct it here.
+   if (BUBBLE_CHROME == popup_chrome_) {
+     gfx::NativeView native_window = frame->GetNativeView();
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+     border_widget_ = new views::WidgetGtk(views::WidgetGtk::TYPE_WINDOW);
+     static_cast<views::WidgetGtk*>(border_widget_)->MakeTransparent();
+     static_cast<views::WidgetGtk*>(border_widget_)->make_transient_to_parent();
+diff --git a/chrome/browser/views/extensions/extension_view.cc b/chrome/browser/views/extensions/extension_view.cc
+index 0090bda..6d2ab07 100644
+--- chrome/browser/views/extensions/extension_view.cc
++++ chrome/browser/views/extensions/extension_view.cc
+@@ -12,7 +12,7 @@
+ 
+ #if defined(OS_WIN)
+ #include "chrome/browser/renderer_host/render_widget_host_view_win.h"
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+ #include "chrome/browser/renderer_host/render_widget_host_view_gtk.h"
+ #endif
+ 
+@@ -100,7 +100,7 @@ void ExtensionView::CreateWidgetHostView() {
+   HWND hwnd = view_win->Create(GetWidget()->GetNativeView());
+   view_win->ShowWindow(SW_SHOW);
+   Attach(hwnd);
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   RenderWidgetHostViewGtk* view_gtk =
+       static_cast<RenderWidgetHostViewGtk*>(view);
+   view_gtk->InitAsChild();
+diff --git a/chrome/browser/views/find_bar_host_interactive_uitest.cc b/chrome/browser/views/find_bar_host_interactive_uitest.cc
+index e0819e6..af68c0e 100644
+--- chrome/browser/views/find_bar_host_interactive_uitest.cc
++++ chrome/browser/views/find_bar_host_interactive_uitest.cc
+@@ -38,7 +38,7 @@ class FindInPageTest : public InProcessBrowserTest {
+ #if defined(TOOLKIT_VIEWS)
+     views::View* view =
+         reinterpret_cast<BrowserView*>(browser_window)->GetViewByID(view_id);
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+     gfx::NativeWindow window = browser_window->GetNativeHandle();
+     ASSERT_TRUE(window);
+     GtkWidget* view = ViewIDUtil::GetWidget(GTK_WIDGET(window), view_id);
+diff --git a/chrome/browser/views/frame/app_panel_browser_frame_view.cc b/chrome/browser/views/frame/app_panel_browser_frame_view.cc
+index 1437c50..bd21ef4 100644
+--- chrome/browser/views/frame/app_panel_browser_frame_view.cc
++++ chrome/browser/views/frame/app_panel_browser_frame_view.cc
+@@ -21,7 +21,7 @@
+ #include "views/window/window.h"
+ #include "views/window/window_resources.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include "views/window/hit_test.h"
+ #endif
+ 
+diff --git a/chrome/browser/views/frame/browser_view.cc b/chrome/browser/views/frame/browser_view.cc
+index dba7844..1913b9c 100644
+--- chrome/browser/views/frame/browser_view.cc
++++ chrome/browser/views/frame/browser_view.cc
+@@ -4,7 +4,7 @@
+ 
+ #include "chrome/browser/views/frame/browser_view.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ #include <gtk/gtk.h>
+ #endif
+ 
+@@ -64,7 +64,7 @@
+ #include "app/win_util.h"
+ #include "chrome/browser/aeropeek_manager.h"
+ #include "chrome/browser/jumplist.h"
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+ #include "chrome/browser/gtk/accessible_widget_helper_gtk.h"
+ #include "chrome/browser/views/accelerator_table_gtk.h"
+ #include "views/window/hit_test.h"
+@@ -640,7 +640,7 @@ bool BrowserView::IsPositionInWindowCaption(const gfx::Point& point) {
+ // BrowserView, BrowserWindow implementation:
+ 
+ void BrowserView::Show() {
+- #if defined(OS_LINUX)
++ #if defined(TOOLKIT_USES_GTK)
+   if (!accessible_widget_helper_.get()) {
+     accessible_widget_helper_.reset(new AccessibleWidgetHelper(
+         GTK_WIDGET(GetWindow()->GetNativeWindow()), browser_->profile()));
+@@ -1027,7 +1027,7 @@ void BrowserView::ShowProfileErrorDialog(int message_id) {
+   std::wstring message = l10n_util::GetString(message_id);
+   win_util::MessageBox(GetNativeHandle(), message, title,
+                        MB_OK | MB_ICONWARNING | MB_TOPMOST);
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   std::string title = l10n_util::GetStringUTF8(IDS_PRODUCT_NAME);
+   std::string message = l10n_util::GetStringUTF8(message_id);
+   GtkWidget* dialog = gtk_message_dialog_new(GetNativeHandle(),
+@@ -1910,7 +1910,7 @@ void BrowserView::ProcessFullscreen(bool fullscreen) {
+ #endif  // No need to invoke SetFullscreen for linux as this code is executed
+         // once we're already fullscreen on linux.
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+   // Updating of commands for fullscreen mode is called from SetFullScreen on
+   // Wndows (see just above), but for ChromeOS, this method (ProcessFullScreen)
+   // is called after full screen has happened successfully (via GTK's
+diff --git a/chrome/browser/views/frame/browser_view.h b/chrome/browser/views/frame/browser_view.h
+index 8b6c120..05a8434 100644
+--- chrome/browser/views/frame/browser_view.h
++++ chrome/browser/views/frame/browser_view.h
+@@ -56,7 +56,7 @@ class ZoomMenuModel;
+ #if defined(OS_WIN)
+ class AeroPeekManager;
+ class JumpList;
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_USES_GTK)
+ class AccessibleWidgetHelper;
+ #endif
+ 
+@@ -573,7 +573,7 @@ class BrowserView : public BrowserBubbleHost,
+ 
+   UnhandledKeyboardEventHandler unhandled_keyboard_event_handler_;
+ 
+- #if defined(OS_LINUX)
++ #if defined(TOOLKIT_USES_GTK)
+   scoped_ptr<AccessibleWidgetHelper> accessible_widget_helper_;
+  #endif
+ 
+diff --git a/chrome/browser/views/frame/browser_view_layout.cc b/chrome/browser/views/frame/browser_view_layout.cc
+index 2b0f2e0..3d8e13a 100644
+--- chrome/browser/views/frame/browser_view_layout.cc
++++ chrome/browser/views/frame/browser_view_layout.cc
+@@ -19,7 +19,7 @@
+ #include "gfx/scrollbar_size.h"
+ #include "views/window/window.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include "views/window/hit_test.h"
+ #endif
+ 
+diff --git a/chrome/browser/views/frame/opaque_browser_frame_view.cc b/chrome/browser/views/frame/opaque_browser_frame_view.cc
+index c91cb51..77397cf 100644
+--- chrome/browser/views/frame/opaque_browser_frame_view.cc
++++ chrome/browser/views/frame/opaque_browser_frame_view.cc
+@@ -32,7 +32,7 @@
+ #include "app/win_util.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include "views/window/hit_test.h"
+ #endif
+ 
+diff --git a/chrome/browser/views/fullscreen_exit_bubble.cc b/chrome/browser/views/fullscreen_exit_bubble.cc
+index c12326a..f7d9afb 100644
+--- chrome/browser/views/fullscreen_exit_bubble.cc
++++ chrome/browser/views/fullscreen_exit_bubble.cc
+@@ -17,7 +17,7 @@
+ #if defined(OS_WIN)
+ #include "app/l10n_util_win.h"
+ #include "views/widget/widget_win.h"
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+ #include "views/widget/widget_gtk.h"
+ #endif
+ 
+@@ -114,7 +114,7 @@ class FullscreenExitBubble::FullscreenExitPopup : public views::WidgetWin {
+     return MA_NOACTIVATE;
+   }
+ };
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+ // TODO: figure out the equivalent of MA_NOACTIVATE for gtk.
+ #endif
+ 
+@@ -149,7 +149,7 @@ FullscreenExitBubble::FullscreenExitBubble(
+   popup_->set_window_style(WS_POPUP);
+   popup_->set_window_ex_style(WS_EX_LAYERED | WS_EX_TOOLWINDOW |
+                               l10n_util::GetExtendedTooltipStyles());
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   popup_ = new views::WidgetGtk(views::WidgetGtk::TYPE_POPUP);
+   popup_->MakeTransparent();
+ #endif
+@@ -197,7 +197,7 @@ void FullscreenExitBubble::AnimationProgressed(
+ #if defined(OS_WIN)
+     popup_->MoveWindow(popup_rect.x(), popup_rect.y(), popup_rect.width(),
+                        popup_rect.height());
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+     popup_->SetBounds(popup_rect);
+ #endif
+     popup_->Show();
+diff --git a/chrome/browser/views/fullscreen_exit_bubble.h b/chrome/browser/views/fullscreen_exit_bubble.h
+index c9db5bb..3e0ca96 100644
+--- chrome/browser/views/fullscreen_exit_bubble.h
++++ chrome/browser/views/fullscreen_exit_bubble.h
+@@ -11,7 +11,7 @@
+ #include "chrome/browser/command_updater.h"
+ #include "views/controls/link.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ namespace views {
+ class WidgetGtk;
+ }
+@@ -73,7 +73,7 @@ class FullscreenExitBubble : public views::LinkController,
+   // The popup itself, which is a slightly modified WidgetWin.  We need to use
+   // a WidgetWin (and thus an HWND) to make the popup float over other HWNDs.
+   FullscreenExitPopup* popup_;
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   views::WidgetGtk* popup_;
+ #endif
+ 
+diff --git a/chrome/browser/views/info_bubble.cc b/chrome/browser/views/info_bubble.cc
+index e5c4858..5d3d833 100644
+--- chrome/browser/views/info_bubble.cc
++++ chrome/browser/views/info_bubble.cc
+@@ -216,7 +216,7 @@ void InfoBubble::Close() {
+ 
+ InfoBubble::InfoBubble()
+     :
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+       WidgetGtk(TYPE_WINDOW),
+ #endif
+       delegate_(NULL),
+@@ -237,7 +237,7 @@ void InfoBubble::Init(views::Window* parent,
+   set_window_style(WS_POPUP | WS_CLIPCHILDREN);
+   set_window_ex_style(WS_EX_TOOLWINDOW);
+   WidgetWin::Init(parent->GetNativeWindow(), gfx::Rect());
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   MakeTransparent();
+   make_transient_to_parent();
+   WidgetGtk::Init(GTK_WIDGET(parent->GetNativeWindow()), gfx::Rect());
+@@ -310,7 +310,7 @@ void InfoBubble::Init(views::Window* parent,
+ #if defined(OS_WIN)
+   border_->ShowWindow(SW_SHOW);
+   ShowWindow(SW_SHOW);
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   views::WidgetGtk::Show();
+ #endif
+ }
+@@ -325,7 +325,7 @@ void InfoBubble::OnActivate(UINT action, BOOL minimized, HWND window) {
+     GetRootView()->GetChildViewAt(0)->RequestFocus();
+   }
+ }
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+ void InfoBubble::IsActiveChanged() {
+   if (!IsActive())
+     Close();
+@@ -342,7 +342,7 @@ void InfoBubble::Close(bool closed_by_escape) {
+ #if defined(OS_WIN)
+   border_->Close();
+   WidgetWin::Close();
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   WidgetGtk::Close();
+ #endif
+ }
+diff --git a/chrome/browser/views/info_bubble.h b/chrome/browser/views/info_bubble.h
+index 90911b5..c6fd3b0 100644
+--- chrome/browser/views/info_bubble.h
++++ chrome/browser/views/info_bubble.h
+@@ -9,7 +9,7 @@
+ #include "views/accelerator.h"
+ #if defined(OS_WIN)
+ #include "views/widget/widget_win.h"
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+ #include "views/widget/widget_gtk.h"
+ #endif
+ 
+@@ -88,7 +88,7 @@ class InfoBubbleDelegate {
+ class InfoBubble
+ #if defined(OS_WIN)
+     : public views::WidgetWin,
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+     : public views::WidgetGtk,
+ #endif
+       public views::AcceleratorTarget {
+@@ -128,7 +128,7 @@ class InfoBubble
+ #if defined(OS_WIN)
+   // Overridden from WidgetWin:
+   virtual void OnActivate(UINT action, BOOL minimized, HWND window);
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   // Overridden from WidgetGtk:
+   virtual void IsActiveChanged();
+ #endif
+diff --git a/chrome/browser/views/location_bar_view.cc b/chrome/browser/views/location_bar_view.cc
+index 324731f..1a67eb1 100644
+--- chrome/browser/views/location_bar_view.cc
++++ chrome/browser/views/location_bar_view.cc
+@@ -4,7 +4,7 @@
+ 
+ #include "chrome/browser/views/location_bar_view.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ #include <gtk/gtk.h>
+ #endif
+ 
+diff --git a/chrome/browser/views/notifications/balloon_view.cc b/chrome/browser/views/notifications/balloon_view.cc
+index 3919d5e..a72e92e 100644
+--- chrome/browser/views/notifications/balloon_view.cc
++++ chrome/browser/views/notifications/balloon_view.cc
+@@ -35,7 +35,7 @@
+ #if defined(OS_WIN)
+ #include "views/widget/widget_win.h"
+ #endif
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ #include "views/widget/widget_gtk.h"
+ #endif
+ 
+diff --git a/chrome/browser/views/notifications/balloon_view_host.cc b/chrome/browser/views/notifications/balloon_view_host.cc
+index bfb02fa..23f0e2b 100644
+--- chrome/browser/views/notifications/balloon_view_host.cc
++++ chrome/browser/views/notifications/balloon_view_host.cc
+@@ -10,14 +10,14 @@
+ #if defined(OS_WIN)
+ #include "chrome/browser/renderer_host/render_widget_host_view_win.h"
+ #endif
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ #include "chrome/browser/renderer_host/render_widget_host_view_gtk.h"
+ #endif
+ #include "views/widget/widget.h"
+ #if defined(OS_WIN)
+ #include "views/widget/widget_win.h"
+ #endif
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ #include "views/widget/widget_gtk.h"
+ #endif
+ 
+@@ -70,7 +70,7 @@ void BalloonViewHost::InitRenderWidgetHostView() {
+   HWND hwnd = view_win->Create(parent_native_view_);
+   view_win->ShowWindow(SW_SHOW);
+   native_host_->Attach(hwnd);
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   RenderWidgetHostViewGtk* view_gtk =
+       static_cast<RenderWidgetHostViewGtk*>(render_widget_host_view_);
+   view_gtk->InitAsChild();
+diff --git a/chrome/browser/views/page_info_window_view.cc b/chrome/browser/views/page_info_window_view.cc
+index 80d0db1..677a462 100644
+--- chrome/browser/views/page_info_window_view.cc
++++ chrome/browser/views/page_info_window_view.cc
+@@ -35,7 +35,7 @@
+ 
+ #if defined(OS_WIN)
+ #include "app/win_util.h"
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+ #include "chrome/browser/gtk/certificate_viewer.h"
+ #endif
+ 
+@@ -359,7 +359,7 @@ void PageInfoWindowView::ShowCertDialog(int cert_id) {
+   // This next call blocks but keeps processing windows messages, making it
+   // modal to the browser window.
+   BOOL rv = ::CryptUIDlgViewCertificate(&view_info, &properties_changed);
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   ShowCertificateViewer(window()->GetNativeWindow(), cert_id);
+ #else
+   NOTIMPLEMENTED();
+diff --git a/chrome/browser/views/tabs/dragged_tab_view.cc b/chrome/browser/views/tabs/dragged_tab_view.cc
+index 6b9306e..c973e01 100644
+--- chrome/browser/views/tabs/dragged_tab_view.cc
++++ chrome/browser/views/tabs/dragged_tab_view.cc
+@@ -14,7 +14,7 @@
+ #include "views/widget/widget.h"
+ #if defined(OS_WIN)
+ #include "views/widget/widget_win.h"
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+ #include "views/widget/widget_gtk.h"
+ #endif
+ 
+diff --git a/chrome/browser/views/tabs/dragged_tab_view.h b/chrome/browser/views/tabs/dragged_tab_view.h
+index 8e770e2..901662d 100644
+--- chrome/browser/views/tabs/dragged_tab_view.h
++++ chrome/browser/views/tabs/dragged_tab_view.h
+@@ -17,7 +17,7 @@
+ namespace views {
+ #if defined(OS_WIN)
+ class WidgetWin;
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+ class WidgetGtk;
+ #endif
+ }
+@@ -96,7 +96,7 @@ class DraggedTabView : public views::View,
+   // The window that contains the DraggedTabView.
+ #if defined(OS_WIN)
+   scoped_ptr<views::WidgetWin> container_;
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   scoped_ptr<views::WidgetGtk> container_;
+ #endif
+ 
+diff --git a/chrome/browser/views/tabs/tab_strip.cc b/chrome/browser/views/tabs/tab_strip.cc
+index 56bf512..4839daf 100644
+--- chrome/browser/views/tabs/tab_strip.cc
++++ chrome/browser/views/tabs/tab_strip.cc
+@@ -42,7 +42,7 @@
+ #if defined(OS_WIN)
+ #include "app/win_util.h"
+ #include "views/widget/widget_win.h"
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+ #include "views/widget/widget_gtk.h"
+ #endif
+ 
+@@ -1194,7 +1194,7 @@ bool TabStrip::IsCursorInTabStripZone() const {
+ #if defined(OS_WIN)
+   DWORD pos = GetMessagePos();
+   gfx::Point cursor_point(pos);
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   // TODO: make sure this is right with multiple monitors.
+   GdkScreen* screen = gdk_screen_get_default();
+   GdkDisplay* display = gdk_screen_get_display(screen);
+diff --git a/chrome/browser/views/tabs/tab_strip.h b/chrome/browser/views/tabs/tab_strip.h
+index e1cbfda..f29d81a 100644
+--- chrome/browser/views/tabs/tab_strip.h
++++ chrome/browser/views/tabs/tab_strip.h
+@@ -23,7 +23,7 @@ class TabStripModel;
+ 
+ namespace views {
+ class ImageView;
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ class WidgetGtk;
+ #elif defined(OS_WIN)
+ class WidgetWin;
+diff --git a/chrome/browser/views/toolbar_view.cc b/chrome/browser/views/toolbar_view.cc
+index 97224d1..77ddaa8 100644
+--- chrome/browser/views/toolbar_view.cc
++++ chrome/browser/views/toolbar_view.cc
+@@ -791,7 +791,7 @@ void ToolbarView::SwitchToOtherMenuIfNeeded(
+ }
+ 
+ void ToolbarView::ActivateMenuButton(views::MenuButton* menu_button) {
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_USES_GTK)
+   // Under GTK, opening a pop-up menu causes the main window to lose focus.
+   // Focus is automatically returned when the menu closes.
+   //
+diff --git a/chrome/browser/web_applications/web_app.cc b/chrome/browser/web_applications/web_app.cc
+index 0674c0d..576dda2 100644
+--- chrome/browser/web_applications/web_app.cc
++++ chrome/browser/web_applications/web_app.cc
+@@ -32,9 +32,9 @@
+ #include "chrome/common/url_constants.h"
+ #include "webkit/glue/dom_operations.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include "base/env_var.h"
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_NIX)
+ 
+ #if defined(OS_WIN)
+ #include "base/win_util.h"
+@@ -260,7 +260,7 @@ void CreateShortcutTask::Run() {
+ bool CreateShortcutTask::CreateShortcut() {
+   DCHECK(ChromeThread::CurrentlyOn(ChromeThread::FILE));
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   scoped_ptr<base::EnvVarGetter> env_getter(base::EnvVarGetter::Create());
+ 
+   std::string shortcut_template;
+diff --git a/chrome/browser/zygote_host_linux.cc b/chrome/browser/zygote_host_linux.cc
+index cdeda42..7c5daaf 100644
+--- chrome/browser/zygote_host_linux.cc
++++ chrome/browser/zygote_host_linux.cc
+@@ -70,7 +75,12 @@ void ZygoteHost::Init(const std::string& sandbox_cmd) {
+                                  switches::kZygoteProcess);
+ 
+   int fds[2];
++#if defined(OS_FREEBSD)
++  if (socketpair(PF_UNIX, SOCK_SEQPACKET, 0, fds) != 0)
++    CHECK(socketpair(PF_UNIX, SOCK_DGRAM, 0, fds) == 0);
++#else
+   CHECK(socketpair(PF_UNIX, SOCK_SEQPACKET, 0, fds) == 0);
++#endif
+   base::file_handle_mapping_vector fds_to_map;
+   fds_to_map.push_back(std::make_pair(fds[1], 3));
+ 
+@@ -218,6 +228,7 @@ pid_t ZygoteHost::ForkRenderer(
+   if (HANDLE_EINTR(read(control_fd_, &pid, sizeof(pid))) != sizeof(pid))
+     return base::kNullProcessHandle;
+ 
++#if defined(OS_LINUX)
+   const int kRendererScore = 5;
+   if (using_suid_sandbox_) {
+     base::ProcessHandle sandbox_helper_process;
+@@ -236,6 +247,7 @@ pid_t ZygoteHost::ForkRenderer(
+   } else {
+     base::AdjustOOMScore(pid, kRendererScore);
+   }
++#endif  // defined(OS_LINUX)
+ 
+   return pid;
+ }
+diff --git a/chrome/browser/zygote_main_linux.cc b/chrome/browser/zygote_main_linux.cc
+index 793c855..a77aedf 100644
+--- chrome/browser/zygote_main_linux.cc
++++ chrome/browser/zygote_main_linux.cc
+@@ -2,11 +2,17 @@
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
+ 
++#include "build/build_config.h"
++
+ #include <dlfcn.h>
+ #include <fcntl.h>
++#if defined(OS_FREEBSD)
++#include <signal.h>
++#else
+ #include <sys/epoll.h>
+ #include <sys/prctl.h>
+ #include <sys/signal.h>
++#endif
+ #include <sys/socket.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
+@@ -47,7 +53,7 @@
+ 
+ #include "unicode/timezone.h"
+ 
+-#if defined(ARCH_CPU_X86_FAMILY) && !defined(CHROMIUM_SELINUX)
++#if defined(ARCH_CPU_X86_FAMILY) && defined(OS_LINUX) && !defined(CHROMIUM_SELINUX)
+ // The seccomp sandbox is enabled on all ia32 and x86-64 processor as long as
+ // we aren't using SELinux.
+ #define SECCOMP_SANDBOX
+@@ -207,7 +218,11 @@ class Zygote {
+     int argc, numfds;
+     base::GlobalDescriptors::Mapping mapping;
+     base::ProcessId child;
++#if defined(OS_FREEBSD)
++    uint32_t dummy_inode = 0;
++#elif
+     uint64_t dummy_inode = 0;
++#endif
+     int dummy_fd = -1;
+ 
+     if (!pickle.ReadInt(&iter, &argc))
+@@ -250,10 +265,13 @@ class Zygote {
+ #if defined(SECCOMP_SANDBOX)
+       // Try to open /proc/self/maps as the seccomp sandbox needs access to it
+       if (g_proc_fd >= 0) {
++#if defined(OS_LINUX)
++// BSD: Removing all Seccomp Sandbox code if not on linux
+         int proc_self_maps = openat(g_proc_fd, "self/maps", O_RDONLY);
+         if (proc_self_maps >= 0) {
+           SeccompSandboxSetProcSelfMaps(proc_self_maps);
+         }
++#endif
+         close(g_proc_fd);
+         g_proc_fd = -1;
+       }
+@@ -547,6 +565,8 @@ static bool EnterSandbox() {
+ 
+     SkiaFontConfigUseIPCImplementation(kMagicSandboxIPCDescriptor);
+ 
++    // TODO(benl): Do something for FreeBSD...
++#if !defined(OS_FREEBSD)
+     // Previously, we required that the binary be non-readable. This causes the
+     // kernel to mark the process as non-dumpable at startup. The thinking was
+     // that, although we were putting the renderers into a PID namespace (with
+@@ -572,6 +592,7 @@ static bool EnterSandbox() {
+         return false;
+       }
+     }
++#endif
+   } else {
+     SkiaFontConfigUseDirectImplementation();
+   }
+diff --git a/chrome/chrome.gyp b/chrome/chrome.gyp
+index fef2da9..f88a373 100644
+--- chrome/chrome.gyp
++++ chrome/chrome.gyp
+@@ -78,6 +78,10 @@
+         'platform_locale_settings_grd':
+             'app/resources/locale_settings_linux.grd',
+       },],
++      ['OS=="freebsd" or OS=="openbsd"', {
++        'platform_locale_settings_grd':
++            'app/resources/locale_settings_linux.grd',
++      },],
+       ['OS=="mac"', {
+         'tweak_info_plist_path': 'tools/build/mac/tweak_info_plist',
+         'nacl_defines': [
+@@ -558,7 +562,7 @@
+         '..',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+           ],
+@@ -754,7 +758,6 @@
+         'browser/sync/notifier/base/async_dns_lookup.h',
+         'browser/sync/notifier/base/async_network_alive.h',
+         'browser/sync/notifier/base/fastalloc.h',
+-        'browser/sync/notifier/base/linux/async_network_alive_linux.cc',
+         'browser/sync/notifier/base/mac/network_status_detector_task_mac.h',
+         'browser/sync/notifier/base/mac/network_status_detector_task_mac.cc',
+         'browser/sync/notifier/base/nethelpers.cc',
+@@ -1004,6 +1007,12 @@
+             ],
+           },
+         }],
++        [ 'OS == "freebsd"', {
++          'dependencies': [
++            '../build/linux/system.gyp:gtk'
++          ],
++          'sources/': [['exclude', '^browser/sync/util/path_helpers_linux.cc$']],
++        }],
+         ['OS=="mac"', {
+           'link_settings': {
+             'libraries': [
+diff --git a/chrome/chrome_browser.gypi b/chrome/chrome_browser.gypi
+index 8e01b6f..d2ff48b 100644
+--- chrome/chrome_browser.gypi
++++ chrome/chrome_browser.gypi
+@@ -2467,7 +2467,7 @@
+             ['exclude', '^browser/chromeos'],
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:dbus-glib',
+             # Temporarily disabled while we figure some stuff out.
+@@ -2478,12 +2478,6 @@
+             '../build/linux/system.gyp:nss',
+             '../base/base.gyp:linux_versioninfo',
+           ],
+-          'link_settings': {
+-            'libraries': [
+-              # For dlsym() in 'browser/zygote_main_linux.cc'
+-              '-ldl',
+-            ],
+-          },
+           'sources!': [
+              # Exclude extension shelf for toolstrips.
+             'browser/views/extensions/extension_shelf.cc',
+@@ -2539,6 +2533,9 @@
+           'sources': [
+             'browser/file_watcher_stub.cc',
+           ],
++          'sources!': [
++            'browser/file_watcher_inotify.cc',
++          ],
+         }],
+         ['OS=="mac"', {
+           'sources!': [
+@@ -3047,7 +3044,7 @@
+               ],
+             }],
+             # GTK build only
+-            ['OS=="linux" and chromeos==0 and toolkit_views==0', {
++            ['(OS=="linux" or OS=="freebsd") and chromeos==0 and toolkit_views==0', {
+               'sources/': [
+                 ['include', '^browser/printing/print_dialog_gtk.cc'],
+                 ['include', '^browser/printing/print_dialog_gtk.h'],
+diff --git a/chrome/chrome_renderer.gypi b/chrome/chrome_renderer.gypi
+index 774af6d..e0a2534 100755
+--- chrome/chrome_renderer.gypi
++++ chrome/chrome_renderer.gypi
+@@ -201,6 +201,14 @@
+         }],
+         # BSD-specific rules.
+         ['OS=="openbsd" or OS=="freebsd"', {
++          'conditions': [
++            [ 'linux_use_tcmalloc==1', {
++                'dependencies': [
++                  '../base/allocator/allocator.gyp:allocator',
++                ],
++	      },
++	    ],
++	  ],
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+           ],
+diff --git a/chrome/chrome_tests.gypi b/chrome/chrome_tests.gypi
+index 1d74d00..908d17a 100644
+--- chrome/chrome_tests.gypi
++++ chrome/chrome_tests.gypi
+@@ -125,7 +125,7 @@
+         'test/ui_test_utils_win.cc',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+           ],
+@@ -170,7 +170,7 @@
+         'test/ui/ui_test_suite.h',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+           ],
+@@ -194,7 +194,7 @@
+         'test/unit/run_all_unittests.cc',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'dependencies': [
+             # Needed for the following #include chain:
+             #   test/unit/run_all_unittests.cc
+@@ -229,7 +229,7 @@
+         'test/automated_ui_tests/automated_ui_tests.h',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'dependencies': [
+             '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+           ],
+@@ -333,7 +333,7 @@
+             '../webkit/webkit.gyp:npapi_pepper_test_plugin',
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+             '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+@@ -1003,7 +1003,7 @@
+             '../sandbox/sandbox.gyp:*',
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'conditions': [
+             [ 'gcc_version==44', {
+               # Avoid gcc 4.4 strict aliasing issues in stl_tree.h when
+@@ -1331,7 +1331,7 @@
+             },
+           }
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+             '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+@@ -1363,7 +1363,7 @@
+             'browser/chromeos/status/power_menu_button_browsertest.cc',
+           ],
+         }],
+-        ['OS=="linux" and toolkit_views==0 and chromeos==0', {
++        ['(OS=="linux" or OS=="freebsd") and toolkit_views==0 and chromeos==0', {
+           'sources': [
+             'browser/extensions/browser_action_test_util_gtk.cc',
+             'browser/gtk/view_id_util_browsertest.cc',
+@@ -1420,7 +1420,7 @@
+         'test/startup/startup_test.cc',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+             '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+@@ -1490,7 +1490,7 @@
+             '<(allocator_target)',
+           ],
+         },],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+           ],
+@@ -1516,7 +1516,7 @@
+         'test/page_cycler/page_cycler_test.cc',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+             '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+@@ -1553,7 +1553,7 @@
+         'test/tab_switching/tab_switching_test.cc',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+             '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+@@ -1587,7 +1587,7 @@
+         'test/memory_test/memory_test.cc',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+             '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+@@ -1726,7 +1726,7 @@
+             'browser/sync/util/data_encryption_unittest.cc',
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+             '../build/linux/system.gyp:nss',
+@@ -1795,7 +1795,7 @@
+       ],
+       'conditions': [
+         # Plugin code.
+-        ['OS=="linux" or OS=="win"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="win"', {
+           'dependencies': [
+             'plugin',
+            ],
+@@ -1804,7 +1804,7 @@
+           ],
+         }],
+         # Linux-specific rules.
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+            'dependencies': [
+              '../build/linux/system.gyp:gtk',
+            ],
+@@ -1874,7 +1874,7 @@
+             'test/perf/url_parse_perftest.cc',
+           ],
+           'conditions': [
+-            ['OS=="linux"', {
++            ['OS=="linux" or OS=="freebsd"', {
+               'dependencies': [
+                 '../build/linux/system.gyp:gtk',
+                 '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+@@ -2013,7 +2013,7 @@
+       ]},  # 'targets'
+     ],  # OS=="win"
+     # Build on linux x86_64 only if linux_fpic==1
+-    ['OS=="mac" or OS=="win" or (OS=="linux" and target_arch==python_arch '
++    ['OS=="mac" or OS=="win" or ((OS=="linux" or OS=="freebsd") and target_arch==python_arch '
+      'and (target_arch!="x64" or linux_fpic==1))', {
+       'targets': [
+         {
+diff --git a/chrome/common/chrome_constants.cc b/chrome/common/chrome_constants.cc
+index 47745f4..bf21ea3 100644
+--- chrome/common/chrome_constants.cc
++++ chrome/common/chrome_constants.cc
+@@ -27,7 +27,7 @@ namespace chrome {
+ #if defined(OS_WIN)
+ const wchar_t kBrowserProcessExecutableName[] = L"chrome.exe";
+ const wchar_t kHelperProcessExecutableName[] = L"chrome.exe";
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+ const wchar_t kBrowserProcessExecutableName[] = L"chrome";
+ // Helper processes end up with a name of "exe" due to execing via
+ // /proc/self/exe.  See bug 22703.
+@@ -39,7 +39,7 @@ const wchar_t kHelperProcessExecutableName[] = PRODUCT_STRING_W L" Helper";
+ #if defined(OS_WIN)
+ const wchar_t kBrowserProcessExecutablePath[] = L"chrome.exe";
+ const FilePath::CharType kHelperProcessExecutablePath[] = FPL("chrome.exe");
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+ const wchar_t kBrowserProcessExecutablePath[] = L"chrome";
+ const FilePath::CharType kHelperProcessExecutablePath[] = FPL("chrome");
+ #elif defined(OS_MACOSX)
+diff --git a/chrome/common/chrome_paths.cc b/chrome/common/chrome_paths.cc
+index 8796843..abb8c42 100644
+--- chrome/common/chrome_paths.cc
++++ chrome/common/chrome_paths.cc
+@@ -167,7 +167,7 @@ bool PathProvider(int key, FilePath* result) {
+       cur = cur.Append(FILE_PATH_LITERAL("net_internals"));
+       break;
+     case chrome::DIR_APP_DICTIONARIES:
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_POSIX)
+       // We can't write into the EXE dir on Linux, so keep dictionaries
+       // alongside the safe browsing database in the user data dir.
+       // And we don't want to write into the bundle on the Mac, so push
+diff --git a/chrome/common/native_web_keyboard_event.h b/chrome/common/native_web_keyboard_event.h
+index 381ad31..d5675ae 100644
+--- chrome/common/native_web_keyboard_event.h
++++ chrome/common/native_web_keyboard_event.h
+@@ -32,7 +32,7 @@ struct NativeWebKeyboardEvent : public WebKit::WebKeyboardEvent {
+   NativeWebKeyboardEvent(wchar_t character,
+                          int state,
+                          double time_stamp_seconds);
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   explicit NativeWebKeyboardEvent(const GdkEventKey* event);
+   NativeWebKeyboardEvent(wchar_t character,
+                          int state,
+@@ -48,7 +48,7 @@ struct NativeWebKeyboardEvent : public WebKit::WebKeyboardEvent {
+   MSG os_event;
+ #elif defined(OS_MACOSX)
+   NSEvent* os_event;
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   GdkEventKey* os_event;
+ #endif
+ 
+diff --git a/chrome/common/render_messages_internal.h b/chrome/common/render_messages_internal.h
+index a1028b2..5efba03 100644
+--- chrome/common/render_messages_internal.h
++++ chrome/common/render_messages_internal.h
+@@ -1710,7 +1710,7 @@ IPC_BEGIN_MESSAGES(ViewHost)
+                        int /* fd in browser */)
+ #endif
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_FREEBSD)
+   // Asks the browser to create a block of shared memory for the renderer to
+   // pass NativeMetafile data to the browser.
+   IPC_SYNC_MESSAGE_ROUTED1_1(ViewHostMsg_AllocatePDFTransport,
+@@ -1875,7 +1875,7 @@ IPC_BEGIN_MESSAGES(ViewHost)
+   IPC_MESSAGE_CONTROL1(ViewHostMsg_ExtensionRemoveListener,
+                        std::string /* name */)
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_FREEBSD)
+   // On OSX, we cannot allocated shared memory from within the sandbox, so
+   // this call exists for the renderer to ask the browser to allocate memory
+   // on its behalf. We return a file descriptor to the POSIX shared memory.
+diff --git a/chrome/common_constants.gypi b/chrome/common_constants.gypi
+index e9a47c5..d17b05c 100644
+--- chrome/common_constants.gypi
++++ chrome/common_constants.gypi
+@@ -63,7 +63,7 @@
+         '../base/base.gyp:base',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'dependencies': ['../build/linux/system.gyp:gtk'],
+         }],
+       ],
+diff --git a/chrome/gpu/gpu_thread.cc b/chrome/gpu/gpu_thread.cc
+index dcb16e9..579c570 100644
+--- chrome/gpu/gpu_thread.cc
++++ chrome/gpu/gpu_thread.cc
+@@ -20,7 +20,7 @@
+ #include <X11/Xutil.h>  // Must be last.
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_USES_GTK)
+ #include <gtk/gtk.h>
+ #endif
+ 
+@@ -28,7 +28,7 @@ GpuThread::GpuThread() {
+ #if defined(GPU_USE_GLX)
+   display_ = ::XOpenDisplay(NULL);
+ #endif
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_USES_GTK)
+   {
+     // The X11 port of the command buffer code assumes it can access the X
+     // display via the macro GDK_DISPLAY(), which implies that Gtk has been
+diff --git a/chrome/gpu/x_util.h b/chrome/gpu/x_util.h
+index 512b232..c201e07 100644
+--- chrome/gpu/x_util.h
++++ chrome/gpu/x_util.h
+@@ -11,7 +11,7 @@
+ #include "build/build_config.h"
+ #include "chrome/gpu/gpu_config.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(USE_X11)
+ 
+ // Forward declares ------------------------------------------------------------
+ //
+@@ -41,6 +41,6 @@ class ScopedPtrXFree {
+   void operator()(void* x) const;
+ };
+ 
+-#endif  // OS_LINUX
++#endif  // USE_X11
+ 
+ #endif  // CHROME_GPU_X_UTIL_H_
+diff --git a/chrome/installer/installer_util.gypi b/chrome/installer/installer_util.gypi
+index 528a5bf..3601bef 100644
+--- chrome/installer/installer_util.gypi
++++ chrome/installer/installer_util.gypi
+@@ -128,7 +128,7 @@
+         },
+       ],
+     }],
+-    ['OS=="linux"', {
++    ['OS=="linux" or OS=="freebsd"', {
+       'targets': [
+         {
+           'target_name': 'installer_util',
+diff --git a/chrome/plugin/plugin_main_linux.cc b/chrome/plugin/plugin_main_linux.cc
+index 6bb9da7..27f7996 100644
+--- chrome/plugin/plugin_main_linux.cc
++++ chrome/plugin/plugin_main_linux.cc
+@@ -11,7 +11,7 @@
+ #include "build/build_config.h"
+ 
+ // This whole file is only useful on 64-bit architectures.
+-#if defined(ARCH_CPU_64_BITS)
++#if defined(ARCH_CPU_64_BITS) && !defined(OS_FREEBSD)
+ 
+ namespace {
+ 
+diff --git a/chrome/plugin/plugin_thread.cc b/chrome/plugin/plugin_thread.cc
+index 688fe91..dc6707d 100644
+--- chrome/plugin/plugin_thread.cc
++++ chrome/plugin/plugin_thread.cc
+@@ -6,7 +6,7 @@
+ 
+ #include "build/build_config.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ #include <gtk/gtk.h>
+ #endif
+ 
+@@ -46,7 +46,7 @@ PluginThread::PluginThread()
+           switches::kPluginPath);
+ 
+   lazy_tls.Pointer()->Set(this);
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+   {
+     // XEmbed plugins assume they are hosted in a Gtk application, so we need
+     // to initialize Gtk in the plugin process.
+@@ -222,7 +222,7 @@ bool GetPluginFinderURL(std::string* plugin_finder_url) {
+ bool IsDefaultPluginEnabled() {
+ #if defined(OS_WIN)
+   return true;
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+   // http://code.google.com/p/chromium/issues/detail?id=10952
+   return false;
+ #elif defined(OS_MACOSX)
+diff --git a/chrome/renderer/render_process.cc b/chrome/renderer/render_process.cc
+index 85c374e..25dd4f1 100644
+--- chrome/renderer/render_process.cc
++++ chrome/renderer/render_process.cc
+@@ -128,7 +128,7 @@ RenderProcess::~RenderProcess() {
+ 
+ bool RenderProcess::InProcessPlugins() {
+   const CommandLine& command_line = *CommandLine::ForCurrentProcess();
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   // Plugin processes require a UI message loop, and the Linux message loop
+   // implementation only allows one UI loop per process.
+   if (command_line.HasSwitch(switches::kInProcessPlugins))
+@@ -169,7 +169,7 @@ TransportDIB* RenderProcess::CreateTransportDIB(size_t size) {
+ #if defined(OS_WIN) || defined(OS_LINUX)
+   // Windows and Linux create transport DIBs inside the renderer
+   return TransportDIB::Create(size, sequence_number_++);
+-#elif defined(OS_MACOSX)  // defined(OS_WIN) || defined(OS_LINUX)
++#elif defined(OS_MACOSX) || defined(OS_FREEBSD) // defined(OS_WIN) || defined(OS_NIX)
+   // Mac creates transport DIBs in the browser, so we need to do a sync IPC to
+   // get one.  The TransportDIB is cached in the browser.
+   TransportDIB::Handle handle;
+@@ -186,7 +186,7 @@ void RenderProcess::FreeTransportDIB(TransportDIB* dib) {
+   if (!dib)
+     return;
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_FREEBSD)
+   // On Mac we need to tell the browser that it can drop a reference to the
+   // shared memory.
+   IPC::Message* msg = new ViewHostMsg_FreeTransportDIB(dib->id());
+@@ -204,7 +204,7 @@ skia::PlatformCanvas* RenderProcess::GetDrawingCanvas(
+   int width = rect.width();
+   int height = rect.height();
+   const size_t stride = skia::PlatformCanvas::StrideForWidth(rect.width());
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   const size_t max_size = base::SysInfo::MaxSharedMemorySize();
+ #else
+   const size_t max_size = 0;
+diff --git a/chrome/renderer/render_process_impl.cc b/chrome/renderer/render_process_impl.cc
+index e82fed9..c82eb1d 100644
+--- chrome/renderer/render_process_impl.cc
++++ chrome/renderer/render_process_impl.cc
+@@ -190,7 +190,7 @@ TransportDIB* RenderProcessImpl::CreateTransportDIB(size_t size) {
+ #if defined(OS_WIN) || defined(OS_LINUX)
+   // Windows and Linux create transport DIBs inside the renderer
+   return TransportDIB::Create(size, transport_dib_next_sequence_number_++);
+-#elif defined(OS_MACOSX)  // defined(OS_WIN) || defined(OS_LINUX)
++#elif defined(OS_MACOSX) || defined(OS_FREEBSD) // defined(OS_WIN) || defined(OS_NIX)
+   // Mac creates transport DIBs in the browser, so we need to do a sync IPC to
+   // get one.  The TransportDIB is cached in the browser.
+   TransportDIB::Handle handle;
+@@ -207,7 +207,7 @@ void RenderProcessImpl::FreeTransportDIB(TransportDIB* dib) {
+   if (!dib)
+     return;
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_FREEBSD)
+   // On Mac we need to tell the browser that it can drop a reference to the
+   // shared memory.
+   IPC::Message* msg = new ViewHostMsg_FreeTransportDIB(dib->id());
+@@ -225,7 +225,7 @@ skia::PlatformCanvas* RenderProcessImpl::GetDrawingCanvas(
+   int width = rect.width();
+   int height = rect.height();
+   const size_t stride = skia::PlatformCanvas::StrideForWidth(rect.width());
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   const size_t max_size = base::SysInfo::MaxSharedMemorySize();
+ #else
+   const size_t max_size = 0;
+diff --git a/chrome/renderer/render_thread.cc b/chrome/renderer/render_thread.cc
+index 3a0385a..b9da639 100644
+--- chrome/renderer/render_thread.cc
++++ chrome/renderer/render_thread.cc
+@@ -878,7 +878,7 @@ void RenderThread::EnsureWebKitInitialized() {
+ }
+ 
+ void RenderThread::IdleHandler() {
+-#if (defined(OS_WIN) || defined(OS_LINUX)) && defined(USE_TCMALLOC)
++#if !defined(OS_MACOSX) && defined(USE_TCMALLOC)
+   MallocExtension::instance()->ReleaseFreeMemory();
+ #endif
+ 
+@@ -953,7 +953,7 @@ void RenderThread::OnPurgeMemory() {
+   while (!v8::V8::IdleNotification()) {
+   }
+ 
+-#if (defined(OS_WIN) || defined(OS_LINUX)) && defined(USE_TCMALLOC)
++#if !defined(OS_MACOSX) && defined(USE_TCMALLOC)
+   // Tell tcmalloc to release any free pages it's still holding.
+   MallocExtension::instance()->ReleaseFreeMemory();
+ #endif
+diff --git a/chrome/renderer/render_view.h b/chrome/renderer/render_view.h
+index c3a0190..c7a63bb 100644
+--- chrome/renderer/render_view.h
++++ chrome/renderer/render_view.h
+@@ -873,7 +873,7 @@ class RenderView : public RenderWidget,
+ 
+   void Print(WebKit::WebFrame* frame, bool script_initiated);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   void UpdateFontRenderingFromRendererPrefs();
+ #else
+   void UpdateFontRenderingFromRendererPrefs() { }
+diff --git a/chrome/renderer/renderer_main.cc b/chrome/renderer/renderer_main.cc
+index 90a25ea..d9c782b 100644
+--- chrome/renderer/renderer_main.cc
++++ chrome/renderer/renderer_main.cc
+@@ -264,7 +264,7 @@ int RendererMain(const MainFunctionParams& parameters) {
+   }
+ 
+   {
+-#if !defined(OS_LINUX)
++#if !defined(OS_NIX)
+     // TODO(markus): Check if it is OK to unconditionally move this
+     // instruction down.
+     RenderProcessImpl render_process;
+@@ -274,7 +274,7 @@ int RendererMain(const MainFunctionParams& parameters) {
+     if (!no_sandbox) {
+       run_loop = platform.EnableSandbox();
+     }
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+     RenderProcessImpl render_process;
+     render_process.set_main_thread(new RenderThread());
+ #endif
+diff --git a/chrome/renderer/renderer_main_platform_delegate_linux.cc b/chrome/renderer/renderer_main_platform_delegate_linux.cc
+index 98b0aca..ca7df2e 100644
+--- chrome/renderer/renderer_main_platform_delegate_linux.cc
++++ chrome/renderer/renderer_main_platform_delegate_linux.cc
+@@ -36,7 +36,7 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
+   //
+   // The seccomp sandbox is started in the renderer.
+   // http://code.google.com/p/seccompsandbox/
+-#if defined(ARCH_CPU_X86_FAMILY) && !defined(CHROMIUM_SELINUX)
++#if defined(OS_LINUX) && defined(ARCH_CPU_X86_FAMILY) && !defined(CHROMIUM_SELINUX)
+   // N.b. SupportsSeccompSandbox() returns a cached result, as we already
+   // called it earlier in the zygote. Thus, it is OK for us to not pass in
+   // a file descriptor for "/proc".
+diff --git a/chrome/renderer/renderer_webkitclient_impl.cc b/chrome/renderer/renderer_webkitclient_impl.cc
+index c5b042a..10cf59a 100644
+--- chrome/renderer/renderer_webkitclient_impl.cc
++++ chrome/renderer/renderer_webkitclient_impl.cc
+@@ -33,7 +33,7 @@
+ #include "third_party/WebKit/WebKit/chromium/public/WebVector.h"
+ #include "webkit/glue/webkit_glue.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include "chrome/renderer/renderer_sandbox_support_linux.h"
+ #endif
+ 
+@@ -61,7 +61,7 @@ WebKit::WebMimeRegistry* RendererWebKitClientImpl::mimeRegistry() {
+ }
+ 
+ WebKit::WebSandboxSupport* RendererWebKitClientImpl::sandboxSupport() {
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+   return &sandbox_support_;
+ #else
+   return NULL;
+@@ -233,7 +233,7 @@ bool RendererWebKitClientImpl::SandboxSupport::ensureFontLoaded(HFONT font) {
+   return RenderThread::current()->Send(new ViewHostMsg_LoadFont(logfont));
+ }
+ 
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+ 
+ WebString RendererWebKitClientImpl::SandboxSupport::getFontFamilyForCharacters(
+     const WebKit::WebUChar* characters, size_t num_characters) {
+diff --git a/chrome/renderer/renderer_webkitclient_impl.h b/chrome/renderer/renderer_webkitclient_impl.h
+index 3606eaa..163332f 100644
+--- chrome/renderer/renderer_webkitclient_impl.h
++++ chrome/renderer/renderer_webkitclient_impl.h
+@@ -13,7 +13,7 @@
+ 
+ #if defined(OS_WIN)
+ #include "third_party/WebKit/WebKit/chromium/public/win/WebSandboxSupport.h"
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+ #include <string>
+ #include <map>
+ #include "base/lock.h"
+@@ -81,7 +81,7 @@ class RendererWebKitClientImpl : public webkit_glue::WebKitClientImpl {
+    public:
+     virtual bool ensureFontLoaded(HFONT);
+   };
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+   class SandboxSupport : public WebKit::WebSandboxSupport {
+    public:
+     virtual WebKit::WebString getFontFamilyForCharacters(
+@@ -102,7 +102,7 @@ class RendererWebKitClientImpl : public webkit_glue::WebKitClientImpl {
+   webkit_glue::WebClipboardImpl clipboard_;
+ 
+   MimeRegistry mime_registry_;
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+   SandboxSupport sandbox_support_;
+ #endif
+ 
+diff --git a/chrome/renderer/webplugin_delegate_pepper.cc b/chrome/renderer/webplugin_delegate_pepper.cc
+index 9d8d651..c8be9f1 100644
+--- chrome/renderer/webplugin_delegate_pepper.cc
++++ chrome/renderer/webplugin_delegate_pepper.cc
+@@ -997,7 +997,7 @@ int WebPluginDelegatePepper::PrintBegin(const gfx::Rect& printable_area,
+ 
+ bool WebPluginDelegatePepper::PrintPage(int page_number,
+                                         WebKit::WebCanvas* canvas) {
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+   NPPPrintExtensions* print_extensions = GetPrintExtensions();
+   if (!print_extensions)
+     return false;
+@@ -1072,10 +1072,10 @@ bool WebPluginDelegatePepper::PrintPage(int page_number,
+     canvas->drawBitmapRect(committed, &src_rect, dest_rect);
+ 
+   return true;
+-#else  // defined(OS_WIN) || defined(OS_LINUX)
++#else  // defined(OS_WIN) || defined(OS_NIX)
+   NOTIMPLEMENTED();
+   return false;
+-#endif  // defined(OS_WIN) || defined(OS_LINUX)
++#endif  // defined(OS_WIN) || defined(OS_NIX)
+ }
+ 
+ void WebPluginDelegatePepper::PrintEnd() {
+diff --git a/chrome/test/automation/automation_proxy_uitest.cc b/chrome/test/automation/automation_proxy_uitest.cc
+index b3dce0f..1a1864e 100644
+--- chrome/test/automation/automation_proxy_uitest.cc
++++ chrome/test/automation/automation_proxy_uitest.cc
+@@ -1271,7 +1271,7 @@ TEST_F(ExternalTabUITestPopupEnabled, UserGestureTargetBlank) {
+ #endif  // defined(OS_WIN)
+ 
+ // TODO(port): Need to port autocomplete_edit_proxy.* first.
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+ TEST_F(AutomationProxyTest, AutocompleteGetSetText) {
+   scoped_refptr<BrowserProxy> browser(automation()->GetBrowserWindow(0));
+   ASSERT_TRUE(browser.get());
+@@ -1315,7 +1315,7 @@ TEST_F(AutomationProxyTest, AutocompleteParallelProxy) {
+   EXPECT_EQ(text_to_set2, actual_text2);
+ }
+ 
+-#endif  // defined(OS_WIN) || defined(OS_LINUX)
++#endif  // defined(OS_WIN) || defined(OS_NIX)
+ 
+ #if defined(OS_MACOSX)
+ // TODO(port): Implement AutocompleteEditProxy on Mac.
+diff --git a/chrome/test/chrome_process_util.cc b/chrome/test/chrome_process_util.cc
+index 5f47df0..ca983e1 100644
+--- chrome/test/chrome_process_util.cc
++++ chrome/test/chrome_process_util.cc
+@@ -83,7 +83,7 @@ ChromeProcessList GetRunningChromeProcesses(base::ProcessId browser_pid) {
+ #endif
+   }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   // On Linux we might be running with a zygote process for the renderers.
+   // Because of that we sweep the list of processes again and pick those which
+   // are children of one of the processes that we've already seen.
+@@ -94,9 +94,9 @@ ChromeProcessList GetRunningChromeProcesses(base::ProcessId browser_pid) {
+     while (const base::ProcessEntry* process_entry = it.NextProcessEntry())
+       result.push_back(process_entry->pid);
+   }
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_NIX)
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_POSIX)
+   // On Mac OS X we run the subprocesses with a different bundle, and
+   // on Linux via /proc/self/exe, so they end up with a different
+   // name.  We must collect them in a second pass.
+diff --git a/chrome/test/in_process_browser_test.cc b/chrome/test/in_process_browser_test.cc
+index 78ba891..54be333 100644
+--- chrome/test/in_process_browser_test.cc
++++ chrome/test/in_process_browser_test.cc
+@@ -37,7 +37,7 @@
+ #include "net/base/mock_host_resolver.h"
+ #include "sandbox/src/dep.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include "base/singleton.h"
+ #include "chrome/browser/renderer_host/render_sandbox_host_linux.h"
+ #include "chrome/browser/zygote_host_linux.h"
+@@ -196,7 +196,7 @@ void InProcessBrowserTest::SetUp() {
+ #endif
+   CHECK(PathService::Override(base::FILE_EXE, chrome_path));
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   // Initialize the RenderSandbox and Zygote hosts. Apparently they get used
+   // for InProcessBrowserTest, and this is not the normal browser startup path.
+   Singleton<LinuxHostInit>::get();
+diff --git a/chrome/test/interactive_ui/interactive_ui_tests.gypi b/chrome/test/interactive_ui/interactive_ui_tests.gypi
+index 603b7fa..920204a 100644
+--- chrome/test/interactive_ui/interactive_ui_tests.gypi
++++ chrome/test/interactive_ui/interactive_ui_tests.gypi
+@@ -48,7 +48,7 @@
+     '<(DEPTH)/chrome/test/unit/chrome_test_suite.h',
+   ],
+   'conditions': [
+-    ['OS=="linux" and toolkit_views==0 and chromeos==0', {
++    ['(OS=="linux" or OS=="freebsd") and toolkit_views==0 and chromeos==0', {
+       'dependencies': [
+         '<(DEPTH)/build/linux/system.gyp:gtk',
+         '<(DEPTH)/tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+diff --git a/chrome/test/page_cycler/page_cycler_test.cc b/chrome/test/page_cycler/page_cycler_test.cc
+index 96f678e..e3282fe 100644
+--- chrome/test/page_cycler/page_cycler_test.cc
++++ chrome/test/page_cycler/page_cycler_test.cc
+@@ -292,7 +292,7 @@ class PageCyclerReferenceTest : public PageCyclerTest {
+     dir = dir.AppendASCII("reference_build");
+ #if defined(OS_WIN)
+     dir = dir.AppendASCII("chrome");
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+     dir = dir.AppendASCII("chrome_linux");
+ #elif defined(OS_MACOSX)
+     dir = dir.AppendASCII("chrome_mac");
+diff --git a/chrome/test/reliability/page_load_test.cc b/chrome/test/reliability/page_load_test.cc
+index 8d63696..5da2c7e 100644
+--- chrome/test/reliability/page_load_test.cc
++++ chrome/test/reliability/page_load_test.cc
+@@ -159,7 +159,7 @@ class PageLoadTest : public UITest {
+     scoped_ptr<FileVersionInfo> file_info;
+ #if defined(OS_WIN)
+     file_info.reset(FileVersionInfo::CreateFileVersionInfo(kChromeDll));
+-#elif defined(OS_LINUX) || defined(OS_MACOSX)
++#elif defined(OS_POSIX)
+     // TODO(fmeawad): the version retrieved here belongs to the test module and
+     // not the chrome binary, need to be changed to chrome binary instead.
+     file_info.reset(FileVersionInfo::CreateFileVersionInfoForCurrentModule());
+diff --git a/chrome/test/startup/feature_startup_test.cc b/chrome/test/startup/feature_startup_test.cc
+index df68386..f39143e 100644
+--- chrome/test/startup/feature_startup_test.cc
++++ chrome/test/startup/feature_startup_test.cc
+@@ -192,7 +192,7 @@ TEST_F(NewTabUIStartupTest, NewTabTimingTestsCold) {
+   RunNewTabTimingTest();
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ TEST_F(NewTabUIStartupTest, GtkThemeCold) {
+   RunStartupTest("tab_gtk_theme_cold", false /* cold */,
+                  false /* not important */,
+diff --git a/chrome/test/startup/startup_test.cc b/chrome/test/startup/startup_test.cc
+index ff9ec7e..adc3a4d 100644
+--- chrome/test/startup/startup_test.cc
++++ chrome/test/startup/startup_test.cc
+@@ -198,7 +198,7 @@ TEST_F(StartupTest, PerfColdComplexTheme) {
+                  false /* not important */, UITest::COMPLEX_THEME);
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ TEST_F(StartupTest, PerfColdGtkTheme) {
+   RunStartupTest("warm", "gtk-theme", false /* warm */,
+                  false /* not important */, UITest::NATIVE_THEME);
+diff --git a/chrome/test/testing_browser_process.h b/chrome/test/testing_browser_process.h
+index b95b3a8..a035e1f 100644
+--- chrome/test/testing_browser_process.h
++++ chrome/test/testing_browser_process.h
+@@ -47,7 +47,7 @@ class TestingBrowserProcess : public BrowserProcess {
+     return NULL;
+   }
+ 
+-#if defined(OS_LINUX)
++#if defined(USE_X11)
+   virtual base::Thread* background_x11_thread() {
+     return NULL;
+   }
+diff --git a/chrome/test/testing_profile.cc b/chrome/test/testing_profile.cc
+index a69e2e2..bd63440 100644
+--- chrome/test/testing_profile.cc
++++ chrome/test/testing_profile.cc
+@@ -20,7 +20,7 @@
+ #include "testing/gmock/include/gmock/gmock.h"
+ #include "webkit/database/database_tracker.h"
+ 
+-#if defined(OS_LINUX) && !defined(TOOLKIT_VIEWS)
++#if defined(TOOLKIT_GTK) && !defined(TOOLKIT_VIEWS)
+ #include "chrome/browser/gtk/gtk_theme_provider.h"
+ #endif
+ 
+@@ -286,7 +286,7 @@ webkit_database::DatabaseTracker* TestingProfile::GetDatabaseTracker() {
+ 
+ void TestingProfile::InitThemes() {
+   if (!created_theme_provider_) {
+-#if defined(OS_LINUX) && !defined(TOOLKIT_VIEWS)
++#if defined(TOOLKIT_GTK) && !defined(TOOLKIT_VIEWS)
+     theme_provider_.reset(new GtkThemeProvider);
+ #else
+     theme_provider_.reset(new BrowserThemeProvider);
+diff --git a/chrome/test/ui/history_uitest.cc b/chrome/test/ui/history_uitest.cc
+index 47f18a2..20b6986 100644
+--- chrome/test/ui/history_uitest.cc
++++ chrome/test/ui/history_uitest.cc
+@@ -76,7 +76,7 @@ TEST_F(HistoryTester, DISABLED_VerifyHistoryLength3) {
+                 kTestCompleteSuccess, action_max_timeout_ms());
+ }
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+ // Flaky, http://crbug.com/39785.
+ TEST_F(HistoryTester, FLAKY_ConsiderRedirectAfterGestureAsUserInitiated) {
+   // Test the history length for the following page transition.
+@@ -110,7 +110,7 @@ TEST_F(HistoryTester, FLAKY_ConsiderRedirectAfterGestureAsUserInitiated) {
+   WaitForFinish("History_Length_Test_12", "1", url, kTestCompleteCookie,
+                 kTestCompleteSuccess, action_max_timeout_ms());
+ }
+-#endif  // defined(OS_WIN) || defined(OS_LINUX)
++#endif  // defined(OS_WIN) || defined(OS_NIX)
+ 
+ // Flaky, http://crbug.com/39785.
+ TEST_F(HistoryTester, FLAKY_ConsiderSlowRedirectAsUserInitiated) {
+diff --git a/chrome/test/ui/npapi_test_helper.cc b/chrome/test/ui/npapi_test_helper.cc
+index d5e24ad..8e80880 100644
+--- chrome/test/ui/npapi_test_helper.cc
++++ chrome/test/ui/npapi_test_helper.cc
+@@ -20,7 +20,7 @@ static const char kNpapiTestPluginName[] = "npapi_test_plugin.dll";
+ #elif defined(OS_MACOSX)
+ static const char kNpapiTestPluginName[] = "npapi_test_plugin.plugin";
+ static const char kLayoutPluginName[] = "TestNetscapePlugIn.plugin";
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+ static const char kNpapiTestPluginName[] = "libnpapi_test_plugin.so";
+ #endif
+ 
+diff --git a/chrome/test/ui/sunspider_uitest.cc b/chrome/test/ui/sunspider_uitest.cc
+index 1c4f484..b544407 100644
+--- chrome/test/ui/sunspider_uitest.cc
++++ chrome/test/ui/sunspider_uitest.cc
+@@ -128,7 +128,7 @@ class SunSpiderReferenceTest : public SunSpiderTest {
+     dir = dir.AppendASCII("reference_build");
+ #if defined(OS_WIN)
+     dir = dir.AppendASCII("chrome");
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+     dir = dir.AppendASCII("chrome_linux");
+ #elif defined(OS_MACOSX)
+     dir = dir.AppendASCII("chrome_mac");
+diff --git a/chrome/test/ui/ui_layout_test.cc b/chrome/test/ui/ui_layout_test.cc
+index f5be28d..61e8d79 100644
+--- chrome/test/ui/ui_layout_test.cc
++++ chrome/test/ui/ui_layout_test.cc
+@@ -18,7 +18,7 @@
+ static const char kPlatformName[] = "chromium-win";
+ #elif defined(OS_MACOSX)
+ static const char kPlatformName[] = "chromium-mac";
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+ static const char kPlatformName[] = "chromium-linux";
+ #else
+ #error No known OS defined
+diff --git a/chrome/test/ui/ui_test.cc b/chrome/test/ui/ui_test.cc
+index f9c5151..fce148a 100644
+--- chrome/test/ui/ui_test.cc
++++ chrome/test/ui/ui_test.cc
+@@ -64,7 +64,7 @@ const wchar_t UITestBase::kFailedNoCrashService[] =
+     L"NOTE: This test is expected to fail if crash_service.exe is not "
+     L"running. Start it manually before running this test (see the build "
+     L"output directory).";
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+     L"NOTE: This test is expected to fail if breakpad is not built in "
+     L"or if chromium is not running headless (try CHROME_HEADLESS=1).";
+ #else
+@@ -1478,7 +1478,7 @@ void UITestBase::PrintMemoryUsageInfo(const char* test_name) {
+   PrintResult("ws_final_t", "", "ws_f_t" + trace_name,
+               total_working_set_size, "bytes",
+               false /* not important */);
+-#elif defined(OS_LINUX) || defined(OS_MACOSX)
++#elif defined(OS_POSIX)
+   PrintResult("vm_size_final_b", "", "vm_size_f_b" + trace_name,
+               browser_virtual_size, "bytes",
+               true /* important */);
+diff --git a/chrome/test/ui/v8_benchmark_uitest.cc b/chrome/test/ui/v8_benchmark_uitest.cc
+index b020af1..ba8c221 100644
+--- chrome/test/ui/v8_benchmark_uitest.cc
++++ chrome/test/ui/v8_benchmark_uitest.cc
+@@ -130,7 +130,7 @@ class V8BenchmarkReferenceTest : public V8BenchmarkTest {
+     dir = dir.AppendASCII("reference_build");
+ #if defined(OS_WIN)
+     dir = dir.AppendASCII("chrome");
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+     dir = dir.AppendASCII("chrome_linux");
+ #elif defined(OS_MACOSX)
+     dir = dir.AppendASCII("chrome_mac");
+diff --git a/chrome/test/ui_test_utils.cc b/chrome/test/ui_test_utils.cc
+index 612d921..439ffc1 100644
+--- chrome/test/ui_test_utils.cc
++++ chrome/test/ui_test_utils.cc
+@@ -331,7 +331,7 @@ void RunMessageLoop() {
+ #if defined(TOOLKIT_VIEWS)
+   views::AcceleratorHandler handler;
+   loop->Run(&handler);
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+   loop->Run(NULL);
+ #else
+   loop->Run();
+diff --git a/chrome/test/url_fetch_test/url_fetch_test.cc b/chrome/test/url_fetch_test/url_fetch_test.cc
+index d4d3287..24e2a97 100644
+--- chrome/test/url_fetch_test/url_fetch_test.cc
++++ chrome/test/url_fetch_test/url_fetch_test.cc
+@@ -34,7 +34,7 @@ class UrlFetchTest : public UITest {
+       dir = dir.AppendASCII("reference_build");
+ #if defined(OS_WIN)
+       dir = dir.AppendASCII("chrome");
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+       dir = dir.AppendASCII("chrome_linux");
+ #elif defined(OS_MACOSX)
+       dir = dir.AppendASCII("chrome_mac");
+diff --git a/chrome/tools/build/linux/sed.sh b/chrome/tools/build/linux/sed.sh
+index 22615cb..bc59956 100755
+--- chrome/tools/build/linux/sed.sh
++++ chrome/tools/build/linux/sed.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ 
+ # Copyright (c) 2009 The Chromium Authors. All rights reserved.
+ # Use of this source code is governed by a BSD-style license that can be
+diff --git a/chrome/worker/worker_uitest.cc b/chrome/worker/worker_uitest.cc
+index d300a5e..61d8f6e 100644
+--- chrome/worker/worker_uitest.cc
++++ chrome/worker/worker_uitest.cc
+@@ -83,7 +83,7 @@ class WorkerTest : public UILayoutTest {
+     // The 1 is for the browser process.
+     int number_of_processes = 1 + workers +
+         (UITest::in_process_renderer() ? 0 : tabs);
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+     // On Linux, we also have a zygote process and a sandbox host process.
+     number_of_processes += 2;
+ #endif
+diff --git a/gpu/gpu.gyp b/gpu/gpu.gyp
+index da7172b..3921a52 100644
+--- gpu/gpu.gyp
++++ gpu/gpu.gyp
+@@ -88,7 +88,7 @@
+         '../third_party/glew/src/glew.c',
+       ],
+       'conditions': [
+-        [ 'OS=="linux"',
++        [ 'OS=="linux" or OS=="freebsd"',
+           {
+             'all_dependent_settings': {
+               'defines': [
+@@ -286,7 +286,7 @@
+         '<@(gpu_service_source_files)',
+       ],
+       'conditions': [
+-        ['OS == "linux"',
++        ['OS == "linux" or OS=="freebsd"',
+           {
+             'dependencies': [
+               '../build/linux/system.gyp:gtk',
+diff --git a/ipc/ipc.gyp b/ipc/ipc.gyp
+index 07141fe..a0fb0e5 100644
+--- ipc/ipc.gyp
++++ ipc/ipc.gyp
+@@ -63,7 +63,7 @@
+             '../views/views.gyp:views',
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'conditions': [
+             ['linux_use_tcmalloc==1', {
+               'dependencies': [
+diff --git a/ipc/ipc_channel_posix.cc b/ipc/ipc_channel_posix.cc
+index f6b19f7..c4f99f4 100644
+--- ipc/ipc_channel_posix.cc
++++ ipc/ipc_channel_posix.cc
+@@ -273,7 +273,7 @@ Channel::ChannelImpl::ChannelImpl(const std::string& channel_id, Mode mode,
+       server_listen_pipe_(-1),
+       pipe_(-1),
+       client_pipe_(-1),
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+       fd_pipe_(-1),
+       remote_fd_pipe_(-1),
+ #endif
+@@ -384,7 +384,7 @@ bool Channel::ChannelImpl::CreatePipe(const std::string& channel_id,
+   scoped_ptr<Message> msg(new Message(MSG_ROUTING_NONE,
+                                       HELLO_MESSAGE_TYPE,
+                                       IPC::Message::PRIORITY_NORMAL));
+-  #if defined(OS_LINUX)
++  #if defined(OS_NIX)
+   if (!uses_fifo_) {
+     // On Linux, the seccomp sandbox makes it very expensive to call
+     // recvmsg() and sendmsg(). Often, we are perfectly OK with resorting to
+@@ -460,7 +460,7 @@ bool Channel::ChannelImpl::ProcessIncomingMessages() {
+       // Read from pipe.
+       // recvmsg() returns 0 if the connection has closed or EAGAIN if no data
+       // is waiting on the pipe.
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+       if (fd_pipe_ >= 0) {
+         bytes_read = HANDLE_EINTR(read(pipe_, input_buf_,
+                                        Channel::kReadBufferSize));
+@@ -592,7 +592,7 @@ bool Channel::ChannelImpl::ProcessIncomingMessages() {
+           if (m.header()->num_fds > num_fds - fds_i) {
+             // the message has been completely received, but we didn't get
+             // enough file descriptors.
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+             if (!uses_fifo_) {
+               char dummy;
+               struct iovec fd_pipe_iov = { &dummy, 1 };
+@@ -677,7 +677,7 @@ bool Channel::ChannelImpl::ProcessIncomingMessages() {
+           if (!m.ReadInt(&iter, &pid)) {
+             NOTREACHED();
+           }
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+           if (mode_ == MODE_SERVER && !uses_fifo_) {
+             // On Linux, the Hello message from the client to the server
+             // also contains the fd_pipe_, which  will be used for all
+@@ -740,7 +740,7 @@ bool Channel::ChannelImpl::ProcessOutgoingMessages() {
+   while (!output_queue_.empty()) {
+     Message* msg = output_queue_.front();
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+     scoped_ptr<Message> hello;
+     if (remote_fd_pipe_ != -1 &&
+         msg->routing_id() == MSG_ROUTING_NONE &&
+@@ -801,7 +801,7 @@ bool Channel::ChannelImpl::ProcessOutgoingMessages() {
+       // num_fds < MAX_DESCRIPTORS_PER_MESSAGE so no danger of overflow.
+       msg->header()->num_fds = static_cast<uint16>(num_fds);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+       if (!uses_fifo_ &&
+           (msg->routing_id() != MSG_ROUTING_NONE ||
+            msg->type() != HELLO_MESSAGE_TYPE)) {
+@@ -823,7 +823,7 @@ bool Channel::ChannelImpl::ProcessOutgoingMessages() {
+ 
+     if (bytes_written == 1) {
+       fd_written = pipe_;
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+       if (mode_ != MODE_SERVER && !uses_fifo_ &&
+           msg->routing_id() == MSG_ROUTING_NONE &&
+           msg->type() == HELLO_MESSAGE_TYPE) {
+@@ -994,7 +994,7 @@ void Channel::ChannelImpl::Close() {
+     Singleton<PipeMap>()->RemoveAndClose(pipe_name_);
+     client_pipe_ = -1;
+   }
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   if (fd_pipe_ != -1) {
+     HANDLE_EINTR(close(fd_pipe_));
+     fd_pipe_ = -1;
+diff --git a/ipc/ipc_channel_posix.h b/ipc/ipc_channel_posix.h
+index dd45345..7cb4238 100644
+--- ipc/ipc_channel_posix.h
++++ ipc/ipc_channel_posix.h
+@@ -86,7 +86,7 @@ class Channel::ChannelImpl : public MessageLoopForIO::Watcher {
+   // pipe_ that is passed to the client.
+   int client_pipe_;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   // Linux uses a dedicated socketpair() for passing file descriptors.
+   int fd_pipe_;
+   int remote_fd_pipe_;
+diff --git a/ipc/sync_socket_unittest.cc b/ipc/sync_socket_unittest.cc
+index e07fdf9..b6e3372 100644
+--- ipc/sync_socket_unittest.cc
++++ ipc/sync_socket_unittest.cc
+@@ -8,9 +8,9 @@
+ #include <sstream>
+ 
+ #include "base/message_loop.h"
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_POSIX)
+ #include "base/file_descriptor_posix.h"
+-#endif  // defined(OS_LINUX) || defined(OS_MACOSX)
++#endif  // defined(OS_POSIX)
+ #include "base/platform_thread.h"
+ #include "base/process_util.h"
+ #include "base/sync_socket.h"
+diff --git a/media/base/media_switches.cc b/media/base/media_switches.cc
+index 7fa286e..633d36b 100644
+--- media/base/media_switches.cc
++++ media/base/media_switches.cc
+@@ -6,7 +6,7 @@
+ 
+ namespace switches {
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ // The Alsa device to use when opening an audio stream.
+ const char kAlsaDevice[] = "alsa-device";
+ #endif
+diff --git a/media/base/media_switches.h b/media/base/media_switches.h
+index 28e3bb6..d0d9e1d 100644
+--- media/base/media_switches.h
++++ media/base/media_switches.h
+@@ -11,7 +11,7 @@
+ 
+ namespace switches {
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ extern const char kAlsaDevice[];
+ #endif
+ 
+diff --git a/media/media.gyp b/media/media.gyp
+index c12aabf..f509df6 100644
+--- media/media.gyp
++++ media/media.gyp
+@@ -389,7 +389,6 @@
+           ],
+           'link_settings': {
+             'libraries': [
+-              '-ldl',
+               '-lX11',
+               '-lXrender',
+               '-lXext',
+diff --git a/net/base/host_resolver_proc.cc b/net/base/host_resolver_proc.cc
+index 84daae0..b22430d 100644
+--- net/base/host_resolver_proc.cc
++++ net/base/host_resolver_proc.cc
+@@ -6,10 +6,6 @@
+ 
+ #include "build/build_config.h"
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
+-#include <resolv.h>
+-#endif
+-
+ #include "base/logging.h"
+ #include "base/time.h"
+ #include "net/base/address_list.h"
+@@ -17,6 +13,7 @@
+ #include "net/base/sys_addrinfo.h"
+ 
+ #if defined(OS_POSIX) && !defined(OS_MACOSX)
++#include <resolv.h>
+ #include "base/singleton.h"
+ #include "base/thread_local_storage.h"
+ #endif
+diff --git a/net/base/listen_socket.cc b/net/base/listen_socket.cc
+index 88e9592..c2eb003 100644
+--- net/base/listen_socket.cc
++++ net/base/listen_socket.cc
+@@ -10,6 +10,7 @@
+ #include <winsock2.h>
+ #elif defined(OS_POSIX)
+ #include <errno.h>
++#include <netinet/in.h>
+ #include <sys/socket.h>
+ #include <arpa/inet.h>
+ #include "net/base/net_errors.h"
+diff --git a/net/base/listen_socket_unittest.cc b/net/base/listen_socket_unittest.cc
+index eb224c3..24c915a 100644
+--- net/base/listen_socket_unittest.cc
++++ net/base/listen_socket_unittest.cc
+@@ -5,6 +5,7 @@
+ #include "net/base/listen_socket_unittest.h"
+ 
+ #include <fcntl.h>
++#include <netinet/in.h>
+ 
+ #include "base/eintr_wrapper.h"
+ #include "net/base/net_util.h"
+diff --git a/net/base/mime_util.cc b/net/base/mime_util.cc
+index aa3934b..6feef0e 100644
+--- net/base/mime_util.cc
++++ net/base/mime_util.cc
+@@ -189,7 +189,7 @@ static const char* const supported_media_types[] = {
+   "audio/ogg",
+   "application/ogg",
+ 
+-#if defined(GOOGLE_CHROME_BUILD)
++//#if defined(GOOGLE_CHROME_BUILD)
+   // MPEG-4.
+   "video/mp4",
+   "video/x-m4v",
+@@ -200,7 +200,7 @@ static const char* const supported_media_types[] = {
+   "audio/mp3",
+   "audio/x-mp3",
+   "audio/mpeg",
+-#endif
++//#endif
+ };
+ 
+ // List of supported codecs when passed in with <source type="...">.
+@@ -208,10 +208,10 @@ static const char* const supported_media_types[] = {
+ // Refer to http://wiki.whatwg.org/wiki/Video_type_parameters#Browser_Support
+ // for more information.
+ static const char* const supported_media_codecs[] = {
+-#if defined(GOOGLE_CHROME_BUILD)
++//#if defined(GOOGLE_CHROME_BUILD)
+   "avc1",
+   "mp4a",
+-#endif
++//#endif
+   "theora",
+   "vorbis",
+ };
+diff --git a/net/base/net_util.cc b/net/base/net_util.cc
+index 099746b..7b3e6ed 100644
+--- net/base/net_util.cc
++++ net/base/net_util.cc
+@@ -24,8 +24,9 @@
+ #include <fcntl.h>
+ #include <ifaddrs.h>
+ #include <netdb.h>
+-#include <net/if.h>
+ #include <sys/socket.h>
++#include <net/if.h>
++#include <netinet/in.h>
+ #endif
+ 
+ #include "base/base64.h"
+diff --git a/net/base/network_change_notifier.cc b/net/base/network_change_notifier.cc
+index aeca2ab..7ffc296 100644
+--- net/base/network_change_notifier.cc
++++ net/base/network_change_notifier.cc
+@@ -24,7 +24,6 @@ NetworkChangeNotifier::CreateDefaultNetworkChangeNotifier() {
+ #elif defined(OS_MACOSX)
+   return new NetworkChangeNotifierMac();
+ #else
+-  NOTIMPLEMENTED();
+   return NULL;
+ #endif
+ }
+diff --git a/net/base/sys_addrinfo.h b/net/base/sys_addrinfo.h
+index cfdd424..3f8c859 100644
+--- net/base/sys_addrinfo.h
++++ net/base/sys_addrinfo.h
+@@ -22,3 +22,7 @@
+ #include <netdb.h>
+ #endif
+ 
++#if defined(OS_FREEBSD)
++#include <netinet/in.h>
++#include <sys/socket.h>
++#endif
+diff --git a/net/base/x509_certificate_unittest.cc b/net/base/x509_certificate_unittest.cc
+index fb550ad..63ddd92 100644
+--- net/base/x509_certificate_unittest.cc
++++ net/base/x509_certificate_unittest.cc
+@@ -294,7 +294,7 @@ TEST(X509CertificateTest, PaypalNullCertParsing) {
+   // Either the system crypto library should correctly report a certificate
+   // name mismatch, or our certificate blacklist should cause us to report an
+   // invalid certificate.
+-#if defined(OS_LINUX) || defined(OS_WIN)
++#if !defined(OS_MACOSX)
+   EXPECT_NE(0, verify_result.cert_status &
+             (CERT_STATUS_COMMON_NAME_INVALID | CERT_STATUS_INVALID));
+ #endif
+diff --git a/net/net.gyp b/net/net.gyp
+index a0602e1..75e52f3 100644
+--- net/net.gyp
++++ net/net.gyp
+@@ -110,11 +110,9 @@
+         'base/net_util_win.cc',
+         'base/network_change_notifier.cc',
+         'base/network_change_notifier.h',
+-        'base/network_change_notifier_linux.cc',
+         'base/network_change_notifier_linux.h',
+         'base/network_change_notifier_mac.cc',
+         'base/network_change_notifier_mac.h',
+-        'base/network_change_notifier_netlink_linux.cc',
+         'base/network_change_notifier_netlink_linux.h',
+         'base/network_change_notifier_win.cc',
+         'base/network_change_notifier_win.h',
+@@ -543,6 +541,7 @@
+             '../build/linux/system.gyp:gdk',
+             '../build/linux/system.gyp:nss',
+           ],
++          'sources!': [ 'proxy/proxy_config_service_linux.cc', ],
+         }],
+         [ 'OS == "win"', {
+             'sources!': [
+@@ -570,7 +569,7 @@
+         ],
+         [ 'OS == "linux" or OS == "freebsd" or OS == "openbsd"', {
+           },
+-          {  # else: OS != "linux"
++          {  # else: OS != "linux" and OS != "freebsd"
+             'sources!': [
+               'ocsp/nss_ocsp.cc',
+               'ocsp/nss_ocsp.h',
+@@ -689,7 +688,6 @@
+         'proxy/init_proxy_resolver_unittest.cc',
+         'proxy/mock_proxy_resolver.h',
+         'proxy/proxy_bypass_rules_unittest.cc',
+-        'proxy/proxy_config_service_linux_unittest.cc',
+         'proxy/proxy_config_service_win_unittest.cc',
+         'proxy/proxy_config_unittest.cc',
+         'proxy/proxy_list_unittest.cc',
+@@ -732,7 +730,7 @@
+             ],
+           },
+         ],
+-        ['OS == "linux"', {
++        ['OS == "linux" or OS == "freebsd"', {
+           'conditions': [
+             ['linux_use_tcmalloc==1', {
+               'dependencies': [
+@@ -844,7 +842,7 @@
+             '../build/linux/system.gyp:nss',
+           ],
+         }],
+-        ['OS == "linux"', {
++        ['OS == "linux" or OS == "freebsd"', {
+           'conditions': [
+             ['linux_use_tcmalloc==1', {
+               'dependencies': [
+diff --git a/net/socket/tcp_client_socket_libevent.cc b/net/socket/tcp_client_socket_libevent.cc
+index db00c55..dc1ad71 100644
+--- net/socket/tcp_client_socket_libevent.cc
++++ net/socket/tcp_client_socket_libevent.cc
+@@ -9,6 +9,9 @@
+ #include <netdb.h>
+ #include <sys/socket.h>
+ #include <netinet/tcp.h>
++#if defined(OS_FREEBSD)
++#include <netinet/in.h>
++#endif
+ 
+ #include "base/eintr_wrapper.h"
+ #include "base/message_loop.h"
+diff --git a/net/third_party/nss/nss.gyp b/net/third_party/nss/nss.gyp
+index 1e7ef49..3ec44c0 100644
+--- net/third_party/nss/nss.gyp
++++ net/third_party/nss/nss.gyp
+@@ -4,7 +4,7 @@
+ 
+ {
+   'conditions': [
+-    [ 'OS == "linux"', {
++    [ 'OS == "linux" or OS == "freebsd"', {
+       'conditions': [
+         ['sysroot!=""', {
+           'variables': {
+@@ -77,7 +77,7 @@
+         'NO_NSPR_10_SUPPORT',
+       ],
+       'conditions': [
+-        [ 'OS == "linux"', {
++        [ 'OS == "linux" or OS == "freebsd"', {
+           'sources!': [
+             'ssl/os2_err.c',
+             'ssl/os2_err.h',
+diff --git a/net/tools/hresolv/hresolv.cc b/net/tools/hresolv/hresolv.cc
+index f092703..4c7a0b8 100644
+--- net/tools/hresolv/hresolv.cc
++++ net/tools/hresolv/hresolv.cc
+@@ -50,7 +50,7 @@ static const FlagName kAddrinfoFlagNames[] = {
+   {AI_V4MAPPED, "AI_V4MAPPED"},
+   {AI_ALL, "AI_ALL"},
+   {AI_ADDRCONFIG, "AI_ADDRCONFIG"},
+-#if defined(OS_LINUX) || defined(OS_WIN)
++#if !defined(OS_MACOSX)
+   {AI_NUMERICSERV, "AI_NUMERICSERV"},
+ #endif
+ };
+diff --git a/printing/printing.gyp b/printing/printing.gyp
+index 2e255a0..d4cbf49 100644
+--- printing/printing.gyp
++++ printing/printing.gyp
+@@ -113,14 +113,12 @@
+             'dependencies': [
+               '../build/linux/system.gyp:gtk',
+            ],
+-        }],
+-        ['OS=="linux"', {
+-          'conditions': [
+-            ['linux_use_tcmalloc==1', {
++            'conditions': [
++              ['linux_use_tcmalloc==1', {
+               'dependencies': [
+                 '../base/allocator/allocator.gyp:allocator',
+-              ],
+-            }],
++                ],
++              }],
+           ],
+         }],
+       ],
+diff --git a/sandbox/sandbox.gyp b/sandbox/sandbox.gyp
+index a835089..19a5714 100644
+--- sandbox/sandbox.gyp
++++ sandbox/sandbox.gyp
+@@ -126,6 +126,15 @@
+     ],
+   },
+   'conditions': [
++    [ 'OS=="freebsd"', {
++      # GYP requires that each file have at least one target defined.
++      'targets': [
++        {
++          'target_name': 'sandbox',
++          'type': 'settings',
++        },
++      ],
++    }],
+     [ 'OS=="linux" and selinux==0', {
+       'targets': [
+         {
+diff --git a/skia/ext/image_operations.cc b/skia/ext/image_operations.cc
+index f6ee4ca..818846c 100644
+--- skia/ext/image_operations.cc
++++ skia/ext/image_operations.cc
+@@ -271,7 +271,7 @@ SkBitmap ImageOperations::ResizeSubpixel(const SkBitmap& source,
+                                          const SkIRect& dest_subset) {
+   // Currently only works on Linux because this is the only platform where
+   // SkFontHost::GetSubpixelOrder is defined.
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   // Understand the display.
+   const SkFontHost::LCDOrder order = SkFontHost::GetSubpixelOrder();
+   const SkFontHost::LCDOrientation orientation =
+@@ -361,7 +361,7 @@ SkBitmap ImageOperations::ResizeSubpixel(const SkBitmap& source,
+   return result;
+ #else
+   return SkBitmap();
+-#endif  // OS_LINUX
++#endif  // OS_NIX
+ }
+ 
+ // static
+diff --git a/skia/skia.gyp b/skia/skia.gyp
+index d9fb72e..ca01718 100644
+--- skia/skia.gyp
++++ skia/skia.gyp
+@@ -692,7 +692,7 @@
+         '../third_party/skia/src/core',
+       ],
+       'conditions': [
+-        [ 'OS == "linux" and target_arch != "arm"', {
++        [ '(OS == "linux" or OS == "freebsd") and target_arch != "arm"', {
+           'cflags': [
+             '-msse2',
+           ],
+diff --git a/third_party/bzip2/bzip2.gyp b/third_party/bzip2/bzip2.gyp
+index c0f36e0..aa612bb 100644
+--- third_party/bzip2/bzip2.gyp
++++ third_party/bzip2/bzip2.gyp
+@@ -5,7 +5,7 @@
+ {
+   'variables': {
+     'conditions': [
+-      [ 'OS=="linux"', {
++      [ 'OS=="linux" or OS=="freebsd"', {
+         # Link to system .so since we already use it due to GTK.
+         'use_system_bzip2%': 1,
+       }, {  # OS!="linux"
+diff --git a/third_party/expat/expat.gyp b/third_party/expat/expat.gyp
+index ab017f6..f8ff168 100644
+--- third_party/expat/expat.gyp
++++ third_party/expat/expat.gyp
+@@ -15,7 +15,7 @@
+     ]
+   },
+   'conditions': [
+-    ['OS=="linux"', {
++    ['OS=="linux" or OS=="freebsd"', {
+       # On Linux, we implicitly already depend on expat via fontconfig;
+       # let's not pull it in twice.
+       'targets': [
+@@ -59,7 +59,7 @@
+                 'COMPILED_FROM_DSP',
+               ],
+             }],
+-            ['OS=="mac"', {
++            ['OS=="mac" or OS=="freebsd"', {
+               'defines': [
+                 'HAVE_EXPAT_CONFIG_H',
+               ],
+diff --git a/third_party/ffmpeg/ffmpeg.gyp b/third_party/ffmpeg/ffmpeg.gyp
+index 2b577cb..c6efe20 100644
+--- third_party/ffmpeg/ffmpeg.gyp
++++ third_party/ffmpeg/ffmpeg.gyp
+@@ -62,7 +62,7 @@
+     'ffmpeg_variant%': '<(target_arch)',
+ 
+     'use_system_ffmpeg%': 0,
+-    'use_system_yasm%': 0,
++    'use_system_yasm%': 1,
+     'build_ffmpegsumo%': 1,
+ 
+     # Locations for generated artifacts.
+@@ -127,11 +127,11 @@
+             'source/patched-ffmpeg-mt/libavutil/pixdesc.c',
+             'source/patched-ffmpeg-mt/libavutil/rational.c',
+             # Config file for the OS and architecture.
+-            'source/config/<(ffmpeg_branding)/<(OS)/<(ffmpeg_config)/config.h',
++            'source/config/<(ffmpeg_branding)/linux/<(ffmpeg_config)/config.h',
+             'source/config/libavutil/avconfig.h',
+           ],
+           'include_dirs': [
+-            'source/config/<(ffmpeg_branding)/<(OS)/<(ffmpeg_config)',
++            'source/config/<(ffmpeg_branding)/linux/<(ffmpeg_config)',
+             'source/patched-ffmpeg-mt',
+             'source/config',
+           ],
+@@ -757,7 +757,7 @@
+ 
+           'conditions': [
+             # Non-Mac platforms need libdl for dlopen() and friends.
+-            ['OS!="mac"', {
++            ['OS!="mac" and OS!="freebsd"', {
+               'link_settings': {
+                 'libraries': [
+                   '-ldl',
+diff --git a/third_party/ffmpeg/source/config/Chrome/linux/ia32/config.h b/third_party/ffmpeg/source/config/Chrome/linux/ia32/config.h
+index d53b272..efeb2b5 100644
+--- third_party/ffmpeg/source/config/Chrome/linux/ia32/config.h
++++ third_party/ffmpeg/source/config/Chrome/linux/ia32/config.h
+@@ -45,7 +45,7 @@
+ #define HAVE_NEON 0
+ #define HAVE_PPC4XX 0
+ #define HAVE_SSE 1
+-#define HAVE_SSSE3 1
++#define HAVE_SSSE3 0
+ #define HAVE_VIS 0
+ #define HAVE_BIGENDIAN 0
+ #define HAVE_BEOSTHREADS 0
+@@ -94,16 +94,16 @@
+ #define HAVE_LLRINT 1
+ #define HAVE_LOCAL_ALIGNED_16 1
+ #define HAVE_LOCAL_ALIGNED_8 1
+-#define HAVE_LOG2 1
+-#define HAVE_LOG2F 1
++#define HAVE_LOG2 0
++#define HAVE_LOG2F 0
+ #define HAVE_LOONGSON 0
+ #define HAVE_LRINT 1
+ #define HAVE_LRINTF 1
+ #define HAVE_LZO1X_999_COMPRESS 0
+ #define HAVE_MACHINE_IOCTL_BT848_H 0
+ #define HAVE_MACHINE_IOCTL_METEOR_H 0
+-#define HAVE_MALLOC_H 1
+-#define HAVE_MEMALIGN 1
++#define HAVE_MALLOC_H 0
++#define HAVE_MEMALIGN 0
+ #define HAVE_MKSTEMP 1
+ #define HAVE_PLD 0
+ #define HAVE_POSIX_MEMALIGN 1
+diff --git a/third_party/ffmpeg/source/config/Chrome/linux/x64/config.h b/third_party/ffmpeg/source/config/Chrome/linux/x64/config.h
+index 2d528b4..053ea45 100644
+--- third_party/ffmpeg/source/config/Chrome/linux/x64/config.h
++++ third_party/ffmpeg/source/config/Chrome/linux/x64/config.h
+@@ -45,7 +45,7 @@
+ #define HAVE_NEON 0
+ #define HAVE_PPC4XX 0
+ #define HAVE_SSE 1
+-#define HAVE_SSSE3 1
++#define HAVE_SSSE3 0
+ #define HAVE_VIS 0
+ #define HAVE_BIGENDIAN 0
+ #define HAVE_BEOSTHREADS 0
+@@ -94,16 +94,16 @@
+ #define HAVE_LLRINT 1
+ #define HAVE_LOCAL_ALIGNED_16 1
+ #define HAVE_LOCAL_ALIGNED_8 1
+-#define HAVE_LOG2 1
+-#define HAVE_LOG2F 1
++#define HAVE_LOG2 0
++#define HAVE_LOG2F 0
+ #define HAVE_LOONGSON 0
+ #define HAVE_LRINT 1
+ #define HAVE_LRINTF 1
+ #define HAVE_LZO1X_999_COMPRESS 0
+ #define HAVE_MACHINE_IOCTL_BT848_H 0
+ #define HAVE_MACHINE_IOCTL_METEOR_H 0
+-#define HAVE_MALLOC_H 1
+-#define HAVE_MEMALIGN 1
++#define HAVE_MALLOC_H 0
++#define HAVE_MEMALIGN 0
+ #define HAVE_MKSTEMP 1
+ #define HAVE_PLD 0
+ #define HAVE_POSIX_MEMALIGN 1
+diff --git a/third_party/ffmpeg/source/config/Chromium/linux/ia32/config.h b/third_party/ffmpeg/source/config/Chromium/linux/ia32/config.h
+index c11882d..1f77aab 100644
+--- third_party/ffmpeg/source/config/Chromium/linux/ia32/config.h
++++ third_party/ffmpeg/source/config/Chromium/linux/ia32/config.h
+@@ -45,7 +45,7 @@
+ #define HAVE_NEON 0
+ #define HAVE_PPC4XX 0
+ #define HAVE_SSE 1
+-#define HAVE_SSSE3 1
++#define HAVE_SSSE3 0
+ #define HAVE_VIS 0
+ #define HAVE_BIGENDIAN 0
+ #define HAVE_BEOSTHREADS 0
+@@ -94,16 +94,16 @@
+ #define HAVE_LLRINT 1
+ #define HAVE_LOCAL_ALIGNED_16 1
+ #define HAVE_LOCAL_ALIGNED_8 1
+-#define HAVE_LOG2 1
+-#define HAVE_LOG2F 1
++#define HAVE_LOG2 0
++#define HAVE_LOG2F 0
+ #define HAVE_LOONGSON 0
+ #define HAVE_LRINT 1
+ #define HAVE_LRINTF 1
+ #define HAVE_LZO1X_999_COMPRESS 0
+ #define HAVE_MACHINE_IOCTL_BT848_H 0
+ #define HAVE_MACHINE_IOCTL_METEOR_H 0
+-#define HAVE_MALLOC_H 1
+-#define HAVE_MEMALIGN 1
++#define HAVE_MALLOC_H 0
++#define HAVE_MEMALIGN 0
+ #define HAVE_MKSTEMP 1
+ #define HAVE_PLD 0
+ #define HAVE_POSIX_MEMALIGN 1
+diff --git a/third_party/ffmpeg/source/config/Chromium/linux/x64/config.h b/third_party/ffmpeg/source/config/Chromium/linux/x64/config.h
+index e834a9d..e4aef46 100644
+--- third_party/ffmpeg/source/config/Chromium/linux/x64/config.h
++++ third_party/ffmpeg/source/config/Chromium/linux/x64/config.h
+@@ -45,7 +45,7 @@
+ #define HAVE_NEON 0
+ #define HAVE_PPC4XX 0
+ #define HAVE_SSE 1
+-#define HAVE_SSSE3 1
++#define HAVE_SSSE3 0
+ #define HAVE_VIS 0
+ #define HAVE_BIGENDIAN 0
+ #define HAVE_BEOSTHREADS 0
+@@ -94,16 +94,16 @@
+ #define HAVE_LLRINT 1
+ #define HAVE_LOCAL_ALIGNED_16 1
+ #define HAVE_LOCAL_ALIGNED_8 1
+-#define HAVE_LOG2 1
+-#define HAVE_LOG2F 1
++#define HAVE_LOG2 0
++#define HAVE_LOG2F 0
+ #define HAVE_LOONGSON 0
+ #define HAVE_LRINT 1
+ #define HAVE_LRINTF 1
+ #define HAVE_LZO1X_999_COMPRESS 0
+ #define HAVE_MACHINE_IOCTL_BT848_H 0
+ #define HAVE_MACHINE_IOCTL_METEOR_H 0
+-#define HAVE_MALLOC_H 1
+-#define HAVE_MEMALIGN 1
++#define HAVE_MALLOC_H 0
++#define HAVE_MEMALIGN 0
+ #define HAVE_MKSTEMP 1
+ #define HAVE_PLD 0
+ #define HAVE_POSIX_MEMALIGN 1
+diff --git a/third_party/glew/src/glew.c b/third_party/glew/src/glew.c
+index d987695..ed2ac29 100644
+--- third_party/glew/src/glew.c
++++ third_party/glew/src/glew.c
+@@ -107,7 +107,7 @@ void* NSGLGetProcAddress (const GLubyte *name)
+ }
+ #endif /* __APPLE__ */
+ 
+-#if defined(__sgi) || defined (__sun) || defined(__linux__)
++#if defined(__sgi) || defined (__sun) || defined(__linux__) || defined(__FreeBSD__)
+ #include <dlfcn.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -143,7 +143,7 @@ void* dlGetProcAddress (const GLubyte* name)
+ #  if defined(__APPLE__)
+ #    define glewGetProcAddress(name) NSGLGetProcAddress(name)
+ #  else
+-#    if defined(__sgi) || defined(__sun) || defined(__linux__)
++#    if defined(__sgi) || defined(__sun) || defined(__linux__) || defined(__FreeBSD__)
+ #      define glewGetProcAddress(name) dlGetProcAddress(name)
+ #    else /* Used to use this for Linux, but no longer */
+ #      define glewGetProcAddress(name) (*glXGetProcAddressARB)(name)
+diff --git a/third_party/libevent/event-config.h b/third_party/libevent/event-config.h
+index 66a53de..d3b8486 100644
+--- third_party/libevent/event-config.h
++++ third_party/libevent/event-config.h
+@@ -9,6 +9,8 @@
+ #include "mac/event-config.h"
+ #elif defined(__linux__)
+ #include "linux/event-config.h"
++#elif defined(__FreeBSD__)
++#include "freebsd/event-config.h"
+ #else
+ #error generate event-config.h for your platform
+ #endif
+diff --git a/third_party/libevent/freebsd/event-config.h b/third_party/libevent/freebsd/event-config.h
+new file mode 100644
+index 0000000..1e0ae89
+--- /dev/null
++++ third_party/libevent/freebsd/event-config.h
+@@ -0,0 +1,262 @@
++/* event-config.h
++ * Generated by autoconf; post-processed by libevent.
++ * Do not edit this file.
++ * Do not rely on macros in this file existing in later versions.
++ */
++#ifndef _EVENT_CONFIG_H_
++#define _EVENT_CONFIG_H_
++/* config.h.  Generated from config.h.in by configure.  */
++/* config.h.in.  Generated from configure.in by autoheader.  */
++
++/* Define if clock_gettime is available in libc */
++#define _EVENT_DNS_USE_CPU_CLOCK_FOR_ID 1
++
++/* Define is no secure id variant is available */
++/* #undef _EVENT_DNS_USE_GETTIMEOFDAY_FOR_ID */
++
++/* Define to 1 if you have the `clock_gettime' function. */
++#define _EVENT_HAVE_CLOCK_GETTIME 1
++
++/* Define if /dev/poll is available */
++/* #undef _EVENT_HAVE_DEVPOLL */
++
++/* Define to 1 if you have the <dlfcn.h> header file. */
++#define _EVENT_HAVE_DLFCN_H 1
++
++/* Define if your system supports the epoll system calls */
++/* #undef _EVENT_HAVE_EPOLL */
++
++/* Define to 1 if you have the `epoll_ctl' function. */
++/* #undef _EVENT_HAVE_EPOLL_CTL */
++
++/* Define if your system supports event ports */
++/* #undef _EVENT_HAVE_EVENT_PORTS */
++
++/* Define to 1 if you have the `fcntl' function. */
++#define _EVENT_HAVE_FCNTL 1
++
++/* Define to 1 if you have the <fcntl.h> header file. */
++#define _EVENT_HAVE_FCNTL_H 1
++
++/* Define to 1 if you have the `getaddrinfo' function. */
++#define _EVENT_HAVE_GETADDRINFO 1
++
++/* Define to 1 if you have the `getnameinfo' function. */
++#define _EVENT_HAVE_GETNAMEINFO 1
++
++/* Define to 1 if you have the `gettimeofday' function. */
++#define _EVENT_HAVE_GETTIMEOFDAY 1
++
++/* Define to 1 if you have the `inet_ntop' function. */
++#define _EVENT_HAVE_INET_NTOP 1
++
++/* Define to 1 if you have the <inttypes.h> header file. */
++#define _EVENT_HAVE_INTTYPES_H 1
++
++/* Define to 1 if you have the `kqueue' function. */
++#define _EVENT_HAVE_KQUEUE 1
++
++/* Define to 1 if you have the `nsl' library (-lnsl). */
++/* #undef _EVENT_HAVE_LIBNSL */
++
++/* Define to 1 if you have the `resolv' library (-lresolv). */
++/* #undef _EVENT_HAVE_LIBRESOLV */
++
++/* Define to 1 if you have the `rt' library (-lrt). */
++#define _EVENT_HAVE_LIBRT 1
++
++/* Define to 1 if you have the `socket' library (-lsocket). */
++/* #undef _EVENT_HAVE_LIBSOCKET */
++
++/* Define to 1 if you have the <memory.h> header file. */
++#define _EVENT_HAVE_MEMORY_H 1
++
++/* Define to 1 if you have the <netinet/in6.h> header file. */
++/* #undef _EVENT_HAVE_NETINET_IN6_H */
++
++/* Define to 1 if you have the `poll' function. */
++#define _EVENT_HAVE_POLL 1
++
++/* Define to 1 if you have the <poll.h> header file. */
++#define _EVENT_HAVE_POLL_H 1
++
++/* Define to 1 if you have the `port_create' function. */
++/* #undef _EVENT_HAVE_PORT_CREATE */
++
++/* Define to 1 if you have the <port.h> header file. */
++/* #undef _EVENT_HAVE_PORT_H */
++
++/* Define to 1 if you have the `select' function. */
++#define _EVENT_HAVE_SELECT 1
++
++/* Define if F_SETFD is defined in <fcntl.h> */
++#define _EVENT_HAVE_SETFD 1
++
++/* Define to 1 if you have the `sigaction' function. */
++#define _EVENT_HAVE_SIGACTION 1
++
++/* Define to 1 if you have the `signal' function. */
++#define _EVENT_HAVE_SIGNAL 1
++
++/* Define to 1 if you have the <signal.h> header file. */
++#define _EVENT_HAVE_SIGNAL_H 1
++
++/* Define to 1 if you have the <stdarg.h> header file. */
++#define _EVENT_HAVE_STDARG_H 1
++
++/* Define to 1 if you have the <stdint.h> header file. */
++#define _EVENT_HAVE_STDINT_H 1
++
++/* Define to 1 if you have the <stdlib.h> header file. */
++#define _EVENT_HAVE_STDLIB_H 1
++
++/* Define to 1 if you have the <strings.h> header file. */
++#define _EVENT_HAVE_STRINGS_H 1
++
++/* Define to 1 if you have the <string.h> header file. */
++#define _EVENT_HAVE_STRING_H 1
++
++/* Define to 1 if you have the `strlcpy' function. */
++#define _EVENT_HAVE_STRLCPY 1
++
++/* Define to 1 if you have the `strsep' function. */
++#define _EVENT_HAVE_STRSEP 1
++
++/* Define to 1 if you have the `strtok_r' function. */
++#define _EVENT_HAVE_STRTOK_R 1
++
++/* Define to 1 if you have the `strtoll' function. */
++#define _EVENT_HAVE_STRTOLL 1
++
++/* Define to 1 if the system has the type `struct in6_addr'. */
++#define _EVENT_HAVE_STRUCT_IN6_ADDR 1
++
++/* Define to 1 if you have the <sys/devpoll.h> header file. */
++/* #undef _EVENT_HAVE_SYS_DEVPOLL_H */
++
++/* Define to 1 if you have the <sys/epoll.h> header file. */
++/* #undef _EVENT_HAVE_SYS_EPOLL_H */
++
++/* Define to 1 if you have the <sys/event.h> header file. */
++#define _EVENT_HAVE_SYS_EVENT_H 1
++
++/* Define to 1 if you have the <sys/ioctl.h> header file. */
++#define _EVENT_HAVE_SYS_IOCTL_H 1
++
++/* Define to 1 if you have the <sys/param.h> header file. */
++#define _EVENT_HAVE_SYS_PARAM_H 1
++
++/* Define to 1 if you have the <sys/queue.h> header file. */
++#define _EVENT_HAVE_SYS_QUEUE_H 1
++
++/* Define to 1 if you have the <sys/select.h> header file. */
++#define _EVENT_HAVE_SYS_SELECT_H 1
++
++/* Define to 1 if you have the <sys/socket.h> header file. */
++#define _EVENT_HAVE_SYS_SOCKET_H 1
++
++/* Define to 1 if you have the <sys/stat.h> header file. */
++#define _EVENT_HAVE_SYS_STAT_H 1
++
++/* Define to 1 if you have the <sys/time.h> header file. */
++#define _EVENT_HAVE_SYS_TIME_H 1
++
++/* Define to 1 if you have the <sys/types.h> header file. */
++#define _EVENT_HAVE_SYS_TYPES_H 1
++
++/* Define if TAILQ_FOREACH is defined in <sys/queue.h> */
++#define _EVENT_HAVE_TAILQFOREACH 1
++
++/* Define if timeradd is defined in <sys/time.h> */
++#define _EVENT_HAVE_TIMERADD 1
++
++/* Define if timerclear is defined in <sys/time.h> */
++#define _EVENT_HAVE_TIMERCLEAR 1
++
++/* Define if timercmp is defined in <sys/time.h> */
++#define _EVENT_HAVE_TIMERCMP 1
++
++/* Define if timerisset is defined in <sys/time.h> */
++#define _EVENT_HAVE_TIMERISSET 1
++
++/* Define to 1 if the system has the type `uint16_t'. */
++#define _EVENT_HAVE_UINT16_T 1
++
++/* Define to 1 if the system has the type `uint32_t'. */
++#define _EVENT_HAVE_UINT32_T 1
++
++/* Define to 1 if the system has the type `uint64_t'. */
++#define _EVENT_HAVE_UINT64_T 1
++
++/* Define to 1 if the system has the type `uint8_t'. */
++#define _EVENT_HAVE_UINT8_T 1
++
++/* Define to 1 if you have the <unistd.h> header file. */
++#define _EVENT_HAVE_UNISTD_H 1
++
++/* Define to 1 if you have the `vasprintf' function. */
++#define _EVENT_HAVE_VASPRINTF 1
++
++/* Define if kqueue works correctly with pipes */
++#define _EVENT_HAVE_WORKING_KQUEUE 1
++
++/* Name of package */
++#define _EVENT_PACKAGE "libevent"
++
++/* Define to the address where bug reports for this package should be sent. */
++#define _EVENT_PACKAGE_BUGREPORT ""
++
++/* Define to the full name of this package. */
++#define _EVENT_PACKAGE_NAME ""
++
++/* Define to the full name and version of this package. */
++#define _EVENT_PACKAGE_STRING ""
++
++/* Define to the one symbol short name of this package. */
++#define _EVENT_PACKAGE_TARNAME ""
++
++/* Define to the version of this package. */
++#define _EVENT_PACKAGE_VERSION ""
++
++/* The size of `int', as computed by sizeof. */
++#define _EVENT_SIZEOF_INT 4
++
++/* The size of `long', as computed by sizeof. */
++#define _EVENT_SIZEOF_LONG 8
++
++/* The size of `long long', as computed by sizeof. */
++#define _EVENT_SIZEOF_LONG_LONG 8
++
++/* The size of `short', as computed by sizeof. */
++#define _EVENT_SIZEOF_SHORT 2
++
++/* Define to 1 if you have the ANSI C header files. */
++#define _EVENT_STDC_HEADERS 1
++
++/* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
++#define _EVENT_TIME_WITH_SYS_TIME 1
++
++/* Version number of package */
++#define _EVENT_VERSION "1.4.13-stable"
++
++/* Define to appropriate substitue if compiler doesnt have __func__ */
++/* #undef _EVENT___func__ */
++
++/* Define to empty if `const' does not conform to ANSI C. */
++/* #undef _EVENT_const */
++
++/* Define to `__inline__' or `__inline' if that's what the C compiler
++   calls it, or to nothing if 'inline' is not supported under any name.  */
++#ifndef _EVENT___cplusplus
++/* #undef _EVENT_inline */
++#endif
++
++/* Define to `int' if <sys/types.h> does not define. */
++/* #undef _EVENT_pid_t */
++
++/* Define to `unsigned int' if <sys/types.h> does not define. */
++/* #undef _EVENT_size_t */
++
++/* Define to unsigned int if you dont have it */
++/* #undef _EVENT_socklen_t */
++#endif
+diff --git a/third_party/libjingle/files/talk/base/httpcommon.cc b/third_party/libjingle/files/talk/base/httpcommon.cc
+index 0358121..1eec46b 100644
+--- third_party/libjingle/files/talk/base/httpcommon.cc
++++ third_party/libjingle/files/talk/base/httpcommon.cc
+@@ -369,7 +369,7 @@ bool HttpDateToSeconds(const std::string& date, unsigned long* seconds) {
+     }
+     gmt = non_gmt + kTimeZoneOffsets[zindex] * 60 * 60;
+   }
+-#ifdef OSX
++#if defined(OSX) || defined(BSD)
+   tm *tm_for_timezone = localtime((time_t *)&gmt);
+   *seconds = gmt + tm_for_timezone->tm_gmtoff;
+ #else
+diff --git a/third_party/libjingle/libjingle.gyp b/third_party/libjingle/libjingle.gyp
+index f501c6c..8380c9e 100644
+--- third_party/libjingle/libjingle.gyp
++++ third_party/libjingle/libjingle.gyp
+@@ -46,6 +46,11 @@
+           'POSIX',
+         ],
+       }],
++      ['OS=="freebsd"', {
++        'defines': [
++          'BSD',
++        ],
++      }],
+     ],
+   },
+   'targets': [
+diff --git a/third_party/libjpeg/libjpeg.gyp b/third_party/libjpeg/libjpeg.gyp
+index 1b0798b..020c5f4 100644
+--- third_party/libjpeg/libjpeg.gyp
++++ third_party/libjpeg/libjpeg.gyp
+@@ -5,10 +5,10 @@
+ {
+   'variables': {
+     'conditions': [
+-      [ 'OS=="linux"', {
++      [ 'OS=="linux" or OS=="freebsd"', {
+         # Link to system .so since we already use it due to GTK.
+         'use_system_libjpeg%': 1,
+-      }, {  # OS!="linux"
++      }, {  # OS!="linux" and OS!="freebsd"
+         'use_system_libjpeg%': 0,
+       }],
+     ],
+diff --git a/third_party/libpng/libpng.gyp b/third_party/libpng/libpng.gyp
+index d29d8c1..09a9805 100644
+--- third_party/libpng/libpng.gyp
++++ third_party/libpng/libpng.gyp
+@@ -5,10 +5,10 @@
+ {
+   'variables': {
+     'conditions': [
+-      [ 'OS=="linux"', {
++      [ 'OS=="linux" or OS=="freebsd"', {
+         # Link to system .so since we already use it due to GTK.
+         'use_system_libpng%': 1,
+-      }, {  # OS!="linux"
++      }, {  # OS!="linux" and OS!="freebsd"
+         'use_system_libpng%': 0,
+       }],
+     ],
+diff --git a/third_party/libxslt/libxslt.gyp b/third_party/libxslt/libxslt.gyp
+index 7dda868..7a749d9 100644
+--- third_party/libxslt/libxslt.gyp
++++ third_party/libxslt/libxslt.gyp
+@@ -17,7 +17,7 @@
+     {
+       'target_name': 'libxslt',
+       'conditions': [
+-        ['OS=="linux" and use_system_libxslt', {
++        ['(OS=="linux" or OS=="freebsd") and use_system_libxslt', {
+           'type': 'settings',
+           'direct_dependent_settings': {
+             'cflags': [
+diff --git a/third_party/npapi/npapi.gyp b/third_party/npapi/npapi.gyp
+index 3e761de..1c46f46 100644
+--- third_party/npapi/npapi.gyp
++++ third_party/npapi/npapi.gyp
+@@ -24,7 +24,7 @@
+         'bindings/npruntime.h',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'sources': [
+             'bindings/npapi_x11.h',
+           ],
+diff --git a/third_party/sqlite/sqlite.gyp b/third_party/sqlite/sqlite.gyp
+index d0cc7ec..4fa10b3 100644
+--- third_party/sqlite/sqlite.gyp
++++ third_party/sqlite/sqlite.gyp
+@@ -29,7 +29,7 @@
+             ],
+           },
+         }],
+-        ['OS=="linux" and use_system_sqlite', {
++        ['(OS=="linux" or OS=="freebsd") and use_system_sqlite', {
+           'type': 'settings',
+           'direct_dependent_settings': {
+             'cflags': [
+@@ -226,7 +226,7 @@
+     },
+   ],
+   'conditions': [
+-    ['OS=="linux" and not use_system_sqlite', {
++    ['(OS=="linux" or OS=="freebsd") and not use_system_sqlite', {
+       'targets': [
+         {
+           'target_name': 'sqlite_shell',
+diff --git a/third_party/tcmalloc/chromium/src/config.h b/third_party/tcmalloc/chromium/src/config.h
+index 812c67c..047b878 100644
+--- third_party/tcmalloc/chromium/src/config.h
++++ third_party/tcmalloc/chromium/src/config.h
+@@ -15,6 +15,8 @@
+ #include "third_party/tcmalloc/chromium/src/config_win.h"
+ #elif defined(OS_LINUX)
+ #include "third_party/tcmalloc/chromium/src/config_linux.h"
++#elif defined(OS_FREEBSD)
++#include "third_party/tcmalloc/chromium/src/config_freebsd.h"
+ #endif
+ 
+ #endif // CONFIG_H_
+diff --git a/third_party/tcmalloc/chromium/src/config_freebsd.h b/third_party/tcmalloc/chromium/src/config_freebsd.h
+new file mode 100644
+index 0000000..d286c35
+--- /dev/null
++++ third_party/tcmalloc/chromium/src/config_freebsd.h
+@@ -0,0 +1,234 @@
++/* src/config.h.  Generated from config.h.in by configure.  */
++/* src/config.h.in.  Generated from configure.ac by autoheader.  */
++
++/* Define to 1 if compiler supports __builtin_stack_pointer */
++/* #undef HAVE_BUILTIN_STACK_POINTER */
++
++/* Define to 1 if you have the <conflict-signal.h> header file. */
++/* #undef HAVE_CONFLICT_SIGNAL_H */
++
++/* Define to 1 if you have the declaration of `cfree', and to 0 if you don't.
++   */
++#define HAVE_DECL_CFREE 0
++
++/* Define to 1 if you have the declaration of `memalign', and to 0 if you
++   don't. */
++#define HAVE_DECL_MEMALIGN 0
++
++/* Define to 1 if you have the declaration of `posix_memalign', and to 0 if
++   you don't. */
++#define HAVE_DECL_POSIX_MEMALIGN 0
++
++/* Define to 1 if you have the declaration of `pvalloc', and to 0 if you
++   don't. */
++#define HAVE_DECL_PVALLOC 0
++
++/* Define to 1 if you have the declaration of `uname', and to 0 if you don't.
++   */
++#define HAVE_DECL_UNAME 1
++
++/* Define to 1 if you have the declaration of `valloc', and to 0 if you don't.
++   */
++#define HAVE_DECL_VALLOC 0
++
++/* Define to 1 if you have the <dlfcn.h> header file. */
++#define HAVE_DLFCN_H 1
++
++/* Define to 1 if the system has the type `Elf32_Versym'. */
++#define HAVE_ELF32_VERSYM 1
++
++/* Define to 1 if you have the <execinfo.h> header file. */
++#define HAVE_EXECINFO_H 1
++
++/* Define to 1 if you have the <fcntl.h> header file. */
++#define HAVE_FCNTL_H 1
++
++/* Define to 1 if you have the <features.h> header file. */
++/* #undef HAVE_FEATURES_H */
++
++/* Define to 1 if you have the `geteuid' function. */
++#define HAVE_GETEUID 1
++
++/* Define to 1 if you have the `getpagesize' function. */
++#define HAVE_GETPAGESIZE 1
++
++/* Define to 1 if you have the <glob.h> header file. */
++#define HAVE_GLOB_H 1
++
++/* Define to 1 if you have the <grp.h> header file. */
++#define HAVE_GRP_H 1
++
++/* Define to 1 if you have the <inttypes.h> header file. */
++#define HAVE_INTTYPES_H 1
++
++/* Define to 1 if you have the <libunwind.h> header file. */
++/* #undef HAVE_LIBUNWIND_H */
++
++/* Define to 1 if you have the <linux/ptrace.h> header file. */
++/* #undef HAVE_LINUX_PTRACE_H */
++
++/* Define to 1 if you have the <malloc.h> header file. */
++/* #undef HAVE_MALLOC_H */
++
++/* Define to 1 if you have the <memory.h> header file. */
++#define HAVE_MEMORY_H 1
++
++/* Define to 1 if you have a working `mmap' system call. */
++#define HAVE_MMAP 1
++
++/* define if the compiler implements namespaces */
++#define HAVE_NAMESPACES 1
++
++/* Define to 1 if you have the <poll.h> header file. */
++#define HAVE_POLL_H 1
++
++/* define if libc has program_invocation_name */
++/* #undef HAVE_PROGRAM_INVOCATION_NAME */
++
++/* Define if you have POSIX threads libraries and header files. */
++#define HAVE_PTHREAD 1
++
++/* Define to 1 if you have the <pwd.h> header file. */
++#define HAVE_PWD_H 1
++
++/* Define to 1 if you have the `sbrk' function. */
++#define HAVE_SBRK 1
++
++/* Define to 1 if you have the <sched.h> header file. */
++#define HAVE_SCHED_H 1
++
++/* Define to 1 if you have the <stdint.h> header file. */
++#define HAVE_STDINT_H 1
++
++/* Define to 1 if you have the <stdlib.h> header file. */
++#define HAVE_STDLIB_H 1
++
++/* Define to 1 if you have the <strings.h> header file. */
++#define HAVE_STRINGS_H 1
++
++/* Define to 1 if you have the <string.h> header file. */
++#define HAVE_STRING_H 1
++
++/* Define to 1 if the system has the type `struct mallinfo'. */
++/* #undef HAVE_STRUCT_MALLINFO */
++
++/* Define to 1 if you have the <sys/prctl.h> header file. */
++/* #undef HAVE_SYS_PRCTL_H */
++
++/* Define to 1 if you have the <sys/resource.h> header file. */
++#define HAVE_SYS_RESOURCE_H 1
++
++/* Define to 1 if you have the <sys/socket.h> header file. */
++#define HAVE_SYS_SOCKET_H 1
++
++/* Define to 1 if you have the <sys/stat.h> header file. */
++#define HAVE_SYS_STAT_H 1
++
++/* Define to 1 if you have the <sys/syscall.h> header file. */
++#define HAVE_SYS_SYSCALL_H 1
++
++/* Define to 1 if you have the <sys/types.h> header file. */
++#define HAVE_SYS_TYPES_H 1
++
++/* Define to 1 if you have the <sys/wait.h> header file. */
++#define HAVE_SYS_WAIT_H 1
++
++/* Define to 1 if compiler supports __thread */
++#define HAVE_TLS 1
++
++/* Define to 1 if you have the <ucontext.h> header file. */
++#define HAVE_UCONTEXT_H 1
++
++/* Define to 1 if you have the <unistd.h> header file. */
++#define HAVE_UNISTD_H 1
++
++/* Define to 1 if you have the <unwind.h> header file. */
++/* #undef HAVE_UNWIND_H */
++
++/* define if your compiler has __attribute__ */
++#define HAVE___ATTRIBUTE__ 1
++
++/* Define to 1 if the system has the type `__int64'. */
++/* #undef HAVE___INT64 */
++
++/* prefix where we look for installed files */
++#define INSTALL_PREFIX "/usr/local"
++
++/* Define to 1 if int32_t is equivalent to intptr_t */
++/* #undef INT32_EQUALS_INTPTR */
++#if defined(__i386__)
++#define INT32_EQUALS_INTPTR 1
++#endif
++
++/* Define to 1 if your C compiler doesn't accept -c and -o together. */
++/* #undef NO_MINUS_C_MINUS_O */
++
++/* Name of package */
++#define PACKAGE "google-perftools"
++
++/* Define to the address where bug reports for this package should be sent. */
++#define PACKAGE_BUGREPORT "opensource@google.com"
++
++/* Define to the full name of this package. */
++#define PACKAGE_NAME "google-perftools"
++
++/* Define to the full name and version of this package. */
++#define PACKAGE_STRING "google-perftools 1.3"
++
++/* Define to the one symbol short name of this package. */
++#define PACKAGE_TARNAME "google-perftools"
++
++/* Define to the version of this package. */
++#define PACKAGE_VERSION "1.3"
++
++/* How to access the PC from a struct ucontext */
++#if defined(__i386__)
++#define PC_FROM_UCONTEXT uc_mcontext.mc_eip
++#else
++#define PC_FROM_UCONTEXT uc_mcontext.mc_rip
++#endif
++
++/* Always the empty-string on non-windows systems. On windows, should be
++   "__declspec(dllexport)". This way, when we compile the dll, we export our
++   functions/classes. It's safe to define this here because config.h is only
++   used internally, to compile the DLL, and every DLL source file #includes
++   "config.h" before anything else. */
++#define PERFTOOLS_DLL_DECL
++
++/* printf format code for printing a size_t and ssize_t */
++#define PRIdS "zd"
++
++/* printf format code for printing a size_t and ssize_t */
++#define PRIuS "zu"
++
++/* printf format code for printing a size_t and ssize_t */
++#define PRIxS "zx"
++
++/* Define to necessary symbol if this constant uses a non-standard name on
++   your system. */
++/* #undef PTHREAD_CREATE_JOINABLE */
++
++/* Define to 1 if you have the ANSI C header files. */
++#define STDC_HEADERS 1
++
++/* the namespace where STL code like vector<> is defined */
++#define STL_NAMESPACE std
++
++/* Version number of package */
++#define VERSION "1.3"
++
++/* C99 says: define this to get the PRI... macros from stdint.h */
++#ifndef __STDC_FORMAT_MACROS
++# define __STDC_FORMAT_MACROS 1
++#endif
++
++/* Define to `__inline__' or `__inline' if that's what the C compiler
++   calls it, or to nothing if 'inline' is not supported under any name.  */
++#ifndef __cplusplus
++/* #undef inline */
++#endif
++
++
++#ifdef __MINGW32__
++#include "windows/mingw.h"
++#endif
+diff --git a/third_party/tcmalloc/tcmalloc.gyp b/third_party/tcmalloc/tcmalloc.gyp
+index 8c86b3d..8d4849d 100644
+--- third_party/tcmalloc/tcmalloc.gyp
++++ third_party/tcmalloc/tcmalloc.gyp
+@@ -205,7 +205,7 @@
+             'tcmalloc/src/profiler.cc',
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'sources!': [
+             'page_heap.cc',
+             'port.cc',
+diff --git a/third_party/zlib/zlib.gyp b/third_party/zlib/zlib.gyp
+index 36613a7..6cf0efa 100644
+--- third_party/zlib/zlib.gyp
++++ third_party/zlib/zlib.gyp
+@@ -5,10 +5,10 @@
+ {
+   'variables': {
+     'conditions': [
+-      [ 'OS=="linux"', {
++      [ 'OS=="linux" or OS=="freebsd"', {
+         # Link to system .so since we already use it due to GTK.
+         'use_system_zlib%': 1,
+-      }, {  # OS!="linux"
++      }, {  # OS!="linux" and OS!="freebsd"
+         'use_system_zlib%': 0,
+       }],
+     ],
+diff --git a/webkit/glue/webkit_resources.grd b/webkit/glue/webkit_resources.grd
+index 2d2df0f..4b3ff7a 100644
+--- webkit/glue/webkit_resources.grd
++++ webkit/glue/webkit_resources.grd
+@@ -27,7 +27,7 @@
+       <include name="IDR_MEDIA_SLIDER_THUMB" file="resources\media_slider_thumb.png" type="BINDATA" />
+       <include name="IDR_MEDIA_VOLUME_SLIDER_THUMB" file="resources\media_volume_slider_thumb.png" type="BINDATA" />
+ 
+-      <if expr="os == 'linux2' or os == 'freebsd7' or os == 'openbsd4' or os == 'sunos5'">
++      <if expr="os == 'linux2' or os.find('bsd') != -1 or os == 'sunos5'">
+         <include name="IDR_LINUX_CHECKBOX_OFF" file="resources\linux-checkbox-off.png" type="BINDATA" />
+         <include name="IDR_LINUX_CHECKBOX_ON" file="resources\linux-checkbox-on.png" type="BINDATA" />
+         <include name="IDR_LINUX_CHECKBOX_DISABLED_OFF" file="resources\linux-checkbox-disabled-off.png" type="BINDATA" />
+diff --git a/webkit/glue/webkitclient_impl.cc b/webkit/glue/webkitclient_impl.cc
+index 2ac34f8..671ac8a 100644
+--- webkit/glue/webkitclient_impl.cc
++++ webkit/glue/webkitclient_impl.cc
+@@ -40,7 +40,7 @@
+ #include "webkit/glue/websocketstreamhandle_impl.h"
+ #include "webkit/glue/weburlloader_impl.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include "v8/include/v8.h"
+ #endif
+ 
+diff --git a/webkit/tools/test_shell/test_shell.gypi b/webkit/tools/test_shell/test_shell.gypi
+index 84c085f..9c94deb 100644
+--- webkit/tools/test_shell/test_shell.gypi
++++ webkit/tools/test_shell/test_shell.gypi
+@@ -504,6 +504,7 @@
+       ],
+       'include_dirs': [
+         '../../..',
++        '/usr/local/include',
+       ],
+       'dependencies': [
+         '<(DEPTH)/third_party/npapi/npapi.gyp:npapi',
