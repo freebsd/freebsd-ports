@@ -15,8 +15,6 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Java access to native shared libraries
 
-BROKEN=		does not build
-
 USE_ANT=	yes
 USE_GMAKE=	yes
 USE_JAVA=	1.4+
@@ -25,7 +23,7 @@ USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DOCSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-doc
 
-PLIST_FILES=	%%JAVAJARDIR%%/jna-freebsd-i386.jar \
+PLIST_FILES=	%%JAVAJARDIR%%/jna-freebsd-${ARCH}.jar \
 		%%JAVAJARDIR%%/jna.jar
 
 .if !defined(NOPORTDOCS)
@@ -34,10 +32,11 @@ PORTDOCS=	javadoc platform
 
 post-patch:
 	@${CHMOD} 755 ${WRKSRC}/native/libffi/configure
+	@${CHMOD} 755 ${WRKSRC}/native/libffi/install-sh
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/build/freebsd-i386.jar ${JAVAJARDIR}/jna-freebsd-i386.jar
-	@${INSTALL_DATA} ${WRKSRC}/build/jna.jar ${JAVAJARDIR}/jna.jar
+	@${INSTALL_DATA} ${WRKSRC}/build*/freebsd-${ARCH}.jar ${JAVAJARDIR}/jna-freebsd-${ARCH}.jar
+	@${INSTALL_DATA} ${WRKSRC}/build*/jna.jar ${JAVAJARDIR}/jna.jar
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@cd ${DOCSRC} && ${COPYTREE_SHARE} javadoc ${DOCSDIR}
