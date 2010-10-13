@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	quark
-PORTVERSION=	3.23
+PORTVERSION=	3.24
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://hsgg.github.com/quark/
 
@@ -23,6 +23,8 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	AUTHORS COPYING INSTALL README
 GCONF_SCHEMAS=	quark.schemas strange-quark.schemas
