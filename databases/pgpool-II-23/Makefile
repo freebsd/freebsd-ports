@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_PGSQL=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS=	pgpool-3.* pgpool-II-2.2.*
+CONFLICTS=	pgpool-3.* pgpool-II-*
 USE_RC_SUBR=	pgpool
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README README.euc_jp
