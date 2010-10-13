@@ -5,6 +5,7 @@ lib/seed7/bigfile.s7i
 lib/seed7/bigint.s7i
 lib/seed7/bigrat.s7i
 lib/seed7/binary.s7i
+lib/seed7/bitmapfont.s7i
 lib/seed7/cards.s7i
 lib/seed7/cgi.s7i
 lib/seed7/charsets.s7i
@@ -17,6 +18,7 @@ lib/seed7/echo.s7i
 lib/seed7/encoding.s7i
 lib/seed7/field.s7i
 lib/seed7/float.s7i
+lib/seed7/font.s7i
 lib/seed7/getf.s7i
 lib/seed7/gethttp.s7i
 lib/seed7/graph.s7i
@@ -34,6 +36,7 @@ lib/seed7/more.s7i
 lib/seed7/multiscr.s7i
 lib/seed7/pic16.s7i
 lib/seed7/pic32.s7i
+lib/seed7/pixmapfont.s7i
 lib/seed7/progs.s7i
 lib/seed7/rational.s7i
 lib/seed7/reverse.s7i
@@ -48,6 +51,12 @@ lib/seed7/shell.s7i
 lib/seed7/socket.s7i
 lib/seed7/sokoban1.s7i
 lib/seed7/stars.s7i
+lib/seed7/stdfont10.s7i
+lib/seed7/stdfont12.s7i
+lib/seed7/stdfont14.s7i
+lib/seed7/stdfont16.s7i
+lib/seed7/stdfont18.s7i
+lib/seed7/stdfont24.s7i
 lib/seed7/strifile.s7i
 lib/seed7/stritext.s7i
 lib/seed7/syntax.s7i
@@ -77,7 +86,6 @@ lib/seed7/zip.s7i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/COPYING
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/LGPL
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/addup.sd7
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dragon.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bas7.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bifurk.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blue.dna
@@ -109,6 +117,7 @@ lib/seed7/zip.s7i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dirx.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dna_base.s7i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnafight.sd7
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dragon.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eliza.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/err.sd7
@@ -157,6 +166,7 @@ lib/seed7/zip.s7i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tan.dna
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tar7.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tch.sd7
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/testfont.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tet.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tetg.sd7
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/toutf8.sd7
