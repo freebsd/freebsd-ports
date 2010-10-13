@@ -7,7 +7,7 @@
 
 PORTNAME=	smbldap-tools
 PORTVERSION=	0.9.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://download.gna.org/smbldap-tools/packages/ \
 		http://download.gna.org/smbldap-tools/packages/old-Idealx-release/
@@ -33,6 +33,20 @@ PORTEXAMPLES=	*
 OPTIONS=	MIGRATION_SCRIPTS	"Install migration scripts"	off \
 		PDF_DOC			"Install PDF documentation"	off
 
+SMBLDAP_TOOLS=	smbldap-groupadd \
+		smbldap-groupdel \
+		smbldap-grouplist \
+		smbldap-groupmod \
+		smbldap-groupshow \
+		smbldap-useradd \
+		smbldap-userdel \
+		smbldap-userinfo \
+		smbldap-userlist \
+		smbldap-usermod \
+		smbldap-usershow \
+		smbldap-passwd \
+		smbldap-populate
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MIGRATION_SCRIPTS)
@@ -48,10 +62,7 @@ post-patch:
 			${WRKSRC}/configure.pl \
 			${WRKSRC}/doc/smb.conf \
 			${WRKSRC}/smbldap_tools.pm
-.for i in smbldap_tools.pm smbldap-groupadd smbldap-groupdel smbldap-groupmod \
-smbldap-groupshow smbldap-useradd smbldap-userdel smbldap-userinfo \
-smbldap-userlist smbldap-usermod smbldap-usershow smbldap-passwd \
-smbldap-populate \
+.for i in smbldap_tools.pm ${SMBLDAP_TOOLS} \
 doc/migration_scripts/smbldap-migrate-pwdump-groups \
 doc/migration_scripts/smbldap-migrate-unix-accounts \
 doc/migration_scripts/smbldap-migrate-unix-groups \
@@ -68,10 +79,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/etc/smbldap-tools/$i.sample
 	@[ -f ${PREFIX}/etc/smbldap-tools/$i ] || ${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/etc/smbldap-tools/$i
 .endfor
-.for i in smbldap-groupadd smbldap-groupdel smbldap-groupmod \
-smbldap-groupshow smbldap-useradd smbldap-userdel smbldap-userinfo \
-smbldap-userlist smbldap-usermod smbldap-usershow smbldap-passwd \
-smbldap-populate
+.for i in ${SMBLDAP_TOOLS}
 	${INSTALL_SCRIPT} ${WRKSRC}/$i ${PREFIX}/sbin
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/smbldap_tools.pm ${SITE_PERL}/

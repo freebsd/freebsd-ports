@@ -1,5 +1,6 @@
 sbin/smbldap-groupadd
 sbin/smbldap-groupdel
+sbin/smbldap-grouplist
 sbin/smbldap-groupmod
 sbin/smbldap-groupshow
 %%MIGRATION_SCRIPTS%%sbin/smbldap-migrate-pwdump-groups
