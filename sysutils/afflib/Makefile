@@ -7,17 +7,19 @@
 #
 
 PORTNAME=	afflib
-PORTVERSION=	3.3.7
-PORTREVISION=	2
+PORTVERSION=	3.6.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.afflib.org/downloads/
+MASTER_SITES=	http://afflib.org/downloads/ \
+		http://www.c-s.li/ports/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	The Advanced Forensics Format library and utilities
 
 LIB_DEPENDS=	fuse:${PORTSDIR}/sysutils/fusefs-libs \
  		expat:${PORTSDIR}/textproc/expat2 \
 		curl:${PORTSDIR}/ftp/curl
+
+LICENSE=	BSD
 
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
@@ -30,8 +32,9 @@ CONFIGURE_ARGS=	--enable-s3=yes --libdir=${PREFIX}
 CONFIGURE_ENV=	CPPFLAGS='-DFUSE_USE_VERSION=26' \
 		LDFLAGS='${PTHREAD_LIBS}'
 CFLAGS+=	${PTHREAD_LIBS}
+MAKE_JOBS_SAFE=	yes
 
-MAN1=		afcat.1
+MAN1=		affcat.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|2.61|2.67|g' ${WRKSRC}/aclocal.m4
