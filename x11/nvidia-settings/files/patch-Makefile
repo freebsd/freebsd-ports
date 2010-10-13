@@ -1,39 +1,19 @@
---- Makefile.orig	Wed Aug  2 13:29:56 2006
-+++ Makefile	Mon Aug 28 16:15:57 2006
-@@ -84,7 +84,7 @@
+--- Makefile.orig
++++ Makefile
+@@ -149,11 +149,14 @@ install: NVIDIA_SETTINGS_install MANPAGE
  
- # default prefix
- ifdef ROOT
--  prefix = $(ROOT)/usr
-+  prefix = $(ROOT)
- else
-   prefix = /usr/local
- endif
-@@ -102,16 +102,14 @@
- else
- ECHO=echo
- define INSTALL_RULE
--	$(INSTALL) -m 755 $(NVIDIA_SETTINGS) $(bindir)/$(NVIDIA_SETTINGS)
--	mkdir -p $(mandir)
--	$(INSTALL) -m 644 doc/$(MANPAGE) $(mandir)
--	gzip -9f $(mandir)/$(MANPAGE)
-+	$(BSD_INSTALL_PROGRAM) $(NVIDIA_SETTINGS) $(bindir)/$(NVIDIA_SETTINGS)
-+	$(BSD_INSTALL_MAN) doc/$(MANPAGE) $(mandir)
- endef
- endif
+ NVIDIA_SETTINGS_install: $(NVIDIA_SETTINGS)
+ 	$(MKDIR) $(bindir)
+-	$(INSTALL) $(INSTALL_BIN_ARGS) $< $(bindir)/$(notdir $<)
++	$(INSTALL_PROGRAM) $< $(bindir)/$(notdir $<)
  
- exec_prefix = $(prefix)
- bindir = $(exec_prefix)/bin
--mandir = $(exec_prefix)/share/man/man1
-+mandir = $(MANPREFIX)/man/man1
+ MANPAGE_install: $(MANPAGE)
+ 	$(MKDIR) $(mandir)
+-	$(INSTALL) $(INSTALL_BIN_ARGS) $< $(mandir)/$(notdir $<)
++	$(INSTALL_MAN) $< $(mandir)/$(notdir $<)
++
++$(XNVCTRL_ARCHIVE):
++	$(MAKE) -C $(XNVCTRL_DIR)
  
- X11R6_CFLAGS = -I $(X11R6_INC_DIR)
- 
-@@ -200,7 +198,6 @@
- all: $(NVIDIA_SETTINGS) doc/$(MANPAGE)
- 
- install: all
--	$(STRIP) $(NVIDIA_SETTINGS)
- 	$(INSTALL_RULE)
- 
- $(OBJS_DIR)/%.o: %.c
+ $(NVIDIA_SETTINGS): $(OBJS) $(XNVCTRL_ARCHIVE)
+ 	$(call quiet_cmd,LINK) -o $@ $(OBJS) $(XNVCTRL_ARCHIVE) \

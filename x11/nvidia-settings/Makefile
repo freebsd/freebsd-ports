@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-settings
-PORTVERSION=	195.36.31
+PORTVERSION=	256.53
 CATEGORIES=	x11
 MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-settings/ \
 		ftp://download1.nvidia.com/XFree86/nvidia-settings/
@@ -14,27 +14,29 @@ MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-settings/ \
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Display Control Panel for X NVidia driver
 
+USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_GL=		gl
 USE_XORG=	xv
 
 PLIST_FILES=	bin/nvidia-settings
+MANCOMPRESSED=	yes
 MAN1=		nvidia-settings.1
 
-MAKE_ENV=	ROOT=${PREFIX} \
-		X11R6_LIB_DIR=${LOCALBASE}/lib \
-		X11R6_INC_DIR=${LOCALBASE}/include \
-		LDFLAGS="${PTHREAD_LIBS}"
+MAKE_ENV=	NV_VERBOSE= \
+		STRIP_CMD=${TRUE} \
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_MAN="${INSTALL_MAN}" \
+		prefix=${PREFIX} \
+		X_CFLAGS=-I${LOCALBASE}/include \
+		X_LDLAGS=-L${LOCALBASE}/lib
 
-WRKSRC=		${WRKDIR}/nvidia-settings-1.0
+post-extract:	.SILENT
+	${RM} -f ${WRKSRC}/src/libXNVCtrl/libXNVCtrl.a
 
-pre-build:
-	cd ${WRKSRC}/src/libXNVCtrl; \
-	${CC} -c -I${LOCALBASE}/include -DCSRG_BASED -DFUNCPROTO=15 -DNARROWPROTO \
-		-DXTHREADS -DXUSE_MTSAFE_API -DMALLOC_0_RETURNS_NULL NVCtrl.c; \
-	${RM} -f libXNVCtrl.a; \
-	ar clq libXNVCtrl.a NVCtrl.o; \
-	ranlib libXNVCtrl.a
+post-patch:	.SILENT
+	${REINPLACE_CMD} -e '/^prefix/s/=/?&/' \
+		 -e '/^mandir/s|share/||' ${WRKSRC}/utils.mk
 
 .include <bsd.port.mk>
