@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Perlbal
-PORTVERSION=	1.72
-PORTREVISION=	1
+PORTVERSION=	1.76
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=../../authors/id/D/DO/DORMANDO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -29,6 +29,8 @@ MAN3=		Perlbal.3 \
 		Perlbal::Plugin::Palimg.3 \
 		Perlbal::Plugin::Cgilike.3 \
 		Perlbal::Plugin::Include.3 \
+		Perlbal::Plugin::Redirect.3 \
+		Perlbal::Plugin::MaxContentLength.3 \
 		Perlbal::Test.3 \
 		Perlbal::Util.3
 
