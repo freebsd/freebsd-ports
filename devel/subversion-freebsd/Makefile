@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-PORTREVISION=	3
+PORTREVISION?=	0
 PKGNAMESUFFIX=	-freebsd
 
 COMMENT=	Version control system with FreeBSD Project repo customizations
@@ -16,7 +16,7 @@ DESCR=		${.CURDIR}/pkg-descr
 # Patches required for use with the FreeBSD Project repository only
 WITH_FREEBSD_SUBVERSION= yes
 
-CONFLICTS?=	subversion-[0-9]* subversion-devel-[0-9]*
+CONFLICTS?=	subversion-[0-9]*
 
 MD5_FILE=	${MASTERDIR}/distinfo
 
