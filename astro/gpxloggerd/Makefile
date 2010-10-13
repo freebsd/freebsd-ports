@@ -7,6 +7,7 @@
 
 PORTNAME=	gpxloggerd
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	LOCAL/glebius
 
@@ -15,6 +16,7 @@ COMMENT=	A daemon that connects to the GPSD daemon and logs GPS traces
 
 LIB_DEPENDS=	gps.19:${PORTSDIR}/astro/gpsd
 
+USE_RC_SUBR=	${PORTNAME}
 PLIST_FILES=	sbin/${PORTNAME}
 MAN8=		${PORTNAME}.8
 
