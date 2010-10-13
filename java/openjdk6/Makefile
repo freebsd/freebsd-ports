@@ -7,7 +7,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b20
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		https://jaxp.dev.java.net/files/documents/913/150648/:jaxp \
@@ -63,7 +63,7 @@ JAXWS_BUILD=	b20
 JAXWSFILE=	jdk6-jaxws-${JAXWS_BUILD}.zip
 JAF_BUILD=	b20
 JAFFILE=	jdk6-jaf-${JAF_BUILD}.zip
-ICEDTEAVERSION=	1.9
+ICEDTEAVERSION=	1.9.1
 ICEDTEAFILE=	icedtea6-${ICEDTEAVERSION}${EXTRACT_SUFX}
 JTREGVERSION=	b03
 JTREGFILE=	jtreg-4_0-bin-${JTREGVERSION}-31_mar_2009.zip
@@ -299,6 +299,8 @@ post-build:
 	)
 	@${CP} -Rp ${ICEDTEADIR}/build/lib \
 	    ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre
+	@${CP} ${ICEDTEADIR}/netx/javaws.1 \
+	    ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/man/man1/javaws.1
 .endif
 .if defined(WITH_TEST)
 	@${ECHO_MSG} ""
