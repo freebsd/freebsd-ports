@@ -1,0 +1,89 @@
+*** Makefile.orig	2010-10-06 14:03:45.281764937 +0100
+--- Makefile	2010-10-07 17:49:29.429419346 +0100
+***************
+*** 4,16 ****
+  
+  #CC=clang
+  
+! CFLAGS += -std=c99
+  CPPFLAGS += -DTYPE_DEPENDENT_DISPATCH
+  
+  #LIB_DIR=/usr/local/GNUstep/Local/Library/Libraries/
+  #HEADER_DIR=/usr/local/GNUstep/Local/Library/Headers
+! LIB_DIR=/tmp/usr/lib/
+! HEADER_DIR=/tmp/usr/include/
+  
+  OBJECTS = \
+  	NSBlocks.o\
+--- 4,19 ----
+  
+  #CC=clang
+  
+! CFLAGS += -std=c99 -fPIC
+  CPPFLAGS += -DTYPE_DEPENDENT_DISPATCH
++ CPPFLAGS += -D__OBJC_RUNTIME_INTERNAL__=1 -D_XOPEN_SOURCE=500
+  
+  #LIB_DIR=/usr/local/GNUstep/Local/Library/Libraries/
+  #HEADER_DIR=/usr/local/GNUstep/Local/Library/Headers
+! 
+! PREFIX?= /tmp/usr
+! LIB_DIR= ${PREFIX}/lib
+! HEADER_DIR= ${PREFIX}/include
+  
+  OBJECTS = \
+  	NSBlocks.o\
+***************
+*** 38,48 ****
+  	statics_loader.o\
+  	sync.o
+  
+! all: libobjc.so.$(VERSION)
+  
+  libobjc.so.$(VERSION): $(OBJECTS)
+  	@echo Linking shared library...
+! 	ld -shared -o $@ $(OBJECTS)
+  
+  .c.o:
+  	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+--- 41,59 ----
+  	statics_loader.o\
+  	sync.o
+  
+! .if !defined(WITHOUT_TOYDISPATCH)
+! OBJECTS+= toydispatch.o
+! .endif
+! 
+! all: libobjc.so.$(VERSION) libobjc.a
+  
+  libobjc.so.$(VERSION): $(OBJECTS)
+  	@echo Linking shared library...
+! 	@ld -shared -o $@ $(OBJECTS)
+! 
+! libobjc.a: $(OBJECTS)
+! 	@echo Linking static library...
+! 	@ld -r -s -o $@ $(OBJECTS)
+  
+  .c.o:
+  	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+***************
+*** 50,57 ****
+--- 61,72 ----
+  .m.o:
+  	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+  
++ toydispatch.o: toydispatch/toydispatch.c
++ 	$(CC) $(CPPFLAGS) $(CFLAGS) -I toydispatch -c $< -o $@
++ 
+  install: all
+  	install -m 444 libobjc.so.$(VERSION) $(LIB_DIR)
++ 	install -m 444 libobjc.a $(LIB_DIR)
+  	ln -sf $(LIB_DIR)/libobjc.so.$(VERSION) $(LIB_DIR)/libobjc.so
+  	install -d $(HEADER_DIR)/objc
+  	install -m 444 objc/*.h $(HEADER_DIR)/objc
+***************
+*** 59,61 ****
+--- 74,77 ----
+  clean:
+  	rm -f $(OBJECTS)
+  	rm -f libobjc.so.$(VERSION)
++ 	rm -f libobjc.a
