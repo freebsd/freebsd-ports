@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	asql
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	www
-MASTER_SITES=	http://www.steve.org.uk/Software/asql/
+MASTER_SITES=	http://www.steve.org.uk/Software/asql/ \
+		http://www.c-s.li/ports/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	Query Apache logfiles via SQL
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
