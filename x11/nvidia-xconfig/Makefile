@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-xconfig
-PORTVERSION=	195.36.31
+PORTVERSION=	256.53
 CATEGORIES=	x11
 MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-xconfig/ \
 		ftp://download1.nvidia.com/XFree86/nvidia-xconfig/
@@ -14,13 +14,21 @@ MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-xconfig/ \
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Tool to manipulate X configuration files for the NVidia driver
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-MAKE_ENV=	ROOT=${PREFIX}
+MAKE_ENV=	NV_VERBOSE= \
+		STRIP_CMD=${TRUE} \
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		INSTALL_MAN="${INSTALL_MAN}" \
+		prefix=${PREFIX}
 
-WRKSRC=		${WRKDIR}/nvidia-xconfig-1.0
-
-MAN1=		nvidia-xconfig.1
 PLIST_FILES=	bin/nvidia-xconfig
+MANCOMPRESSED=	yes
+MAN1=		nvidia-xconfig.1
+
+post-patch:	.SILENT
+	${REINPLACE_CMD} -e '/^prefix/s/=/?&/' \
+		 -e '/^mandir/s|share/||' ${WRKSRC}/utils.mk
 
 .include <bsd.port.mk>
