@@ -20,7 +20,7 @@ USE_PGSQL=	yes
 USE_LDCONFIG=	yes
 NO_LATEST_LINK=	yes
 
-CONFLICTS=	pgpool-3.* pgpool-II-2.3*
+CONFLICTS=	pgpool-3.* pgpool-II-*
 USE_RC_SUBR=	pgpool
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README README.euc_jp

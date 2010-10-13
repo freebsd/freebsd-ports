@@ -14,6 +14,7 @@ etc/pcp.conf.sample
 etc/pgpool.conf.sample
 etc/pgpool.conf.sample-master-slave
 etc/pgpool.conf.sample-replication
+etc/pgpool.conf.sample-stream
 etc/pool_hba.conf.sample
 include/pcp.h
 include/pool_type.h

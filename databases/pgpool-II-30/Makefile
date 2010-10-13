@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pgpool-II
-PORTVERSION=	2.3.3
+PORTVERSION=	3.0
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/2664/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/2798/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A connection pool server for PostgreSQL
@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_PGSQL=	yes
 USE_LDCONFIG=	yes
 
-CONFLICTS=	pgpool-3.* pgpool-II-2.2.*
+CONFLICTS=	pgpool-3.* pgpool-II-*
 USE_RC_SUBR=	pgpool
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README README.euc_jp
