@@ -16,8 +16,10 @@
 # You can fine tune others variables too:
 # shellinaboxd_fib="NONE"
 # shellinaboxd_pidfile="/var/run/shellinabox.pid"
+# shellinaboxd_user="%%USERS%%"
+# shellinaboxd_group="%%GROUPS%%"
 # shellinaboxd_port="4200"
-# shellinaboxd_certdir="%%PREFIX%%/etc/shellinabox"
+# shellinaboxd_certdir="%%ETCDIR%%"
 # shellinaboxd_certfile=""
 # 	Example: shellinaboxd_certfile="/your/cert.pem"
 # shellinaboxd_flags=""
@@ -46,12 +48,14 @@ load_rc_config $name
 
 shellinaboxd_enable=${shellinaboxd_enable:-"NO"}
 shellinaboxd_fib=${shellinaboxd_fib:-"NONE"}
+shellinaboxd_user=${shellinaboxd_user:-"%%USERS%%"}
+shellinaboxd_group=${shellinaboxd_group:-"%%GROUPS%%"}
 shellinaboxd_port=${shellinaboxd_port:-"4200"}
-shellinaboxd_certdir=${shellinaboxd_certdir:-"%%PREFIX%%/etc/shellinabox"}
+shellinaboxd_certdir=${shellinaboxd_certdir:-"%%ETCDIR%%"}
 
 pidfile=${shellinaboxd_pidfile:-"/var/run/shellinaboxd.pid"}
 
-command_args="--group=shellinabox --user=shellinabox --port=${shellinaboxd_port} --background=${pidfile}"
+command_args="--user=${shellinaboxd_user} --group=${shellinaboxd_group} --port=${shellinaboxd_port} --background=${pidfile}"
 
 if [ "${shellinaboxd_certfile}" = "" ]; then
 	required_dirs="${shellinaboxd_certdir}"
