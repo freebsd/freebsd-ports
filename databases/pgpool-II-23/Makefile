@@ -17,6 +17,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_PGSQL=	yes
 USE_LDCONFIG=	yes
+NO_LATEST_LINK=	yes
 
 CONFLICTS=	pgpool-3.* pgpool-II-*
 USE_RC_SUBR=	pgpool
