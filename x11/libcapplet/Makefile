@@ -23,8 +23,8 @@ MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800071
-USE_CSTD=	gnu89
+.if ${OSVERSION} >= 800000
+BROKEN=		does not build on 8.X
 .endif
 
 post-build:
