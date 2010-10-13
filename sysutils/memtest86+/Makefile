@@ -42,6 +42,10 @@ USE_CDRTOOLS=	yes
 ALL_TARGET+=	iso
 .endif
 
+.if ${OSVERSION} < 700042
++EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-Makefile
+.endif
+
 pre-fetch:
 .if !defined(PACKAGE_BUILDING)
 	@${ECHO} "If you only need bootable ISO image of memtest86+, you can"
