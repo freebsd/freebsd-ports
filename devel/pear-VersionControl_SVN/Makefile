@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	VersionControl_SVN
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	devel pear
 
 MAINTAINER=	glarkin@FreeBSD.org
