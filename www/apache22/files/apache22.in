@@ -41,7 +41,7 @@ command="%%PREFIX%%/sbin/httpd"
 _pidprefix="/var/run/httpd"
 pidfile="${_pidprefix}.pid"
 required_files=%%PREFIX%%/etc/apache22/httpd.conf
-envvars="/usr/local/sbin/envvars"
+envvars="%%PREFIX%%/sbin/envvars"
 
 [ -z "$apache22_enable" ]       && apache22_enable="NO"
 [ -z "$apache22limits_enable" ] && apache22limits_enable="NO"
