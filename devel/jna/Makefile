@@ -7,6 +7,7 @@
 
 PORTNAME=	jna
 PORTVERSION=	3.2.7
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	LOCAL/olgeni
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -24,7 +25,7 @@ USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DOCSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-doc
 
-PLIST_FILES=	%%JAVAJARDIR%%/jna-freebsd-${ARCH}.jar \
+PLIST_FILES=	%%JAVAJARDIR%%/jna-platform.jar \
 		%%JAVAJARDIR%%/jna.jar
 
 .if !defined(NOPORTDOCS)
@@ -36,7 +37,7 @@ post-patch:
 	@${CHMOD} 755 ${WRKSRC}/native/libffi/install-sh
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/build*/freebsd-${ARCH}.jar ${JAVAJARDIR}/jna-freebsd-${ARCH}.jar
+	@${INSTALL_DATA} ${WRKSRC}/build*/freebsd-${ARCH}.jar ${JAVAJARDIR}/jna-platform.jar
 	@${INSTALL_DATA} ${WRKSRC}/build*/jna.jar ${JAVAJARDIR}/jna.jar
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
