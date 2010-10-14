@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-10.fc4
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Linux version of par2cmdline
 
+DEPRECATED=	Native version available
+EXPIRATION_DATE=	2010-11-15
+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
