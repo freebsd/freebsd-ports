@@ -23,7 +23,9 @@ CONFIGURE_ARGS=	--enable-dbg=shared --with-dbg-profiler \
 		--prefix=${PREFIX}/lib/php/${PHP_EXT_DIR}
 PKGMESSAGE=	pkg-message
 
-BROKEN=		does not compile with PHP 5.3.2
+BROKEN=		does not compile with PHP 5.3.x or recent versions of 5.2.x
+DEPRECATED=	No upstream support
+EXPIRATION_DATE=	2010-12-30
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
