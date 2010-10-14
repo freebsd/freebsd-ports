@@ -4627,3 +4627,9 @@ devel/automake110||2010-10-07|No longer required by any port
 japanese/p5-jcode.pl|japanese/jcode.pl|2010-10-10|Duplicate port
 www/p5-Plack-Server-ServerSimple|www/p5-Plack|2010-10-11|Included in p5-Plack now
 www/trac-multirepos||2010-10-11|Has expired: Multiple repositories support has been merged in trunk, please use Trac 0.12+ (www/trac) instead
+devel/p5-P4||2010-10-14|Has expired: Depends of p5-P4-Client, which is DEPRECATED.
+devel/p5-P4-Client||2010-10-14|Has expired: has been broken for 11 months
+net-p2p/btpeer||2010-10-14|Has expired: Does not build with net/Sockets and is unmaintained.
+net-mgmt/net-snmp4||2010-10-14|Has expired: Use net-mgmt/net-snmp port instead
+net/gkrellm_snmp||2010-10-14|Has expired: Depends of net-snmp4, that is deprecated also and will be removed soon.
+net/Sockets-devel||2010-10-14|Has expired: Older than net/Sockets and unmaintained.
