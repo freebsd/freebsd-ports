@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdaliclock
-PORTVERSION=	2.34
+PORTVERSION=	2.35
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.jwz.org/xdaliclock/
 MASTER_SITE_SUBDIR=	applications
