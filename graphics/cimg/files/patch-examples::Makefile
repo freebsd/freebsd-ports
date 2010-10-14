@@ -3,7 +3,7 @@
 @@ -85,8 +85,8 @@
  # Set correct variables and paths
  #---------------------------------
- CIMG_VERSION = 1.4.3
+ CIMG_VERSION = 1.4.4
 -X11PATH      = /usr/X11R6
 -CC           = g++
 +#X11PATH      = /usr/X11R6
