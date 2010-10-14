@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-DeliveryStatus-BounceParser
-PORTVERSION=	1.5.22
+PORTVERSION=	1.5.24
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ MAINTAINER=	chifeng@gmail.com
 COMMENT=	Perl extension to analyze bounce messages
 
 RUN_DEPENDS=	p5-MIME-Tools>=5.418:${PORTSDIR}/mail/p5-MIME-Tools \
-		p5-Email-Address>0:${PORTSDIR}/mail/p5-Email-Address
+		p5-Mail-Tools>=2.04:${PORTSDIR}/mail/p5-Mail-Tools
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
