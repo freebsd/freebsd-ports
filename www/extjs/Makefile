@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	extjs
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.0
 CATEGORIES=	www
-MASTER_SITES=	http://extjs.cachefly.net/ \
+MASTER_SITES=	http://downloads.sencha.com/extjs/ \
 		http://mirror.joehorn.idv.tw/
 DISTNAME=	ext-${PORTVERSION}
 
@@ -48,14 +48,6 @@ SUB_LIST+=	COMMENTEXAMPLES=
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${WWW_SUB} ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} \
-		${WWWDIR:S|^${PREFIX}/|%D/|}' >> ${TMPPLIST}
-	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
-	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} 644' >> ${TMPPLIST}
-	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${ECHO_CMD} '@exec ${FIND} ${WWWDIR} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} 755' >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
