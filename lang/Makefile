@@ -29,6 +29,7 @@
     SUBDIR += chicken
     SUBDIR += cim
     SUBDIR += cint
+    SUBDIR += clang
     SUBDIR += clips
     SUBDIR += clisp
     SUBDIR += clojure

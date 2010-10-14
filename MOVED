@@ -4633,3 +4633,4 @@ net-p2p/btpeer||2010-10-14|Has expired: Does not build with net/Sockets and is u
 net-mgmt/net-snmp4||2010-10-14|Has expired: Use net-mgmt/net-snmp port instead
 net/gkrellm_snmp||2010-10-14|Has expired: Depends of net-snmp4, that is deprecated also and will be removed soon.
 net/Sockets-devel||2010-10-14|Has expired: Older than net/Sockets and unmaintained.
+devel/clang|lang/clang|2010-10-14|Compilers typically live in the lang category
