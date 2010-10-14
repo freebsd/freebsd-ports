@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Hook-LexWrap
-PORTVERSION=	0.22
+PORTVERSION=	0.24
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lexically scoped subroutine wrappers for Perl
 
-USE_ZIP=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Hook::LexWrap.3
