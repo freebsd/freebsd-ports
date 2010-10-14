@@ -1575,6 +1575,7 @@ chordpack                       ports/audio/chordpack
 chpasswd                        ports/www/chpasswd
 chpp                            ports/textproc/chpp
 chroma                          ports/games/chroma
+chromium                        ports/www/chromium
 chromium-bsu                    ports/games/chromium-bsu
 chroot_safe                     ports/security/chroot_safe
 chrootuid                       ports/security/chrootuid
@@ -8081,6 +8082,7 @@ libnss-mysql                    ports/net/libnss-mysql
 libntlm                         ports/security/libntlm
 libnxml                         ports/textproc/libnxml
 libnxt                          ports/devel/libnxt
+libobjc2                        ports/lang/libobjc2
 libodbc++                       ports/databases/libodbc++
 libofa                          ports/audio/libofa
 libofx                          ports/finance/libofx
@@ -19616,8 +19618,10 @@ pgpmoose                        ports/news/pgpmoose
 pgpool                          ports/databases/pgpool
 pgpool-II                       ports/databases/pgpool-II
 pgpool-II-22                    ports/databases/pgpool-II-22
+pgpool-II-23                    ports/databases/pgpool-II-23
 pgpool-ii                       ports/databases/pgpool-II
 pgpool-ii-22                    ports/databases/pgpool-II-22
+pgpool-ii-23                    ports/databases/pgpool-II-23
 pgpoolAdmin                     ports/databases/pgpoolAdmin
 pgpooladmin                     ports/databases/pgpoolAdmin
 pgpsendmail                     ports/mail/pgpsendmail
