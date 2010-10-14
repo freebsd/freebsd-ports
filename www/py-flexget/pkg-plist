@@ -272,6 +272,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_urlrewriting.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_urlrewriting.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_urlrewriting.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_verbose.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_verbose.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_verbose.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_bakabt.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_bakabt.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/urlrewrite_bakabt.pyo
