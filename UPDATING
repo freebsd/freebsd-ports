@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20101003:
+  AFFECTS: users of www/typo3
+  AUTHOR: Helmut Schneider <jumper99@gmx.de>
+
+  www/typo3 has been repocopied to www/typo343. If you need to continue with
+  the old stable version please run
+
+  # portmaster -o www/typo343 www/typo3
+  or
+  # portupgrade -o www/typo343 www/typo3
+
+  Please remember to change the path of your config files too.
+
+20101003:
   AFFECTS: users of net-mgmt/kismet
   AUTHOR: bf@FreeBSD.org
 
