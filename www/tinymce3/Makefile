@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tinymce
-PORTVERSION=	3.3.8
+PORTVERSION=	3.3.9.2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TinyMCE/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
@@ -19,7 +19,7 @@ USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
-	@${INSTALL} -d -m 0755 ${WWWDIR}
-	@(cd ${WRKSRC} && ${FIND} . | ${CPIO} -pdmu -R${WWWOWN}:${WWWGRP} ${WWWDIR})
+	${INSTALL} -d -m 0755 ${WWWDIR}
+	(cd ${WRKSRC} && ${FIND} . | ${CPIO} -pdmu -R${WWWOWN}:${WWWGRP} ${WWWDIR})
 
 .include <bsd.port.mk>
