@@ -16,4 +16,4 @@ Pdftk is also an example of how to use a library of Java classes
 in a stand-alone C++ program. Specifically, it demonstrates how GCJ and CNI
 allow C++ code to use iText's (itext-paulo) Java classes.
 
-WWW: http://www.accesspdf.com/pdftk/
+WWW: http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
