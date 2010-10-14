@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	HTTP-Body
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 BUILD_DEPENDS=	${RUN_DEPENDS}
 BUILD_DEPENDS+=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		HTTP::Body.3 \
 		HTTP::Body::MultiPart.3 \
@@ -28,10 +28,4 @@ MAN3=		HTTP::Body.3 \
 		HTTP::Body::XForms.3 \
 		HTTP::Body::XFormsMultipart.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500809
-RUN_DEPENDS+=	p5-IO>=1.14:${PORTSDIR}/devel/p5-IO
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
