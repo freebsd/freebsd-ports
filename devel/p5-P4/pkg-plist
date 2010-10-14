@@ -1,6 +1,0 @@
-%%SITE_PERL%%/P4.pm
-%%SITE_PERL%%/auto/P4/autosplit.ix
-%%SITE_PERL%%/example.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/P4/.packlist
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/P4
-@dirrmtry %%SITE_PERL%%/auto/P4

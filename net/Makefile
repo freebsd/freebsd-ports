@@ -11,7 +11,6 @@
     SUBDIR += DarwinStreamingServer
     SUBDIR += GeoIP
     SUBDIR += Sockets
-    SUBDIR += Sockets-devel
     SUBDIR += abills
     SUBDIR += activemq
     SUBDIR += acx100
@@ -179,7 +178,6 @@
     SUBDIR += geotrace
     SUBDIR += ggsd
     SUBDIR += gini
-    SUBDIR += gkrellm_snmp
     SUBDIR += gkrellmmultiping2
     SUBDIR += gkrellmqst
     SUBDIR += gkrellmwireless

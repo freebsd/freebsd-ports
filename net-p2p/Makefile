@@ -11,7 +11,6 @@
     SUBDIR += bittyrant
     SUBDIR += bnbt
     SUBDIR += btpd
-    SUBDIR += btpeer
     SUBDIR += btqueue
     SUBDIR += cdonkey
     SUBDIR += createtorrent
