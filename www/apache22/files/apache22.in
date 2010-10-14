@@ -41,6 +41,7 @@ command="%%PREFIX%%/sbin/httpd"
 _pidprefix="/var/run/httpd"
 pidfile="${_pidprefix}.pid"
 required_files=%%PREFIX%%/etc/apache22/httpd.conf
+envvars="/usr/local/sbin/envvars"
 
 [ -z "$apache22_enable" ]       && apache22_enable="NO"
 [ -z "$apache22limits_enable" ] && apache22limits_enable="NO"
@@ -63,7 +64,6 @@ load_rc_config $name
 if [ -n "$2" ]; then
 	profile="$2"
 	if [ "x${apache22_profiles}" != "x" ]; then
-		pidfile="${_pidprefix}.${profile}.pid"
 		eval apache22_configfile="\${apache22_${profile}_configfile:-}"
 		if [ "x${apache22_configfile}" = "x" ]; then
 			echo "You must define a configuration file (apache22_${profile}_configfile)"
@@ -76,11 +76,15 @@ if [ -n "$2" ]; then
 		eval apache22limits_enable="\${apache22limits_${profile}_enable:-${apache22limits_enable}}"
 		eval apache22limits_args="\${apache22limits_${profile}_args:-${apache22limits_args}}"
 		eval apache22_fib="\${apache22_${profile}_fib:-${apache22_fib}}"
+		eval command="\${apache22_${profile}_command:-${command}}"
+		eval pidfile="\${apache22_${profile}_pidfile:-${pidfile}}"
+		eval apache22_envvars="\${apache22_${profile}_envvars:-${envvars}}"
 		apache22_flags="-f ${apache22_configfile} -c \"PidFile ${pidfile}\" ${apache22_flags}"
 	else
 		echo "$0: extra argument ignored"
 	fi
 else
+	eval apache22_envvars=${envvars}
 	if [ "x${apache22_profiles}" != "x" -a "x$1" != "x" ]; then
 		for profile in ${apache22_profiles}; do
 			eval _enable="\${apache22_${profile}_enable}"
@@ -132,9 +136,9 @@ apache22_requirepidfile()
 
 apache22_checkconfig()
 {
-	if test -f %%PREFIX%%/sbin/envvars
+	if test -f ${apache22_envvars}
 	then
-		. %%PREFIX%%/sbin/envvars
+		. ${apache22_envvars}
 	fi
 
 	echo "Performing sanity check on apache22 configuration:"
