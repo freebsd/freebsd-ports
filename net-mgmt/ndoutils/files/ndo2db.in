@@ -22,7 +22,9 @@ rcvar=${name}_enable
 
 command="%%PREFIX%%/bin/ndo2db-3x"
 required_files="${ndo2db_configfile}"
-command_args="-c ${ndo2db_configfile}"
 
 load_rc_config $name
+
+command_args="-c ${ndo2db_configfile}"
+
 run_rc_command "$1"
