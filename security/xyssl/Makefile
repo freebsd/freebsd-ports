@@ -8,25 +8,20 @@
 PORTNAME=	xyssl
 PORTVERSION=	0.9
 CATEGORIES=	security devel
-MASTER_SITES=	http://polarssl.org/code/download/ \
-		ftp://ftp.solitox.net/pub/XySSL/
+MASTER_SITES=	http://www.evolane.com/download/mirror/etcl/ \
+		http://www.straightrunning.com/code/
 DISTFILES=	xyssl-${PORTVERSION}-bsd.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A liteweight SSL and TLS toolkit for C developers
 
-BROKEN=		does not fetch
-
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_FILE=	${WRKSRC}/BSD.txt
 
 # HAS_CONFIGURE=	no
 # GNU_CONFIGURE=	no
 
 PORTDOCS=	BSD.txt ChangeLog
-
-post-extract:
-	${LN} ${WRKSRC}/BSD.txt ${WRKSRC}/COPYRIGHT
 
 post-install:
 .if !defined(NOPORTDOCS)
