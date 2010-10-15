@@ -7,13 +7,12 @@
 
 PORTNAME=	pkg-config
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A pkg-config implementation for Ruby
-
-RUN_DEPENDS=	rubygem-hoe>=1.5.0:${PORTSDIR}/devel/rubygem-hoe
 
 USE_RUBY=	yes
 USE_RAKE=	yes
