@@ -17,7 +17,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A Sendmail LibMilter filter to block spam
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	spamilter.sh
@@ -66,9 +66,6 @@ PLIST_FILES+=	bin/dnsblchk bin/dnsblupd bin/ipfwmtad bin/mxlookup \
 		bin/spamilter-system-report bin/spamilter-user-report
 PORTDOCS=	Changelog INSTALL LICENSE docs.html docs.txt db.rcpt \
 		db.rdnsbl db.sndr policy.html spamilter.rc
-
-post-extract:
-	${LN} ${WRKSRC}/LICENSE ${WRKSRC}/COPYRIGHT
 
 pre-configure:
 	${REINPLACE_CMD} \
