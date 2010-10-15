@@ -1,8 +1,12 @@
 @comment $FreeBSD$
 bin/oak-apply-ri
 bin/oak-block-account
+bin/oak-chunk-update
+bin/oak-get-slave-lag
 bin/oak-kill-slow-queries
 bin/oak-modify-charset
+bin/oak-online-alter-table
+bin/oak-prepare-shutdown
 bin/oak-purge-master-logs
 bin/oak-security-audit
 bin/oak-show-limits
