@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	regina
-PORTVERSION=	3.3
-PORTREVISION=	1
+PORTVERSION=	3.5
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}-rexx/${PORTNAME}-rexx/${PORTVERSION}
 PKGNAMEPREFIX=	rexx-
@@ -19,12 +18,12 @@ COMMENT=	A Rexx interpreter
 
 CONFLICTS=	rexx-imc-* oorexx-[0-9]*
 
-WRKSRC=		${WRKDIR}/Regina-${PORTVERSION}
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
+USE_RC_SUBR=	rxstack
 
 MAN1=	regina.1
 
@@ -33,8 +32,5 @@ post-patch:
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|-xchar=unsigned||g" ${WRKSRC}/Makefile
-
-post-install:
-	@${INSTALL_SCRIPT} ${FILESDIR}/rxstack.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>

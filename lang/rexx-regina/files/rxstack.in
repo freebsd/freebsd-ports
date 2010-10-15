@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: rxstack
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# rxstack_enable (bool):   Set to NO by default.
+#               Set it to YES to enable rxstack.
+# rxstack_flags (str):   Set to "-d" by default.
+#
+
+. /etc/rc.subr
+
+name="rxstack"
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/bin/${name}
+
+load_rc_config $name
+
+: ${rxstack_enable="NO"}
+: ${rxstack_flags="-d"}
+
+run_rc_command "$1"
