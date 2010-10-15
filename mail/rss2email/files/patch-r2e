@@ -1,0 +1,11 @@
+--- r2e.orig	2010-10-14 16:54:13.000000000 +0000
++++ r2e	2010-10-14 17:00:36.000000000 +0000
+@@ -1,2 +1,7 @@
+ #!/bin/sh
+-python rss2email.py feeds.dat $*
++set -e
++if [ ! -d ~/.rss2email ]; then
++	mkdir ~/.rss2email
++fi
++cd ~/.rss2email
++exec @PYTHONCMD@ @DATADIR@/rss2email.py feeds.dat $*
