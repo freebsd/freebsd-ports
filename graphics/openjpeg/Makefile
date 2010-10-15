@@ -21,7 +21,7 @@ COMMENT=	An open-source JPEG 2000 codec
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_FILE=	${WRKSRC}/jp3d/LICENSE.txt
 MAKE_JOBS_UNSAFE=	yes
 
 USE_GMAKE=	yes
@@ -38,9 +38,6 @@ PLIST_FILES=	include/openjpeg.h \
 		${M2J_BINS:S|^|bin/|}
 
 SHLIB_VER=	2
-
-post-extract:
-		${LN} ${WRKSRC}/jp3d/LICENSE.txt ${WRKSRC}/COPYRIGHT
 
 post-patch:	.SILENT
 		${FIND} ${WRKSRC} -type f -name Makefile -exec ${REINPLACE_CMD} 's|gcc|$$(CC)|g' {} +
