@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	clang
-PORTVERSION=	2.8
-PORTREVISION=	2
-CATEGORIES=	devel lang
-MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
-EXTRACT_SUFX=	.tgz
+PORTVERSION=	2.9.r${SVN_REV}
+CATEGORIES=	lang devel
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	brooks
+PKGNAMESUFFIX=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${LLVM_SOURCE}
 EXTRACT_ONLY=	${LLVM_SOURCE}
@@ -18,7 +18,7 @@ EXTRACT_ONLY=	${LLVM_SOURCE}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and (alpha-quality) C++ compiler
 
-CONFLICTS=	clang-devel-2.[0-9]* llvm-devel-2.[0-9]*
+CONFLICTS=	clang-2.[0-9]* llvm-2.[0-9]*
 
 CLANG_NAME=	clang-${PORTVERSION}
 CLANG_SOURCE=	${CLANG_NAME}${EXTRACT_SUFX}
@@ -29,8 +29,8 @@ WRKSRC=		${WRKDIR}/${LLVM_NAME}
 BUILD_WRKSRC=	${WRKSRC}/tools/clang
 INSTALL_WRKSRC=	${WRKSRC}/tools/clang
 
-BUILD_DEPENDS+=	llvm>=${PORTVERSION}:${PORTSDIR}/devel/llvm
-RUN_DEPENDS+=	llvm>=${PORTVERSION}:${PORTSDIR}/devel/llvm
+BUILD_DEPENDS+=	llvm-devel>=${PORTVERSION}:${PORTSDIR}/devel/llvm-devel
+RUN_DEPENDS+=	llvm-devel>=${PORTVERSION}:${PORTSDIR}/devel/llvm-devel
 .if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
@@ -39,6 +39,7 @@ BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
 GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_GCC=	4.2+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -66,8 +67,24 @@ MAN1=		clang.1
 
 .include <bsd.port.pre.mk>
 
+.include "${.CURDIR}/../../devel/llvm-devel/Makefile.svn_rev"
+
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
+.endif
+
+.if defined(BOOTSTRAP) || defined(SVN_FETCH)
+FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
+
+do-fetch:
+	${MKDIR} ${WRKDIR}
+	svn export -r ${SVN_REV} \
+	    http://llvm.org/svn/llvm-project/cfe/trunk ${WRKDIR}/${CLANG_NAME}
+	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
+.if ${USER} == brooks
+	scp ${DISTDIR}/${DISTNAME}.tar.bz2 \
+	    freefall.freebsd.org:public_distfiles/
+.endif
 .endif
 
 post-extract:

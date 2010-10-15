@@ -32,6 +32,7 @@ include/clang/AST/DeclTemplate.h
 include/clang/AST/DeclVisitor.h
 include/clang/AST/DeclarationName.h
 include/clang/AST/DependentDiagnostic.h
+include/clang/AST/EvaluatedExprVisitor.h
 include/clang/AST/Expr.h
 include/clang/AST/ExprCXX.h
 include/clang/AST/ExprObjC.h
@@ -44,10 +45,10 @@ include/clang/AST/PrettyPrinter.h
 include/clang/AST/RecordLayout.h
 include/clang/AST/RecursiveASTVisitor.h
 include/clang/AST/Redeclarable.h
-include/clang/AST/Release/AttrImpl.inc.tmp
-include/clang/AST/Release/Attrs.inc.tmp
-include/clang/AST/Release/DeclNodes.inc.tmp
-include/clang/AST/Release/StmtNodes.inc.tmp
+include/clang/AST/Release+Asserts/AttrImpl.inc.tmp
+include/clang/AST/Release+Asserts/Attrs.inc.tmp
+include/clang/AST/Release+Asserts/DeclNodes.inc.tmp
+include/clang/AST/Release+Asserts/StmtNodes.inc.tmp
 include/clang/AST/Stmt.h
 include/clang/AST/StmtCXX.h
 include/clang/AST/StmtGraphTraits.h
@@ -113,18 +114,18 @@ include/clang/Basic/OperatorKinds.def
 include/clang/Basic/OperatorKinds.h
 include/clang/Basic/PartialDiagnostic.h
 include/clang/Basic/PrettyStackTrace.h
-include/clang/Basic/Release/AttrList.inc.tmp
-include/clang/Basic/Release/DiagnosticASTKinds.inc.tmp
-include/clang/Basic/Release/DiagnosticAnalysisKinds.inc.tmp
-include/clang/Basic/Release/DiagnosticCommonKinds.inc.tmp
-include/clang/Basic/Release/DiagnosticDriverKinds.inc.tmp
-include/clang/Basic/Release/DiagnosticFrontendKinds.inc.tmp
-include/clang/Basic/Release/DiagnosticGroups.inc.tmp
-include/clang/Basic/Release/DiagnosticLexKinds.inc.tmp
-include/clang/Basic/Release/DiagnosticParseKinds.inc.tmp
-include/clang/Basic/Release/DiagnosticSemaKinds.inc.tmp
-include/clang/Basic/Release/Version.inc.tmp
-include/clang/Basic/Release/arm_neon.inc.tmp
+include/clang/Basic/Release+Asserts/AttrList.inc.tmp
+include/clang/Basic/Release+Asserts/DiagnosticASTKinds.inc.tmp
+include/clang/Basic/Release+Asserts/DiagnosticAnalysisKinds.inc.tmp
+include/clang/Basic/Release+Asserts/DiagnosticCommonKinds.inc.tmp
+include/clang/Basic/Release+Asserts/DiagnosticDriverKinds.inc.tmp
+include/clang/Basic/Release+Asserts/DiagnosticFrontendKinds.inc.tmp
+include/clang/Basic/Release+Asserts/DiagnosticGroups.inc.tmp
+include/clang/Basic/Release+Asserts/DiagnosticLexKinds.inc.tmp
+include/clang/Basic/Release+Asserts/DiagnosticParseKinds.inc.tmp
+include/clang/Basic/Release+Asserts/DiagnosticSemaKinds.inc.tmp
+include/clang/Basic/Release+Asserts/Version.inc.tmp
+include/clang/Basic/Release+Asserts/arm_neon.inc.tmp
 include/clang/Basic/SourceLocation.h
 include/clang/Basic/SourceManager.h
 include/clang/Basic/SourceManagerInternals.h
@@ -197,9 +198,9 @@ include/clang/Driver/Option.h
 include/clang/Driver/Options.h
 include/clang/Driver/Options.inc
 include/clang/Driver/Phases.h
-include/clang/Driver/Release/CC1AsOptions.inc.tmp
-include/clang/Driver/Release/CC1Options.inc.tmp
-include/clang/Driver/Release/Options.inc.tmp
+include/clang/Driver/Release+Asserts/CC1AsOptions.inc.tmp
+include/clang/Driver/Release+Asserts/CC1Options.inc.tmp
+include/clang/Driver/Release+Asserts/Options.inc.tmp
 include/clang/Driver/Tool.h
 include/clang/Driver/ToolChain.h
 include/clang/Driver/Types.def
@@ -313,19 +314,19 @@ include/clang/Serialization/ASTReader.h
 include/clang/Serialization/ASTWriter.h
 include/clang/Serialization/AttrPCHRead.inc
 include/clang/Serialization/AttrPCHWrite.inc
-include/clang/Serialization/Release/AttrPCHRead.inc.tmp
-include/clang/Serialization/Release/AttrPCHWrite.inc.tmp
-lib/clang/2.8/include/arm_neon.h
-lib/clang/2.8/include/emmintrin.h
-lib/clang/2.8/include/immintrin.h
-lib/clang/2.8/include/mm_malloc.h
-lib/clang/2.8/include/mmintrin.h
-lib/clang/2.8/include/nmmintrin.h
-lib/clang/2.8/include/pmmintrin.h
-lib/clang/2.8/include/smmintrin.h
-lib/clang/2.8/include/tmmintrin.h
-lib/clang/2.8/include/wmmintrin.h
-lib/clang/2.8/include/xmmintrin.h
+include/clang/Serialization/Release+Asserts/AttrPCHRead.inc.tmp
+include/clang/Serialization/Release+Asserts/AttrPCHWrite.inc.tmp
+lib/clang/2.9/include/arm_neon.h
+lib/clang/2.9/include/emmintrin.h
+lib/clang/2.9/include/immintrin.h
+lib/clang/2.9/include/mm_malloc.h
+lib/clang/2.9/include/mmintrin.h
+lib/clang/2.9/include/nmmintrin.h
+lib/clang/2.9/include/pmmintrin.h
+lib/clang/2.9/include/smmintrin.h
+lib/clang/2.9/include/tmmintrin.h
+lib/clang/2.9/include/wmmintrin.h
+lib/clang/2.9/include/xmmintrin.h
 lib/libclang.a
 lib/libclang.so
 lib/libclangAST.a
@@ -364,10 +365,10 @@ lib/libclangSerialization.a
 %%PYTHON_SITELIBDIR%%/Resources/bugcatcher.ico
 %%PYTHON_SITELIBDIR%%/ScanView.py
 %%PYTHON_SITELIBDIR%%/startfile.py
-@dirrm lib/clang/2.8/include
-@dirrm lib/clang/2.8
+@dirrm lib/clang/2.9/include
+@dirrm lib/clang/2.9
 @dirrm lib/clang
-@dirrm include/clang/Serialization/Release
+@dirrm include/clang/Serialization/Release+Asserts
 @dirrm include/clang/Serialization
 @dirrm include/clang/Sema
 @dirrm include/clang/Rewrite
@@ -376,7 +377,7 @@ lib/libclangSerialization.a
 @dirrm include/clang/Index
 @dirrm include/clang/FrontendTool
 @dirrm include/clang/Frontend
-@dirrm include/clang/Driver/Release
+@dirrm include/clang/Driver/Release+Asserts
 @dirrm include/clang/Driver
 @dirrm include/clang/CodeGen
 @dirrm include/clang/Checker/PathSensitive
@@ -384,14 +385,14 @@ lib/libclangSerialization.a
 @dirrm include/clang/Checker/Checkers
 @dirrm include/clang/Checker/BugReporter
 @dirrm include/clang/Checker
-@dirrm include/clang/Basic/Release
+@dirrm include/clang/Basic/Release+Asserts
 @dirrm include/clang/Basic
 @dirrm include/clang/Analysis/Visitors
 @dirrm include/clang/Analysis/Support
 @dirrm include/clang/Analysis/FlowSensitive
 @dirrm include/clang/Analysis/Analyses
 @dirrm include/clang/Analysis
-@dirrm include/clang/AST/Release
+@dirrm include/clang/AST/Release+Asserts
 @dirrm include/clang/AST
 @dirrm include/clang-c
 @dirrm include/clang

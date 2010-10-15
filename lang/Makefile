@@ -30,6 +30,7 @@
     SUBDIR += cim
     SUBDIR += cint
     SUBDIR += clang
+    SUBDIR += clang-devel
     SUBDIR += clips
     SUBDIR += clisp
     SUBDIR += clojure

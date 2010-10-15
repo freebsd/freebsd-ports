@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101015:
+  AFFECTS: users of devel/llvm-devel who use clang
+  AUTHOR: Brooks Davis <brooks@FreeBSD.org>
+
+  The clang portion of devel/llvm-devel has been split out and now
+  resides in lang/clang-devel.  If you have devel/llvm-devel installed
+  in order to use clang, you will need to install the clang-devel port
+  when upgrading.
+
 20101003:
   AFFECTS: users of www/typo3
   AUTHOR: Helmut Schneider <jumper99@gmx.de>
