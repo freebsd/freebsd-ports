@@ -7,6 +7,7 @@
 
 PORTNAME=	Test-Pod
 PORTVERSION=	1.44
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Check for POD errors in files
 
-BUILD_DEPENDS=	${SITE_PERL}/Pod/Simple.pm:${PORTSDIR}/textproc/p5-Pod-Simple
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_MODBUILD=	yes
 
 MAN3=		Test::Pod.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500905
+RUN_DEPENDS+=	p5-Pod-Simple>=3.05:${PORTSDIR}/textproc/p5-Pod-Simple
+.endif
+
+.include <bsd.port.post.mk>
