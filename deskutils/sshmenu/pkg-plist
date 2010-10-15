@@ -1,0 +1,7 @@
+bin/sshmenu
+bin/sshmenu-gnome
+%%RUBY_SITELIBDIR%%/gnome-sshmenu.rb
+%%RUBY_SITELIBDIR%%/sshmenu.rb
+libdata/bonobo/servers/sshmenu-applet.server
+libexec/sshmenu-applet
+share/icons/gnome/48x48/apps/gnome-sshmenu-applet.png

@@ -251,6 +251,7 @@
     SUBDIR += sliderule
     SUBDIR += snotes
     SUBDIR += splashsetter
+    SUBDIR += sshmenu
     SUBDIR += strigi
     SUBDIR += sugarcrm
     SUBDIR += superkaramba-lwp
