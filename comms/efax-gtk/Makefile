@@ -6,22 +6,40 @@
 #
 
 PORTNAME=		efax-gtk
-PORTVERSION=		3.0.12
-PORTREVISION=	5
+PORTVERSION=		3.2.4
 CATEGORIES=		comms
 MASTER_SITES=		SF
 EXTRACT_SUFX=		.src.tgz
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		c0rn@o2.pl
 COMMENT=		GUI front end for the efax fax program
 
-LIB_DEPENDS=		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
+LIB_DEPENDS=		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
+			tiff:${PORTSDIR}/graphics/tiff \
+			dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=		ggv:${PORTSDIR}/print/ggv
 
+USE_ICONV=		yes
 USE_GHOSTSCRIPT_RUN=	yes
 USE_GNOME=		gtk20
 GNU_CONFIGURE=		yes
+MAKE_JOBS_SAFE=		yes
+
 MAN1=			efax.1 efix.1 efax-gtk.1
+LICENSE=		GPLv2
+
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 post-install:
 	@${ECHO}
