@@ -7,11 +7,11 @@
 
 PORTNAME=	valgrind
 PORTVERSION=	3.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-3
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTREVISION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A (memory) debugging and profiling tool
