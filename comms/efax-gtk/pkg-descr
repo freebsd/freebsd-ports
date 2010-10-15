@@ -4,4 +4,4 @@ format, which is the generic printer format for Unix/Linux systems.  The
 program will use ghostscript to convert these into the Group 3 fax format which
 the fax modem will understand.
 
-WWW: http://www.cvine.freeserve.co.uk/efax-gtk/
+WWW: http://efax-gtk.sourceforge.net
