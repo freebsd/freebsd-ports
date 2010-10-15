@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=-system-libpng -system-libjpeg -system-libmng	\
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	TMPDIR=${TMPDIR} \
 		QTDIR=${WRKSRC} \
-		LD_LIBRARY_PATH=${WRKSRC}/lib \
+		LD_LIBRARY_PATH=${WRKSRC}/lib:$$LD_LIBRARY_PATH \
 		PATH=${WRKSRC}/bin:$$PATH
 ALL_TARGET=	sub-tools
 EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
