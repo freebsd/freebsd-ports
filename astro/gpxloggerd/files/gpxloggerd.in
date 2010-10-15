@@ -33,13 +33,12 @@ rcvar=`set_rcvar`
 load_rc_config $name
 
 # Set defaults
-flags="${gpxloggerd_flags:--d}"
 template="${gpxloggerd_template:-/var/log/%d %B %Y - %H:%M.gpx}"
 user="${gpxloggerd_user:-nobody}"
 group="${gpxloggerd_group:-nobody}"
 pidfile=/var/run/$name.pid
 
 command=%%PREFIX%%/sbin/$name
-command_args="${flags} -u ${user}:${group} -p ${pidfile} -f \"${template}\" $gpxloggerd_host"
+command_args="-u ${user}:${group} -p ${pidfile} -f \"${template}\" $gpxloggerd_host"
 
 run_rc_command "$1"
