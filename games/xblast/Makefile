@@ -17,6 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/Sources/${PORTVERSION} \
 .if !defined(WITHOUT_SOUND)
 MASTER_SITE_SUBDIR+=	${PORTNAME}/Musics/${MUSICS_DATE} \
 			${PORTNAME}/Sounds/${SOUNDS_DATE}
+.else
 PKGNAMESUFFIX=	-nosound
 .endif
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -32,7 +33,12 @@ DIST_SUBDIR=	xblast
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-player real-time strategy game for X11
 
+.if defined(WITHOUT_SOUND)
+WITHOUT_SDL=	yes
+.endif
+.if !defined(WITHOUT_SDL)
 WANT_SDL=	yes
+.endif
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -74,7 +80,7 @@ CONFIGURE_ARGS+=	--enable-sdl
 PLIST_SUB+=	NOSDL="@comment "
 .endif
 
-.if defined(WITHOUT_SOUND) && defined(WITHOUT_SDL)
+.if defined(WITHOUT_SOUND)
 CONFIGURE_ARGS+=	--disable-sound
 PLIST_SUB+=	SOUND="@comment "
 .else
@@ -95,6 +101,7 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|"Vera.ttf"|"${FONTSDIR}/Vera.ttf"|g' ${WRKSRC}/sdl_text.c
+	-@${MV} ${WRKDIR}/levels-${LEVELS_DATE}/reconstruct?on2.xal ${WRKDIR}/levels-${LEVELS_DATE}/reconstruction2.xal
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} xblast ${PREFIX}/bin/xblast
@@ -110,19 +117,19 @@ do-install:
 .endfor
 .endif
 	@${MKDIR} ${DATADIR}/image
-	@(${TAR} -C ${WRKDIR}/${IMAGES_DISTNAME} --exclude "Imakefile" \
+	@(${TAR} -C ${WRKDIR}/images-${IMAGES_DATE} --exclude "Imakefile" \
 		-cf - . | ${TAR} -C ${DATADIR}/image --unlink -xf -)
 	@${MKDIR} ${DATADIR}/level
-	@(${TAR} -C ${WRKDIR}/${LEVELS_DISTNAME} --exclude "Imakefile" \
+	@(${TAR} -C ${WRKDIR}/levels-${LEVELS_DATE} --exclude "Imakefile" \
 		-cf - . | ${TAR} -C ${DATADIR}/level --unlink -xf -)
 	@${MKDIR} ${DATADIR}/image/sprite
-	@(${TAR} -C ${WRKDIR}/${MODELS_DISTNAME} --exclude "Imakefile" \
+	@(${TAR} -C ${WRKDIR}/models-${MODELS_DATE} --exclude "Imakefile" \
 		-cf - . | ${TAR} -C ${DATADIR}/image/sprite --unlink -xf -)
 .if !defined(WITHOUT_SOUND)
 	@${MKDIR} ${DATADIR}/sounds
-	@(${TAR} -C ${WRKDIR}/${MUSICS_DISTNAME} --exclude "Imakefile" \
+	@(${TAR} -C ${WRKDIR}/musics-${MUSICS_DATE} --exclude "Imakefile" \
 		-cf - . | ${TAR} -C ${DATADIR}/sounds --unlink -xf -)
-	@(${TAR} -C ${WRKDIR}/${SOUNDS_DISTNAME} --exclude "Imakefile" \
+	@(${TAR} -C ${WRKDIR}/sounds --exclude "Imakefile" \
 		-cf - . | ${TAR} -C ${DATADIR}/sounds --unlink -xf -)
 .endif
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}

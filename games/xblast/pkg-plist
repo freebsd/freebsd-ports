@@ -2621,7 +2621,7 @@ bin/xblast
 %%DATADIR%%/level/rapiddeath.xal
 %%DATADIR%%/level/raymasters.xal
 %%DATADIR%%/level/reconstruction.xal
-%%DATADIR%%/level/reconstructîon2.xal
+%%DATADIR%%/level/reconstruction2.xal
 %%DATADIR%%/level/reincocloned.xal
 %%DATADIR%%/level/remembernokicking.xal
 %%DATADIR%%/level/remote_quest.xal
