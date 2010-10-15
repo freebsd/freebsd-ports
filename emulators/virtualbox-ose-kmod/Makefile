@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	3.2.8
+DISTVERSION=	3.2.10
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -21,6 +21,9 @@ COMMENT=	VirtualBox kernel module for FreeBSD
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		as86:${PORTSDIR}/devel/dev86 \
 		kmk:${PORTSDIR}/devel/kBuild
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}_OSE
