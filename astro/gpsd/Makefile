@@ -62,7 +62,7 @@ OPTIONS=	GTK2 "Install py-gtk2 (required for xgps & xgpsspeed)" off \
 		AIVDM "Aivdm support" on \
 		NTRIP "NTRIP support" on \
 		PROFILING "Profiling support" off \
-		NTPSHM "TP time hinting support" on \
+		NTPSHM "NTP time hinting support" on \
 		PPS "PPS time syncing support" off \
 		DBUS "DBUS support" off
 
