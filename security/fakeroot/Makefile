@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	fakeroot
-PORTVERSION=	1.14.3
+PORTVERSION=	1.14.4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/f/fakeroot
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Simulate the root user behaviour
 
+LICENSE=	GPLv3
+
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=		--with-ipc=tcp
 USE_AUTOTOOLS=		libtool:22
