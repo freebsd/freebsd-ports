@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	llvm
-DISTVERSION=	2.8.r${SVN_REV}
+DISTVERSION=	2.9.r${SVN_REV}
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
-CONFLICTS=	clang-2.[0-9]* llvm-2.[0-9]*
+CONFLICTS=	llvm-2.[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
@@ -49,8 +49,8 @@ CONFIGURE_ARGS+=	--enable-bindings=none
 
 OPTIONS=	ASSERTS "Enable assertions (thread unsafe)" off
 
-MAN1=		bugpoint.1 clang.1 lit.1 llc.1 lli.1 llvmc.1 llvm-ar.1 \
-		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 \
+MAN1=		bugpoint.1 lit.1 llc.1 lli.1 llvmc.1 llvm-ar.1 \
+		llvm-as.1 llvm-bcanalyzer.1 llvm-config.1 llvm-diff.1 \
 		llvm-dis.1 llvm-extract.1 llvm-ld.1 llvm-link.1 llvm-nm.1 \
 		llvm-prof.1 llvm-ranlib.1 llvmgcc.1 \
 		llvmgxx.1 opt.1 tblgen.1
@@ -91,8 +91,6 @@ do-fetch:
 	${MKDIR} ${WRKDIR}
 	svn export -r ${SVN_REV} \
 	    http://llvm.org/svn/llvm-project/llvm/trunk ${WRKSRC}
-	svn export -r ${SVN_REV} \
-	    http://llvm.org/svn/llvm-project/cfe/trunk ${WRKSRC}/tools/clang
 	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
 	echo "SVN_REV=	${SVN_REV}" > ${MASTERDIR}/Makefile.svn_rev
 .if ${USER} == brooks
@@ -106,20 +104,6 @@ post-patch:
 		${WRKSRC}/Makefile.config.in
 	${REINPLACE_CMD} -e 's,\(PROJ_mandir.*:=\).*$$,\1${MANPREFIX}/man,g' \
 		${WRKSRC}/Makefile.config.in
-	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' \
-		${WRKSRC}/tools/clang/tools/scan-build/scan-build
-	${REINPLACE_CMD} -e 's|/usr/bin/env perl|${PERL}|' \
-	    ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
-	    ${WRKSRC}/tools/clang/tools/scan-build/scan-build
-
-post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
-	    ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/scan-build \
-	    ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/scanview.css ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js ${DATADIR}
 
 TEST_CMD=	'(cd ${WRKSRC}/test; ${SETENV} ${MAKE_ENV} ${GMAKE} check-local-lit)'
 regression-test: ${BUILD_COOKIE}
@@ -131,14 +115,10 @@ regression-test: ${BUILD_COOKIE}
 	fi
 
 PLIST_FILE_LIST=	bin/bugpoint \
-			bin/c-index-test \
-			bin/ccc-analyzer \
-			bin/clang* \
 			bin/llc \
 			bin/lli \
 			bin/llvm* \
 			bin/opt \
-			bin/scan-build \
 			bin/tblgen \
 			lib/libBugpointPasses.so \
 			lib/libCompilerDriver.a \
@@ -147,27 +127,23 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			lib/libLTO.* \
 			lib/libLLVM* \
 			lib/libUnitTestMain.a \
-			lib/libclang* \
 			lib/libprofile_rt.so
-PLIST_DIR_LIST=		include/clang \
-			include/clang-c \
-			include/llvm-c \
-			include/llvm \
-			lib/clang
+PLIST_DIR_LIST=		include/llvm-c \
+			include/llvm
 build-plist:
 	${RM} -f ${PLIST}
 	cd ${PREFIX} && \
-	    (ls ${PLIST_FILE_LIST} && ${FIND} ${PLIST_DIR_LIST} -type f) | \
+	    (ls ${PLIST_FILE_LIST}; ${FIND} ${PLIST_DIR_LIST} -type f) | \
 	    ${SORT} >> ${PLIST}
-	${FIND} ${DATADIR} ${DOCSDIR} -type f | \
-	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
-	     -e 's|${DOCSDIR}|%%DOCSDIR%%|' | ${SORT} >> ${PLIST}
+	${FIND} ${DOCSDIR} -type f | \
+	    ${SED} -e 's|${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
+	    ${SORT} >> ${PLIST}
 	cd ${PREFIX} && \
 	    ${FIND} ${PLIST_DIR_LIST} -type d | \
 	    ${SORT} -r | ${SED} -e 's|^|@dirrm |' >> ${PLIST}
-	${FIND} ${DATADIR} ${DOCSDIR} -type d | ${SORT} -r | \
+	${FIND} ${DOCSDIR} -type d | ${SORT} -r | \
 	    ${SED} -e 's|${DATADIR}|%%DATADIR%%|' \
 	     -e 's|${DOCSDIR}|%%DOCSDIR%%|' \
-	     -e 's|^|@dirrm |' >> ${PLIST}
+	     -e 's|^|%%PORTDOCS%%@dirrm |' >> ${PLIST}
 
 .include <bsd.port.post.mk>
