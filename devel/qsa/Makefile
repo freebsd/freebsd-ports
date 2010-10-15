@@ -28,7 +28,7 @@ CONFIGURE_ARGS=-prefix ${PREFIX}
 CONFIGURE_ENV?=	QTDIR=${QT_PREFIX} QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${QT_PREFIX} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
-		LD_LIBRARY_PATH=${WRKSRC}/qsa \
+		LD_LIBRARY_PATH=${WRKSRC}/qsa:$$LD_LIBRARY_PATH \
 		PATH=${WRKSRC}/bin:$$PATH
 ALL_TARGET=	sub-src
 
