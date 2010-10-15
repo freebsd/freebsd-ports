@@ -1,22 +1,12 @@
-%%DOCSDIR%%/BUGS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/CREDITS
-%%DOCSDIR%%/NEWS
 bin/sbcl
-lib/sbcl/asdf-install/.cvsignore
-lib/sbcl/asdf-install/Makefile
-lib/sbcl/asdf-install/README
 lib/sbcl/asdf-install/asdf-install.asd
 lib/sbcl/asdf-install/asdf-install.fasl
 lib/sbcl/asdf-install/defpackage.fasl
 lib/sbcl/asdf-install/defpackage.lisp
 lib/sbcl/asdf-install/installer.fasl
 lib/sbcl/asdf-install/installer.lisp
-lib/sbcl/asdf-install/test-passed
 lib/sbcl/asdf/asdf.fasl
-lib/sbcl/sb-aclrepl/.cvsignore
-lib/sbcl/sb-aclrepl/Makefile
-lib/sbcl/sb-aclrepl/README
+lib/sbcl/asdf/asdf.lisp
 lib/sbcl/sb-aclrepl/debug.fasl
 lib/sbcl/sb-aclrepl/debug.lisp
 lib/sbcl/sb-aclrepl/inspect.fasl
@@ -25,25 +15,14 @@ lib/sbcl/sb-aclrepl/repl.fasl
 lib/sbcl/sb-aclrepl/repl.lisp
 lib/sbcl/sb-aclrepl/sb-aclrepl.asd
 lib/sbcl/sb-aclrepl/sb-aclrepl.fasl
-lib/sbcl/sb-aclrepl/sb-aclrepl.texinfo
-lib/sbcl/sb-aclrepl/test-passed
 lib/sbcl/sb-aclrepl/tests.fasl
 lib/sbcl/sb-aclrepl/tests.lisp
 lib/sbcl/sb-aclrepl/toplevel.fasl
 lib/sbcl/sb-aclrepl/toplevel.lisp
-lib/sbcl/sb-bsd-sockets/.cvsignore
-lib/sbcl/sb-bsd-sockets/FAQ
-lib/sbcl/sb-bsd-sockets/Makefile
-lib/sbcl/sb-bsd-sockets/NEWS
-lib/sbcl/sb-bsd-sockets/TODO
-lib/sbcl/sb-bsd-sockets/alien/.keep_me
-lib/sbcl/sb-bsd-sockets/a.out
 lib/sbcl/sb-bsd-sockets/constants.fasl
 lib/sbcl/sb-bsd-sockets/constants.lisp
-lib/sbcl/sb-bsd-sockets/constants.lisp-temp
 lib/sbcl/sb-bsd-sockets/defpackage.fasl
 lib/sbcl/sb-bsd-sockets/defpackage.lisp
-lib/sbcl/sb-bsd-sockets/foo.c
 lib/sbcl/sb-bsd-sockets/inet.fasl
 lib/sbcl/sb-bsd-sockets/inet.lisp
 lib/sbcl/sb-bsd-sockets/local.fasl
@@ -54,21 +33,17 @@ lib/sbcl/sb-bsd-sockets/name-service.fasl
 lib/sbcl/sb-bsd-sockets/name-service.lisp
 lib/sbcl/sb-bsd-sockets/sb-bsd-sockets.asd
 lib/sbcl/sb-bsd-sockets/sb-bsd-sockets.fasl
-lib/sbcl/sb-bsd-sockets/sb-bsd-sockets.texinfo
 lib/sbcl/sb-bsd-sockets/sockets.fasl
 lib/sbcl/sb-bsd-sockets/sockets.lisp
 lib/sbcl/sb-bsd-sockets/sockopt.fasl
 lib/sbcl/sb-bsd-sockets/sockopt.lisp
 lib/sbcl/sb-bsd-sockets/split.fasl
 lib/sbcl/sb-bsd-sockets/split.lisp
-lib/sbcl/sb-bsd-sockets/test-passed
 lib/sbcl/sb-bsd-sockets/tests.fasl
 lib/sbcl/sb-bsd-sockets/tests.lisp
 lib/sbcl/sb-bsd-sockets/win32-constants.lisp
 lib/sbcl/sb-bsd-sockets/win32-lib.lisp
 lib/sbcl/sb-bsd-sockets/win32-sockets.lisp
-lib/sbcl/sb-cltl2/.cvsignore
-lib/sbcl/sb-cltl2/Makefile
 lib/sbcl/sb-cltl2/compiler-let.fasl
 lib/sbcl/sb-cltl2/compiler-let.lisp
 lib/sbcl/sb-cltl2/defpackage.fasl
@@ -79,28 +54,30 @@ lib/sbcl/sb-cltl2/macroexpand.fasl
 lib/sbcl/sb-cltl2/macroexpand.lisp
 lib/sbcl/sb-cltl2/sb-cltl2.asd
 lib/sbcl/sb-cltl2/sb-cltl2.fasl
-lib/sbcl/sb-cltl2/test-passed
 lib/sbcl/sb-cltl2/tests.fasl
 lib/sbcl/sb-cltl2/tests.lisp
-lib/sbcl/sb-cover/.cvsignore
-lib/sbcl/sb-cover/Makefile
+lib/sbcl/sb-concurrency/mailbox.fasl
+lib/sbcl/sb-concurrency/mailbox.lisp
+lib/sbcl/sb-concurrency/package.fasl
+lib/sbcl/sb-concurrency/package.lisp
+lib/sbcl/sb-concurrency/queue.fasl
+lib/sbcl/sb-concurrency/queue.lisp
+lib/sbcl/sb-concurrency/sb-concurrency.asd
+lib/sbcl/sb-concurrency/sb-concurrency.fasl
 lib/sbcl/sb-cover/cover.fasl
 lib/sbcl/sb-cover/cover.lisp
 lib/sbcl/sb-cover/sb-cover.asd
 lib/sbcl/sb-cover/sb-cover.fasl
-lib/sbcl/sb-cover/sb-cover.texinfo
 lib/sbcl/sb-cover/test-data-1.fasl
 lib/sbcl/sb-cover/test-data-1.lisp
 lib/sbcl/sb-cover/test-data-2.fasl
 lib/sbcl/sb-cover/test-data-2.lisp
 lib/sbcl/sb-cover/test-data-3.fasl
 lib/sbcl/sb-cover/test-data-3.lisp
-lib/sbcl/sb-cover/test-passed
 lib/sbcl/sb-cover/tests.fasl
 lib/sbcl/sb-cover/tests.lisp
 lib/sbcl/sb-executable/sb-executable.fasl
-lib/sbcl/sb-grovel/.cvsignore
-lib/sbcl/sb-grovel/Makefile
+lib/sbcl/sb-executable/sb-executable.lisp
 lib/sbcl/sb-grovel/def-to-lisp.fasl
 lib/sbcl/sb-grovel/def-to-lisp.lisp
 lib/sbcl/sb-grovel/defpackage.fasl
@@ -110,48 +87,30 @@ lib/sbcl/sb-grovel/foreign-glue.fasl
 lib/sbcl/sb-grovel/foreign-glue.lisp
 lib/sbcl/sb-grovel/sb-grovel.asd
 lib/sbcl/sb-grovel/sb-grovel.fasl
-lib/sbcl/sb-grovel/sb-grovel.texinfo
-lib/sbcl/sb-grovel/test-passed
-lib/sbcl/sb-introspect/.cvsignore
-lib/sbcl/sb-introspect/Makefile
 lib/sbcl/sb-introspect/introspect.fasl
 lib/sbcl/sb-introspect/introspect.lisp
 lib/sbcl/sb-introspect/sb-introspect.asd
 lib/sbcl/sb-introspect/sb-introspect.fasl
 lib/sbcl/sb-introspect/test-driver.fasl
 lib/sbcl/sb-introspect/test-driver.lisp
-lib/sbcl/sb-introspect/test-passed
 lib/sbcl/sb-introspect/test.fasl
 lib/sbcl/sb-introspect/test.lisp
 lib/sbcl/sb-introspect/xref-test-data.fasl
 lib/sbcl/sb-introspect/xref-test-data.lisp
 lib/sbcl/sb-introspect/xref-test.fasl
 lib/sbcl/sb-introspect/xref-test.lisp
-lib/sbcl/sb-md5/.cvsignore
-lib/sbcl/sb-md5/Makefile
-lib/sbcl/sb-md5/README
 lib/sbcl/sb-md5/md5-tests.fasl
 lib/sbcl/sb-md5/md5-tests.lisp
 lib/sbcl/sb-md5/md5.fasl
 lib/sbcl/sb-md5/md5.lisp
 lib/sbcl/sb-md5/sb-md5.asd
 lib/sbcl/sb-md5/sb-md5.fasl
-lib/sbcl/sb-md5/sb-md5.texinfo
-lib/sbcl/sb-md5/test-passed
-lib/sbcl/sb-posix/.cvsignore
-lib/sbcl/sb-posix/Makefile
-lib/sbcl/sb-posix/README
-lib/sbcl/sb-posix/TODO
-lib/sbcl/sb-posix/alien/.keep_me
-lib/sbcl/sb-posix/a.out
 lib/sbcl/sb-posix/constants.fasl
 lib/sbcl/sb-posix/constants.lisp
-lib/sbcl/sb-posix/constants.lisp-temp
 lib/sbcl/sb-posix/defpackage.fasl
 lib/sbcl/sb-posix/defpackage.lisp
 lib/sbcl/sb-posix/designator.fasl
 lib/sbcl/sb-posix/designator.lisp
-lib/sbcl/sb-posix/foo.c
 lib/sbcl/sb-posix/interface.fasl
 lib/sbcl/sb-posix/interface.lisp
 lib/sbcl/sb-posix/macros.fasl
@@ -160,22 +119,10 @@ lib/sbcl/sb-posix/posix-tests.fasl
 lib/sbcl/sb-posix/posix-tests.lisp
 lib/sbcl/sb-posix/sb-posix.asd
 lib/sbcl/sb-posix/sb-posix.fasl
-lib/sbcl/sb-posix/sb-posix.texinfo
-lib/sbcl/sb-posix/test-passed
-lib/sbcl/sb-posix/test-lab/.keep_me
-lib/sbcl/sb-queue/.cvsignore
-lib/sbcl/sb-queue/Makefile
-lib/sbcl/sb-queue/queue.fasl
-lib/sbcl/sb-queue/queue.lisp
+lib/sbcl/sb-queue/package.fasl
+lib/sbcl/sb-queue/package.lisp
 lib/sbcl/sb-queue/sb-queue.asd
-lib/sbcl/sb-queue/sb-queue.texinfo
 lib/sbcl/sb-queue/sb-queue.fasl
-lib/sbcl/sb-queue/test-passed
-lib/sbcl/sb-queue/test-queue.fasl
-lib/sbcl/sb-queue/test-queue.lisp
-lib/sbcl/sb-rotate-byte/.cvsignore
-lib/sbcl/sb-rotate-byte/Makefile
-lib/sbcl/sb-rotate-byte/README
 lib/sbcl/sb-rotate-byte/compiler.fasl
 lib/sbcl/sb-rotate-byte/compiler.lisp
 lib/sbcl/sb-rotate-byte/package.fasl
@@ -187,21 +134,13 @@ lib/sbcl/sb-rotate-byte/rotate-byte.fasl
 lib/sbcl/sb-rotate-byte/rotate-byte.lisp
 lib/sbcl/sb-rotate-byte/sb-rotate-byte.asd
 lib/sbcl/sb-rotate-byte/sb-rotate-byte.fasl
-lib/sbcl/sb-rotate-byte/sb-rotate-byte.texinfo
-lib/sbcl/sb-rotate-byte/test-passed
-%%I386_ONLY%%lib/sbcl/sb-rotate-byte/x86-vm.fasl
+lib/sbcl/sb-rotate-byte/x86-64-vm.fasl
+lib/sbcl/sb-rotate-byte/x86-64-vm.lisp
 lib/sbcl/sb-rotate-byte/x86-vm.lisp
-lib/sbcl/sb-rt/.cvsignore
-lib/sbcl/sb-rt/Makefile
 lib/sbcl/sb-rt/rt.fasl
 lib/sbcl/sb-rt/rt.lisp
 lib/sbcl/sb-rt/sb-rt.asd
 lib/sbcl/sb-rt/sb-rt.fasl
-lib/sbcl/sb-rt/test-passed
-lib/sbcl/sb-simple-streams/.cvsignore
-lib/sbcl/sb-simple-streams/Makefile
-lib/sbcl/sb-simple-streams/README
-lib/sbcl/sb-simple-streams/TODO
 lib/sbcl/sb-simple-streams/classes.fasl
 lib/sbcl/sb-simple-streams/classes.lisp
 lib/sbcl/sb-simple-streams/direct.fasl
@@ -222,7 +161,6 @@ lib/sbcl/sb-simple-streams/package.fasl
 lib/sbcl/sb-simple-streams/package.lisp
 lib/sbcl/sb-simple-streams/sb-simple-streams.asd
 lib/sbcl/sb-simple-streams/sb-simple-streams.fasl
-lib/sbcl/sb-simple-streams/sb-simple-streams.texinfo
 lib/sbcl/sb-simple-streams/simple-stream-tests.fasl
 lib/sbcl/sb-simple-streams/simple-stream-tests.lisp
 lib/sbcl/sb-simple-streams/socket.fasl
@@ -233,28 +171,58 @@ lib/sbcl/sb-simple-streams/string.fasl
 lib/sbcl/sb-simple-streams/string.lisp
 lib/sbcl/sb-simple-streams/terminal.fasl
 lib/sbcl/sb-simple-streams/terminal.lisp
-lib/sbcl/sb-simple-streams/test-data.tmp
-lib/sbcl/sb-simple-streams/test-passed
 lib/sbcl/sb-sprof/sb-sprof.fasl
+lib/sbcl/sb-sprof/sb-sprof.lisp
 lib/sbcl/sbcl.core
 lib/sbcl/site-systems/.keep_me
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/PRINCIPLES
+%%PORTDOCS%%%%DOCSDIR%%/STYLE
+%%PORTDOCS%%%%DOCSDIR%%/TLA
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/asdf-install/README
+%%PORTDOCS%%%%DOCSDIR%%/asdf.html
+%%PDF%%%%PORTDOCS%%%%DOCSDIR%%/asdf.pdf
+%%PS%%%%PORTDOCS%%%%DOCSDIR%%/asdf.ps
+%%PORTDOCS%%%%DOCSDIR%%/asdf/README
+%%PORTDOCS%%%%DOCSDIR%%/asdf/README.SBCL
+%%PORTDOCS%%%%DOCSDIR%%/sb-aclrepl/README
+%%PORTDOCS%%%%DOCSDIR%%/sb-bsd-sockets/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/sb-bsd-sockets/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/sb-md5/README
+%%PORTDOCS%%%%DOCSDIR%%/sb-posix/README
+%%PORTDOCS%%%%DOCSDIR%%/sb-rotate-byte/README
+%%PORTDOCS%%%%DOCSDIR%%/sb-simple-streams/README
+%%PDF%%%%PORTDOCS%%%%DOCSDIR%%/sbcl-internals.pdf
+%%PORTDOCS%%%%DOCSDIR%%/sbcl.html
+%%PDF%%%%PORTDOCS%%%%DOCSDIR%%/sbcl.pdf
+%%PS%%%%PORTDOCS%%%%DOCSDIR%%/sbcl.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sb-simple-streams
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sb-rotate-byte
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sb-posix
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sb-md5
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sb-bsd-sockets
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/sb-aclrepl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/asdf-install
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/asdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/sbcl/site-systems
 @dirrm lib/sbcl/sb-sprof
 @dirrm lib/sbcl/sb-simple-streams
 @dirrm lib/sbcl/sb-rt
 @dirrm lib/sbcl/sb-rotate-byte
 @dirrm lib/sbcl/sb-queue
-@dirrm lib/sbcl/sb-posix/alien
-@dirrm lib/sbcl/sb-posix/test-lab
 @dirrm lib/sbcl/sb-posix
 @dirrm lib/sbcl/sb-md5
 @dirrm lib/sbcl/sb-introspect
 @dirrm lib/sbcl/sb-grovel
 @dirrm lib/sbcl/sb-executable
 @dirrm lib/sbcl/sb-cover
+@dirrm lib/sbcl/sb-concurrency
 @dirrm lib/sbcl/sb-cltl2
-@dirrm lib/sbcl/sb-bsd-sockets/alien
 @dirrm lib/sbcl/sb-bsd-sockets
 @dirrm lib/sbcl/sb-aclrepl
 @dirrm lib/sbcl/asdf-install
