@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}.tar.gz:fop offo-hyphenation.zip:hyph
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	jjuanino@gmail.com
+MAINTAINER=	geoff@sea-incorporated.com
 COMMENT=	Print formatter driven by XSL formatting
 
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
