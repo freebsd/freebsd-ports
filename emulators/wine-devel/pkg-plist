@@ -144,6 +144,8 @@ include/wine/windows/cvconst.h
 include/wine/windows/d3d.h
 include/wine/windows/d3d10.h
 include/wine/windows/d3d10.idl
+include/wine/windows/d3d10_1.h
+include/wine/windows/d3d10_1.idl
 include/wine/windows/d3d10effect.h
 include/wine/windows/d3d10misc.h
 include/wine/windows/d3d10shader.h
@@ -342,6 +344,8 @@ include/wine/windows/mcx.h
 include/wine/windows/mediaerr.h
 include/wine/windows/mediaobj.h
 include/wine/windows/mediaobj.idl
+include/wine/windows/metahost.h
+include/wine/windows/metahost.idl
 include/wine/windows/midles.h
 include/wine/windows/mimeinfo.h
 include/wine/windows/mimeinfo.idl
@@ -358,6 +362,7 @@ include/wine/windows/mmstream.h
 include/wine/windows/mmstream.idl
 include/wine/windows/mmsystem.h
 include/wine/windows/mprapi.h
+include/wine/windows/mprerror.h
 include/wine/windows/msacm.h
 include/wine/windows/msacmdlg.h
 include/wine/windows/msacmdrv.h
@@ -660,6 +665,7 @@ lib/wine/advapi32.dll.so
 lib/wine/advpack.dll.so
 lib/wine/amstream.dll.so
 lib/wine/appwiz.cpl.so
+lib/wine/aspnet_regiis.exe.so
 lib/wine/atl.dll.so
 lib/wine/attrib.exe.so
 lib/wine/authz.dll.so
@@ -794,6 +800,7 @@ lib/wine/fakedlls/advapi32.dll
 lib/wine/fakedlls/advpack.dll
 lib/wine/fakedlls/amstream.dll
 lib/wine/fakedlls/appwiz.cpl
+lib/wine/fakedlls/aspnet_regiis.exe
 lib/wine/fakedlls/atl.dll
 lib/wine/fakedlls/attrib.exe
 lib/wine/fakedlls/authz.dll
@@ -1402,6 +1409,7 @@ lib/wine/libslc.def
 lib/wine/libsnmpapi.def
 lib/wine/libspoolss.def
 lib/wine/libsti.def
+lib/wine/libstrmbase.a
 lib/wine/libstrmiids.a
 lib/wine/libtapi32.def
 lib/wine/libunicows.def
