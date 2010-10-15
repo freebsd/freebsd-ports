@@ -27,6 +27,7 @@
 %%SITE_PERL%%/PPIx/Regexp/Token/Backtrack.pm
 %%SITE_PERL%%/PPIx/Regexp/Token/CharClass.pm
 %%SITE_PERL%%/PPIx/Regexp/Token/CharClass/POSIX.pm
+%%SITE_PERL%%/PPIx/Regexp/Token/CharClass/POSIX/Unknown.pm
 %%SITE_PERL%%/PPIx/Regexp/Token/CharClass/Simple.pm
 %%SITE_PERL%%/PPIx/Regexp/Token/Code.pm
 %%SITE_PERL%%/PPIx/Regexp/Token/Comment.pm
@@ -54,10 +55,12 @@
 %%SITE_PERL%%/PPIx/Regexp/Token/Unmatched.pm
 %%SITE_PERL%%/PPIx/Regexp/Token/Whitespace.pm
 %%SITE_PERL%%/PPIx/Regexp/Tokenizer.pm
+%%SITE_PERL%%/PPIx/Regexp/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPIx/Regexp/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPIx/Regexp
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPIx
 @dirrm %%SITE_PERL%%/PPIx/Regexp/Token/GroupType
+@dirrm %%SITE_PERL%%/PPIx/Regexp/Token/CharClass/POSIX
 @dirrm %%SITE_PERL%%/PPIx/Regexp/Token/CharClass
 @dirrm %%SITE_PERL%%/PPIx/Regexp/Token
 @dirrm %%SITE_PERL%%/PPIx/Regexp/Structure
