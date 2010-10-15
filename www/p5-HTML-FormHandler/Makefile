@@ -2,10 +2,9 @@
 # Whom: gugu
 # Date created: 03 December 2009
 # $FreeBSD$
-# Generated with portupload. Do not edit directly, please
 
 PORTNAME=	HTML-FormHandler
-PORTVERSION=	0.32002
+PORTVERSION=	0.32003
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -57,6 +56,7 @@ MAN3=	HTML::FormHandler.3 HTML::FormHandler::BuildFields.3 \
 	HTML::FormHandler::Field::Submit.3 HTML::FormHandler::Field::Text.3 \
 	HTML::FormHandler::Field::TextArea.3 HTML::FormHandler::Field::Upload.3 \
 	HTML::FormHandler::Field::Weekday.3 HTML::FormHandler::Field::Year.3 \
+	HTML::FormHandler::Widget::Field::Repeatable.3 \
 	HTML::FormHandler::Fields.3 HTML::FormHandler::InitResult.3 \
 	HTML::FormHandler::Manual.3 HTML::FormHandler::Manual::Catalyst.3 \
 	HTML::FormHandler::Manual::Cookbook.3 HTML::FormHandler::Manual::Intro.3 \

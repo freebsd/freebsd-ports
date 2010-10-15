@@ -100,6 +100,7 @@
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/Password.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/RadioGroup.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/Reset.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Field/Repeatable.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/Select.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/Submit.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Field/Text.pm
