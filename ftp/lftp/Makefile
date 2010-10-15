@@ -7,21 +7,23 @@
 
 PORTNAME=	lftp
 PORTVERSION=	4.0.10
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
-		ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/old/ \
-		ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/ \
+MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/ \
+		http://ftp.yars.free.net/pub/source/lftp/old/ \
 		http://lftp.cybermirror.org/ \
 		http://lftp.cybermirror.org/old/ \
-		ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
-		ftp://ftp.wiretapped.net/pub/mirrors/lftp/old/ \
-		ftp://ftp.yars.free.net/pub/source/lftp/ \
-		ftp://ftp.yars.free.net/pub/source/lftp/old/
+		http://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
+		http://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/old/ \
+		http://ftp.tuwien.ac.at/infosys/browsers/ftp/lftp/ \
+		ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Shell-like command line ftp client
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+
+LICENSE=	GPLv3
 
 USE_ICONV=	yes
 USE_GZIP=	yes
