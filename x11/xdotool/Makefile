@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdotool
-DISTVERSION=	2.20100818.3004
+DISTVERSION=	2.20101012.3049
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://semicomplete.googlecode.com/files/
