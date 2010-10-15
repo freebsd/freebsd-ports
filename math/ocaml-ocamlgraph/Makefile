@@ -7,6 +7,7 @@
 
 PORTNAME=	ocamlgraph
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://ocamlgraph.lri.fr/download/
 PKGNAMEPREFIX=	ocaml-
@@ -19,12 +20,14 @@ OPTIONS=	GUI "Include user programs: viewer and editor" off
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAML_LDCONFIG=	yes
+USE_OCAMLFIND_PLIST=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_SUB+=	OCAMLGRAPHDIR="${OCAML_LIBDIR}/${PORTNAME}"
 
 ALL_TARGET=	all
+INSTALL_TARGET=	install install-findlib
 
 .include <bsd.port.pre.mk>
 
