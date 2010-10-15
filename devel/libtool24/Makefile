@@ -22,6 +22,7 @@ IGNORE=	You really do not want this yet.  Trust me.
 LICENSE?=        GPLv2
 LICENSE_FILE?=   ${WRKSRC}/COPYING
 
+NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?= --disable-ltdl-install
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
