@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PPIx-Regexp
-PORTVERSION=	0.010
+PORTVERSION=	0.013
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/W/WY/WYANT
@@ -16,9 +16,7 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	PPI regular expression parser
 
 BUILD_DEPENDS=	p5-List-MoreUtils>0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-PPI>0:${PORTSDIR}/textproc/p5-PPI \
-		p5-Params-Util>=0.250:${PORTSDIR}/devel/p5-Params-Util \
-		p5-Readonly>0:${PORTSDIR}/devel/p5-Readonly \
+		p5-PPI>=1.117:${PORTSDIR}/textproc/p5-PPI \
 		p5-Scalar-List-Utils>0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Task-Weaken>0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Test-Simple>0:${PORTSDIR}/devel/p5-Test-Simple
@@ -56,6 +54,7 @@ MAN3=	PPIx::Regexp.3 \
 	PPIx::Regexp::Token::Backtrack.3 \
 	PPIx::Regexp::Token::CharClass.3 \
 	PPIx::Regexp::Token::CharClass::POSIX.3 \
+	PPIx::Regexp::Token::CharClass::POSIX::Unknown.3 \
 	PPIx::Regexp::Token::CharClass::Simple.3 \
 	PPIx::Regexp::Token::Code.3 \
 	PPIx::Regexp::Token::Comment.3 \
@@ -82,6 +81,7 @@ MAN3=	PPIx::Regexp.3 \
 	PPIx::Regexp::Token::Unknown.3 \
 	PPIx::Regexp::Token::Unmatched.3 \
 	PPIx::Regexp::Token::Whitespace.3 \
-	PPIx::Regexp::Tokenizer.3
+	PPIx::Regexp::Tokenizer.3 \
+	PPIx::Regexp::Util.3
 
 .include <bsd.port.mk>
