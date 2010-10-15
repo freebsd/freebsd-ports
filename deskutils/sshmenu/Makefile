@@ -39,9 +39,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/lib/gnome-sshmenu.rb ${RUBY_SITELIBDIR}
 	${INSTALL} ${WRKSRC}/sshmenu-applet.server ${PREFIX}/libdata/bonobo/servers
 	${INSTALL} ${WRKSRC}/sshmenu-applet ${PREFIX}/libexec
-.if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/sshmenu.1 ${MAN1PREFIX}/man/man1
-.endif
 	${INSTALL} ${WRKSRC}/gnome-sshmenu-applet.png ${PREFIX}/share/icons/gnome/48x48/apps
 	${INSTALL} ${WRKSRC}/bin/sshmenu ${PREFIX}/bin
 	${INSTALL} ${WRKSRC}/bin/sshmenu-gnome ${PREFIX}/bin
