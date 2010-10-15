@@ -216,7 +216,6 @@ Sather                          ports/lang/Sather
 SciPlot                         ports/graphics/SciPlot
 SoXt                            ports/x11-toolkits/SoXt
 Sockets                         ports/net/Sockets
-Sockets-devel                   ports/net/Sockets-devel
 SpecTcl                         ports/devel/SpecTcl
 Tee                             ports/sysutils/Tee
 TenDRA                          ports/lang/TenDRA
@@ -1272,7 +1271,6 @@ btc                             ports/audio/btc
 btoa                            ports/converters/btoa
 btparse                         ports/textproc/btparse
 btpd                            ports/net-p2p/btpd
-btpeer                          ports/net-p2p/btpeer
 btqueue                         ports/net-p2p/btqueue
 bubblegum                       ports/security/bubblegum
 bubblemon-dockapp               ports/sysutils/bubblemon-dockapp
@@ -1658,7 +1656,7 @@ clamfilter                      ports/mail/clamfilter
 clamsmtp                        ports/security/clamsmtp
 clamtk                          ports/security/clamtk
 clamz                           ports/net/clamz
-clang                           ports/devel/clang
+clang                           ports/lang/clang
 clanlib                         ports/devel/clanlib
 claraocr                        ports/graphics/claraocr
 clarence                        ports/math/clarence
@@ -4450,7 +4448,6 @@ gkrellm-timers                  ports/deskutils/gkrellm-timers
 gkrellm-trayicons               ports/sysutils/gkrellm-trayicons
 gkrellm-xkb                     ports/misc/gkrellm-xkb
 gkrellm2                        ports/sysutils/gkrellm2
-gkrellm_snmp                    ports/net/gkrellm_snmp
 gkrellmbgchg2                   ports/misc/gkrellmbgchg2
 gkrellmfmonitor                 ports/misc/gkrellmfmonitor
 gkrellmfmonitor2                ports/misc/gkrellmfmonitor2
@@ -10032,7 +10029,6 @@ nessus-plugins                  ports/security/nessus-plugins
 net-http                        ports/net/net-http
 net-p2p_dcd                     ports/net-p2p/dcd
 net-snmp                        ports/net-mgmt/net-snmp
-net-snmp4                       ports/net-mgmt/net-snmp4
 net2ftp                         ports/ftp/net2ftp
 net6                            ports/net/net6
 net_jags                        ports/net/jags
@@ -13388,8 +13384,6 @@ p5-OpenOffice-OODoc             ports/textproc/p5-OpenOffice-OODoc
 p5-Oryx                         ports/databases/p5-Oryx
 p5-OurNet-BBS                   ports/net/p5-OurNet-BBS
 p5-OurNet-BBSAgent              ports/net/p5-OurNet-BBSAgent
-p5-P4                           ports/devel/p5-P4
-p5-P4-Client                    ports/devel/p5-P4-Client
 p5-PAR                          ports/devel/p5-PAR
 p5-PAR-Dist                     ports/devel/p5-PAR-Dist
 p5-PAR-Packer                   ports/devel/p5-PAR-Packer
@@ -13691,6 +13685,7 @@ p5-Rcs-Agent                    ports/devel/p5-Rcs-Agent
 p5-Reaction                     ports/www/p5-Reaction
 p5-ReadLine-Gnu                 ports/devel/p5-ReadLine-Gnu
 p5-ReadLine-Perl                ports/devel/p5-ReadLine-Perl
+p5-ReadLine-TTYtter             ports/devel/p5-ReadLine-TTYtter
 p5-Readonly                     ports/devel/p5-Readonly
 p5-Redis                        ports/databases/p5-Redis
 p5-Regex-PreSuf                 ports/textproc/p5-Regex-PreSuf
@@ -17363,8 +17358,6 @@ p5-oryx                         ports/databases/p5-Oryx
 p5-orz                          ports/devel/p5-orz
 p5-ournet-bbs                   ports/net/p5-OurNet-BBS
 p5-ournet-bbsagent              ports/net/p5-OurNet-BBSAgent
-p5-p4                           ports/devel/p5-P4
-p5-p4-client                    ports/devel/p5-P4-Client
 p5-pQuery                       ports/www/p5-pQuery
 p5-package-constants            ports/devel/p5-Package-Constants
 p5-package-deprecationmanager   ports/devel/p5-Package-DeprecationManager
@@ -17660,6 +17653,7 @@ p5-rdfstore                     ports/textproc/p5-RDFStore
 p5-reaction                     ports/www/p5-Reaction
 p5-readline-gnu                 ports/devel/p5-ReadLine-Gnu
 p5-readline-perl                ports/devel/p5-ReadLine-Perl
+p5-readline-ttytter             ports/devel/p5-ReadLine-TTYtter
 p5-readonly                     ports/devel/p5-Readonly
 p5-reaper                       ports/devel/p5-reaper
 p5-redis                        ports/databases/p5-Redis
@@ -23530,7 +23524,6 @@ socket                          ports/sysutils/socket
 socketbind                      ports/net/socketbind
 socketpipe                      ports/net/socketpipe
 sockets                         ports/net/Sockets
-sockets-devel                   ports/net/Sockets-devel
 socklog                         ports/sysutils/socklog
 socks5                          ports/net/socks5
 sodipodi                        ports/graphics/sodipodi
