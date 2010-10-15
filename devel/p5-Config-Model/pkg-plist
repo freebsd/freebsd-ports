@@ -52,4 +52,3 @@ bin/config-edit-popcon
 @dirrmtry %%SITE_PERL%%/Config/Model/Backend
 @dirrmtry %%SITE_PERL%%/Config/Model
 @dirrmtry %%SITE_PERL%%/Config
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config-Model
