@@ -20,7 +20,7 @@ COMMENT=	SixXS IPv6 TIC+ tunnel broker heartbeat client
 LIB_DEPENDS=	gnutls-openssl.40:${PORTSDIR}/security/gnutls
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 USE_RC_SUBR=	sixxs-aiccu
 USE_GMAKE=	yes
@@ -31,9 +31,6 @@ MAKE_ARGS+=	CC="${CC}" LDFLAGS="${LDFLAGS}"
 WRKSRC=		${WRKDIR}/aiccu
 BUILD_WRKSRC=	${WRKDIR}/aiccu/unix-console
 PORTDOCS=	README
-
-post-extract:
-	${CP} ${WRKSRC}/doc/LICENSE ${WRKSRC}/COPYRIGHT
 
 post-patch:
 	@${REINPLACE_CMD} \
