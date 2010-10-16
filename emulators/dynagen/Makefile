@@ -10,7 +10,7 @@ PORTVERSION=	0.11.0
 CATEGORIES=	emulators
 MASTER_SITES=	SF/dyna-gen/${PORTNAME}%20source%20_%20Linux/${PORTNAME}%20${PORTVERSION}
 
-MAINTAINER=	pol@opk.ru
+MAINTAINER=	pavelivolkov@googlemail.com
 COMMENT=	Text-based front end for Dynamips development version
 
 RUN_DEPENDS=	dynamips:${PORTSDIR}/emulators/dynamips-devel
