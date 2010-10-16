@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fop
-PORTVERSION=	0.95
+PORTVERSION=	1.0
 CATEGORIES=	textproc java
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:fop/} \
 		SF/offo/offo-hyphenation/1.0:hyph
