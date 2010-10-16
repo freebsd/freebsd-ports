@@ -15,10 +15,6 @@ DISTNAME=	autoconf-${PORTVERSION}
 MAINTAINER=	autotools@FreeBSD.org
 COMMENT=	Automatically configure source code on many Un*x platforms (2.68)
 
-.if !defined(WITH_PSYCHOPATHIC_TENDENCIES)
-IGNORE=	You really do not want this yet.  Trust me.
-.endif
-
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		help2man:${PORTSDIR}/misc/help2man
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
