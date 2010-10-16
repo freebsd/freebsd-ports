@@ -23762,8 +23762,6 @@ sselp                           ports/x11/sselp
 ssh                             ports/security/ssh
 ssh-gui                         ports/security/ssh-gui
 ssh-multiadd                    ports/security/ssh-multiadd
-ssh2                            ports/security/ssh2
-ssh2-nox11                      ports/security/ssh2-nox11
 ssh_askpass_gtk2                ports/security/ssh_askpass_gtk2
 sshblock                        ports/security/sshblock
 sshbuddy                        ports/misc/sshbuddy
@@ -23773,6 +23771,7 @@ sshguard-ipfilter               ports/security/sshguard-ipfilter
 sshguard-ipfw                   ports/security/sshguard-ipfw
 sshguard-pf                     ports/security/sshguard-pf
 sshit                           ports/security/sshit
+sshmenu                         ports/deskutils/sshmenu
 ssl-admin                       ports/security/ssl-admin
 ssldump                         ports/net/ssldump
 sslh                            ports/net/sslh
