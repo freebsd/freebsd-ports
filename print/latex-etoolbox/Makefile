@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	etoolbox
-PORTVERSION=	1.9
+DISTVERSION=	2.0a
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/contrib
 PKGNAMEPREFIX=	latex-
 DISTNAME=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	idolum@users.sourceforge.net
 COMMENT=	A toolbox providing programming facilities for LaTeX
