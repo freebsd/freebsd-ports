@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libharu
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	print
 MASTER_SITES=	http://libharu.org/files/
 
@@ -21,11 +20,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-png=${LOCALBASE}
 CFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>
