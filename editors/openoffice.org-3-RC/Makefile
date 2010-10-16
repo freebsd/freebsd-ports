@@ -22,7 +22,7 @@ CONFLICTS=	cppunit*
 
 EXTRATC_ONLY?=	${OOOSRC} ${OOOEXTSRC}
 
-OOOEXTSRC=	ext_sources.20100912.tar.bz2:extsrc
+OOOEXTSRC=	ext_sources.20101009.tar.bz2:extsrc
 
 NO_LATEST_LINK=	yes
 
@@ -72,11 +72,11 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 .endif
 
-MILESTONE?=		9
+MILESTONE?=		10
 OOOTAG?=		OOO330_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20101002
+SNAPDATE=		20101016
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org3
