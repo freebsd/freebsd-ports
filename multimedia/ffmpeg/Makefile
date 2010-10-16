@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -17,7 +17,7 @@ COMMENT=	Realtime audio/video encoder/converter and streaming server
 
 BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 
-CONFLICTS=	ffmpeg-devel-20*
+CONFLICTS=	ffmpeg-20*
 
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
@@ -26,7 +26,8 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 WANT_SDL=	yes
 
-OPTIONS=	AMR_NB	"AMR Narrow Band encoder (opencore)" off \
+OPTIONS=	ALSA	"Enable alsa input/output device" off \
+		AMR_NB	"AMR Narrow Band encoder (opencore)" off \
 		AMR_WB	"AMR Wide Band encoder (opencore)" off \
 		DIRAC	"Dirac codec via libdirac" off \
 		FAAC	"FAAC mp4/aac audio encoder" off \
@@ -146,6 +147,14 @@ MAN1+=		ffserver.1
 # optimizations
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math -fno-finite-math-only -fomit-frame-pointer
+.endif
+
+#alsa
+.if defined(WITH_ALSA)
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+.else
+CONFIGURE_ARGS+=	--disable-indev=alsa \
+			--disable-outdev=alsa
 .endif
 
 # amr
