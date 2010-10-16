@@ -304,6 +304,9 @@ lib/sane/libsane-mustek.so.1
 lib/sane/libsane-mustek_usb.la
 lib/sane/libsane-mustek_usb.so
 lib/sane/libsane-mustek_usb.so.1
+lib/sane/libsane-mustek_usb2.la
+lib/sane/libsane-mustek_usb2.so
+lib/sane/libsane-mustek_usb2.so.1
 lib/sane/libsane-nec.la
 lib/sane/libsane-nec.so
 lib/sane/libsane-nec.so.1

@@ -7,7 +7,7 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://alioth.debian.org/frs/download.php/3258/ \
 		ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
@@ -33,11 +33,11 @@ OPTIONS=	USB "USB support" on \
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} \
 		--disable-latex \
-		--disable-locking
-MAKE_ENV=	NOPORTDOCS="${NOPORTDOCS}"
+		--disable-locking \
+		--enable-pthread
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
@@ -49,6 +49,10 @@ GROUPS=	saned
 
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
+
+.if defined(NOPORTDOCS)
+MAKE_ENV=	NOPORTDOCS=1
+.endif
 
 .if defined(WITHOUT_USB)
 CONFIGURE_ARGS+=	--disable-libusb
