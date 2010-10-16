@@ -12,7 +12,7 @@ MASTER_SITES=	http://umlautllama.com/projects/perl/ \
 		http://www.atarininja.org/~wxs/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jerry's command-line LiveJournal.com entry system
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
