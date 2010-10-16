@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	merkaartor
-PORTVERSION=	0.16.1
-PORTREVISION=	1
+PORTVERSION=	0.16.3
 CATEGORIES=	astro
-MASTER_SITES=	http://www.merkaartor.be/attachments/download/2/
+MASTER_SITES=	http://www.merkaartor.be/attachments/download/29/
 
 MAINTAINER=	slaven@rezic.de
 COMMENT=	An openstreetmap mapping program
