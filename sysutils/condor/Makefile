@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/condor_src-${PORTVERSION}/src/
 OPTIONS=	SUBMIT_NODE "Configure system to be able to submit jobs" On \
 		EXECUTE_NODE "Configure system to execute jobs in pool" On \
 		MANAGER_NODE "Configure system as central manager node" On
-USE_AUTOTOOLS=	autoconf:267:env
+USE_AUTOTOOLS=	autoconf:268:env
 USE_BISON=	build
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

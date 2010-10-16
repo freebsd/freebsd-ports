@@ -25,7 +25,7 @@ BROKEN=		does not build
 OPTIONS=	QUERY_BROWSER	"Build the MySQL Query Browser"	on \
 		ADMINISTRATOR	"Build the MySQL Administrator"	on
 
-USE_AUTOTOOLS=	autoconf:267 libtool:22 automake:111
+USE_AUTOTOOLS=	autoconf:268 libtool:22 automake:111
 USE_GNOME=	libgnome libglade2 gtkhtml3 libgnomeprint intlhack gtksourceview
 USE_GL=		gl glut
 USE_GMAKE=	yes

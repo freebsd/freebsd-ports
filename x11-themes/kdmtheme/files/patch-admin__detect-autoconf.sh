@@ -4,6 +4,6 @@
  # separator if one is present, e.g. -1.2 where - is the separator.
 -KDE_AUTOCONF_VERS="-2.58 -2.57 257 -2.54 -2.53a -2.53 -2.52 -2.5x"
 -KDE_AUTOMAKE_VERS="-1.7 17 -1.6"
-+KDE_AUTOCONF_VERS="-2.67"
++KDE_AUTOCONF_VERS="-2.68"
 +KDE_AUTOMAKE_VERS="-1.11"
  

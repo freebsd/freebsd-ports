@@ -93,7 +93,7 @@ RUN_DEPENDS+=	slrnface:${PORTSDIR}/news/slrnface
 DIST_SUBDIR=	mutt
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:111 autoconf:267
+USE_AUTOTOOLS=	automake:111 autoconf:268
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-pop --enable-imap --disable-fcntl \

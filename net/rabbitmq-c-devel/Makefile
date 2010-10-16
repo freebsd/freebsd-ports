@@ -29,7 +29,7 @@ USE_GMAKE=	YES
 USE_PYTHON=	YES
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
-USE_AUTOTOOLS=	aclocal:111 autoconf:267 automake:111 autoheader:267 libtool:22
+USE_AUTOTOOLS=	aclocal:111 autoconf:268 automake:111 autoheader:268 libtool:22
 AUTOMAKE_ARGS=	-i --add-missing
 ACLOCAL_ARGS=	-I . -I ${LOCALBASE}/share/aclocal
 

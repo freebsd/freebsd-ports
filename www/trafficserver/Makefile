@@ -21,7 +21,7 @@ BUILD_DEPENDS=	expat>0:${PORTSDIR}/textproc/expat2 \
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_AUTOTOOLS=	autoconf:267 automake:111 libtool:22
+USE_AUTOTOOLS=	autoconf:268 automake:111 libtool:22
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_OPENSSL=	yes

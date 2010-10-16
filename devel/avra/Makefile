@@ -16,7 +16,7 @@ MAINTAINER=	wes@FreeBSD.org
 COMMENT=	Macro Assembler for Atmel AVR microcontrollers
 
 WRKSRC=		${WRKDIR}
-USE_AUTOTOOLS=	aclocal:111 autoconf:267 automake:111
+USE_AUTOTOOLS=	aclocal:111 autoconf:268 automake:111
 AUTOMAKE_ARGS=	-a
 
 PORTDOCS=	README

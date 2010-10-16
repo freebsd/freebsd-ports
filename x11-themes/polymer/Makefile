@@ -19,7 +19,7 @@ COMMENT=	Qt port of Plastik KDE theme
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoheader:267
+USE_AUTOTOOLS=	autoheader:268
 USE_QT_VER=	3
 USE_LDCONFIG=	yes
 

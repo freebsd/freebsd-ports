@@ -21,7 +21,7 @@ COMMENT?=	A Japanese/Chinese/Korean input method (Japanese client libraries)
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:267 libtool:22
+USE_AUTOTOOLS=	autoconf:268 libtool:22
 USE_LDCONFIG=	yes
 MAKE_ARGS=	MANLANG="${MANLANG}" CDEBUGFLAGS="${CFLAGS}" \
 		LIBRARY_WNNMANDIR="3.libwnn" \

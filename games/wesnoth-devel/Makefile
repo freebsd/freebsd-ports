@@ -28,7 +28,7 @@ USE_GNOME=	gnometarget pango
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	aclocal:111 autoheader:267 automake:111 autoconf:267
+USE_AUTOTOOLS=	aclocal:111 autoheader:268 automake:111 autoconf:268
 ACLOCAL_ARGS=	-Im4
 AUTOMAKE_ARGS=	--add-missing --copy
 CONFIGURE_ENV=	PKG_CONFIG="${PKG_CONFIG}" \

@@ -19,7 +19,7 @@ COMMENT?=	A basic language with object extensions
 BUILD_DEPENDS=	xdg-mime:${PORTSDIR}/devel/xdg-utils
 LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi
 
-USE_AUTOTOOLS=		autoconf:267:env automake:111:env
+USE_AUTOTOOLS=		autoconf:268:env automake:111:env
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes

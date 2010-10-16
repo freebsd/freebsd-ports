@@ -98,7 +98,7 @@ OPTIONS+=	LIGHTTPD "RUN_DEPEND on LightHTTPD, not Apache" off
 USE_PERL5=	yes
 USE_AUTOTOOLS=	libtool:22
 .ifdef(SNAP_DATE)
-USE_AUTOTOOLS+=	autoconf:267:env automake:111
+USE_AUTOTOOLS+=	autoconf:268:env automake:111
 .endif
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

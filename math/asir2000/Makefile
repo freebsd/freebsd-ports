@@ -24,7 +24,7 @@ LIB_DEPENDS=	pari-gmp.2:${PORTSDIR}/math/pari
 
 USE_XORG=	x11 xaw xext xt
 GNU_CONFIGURE=	yes
-#XXX	USE_AUTOTOOLS=	automake:111 autoconf:267
+#XXX	USE_AUTOTOOLS=	automake:111 autoconf:268
 CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari
 ASIR_SRC_VERSION=	${PORTVERSION}
 ASIR_DOC_VERSION=	20070718

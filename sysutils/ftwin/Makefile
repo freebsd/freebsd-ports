@@ -20,7 +20,7 @@ LIB_DEPENDS=	puzzle.1:${PORTSDIR}/graphics/libpuzzle \
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:267 aclocal:111 automake:111 autoheader:267
+USE_AUTOTOOLS=	autoconf:268 aclocal:111 automake:111 autoheader:268
 CONFIGURE_ARGS+=	--with-puzzle=${LOCALBASE}
 PLIST_FILES=	bin/ftwin
 

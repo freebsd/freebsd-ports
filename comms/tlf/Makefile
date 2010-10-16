@@ -18,7 +18,7 @@ MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio curses based logging program
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_AUTOTOOLS=	autoconf:267 libtool:22 aclocal:111 automake:111
+USE_AUTOTOOLS=	autoconf:268 libtool:22 aclocal:111 automake:111
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib"

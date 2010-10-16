@@ -19,7 +19,7 @@ LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv
 
 PLIST_FILES=	bin/xdvshow
 GNU_CONFIGURE=		YES
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 USE_SDL=	sdl
 
 post-patch:

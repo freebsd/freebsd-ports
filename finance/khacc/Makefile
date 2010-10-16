@@ -19,7 +19,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 USE_KDELIBS_VER=3
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:111:env autoconf:267:env libtool:22
+USE_AUTOTOOLS=	automake:111:env autoconf:268:env libtool:22
 CONFIGURE_ARGS=	--with-qhacc-config=${LOCALBASE}/bin
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"

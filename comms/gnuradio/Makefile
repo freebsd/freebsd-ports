@@ -31,7 +31,7 @@ USE_PYTHON=	2.4+
 USE_WX=		2.6+
 WX_COMPS=	wx wx:build wx:run python:build python:run
 USE_PERL5=	yes
-USE_AUTOTOOLS=	autoconf:267 libtool:22
+USE_AUTOTOOLS=	autoconf:268 libtool:22
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -56,7 +56,7 @@ LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.61|2.67|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.61|2.68|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|^GR_FORTRAN||g' ${WRKSRC}/configure.ac
 	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | ${XARGS} \
 		-n 10 ${REINPLACE_CMD} -E -e \

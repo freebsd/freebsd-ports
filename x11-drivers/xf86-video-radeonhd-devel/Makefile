@@ -22,7 +22,7 @@ LIB_DEPENDS=	pciaccess.0:${PORTSDIR}/devel/libpciaccess
 
 XORG_CAT=	driver
 USE_XORG=	damageproto glproto videoproto xextproto xf86driproto
-USE_AUTOTOOLS=	automake:111:env aclocal:111:env autoconf:267 libtool:22
+USE_AUTOTOOLS=	automake:111:env aclocal:111:env autoconf:268 libtool:22
 
 CONFLICTS=	xf86-video-radeonhd-[0-9]*
 

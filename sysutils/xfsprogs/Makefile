@@ -19,7 +19,7 @@ COMMENT=	A set of utilities and library to manipulate an xfs filesystem
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	autoconf:267 libtool:22:env
+USE_AUTOTOOLS=	autoconf:268 libtool:22:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=		INSTALL="${INSTALL} ${_BINOWNGRP}" \
 			CFLAGS="${CFLAGS}" \

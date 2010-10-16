@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--with-vendordir="${PREFIX}/lib/ruby/vendor_ruby"
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${RUBY_DISTVERSION}
 

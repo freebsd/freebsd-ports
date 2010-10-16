@@ -14,7 +14,7 @@ MASTER_SITES=	SF
 MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	A user friendly command line shell
 
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 USE_ICONV=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

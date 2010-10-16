@@ -19,7 +19,7 @@ CONFLICTS=	e-uae-[0-9]*
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 CONFIGURE_ARGS=	--enable-sound
 USE_GNOME=	gtk20
 

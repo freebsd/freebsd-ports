@@ -20,7 +20,7 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 CONFLICTS=	jpeg-[0-9]*
 ONLY_FOR_ARCHS=	amd64 i386
-USE_AUTOTOOLS=	autoconf:267 autoheader:267 aclocal:111 automake:111 libtool:22
+USE_AUTOTOOLS=	autoconf:268 autoheader:268 aclocal:111 automake:111 libtool:22
 ACLOCAL_ARGS=	-I.
 USE_LDCONFIG=	yes
 

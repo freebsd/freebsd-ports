@@ -24,7 +24,7 @@ USE_GMAKE=		yes
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 USE_GNOME=		pkgconfig
-USE_AUTOTOOLS=		autoconf:267 autoheader:267
+USE_AUTOTOOLS=		autoconf:268 autoheader:268
 
 IPATHS=			-I${WRKSRC}/libreplace
 AUTOHEADER_ARGS=	${IPATHS}

@@ -24,7 +24,7 @@ MAKE_JOBS_SAFE=	yes
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:111 autoconf:267
+USE_AUTOTOOLS=	automake:111 autoconf:268
 CONFIGURE_ARGS+=	--without-conf --without-clucene --with-zlib --without-icu
 USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
@@ -43,7 +43,7 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.63|2.67|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.63|2.68|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|:=|=|' ${WRKSRC}/Makefile.am \

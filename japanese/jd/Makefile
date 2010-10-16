@@ -20,7 +20,7 @@ COMMENT=	A 2ch browser
 MAKE_JOBS_SAFE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:267 automake:111 libtool:22
+USE_AUTOTOOLS=	autoconf:268 automake:111 libtool:22
 
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls \
 		gtkmm:${PORTSDIR}/x11-toolkits/gtkmm24

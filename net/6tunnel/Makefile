@@ -17,7 +17,7 @@ COMMENT=	TCP proxy for applications that don't speak IPv6
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}rc2
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 ALL_TARGET=	default
 
 MAN1=		6tunnel.1

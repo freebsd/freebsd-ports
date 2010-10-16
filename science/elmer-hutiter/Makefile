@@ -39,7 +39,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|' -e 's|%%FC%%|${FC}|' ${WRKSRC}/configure.in
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 ALL_TARGET=
 
 PLIST_FILES=	include/huti_defs.h include/huti_fdefs.h lib/libhuti.a

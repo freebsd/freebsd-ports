@@ -24,7 +24,7 @@ CONFLICTS=	mldonkey{-{core,gui},}-devel-[0-9]*
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	autoconf:267:env
+USE_AUTOTOOLS=	autoconf:268:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	opt

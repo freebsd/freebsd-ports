@@ -22,7 +22,7 @@ USE_FORTRAN=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_PERL5_BUILD=yes
-USE_AUTOTOOLS=	autoconf:267 automake:111
+USE_AUTOTOOLS=	autoconf:268 automake:111
 CONFIGURE_ENV=	WGET=${TRUE}
 CONFIGURE_ARGS=	--disable-wannier90 --disable-bigdft --disable-etsf-io	\
 		--with-plugins-tardir=/dev/null				\

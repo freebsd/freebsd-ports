@@ -27,7 +27,7 @@ USE_XORG=	x11 xext xi xxf86dga ice sm
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20 libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:267 autoheader:267
+USE_AUTOTOOLS=	autoconf:268 autoheader:268
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--disable-alsa \

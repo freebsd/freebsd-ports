@@ -20,7 +20,7 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 
 USE_ICONV=	yes
-USE_AUTOTOOLS=	libtool:22 autoconf:267
+USE_AUTOTOOLS=	libtool:22 autoconf:268
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -48,6 +48,6 @@ CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.61|2.67|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.61|2.68|g' ${WRKSRC}/aclocal.m4
 
 .include <bsd.port.mk>

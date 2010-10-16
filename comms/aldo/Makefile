@@ -19,7 +19,7 @@ LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:267 automake:111 libtool:22
+USE_AUTOTOOLS=	autoconf:268 automake:111 libtool:22
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib"
 USE_GMAKE=	yes
@@ -29,7 +29,7 @@ MAN1=	aldo.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|1.10|1.11.1|g' ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e 's|2.61|2.67|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.61|2.68|g' ${WRKSRC}/aclocal.m4
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/aldo ${PREFIX}/bin

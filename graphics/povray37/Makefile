@@ -29,7 +29,7 @@ USE_XORG=	x11
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 LATEST_LINK=	${PORTNAME}36
 
 .include <bsd.port.pre.mk>

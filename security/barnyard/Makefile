@@ -22,7 +22,7 @@ OPTIONS=	MYSQL "Enable MySQL support" on \
 DEPRECATED=	Use security/barnyard2 instead
 EXPIRATION=	2010-12-31
 
-USE_AUTOTOOLS=	autoheader:267 aclocal:111
+USE_AUTOTOOLS=	autoheader:268 aclocal:111
 USE_RC_SUBR=	barnyard.sh
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"

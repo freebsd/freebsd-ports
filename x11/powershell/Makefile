@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A terminal emulator for the X11
 
 USE_GNOME=	gnomelibs gnomehier
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include  `${IMLIB_CONFIG} --cflags`" \
 		LDFLAGS="-L${LOCALBASE}/lib  `${IMLIB_CONFIG} --libs`"
 ALL_TARGET=	${PORTNAME}

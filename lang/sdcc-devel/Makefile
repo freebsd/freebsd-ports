@@ -52,7 +52,7 @@ USE_GCC=	4.4+
 CONFIGURE_ARGS+=	--disable-51
 PLIST_SUB+=		MCS51DS390="@comment "
 .else
-USE_AUTOTOOLS+=		autoconf:267
+USE_AUTOTOOLS+=		autoconf:268
 PLIST_SUB+=		MCS51DS390=""
 .endif
 

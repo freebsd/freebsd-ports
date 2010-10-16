@@ -19,7 +19,7 @@ COMMENT=	S.C.O.U.R.G.E. is a rogue-like game
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${DATADIR}/config/scourge.cfg:${PORTSDIR}/games/scourge-data
 
-USE_AUTOTOOLS=	autoconf:267:env automake:111:env
+USE_AUTOTOOLS=	autoconf:268:env automake:111:env
 USE_GL=		gl
 USE_SDL=	sdl image mixer net ttf
 USE_GMAKE=	yes

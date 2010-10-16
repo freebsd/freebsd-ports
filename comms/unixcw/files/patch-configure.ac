@@ -5,7 +5,7 @@
  
  # General initializations.
 -AC_PREREQ(2.57)
-+AC_PREREQ(2.67)
++AC_PREREQ(2.68)
  AC_INIT([UnixCW], 2.3, [simon_baldwin@yahoo.com])
 -
  # Specify a configuration header.

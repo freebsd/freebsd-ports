@@ -27,7 +27,7 @@ USE_ICONV =	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 CONFIGURE_ARGS=	--enable-s3=yes --libdir=${PREFIX}
 CONFIGURE_ENV=	CPPFLAGS='-DFUSE_USE_VERSION=26' \
 		LDFLAGS='${PTHREAD_LIBS}'
@@ -37,7 +37,7 @@ MAKE_JOBS_SAFE=	yes
 MAN1=		affcat.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.61|2.67|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.61|2.68|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|(libdir)|(libdir)/lib|' \
 		 ${WRKSRC}/lib/Makefile.in
 	@${REINPLACE_CMD} -e 's|(libdir)|(libdir)/libdata|' \

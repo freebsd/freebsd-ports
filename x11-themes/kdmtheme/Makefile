@@ -18,7 +18,7 @@ COMMENT=	KDM Theme Manager
 USE_KDEBASE_VER=3
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
-USE_AUTOTOOLS=	automake:111:env autoconf:267:env libtool:22 autoheader:267:env
+USE_AUTOTOOLS=	automake:111:env autoconf:268:env libtool:22 autoheader:268:env
 USE_GMAKE=	yes
 
 pre-configure:

@@ -16,7 +16,7 @@ COMMENT=	A console Yahoo! messenger client
 
 PLIST_FILES=	bin/ari-yahoo
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 
 pre-configure:
 	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in

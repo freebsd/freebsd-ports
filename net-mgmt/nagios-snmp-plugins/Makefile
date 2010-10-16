@@ -17,7 +17,7 @@ COMMENT=	Additional SNMP plugins for Nagios
 LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=	automake:14 autoheader:267 autoconf:267
+USE_AUTOTOOLS=	automake:14 autoheader:268 autoconf:268
 USE_GMAKE=		yes
 USE_PERL5=		yes
 

@@ -19,7 +19,7 @@ CONFLICTS=	cal3d-devel-[0-9]*
 
 USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	automake:111 autoheader:267 libtool:22
+USE_AUTOTOOLS=	automake:111 autoheader:268 libtool:22
 USE_LDCONFIG=	yes
 
 MAN1=	cal3d_converter.1

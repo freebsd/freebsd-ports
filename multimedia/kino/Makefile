@@ -24,7 +24,7 @@ OPTIONS=	QUICKTIME "With Quicktime support" off	\
 		FFMPEG_KINO "With ffmpeg-kino" off
 
 USE_XORG=	x11 xv ice
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade2 libxml2

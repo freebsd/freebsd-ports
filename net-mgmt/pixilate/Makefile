@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 WRKSRC=		${WRKDIR}/pixilate
 
-USE_AUTOTOOLS=	aclocal:111 autoconf:267 automake:111 libtool:22
+USE_AUTOTOOLS=	aclocal:111 autoconf:268 automake:111 libtool:22
 AUTOMAKE_ARGS=	--add-missing
 
 MAN1=		pixilate.1

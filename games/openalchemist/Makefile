@@ -20,7 +20,7 @@ LIB_DEPENDS=	clanCore-0.8:${PORTSDIR}/devel/clanlib \
 	jpeg.11:${PORTSDIR}/graphics/jpeg \
 	png.6:${PORTSDIR}/graphics/png
 
-USE_AUTOTOOLS=	aclocal:111 automake:111 autoconf:267
+USE_AUTOTOOLS=	aclocal:111 automake:111 autoconf:268
 # Necessary to find pkg.m4 (PKG_CHECK_MODULES)
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
 CPPFLAGS+=	-I${LOCALBASE}/include

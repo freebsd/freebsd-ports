@@ -21,7 +21,7 @@ WRKSRC=			${WRKDIR}/rivet-${PORTVERSION}
 MAKE_JOBS_SAFE=	yes
 
 USE_APACHE=	2.2+
-USE_AUTOTOOLS=	automake:111 autoconf:267
+USE_AUTOTOOLS=	automake:111 autoconf:268
 USE_TCL=	84+
 GMAKE=		yes
 

@@ -28,7 +28,7 @@ PLIST_FILES=	bin/dnswall
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|1.10|1.11.1|g' ${WRKSRC}/aclocal.m4
-	@${REINPLACE_CMD} -e 's|2.61|2.67|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.61|2.68|g' ${WRKSRC}/aclocal.m4
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/^dist_doc_DATA/d' ${WRKSRC}/Makefile.am
 .endif

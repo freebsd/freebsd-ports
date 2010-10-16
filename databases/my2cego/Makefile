@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf:267:env
+USE_AUTOTOOLS=	autoconf:268:env
 PLIST_FILES=	bin/my2cego
 
 .include <bsd.port.mk>

@@ -15,10 +15,6 @@ DISTNAME=	libtool-${PORTVERSION}
 MAINTAINER=	autotools@FreeBSD.org
 COMMENT?=	Generic shared library support script
 
-.if !defined(WITH_PSYCHOPATHIC_TENDENCIES)
-IGNORE=	You really do not want this yet.  Trust me.
-.endif
-
 LICENSE?=        GPLv2
 LICENSE_FILE?=   ${WRKSRC}/COPYING
 

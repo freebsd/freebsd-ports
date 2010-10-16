@@ -24,7 +24,7 @@ CONFLICTS=	opal-3.*
 # In opal's Makefile the default make's target is optshared
 ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu` optshared
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

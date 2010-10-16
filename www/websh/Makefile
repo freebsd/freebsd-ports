@@ -21,7 +21,7 @@ MAKE_JOBS_UNSAFE=	yes
 TCL_DVER=	${TCL_VER:S/.//}
 
 USE_TCL=	84+
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/unix
 CONFIGURE_ARGS+=--with-tclinclude=${TCL_INCLUDEDIR} \
 		--with-tcl=${TCL_LIBDIR}

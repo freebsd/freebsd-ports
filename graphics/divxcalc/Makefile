@@ -19,7 +19,7 @@ USE_XORG=	x11 ice xext
 USE_BZIP2=	yes
 USE_QT_VER=	3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:111:env autoconf:267:env
+USE_AUTOTOOLS=	automake:111:env autoconf:268:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

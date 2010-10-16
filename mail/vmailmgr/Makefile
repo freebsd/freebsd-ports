@@ -25,7 +25,7 @@ MAN8=	vmailmgrd.8
 
 # get python paths (PYTHON_SITELIBDIR) in case we install the python API
 USE_GMAKE=			yes
-USE_AUTOTOOLS=		autoconf:267 autoheader:267 automake:111 aclocal:111
+USE_AUTOTOOLS=		autoconf:268 autoheader:268 automake:111 aclocal:111
 USE_PYTHON=			yes
 USE_PERL5_BUILD=	yes
 AUTOMAKE_ARGS+=		--add-missing -Wno-portability

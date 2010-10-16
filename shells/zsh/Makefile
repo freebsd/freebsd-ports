@@ -24,7 +24,7 @@ ZSH_VER=	${PORTVERSION}
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	autoconf:267 autoheader:267
+USE_AUTOTOOLS=	autoconf:268 autoheader:268
 GNU_CONFIGURE=	yes
 .if !defined(WITH_ZSH_STATIC)
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}

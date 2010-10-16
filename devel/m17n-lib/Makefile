@@ -28,7 +28,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_XORG=	ice sm x11 xaw xft xt
 USE_GNOME=	gnometarget libxml2 pkgconfig
-USE_AUTOTOOLS=	autoconf:267 libtool:22
+USE_AUTOTOOLS=	autoconf:268 libtool:22
 USE_LDCONFIG=	yes
 
 OPTIONS=	ANTHY	"With Anthy support" off \

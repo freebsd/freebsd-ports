@@ -20,7 +20,7 @@ LIB_DEPENDS=	glade-gnome:${PORTSDIR}/x11-toolkits/rep-gtk
 MAN1=		lodju-create.1 lodju-gallery.1 lodju.1
 MANCOMPRESSED=	yes
 
-USE_AUTOTOOLS=	autoconf:267:env
+USE_AUTOTOOLS=	autoconf:268:env
 HAS_CONFIGURE=  yes
 USE_GETTEXT=	yes
 USE_GNOME=	gtk12 gdkpixbuf

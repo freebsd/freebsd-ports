@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library required by smssend (same author)
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:267 libtool:22
+USE_AUTOTOOLS=	autoconf:268 libtool:22
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

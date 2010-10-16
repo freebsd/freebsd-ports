@@ -16,7 +16,7 @@ COMMENT=	Domain Name Server (DNS) implementation
 
 LIB_DEPENDS=	poslib.0:${PORTSDIR}/devel/poslib
 
-USE_AUTOTOOLS=	autoconf:267 libltdl:22 libtool:22
+USE_AUTOTOOLS=	autoconf:268 libltdl:22 libtool:22
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 

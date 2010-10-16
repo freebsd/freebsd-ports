@@ -30,7 +30,7 @@ USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/libexec
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-USE_AUTOTOOLS=	aclocal:111 autoconf:267 autoheader:267 automake:111 libtool:22
+USE_AUTOTOOLS=	aclocal:111 autoconf:268 autoheader:268 automake:111 libtool:22
 ACLOCAL_ARGS+=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS+=	-a -c
 

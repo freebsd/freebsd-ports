@@ -25,7 +25,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=		--with-id3tag=${PREFIX} --with-gdbm-includes=${LOCALBASE}/include
 
-USE_AUTOTOOLS=	autoheader:267 autoconf:267:env
+USE_AUTOTOOLS=	autoheader:268 autoconf:268:env
 
 USE_ICONV=	yes
 PATCH_SITES+=	http://www.apionet.or.jp/~tomi/

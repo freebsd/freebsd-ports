@@ -24,7 +24,7 @@ CONFLICTS=	libtorrent-rasterbar-0.15.*
 
 USE_GNOME=	gnomehack
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	aclocal:111 automake:111 autoconf:267 libtool:22
+USE_AUTOTOOLS=	aclocal:111 automake:111 autoconf:268 libtool:22
 ACLOCAL_ARGS=	-I m4
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug \

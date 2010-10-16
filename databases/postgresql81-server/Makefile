@@ -104,7 +104,7 @@ USE_BISON=	build
 .  endif
 
 .  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 CONFIGURE_ARGS+=--with-icu
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu

@@ -20,7 +20,7 @@ GITCOMMIT=	35085a4
 
 USE_GMAKE=	yes
 USE_GECKO=	libxul
-USE_AUTOTOOLS=	libtool:22 libtoolize aclocal:111 autoconf:267 autoheader:267 automake:111
+USE_AUTOTOOLS=	libtool:22 libtoolize aclocal:111 autoconf:268 autoheader:268 automake:111
 LIBTOOLIZE_ARGS=	--force --copy --automake
 AUTOMAKE_ARGS=	--gnu --add-missing --force --copy -Wno-portability
 ACLOCAL_ARGS=	

@@ -29,7 +29,7 @@ USE_MYSQL=	yes
 USE_PYTHON=	yes
 USE_SDL=	sdl sound
 USE_GNOME=	libxslt
-USE_AUTOTOOLS=	autoconf:267:env automake:111:env
+USE_AUTOTOOLS=	autoconf:268:env automake:111:env
 USE_XORG=	xmu xi
 GNU_CONFIGURE=	yes
 

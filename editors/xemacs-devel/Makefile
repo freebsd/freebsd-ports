@@ -39,7 +39,7 @@ XEMACS_ARCH=		${CONFIGURE_TARGET}
 
 WRKSRC=		${WRKDIR}/xemacs-${XEMACS_VER:S/-b/./}
 STRIP=
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
 
 CONFIGURE_ARGS?=--enable-clash-detection \

@@ -18,7 +18,7 @@ COMMENT=	GNU Standards-compliant Makefile generator (1.11)
 RUN_DEPENDS=	${AUTOCONF_DEPENDS} \
 		automake-wrapper:${PORTSDIR}/devel/automake-wrapper
 
-USE_AUTOTOOLS=	autoconf:267:env
+USE_AUTOTOOLS=	autoconf:268:env
 BUILD_VERSION=	1.11
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 LATEST_LINK=	automake111

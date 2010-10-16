@@ -22,7 +22,7 @@ LIB_DEPENDS=	h323_r.1:${PORTSDIR}/net/openh323
 
 USE_RC_SUBR=	gnugk.sh
 
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 CONFIGURE_ARGS+=	--disable-firebird
 
 USE_GMAKE=	yes

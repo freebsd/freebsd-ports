@@ -22,7 +22,7 @@ WRKSRC=			${WRKDIR}/${PORTNAME}
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USE_AUTOTOOLS=		autoconf:267
+USE_AUTOTOOLS=		autoconf:268
 CONFIGURE_ENV+=		EGREP=`which egrep`
 
 OPTIONS=	NOSERVICES "Without services, plain ORB" off \

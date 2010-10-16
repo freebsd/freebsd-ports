@@ -16,7 +16,7 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	A caching IMAP proxy server
 
-USE_AUTOTOOLS=	autoheader:267
+USE_AUTOTOOLS=	autoheader:268
 
 USE_RC_SUBR=	imapproxyd.sh
 DOCS=		COPYING ChangeLog README README.debian \

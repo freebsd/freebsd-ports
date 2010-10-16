@@ -13,7 +13,7 @@
 -done
 -
 -autoconf 
-+cd cvsunix && autoreconf-2.67
++cd cvsunix && autoreconf-2.68
 +cd ..
  
  ./configure $*

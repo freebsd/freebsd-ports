@@ -10,8 +10,8 @@
 +ACLOCAL = aclocal-1.11
 +AUTOMAKE = automake-1.11 --add-missing --copy
 +LIBTOOLIZE = libtoolize --force --copy
-+AUTOHEADER = autoheader-2.67
-+AUTOCONF = autoconf-2.67
++AUTOHEADER = autoheader-2.68
++AUTOCONF = autoconf-2.68
  #CONFIG_CMD = $(ACLOCAL) -I $${acfilesdir} && \
  #             $(LIBTOOLIZE) && \
  #             $(AUTOHEADER) && \
@@ -19,7 +19,7 @@
  #             $(AUTOCONF)
  
 -AUTORECONF = autoreconf
-+AUTORECONF = autoreconf-2.67
++AUTORECONF = autoreconf-2.68
  BOOTSTRAP = $(AUTORECONF) --install --force
  INTL_CMD = glib-gettextize -f && intltoolize --copy --force --automake
  

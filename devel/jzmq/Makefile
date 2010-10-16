@@ -16,7 +16,7 @@ COMMENT=	Java bindings for ZeroMQ
 
 LIB_DEPENDS=	zmq.0:${PORTSDIR}/devel/zmq
 
-USE_AUTOTOOLS=	autoconf:267 libtool:22 automake:111
+USE_AUTOTOOLS=	autoconf:268 libtool:22 automake:111
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
 USE_JAVA=	1.4+

@@ -21,7 +21,7 @@ LIB_DEPENDS=	jasper:${PORTSDIR}/graphics/jasper \
 
 LICENSE=	GPLv3
 
-USE_AUTOTOOLS=	autoheader:267
+USE_AUTOTOOLS=	autoheader:268
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

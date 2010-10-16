@@ -63,7 +63,7 @@ COMMENT=	A cleaned up MH mailer suite
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec/nmh \
 		--sysconfdir=${PREFIX}/etc/nmh
 .ifdef NMH_EDITOR

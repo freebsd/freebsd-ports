@@ -42,7 +42,7 @@ LATEST_LINK=	rpm5
 CONFLICTS=	rpm-3.* rpm-4.*
 
 # need to autogen (for xz support)
-USE_AUTOTOOLS+=	aclocal:111 autoconf:267 automake:111 autoheader:267
+USE_AUTOTOOLS+=	aclocal:111 autoconf:268 automake:111 autoheader:268
 ACLOCAL_ARGS+=	-I m4 -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS+=	-a -c
 pre-configure:

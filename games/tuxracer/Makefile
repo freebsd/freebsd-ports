@@ -22,7 +22,7 @@ USE_SDL=	mixer sdl
 USE_GL=		gl
 USE_XORG=	x11 xt xmu xi
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:267
+USE_AUTOTOOLS=	automake:14 autoconf:268
 AUTOMAKE_ARGS=	-a
 CONFIGURE_ENV=	THREAD_LIB="${PTHREAD_LIBS}"
 MAKE_ENV=	${CONFIGURE_ENV}

@@ -31,7 +31,7 @@ BROKEN=		Does not work with autoconf>=2.64 - no upstream fix.
 BUILD_DEPENDS=	${TARGET}-as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		${LOCALBASE}/${TARGET}/bin/stubify:${PORTSDIR}/devel/${PKGNAMEPREFIX}crx \
 		autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
-		autoconf-2.67:${PORTSDIR}/devel/autoconf267 \
+		autoconf-2.68:${PORTSDIR}/devel/autoconf268 \
 		aclocal-1.11:${PORTSDIR}/devel/automake111
 .if defined(WITH_FORTRAN)
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \

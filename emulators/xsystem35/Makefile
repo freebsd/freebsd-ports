@@ -17,7 +17,7 @@ COMMENT=	AliceSoft System 3.5/3.6/3.8/3.9 on X Window System
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-USE_AUTOTOOLS=	autoconf:267 libtool:22
+USE_AUTOTOOLS=	autoconf:268 libtool:22
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
