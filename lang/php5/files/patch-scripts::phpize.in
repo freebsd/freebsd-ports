@@ -6,8 +6,8 @@
  {
 -  test -z "$PHP_AUTOCONF" && PHP_AUTOCONF=autoconf
 -  test -z "$PHP_AUTOHEADER" && PHP_AUTOHEADER=autoheader
-+  test -z "$PHP_AUTOCONF" && PHP_AUTOCONF=autoconf-2.67
-+  test -z "$PHP_AUTOHEADER" && PHP_AUTOHEADER=autoheader-2.67
++  test -z "$PHP_AUTOCONF" && PHP_AUTOCONF=autoconf-2.68
++  test -z "$PHP_AUTOHEADER" && PHP_AUTOHEADER=autoheader-2.68
    
    if test ! -x "`$php_shtool path $PHP_AUTOCONF`"; then
      cat <<EOF

@@ -47,7 +47,7 @@ INFO=		lilypond-changes lilypond-contributor lilypond-essay \
 		lilypond-notation lilypond-usage lilypond-web \
 		music-glossary
 
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 USE_BISON=	build
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

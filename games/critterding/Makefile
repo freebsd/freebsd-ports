@@ -18,7 +18,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:267:env aclocal:111:env automake:111:env libtool:22
+USE_AUTOTOOLS=	autoconf:268:env aclocal:111:env automake:111:env libtool:22
 USE_SDL=	sdl
 USE_GL=		gl
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \

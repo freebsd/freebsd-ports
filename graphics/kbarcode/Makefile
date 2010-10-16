@@ -19,7 +19,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 USE_KDELIBS_VER=	3
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:111:env autoconf:267:env libtool:22:env
+USE_AUTOTOOLS=	automake:111:env autoconf:268:env libtool:22:env
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 

@@ -15,7 +15,7 @@ DISTNAME=	ng-spice-rework-${PORTVERSION}
 MAINTAINER=	amakawa@jp.FreeBSD.org
 COMMENT=	A circuit simulator derived from spice3f5
 
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 USE_GMAKE=	yes
 
 #XSPICE doesn't build

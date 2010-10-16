@@ -24,7 +24,7 @@ USE_GNOME=	lthack
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
 USE_AUTOTOOLS=	libtool:22
 .else
-USE_AUTOTOOLS=	autoconf:267 autoheader:267 aclocal:111 automake:111 libtool:22
+USE_AUTOTOOLS=	autoconf:268 autoheader:268 aclocal:111 automake:111 libtool:22
 ACLOCAL_ARGS=	-I m4
 .endif
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/lighttpd --enable-static

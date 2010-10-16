@@ -23,7 +23,7 @@ USE_GNOME=	gnometarget gnomehack pkgconfig
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl"
@@ -153,7 +153,7 @@ CONFIGURE_ARGS+=	--without-schroedinger
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.61|2.67|g' ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|2.61|2.68|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' \
 		${WRKSRC}/plugins/audiocodec/* \
 		${WRKSRC}/plugins/videocodec/*

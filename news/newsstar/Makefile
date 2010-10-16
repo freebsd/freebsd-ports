@@ -23,7 +23,7 @@ BROKEN=		does not build
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	automake:111 autoconf:267 aclocal:111
+USE_AUTOTOOLS=	automake:111 autoconf:268 aclocal:111
 
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--with-conf-dir=${PREFIX}/etc/newsstar \

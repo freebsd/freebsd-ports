@@ -39,7 +39,7 @@ USE_ICONV=		yes
 GNU_CONFIGURE=		yes
 USE_GNOME=		pkgconfig
 USE_LDCONFIG=		${SAMBA_LIBDIR}
-USE_AUTOTOOLS=		autoconf:267 autoheader:267
+USE_AUTOTOOLS=		autoconf:268 autoheader:268
 # Flags
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib

@@ -31,7 +31,7 @@ BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 LICENSE_COMB=	multi
 LICENSE=	GPLv3 LGPL3
 
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-procfs --disable-openssl --enable-tls \
 		--with-tls-prefix=${LOCALBASE} TLS_CONFIG="pkg-config -gnutls"

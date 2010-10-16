@@ -21,7 +21,7 @@ COMMENT=	GNU version of the traditional tape archiver
 
 INFO=		tar
 
-USE_AUTOTOOLS=	autoconf:267:env
+USE_AUTOTOOLS=	autoconf:268:env
 USE_BZIP2=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes

@@ -25,7 +25,7 @@ USE_GNOME=	gnomehack lthack libxml2
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoheader:267
+USE_AUTOTOOLS=	autoheader:268
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LIBS=		-L${LOCALBASE}/lib

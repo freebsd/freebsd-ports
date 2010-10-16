@@ -31,7 +31,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 .else
 EXTRA_PATCHES=  ${FILESDIR}/extra-patch-configure.ac
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 .endif
 
 post-extract:

@@ -14,7 +14,7 @@ MASTER_SITES=	SF/alleg/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	A cross-platform library for games and multimedia programming
 
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 USE_GMAKE=	yes
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
 USE_LDCONFIG=	yes

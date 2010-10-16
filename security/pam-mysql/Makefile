@@ -17,7 +17,7 @@ COMMENT=	A pam module for authenticating with MySQL
 
 USE_MYSQL=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	aclocal:14 autoconf:267 libtool:22
+USE_AUTOTOOLS=	aclocal:14 autoconf:268 libtool:22
 ACLOCAL_ARGS=	-I ${PREFIX}/share/aclocal
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} --with-pam-mods-dir=${PREFIX}/lib --with-pam=/usr
 

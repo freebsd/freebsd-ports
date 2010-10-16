@@ -15,7 +15,7 @@ MAINTAINER=	gaod@hychen.org
 COMMENT=	A library of Limited-memory Broyden-Fletcher-Goldfarb-Shanno
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:267:en
+USE_AUTOTOOLS=	autoconf:268:en
 
 OPTIONS=	OPTIMIZED "Enable SSE2 optimization routines" Off
 

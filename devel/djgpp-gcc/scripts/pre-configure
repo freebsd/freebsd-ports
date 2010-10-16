@@ -2,8 +2,8 @@
 
 AUTOCONF_OLD=autoconf-2.13
 AUTOHEADER_OLD=autoheader-2.13
-AUTOCONF=autoconf-2.67
-AUTOHEADER=autoheader-2.67
+AUTOCONF=autoconf-2.68
+AUTOHEADER=autoheader-2.68
 ACLOCAL=aclocal-1.11
 AUTOMAKE=automake-1.11
 

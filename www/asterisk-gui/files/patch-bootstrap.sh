@@ -6,7 +6,7 @@
  if [ $? = 0 ] ; then	# FreeBSD case
 -	MY_AC_VER=259
 -	MY_AM_VER=19
-+	MY_AC_VER=-2.67
++	MY_AC_VER=-2.68
 +	MY_AM_VER=-1.11
  else	# linux case
  	MY_AC_VER=

@@ -19,7 +19,7 @@ LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SDL=	yes
-USE_AUTOTOOLS=	automake:111 aclocal:111 autoconf:267
+USE_AUTOTOOLS=	automake:111 aclocal:111 autoconf:268
 
 SUB_FILES=	pkg-message
 MAN1=	yabause.1

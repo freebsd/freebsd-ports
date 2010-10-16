@@ -24,7 +24,7 @@ DEPRECATED=		Unsupported by the upstream. Please, consider to upgrade.
 USE_GMAKE=		yes
 USE_ICONV=		yes
 GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=		autoconf:267 autoheader:267
+USE_AUTOTOOLS=		autoconf:268 autoheader:268
 AUTOHEADER_ARGS=	-I${WRKSRC}/m4 -I${WRKSRC}/lib/replace
 AUTOCONF_ARGS=		-I${WRKSRC}/m4 -I${WRKSRC}/lib/replace
 

@@ -21,7 +21,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 
 ONLY_FOR_ARCHS=	i386 alpha
 
-USE_AUTOTOOLS=	autoconf:267 libtool:22 libltdl:22
+USE_AUTOTOOLS=	autoconf:268 libtool:22 libltdl:22
 USE_EFL=	imlib2
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include \

@@ -23,7 +23,7 @@ RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster
 
 WRKSRC=		${WRKDIR}/magicolor2430DL-${PORTVERSION}
 
-USE_AUTOTOOLS=	automake:111:env autoconf:267
+USE_AUTOTOOLS=	automake:111:env autoconf:268
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

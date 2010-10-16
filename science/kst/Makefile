@@ -20,7 +20,7 @@ LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio \
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:111:env autoconf:267:env libtool:22
+USE_AUTOTOOLS=	automake:111:env autoconf:268:env libtool:22
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes

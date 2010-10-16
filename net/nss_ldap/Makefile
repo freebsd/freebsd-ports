@@ -21,7 +21,7 @@ NSS_LDAP_VERSION=265
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:111 aclocal:111 autoconf:267 autoheader:267
+USE_AUTOTOOLS=	automake:111 aclocal:111 autoconf:268 autoheader:268
 USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
 

@@ -17,7 +17,7 @@ MAINTAINER=	citycat4@ngs.ru
 COMMENT=	Rich-featured multi-windows console text editor
 
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 
 MAN1=		y.1
 

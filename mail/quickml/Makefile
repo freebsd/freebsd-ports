@@ -22,7 +22,7 @@ GROUPS=	quickml
 
 LICENSE=	GPLv2
 
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 GNU_CONFIGURE=	yes
 USE_RUBY=	yes
 

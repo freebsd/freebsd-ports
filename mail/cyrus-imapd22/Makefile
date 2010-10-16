@@ -99,7 +99,7 @@ EXTRA_PATCHES+=	${FILESDIR}/drac_auth.patch
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal::berkdb.m4 \
 		${FILESDIR}/extra-patch-cmulocal::ucdsnmp.m4 \
 		${FILESDIR}/extra-patch-configure.in
-USE_AUTOTOOLS=	autoconf:267 autoheader:267
+USE_AUTOTOOLS=	autoconf:268 autoheader:268
 CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif

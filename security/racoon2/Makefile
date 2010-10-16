@@ -18,7 +18,7 @@ COMMENT=	Racoon2 IPsec daemon
 USE_RC_SUBR=	YES
 USE_OPENSSL=	YES
 
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/racoon2
 

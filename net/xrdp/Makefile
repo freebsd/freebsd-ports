@@ -14,7 +14,7 @@ MASTER_SITES=	LOCAL/pav
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source Remote Desktop Protocol (RDP) server
 
-USE_AUTOTOOLS=	autoconf:267:env automake:111:env libtool:22
+USE_AUTOTOOLS=	autoconf:268:env automake:111:env libtool:22
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	xrdp
 

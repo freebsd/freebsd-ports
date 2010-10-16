@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP module wich connects the PHP object with the Java/ECMA 335 object
 
-USE_AUTOTOOLS=	autoconf:267:env automake:111:env libtool:22:env
+USE_AUTOTOOLS=	autoconf:268:env automake:111:env libtool:22:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_JAVA=	yes

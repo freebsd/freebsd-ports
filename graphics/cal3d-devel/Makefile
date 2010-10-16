@@ -22,7 +22,7 @@ CONFLICTS=	cal3d-[0-9]*
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	automake:111 autoheader:267 libtool:22
+USE_AUTOTOOLS=	automake:111 autoheader:268 libtool:22
 AUTOMAKE_ARGS=	--add-missing
 
 MAN1=	cal3d_converter.1

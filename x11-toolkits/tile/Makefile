@@ -16,7 +16,7 @@ COMMENT=	Themed widget set for Tk
 
 USE_TK=		84+
 
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 
 GNU_CONFIGURE=	yes
 TKPKG=		${PORTNAME}${PORTVERSION}

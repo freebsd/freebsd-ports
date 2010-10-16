@@ -21,7 +21,7 @@ BROKEN_WWW=	http://www.montefiore.ulg.ac.be/cgi-bin-ulg/DICO.html
 #
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_AUTOTOOLS=	automake:14 autoconf:267
+USE_AUTOTOOLS=	automake:14 autoconf:268
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 USE_GMAKE=	true
 AUTOMAKE_ARGS=	--add-missing --foreign --include-deps

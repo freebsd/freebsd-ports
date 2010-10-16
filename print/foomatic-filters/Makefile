@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.linuxprinting.org/download/foomatic/ \
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Foomatic wrapper scripts
 
-USE_AUTOTOOLS=	autoheader:267
+USE_AUTOTOOLS=	autoheader:268
 USE_PERL5=	yes
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes

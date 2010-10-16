@@ -15,7 +15,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@eitanadler.com
 COMMENT=	An interface to X selections ("the clipboard") from the command line
 
-USE_AUTOTOOLS=	autoconf:267:env aclocal:111:env automake:111:env
+USE_AUTOTOOLS=	autoconf:268:env aclocal:111:env automake:111:env
 USE_XORG=	x11 xmu
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -21,7 +21,7 @@ COMMENT=	Networking API that provides reliable UDP primarily for online games
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	aclocal:111 autoheader:267 autoconf:267 automake:111 libtool:22
+USE_AUTOTOOLS=	aclocal:111 autoheader:268 autoconf:268 automake:111 libtool:22
 AUTOMAKE_ARGS=	--add-missing
 ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} \
 	-I ${LOCALBASE}/share/aclocal \

@@ -122,7 +122,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2.6.2-common \
     ${PRTYPE} != -spr800
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2.6.2-ekpstm::main.c
 .endif
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 USE_ICONV=	yes
 .endif

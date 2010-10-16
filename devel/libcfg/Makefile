@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}+-${DISTVERSION}
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Library for command line and configuration file parsing
 
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

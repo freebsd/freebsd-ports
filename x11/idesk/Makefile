@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CXXFLAGS+=	`imlib2-config --cflags` `freetype-config --cflags`

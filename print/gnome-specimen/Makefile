@@ -20,7 +20,7 @@ GCONF_SCHEMAS=	gnome-specimen.schemas
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
-USE_AUTOTOOLS=	automake:111:env autoconf:267:env
+USE_AUTOTOOLS=	automake:111:env autoconf:268:env
 
 INSTALLS_ICONS=	yes
 

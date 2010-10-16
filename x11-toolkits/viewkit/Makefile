@@ -17,7 +17,7 @@ DISTNAME=	libvk-Apr19-2243
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ViewKit workalike from Hungry Programmers
 
-USE_AUTOTOOLS=	autoconf:267:env
+USE_AUTOTOOLS=	autoconf:268:env
 MOTIFPACKAGE?=	open-motif
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes

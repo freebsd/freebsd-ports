@@ -20,7 +20,7 @@ LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth
 
 LATEST_LINK=	gpgme03
 
-USE_AUTOTOOLS=	autoconf:267 libtool:22
+USE_AUTOTOOLS=	autoconf:268 libtool:22
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

@@ -23,7 +23,7 @@ PORTDOCS=	USAGE
 PLIST_FILES=	lib/gtk-2.0/modules/libgtkparasite.a \
 		lib/gtk-2.0/modules/libgtkparasite.la \
 		lib/gtk-2.0/modules/libgtkparasite.so
-USE_AUTOTOOLS=	autoconf:267 automake:111 libtool:22
+USE_AUTOTOOLS=	autoconf:268 automake:111 libtool:22
 
 pre-configure:
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e '/.\/configure/d' ./autogen.sh \

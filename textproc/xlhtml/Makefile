@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Excel and PowerPoint files to HTML and text
 
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:267
+USE_AUTOTOOLS=	automake:14 autoconf:268
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 MAN1=		ppthtml.1 xlhtml.1

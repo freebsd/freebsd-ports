@@ -18,7 +18,7 @@ COMMENT=	A free UNIX software/file packaging program
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 MAN1=		epm.1 epminstall.1 mkepmlist.1 setup.1
 MAN5=		epm.list.5 setup.types.5
 MAKE_JOBS_UNSAFE=	yes

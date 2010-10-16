@@ -16,7 +16,7 @@ COMMENT=	Device firmware update (DFU) USB programmer
 
 MAN1=		dfu-util.1
 PLIST_FILES=	bin/dfu-util
-USE_AUTOTOOLS=	aclocal:111 automake:111 autoheader:267
+USE_AUTOTOOLS=	aclocal:111 automake:111 autoheader:268
 AUTOMAKE_ARGS=	--add-missing --foreign --copy
 
 SNAPDATE=	20090212

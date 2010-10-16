@@ -108,7 +108,7 @@ IGNORE=		options WITH_ICU and WITH_ICU4 are mutually exclusive
 .  endif
 
 .  if (defined(SERVER_ONLY) && (defined(WITH_ICU) || defined(WITH_ICU4))) || make(makesum)
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 CONFIGURE_ARGS+=--with-icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
 PATCHFILES+=	pg-900-icu-2010-09-19.diff.gz:icu

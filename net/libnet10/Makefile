@@ -20,7 +20,7 @@ COMMENT=	A C library for creating IP packets
 
 CFLAGS+=	-fPIC
 
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 WRKSRC=		${WRKDIR}/Libnet-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 MAN3=		libnet${PKGNAMESUFFIX}.3

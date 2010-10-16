@@ -102,7 +102,7 @@ OPTIONS+=	ICU   "Use ICU for unicode collation (server)" off
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" off
 
 .  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 CONFIGURE_ARGS+=--with-icu
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu

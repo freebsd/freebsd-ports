@@ -18,7 +18,7 @@ COMMENT=	A set of useful GNU Autoconf macros
 
 DISTDATE=	2009-04-19
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	autoconf:267:env automake:111:env
+USE_AUTOTOOLS=	autoconf:268:env automake:111:env
 GNU_CONFIGURE=	yes
 
 PLIST_SUB=	MACRODIR=share/aclocal

@@ -27,7 +27,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	esd:${PORTSDIR}/audio/esound:install
 .endif
 
-USE_AUTOTOOLS=	autoconf:267
+USE_AUTOTOOLS=	autoconf:268
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--sharedstatedir=/var/games\
 		--with-setgid=games

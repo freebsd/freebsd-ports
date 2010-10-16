@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Makefile framework
 
-USE_AUTOTOOLS=	automake:111 autoconf:267
+USE_AUTOTOOLS=	automake:111 autoconf:268
 USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}

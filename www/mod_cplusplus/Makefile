@@ -18,7 +18,7 @@ COMMENT=	Apache module for loading C++ objects as handlers
 MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	2.0+
-USE_AUTOTOOLS=	autoconf:267 autoheader:267 libtool:22 automake:111 aclocal:111
+USE_AUTOTOOLS=	autoconf:268 autoheader:268 libtool:22 automake:111 aclocal:111
 CFLAGS+=	-I${LOCALBASE}/include
 
 GNU_CONFIGURE=	yes
