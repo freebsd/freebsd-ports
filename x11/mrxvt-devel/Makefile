@@ -7,7 +7,7 @@
 
 PORTNAME=	mrxvt-devel
 PORTVERSION=	0.5.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	SF/materm/mrxvt%20source/${PORTVERSION}
 DISTNAME=	mrxvt-${PORTVERSION}
@@ -22,6 +22,11 @@ GNU_CONFIGURE=	yes
 MAN1=		mrxvt.1
 
 SUB_FILES+=	pkg-message
+
+DESKTOP_ENTRIES=	"mrxvt" "mrxvt terminal emulator" \
+			"${PREFIX}/share/pixmaps/mrxvt.png" \
+			"mrxvt" "Utility;TerminalEmulator;" \
+			false
 
 OPTIONS=	XFT "Enable Xft support for fonts" Off \
 		BACKGROUND "Enable background images" On\
