@@ -15,6 +15,9 @@ DISTFILES=	linux-netbus-client-v${PORTVERSION}.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetBus client
 
+DEPRECATED=	Development has ceased, mastersite disappeared
+EXPIRATION_DATE=	2011-01-01
+
 PLIST_FILES=	bin/lxnb
 
 pre-build:
