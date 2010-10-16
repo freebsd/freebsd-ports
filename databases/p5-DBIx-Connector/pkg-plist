@@ -1,0 +1,10 @@
+%%SITE_PERL%%/DBIx/Connector.pm
+%%SITE_PERL%%/DBIx/Connector/Driver.pm
+%%SITE_PERL%%/DBIx/Connector/Driver/MSSQL.pm
+%%SITE_PERL%%/DBIx/Connector/Driver/Oracle.pm
+%%SITE_PERL%%/DBIx/Connector/Driver/Pg.pm
+%%SITE_PERL%%/DBIx/Connector/Driver/SQLite.pm
+%%SITE_PERL%%/DBIx/Connector/Driver/mysql.pm
+@dirrm %%SITE_PERL%%/DBIx/Connector/Driver
+@dirrm %%SITE_PERL%%/DBIx/Connector
+@dirrmtry %%SITE_PERL%%/DBIx
