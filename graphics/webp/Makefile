@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webp
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.2
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-leptonica-${PORTVERSION}
@@ -20,24 +20,23 @@ LIB_DEPENDS=	vpx.0:${PORTSDIR}/multimedia/libvpx \
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_WRKSRC=	${WRKSRC}/leptonlib-1.066
+CONFIGURE_WRKSRC=	${WRKSRC}/libwebp
+CONFIGURE_ARGS+=	LDFLAGS="-L${WRKSRC}/leptonlib-1.066/lib/nodebug"
+CFLAGS+=	-I${WRKSRC}/leptonlib-1.066/src
 WRKSRC=		${WRKDIR}/${PORTNAME}
+INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
 
 PLIST_FILES=	bin/webpconv
 
-pre-patch:
+pre-configure:
+.for f in missing depcomp install-sh
+		@cd ${WRKSRC}/libwebp && ${LN} -sf ../leptonlib-1.066/config/$f
+.endfor
 		@${REINPLACE_CMD} -e '/^CFLAGS =/s:$$: -I/usr/local/include:' \
-			${CONFIGURE_WRKSRC}/src/makefile
-		@${REINPLACE_CMD} -e '/^INCLUDES =/s:$$: -I/usr/local/include:'\
-			-e '/^LDFLAGS /s:$$: -L/usr/local/lib:' \
-			-e 's:-o webpconv:& $$(LDFLAGS):' \
-			${WRKSRC}/libwebp/makefile
+			${WRKSRC}/leptonlib-1.066/src/makefile
 
 do-build:
-		${GMAKE} -C ${CONFIGURE_WRKSRC}/src
-		${GMAKE} -C ${WRKSRC}/libwebp
-
-do-install:
-		@${INSTALL_PROGRAM} ${WRKSRC}/libwebp/webpconv ${PREFIX}/bin
+		${GMAKE} -C ${WRKSRC}/leptonlib-1.066/src
+		${MAKE} -C ${WRKSRC}/libwebp
 
 .include <bsd.port.mk>
