@@ -1,5 +1,5 @@
---- gui/about_dialog/version_image_widget.cc.org	2010-09-25 11:07:28.324337247 +0900
-+++ gui/about_dialog/version_image_widget.cc	2010-09-25 11:07:59.689335312 +0900
+--- gui/about_dialog/version_image_widget.cc.org	2010-10-16 12:00:02.576178852 +0900
++++ gui/about_dialog/version_image_widget.cc	2010-10-16 12:00:34.221317549 +0900
 @@ -41,7 +41,11 @@
  void VersionImageWidget::loadImage() {
    // Currently the version is always latest.

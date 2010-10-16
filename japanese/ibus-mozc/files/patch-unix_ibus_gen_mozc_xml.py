@@ -1,5 +1,5 @@
---- unix/ibus/gen_mozc_xml.py.org	2010-09-25 11:17:57.221333653 +0900
-+++ unix/ibus/gen_mozc_xml.py	2010-09-25 11:22:33.363336338 +0900
+--- unix/ibus/gen_mozc_xml.py.org	2010-10-16 12:06:25.692183819 +0900
++++ unix/ibus/gen_mozc_xml.py	2010-10-16 12:07:20.965178571 +0900
 @@ -39,6 +39,7 @@
  
  import optparse
