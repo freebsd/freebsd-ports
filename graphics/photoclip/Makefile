@@ -16,7 +16,7 @@ DISTNAME=	PhotoClip-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Simple image viewer and editor for GNUstep
 
-LICENSE=	LGPL21
+LICENSE=	LGPL20
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
