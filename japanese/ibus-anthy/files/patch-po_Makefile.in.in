@@ -1,5 +1,5 @@
---- po/Makefile.in.in.org	2010-04-24 10:42:38.834643939 +0900
-+++ po/Makefile.in.in	2010-04-24 11:07:14.455718125 +0900
+--- po/Makefile.in.in.org	2010-10-16 13:01:37.296180136 +0900
++++ po/Makefile.in.in	2010-10-16 13:01:58.430185436 +0900
 @@ -34,7 +34,7 @@
  datarootdir = @datarootdir@
  libdir = @libdir@

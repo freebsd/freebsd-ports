@@ -1,54 +1,38 @@
---- configure.org	2010-04-24 10:42:38.837524472 +0900
-+++ configure	2010-04-24 11:04:12.291498371 +0900
-@@ -17904,9 +17904,9 @@
- #define HAVE_DECL_NTH_UNCONVERTED_CANDIDATE 0
- _ACEOF
+--- configure.org	2010-10-16 12:51:27.685179297 +0900
++++ configure	2010-10-16 12:54:44.860181986 +0900
+@@ -16347,7 +16347,7 @@
+ if test $ac_have_decl = 1; then :
  
--{ { $as_echo "$as_me:$LINENO: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&5
--$as_echo "$as_me: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&2;}
--   { (exit 1); exit 1; }; }
-+#{ { $as_echo "$as_me:$LINENO: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&5
-+#$as_echo "$as_me: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&2;}
-+#   { (exit 1); exit 1; }; }
+ else
+-  as_fn_error "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
++#  as_fn_error "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
  fi
- { $as_echo "$as_me:$LINENO: checking whether NTH_KATAKANA_CANDIDATE is declared" >&5
- $as_echo_n "checking whether NTH_KATAKANA_CANDIDATE is declared... " >&6; }
-@@ -17974,9 +17974,9 @@
- #define HAVE_DECL_NTH_KATAKANA_CANDIDATE 0
- _ACEOF
+ ac_fn_c_check_decl "$LINENO" "NTH_KATAKANA_CANDIDATE" "ac_cv_have_decl_NTH_KATAKANA_CANDIDATE" "#include <anthy/anthy.h>
+ "
+@@ -16363,7 +16363,7 @@
+ if test $ac_have_decl = 1; then :
  
--{ { $as_echo "$as_me:$LINENO: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&5
--$as_echo "$as_me: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&2;}
--   { (exit 1); exit 1; }; }
-+#{ { $as_echo "$as_me:$LINENO: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&5
-+#$as_echo "$as_me: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&2;}
-+#   { (exit 1); exit 1; }; }
+ else
+-  as_fn_error "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
++#  as_fn_error "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
  fi
- { $as_echo "$as_me:$LINENO: checking whether NTH_HIRAGANA_CANDIDATE is declared" >&5
- $as_echo_n "checking whether NTH_HIRAGANA_CANDIDATE is declared... " >&6; }
-@@ -18044,9 +18044,9 @@
- #define HAVE_DECL_NTH_HIRAGANA_CANDIDATE 0
- _ACEOF
+ ac_fn_c_check_decl "$LINENO" "NTH_HIRAGANA_CANDIDATE" "ac_cv_have_decl_NTH_HIRAGANA_CANDIDATE" "#include <anthy/anthy.h>
+ "
+@@ -16379,7 +16379,7 @@
+ if test $ac_have_decl = 1; then :
  
--{ { $as_echo "$as_me:$LINENO: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&5
--$as_echo "$as_me: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&2;}
--   { (exit 1); exit 1; }; }
-+#{ { $as_echo "$as_me:$LINENO: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&5
-+#$as_echo "$as_me: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&2;}
-+#   { (exit 1); exit 1; }; }
+ else
+-  as_fn_error "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
++#  as_fn_error "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
  fi
- { $as_echo "$as_me:$LINENO: checking whether NTH_HALFKANA_CANDIDATE is declared" >&5
- $as_echo_n "checking whether NTH_HALFKANA_CANDIDATE is declared... " >&6; }
-@@ -18114,9 +18114,9 @@
- #define HAVE_DECL_NTH_HALFKANA_CANDIDATE 0
- _ACEOF
+ ac_fn_c_check_decl "$LINENO" "NTH_HALFKANA_CANDIDATE" "ac_cv_have_decl_NTH_HALFKANA_CANDIDATE" "#include <anthy/anthy.h>
+ "
+@@ -16395,7 +16395,7 @@
+ if test $ac_have_decl = 1; then :
  
--{ { $as_echo "$as_me:$LINENO: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&5
--$as_echo "$as_me: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&2;}
--   { (exit 1); exit 1; }; }
-+#{ { $as_echo "$as_me:$LINENO: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&5
-+#$as_echo "$as_me: error: Could not find NTH_*_CANDIDATE values in anthy.h" >&2;}
-+#   { (exit 1); exit 1; }; }
+ else
+-  as_fn_error "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
++#  as_fn_error "Could not find NTH_*_CANDIDATE values in anthy.h" "$LINENO" 5
  fi
  
  
