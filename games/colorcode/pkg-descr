@@ -1,0 +1,8 @@
+ColorCode is a free advanced MasterMind clone with lots of different
+game variants, from the very easy up to really challenging ones.
+You can combine any color count from 2-10 with any column count
+from 2-5 and allow or not pegs of the same color. Or you may select
+one of the 5 predefined levels of difficulty. ColorCode has also a
+rather intelligent built-in MasterMind solver.
+
+WWW:	http://colorcode.laebisch.com/
