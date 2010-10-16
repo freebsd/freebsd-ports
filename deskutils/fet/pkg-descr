@@ -1,10 +1,13 @@
-FET is free timetabling software. This program aims to automatically
-generate the timetable of a school, high-school or university. It
-may be used for other timetabling purposes.
+FET is open source free software for automatically scheduling the
+timetable of a school, high-school or university. It uses a fast
+and efficient timetabling algorithm.
+
+Usually, FET is able to solve a complicated timetable in maximum
+5-20 minutes. For simpler timetables, it may take a shorter time,
+under 5 minutes (in some cases, a matter of seconds). For extremely
+difficult timetables, it may take a longer time, a matter of hours.
 
 FET can mean "Free Educational Timetabling" (the "E" in the middle
 may also stand for other words, based on your personal preference).
-
-LICENSE: GPL
 
 WWW:	http://lalescu.ro/liviu/fet/
