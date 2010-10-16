@@ -15,7 +15,7 @@ DISTNAME=	MathArray-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Class library for mathematical manipulation of matrices
 
-LICENSE=	LGPL21
+LICENSE=	LGPL20
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BASE=	yes
