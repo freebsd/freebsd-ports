@@ -47,6 +47,7 @@ MAN5+=	sane-microtek.5
 MAN5+=	sane-microtek2.5
 MAN5+=	sane-mustek.5
 MAN5+=	sane-mustek_usb.5
+MAN5+=	sane-mustek_usb2.5
 MAN5+=	sane-nec.5
 MAN5+=	sane-net.5
 MAN5+=	sane-niash.5
