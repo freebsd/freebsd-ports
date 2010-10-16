@@ -1,10 +1,9 @@
---- gui/about_dialog/about_dialog.cc.org	2010-09-25 11:06:33.059334293 +0900
-+++ gui/about_dialog/about_dialog.cc	2010-09-25 11:07:21.090335160 +0900
-@@ -113,8 +113,11 @@
- 
+--- gui/about_dialog/about_dialog.cc.org	2010-10-16 11:59:20.527184356 +0900
++++ gui/about_dialog/about_dialog.cc	2010-10-16 11:59:55.382185760 +0900
+@@ -114,7 +114,11 @@
    SetLabelText(label_terms);
    SetLabelText(label_credits);
--
+ 
 +#ifdef __FreeBSD__
 +  product_image_.reset(new QImage("@@LOCALBASE@@/share/mozc-tool/icons/product_logo.png"));
 +#else

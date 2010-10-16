@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ibus-mozc
-PORTVERSION=	0.13.481.102
+PORTVERSION=	0.13.499.102
 CATEGORIES=	japanese
 MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
 DISTNAME=	mozc-${PORTVERSION}

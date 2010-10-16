@@ -1,5 +1,5 @@
---- base/mutex.h.org	2010-09-25 11:01:36.626334847 +0900
-+++ base/mutex.h	2010-09-25 11:02:17.429334111 +0900
+--- base/mutex.h.org	2010-10-16 11:55:20.326178921 +0900
++++ base/mutex.h	2010-10-16 11:55:50.442396765 +0900
 @@ -82,11 +82,11 @@
      // PTHREAD_MUTEX_RECURSIVE_NP and PTHREAD_MUTEX_RECURSIVE seem to be
      // variants.  For example, Mac OS X 10.4 had
