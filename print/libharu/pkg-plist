@@ -18,18 +18,18 @@ include/hpdf_image.h
 include/hpdf_info.h
 include/hpdf_list.h
 include/hpdf_mmgr.h
+include/hpdf_namedict.h
 include/hpdf_objects.h
 include/hpdf_outline.h
 include/hpdf_page_label.h
 include/hpdf_pages.h
+include/hpdf_pdfa.h
 include/hpdf_streams.h
 include/hpdf_types.h
 include/hpdf_u3d.h
 include/hpdf_utils.h
 include/hpdf_version.h
-lib/libhpdf.so
-lib/libhpdf-2.1.0.so
-lib/libhpdf.la
+lib/libhpdf-2.2.0.so
 lib/libhpdf.a
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+lib/libhpdf.la
+lib/libhpdf.so
