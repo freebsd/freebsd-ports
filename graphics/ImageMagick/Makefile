@@ -68,7 +68,7 @@ OPTIONS=	X11				"X11 support" on \
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_IMAGEMAGICK_PDF) && defined(WITH_GHOSTSCRIPT_VER) && $(WITH_GHOSTSCRIPT_VER) == "7"
+.if !defined(WITHOUT_IMAGEMAGICK_PDF) && defined(WITH_GHOSTSCRIPT_VER) && ${WITH_GHOSTSCRIPT_VER} == "7"
 IGNORE=		support for the PDF format requires ghostscript 8 and higher
 .endif
 
@@ -188,10 +188,10 @@ CONFIGURE_ARGS+=	--without-lqr
 .endif
 
 .if !defined(WITHOUT_IMAGEMAGICK_FFTW)
-CONFIGURE_ARGS+=        --with-fftw
-LIB_DEPENDS+=           fftw3.5:${PORTSDIR}/math/fftw3
+CONFIGURE_ARGS+=	--with-fftw
+LIB_DEPENDS+=		fftw3.5:${PORTSDIR}/math/fftw3
 .else
-CONFIGURE_ARGS+=        --without-fftw
+CONFIGURE_ARGS+=	--without-fftw
 .endif
 
 # Produce BZip compressed MIFF images
