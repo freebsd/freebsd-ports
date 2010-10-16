@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	umph
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.5
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Youtube video playlist parser for cclive and alike tools
+COMMENT=	YouTube video playlist parser for cclive and alike tools
 
-RUN_DEPENDS=	p5-XML-DOM>=1.44:${PORTSDIR}/textproc/p5-XML-DOM \
-		p5-Getopt-ArgvFile>=1.11:${PORTSDIR}/devel/p5-Getopt-ArgvFile
+LICENSE=	GPLv3
+
+RUN_DEPENDS=	p5-Getopt-ArgvFile>=1.11:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
+		p5-XML-DOM>=1.44:${PORTSDIR}/textproc/p5-XML-DOM
 
 PERL_CONFIGURE=	yes
 USE_BZIP2=	yes
