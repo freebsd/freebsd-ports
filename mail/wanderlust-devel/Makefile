@@ -18,8 +18,8 @@ COMMENT=	Yet another message interface on Emacsen
 
 USE_EMACS=	yes
 
-SNAPDATE=	20100711
-SNAPTIME=	0810
+SNAPDATE=	20101014
+SNAPTIME=	0412
 
 CONFLICTS=	wanderlust-*-2.14.*
 NO_LATEST_LINK=	yes
