@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polyml
-PORTVERSION=	5.3
+PORTVERSION=	5.4
 CATEGORIES=	lang
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -21,7 +21,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-x
 USE_LDCONFIG=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 PLIST_FILES=	bin/poly		\
 		bin/polyimport		\
@@ -30,7 +30,7 @@ PLIST_FILES=	bin/poly		\
 		lib/libpolyml.a		\
 		lib/libpolyml.la	\
 		lib/libpolyml.so	\
-		lib/libpolyml.so.2
+		lib/libpolyml.so.3
 
 MAN1=		poly.1 polyimport.1
 MANCOMPRESSED=	no
