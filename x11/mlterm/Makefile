@@ -7,6 +7,7 @@
 
 PORTNAME=	mlterm
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/01release/${PORTNAME}-${PORTVERSION}
 
@@ -21,7 +22,8 @@ USE_AUTOTOOLS=	libtool:22
 LIBTOOLFILES=	configure kiklib/configure mkf/configure
 USE_PERL5_BUILD=yes
 USE_GETTEXT=	yes
-CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf --enable-utmp \
+CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf2 --enable-utmp \
+		--mandir="${LOCALBASE}/man" --enable-optimize-redrawing \
 		--with-tools="mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig" \
 		--with-type-engines="xcore,xft"
 CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/iiim"
@@ -82,6 +84,9 @@ PLIST_SUB+=	SCIM="@comment "
 
 .if ${OSVERSION} >= 900004
 MAKE_ENV=	LIBS_LOCAL=-lutempter
+.else
+MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
+LIB_DEPENDS+=	utempter.0:${PORTSDIR}/sysutils/libutempter
 .endif
 
 USE_LDCONFIG=	yes
