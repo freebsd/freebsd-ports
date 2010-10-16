@@ -16,7 +16,7 @@
  {
      int ret;
      int i;
-+    int stack_size;
++    size_t stack_size;
  
      pthread_mutex_init(&threadtable_lock, NULL);
  
