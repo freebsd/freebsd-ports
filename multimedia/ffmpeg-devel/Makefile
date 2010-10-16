@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2010-07-25
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mm
@@ -29,7 +29,8 @@ USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 WANT_SDL=	yes
 
-OPTIONS=	AMR_NB	"AMR Narrow Band encoder (opencore)" on \
+OPTIONS=	ALSA	"Enable alsa input/output device" off \
+		AMR_NB	"AMR Narrow Band encoder (opencore)" on \
 		AMR_WB	"AMR Wide Band decoder (opencore)" on \
 		DIRAC	"Dirac codec via libdirac" off \
 		FAAC	"FAAC mp4/aac audio encoder" off \
@@ -150,6 +151,14 @@ MAN1+=		ffserver.1
 # optimizations
 .ifdef(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math -fno-finite-math-only -fomit-frame-pointer
+.endif
+
+#alsa
+.if defined(WITH_ALSA)
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+.else
+CONFIGURE_ARGS+=	--disable-indev=alsa \
+			--disable-outdev=alsa
 .endif
 
 # amr
