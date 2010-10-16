@@ -134,6 +134,7 @@
     SUBDIR += chromium-bsu
     SUBDIR += circuslinux
     SUBDIR += cleanq3
+    SUBDIR += colorcode
     SUBDIR += columns
     SUBDIR += concentration
     SUBDIR += connect4
