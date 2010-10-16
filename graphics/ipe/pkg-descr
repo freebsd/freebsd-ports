@@ -1,5 +1,6 @@
-This is a port of Ipe, Otfried Cheong's Interactive Picture Editor.
-Ipe has a very nice integration of LaTeX text and PostScript drawings.
+Ipe is a drawing editor for creating figures in PDF or (encapsulated)
+Postscript format. It supports making small figures for inclusion
+into LaTeX-documents as well as making multi-page PDF presentations
+that can be shown on-line with Acrobat Reader.
 
-David Bremner
-bremner@unb.ca
+WWW:	http://tclab.kaist.ac.kr/ipe/
