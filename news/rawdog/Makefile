@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rawdog
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	news python
 MASTER_SITES=	http://offog.org/files/ \
 		ftp://ftp.i-scream.org/pub/offog.org/files/ \
