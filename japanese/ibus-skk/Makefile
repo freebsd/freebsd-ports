@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ibus-skk
-PORTVERSION=	1.0.0
+PORTVERSION=	1.3.2
 CATEGORIES=	japanese
 MASTER_SITES=	http://cloud.github.com/downloads/ueno/ibus-skk/
 

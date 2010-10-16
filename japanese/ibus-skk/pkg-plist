@@ -1,3 +1,4 @@
+bin/ibus-skk-convert-jisyo
 libexec/ibus-engine-skk
 libexec/ibus-setup-skk
 share/ibus/component/skk.xml
