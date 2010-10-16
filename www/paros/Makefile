@@ -12,7 +12,7 @@ CATEGORIES=	www security java
 MASTER_SITES=	SF/${PORTNAME}/Paros/Version%20${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-unix
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An HTTP/HTTPS proxy for assessing web application vulnerability
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
