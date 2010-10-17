@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/ClassAttribute/.packlist
 %%SITE_PERL%%/MooseX/ClassAttribute.pm
-%%SITE_PERL%%/MooseX/ClassAttribute/Meta/Method/Accessor.pm
 %%SITE_PERL%%/MooseX/ClassAttribute/Meta/Role/Attribute.pm
 %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Application/ToClass.pm
 %%SITE_PERL%%/MooseX/ClassAttribute/Trait/Application/ToRole.pm
