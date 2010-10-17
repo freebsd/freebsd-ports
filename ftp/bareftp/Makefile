@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bareftp
-PORTVERSION=	0.3.2
-PORTREVISION=	1
+PORTVERSION=	0.3.6
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.bareftp.org/release/ \
 		http://www.predatorlabs.net/dl/
@@ -17,8 +16,7 @@ COMMENT=	Ftp client made in C sharp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datarootdir="${PREFIX}/share" --libdir="${PREFIX}/lib" \
-		--localedir="${PREFIX}/share/locale" --includedir="${LOCALBASE}/include" \
-		--without-gnomekeyring
+		--localedir="${PREFIX}/share/locale" --includedir="${LOCALBASE}/include"
 
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
@@ -30,6 +28,18 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		bareftp.1
+
+OPTIONS=	KEYRING "Support for Gnome Keyring" on
+
+.include <bsd.port.options.mk>
+
+.if defined(WITHOUT_KEYRING)
+CONFIGURE_ARGS+=	--without-gnomekeyring
+.else
+KEYRING_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-keyring-sharp-1.0.pc
+BUILD_DEPENDS+=	${KEYRING_DETECT}:${PORTSDIR}/security/gnome-keyring-sharp
+RUN_DEPENDS+=	${KEYRING_DETECT}:${PORTSDIR}/security/gnome-keyring-sharp
+.endif
 
 # TODO
 # Ugly way but configure ignore "--localedir=" fu* ;/

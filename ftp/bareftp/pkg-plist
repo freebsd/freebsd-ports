@@ -31,5 +31,6 @@ share/locale/it/LC_MESSAGES/bareftp.mo
 share/locale/nb/LC_MESSAGES/bareftp.mo
 share/locale/pl/LC_MESSAGES/bareftp.mo
 share/locale/pt_BR/LC_MESSAGES/bareftp.mo
+share/locale/ru/LC_MESSAGES/bareftp.mo
 share/locale/sv/LC_MESSAGES/bareftp.mo
 @dirrm lib/bareftp
