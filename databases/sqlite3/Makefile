@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.7.2
+PORTVERSION=	3.7.3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/ http://www2.sqlite.org/
 DISTNAME=	sqlite-${PORTVERSION}
 
-MAINTAINER=	pol@opk.ru
+MAINTAINER=	pavelivolkov@googlemail.com
 COMMENT=	An SQL database engine in a C library
 
 LICENSE=	unknown
@@ -30,12 +30,16 @@ CONFIGURE_ENV+=	TCLSH_CMD="${TCLSH}" \
 		TCLLIBDIR="${PREFIX}/lib/${PORTNAME}" \
 		ac_cv_search_pthread_create=""
 
+# Use an in-ram database for temporary tables (never,no,yes,always),
+# which is equivalent of SQLITE_TEMP_STORE=[0,1,2,3]
+RAMTABLE?=	yes
+
 # Compilation Options For SQLite http://www.sqlite.org/compile.html
 OPTIONS=	\
 		FTS3		"Enable FTS3 (Full Text Search) module"	on \
 		ICU		"Enable built with \"ICU\""		off \
 		RTREE		"Enable R*Tree module"			off \
-		RAMTABLE	"Store temporary tables in RAM"		off \
+		RAMTABLE	"Store temporary tables in RAM = ${RAMTABLE}" off \
 		UPD_DEL_LIMIT	"ORDER BY and LIMIT on UPDATE and DELETE" off \
 		SOUNDEX		"Enables the soundex() SQL function"	off \
 		METADATA	"Enable column metadata"		on \
@@ -107,7 +111,7 @@ LDFLAGS+=		`${LOCALBASE}/bin/icu-config --ldflags`
 .endif
 
 .if defined(WITH_RAMTABLE)
-CONFIGURE_ARGS+=	--enable-tempstore=yes
+CONFIGURE_ARGS+=	--enable-tempstore=${RAMTABLE}
 .endif
 
 .if defined(WITH_SECURE_DELETE)
@@ -162,16 +166,14 @@ post-install:
 	@${INSTALL_MAN} ${WRKSRC}/sqlite3.1 ${MANPREFIX}/man/man1
 .endif
 .ifndef NOPORTDOCS
-.ifdef WITH_FTS3
 	@${MKDIR} ${DOCSDIR}
+.ifdef WITH_FTS3
 	@${INSTALL_DATA} ${WRKSRC}/ext/fts3/README.syntax ${WRKSRC}/ext/fts3/README.tokenizers ${DOCSDIR}
 .endif
 .ifdef WITH_RTREE
-	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/ext/rtree/README ${DOCSDIR}
 .endif
 .ifdef WITH_ICU
-	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/ext/icu/README.txt ${DOCSDIR}
 .endif
 .endif
