@@ -33,6 +33,7 @@
     SUBDIR += ksteak
     SUBDIR += linux-eagle
     SUBDIR += manpages
+    SUBDIR += mediathek
     SUBDIR += pecl-konto_check
     SUBDIR += phone
     SUBDIR += php_doc
