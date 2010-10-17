@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	lives
-PORTVERSION=	1.0.9
-PORTREVISION=	3
+PORTVERSION=	1.0.10
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xs4all.nl/~salsaman/lives/current/
 DISTNAME=	LiVES-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c0rn@o2.pl
 COMMENT=	Video editing system
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
@@ -35,11 +34,14 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		x264:${PORTSDIR}/multimedia/x264 \
 		xmms:${PORTSDIR}/multimedia/xmms
 
+LICENSE=	GPLv3
+
 OPTIONS=	FREI0R "Enable frei0r support" off
 
 WRKSRC=		${WRKDIR}/${DISTNAME:L}
 
 USE_BZIP2=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	gtk20
 USE_SDL=	sdl
 USE_PYTHON=	yes
@@ -48,6 +50,8 @@ USE_CDRTOOLS=	yes
 USE_GETTEXT=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-ldvgrab
 
@@ -105,7 +109,7 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor 
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
