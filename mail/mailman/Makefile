@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mailman
-DISTVERSION=	2.1.12
+DISTVERSION=	2.1.14
 CATEGORIES?=	mail
 MASTER_SITES=	SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
 		http://www.list.org/
-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	mailman
 
@@ -110,6 +109,7 @@ RUN_DEPENDS+=	${PYTHONPREFIX_SITELIBDIR}/cjkcodecs.pth:${PORTSDIR}/converters/py
 .endif
 
 .if defined(WITH_HTDIG)
+BROKEN=	the HTDIG option is currently broken
 PATCH_SITES+=	http://www.openinfo.co.uk/mm/patches/444879/:patch1 \
 		http://www.openinfo.co.uk/mm/patches/444884/:patch2
 PATCHFILES+=	indexing-${DISTVERSION}-0.1.patch.gz:patch1 \

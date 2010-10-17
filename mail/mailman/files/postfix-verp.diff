@@ -1,5 +1,5 @@
---- Mailman/Handlers/SMTPDirect.py.orig	2005-12-31 02:50:08.000000000 +0800
-+++ Mailman/Handlers/SMTPDirect.py	2007-10-03 08:12:39.402049123 +0800
+--- Mailman/Handlers/SMTPDirect.py.orig	2010-09-20 14:18:27.000000000 -0400
++++ Mailman/Handlers/SMTPDirect.py	2010-10-16 20:26:51.913097648 -0400
 @@ -64,11 +64,11 @@
          self.__conn.connect(mm_cfg.SMTPHOST, mm_cfg.SMTPPORT)
          self.__numsessions = mm_cfg.SMTP_MAX_SESSIONS_PER_CONNECTION
@@ -23,24 +23,17 @@
          chunks = [[recip] for recip in recips]
          msgdata['personalize'] = 1
          deliveryfunc = verpdeliver
-@@ -357,8 +357,14 @@
-     # Errors-To while new ones will at worst ignore the header.
-     del msg['sender']
-     del msg['errors-to']
--    msg['Sender'] = envsender
--    msg['Errors-To'] = envsender
+@@ -375,6 +375,9 @@
+     if mlist.include_sender_header:
+         del msg['sender']
+         msg['Sender'] = envsender
 +    mailopts=[]
 +    if msgdata.get('verp') and mm_cfg.VERP_STYLE == 'Postfix':
 +        mailopts.append('XVERP=' + mm_cfg.POSTFIX_XVERP_OPTS)
-+    else:
-+        # these get left out of VERPed messages so they don't accidently
-+        # override the VERP header.
-+        msg['Sender'] = envsender
-+        msg['Errors-To'] = envsender
      # Get the plain, flattened text of the message, sans unixfrom
-     msgtext = msg.as_string()
-     refused = {}
-@@ -366,7 +372,7 @@
+     # using our as_string() method to not mangle From_ and not fold
+     # sub-part headers possibly breaking signatures.
+@@ -384,7 +387,7 @@
      msgid = msg['message-id']
      try:
          # Send the message
