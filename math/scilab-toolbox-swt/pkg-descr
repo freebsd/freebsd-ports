@@ -14,4 +14,5 @@ Discrete Fast Wavelet Transform, daubechies wavelets
 2-D single level image decomposition and reconstruction
 2-D multi-level image decomposition and reconstruction.
 
-WWW: http://scwt.sourceforge.net
+WWW:	http://scwt.sourceforge.net
+WWW:	http://atoms.scilab.org/toolboxes/swt
