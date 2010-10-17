@@ -5,94 +5,50 @@
 # $FreeBSD$
 
 PORTNAME=	medit
-PORTVERSION=	2006.09.24
-PORTREVISION=	2
+PORTVERSION=	2010.06.14
 CATEGORIES=	science graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL}	\
-		http://www.ann.jussieu.fr/~frey/logiciels/:author
-MASTER_SITE_SUBDIR=	thierry
+MASTER_SITES=	http://www.ann.jussieu.fr/~frey/ftp/archives/
 EXTRACT_SUFX=	.tgz
-DISTFILES=	# See hereunder
+DISTFILES=	${SOURCETARB} ${LIBTARBALL}
+EXTRACT_ONLY=	${SOURCETARB}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Interactive meshes visualization
 
-.if defined(MAINTAINER_MODE)
-DISTFILES+=	${PORTNAME}.${PORTVERSION}${EXTRACT_SUFX}	\
-		${PORTNAME}-missing.${PORTVERSION}${EXTRACT_SUFX}
-MD5_FILE=	${MASTERDIR}/distinfo.src
-
+USE_XORG=	x11 xmu xext
+USE_GL=		glut
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	${OPSYS}
 MAKE_ENV=	WRKSRC="${WRKSRC}" ARCHI=${OPSYS} ARCH=${ARCH} OSREL=${OSREL}
+NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	# nada
-MISSING_FILES=	eigenv.c libmesh3.c libmesh3.h
-
-.else
-# We are not allowed to distribute the sources.
-DISTFILES+=	${PORTNAME}-${ARCH}-${DISTVER}-${PORTVERSION}${EXTRACT_SUFX}
-NO_BUILD=	yes
-PATCHDIR=	# No patches
-ONLY_FOR_ARCHS=	amd64 i386 ia64 sparc64	# Ask the maintainer to add one
+LIBVERSION=	2010.05.20
+SOURCETARB=	${PORTNAME}.${PORTVERSION}${EXTRACT_SUFX}
+LIBTARBALL=	library.${LIBVERSION}${EXTRACT_SUFX}
 
 PLIST_FILES=	bin/${PORTNAME}
 
-. if !defined(NOPORTDOCS)
-DISTFILES+=	meshes.tar.gz:author
+. if !defined(NOPORTEXAMPLES)
+DISTFILES+=	meshes.tar.gz
+EXTRACT_ONLY+=	meshes.tar.gz
 MESHES=		DEFAULT.medit ozark.gis part.bb part.mesh thepart.mesh
 PLIST_FILES+=	${MESHES:S|^|%%EXAMPLESDIR%%/|}
 PLIST_DIRS=	%%EXAMPLESDIR%%
 . endif
-.endif
-
-NO_WRKSUBDIR=	yes
-USE_GL=		glut
-
-.include <bsd.port.pre.mk>
-
-. if ${OSVERSION} < 601000
-.  if ${ARCH} == i386
-DISTVER=	4.11
-LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
-.  else
-BROKEN=		no binary available for your platform x version at the moment
-.  endif
-. else
-.  if (${ARCH} == ia64) || (${ARCH} == sparc64)
-DISTVER=	6.2
-.  else
-DISTVER=	6.1
-.  endif
-. endif
-
-.if defined(MAINTAINER_MODE)
 
 post-extract:
-. for mf in ${MISSING_FILES}
-.  if !exists(${WRKSRC}/sources/${mf})
-	${CP} ${WRKSRC}/${mf} ${WRKSRC}/sources
-.  endif
-. endfor
+	cd ${WRKDIR} &&	\
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${LIBTARBALL} ${EXTRACT_AFTER_ARGS} --exclude ${MAKEFILE}
 
 pre-build:
 	${MKDIR} ${WRKSRC}/bin/${ARCH}/${OSREL}
 
-tarball:
-	cd ${WRKSRC} && \
-	${TAR} cvfz ${_DISTDIR}${PORTNAME}-${ARCH}-${OSREL}-${PORTVERSION}${EXTRACT_SUFX}\
-		bin/${ARCH}/${OSREL}
-
-.else	# !MAINTAINER_MODE
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${ARCH}/${DISTVER}/${PORTNAME} ${PREFIX}/bin
-. if !defined(NOPORTDOCS)
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
+.if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${MESHES:S|^|${WRKSRC}/INRIA.dir/|} ${EXAMPLESDIR}
-. endif
-
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

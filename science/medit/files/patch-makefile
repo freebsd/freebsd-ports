@@ -1,18 +1,17 @@
---- makefile.orig	Tue Apr 11 13:05:23 2006
-+++ makefile	Sun Sep 24 16:43:05 2006
-@@ -4,6 +4,7 @@
+--- makefile.orig	2008-12-15 20:17:56.000000000 +0100
++++ makefile	2010-10-16 20:05:32.000000000 +0200
+@@ -3,6 +3,7 @@
+ 
  default:
  	@echo "Type one of the following:"
- 	@echo "  make macosx       for Apple Mac OS X"
 +	@echo "  make FreeBSD      for FreeBSD"
- 	@echo "  make linux        for Linux on Intel systems"
- 	@echo "  make win32        for Windows XP"
- 	@echo "  make hpux10       for HP systems with HPUX 10.x w/OpenGL"
-@@ -23,6 +24,16 @@
- 	"GLUT_LIB = -framework GLUT \
- 	            -framework OpenGL -framework Cocoa" \
-         "EXEDIR = /Applications/medit.app/Contents/MacOS"
-+
+ 	@echo "  make macosx       for Apple Mac OS X"
+ 	@echo "  make macosx-x64   for Apple Mac OS X 64 bits"
+ 	@echo "  make macosx-ub    for Apple Mac OS X Universal binary"
+@@ -52,6 +53,16 @@
+ 			    -framework OpenGL -framework Cocoa" \
+ 	"EXEDIR = /Applications/medit.app/Contents/MacOS"
+ 
 +FreeBSD:
 +	$(MAKE) $(MFLAGS) -f Makefile.arch \
 +        "prog   = medit" \
@@ -21,7 +20,8 @@
 +        "GL_LIB   = -lGL" \
 +	"GLU_LIB  = -lGLU" \
 +	"GLUT_LIB = -lglut" \
-+        "EXEDIR = $(WRKSRC)/bin/$(ARCH)/$(OSREL)"
- 
++        "EXEDIR = $(WRKSRC)/bin"
++
  linux:
  	$(MAKE) $(MFLAGS) -f Makefile.arch \
+         "prog   = medit-2.3-linux"\
