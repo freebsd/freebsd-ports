@@ -10,11 +10,39 @@ PORTVERSION=	1.7.4.4
 PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
+		http://www.signal42.com/mirrors/sudo_ftp/ \
+		http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/sudo/ \
+		http://ftp.arcane-networks.fr/pub/mirrors/sudo/ \
+		http://sudo.p8ra.de/sudo/dist/ \
+		http://www.very-clever.com/download/sudo/ \
+		http://sudo.cybermirror.org/ \
+		http://sudo-ftp.basemirror.de/ \
+		http://core.ring.gr.jp/archives/misc/sudo/ \
+		http://www.ring.gr.jp/archives/misc/sudo/ \
+		http://ftp.twaren.net/Unix/Security/Sudo/ \
+		ftp://ftp.sudo.ws/pub/sudo/ \
+		ftp://plier.ucar.edu/pub/sudo/ \
 		ftp://obsd.isc.org/pub/sudo/ \
+		ftp://ftp.tux.org/pub/security/sudo/ \
+		ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/sudo/ \
 		ftp://ftp.uwsg.indiana.edu/pub/security/sudo/ \
-		ftp://boulder.tele.dk/pub/sudo/ \
+		ftp://sudo.xmundo.net/pub/mirrors/sudo/ \
+		ftp://ftp.tuwien.ac.at/utils/admin-tools/sudo/ \
+		ftp://sunsite.ualberta.ca/pub/Mirror/sudo/ \
+		ftp://ftp.csc.cuhk.edu.hk/pub/packages/unix-tools/sudo/ \
+		ftp://zoot.tele.dk/pub/sudo/ \
+		ftp://ftp.in2p3.fr/pub/sudo/ \
+		ftp://ftp.arcane-networks.fr/pub/mirrors/sudo/ \
+		ftp://ftp.usbm.de/pub/sudo/ \
+		ftp://ftp.cs.tu-berlin.de/pub/misc/sudo/ \
+		ftp://ftp.informatik.uni-hamburg.de/pub/os/unix/utils/sudo/ \
+		ftp://ftp.st.ryukoku.ac.jp/pub/security/tool/sudo/ \
+		ftp://ftp.cin.nihon-u.ac.jp/pub/misc/sudo/ \
 		ftp://core.ring.gr.jp/pub/misc/sudo/ \
-		ftp://ftp.wiretapped.net/pub/security/host-security/sudo/
+		ftp://ftp.ring.gr.jp/pub/misc/sudo/ \
+		ftp://sunsite.icm.edu.pl/packages/sudo/ \
+		ftp://mirror.cdmon.com/pub/sudo/ \
+		ftp://ftp.twaren.net/Unix/Security/Sudo/
 DISTNAME=	${PORTNAME}-1.7.4p4
 
 MAINTAINER=	wxs@FreeBSD.org
