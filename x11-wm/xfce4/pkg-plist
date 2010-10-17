@@ -1,4 +1,0 @@
-%%GDM%%@unexec rm -f %%LOCAL1BASE%%/etc/dm/Sessions/XFce4.desktop
-%%GDM%%@unexec rm -f %%LOCALBASE%%/etc/gdm/Sessions/XFce4
-%%GDM%%@dirrmtry %%LOCALBASE%%/etc/gdm/Sessions
-%%GDM%%@dirrmtry %%LOCALBASE%%/etc/gdm
