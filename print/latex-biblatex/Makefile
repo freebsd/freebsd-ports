@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	biblatex
-PORTVERSION=	0.9a
+PORTVERSION=	0.9e
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/exptl
@@ -39,7 +39,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 CLASS_FILES=	biblatex.cfg biblatex.def biblatex.sty blx-compat.def blx-natbib.def
-DOC_FILES=	README RELEASE doc/biblatex.pdf VERSION
+DOC_FILES=	README RELEASE doc/biblatex.pdf doc/biblatex.tex
 BST_FILES=	biblatex.bst
 
 WRKSRC=		${WRKDIR}/${CLASSNAME}
@@ -73,11 +73,7 @@ pre-install:
 	(for F in ${DOC_FILES:S,^doc/,,}; do \
 		${ECHO_CMD} "${DOCSDIR:S,^${PREFIX}/,,}/$${F}"; \
 		done;) >> ${PLIST}
-	(for F in `${LS} ${WRKSRC}/doc/resources`; do \
-			${ECHO_CMD} "${DOCSDIR:S,^${PREFIX}/,,}/resources/$${F}"; \
-		done;) >> ${PLIST}
-	${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}/resources" >> ${PLIST}
-	${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}"  >> ${PLIST}
+	${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}" >> ${PLIST}
 	(for F in `${LS} ${WRKSRC}/doc/examples`; do \
 			${ECHO_CMD} "${EXAMPLESDIR:S,^${PREFIX}/,,}/$${F}"; \
 		done;) >> ${PLIST}
@@ -97,10 +93,8 @@ do-install:
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/resources
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${DOC_FILES:S@^@${WRKSRC}/@} ${DOCSDIR}
-	(cd ${WRKSRC}/doc/resources && ${COPYTREE_SHARE} \* ${DOCSDIR}/resources)
 	(cd ${WRKSRC}/doc/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
