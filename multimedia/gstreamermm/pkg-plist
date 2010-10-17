@@ -18,6 +18,7 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/basesrc.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/basetransform.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/bin.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/buffer.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/bufferlist.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/bus.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/caps.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/capsfilter.h
@@ -98,6 +99,7 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/basesrc_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/basetransform_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/bin_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/buffer_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/bufferlist_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/bus_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/caps_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/capsfilter_p.h
