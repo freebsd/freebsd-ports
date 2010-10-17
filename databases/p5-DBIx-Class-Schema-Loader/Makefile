@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class-Schema-Loader
-PORTVERSION=	0.07001
+PORTVERSION=	0.07002
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,19 +14,22 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Dynamic definition of a DBIx::Class::Schema
 
-RUN_DEPENDS=	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
-		p5-Class-C3>=0.18:${PORTSDIR}/devel/p5-Class-C3 \
-		p5-Class-Accessor-Grouped>=0.09002:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
-		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
-		p5-Class-Unload>=0:${PORTSDIR}/devel/p5-Class-Unload \
-		p5-DBIx-Class>=0.08114:${PORTSDIR}/databases/p5-DBIx-Class \
-		p5-Data-Dump>=1.06:${PORTSDIR}/devel/p5-Data-Dump \
-		p5-File-Slurp>=9999.13:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-Lingua-EN-Inflect-Number>=1.1:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Number \
-		p5-Lingua-EN-Inflect-Phrase>=0.02:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Phrase \
-		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean \
-		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
+RUN_DEPENDS=	\
+	p5-Data-Dump>1.06:${PORTSDIR}/devel/p5-Data-Dump \
+	p5-Lingua-EN-Inflect-Number>=1.1:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Number \
+	p5-Lingua-EN-Inflect-Phrase>=0.02:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Phrase \
+	p5-Class-Accessor-Grouped>=0.09006:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
+	p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
+	p5-Class-C3>=0.18:${PORTSDIR}/devel/p5-Class-C3 \
+	p5-Carp-Clan>=0:${PORTSDIR}/devel/p5-Carp-Clan \
+	p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
+	p5-DBIx-Class>=0.08114:${PORTSDIR}/databases/p5-DBIx-Class \
+	p5-Class-Unload>=0:${PORTSDIR}/devel/p5-Class-Unload \
+	p5-File-Slurp>=9999.13:${PORTSDIR}/devel/p5-File-Slurp \
+	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+	p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean \
+	p5-Scope-Guard>=0:${PORTSDIR}/devel/p5-Scope-Guard \
+	p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 
 OPTIONS=	SQLITE "SQLite Support" Off \
 		MYSQL "MySQL Support" Off \
@@ -78,11 +81,5 @@ MAN3=	DBIx::Class::Schema::Loader.3 \
 	DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_040.3 \
 	DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_05.3 \
 	DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_06.3
-
-post-extract:
-	@${PERL} -i.bak -ne 'print unless /^\s*(test_requires|auto_install|recommends|configure_requires)/ or /^my/ .. /^}\s*$$/' ${WRKSRC}/Makefile.PL
-
-post-patch:
-	${FIND} ${WRKSRC} -name '*.orig' -print0 | ${XARGS} -0 ${RM}
 
 .include <bsd.port.mk>
