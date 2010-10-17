@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iroffer
-PORTVERSION=	3.23
+PORTVERSION=	3.24
 CATEGORIES=	irc
 MASTER_SITES=	http://iroffer.dinoex.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
