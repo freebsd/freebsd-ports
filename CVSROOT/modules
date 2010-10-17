@@ -775,7 +775,6 @@ autocd                          ports/audio/autocd
 autoconf-archive                ports/devel/autoconf-archive
 autoconf-wrapper                ports/devel/autoconf-wrapper
 autoconf213                     ports/devel/autoconf213
-autoconf267                     ports/devel/autoconf267
 autoconf268                     ports/devel/autoconf268
 autocutsel                      ports/deskutils/autocutsel
 autodia                         ports/devel/autodia
@@ -1657,6 +1656,7 @@ clamsmtp                        ports/security/clamsmtp
 clamtk                          ports/security/clamtk
 clamz                           ports/net/clamz
 clang                           ports/lang/clang
+clang-devel                     ports/lang/clang-devel
 clanlib                         ports/devel/clanlib
 claraocr                        ports/graphics/claraocr
 clarence                        ports/math/clarence
@@ -1790,6 +1790,7 @@ cole                            ports/textproc/cole
 collectd                        ports/net-mgmt/collectd
 color-mate                      ports/editors/color-mate
 color-theme.el                  ports/misc/color-theme.el
+colorcode                       ports/games/colorcode
 colordiff                       ports/textproc/colordiff
 colorer                         ports/devel/colorer
 colorgcc                        ports/devel/colorgcc
@@ -11719,6 +11720,7 @@ p5-DBIx-Class-TimeStamp         ports/databases/p5-DBIx-Class-TimeStamp
 p5-DBIx-Class-UUIDColumns       ports/databases/p5-DBIx-Class-UUIDColumns
 p5-DBIx-Class-Validation        ports/databases/p5-DBIx-Class-Validation
 p5-DBIx-Class-WebForm           ports/databases/p5-DBIx-Class-WebForm
+p5-DBIx-Connector               ports/databases/p5-DBIx-Connector
 p5-DBIx-ContextualFetch         ports/databases/p5-DBIx-ContextualFetch
 p5-DBIx-Custom                  ports/databases/p5-DBIx-Custom
 p5-DBIx-DBSchema                ports/databases/p5-DBIx-DBSchema
@@ -15812,6 +15814,7 @@ p5-dbix-class-timestamp         ports/databases/p5-DBIx-Class-TimeStamp
 p5-dbix-class-uuidcolumns       ports/databases/p5-DBIx-Class-UUIDColumns
 p5-dbix-class-validation        ports/databases/p5-DBIx-Class-Validation
 p5-dbix-class-webform           ports/databases/p5-DBIx-Class-WebForm
+p5-dbix-connector               ports/databases/p5-DBIx-Connector
 p5-dbix-contextualfetch         ports/databases/p5-DBIx-ContextualFetch
 p5-dbix-custom                  ports/databases/p5-DBIx-Custom
 p5-dbix-datasource              ports/databases/p5-DBIx-DataSource
