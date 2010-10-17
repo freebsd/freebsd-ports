@@ -43,12 +43,11 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	0.96.6
-PORTREVISION=	5
+PORTVERSION=	0.96.8
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF
 
-MAINTAINER=	jonas@schiebtsich.net
+MAINTAINER=	jamie@bishopston.net
 COMMENT=	GTK based Gnutella client
 
 USE_PERL5=	yes
