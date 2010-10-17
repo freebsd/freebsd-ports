@@ -6,13 +6,15 @@
 #    $MCom: ports/misc/pciids/Makefile,v 1.11 2008/03/23 06:57:57 marcus Exp $
 
 PORTNAME=	pciids
-PORTVERSION=	20100827
+PORTVERSION=	20101005
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sunpoet
+MASTER_SITES=	LOCAL/sunpoet
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Database of all known ID's used in PCI devices
+
+LICENSE=	BSD GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
