@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	termit
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://cloud.github.com/downloads/nonstop/termit/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small terminal emulator
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_GNOME=	vte
