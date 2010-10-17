@@ -1,7 +1,9 @@
+%%CUEPLUGIN%%lib/audacious/Container/cue.so
 lib/audacious/Container/m3u.so
 lib/audacious/Container/pls.so
 lib/audacious/Container/xspf.so
 lib/audacious/Effect/compressor.so
+lib/audacious/Effect/crossfade.so
 lib/audacious/Effect/crystalizer.so
 lib/audacious/Effect/ladspa.so
 lib/audacious/Effect/echo.so
@@ -16,11 +18,11 @@ lib/audacious/General/alarm.so
 lib/audacious/General/gtkui.so
 lib/audacious/General/hotkey.so
 %%LIRCPLUGIN%%lib/audacious/General/lirc.so
+lib/audacious/General/lyricwiki.so
 lib/audacious/General/skins.so
 lib/audacious/General/song_change.so
 %%STATUSICONPLUGIN%%lib/audacious/General/statusicon.so
 lib/audacious/General/streambrowser.so
-lib/audacious/General/vfstrace.so
 %%AACPLUGIN%%lib/audacious/Input/aac.so
 %%ADPLUGPLUGIN%%lib/audacious/Input/adplug.so
 %%AMIDIPLUGIN%%lib/audacious/Input/amidi-plug/ap-fluidsynth.so
@@ -28,6 +30,7 @@ lib/audacious/General/vfstrace.so
 %%CDAUDIOPLUGIN%%lib/audacious/Input/cdaudio-ng.so
 lib/audacious/Input/console.so
 %%FLACPLUGIN%%lib/audacious/Input/flacng.so
+%%FFAUDIOPLUGIN%%lib/audacious/Input/ffaudio.so
 %%MP3PLUGIN%%lib/audacious/Input/madplug.so
 lib/audacious/Input/metronom.so
 %%MODPLUG%%lib/audacious/Input/modplug.so
@@ -43,7 +46,6 @@ lib/audacious/Input/xsf.so
 %%OSSPLUGIN%%lib/audacious/Output/OSS.so
 %%OSS4PLUGIN%%lib/audacious/Output/OSS4.so
 %%ESDPLUGIN%%lib/audacious/Output/ESD.so
-lib/audacious/Output/crossfade.so
 lib/audacious/Output/filewriter.so
 %%JACKPLUGIN%%lib/audacious/Output/jackout.so
 lib/audacious/Output/null.so
@@ -308,6 +310,15 @@ share/audacious/Skins/TinyPlayer/text.png
 share/audacious/Skins/TinyPlayer/titlebar.png
 share/audacious/Skins/TinyPlayer/viscolor.txt
 share/audacious/Skins/TinyPlayer/volume.png
+share/audacious/ui/equalizer.ui
+share/audacious/ui/mainwin.ui
+share/audacious/ui/playlist.ui
+share/audacious/ui/carbon-menubar.ui
+share/audacious/ui/player.ui
+%%NLS%%share/locale/es/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/cy/LC_MESSAGES/audacious-plugins.mo
@@ -359,4 +370,5 @@ share/audacious/Skins/TinyPlayer/volume.png
 @dirrm share/audacious/Skins/TinyPlayer
 @dirrm share/audacious/Skins
 @dirrmtry share/audacious/images
+@dirrm share/audacious/ui
 @dirrmtry share/audacious

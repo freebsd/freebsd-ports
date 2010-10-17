@@ -1,32 +1,35 @@
+man/man1/audacious.1
+man/man1/audtool.1
 bin/audacious
 bin/audacious2
 %%WITH_DBUS%%bin/audtool
 %%WITH_DBUS%%bin/audtool2
 %%WITH_DBUS%%include/audacious/audctrl.h
 include/audacious/audconfig.h
-include/audacious/auddrct.h
 include/audacious/configdb.h
 include/audacious/dbus.h
 include/audacious/dbus-service.h
-include/audacious/equalizer_preset.h
-include/audacious/eventqueue.h
-include/audacious/flow.h
-include/audacious/hook.h
 include/audacious/i18n.h
-include/audacious/id3tag.h
-include/audacious/input.h
 include/audacious/interface.h
-include/audacious/main.h
-include/audacious/output.h
-include/audacious/playback.h
-include/audacious/playlist_container.h
 include/audacious/plugin.h
 include/audacious/preferences.h
-include/audacious/rcfile.h
-include/audacious/ui_fileinfopopup.h
-include/audacious/ui_plugin_menu.h
-include/audacious/ui_preferences.h
-include/audacious/util.h
+include/audacious/audtag.h
+include/audacious/api.h
+include/audacious/api-alias-begin.h
+include/audacious/api-alias-end.h
+include/audacious/api-define-begin.h
+include/audacious/api-define-end.h
+include/audacious/configdb-api.h
+include/audacious/debug.h
+include/audacious/drct.h
+include/audacious/drct-api.h
+include/audacious/misc.h
+include/audacious/misc-api.h
+include/audacious/playlist.h
+include/audacious/playlist-api.h
+include/audacious/plugins.h
+include/audacious/plugins-api.h
+include/audacious/types.h
 include/libaudcore/audio.h
 include/libaudcore/audstrings.h
 include/libaudcore/index.h
@@ -39,10 +42,11 @@ include/libaudcore/md5.h
 include/libaudcore/vfs.h
 include/libaudcore/vfs_buffer.h
 include/libaudcore/vfs_buffered_file.h
+include/libaudcore/eventqueue.h
+include/libaudcore/hook.h
+include/libaudcore/vfs_async.h
 include/libaudgui/libaudgui.h
 include/libaudgui/libaudgui-gtk.h
-include/libaudtag/audtag.h
-include/libaudtag/util.h
 %%WITH_DBUS%%lib/libaudclient.so
 %%WITH_DBUS%%lib/libaudclient.so.2
 %%WITH_DBUS%%lib/libaudclient.so.2.0.0
@@ -52,16 +56,12 @@ lib/libaudcore.so.1.0.0
 lib/libaudgui.so
 lib/libaudgui.so.1
 lib/libaudgui.so.1.0.0
-lib/libaudid3tag.so
-lib/libaudid3tag.so.2
-lib/libaudid3tag.so.2.0.0
 lib/libaudtag.so
 lib/libaudtag.so.1
 lib/libaudtag.so.1.0.0
 libdata/pkgconfig/audacious.pc
 libdata/pkgconfig/audclient.pc
 share/applications/audacious2.desktop
-share/applications/audacious2-gtkui.desktop
 %%DATADIR%%/images/about-logo.png
 %%DATADIR%%/images/audacious_eq.xpm
 %%DATADIR%%/images/audacious_playlist.xpm
@@ -73,16 +73,13 @@ share/applications/audacious2-gtkui.desktop
 %%DATADIR%%/images/menu_playlist.png
 %%DATADIR%%/images/menu_plugin.png
 %%DATADIR%%/images/menu_queue_toggle.png
-%%DATADIR%%/images/menu_randomize_playlist.png
 %%DATADIR%%/images/playback.png
 %%DATADIR%%/images/playlist.png
 %%DATADIR%%/images/plugins.png
 %%DATADIR%%/images/replay_gain.png
-%%DATADIR%%/ui/carbon-menubar.ui
-%%DATADIR%%/ui/equalizer.ui
-%%DATADIR%%/ui/mainwin.ui
-%%DATADIR%%/ui/player.ui
-%%DATADIR%%/ui/playlist.ui
+share/icons/hicolor/48x48/apps/audacious.png
+share/icons/hicolor/scalable/apps/audacious.svg
+%%NLS%%share/locale/ast/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/be/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/br/LC_MESSAGES/audacious.mo
@@ -120,13 +117,12 @@ share/applications/audacious2-gtkui.desktop
 %%NLS%%share/locale/uk/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious.mo
-share/pixmaps/audacious2.png
+share/pixmaps/audacious.png
+share/pixmaps/audacious.svg
 @dirrmtry %%DATADIR%%/images
-@dirrm %%DATADIR%%/ui
 @dirrmtry %%DATADIR%%
 @dirrm include/audacious
 @dirrm include/libaudcore
 @dirrm include/libaudgui
-@dirrm include/libaudtag
 @dirrmtry lib/audacious
 @dirrmtry share/applications

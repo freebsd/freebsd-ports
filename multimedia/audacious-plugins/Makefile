@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	2.3
-PORTREVISION=	5
+PORTVERSION=	2.4.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -23,7 +22,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="-I${LOCALBASE}/include" \
 		CPP=${CPP}
-CONFIGURE_ARGS=	--disable-evdevplug --disable-alsa --disable-ffaudio \
+CONFIGURE_ARGS=	--disable-evdevplug --disable-alsa \
 		--disable-pulse --disable-projectm --disable-projectm-1.0
 WANT_GNOME=	yes
 WANT_EFL=	yes
@@ -37,6 +36,7 @@ PORTDOCS=	AUTHORS
 #		PROJECTM	"Enable projectM vis plugin"		on \
 
 OPTIONS=	DBUS		"Enable dbus support"			on  \
+                CUE             "Enable CUE support"                    on  \
 		ESOUND		"Enable Esound output output"		off \
 		MP3		"Enable mp3 plugin"			on  \
 		ROCKLIGHT	"Enable Rocklight vis plugin"		on  \
@@ -47,6 +47,7 @@ OPTIONS=	DBUS		"Enable dbus support"			on  \
 		ADPLUG		"Enable AdPlug plugin"			off \
 		VORBIS		"Enable Ogg Vorbis input plugin"	off \
 		FLAC		"Enable FLAC input plugin"		off \
+                FFAUDIO         "Enable FFAUDIO input plugin"           off \
 		WAVPACK 	"Enable WavPack input plugin"		off \
 		AAC		"Enable aac plugin"			on  \
 		SNDFILE 	"Enable sndfile extensions"		off \
@@ -75,6 +76,15 @@ PLIST_SUB+=	DBUS=""
 .else
 CONFIGURE_ARGS+=--disable-dbus --disable-gnomeshortcuts
 PLIST_SUB+=	DBUS="@comment "
+.endif
+
+.if !defined(WITHOUT_CUE)
+LIB_DEPENDS+=	cue.1:${PORTSDIR}/textproc/libcue
+CONFIGURE_ARGS+=--enable-cue
+PLIST_SUB+=	CUEPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-cue
+PLIST_SUB+=	CUEPLUGIN="@comment "
 .endif
 
 .if defined(WITH_ESOUND)
@@ -171,6 +181,15 @@ CONFIGURE_ARGS+=--disable-flacng --disable-filewriter_flac
 PLIST_SUB+=	FLACPLUGIN="@comment "
 .endif
 
+.if defined(WITH_FFAUDIO)
+LIB_DEPENDS+=	avutil.1:${PORTSDIR}/multimedia/ffmpeg
+CONFIGURE_ARGS+=--enable-ffaudio
+PLIST_SUB+=	FFAUDIOPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-ffaudio
+PLIST_SUB+=	FFAUDIOPLUGIN="@comment "
+.endif
+
 .if defined(WITH_WAVPACK)
 LIB_DEPENDS+=	wavpack.2:${PORTSDIR}/audio/wavpack
 CONFIGURE_ARGS+=--enable-wavpack
@@ -218,7 +237,7 @@ PLIST_SUB+=	JACKPLUGIN="@comment "
 .endif
 
 #OSS4 only works with recent changed in HEAD
-.if ${OSVERSION} >= 800061
+.if ${OSVERSION} >= 900000
 .if !defined(WITHOUT_OSS)
 PLIST_SUB+=	OSSPLUGIN=""
 CONFIGURE_ARGS+=--enable-oss
@@ -352,6 +371,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib\.h|g' \
 		${WRKSRC}/src/neon/cert_verification.c \
 		${WRKSRC}/src/usf/memory.c
+	@${REINPLACE_CMD} -e 's|-ldl||g' \
+		${WRKSRC}/src/ladspa/Makefile
 
 pre-configure:
 .if defined(WITH_AUDIOCD) && !exists(${LOCALBASE}/lib/libcdio_cdda.so)

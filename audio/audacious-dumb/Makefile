@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.netswarm.net/misc/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Audacious plugin that support the IT, XM, S3M or MOD formats
+BROKEN=		does not work with audacious 2.4.0
 
 RUN_DEPENDS=	audacious2:${PORTSDIR}/multimedia/audacious
 BUILD_DEPENDS=	audacious2:${PORTSDIR}/multimedia/audacious \

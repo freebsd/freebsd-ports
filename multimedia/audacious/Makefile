@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	2.3
-PORTREVISION=	3
+PORTVERSION=	2.4.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 MASTER_SITE_SUBDIR=oliver
@@ -22,8 +21,8 @@ USE_XORG=	x11 sm
 USE_GNOME=	gtk20 libglade2
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+#CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+#		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		audacious2.1 audtool2.1
 
@@ -75,9 +74,10 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 	@${REINPLACE_CMD} 's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} 's|CPPFLAGS +=|CPPFLAGS =|g' \
-		${WRKSRC}/src/libid3tag/Makefile \
-		${WRKSRC}/src/libaudgui/Makefile
+	@${REINPLACE_CMD} 's|CPPFLAGS +=\(.*\)|CPPFLAGS =\1 -I${LOCALBASE}/include|g' \
+		${WRKSRC}/src/libaudgui/Makefile \
+		${WRKSRC}/src/libaudtag/Makefile \
+		${WRKSRC}/src/libaudcore/Makefile
 	@${REINPLACE_CMD} 's|FMT_FIXED32,|FMT_FIXED32|g; \
 		s|OUTPUT_PLUGIN_INIT_FOUND_DEVICES,|OUTPUT_PLUGIN_INIT_FOUND_DEVICES|g' \
 		${WRKSRC}/src/audacious/plugin.h
