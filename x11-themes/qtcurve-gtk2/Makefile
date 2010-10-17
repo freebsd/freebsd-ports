@@ -8,8 +8,7 @@
 PORTNAME=	qtcurve
 PORTVERSION=	1.6.1
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://home.freeuk.com/cpdrummond/ \
-		http://craigd.wikispaces.com/file/view/
+MASTER_SITES=	http://craigd.wikispaces.com/file/view/
 PKGNAMEPREFIX=	gtk2-
 PKGNAMESUFFIX=	-theme
 DISTNAME=	QtCurve-Gtk2-${PORTVERSION}
