@@ -6,4 +6,4 @@ a window before it's ready to "receive" events.  By recording events and
 requests synchronization can be implemented.  Xnee can also distribute
 events (both when recording and replaying) to other displays.
 
-WWW: http://www.gnu.org/software/xnee/
+WWW: http://www.sandklef.com/xnee/

@@ -1,0 +1,15 @@
+bin/cnee
+%%GNEE%%bin/gnee
+%%PNEE%%libdata/bonobo/servers/pnee.server
+%%PNEE%%libexec/pnee
+share/pixmaps/xnee.png
+share/pixmaps/xnee.xpm
+%%DATADIR%%/example1.xns
+%%DATADIR%%/simple_bash.sh
+%%DATADIR%%/xnee.sh
+%%PNEE%%%%DATADIR%%/pixmaps/pnee-record.png
+%%PNEE%%%%DATADIR%%/pixmaps/pnee-replay.png
+%%PNEE%%%%DATADIR%%/pixmaps/pnee-stop-mini.png
+%%PNEE%%%%DATADIR%%/pixmaps/pnee-stop.png
+%%PNEE%%@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%

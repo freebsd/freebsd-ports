@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	3.06
+PORTVERSION=	3.07
 CATEGORIES=	x11
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c0rn@o2.pl
 COMMENT=	X events recorder and player
+
+LICENSE=	GPLv3
 
 OPTIONS=	GNEE "Build the GUI frontend" off \
 		PNEE "Build the Gnome Panel frontend" off
@@ -20,42 +22,35 @@ USE_XORG=	xtst
 USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-cli --disable-doc
+MAKE_JOBS_SAFE=	yes
+
+CONFIGURE_ARGS=	--enable-cli --disable-doc --disable-xinput2
 
 MAN1=		cnee.1 xnee.1
 INFO=		xnee
-PLIST_FILES=	bin/cnee \
-		share/pixmaps/xnee.png \
-		share/pixmaps/xnee.xpm \
-		%%DATADIR%%/example1.xns \
-		%%DATADIR%%/simple_bash.sh \
-		%%DATADIR%%/xnee.sh
-PLIST_DIRS=	${PNEE_DIR} %%DATADIR%%
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GNEE)
 USE_GNOME+=	gtk20
 MAN1+=		gnee.1
-PLIST_FILES+=	bin/gnee
+PLIST_SUB+=	GNEE=""
+DESKTOP_ENTRIES=	"Gnee" "${COMMENT}" "${PREFIX}/share/pixmaps/xnee.png" \
+			"gnee" "Development;" true
 .else
 CONFIGURE_ARGS+=	--disable-gui
+PLIST_SUB+=	GNEE="@comment "
 .endif
 
 .if defined(WITH_PNEE)
 USE_GNOME+=	gnomepanel
 MAN1+=		pnee.1
-PLIST_FILES+=	libdata/bonobo/servers/pnee.server \
-		libexec/pnee \
-		%%DATADIR%%/pixmaps/pnee-record.png \
-		%%DATADIR%%/pixmaps/pnee-replay.png \
-		%%DATADIR%%/pixmaps/pnee-stop-mini.png \
-		%%DATADIR%%/pixmaps/pnee-stop.png
-PNEE_DIR=	%%DATADIR%%/pixmaps
+PLIST_SUB+=	PNEE=""
 .else
 CONFIGURE_ARGS+=	--disable-gnome-applet
 CONFIGURE_ENV+=	libgnomeui_CFLAGS="${TRUE}" \
 		libgnomeui_LIBS="${TRUE}"
+PLIST_SUB+=	PNEE="@comment "
 .endif
 
 post-patch:
