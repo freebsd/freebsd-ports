@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	httpry
-PORTVERSION=	0.1.3
-PORTREVISION=	1
+PORTVERSION=	0.1.5
 CATEGORIES=	net
 MASTER_SITES=	http://dumpsterventures.com/jason/httpry/
 
@@ -33,9 +32,6 @@ RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 .else
 PLIST_SUB=	EXTRASCRIPTS="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -E -e 's#^(\/etc.*)#${PREFIX}\1#' ${WRKSRC}/scripts/process_logs
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
