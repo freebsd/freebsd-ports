@@ -6,42 +6,53 @@
 #
 
 PORTNAME=	swt
-DISTVERSION=	0.1.0rc4
-PORTREVISION=	4
+PORTVERSION=	0.1.11
 CATEGORIES=	math
-MASTER_SITES=	SF/scwt/${PORTNAME}/0.1.0rc4Linux
+MASTER_SITES=	http://atoms.scilab.org/toolboxes/swt/${PORTVERSION}/files/
 PKGNAMEPREFIX=	scilab-toolbox-
-DISTNAME=	${PORTNAME}${DISTVERSION}
+DISTFILES=	${DISTNAME}-1-src${EXTRACT_SUFX}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Scilab 1-D and 2-D Wavelet Toolbox
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/scilab:${PORTSDIR}/math/scilab
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-IGNORE=		doesn't build with Scilab 5.2
+IGNORE=		touches ${LOCALBASE}/share/scilab when building under superuser
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
-
-SCILABDIR?=	lib/scilab
-CONTRIBDIR?=	${SCILABDIR}/contrib
-TOOLBOXDIR?=	${CONTRIBDIR}/${PORTNAME}
-
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--prefix=${PREFIX}/${TOOLBOXDIR}
-CONFIGURE_ENV+=	SCI="${LOCALBASE}/${SCILABDIR}"
-
-PLIST_SUB=	TOOLBOXDIR=${TOOLBOXDIR}
+SCILAB_CMD=	${LOCALBASE}/bin/scilab
+CONTRIBDIR?=	share/scilab/contrib
+TOOLBOXDIR_REL?=	${CONTRIBDIR}/${PORTNAME}
+TOOLBOXDIR=	${PREFIX}/${TOOLBOXDIR_REL}
+PLIST_SUB=	TOOLBOXDIR=${TOOLBOXDIR_REL}
 
 OPTIONS=	SIVP "Enable Image and Video support" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_SIVP)
 RUN_DEPENDS+=	${LOCALBASE}/${CONTRIBDIR}/sivp/loader.sce:${PORTSDIR}/math/scilab-toolbox-sivp
 .endif
 
-post-install:
-	 @${CAT} ${PKGMESSAGE}
+post-patch:
+	${REINPLACE_CMD} -e "s,SWTDIR+','${TOOLBOXDIR}/demos," \
+		${WRKSRC}/demos/image.sce
+pre-build:
+	${FIND} -d ${WRKSRC} \( -name '*.orig' -or -name '*.bak' \) | ${XARGS} ${RM}
 
-.include <bsd.port.post.mk>
+do-build:
+	cd ${WRKSRC} && ${SCILAB_CMD} -nogui -f builder.sce
+
+do-install:
+	${MKDIR} ${TOOLBOXDIR}/sci_gateway/c
+	${INSTALL_DATA} ${WRKSRC}/loader.sce ${TOOLBOXDIR}
+	${INSTALL_DATA} ${WRKSRC}/sci_gateway/loader_gateway.sce \
+		${TOOLBOXDIR}/sci_gateway
+	cd ${WRKSRC}/sci_gateway/c && \
+	${INSTALL_DATA} loader.sce ${TOOLBOXDIR}/sci_gateway/c && \
+	${INSTALL_PROGRAM} libswt_c.so ${TOOLBOXDIR}/sci_gateway/c
+.for d in demos etc macros
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${TOOLBOXDIR}
+.endfor
+
+.include <bsd.port.mk>
