@@ -41,11 +41,11 @@ LATEST_LINK=	xfce4
 WITH_GDM=	yes
 .endif
 
-.if !defined(WITH_GDM)
-PLIST_SUB+=	GDM="@comment "
-.else
+.if defined(WITH_GDM)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/gdm:${PORTSDIR}/x11/gdm
-PLIST_SUB+=	GDM=""
+PLIST_FILES=	etc/gdm/Sessions/XFce4 \
+		etc/dm/Sessions/XFce4.desktop
+PLIST_DIRS=	etc/gdm/Sessions
 .endif
 
 .if !defined(WITHOUT_ICONS)
