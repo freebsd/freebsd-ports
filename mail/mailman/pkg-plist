@@ -28,6 +28,8 @@
 %%MMDIR%%/Mailman/Autoresponder.pyc
 %%MMDIR%%/Mailman/Bouncer.py
 %%MMDIR%%/Mailman/Bouncer.pyc
+%%MMDIR%%/Mailman/Bouncers/AOL.pyc
+%%MMDIR%%/Mailman/Bouncers/AOL.py
 %%MMDIR%%/Mailman/Bouncers/BouncerAPI.py
 %%MMDIR%%/Mailman/Bouncers/BouncerAPI.pyc
 %%MMDIR%%/Mailman/Bouncers/Caiwireless.py
@@ -388,6 +390,8 @@
 %%MMDIR%%/mail/mailman
 %%MMDIR%%/messages/ar/LC_MESSAGES/mailman.mo
 %%MMDIR%%/messages/ar/LC_MESSAGES/mailman.po
+%%MMDIR%%/messages/ast/LC_MESSAGES/mailman.mo
+%%MMDIR%%/messages/ast/LC_MESSAGES/mailman.po
 %%MMDIR%%/messages/ca/LC_MESSAGES/mailman.mo
 %%MMDIR%%/messages/ca/LC_MESSAGES/mailman.po
 %%MMDIR%%/messages/cs/LC_MESSAGES/mailman.mo
@@ -469,149 +473,6 @@
 %%MMDIR%%/messages/zh_CN/LC_MESSAGES/mailman.po
 %%MMDIR%%/messages/zh_TW/LC_MESSAGES/mailman.mo
 %%MMDIR%%/messages/zh_TW/LC_MESSAGES/mailman.po
-%%MMDIR%%/pythonlib/japanese/__init__.py
-%%MMDIR%%/pythonlib/japanese/__init__.pyc
-%%MMDIR%%/pythonlib/japanese/aliases/__init__.py
-%%MMDIR%%/pythonlib/japanese/aliases/__init__.pyc
-%%MMDIR%%/pythonlib/japanese/c/__init__.py
-%%MMDIR%%/pythonlib/japanese/c/__init__.pyc
-%%MMDIR%%/pythonlib/japanese/c/_japanese_codecs.so
-%%MMDIR%%/pythonlib/japanese/c/euc_jp.py
-%%MMDIR%%/pythonlib/japanese/c/euc_jp.pyc
-%%MMDIR%%/pythonlib/japanese/c/iso_2022_jp.py
-%%MMDIR%%/pythonlib/japanese/c/iso_2022_jp.pyc
-%%MMDIR%%/pythonlib/japanese/c/iso_2022_jp_1.py
-%%MMDIR%%/pythonlib/japanese/c/iso_2022_jp_1.pyc
-%%MMDIR%%/pythonlib/japanese/c/iso_2022_jp_ext.py
-%%MMDIR%%/pythonlib/japanese/c/iso_2022_jp_ext.pyc
-%%MMDIR%%/pythonlib/japanese/c/ms932.py
-%%MMDIR%%/pythonlib/japanese/c/ms932.pyc
-%%MMDIR%%/pythonlib/japanese/c/shift_jis.py
-%%MMDIR%%/pythonlib/japanese/c/shift_jis.pyc
-%%MMDIR%%/pythonlib/japanese/euc_jp.py
-%%MMDIR%%/pythonlib/japanese/euc_jp.pyc
-%%MMDIR%%/pythonlib/japanese/iso_2022_jp.py
-%%MMDIR%%/pythonlib/japanese/__init__.py
-%%MMDIR%%/pythonlib/japanese/__init__.pyc
-%%MMDIR%%/pythonlib/japanese/aliases/__init__.py
-%%MMDIR%%/pythonlib/japanese/aliases/__init__.pyc
-%%MMDIR%%/pythonlib/japanese/c/__init__.py
-%%MMDIR%%/pythonlib/japanese/c/__init__.pyc
-%%MMDIR%%/pythonlib/japanese/c/_japanese_codecs.so
-%%MMDIR%%/pythonlib/japanese/c/euc_jp.py
-%%MMDIR%%/pythonlib/japanese/c/euc_jp.pyc
-%%MMDIR%%/pythonlib/japanese/c/iso_2022_jp.py
-%%MMDIR%%/pythonlib/japanese/c/iso_2022_jp.pyc
-%%MMDIR%%/pythonlib/japanese/c/iso_2022_jp_1.py
-%%MMDIR%%/pythonlib/japanese/c/iso_2022_jp_1.pyc
-%%MMDIR%%/pythonlib/japanese/c/iso_2022_jp_ext.py
-%%MMDIR%%/pythonlib/japanese/c/iso_2022_jp_ext.pyc
-%%MMDIR%%/pythonlib/japanese/c/ms932.py
-%%MMDIR%%/pythonlib/japanese/c/ms932.pyc
-%%MMDIR%%/pythonlib/japanese/c/shift_jis.py
-%%MMDIR%%/pythonlib/japanese/c/shift_jis.pyc
-%%MMDIR%%/pythonlib/japanese/euc_jp.py
-%%MMDIR%%/pythonlib/japanese/euc_jp.pyc
-%%MMDIR%%/pythonlib/japanese/iso_2022_jp.py
-%%MMDIR%%/pythonlib/japanese/iso_2022_jp.pyc
-%%MMDIR%%/pythonlib/japanese/iso_2022_jp_1.py
-%%MMDIR%%/pythonlib/japanese/iso_2022_jp_1.pyc
-%%MMDIR%%/pythonlib/japanese/iso_2022_jp_ext.py
-%%MMDIR%%/pythonlib/japanese/iso_2022_jp_ext.pyc
-%%MMDIR%%/pythonlib/japanese/jis_7.py
-%%MMDIR%%/pythonlib/japanese/jis_7.pyc
-%%MMDIR%%/pythonlib/japanese/jis_x_0201_katakana.py
-%%MMDIR%%/pythonlib/japanese/jis_x_0201_katakana.pyc
-%%MMDIR%%/pythonlib/japanese/jis_x_0201_roman.py
-%%MMDIR%%/pythonlib/japanese/jis_x_0201_roman.pyc
-%%MMDIR%%/pythonlib/japanese/mappings/__init__.py
-%%MMDIR%%/pythonlib/japanese/mappings/__init__.pyc
-%%MMDIR%%/pythonlib/japanese/mappings/euc_jp.py
-%%MMDIR%%/pythonlib/japanese/mappings/euc_jp.pyc
-%%MMDIR%%/pythonlib/japanese/mappings/jis_x_0208.py
-%%MMDIR%%/pythonlib/japanese/mappings/jis_x_0208.pyc
-%%MMDIR%%/pythonlib/japanese/mappings/jis_x_0212.py
-%%MMDIR%%/pythonlib/japanese/mappings/jis_x_0212.pyc
-%%MMDIR%%/pythonlib/japanese/mappings/shift_jis.py
-%%MMDIR%%/pythonlib/japanese/mappings/shift_jis.pyc
-%%MMDIR%%/pythonlib/japanese/ms932.py
-%%MMDIR%%/pythonlib/japanese/ms932.pyc
-%%MMDIR%%/pythonlib/japanese/python/__init__.py
-%%MMDIR%%/pythonlib/japanese/python/__init__.pyc
-%%MMDIR%%/pythonlib/japanese/python/euc_jp.py
-%%MMDIR%%/pythonlib/japanese/python/euc_jp.pyc
-%%MMDIR%%/pythonlib/japanese/python/iso_2022_jp.py
-%%MMDIR%%/pythonlib/japanese/python/iso_2022_jp.pyc
-%%MMDIR%%/pythonlib/japanese/python/iso_2022_jp_1.py
-%%MMDIR%%/pythonlib/japanese/python/iso_2022_jp_1.pyc
-%%MMDIR%%/pythonlib/japanese/python/iso_2022_jp_ext.py
-%%MMDIR%%/pythonlib/japanese/python/iso_2022_jp_ext.pyc
-%%MMDIR%%/pythonlib/japanese/python/shift_jis.py
-%%MMDIR%%/pythonlib/japanese/python/shift_jis.pyc
-%%MMDIR%%/pythonlib/japanese/shift_jis.py
-%%MMDIR%%/pythonlib/japanese/shift_jis.pyc
-%%MMDIR%%/pythonlib/japanese/sjis.py
-%%MMDIR%%/pythonlib/japanese/sjis.pyc
-%%MMDIR%%/pythonlib/japanese/ujis.py
-%%MMDIR%%/pythonlib/japanese/ujis.pyc
-%%MMDIR%%/pythonlib/japanese/windows_31j.py
-%%MMDIR%%/pythonlib/japanese/windows_31j.pyc
-%%MMDIR%%/pythonlib/korean.pth
-%%MMDIR%%/pythonlib/korean/__init__.py
-%%MMDIR%%/pythonlib/korean/__init__.pyc
-%%MMDIR%%/pythonlib/korean/aliases.py
-%%MMDIR%%/pythonlib/korean/aliases.pyc
-%%MMDIR%%/pythonlib/korean/c/__init__.py
-%%MMDIR%%/pythonlib/korean/c/__init__.pyc
-%%MMDIR%%/pythonlib/korean/c/_koco.so
-%%MMDIR%%/pythonlib/korean/c/cp949.py
-%%MMDIR%%/pythonlib/korean/c/cp949.pyc
-%%MMDIR%%/pythonlib/korean/c/euc_kr.py
-%%MMDIR%%/pythonlib/korean/c/euc_kr.pyc
-%%MMDIR%%/pythonlib/korean/c/hangul.so
-%%MMDIR%%/pythonlib/korean/cp949.py
-%%MMDIR%%/pythonlib/korean/cp949.pyc
-%%MMDIR%%/pythonlib/korean/euc_kr.py
-%%MMDIR%%/pythonlib/korean/euc_kr.pyc
-%%MMDIR%%/pythonlib/korean/hangul.py
-%%MMDIR%%/pythonlib/korean/hangul.pyc
-%%MMDIR%%/pythonlib/korean/iso_2022_kr.py
-%%MMDIR%%/pythonlib/korean/iso_2022_kr.pyc
-%%MMDIR%%/pythonlib/korean/johab.py
-%%MMDIR%%/pythonlib/korean/johab.pyc
-%%MMDIR%%/pythonlib/korean/mappings/__init__.py
-%%MMDIR%%/pythonlib/korean/mappings/__init__.pyc
-%%MMDIR%%/pythonlib/korean/mappings/johab_ideograph.py
-%%MMDIR%%/pythonlib/korean/mappings/johab_ideograph.pyc
-%%MMDIR%%/pythonlib/korean/mappings/ksc5601_hangul.py
-%%MMDIR%%/pythonlib/korean/mappings/ksc5601_hangul.pyc
-%%MMDIR%%/pythonlib/korean/mappings/ksc5601_ideograph.py
-%%MMDIR%%/pythonlib/korean/mappings/ksc5601_ideograph.pyc
-%%MMDIR%%/pythonlib/korean/mappings/ksc5601_misc.py
-%%MMDIR%%/pythonlib/korean/mappings/ksc5601_misc.pyc
-%%MMDIR%%/pythonlib/korean/mappings/uhc.py
-%%MMDIR%%/pythonlib/korean/mappings/uhc.pyc
-%%MMDIR%%/pythonlib/korean/python/__init__.py
-%%MMDIR%%/pythonlib/korean/python/__init__.pyc
-%%MMDIR%%/pythonlib/korean/python/cp949.py
-%%MMDIR%%/pythonlib/korean/python/cp949.pyc
-%%MMDIR%%/pythonlib/korean/python/euc_kr.py
-%%MMDIR%%/pythonlib/korean/python/euc_kr.pyc
-%%MMDIR%%/pythonlib/korean/python/hangul.py
-%%MMDIR%%/pythonlib/korean/python/hangul.pyc
-%%MMDIR%%/pythonlib/korean/python/iso_2022_kr.py
-%%MMDIR%%/pythonlib/korean/python/iso_2022_kr.pyc
-%%MMDIR%%/pythonlib/korean/python/johab.py
-%%MMDIR%%/pythonlib/korean/python/johab.pyc
-%%MMDIR%%/pythonlib/korean/python/qwerty2bul.py
-%%MMDIR%%/pythonlib/korean/python/qwerty2bul.pyc
-%%MMDIR%%/pythonlib/korean/python/unijohab.py
-%%MMDIR%%/pythonlib/korean/python/unijohab.pyc
-%%MMDIR%%/pythonlib/korean/qwerty2bul.py
-%%MMDIR%%/pythonlib/korean/qwerty2bul.pyc
-%%MMDIR%%/pythonlib/korean/unijohab.py
-%%MMDIR%%/pythonlib/korean/unijohab.pyc
-%%MMDIR%%/pythonlib/lib/%%PYTHON_VERSION%%/site-packages/japanese.pth
 %%MMDIR%%/scripts/admin
 %%MMDIR%%/scripts/bounces
 %%MMDIR%%/scripts/confirm
@@ -670,6 +531,50 @@
 %%MMDIR%%/templates/ar/unsubauth.txt
 %%MMDIR%%/templates/ar/userpass.txt
 %%MMDIR%%/templates/ar/verify.txt
+%%MMDIR%%/templates/ast/admindbdetails.html
+%%MMDIR%%/templates/ast/admindbpreamble.html
+%%MMDIR%%/templates/ast/adminunsubscribeack.txt
+%%MMDIR%%/templates/ast/admindbsummary.html
+%%MMDIR%%/templates/ast/adminsubscribeack.txt
+%%MMDIR%%/templates/ast/admlogin.html
+%%MMDIR%%/templates/ast/approve.txt
+%%MMDIR%%/templates/ast/archidxentry.html
+%%MMDIR%%/templates/ast/archidxfoot.html
+%%MMDIR%%/templates/ast/archidxhead.html
+%%MMDIR%%/templates/ast/archlistend.html
+%%MMDIR%%/templates/ast/archtocentry.html
+%%MMDIR%%/templates/ast/archtocnombox.html
+%%MMDIR%%/templates/ast/article.html
+%%MMDIR%%/templates/ast/bounce.txt
+%%MMDIR%%/templates/ast/checkdbs.txt
+%%MMDIR%%/templates/ast/cronpass.txt
+%%MMDIR%%/templates/ast/disabled.txt
+%%MMDIR%%/templates/ast/emptyarchive.html
+%%MMDIR%%/templates/ast/invite.txt
+%%MMDIR%%/templates/ast/listinfo.html
+%%MMDIR%%/templates/ast/masthead.txt
+%%MMDIR%%/templates/ast/newlist.txt
+%%MMDIR%%/templates/ast/options.html
+%%MMDIR%%/templates/ast/postack.txt
+%%MMDIR%%/templates/ast/postauth.txt
+%%MMDIR%%/templates/ast/postheld.txt
+%%MMDIR%%/templates/ast/private.html
+%%MMDIR%%/templates/ast/probe.txt
+%%MMDIR%%/templates/ast/subscribe.html
+%%MMDIR%%/templates/ast/unsub.txt
+%%MMDIR%%/templates/ast/verify.txt
+%%MMDIR%%/templates/ast/roster.html
+%%MMDIR%%/templates/ast/unsubauth.txt
+%%MMDIR%%/templates/ast/refuse.txt
+%%MMDIR%%/templates/ast/nomoretoday.txt
+%%MMDIR%%/templates/ast/subauth.txt
+%%MMDIR%%/templates/ast/help.txt
+%%MMDIR%%/templates/ast/archtoc.html
+%%MMDIR%%/templates/ast/convert.txt
+%%MMDIR%%/templates/ast/headfoot.html
+%%MMDIR%%/templates/ast/userpass.txt
+%%MMDIR%%/templates/ast/archliststart.html
+%%MMDIR%%/templates/ast/subscribeack.txt
 %%MMDIR%%/templates/ca/admindbdetails.html
 %%MMDIR%%/templates/ca/admindbpreamble.html
 %%MMDIR%%/templates/ca/admindbsummary.html
@@ -1025,7 +930,6 @@
 %%MMDIR%%/templates/fi/postauth.txt
 %%MMDIR%%/templates/fi/postheld.txt
 %%MMDIR%%/templates/fi/private.html
-%%MMDIR%%/templates/fi/reenable.txt
 %%MMDIR%%/templates/fi/refuse.txt
 %%MMDIR%%/templates/fi/roster.html
 %%MMDIR%%/templates/fi/subauth.txt
@@ -2128,6 +2032,7 @@
 %%MMDIR%%/templates/zh_TW/verify.txt
 %%MMDIR%%/tests/EmailBase.py
 %%MMDIR%%/tests/TestBase.py
+%%MMDIR%%/tests/bounces/aol_01.txt
 %%MMDIR%%/tests/bounces/bounce_01.txt
 %%MMDIR%%/tests/bounces/bounce_02.txt
 %%MMDIR%%/tests/bounces/bounce_03.txt
@@ -2207,6 +2112,7 @@
 %%MMDIR%%/tests/bounces/simple_34.txt
 %%MMDIR%%/tests/bounces/simple_35.txt
 %%MMDIR%%/tests/bounces/simple_36.txt
+%%MMDIR%%/tests/bounces/simple_37.txt
 %%MMDIR%%/tests/bounces/sina_01.txt
 %%MMDIR%%/tests/bounces/smtp32_01.txt
 %%MMDIR%%/tests/bounces/smtp32_02.txt
@@ -2295,23 +2201,12 @@
 @dirrm %%MMDIR%%/templates/da
 @dirrm %%MMDIR%%/templates/cs
 @dirrm %%MMDIR%%/templates/ca
+@dirrm %%MMDIR%%/templates/ast
 @dirrm %%MMDIR%%/templates/ar
 @dirrm %%MMDIR%%/templates
 @dirrm %%MMDIR%%/scripts
-@dirrm %%MMDIR%%/pythonlib/lib/%%PYTHON_VERSION%%/site-packages
-@dirrm %%MMDIR%%/pythonlib/lib/%%PYTHON_VERSION%%
-@dirrm %%MMDIR%%/pythonlib/lib
-@dirrm %%MMDIR%%/pythonlib/korean/python
-@dirrm %%MMDIR%%/pythonlib/korean/mappings
-@dirrm %%MMDIR%%/pythonlib/korean/c
-@dirrm %%MMDIR%%/pythonlib/korean
-@dirrm %%MMDIR%%/pythonlib/japanese/python
-@dirrm %%MMDIR%%/pythonlib/japanese/mappings
-@dirrm %%MMDIR%%/pythonlib/japanese/c
-@dirrm %%MMDIR%%/pythonlib/japanese/aliases
-@dirrm %%MMDIR%%/pythonlib/japanese
-@dirrm %%MMDIR%%/pythonlib/email
-@dirrm %%MMDIR%%/pythonlib
+@dirrm %%MMDIR%%/messages/ast/LC_MESSAGES
+@dirrm %%MMDIR%%/messages/ast
 @dirrm %%MMDIR%%/messages/zh_TW/LC_MESSAGES
 @dirrm %%MMDIR%%/messages/zh_TW
 @dirrm %%MMDIR%%/messages/zh_CN/LC_MESSAGES
@@ -2386,6 +2281,7 @@
 @dirrm %%MMDIR%%/mail
 @dirrm %%MMDIR%%/icons
 @dirrm %%MMDIR%%/cron
+@dirrm %%MMDIR%%/pythonlib
 @dirrm %%MMDIR%%/cgi-bin
 @dirrm %%MMDIR%%/bin
 @dirrm %%MMDIR%%/Mailman/Queue
