@@ -65,10 +65,9 @@ _GCCVERSION_${v}_V=	${j}
 . endfor
 .endfor
 
-#
-# bsd.gcc.mk can also be used only for FC, F77 settings; in this case we
-# do not define USE_GCC.
-#
+# bsd.gcc.mk can also be used for primarily requesting a Fortran compiler.
+# If we are using GCC we still define whatever we'd usually do for C and
+# C++ as well.
 
 .if defined (USE_FORTRAN)
 
@@ -89,12 +88,9 @@ F77:=	${LOCALBASE}/intel_fc_80/bin/ifort
 # (FreeBSD<=6).
 . elif ${USE_FORTRAN} == g77
 .  if (${OSVERSION} > 700042)
-BUILD_DEPENDS+=	g77-34:${PORTSDIR}/lang/gcc34
-RUN_DEPENDS+=	g77-34:${PORTSDIR}/lang/gcc34
+_USE_GCC:=	3.4
 FC:=	g77-34
 F77:=	g77-34
-CC:=	gcc34
-CXX:=	g++34
 .  else
 F77:=	f77
 FC:=	f77
