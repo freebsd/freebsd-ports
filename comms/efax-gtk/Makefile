@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		efax-gtk
-PORTVERSION=		3.2.4
+PORTVERSION=		3.2.5
 CATEGORIES=		comms
 MASTER_SITES=		SF
 EXTRACT_SUFX=		.src.tgz
