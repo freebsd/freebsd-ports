@@ -12,13 +12,17 @@ CATEGORIES=	emulators
 MASTER_SITES=	SF/dyna-gen/${PORTNAME}%20source%20_%20Linux/${PORTNAME}%20${PORTVERSION}
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	pol@opk.ru
+MAINTAINER=	pavelivolkov@googlemail.com
 COMMENT=	Text-based front end for Dynamips development version
 
 RUN_DEPENDS=	dynamips:${PORTSDIR}/emulators/dynamips-devel
 # Note that it *should* be dynamips-devel but that port installs it as dynamips
 
 CONFLICTS=	dynagen-[0-9]* dynamips-[0-9]*
+
+# This port is replaced by a new version
+DEPRECATED=	Please install emulators/dynagen instead
+EXPIRATION_DATE=	2010-12-01
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
