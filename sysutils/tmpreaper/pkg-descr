@@ -7,7 +7,5 @@ from deletion with a shell pattern.
 It will not remove symlinks, sockets, fifos, or special files unless given a
 command line option enabling it to.
 
-WWW: http://packages.debian.org/stable/admin/tmpreaper.html
-
 - ehaupt
 ehaupt@critical.ch
