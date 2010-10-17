@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	4.8.0
+PORTVERSION=	4.8.1
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
@@ -103,7 +103,7 @@ CONFIGURE_ARGS+=--with-trashquota
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS}"
 LDFLAGS+=	-L${LOCALBASE}/lib
-LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
+USE_FAM=	yes
 .endif
 
 MAN1=		couriertcpd.1 maildiracl.1 maildirkw.1 \
