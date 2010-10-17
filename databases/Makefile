@@ -353,6 +353,7 @@
     SUBDIR += p5-DBIx-Connector
     SUBDIR += p5-DBIx-ContextualFetch
     SUBDIR += p5-DBIx-Custom
+    SUBDIR += p5-DBIx-DBHResolver
     SUBDIR += p5-DBIx-DBSchema
     SUBDIR += p5-DBIx-DataSource
     SUBDIR += p5-DBIx-Ease

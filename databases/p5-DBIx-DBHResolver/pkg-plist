@@ -1,0 +1,12 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/DBHResolver/.packlist
+%%SITE_PERL%%/DBIx/DBHResolver.pm
+%%SITE_PERL%%/DBIx/DBHResolver/Strategy.pm
+%%SITE_PERL%%/DBIx/DBHResolver/Strategy/Key.pm
+%%SITE_PERL%%/DBIx/DBHResolver/Strategy/List.pm
+%%SITE_PERL%%/DBIx/DBHResolver/Strategy/Range.pm
+%%SITE_PERL%%/DBIx/DBHResolver/Strategy/Remainder.pm
+@dirrm %%SITE_PERL%%/DBIx/DBHResolver/Strategy
+@dirrm %%SITE_PERL%%/DBIx/DBHResolver
+@dirrmtry %%SITE_PERL%%/DBIx
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/DBHResolver
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx

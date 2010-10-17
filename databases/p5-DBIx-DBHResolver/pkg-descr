@@ -1,0 +1,10 @@
+DBIx::DBHResolver resolves database connection on the environment has
+many database servers.  The resolution algorithm is extensible and
+pluggable, because of this you can make custom strategy module easily.
+
+This module can retrieve DBI's database handle object or connection
+information (data source, user, credential...) by labeled name and
+treat same cluster consists many nodes as one labeled name, choose
+fetching strategy.
+
+WWW: http://search.cpan.org/dist/DBIx-DBHResolver/
