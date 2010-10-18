@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	vxlog
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	devel
-MASTER_SITES=	http://bitbucket.org/klepa/vxlog/get/
-DISTNAME=	${PORTVERSION}
-DIST_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://bitbucket.org/klepa/vxlog/downloads/ \
+		SF/${PORTNAME}
 
 MAINTAINER=	konstantin.lepa@gmail.com
 COMMENT=	C++ logging library
@@ -23,11 +22,5 @@ USE_LDCONFIG=	yes
 USE_GCC=	4.2+
 
 CMAKE_ARGS+=	-DTESTING:BOOL=OFF
-
-WRKSRC=	${WRKDIR}/${PORTNAME}
-
-.if defined(WITH_DEBUG)
-CMAKE_ARGS+=    -DDEBUG_MODE:BOOL=ON
-.endif
 
 .include <bsd.port.mk>
