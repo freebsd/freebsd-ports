@@ -24,6 +24,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Completely new version of the BIND DNS suite with updated DNSSEC
 
+DEPRECATED=		Past EOL, will be removed when RELENG_6 goes EOL
+EXPIRATION_DATE=	2010-11-30
+
 # ISC releases things like 9.3.0rc1, which our versioning doesn't like
 ISCVERSION=	9.3.6-P1
 
