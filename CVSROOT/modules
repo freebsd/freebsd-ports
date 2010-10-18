@@ -2269,6 +2269,7 @@ de-koffice-kde4-l10n            ports/german/koffice-kde4-l10n
 de-ksteak                       ports/german/ksteak
 de-linux-eagle                  ports/german/linux-eagle
 de-manpages                     ports/german/manpages
+de-mediathek                    ports/german/mediathek
 de-mt                           ports/german/MT
 de-pecl-konto_check             ports/german/pecl-konto_check
 de-phone                        ports/german/phone
@@ -11723,6 +11724,7 @@ p5-DBIx-Class-WebForm           ports/databases/p5-DBIx-Class-WebForm
 p5-DBIx-Connector               ports/databases/p5-DBIx-Connector
 p5-DBIx-ContextualFetch         ports/databases/p5-DBIx-ContextualFetch
 p5-DBIx-Custom                  ports/databases/p5-DBIx-Custom
+p5-DBIx-DBHResolver             ports/databases/p5-DBIx-DBHResolver
 p5-DBIx-DBSchema                ports/databases/p5-DBIx-DBSchema
 p5-DBIx-DataSource              ports/databases/p5-DBIx-DataSource
 p5-DBIx-Ease                    ports/databases/p5-DBIx-Ease
@@ -15818,6 +15820,7 @@ p5-dbix-connector               ports/databases/p5-DBIx-Connector
 p5-dbix-contextualfetch         ports/databases/p5-DBIx-ContextualFetch
 p5-dbix-custom                  ports/databases/p5-DBIx-Custom
 p5-dbix-datasource              ports/databases/p5-DBIx-DataSource
+p5-dbix-dbhresolver             ports/databases/p5-DBIx-DBHResolver
 p5-dbix-dbschema                ports/databases/p5-DBIx-DBSchema
 p5-dbix-ease                    ports/databases/p5-DBIx-Ease
 p5-dbix-ha                      ports/databases/p5-DBIx-HA
