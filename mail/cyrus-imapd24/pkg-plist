@@ -11,7 +11,6 @@ bin/smtptest
 bin/synctest
 cyrus/bin/arbitron
 cyrus/bin/chk_cyrus
-%%AUTOCREATE%%cyrus/bin/compile_sieve
 cyrus/bin/ctl_cyrusdb
 cyrus/bin/ctl_deliver
 cyrus/bin/ctl_mboxlist
@@ -19,7 +18,9 @@ cyrus/bin/cvt_cyrusdb
 cyrus/bin/cyr_dbtool
 cyrus/bin/cyr_df
 cyrus/bin/cyr_expire
+cyrus/bin/cyr_sequence
 cyrus/bin/cyr_synclog
+cyrus/bin/cyr_userseen
 cyrus/bin/cyrdump
 cyrus/bin/deliver
 %%NNTP%%cyrus/bin/fetchnews
@@ -29,8 +30,6 @@ cyrus/bin/imapd
 cyrus/bin/ipurge
 cyrus/bin/lmtpd
 cyrus/bin/lmtpproxyd
-%%REPLICATION%%cyrus/bin/make_md5
-%%REPLICATION%%cyrus/bin/make_sha1
 cyrus/bin/masssievec
 cyrus/bin/master
 cyrus/bin/mbexamine
@@ -42,9 +41,9 @@ cyrus/bin/notifyd
 cyrus/bin/pop3d
 cyrus/bin/pop3proxyd
 cyrus/bin/proxyd
-%%LDAP_PTLOADER%%cyrus/bin/ptdump
-%%LDAP_PTLOADER%%cyrus/bin/ptexpire
-%%LDAP_PTLOADER%%cyrus/bin/ptloader
+%%LDAP%%cyrus/bin/ptdump
+%%LDAP%%cyrus/bin/ptexpire
+%%LDAP%%cyrus/bin/ptloader
 cyrus/bin/quota
 cyrus/bin/reconstruct
 cyrus/bin/sievec
@@ -63,6 +62,7 @@ include/cyrus/auth.h
 include/cyrus/bsearch.h
 include/cyrus/byteorder64.h
 include/cyrus/charset.h
+include/cyrus/crc32.h
 include/cyrus/cyrusdb.h
 include/cyrus/glob.h
 include/cyrus/gmtoff.h
@@ -86,6 +86,7 @@ include/cyrus/parseaddr.h
 include/cyrus/prot.h
 include/cyrus/retry.h
 include/cyrus/rfc822date.h
+include/cyrus/signals.h
 include/cyrus/strhash.h
 include/cyrus/stristr.h
 include/cyrus/sysexits.h

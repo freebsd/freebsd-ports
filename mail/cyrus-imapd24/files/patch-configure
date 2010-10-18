@@ -1,41 +1,13 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	2009-12-21 23:20:56.817376076 +0900
-+++ configure	2009-12-21 23:21:49.196653299 +0900
-@@ -642,6 +642,7 @@
- IMAP_COM_ERR_LIBS
- LIB_RT
- LIB_UCDSNMP
-+LDFLAGS_UCDSNMP
- SNMP_CONFIG
- LIB_WRAP
- SNMP_SUBDIRS
-@@ -20173,7 +20174,7 @@
+--- configure.orig	2010-10-12 10:22:49.725848550 +0900
++++ configure	2010-10-12 11:00:05.295936060 +0900
+@@ -19686,7 +19686,7 @@
      PERL_SUBDIRS="imap"
      PERL="${with_perl}"
      case "${target_os}" in
 -        linux*|netbsd*)
 +        linux*|netbsd*|freebsd*)
-             { $as_echo "$as_me:$LINENO: checking for perl cccdlflags needed on \"${target_os}\"" >&5
- $as_echo_n "checking for perl cccdlflags needed on \"${target_os}\"... " >&6; }
+             echo "$as_me:$LINENO: checking for perl cccdlflags needed on \"${target_os}\"" >&5
+ echo $ECHO_N "checking for perl cccdlflags needed on \"${target_os}\"... $ECHO_C" >&6
              eval `${PERL} -V:cccdlflags`
-@@ -20749,7 +20750,9 @@
- 
-     if test -n "$SNMP_LIBS" && test -n "$SNMP_PREFIX"; then
-       CPPFLAGS="$CPPFLAGS -I${SNMP_PREFIX}/include"
--      LIB_UCDSNMP=$SNMP_LIBS
-+      LIB_UCDSNMP="$SNMP_LIBS -lwrap"
-+      PERLLIBDIR=`$PERL -e 'use Config; print "$Config{archlibexp}/CORE";'`
-+      LDFLAGS_UCDSNMP="-L${PERLLIBDIR} -R${PERLLIBDIR}"
- 
- cat >>confdefs.h <<\_ACEOF
- #define HAVE_NETSNMP 1
-@@ -21135,7 +21138,7 @@
- #define HAVE_UCDSNMP 1
- _ACEOF
- 
--      LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp"
-+      LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp -lkvm -ldevstat -lwrap"
-       { $as_echo "$as_me:$LINENO: checking for rpmdbOpen in -lrpm" >&5
- $as_echo_n "checking for rpmdbOpen in -lrpm... " >&6; }
- if test "${ac_cv_lib_rpm_rpmdbOpen+set}" = set; then
