@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	subvertpy
-PORTVERSION=	0.7.3.1
+PORTVERSION=	0.7.4
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/52613338/ \
-		http://samba.org/~jelmer/subvertpy/ \
+MASTER_SITES=	https://launchpadlibrarian.net/56729076/ \
 		http://www.c-s.li/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
