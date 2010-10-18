@@ -10,7 +10,7 @@ PORTVERSION=	2.0.1
 PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF \
-		http://joewing.net/programs/
+		http://joewing.net/programs/jwm/releases/
 
 MAINTAINER=	admin@mjbrune.org
 COMMENT=	Joe's Window Manager
