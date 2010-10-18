@@ -26,13 +26,17 @@ NO_BUILD=	yes
 
 OPTIONS=	CYRUS_IMAPD_21	"With Cyrus IMAPd version 2.1.x" off \
 		CYRUS_IMAPD_22	"With Cyrus IMAPd version 2.2.x" off \
-		CYRUS_IMAPD_23	"With Cyrus IMAPd version 2.3.x" on
+		CYRUS_IMAPD_23	"With Cyrus IMAPd version 2.3.x" on  \
+		CYRUS_IMAPD_24	"With Cyrus IMAPd version 2.4.x" off
 
 .include <bsd.port.pre.mk>
 
 CYRUS_IMAP_PM=	${SITE_PERL}/${PERL_ARCH}/Cyrus/IMAP/Admin.pm
 
-.if defined(WITH_CYRUS_IMAPD_23)
+.if defined(WITH_CYRUS_IMAPD_24)
+RUN_DEPENDS+=	${CYRUS_IMAP_PM}:${PORTSDIR}/mail/cyrus-imapd24
+FUNCLIB_PL=	funclib.cyrus
+.elif defined(WITH_CYRUS_IMAPD_23)
 RUN_DEPENDS+=	${CYRUS_IMAP_PM}:${PORTSDIR}/mail/cyrus-imapd23
 FUNCLIB_PL=	funclib.cyrus
 .elif defined(WITH_CYRUS_IMAPD_22)
