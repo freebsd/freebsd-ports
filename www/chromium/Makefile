@@ -58,6 +58,13 @@ GYP_DEFINES+=	use_system_libxml=1
 
 OPTIONS=	CODECS		"Compile and enable patented codecs like H.264" off
 
+DESKTOP_ENTRIES=	"Chromium" \
+			"${COMMENT}" \
+			"${DATADIR}/product_logo_48.png" \
+			"chrome" \
+			"Application;Network;WebBrowser;" \
+			"true"
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000
