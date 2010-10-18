@@ -4637,3 +4637,6 @@ devel/clang|lang/clang|2010-10-14|Compilers typically live in the lang category
 security/ssh2||2010-10-15|Has expired: abandoned upstream
 security/ssh2-nox11||2010-10-15|Has expired: abandoned upstream
 devel/autoconf267|devel/autoconf268|2010-10-16|Bump
+net/samba3||2010-10-18|Has expired: Unsupported by the upstream. Please, consider to upgrade.
+net/samba32||2010-10-18|Has expired: Unsupported by the upstream. Please, consider to upgrade.
+net/samba33||2010-10-18|Has expired: Unsupported by the upstream. Please, consider to upgrade.

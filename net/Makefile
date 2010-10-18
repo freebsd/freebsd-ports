@@ -949,9 +949,6 @@
     SUBDIR += samba-nmblookup
     SUBDIR += samba-pdbsql
     SUBDIR += samba-smbclient
-    SUBDIR += samba3
-    SUBDIR += samba32
-    SUBDIR += samba33
     SUBDIR += samba34
     SUBDIR += samba4-devel
     SUBDIR += samba4wins
