@@ -1,54 +1,39 @@
 bin/lxappearance
+include/lxappearance/lxappearance.h
+libdata/pkgconfig/lxappearance.pc
 share/applications/lxappearance.desktop
-share/locale/af/LC_MESSAGES/lxappearance.mo
-share/locale/ar/LC_MESSAGES/lxappearance.mo
-share/locale/bg/LC_MESSAGES/lxappearance.mo
-share/locale/bn_IN/LC_MESSAGES/lxappearance.mo
-share/locale/ca/LC_MESSAGES/lxappearance.mo
-share/locale/cs/LC_MESSAGES/lxappearance.mo
 share/locale/da/LC_MESSAGES/lxappearance.mo
 share/locale/de/LC_MESSAGES/lxappearance.mo
 share/locale/el/LC_MESSAGES/lxappearance.mo
+share/locale/en_GB/LC_MESSAGES/lxappearance.mo
 share/locale/es/LC_MESSAGES/lxappearance.mo
-share/locale/et/LC_MESSAGES/lxappearance.mo
-share/locale/eu/LC_MESSAGES/lxappearance.mo
 share/locale/fa/LC_MESSAGES/lxappearance.mo
-share/locale/fi/LC_MESSAGES/lxappearance.mo
+share/locale/fo/LC_MESSAGES/lxappearance.mo
 share/locale/fr/LC_MESSAGES/lxappearance.mo
 share/locale/gl/LC_MESSAGES/lxappearance.mo
 share/locale/he/LC_MESSAGES/lxappearance.mo
-share/locale/hr/LC_MESSAGES/lxappearance.mo
 share/locale/hu/LC_MESSAGES/lxappearance.mo
 share/locale/id/LC_MESSAGES/lxappearance.mo
 share/locale/it/LC_MESSAGES/lxappearance.mo
 share/locale/ja/LC_MESSAGES/lxappearance.mo
-share/locale/ko/LC_MESSAGES/lxappearance.mo
-share/locale/lt/LC_MESSAGES/lxappearance.mo
-share/locale/ml/LC_MESSAGES/lxappearance.mo
-share/locale/ms/LC_MESSAGES/lxappearance.mo
-share/locale/nb/LC_MESSAGES/lxappearance.mo
-share/locale/nl/LC_MESSAGES/lxappearance.mo
-share/locale/nn/LC_MESSAGES/lxappearance.mo
-share/locale/pl/LC_MESSAGES/lxappearance.mo
-share/locale/ps/LC_MESSAGES/lxappearance.mo
+share/locale/pa/LC_MESSAGES/lxappearance.mo
 share/locale/pt/LC_MESSAGES/lxappearance.mo
 share/locale/pt_BR/LC_MESSAGES/lxappearance.mo
 share/locale/ru/LC_MESSAGES/lxappearance.mo
-share/locale/sk/LC_MESSAGES/lxappearance.mo
-share/locale/sl/LC_MESSAGES/lxappearance.mo
 share/locale/sr/LC_MESSAGES/lxappearance.mo
+share/locale/sr@latin/LC_MESSAGES/lxappearance.mo
 share/locale/sv/LC_MESSAGES/lxappearance.mo
 share/locale/tr/LC_MESSAGES/lxappearance.mo
 share/locale/uk/LC_MESSAGES/lxappearance.mo
-share/locale/ur/LC_MESSAGES/lxappearance.mo
-share/locale/ur_PK/LC_MESSAGES/lxappearance.mo
 share/locale/vi/LC_MESSAGES/lxappearance.mo
-share/locale/zh_CN/LC_MESSAGES/lxappearance.mo
 share/locale/zh_TW/LC_MESSAGES/lxappearance.mo
-%%DATADIR%%/demo.ui
-%%DATADIR%%/install-icon-theme.sh
-%%DATADIR%%/lxappearance.ui
+%%DATADIR%%/ui/about.ui
+%%DATADIR%%/ui/lxappearance.ui
+@dirrmtry share/locale/fo/LC_MESSAGES
+@dirrmtry share/locale/fo
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
+@dirrm include/lxappearance
 @dirrmtry share/applications
