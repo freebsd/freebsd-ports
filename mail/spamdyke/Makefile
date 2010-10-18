@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.spamdyke.org/releases/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	peter@kieser.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A filter for monitoring and intercepting SMTP connections on qmail
 
 RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
