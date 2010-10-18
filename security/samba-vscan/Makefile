@@ -7,7 +7,7 @@
 
 PORTNAME=	samba-vscan
 PORTVERSION=	0.3.6c
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://www.openantivirus.org/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-beta5
@@ -32,7 +32,7 @@ OPTIONS=	VSCAN_ANTIVIR "for use with AntiVir" off \
 PORTDOCS=	AUTHORS COPYING ChangeLog FAQ INSTALL NEWS README
 
 USE_AUTOTOOLS=	autoconf:268
-VSCAN_SAMBA_PORT?=	samba3
+VSCAN_SAMBA_PORT?=	samba34
 SAMBA_WRKSRC!=	cd ${.CURDIR}/../../net/${VSCAN_SAMBA_PORT}; ${MAKE} -V WRKSRC
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -46,9 +46,7 @@ ALL_TARGET=
 
 .include <bsd.port.pre.mk>
 
-.if ${VSCAN_SAMBA_PORT} != "samba3"
 VFSDIR=lib/samba
-.endif
 
 .if defined(WITH_VSCAN_ANTIVIR)
 ALL_TARGET+=antivir
@@ -119,11 +117,6 @@ VSCAN_CONF+=trend/vscan-trend.conf
 PLIST_FILES+=	${VSCAN_NAME:S|^|${VFSDIR}/|} \
 		${VSCAN_CONF:S|^|${ETCDIR}/|:C|(.*/).*/(.*.conf)|\1\2|}
 PLIST_DIRS=	${ETCDIR} ${VFSDIR}
-
-pre-configure:
-.if ${VSCAN_SAMBA_PORT} == "samba3"
-		@cd ${SAMBA_WRKSRC}; make proto 2>&1 > /dev/null
-.endif
 
 do-install:
 .for i in ${VSCAN_NAME}
