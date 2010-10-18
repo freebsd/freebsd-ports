@@ -14,26 +14,27 @@ MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Parallel executor, distributes tasks over network
 
 LIB_DEPENDS=	maa:${PORTSDIR}/devel/libmaa
+BUILD_DEPENDS=	mk-configure>=0.20:${PORTSDIR}/devel/mk-configure
+RUN_DEPENDS=	runawk:${PORTSDIR}/lang/runawk
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 DOCS=		ChangeLog NEWS README
-MAN1=		paexec.1
+MAN1=		paexec.1 paexec_reorder.1
 
 LICENSE=	MIT
+
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,2048,4096,; s,x.y.z,${PORTVERSION},' \
 		${WRKSRC}/paexec.c
 
 do-build:
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} ${LDFLAGS} \
-		*.c -o ${PORTNAME} -lmaa
+	@${SETENV} ${MAKE_ENV} LDFLAGS="${LDFLAGS}" ${LOCALBASE}/bin/mkcmake -C ${WRKSRC}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/paexec ${DESTDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/paexec.1 ${MAN1PREFIX}/man/man1
+	@${SETENV} ${MAKE_ENV} LDFLAGS="${LDFLAGS}" ${LOCALBASE}/bin/mkcmake -C ${WRKSRC} install
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
