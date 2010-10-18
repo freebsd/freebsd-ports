@@ -216,8 +216,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|$$jardir/fop.jar|${LOCALBASE}/share/java/fop/build/fop.jar|' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|$$jardir/jeuclid-core*.jar|${LOCALBASE}/share/java/jeuclid/repo/jeuclid-core*.jar|' ${WRKSRC}/configure
 	${MKDIR} ${WRKSRC}/thirdparty
+.if !defined(WITHOUT_GUI)
 	${CP} ${DISTDIR}/${JGRAPHX_JAR} ${WRKSRC}/thirdparty/jgraphx.jar
 	${REINPLACE_CMD} -e 's|@JGRAPHX@|${DATADIR}/modules/jgraphx.jar|g' ${WRKSRC}/etc/classpath.xml.in
+.endif
 	# Build fixes
 	${REINPLACE_CMD} -e 's|$$(CFLAGS:-O%=)|-I${LOCALBASE}/include -L${LOCALBASE}/lib|' ${WRKSRC}/modules/elementary_functions/Makefile.in
 	${REINPLACE_CMD} -e 's|freebsd|__FreeBSD__|g' ${WRKSRC}/modules/sparse/includes/spConfig.h
@@ -245,6 +247,8 @@ pre-install:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 	@${FIND} ${WRKSRC} -name \*.bak -delete
 	@${FIND} ${WRKSRC} -name .cvsignore -delete
+.if !defined(WITHOUT_GUI)
 	@${MKDIR} ${DATADIR}/modules && ${INSTALL_DATA} ${DISTDIR}/${JGRAPHX_JAR} ${DATADIR}/modules/jgraphx.jar
+.endif
 
 .include <bsd.port.mk>
