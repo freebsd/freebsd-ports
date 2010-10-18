@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Chart/Bars.pm
 %%SITE_PERL%%/Chart/Base.pm
 %%SITE_PERL%%/Chart/Composite.pm
+%%SITE_PERL%%/Chart/Constants.pm
 %%SITE_PERL%%/Chart/Direction.pm
 %%SITE_PERL%%/Chart/ErrorBars.pm
 %%SITE_PERL%%/Chart/HorizontalBars.pm
