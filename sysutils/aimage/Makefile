@@ -16,6 +16,8 @@ COMMENT=	Advanced Disk Imager
 
 LIB_DEPENDS=	afflib:${PORTSDIR}/sysutils/afflib
 
+BROKEN=		does not compile
+
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
