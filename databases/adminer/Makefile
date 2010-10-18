@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adminer
-PORTVERSION=	2.3.2
+PORTVERSION=	3.0.0
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME}/Adminer/Adminer%20${PORTVERSION}
 
