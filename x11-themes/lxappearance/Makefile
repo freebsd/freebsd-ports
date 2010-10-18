@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	lxappearance
-PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTVERSION=	0.5.0
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	SF/lxde/LXAppearance
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c0rn@o2.pl
 COMMENT=	A desktop-independent theme switcher for GTK+
 
 USE_GNOME=	gnomehack gtk20 intlhack
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_JOBS_SAFE=	yes
 
-MAN1=		lxappearance.1
+LICENSE=	GPLv2
 
 .include <bsd.port.mk>
