@@ -6,24 +6,21 @@
 #
 
 PORTNAME=		pdbsql
-PORTVERSION=		0.3.1
-PORTREVISION=	2
+PORTVERSION=		34
 CATEGORIES=		net
-MASTER_SITES=		SF
+MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}_${PORTVERSION}/
 PKGNAMEPREFIX=		samba-
 DISTNAME=		${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		Multiplexor, MySQL and PostgeSQL passdb backends for Samba3
 
-USE_BZIP2=		yes
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 # Add a build dependency for Samba port
 USE_AUTOTOOLS=		autoconf:268 autoheader:268
-WRKSRC=                 ${WRKDIR}/${DISTNAME}-samba
 
-SAMBA_PORT=		net/samba3
+SAMBA_PORT?=		net/samba34
 
 OPTIONS=		MYSQL	"With MySQL passdb backend"		on \
 			PGSQL	"With PostgreSQL passdb backend"	on
@@ -44,6 +41,9 @@ BUILD_DEPENDS+=		${NONEXISTENT}:${PORTSDIR}/${SAMBA_PORT}:configure
 
 CONFIGURE_ARGS+=	--libdir=${SAMBA_PDBDIR} \
 			--with-samba-dir=${SAMBA_WRKSRC}
+
+PLIST_SUB+=		SAMBA_PDBDIR=${SAMBA_PDBDIR:S/${PREFIX}\///} \
+			SAMBA_MODULEDIR=${SAMBA_MODULEDIR:S/${PREFIX}\///}
 
 .if exists(${LOCALBASE}/bin/mysql)
 WITH_MYSQL=		yes
@@ -77,22 +77,18 @@ pre-configure:
 do-install:
 			@${MKDIR} ${EXAMPLESDIR}
 			@${MKDIR} ${SAMBA_PDBDIR}
-			@${INSTALL_PROGRAM} ${WRKSRC}/multi.so ${SAMBA_PDBDIR}
+			${INSTALL_PROGRAM} ${WRKSRC}/multi.so ${SAMBA_PDBDIR}
 .if !defined(WITHOUT_MYSQL)
-			@${INSTALL_PROGRAM} ${WRKSRC}/mysql.so ${SAMBA_PDBDIR}
+			${INSTALL_PROGRAM} ${WRKSRC}/mysql.so ${SAMBA_PDBDIR}
 .	for f in mysql.dump smb.conf.mysql
-			@${INSTALL_DATA} ${WRKSRC}/docs/${f} ${EXAMPLESDIR}
+			${INSTALL_DATA} ${WRKSRC}/docs/${f} ${EXAMPLESDIR}
 .	endfor
 .endif
 .if !defined(WITHOUT_PGSQL)
-			@${INSTALL_PROGRAM} ${WRKSRC}/pgsql.so ${SAMBA_PDBDIR}
+			${INSTALL_PROGRAM} ${WRKSRC}/pgsql.so ${SAMBA_PDBDIR}
 .	for f in pgsql.dump smb.conf.pgsql
-			@${INSTALL_DATA} ${WRKSRC}/docs/${f} ${EXAMPLESDIR}
+			${INSTALL_DATA} ${WRKSRC}/docs/${f} ${EXAMPLESDIR}
 .	endfor
-.endif
-.if !defined(NOPORTDOCS)
-			@${MKDIR} ${DOCSDIR}
-			@${INSTALL_DATA} ${WRKSRC}/docs/pdb_mysql.xml ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
