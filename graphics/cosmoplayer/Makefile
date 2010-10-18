@@ -9,7 +9,10 @@ PORTNAME=	cosmoplayer
 PORTVERSION=	2.1.1
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	http://opendx.npaci.edu/libs/
+#MASTER_SITES=	http://opendx.npaci.edu/libs/
+MASTER_SITES=	http://distfiles.macports.org/${PORTNAME}/	\
+		http://lil.fr.distfiles.macports.org/${PORTNAME}/	\
+		http://ftp.leg.uct.ac.za/pub/packages/macports/distfiles/${PORTNAME}/
 DISTNAME=	${PORTNAME}-jar
 
 MAINTAINER=	thierry@FreeBSD.org
