@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.11
-PORTREVISION=	2
+PORTVERSION=	5.12
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
 		http://dougbarton.us/Downloads/
 
-MAINTAINER?=	DougB@FreeBSD.org
+MAINTAINER?=	dougb@FreeBSD.org
 COMMENT=	Save your screen while you entertain your cat
 
 LIB_DEPENDS=	gle.4:${PORTSDIR}/graphics/gle \
