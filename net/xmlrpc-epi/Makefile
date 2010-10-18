@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlrpc-epi
-PORTVERSION=	0.54
+PORTVERSION=	0.54.1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-base/${PORTVERSION}
 
@@ -21,8 +21,7 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"		\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
-CONFIGURE_ARGS=	--program-transform="s|^|xre-|" \
-		--with-expat=/usr/local
+CONFIGURE_ARGS=	--program-transform="s|^|xre-|"
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
@@ -31,10 +30,12 @@ METHODS=	TestNormal TestFault TestStruct TestArray TestBoolean	\
 
 CONFLICTS=	xmlrpc-c-0.* xmlrpc-c-devel-[0-9]*
 
+WRKSRC=	${WRKDIR}/${PORTNAME:C/-.*//}
+
 pre-configure:
-	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS}	\
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS}	\
 	${REINPLACE_CMD} -e '/^LTCOMPILE =/s/--mode=/--tag=CC --mode=/'
-	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS}	\
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS}	\
 	${REINPLACE_CMD} -e '/^LINK =/s/--mode=/--tag=CC --mode=/'
 
 post-install:
