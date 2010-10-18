@@ -8,7 +8,6 @@ include/vxlog/logger.h
 include/vxlog/macros.h
 include/vxlog/outputter-holder.h
 include/vxlog/outputter-interface.h
-include/vxlog/shared-ptr.h
 include/vxlog/syslog-outputter.h
 include/vxlog/type-to-string.h
 lib/libvxlog.so
