@@ -4,4 +4,3 @@ share/doc/sopwith/dlcvsamj.txt
 share/doc/sopwith/origdoc.txt
 share/doc/sopwith/readme.txt
 @dirrm share/doc/sopwith
-@dirrm etc/man.d
