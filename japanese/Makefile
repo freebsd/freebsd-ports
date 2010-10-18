@@ -309,7 +309,6 @@
     SUBDIR += rubygem-jpmobile-terminfo
     SUBDIR += rxvt
     SUBDIR += ryaku-fpw
-    SUBDIR += samba3
     SUBDIR += scim-anthy
     SUBDIR += scim-canna
     SUBDIR += scim-honoka
