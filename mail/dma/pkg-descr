@@ -13,4 +13,4 @@ Since dma is not intended as a replacement for real, big MTAs
 like sendmail(8) or postfix(1), it does not listen on port 25
 for incoming connections.
 
-WWW: http://www.dragonflybsd.org/
+WWW: http://gitorious.org/dma
