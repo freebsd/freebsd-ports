@@ -23,6 +23,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-source${SBCLPATCHLEVEL}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A Common Lisp development system derived from the CMU CL system
 
+BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
+
 # More platforms are supported, but on Linux.
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	is a native code compiler, and has not been ported to this architecture yet
@@ -89,8 +91,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PDF)
-BUILD_DEPENDS+=	texi2dvi:${PORTSDIR}/print/teTeX-base \
-		dot:${PORTSDIR}/graphics/graphviz
+BUILD_DEPENDS+=	texi2dvi:${PORTSDIR}/print/teTeX-base
 DOC_TARGETS+=	pdf
 PLIST_SUB+=	PDF=""
 . if !defined(NOPORTDOCS)
