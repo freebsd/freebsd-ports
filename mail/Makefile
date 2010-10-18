@@ -81,6 +81,7 @@
     SUBDIR += cyrus-imapd2
     SUBDIR += cyrus-imapd22
     SUBDIR += cyrus-imapd23
+    SUBDIR += cyrus-imapd24
     SUBDIR += cyrus2courier
     SUBDIR += dbmail
     SUBDIR += dbmail20

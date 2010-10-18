@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.3.16
-PORTREVISION=	2
+PORTVERSION=	2.4.0
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus/ \
-		http://ftp.andrew.cmu.edu/pub/cyrus/ \
-		http://www.transit.hanse.de/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/cyrus-mail/&,}
+MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 
-CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^3].*
+CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^4].*
 
-LATEST_LINK=	${PORTNAME}23
+LATEST_LINK=	${PORTNAME}24
 
 USE_RC_SUBR=	imapd.sh
 USE_OPENSSL=	yes
@@ -38,44 +35,23 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-perl=${PERL5}
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	AUTOCREATE	"Use autocreate INBOX patch (UoA)"	off \
-		AUTOSIEVE	"Use autosievefolder patch (UoA)"	off \
-		BDB		"Use Berkeley DB"			on \
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+OPTIONS=	BDB		"Use Berkeley DB"			on \
 		DRAC		"Enable DRAC support"			off \
 		IDLED		"Enable IMAP idled support"		off \
-		LDAP_PTLOADER	"Enable LDAP ptloader"			off \
-		LISTEXT		"Enable IMAP List extensions"		off \
+		LDAP		"Use LDAP (experimental)"		off \
 		MURDER		"Enable IMAP Murder support"		off \
-		MYSQL		"Use MySQL (experimental)"		off \
+		MYSQL		"Use MySQL"				off \
 		NETSCAPEHACK	"Enable X-NETSCAPE extensions"		off \
 		NNTP		"Enable NNTP support"			off \
-		PGSQL		"Use PostgreSQL (experimental)"		off \
-		REPLICATION	"Enable replication"			off \
-		SQLITE		"Use SQLite (experimental)"		off \
-		SNMP_5		"Enable SNMP support"			off
+		PGSQL		"Use PostgreSQL"			off \
+		REPLICATION	"Enable replication (experimental)"	off \
+		SNMP		"Enable SNMP support"			off \
+		SQLITE		"Use SQLite"				off
 
 .include <bsd.port.pre.mk>
-
-# Autocreate Inbox and Autosieve patches from UoA
-# WWW: http://email.uoa.gr/projects/cyrus/
-
-.if defined(WITH_AUTOCREATE) || defined(WITH_AUTOSIEVE)
-PATCH_DIST_STRIP=	-p1
-PATCH_SITES+=	http://email.uoa.gr/download/cyrus/${PORTNAME}-${PORTVERSION}/ 
-.endif
-
-.if defined(WITH_AUTOCREATE)
-AUTOCREATE_VERSION=	0.10-0
-PATCHFILES+=	${PORTNAME}-${PORTVERSION}-autocreate-${AUTOCREATE_VERSION}.diff
-PLIST_SUB+=	AUTOCREATE=""
-.else
-PLIST_SUB+=	AUTOCREATE="@comment "
-.endif
-
-.if defined(WITH_AUTOSIEVE)
-AUTOSIEVE_VERSION=	0.6.0
-PATCHFILES+=	${PORTNAME}-${PORTVERSION}-autosieve-${AUTOSIEVE_VERSION}.diff
-.endif
 
 .if defined(WITHOUT_BDB)
 BDB_LIB_NAME=	no
@@ -133,18 +109,12 @@ PLIST_SUB+=	REPLICATION=""
 PLIST_SUB+=	REPLICATION="@comment "
 .endif
 
-.if defined(WITH_LISTEXT)
-CONFIGURE_ARGS+=--enable-listext
-.endif
-
 .if defined(WITH_NETSCAPEHACK)
 CONFIGURE_ARGS+=--enable-netscapehack
 .endif
 
 .if defined(WITH_DRAC)
-EXTRA_PATCHES+=	${WRKSRC}/contrib/drac_auth.patch
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure.in \
-		${FILESDIR}/extra-patch-cmulocal::ucdsnmp.m4
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-configure.in
 .if ${OSVERSION} >= 800037
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cmulocal::sasl2.m4
 .endif
@@ -153,19 +123,19 @@ CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
-.if defined(WITH_SNMP_5)
+.if defined(WITH_SNMP)
 LIB_DEPENDS+=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-snmp=no
 .endif
 
-.if defined(WITH_LDAP_PTLOADER)
+.if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
-PLIST_SUB+=	LDAP_PTLOADER=""
+PLIST_SUB+=	LDAP=""
 .else
-PLIST_SUB+=	LDAP_PTLOADER="@comment "
+PLIST_SUB+=	LDAP="@comment "
 .endif
 
 .if !exists(/usr/lib/libkrb5.a)
@@ -188,11 +158,10 @@ CYRUS_MAN3=	Cyrus::IMAP.3 Cyrus::IMAP::Admin.3 Cyrus::IMAP::IMSP.3 \
 CYRUS_MAN8=	arbitron.8 chk_cyrus.8 nntpd.8 ctl_cyrusdb.8 ctl_deliver.8 \
 		cyr_dbtool.8 cyr_df.8 cyr_expire.8 cyr_synclog.8 \
 		ctl_mboxlist.8 cvt_cyrusdb.8 deliver.8 fetchnews.8 fud.8 \
-		idled.8 imapd.8 ipurge.8 lmtpd.8 make_md5.8 make_sha1.8 \
-		master.8 mbexamine.8 mbpath.8 notifyd.8 pop3d.8 quota.8 \
-		reconstruct.8 rmnews.8 smmapd.8 squatter.8 sync_client.8 \
-		sync_reset.8 sync_server.8 syncnews.8 timsieved.8 \
-		tls_prune.8 unexpunge.8
+		idled.8 imapd.8 ipurge.8 lmtpd.8 master.8 mbexamine.8 \
+		mbpath.8 notifyd.8 pop3d.8 quota.8 reconstruct.8 rmnews.8 \
+		smmapd.8 squatter.8 sync_client.8 sync_reset.8 sync_server.8 \
+		syncnews.8 timsieved.8 tls_prune.8 unexpunge.8
 
 DOCS=		altnamespace anoncvs bugs changes faq feedback index \
 		install install-admin-mb install-auth install-compile \
@@ -209,7 +178,14 @@ CONFS=		cmu-frontend.conf prefork.conf cmu-backend.conf normal.conf \
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
 
+.if defined(WITH_DRAC)
+pre-patch:
+		${PATCH} -d ${PATCH_WRKSRC} --forward --quiet -E -p1 \
+			< ${WRKSRC}/contrib/drac_auth.patch
+.endif
+
 post-patch:
+
 		@${SED} -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
 			-e "s|%%PREFIX%%|${PREFIX}|g" \
 			-e "s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g" \
