@@ -762,7 +762,6 @@
     SUBDIR += saferpay
     SUBDIR += safesh
     SUBDIR += saint
-    SUBDIR += samba-vscan
     SUBDIR += samhain
     SUBDIR += samhain-client
     SUBDIR += samhain-server
