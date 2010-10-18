@@ -1,0 +1,41 @@
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/colocated.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/colocated.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/colocated.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/commands.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/commands.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/commands.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/explorer/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/explorer/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/explorer/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/info.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/info.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/info.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/qcommands.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/qcommands.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/qcommands.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/script.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/script.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/script.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/test_colo.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/test_colo.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/test_colo.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/test_qcommands.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/test_qcommands.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/test_qcommands.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/test_sync.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/test_sync.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/test_sync.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tutorial.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tutorial.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tutorial.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/explorer
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib
