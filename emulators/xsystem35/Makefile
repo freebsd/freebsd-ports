@@ -71,9 +71,8 @@ post-extract:
 
 post-patch:
 	${FIND} ${WRKSRC}/src -type f |\
-	${XARGS} ${GREP} -l '<SDL/SDL' /dev/null |\
-	${XARGS} ${REINPLACE_CMD} -e 's,<SDL/,<,'; \
-	done
+		${XARGS} ${GREP} -l '<SDL/SDL' /dev/null |\
+		${XARGS} ${REINPLACE_CMD} -e 's,<SDL/,<,'
 
 pre-configure:
 	(cd ${WRKSRC}/libltdl; ${AUTOCONF})
