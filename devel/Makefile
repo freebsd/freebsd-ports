@@ -133,6 +133,7 @@
     SUBDIR += bunny
     SUBDIR += byaccj
     SUBDIR += bzr-builder
+    SUBDIR += bzr-colo
     SUBDIR += bzr-explorer
     SUBDIR += bzr-externals
     SUBDIR += bzr-grep

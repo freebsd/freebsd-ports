@@ -1,0 +1,9 @@
+In order to provide a faster and simpler working model, this plugin
+tries to support a configuration similar to git and Mercurial's
+colocated branches, where there is a single working tree that can
+be switched between multiple branches that all co-exist in the same
+directory. This working model is entirely possible using Bazaar's
+existing technology, and this plugin aims to make it as simple as
+possible to use that model.
+
+WWW: https://launchpad.net/bzr-colo
