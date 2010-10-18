@@ -22,6 +22,9 @@ PATCHFILES+=	5.8.0${p}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Vi "workalike", with many additional features
 
+DEPRECATED=	Outdated, superceded by editors/vim7 and has security issues
+EXPIRATION_DATE=2010-10-26
+
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
 WITH_TCL=	yes
 #USE_PERL5=	yes
