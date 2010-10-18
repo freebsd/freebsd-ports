@@ -1,13 +1,13 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	2010-10-12 10:22:49.725848550 +0900
-+++ configure	2010-10-12 11:00:05.295936060 +0900
-@@ -19686,7 +19686,7 @@
+--- configure.orig	2010-10-18 23:52:21.754710579 +0900
++++ configure	2010-10-18 23:53:29.402517775 +0900
+@@ -10372,7 +10372,7 @@
      PERL_SUBDIRS="imap"
      PERL="${with_perl}"
      case "${target_os}" in
 -        linux*|netbsd*)
 +        linux*|netbsd*|freebsd*)
-             echo "$as_me:$LINENO: checking for perl cccdlflags needed on \"${target_os}\"" >&5
- echo $ECHO_N "checking for perl cccdlflags needed on \"${target_os}\"... $ECHO_C" >&6
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking for perl cccdlflags needed on \"${target_os}\"" >&5
+ $as_echo_n "checking for perl cccdlflags needed on \"${target_os}\"... " >&6; }
              eval `${PERL} -V:cccdlflags`
