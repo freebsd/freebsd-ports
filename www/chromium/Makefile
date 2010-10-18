@@ -60,6 +60,10 @@ OPTIONS=	CODECS		"Compile and enable patented codecs like H.264" off
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not build on 6.X
+.endif
+
 .if defined(WITH_CODECS)
 GYP_DEFINES+=	ffmpeg_branding=Chrome
 .else
