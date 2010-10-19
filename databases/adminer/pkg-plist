@@ -28,6 +28,7 @@
 %%WWWDIR%%/adminer/include/xxtea.inc.php
 %%WWWDIR%%/adminer/index.php
 %%WWWDIR%%/adminer/indexes.inc.php
+%%WWWDIR%%/adminer/lang/ca.inc.php
 %%WWWDIR%%/adminer/lang/cs.inc.php
 %%WWWDIR%%/adminer/lang/de.inc.php
 %%WWWDIR%%/adminer/lang/en.inc.php
