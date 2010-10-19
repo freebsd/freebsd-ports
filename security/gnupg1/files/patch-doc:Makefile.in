@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	2008-03-27 02:30:46.000000000 +0900
-+++ doc/Makefile.in	2008-08-11 11:30:00.000000000 +0900
+--- doc/Makefile.in.orig	2010-10-18 18:53:58.000000000 +0900
++++ doc/Makefile.in	2010-10-19 09:00:24.995576212 +0900
 @@ -32,7 +32,7 @@
  # along with this program; if not, see <http://www.gnu.org/licenses/>.
  
@@ -9,19 +9,19 @@
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
  am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
-@@ -296,7 +296,11 @@
+@@ -299,7 +299,11 @@
  
  # Need this to avoid building of dvis with automake 1.4
  DVIS = 
 +ifdef NOPORTDOCS 
 +pkgdata_DATA =
 +else
- pkgdata_DATA = FAQ faq.html
+ pkgdata_DATA = FAQ
 +endif
- BUILT_SOURCES = FAQ faq.html 
+ 
  # we can't add gpg.texi gpgv.texi here because automake does not like them to
  # be built files. 
-@@ -589,6 +593,8 @@
+@@ -591,6 +595,8 @@
  	  rm -f "$(DESTDIR)$(man7dir)/$$inst"; \
  	done
  install-pkgdataDATA: $(pkgdata_DATA)
@@ -30,7 +30,7 @@
  	@$(NORMAL_INSTALL)
  	test -z "$(pkgdatadir)" || $(MKDIR_P) "$(DESTDIR)$(pkgdatadir)"
  	@list='$(pkgdata_DATA)'; for p in $$list; do \
-@@ -597,6 +603,7 @@
+@@ -599,6 +605,7 @@
  	  echo " $(pkgdataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(pkgdatadir)/$$f'"; \
  	  $(pkgdataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(pkgdatadir)/$$f"; \
  	done
