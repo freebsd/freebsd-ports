@@ -1,5 +1,7 @@
---- ./rssdler.py.orig	2010-10-10 03:58:44.112133159 +0000
-+++ ./rssdler.py	2010-10-10 03:59:10.937002223 +0000
+Index: rssdler.py
+===================================================================
+--- rssdler.py	(revision 169)
++++ rssdler.py	(working copy)
 @@ -2180,6 +2180,7 @@
          elif param == "--purge-saved": _action = 'purge-saved'
          elif param == "--comment-config": _action = 'comment-config'

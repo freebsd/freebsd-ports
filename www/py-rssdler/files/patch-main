@@ -1,0 +1,14 @@
+Index: rssdler.py
+===================================================================
+--- rssdler.py	(revision 169)
++++ rssdler.py	(working copy)
+@@ -2085,6 +2085,9 @@
+             raise
+         if _runOnce:
+             logging.info( u"[Complete] %s" % time.asctime() )
++            try: codecs.open(os.path.join(getConfig()['global']['workingDir'],
++                getConfig()['global']['daemonInfo']), 'w', 'utf-8').write('')
++            except IOError, m: pass
+             break
+         logging.info( u"[Sleeping] %s" % time.asctime() )
+         checkSleep( getConfig()['global']['scanMins'] * 60 )
