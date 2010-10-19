@@ -19,6 +19,8 @@ COMMENT=	Video playback and browsing plugin for MythTV
 BUILD_DEPENDS=	mythfrontend:${PORTSDIR}/multimedia/mythtv
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
 
+BROKEN=		bad dependency line
+
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	linguist_build moc_build qmake_build rcc_build uic_build

@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-opens
 		${PYTHON_SITELIBDIR}/MySQLdb/connections.pyc:${PORTSDIR}/databases/py-MySQLdb
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		bad dependency line
+
 .if !defined(WITHOUT_MYSQL_SERVER)
 BUILD_DEPENDS+=	mysql:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 .endif
