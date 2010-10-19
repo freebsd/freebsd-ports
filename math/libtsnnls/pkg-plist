@@ -1,0 +1,14 @@
+include/libtsnnls/tsnnls.h
+include/libtsnnls/lsqr.h
+include/libtsnnls/taucs_basic/colamd.h
+include/libtsnnls/taucs_basic/f2c.h
+include/libtsnnls/taucs_basic/taucs.h
+include/libtsnnls/taucs_basic/taucs_config_build.h
+include/libtsnnls/taucs_basic/taucs_config_tests.h
+include/libtsnnls/taucs_basic/taucs_private.h
+lib/libtsnnls.a
+lib/libtsnnls.la
+lib/libtsnnls.so
+lib/libtsnnls.so.0
+@dirrm include/libtsnnls/taucs_basic
+@dirrm include/libtsnnls
