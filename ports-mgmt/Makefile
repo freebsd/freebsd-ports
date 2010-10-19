@@ -6,6 +6,7 @@
    SUBDIR += barry
    SUBDIR += bpkg
    SUBDIR += bpm
+   SUBDIR += distilator
    SUBDIR += fastest_sites
    SUBDIR += genplist
    SUBDIR += gnome-packagekit
