@@ -1,12 +1,16 @@
 include/upnp/ixml.h
+include/upnp/ixmldebug.h
 include/upnp/FreeList.h
 include/upnp/LinkedList.h
 include/upnp/ThreadPool.h
 include/upnp/TimerThread.h
 include/upnp/ithread.h
 include/upnp/upnpconfig.h
+include/upnp/UpnpGlobal.h
+include/upnp/UpnpInet.h
 include/upnp/upnp.h
 include/upnp/upnpdebug.h
+include/upnp/UpnpString.h
 include/upnp/upnptools.h
 lib/libixml.a
 lib/libixml.la
@@ -15,7 +19,7 @@ lib/libixml.so.2
 lib/libthreadutil.a
 lib/libthreadutil.la
 lib/libthreadutil.so
-lib/libthreadutil.so.4
+lib/libthreadutil.so.5
 lib/libupnp.a
 lib/libupnp.la
 lib/libupnp.so

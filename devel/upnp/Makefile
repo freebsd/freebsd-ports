@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	upnp
-PORTVERSION=	1.6.6
+PORTVERSION=	1.6.7
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/p${PORTNAME}/p${PORTNAME}/LibUPnP%20${PORTVERSION}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c0rn@o2.pl
 COMMENT=	Universal Plug and Play Software Development Kit
 
-CONFLICTS=	upnp-1.0.*
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack
-USE_DOS2UNIX=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -33,5 +33,9 @@ CONFIGURE_ARGS=	--with-documentation=${DOCSDIR}
 
 PORTDOCS=	*
 .endif
+
+post-patch:	.SILENT
+	${REINPLACE_CMD} '/^pkgconfigexecdir/s|$$(libdir)|$$(prefix)/libdata|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
