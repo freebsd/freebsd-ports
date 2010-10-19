@@ -17,6 +17,6 @@ RUN_DEPENDS=	p5-URI>=1.56:${PORTSDIR}/net/p5-URI \
 		p5-HTTP-SimpleLinkChecker>=1.16:${PORTSDIR}/www/p5-HTTP-SimpleLinkChecker
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	5.10.1+
 
 .include <bsd.port.mk>
