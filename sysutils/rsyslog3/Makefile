@@ -11,6 +11,8 @@ COMMENT=	Enhanced syslog daemon
 
 LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
 
+BROKEN=		does not compile
+
 USE_RC_SUBR=	${PORTNAME}d
 SUB_FILES=	pkg-message
 MAN8=	rsyslogd.8
