@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zmq
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.10
 CATEGORIES=	devel net
 MASTER_SITES=	http://zeromq.wdfiles.com/local--files/area:download/
 DISTNAME=	zeromq-${DISTVERSION}
