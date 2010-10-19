@@ -1304,6 +1304,7 @@
     SUBDIR += p5-Class-StateMachine
     SUBDIR += p5-Class-Std
     SUBDIR += p5-Class-Std-Fast
+    SUBDIR += p5-Class-Std-Utils
     SUBDIR += p5-Class-StrongSingleton
     SUBDIR += p5-Class-Tangram
     SUBDIR += p5-Class-Throwable
