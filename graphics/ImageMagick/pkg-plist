@@ -1305,11 +1305,29 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/resources.html
 %%PORTDOCS%%%%DOCSDIR%%/www/search.html
 %%PORTDOCS%%%%DOCSDIR%%/www/sitemap.html
+%%PORTDOCS%%%%DOCSDIR%%/www/source/analyze.c
+%%PORTDOCS%%%%DOCSDIR%%/www/source/coder.xml
+%%PORTDOCS%%%%DOCSDIR%%/www/source/colors.xml
+%%PORTDOCS%%%%DOCSDIR%%/www/source/configure.xml
+%%PORTDOCS%%%%DOCSDIR%%/www/source/core.c
+%%PORTDOCS%%%%DOCSDIR%%/www/source/delegates.xml
+%%PORTDOCS%%%%DOCSDIR%%/www/source/english.xml
+%%PORTDOCS%%%%DOCSDIR%%/www/source/examples.pl
+%%PORTDOCS%%%%DOCSDIR%%/www/source/incantation.msl
+%%PORTDOCS%%%%DOCSDIR%%/www/source/locale.xml
+%%PORTDOCS%%%%DOCSDIR%%/www/source/log.xml
+%%PORTDOCS%%%%DOCSDIR%%/www/source/magic.xml
+%%PORTDOCS%%%%DOCSDIR%%/www/source/piechart.mvg
+%%PORTDOCS%%%%DOCSDIR%%/www/source/piechart.svg
+%%PORTDOCS%%%%DOCSDIR%%/www/source/type-ghostscript.xml
+%%PORTDOCS%%%%DOCSDIR%%/www/source/type.xml
+%%PORTDOCS%%%%DOCSDIR%%/www/source/wand.c
 %%PORTDOCS%%%%DOCSDIR%%/www/sponsors.html
 %%PORTDOCS%%%%DOCSDIR%%/www/stream.html
 %%PORTDOCS%%%%DOCSDIR%%/www/subversion.html
 %%PORTDOCS%%%%DOCSDIR%%/www/t-shirt.html
 %%PORTDOCS%%%%DOCSDIR%%/www/wand.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/www/source
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www/api/MagickCore
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www/api/MagickWand
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www/api
