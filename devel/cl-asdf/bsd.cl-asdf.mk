@@ -116,7 +116,7 @@ post-install:
 	@cd ${WRKSRC} && ${FIND} * -type f \
 		| ${SORT} \
 		| ${AWK} '{ print "${CL_LIBDIR_REL}/${PORTNAME}/${FASL_DIR_REL}/" $$1 }' \
-		> ${TMPPLIST}
+		>> ${TMPPLIST}
 	@cd ${WRKSRC} && ${FIND} * -type d \
 		| ${SORT} -r \
 		| ${AWK} '{ print "@dirrm ${CL_LIBDIR_REL}/${PORTNAME}/${FASL_DIR_REL}/" $$1 }' \
