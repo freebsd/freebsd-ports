@@ -1,0 +1,11 @@
+Git::Repository is a Perl interface to Git, for scripted interactions
+with repositories. It's a low-level interface that allows calling any
+Git command, whether porcelain or plumbing, including bidirectional
+commands such as git commit-tree.
+
+A Git::Repository object simply provides context to the git commands
+being run. Is it possible to call the command()and run() methods against
+the class itself, and the context (typically current working directory)
+will be obtained from the options and environment.
+
+WWW: http://search.cpan.org/dist/Git-Repository/
