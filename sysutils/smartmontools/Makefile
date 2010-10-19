@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	smartmontools
-PORTVERSION=	5.39.1
+PORTVERSION=	5.40
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	S.M.A.R.T. disk monitoring tools
+
+LICENSE=	GPLv2
 
 CONFLICTS=	smartmontools-devel-[0-9]*
 
