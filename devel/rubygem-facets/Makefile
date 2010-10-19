@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	facets
-PORTVERSION=	2.8.4
+PORTVERSION=	2.9.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
