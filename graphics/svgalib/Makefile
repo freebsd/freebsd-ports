@@ -35,6 +35,10 @@ MAN${i}!=	${CAT} ${FILESDIR}/man${i}
 .endif
 .endfor
 
+.if ${OSVERSION} < 700000 && ${ARCH} == "amd64"
+BROKEN=		does not compile on 6.X
+.endif
+
 post-patch: .SILENT
 	${MKDIR} ${WRKSRC}/include/linux
 # Fix for GCC 4.1
