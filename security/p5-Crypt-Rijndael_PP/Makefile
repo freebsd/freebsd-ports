@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Crypt-Rijndael_PP
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of Rijndael
 
 PERL_CONFIGURE=	yes
