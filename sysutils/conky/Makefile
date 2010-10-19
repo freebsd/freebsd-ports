@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	conky
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -24,8 +24,7 @@ USE_GNOME?=	pkgconfig
 USE_ICONV=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--disable-portmon \
-			--disable-hddtemp \
-			--disable-iostats
+			--disable-hddtemp
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
@@ -100,6 +99,7 @@ CONFIGURE_ARGS+=	--disable-lua
 .if defined(WITH_LUA_CAIRO)
 LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
 BUILD_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
+RUN_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
 CONFIGURE_ARGS+=	--enable-lua-cairo
 .endif
 
@@ -112,6 +112,7 @@ CONFIGURE_ARGS+=	--disable-imlib2
 
 .if defined(WITH_LUA_IMLIB2)
 BUILD_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
+RUN_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
 CONFIGURE_ARGS+=	--enable-lua-imlib2
 .endif
 
