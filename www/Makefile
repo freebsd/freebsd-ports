@@ -1468,6 +1468,7 @@
     SUBDIR += py-scrapy
     SUBDIR += py-scriptaculous
     SUBDIR += py-slimmer
+    SUBDIR += py-surl
     SUBDIR += py-textile
     SUBDIR += py-tgwebservices
     SUBDIR += py-tornado
