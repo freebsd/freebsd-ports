@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	megacli
-PORTVERSION=	8.00.23
+PORTVERSION=	8.00.29
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.lsi.com/DistributionSystem/AssetDocument/
-DISTNAME=	${PORTVERSION}_FreeBSD_CLI
+DISTNAME=	${PORTVERSION}_FreeBSD_MegaCLI
 
 MAINTAINER=	samflanker@gmail.com
 COMMENT=	SAS MegaRAID FreeBSD MegaCLI
