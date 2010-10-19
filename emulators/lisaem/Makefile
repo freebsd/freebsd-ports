@@ -14,8 +14,10 @@ MASTER_SITES=	http://lisaem.sunder.net/downloads/
 MAINTAINER=	trasz@FreeBSD.org
 COMMENT=	Apple Lisa 2 Emulator
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		pngtopnm:${PORTSDIR}/graphics/netpbm
+BUILD_DEPENDS=	pngtopnm:${PORTSDIR}/graphics/netpbm
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USE_WX=		2.8
@@ -24,7 +26,7 @@ post-patch:
 		${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" \
 				 -e "s|wx-config|${WX_CONFIG}|g" ${WRKSRC}/build.sh
 do-build:
-		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/bash build.sh build
+		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./build.sh build
 
 do-install:
 		@# This file is a symlink to itself; result of mistyped command?
