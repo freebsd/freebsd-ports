@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	HTML_Select_Common
-PORTVERSION=	1.1
-PORTREVISION=	4
+PORTVERSION=	1.2.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,12 +16,14 @@ BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common	\
 		${PEARDIR}/I18N/Common.php:${PORTSDIR}/devel/pear-I18N
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CATEGORY=	HTML
-
-FILES=		Select/Common/Country.php Select/Common/FRDepartements.php \
-		Select/Common/UKCounty.php Select/Common/USState.php
-EXAMPLES=	Country.php FRDepartements.php UKCounty.php USState.php
-_EXAMPLESDIR=	Select/Common/examples
+FILES=		HTML/Select/Common/BRState.php \
+		HTML/Select/Common/Country.php \
+		HTML/Select/Common/FRDepartements.php \
+		HTML/Select/Common/NOFylke.php \
+		HTML/Select/Common/NOKommune.php \
+		HTML/Select/Common/UKCounty.php \
+		HTML/Select/Common/USState.php
+EXAMPLES=	Country.php UKCounty.php USState.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
