@@ -23,6 +23,7 @@ CFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR} \
 		-DBSD -fPIC #-fno-stack-protector
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR} -llua -shared
 MAKE_ENV+=	LIB_OPTION="${LDFLAGS}" LIB_EXT=".so" LUA="${LUA_CMD}"
+TESTS_EXCLUDE=	tests/alien tests/alien.lua
 
 # add lua prefix to directories
 .for p in data: docs:doc/ examples:examples/
@@ -51,7 +52,8 @@ do-install:
 .if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/src/constants ${DATADIR}
-	${TAR} cf - -C${WRKSRC} tests | ${TAR} xof - -C${DATADIR}
+	${TAR} cf - -C${WRKSRC} ${TESTS_EXCLUDE:S,^,--exclude ,} tests \
+		| ${TAR} xof - -C${DATADIR}
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -63,9 +65,8 @@ do-install:
 .endif
 
 regression-test:	build
-	cd ${WRKSRC}/tests; \
-	${LN} -s ../src/alien* .; \
-	${LUA_CMD} test_alien.lua; \
-	${RM} alien alien.lua
+	${LN} -fs ${TESTS_EXCLUDE:S,tests/,../src/,} ${WRKSRC}/tests
+	cd ${WRKSRC}/tests && ${LUA_CMD} test_alien.lua
+	${RM} -f ${TESTS_EXCLUDE:S,^,${WRKSRC}/,}
 
 .include <bsd.port.mk>
