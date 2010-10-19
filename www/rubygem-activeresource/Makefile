@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	activeresource
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
