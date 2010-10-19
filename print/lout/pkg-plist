@@ -118,7 +118,7 @@ bin/prg2lout
 %%PORTDOCS%%%%DOCSDIR%%/slides/all
 %%PORTDOCS%%%%DOCSDIR%%/slides/mydefs
 %%PORTDOCS%%%%DOCSDIR%%/slides/outfile.ps
-%%PORTDOCS%%%%DOCSDIR%%/user/.pie_intr.swp
+%%PORTDOCS%%%%DOCSDIR%%/user/.README.swp
 %%PORTDOCS%%%%DOCSDIR%%/user/README
 %%PORTDOCS%%%%DOCSDIR%%/user/all
 %%PORTDOCS%%%%DOCSDIR%%/user/ap_byp
