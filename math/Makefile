@@ -169,6 +169,7 @@
     SUBDIR += librandlib
     SUBDIR += libranlip
     SUBDIR += libtommath
+    SUBDIR += libtsnnls
     SUBDIR += linalg
     SUBDIR += linpack
     SUBDIR += linux-SHA-1_collision_search_graz
