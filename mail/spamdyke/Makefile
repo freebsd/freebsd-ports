@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamdyke
-PORTVERSION=	4.0.10
+PORTVERSION=	4.1.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spamdyke.org/releases/
 EXTRACT_SUFX=	.tgz
@@ -22,8 +22,6 @@ USE_QMAIL=	yes
 GNU_CONFIGURE=	yes
 
 ALL_TARGET=	spamdyke
-
-PLIST_FILES=	bin/spamdyke etc/spamdyke.conf.example
 
 OPTIONS=	TLS "Enable TLS support" On \
 		DEBUG "Enable debugging output" Off \
@@ -56,7 +54,7 @@ CONFIGURE_ARGS+=	--without-excessive-output
 PORTDOCS=	Changelog.txt FAQ.html GNUGPL.txt INSTALL.txt \
 		README.html README_ip_file_format.html \
 		README_rdns_directory_format.html README_rdns_file_format.html \
-		UPGRADING.txt UPGRADING_version_3_to_version_4.txt TODO.txt
+		UPGRADING.txt UPGRADING_version_3_to_version_4.txt
 .endif
 
 post-install:
@@ -65,6 +63,9 @@ post-install:
 	cd ${WRKDIR}/${DISTNAME}/documentation && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/documentation/spamdyke.conf.example ${PREFIX}/etc
+	@if [ ! -f ${PREFIX}/etc/spamdyke.conf ]; then \
+		${CP} -p ${PREFIX}/etc/spamdyke.conf.example ${PREFIX}/etc/spamdyke.conf; \
+	fi
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#^CFLAGS :=.*#CFLAGS = ${CFLAGS}#' ${WRKSRC}/Makefile.in

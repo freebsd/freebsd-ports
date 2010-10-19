@@ -1,0 +1,4 @@
+bin/spamdyke
+@unexec if cmp -s %D/etc/spamdyke.conf.example %D/etc/spamdyke.conf; then rm -f %D/etc/spamdyke.conf; fi
+etc/spamdyke.conf.example
+@exec if [ ! -f %D/etc/spamdyke.conf ] ; then cp -p %D/%F %B/spamdyke.conf; fi
