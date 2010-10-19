@@ -95,6 +95,7 @@
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/JMXEnabledThreadPoolExecutor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/JMXEnabledThreadPoolExecutorMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/NamedThreadFactory.html
+%%DATADIR%%/javadoc/org/apache/cassandra/concurrent/RetryingScheduledThreadPoolExecutor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/StageManager.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/AIOExecutorService.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/Context.html
@@ -105,17 +106,20 @@
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/JMXEnabledThreadPoolExecutor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/JMXEnabledThreadPoolExecutorMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/NamedThreadFactory.html
+%%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/RetryingScheduledThreadPoolExecutor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/class-use/StageManager.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/package-frame.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/package-summary.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/package-tree.html
 %%DATADIR%%/javadoc/org/apache/cassandra/concurrent/package-use.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/CFMetaData.html
+%%DATADIR%%/javadoc/org/apache/cassandra/config/ConfigurationException.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/DatabaseDescriptor.CommitLogSync.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/DatabaseDescriptor.DiskAccessMode.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/DatabaseDescriptor.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/KSMetaData.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/class-use/CFMetaData.html
+%%DATADIR%%/javadoc/org/apache/cassandra/config/class-use/ConfigurationException.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/class-use/DatabaseDescriptor.CommitLogSync.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/class-use/DatabaseDescriptor.DiskAccessMode.html
 %%DATADIR%%/javadoc/org/apache/cassandra/config/class-use/DatabaseDescriptor.html
@@ -364,6 +368,7 @@
 %%DATADIR%%/javadoc/org/apache/cassandra/io/SSTableDeletingReference.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/SSTableReader.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/SSTableScanner.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/SSTableTracker.CacheWriter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/SSTableTracker.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/SSTableWriter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/class-use/BloomFilterTracker.html
@@ -382,6 +387,7 @@
 %%DATADIR%%/javadoc/org/apache/cassandra/io/class-use/SSTableDeletingReference.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/class-use/SSTableReader.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/class-use/SSTableScanner.html
+%%DATADIR%%/javadoc/org/apache/cassandra/io/class-use/SSTableTracker.CacheWriter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/class-use/SSTableTracker.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/class-use/SSTableWriter.html
 %%DATADIR%%/javadoc/org/apache/cassandra/io/package-frame.html
@@ -406,8 +412,6 @@
 %%DATADIR%%/javadoc/org/apache/cassandra/io/util/package-use.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/AbstractEndpointSnitch.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/AbstractReplicationStrategy.html
-%%DATADIR%%/javadoc/org/apache/cassandra/locator/DatacenterEndPointSnitch.html
-%%DATADIR%%/javadoc/org/apache/cassandra/locator/DatacenterShardStategy.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/DynamicEndpointSnitch.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/DynamicEndpointSnitchMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/EndPointSnitch.html
@@ -419,8 +423,6 @@
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/TokenMetadata.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/AbstractEndpointSnitch.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/AbstractReplicationStrategy.html
-%%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/DatacenterEndPointSnitch.html
-%%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/DatacenterShardStategy.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/DynamicEndpointSnitch.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/DynamicEndpointSnitchMBean.html
 %%DATADIR%%/javadoc/org/apache/cassandra/locator/class-use/EndPointSnitch.html
@@ -485,8 +487,6 @@
 %%DATADIR%%/javadoc/org/apache/cassandra/service/AntiEntropyService.TreeResponseVerbHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/AntiEntropyService.Validator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/AntiEntropyService.html
-%%DATADIR%%/javadoc/org/apache/cassandra/service/DatacenterSyncWriteResponseHandler.html
-%%DATADIR%%/javadoc/org/apache/cassandra/service/DatacenterWriteResponseHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/DigestMismatchException.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/EmbeddedCassandraService.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/GCInspector.html
@@ -507,8 +507,6 @@
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/AntiEntropyService.TreeResponseVerbHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/AntiEntropyService.Validator.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/AntiEntropyService.html
-%%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/DatacenterSyncWriteResponseHandler.html
-%%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/DatacenterWriteResponseHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/DigestMismatchException.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/EmbeddedCassandraService.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/GCInspector.html
