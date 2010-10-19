@@ -2024,6 +2024,7 @@
     SUBDIR += p5-PathTools
     SUBDIR += p5-Penguin
     SUBDIR += p5-Penguin-Easy
+    SUBDIR += p5-Perl-Unsafe-Signals
     SUBDIR += p5-Perl-Version
     SUBDIR += p5-Perl6-Builtins
     SUBDIR += p5-Perl6-Export
