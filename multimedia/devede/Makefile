@@ -9,7 +9,7 @@ PORTNAME=	devede
 DISTVERSION=	3.16.9
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.rastersoft.com/descargas/ \
-		${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/}
+		http://bsd-geek.de/FreeBSD/distfiles/
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Create video DVDs, VCDs, sVCDs or CVDs from any number of video files
