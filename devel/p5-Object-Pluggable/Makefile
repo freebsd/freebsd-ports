@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Object-Pluggable
-PORTVERSION=	1.28
+PORTVERSION=	1.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +23,12 @@ MAN3=		Object::Pluggable.3 \
 		Object::Pluggable::Constants.3 \
 		Object::Pluggable::Pipeline.3
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-Pod-Parser>=1.36:${PORTSDIR}/textproc/p5-Pod-Parser
+.endif
+
 post-install:
 .ifndef(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
@@ -30,4 +36,4 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
