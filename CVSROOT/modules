@@ -1319,6 +1319,7 @@ bygfoot                         ports/games/bygfoot
 bzflag                          ports/games/bzflag
 bzip                            ports/archivers/bzip
 bzr-builder                     ports/devel/bzr-builder
+bzr-colo                        ports/devel/bzr-colo
 bzr-explorer                    ports/devel/bzr-explorer
 bzr-externals                   ports/devel/bzr-externals
 bzr-grep                        ports/devel/bzr-grep
@@ -2118,6 +2119,7 @@ cyr-rfx                         ports/x11-fonts/cyr-rfx
 cyrus-imapd2                    ports/mail/cyrus-imapd2
 cyrus-imapd22                   ports/mail/cyrus-imapd22
 cyrus-imapd23                   ports/mail/cyrus-imapd23
+cyrus-imapd24                   ports/mail/cyrus-imapd24
 cyrus-imspd                     ports/databases/cyrus-imspd
 cyrus-sasl2                     ports/security/cyrus-sasl2
 cyrus-sasl2-ldapdb              ports/security/cyrus-sasl2-ldapdb
@@ -6468,7 +6470,6 @@ ja-rubygem-jpmobile-ipaddresses  ports/japanese/rubygem-jpmobile-ipaddresses
 ja-rubygem-jpmobile-terminfo    ports/japanese/rubygem-jpmobile-terminfo
 ja-rxvt                         ports/japanese/rxvt
 ja-ryaku-fpw                    ports/japanese/ryaku-fpw
-ja-samba3                       ports/japanese/samba3
 ja-scim-anthy                   ports/japanese/scim-anthy
 ja-scim-canna                   ports/japanese/scim-canna
 ja-scim-honoka                  ports/japanese/scim-honoka
@@ -21244,7 +21245,6 @@ py-rtree                        ports/devel/py-rtree
 py-ruledispatch                 ports/devel/py-ruledispatch
 py-rxp                          ports/textproc/py-rxp
 py-s3cmd                        ports/net/py-s3cmd
-py-samba                        ports/net/py-samba
 py-satchmo                      ports/www/py-satchmo
 py-scgi                         ports/www/py-scgi
 py-scientific                   ports/math/py-scientific
@@ -22948,10 +22948,6 @@ samba-libsmbclient              ports/net/samba-libsmbclient
 samba-nmblookup                 ports/net/samba-nmblookup
 samba-pdbsql                    ports/net/samba-pdbsql
 samba-smbclient                 ports/net/samba-smbclient
-samba-vscan                     ports/security/samba-vscan
-samba3                          ports/net/samba3
-samba32                         ports/net/samba32
-samba33                         ports/net/samba33
 samba34                         ports/net/samba34
 samba4-devel                    ports/net/samba4-devel
 samba4wins                      ports/net/samba4wins
