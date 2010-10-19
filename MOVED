@@ -4643,3 +4643,4 @@ net/samba33||2010-10-18|Has expired: Unsupported by the upstream. Please, consid
 japanese/samba3||2010-10-18|Has expired: Unsupported by the upstream. Please, consider to upgrade.
 net/py-samba||2010-10-18|Has expired: Unsupported by the upstream. Please, consider to upgrade.
 security/samba-vscan||2010-10-18|Removed
+net-p2p/amule2|net-p2p/amule|2010-10-05|Split to -devel and non-devel ports

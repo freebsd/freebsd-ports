@@ -3,7 +3,6 @@
 
     COMMENT = peer-to-peer network applications
 
-    SUBDIR += amule2
     SUBDIR += apollon
     SUBDIR += azureus
     SUBDIR += azureus2
