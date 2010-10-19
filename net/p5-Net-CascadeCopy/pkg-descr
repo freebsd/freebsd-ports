@@ -1,0 +1,20 @@
+This module implements a scalable method of quickly propagating files
+to a large number of servers in one or more locations via rsync or
+scp.
+
+This module and the included script, ccp, take a much more efficient
+approach that is O(log n). Once the file(s) are been copied to a
+remote server, that server will be promoted to be used as source
+server for copying to remaining servers. Thus, the rate of transfer
+increases exponentially rather than linearly.
+
+Servers can be specified in groups (e.g. datacenter) to prevent
+copying across groups. This maximizes the number of transfers done
+over a local high-speed connection (LAN) while minimizing the number
+of transfers over the WAN.
+
+The number of multiple simultaneous transfers per source point is
+configurable. The total number of simultaneously forked processes is
+limited via Proc::Queue, and is currently hard coded to 32.
+
+WWW:	http://search.cpan.org/dist/Net-CascadeCopy/

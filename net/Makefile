@@ -535,6 +535,7 @@
     SUBDIR += p5-Net-CIDR-Lite
     SUBDIR += p5-Net-CIDR-MobileJP
     SUBDIR += p5-Net-CSTA
+    SUBDIR += p5-Net-CascadeCopy
     SUBDIR += p5-Net-Cassandra
     SUBDIR += p5-Net-Cassandra-Easy
     SUBDIR += p5-Net-DAV-Server
