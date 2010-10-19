@@ -1,4 +1,4 @@
-# New ports collection makefile for:	amule2
+# New ports collection makefile for:	amule-devel
 # Date created:		Wed Nov 05 09:30:00 UTC 2003
 # Whom:			Ganael LAPLANCHE <ganael.laplanche@martymac.org>
 #
@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	amule
-PORTVERSION=	10275
+PORTVERSION=	10305
 CATEGORIES=	net-p2p
-MASTER_SITES=	LOCAL/pav \
-		http://repo.or.cz/w/${PORTNAME}.git/snapshot/
-DISTNAME=	${PORTNAME}-svn-r${PORTVERSION}
+MASTER_SITES=	http://amule.sourceforge.net/tarballs/
+PKGNAMESUFFIX=	-devel
+DISTNAME=	aMule-SVN-r${PORTVERSION}
 
 MAINTAINER=	swell.k@gmail.com
 COMMENT=	The all-platform eMule p2p client
@@ -18,11 +18,9 @@ COMMENT=	The all-platform eMule p2p client
 BUILD_DEPENDS=	${FLEX}:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/lib/libcryptopp.a:${PORTSDIR}/security/cryptopp
 
-LATEST_LINK=	amule2
-CONFLICTS=	aMule-[0-9]* aMule-devel-[0-9]* ed2k-hash-[0-9]*
+CONFLICTS=	amule-[0-9]*
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
+USE_BZIP2=	yes
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
 USE_KDE4=	# empty
@@ -40,17 +38,21 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 
-OPTIONS=	ALC "Compile aMule Link Creator (+GUI)" on \
+OPTIONS=	ALC "Compile aMule Link Creator for GUI" on \
+		ALCC "Compile aMule Link Creator for console" on \
 		AMULECMD "Compile aMule command line client" on \
 		AMULEDAEMON "Compile aMule daemon version" on \
 		AMULEGUI "Compile aMule remote GUI (EXPERIMENTAL)" on \
-		CAS "Compile C aMule Statistics (+GUI)" on \
+		CAS "Compile aMule Statistics for console" on \
 		ED2K "Compile aMule ed2k links handler" on \
+		FILEVIEW "Compile file viewer for console (EXPERIMENTAL)" on \
 		GEOIP "Enable GeoIP IP2Country support" off \
 		MMAP "Enable using mapped memory" off \
+		MONOLITHIC "Compile monolithic aMule" on \
 		PLASMAMULE "Compile aMule plasma applet and engine" off \
 		UPNP "Enable Universal Plug and Play support" off \
 		WEBSERVER "Compile aMule WebServer" on \
+		WXCAS "Compile aMule Statistics for GUI" on \
 		WXUNICODE "Enable Unicode support" on \
 		XAS "Install XChat2 plugin" on
 
@@ -76,11 +78,19 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if !defined(WITHOUT_ALC)
-CONFIGURE_ARGS+=	--enable-alc --enable-alcc
+CONFIGURE_ARGS+=	--enable-alc
 PLIST_SUB+=		ALC=""
 .else
-CONFIGURE_ARGS+=	--disable-alc --disable-alcc
+CONFIGURE_ARGS+=	--disable-alc
 PLIST_SUB+=		ALC="@comment "
+.endif
+
+.if !defined(WITHOUT_ALCC)
+CONFIGURE_ARGS+=	--enable-alcc
+PLIST_SUB+=		ALCC=""
+.else
+CONFIGURE_ARGS+=	--disable-alcc
+PLIST_SUB+=		ALCC="@comment "
 .endif
 
 .if !defined(WITHOUT_AMULECMD)
@@ -109,20 +119,29 @@ PLIST_SUB+=		AMULEGUI="@comment "
 .endif
 
 .if !defined(WITHOUT_CAS)
-CONFIGURE_ARGS+=	--enable-cas --enable-wxcas
+CONFIGURE_ARGS+=	--enable-cas
 LIB_DEPENDS+=		gd.4:${PORTSDIR}/graphics/gd
 PLIST_SUB+=		CAS=""
 .else
-CONFIGURE_ARGS+=	--disable-cas --disable-wxcas
+CONFIGURE_ARGS+=	--disable-cas
 PLIST_SUB+=		CAS="@comment "
 .endif
 
 .if !defined(WITHOUT_ED2K)
+CONFLICTS+=		ed2k-hash-[0-9]*
 CONFIGURE_ARGS+=	--enable-ed2k
 PLIST_SUB+=		ED2K=""
 .else
 CONFIGURE_ARGS+=	--disable-ed2k
 PLIST_SUB+=		ED2K="@comment "
+.endif
+
+.if !defined(WITHOUT_FILEVIEW)
+CONFIGURE_ARGS+=	--enable-fileview
+PLIST_SUB+=		FILEVIEW=""
+.else
+CONFIGURE_ARGS+=	--disable-fileview
+PLIST_SUB+=		FILEVIEW="@comment "
 .endif
 
 .if !defined(WITHOUT_GEOIP)
@@ -136,6 +155,14 @@ CONFIGURE_ARGS+=	--disable-geoip
 CONFIGURE_ARGS+=	--enable-mmap
 .else
 CONFIGURE_ARGS+=	--disable-mmap
+.endif
+
+.if !defined(WITHOUT_MONOLITHIC)
+CONFIGURE_ARGS+=	--enable-monolithic
+PLIST_SUB+=		MONOLITHIC=""
+.else
+CONFIGURE_ARGS+=	--disable-monolithic
+PLIST_SUB+=		MONOLITHIC="@comment "
 .endif
 
 .if !defined(WITHOUT_PLASMAMULE)
@@ -163,6 +190,14 @@ CONFIGURE_ARGS+=	--disable-webserver
 PLIST_SUB+=		WEBSERVER="@comment "
 .endif
 
+.if !defined(WITHOUT_WXCAS)
+CONFIGURE_ARGS+=	--enable-wxcas
+PLIST_SUB+=		WXCAS=""
+.else
+CONFIGURE_ARGS+=	--disable-wxcas
+PLIST_SUB+=		WXCAS="@comment "
+.endif
+
 .if !defined(WITHOUT_WXUNICODE)
 WX_UNICODE=		yes
 .endif
@@ -183,7 +218,8 @@ post-patch:	.SILENT
 		-e 's/test.*-print-file-name.*`/true/' \
 		${WRKSRC}/configure
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} 's/install-data-am:.*/install-data-am:/' ${WRKSRC}/docs/Makefile.in
+	${REINPLACE_CMD} 's/install-data-am:.*/install-data-am:/' \
+		${WRKSRC}/docs/Makefile.in
 .endif
 .if !defined(WITHOUT_PLASMAMULE)
 	${REINPLACE_CMD} -e 's|@prefix@|${KDE4_PREFIX}|' \
@@ -194,6 +230,9 @@ post-patch:	.SILENT
 .endif
 
 post-install:
+.if !defined(WITHOUT_FILEVIEW)
+	${INSTALL_PROGRAM} ${WRKSRC}/src/utils/fileview/mulefileview ${PREFIX}/bin
+.endif
 .if !defined(WITHOUT_PLASMAMULE)
 	-update-desktop-database ${KDE4_PREFIX}/share/applications
 	-update-mime-database ${KDE4_PREFIX}/share/mime

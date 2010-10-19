@@ -15,8 +15,8 @@
 %%PLASMAMULE%%@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime 2>/dev/null || true
 %%PLASMAMULE%%@cwd
 %%ALC%%bin/alc
-%%ALC%%bin/alcc
-bin/amule
+%%ALCC%%bin/alcc
+%%MONOLITHIC%%bin/amule
 %%AMULECMD%%bin/amulecmd
 %%AMULEDAEMON%%bin/amuled
 %%AMULEGUI%%bin/amulegui
@@ -24,7 +24,8 @@ bin/amule
 %%XAS%%bin/autostart-xas
 %%CAS%%bin/cas
 %%ED2K%%bin/ed2k
-%%CAS%%bin/wxcas
+%%FILEVIEW%%bin/mulefileview
+%%WXCAS%%bin/wxcas
 %%XAS%%lib/xchat/plugins/xas.pl
 %%DATADIR%%/skins/Mac_Gray.zip
 %%DATADIR%%/skins/gnome.zip
@@ -101,9 +102,9 @@ bin/amule
 %%WEBSERVER%%%%DATADIR%%/webserver/default/up.png
 %%WEBSERVER%%%%DATADIR%%/webserver/default/yellow.gif
 %%ALC%%share/applications/alc.desktop
-share/applications/amule.desktop
+%%MONOLITHIC%%share/applications/amule.desktop
 %%AMULEGUI%%share/applications/amulegui.desktop
-%%CAS%%share/applications/wxcas.desktop
+%%WXCAS%%share/applications/wxcas.desktop
 %%CAS%%share/cas/stat.png
 %%CAS%%share/cas/tmp.html
 %%NLS%%share/locale/ar/LC_MESSAGES/amule.mo
@@ -144,9 +145,9 @@ share/applications/amule.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/amule.mo
 %%ALC%%share/pixmaps/alc.xpm
-share/pixmaps/amule.xpm
+%%MONOLITHIC%%share/pixmaps/amule.xpm
 %%AMULEGUI%%share/pixmaps/amulegui.xpm
-%%CAS%%share/pixmaps/wxcas.xpm
+%%WXCAS%%share/pixmaps/wxcas.xpm
 %%XAS%%@dirrmtry lib/xchat/plugins
 %%XAS%%@dirrmtry lib/xchat
 @dirrmtry man/de/man1
