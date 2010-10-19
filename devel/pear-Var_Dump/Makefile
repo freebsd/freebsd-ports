@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Var_Dump
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
