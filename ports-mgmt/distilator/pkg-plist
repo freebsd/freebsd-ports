@@ -1,0 +1,11 @@
+bin/distilator
+%%SITE_PERL%%/FreeBSD/Ports/Distilator.pm
+%%SITE_PERL%%/FreeBSD/Ports/DistilatorCommon.pm
+%%SITE_PERL%%/FreeBSD/Ports/DistilatorSingle.pm
+%%SITE_PERL%%/FreeBSD/Ports/DistilatorThreaded.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Ports/Distilator/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Ports/Distilator
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Ports
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD
+@dirrmtry %%SITE_PERL%%/FreeBSD/Ports
+@dirrmtry %%SITE_PERL%%/FreeBSD
