@@ -15,8 +15,8 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A pkg-config implementation for Ruby
 
 USE_RUBY=	yes
-USE_RAKE=	yes
 USE_RUBYGEMS=	yes
+USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
