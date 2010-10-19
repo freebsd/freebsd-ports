@@ -121,7 +121,7 @@ PLIST_SUB+=		CAS="@comment "
 .endif
 
 .if !defined(WITHOUT_ED2K)
-CONFLICTS+=		ed2k-hash-[0-9]*
+CONFLICTS+=		ed2k-hash*
 CONFIGURE_ARGS+=	--enable-ed2k
 PLIST_SUB+=		ED2K=""
 .else
