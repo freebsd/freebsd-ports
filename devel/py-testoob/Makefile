@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@fsck.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Testoob is an advanced unit testing framework for PyUnit
 
 OPTIONS=	TWISTED "enable running in threads" off \
