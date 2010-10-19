@@ -16,6 +16,7 @@ MAINTAINER=	c-s@c-s.li
 COMMENT=	URL shortening command line application
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=0:${PORTSDIR}/devel/py-simplejson
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=0:${PORTSDIR}/devel/py-simplejson
 
 LICENSE=	GPLv3
 
