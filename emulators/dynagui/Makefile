@@ -7,6 +7,7 @@
 
 PORTNAME=	dynagui
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	dynagui
@@ -14,7 +15,7 @@ DIST_SUBDIR=	dynagui
 MAINTAINER=	greenwood.andy@gmail.com
 COMMENT=	GUI frontend to the dynamips router simulator
 
-BUILD_DEPENDS=	dynagen:${PORTSDIR}/emulators/dynagen-devel
+BUILD_DEPENDS=	dynagen:${PORTSDIR}/emulators/dynagen
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
