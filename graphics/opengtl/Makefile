@@ -16,6 +16,8 @@ COMMENT=	Graphics Transformation Languages
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	llvm>=2.7<2.8.*:${PORTSDIR}/devel/llvm
 
+BROKEN=		does not build
+
 USE_BZIP2=	yes
 USE_GCC=	4.2+
 USE_PERL5=	yes
