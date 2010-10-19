@@ -15,4 +15,6 @@ USE_ASDF_FASL=	yes
 FASL_BUILD=	yes
 FASL_TARGET=	sbcl
 
+PLIST=		${.CURDIR}/pkg-plist
+
 .include "${MASTERDIR}/Makefile"
