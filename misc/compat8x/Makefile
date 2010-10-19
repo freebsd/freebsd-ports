@@ -7,6 +7,7 @@
 
 PORTNAME=	compat7x
 PORTVERSION=	7.3.703000.201008
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	garga/compat
@@ -36,7 +37,7 @@ USE_LDCONFIG32=	${TARGET32_DIR}
 .endif
 
 do-install:
-	@${MKDIR} ${TARGET_DIR}
+	@${MKDIR} -m 0755 ${TARGET_DIR}
 	(cd ${WRKSRC}/lib && ${INSTALL_DATA} *.so.* ${TARGET_DIR})
 	(cd ${TARGET_DIR} && ${LN} -sf /lib/libthr.so.3 libkse.so.3)
 .if ${ARCH} == amd64

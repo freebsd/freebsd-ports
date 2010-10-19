@@ -11,6 +11,7 @@
 
 PORTNAME=	compat5x
 PORTVERSION=	5.4.0.8.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=amdmi3/compat5x
@@ -64,7 +65,7 @@ PLIST_SUB+=	SPARC64="@comment "
 .endif
 
 do-install:
-	@${MKDIR} ${TARGET_DIR}
+	@${MKDIR} -m 0755 ${TARGET_DIR}
 .if ${OSVERSION} >= 800105
 	${RM} -f ${WRKSRC}/libpthread.so.1
 	(cd ${TARGET_DIR} && ${LN} -sf libthr.so.1 libpthread.so.1)
