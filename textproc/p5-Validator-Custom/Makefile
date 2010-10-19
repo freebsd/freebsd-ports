@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Validator-Custom
-PORTVERSION=	0.1402
+PORTVERSION=	0.1403
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,9 @@ RUN_DEPENDS=	p5-Object-Simple>=3.0302:${PORTSDIR}/devel/p5-Object-Simple
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Validator::Custom.3 Validator::Custom::Result.3 \
-		Validator::Custom::Basic::Constraints.3
+MAN3=		Validator::Custom.3 \
+		Validator::Custom::Basic::Constraints.3 \
+		Validator::Custom::Guides.3 \
+		Validator::Custom::Result.3
 
 .include <bsd.port.mk>
