@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xist
-PORTVERSION=	3.7.6
+PORTVERSION=	3.9
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://ftp.livinglogic.de/xist/
@@ -22,9 +22,7 @@ RUN_DEPENDS=	${PYXML} \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_PKGNAMEPREFIX}cssutils>=0.9.5:${PORTSDIR}/www/py-cssutils
 
-BROKEN=		bad plist
-
-USE_PYTHON=		2.4+
+USE_PYTHON=		2.6+
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 USE_BZIP2=		yes
