@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/ \
 		http://ftp.stack.nl/pub/users/dimitri/
@@ -17,6 +17,9 @@ COMMENT=	A documentation system for C, C++ and other languages
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_BISON=	build
 USE_ICONV=	yes
@@ -104,7 +107,7 @@ pre-install:
 		| ${TAR} -C ${TMPDOCDEST}/doxygen --unlink -xf -
 	${TAR} -C ${WRKSRC} --exclude '*/Makefile*' --exclude '*.dot' \
 		-cf - examples \
-	    | ${TAR} -C ${TMPDOCDEST}/doxygen --unlink -xf -
+		| ${TAR} -C ${TMPDOCDEST}/doxygen --unlink -xf -
 .ifndef WITHOUT_LATEX
 	${INSTALL_DATA} ${WRKSRC}/latex/doxygen_manual.dvi \
 			${WRKSRC}/latex/doxygen_manual.pdf \
