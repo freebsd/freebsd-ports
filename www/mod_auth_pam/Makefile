@@ -9,8 +9,7 @@ PORTNAME=	mod_auth_pam
 PORTVERSION=	1.1.1
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://pam.sourceforge.net/mod_auth_pam/dist/ \
-		http://atreides.freenix.no/~anders/
+MASTER_SITES=	http://pam.sourceforge.net/mod_auth_pam/dist/
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use PAM modules for user authentication

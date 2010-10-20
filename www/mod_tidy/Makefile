@@ -8,8 +8,7 @@
 PORTNAME=	mod_tidy
 PORTVERSION=	0.5.5
 CATEGORIES=	www
-MASTER_SITES=	http://mod-tidy.sourceforge.net/src/ \
-		http://keyserver.kjsl.com/~jharris/distfiles/
+MASTER_SITES=	http://mod-tidy.sourceforge.net/src/
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org

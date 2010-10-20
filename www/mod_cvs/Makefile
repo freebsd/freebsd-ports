@@ -8,10 +8,7 @@
 PORTNAME=	mod_cvs
 PORTVERSION=	0.5
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp.sub.nu/pub/mod_cvs/ \
-		ftp://ftp.isk.kth.se/pub/people/main/mod_cvs/
-MASTER_SITE_SUBDIR=	petef
+MASTER_SITES=	http://resare.com/noa/mod_cvs/dist/
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A module that makes Apache CVS aware

@@ -9,8 +9,7 @@ PORTNAME=	mod_musicindex
 PORTVERSION=	1.3.3
 PORTREVISION=	4
 CATEGORIES=	www audio
-MASTER_SITES=	http://www.parisc-linux.org/~varenet/musicindex/ \
-		http://depot.fsck.ch/mirror/distfiles/
+MASTER_SITES=	http://www.parisc-linux.org/~varenet/musicindex/oldsrc/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	apache@FreeBSD.org

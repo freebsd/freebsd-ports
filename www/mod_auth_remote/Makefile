@@ -8,8 +8,7 @@
 PORTNAME=	mod_auth_remote
 PORTVERSION=	1.0
 CATEGORIES=	www
-MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
-		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
+MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/
 # Original location is here: http://puggy.symonds.net/~srp/stuff/
 DIST_SUBDIR=	apache
 
