@@ -7,16 +7,17 @@
 
 PORTNAME=	grsync
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.opbyte.it/release/ \
-		GENTOO/distfiles \
-		LOCAL/chinsan
+		LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	GTK frontend for rsync
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
+
+LICENSE=	GPLv2
 
 USE_GNOME=	gtk20 desktopfileutils
 GNU_CONFIGURE=	yes
