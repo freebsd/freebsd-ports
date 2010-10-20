@@ -3,6 +3,7 @@ share/applications/%%APP_NAME%%.desktop
 lib/%%APP_NAME%%/README.txt
 lib/%%APP_NAME%%/Throbber-small.gif
 lib/%%APP_NAME%%/application.ini
+lib/%%APP_NAME%%/blocklist.xml
 lib/%%APP_NAME%%/chrome/classic.jar
 lib/%%APP_NAME%%/chrome/classic.manifest
 lib/%%APP_NAME%%/chrome/comm.jar
