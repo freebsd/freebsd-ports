@@ -23,10 +23,9 @@ PLIST_FILES=		%%PYTHON_SITELIBDIR%%/jswebkit.so
 
 PROJECTHOST=		gwrite
 
-WRKSRC=			${WRKDIR}/python-jswebkit
+WRKSRC=			${WRKDIR}/${DISTNAME}
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	python_jswebkit
-PYDISTUTILS_PKGVERSION=	0.0.2
 
 .include <bsd.port.mk>
