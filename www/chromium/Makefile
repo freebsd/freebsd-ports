@@ -9,7 +9,8 @@ PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
 DISTVERSION=	5.0.375.127
 CATEGORIES=	www
-MASTER_SITES=	http://chromium.hybridsource.org/old/ports/
+MASTER_SITES=	http://chromium.hybridsource.org/old/ports/ \
+		CRITICAL
 
 MAINTAINER=	chromium@hybridsource.org
 COMMENT=	A mostly BSD-licensed web browser based on WebKit and Gtk+
