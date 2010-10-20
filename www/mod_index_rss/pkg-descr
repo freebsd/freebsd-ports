@@ -1,5 +1,3 @@
 This module provides RSS output for directories. Sites that publish mainly
 static content to directories (whether images, html...) can use it to have
 dynamic lists of their content. 
-
-WWW: http://tangent.org/index.pl?lastnode_id=478&node_id=409

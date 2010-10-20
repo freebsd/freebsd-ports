@@ -1,4 +1,4 @@
 mod_auth_cas is an Apache 2.0/2.2 compliant module that
 supports the CASv1 and CASv2 protocols.
 
-WWW: http://www.ja-sig.org/wiki/display/CASC/mod_auth_cas
+WWW: https://wiki.jasig.org/display/CASC/mod_auth_cas
