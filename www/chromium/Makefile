@@ -19,7 +19,9 @@ BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex		\
 		gperf:${PORTSDIR}/devel/gperf		\
 		bash:${PORTSDIR}/shells/bash		\
 		pkg-config:${PORTSDIR}/devel/pkg-config	\
-		yasm:${PORTSDIR}/devel/yasm
+		yasm:${PORTSDIR}/devel/yasm		\
+		nss>=3.12:${PORTSDIR}/security/nss
+# minimal version of nss, LIB_DEPENDS does not enforce this
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo	\
 		cairo.2:${PORTSDIR}/graphics/cairo		\
