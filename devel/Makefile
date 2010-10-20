@@ -1636,6 +1636,7 @@
     SUBDIR += p5-File-NFSLock
     SUBDIR += p5-File-Path
     SUBDIR += p5-File-Path-Expand
+    SUBDIR += p5-File-Path-Tiny
     SUBDIR += p5-File-PathConvert
     SUBDIR += p5-File-Pid
     SUBDIR += p5-File-Pid-Quick
