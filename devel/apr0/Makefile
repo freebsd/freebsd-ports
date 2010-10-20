@@ -6,7 +6,6 @@
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -27,8 +26,8 @@ OPTIONS=	THREADS "Enable Threads in apr"				on  \
 		NDBM	"Enable NDBM support in apr-util"		off \
 		DEVRANDOM "Use /dev/random or compatible in apr"	on
 
-APR_VERSION=	0.9.18
-APU_VERSION=	0.9.17
+APR_VERSION=	0.9.19
+APU_VERSION=	0.9.19
 
 NO_LATEST_LINK=	yes
 
@@ -58,11 +57,6 @@ APU_CONF_ARGS=	--with-apr=${APR_WRKDIR} \
 ########## APR Options
 .if defined(WITHOUT_THREADS)
 APR_CONF_ARGS+=	--disable-threads
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nothr
-.else
-PKGNAMESUFFIX=	-nothr
-.endif
 .else
 APR_CONF_ARGS+=	--enable-threads
 .endif
@@ -71,22 +65,12 @@ APR_CONF_ARGS+=	--enable-threads
 APR_CONF_ARGS+=	--disable-ipv6
 .else
 APR_CONF_ARGS+=	--enable-ipv6
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ipv6
-.else
-PKGNAMESUFFIX=	-ipv6
-.endif
 .endif
 
 .if defined(WITHOUT_DEVRANDOM)
 APR_CONF_ARGS+=	--without-devrandom
 .else
 APR_CONF_ARGS+=	--with-devrandom
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-devrandom
-.else
-PKGNAMESUFFIX=	-devrandom
-.endif
 .endif
 
 ######### APR-Util Options
@@ -97,11 +81,6 @@ APU_CONF_ARGS+=	--without-gdbm
 PLIST_SUB+=	GDBM=""
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
 APU_CONF_ARGS+=	--with-gdbm=${LOCALBASE}
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gdbm
-.else
-PKGNAMESUFFIX=	-gdbm
-.endif
 .endif
 
 .if defined(WITHOUT_BDB)
@@ -112,21 +91,11 @@ PLIST_SUB+=	BDB=""
 USE_BDB=	42+
 INVALID_BDB_VER=	50
 APU_CONF_ARGS+=	--with-berkeley-db=${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
-.else
-PKGNAMESUFFIX=	-${BDB_INCLUDE_DIR:S,^${LOCALBASE}/include/,,}
-.endif
 .endif
 
 .if defined(WITH_NDBM)
 PLIST_SUB+=	NDBM=""
 APU_CONF_ARGS+=	--with-ndbm=/usr
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ndbm
-.else
-PKGNAMESUFFIX=	-ndbm
-.endif
 .else
 PLIST_SUB+=	NDBM="@comment "
 APU_CONF_ARGS+=	--without-ndbm
@@ -137,11 +106,6 @@ PLIST_SUB+=	LDAP=""
 USE_OPENLDAP=	yes
 APU_CONF_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
 	--with-ldap-lib=${LOCALBASE}/lib --with-ldap=ldap
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ldap${OPENLDAP_VER}
-.else
-PKGNAMESUFFIX=	-ldap
-.endif
 .else
 PLIST_SUB+=	LDAP="@comment "
 .endif

@@ -1,5 +1,5 @@
---- ./apr-util-0.9.17/config.layout.orig	2004-11-24 18:45:40.000000000 -0500
-+++ ./apr-util-0.9.17/config.layout	2010-05-13 16:34:13.405620669 -0400
+--- ./apr-util-0.9.19/config.layout.orig	2004-11-24 23:45:40.000000000 +0000
++++ ./apr-util-0.9.19/config.layout	2010-10-20 21:08:11.861623284 +0000
 @@ -229,3 +229,7 @@
      infodir:       ${exec_prefix}/share/info
      libsuffix     -${APRUTIL_MAJOR_VERSION}

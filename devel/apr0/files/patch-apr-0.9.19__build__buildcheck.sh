@@ -1,5 +1,5 @@
---- ./apr-0.9.18/build/buildcheck.sh.orig	2004-11-24 18:10:04.000000000 -0500
-+++ ./apr-0.9.18/build/buildcheck.sh	2010-05-13 16:34:13.409617834 -0400
+--- ./apr-0.9.19/build/buildcheck.sh.orig	2004-11-24 23:10:04.000000000 +0000
++++ ./apr-0.9.19/build/buildcheck.sh	2010-10-20 21:08:11.853623919 +0000
 @@ -26,7 +26,7 @@
  # output is multiline from 1.5 onwards
  

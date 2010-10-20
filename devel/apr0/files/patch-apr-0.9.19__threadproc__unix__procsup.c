@@ -1,5 +1,5 @@
---- ./apr-0.9.18/threadproc/unix/procsup.c.orig	2006-09-20 12:04:09.000000000 -0400
-+++ ./apr-0.9.18/threadproc/unix/procsup.c	2010-05-13 16:34:13.426619474 -0400
+--- ./apr-0.9.19/threadproc/unix/procsup.c.orig	2006-09-20 16:04:09.000000000 +0000
++++ ./apr-0.9.19/threadproc/unix/procsup.c	2010-10-20 21:08:11.859622744 +0000
 @@ -21,6 +21,7 @@
      int x;
  
