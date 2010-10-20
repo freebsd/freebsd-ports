@@ -25,6 +25,9 @@ AP_LIB+=	${LOCALBASE}/lib/mysql -lmysqlclient
 
 PORTDOCS=	README
 
+DEPRECATED=	upstream is gone
+EXPIRATION_DATE=	2011-01-02
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
