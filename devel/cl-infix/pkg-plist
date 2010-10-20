@@ -1,6 +1,6 @@
 lib/common-lisp/system-registry/infix.asd
 lib/common-lisp/infix/infix.asd
-lib/common-lisp/infix/infix.cl
+lib/common-lisp/infix/infix.lisp
 lib/common-lisp/infix/infix.system
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/infix.3lisp
