@@ -11,7 +11,8 @@
 PORTNAME=	mod_bandwidth
 PORTVERSION=	2.1.0
 CATEGORIES=	www
-MASTER_SITES=	http://potatohead.estat.com/FreeBSD/
+MASTER_SITES=	ftp://ftp.cohprog.com/pub/apache/module/1.3.0/
+## only .c is available from upstream, ftp.fbsd has the tgz
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DIST_SUBDIR=	apache
 

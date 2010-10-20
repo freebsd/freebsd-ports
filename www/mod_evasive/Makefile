@@ -8,8 +8,7 @@
 PORTNAME=	mod_evasive
 PORTVERSION=	1.10.1
 CATEGORIES=	www security
-MASTER_SITES=	http://www.zdziarski.com/projects/mod_evasive/ \
-		ftp://ftp.oav.net/pkg_freebsd/distfiles/
+MASTER_SITES=	http://www.zdziarski.com/blog/wp-content/uploads/2010/02/
 DISTNAME=	mod_evasive_${PORTVERSION}
 DIST_SUBDIR=	apache2
 

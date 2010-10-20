@@ -8,8 +8,7 @@
 PORTNAME=	mod_scgi
 PORTVERSION=	1.12
 CATEGORIES=	www
-MASTER_SITES=	http://quixote.python.ca/releases/ \
-		http://dryice.name/computer/FreeBSD/distfiles/
+MASTER_SITES=	http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}mod_
 DISTNAME=	scgi-${PORTVERSION:S/.a/a/}
 

@@ -8,7 +8,8 @@
 PORTNAME=	mod_auth_cas
 PORTVERSION=	1.0.8
 CATEGORIES=	www
-MASTER_SITES=	https://www.ja-sig.org/svn/cas-clients/mod_auth_cas/tags/mod_auth_cas-1.0.8/src/
+#MASTER_SITES=	https://www.ja-sig.org/svn/cas-clients/mod_auth_cas/tags/mod_auth_cas-1.0.8/src/
+# SVN tags only, *sigh*
 DISTFILES=	mod_auth_cas.c mod_auth_cas.h
 DIST_SUBDIR=	mod_auth_cas
 EXTRACT_ONLY=
