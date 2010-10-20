@@ -219,17 +219,24 @@ pre-install:
 	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
 .endif
 
+LIBS_TOFIX=	vtkNetCDF_cxx Cosmo VPIC
+LIBDIR=		${PREFIX}/lib/vtk-${PORTVERSION:R}/
+
 post-install:
 # Ports system wants us to conform to lib.so.x format, but VTK5
 # only installs lib.so.x.y and lib.so.x.y.z.
 .if defined(WITH_SHARED)
-	@for lib in ${PREFIX}/lib/vtk-${PORTVERSION:R}/libvtk*.so; do \
+	@for lib in ${LIBS_TOFIX}; do \
+		${CP} ${LIBDIR}/lib$$lib.so ${LIBDIR}/lib$$lib.so.${PORTVERSION}; \
+	done
+	@for lib in ${LIBDIR}/*.so; do \
 	    ${RM} -f $$lib; \
-	    ${LN} -sf $$lib.${PORTVERSION} $$lib; \
-	    ${LN} -sf $$lib.${PORTVERSION} $$lib.${PORTVERSION:R:R}; \
+		 ${LN} -sf $$lib.${PORTVERSION} $$lib.${PORTVERSION:R}; \
+		 ${LN} -sf $$lib.${PORTVERSION:R} $$lib.${PORTVERSION:R:R}; \
+		 ${LN} -sf $$lib.${PORTVERSION:R:R} $$lib; \
 	done
 .if defined(WITH_QT)
-	@for lib in ${PREFIX}/lib/vtk-${PORTVERSION:R}/libQVTK*.so; do \
+	@for lib in ${LIBDIR}/libQVTK*.so; do \
 	    ${RM} -f $$lib; \
 	    ${LN} -sf $$lib.${PORTVERSION} $$lib; \
 	    ${LN} -sf $$lib.${PORTVERSION} $$lib.${PORTVERSION:R:R}; \
