@@ -34,6 +34,81 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c4f067b9-dc4a-11df-8e32-000f20797ede">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>3.6.*,1</gt><lt>3.6.11,1</lt></range>
+	<range><gt>3.5.*,1</gt><lt>3.5.14,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><gt>1.9.2.*</gt><lt>1.9.2.11</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>3.6.11,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox-devel</name>
+	<range><lt>3.5.14</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><gt>2.0.*</gt><lt>2.0.9</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><ge>3.0</ge><lt>3.0.9</lt></range>
+	<range><ge>3.1</ge><lt>3.1.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2010-64 Miscellaneous memory safety hazards (rv:1.9.2.11/ 1.9.1.14)</p>
+	  <p>MFSA 2010-65 Buffer overflow and memory corruption using document.write</p>
+	  <p>MFSA 2010-66 Use-after-free error in nsBarProp</p>
+	  <p>MFSA 2010-67 Dangling pointer vulnerability in LookupGetterOrSetter</p>
+	  <p>MFSA 2010-68 XSS in gopher parser when parsing hrefs</p>
+	  <p>MFSA 2010-69 Cross-site information disclosure via modal calls</p>
+	  <p>MFSA 2010-70 SSL wildcard certificate matching IP addresses</p>
+	  <p>MFSA 2010-71 Unsafe library loading vulnerabilities</p>
+	  <p>MFSA 2010-72 Insecure Diffie-Hellman key exchange</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-3170</cvename>
+      <cvename>CVE-2010-3173</cvename>
+      <cvename>CVE-2010-3174</cvename>
+      <cvename>CVE-2010-3175</cvename>
+      <cvename>CVE-2010-3176</cvename>
+      <cvename>CVE-2010-3177</cvename>
+      <cvename>CVE-2010-3178</cvename>
+      <cvename>CVE-2010-3179</cvename>
+      <cvename>CVE-2010-3180</cvename>
+      <cvename>CVE-2010-3181</cvename>
+      <cvename>CVE-2010-3182</cvename>
+      <cvename>CVE-2010-3183</cvename>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-64.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-65.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-66.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-67.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-68.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-69.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-70.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-71.html</url>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-72.html</url>
+    </references>
+    <dates>
+      <discovery>2010-10-19</discovery>
+      <entry>2010-10-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e5090d2a-dbbe-11df-82f8-0015f2db7bde">
     <topic>Webkit-gtk2 -- Multiple Vulnabilities</topic>
     <affects>
