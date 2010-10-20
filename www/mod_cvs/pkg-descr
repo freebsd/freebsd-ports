@@ -7,7 +7,7 @@ can specify a date in the URI that gets passed to CVS, which checks
 out an older revision of the requested file and sends it to the
 user.
 
-WWW: http://www.sub.nu/mod_cvs/
+WWW: http://resare.com/noa/mod_cvs/
 
 - Pete
 petef@FreeBSD.org
