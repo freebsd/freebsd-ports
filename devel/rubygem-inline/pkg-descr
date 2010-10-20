@@ -21,4 +21,4 @@ FEATURES/PROBLEMS:
    * Can generate a basic Rakefile and package up built extensions for
      distribution.
 
-WWW: http://rubyforge.org/projects/rubyinline/
+WWW: http://rubyforge.org/projects/inline

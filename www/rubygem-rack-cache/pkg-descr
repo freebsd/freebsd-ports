@@ -10,4 +10,4 @@ and/or validation (Last-Modified, ETag) information.
  * Portable: 100% Ruby / works with any Rack-enabled framework.
  * Disk, memcached, and heap memory storage backends.
 
-WWW: http://rtomayko.github.com/rack-cache/
+WWW: http://tomayko.com/src/rack-cache/

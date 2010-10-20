@@ -3,4 +3,4 @@ expressions and automatically recurses directories, skipping .svn/,
 .cvs/, pkg/ and more things you don't care about. It is based on the Perl
 tool.
 
-WWW: http://rak.rubyforge.org/
+WWW: http://rubyforge.org/projects/rak

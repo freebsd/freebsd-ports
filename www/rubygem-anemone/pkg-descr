@@ -3,4 +3,4 @@ programs that spider a website. It provides a simple DSL for
 performing actions on every page of a site, skipping certain URLs,
 and calculating the shortest path to a given page on a site.
 
-WWW: http://anemone.rubyforge.org/
+WWW: http://anemone.rubyforge.org

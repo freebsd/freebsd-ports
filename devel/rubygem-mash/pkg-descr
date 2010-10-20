@@ -3,4 +3,4 @@ can be built from hashes and easily extended. It is designed to be used in
 RESTful API libraries to provide easy object-like access to JSON and XML
 parsed hashes.
 
-WWW: http://mash-hash.rubyforge.org/
+WWW: http://github.com/mbleigh/mash

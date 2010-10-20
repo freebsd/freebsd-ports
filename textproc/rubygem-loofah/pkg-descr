@@ -4,4 +4,4 @@ Loofah excels at HTML sanitization (XSS prevention). It includes some nice HTML
 sanitizers, which are based on HTML5lib's whitelist.
 
 WWW: http://github.com/flavorjones/loofah
-WWW: http://loofah.rubyforge.org/loofah/
+WWW: http://github.com/flavorjones/loofah

@@ -5,4 +5,4 @@ own files, allowing for highly granular control of requirements.
 The modules include a variety of useful classes, mixins and
 microframeworks, from the Functor to a full-blown SI Units system.
 
-WWW: http://Facets.RubyForge.org/
+WWW: http://rubyworks.github.com/facets

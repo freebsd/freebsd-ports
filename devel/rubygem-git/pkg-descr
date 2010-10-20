@@ -3,4 +3,4 @@ manipulate Git repositories.  Currently it is a wrapper around
 the git binary, but there are plans to switch to C bindings at
 some point in the future.
 
-WWW: http://jointheconversation.org/rubygit/
+WWW: http://github.com/schacon/ruby-git

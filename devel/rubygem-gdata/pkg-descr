@@ -5,4 +5,4 @@ fundamentals like authentication and basic XML manipulation.
 It also requires you to work directly with the Atom feed using
 the REXML module and XPath.
 
-WWW:	http://code.google.com/p/gdata-ruby-util/
+WWW: http://code.google.com/p/gdata-ruby-util

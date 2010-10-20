@@ -5,4 +5,4 @@ lockfile 'fresh' by touching it at a regular interval. in this way a lease
 is maintained on the lockfile and other processes attempting to obtain the
 lock can determine that it is in use.
 
-WWW:	http://www.codeforpeople.com/lib/ruby/lockfile/
+WWW: http://codeforpeople.com/lib/ruby/lockfile/

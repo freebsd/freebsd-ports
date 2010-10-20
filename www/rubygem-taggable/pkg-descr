@@ -3,4 +3,4 @@ capabilities (also known as folksnomy) to your ActiveRecord objects. It
 allows you to apply tags to your objects as well as search for tagged
 objects.
 
-WWW: http://rubyforge.org/projects/taggable/
+WWW: http://github.com/twoism/taggable

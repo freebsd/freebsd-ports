@@ -3,4 +3,4 @@ with minimal effort.  It sits on top of Rack, a minimal standard
 interface for Ruby web frameworks.  For templating, the choices
 include erb, haml, sass and Builder.
 
-WWW: http://github.com/bmizerany/sinatra
+WWW: http://sinatra.rubyforge.org

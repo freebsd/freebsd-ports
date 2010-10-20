@@ -5,4 +5,4 @@ The following is an example of eRuby. '<% ... %>' means Ruby statement
 and '<%= ... %>' means Ruby expression. 
 
 WWW: http://www.kuwata-lab.com/erubis/
-WWW: http://rubyforge.org/projects/erubis/
+WWW: http://www.kuwata-lab.com/erubis/

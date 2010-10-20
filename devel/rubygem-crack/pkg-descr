@@ -2,4 +2,4 @@ rubygem-crack is a Ruby library that really simple JSON
 and XML parsing, ripped from ActiveSupport so it can be
 used without all of ActiveSupport.
 
-WWW:	http://rubyforge.org/projects/crack/
+WWW: http://github.com/jnunemaker/crack

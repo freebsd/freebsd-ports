@@ -3,4 +3,4 @@ Ruby-FFI. It provides very basic access to SDL from Ruby without the
 need for a compiled C wrapper. It aims to be platform and Ruby 
 implementation independent. 
 
-WWW: http://rubygems.org/gems/ruby-sdl-ffi
+WWW: http://github.com/jacius/ruby-sdl-ffi/

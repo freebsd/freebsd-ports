@@ -5,4 +5,4 @@ even though it added only one method to the global
 namespace, collided too frequently with user code
 in particular rails' code.
 
-WWW:	http://codeforpeople.com/lib/ruby/fattr/
+WWW: http://github.com/ahoward/fattr/tree/master

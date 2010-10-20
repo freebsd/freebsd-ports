@@ -4,4 +4,4 @@ library. It features a hierarchical logging system,
 custom level names, multiple output destinations 
 per log event, custom formatting, and more.
 
-WWW: http://rubyforge.org/projects/logging/
+WWW: http://rubygems.org/gems/logging

@@ -3,4 +3,4 @@ end-user installs for Rails applications. It can create .gems from your
 application that can then be installed via 'gem install my_app; my_app install
 /some/path'.
 
-WWW: http://rubyforge.org/projects/rails-installer/
+WWW: http://scottstuff.net

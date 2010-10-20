@@ -1,4 +1,4 @@
 Mixlib::Config provides a class-based configuration object, like the one used
 in Chef.
 
-WWW: http://github.com/opscode/mixlib-config
+WWW: http://www.opscode.com

@@ -3,4 +3,4 @@ for command-line interfaces. HighLine also includes a complete menu system
 that can crank out anything from simple list selection to complete shells
 with just minutes of work.
 
-WWW: http://rubyforge.org/projects/highline
+WWW: http://highline.rubyforge.org

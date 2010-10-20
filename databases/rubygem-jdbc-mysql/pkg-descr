@@ -4,4 +4,4 @@ This is a MySQL JDBC driver gem for JRuby. Use
 
 to make the driver accessible to JDBC and ActiveRecord code running in JRuby.
 
-WWW: http://rubyforge.org/projects/jruby-extras/
+WWW: http://jruby-extras.rubyforge.org/ActiveRecord-JDBC
