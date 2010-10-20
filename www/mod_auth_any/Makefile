@@ -20,6 +20,9 @@ AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
+DEPRECATED=	upstream is gone
+EXPIRATION_DATE=	2011-01-02
+
 .include <bsd.port.pre.mk>
 
 .if ${APACHE_VERSION} >= 20
