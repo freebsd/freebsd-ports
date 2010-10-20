@@ -48,8 +48,7 @@ MASTER_SITE_PORTS_JP+=	\
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/X11/AfterStep/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/X11/windowmanagers/afterstep/%SUBDIR%/
+	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_APACHE)
@@ -67,7 +66,6 @@ MASTER_SITE_APACHE+=	\
 	ftp://ftp.task.gda.pl/pub/www/apache/dist/%SUBDIR%/ \
 	ftp://sunsite.icm.edu.pl/pub/www/apache/dist/%SUBDIR%/ \
 	ftp://apache.rinet.ru/pub/mirror/apache.org/dist/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/WWW/apache/dist/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/www/servers/apache/dist/%SUBDIR%/
 .endif
 
@@ -530,7 +528,6 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.rediris.es/sites/ftp.gnu.org/ftp/gnu/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/gnu/%SUBDIR%/ \
 	http://ftp.funet.fi/pub/gnu/prep/%SUBDIR%/
 .endif
 
@@ -704,8 +701,6 @@ MASTER_SITE_KDE+=	\
 	http://mirror.cc.columbia.edu/pub/software/kde/%SUBDIR%/ \
 	ftp://fr2.rpmfind.net/linux/KDE/%SUBDIR%/ \
 	http://fr2.rpmfind.net/linux/KDE/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/kde/%SUBDIR%/ \
-	http://ftp.chg.ru/pub/kde/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	http://www.mirrorservice.org/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.xcp.kiev.ua/ftp.kde.org/%SUBDIR%/ \
@@ -766,7 +761,6 @@ MASTER_SITE_MOZILLA+= \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mozilla/&,} \
 	ftp://ftp.kaist.ac.kr/pub/mozilla/%SUBDIR%/ \
 	ftp://mozilla.mirror.pacific.net.au/mozilla/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/WWW/mozilla/%SUBDIR%/ \
 	http://ftp.twaren.net/Unix/Mozilla/%SUBDIR%/ \
 	http://ftp.isu.edu.tw/pub/Mozilla/%SUBDIR%/ \
 	http://ftp.ntu.edu.tw/pub/mozilla/%SUBDIR%/
@@ -920,7 +914,6 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.cs.colorado.edu/pub/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/%SUBDIR%/ \
 	http://at.cpan.org/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.auckland.ac.nz/pub/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	http://backpan.cpan.org/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/%SUBDIR%/ \
@@ -1076,7 +1069,6 @@ MASTER_SITE_RUBY+= \
 	ftp://ftp.fu-berlin.de/unix/languages/ruby/%SUBDIR%/ \
 	ftp://ftp.easynet.be/ruby/ruby/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/lang/ruby/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/lang/ruby/%SUBDIR%/ \
 	ftp://ftp.kr.FreeBSD.org/pub/ruby/%SUBDIR%/ \
 	http://mirrors.sunsite.dk/ruby/%SUBDIR%/ \
 	ftp://ftp.iDaemons.org/pub/mirror/ftp.ruby-lang.org/ruby/%SUBDIR%/
@@ -1342,8 +1334,7 @@ MASTER_SITE_XCONTRIB+=	\
 	ftp://ftp2.x.org/contrib/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/opengroup/contrib/&,} \
 	ftp://ftp.mirrorservice.org/sites/ftp.x.org/contrib/%SUBDIR%/ \
-	ftp://sunsite.org.uk/sites/ftp.x.org/contrib/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/X11/x.org/contrib/%SUBDIR%/
+	ftp://sunsite.org.uk/sites/ftp.x.org/contrib/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_XEMACS)
@@ -1398,8 +1389,7 @@ MASTER_SITE_XFREE+= \
 	ftp://ftp.nl.uu.net/pub/XFree86/%SUBDIR%/source/ \
 	ftp://sunsite.uio.no/pub/XFree86/%SUBDIR%/source/ \
 	ftp://ftp.task.gda.pl/pub/XFree86/%SUBDIR%/source/ \
-	ftp://ftp.physics.uvt.ro/pub/XFree86/%SUBDIR%/source/ \
-	ftp://ftp.chg.ru/pub/XFree86/%SUBDIR%/source/
+	ftp://ftp.physics.uvt.ro/pub/XFree86/%SUBDIR%/source/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_XORG)
