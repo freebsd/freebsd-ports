@@ -8,8 +8,7 @@
 PORTNAME=	mod_extract_forwarded
 PORTVERSION=	1.4
 CATEGORIES=	www
-MASTER_SITES=	http://web.warhound.org/${PORTNAME}/ \
-		http://atreides.freenix.no/~anders/
+MASTER_SITES=	http://www.warhound.org/mod_extract_forwarded/
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that can make proxied requests appear with client IP
