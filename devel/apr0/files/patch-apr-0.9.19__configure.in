@@ -1,5 +1,5 @@
---- ./apr-0.9.18/configure.in.orig	2008-06-20 13:32:47.000000000 -0400
-+++ ./apr-0.9.18/configure.in	2010-05-13 16:34:13.421618268 -0400
+--- ./apr-0.9.19/configure.in.orig	2008-06-20 17:32:47.000000000 +0000
++++ ./apr-0.9.19/configure.in	2010-10-20 21:08:11.857624440 +0000
 @@ -7,6 +7,7 @@
  AC_INIT(build/apr_common.m4)
  AC_CONFIG_HEADER(include/arch/unix/apr_private.h)
