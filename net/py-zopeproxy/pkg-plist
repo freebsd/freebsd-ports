@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/proxy/decorator.py
