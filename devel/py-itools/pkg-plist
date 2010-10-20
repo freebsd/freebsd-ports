@@ -16,6 +16,7 @@ bin/idb-inspect.py
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.62.0
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.62.1
 %%PYTHON_SITELIBDIR%%/itools/RELEASE-0.62.2
+%%PYTHON_SITELIBDIR%%/itools/RELEASE-0.62.3
 %%PYTHON_SITELIBDIR%%/itools/UPGRADE-0.62.0
 %%PYTHON_SITELIBDIR%%/itools/__init__.py
 %%PYTHON_SITELIBDIR%%/itools/__init__.pyc
