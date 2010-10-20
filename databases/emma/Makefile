@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.fastflo.de/files/emma/downloads/python_src/
 MAINTAINER=	jun-g@daemonfreaks.com
 COMMENT=	Extendable MySQL managing assistant
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.3:${PORTSDIR}/databases/py-MySQLdb
 
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
