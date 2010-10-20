@@ -6,7 +6,7 @@
 
 PORTNAME=	infix
 PORTVERSION=	19960628
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
@@ -22,8 +22,6 @@ NO_CDROM=	No fees or compensation can be charged
 USE_ASDF_FASL=	yes
 FASL_TARGET=	sbcl
 FASL_BUILD=	yes
-
-BROKEN=		does not build with current lang/sbcl
 
 .include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@
 
 PORTNAME=	infix
 PORTVERSION=	19960628
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lisp
 MASTER_SITES=	http://ftp.linux.org.uk/pub/lisp/cclan/ \
 		ftp://ftp.ntnu.no/pub/lisp/cclan/ \
@@ -24,9 +24,12 @@ NO_CDROM=	No fees or compensation can be charged
 
 USE_ASDF=	yes
 
+post-extract:
+	@${MV} ${WRKSRC}/infix.cl ${WRKSRC}/infix.lisp
+
 do-install:
 	@${MKDIR} ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/*.cl ${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${ASDF_PATHNAME}
 	@${INSTALL_DATA} ${WRKSRC}/infix.asd ${ASDF_PATHNAME}
 	@${INSTALL_DATA} ${WRKSRC}/infix.system ${ASDF_PATHNAME}
 	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
