@@ -19,7 +19,6 @@ BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex		\
 		gperf:${PORTSDIR}/devel/gperf		\
 		bash:${PORTSDIR}/shells/bash		\
 		pkg-config:${PORTSDIR}/devel/pkg-config	\
-		nss>=3.12:${PORTSDIR}/security/nss	\
 		yasm:${PORTSDIR}/devel/yasm
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo	\
@@ -28,7 +27,8 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo	\
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib	\
 		Xss.1:${PORTSDIR}/x11/libXScrnSaver		\
 		asound.2:${PORTSDIR}/audio/alsa-lib		\
-		freetype.9:${PORTSDIR}/print/freetype2
+		freetype.9:${PORTSDIR}/print/freetype2		\
+		nss3.1:${PORTSDIR}/security/nss
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 
