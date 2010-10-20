@@ -469,7 +469,8 @@ amrcoder                        ports/audio/amrcoder
 amrstat                         ports/sysutils/amrstat
 amsn                            ports/net-im/amsn
 amspsfnt                        ports/print/amspsfnt
-amule2                          ports/net-p2p/amule2
+amule                           ports/net-p2p/amule
+amule-devel                     ports/net-p2p/amule-devel
 an                              ports/games/an
 anacron                         ports/sysutils/anacron
 anagramarama                    ports/games/anagramarama
@@ -2441,6 +2442,7 @@ distcache                       ports/security/distcache
 distcache-devel                 ports/security/distcache-devel
 distcc                          ports/devel/distcc
 distel                          ports/devel/distel
+distilator                      ports/ports-mgmt/distilator
 distorm                         ports/devel/distorm
 distribfold                     ports/biology/distribfold
 ditrack                         ports/devel/ditrack
@@ -8281,6 +8283,7 @@ libtrace                        ports/net/libtrace
 libtranslate                    ports/textproc/libtranslate
 libtre                          ports/textproc/libtre
 libtremor                       ports/audio/libtremor
+libtsnnls                       ports/math/libtsnnls
 libtunepimp                     ports/audio/libtunepimp
 libtunepimp-old                 ports/audio/libtunepimp-old
 libtuner                        ports/multimedia/libtuner
@@ -11492,6 +11495,7 @@ p5-Class-Spiffy                 ports/devel/p5-Class-Spiffy
 p5-Class-StateMachine           ports/devel/p5-Class-StateMachine
 p5-Class-Std                    ports/devel/p5-Class-Std
 p5-Class-Std-Fast               ports/devel/p5-Class-Std-Fast
+p5-Class-Std-Utils              ports/devel/p5-Class-Std-Utils
 p5-Class-StrongSingleton        ports/devel/p5-Class-StrongSingleton
 p5-Class-Tangram                ports/devel/p5-Class-Tangram
 p5-Class-Throwable              ports/devel/p5-Class-Throwable
@@ -12321,6 +12325,7 @@ p5-Getopt-Lucid                 ports/textproc/p5-Getopt-Lucid
 p5-Getopt-Mixed                 ports/devel/p5-Getopt-Mixed
 p5-Getopt-Popt                  ports/devel/p5-Getopt-Popt
 p5-Git-PurePerl                 ports/devel/p5-Git-PurePerl
+p5-Git-Repository               ports/devel/p5-Git-Repository
 p5-Glade2                       ports/x11-toolkits/p5-Glade2
 p5-Glib2                        ports/devel/p5-Glib2
 p5-Gnome2                       ports/x11-toolkits/p5-Gnome2
@@ -13133,6 +13138,7 @@ p5-Net-CIDR                     ports/net-mgmt/p5-Net-CIDR
 p5-Net-CIDR-Lite                ports/net/p5-Net-CIDR-Lite
 p5-Net-CIDR-MobileJP            ports/net/p5-Net-CIDR-MobileJP
 p5-Net-CSTA                     ports/net/p5-Net-CSTA
+p5-Net-CascadeCopy              ports/net/p5-Net-CascadeCopy
 p5-Net-Cassandra                ports/net/p5-Net-Cassandra
 p5-Net-Cassandra-Easy           ports/net/p5-Net-Cassandra-Easy
 p5-Net-DAAP-Client              ports/audio/p5-Net-DAAP-Client
@@ -13553,6 +13559,7 @@ p5-Penguin-Easy                 ports/devel/p5-Penguin-Easy
 p5-Perl-Critic                  ports/textproc/p5-Perl-Critic
 p5-Perl-Critic-Bangs            ports/textproc/p5-Perl-Critic-Bangs
 p5-Perl-MinimumVersion          ports/textproc/p5-Perl-MinimumVersion
+p5-Perl-Unsafe-Signals          ports/devel/p5-Perl-Unsafe-Signals
 p5-Perl-Version                 ports/devel/p5-Perl-Version
 p5-Perl6-Builtins               ports/devel/p5-Perl6-Builtins
 p5-Perl6-Export                 ports/devel/p5-Perl6-Export
@@ -15405,6 +15412,7 @@ p5-class-spiffy                 ports/devel/p5-Class-Spiffy
 p5-class-statemachine           ports/devel/p5-Class-StateMachine
 p5-class-std                    ports/devel/p5-Class-Std
 p5-class-std-fast               ports/devel/p5-Class-Std-Fast
+p5-class-std-utils              ports/devel/p5-Class-Std-Utils
 p5-class-stl-containers         ports/devel/p5-Class-STL-Containers
 p5-class-strongsingleton        ports/devel/p5-Class-StrongSingleton
 p5-class-tangram                ports/devel/p5-Class-Tangram
@@ -16261,6 +16269,7 @@ p5-gis-distance                 ports/math/p5-GIS-Distance
 p5-gis-distance-fast            ports/math/p5-GIS-Distance-Fast
 p5-gis-distance-lite            ports/math/p5-GIS-Distance-Lite
 p5-git-pureperl                 ports/devel/p5-Git-PurePerl
+p5-git-repository               ports/devel/p5-Git-Repository
 p5-github_creator               ports/devel/p5-github_creator
 p5-glade2                       ports/x11-toolkits/p5-Glade2
 p5-glib2                        ports/devel/p5-Glib2
@@ -17094,6 +17103,7 @@ p5-net-bittorrent               ports/net-p2p/p5-Net-BitTorrent
 p5-net-bittorrent-file          ports/net-p2p/p5-Net-BitTorrent-File
 p5-net-bittorrent-peerpacket    ports/net-p2p/p5-Net-BitTorrent-PeerPacket
 p5-net-blogger                  ports/net/p5-Net-Blogger
+p5-net-cascadecopy              ports/net/p5-Net-CascadeCopy
 p5-net-cassandra                ports/net/p5-Net-Cassandra
 p5-net-cassandra-easy           ports/net/p5-Net-Cassandra-Easy
 p5-net-cidr                     ports/net-mgmt/p5-Net-CIDR
@@ -17432,6 +17442,7 @@ p5-perl-critic                  ports/textproc/p5-Perl-Critic
 p5-perl-critic-bangs            ports/textproc/p5-Perl-Critic-Bangs
 p5-perl-ldap                    ports/net/p5-perl-ldap
 p5-perl-minimumversion          ports/textproc/p5-Perl-MinimumVersion
+p5-perl-unsafe-signals          ports/devel/p5-Perl-Unsafe-Signals
 p5-perl-version                 ports/devel/p5-Perl-Version
 p5-perl6-builtins               ports/devel/p5-Perl6-Builtins
 p5-perl6-export                 ports/devel/p5-Perl6-Export
@@ -21304,6 +21315,7 @@ py-subvertpy                    ports/devel/py-subvertpy
 py-supervisor                   ports/sysutils/py-supervisor
 py-supybot                      ports/irc/py-supybot
 py-supybot-plugins              ports/irc/py-supybot-plugins
+py-surl                         ports/www/py-surl
 py-svglib                       ports/converters/py-svglib
 py-svgmath                      ports/math/py-svgmath
 py-swift                        ports/databases/py-swift
@@ -24807,6 +24819,7 @@ typetools                       ports/print/typetools
 typhoon                         ports/databases/typhoon
 typo                            ports/www/typo
 typo3                           ports/www/typo3
+typo343                         ports/www/typo343
 typolight                       ports/www/typolight
 tyrquake                        ports/games/tyrquake
 u++                             ports/lang/u++
