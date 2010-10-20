@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	frederic@culot.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	A Perl class for easy date and time manipulation
 
 PERL_CONFIGURE=	yes

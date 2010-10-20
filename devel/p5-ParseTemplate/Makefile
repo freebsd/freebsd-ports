@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/Parse
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	frederic@culot.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Processor for templates containing Perl expressions
 
 PERL_CONFIGURE=	yes

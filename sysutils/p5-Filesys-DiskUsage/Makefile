@@ -11,7 +11,7 @@ CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	frederic@culot.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Perl equivalent of du(1)
 
 PERL_CONFIGURE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	frederic@culot.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Perl extension for looking up the whois information for ip addresses
 
 MAN3=	Net::Whois::IP.3

@@ -11,7 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.maplefish.com/todd/
 
-MAINTAINER=	frederic@culot.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	A document preparation system using an Almost Free Text input format
 
 USE_PERL5=	yes

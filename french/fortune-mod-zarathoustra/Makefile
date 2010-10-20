@@ -10,7 +10,7 @@ PORTVERSION=	20100905
 CATEGORIES=	french
 MASTER_SITES=	ftp://ftp2.culot.org/culot/
 
-MAINTAINER=	frederic@culot.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Compilation of quotes from Nietzsche's Thus spoke Zarathustra
 
 SUB_FILES=	pkg-message

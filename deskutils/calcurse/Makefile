@@ -9,7 +9,7 @@ PORTVERSION=	2.8
 CATEGORIES=	deskutils
 MASTER_SITES=	ftp://ftp2.culot.org/culot/
 
-MAINTAINER=	frederic@culot.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	A text-based calendar and scheduling application
 
 USE_GMAKE=	yes

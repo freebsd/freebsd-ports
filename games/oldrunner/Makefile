@@ -10,7 +10,7 @@ PORTVERSION=	20100717
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp2.culot.org/culot/
 
-MAINTAINER=	frederic@culot.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	A textmode remake of Broderbund's LodeRunner
 
 HAS_CONFIGURE=	yes

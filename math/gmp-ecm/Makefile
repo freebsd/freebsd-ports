@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	https://gforge.inria.fr/frs/download.php/26838/
 DISTNAME=	ecm-${PORTVERSION}
 
-MAINTAINER=	frederic@culot.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Elliptic Curve Method for Integer Factorization
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
