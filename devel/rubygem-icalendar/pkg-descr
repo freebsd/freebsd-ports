@@ -28,4 +28,4 @@ based clipboard or drag/drop interactions, point-to-point asynchronous
 communication, wired-network transport, or some form of unwired
 transport such as infrared might also be used.
 
-WWW: http://rubyforge.org/projects/icalendar/
+WWW: http://github.com/sdague/icalendar

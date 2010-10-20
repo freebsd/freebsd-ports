@@ -10,4 +10,4 @@ like exception backtracing and logging (in case your ruby script
 crashes) and monitoring and automatic restarting of your processes if
 they crash.
 
-WWW: http://daemons.rubyforge.org/
+WWW: http://daemons.rubyforge.org

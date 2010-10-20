@@ -3,4 +3,4 @@ returns information about the country where the IP address is allocated.
 
 This is a GeoIP implementation for rubygems
 
-WWW:	http://geoip.rubyforge.org
+WWW: http://github.com/cjheath/geoip

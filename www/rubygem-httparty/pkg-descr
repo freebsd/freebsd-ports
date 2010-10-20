@@ -9,4 +9,4 @@ keys that are needed on each request)
 * Automatic parsing of JSON and XML into ruby hashes
 based on response content-type
 
-WWW:	http://rubyforge.org/projects/httparty/
+WWW: http://httparty.rubyforge.org

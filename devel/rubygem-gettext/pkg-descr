@@ -3,4 +3,4 @@ which modeled after GNU GetText package, but the API is simpler than
 that of GNU GetText.
 
 Author:	Masao Mutoh <mutomasa@gmail.com>
-WWW:	http://www.yotabanana.com/hiki/ruby-gettext.html
+WWW: http://gettext.rubyforge.org/

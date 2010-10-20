@@ -3,4 +3,4 @@ that can be used with JRuby.
 It allows use of virtually any JDBC-compliant database with your
 JRuby on Rails application.
 
-WWW: http://rubyforge.org/projects/jruby-extras/
+WWW: http://jruby-extras.rubyforge.org/activerecord-jdbc-adapter

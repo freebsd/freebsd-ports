@@ -1,4 +1,4 @@
 A ruby module that allows for the simple creation of MIME email messages
 with multiple body parts and attachments
 
-WWW: http://rubyforge.org/projects/mailfactory/
+WWW: http://mailfactory.rubyforge.org

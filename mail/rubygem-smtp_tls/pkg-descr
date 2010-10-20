@@ -5,4 +5,4 @@ To use simply: require 'smtp_tls' and use the
 Net::SMTP#enable_starttls method to talk to 
 servers that use STARTTLS.
 
-WWW: http://seattlerb.rubyforge.org/smtp_tls/
+WWW: http://seattlerb.rubyforge.org/smtp_tls

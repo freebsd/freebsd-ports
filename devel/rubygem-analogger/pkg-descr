@@ -7,4 +7,4 @@ logging destinations. Currently, logging to a file, to STDOUT, or to
 STDERR is supported. A future revision may support logging to a
 database destination, as well.
 
-WWW: http://analogger.swiftcore.org
+WWW: http://analogger.swiftcore.org/

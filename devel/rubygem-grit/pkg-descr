@@ -3,4 +3,4 @@ an object oriented manner.  Grit gives you object model access to your git
 repository.  Once you have created a repository object, you can traverse it
 to find parent commit(s), trees, blobs, etc.
 
-WWW: http://grit.rubyforge.org/
+WWW: http://github.com/mojombo/grit

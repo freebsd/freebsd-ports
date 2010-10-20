@@ -4,4 +4,4 @@ list changes from one interval to the next, events are generated and
 dispatched to registered observers. Three types of events are supported --
 added, modified, and removed.
 
-WWW: http://rubyforge.org/projects/codeforpeople/
+WWW: http://gemcutter.org/gems/directory_watcher

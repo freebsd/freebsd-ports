@@ -8,7 +8,7 @@ supports the following features:
  - Execute processes on the remote machine, both interactively and
    non-interactively ("batch").
 
-WWW: http://net-ssh.rubyforge.org/
+WWW: http://github.com/net-ssh/net-ssh
 
 - Roderick van Domburg
 r.s.a.vandomburg@nedforce.nl

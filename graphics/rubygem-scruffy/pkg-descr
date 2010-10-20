@@ -3,4 +3,4 @@ Graphs can be rendered to SVG code or an image. Blend the beauty of Gruff
 with the SVG capabilities of SVG::Graph, make it super simple and extensible,
 and you've got Scruffy.
 
-WWW: http://scruffy.rubyforge.org/
+WWW: http://scruffy.rubyforge.org

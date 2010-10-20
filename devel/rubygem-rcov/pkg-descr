@@ -3,4 +3,4 @@ rcov is (mainly) a code coverage tool for Ruby featuring fast execution
 cross-referenced XHTML and several kinds of text reports, easy automation
 with Rake and Rant...
 
-WWW: http://rubyforge.org/projects/rcov/
+WWW: http://github.com/relevance/rcov

@@ -13,4 +13,4 @@ You can use Bunny to :
 Bunny is known to work with RabbitMQ versions 1.5.4 and above with version 0-8
 of the AMQP specification.
 
-WWW: http://github.com/celldee/bunny
+WWW: http://github.com/celldee/bunny/tree/master

@@ -9,4 +9,4 @@ keyword access require much less memory when compared
 to hashes/objects and yet still provide fast lookup and
 preserve data order.
 
-WWW:	http://codeforpeople.com/lib/ruby/arrayfields/
+WWW: http://github.com/ahoward/arrayfields/tree/master

@@ -4,4 +4,4 @@ the same as ParseTree's output: s-expressions using ruby's arrays and
 base types.
 
 Author: Ryan Davis (zenspider) <ryand-ruby@zenspider.com>
-WWW: http://rubyforge.org/projects/parsetree/
+WWW: http://parsetree.rubyforge.org/

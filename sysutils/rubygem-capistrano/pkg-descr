@@ -4,6 +4,6 @@ describes your various servers and their roles, and voila! You magically
 have single-command deployment. It even allows you to roll a bad version
 out of production and revert back to the previous release.
 
-WWW: http://manuals.rubyonrails.com/read/book/17
+WWW: http://github.com/capistrano/capistrano
 
 - Roderick van Domburg

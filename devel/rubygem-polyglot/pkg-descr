@@ -12,4 +12,4 @@ Required files are attempted first using the normal Ruby loader,
 and if that fails, Polyglot conducts a search for a file having
 a supported extension.
 
-WWW:	http://polyglot.rubyforge.org/
+WWW: http://polyglot.rubyforge.org

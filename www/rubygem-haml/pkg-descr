@@ -6,4 +6,4 @@ However, Haml avoids the need for explicitly coding XHTML into the template,
 because it itself is a description of the XHTML, with some code to generate
 dynamic content.
 
-WWW: http://haml.hamptoncatlin.com/
+WWW: http://haml-lang.com/

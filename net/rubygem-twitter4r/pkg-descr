@@ -1,4 +1,4 @@
 Twitter4R provides an object based API to query or update your Twitter 
 account via pure Ruby. It hides the ugly HTTP/REST code from your code.
 
-WWW: http://twitter4r.rubyforge.org/
+WWW: http://twitter4r.rubyforge.org

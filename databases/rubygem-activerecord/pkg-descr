@@ -5,5 +5,4 @@ mapping layer entitled Active Record. This layer allows you to present
 the data from database rows as objects and embellish these data objects
 with business logic methods.
 
-WWW: http://www.rubyonrails.org/
-WWW: http://rubyforge.org/projects/activerecord/
+WWW: http://www.rubyonrails.org

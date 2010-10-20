@@ -3,4 +3,4 @@ Active Resource. Rich support for attributes, callbacks,
 validations, observers, serialization, internationalization, 
 and testing.
 
-WWW:    http://rubygems.org/gems/arel
+WWW: http://github.com/rails/arel
