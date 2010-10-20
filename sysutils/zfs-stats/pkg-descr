@@ -1,0 +1,4 @@
+zfs-stats displays ZFS statistics in human-readable format including
+ARC, L2ARC, zfetch (DMU) and vdev cache statistics.
+
+WWW:	http://www.vx.sk/zfs-stats/
