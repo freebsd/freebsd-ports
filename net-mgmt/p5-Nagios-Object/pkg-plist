@@ -1,0 +1,14 @@
+@comment $FreeBSD$
+bin/config_status_demo.pl
+bin/decode_flags.pl
+bin/parse.pl
+bin/statusdat_demo.pl
+bin/test_configuration.pl
+%%SITE_PERL%%/Nagios/Config.pm
+%%SITE_PERL%%/Nagios/Object.pm
+%%SITE_PERL%%/Nagios/StatusLog.pm
+%%SITE_PERL%%/Nagios/Config/File.pm
+%%SITE_PERL%%/Nagios/Object/Config.pm
+@dirrm %%SITE_PERL%%/Nagios/Config
+@dirrm %%SITE_PERL%%/Nagios/Object
+@dirrmtry %%SITE_PERL%%/Nagios
