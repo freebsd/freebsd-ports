@@ -26,11 +26,6 @@ MAN1=		paexec.1 paexec_reorder.1
 
 LICENSE=	MIT
 
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,2048,4096,; s,x.y.z,${PORTVERSION},' \
-		${WRKSRC}/paexec.c
-
 do-build:
 	@${SETENV} ${MAKE_ENV} LDFLAGS="${LDFLAGS}" ${LOCALBASE}/bin/mkcmake -C ${WRKSRC}
 
