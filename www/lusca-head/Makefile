@@ -75,13 +75,13 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	lusca
-DISTVERSION=	r14535
+DISTVERSION=	r14809
 PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	lusca-cache
 PKGNAMESUFFIX=	-head
-DISTNAME=	LUSCA_HEAD-r14535
+DISTNAME=	LUSCA_HEAD-r14809
 # EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	adrian@freebsd.org
