@@ -10,7 +10,6 @@ PORTVERSION=	2.7.1
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
-		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
 		ftp://ftp.tux.org/pub/net/postfix/official/ \
 		ftp://ftp.utoronto.ca/mirror/packages/postfix/official/ \
 		ftp://ftp.samurai.com/pub/postfix/official/ \
