@@ -10,7 +10,7 @@ PORTVERSION=	2.3.19
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
-MAINTAINER=	frederic@culot.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Small emacs-like text editor
 
 USE_GMAKE=	yes

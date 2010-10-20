@@ -10,7 +10,7 @@ PORTVERSION=	1.8
 CATEGORIES=	databases python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	frederic@culot.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	A pure-Python database engine
 
 USE_ZIP=	yes

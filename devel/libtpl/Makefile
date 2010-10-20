@@ -10,7 +10,7 @@ PORTVERSION=	1.5
 CATEGORIES=	devel
 MASTER_SITES=	SF/tpl/tpl/${PORTNAME}-${PORTVERSION}/
 
-MAINTAINER=	frederic@culot.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Tpl is a library for serializing C data
 
 LICENSE=	BSD

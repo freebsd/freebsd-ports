@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://dickey.his.com/add/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	frederic@culot.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Full-screen editing calculator
 
 GNU_CONFIGURE=	yes

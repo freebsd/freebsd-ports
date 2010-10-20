@@ -11,7 +11,7 @@ CATEGORIES=	science perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	frederic@culot.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Manipulate Physics units and dimensions
 
 PERL_CONFIGURE=	yes

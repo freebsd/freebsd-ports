@@ -10,7 +10,7 @@ PORTVERSION=	2.0.7
 CATEGORIES=	science
 MASTER_SITES=	http://www.toddmiller.com/epte/
 
-MAINTAINER=	frederic@culot.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Electronic Periodic Table of the Elements
 
 MAKEFILE=	makefile

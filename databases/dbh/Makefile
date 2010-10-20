@@ -12,7 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://svn.foo-projects.org/svn/xffm/RELEASES/tarballs/ \
 		SF
 
-MAINTAINER=	frederic@culot.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Disk Based Hashtables
 
 CONFLICTS=	dbh-[0-3]*

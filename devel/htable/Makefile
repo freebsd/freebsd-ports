@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp2.culot.org/culot/
 
-MAINTAINER=	frederic@culot.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Lightweight implementation of hash tables in C
 
 USE_GMAKE=	yes
