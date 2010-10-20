@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pvr250
-PORTVERSION=	20051030
-PORTREVISION=	1
+PORTVERSION=	20101010
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTFILES=	${CXMSHAR} hcwPVRP2.sys ${PVRTOOLS}.tar.gz
@@ -18,28 +17,31 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Hauppauge PVR-250/350 TV cards driver for the cxm device
 
 CONFLICTS=	pvrxxx-*
+SUB_FILES=	pkg-descr
 
 PVRTOOLS=	pvr250-1.2
 CXMSHAR=	cxm-${PORTVERSION}.shar
 
 WRKSRC=		${WRKDIR}
 NOFETCHFILES=	hcwPVRP2.sys
+DESCR=		${WRKDIR}/pkg-descr
 
 RESTRICTED_FILES=	hcwPVRP2.sys
 RESTRICTED=	"This port uses a binary driver which is owned by Hauppauge"
 
 MAN4=		cxm.4
 MAN1=		pvr250-setchannel.1
+PORTDOCS=	cxm.txt
 
 .include <bsd.port.pre.mk>
 
 MODULESDIR=	/boot/kernel
 PLIST_SUB=	MODULESDIR=${MODULESDIR}
 
-.if ${OSVERSION} >= 700031
-EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-dev::cxm::cxm.h \
-		${PATCHDIR}/extra-patch-dev::cxm::cxm.c
-.endif
+#.if ${OSVERSION} >= 700031
+#EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-dev::cxm::cxm.h \
+#		${PATCHDIR}/extra-patch-dev::cxm::cxm.c
+#.endif
 
 .if !exists(${DISTDIR}/hcwPVRP2.sys)
 IGNORE=		You need the file hcwPVRP2.sys from the CD coming with the PVR-250/350 card. Please place this file in ${DISTDIR} and run make again.
@@ -82,8 +84,7 @@ do-install:
 	${INSTALL_MAN} ${WRKDIR}/${PVRTOOLS}/cxm.4 ${PREFIX}/man/man4/cxm.4
 	${INSTALL_MAN} ${WRKDIR}/${PVRTOOLS}/pvr250-setchannel.1 ${PREFIX}/man/man1/pvr250-setchannel.1
 	${INSTALL_PROGRAM} ${WRKDIR}/${PVRTOOLS}/setchannel ${PREFIX}/bin/pvr250-setchannel
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/cxm.txt ${DOCSDIR}
 
 .include <bsd.port.post.mk>
