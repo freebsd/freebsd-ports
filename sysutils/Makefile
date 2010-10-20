@@ -1008,6 +1008,7 @@
     SUBDIR += zfs-replicate
     SUBDIR += zfs-snapshot-clean
     SUBDIR += zfs-snapshot-mgmt
+    SUBDIR += zfs-stats
     SUBDIR += zfsnap
     SUBDIR += zidrav
     SUBDIR += zisofs-tools
