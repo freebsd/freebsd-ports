@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr
+BUILD_DEPENDS=	nspr>=4.8.6:${PORTSDIR}/devel/nspr
 
 USE_AUTOTOOLS=	autoconf:213:run
 LATEST_LINK=	firefox35
