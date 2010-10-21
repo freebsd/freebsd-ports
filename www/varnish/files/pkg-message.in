@@ -10,9 +10,3 @@ front of your web server:
 4) %%PREFIX%%/etc/rc.d/varnishd start
 
 Refer to the documentation for more advanced configuration.
-
-NOTE TO USERS UPGRADING FROM AN OLDER VERSION OF VARNISH:
-
-Several rc variables have been renamed and / or have new default
-values.  Refer to the comments in the rc.d scripts for a detailed
-description of these variables.
