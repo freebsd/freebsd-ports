@@ -25,8 +25,11 @@ PATCHFILES!=		/usr/bin/jot -s " " -w \
 			${PORTNAME}${PORTVERSION:R:S/.//g}-%03d \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 
-MAINTAINER=		ehaupt@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		The GNU Project's Bourne Again SHell
+
+DEPRECATED=		Use shells/bash or shells/bash-static instead
+EXPIRATION_DATE=	2011-01-21
 
 IGNOREFILES=		FAQ
 
