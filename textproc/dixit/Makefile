@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	dixit
-PORTVERSION=	10.4.4
+PORTVERSION=	10.8
 CATEGORIES=	textproc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/10.4/:dixit \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/:dixit \
 		SF/${PORTNAME}/${PORTNAME}_qdb/:db
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz:${PORTNAME} \
+DISTFILES=	${PORTNAME}-${PORTVERSION}.${QT_VER}.tgz:${PORTNAME} \
 		${_DB_D}:db
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tgz
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.${QT_VER}.tgz
 
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Romanian dictionaries databases and query application
@@ -35,6 +35,7 @@ _DB=	${DB_DIR}/${_DB_F}
 
 HAS_CONFIGURE=	yes
 
+QT_VER=4
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui network moc_build qmake_build rcc_build
 #USE_GMAKE=	yes
