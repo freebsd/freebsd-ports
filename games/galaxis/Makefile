@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	galaxis
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/galaxis/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	Clone of the nifty little Macintosh game
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DNDEBUG"
