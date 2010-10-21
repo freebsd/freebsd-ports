@@ -6,35 +6,38 @@
 #
 
 PORTNAME=	grass
-PORTVERSION=	6.2.3
-PORTREVISION=	10
+PORTVERSION=	6.4.0
 PORTEPOCH=	2
 CATEGORIES=	databases geography
-MASTER_SITES=	http://grass.itc.it/grass62/source/ \
-		ftp://grass.itc.it/pub/grass/grass62/source/ \
-		http://grass.ibiblio.org/grass62/source/\
-		ftp://www.ibiblio.org/pub/packages/gis/grass/grass62/source/\
-		http://www.geog.uni-hannover.de/grass/grass62/source/\
-		http://grass.meteo.uni.wroc.pl/grass62/source/ \
-		http://grass.ru.ac.za/grass62/source/\
-		http://wgrass.media.osaka-cu.ac.jp/grassh/grass62/source/\
-		http://public.planetmirror.com/pub/grass/grass62/source/\
-		ftp://ftp.planetmirror.com/pub/grass/grass62/source/\
-		http://gulus.usherbrooke.ca/pub/appl/grass/grass62/source/\
-		http://ludique.u-bourgogne.fr/grass/grass62/source/
+MASTER_SITES=	http://grass.itc.it/grass64/source/ \
+		ftp://grass.itc.it/pub/grass/grass64/source/ \
+		http://grass.ibiblio.org/grass64/source/\
+		ftp://www.ibiblio.org/pub/packages/gis/grass/grass64/source/\
+		http://www.geog.uni-hannover.de/grass/grass64/source/\
+		http://grass.meteo.uni.wroc.pl/grass64/source/ \
+		http://grass.ru.ac.za/grass64/source/\
+		http://wgrass.media.osaka-cu.ac.jp/grassh/grass64/source/\
+		http://public.planetmirror.com/pub/grass/grass64/source/\
+		ftp://ftp.planetmirror.com/pub/grass/grass64/source/\
+		http://gulus.usherbrooke.ca/pub/appl/grass/grass64/source/\
+		http://ludique.u-bourgogne.fr/grass/grass64/source/
+#DISTNAME=	${PORTNAME}-${PORTVERSION}RC5
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source Geographical Information System (GIS)
 
 BUILD_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
-		gdal-config:${PORTSDIR}/graphics/gdal
+		gdal-config:${PORTSDIR}/graphics/gdal \
+		${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13 \
+		${LOCALBASE}/bin/wxgtk2-2.8-config:${PORTSDIR}/x11-toolkits/wxgtk28
 RUN_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
 		gdal-config:${PORTSDIR}/graphics/gdal \
-		bash:${PORTSDIR}/shells/bash
+		bash:${PORTSDIR}/shells/bash \
+		${LOCALBASE}/bin/wxgtk2-2.8-config:${PORTSDIR}/x11-toolkits/wxgtk28
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		fftw.2:${PORTSDIR}/math/fftw \
+		fftw3.5:${PORTSDIR}/math/fftw3 \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GMAKE=	yes
@@ -47,24 +50,28 @@ USE_TCL=	yes
 USE_TCL_BUILD=	yes
 USE_TK=		yes
 USE_TK_BUILD=	yes
+USE_PYTHON=	yes
+USE_WX=		2.8
+WX_COMPS=	python:run
 PATCH_TCL_SCRIPTS=lib/init/init.sh
 PATCH_TK_SCRIPTS=lib/init/init.sh
-MAKE_JOBS_UNSAFE=	yes
 
 ALL_TARGET=
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-libs=${LOCALBASE}/lib \
 		--with-tcltk-includes="${TCL_INCLUDEDIR} ${TK_INCLUDEDIR}" \
-		--with-opengl-includes=${LOCALBASE}/include \
-		--with-opengl-libs=${LOCALBASE}/lib \
+		--with-opengl-includes=${LOCALBASE}/include/ \
+		--with-opengl-libs=${LOCALBASE}/lib/ \
 		--with-freetype \
 		--with-freetype-includes=${LOCALBASE}/include/freetype2 \
 		--with-nls \
 		--with-cxx \
 		--with-readline \
 		--with-curses \
-		--enable-largefile
+		--enable-largefile \
+		--with-python=${LOCALBASE}/bin/python-config \
+		--with-wxwidgets=${LOCALBASE}/bin/wxgtk2-2.8-config
 
 PLIST_SUB=	GRASS_INST_DIR=${GRASS_INST_DIR} \
 		VERSION=${PORTVERSION} \
@@ -76,13 +83,12 @@ OPTIONS=	MYSQL	"Enable MySQL support" Off \
 		PGSQL	"Enable PostgreSQL support" On \
 		SQLITE	"Enable SQLite support" Off
 
-BASH_SCRIPTS=	i.spectral r.mapcalculator r.tileset r3.mapcalculator \
-		v.in.gpsbabel
+BASH_SCRIPTS=	i.spectral r.tileset
 
 .include <bsd.port.pre.mk>
 
 .if !defined (GRASS_INST_DIR)
-GRASS_INST_DIR=	${PORTNAME}
+GRASS_INST_DIR=	${PORTNAME}-${PORTVERSION}
 .endif
 
 .if defined(WITH_MYSQL)
