@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ktorrent
-PORTVERSION=	3.3.4
-PORTREVISION=	4
+PORTVERSION=	4.0.4
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${PORTVERSION}/
 
@@ -16,26 +15,22 @@ COMMENT=	BitTorrent client for KDE
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		qca.2:${PORTSDIR}/devel/qca \
-		streamanalyzer.0:${PORTSDIR}/deskutils/strigi \
-		tag.1:${PORTSDIR}/audio/taglib
+		tag.1:${PORTSDIR}/audio/taglib \
+		ktorrent.2:${PORTSDIR}/net-p2p/libktorrent
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4
 USE_QT_VER=	4
-QT_COMPONENTS=	qt3support dbus gui network sql svg xml \
-		qmake_build moc_build rcc_build uic_build
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	SYNDICATION "Enable RSS/Atom plugin" on \
 		PLASMA "Enable Ktorrent Plasma applet" on
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-MAKE_JOBS_SAFE=	yes
-
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_SYNDICATION)
 USE_KDE4+=	pimlibs
@@ -56,6 +51,8 @@ pre-configure:
 .if defined(WITHOUT_PLASMA)
 	${REINPLACE_CMD} -e '/add_subdirectory(applet)/d' \
 		${WRKSRC}/plasma/CMakeLists.txt
+	${REINPLACE_CMD} -e '/^macro_kt_plugin.*shutdown/d' \
+		${WRKSRC}/plugins/CMakeLists.txt
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
