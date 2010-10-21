@@ -1,10 +1,10 @@
---- mozilla/build/unix/run-mozilla.sh.orig	2009-08-24 19:18:11.000000000 +0200
-+++ mozilla/build/unix/run-mozilla.sh	2009-08-24 19:22:10.000000000 +0200
+--- mozilla/build/unix/run-mozilla.sh.orig	2010-09-30 21:59:05.000000000 +0200
++++ mozilla/build/unix/run-mozilla.sh	2010-10-19 10:39:28.000000000 +0200
 @@ -310,7 +310,7 @@
  }
  if moz_should_set_ld_library_path
  then
--	LD_LIBRARY_PATH=${MOZ_DIST_BIN}:${MOZ_DIST_BIN}/plugins:${MRE_HOME}${LD_LIBRARY_PATH+":$LD_LIBRARY_PATH"}
+-	LD_LIBRARY_PATH=${MOZ_DIST_BIN}:${MOZ_DIST_BIN}/plugins:${MRE_HOME}${LD_LIBRARY_PATH:+":$LD_LIBRARY_PATH"}
 +	LD_LIBRARY_PATH=${MOZ_DIST_BIN}:%%LOCALBASE%%/lib/browser_plugins/symlinks/gecko18:%%LOCALBASE%%/lib/npapi/symlinks/seamonkey:${MOZ_DIST_BIN}/plugins:${MRE_HOME}${LD_LIBRARY_PATH+":$LD_LIBRARY_PATH"}
  fi 
  
