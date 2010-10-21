@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	orca
-PORTVERSION=	0.27b3
-PORTREVISION=	2
+PORTVERSION=	0.27
+PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.orcaware.com/orca/pub/
 
