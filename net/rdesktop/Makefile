@@ -24,7 +24,7 @@ MAN1=		rdesktop.1
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libao.so) || defined(WITH_LIBAO)
-LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
 .endif
 
 .if exists(${LOCALBASE}/lib/libsamplerate.so) || defined(WITH_LIBSAMPLERATE)
