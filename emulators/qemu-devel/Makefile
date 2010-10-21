@@ -85,7 +85,6 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba34
 
 .if defined(NOPORTDOCS)
 MAKE_ARGS+=	NOPORTDOCS=${NOPORTDOCS}
-CONFIGURE_ARGS+=	--disable-docs
 .else
 BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
 .endif
