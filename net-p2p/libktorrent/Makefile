@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libktorrent
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${PORTVERSION:S,^1,4,}/
 
