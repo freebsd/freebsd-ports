@@ -1,0 +1,11 @@
+--- ./server/Makefile.in.orig	2006-03-09 21:30:38.000000000 +0000
++++ ./server/Makefile.in	2010-10-21 05:40:53.644623499 +0000
+@@ -13,7 +13,7 @@
+ 	util_script.c util_md5.c util_cfgtree.c util_ebcdic.c util_time.c \
+ 	rfc1413.c connection.c listen.c \
+ 	mpm_common.c util_charset.c util_debug.c util_xml.c \
+-	util_filter.c exports.c buildmark.c \
++	util_filter.c util_pcre.c buildmark.c exports.c \
+ 	scoreboard.c error_bucket.c protocol.c core.c request.c provider.c \
+ 	eoc_bucket.c
+ 
