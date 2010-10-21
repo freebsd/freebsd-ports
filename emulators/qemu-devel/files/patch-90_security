@@ -1,11 +1,8 @@
-Index: qemu-0.8.2/hw/dma.c
-===================================================================
---- qemu-0.8.2.orig/hw/dma.c	2006-07-22 20:23:34.000000000 +0300
-+++ qemu-0.8.2/hw/dma.c	2007-04-20 06:05:59.000000000 +0300
-@@ -340,9 +340,11 @@ static void channel_run (int ncont, int 
+Index: qemu/hw/dma.c
+@@ -344,9 +344,11 @@ static void channel_run (int ncont, int 
+     }
  #endif
  
-     r = dma_controllers[ncont].regs + ichan;
 -    n = r->transfer_handler (r->opaque, ichan + (ncont << 2),
 -                             r->now[COUNT], (r->base[COUNT] + 1) << ncont);
 -    r->now[COUNT] = n;

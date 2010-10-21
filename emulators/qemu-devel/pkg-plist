@@ -1,6 +1,7 @@
 bin/qemu
 bin/qemu-img
 bin/qemu-io
+bin/qemu-nbd
 %%ALLTARGETS%%bin/qemu-system-arm
 %%ALLTARGETS%%bin/qemu-system-cris
 %%ALLTARGETS%%bin/qemu-system-m68k
@@ -27,6 +28,10 @@ etc/qemu-ifup.sample
 @unexec if cmp -s %D/etc/qemu-ifdown.sample %D/etc/qemu-ifdown; then rm -f %D/etc/qemu-ifdown; fi
 etc/qemu-ifdown.sample
 @exec if [ ! -f %D/etc/qemu-ifdown ] ; then cp -p %D/%F %B/qemu-ifdown; fi
+@unexec if cmp -s %D/etc/qemu/target-x86_64.conf.sample %D/etc/qemu/target-x86_64.conf; then rm -f %D/etc/qemu/target-x86_64.conf; fi
+etc/qemu/target-x86_64.conf.sample
+@exec if [ ! -f %D/etc/qemu/target-x86_64.conf ] ; then cp -p %D/%F %B/etc/qemu/target-x86_64.conf; fi
+@dirrmtry etc/qemu
 %%PORTDOCS%%%%DOCSDIR%%/qemu-doc.html
 %%PORTDOCS%%%%DOCSDIR%%/qemu-tech.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
@@ -39,11 +44,13 @@ etc/qemu-ifdown.sample
 %%DATADIR%%/openbios-sparc64
 %%DATADIR%%/video.x
 %%DATADIR%%/pxe-e1000.bin
-%%DATADIR%%/pxe-i82559er.bin
 %%DATADIR%%/pxe-ne2k_pci.bin
 %%DATADIR%%/pxe-rtl8139.bin
 %%DATADIR%%/pxe-pcnet.bin
 %%DATADIR%%/pxe-virtio.bin
+%%DATADIR%%/gpxe-eepro100-80861209.rom
+%%DATADIR%%/gpxe-eepro100-80861229.rom
+%%DATADIR%%/s390-zipl.rom
 %%DATADIR%%/linuxboot.bin
 %%DATADIR%%/multiboot.bin
 %%DATADIR%%/petalogix-s3adsp1800.dtb

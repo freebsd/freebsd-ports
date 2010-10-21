@@ -1,0 +1,146 @@
+From 6a8aabd3c132188ee8e0e82ef4aba09f782cbe96 Mon Sep 17 00:00:00 2001
+From: Stefan Weil <weil@mail.berlios.de>
+Date: Sun, 8 Aug 2010 14:09:26 +0200
+Subject: [PATCH] hw/omap: Fix default setup for OMAP UART devices
+
+Character devices created by qemu_chr_open don't
+allow duplicate device names, so naming all
+UART devices "null" no longer works.
+
+Running "qemu-system-arm -M n800" (and some other machines)
+results in this error message:
+
+	qemu-system-arm: Duplicate ID 'null' for chardev
+	Can't create serial device, empty char device
+
+This is fixed by setting a default label "uart1",
+"uart2" or "uart3".
+
+Cc: Andrzej Zaborowski <andrew.zaborowski@intel.com>
+Signed-off-by: Stefan Weil <weil@mail.berlios.de>
+---
+ hw/omap.h      |    6 ++++--
+ hw/omap1.c     |    3 +++
+ hw/omap2.c     |    6 +++++-
+ hw/omap_uart.c |   12 +++++++-----
+ 4 files changed, 19 insertions(+), 8 deletions(-)
+
+diff --git a/hw/omap.h b/hw/omap.h
+index 18eb72b..fe32ca5 100644
+--- a/hw/omap.h
++++ b/hw/omap.h
+@@ -664,10 +664,12 @@ void omap_synctimer_reset(struct omap_synctimer_s *s);
+ struct omap_uart_s;
+ struct omap_uart_s *omap_uart_init(target_phys_addr_t base,
+                 qemu_irq irq, omap_clk fclk, omap_clk iclk,
+-                qemu_irq txdma, qemu_irq rxdma, CharDriverState *chr);
++                qemu_irq txdma, qemu_irq rxdma,
++                const char *label, CharDriverState *chr);
+ struct omap_uart_s *omap2_uart_init(struct omap_target_agent_s *ta,
+                 qemu_irq irq, omap_clk fclk, omap_clk iclk,
+-                qemu_irq txdma, qemu_irq rxdma, CharDriverState *chr);
++                qemu_irq txdma, qemu_irq rxdma,
++                const char *label, CharDriverState *chr);
+ void omap_uart_reset(struct omap_uart_s *s);
+ void omap_uart_attach(struct omap_uart_s *s, CharDriverState *chr);
+ 
+diff --git a/hw/omap1.c b/hw/omap1.c
+index 06370b6..1ee5514 100644
+--- a/hw/omap1.c
++++ b/hw/omap1.c
+@@ -3809,16 +3809,19 @@ struct omap_mpu_state_s *omap310_mpu_init(unsigned long sdram_size,
+                     omap_findclk(s, "uart1_ck"),
+                     omap_findclk(s, "uart1_ck"),
+                     s->drq[OMAP_DMA_UART1_TX], s->drq[OMAP_DMA_UART1_RX],
++                    "uart1",
+                     serial_hds[0]);
+     s->uart[1] = omap_uart_init(0xfffb0800, s->irq[1][OMAP_INT_UART2],
+                     omap_findclk(s, "uart2_ck"),
+                     omap_findclk(s, "uart2_ck"),
+                     s->drq[OMAP_DMA_UART2_TX], s->drq[OMAP_DMA_UART2_RX],
++                    "uart2",
+                     serial_hds[0] ? serial_hds[1] : NULL);
+     s->uart[2] = omap_uart_init(0xfffb9800, s->irq[0][OMAP_INT_UART3],
+                     omap_findclk(s, "uart3_ck"),
+                     omap_findclk(s, "uart3_ck"),
+                     s->drq[OMAP_DMA_UART3_TX], s->drq[OMAP_DMA_UART3_RX],
++                    "uart3",
+                     serial_hds[0] && serial_hds[1] ? serial_hds[2] : NULL);
+ 
+     omap_dpll_init(&s->dpll[0], 0xfffecf00, omap_findclk(s, "dpll1"));
+diff --git a/hw/omap2.c b/hw/omap2.c
+index 179075e..e35a56e 100644
+--- a/hw/omap2.c
++++ b/hw/omap2.c
+@@ -2291,13 +2291,16 @@ struct omap_mpu_state_s *omap2420_mpu_init(unsigned long sdram_size,
+                     omap_findclk(s, "uart1_fclk"),
+                     omap_findclk(s, "uart1_iclk"),
+                     s->drq[OMAP24XX_DMA_UART1_TX],
+-                    s->drq[OMAP24XX_DMA_UART1_RX], serial_hds[0]);
++                    s->drq[OMAP24XX_DMA_UART1_RX],
++                    "uart1",
++                    serial_hds[0]);
+     s->uart[1] = omap2_uart_init(omap_l4ta(s->l4, 20),
+                     s->irq[0][OMAP_INT_24XX_UART2_IRQ],
+                     omap_findclk(s, "uart2_fclk"),
+                     omap_findclk(s, "uart2_iclk"),
+                     s->drq[OMAP24XX_DMA_UART2_TX],
+                     s->drq[OMAP24XX_DMA_UART2_RX],
++                    "uart2",
+                     serial_hds[0] ? serial_hds[1] : NULL);
+     s->uart[2] = omap2_uart_init(omap_l4ta(s->l4, 21),
+                     s->irq[0][OMAP_INT_24XX_UART3_IRQ],
+@@ -2305,6 +2308,7 @@ struct omap_mpu_state_s *omap2420_mpu_init(unsigned long sdram_size,
+                     omap_findclk(s, "uart3_iclk"),
+                     s->drq[OMAP24XX_DMA_UART3_TX],
+                     s->drq[OMAP24XX_DMA_UART3_RX],
++                    "uart3",
+                     serial_hds[0] && serial_hds[1] ? serial_hds[2] : NULL);
+ 
+     s->gptimer[0] = omap_gp_timer_init(omap_l4ta(s->l4, 7),
+diff --git a/hw/omap_uart.c b/hw/omap_uart.c
+index 395bf0c..cc66cd9 100644
+--- a/hw/omap_uart.c
++++ b/hw/omap_uart.c
+@@ -51,7 +51,8 @@ void omap_uart_reset(struct omap_uart_s *s)
+ 
+ struct omap_uart_s *omap_uart_init(target_phys_addr_t base,
+                 qemu_irq irq, omap_clk fclk, omap_clk iclk,
+-                qemu_irq txdma, qemu_irq rxdma, CharDriverState *chr)
++                qemu_irq txdma, qemu_irq rxdma,
++                const char *label, CharDriverState *chr)
+ {
+     struct omap_uart_s *s = (struct omap_uart_s *)
+             qemu_mallocz(sizeof(struct omap_uart_s));
+@@ -61,11 +62,11 @@ struct omap_uart_s *omap_uart_init(target_phys_addr_t base,
+     s->irq = irq;
+ #ifdef TARGET_WORDS_BIGENDIAN
+     s->serial = serial_mm_init(base, 2, irq, omap_clk_getrate(fclk)/16,
+-                               chr ?: qemu_chr_open("null", "null", NULL), 1,
++                               chr ?: qemu_chr_open(label, "null", NULL), 1,
+                                1);
+ #else
+     s->serial = serial_mm_init(base, 2, irq, omap_clk_getrate(fclk)/16,
+-                               chr ?: qemu_chr_open("null", "null", NULL), 1,
++                               chr ?: qemu_chr_open(label, "null", NULL), 1,
+                                0);
+ #endif
+     return s;
+@@ -162,11 +163,12 @@ static CPUWriteMemoryFunc * const omap_uart_writefn[] = {
+ 
+ struct omap_uart_s *omap2_uart_init(struct omap_target_agent_s *ta,
+                 qemu_irq irq, omap_clk fclk, omap_clk iclk,
+-                qemu_irq txdma, qemu_irq rxdma, CharDriverState *chr)
++                qemu_irq txdma, qemu_irq rxdma,
++                const char *label, CharDriverState *chr)
+ {
+     target_phys_addr_t base = omap_l4_attach(ta, 0, 0);
+     struct omap_uart_s *s = omap_uart_init(base, irq,
+-                    fclk, iclk, txdma, rxdma, chr);
++                    fclk, iclk, txdma, rxdma, label, chr);
+     int iomemtype = cpu_register_io_memory(omap_uart_readfn,
+                     omap_uart_writefn, s);
+ 
+-- 
+1.7.2.3
+

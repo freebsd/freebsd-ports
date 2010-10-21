@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.12.5
+PORTVERSION=	0.13.0
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}:release \
+MASTER_SITES=	SAVANNAH:release \
 		${MASTER_SITE_LOCAL}:snapshot \
 		http://people.freebsd.org/~nox/qemu/:snapshot
 MASTER_SITE_SUBDIR=	qemu/:release nox/:snapshot
@@ -25,12 +25,12 @@ USE_PERL5_BUILD=	yes
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}" LDFLAGS="${LDFLAGS}"
 MAN1=		qemu.1 qemu-img.1
+MAN8=		qemu-nbd.8
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 CONFLICTS=	qemu-[0-9]*
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	RTL8139_TIMER "allow use of re(4) nic with FreeBSD guests" Off \
-		SAMBA "samba dependency (for -smb)" Off \
+OPTIONS=	SAMBA "samba dependency (for -smb)" Off \
 		SDL "SDL/X dependency (graphical output)" On \
 		GNUTLS "gnutls dependency (vnc encryption)" On \
 		CURL "libcurl dependency (remote images)" On \
@@ -50,7 +50,8 @@ PLIST_SUB+=	ALLTARGETS=""
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC} --enable-docs \
+	--extra-cflags=-DSMBD_COMMAND=\\\"${LOCALBASE}/sbin/smbd\\\"\ -I${LOCALBASE}/include\ -DPREFIX=\\\"${PREFIX}\\\"
 
 .if defined(WITHOUT_SDL)
 CONFIGURE_ARGS+=	--disable-sdl
@@ -116,9 +117,6 @@ post-patch:
 .endif
 .endif
 
-.if defined(WITH_RTL8139_TIMER)
-	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/rtl8139-re-patch
-.endif
 .if defined(WITH_PCAP)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/pcap-patch
 .endif

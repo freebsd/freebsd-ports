@@ -1,22 +1,3 @@
-Index: qemu/Makefile
-@@ -16,6 +16,8 @@
- 
- VPATH=$(SRC_PATH):$(SRC_PATH)/hw
- 
-+QEMU_CFLAGS+= -DSMBD_COMMAND=\"${LOCALBASE}/sbin/smbd\" -I${LOCALBASE}/include -DPREFIX=\"${PREFIX}\"
-+
- LIBS+=-lz $(LIBS_TOOLS)
- 
- ifdef BUILD_DOCS
-Index: qemu/Makefile.target
-@@ -6,6 +6,7 @@
- TARGET_PATH=$(SRC_PATH)/target-$(TARGET_BASE_ARCH)
- VPATH=$(SRC_PATH):$(TARGET_PATH):$(SRC_PATH)/hw
- QEMU_CFLAGS+= -I.. -I$(TARGET_PATH) -DNEED_CPU_H
-+QEMU_CFLAGS+= -DSMBD_COMMAND=\"${LOCALBASE}/sbin/smbd\" -I${LOCALBASE}/include -DPREFIX=\"${PREFIX}\"
- 
- ifdef CONFIG_USER_ONLY
- # user emulator name
 Index: qemu/net.h
 @@ -99,12 +99,14 @@
  int slirp_is_inited(void);
