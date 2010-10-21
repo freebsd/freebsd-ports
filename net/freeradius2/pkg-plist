@@ -1,4 +1,5 @@
 @stopdaemon radiusd
+bin/radcrypt
 bin/radclient
 bin/radconf2xml
 bin/radeapclient
@@ -46,6 +47,7 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/modules/detail.example.com
 %%EXAMPLESDIR%%/raddb/modules/detail.log
 %%EXAMPLESDIR%%/raddb/modules/digest
+%%EXAMPLESDIR%%/raddb/modules/dynamic_clients
 %%EXAMPLESDIR%%/raddb/modules/echo
 %%EXAMPLESDIR%%/raddb/modules/etc_group
 %%EXAMPLESDIR%%/raddb/modules/exec
@@ -62,6 +64,7 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/modules/mac2vlan
 %%EXAMPLESDIR%%/raddb/modules/mschap
 %%EXAMPLESDIR%%/raddb/modules/ntlm_auth
+%%EXAMPLESDIR%%/raddb/modules/opendirectory
 %%EXAMPLESDIR%%/raddb/modules/otp
 %%EXAMPLESDIR%%/raddb/modules/pam
 %%EXAMPLESDIR%%/raddb/modules/pap
@@ -515,11 +518,7 @@ include/freeradius/udpfromto.h
 include/freeradius/vmps.h
 include/freeradius/vqp.h
 @dirrm include/freeradius
-%%PORTDOCS%%%%DOCSDIR%%/Acct-Type
-%%PORTDOCS%%%%DOCSDIR%%/Autz-Type
-%%PORTDOCS%%%%DOCSDIR%%/CYGWIN
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/DIFFS
 %%PORTDOCS%%%%DOCSDIR%%/MACOSX
 %%PORTDOCS%%%%DOCSDIR%%/OS2
 %%PORTDOCS%%%%DOCSDIR%%/Post-Auth-Type
@@ -528,26 +527,15 @@ include/freeradius/vqp.h
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/Session-Type
 %%PORTDOCS%%%%DOCSDIR%%/Simultaneous-Use
-%%PORTDOCS%%%%DOCSDIR%%/aaa.txt
 %%PORTDOCS%%%%DOCSDIR%%/ascend
 %%PORTDOCS%%%%DOCSDIR%%/bay
 %%PORTDOCS%%%%DOCSDIR%%/bugs
-%%PORTDOCS%%%%DOCSDIR%%/cisco
-%%PORTDOCS%%%%DOCSDIR%%/coding-methods.txt
-%%PORTDOCS%%%%DOCSDIR%%/configurable_failover
 %%PORTDOCS%%%%DOCSDIR%%/examples/iplanet.ldif
 %%PORTDOCS%%%%DOCSDIR%%/examples/iplanet.schema
 %%PORTDOCS%%%%DOCSDIR%%/examples/openldap.schema
 %%PORTDOCS%%%%DOCSDIR%%/examples/postgresql_update_radacct_group_trigger.sql
-%%PORTDOCS%%%%DOCSDIR%%/ldap_howto.txt
-%%PORTDOCS%%%%DOCSDIR%%/load-balance.txt
-%%PORTDOCS%%%%DOCSDIR%%/misc-nas
-%%PORTDOCS%%%%DOCSDIR%%/module_interface
 %%PORTDOCS%%%%DOCSDIR%%/mssql
 %%PORTDOCS%%%%DOCSDIR%%/performance-testing
-%%PORTDOCS%%%%DOCSDIR%%/processing_users_file
-%%PORTDOCS%%%%DOCSDIR%%/proxy
-%%PORTDOCS%%%%DOCSDIR%%/release-method.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/attributes.html
 %%PORTDOCS%%%%DOCSDIR%%/rfc/draft-kamath-pppext-eap-mschapv2-00.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/draft-sterman-aaa-sip-00.txt
@@ -578,6 +566,7 @@ include/freeradius/vqp.h
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2869.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2882.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2924.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc3079.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc3162.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc3575.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc3576.txt
@@ -602,6 +591,9 @@ include/freeradius/vqp.h
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5247.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5281.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5580.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5607.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5904.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5997.txt
 %%PORTDOCS%%%%DOCSDIR%%/rlm_dbm
 %%PORTDOCS%%%%DOCSDIR%%/rlm_eap
 %%PORTDOCS%%%%DOCSDIR%%/rlm_expiration
@@ -617,9 +609,26 @@ include/freeradius/vqp.h
 %%PORTDOCS%%%%DOCSDIR%%/rlm_sqlcounter
 %%PORTDOCS%%%%DOCSDIR%%/rlm_sqlippool
 %%PORTDOCS%%%%DOCSDIR%%/snmp
-%%PORTDOCS%%%%DOCSDIR%%/supervise-radiusd.txt
 %%PORTDOCS%%%%DOCSDIR%%/tuning_guide
-%%PORTDOCS%%%%DOCSDIR%%/variables.txt
+%%PORTDOCS%%%%DOCSDIR%%/Acct-Type.rst
+%%PORTDOCS%%%%DOCSDIR%%/Autz-Type.rst
+%%PORTDOCS%%%%DOCSDIR%%/CYGWIN.rst
+%%PORTDOCS%%%%DOCSDIR%%/DIFFS.rst
+%%PORTDOCS%%%%DOCSDIR%%/Makefile.sphinx
+%%PORTDOCS%%%%DOCSDIR%%/aaa.rst
+%%PORTDOCS%%%%DOCSDIR%%/cisco.rst
+%%PORTDOCS%%%%DOCSDIR%%/coding-methods.rst
+%%PORTDOCS%%%%DOCSDIR%%/configurable_failover.rst
+%%PORTDOCS%%%%DOCSDIR%%/index.rst
+%%PORTDOCS%%%%DOCSDIR%%/ldap_howto.rst
+%%PORTDOCS%%%%DOCSDIR%%/load-balance.rst
+%%PORTDOCS%%%%DOCSDIR%%/misc-nas.rst
+%%PORTDOCS%%%%DOCSDIR%%/module_interface.rst
+%%PORTDOCS%%%%DOCSDIR%%/processing_users_file.rst
+%%PORTDOCS%%%%DOCSDIR%%/proxy.rst
+%%PORTDOCS%%%%DOCSDIR%%/release-method.rst
+%%PORTDOCS%%%%DOCSDIR%%/supervise-radiusd.rst
+%%PORTDOCS%%%%DOCSDIR%%/variables.rst
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
@@ -693,6 +702,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.microsoft
 %%DATADIR%%/dictionary.mikrotik
 %%DATADIR%%/dictionary.motorola
+%%DATADIR%%/dictionary.motorola.wimax
 %%DATADIR%%/dictionary.navini
 %%DATADIR%%/dictionary.netscreen
 %%DATADIR%%/dictionary.networkphysics
@@ -721,6 +731,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.rfc3580
 %%DATADIR%%/dictionary.rfc4072
 %%DATADIR%%/dictionary.rfc4372
+%%DATADIR%%/dictionary.rfc4603
 %%DATADIR%%/dictionary.rfc4675
 %%DATADIR%%/dictionary.rfc4679
 %%DATADIR%%/dictionary.rfc4818
@@ -728,6 +739,8 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.rfc5090
 %%DATADIR%%/dictionary.rfc5176
 %%DATADIR%%/dictionary.rfc5580
+%%DATADIR%%/dictionary.rfc5607
+%%DATADIR%%/dictionary.rfc5904
 %%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin
 %%DATADIR%%/dictionary.shasta
@@ -752,6 +765,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.waverider
 %%DATADIR%%/dictionary.wichorus
 %%DATADIR%%/dictionary.wimax
+%%DATADIR%%/dictionary.wimax.wichorus
 %%DATADIR%%/dictionary.wispr
 %%DATADIR%%/dictionary.xedia
 %%DATADIR%%/dictionary.xylan
