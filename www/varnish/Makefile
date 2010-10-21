@@ -6,18 +6,22 @@
 #
 
 PORTNAME=	varnish
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	www
-MASTER_SITES=	SF
+MASTER_SITES=	http://www.varnish-software.com/sites/default/files/
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	The Varnish high-performance HTTP accelerator
 
+LICENSE=	BSD
+
+BUILD_DEPENDS=	rst2man.py:${PORTSDIR}/textproc/py-docutils
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}
+CONFIGURE_ENV=	RST2MAN=rst2man.py
 USE_LDCONFIG=	yes
 USE_GNOME=	pkgconfig
 
