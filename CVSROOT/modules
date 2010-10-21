@@ -12162,6 +12162,7 @@ p5-File-NFSLock                 ports/devel/p5-File-NFSLock
 p5-File-Next                    ports/sysutils/p5-File-Next
 p5-File-Path                    ports/devel/p5-File-Path
 p5-File-Path-Expand             ports/devel/p5-File-Path-Expand
+p5-File-Path-Tiny               ports/devel/p5-File-Path-Tiny
 p5-File-PathConvert             ports/devel/p5-File-PathConvert
 p5-File-Pid                     ports/devel/p5-File-Pid
 p5-File-Pid-Quick               ports/devel/p5-File-Pid-Quick
@@ -14369,6 +14370,7 @@ p5-UNIVERSAL-moniker            ports/devel/p5-UNIVERSAL-moniker
 p5-UNIVERSAL-require            ports/devel/p5-UNIVERSAL-require
 p5-UNIVERSAL-which              ports/devel/p5-UNIVERSAL-which
 p5-URI                          ports/net/p5-URI
+p5-URI-Encode                   ports/www/p5-URI-Encode
 p5-URI-Escape-XS                ports/www/p5-URI-Escape-XS
 p5-URI-Fetch                    ports/www/p5-URI-Fetch
 p5-URI-Find                     ports/textproc/p5-URI-Find
@@ -16111,6 +16113,7 @@ p5-file-next                    ports/sysutils/p5-File-Next
 p5-file-nfslock                 ports/devel/p5-File-NFSLock
 p5-file-path                    ports/devel/p5-File-Path
 p5-file-path-expand             ports/devel/p5-File-Path-Expand
+p5-file-path-tiny               ports/devel/p5-File-Path-Tiny
 p5-file-pathconvert             ports/devel/p5-File-PathConvert
 p5-file-pid                     ports/devel/p5-File-Pid
 p5-file-pid-quick               ports/devel/p5-File-Pid-Quick
@@ -18399,6 +18402,7 @@ p5-unix-statgrab                ports/devel/p5-Unix-Statgrab
 p5-unix-syslog                  ports/sysutils/p5-Unix-Syslog
 p5-unix-uptime                  ports/devel/p5-Unix-Uptime
 p5-uri                          ports/net/p5-URI
+p5-uri-encode                   ports/www/p5-URI-Encode
 p5-uri-escape-xs                ports/www/p5-URI-Escape-XS
 p5-uri-fetch                    ports/www/p5-URI-Fetch
 p5-uri-find                     ports/textproc/p5-URI-Find
@@ -26711,6 +26715,7 @@ zetaback                        ports/sysutils/zetaback
 zfs-replicate                   ports/sysutils/zfs-replicate
 zfs-snapshot-clean              ports/sysutils/zfs-snapshot-clean
 zfs-snapshot-mgmt               ports/sysutils/zfs-snapshot-mgmt
+zfs-stats                       ports/sysutils/zfs-stats
 zfsnap                          ports/sysutils/zfsnap
 zgv                             ports/graphics/zgv
 zh-CJKUnifonts                  ports/chinese/CJKUnifonts
