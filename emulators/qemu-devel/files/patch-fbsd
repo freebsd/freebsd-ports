@@ -20,24 +20,17 @@ Index: qemu/Makefile
  	rm -f *.o *.d *.a $(TOOLS) TAGS cscope.* *.pod *~ */*~
  	rm -f slirp/*.o slirp/*.d audio/*.o audio/*.d block/*.o block/*.d net/*.o net/*.d
 Index: qemu/Makefile.target
-@@ -137,7 +137,7 @@
+@@ -312,8 +312,8 @@ endif # CONFIG_SOFTMMU
  
- obj-i386-y += ioport-user.o
+ obj-$(CONFIG_GDBSTUB_XML) += gdbstub-xml.o
  
--ARLIBS=../libuser/libuser.a libqemu.a
-+ARLIBS=../libuser/libuser.a libqemu.a ../bsd/libmath.a
+-$(QEMU_PROG): $(obj-y) $(obj-$(TARGET_BASE_ARCH)-y)
+-	$(call LINK,$(obj-y) $(obj-$(TARGET_BASE_ARCH)-y))
++$(QEMU_PROG): $(obj-y) $(obj-$(TARGET_BASE_ARCH)-y) ../bsd/libmath.a
++	$(call LINK,$(obj-y) $(obj-$(TARGET_BASE_ARCH)-y) ../bsd/libmath.a)
  
- endif #CONFIG_BSD_USER
  
-@@ -293,7 +293,7 @@
- 
- monitor.o: qemu-monitor.h
- 
--ARLIBS=../libqemu_common.a libqemu.a $(HWLIB)
-+ARLIBS=../libqemu_common.a libqemu.a $(HWLIB) ../bsd/libmath.a
- 
- endif # CONFIG_SOFTMMU
- 
+ gdbstub-xml.c: $(TARGET_XML_FILES) $(SRC_PATH)/feature_to_c.sh
 Index: qemu/fpu/softfloat-native.c
 @@ -9,7 +9,8 @@
  void set_float_rounding_mode(int val STATUS_PARAM)

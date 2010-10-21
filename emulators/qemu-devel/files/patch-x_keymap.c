@@ -1,4 +1,4 @@
-Index: qemu/x_keymap.c
+Index: qemu/ui/x_keymap.c
 @@ -41,9 +41,9 @@
     0xb5,      /* 112  Divide */
     0xb8,      /* 113  Alt-R  */

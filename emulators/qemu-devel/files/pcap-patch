@@ -98,9 +98,9 @@
  
  typedef int (NetCanReceive)(VLANClientState *);
 Index: net.c
-@@ -36,6 +36,11 @@
- #include "qemu-common.h"
+@@ -37,6 +37,11 @@
  #include "qemu_socket.h"
+ #include "hw/qdev.h"
  
 +#include <sys/ioctl.h>
 +#ifdef __FreeBSD__
@@ -110,7 +110,7 @@ Index: net.c
  static QTAILQ_HEAD(, VLANState) vlans;
  static QTAILQ_HEAD(, VLANClientState) non_vlan_clients;
  
-@@ -817,6 +822,226 @@ static int net_init_nic(QemuOpts *opts,
+@@ -820,6 +825,226 @@ static int net_init_nic(QemuOpts *opts,
      return idx;
  }
  
@@ -228,11 +228,11 @@ Index: net.c
 +        goto fail;
 +    }
 +    if (pcap_set_promisc(s->handle, 1) != 0) {
-+        pcap_perror(s->handle, "qemu: pcap_set_promisc:");
++        pcap_perror(s->handle, (char *)"qemu: pcap_set_promisc:");
 +        goto fail;
 +    }
 +    if (pcap_activate(s->handle) != 0) {
-+        pcap_perror(s->handle, "qemu: pcap_activate:");
++        pcap_perror(s->handle, (char *)"qemu: pcap_activate:");
 +        goto fail;
 +    }
 +#else
@@ -337,7 +337,7 @@ Index: net.c
  #define NET_COMMON_PARAMS_DESC                     \
      {                                              \
          .name = "type",                            \
-@@ -977,6 +1202,20 @@ static struct {
+@@ -988,6 +1213,20 @@ static const struct {
  #endif /* _WIN32 */
              { /* end of list */ }
          },
@@ -358,6 +358,14 @@ Index: net.c
      }, {
          .type = "socket",
          .init = net_init_socket,
+@@ -1314,6 +1553,7 @@ void net_check_clients(void)
+             case NET_CLIENT_TYPE_TAP:
+             case NET_CLIENT_TYPE_SOCKET:
+             case NET_CLIENT_TYPE_VDE:
++            case NET_CLIENT_TYPE_PCAP:
+                 has_host_dev = 1;
+                 break;
+             default: ;
 --- qemu-options.hx.orig	2010-01-14 17:18:00.000000000 -0500
 +++ qemu-options.hx	2010-01-29 14:36:00.000000000 -0500
 @@ -799,6 +799,10 @@ DEF("smb", HAS_ARG, QEMU_OPTION_smb, "")

@@ -1,17 +1,17 @@
 Index: qemu/Makefile
-@@ -19,7 +19,11 @@
+@@ -29,7 +29,11 @@ $(call set-vpath, $(SRC_PATH):$(SRC_PATH
  LIBS+=-lz $(LIBS_TOOLS)
  
  ifdef BUILD_DOCS
 +ifdef NOPORTDOCS
 +DOCS=qemu.1 qemu-img.1 qemu-nbd.8
 +else
- DOCS=qemu-doc.html qemu-tech.html qemu.1 qemu-img.1 qemu-nbd.8
+ DOCS=qemu-doc.html qemu-tech.html qemu.1 qemu-img.1 qemu-nbd.8 QMP/qmp-commands.txt
 +endif
  else
  DOCS=
  endif
-@@ -213,13 +217,13 @@
+@@ -169,8 +173,10 @@ BLOBS=
  endif
  
  install-doc: $(DOCS)
@@ -22,8 +22,15 @@ Index: qemu/Makefile
  ifdef CONFIG_POSIX
  	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man1"
  	$(INSTALL_DATA) qemu.1 qemu-img.1 "$(DESTDIR)$(mandir)/man1"
--	$(INSTALL_DIR) "$(DESTDIR)$(mandir)/man8"
--	$(INSTALL_DATA) qemu-nbd.8 "$(DESTDIR)$(mandir)/man8"
- endif
+@@ -180,7 +186,10 @@ endif
  
- install: all $(if $(BUILD_DOCS),install-doc)
+ install-sysconfig:
+ 	$(INSTALL_DIR) "$(DESTDIR)$(sysconfdir)/qemu"
+-	$(INSTALL_DATA) $(SRC_PATH)/sysconfigs/target/target-x86_64.conf "$(DESTDIR)$(sysconfdir)/qemu"
++	$(INSTALL_DATA) $(SRC_PATH)/sysconfigs/target/target-x86_64.conf "$(DESTDIR)$(sysconfdir)/qemu/target-x86_64.conf.sample"
++	if [ ! -f "$(sysconfdir)/qemu/target-x86_64.conf" ]; then \
++	    $(INSTALL_DATA) $(SRC_PATH)/sysconfigs/target/target-x86_64.conf "$(sysconfdir)/qemu"; \
++	fi
+ 
+ install: all $(if $(BUILD_DOCS),install-doc) install-sysconfig
+ 	$(INSTALL_DIR) "$(DESTDIR)$(bindir)"

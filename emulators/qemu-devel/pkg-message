@@ -69,16 +69,6 @@ FreeBSD host notes
   (linux') uhci module got loaded.  Workaround: either add devices before
   linux loads the module or rmmod and modprobe it afterwards.
 
-- To avoid panics or non-working re(4) nics with FreeBSD guests if you use
-  qemu -net nic,model=rtl8139 -net user or tap ... enable the emulated rtl8139
-  timer by building the port with RTL8139_TIMER enabled.   (The rtl8139c+ that
-  model=rtl8139 emulates needs less cpu than qemu's default ne2k nic which is
-  driven by ed(4), it has not been made default only because it may not work
-  with all guests yet.  Btw qemu now also can emulate a few intel eepro100 and
-  e1000 nics which seem to be a tad more efficient even, and at least i82557b
-  and e1000 work without tweaks for FreeBSD guests - driven by fxp(4) and
-  em(4) repectively - and Linux guests too.)
-
 - If you get repeated `atapi_poll called!' console messages with FreeBSD
   guests or other weird cdrom problems then thats probably because the guest
   has atapicam loaded, which for reasons still to be determined has problems
