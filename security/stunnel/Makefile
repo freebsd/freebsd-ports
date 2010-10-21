@@ -7,17 +7,22 @@
 
 PORTNAME=	stunnel
 PORTVERSION=	4.34
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
-		ftp://stunnel.mirt.net/stunnel/ \
-		ftp://stunnel.mirt.net/stunnel/OBSOLETE/ \
-		ftp://opensores.thebunker.net/pub/mirrors/stunnel/download/stunnel/src/
+		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
+		ftp://stunnel.mirt.net/stunnel/%SUBDIR%/ \
+		ftp://ftp.nluug.nl/pub/networking/stunnel/%SUBDIR%/ \
+		http://ftp.nluug.nl/pub/networking/stunnel/%SUBDIR%/ \
+		ftp://ftp.surfnet.nl/pub/networking/stunnel/%SUBDIR%/ \
+		http://ftp.surfnet.nl/pub/networking/stunnel/%SUBDIR%/ \
+		http://mirrors.zerg.biz/stunnel/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. obsolete/4.x
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	SSL encryption wrapper for standard network daemons
 
 USE_AUTOTOOLS=	libtool:22
-USE_OPENSSL=	YES
 USE_RC_SUBR=	stunnel
 
 GNU_CONFIGURE=	yes
@@ -32,13 +37,20 @@ OPTIONS=	FORK	"use the fork(3) threading model"	off \
 		PTHREAD	"use the pthread(3) threading model (default)"	on \
 		UCONTEXT	"use the ucontext(3) threading model"	off \
 		IPV6	"enable IPv6 support" off \
-		LIBWRAP	"use TCP wrappers" on
+		LIBWRAP	"use TCP wrappers" on \
+		SSL_PORT	"use OpenSSL from the Ports Collection" on
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_SSL_PORT)
+USE_OPENSSL=	YES
+WITH_OPENSSL_PORT=	yes
+CONFIGURE_ARGS+=	--with-ssl="${OPENSSLBASE}"
+.else
+CONFIGURE_ARGS+=	--with-ssl=/usr
+.endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
-.endif
 
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
