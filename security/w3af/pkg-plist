@@ -54,9 +54,9 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/coreHelpers/export.py
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/coreHelpers/export.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/coreHelpers/export.pyo
-%%PYTHON_SITELIBDIR%%/w3af/core/controllers/coreHelpers/fingerprint404Page.py
-%%PYTHON_SITELIBDIR%%/w3af/core/controllers/coreHelpers/fingerprint404Page.pyc
-%%PYTHON_SITELIBDIR%%/w3af/core/controllers/coreHelpers/fingerprint404Page.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/coreHelpers/fingerprint_404.py
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/coreHelpers/fingerprint_404.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/coreHelpers/fingerprint_404.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/coreHelpers/progress.py
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/coreHelpers/progress.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/coreHelpers/progress.pyo
@@ -130,6 +130,12 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/factory.py
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/factory.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/factory.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/get_local_ip.py
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/get_local_ip.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/get_local_ip.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/get_net_iface.py
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/get_net_iface.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/get_net_iface.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/get_w3af_version.py
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/get_w3af_version.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/get_w3af_version.pyo
@@ -142,12 +148,18 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/is_private_site.py
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/is_private_site.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/is_private_site.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/is_source_file.py
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/is_source_file.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/is_source_file.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/levenshtein.py
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/levenshtein.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/levenshtein.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/lru.py
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/lru.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/lru.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/make_leet.py
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/make_leet.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/make_leet.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/memoryUsage.py
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/memoryUsage.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/memoryUsage.pyo
@@ -157,6 +169,9 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/temp_dir.py
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/temp_dir.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/temp_dir.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/timeout_function.py
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/timeout_function.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/timeout_function.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/w3afTest.py
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/w3afTest.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/controllers/misc/w3afTest.pyo
@@ -347,12 +362,12 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/core/data/db/__init__.py
 %%PYTHON_SITELIBDIR%%/w3af/core/data/db/__init__.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/data/db/__init__.pyo
-%%PYTHON_SITELIBDIR%%/w3af/core/data/db/persist.py
-%%PYTHON_SITELIBDIR%%/w3af/core/data/db/persist.pyc
-%%PYTHON_SITELIBDIR%%/w3af/core/data/db/persist.pyo
-%%PYTHON_SITELIBDIR%%/w3af/core/data/db/reqResDBHandler.py
-%%PYTHON_SITELIBDIR%%/w3af/core/data/db/reqResDBHandler.pyc
-%%PYTHON_SITELIBDIR%%/w3af/core/data/db/reqResDBHandler.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/data/db/db.py
+%%PYTHON_SITELIBDIR%%/w3af/core/data/db/db.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/data/db/db.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/data/db/history.py
+%%PYTHON_SITELIBDIR%%/w3af/core/data/db/history.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/data/db/history.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/data/db/temp_persist.py
 %%PYTHON_SITELIBDIR%%/w3af/core/data/db/temp_persist.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/data/db/temp_persist.pyo
@@ -374,6 +389,18 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/core/data/exchangableMethods.py
 %%PYTHON_SITELIBDIR%%/w3af/core/data/exchangableMethods.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/data/exchangableMethods.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/data/export/__init__.py
+%%PYTHON_SITELIBDIR%%/w3af/core/data/export/__init__.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/data/export/__init__.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/data/export/ajax_export.py
+%%PYTHON_SITELIBDIR%%/w3af/core/data/export/ajax_export.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/data/export/ajax_export.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/data/export/python_export.py
+%%PYTHON_SITELIBDIR%%/w3af/core/data/export/python_export.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/data/export/python_export.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/data/export/ruby_export.py
+%%PYTHON_SITELIBDIR%%/w3af/core/data/export/ruby_export.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/data/export/ruby_export.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/data/fuzzer/__init__.py
 %%PYTHON_SITELIBDIR%%/w3af/core/data/fuzzer/__init__.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/data/fuzzer/__init__.pyo
@@ -407,6 +434,9 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/core/data/fuzzer/mutantQs.py
 %%PYTHON_SITELIBDIR%%/w3af/core/data/fuzzer/mutantQs.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/data/fuzzer/mutantQs.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/data/fuzzer/mutantXMLRPC.py
+%%PYTHON_SITELIBDIR%%/w3af/core/data/fuzzer/mutantXMLRPC.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/data/fuzzer/mutantXMLRPC.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/data/getResponseType.py
 %%PYTHON_SITELIBDIR%%/w3af/core/data/getResponseType.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/data/getResponseType.pyo
@@ -485,6 +515,9 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/core/data/parsers/wsdlParser.py
 %%PYTHON_SITELIBDIR%%/w3af/core/data/parsers/wsdlParser.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/data/parsers/wsdlParser.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/data/parsers/xmlrpc.py
+%%PYTHON_SITELIBDIR%%/w3af/core/data/parsers/xmlrpc.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/data/parsers/xmlrpc.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/data/profile/__init__.py
 %%PYTHON_SITELIBDIR%%/w3af/core/data/profile/__init__.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/data/profile/__init__.pyo
@@ -509,18 +542,24 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/core/data/request/jsonPostDataRequest.py
 %%PYTHON_SITELIBDIR%%/w3af/core/data/request/jsonPostDataRequest.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/data/request/jsonPostDataRequest.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/data/request/variant_identification.py
+%%PYTHON_SITELIBDIR%%/w3af/core/data/request/variant_identification.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/data/request/variant_identification.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/data/request/wsPostDataRequest.py
 %%PYTHON_SITELIBDIR%%/w3af/core/data/request/wsPostDataRequest.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/data/request/wsPostDataRequest.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/data/request/xmlrpcRequest.py
+%%PYTHON_SITELIBDIR%%/w3af/core/data/request/xmlrpcRequest.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/data/request/xmlrpcRequest.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/data/searchEngines/__init__.py
 %%PYTHON_SITELIBDIR%%/w3af/core/data/searchEngines/__init__.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/data/searchEngines/__init__.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/data/searchEngines/bing.py
+%%PYTHON_SITELIBDIR%%/w3af/core/data/searchEngines/bing.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/data/searchEngines/bing.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/data/searchEngines/googleSearchEngine.py
 %%PYTHON_SITELIBDIR%%/w3af/core/data/searchEngines/googleSearchEngine.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/data/searchEngines/googleSearchEngine.pyo
-%%PYTHON_SITELIBDIR%%/w3af/core/data/searchEngines/msn.py
-%%PYTHON_SITELIBDIR%%/w3af/core/data/searchEngines/msn.pyc
-%%PYTHON_SITELIBDIR%%/w3af/core/data/searchEngines/msn.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/data/searchEngines/pks.py
 %%PYTHON_SITELIBDIR%%/w3af/core/data/searchEngines/pks.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/data/searchEngines/pks.pyo
@@ -539,6 +578,9 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/core/data/url/handlers/FastHTTPBasicAuthHandler.py
 %%PYTHON_SITELIBDIR%%/w3af/core/data/url/handlers/FastHTTPBasicAuthHandler.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/data/url/handlers/FastHTTPBasicAuthHandler.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/data/url/handlers/HTTPNtlmAuthHandler.py
+%%PYTHON_SITELIBDIR%%/w3af/core/data/url/handlers/HTTPNtlmAuthHandler.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/data/url/handlers/HTTPNtlmAuthHandler.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/data/url/handlers/MultipartPostHandler.py
 %%PYTHON_SITELIBDIR%%/w3af/core/data/url/handlers/MultipartPostHandler.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/data/url/handlers/MultipartPostHandler.pyo
@@ -563,6 +605,9 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/core/data/url/handlers/mangleHandler.py
 %%PYTHON_SITELIBDIR%%/w3af/core/data/url/handlers/mangleHandler.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/data/url/handlers/mangleHandler.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/data/url/handlers/urlParameterHandler.py
+%%PYTHON_SITELIBDIR%%/w3af/core/data/url/handlers/urlParameterHandler.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/data/url/handlers/urlParameterHandler.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/data/url/httpResponse.py
 %%PYTHON_SITELIBDIR%%/w3af/core/data/url/httpResponse.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/data/url/httpResponse.pyo
@@ -719,6 +764,9 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/exploittab.py
 %%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/exploittab.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/exploittab.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/export_request.py
+%%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/export_request.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/export_request.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/fuzzygen.py
 %%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/fuzzygen.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/fuzzygen.pyo
@@ -782,6 +830,11 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/wizard.py
 %%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/wizard.pyc
 %%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/wizard.pyo
+%%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/speed/arrow.png
+%%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/speed/speedometer.png
+%%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/speed/speedometer.py
+%%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/speed/speedometer.pyc
+%%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/speed/speedometer.pyo
 %%PYTHON_SITELIBDIR%%/w3af/core/ui/userInterface.dtd
 %%PYTHON_SITELIBDIR%%/w3af/extlib/__init__.py
 %%PYTHON_SITELIBDIR%%/w3af/extlib/__init__.pyc
@@ -806,6 +859,32 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/extlib/cluster/setup.py
 %%PYTHON_SITELIBDIR%%/w3af/extlib/cluster/setup.pyc
 %%PYTHON_SITELIBDIR%%/w3af/extlib/cluster/setup.pyo
+%%PYTHON_SITELIBDIR%%/w3af/extlib/gtkcodebuffer/__init__.pyo
+%%PYTHON_SITELIBDIR%%/w3af/extlib/gtkcodebuffer/__init__.pyc
+%%PYTHON_SITELIBDIR%%/w3af/extlib/gtkcodebuffer/__init__.py
+%%PYTHON_SITELIBDIR%%/w3af/extlib/gtkcodebuffer/gtkcodebuffer.pyo
+%%PYTHON_SITELIBDIR%%/w3af/extlib/gtkcodebuffer/gtkcodebuffer.pyc
+%%PYTHON_SITELIBDIR%%/w3af/extlib/gtkcodebuffer/gtkcodebuffer.py
+%%PYTHON_SITELIBDIR%%/w3af/extlib/gtkcodebuffer/syntax/python.xml
+%%PYTHON_SITELIBDIR%%/w3af/extlib/gtkcodebuffer/syntax/xml.xml
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/U32.py
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/U32.pyc
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/U32.pyo
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/__init__.py
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/__init__.pyc
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/__init__.pyo
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/des.py
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/des.pyc
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/des.pyo
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/des_c.py
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/des_c.pyc
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/des_c.pyo
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/des_data.py
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/des_data.pyc
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/des_data.pyo
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/ntlm.py
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/ntlm.pyc
+%%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm/ntlm.pyo
 %%PYTHON_SITELIBDIR%%/w3af/extlib/pygoogle/GoogleSOAPFacade.py
 %%PYTHON_SITELIBDIR%%/w3af/extlib/pygoogle/GoogleSOAPFacade.pyc
 %%PYTHON_SITELIBDIR%%/w3af/extlib/pygoogle/GoogleSOAPFacade.pyo
@@ -888,6 +967,7 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/plugins/attack/db/__init__.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/attack/db/__init__.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/attack/db/__init__.pyo
+%%PYTHON_SITELIBDIR%%/w3af/plugins/attack/db/autocomplete.txt
 %%PYTHON_SITELIBDIR%%/w3af/plugins/attack/db/dbDriver.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/attack/db/dbDriver.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/attack/db/dbDriver.pyo
@@ -932,6 +1012,7 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/plugins/attack/payloads/webshell/webshell.aspx
 %%PYTHON_SITELIBDIR%%/w3af/plugins/attack/payloads/webshell/webshell.jsp
 %%PYTHON_SITELIBDIR%%/w3af/plugins/attack/payloads/webshell/webshell.php
+%%PYTHON_SITELIBDIR%%/w3af/plugins/attack/payloads/webshell/webshell.pl
 %%PYTHON_SITELIBDIR%%/w3af/plugins/attack/payloads/webshell/webshell.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/attack/payloads/webshell/webshell.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/attack/payloads/webshell/webshell.pyo
@@ -1010,6 +1091,9 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/plugins/audit/preg_replace.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/audit/preg_replace.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/audit/preg_replace.pyo
+%%PYTHON_SITELIBDIR%%/w3af/plugins/audit/redos.py
+%%PYTHON_SITELIBDIR%%/w3af/plugins/audit/redos.pyc
+%%PYTHON_SITELIBDIR%%/w3af/plugins/audit/redos.pyo
 %%PYTHON_SITELIBDIR%%/w3af/plugins/audit/remoteFileInclude.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/audit/remoteFileInclude.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/audit/remoteFileInclude.pyo
@@ -1049,9 +1133,6 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/plugins/bruteforce/formAuthBrute.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/bruteforce/formAuthBrute.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/bruteforce/formAuthBrute.pyo
-%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/MSNSpider.py
-%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/MSNSpider.pyc
-%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/MSNSpider.pyo
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/__init__.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/__init__.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/__init__.pyo
@@ -1064,9 +1145,9 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/archiveDotOrg.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/archiveDotOrg.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/archiveDotOrg.pyo
-%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/crossDomain.py
-%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/crossDomain.pyc
-%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/crossDomain.pyo
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/bing_spider.py
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/bing_spider.pyc
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/bing_spider.pyo
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/detectReverseProxy.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/detectReverseProxy.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/detectReverseProxy.pyo
@@ -1094,12 +1175,12 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/findvhost.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/findvhost.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/findvhost.pyo
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/fingerBing.py
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/fingerBing.pyc
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/fingerBing.pyo
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/fingerGoogle.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/fingerGoogle.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/fingerGoogle.pyo
-%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/fingerMSN.py
-%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/fingerMSN.pyc
-%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/fingerMSN.pyo
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/fingerPKS.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/fingerPKS.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/fingerPKS.pyo
@@ -1116,9 +1197,6 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/ghdb.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/ghdb.pyo
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/ghdb/GHDB.xml
-%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/googleSets.py
-%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/googleSets.pyc
-%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/googleSets.pyo
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/googleSpider.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/googleSpider.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/googleSpider.pyo
@@ -1131,6 +1209,18 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/importResults.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/importResults.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/importResults.pyo
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/content_negotiation/common_filenames.db
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/content_negotiation.py
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/content_negotiation.pyc
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/content_negotiation.pyo
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/dir_bruter/common_dirs_small.db
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/dir_bruter.py
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/dir_bruter.pyo
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/dir_bruter.pyc
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/favicon/favicon-md5
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/favicon_identification.py
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/favicon_identification.pyc
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/favicon_identification.pyo
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/AUTHORS
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/ChangeLog
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/GNUmakefile
@@ -1309,7 +1399,6 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/doc/api/public/toc.html
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/doc/api/public/trees.html
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/doc/manual.tex
-%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/man/man1/halberd.1
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/scripts/halberd
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/setup.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/setup.pyc
@@ -1451,6 +1540,10 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/pykto/scan_database.db
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/pykto/versions.txt
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/pykto/w3af_scan_database.db
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/ria_enumerator/common_filenames.db
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/ria_enumerator.py
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/ria_enumerator.pyc
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/ria_enumerator.pyo
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/robotsReader.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/robotsReader.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/robotsReader.pyo
@@ -1466,12 +1559,18 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/sitemapReader.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/sitemapReader.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/sitemapReader.pyo
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/slash.py
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/slash.pyc
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/slash.pyo
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/spiderMan.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/spiderMan.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/spiderMan.pyo
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/urlFuzzer.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/urlFuzzer.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/urlFuzzer.pyo
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/urllist_txt.py
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/urllist_txt.pyc
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/urllist_txt.pyo
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/userDir.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/userDir.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/userDir.pyo
@@ -1484,9 +1583,15 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/wordnet.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/wordnet.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/wordnet.pyo
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/wordpress_fingerprint.py
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/wordpress_fingerprint.pyc
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/wordpress_fingerprint.pyo
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/wsdlFinder.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/wsdlFinder.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/wsdlFinder.pyo
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/xssedDotCom.py
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/xssedDotCom.pyc
+%%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/xssedDotCom.pyo
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/yahooSiteExplorer.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/yahooSiteExplorer.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/yahooSiteExplorer.pyo
@@ -1589,9 +1694,6 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/plugins/grep/motw.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/grep/motw.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/grep/motw.pyo
-%%PYTHON_SITELIBDIR%%/w3af/plugins/grep/newline.py
-%%PYTHON_SITELIBDIR%%/w3af/plugins/grep/newline.pyc
-%%PYTHON_SITELIBDIR%%/w3af/plugins/grep/newline.pyo
 %%PYTHON_SITELIBDIR%%/w3af/plugins/grep/objects.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/grep/objects.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/grep/objects.pyo
@@ -1631,6 +1733,9 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/plugins/grep/strangeParameters.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/grep/strangeParameters.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/grep/strangeParameters.pyo
+%%PYTHON_SITELIBDIR%%/w3af/plugins/grep/strangeReason.py
+%%PYTHON_SITELIBDIR%%/w3af/plugins/grep/strangeReason.pyc
+%%PYTHON_SITELIBDIR%%/w3af/plugins/grep/strangeReason.pyo
 %%PYTHON_SITELIBDIR%%/w3af/plugins/grep/svnUsers.py
 %%PYTHON_SITELIBDIR%%/w3af/plugins/grep/svnUsers.pyc
 %%PYTHON_SITELIBDIR%%/w3af/plugins/grep/svnUsers.pyo
@@ -1665,6 +1770,7 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/profiles/OWASP_TOP10.pw3af
 %%PYTHON_SITELIBDIR%%/w3af/profiles/audit_high_risk.pw3af
 %%PYTHON_SITELIBDIR%%/w3af/profiles/bruteforce.pw3af
+%%PYTHON_SITELIBDIR%%/w3af/profiles/empty_profile.pw3af
 %%PYTHON_SITELIBDIR%%/w3af/profiles/fast_scan.pw3af
 %%PYTHON_SITELIBDIR%%/w3af/profiles/full_audit.pw3af
 %%PYTHON_SITELIBDIR%%/w3af/profiles/full_audit_manual_disc.pw3af
@@ -1738,13 +1844,14 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/readme/EN/gtkui-graphs/toolbar-tools.png
 %%PYTHON_SITELIBDIR%%/w3af/readme/EN/gtkui-graphs/toolbar-wiz.png
 %%PYTHON_SITELIBDIR%%/w3af/readme/EN/gtkui-graphs/urls.svg
-%%PYTHON_SITELIBDIR%%/w3af/readme/EN/w3afUsersGuide.html
-%%PYTHON_SITELIBDIR%%/w3af/readme/EN/w3afUsersGuide.odt
-%%PYTHON_SITELIBDIR%%/w3af/readme/EN/w3afUsersGuide.pdf
+%%PYTHON_SITELIBDIR%%/w3af/readme/EN/w3af-users-guide.html
+%%PYTHON_SITELIBDIR%%/w3af/readme/EN/w3af-users-guide.odt
+%%PYTHON_SITELIBDIR%%/w3af/readme/EN/w3af-users-guide.pdf
 %%PYTHON_SITELIBDIR%%/w3af/readme/EN/w3afUsersGuide_html_m51b850c5.png
-%%PYTHON_SITELIBDIR%%/w3af/readme/FR/w3afUsersGuide_fr.html
-%%PYTHON_SITELIBDIR%%/w3af/readme/FR/w3afUsersGuide_fr.odt
-%%PYTHON_SITELIBDIR%%/w3af/readme/FR/w3afUsersGuide_fr.pdf
+%%PYTHON_SITELIBDIR%%/w3af/readme/FR/README.FIRST
+%%PYTHON_SITELIBDIR%%/w3af/readme/FR/w3af-users-guide.html
+%%PYTHON_SITELIBDIR%%/w3af/readme/FR/w3af-users-guide.odt
+%%PYTHON_SITELIBDIR%%/w3af/readme/FR/w3af-users-guide.pdf
 %%PYTHON_SITELIBDIR%%/w3af/readme/FR/w3afUsersGuide_fr_html_m51b850c5.png
 %%PYTHON_SITELIBDIR%%/w3af/readme/GPL
 %%PYTHON_SITELIBDIR%%/w3af/readme/INSTALL
@@ -1763,11 +1870,13 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-basicAuthBrute-impossible_guess.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-basicAuthBrute-threads.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-basicAuthBrute.w3af
+%%PYTHON_SITELIBDIR%%/w3af/scripts/script-bing_spider.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-blankBody.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-blindSqli_setIntersection.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-bsqli_detection.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-buffer_overflow.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-code_disclosure.w3af
+%%PYTHON_SITELIBDIR%%/w3af/scripts/script-content_negotiation.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-cookie_fuzzing.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-creditCards-no.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-creditCards-yes.w3af
@@ -1779,6 +1888,7 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-detect_reverse_proxy_no.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-detect_transparent_proxy.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-digit_sum.w3af
+%%PYTHON_SITELIBDIR%%/w3af/scripts/script-dir_bruter.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-directory_indexing.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-discoveryBruteforceFormLoop.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-discoveryBruteforceLoop.w3af
@@ -1787,6 +1897,7 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-domain_dot.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-dotNetErrors.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-dotNetEventValidation.w3af
+%%PYTHON_SITELIBDIR%%/w3af/scripts/script-duplicated_parameter_names.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-encoding.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-error500.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-errorPages.w3af
@@ -1798,6 +1909,7 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-exploitAll-stopOnFirst.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-exploitAll.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-fastExploit.w3af
+%%PYTHON_SITELIBDIR%%/w3af/scripts/script-favicon_identification.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-feeds.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-file_upload.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-file_upload_shell.w3af
@@ -1807,13 +1919,14 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-find_comments.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-find_vhost-2.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-find_vhost.w3af
+%%PYTHON_SITELIBDIR%%/w3af/scripts/script-finger_Bing.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-fingerGoogle-fast.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-fingerGoogle.w3af
-%%PYTHON_SITELIBDIR%%/w3af/scripts/script-finger_MSN.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-finger_PKS.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-fingerprint_waf.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-formLoginBrute-threads.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-formLoginBrute.w3af
+%%PYTHON_SITELIBDIR%%/w3af/scripts/script-form_login_password_only.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-format_string.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-frontpage_version.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-fuzzFileContent.w3af
@@ -1825,11 +1938,10 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-global_redirect.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-googleProxy.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-googleSpider.w3af
-%%PYTHON_SITELIBDIR%%/w3af/scripts/script-google_sets.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-gtkOutput.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-halberd.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-hashFind.w3af
-%%PYTHON_SITELIBDIR%%/w3af/scripts/script-headers.w3af
+%%PYTHON_SITELIBDIR%%/w3af/scripts/script-header_fuzzing.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-hmap.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-htaccess_methods.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-html_output.w3af
@@ -1857,7 +1969,6 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-maxFileSize.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-meta_tags.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-motw.w3af
-%%PYTHON_SITELIBDIR%%/w3af/scripts/script-msn_spider.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-newline.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-nonTarget.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-objects.w3af
@@ -1904,6 +2015,7 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-shortFilenameXss.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-simple_xss.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-sitemap.xml.w3af
+%%PYTHON_SITELIBDIR%%/w3af/scripts/script-slash.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-spiderMan.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-sql_webshell-no_path_disclosure.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-sql_webshell.w3af
@@ -1916,6 +2028,7 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-strange_header.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-strange_http_code.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-strange_parameters.w3af
+%%PYTHON_SITELIBDIR%%/w3af/scripts/script-strange_reason_message.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-svn_users.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-targetsInFile.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-test-exploit-config.w3af
@@ -1925,6 +2038,7 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-urlRegex.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-urlWithPort.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-url_fuzzer.w3af
+%%PYTHON_SITELIBDIR%%/w3af/scripts/script-urllist.txt.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-user_dir.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-web20Spider-2-2.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-web20Spider-2.w3af
@@ -1939,6 +2053,7 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-wivet.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-wml.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-wordnet.w3af
+%%PYTHON_SITELIBDIR%%/w3af/scripts/script-wordpress_fingerprint.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-wsdl_finder.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-wsdl_greper.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-xml_output.w3af
@@ -1946,6 +2061,7 @@ bin/w3af_console
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-xsrf.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-xssBeEF_reflected_xss.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-xssBeEF_stored_xss.w3af
+%%PYTHON_SITELIBDIR%%/w3af/scripts/script-xssed_dot_com.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-xss_forms.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-xss_ireplace_script.w3af
 %%PYTHON_SITELIBDIR%%/w3af/scripts/script-xss_no_quotes.w3af
@@ -1982,6 +2098,7 @@ bin/w3af_console
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/plugins/grep/passwordProfilingPlugins
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/plugins/grep
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/plugins/evasion
+@dirrm %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/ria_enumerator
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/pykto
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/phishtank
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHmap/known.servers
@@ -1999,6 +2116,9 @@ bin/w3af_console
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd/Halberd
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/oHalberd
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/ghdb
+@dirrm %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/favicon
+@dirrm %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/dir_bruter
+@dirrm %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery/content_negotiation
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/plugins/discovery
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/plugins/bruteforce
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/plugins/audit/fileUpload
@@ -2021,8 +2141,12 @@ bin/w3af_console
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/extlib/pygoogle/doc/private
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/extlib/pygoogle/doc
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/extlib/pygoogle
+@dirrm %%PYTHON_SITELIBDIR%%/w3af/extlib/ntlm
+@dirrm %%PYTHON_SITELIBDIR%%/w3af/extlib/gtkcodebuffer/syntax
+@dirrm %%PYTHON_SITELIBDIR%%/w3af/extlib/gtkcodebuffer
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/extlib/cluster
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/extlib
+@dirrm %%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/speed
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/data
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/comparator/pixmaps
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/core/ui/gtkUi/comparator
@@ -2039,6 +2163,7 @@ bin/w3af_console
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/core/data/options
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/core/data/kb
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/core/data/fuzzer
+@dirrm %%PYTHON_SITELIBDIR%%/w3af/core/data/export
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/core/data/dc
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/core/data/db
 @dirrm %%PYTHON_SITELIBDIR%%/w3af/core/data/constants
