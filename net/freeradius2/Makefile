@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	freeradius
-DISTVERSION=	2.1.9
-PORTREVISION=	1
+DISTVERSION=	2.1.10
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -76,6 +75,8 @@ RADIUS_GROUP=	freeradius
 
 USERS=		${RADIUS_USER}
 GROUPS=		${RADIUS_GROUP}
+
+CONFIGURE_ARGS+=	--with-system-libtool --with-system-libltdl --disable-ltdl-install
 
 .if defined(WITH_HEIMDAL) && !defined(WITH_KERBEROS)
 WITH_KERBEROS=	yes
