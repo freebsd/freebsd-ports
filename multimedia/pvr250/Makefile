@@ -8,6 +8,7 @@
 
 PORTNAME=	pvr250
 PORTVERSION=	20101010
+PORTREVISION=	1
 CATEGORIES=	multimedia kld
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTFILES=	${CXMSHAR} hcwPVRP2.sys ${PVRTOOLS}.tar.gz
@@ -17,14 +18,12 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Hauppauge PVR-250/350 TV cards driver for the cxm device
 
 CONFLICTS=	pvrxxx-*
-SUB_FILES=	pkg-descr
 
 PVRTOOLS=	pvr250-1.2
 CXMSHAR=	cxm-${PORTVERSION}.shar
 
 WRKSRC=		${WRKDIR}
 NOFETCHFILES=	hcwPVRP2.sys
-DESCR=		${WRKDIR}/pkg-descr
 
 RESTRICTED_FILES=	hcwPVRP2.sys
 RESTRICTED=	"This port uses a binary driver which is owned by Hauppauge"
