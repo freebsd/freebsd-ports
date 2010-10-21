@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	wsdlpull
-PORTVERSION=	1.23
-PORTREVISION=	3
+PORTVERSION=	1.24
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
@@ -17,27 +16,30 @@ COMMENT=	C++ WSDL Parser
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
-MAKE_JOBS_SAFE=  yes
-
-USE_GNOME=	gnometarget
-USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include/wsdl
-USE_LDCONFIG=	yes
-
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
+MAKE_JOBS_SAFE=	yes
+USE_AUTOTOOLS=	libtool:22
+USE_LDCONFIG=	yes
+
+MAN1=		wsdlpull.1 wsdlpull-schema.1
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|: install-docsDATA|:|g'
 	@${REINPLACE_CMD} -e '/-O2 -Wall/d' ${WRKSRC}/configure
+	@${REINPLACE_CMD} \
+		-e '/SUBDIRS = / s| docs||' \
+		-e '/^install-data-am:/ s| install-docsDATA||' \
+			${WRKSRC}/Makefile.in
+# Do not install wsdlpull-config.1 for the absence of wsdlpull-config
+	@${REINPLACE_CMD} \
+		-e '/^man_MANS = / s| wsdlpull-config.1||' \
+			${WRKSRC}/man/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/wsdlpull.html ${DOCSDIR}/
+	@${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} README wsdlpull.html ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
