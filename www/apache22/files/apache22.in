@@ -64,6 +64,7 @@ load_rc_config $name
 if [ -n "$2" ]; then
 	profile="$2"
 	if [ "x${apache22_profiles}" != "x" ]; then
+		pidfile="${_pidprefix}.${profile}.pid"
 		eval apache22_configfile="\${apache22_${profile}_configfile:-}"
 		if [ "x${apache22_configfile}" = "x" ]; then
 			echo "You must define a configuration file (apache22_${profile}_configfile)"
