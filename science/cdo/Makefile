@@ -35,7 +35,7 @@ OPTIONS=		HDF5	"HDF5 support"		on \
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} > 700000) || (${ARCH} != "sparc64")
+.if (${OSVERSION} >= 700000) || (${ARCH} != "sparc64")
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -DPTHREAD_MUTEXATTR_CONDATTR"
 .endif
 
@@ -87,7 +87,7 @@ LIB_DEPENDS+=		sz.2:${PORTSDIR}/science/szip
 .endif
 
 post-build:
-.if !defined(WITHOUT_NETCDF)
+.if !defined(WITHOUT_NETCDF) && (${OSVERSION} >= 700000)
 	@cd "${WRKSRC}/src" && ${SETENV} CDO_PATH="${WRKSRC}/src/cdo" "${WRKSRC}/src/cdotest"
 .endif
 
