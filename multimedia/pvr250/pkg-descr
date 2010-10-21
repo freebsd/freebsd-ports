@@ -4,12 +4,8 @@ This port contains:
   on the Hauppauge PVR-250/350 TV cards.
   These drivers are (c) John Wehle <john@feith.com>
 
-  On FreeBSD 4.x, the device used is /dev/bktr0.
-  On FreeBSD 5.x, the device used is /dev/cxm0
-
-  This driver has been successfully tested on:
-  - FreeBSD 4.10
-  - FreeBSD 5.3
+  See the file /usr/local/share/docs/pvr250 for a full description
+  of the functionality of the cxm driver.
 
 - One program to modify some ioctls on the card: set the channel
   and set the window size.
