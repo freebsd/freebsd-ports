@@ -2,6 +2,7 @@ OPTIONS=	PERL "Enable Perl interpreter" off \
 		PYTHON "Enable Python interpreter" off \
 		RUBY "Enable Ruby interpreter" off \
 		TCL "Enable TCL interpreter" off \
+		LUA "Enable lua interpreter" off \
 		LANG "VIm Translations" off \
 		CSCOPE "Enable cscope" off \
 		EXUBERANT_CTAGS "Use exctags instead of ctags" off \
