@@ -106,7 +106,7 @@ MAKE_ARGS+=	CONF_OPT_FEAT="--with-features=big"
 I18N=		CONF_OPT_MULTIBYTE="--enable-multibyte --enable-fontset --enable-xim"
 USE_GETTEXT=   	yes
 
-.if defined(NO_GUI)
+.if defined(NO_GUI) || defined(WITHOUT_GUI)
 WITHOUT_X11=	yes
 .endif
 
