@@ -162,7 +162,7 @@ include/libktorrent/utp/utpsocket.h
 include/libktorrent/version.h
 lib/libktorrent.so
 lib/libktorrent.so.2
-lib/libktorrent.so.2.0.2
+lib/libktorrent.so.2.0.3
 share/apps/cmake/modules/FindKTorrent.cmake
 share/locale/ar/LC_MESSAGES/libktorrent.mo
 share/locale/ast/LC_MESSAGES/libktorrent.mo
