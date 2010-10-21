@@ -1,0 +1,11 @@
+--- ./CMakeLists.txt.orig	2010-07-12 16:29:53.000000000 +0400
++++ ./CMakeLists.txt	2010-10-21 23:29:00.939352177 +0400
+@@ -248,7 +248,7 @@
+ INSTALL( FILES ${app_menu} DESTINATION share/applications )
+ 
+ FILE( GLOB app_menu "${CMAKE_CURRENT_SOURCE_DIR}/aqemu.1.gz" )
+-INSTALL( FILES ${app_menu} DESTINATION share/man/man1 )
++INSTALL( FILES ${app_menu} DESTINATION man/man1 )
+ 
+ # Create docs .bz2 files
+ MACRO( create_docs _sources )
