@@ -175,6 +175,9 @@ MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable
 .if exists(${LOCALBASE}/lib/libiconv.so)
 USE_ICONV=	yes
 .endif
+.if exists(${LOCALBASE}/lib/libintl.so)
+USE_GETTEXT=	yes
+.endif
 
 .if defined(WITH_EXUBERANT_CTAGS)
 CTAGS_CMD=	exctags -R .
