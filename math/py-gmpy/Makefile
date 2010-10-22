@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gmpy
-PORTVERSION=	1.11
+PORTVERSION=	1.13
 CATEGORIES=	math python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python Extension that Wraps the GMP Library
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
