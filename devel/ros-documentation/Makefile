@@ -16,6 +16,8 @@ LICENSE=	BSD
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+MANUAL_PACKAGE_BUILDING=	downloads file after fetch
+
 LIB_DEPENDS=	log4cxx.10:${PORTSDIR}/devel/log4cxx \
 		boost_python:${PORTSDIR}/devel/boost-python-libs
 # we need cmake and gmake for the build, but the build is triggered by make
@@ -48,6 +50,7 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
+MANUAL_PACKAGE_BUILDING=	downloads file after fetch
 .if ${OSVERSION} < 700000
 BROKEN=Does not link, librt missing
 .endif
