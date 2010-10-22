@@ -1,3 +1,5 @@
+%%WWWDIR%%/ChangeLog
+%%WWWDIR%%/NEWS
 %%WWWDIR%%/README
 %%WWWDIR%%/README.euc_jp
 %%WWWDIR%%/changePassword.php
@@ -85,6 +87,7 @@
 %%WWWDIR%%/install/lang/en.lang.php
 %%WWWDIR%%/install/lang/fr.lang.php
 %%WWWDIR%%/install/lang/ja.lang.php
+%%WWWDIR%%/install/phpinfo.php
 %%WWWDIR%%/install/setLang.php
 %%WWWDIR%%/lang/en.lang.php
 %%WWWDIR%%/lang/fr.lang.php

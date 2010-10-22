@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pgpoolAdmin
-PORTVERSION=	2.1.b1
+PORTVERSION=	3.0.1
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1716/
-DISTNAME=	${PORTNAME}-2.1-beta1
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/2805/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Web-based administration tool for pgpool-II
