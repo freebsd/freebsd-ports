@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Jifty-Plugin-Authentication-Ldap
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	LDAP Authentication Plugin for Jifty Apps
 
 BUILD_DEPENDS=	p5-Jifty>=0:${PORTSDIR}/www/p5-Jifty \
