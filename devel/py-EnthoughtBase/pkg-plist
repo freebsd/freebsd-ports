@@ -72,6 +72,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/plugin/view/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/plugin/view/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/plugin/view/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/plugin/view/images/crit_error.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/plugin/view/images/debug.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/plugin/view/images/error.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/plugin/view/images/image_LICENSE.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/plugin/view/images/info.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/plugin/view/images/warning.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/plugin/view/logger_preferences_page.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/plugin/view/logger_preferences_page.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/plugin/view/logger_preferences_page.pyo
@@ -81,21 +87,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/util.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/widget/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/widget/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/widget/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/widget/images/about.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/widget/images/bug_yellow.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/widget/images/crit_error.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/widget/images/error.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/widget/images/image_LICENSE.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/widget/images/warning.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/widget/log_detail_view.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/widget/log_detail_view.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/widget/log_detail_view.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/widget/logger_widget.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/widget/logger_widget.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/widget/logger_widget.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/Worker.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/Worker.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/Worker.pyo
@@ -156,6 +147,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/guid.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/guid.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/guid.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/guisupport.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/guisupport.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/guisupport.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/home_directory.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/home_directory.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/home_directory.pyo
@@ -231,6 +225,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/tests/test_spawner.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/tests/test_spawner.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/tests/test_spawner.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/tests/test_updates_info.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/tests/test_updates_info.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/tests/test_updates_info.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/tests/tree_test_case.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/tests/tree_test_case.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/tests/tree_test_case.pyo
@@ -255,6 +252,24 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/ui/exception_handler_view.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/ui/exception_handler_view.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/ui/exception_handler_view.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/files2info.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/files2info.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/files2info.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/info2xml.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/info2xml.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/info2xml.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/info_file.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/info_file.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/info_file.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/tools.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/tools.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/tools.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/update_info.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/update_info.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates/update_info.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/versioning.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/versioning.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/versioning.pyo
@@ -337,10 +352,9 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/etsconfig/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/etsconfig
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/agent
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/plugin/view/images
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/plugin/view
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/plugin
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/widget/images
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger/widget
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/logger
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/distribution/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/distribution
@@ -348,6 +362,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/traits/editor
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/traits
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/ui
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/updates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/wx/spreadsheet
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util/wx
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/enthought/util
