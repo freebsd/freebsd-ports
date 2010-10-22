@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ruby-ole
-PORTVERSION=	1.2.10.1
+PORTVERSION=	1.2.11
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
