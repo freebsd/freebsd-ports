@@ -12356,6 +12356,7 @@ p5-GraphViz-Traverse            ports/graphics/p5-GraphViz-Traverse
 p5-Graphics-Color               ports/graphics/p5-Graphics-Color
 p5-Graphics-ColorNames          ports/graphics/p5-Graphics-ColorNames
 p5-Graphics-ColorNames-WWW      ports/graphics/p5-Graphics-ColorNames-WWW
+p5-Graphics-GnuplotIF           ports/graphics/p5-Graphics-GnuplotIF
 p5-Graphics-Primitive           ports/graphics/p5-Graphics-Primitive
 p5-Graphics-Primitive-Driver-Cairo  ports/graphics/p5-Graphics-Primitive-Driver-Cairo
 p5-Gravatar-URL                 ports/devel/p5-Gravatar-URL
@@ -13109,6 +13110,7 @@ p5-NEXT                         ports/devel/p5-NEXT
 p5-NNML                         ports/news/p5-NNML
 p5-NNTPClient                   ports/news/p5-NNTPClient
 p5-NSNMP                        ports/net-mgmt/p5-NSNMP
+p5-Nagios-Object                ports/net-mgmt/p5-Nagios-Object
 p5-Nagios-Plugin                ports/net-mgmt/p5-Nagios-Plugin
 p5-Nagios-Plugins-Memcached     ports/net-mgmt/p5-Nagios-Plugins-Memcached
 p5-Net                          ports/net/p5-Net
@@ -16303,6 +16305,7 @@ p5-graph-writer-graphviz        ports/graphics/p5-Graph-Writer-GraphViz
 p5-graphics-color               ports/graphics/p5-Graphics-Color
 p5-graphics-colornames          ports/graphics/p5-Graphics-ColorNames
 p5-graphics-colornames-www      ports/graphics/p5-Graphics-ColorNames-WWW
+p5-graphics-gnuplotif           ports/graphics/p5-Graphics-GnuplotIF
 p5-graphics-primitive           ports/graphics/p5-Graphics-Primitive
 p5-graphics-primitive-driver-cairo  ports/graphics/p5-Graphics-Primitive-Driver-Cairo
 p5-graphviz                     ports/graphics/p5-GraphViz
@@ -17078,6 +17081,7 @@ p5-musicbrainz-trm              ports/audio/p5-MusicBrainz-TRM
 p5-mysql                        ports/databases/p5-Mysql
 p5-mysql-diff                   ports/databases/p5-Mysql-Diff
 p5-mysql-genocide               ports/databases/p5-mysql-genocide
+p5-nagios-object                ports/net-mgmt/p5-Nagios-Object
 p5-nagios-plugin                ports/net-mgmt/p5-Nagios-Plugin
 p5-nagios-plugins-memcached     ports/net-mgmt/p5-Nagios-Plugins-Memcached
 p5-namespace-autoclean          ports/devel/p5-namespace-autoclean
