@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	enfle
-PORTVERSION=	20071024
-PORTREVISION=	5
+PORTVERSION=	20101006
 CATEGORIES=	graphics
 MASTER_SITES=	http://enfle.fennel.org/files/stable/
 
@@ -24,8 +23,10 @@ LIB_DEPENDS=	arc.1:${PORTSDIR}/archivers/libarc \
 		theora.0:${PORTSDIR}/multimedia/libtheora
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS=	SIMD "Enable x86 SIMD (MMX/SSE)" off
+OPTIONS=	SIMD "Enable x86 SIMD (MMX/SSE)" off \
+		AVCODEC "Enable libavcodec support" off
 
+USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_XORG=	ice x11 xext xv
 USE_GNOME=	esound
@@ -37,7 +38,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		ac_cv_header_libmpeg3_h=no \
 		ac_cv_header_decore_h=no \
 		ac_cv_header_avifile_h=no
-CONFIGURE_ARGS=	--with-ungif --disable-avcodec
+CONFIGURE_ARGS=	--with-ungif
 
 PKGDEINSTALL=	${PKGINSTALL}
 
@@ -63,6 +64,14 @@ PLIST_SUB+=	DISABLED="@comment "
 PLIST_SUB+=	DISABLED=""
 .endif
 
+.if defined(WITH_AVCODEC)
+LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
+PLIST_SUB+=	AVCODEC=""
+.else
+CONFIGURE_ARGS+=	--disable-system-avcodec
+PLIST_SUB+=	AVCODEC="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/|${LOCALBASE}/|g ; \
@@ -70,14 +79,12 @@ post-patch:
 		 /LIB/s|-lpthread|${PTHREAD_LIBS}|g ; \
 		 /LIB/s|-lc_r|${PTHREAD_LIBS}|g ; \
 		 /CFLAGS/s|-pthread|${PTHREAD_CFLAGS}|g ; \
-		 /LIB/s|-ldl||g' ${WRKSRC}/configure
+		 /DLOPEN/s|-ldl||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		'/enfle -N/s|^|#|g' ${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|/usr/share/X11|${LOCALBASE}/lib/X11|g ; \
 		 /X11R6/d' ${WRKSRC}/plugins/loader/xpm/xpm.c
-	@${REINPLACE_CMD} -e \
-		's|arciver_|archiver_|g' ${WRKSRC}/plugins/archiver/rar/unrar.c
 .if ${OSVERSION} < 700000
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s|effect|| ; \
