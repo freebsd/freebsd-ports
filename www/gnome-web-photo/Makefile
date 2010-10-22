@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	gnome-web-photo
-PORTVERSION=	0.2
-PORTREVISION=	9
+PORTVERSION=	0.9
 CATEGORIES=	www
 MASTER_SITES=	GNOME
 
@@ -17,16 +16,19 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to generate full-size image files and thumbnails
 
 USE_BZIP2=	yes
-USE_GECKO=	seamonkey
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gecko=${GECKO}
+USE_GNOME=	gconf2 gnomehack gnomeprefix
+USE_GECKO=	libxul
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomevfs2 gnomehack gnomeprefix
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 GCONF_SCHEMAS=	thumbnailer.schemas
 
-.include <bsd.port.pre.mk>
+CFLAGS+=	`pkg-config --cflags-only-I libxul`
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|libpng|libpng14|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|libxul-unstable||g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
