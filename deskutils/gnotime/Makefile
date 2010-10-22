@@ -10,16 +10,15 @@ PORTNAME=	gnotime
 PORTVERSION=	2.3.0
 PORTREVISION=	6
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	SF/gttr/${PORTNAME}/${PORTNAME}-${PORTVERSION}:gttr SF/gttr/${PORTNAME}/${PORTNAME}-${PORTVERSION}:qof
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gttr \
+MASTER_SITES=	SF/gttr/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
+		SF/qof/qof/${QOF_VERSION}:qof
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 		${QOF_DISTNAME}${EXTRACT_SUFX}:qof
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A time tracker for gnome2
 
 LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile
-
-BROKEN=		does not fetch
 
 USE_XORG=	xscrnsaver
 USE_GNOME=	gnomehack gnomeprefix gtkhtml3 intlhack libgnomeui
@@ -35,7 +34,8 @@ INSTALLS_OMF=	yes
 MAN1=		gnotime.1 gnotime-remote.1
 GCONF_SCHEMAS=	gnotime.schemas
 
-QOF_DISTNAME=	qof-0.7.5
+QOF_VERSION=	0.7.5
+QOF_DISTNAME=	qof-${QOF_VERSION}
 QOF_WRKSRC=	${WRKDIR}/${QOF_DISTNAME}
 
 CPPFLAGS=	-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`
@@ -67,4 +67,5 @@ pre-build:
 pre-install:
 	@(cd ${QOF_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+
 .include <bsd.port.mk>
