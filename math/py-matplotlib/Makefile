@@ -19,8 +19,7 @@ COMMENT=	A plotting library uses a syntax familiar to matlab users
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.4:${PORTSDIR}/devel/py-dateutil \
-		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz \
-		${LOCALBASE}/lib/libagg.a:${PORTSDIR}/graphics/agg
+		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		png.6:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${PYNUMPY}
