@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	EnthoughtBase
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.6
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	http://enthought.com/repo/ets/ \
+		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Core Packages for the Enthought Tool Suite
 
 USE_PYTHON=		yes
