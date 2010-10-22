@@ -27,6 +27,13 @@ stop_postcmd="dbus_poststop"
 
 dbus_prestart()
 {
+    if [ ! -d /var/db/dbus ]; then
+        mkdir -p /var/db/dbus
+    fi
+    if [ ! -f /var/db/dbus/machine-id ]; then
+        dbus-uuidgen > /var/db/dbus/machine-id
+    fi
+
     mkdir -p $(dirname $pidfile)
 }
 
