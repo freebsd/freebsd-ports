@@ -7,7 +7,10 @@
 PORTNAME=	ros
 PORTVERSION=	1.2.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
+MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/${PORTNAME}/
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 gtest-1.3.0.tar.gz SWIG-1.3.29-wx.tar.gz
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	rene@freebsd.org
 COMMENT=	Robot Operating System - core utilities
@@ -15,8 +18,6 @@ COMMENT=	Robot Operating System - core utilities
 LICENSE=	BSD
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-MANUAL_PACKAGE_BUILDING=	downloads file after fetch
 
 LIB_DEPENDS=	log4cxx.10:${PORTSDIR}/devel/log4cxx \
 		boost_python:${PORTSDIR}/devel/boost-python-libs
@@ -50,7 +51,6 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-MANUAL_PACKAGE_BUILDING=	downloads file after fetch
 .if ${OSVERSION} < 700000
 BROKEN=Does not link, librt missing
 .endif
@@ -81,6 +81,11 @@ post-extract:
 	    ${WRKSRC}/3rdparty/wxswig/manifest.xml
 	${GREP} -l -r "^#\!/bin/bash" ${WRKSRC} | ${XARGS} \
 	    ${REINPLACE_CMD} -E -e "s|#!/bin/bash|#!${LOCALBASE}/bin/bash|"
+	# move 3rdparty distfiles into place
+	${MKDIR} ${WRKSRC}/3rdparty/gtest/build
+	${CP} ${_DISTDIR}/gtest-1.3.0.tar.gz ${WRKSRC}/3rdparty/gtest/build
+	${MKDIR} ${WRKSRC}/3rdparty/wxswig/build
+	${CP} ${_DISTDIR}/SWIG-1.3.29-wx.tar.gz ${WRKSRC}/3rdparty/wxswig/build
 
 pre-build:
 .if exists(${LOCALBASE}/lib/libgtest.so)
@@ -104,7 +109,7 @@ post-build:
 	${MV} ${WRKSRC}/Makefile.bak ${WRKSRC}/Makefile
 
 do-install:
-	${MKDIR} -p ${PREFIX}/${PORTNAME}/bin
+	${MKDIR} ${PREFIX}/${PORTNAME}/bin
 
 .for f in rospack rosplay rosrecord rosstack rxconsole rxloggerlevel
 	${LOCALBASE}/bin/chrpath -d ${WRKSRC}/bin/${f}
