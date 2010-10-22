@@ -1,5 +1,5 @@
 --- client/Makefile.am.orig	2008-09-10 00:43:08.000000000 +0200
-+++ client/Makefile.am	2009-09-09 22:50:54.000000000 +0200
++++ client/Makefile.am	2010-10-22 22:54:44.000000000 +0200
 @@ -50,12 +50,7 @@
  
  
@@ -14,3 +14,24 @@
  
  seti_boinc_SOURCES = \
      main.cpp \
+@@ -158,15 +153,16 @@
+ 
+ if PPC
+ # allow use of altivec instructions on PPC
++# unfortunately our system gcc is too old, so disable altivec
+ seti_boinc-analyzeFuncs_altivec.o:  vector/analyzeFuncs_altivec.cpp
+ 	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+-	$(CPPFLAGS) $(seti_boinc_CXXFLAGS) $(CXXFLAGS) -DUSE_ALTIVEC \
+-	-MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -faltivec \
++	$(CPPFLAGS) $(seti_boinc_CXXFLAGS) $(CXXFLAGS) \
++	-MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" \
+ 	-c -o $@ $<; then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Po"; \
+ 	else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
+ seti_boinc-analyzeFuncs_vector.o:  vector/analyzeFuncs_vector.cpp
+ 	if $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+-	$(CPPFLAGS) $(seti_boinc_CXXFLAGS) $(CXXFLAGS) -DUSE_ALTIVEC \
++	$(CPPFLAGS) $(seti_boinc_CXXFLAGS) $(CXXFLAGS) \
+ 	-MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" \
+ 	-c -o $@ $<; then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Po"; \
+ 	else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
+

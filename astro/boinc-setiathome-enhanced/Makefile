@@ -58,7 +58,7 @@ PLIST_SUB+=	X11="@comment "
 .endif
 
 .if ${OSVERSION} >= 700042 && (${ARCH} == i386 || ${ARCH} == amd64)
-CFLAGS+=	-mtune=native
+CFLAGS+=	-mtune=native # comment out if world is built with clang and port with gcc
 .endif
 
 CXXFLAGS+=	${CFLAGS}
