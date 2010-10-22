@@ -14,6 +14,9 @@ lib/enfle/plugins/audio/audio_esd.so
 lib/enfle/plugins/audio/audio_oss.a
 lib/enfle/plugins/audio/audio_oss.la
 lib/enfle/plugins/audio/audio_oss.so
+%%AVCODEC%%lib/enfle/plugins/audiodecoder/audiodecoder_avcodec.a
+%%AVCODEC%%lib/enfle/plugins/audiodecoder/audiodecoder_avcodec.la
+%%AVCODEC%%lib/enfle/plugins/audiodecoder/audiodecoder_avcodec.so
 %%DISABLED%%lib/enfle/plugins/audiodecoder/audiodecoder_mad.a
 %%DISABLED%%lib/enfle/plugins/audiodecoder/audiodecoder_mad.la
 %%DISABLED%%lib/enfle/plugins/audiodecoder/audiodecoder_mad.so
@@ -101,6 +104,9 @@ lib/enfle/plugins/streamer/streamer_bz2.so
 lib/enfle/plugins/streamer/streamer_gz.a
 lib/enfle/plugins/streamer/streamer_gz.la
 lib/enfle/plugins/streamer/streamer_gz.so
+lib/enfle/plugins/streamer/streamer_xz.a
+lib/enfle/plugins/streamer/streamer_xz.la
+lib/enfle/plugins/streamer/streamer_xz.so
 lib/enfle/plugins/ui/ui_convert.a
 lib/enfle/plugins/ui/ui_convert.la
 lib/enfle/plugins/ui/ui_convert.so
@@ -113,6 +119,9 @@ lib/enfle/plugins/ui/ui_wallpaper.so
 lib/enfle/plugins/video/video_Xlib.a
 lib/enfle/plugins/video/video_Xlib.la
 lib/enfle/plugins/video/video_Xlib.so
+%%AVCODEC%%lib/enfle/plugins/videodecoder/videodecoder_avcodec.a
+%%AVCODEC%%lib/enfle/plugins/videodecoder/videodecoder_avcodec.la
+%%AVCODEC%%lib/enfle/plugins/videodecoder/videodecoder_avcodec.so
 %%DISABLED%%lib/enfle/plugins/videodecoder/videodecoder_libmpeg2.a
 %%DISABLED%%lib/enfle/plugins/videodecoder/videodecoder_libmpeg2.la
 %%DISABLED%%lib/enfle/plugins/videodecoder/videodecoder_libmpeg2.so
