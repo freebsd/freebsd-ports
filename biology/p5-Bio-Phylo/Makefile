@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Bio-Phylo
-PORTVERSION=	0.21
-PORTREVISION=	1
+PORTVERSION=	0.22
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +22,7 @@ BUILD_DEPENDS=	p5-Exception-Class>1.22:${PORTSDIR}/devel/p5-Exception-Class \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	Bio::Phylo.3 \
+	Bio::Phylo::EvolutionaryModels.3 \
 	Bio::Phylo::Factory.3 \
 	Bio::Phylo::Forest::DrawNode.3 \
 	Bio::Phylo::Forest::DrawTree.3 \
@@ -70,6 +70,12 @@ MAN3=	Bio::Phylo.3 \
 	Bio::Phylo::Taxa::Taxon.3 \
 	Bio::Phylo::Taxa::TaxonLinker.3 \
 	Bio::Phylo::Treedrawer.3 \
+	Bio::Phylo::Treedrawer::Canvas.3 \
+	Bio::Phylo::Treedrawer::Gif.3 \
+	Bio::Phylo::Treedrawer::Jpeg.3 \
+	Bio::Phylo::Treedrawer::Pdf.3 \
+	Bio::Phylo::Treedrawer::Png.3 \
+	Bio::Phylo::Treedrawer::Swf.3 \
 	Bio::Phylo::Treedrawer::Svg.3 \
 	Bio::Phylo::Unparsers::Mrp.3 \
 	Bio::Phylo::Unparsers::Newick.3 \

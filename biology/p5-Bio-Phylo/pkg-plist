@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Bio/Phylo.pm
+%%SITE_PERL%%/Bio/Phylo/EvolutionaryModels.pm
 %%SITE_PERL%%/Bio/Phylo/Forest.pm
 %%SITE_PERL%%/Bio/Phylo/Forest/DrawNode.pm
 %%SITE_PERL%%/Bio/Phylo/Forest/DrawTree.pm
@@ -25,17 +26,11 @@
 %%SITE_PERL%%/Bio/Phylo/Mediators/TaxaMediator.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/DOM/Document/Libxml.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/DOM/Document/Twig.pm
-%%SITE_PERL%%/Bio/Phylo/NeXML/DOM/Document/._Libxml.pm
-%%SITE_PERL%%/Bio/Phylo/NeXML/DOM/Document/._Twig.pm
-%%SITE_PERL%%/Bio/Phylo/NeXML/DOM/Element/._Twig.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/DOM/Element/Twig.pm
-%%SITE_PERL%%/Bio/Phylo/NeXML/DOM/Element/._Libxml.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/DOM/Element/Libxml.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/DOM/Document.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/DOM/Element.pm
-%%SITE_PERL%%/Bio/Phylo/NeXML/Meta/._XMLLiteral.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/Meta/XMLLiteral.pm
-%%SITE_PERL%%/Bio/Phylo/NeXML/._DOM.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/DOM.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/._Meta.pm
 %%SITE_PERL%%/Bio/Phylo/NeXML/Meta.pm
@@ -53,6 +48,13 @@
 %%SITE_PERL%%/Bio/Phylo/Taxa/TaxaLinker.pm
 %%SITE_PERL%%/Bio/Phylo/Taxa/TaxonLinker.pm
 %%SITE_PERL%%/Bio/Phylo/Treedrawer.pm
+%%SITE_PERL%%/Bio/Phylo/Treedrawer/Canvas.pm
+%%SITE_PERL%%/Bio/Phylo/Treedrawer/Pdf.pm
+%%SITE_PERL%%/Bio/Phylo/Treedrawer/Swf.pm
+%%SITE_PERL%%/Bio/Phylo/Treedrawer/Png.pm
+%%SITE_PERL%%/Bio/Phylo/Treedrawer/Gif.pm
+%%SITE_PERL%%/Bio/Phylo/Treedrawer/Jpeg.pm
+%%SITE_PERL%%/Bio/Phylo/Treedrawer/Abstract.pm
 %%SITE_PERL%%/Bio/Phylo/Treedrawer/Svg.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Mrp.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Newick.pm
@@ -64,29 +66,21 @@
 %%SITE_PERL%%/Bio/Phylo/Util/Exceptions.pm
 %%SITE_PERL%%/Bio/Phylo/Util/IDPool.pm
 %%SITE_PERL%%/Bio/Phylo/Util/StackTrace.pm
-%%SITE_PERL%%/Bio/Phylo/Util/._StackTrace.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio-Phylo/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio-Phylo
-@dirrm %%SITE_PERL%%/Bio/Phylo/Util/DOM/Document
-@dirrm %%SITE_PERL%%/Bio/Phylo/Util/DOM/Element
-@dirrm %%SITE_PERL%%/Bio/Phylo/Util/DOM
 @dirrm %%SITE_PERL%%/Bio/Phylo/Util
 @dirrm %%SITE_PERL%%/Bio/Phylo/Unparsers
 @dirrm %%SITE_PERL%%/Bio/Phylo/Treedrawer
 @dirrm %%SITE_PERL%%/Bio/Phylo/Taxa
-@dirrm %%SITE_PERL%%/Bio/Phylo/PhyloWS/Resource
-@dirrm %%SITE_PERL%%/Bio/Phylo/PhyloWS/Service
-@dirrm %%SITE_PERL%%/Bio/Phylo/PhyloWS
 @dirrm %%SITE_PERL%%/Bio/Phylo/Parsers
-@dirrm %%SITE_PERL%%/Bio/Phylo/NeXML/Meta
 @dirrm %%SITE_PERL%%/Bio/Phylo/NeXML/DOM/Element
 @dirrm %%SITE_PERL%%/Bio/Phylo/NeXML/DOM/Document
 @dirrm %%SITE_PERL%%/Bio/Phylo/NeXML/DOM
+@dirrm %%SITE_PERL%%/Bio/Phylo/NeXML/Meta
 @dirrm %%SITE_PERL%%/Bio/Phylo/NeXML
 @dirrm %%SITE_PERL%%/Bio/Phylo/Matrices/Datatype
 @dirrm %%SITE_PERL%%/Bio/Phylo/Matrices
 @dirrm %%SITE_PERL%%/Bio/Phylo/Mediators
-@dirrm %%SITE_PERL%%/Bio/Phylo/Meta
 @dirrm %%SITE_PERL%%/Bio/Phylo/Forest
 @dirrm %%SITE_PERL%%/Bio/Phylo
 @dirrmtry %%SITE_PERL%%/Bio
