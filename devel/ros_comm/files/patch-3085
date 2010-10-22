@@ -1,0 +1,24 @@
+Index: core/roslib/src/roslib/packages.py
+===================================================================
+--- core/roslib/src/roslib/packages.py	(revision 11635)
++++ core/roslib/src/roslib/packages.py	(working copy)
+@@ -502,7 +502,8 @@
+                 if m in files:
+                     test_path = os.path.join(p, node_type)
+                     s = os.stat(test_path)
+-                    if (s.st_mode & stat.S_IRWXU == stat.S_IRWXU):
++                    if (s.st_mode & (stat.S_IRUSR | stat.S_IXUSR) ==
++                        (stat.S_IRUSR | stat.S_IXUSR)):
+                         return test_path
+             if '.svn' in dirs:
+                 dirs.remove('.svn')
+@@ -514,7 +515,8 @@
+             if node_type in files:
+                 test_path = os.path.join(p, node_type)
+                 s = os.stat(test_path)
+-                if (s.st_mode & stat.S_IRWXU == stat.S_IRWXU):
++                if (s.st_mode & (stat.S_IRUSR | stat.S_IXUSR) ==
++                    (stat.S_IRUSR | stat.S_IXUSR)):
+                     return test_path
+             if '.svn' in dirs:
+                 dirs.remove('.svn')

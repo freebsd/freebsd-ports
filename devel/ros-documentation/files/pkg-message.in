@@ -1,0 +1,12 @@
+To use ROS, add these variables to your environment:
+ROS_MASTER_URI <HTTP address of the host running the ROS master>
+ROS_PACKAGE_PATH <a directory where you will store additional ROS software>
+ROS_ROOT %%PREFIX%%/ros
+PYTHONPATH $ROS_ROOT/core/roslib/src
+OCTAVE_PATH $ROS_ROOT/core/experimental/rosoct/octave
+
+If you intend to build software with ROS:
+CPATH %%LOCALBASE%%/include
+EXTRA_CMAKE_FLAGS -DwxWidgets_CONFIG_EXECUTABLE=%%WX_CONFIG%%
+MAKE %%LOCALBASE%%/bin/gmake
+ROS_BOOST_ROOT %%LOCALBASE%%
