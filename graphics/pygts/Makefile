@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	pygts
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	graphics python
 MASTER_SITES=	SF
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python binding for GNU Triangulated Surface(GTS) Library
 
 BUILD_DEPENDS=	${PYNUMPY}
