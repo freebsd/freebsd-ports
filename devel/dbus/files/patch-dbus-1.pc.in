@@ -1,9 +1,8 @@
---- dbus-1.pc.in.orig	Mon Nov  6 02:55:38 2006
-+++ dbus-1.pc.in	Mon Nov  6 02:55:57 2006
-@@ -10,5 +10,5 @@ Name: dbus
+--- dbus-1.pc.in.orig	2010-08-31 21:44:19.000000000 +0000
++++ dbus-1.pc.in	2010-09-18 17:52:00.000000000 +0000
+@@ -13,4 +13,4 @@ Name: dbus
  Description: Free desktop message bus
  Version: @VERSION@
- Libs: -L${libdir} -ldbus-1 @DBUS_CLIENT_LIBS@ 
+ Libs: -L${libdir} -ldbus-1 @DBUS_CLIENT_LIBS@
 -Cflags: -I${includedir}/dbus-1.0 -I${libdir}/dbus-1.0/include
 +Cflags: -I${includedir}/dbus-1.0 -I${includedir}/dbus-1.0/include
- 
