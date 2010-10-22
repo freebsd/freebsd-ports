@@ -2971,6 +2971,7 @@
     SUBDIR += robodoc
     SUBDIR += root
     SUBDIR += root-doc
+    SUBDIR += ros
     SUBDIR += rote
     SUBDIR += rpc2
     SUBDIR += rpm-spec-mode.el
