@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gkrellmss
-PORTVERSION=	2.6
-PORTREVISION=	11
+PORTVERSION=	2.7
 CATEGORIES=	audio
 MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellmss/
 
@@ -30,8 +29,8 @@ PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmss.so \
 post-patch:
 	@${REINPLACE_CMD} -e 's|= -O2|=|g ; \
 		 s|= gcc|+=|g' ${WRKSRC}/src/Makefile
-	@${REINPLACE_CMD} -e 's|PKG_LIBS|PKG_LIB|g' \
-		-e "s|-lfftw3|-L${LOCALBASE}/lib &|g" ${WRKSRC}/src/configure
+	@${REINPLACE_CMD} -e 's|PKG_LIBS|PKG_LIB|g ; \
+		 s|-lfftw3|-L${LOCALBASE}/lib &|g' ${WRKSRC}/src/configure
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/gkrellmss.so \
