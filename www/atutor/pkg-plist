@@ -424,7 +424,6 @@
 %%WWWDIR%%/images/pen3.gif
 %%WWWDIR%%/images/pin.png
 %%WWWDIR%%/images/preview.png
-%%WWWDIR%%/images/pub_default.jpg
 %%WWWDIR%%/images/question.gif
 %%WWWDIR%%/images/red.gif
 %%WWWDIR%%/images/rtl_tree/index.html
@@ -467,6 +466,7 @@
 %%WWWDIR%%/include/classes/CSVExport.class.php
 %%WWWDIR%%/include/classes/CSVImport.class.php
 %%WWWDIR%%/include/classes/ContentManager.class.php
+%%WWWDIR%%/include/classes/ContentOutputParser.class.php
 %%WWWDIR%%/include/classes/ContentOutputUtils.class.php
 %%WWWDIR%%/include/classes/ErrorHandler/ErrorHandler.class.php
 %%WWWDIR%%/include/classes/Message/Message.class.php
@@ -621,6 +621,7 @@
 %%WWWDIR%%/install/db/atutor_upgrade_1.6.3_to_1.6.4.sql
 %%WWWDIR%%/install/db/atutor_upgrade_1.6.4_to_2.0.sql
 %%WWWDIR%%/install/db/atutor_upgrade_1.6_to_1.6.1.sql
+%%WWWDIR%%/install/db/atutor_upgrade_2.0_to_2.0.1.sql
 %%WWWDIR%%/install/images/bad.gif
 %%WWWDIR%%/install/images/feedback.gif
 %%WWWDIR%%/install/images/question.gif
@@ -1351,7 +1352,6 @@
 %%WWWDIR%%/mods/_core/imsafa/classes/A4a.tmpl.php
 %%WWWDIR%%/mods/_core/imsafa/classes/A4aExport.class.php
 %%WWWDIR%%/mods/_core/imsafa/classes/A4aImport.class.php
-%%WWWDIR%%/mods/_core/imsafa/html/resources_parser.inc.php
 %%WWWDIR%%/mods/_core/imscc/classes/DiscussionTools.class.php
 %%WWWDIR%%/mods/_core/imscc/classes/DiscussionToolsImport.class.php
 %%WWWDIR%%/mods/_core/imscc/classes/DiscussionToolsParser.class.php
@@ -1427,9 +1427,7 @@
 %%WWWDIR%%/mods/_core/imscp/imscp_v1p2.xsd
 %%WWWDIR%%/mods/_core/imscp/imscp_v1p2_constraintsDocument.scmt
 %%WWWDIR%%/mods/_core/imscp/imscp_v1p2_localised.xsd
-%%WWWDIR%%/mods/_core/imscp/imsdt_v1p0_localised.xsd
 %%WWWDIR%%/mods/_core/imscp/imsmanifest.xml
-%%WWWDIR%%/mods/_core/imscp/imswl_v1p0_localised.xsd
 %%WWWDIR%%/mods/_core/imscp/include/adlcp_rootv1p2.xsd
 %%WWWDIR%%/mods/_core/imscp/include/footer.html
 %%WWWDIR%%/mods/_core/imscp/include/ims.css
@@ -1673,9 +1671,15 @@
 %%WWWDIR%%/mods/_standard/file_storage/sublinks.php
 %%WWWDIR%%/mods/_standard/flowplayer/LICENSE.txt
 %%WWWDIR%%/mods/_standard/flowplayer/README.txt
-%%WWWDIR%%/mods/_standard/flowplayer/flowplayer-3.1.2.min.js
-%%WWWDIR%%/mods/_standard/flowplayer/flowplayer-3.1.2.swf
-%%WWWDIR%%/mods/_standard/flowplayer/flowplayer.controls-3.1.2.swf
+%%WWWDIR%%/mods/_standard/flowplayer/flowplayer-3.2.4.min.js
+%%WWWDIR%%/mods/_standard/flowplayer/flowplayer-3.2.4.swf
+%%WWWDIR%%/mods/_standard/flowplayer/flowplayer-3.2.5.js
+%%WWWDIR%%/mods/_standard/flowplayer/flowplayer-3.2.5.swf
+%%WWWDIR%%/mods/_standard/flowplayer/flowplayer.audio-3.2.1.swf
+%%WWWDIR%%/mods/_standard/flowplayer/flowplayer.captions-3.2.2.swf
+%%WWWDIR%%/mods/_standard/flowplayer/flowplayer.controls-3.2.2.swf
+%%WWWDIR%%/mods/_standard/flowplayer/flowplayer.controls-3.2.3.swf
+%%WWWDIR%%/mods/_standard/flowplayer/flowplayer.rtmp-3.2.3.swf
 %%WWWDIR%%/mods/_standard/flowplayer/module.php
 %%WWWDIR%%/mods/_standard/flowplayer/module.xml
 %%WWWDIR%%/mods/_standard/flowplayer/module_format_content.php
@@ -1928,6 +1932,7 @@
 %%WWWDIR%%/mods/_standard/social/lib/Shindig/ATutorActivityService.php
 %%WWWDIR%%/mods/_standard/social/lib/Shindig/ATutorAppDataService.php
 %%WWWDIR%%/mods/_standard/social/lib/Shindig/ATutorDbFetcher.php
+%%WWWDIR%%/mods/_standard/social/lib/Shindig/ATutorGroupService.php
 %%WWWDIR%%/mods/_standard/social/lib/Shindig/ATutorMessagesService.php
 %%WWWDIR%%/mods/_standard/social/lib/Shindig/ATutorOAuthDataStore.php
 %%WWWDIR%%/mods/_standard/social/lib/Shindig/ATutorOAuthLookupService.php
@@ -2079,14 +2084,34 @@
 %%WWWDIR%%/themes/blumin/images/arrow_ltr.gif
 %%WWWDIR%%/themes/blumin/images/back.gif
 %%WWWDIR%%/themes/blumin/images/continue.gif
+%%WWWDIR%%/themes/blumin/images/hidemenu.gif
 %%WWWDIR%%/themes/blumin/images/linkOpaque.gif
 %%WWWDIR%%/themes/blumin/images/linkTransparent.gif
+%%WWWDIR%%/themes/blumin/images/mswitch_minus.gif
+%%WWWDIR%%/themes/blumin/images/mswitch_plus.gif
 %%WWWDIR%%/themes/blumin/images/newsitem_icon.gif
 %%WWWDIR%%/themes/blumin/images/next.gif
 %%WWWDIR%%/themes/blumin/images/previous.gif
 %%WWWDIR%%/themes/blumin/images/resume.gif
+%%WWWDIR%%/themes/blumin/images/rtl_tree/index.html
+%%WWWDIR%%/themes/blumin/images/rtl_tree/tree_collapse.gif
+%%WWWDIR%%/themes/blumin/images/rtl_tree/tree_end.gif
+%%WWWDIR%%/themes/blumin/images/rtl_tree/tree_expand.gif
+%%WWWDIR%%/themes/blumin/images/rtl_tree/tree_horizontal.gif
+%%WWWDIR%%/themes/blumin/images/rtl_tree/tree_split.gif
+%%WWWDIR%%/themes/blumin/images/rtl_tree/tree_vertline.gif
+%%WWWDIR%%/themes/blumin/images/showmenu.gif
 %%WWWDIR%%/themes/blumin/images/side_arrow.gif
 %%WWWDIR%%/themes/blumin/images/sort.gif
+%%WWWDIR%%/themes/blumin/images/tree/index.html
+%%WWWDIR%%/themes/blumin/images/tree/tree_collapse.gif
+%%WWWDIR%%/themes/blumin/images/tree/tree_disabled.gif
+%%WWWDIR%%/themes/blumin/images/tree/tree_end.gif
+%%WWWDIR%%/themes/blumin/images/tree/tree_expand.gif
+%%WWWDIR%%/themes/blumin/images/tree/tree_horizontal.gif
+%%WWWDIR%%/themes/blumin/images/tree/tree_space.gif
+%%WWWDIR%%/themes/blumin/images/tree/tree_split.gif
+%%WWWDIR%%/themes/blumin/images/tree/tree_vertline.gif
 %%WWWDIR%%/themes/blumin/images/user-star.gif
 %%WWWDIR%%/themes/blumin/images/user.gif
 %%WWWDIR%%/themes/blumin/include/box.tmpl.php
@@ -2095,6 +2120,7 @@
 %%WWWDIR%%/themes/blumin/include/side_menu.tmpl.php
 %%WWWDIR%%/themes/blumin/print.css
 %%WWWDIR%%/themes/blumin/readme.txt
+%%WWWDIR%%/themes/blumin/rtl.css
 %%WWWDIR%%/themes/blumin/screenshot.gif
 %%WWWDIR%%/themes/blumin/styles.css
 %%WWWDIR%%/themes/blumin/theme.cfg.php
@@ -2140,6 +2166,13 @@
 %%WWWDIR%%/themes/default/images/profile.gif
 %%WWWDIR%%/themes/default/images/resume.png
 %%WWWDIR%%/themes/default/images/resume2.png
+%%WWWDIR%%/themes/default/images/rtl_tree/index.html
+%%WWWDIR%%/themes/default/images/rtl_tree/tree_collapse.gif
+%%WWWDIR%%/themes/default/images/rtl_tree/tree_end.gif
+%%WWWDIR%%/themes/default/images/rtl_tree/tree_expand.gif
+%%WWWDIR%%/themes/default/images/rtl_tree/tree_horizontal.gif
+%%WWWDIR%%/themes/default/images/rtl_tree/tree_split.gif
+%%WWWDIR%%/themes/default/images/rtl_tree/tree_vertline.gif
 %%WWWDIR%%/themes/default/images/showmenu.gif
 %%WWWDIR%%/themes/default/images/side_arrow.gif
 %%WWWDIR%%/themes/default/images/sort.png
@@ -2295,6 +2328,7 @@
 %%WWWDIR%%/themes/default15/images/back.gif
 %%WWWDIR%%/themes/default15/images/error-large.gif
 %%WWWDIR%%/themes/default15/images/guide.gif
+%%WWWDIR%%/themes/default15/images/hidemenu.gif
 %%WWWDIR%%/themes/default15/images/home-acollab.png
 %%WWWDIR%%/themes/default15/images/home-blogs.png
 %%WWWDIR%%/themes/default15/images/home-chat.png
@@ -2320,6 +2354,14 @@
 %%WWWDIR%%/themes/default15/images/pencils.jpg
 %%WWWDIR%%/themes/default15/images/previous.gif
 %%WWWDIR%%/themes/default15/images/resume.gif
+%%WWWDIR%%/themes/default15/images/rtl_tree/index.html
+%%WWWDIR%%/themes/default15/images/rtl_tree/tree_collapse.gif
+%%WWWDIR%%/themes/default15/images/rtl_tree/tree_end.gif
+%%WWWDIR%%/themes/default15/images/rtl_tree/tree_expand.gif
+%%WWWDIR%%/themes/default15/images/rtl_tree/tree_horizontal.gif
+%%WWWDIR%%/themes/default15/images/rtl_tree/tree_split.gif
+%%WWWDIR%%/themes/default15/images/rtl_tree/tree_vertline.gif
+%%WWWDIR%%/themes/default15/images/showmenu.gif
 %%WWWDIR%%/themes/default15/images/side_arrow.gif
 %%WWWDIR%%/themes/default15/images/sort.gif
 %%WWWDIR%%/themes/default15/images/tree/index.html
@@ -2338,7 +2380,6 @@
 %%WWWDIR%%/themes/default15/include/fm_header.tmpl.php
 %%WWWDIR%%/themes/default15/include/footer.tmpl.php
 %%WWWDIR%%/themes/default15/include/header.tmpl.php
-%%WWWDIR%%/themes/default15/index.tmpl.php
 %%WWWDIR%%/themes/default15/infomessage.tmpl.php
 %%WWWDIR%%/themes/default15/password_change.tmpl.php
 %%WWWDIR%%/themes/default15/password_reminder_feedback.tmpl.php
@@ -2357,6 +2398,7 @@
 %%WWWDIR%%/themes/default16/images/back.gif
 %%WWWDIR%%/themes/default16/images/continue.gif
 %%WWWDIR%%/themes/default16/images/guide.gif
+%%WWWDIR%%/themes/default16/images/hidemenu.gif
 %%WWWDIR%%/themes/default16/images/linkOpaque.gif
 %%WWWDIR%%/themes/default16/images/linkTransparent.gif
 %%WWWDIR%%/themes/default16/images/mswitch_minus.gif
@@ -2368,6 +2410,14 @@
 %%WWWDIR%%/themes/default16/images/pencils.gif
 %%WWWDIR%%/themes/default16/images/previous.gif
 %%WWWDIR%%/themes/default16/images/resume.gif
+%%WWWDIR%%/themes/default16/images/rtl_tree/index.html
+%%WWWDIR%%/themes/default16/images/rtl_tree/tree_collapse.gif
+%%WWWDIR%%/themes/default16/images/rtl_tree/tree_end.gif
+%%WWWDIR%%/themes/default16/images/rtl_tree/tree_expand.gif
+%%WWWDIR%%/themes/default16/images/rtl_tree/tree_horizontal.gif
+%%WWWDIR%%/themes/default16/images/rtl_tree/tree_split.gif
+%%WWWDIR%%/themes/default16/images/rtl_tree/tree_vertline.gif
+%%WWWDIR%%/themes/default16/images/showmenu.gif
 %%WWWDIR%%/themes/default16/images/side_arrow.gif
 %%WWWDIR%%/themes/default16/images/sort.gif
 %%WWWDIR%%/themes/default16/images/tl_corner.gif
@@ -2397,8 +2447,23 @@
 %%WWWDIR%%/themes/default16/theme_info.xml
 %%WWWDIR%%/themes/default_classic/ie_styles.css
 %%WWWDIR%%/themes/default_classic/images/guide.gif
+%%WWWDIR%%/themes/default_classic/images/hidemenu.gif
 %%WWWDIR%%/themes/default_classic/images/mswitch_minus.gif
 %%WWWDIR%%/themes/default_classic/images/mswitch_plus.gif
+%%WWWDIR%%/themes/default_classic/images/next.gif
+%%WWWDIR%%/themes/default_classic/images/next.png
+%%WWWDIR%%/themes/default_classic/images/previous.gif
+%%WWWDIR%%/themes/default_classic/images/previous.png
+%%WWWDIR%%/themes/default_classic/images/pub_default.jpg
+%%WWWDIR%%/themes/default_classic/images/resume.png
+%%WWWDIR%%/themes/default_classic/images/rtl_tree/index.html
+%%WWWDIR%%/themes/default_classic/images/rtl_tree/tree_collapse.gif
+%%WWWDIR%%/themes/default_classic/images/rtl_tree/tree_end.gif
+%%WWWDIR%%/themes/default_classic/images/rtl_tree/tree_expand.gif
+%%WWWDIR%%/themes/default_classic/images/rtl_tree/tree_horizontal.gif
+%%WWWDIR%%/themes/default_classic/images/rtl_tree/tree_split.gif
+%%WWWDIR%%/themes/default_classic/images/rtl_tree/tree_vertline.gif
+%%WWWDIR%%/themes/default_classic/images/showmenu.gif
 %%WWWDIR%%/themes/default_classic/images/tree/index.html
 %%WWWDIR%%/themes/default_classic/images/tree/tree_collapse.gif
 %%WWWDIR%%/themes/default_classic/images/tree/tree_disabled.gif
@@ -2420,12 +2485,21 @@
 %%WWWDIR%%/themes/fluid/ie_styles.css
 %%WWWDIR%%/themes/fluid/images/arrow_left.png
 %%WWWDIR%%/themes/fluid/images/continue.gif
+%%WWWDIR%%/themes/fluid/images/hidemenu.gif
 %%WWWDIR%%/themes/fluid/images/layers.png
 %%WWWDIR%%/themes/fluid/images/mswitch_minus.gif
 %%WWWDIR%%/themes/fluid/images/mswitch_plus.gif
 %%WWWDIR%%/themes/fluid/images/next.gif
 %%WWWDIR%%/themes/fluid/images/previous.gif
 %%WWWDIR%%/themes/fluid/images/resume.gif
+%%WWWDIR%%/themes/fluid/images/rtl_tree/index.html
+%%WWWDIR%%/themes/fluid/images/rtl_tree/tree_collapse.gif
+%%WWWDIR%%/themes/fluid/images/rtl_tree/tree_end.gif
+%%WWWDIR%%/themes/fluid/images/rtl_tree/tree_expand.gif
+%%WWWDIR%%/themes/fluid/images/rtl_tree/tree_horizontal.gif
+%%WWWDIR%%/themes/fluid/images/rtl_tree/tree_split.gif
+%%WWWDIR%%/themes/fluid/images/rtl_tree/tree_vertline.gif
+%%WWWDIR%%/themes/fluid/images/showmenu.gif
 %%WWWDIR%%/themes/fluid/images/top.gif
 %%WWWDIR%%/themes/fluid/images/tree/index.html
 %%WWWDIR%%/themes/fluid/images/tree/tree_collapse.gif
@@ -2439,6 +2513,7 @@
 %%WWWDIR%%/themes/fluid/include/footer.tmpl.php
 %%WWWDIR%%/themes/fluid/include/header.tmpl.php
 %%WWWDIR%%/themes/fluid/print.css
+%%WWWDIR%%/themes/fluid/rtl.css
 %%WWWDIR%%/themes/fluid/save_state.php
 %%WWWDIR%%/themes/fluid/screenshot.gif
 %%WWWDIR%%/themes/fluid/styles.css
@@ -2451,6 +2526,7 @@
 %%WWWDIR%%/themes/greenmin/images/arrow_ltr.gif
 %%WWWDIR%%/themes/greenmin/images/back.gif
 %%WWWDIR%%/themes/greenmin/images/continue.gif
+%%WWWDIR%%/themes/greenmin/images/hidemenu.gif
 %%WWWDIR%%/themes/greenmin/images/linkOpaque.gif
 %%WWWDIR%%/themes/greenmin/images/linkTransparent.gif
 %%WWWDIR%%/themes/greenmin/images/mswitch_minus.gif
@@ -2459,6 +2535,14 @@
 %%WWWDIR%%/themes/greenmin/images/next.gif
 %%WWWDIR%%/themes/greenmin/images/previous.gif
 %%WWWDIR%%/themes/greenmin/images/resume.gif
+%%WWWDIR%%/themes/greenmin/images/rtl_tree/index.html
+%%WWWDIR%%/themes/greenmin/images/rtl_tree/tree_collapse.gif
+%%WWWDIR%%/themes/greenmin/images/rtl_tree/tree_end.gif
+%%WWWDIR%%/themes/greenmin/images/rtl_tree/tree_expand.gif
+%%WWWDIR%%/themes/greenmin/images/rtl_tree/tree_horizontal.gif
+%%WWWDIR%%/themes/greenmin/images/rtl_tree/tree_split.gif
+%%WWWDIR%%/themes/greenmin/images/rtl_tree/tree_vertline.gif
+%%WWWDIR%%/themes/greenmin/images/showmenu.gif
 %%WWWDIR%%/themes/greenmin/images/side_arrow.gif
 %%WWWDIR%%/themes/greenmin/images/sort.gif
 %%WWWDIR%%/themes/greenmin/images/tree/index.html
@@ -2478,20 +2562,77 @@
 %%WWWDIR%%/themes/greenmin/include/side_menu.tmpl.php
 %%WWWDIR%%/themes/greenmin/print.css
 %%WWWDIR%%/themes/greenmin/readme.txt
+%%WWWDIR%%/themes/greenmin/rtl.css
 %%WWWDIR%%/themes/greenmin/screenshot.gif
 %%WWWDIR%%/themes/greenmin/styles.css
 %%WWWDIR%%/themes/greenmin/theme.cfg.php
 %%WWWDIR%%/themes/greenmin/theme_info.xml
+%%WWWDIR%%/themes/mobile/TeraWurflRemoteClient.php
+%%WWWDIR%%/themes/mobile/about.tmpl.php
+%%WWWDIR%%/themes/mobile/android.css
+%%WWWDIR%%/themes/mobile/blackberry.css
+%%WWWDIR%%/themes/mobile/content.tmpl.php
 %%WWWDIR%%/themes/mobile/forms.css
-%%WWWDIR%%/themes/mobile/ie_styles.css
+%%WWWDIR%%/themes/mobile/images/arrow-up.png
+%%WWWDIR%%/themes/mobile/images/navbar_normal_button_insetShadow.png
+%%WWWDIR%%/themes/mobile/include/TeraWurflRemoteClient.php
+%%WWWDIR%%/themes/mobile/include/footer.tmpl.php
 %%WWWDIR%%/themes/mobile/include/header.tmpl.php
+%%WWWDIR%%/themes/mobile/index.tmpl.php
+%%WWWDIR%%/themes/mobile/iphone.css
+%%WWWDIR%%/themes/mobile/login.tmpl.php
 %%WWWDIR%%/themes/mobile/print.css
 %%WWWDIR%%/themes/mobile/readme.txt
 %%WWWDIR%%/themes/mobile/rtl.css
 %%WWWDIR%%/themes/mobile/screenshot.gif
-%%WWWDIR%%/themes/mobile/styles.css
+%%WWWDIR%%/themes/mobile/social/activities.tmpl.php
+%%WWWDIR%%/themes/mobile/social/admin/delete_applications.tmpl.php
+%%WWWDIR%%/themes/mobile/social/application_settings.tmpl.php
+%%WWWDIR%%/themes/mobile/social/applications.tmpl.php
+%%WWWDIR%%/themes/mobile/social/basic_profile.tmpl.php
+%%WWWDIR%%/themes/mobile/social/connections.tmpl.php
+%%WWWDIR%%/themes/mobile/social/edit_profile/account_settings.tmpl.php
+%%WWWDIR%%/themes/mobile/social/edit_profile/edit_additional.tmpl.php
+%%WWWDIR%%/themes/mobile/social/edit_profile/edit_contact.tmpl.php
+%%WWWDIR%%/themes/mobile/social/edit_profile/edit_education.tmpl.php
+%%WWWDIR%%/themes/mobile/social/edit_profile/edit_personal.tmpl.php
+%%WWWDIR%%/themes/mobile/social/edit_profile/edit_position.tmpl.php
+%%WWWDIR%%/themes/mobile/social/edit_profile/edit_representation.tmpl.php
+%%WWWDIR%%/themes/mobile/social/edit_profile/edit_websites.tmpl.php
+%%WWWDIR%%/themes/mobile/social/edit_profile.tmpl.php
+%%WWWDIR%%/themes/mobile/social/friend_list.tmpl.php
+%%WWWDIR%%/themes/mobile/social/index_public.tmpl.php
+%%WWWDIR%%/themes/mobile/social/individual_application.tmpl.php
+%%WWWDIR%%/themes/mobile/social/notifications.tmpl.php
+%%WWWDIR%%/themes/mobile/social/oauth/authorize.tmpl.php
+%%WWWDIR%%/themes/mobile/social/oauth/footer.tmpl.php
+%%WWWDIR%%/themes/mobile/social/oauth/header.tmpl.php
+%%WWWDIR%%/themes/mobile/social/profile_picture.html.php
+%%WWWDIR%%/themes/mobile/social/settings/account_settings.tmpl.php
+%%WWWDIR%%/themes/mobile/social/settings/application_settings.tmpl.php
+%%WWWDIR%%/themes/mobile/social/settings/privacy_settings.tmpl.php
+%%WWWDIR%%/themes/mobile/social/settings/settings_menu.tmpl.php
+%%WWWDIR%%/themes/mobile/social/sgroup_create.tmpl.php
+%%WWWDIR%%/themes/mobile/social/sgroup_edit.tmpl.php
+%%WWWDIR%%/themes/mobile/social/sgroup_invite.tmpl.php
+%%WWWDIR%%/themes/mobile/social/sgroup_list.tmpl.php
+%%WWWDIR%%/themes/mobile/social/sgroup_search.tmpl.php
+%%WWWDIR%%/themes/mobile/social/sgroup_view.tmpl.php
+%%WWWDIR%%/themes/mobile/social/sgroups.tmpl.php
+%%WWWDIR%%/themes/mobile/social/sprofile.tmpl.php
+%%WWWDIR%%/themes/mobile/social/tiny_applications.tmpl.php
+%%WWWDIR%%/themes/mobile/social/tiny_sgroups.tmpl.php
+%%WWWDIR%%/themes/mobile/test.html
 %%WWWDIR%%/themes/mobile/theme.cfg.php
 %%WWWDIR%%/themes/mobile/theme_info.xml
+%%WWWDIR%%/themes/mobile/users/browse.tmpl.php
+%%WWWDIR%%/themes/mobile/users/email_change.tmpl.php
+%%WWWDIR%%/themes/mobile/users/index.tmpl.php
+%%WWWDIR%%/themes/mobile/users/password_change.tmpl.php
+%%WWWDIR%%/themes/mobile/users/pref_wizard/index.tmpl.php
+%%WWWDIR%%/themes/mobile/users/pref_wizard/initialize.tmpl.php
+%%WWWDIR%%/themes/mobile/users/preferences.tmpl.php
+%%WWWDIR%%/themes/mobile/users/profile.tmpl.php
 %%WWWDIR%%/themes/themes_readme.txt
 %%WWWDIR%%/tools/index.php
 %%WWWDIR%%/tools/prog.php
@@ -2799,7 +2940,6 @@
 @dirrm %%WWWDIR%%/mods/_core/glossary
 @dirrm %%WWWDIR%%/mods/_core/groups
 @dirrm %%WWWDIR%%/mods/_core/imsafa/classes
-@dirrm %%WWWDIR%%/mods/_core/imsafa/html
 @dirrm %%WWWDIR%%/mods/_core/imsafa
 @dirrm %%WWWDIR%%/mods/_core/imscc/classes
 @dirrm %%WWWDIR%%/mods/_core/imscc/include
@@ -2915,10 +3055,13 @@
 @dirrm %%WWWDIR%%/mods/_standard/tracker
 @dirrm %%WWWDIR%%/mods/_standard
 @dirrm %%WWWDIR%%/mods
+@dirrm %%WWWDIR%%/themes/blumin/images/rtl_tree
+@dirrm %%WWWDIR%%/themes/blumin/images/tree
 @dirrm %%WWWDIR%%/themes/blumin/images
 @dirrm %%WWWDIR%%/themes/blumin/include
 @dirrm %%WWWDIR%%/themes/blumin
 @dirrm %%WWWDIR%%/themes/default/editor
+@dirrm %%WWWDIR%%/themes/default/images/rtl_tree
 @dirrm %%WWWDIR%%/themes/default/images/tree
 @dirrm %%WWWDIR%%/themes/default/images
 @dirrm %%WWWDIR%%/themes/default/include
@@ -2934,27 +3077,40 @@
 @dirrm %%WWWDIR%%/themes/default/users/pref_wizard
 @dirrm %%WWWDIR%%/themes/default/users
 @dirrm %%WWWDIR%%/themes/default
+@dirrm %%WWWDIR%%/themes/default15/images/rtl_tree
 @dirrm %%WWWDIR%%/themes/default15/images/tree
 @dirrm %%WWWDIR%%/themes/default15/images
 @dirrm %%WWWDIR%%/themes/default15/include
 @dirrm %%WWWDIR%%/themes/default15
+@dirrm %%WWWDIR%%/themes/default16/images/rtl_tree
 @dirrm %%WWWDIR%%/themes/default16/images/tree
 @dirrm %%WWWDIR%%/themes/default16/images
 @dirrm %%WWWDIR%%/themes/default16/include
 @dirrm %%WWWDIR%%/themes/default16
+@dirrm %%WWWDIR%%/themes/default_classic/images/rtl_tree
 @dirrm %%WWWDIR%%/themes/default_classic/images/tree
 @dirrm %%WWWDIR%%/themes/default_classic/images
 @dirrm %%WWWDIR%%/themes/default_classic/include
 @dirrm %%WWWDIR%%/themes/default_classic
+@dirrm %%WWWDIR%%/themes/fluid/images/rtl_tree
 @dirrm %%WWWDIR%%/themes/fluid/images/tree
 @dirrm %%WWWDIR%%/themes/fluid/images
 @dirrm %%WWWDIR%%/themes/fluid/include
 @dirrm %%WWWDIR%%/themes/fluid
+@dirrm %%WWWDIR%%/themes/greenmin/images/rtl_tree
 @dirrm %%WWWDIR%%/themes/greenmin/images/tree
 @dirrm %%WWWDIR%%/themes/greenmin/images
 @dirrm %%WWWDIR%%/themes/greenmin/include
 @dirrm %%WWWDIR%%/themes/greenmin
+@dirrm %%WWWDIR%%/themes/mobile/images
 @dirrm %%WWWDIR%%/themes/mobile/include
+@dirrm %%WWWDIR%%/themes/mobile/social/admin
+@dirrm %%WWWDIR%%/themes/mobile/social/edit_profile
+@dirrm %%WWWDIR%%/themes/mobile/social/oauth
+@dirrm %%WWWDIR%%/themes/mobile/social/settings
+@dirrm %%WWWDIR%%/themes/mobile/social
+@dirrm %%WWWDIR%%/themes/mobile/users/pref_wizard
+@dirrm %%WWWDIR%%/themes/mobile/users
 @dirrm %%WWWDIR%%/themes/mobile
 @dirrm %%WWWDIR%%/themes
 @dirrm %%WWWDIR%%/tools
