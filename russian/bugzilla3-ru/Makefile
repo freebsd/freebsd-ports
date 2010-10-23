@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	bugzilla-ru
-DISTVERSION=	3.4.3-ru-20091115
-PORTREVISION=	1
+DISTVERSION=	3.6.2-ru-20100809
 CATEGORIES=	russian
-MASTER_SITES=	SF/${PORTNAME}/bugzilla-3.4-ru/${DISTVERSION:C/-ru-[0-9]+$//}/
+MASTER_SITES=	http://ftp.mozilla-russia.org/bugzilla/
 DISTNAME=	bugzilla-${DISTVERSION}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Russian localization for Bugzilla
 
-RUN_DEPENDS=	bugzilla>=3.4.2:${PORTSDIR}/devel/bugzilla
+RUN_DEPENDS=	bugzilla>=3.6.2:${PORTSDIR}/devel/bugzilla
 
 CONFLICTS=	bugzilla-2.*
 
