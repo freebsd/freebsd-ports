@@ -2,13 +2,22 @@ include/attica/accountbalance.h
 include/attica/activity.h
 include/attica/atticabasejob.h
 include/attica/atticaclient_export.h
+include/attica/atticautils.h
 include/attica/category.h
+include/attica/comment.h
+include/attica/commentparser.h
 include/attica/content.h
+include/attica/distribution.h
+include/attica/distributionparser.h
 include/attica/downloaddescription.h
 include/attica/downloaditem.h
 include/attica/event.h
 include/attica/folder.h
 include/attica/getjob.h
+include/attica/homepageentry.h
+include/attica/homepagetype.h
+include/attica/homepagetypeparser.h
+include/attica/icon.h
 include/attica/itemjob.h
 include/attica/knowledgebaseentry.h
 include/attica/license.h
@@ -18,11 +27,12 @@ include/attica/metadata.h
 include/attica/person.h
 include/attica/platformdependent.h
 include/attica/postjob.h
+include/attica/privatedata.h
 include/attica/provider.h
 include/attica/providermanager.h
 include/attica/version.h
 lib/libattica.so
 lib/libattica.so.0
-lib/libattica.so.0.1.4
+lib/libattica.so.0.2.0
 libdata/pkgconfig/libattica.pc
 @dirrmtry include/attica
