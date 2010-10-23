@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bmake
-PORTVERSION=	20100618
+PORTVERSION=	20100911
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/sjg/ \
 		http://www.gtlib.cc.gatech.edu/pub/NetBSD/misc/sjg/ \
@@ -16,6 +16,8 @@ DISTFILES=	bmake-${PORTVERSION}.tar.gz mk-20100612.tar.gz
 
 MAINTAINER=	to.my.trociny@gmail.com
 COMMENT=	Portable version of NetBSD 'make' utility
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		bmake.1
 
