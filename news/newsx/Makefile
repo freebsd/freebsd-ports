@@ -9,7 +9,7 @@ PORTNAME=	newsx
 PORTVERSION=	1.6
 PORTREVISION=	2
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.kvaleberg.com/pub/
+MASTER_SITES=	http://www.kvaleberg.org/pub/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A program to fetch news from and post news to a remote NNTP server
