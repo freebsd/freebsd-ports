@@ -5,12 +5,12 @@
 #
 # $FreeBSD$
 #
+
 PORTNAME=	rasqal
-PORTVERSION=	0.9.19
-PORTREVISION=	1
+PORTVERSION=	0.9.20
 CATEGORIES=	textproc
 MASTER_SITES=	SF/librdf/${PORTNAME}/${PORTVERSION} \
-		http://librdf.org/dist/source/
+		http://download.librdf.org/source/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A high-level interface for RDF
