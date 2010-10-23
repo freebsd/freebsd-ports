@@ -39,6 +39,7 @@
 %%HORDIR%%/locale/cs_CZ/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/da_DK/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/de_DE/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/de_DE/help.xml
 %%HORDIR%%/locale/en_US/help.xml
 %%HORDIR%%/locale/es_ES/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/es_ES/help.xml
@@ -53,6 +54,7 @@
 %%HORDIR%%/locale/hu_HU/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/hu_HU/help.xml
 %%HORDIR%%/locale/it_IT/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/ja_JP/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/ko_KR/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/lv_LV/LC_MESSAGES/gollem.mo
 %%HORDIR%%/locale/lv_LV/help.xml
@@ -87,6 +89,7 @@
 %%HORDIR%%/po/hr_HR.po
 %%HORDIR%%/po/hu_HU.po
 %%HORDIR%%/po/it_IT.po
+%%HORDIR%%/po/ja_JP.po
 %%HORDIR%%/po/ko_KR.po
 %%HORDIR%%/po/lv_LV.po
 %%HORDIR%%/po/nl_NL.po
@@ -179,6 +182,8 @@
 @dirrm %%HORDIR%%/locale/hu_HU
 @dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/it_IT
+@dirrm %%HORDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ja_JP
 @dirrm %%HORDIR%%/locale/ko_KR/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/ko_KR
 @dirrm %%HORDIR%%/locale/lv_LV/LC_MESSAGES
