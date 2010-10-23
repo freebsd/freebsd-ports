@@ -579,12 +579,12 @@ MASTER_SITE_GOOGLE_CODE+= \
 .if !defined(IGNORE_MASTER_SITE_HORDE)
 MASTER_SITE_HORDE+=	\
 	http://ftp.horde.org/pub/%SUBDIR%/ \
-	http://ftp.at.horde.org/mirror/horde/%SUBDIR%/ \
 	ftp://ftp.horde.org/pub/%SUBDIR%/ \
-	ftp://ftp.at.horde.org/mirror/horde/%SUBDIR%/ \
-	ftp://ftp.it.horde.org/horde/pub/%SUBDIR%/ \
-	ftp://ftp.es.horde.org/pub/%SUBDIR%/ \
-	ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/%SUBDIR%/
+	ftp://ftp.at.horde.org/infosys/webapps/horde/%SUBDIR%/ \
+	ftp://ftp.de.horde.org/mirrors/ftp.de.horde.org/pub/%SUBDIR%/ \
+	ftp://ftp.se.horde.org/mirror/horde/pub/%SUBDIR%/ \
+	ftp://ftp.tw.horde.org/pub/%SUBDIR%/ \
+	ftp://ftp.us.horde.org/pub/software/horde//%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_IDSOFTWARE)
