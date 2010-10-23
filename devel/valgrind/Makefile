@@ -6,12 +6,16 @@
 #
 
 PORTNAME=	valgrind
-PORTVERSION=	3.5.0
-PORTREVISION=	4
+PORTVERSION=	3.6.0
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
+MASTER_SITES=	http://www.deglitch.com/dist/
+.if ${PORTREVISION} > 0
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTREVISION}
+.else
+DISTNAME=	${PORTNAME}-${PORTVERSION}
+.endif
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A (memory) debugging and profiling tool
@@ -23,6 +27,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
+USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}

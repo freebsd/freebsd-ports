@@ -1,6 +1,7 @@
 bin/callgrind_annotate
 bin/callgrind_control
 bin/cg_annotate
+bin/cg_diff
 bin/cg_merge
 bin/ms_print
 bin/no_op_client_for_valgrind
@@ -61,6 +62,9 @@ include/valgrind/vki/vki-amd64-linux.h
 include/valgrind/vki/vki-darwin.h
 include/valgrind/vki/vki-freebsd.h
 include/valgrind/vki/vki-linux.h
+include/valgrind/vki/vki-arm-linux.h
+include/valgrind/vki/vki-posixtypes-arm-linux.h
+include/valgrind/vki/vki-scnums-arm-linux.h
 include/valgrind/vki/vki-posixtypes-amd64-linux.h
 include/valgrind/vki/vki-posixtypes-ppc32-linux.h
 include/valgrind/vki/vki-posixtypes-ppc64-linux.h
@@ -81,6 +85,10 @@ libdata/pkgconfig/valgrind.pc
 %%AMD64%%lib/valgrind/callgrind-amd64-freebsd
 %%X86%%lib/valgrind/callgrind-x86-freebsd
 lib/valgrind/default.supp
+%%AMD64%%lib/valgrind/exp-dhat-amd64-freebsd
+%%X86%%lib/valgrind/exp-dhat-x86-freebsd
+%%AMD64%%lib/valgrind/vgpreload_exp-dhat-amd64-freebsd.so
+%%X86%%lib/valgrind/vgpreload_exp-dhat-x86-freebsd.so
 %%AMD64%%lib/valgrind/drd-amd64-freebsd
 %%X86%%lib/valgrind/drd-x86-freebsd
 %%AMD64%%lib/valgrind/exp-bbv-amd64-freebsd
