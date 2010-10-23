@@ -22145,6 +22145,7 @@ romeo                           ports/palm/romeo
 root                            ports/devel/root
 root-doc                        ports/devel/root-doc
 roottail                        ports/sysutils/roottail
+ros                             ports/devel/ros
 rosegarden                      ports/audio/rosegarden
 rospell                         ports/editors/rospell
 rot                             ports/textproc/rot
