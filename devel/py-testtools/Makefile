@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	testtools
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	devel python
-MASTER_SITES=	http://launchpadlibrarian.net/54281358/ \
+MASTER_SITES=	http://launchpadlibrarian.net/57777758/ \
 		http://www.c-s.li/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	c-s@c-s.li
 COMMENT=	Extensions to the Python library's unit testing framework
+
+LICENSE=	BSD
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
