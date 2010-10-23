@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	redland
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.12
 CATEGORIES=	textproc
-MASTER_SITES=	SF/librdf/${PORTNAME}/${PORTVERSION} \
-		http://librdf.org/dist/source/
+MASTER_SITES=	http://download.librdf.org/source/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A high-level interface for RDF
