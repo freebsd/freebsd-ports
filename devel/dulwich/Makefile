@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dulwich
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://samba.org/~jelmer/${PORTNAME}/ \
 		http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
@@ -15,6 +15,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	marco.broeder@gmx.eu
 COMMENT=	Pure-Python implementation of the Git file formats and protocols
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
+MAKE_JOBS_SAFE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
@@ -32,10 +36,8 @@ post-patch:
 
 post-install:
 .ifndef (NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	for n in ${PORTDOCS}; do \
-		${INSTALL_MAN} ${WRKSRC}/$${n} ${DOCSDIR}/; \
-	done
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
