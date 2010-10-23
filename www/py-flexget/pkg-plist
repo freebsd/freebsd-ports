@@ -182,9 +182,6 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_manipulate.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_manipulate.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_manipulate.pyo
-%%PYTHON_SITELIBDIR%%/flexget/plugins/module_manual.py
-%%PYTHON_SITELIBDIR%%/flexget/plugins/module_manual.pyc
-%%PYTHON_SITELIBDIR%%/flexget/plugins/module_manual.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_path_by_ext.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_path_by_ext.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/module_path_by_ext.pyo
@@ -254,6 +251,12 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_archive.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_archive.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_archive.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_failed.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_failed.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_failed.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_feed_control.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_feed_control.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_feed_control.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_feed_priority.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_feed_priority.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_feed_priority.pyo
