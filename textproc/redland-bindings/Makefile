@@ -13,14 +13,16 @@ MASTER_SITES=	http://download.librdf.org/source/
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Language bindings for the Redland package
 
+LIB_DEPENDS=	rdf.0:${PORTSDIR}/textproc/redland
+
 OPTIONS=	PERL "Add Perl bindings" off \
 		PHP "Add PHP bindings" off \
 		PYTHON "Add Python bindings" on \
 		RUBY "Add Ruby bindings" off
-LIB_DEPENDS=	rdf.0:${PORTSDIR}/textproc/redland
 
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+
+IGNORE=		does not compatible with redland-1.0.12
 
 .include <bsd.port.options.mk>
 
