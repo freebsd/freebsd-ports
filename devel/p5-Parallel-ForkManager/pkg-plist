@@ -1,5 +1,8 @@
 %%SITE_PERL%%/Parallel/ForkManager.pm
+%%SITE_PERL%%/Parallel/ForkManager/callback.pl
+%%SITE_PERL%%/Parallel/ForkManager/parallel_get.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/ForkManager/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/ForkManager
+@dirrm %%SITE_PERL%%/Parallel/ForkManager
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel
 @dirrmtry %%SITE_PERL%%/Parallel
