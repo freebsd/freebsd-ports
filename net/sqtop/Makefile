@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	sqtop
-DISTVERSION=	2010-06-03
+DISTVERSION=	2010-10-07
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	coco@executive-computing.de
 COMMENT=	Console-based display of Squid proxy connections
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 
@@ -26,8 +28,7 @@ OPTIONS=	NCURSES	"Enable ncurses user interface"	On
 .include <bsd.port.options.mk>
 
 .if defined(WITHOUT_NCURSES)
-CONFIGURE_ARGS+=	--disable-ui
+CONFIGURE_ARGS=	--disable-ui
 .endif
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
