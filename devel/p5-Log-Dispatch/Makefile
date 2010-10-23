@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Dispatch
-PORTVERSION=	2.26
+PORTVERSION=	2.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ COMMENT=	A suite of OO modules for logging messages to multiple outputs
 RUN_DEPENDS=	p5-Params-Validate>=0.15:${PORTSDIR}/devel/p5-Params-Validate
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=	Log::Dispatch.3 \
 	Log::Dispatch::ApacheLog.3 \
