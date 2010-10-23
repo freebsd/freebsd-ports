@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Format-Excel
-PORTVERSION=	0.30.00
+PORTVERSION=	0.31.00
 DISTVERSION=	${PORTVERSION:C/\.(..)$//}
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -16,7 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert between DateTime and Excel dates
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 
