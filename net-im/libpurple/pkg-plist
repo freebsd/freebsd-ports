@@ -202,6 +202,7 @@ share/locale/kn/LC_MESSAGES/pidgin.mo
 share/locale/ku/LC_MESSAGES/pidgin.mo
 share/locale/lo/LC_MESSAGES/pidgin.mo
 share/locale/lt/LC_MESSAGES/pidgin.mo
+share/locale/mai/LC_MESSAGES/pidgin.mo
 share/locale/mk/LC_MESSAGES/pidgin.mo
 share/locale/mn/LC_MESSAGES/pidgin.mo
 share/locale/mr/LC_MESSAGES/pidgin.mo
@@ -243,15 +244,18 @@ share/purple/ca-certs/AOL_Member_CA.pem
 share/purple/ca-certs/America_Online_Root_Certification_Authority_1.pem
 share/purple/ca-certs/CAcert_Class3.pem
 share/purple/ca-certs/CAcert_Root.pem
+share/purple/ca-certs/Deutsche_Telekom_Root_CA_2.pem
 share/purple/ca-certs/Entrust.net_Secure_Server_CA.pem
 share/purple/ca-certs/Equifax_Secure_CA.pem
 share/purple/ca-certs/Equifax_Secure_Global_eBusiness_CA-1.pem
 share/purple/ca-certs/GTE_CyberTrust_Global_Root.pem
+share/purple/ca-certs/Go_Daddy_Class_2_CA.pem
 share/purple/ca-certs/Microsoft_Internet_Authority.pem
 share/purple/ca-certs/Microsoft_Secure_Server_Authority.pem
 share/purple/ca-certs/StartCom_Certification_Authority.pem
 share/purple/ca-certs/StartCom_Free_SSL_CA.pem
 share/purple/ca-certs/Thawte_Premium_Server_CA.pem
+share/purple/ca-certs/Thawte_Primary_Root_CA.pem
 share/purple/ca-certs/ValiCert_Class_2_VA.pem
 share/purple/ca-certs/VeriSign_Class3_Extended_Validation_CA.pem
 share/purple/ca-certs/Verisign_Class3_Primary_CA.pem
@@ -291,6 +295,8 @@ share/sounds/purple/send.wav
 @dirrmtry share/locale/ms_MY
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/mai/LC_MESSAGES
+@dirrmtry share/locale/mai
 @dirrmtry share/locale/lo/LC_MESSAGES
 @dirrmtry share/locale/lo
 @dirrmtry share/locale/ku/LC_MESSAGES
