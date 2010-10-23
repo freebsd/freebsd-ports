@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	diffuse
-PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	devel python
 MASTER_SITES=	SF
 
@@ -20,6 +19,7 @@ USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 USE_BZIP2=	yes
 
+MANLANG=	"" ru
 MAN1=		diffuse.1
 
 OPTIONS=	MENU	"Add desktop menu (needs desktop-file-utils)"	on \
@@ -29,7 +29,7 @@ OPTIONS=	MENU	"Add desktop menu (needs desktop-file-utils)"	on \
 .include <bsd.port.options.mk>
 
 .ifndef (NOPORTDOCS)
-PORTDOCS=	AUTHORS COPYING ChangeLog README
+PORTDOCS=	AUTHORS COPYING ChangeLog README README_ru
 .endif
 
 .ifndef (NOPORTDATA)
@@ -54,7 +54,7 @@ PLIST_SUB+=	OMF="@comment "
 .ifndef (WITHOUT_NLS)
 PLIST_SUB+=	NLS=""
 USE_GETTEXT=	yes
-TRANSLATIONS=	de es ja zh_CN
+TRANSLATIONS=	de es ja ko ru zh_CN
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
@@ -72,7 +72,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|../../etc|${PREFIX}/etc|g' \
 		${WRKSRC}/src/usr/bin/${PORTNAME}
 	${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
-		${WRKSRC}/src/usr/share/omf/${PORTNAME}/${PORTNAME}-C.omf
+		${WRKSRC}/src/usr/share/omf/${PORTNAME}/*.omf \
+		${WRKSRC}/src/usr/share/gnome/help/${PORTNAME}/*/*.xml
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/usr/bin/${PORTNAME} \
@@ -80,6 +81,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/etc/${PORTNAME}rc ${PREFIX}/etc/
 	${INSTALL_MAN} ${WRKSRC}/src/usr/share/man/man1/*.1 \
 		${MANPREFIX}/man/man1/
+	${MKDIR} ${MANPREFIX}/man/ru/man1
+	${INSTALL_MAN} ${WRKSRC}/src/usr/share/man/ru/man1/*.1 \
+		${MANPREFIX}/man/ru/man1/
 
 post-install:
 .ifndef (NOPORTDOCS)
@@ -110,6 +114,9 @@ post-install:
 	${MKDIR} ${PREFIX}/share/gnome/help/${PORTNAME}/C
 	${INSTALL_DATA} ${WRKSRC}/src/usr/share/gnome/help/${PORTNAME}/C/*.xml \
 		${PREFIX}/share/gnome/help/${PORTNAME}/C/
+	${MKDIR} ${PREFIX}/share/gnome/help/${PORTNAME}/ru
+	${INSTALL_DATA} ${WRKSRC}/src/usr/share/gnome/help/${PORTNAME}/ru/*.xml \
+		${PREFIX}/share/gnome/help/${PORTNAME}/ru/
 	${MKDIR} ${PREFIX}/share/omf/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/src/usr/share/omf/${PORTNAME}/*.omf \
 		${PREFIX}/share/omf/${PORTNAME}/
