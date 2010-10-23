@@ -9,7 +9,6 @@
 %%HORDIR%%/edit_dates.php
 %%HORDIR%%/faces/claim.php
 %%HORDIR%%/faces/custom.php
-%%HORDIR%%/faces/delete.php
 %%HORDIR%%/faces/face.php
 %%HORDIR%%/faces/gallery.php
 %%HORDIR%%/faces/image.php
@@ -176,6 +175,7 @@
 %%HORDIR%%/locale/es_ES/help.xml
 %%HORDIR%%/locale/fi_FI/LC_MESSAGES/ansel.mo
 %%HORDIR%%/locale/fi_FI/help.xml
+%%HORDIR%%/locale/fr_FR/LC_MESSAGES/ansel.mo
 %%HORDIR%%/locale/it_IT/LC_MESSAGES/ansel.mo
 %%HORDIR%%/locale/ja_JP/LC_MESSAGES/ansel.mo
 %%HORDIR%%/locale/lt_LT/LC_MESSAGES/ansel.mo
@@ -190,6 +190,7 @@
 %%HORDIR%%/po/de_DE.po
 %%HORDIR%%/po/es_ES.po
 %%HORDIR%%/po/fi_FI.po
+%%HORDIR%%/po/fr_FR.po
 %%HORDIR%%/po/it_IT.po
 %%HORDIR%%/po/ja_JP.po
 %%HORDIR%%/po/lt_LT.po
@@ -394,6 +395,8 @@
 @dirrm %%HORDIR%%/locale/es_ES
 @dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fr_FR
 @dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/it_IT
 @dirrm %%HORDIR%%/locale/ja_JP/LC_MESSAGES
