@@ -24,6 +24,7 @@
 %%BUGZILLADIR%%/template/ru/default/admin/classifications/add.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/classifications/del.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/classifications/edit.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/classifications/footer.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/classifications/reclassify.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/classifications/select.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/components/confirm-delete.html.tmpl
@@ -62,6 +63,7 @@
 %%BUGZILLADIR%%/template/ru/default/admin/milestones/list.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/milestones/select-product.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/params/admin.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/advanced.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/params/attachment.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/params/auth.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/params/bugchange.html.tmpl
@@ -72,6 +74,7 @@
 %%BUGZILLADIR%%/template/ru/default/admin/params/core.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/params/dependencygraph.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/params/editparams.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/admin/params/general.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/params/groupsecurity.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/params/index.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/admin/params/ldap.html.tmpl
@@ -172,6 +175,7 @@
 %%BUGZILLADIR%%/template/ru/default/global/confirm-user-match.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/global/docslinks.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/global/field-descs.none.tmpl
+%%BUGZILLADIR%%/template/ru/default/global/header.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/global/hidden-fields.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/global/message.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/global/messages.html.tmpl
@@ -195,7 +199,6 @@
 %%BUGZILLADIR%%/template/ru/default/pages/linked.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/pages/linkify.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/pages/quicksearch.html.tmpl
-%%BUGZILLADIR%%/template/ru/default/pages/quicksearchhack.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/pages/release-notes.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/pages/sudo.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/pages/voting.html.tmpl
@@ -204,6 +207,7 @@
 %%BUGZILLADIR%%/template/ru/default/reports/chart.png.tmpl
 %%BUGZILLADIR%%/template/ru/default/reports/components.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/reports/create-chart.html.tmpl
+%%BUGZILLADIR%%/template/ru/default/reports/delete-series.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/reports/duplicates-simple.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/reports/duplicates-table.html.tmpl
 %%BUGZILLADIR%%/template/ru/default/reports/duplicates.html.tmpl
