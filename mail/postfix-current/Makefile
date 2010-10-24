@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.8-20100923
-PORTREVISION=	1
+DISTVERSION=	2.8-20101007
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -23,7 +22,7 @@ MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.* postfix-current-2.[0-79]* \
-		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
+		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.*
 
 MAKE_JOBS_SAFE=	yes
 USE_SUBMAKE=	yes
