@@ -9,7 +9,7 @@ PORTNAME=	qemu
 PORTVERSION=	0.13.0
 CATEGORIES=	emulators
 MASTER_SITES=	SAVANNAH:release \
-		${MASTER_SITE_LOCAL}:snapshot \
+		LOCAL:snapshot \
 		http://people.freebsd.org/~nox/qemu/:snapshot
 MASTER_SITE_SUBDIR=	qemu/:release nox/:snapshot
 PKGNAMESUFFIX=	-devel
