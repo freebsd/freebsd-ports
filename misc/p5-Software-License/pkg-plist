@@ -19,6 +19,7 @@
 %%SITE_PERL%%/Software/License/None.pm
 %%SITE_PERL%%/Software/License/OpenSSL.pm
 %%SITE_PERL%%/Software/License/Perl_5.pm
+%%SITE_PERL%%/Software/License/PostgreSQL.pm
 %%SITE_PERL%%/Software/License/QPL_1_0.pm
 %%SITE_PERL%%/Software/License/SSLeay.pm
 %%SITE_PERL%%/Software/License/Sun.pm

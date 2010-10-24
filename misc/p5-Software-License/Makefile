@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Software-License
-PORTVERSION=	0.101410
+PORTVERSION=	0.102340
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/R/RJ/RJBS
@@ -46,6 +46,7 @@ MAN3=		Software::License.3 \
 		Software::License::None.3 \
 		Software::License::OpenSSL.3 \
 		Software::License::Perl_5.3 \
+		Software::License::PostgreSQL.3 \
 		Software::License::QPL_1_0.3 \
 		Software::License::SSLeay.3 \
 		Software::License::Sun.3 \
