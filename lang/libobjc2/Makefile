@@ -28,6 +28,10 @@ MAKE_ARGS+=	-DWITHOUT_TOYDISPATCH
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 .if (${ARCH} == i386) || (${ARCH} == i486)
 CFLAGS+=	-march=i586
 .endif
