@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-Cover
-PORTVERSION=	0.71
+PORTVERSION=	0.73
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,12 +16,13 @@ COMMENT=	Code coverage metrics for Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
 		${SITE_PERL}/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Pod-Coverage \
-		${SITE_PERL}/PPI/HTML.pm:${PORTSDIR}/textproc/p5-PPI-HTML \
-		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
+		${SITE_PERL}/PPI/HTML.pm:${PORTSDIR}/textproc/p5-PPI-HTML
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
+		${SITE_PERL}/Parallel/Iterator.pm:${PORTSDIR}/devel/p5-Parallel-Iterator \
 		${SITE_PERL}/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Pod-Coverage \
-		${SITE_PERL}/PPI/HTML.pm:${PORTSDIR}/textproc/p5-PPI-HTML \
-		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
+		${SITE_PERL}/PPI/HTML.pm:${PORTSDIR}/textproc/p5-PPI-HTML
+TEST_DEPENDS=	${SITE_PERL}/Test/Differences.pm:${PORTSDIR}/devel/p5-Test-Differences \
+		${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn
 
 PERL_CONFIGURE=	5.8.0+
 
