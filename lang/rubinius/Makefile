@@ -35,6 +35,12 @@ USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not build on 6.X
+.endif
+
 post-extract:
 	@${MKDIR} ${WRKSRC}/vm/external_libs/prebuilt/
 	@${CP} ${DISTDIR}/${LLVMDIST} ${WRKSRC}/vm/external_libs/prebuilt/${LLVMDIST}
@@ -94,4 +100,4 @@ plist:
 	@${ECHO_CMD} "@dirrmtry lib/ruby/gems" >> pkg-plist
 	@${ECHO_CMD} "@dirrmtry lib/ruby" >> pkg-plist
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
