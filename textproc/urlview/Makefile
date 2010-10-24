@@ -27,9 +27,9 @@ SUB_LIST=	GECKO=${GECKO}
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GECKO)
-USE_GECKO=	firefox-devel firefox35 seamonkey
-.include "${PORTSDIR}/Mk/bsd.gecko.mk"
+.if defined(WITH_FIREFOX)
+RUN_DEPENDS+=	${LOCALBASE}/lib/firefox3/firefox:${PORTSDIR}/www/firefox
+GECKO=		firefox3
 .elif defined(WITH_SEAMONKEY)
 RUN_DEPENDS+=	${LOCALBASE}/lib/seamonkey/seamonkey-bin:${PORTSDIR}/www/seamonkey
 GECKO=		seamonkey
