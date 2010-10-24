@@ -32,7 +32,7 @@ JAVA_VERSION=	1.5+
 USE_LDCONFIG=	yes
 # Do not build mozembed: it requires Gecko_SDK and XULRunner, which is
 # broken ATM - see <http://developer.mozilla.org/en/docs/Gecko_SDK>.
-#USE_GECKO=	seamonkey libxul
+#USE_GECKO=	libxul
 
 #ALL_TARGET=	buildall
 ALL_TARGET=	buildtray
