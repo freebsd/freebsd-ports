@@ -70,7 +70,7 @@ share/gtags/jquery/jquery.treeview.css
 share/gtags/jquery/jquery.treeview.js
 share/gtags/jscode_suggest.tmpl
 share/gtags/jscode_treeview.tmpl
-share/gtags/style.css
+share/gtags/style.css.tmpl
 @dirrm lib/gtags
 @dirrm share/gtags/icons
 @dirrm share/gtags/jquery/images
