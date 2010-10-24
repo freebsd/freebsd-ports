@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c9a6ae4a-df8b-11df-9573-00262d5ed8ee">
+    <topic>monotone -- remote denial of service in default setup</topic>
+    <affects>
+      <package>
+	<name>monotone</name>
+	<range><lt>0.48.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The monotone developers report:</p>
+	<blockquote cite="http://www.monotone.ca/NEWS">
+	  <p>Running "mtn ''" or "mtn ls ''" doesn't cause an internal
+          error anymore. In monotone 0.48 and earlier this behavior
+          could be used to crash a server remotely (but only if it was
+          configured to allow execution of remote commands).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/151665</freebsdpr>
+      <url>http://www.monotone.ca/NEWS</url>
+      <url>http://www.thomaskeller.biz/blog/2010/10/22/monotone-0-48-1-released-please-update-your-servers/</url>
+    </references>
+    <dates>
+      <discovery>2010-10-21</discovery>
+      <entry>2010-10-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c4f067b9-dc4a-11df-8e32-000f20797ede">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
