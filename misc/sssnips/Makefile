@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sssnips
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	misc
 MASTER_SITES=	http://devel.ringlet.net/misc/sssnips/
 

@@ -1,0 +1,16 @@
+Description: Use /usr/local/etc/vcr on FreeBSD.
+Forwarded: not-needed
+Author: Peter Pentchev <roam@FreeBSD.org>
+Last-Update: 2010-10-24
+
+--- vcr.1.orig
++++ vcr.1
+@@ -71,7 +71,7 @@
+ The
+ .Nm
+ utility reads the commands to be executed from either the
+-.Pa /etc/vcr
++.Pa /usr/local/etc/vcr
+ or, if present, the
+ .Pa ~/.vcr
+ definition file.
