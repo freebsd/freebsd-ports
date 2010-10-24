@@ -23,7 +23,7 @@ INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GSTREAMER=	ffmpeg good theora xvid mp3 faad ogg dvd x264
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--disable-power-manager-plugin
+CONFIGURE_ARGS=	--disable-power-manager-plugin --disable-browser-plugin
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_GNOME=	gnomehack intltool intlhack pkgconfig
 USE_XFCE=	configenv libexo libgui libutil panel
