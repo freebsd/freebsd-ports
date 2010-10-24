@@ -8,10 +8,10 @@
 PORTNAME=	treeline
 PORTVERSION=	1.2.4
 CATEGORIES=	deskutils python
-MASTER_SITES=	${MASTER_SITE_BERLIOS}:treeline \
+MASTER_SITES=	${MASTER_SITE_BERLIOS:S/$/:treeline/} \
 		http://treeline.bellz.org/plugins/:plugins \
 		http://depot.fsck.ch/mirror/distfiles/:treeline,plugins
-MASTER_SITE_SUBDIR=treeline
+MASTER_SITE_SUBDIR=treeline/:treeline
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:treeline
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
