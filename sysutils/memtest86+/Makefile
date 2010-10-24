@@ -43,7 +43,7 @@ ALL_TARGET+=	iso
 .endif
 
 .if ${OSVERSION} < 700042
-+EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-Makefile
+EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-Makefile
 .endif
 
 pre-fetch:
