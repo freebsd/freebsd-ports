@@ -4,6 +4,7 @@
 #
 # SBCL		- Path to the Steel Bank Common Lisp compiler
 # CLISP		- Path to the GNU Common Lisp compiler
+# LISP_EXTRA_ARG - Extra arguments for compiler used by FASL_BUILD ports
 # CL_LIBDIR_REL	- Common Lisp library directory, relative to LOCALBASE or PREFIX
 # ASDF_PATHNAME	- Where to install compiled FASL files (depends on FASL_DIR_REL)
 # ASDF_REGISTRY	- Path to ASDF registry
@@ -86,7 +87,7 @@ do-build:
 
 .if defined(USE_SBCL)
 	@FBSD_ASDF_COMPILE_PORT=t PORTNAME=${PORTNAME} WRKSRC=${WRKSRC}/ \
-		${SBCL}	--noinform --userinit /dev/null --disable-debugger \
+		${SBCL} ${LISP_EXTRA_ARG} --noinform --userinit /dev/null --disable-debugger \
 		--eval '#.(load "${LOCALBASE}/etc/asdf-init")' \
 		--eval "(asdf:oos 'asdf:compile-op :${MODULE})" \
 		--eval "(quit)"
@@ -94,7 +95,7 @@ do-build:
 
 .if defined(USE_CLISP)
 	@FBSD_ASDF_COMPILE_PORT=t PORTNAME=${PORTNAME} WRKSRC=${WRKSRC}/ \
-		${CLISP} -ansi -norc \
+		${CLISP} ${LISP_EXTRA_ARG} -ansi -norc \
 		-i ${LOCALBASE}/etc/asdf-init \
 		-x "(asdf:oos 'asdf:compile-op :${MODULE})"
 	@${FIND} ${WRKSRC} -name "*.lib" | ${XARGS} ${RM}
