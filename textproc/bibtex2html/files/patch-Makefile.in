@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2010-09-29 06:56:25.000000000 +0000
++++ Makefile.in	2010-10-24 23:00:14.000000000 +0000
+@@ -60,7 +60,7 @@ BIB2BIBOBJS = options.cmx bibtex.cmx bib
+ 	bibfilter.cmx latexmacros.cmx latexscan.cmx expand.cmx \
+ 	html.cmx biboutput.cmx version.cmx copying.cmx bib2bib.cmx
+ 
+-all: @OCAMLBEST@ doc
++all: @OCAMLBEST@
+ 
+ opt: bibtex2html$(EXE) bib2bib$(EXE)
+ 
