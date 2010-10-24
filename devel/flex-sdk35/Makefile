@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	flex-sdk
-PORTVERSION=	3.1.0.2710
+PORTVERSION=	3.5.0.12683
 CATEGORIES=	devel java
-MASTER_SITES=	http://flexorg.wip3.adobe.com/flexsdk/${PORTVERSION}/
+MASTER_SITES=	http://fpdownload.adobe.com/pub/flex/sdk/builds/flex3/
 DISTFILES=	flex_sdk_${PORTVERSION}_mpl.zip
 
 MAINTAINER=	kuriyama@FreeBSD.org
