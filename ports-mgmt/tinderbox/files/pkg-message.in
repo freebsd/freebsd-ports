@@ -13,6 +13,7 @@ The following walkthrough is the webserver setup:
   Alias /tb/logs/ "%%PREFIX%%/tinderbox/logs/"
   Alias /tb/packages/ "%%PREFIX%%/tinderbox/packages/"
   Alias /tb/errors/ "%%PREFIX%%/tinderbox/errors/"
+  Alias /tb/wrkdirs/ "%%PREFIX%%/tinderbox/wrkdirs/"
   Alias /tb/ "%%PREFIX%%/tinderbox/scripts/webui/"
   <Directory "%%PREFIX%%/tinderbox/">
       Order allow,deny
@@ -27,6 +28,7 @@ Turn on "mod_alias" and add the following lines:
 alias.url = (	"/tb/logs/" => "%%PREFIX%%/tinderbox/logs/",
 		"/tb/packages/" => "%%PREFIX%%/tinderbox/packages/",
 		"/tb/errors/" => "%%PREFIX%%/tinderbox/errors/",
+		"/tb/wrkdirs/" => "%%PREFIX%%/tinderbox/wrkdirs/",
 		"/tb/" => "%%PREFIX%%/tinderbox/scripts/webui/" )
 dir-listing.activate = "enable"
 
@@ -38,6 +40,7 @@ Alias is a built in command, no need to load any special mod
 Alias = /tb/logs:%%PREFIX%%/tinderbox/logs
 Alias = /tb/packages:%%PREFIX%%/tinderbox/packages
 Alias = /tb/errors:%%PREFIX%%/tinderbox/errors
+Alias = /tb/wrkdirs:%%PREFIX%%/tinderbox/wrkdirs
 Alias = /tb/:%%PREFIX%%/tinderbox/scripts/webui
 
   Check your system by going to http://localhost/tb/
