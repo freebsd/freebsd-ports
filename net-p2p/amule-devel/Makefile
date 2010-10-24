@@ -177,7 +177,7 @@ PLIST_SUB+=		PLASMAMULE="@comment "
 .endif
 
 .if !defined(WITHOUT_UPNP)
-LIB_DEPENDS+=		upnp.3:${PORTSDIR}/devel/upnp
+LIB_DEPENDS+=		upnp.4:${PORTSDIR}/devel/upnp
 .else
 CONFIGURE_ARGS+=	--disable-upnp
 .endif

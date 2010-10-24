@@ -7,13 +7,14 @@
 
 PORTNAME=	eiskaltdcpp
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	gelraen.ua@gmail.com
 COMMENT=	A Direct Connect client QT GUI
 
-LIB_DEPENDS=	upnp.3:${PORTSDIR}/devel/upnp \
+LIB_DEPENDS=	upnp.4:${PORTSDIR}/devel/upnp \
 		boost_system.4:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 

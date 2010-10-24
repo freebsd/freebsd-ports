@@ -590,7 +590,7 @@ CONFIGURE_ARGS+=	--enable-twolame
 .endif
 
 .if defined(WITH_UPNP)
-LIB_DEPENDS+=	upnp.3:${PORTSDIR}/devel/upnp
+LIB_DEPENDS+=	upnp.4:${PORTSDIR}/devel/upnp
 CONFIGURE_ARGS+=--enable-upnp
 .else
 CONFIGURE_ARGS+=--disable-upnp
