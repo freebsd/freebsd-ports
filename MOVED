@@ -4644,3 +4644,4 @@ japanese/samba3||2010-10-18|Has expired: Unsupported by the upstream. Please, co
 net/py-samba||2010-10-18|Has expired: Unsupported by the upstream. Please, consider to upgrade.
 security/samba-vscan||2010-10-18|Removed
 net-p2p/amule2|net-p2p/amule|2010-10-05|Split to -devel and non-devel ports
+www/firefox3-devel|www/firefox|2010-10-24|Upstream development focuses on Firefox 4.0
