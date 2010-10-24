@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S^.^^}plus-build9169-20101005
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	A PHP-based survey building and runing system
 
+BROKEN=		does not fetch
+
 USE_PHP=	mysql session mbstring pcre iconv gd ldap ctype
 
 WWWDOCROOT?=		www
