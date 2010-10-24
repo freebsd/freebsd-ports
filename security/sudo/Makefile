@@ -109,7 +109,8 @@ MAN8=		sudo.8 visudo.8 sudoreplay.8
 MLINKS=		sudo.8 sudoedit.8
 
 post-patch:
-	@${REINPLACE_CMD} '/install-binaries:/,/^$$/s/$$(INSTALL)/& ${STRIP}/' \
+	@${REINPLACE_CMD} -E '/install-(binaries|noexec):/,/^$$/ \
+		s/\$$\(INSTALL\)/& ${STRIP}/;s/-b\~/-b ~/' \
 		${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's/$$(DESTDIR)$$(sudoersdir) $$(DESTDIR)$$(docdir)/$$(DESTDIR)$$(sudoersdir)/' \
