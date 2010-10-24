@@ -612,10 +612,8 @@ MASTER_SITE_ISC+=	\
 	ftp://ftp.dti.ad.jp/pub/net/isc/%SUBDIR%/ \
 	ftp://ftp.u-aizu.ac.jp/pub/net/isc/%SUBDIR%/ \
 	ftp://ftp.task.gda.pl/mirror/ftp.isc.org/isc/%SUBDIR%/ \
-	ftp://ftp.chl.chalmers.se/pub/isc/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/network/isc/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.isc.org/isc/%SUBDIR%/ \
-	ftp://ftp.epix.net/pub/isc/%SUBDIR%/ \
 	ftp://ftp.nominum.com/pub/isc/%SUBDIR%/ \
 	ftp://ftp.ripe.net/mirrors/sites/ftp.isc.org/isc/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/net/isc/isc/%SUBDIR%/ \
