@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.48
+PORTVERSION=	0.48.1
 CATEGORIES=	devel
-MASTER_SITES=	http://monotone.ca/downloads/${PORTVERSION}/
+MASTER_SITES=	http://www.monotone.ca/downloads/${PORTVERSION}/
 
 MAINTAINER=	lapo@lapo.it
 COMMENT=	A distributed version control system with digital signatures
