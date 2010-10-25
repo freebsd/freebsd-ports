@@ -22,7 +22,7 @@ COMMENT=	Java Based MSN client
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper	\
 		jmfinit:${PORTSDIR}/java/jmf
 
-RCVER=		rc7e
+RCVER=		rc8a
 
 USE_ZIP=	yes
 USE_JAVA=	yes
