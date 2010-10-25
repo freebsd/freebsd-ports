@@ -220,6 +220,7 @@
     SUBDIR += haproxy-devel
     SUBDIR += hawknl
     SUBDIR += hawknl-devel
+    SUBDIR += hexinject
     SUBDIR += hf6to4
     SUBDIR += hidentd
     SUBDIR += hinfo
