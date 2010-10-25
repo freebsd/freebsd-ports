@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamz
-PORTVERSION=	0.2
-PORTREVISION=	2
+PORTVERSION=	0.4
 CATEGORIES=	net audio
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -18,16 +17,12 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt
 
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
 
-PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
-
-post-configure:
-	@${REINPLACE_CMD} \
-		-e 's|^\(compile.*\)|\1 -I${LOCALBASE}/include|' \
-		-e 's|^\(LIBS\ =\)|\1 ${LOCALBASE}/lib/libexpat.so|' \
-		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
