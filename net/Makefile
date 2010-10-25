@@ -435,8 +435,8 @@
     SUBDIR += nos-ttb
     SUBDIR += nph
     SUBDIR += ns
+    SUBDIR += nss-pam-ldapd
     SUBDIR += nss_ldap
-    SUBDIR += nss_ldapd
     SUBDIR += nstxd
     SUBDIR += ntalk
     SUBDIR += ntlmaps
