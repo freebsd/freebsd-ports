@@ -8,10 +8,10 @@
 PORTNAME=	g95
 PORTVERSION=	${G95VERSION}.${SNAPDATE}
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_LOCAL}:g95 \
+MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:g95/} \
     		http://people.freebsd.org/~gahr/distfiles/:g95 \
 		${MASTER_SITE_GCC:S/$/:gcc/}
-MASTER_SITE_SUBDIR=	gahr:g95 \
+MASTER_SITE_SUBDIR=	gahr/:g95 \
     			releases/gcc-${GCCVERSION}/:gcc
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:g95 \
     		gcc-core-${GCCVERSION}${EXTRACT_SUFX}:gcc
