@@ -14,9 +14,8 @@
 
 PORTNAME=		gnat
 PORTVERSION=		2010
-PORTREVISION=	        0
 CATEGORIES=		lang
-MASTER_SITES=		${MASTER_SITE_LOCAL}:boot
+MASTER_SITES=		${MASTER_SITE_LOCAL:S/$/:boot/}
 MASTER_SITE_SUBDIR=	deischen/gcc/:boot
 DISTFILES=		${gcc_srcfile}:gcc ${gnat_srcfile}:gnat
 
