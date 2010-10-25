@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	bzip2
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.bzip.org/${PORTVERSION}/
 
