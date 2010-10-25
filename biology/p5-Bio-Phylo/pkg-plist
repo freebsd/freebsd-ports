@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Bio/Phylo.pm
+%%SITE_PERL%%/Bio/Phylo/._EvolutionaryModels.pm
 %%SITE_PERL%%/Bio/Phylo/EvolutionaryModels.pm
 %%SITE_PERL%%/Bio/Phylo/Forest.pm
 %%SITE_PERL%%/Bio/Phylo/Forest/DrawNode.pm
@@ -48,6 +49,7 @@
 %%SITE_PERL%%/Bio/Phylo/Taxa/TaxaLinker.pm
 %%SITE_PERL%%/Bio/Phylo/Taxa/TaxonLinker.pm
 %%SITE_PERL%%/Bio/Phylo/Treedrawer.pm
+%%SITE_PERL%%/Bio/Phylo/Treedrawer/._Abstract.pm
 %%SITE_PERL%%/Bio/Phylo/Treedrawer/Canvas.pm
 %%SITE_PERL%%/Bio/Phylo/Treedrawer/Pdf.pm
 %%SITE_PERL%%/Bio/Phylo/Treedrawer/Swf.pm
