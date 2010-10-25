@@ -73,6 +73,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
 	    	${WRKSRC}/storage/build/Makefile.in \
 		${WRKSRC}/db/sqlite3/src/Makefile.in
+	${REINPLACE_CMD} -e 's|/usr/local/include|${LOCALBASE}/include|' \
+	    	${WRKSRC}/js/src/config/mkdepend/Makefile.in
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
 		s|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|echo aout|echo elf|g ; \
