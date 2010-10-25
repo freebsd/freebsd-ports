@@ -10,8 +10,7 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.3.17
-PORTREVISION=	3
+PORTVERSION=	6.3.18
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://mandree.home.pages.de/fetchmail/:ma \
@@ -110,6 +109,9 @@ pre-patch:
 	@${CP} ${FILESDIR}/fetchmailconf ${WRKDIR}/fetchmailconf
 	@${REINPLACE_CMD} -e "s,@LOCALBASE@,${LOCALBASE},g" \
 		 ${WRKDIR}/fetchmailconf
+
+post-build:
+	@cd ${WRKSRC} && ${MAKE} check
 
 pre-su-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
