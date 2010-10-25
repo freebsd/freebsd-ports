@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		tdb
-PORTVERSION=		1.2.0
-PORTREVISION=		1
+PORTVERSION=		1.2.1
+PORTREVISION=		0
 CATEGORIES=		databases
 MASTER_SITES=		ftp://ftp.samba.org/pub/%SUBDIR%/ \
 			ftp://ca.samba.org/pub/%SUBDIR%/ \
