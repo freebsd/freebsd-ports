@@ -7,7 +7,7 @@
 
 PORTNAME=	gdal-grass
 PORTVERSION=	1.4.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gdal.org/dl/ \
 		ftp://ftp.remotesensing.org/gdal/ \
@@ -20,7 +20,7 @@ LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal
 BUILD_DEPENDS=	grass>6:${PORTSDIR}/databases/grass
 RUN_DEPENDS=	grass>6:${PORTSDIR}/databases/grass
 
-GRASS_INST_DIR=	grass
+GRASS_INST_DIR=	grass-6.4.0
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
