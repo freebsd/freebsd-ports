@@ -1,0 +1,8 @@
+HexInject is a very versatile packet injector and sniffer, that provide a
+command-line framework for raw network access.
+
+It's designed to work together with others command-line utilities, and for this
+reason it facilitates the creation of powerful shell scripts capable of reading,
+intercepting and modifying network traffic in a transparent manner.
+
+WWW:	http://hexinject.sourceforge.net
