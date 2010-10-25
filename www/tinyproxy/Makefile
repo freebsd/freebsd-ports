@@ -9,7 +9,7 @@ PORTNAME=	tinyproxy
 PORTVERSION=	1.8.2
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	https://www.banu.com/pub/tinyproxy/1.8/
+MASTER_SITES=	https://banu.com/pub/tinyproxy/1.8/
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	A small, efficient HTTP proxy server
