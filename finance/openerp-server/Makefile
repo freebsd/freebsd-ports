@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openerp-server
-PORTVERSION=	5.0.15
+PORTVERSION=	5.0.14
 CATEGORIES=	finance python
 MASTER_SITES=	http://www.openerp.com/download/stable/source/
 
