@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	showkey
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	converters
-MASTER_SITES=	http://catb.org/~esr/showkey/
+MASTER_SITES=	http://catb.org/~esr/showkey/ \
+		http://www.c-s.li/ports/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	Prints its input, with escapes such as "<NUL>"
+
+LICENSE=	MIT
 
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC} ${CFLAGS}"
