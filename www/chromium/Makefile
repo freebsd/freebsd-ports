@@ -108,6 +108,10 @@ post-patch:
 		${WRKSRC}/third_party/tcmalloc/chromium/src/config_freebsd.h \
 		${WRKSRC}/third_party/WebKit/WebCore/plugins/PluginDatabase.cpp \
 		${WRKSRC}/v8/tools/gyp/v8.gyp
+	@${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|' \
+		${WRKSRC}/third_party/WebKit/WebCore/bindings/scripts/IDLParser.pm \
+		${WRKSRC}/third_party/WebKit/WebCore/css/make-css-file-arrays.pl \
+		${WRKSRC}/third_party/WebKit/WebCore/dom/make_names.pl
 
 do-configure:
 	cd ${WRKSRC} && \
