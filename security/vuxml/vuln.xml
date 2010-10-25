@@ -34,6 +34,325 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="18dc48fe-ca42-11df-aade-0050568f000c">
+    <topic>FreeBSD -- Integer overflow in bzip2 decompression</topic>
+    <affects>
+	<package>
+	<name>FreeBSD</name>
+	<range><gt>6.4</gt><lt>6.4_11</lt></range>
+	<range><gt>7.1</gt><lt>7.1_14</lt></range>
+	<range><gt>7.3</gt><lt>7.3_3</lt></range>
+	<range><gt>8.0</gt><lt>8.0_5</lt></range>
+	<range><gt>8.1</gt><lt>8.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>When decompressing data, the run-length encoded values are not
+	  adequately sanity-checked, allowing for an integer overflow.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-10:08.bzip2</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2010-09-20</discovery>
+      <entry>2010-10-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7a09a8df-ca41-11df-aade-0050568f000c">
+    <topic>FreeBSD -- Lost mbuf flag resulting in data corruption</topic>
+    <affects>
+	<package>
+	<name>FreeBSD</name>
+	<range><gt>7.1</gt><lt>7.1_13</lt></range>
+	<range><gt>7.3</gt><lt>7.3_2</lt></range>
+	<range><gt>8.0</gt><lt>8.0_4</lt></range>
+	<range><gt>8.1</gt><lt>8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The read-only flag is not correctly copied when a mbuf buffer
+	  reference is duplicated. When the sendfile(2) system call is used to
+	  transmit data over the loopback interface, this can result in the
+	  backing pages for the transmitted file being modified, causing data
+	  corruption.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-10:07.mbuf</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2010-07-13</discovery>
+      <entry>2010-10-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0dc91089-ca41-11df-aade-0050568f000c">
+    <topic>FreeBSD -- Unvalidated input in nfsclient</topic>
+    <affects>
+	<package>
+	<name>FreeBSD</name>
+	<range><gt>7.2</gt><lt>7.2_8</lt></range>
+	<range><gt>7.3</gt><lt>7.3_1</lt></range>
+	<range><gt>8.0</gt><lt>8.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The NFS client subsystem fails to correctly validate the length of a
+	  parameter provided by the user when a filesystem is mounted.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-10:06.nfsclient</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2010-05-27</discovery>
+      <entry>2010-10-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="768cfe70-ca40-11df-aade-0050568f000c">
+    <topic>FreeBSD -- OPIE off-by-one stack overflow</topic>
+    <affects>
+	<package>
+	<name>FreeBSD</name>
+	<range><gt>6.4</gt><lt>6.4_10</lt></range>
+	<range><gt>7.1</gt><lt>7.1_12</lt></range>
+	<range><gt>7.2</gt><lt>7.2_8</lt></range>
+	<range><gt>7.3</gt><lt>7.3_1</lt></range>
+	<range><gt>8.0</gt><lt>8.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>A programming error in the OPIE library could allow an off-by-one
+	  buffer overflow to write a single zero byte beyond the end of an
+	  on-stack buffer.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-10:05.opie</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2010-05-27</discovery>
+      <entry>2010-10-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f6eb2279-ca3f-11df-aade-0050568f000c">
+    <topic>FreeBSD -- Insufficient environment sanitization in jail(8)</topic>
+    <affects>
+	<package>
+	<name>FreeBSD</name>
+	<range><gt>8.0</gt><lt>8.0_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The jail(8) utility does not change the current working directory
+	  while imprisoning. The current working directory can be accessed by
+	  its descendants.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-10:04.jail</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2010-05-27</discovery>
+      <entry>2010-10-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="97f09f2f-ca3f-11df-aade-0050568f000c">
+    <topic>FreeBSD -- ZFS ZIL playback with insecure permissions</topic>
+    <affects>
+	<package>
+	<name>FreeBSD</name>
+	<range><gt>7.1</gt><lt>7.1_10</lt></range>
+	<range><gt>7.2</gt><lt>7.2_6</lt></range>
+	<range><gt>8.0</gt><lt>8.0_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>When replaying setattr transaction, the replay code would set the
+	  attributes with certain insecure defaults, when the logged
+	  transaction did not touch these attributes.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-10:03.zfs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2010-01-06</discovery>
+      <entry>2010-10-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="48103b0a-ca3f-11df-aade-0050568f000c">
+    <topic>FreeBSD -- ntpd mode 7 denial of service</topic>
+    <affects>
+	<package>
+	<name>FreeBSD</name>
+	<range><gt>6.3</gt><lt>6.3_15</lt></range>
+	<range><gt>6.4</gt><lt>6.4_9</lt></range>
+	<range><gt>7.1</gt><lt>7.1_10</lt></range>
+	<range><gt>7.2</gt><lt>7.2_6</lt></range>
+	<range><gt>8.0</gt><lt>8.0_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>If ntpd receives a mode 7 (MODE_PRIVATE) request or error response
+	  from a source address not listed in either a 'restrict ... noquery'
+	  or a 'restrict ... ignore' section it will log the even and send a
+	  mode 7 error response.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-10:02.ntpd</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2010-01-06</discovery>
+      <entry>2010-10-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e500b9bf-ca3e-11df-aade-0050568f000c">
+    <topic>FreeBSD -- BIND named(8) cache poisoning with DNSSEC validation</topic>
+    <affects>
+	<package>
+	<name>FreeBSD</name>
+	<range><gt>6.3</gt><lt>6.3_15</lt></range>
+	<range><gt>6.4</gt><lt>6.4_9</lt></range>
+	<range><gt>7.1</gt><lt>7.1_10</lt></range>
+	<range><gt>7.2</gt><lt>7.2_6</lt></range>
+	<range><gt>8.0</gt><lt>8.0_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>If a client requests DNSSEC records with the Checking Disabled (CD)
+	  flag set, BIND may cache the unvalidated responses. These responses
+	  may later be returned to another client that has not set the CD
+	  flag.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-10:01.bind</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2010-01-06</discovery>
+      <entry>2010-10-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6e87b696-ca3e-11df-aade-0050568f000c">
+    <topic>FreeBSD -- Inappropriate directory permissions in freebsd-update(8)</topic>
+    <affects>
+	<package>
+	<name>FreeBSD</name>
+	<range><gt>6.3</gt><lt>6.3_14</lt></range>
+	<range><gt>6.4</gt><lt>6.4_8</lt></range>
+	<range><gt>7.1</gt><lt>7.1_9</lt></range>
+	<range><gt>7.2</gt><lt>7.2_5</lt></range>
+	<range><gt>8.0</gt><lt>8.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>When downloading updates to FreeBSD via 'freebsd-update fetch' or
+	  'freebsd-update upgrade', the freebsd-update(8) utility copies
+	  currently installed files into its working directory
+	  (/var/db/freebsd-update by default) both for the purpose of merging
+	  changes to configuration files and in order to be able to roll back
+	  installed updates.</p>
+	<p>The default working directory used by freebsd-update(8) is normally
+	  created during the installation of FreeBSD with permissions which
+	  allow all local users to see its contents, and freebsd-update(8) does
+	  not take any steps to restrict access to files stored in said
+	  directory.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-09:17.freebsd-update</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2009-12-03</discovery>
+      <entry>2010-10-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ad08d14b-ca3d-11df-aade-0050568f000c">
+    <topic>FreeBSD -- Improper environment sanitization in rtld(1)</topic>
+    <affects>
+	<package>
+	<name>FreeBSD</name>
+	<range><gt>7.1</gt><lt>7.1_9</lt></range>
+	<range><gt>7.2</gt><lt>7.2_5</lt></range>
+	<range><gt>8.0</gt><lt>8.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>When running setuid programs rtld will normally remove potentially
+        dangerous environment variables. Due to recent changes in FreeBSD
+        environment variable handling code, a corrupt environment may
+        result in attempts to unset environment variables failing.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-09:16.rtld</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2009-12-03</discovery>
+      <entry>2010-10-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="406779fd-ca3b-11df-aade-0050568f000c">
+    <topic>FreeBSD -- SSL protocol flaw</topic>
+    <affects>
+	<package>
+	<name>FreeBSD</name>
+	<range><gt>6.3</gt><lt>6.3_14</lt></range>
+	<range><gt>6.4</gt><lt>6.4_8</lt></range>
+	<range><gt>7.1</gt><lt>7.1_9</lt></range>
+	<range><gt>7.2</gt><lt>7.2_5</lt></range>
+	<range><gt>8.0</gt><lt>8.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The SSL version 3 and TLS protocols support session
+	  renegotiation without cryptographically tying the new
+	  session parameters to the old parameters.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-09:15.ssl</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2009-12-03</discovery>
+      <entry>2010-10-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c9a6ae4a-df8b-11df-9573-00262d5ed8ee">
     <topic>monotone -- remote denial of service in default setup</topic>
     <affects>
