@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+bin/clamz
+share/applications/clamz.desktop
+share/mime/packages/clamz.xml
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrmtry share/applications
+@dirrmtry share
