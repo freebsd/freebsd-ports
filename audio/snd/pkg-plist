@@ -178,7 +178,6 @@ bin/sndplay
 %%PORTDOCS%%%%DOCSDIR%%/pix/n3a1.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/n3a2.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/n.png
-%%PORTDOCS%%%%DOCSDIR%%/pix/n6.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/n5-all.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/noidchoices.png
 %%PORTDOCS%%%%DOCSDIR%%/pix/ncosfm.png
@@ -436,8 +435,6 @@ bin/sndplay
 %%SCHEME%%%%DATADIR%%/snd-gtk.scm
 %%SCHEME%%%%DATADIR%%/snd-motif.scm
 %%SCHEME%%%%DATADIR%%/snd-test.scm
-%%SCHEME%%%%DATADIR%%/snd7.scm
-%%SCHEME%%%%DATADIR%%/snd8.scm
 %%SCHEME%%%%DATADIR%%/snd9.scm
 %%SCHEME%%%%DATADIR%%/snd10.scm
 %%SCHEME%%%%DATADIR%%/snd11.scm
