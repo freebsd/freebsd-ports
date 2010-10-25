@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	discount
-PORTVERSION=	1.6.4
+PORTVERSION=	2.0.1
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/markdown/
 
 MAINTAINER=	kimelto@gmail.com
 COMMENT=	A C implementation of the Markdown markup language
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=configure.sh
@@ -49,11 +52,7 @@ OPTIONS=	EXTRA "Enable all extra features" on \
 
 .ifdef (WITH_EXTRA)
 CONFIGURE_ARGS+=--enable-dl-tag \
-		--enable-pandoc-header \
-		--enable-superscript \
-		--relaxed-emphasis \
-		--enable-div \
-		--enable-alpha-list
+		--enable-all-features
 .endif
 
 .ifdef (WITH_TAB8)
