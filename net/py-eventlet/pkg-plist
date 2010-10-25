@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -38,6 +37,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/CGIHTTPServer.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/CGIHTTPServer.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/CGIHTTPServer.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/MySQLdb.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/MySQLdb.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/MySQLdb.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/OpenSSL/SSL.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/OpenSSL/SSL.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/OpenSSL/SSL.pyo
@@ -116,6 +118,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/urllib2.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/urllib2.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/urllib2.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/zmq.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/zmq.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/green/zmq.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/greenio.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/greenio.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/greenio.pyo
@@ -149,6 +154,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/twistedr.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/twistedr.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/twistedr.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/zeromq.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/zeromq.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/hubs/zeromq.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/patcher.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/patcher.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/eventlet/patcher.pyo
