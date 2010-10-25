@@ -3499,7 +3499,6 @@ firefox                         ports/www/firefox
 firefox-i18n                    ports/www/firefox-i18n
 firefox-remote                  ports/www/firefox-remote
 firefox-sync                    ports/www/firefox-sync
-firefox3-devel                  ports/www/firefox3-devel
 firefox35                       ports/www/firefox35
 firefox35-i18n                  ports/www/firefox35-i18n
 firemime                        ports/mail/firemime
