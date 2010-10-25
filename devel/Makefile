@@ -297,6 +297,7 @@
     SUBDIR += diffconvert
     SUBDIR += diffuse
     SUBDIR += directfb
+    SUBDIR += dissy
     SUBDIR += distcc
     SUBDIR += distel
     SUBDIR += distorm
