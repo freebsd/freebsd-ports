@@ -190,6 +190,7 @@
     SUBDIR += minitube
     SUBDIR += miro
     SUBDIR += mjpegtools
+    SUBDIR += mkclean
     SUBDIR += mkvtoolnix
     SUBDIR += mkxvcd
     SUBDIR += mlt
