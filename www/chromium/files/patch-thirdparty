@@ -536,6 +536,27 @@ Index: tools/gyp/pylib/gyp/generator/make.py
    'STATIC_LIB_PREFIX': 'lib',
    'SHARED_LIB_PREFIX': 'lib',
    'STATIC_LIB_SUFFIX': '.a',
+@@ -109,13 +109,13 @@
+ AR.target ?= $(AR)
+ RANLIB.target ?= ranlib
+ 
+-CC.host ?= gcc
+-CFLAGS.host ?=
+-CXX.host ?= g++
+-CXXFLAGS.host ?=
+-LINK.host ?= g++
+-LDFLAGS.host ?=
+-AR.host ?= ar
++CC.host ?= $(CC)
++CFLAGS.host ?= $(CFLAGS)
++CXX.host ?= $(CXX)
++CXXFLAGS.host ?= $(CXXFLAGS)
++LINK.host ?= $(LINK)
++LDFLAGS.host ?= $(LDFLAGS)
++AR.host ?= $(AR)
+ RANLIB.host ?= ranlib
+ 
+ # Flags to make gcc output dependency info.  Note that you need to be
 @@ -850,12 +850,12 @@
  # CFLAGS et al overrides must be target-local.
  # See "Target-specific Variable Values" in the GNU Make manual.""")

@@ -1,0 +1,133 @@
+diff -ru chrome/plugin/plugin_main_linux.cc.orig chrome/plugin/plugin_main_linux.cc
+--- chrome/plugin/plugin_main_linux.cc.orig	2010-10-23 17:25:49.000000000 -0700
++++ chrome/plugin/plugin_main_linux.cc	2010-10-23 13:57:10.000000000 -0700
+@@ -5,7 +5,7 @@
+ #include <signal.h>
+ #include <string.h>
+ #include <sys/types.h>
+-#include <syscall.h>
++#include <sys/syscall.h>
+ #include <unistd.h>
+ 
+ #include "build/build_config.h"
+diff -ru third_party/libjingle/files/talk/base/stringencode.cc.orig third_party/libjingle/files/talk/base/stringencode.cc
+--- third_party/libjingle/files/talk/base/stringencode.cc.orig	2010-08-18 01:01:35.000000000 -0700
++++ third_party/libjingle/files/talk/base/stringencode.cc	2010-10-23 13:51:39.000000000 -0700
+@@ -29,7 +29,7 @@
+ #include <malloc.h>
+ #endif  // WIN32
+ #ifdef POSIX
+-#include <alloca.h>
++#include <stdlib.h>
+ #define _alloca alloca
+ #endif  // POSIX
+ #include <stdlib.h>
+diff -ru third_party/skia/include/core/SkPreConfig.h.orig third_party/skia/include/core/SkPreConfig.h
+--- third_party/skia/include/core/SkPreConfig.h.orig	2010-08-18 01:03:49.000000000 -0700
++++ third_party/skia/include/core/SkPreConfig.h	2010-10-23 12:54:33.000000000 -0700
+@@ -57,6 +57,8 @@
+ #if !defined(SK_RESTRICT)
+     #define SK_RESTRICT __restrict__
+ #endif
++#undef SK_RESTRICT
++#define SK_RESTRICT
+ 
+ //////////////////////////////////////////////////////////////////////
+ 
+diff -ru v8/src/frames.h.bak v8/src/frames.h
+--- v8/src/frames.h.bak	2010-08-18 01:12:33.000000000 -0700
++++ v8/src/frames.h	2010-10-23 13:37:54.000000000 -0700
+@@ -343,6 +343,7 @@
+ 
+  private:
+   friend class StackFrame;
++  friend class StackFrameIterator;
+ };
+ 
+ 
+diff -ru v8/src/ia32/assembler-ia32-inl.h.b v8/src/ia32/assembler-ia32-inl.h
+--- v8/src/ia32/assembler-ia32-inl.h.b	2010-08-18 01:12:29.000000000 -0700
++++ v8/src/ia32/assembler-ia32-inl.h	2010-10-23 17:41:21.000000000 -0700
+@@ -42,10 +42,6 @@
+ namespace v8 {
+ namespace internal {
+ 
+-Condition NegateCondition(Condition cc) {
+-  return static_cast<Condition>(cc ^ 1);
+-}
+-
+ 
+ // The modes possibly affected by apply must be in kApplyMask.
+ void RelocInfo::apply(intptr_t delta) {
+diff -ru v8/src/ia32/assembler-ia32.h.orig v8/src/ia32/assembler-ia32.h
+--- v8/src/ia32/assembler-ia32.h.orig	2010-08-18 01:12:29.000000000 -0700
++++ v8/src/ia32/assembler-ia32.h	2010-10-23 17:41:41.000000000 -0700
+@@ -146,7 +146,9 @@
+ // Negation of the default no_condition (-1) results in a non-default
+ // no_condition value (-2). As long as tests for no_condition check
+ // for condition < 0, this will work as expected.
+-inline Condition NegateCondition(Condition cc);
++inline Condition NegateCondition(Condition cc) {
++  return static_cast<Condition>(cc ^ 1);
++}
+ 
+ // Corresponds to transposing the operands of a comparison.
+ inline Condition ReverseCondition(Condition cc) {
+diff -ru v8/src/objects.cc.b v8/src/objects.cc
+--- v8/src/objects.cc.b	2010-08-18 01:12:33.000000000 -0700
++++ v8/src/objects.cc	2010-10-23 13:44:19.000000000 -0700
+@@ -7945,7 +7945,7 @@
+ 
+ template<typename Shape, typename Key>
+ Object* Dictionary<Shape, Key>::AtPut(Key key, Object* value) {
+-  int entry = FindEntry(key);
++  int entry = this->FindEntry(key);
+ 
+   // If the entry is present set the value;
+   if (entry != Dictionary<Shape, Key>::kNotFound) {
+@@ -7970,7 +7970,7 @@
+                                     Object* value,
+                                     PropertyDetails details) {
+   // Valdate key is absent.
+-  SLOW_ASSERT((FindEntry(key) == Dictionary<Shape, Key>::kNotFound));
++  SLOW_ASSERT((this->FindEntry(key) == Dictionary<Shape, Key>::kNotFound));
+   // Check whether the dictionary should be extended.
+   Object* obj = EnsureCapacity(1, key);
+   if (obj->IsFailure()) return obj;
+@@ -8029,7 +8029,7 @@
+                                          Object* value,
+                                          PropertyDetails details) {
+   UpdateMaxNumberKey(key);
+-  SLOW_ASSERT(FindEntry(key) == kNotFound);
++  SLOW_ASSERT(this->FindEntry(key) == kNotFound);
+   return Add(key, value, details);
+ }
+ 
+diff -ru v8/src/x64/assembler-x64-inl.h.orig v8/src/x64/assembler-x64-inl.h
+--- v8/src/x64/assembler-x64-inl.h.orig	2010-08-18 01:12:31.000000000 -0700
++++ v8/src/x64/assembler-x64-inl.h	2010-10-23 16:27:50.000000000 -0700
+@@ -34,10 +34,6 @@
+ namespace v8 {
+ namespace internal {
+ 
+-Condition NegateCondition(Condition cc) {
+-  return static_cast<Condition>(cc ^ 1);
+-}
+-
+ 
+ // -----------------------------------------------------------------------------
+ // Implementation of Assembler
+diff -ru v8/src/x64/assembler-x64.h.orig v8/src/x64/assembler-x64.h
+--- v8/src/x64/assembler-x64.h.orig	2010-08-18 01:12:31.000000000 -0700
++++ v8/src/x64/assembler-x64.h	2010-10-23 16:28:37.000000000 -0700
+@@ -215,7 +215,9 @@
+ // Negation of the default no_condition (-1) results in a non-default
+ // no_condition value (-2). As long as tests for no_condition check
+ // for condition < 0, this will work as expected.
+-inline Condition NegateCondition(Condition cc);
++inline Condition NegateCondition(Condition cc){
++return static_cast<Condition>(cc ^ 1);
++}
+ 
+ // Corresponds to transposing the operands of a comparison.
+ inline Condition ReverseCondition(Condition cc) {
