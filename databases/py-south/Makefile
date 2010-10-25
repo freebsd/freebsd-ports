@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	south
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	databases python
 MASTER_SITES=	http://www.aeracode.org/releases/south/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
