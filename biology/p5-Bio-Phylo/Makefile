@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Bio-Phylo
-PORTVERSION=	0.22
+PORTVERSION=	0.26
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Phylogenetic analysis using perl
 
 BUILD_DEPENDS=	p5-Exception-Class>1.22:${PORTSDIR}/devel/p5-Exception-Class \
@@ -70,6 +70,7 @@ MAN3=	Bio::Phylo.3 \
 	Bio::Phylo::Taxa::Taxon.3 \
 	Bio::Phylo::Taxa::TaxonLinker.3 \
 	Bio::Phylo::Treedrawer.3 \
+	Bio::Phylo::Treedrawer::Abstract.3 \
 	Bio::Phylo::Treedrawer::Canvas.3 \
 	Bio::Phylo::Treedrawer::Gif.3 \
 	Bio::Phylo::Treedrawer::Jpeg.3 \
