@@ -1,0 +1,10 @@
+--- root.proj.orig	2010-09-26 04:42:30.000000000 -0700
++++ root.proj	2010-10-24 01:48:34.000000000 -0700
+@@ -12,6 +12,7 @@
+   USE matroska2
+   USE mkvtests
+   USE mkclean
++  USE mkWDclean
+   USE mkvalidator
+ }
+ 
