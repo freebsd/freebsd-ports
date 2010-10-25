@@ -16,7 +16,7 @@ PATCH_SITES=	http://www.student.nada.kth.se/~d00-llu/code_patches/
 PATCHFILES=	zyn-jackmidi-051205.diff
 PATCH_DIST_STRIP=	-p2
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A realtime software synthesizer
 
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \

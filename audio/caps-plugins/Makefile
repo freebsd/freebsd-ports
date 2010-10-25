@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://quitte.de/dsp/
 DISTNAME=	caps_${PORTVERSION}
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The C* Audio Plugin Suite
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa

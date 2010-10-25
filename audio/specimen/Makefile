@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://zhevny.com/specimen/files/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI controllable audio sampler
 
 LIB_DEPENDS=	phat.0:${PORTSDIR}/x11-toolkits/phat \

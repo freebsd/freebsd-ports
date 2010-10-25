@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular patch bay for Jack
 
 LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \

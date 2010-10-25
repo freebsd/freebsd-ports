@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.linuxsampler.org/packages/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular MIDI sampler
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \

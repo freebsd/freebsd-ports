@@ -10,7 +10,7 @@ PORTVERSION=	0.5.6
 CATEGORIES=	audio
 MASTER_SITES=	http://download.linuxsampler.org/packages/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper around the LSCP network protocol
 
 GNU_CONFIGURE=	yes

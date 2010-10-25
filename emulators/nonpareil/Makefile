@@ -11,7 +11,7 @@ PORTREVISION=	8
 CATEGORIES=	emulators
 MASTER_SITES=	http://nonpareil.brouhaha.com/download/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulator for many HP calculators
 
 BUILD_DEPENDS=	pnmtopng:${PORTSDIR}/graphics/netpbm

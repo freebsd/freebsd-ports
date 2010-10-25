@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.drobilla.net/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FlowCanvas is an interactive Gtkmm/Gnomecanvasmm widget
 
 LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \

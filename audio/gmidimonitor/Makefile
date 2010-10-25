@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/gmidimonitor/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ application that shows MIDI events
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \

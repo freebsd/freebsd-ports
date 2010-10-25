@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/fmit/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Music Instrument Tuner
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \

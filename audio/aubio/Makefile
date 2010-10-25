@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://aubio.org/pub/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for audio labelling
 
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \

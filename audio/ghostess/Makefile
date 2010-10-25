@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.smbolton.com/linux/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical DSSI host with JACK MIDI support
 
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \

@@ -11,7 +11,7 @@ PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	http://www.mudmagic.com/mud-client/downloads/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+ based MUD client
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
