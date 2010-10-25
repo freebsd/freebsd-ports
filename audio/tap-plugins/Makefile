@@ -9,7 +9,7 @@ PORTVERSION=	0.7.1
 CATEGORIES=	audio
 MASTER_SITES=	SF/tap-plugins/tap-plugins/${PORTVERSION}
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LADSPA Plugins by Tom Szilagy
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I. -c -fPIC -DPIC" \

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.daionet.gr.jp/~masa/archives/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL spinning pocket watch demo and benchmark utility
 
 USE_GL=		glut

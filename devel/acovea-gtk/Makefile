@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.coyotegulch.com/distfiles/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ front-end to ACOVEA
 
 LIB_DEPENDS=	acovea-5.1.5:${PORTSDIR}/devel/acovea \

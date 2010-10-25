@@ -12,7 +12,7 @@ MASTER_SITES=	http://lcamtuf.coredump.cx/soft/
 DISTNAME=	fl0p-devel
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passive L7 flow fingerprinting tool
 
 WRKSRC=		${WRKDIR}/fl0p/

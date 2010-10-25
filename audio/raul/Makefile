@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ utility library primarily aimed at audio/musical applications
 
 LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \

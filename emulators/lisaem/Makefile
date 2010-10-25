@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	emulators
 MASTER_SITES=	http://lisaem.sunder.net/downloads/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apple Lisa 2 Emulator
 
 BUILD_DEPENDS=	pngtopnm:${PORTSDIR}/graphics/netpbm

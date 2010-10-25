@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JACK Audio Mastering interface
 
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \

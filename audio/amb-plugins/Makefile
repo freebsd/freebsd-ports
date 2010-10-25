@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.kokkinizita.net/linuxaudio/downloads/
 DISTNAME=	AMB-plugins-${PORTVERSION}
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of ambisonics plugins, mainly to be used within Ardour
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa

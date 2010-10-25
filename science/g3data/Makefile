@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://www.frantz.fi/software/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for extracting data from graphs
 
 BUILD_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade \

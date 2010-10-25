@@ -14,7 +14,7 @@ MASTER_SITES=	http://members.iinet.net.au/~tom-hunter/ \
 MASTER_SITE_SUBDIR=	trasz
 DISTNAME=	dtcyber20b1
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop CYBER Emulator
 
 USE_ZIP=	yes

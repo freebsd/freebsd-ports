@@ -10,7 +10,7 @@ PORTVERSION=	0.26
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight Open Sound Control implementation
 
 GNU_CONFIGURE=	yes

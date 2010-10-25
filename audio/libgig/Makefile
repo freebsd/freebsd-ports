@@ -10,7 +10,7 @@ PORTVERSION=	3.3.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.linuxsampler.org/packages/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gigasampler file loader library
 
 LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \

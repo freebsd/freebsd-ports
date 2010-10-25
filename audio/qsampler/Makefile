@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.linuxsampler.org/packages/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt-based front end to LinuxSampler
 
 LIB_DEPENDS=	lscp.6:${PORTSDIR}/audio/liblscp \

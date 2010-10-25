@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://camaya.net/download/
 
-MAINTAINER=	trasz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabber/XMPP client library
 
 LIB_DEPENDS=	idn.16:${PORTSDIR}/dns/libidn \
