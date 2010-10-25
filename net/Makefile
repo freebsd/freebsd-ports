@@ -1117,6 +1117,7 @@
     SUBDIR += vtun
     SUBDIR += vyqchat
     SUBDIR += wackamole
+    SUBDIR += wackford-squeers
     SUBDIR += wakeonlan
     SUBDIR += warppipe
     SUBDIR += whois
