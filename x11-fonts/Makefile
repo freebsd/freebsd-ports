@@ -126,6 +126,7 @@
     SUBDIR += ppantsfonts
     SUBDIR += profont
     SUBDIR += proggy_fonts
+    SUBDIR += proggy_fonts-ttf
     SUBDIR += sgifonts
     SUBDIR += sharefonts
     SUBDIR += showfont

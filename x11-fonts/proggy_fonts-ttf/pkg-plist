@@ -1,0 +1,13 @@
+lib/X11/fonts/proggy_fonts-ttf/ProggyClean.ttf
+lib/X11/fonts/proggy_fonts-ttf/ProggyCleanCE.ttf
+lib/X11/fonts/proggy_fonts-ttf/ProggyCleanSZ.ttf
+lib/X11/fonts/proggy_fonts-ttf/ProggyCleanSZBP.ttf
+lib/X11/fonts/proggy_fonts-ttf/ProggySmall.ttf
+lib/X11/fonts/proggy_fonts-ttf/ProggySquare.ttf
+lib/X11/fonts/proggy_fonts-ttf/ProggySquareSZ.ttf
+lib/X11/fonts/proggy_fonts-ttf/ProggyTiny.ttf
+lib/X11/fonts/proggy_fonts-ttf/ProggyTinySZ.ttf
+lib/X11/fonts/proggy_fonts-ttf/fonts.dir
+lib/X11/fonts/proggy_fonts-ttf/fonts.scale
+@dirrm lib/X11/fonts/proggy_fonts-ttf
+@exec fc-cache -v %D/lib/X11/fonts/proggy_fonts-ttf 2>/dev/null || true
