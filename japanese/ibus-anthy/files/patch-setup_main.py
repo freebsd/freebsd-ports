@@ -1,5 +1,5 @@
---- setup/main.py.org	2010-10-16 13:02:02.581179207 +0900
-+++ setup/main.py	2010-10-16 13:02:18.694191336 +0900
+--- setup/main.py.org	2010-10-26 21:47:23.526339618 +0900
++++ setup/main.py	2010-10-26 21:47:47.987340388 +0900
 @@ -58,7 +58,7 @@
          # glade "icon_name" property has a custom scaling and it seems
          # to be difficult to show the complicated small icon in metacity.
