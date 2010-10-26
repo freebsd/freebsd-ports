@@ -18,8 +18,8 @@ LICENSE=	BSD
 USE_GMAKE=yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,-Werror,,' \
-	                  ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's,-Werror,,' -e 's,CC=,#CC=,' -e 's,(CC),(CXX),' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bf2c ${PREFIX}/bin
