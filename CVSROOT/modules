@@ -2438,6 +2438,7 @@ dislin                          ports/math/dislin
 display                         ports/misc/display
 displaycalibrator               ports/deskutils/displaycalibrator
 dissembler                      ports/security/dissembler
+dissy                           ports/devel/dissy
 distcache                       ports/security/distcache
 distcache-devel                 ports/security/distcache-devel
 distcc                          ports/devel/distcc
@@ -5414,6 +5415,7 @@ hexcalc                         ports/math/hexcalc
 hexcompare                      ports/devel/hexcompare
 hexcurse                        ports/editors/hexcurse
 hexedit                         ports/editors/hexedit
+hexinject                       ports/net/hexinject
 hexpert                         ports/editors/hexpert
 hexter                          ports/audio/hexter
 hexxagon                        ports/games/hexxagon
@@ -9346,6 +9348,7 @@ mkapachepw                      ports/www/mkapachepw
 mkbold                          ports/x11-fonts/mkbold
 mkbold-mkitalic                 ports/x11-fonts/mkbold-mkitalic
 mkcatalog                       ports/textproc/mkcatalog
+mkclean                         ports/multimedia/mkclean
 mkcmd                           ports/devel/mkcmd
 mkcomposecache                  ports/x11/mkcomposecache
 mkfile                          ports/sysutils/mkfile
@@ -10264,8 +10267,8 @@ nspluginwrapper-devel           ports/www/nspluginwrapper-devel
 nspmod                          ports/audio/nspmod
 nspr                            ports/devel/nspr
 nss                             ports/security/nss
+nss-pam-ldapd                   ports/net/nss-pam-ldapd
 nss_ldap                        ports/net/nss_ldap
-nss_ldapd                       ports/net/nss_ldapd
 nss_mdns                        ports/dns/nss_mdns
 nss_resinit                     ports/dns/nss_resinit
 nstreams                        ports/net-mgmt/nstreams
@@ -20503,6 +20506,7 @@ proftpd-devel                   ports/ftp/proftpd-devel
 proftpd-mysql                   ports/ftp/proftpd-mysql
 profxp                          ports/ftp/profxp
 proggy_fonts                    ports/x11-fonts/proggy_fonts
+proggy_fonts-ttf                ports/x11-fonts/proggy_fonts-ttf
 progsreiserfs                   ports/sysutils/progsreiserfs
 proguard                        ports/java/proguard
 proj                            ports/graphics/proj
@@ -25271,6 +25275,7 @@ w_scan                          ports/multimedia/w_scan
 wa-aspell                       ports/textproc/wa-aspell
 waccess                         ports/www/waccess
 wackamole                       ports/net/wackamole
+wackford-squeers                ports/net/wackford-squeers
 wacko                           ports/www/wacko
 wadcomblog                      ports/www/wadcomblog
 wahcade                         ports/emulators/wahcade
