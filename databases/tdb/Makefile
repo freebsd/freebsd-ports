@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		tdb
-PORTVERSION=		1.2.1
+PORTVERSION=		1.2.2
 PORTREVISION=		0
 CATEGORIES=		databases
 MASTER_SITES=		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		Trivial Database
 
-CONFLICTS=		*samba-3.*
+CONFLICTS=		*samba3[0-4]*
 
 USE_PYTHON=		yes
 USE_GMAKE=		yes
@@ -26,13 +26,19 @@ GNU_CONFIGURE=		yes
 USE_GNOME=		pkgconfig
 USE_AUTOTOOLS=		autoconf:268 autoheader:268
 
-IPATHS=			-I${WRKSRC}/libreplace
+IPATHS=			-I${WRKSRC}/lib/replace
 AUTOHEADER_ARGS=	${IPATHS}
 AUTOCONF_ARGS=		${IPATHS}
 
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PKGCONFIGDIR_REL?=	${PKGCONFIGDIR:S|^${PREFIX}/||}
 PYTHON_SITELIBDIR_REL?=	${PYTHONPREFIX_SITELIBDIR:S|^${PREFIX}/||}
+
+CONFIGURE_ENV+=		XSLTPROC="/usr/bin/true"
+
+MAN8=			tdbbackup.8 \
+			tdbdump.8 \
+			tdbtool.8
 
 PLIST_FILES=		bin/tdbbackup \
 			bin/tdbdump \
@@ -43,6 +49,11 @@ PLIST_FILES=		bin/tdbbackup \
 			lib/libtdb.so.1 \
 			${PKGCONFIGDIR_REL}/tdb.pc \
 			${PYTHON_SITELIBDIR_REL}/tdb.so
+
+pre-install:
+.for man in ${MAN8}
+			@${CP} ${FILESDIR}/${man} ${WRKSRC}/manpages
+.endfor
 
 post-install:
 			@${LN} -sf libtdb.so.1 ${PREFIX}/lib/libtdb.so
