@@ -139,9 +139,7 @@ USE_OPENLDAP=	YES
 
 .  if defined(WITH_XML)
 CONFIGURE_ARGS+=--with-libxml
-.    if defined (SERVER_ONLY)
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
-.    endif
 .  endif
 
 .  if defined(WITH_TZDATA)
