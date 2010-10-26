@@ -14,7 +14,6 @@ MASTER_SITES=	SF/openjade/${PORTNAME:L}/${PORTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	This package is a collection of SGML/XML tools called OpenSP
 
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_ICONV=	yes
@@ -30,6 +29,7 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
+USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
