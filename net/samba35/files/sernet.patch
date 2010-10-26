@@ -1,0 +1,72 @@
+0001-s3-Fix-another-aspect-of-bug-7262.patch
+samba3-3.4-honor-all-loopback-ips.patch
+
+From 325f03d3df7afb758b6815d327739fc121dbbe71 Mon Sep 17 00:00:00 2001
+From: Volker Lendecke <vl@samba.org>
+Date: Tue, 6 Jul 2010 16:55:14 +0200
+Subject: [PATCH] s3: Fix another aspect of bug 7262 and make paged results work again
+---
+ source3/passdb/pdb_ldap.c |    8 ++++----
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/source3/passdb/pdb_ldap.c b/source3/passdb/pdb_ldap.c
+index 6ac8f0d..f4c8dbe 100644
+--- a/source3/passdb/pdb_ldap.c
++++ b/source3/passdb/pdb_ldap.c
+@@ -4483,10 +4483,6 @@ static bool ldapsam_search_next_entry(struct pdb_search *search,
+ 	bool result;
+ 
+  retry:
+-	if (state->current_entry == NULL) {
+-		return false;
+-	}
+-
+ 	if ((state->entries == NULL) && (state->pagedresults_cookie == NULL))
+ 		return False;
+ 
+@@ -4494,6 +4490,10 @@ static bool ldapsam_search_next_entry(struct pdb_search *search,
+ 	    !ldapsam_search_nextpage(search))
+ 		    return False;
+ 
++	if (state->current_entry == NULL) {
++		return false;
++	}
++
+ 	result = state->ldap2displayentry(state, search,
+ 					  state->connection->ldap_struct,
+ 					  state->current_entry, entry);
+-- 
+1.6.0.4
+
+commit b6afe7ef236a454d8a6abf104b8846f817378f73
+Author: Björn Jacke <bj@sernet.de>
+Date:   Thu Oct 15 02:02:30 2009 +0200
+
+    util: cope the all loopback addresses IPv4 knows
+    
+    The fact that we just recogniced 127.0.0.1 as loopback IP address and not the
+    rest of the 127.0.0.0/8 IP address range we used the lo interface for sending
+    packages even though we should send them to some more physical interface. This
+    way we ended up with failing WINS registration and so on like in #6348.
+    On the lo interface sendto() returned "Invalid Argument" (EINVAL).
+
+diff --git a/lib/util/util_net.c b/lib/util/util_net.c
+index 0ce495e..0511a28 100644
+--- a/lib/util/util_net.c
++++ b/lib/util/util_net.c
+@@ -351,13 +351,11 @@ bool is_broadcast_addr(const struct sockaddr *pss)
+ }
+ 
+ /**
+- * Check if an IPv7 is 127.0.0.1
++ * Check if an IPv4 is in IN_LOOPBACKNET (127.0.0.0/8)
+  */
+ bool is_loopback_ip_v4(struct in_addr ip)
+ {
+-	struct in_addr a;
+-	a.s_addr = htonl(INADDR_LOOPBACK);
+-	return(ip.s_addr == a.s_addr);
++	return ((ntohl(ip.s_addr) & IN_CLASSA_NET) == (IN_LOOPBACKNET << IN_CLASSA_NSHIFT));
+ }
+ 
+ /**
