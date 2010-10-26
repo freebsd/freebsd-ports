@@ -243,7 +243,6 @@
     SUBDIR += vilearn
     SUBDIR += vim
     SUBDIR += vim-lite
-    SUBDIR += vim5
     SUBDIR += wily
     SUBDIR += winefish
     SUBDIR += wordgrinder
