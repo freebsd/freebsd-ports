@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101026:
+  AFFECTS: users of net/samba35
+  AUTHOR: Timur Bakeyev <timur@FreeBSD.org>
+
+  This is the latest stable release of the Samba3 distribution. It has
+  been extended with the experimetal support of the NFS4-like ACLs on
+  ZFS partitions, thanks to the sysutils/libsunacl library by Edward
+  Tomasz Napierala(trasz). This support haven't been tested throrughly,
+  so try it on your own risk.
+
+  This port reverted back to the pre- net/samba34 layout of the
+  directories and now they are again $PREFIX/etc/samba, /var/run/samba,
+  /var/log/samba, /var/db/samba and /var/spool/samba respectively.
+
+  In case, you are upgrading from net/samba34, please rename
+  corresponding samba34/ subdirectories into samba/ ones. Upgrades from
+  older versions of Samba and fresh installations should be seamless.
+
 20101015:
   AFFECTS: users of devel/llvm-devel who use clang
   AUTHOR: Brooks Davis <brooks@FreeBSD.org>
