@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	imapsync
-PORTVERSION=	1.315
-PORTREVISION=	1
+PORTVERSION=	1.363
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.linux-france.org/prj/${PORTNAME}/dist/ \
 		http://christianserving.org/ports/mail/${PORTNAME}/
@@ -18,7 +17,6 @@ COMMENT=	IMAP synchronization copy or migration tool
 
 BUILD_DEPENDS=	p5-Mail-IMAPClient>0:${PORTSDIR}/mail/p5-Mail-IMAPClient \
 		p5-Term-ReadKey>0:${PORTSDIR}/devel/p5-Term-ReadKey \
-		p5-Date-Manip>0:${PORTSDIR}/devel/p5-Date-Manip \
 		p5-IO-Socket-SSL>0:${PORTSDIR}/security/p5-IO-Socket-SSL
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
