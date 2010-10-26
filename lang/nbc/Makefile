@@ -17,6 +17,8 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		rene@FreeBSD.org
 COMMENT=		NBC is a programming language for the LEGO MINDSTORMS NXT product
 
+MAKE_JOBS_UNSAFE=	yes
+
 OPTIONS=	ROBOCTL	"Include roboctl to communicate with the NXT"	off
 
 .include <bsd.port.pre.mk>
