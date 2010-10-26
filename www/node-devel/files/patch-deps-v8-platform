@@ -1,0 +1,14 @@
+--- deps/v8/src/platform-freebsd.cc.orig	2010-10-24 07:00:15.000000000 +0800
++++ deps/v8/src/platform-freebsd.cc	2010-10-26 17:10:36.000000000 +0800
+@@ -617,7 +617,10 @@
+ 
+ 
+ Sampler::Sampler(int interval, bool profiling)
+-    : interval_(interval), profiling_(profiling), active_(false) {
++    : interval_(interval),
++      profiling_(profiling),
++      synchronous_(profiling),
++      active_(false) {
+   data_ = new PlatformData();
+ }
+ 
