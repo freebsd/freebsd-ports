@@ -62,7 +62,7 @@
 %%T%%/webapps/ROOT/asf-logo-wide.gif
 %%T%%/webapps/ROOT/build.xml
 %%T%%/webapps/ROOT/favicon.ico
-%%T%%/webapps/ROOT/index.html
+%%T%%/webapps/ROOT/index.jsp
 %%T%%/webapps/ROOT/tomcat-power.gif
 %%T%%/webapps/ROOT/tomcat.gif
 %%T%%/webapps/ROOT/tomcat.svg
