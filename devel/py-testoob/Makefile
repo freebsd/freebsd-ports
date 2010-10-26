@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	testoob
-PORTVERSION=	1.13
+PORTVERSION=	1.15
 CATEGORIES=	devel python
-MASTER_SITES=	SF
+MASTER_SITES=	SF \
+		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,8 +21,11 @@ OPTIONS=	TWISTED "enable running in threads" off \
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 USE_BZIP2=	yes
-USE_PYTHON=	2.2+
-USE_PYDISTUTILS=	yes
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_PKGNAME=	${PORTNAME}
+PYDISTUTILS_PKGVERSION=	${PORTVERSION}
+PYDISTUTILS_NOEGGINFO=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -31,13 +35,6 @@ USE_TWISTED=	yes
 
 .if defined(WITH_HTML)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Ft/Xml/__init__.py:${PORTSDIR}/textproc/py-4suite-xml
-.endif
-
-.if ${PYTHON_REL} < 250
-PLIST_SUB+=	PYTHON_CURRENT="@comment "
-.else
-EGG_INFO=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VERSION:S,^python,,}.egg-info
-PLIST_SUB+=	PYTHON_CURRENT="" EGG_INFO=${EGG_INFO}
 .endif
 
 .include <bsd.port.post.mk>
