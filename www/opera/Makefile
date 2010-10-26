@@ -25,14 +25,14 @@ MASTER_SITES=	ftp://ftp.opera.com/pub/opera/${MASTER_SITES_VER_PATH}/ \
 		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}${PKGNAMESUFFIX}/sources/
 DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.${ARCH}.freebsd
 
-MAINTAINER=	freebsd-maintainer@opera.com
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
-OPERA_VER=	10.61
-OPERA_BUILD=	6430
+OPERA_VER=	10.63
+OPERA_BUILD=	6450
 MASTER_SITES_VER_PATH=	unix/${OPERA_VER:S/.//}
 
 USE_BZIP2=	yes
