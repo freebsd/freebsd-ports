@@ -1,0 +1,46 @@
+#! /bin/sh
+#
+PATH=/bin:/usr/sbin:/usr/bin:/usr/sbin
+
+SAMBA_CONFIG="%%SAMBA_CONFIG%%"
+SAMBA_CONFDIR="%%SAMBA_CONFDIR%%"
+SAMBA_SPOOL="%%SAMBA_SPOOL%%"
+SAMBA_LOGDIR="%%SAMBA_LOGDIR%%"
+SAMBA_RUNDIR="%%SAMBA_RUNDIR%%"
+SAMBA_LOCKDIR="%%SAMBA_LOCKDIR%%"
+SAMBA_PRIVATEDIR="%%SAMBA_PRIVATEDIR%%"
+SAMBA_OWNER=root
+SAMBA_GROUP=wheel
+CMP="cmp"
+RM="rm"
+RMDIR="rmdir"
+ECHO_CMD="echo"
+
+post-deinstall() {
+	if ${CMP} -s ${SAMBA_CONFDIR}/${SAMBA_CONFIG} ${SAMBA_CONFDIR}/${SAMBA_CONFIG}.sample; then
+		${RM} -f ${SAMBA_CONFDIR}/${SAMBA_CONFIG}
+	fi
+	${RM} -f ${SAMBA_CONFDIR}/${SAMBA_CONFIG}.sample
+	${RM} -rf ${SAMBA_SPOOL}
+	${RMDIR} ${SAMBA_LOGDIR} 2>/dev/null || true
+	for f in connections.tdb locking.tdb messages.tdb sessionid.tdb \
+	    unexpected.tdb brlock.tdb namelist.debug
+	do
+		${RM} -f "${SAMBA_LOCKDIR}/${f}"
+	done
+	${RMDIR} ${SAMBA_RUNDIR} 2>/dev/null || true
+	${RMDIR} ${SAMBA_LOCKDIR} 2>/dev/null || true
+	${RMDIR} ${SAMBA_PRIVATEDIR} 2>/dev/null || true
+	${ECHO_CMD} "WARNING: If you will *NOT* use this package anymore, please remove the"
+	${ECHO_CMD} "  following directories manually:"
+	${ECHO_CMD} "  ${SAMBA_PRIVATEDIR}"
+	${ECHO_CMD} "  ${SAMBA_LOGDIR}"
+	${ECHO_CMD} "  ${SAMBA_LOCKDIR}"
+	${ECHO_CMD}
+}
+
+case $2 in
+	POST-DEINSTALL)
+		post-deinstall
+		;;
+esac

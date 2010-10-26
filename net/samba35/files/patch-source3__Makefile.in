@@ -1,0 +1,98 @@
+--- ./source3/Makefile.in.orig	2010-04-01 15:26:22.000000000 +0200
++++ ./source3/Makefile.in	2010-04-23 01:19:22.000000000 +0200
+@@ -144,7 +144,7 @@
+ # These can be overridden by command line switches (see smbd(8))
+ # or in smb.conf (see smb.conf(5))
+ LOGFILEBASE = @logfilebase@
+-CONFIGFILE = $(CONFIGDIR)/smb.conf
++CONFIGFILE = $(CONFIGDIR)/%%SAMBA_CONFIG%%
+ LMHOSTSFILE = $(CONFIGDIR)/lmhosts
+ NCALRPCDIR = @ncalrpcdir@
+ 
+@@ -920,7 +920,8 @@
+ 	     $(LIBADS_OBJ) $(POPT_LIB_OBJ) \
+ 	     $(SMBLDAP_OBJ) $(DCUTIL_OBJ) $(LDB_OBJ) 
+ 
+-PAM_WINBIND_OBJ = ../nsswitch/pam_winbind.o localedir.o $(WBCOMMON_OBJ) \
++PAM_WINBIND_OBJ = ../nsswitch/pam_winbind.o localedir.o \
++		  @LIBTALLOC_STATIC@ @LIBWBCLIENT_STATIC@ \
+ 		  $(LIBREPLACE_OBJ) @BUILD_INIPARSER@
+ 
+ LIBSMBCLIENT_THREAD_OBJ = \
+@@ -1108,7 +1109,7 @@
+ 		$(LIBSAMBA_OBJ) \
+                 $(POPT_LIB_OBJ)
+ 
+-TALLOCTORT_OBJ = @tallocdir@/testsuite.o @tallocdir@/testsuite_main.o \
++TALLOCTORT_OBJ = ../lib/talloc/testsuite.o ../lib/talloc/testsuite_main.o \
+ 		$(PARAM_OBJ) $(LIB_NONSMBD_OBJ) $(LIBSAMBA_OBJ)
+ 
+ REPLACETORT_OBJ = @libreplacedir@/test/testsuite.o \
+@@ -1124,9 +1125,9 @@
+                  $(LIB_NONSMBD_OBJ) $(KRBCLIENT_OBJ) \
+ 		 $(LIBNDR_GEN_OBJ0)
+ 
+-WINBIND_WINS_NSS_OBJ = ../nsswitch/wins.o $(PARAM_OBJ) \
+-	$(LIBSMB_OBJ) $(LIB_NONSMBD_OBJ) $(NSSWINS_OBJ) $(KRBCLIENT_OBJ) \
+-	$(LIBNDR_GEN_OBJ0) $(LDB_OBJ)
++WINBIND_WINS_NSS_OBJ = ../nsswitch/wins.o @WINBIND_WINS_NSS_EXTRA_OBJS@ \
++	$(PARAM_OBJ) $(LIBSMB_OBJ) $(LIB_NONSMBD_OBJ) $(NSSWINS_OBJ) \
++	$(KRBCLIENT_OBJ) $(LIBNDR_GEN_OBJ0) $(LDB_OBJ)
+ 
+ PAM_SMBPASS_OBJ_0 = pam_smbpass/pam_smb_auth.o pam_smbpass/pam_smb_passwd.o \
+ 		pam_smbpass/pam_smb_acct.o pam_smbpass/support.o ../lib/util/asn1.o
+@@ -1422,6 +1423,7 @@
+ 
+ .SUFFIXES:
+ .SUFFIXES: .c .o .lo
++.SUFFIXES: .h .h.gch
+ 
+ .PHONY: showflags SHOWFLAGS
+ 
+@@ -1483,6 +1485,9 @@
+ 		$(COMPILE_CC) >/dev/null 2>&1
+ @BROKEN_CC@	-mv `echo $@ | sed 's%^.*/%%g'` $@
+ 
++.h.h.gch:
++	@echo Compiling $*.h
++
+ PRECOMPILED_HEADER = $(builddir)/include/includes.h.gch
+ 
+ # this adds support for precompiled headers. To use it, install a snapshot
+@@ -2543,14 +2548,15 @@
+ 		@LIBWBCLIENT_STATIC@ $(LIBWBCLIENT_LIBS) \
+ 		@SONAMEFLAG@`basename $@`@NSSSONAMEVERSIONSUFFIX@
+ 
+-bin/winbind_krb5_locator.@SHLIBEXT@: $(BINARY_PREREQS) $(WINBIND_KRB5_LOCATOR_OBJ) $(LIBWBCLIENT)
++bin/winbind_krb5_locator.@SHLIBEXT@: $(BINARY_PREREQS) $(WINBIND_KRB5_LOCATOR_OBJ) $(LIBTALLOC) $(LIBWBCLIENT)
+ 	@echo "Linking $@"
+-	@$(SHLD) $(LDSHFLAGS) -o $@ $(WINBIND_KRB5_LOCATOR_OBJ) $(LIBWBCLIENT_LIBS) $(KRB5LIBS) \
++	@$(SHLD) $(LDSHFLAGS) -o $@ $(WINBIND_KRB5_LOCATOR_OBJ) $(LIBTALLOC_LIBS) $(LIBWBCLIENT_LIBS) $(KRB5LIBS) \
+ 		@SONAMEFLAG@`basename $@`
+ 
+ bin/pam_winbind.@SHLIBEXT@: $(BINARY_PREREQS) $(PAM_WINBIND_OBJ) $(LIBTALLOC) $(LIBWBCLIENT)
+ 	@echo "Linking shared library $@"
+ 	@$(SHLD) $(LDSHFLAGS) -o $@ $(PAM_WINBIND_OBJ) -lpam @INIPARSERLIBS@ \
++		$(LIBS) $(LDAP_LIBS) $(KRB5LIBS) $(NSCD_LIBS) \
+ 		$(LIBREPLACE_LIBS) $(LIBTALLOC_LIBS) $(LIBWBCLIENT_LIBS) @SONAMEFLAG@`basename $@`
+ 
+ ##########
+@@ -2734,7 +2740,7 @@
+ 
+ bin/zfsacl.@SHLIBEXT@: $(BINARY_PREREQS) $(VFS_ZFSACL_OBJ)
+ 	@echo "Building plugin $@"
+-	@$(SHLD_MODULE) $(VFS_ZFSACL_OBJ)
++	@$(SHLD_MODULE) $(VFS_ZFSACL_OBJ) $(ACL_LIBS)
+ 
+ bin/irixacl.@SHLIBEXT@: $(BINARY_PREREQS) $(VFS_IRIXACL_OBJ)
+ 	@echo "Building plugin $@"
+@@ -2872,7 +2878,8 @@
+ 	@echo "Linking shared library $@"
+ 	@$(SHLD) $(LDSHFLAGS) -o $@ $(PAM_SMBPASS_OBJ) -lpam $(DYNEXP) \
+ 		$(LIBS) $(LDAP_LIBS) $(NSCD_LIBS) \
+-		$(LIBTALLOC_LIBS) $(LIBTDB_LIBS) $(LIBWBCLIENT_LIBS)
++		$(LIBTALLOC_LIBS) $(LIBTDB_LIBS) $(LIBWBCLIENT_LIBS) \
++		@SONAMEFLAG@`basename $@`
+ 
+ bin/tdbbackup@EXEEXT@: $(BINARY_PREREQS) $(TDBBACKUP_OBJ) $(LIBTALLOC) $(LIBTDB)
+ 	@echo Linking $@
