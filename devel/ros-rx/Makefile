@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ros
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/${PORTNAME}/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 gtest-1.3.0.tar.gz SWIG-1.3.29-wx.tar.gz
@@ -211,7 +211,7 @@ do-install:
 .endfor
 # make scripts executable
 .for f in 3rdparty/gtest/gtest/bin/gtest-config 3rdparty/wxswig/bin/swig \
-    core/rosbuild/bin/check_same_directories.py \
+    core/mk/make_pydev_project.py core/rosbuild/bin/check_same_directories.py \
     core/rosbuild/bin/checkout_latest_stable \
     core/rosbuild/bin/create_release.py core/rosbuild/bin/download_checkmd5.py \
     core/rosbuild/bin/makestackdist core/rosbuild/bin/package_source.py \

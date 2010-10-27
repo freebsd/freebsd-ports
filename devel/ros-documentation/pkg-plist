@@ -828,6 +828,7 @@ ros/core/mk/download_unpack_build.mk
 ros/core/mk/eclipse.awk
 ros/core/mk/git_checkout.mk
 ros/core/mk/manifest.xml
+ros/core/mk/make_pydev_project.py
 ros/core/mk/svn_checkout.mk
 ros/core/rosbuild/FindPkgConfig.cmake
 ros/core/rosbuild/ROS_NOBUILD
@@ -1088,7 +1089,6 @@ ros/core/roslib/msg_gen/cpp/include/roslib/Log.h
 ros/core/roslib/msg_gen/generated
 ros/core/roslib/rosdoc.yaml
 ros/core/roslib/scripts/gendeps
-ros/core/roslib/scripts/python-reserved-words.txt
 ros/core/roslib/scripts/pythontest
 ros/core/roslib/src/debug.cpp
 ros/core/roslib/src/package.cpp
@@ -2711,6 +2711,7 @@ ros/test/test_rospy/msg/EmbedTest.msg
 ros/test/test_rospy/msg/Floats.msg
 ros/test/test_rospy/msg/HeaderHeaderVal.msg
 ros/test/test_rospy/msg/HeaderVal.msg
+ros/test/test_rospy/msg/PythonKeyword.msg
 ros/test/test_rospy/msg/TestConstants.msg
 ros/test/test_rospy/msg/TestFixedArray.msg
 ros/test/test_rospy/msg/TransitiveImport.msg
@@ -2722,6 +2723,7 @@ ros/test/test_rospy/msg/lisp/test_rospy/.EmbedTest.asd-dep
 ros/test/test_rospy/msg/lisp/test_rospy/.Floats.asd-dep
 ros/test/test_rospy/msg/lisp/test_rospy/.HeaderHeaderVal.asd-dep
 ros/test/test_rospy/msg/lisp/test_rospy/.HeaderVal.asd-dep
+ros/test/test_rospy/msg/lisp/test_rospy/.PythonKeyword.asd-dep
 ros/test/test_rospy/msg/lisp/test_rospy/.TestConstants.asd-dep
 ros/test/test_rospy/msg/lisp/test_rospy/.TestFixedArray.asd-dep
 ros/test/test_rospy/msg/lisp/test_rospy/.TransitiveImport.asd-dep
@@ -2733,6 +2735,7 @@ ros/test/test_rospy/msg/lisp/test_rospy/EmbedTest.lisp
 ros/test/test_rospy/msg/lisp/test_rospy/Floats.lisp
 ros/test/test_rospy/msg/lisp/test_rospy/HeaderHeaderVal.lisp
 ros/test/test_rospy/msg/lisp/test_rospy/HeaderVal.lisp
+ros/test/test_rospy/msg/lisp/test_rospy/PythonKeyword.lisp
 ros/test/test_rospy/msg/lisp/test_rospy/TestConstants.lisp
 ros/test/test_rospy/msg/lisp/test_rospy/TestFixedArray.lisp
 ros/test/test_rospy/msg/lisp/test_rospy/TransitiveImport.lisp
@@ -2745,6 +2748,7 @@ ros/test/test_rospy/msg/lisp/test_rospy/_package_EmbedTest.lisp
 ros/test/test_rospy/msg/lisp/test_rospy/_package_Floats.lisp
 ros/test/test_rospy/msg/lisp/test_rospy/_package_HeaderHeaderVal.lisp
 ros/test/test_rospy/msg/lisp/test_rospy/_package_HeaderVal.lisp
+ros/test/test_rospy/msg/lisp/test_rospy/_package_PythonKeyword.lisp
 ros/test/test_rospy/msg/lisp/test_rospy/_package_TestConstants.lisp
 ros/test/test_rospy/msg/lisp/test_rospy/_package_TestFixedArray.lisp
 ros/test/test_rospy/msg/lisp/test_rospy/_package_TransitiveImport.lisp
@@ -2757,6 +2761,7 @@ ros/test/test_rospy/msg_gen/cpp/include/test_rospy/EmbedTest.h
 ros/test/test_rospy/msg_gen/cpp/include/test_rospy/Floats.h
 ros/test/test_rospy/msg_gen/cpp/include/test_rospy/HeaderHeaderVal.h
 ros/test/test_rospy/msg_gen/cpp/include/test_rospy/HeaderVal.h
+ros/test/test_rospy/msg_gen/cpp/include/test_rospy/PythonKeyword.h
 ros/test/test_rospy/msg_gen/cpp/include/test_rospy/TestConstants.h
 ros/test/test_rospy/msg_gen/cpp/include/test_rospy/TestFixedArray.h
 ros/test/test_rospy/msg_gen/cpp/include/test_rospy/TransitiveImport.h
@@ -2773,6 +2778,7 @@ ros/test/test_rospy/src/test_rospy/msg/_EmbedTest.py
 ros/test/test_rospy/src/test_rospy/msg/_Floats.py
 ros/test/test_rospy/src/test_rospy/msg/_HeaderHeaderVal.py
 ros/test/test_rospy/src/test_rospy/msg/_HeaderVal.py
+ros/test/test_rospy/src/test_rospy/msg/_PythonKeyword.py
 ros/test/test_rospy/src/test_rospy/msg/_TestConstants.py
 ros/test/test_rospy/src/test_rospy/msg/_TestFixedArray.py
 ros/test/test_rospy/src/test_rospy/msg/_TransitiveImport.py
