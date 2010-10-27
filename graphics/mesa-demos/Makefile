@@ -10,7 +10,7 @@ PORTVERSION=	${MESAVERSION}
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	mesa-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	OpenGL demos distributed with Mesa
 
 .if !defined(WITHOUT_NOUVEAU)
