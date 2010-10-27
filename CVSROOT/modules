@@ -10211,6 +10211,7 @@ nocatsplash                     ports/net/nocatsplash
 nocc                            ports/mail/nocc
 nocol                           ports/net-mgmt/nocol
 node                            ports/www/node
+node-devel                      ports/www/node-devel
 noegnud-addons                  ports/games/noegnud-addons
 noegnud-data                    ports/games/noegnud-data
 noegnud-littlehack              ports/games/noegnud-littlehack
@@ -22973,6 +22974,7 @@ samba-nmblookup                 ports/net/samba-nmblookup
 samba-pdbsql                    ports/net/samba-pdbsql
 samba-smbclient                 ports/net/samba-smbclient
 samba34                         ports/net/samba34
+samba35                         ports/net/samba35
 samba4-devel                    ports/net/samba4-devel
 samba4wins                      ports/net/samba4wins
 sambasentinel                   ports/net/sambasentinel
@@ -25154,7 +25156,6 @@ vilearn                         ports/editors/vilearn
 vils                            ports/sysutils/vils
 vim                             ports/editors/vim
 vim-lite                        ports/editors/vim-lite
-vim5                            ports/editors/vim5
 vinagre                         ports/net/vinagre
 vindaloo                        ports/graphics/vindaloo
 vinetto                         ports/security/vinetto
