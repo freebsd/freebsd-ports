@@ -221,9 +221,6 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_email.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_email.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_email.pyo
-%%PYTHON_SITELIBDIR%%/flexget/plugins/output_exec.py
-%%PYTHON_SITELIBDIR%%/flexget/plugins/output_exec.pyc
-%%PYTHON_SITELIBDIR%%/flexget/plugins/output_exec.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_history.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_history.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_history.pyo
@@ -245,12 +242,12 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_transmissionrpc.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_transmissionrpc.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_transmissionrpc.pyo
-%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_adv_exec.py
-%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_adv_exec.pyc
-%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_adv_exec.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_archive.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_archive.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_archive.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_exec.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_exec.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_exec.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_failed.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_failed.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_failed.pyo
