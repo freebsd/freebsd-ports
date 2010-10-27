@@ -340,6 +340,7 @@
     SUBDIR += jesred
     SUBDIR += jetspeed
     SUBDIR += jetty
+    SUBDIR += jinzora
     SUBDIR += joomla
     SUBDIR += joomla15
     SUBDIR += jspacker
