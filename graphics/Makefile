@@ -889,6 +889,7 @@
     SUBDIR += showimg
     SUBDIR += silgraphite
     SUBDIR += simage
+    SUBDIR += sk1libs
     SUBDIR += skanlite
     SUBDIR += skencil
     SUBDIR += sketch
