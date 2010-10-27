@@ -1,4 +1,4 @@
-bin/uniconv
+bin/uniconvertor
 %%PYTHON_SITELIBDIR%%/uniconvertor/COPYRIGHTS
 %%PYTHON_SITELIBDIR%%/uniconvertor/GNU_GPL_v2
 %%PYTHON_SITELIBDIR%%/uniconvertor/GNU_LGPL_v2
@@ -188,88 +188,9 @@ bin/uniconv
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/managers/colormanager.pyo
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/modules/_sketch.so
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/modules/_type1.so
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/modules/descr.txt
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/modules/pstokenize.so
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/modules/skread.so
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/modules/streamfilter.so
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/ailoader.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/ailoader.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/ailoader.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/aisaver.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/aisaver.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/aisaver.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/bziploader.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/bziploader.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/bziploader.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/ccxloader.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/ccxloader.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/ccxloader.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cdrloader.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cdrloader.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cdrloader.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cdrziploader.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cdrziploader.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cdrziploader.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cgmloader.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cgmloader.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cgmloader.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cgmsaver.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cgmsaver.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cgmsaver.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cmxloader.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cmxloader.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/cmxloader.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/drawinput.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/drawinput.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/drawinput.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/gziploader.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/gziploader.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/gziploader.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pdfgensaver.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pdfgensaver.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pdfgensaver.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pltloader.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pltloader.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pltloader.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pltsaver.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pltsaver.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pltsaver.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pssaver.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pssaver.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/pssaver.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/sk1loader.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/sk1loader.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/sk1loader.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/sk1saver.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/sk1saver.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/sk1saver.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/skloader.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/skloader.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/skloader.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/sksaver.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/sksaver.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/sksaver.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/svgloader.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/svgloader.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/svgloader.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/svgsaver.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/svgsaver.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/svgsaver.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/wmfloader.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/wmfloader.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/wmfloader.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/wmfsaver.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/wmfsaver.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/wmfsaver.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/xfigloader.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/xfigloader.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters/xfigloader.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/__init__.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/__init__.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/__init__.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/plugins.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/plugins.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/plugins.pyo
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/scripts/__init__.py
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/scripts/__init__.pyc
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/scripts/__init__.pyo
@@ -295,8 +216,6 @@ bin/uniconv
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/scripts/create_text.pyc
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/scripts/create_text.pyo
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/scripts/export_raster.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/scripts/export_raster.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/scripts/export_raster.pyo
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/scripts/footprints.py
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/scripts/footprints.pyc
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/scripts/footprints.pyo
@@ -336,26 +255,14 @@ bin/uniconv
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/utils/locale_utils.py
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/utils/locale_utils.pyc
 %%PYTHON_SITELIBDIR%%/uniconvertor/app/utils/locale_utils.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/utils/os_utils.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/utils/os_utils.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/utils/os_utils.pyo
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/utils/output.py
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/utils/output.pyc
-%%PYTHON_SITELIBDIR%%/uniconvertor/app/utils/output.pyo
 %%PYTHON_SITELIBDIR%%/uniconvertor/share/fonts/descr.txt
-%%PYTHON_SITELIBDIR%%/uniconvertor/share/icc/GenericCMYK.icm
-%%PYTHON_SITELIBDIR%%/uniconvertor/share/icc/sRGB.icm
-%%PYTHON_SITELIBDIR%%/uniconvertor/share/icc/sRGB_Color_Space_Profile.icm
 %%PYTHON_SITELIBDIR%%/uniconvertor/share/ps_templates/sk1-proc.ps
 %%PYTHON_SITELIBDIR%%/uniconvertor/share/ps_templates/sketch-proc.ps
 @dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/share/ps_templates
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/share/icc
 @dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/share/fonts
 @dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/share
 @dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app/utils
 @dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app/scripts
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins/Filters
-@dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app/modules
 @dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app/managers
 @dirrm %%PYTHON_SITELIBDIR%%/uniconvertor/app/io
