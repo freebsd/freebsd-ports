@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mediathek
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.0
 CATEGORIES=	german java
 MASTER_SITES=	SF/zdfmediathk/Mediathek/Mediathek%20${PORTVERSION}
 DISTNAME=	Mediathek_${PORTVERSION}
@@ -24,6 +24,10 @@ SUB_FILES=	mediathek
 
 OPTIONS=	MPLAYER "mplayer zum Aufnehmen verwenden" on \
 		VLC "VLC zum Abspielen verwenden" on
+
+INSTALLFILES=	Bitte_lesen.txt Mediathek.jar MediathekView.jpg \
+		releases_2.3.0.txt Kurzanleitung.odg Kurzanleitung.pdf
+INSTALLLIBS=	commons-lang-2.5.jar jdom.jar rome-1.0.jar
 
 .include <bsd.port.pre.mk>
 
@@ -44,11 +48,17 @@ RUN_DEPENDS+=	vlc:${PORTSDIR}/multimedia/vlc
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKSRC}
-	@${UNZIP_CMD} -q -d ${WRKSRC} ${_DISTDIR}/${EXTRACT_ONLY}
+	@${UNZIP_CMD} -q -d ${WRKSRC} ${DISTDIR}/${EXTRACT_ONLY}
 
 do-install:
-	@cd ${WRKSRC} && ${FIND} . -type d -exec ${MKDIR} "${DATADIR}/{}" \;
-	@cd ${WRKSRC} && ${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}/lib
+.for i in ${INSTALLFILES}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DATADIR}/
+.endfor
+.for j in ${INSTALLLIBS}
+	@${INSTALL_DATA} ${WRKSRC}/lib/${j} ${DATADIR}/lib/
+.endfor
 	@${INSTALL_SCRIPT} ${WRKDIR}/mediathek ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
