@@ -6,25 +6,17 @@
 #
 
 PORTNAME=	uniconvertor
-PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTVERSION=	1.1.5
 CATEGORIES=	graphics python
-MASTER_SITES=	http://sk1project.org/downloads/uniconvertor/v${PORTVERSION}/ \
+MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Universal vector graphics translator
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
-		${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2
-
-CONFLICTS=	yudit-[0-9]* netatalk-[0-9]*
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sk1libs/__init__.py:${PORTSDIR}/graphics/sk1libs
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-
-PYDISTUTILS_PKGNAME=UniConvertor
-
-WRKSRC=		${WRKDIR}/UniConvertor-${PORTVERSION}
 
 .include <bsd.port.mk>
