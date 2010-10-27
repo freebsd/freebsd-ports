@@ -1,0 +1,32 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: dma mail
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable dma mailq flushing on
+# startup or before shutdown:
+# dma_flushq_enable (bool): Set it to "YES" to flush mailq on startup
+#                           or before shutdown
+#                           Default is "NO".
+#
+
+. /etc/rc.subr
+
+name="dma_flushq"
+rcvar=${name}_enable
+
+load_rc_config ${name}
+
+: ${dma_flushq_enable:="NO"}
+
+start_cmd=${name}
+stop_cmd=${name}
+
+dma_flushq() {
+    %%PREFIX%%/libexec/dma -q
+}
+
+run_rc_command "$1"
