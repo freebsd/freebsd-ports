@@ -14,7 +14,7 @@ MASTER_SITES=	http://yudit.org/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-lingual unicode text editor with TTF support
 
-CONFLICTS=	uniconvertor-[0-9]*
+CONFLICTS=	netatalk-[0-9]*
 
 USE_XORG=	x11
 USE_GMAKE=	yes
