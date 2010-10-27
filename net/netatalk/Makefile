@@ -56,7 +56,7 @@ MAN5=		AppleVolumes.5 AppleVolumes.default.5 \
 MAN8=		afp_acls.8 afpd.8 atalkd.8 cnid_dbd.8 cnid_metad.8 papd.8 \
 		papstatus.8 psf.8 timelord.8
 
-CONFLICTS=	bigloo-2.* cap-6.0.* tct-1.* netatalk-1* uniconvertor-1.*
+CONFLICTS=	bigloo-2.* cap-6.0.* tct-1.* netatalk-1* yudit-[0-9]*
 
 .include <bsd.port.pre.mk>
 
