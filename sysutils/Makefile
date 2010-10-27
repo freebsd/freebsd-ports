@@ -800,7 +800,6 @@
     SUBDIR += service-config
     SUBDIR += setcdboot
     SUBDIR += setquota
-    SUBDIR += sfdisk
     SUBDIR += sformat
     SUBDIR += sg3_utils
     SUBDIR += sge60
