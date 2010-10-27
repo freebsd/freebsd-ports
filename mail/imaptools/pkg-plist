@@ -1,0 +1,17 @@
+bin/IMAPtoMbox.pl
+bin/MboxtoIMAP.pl
+bin/delIMAPdups.pl
+bin/dumptoIMAP.pl
+bin/imapCapability.pl
+bin/imapPing.pl
+bin/imapcopy.pl
+bin/imapdump.pl
+bin/imapfilter.pl
+bin/imapsync.pl
+bin/mbxIMAPsync.pl
+bin/migrateIMAP-win.pl
+bin/migrateIMAP.pl
+bin/mozillatoIMAP.pl
+bin/pop3toimap.pl
+bin/purgeMbx.pl
+bin/trash.pl
