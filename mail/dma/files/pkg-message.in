@@ -4,6 +4,7 @@ referring to another MTA with the following:
 
 sendmail	%%PREFIX%%/libexec/dma
 send-mail	%%PREFIX%%/libexec/dma
+mailq		%%PREFIX%%/libexec/dma
 
 If you not need sendmail anymore, please add in your rc.conf:
 
@@ -11,6 +12,16 @@ sendmail_enable="NO"
 sendmail_submit_enable="NO"
 sendmail_outbound_enable="NO"
 sendmail_msp_queue_enable="NO"
+
+if you want anything in your queue to be flushed at on boot or before
+shutdown, add the following to rc.conf as well:
+
+dma_flushq_enable="YES"
+
+you can also add a cronjob to do regular mailq flushes using the following 
+command: 
+
+%%PREFIX%%/libexec/dma -q
 
 And you can disable some sendmail specific daily maintenance routines in your
 /etc/periodic.conf file:
