@@ -120,6 +120,7 @@
     SUBDIR += pdnsd
     SUBDIR += pear-File_DNS
     SUBDIR += pear-Net_DNS
+    SUBDIR += pear-Net_DNS2
     SUBDIR += posadis
     SUBDIR += poweradmin
     SUBDIR += powerdns
