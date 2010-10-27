@@ -1,16 +1,12 @@
 bin/mediathek
-%%DATADIR%%/Anleitung_MediathekView_2.2.1.pdf
 %%DATADIR%%/Bitte_lesen.txt
-%%DATADIR%%/Copyright/commons-lang-LICENSE.txt
-%%DATADIR%%/Copyright/flvstreamer-LICENSE.txt
-%%DATADIR%%/Copyright/jdom-LICENSE.txt
-%%DATADIR%%/Copyright/medithek-LICENSE.txt
-%%DATADIR%%/Copyright/rome-LICENSE.txt
+%%DATADIR%%/Kurzanleitung.odg
+%%DATADIR%%/Kurzanleitung.pdf
 %%DATADIR%%/Mediathek.jar
+%%DATADIR%%/MediathekView.jpg
 %%DATADIR%%/lib/commons-lang-2.5.jar
 %%DATADIR%%/lib/jdom.jar
 %%DATADIR%%/lib/rome-1.0.jar
-%%DATADIR%%/releases.txt
+%%DATADIR%%/releases_2.3.0.txt
 @dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/Copyright
 @dirrm %%DATADIR%%
