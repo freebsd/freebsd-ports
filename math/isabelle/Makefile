@@ -22,6 +22,8 @@ DISTFILES=	Isabelle2009.tar.gz \
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	A generic proof assistant
 
+BROKEN=		bad plist
+
 OPTIONS=	SMLNJ  "Use SML/NJ (devel) instead of faster Poly/ML"     off
 OPTIONS+=	RLWRAP "Use rlwrap as line editor"                        on
 OPTIONS+=	LEDIT  "Use ledit as line editor"                         off
