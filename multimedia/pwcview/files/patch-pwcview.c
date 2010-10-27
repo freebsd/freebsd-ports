@@ -1,5 +1,5 @@
---- pwcview.c.orig	2007-10-09 03:23:58.000000000 -0400
-+++ pwcview.c	2010-01-22 17:09:20.000000000 -0500
+--- pwcview.c.orig	2007-10-09 09:23:58.000000000 +0200
++++ pwcview.c	2010-09-09 16:42:31.000000000 +0200
 @@ -37,11 +37,8 @@
  #ifndef NOGUI
  #include <SDL.h>
@@ -377,6 +377,24 @@
  	jpeg_stdio_dest(cinfo, outfile);
  	jpeg_start_compress(cinfo, TRUE);
  
+@@ -871,7 +870,7 @@
+ {
+ 	static int newbuf;
+ 	static int skip = 5;
+-	static uint32_t motionbuf[2][60][80];
++	static uint32_t motionbuf[2][150][200];
+ 	static int rectime;
+ 	uint32_t diff;
+ 	int line, col, motiondetected = 0;
+@@ -888,7 +887,7 @@
+ 		}
+ 	}
+ 	
+-	memset(motionbuf[newbuf],0,60*80*sizeof(uint32_t));
++	memset(motionbuf[newbuf],0,150*200*sizeof(uint32_t));
+ 
+ 	for(line = 0; line < height; ++line) {
+ 		int y = line / 8; tp = pt;
 @@ -1041,7 +1040,10 @@
  }
  #endif
@@ -411,16 +429,18 @@
  				return 1;
  			}
  			break;
-@@ -1218,7 +1224,7 @@
+@@ -1216,9 +1222,8 @@
+ 	vw.width = sizes[i].width;
+ 	vw.height= sizes[i].height;
  	vw.flags = fps << PWC_FPS_SHIFT;
- 	imgsize = (vw.width * vw.height * 3)/2;
+-	imgsize = (vw.width * vw.height * 3)/2;
  
 -	if((fd = open(device, O_RDONLY)) < 0) {
 +	if((fd = v4l1_open(device, O_RDONLY)) < 0) {
  		if(errno == EBUSY)
  			fprintf(stderr,"Failed to access webcam: Device in use\n");
  		else {
-@@ -1236,17 +1242,17 @@
+@@ -1236,30 +1241,31 @@
      	}
  	fcntl(fd,F_SETFD,FD_CLOEXEC);
  
@@ -441,8 +461,9 @@
  		fprintf(stderr,"Failed to set webcam to: %dx%d (%s) at %d fps (%s)\n",
  				vw.width,vw.height,sizes[i].name,fps,strerror(errno));
  		exit(1);
-@@ -1254,12 +1260,12 @@
+ 	}
  	fprintf(stderr,"Webcam set to: %dx%d (%s) at %d fps\n",vw.width,vw.height,sizes[i].name,fps);
++	imgsize = (vw.width * vw.height * 3)/2;
  
  	if(headless && snapcnt == 0 && motionrecord == 0) { /* Done */
 -		close(fd);
