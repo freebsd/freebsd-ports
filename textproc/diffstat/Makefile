@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diffstat
-PORTVERSION=	1.53
+PORTVERSION=	1.54
 CATEGORIES=	textproc devel
 MASTER_SITES=	ftp://dickey.his.com/diffstat/
 EXTRACT_SUFX=	.tgz
