@@ -23,6 +23,8 @@ USE_GMAKE=	yes
 MAKE_ARGS=	CFLAGS=""
 CONFLICTS=	unison-[0-9]* unison-nox11-[0-9]*
 
+MAKE_JOBS_UNSAFE=yes
+
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)
