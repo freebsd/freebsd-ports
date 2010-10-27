@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Mix
-PORTVERSION=	0.003
+PORTVERSION=	0.004
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,8 @@ COMMENT=	Perl module for dynamic class mixing
 BUILD_DEPENDS=	${SITE_PERL}/parent.pm:${PORTSDIR}/devel/p5-parent
 RUN_DEPENDS=	${SITE_PERL}/parent.pm:${PORTSDIR}/devel/p5-parent
 
+LICENSE_COMB=	dual
+LICENSE=	ART10 GPLv1
 PERL_MODBUILD=	yes
 
 MAN3=	Class::Mix.3
