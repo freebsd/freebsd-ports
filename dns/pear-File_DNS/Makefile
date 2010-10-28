@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File_DNS
-PORTVERSION=	0.0.8
+PORTVERSION=	0.1.0
 CATEGORIES=	dns devel pear
 
 MAINTAINER=	chris@ctgameinfo.com
@@ -15,8 +15,7 @@ COMMENT=	PEAR class to read and write RFC1033-style DNS Zonefiles
 BUILD_DEPENDS=	${PEARDIR}/File.php:${PORTSDIR}/sysutils/pear-File
 RUN_DEPENDS=	${PEARDIR}/File.php:${PORTSDIR}/sysutils/pear-File
 
-CATEGORY=	File
-FILES=		DNS.php
+FILES=		File/DNS.php
 EXAMPLES=	example.php example.net
 
 .include <bsd.port.pre.mk>
