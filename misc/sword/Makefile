@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sword
-PORTVERSION=	1.6.1
-PORTREVISION=	3
+PORTVERSION=	1.6.2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.6/ \
 		http://crosswire.org/ftpmirror/pub/sword/source/v1.6/ \
@@ -16,6 +15,8 @@ MASTER_SITE_SUBDIR=	tabthorpe
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	A project framework for manipulating Bible texts
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
 
@@ -30,6 +31,8 @@ USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
 .if defined(WITHOUT_CURL)
 CONFIGURE_ARGS+=	--without-curl
 .else
@@ -43,7 +46,6 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|2.63|2.68|g' ${WRKSRC}/aclocal.m4
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|:=|=|' ${WRKSRC}/Makefile.am \

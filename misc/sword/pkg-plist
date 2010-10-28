@@ -20,6 +20,8 @@ include/sword/Greek2Greek.h
 include/sword/GreekChars.h
 include/sword/canon.h
 include/sword/canon_abbrevs.h
+include/sword/canon_catholic.h
+include/sword/canon_catholic2.h
 include/sword/canon_german.h
 include/sword/canon_kjva.h
 include/sword/canon_leningrad.h
@@ -29,6 +31,7 @@ include/sword/canon_nrsv.h
 include/sword/canon_nrsva.h
 include/sword/canon_null.h
 include/sword/canon_synodal.h
+include/sword/canon_synodalp.h
 include/sword/canon_vulg.h
 include/sword/cipherfil.h
 include/sword/curlftpt.h
@@ -175,17 +178,18 @@ include/sword/zld.h
 include/sword/zstr.h
 include/sword/ztext.h
 include/sword/zverse.h
-lib/libsword-1.6.1.so
+lib/libsword-%%PORTVERSION%%.so
 lib/libsword.a
 lib/libsword.la
 lib/libsword.so
-share/sword/locales.d/locales.conf
 libdata/pkgconfig/sword.pc
+%%DATADIR%%/locales.d/locales.conf
 %%DATADIR%%/locales.d/abbr.conf
 %%DATADIR%%/locales.d/af-utf8.conf
 %%DATADIR%%/locales.d/af.conf
 %%DATADIR%%/locales.d/ar_EG-cp1256.conf
 %%DATADIR%%/locales.d/ar_EG-utf8.conf
+%%DATADIR%%/locales.d/az-utf8.conf
 %%DATADIR%%/locales.d/bg_BG-cp1251.conf
 %%DATADIR%%/locales.d/bg_BG-utf8.conf
 %%DATADIR%%/locales.d/cs-utf8.conf
@@ -213,6 +217,7 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/fr_abbrev.conf
 %%DATADIR%%/locales.d/ga-utf8.conf
 %%DATADIR%%/locales.d/he-utf8.conf
+%%DATADIR%%/locales.d/hr-utf8.conf
 %%DATADIR%%/locales.d/hu-utf8.conf
 %%DATADIR%%/locales.d/hu.conf
 %%DATADIR%%/locales.d/id-utf8.conf
@@ -256,6 +261,9 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/uk_UA-koi8-u.conf
 %%DATADIR%%/locales.d/uk_UA-utf8.conf
 %%DATADIR%%/locales.d/vi-utf8.conf
+%%DATADIR%%/locales.d/zh_CN-utf8.conf
+%%DATADIR%%/locales.d/zh_Hans-utf8.conf
+%%DATADIR%%/locales.d/zh_Hant-utf8.conf
 %%DATADIR%%/locales.d/zh_TW-utf8.conf
 %%DATADIR%%/locales.d/zh_english-utf8.conf
 @dirrm %%DATADIR%%/mods.d
