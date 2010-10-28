@@ -1,5 +1,6 @@
 share/locale/bg/LC_MESSAGES/remmina-plugins.mo
 share/locale/cs/LC_MESSAGES/remmina-plugins.mo
+share/locale/da/LC_MESSAGES/remmina-plugins.mo
 share/locale/de/LC_MESSAGES/remmina-plugins.mo
 share/locale/el/LC_MESSAGES/remmina-plugins.mo
 share/locale/es/LC_MESSAGES/remmina-plugins.mo
@@ -14,6 +15,7 @@ share/locale/pl/LC_MESSAGES/remmina-plugins.mo
 share/locale/pt_BR/LC_MESSAGES/remmina-plugins.mo
 share/locale/pt_PT/LC_MESSAGES/remmina-plugins.mo
 share/locale/ru/LC_MESSAGES/remmina-plugins.mo
+share/locale/sv/LC_MESSAGES/remmina-plugins.mo
 share/locale/tr/LC_MESSAGES/remmina-plugins.mo
 share/locale/uk/LC_MESSAGES/remmina-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/remmina-plugins.mo
