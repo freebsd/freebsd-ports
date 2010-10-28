@@ -7,6 +7,7 @@
 
 PORTNAME=	xiphos
 PORTVERSION=	3.1.4
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	SF/gnomesword/Xiphos/${PORTVERSION}
 
@@ -15,7 +16,7 @@ COMMENT=	A bible interface utilizing the sword framework
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.1.so:${PORTSDIR}/misc/sword
+RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.2.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		docbook2html:${PORTSDIR}/textproc/docbook-utils \
 		gnome-doc-tool:${PORTSDIR}/textproc/gnome-doc-utils \
