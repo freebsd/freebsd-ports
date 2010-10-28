@@ -18,6 +18,6 @@ WITH_FREEBSD_SUBVERSION= yes
 
 CONFLICTS?=	subversion-[0-9]*
 
-MD5_FILE=	${MASTERDIR}/distinfo
+DISTINFO_FILE=	${MASTERDIR}/distinfo
 
 .include "${MASTERDIR}/Makefile"

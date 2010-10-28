@@ -47,7 +47,7 @@ PLIST_SUB+=	MOZ=""
 .else
 MOZVERSION=	1.1.18
 DISTURL=	/SeaMonkey
-MD5_FILE=	${MASTERDIR}/distinfo.seamonkey
+DISTINFO_FILE=	${MASTERDIR}/distinfo.seamonkey
 PLIST_SUB+=	MOZ="@comment "
 .endif
 

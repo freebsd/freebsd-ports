@@ -21,7 +21,7 @@ ONLY_FOR_ARCHS=	amd64 i386 sparc64
 
 P4VERSION=	r${PORTVERSION:S/^20//:C/\.[0-9]+$//}
 DIST_SUBDIR=	perforce/${PORTVERSION}/bin.${PLATFORM}
-MD5_FILE=	${MASTERDIR}/distinfo.${PLATFORM}
+DISTINFO_FILE=	${MASTERDIR}/distinfo.${PLATFORM}
 
 RESTRICTED=	Restricted distribution
 

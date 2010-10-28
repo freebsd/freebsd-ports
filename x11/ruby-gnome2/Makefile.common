@@ -23,7 +23,7 @@ RUBY_GNOME_WRKSRC=	${WRKDIR}/${RUBY_GNOME_DISTNAME}
 .endif
 
 RUBY_GNOME_PORTDIR=	${PORTSDIR}/x11/ruby-gnome2
-MD5_FILE=		${RUBY_GNOME_PORTDIR}/distinfo
+DISTINFO_FILE=		${RUBY_GNOME_PORTDIR}/distinfo
 
 general-patch:
 	@${FIND} ${WRKDIR} -name mkmf-gnome2.rb | ${XARGS} ${REINPLACE_CMD} -e \

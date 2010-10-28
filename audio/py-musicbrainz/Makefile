@@ -33,7 +33,7 @@ PYDISTUTILS_PKGNAME=	python-musicbrainz
 PYDISTUTILS_BUILDARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 DESCR=		${PORTSDIR}/audio/libmusicbrainz/pkg-descr
-MD5_FILE=	${PORTSDIR}/audio/libmusicbrainz/distinfo
+DISTINFO_FILE=	${PORTSDIR}/audio/libmusicbrainz/distinfo
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/musicbrainz.py \
 		%%PYTHON_SITELIBDIR%%/musicbrainz.pyc \
 		%%PYTHON_SITELIBDIR%%/musicbrainz.pyo

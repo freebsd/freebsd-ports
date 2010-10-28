@@ -9,7 +9,7 @@ DISTVERSIONPREFIX=	full-src-
 DISTVERSIONSUFFIX=	.noarch
 MASTER_SITES=	http://www.code-aster.org/V2/UPLOAD/DOC/Telechargement/
 DISTNAME=	aster-${DISTVERSIONPREFIX}${ASTER_DISTVERSION}${DISTVERSIONSUFFIX}
-MD5_FILE=	${.CURDIR}/../../french/aster/distinfo
+DISTINFO_FILE=	${.CURDIR}/../../french/aster/distinfo
 
 ASTER_VER=	10.2.0
 ASTER_DISTVERSION=	${ASTER_VER}-2

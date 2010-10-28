@@ -42,7 +42,7 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 USE_LDCONFIG=	yes
 
 PATCHDIR=	${.CURDIR}/../windowmaker/files
-MD5_FILE=	${.CURDIR}/../windowmaker/distinfo
+DISTINFO_FILE=	${.CURDIR}/../windowmaker/distinfo
 
 CONFLICTS=	windowmaker-0.*
 

@@ -73,7 +73,7 @@ EXTRACT_AFTER_ARGS+=	${DISTNAME}/rsp_hle
 .if ${PKGNAMESUFFIX} == "-glide"
 ALL_TARGET=		plugins/Glide64.so
 
-MD5_FILE=		${.CURDIR}/distinfo
+DISTINFO_FILE=		${.CURDIR}/distinfo
 DISTNAME=		${PKGNAMESUFFIX:S/-//:S/$/64/}-${PORTVERSION:S/$/.SP8/}
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf -
@@ -83,7 +83,7 @@ EXTRA_PATCHES=		#
 .if ${PKGNAMESUFFIX} == "-tr64"
 ALL_TARGET=		plugins/tr64gl.so
 
-MD5_FILE=		${.CURDIR}/distinfo
+DISTINFO_FILE=		${.CURDIR}/distinfo
 DISTNAME=		${PKGNAMESUFFIX:S/-//}_ogl_gtk2-${PORTVERSION}
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf -

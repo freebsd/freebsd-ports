@@ -24,7 +24,7 @@ OPENACSNAME=	.LRN
 BASE_INSTALL=	bin content-repository-content-files log packages tcl www install.xml
 
 DESCR=		${.CURDIR}/pkg-descr
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 
 MASTERDIR=	${.CURDIR}/../openacs
 

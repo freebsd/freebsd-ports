@@ -31,7 +31,7 @@ MAKE_ENV+=	QMAKESPEC="${QMAKESPEC}"
 .endif # !defined(QT_NONSTANDARD)
 
 .if defined(QT_DIST)
-MD5_FILE=	${PORTSDIR}/devel/qt4/distinfo
+DISTINFO_FILE=	${PORTSDIR}/devel/qt4/distinfo
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-everywhere-opensource-src-${QT4_VERSION}
 DIST_SUBDIR=	KDE

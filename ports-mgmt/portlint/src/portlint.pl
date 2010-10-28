@@ -195,7 +195,7 @@ my @varlist =  qw(
 	DISTNAME DISTFILES CATEGORIES MASTERDIR MAINTAINER MASTER_SITES
 	WRKDIR WRKSRC NO_WRKSUBDIR PATCHDIR SCRIPTDIR FILESDIR
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
-	PKGREQ PKGMESSAGE MD5_FILE .CURDIR USE_LDCONFIG USE_AUTOTOOLS
+	PKGREQ PKGMESSAGE DISTINFO_FILE .CURDIR USE_LDCONFIG USE_AUTOTOOLS
 	INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER
 	PLIST_FILES OPTIONS INSTALLS_OMF USE_GETTEXT USE_RC_SUBR
 	DIST_SUBDIR ALLFILES IGNOREFILES CHECKSUM_ALGORITHMS INSTALLS_ICONS
@@ -269,11 +269,11 @@ close(IN);
 #
 # check for files.
 #
-my @checker = ($makevar{DESCR}, 'Makefile', $makevar{MD5_FILE});
+my @checker = ($makevar{DESCR}, 'Makefile', $makevar{DISTINFO_FILE});
 my %checker = (
 	$makevar{DESCR} => \&checkdescr,
 	'Makefile' => \&checkmakefile,
-	$makevar{MD5_FILE} => \&checkdistinfo
+	$makevar{DISTINFO_FILE} => \&checkdistinfo
 );
 if ($extrafile) {
 	my @files = (
@@ -311,7 +311,7 @@ foreach my $i (<$makevar{PATCHDIR}/patch-*>) {
 foreach my $i (@checker) {
 	print "OK: checking $i.\n" if ($verbose);
 	if (! -f "$i") {
-		&perror("FATAL", "", -1, "no $i in \"$portdir\".") unless $i eq $makevar{MD5_FILE} && $makevar{DISTFILES} eq "";
+		&perror("FATAL", "", -1, "no $i in \"$portdir\".") unless $i eq $makevar{DISTINFO_FILE} && $makevar{DISTFILES} eq "";
 	} else {
 		my $proc = $checker{$i};
 		&$proc($i) || &perror("", "", -1, "Cannot open the file $i\n");

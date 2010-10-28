@@ -25,7 +25,7 @@ USE_KDE4=	kdeprefix pimlibs automoc4 pykde4 pykdeuic4
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build
 USE_PYTHON=	2.5+
-MD5_FILE=	${PORTSDIR}/sysutils/kdeadmin4/distinfo
+DISTINFO_FILE=	${PORTSDIR}/sysutils/kdeadmin4/distinfo
 CMAKE_ARGS+=	-DINSTALL_SYSTEM_CONFIG_PRINTER:BOOL=On
 
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}

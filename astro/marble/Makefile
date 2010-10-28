@@ -25,7 +25,7 @@ USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
-MD5_FILE=	${PORTSDIR}/misc/kdeedu4/distinfo
+DISTINFO_FILE=	${PORTSDIR}/misc/kdeedu4/distinfo
 MAKE_JOBS_UNSAFE=	yes
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/marble

@@ -14,7 +14,7 @@ MAINTAINER=	gelraen.ua@gmail.com
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
 
 MASTERDIR=	${.CURDIR}/../mysql-workbench51
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 EXTRA_PATCHES=	${.CURDIR}/files/52-patch-frontend__linux__workbench__Makefile.am \
 		${.CURDIR}/files/52-patch-configure.in \
 		${.CURDIR}/files/52-patch-ext__ctemplate__ctemplate-src__configure.ac \

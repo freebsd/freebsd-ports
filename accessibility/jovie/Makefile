@@ -25,7 +25,7 @@ USE_KDE4=	kdeprefix kdelibs automoc4
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build
 USE_LDCONFIG=	yes
-MD5_FILE=	${PORTSDIR}/accessibility/kdeaccessibility4/distinfo
+DISTINFO_FILE=	${PORTSDIR}/accessibility/kdeaccessibility4/distinfo
 MAKE_JOBS_SAFE=	yes
 
 CMAKE_ARGS+=	-DKDE4_JOVIE_ALSA:BOOL=OFF

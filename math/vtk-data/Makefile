@@ -12,7 +12,7 @@ COMMENT=	The Visualization Toolkit examples data
 
 MASTERDIR=	${.CURDIR}/../vtk
 
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 WRKSRC=		${WRKDIR}/VTKData-release-${PORTVERSION}
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message

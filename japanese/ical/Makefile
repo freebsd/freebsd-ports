@@ -26,7 +26,7 @@ LIB_DEPENDS=	tk80jp:${PORTSDIR}/japanese/tk80
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
 MASTERDIR=	${.CURDIR}/../../deskutils/ical
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 
 USE_XORG=	x11
 GNU_CONFIGURE=	yes

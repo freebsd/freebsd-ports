@@ -11,7 +11,7 @@ FLAVOR=		toxic
 
 MASTERDIR=	${.CURDIR}/../gtk-aluminumalloy-volcanic-theme
 
-MD5_FILE=	${.CURDIR}/../gtk-aluminumalloy-toxic-theme/distinfo
+DISTINFO_FILE=	${.CURDIR}/../gtk-aluminumalloy-toxic-theme/distinfo
 PLIST=		${.CURDIR}/../gtk-aluminumalloy-toxic-theme/pkg-plist
 
 .include "${MASTERDIR}/Makefile"

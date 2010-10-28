@@ -15,7 +15,7 @@ COMMENT=	BitTorrent Library written in C++ (development version)
 
 MASTERDIR=	${.CURDIR}/../libtorrent
 PATCHDIR=	${.CURDIR}/files/
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${MASTERDIR}/pkg-descr
 

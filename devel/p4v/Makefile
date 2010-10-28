@@ -28,7 +28,7 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
+DISTINFO_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
 .include <bsd.port.pre.mk>
 

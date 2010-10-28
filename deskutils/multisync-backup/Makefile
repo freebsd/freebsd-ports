@@ -11,7 +11,7 @@ COMMENT=	Multisync backup plugin
 
 RUN_DEPENDS=	multisync:${PORTSDIR}/deskutils/multisync
 
-MD5_FILE=	${MASTERDIR}/distinfo
+DISTINFO_FILE=	${MASTERDIR}/distinfo
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
 

@@ -25,7 +25,7 @@ PYDISTUTILS_PKGNAME=	Tkinter
 PYDISTUTILS_PKGVERSION=	0.0.0
 USE_TK=	82+
 WRKSRC=		${PYTHON_WRKSRC}/Modules
-MD5_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
+DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
 
 .include <bsd.port.pre.mk>
 

@@ -8,7 +8,7 @@
 CATEGORIES=	japanese print
 
 MASTERDIR=	${.CURDIR}/../../print/acroread9
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 
 ADOBE_LANG=	JPN
 

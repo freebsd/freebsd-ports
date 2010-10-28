@@ -21,7 +21,7 @@ COMMENT=	Distributed.net distributed computing project client
 
 # These are architecture dependent
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd-${ARCH:S/i386/x86/}-elf
-MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
+DISTINFO_FILE=	${MASTERDIR}/distinfo.${ARCH}
 
 ONLY_FOR_ARCHS=	i386 sparc64 amd64
 

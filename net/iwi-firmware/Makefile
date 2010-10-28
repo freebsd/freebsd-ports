@@ -15,7 +15,7 @@ MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Intel PRO/Wireless 2200 Driver Firmware
 
 MASTERDIR=	${.CURDIR}/../ipw-firmware
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${.CURDIR}/pkg-descr
 FILESDIR=	${.CURDIR}/files
