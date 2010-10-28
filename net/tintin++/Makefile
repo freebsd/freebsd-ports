@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	tintin++
-PORTVERSION=	2.00.3
+PORTVERSION=	2.00.4
 CATEGORIES+=	net games
 MASTER_SITES=	SF/tintin/TinTin%2B%2B%20Source%20Code/${PORTVERSION}/
 DISTNAME=	tintin-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A client program to help playing MUDs
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
