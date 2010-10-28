@@ -445,6 +445,7 @@
     SUBDIR += prng
     SUBDIR += proofgeneral
     SUBDIR += pspp
+    SUBDIR += py-apgl
     SUBDIR += py-basemap
     SUBDIR += py-basemap-data
     SUBDIR += py-bitvector

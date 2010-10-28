@@ -1,0 +1,16 @@
+Another Python Graph Library is a simple, fast and easy to use graph library
+with some machine learning features. The main features are as follows:
+
+    * Directed, undirected and multigraphs designed under a hierarchical
+class structure
+    * Sparse and Dense graph structures using numpy and scipy for fast linear
+algebra computations
+    * Many operations on graphs such as subgraphs, search, Floyd-Warshall,
+Dijkstras algorithm
+    * Erdos-Renyi, Small-World and Albert-Barabasi random graphs
+    * Write to Pajek, and simple CSV files
+    * Some machine learning features - data preprocessing, kernels, PCA, KCCA,
+wrappers for LibSVM, and some mlpy learning algorithms
+    * Unit tested using the Python unittest framework
+
+WWW:   http://packages.python.org/apgl/
