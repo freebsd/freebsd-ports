@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imaptools
-PORTVERSION=	1.80
+PORTVERSION=	1.81
 CATEGORIES=	mail
 MASTER_SITES=	http://www.athensfbc.com/imap_tools/files/
 DISTNAME=	imap_tools_V${PORTVERSION}
@@ -15,6 +15,7 @@ MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	A number of tools and scripts for use with IMAP servers
 
 FETCH_ARGS=	-pRr
+USE_PERL5_RUN=	yes
 
 do-build:
 	${REINPLACE_CMD} \
