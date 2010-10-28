@@ -7,6 +7,7 @@
 
 PORTNAME=	jinzora
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	www multimedia
 MASTER_SITES=	SF/${PORTNAME}/Jinzora%20${PORTVERSION}
 
@@ -16,15 +17,10 @@ COMMENT=	A web based media streaming and management system
 USE_PHP=	mysql session iconv gd pdf
 
 WWWDOCROOT?=	www
-JINZORA?=	${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 SUB_FILES=      pkg-message
-SUB_LIST=	JINZORA="${JINZORA}" \
-		JINZORA="${JINZORA}"
-
-JINZORADIR=	${WWWDOCROOT}/${JINZORA}
 
 do-install:
 	${MKDIR} ${WWWDIR}
