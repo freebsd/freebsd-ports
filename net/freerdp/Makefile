@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	freerdp
-PORTVERSION=	0.7.4
+PORTVERSION=	0.8.1
 CATEGORIES=	net comms ipv6
-MASTER_SITES=	SF/${PORTNAME}/0.7
+MASTER_SITES=	SF/${PORTNAME}/0.8
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A free remote desktop protocol client
