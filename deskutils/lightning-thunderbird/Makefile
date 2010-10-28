@@ -18,6 +18,7 @@ COMMENT=	An integrated calendar for Thunderbird 3.1
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/thunderbird/thunderbird-bin:${PORTSDIR}/mail/thunderbird
 
+CONFLICTS=	spidermonkey-1.[0-7]*
 USE_AUTOTOOLS=	autoconf:213 libtool:22
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
@@ -45,7 +46,7 @@ NOGECKO_INSTALL=	yes
 .include <bsd.libnames.mk>
 .include <bsd.port.pre.mk>
 
-XPI_FILE=	${DISTNAME}-${GECKO}-freebsd${OSVERSION:C/([0-9]).+/\1/}-${ARCH}.xpi
+XPI_FILE=	${DISTNAME:C/.source//}-freebsd${OSVERSION:C/([0-9]).+/\1/}-${ARCH}.xpi
 PLIST_FILES=	%%DATADIR%%/${XPI_FILE}
 PLIST_DIRS=	%%DATADIR%%
 

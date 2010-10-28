@@ -18,6 +18,7 @@ COMMENT=	An integrated calendar for Thunderbird and SeaMonkey
 OPTIONS+=	THUNDERBIRD "Install Thunderbird 3.0" on \
 		SEAMONKEY "Install SeaMonkey 2.0" off
 
+CONFLICTS=	spidermonkey-1.[0-7]*
 USE_AUTOTOOLS=	autoconf:213 libtool:22
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
@@ -54,7 +55,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/thunderbird/thunderbird-bin:${PORTSDIR}/mail/thun
 RUN_DEPENDS+=	${LOCALBASE}/lib/seamonkey/seamonkey-bin:${PORTSDIR}/www/seamonkey2
 .endif
 
-XPI_FILE=	${DISTNAME}-${GECKO}-freebsd${OSVERSION:C/([0-9]).+/\1/}-${ARCH}.xpi
+XPI_FILE=	${DISTNAME:C/.source//:C/-sunbird//}-freebsd${OSVERSION:C/([0-9]).+/\1/}-${ARCH}.xpi
 PLIST_FILES=	%%DATADIR%%/${XPI_FILE}
 PLIST_DIRS=	%%DATADIR%%
 
