@@ -5910,6 +5910,7 @@ imap-uw                         ports/mail/imap-uw
 imapfilter                      ports/mail/imapfilter
 imapproxy                       ports/net/imapproxy
 imapsync                        ports/mail/imapsync
+imaptools                       ports/mail/imaptools
 imaze                           ports/games/imaze
 imb                             ports/benchmarks/imb
 imc                             ports/graphics/imc
@@ -6747,6 +6748,7 @@ jiic                            ports/devel/jiic
 jikes                           ports/java/jikes
 jin                             ports/games/jin
 jing                            ports/textproc/jing
+jinzora                         ports/www/jinzora
 jit                             ports/net-im/jit
 jive                            ports/misc/jive
 jjclient                        ports/deskutils/jjclient
@@ -19048,6 +19050,7 @@ pear-Net_CheckIP                ports/net/pear-Net_CheckIP
 pear-Net_Cyrus                  ports/mail/pear-Net_Cyrus
 pear-Net_DIME                   ports/net/pear-Net_DIME
 pear-Net_DNS                    ports/dns/pear-Net_DNS
+pear-Net_DNS2                   ports/dns/pear-Net_DNS2
 pear-Net_DNSBL                  ports/net/pear-Net_DNSBL
 pear-Net_Dict                   ports/net/pear-Net_Dict
 pear-Net_FTP                    ports/ftp/pear-Net_FTP
@@ -19336,6 +19339,7 @@ pear-net_cyrus                  ports/mail/pear-Net_Cyrus
 pear-net_dict                   ports/net/pear-Net_Dict
 pear-net_dime                   ports/net/pear-Net_DIME
 pear-net_dns                    ports/dns/pear-Net_DNS
+pear-net_dns2                   ports/dns/pear-Net_DNS2
 pear-net_dnsbl                  ports/net/pear-Net_DNSBL
 pear-net_finger                 ports/net/pear-Net_Finger
 pear-net_ftp                    ports/ftp/pear-Net_FTP
@@ -23240,7 +23244,6 @@ sex                             ports/games/sex
 sextractor                      ports/astro/sextractor
 seyon                           ports/comms/seyon
 sfbol                           ports/games/sfbol
-sfdisk                          ports/sysutils/sfdisk
 sfio                            ports/devel/sfio
 sflowtool                       ports/net/sflowtool
 sfml                            ports/devel/sfml
@@ -23386,6 +23389,7 @@ sjeng                           ports/games/sjeng
 sjitter                         ports/net-mgmt/sjitter
 sk-aspell                       ports/textproc/sk-aspell
 sk-ispell                       ports/textproc/sk-ispell
+sk1libs                         ports/graphics/sk1libs
 skadns                          ports/dns/skadns
 skalibs                         ports/devel/skalibs
 skanlite                        ports/graphics/skanlite
