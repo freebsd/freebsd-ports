@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/extremetuxracer/extreme-tuxracer/${PORTVERSION}/
 DISTNAME=	extremetuxracer-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	A 3d penguin racing game using OpenGL
 
 LIB_DEPENDS=	tcl85:${PORTSDIR}/lang/tcl85 \
