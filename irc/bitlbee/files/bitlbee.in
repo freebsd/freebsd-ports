@@ -23,6 +23,6 @@ load_rc_config $name
 
 required_files="${bitlbee_config}"
 command="%%PREFIX%%/sbin/bitlbee"
-command_args="-D -u ${bitlbee_user} -c ${bitlbee_config} ${bitlbee_flags}"
+command_args="-F -u ${bitlbee_user} -c ${bitlbee_config} ${bitlbee_flags}"
 
 run_rc_command "$1"
