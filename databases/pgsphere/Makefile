@@ -7,6 +7,7 @@
 
 PORTNAME=	pgsphere
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	databases geography
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/2558/ \
 		LOCAL/sunpoet
@@ -28,7 +29,7 @@ MAKE_ARGS+=	DOCS=""
 
 PLIST_FILES=	lib/postgresql/pg_sphere.so \
 		%%DATADIR%%/contrib/pg_sphere.sql
-PLIST_DIRS=	%%DATADIR%%/contrib
+PLIST_DIRSTRY=	%%DATADIR%%/contrib
 
 .if !defined(NOPORTDOCS)
 PLIST_FILES+=	%%DOCSDIR%%/contrib/README.pg_sphere \
