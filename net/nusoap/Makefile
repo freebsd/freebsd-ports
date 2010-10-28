@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nusoap
-PORTVERSION=	0.7.3
+PORTVERSION=	0.9.5
 CATEGORIES=	net www
 MASTER_SITES=	SF
 
@@ -15,7 +15,7 @@ COMMENT=	SOAP Toolkit for PHP
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_PHP=	curl zlib
+USE_PHP=	curl zlib xml
 USE_ZIP=	yes
 
 .include <bsd.port.pre.mk>
