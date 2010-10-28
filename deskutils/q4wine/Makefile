@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	q4wine
-PORTVERSION=	0.118
+PORTVERSION=	0.120
 CATEGORIES=	deskutils emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo \
 		wine:${PORTSDIR}/emulators/wine \
 		wget:${PORTSDIR}/ftp/wget \
 		cabextract:${PORTSDIR}/archivers/cabextract \
-		xdg-open:${PORTSDIR}/devel/xdg-utils
+		icotool:${PORTSDIR}/graphics/icoutils
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build rcc_build moc_build uic_build \
@@ -30,7 +30,17 @@ MAN1=		q4wine-cli.1 q4wine-helper.1 q4wine.1
 
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD=	yes
-USE_LDCONFIG=	yes
+CMAKE_ARGS+=	-DMANPAGE_ENTRY_PATH=${MANPREFIX}/man/
+
+OPTIONS=	DBUS "Enable DBus notification support" on
+
+.include <bsd.port.options.mk>
+
+.if defined(WITHOUT_DBUS)
+CMAKE_ARGS+=	-DWITH_DBUS:BOOL=OFF
+.else
+QT_COMPONENTS+=	dbus
+.endif
 
 post-install:
 	@-update-desktop-database

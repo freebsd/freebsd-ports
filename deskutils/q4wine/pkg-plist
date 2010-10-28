@@ -4,6 +4,7 @@ bin/q4wine-helper
 lib/q4wine/libq4wine-core.so
 share/applications/q4wine.desktop
 share/pixmaps/q4wine.png
+%%DATADIR%%/i18n/cs_cz.qm
 %%DATADIR%%/i18n/en_us.qm
 %%DATADIR%%/i18n/es_es.qm
 %%DATADIR%%/i18n/it_it.qm
@@ -44,6 +45,5 @@ share/pixmaps/q4wine.png
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/i18n
 @dirrm %%DATADIR%%
-@dirrm share/man
 @dirrmtry share/applications
 @dirrm lib/q4wine

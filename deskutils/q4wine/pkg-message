@@ -11,6 +11,7 @@ and then, as root, executing the command:
 
 mount /proc
 
-Also you need sudo for mdconfig, mount_cd9660, umount commands
+Also you need passwordless sudo for mdconfig, mount_cd9660, umount commands for 
+work with ISO images
 
 ################################################################################
