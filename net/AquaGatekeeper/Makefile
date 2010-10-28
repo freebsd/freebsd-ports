@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFLICTS=	AquaGatekeeper-2.*
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	amd64 i386
-MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
+DISTINFO_FILE=	${MASTERDIR}/distinfo.${ARCH}
 
 RESTRICTED=	No commercial redistribution
 SUB_FILES=	pkg-message

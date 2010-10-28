@@ -25,7 +25,7 @@ NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/jdictionary/Plugins
 
 PLIST=		${MASTERDIR}/pkg-plist.plugin
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 DESCR=		${.CURDIR}/pkg-descr
 PLIST_SUB+=	DISTNAME=${DISTNAME}
 

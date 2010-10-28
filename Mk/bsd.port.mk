@@ -1123,7 +1123,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Different checksum algorithms to check for verifying the
 #				  integrity of the distfiles. The absence of the algorithm
 #				  in distinfo doesn't make it fail.
-#				  Default: md5 sha256
+#				  Default: sha256 (md5 is deprecated, allowed but unused)
 # NO_CHECKSUM	- Don't verify the checksum.  Typically used when
 #				  when you noticed the distfile you just fetched has
 #				  a different checksum and you intend to verify if
@@ -2267,17 +2267,16 @@ DO_NADA?=		${TRUE}
 # Use this as the first operand to always build dependency.
 NONEXISTENT?=	/nonexistent
 
-CHECKSUM_ALGORITHMS?= md5 sha256
+CHECKSUM_ALGORITHMS?= sha256
 
-MD5_FILE?=		${MASTERDIR}/distinfo
+DISTINFO_FILE?=		${MASTERDIR}/distinfo
 
 MAKE_FLAGS?=	-f
 MAKEFILE?=		Makefile
 MAKE_ENV+=		PREFIX=${PREFIX} \
 			LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
 			MOTIFLIB="${MOTIFLIB}" LIBDIR="${LIBDIR}" \
-			CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
-			CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+			CC="${CC}" CFLAGS="${CFLAGS}" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 			MANPREFIX="${MANPREFIX}"
 
 # Add -fno-strict-aliasing to CFLAGS with optimization level -O2 or higher.
@@ -3519,10 +3518,10 @@ check-vulnerable:
 	fi
 .endif
 
-# set alg to any of SIZE, MD5, SHA256 (or any other checksum algorithm):
-DISTINFO_DATA?=	if [ \( -n "${DISABLE_SIZE}" -a -n "${NO_CHECKSUM}" \) -o ! -f "${MD5_FILE}" ]; then exit; fi; \
+# set alg to any of SIZE, SHA256 (or any other checksum algorithm):
+DISTINFO_DATA?=	if [ \( -n "${DISABLE_SIZE}" -a -n "${NO_CHECKSUM}" \) -o ! -f "${DISTINFO_FILE}" ]; then exit; fi; \
 	DIR=${DIST_SUBDIR}; ${AWK} -v alg=$$alg -v file=$${DIR:+$$DIR/}$${file}	\
-		'$$1 == alg && $$2 == "(" file ")" {print $$4}' ${MD5_FILE}
+		'$$1 == alg && $$2 == "(" file ")" {print $$4}' ${DISTINFO_FILE}
 
 # Fetch
 
@@ -3553,11 +3552,11 @@ do-fetch:
 				${ECHO_MSG} "=> Please correct this problem and try again."; \
 				exit 1; \
 			fi; \
-			if [ -f ${MD5_FILE} -a "x${NO_CHECKSUM}" = "x" ]; then \
-				_md5sum=`alg=MD5; ${DISTINFO_DATA}`; \
-				if [ -z "$$_md5sum" ]; then \
-					${ECHO_MSG} "=> $${DIR:+$$DIR/}$$file is not in ${MD5_FILE}."; \
-					${ECHO_MSG} "=> Either ${MD5_FILE} is out of date, or"; \
+			if [ -f ${DISTINFO_FILE} -a "x${NO_CHECKSUM}" = "x" ]; then \
+				_sha256sum=`alg=SHA256; ${DISTINFO_DATA}`; \
+				if [ -z "$$_sha256sum" ]; then \
+					${ECHO_MSG} "=> $${DIR:+$$DIR/}$$file is not in ${DISTINFO_FILE}."; \
+					${ECHO_MSG} "=> Either ${DISTINFO_FILE} is out of date, or"; \
 					${ECHO_MSG} "=> $${DIR:+$$DIR/}$$file is spelled incorrectly."; \
 					exit 1; \
 				fi; \
@@ -3782,7 +3781,7 @@ do-configure:
 .if defined(HAS_CONFIGURE)
 	@(cd ${CONFIGURE_WRKSRC} && \
 	    ${SET_LATE_CONFIGURE_ARGS} \
-		if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
+		if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
 	    CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 	    INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
 	    INSTALL_DATA="${INSTALL_DATA}" \
@@ -4757,7 +4756,7 @@ fetch-url-list-int:
 			fi ; \
 			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
 				DIR=${DIST_SUBDIR}; \
-				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
+				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${DISTINFO_FILE} | ${AWK} '{print $$4}'`; \
 				case $${file} in \
 				*/*)	args="-o $${file} $${site}$${file}";; \
 				*)		args=$${site}$${file};; \
@@ -4788,7 +4787,7 @@ fetch-url-list-int:
 			fi ; \
 			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
 				DIR=${DIST_SUBDIR}; \
-				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
+				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${DISTINFO_FILE} | ${AWK} '{print $$4}'`; \
 				case $${file} in \
 				*/*)	args="-o $${file} $${site}$${file}";; \
 				*)		args=$${site}$${file};; \
@@ -4846,7 +4845,7 @@ checksum_init=\
 makesum: check-checksum-algorithms
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch NO_CHECKSUM=yes \
 		DISABLE_SIZE=yes
-	@if [ -f ${MD5_FILE} ]; then ${CAT} /dev/null > ${MD5_FILE}; fi
+	@if [ -f ${DISTINFO_FILE} ]; then ${CAT} /dev/null > ${DISTINFO_FILE}; fi
 	@( \
 		cd ${DISTDIR}; \
 		\
@@ -4857,17 +4856,17 @@ makesum: check-checksum-algorithms
 				eval alg_executable=\$$$$alg; \
 				\
 				if [ $$alg_executable != "NO" ]; then \
-					$$alg_executable $$file >> ${MD5_FILE}; \
+					$$alg_executable $$file >> ${DISTINFO_FILE}; \
 				fi; \
 			done; \
 			if [ -z "${NO_SIZE}" ]; then \
-				${ECHO_CMD} "SIZE ($$file) = "`${LS} -ALln $$file | ${AWK} '{print $$5}'` >> ${MD5_FILE}; \
+				${ECHO_CMD} "SIZE ($$file) = "`${LS} -ALln $$file | ${AWK} '{print $$5}'` >> ${DISTINFO_FILE}; \
 			fi; \
 		done \
 	)
 	@for file in ${_IGNOREFILES}; do \
 		for alg in ${CHECKSUM_ALGORITHMS:U}; do \
-			${ECHO_CMD} "$$alg ($$file) = IGNORE" >> ${MD5_FILE}; \
+			${ECHO_CMD} "$$alg ($$file) = IGNORE" >> ${DISTINFO_FILE}; \
 		done; \
 	done
 .endif
@@ -4875,7 +4874,7 @@ makesum: check-checksum-algorithms
 .if !target(checksum)
 checksum: fetch check-checksum-algorithms
 	@${checksum_init} \
-	if [ -f ${MD5_FILE} ]; then \
+	if [ -f ${DISTINFO_FILE} ]; then \
 		cd ${DISTDIR}; OK="";\
 		for file in ${_CKSUMFILES}; do \
 			ignored="true"; \
@@ -4979,7 +4978,7 @@ checksum: fetch check-checksum-algorithms
 		\
 		if [ "$$OK" != "true" -a ${FETCH_REGET} -eq 0 ]; then \
 			${ECHO_MSG} "===>  Giving up on fetching files: $$refetchlist"; \
-			${ECHO_MSG} "Make sure the Makefile and distinfo file (${MD5_FILE})"; \
+			${ECHO_MSG} "Make sure the Makefile and distinfo file (${DISTINFO_FILE})"; \
 			${ECHO_MSG} "are up to date.  If you are absolutely sure you want to override this"; \
 			${ECHO_MSG} "check, type \"make NO_CHECKSUM=yes [other args]\"."; \
 			exit 1; \
@@ -4988,7 +4987,7 @@ checksum: fetch check-checksum-algorithms
 			exit 1; \
 		fi; \
 	elif [ -n "${_CKSUMFILES:M*}" ]; then \
-		${ECHO_MSG} "=> No checksum file (${MD5_FILE})."; \
+		${ECHO_MSG} "=> No checksum file (${DISTINFO_FILE})."; \
 	fi
 .endif
 
@@ -5375,7 +5374,7 @@ FETCH_LIST?=	for i in $$deps; do \
 				continue;	\
 			fi;;	\
 		esac;	\
-		echo cd $$dir; cd $$dir; ${MAKE} $$targ; \
+		echo cd $$dir; ${MAKE} $$targ; \
 	done
 
 .if !target(fetch-required)

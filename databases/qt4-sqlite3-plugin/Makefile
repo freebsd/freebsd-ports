@@ -14,7 +14,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt SQLite 3.x database plugin
 
 DB=		sqlite
-MD5_FILE=	${PORTSDIR}/devel/qt4/distinfo
+DISTINFO_FILE=	${PORTSDIR}/devel/qt4/distinfo
 
 LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
 

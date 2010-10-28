@@ -36,7 +36,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION}${_SUF1}${_SUF2}
 DIST_SUBDIR=	bjfilter
 PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${.CURDIR}/pkg-descr
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 NO_MTREE=	yes

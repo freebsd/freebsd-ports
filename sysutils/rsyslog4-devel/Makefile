@@ -82,7 +82,7 @@ IGNORE=	with gssapi module is only supported on FreeBSD 7.x or later
 CONFIGURE_ARGS+=	--disable-rsyslogd --disable-klog
 
 DESCR?=		${.CURDIR}/../rsyslog4-devel/pkg-descr
-MD5_FILE?=	${.CURDIR}/../rsyslog4-devel/distinfo
+DISTINFO_FILE?=	${.CURDIR}/../rsyslog4-devel/distinfo
 .endif
 
 .include <bsd.port.post.mk>

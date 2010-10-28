@@ -26,7 +26,7 @@ LATEST_LINK:=	${LATEST_LINK}-reference
 
 COMMENT=	Programming reference for ${REFERENCE_PORT}
 
-MD5_FILE=	${PARENTDIR}/distinfo
+DISTINFO_FILE=	${PARENTDIR}/distinfo
 
 REFERENCE_SRC?=	${WRKSRC}/docs/reference
 BOOKS?=		.

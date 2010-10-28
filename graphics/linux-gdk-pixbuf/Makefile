@@ -21,6 +21,6 @@ LINUX_DIST_VER=	4
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LDCONFIG=	yes
 PLIST_SUB=	VERSION=${PORTVERSION:C/^([^\.]+\.[^\.]+\.[^\.]+).+/\1/}
-MD5_FILE?=	${PKGDIR}/distinfo
+DISTINFO_FILE?=	${PKGDIR}/distinfo
 
 .include <bsd.port.mk>

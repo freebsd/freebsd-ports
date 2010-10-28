@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.23 2009-12-13 19:29:34 bsam Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.linux-rpm.mk,v 1.24 2010-10-28 21:00:06 erwin Exp $
 #
 
 # Variables:
@@ -148,7 +148,7 @@ EXTRACT_CMD?=			${RPM2CPIO}
 EXTRACT_BEFORE_ARGS?=
 EXTRACT_AFTER_ARGS?=	| ${CPIO} -id --quiet
 
-MD5_FILE?=				${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
+DISTINFO_FILE?=				${MASTERDIR}/distinfo.${LINUX_RPM_ARCH}
 
 BRANDELF_DIRS?=
 BRANDELF_FILES?=

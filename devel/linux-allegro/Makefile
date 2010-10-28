@@ -25,7 +25,7 @@ DIST_SUBDIR=		rpm
 USE_LDCONFIG=		yes
 SRC_DISTFILES=
 
-MD5_FILE=	${MASTERDIR}/distinfo
+DISTINFO_FILE=	${MASTERDIR}/distinfo
 
 post-extract:
 	@cd ${WRKSRC}/usr/lib; \

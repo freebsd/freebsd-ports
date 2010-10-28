@@ -8,7 +8,7 @@
 PKGNAMEPREFIX=	dk-
 
 MASTERDIR=	${.CURDIR}/../../print/acroread8
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 
 ADOBE_LANG=	DAN
 

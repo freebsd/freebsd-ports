@@ -22,7 +22,7 @@ RUN_DEPENDS=		${LINUXBASE}/usr/lib/oracle/${ORACLEVERSION}/client/lib/libocci.so
 
 ONLY_FOR_ARCHS=		i386	# amd64(not yet on own)
 NO_BUILD=		yes
-MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
+DISTINFO_FILE=		${MASTERDIR}/distinfo.${ARCH}
 
 RESTRICTED=		Packaging prohibited by Oracle license
 

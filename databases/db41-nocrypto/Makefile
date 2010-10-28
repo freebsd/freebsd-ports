@@ -9,6 +9,6 @@ PKGNAMESUFFIX=	-nocrypto
 DISTNAME=	db-${PORTVERSION}.NC
 
 MASTERDIR=	${.CURDIR}/../db41
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 
 .include "${MASTERDIR}/Makefile"

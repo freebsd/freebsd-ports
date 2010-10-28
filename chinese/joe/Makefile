@@ -18,6 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 LATEST_LINK=	${PKGNAMEPREFIX}joe
 
 MASTERDIR=	${.CURDIR}/../../editors/joe
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 
 .include "${MASTERDIR}/Makefile"

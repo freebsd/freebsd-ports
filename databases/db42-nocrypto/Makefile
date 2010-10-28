@@ -11,6 +11,6 @@ DISTNAME=	db-${PORTVERSION}.NC
 MAINTAINER=	mandree@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../db42
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 
 .include "${MASTERDIR}/Makefile"

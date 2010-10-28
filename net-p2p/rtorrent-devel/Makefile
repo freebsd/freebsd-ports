@@ -18,7 +18,7 @@ RUN_DEPENDS=	libtorrent-devel=0.12.6_1:${PORTSDIR}/net-p2p/libtorrent-devel
 
 MASTERDIR=	${.CURDIR}/../rtorrent
 PATCHDIR=	${.CURDIR}/files/
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${MASTERDIR}/pkg-descr
 

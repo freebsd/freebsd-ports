@@ -30,7 +30,7 @@ VOICEDIR_REL=	${VOICEDIR:S|^${PREFIX}/||}
 
 PLIST_SUB=	VOICE="${VOICE}" VOICEDIR_REL="${VOICEDIR_REL}"
 
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 
 .include <bsd.port.pre.mk>
 

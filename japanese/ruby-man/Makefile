@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby reference manual (Japanese version), in HTML format
 
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 PKGDIR=		${.CURDIR}
 
 LANGSUFFIX=	-jp

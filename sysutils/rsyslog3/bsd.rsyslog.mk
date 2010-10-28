@@ -20,7 +20,7 @@ RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog3
 PLIST_FILES=	${MTYPES:S|^|lib/rsyslog/|:S|$|${MNAME}.so|}
 PLIST=	""
 DESCR?=		${.CURDIR}/../rsyslog3/pkg-descr
-MD5_FILE?=	${.CURDIR}/../rsyslog3/distinfo
+DISTINFO_FILE?=	${.CURDIR}/../rsyslog3/distinfo
 
 do-install:
 	@${INSTALL} -d ${PREFIX}/lib/rsyslog/

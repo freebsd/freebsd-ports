@@ -8,7 +8,7 @@
 CATEGORIES=	french print linux
 
 MASTERDIR=	${.CURDIR}/../../print/acroread9
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 
 ADOBE_LANG=	FRA
 

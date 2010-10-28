@@ -13,7 +13,7 @@ MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Intel PRO/Wireless 2200 Firmware Kernel Module
 
 MASTERDIR=	${.CURDIR}/../ipw-firmware-kmod
-MD5_FILE=	${.CURDIR}/distinfo
+DISTINFO_FILE=	${.CURDIR}/distinfo
 PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${.CURDIR}/pkg-descr
 

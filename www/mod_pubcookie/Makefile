@@ -20,7 +20,7 @@ MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	pubcookie-login-server-[0-9]*
 
 FILESDIR=	${.CURDIR}/../pubcookie-login-server/files
-MD5_FILE=	${.CURDIR}/../pubcookie-login-server/distinfo
+DISTINFO_FILE=	${.CURDIR}/../pubcookie-login-server/distinfo
 PATCHDIR=	${.CURDIR}/../pubcookie-login-server/files
 
 HAS_CONFIGURE=	YES

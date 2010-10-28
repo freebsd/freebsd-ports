@@ -76,14 +76,13 @@ do-install:
 # Download the files from http://au.php.net/distributions/manual/
 #
 makesum:
-	@> ${MD5_FILE}
+	@> ${DISTINFO_FILE}
 .for l in ${PHP_LANGS}
 	@f=php_manual_${l}-${PORTVERSION}${EXTRACT_SUFX}; \
 	${ECHO_CMD} makesum on $${f}; \
 	cd ${DISTDIR}; \
-	${MD5} $${f} >> ${MD5_FILE}; \
-	${SHA256} $${f} >> ${MD5_FILE}; \
-	${ECHO_CMD} "SIZE ($${f}) = "`${LS} -ALln $${f} | ${AWK} '{print $$5}'` >> ${MD5_FILE}
+	${SHA256} $${f} >> ${DISTINFO_FILE}; \
+	${ECHO_CMD} "SIZE ($${f}) = "`${LS} -ALln $${f} | ${AWK} '{print $$5}'` >> ${DISTINFO_FILE}
 .endfor
 
 fetchdist:

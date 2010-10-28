@@ -22,7 +22,7 @@ USE_KDE4=	kdeprefix kdelibs automoc4 pykde4
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build
 USE_PYTHON=	2.5+
-MD5_FILE=	${PORTSDIR}/x11/kdebase4-workspace/distinfo
+DISTINFO_FILE=	${PORTSDIR}/x11/kdebase4-workspace/distinfo
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/plasma/generic/scriptengines/python
 CMAKE_OUTSOURCE=	yes
