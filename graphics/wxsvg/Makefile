@@ -6,7 +6,7 @@
 #    $MCom: ports/graphics/wxsvg/Makefile,v 1.1 2006/09/22 01:48:33 ahze Exp $
 
 PORTNAME=	wxsvg
-DISTVERSION=	1.0.5
+DISTVERSION=	1.0.7
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
@@ -16,6 +16,7 @@ COMMENT=	C++ library to create, manipulate, and render SVG files
 LIB_DEPENDS+=	avformat.1:${PORTSDIR}/multimedia/ffmpeg
 
 USE_BZIP2=	yes
+USE_AUTOTOOLS=	automake:111
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-wx-config=${LOCALBASE}/bin/wxgtk2-2.8-config
@@ -24,10 +25,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GNOME=	libartlgpl2
 USE_GMAKE=	yes
 USE_WX=		2.8
+USE_AUTOTOOLS=	automake:111
 
 post-patch:
 	@cd ${WRKSRC} && \
-		${TOUCH} -f README NEWS INSTALL
+		${TOUCH} -f NEWS INSTALL
 	@${REINPLACE_CMD} -e 's|WX_CONFIG_NAME=wx-config|WX_CONFIG_NAME=${WX_CONFIG}|' \
 		${WRKSRC}/*.m4
 

@@ -1,0 +1,11 @@
+--- Makefile.am.orig	2010-10-11 21:27:01.000000000 +0200
++++ Makefile.am	2010-10-11 21:27:18.000000000 +0200
+@@ -1,7 +1,7 @@
+ SUBDIRS = src svgview include
+ ACLOCAL_AMFLAGS = -I. -I m4
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libwxsvg.pc
+ EXTRA_DIST     = libwxsvg.pc.in
+ 
