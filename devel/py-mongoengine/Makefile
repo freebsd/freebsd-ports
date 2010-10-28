@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mongoengine
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	mail@derzinn.de
 COMMENT=	A Python Object-Document-Mapper for working with MongoDB
 
-RUN_DEPENDS=	pymongo>=1.6:${PORTSDIR}/databases/pymongo
+RUN_DEPENDS=	pymongo>=1.9:${PORTSDIR}/databases/pymongo
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
