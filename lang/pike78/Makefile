@@ -91,7 +91,7 @@ PLIST_FILES=	bin/pike bin/pike78 bin/hilfe
 
 .include <bsd.port.pre.mk>
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
 .ifdef(WITHOUT_RELOCATABLE_DUMPED_MODULES)
 CONFIGURE_ARGS+=	--without-relocatable-dumped-modules
