@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bitlbee
-PORTVERSION=	1.2.8
-PORTREVISION=	1
+PORTVERSION=	3.0
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		${MASTER_SITE_LOCAL}
@@ -32,11 +31,13 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 OPTIONS=	DEBUG "Enable debug support" Off \
 		IPV6 "Enable IPv6 support" On \
 		OPENSSL "Use OpenSSL rather than GnuTLS" Off \
+		OTR "Enable OTR encryption support" Off \
 		MSN "Enable MSN protocol support" On \
 		JABBER "Enable Jabber (XMPP) protocol support" On \
 		OSCAR "Enable OSCAR (ICQ, AIM) protocol support" On \
 		YAHOO "Enable Yahoo! protocol support" On \
-		TWITTER "Enable Twitter protocol support" On
+		TWITTER "Enable Twitter protocol support" On \
+		LIBPURPLE "Use libpurple for protocol support" Off
 
 CONFIGURE_ARGS=	--config=/var/db/bitlbee --strip=0
 
@@ -64,6 +65,13 @@ CONFIGURE_ARGS+=--ssl=openssl
 .else
 CONFIGURE_ARGS+=--ssl=gnutls
 LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
+.endif
+
+.if defined(WITH_OTR)
+CONFIGURE_ARGS+=--otr=1
+LIB_DEPENDS+=	otr.4:${PORTSDIR}/security/libotr
+.else
+CONFIGURE_ARGS+=--otr=0
 .endif
 
 .if defined(WITH_MSN)
@@ -96,6 +104,13 @@ CONFIGURE_ARGS+=--twitter=1
 CONFIGURE_ARGS+=--twitter=0
 .endif
 
+.if defined(WITH_LIBPURPLE)
+CONFIGURE_ARGS+=--purple=1
+LIB_DEPENDS+=	purple.7:${PORTSDIR}/net-im/libpurple
+.else
+CONFIGURE_ARGS+=--purple=0
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "s|^EFLAGS=|EFLAGS=${LDFLAGS}|" \
@@ -108,11 +123,6 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e "s:/var/lib/bitlbee:/var/db/bitlbee:" \
 		${WRKSRC}/doc/bitlbee.8
-.if ${OSVERSION} < 700042
-	@${REINPLACE_CMD} \
-		-e "s:-iquote:-I:g" \
-		${WRKSRC}/configure
-.endif
 
 post-install:
 	${MKDIR} ${PREFIX}/etc/bitlbee
