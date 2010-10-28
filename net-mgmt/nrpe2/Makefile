@@ -7,7 +7,7 @@
 
 PORTNAME=	nrpe
 DISTVERSION=	2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/nagios/${PORTNAME}-2.x/${PORTNAME}-${PORTVERSION}
 
@@ -83,6 +83,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/nrpe ${PREFIX}/sbin/nrpe2
 	${INSTALL_PROGRAM} ${WRKSRC}/src/check_nrpe ${PREFIX}/libexec/nagios/check_nrpe2
 	${INSTALL_DATA} ${WRKSRC}/sample-config/nrpe.cfg ${PREFIX}/etc/nrpe.cfg-sample
+	${MKDIR} ${NAGIOSDIR}
 
 post-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} POST-INSTALL

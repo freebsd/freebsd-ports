@@ -1,4 +1,5 @@
 etc/nrpe.cfg-sample
 libexec/nagios/check_nrpe2
 sbin/nrpe2
+@unexec rmdir /var/spool/nagios 2>/dev/null || true
 @unexec rmdir %%NAGIOSDIR%% 2>/dev/null || true
