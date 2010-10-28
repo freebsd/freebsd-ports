@@ -34,6 +34,62 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c223b00d-e272-11df-8e32-000f20797ede">
+    <topic>mozilla -- Heap buffer overflow mixing document.write and DOM insertion</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>3.6.*,1</gt><lt>3.6.12,1</lt></range>
+	<range><gt>3.5.*,1</gt><lt>3.5.15,1</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><gt>1.9.2.*</gt><lt>1.9.2.12</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>3.6.12,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox-devel</name>
+	<range><lt>3.5.15</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.0.10</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>3.1.6</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><gt>2.0.*</gt><lt>2.0.10</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><ge>3.0</ge><lt>3.0.10</lt></range>
+	<range><ge>3.1</ge><lt>3.1.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2010-73 Heap buffer overflow mixing document.write and DOM insertion</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-3765</cvename>
+      <url>http://www.mozilla.org/security/announce/2010/mfsa2010-73.html</url>
+    </references>
+    <dates>
+      <discovery>2010-10-27</discovery>
+      <entry>2010-10-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aab187d4-e0f3-11df-b1ea-001999392805">
     <topic>opera -- multiple vulnerabilities</topic>
     <affects>
