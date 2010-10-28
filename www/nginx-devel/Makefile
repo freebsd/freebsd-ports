@@ -70,7 +70,6 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_UPSTREAM_KEEPALIVE "3rd party upstream keepalive module" off \
 		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
 		MEMC_MODULE		"3rd party memc (memcached) module" off \
-		PASSENGER_MODULE	"3rd party passenger module" off \
 		SLOWFS_CACHE_MODULE	"3rd party slowfs_cache module" off \
 		SUPERVISORD_MODULE	"3rd party supervisord module" off \
 		UDPLOG_MODULE		"3rd party udplog (syslog) module" off
@@ -79,12 +78,6 @@ WANT_GNOME=	yes
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.options.mk>
-
-.if defined(WITH_PASSENGER_MODULE)
-CATEGORIES+=	ruby
-USE_RUBY=	yes
-USE_RAKE=	yes
-.endif
 
 NGINX_VARDIR?=	/var
 NGINX_LOGDIR?=	${NGINX_VARDIR}/log
@@ -375,7 +368,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_MODULE_VERSION}
 .endif
 
 .if defined(WITH_MEMC_MODULE)
-NGINX_MEMC_MODULE_VERSION=	0.08
+NGINX_MEMC_MODULE_VERSION=	0.11
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:memc/}
 MASTER_SITE_SUBDIR+=	osa/:memc
 DISTFILES+=	ngx_http_memc_module-${NGINX_MEMC_MODULE_VERSION}.tar.gz:memc
@@ -389,13 +382,6 @@ CONFIGURE_ARGS+=--without-http_rewrite_module \
 .else
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-pcre
-.endif
-
-.if defined(WITH_PASSENGER_MODULE)
-PASSENGER_VERSION=	2.2.15
-MASTER_SITES+=	RF/passenger/:passenger
-DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
 .endif
 
 .if defined(WITH_SLOWFS_CACHE_MODULE)
@@ -461,9 +447,6 @@ pre-everything::
 .if defined(WITH_HTTP_UPSTREAM_FAIR)
 	@${ECHO_MSG} "Enable http_ssl module to build upstream_fair with SSL support"
 .endif
-.if defined(WITH_PASSENGER_MODULE)
-	@${ECHO_MSG} "This port install Passenger module only"
-.endif
 	@${ECHO_MSG}
 
 post-patch:
@@ -474,13 +457,6 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
 		${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}/config
-.endif
-.if defined(WITH_PASSENGER_MODULE)
-	@${REINPLACE_CMD} 's!g++!${CXX}!' \
-		${WRKDIR}/passenger-${PASSENGER_VERSION}/Rakefile
-	@${REINPLACE_CMD} '377s!-g!${CXXFLAGS}!; \
-		s!-lpthread!${PTHREAD_LIBS}!g' \
-		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info.rb
 .endif
 .if defined(WITH_SUPERVISORD_MODULE)
 	( cd ${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION} && \
