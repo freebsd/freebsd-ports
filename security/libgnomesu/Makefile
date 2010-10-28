@@ -7,7 +7,7 @@
 
 PORTNAME=	libgnomesu
 PORTVERSION=	1.0.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security gnome
 MASTER_SITES=	http://members.chello.nl/~h.lai/libgnomesu/
 
@@ -23,8 +23,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${FILESDIR}/gnomesu-pam.4.x.sample ${EXAMPLESDIR}
-	${INSTALL_DATA} ${FILESDIR}/gnomesu-pam.5.x.sample ${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/gnomesu-pam.sample ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/api.html ${DOCSDIR}
