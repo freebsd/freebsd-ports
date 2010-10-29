@@ -7,7 +7,7 @@
 # Add the following line to /etc/rc.conf to enable BackupPC:
 # backuppc_enable="YES"
 
-. %%RC_SUBR%%
+. /etc/rc.subr
 
 name="backuppc"
 rcvar=`set_rcvar`
