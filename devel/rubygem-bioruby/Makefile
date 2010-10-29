@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bioruby
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG \
-		http://rubyforge.org/frs/download.php/68266/
+		http://rubyforge.org/frs/download.php/73028/
 DISTNAME=	bio-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
