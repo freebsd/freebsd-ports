@@ -451,7 +451,6 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/palette.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/place.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/prolog.ps
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/reindex.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/selection.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/send.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/srcfile.xpm
@@ -650,7 +649,6 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/pTk/extralibs.ld
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/tabFocus.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/updateWidgets.al
-%%SITE_PERL%%/%%PERL_ARCH%%/fix_4_os2.pl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Event
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Menu
