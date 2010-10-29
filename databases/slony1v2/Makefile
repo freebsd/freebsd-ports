@@ -57,6 +57,10 @@ CONFIGURE_ARGS+=--with-pgconfigdir=${LOCALBASE}/bin \
 		--with-pgpkglibdir=${LOCALBASE}/lib/postgresql \
 		--with-pgsharedir=${LOCALBASE}/share/postgresql
 
+.if !defined(NO_INSTALL_MANPAGES)
+MAN1=	slon.1 slonik.1
+.endif
+
 DEFAULT_PGSQL_VER?=83
 
 # Setting/finding PostgreSQL version we want.
@@ -82,6 +86,9 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${WRKSRC}/INSTALL ${WRKSRC}/SAMPLE ${WRKSRC}/README ${WRKSRC}/HISTORY-1.1 ${WRKSRC}/UPGRADING ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/howto/*.txt ${WRKSRC}/doc/howto/*.html ${DOCSDIR}/howto/
 	@${INSTALL_DATA} ${WRKSRC}/doc/adminguide/*.html ${WRKSRC}/doc/adminguide/*.png ${DOCSDIR}/adminguide/
+.endif
+.if ! defined(NO_INSTALL_MANPAGES)
+	${INSTALL_MAN} ${WRKSRC}/doc/adminguide/man1/*.1 ${MAN1PREFIX}/man/man1
 .endif
 	@${INSTALL_SCRIPT} ${WRKDIR}/slon-mkservice.sh ${PREFIX}/sbin/slon-mkservice
 	@${INSTALL_DATA} ${FILESDIR}/slon.conf-sample ${PREFIX}/etc/
