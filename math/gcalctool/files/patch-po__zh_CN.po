@@ -1,0 +1,14 @@
+
+--- po/zh_CN.po.old	2010-10-02 02:25:46.507328082 +0800
++++ po/zh_CN.po	2010-10-02 02:27:12.744004376 +0800
+@@ -1028,7 +1028,7 @@
+ #. Translators: Digits localized for the given language
+ #: ../src/calctool.c:175
+ msgid "0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F"
+-msgstr "零,一,二,三,四,五,六,七,八,九,十,A,B,C,D,E,F"
++msgstr "0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F"
+ 
+ #: ../src/currency.h:18
+ msgid "Australian dollar"
+
+
