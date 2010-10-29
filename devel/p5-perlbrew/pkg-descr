@@ -1,0 +1,14 @@
+perlbrew is a program to automate the building and
+installation of perl in the users HOME.
+
+At the moment, it installs everything to ~/perl5/perlbrew,
+and requires you to tweak your PATH by including
+a bashrc/cshrc file it provides.
+
+You then can benefit from not having to run 'sudo' commands
+to install cpan modules because those are installed inside
+your HOME too.
+
+It's a completely separate perl environment.
+
+WWW:	http://search.cpan.org/dist/App-perlbrew/
