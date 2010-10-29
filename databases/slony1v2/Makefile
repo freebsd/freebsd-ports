@@ -7,6 +7,7 @@
 
 PORTNAME=	slony1v2
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://main.slony.info/downloads/2.0/source/
 DISTNAME=	slony1-${PORTVERSION}
@@ -16,7 +17,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	PostgreSQL master to multiple replicas replication system
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
+		${LOCALBASE}/bin/postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 GNU_CONFIGURE=	yes
 USE_BISON=	build
@@ -35,6 +37,8 @@ CONFLICTS?=	slony1-1*
 .include <bsd.port.pre.mk>
 
 IGNORE_WITH_PGSQL=	73 74 80 81 82
+
+CONFIGURE_ENV=	FLEX=${LOCALBASE}/bin/flex
 
 .if defined(WITH_PERLTOOLS)
 USE_PERL5=	yes
