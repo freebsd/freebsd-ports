@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlparser
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.yoshidam.net/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
