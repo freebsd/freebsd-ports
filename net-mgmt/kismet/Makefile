@@ -80,10 +80,12 @@ post-patch:
 		-e "/ouifile=/{/wireshark/d;s|/etc|${DOCSDIR}|;}" \
 			${WRKSRC}/conf/kismet.conf.in \
 			${WRKSRC}/conf/kismet_drone.conf
-	${REINPLACE_CMD} -e "s/plugin-/plugin-[aps]/" \
+	@${REINPLACE_CMD} -e "s/plugin-/plugin-[aps]/" \
 		-e "s/make/${GMAKE}/" \
 		-e "s/\$$(MAKE)/${GMAKE}/" \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "/PLUGINLDFLAGS/d" \
+		${WRKSRC}/Makefile.inc.in
 
 post-install:
 .ifndef(NOPORTDOCS)
