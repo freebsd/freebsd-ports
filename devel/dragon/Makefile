@@ -8,7 +8,6 @@ PORTNAME=	dragon
 PORTVERSION=	1.3.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
-DISTNAME=	dragon-${PORTVERSION}
 
 MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	Combined C++ scanner/parser generator for LR compliant grammars
