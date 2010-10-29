@@ -8,14 +8,11 @@
 PORTNAME=	demos
 PORTVERSION=	${MESAVERSION}
 CATEGORIES=	graphics
+MASTER_SITES=	CRITICAL/mesa3d:mesa,glut,demos
 PKGNAMEPREFIX=	mesa-
 
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	OpenGL demos distributed with Mesa
-
-.if !defined(WITHOUT_NOUVEAU)
-BROKEN=		does not fetch
-.endif
 
 USE_GL=		glu glut
 USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes dri2proto
