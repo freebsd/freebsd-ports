@@ -2276,7 +2276,8 @@ MAKEFILE?=		Makefile
 MAKE_ENV+=		PREFIX=${PREFIX} \
 			LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
 			MOTIFLIB="${MOTIFLIB}" LIBDIR="${LIBDIR}" \
-			CC="${CC}" CFLAGS="${CFLAGS}" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+			CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
+			CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 			MANPREFIX="${MANPREFIX}"
 
 # Add -fno-strict-aliasing to CFLAGS with optimization level -O2 or higher.
@@ -3781,7 +3782,7 @@ do-configure:
 .if defined(HAS_CONFIGURE)
 	@(cd ${CONFIGURE_WRKSRC} && \
 	    ${SET_LATE_CONFIGURE_ARGS} \
-		if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
+		if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
 	    CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 	    INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
 	    INSTALL_DATA="${INSTALL_DATA}" \
@@ -5374,7 +5375,7 @@ FETCH_LIST?=	for i in $$deps; do \
 				continue;	\
 			fi;;	\
 		esac;	\
-		echo cd $$dir; ${MAKE} $$targ; \
+		echo cd $$dir; cd $$dir; ${MAKE} $$targ; \
 	done
 
 .if !target(fetch-required)
