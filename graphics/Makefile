@@ -934,6 +934,7 @@
     SUBDIR += uDrawGraph
     SUBDIR += ufraw
     SUBDIR += uniconvertor
+    SUBDIR += uniconvw
     SUBDIR += unpaper
     SUBDIR += urt
     SUBDIR += vcg
