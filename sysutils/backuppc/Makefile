@@ -7,6 +7,7 @@
 
 PORTNAME=	backuppc
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -25,7 +26,7 @@ USERS=		backuppc
 GROUPS=		backuppc
 
 BPC_CGIDIR?=	${PREFIX}/www/cgi-bin
-BPC_DATADIR?=	/var/db/data/BackupPC
+BPC_DATADIR?=	/var/db/BackupPC
 
 PORTDOCS=	ChangeLog LICENSE README BackupPC.html BackupPC.pod
 
