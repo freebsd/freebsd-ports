@@ -33,7 +33,7 @@
 # _LICENSE_LIST_GROUPS	- List of defined license groups
 #
 
-_LICENSE_LIST=			ART10 ART20 ASL BSD BSL CDDL EPL GFDL GPLv1 GPLv2 GPLv3 LGPL20 LGPL21 LGPL3 MIT MPL
+_LICENSE_LIST=			ART10 ART20 ASL BSD BSL CDDL EPL GFDL GPLv1 GPLv2 GPLv3 LGPL20 LGPL21 LGPL3 MIT MPL OWL
 
 # List of groups (only names must be present)
 
@@ -105,6 +105,9 @@ _LICENSE_GROUPS_MIT=	FSF GPL OSI
 
 _LICENSE_NAME_MPL=		Mozilla Public License
 _LICENSE_GROUPS_MPL=	FSF OSI
+
+_LICENSE_NAME_OWL=		Open Works License (owl.apotheon.org)
+_LICENSE_GROUPS_OWL=
 
 # Set default permissions if not defined
 
