@@ -14,6 +14,8 @@ MASTER_SITES=	http://core.de/~coto/projects/xtu/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transparent analog clock for X11
 
+DEPRECATED=	Looks like abandonware
+EXPIRATION_DATE=	2010-12-30
 BROKEN=		does not fetch
 
 USE_IMAKE=	yes

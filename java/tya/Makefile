@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A ``100% unofficial'' JIT-compiler for java
 
+DEPRECATED=	looks like abandonware and does not compile wth gcc4.2
+EXPIRATION_DATE=	2010-12-30
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.3
 JAVAOS=		native

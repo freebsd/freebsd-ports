@@ -12,6 +12,9 @@ PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://automagically.de/files/
 
+DEPRECATED=	does not build with gcc 4.2, upstream disapeared
+EXPIRATION_DATE=	2010-12-30
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D file viewer for GTK+
 

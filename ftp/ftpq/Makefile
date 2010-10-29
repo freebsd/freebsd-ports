@@ -14,6 +14,8 @@ MASTER_SITES=	http://mark.tranchant.co.uk/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Upload queue manager for non-permanent connections
 
+DEPRECATED=	upstream has disapeared
+EXPIRATION_DATE=	2010-12-30
 BROKEN=		does not fetch
 
 USE_GMAKE=	yes

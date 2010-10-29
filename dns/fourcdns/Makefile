@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.fourcalorieservers.com/ports/dns/fourcdns/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple DNS server
 
+DEPRECATED=	upstream has disapeared
+EXPIRATION_DATE=	2010-12-30
 BROKEN=		does not fetch
 
 PLIST_FILES=	bin/fourcdns

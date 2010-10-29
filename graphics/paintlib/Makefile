@@ -20,6 +20,8 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		tiff:${PORTSDIR}/graphics/tiff \
 		ungif:${PORTSDIR}/graphics/libungif
 
+DEPRECATED=	does not compile with new tiff and no more maintained upstream
+EXPIRATION_DATE=	2010-12-30
 BROKEN=		does not compile with new tiff
 
 USE_AUTOTOOLS=	libtool:22
