@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.funet.fi/pub/unix/mail/metamail/ \
 DISTNAME=	mm${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	jean-francois.dockes@wanadoo.fr
+MAINTAINER=	jf@dockes.org
 COMMENT=	Implementation of MIME, the Multipurpose Internet Mail Extensions
 
 OPTIONS=	X11 "X11 hebrew font support" on
