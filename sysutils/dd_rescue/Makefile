@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dd_rescue
-PORTVERSION=	1.14
+PORTVERSION=	1.22
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.garloff.de/kurt/linux/ddrescue/
 
