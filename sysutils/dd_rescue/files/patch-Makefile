@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Oct 22 16:38:03 2004
-+++ Makefile	Sat Jul  2 23:40:24 2005
+--- Makefile-bla	2010-09-17 14:07:46.000000000 +0200
++++ Makefile	2010-09-17 14:07:58.000000000 +0200
 @@ -6,9 +6,6 @@
  
  DESTDIR = 
@@ -7,15 +7,28 @@
 -CC = gcc
 -RPM_OPT_FLAGS = -O2 -Wall -g
 -CFLAGS = $(RPM_OPT_FLAGS) $(EXTRA_CFLAGS)
- DEFINES = -DVERSION=\"$(VERSION)\"
  INSTALL = install
  INSTALLFLAGS = -s
-@@ -25,7 +22,7 @@
+ prefix = $(DESTDIR)/usr
+@@ -25,12 +22,6 @@
+ DEFINES = -DVERSION=\"$(VERSION)\"  -D__COMPILER__="\"$(COMPILER)\""
+ OUT = -o $@
+ 
+-ifeq ($(CC),wcl386)
+-  CFLAGS = "-ox -wx $(EXTRA_CFLAGS)"
+-  DEFINES = -dMISS_STRSIGNAL -dMISS_PREAD -dVERSION=\"$(VERSION)\" -d__COMPILER__="\"$(COMPILER)\""
+-  OUT = ""
+-endif
+-
  default: $(TARGETS)
  
- dd_rescue: dd_rescue.c
--	$(CC) $(CFLAGS) $(DEFINES) $< -o $@
-+	$(CC) $(CFLAGS) $(DEFINES) $(LIBS) $< -o $@
+ libfalloc: dd_rescue.c
+@@ -43,7 +34,7 @@
+ 	$(CC) $(CFLAGS) -DHAVE_FALLOCATE=1 $(DEFINES) $< -o dd_rescue
  
- clean:
- 	rm -f $(TARGETS) $(OBJECTS) core
+ dd_rescue: dd_rescue.c
+-	$(CC) $(CFLAGS) $(DEFINES) $< $(OUT)
++	$(CC) $(CFLAGS) $(DEFINES) $(LIBS) $< $(OUT)
+ 
+ strip: dd_rescue
+ 	strip -S $<
