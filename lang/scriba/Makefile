@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-v2.0b0-source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scripting implementation of the BASIC language
 
+DEPRECATED=	Does not compile with gcc 4.2+, looks like abandonware
+EXPIRATION_DATE=	2010-12-30
 NO_WRKSUBDIR=	yes
 USE_PERL5=	yes
 CFLAGS+=	-fPIC

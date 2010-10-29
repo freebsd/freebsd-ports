@@ -21,6 +21,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
 LIB_DEPENDS=		sqlrclient.0:${SQLRELAY_PORTDIR}
 
+DEPRECATED=	broken and upstream disapeared
+EXPIRATION_DATE=	2010-12-30
 BROKEN=		does not build
 
 USE_PERL5=	yes

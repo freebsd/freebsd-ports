@@ -12,6 +12,9 @@ PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/Rascal/${PORTVERSION}
 
+DEPRECATED=	Broken on every arch since 2008, looks like an abandonware
+EXPIRATION_DATE=	2010-12-30
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Advanced Scientific CALculator
 
