@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	slony1v2
-PORTVERSION=	2.0.4
-PORTREVISION=	1
+PORTVERSION=	2.0.5
 CATEGORIES=	databases
 MASTER_SITES=	http://main.slony.info/downloads/2.0/source/
 DISTNAME=	slony1-${PORTVERSION}
@@ -71,8 +70,8 @@ PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | \
 PGSQL_VER=	${DEFAULT_PGSQL_VER}
 .endif
 
-.if ! defined(NO_INSTALL_MANPAGES)
-MAN1=	slon.1 slonik.1
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
 .endif
 
 post-install:
@@ -83,9 +82,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${WRKSRC}/INSTALL ${WRKSRC}/SAMPLE ${WRKSRC}/README ${WRKSRC}/HISTORY-1.1 ${WRKSRC}/UPGRADING ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/howto/*.txt ${WRKSRC}/doc/howto/*.html ${DOCSDIR}/howto/
 	@${INSTALL_DATA} ${WRKSRC}/doc/adminguide/*.html ${WRKSRC}/doc/adminguide/*.png ${DOCSDIR}/adminguide/
-.endif
-.if ! defined(NO_INSTALL_MANPAGES)
-	${INSTALL_MAN} ${WRKSRC}/doc/adminguide/man1/*.1 ${MAN1PREFIX}/man/man1
 .endif
 	@${INSTALL_SCRIPT} ${WRKDIR}/slon-mkservice.sh ${PREFIX}/sbin/slon-mkservice
 	@${INSTALL_DATA} ${FILESDIR}/slon.conf-sample ${PREFIX}/etc/
