@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gpredict
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/gpredict/Gpredict/${PORTVERSION}
 
@@ -18,12 +17,22 @@ LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \
 BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
-USE_GNOME=	gtk20 gnomehack
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-network
+CONFIGURE_ARGS=	--prefix=${PREFIX} --localedir=${PREFIX}/share/locale
 USE_GMAKE=	yes
 
 MAN1=		gpredict.1
+
+LICENSE=	GPLv2
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.else
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
+.endif
 
 DESKTOP_ENTRIES="GPREDICT" \
 		"Predict satellite passage times" \
