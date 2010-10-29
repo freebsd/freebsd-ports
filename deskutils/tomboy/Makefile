@@ -3,11 +3,10 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.49 2007/09/20 15:16:43 killfill Exp $
 #
 
 PORTNAME=	tomboy
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
