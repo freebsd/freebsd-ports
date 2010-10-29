@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Image-Info
-PORTVERSION=	1.30
-PORTREVISION=	1
+PORTVERSION=	1.31
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,7 +23,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Image::Info.3 Image::Info::BMP.3 Image::Info::SVG.3 \
 		Image::Info::TIFF.3 Image::Info::PPM.3 \
-		Image::Info::XBM.3 Image::Info::XPM.3
+		Image::Info::XBM.3 Image::Info::XPM.3 \
+		Image::Info::ICO.3 Bundle::Image::Info::Everything.3 \
+		Bundle::Image::Info::PNG.3 Bundle::Image::Info::SVG.3 \
+		Bundle::Image::Info::XPM.3 Bundle::Image::Info::XBM.3
 
 .include <bsd.port.pre.mk>
 

@@ -1,7 +1,13 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Info/.packlist
+%%SITE_PERL%%/Bundle/Image/Info/Everything.pm
+%%SITE_PERL%%/Bundle/Image/Info/XBM.pm
+%%SITE_PERL%%/Bundle/Image/Info/XPM.pm
+%%SITE_PERL%%/Bundle/Image/Info/SVG.pm
+%%SITE_PERL%%/Bundle/Image/Info/PNG.pm
 %%SITE_PERL%%/Image/Info.pm
 %%SITE_PERL%%/Image/Info/BMP.pm
 %%SITE_PERL%%/Image/Info/GIF.pm
+%%SITE_PERL%%/Image/Info/ICO.pm
 %%SITE_PERL%%/Image/Info/JPEG.pm
 %%SITE_PERL%%/Image/Info/PNG.pm
 %%SITE_PERL%%/Image/Info/PPM.pm
@@ -12,6 +18,9 @@
 %%SITE_PERL%%/Image/Info/XBM.pm
 %%SITE_PERL%%/Image/Info/XPM.pm
 %%SITE_PERL%%/Image/TIFF.pm
+@dirrmtry %%SITE_PERL%%/Bundle/Image/Info
+@dirrmtry %%SITE_PERL%%/Bundle/Image
+@dirrmtry %%SITE_PERL%%/Bundle
 @dirrmtry %%SITE_PERL%%/Image/Info/SVG
 @dirrmtry %%SITE_PERL%%/Image/Info
 @dirrmtry %%SITE_PERL%%/Image
