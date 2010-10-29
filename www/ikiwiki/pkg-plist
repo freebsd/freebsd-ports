@@ -23,6 +23,7 @@
 %%DATADIR%%/basewiki/templates/popup.mdwn
 %%DATADIR%%/basewiki/wikiicons/diff.png
 %%DATADIR%%/basewiki/wikiicons/openidlogin-bg.gif
+%%DATADIR%%/basewiki/wikiicons/revert.png
 %%DATADIR%%/basewiki/wikiicons/search-bg.gif
 %%DATADIR%%/directives/ikiwiki/directive/aggregate.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/brokenlinks.mdwn
@@ -35,6 +36,7 @@
 %%DATADIR%%/directives/ikiwiki/directive/cutpaste.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/date.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/edittemplate.mdwn
+%%DATADIR%%/directives/ikiwiki/directive/flattr.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/format.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/fortune.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/graph.mdwn
@@ -564,6 +566,7 @@
 %%DATADIR%%/templates/pocreatepage.tmpl
 %%DATADIR%%/templates/recentchanges.tmpl
 %%DATADIR%%/templates/renamesummary.tmpl
+%%DATADIR%%/templates/revert.tmpl
 %%DATADIR%%/templates/rssitem.tmpl
 %%DATADIR%%/templates/rsspage.tmpl
 %%DATADIR%%/templates/searchform.tmpl
@@ -603,6 +606,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/external.pm
 %%SITE_PERL%%/IkiWiki/Plugin/favicon.pm
 %%SITE_PERL%%/IkiWiki/Plugin/filecheck.pm
+%%SITE_PERL%%/IkiWiki/Plugin/flattr.pm
 %%SITE_PERL%%/IkiWiki/Plugin/format.pm
 %%SITE_PERL%%/IkiWiki/Plugin/fortune.pm
 %%SITE_PERL%%/IkiWiki/Plugin/getsource.pm
