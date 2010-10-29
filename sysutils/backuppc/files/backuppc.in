@@ -17,8 +17,8 @@ load_rc_config $name
 : ${backuppc_enable:="NO"}
 : ${backuppc_flags:="-d"}
 : ${backuppc_user:="backuppc"}
-: ${BackupPC_group:="backuppc"}
-: ${BackupPC_config:="%%ETCDIR%%/config.pl"}
+: ${backuppc_group:="backuppc"}
+: ${backuppc_config:="%%ETCDIR%%/config.pl"}
 
 command_interpreter="/usr/bin/perl"
 command="%%PREFIX%%/bin/BackupPC"
