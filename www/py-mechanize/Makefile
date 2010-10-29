@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mechanize
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.4
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://wwwsearch.sourceforge.net/mechanize/src/
