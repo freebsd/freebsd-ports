@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Imager
-PORTVERSION=	0.74
+PORTVERSION=	0.78
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +20,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		png:${PORTSDIR}/graphics/png \
 		t1:${PORTSDIR}/devel/t1lib \
 		tiff:${PORTSDIR}/graphics/tiff \
-		ungif:${PORTSDIR}/graphics/libungif
+		gif.5:${PORTSDIR}/graphics/giflib
 
 PERL_CONFIGURE=	5.8.0+
 CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib" \
