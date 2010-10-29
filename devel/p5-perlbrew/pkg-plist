@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+bin/perlbrew
+%%SITE_PERL%%/App/perlbrew.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/perlbrew/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/perlbrew
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
+@dirrmtry %%SITE_PERL%%/App
