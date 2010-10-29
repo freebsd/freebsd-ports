@@ -2553,6 +2553,7 @@
     SUBDIR += pecl-vld
     SUBDIR += pecl-xhprof
     SUBDIR += pedisassem
+    SUBDIR += pep8
     SUBDIR += performance
     SUBDIR += perlconsole
     SUBDIR += perltidy
