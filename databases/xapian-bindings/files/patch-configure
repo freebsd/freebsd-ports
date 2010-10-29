@@ -1,0 +1,11 @@
+--- configure.orig	2010-10-28 16:54:25.000000000 +0000
++++ configure	2010-10-28 16:54:39.000000000 +0000
+@@ -15156,7 +15156,7 @@ $as_echo_n "checking for python librarie
+ 	mingw* | pw32*)
+ 	  PYTHON_LIBS=`$PYTHON -c 'import os,sys;print("-L"+os.path.join(sys.prefix,"libs").replace(os.sep,"/")+" -lpython"+sys.version[:3].replace(".",""))'` ;;
+ 	cygwin*)
+-	  PYTHON_LIBS=`$PYTHON -c 'import os,sys;print("-L"+os.path.join(sys.path[3],"config")+" -lpython"+sys.version[:3]')` ;;
++	  PYTHON_LIBS=`$PYTHON -c 'import os,sys;print("-L"+os.path.join(sys.path[3],"config")+" -lpython"+sys.version[:3])'` ;;
+ 	*)
+ 	  PYTHON_LIBS= ;;
+ 	esac
