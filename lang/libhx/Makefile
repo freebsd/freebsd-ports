@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	libHX
-PORTVERSION=	3.2
+PORTVERSION=	3.6
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
+EXTRACT_SUFX=	.tar.xz
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Library C with some additional C++ bindings available
@@ -17,7 +18,6 @@ CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
 USE_LDCONFIG=	yes
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:22
 

@@ -2,6 +2,7 @@ include/libHX.h
 include/libHX/ctype_helper.h
 include/libHX/defs.h
 include/libHX/deque.h
+include/libHX/init.h
 include/libHX/libxml_helper.h
 include/libHX/list.h
 include/libHX/map.h
@@ -13,7 +14,7 @@ include/libHX/wx_helper.hpp
 lib/libHX.a
 lib/libHX.la
 lib/libHX.so
-lib/libHX.so.23
+lib/libHX.so.25
 libdata/pkgconfig/libHX.pc
 @dirrm lib/pkgconfig
 @dirrm include/libHX
