@@ -66,7 +66,7 @@ CONFIGURE_ARGS+=--without-browser-plugin --with-spidermonkey
 PLIST_SUB+=	MOZILLA_PLUGIN="@comment "
 .else
 USE_XORG+=	xaw
-USE_GECKO=	seamonkey
+USE_GECKO=	libxul
 USE_WEBPLUGINS=	native
 WEBPLUGINS_DIR=	${PREFIX}/lib/gxine
 WEBPLUGINS_FILES=gxineplugin.so
@@ -74,7 +74,6 @@ WEBPLUGINS_FILES=gxineplugin.so
 LIB_DEPENDS+=	nspr4.1:${PORTSDIR}/devel/nspr
 CONFIGURE_ENV+=	NSPR_CFLAGS="-I${LOCALBASE}/include/nspr" \
 		NSPR_LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=--disable-libjs
 PLIST_SUB+=	MOZILLA_PLUGIN=""
 .endif
 
