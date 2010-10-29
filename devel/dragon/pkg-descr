@@ -1,0 +1,16 @@
+Combined scanner/parser generator for LR compliant grammar definitions.
+
+The generated C++ parser class is used as a super class from which a parser
+implementation class must be derived. The implementation class implements the
+scanner feed methods but also all required semantic action method. dragon has
+been used for several large projects with complex grammar definitions (about
+200 productions/ 80 tokens ). Since for those grammar defintions, the analyse
+phase to build up the parse table is quite CPU intensive, it is recommended to
+use state of the art hardware. dragon requires the base package to get compiled
+but also for the compilation of the generated C++ code.
+
+It can be used for databases/cego and probably other applications.
+
+Many more details are available at:
+
+WWW: http://www.lemke-it.com/

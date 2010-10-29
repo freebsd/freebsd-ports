@@ -316,6 +316,7 @@
     SUBDIR += doxygen
     SUBDIR += dparser
     SUBDIR += dprog
+    SUBDIR += dragon
     SUBDIR += dreampie
     SUBDIR += drpython
     SUBDIR += dsss
