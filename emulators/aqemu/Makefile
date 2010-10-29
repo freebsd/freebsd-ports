@@ -25,4 +25,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S,.0$,,}
 
 MAN1=		aqemu.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700042
+CMAKE_USE_PTHREAD=	yes
+.endif
+
+.include <bsd.port.post.mk>
