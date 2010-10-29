@@ -7433,6 +7433,7 @@ kpicframer                      ports/games/kpicframer
 kpictorial                      ports/games/kpictorial
 kplayer                         ports/multimedia/kplayer
 kplayer-kde4                    ports/multimedia/kplayer-kde4
+kplaylist                       ports/www/kplaylist
 kpogre                          ports/databases/kpogre
 kpopup                          ports/net-im/kpopup
 kports                          ports/ports-mgmt/kports
@@ -11211,6 +11212,7 @@ p5-CSS-DOM                      ports/www/p5-CSS-DOM
 p5-CSS-Inliner                  ports/www/p5-CSS-Inliner
 p5-CSS-Minifier-XS              ports/textproc/p5-CSS-Minifier-XS
 p5-CSS-SAC                      ports/textproc/p5-CSS-SAC
+p5-CSS-Simple                   ports/textproc/p5-CSS-Simple
 p5-CSS-Squish                   ports/textproc/p5-CSS-Squish
 p5-CSS-Tiny                     ports/textproc/p5-CSS-Tiny
 p5-Cache                        ports/devel/p5-Cache
@@ -15610,6 +15612,7 @@ p5-css-dom                      ports/www/p5-CSS-DOM
 p5-css-inliner                  ports/www/p5-CSS-Inliner
 p5-css-minifier-xs              ports/textproc/p5-CSS-Minifier-XS
 p5-css-sac                      ports/textproc/p5-CSS-SAC
+p5-css-simple                   ports/textproc/p5-CSS-Simple
 p5-css-squish                   ports/textproc/p5-CSS-Squish
 p5-css-tiny                     ports/textproc/p5-CSS-Tiny
 p5-cstools                      ports/converters/p5-Cstools
@@ -20724,6 +20727,7 @@ py-anyjson                      ports/devel/py-anyjson
 py-ao                           ports/audio/py-ao
 py-apachelog                    ports/www/py-apachelog
 py-apetag                       ports/audio/py-apetag
+py-apgl                         ports/math/py-apgl
 py-apolicy                      ports/mail/py-apolicy
 py-argparse                     ports/devel/py-argparse
 py-asn1                         ports/devel/py-asn1
