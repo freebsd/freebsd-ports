@@ -55,8 +55,10 @@ post-patch:
 	@${REINPLACE_CMD} -E -e '/^install-data-am/,/^$$/ s,install-(dist_doc|dist_html|html)DATA,,g' \
 		${WRKSRC}/Makefile.in
 .endif
-	${REINPLACE_CMD} -e 's/\(pkgconfigdir = \).*/\1$$\(DESTDIR\)$$\(prefix\)\/libdata\/pkgconfig/' \
+	@${REINPLACE_CMD} -e 's/\(pkgconfigdir = \).*/\1$$\(DESTDIR\)$$\(prefix\)\/libdata\/pkgconfig/' \
 		${WRKSRC}/Makefile.in
+# work around for a autoconf assumption, to fix c++ linking with clang
+	@${REINPLACE_CMD} -e 's|GREP "\\-L"|GREP "conftest\\.$$objext"|g' ${WRKSRC}/configure
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/pcregrep ${PREFIX}/bin/pcretest
