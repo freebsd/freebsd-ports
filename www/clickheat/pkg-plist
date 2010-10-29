@@ -10,6 +10,7 @@
 %%WWWDIR%%/clickempty.html
 %%WWWDIR%%/config.php
 %%WWWDIR%%/config/.htaccess
+%%WWWDIR%%/debug-piwik.html
 %%WWWDIR%%/examples/coords.txt
 %%WWWDIR%%/examples/fromdatabase.php
 %%WWWDIR%%/examples/fromfile.php
@@ -25,6 +26,7 @@
 %%WWWDIR%%/images/flags/en.png
 %%WWWDIR%%/images/flags/es.png
 %%WWWDIR%%/images/flags/fr.png
+%%WWWDIR%%/images/flags/hu.png
 %%WWWDIR%%/images/flags/it.png
 %%WWWDIR%%/images/flags/id.png
 %%WWWDIR%%/images/flags/ja.png
@@ -53,13 +55,14 @@
 %%WWWDIR%%/js/admin.js
 %%WWWDIR%%/js/clickheat-original.js
 %%WWWDIR%%/js/clickheat.js
-%%WWWDIR%%/languages/__de.php
 %%WWWDIR%%/languages/__readme.txt
 %%WWWDIR%%/languages/bg.php
+%%WWWDIR%%/languages/de.php
 %%WWWDIR%%/languages/cz.php
 %%WWWDIR%%/languages/en.php
 %%WWWDIR%%/languages/es.php
 %%WWWDIR%%/languages/fr.php
+%%WWWDIR%%/languages/hu.php
 %%WWWDIR%%/languages/id.php
 %%WWWDIR%%/languages/it.php
 %%WWWDIR%%/languages/ja.php
