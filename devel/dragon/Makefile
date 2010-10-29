@@ -17,7 +17,6 @@ LIB_DEPENDS=	lfc.1:${PORTSDIR}/devel/lfc
 
 LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 PLIST_FILES=	bin/dragon
 
 .include <bsd.port.mk>
