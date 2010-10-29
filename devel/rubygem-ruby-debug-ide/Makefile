@@ -20,6 +20,8 @@ USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/rdebug-ide
 
+MANUAL_PACKAGE_BUILD=	keeps hanging on pointyhat
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
