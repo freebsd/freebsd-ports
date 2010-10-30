@@ -1,0 +1,261 @@
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libequinox.la
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libequinox.so
+%%DATADIR%%/Equinox Classic Glass/ChangeLog
+%%DATADIR%%/Equinox Classic Glass/metacity-1/button_close.png
+%%DATADIR%%/Equinox Classic Glass/metacity-1/button_max.png
+%%DATADIR%%/Equinox Classic Glass/metacity-1/button_menu.png
+%%DATADIR%%/Equinox Classic Glass/metacity-1/button_min.png
+%%DATADIR%%/Equinox Classic Glass/metacity-1/dialog_close.png
+%%DATADIR%%/Equinox Classic Glass/metacity-1/dialog_max.png
+%%DATADIR%%/Equinox Classic Glass/metacity-1/dialog_min.png
+%%DATADIR%%/Equinox Classic Glass/metacity-1/metacity-theme-1.xml
+%%DATADIR%%/Equinox Classic/ChangeLog
+%%DATADIR%%/Equinox Classic/metacity-1/button_close.png
+%%DATADIR%%/Equinox Classic/metacity-1/button_max.png
+%%DATADIR%%/Equinox Classic/metacity-1/button_menu.png
+%%DATADIR%%/Equinox Classic/metacity-1/button_min.png
+%%DATADIR%%/Equinox Classic/metacity-1/dialog_close.png
+%%DATADIR%%/Equinox Classic/metacity-1/dialog_max.png
+%%DATADIR%%/Equinox Classic/metacity-1/dialog_min.png
+%%DATADIR%%/Equinox Classic/metacity-1/metacity-theme-1.xml
+%%DATADIR%%/Equinox Evolution Light/ChangeLog
+%%DATADIR%%/Equinox Evolution Light/gtk-2.0/apps/gnome-system-monitor.rc
+%%DATADIR%%/Equinox Evolution Light/gtk-2.0/apps/gnome-terminal.rc
+%%DATADIR%%/Equinox Evolution Light/gtk-2.0/apps/nautilus.rc
+%%DATADIR%%/Equinox Evolution Light/gtk-2.0/gtkrc
+%%DATADIR%%/Equinox Evolution Light/gtk-2.0/images/arrow.png
+%%DATADIR%%/Equinox Evolution Light/gtk-2.0/images/blank.png
+%%DATADIR%%/Equinox Evolution Light/gtk-2.0/images/handle-nautilus.png
+%%DATADIR%%/Equinox Evolution Light/gtk-2.0/images/panel_bg.png
+%%DATADIR%%/Equinox Evolution Light/index.theme
+%%DATADIR%%/Equinox Evolution Rounded/ChangeLog
+%%DATADIR%%/Equinox Evolution Rounded/metacity-1/button_inactive.png
+%%DATADIR%%/Equinox Evolution Rounded/metacity-1/button_normal.png
+%%DATADIR%%/Equinox Evolution Rounded/metacity-1/button_prelight.png
+%%DATADIR%%/Equinox Evolution Rounded/metacity-1/button_pressed.png
+%%DATADIR%%/Equinox Evolution Rounded/metacity-1/close.png
+%%DATADIR%%/Equinox Evolution Rounded/metacity-1/close_inactive.png
+%%DATADIR%%/Equinox Evolution Rounded/metacity-1/max.png
+%%DATADIR%%/Equinox Evolution Rounded/metacity-1/max_inactive.png
+%%DATADIR%%/Equinox Evolution Rounded/metacity-1/menu.png
+%%DATADIR%%/Equinox Evolution Rounded/metacity-1/menu_inactive.png
+%%DATADIR%%/Equinox Evolution Rounded/metacity-1/metacity-theme-1.xml
+%%DATADIR%%/Equinox Evolution Rounded/metacity-1/min.png
+%%DATADIR%%/Equinox Evolution Rounded/metacity-1/min_inactive.png
+%%DATADIR%%/Equinox Evolution Squared/ChangeLog
+%%DATADIR%%/Equinox Evolution Squared/metacity-1/button2_inactive.png
+%%DATADIR%%/Equinox Evolution Squared/metacity-1/button2_normal.png
+%%DATADIR%%/Equinox Evolution Squared/metacity-1/button2_prelight.png
+%%DATADIR%%/Equinox Evolution Squared/metacity-1/button2_pressed.png
+%%DATADIR%%/Equinox Evolution Squared/metacity-1/button_inactive.png
+%%DATADIR%%/Equinox Evolution Squared/metacity-1/button_normal.png
+%%DATADIR%%/Equinox Evolution Squared/metacity-1/button_prelight.png
+%%DATADIR%%/Equinox Evolution Squared/metacity-1/button_pressed.png
+%%DATADIR%%/Equinox Evolution Squared/metacity-1/close.png
+%%DATADIR%%/Equinox Evolution Squared/metacity-1/close_inactive.png
+%%DATADIR%%/Equinox Evolution Squared/metacity-1/max.png
+%%DATADIR%%/Equinox Evolution Squared/metacity-1/max_inactive.png
+%%DATADIR%%/Equinox Evolution Squared/metacity-1/menu.png
+%%DATADIR%%/Equinox Evolution Squared/metacity-1/menu_inactive.png
+%%DATADIR%%/Equinox Evolution Squared/metacity-1/metacity-theme-1.xml
+%%DATADIR%%/Equinox Evolution Squared/metacity-1/min.png
+%%DATADIR%%/Equinox Evolution Squared/metacity-1/min_inactive.png
+%%DATADIR%%/Equinox Evolution/ChangeLog
+%%DATADIR%%/Equinox Evolution/gtk-2.0/apps/gnome-system-monitor.rc
+%%DATADIR%%/Equinox Evolution/gtk-2.0/apps/gnome-terminal.rc
+%%DATADIR%%/Equinox Evolution/gtk-2.0/apps/nautilus.rc
+%%DATADIR%%/Equinox Evolution/gtk-2.0/gtkrc
+%%DATADIR%%/Equinox Evolution/gtk-2.0/images/arrow.png
+%%DATADIR%%/Equinox Evolution/gtk-2.0/images/blank.png
+%%DATADIR%%/Equinox Evolution/gtk-2.0/images/handle-nautilus.png
+%%DATADIR%%/Equinox Evolution/gtk-2.0/images/panel_bg.png
+%%DATADIR%%/Equinox Evolution/index.theme
+%%DATADIR%%/Equinox Glass/ChangeLog
+%%DATADIR%%/Equinox Glass/gtk-2.0/apps/gnome-system-monitor.rc
+%%DATADIR%%/Equinox Glass/gtk-2.0/apps/gnome-terminal.rc
+%%DATADIR%%/Equinox Glass/gtk-2.0/apps/nautilus.rc
+%%DATADIR%%/Equinox Glass/gtk-2.0/gtkrc
+%%DATADIR%%/Equinox Glass/gtk-2.0/images/arrow.png
+%%DATADIR%%/Equinox Glass/gtk-2.0/images/blank.png
+%%DATADIR%%/Equinox Glass/gtk-2.0/images/handle-nautilus.png
+%%DATADIR%%/Equinox Glass/gtk-2.0/images/panel_bg.png
+%%DATADIR%%/Equinox Glass/index.theme
+%%DATADIR%%/Equinox Glass/metacity-1/active_close.png
+%%DATADIR%%/Equinox Glass/metacity-1/active_close_on.png
+%%DATADIR%%/Equinox Glass/metacity-1/active_close_pressed.png
+%%DATADIR%%/Equinox Glass/metacity-1/active_max.png
+%%DATADIR%%/Equinox Glass/metacity-1/active_max_on.png
+%%DATADIR%%/Equinox Glass/metacity-1/active_max_pressed.png
+%%DATADIR%%/Equinox Glass/metacity-1/active_menu.png
+%%DATADIR%%/Equinox Glass/metacity-1/active_menu_on.png
+%%DATADIR%%/Equinox Glass/metacity-1/active_menu_pressed.png
+%%DATADIR%%/Equinox Glass/metacity-1/active_min.png
+%%DATADIR%%/Equinox Glass/metacity-1/active_min_on.png
+%%DATADIR%%/Equinox Glass/metacity-1/active_min_pressed.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_active_close.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_active_close_on.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_active_close_pressed.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_active_max.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_active_max_on.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_active_max_pressed.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_active_min.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_active_min_on.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_active_min_pressed.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_inactive_close.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_inactive_close_on.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_inactive_close_pressed.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_inactive_max.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_inactive_max_on.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_inactive_max_pressed.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_inactive_min.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_inactive_min_on.png
+%%DATADIR%%/Equinox Glass/metacity-1/dialog_inactive_min_pressed.png
+%%DATADIR%%/Equinox Glass/metacity-1/inactive_close.png
+%%DATADIR%%/Equinox Glass/metacity-1/inactive_close_on.png
+%%DATADIR%%/Equinox Glass/metacity-1/inactive_close_pressed.png
+%%DATADIR%%/Equinox Glass/metacity-1/inactive_max.png
+%%DATADIR%%/Equinox Glass/metacity-1/inactive_max_on.png
+%%DATADIR%%/Equinox Glass/metacity-1/inactive_max_pressed.png
+%%DATADIR%%/Equinox Glass/metacity-1/inactive_menu.png
+%%DATADIR%%/Equinox Glass/metacity-1/inactive_menu_on.png
+%%DATADIR%%/Equinox Glass/metacity-1/inactive_menu_pressed.png
+%%DATADIR%%/Equinox Glass/metacity-1/inactive_min.png
+%%DATADIR%%/Equinox Glass/metacity-1/inactive_min_on.png
+%%DATADIR%%/Equinox Glass/metacity-1/inactive_min_pressed.png
+%%DATADIR%%/Equinox Glass/metacity-1/metacity-theme-1.xml
+%%DATADIR%%/Equinox Light Glass/ChangeLog
+%%DATADIR%%/Equinox Light Glass/metacity-1/button_close.png
+%%DATADIR%%/Equinox Light Glass/metacity-1/button_max.png
+%%DATADIR%%/Equinox Light Glass/metacity-1/button_menu.png
+%%DATADIR%%/Equinox Light Glass/metacity-1/button_min.png
+%%DATADIR%%/Equinox Light Glass/metacity-1/dialog_close.png
+%%DATADIR%%/Equinox Light Glass/metacity-1/dialog_max.png
+%%DATADIR%%/Equinox Light Glass/metacity-1/dialog_min.png
+%%DATADIR%%/Equinox Light Glass/metacity-1/metacity-theme-1.xml
+%%DATADIR%%/Equinox Light/ChangeLog
+%%DATADIR%%/Equinox Light/gtk-2.0/apps/gnome-system-monitor.rc
+%%DATADIR%%/Equinox Light/gtk-2.0/apps/gnome-terminal.rc
+%%DATADIR%%/Equinox Light/gtk-2.0/apps/nautilus.rc
+%%DATADIR%%/Equinox Light/gtk-2.0/gtkrc
+%%DATADIR%%/Equinox Light/gtk-2.0/images/arrow.png
+%%DATADIR%%/Equinox Light/gtk-2.0/images/blank.png
+%%DATADIR%%/Equinox Light/gtk-2.0/images/handle-nautilus.png
+%%DATADIR%%/Equinox Light/gtk-2.0/images/panel_bg.png
+%%DATADIR%%/Equinox Light/index.theme
+%%DATADIR%%/Equinox Light/metacity-1/button_close.png
+%%DATADIR%%/Equinox Light/metacity-1/button_max.png
+%%DATADIR%%/Equinox Light/metacity-1/button_menu.png
+%%DATADIR%%/Equinox Light/metacity-1/button_min.png
+%%DATADIR%%/Equinox Light/metacity-1/dialog_close.png
+%%DATADIR%%/Equinox Light/metacity-1/dialog_max.png
+%%DATADIR%%/Equinox Light/metacity-1/dialog_min.png
+%%DATADIR%%/Equinox Light/metacity-1/metacity-theme-1.xml
+%%DATADIR%%/Equinox Wide/ChangeLog
+%%DATADIR%%/Equinox Wide/gtk-2.0/apps/gnome-system-monitor.rc
+%%DATADIR%%/Equinox Wide/gtk-2.0/apps/gnome-terminal.rc
+%%DATADIR%%/Equinox Wide/gtk-2.0/apps/nautilus.rc
+%%DATADIR%%/Equinox Wide/gtk-2.0/gtkrc
+%%DATADIR%%/Equinox Wide/gtk-2.0/images/arrow.png
+%%DATADIR%%/Equinox Wide/gtk-2.0/images/blank.png
+%%DATADIR%%/Equinox Wide/gtk-2.0/images/handle-nautilus.png
+%%DATADIR%%/Equinox Wide/gtk-2.0/images/panel_bg.png
+%%DATADIR%%/Equinox Wide/index.theme
+%%DATADIR%%/Equinox/ChangeLog
+%%DATADIR%%/Equinox/gtk-2.0/apps/gnome-system-monitor.rc
+%%DATADIR%%/Equinox/gtk-2.0/apps/gnome-terminal.rc
+%%DATADIR%%/Equinox/gtk-2.0/apps/nautilus.rc
+%%DATADIR%%/Equinox/gtk-2.0/gtkrc
+%%DATADIR%%/Equinox/gtk-2.0/images/arrow.png
+%%DATADIR%%/Equinox/gtk-2.0/images/blank.png
+%%DATADIR%%/Equinox/gtk-2.0/images/handle-nautilus.png
+%%DATADIR%%/Equinox/gtk-2.0/images/panel_bg.png
+%%DATADIR%%/Equinox/index.theme
+%%DATADIR%%/Equinox/metacity-1/active_close.png
+%%DATADIR%%/Equinox/metacity-1/active_close_on.png
+%%DATADIR%%/Equinox/metacity-1/active_close_pressed.png
+%%DATADIR%%/Equinox/metacity-1/active_max.png
+%%DATADIR%%/Equinox/metacity-1/active_max_on.png
+%%DATADIR%%/Equinox/metacity-1/active_max_pressed.png
+%%DATADIR%%/Equinox/metacity-1/active_menu.png
+%%DATADIR%%/Equinox/metacity-1/active_menu_on.png
+%%DATADIR%%/Equinox/metacity-1/active_menu_pressed.png
+%%DATADIR%%/Equinox/metacity-1/active_min.png
+%%DATADIR%%/Equinox/metacity-1/active_min_on.png
+%%DATADIR%%/Equinox/metacity-1/active_min_pressed.png
+%%DATADIR%%/Equinox/metacity-1/dialog_active_close.png
+%%DATADIR%%/Equinox/metacity-1/dialog_active_close_on.png
+%%DATADIR%%/Equinox/metacity-1/dialog_active_close_pressed.png
+%%DATADIR%%/Equinox/metacity-1/dialog_active_max.png
+%%DATADIR%%/Equinox/metacity-1/dialog_active_max_on.png
+%%DATADIR%%/Equinox/metacity-1/dialog_active_max_pressed.png
+%%DATADIR%%/Equinox/metacity-1/dialog_active_min.png
+%%DATADIR%%/Equinox/metacity-1/dialog_active_min_on.png
+%%DATADIR%%/Equinox/metacity-1/dialog_active_min_pressed.png
+%%DATADIR%%/Equinox/metacity-1/dialog_inactive_close.png
+%%DATADIR%%/Equinox/metacity-1/dialog_inactive_close_on.png
+%%DATADIR%%/Equinox/metacity-1/dialog_inactive_close_pressed.png
+%%DATADIR%%/Equinox/metacity-1/dialog_inactive_max.png
+%%DATADIR%%/Equinox/metacity-1/dialog_inactive_max_on.png
+%%DATADIR%%/Equinox/metacity-1/dialog_inactive_max_pressed.png
+%%DATADIR%%/Equinox/metacity-1/dialog_inactive_min.png
+%%DATADIR%%/Equinox/metacity-1/dialog_inactive_min_on.png
+%%DATADIR%%/Equinox/metacity-1/dialog_inactive_min_pressed.png
+%%DATADIR%%/Equinox/metacity-1/inactive_close.png
+%%DATADIR%%/Equinox/metacity-1/inactive_close_on.png
+%%DATADIR%%/Equinox/metacity-1/inactive_close_pressed.png
+%%DATADIR%%/Equinox/metacity-1/inactive_max.png
+%%DATADIR%%/Equinox/metacity-1/inactive_max_on.png
+%%DATADIR%%/Equinox/metacity-1/inactive_max_pressed.png
+%%DATADIR%%/Equinox/metacity-1/inactive_menu.png
+%%DATADIR%%/Equinox/metacity-1/inactive_menu_on.png
+%%DATADIR%%/Equinox/metacity-1/inactive_menu_pressed.png
+%%DATADIR%%/Equinox/metacity-1/inactive_min.png
+%%DATADIR%%/Equinox/metacity-1/inactive_min_on.png
+%%DATADIR%%/Equinox/metacity-1/inactive_min_pressed.png
+%%DATADIR%%/Equinox/metacity-1/metacity-theme-1.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Equinox Evolution.crx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/userChrome.css
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dirrm %%DATADIR%%/Equinox/gtk-2.0/apps
+@dirrm %%DATADIR%%/Equinox/gtk-2.0/images
+@dirrm %%DATADIR%%/Equinox/gtk-2.0
+@dirrm %%DATADIR%%/Equinox/metacity-1
+@dirrm %%DATADIR%%/Equinox
+@dirrm %%DATADIR%%/Equinox Classic/metacity-1
+@dirrm %%DATADIR%%/Equinox Classic
+@dirrm %%DATADIR%%/Equinox Classic Glass/metacity-1
+@dirrm %%DATADIR%%/Equinox Classic Glass
+@dirrm %%DATADIR%%/Equinox Evolution/gtk-2.0/apps
+@dirrm %%DATADIR%%/Equinox Evolution/gtk-2.0/images
+@dirrm %%DATADIR%%/Equinox Evolution/gtk-2.0
+@dirrm %%DATADIR%%/Equinox Evolution
+@dirrm %%DATADIR%%/Equinox Evolution Light/gtk-2.0/apps
+@dirrm %%DATADIR%%/Equinox Evolution Light/gtk-2.0/images
+@dirrm %%DATADIR%%/Equinox Evolution Light/gtk-2.0
+@dirrm %%DATADIR%%/Equinox Evolution Light
+@dirrm %%DATADIR%%/Equinox Evolution Rounded/metacity-1
+@dirrm %%DATADIR%%/Equinox Evolution Rounded
+@dirrm %%DATADIR%%/Equinox Evolution Squared/metacity-1
+@dirrm %%DATADIR%%/Equinox Evolution Squared
+@dirrm %%DATADIR%%/Equinox Glass/gtk-2.0/apps
+@dirrm %%DATADIR%%/Equinox Glass/gtk-2.0/images
+@dirrm %%DATADIR%%/Equinox Glass/gtk-2.0
+@dirrm %%DATADIR%%/Equinox Glass/metacity-1
+@dirrm %%DATADIR%%/Equinox Glass
+@dirrm %%DATADIR%%/Equinox Light/gtk-2.0/apps
+@dirrm %%DATADIR%%/Equinox Light/gtk-2.0/images
+@dirrm %%DATADIR%%/Equinox Light/gtk-2.0
+@dirrm %%DATADIR%%/Equinox Light/metacity-1
+@dirrm %%DATADIR%%/Equinox Light
+@dirrm %%DATADIR%%/Equinox Light Glass/metacity-1
+@dirrm %%DATADIR%%/Equinox Light Glass
+@dirrm %%DATADIR%%/Equinox Wide/gtk-2.0/apps
+@dirrm %%DATADIR%%/Equinox Wide/gtk-2.0/images
+@dirrm %%DATADIR%%/Equinox Wide/gtk-2.0
+@dirrm %%DATADIR%%/Equinox Wide
+@dirrmtry %%DATADIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/engines
+@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%
+@dirrmtry lib/gtk-2.0
