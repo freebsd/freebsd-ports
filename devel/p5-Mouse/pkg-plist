@@ -9,6 +9,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Mouse/Meta/Method/Destructor.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Mouse/Meta/Module.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Mouse/Meta/Role.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Mouse/Meta/Role/Application.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Mouse/Meta/Role/Composite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Mouse/Meta/Role/Method.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Mouse/Meta/TypeConstraint.pm
