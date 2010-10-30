@@ -91,27 +91,46 @@
   </import>
   <transcoding enabled="no">
     <mimetype-profile-mappings>
-      <transcode mimetype="video/x-flv" using="vlcmpeg"/>
-      <transcode mimetype="application/ogg" using="vlcmpeg"/>
-      <transcode mimetype="application/ogg" using="oggflac2raw"/>
-      <transcode mimetype="audio/x-flac" using="oggflac2raw"/>
+      <transcode mimetype="video/x-flv" using="video-common"/>
+      <transcode mimetype="application/ogg" using="video-common"/>
+      <transcode mimetype="application/ogg" using="audio-ffmpeg-wav"/>
+      <transcode mimetype="audio/x-flac" using="audio-ffmpeg-wav"/>
     </mimetype-profile-mappings>
-    <profiles>
-      <profile name="oggflac2raw" enabled="no" type="external">
-        <mimetype>audio/L16</mimetype>
+    <profiles> 
+      <profile name="audio-mod-xmp" enabled="no" type="external">
+        <mimetype>audio/x-wav</mimetype>
         <accept-url>no</accept-url>
-        <first-resource>yes</first-resource>
-        <accept-ogg-theora>no</accept-ogg-theora>
-        <agent command="ogg123" arguments="-d raw -f %out %in"/>
+        <first-resource>no</first-resource>
+        <hide-original-resource>yes</hide-original-resource>
+        <agent command="/usr/local/bin/xmp" arguments="-d wav -o %out %in"/>
         <buffer size="1048576" chunk-size="131072" fill-size="262144"/>
       </profile>
-      <profile name="vlcmpeg" enabled="no" type="external">
-        <mimetype>video/mpeg</mimetype>
-        <accept-url>yes</accept-url>
+      <profile name="audio-ffmpeg-wav" enabled="yes" type="external">
+        <mimetype>audio/x-wav</mimetype>
+        <accept-url>no</accept-url>
+        <first-resource>no</first-resource>        
+	<hide-original-resource>yes</hide-original-resource>
+        <agent command="/usr/local/bin/ffmpeg" arguments="-i %in -f wav -y %out"/>
+        <buffer size="1048576" chunk-size="131072" fill-size="262144"/>
+      </profile>
+      <profile name="audio-ffmpeg-raw" enabled="no" type="external">
+        <mimetype>audio/L16</mimetype>
         <first-resource>yes</first-resource>
+        <accept-url>no</accept-url>
+        <sample-frequency>44100</sample-frequency>
+        <audio-channels>2</audio-channels>
+        <hide-original-resource>yes</hide-original-resource>
+        <agent command="/usr/local/bin/ffmpeg" arguments="-i %in -ac 2 -ar 44100 -y -f s16be %out"/>
+        <buffer size="1048576" chunk-size="131072" fill-size="262144"/>
+      </profile>
+      <profile name="video-common" enabled="yes" type="external">
+        <mimetype>video/mpeg</mimetype>
+        <accept-url>no</accept-url>
+        <first-resource>yes</first-resource>
+        <hide-original-resource>yes</hide-original-resource>
         <accept-ogg-theora>yes</accept-ogg-theora>
-        <agent command="vlc" arguments="-I dummy %in --sout #transcode{venc=ffmpeg,vcodec=mp2v,vb=4096,fps=25,aenc=ffmpeg,acodec=mpga,ab=192,samplerate=44100,channels=2}:standard{access=file,mux=ps,dst=%out} vlc:quit"/>
-        <buffer size="14400000" chunk-size="512000" fill-size="120000"/>
+        <agent command="/usr/local/bin/ffmpeg" arguments="-i %in -f mpegts -sameq -vb 4096k -r 25 -ac 2 -ar 48000 -ab 192k -async 2 -threads 2 -y %out"/>
+        <buffer size="10485760" chunk-size="262144" fill-size="524288"/>
       </profile>
     </profiles>
   </transcoding>
