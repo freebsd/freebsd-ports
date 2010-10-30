@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	feh
-PORTVERSION=	1.8
+PORTVERSION=	1.10
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.chaosdorf.de/~derf/feh/ \
 		http://people.freebsd.org/~uqs/distfiles/

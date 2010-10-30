@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/feh
 bin/feh-cam
 bin/gen-cam-menu
@@ -14,11 +13,8 @@ bin/gen-cam-menu
 %%DATADIR%%/images/menubg_aqua.png
 %%DATADIR%%/images/menubg_black.png
 %%DATADIR%%/images/menubg_brushed.png
-%%DATADIR%%/images/menubg_chrome.png
 %%DATADIR%%/images/menubg_default.png
-%%DATADIR%%/images/menubg_pastel.png
 %%DATADIR%%/images/menubg_sky.png
-%%DATADIR%%/images/menubg_wood.png
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%
