@@ -28,7 +28,23 @@
  #endif /* AUDACIOUS */
  
  #ifdef BMPX
-@@ -6007,7 +6011,7 @@
+@@ -5716,6 +5720,7 @@
+ 			"kvm_open")) == NULL) {
+ 		CRIT_ERR(NULL, NULL, "cannot read kvm");
+ 	}
++	pthread_mutex_init(&kvm_proc_mutex, NULL);
+ #endif
+ 
+ 	while (1) {
+@@ -5999,6 +6004,7 @@
+ 
+ #if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+ 	kvm_close(kd);
++	pthread_mutex_destroy(&kvm_proc_mutex);
+ #endif
+ 
+ 	return 0;
+@@ -6007,7 +6013,7 @@
  
  void alarm_handler(void) {
  	if(childpid > 0) {
