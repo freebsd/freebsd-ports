@@ -1,16 +1,12 @@
---- etc/settings.orig	2009-10-09 10:34:33.000000000 +1100
-+++ etc/settings	2009-10-09 10:37:10.000000000 +1100
-@@ -11,55 +11,11 @@
- ### ML compiler settings (ESSENTIAL!)
- ###
+--- etc/settings.orig	2010-06-21 02:24:19.000000000 -0700
++++ etc/settings	2010-08-16 14:53:16.000000000 -0700
+@@ -15,19 +15,7 @@
+ # not invent new ML system names unless you know what you are doing.
+ # Only one of the sections below should be activated.
  
--# ML_HOME specifies the location of the actual compiler binaries.  Do
--# not invent new ML system names unless you know what you are doing.
--# Only one of the sections below should be activated.
--
--# Poly/ML 4.x/5.x (automated settings)
+-# Poly/ML 5.x (automated settings)
 -POLY_HOME="$(type -p poly)"; [ -n "$POLY_HOME" ] && POLY_HOME="$(dirname "$POLY_HOME")"
--ML_PLATFORM=$("$ISABELLE_HOME/lib/scripts/polyml-platform")
+-ML_PLATFORM="$ISABELLE_PLATFORM"
 -ML_HOME=$(choosefrom \
 -  "$ISABELLE_HOME/contrib/polyml/$ML_PLATFORM" \
 -  "$ISABELLE_HOME/../polyml/$ML_PLATFORM" \
@@ -20,48 +16,26 @@
 -  $POLY_HOME)
 -ML_SYSTEM=$("$ISABELLE_HOME/lib/scripts/polyml-version")
 -ML_OPTIONS="-H 200"
--ML_DBASE=""
--
--# Poly/ML 5.1
--#ML_PLATFORM=x86-linux
--#ML_HOME=/usr/local/polyml/x86-linux
--#ML_SYSTEM=polyml-5.1
--#ML_OPTIONS="-H 500"
--
--# Poly/ML 5.1 (64 bit)
--#ML_PLATFORM=x86_64-linux
--#ML_HOME=/usr/local/polyml/x86_64-linux
--#ML_SYSTEM=polyml-5.1
--#ML_OPTIONS="-H 1000"
--
--# Poly/ML 4.2.0
--#ML_PLATFORM=x86-linux
--#ML_HOME=/usr/local/polyml/x86-linux
--#ML_SYSTEM=polyml-4.2.0
--#ML_OPTIONS="-H 80"
--
--# Standard ML of New Jersey (slow!)
--#ML_SYSTEM=smlnj-110
--#ML_HOME="/usr/local/smlnj/bin"
--#ML_OPTIONS="@SMLdebug=/dev/null"
--#ML_PLATFORM=$(eval $("$ML_HOME/.arch-n-opsys" 2>/dev/null); echo "$HEAP_SUFFIX")
--#SMLNJ_CYGWIN_RUNTIME=1
--
--# Moscow ML 2.00 (experimental!)
--#ML_SYSTEM=mosml
--#ML_HOME="/usr/local/mosml/bin"
--#ML_OPTIONS=""
--#ML_PLATFORM=""
--
+-ML_SOURCES="$ML_HOME/../src"
++
+ 
+ # Poly/ML 5.3.0
+ #ML_PLATFORM=x86-linux
+@@ -50,6 +38,13 @@
+ #ML_PLATFORM=$(eval $("$ML_HOME/.arch-n-opsys" 2>/dev/null); echo "$HEAP_SUFFIX")
+ #SMLNJ_CYGWIN_RUNTIME=1
+ 
++# FreeBSD PolyML Settings
 +ML_SYSTEM=%%ML_SYSTEM%%
 +ML_HOME=%%ML_HOME%%
 +ML_OPTIONS=%%ML_OPTIONS%%
 +ML_PLATFORM=%%ML_PLATFORM%%
 +ML_DBASE=%%ML_DBASE%%
++
  
  ###
  ### JVM components (Scala or Java)
-@@ -81,7 +37,7 @@
+@@ -64,7 +59,7 @@
  ### Interactive sessions (cf. isabelle tty)
  ###
  
@@ -70,7 +44,7 @@
  [ -z "$ISABELLE_LINE_EDITOR" ] && ISABELLE_LINE_EDITOR="$(type -p rlwrap)"
  [ -z "$ISABELLE_LINE_EDITOR" ] && ISABELLE_LINE_EDITOR="$(type -p ledit)"
  
-@@ -131,7 +87,7 @@
+@@ -109,7 +104,7 @@
  ISABELLE_TOOLS="$ISABELLE_HOME/lib/Tools"
  
  # Location for temporary files (should be on a local file system).
@@ -79,7 +53,7 @@
  
  # Heap input locations. ML system identifier is included in lookup.
  ISABELLE_PATH="$ISABELLE_HOME_USER/heaps/$ISABELLE_IDENTIFIER:$ISABELLE_HOME/heaps"
-@@ -157,7 +113,7 @@
+@@ -136,7 +131,7 @@
  ###
  
  # Where to look for docs (multiple dirs separated by ':').
@@ -88,7 +62,7 @@
  
  # Preferred document format
  ISABELLE_DOC_FORMAT=pdf
-@@ -191,9 +147,7 @@
+@@ -173,9 +168,7 @@
  PROOFGENERAL_HOME=$(choosefrom \
    "$ISABELLE_HOME/contrib/ProofGeneral" \
    "$ISABELLE_HOME/../ProofGeneral" \
@@ -99,39 +73,20 @@
    "")
  
  PROOFGENERAL_OPTIONS=""
-@@ -211,9 +165,7 @@
- JEDIT_HOME=$(choosefrom \
-   "$ISABELLE_HOME/contrib/jedit" \
-   "$ISABELLE_HOME/../jedit" \
--  "/usr/local/jedit" \
--  "/usr/share/jedit" \
--  "/opt/jedit" \
-+  "%%JAVASHAREDIR%%/jedit" \
-   "")
+@@ -201,9 +194,9 @@
+ ## Set HOME only for tools you have installed!
  
- JEDIT_JAVA_OPTIONS=""
-@@ -231,17 +183,17 @@
- E_HOME=$(choosefrom \
-   "$ISABELLE_HOME/contrib/E/$ML_PLATFORM" \
-   "$ISABELLE_HOME/../E/$ML_PLATFORM" \
--  "/usr/local/E" \
-+  "%%PREFIX%%/E" \
-   "")
- VAMPIRE_HOME=$(choosefrom \
-   "$ISABELLE_HOME/contrib/vampire/$ML_PLATFORM" \
-   "$ISABELLE_HOME/../vampire/$ML_PLATFORM" \
--  "/usr/local/Vampire" \
-+  "%%PREFIX%%/Vampire" \
-   "")
- SPASS_HOME=$(choosefrom \
-   "$ISABELLE_HOME/contrib/spass/$ML_PLATFORM/bin" \
-   "$ISABELLE_HOME/../spass/$ML_PLATFORM/bin" \
--  "/usr/local/SPASS" \
-+  "%%PREFIX%%/SPASS" \
-   "")
+ # External provers
+-#E_HOME=/usr/local/bin
+-#SPASS_HOME=/usr/local/bin
+-#VAMPIRE_HOME=/usr/local/bin
++#E_HOME=%%PREFIX%%/bin
++#SPASS_HOME=%%PREFIX%%/bin
++#VAMPIRE_HOME=%%PREFIX%%/bin
  
  # HOL4 proof objects (cf. Isabelle/src/HOL/Import)
-@@ -253,24 +205,24 @@
+ #HOL4_PROOFS="$ISABELLE_HOME_USER/proofs:$ISABELLE_HOME/proofs"
+@@ -214,24 +207,24 @@
  #SVC_MACHINE=sparc-sun-solaris
  
  # Mucke (mu-calculus model checker)
@@ -160,5 +115,5 @@
 -#JERUSAT_HOME=/usr/local/bin
 +#JERUSAT_HOME=%%PREFIX%%/bin
  
- # For configuring HOL/Matrix/cplex
- # LP_SOLVER is the default solver. It can be changed during runtime via Cplex.set_solver.
+ # CSDP (SDP Solver, cf. Isabelle/src/HOL/Library/Sum_of_Squares/sos_wrapper.ML)
+ #CSDP_EXE=csdp
