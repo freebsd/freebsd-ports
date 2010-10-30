@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	Lingua-JA-Regular-Unicode
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to convert Japanese chars
-
-BUILD_DEPENDS=	p5-YAML>0:${PORTSDIR}/textproc/p5-YAML
 
 PERL_CONFIGURE=	yes
 
