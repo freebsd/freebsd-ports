@@ -14,6 +14,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	olivier@cochard.me
 COMMENT=	Publish command line shell through AJAX interface
 
+OPTIONS=	ENABLE_CORES	"Patch shellinaboxd to enable core dumps." off
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	\
 		--prefix=${PREFIX} \
@@ -35,6 +37,16 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 SUB_FILES=	pkg-deinstall
 SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
+
+.include <bsd.port.options.mk>
+
+post-patch:
+.if defined(WITH_ENABLE_CORES)
+	@${REINPLACE_CMD} \
+		-e 's|prctl(PR_SET_DUMPABLE,|// &|' \
+		-e 's|setrlimit(RLIMIT_CORE,|// &|' \
+			${WRKSRC}/shellinabox/shellinaboxd.c
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/shellinaboxd ${PREFIX}/bin/
