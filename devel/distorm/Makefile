@@ -7,6 +7,7 @@
 
 PORTNAME=	distorm
 PORTVERSION=	3.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		LOCAL/bf
@@ -17,6 +18,7 @@ COMMENT=	Fast x86 and x86-64 disassembler library
 
 LICENSE=	GPLv3
 
+USE_DOS2UNIX=	yes
 USE_ZIP=	yes
 USE_LDCONFIG=	yes
 
