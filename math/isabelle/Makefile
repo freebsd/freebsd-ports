@@ -6,40 +6,45 @@
 #
 
 PORTNAME=	isabelle
-PORTVERSION=	2009
-PORTREVISION=	2
+PORTVERSION=	2009.2
 CATEGORIES=	math
 MASTER_SITES=	http://isabelle.in.tum.de/dist/ \
 		http://www.cl.cam.ac.uk/Research/HVG/Isabelle/dist/ \
 		http://mirror.cse.unsw.edu.au/pub/isabelle/dist/
-DISTNAME=	Isabelle2009
+DISTNAME=	Isabelle2009-2
 .if !defined(NOPORTDOCS)
-DISTFILES=	Isabelle2009.tar.gz \
-		Isabelle2009_library.tar.gz \
-		Isabelle2009_pdf.tar.gz
+DISTFILES=	${DISTNAME}.tar.gz \
+		${DISTNAME}_library.tar.gz
 .endif
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	A generic proof assistant
 
-BROKEN=		bad plist
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-OPTIONS=	SMLNJ  "Use SML/NJ (devel) instead of faster Poly/ML"     off
-OPTIONS+=	RLWRAP "Use rlwrap as line editor"                        on
-OPTIONS+=	LEDIT  "Use ledit as line editor"                         off
+OPTIONS=	POLYML  "Use Poly/ML (fast but broken) instead of SML/NJ" off
+OPTIONS+=	RLWRAP       "Use rlwrap as line editor"                  on
+OPTIONS+=	LEDIT        "Use ledit as line editor"                   off
 OPTIONS+=	HOL_ALGEBRA  "Build optional heap: HOL-Algebra"           off
 OPTIONS+=	HOL_NOMINAL  "Build optional heap: HOL-Nominal"           off
 OPTIONS+=	HOL_NSA      "Build optional heap: HOL-NSA"               off
 OPTIONS+=	HOL_WORD     "Build optional heap: HOL-Word"              off
 OPTIONS+=	HOL_TLA      "Build optional heap: TLA"                   off
 OPTIONS+=	HOL_HOL4     "Build optional heap: HOL4"                  off
+OPTIONS+=	EMACS_PKG    "Build with Emacs Packages"                  off
 
 USE_PERL5=	yes
-USE_EMACS=	yes # for EMACS_SITE_LISPDIR
-EMACS_NO_BUILD_DEPENDS=yes
-EMACS_NO_RUN_DEPENDS=yes
+
+.if defined(WITH_EMACS_PKG)
+	USE_EMACS=	yes # for EMACS_SITE_LISPDIR
+	EMACS_NO_BUILD_DEPENDS=yes
+	EMACS_NO_RUN_DEPENDS=yes
+	RUN_DEPENDS+=	proofgeneral:${PORTSDIR}/math/proofgeneral
+.else
+.endif
+
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS+=	proofgeneral:${PORTSDIR}/math/proofgeneral
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
 DOCFILES=	Contents *.pdf *.eps *.ps *.dvi
@@ -95,12 +100,12 @@ EXTRA_HOL+=-m HOL4
 HEAP_HOL_HOL4="@comment "
 .endif
 
-.if defined(WITH_SMLNJ)
+.if !defined(WITH_POLYML)
 ML_SYSTEM=	smlnj-110
-ML_HOME=	${LOCALBASE}/bin
-ML_OPTIONS=	@SMLdebug=/dev/null
+ML_HOME=	${LOCALBASE}/smlnj/bin
+ML_OPTIONS=	-Ccontrol.poly-eq-warn=false @SMLdebug=/dev/null
 .else
-ML_SYSTEM=	polyml-5.2
+ML_SYSTEM=	polyml-5.3
 ML_HOME=	${LOCALBASE}/bin
 ML_OPTIONS=	-H 500
 ML_DBASE=	""
@@ -114,7 +119,7 @@ PLIST_SUB+=	HEAPSUBDIR=${ML_SYSTEM}_${ML_PLATFORM} \
 		HEAP_HOL_WORD=${HEAP_HOL_WORD} \
 		HEAP_HOL_TLA=${HEAP_HOL_TLA} \
 		HEAP_HOL_HOL4=${HEAP_HOL_HOL4}
-.if defined(WITH_SMLNJ)
+.if !defined(WITH_POLYML)
 BUILD_DEPENDS+=	smlnj-devel>=110.71:${PORTSDIR}/lang/sml-nj-devel
 MAKE_ENV+=	SMLNJ_DEVEL=yes
 .else
