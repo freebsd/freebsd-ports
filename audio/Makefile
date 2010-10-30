@@ -463,6 +463,7 @@
     SUBDIR += madman
     SUBDIR += madplay
     SUBDIR += malint
+    SUBDIR += mangler
     SUBDIR += maplay
     SUBDIR += mbox
     SUBDIR += mbrolavox
