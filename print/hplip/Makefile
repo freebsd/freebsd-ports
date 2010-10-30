@@ -84,6 +84,10 @@ OPTIONS=	QT "Graphical User Interface (Qt4)" on \
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} < 800067
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-strnlen
+.endif
+
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 USB_INCLUDE=	${LOCALBASE}/include
