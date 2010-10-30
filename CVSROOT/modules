@@ -2594,6 +2594,7 @@ dprog                           ports/devel/dprog
 dpsearch                        ports/www/dpsearch
 drac                            ports/mail/drac
 dradis                          ports/security/dradis
+dragon                          ports/devel/dragon
 dragstack                       ports/deskutils/dragstack
 drbl                            ports/mail/drbl
 dreampie                        ports/devel/dreampie
@@ -17467,6 +17468,7 @@ p5-perl6-junction               ports/devel/p5-Perl6-Junction
 p5-perl6-rules                  ports/devel/p5-Perl6-Rules
 p5-perl6-say                    ports/devel/p5-Perl6-Say
 p5-perl6-subs                   ports/lang/p5-Perl6-Subs
+p5-perlbrew                     ports/devel/p5-perlbrew
 p5-perlcryptlib                 ports/security/p5-PerlCryptLib
 p5-perlfm                       ports/x11-fm/p5-PerlFM
 p5-perlio-eol                   ports/devel/p5-PerlIO-eol
@@ -19587,6 +19589,7 @@ penguintv                       ports/net/penguintv
 pengupop                        ports/games/pengupop
 pentix                          ports/games/pentix
 penv                            ports/sysutils/penv
+pep8                            ports/devel/pep8
 peps                            ports/graphics/peps
 perdition                       ports/mail/perdition
 perf                            ports/sysutils/perf
@@ -24942,6 +24945,7 @@ unfs3                           ports/net/unfs3
 unhide                          ports/security/unhide
 uni2ascii                       ports/textproc/uni2ascii
 uniconvertor                    ports/graphics/uniconvertor
+uniconvw                        ports/graphics/uniconvw
 unicornscan                     ports/security/unicornscan
 unieject                        ports/sysutils/unieject
 unique                          ports/x11-toolkits/unique
