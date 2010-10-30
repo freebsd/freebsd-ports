@@ -1,0 +1,23 @@
+--- Makefile.orig	2010-10-21 13:29:25.000000000 +0200
++++ Makefile	2010-10-24 15:49:36.000000000 +0200
+@@ -11,17 +11,17 @@
+ # Use -g to compile the program for debugging.
+ 
+ #DEBUG = -g -DDEBUG -Wall
+-DEBUG = -O2
++#DEBUG = -O2
+ 
+ # Use -p to profile the program.
+ #PROFILE = -p -DPROFILE
+ PROFILE =
+ 
+-LIBS = -lncurses
++LIBS = -lcurses
+ 
+ # You shouldn't have to modify anything below this line.
+ 
+-CFLAGS = $(DEBUG) $(PROFILE)
++CFLAGS+= $(DEBUG) $(PROFILE)
+ 
+ FILES = \
+ 	attack.c \
