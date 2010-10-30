@@ -8,7 +8,7 @@
 PORTNAME=	dgpsip
 PORTVERSION=	1.35
 CATEGORIES=	astro geography
-MASTER_SITES=	http://www.wsrcc.com/wolfgang/ftp/
+MASTER_SITES=	http://www.madbavarian.org/ftp/
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Differential GPS over IP communication device
