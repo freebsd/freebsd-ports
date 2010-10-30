@@ -7,11 +7,11 @@
 
 PORTNAME=	tinker
 PORTVERSION=	4.2.20040908
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	biology
-MASTER_SITES=	${MASTER_SITE_GENTOO} \
-		ftp://dasher.wustl.edu/pub/
-MASTER_SITE_SUBDIR=	distfiles
+MASTER_SITES=	ftp://ftp.tu-chemnitz.de/.SAN0/pub/FreeBSD/ports/distfiles/RESTRICTED/${PORTNAME}-${PORTVERSION}/\
+		ftp://ftp.tw.freebsd.org/pub/ports/distfiles/${PORTNAME}-${PORTVERSION}/ \
+		ftp://ftp.uvsq.fr/pub/FreeBSD/ports/distfiles/RESTRICTED/${PORTNAME}-${PORTVERSION}/
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
@@ -26,7 +26,6 @@ MAKEFILE=	${WRKDIR}/tinker/make/Makefile
 ALL_TARGET=	all listing
 INSTALL_TARGET=	rename
 RESTRICTED=	author requests no distribution except from his FTP site
-BROKEN=		does not fetch
 
 DOCS=		README *.pdf *.txt release*
 SAMPLES=	README clean.make *.1st *.boat *.cell *.chair *.dat *.dyn0	\
