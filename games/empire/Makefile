@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	empire
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	1.8
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/vms-empire/
 DISTNAME=	vms-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Solitaire empire game "VMS Empire"
+
+LICENSE=	GPLv2
 
 MAN6=		empire.6
 PLIST_FILES=	bin/empire
@@ -29,7 +30,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vms-empire ${PREFIX}/bin/empire
-	${INSTALL_MAN} ${WRKSRC}/vms-empire.6 ${MANPREFIX}/man/man6/empire.6
+	${INSTALL_MAN} ${WRKSRC}/empire.6 ${MANPREFIX}/man/man6/empire.6
 .if !defined(NOPORTDOCS)
 .for file in BUGS README
 	@${MKDIR} ${DOCSDIR}
