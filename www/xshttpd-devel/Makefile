@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.7b15
-PORTREVISION=	3
+DISTVERSION=	3.7b18
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -32,6 +31,7 @@ USE_BZIP2=	yes
 USE_RC_SUBR=	xshttpd.sh
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--enable-hier=bsd
 
 OPTIONS=	LDAP "Enable ldap support" Off \
 		CURL "Enable curl (proxy) support" Off \
@@ -43,7 +43,6 @@ PORTDOCS=	README COPYING ChangeLog
 .include <bsd.port.pre.mk>
 # By default XS-HTTPD stores its data in ${PREFIX}/lib/httpd
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
-CONFIGURE_ARGS+=--with-rootdir=${WWWDIR}
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes

@@ -8,76 +8,80 @@ bin/xspasswd
 %%WWWDIR%%/cgi-bin/gfxcount
 %%WWWDIR%%/cgi-bin/imagemap
 %%WWWDIR%%/cgi-bin/xschpass
-%%WWWDIR%%/conf/httpd.conf.sample
-%%WWWDIR%%/conf/mime.index
-%%WWWDIR%%/conf/script.methods.sample
-%%WWWDIR%%/conf/compress.methods.sample
-%%WWWDIR%%/contrib/SSL-Makefile
-%%WWWDIR%%/contrib/agentstats.pl
-%%WWWDIR%%/contrib/caroot.pem
-%%WWWDIR%%/contrib/logrotate.sh
-%%WWWDIR%%/contrib/persistent.pl
-%%WWWDIR%%/contrib/powered-by-xs.gif
-%%WWWDIR%%/contrib/wwwstats.pl
-%%WWWDIR%%/gfxcount/digital0.ppm
-%%WWWDIR%%/gfxcount/digital1.ppm
-%%WWWDIR%%/gfxcount/digital2.ppm
-%%WWWDIR%%/gfxcount/digital3.ppm
-%%WWWDIR%%/gfxcount/digital4.ppm
-%%WWWDIR%%/gfxcount/digital5.ppm
-%%WWWDIR%%/gfxcount/digital6.ppm
-%%WWWDIR%%/gfxcount/digital7.ppm
-%%WWWDIR%%/gfxcount/digital8.ppm
-%%WWWDIR%%/gfxcount/digital9.ppm
-%%WWWDIR%%/gfxcount/large0.ppm
-%%WWWDIR%%/gfxcount/large1.ppm
-%%WWWDIR%%/gfxcount/large2.ppm
-%%WWWDIR%%/gfxcount/large3.ppm
-%%WWWDIR%%/gfxcount/large4.ppm
-%%WWWDIR%%/gfxcount/large5.ppm
-%%WWWDIR%%/gfxcount/large6.ppm
-%%WWWDIR%%/gfxcount/large7.ppm
-%%WWWDIR%%/gfxcount/large8.ppm
-%%WWWDIR%%/gfxcount/large9.ppm
-%%WWWDIR%%/gfxcount/largecol0.ppm
-%%WWWDIR%%/gfxcount/largecol1.ppm
-%%WWWDIR%%/gfxcount/largecol2.ppm
-%%WWWDIR%%/gfxcount/largecol3.ppm
-%%WWWDIR%%/gfxcount/largecol4.ppm
-%%WWWDIR%%/gfxcount/largecol5.ppm
-%%WWWDIR%%/gfxcount/largecol6.ppm
-%%WWWDIR%%/gfxcount/largecol7.ppm
-%%WWWDIR%%/gfxcount/largecol8.ppm
-%%WWWDIR%%/gfxcount/largecol9.ppm
-%%WWWDIR%%/icons/xs-audio.gif
-%%WWWDIR%%/icons/xs-back.gif
-%%WWWDIR%%/icons/xs-base.gif
-%%WWWDIR%%/icons/xs-bin.gif
-%%WWWDIR%%/icons/xs-dir.gif
-%%WWWDIR%%/icons/xs-gif.gif
-%%WWWDIR%%/icons/xs-html.gif
-%%WWWDIR%%/icons/xs-image.gif
-%%WWWDIR%%/icons/xs-jpeg.gif
-%%WWWDIR%%/icons/xs-ps.gif
-%%WWWDIR%%/icons/xs-tar.gif
-%%WWWDIR%%/icons/xs-txt.gif
-%%WWWDIR%%/icons/xs-unknown.gif
-%%WWWDIR%%/icons/xs-video.gif
-%%WWWDIR%%/icons/xs-zip.gif
-%%PERL%%%%WWWDIR%%/module/mod_perl.so
-%%LDAP%%%%WWWDIR%%/module/mod_ldap.so
-%%WWWDIR%%/module/mod_compress.so
-%%WWWDIR%%/module/mod_gzip.so
-%%WWWDIR%%/module/mod_bzip2.so
-%%WWWDIR%%/module/mod_magic.so
-%%WWWDIR%%/module/mod_rpaf.so
+%%ETCDIR%%/httpd.conf.sample
+%%ETCDIR%%/mime.index
+%%ETCDIR%%/script.methods.sample
+%%ETCDIR%%/compress.methods.sample
+%%DATADIR%%/contrib/SSL-Makefile
+%%DATADIR%%/contrib/agentstats.pl
+%%DATADIR%%/contrib/caroot.pem
+%%DATADIR%%/contrib/logrotate.sh
+%%DATADIR%%/contrib/persistent.pl
+%%DATADIR%%/contrib/powered-by-xs.gif
+%%DATADIR%%/contrib/wwwstats.pl
+%%DATADIR%%/gfxcount/digital0.ppm
+%%DATADIR%%/gfxcount/digital1.ppm
+%%DATADIR%%/gfxcount/digital2.ppm
+%%DATADIR%%/gfxcount/digital3.ppm
+%%DATADIR%%/gfxcount/digital4.ppm
+%%DATADIR%%/gfxcount/digital5.ppm
+%%DATADIR%%/gfxcount/digital6.ppm
+%%DATADIR%%/gfxcount/digital7.ppm
+%%DATADIR%%/gfxcount/digital8.ppm
+%%DATADIR%%/gfxcount/digital9.ppm
+%%DATADIR%%/gfxcount/large0.ppm
+%%DATADIR%%/gfxcount/large1.ppm
+%%DATADIR%%/gfxcount/large2.ppm
+%%DATADIR%%/gfxcount/large3.ppm
+%%DATADIR%%/gfxcount/large4.ppm
+%%DATADIR%%/gfxcount/large5.ppm
+%%DATADIR%%/gfxcount/large6.ppm
+%%DATADIR%%/gfxcount/large7.ppm
+%%DATADIR%%/gfxcount/large8.ppm
+%%DATADIR%%/gfxcount/large9.ppm
+%%DATADIR%%/gfxcount/largecol0.ppm
+%%DATADIR%%/gfxcount/largecol1.ppm
+%%DATADIR%%/gfxcount/largecol2.ppm
+%%DATADIR%%/gfxcount/largecol3.ppm
+%%DATADIR%%/gfxcount/largecol4.ppm
+%%DATADIR%%/gfxcount/largecol5.ppm
+%%DATADIR%%/gfxcount/largecol6.ppm
+%%DATADIR%%/gfxcount/largecol7.ppm
+%%DATADIR%%/gfxcount/largecol8.ppm
+%%DATADIR%%/gfxcount/largecol9.ppm
+%%DATADIR%%/icons/xs-audio.gif
+%%DATADIR%%/icons/xs-back.gif
+%%DATADIR%%/icons/xs-base.gif
+%%DATADIR%%/icons/xs-bin.gif
+%%DATADIR%%/icons/xs-dir.gif
+%%DATADIR%%/icons/xs-gif.gif
+%%DATADIR%%/icons/xs-html.gif
+%%DATADIR%%/icons/xs-image.gif
+%%DATADIR%%/icons/xs-jpeg.gif
+%%DATADIR%%/icons/xs-ps.gif
+%%DATADIR%%/icons/xs-tar.gif
+%%DATADIR%%/icons/xs-txt.gif
+%%DATADIR%%/icons/xs-unknown.gif
+%%DATADIR%%/icons/xs-video.gif
+%%DATADIR%%/icons/xs-zip.gif
+%%PERL%%libexec/xshttpd/mod_perl.so
+%%LDAP%%libexec/xshttpd/mod_ldap.so
+libexec/xshttpd/mod_bzip2.so
+libexec/xshttpd/mod_compress.so
+libexec/xshttpd/mod_gzip.so
+libexec/xshttpd/mod_htcpcp.so
+libexec/xshttpd/mod_magic.so
+libexec/xshttpd/mod_rpaf.so
 @exec mkdir -p %%WWWDIR%%/htdocs
-@dirrm %%WWWDIR%%/contrib
-@dirrm %%WWWDIR%%/gfxcount
+@exec mkdir -p /var/log/xshttpd
+@dirrm %%DATADIR%%/contrib
+@dirrm %%DATADIR%%/gfxcount
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%/logs
+@dirrmtry %%DATADIR%%
 @dirrmtry %%WWWDIR%%/cgi-bin
-@dirrmtry %%WWWDIR%%/conf
 @dirrmtry %%WWWDIR%%/htdocs
-@dirrmtry %%WWWDIR%%/icons
-@dirrmtry %%WWWDIR%%/logs
-@dirrmtry %%WWWDIR%%/module
 @dirrmtry %%WWWDIR%%
+@dirrmtry %%ETCDIR%%
+@dirrmtry libexec/xshttpd
+@dirrmtry /var/log/xshttpd

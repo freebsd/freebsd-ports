@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101030:
+  AFFECTS: users of www/xshttpd-devel
+  AUTHOR: johans@FreeBSD.org
+
+  The default XS-httpd configuration file locations have changed:
+  The main configuration file is now $PREFIX/etc/xshttpd/httpd.conf
+  and other configuration file are stored in that same directory.
+  Existing configurations should be moved over manually.
+  Log files now appear in /var/log/xshttpd/ by default.
+
 20101029:
   AFFECTS: users of ports-mgmt/portmaster
   AUTHOR: Doug Barton <dougb@FreeBSD.org>
