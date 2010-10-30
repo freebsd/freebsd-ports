@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101029:
+  AFFECTS: users of ports-mgmt/portmaster
+  AUTHOR: Doug Barton <dougb@FreeBSD.org>
+
+  The changes to bsd.port.mk in 1.652 require all portmaster users to
+  upgrade to version 3.1 or later.  The best method to do this will be
+  to use the port, rather than portmaster itself:
+
+  # pkg_delete -f portmaster*
+  # cd /usr/ports/ports-mgmt/portmaster && make clean && make install clean
+
 20101026:
   AFFECTS: users of net/samba35
   AUTHOR: Timur Bakeyev <timur@FreeBSD.org>
