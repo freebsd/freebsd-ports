@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08123
-PORTREVISION=	1
+PORTVERSION=	0.08124
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -76,6 +75,7 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Manual::DocMap.3 \
 	DBIx::Class::Manual::Example.3 \
 	DBIx::Class::Manual::FAQ.3 \
+	DBIx::Class::Manual::Features.3 \
 	DBIx::Class::Manual::Glossary.3 \
 	DBIx::Class::Manual::Intro.3 \
 	DBIx::Class::Manual::Joining.3 \
@@ -103,8 +103,6 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::ResultSourceHandle.3 \
 	DBIx::Class::ResultSourceProxy::Table.3 \
 	DBIx::Class::Row.3 \
-	DBIx::Class::SQLAHacks::Oracle.3 \
-	DBIx::Class::SQLAHacks::OracleJoins.3 \
 	DBIx::Class::Schema.3 \
 	DBIx::Class::Schema::Versioned.3 \
 	DBIx::Class::Serialize::Storable.3 \
@@ -138,7 +136,6 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage::DBI::Replicated::Pool.3 \
 	DBIx::Class::Storage::DBI::Replicated::Replicant.3 \
 	DBIx::Class::Storage::DBI::Replicated::WithDSN.3 \
-	DBIx::Class::Storage::DBI::Role::QueryCounter.3 \
 	DBIx::Class::Storage::DBI::SQLAnywhere.3 \
 	DBIx::Class::Storage::DBI::SQLite.3 \
 	DBIx::Class::Storage::DBI::Sybase.3 \
@@ -151,6 +148,9 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Storage::DBI::mysql.3 \
 	DBIx::Class::Storage::Statistics.3 \
 	DBIx::Class::Storage::TxnScopeGuard.3 \
+	DBIx::Class::SQLMaker::OracleJoins.3 \
+	DBIx::Class::SQLMaker::LimitDialects.3 \
+	DBIx::Class::SQLMaker.3 \
 	DBIx::Class::UTF8Columns.3 \
 	SQL::Translator::Parser::DBIx::Class.3 \
 	SQL::Translator::Producer::DBIx::Class::File.3
