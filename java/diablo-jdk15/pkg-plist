@@ -1704,6 +1704,7 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Aruba
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Asuncion
 %%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Atikokan
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Bahia
+%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Bahia_Banderas
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Barbados
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Belem
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/America/Belize
@@ -2034,6 +2035,7 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/MET
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Apia
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Auckland
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Chatham
+%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Chuuk
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Easter
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Efate
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Enderbury
@@ -2059,14 +2061,15 @@ diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Noumea
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Pago_Pago
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Palau
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Pitcairn
-diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Ponape
+%%TZORIGINAL%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Ponape
+%%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Pohnpei
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Port_Moresby
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Rarotonga
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Saipan
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Tahiti
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Tarawa
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Tongatapu
-diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Truk
+%%TZORIGINAL%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Truk
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Wake
 diablo-jdk%%JDK_VERSION%%/jre/lib/zi/Pacific/Wallis
 %%TZUPDATE%%diablo-jdk%%JDK_VERSION%%/jre/lib/zi/SystemV/AST4
