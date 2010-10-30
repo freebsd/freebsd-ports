@@ -1,7 +1,7 @@
---- Makefile.in.orig	Fri Apr  9 20:02:59 1999
-+++ Makefile.in	Thu Apr 15 23:09:36 1999
-@@ -15,7 +15,7 @@
- LDFLAGS = @LDFLAGS@
+--- Makefile.in.orig	2010/10/30 02:29:59
++++ Makefile.in	2010/10/30 02:32:04
+@@ -17,7 +17,7 @@
+ EXEEXT = @EXEEXT@
  O=o
  
 -LIBS = @LIBS@

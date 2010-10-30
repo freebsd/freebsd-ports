@@ -1,8 +1,8 @@
---- charset.c.orig	Thu Mar 23 05:36:33 2000
-+++ charset.c	Mon Jun 19 22:33:43 2000
-@@ -267,6 +267,10 @@
+--- charset.c.orig	2010/10/30 02:38:17
++++ charset.c	2010/10/30 02:40:03
+@@ -408,6 +408,10 @@
  control_char(c)
- 	int c;
+ 	LWCHAR c;
  {
 +#ifdef COLOR_LESS
 +	if (c == ESC)
@@ -11,9 +11,9 @@
  	c &= 0377;
  	return (chardef[c] & IS_CONTROL_CHAR);
  }
-@@ -281,6 +285,20 @@
- {
- 	static char buf[8];
+@@ -423,6 +427,20 @@
+ 	/* {{ This buffer can be overrun if LESSBINFMT is a long string. }} */
+ 	static char buf[32];
  
 +#ifdef COLOR_LESS
 +	if(c == ESC)
@@ -30,12 +30,13 @@
 +	}
 +#else
  	c &= 0377;
- 	if (!control_char(c))
- 		sprintf(buf, "%c", c);
-@@ -290,5 +308,6 @@
- 		sprintf(buf, "^%c", c ^ 0100);
+ 	if ((c < 128 || !utf_mode) && !control_char(c))
+ 		SNPRINTF1(buf, sizeof(buf), "%c", (int) c);
+@@ -446,6 +464,7 @@
+ #endif
  	else
- 		sprintf(buf, binfmt, c);
+ 		SNPRINTF1(buf, sizeof(buf), binfmt, c);
 +#endif
  	return (buf);
  }
+ 
