@@ -8,7 +8,7 @@
 
 PORTNAME=	darkice
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio net
 MASTER_SITES=	GOOGLE_CODE
 
@@ -87,7 +87,8 @@ CONFIGURE_ARGS+=	--without-samplerate
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/test/s|==|=|g'\
+	 -e 's/sbr_main.h/libaacplus\/sbr_main.h/' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O2 -pedantic||g' ${WRKSRC}/src/Makefile.in
 
 do-install:
