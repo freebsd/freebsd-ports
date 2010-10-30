@@ -1,0 +1,10 @@
+OAuth is an open protocol to allow secure API authorization in
+a simple and standard method from desktop and web applications.
+
+liboauth is a collection of POSIX-c functions implementing the OAuth
+Core RFC 5849 standard. liboauth provides functions to escape and
+encode parameters according to OAuth specification and offers
+high-level functionality to sign requests or verify OAuth signatures
+as well as perform HTTP requests.
+
+WWW: http://liboauth.sourceforge.net/

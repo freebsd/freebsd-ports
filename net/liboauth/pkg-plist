@@ -1,0 +1,6 @@
+include/oauth.h
+lib/liboauth.so.8
+lib/liboauth.so
+lib/liboauth.la
+lib/liboauth.a
+libdata/pkgconfig/oauth.pc
