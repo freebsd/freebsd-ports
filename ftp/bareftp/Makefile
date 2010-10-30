@@ -11,7 +11,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://www.bareftp.org/release/ \
 		http://www.predatorlabs.net/dl/
 
-MAINTAINER=	rfarmer@predatorlabs.net
+MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Ftp client made in C sharp
 
 GNU_CONFIGURE=	yes
