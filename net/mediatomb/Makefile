@@ -185,6 +185,9 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/mediatomb/config.xml ]; then \
 		${CP} -p ${PREFIX}/etc/mediatomb/config.xml.dist ${PREFIX}/etc/mediatomb/config.xml ; \
 	fi
+	@${CHGRP} ${MEDIATOMB_GROUP} ${PREFIX}/bin/mediatomb
+	@${CHMOD} a-x ${PREFIX}/bin/mediatomb
+	@${CHMOD} g+x ${PREFIX}/bin/mediatomb
 	@${MKDIR} -m ${MEDIATOMB_MASK} -p ${MEDIATOMB_DIR}
 	@${CHOWN} ${MEDIATOMB_USER}:${MEDIATOMB_GROUP} ${MEDIATOMB_DIR}
 
