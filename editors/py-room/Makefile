@@ -13,7 +13,7 @@ MASTER_SITES=	https://launchpad.net/pyroom/${PORTVERSION:R}/${PORTVERSION}/+down
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	alexbestms@wwu.de
+MAINTAINER=	arundel@FreeBSD.org
 COMMENT=	PyRoom is a clone of WriteRoom and features "distraction-free writing"
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
