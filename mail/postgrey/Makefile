@@ -7,6 +7,7 @@
 
 PORTNAME=	postgrey
 PORTVERSION=	1.33
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://postgrey.schweikert.ch/pub/ \
 		http://postgrey.schweikert.ch/pub/old/
@@ -21,7 +22,7 @@ RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 
 USE_PERL5_RUN=	yes
-USE_RC_SUBR=	postgrey
+USE_RC_SUBR=	${PORTNAME}
 NO_BUILD=	yes
 POD2MAN?=	pod2man
 PORTDOCS=	README Changes README.exim
@@ -38,9 +39,9 @@ PGY_DIR?=	/var/db/postgrey
 MAN1=		${PORTNAME}.1 policy-test.1 postgreyreport.1
 
 post-patch:
-	@${REINPLACE_CMD} -e "s#/etc/#${PREFIX}/etc/#" ${WRKSRC}/postgrey
-	@${REINPLACE_CMD} -e '/^my.*DEFAULT_DBDIR/s|/var/spool/postfix/postgrey|${PGY_DIR}|' \
-	${WRKSRC}/postgrey
+	@${REINPLACE_CMD} -e 's#/etc/main.cf#/etc/postfix/main.cf#' ${WRKSRC}/postgrey
+	@${REINPLACE_CMD} -e 's#/etc/postfix#${PREFIX}&#' ${WRKSRC}/postgrey ${WRKSRC}/postgrey_whitelist_*
+	@${REINPLACE_CMD} -e 's#/var/spool/postfix/postgrey#${PGY_DIR}#' ${WRKSRC}/postgrey ${WRKSRC}/contrib/postgreyreport
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
