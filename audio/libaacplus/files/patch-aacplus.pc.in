@@ -1,0 +1,14 @@
+--- aacplus.pc.in.orig	2009-03-22 22:16:54.000000000 +0900
++++ aacplus.pc.in	2010-10-19 15:55:40.000000000 +0900
+@@ -1,10 +1,8 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ libdir=@libdir@
+-includedir=@includedir@/aacplus
++includedir=@includedir@/libaacplus
+ toolsdir=${exec_prefix}/bin
+-cppflags=@AACPLUS_CPPFLAGS@
+-cflags_only=@AACPLUS_CFLAGS@
+
+
+ Name: aacplus
