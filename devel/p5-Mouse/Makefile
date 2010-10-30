@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	Mouse
-PORTVERSION=	0.6200
+PORTVERSION=	0.81
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/../by-authors/id/G/GF/GFUJI
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-0.62
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Moose minus the antlers
@@ -36,6 +35,7 @@ MAN3=	Mouse.3 \
 	Mouse::Meta::Method::Destructor.3 \
 	Mouse::Meta::Module.3 \
 	Mouse::Meta::Role.3 \
+	Mouse::Meta::Role::Application.3 \
 	Mouse::Meta::Role::Composite.3 \
 	Mouse::Meta::Role::Method.3 \
 	Mouse::Meta::TypeConstraint.3 \
