@@ -149,6 +149,8 @@ include/wine/windows/d3d10_1.idl
 include/wine/windows/d3d10effect.h
 include/wine/windows/d3d10misc.h
 include/wine/windows/d3d10shader.h
+include/wine/windows/d3d11.h
+include/wine/windows/d3d11.idl
 include/wine/windows/d3d11shader.h
 include/wine/windows/d3d8.h
 include/wine/windows/d3d8caps.h
@@ -1224,6 +1226,7 @@ lib/wine/fakedlls/wintab.dll16
 lib/wine/fakedlls/wintab32.dll
 lib/wine/fakedlls/wintrust.dll
 lib/wine/fakedlls/winver.exe
+lib/wine/fakedlls/wlanapi.dll
 lib/wine/fakedlls/wldap32.dll
 lib/wine/fakedlls/wmi.dll
 lib/wine/fakedlls/wmiutils.dll
@@ -1336,6 +1339,7 @@ lib/wine/libdxerr8.a
 lib/wine/libdxerr9.a
 lib/wine/libdxgi.def
 lib/wine/libdxguid.a
+lib/wine/libfaultrep.def
 lib/wine/libgdi32.def
 lib/wine/libgdiplus.def
 lib/wine/libglu32.def
@@ -1423,6 +1427,7 @@ lib/wine/libuuid.a
 lib/wine/libuxtheme.def
 lib/wine/libvdmdbg.def
 lib/wine/libversion.def
+lib/wine/libwer.def
 lib/wine/libwindowscodecs.def
 lib/wine/libwinecrt0.a
 lib/wine/libwined3d.def
@@ -1695,6 +1700,7 @@ lib/wine/wintab.dll16.so
 lib/wine/wintab32.dll.so
 lib/wine/wintrust.dll.so
 lib/wine/winver.exe.so
+lib/wine/wlanapi.dll.so
 lib/wine/wldap32.dll.so
 lib/wine/wmi.dll.so
 lib/wine/wmiutils.dll.so
