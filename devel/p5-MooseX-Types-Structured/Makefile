@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Types-Structured
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,7 +24,11 @@ PERL_CONFIGURE=	yes
 
 MAN3=		MooseX::Meta::TypeCoercion::Structured.3 \
 		MooseX::Meta::TypeConstraint::Structured.3 \
-		MooseX::Types::Structured.3
+		MooseX::Types::Structured.3 \
+		MooseX::Types::Structured::OverflowHandler.3 \
+		MooseX::Meta::TypeConstraint::Structured::Optional.3 \
+		MooseX::Meta::TypeCoercion::Structured::Optional.3 \
+		MooseX::Types::Structured::MessageStack.3
 
 post-patch:
 	@${REINPLACE_CMD} -e '/auto_install/d' ${WRKSRC}/Makefile.PL

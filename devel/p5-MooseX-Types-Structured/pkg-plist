@@ -5,6 +5,7 @@
 %%SITE_PERL%%/MooseX/Meta/TypeConstraint/Structured/Optional.pm
 %%SITE_PERL%%/MooseX/Types/Structured.pm
 %%SITE_PERL%%/MooseX/Types/Structured/OverflowHandler.pm
+%%SITE_PERL%%/MooseX/Types/Structured/MessageStack.pm
 @dirrm %%SITE_PERL%%/MooseX/Types/Structured
 @dirrmtry %%SITE_PERL%%/MooseX/Types
 @dirrmtry %%SITE_PERL%%/MooseX/Meta/TypeCoercion/Structured
