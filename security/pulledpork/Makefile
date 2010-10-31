@@ -28,8 +28,10 @@ PLIST_FILES=	bin/pulledpork.pl \
 		%%ETCDIR%%/enablesid.conf.sample \
 		%%ETCDIR%%/modifysid.conf.sample \
 		%%ETCDIR%%/pulledpork.conf.sample \
-		%%DATADIR%%/contrib/README.CONTRIB \
-		%%DATADIR%%/contrib/oink-conv.pl
+		%%DATADIR%%/README.CONTRIB \
+		%%DATADIR%%/oink-conv.pl
+
+PLIST_DIRS=	%%DATADIR%%
 
 SUB_FILES=	pkg-message
 
@@ -62,9 +64,9 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/etc/dropsid.conf    ${ETCDIR}/dropsid.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/etc/enablesid.conf  ${ETCDIR}/enablesid.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/etc/modifysid.conf  ${ETCDIR}/modifysid.conf.sample
-	@${MKDIR} ${DATADIR}/contrib
-	@${INSTALL_DATA} ${WRKSRC}/contrib/README.CONTRIB ${DATADIR}/contrib/
-	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/oink-conv.pl ${DATADIR}/contrib/
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/contrib/README.CONTRIB ${DATADIR}/
+	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/oink-conv.pl ${DATADIR}/
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
