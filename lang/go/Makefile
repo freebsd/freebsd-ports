@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	go
-PORTVERSION=	20100413
+PORTVERSION=	20101027
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.atarininja.org/~wxs/distfiles/
-MASTER_SITE_SUBDIR=	wxs
+MASTER_SITES=	LOCAL/wen
 DISTNAME=	go-${PORTVERSION}
 
 MAINTAINER=	devon.odell@gmail.com
@@ -20,7 +18,6 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
 		bison:${PORTSDIR}/devel/bison
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
@@ -74,9 +71,12 @@ do-install:
 .endif
 	${INSTALL} -d -m 0755 ${DATADIR}
 	${INSTALL} -d -m 0755 ${PREFIX}/lib/go/pkg
-	${INSTALL} -m 0644 ${WRKSRC}/src/Make.${GOARCH} ${DATADIR}
+	${INSTALL} -m 0644 ${WRKSRC}/src/Make.common ${DATADIR}
 	${INSTALL} -m 0644 ${WRKSRC}/src/Make.pkg ${DATADIR}
 	${INSTALL} -m 0644 ${WRKSRC}/src/Make.cmd ${DATADIR}
+	${INSTALL} -m 0644 ${WRKSRC}/src/Make.ccmd ${DATADIR}
+	${INSTALL} -m 0644 ${WRKSRC}/src/Make.clib ${DATADIR}
+	${INSTALL} -m 0644 ${WRKSRC}/src/Make.inc ${DATADIR}
 	${CP} -R ${WRKSRC}/pkg/* ${PREFIX}/lib/go/pkg/
 	${CP} -R ${WRKDIR}/bin/* ${PREFIX}/bin/
 
