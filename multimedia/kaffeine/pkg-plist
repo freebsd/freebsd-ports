@@ -14,8 +14,10 @@ share/icons/oxygen/32x32/actions/audio-radio-encrypted.png
 share/icons/oxygen/32x32/actions/video-television-encrypted.png
 share/icons/oxygen/48x48/actions/audio-radio-encrypted.png
 share/icons/oxygen/48x48/actions/video-television-encrypted.png
+share/locale/ar/LC_MESSAGES/kaffeine.mo
 share/locale/ast/LC_MESSAGES/kaffeine.mo
 share/locale/be/LC_MESSAGES/kaffeine.mo
+share/locale/bg/LC_MESSAGES/kaffeine.mo
 share/locale/ca/LC_MESSAGES/kaffeine.mo
 share/locale/ca@valencia/LC_MESSAGES/kaffeine.mo
 share/locale/cs/LC_MESSAGES/kaffeine.mo
