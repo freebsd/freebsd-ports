@@ -1,5 +1,5 @@
---- ./liquidsoap-0.9.2/Makefile.orig	2009-10-30 16:07:44.000000000 +0200
-+++ ./liquidsoap-0.9.2/Makefile	2009-12-11 21:42:24.000000000 +0200
+--- ./liquidsoap-0.9.3/Makefile.orig	2010-10-31 15:06:48.616074307 -0400
++++ ./liquidsoap-0.9.3/Makefile	2010-10-31 15:07:23.378069324 -0400
 @@ -64,8 +64,8 @@
  endif
  	$(INSTALL_DIRECTORY) $(bindir)

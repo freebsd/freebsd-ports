@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	liquidsoap
-PORTVERSION=	0.9.2
-PORTREVISION?=	6
-DISTVERSIONPREFIX=	full-
+PORTVERSION=	0.9.3
 CATEGORIES=	audio net
 MASTER_SITES=	SF/savonet/${PORTNAME}/${PORTVERSION}
+DISTNAME=	${PORTNAME}-full-${PORTVERSION}-1
 
 MAINTAINER=	i@levsha.me
 COMMENT=	The audio stream generator of the Savonet project
 
 BUILD_DEPENDS=	${OCAMLFIND_DEPEND} \
 		${LOCALBASE}/${OCAML_SITELIBDIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM
@@ -39,7 +40,7 @@ OPTIONS=	AO		"portable and stable, but it does only output"	Off \
 		SOUNDTOUCH	"for changing pitch and tempo of sound" Off \
 		PULSEAUDIO	"cross-platform audio sound server"	Off \
 		TAGLIB		"for MP3 ID3 tag reading"	On \
-		WGET	"for downloading remote files (http, https, ftp)"	On
+		WGET		"for downloading remote files (http, https, ftp)"	On
 
 # xmplapalylist disabled now: missing ocaml-xmlm port
 #		XMLPLAYLIST	"support various xml format (rss/podcast/etc)"	Off \
@@ -68,14 +69,16 @@ MAN1=	liquidsoap.1
 
 LIQUIDSOAP_USER=	liquidsoap
 LIQUIDSOAP_GROUP=	${LIQUIDSOAP_USER}
-UID=	923
-GID=	${UID}
+USERS=	${LIQUIDSOAP_USER}
+GROUPS=	${LIQUIDSOAP_GROUP}
 LOGDIR=	/var/log/liquidsoap
 PIDDIR=	/var/run/liquidsoap
 
-SUB_FILES=	pkg-install
-SUB_LIST=	LIQUIDSOAP_USER=${LIQUIDSOAP_USER} LIQUIDSOAP_GROUP=${LIQUIDSOAP_GROUP} UID=${UID} GID=${GID} PIDDIR=${PIDDIR}
-PLIST_SUB=	PORTVERSION=${PORTVERSION} LIQUIDSOAP_USER=${LIQUIDSOAP_USER} LIQUIDSOAP_GROUP=${LIQUIDSOAP_GROUP} LOGDIR=${LOGDIR} PIDDIR=${PIDDIR}
+SUB_LIST=	LIQUIDSOAP_USER=${LIQUIDSOAP_USER} LIQUIDSOAP_GROUP=${LIQUIDSOAP_GROUP} \
+	PIDDIR=${PIDDIR}
+PLIST_SUB=	RELVER=${PORTVERSION} \
+	LIQUIDSOAP_USER=${LIQUIDSOAP_USER} LIQUIDSOAP_GROUP=${LIQUIDSOAP_GROUP} \
+	LOGDIR=${LOGDIR} PIDDIR=${PIDDIR}
 
 .include <bsd.port.options.mk>
 
@@ -107,19 +110,19 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 .endif
 
 .if defined(WITH_VORBIS) && !defined(WITH_OGG)
-IGNORE=	OGG required for VORBIS. Please rerun make config and select OGG
+IGNORE=	ogg required for vorbis. please rerun make config and select ogg
 .endif
 
 .if defined(WITH_SPEEX) && !defined(WITH_OGG)
-IGNORE=	OGG required for SPEEX. Please rerun make config and select OGG
+IGNORE=	ogg required for speex. please rerun make config and select ogg
 .endif
 
 .if defined(WITH_THEORA) && ( !defined(WITH_OGG) || !defined(WITH_VORBIS) )
-IGNORE=	OGG and VORBIS required for THEORA. Please rerun make config and select OGG and VORBIS
+IGNORE=	ogg and vorbis required for theora. Please rerun make config and select ogg and vorbis
 .endif
 
 .if defined(WITH_LASTFM) && !defined(WITH_XMLPLAYLIST)
-IGNORE=	XMLPLAYLIST required for LASTFM. Please rerun make config and select XMLPLAYLIST
+IGNORE=	xmlplaylist required for lastfm. please rerun make config and select xmlplaylist
 .endif
 
 #Server is known as JACK, but module named ocaml-bjack
@@ -149,8 +152,5 @@ post-patch:
 
 pre-configure:
 	(cd ${WRKSRC} && ./bootstrap)
-
-pre-install:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 .include <bsd.port.mk>
