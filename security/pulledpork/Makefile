@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	pulledpork
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	ohauer@gmx.de
+MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Script to update snort-2.8+ rules
 
-RUN_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
-		p5-Crypt-SSLeay>=0.57:${PORTSDIR}/security/p5-Crypt-SSLeay
+RUN_DEPENDS=	p5-Crypt-SSLeay>=0.57:${PORTSDIR}/security/p5-Crypt-SSLeay \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 LICENSE=	GPLv2
 
@@ -27,7 +26,10 @@ PLIST_FILES=	bin/pulledpork.pl \
 		%%ETCDIR%%/disablesid.conf.sample \
 		%%ETCDIR%%/dropsid.conf.sample \
 		%%ETCDIR%%/enablesid.conf.sample \
-		%%ETCDIR%%/pulledpork.conf.sample
+		%%ETCDIR%%/modifysid.conf.sample \
+		%%ETCDIR%%/pulledpork.conf.sample \
+		%%DATADIR%%/contrib/README.CONTRIB \
+		%%DATADIR%%/contrib/oink-conv.pl
 
 SUB_FILES=	pkg-message
 
@@ -46,17 +48,23 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|snort/enablesid.conf|pulledpork/enablesid.conf|g' \
 		-e 's|snort/dropsid.conf|pulledpork/dropsid.conf|g' \
 		-e 's|snort/disablesid.conf|pulledpork/disablesid.conf|g' \
+		-e 's|snort/modifysid.conf|pulledpork/modifysid.conf|g' \
 		-e "s|/usr/local/lib/snort_dynamicrules/|${PREFIX}/etc/snort/so_rules/|g" \
 		${WRKSRC}/etc/pulledpork.conf
+	@${REINPLACE_CMD} -e "s| /usr/bin/perl|${PERL}|" ${WRKSRC}/contrib/oink-conv.pl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pulledpork.pl ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/pulledpork.pl ${PREFIX}/bin
 	@${MKDIR} -m 750 ${ETCDIR}
 	# pulledpork.conf contains the snort user registration key, do not install world readable
-	${INSTALL_DATA} -m 440 ${WRKSRC}/etc/pulledpork.conf ${ETCDIR}/pulledpork.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/etc/disablesid.conf ${ETCDIR}/disablesid.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/etc/dropsid.conf    ${ETCDIR}/dropsid.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/etc/enablesid.conf  ${ETCDIR}/enablesid.conf.sample
+	@${INSTALL_DATA} -m 440 ${WRKSRC}/etc/pulledpork.conf ${ETCDIR}/pulledpork.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/etc/disablesid.conf ${ETCDIR}/disablesid.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/etc/dropsid.conf    ${ETCDIR}/dropsid.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/etc/enablesid.conf  ${ETCDIR}/enablesid.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/etc/modifysid.conf  ${ETCDIR}/modifysid.conf.sample
+	@${MKDIR} ${DATADIR}/contrib
+	@${INSTALL_DATA} ${WRKSRC}/contrib/README.CONTRIB ${DATADIR}/contrib/
+	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/oink-conv.pl ${DATADIR}/contrib/
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
