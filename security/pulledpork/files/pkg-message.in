@@ -6,7 +6,7 @@ In order to use pulled pork, adjust the config files located in
 
 Important Note:
 
-Snort change the way rules are published. In June 2010 Snort will
+Snort changed the way rules are published. Since June 2010 Snort
 stop offering rules in the "snortrules-snapshot-CURRENT" format.
 
 Instead, rules will be released for specific Snort versions.
