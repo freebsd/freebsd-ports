@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# rc.d script for iked
+#
+# $Id$
+
+# PROVIDE: iked
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable iked:
+#
+#  #required
+#  iked_enable="YES"
+#
+
+. "/etc/rc.subr"
+
+# defaults
+iked_enable=${iked_enable:-"NO"}
+
+name=iked
+rcvar=`set_rcvar`
+load_rc_config $name
+command=/usr/local/sbin/iked
+command_args="-p /var/run/iked.pid > /dev/null"
+
+run_rc_command "$1"
