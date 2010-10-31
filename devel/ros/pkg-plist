@@ -69,6 +69,7 @@ ros/3rdparty/gtest/gtest/include/gtest/internal/gtest-param-util-generated.h
 ros/3rdparty/gtest/gtest/include/gtest/internal/gtest-param-util.h
 ros/3rdparty/gtest/gtest/include/gtest/internal/gtest-port.h
 ros/3rdparty/gtest/gtest/include/gtest/internal/gtest-string.h
+ros/3rdparty/gtest/gtest/include/gtest/internal/gtest-tuple.h
 ros/3rdparty/gtest/gtest/include/gtest/internal/gtest-type-util.h
 ros/3rdparty/gtest/gtest/lib/libgtest.a
 ros/3rdparty/gtest/gtest/lib/libgtest.la
@@ -3555,6 +3556,7 @@ ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/tools/topic_tools/demos
 @dirrm ros/tools/topic_tools/bin
 @dirrm ros/tools/topic_tools
+@dirrm ros/stacks
 @dirrm ros/tools/rxtools/src/rxtools
 @dirrm ros/tools/rxtools/src/rxloggerlevel
 @dirrm ros/tools/rxtools/src/rxconsole
