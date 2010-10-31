@@ -251,6 +251,8 @@ post-build:
 		${MAKE} -f ${FILESDIR}/Makefile.plugin depend all install \
 		    DEBUG_FLAGS="${ICEDTEA_DEBUG_FLAGS}" \
 		    LIBDIR=${ICEDTEADIR}/build/lib \
+		    LIBOWN=${UID} \
+		    LIBGRP=`${ID} -g` \
 		    LOCALBASE=${LOCALBASE} \
 		    JDK_UPDATE_VERSION=${PORTVERSION:S/^b//} \
 		    PLUGIN_VERSION="OpenJDK6 ${PORTVERSION}" \
