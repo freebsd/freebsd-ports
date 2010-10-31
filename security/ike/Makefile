@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ike
-PORTVERSION=	2.1.4
-PORTREVISION=	2
+PORTVERSION=	2.1.7
 CATEGORIES=	security net
 MASTER_SITES=	http://www.shrew.net/download/ike/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-release
@@ -18,6 +17,7 @@ COMMENT=	Shrew Soft IKE daemon and client tools
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+USE_RC_SUBR=    iked
 USE_BISON=	build
 USE_OPENSSL=	yes
 USE_CMAKE=	yes
@@ -55,25 +55,23 @@ LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
 .endif
 
 post-patch:
-.ifdef(WITH_NATT)
+.if defined(WITH_NATT)
+. if ${OSVERSION} < 800000
 	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
-	@${ECHO_MSG} "===> ATTENTION: You need a kernel patch to enable NAT-Traversal functionality!"
-. if ${OSVERSION} < 600000
-	@${ECHO_MSG} "===>     There is no known NAT-T patch for FreeBSD 1 - 5!!!"
-. endif
-. if ${OSVERSION} > 600000 && ${OSVERSION} < 699999
-	@${ECHO_MSG} "===>     http://ipsec-tools.sf.net/freebsd6-natt.diff"
-. endif
-. if ${OSVERSION} > 700000 && ${OSVERSION} < 799999
-	@${ECHO_MSG} "===>     http://vanhu.free.fr/FreeBSD/patch-natt-freebsd7-2007-10-22.diff"
-. endif
-. if ${OSVERSION} > 800000
-	@${ECHO_MSG} "===>     http://vanhu.free.fr/FreeBSD/patch-natt-freebsd-HEAD-2007-10-22.diff"
-. endif
-	@${ECHO_MSG} "===> You might possibly have to do some steps manually if it fails to apply."
+	@${ECHO_MSG} "===> WARNING: You will need to patch your kernel for NAT-T functionality!"
+.  if ${OSVERSION} < 600000
+	@${ECHO_MSG} "===>   There is no known NAT-T patch for FreeBSD 1 - 5!!!"
+.  endif
+.  if ${OSVERSION} > 600000 && ${OSVERSION} < 699999
+	@${ECHO_MSG} "===>   http://ipsec-tools.sf.net/freebsd6-natt.diff"
+.  endif
+.  if ${OSVERSION} > 700000 && ${OSVERSION} < 799999
+	@${ECHO_MSG} "===>   http://people.freebsd.org/~vanhu/NAT-T/patch-natt-7.2-2009-05-12.diff"
+.  endif
+	@${ECHO_MSG} "===> You may need to edit the patch if it fails to apply cleanly."
 	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
-
 	@sleep 3
+. endif
 .endif
 
 post-build:
@@ -86,8 +84,17 @@ post-build:
 
 post-install:
 	@if ! ${SYSCTL} -a | ${GREP} -q ipsec; then \
-	${ECHO_MSG} "WARNING: IPsec feature is disabled on this host"; \
-	${ECHO_MSG} "         You must configure a kernel with this option to use this software"; \
+	${ECHO_MSG} "===> -------------------------------------------------------------------------"; \
+	${ECHO_MSG} "===> WARNNG: You need IPsec support in your kernel, please see:"; \
+	${ECHO_MSG} "===>   http://www.freebsd.org/doc/en/books/handbook/ipsec.html"; \
+	${ECHO_MSG} "===> -------------------------------------------------------------------------"; \
 	fi ;
+.if defined(WITH_NATT)
+	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
+	@${ECHO_MSG} "===> WARNING: To use NAT Traversal ( NAT-T ) support, please be sure to"
+	@${ECHO_MSG} "===> include the following line in your kernel config file."
+	@${ECHO_MSG} "===>   options IPSEC_NAT_T"
+	@${ECHO_MSG} "===> -------------------------------------------------------------------------"
+.endif
 
 .include <bsd.port.post.mk>
