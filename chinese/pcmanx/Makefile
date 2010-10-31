@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	pcmanx
-PORTVERSION=	0.3.8
-PORTREVISION=	4
+PORTVERSION=	0.3.9
 CATEGORIES=	chinese net gnome
-MASTER_SITES=	http://pcmanx.csie.net/release/ \
-		LOCAL/chinsan
+MASTER_SITES=	http://pcmanx-gtk2.googlecode.com/svn/website/release/
 DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -26,10 +24,6 @@ USE_LDCONFIG=	yes
 OPTIONS=	WGET	"enable wget support for download articles" on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
 
 .if !defined(WITHOUT_WGET)
 RUN_DEPENDS+=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
