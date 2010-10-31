@@ -2,19 +2,19 @@ bin/pcmanx
 lib/libpcmanx_core.la
 lib/libpcmanx_core.so
 lib/libpcmanx_core.so.3
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/pcmanx.mo
+share/applications/pcmanx.desktop
+share/pixmaps/pcmanx.png
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pcmanx.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pcmanx.mo
 %%DATADIR%%/emoticons
-%%DATADIR%%/sitelist
 %%DATADIR%%/nancy_bot/default.conf
 %%DATADIR%%/nancy_bot/default_msg.data
 %%DATADIR%%/nancy_bot/default_usages.data
 %%DATADIR%%/nancy_bot/example.conf
 %%DATADIR%%/nancy_bot/example_msg.data
 %%DATADIR%%/nancy_bot/example_usages.data
-share/applications/pcmanx.desktop
-share/pixmaps/pcmanx.png
-@dirrmtry share/applications
-@dirrmtry %%DATADIR%%/nancy_bot
+%%DATADIR%%/sitelist
 @dirrmtry %%DATADIR%%/script
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/nancy_bot
+@dirrmtry %%DATADIR%%
+@dirrmtry share/applications
