@@ -23,7 +23,7 @@ you update your ports collection, before attempting any port upgrades.
   upgrade to version 3.1 or later.  The best method to do this will be
   to use the port, rather than portmaster itself:
 
-  # pkg_delete -f portmaster*
+  # pkg_delete -f portmaster\*
   # cd /usr/ports/ports-mgmt/portmaster && make clean && make install clean
 
 20101026:
