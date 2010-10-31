@@ -7,6 +7,7 @@
 
 PORTNAME=	igmpproxy
 PORTVERSION=	0.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -23,9 +24,5 @@ GNU_CONFIGURE=	yes
 
 MAN5=		igmpproxy.conf.5
 MAN8=		igmpproxy.8
-
-PLIST_FILES=	sbin/igmpproxy \
-		etc/igmpproxy.conf \
-		etc/igmpproxy.conf.sample
 
 .include <bsd.port.mk>
