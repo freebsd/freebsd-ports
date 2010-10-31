@@ -11,8 +11,6 @@
 
 . /etc/rc.subr
 
-sig_stop=KILL
-
 name=liquidsoap
 rcvar=`set_rcvar`
 
