@@ -6,13 +6,15 @@
 
 PORTNAME=	ros
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/${PORTNAME}/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 gtest-1.3.0.tar.gz SWIG-1.3.29-wx.tar.gz
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 SWIG-1.3.29-wx.tar.gz \
+		gtest-1.5.0.tar.gz
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.bz2
 
-MAINTAINER=	rene@freebsd.org
+MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Robot Operating System - core utilities
 
 LICENSE=	BSD
@@ -44,9 +46,7 @@ USE_GNOME=	pkgconfig pygtk2
 USE_PYTHON=	yes
 USE_WX=		2.8
 WX_COMPS=	python:build python:run
-
 USE_BZIP2=	yes
-
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
@@ -60,6 +60,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAKE_ENV+=	CPATH=${LOCALBASE}/include \
 		EXTRA_CMAKE_FLAGS="-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}" \
+		LIBRARY_PATH=${LOCALBASE}/lib \
 		MAKE=${LOCALBASE}/bin/gmake \
 		PATH=${PATH}:${WRKSRC}/bin \
 		PYTHONPATH=${WRKSRC}/core/roslib/src \
@@ -83,15 +84,16 @@ post-extract:
 	    ${REINPLACE_CMD} -E -e "s|#!/bin/bash|#!${LOCALBASE}/bin/bash|"
 	# move 3rdparty distfiles into place
 	${MKDIR} ${WRKSRC}/3rdparty/gtest/build
-	${CP} ${_DISTDIR}/gtest-1.3.0.tar.gz ${WRKSRC}/3rdparty/gtest/build
+	${CP} ${_DISTDIR}/gtest-1.5.0.tar.gz ${WRKSRC}/3rdparty/gtest/build
 	${MKDIR} ${WRKSRC}/3rdparty/wxswig/build
 	${CP} ${_DISTDIR}/SWIG-1.3.29-wx.tar.gz ${WRKSRC}/3rdparty/wxswig/build
 
 pre-build:
 .if exists(${LOCALBASE}/lib/libgtest.so)
 	# temporarily move libraries from devel/googletest out of the way
+	${MKDIR} ${WRKSRC}/googletest_backup
 .for f in .a .la .so .so.* _main.a _main.la _main.so _main.so.*
-	${MV} ${LOCALBASE}/lib/libgtest${f} /var/tmp
+	${MV} ${LOCALBASE}/lib/libgtest${f} ${WRKSRC}/googletest_backup
 .endfor
 .endif
 	# temporarily alter how ROS is built for the port build
@@ -99,16 +101,17 @@ pre-build:
 	    ${WRKSRC}/Makefile
 
 post-build:
-.if exists(/var/tmp/libgtest.so)
+.if exists(${WRKSRC}/googletest_backup/libgtest.so)
 	# restore libraries from devel/googletest
 .for f in .a .la .so .so.* _main.a _main.la _main.so _main.so.*
-	${MV} /var/tmp/libgtest${f} ${LOCALBASE}/lib
+	${MV} ${WRKSRC}/googletest_backup/libgtest${f} ${LOCALBASE}/lib
 .endfor
 .endif
 	# restore original ROS Makefile
 	${MV} ${WRKSRC}/Makefile.bak ${WRKSRC}/Makefile
 
 do-install:
+	${MKDIR} ${PREFIX}/${PORTNAME}/stacks
 	${MKDIR} ${PREFIX}/${PORTNAME}/bin
 
 .for f in rospack rosplay rosrecord rosstack rxconsole rxloggerlevel
