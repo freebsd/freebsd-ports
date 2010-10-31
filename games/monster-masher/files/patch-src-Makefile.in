@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Thu Apr 28 14:07:13 2005
-+++ src/Makefile.in	Thu Apr 28 14:07:55 2005
-@@ -199,7 +199,7 @@
+--- src/Makefile.in.orig	2010-10-31 15:18:09.000000000 +0100
++++ src/Makefile.in	2010-10-31 15:18:40.000000000 +0100
+@@ -266,7 +266,7 @@
                        ucompose.hpp \
                        vector.hpp
  
 -@MAINTAINER_MODE_FALSE@AM_CXXFLAGS = @CXXFLAGS@ $(DEPS_CFLAGS) -Wall -O3
 +@MAINTAINER_MODE_FALSE@AM_CXXFLAGS = @CXXFLAGS@ $(DEPS_CFLAGS) -Wall @CFLAGS@
- 
  @MAINTAINER_MODE_TRUE@AM_CXXFLAGS = @CXXFLAGS@ $(DEPS_CFLAGS) -O0 -Wall
- 
+ LDADD = $(DEPS_LIBS)
+ glade_DATA = ui.glade

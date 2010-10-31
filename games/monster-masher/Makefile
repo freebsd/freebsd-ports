@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	monster
-PORTVERSION=	1.7
-PORTREVISION=	8
+PORTVERSION=	1.8.1
 CATEGORIES=	games gnome
-MASTER_SITES=	http://www.cs.aau.dk/~olau/monster-masher/source/
+MASTER_SITES=	http://people.iola.dk/olau/monster-masher/source/
 PKGNAMESUFFIX=	-masher
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Gnomemm puzzle game where you have to clean the caves of monsters
 
-LIB_DEPENDS=	gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26
+LIB_DEPENDS=	gnomecanvasmm-2.6.1:${PORTSDIR}/graphics/libgnomecanvasmm26 \
+		gconfmm-2.6.1:${PORTSDIR}/devel/gconfmm26 \
+		glademm-2.4.1:${PORTSDIR}/devel/libglademm24
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gnomehack gnometarget intlhack
+USE_GNOME=	gnomeprefix gnomehack gnometarget intlhack libgnome esound
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -lesd"
 
 GCONF_SCHEMAS=	monster-masher.schemas
 
