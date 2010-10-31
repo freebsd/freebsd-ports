@@ -95,30 +95,60 @@ share/monster-masher/pixmaps/wall-32.png
 share/monster-masher/sounds/clinck.wav
 share/monster-masher/sounds/splat.wav
 share/pixmaps/monster-masher.png
+share/locale/ar/LC_MESSAGES/monster-masher.mo
 share/locale/az/LC_MESSAGES/monster-masher.mo
+share/locale/bg/LC_MESSAGES/monster-masher.mo
+share/locale/ca/LC_MESSAGES/monster-masher.mo
 share/locale/cs/LC_MESSAGES/monster-masher.mo
 share/locale/cy/LC_MESSAGES/monster-masher.mo
 share/locale/da/LC_MESSAGES/monster-masher.mo
 share/locale/de/LC_MESSAGES/monster-masher.mo
+share/locale/dz/LC_MESSAGES/monster-masher.mo
 share/locale/el/LC_MESSAGES/monster-masher.mo
 share/locale/en_CA/LC_MESSAGES/monster-masher.mo
 share/locale/en_GB/LC_MESSAGES/monster-masher.mo
 share/locale/es/LC_MESSAGES/monster-masher.mo
 share/locale/eu/LC_MESSAGES/monster-masher.mo
+share/locale/fi/LC_MESSAGES/monster-masher.mo
+share/locale/fr/LC_MESSAGES/monster-masher.mo
 share/locale/ga/LC_MESSAGES/monster-masher.mo
+share/locale/gu/LC_MESSAGES/monster-masher.mo
 share/locale/hr/LC_MESSAGES/monster-masher.mo
 share/locale/it/LC_MESSAGES/monster-masher.mo
+share/locale/ka/LC_MESSAGES/monster-masher.mo
 share/locale/lt/LC_MESSAGES/monster-masher.mo
+share/locale/lv/LC_MESSAGES/monster-masher.mo
+share/locale/nb/LC_MESSAGES/monster-masher.mo
+share/locale/ne/LC_MESSAGES/monster-masher.mo
 share/locale/nl/LC_MESSAGES/monster-masher.mo
-share/locale/no/LC_MESSAGES/monster-masher.mo
+share/locale/oc/LC_MESSAGES/monster-masher.mo
+share/locale/pa/LC_MESSAGES/monster-masher.mo
 share/locale/pl/LC_MESSAGES/monster-masher.mo
 share/locale/pt/LC_MESSAGES/monster-masher.mo
 share/locale/pt_BR/LC_MESSAGES/monster-masher.mo
+share/locale/rw/LC_MESSAGES/monster-masher.mo
+share/locale/sl/LC_MESSAGES/monster-masher.mo
+share/locale/sq/LC_MESSAGES/monster-masher.mo
 share/locale/sr/LC_MESSAGES/monster-masher.mo
 share/locale/sr@Latn/LC_MESSAGES/monster-masher.mo
 share/locale/sv/LC_MESSAGES/monster-masher.mo
+share/locale/ta/LC_MESSAGES/monster-masher.mo
 share/locale/tr/LC_MESSAGES/monster-masher.mo
+share/locale/uk/LC_MESSAGES/monster-masher.mo
+share/locale/vi/LC_MESSAGES/monster-masher.mo
+share/locale/zh_CN/LC_MESSAGES/monster-masher.mo
+share/locale/zh_HK/LC_MESSAGES/monster-masher.mo
 share/locale/zh_TW/LC_MESSAGES/monster-masher.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/sr@Latn/LC_MESSAGES
+@dirrmtry share/locale/sr@Latn
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrm share/monster-masher/glade
 @dirrm share/monster-masher/pixmaps
 @dirrm share/monster-masher/sounds
