@@ -5,6 +5,10 @@ To enable spamd you need:
    obspamd_enable="YES"
    obspamlogd_enable="YES"
 
+   For PF you can specify a dedicated pflog interface with parameter
+   obspamlogd_pflog_if. This interface will be created and removed
+   by the rc script of spamlogd.
+
 2) Configuration template is available in %%PREFIX%%/etc/spamd as
    spamd.conf.sample file.  Copy then to spamd.conf file and
    edit to suit your needs.
@@ -20,22 +24,10 @@ To enable spamd you need:
   rdr pass inet proto tcp from any to any \
       port smtp -> 127.0.0.1 port spamd
 
-New features:
-  - sync for spamdb is now implemented (parameter -Y)
+FreeBSD only features (not in OpenBSD):
+  - sync for spamdb (parameter -Y)
     See %%PREFIX%%/%%DOCSDIR%%/ for usage manual.
-  - spamdb and spamlogd whiteexp times can now adjusted
+  - spamdb and spamlogd whiteexp times can be adjusted
     with parameter -W
-
-
- !!!!!!!!!!!! --  I M P O T A N T  -  N O T E S  -- !!!!!!!!!!!!!!!!!
-
-  **** UPGRADE WARNING:  SYNC PROTOCOL CHANGED ****
-
-    The sync protocol has changed for versions > 4.1.x
-
-    If spamd is installed in distributed environment and sync is 
-    enabled, stop sync at every node until they are updated.
-  
- !!!!!!!!!!!! --  I M P O T A N T  -  N O T E S  -- !!!!!!!!!!!!!!!!!
 
 **********************************************************************

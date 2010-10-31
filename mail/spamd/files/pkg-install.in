@@ -98,26 +98,6 @@ check_service() {
 }
 
 
-# this msg is for users installing not from source,
-# - show msg about changed sync protocol
-if [ "$2" = "PRE-INSTALL" ]; then
- echo "
-
-    **** UPGRADE WARNING:  SYNC PROTOCOL CHANGED ****
-
-    If you have spamd in distributed environment stop
-    sync between old (4.1.x) and this new version
-    until every node is updated
-
-    read UPDATING in your PORTSDIR
-
-    **** UPGRADE WARNING:  SYNC PROTOCOL CHANGED ****
-"
-    read -p "Hit ^c now to stop, any key to continue: " -t 5 a || true
-    echo ""
-    echo ""
-fi
-
 if [ "$2" = "PRE-INSTALL" ]; then
   check_dbown=0
   if /usr/sbin/pw group show "${SPAMDGROUP}" 2>&1 >/dev/null; then

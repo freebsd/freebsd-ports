@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	spamd
-PORTVERSION=	4.5.0
-PORTREVISION=	4
+PORTVERSION=	4.8.0
 CATEGORIES=	mail
 MASTER_SITES=	BERLIOS
 MASTER_SITE_SUBDIR=freebsdspamd
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ohauer@gmx.de
+MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Traps spammers with a very slow smtp-login and return 4xx error
+
+LICENSE=	BSD
 
 USE_RC_SUBR?=	obspamd obspamlogd
 
@@ -64,49 +65,38 @@ SUB_FILES=	pkg-install \
 SUB_LIST=	PREFIX=${PREFIX} \
 		${PLIST_SUB}
 
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} " **** UPGRADE WARNING:  SYNC PROTOCOL CHANGED ****"
-	@${ECHO} " If you have spamd in distributed environment stop"
-	@${ECHO} " sync between old (4.1.x) and new version"
-	@${ECHO} " until every node is updated"
-	@${ECHO} ""
-	@read -p "Hit ^c now to stop, any key to continue: " -t 5 a || true
-	@${ECHO} ""
-
 pre-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 do-install:
 .if !defined(CPANEL)
-	${INSTALL_PROGRAM} ${WRKSRC}/spamd/spamd ${PREFIX}/libexec
+	@${INSTALL_PROGRAM} ${WRKSRC}/spamd/spamd ${PREFIX}/libexec
 .else
-	${INSTALL_PROGRAM} ${WRKSRC}/spamd/spamd ${PREFIX}/libexec/obspamd
+	@${INSTALL_PROGRAM} ${WRKSRC}/spamd/spamd ${PREFIX}/libexec/obspamd
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/spamlogd/spamlogd ${PREFIX}/libexec
-	${INSTALL_PROGRAM} ${WRKSRC}/spamd-setup/spamd-setup ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/spamdb/spamdb ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/etc/spamd.conf.5 ${PREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/spamd/spamd.8 ${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/spamd-setup/spamd-setup.8 ${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/spamdb/spamdb.8 ${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/spamlogd/spamlogd.8 ${PREFIX}/man/man8
-	@if [ ! -d ${CONFIG_DIR} ]; then                        \
+	@${INSTALL_PROGRAM} ${WRKSRC}/spamlogd/spamlogd ${PREFIX}/libexec
+	@${INSTALL_PROGRAM} ${WRKSRC}/spamd-setup/spamd-setup ${PREFIX}/sbin
+	@${INSTALL_PROGRAM} ${WRKSRC}/spamdb/spamdb ${PREFIX}/sbin
+	@${INSTALL_MAN} ${WRKSRC}/etc/spamd.conf.5 ${PREFIX}/man/man5
+	@${INSTALL_MAN} ${WRKSRC}/spamd/spamd.8 ${PREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/spamd-setup/spamd-setup.8 ${PREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/spamdb/spamdb.8 ${PREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/spamlogd/spamlogd.8 ${PREFIX}/man/man8
+	@if [ ! -d ${CONFIG_DIR} ]; then \
 		${MKDIR} ${CONFIG_DIR}; \
 	fi
-	@if [ ! -f ${SAMPLE_SPAMD_CONF} ]; then                 \
+	@if [ ! -f ${SAMPLE_SPAMD_CONF} ]; then \
 		${ECHO_MSG} "Installing ${SAMPLE_SPAMD_CONF} file."; \
-		${ECHO_MSG} "${INSTALL_DATA} -v -p ${WRKSRC}/etc/spamd.conf ${SAMPLE_SPAMD_CONF}";                              \
-		${INSTALL_DATA} -v -p ${WRKSRC}/etc/spamd.conf  \
-		${SAMPLE_SPAMD_CONF};                           \
+		${INSTALL_DATA} -p ${WRKSRC}/etc/spamd.conf \
+		${SAMPLE_SPAMD_CONF}; \
 	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/ipfw-spamd.txt ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/doc/spamdb.txt ${DOCSDIR}/
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
