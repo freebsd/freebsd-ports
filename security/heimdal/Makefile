@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		ftp://ftp.sunet.se/pub/unix/admin/mirror-pdc/heimdal/src/ \
 		ftp://ftp.ayamura.org/pub/heimdal/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	Joerg.Pulz@frm2.tum.de
 COMMENT=	A popular BSD-licensed implementation of Kerberos 5
 
 CONFLICTS=	krb4-[0-9]* krb5-[0-9]* srp-[0-9]*
