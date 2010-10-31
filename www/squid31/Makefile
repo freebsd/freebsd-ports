@@ -61,13 +61,13 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirror.aarnet.edu.au/pub/squid/squid/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid,} \
 		http://www.squid-cache.org/Versions/v3/3.1/ \
-		http://www2.us.squid-cache.org/Versions/v3/3.1/ \
+		http://www3.us.squid-cache.org/Versions/v3/3.1/ \
 		http://www1.at.squid-cache.org/Versions/v3/3.1/ \
 		http://www2.de.squid-cache.org/Versions/v3/3.1/ \
 		http://www.eu.squid-cache.org/Versions/v3/3.1/ \
 		http://www1.ie.squid-cache.org/Versions/v3/3.1/ \
 		http://www1.jp.squid-cache.org/Versions/v3/3.1/ \
-		http://www2.tw.squid-cache.org/Versions/v3/3.1/
+		http://www1.za.squid-cache.org/Versions/v3/3.1/
 MASTER_SITE_SUBDIR=	squid
 DISTNAME=	squid-3.1.${SQUID_STABLE_VER}
 DIST_SUBDIR=	squid3.1
@@ -88,7 +88,7 @@ COMMENT=	HTTP Caching Proxy
 
 LATEST_LINK=	squid31
 
-SQUID_STABLE_VER=	8
+SQUID_STABLE_VER=	9
 
 CONFLICTS=	squid-2.[0-9].* squid-3.[^1].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
