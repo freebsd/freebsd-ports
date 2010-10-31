@@ -7,6 +7,7 @@
 
 PORTNAME=	pulledpork
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -21,7 +22,9 @@ LICENSE=	GPLv2
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-PLIST_DIRS=	%%ETCDIR%%
+PLIST_DIRS=	%%ETCDIR%% \
+		%%DATADIR%%
+
 PLIST_FILES=	bin/pulledpork.pl \
 		%%ETCDIR%%/disablesid.conf.sample \
 		%%ETCDIR%%/dropsid.conf.sample \
@@ -30,8 +33,6 @@ PLIST_FILES=	bin/pulledpork.pl \
 		%%ETCDIR%%/pulledpork.conf.sample \
 		%%DATADIR%%/README.CONTRIB \
 		%%DATADIR%%/oink-conv.pl
-
-PLIST_DIRS=	%%DATADIR%%
 
 SUB_FILES=	pkg-message
 
