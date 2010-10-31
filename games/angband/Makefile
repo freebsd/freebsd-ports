@@ -26,6 +26,7 @@ CONFIGURE_ARGS+=	--with-x=no
 .endif
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 CONFIGURE_ENV=	ac_cv_path_mkdir=mkdir
+CPP=		cc -E
 
 SUB_FILES=	pkg-message
 
