@@ -7,7 +7,7 @@
 
 PORTNAME=	squidGuard
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.squidguard.org/Downloads/
 
@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--with-db-inc=${BDB_INCLUDE_DIR} \
 		--with-sg-logdir=${LOGDIR} \
 		--exec-prefix=${PREFIX}
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${PREFIX}/include"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${PREFIX}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 CFGINPUT=	${.CURDIR}/files/sgcfg.in
 
@@ -156,7 +156,7 @@ pre-install:
 	${FIND} ${DATADIR} -type f -name *.db -exec ${CHMOD} 660 {} \; ; \
 	${ECHO_MSG} "       -> Blacklist databases installed in: ${DATADIR}"
 .else
-	${ECHO_MSG} "===>   Existing configuration file found - blacklist databases not created"
+	@${ECHO_MSG} "===>   Existing configuration file found - blacklist databases not created"
 .endif
 
 post-install:
