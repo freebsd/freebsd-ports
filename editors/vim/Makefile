@@ -10,7 +10,7 @@ PORTNAME?=	vim
 #		! _NEVER_ reduce or lower PATCHLEVEL, even if the PATCHLEVEL
 #		! value # is added to BADPATCHES.  Doing otherwise will cause
 #		! PORTEPOCH to be needed, which we do NOT want.
-PATCHLEVEL=	32
+PATCHLEVEL=	47
 PORTVERSION=	7.3.${PATCHLEVEL}
 RELEASE=	vim-${PORTVERSION:C/\.[0-9a-z]*$//}
 PORTREVISION?=	0
@@ -253,11 +253,13 @@ show-options:
 	@exit 1
 .endif
 
-cklatest:
-	-ncftpls \
+cklatest: .PHONY
+	@${ECHO} -n "Currently at: "
+	@${MAKE} -V PATCHLEVEL
+	-(ncftpls \
 	    ftp://ftp.vim.org/pub/vim/patches/${PORTVERSION:C/\.[0-9a-z]*$//}/ \
 		| ${SED} -n -e 's/${PORTVERSION:C/[0-9]*$//}\([0-9][0-9][0-9]\)$$/\1/p' \
-		| ${TAIL} -1
+		| ${TAIL} -1)
 
 find-bad-patches:
 	@cd ${DISTDIR} ; egrep -l \
