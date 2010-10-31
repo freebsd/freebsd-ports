@@ -1,0 +1,16 @@
+--- configure.ac.orig	2010-09-13 09:23:34.000000000 +0200
++++ configure.ac	2010-10-26 22:51:16.000000000 +0200
+@@ -521,6 +521,13 @@
+ AC_HAVE_STRUCT_FIELD(struct utmp, ut_pid, [#include <utmp.h>])
+ AC_HAVE_STRUCT_FIELD(struct utmp, ut_type, [#include <utmp.h>])
+ AC_HAVE_STRUCT_FIELD(struct utmp, ut_user, [#include <utmp.h>])
++AC_HAVE_STRUCT_FIELD(struct utmpx, ut_host, [#include <utmpx.h>])
++AC_HAVE_STRUCT_FIELD(struct utmpx, ut_id, [#include <utmpx.h>])
++AC_HAVE_STRUCT_FIELD(struct utmpx, ut_line, [#include <utmpx.h>])
++AC_HAVE_STRUCT_FIELD(struct utmpx, ut_pid, [#include <utmpx.h>])
++AC_HAVE_STRUCT_FIELD(struct utmpx, ut_tv, [#include <utmpx.h>])
++AC_HAVE_STRUCT_FIELD(struct utmpx, ut_type, [#include <utmpx.h>])
++AC_HAVE_STRUCT_FIELD(struct utmpx, ut_user, [#include <utmpx.h>])
+ AC_HAVE_STRUCT_FIELD(struct utmpx, ut_exit, [#include <utmpx.h>])
+ AC_HAVE_STRUCT_FIELD(struct utmpx, ut_syslen, [#include <utmpx.h>])
+ 

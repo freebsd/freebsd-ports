@@ -1,0 +1,19 @@
+--- lib/hdb/Makefile.in.orig	2010-10-15 20:43:32.000000000 +0200
++++ lib/hdb/Makefile.in	2010-10-15 20:44:22.000000000 +0200
+@@ -424,7 +424,7 @@
+ SUFFIXES = .et .h .x .z .hx .1 .3 .5 .8 .cat1 .cat3 .cat5 .cat8
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)/include -I$(top_srcdir)/include
+ AM_CPPFLAGS = $(INCLUDES_roken) -I../asn1 -I$(srcdir)/../asn1 \
+-	$(INCLUDE_hcrypto) $(INCLUDE_openldap) \
++	$(INCLUDE_hcrypto) $(INCLUDE_openldap) $(INCLUDE_libintl) \
+ 	-DHDB_DB_DIR=\"$(DIR_hdbdir)\" -I$(srcdir)/../krb5 \
+ 	$(INCLUDE_sqlite3) $(am__append_1)
+ @do_roken_rename_TRUE@ROKEN_RENAME = -DROKEN_RENAME
+@@ -475,6 +475,7 @@
+ 
+ LDADD = libhdb.la \
+ 	$(LIB_openldap) \
++	$(LIB_libintl) \
+ 	../krb5/libkrb5.la \
+ 	../asn1/libasn1.la \
+ 	$(LIB_hcrypto) \

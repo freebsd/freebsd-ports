@@ -1,8 +1,8 @@
-bin/mk_cmds
 bin/afslog
 bin/ftp
 bin/gss
 bin/hxtool
+bin/idn-lookup
 bin/kauth
 bin/kdestroy
 bin/kf
@@ -11,6 +11,7 @@ bin/kinit
 bin/klist
 bin/kpasswd
 bin/krb5-config
+bin/kswitch
 bin/login
 bin/otp
 bin/otpprint
@@ -23,17 +24,20 @@ bin/su
 bin/telnet
 bin/verify_krb5_conf
 etc/rc.d/kdc.sh.sample
+include/asn1-common.h
 include/asn1_err.h
 include/base64.h
 include/cms_asn1.h
+include/crmf_asn1.h
+include/der-private.h
 include/der-protos.h
 include/der.h
 include/digest_asn1.h
-include/editline.h
 include/getarg.h
 include/gssapi.h
 include/gssapi/gkrb5_err.h
 include/gssapi/gssapi.h
+include/gssapi/gssapi_ntlm.h
 include/gssapi/gssapi_krb5.h
 include/gssapi/gssapi_spnego.h
 %%HCRYPTO%%include/hcrypto/aes.h
@@ -41,8 +45,13 @@ include/gssapi/gssapi_spnego.h
 %%HCRYPTO%%include/hcrypto/des.h
 %%HCRYPTO%%include/hcrypto/dh.h
 %%HCRYPTO%%include/hcrypto/dsa.h
+%%HCRYPTO%%include/hcrypto/ec.h
+%%HCRYPTO%%include/hcrypto/ecdh.h
+%%HCRYPTO%%include/hcrypto/ecdsa.h
 %%HCRYPTO%%include/hcrypto/engine.h
 %%HCRYPTO%%include/hcrypto/evp.h
+%%HCRYPTO%%include/hcrypto/evp-cc.h
+%%HCRYPTO%%include/hcrypto/evp-hcrypto.h
 %%HCRYPTO%%include/hcrypto/hmac.h
 %%HCRYPTO%%include/hcrypto/md2.h
 %%HCRYPTO%%include/hcrypto/md4.h
@@ -59,6 +68,7 @@ include/hdb.h
 include/hdb_asn1.h
 include/hdb_err.h
 include/heim_asn1.h
+include/heim-ipc.h
 include/heim_err.h
 include/heimntlm-protos.h
 include/heimntlm.h
@@ -70,6 +80,7 @@ include/k524_err.h
 include/kadm5/admin.h
 include/kadm5/kadm5-private.h
 include/kadm5/kadm5-protos.h
+include/kadm5/kadm5-pwcheck.h
 include/kadm5/kadm5_err.h
 include/kadm5/private.h
 include/kafs.h
@@ -80,15 +91,18 @@ include/krb5-protos.h
 include/krb5-types.h
 include/krb5.h
 include/krb5/locate_plugin.h
+include/krb5/send_to_kdc_plugin.h
 include/krb5/windc_plugin.h
 include/krb5_asn1.h
 include/krb5_ccapi.h
 include/krb5_err.h
 include/kx509_asn1.h
+include/ocsp_asn1.h
 include/otp.h
 include/parse_bytes.h
 include/parse_time.h
 include/parse_units.h
+include/pkcs10_asn1.h
 include/pkcs12_asn1.h
 include/pkcs8_asn1.h
 include/pkcs9_asn1.h
@@ -99,16 +113,13 @@ include/roken-common.h
 include/roken.h
 include/rtbl.h
 include/sl.h
-include/ss/ss.h
+include/wind.h
+include/wind_err.h
 include/xdbm.h
 lib/libasn1.a
 lib/libasn1.la
 lib/libasn1.so
 lib/libasn1.so.8
-lib/libeditline.a
-lib/libeditline.la
-lib/libeditline.so
-lib/libeditline.so.0
 lib/libgssapi.a
 lib/libgssapi.la
 lib/libgssapi.so
@@ -117,6 +128,10 @@ lib/libgssapi.so.2
 %%HCRYPTO%%lib/libhcrypto.la
 %%HCRYPTO%%lib/libhcrypto.so
 %%HCRYPTO%%lib/libhcrypto.so.5
+%%SQLITE%%lib/libheimsqlite.a
+%%SQLITE%%lib/libheimsqlite.la
+%%SQLITE%%lib/libheimsqlite.so
+%%SQLITE%%lib/libheimsqlite.so.0
 lib/libhdb.a
 lib/libhdb.la
 lib/libhdb.so
@@ -128,7 +143,7 @@ lib/libheimntlm.so.1
 lib/libhx509.a
 lib/libhx509.la
 lib/libhx509.so
-lib/libhx509.so.2
+lib/libhx509.so.5
 lib/libkadm5clnt.a
 lib/libkadm5clnt.la
 lib/libkadm5clnt.so
@@ -148,7 +163,7 @@ lib/libkdc.so.2
 lib/libkrb5.a
 lib/libkrb5.la
 lib/libkrb5.so
-lib/libkrb5.so.23
+lib/libkrb5.so.26
 lib/libotp.a
 lib/libotp.la
 lib/libotp.so
@@ -161,21 +176,26 @@ lib/libsl.a
 lib/libsl.la
 lib/libsl.so
 lib/libsl.so.2
-lib/libss.a
-lib/libss.la
-lib/libss.so
-lib/libss.so.1
+lib/libwind.a
+lib/libwind.la
+lib/libwind.so
+lib/libwind.so.0
 lib/windc.a
 lib/windc.la
 lib/windc.so
 lib/windc.so.0
+libdata/pkgconfig/heimdal-gssapi.pc
+libexec/digest-service
 libexec/ftpd
+libexec/heimdal/asn1_compile
+libexec/heimdal/asn1_print
+libexec/heimdal/slc
 libexec/hprop
 libexec/hpropd
 libexec/ipropd-master
 libexec/ipropd-slave
 libexec/kadmind
-libexec/kcm
+%%KCM%%libexec/kcm
 libexec/kdc
 libexec/kdigest
 libexec/kfd
@@ -189,9 +209,9 @@ sbin/iprop-log
 sbin/kadmin
 sbin/kstash
 sbin/ktutil
-@dirrm include/ss
 @dirrm include/krb5
 @dirrm include/kadm5
 %%HCRYPTO%%@dirrm include/hcrypto
 @dirrm include/gssapi
 @dirrm include/roken
+@dirrm libexec/heimdal
