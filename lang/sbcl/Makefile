@@ -151,6 +151,10 @@ LISP_CMD=	"${WRKDIR}/${BOOT_DISTNAME}/src/runtime/sbcl --core ${WRKDIR}/${BOOT_D
 
 .endif # defined(WITH_SBCL)
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not build on 6.X
+.endif
+
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "---------------------------------------------------------"
