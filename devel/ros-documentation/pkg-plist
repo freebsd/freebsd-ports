@@ -50,7 +50,7 @@ lib/libtopic_tools.so
 ros/3rdparty/Makefile
 ros/3rdparty/gtest/Makefile
 ros/3rdparty/gtest/ROS_NOBUILD
-ros/3rdparty/gtest/gtest-1.3.0.tar.gz.md5sum
+ros/3rdparty/gtest/gtest-1.5.0.tar.gz.md5sum
 ros/3rdparty/gtest/gtest/bin/gtest-config
 ros/3rdparty/gtest/gtest/include/gtest/gtest-death-test.h
 ros/3rdparty/gtest/gtest/include/gtest/gtest-message.h
