@@ -6,6 +6,7 @@
 
 PORTNAME=	zoneinfo
 DISTVERSION=	2010n
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://elsie.nci.nih.gov/pub/
 DISTNAME=	tzdata${DISTVERSION}

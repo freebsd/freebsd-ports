@@ -419,6 +419,7 @@
 %%DATADIR%%/Pacific/Apia
 %%DATADIR%%/Pacific/Auckland
 %%DATADIR%%/Pacific/Chatham
+%%DATADIR%%/Pacific/Chuuk
 %%DATADIR%%/Pacific/Easter
 %%DATADIR%%/Pacific/Efate
 %%DATADIR%%/Pacific/Enderbury
@@ -444,14 +445,13 @@
 %%DATADIR%%/Pacific/Pago_Pago
 %%DATADIR%%/Pacific/Palau
 %%DATADIR%%/Pacific/Pitcairn
-%%DATADIR%%/Pacific/Ponape
+%%DATADIR%%/Pacific/Pohnpei
 %%DATADIR%%/Pacific/Port_Moresby
 %%DATADIR%%/Pacific/Rarotonga
 %%DATADIR%%/Pacific/Saipan
 %%DATADIR%%/Pacific/Tahiti
 %%DATADIR%%/Pacific/Tarawa
 %%DATADIR%%/Pacific/Tongatapu
-%%DATADIR%%/Pacific/Truk
 %%DATADIR%%/Pacific/Wake
 %%DATADIR%%/Pacific/Wallis
 %%DATADIR%%/WET
