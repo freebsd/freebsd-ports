@@ -6,13 +6,12 @@
 
 PORTNAME=	nokogiri
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An HTML, XML, SAX, and Reader parser
-
-RUN_DEPENDS=	rubygem-hoe>=2.3.3:${PORTSDIR}/devel/rubygem-hoe
 
 USE_GNOME=	libxml2 libxslt
 
