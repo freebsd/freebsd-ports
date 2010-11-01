@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	ipa_ip6fw
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	net
-MASTER_SITES=	http://ipa-system.sourceforge.net/modules/ipa_ip6fw/
+MASTER_SITES=	SF/ipa-system/modules/ipa_ip6fw
 
 MAINTAINER=	simon@comsys.ntu-kpi.kiev.ua
 COMMENT=	IPA accounting module for FreeBSD IPv6 Firewall
 
+LICENSE=	BSD
+
 NO_PACKAGE=	Needs to be built uniquely for each host
 
 USE_BZIP2=	yes
-
-OPTIONS=	PTHREAD "Build pthread safe module" off \
-		DEBUG_INFO "Produce debugging info" off \
-		MAN_KOI8_R "Install Russian manual pages" off
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -27,30 +26,19 @@ OPTIONS=	PTHREAD "Build pthread safe module" off \
 IGNORE=		not supported on your system, as it does not have IPv6 ipfw firewall
 .endif
 
-.if defined(WITH_PTHREAD)
-MAKE_ENV+=	WITH_PTHREAD=yes
-CFLAGS+=	${PTHREAD_CFLAGS}
-.endif
+LOCALINCLUDE?=	${LOCALBASE}/include
+MAKE_ENV+=	DEBUG_FLAGS="" PREFIX=${PREFIX} LOCALINCLUDE=${LOCALINCLUDE}
 
-.if !defined(WITH_DEBUG_INFO)
-MAKE_ENV+=	DEBUG_FLAGS=""
-.endif
-
-BUILD_DEPENDS+=	${PREFIX}/include/ipa_mod.h:${PORTSDIR}/sysutils/ipa
+BUILD_DEPENDS+=	${LOCALBASE}/include/ipa_mod.h:${PORTSDIR}/sysutils/ipa
 
 PLIST_FILES=	lib/ipa_ip6fw.so
 
 MANCOMPRESSED=	yes
 MAN8=		ipa_ip6fw.8
-MANLANG=	""
-.if defined(WITH_MAN_KOI8_R)
-MANLANG+=	ru.KOI8-R
-.endif
+MANLANG=	"" ru.KOI8-R
 
 do-install:
 	cd ${WRKSRC} && ${MAKE} install
-.if defined(WITH_MAN_KOI8_R)
 	cd ${WRKSRC}/man && ${MAKE} LANG_DIR_SRC=ru.KOI8-R clean all install
-.endif
 
 .include <bsd.port.post.mk>
