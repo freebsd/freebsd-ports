@@ -757,10 +757,7 @@ MASTER_SITE_MOZILLA+= \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.mozilla.org/pub/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mozilla/&,} \
 	ftp://ftp.kaist.ac.kr/pub/mozilla/%SUBDIR%/ \
-	ftp://mozilla.mirror.pacific.net.au/mozilla/%SUBDIR%/ \
-	http://ftp.twaren.net/Unix/Mozilla/%SUBDIR%/ \
-	http://ftp.isu.edu.tw/pub/Mozilla/%SUBDIR%/ \
-	http://ftp.ntu.edu.tw/pub/mozilla/%SUBDIR%/
+	http://ftp.twaren.net/Unix/Mozilla/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_MOZILLA_EXTENDED)
