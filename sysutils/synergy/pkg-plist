@@ -2,35 +2,3 @@ bin/synergyc
 bin/synergys
 %%EXAMPLESDIR%%/synergy.conf
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/about.html
-%%PORTDOCS%%%%DOCSDIR%%/authors.html
-%%PORTDOCS%%%%DOCSDIR%%/autostart.html
-%%PORTDOCS%%%%DOCSDIR%%/banner.html
-%%PORTDOCS%%%%DOCSDIR%%/border.html
-%%PORTDOCS%%%%DOCSDIR%%/compiling.html
-%%PORTDOCS%%%%DOCSDIR%%/configuration.html
-%%PORTDOCS%%%%DOCSDIR%%/contact.html
-%%PORTDOCS%%%%DOCSDIR%%/developer.html
-%%PORTDOCS%%%%DOCSDIR%%/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/history.html
-%%PORTDOCS%%%%DOCSDIR%%/home.html
-%%PORTDOCS%%%%DOCSDIR%%/images/logo.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/warp.gif
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/license.html
-%%PORTDOCS%%%%DOCSDIR%%/news.html
-%%PORTDOCS%%%%DOCSDIR%%/roadmap.html
-%%PORTDOCS%%%%DOCSDIR%%/running.html
-%%PORTDOCS%%%%DOCSDIR%%/security.html
-%%PORTDOCS%%%%DOCSDIR%%/synergy.css
-%%PORTDOCS%%%%DOCSDIR%%/tips.html
-%%PORTDOCS%%%%DOCSDIR%%/toc.html
-%%PORTDOCS%%%%DOCSDIR%%/trouble.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
