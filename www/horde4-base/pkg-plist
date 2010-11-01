@@ -324,28 +324,75 @@
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Access.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache.php
-%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/DB.php
-%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/DB/acl.php
-%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/DB/xacl.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Acl.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Acl/Base.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Acl/Cache.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Acl/Null.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Combined/Freebusy.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Db.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Db/Acl.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Db/Base.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Db/Xacl.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/File.php
-%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/File/acl.php
-%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/File/pvcal.php
-%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/File/vcal.php
-%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/File/xacl.php
-%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Freebusy/Partial.php
-%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Freebusy/Partial/Decorator/Log.php
-%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Freebusy/Partials.php
-%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Acl.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/File/Acl.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/File/Pvcal.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/File/Vcal.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/File/Xacl.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Partial.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Partial/Freebusy.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Partial/Freebusy/Decorator/Log.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Structure.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Structure/Base.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Structure/Decorator/Log.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Xacl.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Xacl/Base.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Xacl/Cache.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Xacl/Configuration.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Xacl/Decorator/Log.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Exception.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Acl/Cache.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Acl/Null.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Backend.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Backend/Kolab.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Base.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Combined.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Combined/Decorator/Cache.php
-%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Xacl.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Decorator/Log.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Fwthree.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Xacl/Cache.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Xacl/Configuration.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Xacl/Decorator/Log.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Imap.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Logger.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Object/Event.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Owner.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Owner/Event.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Owner/Event/Kolab.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Owner/Kolab.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Freebusy/Folder.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Freebusy/Owner.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Freebusy/Resource/Kolab.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Owner.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/User.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Report.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Request.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Decorator/Log.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Decorator/Mcache.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Event.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Event/Decorator/Log.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Event/Decorator/Mcache.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Event/Fwthree.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Event/Kolab.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Kolab.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/User.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/User/Decorator/Log.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/User/Kolab.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/UserDb.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/UserDb/Kolab.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/UserDb/User.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/UserDb/User/Kolab.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/View.php
 %%HORDIR%%/lib/Horde/Kolab/IMAP.php
 %%HORDIR%%/lib/Horde/Kolab/IMAP/cclient.php
@@ -4217,18 +4264,40 @@
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Resource/Exception
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Resource
 @dirrm %%HORDIR%%/lib/Horde/Kolab/IMAP
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/UserDb/User
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/UserDb
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/User/Decorator
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/User
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Event/Decorator
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Event
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Decorator
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Freebusy/Resource
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Freebusy
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Owner/Event
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Owner
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Object
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Xacl/Decorator
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Xacl
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Decorator
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Combined/Decorator
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Combined
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Backend
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Acl
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export
-@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Freebusy/Partial/Decorator
-@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Freebusy/Partial
-@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Freebusy
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Xacl/Decorator
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Xacl
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Structure/Decorator
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Structure
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Partial/Freebusy/Decorator
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Partial/Freebusy
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Partial
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/File
-@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/DB
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Db
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Combined
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache/Acl
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Cache
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Format/XML
