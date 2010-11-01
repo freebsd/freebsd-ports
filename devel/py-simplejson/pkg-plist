@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-%%PORTDOCS%%%%DOCSDIR%%/._index.html
 %%PORTDOCS%%%%DOCSDIR%%/_sources/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/_static/contents.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/default.css
