@@ -75,11 +75,14 @@ CONFIGURE_ARGS+=--with-sound=no
 PLIST_SUB+=	SOUND="@comment "
 .endif
 
-do-patch:
+post-patch:
 .if defined(WITHOUT_X11)
 	@${REINPLACE_CMD} -e 's|man_MANS = |man_MANS1 = |g' ${WRKSRC}/doc/Makefile.in
 .endif
 	@${REINPLACE_CMD} -e 's|-ldl -lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/libfreerdpchanman/Makefile.in
+	@${REINPLACE_CMD} -e 's|-I$$(top_builddir)|-I$$(top_builddir)/include|' \
+		${WRKSRC}/libfreerdp/Makefile.in ${WRKSRC}/libfreerdpgdi/Makefile.in \
+		${WRKSRC}/libfreerdpkbd/Makefile.in ${WRKSRC}/X11/Makefile.in
 
 .include <bsd.port.mk>
