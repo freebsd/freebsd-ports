@@ -6,7 +6,7 @@
 
 PORTNAME=	auto-tw-l10n
 PORTVERSION=	1.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese
 MASTER_SITES=	LOCAL/chinsan
 DISTNAME=	zh-${PORTNAME}-${PORTVERSION}
@@ -23,7 +23,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-install pkg-message
 SUB_LIST=	PREFIX=${PREFIX} ZONE=${ZONE} SOURCE_DIR=${WRKSRC} \
 		WRKDIR=${WRKDIR} FASTEST_CVSUP=${FASTEST_CVSUP}
-OPTIONS=	KDE "Enable KDE support" Off
+OPTIONS=	KDE3 "Enable KDE support" Off
 
 FASTEST_CVSUP?=	${LOCALBASE}/bin/fastest_cvsup
 ZONE?=		tw
@@ -31,7 +31,7 @@ ZONE?=		tw
 .include <bsd.port.pre.mk>
 
 post-patch:
-.if defined(WITH_KDE)
+.if defined(WITH_KDE3)
 	@${REINPLACE_CMD} -e '5 s/en_US.ISO8859-1/zh_TW.Big5/g' \
 		${WRKSRC}/dot.cshrc
 	@${REINPLACE_CMD} -e '1 s/en_US.ISO8859-1/zh_TW.Big5/g' \
