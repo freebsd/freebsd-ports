@@ -6,24 +6,26 @@
 #
 
 PORTNAME=	gimmix
-PORTVERSION=	0.5.6
-PORTREVISION=	8
+PORTVERSION=	0.5.7.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	gimmix
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	Gimmix is a graphical MPD client written in C using GTK+2
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \
 		tag.1:${PORTSDIR}/audio/taglib \
 		nxml:${PORTSDIR}/textproc/libnxml
 
+LICENSE=	GPLv2
+
 USE_GNOME=	gtk20 intltool libglade2
 USE_BZIP2=	yes
-
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		gimmix.1
 
