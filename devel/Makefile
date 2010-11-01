@@ -3081,6 +3081,7 @@
     SUBDIR += rubygem-grit
     SUBDIR += rubygem-highline
     SUBDIR += rubygem-hoe
+    SUBDIR += rubygem-holidays
     SUBDIR += rubygem-i18n
     SUBDIR += rubygem-icalendar
     SUBDIR += rubygem-igraph
