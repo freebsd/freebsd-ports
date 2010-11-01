@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	collectd
-PORTVERSION=	4.9.2
-PORTREVISION=	2
+PORTVERSION=	4.9.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -20,15 +19,18 @@ USE_AUTOTOOLS=	libltdl:22
 WANT_GNOME=	yes
 
 OPTIONS=	CGI		"Install collection.cgi (requires RRDTOOL)" 	Off \
+		BIND		"Enable BIND 9.5+ statistics"			On  \
 		DEBUG		"Enable debugging" 				Off \
 		APACHE		"Input: Apache mod_status (libcurl)" 		Off \
 		APCUPS		"Input: APC UPS (apcupsd)" 			Off \
 		CURL		"Input: CURL generic web statistics" 		Off \
+		DBI		"Input: database abstraction library"		Off \
 		NUTUPS		"Input: NUT UPS daemon" 			Off \
 		INTERFACE 	"Input: Network interfaces (libstatgrab)" 	On  \
 		MBMON		"Input: MBMon" 					Off \
 		MYSQL		"Input: MySQL" 					Off \
 		NGINX		"Input: Nginx" 					Off \
+		OPENVPN		"Input: OpenVPN statistics"			Off \
 		PDNS		"Input: PowerDNS" 				Off \
 		PGSQL		"Input: PostgreSQL" 				Off \
 		PING		"Input: Network latency (liboping)" 		On  \
@@ -67,19 +69,17 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-apple_sensors \
 		--disable-ascent \
 		--disable-battery \
-		--disable-bind \
 		--disable-conntrack \
 		--disable-contextswitch \
 		--disable-cpufreq \
 		--disable-curl_json \
-		--disable-dbi \
 		--disable-disk \
 		--disable-entropy \
 		--disable-fscache \
 		--disable-gmond \
 		--disable-hddtemp \
-		--disable-iptables \
 		--disable-ipmi \
+		--disable-iptables \
 		--disable-ipvs \
 		--disable-irq \
 		--disable-java \
@@ -99,7 +99,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-notify_email \
 		--disable-olsrd \
 		--disable-onewire \
-		--disable-openvpn \
 		--disable-oracle \
 		--disable-perl \
 		--disable-python \
@@ -114,6 +113,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-target_replace \
 		--disable-target_scale \
 		--disable-target_set \
+		--disable-teamspeak2 \
 		--disable-ted \
 		--disable-thermal \
 		--disable-tokyotyrant \
@@ -136,6 +136,25 @@ RUN_DEPENDS+=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 PLIST_SUB+=	CGI=""
 .else
 PLIST_SUB+=	CGI="@comment "
+.endif
+
+.if defined(WITH_BIND)
+.if ${OSVERSION} < 800000
+BROKEN=		Need bind 9.5+
+.endif
+# check if MK_BIND is set to no (by /etc/src.conf or /etc/make.conf)
+.if exists(${DESTDIR}/usr/lib/libbind9.a) || exists(${LOCALBASE}/lib/libbind9.a)
+CONFIGURE_ARGS+=--enable-bind
+PLIST_SUB+=	BIND=""
+.else
+# libind9 does not exists
+CONFIGURE_ARGS+=--disable-bind
+PLIST_SUB+=	BIND="@comment "
+.endif
+.else
+# WITHOUT_BIND
+CONFIGURE_ARGS+=--disable-bind
+PLIST_SUB+=	BIND="@comment "
 .endif
 
 .if defined(WITH_APACHE)
@@ -165,6 +184,15 @@ CONFIGURE_ARGS+=--disable-curl
 PLIST_SUB+=	CURL="@comment "
 .endif
 
+.if defined(WITH_DBI)
+CONFIGURE_ARGS+=--enable-dbi --with-libdbi=${LOCALBASE}
+LIB_DEPENDS+=	dbi.0:${PORTSDIR}/databases/libdbi
+PLIST_SUB+=	DBI=""
+.else
+CONFIGURE_ARGS+=--disable-dbi
+PLIST_SUB+=	DBI="@comment "
+.endif
+
 .if defined(WITH_NUTUPS)
 CONFIGURE_ARGS+=--enable-nut
 BUILD_DEPENDS+=	${LOCALBASE}/include/upsclient.h:${PORTSDIR}/sysutils/nut
@@ -187,7 +215,7 @@ PLIST_SUB+=	INTERFACE="@comment "
 
 .if defined(WITH_MBMON)
 CONFIGURE_ARGS+=--enable-mbmon
-RUN_DEPENDS+=	${LOCALBASE}/sbin/mbmond:${PORTSDIR}/sysutils/mbmon
+RUN_DEPENDS+=	${LOCALBASE}/bin/mbmon:${PORTSDIR}/sysutils/mbmon
 PLIST_SUB+=	MBMON=""
 .else
 CONFIGURE_ARGS+=--disable-mbmon
@@ -211,6 +239,15 @@ PLIST_SUB+=	NGINX=""
 .else
 CONFIGURE_ARGS+=--disable-nginx
 PLIST_SUB+=	NGINX="@comment "
+.endif
+
+.if defined(WITH_OPENVPN)
+CONFIGURE_ARGS+=--enable-openvpn
+RUN_DEPENDS+=	${LOCALBASE}/sbin/openvpn:${PORTSDIR}/security/openvpn
+PLIST_SUB+=	OPENVPN=""
+.else
+CONFIGURE_ARGS+=--disable-openvpn
+PLIST_SUB+=	OPENVPN="@comment "
 .endif
 
 .if defined(WITH_PDNS)
