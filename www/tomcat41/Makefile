@@ -78,7 +78,7 @@ pre-patch:
 
 post-patch:
 	@${ECHO_MSG} -n ">> Removing unneeded files..."
-	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'`
+	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.bat' -or -name '*.dll' -or -name '*.exe' -or -name '*.orig' \) -delete
 	@${ECHO_MSG} " [ DONE ]"
 
 .for file in ${REPLACE_FILES}
