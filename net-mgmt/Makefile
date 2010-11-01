@@ -136,6 +136,7 @@
     SUBDIR += nagiosgrapher
     SUBDIR += nagiostat
     SUBDIR += nagircbot
+    SUBDIR += nagvis
     SUBDIR += nat
     SUBDIR += nbtscan
     SUBDIR += ndoutils
