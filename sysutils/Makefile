@@ -357,6 +357,7 @@
     SUBDIR += healthd
     SUBDIR += heartbeat
     SUBDIR += heirloom
+    SUBDIR += hextools
     SUBDIR += hidesvn
     SUBDIR += highlnk
     SUBDIR += hilite
