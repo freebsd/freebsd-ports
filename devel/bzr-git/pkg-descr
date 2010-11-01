@@ -1,0 +1,4 @@
+bzr-git is a plugin for bzr to work with git trees. All operations except for
+"push" are supported.
+
+www: https://launchpad.net/bzr-git
