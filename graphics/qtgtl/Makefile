@@ -7,11 +7,14 @@
 PORTNAME=	qtgtl
 PORTVERSION=	0.9.1
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://www.opengtl.org/download/
+MASTER_SITES=	http://download.opengtl.org/
 DISTNAME=	libQtGTL-${PORTVERSION}
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Qt bindings for the Graphics Transformation Languages
+
+LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	GTLCore.0:${PORTSDIR}/graphics/opengtl
 
