@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+int
+main(int argc, char *const argv[], char *const envp[])
+{
+  int i, len = 0;
+  char **argv2 = malloc(sizeof(char*) * (argc + 1));
+  argv2[0] = "%%LOCALBASE%%/bin/perl";
+  for (i = 1; i < argc + 1; i++) {
+    argv2[i] = argv[i];
+  }
+  for (i = 0; envp[i]; i++) {
+    len++;
+  }
+  char **envp2 = malloc(sizeof(char*) * (len + 2));
+  envp2[0] = "LD_PRELOAD=%%LIBTHR%%";
+  /* Copy last null, too. */
+  for (i = 0; i < len + 1; i++) {
+    envp2[i + 1] = envp[i];
+  }
+  return execve(argv2[0], argv2, envp2);
+}
