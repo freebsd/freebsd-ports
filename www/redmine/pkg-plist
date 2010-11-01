@@ -660,6 +660,7 @@
 %%WWWDIR%%/doc/README_FOR_APP
 %%WWWDIR%%/doc/RUNNING_TESTS
 %%WWWDIR%%/doc/UPGRADING
+%%WWWDIR%%/doc/git.rdoc
 %%WWWDIR%%/extra/mail_handler/rdm-mailhandler.rb
 %%WWWDIR%%/extra/sample_plugin/README
 %%WWWDIR%%/extra/sample_plugin/app/controllers/example_controller.rb
@@ -1647,7 +1648,7 @@
 %%WWWDIR%%/vendor/plugins/ruby-net-ldap-0.0.4/tests/testldif.rb
 %%WWWDIR%%/vendor/plugins/ruby-net-ldap-0.0.4/tests/testpsw.rb
 %%WWWDIR%%/vendor/rails/.gitignore
-%%WWWDIR%%/vendor/rails/REVISION_56de4e9a8090e2e617a0d478d38c0fccfce7d725
+%%WWWDIR%%/vendor/rails/REVISION_3cf85fb4fcdae65a4d5a1a5c418492ea0cf9ad6d
 %%WWWDIR%%/vendor/rails/actionmailer/CHANGELOG
 %%WWWDIR%%/vendor/rails/actionmailer/MIT-LICENSE
 %%WWWDIR%%/vendor/rails/actionmailer/README
