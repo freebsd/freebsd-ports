@@ -20,6 +20,9 @@ lib/libcollectdclient.so.0
 %%APCUPS%%lib/collectd/apcups.a
 %%APCUPS%%lib/collectd/apcups.la
 %%APCUPS%%lib/collectd/apcups.so
+%%BIND%%lib/collectd/bind.a
+%%BIND%%lib/collectd/bind.la
+%%BIND%%lib/collectd/bind.so
 lib/collectd/cpu.a
 lib/collectd/cpu.la
 lib/collectd/cpu.so
@@ -29,6 +32,9 @@ lib/collectd/csv.so
 %%CURL%%lib/collectd/curl.a
 %%CURL%%lib/collectd/curl.la
 %%CURL%%lib/collectd/curl.so
+%%DBI%%lib/collectd/dbi.a
+%%DBI%%lib/collectd/dbi.la
+%%DBI%%lib/collectd/dbi.so
 lib/collectd/df.a
 lib/collectd/df.la
 lib/collectd/df.so
@@ -77,6 +83,9 @@ lib/collectd/network.so
 lib/collectd/ntpd.a
 lib/collectd/ntpd.la
 lib/collectd/ntpd.so
+%%OPENVPN%%lib/collectd/openvpn.a
+%%OPENVPN%%lib/collectd/openvpn.la
+%%OPENVPN%%lib/collectd/openvpn.so
 %%PGSQL%%lib/collectd/postgresql.a
 %%PGSQL%%lib/collectd/postgresql.la
 %%PGSQL%%lib/collectd/postgresql.so
@@ -107,9 +116,6 @@ lib/collectd/tail.a
 lib/collectd/tcpconns.so
 lib/collectd/tcpconns.la
 lib/collectd/tcpconns.a
-lib/collectd/teamspeak2.so
-lib/collectd/teamspeak2.la
-lib/collectd/teamspeak2.a
 lib/collectd/unixsock.a
 lib/collectd/unixsock.la
 lib/collectd/unixsock.so
