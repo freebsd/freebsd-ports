@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	argparse
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ COMMENT=	An optparse-inspired command-line parsing library
 
 USE_ZIP=	yes
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/argparse.py \
