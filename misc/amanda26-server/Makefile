@@ -7,7 +7,7 @@
 
 PORTNAME=	amanda
 PORTVERSION=	2.6.1p2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
@@ -17,7 +17,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT?=	The Advanced Maryland Automatic Network Disk Archiver (server)
 
 WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
-SLAVEDIRS=	misc/amanda-client
+SLAVEDIRS=	misc/amanda26-client
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 GNU_CONFIGURE=	yes
@@ -85,10 +85,10 @@ pre-fetch:
 	@${ECHO} "    AMANDA_DATES=path to client amandates file"
 	@${ECHO} ""
 
-CONFLICTS=	amanda-server-2.5.*
+CONFLICTS=	amanda-server-2.5.* amanda-server-3.*
 
-BUILD_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:${PORTSDIR}/misc/amanda-client
-RUN_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:${PORTSDIR}/misc/amanda-client
+BUILD_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:${PORTSDIR}/misc/amanda26-client
+RUN_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:${PORTSDIR}/misc/amanda26-client
 
 CONFIGURE_ARGS+=--without-client
 
@@ -178,7 +178,7 @@ pre-fetch:
 
 OPTIONS+=	ZFSCOMP "accurate estimation of compressed ZFS filesystems" off
 
-CONFLICTS=	amanda-client-2.5.*
+CONFLICTS=	amanda-client-2.5.* amanda-client-3.*
 CONFIGURE_ARGS+=--without-server --with-amandates=${AMANDA_DATES}
 
 MAN5=		amanda-archive-format.5 \
