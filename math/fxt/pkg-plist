@@ -509,6 +509,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/all-dbs-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/all-dbs-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bin2sbin-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bin2sbin-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bin2naf-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bin2naf-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bit-necklace-demo.cc
