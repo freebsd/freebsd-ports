@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ireport
-PORTVERSION=	3.7.5
+PORTVERSION=	3.7.6
 CATEGORIES=	devel databases java
 MASTER_SITES=	SF/${PORTNAME}/iReport/iReport-${PORTVERSION}
 DISTNAME=	iReport-${PORTVERSION}
@@ -60,16 +60,16 @@ JARFILES=	asm-attrs.jar asm.jar barcode4j-2.0-LICENSE.txt			\
 		ejb3-persistence.jar hibernate-annotations.jar			\
 		hibernate-commons-annotations.jar hibernate3-LICENSE.txt	\
 		hibernate3.jar iText-2.1.7-LICENSE.txt iText-2.1.7.jar		\
-		iTextAsian.jar jasperreports-chart-themes-3.7.4.jar		\
-		jasperreports-extensions-3.5.3.jar jasperreports-fonts-3.7.5.jar\
+		iTextAsian.jar jasperreports-chart-themes-3.7.6.jar		\
+		jasperreports-extensions-3.5.3.jar jasperreports-fonts-3.7.6.jar\
 		javacup.jar javassist-3.4.GA.jar jdt-compiler-3.1.1-LICENSE.html\
 		jdt-compiler-3.1.1.jar jpa.jar					\
 		js_jasperserver-common-ws-3.5.0.jar js_saaj-api-1.3.jar		\
-		js_wsdl4j-1.5.1.jar jta.jar jxl-2.6-LICENSE.txt jxl-2.6.10.jar	\
-		mondrian-3.1.1.12687-Jaspersoft.jar				\
+		js_wsdl4j-1.5.1.jar jta.jar jxl-2.6.10-LICENSE.txt		\
+		jxl-2.6.10.jar mondrian-3.1.1.12687-Jaspersoft.jar		\
 		mondrian-3.1.1.12687-LICENSE.html olap4j-0.9.7.145.jar		\
 		png-encoder-1.5.jar rex-20080421.jar saaj-api-1.3.jar		\
-		sqleonardo-2007.03.jar swingx-2007_10_07.jar xml-apis-ext.jar
+		sqleonardo-2009.03.rc1.jar swingx-2007_10_07.jar xml-apis-ext.jar
 CJSFILES=	com-jaspersoft-ireport-addons.jar		\
 		com-jaspersoft-ireport-components.jar		\
 		com-jaspersoft-ireport-designer-standalone.jar	\
@@ -92,16 +92,16 @@ CLSSPTH=	ant antlr asm-attrs asm barbecue barcode4j-2.0 batik batik-anim	\
 		eigenbase-xom-1.3.0.11999 ejb3-persistence groovy		\
 		hibernate-annotations hibernate-commons-annotations hibernate3	\
 		itext iText-2.1.7 iTextAsian jasperreports			\
-		jasperreports-chart-themes-3.7.4 jasperreports-extensions-3.5.3	\
-		jasperreports-fonts-3.7.4 javacup javassist-3.4.GA  jaxen-full	\
+		jasperreports-chart-themes-3.7.6 jasperreports-extensions-3.5.3	\
+		jasperreports-fonts-3.7.6 javacup javassist-3.4.GA  jaxen-full	\
 		jcommon jdt-compiler-3.1.1 jfreechart jpa activation axis	\
 		commons-codec commons-discovery commons-httpclient		\
 		js_jasperserver-common-ws-3.5.0 jaxrpc mail js_saaj-api-1.3	\
 		js_wsdl4j-1.5.1 jta jxl-2.6.10 log4j				\
 		mondrian-3.1.1.12687-Jaspersoft olap4j-0.9.7.145 png-encoder-1.5\
 		poi rex-20080421 rhino saaj-api-1.3 slf4j-api slf4j-log4j12	\
-		spring sqleonardo-2007.03 swingx-2007_10_07 xalan xml-apis-ext	\
-		xml-apis							\
+		spring sqleonardo-2009.03.rc1 swingx-2007_10_07 xalan		\
+		xml-apis-ext xml-apis							\
 		${CLSSHSQLDB}
 
 .include <bsd.port.pre.mk>

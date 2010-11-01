@@ -1951,9 +1951,9 @@ bin/iReport
 %%JAVAJARDIR%%/iText-2.1.7-LICENSE.txt
 %%JAVAJARDIR%%/iText-2.1.7.jar
 %%JAVAJARDIR%%/iTextAsian.jar
-%%JAVAJARDIR%%/jasperreports-chart-themes-3.7.4.jar
+%%JAVAJARDIR%%/jasperreports-chart-themes-3.7.6.jar
 %%JAVAJARDIR%%/jasperreports-extensions-3.5.3.jar
-%%JAVAJARDIR%%/jasperreports-fonts-3.7.5.jar
+%%JAVAJARDIR%%/jasperreports-fonts-3.7.6.jar
 %%JAVAJARDIR%%/javacup.jar
 %%JAVAJARDIR%%/javassist-3.4.GA.jar
 %%JAVAJARDIR%%/jdt-compiler-3.1.1-LICENSE.html
@@ -1963,7 +1963,7 @@ bin/iReport
 %%JAVAJARDIR%%/js_saaj-api-1.3.jar
 %%JAVAJARDIR%%/js_wsdl4j-1.5.1.jar
 %%JAVAJARDIR%%/jta.jar
-%%JAVAJARDIR%%/jxl-2.6-LICENSE.txt
+%%JAVAJARDIR%%/jxl-2.6.10-LICENSE.txt
 %%JAVAJARDIR%%/jxl-2.6.10.jar
 %%JAVAJARDIR%%/mondrian-3.1.1.12687-Jaspersoft.jar
 %%JAVAJARDIR%%/mondrian-3.1.1.12687-LICENSE.html
@@ -1971,7 +1971,7 @@ bin/iReport
 %%JAVAJARDIR%%/png-encoder-1.5.jar
 %%JAVAJARDIR%%/rex-20080421.jar
 %%JAVAJARDIR%%/saaj-api-1.3.jar
-%%JAVAJARDIR%%/sqleonardo-2007.03.jar
+%%JAVAJARDIR%%/sqleonardo-2009.03.rc1.jar
 %%JAVAJARDIR%%/swingx-2007_10_07.jar
 %%JAVAJARDIR%%/xml-apis-ext.jar
 @dirrm %%DATADIR%%/platform9/update_tracking
