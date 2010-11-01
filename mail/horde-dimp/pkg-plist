@@ -209,6 +209,8 @@
 %%HORDIR%%/themes/silver/graphics/forward_menu.png
 %%HORDIR%%/themes/silver/graphics/ham.png
 %%HORDIR%%/themes/silver/graphics/ham_menu.png
+%%HORDIR%%/themes/silver/graphics/key_down.png
+%%HORDIR%%/themes/silver/graphics/key_up.png
 %%HORDIR%%/themes/silver/graphics/loading.gif
 %%HORDIR%%/themes/silver/graphics/logo.png
 %%HORDIR%%/themes/silver/graphics/logout.png
