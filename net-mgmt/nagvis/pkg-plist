@@ -1,0 +1,834 @@
+%%WWWDIR%%/LICENCE
+%%WWWDIR%%/README
+%%WWWDIR%%/docs/de_DE/about.html
+%%WWWDIR%%/docs/de_DE/after_installation.html
+%%WWWDIR%%/docs/de_DE/auth.html
+%%WWWDIR%%/docs/de_DE/auth_old_style.html
+%%WWWDIR%%/docs/de_DE/authorisation_roles_perms.html
+%%WWWDIR%%/docs/de_DE/automap.html
+%%WWWDIR%%/docs/de_DE/automap_config_format.html
+%%WWWDIR%%/docs/de_DE/backends.html
+%%WWWDIR%%/docs/de_DE/changelog.html
+%%WWWDIR%%/docs/de_DE/changelog2.html
+%%WWWDIR%%/docs/de_DE/context_templates.html
+%%WWWDIR%%/docs/de_DE/extending/custom_context_actions.html
+%%WWWDIR%%/docs/de_DE/extending/iconsets.html
+%%WWWDIR%%/docs/de_DE/extending/languages.html
+%%WWWDIR%%/docs/de_DE/extending/shapes.html
+%%WWWDIR%%/docs/de_DE/extending/templates.html
+%%WWWDIR%%/docs/de_DE/gadgets.html
+%%WWWDIR%%/docs/de_DE/header_templates.html
+%%WWWDIR%%/docs/de_DE/hover_templates.html
+%%WWWDIR%%/docs/de_DE/index.html
+%%WWWDIR%%/docs/de_DE/installation_instructions.html
+%%WWWDIR%%/docs/de_DE/installer.html
+%%WWWDIR%%/docs/de_DE/lines_weathermap_style.html
+%%WWWDIR%%/docs/de_DE/map_config_format_description.html
+%%WWWDIR%%/docs/de_DE/nagvis_config_format_description.html
+%%WWWDIR%%/docs/de_DE/system_requirements.html
+%%WWWDIR%%/docs/de_DE/toc.html
+%%WWWDIR%%/docs/de_DE/update_instructions.html
+%%WWWDIR%%/docs/de_DE/user_interface.html
+%%WWWDIR%%/docs/de_DE/welcome.html
+%%WWWDIR%%/docs/en_US/about.html
+%%WWWDIR%%/docs/en_US/after_installation.html
+%%WWWDIR%%/docs/en_US/auth.html
+%%WWWDIR%%/docs/en_US/auth_modules.html
+%%WWWDIR%%/docs/en_US/auth_old_style.html
+%%WWWDIR%%/docs/en_US/authorisation_modules.html
+%%WWWDIR%%/docs/en_US/authorisation_roles_perms.html
+%%WWWDIR%%/docs/en_US/automap.html
+%%WWWDIR%%/docs/en_US/automap_config_format.html
+%%WWWDIR%%/docs/en_US/backends.html
+%%WWWDIR%%/docs/en_US/changelog.html
+%%WWWDIR%%/docs/en_US/context_templates.html
+%%WWWDIR%%/docs/en_US/extending/custom_context_actions.html
+%%WWWDIR%%/docs/en_US/extending/iconsets.html
+%%WWWDIR%%/docs/en_US/extending/languages.html
+%%WWWDIR%%/docs/en_US/extending/shapes.html
+%%WWWDIR%%/docs/en_US/extending/templates.html
+%%WWWDIR%%/docs/en_US/gadgets.html
+%%WWWDIR%%/docs/en_US/header_templates.html
+%%WWWDIR%%/docs/en_US/hover_templates.html
+%%WWWDIR%%/docs/en_US/index.html
+%%WWWDIR%%/docs/en_US/installation_instructions.html
+%%WWWDIR%%/docs/en_US/installer.html
+%%WWWDIR%%/docs/en_US/lines_weathermap_style.html
+%%WWWDIR%%/docs/en_US/logon_modules.html
+%%WWWDIR%%/docs/en_US/map_config_format_description.html
+%%WWWDIR%%/docs/en_US/nagvis_config_format_description.html
+%%WWWDIR%%/docs/en_US/system_requirements.html
+%%WWWDIR%%/docs/en_US/toc.html
+%%WWWDIR%%/docs/en_US/update_instructions.html
+%%WWWDIR%%/docs/en_US/user_interface.html
+%%WWWDIR%%/docs/en_US/welcome.html
+%%WWWDIR%%/docs/general/css/style.css
+%%WWWDIR%%/docs/general/img/favicon.ico
+%%WWWDIR%%/docs/general/img/iconset-std_mini.jpg
+%%WWWDIR%%/docs/general/img/iconset-std_small.jpg
+%%WWWDIR%%/docs/general/img/logo-88x23.png
+%%WWWDIR%%/docs/general/img/logo.png
+%%WWWDIR%%/docs/general/img/medium_nagvis-1.0-wui-preview.png
+%%WWWDIR%%/docs/general/img/nagvis-1.3-automap-directed-1-thumb.png
+%%WWWDIR%%/docs/general/img/nagvis-1.3-automap_undirected-1-thumb.png
+%%WWWDIR%%/docs/general/img/nagvis-1.4-context-ssh-1.png
+%%WWWDIR%%/docs/general/img/nagvis-1.4-gadget-label-hover.png
+%%WWWDIR%%/docs/general/img/sample-weathermap.jpg
+%%WWWDIR%%/etc/.htaccess
+%%WWWDIR%%/etc/apache2-nagvis.conf-sample
+%%WWWDIR%%/etc/automaps/__automap.cfg
+%%WWWDIR%%/etc/geomap/links.xml
+%%WWWDIR%%/etc/geomap/locations.xml
+%%WWWDIR%%/etc/geomap/settings.xml
+%%WWWDIR%%/etc/geomap/viewpoints.xml
+%%WWWDIR%%/etc/maps/demo-map.cfg
+%%WWWDIR%%/etc/maps/demo-server.cfg
+%%WWWDIR%%/etc/maps/demo.cfg
+%%WWWDIR%%/etc/maps/demo2.cfg
+%%WWWDIR%%/etc/nagvis.ini.php-sample
+%%WWWDIR%%/share/config.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/FrontendMessage.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/FrontendModAutoMap.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/FrontendModInfo.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/FrontendModLogonDialog.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/FrontendModLogonEnv.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/FrontendModLogonMixed.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/FrontendModMap.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/FrontendModOverview.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/FrontendModRotation.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/FrontendModUrl.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/FrontendModule.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/FrontendModuleHandler.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/FrontendRequestHandler.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/FrontendRotation.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/FrontendTemplateSystem.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/NagVisAutoMapView.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/NagVisHeaderMenu.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/NagVisIndexView.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/NagVisInfoView.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/NagVisLoginView.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/NagVisMapView.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/NagVisOverviewView.php
+%%WWWDIR%%/share/frontend/nagvis-js/classes/NagVisUrlView.php
+%%WWWDIR%%/share/frontend/nagvis-js/css/frontendEventlog.css
+%%WWWDIR%%/share/frontend/nagvis-js/defines/nagvis-js.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/CHANGELOG
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo.compiled.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/Agavi/DwooRenderer.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/Agavi/README
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/Agavi/dwoo_plugins/t.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/Agavi/dwoo_plugins/url.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/CakePHP/README
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/CakePHP/dwoo.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/CodeIgniter/README
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/CodeIgniter/config/dwootemplate.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/CodeIgniter/controllers/dwoowelcome.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/CodeIgniter/libraries/Dwootemplate.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/CodeIgniter/views/dwoowelcome.tpl
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/CodeIgniter/views/page.tpl
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/ZendFramework/PluginProxy.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/ZendFramework/README
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/ZendFramework/View.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Block/Plugin.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Compilation/Exception.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Compiler.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Data.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Exception.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Filter.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/ICompilable.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/ICompilable/Block.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/ICompiler.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/IDataProvider.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/IElseable.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/ILoader.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/IPluginProxy.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/ITemplate.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Loader.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Plugin.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Processor.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Security/Exception.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Security/Policy.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Smarty/Adapter.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Template/File.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Template/String.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/LICENSE
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/README
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/UPGRADE_NOTES
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/dwooAutoload.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/a.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/auto_escape.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/block.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/capture.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/dynamic.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/else.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/elseif.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/for.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/foreach.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/foreachelse.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/forelse.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/if.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/loop.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/section.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/smartyinterface.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/strip.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/template.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/textformat.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/topLevelBlock.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/with.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks/withelse.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/filters/html_format.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/assign.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/capitalize.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/cat.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/count_characters.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/count_paragraphs.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/count_sentences.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/count_words.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/counter.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/cycle.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/date_format.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/default.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/dump.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/eol.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/escape.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/eval.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/extends.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/extendsCheck.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/fetch.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/include.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/indent.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/isset.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/load_templates.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/lower.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/mailto.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/math.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/nl2br.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/regex_replace.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/replace.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/reverse.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/safe.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/spacify.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/string_format.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/strip_tags.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/tif.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/truncate.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/upper.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/whitespace.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions/wordwrap.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/helper.array.php
+%%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/processors/pre.smarty_compat.php
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/10x10.gif
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/confirm.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/favicon.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/favicon_ack.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/favicon_critical.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/favicon_down.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/favicon_downtime.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/favicon_error.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/favicon_ok.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/favicon_unknown.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/favicon_up.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/favicon_warning.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/info.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/loading.gif
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/logo.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/logo_96x25.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/msg_critical.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/msg_down.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/msg_error.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/msg_note.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/msg_ok.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/msg_permission.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/msg_unknown.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/msg_unreachable.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/msg_up.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/msg_warning.png
+%%WWWDIR%%/share/frontend/nagvis-js/images/internal/warning.png
+%%WWWDIR%%/share/frontend/nagvis-js/index.php
+%%WWWDIR%%/share/frontend/nagvis-js/js/ExtBase.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/ExtStacktrace.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/NagVisHost.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/NagVisHostgroup.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/NagVisLine.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/NagVisMap.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/NagVisObject.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/NagVisRotation.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/NagVisService.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/NagVisServicegroup.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/NagVisShape.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/NagVisStatefulObject.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/NagVisStatelessObject.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/NagVisTextbox.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/ajax.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/dynfavicon.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/frontend.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/frontendContext.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/frontendEventlog.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/frontendHover.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/frontendMessage.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/hover.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/lines.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/nagvis.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/popupWindow.js
+%%WWWDIR%%/share/frontend/nagvis-js/js/wz_jsgraphics.js
+%%WWWDIR%%/share/frontend/nagvis-js/locale/de_DE/LC_MESSAGES/nagvis.mo
+%%WWWDIR%%/share/frontend/nagvis-js/locale/de_DE/LC_MESSAGES/nagvis.po
+%%WWWDIR%%/share/frontend/nagvis-js/locale/en_US/LC_MESSAGES/nagvis.mo
+%%WWWDIR%%/share/frontend/nagvis-js/locale/en_US/LC_MESSAGES/nagvis.po
+%%WWWDIR%%/share/frontend/nagvis-js/locale/es_ES/LC_MESSAGES/nagvis.mo
+%%WWWDIR%%/share/frontend/nagvis-js/locale/es_ES/LC_MESSAGES/nagvis.po
+%%WWWDIR%%/share/frontend/nagvis-js/locale/fr_FR/LC_MESSAGES/nagvis.mo
+%%WWWDIR%%/share/frontend/nagvis-js/locale/fr_FR/LC_MESSAGES/nagvis.po
+%%WWWDIR%%/share/frontend/nagvis-js/locale/pt_BR/LC_MESSAGES/nagvis.mo
+%%WWWDIR%%/share/frontend/nagvis-js/locale/pt_BR/LC_MESSAGES/nagvis.po
+%%WWWDIR%%/share/frontend/nagvis-js/locale/ru_RU/LC_MESSAGES/nagvis.mo
+%%WWWDIR%%/share/frontend/nagvis-js/locale/ru_RU/LC_MESSAGES/nagvis.po
+%%WWWDIR%%/share/frontend/wui/classes/WuiCore.php
+%%WWWDIR%%/share/frontend/wui/classes/WuiHeaderMenu.php
+%%WWWDIR%%/share/frontend/wui/classes/WuiMainCfg.php
+%%WWWDIR%%/share/frontend/wui/classes/WuiMap.php
+%%WWWDIR%%/share/frontend/wui/classes/WuiModLogonDialog.php
+%%WWWDIR%%/share/frontend/wui/classes/WuiModLogonEnv.php
+%%WWWDIR%%/share/frontend/wui/classes/WuiModLogonMixed.php
+%%WWWDIR%%/share/frontend/wui/classes/WuiModMap.php
+%%WWWDIR%%/share/frontend/wui/classes/WuiModWelcome.php
+%%WWWDIR%%/share/frontend/wui/classes/WuiModule.php
+%%WWWDIR%%/share/frontend/wui/classes/WuiModuleHandler.php
+%%WWWDIR%%/share/frontend/wui/classes/WuiPage.php
+%%WWWDIR%%/share/frontend/wui/classes/WuiViewIndex.php
+%%WWWDIR%%/share/frontend/wui/classes/WuiViewMap.php
+%%WWWDIR%%/share/frontend/wui/classes/WuiViewWelcome.php
+%%WWWDIR%%/share/frontend/wui/css/wui.css
+%%WWWDIR%%/share/frontend/wui/defines/wui.php
+%%WWWDIR%%/share/frontend/wui/images/clone.png
+%%WWWDIR%%/share/frontend/wui/images/delete.png
+%%WWWDIR%%/share/frontend/wui/images/help_icon.png
+%%WWWDIR%%/share/frontend/wui/images/modify.png
+%%WWWDIR%%/share/frontend/wui/images/move.png
+%%WWWDIR%%/share/frontend/wui/index.php
+%%WWWDIR%%/share/frontend/wui/js/EditMainCfg.js
+%%WWWDIR%%/share/frontend/wui/js/ExtGenericResize.js
+%%WWWDIR%%/share/frontend/wui/js/ManageBackends.js
+%%WWWDIR%%/share/frontend/wui/js/ManageBackgrounds.js
+%%WWWDIR%%/share/frontend/wui/js/ManageMaps.js
+%%WWWDIR%%/share/frontend/wui/js/ManageShapes.js
+%%WWWDIR%%/share/frontend/wui/js/MapManageTmpl.js
+%%WWWDIR%%/share/frontend/wui/js/addmodify.js
+%%WWWDIR%%/share/frontend/wui/js/ajax.js
+%%WWWDIR%%/share/frontend/wui/js/wui.js
+%%WWWDIR%%/share/frontend/wui/js/wz_jsgraphics.js
+%%WWWDIR%%/share/index.php
+%%WWWDIR%%/share/netmap/GeocodeService.php
+%%WWWDIR%%/share/netmap/Host.php
+%%WWWDIR%%/share/netmap/HostGroup.php
+%%WWWDIR%%/share/netmap/Link.php
+%%WWWDIR%%/share/netmap/LinkService.php
+%%WWWDIR%%/share/netmap/Location.php
+%%WWWDIR%%/share/netmap/LocationService.php
+%%WWWDIR%%/share/netmap/NagVisService.php
+%%WWWDIR%%/share/netmap/NagiosService.php
+%%WWWDIR%%/share/netmap/Service.php
+%%WWWDIR%%/share/netmap/ServiceGroup.php
+%%WWWDIR%%/share/netmap/Settings.php
+%%WWWDIR%%/share/netmap/SettingsService.php
+%%WWWDIR%%/share/netmap/State.php
+%%WWWDIR%%/share/netmap/Viewpoint.php
+%%WWWDIR%%/share/netmap/ViewpointService.php
+%%WWWDIR%%/share/netmap/amf-server.php
+%%WWWDIR%%/share/netmap/crossdomain.xml
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Constants.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Exception.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Parse/Amf0/Deserializer.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Parse/Amf0/Serializer.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Parse/Amf3/Deserializer.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Parse/Amf3/Serializer.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Parse/Deserializer.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Parse/InputStream.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Parse/OutputStream.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Parse/Serializer.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Parse/TypeLoader.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Request.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Request/Http.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Response.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Response/Http.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Server.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Server/Exception.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Util/BinaryStream.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Value/ByteArray.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Value/MessageBody.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Value/MessageHeader.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Value/Messaging/AbstractMessage.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Value/Messaging/AcknowledgeMessage.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Value/Messaging/AsyncMessage.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Value/Messaging/CommandMessage.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Value/Messaging/ErrorMessage.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Value/Messaging/RemotingMessage.php
+%%WWWDIR%%/share/netmap/library/Zend/Amf/Value/TraitsInfo.php
+%%WWWDIR%%/share/netmap/library/Zend/Date.php
+%%WWWDIR%%/share/netmap/library/Zend/Date/Cities.php
+%%WWWDIR%%/share/netmap/library/Zend/Date/DateObject.php
+%%WWWDIR%%/share/netmap/library/Zend/Date/Exception.php
+%%WWWDIR%%/share/netmap/library/Zend/Exception.php
+%%WWWDIR%%/share/netmap/library/Zend/Loader.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Abstract.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Cache.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Definition.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Exception.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Interface.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Method/Callback.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Method/Definition.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Method/Parameter.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Method/Prototype.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Reflection.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Reflection/Class.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Reflection/Exception.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Reflection/Function.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Reflection/Function/Abstract.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Reflection/Method.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Reflection/Node.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Reflection/Parameter.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Reflection/Prototype.php
+%%WWWDIR%%/share/netmap/library/Zend/Server/Reflection/ReturnValue.php
+%%WWWDIR%%/share/netmap/library/Zend/Version.php
+%%WWWDIR%%/share/netmap/modules/gmap/GMapModule.swf
+%%WWWDIR%%/share/netmap/shell.html
+%%WWWDIR%%/share/netmap/shell.swf
+%%WWWDIR%%/share/server/core/ajax_handler.php
+%%WWWDIR%%/share/server/core/classes/CoreAuthHandler.php
+%%WWWDIR%%/share/server/core/classes/CoreAuthModMySQL.php
+%%WWWDIR%%/share/server/core/classes/CoreAuthModSQLite.php
+%%WWWDIR%%/share/server/core/classes/CoreAuthModSession.php
+%%WWWDIR%%/share/server/core/classes/CoreAuthModule.php
+%%WWWDIR%%/share/server/core/classes/CoreAuthorisationHandler.php
+%%WWWDIR%%/share/server/core/classes/CoreAuthorisationModMySQL.php
+%%WWWDIR%%/share/server/core/classes/CoreAuthorisationModSQLite.php
+%%WWWDIR%%/share/server/core/classes/CoreAuthorisationModule.php
+%%WWWDIR%%/share/server/core/classes/CoreBackendMgmt.php
+%%WWWDIR%%/share/server/core/classes/CoreExceptions.php
+%%WWWDIR%%/share/server/core/classes/CoreLog.php
+%%WWWDIR%%/share/server/core/classes/CoreMessage.php
+%%WWWDIR%%/share/server/core/classes/CoreModAuth.php
+%%WWWDIR%%/share/server/core/classes/CoreModAutoMap.php
+%%WWWDIR%%/share/server/core/classes/CoreModChangePassword.php
+%%WWWDIR%%/share/server/core/classes/CoreModGeneral.php
+%%WWWDIR%%/share/server/core/classes/CoreModLogonEnv.php
+%%WWWDIR%%/share/server/core/classes/CoreModMainCfg.php
+%%WWWDIR%%/share/server/core/classes/CoreModManageBackgrounds.php
+%%WWWDIR%%/share/server/core/classes/CoreModManageShapes.php
+%%WWWDIR%%/share/server/core/classes/CoreModMap.php
+%%WWWDIR%%/share/server/core/classes/CoreModMultisite.php
+%%WWWDIR%%/share/server/core/classes/CoreModOverview.php
+%%WWWDIR%%/share/server/core/classes/CoreModRoleMgmt.php
+%%WWWDIR%%/share/server/core/classes/CoreModSearch.php
+%%WWWDIR%%/share/server/core/classes/CoreModUrl.php
+%%WWWDIR%%/share/server/core/classes/CoreModUserMgmt.php
+%%WWWDIR%%/share/server/core/classes/CoreModule.php
+%%WWWDIR%%/share/server/core/classes/CoreModuleHandler.php
+%%WWWDIR%%/share/server/core/classes/CoreMySQLHandler.php
+%%WWWDIR%%/share/server/core/classes/CoreRequestHandler.php
+%%WWWDIR%%/share/server/core/classes/CoreRotation.php
+%%WWWDIR%%/share/server/core/classes/CoreSQLiteHandler.php
+%%WWWDIR%%/share/server/core/classes/CoreSessionHandler.php
+%%WWWDIR%%/share/server/core/classes/CoreTemplateSystem.php
+%%WWWDIR%%/share/server/core/classes/CoreUriHandler.php
+%%WWWDIR%%/share/server/core/classes/GlobalBackendInterface.php
+%%WWWDIR%%/share/server/core/classes/GlobalBackendmerlinmy.php
+%%WWWDIR%%/share/server/core/classes/GlobalBackendmklivestatus.php
+%%WWWDIR%%/share/server/core/classes/GlobalBackendndomy.php
+%%WWWDIR%%/share/server/core/classes/GlobalBackground.php
+%%WWWDIR%%/share/server/core/classes/GlobalCore.php
+%%WWWDIR%%/share/server/core/classes/GlobalFileCache.php
+%%WWWDIR%%/share/server/core/classes/GlobalIndexPage.php
+%%WWWDIR%%/share/server/core/classes/GlobalLanguage.php
+%%WWWDIR%%/share/server/core/classes/GlobalMainCfg.php
+%%WWWDIR%%/share/server/core/classes/GlobalMap.php
+%%WWWDIR%%/share/server/core/classes/GlobalMapCfg.php
+%%WWWDIR%%/share/server/core/classes/GlobalMessage.php
+%%WWWDIR%%/share/server/core/classes/NagVisAutoMap.php
+%%WWWDIR%%/share/server/core/classes/NagVisAutomapCfg.php
+%%WWWDIR%%/share/server/core/classes/NagVisContextMenu.php
+%%WWWDIR%%/share/server/core/classes/NagVisHoverMenu.php
+%%WWWDIR%%/share/server/core/classes/NagVisHoverUrl.php
+%%WWWDIR%%/share/server/core/classes/NagVisMap.php
+%%WWWDIR%%/share/server/core/classes/NagVisMapCfg.php
+%%WWWDIR%%/share/server/core/classes/NagVisUrl.php
+%%WWWDIR%%/share/server/core/classes/NagVisViewAutomapModifyParams.php
+%%WWWDIR%%/share/server/core/classes/NagVisViewAutomapToMap.php
+%%WWWDIR%%/share/server/core/classes/NagVisViewChangePassword.php
+%%WWWDIR%%/share/server/core/classes/NagVisViewManageRoles.php
+%%WWWDIR%%/share/server/core/classes/NagVisViewSearch.php
+%%WWWDIR%%/share/server/core/classes/NagVisViewUserMgmt.php
+%%WWWDIR%%/share/server/core/classes/WuiForm.php
+%%WWWDIR%%/share/server/core/classes/WuiMapCfg.php
+%%WWWDIR%%/share/server/core/classes/WuiViewEditMainCfg.php
+%%WWWDIR%%/share/server/core/classes/WuiViewManageBackends.php
+%%WWWDIR%%/share/server/core/classes/WuiViewManageBackgrounds.php
+%%WWWDIR%%/share/server/core/classes/WuiViewManageMaps.php
+%%WWWDIR%%/share/server/core/classes/WuiViewManageShapes.php
+%%WWWDIR%%/share/server/core/classes/WuiViewMapAddModify.php
+%%WWWDIR%%/share/server/core/classes/WuiViewMapManageTmpl.php
+%%WWWDIR%%/share/server/core/classes/objects/NagVisHost.php
+%%WWWDIR%%/share/server/core/classes/objects/NagVisHostgroup.php
+%%WWWDIR%%/share/server/core/classes/objects/NagVisLine.php
+%%WWWDIR%%/share/server/core/classes/objects/NagVisMapObj.php
+%%WWWDIR%%/share/server/core/classes/objects/NagVisObject.php
+%%WWWDIR%%/share/server/core/classes/objects/NagVisService.php
+%%WWWDIR%%/share/server/core/classes/objects/NagVisServicegroup.php
+%%WWWDIR%%/share/server/core/classes/objects/NagVisShape.php
+%%WWWDIR%%/share/server/core/classes/objects/NagVisStatefulObject.php
+%%WWWDIR%%/share/server/core/classes/objects/NagVisStatelessObject.php
+%%WWWDIR%%/share/server/core/classes/objects/NagVisTextbox.php
+%%WWWDIR%%/share/server/core/classes/objects/NagiosHost.php
+%%WWWDIR%%/share/server/core/classes/objects/NagiosHostgroup.php
+%%WWWDIR%%/share/server/core/classes/objects/NagiosService.php
+%%WWWDIR%%/share/server/core/classes/objects/NagiosServicegroup.php
+%%WWWDIR%%/share/server/core/defines/global.php
+%%WWWDIR%%/share/server/core/defines/matches.php
+%%WWWDIR%%/share/server/core/ext/php-gettext-1.0.9/AUTHORS
+%%WWWDIR%%/share/server/core/ext/php-gettext-1.0.9/COPYING
+%%WWWDIR%%/share/server/core/ext/php-gettext-1.0.9/README
+%%WWWDIR%%/share/server/core/ext/php-gettext-1.0.9/gettext.inc
+%%WWWDIR%%/share/server/core/ext/php-gettext-1.0.9/gettext.php
+%%WWWDIR%%/share/server/core/ext/php-gettext-1.0.9/streams.php
+%%WWWDIR%%/share/server/core/functions/ajaxErrorHandler.php
+%%WWWDIR%%/share/server/core/functions/autoload.php
+%%WWWDIR%%/share/server/core/functions/debug.php
+%%WWWDIR%%/share/server/core/functions/oldPhpVersionFixes.php
+%%WWWDIR%%/share/userfiles/gadgets/gadgets_core.php
+%%WWWDIR%%/share/userfiles/gadgets/std_speedometer.php
+%%WWWDIR%%/share/userfiles/gadgets/std_speedometer2.php
+%%WWWDIR%%/share/userfiles/images/gadgets/dummy
+%%WWWDIR%%/share/userfiles/images/iconsets/20x20.gif
+%%WWWDIR%%/share/userfiles/images/iconsets/configerror_large.png
+%%WWWDIR%%/share/userfiles/images/iconsets/configerror_medium.png
+%%WWWDIR%%/share/userfiles/images/iconsets/configerror_small.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_landscape_ack.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_landscape_critical.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_landscape_down.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_landscape_error.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_landscape_ok.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_landscape_sack.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_landscape_unknown.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_landscape_up.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_landscape_warning.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_state_ack.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_state_critical.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_state_down.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_state_error.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_state_ok.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_state_sack.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_state_unknown.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_state_up.png
+%%WWWDIR%%/share/userfiles/images/iconsets/demo_state_warning.png
+%%WWWDIR%%/share/userfiles/images/iconsets/error.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_big_ack.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_big_critical.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_big_down.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_big_downtime.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_big_error.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_big_ok.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_big_pending.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_big_sack.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_big_sdowntime.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_big_unknown.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_big_up.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_big_warning.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_medium_ack.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_medium_critical.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_medium_down.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_medium_downtime.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_medium_error.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_medium_ok.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_medium_pending.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_medium_sack.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_medium_sdowntime.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_medium_unknown.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_medium_up.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_medium_warning.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_small_ack.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_small_critical.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_small_down.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_small_downtime.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_small_error.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_small_ok.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_small_pending.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_small_sack.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_small_sdowntime.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_small_unknown.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_small_up.png
+%%WWWDIR%%/share/userfiles/images/iconsets/std_small_warning.png
+%%WWWDIR%%/share/userfiles/images/maps/demo_background.png
+%%WWWDIR%%/share/userfiles/images/maps/nagvis-demo.png
+%%WWWDIR%%/share/userfiles/images/shapes/demo-load.png
+%%WWWDIR%%/share/userfiles/images/shapes/demo-server.png
+%%WWWDIR%%/share/userfiles/images/shapes/demo-text_demo.png
+%%WWWDIR%%/share/userfiles/images/shapes/demo-text_hoststate.png
+%%WWWDIR%%/share/userfiles/images/shapes/demo-text_mapstate.png
+%%WWWDIR%%/share/userfiles/images/shapes/demo-text_servicestate.png
+%%WWWDIR%%/share/userfiles/images/shapes/demo_german_landscape.png
+%%WWWDIR%%/share/userfiles/images/shapes/demo_server_bg.png
+%%WWWDIR%%/share/userfiles/images/shapes/demo_traffic_load_legend.png
+%%WWWDIR%%/share/userfiles/images/templates/default.header.png
+%%WWWDIR%%/share/userfiles/images/templates/default.header_down.png
+%%WWWDIR%%/share/userfiles/images/templates/default.header_over.png
+%%WWWDIR%%/share/userfiles/sounds/std_critical.mp3
+%%WWWDIR%%/share/userfiles/sounds/std_down.mp3
+%%WWWDIR%%/share/userfiles/sounds/std_error.mp3
+%%WWWDIR%%/share/userfiles/sounds/std_unreachable.mp3
+%%WWWDIR%%/share/userfiles/sounds/std_warning.mp3
+%%WWWDIR%%/share/userfiles/styles/.gitignore
+%%WWWDIR%%/share/userfiles/templates/default.automap.html
+%%WWWDIR%%/share/userfiles/templates/default.automapModifyParams.html
+%%WWWDIR%%/share/userfiles/templates/default.automapToMap.html
+%%WWWDIR%%/share/userfiles/templates/default.changePassword.html
+%%WWWDIR%%/share/userfiles/templates/default.context.css
+%%WWWDIR%%/share/userfiles/templates/default.context.html
+%%WWWDIR%%/share/userfiles/templates/default.css
+%%WWWDIR%%/share/userfiles/templates/default.header.html
+%%WWWDIR%%/share/userfiles/templates/default.header.js
+%%WWWDIR%%/share/userfiles/templates/default.hover.css
+%%WWWDIR%%/share/userfiles/templates/default.hover.html
+%%WWWDIR%%/share/userfiles/templates/default.index.html
+%%WWWDIR%%/share/userfiles/templates/default.info.html
+%%WWWDIR%%/share/userfiles/templates/default.login.css
+%%WWWDIR%%/share/userfiles/templates/default.login.html
+%%WWWDIR%%/share/userfiles/templates/default.manageRoles.html
+%%WWWDIR%%/share/userfiles/templates/default.map.html
+%%WWWDIR%%/share/userfiles/templates/default.multisiteMaps.html
+%%WWWDIR%%/share/userfiles/templates/default.overview.html
+%%WWWDIR%%/share/userfiles/templates/default.search.html
+%%WWWDIR%%/share/userfiles/templates/default.url.html
+%%WWWDIR%%/share/userfiles/templates/default.userMgmt.html
+%%WWWDIR%%/share/userfiles/templates/default.wuiEditMainCfg.html
+%%WWWDIR%%/share/userfiles/templates/default.wuiIndex.html
+%%WWWDIR%%/share/userfiles/templates/default.wuiManageBackends.html
+%%WWWDIR%%/share/userfiles/templates/default.wuiManageBackgrounds.html
+%%WWWDIR%%/share/userfiles/templates/default.wuiManageMaps.html
+%%WWWDIR%%/share/userfiles/templates/default.wuiManageShapes.html
+%%WWWDIR%%/share/userfiles/templates/default.wuiMap.html
+%%WWWDIR%%/share/userfiles/templates/default.wuiMapAddModify.html
+%%WWWDIR%%/share/userfiles/templates/default.wuiMapManageTmpl.html
+%%WWWDIR%%/share/userfiles/templates/default.wuiWelcome.html
+%%WWWDIR%%/uifx/README
+%%WWWDIR%%/uifx/deploy.wscp
+%%WWWDIR%%/uifx/html-template/AC_OETags.js
+%%WWWDIR%%/uifx/html-template/history/history.css
+%%WWWDIR%%/uifx/html-template/history/history.js
+%%WWWDIR%%/uifx/html-template/history/historyFrame.html
+%%WWWDIR%%/uifx/html-template/index.template.html
+%%WWWDIR%%/uifx/html-template/playerProductInstall.swf
+%%WWWDIR%%/uifx/libs/AutoComplete-1.0.swc
+%%WWWDIR%%/uifx/libs/Mate_08_8_1.swc
+%%WWWDIR%%/uifx/libs/flexlib.swc
+%%WWWDIR%%/uifx/libs/map_flex_1_9.swc
+%%WWWDIR%%/uifx/src/lib/ui/EdgeBox.mxml
+%%WWWDIR%%/uifx/src/lib/ui/EdgeBoxGroup.as
+%%WWWDIR%%/uifx/src/modules/gmap/GMapModule.mxml
+%%WWWDIR%%/uifx/src/modules/gmap/css/Main.css
+%%WWWDIR%%/uifx/src/modules/gmap/data/CurrentLink.as
+%%WWWDIR%%/uifx/src/modules/gmap/data/CurrentLocation.as
+%%WWWDIR%%/uifx/src/modules/gmap/data/HostGroupsData.as
+%%WWWDIR%%/uifx/src/modules/gmap/data/HostsData.as
+%%WWWDIR%%/uifx/src/modules/gmap/data/LinksData.as
+%%WWWDIR%%/uifx/src/modules/gmap/data/LocationsData.as
+%%WWWDIR%%/uifx/src/modules/gmap/data/LocationsExtData.as
+%%WWWDIR%%/uifx/src/modules/gmap/data/NagVisMapsData.as
+%%WWWDIR%%/uifx/src/modules/gmap/data/ServiceGroupsData.as
+%%WWWDIR%%/uifx/src/modules/gmap/data/ServicesData.as
+%%WWWDIR%%/uifx/src/modules/gmap/data/SettingsData.as
+%%WWWDIR%%/uifx/src/modules/gmap/data/ViewpointsData.as
+%%WWWDIR%%/uifx/src/modules/gmap/domain/Link.as
+%%WWWDIR%%/uifx/src/modules/gmap/domain/Location.as
+%%WWWDIR%%/uifx/src/modules/gmap/domain/Settings.as
+%%WWWDIR%%/uifx/src/modules/gmap/domain/Viewpoint.as
+%%WWWDIR%%/uifx/src/modules/gmap/domain/nagios/Host.as
+%%WWWDIR%%/uifx/src/modules/gmap/domain/nagios/HostGroup.as
+%%WWWDIR%%/uifx/src/modules/gmap/domain/nagios/Service.as
+%%WWWDIR%%/uifx/src/modules/gmap/domain/nagios/ServiceGroup.as
+%%WWWDIR%%/uifx/src/modules/gmap/events/AddressEvent.as
+%%WWWDIR%%/uifx/src/modules/gmap/events/LinkEvent.as
+%%WWWDIR%%/uifx/src/modules/gmap/events/LocationEvent.as
+%%WWWDIR%%/uifx/src/modules/gmap/events/ModeEvent.as
+%%WWWDIR%%/uifx/src/modules/gmap/events/NagiosObjectEvent.as
+%%WWWDIR%%/uifx/src/modules/gmap/events/SettingsEvent.as
+%%WWWDIR%%/uifx/src/modules/gmap/events/SetupEvent.as
+%%WWWDIR%%/uifx/src/modules/gmap/events/ViewpointEvent.as
+%%WWWDIR%%/uifx/src/modules/gmap/img/cog.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/connect.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/control_fastforward.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/eye.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/find.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/key.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/pin.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/std_small_ack.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/std_small_critical.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/std_small_down.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/std_small_downtime.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/std_small_error.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/std_small_ok.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/std_small_pending.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/std_small_sack.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/std_small_sdowntime.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/std_small_unknown.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/std_small_up.png
+%%WWWDIR%%/uifx/src/modules/gmap/img/std_small_warning.png
+%%WWWDIR%%/uifx/src/modules/gmap/mate/GeneralEM.mxml
+%%WWWDIR%%/uifx/src/modules/gmap/mate/LinksEM.mxml
+%%WWWDIR%%/uifx/src/modules/gmap/mate/LocationsEM.mxml
+%%WWWDIR%%/uifx/src/modules/gmap/mate/NagiosEM.mxml
+%%WWWDIR%%/uifx/src/modules/gmap/mate/PreinitEM.mxml
+%%WWWDIR%%/uifx/src/modules/gmap/mate/StartupEM.mxml
+%%WWWDIR%%/uifx/src/modules/gmap/mate/UIInitEM.mxml
+%%WWWDIR%%/uifx/src/modules/gmap/mate/ViewpointsEM.mxml
+%%WWWDIR%%/uifx/src/modules/gmap/mediator/MainMD.as
+%%WWWDIR%%/uifx/src/modules/gmap/mediator/MapMD.as
+%%WWWDIR%%/uifx/src/modules/gmap/mediator/Poller.as
+%%WWWDIR%%/uifx/src/modules/gmap/view/DialogLink.mxml
+%%WWWDIR%%/uifx/src/modules/gmap/view/DialogLocation.mxml
+%%WWWDIR%%/uifx/src/modules/gmap/view/DialogSearch.mxml
+%%WWWDIR%%/uifx/src/modules/gmap/view/DialogSettings.mxml
+%%WWWDIR%%/uifx/src/modules/gmap/view/DialogViewpoint.mxml
+%%WWWDIR%%/uifx/src/modules/gmap/view/MainView.mxml
+%%WWWDIR%%/uifx/src/modules/gmap/view/controls/GMapControl.mxml
+%%WWWDIR%%/uifx/src/modules/gmap/view/controls/GMapLinkControl.as
+%%WWWDIR%%/uifx/src/modules/gmap/view/controls/GMapLinksControl.as
+%%WWWDIR%%/uifx/src/modules/gmap/view/controls/GMapLocationControl.as
+%%WWWDIR%%/uifx/src/modules/gmap/view/controls/GMapLocationsControl.as
+%%WWWDIR%%/uifx/src/modules/gmap/view/controls/GMapLocationsExtControl.as
+%%WWWDIR%%/uifx/src/modules/gmap/view/controls/LinkLine.as
+%%WWWDIR%%/uifx/src/modules/gmap/view/controls/LocationMarker.as
+%%WWWDIR%%/uifx/src/services-config.xml
+%%WWWDIR%%/uifx/src/shell.mxml
+@dirrm %%WWWDIR%%/var/tmpl/compile
+@dirrm %%WWWDIR%%/var/tmpl/cache
+@dirrm %%WWWDIR%%/var/tmpl
+@dirrm %%WWWDIR%%/var
+@dirrm %%WWWDIR%%/uifx/src/modules/gmap/view/controls
+@dirrm %%WWWDIR%%/uifx/src/modules/gmap/view
+@dirrm %%WWWDIR%%/uifx/src/modules/gmap/mediator
+@dirrm %%WWWDIR%%/uifx/src/modules/gmap/mate
+@dirrm %%WWWDIR%%/uifx/src/modules/gmap/img
+@dirrm %%WWWDIR%%/uifx/src/modules/gmap/events
+@dirrm %%WWWDIR%%/uifx/src/modules/gmap/domain/nagios
+@dirrm %%WWWDIR%%/uifx/src/modules/gmap/domain
+@dirrm %%WWWDIR%%/uifx/src/modules/gmap/data
+@dirrm %%WWWDIR%%/uifx/src/modules/gmap/css
+@dirrm %%WWWDIR%%/uifx/src/modules/gmap
+@dirrm %%WWWDIR%%/uifx/src/modules
+@dirrm %%WWWDIR%%/uifx/src/lib/ui
+@dirrm %%WWWDIR%%/uifx/src/lib
+@dirrm %%WWWDIR%%/uifx/src
+@dirrm %%WWWDIR%%/uifx/libs
+@dirrm %%WWWDIR%%/uifx/html-template/history
+@dirrm %%WWWDIR%%/uifx/html-template
+@dirrm %%WWWDIR%%/uifx
+@dirrm %%WWWDIR%%/share/var
+@dirrmtry %%WWWDIR%%/share/userfiles/templates
+@dirrmtry %%WWWDIR%%/share/userfiles/styles
+@dirrmtry %%WWWDIR%%/share/userfiles/sounds
+@dirrmtry %%WWWDIR%%/share/userfiles/images/templates
+@dirrmtry %%WWWDIR%%/share/userfiles/images/shapes
+@dirrmtry %%WWWDIR%%/share/userfiles/images/maps
+@dirrmtry %%WWWDIR%%/share/userfiles/images/iconsets
+@dirrmtry %%WWWDIR%%/share/userfiles/images/gadgets
+@dirrmtry %%WWWDIR%%/share/userfiles/images
+@dirrmtry %%WWWDIR%%/share/userfiles/gadgets
+@dirrmtry %%WWWDIR%%/share/userfiles
+@dirrm %%WWWDIR%%/share/server/core/functions
+@dirrm %%WWWDIR%%/share/server/core/ext/php-gettext-1.0.9
+@dirrm %%WWWDIR%%/share/server/core/ext
+@dirrm %%WWWDIR%%/share/server/core/defines
+@dirrm %%WWWDIR%%/share/server/core/classes/objects
+@dirrm %%WWWDIR%%/share/server/core/classes
+@dirrm %%WWWDIR%%/share/server/core
+@dirrm %%WWWDIR%%/share/server
+@dirrm %%WWWDIR%%/share/netmap/modules/gmap
+@dirrm %%WWWDIR%%/share/netmap/modules
+@dirrm %%WWWDIR%%/share/netmap/library/Zend/Server/Reflection/Function
+@dirrm %%WWWDIR%%/share/netmap/library/Zend/Server/Reflection
+@dirrm %%WWWDIR%%/share/netmap/library/Zend/Server/Method
+@dirrm %%WWWDIR%%/share/netmap/library/Zend/Server
+@dirrm %%WWWDIR%%/share/netmap/library/Zend/Date
+@dirrm %%WWWDIR%%/share/netmap/library/Zend/Amf/Value/Messaging
+@dirrm %%WWWDIR%%/share/netmap/library/Zend/Amf/Value
+@dirrm %%WWWDIR%%/share/netmap/library/Zend/Amf/Util
+@dirrm %%WWWDIR%%/share/netmap/library/Zend/Amf/Server
+@dirrm %%WWWDIR%%/share/netmap/library/Zend/Amf/Response
+@dirrm %%WWWDIR%%/share/netmap/library/Zend/Amf/Request
+@dirrm %%WWWDIR%%/share/netmap/library/Zend/Amf/Parse/Amf3
+@dirrm %%WWWDIR%%/share/netmap/library/Zend/Amf/Parse/Amf0
+@dirrm %%WWWDIR%%/share/netmap/library/Zend/Amf/Parse
+@dirrm %%WWWDIR%%/share/netmap/library/Zend/Amf
+@dirrm %%WWWDIR%%/share/netmap/library/Zend
+@dirrm %%WWWDIR%%/share/netmap/library
+@dirrm %%WWWDIR%%/share/netmap
+@dirrm %%WWWDIR%%/share/frontend/wui/js
+@dirrm %%WWWDIR%%/share/frontend/wui/images
+@dirrm %%WWWDIR%%/share/frontend/wui/defines
+@dirrm %%WWWDIR%%/share/frontend/wui/css
+@dirrm %%WWWDIR%%/share/frontend/wui/classes
+@dirrm %%WWWDIR%%/share/frontend/wui
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/locale/ru_RU/LC_MESSAGES
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/locale/ru_RU
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/locale/pt_BR/LC_MESSAGES
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/locale/pt_BR
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/locale/fr_FR/LC_MESSAGES
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/locale/fr_FR
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/locale/es_ES/LC_MESSAGES
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/locale/es_ES
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/locale/en_US/LC_MESSAGES
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/locale/en_US
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/locale/de_DE/LC_MESSAGES
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/locale/de_DE
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/locale
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/js
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/images/internal
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/images
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/processors
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/functions
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/filters
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin/blocks
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins/builtin
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/plugins
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Template
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Smarty
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Security
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/ICompilable
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Compilation
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Block
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/ZendFramework
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/CodeIgniter/views
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/CodeIgniter/libraries
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/CodeIgniter/controllers
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/CodeIgniter/config
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/CodeIgniter
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/CakePHP
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/Agavi/dwoo_plugins
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters/Agavi
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo/Adapters
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0/Dwoo
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext/dwoo-1.1.0
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/ext
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/defines
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/css
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js/classes
+@dirrm %%WWWDIR%%/share/frontend/nagvis-js
+@dirrm %%WWWDIR%%/share/frontend
+@dirrm %%WWWDIR%%/share
+@dirrmtry %%WWWDIR%%/etc/maps
+@dirrmtry %%WWWDIR%%/etc/geomap
+@dirrmtry %%WWWDIR%%/etc/automaps
+@dirrmtry %%WWWDIR%%/etc
+@dirrm %%WWWDIR%%/docs/general/img
+@dirrm %%WWWDIR%%/docs/general/css
+@dirrm %%WWWDIR%%/docs/general
+@dirrm %%WWWDIR%%/docs/en_US/extending
+@dirrm %%WWWDIR%%/docs/en_US
+@dirrm %%WWWDIR%%/docs/de_DE/extending
+@dirrm %%WWWDIR%%/docs/de_DE
+@dirrm %%WWWDIR%%/docs
+@dirrmtry %%WWWDIR%%
+@exec mkdir -p %D/%%WWWDIR%%/var/tmpl/compile
+@exec mkdir -p %D/%%WWWDIR%%/var/tmpl/cache
+@exec mkdir -p %D/%%WWWDIR%%/share/var

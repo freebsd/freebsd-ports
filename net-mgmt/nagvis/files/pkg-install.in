@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# fix directory owner if installed via package
+if [ "$2" = "POST-INSTALL" ]; then
+    echo "Fixing ownership settings ..."
+    chown -R %%WWW_OWNER%%:%%WWW_GROUP%% %%WWWDIR%%
+fi
