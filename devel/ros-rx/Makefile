@@ -6,7 +6,7 @@
 
 PORTNAME=	ros
 PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/${PORTNAME}/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 SWIG-1.3.29-wx.tar.gz \
