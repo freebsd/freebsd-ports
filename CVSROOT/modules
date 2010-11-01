@@ -5161,6 +5161,7 @@ gtk-engines                     ports/x11-themes/gtk-engines
 gtk-engines-collection          ports/x11-themes/gtk-engines-collection
 gtk-engines2                    ports/x11-themes/gtk-engines2
 gtk-envy-theme                  ports/x11-themes/gtk-envy-theme
+gtk-equinox-engine              ports/x11-themes/gtk-equinox-engine
 gtk-flat-theme                  ports/x11-themes/gtk-flat-theme
 gtk-flat-theme2                 ports/x11-themes/gtk-flat-theme2
 gtk-gnutella                    ports/net-p2p/gtk-gnutella
@@ -8089,6 +8090,7 @@ libnss-mysql                    ports/net/libnss-mysql
 libntlm                         ports/security/libntlm
 libnxml                         ports/textproc/libnxml
 libnxt                          ports/devel/libnxt
+liboauth                        ports/net/liboauth
 libobjc2                        ports/lang/libobjc2
 libodbc++                       ports/databases/libodbc++
 libofa                          ports/audio/libofa
@@ -9051,6 +9053,7 @@ manck                           ports/sysutils/manck
 mandvd                          ports/multimedia/mandvd
 manedit                         ports/editors/manedit
 mangband                        ports/games/mangband
+mangler                         ports/audio/mangler
 mangos                          ports/games/mangos
 manipulate_data                 ports/security/manipulate_data
 mantis                          ports/databases/mantis
