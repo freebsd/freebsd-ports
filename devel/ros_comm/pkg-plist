@@ -3556,6 +3556,7 @@ ros/tools/xdot/src/xdot/xdot.py
 @dirrm ros/tools/topic_tools/demos
 @dirrm ros/tools/topic_tools/bin
 @dirrm ros/tools/topic_tools
+@exec mkdir -p %D/ros/stacks
 @dirrm ros/stacks
 @dirrm ros/tools/rxtools/src/rxtools
 @dirrm ros/tools/rxtools/src/rxloggerlevel
