@@ -5,18 +5,19 @@
 # $FreeBSD$
 
 PORTNAME=	opengtl
-PORTVERSION=	0.9.14
+PORTVERSION=	0.9.15
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://www.${PORTNAME}.org/download/
+MASTER_SITES=	http://download.${PORTNAME}.org/
 DISTNAME=	OpenGTL-${PORTVERSION}
 
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Graphics Transformation Languages
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	llvm>=2.7<2.8.*:${PORTSDIR}/devel/llvm
+LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		does not build
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	llvm>=2.8<2.9.*:${PORTSDIR}/devel/llvm
 
 USE_BZIP2=	yes
 USE_GCC=	4.2+
@@ -27,7 +28,7 @@ USE_LDCONFIG=	yes
 CMAKE_USE_PTHREAD=	yes
 
 post-patch:
-# disable latex doc, it's not ready yet
+# Disable latex doc, it's not ready yet.
 	${REINPLACE_CMD} -e '/add_subdirectory.*doc/d' \
 		${PATCH_WRKSRC}/OpenShiva/CMakeLists.txt
 
