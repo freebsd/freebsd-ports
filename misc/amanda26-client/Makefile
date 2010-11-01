@@ -6,10 +6,11 @@
 #
 
 PKGNAMESUFFIX=	-client
+PORTREVISION=	1
 
 COMMENT=	The Advanced Maryland Automatic Network Disk Archiver (client)
 
-MASTERDIR=	${.CURDIR}/../amanda-server
+MASTERDIR=	${.CURDIR}/../amanda26-server
 PKGINSTALL=	mustnotexist
 
 PLIST=		${PKGDIR}/pkg-plist.client

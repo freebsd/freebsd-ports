@@ -1,0 +1,3 @@
+Please install these ports (they are only on-demand runtime dependencies):
+  - %%PORTSDIR%%/misc/mtx if you want chg-robot changer.
+  - %%PORTSDIR%%/security/aespipe if you want amcrypt(8).

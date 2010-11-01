@@ -7,7 +7,7 @@
 
 PORTNAME=	amanda
 PORTVERSION=	2.5.1p3
-PORTREVISION?=	6
+PORTREVISION?=	7
 PKGNAMESUFFIX?=	-server
 PORTEPOCH=	1
 CATEGORIES=	misc
@@ -116,7 +116,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda25-client
 RUN_DEPENDS+=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda25-client
 
 NO_LATEST_LINK=	yes
-CONFLICTS=	amanda-server-2.6.*
+CONFLICTS=	amanda-server-2.6.* amanda-server-3.*
 CONFIGURE_ARGS+=--without-client
 
 MAN8=		amadmin.8 amaespipe.8 amcheck.8 \
@@ -188,7 +188,7 @@ pre-fetch:
 	@${ECHO} ""
 
 NO_LATEST_LINK=	yes
-CONFLICTS=	amanda-client-2.6.*
+CONFLICTS=	amanda-client-2.6.* amanda-client-3.*
 CONFIGURE_ARGS+=--without-server
 
 MAN5=		amanda.conf.5 amanda-client.conf.5
