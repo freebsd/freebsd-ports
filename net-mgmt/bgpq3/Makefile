@@ -18,4 +18,6 @@ MAN8=		bgpq3.8
 PLIST_FILES=	bin/bgpq3
 HAS_CONFIGURE=	yes
 
+CONFIGURE_ARGS+=--prefix=${PREFIX}
+
 .include <bsd.port.mk>
