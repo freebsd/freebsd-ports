@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	threads-shared
-PORTVERSION=	1.33
+PORTVERSION=	1.34
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/J/JD/JDHEDDEN
+MASTER_SITES=	CPAN/../../authors/id/J/JD/JDHEDDEN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ruben@verweg.com
 COMMENT=	Perl extension for sharing data structures between threads
 
-RUN_DEPENDS=	p5-threads>=1.71:${PORTSDIR}/devel/p5-threads
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-threads>=1.73:${PORTSDIR}/devel/p5-threads
+RUN_DEPENDS=	p5-threads>=1.73:${PORTSDIR}/devel/p5-threads
 
 PERL_CONFIGURE=	5.8.0+
 
-MAN3=	threads::shared.3
+MAN3=		threads::shared.3
 
 .include <bsd.port.mk>
