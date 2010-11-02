@@ -6,4 +6,4 @@ Bindings are provided for the working copy, client, delta, remote
 access and repository APIs. A hookable server side implementation
 of the custom Subversion protocol (svn_ra) is also provided.
 
-www: https://launchpad.net/subvertpy
+WWW: https://launchpad.net/subvertpy
