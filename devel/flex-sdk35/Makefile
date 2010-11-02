@@ -7,6 +7,7 @@
 
 PORTNAME=	flex-sdk
 PORTVERSION=	3.5.0.12683
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://fpdownload.adobe.com/pub/flex/sdk/builds/flex3/
 DISTFILES=	flex_sdk_${PORTVERSION}_mpl.zip
@@ -16,7 +17,7 @@ COMMENT=	Adobe Flex SDK
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
-CONFLICTS=	ja-flex-sdk-2.* flex-sdk-2.*
+CONFLICTS=	ja-flex-sdk-2.* flex-sdk-2.* flex-sdk-4.*
 USE_ZIP=	YES
 USE_JAVA=	YES
 JAVA_VERSION=	1.4+

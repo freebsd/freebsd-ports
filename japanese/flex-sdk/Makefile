@@ -7,7 +7,7 @@
 
 PORTNAME=	flex-sdk
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese devel java
 MASTER_SITES=	#
 DISTFILES=	flex_sdk_2_hf1.zip flex_sdk_2_ja.zip
@@ -19,7 +19,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 RESTRICTED=	Need agreement before download
 
-CONFLICTS=	flex-sdk-2.* flex-sdk-3.*
+CONFLICTS=	flex-sdk-2.* flex-sdk-3.* flex-sdk-4.*
 USE_ZIP=	YES
 USE_JAVA=	YES
 JAVA_VERSION=	1.4+
