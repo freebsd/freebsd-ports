@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freshmeat-submit
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.catb.org/~esr/freshmeat-submit/ \
 		http://www.c-s.li/ports/
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.catb.org/~esr/freshmeat-submit/ \
 MAINTAINER=	c-s@c-s.li
 COMMENT=	Submission of updates to Freshmeat via its XML-RPC
 
-LICENSE=	GPLv2
+LICENSE=	BSD
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
