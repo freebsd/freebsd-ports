@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fossil
-PORTVERSION=	20101005035549
+PORTVERSION=	20101101142335
 CATEGORIES=	devel www
 MASTER_SITES=	http://www.fossil-scm.org/download/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -23,5 +23,8 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT-BSD2.txt
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fossil ${PREFIX}/bin/fossil
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
