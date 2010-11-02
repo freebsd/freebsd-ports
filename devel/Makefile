@@ -334,6 +334,7 @@
     SUBDIR += eboxy
     SUBDIR += ecb
     SUBDIR += ecgi
+    SUBDIR += eclipse-eclemma
     SUBDIR += ecore
     SUBDIR += ecore-file
     SUBDIR += ecore-ipc
