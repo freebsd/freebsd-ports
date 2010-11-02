@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	slgtk
-PORTVERSION=	0.7.5
-PORTREVISION=	4
+PORTVERSION=	0.7.6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://space.mit.edu/pub/cxc/modules/slgtk/
 
@@ -25,7 +24,7 @@ MAN1=		imdisplay.1
 
 OPTIONS=	FITS "Install gdk-pixbuf FITS image loader" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-ccdebug SLGTK_DEVEL_BUILD=true
@@ -41,8 +40,9 @@ PLIST_SUB+=	FITS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\.\.|${EXAMPLESDIR}| ; s|"examples"|"."|' \
-		${WRKSRC}/examples/main.sl
+	@${REINPLACE_CMD} -e 's|"examples"|"."| ; s|/examples|| ; \
+		s|"\.\."|"${EXAMPLESDIR}"|'  \
+		${WRKSRC}/examples/main.sl ${WRKSRC}/examples/socket.sl
 	@${REINPLACE_CMD} -e '/rm -f devel/d ; /ln -sf @prefix@ devel/d' \
 		${WRKSRC}/Makefile.in
 
@@ -55,6 +55,7 @@ post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${MKDIR} ${EXAMPLESDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/examples/README ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/gtkplug ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.sl ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/packages/wdisplay.sl ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/images/gtk-logo-rgb.gif ${EXAMPLESDIR}/images
@@ -62,4 +63,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/images/stars.fits ${EXAMPLESDIR}/images
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
