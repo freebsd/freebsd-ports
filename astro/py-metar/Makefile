@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metar
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	astro python geography
 MASTER_SITES=	http://www.schwarzvogel.de/pkgs/ \
 		LOCAL/sunpoet
@@ -15,6 +15,8 @@ DISTNAME=	${REALPORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python module that provides access to NOAA's METAR weather reports
+
+LICENSE=	GPLv2
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PYDISTUTILS_PKGNAME=	${REALPORTNAME}
