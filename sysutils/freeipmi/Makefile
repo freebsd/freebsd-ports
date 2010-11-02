@@ -12,7 +12,7 @@
 #
 
 PORTNAME=	freeipmi
-PORTVERSION=	0.8.10
+PORTVERSION=	0.8.11
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU/${PORTNAME}/ \
 		http://ftp.gluster.com/pub/${PORTNAME}/${PORTVERSION}/ \
