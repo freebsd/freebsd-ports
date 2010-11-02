@@ -1118,6 +1118,7 @@
     SUBDIR += p5-Plack-Middleware-JSConcat
     SUBDIR += p5-Plack-Middleware-ReverseProxy
     SUBDIR += p5-Plack-Middleware-Session
+    SUBDIR += p5-Plack-Middleware-Status
     SUBDIR += p5-Plack-Middleware-Throttle
     SUBDIR += p5-Plack-Server-Coro
     SUBDIR += p5-Plack-Server-POE

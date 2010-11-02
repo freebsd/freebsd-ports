@@ -1,0 +1,4 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Status/.packlist
+%%SITE_PERL%%/Plack/Middleware/Status.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Status
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware
