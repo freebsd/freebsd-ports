@@ -1,11 +1,13 @@
 bin/imdisplay
 %%FITS%%lib/gtk-2.0/2.10.0/loaders/fitsi_loader.so
 %%FITS%%lib/gtk-2.0/2.10.0/loaders/fitsi_loader.so.0.7.0
+lib/slang/v2/modules/gif-module.so
+lib/slang/v2/modules/gif-module.so.0.5.2
 lib/slang/v2/modules/gtk-module.so
 lib/slang/v2/modules/gtkextra-module.so
 lib/slang/v2/modules/libslgtk.so
 lib/slang/v2/modules/libslgtk.so.0
-lib/slang/v2/modules/libslgtk.so.0.7.5
+lib/slang/v2/modules/libslgtk.so.0.7.6
 %%PORTDOCS%%%%DOCSDIR%%/slgtk.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/buttonbox.sl
@@ -27,6 +29,7 @@ lib/slang/v2/modules/libslgtk.so.0.7.5
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gprompt.sl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gprompt_example.sl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtkmainloop.sl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtkplug
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/handlebox.sl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/gtk-logo-rgb.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/images/test.xpm
@@ -67,10 +70,13 @@ lib/slang/v2/modules/libslgtk.so.0.7.5
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wdisplay.sl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/window.sl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wmhints.sl
+share/slsh/local-packages/animio.sl
+share/slsh/local-packages/gif.sl
 share/slsh/local-packages/gprompt.sl
 share/slsh/local-packages/gtk.sl
 share/slsh/local-packages/gtkextra.sl
 share/slsh/local-packages/gtkplot.sl
+share/slsh/local-packages/help/giffuns.hlp
 share/slsh/local-packages/help/slgtkfun.hlp
 share/slsh/local-packages/imdisplay.sl
 share/slsh/local-packages/rgbselect.sl
