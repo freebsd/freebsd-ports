@@ -606,6 +606,7 @@
     SUBDIR += p5-mogilefs-server
     SUBDIR += p5-reslog
     SUBDIR += paicc
+    SUBDIR += pam_mount
     SUBDIR += parallel
     SUBDIR += pax-utils
     SUBDIR += pbreg

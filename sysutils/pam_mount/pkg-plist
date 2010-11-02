@@ -1,0 +1,10 @@
+bin/pmt-fd0ssh
+bin/pmt-ofl
+etc/security/pam_mount.conf.xml.sample
+lib/pam_mount.so
+sbin/pmvarrun
+sbin/pmt-ehd
+@dirrm share/xml/pam_mount/dtd
+@dirrm share/xml/pam_mount
+@dirrm etc/security
+@unexec rmdir /var/run/pam_mount 2> /dev/null
