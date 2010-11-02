@@ -50,6 +50,10 @@ KPPP=		kppp
 PLIST_SUB+=	KPPP=""
 .endif
 
+.if ${OSVERSION} >= 900004
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-find_user.cpp
+.endif
+
 pre-configure:
 	@${REINPLACE_CMD} \
 	-E -e '/^SUBDIRS/s/lisa//g' \
