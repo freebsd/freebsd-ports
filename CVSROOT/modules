@@ -439,9 +439,12 @@ althea                          ports/mail/althea
 am-aspell                       ports/textproc/am-aspell
 am-utils                        ports/sysutils/am-utils
 amanda-client                   ports/misc/amanda-client
+amanda-perl-wrapper             ports/misc/amanda-perl-wrapper
 amanda-server                   ports/misc/amanda-server
 amanda25-client                 ports/misc/amanda25-client
 amanda25-server                 ports/misc/amanda25-server
+amanda26-client                 ports/misc/amanda26-client
+amanda26-server                 ports/misc/amanda26-server
 amanith                         ports/graphics/amanith
 amap                            ports/security/amap
 amarok                          ports/audio/amarok
@@ -1323,6 +1326,7 @@ bzr-builder                     ports/devel/bzr-builder
 bzr-colo                        ports/devel/bzr-colo
 bzr-explorer                    ports/devel/bzr-explorer
 bzr-externals                   ports/devel/bzr-externals
+bzr-git                         ports/devel/bzr-git
 bzr-grep                        ports/devel/bzr-grep
 bzr-gtk                         ports/devel/bzr-gtk
 bzr-loom                        ports/devel/bzr-loom
@@ -5420,6 +5424,7 @@ hexedit                         ports/editors/hexedit
 hexinject                       ports/net/hexinject
 hexpert                         ports/editors/hexpert
 hexter                          ports/audio/hexter
+hextools                        ports/sysutils/hextools
 hexxagon                        ports/games/hexxagon
 heyu2                           ports/misc/heyu2
 hf                              ports/comms/hf
@@ -22164,6 +22169,7 @@ root                            ports/devel/root
 root-doc                        ports/devel/root-doc
 roottail                        ports/sysutils/roottail
 ros                             ports/devel/ros
+ros_tutorials                   ports/devel/ros_tutorials
 rosegarden                      ports/audio/rosegarden
 rospell                         ports/editors/rospell
 rot                             ports/textproc/rot
@@ -22728,6 +22734,7 @@ rubygem-gruff                   ports/graphics/rubygem-gruff
 rubygem-haml                    ports/www/rubygem-haml
 rubygem-highline                ports/devel/rubygem-highline
 rubygem-hoe                     ports/devel/rubygem-hoe
+rubygem-holidays                ports/devel/rubygem-holidays
 rubygem-hpricot                 ports/www/rubygem-hpricot
 rubygem-htauth                  ports/www/rubygem-htauth
 rubygem-htmlentities            ports/textproc/rubygem-htmlentities
@@ -24043,7 +24050,6 @@ synce-vdccm                     ports/palm/synce-vdccm
 syncterm                        ports/comms/syncterm
 syndigator                      ports/www/syndigator
 synergy                         ports/sysutils/synergy
-synergy-plus                    ports/sysutils/synergy-plus
 synfig                          ports/devel/synfig
 synfigstudio                    ports/graphics/synfigstudio
 synonym                         ports/mail/synonym
