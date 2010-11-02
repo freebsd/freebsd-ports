@@ -10,7 +10,7 @@ PORTVERSION=	0.6.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.yorba.org/download/shotwell/${PORTVERSION:R}/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Open source photo manager for GNOME
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libraw.a:${PORTSDIR}/graphics/libraw \
