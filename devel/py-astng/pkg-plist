@@ -13,6 +13,9 @@
 %%PYTHON_SITELIBDIR%%/logilab/astng/_nodes_compiler.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/_nodes_compiler.pyc
 %%PYTHON_SITELIBDIR%%/logilab/astng/_nodes_compiler.pyo
+%%PYTHON_SITELIBDIR%%/logilab/astng/as_string.py
+%%PYTHON_SITELIBDIR%%/logilab/astng/as_string.pyc
+%%PYTHON_SITELIBDIR%%/logilab/astng/as_string.pyo
 %%PYTHON_SITELIBDIR%%/logilab/astng/bases.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/bases.pyc
 %%PYTHON_SITELIBDIR%%/logilab/astng/bases.pyo
@@ -37,9 +40,6 @@
 %%PYTHON_SITELIBDIR%%/logilab/astng/nodes.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/nodes.pyc
 %%PYTHON_SITELIBDIR%%/logilab/astng/nodes.pyo
-%%PYTHON_SITELIBDIR%%/logilab/astng/nodes_as_string.py
-%%PYTHON_SITELIBDIR%%/logilab/astng/nodes_as_string.pyc
-%%PYTHON_SITELIBDIR%%/logilab/astng/nodes_as_string.pyo
 %%PYTHON_SITELIBDIR%%/logilab/astng/patchcomptransformer.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/patchcomptransformer.pyc
 %%PYTHON_SITELIBDIR%%/logilab/astng/patchcomptransformer.pyo
@@ -58,12 +58,6 @@
 %%PYTHON_SITELIBDIR%%/logilab/astng/utils.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/utils.pyc
 %%PYTHON_SITELIBDIR%%/logilab/astng/utils.pyo
-%%PYTHON_SITELIBDIR%%/logilab/astng/test/__init__.py
-%%PYTHON_SITELIBDIR%%/logilab/astng/test/__init__.pyc
-%%PYTHON_SITELIBDIR%%/logilab/astng/test/__init__.pyo
-%%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest.py
-%%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest.pyc
-%%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest.pyo
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_builder.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_builder.pyc
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_builder.pyo
@@ -82,6 +76,9 @@
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_nodes.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_nodes.pyc
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_nodes.pyo
+%%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_regrtest.py
+%%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_regrtest.pyc
+%%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_regrtest.pyo
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_scoped_nodes.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_scoped_nodes.pyc
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_scoped_nodes.pyo
@@ -135,14 +132,19 @@
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/data/SSL1/Connection1.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/data/SSL1/Connection1.pyc
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/data/SSL1/Connection1.pyo
-%%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/absimport.py
+%%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/absimp/__init__.py
+%%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/absimp/sidepackage/__init__.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/descriptor_crash.py
-%%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/import_package_subpackage_module.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/package/__init__.py
+%%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/package/absimport.py
+%%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/package/hello.py
+%%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/package/import_package_subpackage_module.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/package/subpackage/__init__.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/package/subpackage/module.py
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/package/subpackage
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/package
+@dirrm %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/absimp/sidepackage
+@dirrm %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/absimp
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng/test/data2
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng/test/data/appl
@@ -150,4 +152,4 @@
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng/test/data
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng/test
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng
-@dirrm %%PYTHON_SITELIBDIR%%/logilab
+@dirrmtry %%PYTHON_SITELIBDIR%%/logilab
