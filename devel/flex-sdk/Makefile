@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	flex-sdk
-PORTVERSION=	3.5.0.12683
+PORTVERSION=	4.1.0.16076
 CATEGORIES=	devel java
-MASTER_SITES=	http://fpdownload.adobe.com/pub/flex/sdk/builds/flex3/
+MASTER_SITES=	http://fpdownload.adobe.com/pub/flex/sdk/builds/flex4/
 DISTFILES=	flex_sdk_${PORTVERSION}_mpl.zip
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -16,8 +16,9 @@ COMMENT=	Adobe Flex SDK
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
-CONFLICTS=	ja-flex-sdk-2.* flex-sdk-2.*
+CONFLICTS=	ja-flex-sdk-2.* flex-sdk-2.* flex-sdk-3.*
 USE_ZIP=	YES
+USE_DOS2UNIX=	YES
 USE_JAVA=	YES
 JAVA_VERSION=	1.4+
 WRKSRC=		${WRKDIR}
@@ -32,6 +33,9 @@ SCRIPTS=	aasdoc acompc amxmlc asdoc compc copylocale digest \
 
 post-extract:
 	${RM} ${WRKSRC}/bin/*.bat ${WRKSRC}/bin/*.exe
+	${FIND} ${WRKSRC} -print0 -type f | ${XARGS} -0 ${CHMOD} og+r
+	${FIND} ${WRKSRC} -print0 -type f -perm +0111 | ${XARGS} -0 ${CHMOD} og+rx
+	${FIND} ${WRKSRC} -print0 -type d | ${XARGS} -0 ${CHMOD} og+rx
 
 do-install:
 .for i in ${SCRIPTS}
