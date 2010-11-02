@@ -19,7 +19,7 @@ COMMENT?=	The Advanced Maryland Automatic Network Disk Archiver (server)
 WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
 SLAVEDIRS=	misc/amanda26-client
 
-LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
+NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig glib20
 USE_GMAKE=	yes
