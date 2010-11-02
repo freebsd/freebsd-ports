@@ -15,10 +15,12 @@ COMMENT=	General purpose crypto library based on code used in GnuPG
 
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv2 LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING ${WRKSRC}/COPYING.LIB
+LICENSE_COMB=	multi
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:22
+USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 USE_LDCONFIG=	yes
