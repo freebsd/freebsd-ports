@@ -17,6 +17,8 @@ COMMENT=	A PAM that can mount volumes for a user session
 
 LIB_DEPENDS=	HX.25:${PORTSDIR}/lang/libhx
 
+USE_GNOME=	pkgconfig libxml2
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	libcrypto_LIBS="-L/usr/lib -lcrypto" \
 		libcrypto_CFLAGS="-I/usr/include"
