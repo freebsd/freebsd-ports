@@ -1,0 +1,9 @@
+pam_mount is a Pluggable Authentication Module that can mount volumes for a
+user session.
+This module is aimed at environments with central file servers that a user
+wishes to mount on login and unmount on logout, such as (semi-)diskless
+stations where many users can logon and where statically mounting the entire
+/home from a server is a security risk, or listing all possible volumes in
+/etc/fstab is not feasible.
+
+WWW: http://pam-mount.sourceforge.net/
