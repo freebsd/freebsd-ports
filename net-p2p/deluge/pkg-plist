@@ -809,6 +809,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/js/ext-extensions/form/FileUploadField.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/js/ext-extensions/form/RadioGroupFix.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/js/ext-extensions/form/SpinnerField.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/js/ext-extensions/form/SpinnerFieldFix.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/js/ext-extensions/form/SpinnerGroup.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/js/ext-extensions/form/ToggleField.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/js/ext-extensions/grid/BufferView.js
