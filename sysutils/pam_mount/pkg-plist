@@ -1,5 +1,12 @@
 bin/pmt-fd0ssh
 bin/pmt-ofl
+sbin/mount.crypt
+sbin/mount.crypt_LUKS
+sbin/mount.crypto_LUKS
+sbin/mount.encfs13
+sbin/umount.crypt
+sbin/umount.crypt_LUKS
+sbin/umount.crypto_LUKS
 etc/security/pam_mount.conf.xml.sample
 lib/pam_mount.so
 sbin/pmvarrun
