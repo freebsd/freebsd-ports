@@ -205,6 +205,7 @@ share/locale/hu/LC_MESSAGES/kcm_autostart.mo
 share/locale/hu/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/hu/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/hu/LC_MESSAGES/kcm_emoticons.mo
+share/locale/hu/LC_MESSAGES/kcm_infobase.mo
 share/locale/hu/LC_MESSAGES/kcm_krfb.mo
 share/locale/hu/LC_MESSAGES/kcm_kwindesktop.mo
 share/locale/hu/LC_MESSAGES/kcm_kwintabbox.mo
@@ -309,6 +310,7 @@ share/locale/hu/LC_MESSAGES/kfontinst.mo
 share/locale/hu/LC_MESSAGES/kfourinline.mo
 share/locale/hu/LC_MESSAGES/kgeography.mo
 share/locale/hu/LC_MESSAGES/kget.mo
+share/locale/hu/LC_MESSAGES/kglobalaccel.mo
 share/locale/hu/LC_MESSAGES/kgoldrunner.mo
 share/locale/hu/LC_MESSAGES/kgpg.mo
 share/locale/hu/LC_MESSAGES/kgreet_classic.mo
@@ -527,6 +529,7 @@ share/locale/hu/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/hu/LC_MESSAGES/phonon_kde.mo
 share/locale/hu/LC_MESSAGES/phononserver.mo
 share/locale/hu/LC_MESSAGES/plasma-desktop.mo
+share/locale/hu/LC_MESSAGES/plasma-netbook.mo
 share/locale/hu/LC_MESSAGES/plasma-overlay.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_CharSelectApplet.mo

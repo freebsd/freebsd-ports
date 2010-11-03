@@ -62,6 +62,7 @@ share/doc/HTML/et/juk/index.docbook
 share/doc/HTML/et/kajongg/common
 share/doc/HTML/et/kajongg/index.cache.bz2
 share/doc/HTML/et/kajongg/index.docbook
+share/doc/HTML/et/kalgebra/commands.docbook
 share/doc/HTML/et/kalgebra/common
 share/doc/HTML/et/kalgebra/index.cache.bz2
 share/doc/HTML/et/kalgebra/index.docbook
@@ -469,6 +470,9 @@ share/doc/HTML/et/kioslave/man/index.docbook
 share/doc/HTML/et/kioslave/mbox/common
 share/doc/HTML/et/kioslave/mbox/index.cache.bz2
 share/doc/HTML/et/kioslave/mbox/index.docbook
+share/doc/HTML/et/kioslave/nepomuksearch/common
+share/doc/HTML/et/kioslave/nepomuksearch/index.cache.bz2
+share/doc/HTML/et/kioslave/nepomuksearch/index.docbook
 share/doc/HTML/et/kioslave/network/common
 share/doc/HTML/et/kioslave/network/index.cache.bz2
 share/doc/HTML/et/kioslave/network/index.docbook
@@ -1538,6 +1542,7 @@ share/locale/et/entry.desktop
 @dirrm share/doc/HTML/et/kioslave/nntp
 @dirrm share/doc/HTML/et/kioslave/nfs
 @dirrm share/doc/HTML/et/kioslave/network
+@dirrm share/doc/HTML/et/kioslave/nepomuksearch
 @dirrm share/doc/HTML/et/kioslave/mbox
 @dirrm share/doc/HTML/et/kioslave/man
 @dirrm share/doc/HTML/et/kioslave/mailto

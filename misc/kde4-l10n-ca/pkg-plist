@@ -283,10 +283,6 @@ share/doc/HTML/ca/kdf/kdf_config.png
 share/doc/HTML/ca/kget/common
 share/doc/HTML/ca/kget/index.cache.bz2
 share/doc/HTML/ca/kget/index.docbook
-share/doc/HTML/ca/khelpcenter/glossary/common
-share/doc/HTML/ca/khelpcenter/glossary/index.cache.bz2
-share/doc/HTML/ca/khelpcenter/glossary/index.docbook
-share/doc/HTML/ca/khelpcenter/glossary/kdeprintingglossary.docbook
 share/doc/HTML/ca/kimagemapeditor/common
 share/doc/HTML/ca/kimagemapeditor/index.cache.bz2
 share/doc/HTML/ca/kimagemapeditor/index.docbook
@@ -1091,8 +1087,6 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/kioslave/audiocd
 @dirrm share/doc/HTML/ca/kioslave
 @dirrm share/doc/HTML/ca/kimagemapeditor
-@dirrm share/doc/HTML/ca/khelpcenter/glossary
-@dirrm share/doc/HTML/ca/khelpcenter
 @dirrm share/doc/HTML/ca/kget
 @dirrm share/doc/HTML/ca/kdf
 @dirrm share/doc/HTML/ca/kdesu

@@ -828,6 +828,9 @@ share/doc/HTML/pt/lokalize/index.docbook
 share/doc/HTML/pt/lskat/common
 share/doc/HTML/pt/lskat/index.cache.bz2
 share/doc/HTML/pt/lskat/index.docbook
+share/doc/HTML/pt/marble/common
+share/doc/HTML/pt/marble/index.cache.bz2
+share/doc/HTML/pt/marble/index.docbook
 share/doc/HTML/pt/okteta/common
 share/doc/HTML/pt/okteta/index.cache.bz2
 share/doc/HTML/pt/okteta/index.docbook
@@ -1478,6 +1481,7 @@ share/locale/pt/entry.desktop
 @dirrm share/doc/HTML/pt/onlinehelp
 @dirrm share/doc/HTML/pt/okular
 @dirrm share/doc/HTML/pt/okteta
+@dirrm share/doc/HTML/pt/marble
 @dirrm share/doc/HTML/pt/lskat
 @dirrm share/doc/HTML/pt/lokalize
 @dirrm share/doc/HTML/pt/kwrite

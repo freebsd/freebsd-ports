@@ -267,6 +267,7 @@ share/doc/HTML/de/juk/toolbar.png
 share/doc/HTML/de/kajongg/common
 share/doc/HTML/de/kajongg/index.cache.bz2
 share/doc/HTML/de/kajongg/index.docbook
+share/doc/HTML/de/kalgebra/commands.docbook
 share/doc/HTML/de/kalgebra/common
 share/doc/HTML/de/kalgebra/index.cache.bz2
 share/doc/HTML/de/kalgebra/index.docbook
@@ -978,7 +979,9 @@ share/doc/HTML/de/kmouth/kmouthctts.png
 share/doc/HTML/de/kmouth/kmouthcwcp.png
 share/doc/HTML/de/kmouth/kmouthedit.png
 share/doc/HTML/de/kmouth/kmouthmain.png
-share/doc/HTML/de/kmouth/kmouthwizard.png
+share/doc/HTML/de/kmouth/kmouthwizard1.png
+share/doc/HTML/de/kmouth/kmouthwizard2.png
+share/doc/HTML/de/kmouth/kmouthwizard3.png
 share/doc/HTML/de/kmouth/man-kmouth.1.docbook
 share/doc/HTML/de/kmplot/commands.docbook
 share/doc/HTML/de/kmplot/common

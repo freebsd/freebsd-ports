@@ -25,6 +25,7 @@ share/locale/tr/LC_MESSAGES/dolphin.mo
 share/locale/tr/LC_MESSAGES/dragonplayer.mo
 share/locale/tr/LC_MESSAGES/drkonqi.mo
 share/locale/tr/LC_MESSAGES/filetypes.mo
+share/locale/tr/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/tr/LC_MESSAGES/freespacenotifier.mo
 share/locale/tr/LC_MESSAGES/granatier.mo
 share/locale/tr/LC_MESSAGES/gwenview.mo
@@ -66,6 +67,7 @@ share/locale/tr/LC_MESSAGES/katequickdocumentswitcherplugin.mo
 share/locale/tr/LC_MESSAGES/katesnippets_tng.mo
 share/locale/tr/LC_MESSAGES/katesymbolviewer.mo
 share/locale/tr/LC_MESSAGES/katetabbarextension.mo
+share/locale/tr/LC_MESSAGES/katetabifyplugin.mo
 share/locale/tr/LC_MESSAGES/katetextfilter.mo
 share/locale/tr/LC_MESSAGES/katexmlcheck.mo
 share/locale/tr/LC_MESSAGES/katexmltools.mo
@@ -90,6 +92,7 @@ share/locale/tr/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/tr/LC_MESSAGES/kcm_desktopthemedetails.mo
 share/locale/tr/LC_MESSAGES/kcm_device_automounter.mo
 share/locale/tr/LC_MESSAGES/kcm_emoticons.mo
+share/locale/tr/LC_MESSAGES/kcm_infobase.mo
 share/locale/tr/LC_MESSAGES/kcm_infosummary.mo
 share/locale/tr/LC_MESSAGES/kcm_krfb.mo
 share/locale/tr/LC_MESSAGES/kcm_kwindesktop.mo
@@ -99,6 +102,7 @@ share/locale/tr/LC_MESSAGES/kcm_pci.mo
 share/locale/tr/LC_MESSAGES/kcm_phonon.mo
 share/locale/tr/LC_MESSAGES/kcm_phononxine.mo
 share/locale/tr/LC_MESSAGES/kcm_platform.mo
+share/locale/tr/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/tr/LC_MESSAGES/kcm_solid.mo
 share/locale/tr/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/tr/LC_MESSAGES/kcm_standard_actions.mo
@@ -111,6 +115,7 @@ share/locale/tr/LC_MESSAGES/kcmcgi.mo
 share/locale/tr/LC_MESSAGES/kcmcolors.mo
 share/locale/tr/LC_MESSAGES/kcmcomponentchooser.mo
 share/locale/tr/LC_MESSAGES/kcmcrypto.mo
+share/locale/tr/LC_MESSAGES/kcmdevinfo.mo
 share/locale/tr/LC_MESSAGES/kcmfonts.mo
 share/locale/tr/LC_MESSAGES/kcmhtmlsearch.mo
 share/locale/tr/LC_MESSAGES/kcmicons.mo
@@ -287,9 +292,11 @@ share/locale/tr/LC_MESSAGES/kppp.mo
 share/locale/tr/LC_MESSAGES/kppplogview.mo
 share/locale/tr/LC_MESSAGES/kquitapp.mo
 share/locale/tr/LC_MESSAGES/krandr.mo
+share/locale/tr/LC_MESSAGES/krcdnotifieritem.mo
 share/locale/tr/LC_MESSAGES/krdb.mo
 share/locale/tr/LC_MESSAGES/krdc.mo
 share/locale/tr/LC_MESSAGES/kreadconfig.mo
+share/locale/tr/LC_MESSAGES/kremotecontroldaemon.mo
 share/locale/tr/LC_MESSAGES/kres_bugzilla.mo
 share/locale/tr/LC_MESSAGES/kreversi.mo
 share/locale/tr/LC_MESSAGES/krfb.mo
@@ -369,6 +376,7 @@ share/locale/tr/LC_MESSAGES/libkonq.mo
 share/locale/tr/LC_MESSAGES/libkpimidentities.mo
 share/locale/tr/LC_MESSAGES/libkpimtextedit.mo
 share/locale/tr/LC_MESSAGES/libkpimutils.mo
+share/locale/tr/LC_MESSAGES/libkremotecontrol.mo
 share/locale/tr/LC_MESSAGES/libkresources.mo
 share/locale/tr/LC_MESSAGES/libksane.mo
 share/locale/tr/LC_MESSAGES/libkscreensaver.mo
@@ -425,6 +433,7 @@ share/locale/tr/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_binaryclock.mo
+share/locale/tr/LC_MESSAGES/plasma_applet_bookmarks.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_bubblemon.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_calculator.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_clock.mo
@@ -441,6 +450,7 @@ share/locale/tr/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_gasCalculator.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_incomingmsg.mo
+share/locale/tr/LC_MESSAGES/plasma_applet_kalgebra.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_kdeobservatory.mo
@@ -503,6 +513,7 @@ share/locale/tr/LC_MESSAGES/plasma_containmentactions_switchdesktop.mo
 share/locale/tr/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_calendar.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_kalzium.mo
+share/locale/tr/LC_MESSAGES/plasma_engine_kdeobservatory.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_metadata.mo
@@ -511,14 +522,17 @@ share/locale/tr/LC_MESSAGES/plasma_engine_notifications.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_nowplaying.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_pastebin.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_rss.mo
+share/locale/tr/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/tr/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/tr/LC_MESSAGES/plasma_packagestructure_comic.mo
+share/locale/tr/LC_MESSAGES/plasma_runner_CharacterRunner.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_audioplayercontrol.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_browserhistory.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_calculatorrunner.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_contacts.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_converterrunner.mo
+share/locale/tr/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_katesessions.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_kget.mo
 share/locale/tr/LC_MESSAGES/plasma_runner_kill.mo

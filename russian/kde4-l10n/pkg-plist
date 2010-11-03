@@ -29,10 +29,16 @@ share/doc/HTML/ru/ark/index.docbook
 share/doc/HTML/ru/blinken/common
 share/doc/HTML/ru/blinken/index.cache.bz2
 share/doc/HTML/ru/blinken/index.docbook
+share/doc/HTML/ru/cantor/common
+share/doc/HTML/ru/cantor/index.cache.bz2
+share/doc/HTML/ru/cantor/index.docbook
 share/doc/HTML/ru/cervisia/common
 share/doc/HTML/ru/cervisia/index.cache.bz2
 share/doc/HTML/ru/cervisia/index.docbook
 share/doc/HTML/ru/common/kde-localised.css
+share/doc/HTML/ru/dragonplayer/common
+share/doc/HTML/ru/dragonplayer/index.cache.bz2
+share/doc/HTML/ru/dragonplayer/index.docbook
 share/doc/HTML/ru/gwenview/common
 share/doc/HTML/ru/gwenview/index.cache.bz2
 share/doc/HTML/ru/gwenview/index.docbook
@@ -138,6 +144,9 @@ share/doc/HTML/ru/kcontrol/netpref/index.docbook
 share/doc/HTML/ru/kcontrol/performance/common
 share/doc/HTML/ru/kcontrol/performance/index.cache.bz2
 share/doc/HTML/ru/kcontrol/performance/index.docbook
+share/doc/HTML/ru/kcontrol/proxy/common
+share/doc/HTML/ru/kcontrol/proxy/index.cache.bz2
+share/doc/HTML/ru/kcontrol/proxy/index.docbook
 share/doc/HTML/ru/kcontrol/screensaver/common
 share/doc/HTML/ru/kcontrol/screensaver/index.cache.bz2
 share/doc/HTML/ru/kcontrol/screensaver/index.docbook
@@ -183,10 +192,16 @@ share/doc/HTML/ru/kgeography/index.docbook
 share/doc/HTML/ru/kget/common
 share/doc/HTML/ru/kget/index.cache.bz2
 share/doc/HTML/ru/kget/index.docbook
+share/doc/HTML/ru/khelpcenter/common
+share/doc/HTML/ru/khelpcenter/documentationnotfound/common
+share/doc/HTML/ru/khelpcenter/documentationnotfound/index.cache.bz2
+share/doc/HTML/ru/khelpcenter/documentationnotfound/index.docbook
 share/doc/HTML/ru/khelpcenter/glossary/common
 share/doc/HTML/ru/khelpcenter/glossary/index.cache.bz2
 share/doc/HTML/ru/khelpcenter/glossary/index.docbook
 share/doc/HTML/ru/khelpcenter/glossary/kdeprintingglossary.docbook
+share/doc/HTML/ru/khelpcenter/index.cache.bz2
+share/doc/HTML/ru/khelpcenter/index.docbook
 share/doc/HTML/ru/kig/common
 share/doc/HTML/ru/kig/constructed_a_point.png
 share/doc/HTML/ru/kig/constructed_script_object.png
@@ -258,6 +273,9 @@ share/doc/HTML/ru/kioslave/telnet/index.docbook
 share/doc/HTML/ru/kioslave/thumbnail/common
 share/doc/HTML/ru/kioslave/thumbnail/index.cache.bz2
 share/doc/HTML/ru/kioslave/thumbnail/index.docbook
+share/doc/HTML/ru/kioslave/webdav/common
+share/doc/HTML/ru/kioslave/webdav/index.cache.bz2
+share/doc/HTML/ru/kioslave/webdav/index.docbook
 share/doc/HTML/ru/kjumpingcube/common
 share/doc/HTML/ru/kjumpingcube/index.cache.bz2
 share/doc/HTML/ru/kjumpingcube/index.docbook
@@ -349,6 +367,7 @@ share/doc/HTML/ru/kopete/menus.docbook
 share/doc/HTML/ru/kpat/common
 share/doc/HTML/ru/kpat/index.cache.bz2
 share/doc/HTML/ru/kpat/index.docbook
+share/doc/HTML/ru/kpat/man-kpat.6.docbook
 share/doc/HTML/ru/kppp/accounting.docbook
 share/doc/HTML/ru/kppp/callback.docbook
 share/doc/HTML/ru/kppp/chap.docbook
@@ -586,6 +605,7 @@ share/locale/ru/LC_MESSAGES/kcm_memory.mo
 share/locale/ru/LC_MESSAGES/kcm_pci.mo
 share/locale/ru/LC_MESSAGES/kcm_phonon.mo
 share/locale/ru/LC_MESSAGES/kcm_phononxine.mo
+share/locale/ru/LC_MESSAGES/kcm_platform.mo
 share/locale/ru/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/ru/LC_MESSAGES/kcm_solid.mo
 share/locale/ru/LC_MESSAGES/kcm_solid_actions.mo
@@ -1026,6 +1046,7 @@ share/locale/ru/LC_MESSAGES/plasma_runner_recentdocuments.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_services.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_shell.mo
+share/locale/ru/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/ru/LC_MESSAGES/plasma_runner_windowedwidgets.mo
@@ -1072,9 +1093,7 @@ share/locale/ru/LC_MESSAGES/umbrello.mo
 share/locale/ru/LC_MESSAGES/useraccount.mo
 share/locale/ru/LC_MESSAGES/xml_mimetypes.mo
 share/locale/ru/LC_SCRIPTS/kdelibs4/kdelibs4.js
-share/locale/ru/LC_SCRIPTS/kgeography/kgeography.js
 share/locale/ru/entry.desktop
-@dirrm share/locale/ru/LC_SCRIPTS/kgeography
 @dirrm share/locale/ru/LC_SCRIPTS/kdelibs4
 @dirrm share/locale/ru/LC_SCRIPTS
 @dirrm share/doc/HTML/ru/sonnet
@@ -1119,6 +1138,7 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/klines
 @dirrm share/doc/HTML/ru/klettres
 @dirrm share/doc/HTML/ru/kjumpingcube
+@dirrm share/doc/HTML/ru/kioslave/webdav
 @dirrm share/doc/HTML/ru/kioslave/thumbnail
 @dirrm share/doc/HTML/ru/kioslave/telnet
 @dirrm share/doc/HTML/ru/kioslave/tar
@@ -1142,6 +1162,7 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kinfocenter
 @dirrm share/doc/HTML/ru/kig
 @dirrm share/doc/HTML/ru/khelpcenter/glossary
+@dirrm share/doc/HTML/ru/khelpcenter/documentationnotfound
 @dirrm share/doc/HTML/ru/khelpcenter
 @dirrm share/doc/HTML/ru/kget
 @dirrm share/doc/HTML/ru/kgeography
@@ -1157,6 +1178,7 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kcontrol/spellchecking
 @dirrm share/doc/HTML/ru/kcontrol/smb
 @dirrm share/doc/HTML/ru/kcontrol/screensaver
+@dirrm share/doc/HTML/ru/kcontrol/proxy
 @dirrm share/doc/HTML/ru/kcontrol/performance
 @dirrm share/doc/HTML/ru/kcontrol/netpref
 @dirrm share/doc/HTML/ru/kcontrol/language
@@ -1191,8 +1213,10 @@ share/locale/ru/entry.desktop
 @dirrm share/doc/HTML/ru/kalgebra
 @dirrm share/doc/HTML/ru/juk
 @dirrm share/doc/HTML/ru/gwenview
+@dirrm share/doc/HTML/ru/dragonplayer
 @dirrm share/doc/HTML/ru/common
 @dirrm share/doc/HTML/ru/cervisia
+@dirrm share/doc/HTML/ru/cantor
 @dirrm share/doc/HTML/ru/blinken
 @dirrm share/doc/HTML/ru/ark
 @dirrm share/doc/HTML/ru/amor

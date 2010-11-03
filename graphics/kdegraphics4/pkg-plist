@@ -395,11 +395,16 @@ share/doc/HTML/en/ksnapshot/index.cache.bz2
 share/doc/HTML/en/ksnapshot/index.docbook
 share/doc/HTML/en/ksnapshot/preview.png
 share/doc/HTML/en/ksnapshot/window.png
+share/doc/HTML/en/okular/annotation-properties.png
+share/doc/HTML/en/okular/annotations.png
 share/doc/HTML/en/okular/common
 share/doc/HTML/en/okular/configure.png
 share/doc/HTML/en/okular/embedded-files-bar.png
+share/doc/HTML/en/okular/forms-bar.png
 share/doc/HTML/en/okular/index.cache.bz2
 share/doc/HTML/en/okular/index.docbook
+share/doc/HTML/en/okular/mainwindow.png
+share/doc/HTML/en/okular/presentation.png
 share/icons/hicolor/128x128/apps/gwenview.png
 share/icons/hicolor/128x128/apps/kdcraw.png
 share/icons/hicolor/128x128/apps/kipi.png

@@ -538,6 +538,9 @@ share/doc/HTML/en/kioslave/info/index.docbook
 share/doc/HTML/en/kioslave/man/common
 share/doc/HTML/en/kioslave/man/index.cache.bz2
 share/doc/HTML/en/kioslave/man/index.docbook
+share/doc/HTML/en/kioslave/nepomuksearch/common
+share/doc/HTML/en/kioslave/nepomuksearch/index.cache.bz2
+share/doc/HTML/en/kioslave/nepomuksearch/index.docbook
 share/doc/HTML/en/kioslave/nfs/common
 share/doc/HTML/en/kioslave/nfs/index.cache.bz2
 share/doc/HTML/en/kioslave/nfs/index.docbook
@@ -1921,6 +1924,7 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @dirrm share/doc/HTML/en/kioslave/smb
 @dirrm share/doc/HTML/en/kioslave/sftp
 @dirrm share/doc/HTML/en/kioslave/nfs
+@dirrm share/doc/HTML/en/kioslave/nepomuksearch
 @dirrm share/doc/HTML/en/kioslave/man
 @dirrm share/doc/HTML/en/kioslave/info
 @dirrm share/doc/HTML/en/kioslave/gzip

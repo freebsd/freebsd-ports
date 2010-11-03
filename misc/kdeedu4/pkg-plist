@@ -2659,6 +2659,7 @@ share/doc/HTML/en/cantor/index.cache.bz2
 share/doc/HTML/en/cantor/index.docbook
 share/doc/HTML/en/cantor/latex_formula.png
 share/doc/HTML/en/cantor/screenshot.png
+share/doc/HTML/en/kalgebra/commands.docbook
 share/doc/HTML/en/kalgebra/common
 share/doc/HTML/en/kalgebra/index.cache.bz2
 share/doc/HTML/en/kalgebra/index.docbook
@@ -3265,7 +3266,6 @@ share/kde4/servicetypes/cantor_backend.desktop
 @dirrm share/doc/HTML/en/step
 @dirrm share/doc/HTML/en/rocs
 @dirrm share/doc/HTML/en/parley
-@dirrm share/doc/HTML/en/marble
 @dirrm share/doc/HTML/en/kwordquiz
 @dirrm share/doc/HTML/en/kturtle
 @dirrm share/doc/HTML/en/ktouch

@@ -1063,9 +1063,6 @@ share/doc/HTML/fr/kuser/kuser.png
 share/doc/HTML/fr/kwallet/common
 share/doc/HTML/fr/kwallet/index.cache.bz2
 share/doc/HTML/fr/kwallet/index.docbook
-share/doc/HTML/fr/kwordquiz/common
-share/doc/HTML/fr/kwordquiz/index.cache.bz2
-share/doc/HTML/fr/kwordquiz/index.docbook
 share/doc/HTML/fr/kwrite/common
 share/doc/HTML/fr/kwrite/index.cache.bz2
 share/doc/HTML/fr/kwrite/index.docbook
@@ -1716,7 +1713,6 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/lskat
 @dirrm share/doc/HTML/fr/lokalize
 @dirrm share/doc/HTML/fr/kwrite
-@dirrm share/doc/HTML/fr/kwordquiz
 @dirrm share/doc/HTML/fr/kwallet
 @dirrm share/doc/HTML/fr/kuser
 @dirrm share/doc/HTML/fr/kubrick
