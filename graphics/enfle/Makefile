@@ -72,6 +72,10 @@ CONFIGURE_ARGS+=	--disable-system-avcodec
 PLIST_SUB+=	AVCODEC="@comment "
 .endif
 
+.if (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505
+LIB_DEPENDS+=	lzma.0:${PORTSDIR}/archivers/xz
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/|${LOCALBASE}/|g ; \
