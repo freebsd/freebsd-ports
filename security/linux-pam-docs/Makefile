@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux-pam-docs
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	linux/libs/pam/documentation/
