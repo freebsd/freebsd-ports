@@ -272,6 +272,7 @@
     SUBDIR += roxbg
     SUBDIR += roxterm
     SUBDIR += rsibreak
+    SUBDIR += rsibreak-kde4
     SUBDIR += rstart
     SUBDIR += ruby-X11
     SUBDIR += ruby-gnome2
