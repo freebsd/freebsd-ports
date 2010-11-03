@@ -2863,6 +2863,7 @@
     SUBDIR += py-statgrab
     SUBDIR += py-subversion
     SUBDIR += py-subvertpy
+    SUBDIR += py-sysv_ipc
     SUBDIR += py-tables
     SUBDIR += py-tconfpy
     SUBDIR += py-testgears
