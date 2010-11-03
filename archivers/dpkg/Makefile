@@ -5,22 +5,25 @@
 # $FreeBSD$
 
 PORTNAME=	dpkg
-PORTVERSION=	1.14.29
+PORTVERSION=	1.14.30
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	dpkg_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c0rn@o2.pl
 COMMENT=	Debian package maintenance system
 
 BUILD_DEPENDS=	po4a:${PORTSDIR}/textproc/po4a
 RUN_DEPENDS=	gmd5sum:${PORTSDIR}/sysutils/coreutils \
 		gpatch:${PORTSDIR}/devel/patch
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PERL5=	yes
+MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}
 
 DPKGDIR?=	/var/db/dpkg
@@ -33,7 +36,9 @@ CONFIGURE_ARGS+=--with-admindir=${DPKGDIR} --libdir=${PREFIX}/libexec \
 		--program-transform-name="" --with-libintl-prefix=${LOCALBASE}
 CONFIGURE_ENV+=	PERL_LIBDIR="${PREFIX}/${SITE_PERL_REL}"
 
+.if !defined(WITHOUT_NLS)
 MANLANG=	"" de fr hu ja pl sv
+.endif
 
 MAN1_EN=	822-date.1 \
 		dpkg-architecture.1 \
@@ -73,6 +78,7 @@ MAN8_EN=	cleanup-info.8 \
 		start-stop-daemon.8 \
 		update-alternatives.8
 
+.if !defined(WITHOUT_NLS)
 MAN1_DE=	822-date.1 \
 		dpkg-architecture.1 \
 		dpkg-buildpackage.1 \
@@ -229,7 +235,6 @@ MAN8_SV=	cleanup-info.8 \
 		start-stop-daemon.8 \
 		update-alternatives.8
 
-.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else

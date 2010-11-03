@@ -73,10 +73,38 @@ libexec/dpkg/methods/floppy/setup
 libexec/dpkg/methods/floppy/update
 libexec/dpkg/mksplit
 libexec/dpkg/parsechangelog/debian
-@dirrmtry man/pt_BR/man1
-@dirrmtry man/pt_BR/man5
-@dirrmtry man/pt_BR/man8
-@dirrmtry man/pt_BR
+%%NLS%%@dirrmtry man/sv/man8
+%%NLS%%@dirrmtry man/sv/man5
+%%NLS%%@dirrmtry man/sv/man1
+%%NLS%%@dirrmtry man/sv
+%%NLS%%@dirrmtry man/ru/man8
+%%NLS%%@dirrmtry man/ru/man5
+%%NLS%%@dirrmtry man/ru/man1
+%%NLS%%@dirrmtry man/ru
+%%NLS%%@dirrmtry man/pt_BR/man1
+%%NLS%%@dirrmtry man/pt_BR/man5
+%%NLS%%@dirrmtry man/pt_BR/man8
+%%NLS%%@dirrmtry man/pt_BR
+%%NLS%%@dirrmtry man/pl/man8
+%%NLS%%@dirrmtry man/pl/man5
+%%NLS%%@dirrmtry man/pl/man1
+%%NLS%%@dirrmtry man/pl
+%%NLS%%@dirrmtry man/hu/man8
+%%NLS%%@dirrmtry man/hu/man5
+%%NLS%%@dirrmtry man/fr/man1
+%%NLS%%@dirrmtry man/fr/man8
+%%NLS%%@dirrmtry man/fr/man5
+%%NLS%%@dirrmtry man/fr
+%%NLS%%@dirrmtry man/es/man8
+%%NLS%%@dirrmtry man/es/man5
+%%NLS%%@dirrmtry man/es/man1
+%%NLS%%@dirrmtry man/es
+%%NLS%%@dirrmtry man/de/man8
+%%NLS%%@dirrmtry man/de/man5
+%%NLS%%@dirrmtry man/de/man1
+%%NLS%%@dirrmtry man/de
+%%NLS%%@dirrmtry man/hu/man1
+%%NLS%%@dirrmtry man/hu
 sbin/cleanup-info
 sbin/dpkg-divert
 sbin/dpkg-install-info
