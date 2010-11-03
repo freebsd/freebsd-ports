@@ -1,0 +1,12 @@
+bin/download-entities.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Entities/.packlist
+%%SITE_PERL%%/XML/Entities.pm
+%%SITE_PERL%%/XML/Entities/Data.pm
+%%SITE_PERL%%/XML/Entities/Data.pod
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Entities
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrm %%SITE_PERL%%/XML/Entities
+@dirrmtry %%SITE_PERL%%/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
