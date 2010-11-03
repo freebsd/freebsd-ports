@@ -2868,6 +2868,7 @@ eclipse-clay-core               ports/java/eclipse-clay-core
 eclipse-datatools               ports/java/eclipse-datatools
 eclipse-devel                   ports/java/eclipse-devel
 eclipse-drjava                  ports/java/eclipse-drjava
+eclipse-eclemma                 ports/devel/eclipse-eclemma
 eclipse-emf                     ports/java/eclipse-emf
 eclipse-epic                    ports/java/eclipse-EPIC
 eclipse-examples                ports/java/eclipse-examples
@@ -3544,6 +3545,7 @@ fldigi                          ports/comms/fldigi
 flex                            ports/textproc/flex
 flex-sdk                        ports/devel/flex-sdk
 flex-sdk2                       ports/devel/flex-sdk2
+flex-sdk35                      ports/devel/flex-sdk35
 flex_compiler_shell             ports/devel/flex_compiler_shell
 flexbackup                      ports/sysutils/flexbackup
 flexdock                        ports/devel/flexdock
@@ -9953,6 +9955,7 @@ nagiosgraph                     ports/net-mgmt/nagiosgraph
 nagiosgrapher                   ports/net-mgmt/nagiosgrapher
 nagiostat                       ports/net-mgmt/nagiostat
 nagircbot                       ports/net-mgmt/nagircbot
+nagvis                          ports/net-mgmt/nagvis
 naim                            ports/net-im/naim
 najitool                        ports/misc/najitool
 nakenchat                       ports/net/nakenchat
@@ -13616,6 +13619,7 @@ p5-Plack-Handler-AnyEvent-ReverseHTTP  ports/www/p5-Plack-Handler-AnyEvent-Rever
 p5-Plack-Handler-AnyEvent-SCGI  ports/www/p5-Plack-Handler-AnyEvent-SCGI
 p5-Plack-Handler-SCGI           ports/www/p5-Plack-Handler-SCGI
 p5-Plack-Middleware-AMF         ports/www/p5-Plack-Middleware-AMF
+p5-Plack-Middleware-AddDefaultCharset  ports/www/p5-Plack-Middleware-AddDefaultCharset
 p5-Plack-Middleware-Auth-Digest  ports/www/p5-Plack-Middleware-Auth-Digest
 p5-Plack-Middleware-AutoRefresh  ports/www/p5-Plack-Middleware-AutoRefresh
 p5-Plack-Middleware-ConsoleLogger  ports/www/p5-Plack-Middleware-ConsoleLogger
@@ -13626,6 +13630,7 @@ p5-Plack-Middleware-Header      ports/www/p5-Plack-Middleware-Header
 p5-Plack-Middleware-JSConcat    ports/www/p5-Plack-Middleware-JSConcat
 p5-Plack-Middleware-ReverseProxy  ports/www/p5-Plack-Middleware-ReverseProxy
 p5-Plack-Middleware-Session     ports/www/p5-Plack-Middleware-Session
+p5-Plack-Middleware-Status      ports/www/p5-Plack-Middleware-Status
 p5-Plack-Middleware-Throttle    ports/www/p5-Plack-Middleware-Throttle
 p5-Plack-Server-Coro            ports/www/p5-Plack-Server-Coro
 p5-Plack-Server-POE             ports/www/p5-Plack-Server-POE
@@ -17510,6 +17515,7 @@ p5-plack-handler-anyevent-httpd  ports/www/p5-Plack-Handler-AnyEvent-HTTPD
 p5-plack-handler-anyevent-reversehttp  ports/www/p5-Plack-Handler-AnyEvent-ReverseHTTP
 p5-plack-handler-anyevent-scgi  ports/www/p5-Plack-Handler-AnyEvent-SCGI
 p5-plack-handler-scgi           ports/www/p5-Plack-Handler-SCGI
+p5-plack-middleware-adddefaultcharset  ports/www/p5-Plack-Middleware-AddDefaultCharset
 p5-plack-middleware-amf         ports/www/p5-Plack-Middleware-AMF
 p5-plack-middleware-auth-digest  ports/www/p5-Plack-Middleware-Auth-Digest
 p5-plack-middleware-autorefresh  ports/www/p5-Plack-Middleware-AutoRefresh
@@ -17521,6 +17527,7 @@ p5-plack-middleware-header      ports/www/p5-Plack-Middleware-Header
 p5-plack-middleware-jsconcat    ports/www/p5-Plack-Middleware-JSConcat
 p5-plack-middleware-reverseproxy  ports/www/p5-Plack-Middleware-ReverseProxy
 p5-plack-middleware-session     ports/www/p5-Plack-Middleware-Session
+p5-plack-middleware-status      ports/www/p5-Plack-Middleware-Status
 p5-plack-middleware-throttle    ports/www/p5-Plack-Middleware-Throttle
 p5-plack-server-coro            ports/www/p5-Plack-Server-Coro
 p5-plack-server-poe             ports/www/p5-Plack-Server-POE
@@ -18780,6 +18787,7 @@ pam_helper                      ports/security/pam_helper
 pam_jail                        ports/security/pam_jail
 pam_ldap                        ports/security/pam_ldap
 pam_mkhomedir                   ports/security/pam_mkhomedir
+pam_mount                       ports/sysutils/pam_mount
 pam_p11                         ports/security/pam_p11
 pam_per_user                    ports/security/pam_per_user
 pam_pgina                       ports/security/pam_pgina
