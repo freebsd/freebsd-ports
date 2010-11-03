@@ -22,6 +22,8 @@ RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		avr-gcc:${PORTSDIR}/devel/avr-gcc
 
+BROKEN=		does not build
+
 .if !defined(NOPORTDOCS)
 OPTIONS=	AVRLIBCDOCS "Build avr-libc documents" on
 .endif
