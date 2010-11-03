@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	otrs
-PORTVERSION=	2.4.7
-PORTREVISION=	3
+PORTVERSION=	2.4.9
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -59,11 +58,14 @@ PM_DIRS_LIST=	Kernel Kernel/Config Kernel/Config/Files Kernel/Language \
 		Kernel/Output/HTML/Standard System System/Auth System/AuthSession \
 		System/Crypt System/CustomerAuth System/CustomerUser \
 		System/CustomerUser/ System/
-DOCS_DIRS_LIST=	"" manual/en/pdf
-DOCS_FILES_LIST=	C* INSTALL RE* TODO UPGRADING
+DOCS_DIRS_LIST=	"" manual/en
+DOCS_FILES_LIST=	C[A-Z]* INSTALL RE* TODO UPGRADING
 
 SCRIPTS_DIRS_LIST=	"" database/update test tools
 CLEAN_FILES=	scripts/apache2-httpd.include.conf scripts/suse* scripts/redhat* \
+		var/httpd/htdocs/js/thirdparty var/httpd/htdocs/js/fckeditor-2.6.6 \
+		var/httpd/htdocs/js/js-cache var/httpd/htdocs/js/test \
+		var/httpd/htdocs/js_new var/httpd/htdocs/skins \
 		var/httpd/htdocs/yui/2.7.0/as-docs var/httpd/htdocs/yui/2.7.0/*.html \
 		var/httpd/htdocs/yui/2.7.0/releasenotes
 
