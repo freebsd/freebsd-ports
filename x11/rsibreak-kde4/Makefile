@@ -6,25 +6,23 @@
 #
 
 PORTNAME=	rsibreak
-PORTVERSION=	0.8.0
-PORTREVISION=	6
+DISTVERSION=	0.11-beta1
 CATEGORIES=	x11 kde
 MASTER_SITES=	http://www.rsibreak.org/files/
 
-MAINTAINER=	ale@FreeBSD.org
+MAINTAINER=	avg@icyb.net.ua
 COMMENT=	A KDE RSI prevention tool
 
-PORTSCOUT=	limit:^0\.8\.
+BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+
+LATEST_LINK=	${PORTNAME}-kde4
 
 USE_BZIP2=	yes
-USE_KDELIBS_VER=3
-USE_AUTOTOOLS=	libtool:22
 USE_GETTEXT=	yes
+USE_CMAKE=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
+USE_KDE4=	kdehier kdeprefix kdelibs automoc4
 INSTALLS_ICONS=	yes
-USE_XORG=	xscrnsaver
-
-post-patch:
-	@${REINPLACE_CMD} 's/install-data-local: install-apidox/install-data-local:/' \
-		${WRKSRC}/rsibreak/Makefile.in ${WRKSRC}/rsibreak/src/Makefile.in
 
 .include <bsd.port.mk>
