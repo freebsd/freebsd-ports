@@ -149,6 +149,7 @@ share/doc/HTML/sv/juk/search-playlist.png
 share/doc/HTML/sv/kajongg/common
 share/doc/HTML/sv/kajongg/index.cache.bz2
 share/doc/HTML/sv/kajongg/index.docbook
+share/doc/HTML/sv/kalgebra/commands.docbook
 share/doc/HTML/sv/kalgebra/common
 share/doc/HTML/sv/kalgebra/index.cache.bz2
 share/doc/HTML/sv/kalgebra/index.docbook
@@ -657,6 +658,9 @@ share/doc/HTML/sv/kioslave/man/index.docbook
 share/doc/HTML/sv/kioslave/mbox/common
 share/doc/HTML/sv/kioslave/mbox/index.cache.bz2
 share/doc/HTML/sv/kioslave/mbox/index.docbook
+share/doc/HTML/sv/kioslave/nepomuksearch/common
+share/doc/HTML/sv/kioslave/nepomuksearch/index.cache.bz2
+share/doc/HTML/sv/kioslave/nepomuksearch/index.docbook
 share/doc/HTML/sv/kioslave/network/common
 share/doc/HTML/sv/kioslave/network/index.cache.bz2
 share/doc/HTML/sv/kioslave/network/index.docbook
@@ -1929,6 +1933,7 @@ share/locale/sv/entry.desktop
 @dirrm share/doc/HTML/sv/kioslave/nntp
 @dirrm share/doc/HTML/sv/kioslave/nfs
 @dirrm share/doc/HTML/sv/kioslave/network
+@dirrm share/doc/HTML/sv/kioslave/nepomuksearch
 @dirrm share/doc/HTML/sv/kioslave/mbox
 @dirrm share/doc/HTML/sv/kioslave/man
 @dirrm share/doc/HTML/sv/kioslave/mailto

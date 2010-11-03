@@ -75,6 +75,7 @@ share/locale/ko/LC_MESSAGES/kcm_pci.mo
 share/locale/ko/LC_MESSAGES/kcm_phonon.mo
 share/locale/ko/LC_MESSAGES/kcm_phononxine.mo
 share/locale/ko/LC_MESSAGES/kcm_platform.mo
+share/locale/ko/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/ko/LC_MESSAGES/kcm_solid.mo
 share/locale/ko/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/ko/LC_MESSAGES/kcm_standard_actions.mo

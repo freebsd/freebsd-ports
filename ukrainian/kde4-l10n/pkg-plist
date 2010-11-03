@@ -296,6 +296,7 @@ share/doc/HTML/uk/juk/juk-tag-gusser.png
 share/doc/HTML/uk/kajongg/common
 share/doc/HTML/uk/kajongg/index.cache.bz2
 share/doc/HTML/uk/kajongg/index.docbook
+share/doc/HTML/uk/kalgebra/commands.docbook
 share/doc/HTML/uk/kalgebra/common
 share/doc/HTML/uk/kalgebra/index.cache.bz2
 share/doc/HTML/uk/kalgebra/index.docbook
@@ -805,6 +806,9 @@ share/doc/HTML/uk/kioslave/man/index.docbook
 share/doc/HTML/uk/kioslave/mbox/common
 share/doc/HTML/uk/kioslave/mbox/index.cache.bz2
 share/doc/HTML/uk/kioslave/mbox/index.docbook
+share/doc/HTML/uk/kioslave/nepomuksearch/common
+share/doc/HTML/uk/kioslave/nepomuksearch/index.cache.bz2
+share/doc/HTML/uk/kioslave/nepomuksearch/index.docbook
 share/doc/HTML/uk/kioslave/network/common
 share/doc/HTML/uk/kioslave/network/index.cache.bz2
 share/doc/HTML/uk/kioslave/network/index.docbook
@@ -1248,11 +1252,15 @@ share/doc/HTML/uk/marble/search-2.png
 share/doc/HTML/uk/okteta/common
 share/doc/HTML/uk/okteta/index.cache.bz2
 share/doc/HTML/uk/okteta/index.docbook
+share/doc/HTML/uk/okular/annotation-properties.png
+share/doc/HTML/uk/okular/annotations.png
 share/doc/HTML/uk/okular/common
 share/doc/HTML/uk/okular/configure.png
 share/doc/HTML/uk/okular/embedded-files-bar.png
+share/doc/HTML/uk/okular/forms-bar.png
 share/doc/HTML/uk/okular/index.cache.bz2
 share/doc/HTML/uk/okular/index.docbook
+share/doc/HTML/uk/okular/mainwindow.png
 share/doc/HTML/uk/onlinehelp/common
 share/doc/HTML/uk/onlinehelp/index.cache.bz2
 share/doc/HTML/uk/onlinehelp/index.docbook
@@ -1978,6 +1986,7 @@ share/locale/uk/entry.desktop
 @dirrm share/doc/HTML/uk/kioslave/nntp
 @dirrm share/doc/HTML/uk/kioslave/nfs
 @dirrm share/doc/HTML/uk/kioslave/network
+@dirrm share/doc/HTML/uk/kioslave/nepomuksearch
 @dirrm share/doc/HTML/uk/kioslave/mbox
 @dirrm share/doc/HTML/uk/kioslave/man
 @dirrm share/doc/HTML/uk/kioslave/mailto

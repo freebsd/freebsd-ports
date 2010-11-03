@@ -143,6 +143,7 @@ share/locale/fi/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/fi/LC_MESSAGES/kcmkwm.mo
 share/locale/fi/LC_MESSAGES/kcmlaunch.mo
 share/locale/fi/LC_MESSAGES/kcmlocale.mo
+share/locale/fi/LC_MESSAGES/kcmnic.mo
 share/locale/fi/LC_MESSAGES/kcmnotify.mo
 share/locale/fi/LC_MESSAGES/kcmopengl.mo
 share/locale/fi/LC_MESSAGES/kcmperformance.mo

@@ -612,6 +612,16 @@ share/doc/HTML/pl/ktuberling/common
 share/doc/HTML/pl/ktuberling/index.cache.bz2
 share/doc/HTML/pl/ktuberling/index.docbook
 share/doc/HTML/pl/ktuberling/technical-reference.docbook
+share/doc/HTML/pl/kturtle/common
+share/doc/HTML/pl/kturtle/getting-started.docbook
+share/doc/HTML/pl/kturtle/glossary.docbook
+share/doc/HTML/pl/kturtle/index.cache.bz2
+share/doc/HTML/pl/kturtle/index.docbook
+share/doc/HTML/pl/kturtle/mainwindow.png
+share/doc/HTML/pl/kturtle/mainwindow_flower_nrs.png
+share/doc/HTML/pl/kturtle/programming-reference.docbook
+share/doc/HTML/pl/kturtle/translator-guide.docbook
+share/doc/HTML/pl/kturtle/using-kturtle.docbook
 share/doc/HTML/pl/kwallet/common
 share/doc/HTML/pl/kwallet/edit1.png
 share/doc/HTML/pl/kwallet/edit2.png
@@ -675,6 +685,7 @@ share/locale/pl/LC_MESSAGES/kabc_ldapkio.mo
 share/locale/pl/LC_MESSAGES/kabc_net.mo
 share/locale/pl/LC_MESSAGES/kabcformat_binary.mo
 share/locale/pl/LC_MESSAGES/kaccess.mo
+share/locale/pl/LC_MESSAGES/kajongg.mo
 share/locale/pl/LC_MESSAGES/kalgebra.mo
 share/locale/pl/LC_MESSAGES/kalzium.mo
 share/locale/pl/LC_MESSAGES/kanagram.mo
@@ -1059,6 +1070,7 @@ share/locale/pl/LC_MESSAGES/plasma_applet_BbalL.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_CharSelectApplet.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_battery.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_binaryclock.mo
+share/locale/pl/LC_MESSAGES/plasma_applet_bookmarks.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_bubblemon.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_calculator.mo
 share/locale/pl/LC_MESSAGES/plasma_applet_clock.mo
@@ -1136,6 +1148,7 @@ share/locale/pl/LC_MESSAGES/plasma_containmentactions_switchdesktop.mo
 share/locale/pl/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_calendar.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_kalzium.mo
+share/locale/pl/LC_MESSAGES/plasma_engine_kdeobservatory.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_metadata.mo
@@ -1147,12 +1160,14 @@ share/locale/pl/LC_MESSAGES/plasma_engine_rss.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/pl/LC_MESSAGES/plasma_engine_weather.mo
 share/locale/pl/LC_MESSAGES/plasma_packagestructure_comic.mo
+share/locale/pl/LC_MESSAGES/plasma_runner_CharacterRunner.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_audioplayercontrol.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_bookmarksrunner.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_browserhistory.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_calculatorrunner.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_contacts.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_converterrunner.mo
+share/locale/pl/LC_MESSAGES/plasma_runner_datetime.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_katesessions.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_kill.mo
 share/locale/pl/LC_MESSAGES/plasma_runner_konquerorsessions.mo
@@ -1226,6 +1241,7 @@ share/locale/pl/entry.desktop
 @dirrm share/doc/HTML/pl/kwrite
 @dirrm share/doc/HTML/pl/kwordquiz
 @dirrm share/doc/HTML/pl/kwallet
+@dirrm share/doc/HTML/pl/kturtle
 @dirrm share/doc/HTML/pl/ktuberling
 @dirrm share/doc/HTML/pl/ktouch
 @dirrm share/doc/HTML/pl/kteatime

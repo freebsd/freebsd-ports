@@ -1,8 +1,0 @@
---- ./docs/kdeutils/CMakeLists.txt.orig	2010-08-27 16:57:27.000000000 +0400
-+++ ./docs/kdeutils/CMakeLists.txt	2010-08-30 13:04:17.835715995 +0400
-@@ -8,5 +8,4 @@
- add_subdirectory( kinfocenter )
- add_subdirectory( ktimer )
- add_subdirectory( kwallet )
--add_subdirectory( okteta )
- add_subdirectory( superkaramba )

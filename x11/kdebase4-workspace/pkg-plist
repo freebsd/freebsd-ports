@@ -450,7 +450,7 @@ lib/libtaskmanager.so.5
 lib/libtaskmanager.so.5.0.1
 lib/libweather_ion.so
 lib/libweather_ion.so.5
-lib/libweather_ion.so.5.0.1
+lib/libweather_ion.so.5.0.0
 lib/strigi/strigita_font.so
 share/PolicyKit/policy/org.kde.fontinst.policy
 share/PolicyKit/policy/org.kde.kcontrol.kcmclock.policy

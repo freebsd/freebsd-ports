@@ -1,9 +1,0 @@
---- ./docs/kdebase-runtime/CMakeLists.txt.orig	2010-08-27 16:56:37.000000000 +0400
-+++ ./docs/kdebase-runtime/CMakeLists.txt	2010-08-30 12:57:02.012864276 +0400
-@@ -2,6 +2,5 @@
- add_subdirectory( kcontrol )
- add_subdirectory( kdebugdialog )
- add_subdirectory( kdesu )
--add_subdirectory( khelpcenter )
- add_subdirectory( kioslave )
- add_subdirectory( knetattach )
