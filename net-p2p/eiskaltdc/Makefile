@@ -18,6 +18,8 @@ LIB_DEPENDS=	upnp.4:${PORTSDIR}/devel/upnp \
 		boost_system.4:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
+BROKEN=		does not compile
+
 PROJECTHOST=	eiskaltdc
 
 USE_BZIP2=	yes
