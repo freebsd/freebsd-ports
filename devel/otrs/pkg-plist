@@ -642,6 +642,7 @@ otrs/var/httpd/htdocs/yui/2.7.0/assets/bg_hd.gif
 otrs/var/httpd/htdocs/yui/2.7.0/assets/dpSyntaxHighlighter.css
 otrs/var/httpd/htdocs/yui/2.7.0/assets/dpSyntaxHighlighter.js
 otrs/var/httpd/htdocs/yui/2.7.0/assets/example-hd-bg.gif
+otrs/var/httpd/htdocs/yui/2.7.0/assets/expressinstall.swf
 otrs/var/httpd/htdocs/yui/2.7.0/assets/title_h_bg.gif
 otrs/var/httpd/htdocs/yui/2.7.0/assets/yui-candy.jpg
 otrs/var/httpd/htdocs/yui/2.7.0/assets/yui.css
@@ -995,7 +996,8 @@ otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest_core-debug.js
 otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest_core-min.js
 otrs/var/httpd/htdocs/yui/2.7.0/build/yuitest/yuitest_core.js
 otrs/var/httpd/htdocs/yui/License-YUI.txt
-otrs/var/packages/Support-1.0.95.opm
+otrs/var/packages/Support-1.1.3.opm
+otrs/var/packages/iPhoneHandle-0.9.5.opm
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.de.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.en.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilResponseDeadlineExpires.de.xml
@@ -1344,6 +1346,7 @@ otrs/Kernel/Output/HTML/Standard/AgentTicketSearchResultPrint.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketZoom.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketZoomArticleFilterDialog.dtl
 otrs/Kernel/Output/HTML/Standard/AgentWindowTab.dtl
+otrs/Kernel/Output/HTML/Standard/AttachmentBlocker.dtl
 otrs/Kernel/Output/HTML/Standard/Copyright.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerAccept.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerCalendarSmallIcon.dtl
@@ -1557,6 +1560,7 @@ otrs/Kernel/System/XMLMaster.pm
 @dirrm otrs/Kernel/System/Ticket/ArticleSearchIndex
 @dirrm otrs/Kernel/System/Ticket/Acl
 @dirrm otrs/Kernel/System/Ticket
+@dirrm otrs/Kernel/System/SysConfig
 @dirrm otrs/Kernel/System/Stats/Dynamic
 @dirrm otrs/Kernel/System/Stats/Static
 @dirrm otrs/Kernel/System/Stats
@@ -1716,7 +1720,6 @@ otrs/Kernel/System/XMLMaster.pm
 @dirrm otrs/var/httpd/htdocs/yui/2.7.0/assets
 @dirrm otrs/var/httpd/htdocs/yui/2.7.0
 @dirrm otrs/var/httpd/htdocs/yui
-@dirrm otrs/var/httpd/htdocs/js/thirdparty
 @dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/wsc
 @dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver/images
 @dirrm otrs/var/httpd/htdocs/js/fckeditor-2.6.4.1/editor/skins/silver
@@ -1792,6 +1795,7 @@ otrs/Kernel/System/XMLMaster.pm
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%PORTDOCS%%%%DOCSDIR%%/X-OTRS-Headers.txt
 %%PORTDOCS%%%%DOCSDIR%%/otrs-database.dia
+%%PORTDOCS%%%%DOCSDIR%%/otrs-database.png
 %%PORTDOCS%%%%DOCSDIR%%/test-email-1.box
 %%PORTDOCS%%%%DOCSDIR%%/test-email-10-ks_c_5601-1987.box
 %%PORTDOCS%%%%DOCSDIR%%/test-email-2.box
@@ -1802,8 +1806,7 @@ otrs/Kernel/System/XMLMaster.pm
 %%PORTDOCS%%%%DOCSDIR%%/test-email-7-euro-iso-8859-15.box
 %%PORTDOCS%%%%DOCSDIR%%/test-email-8-bulgarian-cp1251.box
 %%PORTDOCS%%%%DOCSDIR%%/test-email-9-html-multicharset.box
-%%PORTDOCS%%%%DOCSDIR%%/manual/en/pdf/otrs_admin_book.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/en/pdf
+%%PORTDOCS%%%%DOCSDIR%%/manual/en/otrs_admin_book.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
