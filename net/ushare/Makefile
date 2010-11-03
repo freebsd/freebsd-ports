@@ -16,6 +16,8 @@ COMMENT=	A lightweight UPnP (TM) A/V Media Server
 
 LIB_DEPENDS=	upnp.4:${PORTSDIR}/devel/upnp
 
+BROKEN=		does not compile
+
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
