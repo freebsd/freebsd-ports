@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libsndfile
-PORTVERSION=	1.0.21
-PORTREVISION=	2
+PORTVERSION=	1.0.23
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/libsndfile/files/
 
@@ -24,7 +23,9 @@ CONFIGURE_ENV=	CPPFLAGS="-isystem /usr/include -isystem ${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 
-MAN1=		sndfile-concat.1 sndfile-cmp.1 sndfile-convert.1 sndfile-info.1 sndfile-metadata-get.1 sndfile-metadata-set.1 sndfile-play.1
+MAN1=		sndfile-concat.1 sndfile-cmp.1 sndfile-convert.1 \
+		sndfile-info.1 sndfile-metadata-get.1 sndfile-metadata-set.1 \
+		sndfile-play.1 sndfile-deinterleave.1 sndfile-interleave.1
 
 OPTIONS=	EXTERNAL "Enable FLAC and Ogg Vorbis support" on
 
