@@ -1,6 +1,6 @@
 ATAidle is a utility to set the power management features
-of ata hard drives.  This includes idle and standby timeouts,
-APM and acoustic level settings, and it can show details about
+of ata hard drives.  This includes standby timeouts, power (APM) 
+and acoustic (AAM) level settings, and it can show details about
 the installed devices.
 
 Author:	Bruce Cran <bruce@cran.org.uk>

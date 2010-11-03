@@ -9,18 +9,15 @@
 # ataidle_enable (bool): set to NO by default.
 #         Set to YES to enable ataidle.
 # ataidle_devices: list of devices on which to run ataidle
-# ataidle_adX: parameters to pass to ataidle(8)
+# ataidle_adaX: parameters to pass to ataidle(8)
 
 # Example:
-# Put the disks ad0, ad1 and ad2 into Idle mode after 60
-# minutes and Standby mode after 120 minutes. Also, set the
-# AAM and APM values to their maximum so the drives run at
-# their maximum performance.
+# Put the disks ada0, ada1 and ada2 into Standby mode after 60 minutes:
 #
-# ataidle_devices="ad0 ad1 ad2"
-# ataidle_ad0="-I 60 -S 120 -A 127 -P 254"
-# ataidle_ad1="-I 60 -S 120 -A 127 -P 254"
-# ataidle_ad2="-I 60 -S 120 -A 127 -P 254"
+# ataidle_devices="ada0 ada1 ada2"
+# ataidle_ada0="-S 60"
+# ataidle_ada1="-S 60"
+# ataidle_ada2="-S 60"
 #
 
 . /etc/rc.subr
@@ -28,8 +25,8 @@
 name="ataidle"
 rcvar=${name}_enable
 
-command="%%PREFIX%%/sbin/${name}"
-start_cmd="ataidle_start"
+command=%%PREFIX%%/sbin/${name}
+start_cmd=ataidle_start
 
 load_rc_config $name
 
@@ -45,7 +42,7 @@ ataidle_start()
 	if [ -n "${ataidle_devices}" ]; then
 		for i in ${ataidle_devices}; do
 			eval ataidle_args=\$ataidle_${i}
-			echo "ATAidle: configuring device /dev/${i}"
+			echo "ataidle: configuring device /dev/${i}"
 			${command} ${ataidle_args} /dev/${i}
 		done
 	fi
