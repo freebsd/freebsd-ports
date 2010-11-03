@@ -17,9 +17,7 @@ MAINTAINER=	decke@FreeBSD.org
 COMMENT=	Video playback and browsing plugin for MythTV
 
 BUILD_DEPENDS=	mythfrontend:${PORTSDIR}/multimedia/mythtv
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
-
-BROKEN=		bad dependency line
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
 
 USE_BZIP2=	yes
 USE_QT_VER=	4
