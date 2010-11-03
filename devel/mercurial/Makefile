@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mercurial
-PORTVERSION=	1.6.4
+PORTVERSION=	1.7
 CATEGORIES=	devel python
 MASTER_SITES=	http://mercurial.selenic.com/release/
 
@@ -27,8 +27,13 @@ PYDISTUTILS_EGGINFO=	${PORTNAME}-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-i
 
 CONTRIB_FILES=	bash_completion \
 		convert-repo \
+		debugshell.py \
 		dumprevlog \
 		hg-ssh \
+		hgfixes/__init__.py \
+		hgfixes/fix_bytes.py \
+		hgfixes/fix_bytesmod.py \
+		hgfixes/fix_leftover_imports.py \
 		hgk \
 		logo-droplets.svg \
 		memory.py \
@@ -39,6 +44,7 @@ CONTRIB_FILES=	bash_completion \
 		pylintrc \
 		python-hook-examples.py \
 		sample.hgrc \
+		setup3k.py \
 		shrink-revlog.py \
 		simplemerge \
 		tcsh_completion \
@@ -51,6 +57,7 @@ CONTRIB_FILES=	bash_completion \
 		vim/HGAnnotate.vim \
 		vim/hg-menu.vim \
 		vim/hgcommand.vim \
+		vim/hgtest.vim \
 		vim/patchreview.txt \
 		vim/patchreview.vim
 

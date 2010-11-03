@@ -241,10 +241,12 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/help/extensions.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/glossary.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/hgweb.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/merge-tools.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/multirevs.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/patterns.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/revisions.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/revsets.txt
+%%PYTHON_SITELIBDIR%%/mercurial/help/subrepos.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/templates.txt
 %%PYTHON_SITELIBDIR%%/mercurial/help/urls.txt
 %%PYTHON_SITELIBDIR%%/mercurial/hg.py
@@ -353,6 +355,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/pushkey.py
 %%PYTHON_SITELIBDIR%%/mercurial/pushkey.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/pushkey.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/py3kcompat.py
+%%PYTHON_SITELIBDIR%%/mercurial/py3kcompat.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/py3kcompat.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/repair.py
 %%PYTHON_SITELIBDIR%%/mercurial/repair.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/repair.pyo
@@ -383,9 +388,6 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/store.py
 %%PYTHON_SITELIBDIR%%/mercurial/store.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/store.pyo
-%%PYTHON_SITELIBDIR%%/mercurial/streamclone.py
-%%PYTHON_SITELIBDIR%%/mercurial/streamclone.pyc
-%%PYTHON_SITELIBDIR%%/mercurial/streamclone.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/strutil.py
 %%PYTHON_SITELIBDIR%%/mercurial/strutil.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/strutil.pyo
@@ -426,6 +428,8 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/footer.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/graph.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/header.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/help.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/helptopics.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/index.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/manifest.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/gitweb/map
@@ -450,6 +454,8 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/footer.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/graph.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/header.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/help.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/helptopics.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/index.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/manifest.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/monoblue/map
@@ -469,6 +475,8 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/templates/paper/footer.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/paper/graph.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/paper/header.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/paper/help.tmpl
+%%PYTHON_SITELIBDIR%%/mercurial/templates/paper/helptopics.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/paper/index.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/paper/manifest.tmpl
 %%PYTHON_SITELIBDIR%%/mercurial/templates/paper/map
@@ -549,6 +557,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/windows.py
 %%PYTHON_SITELIBDIR%%/mercurial/windows.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/windows.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/wireproto.py
+%%PYTHON_SITELIBDIR%%/mercurial/wireproto.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/wireproto.pyo
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
