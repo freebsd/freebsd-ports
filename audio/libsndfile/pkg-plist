@@ -8,6 +8,7 @@ bin/sndfile-metadata-get
 bin/sndfile-metadata-set
 bin/sndfile-play
 bin/sndfile-regtest
+bin/sndfile-salvage
 include/sndfile.h
 include/sndfile.hh
 lib/libsndfile.a
