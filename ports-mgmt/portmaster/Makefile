@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	portmaster
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://dougbarton.us/Downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
