@@ -7,6 +7,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	3.2.10
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
@@ -170,7 +171,11 @@ PLIST_SUB+=	I386="@comment "
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900012
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-include-iprt-string.h
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-include-iprt-string.h
+.endif
+
+.if ${OSVERSION} > 900020
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-src-VBox-Devices-PC-vbox.dsl
 .endif
 
 pre-everything::
