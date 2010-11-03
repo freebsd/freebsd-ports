@@ -145,6 +145,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/ly/guile-debugger.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/italiano.ly
+%%DATADIR%%/%%PORTVERSION%%/ly/language-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/lilypond-book-preamble.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/makam.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/midi-init.ly
