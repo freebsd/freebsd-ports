@@ -6,24 +6,22 @@
 #
 
 PORTNAME=	epsilon
-PORTVERSION=	0.5.12
+PORTVERSION=	0.6.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://divmod.org/trac/attachment/wiki/SoftwareReleases/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Epsilon-${PORTVERSION}
-EXTRACT_SUFX=	.tar.gz?format=raw
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	Epsilon is a set of Python utility modules used by DivMod projects
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
+LICENSE=	BSD
 
-MAKE_JOBS_SAFE=  yes
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/__init__.py:${PORTSDIR}/security/py-openssl
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Epsilon
-PYDISTUTILS_EGGINFO=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}_r17222-${PYTHON_VERSION:S/thon//}.egg-info
 USE_TWISTED=	yes
 NO_BUILD=	yes
 
