@@ -9,7 +9,7 @@ PORTNAME=	dimp
 PORTVERSION=	1.1.6
 CATEGORIES=	mail www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Dynamic webmail system
 
 RUN_DEPENDS+=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL \

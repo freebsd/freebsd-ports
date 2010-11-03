@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 PORTREVISION=	1
 CATEGORIES=	deskutils www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Time tracking application
 
 USE_HORDE=	base pkg-message
