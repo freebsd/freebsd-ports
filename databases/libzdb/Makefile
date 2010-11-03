@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	libzdb
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	databases
-MASTER_SITES=	http://www.tildeslash.com/libzdb/dist/
+MASTER_SITES=	http://www.tildeslash.com/libzdb/dist/ \
+		http://www.c-s.li/ports/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	Thread-safe connection pool library
+
+LICENSE=	GPLv3
 
 OPTIONS=	MYSQL "Add MySQL support" on \
 		SQLITE "Add Sqlite support" on \
@@ -22,6 +25,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}

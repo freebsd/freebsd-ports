@@ -5,6 +5,7 @@ include/zdb/PreparedStatement.h
 include/zdb/ResultSet.h
 include/zdb/SQLException.h
 include/zdb/URL.h
+include/zdb/zdb.h
 lib/libzdb.a
 lib/libzdb.la
 lib/libzdb.so
