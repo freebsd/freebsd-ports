@@ -11,7 +11,7 @@ DISTVERSIONSUFFIX=
 PORTEPOCH=	1
 CATEGORIES=	mail www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Email-filter management application
 
 #-----------------------------------------------------------------------

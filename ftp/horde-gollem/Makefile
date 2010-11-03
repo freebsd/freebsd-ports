@@ -9,7 +9,7 @@ PORTNAME=	gollem
 PORTVERSION=	1.1.2
 CATEGORIES=	ftp www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Web-based File Manager
 
 USE_HORDE=	base

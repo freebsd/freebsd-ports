@@ -10,7 +10,7 @@ PORTVERSION=	2.3.5
 DISTVERSIONSUFFIX=
 CATEGORIES=	mail www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Contact management application
 
 USE_HORDE=	base

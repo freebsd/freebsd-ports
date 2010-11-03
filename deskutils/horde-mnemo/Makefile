@@ -11,7 +11,7 @@ DISTVERSIONSUFFIX=
 PORTEPOCH=	1
 CATEGORIES=	deskutils www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Notes and memos application
 
 USE_HORDE=	base

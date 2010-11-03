@@ -10,7 +10,7 @@ DISTVERSION=	1.1.2
 CATEGORIES=	www
 DIST_SUBDIR=	horde
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Image gallery
 
 USE_HORDE=	base pkg-message

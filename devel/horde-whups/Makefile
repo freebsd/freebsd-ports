@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 PORTREVISION=	3
 CATEGORIES=	devel www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Bug tracking/ticketing system
 
 USE_HORDE=	base pkg-message

@@ -11,7 +11,7 @@ DISTVERSIONSUFFIX=
 PORTEPOCH=	1
 CATEGORIES=	deskutils www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Calendar application
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/Date/Holidays.php:${PORTSDIR}/devel/pear-Date_Holidays
