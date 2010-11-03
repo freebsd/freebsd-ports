@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quantis
-DISTVERSION=	v10.06.29
+DISTVERSION=	v10.10.08
 CATEGORIES=	security devel java
 MASTER_SITES=	http://www.idquantique.com/files/products/quantis/ \
 		${MASTER_SITE_LOCAL}
