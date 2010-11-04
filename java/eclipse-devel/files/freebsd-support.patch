@@ -10,12 +10,12 @@ $FreeBSD$
  		case $MODEL in
  			"x86_64")
  				defaultOSArch="x86_64"
-@@ -97,6 +98,7 @@
+@@ -98,6 +98,7 @@
  	"SunOS")
  		makefile="make_solaris.mak"
  		defaultOS="solaris"
 +		MAKE=make
- 		javaHome="/usr/jdk/jdk1.5.0_01"
+ 		[ -d /usr/jdk/jdk1.5.0_01 ] && javaHome="/usr/jdk/jdk1.5.0_01"
  		OUTPUT_DIR="../../bin/$defaultWS/$defaultOS/$defaultOSArch"
  		#PATH=/usr/ccs/bin:/opt/SUNWspro/bin:$PATH
 @@ -119,6 +121,24 @@
@@ -109,7 +109,7 @@ $FreeBSD$
 +DLL = $(PROGRAM_LIBRARY)
 +#LIBS = `pkg-config --libs-only-L gtk+-2.0` -lgtk-x11-2.0 -lgdk_pixbuf-2.0 -lgobject-2.0 -lgdk-x11-2.0 -lpthread -ldl
 +LIBS = -lpthread
-+GTK_LIBS = -DGTK_LIB="\"libgtk-x11-2.0.so.0\"" -DGDK_LIB="\"libgdk-x11-2.0.so.0\"" -DPIXBUF_LIB="\"libgdk_pixbuf-2.0.so.0\"" -DGOBJ_LIB="\"libgobject-2.0.so.0\""
++GTK_LIBS = -DGTK_LIB="\"libgtk-x11-2.0.so.0\"" -DGDK_LIB="\"libgdk-x11-2.0.so.0\"" -DPIXBUF_LIB="\"libgdk_pixbuf-2.0.so.0\"" -DGOBJ_LIB="\"libgobject-2.0.so.0\"" -DX11_LIB="\"libX11.so.6\""
 +LFLAGS = -shared -fpic -Wl,--export-dynamic 
 +CFLAGS = -g -s -Wall\
 +	-fpic \
@@ -175,10 +175,10 @@ $FreeBSD$
 +	rm -f $(EXEC) $(DLL) $(MAIN_OBJS) $(COMMON_OBJS) $(DLL_OBJS)
 --- build.orig/eclipse-3.5.2-src/features/org.eclipse.equinox.executable/target.build.properties	2009-12-23 15:12:32.595953209 -0500
 +++ build/eclipse-3.5.2-src/features/org.eclipse.equinox.executable/target.build.properties	2009-12-23 15:14:12.390811604 -0500
-@@ -89,3 +89,6 @@
+@@ -98,3 +98,6 @@
  
- root.linux.motif.x86=bin/motif/linux/x86,motif_root
- root.linux.motif.x86.permissions.755=libXm.so.2,libcairo-swt.so
+ root.linux.gtk.s390x=contributed/gtk/linux/s390x,gtk_root
+ root.linux.gtk.s390=contributed/gtk/linux/s390,gtk_root
 +
 +root.freebsd.gtk.x86=bin/gtk/freebsd/x86,gtk_root
 +root.freebsd.gtk.x86_64=bin/gtk/freebsd/x86_64,gtk_root
@@ -305,7 +305,7 @@ $FreeBSD$
           ws="motif"
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem/natives/unix/freebsd/Makefile	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem/natives/unix/freebsd/Makefile	2009-12-23 15:14:12.391816744 -0500
-@@ -0,0 +1,32 @@
+@@ -0,0 +1,36 @@
 +#**********************************************************************
 +# Copyright (c) 2000, 2004 IBM Corporation and others.
 +# All rights reserved. This program and the accompanying materials 
@@ -314,12 +314,12 @@ $FreeBSD$
 +# http://www.eclipse.org/legal/epl-v10.html
 +#********************************************************************** 
 +#
-+# makefile for libcore.so
++# makefile for libunixfile_1_0_0.so
 +
-+CORE.C = ../localfile.c
-+CORE.O = localfile.o
-+LIB_NAME = liblocalfile.so
-+LIB_NAME_FULL = liblocalfile_1_0_0.so
++CORE.C = ../unixfile.c
++CORE.O = unixfile.o
++LIB_NAME = libunixfile.so
++LIB_NAME_FULL = libunixfile_1_0_0.so
 +
 +#Set this to be your OS type
 +OS_TYPE = freebsd
@@ -338,6 +338,10 @@ $FreeBSD$
 +
 +clean :
 +	rm *.o
++
++install: core
++	rm -f ../../../../org.eclipse.core.filesystem.linux.x86/os/linux/x86/libunixfile_1_0_0.so
++	mv libunixfile_1_0_0.so ../../../../org.eclipse.core.filesystem.linux.x86/os/linux/x86/
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem/natives/unix/freebsd/include/os_custom.h	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem/natives/unix/freebsd/include/os_custom.h	2009-12-23 15:14:12.392819649 -0500
 @@ -0,0 +1,23 @@
@@ -645,7 +649,7 @@ $FreeBSD$
 @@ -0,0 +1,28 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +<projectDescription>
-+	<name>org.eclipse.core.net.linux.x86</name>
++	<name>org.eclipse.core.net.freebsd.x86</name>
 +	<comment></comment>
 +	<projects>
 +	</projects>
@@ -787,6 +791,163 @@ $FreeBSD$
 +
 +public class ProxyProvider extends UnixProxyProvider {
 +}
+--- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/.classpath	1969-12-31 19:00:00.000000000 -0500
++++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/.classpath	2009-12-23 15:14:12.400851271 -0500
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<classpath>
++	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.4"/>
++	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
++	<classpathentry kind="src" path="src"/>
++	<classpathentry kind="output" path="bin"/>
++</classpath>
+--- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/.project	1969-12-31 19:00:00.000000000 -0500
++++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/.project	2009-12-23 15:14:12.400851271 -0500
+@@ -0,0 +1,28 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<projectDescription>
++	<name>org.eclipse.core.net.freebsd.x86_64</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.jdt.core.javabuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.pde.ManifestBuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.pde.SchemaBuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.pde.PluginNature</nature>
++		<nature>org.eclipse.jdt.core.javanature</nature>
++	</natures>
++</projectDescription>
+--- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/.settings/org.eclipse.jdt.core.prefs	1969-12-31 19:00:00.000000000 -0500
++++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/.settings/org.eclipse.jdt.core.prefs	2009-12-23 15:14:12.401856131 -0500
+@@ -0,0 +1,12 @@
++#Mon Apr 21 14:24:04 CEST 2008
++eclipse.preferences.version=1
++org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
++org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.2
++org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve
++org.eclipse.jdt.core.compiler.compliance=1.4
++org.eclipse.jdt.core.compiler.debug.lineNumber=generate
++org.eclipse.jdt.core.compiler.debug.localVariable=generate
++org.eclipse.jdt.core.compiler.debug.sourceFile=generate
++org.eclipse.jdt.core.compiler.problem.assertIdentifier=warning
++org.eclipse.jdt.core.compiler.problem.enumIdentifier=warning
++org.eclipse.jdt.core.compiler.source=1.3
+--- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/META-INF/MANIFEST.MF	1969-12-31 19:00:00.000000000 -0500
++++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/META-INF/MANIFEST.MF	2009-12-23 15:14:12.401856131 -0500
+@@ -0,0 +1,10 @@
++Manifest-Version: 1.0
++Bundle-ManifestVersion: 2
++Bundle-Name: %fragmentName
++Bundle-Vendor: %providerName
++Bundle-Localization: fragment
++Bundle-SymbolicName: org.eclipse.core.net.freebsd.x86_64;singleton:=true
++Bundle-Version: 1.1.0.qualifier
++Fragment-Host: org.eclipse.core.net;bundle-version="1.1.0"
++Eclipse-PlatformFilter: (& (osgi.os=freebsd) (osgi.arch=x86_64))
++Bundle-RequiredExecutionEnvironment: J2SE-1.4
+--- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/about.html	1969-12-31 19:00:00.000000000 -0500
++++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/about.html	2009-12-23 15:14:12.401856131 -0500
+@@ -0,0 +1,28 @@
++<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
++    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
++<html xmlns="http://www.w3.org/1999/xhtml">
++<head>
++<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
++<title>About</title>
++</head>
++<body lang="EN-US">
++<h2>About This Content</h2>
++ 
++<p>June 2, 2006</p>	
++<h3>License</h3>
++
++<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise 
++indicated below, the Content is provided to you under the terms and conditions of the
++Eclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available 
++at <a href="http://www.eclipse.org/legal/epl-v10.html">http://www.eclipse.org/legal/epl-v10.html</a>.
++For purposes of the EPL, &quot;Program&quot; will mean the Content.</p>
++
++<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is 
++being redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may
++apply to your use of any object code in the Content.  Check the Redistributor's license that was 
++provided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise
++indicated below, the terms and conditions of the EPL still apply to any source code in the Content
++and such source code may be obtained at <a href="http://www.eclipse.org">http://www.eclipse.org</a>.</p>
++
++</body>
++</html>
+\ No newline at end of file
+--- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/build.properties	1969-12-31 19:00:00.000000000 -0500
++++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/build.properties	2009-12-23 15:14:12.401856131 -0500
+@@ -0,0 +1,19 @@
++###############################################################################
++# Copyright (c) 2008 IBM Corporation and others.
++# All rights reserved. This program and the accompanying materials
++# are made available under the terms of the Eclipse Public License v1.0
++# which accompanies this distribution, and is available at
++# http://www.eclipse.org/legal/epl-v10.html
++# 
++# Contributors:
++#     IBM Corporation - initial API and implementation
++###############################################################################
++bin.includes = fragment.properties,\
++               .,\
++               META-INF/,\
++               about.html,\
++               bin/,\
++               libgnomeproxy-1.0.0.so
++src.includes = about.html
++generateSourceBundle=false
++source.. = src/
+--- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/fragment.properties	1969-12-31 19:00:00.000000000 -0500
++++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/fragment.properties	2009-12-23 15:14:12.402858757 -0500
+@@ -0,0 +1,12 @@
++###############################################################################
++# Copyright (c) 2008 IBM Corporation and others.
++# All rights reserved. This program and the accompanying materials
++# are made available under the terms of the Eclipse Public License v1.0
++# which accompanies this distribution, and is available at
++# http://www.eclipse.org/legal/epl-v10.html
++#
++# Contributors:
++#     IBM Corporation - initial API and implementation
++###############################################################################
++fragmentName = Proxy for FreeBSD
++providerName = Eclipse.org
+--- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/src/org/eclipse/core/net/ProxyProvider.java	1969-12-31 19:00:00.000000000 -0500
++++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.net.freebsd.x86_64/src/org/eclipse/core/net/ProxyProvider.java	2009-12-23 15:14:12.402858757 -0500
+@@ -0,0 +1,16 @@
++/*******************************************************************************
++ * Copyright (c) 2008 Oakland Software Incorporated and others
++ * All rights reserved. This program and the accompanying materials
++ * are made available under the terms of the Eclipse Public License v1.0
++ * which accompanies this distribution, and is available at
++ * http://www.eclipse.org/legal/epl-v10.html
++ *
++ * Contributors:
++ *     Oakland Software Incorporated - initial API and implementation
++ *******************************************************************************/
++package org.eclipse.core.net;
++
++import org.eclipse.core.internal.net.proxy.unix.UnixProxyProvider;
++
++public class ProxyProvider extends UnixProxyProvider {
++}
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.runtime/src/org/eclipse/core/internal/runtime/InternalPlatform.java	2009-12-23 15:12:32.669243780 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.runtime/src/org/eclipse/core/internal/runtime/InternalPlatform.java	2009-12-23 15:14:12.403862779 -0500
 @@ -70,7 +70,7 @@
@@ -859,7 +1020,7 @@ $FreeBSD$
 +Bundle-Vendor: %providerName
 +Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.x86_64;singleton:=true
 +Bundle-Version: 1.0.200.qualifier
-+Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.1.0)"
++Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.1.0,1.2.0)"
 +Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=x86_64))
 +Bundle-Localization: launcher.gtk.freebsd.x86_64
 +Eclipse-BundleShape: dir
@@ -1109,7 +1270,7 @@ $FreeBSD$
 +Bundle-Vendor: %providerName
 +Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.x86;singleton:=true
 +Bundle-Version: 1.0.200.qualifier
-+Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.1.0)"
++Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.1.0,1.2.0)"
 +Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=x86))
 +Bundle-Localization: launcher.gtk.freebsd.x86
 +Eclipse-BundleShape: dir
@@ -1267,8 +1428,8 @@ $FreeBSD$
 +	<target name="post.clean">             
 +	</target>
 +</project>
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86/launcher.gtk.linux.x86.properties	1969-12-31 19:00:00.000000000 -0500
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86/launcher.gtk.linux.x86.properties	2009-12-23 15:14:12.423942951 -0500
+--- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86/launcher.gtk.freebsd.x86.properties	1969-12-31 19:00:00.000000000 -0500
++++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.launcher.gtk.freebsd.x86/launcher.gtk.freebsd.x86.properties	2009-12-23 15:14:12.423942951 -0500
 @@ -0,0 +1,12 @@
 +###############################################################################
 +# Copyright (c) 2007 IBM Corporation and others.
@@ -1323,7 +1484,7 @@ $FreeBSD$
 +Bundle-Vendor: %providerName
 +Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.x86_64;singleton:=true
 +Bundle-Version: 1.0.200.qualifier
-+Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.1.0)"
++Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.1.0,1.2.0)"
 +Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=x86_64))
 +Bundle-Localization: launcher.gtk.freebsd.x86_64
 +Eclipse-BundleShape: dir
@@ -1645,14 +1806,14 @@ $FreeBSD$
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.p2.publisher/src/org/eclipse/equinox/internal/p2/publisher/eclipse/BrandingIron.java	2009-12-23 15:14:12.440005914 -0500
 @@ -93,6 +93,8 @@
  			brandAIX();
- 		if ("hpux".equals(os)) //$NON-NLS-1$
+ 		else if ("hpux".equals(os)) //$NON-NLS-1$
  			brandHPUX();
-+		if ("freebsd".equals(os)) //$NON-NLS-1$
++		else if ("freebsd".equals(os)) //$NON-NLS-1$
 +			brandFreeBSD();
+ 		else
+ 			renameLauncher();
  	}
- 
- 	private void brandAIX() {
-@@ -213,6 +215,12 @@
+@@ -224,6 +226,12 @@
  		}
  	}
  
@@ -1985,14 +2146,14 @@ $FreeBSD$
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/BrandingIron.java	2009-12-23 15:14:12.471129495 -0500
 @@ -80,6 +80,8 @@
  			brandAIX();
- 		if ("hpux".equals(os)) //$NON-NLS-1$
+ 		else if ("hpux".equals(os)) //$NON-NLS-1$
  			brandHPUX();
-+		if ("freebsd".equals(os)) //$NON-NLS-1$
++		else if ("freebsd".equals(os)) //$NON-NLS-1$
 +			brandFreeBSD();
+ 		else
+ 			renameLauncher();
  	}
- 
- 	private void brandAIX() {
-@@ -107,6 +109,12 @@
+@@ -110,6 +112,12 @@
  		}
  	}
  
@@ -2217,7 +2378,7 @@ $FreeBSD$
 @@ -45,7 +45,7 @@
    inSDK=1
    inSDK=$(echo $PROJECTDIR | grep -c $BUILDDIR)
-   if [ $inSDK == 0 ]; then
+   if [ $inSDK = 0 ]; then
 -    PROJECTNAME=$(ant -Dbasedir="$PROJECTDIR" -f $BUILDDIR/tmp/feature-build.xml 2>&1 | grep echo | cut --delimiter=' ' -f 7)
 +    PROJECTNAME=$(ant -Dbasedir="$PROJECTDIR" -f $BUILDDIR/tmp/feature-build.xml 2>&1 | grep echo | cut -d ' ' -f 7)
      ERROR=""
@@ -2225,7 +2386,7 @@ $FreeBSD$
        echo "ERROR: could not determine the feature id for $PROJECTDIR"
 @@ -59,7 +59,7 @@
      if [ "x$ERROR" != "xyes" ]; then
-       if [[ $TESTING != true || `echo $PROJECTNAME | grep "org.eclipse"` ]]; then
+       if [ $TESTING != true -o `echo $PROJECTNAME | grep "org.eclipse"` ]; then
          echo "  making symlink: $BUILDDIR/features/$PROJECTNAME -> $PROJECTDIR"
 -        ln -sfT "$PROJECTDIR" $BUILDDIR/features/"$PROJECTNAME"
 +        ln -sf "$PROJECTDIR" $BUILDDIR/features/"$PROJECTNAME"
@@ -2234,7 +2395,7 @@ $FreeBSD$
    fi
 @@ -74,11 +74,11 @@
    inSDK=$(echo $dir | grep -c $BUILDDIR)
-   if [ $inSDK == 0 ]; then
+   if [ $inSDK = 0 ]; then
      if [ -e "$dir/META-INF/MANIFEST.MF" ]; then
 -      PROJECTNAME=$(grep Bundle-SymbolicName $dir/META-INF/MANIFEST.MF | cut --delimiter=';' -f 1 | cut --delimiter=' ' -f 2)
 +      PROJECTNAME=$(grep Bundle-SymbolicName $dir/META-INF/MANIFEST.MF | cut -d ';' -f 1 | cut -d ' ' -f 2)
@@ -2249,7 +2410,7 @@ $FreeBSD$
      if [ -z "$PROJECTNAME"  ]; then
 @@ -93,7 +93,7 @@
      if [ "x$ERROR" != "xyes" ]; then
-       if [[ $TESTING != true || `echo $PROJECTNAME | grep "org.eclipse"` ]]; then
+       if [ $TESTING != true -o `echo $PROJECTNAME | grep "org.eclipse"` ]; then
          echo "  making symlink: $BUILDDIR/plugins/$PROJECTNAME -> $dir"
 -        ln -sfT "$dir" $BUILDDIR/plugins/"$PROJECTNAME"
 +        ln -sf "$dir" $BUILDDIR/plugins/"$PROJECTNAME"
@@ -2309,7 +2470,7 @@ $FreeBSD$
 +root.freebsd.gtk.x86_64=eclipse,about_files/,about.html,icon.xpm
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/exports/ProductExportOperation.java	2009-04-27 14:28:33.000000000 -0400
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.pde.core/src/org/eclipse/pde/internal/core/exports/ProductExportOperation.java	2009-12-23 15:14:12.484181229 -0500
-@@ -327,6 +327,8 @@
+@@ -329,6 +329,8 @@
  					images = getExpandedPath(info.getIconPath(ILauncherInfo.LINUX_ICON));
  				} else if (configs[i][0].equals("macosx")) { //$NON-NLS-1$
  					images = getExpandedPath(info.getIconPath(ILauncherInfo.MACOSX_ICON));
@@ -2737,13 +2898,6 @@ $FreeBSD$
  LauncherSection_linuxLabel=A single XPM icon is required:
  LauncherSection_large=Large:
  LauncherSection_medium=Medium:
-@@ -2282,4 +2283,4 @@
- 
- Product_FeatureSection_properties=Properties...
- 
--PDEJUnitLaunchConfigurationTab_Run_Tests_In_UI_Thread=Run in &UI thread
-\ No newline at end of file
-+PDEJUnitLaunchConfigurationTab_Run_Tests_In_UI_Thread=Run in &UI thread
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/wizards/product/ProductIntroOperation.java	2009-03-06 17:52:06.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.pde.ui/src/org/eclipse/pde/internal/ui/wizards/product/ProductIntroOperation.java	2009-12-23 15:14:12.521328666 -0500
 @@ -128,7 +128,7 @@
@@ -2847,8 +3001,8 @@ $FreeBSD$
  if [ -z "${MOZILLA_INCLUDES}" -a -z "${MOZILLA_LIBS}" ]; then
 -	if [ x`pkg-config --exists mozilla-xpcom && echo YES` = "xYES" ]; then
 +	if [ x`pkg-config --exists libxul && echo YES` = "xYES" ]; then
-+		XULRUNNER_INCLUDES=`pkg-config --cflags libxul-unstable`
-+		XULRUNNER_LIBS="`pkg-config --libs libxul-unstable` -lxpcomglue"
++		XULRUNNER_INCLUDES=`pkg-config --cflags libxul`
++		XULRUNNER_LIBS="`pkg-config --libs libxul` -lxpcomglue"
 +		export XULRUNNER_INCLUDES
 +		export XULRUNNER_LIBS
 +		MAKE_MOZILLA="make_xulrunner make_xpcominit"
@@ -2871,14 +3025,15 @@ $FreeBSD$
  		echo "    *** Mozilla embedding support will not be compiled."
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak	2007-06-20 12:01:22.000000000 -0400
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak	2009-12-23 15:17:21.337309883 -0500
-@@ -1,5 +1,5 @@
- #*******************************************************************************
--# Copyright (c) 2000, 2007 IBM Corporation and others.
-+# Copyright (c) 2000, 2009 IBM Corporation and others.
- # All rights reserved. This program and the accompanying materials
- # are made available under the terms of the Eclipse Public License v1.0
- # which accompanies this distribution, and is available at
-@@ -46,7 +46,7 @@
+@@ -39,6 +39,7 @@
+ MOZILLA_LIB = lib$(MOZILLA_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
+ XULRUNNER_LIB = lib$(XULRUNNER_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
+ XPCOMINIT_LIB = lib$(XPCOMINIT_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
++WEBKIT_LIB = lib$(WEBKIT_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
+ GLX_LIB = lib$(GLX_PREFIX)-$(WS_PREFIX)-$(SWT_VERSION).so
+ 
+ CAIROCFLAGS = `pkg-config --cflags cairo`
+@@ -46,11 +47,11 @@
  
  # Do not use pkg-config to get libs because it includes unnecessary dependencies (i.e. pangoxft-1.0)
  GTKCFLAGS = `pkg-config --cflags gtk+-2.0`
@@ -2887,19 +3042,24 @@ $FreeBSD$
  
  CDE_LIBS = -L$(CDE_HOME)/lib -R$(CDE_HOME)/lib -lXt -lX11 -lDtSvc
  
-@@ -59,7 +59,7 @@
+-AWT_LFLAGS = -shared
++AWT_LFLAGS = -shared ${SWT_LFLAGS} 
+ AWT_LIBS = -L$(AWT_LIB_PATH) -ljawt
+ 
+ ATKCFLAGS = `pkg-config --cflags atk gtk+-2.0`
+@@ -59,7 +60,7 @@
+ GNOMECFLAGS = `pkg-config --cflags gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0`
  GNOMELIBS = `pkg-config --libs-only-L gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0` -lgnomevfs-2 -lgnome-2 -lgnomeui-2
  
- GLXCFLAGS = 
--GLXLIBS = -shared -fPIC -L/usr/X11R6/lib -lGL -lGLU -lm
-+GLXLIBS = -shared -fPIC -L${LOCALBASE}/lib -lGL -lGLU -lm
+-GLXLIBS = -L/usr/X11R6/lib -lGL -lGLU -lm
++GLXLIBS = -L${LOCALBASE}/lib -lGL -lGLU -lm
  
  # Uncomment for Native Stats tool
  #NATIVE_STATS = -DNATIVE_STATS
-@@ -78,7 +78,17 @@
+@@ -78,7 +79,20 @@
  	-I$(JAVA_HOME)/include/freebsd \
  	${SWT_PTR_CFLAGS}
- MOZILLALIBS = -shared -Wl,--version-script=mozilla_exports -Bsymbolic
+ MOZILLALFLAGS = -shared -Wl,--version-script=mozilla_exports -Bsymbolic
 -	
 +MOZILLAEXCLUDES = -DNO__1XPCOMGlueShutdown \
 +	-DNO__1XPCOMGlueStartup \
@@ -2912,19 +3072,23 @@ $FreeBSD$
 +	-DNO_nsDynamicFunctionLoad
 +XULRUNNEREXCLUDES = -DNO__1NS_1InitXPCOM2
 +
++WEBKITCFLAGS = `pkg-config --cflags gtk+-2.0 webkit-1.0`
++WEBKITLIBS = `pkg-config --libs webkit-1.0`
++
  SWT_OBJECTS = swt.o c.o c_stats.o callback.o
  CDE_OBJECTS = swt.o cde.o cde_structs.o cde_stats.o
  AWT_OBJECTS = swt_awt.o
-@@ -87,7 +97,7 @@
+@@ -87,14 +101,16 @@
  ATK_OBJECTS = swt.o atk.o atk_structs.o atk_custom.o atk_stats.o
  GNOME_OBJECTS = swt.o gnome.o gnome_structs.o gnome_stats.o
  MOZILLA_OBJECTS = swt.o xpcom.o xpcom_custom.o xpcom_structs.o xpcom_stats.o
 -XULRUNNER_OBJECTS = swt.o xpcomxul.o xpcomxul_custom.o xpcomxul_structs.o xpcomxul_stats.o xpcomxulglue.o xpcomxulglue_stats.o
 +XULRUNNER_OBJECTS = swt.o xpcomxul.o xpcomxul_custom.o xpcomxul_structs.o xpcomxul_stats.o
  XPCOMINIT_OBJECTS = swt.o xpcominit.o xpcominit_structs.o xpcominit_stats.o
++WEBKIT_OBJECTS = swt.o webkit.o webkit_structs.o webkit_stats.o
  GLX_OBJECTS = swt.o glx.o glx_structs.o glx_stats.o
  
-@@ -95,6 +105,7 @@
+ CFLAGS = -O -Wall \
  		-DSWT_VERSION=$(SWT_VERSION) \
  		$(NATIVE_STATS) \
  		-DFREEBSD -DGTK \
@@ -2932,8 +3096,8 @@ $FreeBSD$
  		-I$(JAVA_HOME)/include \
  		-I$(JAVA_HOME)/include/freebsd \
  		-fPIC \
-@@ -209,16 +220,16 @@
- 	$(CXX) -o $(MOZILLA_LIB) $(MOZILLA_OBJECTS) $(MOZILLALIBS) ${MOZILLA_LIBS}
+@@ -209,16 +225,16 @@
+ 	$(CXX) -o $(MOZILLA_LIB) $(MOZILLA_OBJECTS) $(MOZILLALFLAGS) ${MOZILLA_LIBS}
  
  xpcom.o: xpcom.cpp
 -	$(CXX) $(MOZILLACFLAGS) ${MOZILLA_INCLUDES} -c xpcom.cpp
@@ -2953,8 +3117,8 @@ $FreeBSD$
  
  #
  # XULRunner lib
-@@ -229,22 +240,16 @@
- 	$(CXX) -o $(XULRUNNER_LIB) $(XULRUNNER_OBJECTS) $(MOZILLALIBS) ${XULRUNNER_LIBS}
+@@ -229,22 +245,16 @@
+ 	$(CXX) -o $(XULRUNNER_LIB) $(XULRUNNER_OBJECTS) $(MOZILLALFLAGS) ${XULRUNNER_LIBS}
  
  xpcomxul.o: xpcom.cpp
 -	$(CXX) -o xpcomxul.o $(MOZILLACFLAGS) ${XULRUNNER_INCLUDES} -c xpcom.cpp
@@ -2980,6 +3144,30 @@ $FreeBSD$
  
  #
  # XPCOMInit lib
+@@ -264,6 +274,23 @@
+ 	$(CXX) $(MOZILLACFLAGS) ${XULRUNNER_INCLUDES} -c xpcominit_stats.cpp
+ 
+ #
++# WebKit lib
++#
++make_webkit: $(WEBKIT_LIB)
++
++$(WEBKIT_LIB): $(WEBKIT_OBJECTS)
++	$(CC) $(LFLAGS) -o $(WEBKIT_LIB) $(WEBKIT_OBJECTS) $(WEBKITLIBS)
++
++webkit.o: webkitgtk.c 
++	$(CC) $(CFLAGS) $(WEBKITCFLAGS) -c webkitgtk.c -o webkit.o
++
++webkit_structs.o: webkitgtk_structs.c 
++	$(CC) $(CFLAGS) $(WEBKITCFLAGS) -c webkitgtk_structs.c -o webkit_structs.o
++	
++webkit_stats.o: webkitgtk_stats.c webkitgtk_stats.h
++	$(CC) $(CFLAGS) $(WEBKITCFLAGS) -c webkitgtk_stats.c -o webkit_stats.o
++
++#
+ # GLX lib
+ #
+ make_glx: $(GLX_LIB)
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java	2009-12-23 15:12:33.298742157 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/org/eclipse/swt/internal/gtk/OS.java	2009-12-23 15:14:12.577551971 -0500
 @@ -23,18 +23,19 @@
@@ -3044,7 +3232,7 @@ $FreeBSD$
 +Bundle-Name: %fragmentName
 +Bundle-Vendor: %providerName
 +Bundle-SymbolicName: org.eclipse.swt.gtk.freebsd.x86; singleton:=true
-+Bundle-Version: 3.5.0.qualifier
++Bundle-Version: 3.6.1.qualifier
 +Bundle-ManifestVersion: 2
 +Bundle-Localization: fragment
 +Export-Package: 
@@ -4858,425 +5046,18 @@ $FreeBSD$
 +custom = true
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86/build.xml	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86/build.xml	2009-12-23 15:14:12.583575548 -0500
-@@ -0,0 +1,419 @@
+@@ -0,0 +1,12 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +<project name="org.eclipse.swt.gtk.freebsd.x86" default="build.jars" basedir=".">
 +
-+	<target name="init" depends="properties">
-+		<property name="compilerArg" value="" />
-+		<property name="ws" value="gtk" />
-+		<property name="os" value="freebsd" />
-+		<property name="arch" value="x86" />
-+		<property name="fragment" value="org.eclipse.swt.gtk.freebsd.x86" />
-+		<property name="version.suffix" value="3.5.0" />
-+		<property name="full.name" value="${fragment}_${version.suffix}" />
-+		<property name="temp.folder" value="${basedir}/temp.folder" />
-+		<property name="plugin.destination" value="${basedir}" />
-+		<property name="build.result.folder" value="${basedir}" />
-+		<property name="destination" value="${basedir}" />
-+		<property name="plugindir" value="../org.eclipse.swt" />
-+		<property name="bootclasspath" value="" />
-+		<property name="javacVerbose" value="false" />
-+		<property name="logExtension" value=".xml" />
-+		<property name="javacSource" value="1.3" />
-+		<property name="javacTarget" value="1.2" />
-+		<path id="path_bootclasspath">
-+			<fileset dir="${java.home}/lib">
-+				<include name="*.jar" />
-+			</fileset>
-+		</path>
-+		<property name="bootclasspath" refid="path_bootclasspath" />
-+		<condition property="bundleBootClasspath" value="${CDC-1.0/Foundation-1.0}">
-+			<isset property="CDC-1.0/Foundation-1.0" />
-+		</condition>
-+		<condition property="bundleBootClasspath" value="${J2SE-1.3}">
-+			<isset property="J2SE-1.3" />
-+		</condition>
-+		<property name="bundleJavacSource" value="${javacSource}" />
-+		<property name="bundleJavacTarget" value="${javacTarget}" />
-+		<property name="bundleBootClasspath" value="${bootclasspath}" />
-+		<condition property="p2.publish.parts" value="true">
-+			<istrue value="${p2.gathering}" />
-+		</condition>
-+	</target>
++	<property name="swt.ws" value="gtk" />
++	<property name="swt.os" value="freebsd" />
++	<property name="swt.arch" value="x86" />
 +
-+	<target name="properties" if="eclipse.running">
-+		<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter" />
-+	</target>
++	<!-- These properties are used by eclipse when exporting as Deployable plugin and fragments -->
++	<property name="version.suffix" value="3.6.1" />
 +
-+	<target name="build.update.jar" depends="init">
-+		<delete dir="${temp.folder}" />
-+		<mkdir dir="${temp.folder}" />
-+		<antcall target="build.jars" />
-+		<antcall target="gather.bin.parts">
-+			<param name="destination.temp.folder" value="${temp.folder}/" />
-+		</antcall>
-+		<zip zipfile="${plugin.destination}/${full.name}.jar" basedir="${temp.folder}/${full.name}" filesonly="false" />
-+		<delete dir="${temp.folder}" />
-+	</target>
-+
-+	<target name="@dot" depends="init" unless="@dot" description="Create jar: @dot.">
-+		<property name="destdir" value="${temp.folder}/@dot.bin" />
-+		<property name="debug" value="true" />
-+		<property name="jar.filename" value="swt.jar" />
-+		<delete dir="${temp.folder}/@dot.bin" />
-+		<mkdir dir="${temp.folder}/@dot.bin" />
-+		<javac destdir="${temp.folder}/@dot.bin" verbose="${javacVerbose}" debug="${debug}" failonerror="no" classpath="${plugindir}/extra_jars/exceptions.jar" bootclasspath="${bundleBootClasspath}" source="${bundleJavacSource}" target="${bundleJavacTarget}">
-+			<src path="${plugindir}/Eclipse SWT/cairo/" />
-+			<src path="${plugindir}/Eclipse SWT/common/" />
-+			<src path="${plugindir}/Eclipse SWT/common_j2se/" />
-+			<src path="${plugindir}/Eclipse SWT/emulated/bidi/" />
-+			<src path="${plugindir}/Eclipse SWT/emulated/coolbar/" />
-+			<src path="${plugindir}/Eclipse SWT/gtk/" />
-+			<src path="${plugindir}/Eclipse SWT Accessibility/common/" />
-+			<src path="${plugindir}/Eclipse SWT Accessibility/gtk/" />
-+			<src path="${plugindir}/Eclipse SWT AWT/common/" />
-+			<src path="${plugindir}/Eclipse SWT AWT/gtk/" />
-+			<src path="${plugindir}/Eclipse SWT Browser/common/" />
-+			<src path="${plugindir}/Eclipse SWT Mozilla/common/" />
-+			<src path="${plugindir}/Eclipse SWT Mozilla/gtk/" />
-+			<src path="${plugindir}/Eclipse SWT Custom Widgets/common/" />
-+			<src path="${plugindir}/Eclipse SWT Drag and Drop/common/" />
-+			<src path="${plugindir}/Eclipse SWT Drag and Drop/gtk/" />
-+			<src path="${plugindir}/Eclipse SWT OpenGL/gtk/" />
-+			<src path="${plugindir}/Eclipse SWT OpenGL/glx/" />
-+			<src path="${plugindir}/Eclipse SWT OpenGL/common/" />
-+			<src path="${plugindir}/Eclipse SWT PI/cairo/" />
-+			<src path="${plugindir}/Eclipse SWT PI/common/" />
-+			<src path="${plugindir}/Eclipse SWT PI/common_j2se/" />
-+			<src path="${plugindir}/Eclipse SWT PI/gtk/" />
-+			<src path="${plugindir}/Eclipse SWT Printing/common/" />
-+			<src path="${plugindir}/Eclipse SWT Printing/gtk/" />
-+			<src path="${plugindir}/Eclipse SWT Program/cde/" />
-+			<src path="${plugindir}/Eclipse SWT Program/common/" />
-+			<src path="${plugindir}/Eclipse SWT Program/gnome/" />
-+			<src path="${plugindir}/Eclipse SWT Program/gtk/" />
-+			<src path="${plugindir}/Eclipse SWT Theme/gtk/" />
-+			<compilerarg line="-log '${temp.folder}'/@dot.bin${logExtension}" compiler="org.eclipse.jdt.core.JDTCompilerAdapter" />
-+			<compilerarg line="${compilerArg}" compiler="org.eclipse.jdt.core.JDTCompilerAdapter" />
-+		</javac>
-+		<property name="includes" value="" />
-+		<property name="excludes" value="**/*.java,**/library/,**/package.htm*,**/*._properties,**/*.idl" />
-+		<copy todir="${temp.folder}/@dot.bin">
-+			<fileset dir="${plugindir}/Eclipse SWT/cairo/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT/common_j2se/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT/emulated/bidi/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT/emulated/coolbar/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT Accessibility/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT Accessibility/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT AWT/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT AWT/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT Browser/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT Mozilla/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT Mozilla/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT Custom Widgets/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT Drag and Drop/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT Drag and Drop/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT OpenGL/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT OpenGL/glx/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT OpenGL/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/cairo/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/common_j2se/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT Printing/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT Printing/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/cde/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/gnome/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/Eclipse SWT Theme/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/components/" includes="${includes}" excludes="${excludes}" />
-+		</copy>
-+		<antcall target="copy.translationfiles" />
-+
-+		<mkdir dir="${build.result.folder}/@dot" />
-+		<copy todir="${build.result.folder}/@dot" failonerror="true">
-+			<fileset dir="${temp.folder}/@dot.bin" />
-+		</copy>
-+		<!-- prepare a jar file solely for the download target -->
-+		<jar jarfile="${build.result.folder}/${jar.filename}" basedir="${temp.folder}/@dot.bin" />
-+		<delete dir="${temp.folder}/@dot.bin" />
-+	</target>
-+
-+	<target name="build.jars" depends="init">
-+		<available property="@dot" file="${build.result.folder}/@dot" />
-+		<antcall target="@dot" />
-+	</target>
-+
-+	<target name="build.cfiles" depends="init">
-+		<mkdir dir="${build.result.folder}/library" />
-+		<copy todir="${build.result.folder}/library">
-+			<fileset dir="${plugindir}/Eclipse SWT/common/library" />
-+			<fileset dir="${plugindir}/Eclipse SWT AWT/gtk/library" />
-+			<fileset dir="${plugindir}/Eclipse SWT Mozilla/common/library" />
-+			<fileset dir="${plugindir}/Eclipse SWT OpenGL/glx/library" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/cairo/library" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/common/library"/>
-+			<fileset dir="${plugindir}/Eclipse SWT PI/gtk/library" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/cde/library" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/gnome/library" />
-+		</copy>
-+	</target>
-+
-+	<target name="build.nativeLibraries" depends="build.cfiles">
-+		<exec dir="${build.result.folder}/library" executable="sh">
-+			<env key="OUTPUT_DIR" value="${build.result.folder}" />
-+			<arg line="${build.result.folder}/library/build.sh" />
-+			<arg line="install" />
-+		</exec>
-+	</target>
-+
-+	<target name="src.zip" depends="init" unless="src.zip">
-+		<mkdir dir="${build.result.folder}/" />
-+		<zip zipfile="${build.result.folder}/src.zip">
-+			<fileset dir="${plugindir}/Eclipse SWT/cairo/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT/common/library/" />
-+			<fileset dir="${plugindir}/Eclipse SWT/common_j2se/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT/emulated/bidi/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT/emulated/coolbar/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Accessibility/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Accessibility/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT AWT/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT AWT/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT AWT/gtk/library/" />
-+			<fileset dir="${plugindir}/Eclipse SWT Browser/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Mozilla/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Mozilla/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Mozilla/common/library/" />
-+			<fileset dir="${plugindir}/Eclipse SWT Custom Widgets/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Drag and Drop/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Drag and Drop/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT OpenGL/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT OpenGL/glx/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT OpenGL/glx/library/" />
-+			<fileset dir="${plugindir}/Eclipse SWT OpenGL/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/cairo/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/cairo/library/" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/common_j2se/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/common/library/" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/gtk/library/" excludes="**/*.sh" />
-+			<zipfileset filemode="755" dir="${plugindir}/Eclipse SWT PI/gtk/library/" includes="**/*.sh" />
-+			<fileset dir="${plugindir}/Eclipse SWT Printing/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Printing/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/cde/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/cde/library/" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/gnome/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/gnome/library/" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Theme/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT/common_j2se/" includes="**/*.properties" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT/common/" includes="**/version.txt" excludes="" />
-+			<fileset dir="${basedir}" includes="about.html,about_files/" excludes="" />
-+		</zip>
-+	</target>
-+
-+	<target name="copy.src" depends="init">
-+		<copy todir="${destination.temp.folder}/" failonerror="true" overwrite="true">
-+			<fileset dir="${plugindir}/Eclipse SWT/cairo/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT/common/library/" />
-+			<fileset dir="${plugindir}/Eclipse SWT/common_j2se/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT/emulated/bidi/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT/emulated/coolbar/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Accessibility/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Accessibility/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT AWT/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT AWT/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT AWT/gtk/library/" />
-+			<fileset dir="${plugindir}/Eclipse SWT Browser/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Mozilla/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Mozilla/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Mozilla/common/library/" />
-+			<fileset dir="${plugindir}/Eclipse SWT Custom Widgets/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Drag and Drop/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Drag and Drop/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT OpenGL/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT OpenGL/glx/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT OpenGL/glx/library/" />
-+			<fileset dir="${plugindir}/Eclipse SWT OpenGL/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/cairo/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/cairo/library/" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/common_j2se/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/common/library/" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT PI/gtk/library/" />
-+			<!--<zipfileset filemode="755" dir="${plugindir}/Eclipse SWT PI/gtk/library/" includes="**/*.sh"/> -->
-+			<fileset dir="${plugindir}/Eclipse SWT Printing/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Printing/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/cde/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/cde/library/" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/gnome/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/gnome/library/" />
-+			<fileset dir="${plugindir}/Eclipse SWT Program/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT Theme/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT/common_j2se/" includes="**/*.properties" excludes="" />
-+			<fileset dir="${plugindir}/Eclipse SWT/common/" includes="**/version.txt" excludes="" />
-+			<fileset dir="${basedir}" includes="about.html,about_files/" excludes="" />
-+		</copy>
-+	</target>
-+
-+	<target name="build.sources" depends="init">
-+		<available property="src.zip" file="${build.result.folder}/src.zip" />
-+		<antcall target="src.zip" />
-+	</target>
-+
-+	<target name="build.zips" depends="init">
-+	</target>
-+
-+	<target name="gather.sources" depends="init" if="destination.temp.folder">
-+		<mkdir dir="${destination.temp.folder}/${full.name}" />
-+		<copy file="${build.result.folder}/src.zip" todir="${destination.temp.folder}/${full.name}/" />
-+		<copy todir="${destination.temp.folder}/${full.name}">
-+			<fileset dir="${basedir}" includes="about.html" />
-+			<fileset dir="${basedir}" includes="about_files/" />
-+		</copy>
-+	</target>
-+
-+	<target name="gather.individual.sources" depends="init">
-+		<antcall target="copy.src" />
-+		<copy todir="${destination.temp.folder}">
-+			<fileset dir="${basedir}" includes="about.html,about_files/" />
-+		</copy>
-+	</target>
-+
-+	<target name="gather.logs" depends="init" if="destination.temp.folder">
-+		<mkdir dir="${destination.temp.folder}/${full.name}" />
-+		<copy file="${temp.folder}/@dot.bin${logExtension}" todir="${destination.temp.folder}/${full.name}/" />
-+	</target>
-+
-+	<target name="publish.bin.parts" depends="init" if="p2.publish.parts">
-+		<antcall target="gather.bin.parts">
-+			<param name="destination.temp.folder" value="${build.result.folder}" />
-+		</antcall>
-+		<eclipse.gatherBundle metadataRepository="${p2.build.repo}" artifactRepository="${p2.build.repo}" buildResultFolder="${build.result.folder}" targetFolder="${build.result.folder}/${full.name}" />
-+	</target>
-+
-+	<target name="gather.bin.parts" depends="init" if="destination.temp.folder">
-+		<mkdir dir="${destination.temp.folder}/${full.name}" />
-+		<copy todir="${destination.temp.folder}/${full.name}" failonerror="true">
-+			<fileset dir="${build.result.folder}/@dot" includes="**" />
-+		</copy>
-+		<copy todir="${destination.temp.folder}/${full.name}">
-+			<fileset dir="${basedir}" includes="fragment.properties,swt*.dll,libswt*.so,libswt*.sl,libswt*.a,libswt*.jnilib,libcairo-swt.so,META-INF/" />
-+			<fileset dir="${basedir}" includes="about.html" />
-+			<fileset dir="${basedir}" includes="about_files/" />
-+		</copy>
-+		<chmod perm="755" dir="${destination.temp.folder}/${full.name}" includes="swt*.dll,libswt*.so,libswt*.sl,libswt*.a,libswt*.jnilib,libcairo-swt.so" />
-+		<eclipse.versionReplacer path="${destination.temp.folder}/${full.name}" version="${version.suffix}" />
-+		<antcall target="apitools.generation">
-+			<param name="target.folder" value="${destination.temp.folder}/${full.name}"/>
-+			<param name="projectLocation" value="${basedir}"/>
-+			<param name="binary.folders" value="${build.result.folder}/@dot"/>
-+			<param name="projectName" value="${full.name}"/>
-+			<param name="extraSourceLocations" value="${basedir}/${plugindir}"/>
-+			<param name="extraManifests" value="${basedir}/${plugindir}/META-INF/MANIFEST.MF"/>
-+		</antcall>
-+	</target>
-+
-+	<target name="swtdownload" depends="init">
-+		<delete dir="${temp.folder}" />
-+		<delete dir="${build.result.folder}/@dot" />
-+		<!-- ensure entry into @dot target -->
-+		<mkdir dir="${temp.folder}/swtdownload/" />
-+		<property name="includetranslationfiles" value="true" />
-+		<antcall target="build.jars">
-+			<param name="debug" value="true" />
-+			<param name="jar.filename" value="swt-debug.jar" />
-+		</antcall>
-+		<jar jarfile="${build.result.folder}/swt-debug.jar" basedir="${basedir}" update="true" includes="swt*.dll,libswt*.so,libswt*.sl,libswt*.a,libswt*.jnilib,libXm.so.2" />
-+		<copy file="${build.result.folder}/swt-debug.jar" todir="${temp.folder}/swtdownload" />
-+		<delete dir="${build.result.folder}/@dot" />
-+		<!-- this is needed to re-enter @dot -->
-+		<antcall target="build.jars">
-+			<param name="debug" value="false" />
-+			<param name="jar.filename" value="swt.jar" />
-+		</antcall>
-+		<jar jarfile="${build.result.folder}/swt.jar" basedir="${basedir}" update="true" includes="swt*.dll,libswt*.so,libswt*.sl,libswt*.a,libswt*.jnilib,libXm.so.2" />
-+		<copy file="${build.result.folder}/swt.jar" todir="${temp.folder}/swtdownload" />
-+		<antcall target="build.sources" />
-+		<copy file="${build.result.folder}/src.zip" todir="${temp.folder}/swtdownload" />
-+		<copy file="${plugindir}/build/.project" todir="${temp.folder}/swtdownload" />
-+		<copy file="${plugindir}/build/.classpath" todir="${temp.folder}/swtdownload" />
-+		<copy todir="${temp.folder}/swtdownload">
-+			<fileset dir="${basedir}" includes="about.html,about_files/" />
-+		</copy>
-+		<zip zipfile="${destination}/swt-${buildid}-${ws}-${os}-${arch}.zip">
-+			<zipfileset dir="${temp.folder}/swtdownload/" />
-+		</zip>
-+		<delete dir="${temp.folder}" />
-+	</target>
-+
-+	<target name="clean" depends="init">
-+		<delete dir="${build.result.folder}/@dot" />
-+		<delete file="${build.result.folder}/src.zip" />
-+		<delete file="${plugin.destination}/${full.name}.jar" />
-+		<delete file="${plugin.destination}/${full.name}.zip" />
-+		<delete dir="${temp.folder}" />
-+	</target>
-+
-+	<target name="refresh" depends="init" if="eclipse.running">
-+		<eclipse.refreshLocal resource="${fragment}" depth="infinite" />
-+	</target>
-+
-+	<target name="zip.plugin" depends="init">
-+		<delete dir="${temp.folder}" />
-+		<mkdir dir="${temp.folder}" />
-+		<antcall target="build.jars" />
-+		<antcall target="build.sources" />
-+		<antcall target="gather.bin.parts">
-+			<param name="destination.temp.folder" value="${temp.folder}/" />
-+		</antcall>
-+		<antcall target="gather.sources">
-+			<param name="destination.temp.folder" value="${temp.folder}/" />
-+		</antcall>
-+		<delete>
-+			<fileset dir="${temp.folder}" includes="**/*.bin${logExtension}" />
-+		</delete>
-+		<zip zipfile="${plugin.destination}/${full.name}.zip" basedir="${temp.folder}" filesonly="true" />
-+		<delete dir="${temp.folder}" />
-+	</target>
-+
-+	<target name="copy.translationfiles" if="includetranslationfiles">
-+		<copy todir="${temp.folder}/@dot.bin" overwrite="true">
-+			<fileset dir="${plugindir}/Eclipse SWT/common_j2se/" includes="**/*._properties" excludes="" />
-+		</copy>
-+		<move todir="${temp.folder}/@dot.bin" overwrite="true">
-+			<fileset dir="${temp.folder}/@dot.bin/" includes="**/*._properties" excludes="" />
-+			<mapper type="glob" from="*._properties" to="*.properties" />
-+		</move>
-+	</target>
-+
-+	<target name="jar.plugin" depends="init">
-+		<delete dir="${temp.folder}" />
-+		<mkdir dir="${temp.folder}" />
-+		<antcall target="build.jars" />
-+		<antcall target="gather.bin.parts">
-+			<param name="destination.temp.folder" value="${temp.folder}/" />
-+		</antcall>
-+		<jar jarfile="${plugin.destination}/${full.name}.jar" basedir="${temp.folder}/${full.name}" filesonly="true" />
-+		<delete dir="${temp.folder}" />
-+	</target>
-+
-+	<target name="apitools.generation" if="generateAPIDescription">
-+		<apitooling.apigeneration
-+			projectName="${projectName}"
-+			project="${projectLocation}"
-+			binary="${binary.folders}"
-+			target="${target.folder}"
-+			extraManifests="${extraManifests}"
-+			extraSourceLocations="${extraSourceLocations}"/>
-+	</target>
++	<import file="../org.eclipse.swt/buildFragment.xml"/>
 +</project>
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86/fragment.properties	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86/fragment.properties	2009-12-23 15:14:12.583575548 -0500
@@ -5293,6 +5074,37 @@ $FreeBSD$
 +###############################################################################
 +fragmentName = Standard Widget Toolkit for GTK 2.0
 +providerName = Eclipse.org
+--- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86_64/.project	1969-12-31 19:00:00.000000000 -0500
++++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86_64/.project	2009-12-23 15:14:12.578555994 -0500
+@@ -0,0 +1,28 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<projectDescription>
++	<name>org.eclipse.swt.gtk.freebsd.x86_64</name>
++	<comment></comment>
++	<projects>
++	</projects>
++	<buildSpec>
++		<buildCommand>
++			<name>org.eclipse.pde.ManifestBuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.pde.SchemaBuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++		<buildCommand>
++			<name>org.eclipse.pde.api.tools.apiAnalysisBuilder</name>
++			<arguments>
++			</arguments>
++		</buildCommand>
++	</buildSpec>
++	<natures>
++		<nature>org.eclipse.pde.PluginNature</nature>
++		<nature>org.eclipse.pde.api.tools.apiAnalysisNature</nature>
++	</natures>
++</projectDescription>
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86_64/META-INF/MANIFEST.MF	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86_64/META-INF/MANIFEST.MF	2009-12-23 15:14:12.584579570 -0500
 @@ -0,0 +1,19 @@
@@ -7115,455 +6927,18 @@ $FreeBSD$
 +custom = true
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86_64/build.xml	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86_64/build.xml	2009-12-23 15:14:12.588595660 -0500
-@@ -0,0 +1,449 @@
+@@ -0,0 +1,12 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +<project name="org.eclipse.swt.gtk.freebsd.x86_64" default="build.jars" basedir=".">
 +
-+	<target name="init" depends="properties">
-+		<property name="compilerArg" value="" />
-+		<property name="ws" value="gtk" />
-+		<property name="os" value="freebsd" />
-+		<property name="arch" value="x86_64" />
-+		<property name="fragment" value="org.eclipse.swt.gtk.freebsd.x86_64" />
-+		<property name="version.suffix" value="3.5.0" />
-+		<property name="full.name" value="${fragment}_${version.suffix}" />
-+		<property name="temp.folder" value="${basedir}/temp.folder" />
-+		<property name="plugin.destination" value="${basedir}" />
-+		<property name="build.result.folder" value="${basedir}" />
-+		<property name="destination" value="${basedir}" />
-+		<property name="plugindir" value="../org.eclipse.swt" />
-+		<property name="temp.folder.64" value="${basedir}/temp.folder/64" />
-+		<property name="toolsplugindir" value="../org.eclipse.swt.tools" />
-+		<property name="javacVerbose" value="false" />
-+		<property name="logExtension" value=".xml" />
-+		<property name="javacSource" value="1.3" />
-+		<property name="javacTarget" value="1.2" />
-+		<path id="path_bootclasspath">
-+			<fileset dir="${java.home}/lib">
-+				<include name="*.jar" />
-+			</fileset>
-+		</path>
-+		<property name="bootclasspath" refid="path_bootclasspath" />
-+		<condition property="bundleBootClasspath" value="${CDC-1.0/Foundation-1.0}">
-+			<isset property="CDC-1.0/Foundation-1.0" />
-+		</condition>
-+		<condition property="bundleBootClasspath" value="${J2SE-1.3}">
-+			<isset property="J2SE-1.3" />
-+		</condition>
-+		<property name="bundleJavacSource" value="${javacSource}" />
-+		<property name="bundleJavacTarget" value="${javacTarget}" />
-+		<property name="bundleBootClasspath" value="${bootclasspath}" />
-+		<condition property="p2.publish.parts" value="true">
-+			<istrue value="${p2.gathering}" />
-+		</condition>
-+	</target>
++	<property name="swt.ws" value="gtk" />
++	<property name="swt.os" value="freebsd" />
++	<property name="swt.arch" value="x86_64" />
 +
-+	<target name="properties" if="eclipse.running">
-+		<property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter" />
-+		<!--compile the jar in org.eclipse.swt.tools-->
-+	</target>
++	<!-- These properties are used by eclipse when exporting as Deployable plugin and fragments -->
++	<property name="version.suffix" value="3.6.1" />
 +
-+	<target name="build.update.jar" depends="init">
-+		<delete dir="${temp.folder}" />
-+		<mkdir dir="${temp.folder}" />
-+		<antcall target="build.jars" />
-+		<antcall target="gather.bin.parts">
-+			<param name="destination.temp.folder" value="${temp.folder}/" />
-+		</antcall>
-+		<zip zipfile="${plugin.destination}/${full.name}.jar" basedir="${temp.folder}/${full.name}" filesonly="false" />
-+		<delete dir="${temp.folder}" />
-+	</target>
-+
-+	<target name="@dot" depends="init" unless="@dot" description="Create jar: @dot.">
-+		<property name="destdir" value="${temp.folder}/@dot.bin" />
-+		<property name="debug" value="true" />
-+		<property name="jar.filename" value="swt.jar" />
-+		<delete dir="${temp.folder}/@dot.bin" />
-+		<mkdir dir="${temp.folder}/@dot.bin" />
-+		<javac destdir="${temp.folder}/@dot.bin" verbose="${javacVerbose}" debug="${debug}" failonerror="no" classpath="${plugindir}/extra_jars/exceptions.jar" bootclasspath="${bundleBootClasspath}" source="${bundleJavacSource}" target="${bundleJavacTarget}">
-+			<src path="${basedir}/src/Eclipse SWT/cairo/" />
-+			<src path="${basedir}/src/Eclipse SWT/common/" />
-+			<src path="${basedir}/src/Eclipse SWT/common_j2se/" />
-+			<src path="${basedir}/src/Eclipse SWT/emulated/bidi/" />
-+			<src path="${basedir}/src/Eclipse SWT/emulated/coolbar/" />
-+			<src path="${basedir}/src/Eclipse SWT/gtk/" />
-+			<src path="${basedir}/src/Eclipse SWT Accessibility/common/" />
-+			<src path="${basedir}/src/Eclipse SWT Accessibility/gtk/" />
-+			<src path="${basedir}/src/Eclipse SWT AWT/common/" />
-+			<src path="${basedir}/src/Eclipse SWT AWT/gtk/" />
-+			<src path="${basedir}/src/Eclipse SWT Browser/common/" />
-+			<src path="${basedir}/src/Eclipse SWT Mozilla/common/" />
-+			<src path="${basedir}/src/Eclipse SWT Mozilla/gtk/" />
-+			<src path="${basedir}/src/Eclipse SWT Custom Widgets/common/" />
-+			<src path="${basedir}/src/Eclipse SWT Drag and Drop/common/" />
-+			<src path="${basedir}/src/Eclipse SWT Drag and Drop/gtk/" />
-+			<src path="${basedir}/src/Eclipse SWT OpenGL/gtk/" />
-+			<src path="${basedir}/src/Eclipse SWT OpenGL/glx/" />
-+			<src path="${basedir}/src/Eclipse SWT OpenGL/common/" />
-+			<src path="${basedir}/src/Eclipse SWT PI/cairo/" />
-+			<src path="${basedir}/src/Eclipse SWT PI/common/" />
-+			<src path="${basedir}/src/Eclipse SWT PI/common_j2se/" />
-+			<src path="${basedir}/src/Eclipse SWT PI/gtk/" />
-+			<src path="${basedir}/src/Eclipse SWT Printing/common/" />
-+			<src path="${basedir}/src/Eclipse SWT Printing/gtk/" />
-+			<src path="${basedir}/src/Eclipse SWT Program/cde/" />
-+			<src path="${basedir}/src/Eclipse SWT Program/common/" />
-+			<src path="${basedir}/src/Eclipse SWT Program/gnome/" />
-+			<src path="${basedir}/src/Eclipse SWT Program/gtk/" />
-+			<src path="${basedir}/src/Eclipse SWT Theme/gtk/" />
-+			<compilerarg line="-log '${temp.folder}'/@dot.bin${logExtension}" compiler="org.eclipse.jdt.core.JDTCompilerAdapter" />
-+			<compilerarg line="${compilerArg}" compiler="org.eclipse.jdt.core.JDTCompilerAdapter" />
-+		</javac>
-+		<property name="includes" value="" />
-+		<property name="excludes" value="**/*.java,**/library/,**/package.htm*,**/*._properties,**/*.idl" />
-+		<copy todir="${temp.folder}/@dot.bin">
-+			<fileset dir="${basedir}/src/Eclipse SWT/cairo/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/common_j2se/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/emulated/bidi/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/emulated/coolbar/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Accessibility/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Accessibility/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT AWT/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT AWT/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Browser/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Mozilla/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Mozilla/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Custom Widgets/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Drag and Drop/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Drag and Drop/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT OpenGL/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT OpenGL/glx/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT OpenGL/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/cairo/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/common_j2se/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Printing/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Printing/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Program/cde/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Program/common/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Program/gnome/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Program/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Theme/gtk/" includes="${includes}" excludes="${excludes}" />
-+			<fileset dir="${plugindir}/components/" includes="${includes}" excludes="${excludes}" />
-+		</copy>
-+		<antcall target="copy.translationfiles" />
-+
-+		<mkdir dir="${build.result.folder}/@dot" />
-+		<copy todir="${build.result.folder}/@dot" failonerror="true">
-+			<fileset dir="${temp.folder}/@dot.bin" />
-+		</copy>
-+		<!-- prepare a jar file solely for the download target -->
-+		<jar jarfile="${build.result.folder}/${jar.filename}" basedir="${temp.folder}/@dot.bin" />
-+		<delete dir="${temp.folder}/@dot.bin" />
-+	</target>
-+
-+	<target name="build.jars" depends="init">
-+		<available property="@dot" file="${build.result.folder}/@dot" />
-+		<available property="source.present" file="${basedir}/src" type="dir" />
-+		<antcall target="copy.source" />
-+		<antcall target="@dot" />
-+	</target>
-+
-+	<target name="copy.source" unless="source.present">
-+		<echo>Copying source from org.eclipse.swt project to folder ${basedir}/src folder ${temp.folder}.</echo>
-+		<delete dir="${basedir}/src" />
-+		<mkdir dir="${basedir}/src" />
-+
-+		<!-- Copy the existing 32 bit SWT source folders to the 64 bit source folder -->
-+		<copy todir="${basedir}/src">
-+			<fileset dir="${plugindir}" includes="Eclipse*/**" />
-+		</copy>
-+		<!-- Convert SWT 32 bit java source to 64 bit  -->
-+		<replace dir="${basedir}/src" includes="**/*.java" token="int /*long*/" value="long /*int*/" />
-+	</target>
-+
-+	<target name="replace.32.to.64" depends="init">
-+		<echo>Converting java files to 64 bit in org.eclipse.swt project</echo>
-+		<!-- Convert SWT 32 bit java source to 64 bit  -->
-+		<replace dir="${plugindir}" includes="**/*.java" token="int /*long*/" value="long /*int*/" />
-+		<antcall target="refresh" />
-+	</target>
-+
-+	<target name="replace.64.to.32" depends="init">
-+		<echo>Converting java files to 32 bit in org.eclipse.swt project</echo>
-+		<!-- Convert SWT 64 bit java source to 32 bit  -->
-+		<replace dir="${plugindir}" includes="**/*.java" token="long /*int*/" value="int /*long*/" />
-+		<antcall target="refresh" />
-+	</target>
-+	
-+	<target name="build.cfiles" depends="init">
-+		<mkdir dir="${build.result.folder}/library"/>
-+		<copy todir="${build.result.folder}/library">
-+			<fileset dir="${plugindir}/Eclipse SWT/common/library"/>
-+			<fileset dir="${plugindir}/Eclipse SWT AWT/gtk/library"/>
-+			<fileset dir="${plugindir}/Eclipse SWT Mozilla/common/library"/>
-+			<fileset dir="${plugindir}/Eclipse SWT OpenGL/glx/library"/>
-+			<fileset dir="${plugindir}/Eclipse SWT PI/cairo/library"/>
-+			<fileset dir="${plugindir}/Eclipse SWT PI/common/library"/>
-+			<fileset dir="${plugindir}/Eclipse SWT PI/gtk/library"/>
-+			<fileset dir="${plugindir}/Eclipse SWT Program/cde/library"/>
-+			<fileset dir="${plugindir}/Eclipse SWT Program/gnome/library"/>
-+		</copy>
-+	</target>
-+
-+	<target name="build.nativeLibraries" depends="build.cfiles">
-+		<exec dir="${build.result.folder}/library" executable="sh">
-+			<env key="OUTPUT_DIR" value="${build.result.folder}"/>
-+			<arg line="${build.result.folder}/library/build.sh"/>
-+			<arg line="install"/>
-+		</exec>
-+	</target>
-+
-+	<target name="src.zip" depends="init" unless="src.zip">
-+		<mkdir dir="${build.result.folder}/" />
-+		<zip zipfile="${build.result.folder}/src.zip">
-+			<fileset dir="${basedir}/src/Eclipse SWT/cairo/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/common/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/common_j2se/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/emulated/bidi/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/emulated/coolbar/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Accessibility/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Accessibility/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT AWT/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT AWT/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT AWT/gtk/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Browser/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Mozilla/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Mozilla/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Mozilla/common/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Custom Widgets/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Drag and Drop/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Drag and Drop/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT OpenGL/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT OpenGL/glx/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT OpenGL/glx/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT OpenGL/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/cairo/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/cairo/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/common_j2se/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/common/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/gtk/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Printing/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Printing/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Program/cde/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Program/cde/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Program/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Program/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Program/gnome/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Program/gnome/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Theme/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/common_j2se/" includes="**/*.properties" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/common/" includes="**/version.txt" excludes="" />
-+			<fileset dir="${basedir}" includes="about.html,about_files/" excludes="" />
-+		</zip>
-+	</target>
-+
-+	<target name="copy.src" depends="init">
-+		<copy todir="${destination.temp.folder}/" failonerror="true" overwrite="true">
-+			<fileset dir="${basedir}/src/Eclipse SWT/cairo/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/common/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/common_j2se/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/emulated/bidi/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/emulated/coolbar/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Accessibility/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Accessibility/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT AWT/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT AWT/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT AWT/gtk/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Browser/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Mozilla/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Mozilla/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Mozilla/common/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Custom Widgets/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Drag and Drop/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Drag and Drop/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT OpenGL/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT OpenGL/glx/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT OpenGL/glx/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT OpenGL/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/cairo/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/cairo/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/common_j2se/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/common/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT PI/gtk/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Printing/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Printing/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Program/cde/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Program/cde/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Program/common/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Program/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Program/gnome/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Program/gnome/library/" />
-+			<fileset dir="${basedir}/src/Eclipse SWT Theme/gtk/" includes="**/*.java" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/common_j2se/" includes="**/*.properties" excludes="" />
-+			<fileset dir="${basedir}/src/Eclipse SWT/common/" includes="**/version.txt" excludes="" />
-+			<fileset dir="${basedir}" includes="about.html,about_files/" excludes="" />
-+		</copy>
-+	</target>
-+
-+	<target name="build.sources">
-+		<available property="src.zip" file="${build.result.folder}/src.zip" />
-+		<antcall target="src.zip" />
-+	</target>
-+
-+	<target name="build.zips" depends="init">
-+	</target>
-+
-+	<target name="gather.sources" depends="init" if="destination.temp.folder">
-+		<mkdir dir="${destination.temp.folder}/${full.name}" />
-+		<copy file="${build.result.folder}/src.zip" todir="${destination.temp.folder}/${full.name}/" />
-+		<copy todir="${destination.temp.folder}/${full.name}">
-+			<fileset dir="${basedir}" includes="about.html" />
-+			<fileset dir="${basedir}" includes="about_files/" />
-+		</copy>
-+	</target>
-+
-+	<target name="gather.individual.sources">
-+		<antcall target="copy.src" />
-+		<copy todir="${destination.temp.folder}">
-+			<fileset dir="${basedir}" includes="about.html,about_files/" />
-+		</copy>
-+	</target>
-+
-+	<target name="gather.logs" depends="init" if="destination.temp.folder">
-+		<mkdir dir="${destination.temp.folder}/${full.name}" />
-+		<copy file="${temp.folder}/@dot.bin${logExtension}" todir="${destination.temp.folder}/${full.name}/" />
-+	</target>
-+
-+	<target name="publish.bin.parts" depends="init" if="p2.publish.parts">
-+		<antcall target="gather.bin.parts">
-+			<param name="destination.temp.folder" value="${build.result.folder}" />
-+		</antcall>
-+		<eclipse.gatherBundle metadataRepository="${p2.build.repo}" artifactRepository="${p2.build.repo}" buildResultFolder="${build.result.folder}" targetFolder="${build.result.folder}/${full.name}" />
-+	</target>
-+
-+	<target name="gather.bin.parts" depends="init" if="destination.temp.folder">
-+		<mkdir dir="${destination.temp.folder}/${full.name}" />
-+		<copy todir="${destination.temp.folder}/${full.name}" failonerror="true">
-+			<fileset dir="${build.result.folder}/@dot" includes="**" />
-+		</copy>
-+		<copy todir="${destination.temp.folder}/${full.name}">
-+			<fileset dir="${basedir}" includes="fragment.properties,swt*.dll,libswt*.so,libswt*.sl,libswt*.a,libswt*.jnilib,libcairo-swt.so,META-INF/" />
-+			<fileset dir="${basedir}" includes="about.html" />
-+			<fileset dir="${basedir}" includes="about_files/" />
-+		</copy>
-+		<chmod perm="755" dir="${destination.temp.folder}/${full.name}" includes="swt*.dll,libswt*.so,libswt*.sl,libswt*.a,libswt*.jnilib,libcairo-swt.so" />
-+		<eclipse.versionReplacer path="${destination.temp.folder}/${full.name}" version="${version.suffix}" />
-+		<antcall target="apitools.generation">
-+			<param name="target.folder" value="${destination.temp.folder}/${full.name}"/>
-+			<param name="projectLocation" value="${basedir}"/>
-+			<param name="binary.folders" value="${build.result.folder}/@dot"/>
-+			<param name="projectName" value="${full.name}"/>
-+			<param name="extraSourceLocations" value="${basedir}/${plugindir}"/>
-+			<param name="extraManifests" value="${basedir}/${plugindir}/META-INF/MANIFEST.MF"/>
-+		</antcall>
-+	</target>
-+
-+	<target name="swtdownload" depends="init">
-+		<delete dir="${temp.folder}" />
-+		<delete dir="${build.result.folder}/@dot" />
-+		<!-- ensure entry into @dot target -->
-+		<mkdir dir="${temp.folder}/swtdownload/" />
-+		<property name="includetranslationfiles" value="true" />
-+		<antcall target="build.jars">
-+			<param name="debug" value="true" />
-+			<param name="jar.filename" value="swt-debug.jar" />
-+		</antcall>
-+		<jar jarfile="${build.result.folder}/swt-debug.jar" basedir="${basedir}" update="true" includes="swt*.dll,libswt*.so,libswt*.sl,libswt*.a,libswt*.jnilib,libXm.so.2" />
-+		<copy file="${build.result.folder}/swt-debug.jar" todir="${temp.folder}/swtdownload" />
-+		<delete dir="${build.result.folder}/@dot" />
-+		<!-- this is needed to re-enter @dot -->
-+		<antcall target="build.jars">
-+			<param name="debug" value="false" />
-+			<param name="jar.filename" value="swt.jar" />
-+		</antcall>
-+		<jar jarfile="${build.result.folder}/swt.jar" basedir="${basedir}" update="true" includes="swt*.dll,libswt*.so,libswt*.sl,libswt*.a,libswt*.jnilib,libXm.so.2" />
-+		<copy file="${build.result.folder}/swt.jar" todir="${temp.folder}/swtdownload" />
-+		<antcall target="build.sources" />
-+		<copy file="${build.result.folder}/src.zip" todir="${temp.folder}/swtdownload" />
-+		<copy file="${plugindir}/build/.project" todir="${temp.folder}/swtdownload" />
-+		<copy file="${plugindir}/build/.classpath" todir="${temp.folder}/swtdownload" />
-+		<copy todir="${temp.folder}/swtdownload">
-+			<fileset dir="${basedir}" includes="about.html,about_files/" />
-+		</copy>
-+		<zip zipfile="${destination}/swt-${buildid}-${ws}-${os}-${arch}.zip">
-+			<zipfileset dir="${temp.folder}/swtdownload/" />
-+		</zip>
-+		<delete dir="${temp.folder}" />
-+	</target>
-+
-+	<target name="clean" depends="init">
-+		<delete dir="${build.result.folder}/@dot" />
-+		<delete file="${build.result.folder}/src.zip" />
-+		<delete file="${plugin.destination}/${full.name}.jar" />
-+		<delete file="${plugin.destination}/${full.name}.zip" />
-+		<delete dir="${temp.folder}" />
-+	</target>
-+
-+	<target name="refresh" depends="init" if="eclipse.running">
-+		<eclipse.refreshLocal resource="${plugindir}" depth="infinite" />
-+		<eclipse.refreshLocal resource="${fragment}" depth="infinite" />
-+	</target>
-+
-+	<target name="zip.plugin" depends="init">
-+		<delete dir="${temp.folder}" />
-+		<mkdir dir="${temp.folder}" />
-+		<antcall target="build.jars" />
-+		<antcall target="build.sources" />
-+		<antcall target="gather.bin.parts">
-+			<param name="destination.temp.folder" value="${temp.folder}/" />
-+		</antcall>
-+		<antcall target="gather.sources">
-+			<param name="destination.temp.folder" value="${temp.folder}/" />
-+		</antcall>
-+		<delete>
-+			<fileset dir="${temp.folder}" includes="**/*.bin${logExtension}" />
-+		</delete>
-+		<zip zipfile="${plugin.destination}/${full.name}.zip" basedir="${temp.folder}" filesonly="true" />
-+		<delete dir="${temp.folder}" />
-+	</target>
-+
-+	<target name="copy.translationfiles" if="includetranslationfiles">
-+		<copy todir="${temp.folder}/@dot.bin" overwrite="true">
-+			<fileset dir="${plugindir}/Eclipse SWT/common_j2se/" includes="**/*._properties" excludes="" />
-+		</copy>
-+		<move todir="${temp.folder}/@dot.bin" overwrite="true">
-+			<fileset dir="${temp.folder}/@dot.bin/" includes="**/*._properties" excludes="" />
-+			<mapper type="glob" from="*._properties" to="*.properties" />
-+		</move>
-+	</target>
-+
-+	<target name="jar.plugin" depends="init">
-+		<delete dir="${temp.folder}" />
-+		<mkdir dir="${temp.folder}" />
-+		<antcall target="build.jars" />
-+		<antcall target="gather.bin.parts">
-+			<param name="destination.temp.folder" value="${temp.folder}/" />
-+		</antcall>
-+		<jar jarfile="${plugin.destination}/${full.name}.jar" basedir="${temp.folder}/${full.name}" filesonly="true" />
-+		<delete dir="${temp.folder}" />
-+	</target>
-+
-+	<target name="apitools.generation" if="generateAPIDescription">
-+		<apitooling.apigeneration
-+			projectName="${projectName}"
-+			project="${projectLocation}"
-+			binary="${binary.folders}"
-+			target="${target.folder}"
-+			extraManifests="${extraManifests}"
-+			extraSourceLocations="${extraSourceLocations}"/>
-+	</target>
++	<import file="../org.eclipse.swt/buildFragment.xml"/>
 +</project>
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86_64/fragment.properties	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt.gtk.freebsd.x86_64/fragment.properties	2009-12-23 15:14:12.588595660 -0500
@@ -7580,17 +6955,6 @@ $FreeBSD$
 +###############################################################################
 +fragmentName = Standard Widget Toolkit for GTK 2.0
 +providerName = Eclipse.org
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.team.cvs.ssh/src/org/eclipse/team/internal/ccvs/ssh/KnownHosts.java	2006-05-10 13:49:07.000000000 -0400
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.team.cvs.ssh/src/org/eclipse/team/internal/ccvs/ssh/KnownHosts.java	2009-12-23 15:14:12.596627282 -0500
-@@ -38,7 +38,7 @@
- 	}
- 	
- 	static String defaultFilename() {
--		if (!Platform.getOS().equals(Platform.OS_LINUX)) return internalFilename();
-+		if (!Platform.getOS().equals(Platform.OS_LINUX) && !Platform.getOS().equals(Platform.OS_FREEBSD)) return internalFilename();
- 		String HOME = System.getProperty("user.home"); //$NON-NLS-1$
- 		if (HOME==null) return internalFilename();
- 		return HOME+"/.ssh/known_hosts"; //$NON-NLS-1$
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.ui.intro.universal/plugin.xml	2009-05-26 16:09:14.000000000 -0400
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.ui.intro.universal/plugin.xml	2009-12-23 15:14:12.604659183 -0500
 @@ -45,7 +45,7 @@
@@ -8068,3 +7432,91 @@ $FreeBSD$
 +
 +#endif
 +#endif
+--- build/eclipse-3.6.1-src/plugins/org.eclipse.equinox.p2.metadata/src/org/eclipse/equinox/internal/p2/metadata/expression/CompoundIterator.java~	Fri Feb 19 13:12:49 2010
++++ build/eclipse-3.6.1-src/plugins/org.eclipse.equinox.p2.metadata/src/org/eclipse/equinox/internal/p2/metadata/expression/CompoundIterator.java	Wed Oct 20 15:55:11 2010
+@@ -25,7 +25,7 @@
+ 	private final Iterator<? extends Object> iteratorIterator;
+ 	private Iterator<T> currentIterator;
+ 
+-	private T nextObject = noElement();
++	private Object nextObject = NO_ELEMENT;
+ 
+ 	/**
+ 	 * Creates a compound iterator that will iterated over the elements
+@@ -47,8 +47,9 @@
+ 		if (!positionNext())
+ 			throw new NoSuchElementException();
+ 
+-		T nxt = nextObject;
+-		nextObject = noElement();
++		@SuppressWarnings("unchecked")
++		T nxt = (T) nextObject;
++		nextObject = NO_ELEMENT;
+ 		return nxt;
+ 	}
+ 
+@@ -76,9 +77,4 @@
+ 		nextObject = currentIterator.next();
+ 		return true;
+ 	}
+-
+-	@SuppressWarnings("unchecked")
+-	private static <T> T noElement() {
+-		return (T) NO_ELEMENT;
+-	}
+-}
+\ No newline at end of file
++}
+--- build/eclipse-3.6.1-src/plugins/org.eclipse.equinox.p2.metadata/src/org/eclipse/equinox/internal/p2/metadata/expression/MatchIteratorFilter.java.orig	Fri Feb 19 13:12:48 2010
++++ build/eclipse-3.6.1-src/plugins/org.eclipse.equinox.p2.metadata/src/org/eclipse/equinox/internal/p2/metadata/expression/MatchIteratorFilter.java	Wed Oct 20 15:58:15 2010
+@@ -21,7 +21,7 @@
+ 
+ 	private final Iterator<? extends T> innerIterator;
+ 
+-	private T nextObject = noElement();
++	private Object nextObject = NO_ELEMENT;
+ 
+ 	public MatchIteratorFilter(Iterator<? extends T> iterator) {
+ 		this.innerIterator = iterator;
+@@ -35,8 +35,9 @@
+ 		if (!positionNext())
+ 			throw new NoSuchElementException();
+ 
+-		T nxt = nextObject;
+-		nextObject = noElement();
++		@SuppressWarnings("unchecked")
++		T nxt = (T) nextObject;
++		nextObject = NO_ELEMENT;
+ 		return nxt;
+ 	}
+ 
+@@ -63,9 +64,4 @@
+ 		}
+ 		return false;
+ 	}
+-
+-	@SuppressWarnings("unchecked")
+-	private static <T> T noElement() {
+-		return (T) NO_ELEMENT;
+-	}
+-}
+\ No newline at end of file
++}
+--- build/eclipse-3.6.1-src/pluginVersions.properties~	Fri Oct  1 17:18:03 2010
++++ build/eclipse-3.6.1-src/pluginVersions.properties	Wed Oct 20 20:19:42 2010
+@@ -33,6 +33,7 @@
+ org.eclipse.equinox.launcher.motif.hpux.ia64_32,0.0.0=R36x_v20100810
+ org.eclipse.equinox.http,0.0.0=v20100503
+ org.eclipse.swt.gtk.linux.x86_64,0.0.0=v3655c
++org.eclipse.swt.gtk.freebsd.x86_64,0.0.0=v3655c
+ org.eclipse.swt.photon.qnx.x86,0.0.0=v3655c
+ org.eclipse.equinox.p2.ui.admin,0.0.0=v20100503
+ org.eclipse.equinox.weaving.caching.j9,0.0.0=v20100503
+@@ -244,6 +245,7 @@
+ org.eclipse.swt.examples,0.0.0=v3655c
+ org.eclipse.cvs,0.0.0=v20100414
+ org.eclipse.swt.gtk.linux.x86,0.0.0=v3655c
++org.eclipse.swt.gtk.freebsd.x86,0.0.0=v3655c
+ org.eclipse.equinox.log,0.0.0=v20100503
+ org.eclipse.equinox.jmx.client,0.0.0=v20100503
+ org.eclipse.ui.win32,0.0.0=I20100509-0800
