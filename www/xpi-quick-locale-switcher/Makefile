@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quick-locale-switcher
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 DISTVERSIONSUFFIX=	-fx+mz+sm+tb+sb
 CATEGORIES=	www
 
