@@ -36,7 +36,6 @@
 %%WWWDIR%%/graphics/asterisk.png
 %%WWWDIR%%/graphics/asteriskExt.png
 %%WWWDIR%%/graphics/back.gif
-%%WWWDIR%%/graphics/banner.jpg
 %%WWWDIR%%/graphics/bigPeople.png
 %%WWWDIR%%/graphics/bigTools.png
 %%WWWDIR%%/graphics/catalog.png
@@ -62,6 +61,10 @@
 %%WWWDIR%%/graphics/find.png
 %%WWWDIR%%/graphics/folder.png
 %%WWWDIR%%/graphics/forward.gif
+%%WWWDIR%%/graphics/go-previous.png
+%%WWWDIR%%/graphics/go-next.png
+%%WWWDIR%%/graphics/go-first.png
+%%WWWDIR%%/graphics/go-last.png
 %%WWWDIR%%/graphics/gear.png
 %%WWWDIR%%/graphics/go.png
 %%WWWDIR%%/graphics/group.png
@@ -89,7 +92,6 @@
 %%WWWDIR%%/graphics/mailBig.png
 %%WWWDIR%%/graphics/minus.png
 %%WWWDIR%%/graphics/modules.png
-%%WWWDIR%%/graphics/moduleSettings.png
 %%WWWDIR%%/graphics/n.png
 %%WWWDIR%%/graphics/netgroup.png
 %%WWWDIR%%/graphics/network-wired.png
@@ -263,6 +265,7 @@
 %%WWWDIR%%/locale/zh_TW/LC_MESSAGES/messages.po
 %%WWWDIR%%/sess/.htaccess
 %%WWWDIR%%/style/.htaccess
+%%WWWDIR%%/style/jquery-ui-1.8.2.custom.css
 %%WWWDIR%%/style/type_asteriskExt.css
 %%WWWDIR%%/style/type_dhcp.css
 %%WWWDIR%%/style/layout.css
@@ -272,17 +275,6 @@
 %%WWWDIR%%/style/type_netgroup.css
 %%WWWDIR%%/style/type_smbDomain.css
 %%WWWDIR%%/style/type_user.css
-%%WWWDIR%%/style/jquery.ui.autocomplete.css
-%%WWWDIR%%/style/jquery.ui.datepicker.css
-%%WWWDIR%%/style/jquery.ui.accordion.css
-%%WWWDIR%%/style/jquery.ui.dialog.css
-%%WWWDIR%%/style/jquery.ui.base.css
-%%WWWDIR%%/style/jquery-ui-1.8.2.custom.css
-%%WWWDIR%%/style/jquery.ui.slider.css
-%%WWWDIR%%/style/jquery.ui.button.css
-%%WWWDIR%%/style/jquery.ui.selectable.css
-%%WWWDIR%%/style/jquery.ui.theme.css
-%%WWWDIR%%/style/jquery.ui.resizable.css
 %%WWWDIR%%/style/images/ui-icons_888888_256x240.png
 %%WWWDIR%%/style/images/ui-bg_glass_55_fbf9ee_1x400.png
 %%WWWDIR%%/style/images/ui-bg_flat_75_ffffff_40x100.png
@@ -297,12 +289,11 @@
 %%WWWDIR%%/style/images/ui-bg_highlight-soft_75_cccccc_1x100.png
 %%WWWDIR%%/style/images/ui-bg_glass_65_ffffff_1x400.png
 %%WWWDIR%%/style/images/ui-bg_glass_95_fef1ec_1x400.png
-%%WWWDIR%%/style/jquery.ui.all.css
-%%WWWDIR%%/style/jquery.ui.progressbar.css
-%%WWWDIR%%/style/jquery.ui.core.css
-%%WWWDIR%%/style/jquery.ui.tabs.css
+%%WWWDIR%%/style/lam-images/headerLine.png
+%%WWWDIR%%/templates/main_footer.php
 %%WWWDIR%%/templates/lib/jquery-1.4.2.min.js
 %%WWWDIR%%/templates/lib/jquery-ui-1.8.2.custom.min.js
+%%WWWDIR%%/templates/lib/lam.js
 %%WWWDIR%%/templates/.htaccess
 %%WWWDIR%%/templates/account/edit.php
 %%WWWDIR%%/templates/config/conflogin.php
@@ -318,8 +309,6 @@
 %%WWWDIR%%/templates/delete.php
 %%WWWDIR%%/templates/help.php
 %%WWWDIR%%/templates/initsuff.php
-%%WWWDIR%%/templates/lib/config.js
-%%WWWDIR%%/templates/lib/list.js
 %%WWWDIR%%/templates/lib/wz_tooltip.js
 %%WWWDIR%%/templates/lists/deletelink.php
 %%WWWDIR%%/templates/lists/list.php
@@ -387,6 +376,7 @@
 @dirrm %%WWWDIR%%/templates/account
 @dirrm %%WWWDIR%%/templates
 @dirrm %%WWWDIR%%/style/images
+@dirrm %%WWWDIR%%/style/lam-images
 @dirrm %%WWWDIR%%/style
 @dirrm %%WWWDIR%%/sess
 @dirrm %%WWWDIR%%/locale/zh_TW/LC_MESSAGES
