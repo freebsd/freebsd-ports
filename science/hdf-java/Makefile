@@ -29,9 +29,18 @@ CONFIGURE_ARGS=	--with-jdk=${JAVA_HOME}/include,${JAVA_HOME}/jre/lib/ \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+OPTIONS=	SZIP "SZIP support (must match with science/hdf5-18)" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_SZIP)
+CONFIGURE_ARGS+=	--with-libsz=${LOCALBASE}/lib
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|"/libhdf.$$LLEXT"|"${LOCALBASE}/lib"|' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|$$z_lib"/libz."$$LLEXT|"/lib/libz.so.*"|' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|$$sz_lib"/libsz."$$LLEXT|"${LOCALBASE}/lib/libsz.so.*"|' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|LLEXT="a"|LLEXT="so"|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|COPT="-shared"|COPT="-fPIC"|g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|$$(JH45INSTALLDIR)/lib|${JAVAJARDIR}|' ${WRKSRC}/Makefile.in
