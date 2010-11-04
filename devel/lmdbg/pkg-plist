@@ -14,8 +14,3 @@ lib/liblmdbg.a
 lib/liblmdbg.so
 lib/liblmdbg.so.0
 lib/liblmdbg.so.0.0
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
