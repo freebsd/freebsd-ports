@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	texmacs
-PORTVERSION=	1.0.7.3
-PORTREVISION=	2
+PORTVERSION=	1.0.7.6
 CATEGORIES=	editors print
 MASTER_SITES=	ftp://ftp.texmacs.org/pub/TeXmacs/%SUBDIR%/ \
 		http://www.predatorlabs.net/dl/
@@ -26,7 +25,6 @@ MAKE_JOBS_SAFE=	yes
 
 USE_PYTHON=	yes
 USE_ICONV=	yes
-REINPLACE_ARGS=	-i ""
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
