@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP_Download
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	www devel pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,9 +15,8 @@ COMMENT=	PEAR class to send HTTP downloads
 BUILD_DEPENDS=	${PEARDIR}/HTTP/Header.php:${PORTSDIR}/www/pear-HTTP_Header
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CATEGORY=	HTTP
-FILES=		Download.php Download/PgLOB.php Download/Archive.php
-TESTS=		send.php testcase.php data.txt
+FILES=		HTTP/Download.php HTTP/Download/PgLOB.php HTTP/Download/Archive.php
+TESTS=		send.php data.txt AllTests.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
