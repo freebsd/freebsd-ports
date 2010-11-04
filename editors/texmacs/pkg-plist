@@ -3,6 +3,7 @@ bin/texmacs
 include/TeXmacs.h
 libexec/TeXmacs/bin/bbox_add.pl
 libexec/TeXmacs/bin/maxima_detect
+libexec/TeXmacs/bin/maxima_detect.bak
 libexec/TeXmacs/bin/maxima_filter
 libexec/TeXmacs/bin/perl-tm_asy
 libexec/TeXmacs/bin/r_install
@@ -10,10 +11,12 @@ libexec/TeXmacs/bin/realpath
 libexec/TeXmacs/bin/realpath.py
 libexec/TeXmacs/bin/texmacs.bin
 libexec/TeXmacs/bin/tm_asy
+libexec/TeXmacs/bin/tm_asy.bak
 libexec/TeXmacs/bin/tm_asy2
 libexec/TeXmacs/bin/tm_axiom
 libexec/TeXmacs/bin/tm_dratex
 libexec/TeXmacs/bin/tm_eukleides
+libexec/TeXmacs/bin/tm_eukleides.bak
 libexec/TeXmacs/bin/tm_feynmf
 libexec/TeXmacs/bin/tm_gnuplot
 libexec/TeXmacs/bin/tm_graphviz
@@ -26,13 +29,17 @@ libexec/TeXmacs/bin/tm_mathematica
 libexec/TeXmacs/bin/tm_matlab
 libexec/TeXmacs/bin/tm_maxima
 libexec/TeXmacs/bin/tm_mupad
+libexec/TeXmacs/bin/tm_mupad.bak
 libexec/TeXmacs/bin/tm_mupad_help
+libexec/TeXmacs/bin/tm_mupad_help.bak
 libexec/TeXmacs/bin/tm_octave
 libexec/TeXmacs/bin/tm_python
 libexec/TeXmacs/bin/tm_r
 libexec/TeXmacs/bin/tm_reduce
 libexec/TeXmacs/bin/tm_sage
+libexec/TeXmacs/bin/tm_shell
 libexec/TeXmacs/bin/tm_texgraph
+libexec/TeXmacs/bin/tm_texgraph.bak
 libexec/TeXmacs/bin/tm_xypic
 share/TeXmacs/LICENSE
 share/TeXmacs/doc/about/about-summary.de.tm
@@ -432,6 +439,8 @@ share/TeXmacs/doc/devel/plugin/plugin.it.tm
 share/TeXmacs/doc/devel/plugin/plugins.de.tm
 share/TeXmacs/doc/devel/plugin/plugins.en.tm
 share/TeXmacs/doc/devel/plugin/plugins.it.tm
+share/TeXmacs/doc/devel/scheme/bibliography/bibliography.en.tm
+share/TeXmacs/doc/devel/scheme/bibliography/bibliography.fr.tm
 share/TeXmacs/doc/devel/scheme/edit/edit-fundamental.en.tm
 share/TeXmacs/doc/devel/scheme/edit/edit-model.en.tm
 share/TeXmacs/doc/devel/scheme/edit/edit-modify.en.tm
@@ -686,6 +695,7 @@ share/TeXmacs/doc/main/editing/man-undo-and-redo.fr.tm
 share/TeXmacs/doc/main/editing/man-undo-and-redo.it.tm
 share/TeXmacs/doc/main/editing/man-undo-and-redo.pl.tm
 share/TeXmacs/doc/main/editing/man-undo-and-redo.pt.tm
+share/TeXmacs/doc/main/editing/man-versioning.en.tm
 share/TeXmacs/doc/main/faq/faq.en.tm
 share/TeXmacs/doc/main/interface/cas/man-giac.de.tm
 share/TeXmacs/doc/main/interface/cas/man-giac.en.tm
@@ -901,6 +911,10 @@ share/TeXmacs/doc/main/math/man-math.fr.tm
 share/TeXmacs/doc/main/math/man-math.it.tm
 share/TeXmacs/doc/main/math/man-math.pl.tm
 share/TeXmacs/doc/main/math/man-math.pt.tm
+share/TeXmacs/doc/main/presentation/man-animations.en.tm
+share/TeXmacs/doc/main/presentation/man-presentation-styles.en.tm
+share/TeXmacs/doc/main/presentation/man-presentation-traversal.en.tm
+share/TeXmacs/doc/main/presentation/man-presentation.en.tm
 share/TeXmacs/doc/main/scheme/man-files.de.tm
 share/TeXmacs/doc/main/scheme/man-files.en.tm
 share/TeXmacs/doc/main/scheme/man-files.es.tm
@@ -1879,12 +1893,8 @@ share/TeXmacs/packages/environment/env-math.ts
 share/TeXmacs/packages/environment/env-theorem.ts
 share/TeXmacs/packages/environment/env.ts
 share/TeXmacs/packages/example/allouche.ts
-share/TeXmacs/packages/example/alt-colors.ts
 share/TeXmacs/packages/example/bpr.ts
 share/TeXmacs/packages/example/doxygen.ts
-share/TeXmacs/packages/example/framed-envs.ts
-share/TeXmacs/packages/example/presentation.ts
-share/TeXmacs/packages/example/slides.ts
 share/TeXmacs/packages/example/vdh.ts
 share/TeXmacs/packages/gui/gui-brushed.ts
 share/TeXmacs/packages/gui/gui-form.ts
@@ -1903,6 +1913,13 @@ share/TeXmacs/packages/header/title-base.ts
 share/TeXmacs/packages/header/title-book.ts
 share/TeXmacs/packages/header/title-generic.ts
 share/TeXmacs/packages/header/title-seminar.ts
+share/TeXmacs/packages/presentation/alt-colors.ts
+share/TeXmacs/packages/presentation/framed-envs.ts
+share/TeXmacs/packages/presentation/metal.ts
+share/TeXmacs/packages/presentation/ornaments.ts
+share/TeXmacs/packages/presentation/presentation.ts
+share/TeXmacs/packages/presentation/ridged-paper.ts
+share/TeXmacs/packages/presentation/slides.ts
 share/TeXmacs/packages/program/program.ts
 share/TeXmacs/packages/program/scripts.ts
 share/TeXmacs/packages/program/session.ts
@@ -2012,6 +2029,7 @@ share/TeXmacs/plugins/mycas/progs/init-mycas.scm
 share/TeXmacs/plugins/mycas/readme.tm
 share/TeXmacs/plugins/octave/doc/COPYING
 share/TeXmacs/plugins/octave/doc/README
+share/TeXmacs/plugins/octave/doc/README.bak
 share/TeXmacs/plugins/octave/doc/TM_Octave_Doc.tm
 share/TeXmacs/plugins/octave/octave/.octaverc
 share/TeXmacs/plugins/octave/octave/plot/__errplot__.m
@@ -2082,6 +2100,18 @@ share/TeXmacs/plugins/texgraph/progs/texgraph-scripts-menu.scm
 share/TeXmacs/plugins/texgraph/texgraph_macros_texmacs.mac
 share/TeXmacs/plugins/xypic/progs/init-xypic.scm
 share/TeXmacs/plugins/yacas/progs/init-yacas.scm
+share/TeXmacs/progs/bibtex/abbrv.scm
+share/TeXmacs/progs/bibtex/acm.scm
+share/TeXmacs/progs/bibtex/alpha.scm
+share/TeXmacs/progs/bibtex/bib-utils.scm
+share/TeXmacs/progs/bibtex/elsart-num.scm
+share/TeXmacs/progs/bibtex/ieeetr.scm
+share/TeXmacs/progs/bibtex/plain.scm
+share/TeXmacs/progs/bibtex/siam.scm
+share/TeXmacs/progs/convert/bibtex/bibtexout.scm
+share/TeXmacs/progs/convert/bibtex/bibtextm.scm
+share/TeXmacs/progs/convert/bibtex/init-bibtex.scm
+share/TeXmacs/progs/convert/bibtex/tmbibtex.scm
 share/TeXmacs/progs/convert/html/htmlout.scm
 share/TeXmacs/progs/convert/html/htmltest.scm
 share/TeXmacs/progs/convert/html/htmltm-test.scm
@@ -2199,6 +2229,7 @@ share/TeXmacs/progs/kernel/library/iterator.scm
 share/TeXmacs/progs/kernel/library/list.scm
 share/TeXmacs/progs/kernel/library/tree.scm
 share/TeXmacs/progs/kernel/regexp/grammar.scm
+share/TeXmacs/progs/kernel/regexp/packrat.scm
 share/TeXmacs/progs/kernel/regexp/regexp-match.scm
 share/TeXmacs/progs/kernel/regexp/regexp-select.scm
 share/TeXmacs/progs/kernel/regexp/regexp-test.scm
@@ -2244,9 +2275,11 @@ share/TeXmacs/progs/table/table-menu.scm
 share/TeXmacs/progs/texmacs/keyboard/config-kbd.scm
 share/TeXmacs/progs/texmacs/keyboard/emacs-kbd.scm
 share/TeXmacs/progs/texmacs/keyboard/latex-kbd.scm
+share/TeXmacs/progs/texmacs/keyboard/macos-kbd.scm
 share/TeXmacs/progs/texmacs/keyboard/texmacs-kbd.scm
 share/TeXmacs/progs/texmacs/keyboard/wildcards-kbd.scm
 share/TeXmacs/progs/texmacs/keyboard/windows-kbd.scm
+share/TeXmacs/progs/texmacs/menus/debug-menu.scm
 share/TeXmacs/progs/texmacs/menus/edit-menu.scm
 share/TeXmacs/progs/texmacs/menus/file-menu.scm
 share/TeXmacs/progs/texmacs/menus/main-menu.scm
@@ -2288,7 +2321,13 @@ share/TeXmacs/progs/utils/misc/tm-keywords.scm
 share/TeXmacs/progs/utils/plugins/plugin-cmd.scm
 share/TeXmacs/progs/utils/plugins/plugin-convert.scm
 share/TeXmacs/progs/utils/plugins/plugin-eval.scm
+share/TeXmacs/progs/version/version-compare.scm
+share/TeXmacs/progs/version/version-drd.scm
+share/TeXmacs/progs/version/version-edit.scm
+share/TeXmacs/progs/version/version-kbd.scm
+share/TeXmacs/progs/version/version-menu.scm
 share/TeXmacs/styles/article.ts
+share/TeXmacs/styles/bibliography/bibliography.ts
 share/TeXmacs/styles/book.ts
 share/TeXmacs/styles/documentation/browser.ts
 share/TeXmacs/styles/documentation/help.ts
@@ -2299,6 +2338,7 @@ share/TeXmacs/styles/documentation/tmmanual.ts
 share/TeXmacs/styles/documentation/tmweb.ts
 share/TeXmacs/styles/elsevier/elsart.ts
 share/TeXmacs/styles/elsevier/ifac.ts
+share/TeXmacs/styles/elsevier/jsc.ts
 share/TeXmacs/styles/exam.ts
 share/TeXmacs/styles/generic.ts
 share/TeXmacs/styles/letter.ts
@@ -2306,7 +2346,7 @@ share/TeXmacs/styles/lycee/lycee-examen.ts
 share/TeXmacs/styles/lycee/lycee-tp.ts
 share/TeXmacs/styles/mathematics/acmconf.ts
 share/TeXmacs/styles/mathematics/amsart.ts
-share/TeXmacs/styles/obsolete/jsc.ts
+share/TeXmacs/styles/obsolete/old-jsc.ts
 share/TeXmacs/styles/obsolete/project.ts
 share/TeXmacs/styles/seminar.ts
 share/TeXmacs/styles/source.ts
@@ -2327,7 +2367,9 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/styles/lycee
 @dirrm share/TeXmacs/styles/elsevier
 @dirrm share/TeXmacs/styles/documentation
+@dirrm share/TeXmacs/styles/bibliography
 @dirrm share/TeXmacs/styles
+@dirrm share/TeXmacs/progs/version
 @dirrm share/TeXmacs/progs/utils/plugins
 @dirrm share/TeXmacs/progs/utils/misc
 @dirrm share/TeXmacs/progs/utils/library
@@ -2366,7 +2408,9 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/progs/convert/latex
 @dirrm share/TeXmacs/progs/convert/images
 @dirrm share/TeXmacs/progs/convert/html
+@dirrm share/TeXmacs/progs/convert/bibtex
 @dirrm share/TeXmacs/progs/convert
+@dirrm share/TeXmacs/progs/bibtex
 @dirrm share/TeXmacs/progs
 @dirrm share/TeXmacs/plugins/yacas/progs
 @dirrm share/TeXmacs/plugins/yacas
@@ -2487,6 +2531,7 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/packages/standard
 @dirrm share/TeXmacs/packages/section
 @dirrm share/TeXmacs/packages/program
+@dirrm share/TeXmacs/packages/presentation
 @dirrm share/TeXmacs/packages/header
 @dirrm share/TeXmacs/packages/gui
 @dirrm share/TeXmacs/packages/example
@@ -2546,8 +2591,6 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/examples/plugins/nested/progs
 @dirrm share/TeXmacs/examples/plugins/nested/bin
 @dirrm share/TeXmacs/examples/plugins/nested
-@dirrm share/TeXmacs/examples/plugins/mutator/bin
-@dirrm share/TeXmacs/examples/plugins/mutator
 @dirrm share/TeXmacs/examples/plugins/multiline/src
 @dirrm share/TeXmacs/examples/plugins/multiline/progs
 @dirrm share/TeXmacs/examples/plugins/multiline/bin
@@ -2602,6 +2645,7 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/doc/main/styles
 @dirrm share/TeXmacs/doc/main/start
 @dirrm share/TeXmacs/doc/main/scheme
+@dirrm share/TeXmacs/doc/main/presentation
 @dirrm share/TeXmacs/doc/main/math/keyboard
 @dirrm share/TeXmacs/doc/main/math
 @dirrm share/TeXmacs/doc/main/links
@@ -2628,6 +2672,7 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/doc/devel/scheme/overview
 @dirrm share/TeXmacs/doc/devel/scheme/graphics
 @dirrm share/TeXmacs/doc/devel/scheme/edit
+@dirrm share/TeXmacs/doc/devel/scheme/bibliography
 @dirrm share/TeXmacs/doc/devel/scheme
 @dirrm share/TeXmacs/doc/devel/plugin
 @dirrm share/TeXmacs/doc/devel/interface
@@ -2663,7 +2708,6 @@ share/TeXmacs/texts/test/overview.tm
 @exec mkdir -p %D/share/TeXmacs/examples/plugins/prompt/bin
 @exec mkdir -p %D/share/TeXmacs/examples/plugins/pnambic/bin
 @exec mkdir -p %D/share/TeXmacs/examples/plugins/nested/bin
-@exec mkdir -p %D/share/TeXmacs/examples/plugins/mutator/bin
 @exec mkdir -p %D/share/TeXmacs/examples/plugins/multiline/bin
 @exec mkdir -p %D/share/TeXmacs/examples/plugins/minimal/bin
 @exec mkdir -p %D/share/TeXmacs/examples/plugins/menus/bin
