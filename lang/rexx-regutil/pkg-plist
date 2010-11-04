@@ -1,0 +1,3 @@
+lib/librexxutil.so
+%%PORTDOCS%%%%DOCSDIR%%/regutil.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

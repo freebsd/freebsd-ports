@@ -294,6 +294,7 @@
     SUBDIR += ratfor
     SUBDIR += rexx-imc
     SUBDIR += rexx-regina
+    SUBDIR += rexx-regutil
     SUBDIR += rexx-wrapper
     SUBDIR += rhino
     SUBDIR += rscheme
