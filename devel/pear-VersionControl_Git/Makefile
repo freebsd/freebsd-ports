@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	VersionControl_Git
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	devel pear
 
 MAINTAINER=	miwi@FreeBSD.org
