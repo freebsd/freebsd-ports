@@ -3,9 +3,6 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/__init__.py
 %%PYTHON_SITELIBDIR%%/miro/__init__.pyc
 %%PYTHON_SITELIBDIR%%/miro/__init__.pyo
-%%PYTHON_SITELIBDIR%%/miro/adscraper.py
-%%PYTHON_SITELIBDIR%%/miro/adscraper.pyc
-%%PYTHON_SITELIBDIR%%/miro/adscraper.pyo
 %%PYTHON_SITELIBDIR%%/miro/app.py
 %%PYTHON_SITELIBDIR%%/miro/app.pyc
 %%PYTHON_SITELIBDIR%%/miro/app.pyo
@@ -36,6 +33,9 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/convert20database.py
 %%PYTHON_SITELIBDIR%%/miro/convert20database.pyc
 %%PYTHON_SITELIBDIR%%/miro/convert20database.pyo
+%%PYTHON_SITELIBDIR%%/miro/crashreport.py
+%%PYTHON_SITELIBDIR%%/miro/crashreport.pyc
+%%PYTHON_SITELIBDIR%%/miro/crashreport.pyo
 %%PYTHON_SITELIBDIR%%/miro/database.py
 %%PYTHON_SITELIBDIR%%/miro/database.pyc
 %%PYTHON_SITELIBDIR%%/miro/database.pyo
@@ -57,6 +57,9 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/dbupgradeprogress.py
 %%PYTHON_SITELIBDIR%%/miro/dbupgradeprogress.pyc
 %%PYTHON_SITELIBDIR%%/miro/dbupgradeprogress.pyo
+%%PYTHON_SITELIBDIR%%/miro/debugutil.py
+%%PYTHON_SITELIBDIR%%/miro/debugutil.pyc
+%%PYTHON_SITELIBDIR%%/miro/debugutil.pyo
 %%PYTHON_SITELIBDIR%%/miro/dialogs.py
 %%PYTHON_SITELIBDIR%%/miro/dialogs.pyc
 %%PYTHON_SITELIBDIR%%/miro/dialogs.pyo
@@ -262,6 +265,7 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/gtk/weakconnect.py
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/gtk/weakconnect.pyc
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/gtk/weakconnect.pyo
+%%PYTHON_SITELIBDIR%%/miro/frontends/widgets/gtk/webkitgtkhacks.so
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/gtk/widgets.py
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/gtk/widgets.pyc
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/gtk/widgets.pyo
@@ -319,9 +323,9 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/prefpanel.py
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/prefpanel.pyc
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/prefpanel.pyo
-%%PYTHON_SITELIBDIR%%/miro/frontends/widgets/quitwhiledownloading.py
-%%PYTHON_SITELIBDIR%%/miro/frontends/widgets/quitwhiledownloading.pyc
-%%PYTHON_SITELIBDIR%%/miro/frontends/widgets/quitwhiledownloading.pyo
+%%PYTHON_SITELIBDIR%%/miro/frontends/widgets/quitconfirmation.py
+%%PYTHON_SITELIBDIR%%/miro/frontends/widgets/quitconfirmation.pyc
+%%PYTHON_SITELIBDIR%%/miro/frontends/widgets/quitconfirmation.pyo
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/removefeeds.py
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/removefeeds.pyc
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/removefeeds.pyo
@@ -358,6 +362,9 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/videobox.py
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/videobox.pyc
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/videobox.pyo
+%%PYTHON_SITELIBDIR%%/miro/frontends/widgets/videoconversionscontroller.py
+%%PYTHON_SITELIBDIR%%/miro/frontends/widgets/videoconversionscontroller.pyc
+%%PYTHON_SITELIBDIR%%/miro/frontends/widgets/videoconversionscontroller.pyo
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/watchedfolders.py
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/watchedfolders.pyc
 %%PYTHON_SITELIBDIR%%/miro/frontends/widgets/watchedfolders.pyo
@@ -382,15 +389,18 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/httpauth.py
 %%PYTHON_SITELIBDIR%%/miro/httpauth.pyc
 %%PYTHON_SITELIBDIR%%/miro/httpauth.pyo
+%%PYTHON_SITELIBDIR%%/miro/httpauthtools.py
+%%PYTHON_SITELIBDIR%%/miro/httpauthtools.pyc
+%%PYTHON_SITELIBDIR%%/miro/httpauthtools.pyo
 %%PYTHON_SITELIBDIR%%/miro/httpclient.py
 %%PYTHON_SITELIBDIR%%/miro/httpclient.pyc
 %%PYTHON_SITELIBDIR%%/miro/httpclient.pyo
 %%PYTHON_SITELIBDIR%%/miro/iconcache.py
 %%PYTHON_SITELIBDIR%%/miro/iconcache.pyc
 %%PYTHON_SITELIBDIR%%/miro/iconcache.pyo
-%%PYTHON_SITELIBDIR%%/miro/iso_639.py
-%%PYTHON_SITELIBDIR%%/miro/iso_639.pyc
-%%PYTHON_SITELIBDIR%%/miro/iso_639.pyo
+%%PYTHON_SITELIBDIR%%/miro/iso639.py
+%%PYTHON_SITELIBDIR%%/miro/iso639.pyc
+%%PYTHON_SITELIBDIR%%/miro/iso639.pyo
 %%PYTHON_SITELIBDIR%%/miro/item.py
 %%PYTHON_SITELIBDIR%%/miro/item.pyc
 %%PYTHON_SITELIBDIR%%/miro/item.pyo
@@ -406,12 +416,18 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/moviedata.py
 %%PYTHON_SITELIBDIR%%/miro/moviedata.pyc
 %%PYTHON_SITELIBDIR%%/miro/moviedata.pyo
+%%PYTHON_SITELIBDIR%%/miro/net.py
+%%PYTHON_SITELIBDIR%%/miro/net.pyc
+%%PYTHON_SITELIBDIR%%/miro/net.pyo
 %%PYTHON_SITELIBDIR%%/miro/opml.py
 %%PYTHON_SITELIBDIR%%/miro/opml.pyc
 %%PYTHON_SITELIBDIR%%/miro/opml.pyo
 %%PYTHON_SITELIBDIR%%/miro/plat/__init__.py
 %%PYTHON_SITELIBDIR%%/miro/plat/__init__.pyc
 %%PYTHON_SITELIBDIR%%/miro/plat/__init__.pyo
+%%PYTHON_SITELIBDIR%%/miro/plat/clconverter.py
+%%PYTHON_SITELIBDIR%%/miro/plat/clconverter.pyc
+%%PYTHON_SITELIBDIR%%/miro/plat/clconverter.pyo
 %%PYTHON_SITELIBDIR%%/miro/plat/config.py
 %%PYTHON_SITELIBDIR%%/miro/plat/config.pyc
 %%PYTHON_SITELIBDIR%%/miro/plat/config.pyo
@@ -442,9 +458,6 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/widgetset.py
 %%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/widgetset.pyc
 %%PYTHON_SITELIBDIR%%/miro/plat/frontends/widgets/widgetset.pyo
-%%PYTHON_SITELIBDIR%%/miro/plat/idletime.py
-%%PYTHON_SITELIBDIR%%/miro/plat/idletime.pyc
-%%PYTHON_SITELIBDIR%%/miro/plat/idletime.pyo
 %%PYTHON_SITELIBDIR%%/miro/plat/onetime.py
 %%PYTHON_SITELIBDIR%%/miro/plat/onetime.pyc
 %%PYTHON_SITELIBDIR%%/miro/plat/onetime.pyo
@@ -515,6 +528,9 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/test/__init__.py
 %%PYTHON_SITELIBDIR%%/miro/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/miro/test/conversionstest.py
+%%PYTHON_SITELIBDIR%%/miro/test/conversionstest.pyc
+%%PYTHON_SITELIBDIR%%/miro/test/conversionstest.pyo
 %%PYTHON_SITELIBDIR%%/miro/test/databasesanitytest.py
 %%PYTHON_SITELIBDIR%%/miro/test/databasesanitytest.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/databasesanitytest.pyo
@@ -524,6 +540,9 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/test/datastructurestest.py
 %%PYTHON_SITELIBDIR%%/miro/test/datastructurestest.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/datastructurestest.pyo
+%%PYTHON_SITELIBDIR%%/miro/test/downloadertest.py
+%%PYTHON_SITELIBDIR%%/miro/test/downloadertest.pyc
+%%PYTHON_SITELIBDIR%%/miro/test/downloadertest.pyo
 %%PYTHON_SITELIBDIR%%/miro/test/feedparsertest.py
 %%PYTHON_SITELIBDIR%%/miro/test/feedparsertest.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/feedparsertest.pyo
@@ -533,6 +552,9 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/test/filetypestest.py
 %%PYTHON_SITELIBDIR%%/miro/test/filetypestest.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/filetypestest.pyo
+%%PYTHON_SITELIBDIR%%/miro/test/flashscrapertest.py
+%%PYTHON_SITELIBDIR%%/miro/test/flashscrapertest.pyc
+%%PYTHON_SITELIBDIR%%/miro/test/flashscrapertest.pyo
 %%PYTHON_SITELIBDIR%%/miro/test/framework.py
 %%PYTHON_SITELIBDIR%%/miro/test/framework.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/framework.pyo
@@ -554,6 +576,12 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/test/messagetest.py
 %%PYTHON_SITELIBDIR%%/miro/test/messagetest.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/messagetest.pyo
+%%PYTHON_SITELIBDIR%%/miro/test/networktest.py
+%%PYTHON_SITELIBDIR%%/miro/test/networktest.pyc
+%%PYTHON_SITELIBDIR%%/miro/test/networktest.pyo
+%%PYTHON_SITELIBDIR%%/miro/test/opmltest.py
+%%PYTHON_SITELIBDIR%%/miro/test/opmltest.pyc
+%%PYTHON_SITELIBDIR%%/miro/test/opmltest.pyo
 %%PYTHON_SITELIBDIR%%/miro/test/parseurltest.py
 %%PYTHON_SITELIBDIR%%/miro/test/parseurltest.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/parseurltest.pyo
@@ -581,6 +609,9 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/test/subscriptiontest.py
 %%PYTHON_SITELIBDIR%%/miro/test/subscriptiontest.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/subscriptiontest.pyo
+%%PYTHON_SITELIBDIR%%/miro/test/testhttpserver.py
+%%PYTHON_SITELIBDIR%%/miro/test/testhttpserver.pyc
+%%PYTHON_SITELIBDIR%%/miro/test/testhttpserver.pyo
 %%PYTHON_SITELIBDIR%%/miro/test/unicodetest.py
 %%PYTHON_SITELIBDIR%%/miro/test/unicodetest.pyc
 %%PYTHON_SITELIBDIR%%/miro/test/unicodetest.pyo
@@ -602,9 +633,13 @@ bin/miro.real
 %%PYTHON_SITELIBDIR%%/miro/util.py
 %%PYTHON_SITELIBDIR%%/miro/util.pyc
 %%PYTHON_SITELIBDIR%%/miro/util.pyo
+%%PYTHON_SITELIBDIR%%/miro/videoconversion.py
+%%PYTHON_SITELIBDIR%%/miro/videoconversion.pyc
+%%PYTHON_SITELIBDIR%%/miro/videoconversion.pyo
 %%PYTHON_SITELIBDIR%%/miro/xhtmltools.py
 %%PYTHON_SITELIBDIR%%/miro/xhtmltools.pyc
 %%PYTHON_SITELIBDIR%%/miro/xhtmltools.pyo
+
 share/applications/miro.desktop
 share/icons/hicolor/128x128/apps/miro.png
 share/icons/hicolor/24x24/apps/miro.png
@@ -645,6 +680,7 @@ share/locale/he/LC_MESSAGES/miro.mo
 share/locale/hi/LC_MESSAGES/miro.mo
 share/locale/hr/LC_MESSAGES/miro.mo
 share/locale/hu/LC_MESSAGES/miro.mo
+share/locale/hy/LC_MESSAGES/miro.mo
 share/locale/id/LC_MESSAGES/miro.mo
 share/locale/is/LC_MESSAGES/miro.mo
 share/locale/it/LC_MESSAGES/miro.mo
@@ -695,17 +731,26 @@ share/locale/zh_TW/LC_MESSAGES/miro.mo
 share/locale/zu/LC_MESSAGES/miro.mo
 share/mime/packages/miro.xml
 %%DATADIR%%/resources/ADOPTERS
+%%DATADIR%%/resources/CREDITS
 %%DATADIR%%/resources/app.config
+%%DATADIR%%/resources/conversions/android.conv
+%%DATADIR%%/resources/conversions/apple.conv
+%%DATADIR%%/resources/conversions/others.conv
 %%DATADIR%%/resources/images/broken-image.gif
 %%DATADIR%%/resources/images/cancel-button.png
 %%DATADIR%%/resources/images/channelguide-icon-tablist.png
+%%DATADIR%%/resources/images/clear-image.png
 %%DATADIR%%/resources/images/download-arrow.png
 %%DATADIR%%/resources/images/feedicon.png
 %%DATADIR%%/resources/images/folder-icon-tablist.png
 %%DATADIR%%/resources/images/folder-icon.png
+%%DATADIR%%/resources/images/fullscreen_enter.png
+%%DATADIR%%/resources/images/fullscreen_exit.png
 %%DATADIR%%/resources/images/icon-audio.png
 %%DATADIR%%/resources/images/icon-audio_large.png
 %%DATADIR%%/resources/images/icon-channel-title.png
+%%DATADIR%%/resources/images/icon-conversions.png
+%%DATADIR%%/resources/images/icon-conversions_large.png
 %%DATADIR%%/resources/images/icon-downloading.png
 %%DATADIR%%/resources/images/icon-downloading_large.png
 %%DATADIR%%/resources/images/icon-folder.png
@@ -779,6 +824,7 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/images/playlist-icon.png
 %%DATADIR%%/resources/images/popin.png
 %%DATADIR%%/resources/images/popout.png
+%%DATADIR%%/resources/images/pref-tab-conversions.png
 %%DATADIR%%/resources/images/pref-tab-disk-space.png
 %%DATADIR%%/resources/images/pref-tab-downloads.png
 %%DATADIR%%/resources/images/pref-tab-feeds.png
@@ -859,6 +905,11 @@ share/mime/packages/miro.xml
 %%DATADIR%%/resources/testdata/dean.jpg
 %%DATADIR%%/resources/testdata/democracy-now-unicode-bug.xml
 %%DATADIR%%/resources/testdata/hide-result
+%%DATADIR%%/resources/testdata/httpserver/foo.txt
+%%DATADIR%%/resources/testdata/httpserver/linux-screen.jpg
+%%DATADIR%%/resources/testdata/httpserver/redirect.html
+%%DATADIR%%/resources/testdata/httpserver/test with spaces.txt
+%%DATADIR%%/resources/testdata/httpserver/test.txt
 %%DATADIR%%/resources/testdata/locale/fr/LC_MESSAGES/messages.pot
 %%DATADIR%%/resources/testdata/locale/fr/LC_MESSAGES/miro.mo
 %%DATADIR%%/resources/testdata/locale/fr/LC_MESSAGES/miro.po
@@ -908,9 +959,11 @@ share/pixmaps/miro.xpm
 @dirrm %%DATADIR%%/resources/testdata/locale/fr/LC_MESSAGES
 @dirrm %%DATADIR%%/resources/testdata/locale/fr
 @dirrm %%DATADIR%%/resources/testdata/locale
+@dirrm %%DATADIR%%/resources/testdata/httpserver
 @dirrm %%DATADIR%%/resources/testdata
 @dirrm %%DATADIR%%/resources/searchengines
 @dirrm %%DATADIR%%/resources/images
+@dirrm %%DATADIR%%/resources/conversions
 @dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/nds/LC_MESSAGES

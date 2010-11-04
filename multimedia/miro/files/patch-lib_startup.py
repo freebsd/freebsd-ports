@@ -1,8 +1,8 @@
---- portable/startup.py.orig	2009-02-12 06:37:23.000000000 +0900
-+++ portable/startup.py	2009-02-12 18:25:40.000000000 +0900
-@@ -250,7 +250,7 @@
+--- lib/startup.py.orig	2010-10-24 14:40:03.000000000 +0200
++++ lib/startup.py	2010-10-24 14:40:38.000000000 +0200
+@@ -370,7 +370,7 @@
      yield None
-     parse_command_line_args()
+     commandline.startup()
      yield None
 -    autoupdate.check_for_updates()
 +    # autoupdate.check_for_updates()
