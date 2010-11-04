@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	DB_Sqlite_Tools
-PORTVERSION=	0.1.6
-PORTREVISION=	2
+PORTVERSION=	0.1.7
 CATEGORIES=	databases www pear
 
 MAINTAINER=	miwi@FreeBSD.org
