@@ -14599,6 +14599,7 @@ p5-XML-Driver-HTML              ports/textproc/p5-XML-Driver-HTML
 p5-XML-Dumper                   ports/textproc/p5-XML-Dumper
 p5-XML-Elemental                ports/textproc/p5-XML-Elemental
 p5-XML-Encoding                 ports/textproc/p5-XML-Encoding
+p5-XML-Entities                 ports/textproc/p5-XML-Entities
 p5-XML-FOAF                     ports/textproc/p5-XML-FOAF
 p5-XML-Feed                     ports/textproc/p5-XML-Feed
 p5-XML-Feed-Deduper             ports/textproc/p5-XML-Feed-Deduper
@@ -18623,6 +18624,7 @@ p5-xml-dtdparser                ports/textproc/p5-XML-DTDParser
 p5-xml-dumper                   ports/textproc/p5-XML-Dumper
 p5-xml-elemental                ports/textproc/p5-XML-Elemental
 p5-xml-encoding                 ports/textproc/p5-XML-Encoding
+p5-xml-entities                 ports/textproc/p5-XML-Entities
 p5-xml-feed                     ports/textproc/p5-XML-Feed
 p5-xml-feed-deduper             ports/textproc/p5-XML-Feed-Deduper
 p5-xml-feedpp                   ports/textproc/p5-XML-FeedPP
@@ -21365,6 +21367,7 @@ py-symeig                       ports/math/py-symeig
 py-sympy                        ports/math/py-sympy
 py-synce-librapi2               ports/palm/py-synce-librapi2
 py-synce-librra                 ports/palm/py-synce-librra
+py-sysv_ipc                     ports/devel/py-sysv_ipc
 py-tables                       ports/devel/py-tables
 py-tagfu                        ports/deskutils/py-tagfu
 py-taglib                       ports/audio/py-taglib
@@ -22230,6 +22233,7 @@ rrdtool12                       ports/databases/rrdtool12
 rscheme                         ports/lang/rscheme
 rshell                          ports/net/rshell
 rsibreak                        ports/x11/rsibreak
+rsibreak-kde4                   ports/x11/rsibreak-kde4
 rsmb                            ports/net/rsmb
 rsnapshot                       ports/sysutils/rsnapshot
 rsplib                          ports/net/rsplib
