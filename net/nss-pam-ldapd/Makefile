@@ -95,6 +95,10 @@ MAN5+=			nslcd.conf.5
 MAN8+=			nslcd.8
 .endif
 
+.if ${OSVERSION} < 800000
+BROKEN=		fails to patch on 7.X
+.endif
+
 post-extract:
 	@${REINPLACE_CMD} -e 's/\(INSTALL_\)\(.*\)) -D /\1\2) /' ${WRKSRC}/Makefile.in ${WRKSRC}/nss/Makefile.in
 	@${REINPLACE_CMD} -e 's/shadow.$$(OBJEXT)/shadow.$$(OBJEXT) bsdnss.$$(OBJEXT)/;s/shadow\.c/shadow.c bsdnss.c/' ${WRKSRC}/nss/Makefile.in
