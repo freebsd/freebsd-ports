@@ -52,7 +52,6 @@
     SUBDIR += kbear
     SUBDIR += kftpgrabber
     SUBDIR += kpum
-    SUBDIR += kwebget
     SUBDIR += lftp
     SUBDIR += linux-curl
     SUBDIR += linux-f10-curl
