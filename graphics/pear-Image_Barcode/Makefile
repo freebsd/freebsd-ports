@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Image_Barcode
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -21,9 +20,10 @@ USE_PHP=	gd
 LATEST_LINK=	pear-${PORTNAME}
 OPTIONS=	PEAR_PHP_COMPAT "PEAR::PHP_Compat support" off
 
-CATEGORY=	Image
-FILES=		Barcode.php Barcode/int25.php Barcode/ean13.php Barcode/Code39.php \
-		Barcode/upca.php Barcode/code128.php Barcode/postnet.php
+FILES=		Image/Barcode.php Image/Barcode/int25.php \
+		Image/Barcode/ean13.php Image/Barcode/Code39.php \
+		Image/Barcode/upca.php Image/Barcode/code128.php \
+		Image/Barcode/postnet.php
 DOCS=		ChangeLog Readme.txt
 EXAMPLES=	test-image-barcode.php barcode_img.php
 _EXAMPLESDIR=	docs/examples
