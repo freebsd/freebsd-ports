@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_DNSBL
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	net pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -22,7 +22,7 @@ USE_PHP=	yes
 
 CATEGORY=	Net
 FILES=		Net/DNSBL.php Net/DNSBL/SURBL.php
-TESTS=		AllTests.php testNetDNSBL.php testNetDNSBLSURBL.php
+TESTS=		AllTests.php TestNetDNSBL.php TestNetDNSBLSURBL.php
 
 PORTSCOUT=	skipv:1.3.0a1
 
