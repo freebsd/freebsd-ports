@@ -303,6 +303,7 @@ bin/hg
 %%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/fr/LC_MESSAGES/hg.mo
 %%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/it/LC_MESSAGES/hg.mo
 %%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/ja/LC_MESSAGES/hg.mo
+%%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/ro/LC_MESSAGES/hg.mo
 %%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/sv/LC_MESSAGES/hg.mo
 %%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/pt_BR/LC_MESSAGES/hg.mo
 %%NLS%%%%PYTHON_SITELIBDIR%%/mercurial/locale/zh_CN/LC_MESSAGES/hg.mo
@@ -630,6 +631,8 @@ bin/hg
 %%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/it
 %%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/ja/LC_MESSAGES
 %%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/ja
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/ro/LC_MESSAGES
+%%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/ro
 %%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/sv/LC_MESSAGES
 %%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/sv
 %%NLS%%@dirrm %%PYTHON_SITELIBDIR%%/mercurial/locale/pt_BR/LC_MESSAGES
