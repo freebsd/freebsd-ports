@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	ttytter
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.floodgap.com/software/ttytter/dist1/
-DISTFILES=	1.1.05.txt
+DISTFILES=	1.1.06.txt
 EXTRACT_ONLY=
 
 MAINTAINER=	jdunn@aquezada.com
@@ -20,7 +20,8 @@ RUN_DEPENDS=	${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-OPTIONS=	READLINE	"Include rich readline support"	on
+OPTIONS=	READLINE	"Include rich readline support"	on \
+		RLTTYTTER       "Use T::R::TTYtter readline driver (beta!)" off \
 
 PLIST_FILES=	bin/${PORTNAME}
 
@@ -28,6 +29,10 @@ PLIST_FILES=	bin/${PORTNAME}
 
 .if defined(WITH_READLINE)
 RUN_DEPENDS+=	${SITE_PERL}/Term/ReadLine/Perl.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
+.endif
+
+.if defined(WITH_RLTTYTTER)
+RUN_DEPENDS+=	${SITE_PERL}/Term/ReadLine/TTYtter.pm:${PORTSDIR}/devel/p5-ReadLine-TTYtter
 .endif
 
 do-extract:
