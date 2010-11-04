@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_ldap2
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	databases net pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -17,6 +17,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	DB
 FILES=		ldap2.php ldap3.php
+
+USE_PHP=	ldap
 
 TESTS=		errors.inc  prepexe.inc fetchmode_object.inc \
 		sequences.inc  fetchmodes.inc   limit.inc \
