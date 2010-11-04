@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_SmartIRC
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	irc www pear
 
 MAINTAINER=	miwi@FreeBSD.org
