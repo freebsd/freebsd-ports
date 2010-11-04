@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gigabase
-PORTVERSION=	3.77
+PORTVERSION=	3.79
 CATEGORIES=	databases
 MASTER_SITES=	http://www.garret.ru/
 
