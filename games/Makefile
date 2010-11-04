@@ -605,11 +605,14 @@
     SUBDIR += openarena
     SUBDIR += openastromenace
     SUBDIR += opencity
+    SUBDIR += opengfx
     SUBDIR += openglad
     SUBDIR += openjazz
     SUBDIR += openlierox
     SUBDIR += openmortal
+    SUBDIR += openmsx
     SUBDIR += openpref
+    SUBDIR += opensfx
     SUBDIR += opensonic
     SUBDIR += openttd
     SUBDIR += openyahtzee
