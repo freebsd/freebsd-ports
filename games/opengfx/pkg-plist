@@ -1,0 +1,12 @@
+share/openttd/data/changelog.txt-gfx
+share/openttd/data/license.txt-gfx
+share/openttd/data/ogfx1_base.grf
+share/openttd/data/ogfxc_arctic.grf
+share/openttd/data/ogfxe_extra.grf
+share/openttd/data/ogfxh_tropical.grf
+share/openttd/data/ogfxi_logos.grf
+share/openttd/data/ogfxt_toyland.grf
+share/openttd/data/opengfx.obg
+share/openttd/data/readme.txt-gfx
+@dirrmtry share/openttd/data
+@dirrmtry share/openttd
