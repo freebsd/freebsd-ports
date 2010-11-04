@@ -7,6 +7,7 @@
 
 PORTNAME=	cciss_vol_status
 PORTVERSION=	1.06
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/cciss/${PORTNAME}
 
