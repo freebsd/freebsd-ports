@@ -1,0 +1,24 @@
+.Dd September 3, 2010
+.Dt REGUTIL 1 CON
+.Os
+.Sh NAME
+.Nm regutil
+.Nd "RexxUtil library for Regina REXX interpreter"
+.Sh DESCRIPTION
+.Nm
+is a collection of utility functions for use with the Regina REXX interpreter.
+These closely mirror the functions contained in the
+.Em RexxUtil
+library provided
+on IBM systems (e.g. OS/2).
+.Pp
+Details of usage are in the full manual, which is normally found at:
+.br
+.Pa %%DOCSDIR%%/regutil.pdf
+.Sh SEE ALSO
+The original author's web site at
+.Em http://pages.interlog.com/~pjtm/
+.Sh AUTHORS
+.An "Patrick T J McPhee" (original author)
+.An "Bob Eager" Aq bob@eager.cx
+(port)

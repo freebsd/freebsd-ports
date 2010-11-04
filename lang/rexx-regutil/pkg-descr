@@ -1,0 +1,9 @@
+RegUtil is an implementation of IBM's RexxUtil for Regina. According to
+the author, it is not complete; however, it implements a large number of
+the RexxUtil functions, and is very useful.
+
+Note that any scripts which load RegUtil must be run with the 'regina'
+command, rather than 'rexx'; the latter does not support the use of
+external function packages.
+
+WWW: http://pages.interlog.com/~pjtm/
