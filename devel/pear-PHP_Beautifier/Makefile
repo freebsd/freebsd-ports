@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP_Beautifier
-PORTVERSION=	0.1.14
+PORTVERSION=	0.1.15
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,7 +15,7 @@ COMMENT=	PEAR beautifier for PHP
 BUILD_DEPENDS=	${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PHP=	tokenizer
+USE_PHP=	tokenizer bz2
 
 DEFAULT_PHP_VER=5
 IGNORE_WITH_PHP=4
@@ -44,9 +44,6 @@ FILES=		Beautifier.php Beautifier/Filter.php Beautifier/Decorator.php \
 EXAMPLES=	run_me.php example_main.php example_pear.php example_array.php \
 		example_comments.php example_html.php \
 		example_lowercase.php
-TESTS=		Beautifier.phpt Beautifier_Common.phpt Beautifier_Bugs.phpt \
-		Beautifier_StreamWrapper.phpt \
-		Beautifier_Pear.phpt pear_sample_file.phps
 DATA=		apache.txt bsd.txt lgpl.txt php.txt pear.txt
 _DATADIR=	licenses
 SCRIPTFILES=	php_beautifier
