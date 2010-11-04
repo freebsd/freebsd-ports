@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP_ParserGenerator
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.7
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
