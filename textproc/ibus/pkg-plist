@@ -77,6 +77,7 @@
 %%NLS%%share/locale/or/LC_MESSAGES/ibus.mo
 %%NLS%%share/locale/pa/LC_MESSAGES/ibus.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/ibus.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/ibus.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/ibus.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/ibus.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/ibus.mo
@@ -237,15 +238,16 @@ lib/gtk-2.0/2.10.0/immodules/im-ibus.so
 lib/libibus.la
 lib/libibus.so
 lib/libibus.so.2
-lib/girepository-1.0/IBus-1.0.typelib
+%%GINTRO%%lib/girepository-1.0/IBus-1.0.typelib
+%%GINTRO%%share/gir-1.0/IBus-1.0.gir
 libdata/pkgconfig/ibus-1.0.pc
 libexec/ibus-gconf
 libexec/ibus-ui-gtk
 libexec/ibus-x11
 share/applications/ibus-setup.desktop
 share/applications/ibus.desktop
-share/gir-1.0/IBus-1.0.gir
 share/gtk-doc/html/ibus/IBusAttrList.html
+share/gtk-doc/html/ibus/IBusAttribute.html
 share/gtk-doc/html/ibus/IBusBus.html
 share/gtk-doc/html/ibus/IBusComponent.html
 share/gtk-doc/html/ibus/IBusConfig.html
@@ -264,6 +266,9 @@ share/gtk-doc/html/ibus/IBusPanelService.html
 share/gtk-doc/html/ibus/IBusPropList.html
 share/gtk-doc/html/ibus/IBusProperty.html
 share/gtk-doc/html/ibus/IBusProxy.html
+share/gtk-doc/html/ibus/IBusSerializable.html
+share/gtk-doc/html/ibus/IBusServer.html
+share/gtk-doc/html/ibus/IBusService.html
 share/gtk-doc/html/ibus/IBusText.html
 share/gtk-doc/html/ibus/ch01.html
 share/gtk-doc/html/ibus/ch02.html
@@ -275,13 +280,9 @@ share/gtk-doc/html/ibus/home.png
 share/gtk-doc/html/ibus/ibus-IBusKeysyms.html
 share/gtk-doc/html/ibus/ibus-IBusMessage.html
 share/gtk-doc/html/ibus/ibus-IBusPendingCall.html
-share/gtk-doc/html/ibus/ibus-ibusattribute.html
 share/gtk-doc/html/ibus/ibus-ibusdebug.html
 share/gtk-doc/html/ibus/ibus-ibuserror.html
 share/gtk-doc/html/ibus/ibus-ibusmainloop.html
-share/gtk-doc/html/ibus/ibus-ibusserializable.html
-share/gtk-doc/html/ibus/ibus-ibusserver.html
-share/gtk-doc/html/ibus/ibus-ibusservice.html
 share/gtk-doc/html/ibus/ibus-ibusshare.html
 share/gtk-doc/html/ibus/ibus-ibustypes.html
 share/gtk-doc/html/ibus/ibus-ibusversion.html
@@ -304,6 +305,7 @@ share/icons/hicolor/scalable/apps/ibus-keyboard.svg
 share/icons/hicolor/scalable/apps/ibus-setup.svg
 share/icons/hicolor/scalable/apps/ibus.svg
 %%VALA%%share/vala/vapi/ibus-1.0.vapi
+@dirrmtry share/gir-1.0
 @dirrm %%DATADIR%%/ui/gtk
 @dirrm %%DATADIR%%/ui
 @dirrmtry %%DATADIR%%/icons
