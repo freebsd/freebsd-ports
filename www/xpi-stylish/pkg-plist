@@ -6,6 +6,8 @@
 %%XPI_XPIDIR%%/components/stylishStyle.js
 %%XPI_XPIDIR%%/components/stylishStyle.xpt
 %%XPI_XPIDIR%%/content/base-test.js
+%%XPI_XPIDIR%%/content/clear.js
+%%XPI_XPIDIR%%/content/clear.xul
 %%XPI_XPIDIR%%/content/common.js
 %%XPI_XPIDIR%%/content/domiOverlay.js
 %%XPI_XPIDIR%%/content/domiOverlay.xul
@@ -33,6 +35,7 @@
 %%XPI_XPIDIR%%/locale/cs/domi.dtd
 %%XPI_XPIDIR%%/locale/cs/edit.dtd
 %%XPI_XPIDIR%%/locale/cs/edit.properties
+%%XPI_XPIDIR%%/locale/cs/extensions.dtd
 %%XPI_XPIDIR%%/locale/cs/install.dtd
 %%XPI_XPIDIR%%/locale/cs/install.properties
 %%XPI_XPIDIR%%/locale/cs/manage.dtd
@@ -44,6 +47,7 @@
 %%XPI_XPIDIR%%/locale/da-DK/domi.dtd
 %%XPI_XPIDIR%%/locale/da-DK/edit.dtd
 %%XPI_XPIDIR%%/locale/da-DK/edit.properties
+%%XPI_XPIDIR%%/locale/da-DK/extensions.dtd
 %%XPI_XPIDIR%%/locale/da-DK/install.dtd
 %%XPI_XPIDIR%%/locale/da-DK/install.properties
 %%XPI_XPIDIR%%/locale/da-DK/manage.dtd
@@ -55,6 +59,7 @@
 %%XPI_XPIDIR%%/locale/de-DE/domi.dtd
 %%XPI_XPIDIR%%/locale/de-DE/edit.dtd
 %%XPI_XPIDIR%%/locale/de-DE/edit.properties
+%%XPI_XPIDIR%%/locale/de-DE/extensions.dtd
 %%XPI_XPIDIR%%/locale/de-DE/install.dtd
 %%XPI_XPIDIR%%/locale/de-DE/install.properties
 %%XPI_XPIDIR%%/locale/de-DE/manage.dtd
@@ -66,6 +71,7 @@
 %%XPI_XPIDIR%%/locale/en-GB/domi.dtd
 %%XPI_XPIDIR%%/locale/en-GB/edit.dtd
 %%XPI_XPIDIR%%/locale/en-GB/edit.properties
+%%XPI_XPIDIR%%/locale/en-GB/extensions.dtd
 %%XPI_XPIDIR%%/locale/en-GB/install.dtd
 %%XPI_XPIDIR%%/locale/en-GB/install.properties
 %%XPI_XPIDIR%%/locale/en-GB/manage.dtd
@@ -77,6 +83,7 @@
 %%XPI_XPIDIR%%/locale/en-US/domi.dtd
 %%XPI_XPIDIR%%/locale/en-US/edit.dtd
 %%XPI_XPIDIR%%/locale/en-US/edit.properties
+%%XPI_XPIDIR%%/locale/en-US/extensions.dtd
 %%XPI_XPIDIR%%/locale/en-US/install.dtd
 %%XPI_XPIDIR%%/locale/en-US/install.properties
 %%XPI_XPIDIR%%/locale/en-US/manage.dtd
@@ -88,6 +95,7 @@
 %%XPI_XPIDIR%%/locale/es-AR/domi.dtd
 %%XPI_XPIDIR%%/locale/es-AR/edit.dtd
 %%XPI_XPIDIR%%/locale/es-AR/edit.properties
+%%XPI_XPIDIR%%/locale/es-AR/extensions.dtd
 %%XPI_XPIDIR%%/locale/es-AR/install.dtd
 %%XPI_XPIDIR%%/locale/es-AR/install.properties
 %%XPI_XPIDIR%%/locale/es-AR/manage.dtd
@@ -99,6 +107,7 @@
 %%XPI_XPIDIR%%/locale/es-ES/domi.dtd
 %%XPI_XPIDIR%%/locale/es-ES/edit.dtd
 %%XPI_XPIDIR%%/locale/es-ES/edit.properties
+%%XPI_XPIDIR%%/locale/es-ES/extensions.dtd
 %%XPI_XPIDIR%%/locale/es-ES/install.dtd
 %%XPI_XPIDIR%%/locale/es-ES/install.properties
 %%XPI_XPIDIR%%/locale/es-ES/manage.dtd
@@ -110,6 +119,7 @@
 %%XPI_XPIDIR%%/locale/et-EE/domi.dtd
 %%XPI_XPIDIR%%/locale/et-EE/edit.dtd
 %%XPI_XPIDIR%%/locale/et-EE/edit.properties
+%%XPI_XPIDIR%%/locale/et-EE/extensions.dtd
 %%XPI_XPIDIR%%/locale/et-EE/install.dtd
 %%XPI_XPIDIR%%/locale/et-EE/install.properties
 %%XPI_XPIDIR%%/locale/et-EE/manage.dtd
@@ -121,6 +131,7 @@
 %%XPI_XPIDIR%%/locale/fr/domi.dtd
 %%XPI_XPIDIR%%/locale/fr/edit.dtd
 %%XPI_XPIDIR%%/locale/fr/edit.properties
+%%XPI_XPIDIR%%/locale/fr/extensions.dtd
 %%XPI_XPIDIR%%/locale/fr/install.dtd
 %%XPI_XPIDIR%%/locale/fr/install.properties
 %%XPI_XPIDIR%%/locale/fr/manage.dtd
@@ -132,6 +143,7 @@
 %%XPI_XPIDIR%%/locale/he-IL/domi.dtd
 %%XPI_XPIDIR%%/locale/he-IL/edit.dtd
 %%XPI_XPIDIR%%/locale/he-IL/edit.properties
+%%XPI_XPIDIR%%/locale/he-IL/extensions.dtd
 %%XPI_XPIDIR%%/locale/he-IL/install.dtd
 %%XPI_XPIDIR%%/locale/he-IL/install.properties
 %%XPI_XPIDIR%%/locale/he-IL/manage.dtd
@@ -143,6 +155,7 @@
 %%XPI_XPIDIR%%/locale/hu-HU/domi.dtd
 %%XPI_XPIDIR%%/locale/hu-HU/edit.dtd
 %%XPI_XPIDIR%%/locale/hu-HU/edit.properties
+%%XPI_XPIDIR%%/locale/hu-HU/extensions.dtd
 %%XPI_XPIDIR%%/locale/hu-HU/install.dtd
 %%XPI_XPIDIR%%/locale/hu-HU/install.properties
 %%XPI_XPIDIR%%/locale/hu-HU/manage.dtd
@@ -154,6 +167,7 @@
 %%XPI_XPIDIR%%/locale/it-IT/domi.dtd
 %%XPI_XPIDIR%%/locale/it-IT/edit.dtd
 %%XPI_XPIDIR%%/locale/it-IT/edit.properties
+%%XPI_XPIDIR%%/locale/it-IT/extensions.dtd
 %%XPI_XPIDIR%%/locale/it-IT/install.dtd
 %%XPI_XPIDIR%%/locale/it-IT/install.properties
 %%XPI_XPIDIR%%/locale/it-IT/manage.dtd
@@ -165,6 +179,7 @@
 %%XPI_XPIDIR%%/locale/ja/domi.dtd
 %%XPI_XPIDIR%%/locale/ja/edit.dtd
 %%XPI_XPIDIR%%/locale/ja/edit.properties
+%%XPI_XPIDIR%%/locale/ja/extensions.dtd
 %%XPI_XPIDIR%%/locale/ja/install.dtd
 %%XPI_XPIDIR%%/locale/ja/install.properties
 %%XPI_XPIDIR%%/locale/ja/manage.dtd
@@ -176,6 +191,7 @@
 %%XPI_XPIDIR%%/locale/ko-KR/domi.dtd
 %%XPI_XPIDIR%%/locale/ko-KR/edit.dtd
 %%XPI_XPIDIR%%/locale/ko-KR/edit.properties
+%%XPI_XPIDIR%%/locale/ko-KR/extensions.dtd
 %%XPI_XPIDIR%%/locale/ko-KR/install.dtd
 %%XPI_XPIDIR%%/locale/ko-KR/install.properties
 %%XPI_XPIDIR%%/locale/ko-KR/manage.dtd
@@ -187,6 +203,7 @@
 %%XPI_XPIDIR%%/locale/nl-NL/domi.dtd
 %%XPI_XPIDIR%%/locale/nl-NL/edit.dtd
 %%XPI_XPIDIR%%/locale/nl-NL/edit.properties
+%%XPI_XPIDIR%%/locale/nl-NL/extensions.dtd
 %%XPI_XPIDIR%%/locale/nl-NL/install.dtd
 %%XPI_XPIDIR%%/locale/nl-NL/install.properties
 %%XPI_XPIDIR%%/locale/nl-NL/manage.dtd
@@ -198,6 +215,7 @@
 %%XPI_XPIDIR%%/locale/pl-PL/domi.dtd
 %%XPI_XPIDIR%%/locale/pl-PL/edit.dtd
 %%XPI_XPIDIR%%/locale/pl-PL/edit.properties
+%%XPI_XPIDIR%%/locale/pl-PL/extensions.dtd
 %%XPI_XPIDIR%%/locale/pl-PL/install.dtd
 %%XPI_XPIDIR%%/locale/pl-PL/install.properties
 %%XPI_XPIDIR%%/locale/pl-PL/manage.dtd
@@ -209,6 +227,7 @@
 %%XPI_XPIDIR%%/locale/pt-BR/domi.dtd
 %%XPI_XPIDIR%%/locale/pt-BR/edit.dtd
 %%XPI_XPIDIR%%/locale/pt-BR/edit.properties
+%%XPI_XPIDIR%%/locale/pt-BR/extensions.dtd
 %%XPI_XPIDIR%%/locale/pt-BR/install.dtd
 %%XPI_XPIDIR%%/locale/pt-BR/install.properties
 %%XPI_XPIDIR%%/locale/pt-BR/manage.dtd
@@ -220,6 +239,7 @@
 %%XPI_XPIDIR%%/locale/ru-RU/domi.dtd
 %%XPI_XPIDIR%%/locale/ru-RU/edit.dtd
 %%XPI_XPIDIR%%/locale/ru-RU/edit.properties
+%%XPI_XPIDIR%%/locale/ru-RU/extensions.dtd
 %%XPI_XPIDIR%%/locale/ru-RU/install.dtd
 %%XPI_XPIDIR%%/locale/ru-RU/install.properties
 %%XPI_XPIDIR%%/locale/ru-RU/manage.dtd
@@ -231,6 +251,7 @@
 %%XPI_XPIDIR%%/locale/sv-SE/domi.dtd
 %%XPI_XPIDIR%%/locale/sv-SE/edit.dtd
 %%XPI_XPIDIR%%/locale/sv-SE/edit.properties
+%%XPI_XPIDIR%%/locale/sv-SE/extensions.dtd
 %%XPI_XPIDIR%%/locale/sv-SE/install.dtd
 %%XPI_XPIDIR%%/locale/sv-SE/install.properties
 %%XPI_XPIDIR%%/locale/sv-SE/manage.dtd
@@ -242,6 +263,7 @@
 %%XPI_XPIDIR%%/locale/uk/domi.dtd
 %%XPI_XPIDIR%%/locale/uk/edit.dtd
 %%XPI_XPIDIR%%/locale/uk/edit.properties
+%%XPI_XPIDIR%%/locale/uk/extensions.dtd
 %%XPI_XPIDIR%%/locale/uk/install.dtd
 %%XPI_XPIDIR%%/locale/uk/install.properties
 %%XPI_XPIDIR%%/locale/uk/manage.dtd
@@ -253,6 +275,7 @@
 %%XPI_XPIDIR%%/locale/vi/domi.dtd
 %%XPI_XPIDIR%%/locale/vi/edit.dtd
 %%XPI_XPIDIR%%/locale/vi/edit.properties
+%%XPI_XPIDIR%%/locale/vi/extensions.dtd
 %%XPI_XPIDIR%%/locale/vi/install.dtd
 %%XPI_XPIDIR%%/locale/vi/install.properties
 %%XPI_XPIDIR%%/locale/vi/manage.dtd
@@ -264,6 +287,7 @@
 %%XPI_XPIDIR%%/locale/zh-CN/domi.dtd
 %%XPI_XPIDIR%%/locale/zh-CN/edit.dtd
 %%XPI_XPIDIR%%/locale/zh-CN/edit.properties
+%%XPI_XPIDIR%%/locale/zh-CN/extensions.dtd
 %%XPI_XPIDIR%%/locale/zh-CN/install.dtd
 %%XPI_XPIDIR%%/locale/zh-CN/install.properties
 %%XPI_XPIDIR%%/locale/zh-CN/manage.dtd
@@ -275,6 +299,7 @@
 %%XPI_XPIDIR%%/locale/zh-TW/domi.dtd
 %%XPI_XPIDIR%%/locale/zh-TW/edit.dtd
 %%XPI_XPIDIR%%/locale/zh-TW/edit.properties
+%%XPI_XPIDIR%%/locale/zh-TW/extensions.dtd
 %%XPI_XPIDIR%%/locale/zh-TW/install.dtd
 %%XPI_XPIDIR%%/locale/zh-TW/install.properties
 %%XPI_XPIDIR%%/locale/zh-TW/manage.dtd
@@ -282,6 +307,9 @@
 %%XPI_XPIDIR%%/locale/zh-TW/overlay.dtd
 %%XPI_XPIDIR%%/locale/zh-TW/overlay.properties
 %%XPI_XPIDIR%%/skin/edit.css
+%%XPI_XPIDIR%%/skin/extensions-gnome.css
+%%XPI_XPIDIR%%/skin/extensions-mac.css
+%%XPI_XPIDIR%%/skin/extensions-windows.css
 %%XPI_XPIDIR%%/skin/install.css
 %%XPI_XPIDIR%%/skin/manage-addons-mac.css
 %%XPI_XPIDIR%%/skin/manage-addons.css
