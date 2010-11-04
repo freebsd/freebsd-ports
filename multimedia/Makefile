@@ -30,7 +30,6 @@
     SUBDIR += cheese
     SUBDIR += clipgrab
     SUBDIR += clive
-    SUBDIR += clive-utils
     SUBDIR += clive1
     SUBDIR += clutter-gst
     SUBDIR += cuse4bsd-kmod

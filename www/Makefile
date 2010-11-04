@@ -1798,7 +1798,6 @@
     SUBDIR += waccess
     SUBDIR += wacko
     SUBDIR += wadcomblog
-    SUBDIR += wb0
     SUBDIR += wcol
     SUBDIR += web-traceroute
     SUBDIR += web2ldap

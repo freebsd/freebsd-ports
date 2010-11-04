@@ -4648,3 +4648,7 @@ www/firefox3-devel|www/firefox|2010-10-24|Upstream development focuses on Firefo
 editors/vim5||2010-10-26|Has expired: Outdated, superceded by editors/vim7 and has security issues
 sysutils/sfdisk||2010-10-27|Has expired: All supported freebsd versions now have sade, sfdisk 0.2 is outdated
 sysutils/synergy-plus|sysutils/synergy|2010-11-01|Synergy+ and Synergy have merged
+ftp/kwebget||2010-11-04|Has expired: Development has ceased.
+multimedia/clive-utils||2010-11-04|Has expired: development has ceased; use multimedia/umph instead
+ports-mgmt/barry||2010-11-04|Has expired: Development has ceased.
+www/wb0||2010-11-04|Has expired: Development has ceased.
