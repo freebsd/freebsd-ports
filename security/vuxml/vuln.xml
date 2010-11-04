@@ -5029,7 +5029,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>dovecot</name>
-	<range><lt>1.2.8</lt></range>
+	<range><ge>1.2.*</ge><lt>1.2.8</lt></range>
       </package>
     </affects>
     <description>
