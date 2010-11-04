@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Services_GeoNames
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	www pear
 
 MAINTAINER=	miwi@FreeBSD.org

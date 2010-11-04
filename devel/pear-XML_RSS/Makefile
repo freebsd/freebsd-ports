@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_RSS
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
