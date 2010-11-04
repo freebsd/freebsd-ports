@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_SVG
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,8 +15,7 @@ COMMENT=	PEAR object-oriented API for building SVG documents
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CATEGORY=	XML
-FILES=		SVG.php
+FILES=		XML/SVG.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
