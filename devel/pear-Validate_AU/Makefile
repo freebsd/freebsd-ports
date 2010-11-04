@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Validate_AU
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
