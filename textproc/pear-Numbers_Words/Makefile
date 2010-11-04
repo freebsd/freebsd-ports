@@ -7,6 +7,7 @@
 
 PORTNAME=	Numbers_Words
 PORTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	textproc pear
 
 MAINTAINER=	meritus@innervision.pl
@@ -15,6 +16,7 @@ COMMENT=	PEAR package provides methods for spelling numerals in words
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+CATEGORY=	Numbers
 FILES=		Words.php Words/lang.bg.php Words/lang.cs.php \
 		Words/lang.de.php Words/lang.dk.php Words/lang.en_100.php \
 		Words/lang.en_GB.php Words/lang.en_US.php Words/lang.es.php \
