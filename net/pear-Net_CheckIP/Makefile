@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_CheckIP
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	net pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,8 +15,7 @@ COMMENT=	Check the syntax of IPv4 addresses
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CATEGORY=	Net
-FILES=		CheckIP.php
+FILES=		Net/CheckIP.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
