@@ -1,0 +1,7 @@
+share/openttd/data/changelog.txt-sfx
+share/openttd/data/license.txt-sfx
+share/openttd/data/opensfx.cat
+share/openttd/data/opensfx.obs
+share/openttd/data/readme.txt-sfx
+@dirrmtry share/openttd/data
+@dirrmtry share/openttd
