@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	http://launchpadlibrarian.net/58498441/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyOpenSSL-${PORTVERSION}
 
@@ -31,7 +31,7 @@ pre-configure:
 
 .if !defined(NOPORTEXAMPLES)
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
