@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-FormHandler
-PORTVERSION=	0.32003
+PORTVERSION=	0.32005
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-Locale-Maketext>=1.09:${PORTSDIR}/devel/p5-Locale-Maketext \
 		p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Getopt>=0.16:${PORTSDIR}/devel/p5-MooseX-Getopt \
-		p5-MooseX-Traits>=0:${PORTSDIR}/devel/p5-MooseX-Traits \
 		p5-MooseX-Types>=0.20:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-MooseX-Types-Common>=0:${PORTSDIR}/devel/p5-MooseX-Types-Common \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
@@ -32,7 +31,7 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
 PERL_CONFIGURE=	5.8.0+
-MAN3=	HTML::FormHandler.3 HTML::FormHandler::BuildFields.3 \
+MAN3=	HTML::FormHandler.3 \
 	HTML::FormHandler::Field.3 HTML::FormHandler::TraitFor::I18N.3 \
 	HTML::FormHandler::Render::WithTT.3 HTML::FormHandler::Field::NoValue.3 \
 	HTML::FormHandler::Field::Boolean.3 HTML::FormHandler::Field::Checkbox.3 \
@@ -103,6 +102,7 @@ MAN3=	HTML::FormHandler.3 HTML::FormHandler::BuildFields.3 \
 	HTML::FormHandler::Widget::Field::Submit.3 \
 	HTML::FormHandler::Widget::Wrapper::None.3 \
 	HTML::FormHandler::Widget::Wrapper::Base.3 \
-	HTML::FormHandler::Params.3
+	HTML::FormHandler::Params.3 HTML::FormHandler::Base.3 \
+	HTML::FormHandler::BuildFields.3 HTML::FormHandler::Traits.3
 
 .include <bsd.port.mk>

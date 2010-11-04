@@ -15,6 +15,7 @@
 %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/widget/checkbox.tt
 %%SITE_PERL%%/auto/share/dist/HTML-FormHandler/templates/form.tt
 %%SITE_PERL%%/HTML/FormHandler.pm
+%%SITE_PERL%%/HTML/FormHandler/Base.pm
 %%SITE_PERL%%/HTML/FormHandler/BuildFields.pm
 %%SITE_PERL%%/HTML/FormHandler/Field.pm
 %%SITE_PERL%%/HTML/FormHandler/Field/Boolean.pm
@@ -88,6 +89,7 @@
 %%SITE_PERL%%/HTML/FormHandler/Result/Role.pm
 %%SITE_PERL%%/HTML/FormHandler/Types.pm
 %%SITE_PERL%%/HTML/FormHandler/Validate.pm
+%%SITE_PERL%%/HTML/FormHandler/Traits.pm
 %%SITE_PERL%%/HTML/FormHandler/TraitFor/I18N.pm
 %%SITE_PERL%%/HTML/FormHandler/TraitFor/Captcha.pm
 %%SITE_PERL%%/HTML/FormHandler/Validate/Actions.pm
