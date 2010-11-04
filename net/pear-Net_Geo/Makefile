@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Geo
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	net pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -17,8 +17,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/XML/Serializer.php:${PORTSDIR}/devel/pear-XML_Serializer
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CATEGORY=	Net
-FILES=		Geo.php README
+FILES=		Net/Geo.php README
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
