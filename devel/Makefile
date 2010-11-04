@@ -2224,6 +2224,7 @@
     SUBDIR += p5-Test-HasVersion
     SUBDIR += p5-Test-HexString
     SUBDIR += p5-Test-Inline
+    SUBDIR += p5-Test-Inter
     SUBDIR += p5-Test-JSON
     SUBDIR += p5-Test-Kwalitee
     SUBDIR += p5-Test-LectroTest

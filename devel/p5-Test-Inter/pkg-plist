@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Test/Inter.pm
+%%SITE_PERL%%/Test/Inter.pod
+@dirrmtry %%SITE_PERL%%/Test
