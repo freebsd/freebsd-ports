@@ -2472,6 +2472,7 @@
     SUBDIR += pear-HTML_QuickForm2
     SUBDIR += pear-HTML_QuickForm_Controller
     SUBDIR += pear-HTML_QuickForm_Livesearch
+    SUBDIR += pear-HTML_QuickForm_Renderer_Tableless
     SUBDIR += pear-HTML_QuickForm_SelectFilter
     SUBDIR += pear-HTML_QuickForm_advmultiselect
     SUBDIR += pear-HTML_Select
