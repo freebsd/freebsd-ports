@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.3.3b
+PORTVERSION=	1.3.3c
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -246,9 +246,8 @@ CONFIGURE_ARGS+=LIBS=-liodbc LD_LIBRARY_PATH=${LOCALBASE}/lib LDFLAGS=-L${LOCALB
 .endif
 
 .if defined(WITH_TDS)
-DISTFILES+=	mod_sql_tds-4.11.tar.bz2:sql_tds
-EXTRACT_ONLY+=	mod_sql_tds-4.11.tar.bz2
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-contrib-mod_sql_tds.c
+DISTFILES+=	mod_sql_tds-4.12.tar.bz2:sql_tds
+EXTRACT_ONLY+=	mod_sql_tds-4.12.tar.bz2
 MODULES:=${MODULES}:mod_sql_tds
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
