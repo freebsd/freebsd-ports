@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt_RC4
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,8 +15,7 @@ COMMENT=	PEAR encryption class for RC4 encryption
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CATEGORY=	Crypt
-FILES=		Rc4.php
+FILES=		Crypt/Rc4.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
