@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	botan
-PORTVERSION=	1.8.10
+PORTVERSION=	1.8.11
 CATEGORIES=	security
 MASTER_SITES=	http://files.randombit.net/botan/v1.8/
 DISTNAME=	Botan-${PORTVERSION}
@@ -32,6 +32,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --with-tr1-implementation=boost \
 USE_GMAKE=	yes
 MAKE_ARGS=	CXX="${CXX}" LIB_OPT="${CXXFLAGS}"
 USE_LDCONFIG=	yes
+PLIST_FILES=	bin/botan-config lib/libbotan.a lib/libbotan.so lib/libbotan.so.0 libdata/pkgconfig/botan-1.8.pc
 
 PORTDOCS=	*
 

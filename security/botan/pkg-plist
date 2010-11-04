@@ -1,5 +1,0 @@
-bin/botan-config
-lib/libbotan.a
-lib/libbotan.so
-lib/libbotan.so.0
-libdata/pkgconfig/botan-1.8.pc
