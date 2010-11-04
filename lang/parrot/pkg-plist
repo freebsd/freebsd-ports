@@ -47,6 +47,7 @@ include/parrot/%%PARROT_VER%%/parrot/io_unix.h
 include/parrot/%%PARROT_VER%%/parrot/io_win32.h
 include/parrot/%%PARROT_VER%%/parrot/key.h
 include/parrot/%%PARROT_VER%%/parrot/library.h
+include/parrot/%%PARROT_VER%%/parrot/list.h
 include/parrot/%%PARROT_VER%%/parrot/longopt.h
 include/parrot/%%PARROT_VER%%/parrot/memory.h
 include/parrot/%%PARROT_VER%%/parrot/misc.h
@@ -144,8 +145,6 @@ include/parrot/%%PARROT_VER%%/pmc/pmc_packfileannotations.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_packfileconstanttable.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_packfiledebug.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_packfiledirectory.h
-include/parrot/%%PARROT_VER%%/pmc/pmc_packfilefixupentry.h
-include/parrot/%%PARROT_VER%%/pmc/pmc_packfilefixuptable.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_packfilerawsegment.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_packfilesegment.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_parrotinterpreter.h
@@ -608,8 +607,6 @@ src/parrot/%%PARROT_VER%%/pmc/packfileannotations.dump
 src/parrot/%%PARROT_VER%%/pmc/packfileconstanttable.dump
 src/parrot/%%PARROT_VER%%/pmc/packfiledebug.dump
 src/parrot/%%PARROT_VER%%/pmc/packfiledirectory.dump
-src/parrot/%%PARROT_VER%%/pmc/packfilefixupentry.dump
-src/parrot/%%PARROT_VER%%/pmc/packfilefixuptable.dump
 src/parrot/%%PARROT_VER%%/pmc/packfilerawsegment.dump
 src/parrot/%%PARROT_VER%%/pmc/packfilesegment.dump
 src/parrot/%%PARROT_VER%%/pmc/parrotinterpreter.dump
