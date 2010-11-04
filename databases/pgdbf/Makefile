@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	pgdbf
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	databases
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	kirk@daycos.com
 COMMENT=	Convert XBase / FoxPro tables to PostgreSQL
+
+LICENSE=	GPLv3
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -19,7 +21,7 @@ GNU_CONFIGURE=	yes
 MAN1=		pgdbf.1
 
 PLIST_FILES=	bin/pgdbf \
-		share/doc/pgdbf/README
+		%%DOCSDIR%%/README
 PLIST_DIRS=	%%DOCSDIR%%
 
 .include <bsd.port.mk>
