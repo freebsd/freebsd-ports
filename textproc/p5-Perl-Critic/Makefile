@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.10.8
-PORTREVISION=	1
+PORTVERSION=	1.10.9
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -26,6 +25,7 @@ RUN_DEPENDS=	p5-B-Keywords>=1.05:${PORTSDIR}/devel/p5-B-Keywords \
 		p5-List-MoreUtils>=0.19:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-PPI>=1.208:${PORTSDIR}/textproc/p5-PPI \
 		p5-PPIx-Regexp>=0.008:${PORTSDIR}/textproc/p5-PPIx-Regexp \
+		p5-PPIx-Utilities>=1.000:${PORTSDIR}/textproc/p5-PPIx-Utilities \
 		p5-Readonly>=1.03:${PORTSDIR}/devel/p5-Readonly \
 		p5-String-Format>=1.13:${PORTSDIR}/textproc/p5-String-Format \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
