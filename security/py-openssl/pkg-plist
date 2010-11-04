@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/OpenSSL/SSL.so
 %%PYTHON_SITELIBDIR%%/OpenSSL/__init__.py
 %%PYTHON_SITELIBDIR%%/OpenSSL/__init__.pyc
@@ -34,6 +35,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/SecureXMLRPCServer.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/certgen.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mk_simple_certs.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%//proxy.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proxy.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
