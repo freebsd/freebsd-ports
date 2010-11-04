@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Cache
-PORTVERSION=	1.5.5
+PORTVERSION=	1.5.6
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	miwi@FreeBSD.org
