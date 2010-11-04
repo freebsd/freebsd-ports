@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Brackup
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRADFITZ
@@ -25,11 +25,16 @@ RUN_DEPENDS=	p5-DBD-SQLite>0:${PORTSDIR}/databases/p5-DBD-SQLite \
 PERL_CONFIGURE=	yes
 
 MAN1=		brackup.1 \
+		brackup-mount.1 \
 		brackup-restore.1 \
-		brackup-target.1
+		brackup-target.1 \
+		brackup-verify-inventory.1
 MAN3=		Brackup.3 \
 		Brackup::Chunker::MP3.3 \
 		Brackup::Config.3 \
+		Brackup::Dict::Null.3 \
+		Brackup::Dict::SQLite.3 \
+		Brackup::Dict::SQLite2.3 \
 		Brackup::DigestCache.3 \
 		Brackup::InventoryDatabase.3 \
 		Brackup::Manual::Overview.3 \
@@ -40,6 +45,8 @@ MAN3=		Brackup.3 \
 		Brackup::Target::CloudFiles.3 \
 		Brackup::Target::Filesystem.3 \
 		Brackup::Target::Ftp.3 \
-		Brackup::Target::Sftp.3
+		Brackup::Target::GoogleAppEngine.3 \
+		Brackup::Target::Sftp.3 \
+		Brackup::Target::Riak.3
 
 .include <bsd.port.mk>

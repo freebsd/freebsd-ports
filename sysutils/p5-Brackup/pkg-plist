@@ -11,6 +11,9 @@
 %%SITE_PERL%%/Brackup/Decrypt.pm
 %%SITE_PERL%%/Brackup/DecryptedFile.pm
 %%SITE_PERL%%/Brackup/Dict/SQLite.pm
+%%SITE_PERL%%/Brackup/Dict/SQLite2.pm
+%%SITE_PERL%%/Brackup/Dict/DBM.pm
+%%SITE_PERL%%/Brackup/Dict/Null.pm
 %%SITE_PERL%%/Brackup/DigestCache.pm
 %%SITE_PERL%%/Brackup/File.pm
 %%SITE_PERL%%/Brackup/GPGProcManager.pm
@@ -29,13 +32,17 @@
 %%SITE_PERL%%/Brackup/Target/Filebased.pm
 %%SITE_PERL%%/Brackup/Target/Filesystem.pm
 %%SITE_PERL%%/Brackup/Target/Ftp.pm
+%%SITE_PERL%%/Brackup/Target/GoogleAppEngine.pm
+%%SITE_PERL%%/Brackup/Target/Riak.pm
 %%SITE_PERL%%/Brackup/Target/Sftp.pm
 %%SITE_PERL%%/Brackup/TargetBackupStatInfo.pm
 %%SITE_PERL%%/Brackup/Test.pm
 %%SITE_PERL%%/Brackup/Util.pm
 bin/brackup
+bin/brackup-mount
 bin/brackup-restore
 bin/brackup-target
+bin/brackup-verify-inventory
 @dirrmtry %%SITE_PERL%%/Brackup/Target
 @dirrmtry %%SITE_PERL%%/Brackup/Manual
 @dirrmtry %%SITE_PERL%%/Brackup/Dict
