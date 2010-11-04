@@ -11,3 +11,12 @@
  
  ALLSRC = fb-server.c log.c tools.c game.c net.c
  ALLOBJ = $(subst .c,.o,$(ALLSRC))
+@@ -13,7 +13,7 @@
+ CFLAGS := $(CFLAGS) $(ADDCFLAGS)
+ endif
+ 
+-all: .depend fb-server
++all: fb-server
+ 
+ fb-server: $(ALLOBJ)
+ 
