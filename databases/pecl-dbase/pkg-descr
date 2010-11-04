@@ -1,0 +1,2 @@
+These functions allow you to access records stored
+in dBase-format (dbf) databases from within PHP.
