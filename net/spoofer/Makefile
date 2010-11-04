@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	spoofer
-PORTVERSION=	0.7.3
+PORTVERSION=	0.8
 CATEGORIES=	net
-MASTER_SITES=	http://spoofer.csail.mit.edu/ CENKES
+MASTER_SITES=	http://spoofer.csail.mit.edu/
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	ANA Spoofer Project testing software
