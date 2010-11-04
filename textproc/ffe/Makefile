@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ffe
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/ff-extractor/ff-extractor/${PORTVERSION}
 
