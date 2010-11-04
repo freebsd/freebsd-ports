@@ -7,9 +7,15 @@
 
 PORTNAME=	spine
 PORTVERSION=	0.8.7.g
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.cacti.net/downloads/${PORTNAME}/
 DISTNAME=	cacti-${PORTNAME}-0.8.7g
+
+# Vendor's patches
+PATCH_SITES=	http://www.cacti.net/downloads/spine/patches/0.8.7g/
+PATCHFILES= 	unified_issues.patch
+PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	A multithreaded poller for Cacti written in C
