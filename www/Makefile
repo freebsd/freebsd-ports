@@ -6,6 +6,7 @@
     SUBDIR += MT
     SUBDIR += WebMagick
     SUBDIR += abyssws
+    SUBDIR += ach
     SUBDIR += adblock
     SUBDIR += admuser
     SUBDIR += adzap
