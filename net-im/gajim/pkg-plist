@@ -878,6 +878,7 @@ share/applications/gajim.desktop
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-single_msg_recv.png
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-subscription_request.png
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-unsubscribed.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gajim-warning.png
 %%DATADIR%%/icons/hicolor/64x64/apps/gajim.png
 %%DATADIR%%/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/src/adhoc_commands.py
@@ -1291,8 +1292,11 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gajim.mo
 %%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/kk
+%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gl
 %%NLS%%@dirrmtry share/locale/be@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/be@latin
+@dirrmtry share/applications
 @dirrm %%DATADIR%%/src/common/zeroconf
 @dirrm %%DATADIR%%/src/common/xmpp
 @dirrm %%DATADIR%%/src/common/protocol
@@ -1414,4 +1418,3 @@ share/icons/hicolor/scalable/apps/gajim.svg
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%
-@dirrmtry share/applications

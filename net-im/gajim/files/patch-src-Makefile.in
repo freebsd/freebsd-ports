@@ -1,6 +1,6 @@
---- src/Makefile.in	2010-09-02 23:41:57.000000000 +0400
-+++ src/Makefile.in	2010-09-26 02:52:26.000000000 +0400
-@@ -236,12 +236,26 @@
+--- src/Makefile.in.orig	2010-10-26 17:30:57.000000000 +0200
++++ src/Makefile.in	2010-10-30 13:13:42.000000000 +0200
+@@ -239,12 +239,26 @@
  gajimsrcdir = $(gajim_srcdir)
  nobase_dist_gajimsrc_PYTHON = \
  	$(srcdir)/*.py \
@@ -28,7 +28,7 @@
  
  MAINTAINERCLEANFILES = Makefile.in
  all: all-am
-@@ -298,13 +312,13 @@
+@@ -301,13 +315,6 @@
  	      $(MKDIR_P) "$(DESTDIR)$(gajimsrcdir)/$$dir"; }; \
  	    echo " $(INSTALL_DATA) $$xfiles '$(DESTDIR)$(gajimsrcdir)/$$dir'"; \
  	    $(INSTALL_DATA) $$xfiles "$(DESTDIR)$(gajimsrcdir)/$$dir" || exit $$?; }; \
@@ -39,13 +39,6 @@
 -	      PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(gajimsrcdir)" $$dlist; \
 -	    fi; \
 -	  else :; fi \
-+#	  if test -n "$$dlist"; then \
-+#	    if test -z "$(DESTDIR)"; then \
-+#	      PYTHON=$(PYTHON) $(py_compile) --basedir "$(gajimsrcdir)" $$dlist; \
-+#	    else \
-+#	      PYTHON=$(PYTHON) $(py_compile) --destdir "$(DESTDIR)" --basedir "$(gajimsrcdir)" $$dlist; \
-+#	    fi; \
-+#	  else :; fi \
  	done
  
  uninstall-nobase_dist_gajimsrcPYTHON:

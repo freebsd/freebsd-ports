@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	0.14
+PORTVERSION=	0.14.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.gajim.org/downloads/0.14/
 
-MAINTAINER=	dsh@wizard.volgograd.ru
+MAINTAINER=	dsh@bamus.cz
 COMMENT=	Gajim is a Jabber client based on a plugin system
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
@@ -46,22 +46,5 @@ ICONSETS=	dcraven gnome goojim gota jabberbulb sun transports wroop
 pre-build:
 		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src
 		${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src
-
-post-install:
-		${MKDIR} ${DATADIR}/data/activities
-		(cd ${WRKSRC}/data/activities && \
-		${COPYTREE_SHARE} "default" ${DATADIR}/data/activities)
-
-		${MKDIR} ${DATADIR}/data/emoticons
-		(cd ${WRKSRC}/data/emoticons && \
-		${COPYTREE_SHARE} "${EMOTICONS}" ${DATADIR}/data/emoticons)
-
-		${MKDIR} ${DATADIR}/data/iconsets
-		(cd ${WRKSRC}/data/iconsets && \
-		${COPYTREE_SHARE} "${ICONSETS}" ${DATADIR}/data/iconsets)
-
-		${MKDIR} ${DATADIR}/data/moods
-		(cd ${WRKSRC}/data/moods && \
-		${COPYTREE_SHARE} "default" ${DATADIR}/data/moods)
 
 .include <bsd.port.mk>
