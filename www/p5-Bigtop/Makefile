@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bigtop
-PORTVERSION=	0.33
+PORTVERSION=	0.38
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +23,8 @@ RUN_DEPENDS=	${SITE_PERL}/Config/General.pm:${PORTSDIR}/devel/p5-Config-General 
 		p5-Gantry>=3.38:${PORTSDIR}/www/p5-Gantry \
 		p5-Inline>=0.40:${PORTSDIR}/devel/p5-Inline \
 		p5-Inline-TT>=0.06:${PORTSDIR}/devel/p5-Inline-TT \
-		p5-Template-Toolkit>=2.0:${PORTSDIR}/www/p5-Template-Toolkit
+		p5-Template-Toolkit>=2.0:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-HTTP-Server-Simple>0.27:${PORTSDIR}/www/p5-HTTP-Server-Simple
 
 PERL_MODBUILD=	yes
 
@@ -37,6 +38,7 @@ MAN3=		Bigtop.3 \
 		Bigtop::Backend::Conf::General.3 \
 		Bigtop::Backend::Control.3 \
 		Bigtop::Backend::Control::Gantry.3 \
+		Bigtop::Backend::Diagram::GraphvizSql.3 \
 		Bigtop::Backend::HttpdConf.3 \
 		Bigtop::Backend::HttpdConf::Gantry.3 \
 		Bigtop::Backend::Init::Std.3 \
