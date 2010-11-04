@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Benchmark
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	benchmarks devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
