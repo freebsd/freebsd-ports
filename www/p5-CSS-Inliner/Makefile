@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	CSS-Inliner
-PORTVERSION=	2669
+PORTVERSION=	2897
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-#MASTER_SITE_SUBDIR=	../by-authors/id/K/KA/KAMELKEV
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vivek@khera.org
-COMMENT=	Library for converting CSS <style> blocks to inline styles
+COMMENT=	Library for converting CSS blocks and files to inline styles
 
-RUN_DEPENDS+=	p5-CSS-Tiny>=1.15:${PORTSDIR}/textproc/p5-CSS-Tiny \
-		p5-HTML-Query>=0.02:${PORTSDIR}/www/p5-HTML-Query \
-		p5-HTML-Tree>=3.23:${PORTSDIR}/www/p5-HTML-Tree
+RUN_DEPENDS=	p5-CSS-Simple>=2874:${PORTSDIR}/textproc/p5-CSS-Simple \
+		p5-HTML-Query>=0.07:${PORTSDIR}/www/p5-HTML-Query \
+		p5-HTML-Tree>=3.23:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 PERL_CONFIGURE=	yes
 
