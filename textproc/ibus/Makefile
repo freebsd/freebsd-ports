@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	ibus
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.8
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	henry.hu.sh@gmail.com
 COMMENT=	Intelligent Input Bus for Linux / Unix OS
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus \
+		librsvg2>=2.0:${PORTSDIR}/graphics/librsvg2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify \
-		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
+		${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
+		librsvg2>=2.0:${PORTSDIR}/graphics/librsvg2
 
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2 gconf2
@@ -29,7 +31,8 @@ INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	ibus.schemas
 
 OPTIONS=	ISOCODES "Use isocodecs" on \
-		VALA "Install vala binding" on
+		VALA "Install vala binding" on \
+		GINTRO "Install GObject Introspection data" on
 
 .include <bsd.port.pre.mk>
 
@@ -55,6 +58,16 @@ PLIST_SUB+=	VALA=""
 .else
 CONFIGURE_ARGS+=	--disable-vala
 PLIST_SUB+=	VALA="@comment "
+.endif
+
+.if defined(WITH_GINTRO)
+BUILD_DEPENDS+= gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
+RUN_DEPENDS+=   gobject-introspection>=0.6.8:${PORTSDIR}/devel/gobject-introspection
+CONFIGURE_ARGS+=        --enable-introspection=yes
+PLIST_SUB+= GINTRO=""
+.else
+CONFIGURE_ARGS+=        --enable-introspection=no
+PLIST_SUB+= GINTRO="@comment "
 .endif
 
 post-patch:
