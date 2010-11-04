@@ -10,6 +10,6 @@
 --- 3,7 ----
   mydir=ksu
   BUILDTOP=$(REL)$(U)$(S)$(U)
-! DEFINES = -DGET_TGT_VIA_PASSWD -DPRINC_LOOK_AHEAD -DCMD_PATH='"/usr/bin /bin /usr/sbin /sbin"'
+! DEFINES = -DGET_TGT_VIA_PASSWD -DPRINC_LOOK_AHEAD -DCMD_PATH='"/usr/bin /bin /usr/sbin /sbin"' -DDEBUG
   CFLAGS = $(CCOPTS) $(DEFINES) $(DEFS) $(LOCALINCLUDE)
   
