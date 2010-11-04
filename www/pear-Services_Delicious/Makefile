@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Services_Delicious
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -21,8 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_DOS2UNIX=	yes
 USE_PHP=	openssl
 
-CATEGORY=	Services
-FILES=		Delicious.php
+FILES=		Services/Delicious.php
 EXAMPLES=	addPost.php config.php deletePost.php getDates.php getPosts.php \
 		getTags.php renameTag.php
 DOCS=		api.txt
