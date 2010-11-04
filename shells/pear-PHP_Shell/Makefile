@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	PHP_Shell
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	shells www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -18,7 +17,7 @@ USE_PHP=	pcre tokenizer readline
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
-FILES=		ShellTests.php PHP/Shell.php \
+FILES=		PHP/Shell.php \
 		PHP/Shell/Commands.php PHP/Shell/Extensions.php \
 		PHP/Shell/Options.php \
 		PHP/Shell/Extensions/Autoload.php \
