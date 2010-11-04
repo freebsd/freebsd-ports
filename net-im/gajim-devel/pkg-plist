@@ -908,6 +908,7 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-single_msg_recv.png
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-subscription_request.png
 %%DATADIR%%/icons/hicolor/48x48/actions/gajim-unsubscribed.png
+%%DATADIR%%/icons/hicolor/48x48/actions/gajim-warning.png
 %%DATADIR%%/icons/hicolor/64x64/apps/gajim.png
 %%DATADIR%%/icons/hicolor/scalable/apps/gajim.svg
 %%DATADIR%%/plugins/acronyms_expander/__init__.py

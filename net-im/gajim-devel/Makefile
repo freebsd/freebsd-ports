@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	20100926
+PORTVERSION=	20101030
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.bamus.cz/distfiles/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-2010-09-26
+DISTNAME=	${PORTNAME}-2010-10-30
 
 MAINTAINER=	dsh@bamus.cz
 COMMENT=	Gajim is a Jabber client based on a plugin system
@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.14.0.1-c821dd3af25f
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.14.0.1-aa675b5a84e1
 
 MAN1=		gajim.1 gajim-history-manager.1 gajim-remote.1
 
