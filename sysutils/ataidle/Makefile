@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ataidle
-PORTVERSION=	2.5
+PORTVERSION=	2.5.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cran.org.uk/bruce/software/
 
