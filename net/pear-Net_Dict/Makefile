@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Dict
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	net www pear
 
 MAINTAINER=	miwi@FreeBSD.org
