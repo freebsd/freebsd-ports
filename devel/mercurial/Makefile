@@ -85,6 +85,7 @@ post-install:
 .if !defined(NOPORTDATA)
 	${MKDIR} ${DATADIR}
 	${MKDIR} ${DATADIR}/contrib
+	${MKDIR} ${DATADIR}/contrib/hgfixes
 	${MKDIR} ${DATADIR}/contrib/hgsh
 	${MKDIR} ${DATADIR}/contrib/vim
 	for f in ${CONTRIB_FILES}; do \
