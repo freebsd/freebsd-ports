@@ -1,0 +1,12 @@
+--- configure.ac.orig	2010-11-01 21:38:51.000000000 -0700
++++ configure.ac	2010-11-02 21:45:55.011452697 -0700
+@@ -4908,9 +4908,6 @@
+ fi
+ AM_CONDITIONAL([GTEST_AVAILABLE], [test x${GTEST_CONFIG} != x])
+ 
+-AC_CONFIG_FILES(tests/Makefile)
+-AC_CONFIG_FILES(tests/libntp/Makefile)
+-
+ AC_CONFIG_SUBDIRS(sntp)
+ 
+ AC_OUTPUT
