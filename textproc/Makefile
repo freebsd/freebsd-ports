@@ -63,6 +63,7 @@
     SUBDIR += cl-ppcre-sbcl
     SUBDIR += clit
     SUBDIR += clucene
+    SUBDIR += clucene-contrib
     SUBDIR += coco
     SUBDIR += code2html
     SUBDIR += cole
