@@ -2678,6 +2678,7 @@
     SUBDIR += py-akismet
     SUBDIR += py-anonfunc
     SUBDIR += py-anyjson
+    SUBDIR += py-apipkg
     SUBDIR += py-argparse
     SUBDIR += py-asn1
     SUBDIR += py-aspects

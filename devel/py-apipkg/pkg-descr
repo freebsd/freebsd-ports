@@ -1,0 +1,8 @@
+With apipkg you can control the exported namespace of a python package
+and greatly reduce the number of imports for your users. It is a small
+pure python module that works on virtually all Python versions, including
+CPython2.3 to Python3.1, Jython and PyPy. It co-operates well with
+Python's help() system, custom importers (PEP302) and common command
+line completion tools.
+
+WWW: http://bitbucket.org/hpk42/apipkg
