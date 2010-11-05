@@ -27,6 +27,9 @@ MAKE_ENV=	MKDIR="${MKDIR}" \
 
 .include <bsd.port.pre.mk>
 
+# XXX: bsd.gcc.mk now defines CPP
+CPP=		"${CXX}"
+
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
