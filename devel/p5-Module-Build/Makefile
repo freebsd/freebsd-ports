@@ -19,8 +19,7 @@ COMMENT=	Build and install Perl modules
 RUN_DEPENDS=	p5-YAML-Tiny>=1.40:${PORTSDIR}/textproc/p5-YAML-Tiny \
 		p5-ExtUtils-CBuilder>=0.15:${PORTSDIR}/devel/p5-ExtUtils-CBuilder \
 		p5-ExtUtils-ParseXS>=1.02:${PORTSDIR}/devel/p5-ExtUtils-ParseXS \
-		p5-ExtUtils-Install>=1.54:${PORTSDIR}/devel/p5-ExtUtils-Install \
-		p5-Test-Harness>=3.16:${PORTSDIR}/devel/p5-Test-Harness
+		p5-ExtUtils-Install>=1.54:${PORTSDIR}/devel/p5-ExtUtils-Install
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
@@ -66,6 +65,7 @@ MAN3=	inc::latest.3 \
 .if ${PERL_LEVEL} >= 501000
 PLIST_SUB+=	EXE_FILES="@comment "
 .else
+RUN_DEPENDS+=	p5-Test-Harness>=3.16:${PORTSDIR}/devel/p5-Test-Harness
 PLIST_SUB+=	EXE_FILES=""
 MAN1=		config_data.1
 .endif
