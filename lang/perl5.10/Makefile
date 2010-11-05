@@ -21,6 +21,8 @@ DIST_SUBDIR=	perl
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
+LICENSE=	ART10 GPLv1
+
 CONFLICTS=	perl-5.6.* perl-5.8.* perl-threaded-5.8.* \
 		perl-5.12.* perl-threaded-5.12.*
 MAKE_JOBS_UNSAFE=	yes
