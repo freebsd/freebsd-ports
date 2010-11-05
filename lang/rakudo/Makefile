@@ -19,6 +19,8 @@ BUILD_DEPENDS=	parrot>=${PARROT_VERSION}:${PORTSDIR}/lang/parrot
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 RUN_DEPENDS=	parrot>=${PARROT_VERSION}:${PORTSDIR}/lang/parrot
 
+LICENSE=	ART20
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000

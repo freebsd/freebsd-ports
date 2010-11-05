@@ -19,6 +19,8 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		icudata.38:${PORTSDIR}/devel/icu
 
+LICENSE=	ART20
+
 MAKE_JOBS_UNSAFE=	yes
 
 USE_BZIP2=	yes
