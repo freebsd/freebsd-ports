@@ -35,6 +35,8 @@ CONTRIB_FILES=	bash_completion \
 		hgfixes/fix_bytesmod.py \
 		hgfixes/fix_leftover_imports.py \
 		hgk \
+		hgsh/Makefile \
+		hgsh/hgsh.c \
 		logo-droplets.svg \
 		memory.py \
 		mercurial.el \
