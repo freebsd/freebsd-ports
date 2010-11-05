@@ -22,6 +22,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
 LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 CONFLICTS=	perl-5.6.* perl-5.8.* perl-threaded-5.8.* \
 		perl-5.12.* perl-threaded-5.12.*
