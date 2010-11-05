@@ -20,7 +20,7 @@
 #			extension (http://wiki.dovecot.org/maildrop/)
 
 PORTNAME=	maildrop
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -38,6 +38,8 @@ CONFIGURE_ARGS=	--enable-syslog=1 \
 		--enable-maildirquota
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 
