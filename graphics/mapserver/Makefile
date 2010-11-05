@@ -7,6 +7,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		5.6.5
+PORTREVISION=		1
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -60,8 +61,10 @@ CONFIGURE_ARGS+=	--with-ming=${LOCALBASE}
 .endif
 
 .if defined(WITH_PDF)
-LIB_DEPENDS+=		pdf.8:${PORTSDIR}/print/pdflib
-CONFIGURE_ARGS+=	--with-pdf=${LOCALBASE}
+LIB_DEPENDS+=		pdf.8:${PORTSDIR}/print/pdflib \
+			png.6:${PORTSDIR}/graphics/png \
+			tiff.4:${PORTSDIR}/graphics/tiff
+CONFIGURE_ARGS+=	--with-pdf=${LOCALBASE} --with-tiff=${LOCALBASE} --with-png=${LOCALBASE}
 .endif
 
 .if defined(WITH_WMS)
