@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
 
-LATEST_LINK=	${PORTNAME}
+LATEST_LINK=	${PORTNAME}-rc
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:111 libtool:22
