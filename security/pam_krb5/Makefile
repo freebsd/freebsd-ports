@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		pam_krb5
-PORTVERSION=		4.2
+PORTVERSION=		4.3
 CATEGORIES=		security
 MASTER_SITES=		http://archives.eyrie.org/software/kerberos/
 DISTNAME=		pam-krb5-${PORTVERSION:S/.r/-rc/}
