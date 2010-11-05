@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Catalyst-Action-REST
-PORTVERSION=	0.85
+PORTVERSION=	0.87
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automated REST Method Dispatching for Catalyst
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80:${PORTSDIR}/www/p5-Catalyst-Runtime \
