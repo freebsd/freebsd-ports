@@ -7,7 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -107,6 +107,12 @@ CONFIGURE_ARGS+=	-Ui_gdbm
 PLIST_SUB+=		GDBM="@comment "
 .endif
 
+.if ${OSVERSION} >= 900022
+PLIST_SUB+=	MANCONF=""
+.else
+PLIST_SUB+=	MANCONF="@comment "
+.endif
+
 .if defined(WITHOUT_PERL_MALLOC)
 .undef WITH_PERL_MALLOC
 .else
@@ -175,6 +181,10 @@ post-patch:
 		-e 's|%%LINK_USRBIN%%|${LINK_USRBIN}|g;' \
 		${FILESDIR}/use.perl \
 		> ${WRKDIR}/use.perl
+	${SED} -e 's|%%PREFIX%%|${PREFIX}|g;' \
+		-e 's|%%PERL_VERSION%%|${PERL_VERSION}|g;' \
+		${FILESDIR}/perl-man.conf \
+		> ${WRKDIR}/perl-man.conf
 	${SED} -e 's|%%PERL%%|${PERL}|g; s|%%PERL_VERSION%%|${PERL_VERSION}|g; s|%%PKGNAME%%|${PKGNAME}|g' \
 		${FILESDIR}/perl-after-upgrade \
 		> ${WRKDIR}/perl-after-upgrade
@@ -206,6 +216,9 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/perl-after-upgrade ${PREFIX}/bin/perl-after-upgrade
 	@${INSTALL_MAN} ${WRKDIR}/perl-after-upgrade.1 ${MAN1PREFIX}/man/man1/perl-after-upgrade.1
 	@${LN} -sf ${PREFIX}/bin/perl${PERL_VERSION} ${PREFIX}/bin/perl5
+.if ${OSVERSION} >= 900022
+	@${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${PREFIX}/etc/man.d/perl${PERL_VERSION}.conf
+.endif
 .for files in ${BSDPAN_FILES}
 	${MKDIR} ${BSDPAN_DEST}/${files:H}
 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${NOBINMODE} \

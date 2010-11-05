@@ -110,8 +110,8 @@ do_cleanup_make_conf()
 
 do_cleanup_manpath()
 {
-	echo -n "Cleaning up /etc/manpath.config..."
 	if [ -f /etc/manpath.config ] ; then
+		echo -n "Cleaning up /etc/manpath.config..."
 		/bin/cp -p /etc/manpath.config /etc/manpath.config.new
 		/usr/bin/awk 's=0;
 			/^#.*use.perl/ { s=1; mode=1 }
@@ -121,8 +121,8 @@ do_cleanup_manpath()
 			{ if (s != 1) { mode = 0 } if (mode == 0) print }' /etc/manpath.config >/etc/manpath.config.new
 		/bin/mv /etc/manpath.config /etc/manpath.config.bak
 		/bin/mv /etc/manpath.config.new /etc/manpath.config
+		echo " Done."
 	fi
-	echo " Done."
 }
 
 do_spam_make_conf()
@@ -135,11 +135,13 @@ do_spam_make_conf()
 
 do_spam_manpath()
 {
-	echo -n "Spamming /etc/manpath.config..."
-	echo "$banner" >>/etc/manpath.config
-	echo "OPTIONAL_MANPATH	${PKG_PREFIX}/lib/perl5/%%PERL_VERSION%%/man" >>/etc/manpath.config
-	echo "OPTIONAL_MANPATH	${PKG_PREFIX}/lib/perl5/%%PERL_VERSION%%/perl/man" >>/etc/manpath.config
-	echo " Done."
+	if [ -f /etc/manpath.config ] ; then
+		echo -n "Spamming /etc/manpath.config..."
+		echo "$banner" >>/etc/manpath.config
+		echo "OPTIONAL_MANPATH	${PKG_PREFIX}/lib/perl5/%%PERL_VERSION%%/man" >>/etc/manpath.config
+		echo "OPTIONAL_MANPATH	${PKG_PREFIX}/lib/perl5/%%PERL_VERSION%%/perl/man" >>/etc/manpath.config
+		echo " Done."
+	fi
 }
 
 [ "$need_remove_links" = "yes" ] && do_remove_links

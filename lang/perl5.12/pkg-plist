@@ -40,6 +40,7 @@ bin/s2p
 bin/shasum
 bin/splain
 bin/xsubpp
+%%MANCONF%%etc/man.d/perl%%PERL_VER%%.conf
 lib/perl5/%%PERL_VER%%/AnyDBM_File.pm
 lib/perl5/%%PERL_VER%%/App/Cpan.pm
 lib/perl5/%%PERL_VER%%/App/Prove.pm
