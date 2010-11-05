@@ -1,5 +1,9 @@
 These SQLite extension libraries provide the following functions:
 
+Compress content into a blob using libz
+(loaded with ".load libsqlitecompress.so"):
+  COMPRESS, UNCOMPRESS
+
 IPv4 functions (loaded with ".load libsqliteipv4.so"):
   ISINNET, ISSAMENET
   IP2INT, INT2IP
