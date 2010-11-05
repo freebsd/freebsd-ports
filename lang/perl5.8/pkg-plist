@@ -37,6 +37,7 @@ bin/splain
 %%SUIDPERL%%bin/suidperl
 %%NEED_USE_PERL%%bin/use.perl
 bin/xsubpp
+%%MANCONF%%etc/man.d/perl%%PERL_VER%%.conf
 lib/perl5/%%PERL_VER%%/AnyDBM_File.pm
 lib/perl5/%%PERL_VER%%/Attribute/Handlers.pm
 lib/perl5/%%PERL_VER%%/AutoLoader.pm
