@@ -276,6 +276,7 @@ ace                             ports/devel/ace
 ace+tao                         ports/devel/ace+tao
 ace+tao-doc                     ports/devel/ace+tao-doc
 acfax                           ports/comms/acfax
+ach                             ports/www/ach
 achievo                         ports/misc/achievo
 acidlaunch                      ports/sysutils/acidlaunch
 acidrip                         ports/multimedia/acidrip
@@ -897,6 +898,7 @@ barnyard                        ports/security/barnyard
 barnyard-sguil                  ports/security/barnyard-sguil
 barnyard2                       ports/security/barnyard2
 barrage                         ports/games/barrage
+barry                           ports/palm/barry
 bas2tap                         ports/lang/bas2tap
 base                            ports/security/base
 base64                          ports/converters/base64
@@ -1719,7 +1721,6 @@ clisp                           ports/lang/clisp
 clisp-hyperspec                 ports/devel/clisp-hyperspec
 clit                            ports/textproc/clit
 clive                           ports/multimedia/clive
-clive-utils                     ports/multimedia/clive-utils
 clive1                          ports/multimedia/clive1
 cln                             ports/math/cln
 cloc                            ports/misc/cloc
@@ -3040,6 +3041,7 @@ emprint                         ports/x11/emprint
 empty                           ports/net/empty
 emu                             ports/x11/emu
 emu10kx                         ports/audio/emu10kx
+emulators_openmsx               ports/emulators/openmsx
 en-aspell                       ports/textproc/en-aspell
 enblend                         ports/graphics/enblend
 enca                            ports/converters/enca
@@ -4137,6 +4139,7 @@ gambas2-ide                     ports/editors/gambas2-ide
 gambit                          ports/math/gambit
 gambit-c                        ports/lang/gambit-c
 games_crimson                   ports/games/crimson
+games_openmsx                   ports/games/openmsx
 games_ttt                       ports/games/ttt
 gamess                          ports/science/gamess
 gamin                           ports/devel/gamin
@@ -7505,7 +7508,6 @@ kvirc                           ports/irc/kvirc
 kvirc-qt4                       ports/irc/kvirc-qt4
 kwappen                         ports/games/kwappen
 kwatch                          ports/misc/kwatch
-kwebget                         ports/ftp/kwebget
 kwebkitpart                     ports/www/kwebkitpart
 kwirc                           ports/irc/kwirc
 kwooty                          ports/net/kwooty
@@ -10295,6 +10297,7 @@ ntl                             ports/math/ntl
 ntlmaps                         ports/net/ntlmaps
 ntop                            ports/net/ntop
 ntp-devel                       ports/net/ntp-devel
+ntp-rc                          ports/net/ntp-rc
 ntraceroute                     ports/net/ntraceroute
 nttcp                           ports/benchmarks/nttcp
 nuclearchess                    ports/games/nuclearchess
@@ -10619,6 +10622,7 @@ openfire                        ports/net-im/openfire
 openftd                         ports/news/openftd
 openfts                         ports/textproc/openfts
 openfwtk                        ports/security/openfwtk
+opengfx                         ports/games/opengfx
 opengl-man                      ports/graphics/opengl-man
 openglad                        ports/games/openglad
 opengoo                         ports/deskutils/opengoo
@@ -10648,7 +10652,6 @@ openmovieeditor                 ports/multimedia/openmovieeditor
 openmpi                         ports/net/openmpi
 openmq                          ports/net/openmq
 openmq-client                   ports/net/openmq-client
-openmsx                         ports/emulators/openmsx
 opennap                         ports/net-p2p/opennap
 openntpd                        ports/net/openntpd
 openobex                        ports/comms/openobex
@@ -10674,6 +10677,7 @@ opensc                          ports/security/opensc
 openscep                        ports/security/openscep
 opensched                       ports/textproc/opensched
 openser                         ports/net/openser
+opensfx                         ports/games/opensfx
 openslp                         ports/net/openslp
 opensonic                       ports/games/opensonic
 opensp                          ports/textproc/opensp
@@ -14113,6 +14117,7 @@ p5-Test-Harness                 ports/devel/p5-Test-Harness
 p5-Test-HasVersion              ports/devel/p5-Test-HasVersion
 p5-Test-HexString               ports/devel/p5-Test-HexString
 p5-Test-Inline                  ports/devel/p5-Test-Inline
+p5-Test-Inter                   ports/devel/p5-Test-Inter
 p5-Test-JSON                    ports/devel/p5-Test-JSON
 p5-Test-Kwalitee                ports/devel/p5-Test-Kwalitee
 p5-Test-LectroTest              ports/devel/p5-Test-LectroTest
@@ -18124,6 +18129,7 @@ p5-test-html-tidy               ports/devel/p5-Test-HTML-Tidy
 p5-test-http                    ports/www/p5-Test-HTTP
 p5-test-http-server-simple      ports/www/p5-Test-HTTP-Server-Simple
 p5-test-inline                  ports/devel/p5-Test-Inline
+p5-test-inter                   ports/devel/p5-Test-Inter
 p5-test-json                    ports/devel/p5-Test-JSON
 p5-test-kwalitee                ports/devel/p5-Test-Kwalitee
 p5-test-lectrotest              ports/devel/p5-Test-LectroTest
@@ -18773,7 +18779,6 @@ paintown                        ports/games/paintown
 paje                            ports/science/paje
 pal                             ports/deskutils/pal
 palm-db-tools                   ports/palm/palm-db-tools
-palm_barry                      ports/palm/barry
 palmos-sdk                      ports/palm/palmos-sdk
 palmpower                       ports/palm/palmpower
 palomino                        ports/games/palomino
@@ -19016,6 +19021,7 @@ pear-HTML_QuickForm             ports/devel/pear-HTML_QuickForm
 pear-HTML_QuickForm2            ports/devel/pear-HTML_QuickForm2
 pear-HTML_QuickForm_Controller  ports/devel/pear-HTML_QuickForm_Controller
 pear-HTML_QuickForm_Livesearch  ports/devel/pear-HTML_QuickForm_Livesearch
+pear-HTML_QuickForm_Renderer_Tableless  ports/devel/pear-HTML_QuickForm_Renderer_Tableless
 pear-HTML_QuickForm_SelectFilter  ports/devel/pear-HTML_QuickForm_SelectFilter
 pear-HTML_QuickForm_advmultiselect  ports/devel/pear-HTML_QuickForm_advmultiselect
 pear-HTML_Select                ports/devel/pear-HTML_Select
@@ -19305,6 +19311,7 @@ pear-html_quickform2            ports/devel/pear-HTML_QuickForm2
 pear-html_quickform_advmultiselect  ports/devel/pear-HTML_QuickForm_advmultiselect
 pear-html_quickform_controller  ports/devel/pear-HTML_QuickForm_Controller
 pear-html_quickform_livesearch  ports/devel/pear-HTML_QuickForm_Livesearch
+pear-html_quickform_renderer_tableless  ports/devel/pear-HTML_QuickForm_Renderer_Tableless
 pear-html_quickform_selectfilter  ports/devel/pear-HTML_QuickForm_SelectFilter
 pear-html_select                ports/devel/pear-HTML_Select
 pear-html_select_common         ports/devel/pear-HTML_Select_Common
@@ -19520,6 +19527,7 @@ pecl-bz2                        ports/archivers/pecl-bz2
 pecl-crack                      ports/security/pecl-crack
 pecl-ctemplate                  ports/textproc/pecl-ctemplate
 pecl-cvsclient                  ports/net/pecl-cvsclient
+pecl-dbase                      ports/databases/pecl-dbase
 pecl-doublemetaphone            ports/textproc/pecl-doublemetaphone
 pecl-drizzle                    ports/databases/pecl-drizzle
 pecl-enchant                    ports/textproc/pecl-enchant
@@ -20328,7 +20336,6 @@ portmk                          ports/ports-mgmt/portmk
 portmon                         ports/net-mgmt/portmon
 portoseguro                     ports/x11/portoseguro
 portrac                         ports/ports-mgmt/portrac
-ports-mgmt_barry                ports/ports-mgmt/barry
 ports_at                        ports/science/at
 ports_binutils                  ports/devel/binutils
 ports_bs                        ports/games/bs
@@ -22105,6 +22112,7 @@ rexima                          ports/audio/rexima
 rexx-curl                       ports/ftp/rexx-curl
 rexx-imc                        ports/lang/rexx-imc
 rexx-regina                     ports/lang/rexx-regina
+rexx-regutil                    ports/lang/rexx-regutil
 rexx-sock                       ports/net/rexx-sock
 rexx-wrapper                    ports/lang/rexx-wrapper
 rezerwar                        ports/games/rezerwar
@@ -25351,7 +25359,6 @@ waveplay                        ports/audio/waveplay
 wavpack                         ports/audio/wavpack
 wavplay                         ports/audio/wavplay
 wb                              ports/mbone/wb
-wb0                             ports/www/wb0
 wbar                            ports/x11/wbar
 wbarconf                        ports/x11/wbarconf
 wbl                             ports/mail/wbl
