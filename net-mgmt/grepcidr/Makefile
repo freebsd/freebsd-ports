@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt textproc
 MASTER_SITES=	http://www.pc-tools.net/files/unix/
 
-MAINTAINER=	doug+ports@idmf.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filter IP addresses matching IPv4 CIDR/network specification
 
 OPTIONS=	SEARCH		"Enable pattern search anywhere in line" off
