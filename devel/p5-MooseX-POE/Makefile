@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-POE
-PORTVERSION=	0.209
+PORTVERSION=	0.210
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,7 +29,10 @@ MAN3=	MooseX::POE.3 \
 	MooseX::POE::Meta::Trait::Instance.3 \
 	MooseX::POE::Meta::Trait::Class.3 \
 	MooseX::POE::Meta::Trait::Constructor.3 \
+	MooseX::POE::Meta::Method::State.3 \
 	MooseX::POE::Meta::Trait::Object.3 \
+	MooseX::POE::Meta::Role.3 \
+	MooseX::POE::Meta::Trait.3 \
 	MooseX::POE::Meta::Trait::SweetArgs.3 \
 	MooseX::POE::Role.3 \
 	MooseX::POE::SweetArgs.3
