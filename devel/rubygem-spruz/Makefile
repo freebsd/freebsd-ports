@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spruz
-PORTVERSION=	0.1.5
+PORTVERSION=	0.2.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
