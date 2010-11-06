@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	php-libawl
-PORTVERSION=	0.43
+PORTVERSION=	0.45
 CATEGORIES=	devel
 MASTER_SITES=	http://debian.mcmillan.net.nz/packages/awl/ \
 		SF/rscds/awl/${PORTVERSION}
@@ -27,8 +27,7 @@ pre-everything::
 	@${ECHO_CMD} "# by setting LIBAWLDIR in /etc/make.conf"
 
 do-install:
-	${MKDIR} ${PREFIX}/${LIBAWLDIR}
-	${CP} -Rp ${WRKSRC}/dba ${PREFIX}/${LIBAWLDIR}/
-	${CP} -Rp ${WRKSRC}/inc ${PREFIX}/${LIBAWLDIR}/
+	${MKDIR} ${PREFIX}/${LIBAWLDIR}/
+	cd ${WRKSRC} && ${CP} -pR dba inc ${PREFIX}/${LIBAWLDIR}/
 
 .include <bsd.port.mk>
