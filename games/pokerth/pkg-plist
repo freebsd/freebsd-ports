@@ -215,8 +215,6 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/gfx/gui/misc/actionpics/action_winner.png
 %%DATADIR%%/data/gfx/gui/misc/background_gamelist.png
 %%DATADIR%%/data/gfx/gui/misc/fileopen16.png
-%%DATADIR%%/data/gfx/gui/misc/lock.png
-%%DATADIR%%/data/gfx/gui/misc/logoChip3D.png
 %%DATADIR%%/data/gfx/gui/misc/rating.png
 %%DATADIR%%/data/gfx/gui/misc/startwindowbg.png
 %%DATADIR%%/data/gfx/gui/misc/welcomepokerth.png
@@ -244,6 +242,8 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/gfx/gui/table/danuxi1/playeraction_orange_checked.png
 %%DATADIR%%/data/gfx/gui/table/danuxi1/playeraction_orange_checked_hover.png
 %%DATADIR%%/data/gfx/gui/table/danuxi1/playeraction_orange_hover.png
+%%DATADIR%%/data/gfx/gui/table/danuxi1/playeraction_purple.png
+%%DATADIR%%/data/gfx/gui/table/danuxi1/playeraction_purple_hover.png
 %%DATADIR%%/data/gfx/gui/table/danuxi1/playeraction_red.png
 %%DATADIR%%/data/gfx/gui/table/danuxi1/playeraction_red_checked.png
 %%DATADIR%%/data/gfx/gui/table/danuxi1/playeraction_red_checked_hover.png
@@ -280,6 +280,8 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/gfx/gui/table/default/playeraction_orange_checked.png
 %%DATADIR%%/data/gfx/gui/table/default/playeraction_orange_checked_hover.png
 %%DATADIR%%/data/gfx/gui/table/default/playeraction_orange_hover.png
+%%DATADIR%%/data/gfx/gui/table/default/playeraction_purple.png
+%%DATADIR%%/data/gfx/gui/table/default/playeraction_purple_hover.png
 %%DATADIR%%/data/gfx/gui/table/default/playeraction_red.png
 %%DATADIR%%/data/gfx/gui/table/default/playeraction_red_checked.png
 %%DATADIR%%/data/gfx/gui/table/default/playeraction_red_checked_hover.png
@@ -305,7 +307,10 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/sounds/default/playerconnected.wav
 %%DATADIR%%/data/sounds/default/raise.wav
 %%DATADIR%%/data/sounds/default/yourturn.wav
+%%DATADIR%%/data/translations/pokerth_af.qm
 %%DATADIR%%/data/translations/pokerth_bg.qm
+%%DATADIR%%/data/translations/pokerth_ca.qm
+%%DATADIR%%/data/translations/pokerth_cz.qm
 %%DATADIR%%/data/translations/pokerth_de.qm
 %%DATADIR%%/data/translations/pokerth_dk.qm
 %%DATADIR%%/data/translations/pokerth_es.qm
@@ -314,6 +319,7 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/translations/pokerth_gr.qm
 %%DATADIR%%/data/translations/pokerth_hu.qm
 %%DATADIR%%/data/translations/pokerth_it.qm
+%%DATADIR%%/data/translations/pokerth_lt.qm
 %%DATADIR%%/data/translations/pokerth_nl.qm
 %%DATADIR%%/data/translations/pokerth_no.qm
 %%DATADIR%%/data/translations/pokerth_pl.qm
@@ -322,6 +328,7 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/translations/pokerth_ru.qm
 %%DATADIR%%/data/translations/pokerth_sk.qm
 %%DATADIR%%/data/translations/pokerth_sv.qm
+%%DATADIR%%/data/translations/pokerth_ta.qm
 %%DATADIR%%/data/translations/pokerth_tr.qm
 %%DATADIR%%/data/translations/pokerth_zhcn.qm
 %%DATADIR%%/data/translations/qt_de.qm

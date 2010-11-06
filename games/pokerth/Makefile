@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pokerth
-PORTVERSION=	0.7.1
-PORTREVISION=	4
+PORTVERSION=	0.8.1
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.7
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.8
 DISTNAME=	PokerTH-${PORTVERSION}-src
 
 MAINTAINER=	mad@madpilot.net
@@ -18,14 +17,15 @@ COMMENT=	A poker game written in C++/QT4
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		mikmod.2:${PORTSDIR}/audio/libmikmod \
 		gnutls.40:${PORTSDIR}/security/gnutls \
-		curl.6:${PORTSDIR}/ftp/curl
+		curl.6:${PORTSDIR}/ftp/curl \
+		gsasl.14:${PORTSDIR}/security/gsasl
 
 USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui corelib qmake_build moc_build rcc_build uic_build
+QT_COMPONENTS=	gui corelib network sql qmake_build moc_build rcc_build uic_build
 USE_SDL=	mixer
 HAS_CONFIGURE=	yes
 QMAKE_ARGS+=	-unix PREFIX=${PREFIX}
