@@ -7,6 +7,7 @@
 
 PORTNAME=	xhtml
 PORTVERSION=	1.1.${RECDATE}
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.w3.org/TR/2007/WD-xhtml11-${RECDATE}/
 DISTNAME=	xhtml11
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 RECDATE=	20070216
 
 LATEST_LINK=	xhtml-11
-WRKSRC=		${WRKDIR}/xhtml11-20070216
+WRKSRC=		${WRKDIR}/xhtml11-${RECDATE}
 NO_BUILD=	yes
 PLIST_SUB+=	XMLCAT_ADD="${XMLCAT_ADD}" \
 		XMLCAT_RM="${XMLCAT_RM}" \
@@ -46,11 +47,12 @@ XSDDIR=		share/xml/${PORTNAME}/1.1/xsd
 do-install:
 	${MKDIR} ${PREFIX}/${DTDDIR}
 	${INSTALL_DATA} ${WRKSRC}/DTD/* ${PREFIX}/${DTDDIR}
+	${INSTALL_DATA} ${FILESDIR}/catalog.xml ${PREFIX}/${DTDDIR}
 	${MKDIR} ${PREFIX}/${XSDDIR}
 	${INSTALL_DATA} ${WRKSRC}/SCHEMA/* ${PREFIX}/${XSDDIR}
 
 post-install:
-#	${XMLCAT_ADD}
+	${XMLCAT_ADD}
 	${SGMLCAT_ADD}
 
 .include <bsd.port.mk>
