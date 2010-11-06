@@ -25,9 +25,15 @@ MAKEFILE=	GNUmakefile
 
 PLIST_FILES=	bin/mkclean bin/mkWDclean bin/mkvtree
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		does not compile on 6.X
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/release/*/mkclean ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/release/*/mkWDclean ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/release/*/mkvtree ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
