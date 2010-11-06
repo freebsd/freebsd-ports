@@ -6,21 +6,22 @@
 
 PORTNAME=	ros
 PORTVERSION=	1.2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/${PORTNAME}/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 SWIG-1.3.29-wx.tar.gz \
+MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
+DISTFILES=	ros-${PORTVERSION}.tar.bz2 SWIG-1.3.29-wx.tar.gz \
 		gtest-1.5.0.tar.gz
-DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.bz2
+DIST_SUBDIR=	ros
+EXTRACT_ONLY=	ros-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Robot Operating System - core utilities
 
 LICENSE=	BSD
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/ros
 
+CFLAGS+=	-I${LOCALBASE}/include
 LIB_DEPENDS=	log4cxx.10:${PORTSDIR}/devel/log4cxx \
 		boost_python:${PORTSDIR}/devel/boost-python-libs
 # we need cmake and gmake for the build, but the build is triggered by make
@@ -55,7 +56,7 @@ USE_LDCONFIG=	yes
 BROKEN=Does not link, librt missing
 .endif
 
-# rosmake can't run make properly with multiple jobs enabled
+# rosmake does its own threading
 MAKE_JOBS_UNSAFE=	yes
 
 MAKE_ENV+=	CPATH=${LOCALBASE}/include \
@@ -88,6 +89,11 @@ post-extract:
 	${MKDIR} ${WRKSRC}/3rdparty/wxswig/build
 	${CP} ${_DISTDIR}/SWIG-1.3.29-wx.tar.gz ${WRKSRC}/3rdparty/wxswig/build
 
+post-patch:
+	# temporarily alter how ROS is built for the port build
+	${REINPLACE_CMD} -E -e "s|--rosdep-install|--no-rosdep -i --disable-logging|" \
+	    ${WRKSRC}/Makefile
+
 pre-build:
 .if exists(${LOCALBASE}/lib/libgtest.so)
 	# temporarily move libraries from devel/googletest out of the way
@@ -96,9 +102,6 @@ pre-build:
 	${MV} ${LOCALBASE}/lib/libgtest${f} ${WRKSRC}/googletest_backup
 .endfor
 .endif
-	# temporarily alter how ROS is built for the port build
-	${REINPLACE_CMD} -E -e "s|--rosdep-install|--no-rosdep --disable-logging -i|" \
-	    ${WRKSRC}/Makefile
 
 post-build:
 .if exists(${WRKSRC}/googletest_backup/libgtest.so)
@@ -111,32 +114,33 @@ post-build:
 	${MV} ${WRKSRC}/Makefile.bak ${WRKSRC}/Makefile
 
 do-install:
-	${MKDIR} ${PREFIX}/${PORTNAME}/stacks
-	${MKDIR} ${PREFIX}/${PORTNAME}/bin
+	${MKDIR} ${PREFIX}/ros/ros/bin
+	${MKDIR} ${PREFIX}/ros/stacks
 
 .for f in rospack rosplay rosrecord rosstack rxconsole rxloggerlevel
 	${LOCALBASE}/bin/chrpath -d ${WRKSRC}/bin/${f}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/${PORTNAME}/bin
-	${LN} -s ${PREFIX}/${PORTNAME}/bin/${f} ${PREFIX}/bin/${f}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/ros/ros/bin
+	${LN} -s ${PREFIX}/ros/ros/bin/${f} ${PREFIX}/bin/${f}
 .endfor
 .for f in rosbag rosboost-cfg rosclean rosconfig roscore roscreate-pkg \
     roscreate-stack rosdep rosgraph roslaunch roslaunch-deps roslaunch-logs \
     roslocate rosmake rosmaster rosmsg rosnode rosparam rosrebag rosrun \
-    rosservice rossrv rostest rostopic rosversion roswtf rxbag rxdeps rxgraph rxplot
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${PREFIX}/${PORTNAME}/bin
-	${LN} -s ${PREFIX}/${PORTNAME}/bin/${f} ${PREFIX}/bin/${f}
+    rosservice rossrv rostest rostopic rosversion roswtf rxbag rxdeps rxgraph \
+    rxplot
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${PREFIX}/ros/ros/bin
+	${LN} -s ${PREFIX}/ros/ros/bin/${f} ${PREFIX}/bin/${f}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/bin/rospack_nosubdirs ${PREFIX}/${PORTNAME}/bin
+	${INSTALL_DATA} ${WRKSRC}/bin/rospack_nosubdirs ${PREFIX}/ros/ros/bin
 
 .for f in CMakeLists.txt Makefile rosdep.yaml stack.xml
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/ros/ros
 .endfor
 # delete files explicitly because negation in find (for COPYTREE_SHARE) is bogus
 .for d in 3rdparty config core std_msgs std_srvs test tools
 	${FIND} ${WRKSRC}/${d} -name build -type d -or -name \*.bak -type f \
 	    -or -name .svnignore -type f -or -name .cvsignore -type f \
 	    -or -name \*.orig | ${XARGS} ${RM} -rf
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${PREFIX}/${PORTNAME})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${PREFIX}/ros/ros)
 .endfor
 # strip and move libraries to PREFIX/lib (except gtest)
 .for f in core/message_filters/lib/libmessage_filters.so \
@@ -147,15 +151,15 @@ do-install:
     tools/rospack/lib/librosstack.so tools/rosrecord/lib/librosrecorder.so \
     tools/rxtools/lib/librxtools.so tools/rxtools/lib/_rxtoolscpp.so \
     tools/topic_tools/lib/libtopic_tools.so 3rdparty/xmlrpcpp/lib/libXmlRpc.so
-	${STRIP_CMD} ${PREFIX}/${PORTNAME}/${f}
-	${LOCALBASE}/bin/chrpath -d ${PREFIX}/${PORTNAME}/${f}
-	${MV} ${PREFIX}/${PORTNAME}/${f} ${PREFIX}/lib
+	${STRIP_CMD} ${PREFIX}/ros/ros/${f}
+	${LOCALBASE}/bin/chrpath -d ${PREFIX}/ros/ros/${f}
+	${MV} ${PREFIX}/ros/ros/${f} ${PREFIX}/lib
 .endfor
 # strip gtest libraries
 .for f in 3rdparty/gtest/gtest/lib/libgtest.so.0 \
     3rdparty/gtest/gtest/lib/libgtest_main.so.0
-	${STRIP_CMD} ${PREFIX}/${PORTNAME}/${f}
-	${LOCALBASE}/bin/chrpath -d ${PREFIX}/${PORTNAME}/${f}
+	${STRIP_CMD} ${PREFIX}/ros/ros/${f}
+	${LOCALBASE}/bin/chrpath -d ${PREFIX}/ros/ros/${f}
 .endfor
 # strip ELF binaries and make them executable
 .for f in 3rdparty/wxswig/bin/swig-real core/genmsg_cpp/genmsg_java \
@@ -208,9 +212,9 @@ do-install:
     tools/topic_tools/bin/mux tools/topic_tools/bin/relay \
     tools/topic_tools/bin/switch_mux tools/topic_tools/bin/throttle \
     tools/topic_tools/test/test_shapeshifter
-	${STRIP_CMD} ${PREFIX}/${PORTNAME}/${f}
-	${LOCALBASE}/bin/chrpath -d ${PREFIX}/${PORTNAME}/${f}
-	${CHMOD} 0555 ${PREFIX}/${PORTNAME}/${f}
+	${STRIP_CMD} ${PREFIX}/ros/ros/${f}
+	${LOCALBASE}/bin/chrpath -d ${PREFIX}/ros/ros/${f}
+	${CHMOD} 0555 ${PREFIX}/ros/ros/${f}
 .endfor
 # make scripts executable
 .for f in 3rdparty/gtest/gtest/bin/gtest-config 3rdparty/wxswig/bin/swig \
@@ -338,7 +342,7 @@ do-install:
     tools/topic_tools/scripts/mux_select \
     tools/topic_tools/test/test_mux_delete_add.py \
     tools/topic_tools/test/test_mux_services.py tools/xdot/dot_viewer.py
-	${CHMOD} 0555 ${PREFIX}/${PORTNAME}/${f}
+	${CHMOD} 0555 ${PREFIX}/ros/ros/${f}
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
