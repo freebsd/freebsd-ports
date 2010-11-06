@@ -1,0 +1,15 @@
+bin/rrip_cli
+bin/rrip_gtk2
+%%RUBY_SITELIBDIR%%/rr_lib.rb
+share/icons/hicolor/128x128/apps/rubyripper.png
+share/locale/bg/LC_MESSAGES/rubyripper.mo
+share/locale/de/LC_MESSAGES/rubyripper.mo
+share/locale/es/LC_MESSAGES/rubyripper.mo
+share/locale/fr/LC_MESSAGES/rubyripper.mo
+share/locale/hu/LC_MESSAGES/rubyripper.mo
+share/locale/it/LC_MESSAGES/rubyripper.mo
+share/locale/nl/LC_MESSAGES/rubyripper.mo
+share/locale/ru/LC_MESSAGES/rubyripper.mo
+share/locale/se/LC_MESSAGES/rubyripper.mo
+@dirrmtry share/locale/se/LC_MESSAGES
+@dirrmtry share/locale/se
