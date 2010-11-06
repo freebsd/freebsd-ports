@@ -23,4 +23,3 @@ bin/znew
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-
