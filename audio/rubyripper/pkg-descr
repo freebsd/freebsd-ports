@@ -1,0 +1,18 @@
+Rubyripper is a digital audio extraction tool that uses cdparanoia error
+correcting power and its own secure ripping algorithm to ensure that the
+rip is done successfully and accurately.  It is very similar to and much
+inspired by EAC for Windows, the golden standard of CD ripping software.
+
+Some of the main features:
+
+  - Graphical (GTK+2) and command line interfaces
+  - Secure (accurate) ripping method
+  - Editable FreeDB tag fetching
+  - FLAC, Ogg/Vorbis, MP3, WAV format support; more codecs can be passed
+  - Multiple codec encoding in one run
+  - Drive offset support (http://www.accuraterip.com/driveoffsets.htm)
+  - Playlist and cue sheet creation
+  - Logfile with analysis of corrected and impossible to correct positions
+  - MD5 sum for each track included in the logfile
+
+WWW: http://code.google.com/p/rubyripper/
