@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozc-tool
-PORTVERSION=	0.13.499.102
+PORTVERSION=	0.13.523.102
 CATEGORIES=	japanese
 MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
 DISTNAME=	mozc-${PORTVERSION}
@@ -45,8 +45,7 @@ REPLACE_FILES=	${WRKSRC}/build_mozc.py \
 		${WRKSRC}/gyp/common.gypi \
 		${WRKSRC}/base/util.cc \
 		${WRKSRC}/base/process.cc \
-		${WRKSRC}/gui/about_dialog/about_dialog.cc \
-		${WRKSRC}/gui/about_dialog/version_image_widget.cc
+		${WRKSRC}/gui/about_dialog/about_dialog.cc
 
 post-patch:
 	@for FILE in ${REPLACE_FILES}; \

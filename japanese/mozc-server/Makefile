@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozc-server
-PORTVERSION=	0.13.499.102
+PORTVERSION=	0.13.523.102
 CATEGORIES=	japanese
 MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
 DISTNAME=	mozc-${PORTVERSION}
@@ -43,31 +43,6 @@ BUILD_MODE=Debug
 BUILD_MODE=Release
 .endif
 
-.if defined(WITH_DIC_UT)
-WITH_DIC_UT_MEISHI=yes
-WITH_DIC_UT_JINMEI=yes
-.endif
-
-.if defined(WITH_DIC_UT_FULL)
-WITH_DIC_UT_MEISHI=yes
-WITH_DIC_UT_JINMEI=yes
-WITH_DIC_UT_KAOMOJI=yes
-WITH_DIC_UT_JIGYOSHO=yes
-WITH_DIC_UT_ZIPCODE=yes
-WITH_DIC_UT_EDICTKATAKANAGO=yes
-.endif
-
-.if defined(WITH_DIC_UT_MEISHI) || \
-    defined(WITH_DIC_UT_JINMEI) || \
-    defined(WITH_DIC_UT_KAOMOJI) || \
-    defined(WITH_DIC_UT_JIGYOSHO) || \
-    defined(WITH_DIC_UT_ZIPCODE) || \
-    defined(WITH_DIC_UT_EDICTKATAKANAGO)
-DISTFILES+=     mozcdic-ut-devel-20100911.tar.bz2
-MASTER_SITES+=	http://www.geocities.jp/ep3797/snapshot/mozc/
-WRKUTDICSRC=    ${WRKDIR}/mozcdic-ut-devel-20100911
-.endif
-
 REPLACE_FILES=	${WRKSRC}/build_mozc.py \
 		${WRKSRC}/gyp/common.gypi \
 		${WRKSRC}/base/util.cc \
@@ -79,30 +54,6 @@ post-patch:
 	    ${SED} -i .bak -e "s/@@LOCALBASE@@/${LOCALBASE:S/\//\\\//g}/g" \
 	    $${FILE}; \
 	done;
-.if defined(WITH_DIC_UT_MEISHI)
-	${CAT} ${WRKUTDICSRC}/mozcdic-ut-meisi-20100911.txt \
-		>> ${WRKSRC}/data/dictionary/dictionary1.txt
-.endif
-.if defined(WITH_DIC_UT_JINMEI)
-	${CAT} ${WRKUTDICSRC}/mozcdic-ut-jinmei-20100911.txt \
-		>> ${WRKSRC}/data/dictionary/dictionary1.txt
-.endif
-.if defined(WITH_DIC_UT_KAOMOJI)
-	${CAT} ${WRKUTDICSRC}/mozcdic-ut-kaomoji-20100911.txt \
-		>> ${WRKSRC}/data/dictionary/dictionary1.txt
-.endif
-.if defined(WITH_DIC_UT_JIGYOSHO)
-	${CAT} ${WRKUTDICSRC}/mozcdic-ut-jigyosyo-20100911.txt \
-		>> ${WRKSRC}/data/dictionary/dictionary1.txt
-.endif
-.if defined(WITH_DIC_UT_ZIPCODE)
-	${CAT} ${WRKUTDICSRC}/mozcdic-ut-zipcode-20100911.txt \
- 		>> ${WRKSRC}/data/dictionary/dictionary1.txt
-.endif
-.if defined(WITH_DIC_UT_EDICTKATAKANAGO)
-	${CAT} ${WRKUTDICSRC}/mozcdic-ut-edict-katakanago-20100911.txt \
- 		>> ${WRKSRC}/data/dictionary/dictionary1.txt
-.endif
 
 do-build:
 	@cd ${WRKSRC}/; \

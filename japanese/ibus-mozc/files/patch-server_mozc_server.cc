@@ -1,5 +1,5 @@
---- server/mozc_server.cc.org	2010-10-16 12:04:43.449185058 +0900
-+++ server/mozc_server.cc	2010-10-16 12:06:18.373180984 +0900
+--- server/mozc_server.cc.org	2010-11-06 10:54:20.721190331 +0900
++++ server/mozc_server.cc	2010-11-06 10:55:39.283188573 +0900
 @@ -30,6 +30,9 @@
  #ifdef OS_WINDOWS
  #include <windows.h>

@@ -1,6 +1,6 @@
---- gui/about_dialog/about_dialog.cc.org	2010-10-16 11:59:20.527184356 +0900
-+++ gui/about_dialog/about_dialog.cc	2010-10-16 11:59:55.382185760 +0900
-@@ -114,7 +114,11 @@
+--- gui/about_dialog/about_dialog.cc.org	2010-11-06 10:47:08.291193501 +0900
++++ gui/about_dialog/about_dialog.cc	2010-11-06 10:48:08.940188276 +0900
+@@ -106,7 +106,11 @@
    SetLabelText(label_terms);
    SetLabelText(label_credits);
  
