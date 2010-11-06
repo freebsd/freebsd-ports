@@ -42,10 +42,20 @@ bin/config-edit-popcon
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/Content.pl
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/License.pl
 %%SITE_PERL%%/Config/Model/models/PopCon.pl
+%%SITE_PERL%%/Config/Model/models/Fstab
+%%SITE_PERL%%/Config/Model/models/Fstab/UsbFsOptions.pl
+%%SITE_PERL%%/Config/Model/models/Fstab/FsLine.pl
+%%SITE_PERL%%/Config/Model/models/Fstab/SwapOptions.pl
+%%SITE_PERL%%/Config/Model/models/Fstab/Iso9660_Opt.pl
+%%SITE_PERL%%/Config/Model/models/Fstab/CommonOptions.pl
+%%SITE_PERL%%/Config/Model/models/Fstab/Ext2FsOpt.pl
+%%SITE_PERL%%/Config/Model/models/Fstab/Ext3FsOpt.pl
+%%SITE_PERL%%/Config/Model/models/Fstab.pl
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Debian/Dpkg
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Debian
+@dirrmtry %%SITE_PERL%%/Config/Model/models/Fstab
 @dirrmtry %%SITE_PERL%%/Config/Model/models
 @dirrmtry %%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg
 @dirrmtry %%SITE_PERL%%/Config/Model/Backend/Debian
