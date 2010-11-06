@@ -7,6 +7,7 @@
 
 PORTNAME=	gpodder
 PORTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	BERLIOS \
 		http://thpinfo.com/2010/mygpoclient/:mygpoclient
@@ -42,7 +43,7 @@ INSTALLS_EGGINFO=yes
 
 MAN1=		gpo.1 ${PORTNAME}.1 ${PORTNAME}-backup.1
 
-MGC_DISTNAME=	mygpoclient-1.4
+MGC_DISTNAME=	mygpoclient-1.5
 MGC_WRKSRC=	${WRKDIR}/${MGC_DISTNAME}/mygpoclient
 
 .include <bsd.port.pre.mk>
