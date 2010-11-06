@@ -14,8 +14,10 @@ share/apps/kmess/pics/background.png
 share/apps/kmess/pics/berightback.png
 share/apps/kmess/pics/blocked.png
 share/apps/kmess/pics/busy.png
+share/apps/kmess/pics/contact_away_overlay.png
 share/apps/kmess/pics/contact_busy_overlay.png
 share/apps/kmess/pics/contact_food_overlay.png
+share/apps/kmess/pics/contact_invisible_overlay.png
 share/apps/kmess/pics/contact_phone_overlay.png
 share/apps/kmess/pics/emoticons.png
 share/apps/kmess/pics/empty.png
@@ -41,11 +43,15 @@ share/apps/kmess/styles/Efficient/Efficient.xsl
 share/apps/kmess/styles/Fresh-dark/Fresh-dark.css
 share/apps/kmess/styles/Fresh-dark/Fresh-dark.xsl
 share/apps/kmess/styles/Fresh-dark/bg_gravatar.gif
+share/apps/kmess/styles/Fresh-dark/bg_gravatar_gray.gif
+share/apps/kmess/styles/Fresh-dark/bg_gravatar_gray_rtl.gif
 share/apps/kmess/styles/Fresh-dark/bg_gravatar_rtl.gif
 share/apps/kmess/styles/Fresh-dark/buddy_icon.png
 share/apps/kmess/styles/Fresh/Fresh.css
 share/apps/kmess/styles/Fresh/Fresh.xsl
 share/apps/kmess/styles/Fresh/bg_gravatar.gif
+share/apps/kmess/styles/Fresh/bg_gravatar_gray.gif
+share/apps/kmess/styles/Fresh/bg_gravatar_gray_rtl.gif
 share/apps/kmess/styles/Fresh/bg_gravatar_rtl.gif
 share/apps/kmess/styles/Fresh/buddy_icon.png
 share/apps/kmess/styles/Pure/Pure.css
