@@ -7,6 +7,7 @@
 
 PORTNAME=	gzip
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,6 +24,14 @@ INFO=	gzip
 DOC_FILES=	AUTHORS COPYING ChangeLog ChangeLog-2007 INSTALL NEWS README \
 		THANKS TODO
 
+OPTIONS=	RSYNCABLE	"Include --rsyncable patch"	OFF
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_RSYNCABLE)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-gzip-rsyncable.diff
+.endif
+
 post-configure:
 	@${REINPLACE_CMD} -e 's|^SHELL =.*|SHELL=/bin/sh|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|need_charset_alias=true|need_charset_alias=false|g' \
@@ -36,4 +45,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
