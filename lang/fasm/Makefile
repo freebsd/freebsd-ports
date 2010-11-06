@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	fasm
-PORTVERSION=	1.69.20
+PORTVERSION=	1.69.25
 CATEGORIES=	lang devel
 MASTER_SITES=	http://flatassembler.net/
 
-MAINTAINER=	skv@FreeBSD.org
+MAINTAINER=	aldis@bsdroot.lv
 COMMENT=	Flat, multiple-pass assembler for IA-32 & x86-64 architectures
 
 ONLY_FOR_ARCHS=	i386 amd64 ia64
