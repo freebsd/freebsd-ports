@@ -7,7 +7,7 @@
 
 PORTNAME=	backuppc
 PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -17,7 +17,6 @@ MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	System for backing PCs and laptops to a server
 
 NO_BUILD=	yes
-NO_PACKAGE=	Complex site specific configuration for config.pl required
 
 USE_PERL5=	5.8.0+
 USE_RC_SUBR=	backuppc
@@ -63,6 +62,7 @@ RUN_DEPENDS+=	${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,/etc/BackupPC/config.pl,${ETCDIR}/config.pl,' \
+		-e 's|Conf{ConfDir}/hosts", 0644)|Conf{ConfDir}/hosts.sample", 0644)|' \
 		${WRKSRC}/configure.pl
 	@${REINPLACE_CMD} \
 		-e 's,"/doc/BackupPC.html","/${DOCSDIR_REL}/BackupPC.html",' \
@@ -102,8 +102,18 @@ post-install:
 	@cd ${WRKSRC} && ${INSTALL_MAN} ${PORTDOCS} ${DOCSDIR}
 .endif
 
+	@${MV} ${ETCDIR}/config.pl ${ETCDIR}/config.pl.sample
+
 	@${ECHO_MSG}
 	@${ECHO_MSG} ">>> ----------------------------------------------------------"
+	@${ECHO_MSG} ">>> You need to copy and customize"
+	@${ECHO_MSG} ">>> # cp -p ${ETCDIR}/config.pl.sample ${ETCDIR}/config.pl"
+
+	@if [ ! -f ${ETCDIR}/hosts ]; then \
+		${ECHO_MSG} ">>> # cp -p ${ETCDIR}/hosts.sample ${ETCDIR}/hosts"; \
+	fi
+
+	@${ECHO_MSG} ">>>"
 	@${ECHO_MSG} ">>> Add the following line to /etc/rc.conf to enable BackupPC:"
 	@${ECHO_MSG} ">>> backuppc_enable=\"YES\""
 	@${ECHO_MSG} ">>>"

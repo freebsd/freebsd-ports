@@ -115,9 +115,9 @@ lib/Net/FTP/RetrHandle.pm
 %%WWWDIR%%/logo.gif
 %%WWWDIR%%/sorttable.js
 www/cgi-bin/BackupPC_Admin
-%%ETCDIR%%/hosts
-%%ETCDIR%%/config.pl
-@dirrm %%ETCDIR%%
+@rmtry %%ETCDIR%%/hosts.sample
+%%ETCDIR%%/config.pl.sample
+@dirrmtry %%ETCDIR%%
 @dirrmtry www/cgi-bin
 @dirrmtry %%WWWDIR%%
 @dirrmtry share/doc/backuppc
@@ -135,6 +135,6 @@ www/cgi-bin/BackupPC_Admin
 @unexec echo
 @unexec echo "	1) the backuppc user/group:	pw userdel backuppc"
 @unexec echo "	2) BackupPC configuration:	rm -rf %%PREFIX%%/%%ETCDIR%%"
-@unexec echo "	3) BackupPC data directory:	rm -rf /data/BackupPC"
+@unexec echo "	3) BackupPC data directory:	rm -rf /var/db/BackupPC"
 @unexec echo "	4) BackupPC logs directory:	rm -rf /var/log/BackupPC"
 @unexec echo
