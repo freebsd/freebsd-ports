@@ -1,5 +1,5 @@
---- unix/ibus/mozc.xml.org	2010-09-25 11:23:23.585335502 +0900
-+++ unix/ibus/mozc.xml	2010-09-25 11:23:48.280337800 +0900
+--- unix/ibus/mozc.xml.org	2010-11-06 10:57:06.006187725 +0900
++++ unix/ibus/mozc.xml	2010-11-06 10:57:28.462186463 +0900
 @@ -0,0 +1,21 @@
 +<component>
 +  <name>com.google.IBus.Mozc</name>
