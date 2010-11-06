@@ -21,6 +21,8 @@ CONFLICTS?=		ja-samba-[23].* samba-[23].* sharity-light-1.*
 PATCH_STRIP=		-p1
 EXTRA_PATCHES=		${PATCHDIR}/sernet.patch
 
+BROKEN=			bad plist
+
 LICENSE=		GPLv3
 LICENSE_FILE=		${WRKDIR}/${DISTNAME}/COPYING
 
