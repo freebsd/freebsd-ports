@@ -23,6 +23,8 @@ USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	UNIX
 
+BROKEN=		does not compile
+
 MAN1=		${PORTNAME}.1
 
 post-patch:
