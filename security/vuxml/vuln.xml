@@ -34,6 +34,58 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b2eaa7c2-e64a-11df-bc65-0022156e8794">
+    <topic>Wireshark -- DoS in the BER-based dissectors</topic>
+    <affects>
+      <package>
+	<name>wireshark</name>
+	<range><ge>1.3</ge><lt>1.4.1</lt></range>
+	<range><ge>1.0</ge><lt>1.2.12</lt></range>
+      </package>
+      <package>
+	<name>wireshark-lite</name>
+	<range><ge>1.3</ge><lt>1.4.1</lt></range>
+	<range><ge>1.0</ge><lt>1.2.12</lt></range>
+      </package>
+      <package>
+	<name>tshark</name>
+	<range><ge>1.3</ge><lt>1.4.1</lt></range>
+	<range><ge>1.0</ge><lt>1.2.12</lt></range>
+      </package>
+      <package>
+	<name>tshark-lite</name>
+	<range><ge>1.3</ge><lt>1.4.1</lt></range>
+	<range><ge>1.0</ge><lt>1.2.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/41535">
+	  <p>A vulnerability has been discovered in Wireshark, which can
+	  be exploited by malicious people to cause a DoS (Denial of
+	  Service).</p>
+	  <p>The vulnerability is caused due to an infinite recursion
+	  error in the "dissect_unknown_ber()" function in
+	  epan/dissectors/packet-ber.c and can be exploited to cause a
+	  stack overflow e.g. via a specially crafted SNMP packet.</p>
+	  <p>The vulnerability is confirmed in version 1.4.0 and
+	  reported in version 1.2.11 and prior and version 1.4.0 and
+	  prior.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-3445</cvename>
+      <url>http://www.wireshark.org/lists/wireshark-announce/201010/msg00002.html</url>
+      <url>http://www.wireshark.org/lists/wireshark-announce/201010/msg00001.html</url>
+    </references>
+    <dates>
+      <discovery>2010-09-16</discovery>
+      <entry>2010-11-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4ab29e12-e787-11df-adfa-00e0815b8da8">
     <topic>Mailman -- cross-site scripting in web interface</topic>
     <affects>
@@ -216,6 +268,7 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2010-10-26</entry>
     </dates>
   </vuln>
+
   <vuln vid="0ddb57a9-da20-4e99-b048-4366092f3d31">
     <topic>bzip2 -- integer overflow vulnerability</topic>
     <affects>
