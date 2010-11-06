@@ -7,6 +7,7 @@
 
 PORTNAME=	john
 PORTVERSION=	1.7.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/g/ \
 		http://mirrors.kernel.org/openwall/projects/john/${PORTVERSION}/ \
@@ -14,7 +15,7 @@ MASTER_SITES=	http://www.openwall.com/john/g/ \
 		http://gd.tuwien.ac.at/opsys/linux/openwall/projects/john/${PORTVERSION}/
 
 PATCH_SITES=	${MASTER_SITES:H:H:S/$/\/contrib\//}
-PATCHFILES=	john-${PORTVERSION}-jumbo-3.diff.gz
+PATCHFILES=	john-${PORTVERSION}-jumbo-7.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	danfe@FreeBSD.org
