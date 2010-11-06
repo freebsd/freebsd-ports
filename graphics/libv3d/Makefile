@@ -22,6 +22,8 @@ CONFIGURE_ARGS=	UNIX --prefix=${PREFIX}
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
+BROKEN=		does not build
+
 MAN3=	V3DGLInterpriteDelete.3 \
 	V3DGLInterpriteNew.3 \
 	V3DGLProcessModel.3 \
