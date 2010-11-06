@@ -34,6 +34,61 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="76b597e4-e9c6-11df-9e10-001b2134ef46">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><lt>9.0r289</lt></range>
+      </package>
+      <package>
+	<name>linux-f8-flashplugin</name>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>10.1r102</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Product Security Incident Response Team reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb10-26.html">
+	  <p>Critical vulnerabilities have been identified in
+	    Adobe Flash Player 10.1.85.3 and earlier versions for
+	    Windows, Macintosh, Linux, and Solaris, and Adobe Flash Player
+	    10.1.95.1 for Android. These vulnerabilities, including
+	    CVE-2010-3654 referenced in Security Advisory APSA10-05,
+	    could cause the application to crash and could potentially
+	    allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-3636</cvename>
+      <cvename>CVE-2010-3637</cvename>
+      <cvename>CVE-2010-3638</cvename>
+      <cvename>CVE-2010-3639</cvename>
+      <cvename>CVE-2010-3640</cvename>
+      <cvename>CVE-2010-3641</cvename>
+      <cvename>CVE-2010-3642</cvename>
+      <cvename>CVE-2010-3643</cvename>
+      <cvename>CVE-2010-3644</cvename>
+      <cvename>CVE-2010-3645</cvename>
+      <cvename>CVE-2010-3646</cvename>
+      <cvename>CVE-2010-3647</cvename>
+      <cvename>CVE-2010-3648</cvename>
+      <cvename>CVE-2010-3649</cvename>
+      <cvename>CVE-2010-3650</cvename>
+      <cvename>CVE-2010-3652</cvename>
+      <cvename>CVE-2010-3654</cvename>
+      <cvename>CVE-2010-3676</cvename>
+      <url>http://www.adobe.com/support/security/bulletins/apsb10-26.html</url>
+      <url>http://www.adobe.com/support/security/advisories/apsa10-05.html</url>
+    </references>
+    <dates>
+      <discovery>2010-09-28</discovery>
+      <entry>2010-11-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b2eaa7c2-e64a-11df-bc65-0022156e8794">
     <topic>Wireshark -- DoS in the BER-based dissectors</topic>
     <affects>
