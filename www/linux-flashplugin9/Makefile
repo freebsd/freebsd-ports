@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	9.0r283
-PORTREVISION=	1
+PORTVERSION=	9.0r289
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://download.macromedia.com/pub/flashplayer/installers/current/9/:plugin \
 		http://tijl.ulyssis.fm/mirror/:suplib \
