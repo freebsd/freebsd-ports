@@ -1736,6 +1736,7 @@ closure-compiler                ports/www/closure-compiler
 clp                             ports/math/clp
 clpbar                          ports/misc/clpbar
 clucene                         ports/textproc/clucene
+clucene-contrib                 ports/textproc/clucene-contrib
 clunk                           ports/audio/clunk
 clustalw                        ports/biology/clustalw
 clusterit                       ports/net/clusterit
@@ -12173,6 +12174,7 @@ p5-File-HStore                  ports/devel/p5-File-HStore
 p5-File-HomeDir                 ports/devel/p5-File-HomeDir
 p5-File-Iterator                ports/devel/p5-File-Iterator
 p5-File-Lock                    ports/devel/p5-File-Lock
+p5-File-Log                     ports/sysutils/p5-File-Log
 p5-File-MMagic                  ports/devel/p5-File-MMagic
 p5-File-MMagic-XS               ports/devel/p5-File-MMagic-XS
 p5-File-Map                     ports/devel/p5-File-Map
@@ -16131,6 +16133,7 @@ p5-file-homedir                 ports/devel/p5-File-HomeDir
 p5-file-hstore                  ports/devel/p5-File-HStore
 p5-file-iterator                ports/devel/p5-File-Iterator
 p5-file-lock                    ports/devel/p5-File-Lock
+p5-file-log                     ports/sysutils/p5-File-Log
 p5-file-map                     ports/devel/p5-File-Map
 p5-file-mimeinfo                ports/devel/p5-File-MimeInfo
 p5-file-mmagic                  ports/devel/p5-File-MMagic
@@ -20756,6 +20759,7 @@ py-ao                           ports/audio/py-ao
 py-apachelog                    ports/www/py-apachelog
 py-apetag                       ports/audio/py-apetag
 py-apgl                         ports/math/py-apgl
+py-apipkg                       ports/devel/py-apipkg
 py-apolicy                      ports/mail/py-apolicy
 py-argparse                     ports/devel/py-argparse
 py-asn1                         ports/devel/py-asn1
