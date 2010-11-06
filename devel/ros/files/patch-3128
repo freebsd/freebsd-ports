@@ -1,0 +1,66 @@
+--- core/message_filters/include/message_filters/synchronizer.h.orig	2010-03-16 01:10:42.000000000 +0100
++++ core/message_filters/include/message_filters/synchronizer.h	2010-11-03 22:52:18.000000000 +0100
+@@ -357,7 +357,7 @@
+   template<int i>
+   void cb(const typename mpl::at_c<Events, i>::type& evt)
+   {
+-    add<i>(evt);
++    this->add<i>(evt);
+   }
+ 
+   uint32_t queue_size_;
+--- core/message_filters/include/message_filters/chain.h.orig	2010-04-23 19:40:54.000000000 +0200
++++ core/message_filters/include/message_filters/chain.h	2010-11-03 22:52:42.000000000 +0100
+@@ -234,7 +234,7 @@
+ 
+   void lastFilterCB(const EventType& evt)
+   {
+-    signalMessage(evt);
++    this->signalMessage(evt);
+   }
+ 
+   struct FilterInfo
+--- core/message_filters/include/message_filters/cache.h.orig	2010-04-23 19:40:54.000000000 +0200
++++ core/message_filters/include/message_filters/cache.h	2010-11-03 22:53:01.000000000 +0100
+@@ -152,7 +152,7 @@
+ 
+     }
+ 
+-    signalMessage(evt);
++    this->signalMessage(evt);
+   }
+ 
+   /**
+--- core/message_filters/include/message_filters/subscriber.h.orig	2010-04-23 19:40:54.000000000 +0200
++++ core/message_filters/include/message_filters/subscriber.h	2010-11-03 22:53:21.000000000 +0100
+@@ -202,7 +202,7 @@
+ 
+   void cb(const EventType& e)
+   {
+-    signalMessage(e);
++    this->signalMessage(e);
+   }
+ 
+   ros::Subscriber sub_;
+--- core/message_filters/include/message_filters/pass_through.h.orig	2010-03-15 23:46:55.000000000 +0100
++++ core/message_filters/include/message_filters/pass_through.h	2010-11-03 22:54:26.000000000 +0100
+@@ -75,7 +75,7 @@
+ 
+   void add(const EventType& evt)
+   {
+-    signalMessage(evt);
++    this->signalMessage(evt);
+   }
+ 
+ private:
+--- core/message_filters/include/message_filters/time_sequencer.h.orig	2010-02-18 23:22:20.000000000 +0100
++++ core/message_filters/include/message_filters/time_sequencer.h	2010-11-03 22:54:50.000000000 +0100
+@@ -208,7 +208,7 @@
+       typename V_Message::iterator end = to_call.end();
+       for (; it != end; ++it)
+       {
+-        signalMessage(*it);
++        this->signalMessage(*it);
+       }
+     }
+   }

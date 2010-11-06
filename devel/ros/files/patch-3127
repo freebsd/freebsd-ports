@@ -1,0 +1,10 @@
+--- core/roslib/include/ros/serialization.h.orig	2010-04-22 03:40:40.000000000 +0200
++++ core/roslib/include/ros/serialization.h	2010-11-03 22:51:34.000000000 +0100
+@@ -37,6 +37,7 @@
+ #include "macros.h"
+ 
+ #include <vector>
++#include <cstring>
+ 
+ #include <boost/array.hpp>
+ #include <boost/call_traits.hpp>

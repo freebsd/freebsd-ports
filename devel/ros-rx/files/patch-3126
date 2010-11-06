@@ -1,0 +1,81 @@
+--- core/roscpp/include/ros/subscribe_options.h.orig	2010-05-11 23:23:34.000000000 +0200
++++ core/roscpp/include/ros/subscribe_options.h	2010-10-28 00:53:16.000000000 +0200
+@@ -80,7 +80,7 @@
+   template<class P>
+   void initByFullCallbackType(const std::string& _topic, uint32_t _queue_size,
+        const boost::function<void (P)>& _callback,
+-       const boost::function<boost::shared_ptr<typename ParameterAdapter<P>::Message>(void)>& factory_fn = defaultMessageCreateFunction<typename ParameterAdapter<P>::Message>)
++       boost::function<boost::shared_ptr<typename ParameterAdapter<P>::Message>(void)> factory_fn = defaultMessageCreateFunction<typename ParameterAdapter<P>::Message>)
+   {
+     typedef typename ParameterAdapter<P>::Message MessageType;
+     topic = _topic;
+@@ -101,7 +101,7 @@
+   template<class M>
+   void init(const std::string& _topic, uint32_t _queue_size,
+        const boost::function<void (const boost::shared_ptr<M const>&)>& _callback,
+-       const boost::function<boost::shared_ptr<M>(void)>& factory_fn = defaultMessageCreateFunction<M>)
++       boost::function<boost::shared_ptr<M>(void)> factory_fn = defaultMessageCreateFunction<M>)
+   {
+     typedef typename ParameterAdapter<M>::Message MessageType;
+     topic = _topic;
+--- core/roscpp/include/ros/service_callback_helper.h.orig	2010-02-18 23:22:20.000000000 +0100
++++ core/roscpp/include/ros/service_callback_helper.h	2010-10-28 01:05:35.000000000 +0200
+@@ -165,7 +165,7 @@
+   typedef boost::function<RequestPtr()> ReqCreateFunction;
+   typedef boost::function<ResponsePtr()> ResCreateFunction;
+ 
+-  ServiceCallbackHelperT(const Callback& callback, const ReqCreateFunction& create_req = defaultServiceCreateFunction<RequestType>, const ResCreateFunction& create_res = defaultServiceCreateFunction<ResponseType>)
++  ServiceCallbackHelperT(const Callback& callback, ReqCreateFunction create_req = defaultServiceCreateFunction<RequestType>, ResCreateFunction create_res = defaultServiceCreateFunction<ResponseType>)
+   : callback_(callback)
+   , create_req_(create_req)
+   , create_res_(create_res)
+--- core/roscpp/include/ros/topic_manager.h.orig	2010-02-18 23:22:20.000000000 +0100
++++ core/roscpp/include/ros/topic_manager.h	2010-11-03 22:48:40.000000000 +0100
+@@ -42,8 +42,8 @@
+ {
+ 
+ class Message;
+-class SubscribeOptions;
+-class AdvertiseOptions;
++struct SubscribeOptions;
++struct AdvertiseOptions;
+ 
+ class TopicManager;
+ typedef boost::shared_ptr<TopicManager> TopicManagerPtr;
+--- core/roscpp/include/ros/message_event.h.orig	2010-07-13 04:08:40.000000000 +0200
++++ core/roscpp/include/ros/message_event.h	2010-11-03 22:50:05.000000000 +0100
+@@ -93,7 +93,7 @@
+     nonconst_need_copy_ = nonconst_need_copy;
+   }
+ 
+-  MessageEvent(const MessageEvent<void const>& rhs, const CreateFunction& create)
++  MessageEvent(const MessageEvent<void const>& rhs, CreateFunction create)
+   {
+     init(boost::const_pointer_cast<Message>(boost::static_pointer_cast<ConstMessage>(rhs.getMessage())), rhs.getConnectionHeaderPtr(), rhs.getReceiptTime(), rhs.nonConstWillCopy(), create);
+   }
+@@ -116,12 +116,12 @@
+     init(message, getConnectionHeader(message.get()), receipt_time, true, ros::defaultMessageCreateFunction<Message>);
+   }
+ 
+-  MessageEvent(const ConstMessagePtr& message, const boost::shared_ptr<M_string>& connection_header, ros::Time receipt_time, bool nonconst_need_copy, const CreateFunction& create)
++  MessageEvent(const ConstMessagePtr& message, const boost::shared_ptr<M_string>& connection_header, ros::Time receipt_time, bool nonconst_need_copy, CreateFunction create)
+   {
+     init(message, connection_header, receipt_time, nonconst_need_copy, create);
+   }
+ 
+-  void init(const ConstMessagePtr& message, const boost::shared_ptr<M_string>& connection_header, ros::Time receipt_time, bool nonconst_need_copy, const CreateFunction& create)
++  void init(const ConstMessagePtr& message, const boost::shared_ptr<M_string>& connection_header, ros::Time receipt_time, bool nonconst_need_copy, CreateFunction create)
+   {
+     message_ = message;
+     connection_header_ = connection_header;
+--- core/roscpp/include/ros/transport_publisher_link.h.orig	2010-03-16 19:38:21.000000000 +0100
++++ core/roscpp/include/ros/transport_publisher_link.h	2010-11-03 22:50:31.000000000 +0100
+@@ -41,7 +41,7 @@
+ class Connection;
+ typedef boost::shared_ptr<Connection> ConnectionPtr;
+ 
+-class WallTimerEvent;
++struct WallTimerEvent;
+ 
+ /**
+  * \brief Handles a connection to a single publisher on a given topic.  Receives messages from a publisher

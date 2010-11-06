@@ -6,6 +6,7 @@
 
 PORTNAME=	ros_tutorials
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
 DIST_SUBDIR=	ros
@@ -24,16 +25,17 @@ USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
-# rosmake can't run make properly with multiple jobs enabled
+# rosmake does its own threading
 MAKE_JOBS_UNSAFE=	yes
 
+CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	CPATH=${LOCALBASE}/include \
 		EXTRA_CMAKE_FLAGS="-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}" \
 		LIBRARY_PATH=${LOCALBASE}/lib \
 		MAKE=${LOCALBASE}/bin/gmake \
-		ROS_ROOT=${LOCALBASE}/ros \
-		ROS_PACKAGE_PATH=${LOCALBASE}/ros/stacks:${WRKDIR} \
-		PYTHONPATH=${LOCALBASE}/ros/core/roslib/src
+		ROS_ROOT=${LOCALBASE}/ros/ros \
+		ROS_PACKAGE_PATH=${WRKDIR} \
+		PYTHONPATH=${LOCALBASE}/ros/ros/core/roslib/src
 
 MAKE_ARGS=	-i --no-rosdep --status-rate=0 --disable-logging
 
