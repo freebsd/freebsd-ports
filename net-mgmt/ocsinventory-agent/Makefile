@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Ocsinventory
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.2.1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://launchpad.net/ocsinventory-unix-agent/stable/ocsinventory-unix-agent-${PORTVERSION}/+download/
+MASTER_SITES=	http://launchpad.net/ocsinventory-unix-agent/stable-1.1.2/ocsinventory-unix-agent-${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-Agent
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
