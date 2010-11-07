@@ -1,0 +1,28 @@
+--- tpmd_dev/openbsd/Makefile.orig	2010-07-06 06:21:20.000000000 +0900
++++ tpmd_dev/openbsd/Makefile	2010-10-25 02:56:43.628559140 +0900
+@@ -6,14 +6,15 @@
+ 
+ CFLAGS= -D_KERNEL -I/usr/src/sys
+ SRC=	tpmd_dev.c
++OBJ=	tpmd_dev.obj
+ MODULE= tpmd_dev.o
+ 
+ all:
+-	cc -c $(SRC) $(CFLAGS)
+-	ld -r -o $(MODULE) $(SRC:.c=.o)
++	cc -o $(OBJ) -c $(SRC) $(CFLAGS)
++	ld -r -o $(MODULE) $(OBJ)
+ 
+ clean:
+-	rm -rf $(SRC:.c=.o)
++	rm -rf $(OBJ)
+ 	rm -f $(MODULE)
+ 
+ load:	all mknod
+@@ -27,3 +28,6 @@
+ 
+ rmnod:
+ 	rm /dev/tpm
++
++install:
++

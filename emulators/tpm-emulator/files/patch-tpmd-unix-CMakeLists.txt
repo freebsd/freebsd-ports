@@ -1,0 +1,13 @@
+--- tpmd/unix/CMakeLists.txt.orig	2010-07-06 06:21:20.000000000 +0900
++++ tpmd/unix/CMakeLists.txt	2010-10-25 02:56:43.633558246 +0900
+@@ -10,8 +10,8 @@
+ if(MTM_EMULATOR)
+ add_definitions(-DMTM_EMULATOR)
+ target_link_libraries(tpmd mtm tpm crypto)
+-else()
++else(MTM_EMULATOR)
+ target_link_libraries(tpmd tpm crypto)
+-endif()
++endif(MTM_EMULATOR)
+ install(TARGETS tpmd RUNTIME DESTINATION bin)
+ 

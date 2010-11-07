@@ -1,0 +1,44 @@
+--- CMakeLists.txt.orig	2010-07-06 06:21:20.000000000 +0900
++++ CMakeLists.txt	2010-10-25 02:56:43.617558705 +0900
+@@ -5,13 +5,13 @@
+ 
+ project(TPM_Emulator C)
+ 
+-cmake_minimum_required(VERSION 2.6)
++cmake_minimum_required(VERSION 2.4)
+ 
+ # enforce out of source build
+ string(COMPARE EQUAL "${CMAKE_SOURCE_DIR}" "${CMAKE_BINARY_DIR}" IS_INSOURCE)
+ if(IS_INSOURCE)
+     message(FATAL_ERROR "${PROJECT_NAME} requires an out of source build.")
+-endif()
++endif(IS_INSOURCE)
+ 
+ # set project and build version
+ set(${PROJECT_NAME}_VERSION_MAJOR 0)
+@@ -29,14 +29,14 @@
+ set(TPM_SOCKET_NAME "/private/var/run/tpm/tpmd_socket:0")
+ set(TPM_STORAGE_NAME "/private/var/lib/tpm/tpm_emulator-1_2_${${PROJECT_NAME}_VERSION_MAJOR}_${${PROJECT_NAME}_VERSION_MINOR}")
+ set(TPM_DEVICE_NAME "/dev/tpm")
+-else()
++else(WIN32)
+ set(TPM_LOG_FILE "/var/log/tpmd.log")
+ set(TPM_SOCKET_NAME "/var/run/tpm/tpmd_socket:0")
+ set(TPM_STORAGE_NAME "/var/lib/tpm/tpm_emulator-1_2_${${PROJECT_NAME}_VERSION_MAJOR}_${${PROJECT_NAME}_VERSION_MINOR}")
+ set(TPM_DEVICE_NAME "/dev/tpm")
+-endif()
++endif(WIN32)
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
+-add_definitions(-Wall -Werror -Wextra -Wno-unused-parameter -Wpointer-arith -Wcast-align -Wwrite-strings)
++add_definitions(-Wall -Werror -Wno-unused-parameter -Wpointer-arith -Wcast-align -Wwrite-strings)
+ 
+ # configure CPack
+ set(CPACK_PACKAGE_VERSION_MAJOR ${${PROJECT_NAME}_VERSION_MAJOR})
+@@ -51,6 +51,7 @@
+ # include root directories
+ include_directories(${CMAKE_SOURCE_DIR})
+ include_directories(${CMAKE_BINARY_DIR})
++include_directories("/usr/local/include")
+ 
+ # add internal libraries
+ add_subdirectory(tpm)

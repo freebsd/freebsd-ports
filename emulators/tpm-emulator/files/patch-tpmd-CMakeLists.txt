@@ -1,0 +1,9 @@
+--- tpmd/CMakeLists.txt.orig	2010-07-06 06:21:20.000000000 +0900
++++ tpmd/CMakeLists.txt	2010-10-25 02:56:43.624559116 +0900
+@@ -11,5 +11,5 @@
+ 
+ add_subdirectory(windows)
+ 
+-endif()
++endif(UNIX)
+ 
