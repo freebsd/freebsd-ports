@@ -134,8 +134,9 @@ lib/sbcl/sb-rotate-byte/rotate-byte.fasl
 lib/sbcl/sb-rotate-byte/rotate-byte.lisp
 lib/sbcl/sb-rotate-byte/sb-rotate-byte.asd
 lib/sbcl/sb-rotate-byte/sb-rotate-byte.fasl
-lib/sbcl/sb-rotate-byte/x86-64-vm.fasl
+%%AMD64_ONLY%%lib/sbcl/sb-rotate-byte/x86-64-vm.fasl
 lib/sbcl/sb-rotate-byte/x86-64-vm.lisp
+%%I386_ONLY%%lib/sbcl/sb-rotate-byte/x86-vm.fasl
 lib/sbcl/sb-rotate-byte/x86-vm.lisp
 lib/sbcl/sb-rt/rt.fasl
 lib/sbcl/sb-rt/rt.lisp
