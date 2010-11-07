@@ -1,0 +1,46 @@
+--- configure.orig	2010-03-27 19:25:38.000000000 +0300
++++ configure	2010-04-25 07:56:54.000000000 +0400
+@@ -13,10 +13,10 @@
+ OSLIBS_DL=""
+ OSLIBS_THREAD=""
+ 
+-__cc=cc
+-__cxx=c++
+-__defprefix=""
+-__prefix=""
++__cc=${CC}
++__cxx=${CXX}
++__defprefix="${PREFIX}"
++__prefix="${PREFIX}"
+ __enable_debug=no
+ __enable_png=yes
+ __enable_gui=yes
+@@ -261,8 +261,8 @@
+ 
+ " >> Makefile
+ 
+-	echo "CXXFLAGS += -Wall -O2 $OSDEFS $LPNG_DEFS $PLUGIN_DEFS $DEFS" >> Makefile
+-	echo "CFLAGS   += -Wall -O2 $OSDEFS $LPNG_DEFS $PLUGIN_DEFS $DEFS" >> Makefile
++	echo "CXXFLAGS += -Wall $OSDEFS $LPNG_DEFS $PLUGIN_DEFS $DEFS" >> Makefile
++	echo "CFLAGS   += -Wall $OSDEFS $LPNG_DEFS $PLUGIN_DEFS $DEFS" >> Makefile
+ 
+ 	if test "$__enable_debug" = "yes" ; then
+ 		echo "# additional debug options" >> Makefile
+@@ -407,7 +407,7 @@
+ 		fi
+ 	fi
+ fi
+-	echo "	lrelease -verbose qpxtool.pro" >> $mf
++	echo "	lrelease-qt4 -verbose qpxtool.pro" >> $mf
+ 
+ 	echo "
+ clean: Makefile.qmake
+@@ -765,7 +765,7 @@
+ 		__libdir=$__prefix/lib
+ 		__plugindir=$__libdir/qpxtool
+ 		__incdir=$__prefix/include
+-		__mandir=$__prefix/share/man
++		__mandir=$__prefix/man
+ 		;;
+ 	mingw32*)
+ 		__bindir=$__prefix
