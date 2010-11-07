@@ -3467,6 +3467,7 @@
 %%T%%/jre/lib/zi/America/Asuncion
 %%T%%/jre/lib/zi/America/Atikokan
 %%T%%/jre/lib/zi/America/Bahia
+%%T%%/jre/lib/zi/America/Bahia_Banderas
 %%T%%/jre/lib/zi/America/Barbados
 %%T%%/jre/lib/zi/America/Belem
 %%T%%/jre/lib/zi/America/Belize
@@ -3792,6 +3793,7 @@
 %%T%%/jre/lib/zi/Pacific/Apia
 %%T%%/jre/lib/zi/Pacific/Auckland
 %%T%%/jre/lib/zi/Pacific/Chatham
+%%T%%/jre/lib/zi/Pacific/Chuuk
 %%T%%/jre/lib/zi/Pacific/Easter
 %%T%%/jre/lib/zi/Pacific/Efate
 %%T%%/jre/lib/zi/Pacific/Enderbury
@@ -3817,14 +3819,13 @@
 %%T%%/jre/lib/zi/Pacific/Pago_Pago
 %%T%%/jre/lib/zi/Pacific/Palau
 %%T%%/jre/lib/zi/Pacific/Pitcairn
-%%T%%/jre/lib/zi/Pacific/Ponape
+%%T%%/jre/lib/zi/Pacific/Pohnpei
 %%T%%/jre/lib/zi/Pacific/Port_Moresby
 %%T%%/jre/lib/zi/Pacific/Rarotonga
 %%T%%/jre/lib/zi/Pacific/Saipan
 %%T%%/jre/lib/zi/Pacific/Tahiti
 %%T%%/jre/lib/zi/Pacific/Tarawa
 %%T%%/jre/lib/zi/Pacific/Tongatapu
-%%T%%/jre/lib/zi/Pacific/Truk
 %%T%%/jre/lib/zi/Pacific/Wake
 %%T%%/jre/lib/zi/Pacific/Wallis
 %%T%%/jre/lib/zi/SystemV/AST4
