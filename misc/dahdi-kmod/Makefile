@@ -7,7 +7,7 @@
 
 PORTNAME=	dahdi
 PORTVERSION=	${DAHDI_VERSION:S/-//g}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc kld
 MASTER_SITES=	${MASTER_SITE_LOCAL}\
 		http://downloads.digium.com/pub/telephony/firmware/releases/:firmware
@@ -45,6 +45,7 @@ CONFIGURE_ENV=	WGET=/usr/bin/fetch
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	dahdi
 MAKE_ARGS=	ADDITIONAL_DRIVERS="wcb1xxp" NO_FETCH=yes
+GROUPS=		dahdi
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 CONFLICTS=	zaptel-[0-9]*
