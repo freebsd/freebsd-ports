@@ -1,0 +1,9 @@
+To run tcsd automatically, add the following line to /etc/rc.conf
+
+tcsd_enable="YES"
+
+You might want to edit %%PREFIX%%/etc/tcsd.conf to reflect your setup.
+
+To use TPM, add your_account to '%%GROUPS%%' group like following:
+
+# pw groupadd %%GROUPS%% -m your_account
