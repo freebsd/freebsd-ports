@@ -65,6 +65,10 @@ OPTIONS+=	XBASE	"XBase support in Kexi" off
 
 .include <bsd.port.options.mk>
 
+.if exists(${LOCALBASE}/include/qconfig.h)
+IGNORE=	does not build with x11-toolkits/qt33 installed. Please, deinstall qt-3.x first
+.endif
+
 .if !defined(WITHOUT_GTL) || exists (${LOCALBASE}/lib/libQtShiva.so)
 LIB_DEPENDS+=	OpenCTL.0:${PORTSDIR}/graphics/opengtl \
 		QtShiva.0:${PORTSDIR}/graphics/qtgtl
