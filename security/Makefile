@@ -345,6 +345,7 @@
     SUBDIR += openssh-askpass
     SUBDIR += openssh-portable
     SUBDIR += openssl
+    SUBDIR += openssl_tpm_engine
     SUBDIR += openvas-client
     SUBDIR += openvas-libnasl
     SUBDIR += openvas-libraries

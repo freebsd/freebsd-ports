@@ -1,0 +1,11 @@
+--- openssl.cnf.sample.orig	2005-09-30 00:02:58.000000000 +0900
++++ openssl.cnf.sample	2010-11-07 00:53:39.968569790 +0900
+@@ -18,7 +18,7 @@
+ foo = tpm_section
+ 
+ [tpm_section]
+-dynamic_path = /usr/local/ssl/lib/engines/libtpm.so
++dynamic_path = %%PREFIX%%/lib/openssl/engines/libtpm.so
+ engine_id = tpm
+ default_algorithms = ALL
+ #default_algorithms = RAND,RSA
