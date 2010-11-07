@@ -1,0 +1,16 @@
+--- usr/lib/pkcs11/ica_s390_stdll/Makefile.am.orig	2010-07-29 21:28:41.000000000 +0900
++++ usr/lib/pkcs11/ica_s390_stdll/Makefile.am	2010-10-20 00:22:00.867981839 +0900
+@@ -2,11 +2,11 @@
+ 
+ opencryptoki_stdll_libpkcs11_ica_la_LDFLAGS = $(LCRYPTO)		\
+ $(ICA_LIB_DIRS) -nostartfiles -shared -Wl,-Bsymbolic -Wl,-soname,$@	\
+--Wl,-Bsymbolic -lc -lpthread -lica -ldl -lcrypto
++-Wl,-Bsymbolic -lc -lpthread -lica -lcrypto
+ 
+ # Not all versions of automake observe libname_CFLAGS
+ opencryptoki_stdll_libpkcs11_ica_la_CFLAGS = -DSPINXPL -DDEV		\
+--D_THREAD_SAFE -fPIC -DSHALLOW=0 -DSWTOK=0 -DLITE=1 -DNODH 		\
++-D_THREAD_SAFE $(FPIC) -DSHALLOW=0 -DSWTOK=0 -DLITE=1 -DNODH 		\
+ -DNOCDMF -DNOMD2 -DNODSA -DSTDLL_NAME=\"icatok\"
+ 
+ opencryptoki_stdll_libpkcs11_ica_la_SOURCES = ../common/asn1.c	\

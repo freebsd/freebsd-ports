@@ -1,0 +1,18 @@
+--- usr/lib/pkcs11/api/Makefile.am.orig	2010-07-29 21:28:41.000000000 +0900
++++ usr/lib/pkcs11/api/Makefile.am	2010-10-19 23:49:45.125982519 +0900
+@@ -4,13 +4,13 @@
+ SO_REVISION=0
+ SO_AGE=0
+ 
+-opencryptoki_libopencryptoki_la_LDFLAGS = -shared -Wl,-Bsymbolic -lc -ldl \
++opencryptoki_libopencryptoki_la_LDFLAGS = -shared -Wl,-Bsymbolic -lc \
+ 					  -lpthread -version-info         \
+ 					  $(SO_CURRENT):$(SO_REVISION):$(SO_AGE)
+ 
+ # Not all versions of automake observe libname_CFLAGS
+ opencryptoki_libopencryptoki_la_CFLAGS = -DSPINXPL -DAPI -DDEV -D_THREAD_SAFE \
+-					 -fPIC -I../. -I../../../include/pkcs11
++					 $(FPIC) -I../. -I../../../include/pkcs11
+ 
+ opencryptoki_libopencryptoki_la_SOURCES = api_interface.c shrd_mem.c apiutil.c
+ 

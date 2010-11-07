@@ -334,6 +334,7 @@
     SUBDIR += openbsm
     SUBDIR += opencdk
     SUBDIR += openconnect
+    SUBDIR += opencryptoki
     SUBDIR += openct
     SUBDIR += openfwtk
     SUBDIR += openpgpsdk

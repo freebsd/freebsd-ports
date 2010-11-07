@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: pkcsslotd
+# REQUIRE: LOGIN tcsd
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# pkcsslotd_enable (bool): Set to NO by default.
+#                          Set it to YES to enable pkcsslotd.
+#
+
+. /etc/rc.subr
+
+name=pkcsslotd
+rcvar=`set_rcvar`
+command=%%PREFIX%%/sbin/${name}
+start_precmd=${name}_prestart
+
+pkcsslotd_prestart () {
+	[ -f %%PREFIX%%/var/lib/opencryptoki/pk_config_data ] || \
+		%%PREFIX%%/sbin/pkcs11_startup
+}
+
+load_rc_config ${name}
+
+: pkcsslotd_enable=${pkcsslotd_enable-"NO"}
+
+run_rc_command "$1"
+

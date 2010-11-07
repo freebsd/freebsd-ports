@@ -1,0 +1,11 @@
+--- usr/lib/pkcs11/soft_stdll/Makefile.am.orig	2010-07-29 21:28:41.000000000 +0900
++++ usr/lib/pkcs11/soft_stdll/Makefile.am	2010-10-20 00:25:03.227984225 +0900
+@@ -7,7 +7,7 @@
+ opencryptoki_stdll_libpkcs11_sw_la_CFLAGS = -DSPINXPL -DDEV -D_THREAD_SAFE  \
+ 					    -DSHALLOW=0 -DSWTOK=1 -DLITE=0  \
+ 					    -DNOCDMF -DNOMD2 -DNODSA -DNORIPE	    \
+-					    -DDEBUGON -fPIC		    \
++					    -DDEBUGON $(FPIC)		    \
+ 					    -I/usr/include -I.		    \
+ 					    -I../../../include/pkcs11/stdll \
+ 					    -I../../../include/pkcs11	    \
