@@ -1,0 +1,3 @@
+This package contains 2 sets of code, a command-line utility used to
+generate a TSS key blob and write it to disk and an OpenSSL engine
+which interfaces with the TSS API.
