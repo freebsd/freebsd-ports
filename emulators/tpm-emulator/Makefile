@@ -7,7 +7,7 @@
 
 PORTNAME=		tpm-emulator
 PORTVERSION=		0.7.1
-CATEGORIES=		emulators
+CATEGORIES=		emulators security
 MASTER_SITES=		BERLIOS/${PORTNAME}
 DISTNAME=		${PORTNAME:S/-/_/}-${PORTVERSION}
 
