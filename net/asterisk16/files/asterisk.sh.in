@@ -14,7 +14,7 @@
 stop_cmd=asterisk_shutdown
 asterisk_shutdown () {
   echo 'Stopping asterisk'
-  %%PREFIX%%/sbin/asterisk -qrx 'core stop now'
+  %%PREFIX%%/sbin/asterisk -nqrx 'core stop now'
   sleep 1
   return 0
 }
@@ -23,6 +23,7 @@ name=asterisk
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/asterisk
+command_args="-n -U %%ASTERISK_USER%%"
 
 load_rc_config $name
 

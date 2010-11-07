@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.6.2.13
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -57,6 +58,12 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		ILBC		"Enable iLBC codec" off \
 		SPANDSP		"Enable Spandsp faxing support" off
 
+ASTERISK_USER?=		asterisk
+ASTERISK_GROUP?=	asterisk
+
+USERS=	${ASTERISK_USER}
+GROUPS=	${ASTERISK_GROUP} dahdi
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
@@ -65,6 +72,8 @@ OPTIONS+=	DAHDI		"Enable DAHDI support" on
 # Include this since we have altered OPTIONS.
 .include <bsd.port.options.mk>
 .endif
+
+SUB_LIST+=	ASTERISK_USER=${ASTERISK_USER}
 
 .if !defined(WITH_H323)
 PLIST_SUB+=	WITH_H323="@comment "
@@ -218,5 +227,8 @@ post-extract:
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
+
+post-install:
+	@${CHOWN} -R ${ASTERISK_USER}:${ASTERISK_GROUP} /var/db/asterisk /var/log/asterisk /var/spool/asterisk
 
 .include <bsd.port.post.mk>
