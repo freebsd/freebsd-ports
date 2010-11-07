@@ -48,7 +48,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 .if defined(WITH_EMULATOR)
 PKGNAMESUFFIX+=	-no_tddl
-LIB_DEPENDS+=	tddl:${PORTSDIR}/security/tpm-emulator
+LIB_DEPENDS+=	tddl:${PORTSDIR}/emulators/tpm-emulator
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\.\./tddl/libtddl\.a|${LOCALBASE}/lib/libtddl\.a|g' ${WRKSRC}/src/tcs/Makefile.am
