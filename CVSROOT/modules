@@ -22957,6 +22957,7 @@ rubygem-yapra                   ports/www/rubygem-yapra
 rubygem-zentest                 ports/devel/rubygem-zentest
 rubygem-zoom                    ports/devel/rubygem-zoom
 rubyphoto                       ports/graphics/rubyphoto
+rubyripper                      ports/audio/rubyripper
 rude                            ports/net/rude
 rudeconfig                      ports/devel/rudeconfig
 rudiments                       ports/devel/rudiments
