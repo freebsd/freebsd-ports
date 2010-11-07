@@ -4,27 +4,6 @@ if [ x"$2" != x"POST-DEINSTALL" ]; then
     exit 0
 fi
 
-USER=netdisco
-GROUP=${USER}
-
-echo ""
-
-if pw usershow "${USER}" 2>/dev/null 1>&2; then
-	if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
-		echo "To delete the netdisco user permanently, use 'pw userdel ${USER}'."
-	else
-		pw userdel ${USER}
-	fi
-fi
-
-if pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
-	if [ -z "${PACKAGE_BUILDING}" -a -z "${BATCH}" ]; then
-		echo "To delete the netdisco group permanently, use 'pw groupdel ${GROUP}'."
-	else
-		pw groupdel ${GROUP}
-	fi
-fi
-
 TMPDIR=${TMPDIR:=/tmp}
 PKG_TMPDIR=${PKG_TMPDIR:=${TMPDIR}}
 
