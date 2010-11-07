@@ -20,7 +20,7 @@ LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323" \
