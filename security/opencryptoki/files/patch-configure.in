@@ -1,0 +1,59 @@
+--- configure.in.orig	2010-07-29 21:28:41.000000000 +0900
++++ configure.in	2010-10-20 01:31:02.971984782 +0900
+@@ -8,6 +8,9 @@
+ 
+ AM_INIT_AUTOMAKE([foreign 1.6])
+ 
++AC_DEFINE(_BSD_SOURCE, 1, BSD functions)
++AC_DEFINE(__BSD_VISIBLE, 1, BSD extensions)
++
+ dnl Get the canonical host type
+ AC_CANONICAL_TARGET
+ 
+@@ -30,6 +33,7 @@
+ AC_FUNC_STRFTIME
+ AC_FUNC_VPRINTF
+ AC_CHECK_FUNCS([getcwd])
++AC_CHECK_FUNCS([asprintf])
+ 
+ dnl Used in various scripts
+ AC_PATH_PROG([ID], [id], [/us/bin/id])
+@@ -193,6 +197,21 @@
+ 	[],
+ 	[with_xcryptolinz=check])
+ 
++dnl --- check for pkcs11 user
++AC_ARG_WITH([pkcs11user],
++	AC_HELP_STRING([--with-pkcs11user[[=USER]]], [set pkcs11 user [[pkcs11]]]),
++        [pkcs11_user=$withval],
++        [pkcs11_user=pkcs11])
++
++dnl --- check for pkcs11 group
++AC_ARG_WITH(pkcs11group,
++	AC_HELP_STRING([--with-pkcs11group[[=GROUP]]], [set pkcs11 group [[pkcs11]]]),
++	[pkcs11_group=$withval],
++	[pkcs11_group=pkcs11])
++
++AC_SUBST(PKCS11USER, $pkcs11_user)
++AC_SUBST(PKCS11GROUP, $pkcs11_group)
++
+ dnl ---
+ dnl ---
+ dnl --- Now that we have all the options, let's check for a valid build
+@@ -630,11 +649,15 @@
+ 
+ CFLAGS="$CFLAGS $DEBUG_CFLAGS -DPKCS64 -D_XOPEN_SOURCE=500"
+ 
+-CFLAGS+=' -DCONFIG_PATH=\"$(localstatedir)/lib/opencryptoki\" -DSBIN_PATH=\"$(sbindir)\" -DLIB_PATH=\"$(libdir)\"'
++CFLAGS="$CFLAGS -DCONFIG_PATH='\"$localstatedir/lib/opencryptoki\"' -DSBIN_PATH='\"$sbindir\"' -DLIB_PATH='\"$libdir\"'"
++
++CFLAGS="$CFLAGS -DPKCS11USER='\"${pkcs11_user}\"' -DPKCS11GROUP='\"${pkcs11_group}\"'"
+ 
+ # At this point, CFLAGS is set to something sensible
+ AC_PROG_CC
+ 
++AC_SUBST(FPIC, $lt_prog_compiler_pic)
++
+ AC_OUTPUT([Makefile usr/Makefile \
+           usr/include/Makefile \
+           usr/include/pkcs11/Makefile \

@@ -1,0 +1,34 @@
+include/opencryptoki/apiclient.h
+include/opencryptoki/pkcs11.h
+include/opencryptoki/pkcs11types.h
+lib/libopencryptoki.la
+lib/libopencryptoki.so
+lib/libopencryptoki.so.0
+lib/opencryptoki/PKCS11_API.so
+lib/opencryptoki/libopencryptoki.la
+lib/opencryptoki/libopencryptoki.so
+lib/opencryptoki/libopencryptoki.so.0
+lib/opencryptoki/methods
+lib/opencryptoki/stdll/PKCS11_SW.so
+lib/opencryptoki/stdll/libpkcs11_sw.la
+lib/opencryptoki/stdll/libpkcs11_sw.so
+lib/opencryptoki/stdll/libpkcs11_sw.so.0
+lib/opencryptoki/stdll/PKCS11_TPM.so
+lib/opencryptoki/stdll/libpkcs11_tpm.la
+lib/opencryptoki/stdll/libpkcs11_tpm.so
+lib/opencryptoki/stdll/libpkcs11_tpm.so.0
+lib/pkcs11/PKCS11_API.so
+lib/pkcs11/libopencryptoki.so
+lib/pkcs11/methods
+lib/pkcs11/stdll
+sbin/pkcs11_startup
+sbin/pkcs_slot
+sbin/pkcsconf
+sbin/pkcsslotd
+@dirrmtry var/lib/opencryptoki
+@dirrmtry var/lib
+@dirrmtry var
+@dirrm lib/pkcs11
+@dirrm lib/opencryptoki/stdll
+@dirrm lib/opencryptoki
+@dirrm include/opencryptoki
