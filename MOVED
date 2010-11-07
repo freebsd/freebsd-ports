@@ -4652,3 +4652,20 @@ ftp/kwebget||2010-11-04|Has expired: Development has ceased.
 multimedia/clive-utils||2010-11-04|Has expired: development has ceased; use multimedia/umph instead
 ports-mgmt/barry||2010-11-04|Has expired: Development has ceased.
 www/wb0||2010-11-04|Has expired: Development has ceased.
+x11/e17-module-bling|x11-wm/e17-module-bling|2010-11-07|Fix category
+x11/e17-module-calendar|x11-wm/e17-module-calendar|2010-11-07|Fix category
+x11/e17-module-cpu|x11-wm/e17-module-cpu|2010-11-07|Fix category
+x11/e17-module-deskshow|x11-wm/e17-module-deskshow|2010-11-07|Fix category
+x11/e17-module-flame|x11-wm/e17-module-flame|2010-11-07|Fix category
+x11/e17-module-language|x11-wm/e17-module-language|2010-11-07|Fix category
+x11/e17-module-mail|x11-wm/e17-module-mail|2010-11-07|Fix category
+x11/e17-module-mem|x11-wm/e17-module-mem|2010-11-07|Fix category
+x11/e17-module-mixer|x11-wm/e17-module-mixer|2010-11-07|Fix category
+x11/e17-module-moon|x11-wm/e17-module-moon|2010-11-07|Fix category
+x11/e17-module-rain|x11-wm/e17-module-rain|2010-11-07|Fix category
+x11/e17-module-screenshot|x11-wm/e17-module-screenshot|2010-11-07|Fix category
+x11/e17-module-slideshow|x11-wm/e17-module-slideshow|2010-11-07|Fix category
+x11/e17-module-snow|x11-wm/e17-module-snow|2010-11-07|Fix category
+x11/e17-module-uptime|x11-wm/e17-module-uptime|2010-11-07|Fix category
+x11/e17-module-weather|x11-wm/e17-module-weather|2010-11-07|Fix category
+x11/e17-module-winselector|x11-wm/e17-module-winselector|2010-11-07|Fix category
