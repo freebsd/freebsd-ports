@@ -7,9 +7,9 @@
 
 PORTNAME=	xfce4-genmon-plugin
 PORTVERSION=	3.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
+MASTER_SITES=	CRITICAL/xfce4
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	miwi@FreeBSD.org
