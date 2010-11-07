@@ -9,7 +9,7 @@ PORTNAME=	jdk-doc
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VER}
 CATEGORIES=	java
 MASTER_SITES=	#
-DISTNAME=	jdk-6u21-docs
+DISTNAME=	jdk-6u22-docs
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_MAJOR_VER} Documentation
@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/docs
 JDK_VERSION=	1.6.0
 JDK_MAJOR_VER=	${JDK_VERSION:R}
 JDK_CONCAT_VER=	${JDK_MAJOR_VER:S/.//g}
-JDK_UPDATE_VER=	21
+JDK_UPDATE_VER=	22
 DOWNLOAD_URL=	http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 NO_BUILD=	yes
