@@ -153,6 +153,7 @@ openacs:*:820:
 dotlrn:*:821:
 netdisco:*:840:
 munin:*:842:
+dahdi:*:932:asterisk,freeswitch
 fossy:*:901:www
 bacula:*:910:
 iserv:*:911:
@@ -174,3 +175,4 @@ kumofs:*:927:
 nslcd:*:928:
 activemq:*:929:
 ifgraph:*:930:
+asterisk:*:931:
