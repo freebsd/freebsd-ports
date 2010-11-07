@@ -13,7 +13,6 @@ lib/parole-0/tray-icon.la
 lib/parole-0/tray-icon.so
 lib/parole-0/window-title.la
 lib/parole-0/window-title.so
-libexec/parole-media-plugin
 share/applications/parole.desktop
 share/icons/hicolor/16x16/apps/parole.png
 share/icons/hicolor/22x22/apps/parole.png
