@@ -7,6 +7,7 @@
 
 PORTNAME=	opentracker
 PORTVERSION=	0.2010.05.30
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/ \
 		http://www.glenbarber.us/ports/net/${PORTNAME}/
@@ -16,7 +17,7 @@ COMMENT=	A free lightweight bittorrent tracker using libowfat
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/devel/libowfat
 
-USE_BZIP2=		yes
+USE_BZIP2=	yes
 USE_RC_SUBR=	${PORTNAME}
 
 OPTIONS=	WANT_ACCESSLIST_BLACK "Enable client blacklisting" Off \
@@ -53,11 +54,14 @@ FEATURES+=-DWANT_RESTRICT_STATS
 
 MAKE_ENV+=FEATURES="${FEATURES}"
 
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.orig" -a -exec ${RM} -f {} \;
+
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-		${MKDIR} ${PREFIX}/etc/${PORTNAME}
-		${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample \
-			${PREFIX}/etc/${PORTNAME}/${PORTNAME}.conf.sample
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample \
+		${PREFIX}/etc/${PORTNAME}/${PORTNAME}.conf.sample
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/${PORTNAME}/${PORTNAME}.conf ]; then \
