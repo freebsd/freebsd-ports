@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.197 2010/05/30 17:12:48 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.203 2010/11/07 22:10:25 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 13;
-my $micro = 1;
+my $micro = 2;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -199,7 +199,7 @@ my @varlist =  qw(
 	INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER
 	PLIST_FILES OPTIONS INSTALLS_OMF USE_GETTEXT USE_RC_SUBR
 	DIST_SUBDIR ALLFILES IGNOREFILES CHECKSUM_ALGORITHMS INSTALLS_ICONS
-	GNU_CONFIGURE CONFIGURE_ARGS MASTER_SITE_SUBDIR
+	GNU_CONFIGURE CONFIGURE_ARGS MASTER_SITE_SUBDIR LICENSE LICENSE_COMB
 );
 
 my $cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", @varlist);
@@ -788,7 +788,7 @@ sub checkplist {
 					"will not work as you expected in most cases.  Use ".
 					"pkg-deinstall or \@unexec rmdir ... if you want to ".
 					"remove a directory such as /var/\${PORTNAME}");
-			} elsif ($_ =~ /^\@(dirrm|option|stopdaemon)/) {
+			} elsif ($_ =~ /^\@(dirrm|option|stopdaemon|rmtry)/) {
 				; # no check made
 			} elsif ($_ eq "\@cwd") {
 				; # @cwd by itself means change directory back to the original
@@ -1044,7 +1044,7 @@ sub checkmfile {
 		$format = '^[^|]*\|[^|]*\|[^|]*\|[^|]*$';
 		$dosort = 0;
     } elsif ($file =~ m/UIDs$/) {
-		$format = '^[^:]+:\*:[0-9]+:[0-9]+::0:0:[^:]+:[^:]+:[^:]+$';
+		$format = '^[^:]+:\*:[0-9]+:[0-9]+:[^:]*:0:0:[^:]+:[^:]+:[^:]+$';
 		$dosort = 1;
     } elsif ($file =~ m/GIDs$/) {
 		$format = '^[^:]+:\*:[0-9]+:[^:]*$';
@@ -1184,6 +1184,9 @@ sub check_depends_syntax {
 		print "OK: checking ports listed in $j.\n"
 			if ($verbose);
 		foreach my $k (split(/\s+/, $i)) {
+			if ($k =~ /^#/) {
+				last;
+			}
 			my @l = split(':', $k);
 
 			print "OK: checking dependency value for $j.\n"
@@ -2396,6 +2399,21 @@ DIST_SUBDIR EXTRACT_ONLY
 		if (scalar(@sites) == 1) {
 			&perror("WARN", $file, -1, "only one MASTER_SITE configured.  ".
 				"Consider adding additional mirrors.");
+		}
+	}
+
+	# check value of LICENSE_COMB
+	if ($makevar{LICENSE_COMB} && $makevar{LICENSE_COMB} !~ /^(single|dual|multi$)/) {
+		&perror("FATAL", $file, -1, "LICENSE_COMB contains invalid value '$1' - must be one of 'single', 'dual', 'multi'");
+	}
+
+	# check LICENSE
+	if ($makevar{LICENSE} && $makevar{LICENSE} ne '') {
+		my $comb = $makevar{LICENSE_COMB} // 'single';
+
+		my @tokens = split(/ /, $makevar{LICENSE});
+		if ($comb eq 'single' && scalar(@tokens) > 1) {
+			&perror("FATAL", $file, -1, "LICENSE contains multiple licenses but LICENSE_COMB is not set to 'dual' or 'multi'");
 		}
 	}
 
