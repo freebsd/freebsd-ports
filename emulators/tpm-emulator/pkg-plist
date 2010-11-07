@@ -1,6 +1,7 @@
 include/tddl.h
 lib/libtddl.so.1.2.0.7
 lib/libtddl.so.1.2
+lib/libtddl.so
 lib/libtddl.a
 bin/tpmd
 @unexec rm -f /var/tpm/tpmd_socket*
