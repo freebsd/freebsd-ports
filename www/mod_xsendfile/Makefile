@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mod_xsendfile
-PORTVERSION=	0.9
+PORTVERSION=	0.12
 CATEGORIES=	www
-MASTER_SITES=	http://celebnamer.celebworld.ws/stuff/mod_xsendfile/
+MASTER_SITES=	https://tn123.org/mod_xsendfile/
 
 MAINTAINER=	potatosaladx@gmail.com
 COMMENT=	An Apache2 module that processes X-SENDFILE headers
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 USE_APACHE=	2.0+
 AP_FAST_BUILD=	yes
