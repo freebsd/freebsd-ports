@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abgx360
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://abgx360.x-scene.com/
