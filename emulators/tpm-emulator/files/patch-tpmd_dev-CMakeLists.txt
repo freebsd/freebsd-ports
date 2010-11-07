@@ -1,0 +1,29 @@
+--- tpmd_dev/CMakeLists.txt.orig	2010-07-06 06:21:20.000000000 +0900
++++ tpmd_dev/CMakeLists.txt	2010-10-25 02:56:43.626557976 +0900
+@@ -17,8 +17,8 @@
+ set(tpmd_dev_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/openbsd")
+ set(tpmd_dev_BINARY_DIR "${CMAKE_CURRENT_BINARY_DIR}/openbsd")
+ set(tpmd_dev_OBJ "${tpmd_dev_BINARY_DIR}/tpmd_dev.o")
+-set(tpmd_dev_BUILD_CMD make -C ${tpmd_dev_BINARY_DIR})
+-set(tpmd_dev_INSTALL_CMD make -C ${tpmd_dev_BINARY_DIR} install)
++set(tpmd_dev_BUILD_CMD gmake -C ${tpmd_dev_BINARY_DIR})
++set(tpmd_dev_INSTALL_CMD gmake -C ${tpmd_dev_BINARY_DIR} install)
+ 
+ elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+ 
+@@ -28,7 +28,7 @@
+ set(tpmd_dev_BUILD_CMD make -C ${tpmd_dev_BINARY_DIR})
+ set(tpmd_dev_INSTALL_CMD make -C ${tpmd_dev_BINARY_DIR} install)
+ 
+-endif()
++endif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+ 
+ # compile module
+ if(tpmd_dev_OBJ)
+@@ -45,5 +45,5 @@
+ 
+ install(CODE "EXECUTE_PROCESS(COMMAND ${tpmd_dev_INSTALL_CMD})")
+ 
+-endif()
++endif(tpmd_dev_OBJ)
+ 

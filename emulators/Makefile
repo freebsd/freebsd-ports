@@ -164,6 +164,7 @@
     SUBDIR += tilem
     SUBDIR += tkhfs
     SUBDIR += tme
+    SUBDIR += tpm-emulator
     SUBDIR += tuxnes
     SUBDIR += twin
     SUBDIR += uae

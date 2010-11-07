@@ -1,0 +1,4 @@
+The project aims to create a fully working Trusted Platform Module (TPM)
+emulator follwing the specifications of the Trusted Computing Group.
+The port provides a driver library libtddl which can be linked against programs
+providing a Trusted Software Stack to redirect TPM calls to the emulator.
