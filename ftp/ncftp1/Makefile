@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ncftp1
+PORTNAME=	ncftp
 PORTVERSION=	1.9.5
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/

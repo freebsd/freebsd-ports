@@ -63,7 +63,7 @@
     SUBDIR += moftpd
     SUBDIR += muddleftpd
     SUBDIR += multiget
-    SUBDIR += ncftp
+    SUBDIR += ncftp1
     SUBDIR += ncftp2
     SUBDIR += ncftp3
     SUBDIR += ncftpd
