@@ -1,0 +1,37 @@
+--- lib/tpm_utils.c.orig	2010-02-02 02:17:23.000000000 +0900
++++ lib/tpm_utils.c	2010-10-25 01:55:31.065559348 +0900
+@@ -55,6 +55,7 @@
+ 	CmdHelpFunction  tCmdHelp = ( a_tCmdHelpFunction ) ? a_tCmdHelpFunction
+ 							   : logCmdHelp;
+ 
++#ifdef __GCC
+ 	char  szShortOpts[strlen( pszGenShortOpts )
+ 			  + ( ( a_pszShortOpts == NULL ) ? 0 : strlen( a_pszShortOpts ) )
+ 			  + 1];
+@@ -64,6 +65,26 @@
+ 
+ 	int  iOpt;
+ 	int  rc;
++#else
++	int  iOpt;
++	int  rc;
++
++	char *szShortOpts;
++	int  iNumShortOpts, iNumGenLongOpts;
++	struct option *sLongOpts;
++
++	iNumShortOpts = strlen( pszGenShortOpts ) +
++		( ( a_pszShortOpts == NULL ) ? 0 : strlen( a_pszShortOpts ) );
++	iNumGenLongOpts = sizeof( sGenLongOpts ) / sizeof( struct option );
++
++	szShortOpts = malloc(iNumShortOpts + 1);
++	sLongOpts = malloc((iNumGenLongOpts + a_iNumOpts + 1) 
++                           * sizeof(struct option));
++	if( (szShortOpts == NULL) || (sLongOpts == NULL) ) {
++		perror("malloc");
++		return -1;
++	}
++#endif
+ 
+ 	strcpy( szShortOpts, pszGenShortOpts);
+ 	if ( a_pszShortOpts )

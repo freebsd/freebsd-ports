@@ -861,6 +861,7 @@
     SUBDIR += tlswrap
     SUBDIR += tor
     SUBDIR += tor-devel
+    SUBDIR += tpm-tools
     SUBDIR += trinokiller
     SUBDIR += tripwire
     SUBDIR += tripwire-131
