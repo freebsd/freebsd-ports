@@ -21,7 +21,7 @@ restart_cmd=${name}_restart
 status_cmd=${name}_status
 
 command="%%PREFIX%%/bin/netdisco"
-required_files="%%PREFIX%%/etc/netdisco.conf"
+required_files="%%ETCDIR%%/netdisco.conf"
 
 netdisco_start() {
 	$command -p start

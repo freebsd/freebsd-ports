@@ -1,7 +1,7 @@
---- netdisco.crontab.orig	Sun Dec  5 02:14:26 2004
-+++ netdisco.crontab	Sat Apr  8 23:11:20 2006
+--- netdisco.crontab.orig	2010-07-04 02:08:01.000000000 +0100
++++ netdisco.crontab	2010-07-04 02:07:28.000000000 +0100
 @@ -4,34 +4,34 @@
- # $Id: netdisco.crontab,v 1.7 2004/12/05 02:14:26 maxbaker Exp $
+ # $Id: netdisco.crontab,v 1.8 2009/06/10 18:39:03 maxbaker Exp $
  
  #MAILTO=max
 -PATH=/bin:/usr/bin:/usr/local/bin
@@ -20,8 +20,8 @@
 +0 1 * * *       %%PREFIX%%/bin/netdisco -b -B 
  
  # Restart admin panel daemon nightly
--0 2 * * *       /usr/local/netdisco/netdisco -p restart
-+0 2 * * *       %%PREFIX%%/bin/netdisco -p restart
+-0 2 * * *       /usr/local/netdisco/netdisco -b -p restart
++0 2 * * *       %%PREFIX%%/bin/netdisco -b -p restart
  
  # Refresh Graph every day
 -0 3 * * *       /usr/local/netdisco/netdisco -b -g 2>&1 

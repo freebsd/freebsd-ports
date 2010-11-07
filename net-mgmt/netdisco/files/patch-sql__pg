@@ -1,0 +1,44 @@
+--- sql/pg.orig	2009-01-31 02:06:37.000000000 +0000
++++ sql/pg	2010-07-20 22:19:46.000000000 +0000
+@@ -27,7 +27,7 @@
+                       'h|help',
+               );
+ 
+-    $DefaultDir = "/usr/local/netdisco";
++    $DefaultDir = "%%SITE_PERL%%";
+     # add more possible locations here
+     foreach $poss ($FindBin::Bin . "/..", "..") {
+ 	if (-f $poss . "/netdisco.pm") {
+@@ -35,7 +35,7 @@
+ 	}
+     }
+     $Dir        = $ARGS{d} || $DefaultDir;
+-    $ConfigFile = $ARGS{c} || "$Dir/netdisco.conf";
++    $ConfigFile = $ARGS{c} || "%%ETCDIR%%/netdisco.conf";
+     $Psql       = $ARGS{p} || 'psql';
+     eval "use lib '$Dir';";
+     die "use lib '$Dir': $@." if ($@);
+@@ -172,12 +172,12 @@
+     open (ALL,">pg_all.input") or die "Can't create pg_all.input for output. $!\n";
+ 
+     # Cat all tables into one big file
+-    opendir(SQLDIR, "$Dir/sql") or die "Can't open $Dir/sql: $!";
++    opendir(SQLDIR, "%%DATADIR%%/sql") or die "Can't open %%DATADIR%%/sql: $!";
+     while( defined (my $f = readdir SQLDIR) ) {
+         next if $f =~ /^\.\.?$/ or $f =~ /^upgrade-.*\.sql$/;
+ 	next unless $f =~ /\.sql$/;
+         print "[ $f ]\n";
+-        open (F, "<$Dir/sql/$f") or die "Can't read $f. $!\n";
++        open (F, "<%%DATADIR%%/sql/$f") or die "Can't read $f. $!\n";
+         while (<F>) {
+             print ALL;
+         }
+@@ -304,7 +304,7 @@
+ 
+ OPTIONS
+    -b                        -- Batch mode, no override protection
+-   -d /usr/local/netdisco    -- Path to netdisco.pm
++   -d /path/to/netdisco.pm   -- Path to netdisco.pm
+    -c /path/to/netdisco.conf -- Netdisco Config file to use
+    -u pgsql                  -- Database UNIX user
+    -p /path/to/psql          -- psql cli executable
