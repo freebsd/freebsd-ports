@@ -12,7 +12,6 @@
 %%DOCSDIR%%/bouml.html
 %%DOCSDIR%%/bouml_title.html
 %%DOCSDIR%%/browseritems.html
-%%DOCSDIR%%/c.html
 %%DOCSDIR%%/class.html
 %%DOCSDIR%%/classdiagram.html
 %%DOCSDIR%%/classinstance.html
@@ -734,6 +733,8 @@
 %%DOCSDIR%%/figs/globalchange1.png
 %%DOCSDIR%%/figs/gpro.png
 %%DOCSDIR%%/figs/iconbar.png
+%%DOCSDIR%%/figs/imagedialog.png
+%%DOCSDIR%%/figs/imagemenu.png
 %%DOCSDIR%%/figs/interruptibleactivityregion.png
 %%DOCSDIR%%/figs/interruptiblemenu.png
 %%DOCSDIR%%/figs/interruptibleregion1.png
@@ -1007,6 +1008,7 @@
 %%DOCSDIR%%/figs/statedrawingsettings.png
 %%DOCSDIR%%/figs/statedrawingsettings1.png
 %%DOCSDIR%%/figs/stateedit1.png
+%%DOCSDIR%%/figs/stateedit1bis.png
 %%DOCSDIR%%/figs/stateedit2.png
 %%DOCSDIR%%/figs/stateedit3.png
 %%DOCSDIR%%/figs/stateedit4.png
