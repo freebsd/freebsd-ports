@@ -1,0 +1,20 @@
+--- dist/tcsd.conf.in.orig	2010-01-29 01:27:50.000000000 +0900
++++ dist/tcsd.conf.in	2010-10-25 00:06:25.565556476 +0900
+@@ -35,7 +35,7 @@
+ #  log data. The interface to this log is usually provided by the TPM
+ #  device driver.
+ #
+-# firmware_log_file = /sys/kernel/security/tpm0/binary_bios_measurements
++# firmware_log_file = /var/run/tpm/binary_bios_measurements
+ #
+ 
+ # Option: kernel_log_file
+@@ -46,7 +46,7 @@
+ #  http://sf.net/projects/linux-ima for more info on getting IMA.
+ #
+ #
+-# kernel_log_file = /sys/kernel/security/ima/binary_runtime_measurements
++# kernel_log_file = /var/run/ima/binary_runtime_measurements
+ #
+ 
+ # Option: firmware_pcrs

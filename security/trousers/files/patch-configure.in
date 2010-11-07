@@ -1,0 +1,41 @@
+--- configure.in.orig	2010-07-09 05:35:18.000000000 +0900
++++ configure.in	2010-10-24 22:31:30.040556068 +0900
+@@ -75,6 +75,21 @@
+ 		[CFLAGS="$CFLAGS -ftest-coverage -fprofile-arcs"
+ 		 AC_MSG_RESULT([*** Enabling gcov at user request ***])],)
+ 
++# Check for tss user
++AC_ARG_WITH(tssuser,
++        [  --with-tssuser[[=USER]]    set tss user [[tss]]],
++        [tss_user=$withval],
++        [tss_user=tss]
++)
++# Check for tss group
++AC_ARG_WITH(tssgroup,
++        [  --with-tssgroup[[=GROUP]]  set tss group [[tss]]],
++        [tss_group=$withval],
++        [tss_group=tss]
++)
++AC_SUBST(TSS_USER_NAME, $tss_user)
++AC_SUBST(TSS_GROUP_NAME, $tss_group)
++
+ # profiling support
+ AC_ARG_ENABLE(gprof,
+ 		[AC_HELP_STRING([--enable-gprof], [enable profiling with gprof [default=off]])],
+@@ -352,6 +367,8 @@
+ AC_C_BIGENDIAN([AC_DEFINE(_BIG_ENDIAN, 1, [big-endian host])])
+ AC_CHECK_DECL(htole32, [AC_DEFINE(HTOLE_DEFINED, 1, [htole32 function is available])])
+ AC_CHECK_HEADER(sys/byteorder.h, [AC_DEFINE(HAVE_BYTEORDER_H, 1, [sys/byteorder.h header])])
++AC_CHECK_HEADER(endian.h, [AC_DEFINE(HAVE_ENDIAN_H, 1, [endian.h header])])
++AC_CHECK_HEADER(sys/endian.h, [AC_DEFINE(HAVE_SYS_ENDIAN_H, 1, [sys/endian.h header])])
+ AC_CHECK_FUNC(daemon, [ AC_DEFINE(HAVE_DAEMON, 1, [daemon function is available]) ])
+  
+ if test "x${GCC}" = "xyes"; then
+@@ -359,6 +376,7 @@
+ fi
+ 
+ CFLAGS="$CFLAGS -I../include \
++	-DTSS_USER_NAME=\\\"$tss_user\\\" -DTSS_GROUP_NAME=\\\"$tss_group\\\" \
+ 	-DTCSD_DEFAULT_PORT=${TCSD_DEFAULT_PORT} -DTSS_VER_MAJOR=${TSS_VER_MAJOR} \
+ 	-DTSS_VER_MINOR=${TSS_VER_MINOR} -DTSS_SPEC_MAJOR=${TSS_SPEC_MAJOR} \
+ 	-DTSS_SPEC_MINOR=${TSS_SPEC_MINOR}"

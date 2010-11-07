@@ -1,0 +1,40 @@
+@unexec cmp -s %D/etc/tcsd.conf %D/%%EXAMPLESDIR%%/tcsd.conf && rm -f %D/etc/tcsd.conf || true
+%%EXAMPLESDIR%%/tcsd.conf
+@exec [ -f %D/etc/tcsd.conf ] || cp -p %B/%f %D/etc/tcsd.conf
+include/trousers/trousers.h
+include/trousers/tss.h
+include/tss/compat11b.h
+include/tss/platform.h
+include/tss/tcpa_defines.h
+include/tss/tcpa_error.h
+include/tss/tcpa_struct.h
+include/tss/tcpa_typedef.h
+include/tss/tcs.h
+include/tss/tcs_defines.h
+include/tss/tcs_error.h
+include/tss/tcs_structs.h
+include/tss/tcs_typedef.h
+include/tss/tddl_error.h
+include/tss/tddlapi_error.h
+include/tss/tddli.h
+include/tss/tpm.h
+include/tss/tpm_error.h
+include/tss/tpm_ordinal.h
+include/tss/tspi.h
+include/tss/tss_defines.h
+include/tss/tss_error.h
+include/tss/tss_error_basics.h
+include/tss/tss_structs.h
+include/tss/tss_typedef.h
+%%TDDL%%lib/libtddl.a
+lib/libtspi.a
+lib/libtspi.la
+lib/libtspi.so
+lib/libtspi.so.2
+sbin/tcsd
+@dirrm %%EXAMPLESDIR%%
+@dirrmtry var/lib/tpm
+@dirrmtry var/lib
+@dirrmtry var
+@dirrm include/tss
+@dirrm include/trousers

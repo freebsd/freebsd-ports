@@ -864,6 +864,7 @@
     SUBDIR += tripwire
     SUBDIR += tripwire-131
     SUBDIR += tripwire12
+    SUBDIR += trousers
     SUBDIR += tthsum
     SUBDIR += tuntun
     SUBDIR += uberkey
