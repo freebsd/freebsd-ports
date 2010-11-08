@@ -851,6 +851,7 @@
     SUBDIR += tank
     SUBDIR += taxipilot
     SUBDIR += tbclock
+    SUBDIR += tbe
     SUBDIR += tecnoballz
     SUBDIR += teeworlds
     SUBDIR += teg
