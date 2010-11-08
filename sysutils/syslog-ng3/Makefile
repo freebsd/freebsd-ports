@@ -16,6 +16,9 @@ DISTFILES=	$(PORTNAME)_$(PORTVERSION).tar.gz
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
 
+CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0124-9]-[0-9]* \
+		syslog-ng[0-9]-devel-[0-9]*
+
 OPTIONS=	SSL "Build with OpenSSL support (from ports)" off \
 		TCP_WRAPPERS "Build with TCP Wrappers" off \
 		SQL "Build with SQL support" off \
