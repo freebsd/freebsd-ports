@@ -42,6 +42,7 @@ lib/tora_toad.qm
 %%PORTDOCS%%%%DOCSDIR%%/help/images/editmenu.png
 %%PORTDOCS%%%%DOCSDIR%%/help/images/editor.png
 %%PORTDOCS%%%%DOCSDIR%%/help/images/editor_syntax.png
+%%PORTDOCS%%%%DOCSDIR%%/help/images/exporttofile.png
 %%PORTDOCS%%%%DOCSDIR%%/help/images/filemenu.png
 %%PORTDOCS%%%%DOCSDIR%%/help/images/fonts.png
 %%PORTDOCS%%%%DOCSDIR%%/help/images/getparam.png
