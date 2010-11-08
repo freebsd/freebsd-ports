@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	2.4.6
-PORTREVISION=	4
+PORTVERSION=	2.4.7
+PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	SF/${PORTNAME}/pkgtools/${PORTVERSION}
+MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 DISTNAME=	pkgtools-${DISTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
@@ -23,7 +23,6 @@ CONFLICTS=	portupgrade-devel-*
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	optparse ruby18
 
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
 
