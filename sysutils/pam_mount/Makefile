@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	pam_mount
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME:S/_/-/}/${PORTNAME}/${PORTVERSION}/
-EXTRACT_SUFX=	.tar.xz
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A PAM that can mount volumes for a user session
@@ -19,6 +18,7 @@ LIB_DEPENDS=	HX.25:${PORTSDIR}/lang/libhx
 
 USE_GNOME=	pkgconfig libxml2
 USE_PERL5=	yes
+USE_XZ=		yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	libcrypto_LIBS="-L/usr/lib -lcrypto" \
@@ -32,7 +32,6 @@ post-patch:
 	   ${WRKSRC}/config/Makefile.am ${WRKSRC}/config/Makefile.in
 	${MV} ${WRKSRC}/config/pam_mount.conf.xml ${WRKSRC}/config/pam_mount.conf.xml.sample
 
-MAN1=	pmt-fd0ssh.1
 MAN5=	pam_mount.conf.5
 MAN8=	mount.crypt.8 mount.crypt_LUKS.8 mount.crypto_LUKS.8 \
 	pmvarrun.8 pmt-ehd.8 umount.crypt.8 umount.crypt_LUKS.8 \
