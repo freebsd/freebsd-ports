@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.2.37
-PORTREVISION=	5
+PORTVERSION=	1.3.7
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTVERSION}/
 
 MAINTAINER=	ports@eitanadler.com
 COMMENT=	Window Manager designed for speed, usability and consistency
 
 WANT_GNOME=	yes
-USE_XORG=	x11 ice xinerama xext xrandr
-USE_GNOME=	gnometarget
+USE_XORG=	x11 ice xinerama xext xrandr sm
+USE_GNOME=	gnometarget gtk20 # gdkpixbuf really :-)
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
@@ -29,7 +28,6 @@ CONFIGURE_ARGS=	--enable-shaped-decorations \
 		--with-mkfontdir=${NONEXISTENT}
 
 OPTIONS=	GNOMEDESKTOP	"Enable GNOME desktop support"		off \
-		IMLIB		"Build with Imlib support"		on \
 		ESOUND		"Enable EsounD daemon support"		off \
 		XFT		"Enable Xft support for fonts"		on \
 		XINERAMA	"Enable Xinerama support"		off \
@@ -38,7 +36,7 @@ OPTIONS=	GNOMEDESKTOP	"Enable GNOME desktop support"		off \
 		NLS		"Enable National Language Support"	on
 
 # Restrict to stable (even) versions, indicated by the second component.
-PORTSCOUT=	limitw:1,even
+#PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.pre.mk>
 
@@ -49,14 +47,6 @@ INSTALL_TARGET=	install install-gnome
 PLIST_SUB+=	GNOMEDESKTOP=""
 .else
 PLIST_SUB+=	GNOMEDESKTOP="@comment "
-.endif
-
-.if !defined(WITHOUT_IMLIB)
-USE_GNOME+=	imlib
-CONFIGURE_ARGS+=--with-imlib
-.else
-USE_XORG=	xpm
-CONFIGURE_ARGS+=--without-imlib
 .endif
 
 .if defined(WITH_ESOUND)
@@ -108,6 +98,9 @@ post-patch:
 		 s|/usr/share/app|${LOCALBASE}/share/app|g ; \
 		 s|/usr/share/gnome|${LOCALBASE}/share/gnome|g' \
 		 ${WRKSRC}/src/gnome2.cc
+
+post-configure:
+	${REINPLACE_CMD} -e 's|icewm-set-gnomewm||g' ${WRKSRC}/Makefile
 
 post-install:
 .for dir in taskbar themes/Infadel2/taskbar
