@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	umph
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=	p5-Getopt-ArgvFile>=1.11:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
 		p5-XML-DOM>=1.44:${PORTSDIR}/textproc/p5-XML-DOM
 
 PERL_CONFIGURE=	yes
-USE_BZIP2=	yes
 
 MAN1=		umph.1
 PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/auto/umph
