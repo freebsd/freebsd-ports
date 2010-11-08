@@ -7,10 +7,10 @@
 
 PORTNAME=	gallery3
 PORTVERSION=	3.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
-MASTER_SITES=	SF/gallery/${PORTNAME}/${PORTVERSION}-rc-2
-DISTNAME=	gallery-${PORTVERSION}-rc-2
+MASTER_SITES=	SF/gallery/${PORTNAME}/${PORTVERSION}
+DISTNAME=	gallery-${PORTVERSION}
 
 MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	Web based photo album organizer written in PHP
@@ -40,6 +40,7 @@ OPTIONS=	NETPBM "Enable netpbm support" off \
 USE_PHP+=	gd
 RUN_DEPENDS+=	pngtogd:${PORTSDIR}/graphics/gd
 .endif
+
 .if defined(WITH_NLS)
 USE_PHP+=	gettext
 USE_GETTEXT=	yes	# Pet portlint
@@ -75,16 +76,16 @@ RUN_DEPENDS+=	dcraw:${PORTSDIR}/graphics/dcraw
 
 .if defined(GALLERY3DIR)
 # Continue to support legacy GALLERY3DIR variable
-WWWDIR=	${GALLERY3DIR}
+WWWDIR=		${GALLERY3DIR}
 .endif
 
 do-install:
-	@cd ${WRKSRC}/&&${COPYTREE_SHARE} . ${WWWDIR}/
-	@ ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
+	@cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${WWWDIR}/
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
 
 .if !defined(BATCH)
-	@ ${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>

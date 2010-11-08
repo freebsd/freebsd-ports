@@ -27,27 +27,12 @@
 %%WWWDIR%%/lib/flowplayer.pseudostreaming.swf
 %%WWWDIR%%/lib/flowplayer.swf
 %%WWWDIR%%/lib/gallery.ajax.js
-%%WWWDIR%%/lib/gallery.common.css
 %%WWWDIR%%/lib/gallery.common.js
 %%WWWDIR%%/lib/gallery.dialog.js
 %%WWWDIR%%/lib/gallery.in_place_edit.js
 %%WWWDIR%%/lib/gallery.panel.js
 %%WWWDIR%%/lib/gallery.show_full_size.js
 %%WWWDIR%%/lib/images/favicon.ico
-%%WWWDIR%%/lib/images/ico-denied-inactive.png
-%%WWWDIR%%/lib/images/ico-denied-passive.png
-%%WWWDIR%%/lib/images/ico-denied.png
-%%WWWDIR%%/lib/images/ico-error.png
-%%WWWDIR%%/lib/images/ico-info.png
-%%WWWDIR%%/lib/images/ico-lock.png
-%%WWWDIR%%/lib/images/ico-separator-rtl.gif
-%%WWWDIR%%/lib/images/ico-separator.gif
-%%WWWDIR%%/lib/images/ico-success-inactive.png
-%%WWWDIR%%/lib/images/ico-success-passive.png
-%%WWWDIR%%/lib/images/ico-success.png
-%%WWWDIR%%/lib/images/ico-warning.png
-%%WWWDIR%%/lib/images/loading-large.gif
-%%WWWDIR%%/lib/images/loading-small.gif
 %%WWWDIR%%/lib/images/logo.png
 %%WWWDIR%%/lib/jquery-ui.js
 %%WWWDIR%%/lib/jquery.MultiFile.js
@@ -65,9 +50,6 @@
 %%WWWDIR%%/lib/superfish/images/shadow.png
 %%WWWDIR%%/lib/superfish/js/superfish.js
 %%WWWDIR%%/lib/swfobject.js
-%%WWWDIR%%/lib/swfupload/swfupload.js
-%%WWWDIR%%/lib/swfupload/swfupload.queue.js
-%%WWWDIR%%/lib/swfupload/swfupload.swf
 %%WWWDIR%%/lib/uploadify/cancel.png
 %%WWWDIR%%/lib/uploadify/jquery.uploadify.min.js
 %%WWWDIR%%/lib/uploadify/uploadify.allglyphs.swf
@@ -153,13 +135,11 @@
 %%WWWDIR%%/modules/forge/libraries/Form_Upload.php
 %%WWWDIR%%/modules/g2_import/controllers/admin_g2_import.php
 %%WWWDIR%%/modules/g2_import/controllers/g2.php
-%%WWWDIR%%/modules/g2_import/css/g2_import.css
 %%WWWDIR%%/modules/g2_import/data/broken-image.gif
 %%WWWDIR%%/modules/g2_import/helpers/g2_import.php
 %%WWWDIR%%/modules/g2_import/helpers/g2_import_event.php
 %%WWWDIR%%/modules/g2_import/helpers/g2_import_installer.php
 %%WWWDIR%%/modules/g2_import/helpers/g2_import_task.php
-%%WWWDIR%%/modules/g2_import/helpers/g2_import_theme.php
 %%WWWDIR%%/modules/g2_import/libraries/G2_Import_Exception.php
 %%WWWDIR%%/modules/g2_import/models/g2_map.php
 %%WWWDIR%%/modules/g2_import/module.info
@@ -170,7 +150,6 @@
 %%WWWDIR%%/modules/gallery/config/locale.php
 %%WWWDIR%%/modules/gallery/config/log_file.php
 %%WWWDIR%%/modules/gallery/config/routes.php
-%%WWWDIR%%/modules/gallery/config/sendmail.php
 %%WWWDIR%%/modules/gallery/config/session.php
 %%WWWDIR%%/modules/gallery/config/upload.php
 %%WWWDIR%%/modules/gallery/controllers/admin.php
@@ -186,13 +165,10 @@
 %%WWWDIR%%/modules/gallery/controllers/albums.php
 %%WWWDIR%%/modules/gallery/controllers/combined.php
 %%WWWDIR%%/modules/gallery/controllers/file_proxy.php
-%%WWWDIR%%/modules/gallery/controllers/flash_uploader.php
 %%WWWDIR%%/modules/gallery/controllers/items.php
 %%WWWDIR%%/modules/gallery/controllers/l10n_client.php
 %%WWWDIR%%/modules/gallery/controllers/login.php
 %%WWWDIR%%/modules/gallery/controllers/logout.php
-%%WWWDIR%%/modules/gallery/controllers/maintenance.php
-%%WWWDIR%%/modules/gallery/controllers/move.php
 %%WWWDIR%%/modules/gallery/controllers/movies.php
 %%WWWDIR%%/modules/gallery/controllers/packager.php
 %%WWWDIR%%/modules/gallery/controllers/permissions.php
@@ -200,6 +176,7 @@
 %%WWWDIR%%/modules/gallery/controllers/quick.php
 %%WWWDIR%%/modules/gallery/controllers/reauthenticate.php
 %%WWWDIR%%/modules/gallery/controllers/upgrader.php
+%%WWWDIR%%/modules/gallery/controllers/uploader.php
 %%WWWDIR%%/modules/gallery/controllers/user_profile.php
 %%WWWDIR%%/modules/gallery/controllers/welcome_message.php
 %%WWWDIR%%/modules/gallery/css/debug.css
@@ -215,6 +192,7 @@
 %%WWWDIR%%/modules/gallery/helpers/auth.php
 %%WWWDIR%%/modules/gallery/helpers/batch.php
 %%WWWDIR%%/modules/gallery/helpers/block_manager.php
+%%WWWDIR%%/modules/gallery/helpers/data_rest.php
 %%WWWDIR%%/modules/gallery/helpers/dir.php
 %%WWWDIR%%/modules/gallery/helpers/gallery.php
 %%WWWDIR%%/modules/gallery/helpers/gallery_block.php
@@ -230,6 +208,7 @@
 %%WWWDIR%%/modules/gallery/helpers/item.php
 %%WWWDIR%%/modules/gallery/helpers/item_rest.php
 %%WWWDIR%%/modules/gallery/helpers/items_rest.php
+%%WWWDIR%%/modules/gallery/helpers/json.php
 %%WWWDIR%%/modules/gallery/helpers/l10n_client.php
 %%WWWDIR%%/modules/gallery/helpers/l10n_scanner.php
 %%WWWDIR%%/modules/gallery/helpers/locales.php
@@ -331,16 +310,14 @@
 %%WWWDIR%%/modules/gallery/views/l10n_client.html.php
 %%WWWDIR%%/modules/gallery/views/login_ajax.html.php
 %%WWWDIR%%/modules/gallery/views/login_current_user.html.php
-%%WWWDIR%%/modules/gallery/views/maintenance.html.php
 %%WWWDIR%%/modules/gallery/views/menu.html.php
 %%WWWDIR%%/modules/gallery/views/menu_ajax_link.html.php
 %%WWWDIR%%/modules/gallery/views/menu_dialog.html.php
 %%WWWDIR%%/modules/gallery/views/menu_link.html.php
-%%WWWDIR%%/modules/gallery/views/move_browse.html.php
-%%WWWDIR%%/modules/gallery/views/move_tree.html.php
 %%WWWDIR%%/modules/gallery/views/movieplayer.html.php
 %%WWWDIR%%/modules/gallery/views/permissions_browse.html.php
 %%WWWDIR%%/modules/gallery/views/permissions_form.html.php
+%%WWWDIR%%/modules/gallery/views/quick_delete_confirm.html.php
 %%WWWDIR%%/modules/gallery/views/reauthenticate.html.php
 %%WWWDIR%%/modules/gallery/views/upgrader.html.php
 %%WWWDIR%%/modules/gallery/views/user_languages_block.html.php
@@ -389,6 +366,7 @@
 %%WWWDIR%%/modules/recaptcha/views/admin_recaptcha.html.php
 %%WWWDIR%%/modules/recaptcha/views/form_recaptcha.html.php
 %%WWWDIR%%/modules/rest/controllers/rest.php
+%%WWWDIR%%/modules/rest/helpers/registry_rest.php
 %%WWWDIR%%/modules/rest/helpers/rest.php
 %%WWWDIR%%/modules/rest/helpers/rest_event.php
 %%WWWDIR%%/modules/rest/helpers/rest_installer.php
@@ -396,6 +374,7 @@
 %%WWWDIR%%/modules/rest/models/user_access_key.php
 %%WWWDIR%%/modules/rest/module.info
 %%WWWDIR%%/modules/rest/views/error_rest.json.php
+%%WWWDIR%%/modules/rest/views/reset_api_key_confirm.html.php
 %%WWWDIR%%/modules/rest/views/user_profile_rest.html.php
 %%WWWDIR%%/modules/rss/controllers/rss.php
 %%WWWDIR%%/modules/rss/helpers/rss.php
@@ -432,6 +411,7 @@
 %%WWWDIR%%/modules/slideshow/helpers/slideshow_theme.php
 %%WWWDIR%%/modules/slideshow/module.info
 %%WWWDIR%%/modules/tag/controllers/admin_tags.php
+%%WWWDIR%%/modules/tag/controllers/tag.php
 %%WWWDIR%%/modules/tag/controllers/tags.php
 %%WWWDIR%%/modules/tag/css/tag.css
 %%WWWDIR%%/modules/tag/helpers/item_tags_rest.php
@@ -468,6 +448,7 @@
 %%WWWDIR%%/modules/user/models/user.php
 %%WWWDIR%%/modules/user/module.info
 %%WWWDIR%%/modules/user/views/admin_users.html.php
+%%WWWDIR%%/modules/user/views/admin_users_delete_user.html.php
 %%WWWDIR%%/modules/user/views/admin_users_group.html.php
 %%WWWDIR%%/modules/user/views/reset_password.html.php
 %%WWWDIR%%/modules/watermark/controllers/admin_watermarks.php
@@ -608,6 +589,20 @@
 %%WWWDIR%%/themes/admin_wind/css/themeroller/ui.tabs.css
 %%WWWDIR%%/themes/admin_wind/css/themeroller/ui.theme.css
 %%WWWDIR%%/themes/admin_wind/images/avatar.jpg
+%%WWWDIR%%/themes/admin_wind/images/ico-denied-inactive.png
+%%WWWDIR%%/themes/admin_wind/images/ico-denied-passive.png
+%%WWWDIR%%/themes/admin_wind/images/ico-denied.png
+%%WWWDIR%%/themes/admin_wind/images/ico-error.png
+%%WWWDIR%%/themes/admin_wind/images/ico-info.png
+%%WWWDIR%%/themes/admin_wind/images/ico-lock.png
+%%WWWDIR%%/themes/admin_wind/images/ico-separator-rtl.gif
+%%WWWDIR%%/themes/admin_wind/images/ico-separator.gif
+%%WWWDIR%%/themes/admin_wind/images/ico-success-inactive.png
+%%WWWDIR%%/themes/admin_wind/images/ico-success-passive.png
+%%WWWDIR%%/themes/admin_wind/images/ico-success.png
+%%WWWDIR%%/themes/admin_wind/images/ico-warning.png
+%%WWWDIR%%/themes/admin_wind/images/loading-large.gif
+%%WWWDIR%%/themes/admin_wind/images/loading-small.gif
 %%WWWDIR%%/themes/admin_wind/js/ui.init.js
 %%WWWDIR%%/themes/admin_wind/theme.info
 %%WWWDIR%%/themes/admin_wind/thumbnail.png
@@ -641,12 +636,26 @@
 %%WWWDIR%%/themes/wind/css/themeroller/ui.theme.css
 %%WWWDIR%%/themes/wind/images/avatar.jpg
 %%WWWDIR%%/themes/wind/images/ico-album.png
+%%WWWDIR%%/themes/wind/images/ico-denied-inactive.png
+%%WWWDIR%%/themes/wind/images/ico-denied-passive.png
+%%WWWDIR%%/themes/wind/images/ico-denied.png
+%%WWWDIR%%/themes/wind/images/ico-error.png
 %%WWWDIR%%/themes/wind/images/ico-help.png
+%%WWWDIR%%/themes/wind/images/ico-info.png
+%%WWWDIR%%/themes/wind/images/ico-lock.png
 %%WWWDIR%%/themes/wind/images/ico-print.png
+%%WWWDIR%%/themes/wind/images/ico-separator-rtl.gif
+%%WWWDIR%%/themes/wind/images/ico-separator.gif
+%%WWWDIR%%/themes/wind/images/ico-success-inactive.png
+%%WWWDIR%%/themes/wind/images/ico-success-passive.png
+%%WWWDIR%%/themes/wind/images/ico-success.png
 %%WWWDIR%%/themes/wind/images/ico-view-comments.png
 %%WWWDIR%%/themes/wind/images/ico-view-fullsize.png
 %%WWWDIR%%/themes/wind/images/ico-view-slideshow-rtl.png
 %%WWWDIR%%/themes/wind/images/ico-view-slideshow.png
+%%WWWDIR%%/themes/wind/images/ico-warning.png
+%%WWWDIR%%/themes/wind/images/loading-large.gif
+%%WWWDIR%%/themes/wind/images/loading-small.gif
 %%WWWDIR%%/themes/wind/images/select-photos-backg.png
 %%WWWDIR%%/themes/wind/js/ui.init.js
 %%WWWDIR%%/themes/wind/theme.info
@@ -785,7 +794,6 @@
 @dirrm %%WWWDIR%%/modules/g2_import/libraries
 @dirrm %%WWWDIR%%/modules/g2_import/helpers
 @dirrm %%WWWDIR%%/modules/g2_import/data
-@dirrm %%WWWDIR%%/modules/g2_import/css
 @dirrm %%WWWDIR%%/modules/g2_import/controllers
 @dirrm %%WWWDIR%%/modules/g2_import
 @dirrm %%WWWDIR%%/modules/forge/libraries
@@ -819,7 +827,6 @@
 @dirrm %%WWWDIR%%/modules
 @dirrm %%WWWDIR%%/lib/yui
 @dirrm %%WWWDIR%%/lib/uploadify
-@dirrm %%WWWDIR%%/lib/swfupload
 @dirrm %%WWWDIR%%/lib/superfish/js
 @dirrm %%WWWDIR%%/lib/superfish/images
 @dirrm %%WWWDIR%%/lib/superfish/css
