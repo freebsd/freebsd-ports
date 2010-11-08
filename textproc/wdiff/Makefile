@@ -16,6 +16,7 @@ MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Display word differences between text files
 
 GNU_CONFIGURE=	yes
+CPP=		#
 
 MAN1=		wdiff.1
 INFO=		wdiff
