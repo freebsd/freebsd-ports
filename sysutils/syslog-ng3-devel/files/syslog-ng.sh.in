@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/sysutils/syslog-ng3-devel/files/Attic/syslog-ng.sh.in,v 1.6 2010-03-27 00:15:06 dougb Exp $
+# $FreeBSD: /tmp/pcvs/ports/sysutils/syslog-ng3-devel/files/Attic/syslog-ng.sh.in,v 1.7 2010-11-08 20:17:36 cy Exp $
 #
 
 # PROVIDE: syslogd
