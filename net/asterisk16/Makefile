@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.6.2.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -74,6 +74,8 @@ OPTIONS+=	DAHDI		"Enable DAHDI support" on
 .endif
 
 SUB_LIST+=	ASTERISK_USER=${ASTERISK_USER}
+PLIST_SUB+=	ASTERISK_USER=${ASTERISK_USER}
+PLIST_SUB+=	ASTERISK_GROUP=${ASTERISK_GROUP}
 
 .if !defined(WITH_H323)
 PLIST_SUB+=	WITH_H323="@comment "
