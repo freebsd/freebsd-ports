@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfwd
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	mail
 MASTER_SITES=	http://www.${PORTNAME}.org/old/
 PKGNAMEPREFIX=	postfix-
@@ -16,6 +16,8 @@ COMMENT=	A postfix firewall policy daemon
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server
+
+LICENSE=	BSD
 
 PORTDOCS=	CHANGELOG ${PORTNAME}.html ${PORTNAME}.txt
 PORTEXAMPLES=	request.sample
