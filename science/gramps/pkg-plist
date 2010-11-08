@@ -1011,6 +1011,7 @@ share/applications/gramps.desktop
 %%DATADIR%%/data/Web_Nebraska.css
 %%DATADIR%%/data/Web_Print-Default.css
 %%DATADIR%%/data/Web_Visually.css
+%%DATADIR%%/data/ancestortree.css
 %%DATADIR%%/data/authors.xml
 %%DATADIR%%/data/behaviour.css
 %%DATADIR%%/data/gedcom.xml
