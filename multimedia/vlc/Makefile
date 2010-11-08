@@ -592,6 +592,7 @@ CONFIGURE_ARGS+=	--enable-twolame
 .if defined(WITH_UPNP)
 LIB_DEPENDS+=	upnp.4:${PORTSDIR}/devel/upnp
 CONFIGURE_ARGS+=--enable-upnp
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-modules__services_discovery__upnp_intel.cpp
 .else
 CONFIGURE_ARGS+=--disable-upnp
 .endif
