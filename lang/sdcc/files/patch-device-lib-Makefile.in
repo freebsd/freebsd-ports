@@ -1,9 +1,9 @@
---- device/lib/Makefile.in.orig	2008-08-24 22:30:52.000000000 +0200
-+++ device/lib/Makefile.in	2008-12-06 14:39:15.000000000 +0100
-@@ -355,25 +355,6 @@
+--- device/lib/Makefile.in.orig	2010-10-16 22:24:44.000000000 +0200
++++ device/lib/Makefile.in	2010-11-06 17:37:50.000000000 +0100
+@@ -422,25 +422,6 @@
  # ---------------------------------------------------
  install: all installdirs
- 	$(CP_U) -r $(BUILDDIR)/* $(sdcc_libdir)
+ 	[ ! -d "$(BUILDDIR)" ] || $(CP_U) -r $(BUILDDIR)/* $(sdcc_libdir)
 -	$(CP_U) -r $(MODELS) $(srcdir)/mcs51 $(srcdir)/ds390 $(srcdir)/ds400 \
 -	                     $(srcdir)/gbz80 $(srcdir)/z80 $(srcdir)/hc08 \
 -	                     $(srcdir)/pic $(srcdir)/pic16 $(srcdir)/*.c $(sdcc_libdir)/src
@@ -26,18 +26,18 @@
  
  # Deleting all the installed files
  # --------------------------------
-@@ -382,14 +365,6 @@
+@@ -460,13 +441,7 @@
+ # Creating installation directories
  # ---------------------------------
  installdirs:
- 	[ -d $(sdcc_libdir) ] || mkdir -p $(sdcc_libdir)
 -	for model in $(MODELS); do \
--	  [ -d $(sdcc_libdir)/$$model ] || \
 -	  mkdir -p $(sdcc_libdir)/$$model; \
 -	done
 -	for libdir in small-stack-auto ds390 ds400 hc08 pic16 pic; do \
--	  [ -d $(sdcc_libdir)/$$libdir ] || mkdir -p $(sdcc_libdir)/$$libdir; \
+-	  mkdir -p $(sdcc_libdir)/$$libdir; \
 -	done
 -	mkdir -p $(sdcc_libdir)/src
++	mkdir -p $(sdcc_libdir)
  
  # Creating dependencies
  # ---------------------

@@ -1,0 +1,32 @@
+--- device/non-free/lib/Makefile.in.orig	2010-11-06 18:13:16.000000000 +0100
++++ device/non-free/lib/Makefile.in	2010-11-06 18:17:52.000000000 +0100
+@@ -397,17 +397,6 @@
+ # ---------------------------------------------------
+ install: all installdirs
+ 	[ ! -d "$(BUILDDIR)" ] || $(CP_U) -r $(BUILDDIR)/* $(sdcc_libdir)
+-	$(CP_U) -r $(srcdir)/pic $(srcdir)/pic16 $(sdcc_libdir)/src
+-
+-	for src in pic pic16; do \
+-	  find $(sdcc_libdir)/src/$$src -depth \
+-	    \( -name '*.rel' -o -name '*.dump*' -o -name '*.sym' -o -name '*.o' -o -name '*.lib' -o \
+-	    -name '*.lst' -o -name '*.asm' -o -name '.svn' -o -name 'autom4te.cache' -o \
+-	    -name 'build' -o -name 'bin' -o -name 'Makefile*' -o -name 'config*' -o \
+-	    -name 'depcomp' -o -name 'missing' -o -name 'install-sh' -o \
+-	    -name 'bootstrap.sh' \) \
+-	    -exec rm -rf {} + ; \
+-	done
+ 
+ # Deleting all the installed files
+ # --------------------------------
+@@ -427,10 +416,7 @@
+ # Creating installation directories
+ # ---------------------------------
+ installdirs:
+-	for libdir in pic16 pic; do \
+-	  mkdir -p $(sdcc_libdir)/$$libdir; \
+-	done
+-	mkdir -p $(sdcc_libdir)/src
++	mkdir -p $(sdcc_libdir)
+ 
+ # Creating dependencies
+ # ---------------------
