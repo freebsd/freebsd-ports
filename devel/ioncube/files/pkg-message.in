@@ -12,3 +12,5 @@ zend_extension_ts="%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/ioncube/ioncube_loader_ts.
 
 NOTE: If you have any Zend Extension already installed - you need put this before
 existing zend_extension lines.
+
+Note: FreeBSD 6.x depricated and will be unsupported in the next port release. 

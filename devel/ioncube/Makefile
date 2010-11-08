@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ioncube
-DISTVERSION=	3.3.19
+DISTVERSION=	4.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads2.ioncube.com/loader_downloads/ \
-		http://dl.dropbox.com/u/4211495/ioncube/
+		http://dl.dropbox.com/u/4211495/ioncube/4.0.1/
 DISTFILES=	${PORTNAME}_loaders_fre_${VER}_${ARCH_DIST}${EXTRACT_SUFX}
 
 MAINTAINER=	svyatoslav.lempert@gmail.com
