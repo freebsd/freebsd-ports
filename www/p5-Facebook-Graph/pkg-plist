@@ -1,0 +1,31 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Facebook/Graph/.packlist
+%%SITE_PERL%%/Facebook/Graph.pm
+%%SITE_PERL%%/Facebook/Graph/AccessToken.pm
+%%SITE_PERL%%/Facebook/Graph/AccessToken/Response.pm
+%%SITE_PERL%%/Facebook/Graph/Authorize.pm
+%%SITE_PERL%%/Facebook/Graph/Cookbook.pod
+%%SITE_PERL%%/Facebook/Graph/Cookbook/Recipe1.pod
+%%SITE_PERL%%/Facebook/Graph/Cookbook/Recipe2.pod
+%%SITE_PERL%%/Facebook/Graph/Picture.pm
+%%SITE_PERL%%/Facebook/Graph/Publish.pm
+%%SITE_PERL%%/Facebook/Graph/Publish/Comment.pm
+%%SITE_PERL%%/Facebook/Graph/Publish/Event.pm
+%%SITE_PERL%%/Facebook/Graph/Publish/Like.pm
+%%SITE_PERL%%/Facebook/Graph/Publish/Link.pm
+%%SITE_PERL%%/Facebook/Graph/Publish/Note.pm
+%%SITE_PERL%%/Facebook/Graph/Publish/Post.pm
+%%SITE_PERL%%/Facebook/Graph/Publish/RSVPAttending.pm
+%%SITE_PERL%%/Facebook/Graph/Publish/RSVPDeclined.pm
+%%SITE_PERL%%/Facebook/Graph/Publish/RSVPMaybe.pm
+%%SITE_PERL%%/Facebook/Graph/Query.pm
+%%SITE_PERL%%/Facebook/Graph/Response.pm
+%%SITE_PERL%%/Facebook/Graph/Role/Uri.pm
+%%SITE_PERL%%/Facebook/Graph/Session.pm
+@dirrm %%SITE_PERL%%/Facebook/Graph/Role
+@dirrm %%SITE_PERL%%/Facebook/Graph/Publish
+@dirrm %%SITE_PERL%%/Facebook/Graph/Cookbook
+@dirrm %%SITE_PERL%%/Facebook/Graph/AccessToken
+@dirrm %%SITE_PERL%%/Facebook/Graph
+@dirrm %%SITE_PERL%%/Facebook
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Facebook/Graph
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Facebook

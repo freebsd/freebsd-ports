@@ -1,0 +1,9 @@
+A fast and easy way to integrate your apps with Facebook.
+
+This is a Perl interface to the Facebook Graph API
+http://developers.facebook.com/docs/api.  With this module you can
+currently query public Facebook data, query privileged Facebook data,
+and build a privileged Facebook application.  See the TODO for all
+that this module cannot yet do.
+
+WWW: http://search.cpan.org/dist/Facebook-Graph/
