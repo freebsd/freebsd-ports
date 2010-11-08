@@ -22,6 +22,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The 'Internet Relay Chat' Client
 
 GNU_CONFIGURE=	yes
+CPP=		#
 MAN1=		irc.1
 
 post-install:
