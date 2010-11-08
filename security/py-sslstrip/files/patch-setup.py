@@ -4,8 +4,8 @@
  shutil.copyfile("sslstrip.py", "sslstrip/sslstrip")
  
  setup  (name        = 'sslstrip',
--        version     = '0.1',
-+        version     = '0.2',
+-        version     = '0.6',
++        version     = '0.7',
          description = 'A MITM tool that implements Moxie Marlinspike\'s HTTPS stripping attacks.',
          author = 'Moxie Marlinspike',
          author_email = 'moxie@thoughtcrime.org',
