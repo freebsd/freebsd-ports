@@ -719,9 +719,6 @@ share/mime/text/x-xxencode.xml
 @dirrm share/apps/okteta/structures/elf
 @dirrm share/apps/okteta/structures
 @dirrm share/apps/okteta
-@dirrm share/apps/kwalletmanager/icons/oxygen/22x22/actions
-@dirrm share/apps/kwalletmanager/icons/oxygen/22x22
-@dirrm share/apps/kwalletmanager/icons/oxygen
 @dirrm share/apps/kwalletmanager/icons/hicolor/22x22/actions
 @dirrm share/apps/kwalletmanager/icons/hicolor/22x22
 @dirrm share/apps/kwalletmanager/icons/hicolor
