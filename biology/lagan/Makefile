@@ -28,7 +28,7 @@ SCRIPTUTILS=	cmerge2.pl draft.pl mextract.pl mf2bin.pl mpretty.pl \
 		mproject.pl mrun.pl mrunfile.pl mrunpairs.pl mviz.pl
 
 CC:=		${CC} ${CFLAGS}
-MAKE_ENV+=	CPP="${CXX} ${CXXFLAGS}"
+CPP=		${CXX} ${CXXFLAGS}
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,^(CC|CPP) =,\1 ?=,g' \
