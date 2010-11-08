@@ -5708,11 +5708,6 @@ generate-plist:
 	@if [ -f ${PLIST} ]; then \
 		${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}; \
 	fi
-.for reinplace in ${PLIST_REINPLACE}
-.if defined(PLIST_REINPLACE_${reinplace:U})
-	@${SED} -i "" -e '${PLIST_REINPLACE_${reinplace:U}}' ${TMPPLIST}
-.endif
-.endfor
  
 .for dir in ${PLIST_DIRS}
 	@${ECHO_CMD} ${dir} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} -e 's,^,@dirrm ,' >> ${TMPPLIST}
@@ -5720,6 +5715,13 @@ generate-plist:
 .for dir in ${PLIST_DIRSTRY}
 	@${ECHO_CMD} ${dir} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} -e 's,^,@dirrmtry ,' >> ${TMPPLIST}
 .endfor
+
+.for reinplace in ${PLIST_REINPLACE}
+.if defined(PLIST_REINPLACE_${reinplace:U})
+	@${SED} -i "" -e '${PLIST_REINPLACE_${reinplace:U}}' ${TMPPLIST}
+.endif
+.endfor
+
 .if defined(USE_LINUX_PREFIX)
 .if defined(USE_LDCONFIG)
 	@${ECHO_CMD} "@exec ${LDCONFIG_CMD}" >> ${TMPPLIST}
