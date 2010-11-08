@@ -25,7 +25,8 @@ CFLAGS+=	-DOPENSSL_NO_IDEA
 MAN1+=		netpgp.1 \
 		netpgpkeys.1 \
 		netpgpverify.1
-MAN3+=		libnetpgp.3
+MAN3+=		libnetpgp.3 \
+		libmj.3
 
 .include <bsd.port.pre.mk>
 
