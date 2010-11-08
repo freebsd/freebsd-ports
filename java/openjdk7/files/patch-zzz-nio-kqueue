@@ -313,7 +313,7 @@
          }
 --- jdk/src/solaris/classes/sun/nio/ch/KqueueSelectorImpl.java	(revision 0)
 +++ jdk/src/solaris/classes/sun/nio/ch/KqueueSelectorImpl.java	(revision 16)
-@@ -0,0 +1,204 @@
+@@ -0,0 +1,203 @@
 +/*
 + * scratched by davidxu@freebsd.org
 + */
@@ -362,10 +362,9 @@
 +     */
 +    KqueueSelectorImpl(SelectorProvider sp) {
 +	super(sp);
-+	int[] fdes = new int[2];
-+	IOUtil.initPipe(fdes, false);
-+	fd0 = fdes[0];
-+	fd1 = fdes[1];
++	long pipeFds = IOUtil.makePipe(false);
++	fd0 = (int) (pipeFds >>> 32);
++	fd1 = (int) pipeFds;
 +	kqueueWrapper = new KqueueArrayWrapper();
 +	totalChannels = 1;
 +	kqueueWrapper.initInterrupt(fd0, fd1);
@@ -458,7 +457,7 @@
 +                selectedKeys = null;
 +
 +                // Deregister channels
-+		Iterator i = keys.iterator();
++		Iterator<SelectionKey> i = keys.iterator();
 +		while (i.hasNext()) {
 +		    SelectionKeyImpl ski = (SelectionKeyImpl)i.next();
 +		    deregister(ski);
