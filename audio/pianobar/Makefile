@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pianobar
-PORTVERSION=	2010.10.07
+PORTVERSION=	2010.11.06
 CATEGORIES=	audio
 MASTER_SITES=	http://6xq.net/media/00/16/
 
