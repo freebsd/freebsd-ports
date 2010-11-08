@@ -1,5 +1,6 @@
 bin/curses-zcmailacountmanage
 bin/curses-zcmailcompose
+bin/curses-zcmailimapclient
 bin/zcgetmail
 bin/zcmailacountmanage
 bin/zcmailcompose
