@@ -900,6 +900,7 @@
     SUBDIR += p5-FCGI-ProcManager
     SUBDIR += p5-FCGI-Spawn
     SUBDIR += p5-FEAR-API
+    SUBDIR += p5-Facebook-Graph
     SUBDIR += p5-FastCGI
     SUBDIR += p5-Feed-Find
     SUBDIR += p5-File-Mork
