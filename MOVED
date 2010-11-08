@@ -4669,3 +4669,10 @@ x11/e17-module-snow|x11-wm/e17-module-snow|2010-11-07|Fix category
 x11/e17-module-uptime|x11-wm/e17-module-uptime|2010-11-07|Fix category
 x11/e17-module-weather|x11-wm/e17-module-weather|2010-11-07|Fix category
 x11/e17-module-winselector|x11-wm/e17-module-winselector|2010-11-07|Fix category
+devel/libisc||2010-11-08|Has expired: Unlikely to be used...
+emulators/vmware-guestd3||2010-11-08|Has expired: Depends of misc/compat3x, that is deprecated and set to be removed
+emulators/vmware-tools3||2010-11-08|Has expired: Depends of misc/compat3x, that is deprecated and set to be removed
+misc/compat3x||2010-11-08|Has expired: "Only FreeBSD 6.4+ are supported in ports"
+misc/bidwatcher||2010-11-08|Has expired: Obsoleted by JBidwatcher and changes at http://ebay.com
+security/vscan||2010-11-08|Has expired: Depends of misc/compat3x, that is deprecated and set to be removed
+www/ssserver||2010-11-08|Has expired: Depends of misc/compat3x, that is deprecated and set to be removed

@@ -1635,7 +1635,6 @@
     SUBDIR += squirm
     SUBDIR += squishdot
     SUBDIR += srg
-    SUBDIR += ssserver
     SUBDIR += suphp
     SUBDIR += surf
     SUBDIR += surfraw
