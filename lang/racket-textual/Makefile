@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	racket
-PORTVERSION=	5.0.1
+PORTVERSION=	5.0.2
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.racket-lang.org/installers/${PORTVERSION}/racket/ \
 		http://www.eecs.northwestern.edu/racket/${PORTVERSION}/racket/ \
@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-shared --enable-xft --enable-gl \
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-WRKSRC=		${WRKDIR}/plt-${PORTVERSION}/src/build
+WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src/build
 USE_ICONV=	yes
 USE_GL=		yes
 USE_LDCONFIG=	yes
