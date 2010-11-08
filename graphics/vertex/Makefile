@@ -22,8 +22,7 @@ USE_GNOME=	imlib
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	UNIX
-
-BROKEN=		does not compile
+CPP=		${CXX}
 
 MAN1=		${PORTNAME}.1
 
