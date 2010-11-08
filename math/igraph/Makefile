@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	igraph
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	math
-MASTER_SITES=	SF \
-		http://cneurocvs.rmki.kfki.hu/igraph/download/
+MASTER_SITES=	SF/${PORTNAME}/C%20library/${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Package For Manipulating Undirected And Directed Graphs
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
