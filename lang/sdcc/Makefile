@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sdcc
-PORTVERSION=	2.9.0
-PORTREVISION=	1
+PORTVERSION=	3.0.0
 DISTVERSIONPREFIX=	src-
 CATEGORIES=	lang
 MASTER_SITES=	SF
@@ -36,10 +35,7 @@ OPTIONS=	MCS51   "Intel 8051 port" on \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
-		--docdir=${DOCSDIR} \
-		include_dir_suffix=include \
-		lib_dir_suffix=lib
+CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 
 .include <bsd.port.pre.mk>
 
@@ -70,9 +66,10 @@ PLIST_SUB+=		Z80=""
 .endif
 
 .if defined(WITHOUT_AVR)
-CONFIGURE_ARGS+=	--disable-avr-port --disable-avr
+CONFIGURE_ARGS+=	--disable-avr
 PLIST_SUB+=		AVR="@comment "
 .else
+CONFIGURE_ARGS+=	--enable-avr-port
 PLIST_SUB+=		AVR=""
 .endif
 
@@ -100,7 +97,10 @@ PLIST_SUB+=		PIC16=""
 .endif
 
 .if defined(WITHOUT_XA51)
-CONFIGURE_ARGS+=	--disable-xa51-port
+PLIST_SUB+=		XA51="@comment "
+.else
+CONFIGURE_ARGS+=	--enable-xa51-port --enable-xa
+PLIST_SUB+=		XA51=""
 .endif
 
 .if defined(WITHOUT_HC08)
@@ -141,7 +141,6 @@ post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} 's, [a-z-]*doc,,' \
 		${WRKSRC}/Makefile.in \
-		${WRKSRC}/as/Makefile.in \
 		${WRKSRC}/sim/ucsim/packages_in.mk
 .endif
 
