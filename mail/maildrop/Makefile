@@ -20,7 +20,7 @@
 #			extension (http://wiki.dovecot.org/maildrop/)
 
 PORTNAME=	maildrop
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
