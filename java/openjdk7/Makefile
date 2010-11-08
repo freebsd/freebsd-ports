@@ -7,12 +7,19 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_BUILD_NUMBER}
-PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk7/promoted/b${JDK_BUILD_NUMBER}/ \
+		https://jaxp.dev.java.net/files/documents/913/152561/:jaxp \
+		https://jax-ws.dev.java.net/files/documents/4202/152532/:jaxws \
+		https://jax-ws.dev.java.net/files/documents/4202/152336/:jaf \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,}
 DISTFILES=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} \
+		${JAXPFILE}:jaxp \
+		${JAXWSFILE}:jaxws \
+		${JAFFILE}:jaf \
 		${ANT_DISTFILE}${EXTRACT_SUFX}:ant
+EXTRACT_ONLY=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} \
+		${ANT_DISTFILE}${EXTRACT_SUFX}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java Development Kit 7
@@ -26,8 +33,8 @@ MAKE_JOBS_UNSAFE=	YES
 
 JDK_MAJOR_VERSION=	7
 JDK_MINOR_VERSION=	0
-JDK_BUILD_NUMBER=	100
-JDK_BUILD_DATE=		09_jul_2010
+JDK_BUILD_NUMBER=	117
+JDK_BUILD_DATE=		04_nov_2010
 JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}-ea-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
 
 # Use our own version of ant to avoid circular dependencies
@@ -40,6 +47,10 @@ USE_GMAKE=	YES
 USE_ICONV=	YES
 USE_XORG+=	x11 xext xi xrender xt xtst
 MAKE_JOBS_UNSAFE=	yes
+
+JAXPFILE=	jaxp-1_4_4.zip
+JAXWSFILE=	jdk7-jaxws2_2-2010_08_19.zip
+JAFFILE=	jdk7-jaf-2010_08_19.zip
 
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
@@ -67,6 +78,7 @@ MAKE_ENV+=	LANG="C" \
 		ALT_X11_PATH="${LOCALBASE}" \
 		ALT_PKG_PATH="${LOCALBASE}" \
 		ALT_PACKAGE_PATH="${LOCALBASE}" \
+		ALT_DROPS_DIR="${DISTDIR}" \
 		ANT_HOME="${WRKDIR}/apache-ant-${ANT_VERSION}" \
 		X11DIR="${LOCALBASE}" \
 		LOCALDIR="${LOCALBASE}" \
@@ -86,8 +98,7 @@ BUILD_JOBS_NUMBER=	`${SYSCTL} -n kern.smp.cpus`
 MAKE_ENV+=	HOTSPOT_BUILD_JOBS=${BUILD_JOBS_NUMBER}
 .endif
 
-BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk7 \
-		${LOCALBASE}/openjdk6 \
+BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk6 \
 		${LOCALBASE}/jdk1.6.0 \
 		${LOCALBASE}/diablo-jdk1.6.0
 
