@@ -1,11 +1,19 @@
---- src/Makefile.am.orig	2008-11-03 21:32:20.000000000 +0100
-+++ src/Makefile.am	2009-05-07 19:59:17.554226281 +0200
-@@ -35,7 +35,7 @@
+--- src/Makefile.am.orig	2010-09-19 20:07:44.000000000 +0200
++++ src/Makefile.am	2010-11-01 23:01:57.000000000 +0100
+@@ -37,7 +37,7 @@
  # fix for annoying automake naming problems.
  tora_CXXFLAGS  = $(AM_CXXFLAGS)
  
--tora_LDADD = $(ORACLE_LIBS) $(PQ_LIBS) $(@TORA_LINK_OTHERS@)
-+tora_LDADD = $(ORACLE_LIBS) $(PQ_LIBS) $(@TORA_LINK_OTHERS@) $(LIBCOMPAT)
+-tora_LDADD = $(ORACLE_LIBS) $(PQ_LIBS) $(TERADATA_LIBS) $(@TORA_LINK_OTHERS@)
++tora_LDADD = $(ORACLE_LIBS) $(PQ_LIBS) $(TERADATA_LIBS) $(@TORA_LINK_OTHERS@) $(LIBCOMPAT)
  
  if HAVE_ORACLE
  EXTRA_ORACLE_MONO_SOURCE = tooracleconnection.cpp tooraclesetting.h \
+@@ -439,6 +439,7 @@
+     moc_tobrowserdblinkswidget.cpp \
+     moc_tobrowserdirectorieswidget.cpp \
+     moc_toresultgrants.cpp \
++    moc_toawr.cpp \
+ 	docklets/moc_toviewdirectory.cpp \
+ 	docklets/moc_toviewconnections.cpp \
+ 	ui_toaboutui.h \
