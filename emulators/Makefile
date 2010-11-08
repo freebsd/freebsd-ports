@@ -182,11 +182,9 @@
     SUBDIR += vmips
     SUBDIR += vmsbackup
     SUBDIR += vmw
-    SUBDIR += vmware-guestd3
     SUBDIR += vmware-guestd4
     SUBDIR += vmware-guestd5
     SUBDIR += vmware-guestd6
-    SUBDIR += vmware-tools3
     SUBDIR += vmware-tools4
     SUBDIR += vmware-tools5
     SUBDIR += vmware-tools6

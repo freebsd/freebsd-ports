@@ -881,7 +881,6 @@
     SUBDIR += vlog
     SUBDIR += vnccrack
     SUBDIR += vpnc
-    SUBDIR += vscan
     SUBDIR += vuxml
     SUBDIR += vxquery
     SUBDIR += w3af
