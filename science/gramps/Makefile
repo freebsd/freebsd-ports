@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gramps
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 CATEGORIES=	science gnome python
 MASTER_SITES=	SF/${PORTNAME}/Stable/${PORTVERSION}
 
@@ -13,7 +13,7 @@ MAINTAINER=	freebsd@troback.com
 COMMENT=	A GTK/GNOME-based genealogy program
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
-		${PYTHON_LIBDIR}/site-packages/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
+		${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
 LICENSE=	GPLv2
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
