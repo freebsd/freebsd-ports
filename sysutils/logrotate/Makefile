@@ -19,6 +19,7 @@ LIB_DEPENDS=		popt.0:${PORTSDIR}/devel/popt
 PATCH_STRIP=		-p1
 USE_GMAKE=	yes
 MAKE_ENV=	"BASEDIR=${PREFIX}"
+CPP=		${CC} -E
 
 MAN5=		logrotate.conf.5
 MAN8=		logrotate.8
