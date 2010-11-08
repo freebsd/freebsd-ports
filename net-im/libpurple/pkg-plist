@@ -259,6 +259,7 @@ share/purple/ca-certs/Thawte_Primary_Root_CA.pem
 share/purple/ca-certs/ValiCert_Class_2_VA.pem
 share/purple/ca-certs/VeriSign_Class3_Extended_Validation_CA.pem
 share/purple/ca-certs/Verisign_Class3_Primary_CA.pem
+share/purple/ca-certs/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G2.pem
 share/purple/ca-certs/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5.pem
 share/purple/ca-certs/VeriSign_Class_3_Public_Primary_Certification_Authority_-_G5_2.pem
 share/purple/ca-certs/VeriSign_International_Server_Class_3_CA.pem
