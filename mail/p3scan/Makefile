@@ -25,8 +25,6 @@ MAKE_ENV=	_LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" GMAKE=${GMAKE}
 SCRIPTS_ENV=	PKG_PREFIX=${PREFIX} NONEXISTENT=${NONEXISTENT} PASSWD=/etc/passwd
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS=	UVSCAN "Use UVSCAN" off
-
 PORTDOCS=	AUTHORS CHANGELOG LICENSE NEWS README
 MAN8=		p3scan.8 p3scan_readme.8
 MANCOMPRESSED=	yes
@@ -35,10 +33,6 @@ USE_RC_SUBR=	p3scan
 SUB_FILES=	p3scan pkg-message
 
 .include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_UVSCAN)
-RUN_DEPENDS+=	uvscan:${PORTSDIR}/security/vscan
-.endif
 
 do-install:
 .if !exists(${PREFIX}/etc/p3scan)
