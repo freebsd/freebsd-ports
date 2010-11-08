@@ -16,14 +16,12 @@ COMMENT=	Unix system management and monitoring
 MAN1=		monit.1
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_BISON=	build
-USE_RC_SUBR=	monit.sh
+USE_GMAKE=	yes
+USE_RC_SUBR=	${PORTNAME}.sh
 
-CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" \
-		CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}" \
-		LOCALBASE="${LOCALBASE}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		CONFIG_SHELL="${SH}" LOCALBASE="${LOCALBASE}"
 
 OPTIONS=	SSL "Enable SSL support" on
 
@@ -33,7 +31,9 @@ PLIST_FILES=	bin/monit \
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
-PORTDOCS=	*
+DOCS=		CHANGES.txt LICENSE README README.SSL \
+		doc/examples.html doc/monit.html
+PORTDOCS=	${DOCS:T}
 
 .include <bsd.port.pre.mk>
 
@@ -45,15 +45,10 @@ CONFIGURE_ARGS+=	--without-ssl
 .endif
 
 post-install:
-	${INSTALL_SCRIPT} -m 600 ${WRKDIR}/${DISTNAME}/monitrc ${PREFIX}/etc/monitrc.sample
+	${INSTALL} -m 600 ${WRKSRC}/monitrc ${PREFIX}/etc/monitrc.sample
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/CHANGES.txt ${PREFIX}/share/doc/monit/CHANGES.txt
-	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/LICENSE ${PREFIX}/share/doc/monit/LICENSE
-	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/README ${PREFIX}/share/doc/monit/README
-	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/README.SSL ${PREFIX}/share/doc/monit/README.SSL
-	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/doc/examples.html ${PREFIX}/share/doc/monit/examples.html
-	${INSTALL_SCRIPT} -m 644 ${WRKDIR}/${DISTNAME}/doc/monit.html ${PREFIX}/share/doc/monit/monit.html
+	cd ${WRKSRC} && ${INSTALL} -m 644 ${DOCS} ${DOCSDIR}/
 .endif
 	@${CAT} ${PKGMESSAGE}
 
