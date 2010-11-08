@@ -7,17 +7,17 @@
 #
 
 PORTNAME=	hydra
-PORTVERSION=	5.4
-PORTREVISION=	5
+PORTVERSION=	5.8
 CATEGORIES=	security
-MASTER_SITES=	http://www.thc.org/releases/ \
-		${MASTER_SITE_PACKETSTORM}
+MASTER_SITES=	http://freeworld.thc.org/releases/
 MASTER_SITE_SUBDIR=	groups/thc
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	llevier@argosnet.com
 COMMENT=	Brute force attack utility working on multiple network services
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 NO_LATEST_LINK=	yes
 PLIST_FILES=	bin/hydra bin/xhydra
 GNU_CONFIGURE=	yes
