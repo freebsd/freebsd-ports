@@ -277,6 +277,9 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle_app/management/commands/update_from_templates.py
 %%PYTHON_SITELIBDIR%%/pootle_app/management/commands/update_from_templates.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/management/commands/update_from_templates.pyo
+%%PYTHON_SITELIBDIR%%/pootle_app/management/commands/update_translation_projects.py
+%%PYTHON_SITELIBDIR%%/pootle_app/management/commands/update_translation_projects.pyc
+%%PYTHON_SITELIBDIR%%/pootle_app/management/commands/update_translation_projects.pyo
 %%PYTHON_SITELIBDIR%%/pootle_app/management/commands/updatedb.py
 %%PYTHON_SITELIBDIR%%/pootle_app/management/commands/updatedb.pyc
 %%PYTHON_SITELIBDIR%%/pootle_app/management/commands/updatedb.pyo
@@ -589,6 +592,9 @@ bin/updatetm
 %%PYTHON_SITELIBDIR%%/pootle_translationproject/models.py
 %%PYTHON_SITELIBDIR%%/pootle_translationproject/models.pyc
 %%PYTHON_SITELIBDIR%%/pootle_translationproject/models.pyo
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/tests.py
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/tests.pyc
+%%PYTHON_SITELIBDIR%%/pootle_translationproject/tests.pyo
 %%PYTHON_SITELIBDIR%%/pootle_translationproject/urls.py
 %%PYTHON_SITELIBDIR%%/pootle_translationproject/urls.pyc
 %%PYTHON_SITELIBDIR%%/pootle_translationproject/urls.pyo
@@ -822,7 +828,6 @@ bin/updatetm
 %%DATADIR%%/mo/mg/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/ml/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/mn/LC_MESSAGES/django.mo
-%%DATADIR%%/mo/mr/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/ms/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/mt/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/nap/LC_MESSAGES/django.mo
@@ -1007,8 +1012,6 @@ bin/updatetm
 @dirrm %%DATADIR%%/mo/mt
 @dirrm %%DATADIR%%/mo/ms/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/ms
-@dirrm %%DATADIR%%/mo/mr/LC_MESSAGES
-@dirrm %%DATADIR%%/mo/mr
 @dirrm %%DATADIR%%/mo/mn/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/mn
 @dirrm %%DATADIR%%/mo/ml/LC_MESSAGES
