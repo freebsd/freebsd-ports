@@ -1,11 +1,11 @@
---- configure.orig	Sat Oct 28 19:51:24 2006
-+++ configure	Sat Oct 28 19:42:03 2006
-@@ -118,11 +118,11 @@
-     echo "                              ... NOT found, module postgres disabled"
+--- configure.orig	2010-09-29 15:19:43.000000000 +0400
++++ configure	2010-10-24 22:49:10.000000000 +0400
+@@ -125,11 +125,11 @@
+     echo "                                 ... NOT found, module postgres disabled"
  fi
  
--echo "Checking for SVN (ibsvn_client-1 libapr-0.so libaprutil-0.so) ..."
-+echo "Checking for SVN (ibsvn_client-1 libapr-1.so libaprutil-1.so) ..."
+-echo "Checking for SVN (libsvn_client-1 libapr-0.so libaprutil-0.so) ..."
++echo "Checking for SVN (libsvn_client-1 libapr-1.so libaprutil-1.so) ..."
  for i in  $LIBDIRS /lib  /usr/lib /usr/local/lib /opt/local/lib .
  do
      if [ "X" = "X$SVN_PATH" ]; then
@@ -14,7 +14,7 @@
              SVN_PATH="$i"
          fi
      fi
-@@ -202,8 +202,8 @@
+@@ -303,8 +303,8 @@
          fi
      fi  
      if [ "X" = "X$APR_IPATH" ]; then
@@ -25,7 +25,7 @@
          fi
      fi  
  done
-@@ -220,8 +220,8 @@
+@@ -321,8 +321,8 @@
          fi
      fi  
      if [ "X" = "X$APR_IPATH" ]; then
@@ -36,7 +36,7 @@
          fi
      fi  
  done
-@@ -379,10 +379,10 @@
+@@ -528,10 +528,10 @@
      XLIBS="$XLIBS -lpq"
  fi
  if [ -n "$SVN_PATH" ]; then
