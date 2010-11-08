@@ -21,8 +21,8 @@ PLIST_FILES=	bin/sipp
 MAN1=		sipp.1
 
 USE_GMAKE=	yes
-MAKE_ENV+=	CPP="${CXX}" \
-		CPPFLAGS="${CXXFLAGS}" \
+CPP=		${CXX}
+MAKE_ENV+=	CPPFLAGS="${CXXFLAGS}" \
 		CCLINK="${CXX}"
 WRKSRC=		${WRKDIR}/sipp.svn
 
