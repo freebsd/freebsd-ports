@@ -15,12 +15,11 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple pixel editing tool to make datas for KISS
 
-BROKEN=		does not build
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
 USE_XORG=	x11 xext
 XMKMF=		xmkmf
+CPP=		#
 
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 PORTDOCS=	xpx.doc xpxrc.eg
