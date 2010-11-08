@@ -1,5 +1,3 @@
-bin/pmt-fd0ssh
-bin/pmt-ofl
 sbin/mount.crypt
 sbin/mount.crypt_LUKS
 sbin/mount.crypto_LUKS
