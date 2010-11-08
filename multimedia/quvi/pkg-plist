@@ -15,11 +15,13 @@ libdata/pkgconfig/libquvi.pc
 %%DATADIR%%/lua/util/content_type.lua
 %%DATADIR%%/lua/website/README
 %%DATADIR%%/lua/website/academicearth.lua
+%%DATADIR%%/lua/website/bloomberg.lua
 %%DATADIR%%/lua/website/break.lua
 %%DATADIR%%/lua/website/buzzhumor.lua
 %%DATADIR%%/lua/website/cctv.lua
 %%DATADIR%%/lua/website/charlierose.lua
 %%DATADIR%%/lua/website/clipfish.lua
+%%DATADIR%%/lua/website/collegehumor.lua
 %%DATADIR%%/lua/website/dailymotion.lua
 %%DATADIR%%/lua/website/evisor.lua
 %%DATADIR%%/lua/website/funnyhub.lua
