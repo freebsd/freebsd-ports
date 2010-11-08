@@ -6,21 +6,27 @@
 #
 
 PORTNAME=	monotone-viz
-PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTVERSION=	1.0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://oandrieu.nerim.net/monotone-viz/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lapo@lapo.it
 COMMENT=	Visual interface for Monotone VCS with revision graphs
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		dot:${PORTSDIR}/graphics/graphviz \
-		mtn:${PORTSDIR}/devel/monotone \
-		sqlite3:${PORTSDIR}/databases/sqlite3
+# BUILD_DEPENDS=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
+RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz \
+		mtn:${PORTSDIR}/devel/monotone
+# 		lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 
-GNU_CONFIGURE=	YES
-USE_GMAKE=	YES
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_GMAKE=	yes
+USE_OCAML=	yes
+GNU_CONFIGURE=	yes
+# following line can (and should) be used only after ports/149958 is closed
+#CONFIGURE_ARGS+=	--without-local-lablgtk
+# Remove USE_GNOME and enable dependency on lablgtk2 when ports/149958 is fixed
 USE_GNOME=	gtk20 libgnomecanvas
 
 ALL_TARGET=
@@ -29,4 +35,3 @@ MAKE_JOBS_UNSAFE=	yes
 PLIST_FILES=	bin/monotone-viz
 
 .include <bsd.port.mk>
-
