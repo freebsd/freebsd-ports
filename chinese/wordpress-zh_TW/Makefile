@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.0
+PORTVERSION=	3.0.1
 CATEGORIES=	chinese www
 MASTER_SITES=	http://tw.wordpress.org/
 PKGNAMESUFFIX=	-zh_TW
-DISTNAME=	wordpress-${PORTVERSION}-zh_TW
+DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}
 
 MAINTAINER=	joehorn@gmail.com
 COMMENT=	A state-of-the-art semantic personal publishing platform
+
+LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
