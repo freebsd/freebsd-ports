@@ -16,6 +16,7 @@ COMMENT=	A better pager utility (and it speaks Chinese)
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-DHANZI # LDFLAGS=-s datadir=/usr/local/lib/less
+CPP=		#
 MAN1=		cless.1 clesskey.1
 
 post-install:
