@@ -1404,6 +1404,9 @@ spool/asterisk/voicemail/default/1234/en/unavail.gsm
 @exec mkdir -p %D/spool/asterisk/voicemail/default/1234/en
 @exec mkdir -p %D/spool/asterisk/tmp
 @exec mkdir -p %D/db/asterisk
+@exec chown -R %%ASTERISK_USER%%:%%ASTERISK_GROUP%% %D/db/asterisk
+@exec chown -R %%ASTERISK_USER%%:%%ASTERISK_GROUP%% %D/spool/asterisk
+@exec chown -R %%ASTERISK_USER%%:%%ASTERISK_GROUP%% %D/log/asterisk
 @dirrm spool/asterisk/dictate
 @dirrm spool/asterisk/meetme
 @dirrm spool/asterisk/monitor
