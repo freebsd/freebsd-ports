@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101108:
+  AFFECTS: users of databases/py-bsddb3
+  AUTHOR: wen@FreeBSD.org
+
+  py-bsddb3 update to 5.1.0. This release drops support for Berkeley
+  DB 4.1, and adds support for Berkeley DB version 5.1, brand new. If
+  you need Berkeley DB 4.1 support, keep using pybsddb 5.0.0. If you
+  want support for Berkeley DB 5.1, remember to install the BDB library
+  before installing these bindings.
+
 20101030:
   AFFECTS: users of www/xshttpd-devel
   AUTHOR: johans@FreeBSD.org
