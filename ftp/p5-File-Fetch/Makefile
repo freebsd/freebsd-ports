@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Fetch
-PORTVERSION=	0.24
+PORTVERSION=	0.28
 CATEGORIES=	ftp www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,19 +14,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A generic file fetching mechanism
 
-RUN_DEPENDS=	p5-IPC-Cmd>=0.42:${PORTSDIR}/devel/p5-IPC-Cmd
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
 PERL_CONFIGURE=	yes
 
 MAN3=		File::Fetch.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500905
-RUN_DEPENDS+=	p5-Locale-Maketext-Simple>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
+.if ${PERL_LEVEL} < 501001
+RUN_DEPENDS+=	p5-IPC-Cmd>=0.42:${PORTSDIR}/devel/p5-IPC-Cmd \
+		p5-Locale-Maketext-Simple>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
 		p5-Module-Load-Conditional>=0.04:${PORTSDIR}/devel/p5-Module-Load-Conditional \
 		p5-Params-Check>=0.07:${PORTSDIR}/devel/p5-Params-Check
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 .endif
 
 .include <bsd.port.post.mk>
