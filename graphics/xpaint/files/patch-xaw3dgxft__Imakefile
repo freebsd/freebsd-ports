@@ -1,5 +1,5 @@
---- xaw3dxft/Imakefile.orig	2010-03-13 04:07:59.000000000 +0900
-+++ xaw3dxft/Imakefile	2010-05-29 13:57:44.000000000 +0900
+--- Xaw3dxft/Imakefile.orig	2010-03-13 04:07:59.000000000 +0900
++++ Xaw3dxft/Imakefile	2010-05-29 13:57:44.000000000 +0900
 @@ -25,10 +25,10 @@
  #define IncSubSubdir Xaw3dxft
  
