@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lingua-EN-Inflect
-PORTVERSION=	1.89.2
+PORTVERSION=	1.89.3
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert singular words to their plural form
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Lingua::EN::Inflect.3
 
