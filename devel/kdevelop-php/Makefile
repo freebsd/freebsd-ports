@@ -16,7 +16,9 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	PHP support for KDevelop
 
-LIB_DEPENDS=	kdevplatforminterfaces.1:${PORTSDIR}/devel/kdevplatform
+LIB_DEPENDS=	kdevplatforminterfaces.2:${PORTSDIR}/devel/kdevplatform
+
+BUILD_DEPENDS=	${KDE4_PREFIX}/bin/kdev-pg-qt:${PORTSDIR}/devel/kdevelop-pg-qt
 
 USE_BZIP2=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
@@ -25,14 +27,13 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib qtestlib \
 		moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
-USE_CMAKE=	yes
 
 OPTIONS=	DOCS	"Integrate with PHP.net online documentation" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .ifdef(WITH_DOCS)
-RUN_DEPENDS+=	kdevelop-php-docs>=0:${PORTSDIR}/devel/kdevelop-php-docs
+RUN_DEPENDS+=	${PREFIX}/lib/kde4/kdevphpdocs.so:${PORTSDIR}/devel/kdevelop-php-docs
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

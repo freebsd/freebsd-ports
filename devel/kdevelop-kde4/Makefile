@@ -14,12 +14,10 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Opensource IDE based on KDevPlatform, KDE and Qt libraries
 
-LIB_DEPENDS+=	kdevplatforminterfaces.1:${PORTSDIR}/devel/kdevplatform
+LIB_DEPENDS+=	kdevplatforminterfaces.2:${PORTSDIR}/devel/kdevplatform
 
 USE_BZIP2=	yes
-USE_CMAKE=	yes
-USE_GMAKE=	yes
-USE_KDE4=	kdelibs kdeprefix automoc4 workspace
+USE_KDE4=	automoc4 kdehier kdelibs kdeprefix workspace
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib assistant assistantclient clucene \
@@ -27,15 +25,25 @@ QT_COMPONENTS=	corelib assistant assistantclient clucene \
 		opengl qt3support qtestlib script sql svg \
 		scripttools webkit xml xmlpatterns phonon \
 		qmake_build moc_build uic_build rcc_build
+MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	PHP	"Install PHP support" on
+OPTIONS=	OKTETA	"Install Okteta plugin" on \
+		PHP	"Install PHP support" on
 
 LATEST_LINK=	${PORTNAME}-kde4
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.ifdef(WITH_PHP)
-RUN_DEPENDS+=	kdevelop-php>=0:${PORTSDIR}/devel/kdevelop-php
+.ifndef(WITHOUT_OKTETA)
+LIB_DEPENDS+=	oktetacore.5:${PORTSDIR}/misc/kdeutils4
+PLIST_SUB+=	OKTETA=""
+.else
+CMAKE_ARGS+=	WITH_LibOkteta:BOOL=FALSE
+PLIST_SUB+=	OKTETA="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.ifndef(WITHOUT_PHP)
+RUN_DEPENDS+=	${PREFIX}/lib/kde4/kdevphplanguagesupport.so:${PORTSDIR}/devel/kdevelop-php
+.endif
+
+.include <bsd.port.mk>
