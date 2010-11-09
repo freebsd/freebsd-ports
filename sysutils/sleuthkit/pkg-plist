@@ -21,6 +21,11 @@ bin/mmstat
 bin/sigfind
 bin/sorter
 bin/srch_strings
+bin/tsk_comparedir
+bin/tsk_gettimes
+bin/tsk_loaddb
+bin/tsk_recover
+include/tsk3/auto/tsk_auto.h
 include/tsk3/base/tsk_base.h
 include/tsk3/base/tsk_os.h
 include/tsk3/fs/tsk_ext2fs.h
@@ -45,11 +50,12 @@ include/tsk3/tsk_incs.h
 @dirrm include/tsk3/hashdb
 @dirrm include/tsk3/fs
 @dirrm include/tsk3/base
+@dirrm include/tsk3/auto
 @dirrm include/tsk3
 lib/libtsk3.a
 lib/libtsk3.la
 lib/libtsk3.so
-lib/libtsk3.so.5
+lib/libtsk3.so.6
 %%DATADIR%%/sorter/default.sort
 %%DATADIR%%/sorter/freebsd.sort
 %%DATADIR%%/sorter/images.sort
