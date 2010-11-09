@@ -1,10 +1,6 @@
-A script to dynamically configure amd and populate /media with appropriate
-links, when USB mass storage devices appear.
+A script to dynamically configure amd(8) and populate /media with appropriate
+symlinks, when storage devices appear.
 
-It also allows to automatically attach geli encrypted devices and images with
-keys polled from file systems it makes mountable.
+It can also apply geli(8) keys from portable media to images and devices,
 
-WWW: http://sourceforge.net/projects/bsdadminscripts/
-
-- Kamikaze
-kamikaze@bsdforen.de
+WWW: http://sf.net/projects/bsdadminscripts/
