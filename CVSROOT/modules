@@ -1012,7 +1012,6 @@ bibutils                        ports/textproc/bibutils
 bibview                         ports/print/bibview
 bicom                           ports/archivers/bicom
 bicyclerepair                   ports/devel/bicyclerepair
-bidwatcher                      ports/misc/bidwatcher
 biew                            ports/editors/biew
 biffer                          ports/mail/biffer
 bigboard                        ports/misc/bigboard
@@ -1536,6 +1535,7 @@ charmap                         ports/deskutils/charmap
 charva                          ports/devel/charva
 chbg                            ports/graphics/chbg
 check_multi                     ports/net-mgmt/check_multi
+check_mysql_health              ports/net-mgmt/check_mysql_health
 check_snmp_pkgvuln              ports/net-mgmt/check_snmp_pkgvuln
 checkbot                        ports/www/checkbot
 checkdns                        ports/dns/checkdns
@@ -1817,7 +1817,6 @@ commoncpp                       ports/devel/commoncpp
 commonist                       ports/www/commonist
 commons-utilities               ports/graphics/commons-utilities
 compaq-cc                       ports/lang/compaq-cc
-compat3x                        ports/misc/compat3x
 compat4x                        ports/misc/compat4x
 compat5x                        ports/misc/compat5x
 compat6x                        ports/misc/compat6x
@@ -12136,6 +12135,7 @@ p5-FEAR-API                     ports/www/p5-FEAR-API
 p5-FFmpeg-Command               ports/multimedia/p5-FFmpeg-Command
 p5-FLV-Info                     ports/multimedia/p5-FLV-Info
 p5-FSA-Rules                    ports/devel/p5-FSA-Rules
+p5-Facebook-Graph               ports/www/p5-Facebook-Graph
 p5-FastCGI                      ports/www/p5-FastCGI
 p5-Fax-Hylafax-Client           ports/comms/p5-Fax-Hylafax-Client
 p5-Feed-Find                    ports/www/p5-Feed-Find
@@ -16086,6 +16086,7 @@ p5-extutils-pkgconfig           ports/devel/p5-ExtUtils-PkgConfig
 p5-extutils-xsbuilder           ports/devel/p5-ExtUtils-XSBuilder
 p5-extutils-xspp                ports/devel/p5-ExtUtils-XSpp
 p5-f77                          ports/lang/p5-F77
+p5-facebook-graph               ports/www/p5-Facebook-Graph
 p5-faq-omatic                   ports/www/p5-FAQ-OMatic
 p5-fastcgi                      ports/www/p5-FastCGI
 p5-fax-hylafax-client           ports/comms/p5-Fax-Hylafax-Client
@@ -20364,7 +20365,6 @@ ports_less                      ports/sysutils/less
 ports_libarchive                ports/archivers/libarchive
 ports_libbind                   ports/dns/libbind
 ports_libedit                   ports/devel/libedit
-ports_libisc                    ports/devel/libisc
 ports_libpcap                   ports/net/libpcap
 ports_libsm                     ports/x11/libSM
 ports_m4                        ports/devel/m4
@@ -23858,7 +23858,6 @@ ssltunnel-server                ports/net/ssltunnel-server
 sslwrap                         ports/security/sslwrap
 ssmping                         ports/net/ssmping
 ssmtp                           ports/mail/ssmtp
-ssserver                        ports/www/ssserver
 sssnips                         ports/misc/sssnips
 ssss                            ports/security/ssss
 sst                             ports/security/sst
@@ -24153,6 +24152,7 @@ taucs                           ports/math/taucs
 taxipilot                       ports/games/taxipilot
 tbb                             ports/devel/tbb
 tbclock                         ports/games/tbclock
+tbe                             ports/games/tbe
 tbku                            ports/sysutils/tbku
 tcb                             ports/misc/tcb
 tcc                             ports/lang/tcc
@@ -25242,11 +25242,9 @@ vmd                             ports/science/vmd
 vmips                           ports/emulators/vmips
 vmsbackup                       ports/emulators/vmsbackup
 vmw                             ports/emulators/vmw
-vmware-guestd3                  ports/emulators/vmware-guestd3
 vmware-guestd4                  ports/emulators/vmware-guestd4
 vmware-guestd5                  ports/emulators/vmware-guestd5
 vmware-guestd6                  ports/emulators/vmware-guestd6
-vmware-tools3                   ports/emulators/vmware-tools3
 vmware-tools4                   ports/emulators/vmware-tools4
 vmware-tools5                   ports/emulators/vmware-tools5
 vmware-tools6                   ports/emulators/vmware-tools6
@@ -25278,7 +25276,6 @@ vqregister                      ports/mail/vqregister
 vrflash                         ports/comms/vrflash
 vrfy                            ports/mail/vrfy
 vrml2pov                        ports/graphics/vrml2pov
-vscan                           ports/security/vscan
 vserver                         ports/net/vserver
 vsftpd                          ports/ftp/vsftpd
 vsftpd-ext                      ports/ftp/vsftpd-ext
