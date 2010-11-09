@@ -1,29 +1,40 @@
---- configure.orig	2010-09-07 00:54:27.000000000 +0200
-+++ configure	2010-09-09 23:01:01.000000000 +0200
-@@ -38,7 +38,7 @@ PWD=`pwd`
- SYS_INC=/usr/include
- SYS_LIB=/usr/lib
- SYS_BIN=/usr/bin
--SYS_LOC=/usr/local
-+SYS_LOC=$LOCALBASE
- LOC_INC=$SYS_LOC/include
- LOC_LIB=$SYS_LOC/lib
- A68G_CHECK="./regression-$VERSION_NUMBER"
-@@ -865,11 +865,11 @@ then
- 		echo "SQL_DIR=$SQL_DIR">>$BUILD_FILE
- 		echo "SQL_LIBS=-lpq" 1>>$BUILD_FILE
- 		echo "SQL_FLAG=-DENABLE_POSTGRESQL" 1>>$BUILD_FILE
--	elif [ -f $SYS_LIB/libpq.so -o -f $SYS_LIB/libpq.a -o -f $SYS_LIB/libpq.dylib ]
-+	elif [ -f $LOC_LIB/libpq.so -o -f $SYS_LIB/libpq.a -o -f $SYS_LIB/libpq.dylib ]
+--- configure.orig	2010-11-07 16:22:28.000000000 +0100
++++ configure	2010-11-09 21:02:05.000000000 +0100
+@@ -47,7 +47,7 @@ A68G_DOC="./doc"
+ A68G_HTML_TEMPLATES="$A68G_DOC/html"
+ A68G_LATEX_TEMPLATES="$A68G_DOC/latex"
+ A68G_SOURCE="./source"
+-SQL_DIR=$USR_LOC/pgsql
++SQL_DIR=$USR_LOC
+ UPLOAD_DIR="upload-$VERSION_NUMBER"
+ BUILD_FILE="$A68G_SOURCE/$MAKEFILE"
+ CONFIG_FILE="$A68G_SOURCE/config.h"
+@@ -700,14 +700,8 @@ then
+ 	printf "checking for POSIX threads ... "
+ 	if [ -f $USR_INC/pthread.h ]
  	then
- 		libpostgresql=yes
- 		echo "yes"
--		echo "SQL_DIR=`dirname $SYS_LIB`">>$BUILD_FILE
-+		echo "SQL_DIR=`dirname $LOC_LIB`">>$BUILD_FILE
- 		echo "SQL_LIBS=-lpq" 1>>$BUILD_FILE
- 		echo "SQL_FLAG=-DENABLE_POSTGRESQL" 1>>$BUILD_FILE
+-		if [ -f $USR_LIB/libpthread.so -o -f $USR_LIB/libpthread.a -o -f $USR_LIB/libpthread.dylib ]
+-		then
+-			echo "yes"
+-			echo "POSIX_THREADS_LIBS=-lpthread" 1>>$BUILD_FILE
++			echo "POSIX_THREADS_LIBS=-pthread" 1>>$BUILD_FILE
+ 			echo "POSIX_THREADS_FLAG=-DENABLE_PAR_CLAUSE" 1>>$BUILD_FILE
+-		else
+-			echo "no"
+-		fi
  	else
-@@ -996,7 +996,7 @@ FLAGS=$(CPPFLAGS) $(STD_CFLAGS) $(POSIX_
+ 		echo "no"
+ 	fi
+@@ -962,7 +956,7 @@ FLAGS=$(CPPFLAGS) $(STD_CFLAGS) $(POSIX_
+ all:    a68g
+ a68g:   $(CS)
+ 	@echo "building a68g ..."
+-	@$(CC) $(CS) -Wl,--export-dynamic $(CFLAGS) $(STD_LD_FLAGS) $(POSIX_THREADS_LIBS) $(PLOTUTILS_LIBS) $(GSL_LIBS) $(CURSES_LIBS) $(SQL_LIBS) $(READLINE_LIBS) -lm -ldl $(LD_FLAGS) -o a68g
++	@$(CC) $(CS) -Wl,--export-dynamic $(CFLAGS) $(STD_LD_FLAGS) $(POSIX_THREADS_LIBS) $(PLOTUTILS_LIBS) $(GSL_LIBS) $(CURSES_LIBS) $(SQL_LIBS) $(READLINE_LIBS) -lm $(LD_FLAGS) -o a68g
+ $(CS): $(HS)
+ .c.o:
+ 	@echo "compiling $<"
+@@ -980,7 +974,7 @@ FLAGS=$(CPPFLAGS) $(STD_CFLAGS) $(POSIX_
  all:    a68g
  a68g:   $(CS)
  	@echo "building a68g ..."
@@ -32,12 +43,3 @@
  $(CS): $(HS)
  .c.o:
  	@echo "compiling $<"
-@@ -1142,7 +1142,7 @@ int main (int argc, char **argv) {
- 	printf ("%s", PACKAGE_VERSION);
- }
- _ACEOF
--		gcc pgvers.c -I$SQL_DIR/include -o pgvers
-+		gcc pgvers.c -I$LOC_INC -o pgvers
- 		echo "#define A68_PG_VERSION \"`./pgvers`\"" 1>>$CONFIG_FILE
- 		rm pgvers*
- 	else
