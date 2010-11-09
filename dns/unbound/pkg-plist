@@ -5,6 +5,7 @@ lib/libunbound.so
 lib/libunbound.la
 lib/libunbound.a
 sbin/unbound
+sbin/unbound-anchor
 sbin/unbound-checkconf
 sbin/unbound-control
 sbin/unbound-control-setup

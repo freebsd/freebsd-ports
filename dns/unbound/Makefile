@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unbound
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.7
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -16,7 +16,7 @@ COMMENT=	A validating, recursive, and caching DNS resolver
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE} --with-ldns-builtin
 USE_LDCONFIG=	yes
 
 USE_RC_SUBR=	unbound
@@ -24,7 +24,7 @@ USE_RC_SUBR=	unbound
 MAN1=		unbound-host.1
 MAN3=		libunbound.3
 MAN5=		unbound.conf.5
-MAN8=		unbound.8 unbound-control.8 unbound-checkconf.8
+MAN8=		unbound.8 unbound-anchor.8 unbound-control.8 unbound-checkconf.8
 
 PORTDOCS=	CREDITS Changelog FEATURES LICENSE README README.svn \
 		README.tests TODO control_proto_spec.txt ietf67-design-02.odp \
@@ -36,9 +36,12 @@ PLIST_SUB+=	PYTHON=${PYTHON}
 
 OPTIONS=	LIBEVENT "is useful when using many (10000) outgoing ports" off \
 		THREADS "build with threads support" on \
-		PYTHON "build python bindings" off
+		PYTHON "build python bindings" off \
+		GOST "build GOST support (requires OpenSSL from ports)" on
 
 .include <bsd.port.options.mk>
+
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes
@@ -47,6 +50,12 @@ BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig13
 PYTHON=
 .else
 PYTHON=		"@comment "
+.endif
+
+.if defined(WITH_GOST)
+WITH_OPENSSL_PORT=	yes
+.else
+CONFIGURE_ARGS+=	--disable-gost
 .endif
 
 .include <bsd.port.pre.mk>
