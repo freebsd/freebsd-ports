@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	geos
-PORTVERSION=	3.2.0
+PORTVERSION=	3.2.2
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/geos/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	konstantin@saurbier.net
 COMMENT=	GEOS implements all the OpenGIS "Simple Features for SQL"
 
-USE_AUTOTOOLS=	libtool:22
-USE_GMAKE=	YES
-USE_BZIP2=	YES
+LICENSE=	LGPL21
 
+USE_AUTOTOOLS=	libtool:22
+USE_BZIP2=	YES
+USE_GMAKE=	YES
 USE_LDCONFIG=	YES
 
 post-patch:
