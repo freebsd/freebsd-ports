@@ -1,8 +1,8 @@
 @comment $FreeBSD$
 bin/smbftpd-user
-etc/smbftpd/smbftpd.conf
-etc/smbftpd/smbftpd_share.conf
-etc/smbftpd/smbftpd_mysql.conf
-etc/smbftpd/smbftpd_pgsql.conf
+%%ETCDIR%%/smbftpd.conf.sample
+%%ETCDIR%%/smbftpd_share.conf.sample
+%%ETCDIR%%/smbftpd_mysql.conf.sample
+%%ETCDIR%%/smbftpd_pgsql.conf.sample
 sbin/smbftpd
-@dirrmtry etc/smbftpd
+@dirrmtry %%ETCDIR%%

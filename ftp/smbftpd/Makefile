@@ -7,6 +7,7 @@
 
 PORTNAME=	smbftpd
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/SmbFTPD/${PORTVERSION}	\
 		http://www.twbsd.org/download/download.php?file=smbftpd/
@@ -24,7 +25,7 @@ MAKE_ENV=	OSTYPE=FreeBSD
 CONFIGURE_ARGS=	"--prefix=${PREFIX}"
 
 USE_PERL5=	yes
-USE_RC_SUBR=	smbftpd.sh
+USE_RC_SUBR=	${PORTNAME}.sh
 
 .include <bsd.port.pre.mk>
 
@@ -50,5 +51,9 @@ CONFIGURE_ARGS+=	"--with-ssl"
 .if ${OSVERSION} > 900007
 BROKEN=		fails to build with new utmpx
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^CONFIGS = / s|\.conf|&.sample|g' ${WRKSRC}/Makefile
+	@cd ${WRKSRC}/conf/ && (${LS} *.conf | ${XARGS} -I % ${MV} % %.sample)
 
 .include <bsd.port.post.mk>
