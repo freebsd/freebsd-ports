@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	2.1.3
+DISTVERSION=	2.1.4
 CATEGORIES=	security net
 # MASTER_SITES points to hosts in distinct data centers,
 # so just one MASTER_SITES entry should be OK.
-MASTER_SITES=	http://openvpn.net/release/
+MASTER_SITES=	http://swupdate.openvpn.net/community/releases/
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure IP/Ethernet tunnel daemon
