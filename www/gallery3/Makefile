@@ -7,7 +7,7 @@
 
 PORTNAME=	gallery3
 PORTVERSION=	3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	SF/gallery/${PORTNAME}/${PORTVERSION}
 DISTNAME=	gallery-${PORTVERSION}
@@ -25,58 +25,59 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-OPTIONS=	NETPBM "Enable netpbm support" off \
-		IMAGEMAGICK "Enable imagemagick support" on \
-		GRAPHMAGICK "Enable graphicsmagick support" off \
-		JHEAD "Enable jhead support" on \
-		GD "Enable gd support" off \
-		DCRAW "Enable dcraw support" off \
+OPTIONS=	DCRAW "Enable dcraw support" off \
 		FFMPEG "Enable ffmpeg support" off \
-		NLS "Enable National Language Support" on
+		GD "Enable gd support" off \
+		GRAPHMAGICK "Enable graphicsmagick support" off \
+		IMAGEMAGICK "Enable imagemagick support" on \
+		JHEAD "Enable jhead support" on \
+		NETPBM "Enable netpbm support" off \
+		NLS "Enable National Language Support" on \
+		UNZIP "Enable unzip support" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
+
+.if defined(GALLERY3DIR)
+# Continue to support legacy GALLERY3DIR variable
+WWWDIR=		${GALLERY3DIR}
+.endif
+
+.if defined(WITH_DCRAW)
+RUN_DEPENDS+=	dcraw:${PORTSDIR}/graphics/dcraw
+.endif
+
+.if defined(WITH_FFMPEG)
+LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+.endif
 
 .if defined(WITH_GD)
 USE_PHP+=	gd
 RUN_DEPENDS+=	pngtogd:${PORTSDIR}/graphics/gd
 .endif
 
-.if defined(WITH_NLS)
-USE_PHP+=	gettext
-USE_GETTEXT=	yes	# Pet portlint
+.if defined(WITH_GRAPHMAGICK)
+RUN_DEPENDS+=	gm:${PORTSDIR}/graphics/GraphicsMagick
+.endif
+
+.if !defined(WITHOUT_IMAGEMAGICK)
+RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
+.endif
+
+.if !defined(WITHOUT_JHEAD)
+RUN_DEPENDS+=	jhead:${PORTSDIR}/graphics/jhead
 .endif
 
 .if defined(WITH_NETPBM)
 RUN_DEPENDS+=	giftopnm:${PORTSDIR}/graphics/netpbm
 .endif
 
-.if defined(WITH_GRAPHMAGICK)
-RUN_DEPENDS+=	gm:${PORTSDIR}/graphics/GraphicsMagick
+.if !defined(WITHOUT_NLS)
+USE_PHP+=	gettext
+USE_GETTEXT=	yes	# Pet portlint
 .endif
 
-.if defined(WITH_IMAGEMAGICK)
-RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
-.endif
-
-.if defined(WITH_JHEAD)
-RUN_DEPENDS+=	jhead:${PORTSDIR}/graphics/jhead
-.endif
-
-.if defined(WITH_UNZIP)
+.if !defined(WITHOUT_UNZIP)
 RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
-.endif
-
-.if defined(WITH_FFMPEG)
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
-
-.endif
-.if defined(WITH_DCRAW)
-RUN_DEPENDS+=	dcraw:${PORTSDIR}/graphics/dcraw
-.endif
-
-.if defined(GALLERY3DIR)
-# Continue to support legacy GALLERY3DIR variable
-WWWDIR=		${GALLERY3DIR}
 .endif
 
 do-install:
@@ -88,4 +89,4 @@ do-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
