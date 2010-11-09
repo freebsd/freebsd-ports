@@ -1,0 +1,8 @@
+bin/kdev-pg-qt
+include/kdevelop-pg-qt/kdev-pg-allocator.h
+include/kdevelop-pg-qt/kdev-pg-list.h
+include/kdevelop-pg-qt/kdev-pg-location-table.h
+include/kdevelop-pg-qt/kdev-pg-memory-pool.h
+include/kdevelop-pg-qt/kdev-pg-token-stream.h
+share/apps/cmake/modules/FindKDevelop-PG-Qt.cmake
+@dirrm include/kdevelop-pg-qt
