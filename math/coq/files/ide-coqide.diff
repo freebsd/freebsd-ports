@@ -1,0 +1,47 @@
+--- coq-8.3/ide/coqide.ml	2010-07-24 17:57:30.000000000 +0200
++++ coq-8.3/ide/coqide.ml	2010-11-04 23:09:29.000000000 +0100
+@@ -251,27 +251,29 @@
+     end
+ 
+ let do_if_not_computing text f x =
+-  if Mutex.try_lock coq_computing then
+-    let threaded_task () =
+-      prerr_endline "Getting lock";
+-      try
+-        f x;
+-        prerr_endline "Releasing lock";
+-        Mutex.unlock coq_computing;
+-      with e ->
+-        prerr_endline "Releasing lock (on error)";
+-        Mutex.unlock coq_computing;
+-        raise e
+-    in
++  let threaded_task () =
++    if Mutex.try_lock coq_computing then
++      begin
++        prerr_endline "Getting lock";
++        try
++          f x;
++          prerr_endline "Releasing lock";
++          Mutex.unlock coq_computing;
++        with e ->
++          prerr_endline "Releasing lock (on error)";
++          Mutex.unlock coq_computing;
++          raise e
++      end
++    else
++     prerr_endline
++      "Discarded order (computations are ongoing)"
++  in
+       prerr_endline ("Launching thread " ^ text);
+       ignore (Glib.Timeout.add ~ms:300 ~callback:
+                   (fun () -> if Mutex.try_lock coq_computing
+                              then (Mutex.unlock coq_computing; false)
+                              else (pbar#pulse (); true)));
+       ignore (Thread.create threaded_task ())
+-  else
+-    prerr_endline
+-      "Discarded order (computations are ongoing)"
+ 
+ (* XXX - 1 appel *)
+ let kill_input_view i =

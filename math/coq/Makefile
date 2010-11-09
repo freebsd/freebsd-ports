@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	coq
-DISTVERSION=	8.2pl1
+DISTVERSION=	8.3
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	http://coq.inria.fr/distrib/V${DISTVERSION}/files/ \
@@ -25,25 +25,21 @@ WITH_IDE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX}
 CONFIGURE_ARGS+=--emacslib ${PREFIX}/share/emacs/site-lisp
-CONFIGURE_ARGS+=--reals all
 CONFIGURE_ARGS+=--opt
 
 .ifdef	NOPORTDOCS
 CONFIGURE_ARGS+=--with-doc none
 .else
-BUILD_DEPENDS+=	hevea:${PORTSDIR}/textproc/hevea
+BUILD_DEPENDS+=	hevea:${PORTSDIR}/textproc/hevea \
+		latex:${PORTSDIR}/print/teTeX \
+		${LOCALBASE}/share/texmf/tex/latex/ucs/utf8x.def:${PORTSDIR}/print/latex-ucs
 PORTDOCS=	*
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64"
-BROKEN=	OCaml bug prevents compilation
-.endif
-
-MAN1=	coq-interface.1 coq-tex.1 coq_makefile.1 coqc.1 coqdep.1 coqdoc.1 \
-	coqmktop.1 coqtop.1 coqtop.byte.1 coqtop.opt.1 coqwc.1 gallina.1 \
-	coq-parser.1
+MAN1=	coq-tex.1 coq_makefile.1 coqc.1 coqchk.1 coqdep.1 coqdoc.1 \
+	coqmktop.1 coqtop.1 coqtop.byte.1 coqtop.opt.1 coqwc.1 gallina.1
 
 .if defined(WITH_IDE) || exists(${LOCALBASE}/bin/lablgtk2)
 BUILD_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
