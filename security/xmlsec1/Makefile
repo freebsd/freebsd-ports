@@ -7,6 +7,7 @@
 
 PORTNAME=	xmlsec1
 PORTVERSION=	1.2.16
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
@@ -81,6 +82,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 	    -e 's,total_time.*/ 1000),total_time*1000/CLOCKS_PER_SEC,' \
 		${WRKSRC}/apps/xmlsec.c
+	@${REINPLACE_CMD} -e 's,\\\\\\,\\,g' ${WRKSRC}/*.pc.in
 .if defined(WITH_GNUTLS)
 # Don't rely on broken autodetection
 	@${REINPLACE_CMD} -e '/^GNUTLS_FOUND/s/no/yes/' \
