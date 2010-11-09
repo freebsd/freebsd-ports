@@ -8,7 +8,7 @@
 PORTNAME=	imapsync
 PORTVERSION=	1.366
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://www.linux-france.org/prj/${PORTNAME}/dist/ \
+MASTER_SITES=	ftp://www.linux-france.org/pub/prj/${PORTNAME}/ \
 		http://christianserving.org/ports/mail/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
