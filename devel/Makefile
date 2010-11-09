@@ -700,6 +700,7 @@
     SUBDIR += kdesvn-kde4
     SUBDIR += kdevelop
     SUBDIR += kdevelop-kde4
+    SUBDIR += kdevelop-pg-qt
     SUBDIR += kdevelop-php
     SUBDIR += kdevelop-php-docs
     SUBDIR += kdevplatform
