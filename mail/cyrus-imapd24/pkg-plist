@@ -63,6 +63,7 @@ include/cyrus/bsearch.h
 include/cyrus/byteorder64.h
 include/cyrus/charset.h
 include/cyrus/crc32.h
+include/cyrus/cyr_lock.h
 include/cyrus/cyrusdb.h
 include/cyrus/glob.h
 include/cyrus/gmtoff.h
@@ -75,7 +76,6 @@ include/cyrus/imparse.h
 include/cyrus/iptostring.h
 include/cyrus/libconfig.h
 include/cyrus/libcyr_cfg.h
-include/cyrus/lock.h
 include/cyrus/lsort.h
 include/cyrus/map.h
 include/cyrus/md5.h
