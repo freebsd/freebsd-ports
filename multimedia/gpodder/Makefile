@@ -10,7 +10,10 @@ PORTVERSION=	2.9
 PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	BERLIOS \
-		http://thpinfo.com/2010/mygpoclient/:mygpoclient
+		http://thp.io/2010/mygpoclient/:mygpoclient \
+		CHEESESHOP:mygpoclient 
+MASTER_SITE_SUBDIR=	${PORTNAME}/:DEFAULT \
+			source/m/mygpoclient/:mygpoclient
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 		${MGC_DISTNAME}${EXTRACT_SUFX}:mygpoclient
 
@@ -74,7 +77,7 @@ USE_GNOME+=	pygnomeextras
 .endif
 
 # ensure that setup.py can find mygpoclient module when installing gpodder
-MAKE_ENV+= PYTHONPATH="${PYTHONPREFIX_SITELIBDIR}"
+MAKE_ENV+=	PYTHONPATH="${PYTHONPREFIX_SITELIBDIR}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/setup.py
