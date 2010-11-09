@@ -6,7 +6,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	5.0.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm5.org/files/rpm/rpm-5.0/
 PATCHFILES=	rpm-5.0.3.1.patch

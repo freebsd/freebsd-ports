@@ -6,6 +6,7 @@
 
 PORTNAME=	libarchive
 PORTVERSION=	2.8.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -56,7 +57,7 @@ check:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	lzma.0:${PORTSDIR}/archivers/xz
+LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
 .endif
 
 .include <bsd.port.post.mk>

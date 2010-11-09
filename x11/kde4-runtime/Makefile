@@ -8,6 +8,7 @@
 
 PORTNAME=	kdebase-runtime
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -52,7 +53,7 @@ CMAKE_ARGS+=	-DWITH_ALSA:BOOL=OFF
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	lzma.0:${PORTSDIR}/archivers/xz
+LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
 .endif
 
 .if defined(WITH_PULSEAUDIO)
