@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	algol68g
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.xs4all.nl/~jmvdveer/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz
@@ -21,7 +21,7 @@ OPTIONS=	PLOT "GNU plot support" On \
 		PGSQL "Postgresql support" On
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	-macosx
+CONFIGURE_ARGS=	-O -macosx -threads
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 MAKEFILE=	makefile
 
