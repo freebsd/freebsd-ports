@@ -1,0 +1,84 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: tstatd
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to run tstatd:
+#
+# tstatd_enable (bool):              Set it to "YES" to enable tstatd.
+#                                    Default is "NO".
+# tstatd_profiles (strings):         Example - "spam www"
+#                                    Default is empty.
+# tstatd_profile_flags (string):     Set extra flags. See tstatd(1) for details.
+#                                    Default is empty.
+# tstatd_profile_listen (string):    Set tstatd listen socket.
+#                                    Default is "127.0.0.1:3638".
+# tstatd_profile_plugin (string):    Set plugin name. See tstatd(1) for details.
+#                                    Default is empty. Required argument.
+# tstatd_profile_user (user):        Set user to run tstatd.
+#                                    Default is "nobody".
+# tstatd_profile_zones (string):     Set tstatd 'zones'. See tstatd(1) for details.
+#                                    Default is "nobody". Required argument.
+
+. /etc/rc.subr
+
+name="tstatd"
+rcvar=${name}_enable
+
+load_rc_config ${name}
+
+: ${tstatd_enable="NO"}
+: ${tstatd_profiles=""}
+
+command=%%PREFIX%%/bin/tstatd
+
+
+_profile_exists() {
+	for _p in ${tstatd_profiles}; do
+		[ "${_p}" = "$1" ] && return 1;
+	done
+	return 0
+}
+
+if [ $# -eq 2 ]; then
+	_profile=$2
+	_profile_exists $_profile
+	_exists=$?
+	[ ${_exists} -ne 1 ] && {
+		echo "`basename %%PREFIX%%/etc/rc.d/tstatd%%RC_SUBR_SUFFIX%%`: no '$2' in 'tstatd_profiles'"
+		exit 1
+	};
+	echo "-- Profile: $2 --"
+	eval _plugin=\${${name}_${_profile}_plugin}
+	[ -n "${_plugin}" ] || {
+		echo "`basename %%PREFIX%%/etc/rc.d/tstatd%%RC_SUBR_SUFFIX%%`: no 'tstatd_${_profile}_plugin' set"
+		exit 2
+	};
+	eval _zones=\${${name}_${_profile}_zones}
+	[ -n "${_zones}" ] || {
+		echo "`basename %%PREFIX%%/etc/rc.d/tstatd%%RC_SUBR_SUFFIX%%`: no 'tstatd_${_profile}_zones' set"
+		exit 2
+	};
+	eval _listen=\${${name}_${_profile}_listen:-127.0.0.1:3638}
+	eval _user=\${${name}_${_profile}_user:-nobody}
+	eval _flags=\${${name}_${_profile}_flags}
+	tstatd_flags="${_plugin} -l ${_listen} -u ${_user} -b /var/db/tstatd/${_profile}.db -p /var/run/tstatd/${_profile}.pid ${_flags} ${_zones}"
+	pidfile=/var/run/tstatd/${_profile}.pid
+elif [ -n "${tstatd_profiles}" ]; then
+	_swap=$*; shift; _profiles=$*
+	_profiles=${_profiles:-${tstatd_profiles}}
+	set -- ${_swap}
+	for _profile in ${_profiles}; do
+		%%PREFIX%%/etc/rc.d/tstatd%%RC_SUBR_SUFFIX%% $1 ${_profile}
+	done
+	exit 0
+else
+	echo "`basename %%PREFIX%%/etc/rc.d/tstatd%%RC_SUBR_SUFFIX%%`: set 'tstatd_profiles' in rc.conf"
+	exit 3
+fi
+
+
+run_rc_command "$1"
+

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+	echo -e "\n=====================================================\n"
+	echo -n "Please, remove staled directories:"
+	for d in /var/db/tstatd /var/run/tstatd; do
+		[ -d "${d}" ] && echo -n " ${d}"
+	done
+	echo -e "\n\n=====================================================\n"
+fi

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" ]; then
+	echo -n "Creating required directories:"
+	for d in /var/db/tstatd /var/run/tstatd; do
+		echo -n " ${d}"
+		mkdir -pm 1777 ${d}
+	done
+	echo
+fi

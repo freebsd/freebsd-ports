@@ -1,0 +1,12 @@
+bin/tstatd
+%%SITE_PERL%%/Tail/Stat.pm
+%%SITE_PERL%%/Tail/Stat/Plugin.pm
+%%SITE_PERL%%/Tail/Stat/Plugin/apache.pm
+%%SITE_PERL%%/Tail/Stat/Plugin/nginx.pm
+%%SITE_PERL%%/Tail/Stat/Plugin/spamd.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tail/Stat/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tail/Stat
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tail
+@dirrm %%SITE_PERL%%/Tail/Stat/Plugin
+@dirrm %%SITE_PERL%%/Tail/Stat
+@dirrm %%SITE_PERL%%/Tail
