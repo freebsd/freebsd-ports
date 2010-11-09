@@ -8,7 +8,7 @@
 PORTNAME=	papyon
 PORTVERSION=	0.5.2
 CATEGORIES=	net-im
-MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
+MASTER_SITES=	http://www.freedesktop.org/software/${PORTNAME}/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gnome@FreeBSD.org
