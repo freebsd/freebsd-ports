@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.48.1
+PORTVERSION=	0.99.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.monotone.ca/downloads/${PORTVERSION}/
 
@@ -38,6 +38,7 @@ PLIST_FILES=	bin/mtn bin/mtnopt share/zsh/site-functions/_mtn \
 		"@dirrmtry share/zsh"
 .if !defined(NO_INSTALL_MANPAGES)
 INFO=		monotone
+MAN1=		mtn.1
 .endif
 PORTDOCS=	*
 
@@ -66,7 +67,7 @@ post-patch:
 	${REINPLACE_CMD} -Ee '/^install-data-am:/,/^$$/s/install-html(figure|image)?DATA //g' ${WRKSRC}/Makefile.in
 .endif
 .if defined(NO_INSTALL_MANPAGES)
-	${REINPLACE_CMD} -e '/^install-data-am:/,/^$$/s/\([[:space:]]*\)install-info-am/\1/' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -Ee '/^install-data-am:/,/^$$/s/([[:space:]]*)install-(info-am|man)/\1/' ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
