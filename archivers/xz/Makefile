@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	xz
-PORTVERSION=	4.999.9
-PORTREVISION=	1
+PORTVERSION=	5.0.0
 CATEGORIES=	archivers
 MASTER_SITES=	http://tukaani.org/xz/
-DISTNAME=	${PORTNAME}-${PORTVERSION}beta
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	LZMA compression and decompression tools
@@ -22,8 +20,9 @@ USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--enable-dynamic=yes
-CONFIGURE_ARGS+=--disable-nls	# no translations available
+# As we want to use xz for extraction of port's distfiles,
+# it cannot depend on gettext.
+CONFIGURE_ARGS=	--disable-nls
 
 # pick up assembly language optimizations
 CONFIGURE_TARGET=	${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}

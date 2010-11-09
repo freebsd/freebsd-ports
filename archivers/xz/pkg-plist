@@ -29,16 +29,16 @@ include/lzma/check.h
 include/lzma/container.h
 include/lzma/delta.h
 include/lzma/filter.h
+include/lzma/hardware.h
 include/lzma/index.h
 include/lzma/index_hash.h
 include/lzma/lzma.h
 include/lzma/stream_flags.h
-include/lzma/subblock.h
 include/lzma/version.h
 include/lzma/vli.h
 lib/liblzma.a
 lib/liblzma.la
 lib/liblzma.so
-lib/liblzma.so.0
+lib/liblzma.so.5
 libdata/pkgconfig/liblzma.pc
 @dirrm include/lzma
