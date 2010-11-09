@@ -3,7 +3,24 @@ lib/libkdev4phpcompletion.so
 lib/libkdev4phpduchain.so
 lib/libkdev4phpparser.so
 share/apps/kdevappwizard/templates/simple_phpapp.tar.bz2
-share/apps/kdevphpsupport/phpfunctions.php.gz
+share/apps/kdevphpsupport/phpfunctions.php
 share/kde4/services/kdevphpsupport.desktop
+share/locale/ca/LC_MESSAGES/kdevphp.mo
+share/locale/ca@valencia/LC_MESSAGES/kdevphp.mo
+share/locale/da/LC_MESSAGES/kdevphp.mo
+share/locale/en_GB/LC_MESSAGES/kdevphp.mo
+share/locale/es/LC_MESSAGES/kdevphp.mo
+share/locale/et/LC_MESSAGES/kdevphp.mo
+share/locale/fr/LC_MESSAGES/kdevphp.mo
+share/locale/it/LC_MESSAGES/kdevphp.mo
+share/locale/nds/LC_MESSAGES/kdevphp.mo
+share/locale/nl/LC_MESSAGES/kdevphp.mo
+share/locale/pt/LC_MESSAGES/kdevphp.mo
+share/locale/pt_BR/LC_MESSAGES/kdevphp.mo
+share/locale/sv/LC_MESSAGES/kdevphp.mo
+share/locale/th/LC_MESSAGES/kdevphp.mo
+share/locale/uk/LC_MESSAGES/kdevphp.mo
+share/locale/zh_CN/LC_MESSAGES/kdevphp.mo
+share/locale/zh_TW/LC_MESSAGES/kdevphp.mo
 @dirrm share/apps/kdevphpsupport
 @dirrmtry share/apps/kdevappwizard/templates
