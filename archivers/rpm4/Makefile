@@ -6,7 +6,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	4.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R}.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
@@ -15,8 +15,7 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The RPM Package Manager
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		nss3:${PORTSDIR}/security/nss \
-		lzma:${PORTSDIR}/archivers/xz
+		nss3:${PORTSDIR}/security/nss
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 
 OPTIONS=	PYTHON "Build Python rpm module" Off
@@ -89,6 +88,10 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rpmio_rpmsq.c
 .endif
 .if ${OSVERSION} < 700000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-lib_fs.c
+.endif
+
+.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
+LIB_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
 .endif
 
 post-patch:

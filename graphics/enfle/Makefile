@@ -7,6 +7,7 @@
 
 PORTNAME=	enfle
 PORTVERSION=	20101006
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://enfle.fennel.org/files/stable/
 
@@ -73,7 +74,7 @@ PLIST_SUB+=	AVCODEC="@comment "
 .endif
 
 .if (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505
-LIB_DEPENDS+=	lzma.0:${PORTSDIR}/archivers/xz
+LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
 .endif
 
 post-patch:
