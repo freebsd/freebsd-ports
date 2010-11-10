@@ -1,4 +1,6 @@
-MKLivestatus is a very simple and smart Nagios eventbroker module.
+MK Livestatus - a Nagios event broker module that allows quick,
+direct and comfortable access to your status data.
+
 Livestatus is concepted and tuned to reduce disk, memory and cpu loads
 caused by live-data processing on the Nagios system. Just as NDO,
 Livestatus makes use of the Nagios Event Broker API and loads a binary
@@ -6,5 +8,6 @@ module into the Nagios process. But other than NDO, Livestatus does not
 actively write out data e.g. to the disk. Instead, it opens a socket for
 external applications to connect to and fetch the current status
 information from Nagios.
+
 
 WWW: http://mathias-kettner.de/checkmk_livestatus.html
