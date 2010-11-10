@@ -700,10 +700,10 @@
 %%WWWDIR%%/uifx/src/modules/gmap/view/controls/LocationMarker.as
 %%WWWDIR%%/uifx/src/services-config.xml
 %%WWWDIR%%/uifx/src/shell.mxml
-@dirrm %%WWWDIR%%/var/tmpl/compile
-@dirrm %%WWWDIR%%/var/tmpl/cache
-@dirrm %%WWWDIR%%/var/tmpl
-@dirrm %%WWWDIR%%/var
+@dirrmtry %%WWWDIR%%/var/tmpl/compile
+@dirrmtry %%WWWDIR%%/var/tmpl/cache
+@dirrmtry %%WWWDIR%%/var/tmpl
+@dirrmtry %%WWWDIR%%/var
 @dirrm %%WWWDIR%%/uifx/src/modules/gmap/view/controls
 @dirrm %%WWWDIR%%/uifx/src/modules/gmap/view
 @dirrm %%WWWDIR%%/uifx/src/modules/gmap/mediator
@@ -723,7 +723,7 @@
 @dirrm %%WWWDIR%%/uifx/html-template/history
 @dirrm %%WWWDIR%%/uifx/html-template
 @dirrm %%WWWDIR%%/uifx
-@dirrm %%WWWDIR%%/share/var
+@dirrmtry %%WWWDIR%%/share/var
 @dirrmtry %%WWWDIR%%/share/userfiles/templates
 @dirrmtry %%WWWDIR%%/share/userfiles/styles
 @dirrmtry %%WWWDIR%%/share/userfiles/sounds

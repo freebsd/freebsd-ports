@@ -1,0 +1,22 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+	exit 0
+fi
+
+if [ -d %%WWWDIR%% ]; then
+    echo
+    echo "=================================================="
+    echo
+    echo " If you want remove nagvis permanently from you"
+    echo " system, execute following command:"
+    echo
+    echo "  # rm -rf %%WWWDIR%%"
+    echo
+    echo " Do not forget to cleanup your webserver config"
+    echo "=================================================="
+    echo
+fi
+
+exit 0
