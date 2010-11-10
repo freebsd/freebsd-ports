@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyxmpp
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	net-im python
 MASTER_SITES=	http://pyxmpp.jajcus.net/downloads/ \
 		CENKES http://jabberstudio.2nw.net/pyxmpp/
