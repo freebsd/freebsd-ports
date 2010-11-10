@@ -7,7 +7,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		5.6.5
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -33,6 +33,7 @@ OPTIONS=		AGG "Support for AGG image rendering (req: FreeType)" off \
 			POSTGIS "Support for PostGIS" off \
 			PHP "Support for MapScript/PHP" off \
 			PERL "Support for MapScript/PERL" off \
+			PYTHON "Support for MapScript/PYTHON" off \
 			WMS "Support for web map service server and client" off \
 			WFS "Support for web feature service (req: GDAL)" off \
 			MAPSERV "Install mapserv cgi interface" on \
@@ -112,6 +113,16 @@ PLIST_SUB+=		WITH_PERL=""
 PLIST_SUB+=		WITH_PERL="@comment "
 .endif
 
+.if defined(WITH_PYTHON)
+BUILD_DEPENDS+=		${LOCALBASE}/bin/python:${PORTSDIR}/lang/python26
+PLIST_SUB+=		WITH_PYTHON=""
+.include <../../Mk/bsd.python.mk>
+MAP_EGG=		MapScript-${PORTVERSION}-${PYTHON_VERSION:S/thon//}
+PLIST_SUB+=		MAP_EGG=${MAP_EGG}
+.else
+PLIST_SUB+=		WITH_PYTHON="@comment"
+.endif
+
 .if defined(WITH_CURL)
 LIB_DEPENDS+=		curl.6:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
@@ -149,12 +160,18 @@ do-install:
 	${MKDIR} ${LOCALBASE}/www/cgi-bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/mapserv ${LOCALBASE}/www/cgi-bin/mapserv
 .endif
+
 .if defined(WITH_PHP)
 	@${MKDIR} ${LOCALBASE}/${PHP_EXTENSION_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/mapscript/php3/php_mapscript.so ${LOCALBASE}/${PHP_EXTENSION_DIR}/
 .endif
+
 .if defined(WITH_PERL)
 	(cd ${WRKSRC}/mapscript/perl && make install)
+.endif
+
+.if defined(WITH_PYTHON)
+	(cd ${WRKSRC}/mapscript/python && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py install)
 .endif
 
 post-install:

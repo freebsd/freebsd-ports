@@ -17,3 +17,7 @@ bin/sortshp
 %%WITH_PHP%%%%PHP_EXTENSION_DIR%%/php_mapscript.so
 %%WITH_PHP%%@dirrmtry %%PHP_EXTENSION_DIR%%
 %%WITH_PHP%%@dirrmtry etc/php
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/mapscript.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/mapscript.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_mapscript.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/%%MAP_EGG%%.egg-info
