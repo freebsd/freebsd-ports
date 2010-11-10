@@ -1,7 +1,4 @@
 bin/config-edit
-bin/config-edit-dpkg-control
-bin/config-edit-dpkg-copyright
-bin/config-edit-popcon
 %%SITE_PERL%%/Config/Model.pm
 %%SITE_PERL%%/Config/Model/Annotation.pm
 %%SITE_PERL%%/Config/Model/AnyId.pm
@@ -24,6 +21,7 @@ bin/config-edit-popcon
 %%SITE_PERL%%/Config/Model/Instance.pm
 %%SITE_PERL%%/Config/Model/ListId.pm
 %%SITE_PERL%%/Config/Model/Loader.pm
+%%SITE_PERL%%/Config/Model/Manual/ModelCreationIntroduction.pod
 %%SITE_PERL%%/Config/Model/Node.pm
 %%SITE_PERL%%/Config/Model/ObjTreeScanner.pm
 %%SITE_PERL%%/Config/Model/Report.pm
@@ -42,7 +40,6 @@ bin/config-edit-popcon
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/Content.pl
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/License.pl
 %%SITE_PERL%%/Config/Model/models/PopCon.pl
-%%SITE_PERL%%/Config/Model/models/Fstab
 %%SITE_PERL%%/Config/Model/models/Fstab/UsbFsOptions.pl
 %%SITE_PERL%%/Config/Model/models/Fstab/FsLine.pl
 %%SITE_PERL%%/Config/Model/models/Fstab/SwapOptions.pl
@@ -60,5 +57,6 @@ bin/config-edit-popcon
 @dirrmtry %%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg
 @dirrmtry %%SITE_PERL%%/Config/Model/Backend/Debian
 @dirrmtry %%SITE_PERL%%/Config/Model/Backend
+@dirrmtry %%SITE_PERL%%/Config/Model/Manual
 @dirrmtry %%SITE_PERL%%/Config/Model
 @dirrmtry %%SITE_PERL%%/Config
