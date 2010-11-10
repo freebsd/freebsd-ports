@@ -6,19 +6,25 @@
 #
 
 PORTNAME=	xrdp
-PORTVERSION=	0.5.0.20090811cvs
-PORTREVISION=	1
+PORTVERSION=	0.6.0.20101009cvs
+#PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=	LOCAL/pav
+MASTER_SITES=	http://www.club.kyutech.ac.jp/~meta/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source Remote Desktop Protocol (RDP) server
 
+USE_XORG=	x11 xfixes
 USE_AUTOTOOLS=	autoconf:268:env automake:111:env libtool:22
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	xrdp
 
 CONFIGURE_ARGS=	--localstatedir=/var
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+INSTALL_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib/xrdp
 
 .if defined(WITH_DEBUG)
 CFLAGS+=	-DXRDP_DEBUG
