@@ -24,6 +24,10 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	needs customization and postconfiguration
 
+IGNORE=		has been unmaintained since 2001 and is unusable with dates after 2010 (see ports/150974)
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2010-12-31
+
 DOC_FILES=	README INSTALL INSTALL.NOSITEPERL TODO CHANGES COPYING
 SCRIPT_FILES=	calendar/index.pl calendar/optionform.pl calendar/pda.pl \
 	calendar/printable.pl calendar/submit.pl calendar/vcal.pl \
