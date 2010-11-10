@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	ldc
-DISTVERSION=	0.9.2r1655
+DISTVERSION=	0.9.2r1697
 CATEGORIES=	lang
 MASTER_SITES=	http://hybridsource.org/
 PKGNAMESUFFIX=	-devel
-DISTFILES=	ldc-0.9.2r1655.tar.bz2 tango-5525.tar.bz2
+DISTFILES=	ldc-0.9.2r1697.tar.bz2 tango-5599.tar.bz2
 
 MAINTAINER=	chromium@hybridsource.org
 COMMENT=	D frontend for llvm, with the Tango standard library
 
-BUILD_DEPENDS=	llvm>=2.7:${PORTSDIR}/devel/llvm
+BUILD_DEPENDS=	llvm>=2.8:${PORTSDIR}/devel/llvm
 LIB_DEPENDS=	config.9:${PORTSDIR}/devel/libconfig
-
-BROKEN=		does not build with llvm-2.8
 
 LICENSE_COMB=	multi
 LICENSE=	BSD ART10
@@ -26,7 +24,6 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
 USE_CMAKE=	2.6+
-CXXFLAGS+=	-DLLVM_REV=102413
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 PORTDOCS=	LICENSE readme.txt tango/
