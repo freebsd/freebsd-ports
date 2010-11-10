@@ -7,6 +7,7 @@
 
 PORTNAME=	tbb
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.threadingbuildingblocks.org/uploads/78/154/3.0/
 DISTNAME=	tbb30_018oss_src
@@ -14,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A library that provides thread building blocks
+
+LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64 i386 ia64
 ONLY_FOR_ARCHS_REASON=	has not been ported to this platform
