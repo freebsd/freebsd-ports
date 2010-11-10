@@ -10,8 +10,11 @@ PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_BUILD_NUMBER}
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk7/promoted/b${JDK_BUILD_NUMBER}/ \
 		https://jaxp.dev.java.net/files/documents/913/152561/:jaxp \
+		http://icedtea.classpath.org/download/drops/:jaxp \
 		https://jax-ws.dev.java.net/files/documents/4202/152532/:jaxws \
+		http://icedtea.classpath.org/download/drops/:jaxws \
 		https://jax-ws.dev.java.net/files/documents/4202/152336/:jaf \
+		http://icedtea.classpath.org/download/drops/:jaf \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,}
 DISTFILES=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} \
 		${JAXPFILE}:jaxp \
