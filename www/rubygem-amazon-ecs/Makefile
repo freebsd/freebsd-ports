@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amazon-ecs
-PORTVERSION=	0.5.7
+PORTVERSION=	1.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +15,8 @@ COMMENT=	A generic Amazon E-commerce REST API written in Ruby
 
 RUN_DEPENDS=	rubygem-hpricot>=0.4:${PORTSDIR}/www/rubygem-hpricot \
 		${RUBY_PKGNAMEPREFIX}hmac>=0.3.2:${PORTSDIR}/security/ruby-hmac
+
+LICENSE=	MIT
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
