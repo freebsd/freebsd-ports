@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	nagvis
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/NagVis%201.5/
 
 MAINTAINER=	derfi@vei.ru
 COMMENT=	NagVis is a visualization addon for Nagios
 
-RUN_DEPENDS=	ndo2db-3x:${PORTSDIR}/net-mgmt/ndoutils
-
 LICENSE=	GPLv2
 
-OPTIONS=	GRAPHVIZ "graphviz is needed for automaps" off
+OPTIONS=	MKLIVESTATUS 	"depend on mk-livestatus broker (preferred)" on \
+ 		NDO2DB 		"depend on ndo2db broker" off \
+		GRAPHVIZ	"graphviz is needed for automaps" off
 
 NO_BUILD=	yes
 USE_PHP=	gd gettext mbstring mysql session json pdo pdo_sqlite
@@ -29,10 +29,23 @@ DEFAULT_PHP_VER=5
 WWW_OWNER?=	${WWWOWN}
 WWW_GROUP?=	${WWWGRP}
 SUB_LIST+=	WWW_OWNER=${WWW_OWNER} WWW_GROUP=${WWW_GROUP}
-SUB_FILES+=	pkg-install
+SUB_FILES+=	pkg-install pkg-deinstall
+
+.if defined(WITH_NDO2DB)
+RUN_DEPENDS+=	ndo2db-3x:${PORTSDIR}/net-mgmt/ndoutils
+.endif
+
+.if defined(WITH_MKLIVESTATUS)
+RUN_DEPENDS+=	mk-livestatus>=0:${PORTSDIR}/net-mgmt/mk-livestatus
+.endif
 
 .if defined(WITH_GRAPHVIZ)
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
+.endif
+
+check-sanity:
+.if !defined(WITH_NDO2DB) && !defined(WITH_MKLIVESTATUS)
+IGNORE= please choose at least one nagios broker module
 .endif
 
 post-extract:
