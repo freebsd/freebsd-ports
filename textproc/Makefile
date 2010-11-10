@@ -1240,6 +1240,7 @@
     SUBDIR += tnef2txt
     SUBDIR += tokyodystopia
     SUBDIR += tr-aspell
+    SUBDIR += tralics
     SUBDIR += trang
     SUBDIR += translate-toolkit
     SUBDIR += tth
