@@ -49,6 +49,8 @@ BUILD_DEPENDS=		pg_config:${PORTSDIR}/databases/postgresql83-client
 
 GNU_CONFIGURE=		YES
 
+IGNORE=			does not work properly (see ports/144993)
+
 .if !defined(WITH_IODBC)
 WITH_UNIXODBC=	yes
 .endif
