@@ -65,6 +65,10 @@ bin/robocode
 %%DATADIR%%/javadoc/robocode/TeamRobot.html
 %%DATADIR%%/javadoc/robocode/TurnCompleteCondition.html
 %%DATADIR%%/javadoc/robocode/WinEvent.html
+%%DATADIR%%/javadoc/robocode/_AdvancedRadiansRobot.html
+%%DATADIR%%/javadoc/robocode/_AdvancedRobot.html
+%%DATADIR%%/javadoc/robocode/_Robot.html
+%%DATADIR%%/javadoc/robocode/_RobotBase.html
 %%DATADIR%%/javadoc/robocode/annotation/SafeStatic.html
 %%DATADIR%%/javadoc/robocode/annotation/package-frame.html
 %%DATADIR%%/javadoc/robocode/annotation/package-summary.html
@@ -142,14 +146,14 @@ bin/robocode
 %%DATADIR%%/javadoc/stylesheet.css
 %%DATADIR%%/libs/codesize-1.1.jar
 %%DATADIR%%/libs/picocontainer-2.6.jar
-%%DATADIR%%/libs/robocode.battle-1.7.2.1.jar
-%%DATADIR%%/libs/robocode.core-1.7.2.1.jar
-%%DATADIR%%/libs/robocode.host-1.7.2.1.jar
+%%DATADIR%%/libs/robocode.battle-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/robocode.core-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/robocode.host-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/robocode.jar
-%%DATADIR%%/libs/robocode.repository-1.7.2.1.jar
-%%DATADIR%%/libs/robocode.sound-1.7.2.1.jar
-%%DATADIR%%/libs/robocode.ui-1.7.2.1.jar
-%%DATADIR%%/libs/robocode.ui.editor-1.7.2.1.jar
+%%DATADIR%%/libs/robocode.repository-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/robocode.sound-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/robocode.ui-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/robocode.ui.editor-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/roborumble.jar
 %%DATADIR%%/license/epl-v10.html
 %%DATADIR%%/robocode.ico
@@ -165,6 +169,9 @@ bin/robocode
 %%DATADIR%%/robots/sample/Interactive.class
 %%DATADIR%%/robots/sample/Interactive.java
 %%DATADIR%%/robots/sample/Interactive.properties
+%%DATADIR%%/robots/sample/Interactive_v2$Direction.class
+%%DATADIR%%/robots/sample/Interactive_v2.class
+%%DATADIR%%/robots/sample/Interactive_v2.java
 %%DATADIR%%/robots/sample/MyFirstJuniorRobot.class
 %%DATADIR%%/robots/sample/MyFirstJuniorRobot.java
 %%DATADIR%%/robots/sample/MyFirstJuniorRobot.properties
@@ -229,6 +236,7 @@ bin/robocode
 %%DATADIR%%/robots/sampleteam/RobotColors.class
 %%DATADIR%%/robots/sampleteam/RobotColors.java
 %%DATADIR%%/templates/newjavafile.tpt
+%%DATADIR%%/templates/newjuniorrobot.tpt
 %%DATADIR%%/templates/newrobot.tpt
 %%DATADIR%%/versions.txt
 @dirrm %%DATADIR%%/templates

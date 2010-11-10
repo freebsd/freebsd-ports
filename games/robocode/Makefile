@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	robocode
-PORTVERSION=	1.7.2.1
+PORTVERSION=	1.7.2.2
 CATEGORIES=	games java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-setup
@@ -30,15 +30,16 @@ NO_BUILD=	yes
 
 INSTFILES=	battles javadoc license robocode.ico \
 		libs robots templates versions.txt
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-SUB_FILES=	robocode.sh
+SUB_FILES=	${PORTNAME}.sh
 
 do-install:
 	@cd ${WRKSRC} && \
 		${FIND} ${INSTFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \;
 	@cd ${WRKSRC} && \
 		${FIND} ${INSTFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-	@${INSTALL_SCRIPT} ${WRKDIR}/robocode.sh ${PREFIX}/bin/robocode
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
 
 post-install:
 	${MKDIR} -m a+rwx ${DATADIR}/compilers ${DATADIR}/config
