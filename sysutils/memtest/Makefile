@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memtest
-PORTVERSION=	4.2.0
+PORTVERSION=	4.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}er/old-versions/
 DISTNAME=	${PORTNAME}er-${PORTVERSION}
