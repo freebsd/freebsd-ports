@@ -89,6 +89,9 @@
 %%PYTHON_SITELIBDIR%%/pyxmpp/sasl/core.pyc
 %%PYTHON_SITELIBDIR%%/pyxmpp/sasl/digest_md5.py
 %%PYTHON_SITELIBDIR%%/pyxmpp/sasl/digest_md5.pyc
+%%PYTHON_SITELIBDIR%%/pyxmpp/sasl/external.py
+%%PYTHON_SITELIBDIR%%/pyxmpp/sasl/external.pyc
+%%PYTHON_SITELIBDIR%%/pyxmpp/sasl/external.pyo
 %%PYTHON_SITELIBDIR%%/pyxmpp/sasl/plain.py
 %%PYTHON_SITELIBDIR%%/pyxmpp/sasl/plain.pyc
 %%PYTHON_SITELIBDIR%%/pyxmpp/sasl/__init__.pyo
