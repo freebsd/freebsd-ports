@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	1.218
+PORTVERSION=	1.219
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -28,10 +28,7 @@ BUILD_DEPENDS+=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 
 PERL_MODBUILD=	5.8.0+
 
-MAN1=		config-edit.1 \
-		config-edit-dpkg-control.1 \
-		config-edit-dpkg-copyright.1 \
-		config-edit-popcon.1
+MAN1=		config-edit.1
 
 MAN3=		Config::Model.3 \
 		Config::Model::AnyId.3 \
@@ -49,6 +46,7 @@ MAN3=		Config::Model.3 \
 		Config::Model::Exception.3 Config::Model::HashId.3 \
 		Config::Model::IdElementReference.3 Config::Model::Instance.3 \
 		Config::Model::ListId.3 Config::Model::Loader.3 \
+		Config::Model::Manual::ModelCreationIntroduction.3 \
 		Config::Model::Node.3 Config::Model::ObjTreeScanner.3 \
 		Config::Model::Report.3 Config::Model::Searcher.3 \
 		Config::Model::SimpleUI.3 Config::Model::TermUI.3 \
