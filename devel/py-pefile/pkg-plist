@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/pefile.py
 %%PYTHON_SITELIBDIR%%/pefile.pyc
 %%PYTHON_SITELIBDIR%%/pefile.pyo
