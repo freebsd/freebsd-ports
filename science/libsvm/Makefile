@@ -7,6 +7,7 @@
 
 PORTNAME=	libsvm
 PORTVERSION=	3.00
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/ \
@@ -72,7 +73,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/svm-train ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/svm-predict ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/svm-scale ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/libsvm.so.2 ${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/svm.h ${PREFIX}/include/
+	${INSTALL_LIB} ${WRKSRC}/libsvm.so.2 ${PREFIX}/lib/
+	${LN} -sf ${PREFIX}/lib/libsvm.so.2 ${PREFIX}/lib/libsvm.so 
 	${MKDIR} ${DATADIR}
 	for f in ${TOOLS}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DATADIR}; \
