@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	xabacus
-PORTVERSION=	7.6.6
+PORTVERSION=	7.6.7
 CATEGORIES=	games
 MASTER_SITES=	http://www.tux.org/~bagleyd/abacus/ \
-		http://ftp.tux.org/pub/tux/bagleyd/xabacus/ \
-		SUNSITE/apps/math
+		http://ftp.tux.org/pub/tux/bagleyd/xabacus/
 
 MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	Abacus for X Window System
