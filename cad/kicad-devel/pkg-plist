@@ -5,7 +5,8 @@ bin/gerbview
 bin/kicad
 bin/minizip
 bin/pcbnew
-lib/kicad/plugins/netlist_form_pads-pcb
+bin/bitmap2component
+lib/kicad/plugins/netlist_form_pads-pcb.xsl
 share/applications/eeschema.desktop
 share/applications/kicad.desktop
 share/icons/hicolor/16x16/mimetypes/application-x-kicad-project.png
@@ -19,6 +20,13 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-project.svg
 share/mime/packages/kicad.xml
 share/mimelnk/application/x-kicad-project.desktop
 share/mimelnk/application/x-kicad-schematic.desktop
+%%DATADIR%%/demos/complex_hierarchy/ampli_ht.sch
+%%DATADIR%%/demos/complex_hierarchy/complex_hierarchy-cache.lib
+%%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.brd
+%%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.cmp
+%%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.net
+%%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.pro
+%%DATADIR%%/demos/complex_hierarchy/complex_hierarchy.sch
 %%DATADIR%%/demos/ecc83/ecc83-pp.brd
 %%DATADIR%%/demos/ecc83/ecc83-pp.cache.lib
 %%DATADIR%%/demos/ecc83/ecc83-pp.cmp
@@ -31,43 +39,46 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/demos/electric/electric.cache.lib
 %%DATADIR%%/demos/electric/electric.pro
 %%DATADIR%%/demos/electric/electric.sch
+%%DATADIR%%/demos/flat_hierarchy/flat_hierarchy-cache.lib
 %%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.brd
-%%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.cache.lib
 %%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.cmp
 %%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.net
 %%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.pro
 %%DATADIR%%/demos/flat_hierarchy/flat_hierarchy.sch
 %%DATADIR%%/demos/flat_hierarchy/pic_programmer.sch
 %%DATADIR%%/demos/flat_hierarchy/pic_sockets.sch
+%%DATADIR%%/demos/interf_u/image.lib
+%%DATADIR%%/demos/interf_u/image.mod
+%%DATADIR%%/demos/interf_u/interf_u-cache.lib
 %%DATADIR%%/demos/interf_u/interf_u.brd
-%%DATADIR%%/demos/interf_u/interf_u.cache.lib
 %%DATADIR%%/demos/interf_u/interf_u.cmp
 %%DATADIR%%/demos/interf_u/interf_u.net
 %%DATADIR%%/demos/interf_u/interf_u.pro
 %%DATADIR%%/demos/interf_u/interf_u.sch
+%%DATADIR%%/demos/interf_u/tux.bmp
 %%DATADIR%%/demos/microwave/microwave.brd
 %%DATADIR%%/demos/microwave/microwave.pro
 %%DATADIR%%/demos/microwave/shape1.txt
+%%DATADIR%%/demos/pic_programmer/pic_programmer-cache.lib
 %%DATADIR%%/demos/pic_programmer/pic_programmer.brd
-%%DATADIR%%/demos/pic_programmer/pic_programmer.cache.lib
 %%DATADIR%%/demos/pic_programmer/pic_programmer.cmp
 %%DATADIR%%/demos/pic_programmer/pic_programmer.net
 %%DATADIR%%/demos/pic_programmer/pic_programmer.pro
 %%DATADIR%%/demos/pic_programmer/pic_programmer.sch
 %%DATADIR%%/demos/pic_programmer/pic_sockets.sch
-%%DATADIR%%/demos/pspice/pspice.cache.lib
+%%DATADIR%%/demos/pspice/pspice-cache.lib
 %%DATADIR%%/demos/pspice/pspice.cir
 %%DATADIR%%/demos/pspice/pspice.pro
 %%DATADIR%%/demos/pspice/pspice.sch
+%%DATADIR%%/demos/sonde xilinx/sonde xilinx-cache.lib
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.brd
-%%DATADIR%%/demos/sonde xilinx/sonde xilinx.cache.lib
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.cmp
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.drl
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.net
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.pro
 %%DATADIR%%/demos/sonde xilinx/sonde xilinx.sch
+%%DATADIR%%/demos/test_xil_95108/carte_test-cache.lib
 %%DATADIR%%/demos/test_xil_95108/carte_test.brd
-%%DATADIR%%/demos/test_xil_95108/carte_test.cache.lib
 %%DATADIR%%/demos/test_xil_95108/carte_test.cmp
 %%DATADIR%%/demos/test_xil_95108/carte_test.net
 %%DATADIR%%/demos/test_xil_95108/carte_test.pro
@@ -79,42 +90,12 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/demos/video/muxdata.sch
 %%DATADIR%%/demos/video/pal-ntsc.sch
 %%DATADIR%%/demos/video/rams.sch
+%%DATADIR%%/demos/video/video-cache.lib
 %%DATADIR%%/demos/video/video.brd
-%%DATADIR%%/demos/video/video.cache.lib
 %%DATADIR%%/demos/video/video.cmp
 %%DATADIR%%/demos/video/video.net
 %%DATADIR%%/demos/video/video.pro
 %%DATADIR%%/demos/video/video.sch
-%%DATADIR%%/internat/ca/kicad.mo
-%%DATADIR%%/internat/ca/kicad.po
-%%DATADIR%%/internat/cs/kicad.mo
-%%DATADIR%%/internat/cs/kicad.po
-%%DATADIR%%/internat/de/kicad.mo
-%%DATADIR%%/internat/de/kicad.po
-%%DATADIR%%/internat/es/kicad.mo
-%%DATADIR%%/internat/es/kicad.po
-%%DATADIR%%/internat/fr/kicad.mo
-%%DATADIR%%/internat/fr/kicad.po
-%%DATADIR%%/internat/hu/kicad.mo
-%%DATADIR%%/internat/hu/kicad.po
-%%DATADIR%%/internat/it/kicad.mo
-%%DATADIR%%/internat/it/kicad.po
-%%DATADIR%%/internat/ko/kicad.mo
-%%DATADIR%%/internat/ko/kicad.po
-%%DATADIR%%/internat/nl/kicad.mo
-%%DATADIR%%/internat/nl/kicad.po
-%%DATADIR%%/internat/pl/kicad.mo
-%%DATADIR%%/internat/pl/kicad.po
-%%DATADIR%%/internat/pt/kicad.mo
-%%DATADIR%%/internat/pt/kicad.po
-%%DATADIR%%/internat/ru/kicad.mo
-%%DATADIR%%/internat/ru/kicad.po
-%%DATADIR%%/internat/sl/kicad.mo
-%%DATADIR%%/internat/sl/kicad.po
-%%DATADIR%%/internat/sv/kicad.mo
-%%DATADIR%%/internat/sv/kicad.po
-%%DATADIR%%/internat/zh_CN/kicad.mo
-%%DATADIR%%/internat/zh_CN/kicad.po
 %%DATADIR%%/library/74xx.dcm
 %%DATADIR%%/library/74xx.lib
 %%DATADIR%%/library/7segm_display.sym
@@ -250,6 +231,7 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/modules/led.brd
 %%DATADIR%%/modules/led.mdc
 %%DATADIR%%/modules/led.mod
+%%DATADIR%%/modules/libcms-bga.brd
 %%DATADIR%%/modules/libcms.brd
 %%DATADIR%%/modules/libcms.mdc
 %%DATADIR%%/modules/libcms.mod
@@ -1351,6 +1333,39 @@ share/mimelnk/application/x-kicad-schematic.desktop
 %%DATADIR%%/modules/valves.mod
 %%DATADIR%%/template/kicad.pro
 %%DOCSDIR%%/INSTALL.txt
+%%DOCSDIR%%/internat/CMakeLists.txt
+%%DOCSDIR%%/internat/ca/kicad.mo
+%%DOCSDIR%%/internat/ca/kicad.po
+%%DOCSDIR%%/internat/cs/kicad.mo
+%%DOCSDIR%%/internat/cs/kicad.po
+%%DOCSDIR%%/internat/de/kicad.mo
+%%DOCSDIR%%/internat/de/kicad.po
+%%DOCSDIR%%/internat/es/kicad.mo
+%%DOCSDIR%%/internat/es/kicad.po
+%%DOCSDIR%%/internat/fi/kicad.mo
+%%DOCSDIR%%/internat/fi/kicad.po
+%%DOCSDIR%%/internat/fr/kicad.mo
+%%DOCSDIR%%/internat/fr/kicad.po
+%%DOCSDIR%%/internat/hu/kicad.mo
+%%DOCSDIR%%/internat/hu/kicad.po
+%%DOCSDIR%%/internat/it/kicad.mo
+%%DOCSDIR%%/internat/it/kicad.po
+%%DOCSDIR%%/internat/ko/kicad.mo
+%%DOCSDIR%%/internat/ko/kicad.po
+%%DOCSDIR%%/internat/nl/kicad.mo
+%%DOCSDIR%%/internat/nl/kicad.po
+%%DOCSDIR%%/internat/pl/kicad.mo
+%%DOCSDIR%%/internat/pl/kicad.po
+%%DOCSDIR%%/internat/pt/kicad.mo
+%%DOCSDIR%%/internat/pt/kicad.po
+%%DOCSDIR%%/internat/ru/kicad.mo
+%%DOCSDIR%%/internat/ru/kicad.po
+%%DOCSDIR%%/internat/sl/kicad.mo
+%%DOCSDIR%%/internat/sl/kicad.po
+%%DOCSDIR%%/internat/sv/kicad.mo
+%%DOCSDIR%%/internat/sv/kicad.po
+%%DOCSDIR%%/internat/zh_CN/kicad.mo
+%%DOCSDIR%%/internat/zh_CN/kicad.po
 %%DOCSDIR%%/scripts/kicad-devel
 %%DOCSDIR%%/scripts/kicad-get-rss
 %%DOCSDIR%%/scripts/packagesrc.sh
@@ -1407,22 +1422,6 @@ share/mimelnk/application/x-kicad-schematic.desktop
 @dirrm %%DATADIR%%/modules/footprints_doc
 @dirrm %%DATADIR%%/modules
 @dirrm %%DATADIR%%/library
-@dirrm %%DATADIR%%/internat/zh_CN
-@dirrm %%DATADIR%%/internat/sv
-@dirrm %%DATADIR%%/internat/sl
-@dirrm %%DATADIR%%/internat/ru
-@dirrm %%DATADIR%%/internat/pt
-@dirrm %%DATADIR%%/internat/pl
-@dirrm %%DATADIR%%/internat/nl
-@dirrm %%DATADIR%%/internat/ko
-@dirrm %%DATADIR%%/internat/it
-@dirrm %%DATADIR%%/internat/hu
-@dirrm %%DATADIR%%/internat/fr
-@dirrm %%DATADIR%%/internat/es
-@dirrm %%DATADIR%%/internat/de
-@dirrm %%DATADIR%%/internat/cs
-@dirrm %%DATADIR%%/internat/ca
-@dirrm %%DATADIR%%/internat
 @dirrm %%DATADIR%%/demos/video
 @dirrm %%DATADIR%%/demos/test_xil_95108
 @dirrm %%DATADIR%%/demos/sonde xilinx
@@ -1433,8 +1432,26 @@ share/mimelnk/application/x-kicad-schematic.desktop
 @dirrm %%DATADIR%%/demos/flat_hierarchy
 @dirrm %%DATADIR%%/demos/electric
 @dirrm %%DATADIR%%/demos/ecc83
+@dirrm %%DATADIR%%/demos/complex_hierarchy
 @dirrm %%DATADIR%%/demos
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%/scripts/pcb-dr-adjust
 @dirrm %%DOCSDIR%%/scripts
+@dirrm %%DOCSDIR%%/internat/zh_CN
+@dirrm %%DOCSDIR%%/internat/sv
+@dirrm %%DOCSDIR%%/internat/sl
+@dirrm %%DOCSDIR%%/internat/ru
+@dirrm %%DOCSDIR%%/internat/pt
+@dirrm %%DOCSDIR%%/internat/pl
+@dirrm %%DOCSDIR%%/internat/nl
+@dirrm %%DOCSDIR%%/internat/ko
+@dirrm %%DOCSDIR%%/internat/it
+@dirrm %%DOCSDIR%%/internat/hu
+@dirrm %%DOCSDIR%%/internat/fr
+@dirrm %%DOCSDIR%%/internat/fi
+@dirrm %%DOCSDIR%%/internat/es
+@dirrm %%DOCSDIR%%/internat/de
+@dirrm %%DOCSDIR%%/internat/cs
+@dirrm %%DOCSDIR%%/internat/ca
+@dirrm %%DOCSDIR%%/internat
 @dirrm %%DOCSDIR%%

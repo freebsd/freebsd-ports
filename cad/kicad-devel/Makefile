@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		kicad
-DISTVERSION=    r${SVN_REV}
+DISTVERSION=    r${BZR_SRC_REV}
 PORTREVISION=	3
 CATEGORIES=		cad
 DIST_SUBDIR=		${PORTNAME}
@@ -66,24 +66,36 @@ RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
 .endif
 
 .if defined(BOOTSTRAP)
-SVN_REV!=       svn info https://kicad.svn.sourceforge.net/svnroot/kicad/trunk/kicad | ${GREP} Revision | cut -d' ' -f2
+BZR_SRC_REV!=        bzr revno lp:kicad
+BZR_LIB_REV!=        bzr revno lp:~kicad-lib-committers/kicad/library
+BZR_DOC_REV!=        bzr revno lp:~kicad-developers/kicad/doc
 .else
-.include "Makefile.svn_rev"
+.include "Makefile.bzr_rev"
 .endif
 
 .if defined(BOOTSTRAP)
+
+# Updating to new rev:
+# make BOOTSTRAP=YES do-fetch
+# make makesum && make && make install
+# make build-plist
+
 FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
+FETCH_DEPENDS+= bzr:${PORTSDIR}/devel/bazaar-ng
+
 do-fetch:
 	${MKDIR} ${WRKDIR}
-	svn export -r ${SVN_REV} \
-		https://kicad.svn.sourceforge.net/svnroot/kicad/trunk/kicad ${WRKSRC}
-	svn export -r ${SVN_REV} \
-		https://kicad.svn.sourceforge.net/svnroot/kicad/trunk/kicad-library ${WRKDIR}/kicad-library
+	${ECHO} ${WRKSRC} 
+	bzr export -r ${BZR_SRC_REV} ${WRKSRC} lp:kicad
+	bzr export -r ${BZR_LIB_REV} ${WRKDIR}/kicad-library lp:~kicad-lib-committers/kicad/library
+	bzr export -r ${BZR_DOC_REV} ${WRKDIR}/kicad-doc lp:~kicad-developers/kicad/doc
 	svn export \
 		http://svn.openmoko.org/trunk/gta02-core/kicad-patches ${WRKDIR}/kicad-patches
 	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 \
-		${DISTNAME} kicad-library kicad-patches
-	echo "SVN_REV=  ${SVN_REV}" > ${MASTERDIR}/Makefile.svn_rev
+		${DISTNAME} kicad-library kicad-doc kicad-patches
+	echo "BZR_SRC_REV=  ${BZR_SRC_REV}" > ${MASTERDIR}/Makefile.bzr_rev
+	echo "BZR_LIB_REV=  ${BZR_LIB_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
+	echo "BZR_DOC_REV=  ${BZR_DOC_REV}" >> ${MASTERDIR}/Makefile.bzr_rev
 .endif
 
 ki:
@@ -111,11 +123,14 @@ post-configure:
 	done
 
 pre-install:
-	echo "${DATADIR}, ${DOCSDIR}"
+	@echo "${DATADIR}, ${DOCSDIR}"
 
 post-install:
 .for subdir in library modules
 	${CP} -Rp ${WRKDIR}/kicad-library/${subdir} ${DATADIR}
+.endfor
+.for subdir in internat
+	${CP} -Rp ${WRKDIR}/kicad-doc/${subdir} ${DOCSDIR}
 .endfor
 
 PLIST_FILE_LIST=	bin/freeroute.jnlp \
@@ -125,6 +140,7 @@ PLIST_FILE_LIST=	bin/freeroute.jnlp \
 			bin/kicad \
 			bin/minizip \
 			bin/pcbnew \
+			bin/bitmap2component \
 			share/mimelnk/application/x-kicad-schematic.desktop \
 			share/mimelnk/application/x-kicad-project.desktop \
 			share/icons/hicolor/24x24/mimetypes/application-x-kicad-project.png \
