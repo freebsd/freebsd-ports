@@ -8,8 +8,7 @@
 PORTNAME=	wav2cdr
 PORTVERSION=	2.3.3
 CATEGORIES=	audio converters
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/sound/convert
+MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Converts WAV files into CDR audio file format
