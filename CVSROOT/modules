@@ -7150,6 +7150,7 @@ kdeutils4                       ports/misc/kdeutils4
 kdeutils4-printer-applet        ports/print/kdeutils4-printer-applet
 kdevelop                        ports/devel/kdevelop
 kdevelop-kde4                   ports/devel/kdevelop-kde4
+kdevelop-pg-qt                  ports/devel/kdevelop-pg-qt
 kdevelop-php                    ports/devel/kdevelop-php
 kdevelop-php-docs               ports/devel/kdevelop-php-docs
 kdevplatform                    ports/devel/kdevplatform
@@ -14024,6 +14025,7 @@ p5-System2                      ports/devel/p5-System2
 p5-T2                           ports/databases/p5-T2
 p5-TAP-Formatter-JUnit          ports/devel/p5-TAP-Formatter-JUnit
 p5-TAP-Harness-JUnit            ports/devel/p5-TAP-Harness-JUnit
+p5-Tail-Stat                    ports/sysutils/p5-Tail-Stat
 p5-Taint-Runtime                ports/devel/p5-Taint-Runtime
 p5-Tangram                      ports/databases/p5-Tangram
 p5-Task-Catalyst                ports/www/p5-Task-Catalyst
@@ -18038,6 +18040,7 @@ p5-syslogscan                   ports/sysutils/p5-SyslogScan
 p5-system2                      ports/devel/p5-System2
 p5-t2                           ports/databases/p5-T2
 p5-tagged                       ports/audio/p5-tagged
+p5-tail-stat                    ports/sysutils/p5-Tail-Stat
 p5-taint-runtime                ports/devel/p5-Taint-Runtime
 p5-tangram                      ports/databases/p5-Tangram
 p5-tap-formatter-junit          ports/devel/p5-TAP-Formatter-JUnit
