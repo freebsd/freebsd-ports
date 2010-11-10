@@ -7,6 +7,7 @@
 
 PORTNAME=	hso
 PORTVERSION=	20081023
+PORTREVISION=	1
 CATEGORIES=	comms kld
 MASTER_SITES=	http://www.shapeshifter.se/pub/hso/
 PKGNAMESUFFIX=	-kmod
@@ -14,6 +15,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Driver for Option HSDPA modem
+
+LICENSE=	BSD
 
 CONFLICTS=	uhso-kmod-[0-9]*
 
