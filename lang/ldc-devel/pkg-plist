@@ -83,7 +83,7 @@ include/d/tango/tango/core/rt/compiler/dmd/rt/qsort.d
 include/d/tango/tango/core/rt/compiler/dmd/rt/qsort2.alt
 include/d/tango/tango/core/rt/compiler/dmd/rt/switch_.d
 include/d/tango/tango/core/rt/compiler/dmd/rt/trace.d
-include/d/tango/tango/core/rt/compiler/dmd/std/intrinsic.di
+include/d/tango/tango/core/rt/compiler/dmd/std/intrinsic.d
 include/d/tango/tango/core/rt/compiler/dmd/typeinfo/ti_AC.d
 include/d/tango/tango/core/rt/compiler/dmd/typeinfo/ti_Acdouble.d
 include/d/tango/tango/core/rt/compiler/dmd/typeinfo/ti_Acfloat.d
@@ -121,91 +121,39 @@ include/d/tango/tango/core/rt/compiler/dmd/typeinfo/ti_void.d
 include/d/tango/tango/core/rt/compiler/dmd/typeinfo/ti_wchar.d
 include/d/tango/tango/core/rt/compiler/dmd/win32.mak
 include/d/tango/tango/core/rt/compiler/dmd/windows/deh.c
-include/d/tango/tango/core/rt/compiler/gdc/Makefile.am
-include/d/tango/tango/core/rt/compiler/gdc/Makefile.in
 include/d/tango/tango/core/rt/compiler/gdc/OBJDEFS.inc
-include/d/tango/tango/core/rt/compiler/gdc/aApply.d
-include/d/tango/tango/core/rt/compiler/gdc/aApplyR.d
-include/d/tango/tango/core/rt/compiler/gdc/aaA.d
-include/d/tango/tango/core/rt/compiler/gdc/acinclude.m4
-include/d/tango/tango/core/rt/compiler/gdc/aclocal.m4
-include/d/tango/tango/core/rt/compiler/gdc/adi.d
-include/d/tango/tango/core/rt/compiler/gdc/arraycast.d
-include/d/tango/tango/core/rt/compiler/gdc/arraycat.d
-include/d/tango/tango/core/rt/compiler/gdc/cast.d
-include/d/tango/tango/core/rt/compiler/gdc/cmain.d
-include/d/tango/tango/core/rt/compiler/gdc/cmath2.d
-include/d/tango/tango/core/rt/compiler/gdc/compiler.d
-include/d/tango/tango/core/rt/compiler/gdc/config.guess
-include/d/tango/tango/core/rt/compiler/gdc/config.h.in
-include/d/tango/tango/core/rt/compiler/gdc/config.sub
-include/d/tango/tango/core/rt/compiler/gdc/config/config-head
-include/d/tango/tango/core/rt/compiler/gdc/config/config-mid
-include/d/tango/tango/core/rt/compiler/gdc/config/config-tail
-include/d/tango/tango/core/rt/compiler/gdc/config/darwin8/frag-gen
-include/d/tango/tango/core/rt/compiler/gdc/config/darwin8/frag-math
-include/d/tango/tango/core/rt/compiler/gdc/config/darwin8/frag-unix
-include/d/tango/tango/core/rt/compiler/gdc/config/darwin9/frag-gen
-include/d/tango/tango/core/rt/compiler/gdc/config/darwin9/frag-math
-include/d/tango/tango/core/rt/compiler/gdc/config/darwin9/frag-unix
-include/d/tango/tango/core/rt/compiler/gdc/config/gen_config1.c
-include/d/tango/tango/core/rt/compiler/gdc/config/gen_math.c
-include/d/tango/tango/core/rt/compiler/gdc/config/gen_unix.c
-include/d/tango/tango/core/rt/compiler/gdc/config/ldfuncs
-include/d/tango/tango/core/rt/compiler/gdc/config/ldfuncs-darwin
-include/d/tango/tango/core/rt/compiler/gdc/config/ldfuncs-ppclinux
-include/d/tango/tango/core/rt/compiler/gdc/config/ldfuncs33
-include/d/tango/tango/core/rt/compiler/gdc/config/makestruct.h
-include/d/tango/tango/core/rt/compiler/gdc/config/mingw/frag-gen
-include/d/tango/tango/core/rt/compiler/gdc/config/mingw/frag-math
-include/d/tango/tango/core/rt/compiler/gdc/config/noldfuncs
-include/d/tango/tango/core/rt/compiler/gdc/config/noldfuncs33
-include/d/tango/tango/core/rt/compiler/gdc/config/nosqrtf
-include/d/tango/tango/core/rt/compiler/gdc/config/skyos/frag-gen
-include/d/tango/tango/core/rt/compiler/gdc/config/skyos/frag-math
-include/d/tango/tango/core/rt/compiler/gdc/config/skyos/frag-unix
-include/d/tango/tango/core/rt/compiler/gdc/config/sqrtf
-include/d/tango/tango/core/rt/compiler/gdc/config/unix-head
-include/d/tango/tango/core/rt/compiler/gdc/config/unix-mid
-include/d/tango/tango/core/rt/compiler/gdc/configure
-include/d/tango/tango/core/rt/compiler/gdc/configure.in
 include/d/tango/tango/core/rt/compiler/gdc/critical.c
-include/d/tango/tango/core/rt/compiler/gdc/deh.c
-include/d/tango/tango/core/rt/compiler/gdc/dgccmain2.d
-include/d/tango/tango/core/rt/compiler/gdc/fpmath.d
-include/d/tango/tango/core/rt/compiler/gdc/frag-ac.in
-include/d/tango/tango/core/rt/compiler/gdc/gcc/aix_float.h
 include/d/tango/tango/core/rt/compiler/gdc/gcc/builtins.di
-include/d/tango/tango/core/rt/compiler/gdc/gcc/cbridge_fdset.c
-include/d/tango/tango/core/rt/compiler/gdc/gcc/cbridge_math.c
 include/d/tango/tango/core/rt/compiler/gdc/gcc/cbridge_stdio.c
-include/d/tango/tango/core/rt/compiler/gdc/gcc/cbridge_time.c
-include/d/tango/tango/core/rt/compiler/gdc/gcc/configext.d
 include/d/tango/tango/core/rt/compiler/gdc/gcc/deh.d
 include/d/tango/tango/core/rt/compiler/gdc/gcc/fpmath.d
 include/d/tango/tango/core/rt/compiler/gdc/gcc/support.d
-include/d/tango/tango/core/rt/compiler/gdc/gcc/threadsem.d
 include/d/tango/tango/core/rt/compiler/gdc/gcc/unwind.d
-include/d/tango/tango/core/rt/compiler/gdc/genobj.d
-include/d/tango/tango/core/rt/compiler/gdc/install-sh
+include/d/tango/tango/core/rt/compiler/gdc/gcc/unwind_pe.d
 include/d/tango/tango/core/rt/compiler/gdc/invariant.d
-include/d/tango/tango/core/rt/compiler/gdc/libgdc.spec.in
-include/d/tango/tango/core/rt/compiler/gdc/lifetime.d
 include/d/tango/tango/core/rt/compiler/gdc/mars.h
-include/d/tango/tango/core/rt/compiler/gdc/memory.d
-include/d/tango/tango/core/rt/compiler/gdc/memory_dyld.c
-include/d/tango/tango/core/rt/compiler/gdc/memory_freebsd.c
-include/d/tango/tango/core/rt/compiler/gdc/memset.d
-include/d/tango/tango/core/rt/compiler/gdc/minit.asm
-include/d/tango/tango/core/rt/compiler/gdc/missing
 include/d/tango/tango/core/rt/compiler/gdc/monitor.c
-include/d/tango/tango/core/rt/compiler/gdc/obj.d
-include/d/tango/tango/core/rt/compiler/gdc/phobos-ver-syms.in
-include/d/tango/tango/core/rt/compiler/gdc/qsort2.d
-include/d/tango/tango/core/rt/compiler/gdc/qsortg.d
-include/d/tango/tango/core/rt/compiler/gdc/rundmain.d
+include/d/tango/tango/core/rt/compiler/gdc/object_.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/aApply.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/aApplyR.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/aaA.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/adi.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/arraybyte.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/arraycast.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/arraycat.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/arraydouble.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/arrayfloat.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/arrayint.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/arrayreal.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/arrayshort.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/cast_.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/cmain.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/dgccmain2.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/lifetime.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/memory.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/qsortg.d
+include/d/tango/tango/core/rt/compiler/gdc/rt/switch_.d
 include/d/tango/tango/core/rt/compiler/gdc/std/intrinsic.d
-include/d/tango/tango/core/rt/compiler/gdc/switch.d
 include/d/tango/tango/core/rt/compiler/gdc/typeinfo/ti_AC.d
 include/d/tango/tango/core/rt/compiler/gdc/typeinfo/ti_Acdouble.d
 include/d/tango/tango/core/rt/compiler/gdc/typeinfo/ti_Acfloat.d
@@ -457,6 +405,7 @@ include/d/tango/tango/stdc/posix/config.d
 include/d/tango/tango/stdc/posix/dirent.d
 include/d/tango/tango/stdc/posix/dlfcn.d
 include/d/tango/tango/stdc/posix/fcntl.d
+include/d/tango/tango/stdc/posix/grp.d
 include/d/tango/tango/stdc/posix/inttypes.d
 include/d/tango/tango/stdc/posix/langinfo.d
 include/d/tango/tango/stdc/posix/net/if_.d
@@ -742,11 +691,6 @@ include/d/tango/tango/util/uuid/Uuid.d
 @dirrm include/d/tango/tango/core/rt/compiler/gdc/std
 @dirrm include/d/tango/tango/core/rt/compiler/gdc/rt
 @dirrm include/d/tango/tango/core/rt/compiler/gdc/gcc
-@dirrm include/d/tango/tango/core/rt/compiler/gdc/config/skyos
-@dirrm include/d/tango/tango/core/rt/compiler/gdc/config/mingw
-@dirrm include/d/tango/tango/core/rt/compiler/gdc/config/darwin9
-@dirrm include/d/tango/tango/core/rt/compiler/gdc/config/darwin8
-@dirrm include/d/tango/tango/core/rt/compiler/gdc/config
 @dirrm include/d/tango/tango/core/rt/compiler/gdc
 @dirrm include/d/tango/tango/core/rt/compiler/dmd/windows
 @dirrm include/d/tango/tango/core/rt/compiler/dmd/typeinfo
