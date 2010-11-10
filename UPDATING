@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101110:
+  AFFECTS: users of databases/mysql55-server
+  AUTHOR: Alex Dupre <ale@FreeBSD.org>
+
+  If you are upgrading from a previous MySQL release, the server will exit
+  during startup after finding that the proxies_priv table is missing.
+  To create the table, start the server with the --skip-grant-tables
+  option to cause it to skip the normal grant table checks, then run
+  mysql_upgrade. Then stop the server and restart it normally.
+  You can do this by temporarly setting the following line in rc.conf:
+
+  mysql_args="--skip-grant-tables --skip-networking"
+
 20101108:
   AFFECTS: users of databases/py-bsddb3
   AUTHOR: wen@FreeBSD.org
