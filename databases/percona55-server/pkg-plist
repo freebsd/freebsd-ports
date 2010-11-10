@@ -28,6 +28,14 @@ lib/mysql/libvio.a
 %%PLUGINS%%lib/mysql/plugin/adt_null.la
 %%PLUGINS%%lib/mysql/plugin/adt_null.so
 %%PLUGINS%%lib/mysql/plugin/adt_null.so.0
+%%PLUGINS%%lib/mysql/plugin/auth_test_plugin.a
+%%PLUGINS%%lib/mysql/plugin/auth_test_plugin.la
+%%PLUGINS%%lib/mysql/plugin/auth_test_plugin.so
+%%PLUGINS%%lib/mysql/plugin/auth_test_plugin.so.0
+%%PLUGINS%%lib/mysql/plugin/auth.a
+%%PLUGINS%%lib/mysql/plugin/auth.la
+%%PLUGINS%%lib/mysql/plugin/auth.so
+%%PLUGINS%%lib/mysql/plugin/auth.so.0
 %%PLUGINS%%lib/mysql/plugin/ha_example.a
 %%PLUGINS%%lib/mysql/plugin/ha_example.la
 %%PLUGINS%%lib/mysql/plugin/ha_example.so
@@ -118,7 +126,7 @@ libexec/mysqld
 %%DATADIR%%/swedish/errmsg.sys
 %%DATADIR%%/ukrainian/errmsg.sys
 @dirrmtry include/mysql
-%%PLUGINS%%@dirrm lib/mysql/plugin
+@dirrmtry lib/mysql/plugin
 @dirrmtry lib/mysql
 @dirrm %%DATADIR%%/charsets
 @dirrm %%DATADIR%%/czech

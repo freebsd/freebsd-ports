@@ -10,6 +10,7 @@ bin/mysqlimport
 bin/mysqlshow
 bin/mysqlslap
 bin/mysqltest
+include/mysql/client_plugin.h
 include/mysql/decimal.h
 include/mysql/errmsg.h
 include/mysql/keycache.h
@@ -37,6 +38,8 @@ include/mysql/mysql_version.h
 include/mysql/mysqld_ername.h
 include/mysql/mysqld_error.h
 include/mysql/plugin_audit.h
+include/mysql/plugin_auth_common.h
+include/mysql/plugin_auth.h
 include/mysql/plugin_ftparser.h
 include/mysql/plugin.h
 include/mysql/probes_mysql.h
@@ -47,6 +50,8 @@ include/mysql/psi/psi.h
 include/mysql/services.h
 include/mysql/service_my_snprintf.h
 include/mysql/service_thd_alloc.h
+include/mysql/service_thd_wait.h
+include/mysql/service_thread_scheduler.h
 include/mysql/sql_common.h
 include/mysql/sql_state.h
 include/mysql/sslopt-case.h

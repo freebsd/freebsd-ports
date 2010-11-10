@@ -1,15 +1,6 @@
---- configure.am.orig	2010-09-17 22:48:48.000000000 +0200
-+++ configure.am	2010-09-27 16:39:47.000000000 +0200
-@@ -1011,6 +1011,8 @@
- MYSQL_BASE_VERSION
- MYSQL_NO_DASH_VERSION
- MYSQL_U_SCORE_VERSION
-+ndbcluster_includes
-+NDB_SCI_LIBS
- TEST_NDBCLUSTER
- MAKEINDEX
- PDFLATEX
-@@ -12717,7 +12719,7 @@
+--- configure.am.orig	2010-11-02 23:01:46.000000000 +0100
++++ configure.am	2010-11-10 16:31:42.000000000 +0100
+@@ -12722,7 +12722,7 @@
  _ACEOF
  
      case "$target_os" in
@@ -18,16 +9,7 @@
          HAVE_DTRACE_DASH_G="yes"
          ;;
        *)
-@@ -12750,6 +12752,8 @@
- NDB_VERSION_MINOR=`echo $MYSQL_NUMERIC_VERSION | cut -d. -f2`
- NDB_VERSION_BUILD=`echo $MYSQL_NUMERIC_VERSION | cut -d. -f3`
- NDB_VERSION_STATUS=`echo $VERSION | sed 's/^[-.0-9]*//'`
-+ndbcluster_includes=""
-+NDB_SCI_LIBS=""
- TEST_NDBCLUSTER=""
- 
- 
-@@ -25752,8 +25756,8 @@
+@@ -25432,8 +25432,8 @@
  # Some system specific hacks
  #
  
