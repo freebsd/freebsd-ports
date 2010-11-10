@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	separate
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.8
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SFJP \
-		http://people.freebsd.org/~gahr/distfiles/
-MASTER_SITE_SUBDIR=	separate-plus/46785
+MASTER_SITES=	SFJP
+MASTER_SITE_SUBDIR=	separate-plus/47873
 DISTNAME=	${PORTNAME}+-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -25,7 +24,7 @@ USE_ZIP=	yes
 USE_GMAKE=	yes
 
 BIN_TARGETS=	separate separate_import icc_colorspace
-L10N_TARGETS=	cs fr ja ko pl ru
+L10N_TARGETS=	cs es fr ja ko pl ru
 
 .for PLUGIN in ${BIN_TARGETS}
 PLIST_FILES+=	libexec/gimp/2.2/plug-ins/${PLUGIN}
@@ -40,7 +39,7 @@ PORTEXAMPLES=	qproof.scm qexport.scm
 MAKE_ENV+=	TARGETS="${BIN_TARGETS}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|make|${GMAKE}|; s|lib/gimp/2.0|libexec/gimp/2.2|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's| make| ${GMAKE}|; s|lib/gimp/2.0|libexec/gimp/2.2|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|$$(PREFIX)|${PREFIX}|g' ${WRKSRC}/Makefile ${WRKSRC}/po/Makefile
 
 post-install:
