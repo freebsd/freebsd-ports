@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/IPV4/Range/Parse/.packlist
+%%SITE_PERL%%/Data/IPV4/Range/Parse.pm
+%%SITE_PERL%%/Data/IPV4/Range/Parse.pod
+@dirrmtry %%SITE_PERL%%/Data/IPV4/Range
+@dirrmtry %%SITE_PERL%%/Data/IPV4
+@dirrmtry %%SITE_PERL%%/Data
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/IPV4/Range/Parse
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/IPV4/Range
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/IPV4
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data

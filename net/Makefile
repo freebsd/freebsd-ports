@@ -500,6 +500,7 @@
     SUBDIR += p5-Crypt-DH-GMP
     SUBDIR += p5-Cisco-IPPhone
     SUBDIR += p5-Daemon-Generic
+    SUBDIR += p5-Data-IPV4-Range-Parse
     SUBDIR += p5-EasyTCP
     SUBDIR += p5-Event-tcp
     SUBDIR += p5-File-Rsync
