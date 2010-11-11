@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	meld
-PORTVERSION=	1.3.3
+PORTVERSION=	1.4.0
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 
@@ -18,12 +18,19 @@ OPTIONS=	PYGNOMEDESKTOP "Code syntax hilighting (many dependencies)" off
 USE_BZIP2=	yes
 USE_GNOME=	pygnome2
 USE_PYTHON=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	prefix=${PREFIX}
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes
 LICENSE=	GPLv2
+
+.if defined(WITHOUT_NLS)
+EXTRA_PATCHES=	${FILESDIR}/extra-Makefile-without_nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 post-patch:
 .for file in Makefile
