@@ -556,6 +556,7 @@
     SUBDIR += p5-File-DirCompare
     SUBDIR += p5-File-Log
     SUBDIR += p5-File-Next
+    SUBDIR += p5-File-Signature
     SUBDIR += p5-File-Stat-Bits
     SUBDIR += p5-File-Which
     SUBDIR += p5-Filesys-Df
