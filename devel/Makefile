@@ -2620,6 +2620,7 @@
     SUBDIR += pinba_engine
     SUBDIR += pinstall
     SUBDIR += pipestatus
+    SUBDIR += pire
     SUBDIR += pkg-config
     SUBDIR += plan9port
     SUBDIR += pmake

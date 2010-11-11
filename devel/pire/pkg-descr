@@ -1,0 +1,23 @@
+This is PIRE, Perl Incompatible Regular Expressions library.
+
+This library is aimed at checking a huge amount of text against
+relatively many regular expressions. Roughly speaking, it can just
+check whether given text maches the certain regexp, but can do it
+really fast (more than 400 MB/s on our hardware is common). Even
+more, multiple regexps can be combined together, giving capability
+to check the text against apx.10 regexps in a single pass (and
+mantaining the same speed).
+
+Since Pire examines each character only once, without any lookaheads
+or rollbacks, spending about five machine instructions per each
+character, it can be used even in realtime tasks.
+
+On the other hand, Pire has very limited functionality (compared
+to other regexp libraries). Pire does not have any Perlish conditional
+regexps, lookaheads & backtrackings, greedy/nongreedy matches;
+neither has it any capturing facilities.
+
+Pire was developed in Yandex (http://company.yandex.ru/) as a part
+of its web crawler.
+
+WWW:	https://github.com/dprokoptsev/pire
