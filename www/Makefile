@@ -443,6 +443,7 @@
     SUBDIR += mod_auth_kerb
     SUBDIR += mod_auth_kerb2
     SUBDIR += mod_auth_ldap
+    SUBDIR += mod_auth_mellon
     SUBDIR += mod_auth_mysql
     SUBDIR += mod_auth_mysql2
     SUBDIR += mod_auth_mysql_another
