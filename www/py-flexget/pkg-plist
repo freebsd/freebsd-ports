@@ -89,6 +89,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_csv.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_csv.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_csv.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input_find.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input_find.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/input_find.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_generate.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_generate.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/input_generate.pyo
