@@ -6,57 +6,44 @@
 #
 
 PORTNAME=	commons-dbcp
-PORTVERSION=	1.2.2
+PORTVERSION=	1.4
 CATEGORIES=	java databases
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-DIST_SUBDIR=	jakarta
 
-MAINTAINER=	toha@toha.org.ua
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	The DBCP Component
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
-		${JAVAJARDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections \
-		${JAVAJARDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool
-
-BROKEN=		does not build unless jakarta-commons-collections is compiled with jdk15
+BUILD_DEPENDS=	${JAVALIBDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool \
+		${JAVALIBDIR}/jta.jar:${PORTSDIR}/java/jta
+RUN_DEPENDS=	${JAVALIBDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool \
+		${JAVALIBDIR}/jta.jar:${PORTSDIR}/java/jta
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4 1.5
+JAVA_VERSION=	1.4+
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
-ANT?=		${LOCALBASE}/bin/ant
-.if defined(NOPORTDOCS)
-ANT_TARGET=	build-jar
-.else
-ANT_TARGET=	build-jar javadoc
-PORTDOCS=	*
+USE_ANT=	yes
+MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
+ALL_TARGET=	build-jar
+.if !defined(NOPORTDOCS)
+ALL_TARGET+=	javadoc
 .endif
-JAVASHAREDIR=	${PREFIX}/share/java
-JARDIR=		${JAVASHAREDIR}/classes
-JARFILE=	${PORTNAME}.jar
-DESTJARFILE=	${PORTNAME}.jar
-PLIST_FILES+=	%%JAVAJARDIR%%/${DESTJARFILE}
 
-post-patch:
-	@${CP} ${WRKSRC}/LICENSE.txt ${WRKSRC}/../LICENSE
+PORTDOCS=	*
 
-do-build:
-	@cd ${WRKSRC} && \
-		${SETENV} JAVA_HOME=${JAVA_HOME} ANT_INCLUDE_SHARED_JARS=YES \
-			${ANT} ${ANT_TARGET}
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
 do-install:
-	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${DESTJARFILE}..."
-	@${CP} ${WRKSRC}/dist/${JARFILE} ${JARDIR}/${DESTJARFILE}
+	@${ECHO} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
+	@${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}.jar ${JAVAJARDIR}/
 	@${ECHO} " [ DONE ]"
-
 .if !defined(NOPORTDOCS)
 	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
-	@${CP} -r ${WRKSRC}/dist/docs/api/* ${DOCSDIR}
+	@cd ${WRKSRC}/dist/docs && ${FIND} api \
+		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
 	@${ECHO} " [ DONE ]"
 .endif
 
