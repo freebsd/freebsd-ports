@@ -1,9 +1,6 @@
-# ex:ts=8
-# Ports collection makefile for:	ssltunnel-server
+# Ports collection Makefile for:	ssltunnel-server
 # Date created:			June 10, 2003
 # Whom:				at@rominet.net
-#
-# $Id: Makefile,v 1.3 2003/09/21 16:20:44 thivillon Exp $
 #
 # $FreeBSD$
 #
@@ -32,6 +29,9 @@ post-patch:
 		${WRKSRC}/server/main.c \
 		${WRKSRC}/server/pppwho.c \
 		${WRKSRC}/server/sessions.c
+	@${REINPLACE_CMD} -e 's^sbin/pppd^sbin/ppp^g' ${WRKSRC}/server/users
+	@${AWK} '{print}/ppp/ { print "args -direct" }' \
+		${WRKSRC}/server/users > ${WRKSRC}/server/users.new
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -40,6 +40,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/LISEZ-MOI ${DOCSDIR}
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/server/pppserver.sh ${PREFIX}/etc/rc.d/ssltunnel.sh.sample
-	${INSTALL_DATA} ${WRKSRC}/server/users ${PREFIX}/etc/ssltunnel/users.sample
+	${INSTALL_DATA} ${WRKSRC}/server/users.new ${PREFIX}/etc/ssltunnel/users.sample
+	@${CAT} ${PKGMESSAGE} | ${SED} "s|PREFIX|${PREFIX}|g"
 
 .include <bsd.port.post.mk>
