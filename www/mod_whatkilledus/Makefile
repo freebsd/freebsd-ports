@@ -17,6 +17,7 @@ MAINTAINER=	fw@moov.de
 COMMENT=	Logs a report when a child process crashes
 
 MAKE_JOBS_SAFE=	yes
+MANUAL_PACKAGE_BUILD=	yes
 
 USE_APACHE=	20+
 AP_FAST_BUILD=	YES
