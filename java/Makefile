@@ -125,6 +125,7 @@
     SUBDIR += jomp
     SUBDIR += jrosetta
     SUBDIR += jsdk
+    SUBDIR += jta
     SUBDIR += jtiger
     SUBDIR += jump
     SUBDIR += junit
