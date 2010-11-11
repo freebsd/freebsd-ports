@@ -92,7 +92,6 @@ bin/tex2lyx
 %%DATADIR%%/doc/clipart/labelQt4.png
 %%DATADIR%%/doc/clipart/macrobox.png
 %%DATADIR%%/doc/clipart/macrouse.png
-%%DATADIR%%/doc/clipart/mbox.png
 %%DATADIR%%/doc/clipart/mobius.eps
 %%DATADIR%%/doc/clipart/platypus.eps
 %%DATADIR%%/doc/clipart/referenceQt4.png
@@ -236,6 +235,7 @@ bin/tex2lyx
 %%DATADIR%%/examples/Braille.lyx
 %%DATADIR%%/examples/CV-image.eps
 %%DATADIR%%/examples/CV-image.png
+%%DATADIR%%/examples/FeynmanDiagrams.lyx
 %%DATADIR%%/examples/Foils.lyx
 %%DATADIR%%/examples/ItemizeBullets.lyx
 %%DATADIR%%/examples/Literate.lyx
@@ -300,6 +300,7 @@ bin/tex2lyx
 %%DATADIR%%/examples/fa/splash.lyx
 %%DATADIR%%/examples/fr/AlignementDecimal.lyx
 %%DATADIR%%/examples/fr/Braille.lyx
+%%DATADIR%%/examples/fr/FeynmanDiagrams.lyx
 %%DATADIR%%/examples/fr/Foils.lyx
 %%DATADIR%%/examples/fr/ListesPuces.lyx
 %%DATADIR%%/examples/fr/exemple-powerdot.lyx
@@ -335,6 +336,7 @@ bin/tex2lyx
 %%DATADIR%%/examples/ja/xyfigure.png
 %%DATADIR%%/examples/ja/xypic.lyx
 %%DATADIR%%/examples/landslide.lyx
+%%DATADIR%%/examples/lilypond.lyx
 %%DATADIR%%/examples/linguistics.lyx
 %%DATADIR%%/examples/listerrors.lyx
 %%DATADIR%%/examples/modernCV.lyx
@@ -1124,6 +1126,7 @@ bin/tex2lyx
 %%DATADIR%%/layouts/broadway.layout
 %%DATADIR%%/layouts/chess.layout
 %%DATADIR%%/layouts/cl2emult.layout
+%%DATADIR%%/layouts/customHeadersFooters.module
 %%DATADIR%%/layouts/db_lyxmacros.inc
 %%DATADIR%%/layouts/db_stdcharstyles.inc
 %%DATADIR%%/layouts/db_stdclass.inc
@@ -1141,6 +1144,7 @@ bin/tex2lyx
 %%DATADIR%%/layouts/docbook.layout
 %%DATADIR%%/layouts/doublecol-new.layout
 %%DATADIR%%/layouts/dtk.layout
+%%DATADIR%%/layouts/ectaart.layout
 %%DATADIR%%/layouts/egs.layout
 %%DATADIR%%/layouts/elsart.layout
 %%DATADIR%%/layouts/elsarticle.layout
@@ -1155,6 +1159,7 @@ bin/tex2lyx
 %%DATADIR%%/layouts/figs-within-sections.module
 %%DATADIR%%/layouts/foils.layout
 %%DATADIR%%/layouts/foottoend.module
+%%DATADIR%%/layouts/frletter.layout
 %%DATADIR%%/layouts/g-brief.layout
 %%DATADIR%%/layouts/g-brief2.layout
 %%DATADIR%%/layouts/hanging.module
@@ -1176,6 +1181,8 @@ bin/tex2lyx
 %%DATADIR%%/layouts/kluwer.layout
 %%DATADIR%%/layouts/latex8.layout
 %%DATADIR%%/layouts/letter.layout
+%%DATADIR%%/layouts/lettre.layout
+%%DATADIR%%/layouts/lilypond.module
 %%DATADIR%%/layouts/linguistics.module
 %%DATADIR%%/layouts/literate-article.layout
 %%DATADIR%%/layouts/literate-book.layout
@@ -1252,6 +1259,7 @@ bin/tex2lyx
 %%DATADIR%%/layouts/theorems-bytype.module
 %%DATADIR%%/layouts/theorems-chap-bytype.module
 %%DATADIR%%/layouts/theorems-chap.module
+%%DATADIR%%/layouts/theorems-named.module
 %%DATADIR%%/layouts/theorems-order.inc
 %%DATADIR%%/layouts/theorems-proof-std.inc
 %%DATADIR%%/layouts/theorems-proof.inc
@@ -1276,6 +1284,9 @@ bin/tex2lyx
 %%DATADIR%%/lyx2lyx/lyx2lyx_lang.py
 %%DATADIR%%/lyx2lyx/lyx2lyx_lang.pyc
 %%DATADIR%%/lyx2lyx/lyx2lyx_lang.pyo
+%%DATADIR%%/lyx2lyx/lyx2lyx_tools.py
+%%DATADIR%%/lyx2lyx/lyx2lyx_tools.pyc
+%%DATADIR%%/lyx2lyx/lyx2lyx_tools.pyo
 %%DATADIR%%/lyx2lyx/lyx2lyx_version.py
 %%DATADIR%%/lyx2lyx/lyx2lyx_version.pyc
 %%DATADIR%%/lyx2lyx/lyx2lyx_version.pyo
@@ -1333,6 +1344,9 @@ bin/tex2lyx
 %%DATADIR%%/lyx2lyx/test_parser_tools.py
 %%DATADIR%%/lyx2lyx/test_parser_tools.pyc
 %%DATADIR%%/lyx2lyx/test_parser_tools.pyo
+%%DATADIR%%/lyx2lyx/unicode_symbols.py
+%%DATADIR%%/lyx2lyx/unicode_symbols.pyc
+%%DATADIR%%/lyx2lyx/unicode_symbols.pyo
 %%DATADIR%%/scripts/TeXFiles.py
 %%DATADIR%%/scripts/TeXFiles.pyc
 %%DATADIR%%/scripts/TeXFiles.pyo
@@ -1364,6 +1378,9 @@ bin/tex2lyx
 %%DATADIR%%/scripts/fig_copy.py
 %%DATADIR%%/scripts/fig_copy.pyc
 %%DATADIR%%/scripts/fig_copy.pyo
+%%DATADIR%%/scripts/include_bib.py
+%%DATADIR%%/scripts/include_bib.pyc
+%%DATADIR%%/scripts/include_bib.pyo
 %%DATADIR%%/scripts/layout2layout.py
 %%DATADIR%%/scripts/layout2layout.pyc
 %%DATADIR%%/scripts/layout2layout.pyo
@@ -1371,6 +1388,9 @@ bin/tex2lyx
 %%DATADIR%%/scripts/legacy_lyxpreview2ppm.pyc
 %%DATADIR%%/scripts/legacy_lyxpreview2ppm.pyo
 %%DATADIR%%/scripts/listerrors
+%%DATADIR%%/scripts/lyxpreview-lytex2bitmap.py
+%%DATADIR%%/scripts/lyxpreview-lytex2bitmap.pyc
+%%DATADIR%%/scripts/lyxpreview-lytex2bitmap.pyo
 %%DATADIR%%/scripts/lyxpreview-platex2bitmap.py
 %%DATADIR%%/scripts/lyxpreview-platex2bitmap.pyc
 %%DATADIR%%/scripts/lyxpreview-platex2bitmap.pyo
@@ -1380,6 +1400,16 @@ bin/tex2lyx
 %%DATADIR%%/scripts/lyxpreview_tools.py
 %%DATADIR%%/scripts/lyxpreview_tools.pyc
 %%DATADIR%%/scripts/lyxpreview_tools.pyo
+%%DATADIR%%/scripts/lyxsweave.R
+%%DATADIR%%/scripts/prefs2prefs.py
+%%DATADIR%%/scripts/prefs2prefs.pyc
+%%DATADIR%%/scripts/prefs2prefs.pyo
+%%DATADIR%%/scripts/prefs2prefs_lfuns.py
+%%DATADIR%%/scripts/prefs2prefs_lfuns.pyc
+%%DATADIR%%/scripts/prefs2prefs_lfuns.pyo
+%%DATADIR%%/scripts/prefs2prefs_prefs.py
+%%DATADIR%%/scripts/prefs2prefs_prefs.pyc
+%%DATADIR%%/scripts/prefs2prefs_prefs.pyo
 %%DATADIR%%/scripts/tex_copy.py
 %%DATADIR%%/scripts/tex_copy.pyc
 %%DATADIR%%/scripts/tex_copy.pyo
@@ -1400,9 +1430,11 @@ bin/tex2lyx
 %%DATADIR%%/templates/de_beamer-conference-ornate-20min.lyx
 %%DATADIR%%/templates/dinbrief.lyx
 %%DATADIR%%/templates/docbook_article.lyx
+%%DATADIR%%/templates/ectaart.lyx
 %%DATADIR%%/templates/elsarticle.lyx
 %%DATADIR%%/templates/es_beamer-conference-ornate-20min.lyx
 %%DATADIR%%/templates/fr_beamer-conference-ornate-20min.lyx
+%%DATADIR%%/templates/frletter.lyx
 %%DATADIR%%/templates/g-brief-de.lyx
 %%DATADIR%%/templates/g-brief-en.lyx
 %%DATADIR%%/templates/g-brief2.lyx
@@ -1414,6 +1446,7 @@ bin/tex2lyx
 %%DATADIR%%/templates/koma-letter2.lyx
 %%DATADIR%%/templates/latex8.lyx
 %%DATADIR%%/templates/letter.lyx
+%%DATADIR%%/templates/lettre.lyx
 %%DATADIR%%/templates/revtex.lyx
 %%DATADIR%%/templates/revtex4.lyx
 %%DATADIR%%/templates/slides.lyx
@@ -1423,6 +1456,7 @@ bin/tex2lyx
 %%DATADIR%%/templates/svmult_author.lyx
 %%DATADIR%%/templates/svmult_editor.lyx
 %%DATADIR%%/templates/thesis/Acknowledgments.lyx
+%%DATADIR%%/templates/thesis/Appendix.lyx
 %%DATADIR%%/templates/thesis/Summary.lyx
 %%DATADIR%%/templates/thesis/alpha.bst
 %%DATADIR%%/templates/thesis/chapter-1.lyx
