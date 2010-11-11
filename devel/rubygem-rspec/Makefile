@@ -12,6 +12,8 @@ MASTER_SITES=	RG
 MAINTAINER=	romanbsd@yahoo.com
 COMMENT=	Behaviour Driven Development in Ruby
 
+PORTSCOUT=	limit:^1
+
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
