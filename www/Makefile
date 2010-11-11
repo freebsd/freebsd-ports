@@ -460,6 +460,7 @@
     SUBDIR += mod_authnz_external
     SUBDIR += mod_authz_unixgroup
     SUBDIR += mod_backhand
+    SUBDIR += mod_backtrace
     SUBDIR += mod_bandwidth
     SUBDIR += mod_bf
     SUBDIR += mod_blosxom

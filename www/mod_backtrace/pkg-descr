@@ -1,0 +1,24 @@
+mod_backtrace is an experimental module for Apache httpd 2.x which
+collects backtraces when a child process crashes.  Currently it is
+implemented only on Linux and FreeBSD, but other platforms could be
+supported in the future.
+
+Requirements: Apache httpd >= 2.0.49 must be built with the 
+--enable-exception-hook configure option and mod_so enabled.
+
+Activating mod_backtrace:
+
+  1. Load it like any other DSO:
+	LoadModule backtrace_module modules/mod_backtrace.so
+
+  2. Enable exception hooks for modules like mod_backtrace:
+	EnableExceptionHook On
+
+  3. Choose where backtrace information should be written.
+     If you want backtraces from crashes to be reported some place other
+     than the error log, use the BacktraceLog directive to specify a
+     fully-qualified filename for the log to which backtraces will be
+     written.  Note that the web server user id (e.g., "nobody") must
+     be able to create or append to this log file, as the log file is
+
+WWW: http://people.apache.org/~trawick/exception_hook.html
