@@ -43,6 +43,8 @@ PKG_MESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}
 
+MANUAL_PACKAGE_BUILD=	needs threaded perl
+
 OPTIONS=	GNUTAR "use GNU tar" on
 
 .include <bsd.port.pre.mk>
