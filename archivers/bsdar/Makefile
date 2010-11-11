@@ -11,7 +11,7 @@ MASTER_SITES=	http://people.freebsd.org/~kaiw/distfiles/
 PKGNAMEPREFIX=	bsd-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BSD-licensed replacement of the ar utility
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -20,7 +20,7 @@ MAN1=		ar.1 ranlib.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700055 || ${OSVERSION} >= 900012
+.if ${OSVERSION} < 700055 || ${OSVERSION} >= 801500
 IGNORE=		does not compile
 .endif
 
