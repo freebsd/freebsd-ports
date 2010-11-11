@@ -24,4 +24,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gsm --without-pulseaudio --without-alsa
 USE_LDCONFIG=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000 && ${ARCH} == "amd64"
+BROKEN=		does not build
+.endif
+
+.include <bsd.port.post.mk>
