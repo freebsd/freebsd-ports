@@ -3062,6 +3062,7 @@
     SUBDIR += rubygem-columnize
     SUBDIR += rubygem-configuration
     SUBDIR += rubygem-crack
+    SUBDIR += rubygem-daemon_controller
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-deeptest
     SUBDIR += rubygem-deprecated
