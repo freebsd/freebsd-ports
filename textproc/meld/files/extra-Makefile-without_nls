@@ -1,0 +1,10 @@
+--- Makefile.orig	2010-10-04 19:00:55.000000000 +0200
++++ Makefile	2010-10-04 19:01:41.000000000 +0200
+@@ -94,7 +94,6 @@
+ 		$(DESTDIR)$(sharedir)/icons/hicolor/48x48/apps/meld.png
+ 	install -m 644 data/icons/48x48/meld.svg \
+ 		$(DESTDIR)$(sharedir)/icons/hicolor/scalable/apps/meld.svg
+-	$(MAKE) -C po install
+ 	$(MAKE) -C help install
+ 
+ meld.desktop: data/meld.desktop.in
