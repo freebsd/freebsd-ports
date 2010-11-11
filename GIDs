@@ -119,6 +119,7 @@ _iodined:*:353:
 httptunnel:*:361:
 ldap:*:389:
 tiarra:*:398:
+uhub:*:411:
 drweb:*:426:
 callweaver:*:444:
 courier:*:465:
