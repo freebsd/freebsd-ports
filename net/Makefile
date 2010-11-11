@@ -644,6 +644,7 @@
     SUBDIR += p5-Net-Telnet
     SUBDIR += p5-Net-Telnet-Netscreen
     SUBDIR += p5-Net-TiVo
+    SUBDIR += p5-Net-Todoist
     SUBDIR += p5-Net-Traceroute
     SUBDIR += p5-Net-Traceroute-PurePerl
     SUBDIR += p5-Net-Traceroute6
