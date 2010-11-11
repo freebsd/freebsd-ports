@@ -7,7 +7,7 @@
 
 PORTNAME=	uhub
 PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.extatic.org/downloads/uhub/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -19,6 +19,10 @@ USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 
 USE_RC_SUBR=	uhub.sh
+USERS=		uhub
+GROUPS=		uhub
+SHAREGRP=	uhub
+SHAREMODE=	640
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	${WRKSRC}/GNUmakefile
@@ -36,15 +40,18 @@ LDFLAGS+=	-L${OPENSSLLIB}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/uhub/|${PREFIX}&|' ${WRKSRC}/doc/uhub.conf
+	@${REINPLACE_CMD} -e 's|/etc/uhub/|${PREFIX}&|' ${WRKSRC}/src/uhub.h
 
-post-install:
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/uhub ${PREFIX}/bin/uhub
+	@${MKDIR} ${PREFIX}/etc/uhub
 	@${INSTALL_DATA} ${WRKSRC}/doc/uhub.conf ${PREFIX}/etc/uhub/uhub.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/doc/users.conf ${PREFIX}/etc/uhub/users.conf.sample
-	@if [ -f ${PREFIX}/etc/uhub/motd.txt ]; then \
-		${TOUCH} ${PREFIX}/etc/uhub/motd.txt.sample ; \
-	fi
-	@if [ -f ${PREFIX}/etc/uhub/rules.txt ]; then \
-		${TOUCH} ${PREFIX}/etc/uhub/rules.txt.sample ; \
-	fi
+	@${INSTALL_DATA} /dev/null ${PREFIX}/etc/uhub/motd.txt.sample
+	@${INSTALL_DATA} /dev/null ${PREFIX}/etc/uhub/rules.txt.sample
+.for i in uhub.conf users.conf motd.txt rules.txt
+	@[ ! -f ${PREFIX}/etc/uhub/${i} ] \
+	&& cp -p ${PREFIX}/etc/uhub/${i}.sample ${PREFIX}/etc/uhub/${i}
+.endfor
 
 .include <bsd.port.post.mk>
