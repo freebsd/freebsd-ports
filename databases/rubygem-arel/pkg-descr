@@ -3,4 +3,4 @@ Active Resource. Rich support for attributes, callbacks,
 validations, observers, serialization, internationalization, 
 and testing.
 
-WWW: http://github.com/rails/arel
+WWW: https://github.com/rails/arel
