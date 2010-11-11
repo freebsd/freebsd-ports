@@ -1,17 +1,21 @@
-%%GNOME_KEYRING%%%%PYTHON_SITELIBDIR%%/gnome_keyring.so
-%%KDE_KWALLET%%%%PYTHON_SITELIBDIR%%/kde_kwallet.so
 %%PYTHON_SITELIBDIR%%/keyring/__init__.py
 %%PYTHON_SITELIBDIR%%/keyring/__init__.pyc
 %%PYTHON_SITELIBDIR%%/keyring/__init__.pyo
 %%PYTHON_SITELIBDIR%%/keyring/backend.py
 %%PYTHON_SITELIBDIR%%/keyring/backend.pyc
 %%PYTHON_SITELIBDIR%%/keyring/backend.pyo
+%%PYTHON_SITELIBDIR%%/keyring/backends/__init__.py
+%%PYTHON_SITELIBDIR%%/keyring/backends/__init__.pyc
+%%PYTHON_SITELIBDIR%%/keyring/backends/__init__.pyo
 %%PYTHON_SITELIBDIR%%/keyring/core.py
 %%PYTHON_SITELIBDIR%%/keyring/core.pyc
 %%PYTHON_SITELIBDIR%%/keyring/core.pyo
 %%PYTHON_SITELIBDIR%%/keyring/getpassbackend.py
 %%PYTHON_SITELIBDIR%%/keyring/getpassbackend.pyc
 %%PYTHON_SITELIBDIR%%/keyring/getpassbackend.pyo
+%%PYTHON_SITELIBDIR%%/keyring/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/keyring/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/keyring/tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/keyring/tests/test_backend.py
 %%PYTHON_SITELIBDIR%%/keyring/tests/test_backend.pyc
 %%PYTHON_SITELIBDIR%%/keyring/tests/test_backend.pyo
@@ -27,6 +31,7 @@
 %%PYTHON_SITELIBDIR%%/keyring/util/escape.py
 %%PYTHON_SITELIBDIR%%/keyring/util/escape.pyc
 %%PYTHON_SITELIBDIR%%/keyring/util/escape.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/keyring/backends
 @dirrm %%PYTHON_SITELIBDIR%%/keyring/tests
 @dirrm %%PYTHON_SITELIBDIR%%/keyring/util
 @dirrm %%PYTHON_SITELIBDIR%%/keyring

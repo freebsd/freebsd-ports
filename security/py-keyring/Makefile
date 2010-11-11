@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keyring
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,7 @@ LATEST_LINK=	py-${PORTNAME}
 USE_KDE4=	#
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
+WANT_GNOME=	yes
 
 OPTIONS=	GNOME_KEYRING "GNOME Keyring backend" Off \
 		KDE_KWALLET "KDE KWallet backend" Off
@@ -28,30 +29,11 @@ OPTIONS=	GNOME_KEYRING "GNOME Keyring backend" Off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GNOME_KEYRING)
-LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
-PLIST_SUB+=	GNOME_KEYRING=""
-.else
-PLIST_SUB+=	GNOME_KEYRING="@comment "
+USE_GNOME+=	pygnomedesktop
 .endif
 
 .if defined(WITH_KDE_KWALLET)
-PLIST_SUB+=	KDE_KWALLET=""
-USE_KDE4+=	kdelibs
-.else
-PLIST_SUB+=	KDE_KWALLET="@comment "
-.endif
-
-post-patch:
-.if !defined(WITH_GNOME_KEYRING)
-	@${REINPLACE_CMD} -e 's|exts\.append(gnome_keychain_module)|#&|' \
-		${WRKSRC}/extensions.py
-.endif
-.if defined(WITH_KDE_KWALLET)
-	@${REINPLACE_CMD} -e 's|kde-config|${KDE4_PREFIX}/bin/kde4-config|' \
-		${WRKSRC}/extensions.py
-.else
-	@${REINPLACE_CMD} -e 's|exts\.append(kde_kwallet_module)|#&|' \
-		${WRKSRC}/extensions.py
+USE_KDE4+=	pykde4
 .endif
 
 .include <bsd.port.post.mk>
