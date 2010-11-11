@@ -1,0 +1,7 @@
+This perl library uses perl5 objects to assist in determining whether a
+file's contents or attributes have changed. It maintains several pieces
+of information about the file: a digest (currently only MD5 is
+supported), its inode number, its mode, the uid of its owner, the gid of
+its group owner, and its last modification time.
+
+WWW: http://search.cpan.org/dist/File-Signature/
