@@ -1,0 +1,43 @@
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/commands.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/commands.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/commands.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/info.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/info.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/info.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/maptree.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/maptree.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/maptree.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/pseudonyms.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/pseudonyms.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/pseudonyms.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/rebase.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/rebase.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/rebase.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/test_blackbox.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/test_blackbox.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/test_blackbox.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/test_maptree.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/test_maptree.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/test_maptree.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/test_pseudonyms.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/test_pseudonyms.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/test_pseudonyms.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/test_rebase.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/test_rebase.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/test_rebase.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/test_upgrade.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/test_upgrade.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests/test_upgrade.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/upgrade.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/upgrade.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/upgrade.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite/tests
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/rewrite
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib
