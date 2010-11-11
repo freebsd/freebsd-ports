@@ -24,11 +24,17 @@ start_cmd="cruisecontrolrb_start"
 stop_cmd="cruisecontrolrb_stop"
 
 cruisecontrolrb_start() {
-  set -x
     ${command} start ${command_args}
 }
 cruisecontrolrb_stop() {
     kill $(cat $pidfile)
+    ## also stop the builders
+    cd %%PREFIX%%/www/${name}/tmp/pids/builders/
+    for builder in $(ls); do 
+        kill $(cat $builder)
+        rm ${builder}
+    }
+    done
 }
 
 load_rc_config $name
