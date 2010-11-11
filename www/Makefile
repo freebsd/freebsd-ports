@@ -563,6 +563,7 @@
     SUBDIR += mod_vhost_ldap
     SUBDIR += mod_vhs
     SUBDIR += mod_webkit
+    SUBDIR += mod_whatkilledus
     SUBDIR += mod_wsgi
     SUBDIR += mod_wsgi3
     SUBDIR += mod_xmlns
