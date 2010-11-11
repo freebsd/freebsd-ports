@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	gosa
-PORTVERSION=	2.6.5
-PORTREVISION=	1
-DISTVERSIONPREFIX=	complete-
+PORTVERSION=	2.6.10
+DISTVERSIONPREFIX=	combined-
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://oss.gonicus.de/pub/gosa/ \
 		http://oss.gonicus.de/pub/gosa/archive/
@@ -49,6 +48,7 @@ post-patch:
 .endfor
 
 	${MV} -f ${WRKSRC}/contrib/gosa.conf.5 ${WRKSRC}
+	${FIND} ${WRKSRC} -type f -name '*.orig' -exec ${RM} -f {} +
 
 do-install:
 	${MKDIR} ${WWWDIR}
