@@ -4,8 +4,10 @@
 #
 # $FreeBSD$
 
+# XXX: datamapper requires exact version ~>
 PORTNAME=	stringex
-PORTVERSION=	1.2.0
+PORTVERSION=	1.1.0
+PORTEPOCH=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
