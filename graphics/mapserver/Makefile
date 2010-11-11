@@ -120,7 +120,7 @@ PLIST_SUB+=		WITH_PYTHON=""
 MAP_EGG=		MapScript-${PORTVERSION}-${PYTHON_VERSION:S/thon//}
 PLIST_SUB+=		MAP_EGG=${MAP_EGG}
 .else
-PLIST_SUB+=		WITH_PYTHON="@comment"
+PLIST_SUB+=		WITH_PYTHON="@comment "
 .endif
 
 .if defined(WITH_CURL)
