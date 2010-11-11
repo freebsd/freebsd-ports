@@ -74,6 +74,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard25.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard26.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard27.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/postcard28.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard3.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard4.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard5.jpg
@@ -188,7 +189,9 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/links.shtml
 %%PORTDOCS%%%%DOCSDIR%%/news.shtml
 %%PORTDOCS%%%%DOCSDIR%%/reference/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/bc_s.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/classes.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/closed.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/doxygen.css
 %%PORTDOCS%%%%DOCSDIR%%/reference/doxygen.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/form_0.png
@@ -272,6 +275,9 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/reference/namespacemembers_func.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/namespacemembers_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/namespaces.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/nav_f.png
+%%PORTDOCS%%%%DOCSDIR%%/reference/nav_h.png
+%%PORTDOCS%%%%DOCSDIR%%/reference/open.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/ref_box3d.jpg
 %%PORTDOCS%%%%DOCSDIR%%/reference/ref_cone3d.jpg
 %%PORTDOCS%%%%DOCSDIR%%/reference/ref_cut.jpg
@@ -302,9 +308,10 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/reference/structcimg__library_1_1CImgException.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/structcimg__library_1_1CImgList-members.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/structcimg__library_1_1CImgList.html
-%%PORTDOCS%%%%DOCSDIR%%/reference/tab_b.gif
-%%PORTDOCS%%%%DOCSDIR%%/reference/tab_l.gif
-%%PORTDOCS%%%%DOCSDIR%%/reference/tab_r.gif
+%%PORTDOCS%%%%DOCSDIR%%/reference/tab_a.png
+%%PORTDOCS%%%%DOCSDIR%%/reference/tab_b.png
+%%PORTDOCS%%%%DOCSDIR%%/reference/tab_h.png
+%%PORTDOCS%%%%DOCSDIR%%/reference/tab_s.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/tabs.css
 %%PORTDOCS%%%%DOCSDIR%%/screenshots.shtml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/CImg_demo.cpp
