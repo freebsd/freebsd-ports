@@ -1,0 +1,12 @@
+Fast scalable ip range aggregation and summary tool kit. Find
+intersections across multiple lists of IP ranges, fast.
+
+Although similar in functionality to Net::CIDR::Compare, Net::Netmask
+and NetAddr::IP, Net::IP::RangeCompare is a completely range driven ip
+management and evaluation tool allowing more flexibility and
+scalability when dealing with the somewhat organic nature of IP-Ranges.
+
+If you have a large number of ipv4 ranges and need to inventory lists
+of ranges for intersections, this is the Module for you!
+
+WWW:	http://search.cpan.org/dist/Net-IP-RangeCompare/
