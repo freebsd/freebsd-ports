@@ -10,7 +10,7 @@
 
 PORTNAME=	sbcl
 PORTVERSION=	1.0.43.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R} \
@@ -228,8 +228,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/output/sbcl.core ${SBCL_HOME}/
 .for MOD in ${CONTRIB_MODULES}
 	${MKDIR} ${SBCL_HOME}/${MOD}
-	${INSTALL_DATA} ${WRKSRC}/contrib/${MOD}/*.fasl ${SBCL_HOME}/${MOD}/
 	${INSTALL_DATA} ${WRKSRC}/contrib/${MOD}/*.lisp ${SBCL_HOME}/${MOD}/
+	${INSTALL_DATA} ${WRKSRC}/contrib/${MOD}/*.fasl ${SBCL_HOME}/${MOD}/
 	(if test -f ${WRKSRC}/contrib/${MOD}/${MOD}.asd; then ${INSTALL_DATA} \
 	    ${WRKSRC}/contrib/${MOD}/${MOD}.asd ${SBCL_HOME}/${MOD}/; fi)
 .endfor
