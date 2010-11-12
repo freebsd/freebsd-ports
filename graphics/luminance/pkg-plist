@@ -1,33 +1,64 @@
-bin/qtpfsgui
-share/applications/qtpfsgui.desktop
-share/pixmaps/qtpfsgui.png
-share/icons/hicolor/32x32/apps/qtpfsgui.png
+bin/luminance
+share/applications/luminance.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/html/dcraw.html
-%%PORTDOCS%%%%DOCSDIR%%/html/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/html/hints.html
-%%PORTDOCS%%%%DOCSDIR%%/html/images/batch-1.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/copy_exif.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/mainwin.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/projectiveTransformationDialog.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/raw_conversion.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/resize.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/snap-qt4_4.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/snap-qt4_5.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/snap-qt4_6.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/tonemapdialog.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/manual.html
-%%DATADIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/help/en/README
+%%PORTDOCS%%%%DOCSDIR%%/help/en/additional.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/basics.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/contributing.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/contributing_donating.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/contributing_programming.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/contributing_testing.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/contributing_translating.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/copying_exif.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/creating_hdr.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/creating_hdr_cli.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/creating_hdr_interactive.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/dcraw.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/editing_hdr.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/external.png
+%%PORTDOCS%%%%DOCSDIR%%/help/en/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/features.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/hints.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/images/batch-tmo.png
+%%PORTDOCS%%%%DOCSDIR%%/help/en/images/copy-exif.png
+%%PORTDOCS%%%%DOCSDIR%%/help/en/images/mainwin.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/help/en/images/not-translated-menu-item.png
+%%PORTDOCS%%%%DOCSDIR%%/help/en/images/projectiveTransformationDialog.png
+%%PORTDOCS%%%%DOCSDIR%%/help/en/images/resize.png
+%%PORTDOCS%%%%DOCSDIR%%/help/en/images/tonemapdialog.jpg
+%%PORTDOCS%%%%DOCSDIR%%/help/en/images/translated-menu-item.png
+%%PORTDOCS%%%%DOCSDIR%%/help/en/index.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/menu.xml
+%%PORTDOCS%%%%DOCSDIR%%/help/en/news.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/prefs.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/prefs_hdr.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/prefs_tonemapping.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/prefs_tools.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/prefs_ui.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/projective_transformation.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/style.css
+%%PORTDOCS%%%%DOCSDIR%%/help/en/tmap_ref.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/tmap_ref_drago.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/tmap_ref_durand.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/tmap_ref_mantiuk06.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/tonemapping.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/tonemapping_batch.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/tonemapping_cli.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/tonemapping_interactive.html
+%%PORTDOCS%%%%DOCSDIR%%/help/en/workflow.html
+%%PORTDOCS%%%%DOCSDIR%%/help/js/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/help/js/jquery.jtabs.pack.js
+share/icons/hicolor/32x32/apps/luminance.png
 %%DATADIR%%/i18n/lang_cs.qm
 %%DATADIR%%/i18n/lang_de.qm
 %%DATADIR%%/i18n/lang_es.qm
 %%DATADIR%%/i18n/lang_fr.qm
-%%DATADIR%%/i18n/lang_hu.qm
-%%DATADIR%%/i18n/lang_id.qm
 %%DATADIR%%/i18n/lang_it.qm
 %%DATADIR%%/i18n/lang_pl.qm
 %%DATADIR%%/i18n/lang_ru.qm
@@ -38,7 +69,10 @@ share/icons/hicolor/32x32/apps/qtpfsgui.png
 @dirrmtry share/icons/hicolor/32x32
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/help/js
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/help/img
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/help/en/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/help/en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/help
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications

@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	qtpfsgui
-PORTVERSION=	1.9.3
-PORTREVISION=	5
+PORTNAME=	luminance
+DISTVERSION=	2.0.1-1
 CATEGORIES=	graphics
-MASTER_SITES=	SF
+MASTER_SITES=	SF/qtpfsgui/luminance/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-v${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	goffredo@gmail.com
 COMMENT=	A graphical user interface that provides a workflow for HDR imaging
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
@@ -19,55 +19,36 @@ LIB_DEPENDS=	exiv2.9:${PORTSDIR}/graphics/exiv2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		fftw3f.5:${PORTSDIR}/math/fftw3-float
+		fftw3f.5:${PORTSDIR}/math/fftw3-float \
+		gsl.15:${PORTSDIR}/math/gsl
 
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui imageformats \
-		linguist_build moc_build qmake_build rcc_build uic_build
-MAKE_ENV+=	LOCALSOFT=${LOCALBASE}
+QT_COMPONENTS=	gui xml webkit imageformats_run linguist_build \
+		moc_build qmake_build rcc_build uic_build
+QMAKE_ARGS=	PREFIX=${PREFIX} DOCDIR=${DOCSDIR} I18NDIR=${DATADIR}/i18n
 MAKE_JOBS_SAFE=	yes
-INSTALL_TARGET=	install_target install_menu install_icon install_i18n
 INSTALLS_ICONS=	yes
 
 LRELEASE=	${QT_PREFIX}/bin/lrelease-qt4
 
-.if !defined(NOPORTOOCS)
-INSTALL_TARGET+=install_htmls
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e '/^QMAKE_CXXFLAGS/d ; \
-		 s|PREFIX =.*$$|PREFIX = ${PREFIX}|g' ${WRKSRC}/project.pro
-.for file in src/MainWindow/mainWindow.cpp \
-	src/Preferences/preferencesDialog.cpp \
-	src/TransplantExif/transplant.cpp
-	@${REINPLACE_CMD} -e 's|/usr/share/qtpfsgui|${DOCSDIR}|g ; \
-		 s|/usr/local/share/qtpfsgui|${DATADIR}|g' ${WRKSRC}/${file}
-.endfor
+	cd ${WRKSRC}/src && ${REINPLACE_CMD} \
+		-e 's|/usr/share/luminance|${DOCSDIR}|g' \
+		-e 's|/usr/local/share/luminance|${DATADIR}|g' \
+		MainWindow/MainWindow.cpp \
+		Preferences/PreferencesDialog.cpp \
+		TonemappingWindow/TonemappingWindow.cpp \
+		TransplantExif/TransplantExifDialog.cpp
+	${REINPLACE_CMD} -e 's|%%HELPDIR%%|${DOCSDIR}|g' \
+		${WRKSRC}/src/HelpBrowser/LuminancePaths.cpp
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e '/INSTALL/s,help,,' \
+		-e '/INSTALL/s,docs,,' \
+		${WRKSRC}/project.pro
+.endif
 
 do-configure:
 	@${LRELEASE} ${WRKSRC}/project.pro
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -spec ${QMAKESPEC}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/qtpfsgui ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/qtpfsgui.desktop ${PREFIX}/share/applications
-	@${MKDIR} ${PREFIX}/share/icons/hicolor/32x32/apps
-	${INSTALL_DATA} ${WRKSRC}/images/qtpfsgui.png \
-		${PREFIX}/share/icons/hicolor/32x32/apps
-	@${LN} -sf ${PREFIX}/share/icons/hicolor/32x32/apps/qtpfsgui.png \
-		${PREFIX}/share/pixmaps/qtpfsgui.png
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DATADIR}
-	@${MKDIR} ${DATADIR}/i18n
-	${INSTALL_DATA} ${WRKSRC}/i18n/*.qm ${DATADIR}/i18n
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc_file in AUTHORS Changelog README TODO
-	${INSTALL_DATA} ${WRKSRC}/${doc_file} ${DOCSDIR}
-.endfor
-	@(cd ${WRKSRC}; ${COPYTREE_SHARE} html ${DOCSDIR})
-.endif
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKE_ARGS} ${QMAKEFLAGS}
 
 .include <bsd.port.mk>
