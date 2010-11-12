@@ -7,7 +7,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		5.6.5
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -26,10 +26,11 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=		AGG "Support for AGG image rendering (req: FreeType)" off \
 			TIFF "Support for TIFF (but not GeoTIFF) files" off \
-			MING "Support for Macromedia Flash output" off \
 			PDF "Support for PDF output via pdflib" off \
 			GDAL "Support for a number of input raster formats" off \
 			GEOS "Use GEOS engine where possible" off \
+			MING "Support for Macromedia Flash output" off \
+			MYGIS "Support for MyGIS" off \
 			POSTGIS "Support for PostGIS" off \
 			PHP "Support for MapScript/PHP" off \
 			PERL "Support for MapScript/PERL" off \
@@ -90,6 +91,11 @@ LIB_DEPENDS+=		geos.0:${PORTSDIR}/graphics/geos
 CONFIGURE_ARGS+=	--with-geos=${LOCALBASE}/bin/geos-config
 .endif
 
+.if defined(WITH_MYGIS)
+USE_MYSQL=		YES
+CONFIGURE_ARGS+=	--with-mygis=${LOCALBASE}/bin/mysql_config
+.endif
+
 .if defined(WITH_POSTGIS)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libpgport.a:${PORTSDIR}/databases/postgresql82-server
 CONFIGURE_ARGS+=	--with-postgis=${LOCALBASE}/bin/pg_config
@@ -145,6 +151,12 @@ CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 PROG_FILES=		legend scalebar shp2img shp2pdf shptree shptreetst shptreevis sortshp
+
+post-patch:
+.if defined(WITH_MING)
+	${REINPLACE_CMD} -e 's#with_ming/include#with_ming/include/ming#g' \
+		${WRKSRC}/configure
+.endif
 
 post-build:
 .if defined(WITH_PERL)
