@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	pgtcl
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	databases tcl
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/2835/:src
 DISTNAME=	${PORTNAME}${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1545/:src
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	TCL extension for accessing a PostgreSQL server (PGTCL-NG)
+
+LICENSE=	BSD
 
 USE_TCL=	yes
 USE_PGSQL=	yes
@@ -24,8 +25,8 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 .if !defined(NOPORTDOCS)
 EXTRACT_ONLY=	${_DISTFILES:M*tar.gz}
-DISTFILES+=	pgtcldocs-20070115.zip:doc
-MASTER_SITES+=	http://pgfoundry.org/frs/download.php/1228/:doc
+DISTFILES+=	pgtcldocs-20101010.zip:doc
+MASTER_SITES+=	http://pgfoundry.org/frs/download.php/2836/:doc
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 .endif
 
