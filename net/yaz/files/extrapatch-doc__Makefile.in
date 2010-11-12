@@ -1,0 +1,22 @@
+--- ./doc/Makefile.in.orig	2010-11-12 20:17:48.634411873 +0300
++++ ./doc/Makefile.in	2010-11-12 20:28:51.973149234 +0300
+@@ -264,7 +264,6 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-SUBDIRS = common
+ XMLFILES = bookinfo.xml introduction.xml installation.xml \
+  indexdata.xml \
+  asn.xml tools.xml odr.xml comstack.xml server.xml license.xml \
+@@ -729,9 +728,9 @@
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA install-man
++install-data-am: install-man
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
++	$(MAKE) $(AM_MAKEFLAGS)
+ install-dvi: install-dvi-recursive
+ 
+ install-dvi-am:
