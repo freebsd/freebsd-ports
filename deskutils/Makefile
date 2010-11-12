@@ -116,6 +116,7 @@
     SUBDIR += hebcal
     SUBDIR += helpviewer
     SUBDIR += horde-hermes
+    SUBDIR += horde-klutz
     SUBDIR += horde-kronolith
     SUBDIR += horde-mnemo
     SUBDIR += horde-nag
