@@ -1331,6 +1331,7 @@ bzr-git                         ports/devel/bzr-git
 bzr-grep                        ports/devel/bzr-grep
 bzr-gtk                         ports/devel/bzr-gtk
 bzr-loom                        ports/devel/bzr-loom
+bzr-rewrite                     ports/devel/bzr-rewrite
 bzr-svn                         ports/devel/bzr-svn
 bzrtools                        ports/devel/bzrtools
 c-a-i-r                         ports/graphics/c-a-i-r
@@ -6833,6 +6834,7 @@ jspacker                        ports/www/jspacker
 jspice3                         ports/cad/jspice3
 jspwiki                         ports/www/jspwiki
 jstrack                         ports/science/jstrack
+jta                             ports/java/jta
 jtag                            ports/devel/jtag
 jtans                           ports/games/jtans
 jtiger                          ports/java/jtiger
@@ -9442,6 +9444,7 @@ mod_auth_imap2                  ports/www/mod_auth_imap2
 mod_auth_kerb                   ports/www/mod_auth_kerb
 mod_auth_kerb2                  ports/www/mod_auth_kerb2
 mod_auth_ldap                   ports/www/mod_auth_ldap
+mod_auth_mellon                 ports/www/mod_auth_mellon
 mod_auth_mysql                  ports/www/mod_auth_mysql
 mod_auth_mysql2                 ports/www/mod_auth_mysql2
 mod_auth_mysql_another          ports/www/mod_auth_mysql_another
@@ -9459,6 +9462,7 @@ mod_authn_sasl                  ports/www/mod_authn_sasl
 mod_authnz_external             ports/www/mod_authnz_external
 mod_authz_unixgroup             ports/www/mod_authz_unixgroup
 mod_backhand                    ports/www/mod_backhand
+mod_backtrace                   ports/www/mod_backtrace
 mod_bandwidth                   ports/www/mod_bandwidth
 mod_bf                          ports/www/mod_bf
 mod_blosxom                     ports/www/mod_blosxom
@@ -9561,6 +9565,7 @@ mod_vdbh                        ports/www/mod_vdbh
 mod_vhost_ldap                  ports/www/mod_vhost_ldap
 mod_vhs                         ports/www/mod_vhs
 mod_webkit                      ports/www/mod_webkit
+mod_whatkilledus                ports/www/mod_whatkilledus
 mod_wsgi                        ports/www/mod_wsgi
 mod_wsgi3                       ports/www/mod_wsgi3
 mod_xmlns                       ports/www/mod_xmlns
@@ -11818,6 +11823,7 @@ p5-Data-HexDump                 ports/devel/p5-Data-HexDump
 p5-Data-Hexdumper               ports/devel/p5-Data-Hexdumper
 p5-Data-Hierarchy               ports/devel/p5-Data-Hierarchy
 p5-Data-ICal                    ports/deskutils/p5-Data-ICal
+p5-Data-IPV4-Range-Parse        ports/net/p5-Data-IPV4-Range-Parse
 p5-Data-Integer                 ports/devel/p5-Data-Integer
 p5-Data-JavaScript              ports/lang/p5-Data-JavaScript
 p5-Data-JavaScript-Anon         ports/devel/p5-Data-JavaScript-Anon
@@ -11836,6 +11842,7 @@ p5-Data-Phrasebook              ports/textproc/p5-Data-Phrasebook
 p5-Data-Phrasebook-Loader-YAML  ports/textproc/p5-Data-Phrasebook-Loader-YAML
 p5-Data-Properties              ports/devel/p5-Data-Properties
 p5-Data-Random                  ports/devel/p5-Data-Random
+p5-Data-Range-Compare           ports/devel/p5-Data-Range-Compare
 p5-Data-Recursive-Encode        ports/devel/p5-Data-Recursive-Encode
 p5-Data-Remember                ports/devel/p5-Data-Remember
 p5-Data-Report                  ports/textproc/p5-Data-Report
@@ -12656,6 +12663,7 @@ p5-Image-ExifTool               ports/graphics/p5-Image-ExifTool
 p5-Image-Grab                   ports/graphics/p5-Image-Grab
 p5-Image-Heatmap                ports/graphics/p5-Image-Heatmap
 p5-Image-IPTCInfo               ports/graphics/p5-Image-IPTCInfo
+p5-Image-Imgur                  ports/graphics/p5-Image-Imgur
 p5-Image-Imlib2                 ports/graphics/p5-Image-Imlib2
 p5-Image-Info                   ports/graphics/p5-Image-Info
 p5-Image-Magick-Iterator        ports/graphics/p5-Image-Magick-Iterator
@@ -13243,6 +13251,7 @@ p5-Net-INET6Glue                ports/net/p5-Net-INET6Glue
 p5-Net-IP                       ports/net-mgmt/p5-Net-IP
 p5-Net-IP-Match-Regexp          ports/net-mgmt/p5-Net-IP-Match-Regexp
 p5-Net-IP-Match-XS              ports/net-mgmt/p5-Net-IP-Match-XS
+p5-Net-IP-RangeCompare          ports/net/p5-Net-IP-RangeCompare
 p5-Net-IP-Resolver              ports/net-mgmt/p5-Net-IP-Resolver
 p5-Net-IPTrie                   ports/net/p5-Net-IPTrie
 p5-Net-IPv4Addr                 ports/net-mgmt/p5-Net-IPv4Addr
@@ -13345,6 +13354,7 @@ p5-Net-Telnet                   ports/net/p5-Net-Telnet
 p5-Net-Telnet-Cisco-IOS         ports/net-mgmt/p5-Net-Telnet-Cisco-IOS
 p5-Net-Telnet-Netscreen         ports/net/p5-Net-Telnet-Netscreen
 p5-Net-TiVo                     ports/net/p5-Net-TiVo
+p5-Net-Todoist                  ports/net/p5-Net-Todoist
 p5-Net-Trac                     ports/www/p5-Net-Trac
 p5-Net-Traceroute               ports/net/p5-Net-Traceroute
 p5-Net-Traceroute-PurePerl      ports/net/p5-Net-Traceroute-PurePerl
@@ -15681,6 +15691,7 @@ p5-data-hexdumper               ports/devel/p5-Data-Hexdumper
 p5-data-hierarchy               ports/devel/p5-Data-Hierarchy
 p5-data-ical                    ports/deskutils/p5-Data-ICal
 p5-data-integer                 ports/devel/p5-Data-Integer
+p5-data-ipv4-range-parse        ports/net/p5-Data-IPV4-Range-Parse
 p5-data-javascript              ports/lang/p5-Data-JavaScript
 p5-data-javascript-anon         ports/devel/p5-Data-JavaScript-Anon
 p5-data-lazy                    ports/devel/p5-Data-Lazy
@@ -15698,6 +15709,7 @@ p5-data-phrasebook              ports/textproc/p5-Data-Phrasebook
 p5-data-phrasebook-loader-yaml  ports/textproc/p5-Data-Phrasebook-Loader-YAML
 p5-data-properties              ports/devel/p5-Data-Properties
 p5-data-random                  ports/devel/p5-Data-Random
+p5-data-range-compare           ports/devel/p5-Data-Range-Compare
 p5-data-recursive-encode        ports/devel/p5-Data-Recursive-Encode
 p5-data-remember                ports/devel/p5-Data-Remember
 p5-data-report                  ports/textproc/p5-Data-Report
@@ -16558,6 +16570,7 @@ p5-image-delivery               ports/www/p5-Image-Delivery
 p5-image-exiftool               ports/graphics/p5-Image-ExifTool
 p5-image-grab                   ports/graphics/p5-Image-Grab
 p5-image-heatmap                ports/graphics/p5-Image-Heatmap
+p5-image-imgur                  ports/graphics/p5-Image-Imgur
 p5-image-imlib2                 ports/graphics/p5-Image-Imlib2
 p5-image-info                   ports/graphics/p5-Image-Info
 p5-image-iptcinfo               ports/graphics/p5-Image-IPTCInfo
@@ -17228,6 +17241,7 @@ p5-net-interface                ports/net/p5-Net-Interface
 p5-net-ip                       ports/net-mgmt/p5-Net-IP
 p5-net-ip-match-regexp          ports/net-mgmt/p5-Net-IP-Match-Regexp
 p5-net-ip-match-xs              ports/net-mgmt/p5-Net-IP-Match-XS
+p5-net-ip-rangecompare          ports/net/p5-Net-IP-RangeCompare
 p5-net-ip-resolver              ports/net-mgmt/p5-Net-IP-Resolver
 p5-net-iptrie                   ports/net/p5-Net-IPTrie
 p5-net-ipv4addr                 ports/net-mgmt/p5-Net-IPv4Addr
@@ -17328,6 +17342,7 @@ p5-net-telnet                   ports/net/p5-Net-Telnet
 p5-net-telnet-cisco-ios         ports/net-mgmt/p5-Net-Telnet-Cisco-IOS
 p5-net-telnet-netscreen         ports/net/p5-Net-Telnet-Netscreen
 p5-net-tivo                     ports/net/p5-Net-TiVo
+p5-net-todoist                  ports/net/p5-Net-Todoist
 p5-net-trac                     ports/www/p5-Net-Trac
 p5-net-traceroute               ports/net/p5-Net-Traceroute
 p5-net-traceroute-pureperl      ports/net/p5-Net-Traceroute-PurePerl
@@ -22702,6 +22717,7 @@ rubygem-columnize               ports/devel/rubygem-columnize
 rubygem-configuration           ports/devel/rubygem-configuration
 rubygem-crack                   ports/devel/rubygem-crack
 rubygem-curb                    ports/ftp/rubygem-curb
+rubygem-daemon_controller       ports/devel/rubygem-daemon_controller
 rubygem-daemons                 ports/devel/rubygem-daemons
 rubygem-data_objects            ports/databases/rubygem-data_objects
 rubygem-datamapper              ports/databases/rubygem-datamapper
