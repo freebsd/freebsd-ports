@@ -1,0 +1,12 @@
+IBM 026 Keypunch Emulator for the X Window System.
+
+ * Requires slow, deliberate typing or input will be lost
+  (typeahead can be enabled if you insist)
+ * Overpunches available by backspacing or holding down Alt or Meta
+ * Tab set for FORTRAN
+ * Automatic sequence numbers in columns 73-80 (can be disabled)
+ * Paste X11 selection with middle mouse button
+ * Can save deck in file, either in ASCII or in Douglas Jones's standard format
+ * Can select from several card and keypunch types
+
+WWW:	http://x3270.bgp.nu/x026.html
