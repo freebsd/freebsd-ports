@@ -10,9 +10,7 @@ PORTVERSION=	4.0.14
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://download-uk.oracle.com/berkeley-db/ \
-		http://download-west.oracle.com/berkeley-db/ \
-		http://download-east.oracle.com/berkeley-db/
+MASTER_SITES=	http://download.oracle.com/berkeley-db/ 
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 

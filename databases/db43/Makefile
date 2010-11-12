@@ -9,9 +9,7 @@ PORTNAME=	db43
 PORTVERSION=	4.3.29
 PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://download-west.oracle.com/berkeley-db/ \
-		http://download-east.oracle.com/berkeley-db/ \
-		http://download-uk.oracle.com/berkeley-db/
+MASTER_SITES=	http://download.oracle.com/berkeley-db/ 
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 

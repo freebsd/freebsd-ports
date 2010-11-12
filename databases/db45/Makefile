@@ -8,14 +8,12 @@
 PORTNAME=	db45
 PORTVERSION=	4.5.20.2
 CATEGORIES=	databases
-MASTER_SITES=	http://download-west.oracle.com/berkeley-db/ \
-		http://download-east.oracle.com/berkeley-db/ \
-		http://download-uk.oracle.com/berkeley-db/
+MASTER_SITES=	http://download.oracle.com/berkeley-db/ 
 PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
 
-PATCH_SITES=	http://www.oracle.com/technology/products/berkeley-db/db/update/${PORTVERSION:R}/
+PATCH_SITES=	http://download.oracle.com/berkeley-db/patches/db/${PORTVERSION:R}/
 PATCHFILES=	patch.4.5.20.1 patch.4.5.20.2
 PATCH_DIST_STRIP=	-d .. -l
 # * patch.4.5.20.1: -----------------------------------------------------------
