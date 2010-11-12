@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-FreshBooks-API
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -38,12 +38,16 @@ PERL_MODBUILD=	yes
 MAN3=		Net::FreshBooks::API.3 \
 		Net::FreshBooks::API::Base.3 \
 		Net::FreshBooks::API::Client.3 \
+		Net::FreshBooks::API::Estimate.3 \
 		Net::FreshBooks::API::Invoice.3 \
 		Net::FreshBooks::API::InvoiceLine.3 \
 		Net::FreshBooks::API::Iterator.3 \
 		Net::FreshBooks::API::Links.3 \
 		Net::FreshBooks::API::OAuth.3 \
 		Net::FreshBooks::API::Payment.3 \
-		Net::FreshBooks::API::Recurring.3
+		Net::FreshBooks::API::Recurring.3 \
+		Net::FreshBooks::API::Role::CRUD.3 \
+		Net::FreshBooks::API::Role::LineItem.3 \
+		Net::FreshBooks::API::Role::SendBy.3
 
 .include <bsd.port.mk>
