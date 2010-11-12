@@ -8,9 +8,7 @@
 PORTNAME=	db44
 PORTVERSION=	4.4.20.4
 CATEGORIES=	databases
-MASTER_SITES=	http://download-west.oracle.com/berkeley-db/ \
-		http://download-east.oracle.com/berkeley-db/ \
-		http://download-uk.oracle.com/berkeley-db/
+MASTER_SITES=	http://download.oracle.com/berkeley-db/ 
 PKGNAMESUFFIX?=
 DISTNAME=	db-4.4.20
 DIST_SUBDIR=	bdb

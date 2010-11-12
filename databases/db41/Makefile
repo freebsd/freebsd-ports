@@ -9,14 +9,12 @@ PORTNAME=	db41
 PORTVERSION=	4.1.25
 PORTREVISION=	4
 CATEGORIES=	databases
-MASTER_SITES=	http://download-east.oracle.com/berkeley-db/ \
-		http://download-west.oracle.com/berkeley-db/ \
-		http://download-uk.oracle.com/berkeley-db/
+MASTER_SITES=	http://download.oracle.com/berkeley-db/ 
 PKGNAMESUFFIX?=
 DISTNAME?=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
-#PATCH_SITES=	http://www.oracle.com/technology/products/berkeley-db/db/update/${PORTVERSION}/
+PATCH_SITES=	http://download.oracle.com/berkeley-db/patches/db/${PORTVERSION}/
 PATCHFILES=	patch.${PORTVERSION}.2
 PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 

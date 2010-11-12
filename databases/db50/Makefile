@@ -8,9 +8,7 @@
 PORTNAME=	db50
 PORTVERSION=	5.0.26.0
 CATEGORIES=	databases java
-MASTER_SITES=	http://download-west.oracle.com/berkeley-db/ \
-		http://download-east.oracle.com/berkeley-db/ \
-		http://download-uk.oracle.com/berkeley-db/
+MASTER_SITES=	http://download.oracle.com/berkeley-db/ 
 PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb

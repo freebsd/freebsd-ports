@@ -8,9 +8,7 @@
 PORTNAME=	db48
 PORTVERSION=	4.8.30.0
 CATEGORIES=	databases
-MASTER_SITES=	http://download-west.oracle.com/berkeley-db/ \
-		http://download-east.oracle.com/berkeley-db/ \
-		http://download-uk.oracle.com/berkeley-db/
+MASTER_SITES=	http://download.oracle.com/berkeley-db/ 
 PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb

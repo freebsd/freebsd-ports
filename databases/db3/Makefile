@@ -10,13 +10,11 @@ PORTVERSION=	3.3.11
 PORTREVISION=	3
 PORTEPOCH?=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://download-uk.oracle.com/berkeley-db/ \
-		http://download-west.oracle.com/berkeley-db/ \
-		http://download-east.oracle.com/berkeley-db/
+MASTER_SITES=	http://download.oracle.com/berkeley-db/ 
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
-PATCH_SITES=	http://www.oracle.com/technology/products/berkeley-db/db/update/${PORTVERSION}/
+PATCH_SITES=	http://download.oracle.com/berkeley-db/patches/db/${PORTVERSION}/
 PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2
 PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 
