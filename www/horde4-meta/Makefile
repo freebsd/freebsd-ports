@@ -7,7 +7,7 @@
 
 PORTNAME=	meta
 PORTVERSION=	1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	# Empty
 DISTFILES=	# None
@@ -35,7 +35,8 @@ OPTIONS=	ANSEL "Photo Gallery" off	\
 		TREAN "Bookmark Manager" off	\
 		TURBA "Contact Management" on	\
 		VACATION "Vacation & Auto Respond" off	\
-		WHUPS "Bug Tracking/Ticket System" off
+		WHUPS "Bug Tracking/Ticket System" off	\
+		KLUTZ "Comic Strip Viewer" off
 
 .include <bsd.port.pre.mk>
 
@@ -112,6 +113,10 @@ RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/whups/index.php:${PORTSDIR}/devel/horde-
 
 .if defined(WITH_HERMES)
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/hermes/index.php:${PORTSDIR}/deskutils/horde-hermes
+.endif
+
+.if defined(WITH_KLUTZ)
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/klutz/index.php:${PORTSDIR}/deskutils/horde-klutz
 .endif
 
 post-configure:
