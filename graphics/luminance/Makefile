@@ -8,7 +8,7 @@
 PORTNAME=	luminance
 DISTVERSION=	2.0.1-1
 CATEGORIES=	graphics
-MASTER_SITES=	SF/qtpfsgui/luminance/${PORTVERSION}/
+MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION:S/-1//}/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}
 
 MAINTAINER=	goffredo@gmail.com
