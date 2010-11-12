@@ -8,8 +8,7 @@
 PORTNAME=	awesome
 PORTVERSION=	3.4.8
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://awesome.naquadah.org/download/ \
-		http://redundancy.redundancy.org/mirror/
+MASTER_SITES=	http://awesome.naquadah.org/download/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A highly configurable, next generation framework window manager

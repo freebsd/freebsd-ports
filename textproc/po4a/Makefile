@@ -9,7 +9,7 @@ PORTNAME=	po4a
 PORTVERSION=	0.40.1
 PORTREVISION=	1
 CATEGORIES=	textproc perl5
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/3341/ GENTOO/distfiles
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/3341/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Brings gettext translation tools to all kinds of docs
