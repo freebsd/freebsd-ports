@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	7.3
-PORTREVISION=	1
+PORTVERSION=	7.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.hiawatha-webserver.org/files/ \
 		http://www.c-s.li/ports/
@@ -41,6 +40,8 @@ OPTIONS=	COMMAND "Enable the Hiawatha CommandChannel" Off \
 		SSL "Support for Secure Sockets Layer (SSL)" On \
 		TOOLKIT "Enable URL Toolkit" On \
 		XSLT "XSLT support" On
+
+PLIST_SUB+=	ECHO_MSG=${ECHO_MSG}
 
 .include <bsd.port.pre.mk>
 

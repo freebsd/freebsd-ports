@@ -17,9 +17,9 @@ sbin/wigwam
 @unexec if cmp -s %D/etc/hiawatha/php-fcgi.conf.sample %D/etc/hiawatha/php-fcgi.conf ; then rm -f %D/etc/hiawatha/php-fcgi.conf; fi
 %%ETCDIR%%/php-fcgi.conf.sample
 @exec if [ ! -f %D/etc/hiawatha/php-fcgi.conf ] ; then cp -p %D/%F %%ETCDIR%%/php-fcgi.conf; fi
-@unexec t=`/bin/ls %D/etc/hiawatha`; if [ -z "$t" ]; then echo "Configuration directory is empty, remove it."; rmdir %D/etc/hiawatha; fi;
-@unexec t=`/bin/ls /var/log/hiawatha`; if [ -z "$t" ]; then echo "Log directory is empty, remove it."; rmdir /var/log/hiawatha; fi;
+@unexec t=`/bin/ls %D/etc/hiawatha`; if [ -z "$t" ]; then %%ECHO_MSG%% "===>    Configuration directory is empty, removing it."; rmdir %D/etc/hiawatha; fi;
+@unexec t=`/bin/ls /var/log/hiawatha`; if [ -z "$t" ]; then %%ECHO_MSG%% "===>    Log directory is empty, removing it."; rmdir /var/log/hiawatha; fi;
 @unexec if cmp -s %D/www/hiawatha/index.html %D/www/hiawatha/index.hiawatha.html ; then rm -f %D/www/hiawatha/index.html; fi
 %%WWWDIR%%/index.hiawatha.html
 @exec if [ ! -f %D/www/hiawatha/index.html ] ; then cp -p %D/%F %%WWWDIR%%/index.html; fi
-@unexec t=`/bin/ls %D/www/hiawatha`; if [ -z "$t" ]; then echo "WWW directory is empty, remove it."; rmdir %D/www/hiawatha; fi;
+@unexec t=`/bin/ls %D/www/hiawatha`; if [ -z "$t" ]; then %%ECHO_MSG%% "===>    WWW directory is empty, removing it."; rmdir %D/www/hiawatha; fi;
