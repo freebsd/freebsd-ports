@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	pdftk
-PORTVERSION=	1.41
-PORTREVISION=	3
+PORTVERSION=	1.44
 CATEGORIES=	print
-MASTER_SITES=	http://www.pdfhacks.com/pdftk/ \
-		http://www.accesspdf.com/pdftk/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}.${PORTVERSION:E}
+MASTER_SITES=	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/ \
+		LOCAL/glarkin
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A simple tool for doing everyday things with PDF documents
@@ -20,6 +19,8 @@ COMMENT=	A simple tool for doing everyday things with PDF documents
 # we need to build gcc 4.2 to get gcj42, and for OS versions with gcc 4.2+
 # in the base system, we need to build the port anyway to get gcj42.
 BUILD_DEPENDS=	gcj${CSUFF}:${PORTSDIR}/lang/gcc${CSUFF}
+
+USE_ZIP=	yes
 
 # Get gcc version suffix without the dot in USE_GCC
 CSUFF=		${_USE_GCC:S/.//}
@@ -33,18 +34,18 @@ USE_LDCONFIG=	${PREFIX}/lib/gcc${CSUFF}
 ONLY_FOR_ARCHS=		i386 amd64
 ONLY_FOR_ARCHS_REASON=	GNU gcj does not exist on this platform
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
-PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
+PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-dist
+WRKSRC=		${PATCH_WRKSRC}/${PORTNAME}
 
-MAKEFILE=	Makefile.Generic
+MAKEFILE=	Makefile.FreeBSD
 MAKE_ENV=	GCJ=gcj${CSUFF} GCJH=gcjh${CSUFF} OBJCOPY=${OBJCOPY} LANG=C
 
 MAN1=		${PORTNAME}.1
 PLIST_FILES=	bin/pdftk
 
-post-extract:
-	@${REINPLACE_CMD} -e "s|TOOLPATH=|TOOLPATH=${LOCALBASE}/bin/|g" ${WRKSRC}/Makefile.Generic
-	@${REINPLACE_CMD} -e "s|VERSUFF=|VERSUFF=${CSUFF}|g" ${WRKSRC}/Makefile.Generic
+post-patch:
+	@${REINPLACE_CMD} -e "s|TOOLPATH=|TOOLPATH=${LOCALBASE}/bin/|g" ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e "s|VERSUFF=|VERSUFF=${CSUFF}|g" ${WRKSRC}/${MAKEFILE}
 
 #2005-10-29 - mjoyner@vbservices.net/mjoyner@ewc.edu
 #as shipped, pdftk compiles fine with 3.4 gcj, as we currently only have 4.1 gcj available,
@@ -54,17 +55,13 @@ post-extract:
 #Based on info found via Google USENET Search: Adam McDougall, Gerald Pfeifer
 #
 
-	@${REINPLACE_CMD} -e "s|GCJFLAGS=|GCJFLAGS= -L${LOCALBASE}/lib -Wl,-rpath=${LOCALBASE}/lib/gcc${CSUFF} -w|g" ${WRKSRC}/Makefile.Generic
-	@${REINPLACE_CMD} -e "s|CXXFLAGS= -lgcj|CXXFLAGS= -lgcj ${PTHREAD_CFLAGS} ${PTHREAD_LIBS} -liconv -lz -L${LOCALBASE}/lib -Wl,-rpath=${LOCALBASE}/lib/gcc${CSUFF} -w|g" \
-			${WRKSRC}/Makefile.Generic
-	@${REINPLACE_CMD} -e "s|//SID import com.lowagie.text.ImgRaw;|import com.lowagie.text.ImgRaw;|g" \
-			${WRKSRC}/../java_libs/com/lowagie/text/pdf/codec/PngImage.java
-	@${REINPLACE_CMD} -e "s|^..java_libs_root./gnu/gcj/convert/convert.a|# x-nay the convert.a|g" ${WRKSRC}/Makefile.Base
-	@${REINPLACE_CMD} -e "s|^..java_libs_root./gnu_local/java/security/security.a .|$$\(java_libs_root\)/gnu_local/java/security/security.a|g" ${WRKSRC}/Makefile.Base
+	@${REINPLACE_CMD} -e "s|GCJFLAGS=|GCJFLAGS= -L${LOCALBASE}/lib -Wl,-rpath=${LOCALBASE}/lib/gcc${CSUFF} -w|g" ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e "s|LDLIBS= -lgcj|LDLIBS= -lgcj ${PTHREAD_CFLAGS} ${PTHREAD_LIBS} -liconv -lz -L${LOCALBASE}/lib -Wl,-rpath=${LOCALBASE}/lib/gcc${CSUFF} -w|g" \
+			${WRKSRC}/${MAKEFILE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/../debian/${PORTNAME}.1 ${PREFIX}/man/man1
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/../${PORTNAME}.1 ${PREFIX}/man/man1
 
 .include <bsd.port.pre.mk>
 
