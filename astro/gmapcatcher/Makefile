@@ -7,6 +7,7 @@
 
 PORTNAME=	gmapcatcher
 PORTVERSION=	0.7.5.0
+PORTREVISION=	1
 CATEGORIES=	astro geography
 MASTER_SITES=	http://gmapcatcher.googlecode.com/files/
 DISTNAME=	GMapCatcher-${PORTVERSION}
@@ -33,5 +34,10 @@ post-patch:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/download.py ${PREFIX}/bin/mapdownloader
 	${INSTALL_SCRIPT} ${WRKSRC}/maps.py ${PREFIX}/bin/mapcatcher
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/changelog ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
