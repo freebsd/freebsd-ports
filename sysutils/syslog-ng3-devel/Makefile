@@ -20,7 +20,7 @@ WRKSRC=		$(WRKDIR)/$(PORTNAME)-3.2beta1
 
 OPTIONS=	SSL "Build with OpenSSL support (from ports)" off \
 		TCP_WRAPPERS "Build with TCP Wrappers" off \
-		SQL "Build with database (libdbi) support" off \`
+		SQL "Build with database (libdbi) support" off \
 		SPOOF "Build with spoof source support" on \
 		IPV6 "Build with IPV6 support" on \
 		PCRE "Build with PCRE support" on
