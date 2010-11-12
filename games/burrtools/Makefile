@@ -7,17 +7,17 @@
 #
 
 PORTNAME=	burrtools
-PORTVERSION=	0.5.2
-PORTREVISION=	3
+PORTVERSION=	0.6.0
 CATEGORIES=	games
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c-s@c-s.li
 COMMENT=	A puzzle solver
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		xmlwrapp.5:${PORTSDIR}/textproc/xmlwrapp \
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk
+		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
+		boost_thread:${PORTSDIR}/devel/boost-libs
 
 USE_XORG=	x11 xt xext xmu xi
 USE_GL=		glu
@@ -25,6 +25,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="`fltk-config --cxxflags`" \
 		LDFLAGS="`fltk-config --ldflags`"
+MAKE_JOBS_SAFE=	yes
+
+LICENSE=	GPLv3
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
