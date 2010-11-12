@@ -4676,3 +4676,4 @@ misc/compat3x||2010-11-08|Has expired: "Only FreeBSD 6.4+ are supported in ports
 misc/bidwatcher||2010-11-08|Has expired: Obsoleted by JBidwatcher and changes at http://ebay.com
 security/vscan||2010-11-08|Has expired: Depends of misc/compat3x, that is deprecated and set to be removed
 www/ssserver||2010-11-08|Has expired: Depends of misc/compat3x, that is deprecated and set to be removed
+graphics/qtpfsgui|graphics/luminance|2010-11-12|Project has been renamed
