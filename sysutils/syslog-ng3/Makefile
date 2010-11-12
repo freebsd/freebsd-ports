@@ -21,15 +21,13 @@ CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0124-9]-[0-9]* \
 
 OPTIONS=	SSL "Build with OpenSSL support (from ports)" off \
 		TCP_WRAPPERS "Build with TCP Wrappers" off \
-		SQL "Build with SQL support" off \
+		SQL "Build with database (libdbi) support" off \
 		SPOOF "Build with spoof source support" on \
 		IPV6 "Build with IPV6 support" on \
-		PCRE "Build with PCRE support" on \
-		SQL "Build with database (libdbi) support" off
+		PCRE "Build with PCRE support" on
 
 .include <bsd.port.options.mk>
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 LIB_DEPENDS=	evtlog.0:${PORTSDIR}/sysutils/eventlog
 
 MAN1=		pdbtool.1
@@ -40,8 +38,6 @@ USE_RC_SUBR=	syslog-ng.sh
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 SUB_FILES=	pkg-message
-
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --with-libnet=${LOCALBASE}/bin
@@ -65,6 +61,11 @@ CONFIGURE_ARGS+=	--disable-tcp-wrapper
 .endif
 
 .if defined(WITH_SPOOF)
+.if ${ARCH} == "amd64"
+BROKEN=			Does not compile: relocation R_X86_64_32 can not be used when making a shared object
+.endif
+BUILD_DEPENDS=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet11-config
 CONFIGURE_ARGS+=	--enable-spoof-source
 .else
 CONFIGURE_ARGS+=	--disable-spoof-source
