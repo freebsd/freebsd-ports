@@ -18,7 +18,7 @@ LIB_DEPENDS=	icuuc:${PORTSDIR}/devel/icu
 USE_ICONV=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	libxml2 libxslt
+USE_GNOME=	libxml2 libxslt gnomehack
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
@@ -33,11 +33,8 @@ MAN1=		yaz-asncomp.1 yaz-client.1 yaz-iconv.1 \
 MAN7=		bib1-attr.7 yaz-log.7 yaz.7
 MAN8=		yaz-config.8 yaz-ztest.8
 
-post-patch:
 .if defined(NOPORTDOCS)
-	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's/%%DOC%%//' Makefile.in
-.else
-	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's/%%DOC%%/doc/' Makefile.in
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-doc__Makefile.in
 .endif
 
 post-configure:
