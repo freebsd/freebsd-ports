@@ -7,6 +7,7 @@
 
 PORTNAME=	sqlite3
 PORTVERSION=	3.7.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/ http://www2.sqlite.org/
 DISTNAME=	sqlite-${PORTVERSION}
@@ -25,6 +26,7 @@ USE_GMAKE=	YES
 USE_GNOME=	pkgconfig gnomehack
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	YES
+
 USE_TCL_BUILD=	84+
 CONFIGURE_ENV+=	TCLSH_CMD="${TCLSH}" \
 		TCLLIBDIR="${PREFIX}/lib/${PORTNAME}" \
@@ -125,7 +127,7 @@ CFLAGS+=		-DSQLITE_ENABLE_UNLOCK_NOTIFY=1
 .if defined(WITH_TCLWRAPPER)
 CATEGORIES+=		lang tcl
 COMMENT+=		with TCL Wrapper
-USE_TCL_RUN=		84+
+USE_TCL_RUN=		yes
 ALL_TARGET=		all tclsqlite3
 INSTALL_TARGET=		install tcl_install
 CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR}
@@ -156,6 +158,15 @@ CONFIGURE_ARGS+=	--disable-load-extension
 CONFIGURE_ENV+=		CPPFLAGS="-I. -I./src ${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=		CPPFLAGS="-I. -I./src ${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${TCL_VER} > 8.4
+BUILD_DEPENDS+=		${LOCALBASE}/lib/tcl8/8.5/msgcat-1.4.3.tm:${PORTSDIR}/lang/tcl-modules
+.if defined(WITH_TCLWRAPPER)
+RUN_DEPENDS+=		${LOCALBASE}/lib/tcl8/8.5/msgcat-1.4.3.tm:${PORTSDIR}/lang/tcl-modules
+.endif
+.endif
+
 post-install:
 .if defined(WITH_TCLWRAPPER)
 	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/tclsqlite3 ${PREFIX}/bin
@@ -178,4 +189,4 @@ post-install:
 .endif
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
