@@ -1,7 +1,11 @@
---- Makefile.in.bak	2010-07-30 10:41:04.502726505 +0200
-+++ Makefile.in	2010-07-30 10:42:15.531264210 +0200
-@@ -283,7 +283,7 @@
- SUBDIRS = src include util test client ztest zoom doc etc
+--- ./Makefile.in.orig	2010-08-17 12:42:04.000000000 +0200
++++ Makefile.in	2010-11-04 17:52:13.000000000 +0100
+@@ -280,10 +280,10 @@
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = foreign 
+ ACLOCAL_AMFLAGS = -I m4
+-SUBDIRS = src include util test client ztest zoom doc etc
++SUBDIRS = src include util test client ztest zoom %%DOC%% etc
  aclocaldir = $(datadir)/aclocal
  aclocal_DATA = m4/yaz.m4
 -pkgconfigdir = $(libdir)/pkgconfig

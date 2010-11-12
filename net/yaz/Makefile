@@ -6,23 +6,26 @@
 #
 
 PORTNAME=	yaz
-PORTVERSION=	4.0.11
+PORTVERSION=	4.0.12
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Z39.50/SR client and API library
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xslt.2:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	icuuc:${PORTSDIR}/devel/icu
 
 USE_ICONV=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
+USE_GNOME=	libxml2 libxslt
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
 CONFIGURE_ARGS+=--enable-shared --with-openssl=${OPENSSLBASE} \
 		--with-iconv=${LOCALBASE} --with-xml2=${LOCALBASE} \
-		--with-xslt=${LOCALBASE} --enable-tcpd
-USE_LDCONFIG=	yes
+		--with-xslt=${LOCALBASE} --with-icu=${LOCALBASE} \
+		--enable-tcpd
 
 MAN1=		yaz-asncomp.1 yaz-client.1 yaz-iconv.1 \
 		yaz-json-parse.1 yaz-marcdump.1 \
@@ -30,8 +33,15 @@ MAN1=		yaz-asncomp.1 yaz-client.1 yaz-iconv.1 \
 MAN7=		bib1-attr.7 yaz-log.7 yaz.7
 MAN8=		yaz-config.8 yaz-ztest.8
 
+post-patch:
+.if defined(NOPORTDOCS)
+	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's/%%DOC%%//' Makefile.in
+.else
+	@cd ${WRKSRC} && ${REINPLACE_CMD} -e 's/%%DOC%%/doc/' Makefile.in
+.endif
+
 post-configure:
-	cd ${WRKSRC}/doc && \
+	@cd ${WRKSRC}/doc && \
 		${REINPLACE_CMD} -e 's,[$$]{datarootdir}/man,${PREFIX}/man,' \
 		Makefile
 
