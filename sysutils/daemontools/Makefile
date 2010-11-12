@@ -7,7 +7,7 @@
 
 PORTNAME=	daemontools
 PORTVERSION=	0.76
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/daemontools/ \
 		ftp://cr.yp.to/daemontools/
@@ -15,6 +15,11 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Service monitoring and logging utilities by djb
+
+LICENSE=	PD
+LICENSE_NAME=	public domain
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_TEXT=	The daemontools-0.76.tar.gz archive is in the public domain as of 2007.12.28.
 
 OPTIONS=	MAN	"Install Gerrit Pape's manual pages" on \
 		S_EARLY	"Start early, before the normal daemons" off \
@@ -26,7 +31,7 @@ OPTIONS=	MAN	"Install Gerrit Pape's manual pages" on \
 
 .if defined(WITH_S_EARLY)
 . if defined(WITH_S_NORMAL)
-IGNORE=		Exactly one of S_EARLY and S_NORMAL must be specified.
+IGNORE=		needs exactly one of S_EARLY and S_NORMAL to be specified
 . else
 SVSCAN_REQUIRE?=	SERVERS
 SVSCAN_BEFORE?=		DAEMON
@@ -36,7 +41,7 @@ SVSCAN_BEFORE?=		DAEMON
 SVSCAN_REQUIRE?=	LOGIN
 SVSCAN_BEFORE?=
 . else
-IGNORE=		Either S_EARLY or S_NORMAL must be specified.
+IGNORE=		needs either S_EARLY or S_NORMAL to be specified
 . endif
 .endif
 
