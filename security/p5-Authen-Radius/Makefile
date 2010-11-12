@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Authen-Radius
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,8 @@ DISTNAME=	RadiusPerl-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl5 module to provide simple Radius client facilities
 
-BUILD_DEPENDS=	${SITE_PERL}/Data/HexDump.pm:${PORTSDIR}/devel/p5-Data-HexDump
-RUN_DEPENDS=	${SITE_PERL}/Data/HexDump.pm:${PORTSDIR}/devel/p5-Data-HexDump
+RUN_DEPENDS=	p5-Data-HexDump>=0.02:${PORTSDIR}/devel/p5-Data-HexDump
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PERL_CONFIGURE=	yes
