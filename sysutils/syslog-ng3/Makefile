@@ -54,6 +54,8 @@ CONFIGURE_ENV+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}" \
 CONFIGURE_args+=	--disable-ssl
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_TCP_WRAPPERS)
 CONFIGURE_ARGS+=	--enable-tcp-wrapper
 .else
@@ -98,8 +100,6 @@ LIB_DEPENDS+= dbi.0:${PORTSDIR}/databases/libdbi
 CONFIGURE_ENV+= LIBDBI_CFLAGS="-I/usr/local/include" \
 		LIBDBI_LIBS=" -ldbi"
 .endif
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/src/syslog-ng.h
