@@ -32,6 +32,8 @@ CONFIGURE_ARGS=	--sysconfdir="${PREFIX}/etc/${PORTNAME}" \
 
 MAN1=		sarg.1
 
+LICENSE=	GPLv2
+
 .include <bsd.port.pre.mk>
 
 .if ${CC} == "cc"
