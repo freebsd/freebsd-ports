@@ -536,6 +536,7 @@
     SUBDIR += lodju
     SUBDIR += long-exposure-tools
     SUBDIR += lprof-devel
+    SUBDIR += luminance
     SUBDIR += luxrender
     SUBDIR += makehuman
     SUBDIR += mapnik
@@ -814,7 +815,6 @@
     SUBDIR += qt4-pixeltool
     SUBDIR += qt4-svg
     SUBDIR += qtgtl
-    SUBDIR += qtpfsgui
     SUBDIR += quat
     SUBDIR += quat-gui
     SUBDIR += quesa
