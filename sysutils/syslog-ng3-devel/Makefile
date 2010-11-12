@@ -20,15 +20,13 @@ WRKSRC=		$(WRKDIR)/$(PORTNAME)-3.2beta1
 
 OPTIONS=	SSL "Build with OpenSSL support (from ports)" off \
 		TCP_WRAPPERS "Build with TCP Wrappers" off \
-		SQL "Build with SQL support" off \
+		SQL "Build with database (libdbi) support" off \`
 		SPOOF "Build with spoof source support" on \
 		IPV6 "Build with IPV6 support" on \
-		PCRE "Build with PCRE support" on \
-		SQL "Build with database (libdbi) support" off
+		PCRE "Build with PCRE support" on
 
 .include <bsd.port.options.mk>
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 LIB_DEPENDS=	evtlog.0:${PORTSDIR}/sysutils/eventlog
 
 MAN1=		pdbtool.1
@@ -41,12 +39,12 @@ USE_GNOME=	glib20
 USE_GMAKE=	yes
 SUB_FILES=	pkg-message
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
-
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --with-libnet=${LOCALBASE}/bin
 CONFIGURE_ENV=	CFLAGS="`${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include ${CFLAGS}" \
 		LDFLAGS="`${LIBNET_CONFIG} --libs` ${LDFLAGS}"
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_SSL)
 USE_OPENSSL=		yes
@@ -65,6 +63,11 @@ CONFIGURE_ARGS+=	--disable-tcp-wrapper
 .endif
 
 .if defined(WITH_SPOOF)
+.if ${ARCH} == "amd64" 
+BROKEN=			Does not compile: relocation R_X86_64_32 can not be used when making a shared object
+.endif
+BUILD_DEPENDS=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
+LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet11-config
 CONFIGURE_ARGS+=	--enable-spoof-source
 .else
 CONFIGURE_ARGS+=	--disable-spoof-source
@@ -97,8 +100,6 @@ LIB_DEPENDS+= dbi.0:${PORTSDIR}/databases/libdbi
 CONFIGURE_ENV+= LIBDBI_CFLAGS="-I/usr/local/include" \
 		LIBDBI_LIBS=" -ldbi"
 .endif
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/lib/syslog-ng.h
