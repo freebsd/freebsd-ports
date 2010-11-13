@@ -7,6 +7,7 @@
 
 PORTNAME=	libobjc2
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	http://download.gna.org/gnustep/
 
@@ -17,13 +18,18 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS=	LIBDISPATCH "Build with libdispatch from ports" Off
+OPTIONS=	NSOBJECT_ROOT	"Root class is NSObject not Object" On \
+		LIBDISPATCH	"Build with libdispatch from ports" Off
 
 .include <bsd.port.options.mk>
 
 .if defined(WITH_LIBDISPATCH)
 LIB_DEPENDS+=	dispatch.0:${PORTSDIR}/devel/libdispatch
 MAKE_ARGS+=	-DWITHOUT_TOYDISPATCH
+.endif
+
+.if !defined(WITHOUT_NSOBJECT_ROOT)
+MAKE_ARGS+=	-DWITH_NSOBJECT_ROOT
 .endif
 
 .include <bsd.port.pre.mk>
