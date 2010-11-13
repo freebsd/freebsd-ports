@@ -17,8 +17,6 @@ COMMENT=	Speech synthesizer
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm	\
 		audio:${PORTSDIR}/audio/nas
 
-BROKEN=		does not fetch
-
 GNU_CONFIGURE=	yes
 
 pre-configure:
