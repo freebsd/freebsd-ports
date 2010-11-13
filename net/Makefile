@@ -668,6 +668,7 @@
     SUBDIR += p5-Net-Z3950-SimpleServer
     SUBDIR += p5-Net-Z3950-ZOOM
     SUBDIR += p5-Net-ext
+    SUBDIR += p5-Net-uFTP
     SUBDIR += p5-NetAddr-IP-Count
     SUBDIR += p5-NetPacket
     SUBDIR += p5-OAI-Harvester
