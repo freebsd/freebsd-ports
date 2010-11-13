@@ -1,0 +1,5 @@
+File::Stat::ModeString is a Perl5 module provides a few functions for
+conversionbetween binary and literal representations of file mode bits,
+including file type.
+
+WWW: http://search.cpan.org/dist/File-Stat-ModeString/
