@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lzo2
-PORTVERSION=	2.03
-PORTREVISION=	2
+PORTVERSION=	2.04
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/ \
 		http://fresh.t-systems-sfr.com/unix/src/misc/ \
