@@ -9,7 +9,6 @@ PORTNAME=	lzo2
 PORTVERSION=	2.04
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/ \
-		http://fresh.t-systems-sfr.com/unix/src/misc/ \
 		http://ftp.uni-koeln.de/util/arc/
 MASTER_SITE_SUBDIR=	libs/compression
 DISTNAME=	lzo-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
