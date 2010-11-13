@@ -1,0 +1,187 @@
+Index: third_party/ffmpeg/ffmpeg.gyp
+===================================================================
+--- third_party/ffmpeg/ffmpeg.gyp	(revision 49485)
++++ third_party/ffmpeg/ffmpeg.gyp	(working copy)
+@@ -80,7 +80,7 @@
+     'ffmpeg_variant%': '<(target_arch)',
+ 
+     'use_system_ffmpeg%': 0,
+-    'use_system_yasm%': 0,
++    'use_system_yasm%': 1,
+     'build_ffmpegsumo%': 1,
+     'use_system_vpx%': 0,
+ 
+@@ -156,11 +156,11 @@
+             'patched-ffmpeg-mt/libavutil/pixdesc.c',
+             'patched-ffmpeg-mt/libavutil/rational.c',
+             # Config file for the OS and architecture.
+-            'config/<(ffmpeg_branding)/<(OS)/<(ffmpeg_config)/config.h',
++            'config/<(ffmpeg_branding)/linux/<(ffmpeg_config)/config.h',
+             'config/libavutil/avconfig.h',
+           ],
+           'include_dirs': [
+-            'config/<(ffmpeg_branding)/<(OS)/<(ffmpeg_config)',
++            'config/<(ffmpeg_branding)/linux/<(ffmpeg_config)',
+             'patched-ffmpeg-mt',
+             'config',
+           ],
+@@ -417,8 +417,13 @@
+                   }],
+                   ['use_system_vpx==0', {
+                     'ldflags': [
+-                      '-L<(libvpx_hack_dir)/lib/<(OS)/<(target_arch)',
++                      '-L<(libvpx_hack_dir)/lib/linux/<(target_arch)',
+                     ],
++                  }, {
++                    # Using libvpx provided by the system.
++                    'ldflags': [
++                      '-L/usr/local/lib',
++                    ],
+                   }],
+                 ],
+               },
+@@ -476,7 +476,7 @@
+               }, {
+                 # Using libvpx provided by the system.
+                 'include_dirs': [
+-                  '/usr/include/vpx',
++                  '/usr/local/include',
+                 ],
+               }
+             ],
+Index: third_party/ffmpeg/config/Chromium/linux/x64/config.h
+===================================================================
+--- third_party/ffmpeg/config/Chromium/linux/x64/config.h	(revision 49485)
++++ third_party/ffmpeg/config/Chromium/linux/x64/config.h	(working copy)
+@@ -45,7 +45,7 @@
+ #define HAVE_NEON 0
+ #define HAVE_PPC4XX 0
+ #define HAVE_SSE 1
+-#define HAVE_SSSE3 1
++#define HAVE_SSSE3 0
+ #define HAVE_VIS 0
+ #define HAVE_BIGENDIAN 0
+ #define HAVE_BEOSTHREADS 0
+@@ -94,16 +94,16 @@
+ #define HAVE_LLRINT 1
+ #define HAVE_LOCAL_ALIGNED_16 1
+ #define HAVE_LOCAL_ALIGNED_8 1
+-#define HAVE_LOG2 1
+-#define HAVE_LOG2F 1
++#define HAVE_LOG2 0
++#define HAVE_LOG2F 0
+ #define HAVE_LOONGSON 0
+ #define HAVE_LRINT 1
+ #define HAVE_LRINTF 1
+ #define HAVE_LZO1X_999_COMPRESS 0
+ #define HAVE_MACHINE_IOCTL_BT848_H 0
+ #define HAVE_MACHINE_IOCTL_METEOR_H 0
+-#define HAVE_MALLOC_H 1
+-#define HAVE_MEMALIGN 1
++#define HAVE_MALLOC_H 0
++#define HAVE_MEMALIGN 0
+ #define HAVE_MKSTEMP 1
+ #define HAVE_PLD 0
+ #define HAVE_POSIX_MEMALIGN 1
+Index: third_party/ffmpeg/config/Chromium/linux/ia32/config.h
+===================================================================
+--- third_party/ffmpeg/config/Chromium/linux/ia32/config.h	(revision 49485)
++++ third_party/ffmpeg/config/Chromium/linux/ia32/config.h	(working copy)
+@@ -45,7 +45,7 @@
+ #define HAVE_NEON 0
+ #define HAVE_PPC4XX 0
+ #define HAVE_SSE 1
+-#define HAVE_SSSE3 1
++#define HAVE_SSSE3 0
+ #define HAVE_VIS 0
+ #define HAVE_BIGENDIAN 0
+ #define HAVE_BEOSTHREADS 0
+@@ -94,16 +94,16 @@
+ #define HAVE_LLRINT 1
+ #define HAVE_LOCAL_ALIGNED_16 1
+ #define HAVE_LOCAL_ALIGNED_8 1
+-#define HAVE_LOG2 1
+-#define HAVE_LOG2F 1
++#define HAVE_LOG2 0
++#define HAVE_LOG2F 0
+ #define HAVE_LOONGSON 0
+ #define HAVE_LRINT 1
+ #define HAVE_LRINTF 1
+ #define HAVE_LZO1X_999_COMPRESS 0
+ #define HAVE_MACHINE_IOCTL_BT848_H 0
+ #define HAVE_MACHINE_IOCTL_METEOR_H 0
+-#define HAVE_MALLOC_H 1
+-#define HAVE_MEMALIGN 1
++#define HAVE_MALLOC_H 0
++#define HAVE_MEMALIGN 0
+ #define HAVE_MKSTEMP 1
+ #define HAVE_PLD 0
+ #define HAVE_POSIX_MEMALIGN 1
+Index: third_party/ffmpeg/config/Chrome/linux/x64/config.h
+===================================================================
+--- third_party/ffmpeg/config/Chrome/linux/x64/config.h	(revision 49485)
++++ third_party/ffmpeg/config/Chrome/linux/x64/config.h	(working copy)
+@@ -45,7 +45,7 @@
+ #define HAVE_NEON 0
+ #define HAVE_PPC4XX 0
+ #define HAVE_SSE 1
+-#define HAVE_SSSE3 1
++#define HAVE_SSSE3 0
+ #define HAVE_VIS 0
+ #define HAVE_BIGENDIAN 0
+ #define HAVE_BEOSTHREADS 0
+@@ -94,16 +94,16 @@
+ #define HAVE_LLRINT 1
+ #define HAVE_LOCAL_ALIGNED_16 1
+ #define HAVE_LOCAL_ALIGNED_8 1
+-#define HAVE_LOG2 1
+-#define HAVE_LOG2F 1
++#define HAVE_LOG2 0
++#define HAVE_LOG2F 0
+ #define HAVE_LOONGSON 0
+ #define HAVE_LRINT 1
+ #define HAVE_LRINTF 1
+ #define HAVE_LZO1X_999_COMPRESS 0
+ #define HAVE_MACHINE_IOCTL_BT848_H 0
+ #define HAVE_MACHINE_IOCTL_METEOR_H 0
+-#define HAVE_MALLOC_H 1
+-#define HAVE_MEMALIGN 1
++#define HAVE_MALLOC_H 0
++#define HAVE_MEMALIGN 0
+ #define HAVE_MKSTEMP 1
+ #define HAVE_PLD 0
+ #define HAVE_POSIX_MEMALIGN 1
+Index: third_party/ffmpeg/config/Chrome/linux/ia32/config.h
+===================================================================
+--- third_party/ffmpeg/config/Chrome/linux/ia32/config.h	(revision 49485)
++++ third_party/ffmpeg/config/Chrome/linux/ia32/config.h	(working copy)
+@@ -45,7 +45,7 @@
+ #define HAVE_NEON 0
+ #define HAVE_PPC4XX 0
+ #define HAVE_SSE 1
+-#define HAVE_SSSE3 1
++#define HAVE_SSSE3 0
+ #define HAVE_VIS 0
+ #define HAVE_BIGENDIAN 0
+ #define HAVE_BEOSTHREADS 0
+@@ -94,16 +94,16 @@
+ #define HAVE_LLRINT 1
+ #define HAVE_LOCAL_ALIGNED_16 1
+ #define HAVE_LOCAL_ALIGNED_8 1
+-#define HAVE_LOG2 1
+-#define HAVE_LOG2F 1
++#define HAVE_LOG2 0
++#define HAVE_LOG2F 0
+ #define HAVE_LOONGSON 0
+ #define HAVE_LRINT 1
+ #define HAVE_LRINTF 1
+ #define HAVE_LZO1X_999_COMPRESS 0
+ #define HAVE_MACHINE_IOCTL_BT848_H 0
+ #define HAVE_MACHINE_IOCTL_METEOR_H 0
+-#define HAVE_MALLOC_H 1
+-#define HAVE_MEMALIGN 1
++#define HAVE_MALLOC_H 0
++#define HAVE_MEMALIGN 0
+ #define HAVE_MKSTEMP 1
+ #define HAVE_PLD 0
+ #define HAVE_POSIX_MEMALIGN 1

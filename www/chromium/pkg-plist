@@ -58,46 +58,24 @@ bin/chrome
 %%DATADIR%%/mksnapshot
 %%DATADIR%%/product_logo_48.png
 %%DATADIR%%/protoc
-%%DATADIR%%/resources/bookmark_manager/css/bmm.css
-%%DATADIR%%/resources/bookmark_manager/css/bmm.css.js
-%%DATADIR%%/resources/bookmark_manager/css/list.css
-%%DATADIR%%/resources/bookmark_manager/css/menu.css
-%%DATADIR%%/resources/bookmark_manager/css/tree.css
-%%DATADIR%%/resources/bookmark_manager/css/tree.css.js
-%%DATADIR%%/resources/bookmark_manager/images/bookmark_bar_folder_mac.png
-%%DATADIR%%/resources/bookmark_manager/images/bookmark_manager_recent.png
-%%DATADIR%%/resources/bookmark_manager/images/bookmark_manager_search.png
-%%DATADIR%%/resources/bookmark_manager/images/bookmarks_favicon.png
-%%DATADIR%%/resources/bookmark_manager/images/bookmarks_section.png
-%%DATADIR%%/resources/bookmark_manager/images/folder_closed.png
-%%DATADIR%%/resources/bookmark_manager/images/folder_closed_rtl.png
-%%DATADIR%%/resources/bookmark_manager/images/folder_open.png
-%%DATADIR%%/resources/bookmark_manager/images/folder_open_rtl.png
-%%DATADIR%%/resources/bookmark_manager/js/bmm.js
-%%DATADIR%%/resources/bookmark_manager/js/bmm/bookmarklist.js
-%%DATADIR%%/resources/bookmark_manager/js/bmm/bookmarktree.js
-%%DATADIR%%/resources/bookmark_manager/js/bmm/treeiterator.js
-%%DATADIR%%/resources/bookmark_manager/js/cr.js
-%%DATADIR%%/resources/bookmark_manager/js/cr/event.js
-%%DATADIR%%/resources/bookmark_manager/js/cr/eventtarget.js
-%%DATADIR%%/resources/bookmark_manager/js/cr/promise.js
-%%DATADIR%%/resources/bookmark_manager/js/cr/ui.js
-%%DATADIR%%/resources/bookmark_manager/js/cr/ui/command.js
-%%DATADIR%%/resources/bookmark_manager/js/cr/ui/contextmenuhandler.js
-%%DATADIR%%/resources/bookmark_manager/js/cr/ui/list.js
-%%DATADIR%%/resources/bookmark_manager/js/cr/ui/listitem.js
-%%DATADIR%%/resources/bookmark_manager/js/cr/ui/listselectionmodel.js
-%%DATADIR%%/resources/bookmark_manager/js/cr/ui/menu.js
-%%DATADIR%%/resources/bookmark_manager/js/cr/ui/menubutton.js
-%%DATADIR%%/resources/bookmark_manager/js/cr/ui/menuitem.js
-%%DATADIR%%/resources/bookmark_manager/js/cr/ui/splitpane.js
-%%DATADIR%%/resources/bookmark_manager/js/cr/ui/tree.js
-%%DATADIR%%/resources/bookmark_manager/js/i18ntemplate.js
-%%DATADIR%%/resources/bookmark_manager/js/localstrings.js
-%%DATADIR%%/resources/bookmark_manager/js/util.js
-%%DATADIR%%/resources/bookmark_manager/main.html
-%%DATADIR%%/resources/bookmark_manager/manifest.json
+%%DATADIR%%/resources.pak
+%%DATADIR%%/resources/calendar_app/128.png
+%%DATADIR%%/resources/calendar_app/24.png
+%%DATADIR%%/resources/calendar_app/32.png
+%%DATADIR%%/resources/calendar_app/48.png
+%%DATADIR%%/resources/calendar_app/manifest.json
+%%DATADIR%%/resources/docs_app/128.png
+%%DATADIR%%/resources/docs_app/24.png
+%%DATADIR%%/resources/docs_app/32.png
+%%DATADIR%%/resources/docs_app/48.png
+%%DATADIR%%/resources/docs_app/manifest.json
+%%DATADIR%%/resources/gmail_app/128.png
+%%DATADIR%%/resources/gmail_app/24.png
+%%DATADIR%%/resources/gmail_app/32.png
+%%DATADIR%%/resources/gmail_app/48.png
+%%DATADIR%%/resources/gmail_app/manifest.json
 %%DATADIR%%/resources/inspector/DevTools.js
+%%DATADIR%%/resources/inspector/Images/applicationCache.png
 %%DATADIR%%/resources/inspector/Images/auditsIcon.png
 %%DATADIR%%/resources/inspector/Images/back.png
 %%DATADIR%%/resources/inspector/Images/breakpointBorder.png
@@ -186,16 +164,13 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/searchSmallWhite.png
 %%DATADIR%%/resources/inspector/Images/segment.png
 %%DATADIR%%/resources/inspector/Images/segmentChromium.png
-%%DATADIR%%/resources/inspector/Images/segmentChromium2.png
 %%DATADIR%%/resources/inspector/Images/segmentEnd.png
 %%DATADIR%%/resources/inspector/Images/segmentHover.png
 %%DATADIR%%/resources/inspector/Images/segmentHoverChromium.png
-%%DATADIR%%/resources/inspector/Images/segmentHoverChromium2.png
 %%DATADIR%%/resources/inspector/Images/segmentHoverEnd.png
 %%DATADIR%%/resources/inspector/Images/segmentHoverEndChromium.png
 %%DATADIR%%/resources/inspector/Images/segmentSelected.png
 %%DATADIR%%/resources/inspector/Images/segmentSelectedChromium.png
-%%DATADIR%%/resources/inspector/Images/segmentSelectedChromium2.png
 %%DATADIR%%/resources/inspector/Images/segmentSelectedEnd.png
 %%DATADIR%%/resources/inspector/Images/segmentSelectedEndChromium.png
 %%DATADIR%%/resources/inspector/Images/sessionStorage.png
@@ -204,14 +179,12 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/splitviewDividerBackground.png
 %%DATADIR%%/resources/inspector/Images/statusbarBackground.png
 %%DATADIR%%/resources/inspector/Images/statusbarBackgroundChromium.png
-%%DATADIR%%/resources/inspector/Images/statusbarBackgroundChromium2.png
 %%DATADIR%%/resources/inspector/Images/statusbarBottomBackground.png
 %%DATADIR%%/resources/inspector/Images/statusbarBottomBackgroundChromium.png
 %%DATADIR%%/resources/inspector/Images/statusbarButtons.png
 %%DATADIR%%/resources/inspector/Images/statusbarButtonsChromium.png
 %%DATADIR%%/resources/inspector/Images/statusbarMenuButton.png
 %%DATADIR%%/resources/inspector/Images/statusbarMenuButtonChromium.png
-%%DATADIR%%/resources/inspector/Images/statusbarMenuButtonChromium2.png
 %%DATADIR%%/resources/inspector/Images/statusbarMenuButtonSelected.png
 %%DATADIR%%/resources/inspector/Images/statusbarMenuButtonSelectedChromium.png
 %%DATADIR%%/resources/inspector/Images/statusbarResizerHorizontal.png
@@ -269,38 +242,18 @@ bin/chrome
 %%DATADIR%%/resources/inspector/audits.css
 %%DATADIR%%/resources/inspector/devTools.css
 %%DATADIR%%/resources/inspector/devtools.html
+%%DATADIR%%/resources/inspector/helpScreen.css
 %%DATADIR%%/resources/inspector/inspector.css
 %%DATADIR%%/resources/inspector/inspector.html
 %%DATADIR%%/resources/inspector/inspectorSyntaxHighlight.css
 %%DATADIR%%/resources/inspector/popover.css
 %%DATADIR%%/resources/inspector/textViewer.css
-%%DATADIR%%/resources/net_internals/detailsview.js
-%%DATADIR%%/resources/net_internals/dnsview.js
-%%DATADIR%%/resources/net_internals/index.html
-%%DATADIR%%/resources/net_internals/loggrouper.js
-%%DATADIR%%/resources/net_internals/logviewpainter.js
-%%DATADIR%%/resources/net_internals/main.css
-%%DATADIR%%/resources/net_internals/main.js
-%%DATADIR%%/resources/net_internals/proxyview.js
-%%DATADIR%%/resources/net_internals/requestsview.js
-%%DATADIR%%/resources/net_internals/resizableverticalsplitview.js
-%%DATADIR%%/resources/net_internals/sourceentry.js
-%%DATADIR%%/resources/net_internals/tabswitcherview.js
-%%DATADIR%%/resources/net_internals/timelineviewpainter.js
-%%DATADIR%%/resources/net_internals/topmidbottomview.js
-%%DATADIR%%/resources/net_internals/util.js
-%%DATADIR%%/resources/net_internals/view.js
 %%DATADIR%%/xdg-settings
-@dirrm %%DATADIR%%/resources/bookmark_manager/css
-@dirrm %%DATADIR%%/resources/bookmark_manager/images
-@dirrm %%DATADIR%%/resources/bookmark_manager/js/bmm
-@dirrm %%DATADIR%%/resources/bookmark_manager/js/cr/ui
-@dirrm %%DATADIR%%/resources/bookmark_manager/js/cr
-@dirrm %%DATADIR%%/resources/bookmark_manager/js
-@dirrm %%DATADIR%%/resources/bookmark_manager
+@dirrm %%DATADIR%%/locales
+@dirrm %%DATADIR%%/resources/calendar_app
+@dirrm %%DATADIR%%/resources/docs_app
+@dirrm %%DATADIR%%/resources/gmail_app
 @dirrm %%DATADIR%%/resources/inspector/Images
 @dirrm %%DATADIR%%/resources/inspector
-@dirrm %%DATADIR%%/resources/net_internals
 @dirrm %%DATADIR%%/resources
-@dirrm %%DATADIR%%/locales
 @dirrm %%DATADIR%%

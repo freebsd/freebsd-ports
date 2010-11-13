@@ -7,7 +7,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	5.0.375.127
+DISTVERSION=	6.0.472.63
 CATEGORIES=	www
 MASTER_SITES=	http://chromium.hybridsource.org/old/ports/ \
 		CRITICAL
@@ -15,8 +15,8 @@ MASTER_SITES=	http://chromium.hybridsource.org/old/ports/ \
 MAINTAINER=	chromium@hybridsource.org
 COMMENT=	A mostly BSD-licensed web browser based on WebKit and Gtk+
 
-BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex		\
-		gperf:${PORTSDIR}/devel/gperf		\
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex		\
+		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf		\
 		bash:${PORTSDIR}/shells/bash		\
 		pkg-config:${PORTSDIR}/devel/pkg-config	\
 		yasm:${PORTSDIR}/devel/yasm		\
@@ -30,22 +30,25 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo	\
 		Xss.1:${PORTSDIR}/x11/libXScrnSaver		\
 		asound.2:${PORTSDIR}/audio/alsa-lib		\
 		freetype.9:${PORTSDIR}/print/freetype2		\
-		nss3.1:${PORTSDIR}/security/nss
+		nss3.1:${PORTSDIR}/security/nss			\
+		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_BISON=	build
 USE_PYTHON=	2.6			# only needed at build time
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
-USE_GCC=	4.2+
 MAN1=		chrome.1
 USE_XORG=	scrnsaverproto
-USE_GNOME=	glib20 gtk20 gconf2
+USE_GNOME=	glib20 gtk20 gconf2 libxslt
 LICENSE_COMB=	multi
 LICENSE=	BSD LGPL21 MPL
+
+DESKTOP_ENTRIES="Chromium" "${COMMENT}" "${DATADIR}/product_logo_48.png" \
+		"chrome" "Application;Network;WebBrowser;" true
 
 ALL_TARGET=	chrome
 
@@ -59,14 +62,8 @@ GYP_DEFINES+=	use_system_libxml=1
 #GYP_DEFINES+=	use_system_sqlite=0
 #GYP_DEFINES+=	use_system_zlib=1
 
-OPTIONS=	CODECS		"Compile and enable patented codecs like H.264" off
-
-DESKTOP_ENTRIES=	"Chromium" \
-			"${COMMENT}" \
-			"${DATADIR}/product_logo_48.png" \
-			"chrome" \
-			"Application;Network;WebBrowser;" \
-			"true"
+OPTIONS=	CODECS		"Compile and enable patented codecs like H.264" off \
+		VPX		"Use system libvpx for VP8 codec" on
 
 .include <bsd.port.pre.mk>
 
@@ -80,12 +77,19 @@ GYP_DEFINES+=	ffmpeg_branding=Chrome
 GYP_DEFINES+=	ffmpeg_branding=Chromium
 .endif
 
+.if defined(WITH_VPX)
+LIB_DEPENDS+=	vpx:${PORTSDIR}/multimedia/libvpx
+GYP_DEFINES+=	use_system_vpx=1
+.endif
+
 .if !defined(WITH_DEBUG)
 BUILDTYPE=	Release
 .else
 BUILDTYPE=	Debug
 .endif
 
+#pull newer flex and gperf in from ports
+MAKE_ENV+=	PATH=${LOCALBASE}/bin:${PATH}
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 MAKE_JOBS_SAFE=	yes
 STRIP=
@@ -110,18 +114,18 @@ post-patch:
 		${WRKSRC}/v8/tools/gyp/v8.gyp
 	@${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|' \
 		${WRKSRC}/third_party/WebKit/WebCore/bindings/scripts/IDLParser.pm \
-		${WRKSRC}/third_party/WebKit/WebCore/css/make-css-file-arrays.pl \
 		${WRKSRC}/third_party/WebKit/WebCore/dom/make_names.pl
 
 do-configure:
 	cd ${WRKSRC} && \
-		${SETENV} GYP_GENERATORS="make" GYP_DEFINES="${GYP_DEFINES}" ${PYTHON_CMD} ./build/gyp_chromium chrome/chrome.gyp --depth ./
+		GYP_DEFINES="${GYP_DEFINES}" ${PYTHON_CMD} ./build/gyp_chromium chrome/chrome.gyp --depth ./
 
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_MAN} ${WRKSRC}/out/${BUILDTYPE}/chrome.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/chrome.pak ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/product_logo_48.png ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/out/${BUILDTYPE}/resources.pak ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/out/${BUILDTYPE}/chrome-wrapper ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/out/${BUILDTYPE}/xdg-settings ${DATADIR}
 .for f in chrome ffmpegsumo_nolink libffmpegsumo.so mksnapshot protoc
