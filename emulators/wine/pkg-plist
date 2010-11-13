@@ -90,6 +90,8 @@ include/wine/windows/asptlb.h
 include/wine/windows/asptlb.idl
 include/wine/windows/asynot.idl
 include/wine/windows/asysta.idl
+include/wine/windows/atliface.h
+include/wine/windows/atliface.idl
 include/wine/windows/audevcod.h
 include/wine/windows/audioclient.h
 include/wine/windows/audioclient.idl
@@ -129,6 +131,7 @@ include/wine/windows/compobj.h
 include/wine/windows/control.h
 include/wine/windows/control.idl
 include/wine/windows/cor.h
+include/wine/windows/cor.idl
 include/wine/windows/corerror.h
 include/wine/windows/corhdr.h
 include/wine/windows/cpl.h
@@ -146,6 +149,7 @@ include/wine/windows/d3d10.h
 include/wine/windows/d3d10.idl
 include/wine/windows/d3d10_1.h
 include/wine/windows/d3d10_1.idl
+include/wine/windows/d3d10_1shader.h
 include/wine/windows/d3d10effect.h
 include/wine/windows/d3d10misc.h
 include/wine/windows/d3d10shader.h
@@ -166,6 +170,7 @@ include/wine/windows/d3dhal.h
 include/wine/windows/d3drm.h
 include/wine/windows/d3drmdef.h
 include/wine/windows/d3drmobj.h
+include/wine/windows/d3drmwin.h
 include/wine/windows/d3dtypes.h
 include/wine/windows/d3dvec.inl
 include/wine/windows/d3dx9.h
@@ -609,6 +614,8 @@ include/wine/windows/winsock.h
 include/wine/windows/winsock2.h
 include/wine/windows/winspool.h
 include/wine/windows/winsvc.h
+include/wine/windows/winsxs.h
+include/wine/windows/winsxs.idl
 include/wine/windows/wintab.h
 include/wine/windows/wintabx.h
 include/wine/windows/winternl.h
@@ -1094,6 +1101,7 @@ lib/wine/fakedlls/rasapi32.dll
 lib/wine/fakedlls/rasdlg.dll
 lib/wine/fakedlls/reg.exe
 lib/wine/fakedlls/regedit.exe
+lib/wine/fakedlls/regsvcs.exe
 lib/wine/fakedlls/regsvr32.exe
 lib/wine/fakedlls/resutils.dll
 lib/wine/fakedlls/riched20.dll
@@ -1240,6 +1248,7 @@ lib/wine/fakedlls/wsock32.dll
 lib/wine/fakedlls/wtsapi32.dll
 lib/wine/fakedlls/wuapi.dll
 lib/wine/fakedlls/wuaueng.dll
+lib/wine/fakedlls/xapofx1_1.dll
 lib/wine/fakedlls/xcopy.exe
 lib/wine/fakedlls/xinput1_1.dll
 lib/wine/fakedlls/xinput1_2.dll
@@ -1568,6 +1577,7 @@ lib/wine/rasapi32.dll.so
 lib/wine/rasdlg.dll.so
 lib/wine/reg.exe.so
 lib/wine/regedit.exe.so
+lib/wine/regsvcs.exe.so
 lib/wine/regsvr32.exe.so
 lib/wine/resutils.dll.so
 lib/wine/riched20.dll.so
@@ -1714,6 +1724,7 @@ lib/wine/wsock32.dll.so
 lib/wine/wtsapi32.dll.so
 lib/wine/wuapi.dll.so
 lib/wine/wuaueng.dll.so
+lib/wine/xapofx1_1.dll.so
 lib/wine/xcopy.exe.so
 lib/wine/xinput1_1.dll.so
 lib/wine/xinput1_2.dll.so
