@@ -7,11 +7,11 @@
 
 PORTNAME=	gpodder
 PORTVERSION=	2.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	BERLIOS \
 		http://thp.io/2010/mygpoclient/:mygpoclient \
-		CHEESESHOP:mygpoclient 
+		CHEESESHOP:mygpoclient
 MASTER_SITE_SUBDIR=	${PORTNAME}/:DEFAULT \
 			source/m/mygpoclient/:mygpoclient
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \

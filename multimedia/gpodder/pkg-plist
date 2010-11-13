@@ -225,3 +225,5 @@ share/pixmaps/gpodder.png
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/gtkui
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder
 @dirrmtry share/applications
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
