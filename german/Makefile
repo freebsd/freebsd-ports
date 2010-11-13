@@ -31,7 +31,6 @@
     SUBDIR += koffice-i18n
     SUBDIR += koffice-kde4-l10n
     SUBDIR += ksteak
-    SUBDIR += linux-eagle
     SUBDIR += manpages
     SUBDIR += mediathek
     SUBDIR += pecl-konto_check
