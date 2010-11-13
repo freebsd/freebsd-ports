@@ -23,6 +23,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/${MOZILLA}/regxpcom:${PORTSDIR}/www/${MOZILLA}
 RUN_DEPENDS=	${MOZILLA}:${PORTSDIR}/www/${MOZILLA} \
 		ja-alias-fonts>=1.0:${PORTSDIR}/japanese/alias-fonts
 
+DEPRECATED=	Depends on obsolete port www/mozilla
+EXPIRATION_DATE=	2010-12-13
 WRKSRC=		${WRKDIR}/bin
 
 USE_ZIP=	yes
