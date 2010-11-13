@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lzop
-DISTVERSION=	1.02rc1
+DISTVERSION=	1.03
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.lzop.org/download/
 
