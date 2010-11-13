@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iso-codes
-PORTVERSION=	3.21
+PORTVERSION=	3.22
 CATEGORIES=	misc
 MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/
 
@@ -17,7 +17,6 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget
-USE_PYTHON_BUILD=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

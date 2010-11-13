@@ -154,7 +154,9 @@ share/locale/id/LC_MESSAGES/iso_3166_2.mo
 share/locale/id/LC_MESSAGES/iso_4217.mo
 share/locale/id/LC_MESSAGES/iso_639.mo
 share/locale/id/LC_MESSAGES/iso_639_3.mo
+share/locale/is/LC_MESSAGES/iso_15924.mo
 share/locale/is/LC_MESSAGES/iso_3166.mo
+share/locale/is/LC_MESSAGES/iso_4217.mo
 share/locale/is/LC_MESSAGES/iso_639.mo
 share/locale/is/LC_MESSAGES/iso_639_3.mo
 share/locale/it/LC_MESSAGES/iso_15924.mo
@@ -382,6 +384,7 @@ share/locale/zh_HK/LC_MESSAGES/iso_4217.mo
 share/locale/zh_HK/LC_MESSAGES/iso_639.mo
 share/locale/zh_TW/LC_MESSAGES/iso_15924.mo
 share/locale/zh_TW/LC_MESSAGES/iso_3166.mo
+share/locale/zh_TW/LC_MESSAGES/iso_3166_2.mo
 share/locale/zh_TW/LC_MESSAGES/iso_4217.mo
 share/locale/zh_TW/LC_MESSAGES/iso_639.mo
 share/locale/zh_TW/LC_MESSAGES/iso_639_3.mo
