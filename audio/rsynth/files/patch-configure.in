@@ -1,0 +1,38 @@
+--- configure.in.orig	1994-11-08 14:30:51.000000000 +0100
++++ configure.in	2010-11-13 22:47:22.000000000 +0100
+@@ -11,7 +11,8 @@
+ dbm=none
+ make_dist=/dev/null 
+ 
+-AC_PREFIX_PROGRAM(gcc)
++dnl *sigh* - torstenb
++dnl AC_PREFIX_PROGRAM(gcc)
+ 
+ if test -z "$CC" && test -n "$GCC" ; then
+ CC=$GCC
+@@ -41,6 +42,7 @@
+ *-sgi-*) hplay=sgi ;;
+ *-next-*) hplay=NeXT; AC_CHECK_HEADERS(libc.h) ;;
+ *-*-linux*) hplay=linux ;;
++*-*-freebsd*) hplay=freebsd ;;
+ *-*-hpux*)  hplay=hpux ;;
+ *-*-*) echo "Unknown host type $host" ;;
+ esac
+@@ -93,7 +95,7 @@
+ CPPFLAGS="-I. -I$srcdir $CPPFLAGS"
+ 
+ AC_CHECK_LIB(gdbm,gdbm_open)
+-if test "$ac_cv_lib_gdbm" = yes; then
++if test "$ac_cv_lib_gdbm_gdbm_open" = yes; then
+ PROGS="$PROGS mkdictdb dlookup"
+ else
+ DICTS=""
+@@ -126,7 +128,7 @@
+   XLIBS="-laudio $XLIBS"
+   AC_DEFINE(HAVE_NAS)
+   ],,$XLIBS $LIBS)
+-  if test "$ac_cv_lib_audio" = yes; then
++  if test "$ac_cv_lib_audio_AuOpenServer" = yes; then
+    if test "$hplay" = dummy; then
+     hplay="na" 
+     LIBS="$XLIBS $LIBS"

@@ -11,18 +11,16 @@ PORTREVISION=	3
 CATEGORIES=	audio accessibility
 MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Speech synthesizer
 
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm	\
 		audio:${PORTSDIR}/audio/nas
 
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:268
 
 pre-configure:
 	@${CP} ${FILESDIR}/freebsdplay.c ${WRKSRC}/config/freebsdplay.c
-	@${CP} ${FILESDIR}/config.guess ${WRKSRC}/config.guess
-	@${CP} ${FILESDIR}/config.sub ${WRKSRC}/config.sub
-	@${CP} ${FILESDIR}/configure ${WRKSRC}/configure
 
 .include <bsd.port.mk>
