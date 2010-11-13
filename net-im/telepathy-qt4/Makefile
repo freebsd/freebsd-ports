@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	telepathy-qt4
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.14
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -25,13 +25,12 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib dbus network xml qtestlib_build \
 		moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 
-PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README html
+PORTDOCS=	AUTHORS ChangeLog HACKING NEWS README html
 
-PORTEXAMPLES=	Makefile accounts call extensions \
+PORTEXAMPLES=	Makefile accounts extensions \
 		file-transfer protocols roster
 
 .include <bsd.port.pre.mk>
@@ -41,8 +40,10 @@ BROKEN=		does not build on 6.X
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -E -e 's:(^pkgconfigdir =).*:\1 ${PREFIX}/libdata/pkgconfig:' \
-		${WRKSRC}/TelepathyQt4/Makefile.in
+	${REINPLACE_CMD} -e '/TelepathyQt4.*\.pc/ s|pkgconfig|../libdata/pkgconfig|' \
+		${WRKSRC}/TelepathyQt4/CMakeLists.txt
+	${REINPLACE_CMD} -e '/$${LIBXML2_INCLUDE_DIR}/ s|$$| ${LOCALBASE}/include|' \
+		${WRKSRC}/TelepathyQt4/Farsight/CMakeLists.txt
 
 pre-install:
 .ifndef(NOPORTDOCS)
@@ -57,8 +58,6 @@ post-install:
 .endfor
 .endif
 .ifndef(NOPORTEXAMPLES)
-	${RM} -r ${WRKSRC}/examples/*/.deps
-	${RM} -r ${WRKSRC}/examples/*/.libs
 	${MKDIR} ${EXAMPLESDIR}
 .for f in ${PORTEXAMPLES}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} ${f} ${EXAMPLESDIR}
