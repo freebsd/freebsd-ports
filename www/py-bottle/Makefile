@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	bottle
-PORTVERSION=	0.8.3
-#PORTREVISION=	0
+PORTVERSION=	0.8.5
+PORTREVISION=	0
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
