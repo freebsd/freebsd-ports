@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	algol68g
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.xs4all.nl/~jmvdveer/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz

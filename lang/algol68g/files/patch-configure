@@ -1,5 +1,5 @@
---- configure.orig	2010-11-07 16:22:28.000000000 +0100
-+++ configure	2010-11-09 21:02:05.000000000 +0100
+--- configure.orig	2010-11-11 21:19:08.000000000 +0100
++++ configure	2010-11-12 13:00:29.000000000 +0100
 @@ -47,7 +47,7 @@ A68G_DOC="./doc"
  A68G_HTML_TEMPLATES="$A68G_DOC/html"
  A68G_LATEX_TEMPLATES="$A68G_DOC/latex"
@@ -28,12 +28,12 @@
 @@ -962,7 +956,7 @@ FLAGS=$(CPPFLAGS) $(STD_CFLAGS) $(POSIX_
  all:    a68g
  a68g:   $(CS)
- 	@echo "building a68g ..."
+ 	@echo "LINK a68g"
 -	@$(CC) $(CS) -Wl,--export-dynamic $(CFLAGS) $(STD_LD_FLAGS) $(POSIX_THREADS_LIBS) $(PLOTUTILS_LIBS) $(GSL_LIBS) $(CURSES_LIBS) $(SQL_LIBS) $(READLINE_LIBS) -lm -ldl $(LD_FLAGS) -o a68g
 +	@$(CC) $(CS) -Wl,--export-dynamic $(CFLAGS) $(STD_LD_FLAGS) $(POSIX_THREADS_LIBS) $(PLOTUTILS_LIBS) $(GSL_LIBS) $(CURSES_LIBS) $(SQL_LIBS) $(READLINE_LIBS) -lm $(LD_FLAGS) -o a68g
  $(CS): $(HS)
  .c.o:
- 	@echo "compiling $<"
+ 	@echo "CC $<"
 @@ -980,7 +974,7 @@ FLAGS=$(CPPFLAGS) $(STD_CFLAGS) $(POSIX_
  all:    a68g
  a68g:   $(CS)
