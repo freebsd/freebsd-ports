@@ -8,13 +8,10 @@
 PORTNAME=	xscoop
 PORTVERSION=	1.0.2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.fourcalorieservers.com/ports/x11-toolkits/xscoop/ \
-		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}/sources/
+MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X library detective
-
-BROKEN=		does not fetch
 
 MAN7=		xscoop.7
 PLIST_FILES=	bin/xscoop
@@ -25,6 +22,10 @@ NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 700042
+LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xscoop6 ${PREFIX}/bin/xscoop
