@@ -5488,6 +5488,7 @@ horde-hermes                    ports/deskutils/horde-hermes
 horde-imp                       ports/mail/horde-imp
 horde-ingo                      ports/mail/horde-ingo
 horde-jeta                      ports/security/horde-jeta
+horde-klutz                     ports/deskutils/horde-klutz
 horde-kronolith                 ports/deskutils/horde-kronolith
 horde-meta                      ports/www/horde-meta
 horde-mimp                      ports/mail/horde-mimp
@@ -8937,6 +8938,7 @@ luckybackup                     ports/sysutils/luckybackup
 ludia                           ports/databases/ludia
 luit                            ports/x11/luit
 luma                            ports/sysutils/luma
+luminance                       ports/graphics/luminance
 luna                            ports/astro/luna
 luola                           ports/games/luola
 lupe                            ports/x11/lupe
@@ -12213,6 +12215,7 @@ p5-File-Scan-ClamAV             ports/security/p5-File-Scan-ClamAV
 p5-File-ShareDir                ports/devel/p5-File-ShareDir
 p5-File-ShareDir-Install        ports/devel/p5-File-ShareDir-Install
 p5-File-ShareDir-PAR            ports/devel/p5-File-ShareDir-PAR
+p5-File-Signature               ports/sysutils/p5-File-Signature
 p5-File-Slurp                   ports/devel/p5-File-Slurp
 p5-File-Slurp-Tree              ports/devel/p5-File-Slurp-Tree
 p5-File-Sort                    ports/misc/p5-File-Sort
@@ -13211,6 +13214,7 @@ p5-Net-EPP                      ports/net/p5-Net-EPP
 p5-Net-EPP-Proxy                ports/net/p5-Net-EPP-Proxy
 p5-Net-FS-Flickr                ports/net/p5-Net-FS-Flickr
 p5-Net-FS-Gmail                 ports/net/p5-Net-FS-Gmail
+p5-Net-FTP-AutoReconnect        ports/net/p5-Net-FTP-AutoReconnect
 p5-Net-FTP-Common               ports/ftp/p5-Net-FTP-Common
 p5-Net-FTP-File                 ports/net/p5-Net-FTP-File
 p5-Net-FTP-Recursive            ports/ftp/p5-Net-FTP-Recursive
@@ -16180,6 +16184,7 @@ p5-file-scan-clamav             ports/security/p5-File-Scan-ClamAV
 p5-file-sharedir                ports/devel/p5-File-ShareDir
 p5-file-sharedir-install        ports/devel/p5-File-ShareDir-Install
 p5-file-sharedir-par            ports/devel/p5-File-ShareDir-PAR
+p5-file-signature               ports/sysutils/p5-File-Signature
 p5-file-slurp                   ports/devel/p5-File-Slurp
 p5-file-slurp-tree              ports/devel/p5-File-Slurp-Tree
 p5-file-sort                    ports/misc/p5-File-Sort
@@ -17212,6 +17217,7 @@ p5-net-freedb                   ports/audio/p5-Net-FreeDB
 p5-net-freshbooks-api           ports/www/p5-Net-FreshBooks-API
 p5-net-fs-flickr                ports/net/p5-Net-FS-Flickr
 p5-net-fs-gmail                 ports/net/p5-Net-FS-Gmail
+p5-net-ftp-autoreconnect        ports/net/p5-Net-FTP-AutoReconnect
 p5-net-ftp-common               ports/ftp/p5-Net-FTP-Common
 p5-net-ftp-file                 ports/net/p5-Net-FTP-File
 p5-net-ftp-recursive            ports/ftp/p5-Net-FTP-Recursive
@@ -20133,6 +20139,7 @@ pipsv600                        ports/print/pipsv600
 pipsv700                        ports/print/pipsv700
 pipsv700-cups                   ports/print/pipsv700-cups
 pircbot                         ports/irc/pircbot
+pire                            ports/devel/pire
 pisg                            ports/irc/pisg
 pitivi                          ports/multimedia/pitivi
 pivot-weblog                    ports/www/pivot-weblog
@@ -21854,7 +21861,6 @@ qtm                             ports/deskutils/qtm
 qtoctave                        ports/math/qtoctave
 qtools                          ports/mail/qtools
 qtorrent                        ports/net-p2p/qtorrent
-qtpfsgui                        ports/graphics/qtpfsgui
 qtpixmap                        ports/x11-toolkits/qtpixmap
 qtpkg                           ports/ports-mgmt/qtpkg
 qtresistors                     ports/science/qtresistors
@@ -25717,6 +25723,7 @@ wzdftpd                         ports/ftp/wzdftpd
 wzip                            ports/archivers/wzip
 x-face-e21                      ports/mail/x-face-e21
 x-files                         ports/x11-fm/x-files
+x026                            ports/deskutils/x026
 x11_bitmap                      ports/x11/bitmap
 x11_blast                       ports/x11/blast
 x11_silo                        ports/x11/silo
