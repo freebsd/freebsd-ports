@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux-eagle5
-EAGLEBASEVERSION?=	5.5
+EAGLEBASEVERSION?=	5.10
 EAGLEBUGFIX?=	0
 EAGLEVERSION=	${EAGLEBASEVERSION}.${EAGLEBUGFIX}
 PORTVERSION=	${EAGLEVERSION:S/r/./}
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.cadsoft.de/eagle/program/${EAGLEBASEVERSION}/
 DISTNAME=	eagle-${EAGLEVERSION}
 DISTFILES=	eagle-lin-${EAGLEVERSION}.run
 
-MAINTAINER?=	durian@shadetreesoftware.com
+MAINTAINER?=	riggs@rrr.de
 COMMENT?=	An easy to use, yet powerful tool for designing printed circuit boards
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -29,23 +29,40 @@ EXTRACT_AFTER_ARGS=	| ${BZCAT} -c 2>/dev/null | ${TAR} -xf -
 RESTRICTED=	Usage permitted for non-commercial purposes only
 NO_CDROM=	Sale for profit is not permitted
 
+CONFLICTS=	linux-eagle-* de-linux-eagle-*
+
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-deinstall
 
-MAN1=		eagle5.1
+MAN1=		eagle.1
 
 CPIO?=		/usr/bin/cpio --quiet -pdum -R
+
+.include <bsd.port.pre.mk>
+
+PLIST_SUB+=	LINUXBASE=${LINUXBASE}
+
+.if ${OSVERSION} < 700055
+IGNORE=	FreeBSD>=7.X is needed with Linux emulation 2.6.x.
+.elif ${OSVERSION} < 800076 && \
+	(!defined(OVERRIDE_LINUX_NONBASE_PORTS) || \
+	 !(${OVERRIDE_LINUX_NONBASE_PORTS} == f10))
+IGNORE=	needs non-default linux ports (define OVERRIDE_LINUX_BASE_PORT=f10 and OVERRIDE_LINUX_NONBASE_PORTS=f10)
+.endif
 
 do-install:
 	@${MKDIR} ${DATADIR}
 	@ cd ${WRKSRC} && ${FIND} * -type f -print | ${CPIO} ${BINOWN}:${BINGRP} ${DATADIR}
 	@ cd ${DATADIR} && ${FIND} * -type d -print | ${XARGS} ${CHMOD} 0755
-	@${INSTALL_MAN} ${DATADIR}/doc/eagle.1 ${PREFIX}/man/man1/eagle5.1
-	@${SED} -e "s:%%DATADIR%%:${DATADIR}:g" ${FILESDIR}/eagle.sh > ${PREFIX}/bin/eagle5
-	@${CHMOD} 0555 ${PREFIX}/bin/eagle5
+	@${INSTALL_MAN} ${DATADIR}/doc/eagle.1 ${PREFIX}/man/man1/eagle.1
+	@${SED} -e "s:%%DATADIR%%:${DATADIR}:g" ${FILESDIR}/eagle.sh > ${PREFIX}/bin/eagle
+	@${CHMOD} 0555 ${PREFIX}/bin/eagle
+	@#Need to bend the ssl locations for this port :-(
+	@${LN} -s ${LINUXBASE}/lib/libssl.so.0.9.8g ${LINUXBASE}/lib/libssl.so.0.9.8
+	@${LN} -s ${LINUXBASE}/lib/libcrypto.so.0.9.8g ${LINUXBASE}/lib/libcrypto.so.0.9.8
 
 post-install:
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${PKGDIR}/pkg-message > \
@@ -56,4 +73,4 @@ post-install:
 	@${ECHO_MSG}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

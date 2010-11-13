@@ -53,7 +53,6 @@
     SUBDIR += klayout
     SUBDIR += leocad
     SUBDIR += libgeda
-    SUBDIR += linux-eagle
     SUBDIR += linux-eagle5
     SUBDIR += linux-gid
     SUBDIR += magic
