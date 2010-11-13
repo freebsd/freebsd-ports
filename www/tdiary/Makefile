@@ -8,8 +8,8 @@
 PORTNAME=	tdiary
 PORTVERSION=	3.0.1
 CATEGORIES?=	www ruby
-MASTER_SITES=	http://www.tdiary.org/download/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/tdiary|}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
+		http://www.tdiary.org/download/
 DISTNAME=	${PORTNAME}-full-${PORTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
