@@ -1,0 +1,35 @@
+--- configure.orig	2010-10-22 00:51:31.000000000 +0000
++++ configure	2010-11-14 14:17:19.000000000 +0000
+@@ -319,6 +319,11 @@ EOF
+ }
+ 
+ RESOLV_TESTCODE='
++#ifdef __FreeBSD__
++#include <sys/types.h>
++#include <netinet/in.h>
++#endif
++
+ #include <arpa/nameser.h>
+ #include <resolv.h> 
+ 
+@@ -329,13 +334,18 @@ int main()
+ }
+ '
+ 
++LIBRESOLV=-lresolv
++
++# In FreeBSD res_* routines are present in libc.so
++[ "$arch" = FreeBSD ] && LIBRESOLV=
++
+ detect_resolv_dynamic()
+ {
+ 	TMPFILE=$(mktemp /tmp/bitlbee-configure.XXXXXX)
+ 	ret=1
+-	echo "$RESOLV_TESTCODE" | $CC -o $TMPFILE -x c - -lresolv >/dev/null 2>/dev/null
++	echo "$RESOLV_TESTCODE" | $CC -o $TMPFILE -x c - $LIBRESOLV >/dev/null 2>/dev/null
+ 	if [ "$?" = "0" ]; then
+-		echo 'EFLAGS+=-lresolv' >> Makefile.settings
++		echo "EFLAGS+=$LIBRESOLV" >> Makefile.settings
+ 		ret=0
+ 	fi
+ 
