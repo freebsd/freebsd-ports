@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	midori
-PORTVERSION=	0.2.8
+PORTVERSION=	0.2.9
 CATEGORIES=	www xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}/
@@ -18,9 +18,12 @@ COMMENT=	Lightweight web browser using WebKit browser engine
 
 LIB_DEPENDS=	webkit-1.0:${PORTSDIR}/www/webkit-gtk2 \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		notify.1:${PORTSDIR}/devel/libnotify \
-		vala.0:${PORTSDIR}/lang/vala
-BUILD_DEPENDS=	rsvg-convert:${PORTSDIR}/graphics/librsvg2
+		notify.1:${PORTSDIR}/devel/libnotify
+BUILD_DEPENDS=	rsvg-convert:${PORTSDIR}/graphics/librsvg2 \
+		valac:${PORTSDIR}/lang/vala
+
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -38,6 +41,9 @@ USE_GNOME=	glib20 gtk20 intltool libxml2 pkgconfig desktopfileutils
 USE_XORG=	xscrnsaver
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+.endif
 
 OPTIONS=	NLS "Enable Native Language support" on \
 		USERDOCS "Build user documentation" off \
@@ -49,7 +55,6 @@ OPTIONS=	NLS "Enable Native Language support" on \
 CONFIGURE_ENV+=	CC="${CC}"
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
@@ -67,7 +72,7 @@ PLIST_SUB+=	USERDOCS="@comment "
 
 .if defined(WITH_APIDOCS)
 BUILD_DEPENDS+=	gtkdoc-scan:${PORTSDIR}/textproc/gtk-doc
-CONFIGURE_ARGS+=--enable-apidocs  
+CONFIGURE_ARGS+=--enable-apidocs
 PLIST_SUB+=	APIDOCS=""
 .else
 CONFIGURE_ARGS+=--disable-apidocs
