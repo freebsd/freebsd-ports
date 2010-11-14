@@ -236,8 +236,6 @@ CONFIGURE_ARGS+=--disable-jack
 PLIST_SUB+=	JACKPLUGIN="@comment "
 .endif
 
-#OSS4 only works with recent changed in HEAD
-.if ${OSVERSION} >= 900000
 .if !defined(WITHOUT_OSS)
 PLIST_SUB+=	OSSPLUGIN=""
 CONFIGURE_ARGS+=--enable-oss
@@ -247,22 +245,12 @@ CONFIGURE_ARGS+=--disable-oss
 .endif
 
 .if !defined(WITHOUT_OSS4)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/oss/include/sys/soundcard.h:${PORTSDIR}/audio/oss
 PLIST_SUB+=	OSS4PLUGIN=""
 CONFIGURE_ARGS+=--enable-oss4
 .else
 PLIST_SUB+=	OSS4PLUGIN="@comment "
 CONFIGURE_ARGS+=--disable-oss4
-.endif
-.else
-PLIST_SUB+=     OSS4PLUGIN="@comment "
-CONFIGURE_ARGS+=--disable-oss4
-.if defined(WITH_OSS) || defined(WITH_OSS4)
-PLIST_SUB+=     OSSPLUGIN=""
-CONFIGURE_ARGS+=--enable-oss
-.else
-PLIST_SUB+=     OSSPLUGIN="@comment "
-CONFIGURE_ARGS+=--disable-oss
-.endif
 .endif
 
 .if defined(WITH_SID)
@@ -373,6 +361,8 @@ post-patch:
 		${WRKSRC}/src/usf/memory.c
 	@${REINPLACE_CMD} -e 's|-ldl||g' \
 		${WRKSRC}/src/ladspa/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/lib/|${LOCALBASE}/lib/|g' \
+		${WRKSRC}/src/oss4/Makefile
 
 pre-configure:
 .if defined(WITH_AUDIOCD) && !exists(${LOCALBASE}/lib/libcdio_cdda.so)
