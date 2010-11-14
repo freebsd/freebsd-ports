@@ -11,6 +11,8 @@ MAINTAINER=		tphilipp@potion-studios.com
 
 BUILD_DEPENDS=		${LOCALBASE}/psp/lib/libc.a:${PORTSDIR}/devel/psptoolchain-newlib
 
+BROKEN=			does not build
+
 MAKE_ENV=		CFLAGS_FOR_TARGET="-G0"
 CONFIGURE_ARGS=		--prefix=${PREFIX} --target="psp" --enable-languages="c,c++" --with-newlib --enable-cxx-flags="-G0" --disable-nls
 
