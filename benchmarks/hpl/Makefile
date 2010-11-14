@@ -7,7 +7,7 @@
 
 PORTNAME=	hpl
 PORTVERSION=	2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.netlib.org/benchmark/hpl/
 
@@ -15,8 +15,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	High Performance Computing Linpack Benchmark
 
 .if !defined(WITH_LAM)
-BUILD_DEPENDS=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
+LIB_DEPENDS=	mpich.2:${PORTSDIR}/net/mpich2
 .else
 BUILD_DEPENDS=	${LOCALBASE}/bin/lamd:${PORTSDIR}/net/lam
 RUN_DEPENDS=	${LOCALBASE}/bin/lamd:${PORTSDIR}/net/lam
@@ -83,7 +82,7 @@ post-patch:
 		s|^LINKER[ ]*=.*$$|LINKER = ${FC}| ; \
 		s|^ARCHIVER[ ]*=.*$$|ARCHIVER = ${AR}| ; \
 		s|ARCH[ )]|_&|g ; \
-		s|libpmpich|libmpich|g' \
+		s|libpmpich.a|libmpl.a ${PTHREAD_LIBS}|' \
 		${WRKSRC}/setup/Make.${HPL_ARCH}
 
 .if defined(WITH_LAM)
