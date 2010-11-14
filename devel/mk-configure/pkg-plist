@@ -24,6 +24,7 @@ share/mkc-mk/mkc.files.mk
 share/mkc-mk/mkc.intexts.mk
 share/mkc-mk/mkc.lib.mk
 share/mkc-mk/mkc.minitest.mk
+share/mkc-mk/mkc.mk
 share/mkc-mk/mkc.own.mk
 share/mkc-mk/mkc.pkg-config.mk
 share/mkc-mk/mkc.prog.mk
@@ -46,6 +47,7 @@ share/mkc-mk/mkc_imp.own.mk
 share/mkc-mk/mkc_imp.pkg-config.mk
 share/mkc-mk/mkc_imp.platform.sys.mk
 share/mkc-mk/mkc_imp.pod.mk
+share/mkc-mk/mkc_imp.preinit.mk
 share/mkc-mk/mkc_imp.prog.mk
 share/mkc-mk/mkc_imp.scripts.mk
 share/mkc-mk/mkc_imp.subdir.mk
