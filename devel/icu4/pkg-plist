@@ -193,6 +193,9 @@ lib/libicule.so.%%ICUMAJOR%%.%%ICUMINOR%%
 lib/libiculx.so
 lib/libiculx.so.%%ICUMAJOR%%
 lib/libiculx.so.%%ICUMAJOR%%.%%ICUMINOR%%
+lib/libicutest.so
+lib/libicutest.so.%%ICUMAJOR%%
+lib/libicutest.so.%%ICUMAJOR%%.%%ICUMINOR%%
 lib/libicutu.so
 lib/libicutu.so.%%ICUMAJOR%%
 lib/libicutu.so.%%ICUMAJOR%%.%%ICUMINOR%%
@@ -204,6 +207,7 @@ lib/libsicui18n.a
 lib/libsicuio.a
 lib/libsicule.a
 lib/libsiculx.a
+lib/libsicutest.a
 lib/libsicutu.a
 lib/libsicuuc.a
 sbin/genccode

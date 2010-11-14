@@ -7,6 +7,7 @@
 
 PORTNAME=	icu
 PORTVERSION=	4.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/
 DISTNAME=	icu4c-${PORTVERSION:S/./_/g}
@@ -80,5 +81,11 @@ iotest cintltst intltest:
 	    ./${.TARGET}
 
 post-build test regression-test: iotest cintltst intltest
+
+post-install:
+	${INSTALL_LIB} ${WRKSRC}/tools/ctestfw/libicutest.so.${ICUMAJOR}.${ICUMINOR} ${PREFIX}/lib/
+	${INSTALL_LIB} ${WRKSRC}/tools/ctestfw/libsicutest.a ${PREFIX}/lib/
+	cd ${PREFIX}/lib/ && ${LN} -s libicutest.so.${ICUMAJOR}.${ICUMINOR} libicutest.so
+	cd ${PREFIX}/lib/ && ${LN} -s libicutest.so.${ICUMAJOR}.${ICUMINOR} libicutest.so.${ICUMAJOR}
 
 .include <bsd.port.post.mk>
