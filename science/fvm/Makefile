@@ -7,7 +7,7 @@
 
 PORTNAME=	fvm
 PORTVERSION=	0.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science parallel
 MASTER_SITES=	http://rd.edf.com/fichiers/fckeditor/File/EDF%20RD/Code_Saturne/Fichiers/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -52,6 +52,8 @@ CONFIGURE_ARGS+=	--enable-debug
 TESTSBIN=	fvm_file_test fvm_interface_test fvm_selector_postfix_test fvm_selector_test
 
 pre-configure:
+	${REINPLACE_CMD} -e 's|-lmpich|-lmpich -lmpl|'	\
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 	# No useful doc there
 	${REINPLACE_CMD} -e 's|tests doc|tests|' ${WRKSRC}/Makefile.in
 

@@ -7,6 +7,7 @@
 
 PORTNAME=		aster
 DISTVERSION=		${ASTER_DISTVERSION}
+PORTREVISION=		1
 CATEGORIES=		french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -131,13 +132,13 @@ MUMPS_PORT=	mumps
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs	\
 		${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack
 MUMPS_PORT=	mumps-mpich
-MUMPSLIB=	-L${LOCALBASE}/lib -ldmumps -lzmumps -lmumps_common -lpord -lscalapack -lblacs -lblacsc -lblacs -L${LOCALBASE}/lib -lmpich
+MUMPSLIB=	-L${LOCALBASE}/lib -ldmumps -lzmumps -lmumps_common -lpord -lscalapack -lblacs -lblacsc -lblacs -L${LOCALBASE}/lib -lmpich -lmpl
 . endif
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcmumps.a:${PORTSDIR}/math/${MUMPS_PORT}
 .endif
 
 .if defined(WITH_MPI)
-BUILD_DEPENDS+=	${HOME_MPI}/include/mpif.h:${PORTSDIR}/net/mpich2
+LIB_DEPENDS+=	mpich.2:${PORTSDIR}/net/mpich2
 HOME_MPI=	${LOCALBASE}
 .endif
 
@@ -220,7 +221,7 @@ ${WRKSRC}/instdir/${vaster}/elements:	build
 
 pre-everything::
 .if defined(WITH_MPI)
-	@${ECHO_MSG} "To build Code_Aster with MPI enabled, you need to run `mpd &'"
+	@${ECHO_MSG} "To build Code_Aster with MPI enabled, you need to run \`mpd &'"
 .endif
 
 pre-configure:
@@ -337,6 +338,7 @@ pre-build:
 	${ECHO_CMD} "#?vers : VVV?" >> ${WRKSRC}/instdir/etc/codeaster/aster
 	${CP} -R ${LOCALBASE}/aster/ASTK/ASTK_SERV/bin		\
 		${LOCALBASE}/aster/ASTK/ASTK_SERV/asrun		\
+		${LOCALBASE}/aster/ASTK/ASTK_SERV/share		\
 		${WRKSRC}/instdir/
 	${REINPLACE_CMD} -e 's|${LOCALBASE}/aster|${WRKSRC}/instdir|'	\
 		${WRKSRC}/instdir/bin/as_run

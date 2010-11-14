@@ -44,7 +44,7 @@ IGNORE=	your FreeBSD version is not supported
 .endif
 
 .if defined(WITH_MPI) || exists(${LOCALBASE}/bin/mpicc)
-LIB_DEPENDS+=	mpich.1:${PORTSDIR}/net/mpich2
+LIB_DEPENDS+=	mpich.2:${PORTSDIR}/net/mpich2
 PLIST_SUB+=	MPI=""
 .else
 PLIST_SUB+=	MPI="@comment "
