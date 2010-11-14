@@ -7,7 +7,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.3.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	science parallel
 MASTER_SITES=	SF
 
@@ -74,6 +74,7 @@ CONFIGURE_ARGS+=--with-libs="-lsvml"
 .if defined(WITH_MPICH)
 CONFIGURE_ARGS+=--with-libdirs="-L${LOCALBASE}/lib -L${LOCALBASE}/lib"\
 		--enable-always-use-mpi
+CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 .endif
 .if defined(WITH_MPICH)
 CONFIGURE_ARGS+=--with-include="-I${LOCALBASE}/include -I${WRKDIR} -I${LOCALBASE}/include"
