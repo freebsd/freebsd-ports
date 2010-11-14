@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-curses
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,6 +16,13 @@ COMMENT=	A ncurses program for (remote) controlling multimedia/xmms
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	pthread-stubs.0:${PORTSDIR}/devel/libpthread-stubs \
+		xcb.2:${PORTSDIR}/x11/libxcb
+
+USE_GETTEXT=	yes
+USE_GNOME=	gtk12
+USE_ICONV=	yes
+USE_XORG=	x11 xau xdmcp xext xi
 
 MAN1=	${PORTNAME}.1
 
