@@ -30,6 +30,8 @@ PATCH_WRKSRC=	${SRCDIR}
 SRCDIR=		${WRKDIR}/${PORTNAME}-${GCCVERSION}
 WRKSRC=		${WRKDIR}/build
 
+BROKEN=		does not build
+
 USE_BISON=	build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
