@@ -1,5 +1,5 @@
---- configure.in.orig	2006-03-23 03:04:54.000000000 +0900
-+++ configure.in	2007-11-11 14:37:20.000000000 +0900
+--- configure.in.orig	2006-03-22 19:04:54.000000000 +0100
++++ configure.in	2010-10-28 00:09:59.000000000 +0200
 @@ -349,6 +349,31 @@
  
  ac_default_prefix="/usr/local/mpqc/$SC_VERSION"
@@ -165,7 +165,17 @@
    AC_CHECK_FUNC(pthread_attr_getstacksize)
    AC_CHECK_FUNC(pthread_attr_setstacksize)
    AC_CHECK_FUNC(pthread_attr_setscope)
-@@ -1769,10 +1793,10 @@
+@@ -1165,7 +1189,8 @@
+       AC_CHECK_LIB(mpi,MPI_Init,[HAVE_MPI=yes;LIBS="-lmpi $LIBS"])
+     fi
+     if test "$HAVE_MPI" = no; then
+-      AC_CHECK_LIB(mpich,MPI_Init,[HAVE_MPI=yes;LIBS="-lmpich $LIBS"])
++      LIBS="-lmpl $PTHREAD_LIBS $LIBS"
++      AC_CHECK_LIB(mpich,MPI_Init,[HAVE_MPI=yes;LIBS="-lmpich -lmpl $PTHREAD_LIBS $LIBS"])
+     fi
+   fi
+   if test X$HAVE_MPI = Xyes; then
+@@ -1769,10 +1794,10 @@
  
  dnl --------- CCA component configuration ---------
  

@@ -7,7 +7,7 @@
 
 PORTNAME=	mbdyn
 PORTVERSION=	1.3.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://www.aero.polimi.it/~masarati/Download/mbdyn/
 
@@ -51,9 +51,12 @@ LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 
 .if defined(WITH_MPI)
 LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
-CONFIGURE_ARGS+=	--with-mpi=pmpi
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/mpi2c++
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--with-mpi=yes --enable-schur
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	"-L${LOCALBASE}/lib"
+. if !defined(WITH_METIS)
+WITH_CHACO=	yes
+. endif
 .else
 CONFIGURE_ARGS+=	--with-mpi=no
 .endif

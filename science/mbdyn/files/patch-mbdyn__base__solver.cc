@@ -1,5 +1,5 @@
---- mbdyn/base/solver.cc.orig	2009-06-24 23:13:44.000000000 +0900
-+++ mbdyn/base/solver.cc	2009-08-05 11:32:29.000000000 +0900
+--- mbdyn/base/solver.cc.orig	2009-06-24 16:13:44.000000000 +0200
++++ mbdyn/base/solver.cc	2010-10-31 23:38:30.000000000 +0100
 @@ -109,10 +109,17 @@
  };
  
@@ -18,3 +18,13 @@
  
  extern "C" void
  mbdyn_really_exit_handler(int signum)
+@@ -456,8 +463,8 @@
+ 		}
+ 	}
+ 
+-#ifdef USE_SCHUR
+ 	int mpi_finalize = 0;
++#ifdef USE_SCHUR
+ 
+ 	int MyRank = 0;
+ 	if (bParallel) {
