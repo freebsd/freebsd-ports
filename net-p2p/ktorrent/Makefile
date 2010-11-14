@@ -32,6 +32,10 @@ OPTIONS=	SYNDICATION "Enable RSS/Atom plugin" on \
 
 .include <bsd.port.options.mk>
 
+.if exists(${LOCALBASE}/lib/libktorrent-2.2.8.so)
+IGNORE=	fails to build with net-p2p/ktorrent2 installed. Deinstall it first
+.endif
+
 .if !defined(WITHOUT_SYNDICATION)
 USE_KDE4+=	pimlibs
 PLIST_SUB+=	SYNDICATION=""
