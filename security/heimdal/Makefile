@@ -7,6 +7,7 @@
 
 PORTNAME=	heimdal
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.h5l.org/dist/src/ \
 		http://ftp.pdc.kth.se/pub/heimdal/src/ \
@@ -164,6 +165,8 @@ post-configure:
 		${WRKSRC}/lib/hcrypto/libtommath/tommath_class.h
 	@${CP} ${FILESDIR}/lib__hcrypto__libtommath__tommath_superclass.h \
 		${WRKSRC}/lib/hcrypto/libtommath/tommath_superclass.h
+	@${CP} ${FILESDIR}/lib__gssapi__mech__gss_pname_to_uid.c \
+		${WRKSRC}/lib/gssapi/mech/gss_pname_to_uid.c
 
 post-build:
 .if defined(WITH_CRACKLIB)

@@ -1,0 +1,10 @@
+--- lib/gssapi/version-script.map.orig	2010-11-05 09:09:47.000000000 +0100
++++ lib/gssapi/version-script.map	2010-11-05 09:40:32.000000000 +0100
+@@ -63,6 +63,7 @@
+ 		gss_oid_to_str;
+ 		gss_process_context_token;
+ 		gss_pseudo_random;
++		gss_pname_to_uid;
+ 		gss_release_buffer;
+ 		gss_release_buffer_set;
+ 		gss_release_cred;
