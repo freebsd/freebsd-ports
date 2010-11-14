@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	sqlalchemy
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	databases python
-MASTER_SITES=	SF \
-		CHEESESHOP
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLAlchemy-${DISTVERSION}
 
@@ -30,6 +29,7 @@ OPTIONS+=	MSSQL "support MS SQL Server" off
 OPTIONS+=	MYSQL "support MySql" on
 OPTIONS+=	POSTGRE "support PostGreSQL" on
 OPTIONS+=	SQLITE "support Sqlite" on
+OPTIONS+=	SYBASE "support Sybase" off
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
@@ -58,7 +58,15 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.0.8:${PORTSDIR}/databases/py-ps
 .endif
 
 .if !defined(WITHOUT_SQLITE)
+.if ${PYTHON_REL} < 250
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
+.else
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+.endif
+.endif
+
+.if !defined(WITHOUT_SYBASE)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Sybase.py:${PORTSDIR}/databases/py-sybase
 .endif
 
 post-install:
