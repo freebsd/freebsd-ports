@@ -88,8 +88,6 @@ BUILDTYPE=	Release
 BUILDTYPE=	Debug
 .endif
 
-#pull newer flex and gperf in from ports
-MAKE_ENV+=	PATH=${LOCALBASE}/bin:${PATH}
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 MAKE_JOBS_SAFE=	yes
 STRIP=
@@ -108,6 +106,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|"	\
 		${WRKSRC}/base/base.gypi			\
 		${WRKSRC}/build/common.gypi			\
+		${WRKSRC}/third_party/ffmpeg/ffmpeg.gyp		\
 		${WRKSRC}/third_party/icu/public/common/unicode/pfreebsd.h   \
 		${WRKSRC}/third_party/tcmalloc/chromium/src/config_freebsd.h \
 		${WRKSRC}/third_party/WebKit/WebCore/plugins/PluginDatabase.cpp \
@@ -115,6 +114,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|' \
 		${WRKSRC}/third_party/WebKit/WebCore/bindings/scripts/IDLParser.pm \
 		${WRKSRC}/third_party/WebKit/WebCore/dom/make_names.pl
+	@${REINPLACE_CMD} -e "s|'flex'|'${LOCALBASE}/bin/flex'|" \
+		${WRKSRC}/third_party/angle/src/build_angle.gyp  \
+		${WRKSRC}/third_party/WebKit/WebCore/WebCore.gyp/scripts/action_maketokenizer.py
+	@${REINPLACE_CMD} -e 's|gperf --key-positions|${LOCALBASE}/bin/gperf --key-positions|' \
+		${WRKSRC}/third_party/WebKit/WebCore/css/makeprop.pl	\
+		${WRKSRC}/third_party/WebKit/WebCore/css/makevalues.pl	\
+		${WRKSRC}/third_party/WebKit/WebCore/make-hash-tools.pl
 
 do-configure:
 	cd ${WRKSRC} && \
