@@ -40,6 +40,10 @@ OPTIONS=	ANIMATION "Enable animation support" on
 CONFIGURE_ARGS+=	--enable-animation
 .endif
 
+.if ${OSVERSION} < 700000
+BROKEN=		fails to install on 6.X
+.endif
+
 post-extract:
 	@cd ${WRKDIR} && ${TAR} zxf equinox-gtk-engine.tar.gz
 	@cd ${WRKDIR} && ${TAR} zxf equinox-themes.tar.gz
