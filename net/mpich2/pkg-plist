@@ -1,3 +1,4 @@
+bin/bt2line
 bin/check_callstack
 @comment SLOG-2 tools are not installed if NOPORTDOCS is set
 %%JAVA%%bin/clog2TOslog2
@@ -167,7 +168,7 @@ include/primitives/opa_unsafe.h
 lib/libampe.a
 lib/libfmpich.a
 lib/libfmpich.so
-lib/libfmpich.so.1
+lib/libfmpich.so.%%VERM%%
 lib/libfmpich.so.%%VER%%
 lib/liblmpe.a
 lib/libmpe.a
@@ -178,17 +179,24 @@ lib/libmpe_nompi_null.a
 lib/libmpe_null.a
 lib/libmpich.a
 lib/libmpich.so
-lib/libmpich.so.1
+lib/libmpich.so.%%VERM%%
 lib/libmpich.so.%%VER%%
 lib/libmpichcxx.a
 lib/libmpichcxx.so
-lib/libmpichcxx.so.1
+lib/libmpichcxx.so.%%VERM%%
 lib/libmpichcxx.so.%%VER%%
 lib/libmpichf90.a
 lib/libmpichf90.so
-lib/libmpichf90.so.1
+lib/libmpichf90.so.%%VERM%%
 lib/libmpichf90.so.%%VER%%
+lib/libmpl.a
+lib/libmpl.la
+lib/libmpl.so
+lib/libmpl.so.1
 lib/libopa.a
+lib/libopa.la
+lib/libopa.so
+lib/libopa.so.1
 lib/libtmpe.a
 %%JAVA%%lib/logconvertor.jar
 lib/mpe_prof.o

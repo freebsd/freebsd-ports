@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	mpich2
-DISTVERSION=	1.2.1p1
+PORTVERSION=	1.3
 PORTEPOCH=	5
 CATEGORIES=	net parallel
-MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${DISTVERSION}/
+MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${PORTVERSION}/
 DIST_SUBDIR=	mpich
-#PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/mpich2-patch/
-#PATCHFILES=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable implementation of MPI-1 and MPI-2
 
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
-#BUILD_DEPENDS=	doctext:${PORTSDIR}/textproc/sowing
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 #-----------------------------------------------------------------------
 # You may define these options:
@@ -40,7 +39,7 @@ USE_PERL5_BUILD=yes
 USE_GNOME=	pkgconfig
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-romio --enable-sharedlibs=gcc	\
+CONFIGURE_ARGS=	--enable-romio --enable-shared	\
 		--docdir=${DOCSDIR}
 CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}" CPPFLAGS="-I${LOCALBASE}/include"	\
 		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo ${PTHREAD_LIBS}"			\
@@ -56,15 +55,16 @@ MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	lam-7.* mpiexec-0.*
 
 USE_FORTRAN=	yes
-F90FLAGS+=	${FFLAGS}
-CONFIGURE_ENV+=	F90="${FC}" F90FLAGS="${F90FLAGS}"
+FCFLAGS+=	${FFLAGS}
+CONFIGURE_ENV+=	FC="${FC}" FCFLAGS="${FCFLAGS}"
 
 USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
 
-VERSO=		1.2
-PLIST_SUB=	VER=${VERSO}
+VERSO=		2.0
+VERSOM=		${VERSO:R}
+PLIST_SUB=	VER=${VERSO} VERM=${VERSOM}
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--disable-graphics
 WITHOUT_JAVA=	yes
@@ -95,8 +95,6 @@ CONFIGURE_ARGS+=	--with-pmi=simple --with-pm=mpd
 PLIST_SUB+=	PM_MPD="" PM_SMPD="@comment "
 .endif
 
-LIBSSO=		fmpich mpich mpichcxx mpichf90
-
 THREAD2FIX=	configure test/mpi/threads/comm/Makefile.in	\
 		test/mpi/threads/pt2pt/Makefile.in		\
 		src/mpe2/src/logging/configure			\
@@ -107,9 +105,9 @@ LOCALBASE2FIX=	src/mpe2/src/slog2sdk/trace_rlog/configure	\
 		src/mpe2/src/graphics/configure
 DOC2PATCH=	Makefile.in src/mpe2/sbin/mpeinstall.in		\
 		src/openpa/Makefile.in src/mpi/romio/util/romioinstall.in
-CONFPFX2FIX1=	man/man1/mpd.1 src/pm/mpd/mpd.py
-CONFPFX2FIX2=	README doc/installguide/install.tex.vin		\
-		src/pm/mpd/mpdlib.py src/pm/mpd/mpdroot.c
+CONFPFX2FIX1=	src/pm/mpd/mpd.py
+CONFPFX2FIX2=	doc/installguide/install.tex.vin		\
+		src/pm/mpd/mpdroot.c
 
 .include <bsd.port.pre.mk>
 
@@ -182,14 +180,6 @@ post-configure:
 		${WRKSRC}/src/packaging/pkgconfig/mpich2-ch3.pc
 
 post-install:
-.for lib in ${LIBSSO}
-	${MV} ${PREFIX}/lib/lib${lib}.so.1.2 ${PREFIX}/lib/lib${lib}.so.1
-	${LN} -sf ${PREFIX}/lib/lib${lib}.so.1 ${PREFIX}/lib/lib${lib}.so
-	${LN} -sf ${PREFIX}/lib/lib${lib}.so.1 ${PREFIX}/lib/lib${lib}.so.1.2
-.endfor
-.if !defined(NOPORTDOCS)
-	${RM} ${MANPREFIX}/man/man1/mpd.1.bak
-.endif
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/bin
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/bin
 	@${ECHO_CMD} "MPD_SECRETWORD=change_on_install" > ${WRKDIR}/mpd.conf.dist
