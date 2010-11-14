@@ -2276,7 +2276,6 @@ de-kheisereg                    ports/german/kheisereg
 de-koffice-i18n                 ports/german/koffice-i18n
 de-koffice-kde4-l10n            ports/german/koffice-kde4-l10n
 de-ksteak                       ports/german/ksteak
-de-linux-eagle                  ports/german/linux-eagle
 de-manpages                     ports/german/manpages
 de-mediathek                    ports/german/mediathek
 de-mt                           ports/german/MT
@@ -8492,7 +8491,6 @@ linux-doom3                     ports/games/linux-doom3
 linux-doom3-demo                ports/games/linux-doom3-demo
 linux-dri74                     ports/graphics/linux-dri74
 linux-ePSXe                     ports/emulators/linux-ePSXe
-linux-eagle                     ports/cad/linux-eagle
 linux-eagle5                    ports/cad/linux-eagle5
 linux-edonkey-core              ports/net-p2p/linux-edonkey-core
 linux-edonkey-server            ports/net-p2p/linux-edonkey-server
@@ -12220,6 +12218,7 @@ p5-File-Slurp                   ports/devel/p5-File-Slurp
 p5-File-Slurp-Tree              ports/devel/p5-File-Slurp-Tree
 p5-File-Sort                    ports/misc/p5-File-Sort
 p5-File-Stat-Bits               ports/sysutils/p5-File-Stat-Bits
+p5-File-Stat-ModeString         ports/sysutils/p5-File-Stat-ModeString
 p5-File-Stream                  ports/devel/p5-File-Stream
 p5-File-Sync                    ports/devel/p5-File-Sync
 p5-File-Tail                    ports/devel/p5-File-Tail
@@ -13368,6 +13367,7 @@ p5-Net-Twitter                  ports/net/p5-Net-Twitter
 p5-Net-Twitter-Lite             ports/net/p5-Net-Twitter-Lite
 p5-Net-VNC                      ports/net/p5-Net-VNC
 p5-Net-Wake                     ports/net/p5-Net-Wake
+p5-Net-WhitePages               ports/net/p5-Net-WhitePages
 p5-Net-Whois                    ports/net/p5-Net-Whois
 p5-Net-Whois-ARIN               ports/net/p5-Net-Whois-ARIN
 p5-Net-Whois-IP                 ports/net/p5-Net-Whois-IP
@@ -13384,6 +13384,7 @@ p5-Net-Z3950-SimpleServer       ports/net/p5-Net-Z3950-SimpleServer
 p5-Net-Z3950-ZOOM               ports/net/p5-Net-Z3950-ZOOM
 p5-Net-eBay                     ports/www/p5-Net-eBay
 p5-Net-ext                      ports/net/p5-Net-ext
+p5-Net-uFTP                     ports/net/p5-Net-uFTP
 p5-Net-vCard                    ports/misc/p5-Net-vCard
 p5-NetAddr-IP                   ports/net-mgmt/p5-NetAddr-IP
 p5-NetAddr-IP-Count             ports/net/p5-NetAddr-IP-Count
@@ -16189,6 +16190,7 @@ p5-file-slurp                   ports/devel/p5-File-Slurp
 p5-file-slurp-tree              ports/devel/p5-File-Slurp-Tree
 p5-file-sort                    ports/misc/p5-File-Sort
 p5-file-stat-bits               ports/sysutils/p5-File-Stat-Bits
+p5-file-stat-modestring         ports/sysutils/p5-File-Stat-ModeString
 p5-file-stream                  ports/devel/p5-File-Stream
 p5-file-sync                    ports/devel/p5-File-Sync
 p5-file-tail                    ports/devel/p5-File-Tail
@@ -17356,9 +17358,11 @@ p5-net-traceroute6              ports/net/p5-Net-Traceroute6
 p5-net-trackback                ports/net/p5-Net-Trackback
 p5-net-twitter                  ports/net/p5-Net-Twitter
 p5-net-twitter-lite             ports/net/p5-Net-Twitter-Lite
+p5-net-uftp                     ports/net/p5-Net-uFTP
 p5-net-vcard                    ports/misc/p5-Net-vCard
 p5-net-vnc                      ports/net/p5-Net-VNC
 p5-net-wake                     ports/net/p5-Net-Wake
+p5-net-whitepages               ports/net/p5-Net-WhitePages
 p5-net-whois                    ports/net/p5-Net-Whois
 p5-net-whois-arin               ports/net/p5-Net-Whois-ARIN
 p5-net-whois-ip                 ports/net/p5-Net-Whois-IP
@@ -20807,6 +20811,7 @@ py-bcrypt                       ports/security/py-bcrypt
 py-beaker                       ports/www/py-beaker
 py-beautifulsoup                ports/www/py-beautifulsoup
 py-beautifulsoup30              ports/www/py-beautifulsoup30
+py-biolccc                      ports/science/py-biolccc
 py-biopython                    ports/biology/py-biopython
 py-bison                        ports/devel/py-bison
 py-bittornado                   ports/net-p2p/py-bittornado
@@ -24044,6 +24049,7 @@ svn_load_dirs                   ports/devel/svn_load_dirs
 svndelta                        ports/devel/svndelta
 svnkit                          ports/devel/svnkit
 svnmailer                       ports/mail/svnmailer
+svnmerge                        ports/devel/svnmerge
 svntrac                         ports/devel/svntrac
 svr4_base                       ports/emulators/svr4_base
 sw-aspell                       ports/textproc/sw-aspell
