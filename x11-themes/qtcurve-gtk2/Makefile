@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qtcurve
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7.0
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://craigd.wikispaces.com/file/view/
 PKGNAMEPREFIX=	gtk2-
