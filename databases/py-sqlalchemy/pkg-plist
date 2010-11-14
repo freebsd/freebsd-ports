@@ -316,18 +316,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/assertsql.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/assertsql.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/assertsql.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/config.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/config.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/config.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/engines.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/engines.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/engines.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/entities.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/entities.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/entities.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/noseplugin.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/noseplugin.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/noseplugin.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/orm.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/orm.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test/orm.pyo
@@ -358,10 +352,20 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/util.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/util.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/util.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy_nose/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy_nose/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy_nose/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy_nose/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy_nose/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy_nose/config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy_nose/noseplugin.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy_nose/noseplugin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy_nose/noseplugin.pyo
 %%PORTDOCS%%%%DOCSDIR%%/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/core/compiler.html
 %%PORTDOCS%%%%DOCSDIR%%/core/connections.html
 %%PORTDOCS%%%%DOCSDIR%%/core/engines.html
+%%PORTDOCS%%%%DOCSDIR%%/core/exceptions.html
 %%PORTDOCS%%%%DOCSDIR%%/core/expression_api.html
 %%PORTDOCS%%%%DOCSDIR%%/core/index.html
 %%PORTDOCS%%%%DOCSDIR%%/core/interfaces.html
@@ -387,6 +391,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/orm/collections.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/deprecated.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/examples.html
+%%PORTDOCS%%%%DOCSDIR%%/orm/exceptions.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/extensions/associationproxy.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/extensions/declarative.html
 %%PORTDOCS%%%%DOCSDIR%%/orm/extensions/horizontal_shard.html
@@ -457,6 +462,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/dictlike-polymorphic.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/dictlike.py
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy_nose
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/test
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/sql
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm
