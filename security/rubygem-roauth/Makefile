@@ -15,6 +15,6 @@ COMMENT=	Simple Ruby OAuth library
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEMS_AUTOPLIST=	yes
+RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
