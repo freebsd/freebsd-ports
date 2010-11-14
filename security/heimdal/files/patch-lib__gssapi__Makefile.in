@@ -1,0 +1,45 @@
+--- lib/gssapi/Makefile.in.orig	2010-11-05 10:15:29.000000000 +0100
++++ lib/gssapi/Makefile.in	2010-11-05 10:18:39.000000000 +0100
+@@ -188,7 +188,7 @@
+ 	mech/gss_unwrap.lo mech/gss_utils.lo mech/gss_verify.lo \
+ 	mech/gss_verify_mic.lo mech/gss_wrap.lo \
+ 	mech/gss_wrap_size_limit.lo \
+-	mech/gss_inquire_sec_context_by_oid.lo
++	mech/gss_inquire_sec_context_by_oid.lo mech/gss_pname_to_uid.lo
+ am__objects_3 = ntlm/accept_sec_context.lo ntlm/acquire_cred.lo \
+ 	ntlm/add_cred.lo ntlm/canonicalize_name.lo \
+ 	ntlm/compare_name.lo ntlm/context_time.lo ntlm/crypto.lo \
+@@ -643,6 +643,7 @@
+ 	mech/gss_oid_to_str.c \
+ 	mech/gss_process_context_token.c \
+ 	mech/gss_pseudo_random.c \
++	mech/gss_pname_to_uid.c \
+ 	mech/gss_release_buffer.c \
+ 	mech/gss_release_cred.c \
+ 	mech/gss_release_name.c \
+@@ -1039,6 +1040,8 @@
+ 	mech/$(DEPDIR)/$(am__dirstamp)
+ mech/gss_pseudo_random.lo: mech/$(am__dirstamp) \
+ 	mech/$(DEPDIR)/$(am__dirstamp)
++mech/gss_pname_to_uid.lo: mech/$(am__dirstamp) \
++	mech/$(DEPDIR)/$(am__dirstamp)
+ mech/gss_release_buffer.lo: mech/$(am__dirstamp) \
+ 	mech/$(DEPDIR)/$(am__dirstamp)
+ mech/gss_release_cred.lo: mech/$(am__dirstamp) \
+@@ -1425,6 +1428,8 @@
+ 	-rm -f mech/gss_process_context_token.lo
+ 	-rm -f mech/gss_pseudo_random.$(OBJEXT)
+ 	-rm -f mech/gss_pseudo_random.lo
++	-rm -f mech/gss_pname_to_uid.$(OBJEXT)
++	-rm -f mech/gss_pname_to_uid.lo
+ 	-rm -f mech/gss_release_buffer.$(OBJEXT)
+ 	-rm -f mech/gss_release_buffer.lo
+ 	-rm -f mech/gss_release_cred.$(OBJEXT)
+@@ -1644,6 +1649,7 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@mech/$(DEPDIR)/gss_oid_to_str.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@mech/$(DEPDIR)/gss_process_context_token.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@mech/$(DEPDIR)/gss_pseudo_random.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@mech/$(DEPDIR)/gss_pname_to_uid.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@mech/$(DEPDIR)/gss_release_buffer.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@mech/$(DEPDIR)/gss_release_cred.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@mech/$(DEPDIR)/gss_release_name.Plo@am__quote@
