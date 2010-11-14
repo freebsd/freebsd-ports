@@ -180,6 +180,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/capabilities/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/capabilities/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/capabilities/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/AsyncDatastoreService.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/Blob.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/Category.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/CommittedButStillApplyingException.html
@@ -245,6 +246,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/images/ImagesService.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/images/ImagesServiceFactory.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/images/ImagesServiceFailureException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/images/OutputSettings.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/images/Transform.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/images/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/images/package-summary.html
@@ -612,6 +614,10 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/theadminconsole.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/whatisgoogleappengine.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/downloads.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/forum/downtime.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/forum/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/forum/java-forum.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/forum/python-forum.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/3scale_logo.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine-noborder-120x30.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine-silver-120x30.gif
@@ -629,6 +635,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/gigapan_logo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/lifeaware_weblogo.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/lingospot_logo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/appengine/images/movie_camera-16.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/socialwok.jpg
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/ubisoft-logo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/walkscore-logo.gif
@@ -647,8 +654,6 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/kb/status.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/kb/supported_carriers.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/kb/unappliedwrites.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/privacy.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/privacy_20080407.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/program_policies.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/terms.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/whyappengine.html
@@ -656,7 +661,6 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/css/iehacks.css
 %%PORTDOCS%%%%DOCSDIR%%/css/semantic_headers.css
 %%PORTDOCS%%%%DOCSDIR%%/images/cleardot.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/code_logo.png
 %%PORTDOCS%%%%DOCSDIR%%/images/globe2_small.png
 %%PORTDOCS%%%%DOCSDIR%%/images/hide-arrow.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/labs-11.png
@@ -686,6 +690,7 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/api/app_logging.py
 %%DATADIR%%/google/appengine/api/appinfo.py
 %%DATADIR%%/google/appengine/api/appinfo_errors.py
+%%DATADIR%%/google/appengine/api/appinfo_includes.py
 %%DATADIR%%/google/appengine/api/blobstore/__init__.py
 %%DATADIR%%/google/appengine/api/blobstore/blobstore.py
 %%DATADIR%%/google/appengine/api/blobstore/blobstore_service_pb.py
@@ -720,6 +725,11 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/api/mail_errors.py
 %%DATADIR%%/google/appengine/api/mail_service_pb.py
 %%DATADIR%%/google/appengine/api/mail_stub.py
+%%DATADIR%%/google/appengine/api/matcher/__init__.py
+%%DATADIR%%/google/appengine/api/matcher/error_pb.py
+%%DATADIR%%/google/appengine/api/matcher/matcher.py
+%%DATADIR%%/google/appengine/api/matcher/matcher_pb.py
+%%DATADIR%%/google/appengine/api/matcher/matcher_stub.py
 %%DATADIR%%/google/appengine/api/memcache/__init__.py
 %%DATADIR%%/google/appengine/api/memcache/memcache_service_pb.py
 %%DATADIR%%/google/appengine/api/memcache/memcache_stub.py
@@ -756,6 +766,7 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/datastore/datastore_index.py
 %%DATADIR%%/google/appengine/datastore/datastore_pb.py
 %%DATADIR%%/google/appengine/datastore/datastore_sqlite_stub.py
+%%DATADIR%%/google/appengine/datastore/datastore_stub_util.py
 %%DATADIR%%/google/appengine/datastore/datastore_v3_pb.py
 %%DATADIR%%/google/appengine/datastore/entity_pb.py
 %%DATADIR%%/google/appengine/datastore/sortable_pb_encoder.py
@@ -800,6 +811,8 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/ext/admin/templates/queues.html
 %%DATADIR%%/google/appengine/ext/admin/templates/tasks.html
 %%DATADIR%%/google/appengine/ext/admin/templates/xmpp.html
+%%DATADIR%%/google/appengine/ext/admin_redirect/__init__.py
+%%DATADIR%%/google/appengine/ext/admin_redirect/main.py
 %%DATADIR%%/google/appengine/ext/appstats/__init__.py
 %%DATADIR%%/google/appengine/ext/appstats/datamodel_pb.py
 %%DATADIR%%/google/appengine/ext/appstats/formatting.py
@@ -820,6 +833,13 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/ext/appstats/ui.py
 %%DATADIR%%/google/appengine/ext/blobstore/__init__.py
 %%DATADIR%%/google/appengine/ext/blobstore/blobstore.py
+%%DATADIR%%/google/appengine/ext/builtins/__init__.py
+%%DATADIR%%/google/appengine/ext/builtins/admin_redirect/include.yaml
+%%DATADIR%%/google/appengine/ext/builtins/appstats/include.yaml
+%%DATADIR%%/google/appengine/ext/builtins/datastore_admin/include.yaml
+%%DATADIR%%/google/appengine/ext/builtins/default/include.yaml
+%%DATADIR%%/google/appengine/ext/builtins/mapreduce/include.yaml
+%%DATADIR%%/google/appengine/ext/builtins/remote_api/include.yaml
 %%DATADIR%%/google/appengine/ext/bulkload/__init__.py
 %%DATADIR%%/google/appengine/ext/bulkload/bulkload_deprecated.py
 %%DATADIR%%/google/appengine/ext/bulkload/bulkloader_config.py
@@ -833,6 +853,23 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/ext/bulkload/simpletext_connector.py
 %%DATADIR%%/google/appengine/ext/bulkload/simplexml_connector.py
 %%DATADIR%%/google/appengine/ext/bulkload/transform.py
+%%DATADIR%%/google/appengine/ext/datastore_admin/__init__.py
+%%DATADIR%%/google/appengine/ext/datastore_admin/delete_handler.py
+%%DATADIR%%/google/appengine/ext/datastore_admin/delete_handler_test.py
+%%DATADIR%%/google/appengine/ext/datastore_admin/main.py
+%%DATADIR%%/google/appengine/ext/datastore_admin/main_test.py
+%%DATADIR%%/google/appengine/ext/datastore_admin/static/css/compiled.css
+%%DATADIR%%/google/appengine/ext/datastore_admin/static/img/help.gif
+%%DATADIR%%/google/appengine/ext/datastore_admin/static/img/icn/icn-warning.gif
+%%DATADIR%%/google/appengine/ext/datastore_admin/static/img/tip.png
+%%DATADIR%%/google/appengine/ext/datastore_admin/static/js/compiled.js
+%%DATADIR%%/google/appengine/ext/datastore_admin/templates/base.html
+%%DATADIR%%/google/appengine/ext/datastore_admin/templates/confirm_delete.html
+%%DATADIR%%/google/appengine/ext/datastore_admin/templates/do_delete.html
+%%DATADIR%%/google/appengine/ext/datastore_admin/templates/list_actions.html
+%%DATADIR%%/google/appengine/ext/datastore_admin/testutil.py
+%%DATADIR%%/google/appengine/ext/datastore_admin/utils.py
+%%DATADIR%%/google/appengine/ext/datastore_admin/utils_test.py
 %%DATADIR%%/google/appengine/ext/db/__init__.py
 %%DATADIR%%/google/appengine/ext/db/djangoforms.py
 %%DATADIR%%/google/appengine/ext/db/polymodel.py
@@ -846,6 +883,26 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/ext/ereporter/templates/report.html
 %%DATADIR%%/google/appengine/ext/gql/__init__.py
 %%DATADIR%%/google/appengine/ext/key_range/__init__.py
+%%DATADIR%%/google/appengine/ext/mapreduce/__init__.py
+%%DATADIR%%/google/appengine/ext/mapreduce/base_handler.py
+%%DATADIR%%/google/appengine/ext/mapreduce/context.py
+%%DATADIR%%/google/appengine/ext/mapreduce/control.py
+%%DATADIR%%/google/appengine/ext/mapreduce/handlers.py
+%%DATADIR%%/google/appengine/ext/mapreduce/hooks.py
+%%DATADIR%%/google/appengine/ext/mapreduce/input_readers.py
+%%DATADIR%%/google/appengine/ext/mapreduce/main.py
+%%DATADIR%%/google/appengine/ext/mapreduce/model.py
+%%DATADIR%%/google/appengine/ext/mapreduce/operation/__init__.py
+%%DATADIR%%/google/appengine/ext/mapreduce/operation/counters.py
+%%DATADIR%%/google/appengine/ext/mapreduce/operation/db.py
+%%DATADIR%%/google/appengine/ext/mapreduce/quota.py
+%%DATADIR%%/google/appengine/ext/mapreduce/static/base.css
+%%DATADIR%%/google/appengine/ext/mapreduce/static/detail.html
+%%DATADIR%%/google/appengine/ext/mapreduce/static/jquery-1.4.2.min.js
+%%DATADIR%%/google/appengine/ext/mapreduce/static/overview.html
+%%DATADIR%%/google/appengine/ext/mapreduce/static/status.js
+%%DATADIR%%/google/appengine/ext/mapreduce/status.py
+%%DATADIR%%/google/appengine/ext/mapreduce/util.py
 %%DATADIR%%/google/appengine/ext/preload/__init__.py
 %%DATADIR%%/google/appengine/ext/remote_api/__init__.py
 %%DATADIR%%/google/appengine/ext/remote_api/handler.py
@@ -1804,17 +1861,35 @@ bin/remote_api_shell.py
 @dirrm %%DATADIR%%/google/appengine/ext/search
 @dirrm %%DATADIR%%/google/appengine/ext/remote_api
 @dirrm %%DATADIR%%/google/appengine/ext/preload
+@dirrm %%DATADIR%%/google/appengine/ext/mapreduce/static
+@dirrm %%DATADIR%%/google/appengine/ext/mapreduce/operation
+@dirrm %%DATADIR%%/google/appengine/ext/mapreduce
 @dirrm %%DATADIR%%/google/appengine/ext/key_range
 @dirrm %%DATADIR%%/google/appengine/ext/gql
 @dirrm %%DATADIR%%/google/appengine/ext/ereporter/templates
 @dirrm %%DATADIR%%/google/appengine/ext/ereporter
 @dirrm %%DATADIR%%/google/appengine/ext/deferred
 @dirrm %%DATADIR%%/google/appengine/ext/db
+@dirrm %%DATADIR%%/google/appengine/ext/datastore_admin/templates
+@dirrm %%DATADIR%%/google/appengine/ext/datastore_admin/static/js
+@dirrm %%DATADIR%%/google/appengine/ext/datastore_admin/static/img/icn
+@dirrm %%DATADIR%%/google/appengine/ext/datastore_admin/static/img
+@dirrm %%DATADIR%%/google/appengine/ext/datastore_admin/static/css
+@dirrm %%DATADIR%%/google/appengine/ext/datastore_admin/static
+@dirrm %%DATADIR%%/google/appengine/ext/datastore_admin
 @dirrm %%DATADIR%%/google/appengine/ext/bulkload
+@dirrm %%DATADIR%%/google/appengine/ext/builtins/remote_api
+@dirrm %%DATADIR%%/google/appengine/ext/builtins/mapreduce
+@dirrm %%DATADIR%%/google/appengine/ext/builtins/default
+@dirrm %%DATADIR%%/google/appengine/ext/builtins/datastore_admin
+@dirrm %%DATADIR%%/google/appengine/ext/builtins/appstats
+@dirrm %%DATADIR%%/google/appengine/ext/builtins/admin_redirect
+@dirrm %%DATADIR%%/google/appengine/ext/builtins
 @dirrm %%DATADIR%%/google/appengine/ext/blobstore
 @dirrm %%DATADIR%%/google/appengine/ext/appstats/templates
 @dirrm %%DATADIR%%/google/appengine/ext/appstats/static
 @dirrm %%DATADIR%%/google/appengine/ext/appstats
+@dirrm %%DATADIR%%/google/appengine/ext/admin_redirect
 @dirrm %%DATADIR%%/google/appengine/ext/admin/templates/js
 @dirrm %%DATADIR%%/google/appengine/ext/admin/templates/images
 @dirrm %%DATADIR%%/google/appengine/ext/admin/templates/css
@@ -1829,6 +1904,7 @@ bin/remote_api_shell.py
 @dirrm %%DATADIR%%/google/appengine/api/oauth
 @dirrm %%DATADIR%%/google/appengine/api/namespace_manager
 @dirrm %%DATADIR%%/google/appengine/api/memcache
+@dirrm %%DATADIR%%/google/appengine/api/matcher
 @dirrm %%DATADIR%%/google/appengine/api/labs/taskqueue
 @dirrm %%DATADIR%%/google/appengine/api/labs
 @dirrm %%DATADIR%%/google/appengine/api/images
@@ -1848,6 +1924,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/kb
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/js
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/forum
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/xmpp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/users
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/urlfetch
