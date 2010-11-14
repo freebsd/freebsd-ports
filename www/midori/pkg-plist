@@ -1,13 +1,11 @@
 bin/midori
 etc/xdg/midori/search
-include/midori-0.2/extensions/external-applications.h
 include/midori-0.2/extensions/history-list.h
 lib/midori/libadblock.so
 lib/midori/libaddons.so
 lib/midori/libcolorful-tabs.so
 lib/midori/libcookie-manager.so
 lib/midori/libcopy-tabs.so
-lib/midori/libexternal-applications.so
 lib/midori/libfeed-panel.so
 lib/midori/libformhistory.so
 lib/midori/libhistory-list.so
@@ -138,8 +136,6 @@ share/icons/hicolor/scalable/status/news-feed.svg
 %%DATADIR%%/res/mootools.js
 %%DATADIR%%/res/speeddial-head.html
 %%DATADIR%%/res/speeddial.json
-share/vala/vapi/external-applications.deps
-share/vala/vapi/external-applications.vapi
 share/vala/vapi/history-list.deps
 share/vala/vapi/history-list.vapi
 @dirrmtry share/vala/vapi
