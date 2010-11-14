@@ -1,5 +1,5 @@
---- products.py.orig	2010-07-07 18:18:13.000000000 +0200
-+++ products.py	2010-08-12 19:08:43.000000000 +0200
+--- products.py.orig	2010-09-14 10:48:26.000000000 +0200
++++ products.py	2010-10-25 22:53:13.000000000 +0200
 @@ -907,16 +907,19 @@
             'HOME_PYTHON', 'PYTHON_EXE', 'PYTHONLIB',
             'HOME_MUMPS', 'HOME_ZMAT', 'HOME_MPI', 'INCLUDE_MUMPS', 'HOME_METIS',
@@ -40,7 +40,7 @@
 +      opt['FINCLUDE']   = ''
 +      cxxlibs.extend(['stdc++', 'supc++'])
 +      zmat_platform=''
-+      mpilibs.extend(['mpich'])
++      mpilibs.extend(['mpich', 'mpl'])
     elif cfg['IFDEF'] == 'LINUX64':
        opt['SYSLIB']     = '-Wl,--allow-multiple-definition -Wl,--export-dynamic -lieee -ldl -lutil -lm'
        opt['LDFLAGS']    = '-v'

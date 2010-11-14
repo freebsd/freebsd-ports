@@ -7,7 +7,7 @@
 
 PORTNAME=	ncs
 PORTVERSION=	1.3.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science parallel
 MASTER_SITES=	http://rd.edf.com/fichiers/fckeditor/File/EDF%20RD/Code_Saturne/Fichiers/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -67,7 +67,7 @@ MPI_LIBS=	-lmpi -lorte -lopal
 MPI_HOME=	${LOCALBASE}
 BUILD_DEPENDS+=	${MPI_HOME}/bin/mpicc:${PORTSDIR}/net/mpich2
 RUN_DEPENDS+=	${MPI_HOME}/bin/mpirun:${PORTSDIR}/net/mpich2
-MPI_LIBS=	-lmpich
+MPI_LIBS=	-lmpich -lmpl ${PTHREAD_LIBS}
 .endif
 
 .if !defined(NOPORTDOCS)

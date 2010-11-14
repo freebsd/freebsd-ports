@@ -7,7 +7,7 @@
 
 PORTNAME=	petsc
 DISTVERSION=	2.3.3-p0
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
@@ -28,8 +28,8 @@ CONFIGURE_ENV=		PETSC_ARCH=${TARGET}	\
 			PETSC_DIR=${WRKSRC}
 CONFIGURE_ARGS=		--prefix=${PREFIX}/${PFX} --COPTFLAGS="${CFLAGS}"	\
 			--CXXOPTFLAGS="${CXXFLAGS}" --FOPTFLAGS="${FFLAGS}"	\
-			--with-shared=1 --with-cc=${CC} --with-fc=${FC}	\
-			--CPPFLAGS="-I${LOCALBASE}/include"
+			--with-shared=1 --with-cc=${CC} --with-fc=${FC}		\
+			--CPPFLAGS="-I${LOCALBASE}/include" --LDFLAGS=${PTHREAD_LIBS}
 ALL_TARGET=		all
 MAKEFILE=		makefile
 MAKE_ENV=		PETSC_DIR=${WRKSRC}
@@ -258,6 +258,14 @@ pre-configure:
 	${REINPLACE_CMD} -e "s|/bin/ksh|${LOCALBASE}/bin/ksh|"	\
 		${WRKSRC}/bin/popup
 	@${RM} ${WRKSRC}/bin/popup.bak
+.if defined (WITH_MPI)
+. for ps in ml.py MPE.py
+	${REINPLACE_CMD} -e "s|-lpmpich|-lmpl|"	\
+		${WRKSRC}/python/PETSc/packages/${ps}
+. endfor
+	${REINPLACE_CMD} -e "s|libpmpich|libmpl|"	\
+		${WRKSRC}/python/BuildSystem/config/packages/MPI.py
+.endif
 .if defined(PACKAGE_BUILDING)
 	${REINPLACE_CMD} -e "s|%%PACKAGE%%exit 1; ||"		\
 		-e "s|%%PACKAGE%%sys.exit(3)||"			\
