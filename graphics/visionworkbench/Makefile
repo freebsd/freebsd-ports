@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	visionworkbench
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://ti.arc.nasa.gov/m/project/nasa-vision-workbench/
-DISTNAME=	VisionWorkbench-2.0.0
+DISTNAME=	VisionWorkbench-${PORTVERSION}
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A general purpose image processing and computer vision library
@@ -23,7 +23,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	moc_build qmake_build
-USE_GCC=	4.4+
+USE_GCC=	4.5+
 USE_LDCONFIG=	yes
 USE_PYTHON=	2.4+
 
