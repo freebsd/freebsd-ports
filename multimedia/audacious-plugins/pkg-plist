@@ -44,7 +44,7 @@ lib/audacious/Input/vtx.so
 %%WAVPACKPLUGIN%%lib/audacious/Input/wavpack.so
 lib/audacious/Input/xsf.so
 %%OSSPLUGIN%%lib/audacious/Output/OSS.so
-%%OSS4PLUGIN%%lib/audacious/Output/OSS4.so
+%%OSS4PLUGIN%%lib/audacious/Output/oss4.so
 %%ESDPLUGIN%%lib/audacious/Output/ESD.so
 lib/audacious/Output/filewriter.so
 %%JACKPLUGIN%%lib/audacious/Output/jackout.so
