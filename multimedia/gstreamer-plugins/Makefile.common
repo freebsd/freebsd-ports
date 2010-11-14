@@ -146,6 +146,7 @@ CONFIGURE_ARGS+=--disable-tests \
 		--disable-sunaudio \
 		--disable-wildmidi \
 		--disable-xine \
+		--disable-ivorbis \
 		--enable-x \
 		--enable-xshm \
 		--enable-xvideo
