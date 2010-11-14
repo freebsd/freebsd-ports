@@ -140,55 +140,17 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/visitor.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/visitor.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/visitor.pyo
-%%PORTDOCS%%%%DOCSDIR%%/.buildinfo
-%%PORTDOCS%%%%DOCSDIR%%/_sources/api.txt
-%%PORTDOCS%%%%DOCSDIR%%/_sources/changelog.txt
-%%PORTDOCS%%%%DOCSDIR%%/_sources/extensions.txt
-%%PORTDOCS%%%%DOCSDIR%%/_sources/faq.txt
-%%PORTDOCS%%%%DOCSDIR%%/_sources/index.txt
-%%PORTDOCS%%%%DOCSDIR%%/_sources/integration.txt
-%%PORTDOCS%%%%DOCSDIR%%/_sources/intro.txt
-%%PORTDOCS%%%%DOCSDIR%%/_sources/sandbox.txt
-%%PORTDOCS%%%%DOCSDIR%%/_sources/switching.txt
-%%PORTDOCS%%%%DOCSDIR%%/_sources/templates.txt
-%%PORTDOCS%%%%DOCSDIR%%/_sources/tricks.txt
-%%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
-%%PORTDOCS%%%%DOCSDIR%%/_static/darkmetal.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/default.css
-%%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
-%%PORTDOCS%%%%DOCSDIR%%/_static/file.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/headerbg.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/implementation.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/jinja.js
-%%PORTDOCS%%%%DOCSDIR%%/_static/jinjabanner.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
-%%PORTDOCS%%%%DOCSDIR%%/_static/metal.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/navigation.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/note.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/print.css
-%%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
-%%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js
-%%PORTDOCS%%%%DOCSDIR%%/_static/style.css
-%%PORTDOCS%%%%DOCSDIR%%/_static/underscore.js
-%%PORTDOCS%%%%DOCSDIR%%/_static/watermark.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/watermark_blur.png
-%%PORTDOCS%%%%DOCSDIR%%/api.html
-%%PORTDOCS%%%%DOCSDIR%%/changelog.html
-%%PORTDOCS%%%%DOCSDIR%%/extensions.html
-%%PORTDOCS%%%%DOCSDIR%%/faq.html
-%%PORTDOCS%%%%DOCSDIR%%/genindex.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/integration.html
-%%PORTDOCS%%%%DOCSDIR%%/intro.html
-%%PORTDOCS%%%%DOCSDIR%%/objects.inv
-%%PORTDOCS%%%%DOCSDIR%%/sandbox.html
-%%PORTDOCS%%%%DOCSDIR%%/search.html
-%%PORTDOCS%%%%DOCSDIR%%/searchindex.js
-%%PORTDOCS%%%%DOCSDIR%%/switching.html
-%%PORTDOCS%%%%DOCSDIR%%/templates.html
-%%PORTDOCS%%%%DOCSDIR%%/tricks.html
+%%PORTDOCS%%%%DOCSDIR%%/api.rst
+%%PORTDOCS%%%%DOCSDIR%%/changelog.rst
+%%PORTDOCS%%%%DOCSDIR%%/extensions.rst
+%%PORTDOCS%%%%DOCSDIR%%/faq.rst
+%%PORTDOCS%%%%DOCSDIR%%/index.rst
+%%PORTDOCS%%%%DOCSDIR%%/integration.rst
+%%PORTDOCS%%%%DOCSDIR%%/intro.rst
+%%PORTDOCS%%%%DOCSDIR%%/sandbox.rst
+%%PORTDOCS%%%%DOCSDIR%%/switching.rst
+%%PORTDOCS%%%%DOCSDIR%%/templates.rst
+%%PORTDOCS%%%%DOCSDIR%%/tricks.rst
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/cycle.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/debugger.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/basic/inheritance.py
@@ -206,7 +168,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/django/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/django/layout.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/djangoext.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/djangoext.pyc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/genshi/helpers.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/genshi/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/genshi/layout.html
@@ -217,7 +178,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/mako/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/mako/layout.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/rwbench.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rwbench/rwbench.pyc
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rwbench/mako
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rwbench/jinja
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rwbench/genshi
@@ -226,8 +186,6 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/basic/templates
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/basic
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/res/templates/foo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/jinja2/testsuite/res/templates

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Jinja2
-PORTVERSION=	2.5.2
-PORTREVISION=	0
+PORTVERSION=	2.5.5
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -28,7 +27,9 @@ OPTIONS+=	BABEL	"Enable Babel extension"	off
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/docs/_build/html && ${COPYTREE_SHARE} . ${DOCSDIR}
+	@cd ${WRKSRC}/docs/ && \
+		${FIND} . -type f -regex '.*\.rst' \
+		-exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
