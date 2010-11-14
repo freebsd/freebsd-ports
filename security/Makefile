@@ -761,6 +761,7 @@
     SUBDIR += rubygem-net-ssh
     SUBDIR += rubygem-net-ssh-gateway
     SUBDIR += rubygem-nmap-parser
+    SUBDIR += rubygem-roauth
     SUBDIR += saferpay
     SUBDIR += safesh
     SUBDIR += saint
