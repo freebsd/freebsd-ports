@@ -1,0 +1,6 @@
+bin/phoneinfo
+%%SITE_PERL%%/Phone/Info.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Phone/Info/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Phone/Info
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Phone
+@dirrmtry %%SITE_PERL%%/Phone
