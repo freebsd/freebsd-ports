@@ -7,7 +7,7 @@
 
 PORTNAME=	checkmol
 PORTVERSION=	0.4a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://merian.pch.univie.ac.at/pch/download/chemistry/checkmol/
 DISTNAME=	${PORTNAME}
