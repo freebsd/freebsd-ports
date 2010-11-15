@@ -2545,6 +2545,7 @@
     SUBDIR += pecl-inclued
     SUBDIR += pecl-intl
     SUBDIR += pecl-json
+    SUBDIR += pecl-libevent
     SUBDIR += pecl-mcve
     SUBDIR += pecl-ncurses
     SUBDIR += pecl-newt
