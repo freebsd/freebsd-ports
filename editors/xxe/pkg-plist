@@ -3195,9 +3195,10 @@ lib/%%XXE%%/demo/dita-sample/topic1.dita
 lib/%%XXE%%/demo/docbook-image.xml
 lib/%%XXE%%/demo/docbook-modular-book.xml
 lib/%%XXE%%/demo/docbook-modular-book/chapter.xml
-lib/%%XXE%%/demo/docbook-modular-book/editIncludingAction.gif
-lib/%%XXE%%/demo/docbook-modular-book/editInclusionAction.gif
+lib/%%XXE%%/demo/docbook-modular-book/editIncludingAction.png
+lib/%%XXE%%/demo/docbook-modular-book/editInclusionAction.png
 lib/%%XXE%%/demo/docbook-modular-book/glossary.xml
+lib/%%XXE%%/demo/docbook-modular-book/redrawAction.png
 lib/%%XXE%%/demo/docbook-modular-book/section1.xml
 lib/%%XXE%%/demo/docbook-modular-book/section2.xml
 lib/%%XXE%%/demo/docbook-table.xml
@@ -3247,7 +3248,7 @@ lib/%%XXE%%/doc/commands/bookmark.html
 lib/%%XXE%%/doc/commands/cancelSelection.html
 lib/%%XXE%%/doc/commands/center.html
 lib/%%XXE%%/doc/commands/ch05s03s01.html
-lib/%%XXE%%/doc/commands/ch06s94s01.html
+lib/%%XXE%%/doc/commands/ch06s96s01.html
 lib/%%XXE%%/doc/commands/checkValidity.html
 lib/%%XXE%%/doc/commands/commandexec.html
 lib/%%XXE%%/doc/commands/commandref.html
@@ -3260,6 +3261,8 @@ lib/%%XXE%%/doc/commands/convert.html
 lib/%%XXE%%/doc/commands/convertCase.html
 lib/%%XXE%%/doc/commands/convertdoc.html
 lib/%%XXE%%/doc/commands/convertImage.html
+lib/%%XXE%%/doc/commands/convertToHTML_example.html
+lib/%%XXE%%/doc/commands/convertToRTF_example.html
 lib/%%XXE%%/doc/commands/copy.html
 lib/%%XXE%%/doc/commands/copyAsInclusion.html
 lib/%%XXE%%/doc/commands/copyChars.html
@@ -3274,7 +3277,6 @@ lib/%%XXE%%/doc/commands/deleteSelectionOrJoinOrDeleteChar.html
 lib/%%XXE%%/doc/commands/deleteWord.html
 lib/%%XXE%%/doc/commands/docbook_to_multi_html.html
 lib/%%XXE%%/doc/commands/docbook_to_pdf.html
-lib/%%XXE%%/doc/commands/docbook_to_rtf.html
 lib/%%XXE%%/doc/commands/editAttributes.html
 lib/%%XXE%%/doc/commands/editMenu.html
 lib/%%XXE%%/doc/commands/editObject.html
@@ -3282,12 +3284,12 @@ lib/%%XXE%%/doc/commands/editPITarget.html
 lib/%%XXE%%/doc/commands/ensureSelectionAt.html
 lib/%%XXE%%/doc/commands/execute.html
 lib/%%XXE%%/doc/commands/extractObject.html
+lib/%%XXE%%/doc/commands/fail.html
 lib/%%XXE%%/doc/commands/followLink.html
 lib/%%XXE%%/doc/commands/formatTextAs.html
 lib/%%XXE%%/doc/commands/formatTextAs_templates.html
 lib/%%XXE%%/doc/commands/guide.html
 lib/%%XXE%%/doc/commands/html.css
-lib/%%XXE%%/doc/commands/imagedemo_to_html.html
 lib/%%XXE%%/doc/commands/images/callouts/1.png
 lib/%%XXE%%/doc/commands/images/callouts/10.png
 lib/%%XXE%%/doc/commands/images/callouts/11.png
@@ -3323,6 +3325,9 @@ lib/%%XXE%%/doc/commands/joinOrDeleteChar.html
 lib/%%XXE%%/doc/commands/last_result_var.html
 lib/%%XXE%%/doc/commands/listBindings.html
 lib/%%XXE%%/doc/commands/listOfNames.html
+lib/%%XXE%%/doc/commands/macro_examples/VATrates.html
+lib/%%XXE%%/doc/commands/macro_examples/customize.xxe
+lib/%%XXE%%/doc/commands/macro_tutorial/customize.xxe
 lib/%%XXE%%/doc/commands/macro.html
 lib/%%XXE%%/doc/commands/macro_examples.html
 lib/%%XXE%%/doc/commands/macro_reference.html
@@ -3338,14 +3343,17 @@ lib/%%XXE%%/doc/commands/named_vars.html
 lib/%%XXE%%/doc/commands/OrXXX_modifiers.html
 lib/%%XXE%%/doc/commands/overwriteMode.html
 lib/%%XXE%%/doc/commands/overwriteString.html
-lib/%%XXE%%/doc/commands/para_to_simpara.html
+lib/%%XXE%%/doc/commands/paraToFormalpara_example2.html
 lib/%%XXE%%/doc/commands/pass_fail_help.html
+lib/%%XXE%%/doc/commands/pass.html
 lib/%%XXE%%/doc/commands/paste.html
 lib/%%XXE%%/doc/commands/pasteAfterAs.html
 lib/%%XXE%%/doc/commands/pasteSystemSelection.html
 lib/%%XXE%%/doc/commands/pick.html
 lib/%%XXE%%/doc/commands/post.html
 lib/%%XXE%%/doc/commands/print.html
+lib/%%XXE%%/doc/commands/process_examples/customize.xxe
+lib/%%XXE%%/doc/commands/process_examples/toFormalpara.xsl
 lib/%%XXE%%/doc/commands/process.html
 lib/%%XXE%%/doc/commands/processFO.html
 lib/%%XXE%%/doc/commands/process_attributes.html
@@ -3398,7 +3406,6 @@ lib/%%XXE%%/doc/commands/tableEdit.html
 lib/%%XXE%%/doc/commands/testing_executable.html
 lib/%%XXE%%/doc/commands/toggleCollapsed.html
 lib/%%XXE%%/doc/commands/transform.html
-lib/%%XXE%%/doc/commands/tutorial/customize.xxe
 lib/%%XXE%%/doc/commands/undo.html
 lib/%%XXE%%/doc/commands/uninclude.html
 lib/%%XXE%%/doc/commands/updateInclusions.html
@@ -3436,6 +3443,7 @@ lib/%%XXE%%/doc/configure/bindings_specific.html
 lib/%%XXE%%/doc/configure/cals_table.html
 lib/%%XXE%%/doc/configure/cals_table_editor.html
 lib/%%XXE%%/doc/configure/centralizing_configs.html
+lib/%%XXE%%/doc/configure/ch07s08s02.html
 lib/%%XXE%%/doc/configure/command.html
 lib/%%XXE%%/doc/configure/compare_webstart_centralizing.html
 lib/%%XXE%%/doc/configure/configref.html
@@ -3597,6 +3605,7 @@ lib/%%XXE%%/doc/configure/spellCheckOptions.html
 lib/%%XXE%%/doc/configure/spreadsheetFunctions.html
 lib/%%XXE%%/doc/configure/template.html
 lib/%%XXE%%/doc/configure/testing_the_applet.html
+lib/%%XXE%%/doc/configure/text_pi.html
 lib/%%XXE%%/doc/configure/toolBar.html
 lib/%%XXE%%/doc/configure/translation.html
 lib/%%XXE%%/doc/configure/validate.html
@@ -4098,6 +4107,7 @@ lib/%%XXE%%/doc/help/com.xmlmind.xmleditapp.kit.part.AddKeyboardShortcutDialog.h
 lib/%%XXE%%/doc/help/com.xmlmind.xmleditapp.kit.part.ConversionParametersEditor.html
 lib/%%XXE%%/doc/help/com.xmlmind.xmleditapp.kit.part.SaveAsTemplateAction.Prompt.html
 lib/%%XXE%%/doc/help/com.xmlmind.xmleditapp.kit.part.SaveElementAsTemplateAction.Prompt.html
+lib/%%XXE%%/doc/help/com.xmlmind.xmleditapp.kit.prefsheet.TreeViewSettingsEditor.html
 lib/%%XXE%%/doc/help/com.xmlmind.xmleditapp.vdrive.dialog.URLChooserDialog.html
 lib/%%XXE%%/doc/help/command_line_options.html
 lib/%%XXE%%/doc/help/command_line_usage.html
@@ -4239,6 +4249,7 @@ lib/%%XXE%%/doc/help/resources/splitAction.png
 lib/%%XXE%%/doc/help/resources/text_selection.png
 lib/%%XXE%%/doc/help/resources/toggleUseURLChooserAction.png
 lib/%%XXE%%/doc/help/resources/toggleUseURLChooserAction_selected.png
+lib/%%XXE%%/doc/help/resources/treeViewSettingsEditor.png
 lib/%%XXE%%/doc/help/resources/unchecked.png
 lib/%%XXE%%/doc/help/resources/unconstrained.png
 lib/%%XXE%%/doc/help/resources/undoAction.png
@@ -4623,6 +4634,7 @@ lib/%%XXE%%/doc/xhtml/xhtml_bindings.html
 lib/%%XXE%%/doc/xhtml/xhtml_dtds.html
 lib/%%XXE%%/doc/xhtml/xhtml_menu.html
 lib/%%XXE%%/doc/xhtml/xhtml_table.html
+lib/%%XXE%%/doc/xhtml/xslt_params.html
 lib/%%XXE%%/doc/xmltool/apa.html
 lib/%%XXE%%/doc/xmltool/apas01.html
 lib/%%XXE%%/doc/xmltool/apas02.html
@@ -4761,6 +4773,9 @@ lib/%%XXE%%/legal/xxe-site.LICENSE
 @dirrmtry lib/%%XXE%%/doc/configure
 @dirrmtry lib/%%XXE%%/doc/commands/tutorial
 @dirrmtry lib/%%XXE%%/doc/commands/resources
+@dirrmtry lib/%%XXE%%/doc/commands/process_examples
+@dirrmtry lib/%%XXE%%/doc/commands/macro_tutorial
+@dirrmtry lib/%%XXE%%/doc/commands/macro_examples
 @dirrmtry lib/%%XXE%%/doc/commands/images/callouts
 @dirrmtry lib/%%XXE%%/doc/commands/images
 @dirrmtry lib/%%XXE%%/doc/commands
