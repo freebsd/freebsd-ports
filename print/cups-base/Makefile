@@ -12,6 +12,7 @@ PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
 PKGNAMESUFFIX=	${CUPS_SUFFIX}${PKGNAMESUFFIX2}
+UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Common UNIX Printing System: ${COMMENT2}
@@ -65,10 +66,18 @@ CUPSSYSGRP=	wheel
 #GROUPS=	cups
 #USERS=		cups
 
+# UNIQUENAME must be set before bsd.port.pre.mk so OPTIONSFILE can be included
+.if defined(CUPS_CLIENT)
+CUPS_SUFFIX=	-client
+.elif defined(CUPS_IMAGE)
+CUPS_SUFFIX=	-image
+.else
+CUPS_SUFFIX=	-base
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if defined(CUPS_CLIENT)
-CUPS_SUFFIX=	-client
 COMMENT2=	Library cups
 INSTALL_WRKSRC=	${WRKSRC}/cups
 PLIST=		${MASTERDIR}/pkg-plist.client
@@ -76,7 +85,6 @@ USE_LDCONFIG=	yes
 PKGMESSAGE=	${NONEXISTENT}
 DESCR=		${MASTERDIR}/pkg-descr.client
 .elif defined(CUPS_IMAGE)
-CUPS_SUFFIX=	-image
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
@@ -90,7 +98,6 @@ PKGMESSAGE=	${NONEXISTENT}
 DESCR=		${MASTERDIR}/pkg-descr.image
 .else
 CONFLICTS+=	cupsddk-*
-CUPS_SUFFIX=	-base
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
 		cupsimage.2:${PORTSDIR}/${PKGCATEGORY}/cups-image
 # force build if old cups is installed.
