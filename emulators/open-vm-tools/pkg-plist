@@ -15,6 +15,12 @@ lib/open-vm-tools/plugins/common/libvix.so
 lib/open-vm-tools/plugins/common/libvix.la
 %%X11%%lib/open-vm-tools/plugins/vmusr/libresolutionSet.so
 %%X11%%lib/open-vm-tools/plugins/vmusr/libvixUser.so
+%%X11%%lib/open-vm-tools/plugins/vmusr/libdesktopEvents.so
+%%X11%%lib/open-vm-tools/plugins/vmusr/libdndcp.so
+lib/libhgfs.a
+lib/libhgfs.la
+lib/libhgfs.so
+lib/libhgfs.so.0
 lib/libvmtools.a
 lib/libvmtools.la
 lib/libvmtools.so
@@ -23,7 +29,7 @@ lib/libguestlib.a
 lib/libguestlib.la
 lib/libguestlib.so
 lib/libguestlib.so.0
-lib/pkgconfig/vmguestlib.pc
+libdata/pkgconfig/vmguestlib.pc
 lib/vmware-tools/modules/drivers/linker.hints
 lib/vmware-tools/modules/drivers/vmblock.ko
 lib/vmware-tools/modules/drivers/vmhgfs.ko
@@ -36,9 +42,7 @@ include/vmGuestLib/vm_basic_types.h
 @exec mkdir -p %D/lib/vmware-tools/modules/input
 sbin/mount_vmhgfs
 %%X11%%bin/vmware-toolbox
-%%X11%%bin/vmware-user
 %%X11%%bin/vmware-user-suid-wrapper
-%%X11%%share/applications/vmware-user.desktop
 share/vmware-tools/poweroff-vm-default
 share/vmware-tools/poweron-vm-default
 share/vmware-tools/resume-vm-default
@@ -46,7 +50,7 @@ share/vmware-tools/suspend-vm-default
 share/vmware-tools/vm-support
 share/open-vm-tools/messages/toolboxcmd_de.vmsg
 share/open-vm-tools/messages/toolboxcmd_ja.vmsg
-share/open-vm-tools/messages/toolboxcmd_zh.vmsg
+share/open-vm-tools/messages/toolboxcmd_zh_CN.vmsg
 share/vmware-tools/statechange.subr
 share/vmware-tools/scripts/vmware/network
 @exec kldxref %D/lib/vmware-tools/modules/drivers 2>/dev/null || true
@@ -66,7 +70,7 @@ share/vmware-tools/scripts/vmware/network
 @dirrmtry share/vmware-tools/scripts/vmware
 @dirrmtry share/vmware-tools/scripts
 @dirrmtry share/vmware-tools
-@dirrmtry lib/pkgconfig
+@dirrmtry libdata/pkgconfig
 %%X11%%@dirrmtry share/applications
 @dirrm lib/open-vm-tools/plugins/common
 @dirrm lib/open-vm-tools/plugins/vmsvc
