@@ -1,5 +1,5 @@
---- /work/a/ports/textproc/clucene-contrib/work/clucene-contrib-0.9.16a/src/CLucene/analysis/cjk/CJKAnalyzer.cpp.orig	2007-02-10 13:56:33.000000000 +0000
-+++ /work/a/ports/textproc/clucene-contrib/work/clucene-contrib-0.9.16a/src/CLucene/analysis/cjk/CJKAnalyzer.cpp	2010-06-22 07:00:25.000000000 +0000
+--- src/CLucene/analysis/cjk/CJKAnalyzer.cpp.orig	2007-02-10 13:56:33.000000000 +0000
++++ src/CLucene/analysis/cjk/CJKAnalyzer.cpp	2010-06-22 07:00:25.000000000 +0000
 @@ -1,4 +1,5 @@
  #include "CLucene/StdHeader.h"
 +#include "CLucene/analysis/Analyzers.h"
