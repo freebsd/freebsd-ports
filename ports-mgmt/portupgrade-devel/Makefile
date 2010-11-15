@@ -83,6 +83,10 @@ pre-extract:
 	@exit 1
 .endif
 
+post-patch:	.SILENT
+	${REINPLACE_CMD} '/PREFIX/s:\(=[[:space:]]*\)\(.*/usr/local\):\1ENV["LOCALBASE"] || \2:' \
+		${WRKSRC}/lib/pkgdb.rb ${WRKSRC}/lib/pkgtools.rb
+
 post-install:
 	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
 		${CP} -p ${PREFIX}/etc/pkgtools.conf.sample ${PREFIX}/etc/pkgtools.conf; \
