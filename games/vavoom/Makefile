@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vavoom
-PORTVERSION=	1.30
-PORTREVISION=	5
+PORTVERSION=	1.32
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Vavoom-source/${PORTVERSION}
 
@@ -135,14 +134,6 @@ post-patch:
 		${WRKSRC}/utils/acc/parse.c
 	@${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/' \
 		${WRKSRC}/utils/acc/strlist.c
-	@${REINPLACE_CMD} -e 's/png_set_gray_1_2_4_to_8/png_set_expand_gray_1_2_4_to_8/' \
-		${WRKSRC}/source/r_tex_png.cpp
-
-.if defined(WITH_LAUNCHER)
-	@${REINPLACE_CMD} -e '/add_definitions($${wxWidgets_DEFINITIONS})/d; \
-			s/include_directories($${wxWidgets_INCLUDE_DIRS})/include($${wxWidgets_USE_FILE})/' \
-		${WRKSRC}/utils/vlaunch/CMakeLists.txt
-.endif
 
 post-configure:
 .if defined(WITH_LAUNCHER)
