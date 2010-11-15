@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/API/Peek/.packlist
 %%SITE_PERL%%/POE/API/Peek.pm
 @dirrmtry %%SITE_PERL%%/POE/API

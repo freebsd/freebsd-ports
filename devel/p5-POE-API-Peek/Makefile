@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	POE-API-Peek
-PORTVERSION=	1.34
+DISTVERSION=	2.16_2
 PORTEPOCH=	2
 CATEGORIES=	devel perl5
-MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/S/SU/SUNGO
+MASTER_SITES=	CPAN/../../authors/id/S/SU/SUNGO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,7 +20,11 @@ BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+INSTALL_TARGET=	pure_install
 
 MAN3=		POE::API::Peek.3
+
+regression-test:
+	@(cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} && ${MAKE} test)
 
 .include <bsd.port.mk>
