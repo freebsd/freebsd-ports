@@ -6,22 +6,24 @@
 #
 
 PORTNAME=	rosegarden
-PORTVERSION=	10.04.2
+PORTVERSION=	10.10
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/10.04/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c0rn@o2.pl
 COMMENT=	The Rosegarden Editor and Sequencer suite
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:${PORTSDIR}/audio/tclmidi \
-		dssi_osc_update:${PORTSDIR}/audio/dssi \
+BUILD_DEPENDS=	dssi_osc_update:${PORTSDIR}/audio/dssi \
 		makedepend:${PORTSDIR}/devel/makedepend
-RUN_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:${PORTSDIR}/audio/tclmidi \
-		dssi_osc_update:${PORTSDIR}/audio/dssi
+RUN_DEPENDS=	dssi_osc_update:${PORTSDIR}/audio/dssi \
+		lilypond:${PORTSDIR}/print/lilypond
 LIB_DEPENDS+=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		fftw3.5:${PORTSDIR}/math/fftw3 \
 		fftw3f.5:${PORTSDIR}/math/fftw3-float \
-		asound.2:${PORTSDIR}/audio/alsa-lib
+		asound.2:${PORTSDIR}/audio/alsa-lib \
+		lirc_client:${PORTSDIR}/comms/lirc
+		
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -32,5 +34,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	QTLIBDIR=${QT_LIBDIR} LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

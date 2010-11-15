@@ -1,5 +1,6 @@
 bin/rosegarden
 share/applications/rosegarden.desktop
+share/icons/hicolor/128x128/apps/rosegarden.png
 share/icons/hicolor/16x16/mimetypes/audio-x-rosegarden-composition.png
 share/icons/hicolor/16x16/mimetypes/audio-x-rosegarden-device.png
 share/icons/hicolor/16x16/mimetypes/audio-x-rosegarden-project.png
@@ -9,6 +10,7 @@ share/icons/hicolor/32x32/mimetypes/audio-x-rosegarden-composition.png
 share/icons/hicolor/32x32/mimetypes/audio-x-rosegarden-device.png
 share/icons/hicolor/32x32/mimetypes/audio-x-rosegarden-project.png
 share/icons/hicolor/32x32/mimetypes/audio-x-rosegarden-template.png
+share/icons/hicolor/64x64/apps/rosegarden.png
 share/icons/hicolor/64x64/mimetypes/audio-x-rosegarden-composition.png
 share/icons/hicolor/64x64/mimetypes/audio-x-rosegarden-device.png
 share/icons/hicolor/64x64/mimetypes/audio-x-rosegarden-project.png
@@ -16,13 +18,15 @@ share/icons/hicolor/64x64/mimetypes/audio-x-rosegarden-template.png
 share/mime/packages/rosegarden.xml
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@dirrm share/icons/hicolor/64x64/mimetypes
-@dirrm share/icons/hicolor/64x64
-@dirrm share/icons/hicolor/32x32/mimetypes
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/mimetypes
-@dirrm share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/64x64/mimetypes
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/32x32/mimetypes
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/16x16/mimetypes
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
