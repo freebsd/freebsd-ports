@@ -1,5 +1,5 @@
 This provides libcupsimage for applications to process CUPS raster files.
 
-LICENSE: LGPL2 only with exception to link with OpenSSL
+LICENSE: LGPL2 or later with exception to link with OpenSSL
 
 WWW: http://www.cups.org/
