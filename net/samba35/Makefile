@@ -7,7 +7,7 @@
 
 PORTNAME=		${SAMBA_BASENAME}35
 PORTVERSION=		3.5.6
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
@@ -16,7 +16,7 @@ DISTNAME=		${SAMBA_BASENAME}-${PORTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alph
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
-CONFLICTS?=		ja-samba-[23].* samba-[23].* sharity-light-1.*
+CONFLICTS?=		*samba3[0-4]-3.* sharity-light-1.*
 # Additional patches from Sernet.de
 PATCH_STRIP=		-p1
 EXTRA_PATCHES=		${PATCHDIR}/sernet.patch
@@ -153,6 +153,8 @@ CONFIGURE_ARGS+=	--with-pam --with-readline=/usr \
 			--without-libnetapi \
 			--without-libsmbsharemodes
 
+# XXX: Temporary hack for RELENG6
+CONFIGURE_ENV+=		ac_cv_header_sys_mount_h=yes
 .if !defined(WITH_IPV6)
 CONFIGURE_ENV+=		libreplace_cv_HAVE_IPV6=no
 .endif
@@ -364,8 +366,7 @@ MAN3=		ldb.3
 MAN5=		lmhosts.5 smb.conf.5 smbgetrc.5 smbpasswd.5
 MAN7=		samba.7
 MAN8=		eventlogadm.8 net.8 nmbd.8 pdbedit.8 smbd.8 smbpasswd.8 \
-		smbspool.8 \
-		idmap_nss.8 idmap_tdb.8 idmap_tdb2.8 \
+		smbspool.8 idmap_nss.8 idmap_tdb.8 idmap_tdb2.8 \
 		vfs_acl_tdb.8 vfs_acl_xattr.8 \
 		vfs_audit.8 vfs_cap.8 vfs_default_quota.8 vfs_extd_audit.8 \
 		vfs_fake_perms.8 vfs_full_audit.8 vfs_netatalk.8 \
