@@ -1,0 +1,20 @@
+--- modules/clx/mit-clx/Makefile	2009/08/16 20:21:21	1.8
++++ modules/clx/mit-clx/Makefile	2010/09/14 18:12:08	1.9
+@@ -75,7 +75,7 @@
+ 	chmod a+x $(bindir)/clx
+ 
+ link.sh : $(srcdir)/link.sh
+-	$(LN_S) $< .
++	$(LN_S) $(srcdir)/link.sh .
+ 
+ distrib : src-distrib clisp-distrib
+ 
+@@ -87,7 +87,7 @@
+ 
+ 
+ # Make a module
+-clisp-module : defsystem.fas stamp.fas $(ALLFAS)
++clisp-module : defsystem.fas stamp.fas $(ALLFAS) link.sh
+ 
+ # Make a module distribution into $(distribdir)
+ clisp-module-distrib : clisp-module force
