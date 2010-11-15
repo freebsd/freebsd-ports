@@ -3118,6 +3118,7 @@
     SUBDIR += rubygem-mocha
     SUBDIR += rubygem-moneta
     SUBDIR += rubygem-msgpack
+    SUBDIR += rubygem-ncurses
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-newgem
     SUBDIR += rubygem-nice-ffi
