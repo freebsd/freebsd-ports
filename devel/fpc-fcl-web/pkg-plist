@@ -9,7 +9,6 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custweb.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpapache.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpcgi.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpfcgi.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fptemplate.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fphtml.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/websession.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpweb.ppu
@@ -25,7 +24,6 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/custweb.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpapache.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpcgi.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpfcgi.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fptemplate.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fphtml.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/websession.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/fpweb.o
@@ -41,7 +39,6 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpfphttp.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpcustcgi.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpcustfcgi.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpcustweb.a
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpfptemplate.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpfphtml.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpwebsession.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-web/libpfpweb.a

@@ -30,7 +30,7 @@ _FPCMKINCLUDED=	yes
 FPC_Include_MAINTAINER=	acm@FreeBSD.org
 FPC_Pre_Include=	bsd.fpc.mk
 
-DEFAULT_FPC_VER=	2.4.0
+DEFAULT_FPC_VER=	2.4.2
 FPC_VER=		${DEFAULT_FPC_VER}
 FPC_ARCH=		${ARCH:S/amd64/x86_64/}
 

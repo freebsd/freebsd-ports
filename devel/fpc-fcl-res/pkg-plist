@@ -69,6 +69,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/libpresreader.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/libpreswriter.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/libpstringtableresource.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/libpstrtable.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/libptlbreader.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/libpversionconsts.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/libpversionresource.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/libpversiontypes.a
@@ -99,6 +100,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/stringtableresource.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/stringtableresource.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/strtable.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/strtable.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/tlbreader.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/tlbreader.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/versionconsts.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/versionconsts.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fcl-res/versionresource.o
