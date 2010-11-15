@@ -7,12 +7,13 @@
 
 PORTNAME=	isoqlog
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.enderunix.org/isoqlog/ \
 		http://www.trunix.org/projeler/isoqlog/ \
 		http://www.acikkod.org/softwares/
 
-MAINTAINER=	ofsen@enderunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A qmail, postfix, sendmail, exim MTA log analysis program
 
 GNU_CONFIGURE=	yes
@@ -21,10 +22,6 @@ USE_GMAKE=	yes
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		Segmentation faults on amd64 (see ports/139867 for details)
-.endif
 
 .ifdef NOPORTDOCS
 post-patch:
