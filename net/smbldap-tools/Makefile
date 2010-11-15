@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	smbldap-tools
-PORTVERSION=	0.9.5
-PORTREVISION=	5
+PORTVERSION=	0.9.6
 CATEGORIES=	net
-MASTER_SITES=	http://download.gna.org/smbldap-tools/packages/ \
-		http://download.gna.org/smbldap-tools/packages/old-Idealx-release/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://download.gna.org/smbldap-tools/sources/${PORTVERSION}/
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Samba-LDAP management and support tools
