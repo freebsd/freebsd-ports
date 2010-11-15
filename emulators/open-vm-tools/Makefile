@@ -7,7 +7,6 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
-PORTREVISION=	1
 CATEGORIES=		emulators kld
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${RELEASE_DATE}
 DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
@@ -15,9 +14,11 @@ DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
 MAINTAINER=		mbr@freebsd.org
 COMMENT?=		Open VMware tools for FreeBSD VMware guests
 
-RELEASE_DATE=		2010.04.25
-BUILD_VER=		253928
+RELEASE_DATE=		2010.10.18
+BUILD_VER=		313025
 
+LICENSE=		LGPL21
+LICENSE_FILE=		${WRKSRC}/COPYING
 WRKSRC=			${WRKDIR}/open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
 GNU_CONFIGURE=		yes
 USE_LDCONFIG=		yes
@@ -78,8 +79,6 @@ USE_RC_SUBR=		vmware-guestd.sh vmware-kmod.sh
 
 .if ${OSVERSION} < 700000
 BROKEN=		does not compile on 6.X
-.elif ${OSVERSION} >= 900007
-BROKEN=		does not compile
 .endif
 
 .if ${ARCH} == "sparc64"
