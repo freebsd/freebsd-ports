@@ -937,6 +937,7 @@
     SUBDIR += ruby-tserver
     SUBDIR += rubygem-bunny
     SUBDIR += rubygem-geoip
+    SUBDIR += rubygem-ipaddress
     SUBDIR += rubygem-macaddr
     SUBDIR += rubygem-net-ldap
     SUBDIR += rubygem-net-netrc
