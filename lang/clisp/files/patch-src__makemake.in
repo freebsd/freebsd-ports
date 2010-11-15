@@ -1,5 +1,14 @@
---- ./src/makemake.in.orig	2010-07-08 10:20:32.000000000 -0400
-+++ ./src/makemake.in	2010-07-08 10:23:05.000000000 -0400
+--- ./src/makemake.in.orig	2010-11-08 19:22:10.000000000 -0500
++++ ./src/makemake.in	2010-11-08 19:22:50.000000000 -0500
+@@ -1424,7 +1424,7 @@
+     freebsd2* | netbsd* | openbsd*)
+       XCC_CREATESHARED='ld -Bshareable -o $lib $libs'
+       ;;
+-    freebsd3* | gnu* | linux* | cygwin* | mingw* | k*bsd* | dragonfly*)
++    freebsd* | gnu* | linux* | cygwin* | mingw* | k*bsd* | dragonfly*)
+       XCC_CREATESHARED='${CC} ${CFLAGS} ${CLFLAGS} -shared -o $lib $libs'
+       ;;
+     hpux9* | hpux10*)
 @@ -1917,7 +1917,7 @@
  echol "psdir   = ${PSDIR}"
  echol "pdfdir  = ${PDFDIR}"
