@@ -10,8 +10,380 @@
 %%WWWDIR%%/html/abook_quicksearch.html
 %%WWWDIR%%/html/ajax-int.css
 %%WWWDIR%%/html/blankiframe.html
+%%WWWDIR%%/html/chinese/abook_importselect.html
+%%WWWDIR%%/html/chinese/about.html
+%%WWWDIR%%/html/chinese/auth_disabled.html
+%%WWWDIR%%/html/chinese/auth_error.html
+%%WWWDIR%%/html/chinese/auth_invalidchars.html
+%%WWWDIR%%/html/chinese/auth_license.html
+%%WWWDIR%%/html/chinese/auth_maxaccounts.html
+%%WWWDIR%%/html/chinese/auth_misc.html
+%%WWWDIR%%/html/chinese/auth_notallowed.html
+%%WWWDIR%%/html/chinese/auth_nouser.html
+%%WWWDIR%%/html/chinese/auth_permission.html
+%%WWWDIR%%/html/chinese/auth_reserved.html
+%%WWWDIR%%/html/chinese/auth_serverswitch.html
+%%WWWDIR%%/html/chinese/auth_spammer.html
+%%WWWDIR%%/html/chinese/auth_timeout.html
+%%WWWDIR%%/html/chinese/auth_userexists.html
+%%WWWDIR%%/html/chinese/auth_xulerror.html
+%%WWWDIR%%/html/chinese/delete_error.html
+%%WWWDIR%%/html/chinese/editgroup.html
+%%WWWDIR%%/html/chinese/errorsmtp.html
+%%WWWDIR%%/html/chinese/export-email.html
+%%WWWDIR%%/html/chinese/filter_entry.html
+%%WWWDIR%%/html/chinese/filter_list.html
+%%WWWDIR%%/html/chinese/fwdmsg.html
+%%WWWDIR%%/html/chinese/help/acctconfig.html
+%%WWWDIR%%/html/chinese/help/address_faq.html
+%%WWWDIR%%/html/chinese/help/addressbook.html
+%%WWWDIR%%/html/chinese/help/ajaxhelp.html
+%%WWWDIR%%/html/chinese/help/compose.html
+%%WWWDIR%%/html/chinese/help/file.html
+%%WWWDIR%%/html/chinese/help/filexp.html
+%%WWWDIR%%/html/chinese/help/helpxp.css
+%%WWWDIR%%/html/chinese/help/hintsandtips.html
+%%WWWDIR%%/html/chinese/help/import.html
+%%WWWDIR%%/html/chinese/help/index.html
+%%WWWDIR%%/html/chinese/help/ldap.html
+%%WWWDIR%%/html/chinese/help/ldap_faq.html
+%%WWWDIR%%/html/chinese/help/loginhelp.html
+%%WWWDIR%%/html/chinese/help/mailerror.html
+%%WWWDIR%%/html/chinese/help/mailsend.html
+%%WWWDIR%%/html/chinese/help/mngmsg.html
+%%WWWDIR%%/html/chinese/help/newmbox.html
+%%WWWDIR%%/html/chinese/help/rcvattach.html
+%%WWWDIR%%/html/chinese/help/reademail.html
+%%WWWDIR%%/html/chinese/help/recvmail.html
+%%WWWDIR%%/html/chinese/help/search.html
+%%WWWDIR%%/html/chinese/help/search_match.html
+%%WWWDIR%%/html/chinese/help/sendmail.html
+%%WWWDIR%%/html/chinese/help/settings.html
+%%WWWDIR%%/html/chinese/help/sidebar.html
+%%WWWDIR%%/html/chinese/help/sndattach.html
+%%WWWDIR%%/html/chinese/help/spell.html
+%%WWWDIR%%/html/chinese/help/spell_faq.html
+%%WWWDIR%%/html/chinese/help/sync.html
+%%WWWDIR%%/html/chinese/help/tipsjscript.html
+%%WWWDIR%%/html/chinese/help/toggle.html
+%%WWWDIR%%/html/chinese/help/videomail.html
+%%WWWDIR%%/html/chinese/help/wap.html
+%%WWWDIR%%/html/chinese/help/wap_faq.html
+%%WWWDIR%%/html/chinese/icalendar_email.html
+%%WWWDIR%%/html/chinese/javascript/abook.js
+%%WWWDIR%%/html/chinese/javascript/ajax-lang.js
+%%WWWDIR%%/html/chinese/javascript/alerts.js
+%%WWWDIR%%/html/chinese/javascript/checkalpha.js
+%%WWWDIR%%/html/chinese/javascript/checkemail.js
+%%WWWDIR%%/html/chinese/javascript/composewin.js
+%%WWWDIR%%/html/chinese/javascript/ldaplocal.js
+%%WWWDIR%%/html/chinese/javascript/schemesxp.js
+%%WWWDIR%%/html/chinese/javascript/validate.js
+%%WWWDIR%%/html/chinese/javascript/validate_abook.js
+%%WWWDIR%%/html/chinese/javascript/validate_filters.js
+%%WWWDIR%%/html/chinese/javascript/validate_foldername.js
+%%WWWDIR%%/html/chinese/javascript/validate_folders.js
+%%WWWDIR%%/html/chinese/javascript/validate_group.js
+%%WWWDIR%%/html/chinese/javascript/validate_ldap.js
+%%WWWDIR%%/html/chinese/javascript/validate_move.js
+%%WWWDIR%%/html/chinese/javascript/validate_password.js
+%%WWWDIR%%/html/chinese/loading.html
+%%WWWDIR%%/html/chinese/loadingstart.html
+%%WWWDIR%%/html/chinese/msg/attachtoolarge.html
+%%WWWDIR%%/html/chinese/msg/calentries.html
+%%WWWDIR%%/html/chinese/msg/caltoday.html
+%%WWWDIR%%/html/chinese/msg/chpasswderror.html
+%%WWWDIR%%/html/chinese/msg/chpasswdok.html
+%%WWWDIR%%/html/chinese/msg/emptycal.html
+%%WWWDIR%%/html/chinese/msg/highpriority.html
+%%WWWDIR%%/html/chinese/msg/importalert.html
+%%WWWDIR%%/html/chinese/msg/login_mailautherror.html
+%%WWWDIR%%/html/chinese/msg/login_mailerrorbody.html
+%%WWWDIR%%/html/chinese/msg/login_mailerrorhead.html
+%%WWWDIR%%/html/chinese/msg/login_mailserverauth.html
+%%WWWDIR%%/html/chinese/msg/login_mailservererror.html
+%%WWWDIR%%/html/chinese/msg/logoff.html
+%%WWWDIR%%/html/chinese/msg/lowcredit.html
+%%WWWDIR%%/html/chinese/msg/lowpriority.html
+%%WWWDIR%%/html/chinese/msg/moretasks.html
+%%WWWDIR%%/html/chinese/msg/move_msg_fail.xml
+%%WWWDIR%%/html/chinese/msg/move_msg_ok.xml
+%%WWWDIR%%/html/chinese/msg/movedmsgs.html
+%%WWWDIR%%/html/chinese/msg/nextmsg.html
+%%WWWDIR%%/html/chinese/msg/nocredit.html
+%%WWWDIR%%/html/chinese/msg/normalpriority.html
+%%WWWDIR%%/html/chinese/msg/notitle.html
+%%WWWDIR%%/html/chinese/msg/onetask.html
+%%WWWDIR%%/html/chinese/msg/popdlmsg.html
+%%WWWDIR%%/html/chinese/msg/popmsgnum.html
+%%WWWDIR%%/html/chinese/msg/poprelogin.html
+%%WWWDIR%%/html/chinese/msg/prevmsg.html
+%%WWWDIR%%/html/chinese/msg/printcal_title.html
+%%WWWDIR%%/html/chinese/msg/savedraft.html
+%%WWWDIR%%/html/chinese/msg/searchnr.html
+%%WWWDIR%%/html/chinese/msg/sentmsg.html
+%%WWWDIR%%/html/chinese/msg/sentmsga.html
+%%WWWDIR%%/html/chinese/msg/smsfail.html
+%%WWWDIR%%/html/chinese/msg/smsok.html
+%%WWWDIR%%/html/chinese/msg/smsstatusfail.html
+%%WWWDIR%%/html/chinese/msg/smsstatusok.html
+%%WWWDIR%%/html/chinese/msg/sortmsgs.html
+%%WWWDIR%%/html/chinese/msg/spamtrash.html
+%%WWWDIR%%/html/chinese/msg/specifyto.html
+%%WWWDIR%%/html/chinese/msg/spell_nomatch.html
+%%WWWDIR%%/html/chinese/msg/spell_suggested.html
+%%WWWDIR%%/html/chinese/msg/today.html
+%%WWWDIR%%/html/chinese/msg/totalmsgs.html
+%%WWWDIR%%/html/chinese/msg/updated.html
+%%WWWDIR%%/html/chinese/msg/viewday.html
+%%WWWDIR%%/html/chinese/msg/viewingday.html
+%%WWWDIR%%/html/chinese/msg/wap_abookempty.html
+%%WWWDIR%%/html/chinese/msg/wap_allmsgs.html
+%%WWWDIR%%/html/chinese/msg/wap_display.html
+%%WWWDIR%%/html/chinese/msg/wap_nomsg.html
+%%WWWDIR%%/html/chinese/newmail.html
+%%WWWDIR%%/html/chinese/nosuchmsg.html
+%%WWWDIR%%/html/chinese/passutil.html
+%%WWWDIR%%/html/chinese/readmail-attachment.html
+%%WWWDIR%%/html/chinese/schemes.html
+%%WWWDIR%%/html/chinese/simple/abook.html
+%%WWWDIR%%/html/chinese/simple/abook_blank.html
+%%WWWDIR%%/html/chinese/simple/abook_entry.html
+%%WWWDIR%%/html/chinese/simple/abook_entry_blank.html
+%%WWWDIR%%/html/chinese/simple/abook_groupentry.html
+%%WWWDIR%%/html/chinese/simple/abook_import.html
+%%WWWDIR%%/html/chinese/simple/abook_importfield.html
+%%WWWDIR%%/html/chinese/simple/abook_importfile.html
+%%WWWDIR%%/html/chinese/simple/abook_new.html
+%%WWWDIR%%/html/chinese/simple/abook_row.html
+%%WWWDIR%%/html/chinese/simple/abook_view.html
+%%WWWDIR%%/html/chinese/simple/addgroup.html
+%%WWWDIR%%/html/chinese/simple/atmailstyle-form.css
+%%WWWDIR%%/html/chinese/simple/atmailstyle-mail.css
+%%WWWDIR%%/html/chinese/simple/atmailstyle.css
+%%WWWDIR%%/html/chinese/simple/attachfile.html
+%%WWWDIR%%/html/chinese/simple/attachment.html
+%%WWWDIR%%/html/chinese/simple/composebook.html
+%%WWWDIR%%/html/chinese/simple/editgroup.html
+%%WWWDIR%%/html/chinese/simple/emailentry_blank_ajax.html
+%%WWWDIR%%/html/chinese/simple/emailentry_popup_ajax.html
+%%WWWDIR%%/html/chinese/simple/folderbar.html
+%%WWWDIR%%/html/chinese/simple/folders.html
+%%WWWDIR%%/html/chinese/simple/foldertr.html
+%%WWWDIR%%/html/chinese/simple/footer.html
+%%WWWDIR%%/html/chinese/simple/header.html
+%%WWWDIR%%/html/chinese/simple/headerbar.html
+%%WWWDIR%%/html/chinese/simple/imapfolder_row.html
+%%WWWDIR%%/html/chinese/simple/imapfolders.html
+%%WWWDIR%%/html/chinese/simple/imapfolders_bottom.html
+%%WWWDIR%%/html/chinese/simple/imapfolders_head.html
+%%WWWDIR%%/html/chinese/simple/ldap.html
+%%WWWDIR%%/html/chinese/simple/ldap_bad_hostname.html
+%%WWWDIR%%/html/chinese/simple/ldap_entry.html
+%%WWWDIR%%/html/chinese/simple/ldap_entry_blank.html
+%%WWWDIR%%/html/chinese/simple/ldap_error.html
+%%WWWDIR%%/html/chinese/simple/ldap_search.html
+%%WWWDIR%%/html/chinese/simple/profile.html
+%%WWWDIR%%/html/chinese/simple/readmail-attachment.html
+%%WWWDIR%%/html/chinese/simple/readmail_ajax.html
+%%WWWDIR%%/html/chinese/simple/sendmsg_ajax.html
+%%WWWDIR%%/html/chinese/simple/settings.html
+%%WWWDIR%%/html/chinese/simple/showframe.html
+%%WWWDIR%%/html/chinese/simple/showmail_bottom_ajax.html
+%%WWWDIR%%/html/chinese/simple/showmail_interface.html
+%%WWWDIR%%/html/chinese/simple/showmail_popup_ajax.html
+%%WWWDIR%%/html/chinese/simple/simple.html
+%%WWWDIR%%/html/chinese/simple/spellcheck.html
+%%WWWDIR%%/html/chinese/virusmessage.html
+%%WWWDIR%%/html/chinese/xp/css/gui.css
 %%WWWDIR%%/html/css/calendar_simple.css
 %%WWWDIR%%/html/css/calendar_xp.css
+%%WWWDIR%%/html/dutch/abook_importselect.html
+%%WWWDIR%%/html/dutch/about.html
+%%WWWDIR%%/html/dutch/auth_disabled.html
+%%WWWDIR%%/html/dutch/auth_error.html
+%%WWWDIR%%/html/dutch/auth_invalidchars.html
+%%WWWDIR%%/html/dutch/auth_license.html
+%%WWWDIR%%/html/dutch/auth_maxaccounts.html
+%%WWWDIR%%/html/dutch/auth_misc.html
+%%WWWDIR%%/html/dutch/auth_notallowed.html
+%%WWWDIR%%/html/dutch/auth_nouser.html
+%%WWWDIR%%/html/dutch/auth_permission.html
+%%WWWDIR%%/html/dutch/auth_reserved.html
+%%WWWDIR%%/html/dutch/auth_serverswitch.html
+%%WWWDIR%%/html/dutch/auth_spammer.html
+%%WWWDIR%%/html/dutch/auth_timeout.html
+%%WWWDIR%%/html/dutch/auth_userexists.html
+%%WWWDIR%%/html/dutch/auth_xulerror.html
+%%WWWDIR%%/html/dutch/delete_error.html
+%%WWWDIR%%/html/dutch/editgroup.html
+%%WWWDIR%%/html/dutch/errorsmtp.html
+%%WWWDIR%%/html/dutch/export-email.html
+%%WWWDIR%%/html/dutch/filter_entry.html
+%%WWWDIR%%/html/dutch/filter_list.html
+%%WWWDIR%%/html/dutch/fwdmsg.html
+%%WWWDIR%%/html/dutch/help/acctconfig.html
+%%WWWDIR%%/html/dutch/help/address_faq.html
+%%WWWDIR%%/html/dutch/help/addressbook.html
+%%WWWDIR%%/html/dutch/help/ajaxhelp.html
+%%WWWDIR%%/html/dutch/help/compose.html
+%%WWWDIR%%/html/dutch/help/file.html
+%%WWWDIR%%/html/dutch/help/filexp.html
+%%WWWDIR%%/html/dutch/help/helpxp.css
+%%WWWDIR%%/html/dutch/help/hintsandtips.html
+%%WWWDIR%%/html/dutch/help/import.html
+%%WWWDIR%%/html/dutch/help/index.html
+%%WWWDIR%%/html/dutch/help/ldap.html
+%%WWWDIR%%/html/dutch/help/ldap_faq.html
+%%WWWDIR%%/html/dutch/help/loginhelp.html
+%%WWWDIR%%/html/dutch/help/mailerror.html
+%%WWWDIR%%/html/dutch/help/mailsend.html
+%%WWWDIR%%/html/dutch/help/mngmsg.html
+%%WWWDIR%%/html/dutch/help/newmbox.html
+%%WWWDIR%%/html/dutch/help/rcvattach.html
+%%WWWDIR%%/html/dutch/help/reademail.html
+%%WWWDIR%%/html/dutch/help/recvmail.html
+%%WWWDIR%%/html/dutch/help/search.html
+%%WWWDIR%%/html/dutch/help/search_match.html
+%%WWWDIR%%/html/dutch/help/sendmail.html
+%%WWWDIR%%/html/dutch/help/settings.html
+%%WWWDIR%%/html/dutch/help/sidebar.html
+%%WWWDIR%%/html/dutch/help/sndattach.html
+%%WWWDIR%%/html/dutch/help/spell.html
+%%WWWDIR%%/html/dutch/help/spell_faq.html
+%%WWWDIR%%/html/dutch/help/sync.html
+%%WWWDIR%%/html/dutch/help/tipsjscript.html
+%%WWWDIR%%/html/dutch/help/toggle.html
+%%WWWDIR%%/html/dutch/help/videomail.html
+%%WWWDIR%%/html/dutch/help/wap.html
+%%WWWDIR%%/html/dutch/help/wap_faq.html
+%%WWWDIR%%/html/dutch/icalendar_email.html
+%%WWWDIR%%/html/dutch/javascript/abook.js
+%%WWWDIR%%/html/dutch/javascript/ajax-lang.js
+%%WWWDIR%%/html/dutch/javascript/alerts.js
+%%WWWDIR%%/html/dutch/javascript/checkalpha.js
+%%WWWDIR%%/html/dutch/javascript/checkemail.js
+%%WWWDIR%%/html/dutch/javascript/composewin.js
+%%WWWDIR%%/html/dutch/javascript/ldaplocal.js
+%%WWWDIR%%/html/dutch/javascript/schemesxp.js
+%%WWWDIR%%/html/dutch/javascript/validate.js
+%%WWWDIR%%/html/dutch/javascript/validate_abook.js
+%%WWWDIR%%/html/dutch/javascript/validate_filters.js
+%%WWWDIR%%/html/dutch/javascript/validate_foldername.js
+%%WWWDIR%%/html/dutch/javascript/validate_folders.js
+%%WWWDIR%%/html/dutch/javascript/validate_group.js
+%%WWWDIR%%/html/dutch/javascript/validate_ldap.js
+%%WWWDIR%%/html/dutch/javascript/validate_move.js
+%%WWWDIR%%/html/dutch/javascript/validate_password.js
+%%WWWDIR%%/html/dutch/loading.html
+%%WWWDIR%%/html/dutch/loadingstart.html
+%%WWWDIR%%/html/dutch/msg/attachtoolarge.html
+%%WWWDIR%%/html/dutch/msg/calentries.html
+%%WWWDIR%%/html/dutch/msg/caltoday.html
+%%WWWDIR%%/html/dutch/msg/chpasswderror.html
+%%WWWDIR%%/html/dutch/msg/chpasswdok.html
+%%WWWDIR%%/html/dutch/msg/emptycal.html
+%%WWWDIR%%/html/dutch/msg/highpriority.html
+%%WWWDIR%%/html/dutch/msg/importalert.html
+%%WWWDIR%%/html/dutch/msg/login_mailautherror.html
+%%WWWDIR%%/html/dutch/msg/login_mailerrorbody.html
+%%WWWDIR%%/html/dutch/msg/login_mailerrorhead.html
+%%WWWDIR%%/html/dutch/msg/login_mailserverauth.html
+%%WWWDIR%%/html/dutch/msg/login_mailservererror.html
+%%WWWDIR%%/html/dutch/msg/logoff.html
+%%WWWDIR%%/html/dutch/msg/lowcredit.html
+%%WWWDIR%%/html/dutch/msg/lowpriority.html
+%%WWWDIR%%/html/dutch/msg/moretasks.html
+%%WWWDIR%%/html/dutch/msg/move_msg_fail.xml
+%%WWWDIR%%/html/dutch/msg/move_msg_ok.xml
+%%WWWDIR%%/html/dutch/msg/movedmsgs.html
+%%WWWDIR%%/html/dutch/msg/nextmsg.html
+%%WWWDIR%%/html/dutch/msg/nocredit.html
+%%WWWDIR%%/html/dutch/msg/normalpriority.html
+%%WWWDIR%%/html/dutch/msg/notitle.html
+%%WWWDIR%%/html/dutch/msg/onetask.html
+%%WWWDIR%%/html/dutch/msg/popdlmsg.html
+%%WWWDIR%%/html/dutch/msg/popmsgnum.html
+%%WWWDIR%%/html/dutch/msg/poprelogin.html
+%%WWWDIR%%/html/dutch/msg/prevmsg.html
+%%WWWDIR%%/html/dutch/msg/printcal_title.html
+%%WWWDIR%%/html/dutch/msg/savedraft.html
+%%WWWDIR%%/html/dutch/msg/searchnr.html
+%%WWWDIR%%/html/dutch/msg/sentmsg.html
+%%WWWDIR%%/html/dutch/msg/sentmsga.html
+%%WWWDIR%%/html/dutch/msg/smsfail.html
+%%WWWDIR%%/html/dutch/msg/smsok.html
+%%WWWDIR%%/html/dutch/msg/smsstatusfail.html
+%%WWWDIR%%/html/dutch/msg/smsstatusok.html
+%%WWWDIR%%/html/dutch/msg/sortmsgs.html
+%%WWWDIR%%/html/dutch/msg/spamtrash.html
+%%WWWDIR%%/html/dutch/msg/specifyto.html
+%%WWWDIR%%/html/dutch/msg/spell_nomatch.html
+%%WWWDIR%%/html/dutch/msg/spell_suggested.html
+%%WWWDIR%%/html/dutch/msg/today.html
+%%WWWDIR%%/html/dutch/msg/totalmsgs.html
+%%WWWDIR%%/html/dutch/msg/updated.html
+%%WWWDIR%%/html/dutch/msg/viewday.html
+%%WWWDIR%%/html/dutch/msg/viewingday.html
+%%WWWDIR%%/html/dutch/msg/wap_abookempty.html
+%%WWWDIR%%/html/dutch/msg/wap_allmsgs.html
+%%WWWDIR%%/html/dutch/msg/wap_display.html
+%%WWWDIR%%/html/dutch/msg/wap_nomsg.html
+%%WWWDIR%%/html/dutch/newmail.html
+%%WWWDIR%%/html/dutch/nosuchmsg.html
+%%WWWDIR%%/html/dutch/passutil.html
+%%WWWDIR%%/html/dutch/readmail-attachment.html
+%%WWWDIR%%/html/dutch/schemes.html
+%%WWWDIR%%/html/dutch/simple/abook.html
+%%WWWDIR%%/html/dutch/simple/abook_blank.html
+%%WWWDIR%%/html/dutch/simple/abook_entry.html
+%%WWWDIR%%/html/dutch/simple/abook_entry_blank.html
+%%WWWDIR%%/html/dutch/simple/abook_groupentry.html
+%%WWWDIR%%/html/dutch/simple/abook_import.html
+%%WWWDIR%%/html/dutch/simple/abook_importfield.html
+%%WWWDIR%%/html/dutch/simple/abook_importfile.html
+%%WWWDIR%%/html/dutch/simple/abook_new.html
+%%WWWDIR%%/html/dutch/simple/abook_row.html
+%%WWWDIR%%/html/dutch/simple/abook_view.html
+%%WWWDIR%%/html/dutch/simple/addgroup.html
+%%WWWDIR%%/html/dutch/simple/atmailstyle-form.css
+%%WWWDIR%%/html/dutch/simple/atmailstyle-mail.css
+%%WWWDIR%%/html/dutch/simple/atmailstyle.css
+%%WWWDIR%%/html/dutch/simple/attachfile.html
+%%WWWDIR%%/html/dutch/simple/attachment.html
+%%WWWDIR%%/html/dutch/simple/composebook.html
+%%WWWDIR%%/html/dutch/simple/editgroup.html
+%%WWWDIR%%/html/dutch/simple/emailentry_blank_ajax.html
+%%WWWDIR%%/html/dutch/simple/emailentry_popup_ajax.html
+%%WWWDIR%%/html/dutch/simple/folderbar.html
+%%WWWDIR%%/html/dutch/simple/folders.html
+%%WWWDIR%%/html/dutch/simple/foldertr.html
+%%WWWDIR%%/html/dutch/simple/footer.html
+%%WWWDIR%%/html/dutch/simple/header.html
+%%WWWDIR%%/html/dutch/simple/headerbar.html
+%%WWWDIR%%/html/dutch/simple/imapfolder_row.html
+%%WWWDIR%%/html/dutch/simple/imapfolders.html
+%%WWWDIR%%/html/dutch/simple/imapfolders_bottom.html
+%%WWWDIR%%/html/dutch/simple/imapfolders_head.html
+%%WWWDIR%%/html/dutch/simple/ldap.html
+%%WWWDIR%%/html/dutch/simple/ldap_bad_hostname.html
+%%WWWDIR%%/html/dutch/simple/ldap_entry.html
+%%WWWDIR%%/html/dutch/simple/ldap_entry_blank.html
+%%WWWDIR%%/html/dutch/simple/ldap_error.html
+%%WWWDIR%%/html/dutch/simple/ldap_search.html
+%%WWWDIR%%/html/dutch/simple/profile.html
+%%WWWDIR%%/html/dutch/simple/readmail-attachment.html
+%%WWWDIR%%/html/dutch/simple/readmail_ajax.html
+%%WWWDIR%%/html/dutch/simple/sendmsg_ajax.html
+%%WWWDIR%%/html/dutch/simple/settings.html
+%%WWWDIR%%/html/dutch/simple/showframe.html
+%%WWWDIR%%/html/dutch/simple/showmail_bottom_ajax.html
+%%WWWDIR%%/html/dutch/simple/showmail_interface.html
+%%WWWDIR%%/html/dutch/simple/showmail_popup_ajax.html
+%%WWWDIR%%/html/dutch/simple/simple.html
+%%WWWDIR%%/html/dutch/simple/spellcheck.html
+%%WWWDIR%%/html/dutch/virusmessage.html
+%%WWWDIR%%/html/dutch/xp/css/gui.css
 %%WWWDIR%%/html/english/abook_importselect.html
 %%WWWDIR%%/html/english/about.html
 %%WWWDIR%%/html/english/auth_disabled.html
@@ -108,6 +480,8 @@
 %%WWWDIR%%/html/english/msg/lowcredit.html
 %%WWWDIR%%/html/english/msg/lowpriority.html
 %%WWWDIR%%/html/english/msg/moretasks.html
+%%WWWDIR%%/html/english/msg/move_msg_fail.xml
+%%WWWDIR%%/html/english/msg/move_msg_ok.xml
 %%WWWDIR%%/html/english/msg/movedmsgs.html
 %%WWWDIR%%/html/english/msg/nextmsg.html
 %%WWWDIR%%/html/english/msg/nocredit.html
@@ -292,6 +666,8 @@
 %%WWWDIR%%/html/espanol/msg/lowcredit.html
 %%WWWDIR%%/html/espanol/msg/lowpriority.html
 %%WWWDIR%%/html/espanol/msg/moretasks.html
+%%WWWDIR%%/html/espanol/msg/move_msg_fail.xml
+%%WWWDIR%%/html/espanol/msg/move_msg_ok.xml
 %%WWWDIR%%/html/espanol/msg/movedmsgs.html
 %%WWWDIR%%/html/espanol/msg/nextmsg.html
 %%WWWDIR%%/html/espanol/msg/nocredit.html
@@ -476,6 +852,8 @@
 %%WWWDIR%%/html/french/msg/lowcredit.html
 %%WWWDIR%%/html/french/msg/lowpriority.html
 %%WWWDIR%%/html/french/msg/moretasks.html
+%%WWWDIR%%/html/french/msg/move_msg_fail.xml
+%%WWWDIR%%/html/french/msg/move_msg_ok.xml
 %%WWWDIR%%/html/french/msg/movedmsgs.html
 %%WWWDIR%%/html/french/msg/nextmsg.html
 %%WWWDIR%%/html/french/msg/nocredit.html
@@ -660,6 +1038,8 @@
 %%WWWDIR%%/html/german/msg/lowcredit.html
 %%WWWDIR%%/html/german/msg/lowpriority.html
 %%WWWDIR%%/html/german/msg/moretasks.html
+%%WWWDIR%%/html/german/msg/move_msg_fail.xml
+%%WWWDIR%%/html/german/msg/move_msg_ok.xml
 %%WWWDIR%%/html/german/msg/movedmsgs.html
 %%WWWDIR%%/html/german/msg/nextmsg.html
 %%WWWDIR%%/html/german/msg/nocredit.html
@@ -854,6 +1234,8 @@
 %%WWWDIR%%/html/italiano/msg/lowcredit.html
 %%WWWDIR%%/html/italiano/msg/lowpriority.html
 %%WWWDIR%%/html/italiano/msg/moretasks.html
+%%WWWDIR%%/html/italiano/msg/move_msg_fail.xml
+%%WWWDIR%%/html/italiano/msg/move_msg_ok.xml
 %%WWWDIR%%/html/italiano/msg/movedmsgs.html
 %%WWWDIR%%/html/italiano/msg/nextmsg.html
 %%WWWDIR%%/html/italiano/msg/nocredit.html
@@ -942,10 +1324,568 @@
 %%WWWDIR%%/html/italiano/simple/spellcheck.html
 %%WWWDIR%%/html/italiano/virusmessage.html
 %%WWWDIR%%/html/italiano/xp/css/gui.css
+%%WWWDIR%%/html/japanese/abook_importselect.html
+%%WWWDIR%%/html/japanese/about.html
+%%WWWDIR%%/html/japanese/auth_disabled.html
+%%WWWDIR%%/html/japanese/auth_error.html
+%%WWWDIR%%/html/japanese/auth_invalidchars.html
+%%WWWDIR%%/html/japanese/auth_license.html
+%%WWWDIR%%/html/japanese/auth_maxaccounts.html
+%%WWWDIR%%/html/japanese/auth_misc.html
+%%WWWDIR%%/html/japanese/auth_notallowed.html
+%%WWWDIR%%/html/japanese/auth_nouser.html
+%%WWWDIR%%/html/japanese/auth_permission.html
+%%WWWDIR%%/html/japanese/auth_reserved.html
+%%WWWDIR%%/html/japanese/auth_serverswitch.html
+%%WWWDIR%%/html/japanese/auth_spammer.html
+%%WWWDIR%%/html/japanese/auth_timeout.html
+%%WWWDIR%%/html/japanese/auth_userexists.html
+%%WWWDIR%%/html/japanese/auth_xulerror.html
+%%WWWDIR%%/html/japanese/delete_error.html
+%%WWWDIR%%/html/japanese/editgroup.html
+%%WWWDIR%%/html/japanese/errorsmtp.html
+%%WWWDIR%%/html/japanese/export-email.html
+%%WWWDIR%%/html/japanese/filter_entry.html
+%%WWWDIR%%/html/japanese/filter_list.html
+%%WWWDIR%%/html/japanese/fwdmsg.html
+%%WWWDIR%%/html/japanese/help/acctconfig.html
+%%WWWDIR%%/html/japanese/help/address_faq.html
+%%WWWDIR%%/html/japanese/help/addressbook.html
+%%WWWDIR%%/html/japanese/help/ajaxhelp.html
+%%WWWDIR%%/html/japanese/help/compose.html
+%%WWWDIR%%/html/japanese/help/file.html
+%%WWWDIR%%/html/japanese/help/filexp.html
+%%WWWDIR%%/html/japanese/help/helpxp.css
+%%WWWDIR%%/html/japanese/help/hintsandtips.html
+%%WWWDIR%%/html/japanese/help/import.html
+%%WWWDIR%%/html/japanese/help/index.html
+%%WWWDIR%%/html/japanese/help/ldap.html
+%%WWWDIR%%/html/japanese/help/ldap_faq.html
+%%WWWDIR%%/html/japanese/help/loginhelp.html
+%%WWWDIR%%/html/japanese/help/mailerror.html
+%%WWWDIR%%/html/japanese/help/mailsend.html
+%%WWWDIR%%/html/japanese/help/mngmsg.html
+%%WWWDIR%%/html/japanese/help/newmbox.html
+%%WWWDIR%%/html/japanese/help/rcvattach.html
+%%WWWDIR%%/html/japanese/help/reademail.html
+%%WWWDIR%%/html/japanese/help/recvmail.html
+%%WWWDIR%%/html/japanese/help/search.html
+%%WWWDIR%%/html/japanese/help/search_match.html
+%%WWWDIR%%/html/japanese/help/sendmail.html
+%%WWWDIR%%/html/japanese/help/settings.html
+%%WWWDIR%%/html/japanese/help/sidebar.html
+%%WWWDIR%%/html/japanese/help/sndattach.html
+%%WWWDIR%%/html/japanese/help/spell.html
+%%WWWDIR%%/html/japanese/help/spell_faq.html
+%%WWWDIR%%/html/japanese/help/sync.html
+%%WWWDIR%%/html/japanese/help/tipsjscript.html
+%%WWWDIR%%/html/japanese/help/toggle.html
+%%WWWDIR%%/html/japanese/help/videomail.html
+%%WWWDIR%%/html/japanese/help/wap.html
+%%WWWDIR%%/html/japanese/help/wap_faq.html
+%%WWWDIR%%/html/japanese/icalendar_email.html
+%%WWWDIR%%/html/japanese/javascript/abook.js
+%%WWWDIR%%/html/japanese/javascript/ajax-lang.js
+%%WWWDIR%%/html/japanese/javascript/alerts.js
+%%WWWDIR%%/html/japanese/javascript/checkalpha.js
+%%WWWDIR%%/html/japanese/javascript/checkemail.js
+%%WWWDIR%%/html/japanese/javascript/composewin.js
+%%WWWDIR%%/html/japanese/javascript/ldaplocal.js
+%%WWWDIR%%/html/japanese/javascript/schemesxp.js
+%%WWWDIR%%/html/japanese/javascript/validate.js
+%%WWWDIR%%/html/japanese/javascript/validate_abook.js
+%%WWWDIR%%/html/japanese/javascript/validate_filters.js
+%%WWWDIR%%/html/japanese/javascript/validate_foldername.js
+%%WWWDIR%%/html/japanese/javascript/validate_folders.js
+%%WWWDIR%%/html/japanese/javascript/validate_group.js
+%%WWWDIR%%/html/japanese/javascript/validate_ldap.js
+%%WWWDIR%%/html/japanese/javascript/validate_move.js
+%%WWWDIR%%/html/japanese/javascript/validate_password.js
+%%WWWDIR%%/html/japanese/loading.html
+%%WWWDIR%%/html/japanese/loadingstart.html
+%%WWWDIR%%/html/japanese/msg/attachtoolarge.html
+%%WWWDIR%%/html/japanese/msg/calentries.html
+%%WWWDIR%%/html/japanese/msg/caltoday.html
+%%WWWDIR%%/html/japanese/msg/chpasswderror.html
+%%WWWDIR%%/html/japanese/msg/chpasswdok.html
+%%WWWDIR%%/html/japanese/msg/emptycal.html
+%%WWWDIR%%/html/japanese/msg/highpriority.html
+%%WWWDIR%%/html/japanese/msg/importalert.html
+%%WWWDIR%%/html/japanese/msg/login_mailautherror.html
+%%WWWDIR%%/html/japanese/msg/login_mailerrorbody.html
+%%WWWDIR%%/html/japanese/msg/login_mailerrorhead.html
+%%WWWDIR%%/html/japanese/msg/login_mailserverauth.html
+%%WWWDIR%%/html/japanese/msg/login_mailservererror.html
+%%WWWDIR%%/html/japanese/msg/logoff.html
+%%WWWDIR%%/html/japanese/msg/lowcredit.html
+%%WWWDIR%%/html/japanese/msg/lowpriority.html
+%%WWWDIR%%/html/japanese/msg/moretasks.html
+%%WWWDIR%%/html/japanese/msg/move_msg_fail.xml
+%%WWWDIR%%/html/japanese/msg/move_msg_ok.xml
+%%WWWDIR%%/html/japanese/msg/movedmsgs.html
+%%WWWDIR%%/html/japanese/msg/nextmsg.html
+%%WWWDIR%%/html/japanese/msg/nocredit.html
+%%WWWDIR%%/html/japanese/msg/normalpriority.html
+%%WWWDIR%%/html/japanese/msg/notitle.html
+%%WWWDIR%%/html/japanese/msg/onetask.html
+%%WWWDIR%%/html/japanese/msg/popdlmsg.html
+%%WWWDIR%%/html/japanese/msg/popmsgnum.html
+%%WWWDIR%%/html/japanese/msg/poprelogin.html
+%%WWWDIR%%/html/japanese/msg/prevmsg.html
+%%WWWDIR%%/html/japanese/msg/printcal_title.html
+%%WWWDIR%%/html/japanese/msg/savedraft.html
+%%WWWDIR%%/html/japanese/msg/searchnr.html
+%%WWWDIR%%/html/japanese/msg/sentmsg.html
+%%WWWDIR%%/html/japanese/msg/sentmsga.html
+%%WWWDIR%%/html/japanese/msg/smsfail.html
+%%WWWDIR%%/html/japanese/msg/smsok.html
+%%WWWDIR%%/html/japanese/msg/smsstatusfail.html
+%%WWWDIR%%/html/japanese/msg/smsstatusok.html
+%%WWWDIR%%/html/japanese/msg/sortmsgs.html
+%%WWWDIR%%/html/japanese/msg/spamtrash.html
+%%WWWDIR%%/html/japanese/msg/specifyto.html
+%%WWWDIR%%/html/japanese/msg/spell_nomatch.html
+%%WWWDIR%%/html/japanese/msg/spell_suggested.html
+%%WWWDIR%%/html/japanese/msg/today.html
+%%WWWDIR%%/html/japanese/msg/totalmsgs.html
+%%WWWDIR%%/html/japanese/msg/updated.html
+%%WWWDIR%%/html/japanese/msg/viewday.html
+%%WWWDIR%%/html/japanese/msg/viewingday.html
+%%WWWDIR%%/html/japanese/msg/wap_abookempty.html
+%%WWWDIR%%/html/japanese/msg/wap_allmsgs.html
+%%WWWDIR%%/html/japanese/msg/wap_display.html
+%%WWWDIR%%/html/japanese/msg/wap_nomsg.html
+%%WWWDIR%%/html/japanese/newmail.html
+%%WWWDIR%%/html/japanese/nosuchmsg.html
+%%WWWDIR%%/html/japanese/passutil.html
+%%WWWDIR%%/html/japanese/readmail-attachment.html
+%%WWWDIR%%/html/japanese/schemes.html
+%%WWWDIR%%/html/japanese/simple/abook.html
+%%WWWDIR%%/html/japanese/simple/abook_blank.html
+%%WWWDIR%%/html/japanese/simple/abook_entry.html
+%%WWWDIR%%/html/japanese/simple/abook_entry_blank.html
+%%WWWDIR%%/html/japanese/simple/abook_groupentry.html
+%%WWWDIR%%/html/japanese/simple/abook_import.html
+%%WWWDIR%%/html/japanese/simple/abook_importfield.html
+%%WWWDIR%%/html/japanese/simple/abook_importfile.html
+%%WWWDIR%%/html/japanese/simple/abook_new.html
+%%WWWDIR%%/html/japanese/simple/abook_row.html
+%%WWWDIR%%/html/japanese/simple/abook_view.html
+%%WWWDIR%%/html/japanese/simple/addgroup.html
+%%WWWDIR%%/html/japanese/simple/atmailstyle-form.css
+%%WWWDIR%%/html/japanese/simple/atmailstyle-mail.css
+%%WWWDIR%%/html/japanese/simple/atmailstyle.css
+%%WWWDIR%%/html/japanese/simple/attachfile.html
+%%WWWDIR%%/html/japanese/simple/attachment.html
+%%WWWDIR%%/html/japanese/simple/composebook.html
+%%WWWDIR%%/html/japanese/simple/editgroup.html
+%%WWWDIR%%/html/japanese/simple/emailentry_blank_ajax.html
+%%WWWDIR%%/html/japanese/simple/emailentry_popup_ajax.html
+%%WWWDIR%%/html/japanese/simple/folderbar.html
+%%WWWDIR%%/html/japanese/simple/folders.html
+%%WWWDIR%%/html/japanese/simple/foldertr.html
+%%WWWDIR%%/html/japanese/simple/footer.html
+%%WWWDIR%%/html/japanese/simple/header.html
+%%WWWDIR%%/html/japanese/simple/headerbar.html
+%%WWWDIR%%/html/japanese/simple/imapfolder_row.html
+%%WWWDIR%%/html/japanese/simple/imapfolders.html
+%%WWWDIR%%/html/japanese/simple/imapfolders_bottom.html
+%%WWWDIR%%/html/japanese/simple/imapfolders_head.html
+%%WWWDIR%%/html/japanese/simple/ldap.html
+%%WWWDIR%%/html/japanese/simple/ldap_bad_hostname.html
+%%WWWDIR%%/html/japanese/simple/ldap_entry.html
+%%WWWDIR%%/html/japanese/simple/ldap_entry_blank.html
+%%WWWDIR%%/html/japanese/simple/ldap_error.html
+%%WWWDIR%%/html/japanese/simple/ldap_search.html
+%%WWWDIR%%/html/japanese/simple/profile.html
+%%WWWDIR%%/html/japanese/simple/readmail-attachment.html
+%%WWWDIR%%/html/japanese/simple/readmail_ajax.html
+%%WWWDIR%%/html/japanese/simple/sendmsg_ajax.html
+%%WWWDIR%%/html/japanese/simple/settings.html
+%%WWWDIR%%/html/japanese/simple/showframe.html
+%%WWWDIR%%/html/japanese/simple/showmail_bottom_ajax.html
+%%WWWDIR%%/html/japanese/simple/showmail_interface.html
+%%WWWDIR%%/html/japanese/simple/showmail_popup_ajax.html
+%%WWWDIR%%/html/japanese/simple/simple.html
+%%WWWDIR%%/html/japanese/simple/spellcheck.html
+%%WWWDIR%%/html/japanese/virusmessage.html
+%%WWWDIR%%/html/japanese/xp/css/gui.css
 %%WWWDIR%%/html/login-light-demo.html
 %%WWWDIR%%/html/login-light.html
 %%WWWDIR%%/html/login.css
-%%WWWDIR%%/imgs/about.gif
+%%WWWDIR%%/html/portuguese/abook_importselect.html
+%%WWWDIR%%/html/portuguese/about.html
+%%WWWDIR%%/html/portuguese/auth_disabled.html
+%%WWWDIR%%/html/portuguese/auth_error.html
+%%WWWDIR%%/html/portuguese/auth_invalidchars.html
+%%WWWDIR%%/html/portuguese/auth_license.html
+%%WWWDIR%%/html/portuguese/auth_maxaccounts.html
+%%WWWDIR%%/html/portuguese/auth_misc.html
+%%WWWDIR%%/html/portuguese/auth_notallowed.html
+%%WWWDIR%%/html/portuguese/auth_nouser.html
+%%WWWDIR%%/html/portuguese/auth_permission.html
+%%WWWDIR%%/html/portuguese/auth_reserved.html
+%%WWWDIR%%/html/portuguese/auth_serverswitch.html
+%%WWWDIR%%/html/portuguese/auth_spammer.html
+%%WWWDIR%%/html/portuguese/auth_timeout.html
+%%WWWDIR%%/html/portuguese/auth_userexists.html
+%%WWWDIR%%/html/portuguese/auth_xulerror.html
+%%WWWDIR%%/html/portuguese/delete_error.html
+%%WWWDIR%%/html/portuguese/editgroup.html
+%%WWWDIR%%/html/portuguese/errorsmtp.html
+%%WWWDIR%%/html/portuguese/export-email.html
+%%WWWDIR%%/html/portuguese/filter_entry.html
+%%WWWDIR%%/html/portuguese/filter_list.html
+%%WWWDIR%%/html/portuguese/fwdmsg.html
+%%WWWDIR%%/html/portuguese/help/acctconfig.html
+%%WWWDIR%%/html/portuguese/help/address_faq.html
+%%WWWDIR%%/html/portuguese/help/addressbook.html
+%%WWWDIR%%/html/portuguese/help/ajaxhelp.html
+%%WWWDIR%%/html/portuguese/help/compose.html
+%%WWWDIR%%/html/portuguese/help/file.html
+%%WWWDIR%%/html/portuguese/help/filexp.html
+%%WWWDIR%%/html/portuguese/help/helpxp.css
+%%WWWDIR%%/html/portuguese/help/hintsandtips.html
+%%WWWDIR%%/html/portuguese/help/import.html
+%%WWWDIR%%/html/portuguese/help/index.html
+%%WWWDIR%%/html/portuguese/help/ldap.html
+%%WWWDIR%%/html/portuguese/help/ldap_faq.html
+%%WWWDIR%%/html/portuguese/help/loginhelp.html
+%%WWWDIR%%/html/portuguese/help/mailerror.html
+%%WWWDIR%%/html/portuguese/help/mailsend.html
+%%WWWDIR%%/html/portuguese/help/mngmsg.html
+%%WWWDIR%%/html/portuguese/help/newmbox.html
+%%WWWDIR%%/html/portuguese/help/rcvattach.html
+%%WWWDIR%%/html/portuguese/help/reademail.html
+%%WWWDIR%%/html/portuguese/help/recvmail.html
+%%WWWDIR%%/html/portuguese/help/search.html
+%%WWWDIR%%/html/portuguese/help/search_match.html
+%%WWWDIR%%/html/portuguese/help/sendmail.html
+%%WWWDIR%%/html/portuguese/help/settings.html
+%%WWWDIR%%/html/portuguese/help/sidebar.html
+%%WWWDIR%%/html/portuguese/help/sndattach.html
+%%WWWDIR%%/html/portuguese/help/spell.html
+%%WWWDIR%%/html/portuguese/help/spell_faq.html
+%%WWWDIR%%/html/portuguese/help/sync.html
+%%WWWDIR%%/html/portuguese/help/tipsjscript.html
+%%WWWDIR%%/html/portuguese/help/toggle.html
+%%WWWDIR%%/html/portuguese/help/videomail.html
+%%WWWDIR%%/html/portuguese/help/wap.html
+%%WWWDIR%%/html/portuguese/help/wap_faq.html
+%%WWWDIR%%/html/portuguese/icalendar_email.html
+%%WWWDIR%%/html/portuguese/javascript/abook.js
+%%WWWDIR%%/html/portuguese/javascript/ajax-lang.js
+%%WWWDIR%%/html/portuguese/javascript/alerts.js
+%%WWWDIR%%/html/portuguese/javascript/checkalpha.js
+%%WWWDIR%%/html/portuguese/javascript/checkemail.js
+%%WWWDIR%%/html/portuguese/javascript/composewin.js
+%%WWWDIR%%/html/portuguese/javascript/ldaplocal.js
+%%WWWDIR%%/html/portuguese/javascript/schemesxp.js
+%%WWWDIR%%/html/portuguese/javascript/validate.js
+%%WWWDIR%%/html/portuguese/javascript/validate_abook.js
+%%WWWDIR%%/html/portuguese/javascript/validate_filters.js
+%%WWWDIR%%/html/portuguese/javascript/validate_foldername.js
+%%WWWDIR%%/html/portuguese/javascript/validate_folders.js
+%%WWWDIR%%/html/portuguese/javascript/validate_group.js
+%%WWWDIR%%/html/portuguese/javascript/validate_ldap.js
+%%WWWDIR%%/html/portuguese/javascript/validate_move.js
+%%WWWDIR%%/html/portuguese/javascript/validate_password.js
+%%WWWDIR%%/html/portuguese/loading.html
+%%WWWDIR%%/html/portuguese/loadingstart.html
+%%WWWDIR%%/html/portuguese/msg/attachtoolarge.html
+%%WWWDIR%%/html/portuguese/msg/calentries.html
+%%WWWDIR%%/html/portuguese/msg/caltoday.html
+%%WWWDIR%%/html/portuguese/msg/chpasswderror.html
+%%WWWDIR%%/html/portuguese/msg/chpasswdok.html
+%%WWWDIR%%/html/portuguese/msg/emptycal.html
+%%WWWDIR%%/html/portuguese/msg/highpriority.html
+%%WWWDIR%%/html/portuguese/msg/importalert.html
+%%WWWDIR%%/html/portuguese/msg/login_mailautherror.html
+%%WWWDIR%%/html/portuguese/msg/login_mailerrorbody.html
+%%WWWDIR%%/html/portuguese/msg/login_mailerrorhead.html
+%%WWWDIR%%/html/portuguese/msg/login_mailserverauth.html
+%%WWWDIR%%/html/portuguese/msg/login_mailservererror.html
+%%WWWDIR%%/html/portuguese/msg/logoff.html
+%%WWWDIR%%/html/portuguese/msg/lowcredit.html
+%%WWWDIR%%/html/portuguese/msg/lowpriority.html
+%%WWWDIR%%/html/portuguese/msg/moretasks.html
+%%WWWDIR%%/html/portuguese/msg/move_msg_fail.xml
+%%WWWDIR%%/html/portuguese/msg/move_msg_ok.xml
+%%WWWDIR%%/html/portuguese/msg/movedmsgs.html
+%%WWWDIR%%/html/portuguese/msg/nextmsg.html
+%%WWWDIR%%/html/portuguese/msg/nocredit.html
+%%WWWDIR%%/html/portuguese/msg/normalpriority.html
+%%WWWDIR%%/html/portuguese/msg/notitle.html
+%%WWWDIR%%/html/portuguese/msg/onetask.html
+%%WWWDIR%%/html/portuguese/msg/popdlmsg.html
+%%WWWDIR%%/html/portuguese/msg/popmsgnum.html
+%%WWWDIR%%/html/portuguese/msg/poprelogin.html
+%%WWWDIR%%/html/portuguese/msg/prevmsg.html
+%%WWWDIR%%/html/portuguese/msg/printcal_title.html
+%%WWWDIR%%/html/portuguese/msg/savedraft.html
+%%WWWDIR%%/html/portuguese/msg/searchnr.html
+%%WWWDIR%%/html/portuguese/msg/sentmsg.html
+%%WWWDIR%%/html/portuguese/msg/sentmsga.html
+%%WWWDIR%%/html/portuguese/msg/smsfail.html
+%%WWWDIR%%/html/portuguese/msg/smsok.html
+%%WWWDIR%%/html/portuguese/msg/smsstatusfail.html
+%%WWWDIR%%/html/portuguese/msg/smsstatusok.html
+%%WWWDIR%%/html/portuguese/msg/sortmsgs.html
+%%WWWDIR%%/html/portuguese/msg/spamtrash.html
+%%WWWDIR%%/html/portuguese/msg/specifyto.html
+%%WWWDIR%%/html/portuguese/msg/spell_nomatch.html
+%%WWWDIR%%/html/portuguese/msg/spell_suggested.html
+%%WWWDIR%%/html/portuguese/msg/today.html
+%%WWWDIR%%/html/portuguese/msg/totalmsgs.html
+%%WWWDIR%%/html/portuguese/msg/updated.html
+%%WWWDIR%%/html/portuguese/msg/viewday.html
+%%WWWDIR%%/html/portuguese/msg/viewingday.html
+%%WWWDIR%%/html/portuguese/msg/wap_abookempty.html
+%%WWWDIR%%/html/portuguese/msg/wap_allmsgs.html
+%%WWWDIR%%/html/portuguese/msg/wap_display.html
+%%WWWDIR%%/html/portuguese/msg/wap_nomsg.html
+%%WWWDIR%%/html/portuguese/newmail.html
+%%WWWDIR%%/html/portuguese/nosuchmsg.html
+%%WWWDIR%%/html/portuguese/passutil.html
+%%WWWDIR%%/html/portuguese/readmail-attachment.html
+%%WWWDIR%%/html/portuguese/schemes.html
+%%WWWDIR%%/html/portuguese/simple/abook.html
+%%WWWDIR%%/html/portuguese/simple/abook_blank.html
+%%WWWDIR%%/html/portuguese/simple/abook_entry.html
+%%WWWDIR%%/html/portuguese/simple/abook_entry_blank.html
+%%WWWDIR%%/html/portuguese/simple/abook_groupentry.html
+%%WWWDIR%%/html/portuguese/simple/abook_import.html
+%%WWWDIR%%/html/portuguese/simple/abook_importfield.html
+%%WWWDIR%%/html/portuguese/simple/abook_importfile.html
+%%WWWDIR%%/html/portuguese/simple/abook_new.html
+%%WWWDIR%%/html/portuguese/simple/abook_row.html
+%%WWWDIR%%/html/portuguese/simple/abook_view.html
+%%WWWDIR%%/html/portuguese/simple/addgroup.html
+%%WWWDIR%%/html/portuguese/simple/atmailstyle-form.css
+%%WWWDIR%%/html/portuguese/simple/atmailstyle-mail.css
+%%WWWDIR%%/html/portuguese/simple/atmailstyle.css
+%%WWWDIR%%/html/portuguese/simple/attachfile.html
+%%WWWDIR%%/html/portuguese/simple/attachment.html
+%%WWWDIR%%/html/portuguese/simple/composebook.html
+%%WWWDIR%%/html/portuguese/simple/editgroup.html
+%%WWWDIR%%/html/portuguese/simple/emailentry_blank_ajax.html
+%%WWWDIR%%/html/portuguese/simple/emailentry_popup_ajax.html
+%%WWWDIR%%/html/portuguese/simple/folderbar.html
+%%WWWDIR%%/html/portuguese/simple/folders.html
+%%WWWDIR%%/html/portuguese/simple/foldertr.html
+%%WWWDIR%%/html/portuguese/simple/footer.html
+%%WWWDIR%%/html/portuguese/simple/header.html
+%%WWWDIR%%/html/portuguese/simple/headerbar.html
+%%WWWDIR%%/html/portuguese/simple/imapfolder_row.html
+%%WWWDIR%%/html/portuguese/simple/imapfolders.html
+%%WWWDIR%%/html/portuguese/simple/imapfolders_bottom.html
+%%WWWDIR%%/html/portuguese/simple/imapfolders_head.html
+%%WWWDIR%%/html/portuguese/simple/ldap.html
+%%WWWDIR%%/html/portuguese/simple/ldap_bad_hostname.html
+%%WWWDIR%%/html/portuguese/simple/ldap_entry.html
+%%WWWDIR%%/html/portuguese/simple/ldap_entry_blank.html
+%%WWWDIR%%/html/portuguese/simple/ldap_error.html
+%%WWWDIR%%/html/portuguese/simple/ldap_search.html
+%%WWWDIR%%/html/portuguese/simple/profile.html
+%%WWWDIR%%/html/portuguese/simple/readmail-attachment.html
+%%WWWDIR%%/html/portuguese/simple/readmail_ajax.html
+%%WWWDIR%%/html/portuguese/simple/sendmsg_ajax.html
+%%WWWDIR%%/html/portuguese/simple/settings.html
+%%WWWDIR%%/html/portuguese/simple/showframe.html
+%%WWWDIR%%/html/portuguese/simple/showmail_bottom_ajax.html
+%%WWWDIR%%/html/portuguese/simple/showmail_interface.html
+%%WWWDIR%%/html/portuguese/simple/showmail_popup_ajax.html
+%%WWWDIR%%/html/portuguese/simple/simple.html
+%%WWWDIR%%/html/portuguese/simple/spellcheck.html
+%%WWWDIR%%/html/portuguese/virusmessage.html
+%%WWWDIR%%/html/portuguese/xp/css/gui.css
+%%WWWDIR%%/html/russian/abook_importselect.html
+%%WWWDIR%%/html/russian/about.html
+%%WWWDIR%%/html/russian/auth_disabled.html
+%%WWWDIR%%/html/russian/auth_error.html
+%%WWWDIR%%/html/russian/auth_invalidchars.html
+%%WWWDIR%%/html/russian/auth_license.html
+%%WWWDIR%%/html/russian/auth_maxaccounts.html
+%%WWWDIR%%/html/russian/auth_misc.html
+%%WWWDIR%%/html/russian/auth_notallowed.html
+%%WWWDIR%%/html/russian/auth_nouser.html
+%%WWWDIR%%/html/russian/auth_permission.html
+%%WWWDIR%%/html/russian/auth_reserved.html
+%%WWWDIR%%/html/russian/auth_serverswitch.html
+%%WWWDIR%%/html/russian/auth_spammer.html
+%%WWWDIR%%/html/russian/auth_timeout.html
+%%WWWDIR%%/html/russian/auth_userexists.html
+%%WWWDIR%%/html/russian/auth_xulerror.html
+%%WWWDIR%%/html/russian/delete_error.html
+%%WWWDIR%%/html/russian/editgroup.html
+%%WWWDIR%%/html/russian/errorsmtp.html
+%%WWWDIR%%/html/russian/export-email.html
+%%WWWDIR%%/html/russian/filter_entry.html
+%%WWWDIR%%/html/russian/filter_list.html
+%%WWWDIR%%/html/russian/fwdmsg.html
+%%WWWDIR%%/html/russian/help/acctconfig.html
+%%WWWDIR%%/html/russian/help/address_faq.html
+%%WWWDIR%%/html/russian/help/addressbook.html
+%%WWWDIR%%/html/russian/help/ajaxhelp.html
+%%WWWDIR%%/html/russian/help/compose.html
+%%WWWDIR%%/html/russian/help/file.html
+%%WWWDIR%%/html/russian/help/filexp.html
+%%WWWDIR%%/html/russian/help/helpxp.css
+%%WWWDIR%%/html/russian/help/hintsandtips.html
+%%WWWDIR%%/html/russian/help/import.html
+%%WWWDIR%%/html/russian/help/index.html
+%%WWWDIR%%/html/russian/help/ldap.html
+%%WWWDIR%%/html/russian/help/ldap_faq.html
+%%WWWDIR%%/html/russian/help/loginhelp.html
+%%WWWDIR%%/html/russian/help/mailerror.html
+%%WWWDIR%%/html/russian/help/mailsend.html
+%%WWWDIR%%/html/russian/help/mngmsg.html
+%%WWWDIR%%/html/russian/help/newmbox.html
+%%WWWDIR%%/html/russian/help/rcvattach.html
+%%WWWDIR%%/html/russian/help/reademail.html
+%%WWWDIR%%/html/russian/help/recvmail.html
+%%WWWDIR%%/html/russian/help/search.html
+%%WWWDIR%%/html/russian/help/search_match.html
+%%WWWDIR%%/html/russian/help/sendmail.html
+%%WWWDIR%%/html/russian/help/settings.html
+%%WWWDIR%%/html/russian/help/sidebar.html
+%%WWWDIR%%/html/russian/help/sndattach.html
+%%WWWDIR%%/html/russian/help/spell.html
+%%WWWDIR%%/html/russian/help/spell_faq.html
+%%WWWDIR%%/html/russian/help/sync.html
+%%WWWDIR%%/html/russian/help/tipsjscript.html
+%%WWWDIR%%/html/russian/help/toggle.html
+%%WWWDIR%%/html/russian/help/videomail.html
+%%WWWDIR%%/html/russian/help/wap.html
+%%WWWDIR%%/html/russian/help/wap_faq.html
+%%WWWDIR%%/html/russian/icalendar_email.html
+%%WWWDIR%%/html/russian/javascript/abook.js
+%%WWWDIR%%/html/russian/javascript/ajax-lang.js
+%%WWWDIR%%/html/russian/javascript/alerts.js
+%%WWWDIR%%/html/russian/javascript/checkalpha.js
+%%WWWDIR%%/html/russian/javascript/checkemail.js
+%%WWWDIR%%/html/russian/javascript/composewin.js
+%%WWWDIR%%/html/russian/javascript/ldaplocal.js
+%%WWWDIR%%/html/russian/javascript/schemesxp.js
+%%WWWDIR%%/html/russian/javascript/validate.js
+%%WWWDIR%%/html/russian/javascript/validate_abook.js
+%%WWWDIR%%/html/russian/javascript/validate_filters.js
+%%WWWDIR%%/html/russian/javascript/validate_foldername.js
+%%WWWDIR%%/html/russian/javascript/validate_folders.js
+%%WWWDIR%%/html/russian/javascript/validate_group.js
+%%WWWDIR%%/html/russian/javascript/validate_ldap.js
+%%WWWDIR%%/html/russian/javascript/validate_move.js
+%%WWWDIR%%/html/russian/javascript/validate_password.js
+%%WWWDIR%%/html/russian/loading.html
+%%WWWDIR%%/html/russian/loadingstart.html
+%%WWWDIR%%/html/russian/msg/attachtoolarge.html
+%%WWWDIR%%/html/russian/msg/calentries.html
+%%WWWDIR%%/html/russian/msg/caltoday.html
+%%WWWDIR%%/html/russian/msg/chpasswderror.html
+%%WWWDIR%%/html/russian/msg/chpasswdok.html
+%%WWWDIR%%/html/russian/msg/emptycal.html
+%%WWWDIR%%/html/russian/msg/highpriority.html
+%%WWWDIR%%/html/russian/msg/importalert.html
+%%WWWDIR%%/html/russian/msg/login_mailautherror.html
+%%WWWDIR%%/html/russian/msg/login_mailerrorbody.html
+%%WWWDIR%%/html/russian/msg/login_mailerrorhead.html
+%%WWWDIR%%/html/russian/msg/login_mailserverauth.html
+%%WWWDIR%%/html/russian/msg/login_mailservererror.html
+%%WWWDIR%%/html/russian/msg/logoff.html
+%%WWWDIR%%/html/russian/msg/lowcredit.html
+%%WWWDIR%%/html/russian/msg/lowpriority.html
+%%WWWDIR%%/html/russian/msg/moretasks.html
+%%WWWDIR%%/html/russian/msg/move_msg_fail.xml
+%%WWWDIR%%/html/russian/msg/move_msg_ok.xml
+%%WWWDIR%%/html/russian/msg/movedmsgs.html
+%%WWWDIR%%/html/russian/msg/nextmsg.html
+%%WWWDIR%%/html/russian/msg/nocredit.html
+%%WWWDIR%%/html/russian/msg/normalpriority.html
+%%WWWDIR%%/html/russian/msg/notitle.html
+%%WWWDIR%%/html/russian/msg/onetask.html
+%%WWWDIR%%/html/russian/msg/popdlmsg.html
+%%WWWDIR%%/html/russian/msg/popmsgnum.html
+%%WWWDIR%%/html/russian/msg/poprelogin.html
+%%WWWDIR%%/html/russian/msg/prevmsg.html
+%%WWWDIR%%/html/russian/msg/printcal_title.html
+%%WWWDIR%%/html/russian/msg/savedraft.html
+%%WWWDIR%%/html/russian/msg/searchnr.html
+%%WWWDIR%%/html/russian/msg/sentmsg.html
+%%WWWDIR%%/html/russian/msg/sentmsga.html
+%%WWWDIR%%/html/russian/msg/smsfail.html
+%%WWWDIR%%/html/russian/msg/smsok.html
+%%WWWDIR%%/html/russian/msg/smsstatusfail.html
+%%WWWDIR%%/html/russian/msg/smsstatusok.html
+%%WWWDIR%%/html/russian/msg/sortmsgs.html
+%%WWWDIR%%/html/russian/msg/spamtrash.html
+%%WWWDIR%%/html/russian/msg/specifyto.html
+%%WWWDIR%%/html/russian/msg/spell_nomatch.html
+%%WWWDIR%%/html/russian/msg/spell_suggested.html
+%%WWWDIR%%/html/russian/msg/today.html
+%%WWWDIR%%/html/russian/msg/totalmsgs.html
+%%WWWDIR%%/html/russian/msg/updated.html
+%%WWWDIR%%/html/russian/msg/viewday.html
+%%WWWDIR%%/html/russian/msg/viewingday.html
+%%WWWDIR%%/html/russian/msg/wap_abookempty.html
+%%WWWDIR%%/html/russian/msg/wap_allmsgs.html
+%%WWWDIR%%/html/russian/msg/wap_display.html
+%%WWWDIR%%/html/russian/msg/wap_nomsg.html
+%%WWWDIR%%/html/russian/newmail.html
+%%WWWDIR%%/html/russian/nosuchmsg.html
+%%WWWDIR%%/html/russian/passutil.html
+%%WWWDIR%%/html/russian/readmail-attachment.html
+%%WWWDIR%%/html/russian/schemes.html
+%%WWWDIR%%/html/russian/simple/abook.html
+%%WWWDIR%%/html/russian/simple/abook_blank.html
+%%WWWDIR%%/html/russian/simple/abook_entry.html
+%%WWWDIR%%/html/russian/simple/abook_entry_blank.html
+%%WWWDIR%%/html/russian/simple/abook_groupentry.html
+%%WWWDIR%%/html/russian/simple/abook_import.html
+%%WWWDIR%%/html/russian/simple/abook_importfield.html
+%%WWWDIR%%/html/russian/simple/abook_importfile.html
+%%WWWDIR%%/html/russian/simple/abook_new.html
+%%WWWDIR%%/html/russian/simple/abook_row.html
+%%WWWDIR%%/html/russian/simple/abook_view.html
+%%WWWDIR%%/html/russian/simple/addgroup.html
+%%WWWDIR%%/html/russian/simple/atmailstyle-form.css
+%%WWWDIR%%/html/russian/simple/atmailstyle-mail.css
+%%WWWDIR%%/html/russian/simple/atmailstyle.css
+%%WWWDIR%%/html/russian/simple/attachfile.html
+%%WWWDIR%%/html/russian/simple/attachment.html
+%%WWWDIR%%/html/russian/simple/composebook.html
+%%WWWDIR%%/html/russian/simple/editgroup.html
+%%WWWDIR%%/html/russian/simple/emailentry_blank_ajax.html
+%%WWWDIR%%/html/russian/simple/emailentry_popup_ajax.html
+%%WWWDIR%%/html/russian/simple/folderbar.html
+%%WWWDIR%%/html/russian/simple/folders.html
+%%WWWDIR%%/html/russian/simple/foldertr.html
+%%WWWDIR%%/html/russian/simple/footer.html
+%%WWWDIR%%/html/russian/simple/header.html
+%%WWWDIR%%/html/russian/simple/headerbar.html
+%%WWWDIR%%/html/russian/simple/imapfolder_row.html
+%%WWWDIR%%/html/russian/simple/imapfolders.html
+%%WWWDIR%%/html/russian/simple/imapfolders_bottom.html
+%%WWWDIR%%/html/russian/simple/imapfolders_head.html
+%%WWWDIR%%/html/russian/simple/ldap.html
+%%WWWDIR%%/html/russian/simple/ldap_bad_hostname.html
+%%WWWDIR%%/html/russian/simple/ldap_entry.html
+%%WWWDIR%%/html/russian/simple/ldap_entry_blank.html
+%%WWWDIR%%/html/russian/simple/ldap_error.html
+%%WWWDIR%%/html/russian/simple/ldap_search.html
+%%WWWDIR%%/html/russian/simple/profile.html
+%%WWWDIR%%/html/russian/simple/readmail-attachment.html
+%%WWWDIR%%/html/russian/simple/readmail_ajax.html
+%%WWWDIR%%/html/russian/simple/sendmsg_ajax.html
+%%WWWDIR%%/html/russian/simple/settings.html
+%%WWWDIR%%/html/russian/simple/showframe.html
+%%WWWDIR%%/html/russian/simple/showmail_bottom_ajax.html
+%%WWWDIR%%/html/russian/simple/showmail_interface.html
+%%WWWDIR%%/html/russian/simple/showmail_popup_ajax.html
+%%WWWDIR%%/html/russian/simple/simple.html
+%%WWWDIR%%/html/russian/simple/spellcheck.html
+%%WWWDIR%%/html/russian/virusmessage.html
+%%WWWDIR%%/html/russian/xp/css/gui.css
+%%WWWDIR%%/imgs/about.png
 %%WWWDIR%%/imgs/atsymbol.gif
 %%WWWDIR%%/imgs/attachment.gif
 %%WWWDIR%%/imgs/attachmentpr.gif
@@ -995,6 +1935,10 @@
 %%WWWDIR%%/imgs/loginline.gif
 %%WWWDIR%%/imgs/logo_simple_head.png
 %%WWWDIR%%/imgs/logosmall.gif
+%%WWWDIR%%/imgs/menubar-chinese/xp/toolbar_button_return_down.gif
+%%WWWDIR%%/imgs/menubar-chinese/xp/toolbar_button_return_flat.gif
+%%WWWDIR%%/imgs/menubar-dutch/xp/toolbar_button_return_down.gif
+%%WWWDIR%%/imgs/menubar-dutch/xp/toolbar_button_return_flat.gif
 %%WWWDIR%%/imgs/menubar-english/xp/toolbar_button_return_down.gif
 %%WWWDIR%%/imgs/menubar-english/xp/toolbar_button_return_flat.gif
 %%WWWDIR%%/imgs/menubar-espanol/xp/toolbar_button_return_down.gif
@@ -1005,6 +1949,12 @@
 %%WWWDIR%%/imgs/menubar-german/xp/toolbar_button_return_flat.gif
 %%WWWDIR%%/imgs/menubar-italiano/xp/toolbar_button_return_down.gif
 %%WWWDIR%%/imgs/menubar-italiano/xp/toolbar_button_return_flat.gif
+%%WWWDIR%%/imgs/menubar-japanese/xp/toolbar_button_return_down.gif
+%%WWWDIR%%/imgs/menubar-japanese/xp/toolbar_button_return_flat.gif
+%%WWWDIR%%/imgs/menubar-portuguese/xp/toolbar_button_return_down.gif
+%%WWWDIR%%/imgs/menubar-portuguese/xp/toolbar_button_return_flat.gif
+%%WWWDIR%%/imgs/menubar-russian/xp/toolbar_button_return_down.gif
+%%WWWDIR%%/imgs/menubar-russian/xp/toolbar_button_return_flat.gif
 %%WWWDIR%%/imgs/next.gif
 %%WWWDIR%%/imgs/previous.gif
 %%WWWDIR%%/imgs/round_left.gif
@@ -1164,8 +2114,6 @@
 %%WWWDIR%%/install/html/english/step3.phtml
 %%WWWDIR%%/install/html/english/step4.phtml
 %%WWWDIR%%/install/html/english/step5.phtml
-%%WWWDIR%%/install/html/english/step6.phtml
-%%WWWDIR%%/install/html/english/step7.phtml
 %%WWWDIR%%/install/html/english/template.phtml
 %%WWWDIR%%/install/html/extensions_required.html
 %%WWWDIR%%/install/html/lang_select.html
@@ -1174,14 +2122,12 @@
 %%WWWDIR%%/install/images/error.png
 %%WWWDIR%%/install/images/header_bg.png
 %%WWWDIR%%/install/images/info.png
-%%WWWDIR%%/install/images/logo.png
 %%WWWDIR%%/install/images/optional.gif
 %%WWWDIR%%/install/images/page_bg.png
 %%WWWDIR%%/install/images/tick.gif
 %%WWWDIR%%/install/images/top.png
 %%WWWDIR%%/install/index.php
 %%WWWDIR%%/install/info.php
-%%WWWDIR%%/install/ioncube-loader-helper.php
 %%WWWDIR%%/install/licenses/Apache.txt
 %%WWWDIR%%/install/step0.php
 %%WWWDIR%%/install/step1.php
@@ -1189,8 +2135,6 @@
 %%WWWDIR%%/install/step3.php
 %%WWWDIR%%/install/step4.php
 %%WWWDIR%%/install/step5.php
-%%WWWDIR%%/install/step6.php
-%%WWWDIR%%/install/step7.php
 %%WWWDIR%%/javascript/abookadd.js
 %%WWWDIR%%/javascript/abooksearch.js
 %%WWWDIR%%/javascript/addbook.js
@@ -1325,36 +2269,37 @@
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/common/images/locked.gif
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/common/images/reset.gif
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/common/images/unlocked.gif
+%%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_about.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_about/logo_fckeditor.gif
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_about/logo_fredck.gif
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_about/sponsors/spellchecker_net.gif
-%%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_about.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_anchor.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_button.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_checkbox.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_colorselector.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_div.html
-%%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_docprops/fck_document_preview.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_docprops.html
+%%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_docprops/fck_document_preview.html
+%%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_flash.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_flash/fck_flash.js
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_flash/fck_flash_preview.html
-%%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_flash.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_form.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_hiddenfield.html
+%%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_image.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_image/fck_image.js
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_image/fck_image_preview.html
-%%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_image.html
-%%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_link/fck_link.js
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_link.html
+%%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_link/fck_link.js
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_listprop.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_paste.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_radiobutton.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_replace.html
-%%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_select/fck_select.js
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_select.html
+%%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_select/fck_select.js
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_smiley.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_source.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_specialchar.html
+%%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_spellerpages.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/blank.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/controlWindow.js
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/controls.html
@@ -1365,13 +2310,12 @@
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/spellchecker.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/spellerStyle.css
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/wordWindow.js
-%%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_spellerpages.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_table.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_tablecell.html
+%%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_template.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_template/images/template1.gif
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_template/images/template2.gif
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_template/images/template3.gif
-%%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_template.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_textarea.html
 %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_textfield.html
 %%WWWDIR%%/javascript/fckeditor/editor/dtd/fck_dtd_test.html
@@ -1696,6 +2640,7 @@
 %%WWWDIR%%/javascript/stylens.css
 %%WWWDIR%%/javascript/trselect.js
 %%WWWDIR%%/javascript/webtoolkit.url.js
+%%WWWDIR%%/lang.php
 %%WWWDIR%%/lang/compare.pl
 %%WWWDIR%%/lang/html/abook_importselect.html
 %%WWWDIR%%/lang/html/about.html
@@ -1793,6 +2738,8 @@
 %%WWWDIR%%/lang/html/msg/lowcredit.html
 %%WWWDIR%%/lang/html/msg/lowpriority.html
 %%WWWDIR%%/lang/html/msg/moretasks.html
+%%WWWDIR%%/lang/html/msg/move_msg_fail.xml
+%%WWWDIR%%/lang/html/msg/move_msg_ok.xml
 %%WWWDIR%%/lang/html/msg/movedmsgs.html
 %%WWWDIR%%/lang/html/msg/nextmsg.html
 %%WWWDIR%%/lang/html/msg/nocredit.html
@@ -1882,13 +2829,17 @@
 %%WWWDIR%%/lang/html/virusmessage.html
 %%WWWDIR%%/lang/html/xp/css/gui.css
 %%WWWDIR%%/lang/languages/.lang
+%%WWWDIR%%/lang/languages/chinese/chinese.lang
+%%WWWDIR%%/lang/languages/dutch/dutch.lang
 %%WWWDIR%%/lang/languages/english/english.lang
 %%WWWDIR%%/lang/languages/espanol/espanol.lang
 %%WWWDIR%%/lang/languages/french/french.lang
 %%WWWDIR%%/lang/languages/german/german.lang
 %%WWWDIR%%/lang/languages/italiano/italiano.lang
+%%WWWDIR%%/lang/languages/japanese/japanese.lang
+%%WWWDIR%%/lang/languages/portuguese/portuguese.lang
+%%WWWDIR%%/lang/languages/russian/russian.lang
 %%WWWDIR%%/lang/mergenew.php
-%%WWWDIR%%/lang.php
 %%WWWDIR%%/ldap.php
 %%WWWDIR%%/libs/Atmail/Abook.class.php
 %%WWWDIR%%/libs/Atmail/AspellLanguageCodes.php
@@ -1916,29 +2867,29 @@
 %%WWWDIR%%/libs/Atmail/spellChecker.php
 %%WWWDIR%%/libs/File/Tail.pm
 %%WWWDIR%%/libs/IMAP_Client.php
+%%WWWDIR%%/libs/PEAR/DB.php
 %%WWWDIR%%/libs/PEAR/DB/common.php
 %%WWWDIR%%/libs/PEAR/DB/mssql.php
 %%WWWDIR%%/libs/PEAR/DB/mysql.php
 %%WWWDIR%%/libs/PEAR/DB/mysqli.php
 %%WWWDIR%%/libs/PEAR/DB/sqlite.php
-%%WWWDIR%%/libs/PEAR/DB.php
+%%WWWDIR%%/libs/PEAR/Date.php
 %%WWWDIR%%/libs/PEAR/Date/Calc.php
 %%WWWDIR%%/libs/PEAR/Date/Human.php
 %%WWWDIR%%/libs/PEAR/Date/Span.php
 %%WWWDIR%%/libs/PEAR/Date/TimeZone.php
-%%WWWDIR%%/libs/PEAR/Date.php
+%%WWWDIR%%/libs/PEAR/Mail.php
 %%WWWDIR%%/libs/PEAR/Mail/RFC822.php
 %%WWWDIR%%/libs/PEAR/Mail/mime.php
 %%WWWDIR%%/libs/PEAR/Mail/mimePart.php
 %%WWWDIR%%/libs/PEAR/Mail/smtp.php
-%%WWWDIR%%/libs/PEAR/Mail.php
+%%WWWDIR%%/libs/PEAR/Net/LDAP.php
 %%WWWDIR%%/libs/PEAR/Net/LDAP/Entry.php
 %%WWWDIR%%/libs/PEAR/Net/LDAP/Filter.php
 %%WWWDIR%%/libs/PEAR/Net/LDAP/RootDSE.php
 %%WWWDIR%%/libs/PEAR/Net/LDAP/Schema.php
 %%WWWDIR%%/libs/PEAR/Net/LDAP/Search.php
 %%WWWDIR%%/libs/PEAR/Net/LDAP/Util.php
-%%WWWDIR%%/libs/PEAR/Net/LDAP.php
 %%WWWDIR%%/libs/PEAR/Net/SMTP.php
 %%WWWDIR%%/libs/PEAR/Net/Socket.php
 %%WWWDIR%%/libs/PEAR/Net/header.php
@@ -1970,161 +2921,211 @@
 %%WWWDIR%%/upgrade2atmail.php
 %%WWWDIR%%/util.php
 %%WWWDIR%%/videomail.php
-@dirrm %%WWWDIR%%/html/css
-@dirrm %%WWWDIR%%/html/english/help
-@dirrm %%WWWDIR%%/html/english/javascript
-@dirrm %%WWWDIR%%/html/english/msg
-@dirrm %%WWWDIR%%/html/english/simple
-@dirrm %%WWWDIR%%/html/english/xp/css
-@dirrm %%WWWDIR%%/html/english/xp
-@dirrm %%WWWDIR%%/html/english
-@dirrm %%WWWDIR%%/html/espanol/help
-@dirrm %%WWWDIR%%/html/espanol/javascript
-@dirrm %%WWWDIR%%/html/espanol/msg
-@dirrm %%WWWDIR%%/html/espanol/simple
-@dirrm %%WWWDIR%%/html/espanol/xp/css
-@dirrm %%WWWDIR%%/html/espanol/xp
-@dirrm %%WWWDIR%%/html/espanol
-@dirrm %%WWWDIR%%/html/french/help
-@dirrm %%WWWDIR%%/html/french/javascript
-@dirrm %%WWWDIR%%/html/french/msg
-@dirrm %%WWWDIR%%/html/french/simple
-@dirrm %%WWWDIR%%/html/french/xp/css
-@dirrm %%WWWDIR%%/html/french/xp
-@dirrm %%WWWDIR%%/html/french
-@dirrm %%WWWDIR%%/html/german/help
-@dirrm %%WWWDIR%%/html/german/javascript
-@dirrm %%WWWDIR%%/html/german/msg
-@dirrm %%WWWDIR%%/html/german/simple
-@dirrm %%WWWDIR%%/html/german/xp/css
-@dirrm %%WWWDIR%%/html/german/xp
-@dirrm %%WWWDIR%%/html/german
-@dirrm %%WWWDIR%%/html/icons
-@dirrm %%WWWDIR%%/html/italiano/help
-@dirrm %%WWWDIR%%/html/italiano/javascript
-@dirrm %%WWWDIR%%/html/italiano/msg
-@dirrm %%WWWDIR%%/html/italiano/simple
-@dirrm %%WWWDIR%%/html/italiano/xp/css
-@dirrm %%WWWDIR%%/html/italiano/xp
-@dirrm %%WWWDIR%%/html/italiano
-@dirrm %%WWWDIR%%/html
-@dirrm %%WWWDIR%%/imgs/help
-@dirrm %%WWWDIR%%/imgs/icons
-@dirrm %%WWWDIR%%/imgs/menubar-english/xp
-@dirrm %%WWWDIR%%/imgs/menubar-english
-@dirrm %%WWWDIR%%/imgs/menubar-espanol/xp
-@dirrm %%WWWDIR%%/imgs/menubar-espanol
-@dirrm %%WWWDIR%%/imgs/menubar-french/xp
-@dirrm %%WWWDIR%%/imgs/menubar-french
-@dirrm %%WWWDIR%%/imgs/menubar-german/xp
-@dirrm %%WWWDIR%%/imgs/menubar-german
-@dirrm %%WWWDIR%%/imgs/menubar-italiano/xp
-@dirrm %%WWWDIR%%/imgs/menubar-italiano
-@dirrm %%WWWDIR%%/imgs/simple
-@dirrm %%WWWDIR%%/imgs/xp
-@dirrm %%WWWDIR%%/imgs
-@dirrm %%WWWDIR%%/install/css
-@dirrm %%WWWDIR%%/install/html/english
-@dirrm %%WWWDIR%%/install/html
-@dirrm %%WWWDIR%%/install/images
-@dirrm %%WWWDIR%%/install/licenses
-@dirrm %%WWWDIR%%/install
-@dirrm %%WWWDIR%%/javascript/ajax
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/_source/classes
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/_source/commandclasses
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/_source/internals
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/_source
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/css/behaviors
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/css/images
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/css
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/common/images
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/common
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_about/sponsors
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_about
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_docprops
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_flash
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_image
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_link
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_select
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_spellerpages
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_template/images
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_template
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dtd
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/browser/default/images/icons
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/browser/default/images
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/browser/default/js
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/browser/default
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/browser
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/connectors/asp
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/connectors/aspx
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/connectors/cfm
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/connectors/lasso
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/connectors/perl
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/connectors/php
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/connectors/py
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/connectors
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager
+@dirrm %%WWWDIR%%/users/users
+@dirrm %%WWWDIR%%/users/tmp
+@dirrm %%WWWDIR%%/users
+@dirrm %%WWWDIR%%/tmp
+@dirrm %%WWWDIR%%/snippets
+@dirrm %%WWWDIR%%/plugins/MultiServerPlugin.disabled
+@dirrm %%WWWDIR%%/plugins/BannerPlugin.disabled
+@dirrm %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/modules
+@dirrm %%WWWDIR%%/logs
+@dirrm %%WWWDIR%%/libs/PEAR/Net/LDAP
+@dirrm %%WWWDIR%%/libs/PEAR/Net
+@dirrm %%WWWDIR%%/libs/PEAR/Mail
+@dirrm %%WWWDIR%%/libs/PEAR/Date
+@dirrm %%WWWDIR%%/libs/PEAR/DB
+@dirrm %%WWWDIR%%/libs/PEAR
+@dirrm %%WWWDIR%%/libs/File
+@dirrm %%WWWDIR%%/libs/Atmail
+@dirrm %%WWWDIR%%/libs
+@dirrm %%WWWDIR%%/lang/languages/russian
+@dirrm %%WWWDIR%%/lang/languages/portuguese
+@dirrm %%WWWDIR%%/lang/languages/japanese
+@dirrm %%WWWDIR%%/lang/languages/italiano
+@dirrm %%WWWDIR%%/lang/languages/german
+@dirrm %%WWWDIR%%/lang/languages/french
+@dirrm %%WWWDIR%%/lang/languages/espanol
+@dirrm %%WWWDIR%%/lang/languages/english
+@dirrm %%WWWDIR%%/lang/languages/dutch
+@dirrm %%WWWDIR%%/lang/languages/chinese
+@dirrm %%WWWDIR%%/lang/languages
+@dirrm %%WWWDIR%%/lang/html/xp/css
+@dirrm %%WWWDIR%%/lang/html/xp
+@dirrm %%WWWDIR%%/lang/html/simple
+@dirrm %%WWWDIR%%/lang/html/msg
+@dirrm %%WWWDIR%%/lang/html/javascript
+@dirrm %%WWWDIR%%/lang/html/help
+@dirrm %%WWWDIR%%/lang/html
+@dirrm %%WWWDIR%%/lang
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins/silver/images
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins/silver
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins/office2003/images
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins/office2003
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins/default/images
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins/default
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins/atmailopen/images
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins/atmailopen
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins/tablecommands
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins/simplecommands
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins/placeholder/lang
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins/placeholder
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins/dragresizetable
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins/bbcode/_sample
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins/bbcode
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins/autogrow
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/lang
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/js
 @dirrm %%WWWDIR%%/javascript/fckeditor/editor/images/smiley/msn
 @dirrm %%WWWDIR%%/javascript/fckeditor/editor/images/smiley
 @dirrm %%WWWDIR%%/javascript/fckeditor/editor/images
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/js
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/lang
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins/autogrow
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins/bbcode/_sample
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins/bbcode
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins/dragresizetable
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins/placeholder/lang
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins/placeholder
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins/simplecommands
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins/tablecommands
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/plugins
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins/atmailopen/images
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins/atmailopen
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins/default/images
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins/default
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins/office2003/images
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins/office2003
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins/silver/images
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins/silver
-@dirrm %%WWWDIR%%/javascript/fckeditor/editor/skins
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/connectors/py
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/connectors/php
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/connectors/perl
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/connectors/lasso
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/connectors/cfm
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/connectors/aspx
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/connectors/asp
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/connectors
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/browser/default/js
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/browser/default/images/icons/32
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/browser/default/images/icons
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/browser/default/images
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/browser/default
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager/browser
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/filemanager
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dtd
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_template/images
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_template
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_spellerpages/spellerpages
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_spellerpages
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_select
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_link
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_image
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_flash
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_docprops
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_about/sponsors
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/fck_about
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/common/images
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog/common
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/dialog
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/css/images
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/css/behaviors
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/css
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/_source/internals
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/_source/commandclasses
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/_source/classes
+@dirrm %%WWWDIR%%/javascript/fckeditor/editor/_source
 @dirrm %%WWWDIR%%/javascript/fckeditor/editor
 @dirrm %%WWWDIR%%/javascript/fckeditor
+@dirrm %%WWWDIR%%/javascript/ajax
 @dirrm %%WWWDIR%%/javascript
-@dirrm %%WWWDIR%%/lang/html/help
-@dirrm %%WWWDIR%%/lang/html/javascript
-@dirrm %%WWWDIR%%/lang/html/msg
-@dirrm %%WWWDIR%%/lang/html/simple
-@dirrm %%WWWDIR%%/lang/html/xp/css
-@dirrm %%WWWDIR%%/lang/html/xp
-@dirrm %%WWWDIR%%/lang/html
-@dirrm %%WWWDIR%%/lang/languages/english
-@dirrm %%WWWDIR%%/lang/languages/espanol
-@dirrm %%WWWDIR%%/lang/languages/french
-@dirrm %%WWWDIR%%/lang/languages/german
-@dirrm %%WWWDIR%%/lang/languages/italiano
-@dirrm %%WWWDIR%%/lang/languages
-@dirrm %%WWWDIR%%/lang
-@dirrm %%WWWDIR%%/libs/Atmail
-@dirrm %%WWWDIR%%/libs/File
-@dirrm %%WWWDIR%%/libs/PEAR/DB
-@dirrm %%WWWDIR%%/libs/PEAR/Date
-@dirrm %%WWWDIR%%/libs/PEAR/Mail
-@dirrm %%WWWDIR%%/libs/PEAR/Net/LDAP
-@dirrm %%WWWDIR%%/libs/PEAR/Net
-@dirrm %%WWWDIR%%/libs/PEAR
-@dirrm %%WWWDIR%%/libs
-@dirrm %%WWWDIR%%/logs
-@dirrm %%WWWDIR%%/modules
-@dirrm %%WWWDIR%%/plugins/BannerPlugin.disabled
-@dirrm %%WWWDIR%%/plugins/MultiServerPlugin.disabled
-@dirrm %%WWWDIR%%/plugins
-@dirrm %%WWWDIR%%/snippets
-@dirrm %%WWWDIR%%/tmp
-@dirrm %%WWWDIR%%/users/tmp
-@dirrm %%WWWDIR%%/users/users
-@dirrm %%WWWDIR%%/users
+@dirrm %%WWWDIR%%/install/licenses
+@dirrm %%WWWDIR%%/install/images
+@dirrm %%WWWDIR%%/install/html/english
+@dirrm %%WWWDIR%%/install/html
+@dirrm %%WWWDIR%%/install/css
+@dirrm %%WWWDIR%%/install
+@dirrm %%WWWDIR%%/imgs/xp
+@dirrm %%WWWDIR%%/imgs/simple
+@dirrm %%WWWDIR%%/imgs/menubar-russian/xp
+@dirrm %%WWWDIR%%/imgs/menubar-russian
+@dirrm %%WWWDIR%%/imgs/menubar-portuguese/xp
+@dirrm %%WWWDIR%%/imgs/menubar-portuguese
+@dirrm %%WWWDIR%%/imgs/menubar-japanese/xp
+@dirrm %%WWWDIR%%/imgs/menubar-japanese
+@dirrm %%WWWDIR%%/imgs/menubar-italiano/xp
+@dirrm %%WWWDIR%%/imgs/menubar-italiano
+@dirrm %%WWWDIR%%/imgs/menubar-german/xp
+@dirrm %%WWWDIR%%/imgs/menubar-german
+@dirrm %%WWWDIR%%/imgs/menubar-french/xp
+@dirrm %%WWWDIR%%/imgs/menubar-french
+@dirrm %%WWWDIR%%/imgs/menubar-espanol/xp
+@dirrm %%WWWDIR%%/imgs/menubar-espanol
+@dirrm %%WWWDIR%%/imgs/menubar-english/xp
+@dirrm %%WWWDIR%%/imgs/menubar-english
+@dirrm %%WWWDIR%%/imgs/menubar-dutch/xp
+@dirrm %%WWWDIR%%/imgs/menubar-dutch
+@dirrm %%WWWDIR%%/imgs/menubar-chinese/xp
+@dirrm %%WWWDIR%%/imgs/menubar-chinese
+@dirrm %%WWWDIR%%/imgs/icons
+@dirrm %%WWWDIR%%/imgs/help
+@dirrm %%WWWDIR%%/imgs
+@dirrm %%WWWDIR%%/html/russian/xp/css
+@dirrm %%WWWDIR%%/html/russian/xp
+@dirrm %%WWWDIR%%/html/russian/simple
+@dirrm %%WWWDIR%%/html/russian/msg
+@dirrm %%WWWDIR%%/html/russian/javascript
+@dirrm %%WWWDIR%%/html/russian/help
+@dirrm %%WWWDIR%%/html/russian
+@dirrm %%WWWDIR%%/html/portuguese/xp/css
+@dirrm %%WWWDIR%%/html/portuguese/xp
+@dirrm %%WWWDIR%%/html/portuguese/simple
+@dirrm %%WWWDIR%%/html/portuguese/msg
+@dirrm %%WWWDIR%%/html/portuguese/javascript
+@dirrm %%WWWDIR%%/html/portuguese/help
+@dirrm %%WWWDIR%%/html/portuguese
+@dirrm %%WWWDIR%%/html/japanese/xp/css
+@dirrm %%WWWDIR%%/html/japanese/xp
+@dirrm %%WWWDIR%%/html/japanese/simple
+@dirrm %%WWWDIR%%/html/japanese/msg
+@dirrm %%WWWDIR%%/html/japanese/javascript
+@dirrm %%WWWDIR%%/html/japanese/help
+@dirrm %%WWWDIR%%/html/japanese
+@dirrm %%WWWDIR%%/html/italiano/xp/css
+@dirrm %%WWWDIR%%/html/italiano/xp
+@dirrm %%WWWDIR%%/html/italiano/simple
+@dirrm %%WWWDIR%%/html/italiano/msg
+@dirrm %%WWWDIR%%/html/italiano/javascript
+@dirrm %%WWWDIR%%/html/italiano/help
+@dirrm %%WWWDIR%%/html/italiano
+@dirrm %%WWWDIR%%/html/icons
+@dirrm %%WWWDIR%%/html/german/xp/css
+@dirrm %%WWWDIR%%/html/german/xp
+@dirrm %%WWWDIR%%/html/german/simple
+@dirrm %%WWWDIR%%/html/german/msg
+@dirrm %%WWWDIR%%/html/german/javascript
+@dirrm %%WWWDIR%%/html/german/help
+@dirrm %%WWWDIR%%/html/german
+@dirrm %%WWWDIR%%/html/french/xp/css
+@dirrm %%WWWDIR%%/html/french/xp
+@dirrm %%WWWDIR%%/html/french/simple
+@dirrm %%WWWDIR%%/html/french/msg
+@dirrm %%WWWDIR%%/html/french/javascript
+@dirrm %%WWWDIR%%/html/french/help
+@dirrm %%WWWDIR%%/html/french
+@dirrm %%WWWDIR%%/html/espanol/xp/css
+@dirrm %%WWWDIR%%/html/espanol/xp
+@dirrm %%WWWDIR%%/html/espanol/simple
+@dirrm %%WWWDIR%%/html/espanol/msg
+@dirrm %%WWWDIR%%/html/espanol/javascript
+@dirrm %%WWWDIR%%/html/espanol/help
+@dirrm %%WWWDIR%%/html/espanol
+@dirrm %%WWWDIR%%/html/english/xp/css
+@dirrm %%WWWDIR%%/html/english/xp
+@dirrm %%WWWDIR%%/html/english/simple
+@dirrm %%WWWDIR%%/html/english/msg
+@dirrm %%WWWDIR%%/html/english/javascript
+@dirrm %%WWWDIR%%/html/english/help
+@dirrm %%WWWDIR%%/html/english
+@dirrm %%WWWDIR%%/html/dutch/xp/css
+@dirrm %%WWWDIR%%/html/dutch/xp
+@dirrm %%WWWDIR%%/html/dutch/simple
+@dirrm %%WWWDIR%%/html/dutch/msg
+@dirrm %%WWWDIR%%/html/dutch/javascript
+@dirrm %%WWWDIR%%/html/dutch/help
+@dirrm %%WWWDIR%%/html/dutch
+@dirrm %%WWWDIR%%/html/css
+@dirrm %%WWWDIR%%/html/chinese/xp/css
+@dirrm %%WWWDIR%%/html/chinese/xp
+@dirrm %%WWWDIR%%/html/chinese/simple
+@dirrm %%WWWDIR%%/html/chinese/msg
+@dirrm %%WWWDIR%%/html/chinese/javascript
+@dirrm %%WWWDIR%%/html/chinese/help
+@dirrm %%WWWDIR%%/html/chinese
+@dirrm %%WWWDIR%%/html
 @dirrm %%WWWDIR%%
