@@ -517,6 +517,13 @@ lib/eaglemode/res/emMain/Slider.tga
 lib/eaglemode/res/emMain/Star.tga
 lib/eaglemode/res/emMain/VcItemInnerBorder.tga
 lib/eaglemode/res/emMain/VcItemOuterBorder.tga
+lib/eaglemode/res/emNetwalk/Background.tga
+lib/eaglemode/res/emNetwalk/Border.tga
+lib/eaglemode/res/emNetwalk/Lights.tga
+lib/eaglemode/res/emNetwalk/Marks.tga
+lib/eaglemode/res/emNetwalk/NoBorder.tga
+lib/eaglemode/res/emNetwalk/Pipes.tga
+lib/eaglemode/res/emNetwalk/Symbols.tga
 lib/eaglemode/res/emPs/rendering.tga
 lib/eaglemode/res/emPs/waiting.tga
 lib/eaglemode/res/icons/eaglemode.ico
@@ -529,6 +536,7 @@ lib/eaglemode/res/icons/em-dialog48.tga
 lib/eaglemode/res/icons/em-error-unknown-icon.tga
 @dirrm lib/eaglemode/res/icons
 @dirrm lib/eaglemode/res/emPs
+@dirrm lib/eaglemode/res/emNetwalk
 @dirrm lib/eaglemode/res/emMain
 @dirrm lib/eaglemode/res/emLKC
 @dirrm lib/eaglemode/res/emFileMan/scripts
