@@ -12,7 +12,7 @@ CATEGORIES=	cad java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Version%20${PORTVERSION}
 DISTNAME=	Impact-${PORTVERSION}
 
-MAINTAINER=	araujo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic Finite Element Program Suite
 
 USE_ZIP=	yes
