@@ -20,6 +20,7 @@ bin/fzputtygen
 %%NLS%%share/locale/he_IL/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/hu_HU/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/hy/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/id_ID/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/is/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/it/LC_MESSAGES/filezilla.mo
@@ -43,6 +44,7 @@ bin/fzputtygen
 %%NLS%%share/locale/ru/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/sk_SK/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/sl_SI/LC_MESSAGES/filezilla.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/th_TH/LC_MESSAGES/filezilla.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/filezilla.mo
@@ -87,6 +89,8 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/16x16/unknown.png
 %%DATADIR%%/resources/16x16/upload.png
 %%DATADIR%%/resources/16x16/uploadadd.png
+%%DATADIR%%/resources/20x20/unknown.png
+%%DATADIR%%/resources/24x24/unknown.png
 %%DATADIR%%/resources/32x32/file.png
 %%DATADIR%%/resources/32x32/filezilla.png
 %%DATADIR%%/resources/cyril/16x16/ascii.png
@@ -369,6 +373,8 @@ share/pixmaps/filezilla.png
 %%DATADIR%%/resources/opencrystal/16x16/synchronize.png
 %%DATADIR%%/resources/opencrystal/16x16/upload.png
 %%DATADIR%%/resources/opencrystal/16x16/uploadadd.png
+%%DATADIR%%/resources/opencrystal/20x20/server.png
+%%DATADIR%%/resources/opencrystal/24x24/server.png
 %%DATADIR%%/resources/opencrystal/32x32/ascii.png
 %%DATADIR%%/resources/opencrystal/32x32/auto.png
 %%DATADIR%%/resources/opencrystal/32x32/binary.png
@@ -461,6 +467,8 @@ share/applications/filezilla.desktop
 @dirrmtry share/applications
 @dirrm %%DATADIR%%/resources/opencrystal/48x48
 @dirrm %%DATADIR%%/resources/opencrystal/32x32
+@dirrm %%DATADIR%%/resources/opencrystal/24x24
+@dirrm %%DATADIR%%/resources/opencrystal/20x20
 @dirrm %%DATADIR%%/resources/opencrystal/16x16
 @dirrm %%DATADIR%%/resources/opencrystal
 @dirrm %%DATADIR%%/resources/minimal/32x32
@@ -478,6 +486,8 @@ share/applications/filezilla.desktop
 @dirrm %%DATADIR%%/resources/blukis
 @dirrm %%DATADIR%%/resources/48x48
 @dirrm %%DATADIR%%/resources/32x32
+@dirrm %%DATADIR%%/resources/24x24
+@dirrm %%DATADIR%%/resources/20x20
 @dirrm %%DATADIR%%/resources/16x16
 @dirrm %%DATADIR%%/resources
 @dirrm %%DATADIR%%/docs
@@ -516,6 +526,8 @@ share/applications/filezilla.desktop
 @dirrmtry share/locale/ja_JP
 @dirrmtry share/locale/id_ID/LC_MESSAGES
 @dirrmtry share/locale/id_ID
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
 @dirrmtry share/locale/hu_HU/LC_MESSAGES
 @dirrmtry share/locale/hu_HU
 @dirrmtry share/locale/he_IL/LC_MESSAGES
