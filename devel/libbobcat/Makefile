@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libbobcat
-PORTVERSION=	2.08.01
+PORTVERSION=	2.09.02
 CATEGORIES=	devel
 MASTER_SITES=	SF/bobcat/bobcat/${PORTVERSION}
 DISTNAME=	bobcat_${PORTVERSION}
@@ -17,7 +17,7 @@ COMMENT=	Brokken's Own Base Classes And Templates
 
 BUILD_DEPENDS=	icmake:${PORTSDIR}/devel/icmake \
 		${LOCALBASE}/include/X11/Xlib.h:${PORTSDIR}/x11/libX11 \
-		yodl>=2.0:${PORTSDIR}/textproc/yodl \
+		yodl>=3.0:${PORTSDIR}/textproc/yodl \
 		g++45:${PORTSDIR}/lang/gcc45
 
 MANCOMPRESSED=	yes
@@ -36,13 +36,15 @@ MAN3=		a2x.3bobcat align.3bobcat arg.3bobcat argconfig.3bobcat \
 		irandstream.3bobcat lc.3bobcat level.3bobcat lm.3bobcat \
 		localclientsocket.3bobcat localserversocket.3bobcat \
 		localsocketbase.3bobcat log.3bobcat logbuffer.3bobcat \
-		mailheaders.3bobcat manipulators.3bobcat milter.3bobcat \
-		mlm.3bobcat msg.3bobcat multistreambuf.3bobcat \
-		ofdstream.3bobcat ofdstreambuf.3bobcat \
+		mailheaders.3bobcat manipulators.3bobcat mbuf.3bobcat \
+		milter.3bobcat mlm.3bobcat msg.3bobcat mstream.3bobcat \
+		multistreambuf.3bobcat ofdstream.3bobcat ofdstreambuf.3bobcat \
 		ofilterstreambuf.3bobcat ofoldstream.3bobcat \
 		ofoldstreambuf.3bobcat ohexstreambuf.3bobcat onekey.3bobcat \
 		pattern.3bobcat pipe.3bobcat process.3bobcat \
-		randbuffer.3bobcat redirector.3bobcat refcount.3bobcat \
+		randbuffer.3bobcat readlinebuf.3bobcat \
+		readlinehistory.3bobcat readlinestream.3bobcat \
+		redirector.3bobcat refcount.3bobcat \
 		repeat.3bobcat selector.3bobcat serversocket.3bobcat \
 		socketbase.3bobcat stat.3bobcat string.3bobcat \
 		syslogbuf.3bobcat syslogstream.3bobcat table.3bobcat \
@@ -75,7 +77,7 @@ post-patch:
 		s|gcc|gcc45|' \
 		${WRKSRC}/INSTALL.im
 	@${REINPLACE_CMD} -e 's|#!/usr/bin/icmake|#!${LOCALBASE}/bin/icmake| ; \
-		s|"-Itmp -Wall -O3"|"-Itmp -I${LOCALBASE}/include -Wall ${CXXFLAGS}"|' \
+		s|"-isystem tmp -Wall -O3"|"-isystem tmp ${LOCALBASE}/include -Wall ${CXXFLAGS}"|' \
 		${WRKSRC}/build
 	@${REINPLACE_CMD} -e 's|"cp -r |"cp -R |' \
 		${WRKSRC}/icmake/install
