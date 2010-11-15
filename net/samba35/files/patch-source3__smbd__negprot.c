@@ -5,7 +5,7 @@
  		DEBUG(3, ("get challenge: is this a secondary negprot? "
  			  "sconn->negprot.auth_context is non-NULL!\n"));
 -			sconn->smb1.negprot.auth_context->free(
-+			(sconn->smb1.negprot.auth_context)->free(
++			(sconn->smb1.negprot.auth_context->free)(
  				&sconn->smb1.negprot.auth_context);
  	}
  
