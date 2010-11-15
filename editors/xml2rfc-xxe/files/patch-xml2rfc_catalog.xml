@@ -1,0 +1,15 @@
+Index: xml2rfc_catalog.xml
+===================================================================
+--- xml2rfc_catalog.xml	(wersja 272)
++++ xml2rfc_catalog.xml	(kopia robocza)
+@@ -10,8 +10,8 @@
+               rewritePrefix="http://xml.resource.org/public/rfc/bibxml3/" />
+ 
+   <rewriteURI uriStartString="xml2rfc-rfcindex:"
+-              rewritePrefix="ftp://ftp.isi.edu/in-notes/" />
++              rewritePrefix="ftp://ftp.rfc-editor.org/in-notes/" />
+   <rewriteURI uriStartString="xml2rfc-ietfidstatus:"
+-              rewritePrefix="http://www.fenron.com/~fenner/ietf/" />
++              rewritePrefix="http://fenron.net/~fenner/ietf/" />
+ 
+ </catalog>
