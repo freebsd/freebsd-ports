@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.5.d2
-DISTVERSION=	1.5-dev2
+DISTVERSION=	1.5-dev3
 CATEGORIES=	net
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.5/src/devel/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	freebsd@linepoint.com
-COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer - development branch
+COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
 
 LICENSE_COMB=	multi
 LICENSE=	GPLv2 LGPL21

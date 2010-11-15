@@ -7,6 +7,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/haproxy-fr.txt
 %%PORTDOCS%%%%DOCSDIR%%/haproxy.1
 %%PORTDOCS%%%%DOCSDIR%%/lgpl.txt
+%%PORTDOCS%%%%DOCSDIR%%/proxy-protocol.txt
 %%PORTDOCS%%%%DOCSDIR%%/queuing.fig
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/backends-v0.txt
 %%PORTDOCS%%%%DOCSDIR%%/design-thoughts/backends.txt
@@ -22,6 +23,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/connection-scale.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/header-parser-speed.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/header-tree.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/http-cookies.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-docs.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-parsing.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/naming.txt
