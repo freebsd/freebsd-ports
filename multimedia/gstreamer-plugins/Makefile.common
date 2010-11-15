@@ -308,6 +308,12 @@ gst_gio_PLIST_FILES=	${GST_LIB_DIR}/libgstgio.la \
 		${GST_LIB_DIR}/libgstgio.so
 gst_gio_DIST=	base
 
+# gme
+gst_gme_LIB_DEPENDS+=   gme.0:${PORTSDIR}/audio/libgme
+gst_gme_PLIST_FILES=    ${GST_LIB_DIR}/libgstgme.la \
+		${GST_LIB_DIR}/libgstgme.so
+gst_gme_DIST=           bad
+
 # gnomevfs
 gst_gnomevfs_USE_GNOME+=	gnomevfs2
 gst_gnomevfs_CONFIGURE_ARGS+=--enable-gnome_vfs
@@ -470,7 +476,7 @@ gst_soundtouch_LIB_DEPENDS+=	SoundTouch.0:${PORTSDIR}/audio/soundtouch
 gst_soundtouch_PLIST_FILES=	${GST_LIB_DIR}/libgstsoundtouch.la \
 		${GST_LIB_DIR}/libgstsoundtouch.so
 gst_soundtouch_DIST=	bad
- 
+
 # souphttpsrc
 gst_soup_LIB_DEPENDS+=	soup-2.4.1:${PORTSDIR}/devel/libsoup
 gst_soup_GST_PLUGIN_DIR=ext/soup
