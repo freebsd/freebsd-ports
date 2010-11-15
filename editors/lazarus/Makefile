@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	lazarus
-PORTVERSION=	0.9.28.2
-PORTREVISION=	4
+PORTVERSION=	0.9.28.3
 CATEGORIES=	editors devel
-MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+		${MASTER_SITE_LOCAL:S|$|acm/freepascal/|} \
+		SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/-src/}
 DIST_SUBDIR=	freepascal
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A portable Delphi-like IDE for the FreePascal compiler
 
+PROJECTHOST=	bsdistfiles
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_BZIP2=	yes
@@ -31,7 +33,7 @@ MAN1=		lazarus-ide.1 lazbuild.1 startlazarus.1
 PLIST=		${WRKDIR}/pkg-plist
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTSDIR="${PORTSDIR}"
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 OPTIONS=	GTK2	"Use gtk20 interface instead of gtk12"	on \
 		QT4	"Use qt4 interface" off
