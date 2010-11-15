@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.enderunix.org/knowlan/
 
-MAINTAINER=	ofsen@enderunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ARP-based LAN IP and MAC Address Extractor
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10

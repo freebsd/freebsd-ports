@@ -10,7 +10,7 @@ PORTVERSION=	1.6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.enderunix.org/spamguard/
 
-MAINTAINER=	ofsen@enderunix.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MTA spam prevention program for qmail/postfix/sendmail
 
 GNU_CONFIGURE=	yes
