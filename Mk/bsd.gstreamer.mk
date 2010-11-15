@@ -55,7 +55,7 @@ GST_SHLIB_VERSION=	1
 #
 _USE_GSTREAMER10_ALL=	a52dec aalib amrnb amrwbdec annodex bz2 cairo \
 			cdaudio cdparanoia dts dv dvd esound faac faad \
-			ffmpeg flac gconf gio gl gnomevfs gnonlin \
+			ffmpeg flac gconf gio gl gme gnomevfs gnonlin \
 			gsm hal jack jpeg ladspa lame libcaca libmms \
 			libpng libvisual mm mp3 mpeg2enc mpeg2dec musepack \
 			nas neon ogg pango pulse python resindvd schroedinger \
@@ -102,6 +102,8 @@ faad_DEPENDS=	audio/gstreamer-plugins-faad
 flac_DEPENDS=	audio/gstreamer-plugins-flac
 
 fluendo-mp3_DEPENDS=	audio/gstreamer-plugins-fluendo-mp3
+
+gme_DEPENDS=	audio/gstreamer-plugins-gme
 
 gsm_DEPENDS=	audio/gstreamer-plugins-gsm
 
