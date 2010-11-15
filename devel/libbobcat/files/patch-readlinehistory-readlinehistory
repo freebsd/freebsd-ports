@@ -1,0 +1,12 @@
+--- ./readlinehistory/readlinehistory.orig	2010-11-04 12:52:11.000000000 +0100
++++ ./readlinehistory/readlinehistory	2010-11-13 22:00:30.000000000 +0100
+@@ -4,6 +4,9 @@
+ #include <iterator>
+ #include <string>
+ 
++#ifdef __FreeBSD__
++#include <stdio.h>
++#endif
+ #include <readline/history.h>
+ 
+ namespace FBB

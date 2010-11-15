@@ -45,8 +45,10 @@ include/bobcat/localsocketbase
 include/bobcat/log
 include/bobcat/logbuffer
 include/bobcat/mailheaders
+include/bobcat/mbuf
 include/bobcat/milter
 include/bobcat/msg
+include/bobcat/mstream
 include/bobcat/multistreambuf
 include/bobcat/ofdstream
 include/bobcat/ofdstreambuf
@@ -59,6 +61,9 @@ include/bobcat/pattern
 include/bobcat/pipe
 include/bobcat/process
 include/bobcat/randbuffer
+include/bobcat/readlinebuf
+include/bobcat/readlinehistory
+include/bobcat/readlinestream
 include/bobcat/redirector
 include/bobcat/refcount
 include/bobcat/repeat
