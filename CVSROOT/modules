@@ -22905,6 +22905,7 @@ rubygem-rightflexiscale         ports/net/rubygem-rightflexiscale
 rubygem-rightgogrid             ports/net/rubygem-rightgogrid
 rubygem-righthttpconnection     ports/net/rubygem-righthttpconnection
 rubygem-rightslicehost          ports/net/rubygem-rightslicehost
+rubygem-roauth                  ports/security/rubygem-roauth
 rubygem-robots                  ports/www/rubygem-robots
 rubygem-rparsec                 ports/devel/rubygem-rparsec
 rubygem-rr                      ports/devel/rubygem-rr
@@ -22972,6 +22973,7 @@ rubygem-treetop                 ports/devel/rubygem-treetop
 rubygem-trollop                 ports/devel/rubygem-trollop
 rubygem-turing                  ports/graphics/rubygem-turing
 rubygem-twitter                 ports/net/rubygem-twitter
+rubygem-twitter-stream          ports/net/rubygem-twitter-stream
 rubygem-twitter4r               ports/net/rubygem-twitter4r
 rubygem-tzinfo                  ports/devel/rubygem-tzinfo
 rubygem-unicode                 ports/devel/rubygem-unicode
