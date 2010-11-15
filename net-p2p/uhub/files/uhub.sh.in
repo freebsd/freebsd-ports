@@ -3,8 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: uhub
-# REQUIRE: DAEMON
-# BEFORE: LOGIN
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable uhub:

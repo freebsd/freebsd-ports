@@ -7,7 +7,7 @@
 
 PORTNAME=	uhub
 PORTVERSION=	0.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.extatic.org/downloads/uhub/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -51,7 +51,7 @@ do-install:
 	@${INSTALL_DATA} /dev/null ${PREFIX}/etc/uhub/rules.txt.sample
 .for i in uhub.conf users.conf motd.txt rules.txt
 	@[ ! -f ${PREFIX}/etc/uhub/${i} ] \
-	&& cp -p ${PREFIX}/etc/uhub/${i}.sample ${PREFIX}/etc/uhub/${i}
+	&& ${CP} -p ${PREFIX}/etc/uhub/${i}.sample ${PREFIX}/etc/uhub/${i}
 .endfor
 
 .include <bsd.port.post.mk>
