@@ -1,17 +1,17 @@
-bin/libnet113-config
-include/libnet113/libnet.h
-include/libnet113/libnet/libnet-asn1.h
-include/libnet113/libnet/libnet-functions.h
-include/libnet113/libnet/libnet-headers.h
-include/libnet113/libnet/libnet-macros.h
-include/libnet113/libnet/libnet-structures.h
-include/libnet113/libnet/libnet-types.h
-lib/libnet113/libnet.a
-lib/libnet113/libnet.la
-lib/libnet113/libnet.so
-lib/libnet113/libnet.so.1
-lib/libnet-1.1.3.so
-lib/libnet-1.1.3.so.1
+bin/%%SNAME%%-config
+include/%%SNAME%%/libnet.h
+include/%%SNAME%%/libnet/libnet-asn1.h
+include/%%SNAME%%/libnet/libnet-functions.h
+include/%%SNAME%%/libnet/libnet-headers.h
+include/%%SNAME%%/libnet/libnet-macros.h
+include/%%SNAME%%/libnet/libnet-structures.h
+include/%%SNAME%%/libnet/libnet-types.h
+lib/%%SNAME%%/libnet.a
+lib/%%SNAME%%/libnet.la
+lib/%%SNAME%%/libnet.so
+lib/%%SNAME%%/libnet.so.7
+lib/libnet-%%VERSION%%.so
+lib/libnet-%%VERSION%%.so.7
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIB
@@ -38,6 +38,7 @@ lib/libnet-1.1.3.so.1
 %%EXAMPLESDIR%%/gre.c
 %%EXAMPLESDIR%%/hsrp.c
 %%EXAMPLESDIR%%/icmp6_echoreq.c
+%%EXAMPLESDIR%%/icmp6_unreach.c
 %%EXAMPLESDIR%%/icmp_echo_cq.c
 %%EXAMPLESDIR%%/icmp_redirect.c
 %%EXAMPLESDIR%%/icmp_timeexceed.c
@@ -62,6 +63,9 @@ lib/libnet-1.1.3.so.1
 %%EXAMPLESDIR%%/synflood6_frag.c
 %%EXAMPLESDIR%%/tcp1.c
 %%EXAMPLESDIR%%/tcp2.c
+%%EXAMPLESDIR%%/test_ipv4.c
+%%EXAMPLESDIR%%/test_ipv4_options.c
+%%EXAMPLESDIR%%/test_ipv6_icmpv4.c
 %%EXAMPLESDIR%%/tftp.c
 %%EXAMPLESDIR%%/tring_tcp1.c
 %%EXAMPLESDIR%%/tring_tcp2.c
@@ -69,6 +73,6 @@ lib/libnet-1.1.3.so.1
 %%EXAMPLESDIR%%/udp2.c
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/libnet113
-@dirrm include/libnet113/libnet
-@dirrm include/libnet113
+@dirrm lib/%%SNAME%%
+@dirrm include/%%SNAME%%/libnet
+@dirrm include/%%SNAME%%

@@ -6,41 +6,69 @@
 #
 
 PORTNAME=	libnet
-PORTVERSION=	1.1.3.r1
-PORTREVISION=	2
+PORTVERSION=	1.1.5
 CATEGORIES=	net
-MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
-PKGNAMESUFFIX=	${SHORT_VER}-devel
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r1$//}-RC-01
+MASTER_SITES=	SF/libnet-dev
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A C library for creating IP packets (development version)
+
+LATEST_LINK=	${PORTNAME}${SHORT_VER}
 
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-link-layer=${LIBNET_LINK}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${SHORT_VER}
-EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}${SHORT_VER}
+SHORT_VER=	115
+SHORT_NAME=	${PORTNAME}${SHORT_VER}
+DOCSDIR=	${PREFIX}/share/doc/${SHORT_NAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${SHORT_NAME}
+USE_LDCONFIG=	${PREFIX}/lib/${SHORT_NAME}
+PLIST_SUB=	SVER=${SHORT_VER} SNAME=${SHORT_NAME} VERSION=${PORTVERSION}
 
+MAN3=		libnet-functions.h.3 libnet-macros.h.3 libnet.h.3
 DOCS=		README doc/BUGS doc/CHANGELOG doc/CONTRIB doc/COPYING \
 		doc/DESIGN_NOTES doc/MIGRATION doc/PACKET_BUILDING doc/PORTED \
 		doc/RAWSOCKET_NON_SEQUITUR doc/TODO
 EXAMPLES=	sample/*.c
 
-SHORT_VER=	113
+OPTIONS=	NONE "link layer none" off \
+		SNOOP "link layer (snoop.h)" off \
+		PF "link layer pf" off \
+		BPF "link layer bpf" on
 
-USE_LDCONFIG=	${PREFIX}/lib/libnet${SHORT_VER}
+.if defined(WITH_NONE)
+LIBNET_LINK=	none
+.elif defined(WITH_SNOOP)
+LIBNET_LINK=	snoop
+.elif defined(WITH_PF)
+LIBNET_LINK=	pf
+.elif defined(WITHOUT_BPF)
+LIBNET_LINK=	none
+.else
+LIBNET_LINK=	bpf
+.endif
+
+post-patch:
+	${REINPLACE_CMD} \
+	 -e 's|@LIBNET_CONFIG_LIBS@|@LIBNET_CONFIG_LIBS@ -I@prefix@/include/${SHORT_NAME}|' \
+	 -e 's|@LIBNET_CONFIG_CFLAGS@|@LIBNET_CONFIG_CFLAGS@ -I@prefix@/include/${SHORT_NAME}|' \
+		${WRKSRC}/libnet-config.in
+	${REINPLACE_CMD} -e 's|^includedir =.*|includedir = @includedir@/${SHORT_NAME}|' \
+		${WRKSRC}/include/Makefile.in \
+		${WRKSRC}/include/libnet/Makefile.in
+	${REINPLACE_CMD} -e 's|^libdir =.*|libdir = @libdir@/${SHORT_NAME}|' \
+		-e 's|^libnet_la_LDFLAGS =\(.*\)|libnet_la_LDFLAGS =\1 -soname=libnet-${SHORT_NAME}.so.1|' \
+		${WRKSRC}/src/Makefile.in
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/libnet-config \
-		${PREFIX}/bin/libnet${SHORT_VER}-config
+	${INSTALL_SCRIPT} ${WRKSRC}/libnet-config ${PREFIX}/bin/${SHORT_NAME}-config
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 	@cd ${PREFIX}/lib && \
-		${LN} -sf libnet${SHORT_VER}/libnet.so libnet-1.1.3.so.1 && \
-		${LN} -sf libnet-1.1.3.so.1 libnet-1.1.3.so
+		${LN} -sf ${SHORT_NAME}/libnet.so libnet-${PORTVERSION}.so.7 && \
+		${LN} -sf libnet-${PORTVERSION}.so.7 libnet-${PORTVERSION}.so
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
