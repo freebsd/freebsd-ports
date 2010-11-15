@@ -1,0 +1,7 @@
+Test::Fatal is an alternative to the popular Test::Exception.
+It does much less, but should allow greater flexibility in
+testing exception-throwing code with about the same amount of
+typing.
+
+
+WWW: http://search.cpan.org/dist/Test-Fatal/

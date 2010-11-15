@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Test/Fatal.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Fatal/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Fatal
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test
