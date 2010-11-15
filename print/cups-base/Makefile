@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 DISTVERSIONSUFFIX=	-source
 PORTREVISION=	0
 CATEGORIES=	print
@@ -240,7 +240,6 @@ MAN5=	classes.conf.5 \
 	printers.conf.5 \
 	subscriptions.conf.5
 MAN7=	backend.7 \
-	drv.7 \
 	filter.7 \
 	notifier.7
 MAN8=	accept.8 \

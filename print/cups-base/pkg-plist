@@ -846,7 +846,6 @@ sbin/reject
 %%DOCSDIR%%/help/man-cupsenable.html
 %%DOCSDIR%%/help/man-cupstestdsc.html
 %%DOCSDIR%%/help/man-cupstestppd.html
-%%DOCSDIR%%/help/man-drv.html
 %%DOCSDIR%%/help/man-filter.html
 %%DOCSDIR%%/help/man-lp.html
 %%DOCSDIR%%/help/man-lpadmin.html
@@ -909,6 +908,7 @@ sbin/reject
 %%DOCSDIR%%/images/cups-postscript-chain.png
 %%DOCSDIR%%/images/cups-raster-chain.png
 %%DOCSDIR%%/images/cups.png
+%%DOCSDIR%%/images/generic.png
 %%DOCSDIR%%/images/left.gif
 %%DOCSDIR%%/images/raster.png
 %%DOCSDIR%%/images/right.gif
