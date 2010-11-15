@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	coccinelle
-DISTVERSION=	0.2.4rc2
+DISTVERSION=	0.2.4rc5
 CATEGORIES=	devel
 MASTER_SITES=	http://coccinelle.lip6.fr/distrib/
 EXTRACT_SUFX=	.tgz
