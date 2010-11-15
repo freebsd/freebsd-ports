@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fpc
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.2
 PORTREVISION?=	0
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
@@ -72,6 +72,7 @@ MAN1=	bin2obj.1 \
 	fd2pascal.1 \
 	fp.1 \
 	fpc.1 \
+	fpclasschart.1 \
 	fpcmake.1 \
 	fpcmkcfg.1 \
 	fpdoc.1 \

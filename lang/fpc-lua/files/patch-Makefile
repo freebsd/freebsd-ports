@@ -6,6 +6,6 @@
  PACKAGESDIR:=$(wildcard $(FPCDIR) $(FPCDIR)/packages $(FPCDIR)/packages/base $(FPCDIR)/packages/extra)
 -override PACKAGE_NAME=bfd
 +override PACKAGE_NAME=lua
- override PACKAGE_VERSION=2.4.0
+ override PACKAGE_VERSION=2.4.2
  ifeq ($(FULL_TARGET),i386-linux)
  override TARGET_UNITS+=lua lualib lauxlib
