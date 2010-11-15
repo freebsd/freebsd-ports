@@ -21,8 +21,6 @@ CONFLICTS?=		ja-samba-[23].* samba-[23].* sharity-light-1.*
 PATCH_STRIP=		-p1
 EXTRA_PATCHES=		${PATCHDIR}/sernet.patch
 
-BROKEN=			bad plist
-
 LICENSE=		GPLv3
 LICENSE_FILE=		${WRKDIR}/${DISTNAME}/COPYING
 
@@ -366,7 +364,7 @@ MAN3=		ldb.3
 MAN5=		lmhosts.5 smb.conf.5 smbgetrc.5 smbpasswd.5
 MAN7=		samba.7
 MAN8=		eventlogadm.8 net.8 nmbd.8 pdbedit.8 smbd.8 smbpasswd.8 \
-		smbspool.8 tdbbackup.8 tdbdump.8 tdbtool.8 \
+		smbspool.8 \
 		idmap_nss.8 idmap_tdb.8 idmap_tdb2.8 \
 		vfs_acl_tdb.8 vfs_acl_xattr.8 \
 		vfs_audit.8 vfs_cap.8 vfs_default_quota.8 vfs_extd_audit.8 \
