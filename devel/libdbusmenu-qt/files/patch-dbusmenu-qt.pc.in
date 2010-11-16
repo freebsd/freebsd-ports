@@ -1,0 +1,10 @@
+--- ./dbusmenu-qt.pc.in.orig	2010-09-23 10:08:35.000000000 +0000
++++ ./dbusmenu-qt.pc.in	2010-11-12 14:49:39.000000000 +0000
+@@ -1,6 +1,6 @@
+ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=@CMAKE_INSTALL_PREFIX@
+-libdir=@CMAKE_INSTALL_PREFIX@/lib
++libdir=@CMAKE_INSTALL_PREFIX@/lib@LIB_SUFFIX@
+ includedir=@CMAKE_INSTALL_PREFIX@/include/dbusmenu-qt
+ 
+ Name: libdbusmenu-qt

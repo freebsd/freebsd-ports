@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	libdbusmenu-qt
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.4
 CATEGORIES=	devel
-MASTER_SITES=	http://launchpadlibrarian.net/53980131/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	avilla
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt4 implementation of the DBusMenu protocol
@@ -25,6 +26,7 @@ MAKE_JOBS_SAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/pkgconfig/ s/$${LIB_SUFFIX}/data/' \
-			${WRKSRC}/CMakeLists.txt
+		-e '/tests/ d' -e '/tools/ d' \
+		${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
