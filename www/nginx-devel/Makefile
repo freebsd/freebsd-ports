@@ -157,7 +157,7 @@ CONFIGURE_ARGS+=--with-http_addition_module
 .endif
 
 .if defined(WITH_HTTP_AUTH_PAM_MODULE)
-NGINX_AUTH_PAM_MODULE_VERSION=	1.1
+NGINX_AUTH_PAM_MODULE_VERSION=	1.2
 MASTER_SITES+=	http://web.iti.upv.es/~sto/nginx/:auth_pam
 DISTFILES+=	ngx_http_auth_pam_module-${NGINX_AUTH_PAM_MODULE_VERSION}.tar.gz:auth_pam
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_auth_pam_module-${NGINX_AUTH_PAM_MODULE_VERSION}
