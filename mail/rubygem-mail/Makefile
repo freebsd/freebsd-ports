@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mail
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.9
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,8 @@ COMMENT=	A Ruby email handler
 
 RUN_DEPENDS=	rubygem-treetop>=1.4.5:${PORTSDIR}/devel/rubygem-treetop \
 		rubygem-mime-types>=0:${PORTSDIR}/misc/rubygem-mime-types \
-		rubygem-activesupport>=2.3.6:${PORTSDIR}/devel/rubygem-activesupport
+		rubygem-activesupport>=2.3.6:${PORTSDIR}/devel/rubygem-activesupport \
+		rubygem-i18n>=0.4.1:${PORTSDIR}/devel/rubygem-i18n
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
