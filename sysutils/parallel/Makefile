@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	parallel
-PORTVERSION=	20100922
+PORTVERSION=	20101113
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
 MAINTAINER=	howeyc@gmail.com
 COMMENT=	GNU parallel is a shell tool for executing jobs in parallel
+
+LICENSE=	GPLv3
 
 CONFLICTS=	moreutils-[0-9]*
 
