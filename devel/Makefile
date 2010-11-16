@@ -2871,6 +2871,7 @@
     SUBDIR += py-simpy
     SUBDIR += py-sip
     SUBDIR += py-spark
+    SUBDIR += py-speaklater
     SUBDIR += py-sqlcc
     SUBDIR += py-statgrab
     SUBDIR += py-subversion
