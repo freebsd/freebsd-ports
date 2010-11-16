@@ -7,7 +7,7 @@
 
 PORTNAME=	pcsxr
 PORTVERSION=	1.9.91
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 # Original URLs :
 # http://download.codeplex.com/Project/Download/FileDownload.aspx?ProjectName=pcsxr&DownloadId=98581&FileTime=129064504645100000&Build=16694
@@ -22,6 +22,8 @@ COMMENT=	Playstation (PSX) emulator
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
+
+LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	i386 amd64
 

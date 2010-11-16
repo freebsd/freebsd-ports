@@ -7,6 +7,7 @@
 
 PORTNAME=	evtViewer
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/evtViewer/
@@ -14,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	PERL-based Event viewer
+
+LICENSE=	GPLv2
 
 USE_PERL5=	yes
 NO_BUILD=	yes

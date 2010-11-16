@@ -7,7 +7,7 @@
 
 PORTNAME=	gtick
 PORTVERSION=	0.4.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.antcom.de/gtick/download/ CENKES
 
@@ -15,6 +15,8 @@ MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A metronome application
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
+
+LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20

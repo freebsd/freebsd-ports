@@ -8,12 +8,15 @@
 
 PORTNAME=	bonnie++
 PORTVERSION=	1.96
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.coker.com.au/bonnie++/experimental/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Performance Test of Filesystem I/O
+
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 

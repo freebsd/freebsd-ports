@@ -7,6 +7,7 @@
 
 PORTNAME=	libdvdread
 PORTVERSION=	4.1.4.r1217
+PORTREVISION=	1
 CATEGORIES=	multimedia
 # Svn repository URL : svn://svn.mplayerhq.hu/dvdnav/trunk/libdvdread
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
@@ -26,6 +27,8 @@ COMMENT=	MPlayer version of the libdvdread project
 .if !defined(PACKAGE_BUILDING)
 LIB_DEPENDS=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
 .endif
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
