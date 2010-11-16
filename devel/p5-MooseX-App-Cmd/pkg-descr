@@ -1,0 +1,10 @@
+This module marries App::Cmd with MooseX::Getopt.
+
+Use it like App::Cmd advises (especially see App::Cmd::Tutorial),
+swapping App::Cmd::Command for MooseX::App::Cmd::Command.
+
+Then you can write your moose commands as moose classes, with
+MooseX::Getopt defining the options for you instead of opt_spec
+returning a Getopt::Long::Descriptive spec.
+
+WWW:	http://search.cpan.org/dist/MooseX-App-Cmd/
