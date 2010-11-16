@@ -1167,6 +1167,7 @@
     SUBDIR += p5-App-Cache
     SUBDIR += p5-App-Cmd
     SUBDIR += p5-App-Control
+    SUBDIR += p5-App-GitGot
     SUBDIR += p5-App-Info
     SUBDIR += p5-App-Options
     SUBDIR += p5-App-SVN-Bisect

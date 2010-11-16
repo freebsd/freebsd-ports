@@ -1,0 +1,18 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/GitGot/.packlist
+%%SITE_PERL%%/App/GitGot.pm
+%%SITE_PERL%%/App/GitGot/Command.pm
+%%SITE_PERL%%/App/GitGot/Command/add.pm
+%%SITE_PERL%%/App/GitGot/Command/chdir.pm
+%%SITE_PERL%%/App/GitGot/Command/fork.pm
+%%SITE_PERL%%/App/GitGot/Command/list.pm
+%%SITE_PERL%%/App/GitGot/Command/remove.pm
+%%SITE_PERL%%/App/GitGot/Command/status.pm
+%%SITE_PERL%%/App/GitGot/Command/update.pm
+%%SITE_PERL%%/App/GitGot/Command/version.pm
+bin/got
+@dirrmtry %%SITE_PERL%%/App/GitGot/Command
+@dirrmtry %%SITE_PERL%%/App/GitGot
+@dirrmtry %%SITE_PERL%%/App
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/GitGot
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
