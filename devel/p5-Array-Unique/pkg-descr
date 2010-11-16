@@ -1,0 +1,16 @@
+This package lets you create an array which will allow only one
+occurrence of any value.
+
+In other words no matter how many times you put in 42 it will keep
+only the first occurrence and the rest will be dropped.
+
+You use the module via tie and once you tied your array to this
+module it will behave correctly.
+
+Uniqueness is checked with the 'eq' operator so among other things it
+is case sensitive.
+
+As a side effect the module does not allow undef as a value in the
+array.
+
+WWW:	http://search.cpan.org/dist/Array-Unique/
