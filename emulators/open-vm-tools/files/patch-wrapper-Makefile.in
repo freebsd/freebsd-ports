@@ -9,12 +9,13 @@
  vmware_user_suid_wrapper_SOURCES = main.c wrapper-@TARGET_OS@.c
  vmware_user_suid_wrapper_LDADD = ../lib/vmSignal/libVmSignal.la
  desktopfile = vmware-user.desktop
-@@ -583,7 +583,7 @@
+@@ -583,7 +583,8 @@
  
  info-am:
  
 -install-data-am: install-autostartDATA
 +#install-data-am: install-autostartDATA
++install-data-am:
  
  install-dvi: install-dvi-am
  
