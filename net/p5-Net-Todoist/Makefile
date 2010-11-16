@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Net-Todoist
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	net www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gslin@gslin.org
@@ -22,4 +21,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Net::Todoist.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500903
+BUILD_DEPENDS+=	p5-ExtUtils-MakeMaker>=6.31:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
+.endif
+
+.include <bsd.port.post.mk>
