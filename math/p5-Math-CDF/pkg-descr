@@ -1,0 +1,12 @@
+This module provides a perl interface to the DCDFLIB. See the section
+on DCDFLIB for more information.
+
+Functions are available for 7 continuous distributions (Beta,
+Chi-square, F, Gamma, Normal, Poisson and T-distribution) and for two
+discrete distributions (Binomial and Negative Binomial). Optional
+non-centrality parameters are available for the Chi-square, F and
+T-distributions. Cumulative probabilities are available for all 9
+distributions and quantile functions are available for the 7
+continuous distributions.
+
+WWW:	http://search.cpan.org/dist/Math-CDF/
