@@ -9,7 +9,7 @@ PORTVERSION=	0.0.3
 PORTREVISION=	4
 CATEGORIES=	ports-mgmt haskell
 
-MAINTAINER=	sbahra@kerneled.org
+MAINTAINER=	sbahra@repnop.org
 COMMENT=	FreeBSD ports index search and statistical analysis tool
 
 CABAL_SETUP=	Setup.hs
