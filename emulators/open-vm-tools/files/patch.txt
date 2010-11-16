@@ -1,0 +1,48 @@
+
+diff -auwprN emulators/open-vm-tools/files/patch-wrapper-Makefile.am emulators/open-vm-tools.suid-wrapper/files/patch-wrapper-Makefile.am
+--- emulators/open-vm-tools/files/patch-wrapper-Makefile.am	1970-01-01 09:00:00.000000000 +0900
++++ emulators/open-vm-tools.suid-wrapper/files/patch-wrapper-Makefile.am	2010-11-16 18:06:18.000000000 +0900
+@@ -0,0 +1,11 @@
++--- vmware-user-suid-wrapper/Makefile.am.orig	2010-10-20 05:19:54.000000000 +0900
+++++ vmware-user-suid-wrapper/Makefile.am	2010-11-16 17:52:55.000000000 +0900
++@@ -19,6 +19,8 @@
++ 
++ AM_CPPFLAGS =
++ AM_CPPFLAGS += -DVMTOOLSD_PATH=\"$(bindir)/vmtoolsd\"
+++# See post-install on Makefile of ports.
+++AM_CPPFLAGS += -DVMWARE_KMOD_DIR=\"$(prefix)/lib/vmware-tools/modules/drivers\"
++ 
++ vmware_user_suid_wrapper_SOURCES =
++ vmware_user_suid_wrapper_SOURCES += main.c
+diff -auwprN emulators/open-vm-tools/files/patch-wrapper-Makefile.in emulators/open-vm-tools.suid-wrapper/files/patch-wrapper-Makefile.in
+--- emulators/open-vm-tools/files/patch-wrapper-Makefile.in	1970-01-01 09:00:00.000000000 +0900
++++ emulators/open-vm-tools.suid-wrapper/files/patch-wrapper-Makefile.in	2010-11-16 18:06:18.000000000 +0900
+@@ -0,0 +1,11 @@
++--- vmware-user-suid-wrapper/Makefile.in.orig	2010-10-20 05:20:08.000000000 +0900
+++++ vmware-user-suid-wrapper/Makefile.in	2010-11-16 17:52:55.000000000 +0900
++@@ -301,7 +301,7 @@
++ top_build_prefix = @top_build_prefix@
++ top_builddir = @top_builddir@
++ top_srcdir = @top_srcdir@
++-AM_CPPFLAGS = -DVMTOOLSD_PATH=\"$(bindir)/vmtoolsd\"
+++AM_CPPFLAGS = -DVMTOOLSD_PATH=\"$(bindir)/vmtoolsd\" -DVMWARE_KMOD_DIR=\"$(prefix)/lib/vmware-tools/modules/drivers\"
++ vmware_user_suid_wrapper_SOURCES = main.c wrapper-@TARGET_OS@.c
++ vmware_user_suid_wrapper_LDADD = ../lib/vmSignal/libVmSignal.la
++ desktopfile = vmware-user.desktop
+diff -auwprN emulators/open-vm-tools/files/patch-wrapper-wrapper-freebsd.c emulators/open-vm-tools.suid-wrapper/files/patch-wrapper-wrapper-freebsd.c
+--- emulators/open-vm-tools/files/patch-wrapper-wrapper-freebsd.c	1970-01-01 09:00:00.000000000 +0900
++++ emulators/open-vm-tools.suid-wrapper/files/patch-wrapper-wrapper-freebsd.c	2010-11-16 18:06:18.000000000 +0900
+@@ -0,0 +1,11 @@
++--- vmware-user-suid-wrapper/wrapper-freebsd.c.orig	2010-10-20 05:19:54.000000000 +0900
+++++ vmware-user-suid-wrapper/wrapper-freebsd.c	2010-11-16 17:52:55.000000000 +0900
++@@ -116,7 +116,7 @@
++    /*
++     * Kldload(2) will handle module search paths for us.
++     */
++-   if (kldload(MODULE_NAME) == -1) {
+++   if (kldload(VMWARE_KMOD_DIR "/" MODULE_NAME ".ko") == -1) {
++       Error("failed to load vmblock: %s\n", strerror(errno));
++       return FALSE;
++    }
+
+
