@@ -58,4 +58,4 @@ bin/psw
 bin/pswdb
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDATA%%@dirrm %%DATADIR%%
+@dirrm %%DATADIR%%
