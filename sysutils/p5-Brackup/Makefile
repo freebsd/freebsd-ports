@@ -7,6 +7,7 @@
 
 PORTNAME=	Brackup
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRADFITZ
@@ -17,10 +18,13 @@ COMMENT=	Flexible backup tool
 
 RUN_DEPENDS=	p5-DBD-SQLite>0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
+		p5-DateTime-Format-ISO8601>0:${PORTSDIR}/devel/p5-DateTime-Format-ISO8601 \
 		p5-Digest-SHA1>0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-MP3-Info>0:${PORTSDIR}/audio/p5-MP3-Info \
+		p5-Fuse>0:${PORTSDIR}/sysutils/p5-Fuse \
+		p5-IO-stringy>0:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-Net-Amazon-S3>0:${PORTSDIR}/net/p5-Net-Amazon-S3 \
-		p5-Net-SFTP>0:${PORTSDIR}/net/p5-Net-SFTP
+		p5-Net-SFTP>0:${PORTSDIR}/net/p5-Net-SFTP \
+		p5-String-Escape>0:${PORTSDIR}/textproc/p5-String-Escape
 
 PERL_CONFIGURE=	yes
 
@@ -46,7 +50,17 @@ MAN3=		Brackup.3 \
 		Brackup::Target::Filesystem.3 \
 		Brackup::Target::Ftp.3 \
 		Brackup::Target::GoogleAppEngine.3 \
-		Brackup::Target::Sftp.3 \
-		Brackup::Target::Riak.3
+		Brackup::Target::Riak.3 \
+		Brackup::Target::Sftp.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500905
+RUN_DEPENDS+=	p5-File-Temp>=0.17:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-ExtUtils-Manifest>=1.52:${PORTSDIR}/devel/p5-ExtUtils-Manifest
+.endif
+
+.include <bsd.port.post.mk>
