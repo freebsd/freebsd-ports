@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rss2email
-PORTVERSION=	2.68
+PORTVERSION=	2.69
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.allthingsrss.com/rss2email/
 
