@@ -1,0 +1,38 @@
+--- gdb/Makefile.in.orig	2010-02-02 18:16:53.000000000 -0500
++++ gdb/Makefile.in	2010-10-13 16:09:43.312803000 -0400
+@@ -524,7 +524,7 @@
+ 	xstormy16-tdep.o \
+ 	xtensa-config.o xtensa-tdep.o xtensa-linux-tdep.o \
+ 	glibc-tdep.o \
+-	bsd-uthread.o \
++	fbsd-threads.o \
+ 	nbsd-tdep.o obsd-tdep.o \
+ 	sol2-tdep.o \
+ 	solib-frv.o solib-irix.o solib-svr4.o solib-target.o \
+@@ -720,7 +720,7 @@
+ gdbserver/linux-low.h gdbserver/gdb_proc_service.h \
+ gdbserver/regcache.h gdbthread.h dwarf2-frame.h nbsd-nat.h dcache.h \
+ amd64-nat.h s390-tdep.h arm-linux-tdep.h exceptions.h macroscope.h \
+-gdbarch.h bsd-uthread.h gdb_thread_db.h gdb_stat.h memory-map.h	\
++gdbarch.h gdb_thread_db.h gdb_stat.h memory-map.h	\
+ mdebugread.h m88k-tdep.h stabsread.h hppa-linux-offsets.h linux-fork.h \
+ ser-unix.h scm-lang.h inf-ptrace.h terminal.h ui-out.h frame-base.h \
+ f-lang.h dwarf2loc.h value.h sparc-tdep.h defs.h target-descriptions.h \
+@@ -1130,7 +1130,7 @@
+ # Removing the old gdb first works better if it is running, at least on SunOS.
+ gdb$(EXEEXT): gdb.o libgdb.a $(ADD_DEPS) $(CDEPS) $(TDEPLIBS)
+ 	rm -f gdb$(EXEEXT)
+-	$(CC_LD) $(INTERNAL_LDFLAGS) $(WIN32LDAPP) \
++	$(CC_LD) $(INTERNAL_LDFLAGS) $(WIN32LDAPP) -Wl,-E \
+ 		-o gdb$(EXEEXT) gdb.o libgdb.a \
+ 		$(TDEPLIBS) $(TUI_LIBRARY) $(CLIBS) $(LOADLIBES)
+ 
+@@ -1402,7 +1402,7 @@
+ 	arm-linux-nat.c arm-linux-tdep.c arm-tdep.c \
+ 	armnbsd-nat.c armbsd-tdep.c armnbsd-tdep.c armobsd-tdep.c \
+ 	avr-tdep.c \
+-	bsd-uthread.c bsd-kvm.c \
++	fbsd-threads.c bsd-kvm.c \
+ 	core-regset.c corelow.c \
+ 	dcache.c dicos-tdep.c darwin-nat.c \
+ 	exec.c \

@@ -1,0 +1,2 @@
+bin/gdb%%VER%%
+bin/gdbtui%%VER%%
