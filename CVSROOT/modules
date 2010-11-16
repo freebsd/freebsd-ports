@@ -5092,6 +5092,7 @@ gstreamer-plugins-gconf         ports/devel/gstreamer-plugins-gconf
 gstreamer-plugins-gdkpixbuf     ports/graphics/gstreamer-plugins-gdkpixbuf
 gstreamer-plugins-gio           ports/devel/gstreamer-plugins-gio
 gstreamer-plugins-gl            ports/graphics/gstreamer-plugins-gl
+gstreamer-plugins-gme           ports/audio/gstreamer-plugins-gme
 gstreamer-plugins-gnomevfs      ports/devel/gstreamer-plugins-gnomevfs
 gstreamer-plugins-gnonlin       ports/multimedia/gstreamer-plugins-gnonlin
 gstreamer-plugins-good          ports/multimedia/gstreamer-plugins-good
@@ -13632,6 +13633,7 @@ p5-Petal-CodePerl               ports/textproc/p5-Petal-CodePerl
 p5-Petal-Mail                   ports/textproc/p5-Petal-Mail
 p5-Petal-Utils                  ports/textproc/p5-Petal-Utils
 p5-Pg                           ports/databases/p5-Pg
+p5-Phone-Info                   ports/net/p5-Phone-Info
 p5-Physics-Unit                 ports/science/p5-Physics-Unit
 p5-Pid-File-Flock               ports/devel/p5-Pid-File-Flock
 p5-Pipeline                     ports/devel/p5-Pipeline
@@ -17542,6 +17544,7 @@ p5-pg                           ports/databases/p5-Pg
 p5-pgeodns                      ports/dns/p5-pgeodns
 p5-pgp                          ports/security/p5-PGP
 p5-pgp-sign                     ports/security/p5-PGP-Sign
+p5-phone-info                   ports/net/p5-Phone-Info
 p5-php-serialization            ports/devel/p5-PHP-Serialization
 p5-php-session                  ports/www/p5-PHP-Session
 p5-physics-unit                 ports/science/p5-Physics-Unit
@@ -19584,6 +19587,7 @@ pecl-imlib2                     ports/graphics/pecl-imlib2
 pecl-inclued                    ports/devel/pecl-inclued
 pecl-intl                       ports/devel/pecl-intl
 pecl-json                       ports/devel/pecl-json
+pecl-libevent                   ports/devel/pecl-libevent
 pecl-lzf                        ports/archivers/pecl-lzf
 pecl-mailparse                  ports/mail/pecl-mailparse
 pecl-mcve                       ports/devel/pecl-mcve
@@ -22804,6 +22808,7 @@ rubygem-imagesize               ports/graphics/rubygem-imagesize
 rubygem-ini                     ports/textproc/rubygem-ini
 rubygem-inline                  ports/devel/rubygem-inline
 rubygem-innate                  ports/www/rubygem-innate
+rubygem-ipaddress               ports/net/rubygem-ipaddress
 rubygem-jdbc-mysql              ports/databases/rubygem-jdbc-mysql
 rubygem-jekyll                  ports/www/rubygem-jekyll
 rubygem-jruby-jars              ports/devel/rubygem-jruby-jars
@@ -22842,6 +22847,7 @@ rubygem-moneta                  ports/devel/rubygem-moneta
 rubygem-mongrel                 ports/www/rubygem-mongrel
 rubygem-mongrel_cluster         ports/www/rubygem-mongrel_cluster
 rubygem-msgpack                 ports/devel/rubygem-msgpack
+rubygem-ncurses                 ports/devel/rubygem-ncurses
 rubygem-needle                  ports/devel/rubygem-needle
 rubygem-net-irc                 ports/irc/rubygem-net-irc
 rubygem-net-ldap                ports/net/rubygem-net-ldap
@@ -26205,6 +26211,7 @@ xml-i18n-tools                  ports/textproc/xml-i18n-tools
 xml-lite.el                     ports/textproc/xml-lite.el
 xml-parse.el                    ports/textproc/xml-parse.el
 xml2rfc                         ports/textproc/xml2rfc
+xml2rfc-xxe                     ports/editors/xml2rfc-xxe
 xmlcatmgr                       ports/textproc/xmlcatmgr
 xmlcharent                      ports/textproc/xmlcharent
 xmlcopyeditor                   ports/editors/xmlcopyeditor
