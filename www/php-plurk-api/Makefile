@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	php-plurk-api
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.2
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-DISTNAME=	php-plurk-api-${PORTVERSION}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	A Plurk API Implementation with PHP
 
-USE_ZIP=	yes
+LICENSE=	BSD
+
 NO_BUILD=	yes
 USE_PHP=	json curl
+USE_ZIP=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-SUB_LIST+=	PKGNAME=${PKGNAME}
+SUB_LIST=	PKGNAME=${PKGNAME}
 SUB_FILES=	pkg-message
-
-.include <bsd.port.pre.mk>
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${WWWDIR}
@@ -39,4 +39,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
