@@ -7,6 +7,7 @@
 
 PORTNAME=	libdvdnav
 PORTVERSION=	4.1.4.r1217
+PORTREVISION=	1
 CATEGORIES=	multimedia
 # Svn repository URL : svn://svn.mplayerhq.hu/dvdnav/trunk/libdvdnav
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
@@ -24,6 +25,8 @@ MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	MPlayer version of the libdvdnav project
 
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
