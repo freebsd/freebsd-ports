@@ -1,0 +1,5 @@
+Git::Wrapper provides an API for git(7) that uses Perl data
+structures for argument passing, instead of CLI-style --options as
+Git does.
+
+WWW:	http://search.cpan.org/dist/Git-Wrapper/
