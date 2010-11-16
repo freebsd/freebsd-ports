@@ -1698,6 +1698,7 @@
     SUBDIR += p5-Getopt-Popt
     SUBDIR += p5-Git-PurePerl
     SUBDIR += p5-Git-Repository
+    SUBDIR += p5-Git-Wrapper
     SUBDIR += p5-Glib2
     SUBDIR += p5-Gnome2-GConf
     SUBDIR += p5-Goo-Canvas
