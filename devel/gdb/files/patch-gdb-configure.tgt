@@ -1,0 +1,20 @@
+--- gdb/configure.tgt.orig	2010-09-30 13:38:12.841406000 -0400
++++ gdb/configure.tgt	2010-09-30 13:38:49.131127000 -0400
+@@ -169,7 +169,7 @@
+ i[34567]86-*-freebsd* | i[34567]86-*-kfreebsd*-gnu)
+ 	# Target: FreeBSD/i386
+ 	gdb_target_obs="i386-tdep.o i387-tdep.o i386bsd-tdep.o i386fbsd-tdep.o \
+-			bsd-uthread.o corelow.o solib.o solib-svr4.o"
++			fbsd-threads.o corelow.o solib.o solib-svr4.o"
+ 	;;
+ i[34567]86-*-netbsd* | i[34567]86-*-knetbsd*-gnu)
+ 	# Target: NetBSD/i386
+@@ -579,7 +579,7 @@
+ 	# Target: FreeBSD/amd64
+ 	gdb_target_obs="amd64-tdep.o amd64fbsd-tdep.o i386-tdep.o \
+ 			i387-tdep.o i386bsd-tdep.o i386fbsd-tdep.o \
+-			bsd-uthread.o corelow.o solib.o solib-svr4.o"
++			fbsd-threads.o corelow.o solib.o solib-svr4.o"
+ 	;;
+ x86_64-*-mingw*)
+         # Target: MingW/amd64

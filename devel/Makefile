@@ -456,6 +456,7 @@
     SUBDIR += gconfmm
     SUBDIR += gconfmm26
     SUBDIR += gcvs
+    SUBDIR += gdb
     SUBDIR += gdb53-act
     SUBDIR += gdb6
     SUBDIR += gdbmods
