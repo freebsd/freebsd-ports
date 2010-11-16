@@ -7,7 +7,6 @@
 #
 
 PORTNAME=	pcc
-DATESPEC=	100821
 PORTVERSION=	0.9.9.${DATESPEC}
 PORTREVISION?=	0
 CATEGORIES=	lang
@@ -18,7 +17,9 @@ DISTNAME=	pcc-${DATESPEC}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	joel@FreeBSD.org
-COMMENT=	S.C.Johnson's Portable C Compiler brought into the C99 world.
+COMMENT=	S.C.Johnson's Portable C Compiler brought into the C99 world
+
+DATESPEC=	101107
 
 ONLY_FOR_ARCHS=	i386 amd64
 
