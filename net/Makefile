@@ -827,6 +827,7 @@
     SUBDIR += proxychains
     SUBDIR += prtunnel
     SUBDIR += ptpd
+    SUBDIR += ptpd2
     SUBDIR += ptunnel
     SUBDIR += pvm
     SUBDIR += pvm++

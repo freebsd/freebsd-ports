@@ -1,0 +1,7 @@
+ptpd2 is an implementation of version 2 the Precision Time Protocol
+(IEEE 1588-2008)
+
+PTP was developed to provide very precise time coordination of LAN connected
+computers.
+
+WWW: http://ptpd.sourceforge.net/
