@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: ptpd2
+# REQUIRE: NETWORKING DAEMON
+# KEYWORD: nojail
+#
+# Add the following lines to /etc/rc.conf to enable ptpd
+#
+# ptpd2_enable (bool):	Set to "NO" by default
+#			Set it to "YES" to enable ptpd
+
+. /etc/rc.subr
+
+name="ptpd2"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/${name}"
+
+ptpd_enable=${ptpd2_enable:-"NO"}
+
+load_rc_config $name
+run_rc_command "$1"
