@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	pgocaml
-PORTVERSION=	1.1
+PORTVERSION=	1.4
 CATEGORIES=	databases
 MASTER_SITES=	BERLIOS
 PKGNAMEPREFIX=	ocaml-
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tcrimi@gmail.com
 COMMENT=	An OCaml interface to PostgreSQL
@@ -25,6 +26,9 @@ USE_OCAML_FINDLIB=	yes
 OCAML_PKGDIRS=	pgocaml
 
 INSTALL_TARGET=	findlib_install
+
+pre-build:
+	cd ${WRKSRC}; ${GMAKE} depend
 
 post-install:
 	@${FIND} ${OCAMLFIND_DESTDIR}/${PORTNAME} -type f | \
