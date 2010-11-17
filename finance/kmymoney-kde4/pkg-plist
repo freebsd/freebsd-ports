@@ -859,36 +859,6 @@ share/doc/HTML/en/kmymoney/transactionform.png
 share/doc/HTML/en/kmymoney/translist.png
 share/doc/HTML/en/kmymoney/value_widget.png
 share/doc/HTML/en/kmymoney/whatsnew.docbook
-share/doc/HTML/es/kmymoney/common
-share/doc/HTML/es/kmymoney/credits.docbook
-share/doc/HTML/es/kmymoney/details-accounts.docbook
-share/doc/HTML/es/kmymoney/details-budgets.docbook
-share/doc/HTML/es/kmymoney/details-categories.docbook
-share/doc/HTML/es/kmymoney/details-currencies.docbook
-share/doc/HTML/es/kmymoney/details-database.docbook
-share/doc/HTML/es/kmymoney/details-files.docbook
-share/doc/HTML/es/kmymoney/details-forecast.docbook
-share/doc/HTML/es/kmymoney/details-formats.docbook
-share/doc/HTML/es/kmymoney/details-impexp.docbook
-share/doc/HTML/es/kmymoney/details-institutions.docbook
-share/doc/HTML/es/kmymoney/details-investments.docbook
-share/doc/HTML/es/kmymoney/details-ledgers.docbook
-share/doc/HTML/es/kmymoney/details-loans.docbook
-share/doc/HTML/es/kmymoney/details-payees.docbook
-share/doc/HTML/es/kmymoney/details-reconciliation.docbook
-share/doc/HTML/es/kmymoney/details-reports.docbook
-share/doc/HTML/es/kmymoney/details-schedules.docbook
-share/doc/HTML/es/kmymoney/details-search.docbook
-share/doc/HTML/es/kmymoney/details-settings.docbook
-share/doc/HTML/es/kmymoney/details-widgets.docbook
-share/doc/HTML/es/kmymoney/firsttime.docbook
-share/doc/HTML/es/kmymoney/index.cache.bz2
-share/doc/HTML/es/kmymoney/index.docbook
-share/doc/HTML/es/kmymoney/introduction.docbook
-share/doc/HTML/es/kmymoney/makemostof.docbook
-share/doc/HTML/es/kmymoney/man-kmymoney.1.docbook
-share/doc/HTML/es/kmymoney/reference.docbook
-share/doc/HTML/es/kmymoney/whatsnew.docbook
 share/doc/HTML/it/kmymoney/common
 share/doc/HTML/it/kmymoney/credits.docbook
 share/doc/HTML/it/kmymoney/details-accounts.docbook
@@ -898,10 +868,8 @@ share/doc/HTML/it/kmymoney/details-currencies.docbook
 share/doc/HTML/it/kmymoney/details-database.docbook
 share/doc/HTML/it/kmymoney/details-forecast.docbook
 share/doc/HTML/it/kmymoney/details-formats.docbook
-share/doc/HTML/it/kmymoney/details-hbciofx.docbook
 share/doc/HTML/it/kmymoney/details-impexp.docbook
 share/doc/HTML/it/kmymoney/details-institutions.docbook
-share/doc/HTML/it/kmymoney/details-integrity.docbook
 share/doc/HTML/it/kmymoney/details-investments.docbook
 share/doc/HTML/it/kmymoney/details-ledgers.docbook
 share/doc/HTML/it/kmymoney/details-loans.docbook
@@ -920,9 +888,39 @@ share/doc/HTML/it/kmymoney/installation.docbook
 share/doc/HTML/it/kmymoney/introduction.docbook
 share/doc/HTML/it/kmymoney/makemostof.docbook
 share/doc/HTML/it/kmymoney/man-kmymoney.1.docbook
-share/doc/HTML/it/kmymoney/otherdoc.docbook
 share/doc/HTML/it/kmymoney/reference.docbook
 share/doc/HTML/it/kmymoney/whatsnew.docbook
+share/doc/HTML/pt/kmymoney/common
+share/doc/HTML/pt/kmymoney/credits.docbook
+share/doc/HTML/pt/kmymoney/details-accounts.docbook
+share/doc/HTML/pt/kmymoney/details-budgets.docbook
+share/doc/HTML/pt/kmymoney/details-categories.docbook
+share/doc/HTML/pt/kmymoney/details-currencies.docbook
+share/doc/HTML/pt/kmymoney/details-database.docbook
+share/doc/HTML/pt/kmymoney/details-forecast.docbook
+share/doc/HTML/pt/kmymoney/details-formats.docbook
+share/doc/HTML/pt/kmymoney/details-impexp.docbook
+share/doc/HTML/pt/kmymoney/details-institutions.docbook
+share/doc/HTML/pt/kmymoney/details-investments.docbook
+share/doc/HTML/pt/kmymoney/details-ledgers.docbook
+share/doc/HTML/pt/kmymoney/details-loans.docbook
+share/doc/HTML/pt/kmymoney/details-payees.docbook
+share/doc/HTML/pt/kmymoney/details-reconciliation.docbook
+share/doc/HTML/pt/kmymoney/details-reports.docbook
+share/doc/HTML/pt/kmymoney/details-schedules.docbook
+share/doc/HTML/pt/kmymoney/details-search.docbook
+share/doc/HTML/pt/kmymoney/details-settings.docbook
+share/doc/HTML/pt/kmymoney/details-widgets.docbook
+share/doc/HTML/pt/kmymoney/faq.docbook
+share/doc/HTML/pt/kmymoney/firsttime.docbook
+share/doc/HTML/pt/kmymoney/index.cache.bz2
+share/doc/HTML/pt/kmymoney/index.docbook
+share/doc/HTML/pt/kmymoney/installation.docbook
+share/doc/HTML/pt/kmymoney/introduction.docbook
+share/doc/HTML/pt/kmymoney/makemostof.docbook
+share/doc/HTML/pt/kmymoney/man-kmymoney.1.docbook
+share/doc/HTML/pt/kmymoney/reference.docbook
+share/doc/HTML/pt/kmymoney/whatsnew.docbook
 share/doc/HTML/pt_BR/kmymoney/common
 share/doc/HTML/pt_BR/kmymoney/credits.docbook
 share/doc/HTML/pt_BR/kmymoney/details-accounts.docbook
@@ -954,76 +952,6 @@ share/doc/HTML/pt_BR/kmymoney/makemostof.docbook
 share/doc/HTML/pt_BR/kmymoney/man-kmymoney.1.docbook
 share/doc/HTML/pt_BR/kmymoney/reference.docbook
 share/doc/HTML/pt_BR/kmymoney/whatsnew.docbook
-share/doc/HTML/sv/kmymoney/common
-share/doc/HTML/sv/kmymoney/credits.docbook
-share/doc/HTML/sv/kmymoney/details-accounts.docbook
-share/doc/HTML/sv/kmymoney/details-budgets.docbook
-share/doc/HTML/sv/kmymoney/details-categories.docbook
-share/doc/HTML/sv/kmymoney/details-currencies.docbook
-share/doc/HTML/sv/kmymoney/details-database.docbook
-share/doc/HTML/sv/kmymoney/details-forecast.docbook
-share/doc/HTML/sv/kmymoney/details-formats.docbook
-share/doc/HTML/sv/kmymoney/details-impexp.docbook
-share/doc/HTML/sv/kmymoney/details-institutions.docbook
-share/doc/HTML/sv/kmymoney/details-investments.docbook
-share/doc/HTML/sv/kmymoney/details-ledgers.docbook
-share/doc/HTML/sv/kmymoney/details-loans.docbook
-share/doc/HTML/sv/kmymoney/details-payees.docbook
-share/doc/HTML/sv/kmymoney/details-reconciliation.docbook
-share/doc/HTML/sv/kmymoney/details-reports.docbook
-share/doc/HTML/sv/kmymoney/details-schedules.docbook
-share/doc/HTML/sv/kmymoney/details-search.docbook
-share/doc/HTML/sv/kmymoney/details-settings.docbook
-share/doc/HTML/sv/kmymoney/details-widgets.docbook
-share/doc/HTML/sv/kmymoney/faq.docbook
-share/doc/HTML/sv/kmymoney/firsttime.docbook
-share/doc/HTML/sv/kmymoney/index.cache.bz2
-share/doc/HTML/sv/kmymoney/index.docbook
-share/doc/HTML/sv/kmymoney/installation.docbook
-share/doc/HTML/sv/kmymoney/introduction.docbook
-share/doc/HTML/sv/kmymoney/makemostof.docbook
-share/doc/HTML/sv/kmymoney/man-kmymoney.1.docbook
-share/doc/HTML/sv/kmymoney/reference.docbook
-share/doc/HTML/sv/kmymoney/whatsnew.docbook
-share/doc/HTML/uk/kmymoney/common
-share/doc/HTML/uk/kmymoney/credits.docbook
-share/doc/HTML/uk/kmymoney/details-accounts.docbook
-share/doc/HTML/uk/kmymoney/details-budgets.docbook
-share/doc/HTML/uk/kmymoney/details-categories.docbook
-share/doc/HTML/uk/kmymoney/details-currencies.docbook
-share/doc/HTML/uk/kmymoney/details-database.docbook
-share/doc/HTML/uk/kmymoney/details-forecast.docbook
-share/doc/HTML/uk/kmymoney/details-formats.docbook
-share/doc/HTML/uk/kmymoney/details-impexp.docbook
-share/doc/HTML/uk/kmymoney/details-institutions.docbook
-share/doc/HTML/uk/kmymoney/details-investments.docbook
-share/doc/HTML/uk/kmymoney/details-ledgers.docbook
-share/doc/HTML/uk/kmymoney/details-loans.docbook
-share/doc/HTML/uk/kmymoney/details-payees.docbook
-share/doc/HTML/uk/kmymoney/details-reconciliation.docbook
-share/doc/HTML/uk/kmymoney/details-reports.docbook
-share/doc/HTML/uk/kmymoney/details-schedules.docbook
-share/doc/HTML/uk/kmymoney/details-search.docbook
-share/doc/HTML/uk/kmymoney/details-settings.docbook
-share/doc/HTML/uk/kmymoney/details-widgets.docbook
-share/doc/HTML/uk/kmymoney/faq.docbook
-share/doc/HTML/uk/kmymoney/firsttime.docbook
-share/doc/HTML/uk/kmymoney/index.cache.bz2
-share/doc/HTML/uk/kmymoney/index.docbook
-share/doc/HTML/uk/kmymoney/installation.docbook
-share/doc/HTML/uk/kmymoney/introduction.docbook
-share/doc/HTML/uk/kmymoney/mainwindow_numbered.png
-share/doc/HTML/uk/kmymoney/makemostof.docbook
-share/doc/HTML/uk/kmymoney/man-kmymoney.1.docbook
-share/doc/HTML/uk/kmymoney/newfile-2.png
-share/doc/HTML/uk/kmymoney/newfile-3.png
-share/doc/HTML/uk/kmymoney/newfile-4.png
-share/doc/HTML/uk/kmymoney/newfile-5.png
-share/doc/HTML/uk/kmymoney/newfile-6.png
-share/doc/HTML/uk/kmymoney/newfile.png
-share/doc/HTML/uk/kmymoney/reference.docbook
-share/doc/HTML/uk/kmymoney/tipofday.png
-share/doc/HTML/uk/kmymoney/whatsnew.docbook
 share/icons/locolor/16x16/apps/kmymoney.png
 share/icons/locolor/32x32/apps/kmymoney.png
 share/icons/oxygen/128x128/apps/kmymoney.png
@@ -1062,7 +990,6 @@ share/locale/fi/LC_MESSAGES/kmymoney.mo
 share/locale/fr/LC_MESSAGES/kmymoney.mo
 share/locale/ga/LC_MESSAGES/kmymoney.mo
 share/locale/gl/LC_MESSAGES/kmymoney.mo
-share/locale/hu/LC_MESSAGES/kmymoney.mo
 share/locale/it/LC_MESSAGES/kmymoney.mo
 share/locale/ja/LC_MESSAGES/kmymoney.mo
 share/locale/lt/LC_MESSAGES/kmymoney.mo
@@ -1087,11 +1014,9 @@ share/mime/packages/x-kmymoney.xml
 @dirrmtry share/icons/locolor/16x16/apps
 @dirrmtry share/icons/locolor/16x16
 @dirrmtry share/icons/locolor
-@dirrm share/doc/HTML/uk/kmymoney
-@dirrm share/doc/HTML/sv/kmymoney
 @dirrm share/doc/HTML/pt_BR/kmymoney
+@dirrm share/doc/HTML/pt/kmymoney
 @dirrm share/doc/HTML/it/kmymoney
-@dirrm share/doc/HTML/es/kmymoney
 @dirrm share/doc/HTML/en/kmymoney
 @dirrm share/apps/kmymoney/templates/zh_TW
 @dirrm share/apps/kmymoney/templates/zh_HK
