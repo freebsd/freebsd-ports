@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	repoze.who
-PORTVERSION=	1.0.18
+PORTVERSION=	1.0.19
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An identification and authentication framework for WSGI
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Paste>=1.7.2:${PORTSDIR}/www/py-paste \
