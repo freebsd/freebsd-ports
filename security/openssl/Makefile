@@ -7,8 +7,8 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.0
-DISTVERSION=	1.0.0a
-PORTREVISION=	2
+DISTVERSION=	1.0.0b
+PORTREVISION=	3
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -35,7 +35,6 @@ OPTIONS=	I386	"Use optimized assembler for 80386" off \
 		MD2	"Build with MD2 hash (obsolete)" off \
 		RC5	"Build with RC5 chipher (patented)" off \
 		RFC3779	"Build with RFC3779 support" off \
-	DTLS_BUGS	"Build with DTLS bugfixes" off \
 	DTLS_RENEGOTIATION	"Build with DTLS Abbr. renegotiations" off \
 	DTLS_HEARTBEAT		"Build with DTLS Heartbeat Extension" off \
 	TLS_EXTRACTOR		"Build with TLS key material extractor" off \
@@ -1109,7 +1108,6 @@ EXTRACONFIGURE+=	no-rfc3779
 .endif
 
 .if defined(WITH_SCTP)
-WITH_DTLS_BUGS=yes
 WITH_TLS_EXTRACTOR?=		yes
 EXTRACONFIGURE+=	sctp
 .if defined(WITH_DTLS_HEARTBEAT)
@@ -1120,8 +1118,6 @@ BROKEN=		Patches do not merge, please change options
 .endif
 .endif
 # order of PATCHFILES is important
-.if defined(WITH_DTLS_BUGS) || make(makesum) || defined(FETCH_ALL)
-.endif
 .if defined(WITH_DTLS_RENEGOTIATION) || make(makesum) || defined(FETCH_ALL)
 PATCHFILES+=    abbreviated-renegotiation.patch
 .endif
@@ -1129,7 +1125,7 @@ PATCHFILES+=    abbreviated-renegotiation.patch
 PATCHFILES+=	tls-extractor.patch
 .endif
 .if defined(WITH_SCTP) || make(makesum) || defined(FETCH_ALL)
-PATCHFILES+=	dtls-sctp-17.patch
+PATCHFILES+=	dtls-sctp-20.patch
 .endif
 .if defined(WITH_DTLS_HEARTBEAT) || make(makesum) || defined(FETCH_ALL)
 PATCHFILES+=    dtls-heartbeats.patch
