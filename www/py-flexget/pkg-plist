@@ -23,6 +23,12 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_accept_all.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_accept_all.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_accept_all.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_all_series.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_all_series.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_all_series.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_content_filter.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_content_filter.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/filter_content_filter.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_content_size.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_content_size.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/filter_content_size.pyo
@@ -242,9 +248,9 @@ bin/flexget
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_subtitles.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_subtitles.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/output_subtitles.pyo
-%%PYTHON_SITELIBDIR%%/flexget/plugins/output_transmissionrpc.py
-%%PYTHON_SITELIBDIR%%/flexget/plugins/output_transmissionrpc.pyc
-%%PYTHON_SITELIBDIR%%/flexget/plugins/output_transmissionrpc.pyo
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output_transmission.py
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output_transmission.pyc
+%%PYTHON_SITELIBDIR%%/flexget/plugins/output_transmission.pyo
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_archive.py
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_archive.pyc
 %%PYTHON_SITELIBDIR%%/flexget/plugins/plugin_archive.pyo
