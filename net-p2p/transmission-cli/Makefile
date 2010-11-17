@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	2.04
-PORTREVISION?=	1
+PORTVERSION=	2.12
+PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
 PKGNAMESUFFIX?=	-cli
 
 MAINTAINER?=	mezz@FreeBSD.org
-COMMENT?=	A fast and lightweight CLI (command line) BitTorrent client
+COMMENT?=	A lightweight CLI (command line) BitTorrent client and utilities
 
-SLAVEPORT?=
+SLAVEPORT?=	cli
 .if ${SLAVEPORT}!="web"
 LIB_DEPENDS?=	${GEN_LIB_DEPENDS}
 
@@ -42,7 +42,8 @@ EXTRA_CONF_ARGS?=--enable-cli \
 		 --disable-mac \
 		 --disable-nls
 
-MAN1?=		transmissioncli.1
+MAN1?=		transmission-cli.1 transmission-create.1 transmission-edit.1 \
+		transmission-show.1
 EXTRA_PATCHES=	${PATCHDIR}/disable-web
 .endif
 
@@ -65,6 +66,10 @@ general-patch:
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|doc \\| \\|g' \
 		${WRKSRC}/Makefile.in
+.if ${SLAVEPORT}!="cli"
+	@${REINPLACE_CMD} -e 's|utils \\|\\|g' \
+		${WRKSRC}/Makefile.in
+.endif
 
 post-patch: general-patch
 

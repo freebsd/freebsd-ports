@@ -1,12 +1,13 @@
---- Makefile.in.orig	2010-01-29 15:39:44.000000000 -0600
-+++ Makefile.in	2010-01-29 15:46:11.000000000 -0600
-@@ -300,14 +300,12 @@
+--- Makefile.in.orig	2010-10-23 15:56:02.000000000 -0500
++++ Makefile.in	2010-10-23 15:56:55.000000000 -0500
+@@ -303,15 +303,13 @@
  @BUILD_GTK_TRUE@GTK_DIR = gtk po
  @BUILD_MAC_TRUE@MAC_DIR = macosx
  SUBDIRS = \
--  doc \
+-  extras \
    third-party \
    libtransmission \
+   utils \
    $(DAEMON_DIR) \
    $(CLI_DIR) \
    $(GTK_DIR) \

@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20101117:
+  AFFECTS: users of net-p2p/transmission-cli and net-p2p/transmission-gtk
+  AUTHOR: Mezz <mezz@FreeBSD.org>
+
+  Transmission has been updated to 2.12. The following name of binaries and
+  manpages have been renamed:
+
+  	transmissioncli -> transmission-cli
+	transmission -> transmission-gtk
+
+20101117:
   AFFECTS: users of devel/ccache
   AUTHOR: Emanuel Haupt <ehaupt@FreeBSD.org>
 
