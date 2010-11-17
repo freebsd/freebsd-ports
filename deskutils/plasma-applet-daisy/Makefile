@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	daisy
-PORTVERSION=	0.0.4.23
+PORTVERSION=	0.0.4.25
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://cdlszm.org/downloads/
 PKGNAMEPREFIX=	plasma-applet-
@@ -21,5 +21,8 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 .include <bsd.port.mk>
