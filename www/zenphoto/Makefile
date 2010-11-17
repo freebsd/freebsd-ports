@@ -4,32 +4,35 @@
 # $FreeBSD$
 
 PORTNAME=	zenphoto
-PORTVERSION=	1.2.8
+PORTVERSION=	1.3.1.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.zenphoto.org/files/
+MASTER_SITES=	GOOGLE_CODE \
+		http://www.zenphoto.org/files/
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A simpler web photo gallery
 
-USE_PHP=	mysql gd session mbstring gettext pcre json
-WANT_PHP_WEB=	yes
+LICENSE=	GPLv2
 
 NO_BUILD=	yes
-
-WRKSRC=	${WRKDIR}/${PORTNAME}
+USE_PHP=	gd gettext json mbstring mysql pcre session
+WANT_PHP_WEB=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message pkg-deinstall
-SUB_LIST=	PORTNAME=${PORTNAME} \
-		WWWDIR=${WWWDIR}
+SUB_LIST=	PORTNAME=${PORTNAME}
 
 do-install:
 	${MKDIR} ${WWWDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR} \
-		"! -name README.html ! -name License.txt ! -name Zenphoto.package")
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR}
+	@${RM} ${WWWDIR}/doc_files/License.txt
+	@${RM} ${WWWDIR}/doc_files/README.html
+	@${RM} ${WWWDIR}/zp-core/Zenphoto.package
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	${CHMOD} 644 ${WWWDIR}/zp-core/images/*
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
