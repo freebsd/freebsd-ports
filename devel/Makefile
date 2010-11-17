@@ -3185,6 +3185,7 @@
     SUBDIR += rubygem-validatable
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-webby
+    SUBDIR += rubygem-yajl-ruby
     SUBDIR += rubygem-zentest
     SUBDIR += rubygem-zoom
     SUBDIR += rudeconfig
