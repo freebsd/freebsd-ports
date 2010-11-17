@@ -21,6 +21,8 @@ USE_AUTOTOOLS=	autoconf:268 automake:111 libtool:22
 GNU_CONFIGURE=	YES
 MAKE_JOBS_SAFE=	YES
 
+BROKEN=		does not configure
+
 USE_RC_SUBR=	tcsd
 SUB_FILES=	pkg-message
 SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
