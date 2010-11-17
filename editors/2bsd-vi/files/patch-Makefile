@@ -21,6 +21,17 @@
  
  #
  # Compiler and linker flags.
+@@ -161,9 +161,7 @@ FEATURES	= -DLISPCODE -DCHDIR -DFASTTAG 
+ # (wchar.h, wctype.h, btowc() etc.) which is not provided by older
+ # compilation environments.
+ #
+-REINC	= -I./libuxre -DUXRE
+-RELIB	= -L./libuxre -luxre
+-RETGT	= uxre
++REINC	= -DUXRE -DREG_ANGLES=0 -DNO_BE_BACKSLASH
+ 
+ #
+ # VMUNIX should be correct for any modern Unix.
 @@ -205,13 +204,13 @@ OSTYPE	= -DVMUNIX
  #
  # You may also get terminfo access by using the ncurses library.
@@ -37,6 +48,14 @@
  
  #
  # Since ex uses sbrk() internally, a conflict with the libc's version of
+@@ -240,7 +237,6 @@ RECOVER	= -DEXRECOVER=\"$(LIBEXECDIR)/ex
+ 			-DEXPRESERVE=\"$(LIBEXECDIR)/expreserve\"
+ CCFLAGS	= $(CFLAGS) $(WARN) $(CPPFLAGS) $(FEATURES) $(CHARSET) $(OSTYPE) \
+ 		$(LARGEF) $(RECOVER) $(LANGMSG) $(REINC) $(RPMCFLAGS)
+-TLIB	= libterm/libtermlib.a
+ INCLUDE	= /usr/include
+ OBJS	= ex.o ex_addr.o ex_cmds.o ex_cmds2.o ex_cmdsub.o \
+ 		ex_data.o ex_extern.o ex_get.o ex_io.o ex_put.o ex_re.o \
 @@ -292,13 +291,6 @@
  # install in standard place
  
