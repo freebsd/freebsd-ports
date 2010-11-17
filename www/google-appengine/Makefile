@@ -7,7 +7,7 @@
 
 PORTNAME=	google-appengine
 PORTVERSION=	1.3.8
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${PORTNAME:S|-|_|}_${PORTVERSION}.zip
@@ -18,7 +18,8 @@ DISTFILES+=	${PORTNAME}-docs-${GAEDOCSREL}.zip
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Development tools for Google App Engine (SDK)
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_2:${PORTSDIR}/graphics/py-imaging
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=2.6.6_1:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_2:${PORTSDIR}/graphics/py-imaging
 
 MANUAL_PACKAGE_BUILD=		uses Python 2.5
 
