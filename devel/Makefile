@@ -349,6 +349,7 @@
     SUBDIR += eiffelstudio
     SUBDIR += elf
     SUBDIR += elfio
+    SUBDIR += elfkickers
     SUBDIR += elfrc
     SUBDIR += elfsh
     SUBDIR += elftoaout
