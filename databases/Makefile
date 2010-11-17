@@ -178,6 +178,7 @@
     SUBDIR += ludia
     SUBDIR += maatkit
     SUBDIR += mantis
+    SUBDIR += mariadb
     SUBDIR += mdbtools
     SUBDIR += memcached
     SUBDIR += memcached12
