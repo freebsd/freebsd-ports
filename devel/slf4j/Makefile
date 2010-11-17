@@ -8,7 +8,7 @@
 PORTNAME=	slf4j
 PORTVERSION=	1.5.8
 PORTREVISION=	1
-CATEGORIES=	java devel
+CATEGORIES=	devel java
 MASTER_SITES=	http://www.slf4j.org/dist/
 
 MAINTAINER=	skreuzer@FreeBSD.org
