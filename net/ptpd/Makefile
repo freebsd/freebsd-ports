@@ -14,6 +14,8 @@ MASTER_SITES=	SF
 MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	An implementation of the precision time protocol IEEE 1588
 
+LATEST_LINK=	ptpd1
+
 WRKSRC=		${WRKDIR}/ptpd-${DISTVERSION}/src
 
 PLIST_FILES=	sbin/ptpd
