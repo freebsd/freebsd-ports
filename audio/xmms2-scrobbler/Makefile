@@ -5,36 +5,31 @@
 # $FreeBSD$
 
 PORTNAME=	xmms2-scrobbler
-PORTVERSION=	0.1.3
-PORTREVISION=	2
-CATEGORIES=	audio ruby
-MASTER_SITES=	http://exodus.xmms.se/~tilman/
+PORTVERSION=	0.4.0
+CATEGORIES=	audio
+MASTER_SITES=	ftp://ftp.code-monkey.de/pub/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A last.fm submission client for XMMS2
 
-BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmmsclient_ext.so:${PORTSDIR}/audio/ruby-xmms2 \
-		${RUBY_SITELIBDIR}/event-loop.rb:${PORTSDIR}/devel/ruby-event-loop
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmmsclient_ext.so:${PORTSDIR}/audio/ruby-xmms2 \
-		${RUBY_SITELIBDIR}/event-loop.rb:${PORTSDIR}/devel/ruby-event-loop
+LIB_DEPENDS=	xmmsclient.5:${PORTSDIR}/audio/xmms2 \
+		curl.6:${PORTSDIR}/ftp/curl
 
-USE_RUBY=	yes
-USE_RAKE=	yes
-NO_BUILD=	yes
+USE_GMAKE=	yes
+MAKE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 
-PLIST_FILES=	bin/xmms2-scrobbler \
-		%%DATADIR%%/filters/britney.rb \
-		%%DATADIR%%/filters/musicbrainz.rb
-PLIST_DIRS=	%%DATADIR%%/filters %%DATADIR%%
+PLIST_FILES=	bin/xmms2-scrobbler
+PORTDOCS=	README
 
 SUB_FILES=	pkg-message
-
-do-install:
-	@cd ${WRKSRC} && ${RAKE_BIN} PREFIX=${PREFIX}/ ${INSTALL_TARGET}
 
 post-install:
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}; \
+	cd ${WRKSRC} && ${INSTALL_MAN} ${PORTDOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
