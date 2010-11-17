@@ -4,12 +4,10 @@
 
 To use ccache add the following to /etc/make.conf
 
-.if (!empty(.CURDIR:M/usr/src*) || !empty(.CURDIR:M/usr/obj*)) && !defined(NOCCACHE)
-.if !defined(CC) || ${CC} == "cc"
-CC=%%PREFIX%%/%%CCLINKDIR%%/world-cc
-.endif
-.if !defined(CXX) || ${CXX} == "c++"
-CXX=%%PREFIX%%/%%CCLINKDIR%%/world-c++
+.if (!empty(.CURDIR:M/usr/src*) || !empty(.CURDIR:M/usr/obj*))
+.if !defined(NOCCACHE)
+CC:=${CC:C,^cc,%%PREFIX%%/%%CCLINKDIR%%/world-cc,1}
+CXX:=${CXX:C,^c\+\+,%%PREFIX%%/%%CCLINKDIR%%/world-c++,1}
 .endif
 .endif
 
