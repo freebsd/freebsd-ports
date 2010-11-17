@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamass-rules
-PORTVERSION=	20100215
+PORTVERSION=	20101112
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.eu/stuff/
 
@@ -24,21 +24,23 @@ OPTIONS=	AHBL "Check AHBL Blacklist" on \
 		CHINESE "Catches spam written in Chinese" off \
 		EVILNUMBERS "Phone numbers, PO boxes, ... from spam " on \
 		FRENCH "Catches spam written in French" off \
-		GERMAN "Catches spam written in German" off \
-		GREEK "Catches spam written in Greek" off \
+		GERMAN "Catches spam written in German" on \
+		GREEK "Catches spam written in Greek" on \
+		MALWARE "Malware Patrol - Block List" on \
 		MANGLED "Looks for obfuscated/gappy words" on \
 		MIMEVLD "Some mime validation rules" on \
+		NIXSPAM "Check NiX Spam Blacklist" on \
 		RANDOM "Detects spamware mistakes like: %RANDOM_WORD" on \
 		ROMANIAN "Catches spam written in Romanian" off \
 		SARE "Installs safe SARE rules" on \
-		SARE1 "Installs more restrictive SARE rules" off \
-		SARE2 "Installs more cpu intensive SARE rules" off \
+		SARE1 "Installs more restrictive SARE rules" on \
+		SARE2 "Installs more cpu intensive SARE rules" on \
 		SARE3 "Installs aggressive SARE rules" off \
 		SAREH "Installs SARE high risk rules" off \
-		SAREW "Installs SARE whitelist rules" off \
+		SAREW "Installs SARE whitelist rules" on \
 		TRIPWIRE "Matches 3 chars that shouldn't be together" on \
-		WEEDS "Looks at alphanum, hex, lower-, uppercase chars" on \
-		WEEDS2 "More restrictive than WEEDS, dont use together" off
+		WEEDS "Looks at alphanum, hex, lower-, uppercase chars" off \
+		WEEDS2 "More restrictive than WEEDS, dont use together" on
 SUB_FILES=	pkg-message
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -49,11 +51,11 @@ INSTALL_DIR=	${PREFIX}/${SPAMASS_CONF}
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_AHBL)
+.if !defined(WITHOUT_AHBL)
 SPAMASS_FILES+=	20_dnsbl_ahbl.cf
 .endif
 
-.if defined(WITH_AIRMAX)
+.if !defined(WITHOUT_AIRMAX)
 SPAMASS_FILES+=	airmax.cf
 .endif
 
@@ -88,20 +90,28 @@ SPAMASS_FILES+=	evilnumbers.cf
 SPAMASS_FILES+=	french_rules.cf
 .endif
 
-.if defined(WITH_GERMAN)
+.if !defined(WITHOUT_GERMAN)
 SPAMASS_FILES+=	70_zmi_german.cf
 .endif
 
-.if defined(WITH_GREEK)
+.if !defined(WITHOUT_GREEK)
 SPAMASS_FILES+=	gr_domain.cf
 .endif
 
-.if defined(WITH_MANGLED)
+.if !defined(WITHOUT_MALWARE)
+SPAMASS_FILES+=	malwarepatrol.cf
+.endif
+
+.if !defined(WITHOUT_MANGLED)
 SPAMASS_FILES+=	mangled.cf
 .endif
 
-.if defined(WITH_MIMEVLD)
+.if !defined(WITHOUT_MIMEVLD)
 SPAMASS_FILES+=	mime_validate.cf
+.endif
+
+.if !defined(WITHOUT_NIXSPAM)
+SPAMASS_FILES+=	20_dnsbl_nixspam.cf
 .endif
 
 .if !defined(WITHOUT_RANDOM)
@@ -122,13 +132,13 @@ SPAMASS_FILES+=	$i
 .endfor
 .endif
 
-.if defined(WITH_SARE1)
+.if !defined(WITHOUT_SARE1)
 .for i in 70_sare_header1.cf 70_sare_html1.cf 70_sare_genlsubj1.cf 70_sare_obfu1.cf 70_sare_uri1.cf
 SPAMASS_FILES+=	$i
 .endfor
 .endif
 
-.if defined(WITH_SARE2)
+.if !defined(WITHOUT_SARE2)
 .for i in 70_sare_header2.cf 70_sare_html2.cf 70_sare_genlsubj2.cf 70_sare_obfu2.cf 70_sare_uri2.cf
 SPAMASS_FILES+=	$i
 .endfor
@@ -144,19 +154,19 @@ SPAMASS_FILES+=	$i
 SPAMASS_FILES+=	70_sare_highrisk.cf
 .endif
 
-.if defined(WITH_SAREW)
+.if !defined(WITHOUT_SAREW)
 SPAMASS_FILES+=	70_sare_whitelist.cf
 .endif
 
-.if defined(WITH_TRIPWIRE)
+.if !defined(WITHOUT_TRIPWIRE)
 SPAMASS_FILES+=	99_FVGT_Tripwire.cf
 .endif
 
-.if !defined(WITHOUT_WEEDS) && !defined(WITH_WEEDS2)
+.if defined(WITH_WEEDS) && defined(WITHOUT_WEEDS2)
 SPAMASS_FILES+=	weeds.cf
 .endif
 
-.if defined(WITH_WEEDS2) && defined(WITHOUT_WEEDS)
+.if !defined(WITHOUT_WEEDS2) && !defined(WITH_WEEDS)
 SPAMASS_FILES+=	weeds2.cf
 .endif
 
