@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3042c33a-f237-11df-9d02-0018fe623f2b">
+    <topic>openssl -- TLS extension parsing race condition</topic>
+    <affects>
+      <package>
+        <name>openssl</name>
+        <range><lt>1.0.0_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>OpenSSL Team reports:</p>
+        <blockquote cite="http://openssl.org/news/secadv_20101116.txt">
+          <p>Rob Hulswit has found a flaw in the OpenSSL TLS server extension
+            code parsing which on affected servers can be exploited in a buffer
+            overrun attack.</p>
+          <p>Any OpenSSL based TLS server is vulnerable if it is multi-threaded
+            and uses OpenSSL's internal caching mechanism. Servers that are
+            multi-process and/or disable internal session caching are NOT
+            affected.</p>
+          <p>In particular the Apache HTTP server (which never uses OpenSSL
+            internal caching) and Stunnel (which includes its own workaround)
+            are NOT affected.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-3864</cvename>
+      <url>http://openssl.org/news/secadv_20101116.txt</url>
+    </references>
+    <dates>
+      <discovery>2010-10-08</discovery>
+      <entry>2010-11-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="76b597e4-e9c6-11df-9e10-001b2134ef46">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
