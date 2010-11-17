@@ -1,0 +1,30 @@
+--- ./Makefile.orig	2010-11-09 17:21:47.000000000 +0100
++++ ./Makefile	2010-11-17 11:43:24.638891288 +0100
+@@ -153,19 +153,22 @@
+ #----------------------------------------------------------
+ install: $(BINNAME)
+ 	@echo "    Installing $(INSTALL_DIR)/bin/gogglesmm ..."
+-	@$(INSTALL) -m 755 -D src/gogglesmm $(INSTALL_DIR)/bin/gogglesmm
++	@$(INSTALL) -m 755 src/gogglesmm $(INSTALL_DIR)/bin/gogglesmm
+ 	@echo "    Installing $(INSTALL_DIR)/share/applications/gogglesmm.desktop"
+-	@$(INSTALL) -m 644 -D extra/gogglesmm.desktop $(INSTALL_DIR)/share/applications/gogglesmm.desktop
++	@mkdir -p $(INSTALL_DIR)/share/applications/
++	@$(INSTALL) -m 644 extra/gogglesmm.desktop $(INSTALL_DIR)/share/applications/gogglesmm.desktop
+ 	@echo "    Installing $(INSTALL_DIR)/share/icons/hicolor/48x48/apps/gogglesmm.png"
+-	@$(INSTALL) -m 644 -D extra/gogglesmm.png $(INSTALL_DIR)/share/icons/hicolor/48x48/apps/gogglesmm.png
++	@mkdir -p $(INSTALL_DIR)/share/icons/hicolor/48x48/apps/
++	@$(INSTALL) -m 644 extra/gogglesmm.png $(INSTALL_DIR)/share/icons/hicolor/48x48/apps/gogglesmm.png
+ 	@echo "    Installing $(INSTALL_MANDIR)/man1/gogglesmm.1"
+-	@$(INSTALL) -m 644 -D extra/gogglesmm.1 $(INSTALL_MANDIR)/man1/gogglesmm.1
++	@$(INSTALL) -m 644 extra/gogglesmm.1 $(INSTALL_MANDIR)/man1/gogglesmm.1
+ ifneq (,$(findstring nls,$(OPTIONS)))
+ 	@echo "    Installing Translations"
+ 	@linguas='$(filter $(TRANSLATIONS),$(LINGUAS))'; \
+ 	for tr in $$linguas ; do \
+     echo "    Installing $(INSTALL_LOCALEDIR)/$$tr/LC_MESSAGES/gogglesmm.mo" ;\
+-  	$(INSTALL) -m 644 -D po/$$tr.mo -T $(INSTALL_LOCALEDIR)/$$tr/LC_MESSAGES/gogglesmm.mo ; \
++    	mkdir -p $(INSTALL_LOCALEDIR)/$$tr/LC_MESSAGES/; \
++  	$(INSTALL) -m 644 po/$$tr.mo $(INSTALL_LOCALEDIR)/$$tr/LC_MESSAGES/gogglesmm.mo ; \
+ 	done;
+ endif
+ 
