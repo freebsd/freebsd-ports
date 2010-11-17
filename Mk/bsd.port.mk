@@ -6035,7 +6035,7 @@ config:
 		elif [ ! -z "$${withoutval}" ]; then \
 			val=off; \
 		else \
-			val=$$3; \
+			val=$${defaultval}; \
 		fi; \
 		DEFOPTIONS="$${DEFOPTIONS} $$1 \"$$2\" $${val}"; \
 		shift 3; \
@@ -6140,7 +6140,7 @@ showconfig:
 		elif [ ! -z "$${withoutval}" ]; then \
 			val=off; \
 		else \
-			val="$$3 (default)"; \
+			val="$${defaultval} (default)"; \
 		fi; \
 		${ECHO_MSG} "     $$1=$${val} \"$$2\""; \
 		shift 3; \
