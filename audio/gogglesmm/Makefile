@@ -27,7 +27,7 @@ OPTIONS=	DBUS "Add DBUS support" on \
 		GCRYPT "Use libgcrypt for md5 calculation" off
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--mandir=${LOCALBASE}/man
+CONFIGURE_ARGS+=	--mandir=${LOCALBASE}/man --prefix=${PREFIX}
 MAKE_JOBS_SAFE=	yes
 USE_GMAKE=	yes
 USE_XZ=		yes
