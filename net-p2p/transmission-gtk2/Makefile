@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTREVISION=	0
 PKGNAMESUFFIX=	-gtk2
 
 MAINTAINER=	mezz@FreeBSD.org
@@ -33,11 +33,11 @@ EXTRA_CONF_ARGS=--disable-cli \
 		--disable-mac \
 		--enable-nls
 
-MAN1=		transmission.1
+MAN1=		transmission-gtk.1
 
 post-patch: general-patch
 	@${REINPLACE_CMD} -e 's|TryExec=.*||g ; /^$$/d' \
-		${WRKSRC}/gtk/transmission.desktop.in
+		${WRKSRC}/gtk/transmission-gtk.desktop.in
 
 post-install: general-install
 	@-update-desktop-database

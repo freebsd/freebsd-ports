@@ -1,4 +1,7 @@
-bin/transmissioncli
+bin/transmission-cli
+bin/transmission-create
+bin/transmission-edit
+bin/transmission-show
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
