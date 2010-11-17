@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	pire
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://cloud.github.com/downloads/dprokoptsev/${PORTNAME}/ \
 		http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Perl Incompatible Regular Expressions library
+
+LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -29,10 +32,6 @@ CONFIGURE_ARGS=	--with-cppunit-prefix=${LOCALBASE}
 
 regression-test:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
-.endif
-
-.if ${ARCH} == "ia64"
-BROKEN=		unittest fails, so the library is likely unuseable
 .endif
 
 .include <bsd.port.mk>
