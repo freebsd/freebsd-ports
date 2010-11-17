@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	trafficserver
-PORTVERSION=	2.1.1
-PORTREVISION=	2
+PORTVERSION=	2.1.4
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	trafficserver
+MASTER_SITES=	APACHE/${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-unstable
 
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	A fast, scalable and extensible HTTP proxy server
 
-BUILD_DEPENDS=	expat>0:${PORTSDIR}/textproc/expat2 \
-		pcre>0:${PORTSDIR}/devel/pcre
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LICENSE=	ASL
+
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
+		expat.6:${PORTSDIR}/textproc/expat2 \
+		pcre.0:${PORTSDIR}/devel/pcre
 
 USE_AUTOTOOLS=	autoconf:268 automake:111 libtool:22
 USE_BZIP2=	yes
@@ -32,8 +31,8 @@ USE_RC_SUBR=	${PORTNAME}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-BUILD_DEPENDS+=	xz>0:${PORTSDIR}/archivers/xz
-RUN_DEPENDS+=	xz>0:${PORTSDIR}/archivers/xz
+BUILD_DEPENDS=	xz>0:${PORTSDIR}/archivers/xz
+RUN_DEPENDS=	xz>0:${PORTSDIR}/archivers/xz
 .endif
 
 .if ${OSVERSION} < 700000
