@@ -17,8 +17,15 @@ COMMENT=	A python module communicates with Transmission through json-rpc
 
 LICENSE=	MIT
 
-USE_PYTHON=		2.6+
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=	2.6+
+USE_PYDISTUTILS=easy_install
+
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+
+.if !defined(NOPORTDOCS)
+PLIST_DIRS=	%%DOCSDIR%%
+PLIST_FILES+=	%%DOCSDIR%%/README
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
