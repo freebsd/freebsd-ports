@@ -7,7 +7,7 @@
 
 PORTNAME=	qjackctl
 DISTVERSION=	0.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -18,6 +18,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+MAKE_JOBS_UNSAFE=yes
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build gui xml linguist_build
 CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
