@@ -60,6 +60,7 @@ bin/ctest
 %%DATADIR%%/Modules/CMakeMSYSFindMake.cmake
 %%DATADIR%%/Modules/CMakeMinGWFindMake.cmake
 %%DATADIR%%/Modules/CMakeNMakeFindMake.cmake
+%%DATADIR%%/Modules/CMakeParseArguments.cmake
 %%DATADIR%%/Modules/CMakeParseImplicitLinkInfo.cmake
 %%DATADIR%%/Modules/CMakePlatformId.h.in
 %%DATADIR%%/Modules/CMakePrintSystemInformation.cmake
@@ -227,6 +228,7 @@ bin/ctest
 %%DATADIR%%/Modules/FindKDE4.cmake
 %%DATADIR%%/Modules/FindLAPACK.cmake
 %%DATADIR%%/Modules/FindLATEX.cmake
+%%DATADIR%%/Modules/FindLibArchive.cmake
 %%DATADIR%%/Modules/FindLibXml2.cmake
 %%DATADIR%%/Modules/FindLibXslt.cmake
 %%DATADIR%%/Modules/FindLua50.cmake
@@ -252,6 +254,7 @@ bin/ctest
 %%DATADIR%%/Modules/FindPhysFS.cmake
 %%DATADIR%%/Modules/FindPike.cmake
 %%DATADIR%%/Modules/FindPkgConfig.cmake
+%%DATADIR%%/Modules/FindPostgreSQL.cmake
 %%DATADIR%%/Modules/FindProducer.cmake
 %%DATADIR%%/Modules/FindProtobuf.cmake
 %%DATADIR%%/Modules/FindPythonInterp.cmake
@@ -347,6 +350,21 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/BSDOS.cmake
 %%DATADIR%%/Modules/Platform/BeOS.cmake
 %%DATADIR%%/Modules/Platform/BlueGeneL.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneP-base.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneP-dynamic-GNU-C.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneP-dynamic-GNU-CXX.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneP-dynamic-GNU-Fortran.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneP-dynamic-XL-C.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneP-dynamic-XL-CXX.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneP-dynamic-XL-Fortran.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneP-dynamic.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneP-static-GNU-C.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneP-static-GNU-CXX.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneP-static-GNU-Fortran.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneP-static-XL-C.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneP-static-XL-CXX.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneP-static-XL-Fortran.cmake
+%%DATADIR%%/Modules/Platform/BlueGeneP-static.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN-GNU-C.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN-GNU-CXX.cmake
 %%DATADIR%%/Modules/Platform/CYGWIN-GNU-Fortran.cmake

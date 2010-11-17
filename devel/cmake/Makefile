@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	cmake
-PORTVERSION=	2.8.2
-PORTREVISION=	1
+PORTVERSION=	2.8.3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cmake.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/
+MASTER_SITES=	http://www.${PORTNAME}.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A cross-platform Makefile generator
