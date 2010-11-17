@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		efax-gtk
-PORTVERSION=		3.2.5
+PORTVERSION=		3.2.6
 CATEGORIES=		comms
 MASTER_SITES=		SF
 EXTRACT_SUFX=		.src.tgz
@@ -19,6 +19,8 @@ LIB_DEPENDS=		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
 			dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=		ggv:${PORTSDIR}/print/ggv
 
+LICENSE=		GPLv2
+
 USE_ICONV=		yes
 USE_GHOSTSCRIPT_RUN=	yes
 USE_GNOME=		gtk20
@@ -26,7 +28,6 @@ GNU_CONFIGURE=		yes
 MAKE_JOBS_SAFE=		yes
 
 MAN1=			efax.1 efix.1 efax-gtk.1
-LICENSE=		GPLv2
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
