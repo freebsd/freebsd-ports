@@ -1,61 +1,101 @@
+bin/lgc-pg
+bin/lged
 bin/lgeneral
-share/games/lgeneral/gfx/font_credit.bmp
-share/games/lgeneral/gfx/title.bmp
-share/games/lgeneral/themes/default/click.wav
-share/games/lgeneral/themes/default/edit.wav
-share/games/lgeneral/themes/default/bkgnd.bmp
-share/games/lgeneral/themes/default/brief_frame.bmp
-share/games/lgeneral/themes/default/confirm_buttons.bmp
-share/games/lgeneral/themes/default/ctrl_buttons.bmp
-share/games/lgeneral/themes/default/cursors.bmp
-share/games/lgeneral/themes/default/deploy_buttons.bmp
-share/games/lgeneral/themes/default/folder.bmp
-share/games/lgeneral/themes/default/font_brief.bmp
-share/games/lgeneral/themes/default/font_error.bmp
-share/games/lgeneral/themes/default/font_status.bmp
-share/games/lgeneral/themes/default/font_std.bmp
-share/games/lgeneral/themes/default/font_turn_info.bmp
-share/games/lgeneral/themes/default/fr_hori.bmp
-share/games/lgeneral/themes/default/fr_llc.bmp
-share/games/lgeneral/themes/default/fr_luc.bmp
-share/games/lgeneral/themes/default/fr_rlc.bmp
-share/games/lgeneral/themes/default/fr_ruc.bmp
-share/games/lgeneral/themes/default/fr_vert.bmp
-share/games/lgeneral/themes/default/menu0_buttons.bmp
-share/games/lgeneral/themes/default/menu1_buttons.bmp
-share/games/lgeneral/themes/default/menu2_buttons.bmp
-share/games/lgeneral/themes/default/menu3_buttons.bmp
-share/games/lgeneral/themes/default/menu4_buttons.bmp
-share/games/lgeneral/themes/default/module_buttons.bmp
-share/games/lgeneral/themes/default/scen_dlg_buttons.bmp
-share/games/lgeneral/themes/default/scroll_buttons.bmp
-share/games/lgeneral/themes/default/setup_confirm_buttons.bmp
-share/games/lgeneral/themes/default/unit_buttons.bmp
-share/games/lgeneral/themes/default/wallpaper.bmp
-@dirrm share/games/lgeneral/gfx/terrain
-@dirrm share/games/lgeneral/gfx/units
-@dirrm share/games/lgeneral/gfx/flags
-@dirrm share/games/lgeneral/themes/default
-@dirrm share/games/lgeneral/campaigns
-@dirrm share/games/lgeneral/maps
-@dirrm share/games/lgeneral/nations
-@dirrm share/games/lgeneral/sounds
-@dirrm share/games/lgeneral/music
-@dirrm share/games/lgeneral/units
-@dirrm share/games/lgeneral/scenarios
-@dirrm share/games/lgeneral/ai_modules
-@dirrm share/games/lgeneral/gfx
-@dirrm share/games/lgeneral/themes
-@dirrm share/games/lgeneral
-@dirrm share/games
-@exec mkdir -p  %D/share/games/lgeneral/gfx/units
-@exec mkdir -p  %D/share/games/lgeneral/gfx/terrain
-@exec mkdir -p  %D/share/games/lgeneral/gfx/flags
-@exec mkdir -p  %D/share/games/lgeneral/nations
-@exec mkdir -p  %D/share/games/lgeneral/units
-@exec mkdir -p  %D/share/games/lgeneral/sounds
-@exec mkdir -p  %D/share/games/lgeneral/maps
-@exec mkdir -p  %D/share/games/lgeneral/scenarios
-@exec mkdir -p  %D/share/games/lgeneral/campaigns
-@exec mkdir -p  %D/share/games/lgeneral/music
-@exec mkdir -p  %D/share/games/lgeneral/ai_modules
+bin/ltrextract
+bin/shptool
+share/applications/lgeneral.desktop
+%%PORTDOCS%%%%DOCSDIR%%/README.lgc-pg
+%%PORTDOCS%%%%DOCSDIR%%/README.lgeneral
+%%PORTDOCS%%%%DOCSDIR%%/README.redit
+%%DATADIR%%/campaigns/PG
+%%DATADIR%%/convdata/air.wav
+%%DATADIR%%/convdata/air2.wav
+%%DATADIR%%/convdata/attack.bmp
+%%DATADIR%%/convdata/battle.wav
+%%DATADIR%%/convdata/crosshair.bmp
+%%DATADIR%%/convdata/damage_bars.bmp
+%%DATADIR%%/convdata/danger.bmp
+%%DATADIR%%/convdata/fog.bmp
+%%DATADIR%%/convdata/grid.bmp
+%%DATADIR%%/convdata/guard.bmp
+%%DATADIR%%/convdata/leg.wav
+%%DATADIR%%/convdata/mapnames
+%%DATADIR%%/convdata/move.bmp
+%%DATADIR%%/convdata/reinf
+%%DATADIR%%/convdata/road2.bmp
+%%DATADIR%%/convdata/sea.wav
+%%DATADIR%%/convdata/select.wav
+%%DATADIR%%/convdata/select_frame.bmp
+%%DATADIR%%/convdata/strength.bmp
+%%DATADIR%%/convdata/title.bmp
+%%DATADIR%%/convdata/tracked.wav
+%%DATADIR%%/convdata/wheeled.wav
+%%DATADIR%%/gfx/font_credit.bmp
+%%DATADIR%%/gfx/title.bmp
+%%DATADIR%%/themes/default/bkgnd.bmp
+%%DATADIR%%/themes/default/brief_frame.bmp
+%%DATADIR%%/themes/default/click.wav
+%%DATADIR%%/themes/default/confirm_buttons.bmp
+%%DATADIR%%/themes/default/ctrl_buttons.bmp
+%%DATADIR%%/themes/default/cursors.bmp
+%%DATADIR%%/themes/default/deploy_buttons.bmp
+%%DATADIR%%/themes/default/edit.wav
+%%DATADIR%%/themes/default/folder.bmp
+%%DATADIR%%/themes/default/font_brief.bmp
+%%DATADIR%%/themes/default/font_error.bmp
+%%DATADIR%%/themes/default/font_status.bmp
+%%DATADIR%%/themes/default/font_std.bmp
+%%DATADIR%%/themes/default/font_turn_info.bmp
+%%DATADIR%%/themes/default/fr_hori.bmp
+%%DATADIR%%/themes/default/fr_llc.bmp
+%%DATADIR%%/themes/default/fr_luc.bmp
+%%DATADIR%%/themes/default/fr_rlc.bmp
+%%DATADIR%%/themes/default/fr_ruc.bmp
+%%DATADIR%%/themes/default/fr_vert.bmp
+%%DATADIR%%/themes/default/menu0_buttons.bmp
+%%DATADIR%%/themes/default/menu1_buttons.bmp
+%%DATADIR%%/themes/default/menu2_buttons.bmp
+%%DATADIR%%/themes/default/menu3_buttons.bmp
+%%DATADIR%%/themes/default/menu4_buttons.bmp
+%%DATADIR%%/themes/default/module_buttons.bmp
+%%DATADIR%%/themes/default/scen_dlg_buttons.bmp
+%%DATADIR%%/themes/default/scroll_buttons.bmp
+%%DATADIR%%/themes/default/setup_confirm_buttons.bmp
+%%DATADIR%%/themes/default/strength_buttons.bmp
+%%DATADIR%%/themes/default/unit_buttons.bmp
+%%DATADIR%%/themes/default/wallpaper.bmp
+%%NLS%%share/locale/de/LC_MESSAGES/lgeneral.mo
+%%NLS%%share/locale/de/LC_MESSAGES/pg.mo
+%%NLS%%share/locale/en/LC_MESSAGES/lgeneral.mo
+%%NLS%%share/locale/en/LC_MESSAGES/pg.mo
+share/pixmaps/lgeneral48.png
+@dirrmtry %%DATADIR%%/units
+@dirrmtry %%DATADIR%%/themes/default
+@dirrmtry %%DATADIR%%/themes
+@dirrmtry %%DATADIR%%/terrain
+@dirrmtry %%DATADIR%%/sounds
+@dirrmtry %%DATADIR%%/scenarios
+@dirrmtry %%DATADIR%%/nations
+@dirrmtry %%DATADIR%%/music
+@dirrmtry %%DATADIR%%/maps
+@dirrmtry %%DATADIR%%/gfx/units
+@dirrmtry %%DATADIR%%/gfx/terrain
+@dirrmtry %%DATADIR%%/gfx/flags
+@dirrmtry %%DATADIR%%/gfx
+@dirrmtry %%DATADIR%%/convdata
+@dirrmtry %%DATADIR%%/campaigns
+@dirrmtry %%DATADIR%%/ai_modules
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
+@exec mkdir -p %D/share/lgeneral/ai_modules
+@exec mkdir -p %D/share/lgeneral/gfx/flags
+@exec mkdir -p %D/share/lgeneral/gfx/terrain
+@exec mkdir -p %D/share/lgeneral/gfx/units
+@exec mkdir -p %D/share/lgeneral/maps
+@exec mkdir -p %D/share/lgeneral/music
+@exec mkdir -p %D/share/lgeneral/nations
+@exec mkdir -p %D/share/lgeneral/scenarios
+@exec mkdir -p %D/share/lgeneral/sounds
+@exec mkdir -p %D/share/lgeneral/terrain
+@exec mkdir -p %D/share/lgeneral/units
