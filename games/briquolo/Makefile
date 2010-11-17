@@ -7,7 +7,7 @@
 
 PORTNAME=	briquolo
 PORTVERSION=	0.5.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://briquolo.free.fr/download/
 
@@ -15,6 +15,8 @@ MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Breakout clone with an OpenGL 3D representation
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_ICONV=	yes

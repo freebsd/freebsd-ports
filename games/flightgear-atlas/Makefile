@@ -7,7 +7,7 @@
 
 PORTNAME=	flightgear-atlas
 PORTVERSION=	0.3.1.20090529
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -24,6 +24,8 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/include/simgear/version.h:${PORTSDIR}/devel/simgear \
 		${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/flightgear-data
+
+LICENSE=	GPLv2
 
 USE_AUTOTOOLS=	aclocal:111 autoheader:268 automake:111 autoconf:268
 AUTOMAKE_ARGS=	--add-missing
