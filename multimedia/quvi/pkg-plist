@@ -13,6 +13,7 @@ libdata/pkgconfig/libquvi.pc
 %%DATADIR%%/lua/README
 %%DATADIR%%/lua/util/charset.lua
 %%DATADIR%%/lua/util/content_type.lua
+%%DATADIR%%/lua/util/trim.lua
 %%DATADIR%%/lua/website/README
 %%DATADIR%%/lua/website/academicearth.lua
 %%DATADIR%%/lua/website/bloomberg.lua
@@ -35,9 +36,9 @@ libdata/pkgconfig/libquvi.pc
 %%DATADIR%%/lua/website/theonion.lua
 %%DATADIR%%/lua/website/vimeo.lua
 %%DATADIR%%/lua/website/youtube.lua
-%%SMUT%%%%DATADIR%%/lua/website/tube8.lua
-%%SMUT%%%%DATADIR%%/lua/website/xvideos.lua
-%%SMUT%%%%DATADIR%%/lua/website/youjizz.lua
+%%NSFW%%%%DATADIR%%/lua/website/tube8.lua
+%%NSFW%%%%DATADIR%%/lua/website/xvideos.lua
+%%NSFW%%%%DATADIR%%/lua/website/youjizz.lua
 @dirrm %%DATADIR%%/lua/website
 @dirrm %%DATADIR%%/lua/util
 @dirrm %%DATADIR%%/lua
