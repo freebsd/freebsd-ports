@@ -18,6 +18,8 @@ COMMENT=	A simple RTF editor
 
 BUILD_DEPENDS=	objc:${PORTSDIR}/lang/objc
 
+BROKEN=		does not compile
+
 USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xext xt
 USE_MOTIF=	yes
