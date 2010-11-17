@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	afflib
-PORTVERSION=	3.6.3
+PORTVERSION=	3.6.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://afflib.org/downloads/ \
 		http://www.c-s.li/ports/
