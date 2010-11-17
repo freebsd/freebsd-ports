@@ -10947,6 +10947,7 @@ p5-App-CLI-Extension            ports/devel/p5-App-CLI-Extension
 p5-App-Cache                    ports/devel/p5-App-Cache
 p5-App-Cmd                      ports/devel/p5-App-Cmd
 p5-App-Control                  ports/devel/p5-App-Control
+p5-App-GitGot                   ports/devel/p5-App-GitGot
 p5-App-Info                     ports/devel/p5-App-Info
 p5-App-Nopaste                  ports/www/p5-App-Nopaste
 p5-App-Options                  ports/devel/p5-App-Options
@@ -10970,6 +10971,7 @@ p5-Array-IntSpan                ports/misc/p5-Array-IntSpan
 p5-Array-Iterator               ports/devel/p5-Array-Iterator
 p5-Array-PrintCols              ports/misc/p5-Array-PrintCols
 p5-Array-RefElem                ports/misc/p5-Array-RefElem
+p5-Array-Unique                 ports/devel/p5-Array-Unique
 p5-Array-Window                 ports/devel/p5-Array-Window
 p5-AsciiDB-TagFile              ports/databases/p5-AsciiDB-TagFile
 p5-Asterisk                     ports/misc/p5-Asterisk
@@ -12365,6 +12367,7 @@ p5-Getopt-Mixed                 ports/devel/p5-Getopt-Mixed
 p5-Getopt-Popt                  ports/devel/p5-Getopt-Popt
 p5-Git-PurePerl                 ports/devel/p5-Git-PurePerl
 p5-Git-Repository               ports/devel/p5-Git-Repository
+p5-Git-Wrapper                  ports/devel/p5-Git-Wrapper
 p5-Glade2                       ports/x11-toolkits/p5-Glade2
 p5-Glib2                        ports/devel/p5-Glib2
 p5-Gnome2                       ports/x11-toolkits/p5-Gnome2
@@ -12950,6 +12953,7 @@ p5-Math-BigInt                  ports/math/p5-Math-BigInt
 p5-Math-BigInt-GMP              ports/math/p5-Math-BigInt-GMP
 p5-Math-BigInt-Pari             ports/math/p5-Math-BigInt-Pari
 p5-Math-BigRat                  ports/math/p5-Math-BigRat
+p5-Math-CDF                     ports/math/p5-Math-CDF
 p5-Math-Calc-Units              ports/math/p5-Math-Calc-Units
 p5-Math-Cephes                  ports/math/p5-Math-Cephes
 p5-Math-Combinatorics           ports/math/p5-Math-Combinatorics
@@ -13090,6 +13094,7 @@ p5-Moose                        ports/devel/p5-Moose
 p5-Moose-Autobox                ports/devel/p5-Moose-Autobox
 p5-Moose-Policy                 ports/devel/p5-Moose-Policy
 p5-MooseX-Aliases               ports/devel/p5-MooseX-Aliases
+p5-MooseX-App-Cmd               ports/devel/p5-MooseX-App-Cmd
 p5-MooseX-Async                 ports/devel/p5-MooseX-Async
 p5-MooseX-AttributeHelpers      ports/devel/p5-MooseX-AttributeHelpers
 p5-MooseX-ClassAttribute        ports/devel/p5-MooseX-ClassAttribute
@@ -14129,6 +14134,7 @@ p5-Test-Dir                     ports/misc/p5-Test-Dir
 p5-Test-Distribution            ports/devel/p5-Test-Distribution
 p5-Test-Exception               ports/devel/p5-Test-Exception
 p5-Test-Expect                  ports/devel/p5-Test-Expect
+p5-Test-Fatal                   ports/devel/p5-Test-Fatal
 p5-Test-File                    ports/devel/p5-Test-File
 p5-Test-File-Contents           ports/devel/p5-Test-File-Contents
 p5-Test-Fixture-DBIC-Schema     ports/devel/p5-Test-Fixture-DBIC-Schema
@@ -14893,6 +14899,7 @@ p5-app-cli-extension            ports/devel/p5-App-CLI-Extension
 p5-app-cmd                      ports/devel/p5-App-Cmd
 p5-app-control                  ports/devel/p5-App-Control
 p5-app-cpanminus                ports/devel/p5-App-cpanminus
+p5-app-gitgot                   ports/devel/p5-App-GitGot
 p5-app-info                     ports/devel/p5-App-Info
 p5-app-nopaste                  ports/www/p5-App-Nopaste
 p5-app-options                  ports/devel/p5-App-Options
@@ -14916,6 +14923,7 @@ p5-array-intspan                ports/misc/p5-Array-IntSpan
 p5-array-iterator               ports/devel/p5-Array-Iterator
 p5-array-printcols              ports/misc/p5-Array-PrintCols
 p5-array-refelem                ports/misc/p5-Array-RefElem
+p5-array-unique                 ports/devel/p5-Array-Unique
 p5-array-window                 ports/devel/p5-Array-Window
 p5-asa                          ports/devel/p5-asa
 p5-asciidb-tagfile              ports/databases/p5-AsciiDB-TagFile
@@ -16332,6 +16340,7 @@ p5-gis-distance-fast            ports/math/p5-GIS-Distance-Fast
 p5-gis-distance-lite            ports/math/p5-GIS-Distance-Lite
 p5-git-pureperl                 ports/devel/p5-Git-PurePerl
 p5-git-repository               ports/devel/p5-Git-Repository
+p5-git-wrapper                  ports/devel/p5-Git-Wrapper
 p5-github_creator               ports/devel/p5-github_creator
 p5-glade2                       ports/x11-toolkits/p5-Glade2
 p5-glib2                        ports/devel/p5-Glib2
@@ -16914,6 +16923,7 @@ p5-math-bigint-gmp              ports/math/p5-Math-BigInt-GMP
 p5-math-bigint-pari             ports/math/p5-Math-BigInt-Pari
 p5-math-bigrat                  ports/math/p5-Math-BigRat
 p5-math-calc-units              ports/math/p5-Math-Calc-Units
+p5-math-cdf                     ports/math/p5-Math-CDF
 p5-math-cephes                  ports/math/p5-Math-Cephes
 p5-math-combinatorics           ports/math/p5-Math-Combinatorics
 p5-math-complex                 ports/math/p5-Math-Complex
@@ -17075,6 +17085,7 @@ p5-moose                        ports/devel/p5-Moose
 p5-moose-autobox                ports/devel/p5-Moose-Autobox
 p5-moose-policy                 ports/devel/p5-Moose-Policy
 p5-moosex-aliases               ports/devel/p5-MooseX-Aliases
+p5-moosex-app-cmd               ports/devel/p5-MooseX-App-Cmd
 p5-moosex-async                 ports/devel/p5-MooseX-Async
 p5-moosex-attributehelpers      ports/devel/p5-MooseX-AttributeHelpers
 p5-moosex-classattribute        ports/devel/p5-MooseX-ClassAttribute
@@ -18155,6 +18166,7 @@ p5-test-dir                     ports/misc/p5-Test-Dir
 p5-test-distribution            ports/devel/p5-Test-Distribution
 p5-test-exception               ports/devel/p5-Test-Exception
 p5-test-expect                  ports/devel/p5-Test-Expect
+p5-test-fatal                   ports/devel/p5-Test-Fatal
 p5-test-file                    ports/devel/p5-Test-File
 p5-test-file-contents           ports/devel/p5-Test-File-Contents
 p5-test-fixture-dbic-schema     ports/devel/p5-Test-Fixture-DBIC-Schema
@@ -20690,6 +20702,7 @@ ptmalloc2                       ports/devel/ptmalloc2
 ptoc                            ports/lang/ptoc
 ptools                          ports/games/ptools
 ptpd                            ports/net/ptpd
+ptpd2                           ports/net/ptpd2
 ptunnel                         ports/net/ptunnel
 pty                             ports/devel/pty
 ptypes                          ports/devel/ptypes
@@ -21385,6 +21398,7 @@ py-south                        ports/databases/py-south
 py-soya3d                       ports/graphics/py-soya3d
 py-spambayes                    ports/mail/py-spambayes
 py-spark                        ports/devel/py-spark
+py-speaklater                   ports/devel/py-speaklater
 py-speex                        ports/audio/py-speex
 py-spf                          ports/mail/py-spf
 py-sphinx                       ports/textproc/py-sphinx
