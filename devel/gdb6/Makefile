@@ -18,6 +18,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gdb
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	GNU GDB of newer version than comes with the system
 
+LATEST_LINK=	gdb6
+
 OPTIONS=	INSIGHT "Build the Tcl/Tk GUI (experimental!)" off
 
 USE_BZIP2=	yes
