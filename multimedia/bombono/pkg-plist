@@ -14,6 +14,7 @@ share/applications/bombono-dvd.desktop
 %%DATADIR%%/resources/button/008.ico
 %%DATADIR%%/resources/button/still.ico
 %%DATADIR%%/resources/cap400.png
+%%DATADIR%%/resources/copy-n-paste/lpetool_show_bbox.png
 %%DATADIR%%/resources/copy-n-paste/HelixPlayer_Activity-watch-listen.svg
 %%DATADIR%%/resources/copy-n-paste/HelixPlayer_Activity-watch-listen/12.png
 %%DATADIR%%/resources/copy-n-paste/HelixPlayer_Activity-watch-listen/16.png
@@ -66,6 +67,16 @@ share/applications/bombono-dvd.desktop
 %%DATADIR%%/resources/frames/roundrect/frame.png
 %%DATADIR%%/resources/frames/roundrect/vframe.png
 %%DATADIR%%/resources/frames/samples/background.png
+%%DATADIR%%/resources/frames/shadow & white/frame.png
+%%DATADIR%%/resources/frames/shadow & white/vframe.png
+%%DATADIR%%/resources/frames/shadow/frame.png
+%%DATADIR%%/resources/frames/shadow/vframe.png
+%%DATADIR%%/resources/frames/shadow2/frame.png
+%%DATADIR%%/resources/frames/shadow2/info
+%%DATADIR%%/resources/frames/shadow2/vframe.png
+%%DATADIR%%/resources/frames/slide/frame.png
+%%DATADIR%%/resources/frames/slide/info
+%%DATADIR%%/resources/frames/slide/vframe.png
 %%DATADIR%%/resources/frames/stonerect/frame.png
 %%DATADIR%%/resources/frames/stonerect/vframe.png
 %%DATADIR%%/resources/gtkrc
@@ -76,16 +87,31 @@ share/applications/bombono-dvd.desktop
 %%DATADIR%%/resources/icons/bombono-dvd_64px.png
 %%DATADIR%%/resources/scons_authoring/ADVD.py
 %%DATADIR%%/resources/scons_authoring/README
+%%DATADIR%%/resources/scons_authoring/README-ru
 %%DATADIR%%/resources/scons_authoring/SConsTwin.py
 %%DATADIR%%/resources/scons_authoring/SConstruct
 %%DATADIR%%/resources/scons_authoring/menu_SConscript
 %%DATADIR%%/resources/tool-pointer.png
 %%DATADIR%%/resources/tool-text.png
 share/pixmaps/bombono-dvd.png
+share/locale/cs/LC_MESSAGES/bombono-dvd.mo
+share/locale/da/LC_MESSAGES/bombono-dvd.mo
+share/locale/es/LC_MESSAGES/bombono-dvd.mo
+share/locale/fi/LC_MESSAGES/bombono-dvd.mo
+share/locale/fr/LC_MESSAGES/bombono-dvd.mo
+share/locale/it/LC_MESSAGES/bombono-dvd.mo
+share/locale/nn/LC_MESSAGES/bombono-dvd.mo
+share/locale/ru/LC_MESSAGES/bombono-dvd.mo
+share/locale/sv/LC_MESSAGES/bombono-dvd.mo
+share/locale/vi/LC_MESSAGES/bombono-dvd.mo
 @dirrmtry share/applications
 @dirrm %%DATADIR%%/resources/scons_authoring
 @dirrm %%DATADIR%%/resources/icons
 @dirrm %%DATADIR%%/resources/frames/stonerect
+@dirrm %%DATADIR%%/resources/frames/slide
+@dirrm %%DATADIR%%/resources/frames/shadow2
+@dirrm %%DATADIR%%/resources/frames/shadow
+@dirrm %%DATADIR%%/resources/frames/shadow & white
 @dirrm %%DATADIR%%/resources/frames/samples
 @dirrm %%DATADIR%%/resources/frames/roundrect
 @dirrm %%DATADIR%%/resources/frames/rect

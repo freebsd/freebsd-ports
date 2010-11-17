@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	bombono
-PORTVERSION=	0.5.1
-PORTREVISION=	4
+PORTVERSION=	0.8.1
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/bombono/bombono-dvd/${PORTVERSION} \
-		http://www.stasyan.com/devel/distfiles/
+MASTER_SITES=	SF/bombono/bombono-dvd/0.8
 DISTNAME=	bombono-dvd-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	c0rn@o2.pl
 COMMENT=	DVD authoring program
 
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
@@ -21,9 +19,7 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 BUILD_DEPENDS=	GraphicsMagick>=1.1.7:${PORTSDIR}/graphics/GraphicsMagick \
 		mjpegtools>=1.9.0:${PORTSDIR}/multimedia/mjpegtools \
 		dvdread-config:${PORTSDIR}/multimedia/libdvdread
-RUN_DEPENDS=	GraphicsMagick>=1.1.7:${PORTSDIR}/graphics/GraphicsMagick \
-		mjpegtools>=1.9.0:${PORTSDIR}/multimedia/mjpegtools \
-		dvdread-config:${PORTSDIR}/multimedia/libdvdread \
+RUN_DEPENDS=	${BUILD_DEPENDS} \
 		dvda-author:${PORTSDIR}/audio/dvda-author \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		toolame:${PORTSDIR}/audio/toolame
@@ -32,6 +28,8 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk20 libxml2
 USE_GCC=	4.2+
 USE_SCONS=	yes
+USE_GETTEXT=	yes
+MAKE_JOBS_SAFE=	yes
 SCONS_ENV=	CCFLAGS="${CCFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 		LINKFLAGS="${LINKFLAGS}" PKGCONFIGDIR="${PKGCONFIGDIR}" \
 		CPPPATH="${CPPPATH}" LIBPATH="${LIBPATH}" PREFIX="${PREFIX}" \
