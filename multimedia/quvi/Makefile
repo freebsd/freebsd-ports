@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quvi
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.8
 CATEGORIES=	multimedia devel
 MASTER_SITES=	GOOGLE_CODE
 
@@ -31,9 +31,9 @@ USE_LUA=	yes
 MAN1=		quvi.1
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
-OPTIONS=	SMUT "Enable adult website support" off
+OPTIONS=	NSFW "Enable adult website support" off
 
-SHLIB_VER=	2
+SHLIB_VER=	3
 
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=--without-doc
@@ -41,11 +41,11 @@ CONFIGURE_ARGS+=--without-doc
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SMUT)
-CONFIGURE_ARGS+=--enable-smut
-PLIST_SUB+=	SMUT=""
+.if defined(WITH_NSFW)
+CONFIGURE_ARGS+=--enable-nsfw
+PLIST_SUB+=	NSFW=""
 .else
-PLIST_SUB+=	SMUT="@comment "
+PLIST_SUB+=	NSFW="@comment "
 .endif
 
 post-patch:
