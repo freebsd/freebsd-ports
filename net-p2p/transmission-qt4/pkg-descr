@@ -1,0 +1,13 @@
+A fast and lightweight QT4 BitTorrent client, loosely based on the GTK+ client.
+
+This is the only Transmission client that can act as its own self-contained
+session (as the GTK+ and Mac clients do), and can also connect to a remote
+session (as the web client and transmission-remote terminal client do).
+
+Transmission has been built from the ground up to be a lightweight, yet
+powerful BitTorrent client. Its simple, intuitive interface is designed
+to integrate tightly with whatever computing environment you choose to
+use. Transmission strikes a balance between providing useful functionality
+without feature bloat. Furthermore, it is free for anyone to use or modify.
+
+WWW: http://www.transmissionbt.com/
