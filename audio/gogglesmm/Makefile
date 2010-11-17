@@ -27,11 +27,12 @@ OPTIONS=	DBUS "Add DBUS support" on \
 		GCRYPT "Use libgcrypt for md5 calculation" off
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--mandir=${LOCALBASE}/man --prefix=${PREFIX}
+CONFIGURE_ARGS+=	--mandir=${PREFIX}/man --prefix=${PREFIX}
 MAKE_JOBS_SAFE=	yes
 USE_GMAKE=	yes
 USE_XZ=		yes
 INSTALLS_ICONS=	yes
+MAN1=		gogglesmm.1
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
