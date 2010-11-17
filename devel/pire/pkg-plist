@@ -20,6 +20,7 @@ include/pire/scanners/multi.h
 include/pire/scanners/pair.h
 include/pire/scanners/simple.h
 include/pire/scanners/slow.h
+include/pire/sse.h
 include/pire/static_assert.h
 include/pire/stub/defaults.h
 include/pire/stub/lexical_cast.h
