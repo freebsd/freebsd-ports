@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Object-Simple
-PORTVERSION=	3.0613
+PORTVERSION=	3.0615
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,8 @@ COMMENT=	Simple class builder
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Object::Simple.3
+MAN3=	Object::Simple.3 \
+	Object::Simple::Guides::Ja.3 \
+	Object::Simple::Guides.3
 
 .include <bsd.port.mk>
