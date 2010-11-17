@@ -7,7 +7,7 @@
 
 PORTNAME=	yzis
 PORTVERSION=	1.0.a.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	editors
 MASTER_SITES=	http://labs.freehackers.org/attachments/download/45/ \
 		http://contribs.martymac.org/FreeBSD-ports/distfiles/
@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a.1/-alpha1/}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Vi-like editor
+
+LICENSE_COMB=	multi
+LICENSE=	GPLv2 LGPL21
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
