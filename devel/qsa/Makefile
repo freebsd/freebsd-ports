@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	qsa
-PORTVERSION=	1.1.4
-PORTREVISION=	6
+PORTVERSION=	1.1.5
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_QT}
-MASTER_SITE_SUBDIR=../../qsa/source
+MASTER_SITE_SUBDIR=../../${PORTNAME}/source
 DISTNAME=	${PORTNAME}-x11-free-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
@@ -36,7 +35,7 @@ SUB_FILES=	pkg-message
 
 OPTIONS=	IDE "Enable the QSA Workbench (embedded scripting IDE)" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_IDE)
 CONFIGURE_ARGS+=-no-ide
@@ -61,4 +60,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
