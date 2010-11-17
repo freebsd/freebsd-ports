@@ -12,7 +12,7 @@ include/qswrapperfactory.h
 lib/libqsa.so
 lib/libqsa.so.1
 lib/libqsa.so.1.1
-lib/libqsa.so.1.1.4
+lib/libqsa.so.1.1.5
 share/doc/qsa/html/addfunction.png
 share/doc/qsa/html/articles.html
 share/doc/qsa/html/classes.html
@@ -82,6 +82,8 @@ share/doc/qsa/html/language-4-2.html
 share/doc/qsa/html/language-4.html
 share/doc/qsa/html/language-5-1-1.html
 share/doc/qsa/html/language-5-1-10.html
+share/doc/qsa/html/language-5-1-11.html
+share/doc/qsa/html/language-5-1-12.html
 share/doc/qsa/html/language-5-1-2.html
 share/doc/qsa/html/language-5-1-3.html
 share/doc/qsa/html/language-5-1-4.html
