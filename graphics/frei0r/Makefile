@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	frei0r
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 DISTVERSIONPREFIX=	plugins-
 CATEGORIES=	graphics
-MASTER_SITES=	http://piksel.no/${PORTNAME}/ \
+MASTER_SITES=	http://piksel.no/${PORTNAME}/releases/ \
 		ftp://ftp.dyne.org/${PORTNAME}/releases/ \
 		http://distfiles.macports.org/${PORTNAME}-plugins/
 
@@ -21,9 +21,8 @@ LIB_DEPENDS=	cv.2:${PORTSDIR}/graphics/opencv \
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 MAKE_JOBS_SAFE=	yes
-
-CFLAGS+=	-I${LOCALBASE}/include
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -50,9 +49,12 @@ PLIST_SUB+=	APIDOC="@comment "
 CONFIGURE_ARGS+=--disable-cpuflags
 .endif
 
+post-extract:
+	@${TOUCH} ${WRKSRC}/include/config.h.in
+
 post-patch:
-.if !defined(WITH_APIDOC)
-	@${REINPLACE_CMD} -e '/^SUBDIRS/s| doc||' ${WRKSRC}/Makefile.in
+.if defined(WITH_APIDOC)
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|include|include doc|' ${WRKSRC}/Makefile.in
 .endif
 	@${REINPLACE_CMD} -e 's|^docsdir.*|docsdir = ${DOCSDIR}|' \
 			  -e '/^install-data-am/s| install-docsDATA||' \
