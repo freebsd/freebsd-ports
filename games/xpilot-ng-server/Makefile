@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xpilot-ng
-PORTVERSION=	4.7.2
-PORTREVISION=	7
+PORTVERSION=	4.7.3
 CATEGORIES=	games
 MASTER_SITES=	SF/xpilot/xpilot_ng/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -15,9 +14,12 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	An enhanced version of XPilot (server program)
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
@@ -48,6 +50,11 @@ LDFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS=	SDL "SDL/OpenGL client" on \
 		SOUND "Sound" off
+
+DESKTOP_ENTRIES=	"Xpilot-ng X11" "Xpilot game client program" \
+			"" "xpilot-ng-x11" "Game;ArcadeGame;" false \
+			"Xpilot-ng Map Editor" "Xpilot Map Editor" \
+			"" "xpilot-ng-xp-mapedit" "Game;ArcadeGame;" false
 .endif
 
 .include <bsd.port.pre.mk>
@@ -68,13 +75,15 @@ USE_SDL=	image sdl ttf
 USE_GL=		yes
 PLIST_SUB+=	SDL=""
 MAN6+=		xpilot-ng-sdl.6
+DESKTOP_ENTRIES+=	"Xpilot-ng SDL" "Xpilot game client program" \
+			"" "xpilot-ng-sdl" "Game;ArcadeGame;" false
 .else
 CONFIGURE_ARGS+=--disable-sdl-client
 PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if defined(WITH_SOUND)
-USE_OPENAL=	al
+USE_OPENAL=	al alut
 CONFIGURE_ARGS+=--enable-sound
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
