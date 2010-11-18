@@ -1,4 +1,7 @@
 #!/bin/sh
+#
+# $FreeBSD$
+#
 
 # PROVIDE: activemq
 # REQUIRE: NETWORKING SERVERS
@@ -20,6 +23,9 @@
 #               Set it to java home directory.
 # activemq_javargs (args):  Set to -Xmx256M by default.
 #               See java -h for available arguments.
+# activemq_stop_timeout (num):  Set to "10" by default.
+#               Set the timeout in seconds to shutdown.
+#
 
 . /etc/rc.subr
 
@@ -33,28 +39,22 @@ load_rc_config $name
 : ${activemq_group:=${name}}
 : ${activemq_classpath:=%%ETCDIR%%}
 : ${activemq_home:=%%DATADIR%%}
-: ${activemq_javargs:='-Xmx512M -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties'}
+: ${activemq_javargs:='-Xmx512M -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dcom.sun.management.jmxremote'}
+: ${activemq_stop_timeout:="10"}
 
 pidfile=/var/run/${name}.pid
 
 required_files="%%ETCDIR%%/activemq.xml"
+jar_file="%%DATADIR%%/bin/run.jar"
 java_options=" 	-server -jar ${activemq_javargs} \
 		-Dactivemq.classpath=${activemq_classpath} \
 		-Dactivemq.home=${activemq_home} \
 		-Dactivemq.base=${activemq_home}"
 
-java_command="%%LOCALBASE%%/bin/java ${java_options} %%DATADIR%%/bin/run.jar $@"
-
-# Subvert the check_pid_file procname check.
-if [ -f $pidfile ]; then
-	read rc_pid junk < $pidfile
-	if [ ! -z "$rc_pid" ]; then
-		procname=`ps -o command= $rc_pid | awk '{print $1 }'`
-	fi
-fi
+java_command="%%LOCALBASE%%/bin/java ${java_options} ${jar_file}"
 
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} ${java_command}"
+command_args="-f -p ${pidfile} ${java_command} start"
 start_precmd="activemq_precmd"
 status_cmd="activemq_status"
 stop_cmd="activemq_stop"
@@ -64,39 +64,67 @@ activemq_precmd() {
         chown ${activemq_user}:${activemq_group} ${pidfile}
 }
 
-activemq_status() {
-	rc_pid=$(check_pidfile $pidfile *$procname*)
+activemq_stop() {
+	rc_pid=$(activemq_check_pidfile $pidfile)
 
-        if [ -z "$rc_pid" ]; then
-                [ -n "$rc_fast" ] && return 0
-                if [ -n "$pidfile" ]; then
-                        echo "${name} not running? (check $pidfile)."
-                else
-                        echo "${name} not running?"
-                fi
-                return 1
-        fi
-	echo "$name is running as pid ${rc_pid}"
+	if [ -z "$rc_pid" ]; then
+		[ -n "$rc_fast" ] && return 0
+		echo "${name} not running? (check $pidfile)."
+		return 1
+	fi
+	
+	echo "Stopping ${name}."
+	${java_command} stop >/dev/null
+	activemq_wait_max_for_pid ${activemq_stop_timeout} ${rc_pid}
+	kill -KILL ${rc_pid} 2> /dev/null && echo "Killed."
+	rm -f ${pidfile}
 }
 
+activemq_status() {
+	rc_pid=$(activemq_check_pidfile $pidfile)
 
-activemq_stop() {
-        rc_pid=$(check_pidfile $pidfile *$procname*)
+	if [ -z "$rc_pid" ]; then
+		[ -n "$rc_fast" ] && return 0
+		echo "${name} not running? (check $pidfile)."
+		return 1
+	fi
+	echo "${name} is running as pid ${rc_pid}."
+}
 
-        if [ -z "$rc_pid" ]; then
-                [ -n "$rc_fast" ] && return 0
-                if [ -n "$pidfile" ]; then
-                        echo "${name} not running? (check $pidfile)."
-                else
-                        echo "${name} not running?"
-                fi
-                return 1
-        fi
+activemq_check_pidfile() {
+	_pidfile=$1
+	if [ -z "$_pidfile" ]; then
+		err 3 'USAGE: activemq_check_pidfile pidfile'
+	fi
+	if [ ! -f $_pidfile ]; then
+		debug "pid file ($_pidfile): not readable."
+		return
+	fi
+	read _pid _junk < $_pidfile
+	if [ -z "$_pid" ]; then
+		debug "pid file ($_pidfile): no pid in file."
+		return
+	fi
+	if [ -n "`%%LOCALBASE%%/bin/jps -l | grep -e "^$_pid $jar_file\$"`" ]; then
+		echo -n $_pid
+	fi
+}
 
-        echo "Stopping ${name}."
-        kill ${rc_pid} 
-	wait_for_pids ${rc_pid}
-	rm ${pidfile}
+activemq_wait_max_for_pid() {
+	_timeout=$1
+	shift
+	_pid=$1
+	_prefix=
+	while [ $_timeout -gt 0 ] ; do
+		echo -n ${_prefix:-"Waiting (max $_timeout secs) for PIDS: "}$_pid
+		_prefix=", "
+		sleep 2
+		kill -0 $_pid 2> /dev/null || break
+		_timeout=$(($_timeout-2))
+	done
+	if [ -n "$_prefix" ]; then
+		echo "."
+	fi
 }
 
 run_rc_command "$1"
