@@ -1,0 +1,10 @@
+The Bazaar pipeline plugin helps you organize your changes into
+sections called "pipes". Pipelines can help you:
+
+* focus on each set of changes as a coherent piece, without being
+  distracted by other sets of changes.
+* respect diff size limits when submitting changes
+* avoid reviewer fatigue when submitting changes for code review
+* maintain a set of patches against an upstream branch
+
+WWW: http://wiki.bazaar.canonical.com/BzrPipeline
