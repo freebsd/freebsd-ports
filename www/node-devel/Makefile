@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	node
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/
 PKGNAMESUFFIX=	-devel
@@ -38,6 +38,9 @@ WAF_ARGS=	--jobs=${MAKE_JOBS_NUMBER}
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} tools/waf-light ${WAF_ARGS} build)
+
+do-install:
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} tools/waf-light ${WAF_ARGS} install)
 
 post-install:
 	@${INSTALL_MAN}  ${WRKSRC}/doc/node.1 ${MANPREFIX}/man/man1/
