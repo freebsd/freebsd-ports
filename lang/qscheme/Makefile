@@ -23,6 +23,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
+BROKEN=		fails to build
+
 CONFIGURE_ARGS=	--with-pcre-dir=${LOCALBASE}/lib \
 		--with-pcre-inc=${LOCALBASE}/include \
 		--with-avcall-dir=${LOCALBASE}/lib \
