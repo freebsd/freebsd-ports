@@ -1,0 +1,7 @@
+Rose::URI is an alternative to URI. It provides a rich set of query string
+manipulation methods. Query parameters can be added, removed, and checked
+for their existence. URI allows the entire query to be set or returned as
+a whole via the query_form or query methods, and the URI::QueryParam module
+provides a few more methods for query string manipulation.
+
+WWW: http://search.cpan.org/dist/Rose-URI/
