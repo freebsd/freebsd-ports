@@ -9,5 +9,6 @@ objects and messages to be automatically serialized with no extra code being
 written.
 
 LICENSE: MIT
+Copyright (c) 2007-2008, Yen-Ju Chen, Quentin Mathe
 
 WWW: http://www.etoile-project.org/

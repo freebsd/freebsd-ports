@@ -16,6 +16,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Etoile Project CoreObject framework
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/Frameworks/CoreObject/COPYING
 
 USE_BZIP2=	yes
 USE_GNUSTEP=	yes
