@@ -24,7 +24,8 @@ USE_AUTOTOOLS=	libtool:22
 USE_ICONV=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \
 		--disable-mtab --with-fuse=external
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include/ntfs-3g/ -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 OPTIONS=	LOCK "Lock the device when mounting (avoids access)" on \
 		UBLIO "Enable user space cache for improved speed" on
