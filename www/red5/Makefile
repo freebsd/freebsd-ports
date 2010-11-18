@@ -6,55 +6,40 @@
 #
 
 PORTNAME=	red5
-PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTVERSION=	0.9.1
 CATEGORIES=	www java
-MASTER_SITES=	http://www.nielsenaa.com/red5-installers/   \
-		http://www.red5.fr/release/0.7.0/war/
-DISTNAME=	Red5War_${PORTVERSION}-java5
+MASTER_SITES=	http://www.red5.org/downloads/0_9/ \
+		http://red5.rmdir.fr/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Red5 is an Open Source flash server
+MAINTAINER=	joris.dedieu@gmail.com
+COMMENT=	Red5 is an Open Source Flash Server
 
-OPTIONS=	TOMCAT4	"Use Tomcat 4.1" OFF \
-		TOMCAT5 "Use Tomcat 5.5" OFF \
-		TOMCAT6 "Use Tomcat 6.0" ON
-
-WRKSRC=		${WRKDIR}
-USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5
 NO_BUILD=	yes
+USE_RC_SUBR=	red5
 
-.include <bsd.port.pre.mk>
+RED5_USER?=	${WWWOWN}
+RED5_GRP?=	${WWWGRP}
+RED5_HOME?=	${PREFIX}/${PORTNAME}
 
-.if	(defined(WITH_TOMCAT4) && defined(WITH_TOMCAT5)) || \
-	(defined(WITH_TOMCAT4) && defined(WITH_TOMCAT6)) || \
-	(defined(WITH_TOMCAT5) && defined(WITH_TOMCAT6))
-IGNORE=	please select only one version of Tomcat
-.endif
+SUB_LIST+=	RED5_USER=${RED5_USER} RED5_HOME=${RED5_HOME}
 
-.if defined(WITH_TOMCAT4)
-RUN_DEPENDS+=	${LOCALBASE}/apache-tomcat4.1:${PORTSDIR}/www/tomcat41
-WEBAPPDIR=	${PREFIX}/apache-tomcat4.1/webapps
-.elif defined(WITH_TOMCAT5)
-RUN_DEPENDS+=	${LOCALBASE}/tomcat5.5:${PORTSDIR}/www/tomcat55
-WEBAPPDIR=	${PREFIX}/tomcat5.5/webapps
-.elif defined(WITH_TOMCAT6)
-RUN_DEPENDS+=	${LOCALBASE}/apache-tomcat-6.0:${PORTSDIR}/www/tomcat6
-WEBAPPDIR=	${PREFIX}/apache-tomcat-6.0/webapps
-.else
-IGNORE=	please select one version of Tomcat
-.endif
-
-PLIST_FILES=	${WEBAPPDIR:S|^${PREFIX}/||}/red5.war
+pre-install:
+	@${REINPLACE_CMD} -e 's/0.0.0.0/127.0.0.1/' ${WRKSRC}/conf/red5.properties
 
 do-install:
-	@${MKDIR} ${WEBAPPDIR}
-	@${INSTALL_DATA} ${WRKSRC}/ROOT.war ${WEBAPPDIR}/red5.war
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${WEBAPPDIR}/red5.war
+	${MKDIR} ${RED5_HOME}/conf ${RED5_HOME}/lib ${RED5_HOME}/webapps ${RED5_HOME}/log
+	${INSTALL} ${WRKSRC}/boot.jar ${RED5_HOME}
+	${INSTALL} ${WRKSRC}/red5.jar ${RED5_HOME}
+	(cd ${WRKSRC}/conf && ${COPYTREE_SHARE} \* ${RED5_HOME}/conf)
+	(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} \* ${RED5_HOME}/lib)
+	(cd ${WRKSRC}/webapps && ${COPYTREE_SHARE} \* ${RED5_HOME}/webapps)
+	${CHOWN} -R  ${RED5_USER}:${RED5_GRP} ${RED5_HOME}
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR})
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
