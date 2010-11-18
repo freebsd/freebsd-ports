@@ -1,0 +1,11 @@
+--- ./src/gmxlib/Makefile.in.orig	2010-08-23 15:53:16.000000000 +0200
++++ ./src/gmxlib/Makefile.in	2010-08-23 15:53:32.000000000 +0200
+@@ -365,7 +365,7 @@
+ 	gmx_system_xdr.c md5.c vmdio.c vmddlopen.c sighandler.c oenv.c \
+ 	gmxfio_rw.c gmxfio_asc.c gmxfio_bin.c gmxfio_xdr.c \
+ 	$(am__append_1)
+-pkgconfigdir = ${libdir}/pkgconfig
++pkgconfigdir = ${PREFIX}/libdata/pkgconfig
+ pkgconfig_DATA = libgmx@LIBSUFFIX@.pc
+ 
+ # clean all libtool libraries, since the target names might have changed

@@ -1,0 +1,11 @@
+--- ./src/mdlib/Makefile.in.orig	2010-08-23 15:53:46.000000000 +0200
++++ ./src/mdlib/Makefile.in	2010-08-23 15:53:58.000000000 +0200
+@@ -262,7 +262,7 @@
+ libmd@LIBSUFFIX@_la_DEPENDENCIES = ../gmxlib/libgmx@LIBSUFFIX@.la	
+ libmd@LIBSUFFIX@_la_LDFLAGS = -no-undefined -version-info @SHARED_VERSION_INFO@ $(FFT_LIBS) $(XML_LIBS) $(PTHREAD_LIBS)
+ lib_LTLIBRARIES = libmd@LIBSUFFIX@.la
+-pkgconfigdir = ${libdir}/pkgconfig
++pkgconfigdir = ${PREFIX}/libdata/pkgconfig
+ pkgconfig_DATA = libmd@LIBSUFFIX@.pc
+ EXTRA_DIST = libmd.pc.cmakein
+ libmd@LIBSUFFIX@_la_SOURCES = \

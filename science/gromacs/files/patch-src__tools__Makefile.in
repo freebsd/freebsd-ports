@@ -1,0 +1,11 @@
+--- ./src/tools/Makefile.in.orig	2010-08-23 15:51:50.000000000 +0200
++++ ./src/tools/Makefile.in	2010-08-23 15:51:16.000000000 +0200
+@@ -726,7 +726,7 @@
+ top_srcdir = @top_srcdir@
+ AM_CPPFLAGS = -I$(top_srcdir)/include -DGMXLIBDIR=\"$(datadir)/top\"
+ lib_LTLIBRARIES = libgmxana@LIBSUFFIX@.la
+-pkgconfigdir = ${libdir}/pkgconfig
++pkgconfigdir = ${PREFIX}/libdata/pkgconfig
+ pkgconfig_DATA = libgmxana@LIBSUFFIX@.pc
+ EXTRA_DIST = libgmxana.pc.cmakein
+ libgmxana@LIBSUFFIX@_la_LIBADD = ../gmxlib/libgmx@LIBSUFFIX@.la	../mdlib/libmd@LIBSUFFIX@.la	
