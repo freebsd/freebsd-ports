@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bullet
-PORTVERSION=	2.75
-PORTREVISION=	1
+PORTVERSION=	2.77
 CATEGORIES=	devel
 MASTER_SITES=	GOOGLE_CODE
 EXTRACT_SUFX=	.tgz
@@ -15,30 +14,18 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	3D collision detection and rigid body dynamics library
 
-BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
-
-BROKEN=	Does not work with autoconf>=2.64 - upstream 2.76 has switched to cmake.
-
-USE_AUTOTOOLS=	automake:111:env autoconf:268:env libtool:22:env
-GNU_CONFIGURE=	yes
-USE_DOS2UNIX=	yes
-USE_GL=		glu glut
+USE_GL=		gl glu glut
 USE_XORG=	x11
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ARGS=		--x-includes=${LOCALBASE}/include
-CONFIGURE_ENV=		CPPFLAGS=${CPPFLAGS} LDFLAGS=${LDFLAGS}
+USE_CMAKE=	yes
+CMAKE_USE_PTHREAD=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-JAM_CMD=	${LOCALBASE}/bin/jam
-JAM_ARGS=	-qa ${_MAKE_JOBS}
-
 PORTDOCS=	*
-
-OPTIONS=	DOUBLE "Use double precision"	off
 
 .include <bsd.port.pre.mk>
 
@@ -46,34 +33,8 @@ OPTIONS=	DOUBLE "Use double precision"	off
 CFLAGS+=	-DUSE_ADDR64
 .endif
 
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-IGNORE=		does not configure on ia64 or sparc64
-.endif
-
-.if defined(WITH_DOUBLE)
-CFLAGS+=	-DBT_USE_DOUBLE_PRECISION
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%AUTOHEADER%%|${AUTOHEADER}|g" -e "s|%%AUTOCONF%%|${AUTOCONF}|g" -e \
-		"s|%%ACLOCAL%%|${ACLOCAL}|g" -e "s|%%LIBTOOLIZE%%|${LIBTOOLIZE}|g" -e \
-			"s|%%AUTOMAKE%%|${AUTOMAKE}|g" ${WRKSRC}/autogen.sh
-	@${REINPLACE_CMD} -e "s|(libdir)|(prefix)/libdata|g" -e 63,64d ${WRKSRC}/Jamfile.in
-	@${REINPLACE_CMD} -e "s|-O3||g" ${WRKSRC}/Jamrules
-
-pre-configure:
-	@cd ${WRKSRC} && ${SH} autogen.sh
-
-post-configure:
-	@${REINPLACE_CMD} -i "" -e 's,-lpthread,${PTHREAD_LIBS},g' ${WRKSRC}/Jamconfig
-
-do-build:
-	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${JAM_CMD} ${JAM_ARGS}
-
-do-install:
-	@cd ${WRKSRC} && \
-		${JAM_CMD} install
+	@${REINPLACE_CMD} -e "s|{OPENGL_glu_LIBRARY}|{OPENGL_glu_LIBRARY} -lcompat|g" ${WRKSRC}/Demos/AllBulletDemos/CMakeLists.txt
 
 post-install:
 .if !defined(NOPORTDOCS)
