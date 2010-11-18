@@ -7,7 +7,7 @@
 
 PORTNAME=	freeorion
 PORTVERSION=	0.3.13.3318
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	oliver
@@ -19,8 +19,8 @@ LIB_DEPENDS=	GiGi.0:${PORTSDIR}/x11-toolkits/gigi \
 		graph:${PORTSDIR}/graphics/graphviz \
 		log4cpp.4:${PORTSDIR}/devel/log4cpp \
 		vorbisfile.6:${PORTSDIR}/audio/libvorbis
-RUN_DEPENDS=	${LOCALBASE}/lib/libbulletmath.a:${PORTSDIR}/devel/bullet
-BUILD_DEPENDS=	${LOCALBASE}/lib/libbulletmath.a:${PORTSDIR}/devel/bullet
+RUN_DEPENDS=	${LOCALBASE}/lib/libLinearMath.a:${PORTSDIR}/devel/bullet
+BUILD_DEPENDS=	${LOCALBASE}/lib/libLinearMath.a:${PORTSDIR}/devel/bullet
 
 USE_GCC=	4.4+
 USE_BZIP2=	yes
