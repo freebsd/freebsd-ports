@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Time/Out.pm
+%%SITE_PERL%%/Time/Out.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Out/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time/Out
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Time
+@dirrmtry %%SITE_PERL%%/Time
