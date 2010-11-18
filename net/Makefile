@@ -25,6 +25,7 @@
     SUBDIR += arprelease
 #XXX move to net-mgmt
     SUBDIR += asfrecorder
+    SUBDIR += asio
     SUBDIR += aslookup
     SUBDIR += asterisk
     SUBDIR += asterisk-addons
