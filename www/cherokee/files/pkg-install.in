@@ -2,18 +2,18 @@
 
 PATH=/bin:/usr/bin:/usr/sbin
 
-FILEMODE=0640
 
 C_ACCESSLOG=${CHEROKEE_ACCESSLOG:-/var/log/cherokee.access}
 C_ERRORLOG=${CHEROKEE_ERRORLOG:-/var/log/cherokee.error}
-C_USER=${CHEROKEE_USER:-www}
-C_GROUP=${CHEROKEE_GROUP:-www}
+C_USER=${CHEROKEE_LOGFILE_USER:-root}
+C_GROUP=${CHEROKEE_LOGFILE_GROUP:-wheel}
+C_FILEMODE=${CHEROKEE_LOGFILE_FILEMODE:-0640}
 
 case $2 in
 
 POST-INSTALL)
         echo "$2 for $1" 
-	echo "Adjusting ownership (${C_USER}:${C_GROUP}) and permissions (${FILEMODE}) on log files:"
+	echo "Adjusting ownership (${C_USER}:${C_GROUP}) and permissions (${C_FILEMODE}) on log files:"
         echo "${C_ACCESSLOG}"
         echo "${C_ERRORLOG}"
 
@@ -26,7 +26,7 @@ POST-INSTALL)
         fi
 
 	chown ${C_USER}:${C_GROUP} ${C_ACCESSLOG} ${C_ERRORLOG}
-	chmod ${FILEMODE} ${C_ACCESSLOG} ${C_ERRORLOG}
+	chmod ${C_FILEMODE} ${C_ACCESSLOG} ${C_ERRORLOG}
 	
 	;;
 

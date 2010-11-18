@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cherokee
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/1.0/${PORTVERSION}/ \
 		http://cherokee.osuosl.org/1.0/${PORTVERSION}/ \
@@ -66,6 +66,12 @@ CHEROKEE_ERRORLOG?=	${CHEROKEE_LOGDIR}/cherokee.error
 # Adjust this if you need to run Cherokee as a distinct user:group
 CHEROKEE_USER=	www
 CHEROKEE_GROUP=	www
+
+# This should be ok since 1.0.9, cherokee drops privileges
+# after opening logfiles as a security measure
+CHEROKEE_LOGFILE_FILEMODE=	0600
+CHEROKEE_LOGFILE_USER=	root
+CHEROKEE_LOGFILE_GROUP=	wheel
 
 CONFIGURE_ARGS=	--with-wwwroot=${PREFIX}/www/cherokee \
 		--localstatedir=${CHEROKEE_VARDIR} \
@@ -174,32 +180,31 @@ post-patch:
 		s:%prefix%:${PREFIX}:g; \
 		s:%localstatedir%:/var:g' \
 		$$i > $${i%.pre};done
+
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/admin/server.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
-		${WRKSRC}/contrib/05to06.py
+		${WRKSRC}/admin/upgrade_config.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
-		${WRKSRC}/contrib/06to07.py
+		${WRKSRC}/cherokee/cherokee-tweak
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
-		${WRKSRC}/contrib/07to08.py
+		${WRKSRC}/doc/cookbook_dbslayer.html
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
-		${WRKSRC}/contrib/08to09.py
-	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
-		${WRKSRC}/contrib/09to010.py
-	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
-		${WRKSRC}/contrib/011to098.py
-	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
-		${WRKSRC}/contrib/098to099.py
-	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
-		${WRKSRC}/contrib/0999to09910.py
+		${WRKSRC}/doc/test_images.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/contrib/tracelor.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
-		${WRKSRC}/doc/cookbook_dbslayer.html
+		${WRKSRC}/gitlog2changelog.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/po/po_stats.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/packages/osx/build.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/qa/fcgi.py
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
 		${WRKSRC}/qa/run-tests.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|/usr/local/bin/python|' \
+		${WRKSRC}/svnlog2changelog.py
 
 post-install:
 	@${INSTALL} -d ${CONFSUBDIRS:S|^|${PREFIX}/etc/cherokee/|}
@@ -225,8 +230,9 @@ post-install:
 .endif
 
 	@${SETENV} \
-	     CHEROKEE_USER=${CHEROKEE_USER} \
-	     CHEROKEE_GROUP=${CHEROKEE_GROUP} \
+	     CHEROKEE_LOGFILE_FILEMODE=${CHEROKEE_LOGFILE_FILEMODE} \
+	     CHEROKEE_LOGFILE_USER=${CHEROKEE_LOGFILE_USER} \
+	     CHEROKEE_LOGFILE_GROUP=${CHEROKEE_LOGFILE_GROUP} \
 	     CHEROKEE_ERRORLOG=${CHEROKEE_ERRORLOG} \
 	     CHEROKEE_ACCESSLOG=${CHEROKEE_ACCESSLOG} \
 	     ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
