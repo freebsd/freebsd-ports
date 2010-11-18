@@ -2974,6 +2974,7 @@ electriceyes                    ports/graphics/electriceyes
 electricfence                   ports/devel/ElectricFence
 elf                             ports/devel/elf
 elfio                           ports/devel/elfio
+elfkickers                      ports/devel/elfkickers
 elfrc                           ports/devel/elfrc
 elfsh                           ports/devel/elfsh
 elftoaout                       ports/devel/elftoaout
@@ -9082,6 +9083,7 @@ mapyrus                         ports/graphics/mapyrus
 mar                             ports/archivers/mar
 maradns                         ports/dns/maradns
 marble                          ports/astro/marble
+mariadb                         ports/databases/mariadb
 markdown                        ports/textproc/markdown
 mars                            ports/cad/mars
 mars_nwe                        ports/net/mars_nwe
@@ -20398,6 +20400,7 @@ ports_doc                       ports/dns/doc
 ports_enigma                    ports/games/enigma
 ports_file                      ports/sysutils/file
 ports_fish                      ports/shells/fish
+ports_gdb                       ports/devel/gdb
 ports_getopt                    ports/misc/getopt
 ports_gperf                     ports/devel/gperf
 ports_gpt                       ports/misc/gpt
@@ -23007,6 +23010,7 @@ rubygem-whois                   ports/net/rubygem-whois
 rubygem-xml-simple              ports/textproc/rubygem-xml-simple
 rubygem-xmpp4r                  ports/net-im/rubygem-xmpp4r
 rubygem-yadis                   ports/net/rubygem-yadis
+rubygem-yajl-ruby               ports/devel/rubygem-yajl-ruby
 rubygem-yapra                   ports/www/rubygem-yapra
 rubygem-zentest                 ports/devel/rubygem-zentest
 rubygem-zoom                    ports/devel/rubygem-zoom
@@ -24735,6 +24739,7 @@ transmission                    ports/net-p2p/transmission
 transmission-cli                ports/net-p2p/transmission-cli
 transmission-daemon             ports/net-p2p/transmission-daemon
 transmission-gtk2               ports/net-p2p/transmission-gtk2
+transmission-qt4                ports/net-p2p/transmission-qt4
 transmission-web                ports/www/transmission-web
 transmisson-remote-gui          ports/net-p2p/transmisson-remote-gui
 transproxy                      ports/www/transproxy
