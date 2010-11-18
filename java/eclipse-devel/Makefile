@@ -28,13 +28,12 @@ COMMENT=	An open extensible IDE for anything and nothing in particular
 EXTRACT_DEPENDS=${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 PATCH_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		gpatch:${PORTSDIR}/devel/patch \
-		zip:${PORTSDIR}/archivers/zip
+		zip:${PORTSDIR}/archivers/zip \
+		${DEPEND_JAVA}
 BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
 		unzip:${PORTSDIR}/archivers/unzip \
 		zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
-
-BROKEN=		does not build
 
 OPTIONS=	TESTS	"Build SDK test suite"	off
 
