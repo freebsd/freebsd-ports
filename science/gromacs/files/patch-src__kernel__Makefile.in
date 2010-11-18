@@ -1,0 +1,11 @@
+--- ./src/kernel/Makefile.in.orig	2010-08-23 15:52:04.000000000 +0200
++++ ./src/kernel/Makefile.in	2010-08-23 15:53:01.000000000 +0200
+@@ -322,7 +322,7 @@
+ top_srcdir = @top_srcdir@
+ AM_CPPFLAGS = -I$(top_srcdir)/include -DGMXLIBDIR=\"$(datadir)/top\"
+ lib_LTLIBRARIES = libgmxpreprocess@LIBSUFFIX@.la 
+-pkgconfigdir = ${libdir}/pkgconfig
++pkgconfigdir = ${PREFIX}/libdata/pkgconfig
+ pkgconfig_DATA = libgmxpreprocess@LIBSUFFIX@.pc
+ EXTRA_DIST = libgmxpreprocess.pc.cmakein
+ LDADD = $(lib_LTLIBRARIES) ../mdlib/libmd@LIBSUFFIX@.la ../gmxlib/libgmx@LIBSUFFIX@.la 
