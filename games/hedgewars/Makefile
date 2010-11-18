@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hedgewars
-PORTVERSION=	0.9.13
-PORTREVISION=	3
+PORTVERSION=	0.9.14.1
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/hedgewars/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -27,7 +26,7 @@ USE_QT_VER=	4
 USE_LUA=	5.1+
 QT_COMPONENTS=	corelib gui moc_build network \
 		qmake_build rcc_build svg xml \
-		uic_build
+		uic_build linguist_build
 MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES="Hedgewars" \
