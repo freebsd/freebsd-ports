@@ -1,0 +1,25 @@
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/commands.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/commands.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/commands.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/loom.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/loom.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/loom.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/pipeline.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/pipeline.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/pipeline.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/tests/test_blackbox.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/tests/test_blackbox.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/tests/test_blackbox.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/tests/test_pipeline.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/tests/test_pipeline.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/tests/test_pipeline.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline/tests
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/pipeline
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib/plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/bzrlib
