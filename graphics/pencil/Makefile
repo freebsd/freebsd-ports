@@ -7,7 +7,7 @@
 
 PORTNAME=	pencil
 PORTVERSION=	0.4.4b
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}-planner/Pencil/${PORTVERSION}eta
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFFIX}
@@ -25,6 +25,8 @@ LIB_DEPENDS+=	ming:${PORTSDIR}/graphics/ming \
 		pcre:${PORTSDIR}/devel/pcre \
 		drm:${PORTSDIR}/graphics/libdrm
 
+LICENSE=	GPLv2
+
 USE_ZIP=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	glib20
@@ -34,6 +36,9 @@ USE_XORG=	xi xrender xrandr xfixes xcursor xinerama xext x11 xau xdmcp \
 		xxf86vm xdamage
 USE_GL=		gl glu
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
+
+PLIST_FILES=	bin/pencil
+PORTDOCS=	README TODO
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
@@ -50,8 +55,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Pencil ${PREFIX}/bin/pencil
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for file in LICENSE.TXT README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
