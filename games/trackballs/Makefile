@@ -7,7 +7,7 @@
 
 PORTNAME=	trackballs
 PORTVERSION=	1.1.4
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -16,6 +16,8 @@ COMMENT=	SDL-based Marble Madness clone
 
 LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
+LICENSE=	GPLv2
 
 USE_GL=		gl
 USE_SDL=	image mixer sdl ttf
@@ -27,7 +29,8 @@ INSTALLS_ICONS=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=	mkinstalldirs="${MKDIR}"
 
-MAN6=		${PORTNAME}.6
+MAN6=	trackballs.6
+MANCOMPRESSED=	no
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -lintl
