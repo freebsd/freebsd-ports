@@ -7,11 +7,14 @@
 
 PORTNAME=	vlock
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://cthulhu.c3d2.de/~toidinamai/vlock/archive/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Locks a terminal
+
+LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
@@ -41,6 +44,8 @@ VLOCKMODULES=	all.so new.so
 # Vlock group = vlock:*:129:
 VLOCKGRP=	vlock
 VLOCKGID=	129
+
+PORTDOCS=	ChangeLog PLUGINS README README.X11 SECURITY TODO
 
 .include <bsd.port.pre.mk>
 
@@ -74,13 +79,9 @@ pre-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/PLUGINS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.X11 ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/SECURITY ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
