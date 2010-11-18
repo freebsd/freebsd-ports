@@ -284,6 +284,7 @@
     SUBDIR += when
     SUBDIR += wmpinboard
     SUBDIR += wyrd
+    SUBDIR += x-tile
     SUBDIR += x026
     SUBDIR += xcalendar
     SUBDIR += xchm
