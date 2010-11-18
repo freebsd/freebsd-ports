@@ -27,6 +27,7 @@ MAN1=		saint.1
 GNU_CONFIGURE=	yes
 MAKE_ENV=	"LIBS=-lrpcsvc" "XFLAGS=-g -O2   -DSTDC_HEADERS=1 -DGETGROUPS_T=gid_t -DSYS_ERRLIST_DECLARED=1 " "RPCGEN=/usr/bin/rpcgen"
 INSTALL_TARGET=	all
+MAKE_JOBS_UNSAFE=yes
 
 .include <bsd.port.pre.mk>
 
