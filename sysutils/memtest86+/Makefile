@@ -7,6 +7,7 @@
 
 PORTNAME=	memtest86+
 PORTVERSION=	4.10
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.memtest.org/download/${PORTVERSION}/
 
@@ -24,7 +25,8 @@ PORTDOCS=	*
 BOOT_DIR?=	/boot/opt
 
 OPTIONS=	ISO	"Build bootable ISO image"			off \
-		BOOT	"Build ELF image loadable by boot2 and loader"	on
+		BOOT	"Build ELF image loadable by boot2 and loader"	on \
+		SERIAL	"Enable serial console at COM1/115200"		off
 
 .include <bsd.port.pre.mk>
 
@@ -42,8 +44,12 @@ USE_CDRTOOLS=	yes
 ALL_TARGET+=	iso
 .endif
 
+.if defined(WITH_SERIAL)
+EXTRA_PATCHES+=	${PATCHDIR}//extra-patch-config.h
+.endif
+
 .if ${OSVERSION} < 700042
-EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-Makefile
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile
 .endif
 
 pre-fetch:
