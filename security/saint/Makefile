@@ -37,6 +37,7 @@ BROKEN=		leaves files after deinstallation
 
 do-install:
 	@${MKDIR} ${PREFIX}/saint
+	${RM} ${WRKSRC}/reconfig.orig
 	${TAR} -C ${WRKSRC} -cf - -X ${FILESDIR}/excludefiles . | ${TAR} -C ${PREFIX}/saint -xf -
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
 
