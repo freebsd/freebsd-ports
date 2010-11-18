@@ -6,7 +6,7 @@
 #    $MCom: ports/misc/pciids/Makefile,v 1.11 2008/03/23 06:57:57 marcus Exp $
 
 PORTNAME=	pciids
-PORTVERSION=	20101020
+PORTVERSION=	20101107
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/sunpoet
 
