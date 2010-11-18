@@ -1,65 +1,29 @@
---- SConstruct	2009-05-13 00:13:10.000000000 -0500
-+++ SConstruct	2009-05-13 00:14:44.000000000 -0500
-@@ -6,26 +6,26 @@
- # Build Options #
- #---------------#
- 
--opts = Options('vdrift.conf', ARGUMENTS)
-+opts = Variables('vdrift.conf', ARGUMENTS)
- opts.Add('destdir', 'Staging area to install VDrift to.  Useful for packagers. ', '')
- opts.Add('localedir', 'Path suffix were vdrift locales (.mo files) will be installed', "share/locale")
- opts.Add('arch', 'Target architecture to compile vdrift for (x86, 686, p4, axp, a64, prescott, nocona, core2)', 'x86')
--opts.Add(BoolOption('minimal', 'Only install minimal data (3 cars and 2 tracks)', 0))
--opts.Add(BoolOption('cache', 'Cache options in vdrift.conf', 1))
--opts.Add(BoolOption('release', 'Turn off debug option during build', 0))
--opts.Add(BoolOption('use_gcc_32', 'Set this to 1 if the game runs fine but the cars bounce around (gcc4 bug).', 0))
--opts.Add(BoolOption('use_gcc_33', 'Set this to 1 if the game runs fine but the cars bounce around (gcc4 bug).', 0))
--opts.Add(BoolOption('use_gcc_34', 'Set this to 1 if the game runs fine but the cars bounce around (gcc4 bug).', 0))
--opts.Add(BoolOption('use_apbuild', 'Set this to 1 if you want to compile with apgcc to create an autopackage', 0))
--opts.Add(BoolOption('use_binreloc', 'Set this to 1 if you want to compile with Binary Relocation support', 1))
--opts.Add(BoolOption('os_cc', 'Set this to 1 if you want to use the operating system\'s C compiler environment variable.', 0))
--opts.Add(BoolOption('os_cxx', 'Set this to 1 if you want to use the operating system\'s C++ compiler environment variable.', 0))
--opts.Add(BoolOption('os_cxxflags', 'Set this to 1 if you want to use the operating system\'s C++ compiler flags environment variable.', 0))
--opts.Add(BoolOption('NLS', 'Set this to 1 to turn on i18n support', 0))
--opts.Add(BoolOption('use_distcc', 'Set this to 1 to enable distributed compilacion', 0))
--opts.Add(BoolOption('force_feedback', 'Enable force-feedback support', 0))
--opts.Add(BoolOption('profiling', 'Turn on profiling output', 0))
--opts.Add(BoolOption('efficiency', 'Turn on compile-time efficiency warnings', 0))
-+opts.Add(BoolVariable('minimal', 'Only install minimal data (3 cars and 2 tracks)', 0))
-+opts.Add(BoolVariable('cache', 'Cache options in vdrift.conf', 1))
-+opts.Add(BoolVariable('release', 'Turn off debug option during build', 0))
-+opts.Add(BoolVariable('use_gcc_32', 'Set this to 1 if the game runs fine but the cars bounce around (gcc4 bug).', 0))
-+opts.Add(BoolVariable('use_gcc_33', 'Set this to 1 if the game runs fine but the cars bounce around (gcc4 bug).', 0))
-+opts.Add(BoolVariable('use_gcc_34', 'Set this to 1 if the game runs fine but the cars bounce around (gcc4 bug).', 0))
-+opts.Add(BoolVariable('use_apbuild', 'Set this to 1 if you want to compile with apgcc to create an autopackage', 0))
-+opts.Add(BoolVariable('use_binreloc', 'Set this to 1 if you want to compile with Binary Relocation support', 1))
-+opts.Add(BoolVariable('os_cc', 'Set this to 1 if you want to use the operating system\'s C compiler environment variable.', 0))
-+opts.Add(BoolVariable('os_cxx', 'Set this to 1 if you want to use the operating system\'s C++ compiler environment variable.', 0))
-+opts.Add(BoolVariable('os_cxxflags', 'Set this to 1 if you want to use the operating system\'s C++ compiler flags environment variable.', 0))
-+opts.Add(BoolVariable('NLS', 'Set this to 1 to turn on i18n support', 0))
-+opts.Add(BoolVariable('use_distcc', 'Set this to 1 to enable distributed compilacion', 0))
-+opts.Add(BoolVariable('force_feedback', 'Enable force-feedback support', 0))
-+opts.Add(BoolVariable('profiling', 'Turn on profiling output', 0))
-+opts.Add(BoolVariable('efficiency', 'Turn on compile-time efficiency warnings', 0))
- 
- 
- #--------------------------#
+--- SConstruct.orig	2010-11-14 16:45:13.000000000 -0500
++++ SConstruct	2010-11-14 16:46:49.000000000 -0500
 @@ -43,7 +43,7 @@
  #---------------#
  # FreeBSD build #
  #---------------#
--if (sys.platform == 'freebsd5') or (sys.platform == 'freebsd6') or (sys.platform == 'freebsd7') or (sys.platform == 'freebsd8'):
+-if (sys.platform == 'freebsd6') or (sys.platform == 'freebsd7') or (sys.platform == 'freebsd8'):
 +if (sys.platform == 'freebsd6') or (sys.platform == 'freebsd7') or (sys.platform == 'freebsd8') or (sys.platform == 'freebsd9'):
      if 'LOCALBASE' in os.environ:
          LOCALBASE = os.environ['LOCALBASE']
      else:
-@@ -387,7 +387,8 @@
+@@ -53,7 +53,7 @@
+         LIBPATH = ['.', '#lib', LOCALBASE + '/lib'],
+         LINKFLAGS = ['-pthread','-lintl'],
+         options = opts)
+-    check_headers = ['GL/gl.h', 'GL/glu.h', 'SDL/SDL.h', 'SDL/SDL_image.h', 'SDL/SDL_rotozoom.h', 'vorbis/vorbisfile.h', 'GL/glew.h']
++    check_headers = ['asio.hpp', 'boost/bind.hpp', 'GL/gl.h', 'GL/glu.h', 'SDL/SDL.h', 'SDL/SDL_image.h', 'SDL/SDL_rotozoom.h', 'vorbis/vorbisfile.h', 'GL/glew.h']
+     if 'CC' in os.environ:
+         env.Replace(CC = os.environ['CC'])
+     else:
+@@ -396,7 +396,7 @@
  version = strftime("%Y-%m-%d")
  if env['release']:
      # release build, debugging off, optimizations on
--    env.Append(CCFLAGS = ['-O1', '-pipe'])
-+    if (sys.platform != 'freebsd6') and (sys.platform != 'freebsd7') and (sys.platform != 'freebsd8') and (sys.platform != 'freebsd9'):
-+        env.Append(CCFLAGS = ['-O1', '-pipe'])
+-    if (sys.platform != 'freebsd6') and (sys.platform != 'freebsd7') and (sys.platform != 'freebsd8') and (sys.platform != 'win32') and (sys.platform != 'cygwin'):
++    if (sys.platform != 'freebsd6') and (sys.platform != 'freebsd7') and (sys.platform != 'freebsd8') and (sys.platform != 'freebsd9') and (sys.platform != 'win32') and (sys.platform != 'cygwin'):
+         env.Append(CCFLAGS = ['-O1', '-pipe'])
      # version is current build date
      #version = strftime("%Y-%m-%d")
- else:

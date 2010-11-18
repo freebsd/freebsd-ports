@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	vdrift
-PORTVERSION=	20090215
-PORTREVISION=	7
+PORTVERSION=	20100630
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-2009-02-15
-DISTNAME=	${PORTNAME}-2009-02-15
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${DATE_VERSION}
+DISTNAME=	${PORTNAME}-${DATE_VERSION}-src
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Open source driving simulation
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
-		${LOCALBASE}/lib/libbulletcollision.a:${PORTSDIR}/devel/bullet
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
+		${LOCALBASE}/lib/libBulletCollision.a:${PORTSDIR}/devel/bullet \
+		${LOCALBASE}/include/asio.hpp::${PORTSDIR}/net/asio
+LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
+		boost_thread.4:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/settings/VDrift.config:${PORTSDIR}/games/vdrift-data
 
 USE_BZIP2=	yes
@@ -30,6 +31,8 @@ SCONS_ARGS=	prefix=${PREFIX} \
 		bindir=bin \
 		use_binreloc=0
 WRKSRC=		${WRKDIR}/${DISTNAME}
+
+DATE_VERSION=	2010-06-30
 
 SUB_FILES=	pkg-message
 
@@ -57,9 +60,10 @@ BROKEN=		Does not compile on sparc64
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/SConstruct
-	@${REINPLACE_CMD} -e 's|^os.system.*||g' ${WRKSRC}/src/SConscript
-	@${REINPLACE_CMD} -e 's|GLvoid|void|g' ${WRKSRC}/src/main.cpp
+	@${REINPLACE_CMD} -e 's,(__APPLE__),(__APPLE__) || defined(__FreeBSD__),g' \
+		${WRKSRC}/include/quickmp.h
+	@${REINPLACE_CMD} -e 's|GEN_clamped|btClamped|g' \
+		${WRKSRC}/bullet/BulletDynamics/Dynamics/btRigidBody.cpp
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} scons ${SCONS_ARGS}

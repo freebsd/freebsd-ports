@@ -6,22 +6,24 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	20090215
+PORTVERSION=	20100630
 CATEGORIES=	games
-MASTER_SITES=	SF/vdrift/vdrift/vdrift-2009-02-15
+MASTER_SITES=	SF/vdrift/vdrift/vdrift-${DATE_VERSION}
 PKGNAMEPREFIX=	vdrift-
-DISTNAME=	${PKGNAMEPREFIX}2009-02-15-src
+DISTNAME=	${PKGNAMEPREFIX}${DATE_VERSION}
 DIST_SUBDIR=	vdrift
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Vdrift driving simulation data files
 
 USE_BZIP2=	yes
-NO_PACKAGE=	Package will be 450MB, set FORCE_PACKAGE if you really want it
+NO_PACKAGE=	Package will be 547MB, set FORCE_PACKAGE if you really want it
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/vdrift
 PLIST=		${WRKDIR}/pkg-plist
-WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}2009-02-15
+WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${DATE_VERSION}
+
+DATE_VERSION=	2010-06-30
 
 post-extract:
 	@cd ${WRKSRC}/data && \
