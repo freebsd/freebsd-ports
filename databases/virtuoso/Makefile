@@ -7,6 +7,7 @@
 
 PORTNAME=	virtuoso
 PORTVERSION=	6.1.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-opensource-${PORTVERSION}
@@ -17,7 +18,6 @@ COMMENT=	Universal SQL/Application Server
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk\
 		htmldoc:${PORTSDIR}/textproc/htmldoc
 LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
-CONFLICTS=	unixODBC-* firebird-client-*
 
 USE_AUTOTOOLS=	libtool:22
 CONFIGURE_ARGS=	--with-readline\
@@ -55,6 +55,9 @@ post-patch:
 	    ${XARGS} ${REINPLACE_CMD}\
 		-e 's,expr \$$,expr -- $$,'\
 		-e 's,netstat -an.*grep.*$$\([a-zA-Z0-9]*\).*grep LISTEN,${CHECK_PORT},'
+	${FIND} -E ${WRKSRC} -type f -name "mkvad.sh" -o -name "make_vad.sh" -o -name "mkdoc.sh" |\
+	    ${XARGS} ${REINPLACE_CMD}\
+		-e 's,-isql,-isql-vt,'
 
 .include <bsd.port.pre.mk>
 
