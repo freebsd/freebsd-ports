@@ -1,0 +1,25 @@
+--- Makefile.orig	2010-10-20 21:25:38.000000000 +0200
++++ Makefile	2010-11-16 14:26:43.525341037 +0100
+@@ -54,18 +54,18 @@
+ # Note: libinstaller is both a BSUBDIR and an ISUBDIR.  It contains
+ # files that depend only on the B phase, but may have to be regenerated
+ # for "make installer".
+-BSUBDIRS = codepage com32 lzo core memdisk modules mbr memdump gpxe sample \
++BSUBDIRS_ = codepage com32 lzo core memdisk modules mbr memdump gpxe sample \
+ 	   libinstaller dos win32 win64 dosutil
+ ITARGET  =
+ IOBJECTS = $(ITARGET) \
+ 	utils/gethostip utils/isohybrid utils/mkdiskimage \
+-	mtools/syslinux linux/syslinux extlinux/extlinux
+-ISUBDIRS = libinstaller mtools linux extlinux utils
++	mtools/syslinux
++ISUBDIRS = libinstaller mtools
+ 
+ # Things to install in /usr/bin
+ INSTALL_BIN   =	mtools/syslinux
+ # Things to install in /sbin
+-INSTALL_SBIN  = extlinux/extlinux
++INSTALL_SBIN  = #extlinux/extlinux
+ # Things to install in /usr/lib/syslinux
+ INSTALL_AUX   =	core/pxelinux.0 gpxe/gpxelinux.0 core/isolinux.bin \
+ 		core/isolinux-debug.bin \

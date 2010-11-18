@@ -1,15 +1,30 @@
---- mtools/syslinux.c.orig	2009-10-06 02:06:06.000000000 +0400
-+++ mtools/syslinux.c	2009-12-04 11:18:37.000000000 +0300
-@@ -38,6 +38,8 @@
- #include "syslinux.h"
- #include "libfat.h"
+--- mtools/syslinux.c.orig	2010-10-20 21:25:38.000000000 +0200
++++ mtools/syslinux.c	2010-11-16 14:59:55.668749526 +0100
+@@ -20,12 +20,12 @@
+  */
+ 
+ #define _GNU_SOURCE
+-#include <alloca.h>
++//#include <alloca.h>
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <getopt.h>
+ #include <inttypes.h>
+-#include <mntent.h>
++//#include <mntent.h>
+ #include <paths.h>
+ #include <stdio.h>
+ #include <string.h>
+@@ -42,6 +42,8 @@
+ #include "setadv.h"
+ #include "syslxopt.h"
  
 +int verbose=0;
 +
  char *program;			/* Name of program */
- char *device;			/* Device to install to */
  pid_t mypid;
-@@ -123,6 +125,53 @@
+ 
+@@ -124,6 +126,53 @@
      return xpread(pp, buf, secsize, offset);
  }
  
@@ -37,7 +52,7 @@
 +	return 1;
 +    }
 +    if (sb.st_size < 1024 || sb.st_size > 0x8000) {
-+	fprintf(stderr, "boot image %s bad size %lld\n", name, sb.st_size);
++	fprintf(stderr, "boot image %s bad size %lld\n", name, (long long int)sb.st_size);
 +	return 1;
 +    }
 +    buf = calloc(1, sb.st_size);
@@ -62,46 +77,52 @@
 +
  int main(int argc, char *argv[])
  {
-     static unsigned char sectbuf[512];
-@@ -160,6 +209,10 @@
- 	    while (*opt) {
- 		if (*opt == 's') {
- 		    stupid = 1;
-+		} else if ( *opt == 'v' ) {
-+		    verbose++;
-+		} else if ( *opt == 'b' && argp[1] ) {
-+		    load_boot_image(*++argp);
- 		} else if (*opt == 'r') {
- 		    raid_mode = 1;
- 		} else if (*opt == 'f') {
-@@ -220,11 +273,10 @@
-     fprintf(mtc,
- 	    /* "MTOOLS_NO_VFAT=1\n" */
- 	    "MTOOLS_SKIP_CHECK=1\n"	/* Needed for some flash memories */
+     static unsigned char sectbuf[SECTOR_SIZE];
+@@ -150,9 +199,15 @@
+ 
+     parse_options(argc, argv, MODE_SYSLINUX);
+ 
++    if (opt.verbose)
++	verbose = 1;
++
+     if (!opt.device)
+ 	usage(EX_USAGE, MODE_SYSLINUX);
+ 
++    if (opt.bimage != NULL)
++	load_boot_image(opt.bimage);
++
+     if (opt.sectors || opt.heads || opt.reset_adv || opt.set_once
+ 	|| (opt.update_only > 0) || opt.menu_save) {
+ 	fprintf(stderr,
+@@ -216,11 +271,9 @@
+ 	    /* These are needed for some flash memories */
+ 	    "MTOOLS_SKIP_CHECK=1\n"
+ 	    "MTOOLS_FAT_COMPATIBILITY=1\n"
 -	    "drive s:\n"
 -	    "  file=\"/proc/%lu/fd/%d\"\n"
 +	    "drive s: file=\"%s\"\n"
  	    "  offset=%llu\n",
- 	    (unsigned long)mypid,
--	    dev_fd, (unsigned long long)filesystem_offset);
-+	    device, (unsigned long long)filesystem_offset);
-     fclose(mtc);
+-	    (unsigned long)mypid,
+-	    dev_fd, (unsigned long long)opt.offset);
++	    opt.device, (unsigned long long)opt.offset);
  
-     /*
-@@ -236,8 +288,10 @@
-     }
+     if (ferror(mtc) || fclose(mtc))
+ 	die_err(mtools_conf);
+@@ -239,9 +292,11 @@
+     syslinux_reset_adv(syslinux_adv);
  
      /* This command may fail legitimately */
 +    if (verbose) fprintf(stderr, "doing mattrib\n");
-     system("mattrib -h -r -s s:/ldlinux.sys 2>/dev/null");
+     status = system("mattrib -h -r -s s:/ldlinux.sys 2>/dev/null");
+     (void)status;		/* Keep _FORTIFY_SOURCE happy */
  
 +    if (verbose) fprintf(stderr, "doing mcopy\n");
      mtp = popen("mcopy -D o -D O -o - s:/ldlinux.sys", "w");
-     if (!mtp || (fwrite(syslinux_ldlinux, 1, syslinux_ldlinux_len, mtp)
- 		 != syslinux_ldlinux_len) ||
-@@ -249,7 +303,9 @@
-      * Now, use libfat to create a block map
-      */
+     if (!mtp ||
+ 	fwrite(syslinux_ldlinux, 1, syslinux_ldlinux_len, mtp)
+@@ -259,7 +314,9 @@
+ 		       + SECTOR_SIZE - 1) >> SECTOR_SHIFT;
+     sectors = calloc(ldlinux_sectors, sizeof *sectors);
      fs = libfat_open(libfat_xpread, dev_fd);
 +    if (verbose) fprintf(stderr, "libfat_open returns %p\n", fs);
      ldlinux_cluster = libfat_searchdir(fs, 0, "LDLINUX SYS", NULL);
@@ -109,11 +130,11 @@
      secp = sectors;
      nsectors = 0;
      s = libfat_clustertosector(fs, ldlinux_cluster);
-@@ -257,6 +313,7 @@
+@@ -267,6 +324,7 @@
  	*secp++ = s;
  	nsectors++;
  	s = libfat_nextsector(fs, s);
-+	if (verbose) fprintf(stderr, "libfat_nextsector returns %d\n", s);
++	if (verbose) fprintf(stderr, "libfat_nextsector returns %d\n", (int)s);
      }
      libfat_close(fs);
  
