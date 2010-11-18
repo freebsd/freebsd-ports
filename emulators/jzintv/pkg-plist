@@ -115,7 +115,6 @@ share/jzintv/rom/joy_diag.rom
 %%PORTDOCS%%%%DOCSDIR%%/doc/utilities/test_cart.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/voice/filtstage.fig
 %%PORTDOCS%%%%DOCSDIR%%/doc/voice/instr_set.txt
-%%PORTDOCS%%%%DOCSDIR%%/COPYING.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/Release-Notes.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/De_Re_Intellivision

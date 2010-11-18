@@ -1,5 +1,5 @@
---- Makefile.orig	2008-12-09 11:07:06.000000000 +0100
-+++ Makefile	2008-12-12 09:15:50.220188108 +0100
+--- Makefile.orig	2008-12-09 10:07:06.000000000 +0000
++++ Makefile	2010-11-16 17:57:07.716769729 +0000
 @@ -10,9 +10,10 @@
  VERSION=1.9.8
  
@@ -12,7 +12,7 @@
  
  # define top of RPM build area
  topdir=/usr/src/redhat
-@@ -601,18 +602,21 @@
+@@ -601,18 +602,20 @@
  pouninstall:
  	@rm -vf $(DESTDIR)$(datadir)/locale/*/LC_MESSAGES/notecase.mo
  	@echo done uninstalling translations
@@ -21,7 +21,6 @@
 +docinstall:
 +	install -d -m 755 "$(docsdir)"
 +	$(INSTALL) -m 644 -c docs/help.ncd "$(docsdir)/help.ncd"
-+	$(INSTALL) -m 644 -c docs/license.txt "$(docsdir)/license.txt"
 +
  #
  # install application
@@ -37,7 +36,7 @@
  	$(INSTALL) -m 644 docs/notecase.xml "$(DESTDIR)$(datadir)/mime/packages/notecase.xml"
  	$(Q)if [ -n "$(NOKIA_MAEMO_BUILD)" ]; then \
  		$(INSTALL) -m 644 docs/notecase.desktop "$(DESTDIR)$(datadir)/applications/hildon/notecase.desktop"; \
-@@ -694,12 +698,6 @@
+@@ -694,12 +697,6 @@
  		echo 'pkg-config error detected $(shell pkg-config --cflags $(LIBS))';\
  		exit 1;\
  	fi;  
@@ -50,7 +49,7 @@
  	$(Q)echo 'Configuration: GNOME_VFS=$(HAVE_GNOME_VFS);GTKSOURCEVIEW=$(HAVE_GTKSOURCEVIEW);DEBUG=$(DEBUG);PROFILE=$(PROFILE);BYTE_ORDER=$(BYTE_ORDER);PLATFORM=$(PLATFORM)' 
  	$(Q)$(SED) 's/^Version:.*/Version:        $(VERSION)/' ./docs/notecase.spec
  	$(Q)$(SED) 's/^Source:.*/Source:         $(archive)_src.tar.gz/' ./docs/notecase.spec
-@@ -820,7 +818,7 @@
+@@ -820,7 +817,7 @@
  #
  # Note: first "make" command forces generating correct help file path in "config.h"
  #

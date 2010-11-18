@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	jzintv
-DISTVERSION=	1.0b3
+PORTVERSION=	1.0b3
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://spatula-city.org/~im14u2c/intv/dl/
 DISTNAME=	jzintv-1.0-beta3-src
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Portable Intellivision(TM) Emulator
+
+LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/jzintv-1.0-beta3
 BUILD_WRKSRC=	${WRKSRC}/src
@@ -55,7 +58,6 @@ do-install:
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/doc
-	${INSTALL_DATA} ${WRKSRC}/COPYING.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Release-Notes.txt ${DOCSDIR}
 	(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR}/doc)
