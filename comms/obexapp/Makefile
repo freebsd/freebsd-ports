@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	obexapp
-PORTVERSION=	1.4.13
+PORTVERSION=	1.4.14
 CATEGORIES=	comms net
 MASTER_SITES=	http://people.freebsd.org/~emax/obexapp/
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Obex application to transfer objects to mobile equipment
 
-LIB_DEPENDS=	openobex:${PORTSDIR}/comms/openobex
+LIB_DEPENDS=	openobex:${PORTSDIR}/comms/openobex \
+		expat.6:${PORTSDIR}/textproc/expat2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
