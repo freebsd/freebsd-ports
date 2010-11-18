@@ -1,10 +1,10 @@
---- Makefile.orig	2009-07-02 12:00:44.000000000 -0700
-+++ Makefile	2010-02-09 22:13:14.000000000 -0800
-@@ -1,51 +1,34 @@
+--- ./Makefile.orig	2010-10-29 12:47:09.000000000 -0700
++++ ./Makefile	2010-11-17 16:02:08.000000000 -0800
+@@ -1,51 +1,35 @@
 -BINS=isutf8 ifdata ifne pee sponge mispipe lckdo parallel
 +BINS=isutf8 ifne pee sponge mispipe lckdo parallel
- PERLSCRIPTS=vidir vipe ts combine zrun
--MANS=sponge.1 vidir.1 vipe.1 isutf8.1 ts.1 combine.1 ifdata.1 ifne.1 pee.1 zrun.1 mispipe.1 lckdo.1 parallel.1
+ PERLSCRIPTS=vidir vipe ts combine zrun chronic
+-MANS=sponge.1 vidir.1 vipe.1 isutf8.1 ts.1 combine.1 ifdata.1 ifne.1 pee.1 zrun.1 chronic.1 mispipe.1 lckdo.1 parallel.1
 -CFLAGS=-O2 -g -Wall
 +MANS=sponge.1 isutf8.1 ifne.1 pee.1 mispipe.1 lckdo.1 parallel.1
 +CFLAGS+= -Wall
@@ -12,16 +12,17 @@
 -PREFIX=/usr
  
 -DOCBOOK2XMAN=docbook2x-man
++
 +.SUFFIXES: .1 .docbook
 +
 +DOCBOOK2XMAN= ${LOCALBASE}/bin/xsltproc ${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl
  
  all: $(BINS) $(MANS)
- 
++ 
 +bins: ${BINS}
 +
 +mans: ${MANS}
-+
+ 
  clean:
  	rm -f $(BINS) $(MANS)
  
