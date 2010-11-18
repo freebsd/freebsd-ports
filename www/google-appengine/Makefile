@@ -18,7 +18,7 @@ DISTFILES+=	${PORTNAME}-docs-${GAEDOCSREL}.zip
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Development tools for Google App Engine (SDK)
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=2.6.6_1:${PORTSDIR}/databases/py-sqlite3 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=${PYTHON_VER}:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_2:${PORTSDIR}/graphics/py-imaging
 
 MANUAL_PACKAGE_BUILD=		uses Python 2.5
