@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tren
-PORTVERSION=	1.217
+PORTVERSION=	1.239
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://www.tundraware.com/Software/tren/
 
@@ -18,12 +18,13 @@ USE_PYTHON=	yes
 MAN1=		tren.1
 MANCOMPRESSED=	yes
 
+PLIST_FILES=	bin/tren.py
+PORTDOCS=	WHATSNEW.txt tren-license.txt tren.html tren.pdf tren.ps tren.rst
+
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for f in WHATSNEW.txt tren-license.txt tren.html tren.pdf tren.ps tren.rst
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
