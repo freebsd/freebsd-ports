@@ -21,7 +21,7 @@ SLAVEPORT=	qt4
 
 USE_QT_VER=	4
 QT_NONSTANDARD=	yes
-QT_COMPONENTS=	qmake_build gui dbus network
+QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build gui dbus network
 USE_GNOME=	desktopfileutils
 
 EXTRA_CONF_ARGS=--disable-cli \
