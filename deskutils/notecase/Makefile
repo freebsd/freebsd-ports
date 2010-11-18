@@ -7,13 +7,15 @@
 
 PORTNAME=	notecase
 PORTVERSION=	1.9.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils textproc
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A hierarchical text notes manager
+
+LICENSE=	BSD
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 gtksourceview2 gnomevfs2 desktopfileutils pkgconfig
@@ -22,7 +24,7 @@ USE_GETTEXT=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	help.ncd license.txt
+PORTDOCS=	help.ncd
 INSTALL_TARGET=	install docinstall
 .endif
 
