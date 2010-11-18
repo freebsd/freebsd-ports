@@ -14,7 +14,7 @@
 # Maxim Sobolev
 # ----------------------------------------------------------------------------
 #
-# $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.17 2003-04-18 13:52:50 sobomax Exp $
+# $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.18 2010-11-18 11:28:05 pav Exp $
 #
 # MAINTAINER= sobomax@FreeBSD.org
 
@@ -57,26 +57,26 @@ FN_RESULTS_SCRIPT=`mktemp -t dclean` || exit 1
 trap cleanup 1 2 3 4 5 6 7 8 10 11 12 13 14 15 16 21 22 23 24 25 26 27 28 \
 	     30 31
 
-echo -n "Building ports md5 index..."
+echo -n "Building ports sha256 index..."
 find ${PORTSDIR}/ \
     \( -name "distinfo" -or -name "distinfo.i386" -or -name "distinfo.alpha" \) \
     -type f -mindepth 3 -maxdepth 3 | \
-    xargs cat | grep '^MD5 ('| sort -u > $FN_PORTS
+    xargs cat | grep '^SHA256 ('| sort -u > $FN_PORTS
 echo "Done."
-P_MD5_COUNT=`wc -l $FN_PORTS | sed "s| $FN_PORTS|| ; s| ||g"`
-echo "Found $P_MD5_COUNT md5 entries in your ports directory."
+P_SHA256_COUNT=`wc -l $FN_PORTS | sed "s| $FN_PORTS|| ; s| ||g"`
+echo "Found $P_SHA256_COUNT sha256 entries in your ports directory."
 
-echo -n "Building distfiles md5 index..."
-find ${DISTDIR}/ -type f | xargs md5 | sed 's|'${DISTDIR}'/||' | sort > $FN_DISTFILES
+echo -n "Building distfiles sha256 index..."
+find ${DISTDIR}/ -type f | xargs sha256 | sed 's|'${DISTDIR}'/||' | sort > $FN_DISTFILES
 echo "Done."
-D_MD5_COUNT=`wc -l $FN_DISTFILES | sed "s| $FN_DISTFILES|| ; s| ||g"`
-echo "Found $D_MD5_COUNT distfile(s) in your distfiles directory."
+D_SHA256_COUNT=`wc -l $FN_DISTFILES | sed "s| $FN_DISTFILES|| ; s| ||g"`
+echo "Found $D_SHA256_COUNT distfile(s) in your distfiles directory."
 
 echo -n "Comparing results..."
 diff -d $FN_DISTFILES $FN_PORTS | grep "^<" | sed 's|.*(|rm '$RM_FLAG' '${DISTDIR}'/| ; s|).*||' > $FN_RESULTS_SCRIPT
 echo "Done."
-R_MD5_COUNT=`wc -l $FN_RESULTS_SCRIPT | sed "s| $FN_RESULTS_SCRIPT|| ; s| ||g"`
-echo "$R_MD5_COUNT distfile(s) doesn't have corresponding md5 entries in ports directory."
+R_SHA256_COUNT=`wc -l $FN_RESULTS_SCRIPT | sed "s| $FN_RESULTS_SCRIPT|| ; s| ||g"`
+echo "$R_SHA256_COUNT distfile(s) doesn't have corresponding sha256 entries in ports directory."
 /bin/sh $FN_RESULTS_SCRIPT
 find ${DISTDIR}/ -type d -empty -delete
 
