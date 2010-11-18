@@ -1,6 +1,6 @@
---- man/syslinux.1	2008-09-26 01:46:02.000000000 +0200
-+++ ../../files/syslinux.1	2008-11-25 15:38:02.000000000 +0100
-@@ -9,20 +9,22 @@
+--- man/syslinux.1.orig	2010-10-20 21:25:38.000000000 +0200
++++ man/syslinux.1	2010-11-16 14:50:50.947688888 +0100
+@@ -7,21 +7,23 @@
  .I device
  .SH DESCRIPTION
  \fBSyslinux\fP is a boot loader for the Linux operating system which
@@ -16,13 +16,15 @@
 +normal FAT formatted disk (or file image), and
 +execute the command:
  .IP
- .B syslinux /dev/fd0
+ .B syslinux \-\-install /dev/fd0
  .PP
 -This will alter the boot sector on the disk and copy a file named
--LDLINUX.SYS into its root directory.
-+This will copy a file named LDLINUX.SYS into the root directory of
-+the disk, install a suitable boot code in the boot sector, and patch the
-+boot sector and LDLINUX.SYS (see \fBNOTES\fP).
+-.I ldlinux.sys
+-into its root directory.
++This will alter the boot sector on the disk, copy a file named
++.I LDLINUX.SYS
++into its root directory and patch the boot sector and LDLINUX.SYS
++(see \fBNOTES\fP).
  .PP
 -On boot time, by default, the kernel will be loaded from the image named
 +On boot time, by default, the boot loader will try to load a linux
@@ -51,8 +53,8 @@
 +
  .SH OPTIONS
  .TP
- .B \-s
-@@ -380,9 +397,11 @@
+ \fB\-i\fP, \fB\-\-install\fP
+@@ -412,9 +429,11 @@
  .BR lilo (8),
  .BR keytab-lilo.pl (8),
  .BR fdisk (8),

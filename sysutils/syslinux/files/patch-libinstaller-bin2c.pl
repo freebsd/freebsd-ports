@@ -1,6 +1,5 @@
-diff -ubwr ../../work/syslinux-3.72/libinstaller/bin2c.pl ./libinstaller/bin2c.pl
---- ../../work/syslinux-3.72/libinstaller/bin2c.pl	2008-09-26 01:46:02.000000000 +0200
-+++ ./libinstaller/bin2c.pl	2008-11-26 13:32:45.000000000 +0100
+--- libinstaller/bin2c.pl.orig	2010-10-20 21:25:38.000000000 +0200
++++ libinstaller/bin2c.pl	2010-11-16 14:24:32.427122941 +0100
 @@ -27,7 +27,7 @@
  
  $pad = 1 if ($pad < 1);
@@ -13,7 +12,7 @@ diff -ubwr ../../work/syslinux-3.72/libinstaller/bin2c.pl ./libinstaller/bin2c.p
 @@ -74,5 +74,6 @@
  @st = stat STDIN;
  
- printf "\nint %s_mtime = %d;\n", $table_name, $st[9];
+ printf "\nconst int %s_mtime = %d;\n", $table_name, $st[9];
 +printf "\nunsigned char *%s = _%s;\n", $table_name, $table_name;
  
  exit 0;
