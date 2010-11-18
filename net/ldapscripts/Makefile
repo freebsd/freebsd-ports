@@ -7,7 +7,7 @@
 
 PORTNAME=	ldapscripts
 PORTVERSION=	1.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://contribs.martymac.org/ldapscripts/
@@ -22,6 +22,8 @@ RUN_DEPENDS=	ldapadd:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client \
 		ldapmodify:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client \
 		ldapmodrdn:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client \
 		ldappasswd:${PORTSDIR}/net/openldap${OPENLDAP_VER}-client
+
+LICENSE=	GPLv2
 
 USE_OPENLDAP=	yes
 USE_ICONV=	yes
@@ -39,7 +41,7 @@ MAN1=	ldapaddgroup.1 ldapaddmachine.1 ldapadduser.1 ldapaddusertogroup.1 \
 	ldapmodifyuser.1
 MAN5=	ldapscripts.5
 
-PORTDOCS=	README CHANGELOG COPYING VERSION TODO
+PORTDOCS=	README CHANGELOG VERSION TODO
 
 # Unset 'all' target set by default to 'help'
 # and set paths to OpenLDAP binaries
@@ -60,11 +62,9 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/VERSION ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
