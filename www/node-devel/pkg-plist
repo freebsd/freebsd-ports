@@ -1,5 +1,4 @@
 bin/node
-bin/node-repl
 bin/node-waf
 include/node/config.h
 include/node/eio.h
