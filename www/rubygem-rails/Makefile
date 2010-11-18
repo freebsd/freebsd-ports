@@ -53,7 +53,7 @@ RUN_DEPENDS+=	rubygem-mongrel>=1.1.5:${PORTSDIR}/www/rubygem-mongrel
 .endif
 
 .if defined(WITH_MONGRELCLUSTER)
-RUN_DEPENDS+=	rubygem-mongre_clusterl>=1.0.5:${PORTSDIR}/www/rubygem-mongrel_cluster
+RUN_DEPENDS+=	rubygem-mongrel_cluster>=1.0.5:${PORTSDIR}/www/rubygem-mongrel_cluster
 .endif
 
 .if defined(WITH_PASSENGER)
