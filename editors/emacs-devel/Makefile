@@ -26,7 +26,7 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 INSTALLS_ICONS=	yes
 
 EMACS_VER=	24.0.50
-EMACS_REV=	101606
+EMACS_REV=	102364
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XZ=		yes
@@ -36,15 +36,16 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--localstatedir=/var
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+EMACS_DIRS=	${DATADIR}/${EMACS_VER}/leim ${DATADIR}/${EMACS_VER}/lisp ${DATADIR}/${EMACS_VER}/src \
+		${PREFIX}/libexec/${PORTNAME}
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-MAN1=		b2m.1 ctags.1 ebrowse.1 emacs.1 emacsclient.1 etags.1 \
+MAN1=		ctags.1 ebrowse.1 emacs.1 emacsclient.1 etags.1 \
 		grep-changelog.1 rcs-checkin.1
 MANCOMPRESSED=	yes
 PLIST_SUB=	EMACS_VER=${EMACS_VER}
-
-EMACS_DIRS=	${DATADIR}/${EMACS_VER} ${PREFIX}/libexec/${PORTNAME}
 
 MAKE_ENV=	LC_ALL=C
 
@@ -59,6 +60,7 @@ LATEST_LINK=	emacs-devel
 OPTIONS=	DBUS	"DBus support"			ON \
 		GCONF	"GConf support"			ON \
 		GIF	"GIF Images support"		ON \
+		GTK2	"Use GTK+ widgets"		ON \
 		JPEG	"JPEG images support"		ON \
 		M17N	"M17N support for text-shaping"	ON \
 		MOTIF	"Use Motif widgets"		OFF \
@@ -76,7 +78,8 @@ OPTIONS=	DBUS	"DBus support"			ON \
 		XIM	"X Input Method support"	ON \
 		XML	"XML Parser support"		ON \
 		XPM	"XPM images support"		ON \
-		IMAGEMAGICK	"ImageMagick support"	OFF
+		IMAGEMAGICK	"ImageMagick support"	ON \
+		GNUTLS	"GNUTLS support"		ON
 
 .include <bsd.port.options.mk>
 
@@ -210,8 +213,9 @@ CONFIGURE_ARGS+=	--without-dbus
 LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 .endif
 
-.if defined(WITH_IMAGEMAGICK)
-CONFIGURE_ARGS+=	--with-imagemagick
+.if defined(WITHOUT_IMAGEMAGICK)
+CONFIGURE_ARGS+=	--without-imagemagick
+.else
 LIB_DEPENDS+=		MagickCore.4:${PORTSDIR}/graphics/ImageMagick
 .endif
 
@@ -219,6 +223,12 @@ LIB_DEPENDS+=		MagickCore.4:${PORTSDIR}/graphics/ImageMagick
 CONFIGURE_ARGS+=	--without-xml2
 .else
 USE_GNOME+=		libxml2
+.endif
+
+.if defined(WITHOUT_GNUTLS)
+CONFIGURE_ARGS+=	--without-gnutls
+.else
+LIB_DEPENDS+=		gnutls.40:${PORTSDIR}/security/gnutls
 .endif
 
 .include <bsd.port.pre.mk>
@@ -236,17 +246,24 @@ post-configure:
 
 add-plist-data:
 .for i in ${EMACS_DIRS}
-	@${FIND} ${i} -type f |${SED} -e 's,${PREFIX}/,,g' >>${TMPPLIST}
+	@${FIND} ${i} -type f |${SED} -E -e 's,^${PREFIX}/,,g'  >>${TMPPLIST}
 .endfor
+	@${FIND} ${WRKSRC}/etc -type f |${SED} -E -e 's,^${WRKSRC},${DATADIR_REL}/${EMACS_VER},g' -e '/etc\/(\..*|ChangeLog|DOC)$$/d' >>${TMPPLIST}
+	@${FIND} ${WRKSRC}/etc -type d -depth |${SED} -E -e 's,^${WRKSRC},@dirrm ${DATADIR_REL}/${EMACS_VER},g' >>${TMPPLIST}
 .for i in ${EMACS_DIRS}
-	@${FIND} ${i} -type d -depth |${SED} -e 's,^${PREFIX}/,@dirrm ,g' >>${TMPPLIST}
+	@${FIND} ${i} -type d -depth |${SED} -E -e 's,^${PREFIX}/,@dirrm ,g' >>${TMPPLIST}
 .endfor
+	@${ECHO} "@unexec rmdir %D/${DATADIR_REL}/${EMACS_VER} 2>/dev/null || true" >>${TMPPLIST}
 
 .if defined(WITH_SOURCES)
+PLIST_SUB+=	SOURCES=""
+
 post-install:
 	@${MKDIR} ${DATADIR}/${EMACS_VER}/src
 	@${INSTALL_DATA} ${WRKSRC}/src/*.[ch] ${DATADIR}/${EMACS_VER}/src
 	@${INSTALL_DATA} ${WRKSRC}/sources.el ${DATADIR}/${EMACS_VER}/site-lisp/site-start.el
+.else
+PLIST_SUB+=	SOURCES="@comment "
 .endif
 
 .if !defined(WITHOUT_X11)

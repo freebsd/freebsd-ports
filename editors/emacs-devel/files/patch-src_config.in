@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/config.in.orig
++++ src/config.in
+@@ -1171,6 +1171,8 @@
+ 
+ #ifdef HAVE_ALLOCA_H
+ # include <alloca.h>
++#elif __FreeBSD__
++#include <stdlib.h>
+ #elif defined __GNUC__
+ # define alloca __builtin_alloca
+ #elif defined _AIX

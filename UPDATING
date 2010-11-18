@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101118:
+  AFFECTS: users of editors/emacs-devel
+  AUTHOR: Ashish SHUKLA <ashish@FreeBSD.org>
+
+  Due to a bug when upgrading from 24.0.50.101606, everything
+  installed by other ports in "${PREFIX}/share/emacs" gets removed.
+
+  Before upgrading:
+
+  * Please backup custom configurations in "${PREFIX}/share/emacs".
+  * After upgrading reinstall any ports that may have had files in the
+    "${PREFIX}/share/emacs" directory.
+
+  Apologies for this inconvenience.
+
 20101117:
   AFFECTS: users of net-p2p/transmission-cli and net-p2p/transmission-gtk
   AUTHOR: Mezz <mezz@FreeBSD.org>
