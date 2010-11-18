@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Rose/URI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/URI/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/URI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose
+@dirrmtry %%SITE_PERL%%/Rose
