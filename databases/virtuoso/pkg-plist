@@ -1,7 +1,7 @@
 bin/inifile
-bin/isql
+bin/isql-vt
 bin/isql-iodbc
-bin/isqlw
+bin/isqlw-vt
 bin/isqlw-iodbc
 bin/odbc_mail
 bin/virt_mail
