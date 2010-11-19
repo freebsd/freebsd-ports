@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Catalyst/Plugin/ErrorCatcher.pm
+%%SITE_PERL%%/Catalyst/Plugin/ErrorCatcher/Email.pm
+%%SITE_PERL%%/Catalyst/Plugin/ErrorCatcher/File.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/ErrorCatcher/.packlist
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/ErrorCatcher
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/ErrorCatcher
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
