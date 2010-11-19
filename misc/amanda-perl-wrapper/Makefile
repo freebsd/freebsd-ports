@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amanda-perl-wrapper
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	misc perl5
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -34,6 +34,6 @@ do-install:
 .include <bsd.port.pre.mk>
 
 LIBTHR!=	${LS} /lib/libthr.so.* | ${TAIL} -1
-SUB_LIST+=	LIBTHR=${LIBTHR_CMD}
+SUB_LIST+=	LIBTHR=${LIBTHR}
 
 .include <bsd.port.post.mk>
