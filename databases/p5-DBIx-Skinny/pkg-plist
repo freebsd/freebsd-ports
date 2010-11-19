@@ -1,0 +1,34 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Skinny/.packlist
+%%SITE_PERL%%/DBIx/Skinny.pm
+%%SITE_PERL%%/DBIx/Skinny/Accessor.pm
+%%SITE_PERL%%/DBIx/Skinny/DBD.pm
+%%SITE_PERL%%/DBIx/Skinny/DBD/Base.pm
+%%SITE_PERL%%/DBIx/Skinny/DBD/Oracle.pm
+%%SITE_PERL%%/DBIx/Skinny/DBD/Pg.pm
+%%SITE_PERL%%/DBIx/Skinny/DBD/SQLite.pm
+%%SITE_PERL%%/DBIx/Skinny/DBD/mysql.pm
+%%SITE_PERL%%/DBIx/Skinny/Iterator.pm
+%%SITE_PERL%%/DBIx/Skinny/Manual.pm
+%%SITE_PERL%%/DBIx/Skinny/Manual/EN.pod
+%%SITE_PERL%%/DBIx/Skinny/Manual/EN/Intro.pod
+%%SITE_PERL%%/DBIx/Skinny/Manual/JA.pod
+%%SITE_PERL%%/DBIx/Skinny/Manual/JA/Intro.pod
+%%SITE_PERL%%/DBIx/Skinny/Manual/JA/Resultset.pod
+%%SITE_PERL%%/DBIx/Skinny/Mixin.pm
+%%SITE_PERL%%/DBIx/Skinny/Profiler.pm
+%%SITE_PERL%%/DBIx/Skinny/Profiler/Trace.pm
+%%SITE_PERL%%/DBIx/Skinny/Row.pm
+%%SITE_PERL%%/DBIx/Skinny/SQL.pm
+%%SITE_PERL%%/DBIx/Skinny/SQL/Oracle.pm
+%%SITE_PERL%%/DBIx/Skinny/Schema.pm
+%%SITE_PERL%%/DBIx/Skinny/Transaction.pm
+@dirrm %%SITE_PERL%%/DBIx/Skinny/SQL
+@dirrm %%SITE_PERL%%/DBIx/Skinny/Profiler
+@dirrm %%SITE_PERL%%/DBIx/Skinny/Manual/JA
+@dirrm %%SITE_PERL%%/DBIx/Skinny/Manual/EN
+@dirrm %%SITE_PERL%%/DBIx/Skinny/Manual
+@dirrm %%SITE_PERL%%/DBIx/Skinny/DBD
+@dirrm %%SITE_PERL%%/DBIx/Skinny
+@dirrmtry %%SITE_PERL%%/DBIx
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Skinny
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
