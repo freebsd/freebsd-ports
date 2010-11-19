@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	synfigstudio
-DISTVERSION=	0.62.01
+DISTVERSION=	0.62.02
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	SF/synfig/${PORTNAME}/${PORTVERSION}
 
