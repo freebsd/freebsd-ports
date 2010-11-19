@@ -129,7 +129,7 @@ pre-configure:
 post-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if defined(WITH_SUID_GPG)
-	${CHMOD} u+s ${PREFIX}/bin/gpg
+	${CHMOD} u+s ${PREFIX}/bin/gpg2
 .endif
 	@${CAT} ${PKGMESSAGE}
 
