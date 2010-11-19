@@ -325,6 +325,7 @@
     SUBDIR += gnome_subr
     SUBDIR += gnomebaker
     SUBDIR += gnomefind
+    SUBDIR += goaccess
     SUBDIR += googlog
     SUBDIR += gosa
     SUBDIR += gpart
