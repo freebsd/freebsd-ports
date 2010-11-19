@@ -10,10 +10,17 @@ bin/runscript.sh
 %%DATADIR%%/datastudio.ico
 %%DATADIR%%/lib/ads.jar
 %%DATADIR%%/lib/antlr/stringtemplate.jar
+%%DATADIR%%/lib/apache/apache-ant-commons-net.jar
+%%DATADIR%%/lib/apache/apache-ant-jsch.jar
+%%DATADIR%%/lib/apache/apache-ant-launcher.jar
+%%DATADIR%%/lib/apache/apache-ant-nodeps.jar
+%%DATADIR%%/lib/apache/apache-ant.jar
 %%DATADIR%%/lib/apache/apache-batik.jar
 %%DATADIR%%/lib/apache/apache-fop.jar
 %%DATADIR%%/lib/apache/apache-log4j.jar
 %%DATADIR%%/lib/apache/apache-poi-contrib.jar
+%%DATADIR%%/lib/apache/apache-poi-ooxml-schemas.jar
+%%DATADIR%%/lib/apache/apache-poi-ooxml.jar
 %%DATADIR%%/lib/apache/apache-poi-scratchpad.jar
 %%DATADIR%%/lib/apache/apache-poi.jar
 %%DATADIR%%/lib/apache/apache-serializer.jar
@@ -37,9 +44,17 @@ bin/runscript.sh
 %%DATADIR%%/lib/apache/commons-pool.jar
 %%DATADIR%%/lib/apache/commons-primitives.jar
 %%DATADIR%%/lib/apache/commons-transaction.jar
+%%DATADIR%%/lib/apache/commons-validator.jar
+%%DATADIR%%/lib/apache/commons-vfs.jar
 %%DATADIR%%/lib/apache/commons-xmlgraphics.jar
+%%DATADIR%%/lib/apache/dom4j.jar
+%%DATADIR%%/lib/apache/hadoop-core.jar
+%%DATADIR%%/lib/apache/jakarta-oro.jar
+%%DATADIR%%/lib/apache/jcraft-jsch.jar
+%%DATADIR%%/lib/apache/tidy.jar
 %%DATADIR%%/lib/apple/aqua2.jar
 %%DATADIR%%/lib/aqua-lib.jar
+%%DATADIR%%/lib/aquafold/geo.jar
 %%DATADIR%%/lib/aspose/aspc.jar
 %%DATADIR%%/lib/dnsjava/dnsjava.jar
 %%DATADIR%%/lib/drivers/db2java.jar
@@ -66,6 +81,7 @@ bin/runscript.sh
 %%DATADIR%%/lib/itext/itext.jar
 %%DATADIR%%/lib/java/activation.jar
 %%DATADIR%%/lib/java/mail.jar
+%%DATADIR%%/lib/java/servlet-api.jar
 %%DATADIR%%/lib/java/tools.jar
 %%DATADIR%%/lib/jgoodies/looks.jar
 %%DATADIR%%/lib/jgraph/jgraph.jar
@@ -84,6 +100,7 @@ bin/runscript.sh
 %%DATADIR%%/lib/jinterop/j-interopdeps.jar
 %%DATADIR%%/lib/jinterop/jcifs.jar
 %%DATADIR%%/lib/jna/jna.jar
+%%DATADIR%%/lib/jna/platform.jar
 %%DATADIR%%/lib/jogl/gluegen-rt.jar
 %%DATADIR%%/lib/jogl/jogl.jar
 %%DATADIR%%/lib/quartz/quartz.jar
@@ -94,7 +111,6 @@ bin/runscript.sh
 %%DATADIR%%/lib/stndeditor/lib.java.jar
 %%DATADIR%%/lib/stndeditor/lib.javascript.jar
 %%DATADIR%%/lib/stndeditor/lib.xml.jar
-%%DATADIR%%/lib/stndeditor/org-openide-explorer.jar
 %%DATADIR%%/lib/stndeditor/standalone-core.jar
 %%DATADIR%%/lib/stndeditor/standalone-htmlcss.jar
 %%DATADIR%%/lib/stndeditor/standalone-java.jar
@@ -108,7 +124,9 @@ bin/runscript.sh
 %%DATADIR%%/license/CDDL-LICENSE.txt
 %%DATADIR%%/license/DB2-JDBC-LICENSE.txt
 %%DATADIR%%/license/DNSJava-LICENSE.txt
+%%DATADIR%%/license/Dom4j_LICENSE.txt
 %%DATADIR%%/license/EPL-LICENSE.txt
+%%DATADIR%%/license/JCraft-BSD-License.txt
 %%DATADIR%%/license/JGoodies-LICENSE.txt
 %%DATADIR%%/license/JNA-LGPL-License.txt
 %%DATADIR%%/license/JOGL-License.txt
@@ -118,6 +136,7 @@ bin/runscript.sh
 %%DATADIR%%/license/Quartz-Apache-2-License.txt
 %%DATADIR%%/license/SNMP4j-Apache-2-License.txt
 %%DATADIR%%/license/TableLayout-LICENSE.txt
+%%DATADIR%%/license/Tidy-MIT-style-LICENSE.txt
 %%DATADIR%%/license/Trilead-SSH-BSD-License.txt
 %%DATADIR%%/license/iText-Mozilla-LICENSE.txt
 %%DATADIR%%/license/jConnect-LICENSE.txt
@@ -141,6 +160,7 @@ bin/runscript.sh
 @dirrm %%DATADIR%%/lib/drivers
 @dirrm %%DATADIR%%/lib/dnsjava
 @dirrm %%DATADIR%%/lib/aspose
+@dirrm %%DATADIR%%/lib/aquafold
 @dirrm %%DATADIR%%/lib/apple
 @dirrm %%DATADIR%%/lib/apache
 @dirrm %%DATADIR%%/lib/antlr
