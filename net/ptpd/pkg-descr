@@ -1,4 +1,7 @@
-This is a port of ptpd, the Precision Time Protocol, which is an
-implementation of IEEE 1588.
+ptpd is an implementation of version 1 the Precision Time Protocol
+(IEEE 1588-2002)
+
+PTP was developed to provide very precise time coordination of LAN connected
+computers.
 
 WWW: http://ptpd.sourceforge.net/
