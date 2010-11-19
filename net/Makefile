@@ -196,6 +196,7 @@
     SUBDIR += gnu-dico
     SUBDIR += gnu-radius
     SUBDIR += gofish
+    SUBDIR += gogoc
     SUBDIR += googlecl
     SUBDIR += googolplex
     SUBDIR += gopher

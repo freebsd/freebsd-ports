@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# PROVIDE: gogoc
+# REQUIRE: NETWORK
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# gogoc_enable (bool):   Set to NO by default.
+#               Set it to YES to enable gogoc.
+#
+# Additional configurable variables:
+# gogoc_config (path):   Set to %%LOCALBASE%%/etc/gogoc.conf
+#               by default.
+
+. /etc/rc.subr
+
+name="gogoc"
+rcvar=${name}_enable
+
+command=%%LOCALBASE%%/bin/${name}
+
+load_rc_config $name
+
+: ${gogoc_enable="NO"}
+: ${gogoc_config="%%LOCALBASE%%/etc/gogoc.conf"}
+
+command_args="-f $gogoc_config"
+
+run_rc_command "$1"
+
