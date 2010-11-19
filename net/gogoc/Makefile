@@ -32,8 +32,8 @@ do-install:
 	cd ${WRKSRC}/gogoc-tsp/ && \
 	    ${GMAKE} platform=freebsd installdir=${PREFIX} install
 	${RM} ${PREFIX}/bin/gogoc.conf*
-	${MKDIR} ${EXAMPLESDIR}
 .if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/gogoc-tsp/bin/gogoc.conf.sample ${EXAMPLESDIR}
 .endif
 .if !defined(NOPORTDOCS)
