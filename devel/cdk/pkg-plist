@@ -1,3 +1,4 @@
+bin/cdk5-config
 include/cdk/alphalist.h
 include/cdk/binding.h
 include/cdk/button.h
@@ -131,7 +132,6 @@ lib/libcdk.so.5
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/calendar_ex.c
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/cdkscreen_ex
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/cdkscreen_ex.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/examples/configure.in
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/dialog_ex
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/dialog_ex.c
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/entry_ex
@@ -140,6 +140,8 @@ lib/libcdk.so.5
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/fscale_ex.c
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/fselect_ex
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/fselect_ex.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/fslider_ex.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/fslider_ex
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/graph_ex
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/graph_ex.c
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/hello_ex
@@ -186,6 +188,8 @@ lib/libcdk.so.5
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/template_ex.c
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/traverse_ex
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/traverse_ex.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/uslider_ex.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/examples/uslider_ex
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/viewer_ex
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/viewer_ex.c
 %%EXAMPLES%%%%EXAMPLESDIR%%/examples/viewer_ex2

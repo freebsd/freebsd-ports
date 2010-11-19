@@ -7,20 +7,20 @@
 #
 
 PORTNAME=	cdk
-PORTVERSION=	5.0.20050424
+PORTVERSION=	5.0.20090215
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	LOCAL/beech
+MASTER_SITES=	ftp://invisible-island.net/cdk/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Curses Development Kit for speedy development of full screen programs
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
-NOPRECIOUSSOFTMAKEVARS=	yes # to many _MLINKS
 PORTDOCS=	COPYING EXPANDING INSTALL NOTES README TODO
 MAKE_JOBS_UNSAFE=	yes
 
@@ -73,7 +73,5 @@ post-install:
 	cd ${WRKSRC}/examples; \
 	${FIND} . | ${CPIO} -pdm -R ${LIBOWN}:${LIBGRP} ${EXAMPLESDIR}/examples
 .endif
-
-.include "${.CURDIR}/mancompress.mk"
 
 .include <bsd.port.post.mk>
