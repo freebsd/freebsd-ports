@@ -121,6 +121,10 @@ CONFIGURE_ARGS+=--with-embedded-server
 
 CFLAGS+=	-fPIC
 
+.if ${OSVERSION} < 700000
+BROKEN=		does not build on 6.X
+.endif
+
 pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
