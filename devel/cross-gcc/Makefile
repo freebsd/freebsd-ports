@@ -26,6 +26,8 @@ COMMENT=	GNU gcc for cross-target development
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		mpfr.4:${PORTSDIR}/math/mpfr
 
+BROKEN=		does not build
+
 #
 # Temporary hack to deal with dependencies during package builds for
 # slave ports.
