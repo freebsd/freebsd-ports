@@ -1,0 +1,9 @@
+Rose::HTML::Objects is a framework for creating a reusable set of HTML
+widgets as mutable Perl objects that can be serialized to HTML or XHTML
+for display purposes.
+
+The Rose::HTML::Object class may be used directly to represent a generic
+tag with an explicitly set element name and arbitrary attributes. There
+are also methods for parent/child manipulation.
+
+WWW: http://search.cpan.org/dist/Rose-HTML-Objects

@@ -1141,6 +1141,7 @@
     SUBDIR += p5-RTx-Shredder
     SUBDIR += p5-RTx-Statistics
     SUBDIR += p5-Reaction
+    SUBDIR += p5-Rose-HTML-Objects
     SUBDIR += p5-SCGI
     SUBDIR += p5-SRU
     SUBDIR += p5-SWF-Chart
