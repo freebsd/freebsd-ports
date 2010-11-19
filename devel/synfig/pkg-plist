@@ -37,7 +37,6 @@ include/synfig-0.0/synfig/main.h
 include/synfig-0.0/synfig/module.h
 include/synfig-0.0/synfig/mutex.h
 include/synfig-0.0/synfig/node.h
-include/synfig-0.0/synfig/nodebase.h
 include/synfig-0.0/synfig/palette.h
 include/synfig-0.0/synfig/paramdesc.h
 include/synfig-0.0/synfig/polynomial_root.h
@@ -55,7 +54,6 @@ include/synfig-0.0/synfig/string.h
 include/synfig-0.0/synfig/string_decl.h
 include/synfig-0.0/synfig/surface.h
 include/synfig-0.0/synfig/surfacenew.h
-include/synfig-0.0/synfig/synfig.h
 include/synfig-0.0/synfig/target.h
 include/synfig-0.0/synfig/target_multi.h
 include/synfig-0.0/synfig/target_null.h
@@ -165,8 +163,8 @@ lib/synfig/modules/libmod_yuv420p.la
 lib/synfig/modules/libmod_yuv420p.so
 lib/synfig/modules/libmod_svg.so
 lib/synfig/modules/libmod_svg.la
-lib/synfig/modules/libexample.so
-lib/synfig/modules/libexample.la
+lib/synfig/modules/libmod_example.so
+lib/synfig/modules/libmod_example.la
 libdata/pkgconfig/synfig.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -175,10 +173,12 @@ libdata/pkgconfig/synfig.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 share/locale/de/LC_MESSAGES/synfig.mo
+share/locale/en_GB/LC_MESSAGES/synfig.mo
 share/locale/it/LC_MESSAGES/synfig.mo
 share/locale/es/LC_MESSAGES/synfig.mo
 share/locale/fr/LC_MESSAGES/synfig.mo
 share/locale/ru/LC_MESSAGES/synfig.mo
+share/locale/zh_CN/LC_MESSAGES/synfig.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/synfig/modules
 @dirrm lib/synfig
