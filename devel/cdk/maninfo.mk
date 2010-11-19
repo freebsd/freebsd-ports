@@ -8,6 +8,7 @@ MAN3+=	cdk.3 \
 	cdk_dialog.3 \
 	cdk_display.3 \
 	cdk_dscale.3 \
+	cdk_draw.3 \
 	cdk_entry.3 \
 	cdk_fscale.3 \
 	cdk_fselect.3 \
@@ -42,9 +43,10 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_alphalist.3 destroyCDKAlphalist.3 \
 	cdk_alphalist.3 drawCDKAlphalist.3 \
 	cdk_alphalist.3 eraseCDKAlphalist.3 \
-	cdk_dialog.3 getCDKAlphalistBox.3 \
+	cdk_alphalist.3 getCDKAlphalistBox.3 \
 	cdk_alphalist.3 getCDKAlphalistContents.3 \
 	cdk_alphalist.3 getCDKAlphalistFillerChar.3 \
+	cdk_alphalist.3 getCDKAlphalistCurrentItem.3 \
 	cdk_alphalist.3 getCDKAlphalistHighlight.3 \
 	cdk_alphalist.3 injectCDKAlphalist.3 \
 	cdk_alphalist.3 moveCDKAlphalist.3 \
@@ -52,10 +54,11 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_alphalist.3 positionCDKAlphalist.3 \
 	cdk_alphalist.3 setCDKAlphalist.3 \
 	cdk_alphalist.3 setCDKAlphalistBackgroundAttrib.3 \
-	cdk_dialog.3 setCDKAlphalistBox.3 \
+	cdk_alphalist.3 setCDKAlphalistBox.3 \
 	cdk_alphalist.3 setCDKAlphalistBackgroundColor.3 \
 	cdk_alphalist.3 setCDKAlphalistBoxAttribute.3 \
 	cdk_alphalist.3 setCDKAlphalistContents.3 \
+	cdk_alphalist.3 setCDKAlphalistCurrentItem.3 \
 	cdk_alphalist.3 setCDKAlphalistFillerChar.3 \
 	cdk_alphalist.3 setCDKAlphalistHighlight.3 \
 	cdk_alphalist.3 setCDKAlphalistHorizontalChar.3 \
@@ -70,6 +73,7 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_binding.3 checkCDKObjectBind.3 \
 	cdk_binding.3 cleanCDKObjectBindings.3 \
 	cdk_binding.3 getcCDKObject.3 \
+	cdk_binding.3 getchCDKObject.3 \
 	cdk_binding.3 unbindCDKObject.3 \
 	cdk_button.3 activateCDKButton.3 \
 	cdk_button.3 destroyCDKButton.3 \
@@ -97,8 +101,11 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_buttonbox.3 activateCDKButtonbox.3 \
 	cdk_buttonbox.3 destroyCDKButtonbox.3 \
 	cdk_buttonbox.3 drawCDKButtonbox.3 \
+	cdk_buttonbox.3 drawCDKButtonboxButtons.3 \
 	cdk_buttonbox.3 eraseCDKButtonbox.3 \
 	cdk_buttonbox.3 getCDKButtonboxBox.3 \
+	cdk_buttonbox.3 getCDKButtonboxButtonCount.3 \
+	cdk_buttonbox.3 getCDKButtonboxCurrentButton.3 \
 	cdk_buttonbox.3 getCDKButtonboxHighlight.3 \
 	cdk_buttonbox.3 moveCDKButtonbox.3 \
 	cdk_buttonbox.3 injectCDKButtonbox.3 \
@@ -108,6 +115,7 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_buttonbox.3 setCDKButtonboxBackgroundColor.3 \
 	cdk_buttonbox.3 setCDKButtonboxBox.3 \
 	cdk_buttonbox.3 setCDKButtonboxBoxAttribute.3 \
+	cdk_buttonbox.3 setCDKButtonboxCurrentButton.3 \
 	cdk_buttonbox.3 setCDKButtonboxHighlight.3 \
 	cdk_buttonbox.3 setCDKButtonboxHorizontalChar.3 \
 	cdk_buttonbox.3 setCDKButtonboxLLChar.3 \
@@ -136,24 +144,31 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_calendar.3 setCDKCalendar.3 \
 	cdk_calendar.3 setCDKCalendarBackgroundAttrib.3 \
 	cdk_calendar.3 setCDKCalendarBackgroundColor.3 \
-	cdk_calendar.3 setCDKCalendarDaysNames.3 \
 	cdk_calendar.3 setCDKCalendarBox.3 \
+	cdk_calendar.3 setCDKCalendarBoxAttribute.3 \
 	cdk_calendar.3 setCDKCalendarDate.3 \
+	cdk_calendar.3 setCDKCalendarDaysNames.3 \
 	cdk_calendar.3 setCDKCalendarDayAttribute.3 \
 	cdk_calendar.3 setCDKCalendarHighlight.3 \
+	cdk_calendar.3 setCDKCalendarHorizontalChar.3 \
 	cdk_calendar.3 setCDKCalendarMarker.3 \
+	cdk_calendar.3 setCDKCalendarLLChar.3 \
+	cdk_calendar.3 setCDKCalendarLRChar.3 \
 	cdk_calendar.3 setCDKCalendarMonthAttribute.3 \
 	cdk_calendar.3 setCDKCalendarMonthsNames.3 \
 	cdk_calendar.3 setCDKCalendarPostProcess.3 \
 	cdk_calendar.3 setCDKCalendarPreProcess.3 \
+	cdk_calendar.3 setCDKCalendarURChar.3 \
+	cdk_calendar.3 setCDKCalendarULChar.3 \
+	cdk_calendar.3 setCDKCalendarVerticalChar.3 \
 	cdk_calendar.3 setCDKCalendarYearAttribute.3 \
 	cdk_compat.3 getDirectoryContents.3 \
 	cdk_compat.3 readFile.3 \
 	cdk_compat.3 splitString.3 \
 	cdk_dialog.3 activateCDKDialog.3 \
 	cdk_dialog.3 destroyCDKDialog.3 \
-	cdk_misc.3 Beep.3 \
 	cdk_dialog.3 drawCDKDialog.3 \
+	cdk_dialog.3 drawCDKDialogButtons.3 \
 	cdk_dialog.3 eraseCDKDialog.3 \
 	cdk_dialog.3 getCDKDialog.3 \
 	cdk_dialog.3 getCDKDialogBox.3 \
@@ -230,12 +245,12 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_entry.3 setCDKEntryCB.3 \
 	cdk_entry.3 setCDKEntryFillerChar.3 \
 	cdk_entry.3 setCDKEntryHiddenChar.3 \
+	cdk_entry.3 setCDKEntryHighlight.3 \
 	cdk_entry.3 setCDKEntryHorizontalChar.3 \
 	cdk_entry.3 setCDKEntryLLChar.3 \
 	cdk_entry.3 setCDKEntryLRChar.3 \
 	cdk_entry.3 setCDKEntryMax.3 \
 	cdk_entry.3 setCDKEntryMin.3 \
-	cdk_misc.3 chlen.3 \
 	cdk_entry.3 setCDKEntryPostProcess.3 \
 	cdk_entry.3 setCDKEntryPreProcess.3 \
 	cdk_entry.3 setCDKEntryULChar.3 \
@@ -271,11 +286,15 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_fscale.3 setCDKFScaleValue.3 \
 	cdk_fscale.3 setCDKFScaleVerticalChar.3 \
 	cdk_fselect.3 activateCDKFselect.3 \
+	cdk_fselect.3 deleteFileCB.3 \
 	cdk_fselect.3 destroyCDKFselect.3 \
 	cdk_fselect.3 drawCDKFselect.3 \
 	cdk_fselect.3 eraseCDKFselect.3 \
 	cdk_fselect.3 getCDKFselectBox.3 \
+	cdk_fselect.3 getCDKFselectContents.3 \
+	cdk_fselect.3 getCDKFselectCurrentItem.3 \
 	cdk_fselect.3 getCDKFselectDirAttribute.3 \
+	cdk_fselect.3 getCDKFselectDirContents.3 \
 	cdk_fselect.3 getCDKFselectDirectory.3 \
 	cdk_fselect.3 getCDKFselectFileAttribute.3 \
 	cdk_fselect.3 getCDKFselectFillerChar.3 \
@@ -291,7 +310,10 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_fselect.3 setCDKFselectBackgroundAttrib.3 \
 	cdk_fselect.3 setCDKFselectBox.3 \
 	cdk_fselect.3 setCDKFselectBoxAttribute.3 \
+	cdk_fselect.3 setCDKFselectContents.3 \
+	cdk_fselect.3 setCDKFselectCurrentItem.3 \
 	cdk_fselect.3 setCDKFselectDirAttribute.3 \
+	cdk_fselect.3 setCDKFselectDirContents.3 \
 	cdk_fselect.3 setCDKFselectDirectory.3 \
 	cdk_fselect.3 setCDKFselectFileAttribute.3 \
 	cdk_fselect.3 setCDKFselectFillerChar.3 \
@@ -333,6 +355,7 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_fslider.3 setCDKFSliderURChar.3 \
 	cdk_fslider.3 setCDKFSliderValue.3 \
 	cdk_fslider.3 setCDKFSliderVerticalChar.3 \
+	cdk_graph.3 activateCDKGraph.3 \
 	cdk_graph.3 destroyCDKGraph.3 \
 	cdk_graph.3 drawCDKGraph.3 \
 	cdk_graph.3 eraseCDKGraph.3 \
@@ -361,6 +384,7 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_graph.3 setCDKGraphValue.3 \
 	cdk_graph.3 setCDKGraphValues.3 \
 	cdk_graph.3 setCDKGraphVerticalChar.3 \
+	cdk_histogram.3 activateCDKHistogram.3 \
 	cdk_histogram.3 destroyCDKHistogram.3 \
 	cdk_histogram.3 drawCDKHistogram.3 \
 	cdk_histogram.3 eraseCDKHistogram.3 \
@@ -380,6 +404,7 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_histogram.3 setCDKHistogramBackgroundColor.3 \
 	cdk_histogram.3 setCDKHistogramBox.3 \
 	cdk_histogram.3 setCDKHistogramBoxAttribute.3 \
+	cdk_histogram.3 setCDKHistogramDisplayType.3 \
 	cdk_histogram.3 setCDKHistogramFillerChar.3 \
 	cdk_histogram.3 setCDKHistogramHorizontalChar.3 \
 	cdk_histogram.3 setCDKHistogramLLChar.3 \
@@ -394,6 +419,7 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_itemlist.3 activateCDKItemlist.3 \
 	cdk_itemlist.3 destroyCDKItemlist.3 \
 	cdk_itemlist.3 drawCDKItemlist.3 \
+	cdk_itemlist.3 drawCDKItemlistField.3 \
 	cdk_itemlist.3 eraseCDKItemlist.3 \
 	cdk_itemlist.3 getCDKItemlistBox.3 \
 	cdk_itemlist.3 getCDKItemlistCurrentItem.3 \
@@ -419,6 +445,7 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_itemlist.3 setCDKItemlistURChar.3 \
 	cdk_itemlist.3 setCDKItemlistValues.3 \
 	cdk_itemlist.3 setCDKItemlistVerticalChar.3 \
+	cdk_label.3 activateCDKLabel.3 \
 	cdk_label.3 destroyCDKLabel.3 \
 	cdk_label.3 drawCDKLabel.3 \
 	cdk_label.3 eraseCDKLabel.3 \
@@ -442,6 +469,7 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_label.3 waitCDKLabel.3 \
 	cdk_marquee.3 activateCDKMarquee.3 \
 	cdk_marquee.3 destroyCDKMarquee.3 \
+	cdk_marquee.3 deactivateCDKMarquee.3 \
 	cdk_marquee.3 drawCDKMarquee.3 \
 	cdk_marquee.3 getCDKMarqueeBox.3 \
 	cdk_marquee.3 eraseCDKMarquee.3 \
@@ -466,6 +494,8 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_matrix.3 eraseCDKMatrix.3 \
 	cdk_matrix.3 getCDKMatrixBox.3 \
 	cdk_matrix.3 getCDKMatrixCell.3 \
+	cdk_matrix.3 getCDKMatrixCol.3 \
+	cdk_matrix.3 getCDKMatrixRow.3 \
 	cdk_matrix.3 injectCDKMatrix.3 \
 	cdk_matrix.3 jumpToCell.3 \
 	cdk_matrix.3 moveToCDKMatrixCell.3 \
@@ -490,9 +520,11 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_mentry.3 cleanCDKMentry.3 \
 	cdk_mentry.3 destroyCDKMentry.3 \
 	cdk_mentry.3 drawCDKMentry.3 \
+	cdk_mentry.3 drawCDKMentryField.3 \
 	cdk_mentry.3 eraseCDKMentry.3 \
 	cdk_mentry.3 getCDKMentryBox.3 \
 	cdk_mentry.3 getCDKMentryFillerChar.3 \
+	cdk_mentry.3 getCDKMentryHiddenChar.3 \
 	cdk_mentry.3 getCDKMentryMin.3 \
 	cdk_mentry.3 getCDKMentryValue.3 \
 	cdk_mentry.3 injectCDKMentry.3 \
@@ -506,6 +538,7 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_mentry.3 setCDKMentryBoxAttribute.3 \
 	cdk_mentry.3 setCDKMentryCB.3 \
 	cdk_mentry.3 setCDKMentryFillerChar.3 \
+	cdk_mentry.3 setCDKMentryHiddenChar.3 \
 	cdk_mentry.3 setCDKMentryHorizontalChar.3 \
 	cdk_mentry.3 setCDKMentryLLChar.3 \
 	cdk_mentry.3 setCDKMentryLRChar.3 \
@@ -519,7 +552,9 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_menu.3 activateCDKMenu.3 \
 	cdk_menu.3 destroyCDKMenu.3 \
 	cdk_menu.3 drawCDKMenu.3 \
+	cdk_menu.3 drawCDKMenuSubwin.3 \
 	cdk_menu.3 eraseCDKMenu.3 \
+	cdk_menu.3 eraseCDKMenuSubwin.3 \
 	cdk_menu.3 getCDKMenuCurrentItem.3 \
 	cdk_menu.3 getCDKMenuSubTitleHighlight.3 \
 	cdk_menu.3 getCDKMenuTitleHighlight.3 \
@@ -533,6 +568,7 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_menu.3 setCDKMenuPreProcess.3 \
 	cdk_menu.3 setCDKMenuSubTitleHighlight.3 \
 	cdk_menu.3 setCDKMenuTitleHighlight.3 \
+	cdk_misc.3 Beep.3 \
 	cdk_misc.3 CDKcountStrings.3 \
 	cdk_misc.3 CDKfreeStrings.3 \
 	cdk_misc.3 CDKgetDirectoryContents.3 \
@@ -540,16 +576,21 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_misc.3 CDKsplitString.3 \
 	cdk_misc.3 baseName.3 \
 	cdk_misc.3 char2Chtype.3 \
+	cdk_misc.3 chlen.3 \
 	cdk_misc.3 chtype2Char.3 \
 	cdk_misc.3 cleanChar.3 \
 	cdk_misc.3 cleanChtype.3 \
 	cdk_misc.3 copyChar.3 \
+	cdk_misc.3 copyCharList.3 \
+	cdk_misc.3 copyChtypeList.3 \
 	cdk_misc.3 copyChtype.3 \
 	cdk_misc.3 freeChar.3 \
 	cdk_misc.3 freeChtype.3 \
 	cdk_misc.3 getListIndex.3 \
 	cdk_misc.3 getString.3 \
 	cdk_misc.3 intlen.3 \
+	cdk_misc.3 lenCharList.3 \
+	cdk_misc.3 lenChtypeList.3 \
 	cdk_misc.3 mode2Char.3 \
 	cdk_misc.3 popupDialog.3 \
 	cdk_misc.3 popupLabel.3 \
@@ -581,7 +622,9 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_radio.3 getCDKRadioChoiceCharacter.3 \
 	cdk_radio.3 getCDKRadioCurrentItem.3 \
 	cdk_radio.3 getCDKRadioHighlight.3 \
+	cdk_radio.3 getCDKRadioItems.3 \
 	cdk_radio.3 getCDKRadioLeftBrace.3 \
+	cdk_radio.3 getCDKRadioSelectedItem.3 \
 	cdk_radio.3 injectCDKRadio.3 \
 	cdk_radio.3 getCDKRadioRightBrace.3 \
 	cdk_radio.3 moveCDKRadio.3 \
@@ -596,12 +639,14 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_radio.3 setCDKRadioCurrentItem.3 \
 	cdk_radio.3 setCDKRadioHighlight.3 \
 	cdk_radio.3 setCDKRadioHorizontalChar.3 \
+	cdk_radio.3 setCDKRadioItems.3  \
 	cdk_radio.3 setCDKRadioLLChar.3 \
 	cdk_radio.3 setCDKRadioLRChar.3 \
 	cdk_radio.3 setCDKRadioLeftBrace.3 \
 	cdk_radio.3 setCDKRadioPostProcess.3 \
 	cdk_radio.3 setCDKRadioPreProcess.3 \
 	cdk_radio.3 setCDKRadioRightBrace.3 \
+	cdk_radio.3 setCDKRadioSelectedItem.3 \
 	cdk_radio.3 setCDKRadioULChar.3 \
 	cdk_radio.3 setCDKRadioURChar.3 \
 	cdk_radio.3 setCDKRadioVerticalChar.3 \
@@ -651,6 +696,8 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_scroll.3 eraseCDKScroll.3 \
 	cdk_scroll.3 getCDKScrollBox.3 \
 	cdk_scroll.3 getCDKScrollCurrent.3 \
+	cdk_scroll.3 getCDKScrollCurrentItem.3 \
+	cdk_scroll.3 getCDKScrollCurrentTop.3 \
 	cdk_scroll.3 getCDKScrollHighlight.3 \
 	cdk_scroll.3 getCDKScrollItems.3 \
 	cdk_scroll.3 injectCDKScroll.3 \
@@ -664,6 +711,8 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_scroll.3 setCDKScrollBox.3 \
 	cdk_scroll.3 setCDKScrollBoxAttribute.3 \
 	cdk_scroll.3 setCDKScrollCurrent.3 \
+	cdk_scroll.3 setCDKScrollCurrentItem.3 \
+	cdk_scroll.3 setCDKScrollCurrentTop.3 \
 	cdk_scroll.3 setCDKScrollHighlight.3 \
 	cdk_scroll.3 setCDKScrollHorizontalChar.3 \
 	cdk_scroll.3 setCDKScrollItems.3 \
@@ -684,8 +733,10 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_selection.3 getCDKSelectionChoices.3 \
 	cdk_selection.3 getCDKSelectionCurrent.3 \
 	cdk_selection.3 getCDKSelectionHighlight.3 \
+	cdk_selection.3 getCDKSelectionItems.3 \
 	cdk_selection.3 getCDKSelectionMode.3 \
 	cdk_selection.3 getCDKSelectionModes.3 \
+	cdk_selection.3 getCDKSelectionTitle.3 \
 	cdk_selection.3 injectCDKSelection.3 \
 	cdk_selection.3 moveCDKSelection.3 \
 	cdk_selection.3 newCDKSelection.3 \
@@ -700,12 +751,14 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_selection.3 setCDKSelectionCurrent.3 \
 	cdk_selection.3 setCDKSelectionHighlight.3 \
 	cdk_selection.3 setCDKSelectionHorizontalChar.3 \
+	cdk_selection.3 setCDKSelectionItems.3 \
 	cdk_selection.3 setCDKSelectionLLChar.3 \
 	cdk_selection.3 setCDKSelectionLRChar.3 \
 	cdk_selection.3 setCDKSelectionMode.3 \
 	cdk_selection.3 setCDKSelectionModes.3 \
 	cdk_selection.3 setCDKSelectionPostProcess.3 \
 	cdk_selection.3 setCDKSelectionPreProcess.3 \
+	cdk_selection.3 setCDKSelectionTitle.3 \
 	cdk_selection.3 setCDKSelectionULChar.3 \
 	cdk_selection.3 setCDKSelectionURChar.3 \
 	cdk_selection.3 setCDKSelectionVerticalChar.3 \
@@ -801,8 +854,15 @@ MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_traverse.3 exitCancelCDKScreenOf.3 \
 	cdk_traverse.3 exitOKCDKScreen.3 \
 	cdk_traverse.3 exitOKCDKScreenOf.3 \
+	cdk_traverse.3 getCDKFocusCurrent.3 \
 	cdk_traverse.3 resetCDKScreen.3 \
 	cdk_traverse.3 resetCDKScreenOf.3 \
+	cdk_traverse.3 setCDKFocusCurrent.3 \
+	cdk_traverse.3 setCDKFocusFirst.3 \
+	cdk_traverse.3 setCDKFocusLast.3 \
+	cdk_traverse.3 setCDKFocusNext.3 \
+	cdk_traverse.3 setCDKFocusPrevious.3 \
+	cdk_traverse.3 traverseCDKOnce.3 \
 	cdk_traverse.3 traverseCDKScreen.3 \
 	cdk_viewer.3 activateCDKViewer.3 \
 	cdk_viewer.3 cleanCDKViewer.3 \
