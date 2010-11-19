@@ -666,6 +666,7 @@ asfiles                         ports/x11-fm/asfiles
 asfrecorder                     ports/net/asfrecorder
 asfsm                           ports/sysutils/asfsm
 ashe                            ports/www/ashe
+asio                            ports/net/asio
 asir2000                        ports/math/asir2000
 ask                             ports/mail/ask
 asl                             ports/devel/asl
@@ -1331,6 +1332,7 @@ bzr-git                         ports/devel/bzr-git
 bzr-grep                        ports/devel/bzr-grep
 bzr-gtk                         ports/devel/bzr-gtk
 bzr-loom                        ports/devel/bzr-loom
+bzr-pipeline                    ports/devel/bzr-pipeline
 bzr-rewrite                     ports/devel/bzr-rewrite
 bzr-svn                         ports/devel/bzr-svn
 bzrtools                        ports/devel/bzrtools
@@ -10971,6 +10973,7 @@ p5-Array-Diff                   ports/misc/p5-Array-Diff
 p5-Array-Group                  ports/devel/p5-Array-Group
 p5-Array-IntSpan                ports/misc/p5-Array-IntSpan
 p5-Array-Iterator               ports/devel/p5-Array-Iterator
+p5-Array-LineReader             ports/misc/p5-Array-LineReader
 p5-Array-PrintCols              ports/misc/p5-Array-PrintCols
 p5-Array-RefElem                ports/misc/p5-Array-RefElem
 p5-Array-Unique                 ports/devel/p5-Array-Unique
@@ -13786,6 +13789,7 @@ p5-Rose-DBx-Object-MoreHelpers  ports/databases/p5-Rose-DBx-Object-MoreHelpers
 p5-Rose-DBx-Object-Renderer     ports/databases/p5-Rose-DBx-Object-Renderer
 p5-Rose-DateTime                ports/devel/p5-Rose-DateTime
 p5-Rose-Object                  ports/devel/p5-Rose-Object
+p5-Rose-URI                     ports/net/p5-Rose-URI
 p5-RunApp                       ports/devel/p5-RunApp
 p5-S3                           ports/net/p5-S3
 p5-SAVI-Perl                    ports/security/p5-SAVI-Perl
@@ -14372,6 +14376,7 @@ p5-Time-Human                   ports/textproc/p5-Time-Human
 p5-Time-Interval                ports/devel/p5-Time-Interval
 p5-Time-Local                   ports/devel/p5-Time-Local
 p5-Time-Object                  ports/devel/p5-Time-Object
+p5-Time-Out                     ports/devel/p5-Time-Out
 p5-Time-Period                  ports/devel/p5-Time-Period
 p5-Time-Piece                   ports/devel/p5-Time-Piece
 p5-Time-Piece-MySQL             ports/databases/p5-Time-Piece-MySQL
@@ -14923,6 +14928,7 @@ p5-array-diff                   ports/misc/p5-Array-Diff
 p5-array-group                  ports/devel/p5-Array-Group
 p5-array-intspan                ports/misc/p5-Array-IntSpan
 p5-array-iterator               ports/devel/p5-Array-Iterator
+p5-array-linereader             ports/misc/p5-Array-LineReader
 p5-array-printcols              ports/misc/p5-Array-PrintCols
 p5-array-refelem                ports/misc/p5-Array-RefElem
 p5-array-unique                 ports/devel/p5-Array-Unique
@@ -17797,6 +17803,7 @@ p5-rose-db-object               ports/databases/p5-Rose-DB-Object
 p5-rose-dbx-object-morehelpers  ports/databases/p5-Rose-DBx-Object-MoreHelpers
 p5-rose-dbx-object-renderer     ports/databases/p5-Rose-DBx-Object-Renderer
 p5-rose-object                  ports/devel/p5-Rose-Object
+p5-rose-uri                     ports/net/p5-Rose-URI
 p5-rpc-simple                   ports/net/p5-RPC-Simple
 p5-rpc-xml                      ports/net/p5-RPC-XML
 p5-rpm-build-perl               ports/devel/p5-rpm-build-perl
@@ -18409,6 +18416,7 @@ p5-time-interval                ports/devel/p5-Time-Interval
 p5-time-local                   ports/devel/p5-Time-Local
 p5-time-modules                 ports/devel/p5-Time-modules
 p5-time-object                  ports/devel/p5-Time-Object
+p5-time-out                     ports/devel/p5-Time-Out
 p5-time-period                  ports/devel/p5-Time-Period
 p5-time-piece                   ports/devel/p5-Time-Piece
 p5-time-piece-mysql             ports/databases/p5-Time-Piece-MySQL
@@ -25756,6 +25764,7 @@ wzdftpd                         ports/ftp/wzdftpd
 wzip                            ports/archivers/wzip
 x-face-e21                      ports/mail/x-face-e21
 x-files                         ports/x11-fm/x-files
+x-tile                          ports/deskutils/x-tile
 x026                            ports/deskutils/x026
 x11_bitmap                      ports/x11/bitmap
 x11_blast                       ports/x11/blast
