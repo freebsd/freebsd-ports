@@ -17,7 +17,7 @@ COMMENT=	Object-oriented interfaces for HTML
 RUN_DEPENDS=	p5-Rose-Object>=0.854:${PORTSDIR}/devel/p5-Rose-Object \
 		p5-Rose-URI>=0.021:${PORTSDIR}/net/p5-Rose-URI \
 		p5-Rose-DateTime>=0.532:${PORTSDIR}/devel/p5-Rose-DateTime \
-		p5-Image-Size>0:${PRTSDIR}/graphics/p5-Image-Size \
+		p5-Image-Size>0:${PORTSDIR}/graphics/p5-Image-Size \
 		p5-IO-String>=1.08:${PORTSDIR}/devel/p5-IO-String \
 		p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Email-Valid>0:${PORTSDIR}/mail/p5-Email-Valid \
