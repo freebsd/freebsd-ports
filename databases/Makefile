@@ -370,6 +370,7 @@
     SUBDIR += p5-DBIx-SearchBuilder
     SUBDIR += p5-DBIx-Sequence
     SUBDIR += p5-DBIx-Simple
+    SUBDIR += p5-DBIx-Skinny
     SUBDIR += p5-DBIx-Table
     SUBDIR += p5-DBIx-TableHash
     SUBDIR += p5-DBIx-Tree
