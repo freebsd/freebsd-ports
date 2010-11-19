@@ -1,0 +1,13 @@
+HFSExplorer is an application that can read Mac-formatted hard disks and disk
+images. It can read the file systems HFS (Mac OS Standard), HFS+ (Mac OS
+Extended) and HFSX (Mac OS Extended with case sensitive file names).
+
+HFSExplorer allows you to browse your Mac volumes with a graphical file system
+browser, extract files (copy to hard disk), view detailed information about the
+volume and create disk images from the volume.
+HFSExplorer can also read most .dmg disk images created on a Mac, including zlib
+/ bzip2 compressed images and AES-128 encrypted images. It supports the
+partition schemes Master Boot Record, GUID Partition Table and Apple Partition
+Map natively.
+
+WWW:	http://hem.bredband.net/catacombae/hfsx.html

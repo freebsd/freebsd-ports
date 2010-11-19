@@ -359,6 +359,7 @@
     SUBDIR += heartbeat
     SUBDIR += heirloom
     SUBDIR += hextools
+    SUBDIR += hfsexplorer
     SUBDIR += hidesvn
     SUBDIR += highlnk
     SUBDIR += hilite
