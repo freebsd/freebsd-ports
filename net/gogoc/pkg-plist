@@ -1,0 +1,7 @@
+bin/gogoc
+%%ETCDIR%%.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gogoc.conf.sample
+template/README
+template/freebsd.sh
+@dirrm template
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
