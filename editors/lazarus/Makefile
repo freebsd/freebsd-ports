@@ -49,15 +49,17 @@ USE_FPC+=	gtk2
 USE_GNOME=	gtk20
 LCL_PLATFORM=	gtk2
 .else
+.if !defined(WITH_QT4)
 USE_FPC+=	gtk1
 USE_GNOME=	gtk12 gdkpixbuf
 LCL_PLATFORM=	gtk
 .endif
+.endif
 
 .if defined(WITH_QT4)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/qt4/libqt4intf.so:${PORTSDIR}/x11-toolkits/qt4pas
+BUILD_DEPENDS+=	${LOCALBASE}/lib/qt4/libQt4Pas.so:${PORTSDIR}/x11-toolkits/qt4pas
 LCL_PLATFORM=	qt
-OPT_EXTRA=	"-dUSE_QT_45"
+#OPT_EXTRA=	"-dUSE_QT_45"
 .endif
 
 post-extract:
@@ -71,6 +73,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|libqt4intf.so.5|libQt4Pas.so.5|g' \
+		${WRKSRC}/lcl/interfaces/qt/qt45.pas
 
 do-build:
 	@cd ${WRKSRC} && \
