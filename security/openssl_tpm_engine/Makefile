@@ -7,6 +7,7 @@
 
 PORTNAME=	openssl_tpm_engine
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/trousers/OpenSSL%20TPM%20Engine/${PORTVERSION}
 

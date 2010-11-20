@@ -2,7 +2,7 @@ http://sourceforge.net/mailarchive/message.php?msg_name=4C0E2D48.20803%40sirrix.
 http://sourceforge.net/mailarchive/message.php?msg_name=1270748622.4478.6722.camel%40macbook.infradead.org
 
 --- e_tpm.c.orig	2007-02-06 05:32:10.000000000 +0900
-+++ e_tpm.c	2010-11-01 00:13:51.370858197 +0900
++++ e_tpm.c	2010-11-21 06:54:21.792744937 +0900
 @@ -35,9 +35,6 @@
  #include <openssl/bn.h>
  
@@ -75,19 +75,13 @@ http://sourceforge.net/mailarchive/message.php?msg_name=1270748622.4478.6722.cam
  	if (hSRK != NULL_HKEY) {
  		DBGFN("SRK is already loaded.");
  		return 1;
-@@ -300,25 +317,33 @@
+@@ -300,29 +317,37 @@
  		return 0;
  	}
  
 -	if ((auth = calloc(1, 128)) == NULL) {
 -		TSSerr(TPM_F_TPM_LOAD_SRK, ERR_R_MALLOC_FAILURE);
 -		return 0;
--	}
--
--	if (!tpm_engine_get_auth(ui, (char *)auth, 128, "SRK authorization: ")) {
--		p_tspi_Context_CloseObject(hContext, hSRK);
--		free(auth);
--		TSSerr(TPM_F_TPM_LOAD_SRK, TPM_R_REQUEST_FAILED);
 -	}
 +	/* c.hol...@sirrix.com: If the UI method is NULL, use TSS_WELL_KNOWN_SECRET */
 +	if (ui) {
@@ -96,14 +90,11 @@ http://sourceforge.net/mailarchive/message.php?msg_name=1270748622.4478.6722.cam
 +			return 0;
 +		}
  
--	/* secret_mode is a global that may be set by engine ctrl
--	 * commands.  By default, its set to TSS_SECRET_MODE_PLAIN */
--	if ((result = p_tspi_Policy_SetSecret(hSRKPolicy, secret_mode,
--					      strlen((char *)auth), auth))) {
+-	if (!tpm_engine_get_auth(ui, (char *)auth, 128, "SRK authorization: ")) {
 -		p_tspi_Context_CloseObject(hContext, hSRK);
 -		free(auth);
 -		TSSerr(TPM_F_TPM_LOAD_SRK, TPM_R_REQUEST_FAILED);
--		return 0;
+-	}
 +		if (!tpm_engine_get_auth(ui, (char *)auth, 128, "SRK authorization: ")) {
 +			p_tspi_Context_CloseObject(hContext, hSRK);
 +			free(auth);
@@ -118,6 +109,15 @@ http://sourceforge.net/mailarchive/message.php?msg_name=1270748622.4478.6722.cam
 +			TSSerr(TPM_F_TPM_LOAD_SRK, TPM_R_REQUEST_FAILED);
 +			return 0;
 +		}
+ 
+-	/* secret_mode is a global that may be set by engine ctrl
+-	 * commands.  By default, its set to TSS_SECRET_MODE_PLAIN */
+-	if ((result = p_tspi_Policy_SetSecret(hSRKPolicy, secret_mode,
+-					      strlen((char *)auth), auth))) {
+-		p_tspi_Context_CloseObject(hContext, hSRK);
+ 		free(auth);
+-		TSSerr(TPM_F_TPM_LOAD_SRK, TPM_R_REQUEST_FAILED);
+-		return 0;
 +	} else {
 +		if (result = p_tspi_Policy_SetSecret(hSRKPolicy, TSS_SECRET_MODE_SHA1, 20, well_known)) {
 +			p_tspi_Context_CloseObject(hContext, hSRK);
@@ -126,7 +126,11 @@ http://sourceforge.net/mailarchive/message.php?msg_name=1270748622.4478.6722.cam
 +		}
  	}
  
- 	free(auth);
+-	free(auth);
+-
+ 	return 1;
+ }
+ 
 @@ -363,6 +388,12 @@
  	void (*p22) ();
  	void (*p23) ();
