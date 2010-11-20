@@ -1,0 +1,18 @@
+GConf extends the concept of a configuration registry.  It provides
+a simple way for applications and administrators to store data;
+often GConf is used to store preferences for applications.
+
+Some of the features of GConf are:
+GConf provides:
+
+    * Documentation for each configuration key, so that administrators
+      can better modify the value.
+
+    * Notifications to interested applications when configuration data
+      is changed.  The notification service works across networks,
+      affecting all login sessions for a single user.
+
+    * Proper locking so that configuration data doesn't get corrupted
+      when accessed by multiple applications at the same time.
+
+WWW: http://www.gnome.org/projects/gconf/
