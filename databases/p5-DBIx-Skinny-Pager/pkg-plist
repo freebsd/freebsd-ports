@@ -1,0 +1,17 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Skinny/Pager/.packlist
+%%SITE_PERL%%/DBIx/Skinny/Mixin/Pager.pm
+%%SITE_PERL%%/DBIx/Skinny/Mixin/SearchWithPager.pm
+%%SITE_PERL%%/DBIx/Skinny/Pager.pm
+%%SITE_PERL%%/DBIx/Skinny/Pager/Logic/Count.pm
+%%SITE_PERL%%/DBIx/Skinny/Pager/Logic/MySQLFoundRows.pm
+%%SITE_PERL%%/DBIx/Skinny/Pager/Logic/PlusOne.pm
+%%SITE_PERL%%/DBIx/Skinny/Pager/Page.pm
+%%SITE_PERL%%/DBIx/Skinny/Pager/Page/Default.pm
+%%SITE_PERL%%/DBIx/Skinny/Pager/Page/PlusOne.pm
+%%SITE_PERL%%/DBIx/Skinny/Pager/ResultSet.pm
+@dirrmtry %%SITE_PERL%%/DBIx/Skinny/Pager/Page
+@dirrmtry %%SITE_PERL%%/DBIx/Skinny/Pager/Logic
+@dirrmtry %%SITE_PERL%%/DBIx/Skinny/Pager
+@dirrmtry %%SITE_PERL%%/DBIx/Skinny/Mixin
+@dirrmtry %%SITE_PERL%%/DBIx/Skinny
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Skinny/Pager
