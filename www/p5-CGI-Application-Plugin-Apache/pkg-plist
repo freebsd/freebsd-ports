@@ -1,0 +1,8 @@
+%%SITE_PERL%%/CGI/Application/Plugin/Apache.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Apache/Request.pm
+%%SITE_PERL%%/CGI/Application/Plugin/Apache2/Request.pm
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Apache2
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin/Apache
+@dirrmtry %%SITE_PERL%%/CGI/Application/Plugin
+@dirrmtry %%SITE_PERL%%/CGI/Application
+@dirrmtry %%SITE_PERL%%/CGI
