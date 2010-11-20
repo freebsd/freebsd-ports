@@ -3,11 +3,11 @@
 # Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11-toolkits/pango/Makefile,v 1.9 2010/06/23 22:34:21 kwm Exp $
+#   $MCom: ports/x11-toolkits/pango/Makefile,v 1.161 2010/09/30 06:56:41 kwm Exp $
 #
 
 PORTNAME=	pango
-PORTVERSION=	1.28.1
+PORTVERSION=	1.28.3
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME \

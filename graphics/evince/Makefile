@@ -3,12 +3,11 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports-stable/graphics/evince/Makefile,v 1.11 2010/06/24 10:03:54 kwm Exp $
+#    $MCom: ports/graphics/evince/Makefile,v 1.147 2010/09/28 07:27:12 kwm Exp $
 #
 
 PORTNAME=	evince
-PORTVERSION=	2.30.3
-PORTREVISION=	2
+PORTVERSION=	2.32.0
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 multi-format document viewer
 
 BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
-LIB_DEPENDS=	poppler-glib.4:${PORTSDIR}/graphics/poppler-gtk \
+LIB_DEPENDS=	poppler-glib.5:${PORTSDIR}/graphics/poppler-gtk \
 		spectre.1:${PORTSDIR}/print/libspectre
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
@@ -33,9 +32,12 @@ USE_GNOME=	gnomehack intlhack gnomeprefix desktopfileutils \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-GCONF_SCHEMAS=	evince.schemas \
+GLIB_SCHEMAS=	org.gnome.Evince.gschema.xml
+GCONF_SCHEMAS=	\
 		evince-thumbnailer.schemas \
 		evince-thumbnailer-ps.schemas
+
+PLIST_SUB+=	VERSION=2.32
 
 MAN1=		evince.1
 
@@ -120,6 +122,7 @@ PLIST_SUB+=		COMICS="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|execinfo.h|#|g' \
+		-e 's|" == "|" = "|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/^DOC_MODULE_VERSION/d' \
 		${WRKSRC}/help/reference/libdocument/Makefile.in \
@@ -127,5 +130,7 @@ post-patch:
 
 post-install:
 	@-update-desktop-database
+	@${INSTALL_DATA} ${WRKSRC}/data/org.gnome.Evince.gschema.xml \
+		${PREFIX}/share/glib-2.0/schemas
 
 .include <bsd.port.post.mk>

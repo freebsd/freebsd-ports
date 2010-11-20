@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-control-center/Makefile,v 1.207 2010/04/28 08:26:27 kwm Exp $
+#   $MCom: ports/sysutils/gnome-control-center/Makefile,v 1.214 2010/11/18 11:46:09 kwm Exp $
 #
 
 PORTNAME=	gnome-control-center
-PORTVERSION=	2.30.1
-PORTREVISION=	2
+PORTVERSION=	2.32.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,6 +16,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Control center for GNOME 2 project
 
 LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		polkit-gobject-1.0:${PORTSDIR}/sysutils/polkit \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 BUILD_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 RUN_DEPENDS=	gnome-eject:${PORTSDIR}/sysutils/gnome-mount \
@@ -29,7 +30,7 @@ GNOME_DESKTOP_VERSION=2
 USE_GSTREAMER=	good
 WANT_GNOME=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack metacity gnomemenus \
-		desktopfileutils libgnomekbd gnomedesktop librsvg2
+		desktopfileutils libgnomekbd gnomedesktop librsvg2 gconf2
 USE_XORG=	xscrnsaver
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
@@ -60,6 +61,8 @@ PLIST_SUB+=	ABOUTME="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 	    	${WRKSRC}/capplets/common/gnome-theme-info.c
+	@${REINPLACE_CMD} -e 's|/usr/sbin|${PREFIX}/sbin|g' \
+		${WRKSRC}/capplets/display/org.gnome.randr.policy.in
 
 post-install:
 	@-update-desktop-database

@@ -3,12 +3,11 @@
 # Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/accessibility/at-spi2-core/Makefile,v 1.8 2010/04/01 12:15:44 kwm Exp $
+#   $MCom: ports/accessibility/at-spi2-core/Makefile,v 1.17 2010/11/16 11:48:22 kwm Exp $
 #
 
 PORTNAME=	at-spi2-core
-PORTVERSION=	0.1.8
-PORTREVISION=	1
+PORTVERSION=	0.4.1
 CATEGORIES=	accessibility x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,6 +17,8 @@ COMMENT=	An Assistive Technology Service Provider Interface
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
+LICENSE=        LGPL21
+LICENSE_FILE=   ${WRKSRC}/COPYING
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

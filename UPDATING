@@ -5,6 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101120:
+  AFFECTS: users of x11-toolkits/gtk20 and x11-toolkits/gtkmm24
+  AUTHOR: FreeBSD GNOME Team <gnome@FreeBSD.org>
+
+  In the GNOME 2.32 release. gdk-pixbuf2 has been split off from gtk20,
+  and atkmm has been split off from gtkmm24. To upgrade please use the
+  following instructions:
+
+  Portmaster users:
+
+    # pkg_delete -f gtkmm-2.20\* gtk-2.20\*
+    # portmaster -a
+
+  Portupgrade users:
+
+    # pkgdb -fF
+    # pkg_deinstall -f0 gtkmm-2.20\* gtk-2.20\*
+    # portupgrade -aOW
+
 20101118:
   AFFECTS: users of editors/emacs-devel
   AUTHOR: Ashish SHUKLA <ashish@FreeBSD.org>

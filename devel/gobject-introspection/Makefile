@@ -3,11 +3,11 @@
 # Whom:					Alexander Logvinov <avl@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/gobject-introspection/Makefile,v 1.8 2010/04/22 15:11:23 kwm Exp $
+#   $MCom: ports/devel/gobject-introspection/Makefile,v 1.26 2010/10/07 10:28:00 kwm Exp $
 #
 
 PORTNAME=	gobject-introspection
-PORTVERSION=	0.6.14
+PORTVERSION=	0.9.12
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -22,7 +22,7 @@ LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack glib20
+USE_GNOME=	gnomehack glib20 ltverhack
 USE_PYTHON=	yes
 USE_BISON=	both
 USE_GETTEXT=	yes
@@ -32,6 +32,10 @@ MAKE_JOBS_UNSAFE=yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-tests
+
+# Force it to put the .cache in ${WRKSRC} instead of ~/.cache. ports/143260
+MAKE_ENV=	HOME=${WRKDIR}
 
 MAN1=		g-ir-compiler.1 g-ir-generate.1 g-ir-scanner.1
 

@@ -14,9 +14,15 @@
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/chart.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/chart.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/chart.pyo
+lib/python2.6/site-packages/invest/currencies.py
+lib/python2.6/site-packages/invest/currencies.pyc
+lib/python2.6/site-packages/invest/currencies.pyo
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/defs.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/defs.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/defs.pyo
+lib/python2.6/site-packages/invest/help.py
+lib/python2.6/site-packages/invest/help.pyc
+lib/python2.6/site-packages/invest/help.pyo
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/networkmanager.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/networkmanager.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/networkmanager.pyo
@@ -29,24 +35,13 @@
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/widgets.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/widgets.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/invest/widgets.pyo
-libdata/bonobo/servers/GNOME_AccessxStatusApplet.server
-%%BATTERY%%libdata/bonobo/servers/GNOME_BattstatApplet.server
 libdata/bonobo/servers/GNOME_CDPlayerApplet.server
-%%CPUFREQ%%libdata/bonobo/servers/GNOME_CPUFreqApplet.server
-libdata/bonobo/servers/GNOME_CharpickerApplet.server
-libdata/bonobo/servers/GNOME_DriveMountApplet.server
-libdata/bonobo/servers/GNOME_GWeatherApplet_Factory.server
-libdata/bonobo/servers/GNOME_GeyesApplet.server
 %%PYTHON%%libdata/bonobo/servers/GNOME_GtikApplet.server
 libdata/bonobo/servers/GNOME_KeyboardApplet.server
 libdata/bonobo/servers/GNOME_MailcheckApplet_Factory.server
-libdata/bonobo/servers/GNOME_MiniCommanderApplet.server
-libdata/bonobo/servers/GNOME_MixerApplet.server
-libdata/bonobo/servers/GNOME_MultiLoadApplet_Factory.server
+%%OLDCOMMANDER%%libdata/bonobo/servers/GNOME_MiniCommanderApplet.server
 libdata/bonobo/servers/GNOME_NullApplet_Factory.server
-libdata/bonobo/servers/GNOME_Panel_TrashApplet.server
 libdata/bonobo/servers/GNOME_Panel_WirelessApplet.server
-libdata/bonobo/servers/GNOME_StickyNotesApplet.server
 %%PYTHON%%libdata/bonobo/servers/Invest_Applet.server
 libexec/accessx-status-applet
 %%BATTERY%%libexec/battstat-applet-2
@@ -63,20 +58,44 @@ libexec/multiload-applet-2
 libexec/null_applet
 libexec/stickynotes_applet
 libexec/trashapplet
+share/dbus-1/services/org.gnome.panel.applet.AccessxStatusAppletFactory.service
+%%BATTERY%%share/dbus-1/services/org.gnome.panel.applet.BattstatAppletFactory.service
+%%CPUFREQ%%share/dbus-1/services/org.gnome.panel.applet.CPUFreqAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.CharpickerAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.DriveMountAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.GWeatherAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.GeyesAppletFactory.service
+%%COMMANDER%%share/dbus-1/services/org.gnome.panel.applet.MiniCommanderAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.MixerAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.MultiLoadAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.StickyNotesAppletFactory.service
+share/dbus-1/services/org.gnome.panel.applet.TrashAppletFactory.service
 %%CPUFREQ%%share/dbus-1/system-services/org.gnome.CPUFreqSelector.service
-share/gnome-2.0/ui/GNOME_AccessxApplet.xml
-%%BATTERY%%share/gnome-2.0/ui/GNOME_BattstatApplet.xml
-%%CPUFREQ%%share/gnome-2.0/ui/GNOME_CPUFreqApplet.xml
-share/gnome-2.0/ui/GNOME_CharpickerApplet.xml
-share/gnome-2.0/ui/GNOME_DriveMountApplet.xml
-share/gnome-2.0/ui/GNOME_GWeatherApplet.xml
-share/gnome-2.0/ui/GNOME_GeyesApplet.xml
-%%COMMANDER%%share/gnome-2.0/ui/GNOME_MiniCommanderApplet.xml
-share/gnome-2.0/ui/GNOME_MixerApplet.xml
-share/gnome-2.0/ui/GNOME_MultiloadApplet.xml
-share/gnome-2.0/ui/GNOME_Panel_TrashApplet.xml
-share/gnome-2.0/ui/GNOME_StickyNotesApplet.xml
+share/gnome-2.0/ui/accessx-status-applet-menu.xml
+%%BATTERY%%share/gnome-2.0/ui/battstat-applet-menu.xml
+share/gnome-2.0/ui/charpick-applet-menu.xml
+%%CPUFREQ%%share/gnome-2.0/ui/cpufreq-applet-menu.xml
+share/gnome-2.0/ui/drivemount-applet-menu.xml
+share/gnome-2.0/ui/geyes-applet-menu.xml
+share/gnome-2.0/ui/gweather-applet-menu.xml
+%%COMMANDER%%share/gnome-2.0/ui/mini-commander-applet-menu.xml
+share/gnome-2.0/ui/mixer-applet-menu.xml
+share/gnome-2.0/ui/multiload-applet-menu.xml
+share/gnome-2.0/ui/stickynotes-applet-menu.xml
+share/gnome-2.0/ui/trashapplet-menu.xml
 %%PYTHON%%share/gnome-2.0/ui/Invest_Applet.xml
+share/gnome-panel/applets/org.gnome.applets.AccessxStatusApplet.panel-applet
+%%BATTERY%%share/gnome-panel/applets/org.gnome.applets.BattstatApplet.panel-applet
+%%CPUFREQ%%share/gnome-panel/applets/org.gnome.applets.CPUFreqApplet.panel-applet
+share/gnome-panel/applets/org.gnome.applets.CharpickerApplet.panel-applet
+share/gnome-panel/applets/org.gnome.applets.DriveMountApplet.panel-applet
+share/gnome-panel/applets/org.gnome.applets.GWeatherApplet.panel-applet
+share/gnome-panel/applets/org.gnome.applets.GeyesApplet.panel-applet
+%%COMMANDER%%share/gnome-panel/applets/org.gnome.applets.MiniCommanderApplet.panel-applet
+share/gnome-panel/applets/org.gnome.applets.MixerApplet.panel-applet
+share/gnome-panel/applets/org.gnome.applets.MultiLoadApplet.panel-applet
+share/gnome-panel/applets/org.gnome.applets.StickyNotesApplet.panel-applet
+share/gnome-panel/applets/org.gnome.applets.TrashApplet.panel-applet
 %%BATTERY%%%%DATADIR%%/builder/battstat_applet.ui
 %%CPUFREQ%%%%DATADIR%%/builder/cpufreq-preferences.ui
 %%PYTHON%%%%DATADIR%%/builder/financialchart.ui
@@ -242,6 +261,18 @@ share/gnome/help/accessx-status/fr/figures/accessx_sticky-keys.png
 share/gnome/help/accessx-status/fr/figures/accessx_sticky-meta-key.png
 share/gnome/help/accessx-status/fr/figures/accessx_sticky-shift-key.png
 share/gnome/help/accessx-status/fr/figures/accessx_sticky-windows-key.png
+share/gnome/help/accessx-status/gl/accessx-status.xml
+share/gnome/help/accessx-status/gl/figures/accessx-status-applet.png
+share/gnome/help/accessx-status/gl/figures/accessx-status-disabled.png
+share/gnome/help/accessx-status/gl/figures/accessx_bounce-keys.png
+share/gnome/help/accessx-status/gl/figures/accessx_mouse-keys.png
+share/gnome/help/accessx-status/gl/figures/accessx_slow-keys.png
+share/gnome/help/accessx-status/gl/figures/accessx_sticky-altGr-key.png
+share/gnome/help/accessx-status/gl/figures/accessx_sticky-ctrl-key.png
+share/gnome/help/accessx-status/gl/figures/accessx_sticky-keys.png
+share/gnome/help/accessx-status/gl/figures/accessx_sticky-meta-key.png
+share/gnome/help/accessx-status/gl/figures/accessx_sticky-shift-key.png
+share/gnome/help/accessx-status/gl/figures/accessx_sticky-windows-key.png
 share/gnome/help/accessx-status/it/accessx-status.xml
 share/gnome/help/accessx-status/it/figures/accessx-status-applet.png
 share/gnome/help/accessx-status/it/figures/accessx-status-disabled.png
@@ -819,6 +850,12 @@ share/gnome/help/drivemount/cs/figures/drivemount-applet_example.png
 share/gnome/help/drivemount/cs/figures/drivemount-applet_mount.png
 share/gnome/help/drivemount/cs/figures/drivemount-applet_open.png
 share/gnome/help/drivemount/cs/figures/drivemount-applet_status.png
+share/gnome/help/drivemount/da/drivemount.xml
+share/gnome/help/drivemount/da/figures/drivemount-applet_eject.png
+share/gnome/help/drivemount/da/figures/drivemount-applet_example.png
+share/gnome/help/drivemount/da/figures/drivemount-applet_mount.png
+share/gnome/help/drivemount/da/figures/drivemount-applet_open.png
+share/gnome/help/drivemount/da/figures/drivemount-applet_status.png
 share/gnome/help/drivemount/de/drivemount.xml
 share/gnome/help/drivemount/de/figures/drivemount-applet_eject.png
 share/gnome/help/drivemount/de/figures/drivemount-applet_example.png
@@ -1255,16 +1292,26 @@ share/gnome/help/gweather/zh_CN/figures/stock_weather-snow.png
 share/gnome/help/gweather/zh_CN/figures/stock_weather-storm.png
 share/gnome/help/gweather/zh_CN/figures/stock_weather-sunny.png
 share/gnome/help/gweather/zh_CN/gweather.xml
+%%PYTHON%%share/gnome/help/invest-applet/C/figures/symbol-search.png
 %%PYTHON%%share/gnome/help/invest-applet/C/invest-applet.xml
 %%PYTHON%%share/gnome/help/invest-applet/C/legal.xml
+%%PYTHON%%share/gnome/help/invest-applet/ca/figures/symbol-search.png
 %%PYTHON%%share/gnome/help/invest-applet/ca/invest-applet.xml
-%%PYTHON%%share/gnome/help/invest-applet/en_GB/invest-applet.xml
+%%PYTHON%%share/gnome/help/invest-applet/de/figures/symbol-search.png
 %%PYTHON%%share/gnome/help/invest-applet/de/invest-applet.xml
+%%PYTHON%%share/gnome/help/invest-applet/el/figures/symbol-search.png
 %%PYTHON%%share/gnome/help/invest-applet/el/invest-applet.xml
+%%PYTHON%%share/gnome/help/invest-applet/en_GB/figures/symbol-search.png
+%%PYTHON%%share/gnome/help/invest-applet/en_GB/invest-applet.xml
+%%PYTHON%%share/gnome/help/invest-applet/es/figures/symbol-search.png
 %%PYTHON%%share/gnome/help/invest-applet/es/invest-applet.xml
+%%PYTHON%%share/gnome/help/invest-applet/fi/figures/symbol-search.png
 %%PYTHON%%share/gnome/help/invest-applet/fi/invest-applet.xml
+%%PYTHON%%share/gnome/help/invest-applet/ru/figures/symbol-search.png
 %%PYTHON%%share/gnome/help/invest-applet/ru/invest-applet.xml
+%%PYTHON%%share/gnome/help/invest-applet/sv/figures/symbol-search.png
 %%PYTHON%%share/gnome/help/invest-applet/sv/invest-applet.xml
+%%PYTHON%%share/gnome/help/invest-applet/zh_CN/figures/symbol-search.png
 %%PYTHON%%share/gnome/help/invest-applet/zh_CN/invest-applet.xml
 share/gnome/help/mixer_applet2/C/figures/volumecontrol_applet.png
 share/gnome/help/mixer_applet2/C/legal.xml
@@ -1596,6 +1643,7 @@ share/locale/el/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/en_CA/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/en@shaw/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/eo/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/es_AR/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/es_CL/LC_MESSAGES/gnome-applets-2.0.mo
@@ -1632,6 +1680,7 @@ share/locale/is/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ka/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/kk/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/kn/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ku/LC_MESSAGES/gnome-applets-2.0.mo
@@ -1670,6 +1719,7 @@ share/locale/ta/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/te/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/th/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/ug/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-applets-2.0.mo
@@ -1688,6 +1738,7 @@ share/omf/accessx-status/accessx-status-es.omf
 share/omf/accessx-status/accessx-status-eu.omf
 share/omf/accessx-status/accessx-status-fi.omf
 share/omf/accessx-status/accessx-status-fr.omf
+share/omf/accessx-status/accessx-status-gl.omf
 share/omf/accessx-status/accessx-status-it.omf
 share/omf/accessx-status/accessx-status-ko.omf
 share/omf/accessx-status/accessx-status-nl.omf
@@ -1771,6 +1822,7 @@ share/omf/char-palette/char-palette-zh_CN.omf
 share/omf/drivemount/drivemount-C.omf
 share/omf/drivemount/drivemount-ca.omf
 share/omf/drivemount/drivemount-cs.omf
+share/omf/drivemount/drivemount-da.omf
 share/omf/drivemount/drivemount-de.omf
 share/omf/drivemount/drivemount-el.omf
 share/omf/drivemount/drivemount-en_GB.omf
@@ -2237,15 +2289,25 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/mixer_applet2/C/figures
 @dirrm share/gnome/help/mixer_applet2/C
 @dirrm share/gnome/help/mixer_applet2
+%%PYTHON%%@dirrm share/gnome/help/invest-applet/zh_CN/figures
 %%PYTHON%%@dirrm share/gnome/help/invest-applet/zh_CN
+%%PYTHON%%@dirrm share/gnome/help/invest-applet/sv/figures
 %%PYTHON%%@dirrm share/gnome/help/invest-applet/sv
+%%PYTHON%%@dirrm share/gnome/help/invest-applet/ru/figures
 %%PYTHON%%@dirrm share/gnome/help/invest-applet/ru
+%%PYTHON%%@dirrm share/gnome/help/invest-applet/fi/figures
 %%PYTHON%%@dirrm share/gnome/help/invest-applet/fi
+%%PYTHON%%@dirrm share/gnome/help/invest-applet/es/figures
 %%PYTHON%%@dirrm share/gnome/help/invest-applet/es
-%%PYTHON%%@dirrm share/gnome/help/invest-applet/el
+%%PYTHON%%@dirrm share/gnome/help/invest-applet/en_GB/figures
 %%PYTHON%%@dirrm share/gnome/help/invest-applet/en_GB
+%%PYTHON%%@dirrm share/gnome/help/invest-applet/el/figures
+%%PYTHON%%@dirrm share/gnome/help/invest-applet/el
+%%PYTHON%%@dirrm share/gnome/help/invest-applet/de/figures
 %%PYTHON%%@dirrm share/gnome/help/invest-applet/de
+%%PYTHON%%@dirrm share/gnome/help/invest-applet/ca/figures
 %%PYTHON%%@dirrm share/gnome/help/invest-applet/ca
+%%PYTHON%%@dirrm share/gnome/help/invest-applet/C/figures
 %%PYTHON%%@dirrm share/gnome/help/invest-applet/C
 %%PYTHON%%@dirrm share/gnome/help/invest-applet
 @dirrm share/gnome/help/gweather/zh_CN/figures
@@ -2364,6 +2426,8 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/drivemount/el
 @dirrm share/gnome/help/drivemount/de/figures
 @dirrm share/gnome/help/drivemount/de
+@dirrm share/gnome/help/drivemount/da/figures
+@dirrm share/gnome/help/drivemount/da
 @dirrm share/gnome/help/drivemount/cs/figures
 @dirrm share/gnome/help/drivemount/cs
 @dirrm share/gnome/help/drivemount/ca/figures
@@ -2535,6 +2599,8 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/accessx-status/ko
 @dirrm share/gnome/help/accessx-status/it/figures
 @dirrm share/gnome/help/accessx-status/it
+@dirrm share/gnome/help/accessx-status/gl/figures
+@dirrm share/gnome/help/accessx-status/gl
 @dirrm share/gnome/help/accessx-status/fr/figures
 @dirrm share/gnome/help/accessx-status/fr
 @dirrm share/gnome/help/accessx-status/fi/figures
@@ -2559,6 +2625,8 @@ share/xmodmap/xmodmap.yu
 @dirrm share/gnome/help/accessx-status/C
 @dirrm share/gnome/help/accessx-status
 %%PYTHON%%@dirrm %%DATADIR%%/invest-applet
+@dirrmtry share/gnome-panel/applets
+@dirrmtry share/gnome-panel
 @dirrm %%DATADIR%%/geyes/Tango
 @dirrm %%DATADIR%%/geyes/Horrid
 @dirrm %%DATADIR%%/geyes/Default-tiny
@@ -2574,6 +2642,8 @@ share/xmodmap/xmodmap.yu
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -2596,6 +2666,8 @@ share/xmodmap/xmodmap.yu
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/es_VE/LC_MESSAGES

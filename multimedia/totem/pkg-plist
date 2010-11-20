@@ -116,12 +116,15 @@ share/applications/totem.desktop
 %%DOCSDIR%%/TotemObject.html
 %%DOCSDIR%%/TotemPlugin.html
 %%DOCSDIR%%/TotemVideoList.html
+%%DOCSDIR%%/annotation-glossary.html
 %%DOCSDIR%%/api-index-deprecated.html
 %%DOCSDIR%%/api-index-full.html
 %%DOCSDIR%%/core-api.html
 %%DOCSDIR%%/home.png
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/ix02.html
+%%DOCSDIR%%/ix03.html
 %%DOCSDIR%%/left.png
 %%DOCSDIR%%/right.png
 %%DOCSDIR%%/style.css
@@ -402,6 +405,7 @@ share/locale/is/LC_MESSAGES/totem.mo
 share/locale/it/LC_MESSAGES/totem.mo
 share/locale/ja/LC_MESSAGES/totem.mo
 share/locale/ka/LC_MESSAGES/totem.mo
+share/locale/kk/LC_MESSAGES/totem.mo
 share/locale/kn/LC_MESSAGES/totem.mo
 share/locale/ko/LC_MESSAGES/totem.mo
 share/locale/ku/LC_MESSAGES/totem.mo
@@ -584,6 +588,8 @@ share/vala/vapi/totem.vapi
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES

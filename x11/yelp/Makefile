@@ -3,12 +3,12 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/yelp/Makefile,v 1.154 2010/04/27 13:32:17 kwm Exp $
+#   $MCom: ports/x11/yelp/Makefile,v 1.164 2010/10/18 13:37:34 kwm Exp $
 #
 
 PORTNAME=	yelp
-PORTVERSION=	2.30.1
-PORTREVISION=	2
+PORTVERSION=	2.30.2
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,6 +19,8 @@ COMMENT=	A help browser for the GNOME 2 desktop
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
     		rarian.0:${PORTSDIR}/textproc/rarian
+
+CONFLICTS=	yelp-2.31.*
 
 USE_GECKO=	libxul
 USE_GETTEXT=	yes

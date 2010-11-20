@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/x11/gnome-panel/Makefile,v 1.5 2010/06/23 21:59:12 kwm Exp $
+#   $MCom: ports/x11/gnome-panel/Makefile,v 1.230 2010/11/17 13:01:32 kwm Exp $
 #
 
 PORTNAME=	gnome-panel
-PORTVERSION=	2.30.2
-PORTREVISION?=	1
+PORTVERSION=	2.32.1
+PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,16 +21,16 @@ USE_BZIP2=	yes
 .if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS=	gweather.1:${PORTSDIR}/net/libgweather \
-		canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
-		polkit-gnome.0:${PORTSDIR}/sysutils/policykit-gnome
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
 
 USE_GETTEXT=	yes
+USE_XORG=	ice sm x11 xau xrandr
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop librsvg2 \
-		libwnck gnomemenus gnomedocutils ltverhack referencehack \
-		libbonoboui
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop libwnck gnomemenus \
+		gnomedocutils ltverhack referencehack librsvg2
 WANT_GNOME=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes
@@ -47,7 +47,8 @@ GCONF_SCHEMAS=	clock.schemas fish.schemas \
 		panel-toplevel.schemas window-list.schemas \
 		workspace-switcher.schemas
 
-OPTIONS=	EVOLUTION "use the Evolution calendar if installed" on
+OPTIONS=	EVOLUTION "use the Evolution calendar if installed" on \
+		BONOBO "Support for bonobo applets aka Gnome 2 applets" on
 
 .if defined(PACKAGE_BUILDING)
 .undef WITHOUT_GNOME
@@ -58,9 +59,18 @@ WITH_GNOME=	yes
 
 .if !defined(WITHOUT_EVOLUTION) && ${HAVE_GNOME:Mevolutiondataserver}!=""
 USE_GNOME+=	evolutiondataserver
-CONFIGURE_ARGS+=--enable-eds
+#CONFIGURE_ARGS+=--enable-eds
 .else
 CONFIGURE_ARGS+=--disable-eds
+.endif
+
+.if defined(WITH_BONOBO)
+USE_GNOME+=	libbonoboui
+CONFIGURE_ARGS+=--enable-bonobo
+PLIST_SUB+=	BONOBO=""
+.else
+CONFIGURE_ARGS+=--disable-bonobo
+PLIST_SUB+=	BONOBO="@comment "
 .endif
 
 post-patch:
@@ -70,6 +80,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|xsltproc -o| xsltproc --nonet -o|g' \
 		${WRKSRC}/help/clock/Makefile.in \
 		${WRKSRC}/help/fish/Makefile.in
+
+post-install:
+	@${MKDIR} ${PREFIX}/lib/gnome-panel/modules
+	-${LOCALBASE}/bin/gio-querymodules ${PREFIX}/lib/gnome-panel/modules
 
 .include <bsd.port.post.mk>
 

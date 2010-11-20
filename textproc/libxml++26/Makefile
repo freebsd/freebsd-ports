@@ -4,11 +4,11 @@
 # Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/textproc/libxml++26/Makefile,v 1.37 2010/04/03 16:02:01 avl Exp $
+#   $MCom: ports/textproc/libxml++26/Makefile,v 1.39 2010/10/15 03:29:33 avl Exp $
 #
 
 PORTNAME=	libxml++
-PORTVERSION=	2.30.0
+PORTVERSION=	2.32.0
 PORTREVISION?=	0
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME

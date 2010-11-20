@@ -1,8 +1,10 @@
+include/json-glib-1.0/json-glib/json-builder.h
 include/json-glib-1.0/json-glib/json-enum-types.h
 include/json-glib-1.0/json-glib/json-generator.h
 include/json-glib-1.0/json-glib/json-glib.h
 include/json-glib-1.0/json-glib/json-gobject.h
 include/json-glib-1.0/json-glib/json-parser.h
+include/json-glib-1.0/json-glib/json-reader.h
 include/json-glib-1.0/json-glib/json-types.h
 include/json-glib-1.0/json-glib/json-version.h
 lib/girepository-1.0/Json-1.0.typelib
@@ -11,8 +13,10 @@ lib/libjson-glib-1.0.la
 lib/libjson-glib-1.0.so
 lib/libjson-glib-1.0.so.0
 libdata/pkgconfig/json-glib-1.0.pc
+%%DOCSDIR%%/JsonBuilder.html
 %%DOCSDIR%%/JsonGenerator.html
 %%DOCSDIR%%/JsonParser.html
+%%DOCSDIR%%/JsonReader.html
 %%DOCSDIR%%/annotation-glossary.html
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/ch02.html
@@ -27,6 +31,7 @@ libdata/pkgconfig/json-glib-1.0.pc
 %%DOCSDIR%%/ix04.html
 %%DOCSDIR%%/ix05.html
 %%DOCSDIR%%/ix06.html
+%%DOCSDIR%%/ix07.html
 %%DOCSDIR%%/json-advanced.html
 %%DOCSDIR%%/json-base.html
 %%DOCSDIR%%/json-glib-Boxed-Types-Serialization.html

@@ -3,12 +3,12 @@
 # Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/libbonobo/Makefile,v 1.81 2010/04/02 18:10:40 kwm Exp $
+#   $MCom: ports/devel/libbonobo/Makefile,v 1.84 2010/09/26 20:57:33 kwm Exp $
 #
 
 PORTNAME=	libbonobo
-PORTVERSION=	2.24.3
-PORTREVISION?=	1
+PORTVERSION=	2.32.0
+PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,8 +20,7 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-    		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_GMAKE=	yes
 USE_BISON=	build

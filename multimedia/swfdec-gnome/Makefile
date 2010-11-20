@@ -3,12 +3,11 @@
 # Whom:					Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/multimedia/swfdec-gnome/Makefile,v 1.27 2010/04/01 17:25:14 kwm Exp $
+#   $MCom: ports/multimedia/swfdec-gnome/Makefile,v 1.29 2010/09/29 14:04:43 kwm Exp $
 #
 
 PORTNAME=	swfdec-gnome
-PORTVERSION=	2.30.0
-PORTREVISION=	1
+PORTVERSION=	2.30.1
 CATEGORIES=	multimedia
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

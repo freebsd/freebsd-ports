@@ -1,0 +1,11 @@
+--- Makefile.orig	2010-10-31 11:27:20.000000000 +0100
++++ Makefile	2010-10-31 11:27:35.000000000 +0100
+@@ -4,7 +4,7 @@ CFLAGS := $(if $(RPM_OPT_FLAGS), $(RPM_O
+ 
+ LDFLAGS = $(shell pkg-config --libs gtk+-2.0)
+ CFLAGS += -Wall
+-CFLAGS += $(shell pkg-config --cflags gtk+-2.0) -DGTK_DISABLE_BROKEN -DGTK_DISABLE_DEPRECATED
++CFLAGS += $(shell pkg-config --cflags gtk+-2.0) -DGTK_DISABLE_BROKEN
+ CFLAGS += -DPROJNAME='"$(PROJNAME)"' -DVERSION='"$(VERSION)"'
+ CPPFLAGS =
+ CXXFLAGS =

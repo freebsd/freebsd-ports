@@ -1,0 +1,26 @@
+--- src/Makefile.in.orig	2010-10-04 21:25:05.000000000 +0000
++++ src/Makefile.in	2010-10-04 21:29:36.000000000 +0000
+@@ -1584,8 +1584,10 @@
+ @HAVE_INTROSPECTION_TRUE@Epiphany-$(EPIPHANY_API_VERSION).gir: $(INTROSPECTION_SCANNER) $(EPHY_GIR_H_FILES) \
+ @HAVE_INTROSPECTION_TRUE@                                      $(EPHY_GIR_C_FILES) epiphany
+ @HAVE_INTROSPECTION_TRUE@	$(AM_V_GEN) PKG_CONFIG_PATH=$(top_builddir)/data:$$PKG_CONFIG_PATH \
+-@HAVE_INTROSPECTION_TRUE@	$(INTROSPECTION_SCANNER) -v \
+-@HAVE_INTROSPECTION_TRUE@		--namespace Epiphany \
++@HAVE_INTROSPECTION_TRUE@	$(INTROSPECTION_SCANNER) -v --warn-all \
++@HAVE_INTROSPECTION_TRUE@		--identifier-prefix=Ephy \
++@HAVE_INTROSPECTION_TRUE@		--symbol-prefix=ephy \
++@HAVE_INTROSPECTION_TRUE@		--namespace=Epiphany \
+ @HAVE_INTROSPECTION_TRUE@		--nsversion=$(EPIPHANY_API_VERSION) \
+ @HAVE_INTROSPECTION_TRUE@		--add-include-path=. \
+ @HAVE_INTROSPECTION_TRUE@		--add-include-path=$(srcdir) \
+@@ -1593,8 +1595,8 @@
+ @HAVE_INTROSPECTION_TRUE@		--include=libxml2-2.0 \
+ @HAVE_INTROSPECTION_TRUE@		--include=WebKit-1.0 \
+ @HAVE_INTROSPECTION_TRUE@		--program=./epiphany \
+-@HAVE_INTROSPECTION_TRUE@		--output $@ \
+-@HAVE_INTROSPECTION_TRUE@		--pkg epiphany-$(EPIPHANY_API_VERSION) \
++@HAVE_INTROSPECTION_TRUE@		--output=$@ \
++@HAVE_INTROSPECTION_TRUE@		--pkg=epiphany-$(EPIPHANY_API_VERSION) \
+ @HAVE_INTROSPECTION_TRUE@		-DEPIPHANY_COMPILATION \
+ @HAVE_INTROSPECTION_TRUE@		-I$(top_srcdir)/embed \
+ @HAVE_INTROSPECTION_TRUE@		-I$(top_srcdir)/lib \

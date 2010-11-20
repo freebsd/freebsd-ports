@@ -61,6 +61,7 @@ share/locale/is/LC_MESSAGES/libwnck.mo
 share/locale/it/LC_MESSAGES/libwnck.mo
 share/locale/ja/LC_MESSAGES/libwnck.mo
 share/locale/ka/LC_MESSAGES/libwnck.mo
+share/locale/kk/LC_MESSAGES/libwnck.mo
 share/locale/kn/LC_MESSAGES/libwnck.mo
 share/locale/ko/LC_MESSAGES/libwnck.mo
 share/locale/ku/LC_MESSAGES/libwnck.mo
@@ -99,6 +100,7 @@ share/locale/ta/LC_MESSAGES/libwnck.mo
 share/locale/te/LC_MESSAGES/libwnck.mo
 share/locale/th/LC_MESSAGES/libwnck.mo
 share/locale/tr/LC_MESSAGES/libwnck.mo
+share/locale/ug/LC_MESSAGES/libwnck.mo
 share/locale/uk/LC_MESSAGES/libwnck.mo
 share/locale/vi/LC_MESSAGES/libwnck.mo
 share/locale/wa/LC_MESSAGES/libwnck.mo
@@ -113,6 +115,8 @@ share/gir-1.0/Wnck-1.0.gir
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -133,6 +137,8 @@ share/gir-1.0/Wnck-1.0.gir
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES

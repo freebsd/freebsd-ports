@@ -3,7 +3,7 @@
 #
 # $FreeBSD$
 #	$NetBSD: $
-#     $MCom: ports/Mk/bsd.gnome.mk,v 1.490 2010/03/14 18:13:44 marcus Exp $
+#     $MCom: ports/Mk/bsd.gnome.mk,v 1.512 2010/10/26 09:02:45 kwm Exp $
 #
 # Please view me with 4 column tabs!
 
@@ -41,22 +41,30 @@ Gnome_Pre_Include=			bsd.gnome.mk
 # and MAKE_ENV defined.
 #
 #
-# GCONF_SCHEMAS		- Set the following to list of all schema files
-#					  that your port installs. These schema files and
-#					  %gconf.xml files will be automatically added to
-#					  ${PLIST}. For example, if your port has
-#					  "etc/gconf/schemas/(foo.schemas and bar.schemas)",
-#					  add the following to your Makefile:
-#					  "GCONF_SCHEMAS=foo.schemas bar.schemas".
+# GCONF_SCHEMAS	- Set the following to list of all the gconf schema files
+#				that your port installs. These schema files and
+#				%gconf.xml files will be automatically added to
+#				the ${PLIST}. For example, if your port has
+#				"etc/gconf/schemas/(foo.schemas and bar.schemas)",
+#				add the following to your Makefile:
+#				"GCONF_SCHEMAS=foo.schemas bar.schemas".
+#
+# GLIB_SCHEMAS		- Set the following to list of all gsettings schema files
+#				(*.gschema.xml) that your ports installs. The
+#				schema files will be automatically added to
+#				the ${PLIST}. For example, if your port has
+#				"share/glib-2.0/schemas/(foo.gschema.xml and bar.gschema.xml)",
+#				add the following to your Makefile:
+#				"GLIB_SCHEMAS=foo.gschema.xml bar.gschema.xml".
 #
 # INSTALLS_OMF		- If set, bsd.gnome.mk will automatically scan pkg-plist
-#					  file and add apropriate @exec/@unexec directives for
-#					  each .omf file found to track OMF registration database.
+#				file and add apropriate @exec/@unexec directives for
+#				each .omf file found to track OMF registration database.
 #
 # INSTALLS_ICONS	- If your port installs Freedesktop-style icons to
-#					  ${LOCALBASE}/share/icons, then you should use this
-#					  macro. If the icons are not cached, they will not be
-#					  displayed.
+#				${LOCALBASE}/share/icons, then you should use this
+#				macro. If the icons are not cached, they will not be
+#				displayed.
 #
 
 # non-version specific components
@@ -71,7 +79,7 @@ _USE_GNOME_ALL+= bonobo gal gconf gdkpixbuf glib12 glibwww \
 		oaf orbit pygnome pygtk
 
 # GNOME 2 components
-_USE_GNOME_ALL+= atk atspi desktopfileutils eel2 evolutiondataserver gal2 \
+_USE_GNOME_ALL+= atk atspi desktopfileutils eel2 evolutiondataserver gal2 gdkpixbuf2 \
 		gconf2 _glib20 glib20 gnomecontrolcenter2 gnomedesktop gnomedesktopsharp20 \
 		gnomedocutils gnomemenus gnomepanel gnomesharp20 gnomespeech gnomevfs2 gtk20 \
 		gtkhtml3 gtksharp10 gtksharp20 gtksourceview gtksourceview2 gvfs \
@@ -277,6 +285,10 @@ pango_LIB_DEPENDS=	pango-1.0.0:${PORTSDIR}/x11-toolkits/pango
 pango_DETECT=		${LOCALBASE}/libdata/pkgconfig/pango.pc
 pango_USE_GNOME_IMPL=	glib20
 
+gdkpixbuf2_LIB_DEPENDS=	gdk_pixbuf-2.0.0:${PORTSDIR}/graphics/gdk-pixbuf2
+gdkpixbuf2_DETECT=	${LOCALBASE}/libdata/pkgconfig/gdk-pixbuf-2.0.pc
+gdkpixbuf2_USE_GNOME_IMPL=glib20
+
 gtk20_LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
 gtk20_DETECT=		${LOCALBASE}/libdata/pkgconfig/gtk+-x11-2.0.pc
 gtk20_USE_GNOME_IMPL=	intltool atk pango
@@ -284,7 +296,7 @@ GTK2_VERSION=		2.10.0
 
 linc_LIB_DEPENDS=	linc.1:${PORTSDIR}/net/linc
 linc_DETECT=		${LOCALBASE}/libdata/pkgconfig/linc.pc
-linc_USE_GNOME_IMPL=glib20
+linc_USE_GNOME_IMPL=	glib20
 
 libidl_LIB_DEPENDS=	IDL-2.0:${PORTSDIR}/devel/libIDL
 libidl_DETECT=		${LOCALBASE}/libdata/pkgconfig/libIDL-2.0.pc
@@ -390,7 +402,7 @@ eel2_USE_GNOME_IMPL=	gnomedesktop
 
 gnomepanel_LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnome-panel
 gnomepanel_DETECT=	${LOCALBASE}/libdata/pkgconfig/libpanelapplet-2.0.pc
-gnomepanel_USE_GNOME_IMPL=gnomedesktop libwnck gnomemenus gnomedocutils librsvg2 libbonoboui
+gnomepanel_USE_GNOME_IMPL=gnomedesktop libwnck gnomemenus gnomedocutils librsvg2
 gnomepanel_GNOME_DESKTOP_VERSION=2
 
 nautilus2_LIB_DEPENDS=	nautilus-extension.1:${PORTSDIR}/x11-fm/nautilus
@@ -418,7 +430,7 @@ libgda3_LIB_DEPENDS=	gda-3.0.3:${PORTSDIR}/databases/libgda3
 libgda3_DETECT=			${LOCALBASE}/libdata/pkgconfig/libgda-3.0.pc
 libgda3_USE_GNOME_IMPL=	glib20 libxslt
 
-libgda4_LIB_DEPENDS=	gda-4.0.4:${PORTSDIR}/databases/libgda4
+libgda4_LIB_DEPENDS=	gda-4.0.5:${PORTSDIR}/databases/libgda4
 libgda4_DETECT=			 ${LOCALBASE}/libdata/pkgconfig/libgda-4.0.pc
 libgda4_USE_GNOME_IMPL=	glib20 libxslt
 
@@ -474,7 +486,7 @@ gnomespeech_LIB_DEPENDS=gnomespeech.7:${PORTSDIR}/accessibility/gnome-speech
 gnomespeech_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-speech-1.0.pc
 gnomespeech_USE_GNOME_IMPL=libbonobo
 
-evolutiondataserver_LIB_DEPENDS=edataserver-1.2.11:${PORTSDIR}/databases/evolution-data-server
+evolutiondataserver_LIB_DEPENDS=edataserverui-1.2.11:${PORTSDIR}/databases/evolution-data-server
 evolutiondataserver_DETECT=		${LOCALBASE}/libdata/pkgconfig/evolution-data-server-1.2.pc
 evolutiondataserver_USE_GNOME_IMPL=gconf2 libxml2
 
@@ -665,7 +677,8 @@ _USE_GNOME+=	${${component}_USE_GNOME_IMPL} ${component}
 
 # Setup the GTK+ API version for pixbuf loaders, input method modules,
 # and theme engines.
-PLIST_SUB+=			GTK2_VERSION="${GTK2_VERSION}"
+PLIST_SUB+=			GTK2_VERSION="${GTK2_VERSION}" \
+				GTK3_VERSION="${GTK3_VERSION}"
 
 # Then handle the ltverhack component (it has to be done here, because
 # we rely on some bsd.autotools.mk variables, and bsd.autotools.mk is
@@ -790,7 +803,7 @@ CONFIGURE_FAIL_MESSAGE= "Please run the gnomelogalyzer, available from \"http://
 
 
 .if defined(GCONF_SCHEMAS) || defined(INSTALLS_OMF) || defined(INSTALLS_ICONS) \
-	|| (defined(_USE_GNOME) && ${_USE_GNOME:Mgnomehier}!="")
+	|| defined(GLIB_SCHEMAS) || (defined(_USE_GNOME) && ${_USE_GNOME:Mgnomehier}!="")
 pre-su-install: gnome-pre-su-install
 post-install: gnome-post-install
 
@@ -814,6 +827,18 @@ gnome-post-install:
 			>> ${TMPPLIST}; \
 	done
 .  endif
+
+# we put the @unexec behind the plist schema entry, because it compiles files
+# in the directory. So we should remove the port file first before recompiling.
+.  if defined(GLIB_SCHEMAS)
+	@for i in ${GLIB_SCHEMAS}; do \
+		${ECHO_CMD} "share/glib-2.0/schemas/$${i}" >> ${TMPPLIST}; \
+		${ECHO_CMD} "@exec glib-compile-schemas %D/share/glib-2.0/schemas > /dev/null || /usr/bin/true" \
+			>> ${TMPPLIST}; \
+		${ECHO_CMD} "@unexec glib-compile-schemas --uninstall %D/share/glib-2.0/schemas > /dev/null || /usr/bin/true" \
+			>> ${TMPPLIST}; \
+	done
+.endif
 
 .  if defined(INSTALLS_OMF)
 	@for i in `${GREP} "\.omf$$" ${TMPPLIST}`; do \

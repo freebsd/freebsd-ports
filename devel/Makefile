@@ -479,7 +479,6 @@
     SUBDIR += gindent
     SUBDIR += gio-fam-backend
     SUBDIR += gir-repository
-    SUBDIR += gir-repository-dbus
     SUBDIR += gir-repository-gconf2
     SUBDIR += gir-repository-libnotify
     SUBDIR += gir-repository-libsoup
@@ -876,6 +875,7 @@
     SUBDIR += libsigsegv
     SUBDIR += libslang2
     SUBDIR += libsoup
+    SUBDIR += libsoup-gnome
     SUBDIR += libsoup-reference
     SUBDIR += libsoup22
     SUBDIR += libstatgrab

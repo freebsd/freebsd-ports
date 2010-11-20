@@ -3,22 +3,19 @@
 # Whom:					Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/libgdata/Makefile,v 1.9 2010/03/30 11:24:13 kwm Exp $
+#   $MCom: ports/devel/libgdata/Makefile,v 1.14 2010/09/30 19:39:17 kwm Exp $
 #
 
 PORTNAME=	libgdata
-PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTVERSION=	0.6.5
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GLib based implimentation of the GData protocol
 
-BUILD_DEPENDS=	${LOCALBASE}/share/gir-1.0/Soup-2.4.gir:${PORTSDIR}/devel/gir-repository-libsoup \
-		g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup
-RUN_DEPENDS=	${LOCALBASE}/share/gir-1.0/Soup-2.4.gir:${PORTSDIR}/devel/gir-repository-libsoup
+BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+LIB_DEPENDS=	soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes

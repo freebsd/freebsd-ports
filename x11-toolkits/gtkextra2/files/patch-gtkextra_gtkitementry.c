@@ -1,6 +1,14 @@
---- gtkextra/gtkitementry.c.orig	2009-09-26 16:38:37.000000000 +0200
-+++ gtkextra/gtkitementry.c	2009-09-26 16:40:16.000000000 +0200
-@@ -693,23 +693,23 @@ gtk_entry_real_insert_text (GtkEditable 
+--- gtkextra/gtkitementry.c.orig	2002-06-27 18:57:19.000000000 +0200
++++ gtkextra/gtkitementry.c	2010-11-02 17:51:07.000000000 +0100
+@@ -131,7 +131,6 @@ static void         gtk_entry_draw_curso
+ static PangoLayout *gtk_entry_ensure_layout            (GtkEntry       *entry,
+                                                         gboolean        include_preedit);
+ static void         gtk_entry_queue_draw               (GtkEntry       *entry);
+-static void         gtk_entry_reset_im_context         (GtkEntry       *entry);
+ static void         gtk_entry_recompute                (GtkEntry       *entry);
+ static void         gtk_entry_get_cursor_locations     (GtkEntry       *entry,
+ 							CursorType      type,
+@@ -693,23 +692,23 @@ gtk_entry_real_insert_text (GtkEditable 
        new_text_length = g_utf8_offset_to_pointer (new_text, n_chars) - new_text;
      }
  
@@ -34,7 +42,7 @@
  		      new_text_length = g_utf8_find_prev_char (new_text, new_text + new_text_length + 1) - new_text;
  		      n_chars = g_utf8_strlen (new_text, new_text_length);
  		    }
-@@ -718,19 +718,19 @@ gtk_entry_real_insert_text (GtkEditable 
+@@ -718,19 +717,19 @@ gtk_entry_real_insert_text (GtkEditable 
  	    }
  	}
  
@@ -58,7 +66,7 @@
    
    if (entry->current_pos > *position)
      entry->current_pos += n_chars;
-@@ -763,9 +763,9 @@ gtk_entry_real_delete_text (GtkEditable 
+@@ -763,9 +762,9 @@ gtk_entry_real_delete_text (GtkEditable 
        gint start_index = g_utf8_offset_to_pointer (entry->text, start_pos) - entry->text;
        gint end_index = g_utf8_offset_to_pointer (entry->text, end_pos) - entry->text;
  
@@ -70,7 +78,7 @@
        
        if (entry->current_pos > start_pos)
  	entry->current_pos -= MIN (entry->current_pos, end_pos) - start_pos;
-@@ -1028,7 +1028,7 @@ gtk_entry_retrieve_surrounding_cb (GtkIM
+@@ -1028,7 +1027,7 @@ gtk_entry_retrieve_surrounding_cb (GtkIM
  {
    gtk_im_context_set_surrounding (context,
                                    entry->text,
@@ -79,7 +87,7 @@
                                    g_utf8_offset_to_pointer (entry->text, entry->current_pos) - entry->text);
  
    return TRUE;
-@@ -1229,7 +1229,7 @@ gtk_entry_create_layout (GtkEntry *entry
+@@ -1229,7 +1228,7 @@ gtk_entry_create_layout (GtkEntry *entry
        
        if (entry->visible)
          {
@@ -88,7 +96,7 @@
            g_string_insert (tmp_string, cursor_index, preedit_string);
          }
        else
-@@ -1238,7 +1238,7 @@ gtk_entry_create_layout (GtkEntry *entry
+@@ -1238,7 +1237,7 @@ gtk_entry_create_layout (GtkEntry *entry
            gint preedit_len_chars;
            gunichar invisible_char;
            
@@ -97,7 +105,7 @@
            preedit_len_chars = g_utf8_strlen (preedit_string, -1);
            ch_len += preedit_len_chars;
  
-@@ -1272,7 +1272,7 @@ gtk_entry_create_layout (GtkEntry *entry
+@@ -1272,7 +1271,7 @@ gtk_entry_create_layout (GtkEntry *entry
      {
        if (entry->visible)
          {
@@ -106,3 +114,20 @@
          }
        else
          {
+@@ -1695,16 +1694,6 @@ gtk_entry_queue_draw (GtkEntry *entry)
+ }
+ 
+ static void
+-gtk_entry_reset_im_context (GtkEntry *entry)
+-{
+-  if (entry->need_im_reset)
+-    {
+-      entry->need_im_reset = 0;
+-      gtk_im_context_reset (entry->im_context);
+-    }
+-}
+-
+-static void
+ gtk_entry_get_cursor_locations (GtkEntry   *entry,
+ 				CursorType  type,
+ 				gint       *strong_x,

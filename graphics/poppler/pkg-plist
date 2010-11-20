@@ -3,6 +3,7 @@ include/poppler/Array.h
 include/poppler/BuiltinFont.h
 include/poppler/BuiltinFontTables.h
 include/poppler/CMap.h
+include/poppler/CachedFile.h
 include/poppler/Catalog.h
 include/poppler/CharCodeToUnicode.h
 include/poppler/CharTypes.h
@@ -26,6 +27,7 @@ include/poppler/JArithmeticDecoder.h
 include/poppler/JBIG2Stream.h
 include/poppler/Lexer.h
 include/poppler/Link.h
+include/poppler/LocalPDFDocBuilder.h
 include/poppler/Movie.h
 include/poppler/NameToCharCode.h
 include/poppler/NameToUnicodeTable.h
@@ -34,7 +36,9 @@ include/poppler/OptionalContent.h
 include/poppler/Outline.h
 include/poppler/OutputDev.h
 include/poppler/PDFDoc.h
+include/poppler/PDFDocBuilder.h
 include/poppler/PDFDocEncoding.h
+include/poppler/PDFDocFactory.h
 include/poppler/PSOutputDev.h
 include/poppler/PSTokenizer.h
 include/poppler/Page.h
@@ -43,9 +47,12 @@ include/poppler/Parser.h
 include/poppler/PopplerCache.h
 include/poppler/PreScanOutputDev.h
 include/poppler/ProfileData.h
+include/poppler/Rendition.h
 include/poppler/SecurityHandler.h
 include/poppler/Sound.h
 include/poppler/SplashOutputDev.h
+include/poppler/StdinCachedFile.h
+include/poppler/StdinPDFDocBuilder.h
 include/poppler/Stream-CCITT.h
 include/poppler/Stream.h
 include/poppler/TextOutputDev.h
@@ -58,6 +65,15 @@ include/poppler/UnicodeMapTables.h
 include/poppler/UnicodeTypeTable.h
 include/poppler/XRef.h
 include/poppler/XpdfPluginAPI.h
+include/poppler/cpp/poppler-document.h
+include/poppler/cpp/poppler-embedded-file.h
+include/poppler/cpp/poppler-font.h
+include/poppler/cpp/poppler-global.h
+include/poppler/cpp/poppler-page-transition.h
+include/poppler/cpp/poppler-page.h
+include/poppler/cpp/poppler-rectangle.h
+include/poppler/cpp/poppler-toc.h
+include/poppler/cpp/poppler-version.h
 include/poppler/fofi/FoFiBase.h
 include/poppler/fofi/FoFiEncodings.h
 include/poppler/fofi/FoFiTrueType.h
@@ -70,6 +86,8 @@ include/poppler/goo/GooMutex.h
 include/poppler/goo/GooString.h
 include/poppler/goo/GooTimer.h
 include/poppler/goo/GooVector.h
+include/poppler/goo/ImgWriter.h
+include/poppler/goo/JpegWriter.h
 include/poppler/goo/PNGWriter.h
 include/poppler/goo/gfile.h
 include/poppler/goo/gmem.h
@@ -99,14 +117,20 @@ include/poppler/splash/SplashT1FontFile.h
 include/poppler/splash/SplashTypes.h
 include/poppler/splash/SplashXPath.h
 include/poppler/splash/SplashXPathScanner.h
+lib/libpoppler-cpp.a
+lib/libpoppler-cpp.la
+lib/libpoppler-cpp.so
+lib/libpoppler-cpp.so.0
 lib/libpoppler.a
 lib/libpoppler.la
 lib/libpoppler.so
-lib/libpoppler.so.5
+lib/libpoppler.so.6
 %%CAIRO%%libdata/pkgconfig/poppler-cairo.pc
+libdata/pkgconfig/poppler-cpp.pc
 libdata/pkgconfig/poppler-splash.pc
 libdata/pkgconfig/poppler.pc
 @dirrm include/poppler/splash
 @dirrm include/poppler/goo
 @dirrm include/poppler/fofi
+@dirrm include/poppler/cpp
 @dirrm include/poppler

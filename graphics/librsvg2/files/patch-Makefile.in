@@ -1,0 +1,19 @@
+--- Makefile.in.orig	2010-07-07 13:03:21.000000000 +0200
++++ Makefile.in	2010-07-07 13:04:07.000000000 +0200
+@@ -155,7 +155,6 @@
+ am_rsvg_view_3_OBJECTS = rsvg_view_3-test-display.$(OBJEXT)
+ rsvg_view_3_OBJECTS = $(am_rsvg_view_3_OBJECTS)
+ rsvg_view_3_DEPENDENCIES =  \
+-	$(top_builddir)/librsvg-@RSVG_API_MAJOR_VERSION@.la \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+@@ -563,7 +562,7 @@
+ 
+ rsvg_view_3_LDFLAGS = 
+ rsvg_view_3_LDADD = \
+-	$(top_builddir)/librsvg-@RSVG_API_MAJOR_VERSION@.la \
++	-lrsvg-2 \
+ 	$(GTK3_LIBS)		\
+ 	$(LIBRSVG_LIBS)		\
+ 	$(LIBCROCO_LIBS)	\

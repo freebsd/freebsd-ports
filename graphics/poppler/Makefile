@@ -3,11 +3,11 @@
 # Whom:                 marcus@FreeBSD.org
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/poppler/Makefile,v 1.58 2010/03/14 22:08:42 kwm Exp $
+#   $MCom: ports/graphics/poppler/Makefile,v 1.66 2010/11/17 15:03:00 kwm Exp $
 #
 
 PORTNAME=	poppler
-PORTVERSION=	0.12.4
+PORTVERSION=	0.14.5
 PORTREVISION?=	0
 CATEGORIES=	graphics print
 MASTER_SITES=	http://poppler.freedesktop.org/
@@ -20,9 +20,12 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms
 RUN_DEPENDS=	poppler-data>0:${PORTSDIR}/graphics/poppler-data
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget libxml2 ltverhack
 USE_AUTOTOOLS=	libtool:22
+MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-zlib \
 		--enable-xpdf-headers \
@@ -40,7 +43,7 @@ OPTIONS=	CAIRO "Enable cairo output backend" on \
 .include <bsd.port.pre.mk>
 
 .if defined(SLAVEPORT)
-LIB_DEPENDS+=	poppler.5:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS+=	poppler.6:${PORTSDIR}/graphics/poppler
 
 .if ${SLAVEPORT}=="gtk"
 CONFIGURE_ARGS+=--enable-poppler-glib
@@ -110,11 +113,13 @@ LIB_DEPENDS+=	openjpeg.2:${PORTSDIR}/graphics/openjpeg
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|7:0:0|6:0:0|' ${WRKSRC}/poppler/Makefile.in
+
 .if defined(SLAVEPORT) && ${SLAVEPORT}=="qt"
 	@${REINPLACE_CMD} -e 's|/usr/local/qt/include|${LOCALBASE}/include|; \
+		s|$$QTDIR|${QT_PREFIX}|; \
 		s|/usr/local/qt/lib|${LOCALBASE}/lib|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|$$QTDIR|${QT_PREFIX}|' ${WRKSRC}/configure
 .endif
 .if defined(SLAVEPORT) && ${SLAVEPORT}=="qt4"
 	@${REINPLACE_CMD} -e 's|MOCQT4=`.*|MOCQT4="${LOCALBASE}/bin/moc-qt4"|' \

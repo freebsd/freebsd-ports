@@ -3,11 +3,11 @@
 # Whom:					Adam Weinberger, based off kiesel's ximian-exchange port
 #
 # $FreeBSD$
-#   $MCom: ports-stable/mail/evolution-exchange/Makefile,v 1.5 2010/06/23 11:38:54 kwm Exp $
+#   $MCom: ports/mail/evolution-exchange/Makefile,v 1.166 2010/11/16 09:52:36 kwm Exp $
 #
 
 PORTNAME=	evolution-exchange
-PORTVERSION=	2.30.3
+PORTVERSION=	2.32.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -15,8 +15,9 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Evolution plugin to connect to Microsoft Exchange servers
 
-BUILD_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
-RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
+EVO_PC_FILE=	${LOCALBASE}/libdata/pkgconfig/evolution-mail.pc
+BUILD_DEPENDS=	${EVO_PC_FILE}:${PORTSDIR}/mail/evolution
+RUN_DEPENDS=	${EVO_PC_FILE}:${PORTSDIR}/mail/evolution
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -31,8 +32,8 @@ CONFIGURE_ARGS=	--with-openldap=${LOCALBASE} \
 		--with-static-ldap=no \
 		--with-libdb=${LOCALBASE}
 
-EVO_VERSION=	2.30
-VERSION=	2.30
+EVO_VERSION=	2.32
+VERSION=	2.32
 PLIST_SUB=	VERSION=${VERSION} EVO_VERSION=${EVO_VERSION} \
 		EDS_VERSION="1.2"
 

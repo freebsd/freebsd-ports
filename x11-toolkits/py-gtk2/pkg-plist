@@ -52,6 +52,9 @@ lib/pygtk/2.0/demos/images/gnome-gmush.png
 lib/pygtk/2.0/demos/images/gnome-gsame.png
 lib/pygtk/2.0/demos/images/gnu-keys.png
 lib/pygtk/2.0/demos/images/gtk-logo-rgb.gif
+lib/pygtk/2.0/demos/infobar.py
+lib/pygtk/2.0/demos/infobar.pyc
+lib/pygtk/2.0/demos/infobar.pyo
 lib/pygtk/2.0/demos/list_store.py
 lib/pygtk/2.0/demos/list_store.pyc
 lib/pygtk/2.0/demos/list_store.pyo
@@ -672,6 +675,7 @@ libdata/pkgconfig/pygtk-2.0.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pygtk-demo/demos/images/gnome-gsame.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pygtk-demo/demos/images/gnu-keys.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pygtk-demo/demos/images/gtk-logo-rgb.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pygtk-demo/demos/infobar.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pygtk-demo/demos/list_store.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pygtk-demo/demos/menu.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pygtk-demo/demos/panes.py
@@ -703,6 +707,8 @@ share/pygtk/2.0/defs/gdk-2.12.defs
 share/pygtk/2.0/defs/gdk-2.14.defs
 share/pygtk/2.0/defs/gdk-2.16.defs
 share/pygtk/2.0/defs/gdk-2.18.defs
+share/pygtk/2.0/defs/gdk-2.20.defs
+share/pygtk/2.0/defs/gdk-2.22.defs
 share/pygtk/2.0/defs/gdk-base-types.defs
 share/pygtk/2.0/defs/gdk-base.defs
 share/pygtk/2.0/defs/gdk-types.defs
@@ -717,6 +723,10 @@ share/pygtk/2.0/defs/gtk-2.16-types.defs
 share/pygtk/2.0/defs/gtk-2.16.defs
 share/pygtk/2.0/defs/gtk-2.18-types.defs
 share/pygtk/2.0/defs/gtk-2.18.defs
+share/pygtk/2.0/defs/gtk-2.20-types.defs
+share/pygtk/2.0/defs/gtk-2.20.defs
+share/pygtk/2.0/defs/gtk-2.22-types.defs
+share/pygtk/2.0/defs/gtk-2.22.defs
 share/pygtk/2.0/defs/gtk-base-types.defs
 share/pygtk/2.0/defs/gtk-base.defs
 share/pygtk/2.0/defs/gtk-extrafuncs.defs

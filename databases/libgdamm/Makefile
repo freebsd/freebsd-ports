@@ -3,12 +3,11 @@
 # Whom:                 Alexander Nedotsukov <bland@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/libgdamm/Makefile,v 1.18 2009/11/28 05:58:58 mezz Exp $
+#   $MCom: ports/databases/libgdamm/Makefile,v 1.21 2010/10/23 16:04:08 kwm Exp $
 #
 
 PORTNAME=	libgdamm
-PORTVERSION=	3.99.17.1
-PORTREVISION=	2
+PORTVERSION=	3.99.21
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

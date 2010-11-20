@@ -3,12 +3,11 @@
 # Whom:				Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/libchamplain/Makefile,v 1.17 2010/03/29 10:55:48 kwm Exp $
+#   $MCom: ports/graphics/libchamplain/Makefile,v 1.23 2010/09/27 18:17:23 kwm Exp $
 #
 
 PORTNAME=	libchamplain
-PORTVERSION=	0.4.6
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -17,7 +16,7 @@ COMMENT=	A C library aimed to provide a Gtk+ widget to display rasterized maps a
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		clutter-gtk-0.10.0:${PORTSDIR}/graphics/clutter-gtk \
-		soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup
+		soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome
 
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig gtk20 gnomehack ltverhack:1
@@ -28,10 +27,10 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-# clutter-sharp need to get released.
-CONFIGURE_ARGS+=--enable-managed=no
+PLIST_SUB=	VERSION=0.8
 
-PLIST_SUB=	VERSION=${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+# python bindings need to get ported
+WITHOUT_PYTHON=yes
 
 .if !defined(WITHOUT_PYTHON)
 USE_PYTHON=	yes
@@ -49,11 +48,5 @@ PLIST_SUB+=		PYTHON="@comment "
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "Specify WITHOUT_PYTHON=yes to disable python bindings"
 	@${ECHO_CMD} ""
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|pyclutter-gtk-0.9|pyclutter-gtk-0.10|g' \
-		${WRKSRC}/configure
-	# Fix python bindings, can be safely removed after 0.4.7 release
-	@${RM} -f ${WRKSRC}/bindings/python/champlain/pychamplain.c
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 bin/gnome-nettool
 share/applications/gnome-nettool.desktop
-%%DATADIR%%/dialogs/gnome-nettool.ui
 %%DATADIR%%/pixmaps/16_ethernet.xpm
 %%DATADIR%%/pixmaps/16_loopback.xpm
 %%DATADIR%%/pixmaps/16_plip.xpm
@@ -9,6 +8,7 @@ share/applications/gnome-nettool.desktop
 %%DATADIR%%/pixmaps/irda-16.png
 %%DATADIR%%/pixmaps/network.png
 %%DATADIR%%/pixmaps/wavelan-16.png
+%%DATADIR%%/ui/gnome-nettool.ui
 share/gnome/help/gnome-nettool/C/gnome-nettool.xml
 share/gnome/help/gnome-nettool/C/legal.xml
 share/gnome/help/gnome-nettool/ca/gnome-nettool.xml
@@ -153,8 +153,8 @@ share/pixmaps/gnome-nettool.png
 @dirrm share/gnome/help/gnome-nettool/ca
 @dirrm share/gnome/help/gnome-nettool/C
 @dirrm share/gnome/help/gnome-nettool
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/dialogs
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES

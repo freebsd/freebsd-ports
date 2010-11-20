@@ -119,6 +119,8 @@ share/doc/gdata/GDataYouTubeQuery.html
 share/doc/gdata/GDataYouTubeService.html
 share/doc/gdata/GDataYouTubeState.html
 share/doc/gdata/GDataYouTubeVideo.html
+share/doc/gdata/annotation-glossary.html
+share/doc/gdata/api-index-deprecated.html
 share/doc/gdata/api-index-full.html
 share/doc/gdata/ch01.html
 share/doc/gdata/ch02.html
@@ -140,7 +142,6 @@ share/doc/gdata/gdata.devhelp2
 share/doc/gdata/home.png
 share/doc/gdata/index.html
 share/doc/gdata/index.sgml
-share/doc/gdata/ix02.html
 share/doc/gdata/ix03.html
 share/doc/gdata/ix04.html
 share/doc/gdata/ix05.html
@@ -148,6 +149,7 @@ share/doc/gdata/ix06.html
 share/doc/gdata/ix07.html
 share/doc/gdata/ix08.html
 share/doc/gdata/ix09.html
+share/doc/gdata/ix10.html
 share/doc/gdata/left.png
 share/doc/gdata/pt01.html
 share/doc/gdata/pt02.html

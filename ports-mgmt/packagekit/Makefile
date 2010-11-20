@@ -3,10 +3,10 @@
 # Whom:					Anders F Bjorklund <afb@users.sourceforge.net>
 #
 # $FreeBSD$
-#   $MCom: ports/ports-mgmt/packagekit/Makefile,v 1.20 2010/04/07 04:53:37 marcus Exp $
+#   $MCom: ports/ports-mgmt/packagekit/Makefile,v 1.26 2010/10/10 15:49:51 marcus Exp $
 
 PORTNAME=	PackageKit
-PORTVERSION=	0.6.7
+PORTVERSION=	0.6.9
 PORTREVISION?=	0
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	http://www.packagekit.org/releases/
@@ -108,7 +108,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|girepositry|girepository|g' \
 		${WRKSRC}/lib/packagekit-glib2/Makefile.in
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		'/xsltproc/s|.xsl [$$]? &> /dev|.xsl $$? > /dev|g'
+	    	'/xsltproc/s|.xsl [$$]? &> /dev|.xsl $$? > /dev|g'
 
 post-install:
 .if !defined(SLAVEPORT)

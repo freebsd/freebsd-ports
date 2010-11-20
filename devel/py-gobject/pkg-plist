@@ -7,6 +7,43 @@ lib/libpyglib-2.0-python%%PYTHON_VER%%.so.0
 %%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/dsextras.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/_gi.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/_gi.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/_gi_cairo.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/_gi_cairo.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/importer.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/importer.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/importer.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/module.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/module.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/module.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/GIMarshallingTests.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/GIMarshallingTests.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/GIMarshallingTests.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/GLib.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/GLib.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/GLib.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/Gdk.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/Gdk.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/Gdk.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/Gtk.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/Gtk.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/Gtk.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/keysyms.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/keysyms.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides/keysyms.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/repository/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/repository/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/repository/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/types.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/types.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gi/types.pyo
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gio/__init__.py
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gio/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gio/__init__.pyo
@@ -145,6 +182,7 @@ share/pygobject/2.0/codegen/scmexpr.pyc
 share/pygobject/2.0/defs/gappinfo.override
 share/pygobject/2.0/defs/gapplaunchcontext.override
 share/pygobject/2.0/defs/gbufferedinputstream.override
+share/pygobject/2.0/defs/gcancellable.override
 share/pygobject/2.0/defs/gdatainputstream.override
 share/pygobject/2.0/defs/gdrive.override
 share/pygobject/2.0/defs/gfile.override
@@ -187,5 +225,8 @@ share/pygobject/xsl/ref-html-style.xsl
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gobject
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/glib
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gio
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gi/repository
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gi/overrides
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gi
 @dirrmtry %%PYTHON_SITELIBDIR%%/gtk-2.0
 @dirrmtry include/pygtk-2.0

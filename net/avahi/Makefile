@@ -3,11 +3,11 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/net/avahi/Makefile,v 1.26 2007/09/09 22:45:27 mezz Exp $
+#   $MCom: ports/net/avahi/Makefile,v 1.28 2010/10/23 20:58:28 marcus Exp $
 #
 
 PORTNAME=	avahi
-PORTVERSION=	0.6.27
+PORTVERSION=	0.6.28
 PORTREVISION?=	0
 CATEGORIES?=	net dns
 MASTER_SITES=	# empty

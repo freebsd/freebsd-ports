@@ -3,12 +3,11 @@
 # Whom:			Alexander Nedotsukov <bland@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/sound-juicer/Makefile,v 1.98 2010/04/01 12:47:54 kwm Exp $
+#   $MCom: ports/audio/sound-juicer/Makefile,v 1.102 2010/09/29 13:19:43 kwm Exp $
 #
 
 PORTNAME=	sound-juicer
-PORTVERSION=	2.28.2
-PORTREVISION=	1
+PORTVERSION=	2.32.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -23,7 +22,7 @@ LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
     		tag.1:${PORTSDIR}/audio/taglib \
 		canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		brasero-media.2:${PORTSDIR}/sysutils/brasero
+		brasero-media.3:${PORTSDIR}/sysutils/brasero
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/gnome-user-share/Makefile,v 1.21 2010/04/01 21:10:51 kwm Exp $
+#   $MCom: ports/www/gnome-user-share/Makefile,v 1.23 2010/09/28 08:52:36 kwm Exp $
 #
 
 PORTNAME=	gnome-user-share
-PORTVERSION=	2.30.0
-PORTREVISION=	2
+PORTVERSION=	2.30.1
 CATEGORIES=	www deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

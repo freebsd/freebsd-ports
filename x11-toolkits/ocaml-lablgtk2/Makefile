@@ -18,6 +18,8 @@ DISTNAME=	lablgtk-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An Objective Caml interface to GTK+ 2.x
 
+BROKEN=		Doesn't build with Glib 2.26
+
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_OCAML=	yes

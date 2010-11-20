@@ -1,10 +1,6 @@
-lib/anjuta/anjuta-class-inheritance.plugin
 lib/anjuta/anjuta-editor.plugin
 lib/anjuta/anjuta-sample.plugin
 lib/anjuta/anjuta-scratchbox.plugin
-lib/anjuta/libanjuta-class-inheritance.a
-lib/anjuta/libanjuta-class-inheritance.la
-lib/anjuta/libanjuta-class-inheritance.so
 lib/anjuta/libanjuta-editor.a
 lib/anjuta/libanjuta-editor.la
 lib/anjuta/libanjuta-editor.so
@@ -91,8 +87,6 @@ share/locale/vi/LC_MESSAGES/anjuta-extras.mo
 share/locale/zh_CN/LC_MESSAGES/anjuta-extras.mo
 share/locale/zh_HK/LC_MESSAGES/anjuta-extras.mo
 share/locale/zh_TW/LC_MESSAGES/anjuta-extras.mo
-share/pixmaps/anjuta/anjuta-class-inheritance-plugin-48.png
-share/pixmaps/anjuta/anjuta-class-inheritance-plugin.svg
 share/pixmaps/anjuta/anjuta-editor-scintilla-plugin-48.png
 share/pixmaps/anjuta/anjuta-editor-scintilla-plugin.svg
 share/pixmaps/anjuta/anjuta-profiler-plugin-48.png

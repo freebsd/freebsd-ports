@@ -3,10 +3,10 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports-stable/net-im/empathy/Makefile,v 1.5 2010/06/23 14:00:15 kwm Exp $
+#    $MCom: ports/net-im/empathy/Makefile,v 1.76 2010/11/18 18:04:55 kwm Exp $
 
 PORTNAME=	empathy
-PORTVERSION=	2.30.2
+PORTVERSION=	2.32.2
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 
@@ -14,14 +14,18 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME IM client based around telepathy
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
     		${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
 LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
 		telepathy.2:${PORTSDIR}/net-im/libtelepathy \
 		telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib \
 		telepathy-farsight.0:${PORTSDIR}/net-im/telepathy-farsight \
+		telepathy-logger.1:${PORTSDIR}/net-im/telepathy-logger \
+		folks-telepathy.16:${PORTSDIR}/net-im/folks \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
 		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
+		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
     		${LOCALBASE}/libexec/mission-control-5:${PORTSDIR}/net-im/telepathy-mission-control
 
 USE_GMAKE=	yes
@@ -37,11 +41,12 @@ USE_PYTHON=	yes
 MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-tpl=no
+CONFIGURE_ARGS=	--disable-Werror \
+		--with-ca-file=${LOCALBASE}/share/certs/ca-root-nss.crt
 
-GCONF_SCHEMAS=	empathy.schemas
+GLIB_SCHEMAS=	org.gnome.Empathy.gschema.xml
 
-MAN1=		empathy.1
+MAN1=		empathy.1 empathy-accounts.1
 
 OPTIONS=	JABBER	"Enable jabber (XMPP) client support" on \
 		MSN	"Enable MSN client support" on \
@@ -94,16 +99,12 @@ PLIST_SUB+=	NST="@comment "
 .endif
 
 .if !defined(WITHOUT_MAP)
-LIB_DEPENDS+=	champlain-0.4.1:${PORTSDIR}/graphics/libchamplain
+LIB_DEPENDS+=	champlain-0.8.1:${PORTSDIR}/graphics/libchamplain
 CONFIGURE_ARGS+=--enable-map
 PLIST_SUB+=	MAP=""
 .else
 CONFIGURE_ARGS+=--disable-map
 PLIST_SUB+=	MAP="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$${datadir}/gtk-doc/html|${DOCSDIR}|g ; \
-		s|-Werror||g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

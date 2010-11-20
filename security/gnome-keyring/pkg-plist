@@ -1,35 +1,38 @@
 bin/gnome-keyring
 bin/gnome-keyring-daemon
+etc/xdg/autostart/gnome-keyring-gpg.desktop
 etc/xdg/autostart/gnome-keyring-pkcs11.desktop
 etc/xdg/autostart/gnome-keyring-secrets.desktop
 etc/xdg/autostart/gnome-keyring-ssh.desktop
-include/gcr/gcr-certificate-basics-widget.h
-include/gcr/gcr-certificate-details-widget.h
-include/gcr/gcr-certificate.h
-include/gcr/gcr-importer.h
-include/gcr/gcr-parser.h
-include/gcr/gcr-types.h
-include/gcr/gcr-unlock-options-widget.h
-include/gcr/gcr.h
+include/gcr/gcr/gcr-certificate-basics-widget.h
+include/gcr/gcr/gcr-certificate-details-widget.h
+include/gcr/gcr/gcr-certificate.h
+include/gcr/gcr/gcr-importer.h
+include/gcr/gcr/gcr-parser.h
+include/gcr/gcr/gcr-simple-certificate.h
+include/gcr/gcr/gcr-types.h
+include/gcr/gcr/gcr-unlock-options-widget.h
+include/gcr/gcr/gcr-unlock-options.h
+include/gcr/gcr/gcr.h
 include/gp11/gp11.h
 include/gp11/pkcs11.h
 include/gp11/pkcs11g.h
 include/gp11/pkcs11n.h
-lib/gnome-keyring/devel/gck-ssh-store-standalone.a
-lib/gnome-keyring/devel/gck-ssh-store-standalone.la
-lib/gnome-keyring/devel/gck-ssh-store-standalone.so
-lib/gnome-keyring/devel/gck-user-store-standalone.a
-lib/gnome-keyring/devel/gck-user-store-standalone.la
-lib/gnome-keyring/devel/gck-user-store-standalone.so
+lib/gnome-keyring/devel/gkm-ssh-store-standalone.a
+lib/gnome-keyring/devel/gkm-ssh-store-standalone.la
+lib/gnome-keyring/devel/gkm-ssh-store-standalone.so
+lib/gnome-keyring/devel/gkm-user-store-standalone.a
+lib/gnome-keyring/devel/gkm-user-store-standalone.la
+lib/gnome-keyring/devel/gkm-user-store-standalone.so
 lib/gnome-keyring/gnome-keyring-pkcs11.a
 lib/gnome-keyring/gnome-keyring-pkcs11.la
 lib/gnome-keyring/gnome-keyring-pkcs11.so
-lib/gnome-keyring/standalone/gck-roots-store-standalone.a
-lib/gnome-keyring/standalone/gck-roots-store-standalone.la
-lib/gnome-keyring/standalone/gck-roots-store-standalone.so
-lib/gnome-keyring/standalone/gck-secret-store-standalone.a
-lib/gnome-keyring/standalone/gck-secret-store-standalone.la
-lib/gnome-keyring/standalone/gck-secret-store-standalone.so
+lib/gnome-keyring/standalone/gkm-roots-store-standalone.a
+lib/gnome-keyring/standalone/gkm-roots-store-standalone.la
+lib/gnome-keyring/standalone/gkm-roots-store-standalone.so
+lib/gnome-keyring/standalone/gkm-secret-store-standalone.a
+lib/gnome-keyring/standalone/gkm-secret-store-standalone.la
+lib/gnome-keyring/standalone/gkm-secret-store-standalone.so
 lib/libgcr.a
 lib/libgcr.la
 lib/libgcr.so
@@ -44,28 +47,30 @@ lib/pam_gnome_keyring.so
 libdata/pkgconfig/gcr-0.pc
 libdata/pkgconfig/gp11-0.pc
 libexec/gnome-keyring-prompt
+share/GConf/gsettings/org.gnome.crypto.cache.convert
+share/GConf/gsettings/org.gnome.crypto.pgp.convert
 share/dbus-1/services/org.freedesktop.secrets.service
 share/dbus-1/services/org.gnome.keyring.service
-share/doc/gcr/ch01.html
-share/doc/gcr/gcr-GcrCertificate.html
-share/doc/gcr/gcr-gcr-certificate-basics-widget.html
-share/doc/gcr/gcr-gcr-certificate-details-widget.html
-share/doc/gcr/gcr-gcr-import-dialog.html
-share/doc/gcr/gcr-gcr-importer.html
-share/doc/gcr/gcr-gcr-initializer.html
-share/doc/gcr/gcr-gcr-parser.html
-share/doc/gcr/gcr-gcr-simple-certificate.html
-share/doc/gcr/gcr-gcr-types.html
-share/doc/gcr/gcr-gcr-xxx.html
-share/doc/gcr/gcr.devhelp
-share/doc/gcr/gcr.devhelp2
-share/doc/gcr/home.png
-share/doc/gcr/index.html
-share/doc/gcr/index.sgml
-share/doc/gcr/left.png
-share/doc/gcr/right.png
-share/doc/gcr/style.css
-share/doc/gcr/up.png
+share/doc/gcr-0/ch01.html
+share/doc/gcr-0/gcr-GcrCertificate.html
+share/doc/gcr-0/gcr-gcr-certificate-basics-widget.html
+share/doc/gcr-0/gcr-gcr-certificate-details-widget.html
+share/doc/gcr-0/gcr-gcr-import-dialog.html
+share/doc/gcr-0/gcr-gcr-importer.html
+share/doc/gcr-0/gcr-gcr-initializer.html
+share/doc/gcr-0/gcr-gcr-parser.html
+share/doc/gcr-0/gcr-gcr-simple-certificate.html
+share/doc/gcr-0/gcr-gcr-types.html
+share/doc/gcr-0/gcr-gcr-xxx.html
+share/doc/gcr-0/gcr-0.devhelp
+share/doc/gcr-0/gcr-0.devhelp2
+share/doc/gcr-0/home.png
+share/doc/gcr-0/index.html
+share/doc/gcr-0/index.sgml
+share/doc/gcr-0/left.png
+share/doc/gcr-0/right.png
+share/doc/gcr-0/style.css
+share/doc/gcr-0/up.png
 share/doc/gp11/GP11Module.html
 share/doc/gp11/GP11Object.html
 share/doc/gp11/GP11Session.html
@@ -92,7 +97,7 @@ share/gcr/ui/gcr-unlock-options-widget.ui
 %%DATADIR%%/introspect/introspect-prompt.xml
 %%DATADIR%%/introspect/introspect-service.xml
 %%DATADIR%%/introspect/introspect-session.xml
-%%DATADIR%%/ui/gkd-prompt.ui
+%%DATADIR%%/ui/gku-prompt.ui
 share/locale/ar/LC_MESSAGES/gnome-keyring.mo
 share/locale/as/LC_MESSAGES/gnome-keyring.mo
 share/locale/ast/LC_MESSAGES/gnome-keyring.mo
@@ -179,12 +184,15 @@ share/locale/zh_TW/LC_MESSAGES/gnome-keyring.mo
 @dirrm share/gcr/ui
 @dirrm share/gcr
 @dirrm share/doc/gp11
-@dirrm share/doc/gcr
+@dirrm share/doc/gcr-0
 @dirrm lib/gnome-keyring/standalone
 @dirrm lib/gnome-keyring/devel
 @dirrm lib/gnome-keyring
 @dirrm include/gp11
+@dirrm include/gcr/gcr
 @dirrm include/gcr
+@dirrmtry share/GConf/gsettings
+@dirrmtry share/GConf
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES

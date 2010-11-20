@@ -3,12 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/devel/gvfs/Makefile,v 1.4 2010/07/13 12:41:36 kwm Exp $
+#   $MCom: ports/devel/gvfs/Makefile,v 1.66 2010/11/13 01:48:28 kwm Exp $
 #
 
 PORTNAME=	gvfs
-PORTVERSION=	1.6.3
-PORTREVISION=	1
+PORTVERSION=	1.6.6
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -18,7 +17,7 @@ COMMENT=	GNOME virtual file system
 
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus \
     		hal.1:${PORTSDIR}/sysutils/hal \
-		soup-2.4.1:${PORTSDIR}/devel/libsoup \
+		soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome \
 		gnome-keyring:${PORTSDIR}/security/gnome-keyring \
 		avahi-client.3:${PORTSDIR}/net/avahi-app
 RUN_DEPENDS=	gnome-mount:${PORTSDIR}/sysutils/gnome-mount

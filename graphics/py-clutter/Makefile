@@ -3,12 +3,12 @@
 # Whom:			Martin Wilke <miwi@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/py-clutter/Makefile,v 1.6 2010/05/10 04:21:19 marcus Exp $
+#   $MCom: ports/graphics/py-clutter/Makefile,v 1.8 2010/08/26 21:06:34 marcus Exp $
 #
 
 PORTNAME=	clutter
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.clutter-project.org/sources/pyclutter/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

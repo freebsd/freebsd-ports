@@ -1,6 +1,6 @@
---- configure.orig	2010-03-03 21:31:46.000000000 -0500
-+++ configure	2010-03-03 21:47:47.000000000 -0500
-@@ -714,6 +714,9 @@ ac_includes_default="\
+--- configure.orig	2010-09-09 12:18:43.000000000 +0200
++++ configure	2010-09-09 12:20:56.000000000 +0200
+@@ -575,6 +575,9 @@
  #ifdef HAVE_SYS_TYPES_H
  # include <sys/types.h>
  #endif
@@ -10,7 +10,16 @@
  #ifdef HAVE_SYS_STAT_H
  # include <sys/stat.h>
  #endif
-@@ -23020,7 +23023,7 @@ _ACEOF
+@@ -5187,7 +5190,7 @@
+ fi
+ 
+ GLIB_RUNTIME_LIBDIR="$with_runtime_libdir"
+-ABS_GLIB_RUNTIME_LIBDIR="`readlink -f $libdir/$with_runtime_libdir`"
++ABS_GLIB_RUNTIME_LIBDIR="`readlink $libdir/$with_runtime_libdir`"
+ 
+ 
+  if test "x$with_runtime_libdir" != "x"; then
+@@ -22212,7 +22215,7 @@
  fi
  done
  
@@ -19,7 +28,7 @@
  do :
    as_ac_var=`$as_echo "ac_cv_func_$ac_func" | $as_tr_sh`
  ac_fn_c_check_func "$LINENO" "$ac_func" "$as_ac_var"
-@@ -25631,6 +25634,8 @@ fi
+@@ -24815,6 +24818,8 @@
           ;;
      esac
    fi
@@ -27,4 +36,13 @@
 +  G_THREAD_LIBS="${PTHREAD_LIBS}"
  
    if test x"$G_THREAD_CFLAGS" = x; then
+ 
+@@ -27415,7 +27420,7 @@
+ fi
+ 
+ 
+-if test "x${enable_Bsymbolic}" == "xyes"; then
++if test "x${enable_Bsymbolic}" = "xyes"; then
+   GLIB_LINK_FLAGS=-Wl,-Bsymbolic-functions
+ fi
  

@@ -3,12 +3,12 @@
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/glib20/Makefile,v 1.166 2010/05/04 09:44:51 kwm Exp $
+#   $MCom: ports/devel/glib20/Makefile,v 1.188 2010/11/15 02:01:55 kwm Exp $
 #
 # !! DON'T FORGET ABOUT devel/gio-fam-backend !!
 
 PORTNAME=	glib
-PORTVERSION=	2.24.2
+PORTVERSION=	2.26.1
 PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/glib/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/},} \
@@ -26,10 +26,13 @@ COMMENT=	Some useful routines of C programming (current stable version)
 LATEST_LINK=	glib20
 
 USE_BZIP2=	yes
+LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre \
+		dbus-1.3:${PORTSDIR}/devel/dbus
 
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:22
@@ -42,6 +45,7 @@ USE_PERL5=	yes
 CONFIGURE_ARGS=	--enable-static --with-libiconv=gnu \
 		--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
 		--disable-man --without-xml-catalog \
+		--disable-dtrace \
 		--with-pcre=system \
 		--disable-fam
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -74,8 +78,12 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/glib/gutils.c
+	@${REINPLACE_CMD} -e 's|/lib/dbus/machine-id|/db/dbus/machine-id|g' \
+		${WRKSRC}/gio/gdbusaddress.c ${WRKSRC}/gio/gdbusprivate.c \
+		${WRKSRC}/po/*.po
 
 post-install:
+	@${MKDIR} ${PREFIX}/share/GConf/gsettings
 	-${PREFIX}/bin/gio-querymodules ${PREFIX}/lib/gio/modules
 
 .include <bsd.port.post.mk>

@@ -3,12 +3,11 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/net/gnome-netstatus/Makefile,v 1.56 2010/04/01 16:16:57 kwm Exp $
+#   $MCom: ports/net/gnome-netstatus/Makefile,v 1.58 2010/09/29 12:35:14 kwm Exp $
 #
 
 PORTNAME=	gnome-netstatus
-PORTVERSION=	2.28.1
-PORTREVISION=	1
+PORTVERSION=	2.28.2
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

@@ -1,0 +1,51 @@
+include/atkmm-1.6/atkmm.h
+include/atkmm-1.6/atkmm/action.h
+include/atkmm-1.6/atkmm/component.h
+include/atkmm-1.6/atkmm/document.h
+include/atkmm-1.6/atkmm/editabletext.h
+include/atkmm-1.6/atkmm/hyperlink.h
+include/atkmm-1.6/atkmm/hypertext.h
+include/atkmm-1.6/atkmm/image.h
+include/atkmm-1.6/atkmm/implementor.h
+include/atkmm-1.6/atkmm/init.h
+include/atkmm-1.6/atkmm/noopobject.h
+include/atkmm-1.6/atkmm/object.h
+include/atkmm-1.6/atkmm/objectaccessible.h
+include/atkmm-1.6/atkmm/private/action_p.h
+include/atkmm-1.6/atkmm/private/component_p.h
+include/atkmm-1.6/atkmm/private/document_p.h
+include/atkmm-1.6/atkmm/private/editabletext_p.h
+include/atkmm-1.6/atkmm/private/hyperlink_p.h
+include/atkmm-1.6/atkmm/private/hypertext_p.h
+include/atkmm-1.6/atkmm/private/image_p.h
+include/atkmm-1.6/atkmm/private/implementor_p.h
+include/atkmm-1.6/atkmm/private/noopobject_p.h
+include/atkmm-1.6/atkmm/private/object_p.h
+include/atkmm-1.6/atkmm/private/objectaccessible_p.h
+include/atkmm-1.6/atkmm/private/relation_p.h
+include/atkmm-1.6/atkmm/private/relationset_p.h
+include/atkmm-1.6/atkmm/private/selection_p.h
+include/atkmm-1.6/atkmm/private/stateset_p.h
+include/atkmm-1.6/atkmm/private/streamablecontent_p.h
+include/atkmm-1.6/atkmm/private/table_p.h
+include/atkmm-1.6/atkmm/private/text_p.h
+include/atkmm-1.6/atkmm/private/value_p.h
+include/atkmm-1.6/atkmm/relation.h
+include/atkmm-1.6/atkmm/relationset.h
+include/atkmm-1.6/atkmm/selection.h
+include/atkmm-1.6/atkmm/stateset.h
+include/atkmm-1.6/atkmm/streamablecontent.h
+include/atkmm-1.6/atkmm/table.h
+include/atkmm-1.6/atkmm/text.h
+include/atkmm-1.6/atkmm/value.h
+include/atkmm-1.6/atkmm/wrap_init.h
+lib/atkmm-1.6/include/atkmmconfig.h
+lib/libatkmm-1.6.la
+lib/libatkmm-1.6.so
+lib/libatkmm-1.6.so.2
+libdata/pkgconfig/atkmm-1.6.pc
+@dirrm lib/atkmm-1.6/include
+@dirrm lib/atkmm-1.6
+@dirrm include/atkmm-1.6/atkmm/private
+@dirrm include/atkmm-1.6/atkmm
+@dirrm include/atkmm-1.6

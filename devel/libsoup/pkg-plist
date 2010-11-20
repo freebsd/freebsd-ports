@@ -36,20 +36,14 @@ include/libsoup-%%VERSION%%/libsoup/soup-uri.h
 include/libsoup-%%VERSION%%/libsoup/soup-value-utils.h
 include/libsoup-%%VERSION%%/libsoup/soup-xmlrpc.h
 include/libsoup-%%VERSION%%/libsoup/soup.h
-include/libsoup-gnome-%%VERSION%%/libsoup/soup-cookie-jar-sqlite.h
-include/libsoup-gnome-%%VERSION%%/libsoup/soup-gnome-features.h
-include/libsoup-gnome-%%VERSION%%/libsoup/soup-gnome.h
+lib/girepository-1.0/Soup-%%VERSION%%.typelib
 lib/libsoup-%%VERSION%%.a
 lib/libsoup-%%VERSION%%.la
 lib/libsoup-%%VERSION%%.so
 lib/libsoup-%%VERSION%%.so.1
-lib/libsoup-gnome-%%VERSION%%.a
-lib/libsoup-gnome-%%VERSION%%.la
-lib/libsoup-gnome-%%VERSION%%.so
-lib/libsoup-gnome-%%VERSION%%.so.1
 libdata/pkgconfig/libsoup-%%VERSION%%.pc
-libdata/pkgconfig/libsoup-gnome-%%VERSION%%.pc
-@dirrm include/libsoup-gnome-%%VERSION%%/libsoup
-@dirrm include/libsoup-gnome-%%VERSION%%
+share/gir-1.0/Soup-%%VERSION%%.gir
 @dirrm include/libsoup-%%VERSION%%/libsoup
 @dirrm include/libsoup-%%VERSION%%
+@dirrmtry lib/girepository-1.0
+@dirrmtry share/gir-1.0

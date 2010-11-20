@@ -675,6 +675,7 @@ share/icons/HighContrast-SVG/scalable/apps/bug-buddy.svg
 share/icons/HighContrast-SVG/scalable/apps/calc.svg
 share/icons/HighContrast-SVG/scalable/apps/config-language.svg
 share/icons/HighContrast-SVG/scalable/apps/file-manager.svg
+share/icons/HighContrast-SVG/scalable/apps/firefox-icon.svg
 share/icons/HighContrast-SVG/scalable/apps/fonts.svg
 share/icons/HighContrast-SVG/scalable/apps/glchess.svg
 share/icons/HighContrast-SVG/scalable/apps/gnome-calculator.svg
@@ -705,6 +706,7 @@ share/icons/HighContrast-SVG/scalable/apps/multimedia-volume-control.svg
 share/icons/HighContrast-SVG/scalable/apps/multimedia.svg
 share/icons/HighContrast-SVG/scalable/apps/openterm.svg
 share/icons/HighContrast-SVG/scalable/apps/orca.svg
+share/icons/HighContrast-SVG/scalable/apps/pidgin.svg
 share/icons/HighContrast-SVG/scalable/apps/preferences-desktop-accessibility.svg
 share/icons/HighContrast-SVG/scalable/apps/preferences-desktop-font.svg
 share/icons/HighContrast-SVG/scalable/apps/preferences-desktop-locale.svg
@@ -720,6 +722,7 @@ share/icons/HighContrast-SVG/scalable/apps/susehelpcenter.svg
 share/icons/HighContrast-SVG/scalable/apps/system-file-manager.svg
 share/icons/HighContrast-SVG/scalable/apps/terminal.svg
 share/icons/HighContrast-SVG/scalable/apps/text-editor.svg
+share/icons/HighContrast-SVG/scalable/apps/thunderbird-icon.svg
 share/icons/HighContrast-SVG/scalable/apps/tomboy.svg
 share/icons/HighContrast-SVG/scalable/apps/totem.svg
 share/icons/HighContrast-SVG/scalable/apps/utilities-system-monitor.svg
@@ -1231,6 +1234,7 @@ share/icons/HighContrastLargePrint/48x48/apps/gnome-mini-commander.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-mixer-applet.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-mixer.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-monitor.png
+share/icons/HighContrastLargePrint/48x48/apps/gnome-palm.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-panel.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-searchtool-animation-rest.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-searchtool-animation.png
@@ -1250,6 +1254,7 @@ share/icons/HighContrastLargePrint/48x48/apps/gnome-window-manager.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-windows.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-workspace.png
 share/icons/HighContrastLargePrint/48x48/apps/gok.png
+share/icons/HighContrastLargePrint/48x48/apps/gtkam-camera.png
 share/icons/HighContrastLargePrint/48x48/apps/gucharmap.png
 share/icons/HighContrastLargePrint/48x48/apps/help-browser.png
 share/icons/HighContrastLargePrint/48x48/apps/kcalc.png
@@ -1274,6 +1279,7 @@ share/icons/HighContrastLargePrint/48x48/apps/orca.png
 share/icons/HighContrastLargePrint/48x48/apps/panel-drawer.png
 share/icons/HighContrastLargePrint/48x48/apps/panel-force-quit.png
 share/icons/HighContrastLargePrint/48x48/apps/perfmeter.png
+share/icons/HighContrastLargePrint/48x48/apps/pidgin.png
 share/icons/HighContrastLargePrint/48x48/apps/preferences-desktop-accessibility.png
 share/icons/HighContrastLargePrint/48x48/apps/preferences-desktop-font.png
 share/icons/HighContrastLargePrint/48x48/apps/preferences-desktop-keyboard-shortcuts.png
@@ -1295,6 +1301,7 @@ share/icons/HighContrastLargePrint/48x48/apps/susehelpcenter.png
 share/icons/HighContrastLargePrint/48x48/apps/system-file-manager.png
 share/icons/HighContrastLargePrint/48x48/apps/terminal.png
 share/icons/HighContrastLargePrint/48x48/apps/text-editor.png
+share/icons/HighContrastLargePrint/48x48/apps/thunderbird-icon.png
 share/icons/HighContrastLargePrint/48x48/apps/totem.png
 share/icons/HighContrastLargePrint/48x48/apps/utilities-system-monitor.png
 share/icons/HighContrastLargePrint/48x48/apps/utilities-terminal.png
@@ -1416,6 +1423,7 @@ share/icons/HighContrastLargePrint/48x48/devices/media-cdrom.png
 share/icons/HighContrastLargePrint/48x48/devices/media-floppy.png
 share/icons/HighContrastLargePrint/48x48/devices/media-optical.png
 share/icons/HighContrastLargePrint/48x48/devices/mouse.png
+share/icons/HighContrastLargePrint/48x48/devices/pda.png
 share/icons/HighContrastLargePrint/48x48/devices/printer-remote.png
 share/icons/HighContrastLargePrint/48x48/devices/printer.png
 share/icons/HighContrastLargePrint/48x48/devices/printer1.png
@@ -1692,6 +1700,7 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-mini-commander.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-mixer-applet.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-mixer.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-monitor.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-palm.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-panel.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-searchtool-animation-rest.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-searchtool-animation.png
@@ -1711,6 +1720,7 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-window-manager.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-windows.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-workspace.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gok.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/gtkam-camera.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gucharmap.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/help-browser.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/kcalc.png
@@ -1735,6 +1745,7 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/orca.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/panel-drawer.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/panel-force-quit.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/perfmeter.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/pidgin.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/preferences-desktop-accessibility.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/preferences-desktop-font.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/preferences-desktop-keyboard-shortcuts.png
@@ -1756,6 +1767,7 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/susehelpcenter.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/system-file-manager.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/terminal.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/text-editor.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/thunderbird-icon.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/totem.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/utilities-system-monitor.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/utilities-terminal.png
@@ -1879,6 +1891,7 @@ share/icons/HighContrastLargePrintInverse/48x48/devices/media-floppy.png
 share/icons/HighContrastLargePrintInverse/48x48/devices/media-optical.png
 share/icons/HighContrastLargePrintInverse/48x48/devices/mouse.png
 share/icons/HighContrastLargePrintInverse/48x48/devices/network-wireless.png
+share/icons/HighContrastLargePrintInverse/48x48/devices/pda.png
 share/icons/HighContrastLargePrintInverse/48x48/devices/printer-remote.png
 share/icons/HighContrastLargePrintInverse/48x48/devices/printer.png
 share/icons/HighContrastLargePrintInverse/48x48/devices/printer1.png
@@ -2139,13 +2152,34 @@ share/icons/HighContrastLargePrintInverse/index.theme
 share/icons/LargePrint/index.theme
 share/icons/Mist/16x16/actions/document-open.png
 share/icons/Mist/16x16/actions/fileopen.png
+share/icons/Mist/16x16/actions/folder-new.png
+share/icons/Mist/16x16/actions/folder_new.png
 share/icons/Mist/16x16/actions/gtk-open.png
+share/icons/Mist/16x16/actions/stock_new-dir.png
+share/icons/Mist/16x16/apps/preferences-desktop-display.png
+share/icons/Mist/16x16/devices/chardevice.png
+share/icons/Mist/16x16/devices/computer.png
+share/icons/Mist/16x16/devices/display.png
+share/icons/Mist/16x16/devices/gnome-dev-computer.png
+share/icons/Mist/16x16/devices/gnome-fs-client.png
+share/icons/Mist/16x16/devices/system.png
+share/icons/Mist/16x16/devices/video-display.png
+share/icons/Mist/16x16/devices/xfce4-display.png
 share/icons/Mist/16x16/places/application-x-gnome-saved-search.png
+share/icons/Mist/16x16/places/desktop.png
+share/icons/Mist/16x16/places/folder-documents.png
+share/icons/Mist/16x16/places/folder-download.png
+share/icons/Mist/16x16/places/folder-music.png
 share/icons/Mist/16x16/places/folder-new.png
+share/icons/Mist/16x16/places/folder-pictures.png
+share/icons/Mist/16x16/places/folder-publicshare.png
 share/icons/Mist/16x16/places/folder-remote.png
 share/icons/Mist/16x16/places/folder-saved-search.png
+share/icons/Mist/16x16/places/folder-templates.png
+share/icons/Mist/16x16/places/folder-videos.png
 share/icons/Mist/16x16/places/folder.png
 share/icons/Mist/16x16/places/folder_home.png
+share/icons/Mist/16x16/places/gnome-fs-desktop.png
 share/icons/Mist/16x16/places/gnome-fs-directory.png
 share/icons/Mist/16x16/places/gnome-fs-ftp.png
 share/icons/Mist/16x16/places/gnome-fs-home.png
@@ -2158,26 +2192,48 @@ share/icons/Mist/16x16/places/gtk-directory.png
 share/icons/Mist/16x16/places/inode-directory.png
 share/icons/Mist/16x16/places/network.png
 share/icons/Mist/16x16/places/stock_folder.png
+share/icons/Mist/16x16/places/user-desktop.png
 share/icons/Mist/16x16/places/user-home.png
-share/icons/Mist/16x16/status/folder-drag-accept.svg
-share/icons/Mist/16x16/status/folder-open.svg
+share/icons/Mist/16x16/status/folder-drag-accept.png
+share/icons/Mist/16x16/status/folder-open.png
 share/icons/Mist/16x16/status/folder-visiting.png
-share/icons/Mist/16x16/status/folder_open.svg
-share/icons/Mist/16x16/status/gnome-fs-directory-accept.svg
+share/icons/Mist/16x16/status/folder_open.png
+share/icons/Mist/16x16/status/gnome-fs-directory-accept.png
 share/icons/Mist/16x16/status/gnome-fs-directory-visiting.png
-share/icons/Mist/16x16/status/stock_open.svg
+share/icons/Mist/16x16/status/stock_open.png
 share/icons/Mist/22x22/actions/document-open.png
 share/icons/Mist/22x22/actions/fileopen.png
+share/icons/Mist/22x22/actions/folder-new.png
+share/icons/Mist/22x22/actions/folder_new.png
 share/icons/Mist/22x22/actions/gtk-open.png
+share/icons/Mist/22x22/actions/stock_new-dir.png
+share/icons/Mist/22x22/apps/preferences-desktop-display.png
+share/icons/Mist/22x22/devices/chardevice.png
+share/icons/Mist/22x22/devices/computer.png
+share/icons/Mist/22x22/devices/display.png
+share/icons/Mist/22x22/devices/gnome-dev-computer.png
+share/icons/Mist/22x22/devices/gnome-fs-client.png
+share/icons/Mist/22x22/devices/system.png
+share/icons/Mist/22x22/devices/video-display.png
+share/icons/Mist/22x22/devices/xfce4-display.png
 share/icons/Mist/22x22/places/application-x-gnome-saved-search.png
+share/icons/Mist/22x22/places/desktop.png
+share/icons/Mist/22x22/places/folder-documents.png
+share/icons/Mist/22x22/places/folder-download.png
+share/icons/Mist/22x22/places/folder-music.png
 share/icons/Mist/22x22/places/folder-new.png
+share/icons/Mist/22x22/places/folder-pictures.png
+share/icons/Mist/22x22/places/folder-publicshare.png
 share/icons/Mist/22x22/places/folder-remote.png
 share/icons/Mist/22x22/places/folder-saved-search.png
+share/icons/Mist/22x22/places/folder-templates.png
+share/icons/Mist/22x22/places/folder-videos.png
 share/icons/Mist/22x22/places/folder.png
-share/icons/Mist/22x22/places/folder_home.svg
+share/icons/Mist/22x22/places/folder_home.png
+share/icons/Mist/22x22/places/gnome-fs-desktop.png
 share/icons/Mist/22x22/places/gnome-fs-directory.png
 share/icons/Mist/22x22/places/gnome-fs-ftp.png
-share/icons/Mist/22x22/places/gnome-fs-home.svg
+share/icons/Mist/22x22/places/gnome-fs-home.png
 share/icons/Mist/22x22/places/gnome-fs-nfs.png
 share/icons/Mist/22x22/places/gnome-fs-share.png
 share/icons/Mist/22x22/places/gnome-fs-smb.png
@@ -2187,7 +2243,8 @@ share/icons/Mist/22x22/places/gtk-directory.png
 share/icons/Mist/22x22/places/inode-directory.png
 share/icons/Mist/22x22/places/network.png
 share/icons/Mist/22x22/places/stock_folder.png
-share/icons/Mist/22x22/places/user-home.svg
+share/icons/Mist/22x22/places/user-desktop.png
+share/icons/Mist/22x22/places/user-home.png
 share/icons/Mist/22x22/status/folder-drag-accept.png
 share/icons/Mist/22x22/status/folder-open.png
 share/icons/Mist/22x22/status/folder-visiting.png
@@ -2197,13 +2254,34 @@ share/icons/Mist/22x22/status/gnome-fs-directory-visiting.png
 share/icons/Mist/22x22/status/stock_open.png
 share/icons/Mist/24x24/actions/document-open.png
 share/icons/Mist/24x24/actions/fileopen.png
+share/icons/Mist/24x24/actions/folder-new.png
+share/icons/Mist/24x24/actions/folder_new.png
 share/icons/Mist/24x24/actions/gtk-open.png
+share/icons/Mist/24x24/actions/stock_new-dir.png
+share/icons/Mist/24x24/apps/preferences-desktop-display.png
+share/icons/Mist/24x24/devices/chardevice.png
+share/icons/Mist/24x24/devices/computer.png
+share/icons/Mist/24x24/devices/display.png
+share/icons/Mist/24x24/devices/gnome-dev-computer.png
+share/icons/Mist/24x24/devices/gnome-fs-client.png
+share/icons/Mist/24x24/devices/system.png
+share/icons/Mist/24x24/devices/video-display.png
+share/icons/Mist/24x24/devices/xfce4-display.png
 share/icons/Mist/24x24/places/application-x-gnome-saved-search.png
+share/icons/Mist/24x24/places/desktop.png
+share/icons/Mist/24x24/places/folder-documents.png
+share/icons/Mist/24x24/places/folder-download.png
+share/icons/Mist/24x24/places/folder-music.png
 share/icons/Mist/24x24/places/folder-new.png
+share/icons/Mist/24x24/places/folder-pictures.png
+share/icons/Mist/24x24/places/folder-publicshare.png
 share/icons/Mist/24x24/places/folder-remote.png
 share/icons/Mist/24x24/places/folder-saved-search.png
+share/icons/Mist/24x24/places/folder-templates.png
+share/icons/Mist/24x24/places/folder-videos.png
 share/icons/Mist/24x24/places/folder.png
 share/icons/Mist/24x24/places/folder_home.png
+share/icons/Mist/24x24/places/gnome-fs-desktop.png
 share/icons/Mist/24x24/places/gnome-fs-directory.png
 share/icons/Mist/24x24/places/gnome-fs-ftp.png
 share/icons/Mist/24x24/places/gnome-fs-home.png
@@ -2216,6 +2294,7 @@ share/icons/Mist/24x24/places/gtk-directory.png
 share/icons/Mist/24x24/places/inode-directory.png
 share/icons/Mist/24x24/places/network.png
 share/icons/Mist/24x24/places/stock_folder.png
+share/icons/Mist/24x24/places/user-desktop.png
 share/icons/Mist/24x24/places/user-home.png
 share/icons/Mist/24x24/status/folder-drag-accept.png
 share/icons/Mist/24x24/status/folder-open.png
@@ -2224,65 +2303,158 @@ share/icons/Mist/24x24/status/folder_open.png
 share/icons/Mist/24x24/status/gnome-fs-directory-accept.png
 share/icons/Mist/24x24/status/gnome-fs-directory-visiting.png
 share/icons/Mist/24x24/status/stock_open.png
-share/icons/Mist/32x32/actions/document-open.svg
-share/icons/Mist/32x32/actions/fileopen.svg
-share/icons/Mist/32x32/actions/gtk-open.svg
-share/icons/Mist/32x32/places/application-x-gnome-saved-search.svg
-share/icons/Mist/32x32/places/folder-new.svg
-share/icons/Mist/32x32/places/folder-remote.svg
-share/icons/Mist/32x32/places/folder-saved-search.svg
-share/icons/Mist/32x32/places/folder.svg
-share/icons/Mist/32x32/places/folder_home.svg
-share/icons/Mist/32x32/places/gnome-fs-directory.svg
-share/icons/Mist/32x32/places/gnome-fs-ftp.svg
-share/icons/Mist/32x32/places/gnome-fs-home.svg
-share/icons/Mist/32x32/places/gnome-fs-nfs.svg
-share/icons/Mist/32x32/places/gnome-fs-share.svg
-share/icons/Mist/32x32/places/gnome-fs-smb.svg
-share/icons/Mist/32x32/places/gnome-fs-ssh.svg
-share/icons/Mist/32x32/places/gnome-mime-x-directory-smb-share.svg
-share/icons/Mist/32x32/places/gtk-directory.svg
-share/icons/Mist/32x32/places/inode-directory.svg
-share/icons/Mist/32x32/places/network.svg
-share/icons/Mist/32x32/places/stock_folder.svg
-share/icons/Mist/32x32/places/user-home.svg
-share/icons/Mist/32x32/status/folder-drag-accept.svg
-share/icons/Mist/32x32/status/folder-open.svg
+share/icons/Mist/256x256/actions/document-open.png
+share/icons/Mist/256x256/actions/fileopen.png
+share/icons/Mist/256x256/actions/folder-new.png
+share/icons/Mist/256x256/actions/folder_new.png
+share/icons/Mist/256x256/actions/gtk-open.png
+share/icons/Mist/256x256/actions/stock_new-dir.png
+share/icons/Mist/256x256/apps/preferences-desktop-display.png
+share/icons/Mist/256x256/devices/chardevice.png
+share/icons/Mist/256x256/devices/computer.png
+share/icons/Mist/256x256/devices/display.png
+share/icons/Mist/256x256/devices/gnome-dev-computer.png
+share/icons/Mist/256x256/devices/gnome-fs-client.png
+share/icons/Mist/256x256/devices/system.png
+share/icons/Mist/256x256/devices/video-display.png
+share/icons/Mist/256x256/devices/xfce4-display.png
+share/icons/Mist/256x256/places/application-x-gnome-saved-search.png
+share/icons/Mist/256x256/places/desktop.png
+share/icons/Mist/256x256/places/folder-documents.png
+share/icons/Mist/256x256/places/folder-download.png
+share/icons/Mist/256x256/places/folder-music.png
+share/icons/Mist/256x256/places/folder-pictures.png
+share/icons/Mist/256x256/places/folder-publicshare.png
+share/icons/Mist/256x256/places/folder-remote.png
+share/icons/Mist/256x256/places/folder-saved-search.png
+share/icons/Mist/256x256/places/folder-templates.png
+share/icons/Mist/256x256/places/folder-videos.png
+share/icons/Mist/256x256/places/folder.png
+share/icons/Mist/256x256/places/folder_home.png
+share/icons/Mist/256x256/places/gnome-fs-desktop.png
+share/icons/Mist/256x256/places/gnome-fs-directory.png
+share/icons/Mist/256x256/places/gnome-fs-ftp.png
+share/icons/Mist/256x256/places/gnome-fs-home.png
+share/icons/Mist/256x256/places/gnome-fs-nfs.png
+share/icons/Mist/256x256/places/gnome-fs-share.png
+share/icons/Mist/256x256/places/gnome-fs-smb.png
+share/icons/Mist/256x256/places/gnome-fs-ssh.png
+share/icons/Mist/256x256/places/gnome-mime-x-directory-smb-share.png
+share/icons/Mist/256x256/places/gtk-directory.png
+share/icons/Mist/256x256/places/inode-directory.png
+share/icons/Mist/256x256/places/network.png
+share/icons/Mist/256x256/places/stock_folder.png
+share/icons/Mist/256x256/places/user-desktop.png
+share/icons/Mist/256x256/places/user-home.png
+share/icons/Mist/256x256/status/folder-drag-accept.png
+share/icons/Mist/256x256/status/folder-open.png
+share/icons/Mist/256x256/status/folder-visiting.png
+share/icons/Mist/256x256/status/folder_open.png
+share/icons/Mist/256x256/status/gnome-fs-directory-accept.png
+share/icons/Mist/256x256/status/gnome-fs-directory-visiting.png
+share/icons/Mist/256x256/status/stock_open.png
+share/icons/Mist/32x32/actions/document-open.png
+share/icons/Mist/32x32/actions/fileopen.png
+share/icons/Mist/32x32/actions/folder-new.png
+share/icons/Mist/32x32/actions/folder_new.png
+share/icons/Mist/32x32/actions/gtk-open.png
+share/icons/Mist/32x32/actions/stock_new-dir.png
+share/icons/Mist/32x32/apps/preferences-desktop-display.png
+share/icons/Mist/32x32/devices/chardevice.png
+share/icons/Mist/32x32/devices/computer.png
+share/icons/Mist/32x32/devices/display.png
+share/icons/Mist/32x32/devices/gnome-dev-computer.png
+share/icons/Mist/32x32/devices/gnome-fs-client.png
+share/icons/Mist/32x32/devices/system.png
+share/icons/Mist/32x32/devices/video-display.png
+share/icons/Mist/32x32/devices/xfce4-display.png
+share/icons/Mist/32x32/places/application-x-gnome-saved-search.png
+share/icons/Mist/32x32/places/desktop.png
+share/icons/Mist/32x32/places/folder-documents.png
+share/icons/Mist/32x32/places/folder-download.png
+share/icons/Mist/32x32/places/folder-music.png
+share/icons/Mist/32x32/places/folder-new.png
+share/icons/Mist/32x32/places/folder-pictures.png
+share/icons/Mist/32x32/places/folder-publicshare.png
+share/icons/Mist/32x32/places/folder-remote.png
+share/icons/Mist/32x32/places/folder-saved-search.png
+share/icons/Mist/32x32/places/folder-templates.png
+share/icons/Mist/32x32/places/folder-videos.png
+share/icons/Mist/32x32/places/folder.png
+share/icons/Mist/32x32/places/folder_home.png
+share/icons/Mist/32x32/places/gnome-fs-desktop.png
+share/icons/Mist/32x32/places/gnome-fs-directory.png
+share/icons/Mist/32x32/places/gnome-fs-ftp.png
+share/icons/Mist/32x32/places/gnome-fs-home.png
+share/icons/Mist/32x32/places/gnome-fs-nfs.png
+share/icons/Mist/32x32/places/gnome-fs-share.png
+share/icons/Mist/32x32/places/gnome-fs-smb.png
+share/icons/Mist/32x32/places/gnome-fs-ssh.png
+share/icons/Mist/32x32/places/gnome-mime-x-directory-smb-share.png
+share/icons/Mist/32x32/places/gtk-directory.png
+share/icons/Mist/32x32/places/inode-directory.png
+share/icons/Mist/32x32/places/network.png
+share/icons/Mist/32x32/places/stock_folder.png
+share/icons/Mist/32x32/places/user-desktop.png
+share/icons/Mist/32x32/places/user-home.png
+share/icons/Mist/32x32/status/folder-drag-accept.png
+share/icons/Mist/32x32/status/folder-open.png
 share/icons/Mist/32x32/status/folder-visiting.png
-share/icons/Mist/32x32/status/folder_open.svg
-share/icons/Mist/32x32/status/gnome-fs-directory-accept.svg
+share/icons/Mist/32x32/status/folder_open.png
+share/icons/Mist/32x32/status/gnome-fs-directory-accept.png
 share/icons/Mist/32x32/status/gnome-fs-directory-visiting.png
-share/icons/Mist/32x32/status/stock_open.svg
+share/icons/Mist/32x32/status/stock_open.png
+share/icons/Mist/48x48/actions/document-open.png
+share/icons/Mist/48x48/actions/fileopen.png
+share/icons/Mist/48x48/actions/folder-new.png
+share/icons/Mist/48x48/actions/folder_new.png
+share/icons/Mist/48x48/actions/gtk-open.png
+share/icons/Mist/48x48/actions/stock_new-dir.png
+share/icons/Mist/48x48/apps/preferences-desktop-display.png
+share/icons/Mist/48x48/devices/chardevice.png
+share/icons/Mist/48x48/devices/computer.png
+share/icons/Mist/48x48/devices/display.png
+share/icons/Mist/48x48/devices/gnome-dev-computer.png
+share/icons/Mist/48x48/devices/gnome-fs-client.png
+share/icons/Mist/48x48/devices/system.png
+share/icons/Mist/48x48/devices/video-display.png
+share/icons/Mist/48x48/devices/xfce4-display.png
+share/icons/Mist/48x48/places/application-x-gnome-saved-search.png
+share/icons/Mist/48x48/places/desktop.png
+share/icons/Mist/48x48/places/folder-documents.png
+share/icons/Mist/48x48/places/folder-download.png
+share/icons/Mist/48x48/places/folder-music.png
+share/icons/Mist/48x48/places/folder-pictures.png
+share/icons/Mist/48x48/places/folder-publicshare.png
+share/icons/Mist/48x48/places/folder-remote.png
+share/icons/Mist/48x48/places/folder-saved-search.png
+share/icons/Mist/48x48/places/folder-templates.png
+share/icons/Mist/48x48/places/folder-videos.png
+share/icons/Mist/48x48/places/folder.png
+share/icons/Mist/48x48/places/folder_home.png
+share/icons/Mist/48x48/places/gnome-fs-desktop.png
+share/icons/Mist/48x48/places/gnome-fs-directory.png
+share/icons/Mist/48x48/places/gnome-fs-ftp.png
+share/icons/Mist/48x48/places/gnome-fs-home.png
+share/icons/Mist/48x48/places/gnome-fs-nfs.png
+share/icons/Mist/48x48/places/gnome-fs-share.png
+share/icons/Mist/48x48/places/gnome-fs-smb.png
+share/icons/Mist/48x48/places/gnome-fs-ssh.png
+share/icons/Mist/48x48/places/gnome-mime-x-directory-smb-share.png
+share/icons/Mist/48x48/places/gtk-directory.png
+share/icons/Mist/48x48/places/inode-directory.png
+share/icons/Mist/48x48/places/network.png
+share/icons/Mist/48x48/places/stock_folder.png
+share/icons/Mist/48x48/places/user-desktop.png
+share/icons/Mist/48x48/places/user-home.png
+share/icons/Mist/48x48/status/folder-drag-accept.png
+share/icons/Mist/48x48/status/folder-open.png
+share/icons/Mist/48x48/status/folder-visiting.png
+share/icons/Mist/48x48/status/folder_open.png
+share/icons/Mist/48x48/status/gnome-fs-directory-accept.png
+share/icons/Mist/48x48/status/gnome-fs-directory-visiting.png
+share/icons/Mist/48x48/status/stock_open.png
 share/icons/Mist/index.theme
-share/icons/Mist/scalable/actions/document-open.svg
-share/icons/Mist/scalable/actions/fileopen.svg
-share/icons/Mist/scalable/actions/gtk-open.svg
-share/icons/Mist/scalable/places/application-x-gnome-saved-search.svg
-share/icons/Mist/scalable/places/folder-new.svg
-share/icons/Mist/scalable/places/folder-remote.svg
-share/icons/Mist/scalable/places/folder-saved-search.svg
-share/icons/Mist/scalable/places/folder.svg
-share/icons/Mist/scalable/places/folder_home.svg
-share/icons/Mist/scalable/places/gnome-fs-directory.svg
-share/icons/Mist/scalable/places/gnome-fs-ftp.svg
-share/icons/Mist/scalable/places/gnome-fs-home.svg
-share/icons/Mist/scalable/places/gnome-fs-nfs.svg
-share/icons/Mist/scalable/places/gnome-fs-share.svg
-share/icons/Mist/scalable/places/gnome-fs-smb.svg
-share/icons/Mist/scalable/places/gnome-fs-ssh.svg
-share/icons/Mist/scalable/places/gnome-mime-x-directory-smb-share.svg
-share/icons/Mist/scalable/places/gtk-directory.svg
-share/icons/Mist/scalable/places/inode-directory.svg
-share/icons/Mist/scalable/places/network.svg
-share/icons/Mist/scalable/places/stock_folder.svg
-share/icons/Mist/scalable/places/user-home.svg
-share/icons/Mist/scalable/status/folder-drag-accept.svg
-share/icons/Mist/scalable/status/folder-open.svg
-share/icons/Mist/scalable/status/folder-visiting.svg
-share/icons/Mist/scalable/status/folder_open.svg
-share/icons/Mist/scalable/status/gnome-fs-directory-accept.svg
-share/icons/Mist/scalable/status/gnome-fs-directory-visiting.svg
-share/icons/Mist/scalable/status/stock_open.svg
 share/locale/af/LC_MESSAGES/gnome-themes.mo
 share/locale/am/LC_MESSAGES/gnome-themes.mo
 share/locale/ar/LC_MESSAGES/gnome-themes.mo
@@ -2825,24 +2997,40 @@ share/themes/Simple/gtk-2.0/gtkrc
 @dirrm share/themes/Clearlooks/metacity-1
 @dirrmtry share/themes/Clearlooks
 @dirrmtry share/themes
-@dirrm share/icons/Mist/scalable/status
-@dirrm share/icons/Mist/scalable/places
-@dirrm share/icons/Mist/scalable/actions
-@dirrm share/icons/Mist/scalable
+@dirrm share/icons/Mist/48x48/status
+@dirrm share/icons/Mist/48x48/places
+@dirrm share/icons/Mist/48x48/devices
+@dirrm share/icons/Mist/48x48/apps
+@dirrm share/icons/Mist/48x48/actions
+@dirrm share/icons/Mist/48x48
 @dirrm share/icons/Mist/32x32/status
 @dirrm share/icons/Mist/32x32/places
+@dirrm share/icons/Mist/32x32/devices
+@dirrm share/icons/Mist/32x32/apps
 @dirrm share/icons/Mist/32x32/actions
 @dirrm share/icons/Mist/32x32
+@dirrm share/icons/Mist/256x256/status
+@dirrm share/icons/Mist/256x256/places
+@dirrm share/icons/Mist/256x256/devices
+@dirrm share/icons/Mist/256x256/apps
+@dirrm share/icons/Mist/256x256/actions
+@dirrm share/icons/Mist/256x256
 @dirrm share/icons/Mist/24x24/status
 @dirrm share/icons/Mist/24x24/places
+@dirrm share/icons/Mist/24x24/devices
+@dirrm share/icons/Mist/24x24/apps
 @dirrm share/icons/Mist/24x24/actions
 @dirrm share/icons/Mist/24x24
 @dirrm share/icons/Mist/22x22/status
 @dirrm share/icons/Mist/22x22/places
+@dirrm share/icons/Mist/22x22/devices
+@dirrm share/icons/Mist/22x22/apps
 @dirrm share/icons/Mist/22x22/actions
 @dirrm share/icons/Mist/22x22
 @dirrm share/icons/Mist/16x16/status
 @dirrm share/icons/Mist/16x16/places
+@dirrm share/icons/Mist/16x16/devices
+@dirrm share/icons/Mist/16x16/apps
 @dirrm share/icons/Mist/16x16/actions
 @dirrm share/icons/Mist/16x16
 @dirrm share/icons/Mist

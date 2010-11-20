@@ -3,11 +3,11 @@
 # Whom:			jseger@FreeBSD.org
 #
 # $FreeBSD$
-#   $MCom: ports/print/freetype2/Makefile,v 1.22 2010/03/16 19:33:10 mezz Exp $
+#   $MCom: ports/print/freetype2/Makefile,v 1.26 2010/10/14 09:17:24 kwm Exp $
 #
 
 PORTNAME=	freetype2
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	print
 MASTER_SITES=	SF/freetype/${PORTNAME}/${PORTVERSION} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype2/ \
@@ -61,7 +61,7 @@ pre-patch:
 		${WRKSRC}/builds/unix/install.mk
 
 pre-configure:
-	@${REINPLACE_CMD} -e '/^LIBTOOL/s|LIBTOOL ?= $$(BUILD_DIR)/libtool|LIBTOOL := ${WRKDIR}/gnome-libtool|' \
+	@${REINPLACE_CMD} -e '/^LIBTOOL/s|LIBTOOL := $$(FT_LIBTOOL_DIR)/libtool|LIBTOOL := ${WRKDIR}/gnome-libtool|' \
 	    	${WRKSRC}/builds/unix/unix-cc.in
 
 post-configure:

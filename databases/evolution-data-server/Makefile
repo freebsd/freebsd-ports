@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/databases/evolution-data-server/Makefile,v 1.8 2010/06/24 10:03:53 kwm Exp $
+#   $MCom: ports/databases/evolution-data-server/Makefile,v 1.203 2010/11/15 17:19:55 kwm Exp $
 #
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	2.30.3
+PORTVERSION=	2.32.1
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,6 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The data backends for the Evolution integrated mail/PIM suite
 
 LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
+		gdata.7:${PORTSDIR}/devel/libgdata \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		ical.44:${PORTSDIR}/devel/libical \
 		nss3.1:${PORTSDIR}/security/nss \
@@ -29,6 +30,7 @@ USE_BISON=	build
 USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack ltverhack ltasneededhack gconf2 \
 		libxml2
+GNOME_DESKTOP_VERSION=2
 USE_OPENLDAP=	yes
 USE_AUTOTOOLS=	libtool:22
 USE_BDB=	41+
@@ -40,7 +42,7 @@ CONFIGURE_ARGS=	--enable-static \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-PLIST_SUB=	VERSION="2.30" EVO_VERSION="1.2"
+PLIST_SUB=	VERSION="2.32" EVO_VERSION="1.2"
 
 #OPTIONS=	IMAP4	"Enable experimental IMAP4 backend" off
 OPTIONS=	WEATHER "Enable weather calendar backend" on
@@ -84,7 +86,6 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldb|-l${BDB_LIB_NAME}|g ; \
 		s|heimlibs=".*"|heimlibs="${KRB5_LIB}"|g ; \
-		s|LIBEDATASERVER_CURRENT=13|LIBEDATASERVER_CURRENT=11|g ; \
 		s|-Wl,--no-undefined||g ; \
 		s|-Wmissing-include-dirs||g' \
 			${WRKSRC}/configure

@@ -603,6 +603,7 @@ share/icons/gnome/16x16/emblems/emblem-photos.png
 share/icons/gnome/16x16/emblems/emblem-readonly.png
 share/icons/gnome/16x16/emblems/emblem-shared.png
 share/icons/gnome/16x16/emblems/emblem-symbolic-link.png
+share/icons/gnome/16x16/emblems/emblem-synchronizing.png
 share/icons/gnome/16x16/emblems/emblem-system.png
 share/icons/gnome/16x16/emblems/emblem-unreadable.png
 share/icons/gnome/16x16/emblems/emblem-urgent.png
@@ -873,8 +874,8 @@ share/icons/gnome/16x16/status/audio-volume-muted.png
 share/icons/gnome/16x16/status/avatar-default.png
 share/icons/gnome/16x16/status/battery-caution-charging.png
 share/icons/gnome/16x16/status/battery-caution.png
-share/icons/gnome/16x16/status/battery-charging.png
 share/icons/gnome/16x16/status/battery-empty.png
+share/icons/gnome/16x16/status/battery-full-charged.png
 share/icons/gnome/16x16/status/battery-full-charging.png
 share/icons/gnome/16x16/status/battery-full.png
 share/icons/gnome/16x16/status/battery-good-charging.png
@@ -1609,6 +1610,7 @@ share/icons/gnome/22x22/emblems/emblem-photos.png
 share/icons/gnome/22x22/emblems/emblem-readonly.png
 share/icons/gnome/22x22/emblems/emblem-shared.png
 share/icons/gnome/22x22/emblems/emblem-symbolic-link.png
+share/icons/gnome/22x22/emblems/emblem-synchronizing.png
 share/icons/gnome/22x22/emblems/emblem-system.png
 share/icons/gnome/22x22/emblems/emblem-unreadable.png
 share/icons/gnome/22x22/emblems/emblem-urgent.png
@@ -1879,8 +1881,8 @@ share/icons/gnome/22x22/status/audio-volume-muted.png
 share/icons/gnome/22x22/status/avatar-default.png
 share/icons/gnome/22x22/status/battery-caution-charging.png
 share/icons/gnome/22x22/status/battery-caution.png
-share/icons/gnome/22x22/status/battery-charging.png
 share/icons/gnome/22x22/status/battery-empty.png
+share/icons/gnome/22x22/status/battery-full-charged.png
 share/icons/gnome/22x22/status/battery-full-charging.png
 share/icons/gnome/22x22/status/battery-full.png
 share/icons/gnome/22x22/status/battery-good-charging.png
@@ -2883,8 +2885,8 @@ share/icons/gnome/24x24/status/audio-volume-muted.png
 share/icons/gnome/24x24/status/avatar-default.png
 share/icons/gnome/24x24/status/battery-caution-charging.png
 share/icons/gnome/24x24/status/battery-caution.png
-share/icons/gnome/24x24/status/battery-charging.png
 share/icons/gnome/24x24/status/battery-empty.png
+share/icons/gnome/24x24/status/battery-full-charged.png
 share/icons/gnome/24x24/status/battery-full-charging.png
 share/icons/gnome/24x24/status/battery-full.png
 share/icons/gnome/24x24/status/battery-good-charging.png
@@ -3018,6 +3020,7 @@ share/icons/gnome/24x24/status/xfce-trash_full.png
 share/icons/gnome/256x256/actions/address-book-new.png
 share/icons/gnome/256x256/actions/appointment-new.png
 share/icons/gnome/256x256/actions/appointment.png
+share/icons/gnome/256x256/actions/back.png
 share/icons/gnome/256x256/actions/document-new.png
 share/icons/gnome/256x256/actions/document-open-recent.png
 share/icons/gnome/256x256/actions/document-open.png
@@ -3026,6 +3029,8 @@ share/icons/gnome/256x256/actions/document-print-preview.png
 share/icons/gnome/256x256/actions/document-print.png
 share/icons/gnome/256x256/actions/document-properties.png
 share/icons/gnome/256x256/actions/document-revert.png
+share/icons/gnome/256x256/actions/document-save-as.png
+share/icons/gnome/256x256/actions/document-save.png
 share/icons/gnome/256x256/actions/edit-delete.png
 share/icons/gnome/256x256/actions/edit-find-replace.png
 share/icons/gnome/256x256/actions/edit-find.png
@@ -3037,32 +3042,67 @@ share/icons/gnome/256x256/actions/filenew.png
 share/icons/gnome/256x256/actions/fileopen.png
 share/icons/gnome/256x256/actions/fileprint.png
 share/icons/gnome/256x256/actions/filequickprint.png
+share/icons/gnome/256x256/actions/filesave.png
+share/icons/gnome/256x256/actions/filesaveas.png
 share/icons/gnome/256x256/actions/find.png
+share/icons/gnome/256x256/actions/finish.png
 share/icons/gnome/256x256/actions/folder-new.png
 share/icons/gnome/256x256/actions/folder_new.png
+share/icons/gnome/256x256/actions/forward.png
 share/icons/gnome/256x256/actions/gnome-lockscreen.png
 share/icons/gnome/256x256/actions/gnome-logout.png
 share/icons/gnome/256x256/actions/gnome-searchtool.png
 share/icons/gnome/256x256/actions/gnome-stock-mail-new.png
+share/icons/gnome/256x256/actions/go-first.png
+share/icons/gnome/256x256/actions/go-jump.png
+share/icons/gnome/256x256/actions/go-last.png
+share/icons/gnome/256x256/actions/go-next.png
+share/icons/gnome/256x256/actions/go-previous.png
+share/icons/gnome/256x256/actions/gtk-cancel.png
 share/icons/gnome/256x256/actions/gtk-delete.png
 share/icons/gnome/256x256/actions/gtk-find-and-replace.png
 share/icons/gnome/256x256/actions/gtk-find.png
+share/icons/gnome/256x256/actions/gtk-go-back-ltr.png
+share/icons/gnome/256x256/actions/gtk-go-back-rtl.png
+share/icons/gnome/256x256/actions/gtk-go-forward-ltr.png
+share/icons/gnome/256x256/actions/gtk-go-forward-rtl.png
+share/icons/gnome/256x256/actions/gtk-goto-first-ltr.png
+share/icons/gnome/256x256/actions/gtk-goto-first-rtl.png
+share/icons/gnome/256x256/actions/gtk-goto-last-ltr.png
+share/icons/gnome/256x256/actions/gtk-goto-last-rtl.png
+share/icons/gnome/256x256/actions/gtk-jump-to-ltr.png
+share/icons/gnome/256x256/actions/gtk-jump-to-rtl.png
 share/icons/gnome/256x256/actions/gtk-new.png
 share/icons/gnome/256x256/actions/gtk-open.png
 share/icons/gnome/256x256/actions/gtk-print-preview.png
 share/icons/gnome/256x256/actions/gtk-print.png
 share/icons/gnome/256x256/actions/gtk-properties.png
+share/icons/gnome/256x256/actions/gtk-refresh.png
 share/icons/gnome/256x256/actions/gtk-revert-to-saved-ltr.png
 share/icons/gnome/256x256/actions/gtk-revert-to-saved-rtl.png
+share/icons/gnome/256x256/actions/gtk-save-as.png
+share/icons/gnome/256x256/actions/gtk-save.png
 share/icons/gnome/256x256/actions/gtk-select-all.png
+share/icons/gnome/256x256/actions/gtk-stop.png
 share/icons/gnome/256x256/actions/kfind.png
 share/icons/gnome/256x256/actions/lock.png
 share/icons/gnome/256x256/actions/mail-message-new.png
 share/icons/gnome/256x256/actions/mail_new.png
+share/icons/gnome/256x256/actions/next.png
+share/icons/gnome/256x256/actions/previous.png
+share/icons/gnome/256x256/actions/process-stop.png
+share/icons/gnome/256x256/actions/reload.png
+share/icons/gnome/256x256/actions/reload3.png
+share/icons/gnome/256x256/actions/reload_all_tabs.png
+share/icons/gnome/256x256/actions/reload_page.png
 share/icons/gnome/256x256/actions/revert.png
 share/icons/gnome/256x256/actions/search.png
+share/icons/gnome/256x256/actions/start.png
 share/icons/gnome/256x256/actions/stock_delete.png
 share/icons/gnome/256x256/actions/stock_file-properites.png
+share/icons/gnome/256x256/actions/stock_first.png
+share/icons/gnome/256x256/actions/stock_last.png
+share/icons/gnome/256x256/actions/stock_left.png
 share/icons/gnome/256x256/actions/stock_mail-compose.png
 share/icons/gnome/256x256/actions/stock_new-address-book.png
 share/icons/gnome/256x256/actions/stock_new-appointment.png
@@ -3072,16 +3112,24 @@ share/icons/gnome/256x256/actions/stock_print-preview.png
 share/icons/gnome/256x256/actions/stock_print-setup.png
 share/icons/gnome/256x256/actions/stock_print.png
 share/icons/gnome/256x256/actions/stock_properties.png
+share/icons/gnome/256x256/actions/stock_refresh.png
+share/icons/gnome/256x256/actions/stock_right.png
+share/icons/gnome/256x256/actions/stock_save-as.png
+share/icons/gnome/256x256/actions/stock_save.png
 share/icons/gnome/256x256/actions/stock_search-and-replace.png
 share/icons/gnome/256x256/actions/stock_search.png
 share/icons/gnome/256x256/actions/stock_select-all.png
+share/icons/gnome/256x256/actions/stock_stop.png
+share/icons/gnome/256x256/actions/stop.png
 share/icons/gnome/256x256/actions/system-lock-screen.png
 share/icons/gnome/256x256/actions/system-log-out.png
 share/icons/gnome/256x256/actions/system-search.png
+share/icons/gnome/256x256/actions/view-refresh.png
 share/icons/gnome/256x256/actions/xfce-system-lock.png
 share/icons/gnome/256x256/apps/access.png
 share/icons/gnome/256x256/apps/accessibility-directory.png
 share/icons/gnome/256x256/apps/accessories-calculator.png
+share/icons/gnome/256x256/apps/accessories-character-map.png
 share/icons/gnome/256x256/apps/accessories-dictionary.png
 share/icons/gnome/256x256/apps/accessories-text-editor.png
 share/icons/gnome/256x256/apps/applets-screenshooter.png
@@ -3092,17 +3140,22 @@ share/icons/gnome/256x256/apps/config-users.png
 share/icons/gnome/256x256/apps/file-manager.png
 share/icons/gnome/256x256/apps/fonts.png
 share/icons/gnome/256x256/apps/gnome-calculator.png
+share/icons/gnome/256x256/apps/gnome-character-map.png
 share/icons/gnome/256x256/apps/gnome-help.png
 share/icons/gnome/256x256/apps/gnome-monitor.png
 share/icons/gnome/256x256/apps/gnome-remote-desktop.png
 share/icons/gnome/256x256/apps/gnome-settings-accessibility-technologies.png
 share/icons/gnome/256x256/apps/gnome-settings-background.png
 share/icons/gnome/256x256/apps/gnome-settings-font.png
+share/icons/gnome/256x256/apps/gnome-settings-keybindings.png
 share/icons/gnome/256x256/apps/gnome-settings-theme.png
 share/icons/gnome/256x256/apps/gnome-terminal.png
+share/icons/gnome/256x256/apps/gucharmap.png
 share/icons/gnome/256x256/apps/help-browser.png
 share/icons/gnome/256x256/apps/kcalc.png
+share/icons/gnome/256x256/apps/kcharselect.png
 share/icons/gnome/256x256/apps/kedit.png
+share/icons/gnome/256x256/apps/key_bindings.png
 share/icons/gnome/256x256/apps/kfm.png
 share/icons/gnome/256x256/apps/khelpcenter.png
 share/icons/gnome/256x256/apps/konsole.png
@@ -3115,6 +3168,7 @@ share/icons/gnome/256x256/apps/openterm.png
 share/icons/gnome/256x256/apps/preferences-desktop-accessibility.png
 share/icons/gnome/256x256/apps/preferences-desktop-display.png
 share/icons/gnome/256x256/apps/preferences-desktop-font.png
+share/icons/gnome/256x256/apps/preferences-desktop-keyboard-shortcuts.png
 share/icons/gnome/256x256/apps/preferences-desktop-keyboard.png
 share/icons/gnome/256x256/apps/preferences-desktop-locale.png
 share/icons/gnome/256x256/apps/preferences-desktop-remote-desktop.png
@@ -3146,25 +3200,30 @@ share/icons/gnome/256x256/apps/zen-icon.png
 share/icons/gnome/256x256/categories/applications-graphics.png
 share/icons/gnome/256x256/categories/applications-internet.png
 share/icons/gnome/256x256/categories/applications-office.png
+share/icons/gnome/256x256/categories/applications-system.png
 share/icons/gnome/256x256/categories/gnome-applications.png
 share/icons/gnome/256x256/categories/gnome-globe.png
 share/icons/gnome/256x256/categories/gnome-graphics.png
+share/icons/gnome/256x256/categories/gnome-system.png
 share/icons/gnome/256x256/categories/package_graphics.png
 share/icons/gnome/256x256/categories/package_network.png
 share/icons/gnome/256x256/categories/package_office.png
 share/icons/gnome/256x256/categories/package_settings.png
+share/icons/gnome/256x256/categories/package_system.png
 share/icons/gnome/256x256/categories/preferences-system-network.png
 share/icons/gnome/256x256/categories/preferences-system.png
 share/icons/gnome/256x256/categories/redhat-graphics.png
 share/icons/gnome/256x256/categories/redhat-internet.png
 share/icons/gnome/256x256/categories/redhat-office.png
 share/icons/gnome/256x256/categories/redhat-system_settings.png
+share/icons/gnome/256x256/categories/redhat-system_tools.png
 share/icons/gnome/256x256/categories/stock_internet.png
 share/icons/gnome/256x256/categories/xfce-graphics.png
 share/icons/gnome/256x256/categories/xfce-internet.png
 share/icons/gnome/256x256/categories/xfce-office.png
 share/icons/gnome/256x256/categories/xfce-system-settings.png
 share/icons/gnome/256x256/devices/ac-adapter.png
+share/icons/gnome/256x256/devices/audio-input-microphone.png
 share/icons/gnome/256x256/devices/battery.png
 share/icons/gnome/256x256/devices/camera-photo.png
 share/icons/gnome/256x256/devices/camera.png
@@ -3205,6 +3264,7 @@ share/icons/gnome/256x256/devices/gnome-dev-removable-1394.png
 share/icons/gnome/256x256/devices/gnome-dev-removable-usb.png
 share/icons/gnome/256x256/devices/gnome-dev-removable.png
 share/icons/gnome/256x256/devices/gnome-fs-client.png
+share/icons/gnome/256x256/devices/gnome-stock-mic.png
 share/icons/gnome/256x256/devices/gtk-cdrom.png
 share/icons/gnome/256x256/devices/gtk-harddisk.png
 share/icons/gnome/256x256/devices/harddrive.png
@@ -3222,6 +3282,7 @@ share/icons/gnome/256x256/devices/printer-remote.png
 share/icons/gnome/256x256/devices/printer.png
 share/icons/gnome/256x256/devices/printer1.png
 share/icons/gnome/256x256/devices/printmgr.png
+share/icons/gnome/256x256/devices/stock_mic.png
 share/icons/gnome/256x256/devices/stock_printers.png
 share/icons/gnome/256x256/devices/system.png
 share/icons/gnome/256x256/devices/usbpendrive_unmount.png
@@ -3238,6 +3299,7 @@ share/icons/gnome/256x256/emblems/emblem-package.png
 share/icons/gnome/256x256/emblems/emblem-readonly.png
 share/icons/gnome/256x256/emblems/emblem-shared.png
 share/icons/gnome/256x256/emblems/emblem-symbolic-link.png
+share/icons/gnome/256x256/emblems/emblem-synchronizing.png
 share/icons/gnome/256x256/emblems/emblem-unreadable.png
 share/icons/gnome/256x256/emotes/face-angel.png
 share/icons/gnome/256x256/emotes/face-angry.png
@@ -3487,8 +3549,8 @@ share/icons/gnome/256x256/status/audio-volume-muted.png
 share/icons/gnome/256x256/status/avatar-default.png
 share/icons/gnome/256x256/status/battery-caution-charging.png
 share/icons/gnome/256x256/status/battery-caution.png
-share/icons/gnome/256x256/status/battery-charging.png
 share/icons/gnome/256x256/status/battery-empty.png
+share/icons/gnome/256x256/status/battery-full-charged.png
 share/icons/gnome/256x256/status/battery-full-charging.png
 share/icons/gnome/256x256/status/battery-full.png
 share/icons/gnome/256x256/status/battery-good-charging.png
@@ -3500,6 +3562,7 @@ share/icons/gnome/256x256/status/connect_creating.png
 share/icons/gnome/256x256/status/connect_established.png
 share/icons/gnome/256x256/status/connect_no.png
 share/icons/gnome/256x256/status/dialog-error.png
+share/icons/gnome/256x256/status/dialog-information.png
 share/icons/gnome/256x256/status/dialog-question.png
 share/icons/gnome/256x256/status/dialog-warning.png
 share/icons/gnome/256x256/status/edittrash.png
@@ -3520,14 +3583,17 @@ share/icons/gnome/256x256/status/gnome-netstatus-tx.png
 share/icons/gnome/256x256/status/gnome-netstatus-txrx.png
 share/icons/gnome/256x256/status/gnome-stock-trash-full.png
 share/icons/gnome/256x256/status/gtk-dialog-error.png
+share/icons/gnome/256x256/status/gtk-dialog-info.png
 share/icons/gnome/256x256/status/gtk-dialog-question.png
 share/icons/gnome/256x256/status/gtk-dialog-warning.png
 share/icons/gnome/256x256/status/gtk-missing-image.png
 share/icons/gnome/256x256/status/image-loading.png
 share/icons/gnome/256x256/status/image-missing.png
 share/icons/gnome/256x256/status/important.png
+share/icons/gnome/256x256/status/info.png
 share/icons/gnome/256x256/status/mail-read.png
 share/icons/gnome/256x256/status/messagebox_critical.png
+share/icons/gnome/256x256/status/messagebox_info.png
 share/icons/gnome/256x256/status/messagebox_warning.png
 share/icons/gnome/256x256/status/network-error.png
 share/icons/gnome/256x256/status/network-idle.png
@@ -3549,6 +3615,7 @@ share/icons/gnome/256x256/status/software-update-urgent.png
 share/icons/gnome/256x256/status/stock_appointment-reminder-excl.png
 share/icons/gnome/256x256/status/stock_appointment-reminder.png
 share/icons/gnome/256x256/status/stock_dialog-error.png
+share/icons/gnome/256x256/status/stock_dialog-info.png
 share/icons/gnome/256x256/status/stock_dialog-question.png
 share/icons/gnome/256x256/status/stock_dialog-warning.png
 share/icons/gnome/256x256/status/stock_lock-broken.png
@@ -4168,6 +4235,7 @@ share/icons/gnome/32x32/emblems/emblem-photos.png
 share/icons/gnome/32x32/emblems/emblem-readonly.png
 share/icons/gnome/32x32/emblems/emblem-shared.png
 share/icons/gnome/32x32/emblems/emblem-symbolic-link.png
+share/icons/gnome/32x32/emblems/emblem-synchronizing.png
 share/icons/gnome/32x32/emblems/emblem-system.png
 share/icons/gnome/32x32/emblems/emblem-unreadable.png
 share/icons/gnome/32x32/emblems/emblem-urgent.png
@@ -4438,8 +4506,8 @@ share/icons/gnome/32x32/status/audio-volume-muted.png
 share/icons/gnome/32x32/status/avatar-default.png
 share/icons/gnome/32x32/status/battery-caution-charging.png
 share/icons/gnome/32x32/status/battery-caution.png
-share/icons/gnome/32x32/status/battery-charging.png
 share/icons/gnome/32x32/status/battery-empty.png
+share/icons/gnome/32x32/status/battery-full-charged.png
 share/icons/gnome/32x32/status/battery-full-charging.png
 share/icons/gnome/32x32/status/battery-full.png
 share/icons/gnome/32x32/status/battery-good-charging.png
@@ -4953,8 +5021,6 @@ share/icons/gnome/48x48/apps/logviewer.png
 share/icons/gnome/48x48/apps/multimedia-volume-control.png
 share/icons/gnome/48x48/apps/multimedia.png
 share/icons/gnome/48x48/apps/openterm.png
-share/icons/gnome/48x48/apps/palm-pilot-sync.png
-share/icons/gnome/48x48/apps/palm-pilot.png
 share/icons/gnome/48x48/apps/preferences-desktop-accessibility.png
 share/icons/gnome/48x48/apps/preferences-desktop-display.png
 share/icons/gnome/48x48/apps/preferences-desktop-font.png
@@ -5171,6 +5237,7 @@ share/icons/gnome/48x48/emblems/emblem-photos.png
 share/icons/gnome/48x48/emblems/emblem-readonly.png
 share/icons/gnome/48x48/emblems/emblem-shared.png
 share/icons/gnome/48x48/emblems/emblem-symbolic-link.png
+share/icons/gnome/48x48/emblems/emblem-synchronizing.png
 share/icons/gnome/48x48/emblems/emblem-system.png
 share/icons/gnome/48x48/emblems/emblem-unreadable.png
 share/icons/gnome/48x48/emblems/emblem-urgent.png
@@ -5441,8 +5508,8 @@ share/icons/gnome/48x48/status/audio-volume-muted.png
 share/icons/gnome/48x48/status/avatar-default.png
 share/icons/gnome/48x48/status/battery-caution-charging.png
 share/icons/gnome/48x48/status/battery-caution.png
-share/icons/gnome/48x48/status/battery-charging.png
 share/icons/gnome/48x48/status/battery-empty.png
+share/icons/gnome/48x48/status/battery-full-charged.png
 share/icons/gnome/48x48/status/battery-full-charging.png
 share/icons/gnome/48x48/status/battery-full.png
 share/icons/gnome/48x48/status/battery-good-charging.png
@@ -5575,12 +5642,15 @@ share/icons/gnome/8x8/emblems/emblem-noread.png
 share/icons/gnome/8x8/emblems/emblem-nowrite.png
 share/icons/gnome/8x8/emblems/emblem-readonly.png
 share/icons/gnome/8x8/emblems/emblem-symbolic-link.png
+share/icons/gnome/8x8/emblems/emblem-synchronizing.png
 share/icons/gnome/8x8/emblems/emblem-unreadable.png
 share/icons/gnome/index.theme
 @dirrmtry share/locale/nds/LC_MESSAGES
 @dirrmtry share/locale/nds
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
+@dirrmtry share/locale/fy/LC_MESSAGES
+@dirrmtry share/locale/fy
 @dirrmtry share/locale/fur/LC_MESSAGES
 @dirrmtry share/locale/fur
 @dirrmtry share/icons/gnome/scalable/stock/generic

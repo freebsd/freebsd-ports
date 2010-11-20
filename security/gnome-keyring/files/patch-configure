@@ -1,0 +1,22 @@
+--- configure.orig	2010-09-19 12:45:34.000000000 +0000
++++ configure	2010-09-19 12:50:50.000000000 +0000
+@@ -14454,8 +14454,8 @@
+ .SECONDARY: $(gsettings_SCHEMAS)
+ 
+ gsettings__base_list = \
+-  sed "$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g" | \
+-  sed "$$!N;$$!N;$$!N;$$!N;s/\n/ /g"
++  sed '\''$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g'\'' | \
++  sed '\''$$!N;$$!N;$$!N;$$!N;s/\n/ /g'\''
+ 
+ install-gsettings-schemas: $(gsettings_SCHEMAS:.xml=.valid) $(gsettings__enum_file)
+ 	@$(NORMAL_INSTALL)
+@@ -15058,7 +15058,7 @@
+ 
+ pam_status="no"
+ if test "$enable_pam" != "no"; then
+-	for ac_header in security/pam_modules.h pam/pam_modules.h
++	for ac_header in security/pam_modules.h
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ ac_fn_c_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"

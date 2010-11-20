@@ -150,7 +150,9 @@ RUN_DEPENDS+=	${LOCALBASE}/share/claws-mail/themes/ZX-0_1.1/down_arrow.xpm:${POR
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|-lresolv||g; s|-lpisock\"|-liconv &|g' ${WRKSRC}/configure
+		's|-lresolv||g; s|-lpisock\"|-liconv &|g' \
+		-e 's|-DGTK_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}&|g ; s|/usr/share|${LOCALBASE}/share|g' \
 		${WRKSRC}/src/procmime.c
 	@${REINPLACE_CMD} -e "s|po intl src|po src| ; s:@CLAWS_GNOME2:#@CLAWS_GNOME2:g" ${WRKSRC}/Makefile.in

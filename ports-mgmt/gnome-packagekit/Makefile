@@ -3,10 +3,10 @@
 # Whom:					Anders F Bjorklund <afb@users.sourceforge.net>
 #
 # $FreeBSD$
-#  $MCom: ports-stable/ports-mgmt/gnome-packagekit/Makefile,v 1.1 2010/07/21 15:21:03 kwm Exp $
+#  $MCom: ports/ports-mgmt/gnome-packagekit/Makefile,v 1.19 2010/10/04 20:40:36 kwm Exp $
 
 PORTNAME=	gnome-packagekit
-PORTVERSION=	2.30.3
+PORTVERSION=	2.32.0
 CATEGORIES=	ports-mgmt sysutils gnome
 MASTER_SITES=	GNOME
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
 		packagekit-glib2.14:${PORTSDIR}/ports-mgmt/packagekit \
 		notify:${PORTSDIR}/devel/libnotify \
 		unique-1.0:${PORTSDIR}/x11-toolkits/unique \
-		devkit-power-gobject.1:${PORTSDIR}/sysutils/upower \
+		upower-glib.1:${PORTSDIR}/sysutils/upower \
 		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
 
 USE_GMAKE=	yes

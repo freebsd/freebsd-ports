@@ -3,10 +3,10 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/libgda4-mysql/Makefile,v 1.1 2008/08/18 23:53:35 kwm Exp $
+#   $MCom: ports/databases/libgda4-mysql/Makefile,v 1.3 2010/10/18 12:47:12 kwm Exp $
 #
 
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	databases gnome
 PKGNAMESUFFIX?=	-mysql
 

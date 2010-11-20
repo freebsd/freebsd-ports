@@ -3,13 +3,13 @@
 # Whom:                Pawel Worach <pawel.worach@gmail.com>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-shell/Makefile,v 1.11 2010/03/29 11:42:11 kwm Exp $
+#   $MCom: ports/x11/gnome-shell/Makefile,v 1.16 2010/11/20 15:05:25 kwm Exp $
 #
 
 PORTNAME=	gnome-shell
-PORTVERSION=	2.29.1
+PORTVERSION=	2.31.2
 PORTREVISION=	1
-CATEGORIES=	x11
+CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
@@ -22,6 +22,8 @@ LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
 		gjs-gi:${PORTSDIR}/lang/gjs
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
     		glxinfo:${PORTSDIR}/graphics/mesa-demos
+
+BROKEN=		Doesn't build
 
 USE_BZIP2=	yes
 USE_XORG=	x11 xfixes sm

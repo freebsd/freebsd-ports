@@ -1,6 +1,6 @@
---- glib/gunicollate.c.orig	Thu Jun  8 17:24:10 2006
-+++ glib/gunicollate.c	Thu Oct 19 20:12:50 2006
-@@ -26,10 +26,57 @@
+--- glib/gunicollate.c.orig
++++ glib/gunicollate.c
+@@ -26,6 +26,10 @@
  #include <wchar.h>
  #endif
  
@@ -8,9 +8,17 @@
 +#include <unicode/ustring.h>
 +#include <unicode/ucol.h>
 +
- #include "glib.h"
- #include "gunicodeprivate.h"
- #include "galias.h"
+ #ifdef HAVE_CARBON
+ #include <CoreServices/CoreServices.h>
+ #endif
+@@ -36,10 +40,53 @@
+ #include "gstring.h"
+ #include "gstrfuncs.h"
+ #include "gtestutils.h"
++#include "gthread.h"
+ #ifndef __STDC_ISO_10646__
+ #include "gconvert.h"
+ #endif
  
 +static gboolean icu_collator_initialized = FALSE;
 +static UCollator *icu_collator = NULL;
@@ -54,11 +62,10 @@
 +
 +  return result;
 +}
-+
+ 
  #ifdef _MSC_VER
  /* Workaround for bug in MSVCR80.DLL */
- static size_t
-@@ -94,6 +141,28 @@
+@@ -127,6 +174,28 @@
    g_return_val_if_fail (str1 != NULL, 0);
    g_return_val_if_fail (str2 != NULL, 0);
  
@@ -87,11 +94,10 @@
    str1_norm = g_utf8_normalize (str1, -1, G_NORMALIZE_ALL_COMPOSE);
    str2_norm = g_utf8_normalize (str2, -1, G_NORMALIZE_ALL_COMPOSE);
  
-@@ -235,6 +304,26 @@
-   gchar *str_norm;
+@@ -419,6 +488,26 @@
  
    g_return_val_if_fail (str != NULL, NULL);
-+
+ 
 +  init_icu_collator();
 +  if (icu_collator != NULL)
 +    {
@@ -111,6 +117,7 @@
 +	  return result;
 +	}
 +    }
- 
++
    str_norm = g_utf8_normalize (str, len, G_NORMALIZE_ALL_COMPOSE);
  
+   result = NULL;

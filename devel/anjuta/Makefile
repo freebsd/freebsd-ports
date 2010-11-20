@@ -3,12 +3,11 @@
 # Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/devel/anjuta/Makefile,v 1.8 2010/06/23 19:53:50 kwm Exp $
+#   $MCom: ports/devel/anjuta/Makefile,v 1.67 2010/11/13 08:07:29 kwm Exp $
 #
 
 PORTNAME=	anjuta
-PORTVERSION=	2.30.2.1
-PORTREVISION=	1
+PORTVERSION=	2.32.1.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,7 +19,8 @@ BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
 		bash:${PORTSDIR}/shells/bash \
 		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
-		gladeui-1.9:${PORTSDIR}/devel/glade3 \
+		gladeui-1.10:${PORTSDIR}/devel/glade3 \
+		vala-0.10.0:${PORTSDIR}/lang/vala \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
 		gdl-1.3:${PORTSDIR}/x11-toolkits/gdl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
@@ -39,11 +39,13 @@ USE_GETTEXT=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_PERL5=	yes
+USE_PYTHON=	yes
 USE_GNOME=	gnomeprefix gnomehack vte gtksourceview2 libgda4
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-symbol-db-shm=/tmp
+CONFIGURE_ARGS=	--with-symbol-db-shm=/tmp \
+		--enable-introspection=no
 USE_LDCONFIG=	yes
 GCONF_SCHEMAS=	anjuta-build-basic-autotools-plugin.schemas \
 		anjuta-cvs-plugin.schemas \
@@ -55,19 +57,21 @@ GCONF_SCHEMAS=	anjuta-build-basic-autotools-plugin.schemas \
 		anjuta-symbol-db.schemas \
 		anjuta-terminal-plugin.schemas \
 		file-manager.schemas \
-		preferences.schemas
+		preferences.schemas \
+		python-plugin-properties.schemas
 
 MAN1=		anjuta.1 anjuta-launcher.1
 
 OPTIONS=	SVN "Build subversion plugin" off \
-		DEVHELP "Build devhelp plugin" on
+		DEVHELP "Build devhelp plugin" on \
+		GRAPHVIZ "Build inheritance plugin" on
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SVN)
 BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-LIB_DEPENDS+=	apr-1.4:${PORTSDIR}/devel/apr1 \
-		neon.27:${PORTSDIR}/www/neon29
+LIB_DEPENDS+=	apr-1.4:${PORTSDIR}/devel/apr1
+LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
 RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 PLIST_SUB+=	SVN=""
 .else
@@ -76,7 +80,7 @@ PLIST_SUB+=	SVN="@comment "
 .endif
 
 .if defined(WITH_DEVHELP)
-LIB_DEPENDS+=	devhelp-1.1:${PORTSDIR}/devel/devhelp
+LIB_DEPENDS+=	devhelp-2.1:${PORTSDIR}/devel/devhelp
 PLIST_SUB+=	DEVHELP=""
 .else
 CONFIGURE_ARGS+=--disable-plugin-devhelp
@@ -84,6 +88,16 @@ CONFIGURE_ARGS+=--disable-plugin-devhelp
 # See if versions beyond 2.26.1.0 still do this.
 #PLIST_SUB+=	DEVHELP="@comment "
 PLIST_SUB+=	DEVHELP=""
+.endif
+
+.if defined(WITH_GRAPHVIZ)
+CONFIGURE_ARGS+=--enable-graphviz
+BUILD_DEPENDS+=	neato:${PORTSDIR}/graphics/graphviz
+RUN_DEPENDS+=	neato:${PORTSDIR}/graphics/graphviz
+PLIST_SUB+=	GRAPHVIZ=""
+.else
+CONFIGURE_ARGS+=--disable-graphviz
+PLIST_SUB+=	GRAPHVIZ="@comment "
 .endif
 
 post-patch:

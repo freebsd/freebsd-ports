@@ -20,12 +20,12 @@ share/doc/libcryptui/home.png
 share/doc/libcryptui/index.html
 share/doc/libcryptui/index.sgml
 share/doc/libcryptui/left.png
-share/doc/libcryptui/libcryptui-CryptUIKeyChooser.html
-share/doc/libcryptui/libcryptui-CryptUIKeyStore.html
-share/doc/libcryptui/libcryptui-CryptUIKeyset.html
 share/doc/libcryptui/libcryptui-cryptui-defines.html
+share/doc/libcryptui/libcryptui-cryptui-key-chooser.html
 share/doc/libcryptui/libcryptui-cryptui-key-combo.html
 share/doc/libcryptui/libcryptui-cryptui-key-list.html
+share/doc/libcryptui/libcryptui-cryptui-key-store.html
+share/doc/libcryptui/libcryptui-cryptui-keyset.html
 share/doc/libcryptui/libcryptui-cryptui-marshal.html
 share/doc/libcryptui/libcryptui-cryptui.html
 share/doc/libcryptui/libcryptui.devhelp
@@ -39,39 +39,39 @@ share/doc/libseahorse/home.png
 share/doc/libseahorse/index.html
 share/doc/libseahorse/index.sgml
 share/doc/libseahorse/left.png
-share/doc/libseahorse/libseahorse-SeahorseCommands.html
-share/doc/libseahorse/libseahorse-SeahorseContext.html
 share/doc/libseahorse/libseahorse-SeahorseKeyserverControl.html
-share/doc/libseahorse/libseahorse-SeahorseMultiOperation.html
-share/doc/libseahorse/libseahorse-SeahorseObject.html
 share/doc/libseahorse/libseahorse-SeahorseObjectModel.html
 share/doc/libseahorse/libseahorse-SeahorseObjectWidget.html
+share/doc/libseahorse/libseahorse-SeahorseOperation.html
 share/doc/libseahorse/libseahorse-SeahorseSecureEntry.html
-share/doc/libseahorse/libseahorse-SeahorseServiceDiscovery.html
-share/doc/libseahorse/libseahorse-SeahorseSet.html
-share/doc/libseahorse/libseahorse-SeahorseSetModel.html
 share/doc/libseahorse/libseahorse-SeahorseUnknown.html
-share/doc/libseahorse/libseahorse-SeahorseUnknownSource.html
 share/doc/libseahorse/libseahorse-SeahorseWidget.html
-share/doc/libseahorse/libseahorse-SeahorseXxx.html
 share/doc/libseahorse/libseahorse-seahorse-check-button-control.html
 share/doc/libseahorse/libseahorse-seahorse-combo-keys.html
+share/doc/libseahorse/libseahorse-seahorse-commands.html
+share/doc/libseahorse/libseahorse-seahorse-context.html
+share/doc/libseahorse/libseahorse-seahorse-dns-sd.html
 share/doc/libseahorse/libseahorse-seahorse-gconf.html
 share/doc/libseahorse/libseahorse-seahorse-gtkstock.html
 share/doc/libseahorse/libseahorse-seahorse-libdialogs.html
 share/doc/libseahorse/libseahorse-seahorse-marshal.html
+share/doc/libseahorse/libseahorse-seahorse-object.html
 share/doc/libseahorse/libseahorse-seahorse-passphrase.html
 share/doc/libseahorse/libseahorse-seahorse-prefs.html
 share/doc/libseahorse/libseahorse-seahorse-progress.html
 share/doc/libseahorse/libseahorse-seahorse-secure-memory.html
 share/doc/libseahorse/libseahorse-seahorse-servers.html
+share/doc/libseahorse/libseahorse-seahorse-set-model.html
+share/doc/libseahorse/libseahorse-seahorse-set.html
 share/doc/libseahorse/libseahorse-seahorse-source.html
 share/doc/libseahorse/libseahorse-seahorse-transfer-operation.html
 share/doc/libseahorse/libseahorse-seahorse-types.html
 share/doc/libseahorse/libseahorse-seahorse-unix-signal.html
+share/doc/libseahorse/libseahorse-seahorse-unknown-source.html
 share/doc/libseahorse/libseahorse-seahorse-util.html
 share/doc/libseahorse/libseahorse-seahorse-validity.html
 share/doc/libseahorse/libseahorse-seahorse-view.html
+share/doc/libseahorse/libseahorse-seahorse-xxx.html
 share/doc/libseahorse/libseahorse.devhelp
 share/doc/libseahorse/libseahorse.devhelp2
 share/doc/libseahorse/object-tree.html
@@ -99,6 +99,8 @@ share/gnome/help/seahorse/fr/figures/seahorse-window.png
 share/gnome/help/seahorse/fr/seahorse.xml
 share/gnome/help/seahorse/it/figures/seahorse-window.png
 share/gnome/help/seahorse/it/seahorse.xml
+share/gnome/help/seahorse/ja/figures/seahorse-window.png
+share/gnome/help/seahorse/ja/seahorse.xml
 share/gnome/help/seahorse/oc/figures/seahorse-window.png
 share/gnome/help/seahorse/oc/seahorse.xml
 share/gnome/help/seahorse/ru/figures/seahorse-window.png
@@ -107,6 +109,8 @@ share/gnome/help/seahorse/sv/figures/seahorse-window.png
 share/gnome/help/seahorse/sv/seahorse.xml
 share/gnome/help/seahorse/vi/figures/seahorse-window.png
 share/gnome/help/seahorse/vi/seahorse.xml
+share/gnome/help/seahorse/zh_CN/figures/seahorse-window.png
+share/gnome/help/seahorse/zh_CN/seahorse.xml
 share/icons/hicolor/16x16/apps/seahorse-preferences.png
 share/icons/hicolor/16x16/apps/seahorse.png
 share/icons/hicolor/22x22/apps/seahorse-preferences.png
@@ -201,10 +205,12 @@ share/omf/seahorse/seahorse-es.omf
 share/omf/seahorse/seahorse-eu.omf
 share/omf/seahorse/seahorse-fr.omf
 share/omf/seahorse/seahorse-it.omf
+share/omf/seahorse/seahorse-ja.omf
 share/omf/seahorse/seahorse-oc.omf
 share/omf/seahorse/seahorse-ru.omf
 share/omf/seahorse/seahorse-sv.omf
 share/omf/seahorse/seahorse-vi.omf
+share/omf/seahorse/seahorse-zh_CN.omf
 share/pixmaps/seahorse/22x22/seahorse-key-personal.png
 share/pixmaps/seahorse/22x22/seahorse-key-ssh.png
 share/pixmaps/seahorse/22x22/seahorse-key.png
@@ -266,6 +272,8 @@ share/pixmaps/seahorse/scalable/seahorse-sign.svg
 @dirrm share/pixmaps/seahorse/22x22
 @dirrm share/pixmaps/seahorse
 @dirrm share/omf/seahorse
+@dirrm share/gnome/help/seahorse/zh_CN/figures
+@dirrm share/gnome/help/seahorse/zh_CN
 @dirrm share/gnome/help/seahorse/vi/figures
 @dirrm share/gnome/help/seahorse/vi
 @dirrm share/gnome/help/seahorse/sv/figures
@@ -274,6 +282,8 @@ share/pixmaps/seahorse/scalable/seahorse-sign.svg
 @dirrm share/gnome/help/seahorse/ru
 @dirrm share/gnome/help/seahorse/oc/figures
 @dirrm share/gnome/help/seahorse/oc
+@dirrm share/gnome/help/seahorse/ja/figures
+@dirrm share/gnome/help/seahorse/ja
 @dirrm share/gnome/help/seahorse/it/figures
 @dirrm share/gnome/help/seahorse/it
 @dirrm share/gnome/help/seahorse/fr/figures

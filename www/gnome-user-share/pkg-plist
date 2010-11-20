@@ -84,6 +84,7 @@ share/locale/ast/LC_MESSAGES/gnome-user-share.mo
 share/locale/bg/LC_MESSAGES/gnome-user-share.mo
 share/locale/bn/LC_MESSAGES/gnome-user-share.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-user-share.mo
+share/locale/br/LC_MESSAGES/gnome-user-share.mo
 share/locale/ca/LC_MESSAGES/gnome-user-share.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-user-share.mo
 share/locale/cs/LC_MESSAGES/gnome-user-share.mo
@@ -94,6 +95,7 @@ share/locale/el/LC_MESSAGES/gnome-user-share.mo
 share/locale/en@shaw/LC_MESSAGES/gnome-user-share.mo
 share/locale/en_CA/LC_MESSAGES/gnome-user-share.mo
 share/locale/en_GB/LC_MESSAGES/gnome-user-share.mo
+share/locale/eo/LC_MESSAGES/gnome-user-share.mo
 share/locale/eu/LC_MESSAGES/gnome-user-share.mo
 share/locale/es/LC_MESSAGES/gnome-user-share.mo
 share/locale/et/LC_MESSAGES/gnome-user-share.mo
@@ -105,6 +107,7 @@ share/locale/gu/LC_MESSAGES/gnome-user-share.mo
 share/locale/he/LC_MESSAGES/gnome-user-share.mo
 share/locale/hi/LC_MESSAGES/gnome-user-share.mo
 share/locale/hu/LC_MESSAGES/gnome-user-share.mo
+share/locale/id/LC_MESSAGES/gnome-user-share.mo
 share/locale/it/LC_MESSAGES/gnome-user-share.mo
 share/locale/ja/LC_MESSAGES/gnome-user-share.mo
 share/locale/kn/LC_MESSAGES/gnome-user-share.mo
@@ -118,6 +121,7 @@ share/locale/mr/LC_MESSAGES/gnome-user-share.mo
 share/locale/nb/LC_MESSAGES/gnome-user-share.mo
 share/locale/ne/LC_MESSAGES/gnome-user-share.mo
 share/locale/nl/LC_MESSAGES/gnome-user-share.mo
+share/locale/nn/LC_MESSAGES/gnome-user-share.mo
 share/locale/oc/LC_MESSAGES/gnome-user-share.mo
 share/locale/or/LC_MESSAGES/gnome-user-share.mo
 share/locale/pa/LC_MESSAGES/gnome-user-share.mo
@@ -137,6 +141,7 @@ share/locale/ta/LC_MESSAGES/gnome-user-share.mo
 share/locale/te/LC_MESSAGES/gnome-user-share.mo
 share/locale/th/LC_MESSAGES/gnome-user-share.mo
 share/locale/tr/LC_MESSAGES/gnome-user-share.mo
+share/locale/ug/LC_MESSAGES/gnome-user-share.mo
 share/locale/uk/LC_MESSAGES/gnome-user-share.mo
 share/locale/vi/LC_MESSAGES/gnome-user-share.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-user-share.mo
@@ -181,6 +186,8 @@ share/omf/gnome-user-share/gnome-user-share-zh_CN.omf
 @dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES

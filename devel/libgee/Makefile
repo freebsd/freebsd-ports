@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	libgee
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	devel
-MASTER_SITES=	GNOME/sources/${PORTNAME}/0.5/
+MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:R}/
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GObject collection library
 
+BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-introspection=yes
+USE_BZIP2=	yes
 USE_GNOME=	glib20 gnomehack
 USE_LDCONFIG=	yes
 

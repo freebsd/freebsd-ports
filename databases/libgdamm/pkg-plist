@@ -55,7 +55,10 @@ include/libgdamm-4.0/libgdamm/private/row_p.h
 include/libgdamm-4.0/libgdamm/private/serveroperation_p.h
 include/libgdamm-4.0/libgdamm/private/serverprovider_p.h
 include/libgdamm-4.0/libgdamm/private/set_p.h
+include/libgdamm-4.0/libgdamm/private/sqlbuilder_p.h
+include/libgdamm-4.0/libgdamm/private/sqlexpr_p.h
 include/libgdamm-4.0/libgdamm/private/sqlparser_p.h
+include/libgdamm-4.0/libgdamm/private/sqlstatement_p.h
 include/libgdamm-4.0/libgdamm/private/statement_p.h
 include/libgdamm-4.0/libgdamm/private/transactionstatus_p.h
 include/libgdamm-4.0/libgdamm/private/xatransaction_p.h
@@ -64,7 +67,10 @@ include/libgdamm-4.0/libgdamm/row.h
 include/libgdamm-4.0/libgdamm/serveroperation.h
 include/libgdamm-4.0/libgdamm/serverprovider.h
 include/libgdamm-4.0/libgdamm/set.h
+include/libgdamm-4.0/libgdamm/sqlbuilder.h
+include/libgdamm-4.0/libgdamm/sqlexpr.h
 include/libgdamm-4.0/libgdamm/sqlparser.h
+include/libgdamm-4.0/libgdamm/sqlstatement.h
 include/libgdamm-4.0/libgdamm/statement.h
 include/libgdamm-4.0/libgdamm/transactionstatus.h
 include/libgdamm-4.0/libgdamm/throw_exception.h

@@ -26,6 +26,8 @@ LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
 		webkit:${PORTSDIR}/www/webkit-gtk2 \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 
+BROKEN=		Doesn't build with vala-0.10
+
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gconf2 gtk20 desktopfileutils

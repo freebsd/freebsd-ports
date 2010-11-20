@@ -1,8 +1,8 @@
 bin/exchange-connector-setup-%%VERSION%%
-lib/evolution/2.30/plugins/liborg-gnome-exchange-operations.a
-lib/evolution/2.30/plugins/liborg-gnome-exchange-operations.la
-lib/evolution/2.30/plugins/liborg-gnome-exchange-operations.so
-lib/evolution/2.30/plugins/org-gnome-exchange-operations.eplug
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-exchange-operations.a
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-exchange-operations.la
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-exchange-operations.so
+lib/evolution/%%VERSION%%/plugins/org-gnome-exchange-operations.eplug
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelexchange.a
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelexchange.la
 lib/evolution-data-server-%%EDS_VERSION%%/camel-providers/libcamelexchange.so

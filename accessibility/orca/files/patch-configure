@@ -1,0 +1,11 @@
+--- configure.orig	2010-10-10 12:06:22.000000000 -0400
++++ configure	2010-10-10 12:06:40.000000000 -0400
+@@ -5867,7 +5867,7 @@ except ImportError:
+ except:
+ 	sys.exit(0)
+ sys.exit(0)"
+-if $PYTHON -c "$prog" 1>&5 2>&5
++if dbus-launch $PYTHON -c "$prog" 1>&5 2>&5
+   then
+     eval "py_cv_mod_$py_mod_var=yes"
+   else

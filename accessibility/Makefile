@@ -10,6 +10,7 @@
     SUBDIR += at-spi2-core
     SUBDIR += at-spi2-atk
     SUBDIR += atk
+    SUBDIR += atkmm
     SUBDIR += atk-reference
     SUBDIR += dasher
     SUBDIR += eflite

@@ -40,26 +40,26 @@ share/applications/epiphany.desktop
 share/dbus-1/services/org.gnome.Epiphany.service
 lib/girepository-1.0/Epiphany-2.30.typelib
 share/gir-1.0/Epiphany-2.30.gir
-%%DOCSDIR%%/EphyCommandManager.html
-%%DOCSDIR%%/EphyEmbed.html
+%%DOCSDIR%%/EphyDialog.html
+%%DOCSDIR%%/EphyLocationAction.html
 %%DOCSDIR%%/EphyLocationEntry.html
-%%DOCSDIR%%/EphyNodeDb.html
+%%DOCSDIR%%/EphyNodeView.html
 %%DOCSDIR%%/EphySearchEntry.html
 %%DOCSDIR%%/EphySpinner.html
+%%DOCSDIR%%/EphyStatusbar.html
+%%DOCSDIR%%/EphyToolbar.html
+%%DOCSDIR%%/EphyTreeModelNode.html
+%%DOCSDIR%%/EphyTreeModelSort.html
+%%DOCSDIR%%/EphyWebView.html
 %%DOCSDIR%%/EphyWindow.html
+%%DOCSDIR%%/EphyZoomAction.html
 %%DOCSDIR%%/EphyZoomControl.html
+%%DOCSDIR%%/annotation-glossary.html
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/ch02.html
 %%DOCSDIR%%/ch03.html
-%%DOCSDIR%%/epiphany-EphyEmbedFactory.html
-%%DOCSDIR%%/epiphany-EphyEmbedPersist.html
-%%DOCSDIR%%/epiphany-EphyEmbedSingle.html
-%%DOCSDIR%%/epiphany-EphyExtensionsManager.html
-%%DOCSDIR%%/epiphany-EphyGlade.html
-%%DOCSDIR%%/epiphany-EphyPermissionManager.html
-%%DOCSDIR%%/epiphany-ephy-password-manager.html
-%%DOCSDIR%%/epiphany-ephy-session.html
-%%DOCSDIR%%/epiphany-ephy-shell.html
+%%DOCSDIR%%/epiphany-Epiphany-Debug-Helpers.html
+%%DOCSDIR%%/epiphany-Epiphany-File-Helpers.html
 %%DOCSDIR%%/epiphany.devhelp
 %%DOCSDIR%%/epiphany.devhelp2
 %%DOCSDIR%%/home.png
@@ -222,6 +222,7 @@ share/icons/hicolor/32x32/apps/gnome-web-browser.png
 share/icons/hicolor/48x48/apps/epiphany-bookmarks.png
 share/icons/hicolor/scalable/apps/gnome-web-browser.svg
 share/locale/am/LC_MESSAGES/epiphany.mo
+share/locale/an/LC_MESSAGES/epiphany.mo
 share/locale/ar/LC_MESSAGES/epiphany.mo
 share/locale/as/LC_MESSAGES/epiphany.mo
 share/locale/ast/LC_MESSAGES/epiphany.mo
@@ -400,8 +401,6 @@ share/omf/epiphany/epiphany-uk.omf
 @dirrmtry %%DATADIR%%
 @dirrmtry %%DOCSDIR%%
 @dirrmtry share/applications
-@dirrmtry lib/girepository-1.0
-@dirrmtry share/gir-1.0
 @dirrmtry lib/epiphany/%%EPHY_VERSION%%/plugins
 @dirrmtry lib/epiphany/%%EPHY_VERSION%%
 @dirrmtry lib/epiphany
@@ -458,3 +457,5 @@ share/omf/epiphany/epiphany-uk.omf
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an

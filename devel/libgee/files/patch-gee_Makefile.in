@@ -1,0 +1,11 @@
+--- gee/Makefile.in.orig	2010-08-08 13:36:58.000000000 +0200
++++ gee/Makefile.in	2010-08-08 13:37:42.000000000 +0200
+@@ -872,7 +872,7 @@
+ 	touch $@
+ 
+ @HAVE_INTROSPECTION_TRUE@Gee-1.0.typelib: Gee-1.0.gir
+-@HAVE_INTROSPECTION_TRUE@	@INTROSPECTION_COMPILER@ --shared-library=libgee -o $@ $^
++@HAVE_INTROSPECTION_TRUE@	@INTROSPECTION_COMPILER@ --shared-library=libgee Gee-1.0.gir -o $@ $^
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

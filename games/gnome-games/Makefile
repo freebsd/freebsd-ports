@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/games/gnome-games/Makefile,v 1.6 2010/07/21 18:17:43 kwm Exp $
+#   $MCom: ports/games/gnome-games/Makefile,v 1.232 2010/11/15 22:52:01 kwm Exp $
 #
 
 PORTNAME=	gnome-games
-PORTVERSION=	2.30.2
-PORTREVISION=	2
+PORTVERSION=	2.32.1
 CATEGORIES=	games gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,8 +19,7 @@ BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile \
 		clutter-gtk-0.10.0:${PORTSDIR}/graphics/clutter-gtk \
 		clutter-glx-1.0.0:${PORTSDIR}/graphics/clutter
-RUN_DEPENDS=	seed:${PORTSDIR}/devel/seed \
-		${LOCALBASE}/share/gir-1.0/GConf-2.0.gir:${PORTSDIR}/devel/gir-repository-gconf2
+RUN_DEPENDS=	seed:${PORTSDIR}/devel/seed
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
@@ -61,8 +59,10 @@ LIB_DEPENDS+=	avahi-client:${PORTSDIR}/net/avahi-app
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
-	    	${WRKSRC}/gnome-sudoku/src/lib/defaults.py.in \
+		${WRKSRC}/gnome-sudoku/src/lib/defaults.py.in \
 		${WRKSRC}/glchess/src/lib/defaults.py.in
+	@${REINPLACE_CMD} -e 's|strip-prefix=games|strip-prefix=Games|' \
+		${WRKSRC}/libgames-support/Makefile.in
 
 post-install:
 	${MKDIR} ${PREFIX}/share/ggz/gnome-games

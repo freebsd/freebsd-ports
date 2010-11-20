@@ -33,7 +33,7 @@ include/liboobs-1.0/oobs/oobs.h
 lib/liboobs-1.a
 lib/liboobs-1.la
 lib/liboobs-1.so
-lib/liboobs-1.so.4
+lib/liboobs-1.so.5
 libdata/pkgconfig/liboobs-1.pc
 %%DOCSDIR%%/OobsGroup.html
 %%DOCSDIR%%/OobsGroupsConfig.html

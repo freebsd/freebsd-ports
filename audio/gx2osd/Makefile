@@ -19,6 +19,8 @@ LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.3:${PORTSDIR}/audio/cpp-xmms2
 RUN_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.3:${PORTSDIR}/audio/cpp-xmms2
 
+BROKEN=		Doesn't compile with Glib 2.26 / Gtk 2.22
+
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 

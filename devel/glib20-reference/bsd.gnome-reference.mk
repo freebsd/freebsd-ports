@@ -48,7 +48,6 @@ make-descr:
 
 .if !target(do-install)
 do-install:
-.  if !defined(NOPORTDOCS)
 .    for d in ${BOOKS}
 	if [ -d ${REFERENCE_SRC}/${d}/html ]; then \
 		${MKDIR} ${DOCSDIR}/${d}; \
@@ -57,7 +56,6 @@ do-install:
 		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/${d}/{}" \; ; \
 	fi
 .    endfor
-.  endif
 .endif
 
 .include <bsd.port.mk>

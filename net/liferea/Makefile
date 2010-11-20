@@ -7,6 +7,7 @@
 
 PORTNAME=	liferea
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	SF/${PORTNAME}/Liferea%20Stable/${PORTVERSION}
 
@@ -16,7 +17,7 @@ COMMENT=	Simple RSS/RDF feed reader
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
 
-USE_GNOME=	gnomeprefix gnomehack libglade2
+USE_GNOME=	gnomeprefix gnomehack libglade2 gconf2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22
 GNU_CONFIGURE=	yes

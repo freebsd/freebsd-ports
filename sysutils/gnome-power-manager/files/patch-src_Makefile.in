@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2010-03-30 18:08:05.000000000 +0800
-+++ src/Makefile.in	2010-03-30 18:09:04.000000000 +0800
-@@ -497,6 +497,7 @@
+--- src/Makefile.in.orig	2010-06-06 12:19:04.000000000 +0200
++++ src/Makefile.in	2010-06-06 12:21:46.000000000 +0200
+@@ -499,6 +499,7 @@
  	$(GNOME_LIBS)					\
  	$(UNIQUE_LIBS)					\
  	$(DBUS_LIBS)					\
@@ -8,30 +8,27 @@
  	-lm
  
  gnome_power_statistics_CFLAGS = \
-@@ -511,7 +512,7 @@
+@@ -520,6 +521,7 @@
+ 	$(UNIQUE_LIBS)					\
+ 	$(GPM_EXTRA_LIBS)				\
+ 	$(UPOWER_LIBS)					\
++	-lexecinfo					\
+ 	-lm
  
- gnome_power_preferences_LDADD = libgpmshared.a $(GLIB_LIBS) \
- 	$(X11_LIBS) $(GNOME_LIBS) $(DBUS_LIBS) $(UNIQUE_LIBS) \
--	$(GPM_EXTRA_LIBS) $(DEVKIT_LIBS) -lm $(am__append_1)
-+	$(GPM_EXTRA_LIBS) $(DEVKIT_LIBS) -lexecinfo -lm $(am__append_1)
  gnome_power_preferences_CFLAGS = \
- 	$(WARNINGFLAGS)					\
- 	$(NULL)
-@@ -531,7 +532,7 @@
- gnome_power_manager_LDADD = libgpmshared.a $(GLIB_LIBS) $(X11_LIBS) \
- 	$(GSTREAMER_LIBS) $(GNOME_LIBS) $(DBUS_LIBS) $(X11_LIBS) \
- 	$(CANBERRA_LIBS) $(LIBNOTIFY_LIBS) $(GPM_EXTRA_LIBS) \
--	$(DEVKIT_LIBS) -lm $(am__append_3)
-+	$(DEVKIT_LIBS) -lexecinfo -lm $(am__append_3)
- gnome_power_manager_CFLAGS = \
- 	$(WARNINGFLAGS)					\
- 	$(NULL)
-@@ -590,7 +591,7 @@
+@@ -573,6 +575,7 @@
+ 	$(LIBNOTIFY_LIBS)				\
+ 	$(GPM_EXTRA_LIBS)				\
+ 	$(UPOWER_LIBS)					\
++	-lexecinfo					\
+ 	-lm
  
- gnome_power_self_test_LDADD = $(GLIB_LIBS) $(X11_LIBS) $(GNOME_LIBS) \
- 	$(GSTREAMER_LIBS) $(DEVKIT_LIBS) $(DBUS_LIBS) $(X11_LIBS) \
--	$(LIBNOTIFY_LIBS) $(GPM_EXTRA_LIBS) -lm $(am__append_4)
-+	$(LIBNOTIFY_LIBS) $(GPM_EXTRA_LIBS) -lexecinfo -lm $(am__append_4)
+ gnome_power_manager_CFLAGS = \
+@@ -639,6 +642,7 @@
+ 	$(X11_LIBS)						\
+ 	$(LIBNOTIFY_LIBS)				\
+ 	$(GPM_EXTRA_LIBS)				\
++	-lexecinfo					\
+ 	-lm
+ 
  gnome_power_self_test_CFLAGS = -DEGG_TEST $(AM_CFLAGS) $(WARNINGFLAGS)
- BUILT_SOURCES = \
- 	org.gnome.PowerManager.h			\

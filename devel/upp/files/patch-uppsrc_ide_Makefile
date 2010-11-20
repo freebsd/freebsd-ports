@@ -1,0 +1,11 @@
+--- uppsrc/ide/Makefile.orig	2010-10-31 16:58:47.000000000 +0100
++++ uppsrc/ide/Makefile	2010-10-31 16:59:18.000000000 +0100
+@@ -6,7 +6,7 @@
+ UPPDIR1 = uppsrc/
+ UPPOUT = out/
+ 
+-CINC =  -I$(UPPDIR1) -I$(LOCALBASE)/include -I$(LOCALBASE)/include/freetype2 -I$(LOCALBASE)/include/gtk-2.0 -I$(LOCALBASE)/include/glib-2.0 -I$(LOCALBASE)/include/cairo -I$(LOCALBASE)/include/pango-1.0 -I$(LOCALBASE)/include/atk-1.0
++CINC =  -I$(UPPDIR1) -I$(LOCALBASE)/include -I$(LOCALBASE)/include/freetype2 -I${LOCALBASE}/include/gdk-pixbuf-2.0 -I$(LOCALBASE)/include/gtk-2.0 -I$(LOCALBASE)/include/glib-2.0 -I$(LOCALBASE)/include/cairo -I$(LOCALBASE)/include/pango-1.0 -I$(LOCALBASE)/include/atk-1.0
+ Macro =  -DflagGUI -DflagGCC -DflagSHARED -Dflag$(HOSTTYPE)
+ CC ?= c++
+ C_FLAGS = $(CC) -c -O2 -x c $(CFLAGS)

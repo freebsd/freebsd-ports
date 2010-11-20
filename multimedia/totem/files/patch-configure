@@ -1,7 +1,16 @@
---- configure.orig	2008-08-30 08:23:22.000000000 +0200
-+++ configure	2008-08-30 08:24:20.000000000 +0200
-@@ -25171,7 +25171,9 @@
- _ACEOF
+--- configure.orig	2010-10-10 12:15:41.000000000 -0400
++++ configure	2010-10-10 12:18:12.000000000 -0400
+@@ -18343,7 +18343,7 @@ for good_element in gconfaudiosink gconf
+ do
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking GStreamer 0.10 $good_element plugin" >&5
+ $as_echo_n "checking GStreamer 0.10 $good_element plugin... " >&6; }
+-	if $gst010_inspect $good_element >/dev/null 2>/dev/null; then
++	if dbus-launch $gst010_inspect $good_element >/dev/null 2>/dev/null; then
+ 		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+ 	else
+@@ -21139,7 +21139,9 @@ if test "$enable_browser_plugins" = "yes
+ $as_echo "#define ENABLE_BROWSER_PLUGINS 1" >>confdefs.h
  
  
 +if [ -z "${BROWSER_PLUGIN_DIR}" ]; then
