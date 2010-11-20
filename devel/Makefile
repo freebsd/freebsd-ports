@@ -1411,6 +1411,7 @@
     SUBDIR += p5-Data-Recursive-Encode
     SUBDIR += p5-Data-Remember
     SUBDIR += p5-Data-RoundRobin
+    SUBDIR += p5-Data-Rx
     SUBDIR += p5-Data-Section
     SUBDIR += p5-Data-Serializer
     SUBDIR += p5-Data-ShowTable
