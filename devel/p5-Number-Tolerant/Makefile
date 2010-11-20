@@ -1,4 +1,4 @@
-# New ports collection makefile for:	devel/p5-Number-Tolerant
+# New ports collection makefile for:	p5-Number-Tolerant
 # Date created:		2010-11-18
 # Whom:			Kurt Lidl <kurt.lidl@cello.com>
 #
