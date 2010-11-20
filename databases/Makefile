@@ -372,6 +372,7 @@
     SUBDIR += p5-DBIx-Simple
     SUBDIR += p5-DBIx-Skinny
     SUBDIR += p5-DBIx-Skinny-Pager
+    SUBDIR += p5-DBIx-Skinny-Schema-Loader
     SUBDIR += p5-DBIx-Table
     SUBDIR += p5-DBIx-TableHash
     SUBDIR += p5-DBIx-Tree
