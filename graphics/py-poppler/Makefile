@@ -7,7 +7,7 @@
 
 PORTNAME=	poppler
 PORTVERSION=	0.10.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics python
 MASTER_SITES=	https://launchpad.net/poppler-python/trunk/development/+download/ \
 		http://launchpadlibrarian.net/30270080/ \
@@ -18,7 +18,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Python bindings for the Poppler PDF rendering library
 
-LIB_DEPENDS=	poppler-glib.4:${PORTSDIR}/graphics/poppler-gtk
+LIB_DEPENDS=	poppler-glib.5:${PORTSDIR}/graphics/poppler-gtk
 
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
