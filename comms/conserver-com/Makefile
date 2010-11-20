@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	conserver
-PORTVERSION=	8.1.17
+PORTVERSION=	8.1.18
 CATEGORIES=	comms
 MASTER_SITES=	http://www.conserver.com/ \
 		ftp://ftp.conserver.com/conserver/
