@@ -309,6 +309,7 @@
     SUBDIR += htdump
     SUBDIR += html2hdml
     SUBDIR += html2wml
+    SUBDIR += htmlcompressor
     SUBDIR += htmlobject
     SUBDIR += htmlpp
     SUBDIR += http-analyze

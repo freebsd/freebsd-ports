@@ -1,0 +1,8 @@
+Java HTML/XML Compressor is a very small, fast and easy to use library
+that minifies given HTML or XML source by removing extra whitespaces,
+comments and other unneeded characters without breaking the content
+structure.  As a result pages become smaller in size and load faster.
+
+A command-line version of the compressor is also included.
+
+WWW: http://code.google.com/p/htmlcompressor/
