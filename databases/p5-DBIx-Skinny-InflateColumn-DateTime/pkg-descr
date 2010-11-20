@@ -1,0 +1,7 @@
+DBIx::Skinny::InflateColumn::DateTime provides inflate/deflate
+settings for *_at/*_on columns.
+
+If you want to set created_XX and updated_XX automatically, you can
+use DBIx::Class::InflateColumn::DateTime::Auto.
+
+WWW: http://search.cpan.org/dist/DBIx-Skinny-InflateColumn-DateTime/

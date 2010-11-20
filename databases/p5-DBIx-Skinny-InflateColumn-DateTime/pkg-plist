@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Skinny/InflateColumn/DateTime/.packlist
+%%SITE_PERL%%/DBIx/Skinny/InflateColumn/DateTime.pm
+%%SITE_PERL%%/DBIx/Skinny/InflateColumn/DateTime/Auto.pm
+@dirrm %%SITE_PERL%%/DBIx/Skinny/InflateColumn/DateTime
+@dirrmtry %%SITE_PERL%%/DBIx/Skinny/InflateColumn
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Skinny/InflateColumn/DateTime
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Skinny/InflateColumn
