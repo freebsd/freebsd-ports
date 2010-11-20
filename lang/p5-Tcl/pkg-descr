@@ -22,3 +22,7 @@ Set and get values of variables in a Tcl interpreter
 
 Tie perl variables to variables in a Tcl interpreter
         The variables can be either scalars or hashes.
+
+Github repository is at https://github.com/gisle/tcl.pm
+
+WWW: http://search.cpan.org/dist/Tcl/
