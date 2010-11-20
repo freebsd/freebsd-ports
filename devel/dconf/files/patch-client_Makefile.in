@@ -1,0 +1,41 @@
+--- client/Makefile.in.orig	2010-11-04 17:09:33.000000000 +0100
++++ client/Makefile.in	2010-11-04 17:18:20.000000000 +0100
+@@ -34,7 +34,7 @@
+ NORMAL_UNINSTALL = :
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+-shlib_PROGRAMS = libdconf.so.0.0.0$(EXEEXT)
++shlib_PROGRAMS = libdconf.so.0$(EXEEXT)
+ subdir = client
+ DIST_COMMON = $(am__dist_gir_DATA_DIST) $(dconfinclude_HEADERS) \
+ 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+@@ -332,9 +332,10 @@
+ 
+ clean-shlibPROGRAMS:
+ 	-test -z "$(shlib_PROGRAMS)" || rm -f $(shlib_PROGRAMS)
+-libdconf.so.0.0.0$(EXEEXT): $(libdconf_so_0_0_0_OBJECTS) $(libdconf_so_0_0_0_DEPENDENCIES) 
+-	@rm -f libdconf.so.0.0.0$(EXEEXT)
++libdconf.so.0$(EXEEXT): $(libdconf_so_0_0_0_OBJECTS) $(libdconf_so_0_0_0_DEPENDENCIES) 
++	@rm -f libdconf.so.0$(EXEEXT)
+ 	$(AM_V_CCLD)$(libdconf_so_0_0_0_LINK) $(libdconf_so_0_0_0_OBJECTS) $(libdconf_so_0_0_0_LDADD) $(LIBS)
++	$(AM_V_GEN) ln -fs libdconf.so.0 libdconf.so
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
+@@ -750,14 +751,10 @@
+ 
+ @HAVE_INTROSPECTION_TRUE@include $(INTROSPECTION_MAKEFILE)
+ 
+-@HAVE_INTROSPECTION_TRUE@dconf-1.0.gir: libdconf.so.0 libdconf.so
+-
+-libdconf.so.0 libdconf.so: libdconf.so.0.0.0
+-	$(AM_V_GEN) ln -fs libdconf.so.0.0.0 $@
++@HAVE_INTROSPECTION_TRUE@dconf-1.0.gir: libdconf.so.0
+ 
+ install-data-hook:
+-	ln -fs libdconf.so.0.0.0 $(DESTDIR)$(shlibdir)/libdconf.so.0
+-	ln -fs libdconf.so.0.0.0 $(DESTDIR)$(shlibdir)/libdconf.so
++	ln -fs libdconf.so.0 $(DESTDIR)$(shlibdir)/libdconf.so
+ 
+ uninstall-hook:
+ 	rm -f $(DESTDIR)$(shlibdir)/libdconf.so.0
