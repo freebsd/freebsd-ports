@@ -707,6 +707,7 @@
     SUBDIR += p5-CGI-Application-Dispatch-Server
     SUBDIR += p5-CGI-Application-PSGI
     SUBDIR += p5-CGI-Application-Plugin-AnyTemplate
+    SUBDIR += p5-CGI-Application-Plugin-Apache
     SUBDIR += p5-CGI-Application-Plugin-Authentication
     SUBDIR += p5-CGI-Application-Plugin-Authorization
     SUBDIR += p5-CGI-Application-Plugin-AutoRunmode
