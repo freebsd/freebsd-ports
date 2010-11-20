@@ -1,0 +1,20 @@
+%%SITE_PERL%%/Number/Tolerant.pm
+%%SITE_PERL%%/Number/Tolerant/Constant.pm
+%%SITE_PERL%%/Number/Tolerant/Type.pm
+%%SITE_PERL%%/Number/Tolerant/Union.pm
+%%SITE_PERL%%/Number/Tolerant/Type/constant.pm
+%%SITE_PERL%%/Number/Tolerant/Type/infinite.pm
+%%SITE_PERL%%/Number/Tolerant/Type/less_than.pm
+%%SITE_PERL%%/Number/Tolerant/Type/more_than.pm
+%%SITE_PERL%%/Number/Tolerant/Type/offset.pm
+%%SITE_PERL%%/Number/Tolerant/Type/or_less.pm
+%%SITE_PERL%%/Number/Tolerant/Type/or_more.pm
+%%SITE_PERL%%/Number/Tolerant/Type/plus_or_minus.pm
+%%SITE_PERL%%/Number/Tolerant/Type/plus_or_minus_pct.pm
+%%SITE_PERL%%/Number/Tolerant/Type/to.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Tolerant/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Tolerant
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number
+@dirrm %%SITE_PERL%%/Number/Tolerant/Type
+@dirrm %%SITE_PERL%%/Number/Tolerant
+@dirrmtry %%SITE_PERL%%/Number
