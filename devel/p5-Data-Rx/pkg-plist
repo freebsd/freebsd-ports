@@ -1,0 +1,26 @@
+%%SITE_PERL%%/Data/Rx.pm
+%%SITE_PERL%%/Data/Rx/CoreType.pm
+%%SITE_PERL%%/Data/Rx/CoreType/all.pm
+%%SITE_PERL%%/Data/Rx/CoreType/any.pm
+%%SITE_PERL%%/Data/Rx/CoreType/arr.pm
+%%SITE_PERL%%/Data/Rx/CoreType/bool.pm
+%%SITE_PERL%%/Data/Rx/CoreType/def.pm
+%%SITE_PERL%%/Data/Rx/CoreType/fail.pm
+%%SITE_PERL%%/Data/Rx/CoreType/int.pm
+%%SITE_PERL%%/Data/Rx/CoreType/map.pm
+%%SITE_PERL%%/Data/Rx/CoreType/nil.pm
+%%SITE_PERL%%/Data/Rx/CoreType/num.pm
+%%SITE_PERL%%/Data/Rx/CoreType/one.pm
+%%SITE_PERL%%/Data/Rx/CoreType/rec.pm
+%%SITE_PERL%%/Data/Rx/CoreType/seq.pm
+%%SITE_PERL%%/Data/Rx/CoreType/str.pm
+%%SITE_PERL%%/Data/Rx/TypeBundle.pm
+%%SITE_PERL%%/Data/Rx/TypeBundle/Core.pm
+%%SITE_PERL%%/Data/Rx/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Rx/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Rx
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrm %%SITE_PERL%%/Data/Rx/TypeBundle
+@dirrm %%SITE_PERL%%/Data/Rx/CoreType
+@dirrm %%SITE_PERL%%/Data/Rx
+@dirrmtry %%SITE_PERL%%/Data
