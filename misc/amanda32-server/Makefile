@@ -7,6 +7,7 @@
 
 PORTNAME=	amanda
 PORTVERSION=	3.2.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
@@ -42,8 +43,6 @@ CONFIGURE_ENV=	PERL=${LOCALBASE}/bin/perl-amanda
 PKG_MESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTSDIR=${PORTSDIR}
-
-MANUAL_PACKAGE_BUILD=	needs threaded perl
 
 OPTIONS=	GNUTAR "use GNU tar" on
 
