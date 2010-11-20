@@ -1958,6 +1958,7 @@
     SUBDIR += p5-NEXT
     SUBDIR += p5-Net-DBus
     SUBDIR += p5-Number-Bytes-Human
+    SUBDIR += p5-Number-Tolerant
     SUBDIR += p5-OLE-Storage_Lite
     SUBDIR += p5-OOTools
     SUBDIR += p5-Object-Accessor
