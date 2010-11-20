@@ -7,13 +7,14 @@
 
 PORTNAME=	apvlv
 PORTVERSION=	0.0.9.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	jupengfei@gmail.com
 COMMENT=	Apvlv is a PDF Viewer Under Linux and its behaviour like Vim
 
-LIB_DEPENDS=	poppler-glib.4:${PORTSDIR}/graphics/poppler-gtk
+LIB_DEPENDS=	poppler-glib.5:${PORTSDIR}/graphics/poppler-gtk
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
