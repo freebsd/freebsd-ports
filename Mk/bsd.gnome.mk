@@ -90,6 +90,9 @@ _USE_GNOME_ALL+= atk atspi desktopfileutils eel2 evolutiondataserver gal2 gdkpix
 		nautiluscdburner orbit2 pango pygnome2 pygnomedesktop pygnomeextras \
 		pygtk2 pygtksourceview vte
 
+# GNOME 3 components
+_USE_GNOME_ALL+= dconf
+
 GNOME_MAKEFILEIN?=	Makefile.in
 SCROLLKEEPER_DIR=	/var/db/rarian
 gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "${GNOME_MAKEFILEIN}*" -type f | ${XARGS} ${REINPLACE_CMD} -e \
@@ -280,6 +283,10 @@ glib20_USE_GNOME_IMPL=	_glib20
 atk_LIB_DEPENDS=	atk-1.0.0:${PORTSDIR}/accessibility/atk
 atk_DETECT=		${LOCALBASE}/libdata/pkgconfig/atk.pc
 atk_USE_GNOME_IMPL=	glib20
+
+dconf_LIB_DEPENDS=	dconf.0:${PORTSDIR}/devel/dconf
+dconf_DETECT=		${LOCALBASE}/libdata/pkgconfig/dconf.pc
+dconf_USE_GNOME_IMPL=	glib20
 
 pango_LIB_DEPENDS=	pango-1.0.0:${PORTSDIR}/x11-toolkits/pango
 pango_DETECT=		${LOCALBASE}/libdata/pkgconfig/pango.pc
