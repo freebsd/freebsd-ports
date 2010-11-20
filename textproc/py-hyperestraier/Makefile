@@ -6,6 +6,7 @@
 
 PORTNAME=	hyperestraier
 PORTVERSION=	0.0.15
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	http://hyperestraier.sourceforge.net/binding/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
