@@ -28,8 +28,8 @@ lib/libmutter-private.a
 lib/libmutter-private.la
 lib/libmutter-private.so
 lib/libmutter-private.so.0
-lib/mutter/Meta-2.29.gir
-lib/mutter/Meta-2.29.typelib
+lib/mutter/Meta-2.31.gir
+lib/mutter/Meta-2.31.typelib
 lib/mutter/plugins/default.so
 libdata/pkgconfig/libmutter-private.pc
 libdata/pkgconfig/mutter-plugins.pc

@@ -22,6 +22,8 @@ LIB_DEPENDS=	gee.2:${PORTSDIR}/devel/libgee \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
 		webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
 
+BROKEN=		Doesn't build with vala-0.10
+
 PROJECTHOST=	pino-twitter
 USE_GNOME=	gnomehack intltool libxml2 gtk20 glib20
 USE_GETTEXT=	yes

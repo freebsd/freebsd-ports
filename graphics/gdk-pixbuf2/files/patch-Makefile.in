@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2010-06-27 12:20:54.000000000 +0200
++++ Makefile.in	2010-06-27 12:21:04.000000000 +0200
+@@ -362,7 +362,7 @@
+ 	|| { echo "Gtk+Tests:ERROR: Failed to start Xvfb environment for X11 target tests."; exit 1; } \
+ 	&& DISPLAY=:$$XID && export DISPLAY
+ 
+-SUBDIRS = gdk-pixbuf po docs tests contrib
++SUBDIRS = gdk-pixbuf po tests contrib
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = gdk-pixbuf-2.0.pc
+ ACLOCAL_AMFLAGS = -I m4

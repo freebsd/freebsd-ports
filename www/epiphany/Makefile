@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/epiphany/Makefile,v 1.228 2010/05/09 00:11:47 marcus Exp $
+#   $MCom: ports/www/epiphany/Makefile,v 1.240 2010/10/10 19:16:00 marcus Exp $
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	2.30.2
+PORTVERSION=	2.30.6
 PORTREVISION?=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
@@ -20,8 +20,9 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2 \
+		soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome \
 		notify.1:${PORTSDIR}/devel/libnotify \
-		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
+		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
 		${LOCALBASE}/share/icons/HighContrastLargePrint/index.theme:${PORTSDIR}/x11-themes/gnome-themes
@@ -49,8 +50,8 @@ PLIST_SUB+=	EPHY_VERSION="${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}"
 MAN1=		epiphany.1
 
 OPTIONS=	NSS "Import passwords from 2.26 and older on first run" on \
-		SEED "Enable seed (JavaScript) support" on \
-		SPELLCHECK "Enable spell checking by default" on
+		SPELLCHECK "Enable spell checking by default" on \
+		SEED "Enable seed (JavaScript) support" off \
 
 .if defined(PACKAGE_BUILDING)
 .undef WITHOUT_GNOME

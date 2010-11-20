@@ -1,13 +1,15 @@
 bin/devhelp
-include/devhelp-1.0/devhelp/dh-assistant-view.h
-include/devhelp-1.0/devhelp/dh-assistant.h
-include/devhelp-1.0/devhelp/dh-base.h
-include/devhelp-1.0/devhelp/dh-book-tree.h
-include/devhelp-1.0/devhelp/dh-error.h
-include/devhelp-1.0/devhelp/dh-keyword-model.h
-include/devhelp-1.0/devhelp/dh-link.h
-include/devhelp-1.0/devhelp/dh-search.h
-include/devhelp-1.0/devhelp/dh-window.h
+include/devhelp-2.0/devhelp/dh-assistant-view.h
+include/devhelp-2.0/devhelp/dh-assistant.h
+include/devhelp-2.0/devhelp/dh-base.h
+include/devhelp-2.0/devhelp/dh-book-manager.h
+include/devhelp-2.0/devhelp/dh-book-tree.h
+include/devhelp-2.0/devhelp/dh-book.h
+include/devhelp-2.0/devhelp/dh-error.h
+include/devhelp-2.0/devhelp/dh-keyword-model.h
+include/devhelp-2.0/devhelp/dh-link.h
+include/devhelp-2.0/devhelp/dh-search.h
+include/devhelp-2.0/devhelp/dh-window.h
 %%GEDIT%%lib/gedit-2/plugins/devhelp.gedit-plugin
 %%GEDIT%%lib/gedit-2/plugins/devhelp/__init__.py
 %%GEDIT%%lib/gedit-2/plugins/devhelp/__init__.pyc
@@ -15,11 +17,11 @@ include/devhelp-1.0/devhelp/dh-window.h
 %%GEDIT%%lib/gedit-2/plugins/devhelp/devhelp.py
 %%GEDIT%%lib/gedit-2/plugins/devhelp/devhelp.pyc
 %%GEDIT%%lib/gedit-2/plugins/devhelp/devhelp.pyo
-lib/libdevhelp-1.a
-lib/libdevhelp-1.la
-lib/libdevhelp-1.so
-lib/libdevhelp-1.so.1
-libdata/pkgconfig/libdevhelp-1.0.pc
+lib/libdevhelp-2.a
+lib/libdevhelp-2.la
+lib/libdevhelp-2.so
+lib/libdevhelp-2.so.1
+libdata/pkgconfig/libdevhelp-2.0.pc
 share/applications/devhelp.desktop
 share/devhelp/assistant/assistant.css
 share/devhelp/assistant/assistant.js
@@ -110,8 +112,8 @@ share/locale/zh_TW/LC_MESSAGES/devhelp.mo
 @dirrm share/devhelp/dtd
 @dirrm share/devhelp/assistant
 @dirrm share/devhelp
-@dirrm include/devhelp-1.0/devhelp
-@dirrm include/devhelp-1.0
+@dirrm include/devhelp-2.0/devhelp
+@dirrm include/devhelp-2.0
 @dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK

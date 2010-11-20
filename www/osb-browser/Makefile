@@ -24,6 +24,7 @@ USE_AUTOTOOLS=	libtool:22
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-nostdinc++||g ; \
+		 s|-DGTK_DISABLE_DEPRECATED||g ; \
 		 s|-Werror -ansi||g ; \
 		 s|-nodefaultlibs -lgcc -lc||g' ${WRKSRC}/configure
 

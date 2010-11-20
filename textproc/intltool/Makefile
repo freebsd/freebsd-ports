@@ -3,12 +3,12 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/textproc/intltool/Makefile,v 1.11 2008/10/08 21:37:49 marcus Exp $
+#   $MCom: ports/textproc/intltool/Makefile,v 1.13 2010/05/29 19:19:26 kwm Exp $
 
 PORTNAME=	intltool
-PORTVERSION=	0.40.6
+PORTVERSION=	0.41.1
 CATEGORIES=	textproc gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	http://launchpadlibrarian.net/41841194/
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -17,7 +17,6 @@ COMMENT=	Tools to internationalize various kinds of data files
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PERL5=	yes

@@ -161,6 +161,13 @@ share/gnome/help/cheese/ru/figures/cheese-main.jpg
 share/gnome/help/cheese/ru/figures/cheese-preferences.jpg
 share/gnome/help/cheese/ru/figures/cheese-share.jpg
 share/gnome/help/cheese/ru/figures/cheese-wide.jpg
+share/gnome/help/cheese/sl/cheese.xml
+share/gnome/help/cheese/sl/figures/cheese-effects.jpg
+share/gnome/help/cheese/sl/figures/cheese-fullscreen.jpg
+share/gnome/help/cheese/sl/figures/cheese-main.jpg
+share/gnome/help/cheese/sl/figures/cheese-preferences.jpg
+share/gnome/help/cheese/sl/figures/cheese-share.jpg
+share/gnome/help/cheese/sl/figures/cheese-wide.jpg
 share/gnome/help/cheese/sv/cheese.xml
 share/gnome/help/cheese/sv/figures/cheese-effects.jpg
 share/gnome/help/cheese/sv/figures/cheese-fullscreen.jpg
@@ -222,6 +229,8 @@ share/locale/hu/LC_MESSAGES/cheese.mo
 share/locale/id/LC_MESSAGES/cheese.mo
 share/locale/it/LC_MESSAGES/cheese.mo
 share/locale/ja/LC_MESSAGES/cheese.mo
+share/locale/ka/LC_MESSAGES/cheese.mo
+share/locale/kk/LC_MESSAGES/cheese.mo
 share/locale/kn/LC_MESSAGES/cheese.mo
 share/locale/ko/LC_MESSAGES/cheese.mo
 share/locale/ku/LC_MESSAGES/cheese.mo
@@ -254,6 +263,7 @@ share/locale/ta/LC_MESSAGES/cheese.mo
 share/locale/te/LC_MESSAGES/cheese.mo
 share/locale/th/LC_MESSAGES/cheese.mo
 share/locale/tr/LC_MESSAGES/cheese.mo
+share/locale/ug/LC_MESSAGES/cheese.mo
 share/locale/uk/LC_MESSAGES/cheese.mo
 share/locale/vi/LC_MESSAGES/cheese.mo
 share/locale/zh_CN/LC_MESSAGES/cheese.mo
@@ -272,6 +282,7 @@ share/omf/cheese/cheese-nl.omf
 share/omf/cheese/cheese-oc.omf
 share/omf/cheese/cheese-pt_BR.omf
 share/omf/cheese/cheese-ru.omf
+share/omf/cheese/cheese-sl.omf
 share/omf/cheese/cheese-sv.omf
 share/omf/cheese/cheese-th.omf
 share/omf/cheese/cheese-zh_CN.omf
@@ -284,6 +295,8 @@ share/omf/cheese/cheese-zh_CN.omf
 @dirrm share/gnome/help/cheese/th
 @dirrm share/gnome/help/cheese/sv/figures
 @dirrm share/gnome/help/cheese/sv
+@dirrm share/gnome/help/cheese/sl/figures
+@dirrm share/gnome/help/cheese/sl
 @dirrm share/gnome/help/cheese/ru/figures
 @dirrm share/gnome/help/cheese/ru
 @dirrm share/gnome/help/cheese/pt_BR/figures
@@ -334,6 +347,8 @@ share/omf/cheese/cheese-zh_CN.omf
 @dirrm include/cheese
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -350,6 +365,8 @@ share/omf/cheese/cheese-zh_CN.omf
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES

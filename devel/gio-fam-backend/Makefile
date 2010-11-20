@@ -3,11 +3,12 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/gio-fam-backend/Makefile,v 1.52 2010/05/04 09:44:51 kwm Exp $
+#   $MCom: ports/devel/gio-fam-backend/Makefile,v 1.65 2010/11/15 02:01:55 kwm Exp $
 #
 
 PORTNAME=	gio-fam-backend
-PORTVERSION=	2.24.2
+PORTVERSION=	2.26.1
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/glib/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/},} \
 		ftp://ftp.gtk.org/pub/glib/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ \
@@ -23,7 +24,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	FAM backend for GLib's GIO library
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 BUILD_WRKSRC=	${WRKSRC}/gio/fam
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 GNU_CONFIGURE=	yes

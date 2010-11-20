@@ -3,11 +3,11 @@
 # Whom:                 erich@FreeBSD.org
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/gimp-app/Makefile,v 1.48 2009/09/23 15:44:49 kwm Exp $
+#   $MCom: ports/graphics/gimp-app/Makefile,v 1.53 2010/10/08 08:29:33 kwm Exp $
 #
 
 PORTNAME=	gimp-app
-DISTVERSION=	2.6.10
+DISTVERSION=	2.6.11
 PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
@@ -156,7 +156,7 @@ CONFIGURE_ARGS+=	--disable-mp
 .endif
 
 .if defined(WITH_POPPLER)
-LIB_DEPENDS+=		poppler-glib.4:${PORTSDIR}/graphics/poppler-gtk
+LIB_DEPENDS+=		poppler-glib.5:${PORTSDIR}/graphics/poppler-gtk
 PLIST_SUB+=		POPPLER=""
 .else
 CONFIGURE_ARGS+=	--without-poppler

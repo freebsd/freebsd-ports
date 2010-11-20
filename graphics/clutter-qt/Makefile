@@ -16,6 +16,8 @@ COMMENT=	QT+ Integration library for Clutter
 
 LIB_DEPENDS=	clutter-glx-1.0:${PORTSDIR}/graphics/clutter
 
+BROKEN=		Doesn't build with Glib-2.26
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:22

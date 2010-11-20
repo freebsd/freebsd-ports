@@ -1,4 +1,6 @@
 libexec/telepathy-gabble
+lib/telepathy/gabble-0/gateways.la
+lib/telepathy/gabble-0/gateways.so
 share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.gabble.service
 %%DOCSDIR%%/muc-bytestream.html
 %%DOCSDIR%%/olpc.html
@@ -8,3 +10,5 @@ share/telepathy/managers/gabble.manager
 @dirrmtry share/telepathy/managers
 @dirrmtry share/telepathy
 @dirrm %%DOCSDIR%%
+@dirrm lib/telepathy/gabble-0
+@dirrmtry lib/telepathy

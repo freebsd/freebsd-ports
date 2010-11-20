@@ -3,12 +3,12 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/net/avahi-app/Makefile,v 1.1 2009/04/20 23:42:18 marcus Exp $
+#   $MCom: ports/net/avahi-app/Makefile,v 1.14 2010/10/23 20:58:29 marcus Exp $
 #
 
 PORTNAME=	avahi
-PORTVERSION=	0.6.27
-PORTREVISION?=	2
+PORTVERSION=	0.6.28
+PORTREVISION?=	0
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 PKGNAMESUFFIX?=	-app
@@ -36,8 +36,7 @@ CONFIGURE_ARGS?=--with-distro=freebsd \
 		--disable-doxygen-doc \
 		--disable-doxygen-dot \
 		--localstatedir=/var \
-		--enable-compat-howl \
-		--disable-gtk3
+		--enable-compat-howl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_KQUEUE" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
@@ -72,6 +71,11 @@ CONFIGURE_ARGS+=--disable-autoipd
 CONFIGURE_ARGS+=--enable-gtk
 .else
 CONFIGURE_ARGS+=--disable-gtk
+.endif
+.if ${AVAHI_SLAVE}=="gtk3"
+CONFIGURE_ARGS+=--enable-gtk3
+.else
+CONFIGURE_ARGS+=--disable-gtk3
 .endif
 .if ${AVAHI_SLAVE}=="libdns"
 CONFIGURE_ARGS+=--enable-compat-libdns_sd
@@ -161,7 +165,7 @@ avahi-post-install:
 	fi
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/org.freedesktop.Avahi.service \
-	    	${LOCALBASE}/share/dbus-1/system-services
+		${LOCALBASE}/share/dbus-1/system-services
 .if !defined(PACKAGE_BUILDING) && (${AVAHI_SLAVE}=="no" || ${AVAHI_SLAVE}=="autoipd")
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif

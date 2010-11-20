@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-applets/Makefile,v 1.211 2010/03/28 17:55:31 marcus Exp $
+#   $MCom: ports/x11/gnome-applets/Makefile,v 1.216 2010/09/27 10:14:28 kwm Exp $
 #
 
 PORTNAME=	gnome-applets
-PORTVERSION=	2.30.0
-PORTREVISION=	3
+PORTVERSION=	2.32.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -80,9 +79,9 @@ GCONF_SCHEMAS+=	cpufreq-applet.schemas
 .if defined(WITH_MINI_COMMANDER)
 CONFIGURE_ARGS+=	--enable-mini-commander
 GCONF_SCHEMAS+=	mini-commander-global.schemas mini-commander.schemas
-PLIST_SUB+=	COMMANDER=""
+PLIST_SUB+=	COMMANDER="" OLDCOMMANDER="@comment "
 .else
-PLIST_SUB+=	COMMANDER="@comment "
+PLIST_SUB+=	COMMANDER="@comment " OLDCOMMANDER=""
 .endif
 
 .if ( exists(${pygnomedesktop_DETECT}) ) || \

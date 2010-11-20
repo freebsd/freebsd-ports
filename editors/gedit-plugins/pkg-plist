@@ -49,6 +49,9 @@ lib/gedit-2/plugins/charmap.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/commander/info.py
 %%PYTHON%%lib/gedit-2/plugins/commander/info.pyc
 %%PYTHON%%lib/gedit-2/plugins/commander/info.pyo
+%%PYTHON%%lib/gedit-2/plugins/commander/modules.py
+%%PYTHON%%lib/gedit-2/plugins/commander/modules.pyc
+%%PYTHON%%lib/gedit-2/plugins/commander/modules.pyo
 %%PYTHON%%lib/gedit-2/plugins/commander/transparentwindow.py
 %%PYTHON%%lib/gedit-2/plugins/commander/transparentwindow.pyc
 %%PYTHON%%lib/gedit-2/plugins/commander/transparentwindow.pyo
@@ -112,10 +115,36 @@ lib/gedit-2/plugins/showtabbar.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/smartspaces.py
 %%PYTHON%%lib/gedit-2/plugins/smartspaces.pyc
 %%PYTHON%%lib/gedit-2/plugins/smartspaces.pyo
+%%PYTHON%%lib/gedit-2/plugins/synctex.gedit-plugin
+%%PYTHON%%lib/gedit-2/plugins/synctex/__init__.py
+%%PYTHON%%lib/gedit-2/plugins/synctex/__init__.pyc
+%%PYTHON%%lib/gedit-2/plugins/synctex/__init__.pyo
+%%PYTHON%%lib/gedit-2/plugins/synctex/evince_dbus.py
+%%PYTHON%%lib/gedit-2/plugins/synctex/evince_dbus.pyc
+%%PYTHON%%lib/gedit-2/plugins/synctex/evince_dbus.pyo
+%%PYTHON%%lib/gedit-2/plugins/synctex/synctex.py
+%%PYTHON%%lib/gedit-2/plugins/synctex/synctex.pyc
+%%PYTHON%%lib/gedit-2/plugins/synctex/synctex.pyo
 %%PYTHON%%lib/gedit-2/plugins/terminal.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/terminal.py
 %%PYTHON%%lib/gedit-2/plugins/terminal.pyc
 %%PYTHON%%lib/gedit-2/plugins/terminal.pyo
+%%PYTHON%%lib/gedit-2/plugins/textsize.gedit-plugin
+%%PYTHON%%lib/gedit-2/plugins/textsize/__init__.py
+%%PYTHON%%lib/gedit-2/plugins/textsize/__init__.pyc
+%%PYTHON%%lib/gedit-2/plugins/textsize/__init__.pyo
+%%PYTHON%%lib/gedit-2/plugins/textsize/constants.py
+%%PYTHON%%lib/gedit-2/plugins/textsize/constants.pyc
+%%PYTHON%%lib/gedit-2/plugins/textsize/constants.pyo
+%%PYTHON%%lib/gedit-2/plugins/textsize/documenthelper.py
+%%PYTHON%%lib/gedit-2/plugins/textsize/documenthelper.pyc
+%%PYTHON%%lib/gedit-2/plugins/textsize/documenthelper.pyo
+%%PYTHON%%lib/gedit-2/plugins/textsize/signals.py
+%%PYTHON%%lib/gedit-2/plugins/textsize/signals.pyc
+%%PYTHON%%lib/gedit-2/plugins/textsize/signals.pyo
+%%PYTHON%%lib/gedit-2/plugins/textsize/windowhelper.py
+%%PYTHON%%lib/gedit-2/plugins/textsize/windowhelper.pyc
+%%PYTHON%%lib/gedit-2/plugins/textsize/windowhelper.pyo
 lib/gedit-2/plugins/wordcompletion.gedit-plugin
 share/gedit-2/plugins/bookmarks/bookmark.png
 %%PYTHON%%share/gedit-2/plugins/commander/modules/align.py
@@ -145,6 +174,9 @@ share/gedit-2/plugins/bookmarks/bookmark.png
 %%PYTHON%%share/gedit-2/plugins/commander/modules/format.py
 %%PYTHON%%share/gedit-2/plugins/commander/modules/format.pyc
 %%PYTHON%%share/gedit-2/plugins/commander/modules/format.pyo
+%%PYTHON%%share/gedit-2/plugins/commander/modules/grep.py
+%%PYTHON%%share/gedit-2/plugins/commander/modules/grep.pyc
+%%PYTHON%%share/gedit-2/plugins/commander/modules/grep.pyo
 %%PYTHON%%share/gedit-2/plugins/commander/modules/goto.py
 %%PYTHON%%share/gedit-2/plugins/commander/modules/goto.pyc
 %%PYTHON%%share/gedit-2/plugins/commander/modules/goto.pyo
@@ -192,6 +224,7 @@ share/locale/he/LC_MESSAGES/gedit-plugins.mo
 share/locale/hi/LC_MESSAGES/gedit-plugins.mo
 share/locale/hr/LC_MESSAGES/gedit-plugins.mo
 share/locale/hu/LC_MESSAGES/gedit-plugins.mo
+share/locale/id/LC_MESSAGES/gedit-plugins.mo
 share/locale/it/LC_MESSAGES/gedit-plugins.mo
 share/locale/ja/LC_MESSAGES/gedit-plugins.mo
 share/locale/kn/LC_MESSAGES/gedit-plugins.mo
@@ -232,7 +265,9 @@ share/locale/wa/LC_MESSAGES/gedit-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/gedit-plugins.mo
 share/locale/zh_HK/LC_MESSAGES/gedit-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/gedit-plugins.mo
+%%PYTHON%%@dirrm lib/gedit-2/plugins/textsize
 %%PYTHON%%@dirrm lib/gedit-2/plugins/multiedit
+%%PYTHON%%@dirrm lib/gedit-2/plugins/synctex
 %%PYTHON%%@dirrm lib/gedit-2/plugins/sessionsaver
 %%PYTHON%%@dirrm lib/gedit-2/plugins/commander/commands
 %%PYTHON%%@dirrm lib/gedit-2/plugins/commander

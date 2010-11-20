@@ -8,7 +8,7 @@
 
 PORTNAME=	gtkdatabox
 PORTVERSION=	0.9.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF http://www.eudoxos.de/gtk/gtkdatabox/download/
 DIST_SUBDIR=	gnome2
@@ -41,7 +41,7 @@ PLIST_SUB+=	GLADE="@comment "
 .endif
 
 .if !defined(WITHOUT_GLADEUI)
-LIB_DEPENDS+=	gladeui-1.9:${PORTSDIR}/devel/glade3
+LIB_DEPENDS+=	gladeui-1.10:${PORTSDIR}/devel/glade3
 CONFIGURE_ARGS+=	--enable-glade
 PLIST_SUB+=	GLADEUI=""
 .else

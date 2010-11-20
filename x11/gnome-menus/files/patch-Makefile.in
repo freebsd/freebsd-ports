@@ -1,11 +1,11 @@
---- Makefile.in.orig	Mon Jul 24 15:57:52 2006
-+++ Makefile.in	Mon Jul 24 15:58:05 2006
-@@ -244,7 +244,7 @@ sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
- NULL = 
--@HAVE_PYTHON_TRUE@PYTHON_SUBDIRS = python simple-editor
-+@HAVE_PYTHON_TRUE@PYTHON_SUBDIRS = python
- ALL_SUBDIRS = \
- 	po 			\
- 	libmenu			\
+--- Makefile.in.orig	2010-09-27 14:11:42.000000000 +0000
++++ Makefile.in	2010-09-27 14:12:05.000000000 +0000
+@@ -33,7 +33,7 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-@HAVE_PYTHON_TRUE@am__append_1 = python simple-editor
++@HAVE_PYTHON_TRUE@am__append_1 = python
+ subdir = .
+ DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
+ 	$(srcdir)/Makefile.in $(srcdir)/config.h.in \

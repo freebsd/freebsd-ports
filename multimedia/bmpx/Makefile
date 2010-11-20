@@ -28,6 +28,7 @@ LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 		soup-2.2.8:${PORTSDIR}/devel/libsoup22
 
 CONFLICTS=	bmpx-devel-[0-9]*
+BROKEN=		Doesn't build with Glib-2.26
 
 USE_BISON=	build
 USE_XORG=	ice sm

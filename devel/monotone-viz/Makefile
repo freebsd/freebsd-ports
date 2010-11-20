@@ -21,6 +21,8 @@ RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		Doesn't build with Glib-2.26
+
 USE_GMAKE=	yes
 USE_OCAML=	yes
 GNU_CONFIGURE=	yes

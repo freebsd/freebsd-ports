@@ -217,6 +217,7 @@ share/gedit-2/plugins/modelines/language-mappings
 %%PYTHON%%share/gedit-2/plugins/snippets/javascript.xml
 %%PYTHON%%share/gedit-2/plugins/snippets/lang/snippets.lang
 %%PYTHON%%share/gedit-2/plugins/snippets/latex.xml
+%%PYTHON%%share/gedit-2/plugins/snippets/mallard.xml
 %%PYTHON%%share/gedit-2/plugins/snippets/perl.xml
 %%PYTHON%%share/gedit-2/plugins/snippets/php.xml
 %%PYTHON%%share/gedit-2/plugins/snippets/python.xml
@@ -478,6 +479,7 @@ share/locale/is/LC_MESSAGES/gedit.mo
 share/locale/it/LC_MESSAGES/gedit.mo
 share/locale/ja/LC_MESSAGES/gedit.mo
 share/locale/ka/LC_MESSAGES/gedit.mo
+share/locale/kk/LC_MESSAGES/gedit.mo
 share/locale/kn/LC_MESSAGES/gedit.mo
 share/locale/ko/LC_MESSAGES/gedit.mo
 share/locale/ku/LC_MESSAGES/gedit.mo
@@ -665,6 +667,8 @@ share/omf/gedit/gedit-zh_TW.omf
 @dirrmtry share/locale/la
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/en@shaw/LC_MESSAGES

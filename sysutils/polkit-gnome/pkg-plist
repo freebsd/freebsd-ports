@@ -12,6 +12,7 @@ libdata/pkgconfig/polkit-gtk-1.pc
 share/gir-1.0/PolkitGtk-1.0.gir
 share/locale/ar/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/be/LC_MESSAGES/polkit-gnome-1.mo
+share/locale/bn_IN/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/ca/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/cs/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/da/LC_MESSAGES/polkit-gnome-1.mo
@@ -25,19 +26,29 @@ share/locale/fr/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/gl/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/gu/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/he/LC_MESSAGES/polkit-gnome-1.mo
+share/locale/hi/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/hu/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/it/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/ja/LC_MESSAGES/polkit-gnome-1.mo
+share/locale/kn/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/lt/LC_MESSAGES/polkit-gnome-1.mo
+share/locale/ml/LC_MESSAGES/polkit-gnome-1.mo
+share/locale/mr/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/nb/LC_MESSAGES/polkit-gnome-1.mo
+share/locale/or/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/pa/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/pl/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/pt/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/pt_BR/LC_MESSAGES/polkit-gnome-1.mo
+share/locale/ro/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/ru/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/sk/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/sl/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/sv/LC_MESSAGES/polkit-gnome-1.mo
+share/locale/ta/LC_MESSAGES/polkit-gnome-1.mo
+share/locale/te/LC_MESSAGES/polkit-gnome-1.mo
+share/locale/th/LC_MESSAGES/polkit-gnome-1.mo
+share/locale/uk/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/zh_CN/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/zh_HK/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/zh_TW/LC_MESSAGES/polkit-gnome-1.mo
@@ -45,3 +56,7 @@ share/locale/zh_TW/LC_MESSAGES/polkit-gnome-1.mo
 @dirrm include/polkit-gtk-1
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN

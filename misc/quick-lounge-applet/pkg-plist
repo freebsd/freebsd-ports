@@ -14,12 +14,30 @@ share/gnome/help/quick-lounge/de/figures/quick-lounge_start.png
 share/gnome/help/quick-lounge/de/figures/quick-lounge_up.png
 share/gnome/help/quick-lounge/de/figures/quick-lounge_window.png
 share/gnome/help/quick-lounge/de/quick-lounge.xml
+share/gnome/help/quick-lounge/es/figures/quick-lounge_down.png
+share/gnome/help/quick-lounge/es/figures/quick-lounge_end.png
+share/gnome/help/quick-lounge/es/figures/quick-lounge_start.png
+share/gnome/help/quick-lounge/es/figures/quick-lounge_up.png
+share/gnome/help/quick-lounge/es/figures/quick-lounge_window.png
+share/gnome/help/quick-lounge/es/quick-lounge.xml
 share/gnome/help/quick-lounge/fr/figures/quick-lounge_down.png
 share/gnome/help/quick-lounge/fr/figures/quick-lounge_end.png
 share/gnome/help/quick-lounge/fr/figures/quick-lounge_start.png
 share/gnome/help/quick-lounge/fr/figures/quick-lounge_up.png
 share/gnome/help/quick-lounge/fr/figures/quick-lounge_window.png
 share/gnome/help/quick-lounge/fr/quick-lounge.xml
+share/gnome/help/quick-lounge/sl/figures/quick-lounge_down.png
+share/gnome/help/quick-lounge/sl/figures/quick-lounge_end.png
+share/gnome/help/quick-lounge/sl/figures/quick-lounge_start.png
+share/gnome/help/quick-lounge/sl/figures/quick-lounge_up.png
+share/gnome/help/quick-lounge/sl/figures/quick-lounge_window.png
+share/gnome/help/quick-lounge/sl/quick-lounge.xml
+share/gnome/help/quick-lounge/sv/figures/quick-lounge_down.png
+share/gnome/help/quick-lounge/sv/figures/quick-lounge_end.png
+share/gnome/help/quick-lounge/sv/figures/quick-lounge_start.png
+share/gnome/help/quick-lounge/sv/figures/quick-lounge_up.png
+share/gnome/help/quick-lounge/sv/figures/quick-lounge_window.png
+share/gnome/help/quick-lounge/sv/quick-lounge.xml
 share/icons/hicolor/48x48/apps/quick-lounge-applet.png
 share/locale/ar/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/az/LC_MESSAGES/quick-lounge-applet.mo
@@ -42,6 +60,7 @@ share/locale/gl/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/gu/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/hr/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/hu/LC_MESSAGES/quick-lounge-applet.mo
+share/locale/id/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/it/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/ja/LC_MESSAGES/quick-lounge-applet.mo
 share/locale/ko/LC_MESSAGES/quick-lounge-applet.mo
@@ -75,8 +94,14 @@ share/quick-lounge-applet/ui/properties.ui
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrm share/gnome/help/quick-lounge/sv/figures
+@dirrm share/gnome/help/quick-lounge/sv
+@dirrm share/gnome/help/quick-lounge/sl/figures
+@dirrm share/gnome/help/quick-lounge/sl
 @dirrm share/gnome/help/quick-lounge/fr/figures
 @dirrm share/gnome/help/quick-lounge/fr
+@dirrm share/gnome/help/quick-lounge/es/figures
+@dirrm share/gnome/help/quick-lounge/es
 @dirrm share/gnome/help/quick-lounge/de/figures
 @dirrm share/gnome/help/quick-lounge/de
 @dirrm share/gnome/help/quick-lounge/C/figures

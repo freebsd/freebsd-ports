@@ -7,12 +7,14 @@ include/poppler/glib/poppler-enums.h
 include/poppler/glib/poppler-features.h
 include/poppler/glib/poppler-form-field.h
 include/poppler/glib/poppler-layer.h
+include/poppler/glib/poppler-media.h
+include/poppler/glib/poppler-movie.h
 include/poppler/glib/poppler-page.h
 include/poppler/glib/poppler.h
 lib/libpoppler-glib.a
 lib/libpoppler-glib.la
 lib/libpoppler-glib.so
-lib/libpoppler-glib.so.4
+lib/libpoppler-glib.so.5
 libdata/pkgconfig/poppler-glib.pc
 %%DOCSDIR%%/poppler/ch01.html
 %%DOCSDIR%%/poppler/home.png
@@ -21,7 +23,6 @@ libdata/pkgconfig/poppler-glib.pc
 %%DOCSDIR%%/poppler/left.png
 %%DOCSDIR%%/poppler/poppler-poppler-action.html
 %%DOCSDIR%%/poppler/poppler-poppler-annot.html
-%%DOCSDIR%%/poppler/poppler-poppler-attachment.html
 %%DOCSDIR%%/poppler/poppler-poppler-document.html
 %%DOCSDIR%%/poppler/poppler-poppler-enums.html
 %%DOCSDIR%%/poppler/poppler-poppler-features.html

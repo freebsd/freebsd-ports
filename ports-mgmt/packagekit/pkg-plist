@@ -10,6 +10,8 @@ etc/PackageKit/CommandNotFound.conf
 etc/PackageKit/PackageKit.conf
 @exec [ -f %B/PackageKit.conf ] || cp %B/%f %B/PackageKit.conf
 etc/PackageKit/Vendor.conf
+etc/PackageKit/events/post-transaction.d/README
+etc/PackageKit/events/pre-transaction.d/README
 etc/bash_completion.d/pk-completion.bash
 etc/cron.daily/packagekit-background.cron
 etc/dbus-1/system.d/org.freedesktop.PackageKit.conf
@@ -275,38 +277,38 @@ share/dbus-1/system-services/org.freedesktop.PackageKit.service
 share/gir-1.0/PackageKitGlib-1.0.gir
 share/gtk-doc/html/PackageKit/PackageKit-egg-debug.html
 share/gtk-doc/html/PackageKit/PackageKit-pk-bitfield.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-catalog.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-category.html
 share/gtk-doc/html/PackageKit/PackageKit-pk-client-sync.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-client.html
 share/gtk-doc/html/PackageKit/PackageKit-pk-common.html
 share/gtk-doc/html/PackageKit/PackageKit-pk-control-sync.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-control.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-desktop.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-details.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-distro-upgrade.html
 share/gtk-doc/html/PackageKit/PackageKit-pk-enum.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-error.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-eula-required.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-files.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-media-change-required.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-message.html
 share/gtk-doc/html/PackageKit/PackageKit-pk-package-id.html
 share/gtk-doc/html/PackageKit/PackageKit-pk-package-ids.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-package-sack.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-package.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-progress.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-repo-detail.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-repo-signature-required.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-require-restart.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-results.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-service-pack.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-task.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-transaction-past.html
-share/gtk-doc/html/PackageKit/PackageKit-pk-update-detail.html
 share/gtk-doc/html/PackageKit/PackageKit.devhelp
 share/gtk-doc/html/PackageKit/PackageKit.devhelp2
 share/gtk-doc/html/PackageKit/PackageKit.html
+share/gtk-doc/html/PackageKit/PkCatalog.html
+share/gtk-doc/html/PackageKit/PkCategory.html
+share/gtk-doc/html/PackageKit/PkClient.html
+share/gtk-doc/html/PackageKit/PkControl.html
+share/gtk-doc/html/PackageKit/PkDesktop.html
+share/gtk-doc/html/PackageKit/PkDetails.html
+share/gtk-doc/html/PackageKit/PkDistroUpgrade.html
+share/gtk-doc/html/PackageKit/PkError.html
+share/gtk-doc/html/PackageKit/PkEulaRequired.html
+share/gtk-doc/html/PackageKit/PkFiles.html
+share/gtk-doc/html/PackageKit/PkMediaChangeRequired.html
+share/gtk-doc/html/PackageKit/PkMessage.html
+share/gtk-doc/html/PackageKit/PkPackage.html
+share/gtk-doc/html/PackageKit/PkPackageSack.html
+share/gtk-doc/html/PackageKit/PkProgress.html
+share/gtk-doc/html/PackageKit/PkRepoDetail.html
+share/gtk-doc/html/PackageKit/PkRepoSignatureRequired.html
+share/gtk-doc/html/PackageKit/PkRequireRestart.html
+share/gtk-doc/html/PackageKit/PkResults.html
+share/gtk-doc/html/PackageKit/PkServicePack.html
+share/gtk-doc/html/PackageKit/PkTask.html
+share/gtk-doc/html/PackageKit/PkTransactionPast.html
+share/gtk-doc/html/PackageKit/PkUpdateDetail.html
 share/gtk-doc/html/PackageKit/Transaction.html
 share/gtk-doc/html/PackageKit/api-reference.html
 share/gtk-doc/html/PackageKit/backend-compiled.html
@@ -369,6 +371,7 @@ share/locale/it/LC_MESSAGES/PackageKit.mo
 share/locale/ja/LC_MESSAGES/PackageKit.mo
 share/locale/kn/LC_MESSAGES/PackageKit.mo
 share/locale/ko/LC_MESSAGES/PackageKit.mo
+share/locale/lt/LC_MESSAGES/PackageKit.mo
 share/locale/ml/LC_MESSAGES/PackageKit.mo
 share/locale/mr/LC_MESSAGES/PackageKit.mo
 share/locale/ms/LC_MESSAGES/PackageKit.mo
@@ -436,6 +439,9 @@ share/polkit-1/actions/org.freedesktop.packagekit.policy
 @dirrmtry etc/sysconfig
 @dirrmtry etc/profile.d
 @dirrmtry etc/cron.daily
+@dirrmtry etc/PackageKit/events/post-transaction.d
+@dirrmtry etc/PackageKit/events/pre-transaction.d
+@dirrmtry etc/PackageKit/events
 @dirrmtry etc/PackageKit
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

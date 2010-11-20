@@ -1,0 +1,12 @@
+--- eel/Makefile.in.orig	2010-09-28 11:12:01.000000000 +0000
++++ eel/Makefile.in	2010-09-28 11:12:37.000000000 +0000
+@@ -290,9 +290,6 @@
+ 	-DDATADIR=\""$(datadir)"\"			\
+ 	-DSOURCE_DATADIR=\""$(top_srcdir)/data"\"	\
+ 	-DGNOMELOCALEDIR=\""$(prefix)/${DATADIRNAME}/locale"\"	\
+-	-DG_DISABLE_DEPRECATED				\
+-	-DGDK_DISABLE_DEPRECATED			\
+-	-DGDK_PIXBUF_DISABLE_DEPRECATED			\
+ 	-DGMENU_I_KNOW_THIS_IS_UNSTABLE			\
+ 	$(NULL)
+ 

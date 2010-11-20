@@ -6,6 +6,9 @@ lib/libseed.a
 lib/libseed.la
 lib/libseed.so
 lib/libseed.so.0
+lib/seed/libseed_DynamicObject.a
+lib/seed/libseed_DynamicObject.la
+lib/seed/libseed_DynamicObject.so
 lib/seed/libseed_cairo.a
 lib/seed/libseed_cairo.la
 lib/seed/libseed_cairo.so

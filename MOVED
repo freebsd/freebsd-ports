@@ -4676,3 +4676,9 @@ misc/bidwatcher||2010-11-08|Has expired: Obsoleted by JBidwatcher and changes at
 security/vscan||2010-11-08|Has expired: Depends of misc/compat3x, that is deprecated and set to be removed
 www/ssserver||2010-11-08|Has expired: Depends of misc/compat3x, that is deprecated and set to be removed
 graphics/qtpfsgui|graphics/luminance|2010-11-12|Project has been renamed
+devel/gir-repository-gconf2|devel/gconf2|2010-11-20|merged into gconf2
+x11-fm/gir-repository-nautilus|x11-fm/nautilus|2010-11-20|merged into nautilus
+devel/gir-repository-libsoup|devel/libsoup|2010-11-20|merged into libsoup
+x11-toolkits/gir-repository-gtksourceview2|x11-toolkits/gtksourceview2|2010-11-20|merged into gtksourceview2
+security/gir-repository-gnome-keyring||2010-11-20|Not buildable
+devel/gir-repository-dbus|devel/gobject-introspection|2010-11-20|merged into gobject-introspection

@@ -3,10 +3,10 @@
 # Whom:					Florent Thoumie <flz@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/net-im/telepathy-gabble/Makefile,v 1.5 2009/01/08 07:03:21 marcus Exp $
+#    $MCom: ports/net-im/telepathy-gabble/Makefile,v 1.10 2010/11/14 16:18:09 marcus Exp $
 
 PORTNAME=	telepathy-gabble
-PORTVERSION=	0.8.14
+PORTVERSION=	0.10.4
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -15,13 +15,16 @@ COMMENT=	Jabber Connection Manager for Telepathy Framework
 
 LIB_PC_DEPENDS=	gobject-2.0.pc:${PORTSDIR}/devel/glib20 \
 		dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib \
+		nice.pc:${PORTSDIR}/net-im/libnice \
+		uuid.pc:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		telepathy-glib.pc:${PORTSDIR}/net-im/telepathy-glib \
 		loudmouth-1.0.pc:${PORTSDIR}/net-im/loudmouth
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
-LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
+		sqlite3.8:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 
 GNU_CONFIGURE=	yes

@@ -1,29 +1,13 @@
-bin/gdk-pixbuf-csource
-bin/gdk-pixbuf-query-loaders
 bin/gtk-builder-convert
 bin/gtk-demo
 bin/gtk-query-immodules-2.0
 bin/gtk-update-icon-cache
-etc/gtk-2.0/gdk-pixbuf.loaders
 etc/gtk-2.0/gtk.immodules
 etc/gtk-2.0/im-multipress.conf
 include/gail-1.0/gail/gailwidget.h
 include/gail-1.0/libgail-util/gail-util.h
 include/gail-1.0/libgail-util/gailmisc.h
 include/gail-1.0/libgail-util/gailtextutil.h
-include/gtk-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlib.h
-include/gtk-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h
-include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-animation.h
-include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-core.h
-include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-enum-types.h
-include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-features.h
-include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-io.h
-include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-loader.h
-include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-marshal.h
-include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-simple-anim.h
-include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-transform.h
-include/gtk-2.0/gdk-pixbuf/gdk-pixbuf.h
-include/gtk-2.0/gdk-pixbuf/gdk-pixdata.h
 include/gtk-2.0/gdk/gdk.h
 include/gtk-2.0/gdk/gdkapplaunchcontext.h
 include/gtk-2.0/gdk/gdkcairo.h
@@ -41,6 +25,7 @@ include/gtk-2.0/gdk/gdki18n.h
 include/gtk-2.0/gdk/gdkimage.h
 include/gtk-2.0/gdk/gdkinput.h
 include/gtk-2.0/gdk/gdkkeys.h
+include/gtk-2.0/gdk/gdkkeysyms-compat.h
 include/gtk-2.0/gdk/gdkkeysyms.h
 include/gtk-2.0/gdk/gdkpango.h
 include/gtk-2.0/gdk/gdkpixbuf.h
@@ -278,104 +263,53 @@ include/gtk-unix-print-2.0/gtk/gtkprintjob.h
 include/gtk-unix-print-2.0/gtk/gtkprintunixdialog.h
 include/gtk-unix-print-2.0/gtk/gtkunixprint.h
 lib/girepository-1.0/Gdk-2.0.typelib
-lib/girepository-1.0/GdkPixbuf-2.0.typelib
+lib/girepository-1.0/GdkX11-2.0.typelib
 lib/girepository-1.0/Gtk-2.0.typelib
-lib/gtk-2.0/%%GTK_VERSION%%/engines/libpixmap.a
-lib/gtk-2.0/%%GTK_VERSION%%/engines/libpixmap.la
-lib/gtk-2.0/%%GTK_VERSION%%/engines/libpixmap.so
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-am-et.a
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-am-et.la
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-am-et.so
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-cedilla.a
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-cedilla.la
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-cedilla.so
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-cyrillic-translit.a
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-cyrillic-translit.la
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-cyrillic-translit.so
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-inuktitut.a
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-inuktitut.la
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-inuktitut.so
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-ipa.a
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-ipa.la
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-ipa.so
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-multipress.a
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-multipress.la
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-multipress.so
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-thai.a
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-thai.la
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-thai.so
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-ti-er.a
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-ti-er.la
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-ti-er.so
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-ti-et.a
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-ti-et.la
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-ti-et.so
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-viqr.a
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-viqr.la
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-viqr.so
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-xim.a
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-xim.la
-lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-xim.so
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-ani.a
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-ani.la
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-ani.so
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-bmp.a
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-bmp.la
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-bmp.so
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-gif.a
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-gif.la
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-gif.so
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-qtif.a
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-qtif.la
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-qtif.so
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-icns.a
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-icns.la
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-icns.so
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-ico.a
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-ico.la
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-ico.so
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-jasper.a
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-jasper.la
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-jasper.so
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-jpeg.a
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-jpeg.la
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-jpeg.so
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-pcx.a
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-pcx.la
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-pcx.so
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-png.a
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-png.la
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-png.so
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-pnm.a
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-pnm.la
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-pnm.so
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-ras.a
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-ras.la
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-ras.so
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-tga.a
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-tga.la
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-tga.so
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-tiff.a
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-tiff.la
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-tiff.so
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-wbmp.a
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-wbmp.la
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-wbmp.so
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-xbm.a
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-xbm.la
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-xbm.so
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-xpm.a
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-xpm.la
-lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-xpm.so
-%%CUPS:%%lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-cups.a
-%%CUPS:%%lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-cups.la
-%%CUPS:%%lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-cups.so
-lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-file.a
-lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-file.la
-lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-file.so
-lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-lpr.a
-lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-lpr.la
-lib/gtk-2.0/%%GTK_VERSION%%/printbackends/libprintbackend-lpr.so
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libpixmap.a
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libpixmap.la
+lib/gtk-2.0/%%GTK2_VERSION%%/engines/libpixmap.so
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-am-et.a
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-am-et.la
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-am-et.so
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-cedilla.a
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-cedilla.la
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-cedilla.so
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-cyrillic-translit.a
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-cyrillic-translit.la
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-cyrillic-translit.so
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-inuktitut.a
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-inuktitut.la
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-inuktitut.so
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-ipa.a
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-ipa.la
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-ipa.so
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-multipress.a
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-multipress.la
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-multipress.so
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-thai.a
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-thai.la
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-thai.so
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-ti-er.a
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-ti-er.la
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-ti-er.so
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-ti-et.a
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-ti-et.la
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-ti-et.so
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-viqr.a
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-viqr.la
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-viqr.so
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-xim.a
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-xim.la
+lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-xim.so
+%%CUPS:%%lib/gtk-2.0/%%GTK2_VERSION%%/printbackends/libprintbackend-cups.a
+%%CUPS:%%lib/gtk-2.0/%%GTK2_VERSION%%/printbackends/libprintbackend-cups.la
+%%CUPS:%%lib/gtk-2.0/%%GTK2_VERSION%%/printbackends/libprintbackend-cups.so
+lib/gtk-2.0/%%GTK2_VERSION%%/printbackends/libprintbackend-file.a
+lib/gtk-2.0/%%GTK2_VERSION%%/printbackends/libprintbackend-file.la
+lib/gtk-2.0/%%GTK2_VERSION%%/printbackends/libprintbackend-file.so
+lib/gtk-2.0/%%GTK2_VERSION%%/printbackends/libprintbackend-lpr.a
+lib/gtk-2.0/%%GTK2_VERSION%%/printbackends/libprintbackend-lpr.la
+lib/gtk-2.0/%%GTK2_VERSION%%/printbackends/libprintbackend-lpr.so
 lib/gtk-2.0/modules/libferret.a
 lib/gtk-2.0/modules/libferret.la
 lib/gtk-2.0/modules/libferret.so
@@ -390,29 +324,19 @@ lib/libgdk-x11-2.0.a
 lib/libgdk-x11-2.0.la
 lib/libgdk-x11-2.0.so
 lib/libgdk-x11-2.0.so.0
-lib/libgdk_pixbuf-2.0.a
-lib/libgdk_pixbuf-2.0.la
-lib/libgdk_pixbuf-2.0.so
-lib/libgdk_pixbuf-2.0.so.0
-lib/libgdk_pixbuf_xlib-2.0.a
-lib/libgdk_pixbuf_xlib-2.0.la
-lib/libgdk_pixbuf_xlib-2.0.so
-lib/libgdk_pixbuf_xlib-2.0.so.0
 lib/libgtk-x11-2.0.a
 lib/libgtk-x11-2.0.la
 lib/libgtk-x11-2.0.so
 lib/libgtk-x11-2.0.so.0
 libdata/pkgconfig/gail.pc
 libdata/pkgconfig/gdk-2.0.pc
-libdata/pkgconfig/gdk-pixbuf-2.0.pc
-libdata/pkgconfig/gdk-pixbuf-xlib-2.0.pc
 libdata/pkgconfig/gdk-x11-2.0.pc
 libdata/pkgconfig/gtk+-2.0.pc
 libdata/pkgconfig/gtk+-unix-print-2.0.pc
 libdata/pkgconfig/gtk+-x11-2.0.pc
 share/aclocal/gtk-2.0.m4
 share/gir-1.0/Gdk-2.0.gir
-share/gir-1.0/GdkPixbuf-2.0.gir
+share/gir-1.0/GdkX11-2.0.gir
 share/gir-1.0/Gtk-2.0.gir
 share/gtk-2.0/demo/alphatest.png
 share/gtk-2.0/demo/apple-red.png
@@ -563,12 +487,18 @@ share/locale/ja/LC_MESSAGES/gtk20-properties.mo
 share/locale/ja/LC_MESSAGES/gtk20.mo
 share/locale/ka/LC_MESSAGES/gtk20-properties.mo
 share/locale/ka/LC_MESSAGES/gtk20.mo
+share/locale/kg/LC_MESSAGES/gtk20-properties.mo
+share/locale/kg/LC_MESSAGES/gtk20.mo
+share/locale/kk/LC_MESSAGES/gtk20-properties.mo
+share/locale/kk/LC_MESSAGES/gtk20.mo
 share/locale/kn/LC_MESSAGES/gtk20-properties.mo
 share/locale/kn/LC_MESSAGES/gtk20.mo
 share/locale/ko/LC_MESSAGES/gtk20-properties.mo
 share/locale/ko/LC_MESSAGES/gtk20.mo
 share/locale/ku/LC_MESSAGES/gtk20-properties.mo
 share/locale/ku/LC_MESSAGES/gtk20.mo
+share/locale/lg/LC_MESSAGES/gtk20-properties.mo
+share/locale/lg/LC_MESSAGES/gtk20.mo
 share/locale/li/LC_MESSAGES/gtk20-properties.mo
 share/locale/li/LC_MESSAGES/gtk20.mo
 share/locale/lt/LC_MESSAGES/gtk20-properties.mo
@@ -651,6 +581,8 @@ share/locale/tr/LC_MESSAGES/gtk20-properties.mo
 share/locale/tr/LC_MESSAGES/gtk20.mo
 share/locale/tt/LC_MESSAGES/gtk20-properties.mo
 share/locale/tt/LC_MESSAGES/gtk20.mo
+share/locale/ug/LC_MESSAGES/gtk20-properties.mo
+share/locale/ug/LC_MESSAGES/gtk20.mo
 share/locale/uk/LC_MESSAGES/gtk20-properties.mo
 share/locale/uk/LC_MESSAGES/gtk20.mo
 share/locale/ur/LC_MESSAGES/gtk20-properties.mo
@@ -688,8 +620,6 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @dirrm include/gtk-unix-print-2.0/gtk
 @dirrm include/gtk-unix-print-2.0
 @dirrm include/gtk-2.0/gtk
-@dirrm include/gtk-2.0/gdk-pixbuf-xlib
-@dirrm include/gtk-2.0/gdk-pixbuf
 @dirrm include/gtk-2.0/gdk
 @dirrm include/gtk-2.0
 @dirrm include/gail-1.0/libgail-util
@@ -697,18 +627,18 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @dirrm include/gail-1.0
 @dirrm etc/gtk-2.0
 @exec /bin/mkdir -p %D/lib/gtk-2.0/modules
-@exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK_VERSION%%/engines
+@exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK2_VERSION%%/engines
+@exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK2_VERSION%%/loaders
 @dirrmtry share/themes/Default
 @dirrmtry share/themes
 @dirrmtry lib/gtk-2.0/modules
-@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%/printbackends
-@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%/modules
-@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%/loaders
-@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%/immodules
-@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%/engines
-@dirrmtry lib/gtk-2.0/%%GTK_VERSION%%
+@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/printbackends
+@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/modules
+@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/loaders
+@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/immodules
+@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/engines
+@dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%
 @dirrmtry lib/gtk-2.0
-@exec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/etc/gtk-2.0/gdk-pixbuf.loaders 2>/dev/null || /usr/bin/true
 @exec %D/bin/gtk-query-immodules-2.0 > /dev/null 2>&1 && %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules 2>/dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
@@ -720,6 +650,8 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @dirrmtry share/locale/uz@cyrillic
 @dirrmtry share/locale/ur/LC_MESSAGES
 @dirrmtry share/locale/ur
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/tt/LC_MESSAGES
 @dirrmtry share/locale/tt
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -748,8 +680,14 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @dirrmtry share/locale/mi
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
+@dirrmtry share/locale/lg/LC_MESSAGES
+@dirrmtry share/locale/lg
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/kg/LC_MESSAGES
+@dirrmtry share/locale/kg
 @dirrmtry share/locale/io/LC_MESSAGES
 @dirrmtry share/locale/io
 @dirrmtry share/locale/ia/LC_MESSAGES

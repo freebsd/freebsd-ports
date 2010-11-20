@@ -3,9 +3,10 @@
 # Whom:					Alexander Logvinov <avl@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/gir-repository-poppler/Makefile,v 1.1 2009/09/16 02:05:11 avl Exp $
+#   $MCom: ports/graphics/gir-repository-poppler/Makefile,v 1.4 2010/09/28 15:55:48 kwm Exp $
 #
 
+PORTREVISION=	6
 CATEGORIES=	graphics
 
 MASTERDIR=	${.CURDIR}/../../devel/gir-repository

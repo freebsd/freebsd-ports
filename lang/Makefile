@@ -380,6 +380,7 @@
     SUBDIR += u++
     SUBDIR += ucc
     SUBDIR += vala
+    SUBDIR += vala-vapigen
     SUBDIR += visualworks
     SUBDIR += whitespace
     SUBDIR += xds

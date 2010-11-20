@@ -15,6 +15,7 @@ share/applications/screensavers/cosmos-slideshow.desktop
 share/applications/screensavers/footlogo-floaters.desktop
 share/applications/screensavers/personal-slideshow.desktop
 share/applications/screensavers/popsquares.desktop
+share/dbus-1/services/org.gnome.ScreenSaver.service
 share/desktop-directories/gnome-screensaver.directory
 %%DATADIR%%/gnome-screensaver-preferences.ui
 %%DATADIR%%/lock-dialog-default.ui

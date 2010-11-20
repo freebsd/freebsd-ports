@@ -1,0 +1,27 @@
+bin/folks-import
+include/folks/folks-telepathy.h
+include/folks/folks.h
+lib/folks/%%VERSION%%/backends/key-file/libfolks-backend-key-file.la
+lib/folks/%%VERSION%%/backends/key-file/libfolks-backend-key-file.so
+lib/folks/%%VERSION%%/backends/telepathy/libfolks-backend-telepathy.la
+lib/folks/%%VERSION%%/backends/telepathy/libfolks-backend-telepathy.so
+lib/libfolks-telepathy.la
+lib/libfolks-telepathy.so
+lib/libfolks-telepathy.so.%%VERSION%%
+lib/libfolks.la
+lib/libfolks.so
+lib/libfolks.so.%%VERSION%%
+libdata/pkgconfig/folks-telepathy.pc
+libdata/pkgconfig/folks.pc
+share/vala/vapi/folks-telepathy.deps
+share/vala/vapi/folks-telepathy.vapi
+share/vala/vapi/folks.deps
+share/vala/vapi/folks.vapi
+@dirrmtry share/vala/vapi
+@dirrmtry share/vala
+@dirrm lib/folks/%%VERSION%%/backends/telepathy
+@dirrm lib/folks/%%VERSION%%/backends/key-file
+@dirrm lib/folks/%%VERSION%%/backends
+@dirrm lib/folks/%%VERSION%%
+@dirrm lib/folks
+@dirrm include/folks

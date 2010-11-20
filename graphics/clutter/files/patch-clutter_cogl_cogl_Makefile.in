@@ -1,0 +1,10 @@
+--- clutter/cogl/cogl/Makefile.in.orig	2010-11-20 14:38:12.000000000 +0100
++++ clutter/cogl/cogl/Makefile.in	2010-11-20 14:47:42.000000000 +0100
+@@ -582,6 +582,7 @@
+ 	-I$(srcdir)/winsys 			\
+ 	-I$(srcdir)/driver/$(COGL_DRIVER) 	\
+ 	-I$(top_builddir)/clutter/cogl          \
++	`pkg-config --cflags gl`		\
+ 	$(NULL)
+ 
+ AM_CPPFLAGS = \

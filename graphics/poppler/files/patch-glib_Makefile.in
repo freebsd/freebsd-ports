@@ -1,40 +1,42 @@
---- glib/Makefile.in.orig	2008-03-24 09:03:54.000000000 -0400
-+++ glib/Makefile.in	2008-03-24 09:04:38.000000000 -0400
-@@ -66,7 +66,6 @@
- @BUILD_CAIRO_OUTPUT_TRUE@am__DEPENDENCIES_2 = $(top_builddir)/poppler/libpoppler-cairo.la \
- @BUILD_CAIRO_OUTPUT_TRUE@	$(am__DEPENDENCIES_1)
+--- glib/Makefile.in.orig	2010-08-14 16:50:48.000000000 +0200
++++ glib/Makefile.in	2010-08-14 16:50:48.000000000 +0200
+@@ -82,7 +82,6 @@
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
  libpoppler_glib_la_DEPENDENCIES =  \
--	$(top_builddir)/poppler/libpoppler.la $(am__DEPENDENCIES_1) \
+-	$(top_builddir)/poppler/libpoppler.la \
+ 	$(top_builddir)/poppler/libpoppler-cairo.la \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
- 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
- am__objects_1 = poppler-enums.lo
-@@ -80,7 +79,6 @@
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+@@ -105,8 +104,7 @@
  @BUILD_WITH_GDK_TRUE@	test-poppler-glib.$(OBJEXT)
  test_poppler_glib_OBJECTS = $(am_test_poppler_glib_OBJECTS)
  @BUILD_WITH_GDK_TRUE@test_poppler_glib_DEPENDENCIES =  \
 -@BUILD_WITH_GDK_TRUE@	$(top_builddir)/poppler/libpoppler.la \
- @BUILD_WITH_GDK_TRUE@	libpoppler-glib.la $(am__DEPENDENCIES_1) \
+-@BUILD_WITH_GDK_TRUE@	libpoppler-glib.la $(am__DEPENDENCIES_1) \
++@BUILD_WITH_GDK_TRUE@	$(am__DEPENDENCIES_1) \
  @BUILD_WITH_GDK_TRUE@	$(am__DEPENDENCIES_1) \
- @BUILD_WITH_GDK_TRUE@	$(am__DEPENDENCIES_1) \
-@@ -295,7 +293,7 @@
- @BUILD_CAIRO_OUTPUT_TRUE@	$(top_builddir)/poppler/libpoppler-cairo.la	\
- @BUILD_CAIRO_OUTPUT_TRUE@	$(CAIRO_LIBS)
- 
+ @BUILD_WITH_GDK_TRUE@	$(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir) -I$(top_builddir)/poppler
+@@ -386,7 +384,7 @@
+ top_srcdir = @top_srcdir@
+ win32_libs = @win32_libs@
+ AM_LDFLAGS = @auto_import_flags@
 -SUBDIRS = . reference demo
 +SUBDIRS = . reference
  INCLUDES = \
  	-DG_LOG_DOMAIN=\"Poppler\"		\
  	-I$(top_srcdir)				\
-@@ -336,7 +334,7 @@
+@@ -439,7 +437,7 @@
  	poppler-private.h
  
  libpoppler_glib_la_LIBADD = \
 -	$(top_builddir)/poppler/libpoppler.la		\
-+	-lpoppler					\
++	-lpoppler	\
+ 	$(top_builddir)/poppler/libpoppler-cairo.la	\
  	$(POPPLER_GLIB_LIBS)				\
  	$(GDK_LIBS)					\
- 	$(FREETYPE_LIBS)				\
-@@ -348,7 +346,7 @@
+@@ -451,7 +449,7 @@
  @BUILD_WITH_GDK_TRUE@       test-poppler-glib.cc
  
  @BUILD_WITH_GDK_TRUE@test_poppler_glib_LDADD = \

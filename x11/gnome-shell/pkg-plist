@@ -1,5 +1,5 @@
 bin/gnome-shell
-lib/gnome-shell/Big-1.0.typelib
+bin/gnome-shell-clock-preferences
 lib/gnome-shell/Gdm-1.0.typelib
 lib/gnome-shell/Shell-0.1.typelib
 lib/gnome-shell/St-1.0.typelib
@@ -7,14 +7,21 @@ lib/mutter/plugins/libgnome-shell.a
 lib/mutter/plugins/libgnome-shell.la
 lib/mutter/plugins/libgnome-shell.so
 share/applications/gnome-shell.desktop
+share/applications/gnome-shell-clock-preferences.desktop
+%%DATADIR%%/clock-preferences.ui
 %%DATADIR%%/images/close-black.svg
 %%DATADIR%%/images/magnifier.svg
 %%DATADIR%%/js/misc/docInfo.js
 %%DATADIR%%/js/misc/format.js
+%%DATADIR%%/js/misc/gnomeSession.js
 %%DATADIR%%/js/misc/params.js
+%%DATADIR%%/js/misc/telepathy.js
+%%DATADIR%%/js/perf/core.js
+%%DATADIR%%/js/prefs/clockPreferences.js
 %%DATADIR%%/js/ui/altTab.js
 %%DATADIR%%/js/ui/appDisplay.js
 %%DATADIR%%/js/ui/appFavorites.js
+%%DATADIR%%/js/ui/boxpointer.js
 %%DATADIR%%/js/ui/calendar.js
 %%DATADIR%%/js/ui/chrome.js
 %%DATADIR%%/js/ui/dash.js
@@ -26,6 +33,8 @@ share/applications/gnome-shell.desktop
 %%DATADIR%%/js/ui/lightbox.js
 %%DATADIR%%/js/ui/link.js
 %%DATADIR%%/js/ui/lookingGlass.js
+%%DATADIR%%/js/ui/magnifier.js
+%%DATADIR%%/js/ui/magnifierDBus.js
 %%DATADIR%%/js/ui/main.js
 %%DATADIR%%/js/ui/messageTray.js
 %%DATADIR%%/js/ui/notificationDaemon.js
@@ -33,13 +42,12 @@ share/applications/gnome-shell.desktop
 %%DATADIR%%/js/ui/placeDisplay.js
 %%DATADIR%%/js/ui/panel.js
 %%DATADIR%%/js/ui/runDialog.js
+%%DATADIR%%/js/ui/scripting.js
 %%DATADIR%%/js/ui/search.js
 %%DATADIR%%/js/ui/shellDBus.js
 %%DATADIR%%/js/ui/statusMenu.js
-%%DATADIR%%/js/ui/sidebar.js
+%%DATADIR%%/js/ui/telepathyClient.js
 %%DATADIR%%/js/ui/tweener.js
-%%DATADIR%%/js/ui/widget.js
-%%DATADIR%%/js/ui/widgetBox.js
 %%DATADIR%%/js/ui/windowAttentionHandler.js
 %%DATADIR%%/js/ui/windowManager.js
 %%DATADIR%%/js/ui/workspace.js
@@ -97,10 +105,13 @@ share/locale/sr/LC_MESSAGES/gnome-shell.mo
 share/locale/sr@latin/LC_MESSAGES/gnome-shell.mo
 share/locale/sv/LC_MESSAGES/gnome-shell.mo
 share/locale/tr/LC_MESSAGES/gnome-shell.mo
+share/locale/uk/LC_MESSAGES/gnome-shell.mo
 share/locale/vi/LC_MESSAGES/gnome-shell.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-shell.mo
 @dirrm %%DATADIR%%/theme
 @dirrm %%DATADIR%%/js/ui
+@dirrm %%DATADIR%%/js/prefs
+@dirrm %%DATADIR%%/js/perf
 @dirrm %%DATADIR%%/js/misc
 @dirrm %%DATADIR%%/js
 @dirrm %%DATADIR%%/images

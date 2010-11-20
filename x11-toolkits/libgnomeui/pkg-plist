@@ -103,6 +103,7 @@ share/locale/is/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/it/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ja/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ka/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/kk/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/kn/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ko/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ku/LC_MESSAGES/libgnomeui-2.0.mo
@@ -148,6 +149,7 @@ share/locale/th/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/tk/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/tr/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/tt/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/ug/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/uk/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/uz@cyrillic/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/vi/LC_MESSAGES/libgnomeui-2.0.mo
@@ -171,6 +173,8 @@ share/pixmaps/gnome-about-logo.png
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/uz@cyrillic/LC_MESSAGES
 @dirrmtry share/locale/uz@cyrillic
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/tt/LC_MESSAGES
 @dirrmtry share/locale/tt
 @dirrmtry share/locale/te/LC_MESSAGES
@@ -203,6 +207,8 @@ share/pixmaps/gnome-about-logo.png
 @dirrmtry share/locale/la
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/fur/LC_MESSAGES

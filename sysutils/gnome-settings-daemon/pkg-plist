@@ -1,3 +1,4 @@
+etc/dbus-1/system.d/org.gnome.SettingsDaemon.DateTimeMechanism.conf
 etc/xdg/autostart/gnome-settings-daemon.desktop
 include/gnome-settings-daemon-2.0/gnome-settings-daemon/gnome-settings-client.h
 include/gnome-settings-daemon-2.0/gnome-settings-daemon/gnome-settings-plugin.h
@@ -35,6 +36,9 @@ lib/gnome-settings-daemon-2.0/libkeyboard.so
 lib/gnome-settings-daemon-2.0/libmouse.a
 lib/gnome-settings-daemon-2.0/libmouse.la
 lib/gnome-settings-daemon-2.0/libmouse.so
+lib/gnome-settings-daemon-2.0/libsmartcard.a
+lib/gnome-settings-daemon-2.0/libsmartcard.la
+lib/gnome-settings-daemon-2.0/libsmartcard.so
 lib/gnome-settings-daemon-2.0/libsound.a
 lib/gnome-settings-daemon-2.0/libsound.la
 lib/gnome-settings-daemon-2.0/libsound.so
@@ -52,6 +56,7 @@ lib/gnome-settings-daemon-2.0/libxsettings.la
 lib/gnome-settings-daemon-2.0/libxsettings.so
 %%PULSEAUDIO%%lib/gnome-settings-daemon-2.0/media-keys.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/mouse.gnome-settings-plugin
+lib/gnome-settings-daemon-2.0/smartcard.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/sound.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/typing-break.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/xrandr.gnome-settings-plugin
@@ -59,13 +64,20 @@ lib/gnome-settings-daemon-2.0/xrdb.gnome-settings-plugin
 lib/gnome-settings-daemon-2.0/xsettings.gnome-settings-plugin
 libdata/pkgconfig/gnome-settings-daemon.pc
 libexec/gnome-settings-daemon
+libexec/gsd-datetime-mechanism
 libexec/gsd-locate-pointer
 share/dbus-1/services/org.gnome.SettingsDaemon.service
+share/dbus-1/system-services/org.gnome.SettingsDaemon.DateTimeMechanism.service
 share/gnome-control-center/keybindings/50-accessibility.xml
 %%DATADIR%%/acme.ui
 %%DATADIR%%/gsd-a11y-preferences-dialog.ui
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-capslock-off.png
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-capslock-on.png
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-numlock-off.png
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-numlock-on.png
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-scrolllock-off.png
+%%DATADIR%%/icons/hicolor/64x64/devices/kbd-scrolllock-on.png
 %%DATADIR%%/modmap-dialog.ui
-%%DATADIR%%/show-layout.ui
 %%DATADIR%%/xrdb/Editres.ad
 %%DATADIR%%/xrdb/Emacs.ad
 %%DATADIR%%/xrdb/General.ad
@@ -176,11 +188,18 @@ share/locale/zh_CN/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/zu/LC_MESSAGES/gnome-settings-daemon.mo
+share/polkit-1/actions/org.gnome.settingsdaemon.datetimemechanism.policy
 @dirrm %%DATADIR%%/xrdb
+@dirrm %%DATADIR%%/icons/hicolor/64x64/devices
+@dirrm %%DATADIR%%/icons/hicolor/64x64
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
 @dirrm lib/gnome-settings-daemon-2.0
 @dirrm include/gnome-settings-daemon-2.0/gnome-settings-daemon
 @dirrm include/gnome-settings-daemon-2.0
+@dirrmtry etc/gnome-settings-daemon/xrandr
+@dirrmtry etc/gnome-settings-daemon
 @dirrmtry share/locale/zu/LC_MESSAGES
 @dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES

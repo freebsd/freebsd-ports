@@ -1,2 +1,6 @@
+bin/at-spi-dbus-bus
+etc/at-spi2/accessibility.conf
+etc/xdg/autostart/at-spi-dbus-bus.desktop
 libexec/at-spi2-registryd
 share/dbus-1/services/org.a11y.atspi.Registry.service
+@dirrm etc/at-spi2

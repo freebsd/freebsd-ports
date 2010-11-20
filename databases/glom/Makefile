@@ -3,12 +3,12 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/glom/Makefile,v 1.28 2009/10/11 10:43:05 kwm Exp $
+#   $MCom: ports/databases/glom/Makefile,v 1.30 2010/11/04 15:57:03 kwm Exp $
 #
 
 PORTNAME=	glom
 PORTVERSION=	1.12.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,7 +21,7 @@ LIB_DEPENDS=	gdamm-4.0.12:${PORTSDIR}/databases/libgdamm \
 		gtksourceviewmm-2.0.2:${PORTSDIR}/x11-toolkits/libgtksourceviewmm \
 		avahi-ui.0:${PORTSDIR}/net/avahi-gtk \
 		epc-1.0.2:${PORTSDIR}/www/libepc \
-		goocanvasmm-0.1.5:${PORTSDIR}/graphics/goocanvasmm
+		goocanvasmm-1.0.5:${PORTSDIR}/graphics/goocanvasmm
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-4.0.pc:${PORTSDIR}/databases/libgda4-postgresql
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \

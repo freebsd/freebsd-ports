@@ -3,12 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/graphics/cairomm/Makefile,v 1.4 2008/06/16 22:38:50 mezz Exp $
+#   $MCom: ports/graphics/cairomm/Makefile,v 1.16 2010/10/26 09:42:43 kwm Exp $
 #
 
 PORTNAME=	cairomm
-PORTVERSION=	1.8.4
-PORTREVISION=	1
+PORTVERSION=	1.9.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
 
@@ -18,6 +17,8 @@ COMMENT=	C++ interface to cairo
 LIB_DEPENDS=	xml\\+\\+-2.6:${PORTSDIR}/textproc/libxml++26 \
 		cairo.2:${PORTSDIR}/graphics/cairo
 
+LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
 USE_AUTOTOOLS=	libtool:22
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes

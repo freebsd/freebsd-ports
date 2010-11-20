@@ -3,6 +3,8 @@ lib/libgda-%%VERSION%%/providers/libgda-mysql.la
 lib/libgda-%%VERSION%%/providers/libgda-mysql.so
 libdata/pkgconfig/libgda-mysql-%%VERSION%%.pc
 share/libgda-%%VERSION%%/mysql_specs_add_column.xml
+share/libgda-%%VERSION%%/mysql_specs_comment_table.xml
+share/libgda-%%VERSION%%/mysql_specs_comment_column.xml
 share/libgda-%%VERSION%%/mysql_specs_create_db.xml
 share/libgda-%%VERSION%%/mysql_specs_create_index.xml
 share/libgda-%%VERSION%%/mysql_specs_create_table.xml

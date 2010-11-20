@@ -1,20 +1,11 @@
---- src/orca/orca.in.orig	2009-07-17 10:44:34.000000000 +1000
-+++ src/orca/orca.in	2009-07-17 10:46:14.000000000 +1000
-@@ -30,7 +30,7 @@
- 
- # Set the user's $PATH for this script.
- #
--PATH="${PATH}:/usr/ccs/bin:/usr/bin:/usr/sbin:/bin:/usr/sfw/bin:/usr/openwin/bin:/usr/X11R6/bin"
-+PATH="${PATH}:/usr/bin:/usr/sbin:/bin:/usr/local/bin"
- export PATH
- 
- # Save the arguments away.
-@@ -84,7 +84,7 @@ restoreXmodmap()
- cleanup()
- {
-     USERID=`id | cut -f2 -d= | cut -f1 -d\(`
--    PIDS=`ps -eo pid,ruid,args | grep $USERID | \
-+    PIDS=`ps -exo pid,ruid,args | grep $USERID | \
- 	egrep "orca[.]orca|OAFIID[:]GNOME_Speech|OAFIID[:]GNOME_Magnifier|festival [-][-]server"|\
- 	grep -v grep | awk '{ print $1 }'`
-     IFS='
+--- src/orca/orca.in.orig	2010-08-30 18:09:24.000000000 +0000
++++ src/orca/orca.in	2010-09-11 16:18:35.000000000 +0000
+@@ -183,7 +183,7 @@
+     if [ "x$DBUS_SESSION_BUS_ADDRESS" != "x" ] && [ $WONT_EXIT -gt 0 ] ; then
+         IFS=:
+         DBUSSENDCMD=
+-        for dir in $PATH:/usr/sfw/bin:/usr/local/bin; do
++        for dir in $PATH:/usr/local/bin; do
+             test -x "$dir/dbus-send" && {
+                 DBUSSENDCMD="$dir/dbus-send"
+                 break

@@ -6,7 +6,7 @@
    /* Update Soup session */
 -  session = webkit_get_default_session ();
 -  g_object_set (G_OBJECT (session), webkit_pref, langs_str, NULL);
-+  if (strlen (langs_str) > 0) {
++  if (langs_str != NULL && strlen (langs_str) > 0) {
 +      session = webkit_get_default_session ();
 +      g_object_set (G_OBJECT (session), webkit_pref, langs_str, NULL);
 +  }

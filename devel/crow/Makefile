@@ -19,6 +19,8 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 RUN_DEPENDS=	xdg-desktop-menu:${PORTSDIR}/devel/xdg-utils
 
+BROKEN=		Doesn't build with Glibmm 2.25
+
 PROJECTHOST=	nothing-personal
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gtk20

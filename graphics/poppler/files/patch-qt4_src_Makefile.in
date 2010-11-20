@@ -1,19 +1,19 @@
---- qt4/src/Makefile.in.orig	2008-07-02 14:06:32.000000000 -0500
-+++ qt4/src/Makefile.in	2008-07-02 14:07:35.000000000 -0500
-@@ -62,7 +62,6 @@
+--- qt4/src/Makefile.in.orig	2010-07-07 14:22:29.000000000 +0200
++++ qt4/src/Makefile.in	2010-07-07 14:23:40.000000000 +0200
+@@ -79,7 +79,6 @@
  LTLIBRARIES = $(lib_LTLIBRARIES)
  am__DEPENDENCIES_1 =
  libpoppler_qt4_la_DEPENDENCIES =  \
--	$(top_builddir)/poppler/libpoppler.la $(am__DEPENDENCIES_1) \
- 	$(am__DEPENDENCIES_1) $(am__append_1)
+-	$(top_builddir)/poppler/libpoppler.la \
+ 	$(top_builddir)/poppler/libpoppler-arthur.la \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
  am_libpoppler_qt4_la_OBJECTS = poppler-document.lo poppler-page.lo \
- 	poppler-fontinfo.lo poppler-embeddedfile.lo poppler-textbox.lo \
-@@ -303,7 +302,7 @@
- 	poppler-export.h			\
- 	poppler-private.h
+@@ -384,7 +383,7 @@
+ 	poppler-page-transition-private.h
  
--libpoppler_qt4_la_LIBADD = $(top_builddir)/poppler/libpoppler.la \
-+libpoppler_qt4_la_LIBADD = -lpoppler \
- 	$(FONTCONFIG_LIBS) $(POPPLER_QT4_LIBS) $(am__append_1)
- libpoppler_qt4_la_LDFLAGS = -version-info 3:0:0
- all: all-am
+ libpoppler_qt4_la_LIBADD = \
+-	$(top_builddir)/poppler/libpoppler.la	\
++	-lpoppler	\
+ 	$(top_builddir)/poppler/libpoppler-arthur.la	\
+ 	$(FONTCONFIG_LIBS)				\
+ 	$(POPPLER_QT4_LIBS)

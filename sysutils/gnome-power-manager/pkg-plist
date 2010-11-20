@@ -7,6 +7,7 @@ libdata/bonobo/servers/GNOME_BrightnessApplet.server
 libdata/bonobo/servers/GNOME_InhibitApplet.server
 libexec/gnome-brightness-applet
 libexec/gnome-inhibit-applet
+sbin/gnome-power-backlight-helper
 share/applications/gnome-power-preferences.desktop
 share/applications/gnome-power-statistics.desktop
 share/dbus-1/services/gnome-power-manager.service
@@ -690,6 +691,7 @@ share/omf/gnome-power-manager/gnome-power-manager-pa.omf
 share/omf/gnome-power-manager/gnome-power-manager-ru.omf
 share/omf/gnome-power-manager/gnome-power-manager-sv.omf
 share/omf/gnome-power-manager/gnome-power-manager-zh_CN.omf
+share/polkit-1/actions/org.gnome.power.policy
 @dirrm share/omf/gnome-power-manager
 @dirrm share/gnome/help/gnome-power-manager/zh_CN/figures
 @dirrm share/gnome/help/gnome-power-manager/zh_CN

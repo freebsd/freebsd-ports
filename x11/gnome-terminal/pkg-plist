@@ -1,6 +1,7 @@
 bin/gnome-terminal
 share/applications/gnome-terminal.desktop
 %%DATADIR%%/encodings-dialog.ui
+%%DATADIR%%/find-dialog.ui
 %%DATADIR%%/keybinding-editor.ui
 %%DATADIR%%/profile-manager.ui
 %%DATADIR%%/profile-new-dialog.ui
@@ -98,6 +99,7 @@ share/locale/dz/LC_MESSAGES/gnome-terminal.mo
 share/locale/el/LC_MESSAGES/gnome-terminal.mo
 share/locale/en_CA/LC_MESSAGES/gnome-terminal.mo
 share/locale/en_GB/LC_MESSAGES/gnome-terminal.mo
+share/locale/eo/LC_MESSAGES/gnome-terminal.mo
 share/locale/es/LC_MESSAGES/gnome-terminal.mo
 share/locale/et/LC_MESSAGES/gnome-terminal.mo
 share/locale/en@shaw/LC_MESSAGES/gnome-terminal.mo
@@ -118,6 +120,7 @@ share/locale/id/LC_MESSAGES/gnome-terminal.mo
 share/locale/it/LC_MESSAGES/gnome-terminal.mo
 share/locale/ja/LC_MESSAGES/gnome-terminal.mo
 share/locale/ka/LC_MESSAGES/gnome-terminal.mo
+share/locale/kk/LC_MESSAGES/gnome-terminal.mo
 share/locale/kn/LC_MESSAGES/gnome-terminal.mo
 share/locale/ko/LC_MESSAGES/gnome-terminal.mo
 share/locale/ku/LC_MESSAGES/gnome-terminal.mo
@@ -156,6 +159,7 @@ share/locale/ta/LC_MESSAGES/gnome-terminal.mo
 share/locale/te/LC_MESSAGES/gnome-terminal.mo
 share/locale/th/LC_MESSAGES/gnome-terminal.mo
 share/locale/tr/LC_MESSAGES/gnome-terminal.mo
+share/locale/ug/LC_MESSAGES/gnome-terminal.mo
 share/locale/uk/LC_MESSAGES/gnome-terminal.mo
 share/locale/vi/LC_MESSAGES/gnome-terminal.mo
 share/locale/wa/LC_MESSAGES/gnome-terminal.mo
@@ -234,6 +238,8 @@ share/omf/gnome-terminal/gnome-terminal-zh_TW.omf
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -256,6 +262,8 @@ share/omf/gnome-terminal/gnome-terminal-zh_TW.omf
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/fur/LC_MESSAGES

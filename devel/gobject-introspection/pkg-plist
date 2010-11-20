@@ -1,14 +1,30 @@
+bin/g-ir-annotation-tool
 bin/g-ir-compiler
 bin/g-ir-generate
 bin/g-ir-scanner
+include/gobject-introspection-1.0/giarginfo.h
 include/gobject-introspection-1.0/gibaseinfo.h
+include/gobject-introspection-1.0/gicallableinfo.h
+include/gobject-introspection-1.0/giconstantinfo.h
+include/gobject-introspection-1.0/gienuminfo.h
+include/gobject-introspection-1.0/gierrordomaininfo.h
+include/gobject-introspection-1.0/gifieldinfo.h
 include/gobject-introspection-1.0/gifunctioninfo.h
+include/gobject-introspection-1.0/giinterfaceinfo.h
+include/gobject-introspection-1.0/giobjectinfo.h
+include/gobject-introspection-1.0/gipropertyinfo.h
+include/gobject-introspection-1.0/giregisteredtypeinfo.h
 include/gobject-introspection-1.0/girepository.h
 include/gobject-introspection-1.0/girffi.h
+include/gobject-introspection-1.0/gisignalinfo.h
+include/gobject-introspection-1.0/gistructinfo.h
+include/gobject-introspection-1.0/gitypeinfo.h
 include/gobject-introspection-1.0/gitypelib.h
 include/gobject-introspection-1.0/gitypes.h
-lib/girepository-1.0/Everything-1.0.typelib
-lib/girepository-1.0/GIMarshallingTests-1.0.typelib
+include/gobject-introspection-1.0/giunioninfo.h
+include/gobject-introspection-1.0/givfuncinfo.h
+lib/girepository-1.0/DBus-1.0.typelib
+lib/girepository-1.0/DBusGLib-1.0.typelib
 lib/girepository-1.0/GIRepository-2.0.typelib
 lib/girepository-1.0/GL-1.0.typelib
 lib/girepository-1.0/GLib-2.0.typelib
@@ -29,6 +45,9 @@ lib/gobject-introspection/giscanner/__init__.pyo
 lib/gobject-introspection/giscanner/_giscanner.a
 lib/gobject-introspection/giscanner/_giscanner.la
 lib/gobject-introspection/giscanner/_giscanner.so
+lib/gobject-introspection/giscanner/annotationmain.py
+lib/gobject-introspection/giscanner/annotationmain.pyc
+lib/gobject-introspection/giscanner/annotationmain.pyo
 lib/gobject-introspection/giscanner/annotationparser.py
 lib/gobject-introspection/giscanner/annotationparser.pyc
 lib/gobject-introspection/giscanner/annotationparser.pyo
@@ -38,30 +57,36 @@ lib/gobject-introspection/giscanner/ast.pyo
 lib/gobject-introspection/giscanner/cachestore.py
 lib/gobject-introspection/giscanner/cachestore.pyc
 lib/gobject-introspection/giscanner/cachestore.pyo
+lib/gobject-introspection/giscanner/codegen.py
+lib/gobject-introspection/giscanner/codegen.pyc
+lib/gobject-introspection/giscanner/codegen.pyo
 lib/gobject-introspection/giscanner/config.py
 lib/gobject-introspection/giscanner/config.pyc
 lib/gobject-introspection/giscanner/config.pyo
 lib/gobject-introspection/giscanner/dumper.py
 lib/gobject-introspection/giscanner/dumper.pyc
 lib/gobject-introspection/giscanner/dumper.pyo
+lib/gobject-introspection/giscanner/gdumpparser.py
+lib/gobject-introspection/giscanner/gdumpparser.pyc
+lib/gobject-introspection/giscanner/gdumpparser.pyo
 lib/gobject-introspection/giscanner/girparser.py
 lib/gobject-introspection/giscanner/girparser.pyc
 lib/gobject-introspection/giscanner/girparser.pyo
 lib/gobject-introspection/giscanner/girwriter.py
 lib/gobject-introspection/giscanner/girwriter.pyc
 lib/gobject-introspection/giscanner/girwriter.pyo
-lib/gobject-introspection/giscanner/glibast.py
-lib/gobject-introspection/giscanner/glibast.pyc
-lib/gobject-introspection/giscanner/glibast.pyo
-lib/gobject-introspection/giscanner/glibtransformer.py
-lib/gobject-introspection/giscanner/glibtransformer.pyc
-lib/gobject-introspection/giscanner/glibtransformer.pyo
+lib/gobject-introspection/giscanner/introspectablepass.py
+lib/gobject-introspection/giscanner/introspectablepass.pyc
+lib/gobject-introspection/giscanner/introspectablepass.pyo
 lib/gobject-introspection/giscanner/libtoolimporter.py
 lib/gobject-introspection/giscanner/libtoolimporter.pyc
 lib/gobject-introspection/giscanner/libtoolimporter.pyo
-lib/gobject-introspection/giscanner/minixpath.py
-lib/gobject-introspection/giscanner/minixpath.pyc
-lib/gobject-introspection/giscanner/minixpath.pyo
+lib/gobject-introspection/giscanner/maintransformer.py
+lib/gobject-introspection/giscanner/maintransformer.pyc
+lib/gobject-introspection/giscanner/maintransformer.pyo
+lib/gobject-introspection/giscanner/message.py
+lib/gobject-introspection/giscanner/message.pyc
+lib/gobject-introspection/giscanner/message.pyo
 lib/gobject-introspection/giscanner/odict.py
 lib/gobject-introspection/giscanner/odict.pyc
 lib/gobject-introspection/giscanner/odict.pyo
@@ -74,6 +99,9 @@ lib/gobject-introspection/giscanner/shlibs.pyo
 lib/gobject-introspection/giscanner/sourcescanner.py
 lib/gobject-introspection/giscanner/sourcescanner.pyc
 lib/gobject-introspection/giscanner/sourcescanner.pyo
+lib/gobject-introspection/giscanner/testcodegen.py
+lib/gobject-introspection/giscanner/testcodegen.pyc
+lib/gobject-introspection/giscanner/testcodegen.pyo
 lib/gobject-introspection/giscanner/transformer.py
 lib/gobject-introspection/giscanner/transformer.pyc
 lib/gobject-introspection/giscanner/transformer.pyo
@@ -86,20 +114,12 @@ lib/gobject-introspection/giscanner/xmlwriter.pyo
 lib/libgirepository-1.0.a
 lib/libgirepository-1.0.la
 lib/libgirepository-1.0.so
-lib/libgirepository-1.0.so.0
-lib/libgirepository-everything-1.0.a
-lib/libgirepository-everything-1.0.la
-lib/libgirepository-everything-1.0.so
-lib/libgirepository-everything-1.0.so.1
-lib/libgirepository-gimarshallingtests-1.0.a
-lib/libgirepository-gimarshallingtests-1.0.la
-lib/libgirepository-gimarshallingtests-1.0.so
-lib/libgirepository-gimarshallingtests-1.0.so.1
+lib/libgirepository-1.0.so.1
 libdata/pkgconfig/gobject-introspection-1.0.pc
 libdata/pkgconfig/gobject-introspection-no-export-1.0.pc
 share/aclocal/introspection.m4
-share/gir-1.0/Everything-1.0.gir
-share/gir-1.0/GIMarshallingTests-1.0.gir
+share/gir-1.0/DBus-1.0.gir
+share/gir-1.0/DBusGLib-1.0.gir
 share/gir-1.0/GIRepository-2.0.gir
 share/gir-1.0/GL-1.0.gir
 share/gir-1.0/GLib-2.0.gir
@@ -115,9 +135,61 @@ share/gir-1.0/xft-2.0.gir
 share/gir-1.0/xlib-2.0.gir
 share/gir-1.0/xrandr-1.3.gir
 share/gobject-introspection-1.0/Makefile.introspection
+share/gobject-introspection-1.0/gdump.c
+share/gobject-introspection-1.0/tests/everything.c
+share/gobject-introspection-1.0/tests/everything.h
+share/gobject-introspection-1.0/tests/gimarshallingtests.c
+share/gobject-introspection-1.0/tests/gimarshallingtests.h
+share/gobject-introspection-1.0/tests/regress.c
+share/gobject-introspection-1.0/tests/regress.h
+share/gtk-doc/html/gi/annotation-glossary.html
+share/gtk-doc/html/gi/gi-GIArgInfo.html
+share/gtk-doc/html/gi/gi-GIBaseInfo.html
+share/gtk-doc/html/gi/gi-GICallableInfo.html
+share/gtk-doc/html/gi/gi-GIConstantInfo.html
+share/gtk-doc/html/gi/gi-GIEnumInfo.html
+share/gtk-doc/html/gi/gi-GIErrorDomainInfo.html
+share/gtk-doc/html/gi/gi-GIFieldInfo.html
+share/gtk-doc/html/gi/gi-GIFunctionInfo.html
+share/gtk-doc/html/gi/gi-GIInterfaceInfo.html
+share/gtk-doc/html/gi/gi-GIObjectInfo.html
+share/gtk-doc/html/gi/gi-GIPropertyInfo.html
+share/gtk-doc/html/gi/gi-GIRegisteredTypeInfo.html
+share/gtk-doc/html/gi/gi-GISignalInfo.html
+share/gtk-doc/html/gi/gi-GIStructInfo.html
+share/gtk-doc/html/gi/gi-GITypeInfo.html
+share/gtk-doc/html/gi/gi-GIUnionInfo.html
+share/gtk-doc/html/gi/gi-GIVFuncInfo.html
+share/gtk-doc/html/gi/gi-ffi.html
+share/gtk-doc/html/gi/gi-gir-reference.html
+share/gtk-doc/html/gi/gi-gir.html
+share/gtk-doc/html/gi/gi-girepository.html
+share/gtk-doc/html/gi/gi-girffi.html
+share/gtk-doc/html/gi/gi-gtypelib.html
+share/gtk-doc/html/gi/gi-libgirepository.html
+share/gtk-doc/html/gi/gi-overview.html
+share/gtk-doc/html/gi/gi-repository-structs.html
+share/gtk-doc/html/gi/gi-struct-hierarchy.html
+share/gtk-doc/html/gi/gi-typelib.html
+share/gtk-doc/html/gi/gi.devhelp
+share/gtk-doc/html/gi/gi.devhelp2
+share/gtk-doc/html/gi/girepository.html
+share/gtk-doc/html/gi/glib.html
+share/gtk-doc/html/gi/home.png
+share/gtk-doc/html/gi/index.html
+share/gtk-doc/html/gi/index.sgml
+share/gtk-doc/html/gi/left.png
+share/gtk-doc/html/gi/overview.png
+share/gtk-doc/html/gi/right.png
+share/gtk-doc/html/gi/style.css
+share/gtk-doc/html/gi/up.png
+@dirrm share/gtk-doc/html/gi
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrm share/gobject-introspection-1.0/tests
 @dirrm share/gobject-introspection-1.0
-@dirrm include/gobject-introspection-1.0
+@dirrmtry share/gir-1.0
 @dirrmtry lib/girepository-1.0
 @dirrm lib/gobject-introspection/giscanner
 @dirrm lib/gobject-introspection
-@dirrmtry share/gir-1.0
+@dirrm include/gobject-introspection-1.0

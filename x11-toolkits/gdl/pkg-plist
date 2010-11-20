@@ -13,14 +13,14 @@ lib/libgdl-1.la
 lib/libgdl-1.so
 lib/libgdl-1.so.3
 libdata/pkgconfig/gdl-1.0.pc
-%%DOCSDIR%%/GdlDock.html
-%%DOCSDIR%%/GdlDockBar.html
-%%DOCSDIR%%/GdlDockItem.html
-%%DOCSDIR%%/GdlDockLayout.html
-%%DOCSDIR%%/GdlDockMaster.html
-%%DOCSDIR%%/GdlDockObject.html
-%%DOCSDIR%%/GdlDockPlaceholder.html
+%%DOCSDIR%%/gdl-gdl-dock-bar.html
+%%DOCSDIR%%/gdl-gdl-dock-item.html
+%%DOCSDIR%%/gdl-gdl-dock-layout.html
+%%DOCSDIR%%/gdl-gdl-dock-master.html
+%%DOCSDIR%%/gdl-gdl-dock-object.html
+%%DOCSDIR%%/gdl-gdl-dock-placeholder.html
 %%DOCSDIR%%/gdl-gdl-tools.html
+%%DOCSDIR%%/gdl-gdl-dock.html
 %%DOCSDIR%%/gdl-main.html
 %%DOCSDIR%%/gdl.devhelp
 %%DOCSDIR%%/gdl.devhelp2
@@ -61,6 +61,8 @@ share/locale/he/LC_MESSAGES/gdl-1.mo
 share/locale/hi/LC_MESSAGES/gdl-1.mo
 share/locale/hr/LC_MESSAGES/gdl-1.mo
 share/locale/hu/LC_MESSAGES/gdl-1.mo
+share/locale/hy/LC_MESSAGES/gdl-1.mo
+share/locale/id/LC_MESSAGES/gdl-1.mo
 share/locale/it/LC_MESSAGES/gdl-1.mo
 share/locale/ja/LC_MESSAGES/gdl-1.mo
 share/locale/ko/LC_MESSAGES/gdl-1.mo
@@ -93,6 +95,7 @@ share/locale/sv/LC_MESSAGES/gdl-1.mo
 share/locale/te/LC_MESSAGES/gdl-1.mo
 share/locale/th/LC_MESSAGES/gdl-1.mo
 share/locale/tr/LC_MESSAGES/gdl-1.mo
+share/locale/ug/LC_MESSAGES/gdl-1.mo
 share/locale/uk/LC_MESSAGES/gdl-1.mo
 share/locale/vi/LC_MESSAGES/gdl-1.mo
 share/locale/zh_CN/LC_MESSAGES/gdl-1.mo
@@ -105,6 +108,8 @@ share/locale/zh_TW/LC_MESSAGES/gdl-1.mo
 @dirrm include/libgdl-1.0
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -121,6 +126,8 @@ share/locale/zh_TW/LC_MESSAGES/gdl-1.mo
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
+@dirrmtry share/locale/hy/LC_MESSAGES
+@dirrmtry share/locale/hy
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES

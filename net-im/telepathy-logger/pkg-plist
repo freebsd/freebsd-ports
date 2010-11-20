@@ -1,0 +1,35 @@
+include/telepathy-logger-0.1/telepathy-logger/entity.h
+include/telepathy-logger-0.1/telepathy-logger/entry-text.h
+include/telepathy-logger-0.1/telepathy-logger/entry.h
+include/telepathy-logger-0.1/telepathy-logger/log-manager.h
+include/telepathy-logger-0.1/telepathy-logger/telepathy-logger.h
+lib/libtelepathy-logger.a
+lib/libtelepathy-logger.la
+lib/libtelepathy-logger.so
+lib/libtelepathy-logger.so.1
+libdata/pkgconfig/telepathy-logger-0.1.pc
+libexec/telepathy-logger
+share/dbus-1/services/org.freedesktop.Telepathy.Client.Logger.service
+share/dbus-1/services/org.freedesktop.Telepathy.Logger.service
+share/gtk-doc/html/telepathy-logger/TplEntry.html
+share/gtk-doc/html/telepathy-logger/TplEntryText.html
+share/gtk-doc/html/telepathy-logger/ch-public.html
+share/gtk-doc/html/telepathy-logger/home.png
+share/gtk-doc/html/telepathy-logger/index.html
+share/gtk-doc/html/telepathy-logger/index.sgml
+share/gtk-doc/html/telepathy-logger/left.png
+share/gtk-doc/html/telepathy-logger/right.png
+share/gtk-doc/html/telepathy-logger/style.css
+share/gtk-doc/html/telepathy-logger/telepathy-logger-TplEntity.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger-TplLogManager.html
+share/gtk-doc/html/telepathy-logger/telepathy-logger.devhelp
+share/gtk-doc/html/telepathy-logger/telepathy-logger.devhelp2
+share/gtk-doc/html/telepathy-logger/up.png
+share/telepathy/clients/Logger.client
+@dirrmtry share/telepathy/clients
+@dirrmtry share/telepathy
+@dirrm share/gtk-doc/html/telepathy-logger
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrm include/telepathy-logger-0.1/telepathy-logger
+@dirrm include/telepathy-logger-0.1

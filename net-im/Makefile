@@ -29,6 +29,7 @@
     SUBDIR += farsight2
     SUBDIR += finch
     SUBDIR += firetalk
+    SUBDIR += folks
     SUBDIR += freetalk
     SUBDIR += fugu
     SUBDIR += gajim
@@ -162,6 +163,7 @@
     SUBDIR += telepathy-glib
     SUBDIR += telepathy-haze
     SUBDIR += telepathy-idle
+    SUBDIR += telepathy-logger
     SUBDIR += telepathy-mission-control
     SUBDIR += telepathy-python
     SUBDIR += telepathy-qt

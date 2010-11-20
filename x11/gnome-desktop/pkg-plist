@@ -79,6 +79,7 @@ share/gnome/help/lgpl/zh_CN/lgpl.xml
 share/libgnome-desktop/pnp.ids
 share/locale/af/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/an/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/as/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/ast/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -431,3 +432,5 @@ share/pixmaps/vnterm.xpm
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry share/locale/an/LC_MESSAGES
+@dirrmtry share/locale/an

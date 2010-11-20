@@ -1,13 +1,19 @@
+bin/gdbus
 bin/gio-querymodules
+bin/glib-compile-schemas
 bin/glib-genmarshal
 bin/glib-gettextize
 bin/glib-mkenums
 bin/gobject-query
+bin/gsettings
 bin/gtester
 bin/gtester-report
+etc/bash_completion.d/gdbus-bash-completion.sh
+etc/bash_completion.d/gsettings-bash-completion.sh
 include/gio-unix-2.0/gio/gdesktopappinfo.h
 include/gio-unix-2.0/gio/gfiledescriptorbased.h
 include/gio-unix-2.0/gio/gunixconnection.h
+include/gio-unix-2.0/gio/gunixcredentialsmessage.h
 include/gio-unix-2.0/gio/gunixfdlist.h
 include/gio-unix-2.0/gio/gunixfdmessage.h
 include/gio-unix-2.0/gio/gunixinputstream.h
@@ -25,8 +31,21 @@ include/glib-2.0/gio/gcontenttype.h
 include/glib-2.0/gio/gconverter.h
 include/glib-2.0/gio/gconverterinputstream.h
 include/glib-2.0/gio/gconverteroutputstream.h
+include/glib-2.0/gio/gcredentials.h
 include/glib-2.0/gio/gdatainputstream.h
 include/glib-2.0/gio/gdataoutputstream.h
+include/glib-2.0/gio/gdbusaddress.h
+include/glib-2.0/gio/gdbusauthobserver.h
+include/glib-2.0/gio/gdbusconnection.h
+include/glib-2.0/gio/gdbuserror.h
+include/glib-2.0/gio/gdbusintrospection.h
+include/glib-2.0/gio/gdbusmessage.h
+include/glib-2.0/gio/gdbusmethodinvocation.h
+include/glib-2.0/gio/gdbusnameowning.h
+include/glib-2.0/gio/gdbusnamewatching.h
+include/glib-2.0/gio/gdbusproxy.h
+include/glib-2.0/gio/gdbusserver.h
+include/glib-2.0/gio/gdbusutils.h
 include/glib-2.0/gio/gdrive.h
 include/glib-2.0/gio/gemblem.h
 include/glib-2.0/gio/gemblemedicon.h
@@ -64,9 +83,17 @@ include/glib-2.0/gio/gnativevolumemonitor.h
 include/glib-2.0/gio/gnetworkaddress.h
 include/glib-2.0/gio/gnetworkservice.h
 include/glib-2.0/gio/goutputstream.h
+include/glib-2.0/gio/gpermission.h
+include/glib-2.0/gio/gproxy.h
+include/glib-2.0/gio/gproxyaddress.h
+include/glib-2.0/gio/gproxyaddressenumerator.h
+include/glib-2.0/gio/gproxyresolver.h
 include/glib-2.0/gio/gresolver.h
 include/glib-2.0/gio/gseekable.h
+include/glib-2.0/gio/gsettings.h
+include/glib-2.0/gio/gsettingsbackend.h
 include/glib-2.0/gio/gsimpleasyncresult.h
+include/glib-2.0/gio/gsimplepermission.h
 include/glib-2.0/gio/gsocket.h
 include/glib-2.0/gio/gsocketaddress.h
 include/glib-2.0/gio/gsocketaddressenumerator.h
@@ -101,6 +128,7 @@ include/glib-2.0/glib/gcompletion.h
 include/glib-2.0/glib/gconvert.h
 include/glib-2.0/glib/gdataset.h
 include/glib-2.0/glib/gdate.h
+include/glib-2.0/glib/gdatetime.h
 include/glib-2.0/glib/gdir.h
 include/glib-2.0/glib/gerror.h
 include/glib-2.0/glib/gfileutils.h
@@ -143,6 +171,7 @@ include/glib-2.0/glib/gtestutils.h
 include/glib-2.0/glib/gthread.h
 include/glib-2.0/glib/gthreadpool.h
 include/glib-2.0/glib/gtimer.h
+include/glib-2.0/glib/gtimezone.h
 include/glib-2.0/glib/gtree.h
 include/glib-2.0/glib/gtypes.h
 include/glib-2.0/glib/gunicode.h
@@ -153,6 +182,7 @@ include/glib-2.0/glib/gvarianttype.h
 include/glib-2.0/glib/gwin32.h
 include/glib-2.0/glibconfig.h
 include/glib-2.0/gmodule.h
+include/glib-2.0/gobject/gbinding.h
 include/glib-2.0/gobject/gboxed.h
 include/glib-2.0/gobject/gclosure.h
 include/glib-2.0/gobject/genums.h
@@ -200,8 +230,10 @@ libdata/pkgconfig/gobject-2.0.pc
 libdata/pkgconfig/gthread-2.0.pc
 share/aclocal/glib-2.0.m4
 share/aclocal/glib-gettext.m4
+share/aclocal/gsettings.m4
 share/glib-2.0/gettext/mkinstalldirs
 share/glib-2.0/gettext/po/Makefile.in.in
+share/glib-2.0/schemas/gschema.dtd
 share/locale/af/LC_MESSAGES/glib20.mo
 share/locale/am/LC_MESSAGES/glib20.mo
 share/locale/ar/LC_MESSAGES/glib20.mo
@@ -245,6 +277,7 @@ share/locale/is/LC_MESSAGES/glib20.mo
 share/locale/it/LC_MESSAGES/glib20.mo
 share/locale/ja/LC_MESSAGES/glib20.mo
 share/locale/ka/LC_MESSAGES/glib20.mo
+share/locale/kk/LC_MESSAGES/glib20.mo
 share/locale/kn/LC_MESSAGES/glib20.mo
 share/locale/ko/LC_MESSAGES/glib20.mo
 share/locale/ku/LC_MESSAGES/glib20.mo
@@ -294,6 +327,11 @@ share/locale/yi/LC_MESSAGES/glib20.mo
 share/locale/zh_CN/LC_MESSAGES/glib20.mo
 share/locale/zh_HK/LC_MESSAGES/glib20.mo
 share/locale/zh_TW/LC_MESSAGES/glib20.mo
+@exec mkdir -p %D/share/glib-2.0/schemas
+@dirrmtry share/GConf/gsettings
+@dirrmtry share/GConf
+@exec glib-compile-schemas --uninstall %D/share/glib-2.0/schemas
+@dirrm share/glib-2.0/schemas
 @dirrm share/glib-2.0/gettext/po
 @dirrm share/glib-2.0/gettext
 @dirrm share/glib-2.0
@@ -342,6 +380,8 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
@@ -358,3 +398,4 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
+@dirrmtry etc/bash_completion.d

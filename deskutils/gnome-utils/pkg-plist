@@ -559,6 +559,7 @@ share/locale/el/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/en_CA/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/en@shaw/LC_MESSAGES/gnome-utils-2.0.mo
+share/locale/eo/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/et/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/eu/LC_MESSAGES/gnome-utils-2.0.mo
@@ -614,6 +615,7 @@ share/locale/ta/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/te/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/th/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-utils-2.0.mo
+share/locale/ug/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-utils-2.0.mo
@@ -787,6 +789,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES

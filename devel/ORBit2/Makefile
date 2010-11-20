@@ -3,12 +3,12 @@
 # Whom:				Chia-liang Kao <clkao@CirX.ORG>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/ORBit2/Makefile,v 1.55 2010/04/02 17:37:25 kwm Exp $
+#   $MCom: ports/devel/ORBit2/Makefile,v 1.57 2010/09/29 14:08:02 kwm Exp $
 #
 
 PORTNAME=	ORBit2
-PORTVERSION=	2.14.18
-PORTREVISION?=	1
+PORTVERSION=	2.14.19
+PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

@@ -386,6 +386,7 @@ share/locale/el/LC_MESSAGES/deskbar-applet.mo
 share/locale/en@shaw/LC_MESSAGES/deskbar-applet.mo
 share/locale/en_CA/LC_MESSAGES/deskbar-applet.mo
 share/locale/en_GB/LC_MESSAGES/deskbar-applet.mo
+share/locale/eo/LC_MESSAGES/deskbar-applet.mo
 share/locale/es/LC_MESSAGES/deskbar-applet.mo
 share/locale/et/LC_MESSAGES/deskbar-applet.mo
 share/locale/eu/LC_MESSAGES/deskbar-applet.mo
@@ -403,6 +404,7 @@ share/locale/id/LC_MESSAGES/deskbar-applet.mo
 share/locale/it/LC_MESSAGES/deskbar-applet.mo
 share/locale/ja/LC_MESSAGES/deskbar-applet.mo
 share/locale/ka/LC_MESSAGES/deskbar-applet.mo
+share/locale/kk/LC_MESSAGES/deskbar-applet.mo
 share/locale/kn/LC_MESSAGES/deskbar-applet.mo
 share/locale/ko/LC_MESSAGES/deskbar-applet.mo
 share/locale/ku/LC_MESSAGES/deskbar-applet.mo
@@ -438,6 +440,7 @@ share/locale/ta/LC_MESSAGES/deskbar-applet.mo
 share/locale/te/LC_MESSAGES/deskbar-applet.mo
 share/locale/th/LC_MESSAGES/deskbar-applet.mo
 share/locale/tr/LC_MESSAGES/deskbar-applet.mo
+share/locale/ug/LC_MESSAGES/deskbar-applet.mo
 share/locale/uk/LC_MESSAGES/deskbar-applet.mo
 share/locale/vi/LC_MESSAGES/deskbar-applet.mo
 share/locale/zh_CN/LC_MESSAGES/deskbar-applet.mo
@@ -513,6 +516,8 @@ share/omf/deskbar/deskbar-zh_CN.omf
 @dirrm libexec/deskbar-applet
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/te/LC_MESSAGES
 @dirrmtry share/locale/te
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
@@ -531,6 +536,8 @@ share/omf/deskbar/deskbar-zh_CN.omf
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES

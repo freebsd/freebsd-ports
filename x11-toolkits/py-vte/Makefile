@@ -3,7 +3,7 @@
 # Whom:					Alexander Nedotsukov <bland@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/py-vte/Makefile,v 1.3 2009/02/24 19:42:18 kwm Exp $
+#   $MCom: ports/x11-toolkits/py-vte/Makefile,v 1.5 2010/09/30 09:15:43 kwm Exp $
 #
 
 PORTREVISION=	0
@@ -22,6 +22,7 @@ PLIST=		${.CURDIR}/pkg-plist
 USE_GNOME=	gnomehack gnometarget vte pygtk2
 USE_PYTHON=	yes
 CONFIGURE_ARGS=	--enable-python \
+		--disable-Bsymbolic \
 		--disable-freetypetest
 
 .include "${MASTERDIR}/Makefile"

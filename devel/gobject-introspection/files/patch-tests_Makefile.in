@@ -1,0 +1,18 @@
+--- tests/Makefile.in.orig	2010-09-21 16:31:48.000000000 +0000
++++ tests/Makefile.in	2010-09-21 16:33:10.000000000 +0000
+@@ -819,6 +819,7 @@
+ 	$(AM_V_GEN) $(INTROSPECTION_SCANNER) $(INTROSPECTION_SCANNER_ARGS) --warn-all --warn-error --reparse-validate \
+ 	--namespace=Everything --nsversion=1.0 \
+ 	--add-include-path=$(top_builddir)/gir --include=Gio-2.0 \
++	--libtool="$(LIBTOOL)" \
+ 	--library=libeverything-1.0.la --output=$@ \
+ 	everything.h everything.c
+ 
+@@ -826,6 +827,7 @@
+ 	$(AM_V_GEN) $(INTROSPECTION_SCANNER) $(INTROSPECTION_SCANNER_ARGS) --warn-all --warn-error --reparse-validate \
+ 	--namespace=GIMarshallingTests --symbol-prefix=gi_marshalling_tests --nsversion=1.0 \
+ 	--add-include-path=$(top_builddir)/gir --include=Gio-2.0 \
++	--libtool="$(LIBTOOL)" \
+ 	--library=libgimarshallingtests-1.0.la  --output=$@ \
+ 	$(srcdir)/gimarshallingtests.h $(srcdir)/gimarshallingtests.c
+ 

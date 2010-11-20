@@ -3,7 +3,7 @@ bin/vino-preferences
 etc/xdg/autostart/vino-server.desktop
 libexec/vino-server
 share/applications/vino-preferences.desktop
-share/dbus-1/services/org.gnome.Vino.service
+share/dbus-1/services/org.freedesktop.Telepathy.Client.Vino.service
 share/locale/ar/LC_MESSAGES/vino.mo
 share/locale/as/LC_MESSAGES/vino.mo
 share/locale/ast/LC_MESSAGES/vino.mo
@@ -25,6 +25,7 @@ share/locale/el/LC_MESSAGES/vino.mo
 share/locale/en@shaw/LC_MESSAGES/vino.mo
 share/locale/en_CA/LC_MESSAGES/vino.mo
 share/locale/en_GB/LC_MESSAGES/vino.mo
+share/locale/eo/LC_MESSAGES/vino.mo
 share/locale/es/LC_MESSAGES/vino.mo
 share/locale/et/LC_MESSAGES/vino.mo
 share/locale/eu/LC_MESSAGES/vino.mo
@@ -42,6 +43,7 @@ share/locale/id/LC_MESSAGES/vino.mo
 share/locale/it/LC_MESSAGES/vino.mo
 share/locale/ja/LC_MESSAGES/vino.mo
 share/locale/ka/LC_MESSAGES/vino.mo
+share/locale/kk/LC_MESSAGES/vino.mo
 share/locale/kn/LC_MESSAGES/vino.mo
 share/locale/ko/LC_MESSAGES/vino.mo
 share/locale/ku/LC_MESSAGES/vino.mo
@@ -85,10 +87,13 @@ share/locale/xh/LC_MESSAGES/vino.mo
 share/locale/zh_CN/LC_MESSAGES/vino.mo
 share/locale/zh_HK/LC_MESSAGES/vino.mo
 share/locale/zh_TW/LC_MESSAGES/vino.mo
+share/telepathy/clients/Vino.client
 %%DATADIR%%/vino-preferences.ui
 %%DATADIR%%/vino-prompt.ui
 %%DATADIR%%/webservices
 @dirrm %%DATADIR%%
+@dirrmtry share/telepathy/clients
+@dirrmtry share/telepathy
 @dirrmtry share/applications
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
@@ -112,6 +117,8 @@ share/locale/zh_TW/LC_MESSAGES/vino.mo
 @dirrmtry share/locale/mai
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES

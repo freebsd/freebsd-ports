@@ -3,24 +3,25 @@
 # Whom:					Andreas Kohn <andreas@syndrom23.de>
 #
 # $FreeBSD$
-#   $MCom: ports/deskutils/notification-daemon/Makefile,v 1.4 2008/11/30 19:43:36 marcus Exp $
+#   $MCom: ports/deskutils/notification-daemon/Makefile,v 1.6 2010/06/28 22:16:41 kwm Exp $
 #
 
 PORTNAME=	notification-daemon
-PORTVERSION=	0.4.0
-PORTREVISION=	6
+PORTVERSION=	0.5.0
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://www.galago-project.org/files/releases/source/notification-daemon/
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Send small notifications to your desktop
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		sexy:${PORTSDIR}/x11-toolkits/libsexy \
+		canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
 		notify.1:${PORTSDIR}/devel/libnotify
 
-USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack gconf2 libwnck \
-		libglade2
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+USE_BZIP2=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack gconf2 libwnck
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_XORG=	x11 xt sm ice xext

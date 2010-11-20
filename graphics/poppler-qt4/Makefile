@@ -3,7 +3,7 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/poppler-qt4/Makefile,v 1.13 2010/03/14 22:08:43 kwm Exp $
+#   $MCom: ports/graphics/poppler-qt4/Makefile,v 1.15 2010/07/07 13:03:19 kwm Exp $
 #
 
 PORTREVISION=	0
