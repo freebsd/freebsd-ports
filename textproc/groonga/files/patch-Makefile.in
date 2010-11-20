@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2010-11-20 15:20:35.748993378 +0900
++++ Makefile.in	2010-11-20 15:20:59.415907770 +0900
+@@ -289,7 +289,7 @@
+ #dist_data_DATA =
+ EXTRA_DIST = bindings version-gen.sh
+ pkginclude_HEADERS = groonga.h
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = groonga.pc
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
