@@ -1,0 +1,6 @@
+DBIx::Skinny::Schema::Loader is schema loader for DBIx::Skinny.  It
+can dynamically load schema at run-time or statically publish them.
+
+It supports MySQL and SQLite, and PostgreSQL.
+
+WWW: http://search.cpan.org/dist/DBIx-Skinny-Schema-Loader/
