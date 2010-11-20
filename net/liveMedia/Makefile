@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2010.06.22
+PORTVERSION=	2010.11.17
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	net devel
@@ -166,7 +166,6 @@ liveMedia=		\
 		liveMedia/include/RTPSource.hh \
 		liveMedia/include/RTSPClient.hh \
 		liveMedia/include/RTSPCommon.hh \
-		liveMedia/include/RTSPOverHTTPServer.hh \
 		liveMedia/include/RTSPServer.hh \
 		liveMedia/include/SIPClient.hh \
 		liveMedia/include/ServerMediaSession.hh \
