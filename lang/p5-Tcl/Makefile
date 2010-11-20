@@ -14,13 +14,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Tcl extension module for Perl5
 
-USE_TCL=	84+
+CONFIGURE_ARGS=	--tclsh ${TCLSH}
 PERL_CONFIGURE=	yes
+USE_TCL=	84+
 
 MAN3=		Tcl.3
 
-.include <bsd.port.pre.mk>
+post-extract:
+	${FIND} ${WRKSRC} -type d -exec ${CHMOD} 0755 \{} \;
+	${FIND} ${WRKSRC} -type f -exec ${CHMOD} 0644 \{} \;
 
-CONFIGURE_ARGS= --tclsh ${TCLSH}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
