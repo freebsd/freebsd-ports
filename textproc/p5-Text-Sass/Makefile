@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Sass
-PORTVERSION=	0.5
+PORTVERSION=	0.9
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERL_MODBUILD=	yes
 
 MAN3=	Text::Sass.3 \
-	Text::Sass::Expr.3
+	Text::Sass::Expr.3 \
+	Text::Sass::Functions.3
 
 .include <bsd.port.mk>
