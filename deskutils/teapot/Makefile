@@ -6,40 +6,31 @@
 #
 
 PORTNAME=	teapot
-PORTVERSION=	1.09
+PORTVERSION=	2.2.0
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.moria.de/~michael/teapot/ \
-		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
+MASTER_SITES=	http://www.syntax-k.de/projekte/${PORTNAME}/ \
+		http://www.syntax-k.de/projekte/${PORTNAME}/:docs
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
+		${DISTNAME:C/^./T/}-Linux-x86${EXTRACT_SUFX}:docs
 
 MAINTAINER=	corky1951@comcast.net
 COMMENT=	Full-screen curses based spread sheet program
 
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="" LIBS="-lcurses -lm" \
-		MAKEDEPEND=""
-ALL_TARGET=	teapot
-MAN1=		teapot.1
+USE_CMAKE=	yes
 
-EXAMPLES=	examples/asqrt examples/asqrt.README examples/blink \
-		examples/counter examples/counter.README examples/life \
-		examples/life.README examples/graphtest.sh examples/sqrt \
-		examples/sqrt.README
-MYPORTDOCS=	doc/teapot.doc doc/teapot.html doc/teapot.ps
+# We download the prebuilt binary tarball for Linux in order to avoid
+# having to generate the pdf and html docs from the LyX sourcecode.
+WRKSRC_DOCS=	${WRKDIR}/${DISTNAME:C/^./T/}-Linux/share/doc/${PORTNAME}
 
-post-build:
-	@cd ${WRKSRC}/doc && ${MAKE} teapot.doc teapot.html teapot.ps
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/teapot ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/teapot.1.en ${MANPREFIX}/man/man1/teapot.1
+post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-.for file in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLESDIR}
-.endfor
 	@${MKDIR} ${DOCSDIR}
-.for file in ${MYPORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	@(cd ${WRKSRC_DOCS} && ${COPYTREE_SHARE} \* ${DOCSDIR})
+.endif
+
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
