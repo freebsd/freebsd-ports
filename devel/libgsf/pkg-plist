@@ -54,7 +54,6 @@ lib/libgsf-1.la
 lib/libgsf-1.so
 lib/libgsf-1.so.114
 libdata/pkgconfig/libgsf-1.pc
-share/doc/gsf/GsfClipData.html
 share/doc/gsf/api.html
 share/doc/gsf/dependencies.html
 share/doc/gsf/gsf-Bononbo.html
@@ -73,6 +72,7 @@ share/doc/gsf/gsf-Text.html
 share/doc/gsf/gsf-XML-and-libxml.html
 share/doc/gsf/gsf-Zip.html
 share/doc/gsf/gsf-blobs.html
+share/doc/gsf/gsf-clip-data.html
 share/doc/gsf/gsf-index.html
 share/doc/gsf/gsf-memory.html
 share/doc/gsf/gsf-metadata.html
@@ -94,6 +94,7 @@ share/doc/gsf/sources.html
 share/doc/gsf/style.css
 share/doc/gsf/up.png
 share/locale/cs/LC_MESSAGES/libgsf.mo
+share/locale/da/LC_MESSAGES/libgsf.mo
 share/locale/de/LC_MESSAGES/libgsf.mo
 share/locale/en_GB/LC_MESSAGES/libgsf.mo
 share/locale/es/LC_MESSAGES/libgsf.mo
