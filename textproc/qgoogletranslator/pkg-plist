@@ -1,0 +1,8 @@
+bin/qgoogletranslator
+share/pixmaps/qgoogletranslator.png
+%%DATADIR%%/l10n/English.qm
+%%DATADIR%%/l10n/Russian.qm
+%%DATADIR%%/l10n/Ukrainian.qm
+%%DATADIR%%/l10n/Japanese.qm
+@dirrm %%DATADIR%%/l10n
+@dirrm %%DATADIR%%

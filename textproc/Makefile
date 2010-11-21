@@ -1041,6 +1041,7 @@
     SUBDIR += pybook
     SUBDIR += pychm
     SUBDIR += pystemmer
+    SUBDIR += qgoogletranslator
     SUBDIR += qstardict
     SUBDIR += qt4-clucene
     SUBDIR += qt4-xml
