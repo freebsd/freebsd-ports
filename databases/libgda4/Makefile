@@ -38,9 +38,11 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ARGS=	--without-oracle \
+		--disable-crypto \
 		--enable-introspection=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl"
+		LIBS="-L${LOCALBASE}/lib -lintl" \
+		ac_cv_path_MYSQL_CONFIG=${LOCALBASE}/bin/mysql_config
 
 .if ${LIBGDA4_SLAVE}=="no"
 OPTIONS=	UI "Build UI tools" on
