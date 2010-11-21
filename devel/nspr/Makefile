@@ -43,21 +43,20 @@ post-patch:
 do-install:
 	${MKDIR} ${PREFIX}/include/nspr
 	${TAR} -C ${WRKSRC}/dist/include --dereference -cf - . | \
-		${TAR} -C ${PREFIX}/include -xf -
-	${FIND} ${PREFIX}/include/nspr | \
-	    	${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	    	${TAR} -C ${PREFIX}/include -xof -
 	${FIND} ${PREFIX}/include/nspr -type d | \
 	    	${XARGS} ${CHMOD} 0755
 	${FIND} ${PREFIX}/include/nspr -type f | \
 	    	${XARGS} ${CHMOD} ${SHAREMODE}
 	${TAR} -C ${WRKSRC}/dist/lib --dereference -cf - . | \
-		${TAR} -C ${PREFIX}/lib -xf -
+	    	${TAR} -C ${PREFIX}/lib -xof -
 	${INSTALL_SCRIPT} ${WRKSRC}/config/nspr-config ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/libdata/pkgconfig
 	${INSTALL_DATA} ${WRKSRC}/config/nspr.pc ${PREFIX}/libdata/pkgconfig
 .for lib in ${LIBS}
+.if defined(STRIP) && ${STRIP} != ""
 	${STRIP_CMD} ${PREFIX}/lib/${lib}
-	${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/lib/${lib}
+.endif
 	${CHMOD} ${BINMODE} ${PREFIX}/lib/${lib}
 	${LN} -sf ${lib} ${PREFIX}/lib/${lib:R}
 .endfor
