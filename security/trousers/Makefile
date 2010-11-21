@@ -13,6 +13,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	The open-source TCG Software Stack
 
+BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/pkg.m4:${PORTSDIR}/devel/pkg-config
+
 USE_GMAKE=	YES
 USE_ICONV=	YES
 USE_OPENSSL=	YES
@@ -20,8 +22,6 @@ USE_LDCONFIG=	YES
 USE_AUTOTOOLS=	autoconf:268 automake:111 libtool:22
 GNU_CONFIGURE=	YES
 MAKE_JOBS_SAFE=	YES
-
-BROKEN=		does not configure
 
 USE_RC_SUBR=	tcsd
 SUB_FILES=	pkg-message
@@ -73,8 +73,10 @@ PKGNAMESUFFIX+=	-debug
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
-pre-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${AUTORECONF} -i
+run-autotools:	run-autotools-autoreconf
+
+run-autotools-autoreconf:
+	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -i
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
