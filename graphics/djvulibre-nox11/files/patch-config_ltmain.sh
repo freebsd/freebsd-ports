@@ -1,14 +1,14 @@
---- config/ltmain.sh.orig	2008-08-26 16:13:33.000000000 +0400
-+++ config/ltmain.sh	2008-08-26 16:14:40.000000000 +0400
-@@ -6002,14 +6002,6 @@
- 	  IFS="$save_ifs"
+--- config/ltmain.sh.orig	2010-11-19 01:46:29.000000000 -0800
++++ config/ltmain.sh	2010-11-19 01:46:38.000000000 -0800
+@@ -2076,14 +2076,6 @@
+ 	  func_execute_cmds "$postinstall_cmds" 'exit $?'
  	fi
  
 -	# Install the pseudo-library for information purposes.
--	name=`$echo "X$file" | $Xsed -e 's%^.*/%%'`
+-	func_basename "$file"
+-	name="$func_basename_result"
 -	instname="$dir/$name"i
--	$show "$install_prog $instname $destdir/$name"
--	$run eval "$install_prog $instname $destdir/$name" || exit $?
+-	func_show_eval "$install_prog $instname $destdir/$name" 'exit $?'
 -
 -	# Maybe install the static library, too.
 -	test -n "$old_library" && staticlibs="$staticlibs $dir/$old_library"

@@ -20,7 +20,7 @@ bin/djvuxmlparser
 include/libdjvu/ddjvuapi.h
 include/libdjvu/miniexp.h
 lib/libdjvulibre.so
-lib/libdjvulibre.so.22
+lib/libdjvulibre.so.23
 libdata/pkgconfig/ddjvuapi.pc
 share/djvu/osi/cs/messages.xml
 share/djvu/osi/de/libdjvu++.xml

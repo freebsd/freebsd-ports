@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	djvulibre
-PORTVERSION=	3.5.22
-PORTREVISION=	3
+PORTVERSION=	3.5.23
 CATEGORIES=	graphics www
-MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
-		SF/djvu/DjVuLibre/${PORTVERSION}
+MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	DjVu viewers and browser plugin
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LICENSE=	GPLv2
+
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		djvulibre.22:${PORTSDIR}/graphics/djvulibre-nox11
+		djvulibre.23:${PORTSDIR}/graphics/djvulibre-nox11
 
 USE_ICONV=	yes
 USE_GNOME=	gnomehack gnometarget
