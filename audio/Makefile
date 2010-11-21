@@ -557,6 +557,7 @@
     SUBDIR += p5-Audio
     SUBDIR += p5-Audio-Beep
     SUBDIR += p5-Audio-CD
+    SUBDIR += p5-Audio-Ecasound
     SUBDIR += p5-Audio-FLAC-Header
     SUBDIR += p5-Audio-MPD
     SUBDIR += p5-Audio-MPD-Common

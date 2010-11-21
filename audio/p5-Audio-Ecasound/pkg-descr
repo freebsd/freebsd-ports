@@ -1,0 +1,12 @@
+Audio::Ecasound provides perl bindings to the ecasound control
+interface of the ecasound program. You can use perl to automate or
+interact with ecasound so you don't have to turn you back on the
+adoring masses packed into Wembly Stadium.
+
+Ecasound is a software package designed for multitrack audio
+processing. It can be used for audio playback, recording, format
+conversions, effects processing, mixing, as a LADSPA plugin host and
+JACK node. Version >= 2.2.X must be installed to use this
+package. "SEE ALSO" for more info.
+
+WWW: http://search.cpan.org/dist/Audio-Ecasound/
