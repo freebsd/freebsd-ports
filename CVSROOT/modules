@@ -734,6 +734,7 @@ atitd                           ports/games/atitd
 atitvout                        ports/sysutils/atitvout
 atk                             ports/accessibility/atk
 atk-reference                   ports/accessibility/atk-reference
+atkmm                           ports/accessibility/atkmm
 atlantikdesigner                ports/games/atlantikdesigner
 atlast                          ports/lang/atlast
 atlc                            ports/cad/atlc
@@ -2239,6 +2240,7 @@ dcl                             ports/science/dcl
 dclib                           ports/net-p2p/dclib
 dclock                          ports/x11-clocks/dclock
 dcmtk                           ports/devel/dcmtk
+dconf                           ports/devel/dconf
 dcraw                           ports/graphics/dcraw
 dctc                            ports/net-p2p/dctc
 dctc-gui                        ports/net-p2p/dctc-gui
@@ -3626,6 +3628,7 @@ fnord                           ports/www/fnord
 fntsample                       ports/x11-fonts/fntsample
 fo-aspell                       ports/textproc/fo-aspell
 foiltex                         ports/textproc/foiltex
+folks                           ports/net-im/folks
 fondu                           ports/converters/fondu
 font-adobe-100dpi               ports/x11-fonts/font-adobe-100dpi
 font-adobe-75dpi                ports/x11-fonts/font-adobe-75dpi
@@ -4249,6 +4252,7 @@ gdict                           ports/textproc/gdict
 gdis                            ports/science/gdis
 gdisk                           ports/sysutils/gdisk
 gdk-pixbuf                      ports/graphics/gdk-pixbuf
+gdk-pixbuf2                     ports/graphics/gdk-pixbuf2
 gdkxft                          ports/x11/gdkxft
 gdl                             ports/x11-toolkits/gdl
 gdl2                            ports/databases/gdl2
@@ -4431,9 +4435,7 @@ gini                            ports/net/gini
 gio-fam-backend                 ports/devel/gio-fam-backend
 gir-repository                  ports/devel/gir-repository
 gir-repository-babl             ports/x11/gir-repository-babl
-gir-repository-dbus             ports/devel/gir-repository-dbus
 gir-repository-gconf2           ports/devel/gir-repository-gconf2
-gir-repository-gnome-keyring    ports/security/gir-repository-gnome-keyring
 gir-repository-goocanvas        ports/graphics/gir-repository-goocanvas
 gir-repository-gtksourceview2   ports/x11-toolkits/gir-repository-gtksourceview2
 gir-repository-libnotify        ports/devel/gir-repository-libnotify
@@ -4868,6 +4870,7 @@ goggles                         ports/multimedia/goggles
 gogglesmm                       ports/audio/gogglesmm
 gogo                            ports/audio/gogo
 gogo-petit                      ports/audio/gogo-petit
+gogoc                           ports/net/gogoc
 gok                             ports/accessibility/gok
 golddig                         ports/games/golddig
 golded+                         ports/news/golded+
@@ -5017,6 +5020,7 @@ grn                             ports/news/grn
 grok                            ports/sysutils/grok
 gromacs                         ports/science/gromacs
 gromit                          ports/x11/gromit
+groonga                         ports/textproc/groonga
 groovy                          ports/lang/groovy
 grouch                          ports/net-im/grouch
 groupoffice                     ports/www/groupoffice
@@ -5713,6 +5717,7 @@ html2tex                        ports/textproc/html2tex
 html2text                       ports/textproc/html2text
 html2wml                        ports/www/html2wml
 htmlc                           ports/textproc/htmlc
+htmlcompressor                  ports/www/htmlcompressor
 htmldoc                         ports/textproc/htmldoc
 htmlise                         ports/textproc/htmlise
 htmlize.el                      ports/textproc/htmlize.el
@@ -8245,6 +8250,7 @@ libsndfile                      ports/audio/libsndfile
 libsocket++                     ports/net/libsocket++
 libsocketcpp                    ports/net/libsocketcpp
 libsoup                         ports/devel/libsoup
+libsoup-gnome                   ports/devel/libsoup-gnome
 libsoup-reference               ports/devel/libsoup-reference
 libsoup22                       ports/devel/libsoup22
 libspamtest                     ports/mail/libspamtest
@@ -11788,6 +11794,9 @@ p5-DBIx-SearchBuilder           ports/databases/p5-DBIx-SearchBuilder
 p5-DBIx-Sequence                ports/databases/p5-DBIx-Sequence
 p5-DBIx-Simple                  ports/databases/p5-DBIx-Simple
 p5-DBIx-Skinny                  ports/databases/p5-DBIx-Skinny
+p5-DBIx-Skinny-InflateColumn-DateTime  ports/databases/p5-DBIx-Skinny-InflateColumn-DateTime
+p5-DBIx-Skinny-Pager            ports/databases/p5-DBIx-Skinny-Pager
+p5-DBIx-Skinny-Schema-Loader    ports/databases/p5-DBIx-Skinny-Schema-Loader
 p5-DBIx-Table                   ports/databases/p5-DBIx-Table
 p5-DBIx-TableHash               ports/databases/p5-DBIx-TableHash
 p5-DBIx-Tree                    ports/databases/p5-DBIx-Tree
@@ -11859,6 +11868,7 @@ p5-Data-Recursive-Encode        ports/devel/p5-Data-Recursive-Encode
 p5-Data-Remember                ports/devel/p5-Data-Remember
 p5-Data-Report                  ports/textproc/p5-Data-Report
 p5-Data-RoundRobin              ports/devel/p5-Data-RoundRobin
+p5-Data-Rx                      ports/devel/p5-Data-Rx
 p5-Data-Section                 ports/devel/p5-Data-Section
 p5-Data-Serializer              ports/devel/p5-Data-Serializer
 p5-Data-ShowTable               ports/devel/p5-Data-ShowTable
@@ -12463,6 +12473,7 @@ p5-HTML-Fraction                ports/textproc/p5-HTML-Fraction
 p5-HTML-FromANSI                ports/www/p5-HTML-FromANSI
 p5-HTML-FromText                ports/www/p5-HTML-FromText
 p5-HTML-GenToc                  ports/www/p5-HTML-GenToc
+p5-HTML-GenerateUtil            ports/www/p5-HTML-GenerateUtil
 p5-HTML-GoogleMaps              ports/www/p5-HTML-GoogleMaps
 p5-HTML-HTML5-Parser            ports/textproc/p5-HTML-HTML5-Parser
 p5-HTML-Highlight               ports/www/p5-HTML-Highlight
@@ -13424,6 +13435,7 @@ p5-Number-Fraction              ports/math/p5-Number-Fraction
 p5-Number-Nary                  ports/converters/p5-Number-Nary
 p5-Number-RecordLocator         ports/converters/p5-Number-RecordLocator
 p5-Number-Spell                 ports/textproc/p5-Number-Spell
+p5-Number-Tolerant              ports/devel/p5-Number-Tolerant
 p5-Number-WithError             ports/math/p5-Number-WithError
 p5-Number-WithError-LaTeX       ports/math/p5-Number-WithError-LaTeX
 p5-OAI-Harvester                ports/net/p5-OAI-Harvester
@@ -15743,6 +15755,7 @@ p5-data-recursive-encode        ports/devel/p5-Data-Recursive-Encode
 p5-data-remember                ports/devel/p5-Data-Remember
 p5-data-report                  ports/textproc/p5-Data-Report
 p5-data-roundrobin              ports/devel/p5-Data-RoundRobin
+p5-data-rx                      ports/devel/p5-Data-Rx
 p5-data-section                 ports/devel/p5-Data-Section
 p5-data-serializer              ports/devel/p5-Data-Serializer
 p5-data-showtable               ports/devel/p5-Data-ShowTable
@@ -15922,6 +15935,9 @@ p5-dbix-searchbuilder           ports/databases/p5-DBIx-SearchBuilder
 p5-dbix-sequence                ports/databases/p5-DBIx-Sequence
 p5-dbix-simple                  ports/databases/p5-DBIx-Simple
 p5-dbix-skinny                  ports/databases/p5-DBIx-Skinny
+p5-dbix-skinny-inflatecolumn-datetime  ports/databases/p5-DBIx-Skinny-InflateColumn-DateTime
+p5-dbix-skinny-pager            ports/databases/p5-DBIx-Skinny-Pager
+p5-dbix-skinny-schema-loader    ports/databases/p5-DBIx-Skinny-Schema-Loader
 p5-dbix-sqlengine               ports/databases/p5-DBIx-SQLEngine
 p5-dbix-sqlite-simple           ports/databases/p5-DBIx-SQLite-Simple
 p5-dbix-table                   ports/databases/p5-DBIx-Table
@@ -16468,6 +16484,7 @@ p5-html-formhandler-model-dbic  ports/databases/p5-HTML-FormHandler-Model-DBIC
 p5-html-fraction                ports/textproc/p5-HTML-Fraction
 p5-html-fromansi                ports/www/p5-HTML-FromANSI
 p5-html-fromtext                ports/www/p5-HTML-FromText
+p5-html-generateutil            ports/www/p5-HTML-GenerateUtil
 p5-html-gentoc                  ports/www/p5-HTML-GenToc
 p5-html-googlemaps              ports/www/p5-HTML-GoogleMaps
 p5-html-highlight               ports/www/p5-HTML-Highlight
@@ -17432,6 +17449,7 @@ p5-number-fraction              ports/math/p5-Number-Fraction
 p5-number-nary                  ports/converters/p5-Number-Nary
 p5-number-recordlocator         ports/converters/p5-Number-RecordLocator
 p5-number-spell                 ports/textproc/p5-Number-Spell
+p5-number-tolerant              ports/devel/p5-Number-Tolerant
 p5-number-witherror             ports/math/p5-Number-WithError
 p5-number-witherror-latex       ports/math/p5-Number-WithError-LaTeX
 p5-oai-harvester                ports/net/p5-OAI-Harvester
@@ -24341,6 +24359,7 @@ telepathy-gabble                ports/net-im/telepathy-gabble
 telepathy-glib                  ports/net-im/telepathy-glib
 telepathy-haze                  ports/net-im/telepathy-haze
 telepathy-idle                  ports/net-im/telepathy-idle
+telepathy-logger                ports/net-im/telepathy-logger
 telepathy-mission-control       ports/net-im/telepathy-mission-control
 telepathy-python                ports/net-im/telepathy-python
 telepathy-qt                    ports/net-im/telepathy-qt
@@ -25169,6 +25188,7 @@ v_sim                           ports/science/v_sim
 vacuum-im                       ports/net-im/vacuum-im
 vagalume                        ports/audio/vagalume
 vala                            ports/lang/vala
+vala-vapigen                    ports/lang/vala-vapigen
 valgrind                        ports/devel/valgrind
 valgrind-snapshot               ports/devel/valgrind-snapshot
 validator                       ports/www/validator
