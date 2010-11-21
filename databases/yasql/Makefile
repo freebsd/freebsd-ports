@@ -7,15 +7,18 @@
 
 PORTNAME=		yasql
 PORTVERSION=		1.83
+PORTREVISION=		1
 CATEGORIES=		databases
 MASTER_SITES=		SF
 
-MAINTAINER=		thierry@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Yet Another SQL*Plus Replacement
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle	\
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+LICENSE=	GPLv2
 
 # Time::HiRes is used for high resolution benchmarking
 .if !defined(WITHOUT_HIRES)
@@ -56,7 +59,8 @@ pre-everything::
 	@${ECHO_MSG}
 
 pre-configure:
-	@${PERL} -pi -e 's|/bin/more|/usr/bin/more|' ${WRKSRC}/yasql.conf
+	${REINPLACE_CMD} 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/yasql.in
+	${PERL} -pi -e 's|/bin/more|/usr/bin/more|' ${WRKSRC}/yasql.conf
 
 pre-install:
 	if [ -f ${PREFIX}/etc/yasql.conf ] ; then \
