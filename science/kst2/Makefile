@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kst
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.2
 CATEGORIES=	science kde
 MASTER_SITES=	SF/${PORTNAME}/Kst%20${PORTVERSION}/
 
@@ -43,6 +43,12 @@ IGNORE=	does not compile on 6.x
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS} ${QMAKEFLAGS}
+
+post-configure:
+#fix build when Qt-3.x is installed
+	${FIND} -d ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} \
+		 -e '/^CFLAGS.*=/s|-I/usr/local/include||' \
+		 -e '/^CXXFLAGS.*=/s|-I/usr/local/include||'
 
 post-install:
 	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}

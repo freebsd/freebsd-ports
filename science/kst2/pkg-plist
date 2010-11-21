@@ -1,5 +1,6 @@
 bin/kst2
 lib/kst/libkst2data_ascii.so
+lib/kst/libkst2data_fitsimage.so
 lib/kst/libkst2data_qimagesource.so
 lib/kst/libkst2data_sampledatasource.so
 lib/kst/libkstplugin_akima.so
