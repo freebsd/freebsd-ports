@@ -7,7 +7,7 @@
 
 PORTNAME=		bash-completion
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=		1
 CATEGORIES=		shells
 MASTER_SITES=	http://bash-completion.alioth.debian.org/files/
@@ -24,10 +24,6 @@ CONFLICTS+=		bash-completion-classic-[0-9]*
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=	Hostname completion on amd64 causes bash to freeze. Use shells/bash-completion-classic instead
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g; \

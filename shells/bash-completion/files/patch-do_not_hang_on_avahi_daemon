@@ -1,0 +1,21 @@
+This patch is related to PR ports/150322.
+
+When avahi-daemon is not running, bash-completion will hang for some seconds
+waiting for response from it because of the call to avahi-browse.
+
+The patch was originally obtained in bash-completion's bug tracker, and was
+written by Ville Skyttä.
+
+Reference: https://alioth.debian.org/tracker/?func=detail&atid=413095&aid=312691&group_id=100114
+
+--- bash_completion	2010-06-16 12:44:20.000000000 -0300
++++ bash_completion	2010-11-18 23:33:53.000000000 -0200
+@@ -1315,7 +1315,7 @@
+     # avahi's services DB. We don't need the name of the service, and if it
+     # contains ";", it may mistify the result. But on Gentoo (at least),
+     # -k isn't available (even if mentioned in the manpage), so...
+-    if type avahi-browse >&/dev/null; then
++    if type avahi-browse >&/dev/null && PATH="$PATH:/sbin:/usr/sbin:/usr/local/sbin" avahi-daemon --check &>/dev/null; then
+         COMPREPLY=( "${COMPREPLY[@]}" $( \
+             compgen -P "$prefix$user" -S "$suffix" -W \
+             "$( avahi-browse -cpr _workstation._tcp 2>/dev/null | \
