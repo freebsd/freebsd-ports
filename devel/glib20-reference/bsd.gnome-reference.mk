@@ -5,6 +5,10 @@ REFERENCE_PORT=	${PKGORIGIN:S|-reference$||}
 
 .include "${PARENTDIR}/Makefile"
 
+.if defined(NOPORTDOCS)
+IGNORE=		This port installs documents, but you have selected NOPORTDOCS
+.endif
+
 .if !defined(DOCSDIR)
 DOCSDIR:=	${PREFIX}/share/doc/${PORTNAME}
 .endif
