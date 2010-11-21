@@ -21,7 +21,7 @@ you update your ports collection, before attempting any port upgrades.
   Portupgrade users:
 
     # pkgdb -fF
-    # pkg_deinstall -f0 gtkmm-2.20\* gtk-2.20\*
+    # pkg_deinstall -fO gtkmm-2.20\* gtk-2.20\*
     # portupgrade -aOW
 
 20101118:
