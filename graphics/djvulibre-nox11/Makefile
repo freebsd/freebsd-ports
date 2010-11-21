@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	djvulibre
-PORTVERSION=	3.5.22
-PORTREVISION=	2
+PORTVERSION=	3.5.23
+PORTREVISION=	0
 CATEGORIES=	graphics www
-MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
-		SF/djvu/DjVuLibre/${PORTVERSION}
+MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION}
 PKGNAMESUFFIX=	-nox11
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	DjVu base libraries and utilities
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
+LICENSE=	GPLv2
+
+LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_ICONV=	yes
