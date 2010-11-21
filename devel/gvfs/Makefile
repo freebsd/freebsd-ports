@@ -31,11 +31,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-obexftp
-OPTIONS=	SAMBA "Enable Samba" on \
+OPTIONS=	FUSE "Enable fuse" off \
+		SAMBA "Enable Samba" on \
 		GPHOTO2 "Enable Gphoto 2 camera support" on \
 		CDDA "Enable CDDA" on
-# disabled beacuse it breaks the build: FUSE "Enable fuse" off \
-# -- mandree@ 2010-11-21
 
 .include <bsd.port.pre.mk>
 
