@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Music Player Daemon
+# New ports collection Makefile for:	Music Player Daemon
 # Date created:				Thu Oct 02 2003
 # Whom:					Mark Reidel <ports@mark.reidel.info>
 #
@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.15.12
-PORTREVISION=	1
+PORTVERSION=	0.15.15
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -17,6 +16,8 @@ COMMENT=	A remote-controllable music daemon
 
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
 		curl.6:${PORTSDIR}/ftp/curl
+
+LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
@@ -62,7 +63,7 @@ OPTIONS=	ID3TAG          "Support ID3 v1/v2 tags"                on \
 MPDDIR=	var/mpd
 MPDUSER=	mpd
 MPDGROUP=	mpd
-MPDCONF=	mpd.conf
+MPDCONF?=	mpd.conf
 
 USERS=	${MPDUSER}
 GROUPS=	${MPDGROUP}
@@ -232,7 +233,8 @@ post-patch:
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example ${PREFIX}/etc/${MPDCONF}.sample
 	@if [ ! -f ${PREFIX}/etc/${MPDCONF} ]; then \
-		${CP} -p ${PREFIX}/etc/${MPDCONF}.sample ${PREFIX}/etc/${MPDCONF} ; \
+		${CP} -p ${PREFIX}/etc/${MPDCONF}.sample \
+			${PREFIX}/etc/${MPDCONF} ; \
 	fi
 	@${MKDIR} ${PREFIX}/${MPDDIR}
 	@${CHOWN} -R ${MPDUSER}:${MPDGROUP} ${PREFIX}/${MPDDIR}
