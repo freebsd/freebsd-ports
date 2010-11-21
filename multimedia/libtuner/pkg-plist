@@ -1,7 +1,8 @@
+@comment $FreeBSD$
 lib/libtuner/libtuner.so
 lib/libtuner/libtuner.so.1
 lib/libtuner/libtuner.so.1.0
-lib/libtuner/libtuner.so.1.0.5
+lib/libtuner/libtuner.so.1.0.6
 include/libtuner/avb_driver.h
 include/libtuner/cx22702.h
 include/libtuner/cx24227.h
