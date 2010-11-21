@@ -24,7 +24,10 @@ cx88ir.ko
 cx88mpegcore.ko
 cx88mpeg.ko
 cx88video.ko
+cx88audiocore.ko
 cx88audio.ko
 cx23885.ko
+cx23885av.ko
+cx23885avfw.ko
 @exec kldxref %D
 @unexec kldxref %D
