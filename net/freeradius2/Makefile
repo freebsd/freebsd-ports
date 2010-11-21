@@ -9,6 +9,7 @@
 
 PORTNAME=	freeradius
 DISTVERSION=	2.1.10
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -84,7 +85,7 @@ WITH_KERBEROS=	yes
 
 .ifdef(WITH_KERBEROS)
 .ifdef(WITH_HEIMDAL)
-LIB_DEPENDS+=	krb5.23:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	krb5.26:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=--enable-heimdal-krb5
 .else
 LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
