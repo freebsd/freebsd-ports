@@ -1,0 +1,46 @@
+--- CMakeLists.txt	2010-10-04 22:41:32.000000000 +0200
++++ CMakeLists.txt.port	2010-11-21 23:05:26.000000000 +0100
+@@ -5,7 +5,7 @@
+ set(Teapot_VERSION_MINOR 2)
+ set(Teapot_VERSION_PATCH 0)
+ 
+-option(ENABLE_HELP "Enable built-in documentation" ON)
++option(ENABLE_HELP "Enable built-in documentation" OFF)
+ option(ENABLE_UTF8 "Enable UTF-8 support" ON)
+ 
+ add_library(teapotlib context.c csv.c eval.c func.c html.c latex.c main.c misc.c parser.c sc.c scanner.c sheet.c utf8.c wk1.c xdr.c)
+@@ -36,25 +36,6 @@
+ 	install(TARGETS teapot DESTINATION bin)
+ endif ()
+ 
+-find_package(FLTK NO_MODULE)
+-if (FLTK_FOUND)
+-	include(${FLTK_USE_FILE})
+-
+-	fltk_wrap_ui(fteapot fteapot.fl)
+-	add_executable(fteapot WIN32 ${fteapot_FLTK_UI_SRCS})
+-	set(fteapot_DEB_DEPENDS ", libstdc++6 (>= 4.1.1), libx11-6, libxinerama1") 
+-	if (FLTK_XFT_FOUND)
+-		set(fteapot_DEB_DEPENDS "${fteapot_DEB_DEPENDS}, libfontconfig1 (>= 2.4.0), libxft2 (>> 2.1.1)")
+-	endif ()
+-	if (ENABLE_HELP)
+-		set(fteapot_DEB_DEPENDS "${fteapot_DEB_DEPENDS}, libjpeg62, libpng12-0 (>= 1.2.13-4)") 
+-		target_link_libraries(fteapot teapotlib fltk fltk_images ${LIB_PORTABLEXDR})
+-	else ()
+-		target_link_libraries(fteapot teapotlib fltk ${LIB_PORTABLEXDR})
+-	endif ()
+-	install(TARGETS fteapot DESTINATION bin)
+-endif ()
+-
+ if (ENABLE_HELP)
+ 	add_custom_command(
+ 		OUTPUT teapot.tex teapot.lyx
+@@ -88,7 +69,7 @@
+ 	set(HELPFILE "${CMAKE_INSTALL_PREFIX}/share/doc/teapot/html/index.html")
+ endif ()
+ 
+-install(FILES COPYING README DESTINATION share/doc/teapot)
++#install(FILES COPYING README DESTINATION share/doc/teapot)
+ 
+ add_custom_target(dist
+ 	COMMAND ${CMAKE_COMMAND} -E remove_directory teapot-${Teapot_VERSION_MAJOR}.${Teapot_VERSION_MINOR}.${Teapot_VERSION_PATCH}

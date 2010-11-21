@@ -1,3 +1,4 @@
-MD5 (teapot-1.09.tar.gz) = 21e1d1c1d04ba59af1fac6f49a4e2b1b
-SHA256 (teapot-1.09.tar.gz) = 868312231182881ebc5b67c9680e43b027a86bdd53fc2641bf99a188597e5ca2
-SIZE (teapot-1.09.tar.gz) = 161409
+SHA256 (teapot-2.2.0.tar.gz) = 883c6298002e0f4f27abeeb08f1c0282ae69de8f5b70619437b46ad92bb70916
+SIZE (teapot-2.2.0.tar.gz) = 113903
+SHA256 (Teapot-2.2.0-Linux-x86.tar.gz) = ba841701f50e3c6a84603db3cf2135025037a8809b58a0786ecfa68b844ce517
+SIZE (Teapot-2.2.0-Linux-x86.tar.gz) = 686141
