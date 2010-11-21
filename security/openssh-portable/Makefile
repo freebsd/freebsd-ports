@@ -7,7 +7,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	5.2p1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 .if defined(OPENSSH_SNAPSHOT)
@@ -119,7 +119,7 @@ GSSAPI_SUFFIX=		-gssapi
 CONFLICTS+=		openssh-portable-*-[0-9]*
 CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME}
 .if defined(HEIMDAL_HOME) && defined(KRB5_HOME) && ${HEIMDAL_HOME} == ${LOCALBASE}
-LIB_DEPENDS+=		krb5.23:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=		krb5.26:${PORTSDIR}/security/heimdal
 .elif defined(KRB5_HOME) && defined(LOCALBASE) && ${KRB5_HOME} == ${LOCALBASE}
 LIB_DEPENDS+=		krb5.3:${PORTSDIR}/security/krb5
 .endif

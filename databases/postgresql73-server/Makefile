@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 PORTVERSION?=	7.3.21
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -131,7 +131,7 @@ CONFIGURE_ARGS+=--with-krb5=${HEIMDAL_HOME}
 # Postgresql apps will not link properly when libpq is linked with base heimdal in /usr,
 # so we always use the heimdal port. See
 # http://lists.freebsd.org/pipermail/freebsd-stable/2005-October/018809.html
-LIB_DEPENDS+=	krb5.23:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	krb5.26:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=--with-krb5=${LOCALBASE}
 .    endif
 .  endif
