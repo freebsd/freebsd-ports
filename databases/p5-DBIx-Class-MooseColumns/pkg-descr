@@ -1,0 +1,9 @@
+This module allows you to put the arguments to "add_column" in
+DBIx::Class::ResultSource right into your attribute definitions and will
+automatically call it when it finds an add_column attribute option.  It also
+replaces the DBIx::Class-generated accessor methods (these are
+Class::Accessor::Grouped-generated accessor methods under the hood) with the
+Moose-generated accessor methods so that you can use more of the wonderful
+powers of Moose (eg. type constraints, triggers, ...).
+
+WWW:	http://search.cpan.org/dist/DBIx-Class-MooseColumns/
