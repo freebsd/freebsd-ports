@@ -1,6 +1,14 @@
 --- pib.tcl	Sat Oct 28 13:01:12 2000
-+++ pib.tcl	Sat Apr 28 04:05:37 2001
-@@ -309,22 +309,11 @@
++++ pib.tcl	Sun Nov 21 03:28:43 2010
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # Tcl magic \
+-exec wish8.2 -f $0 $*
++exec wish8.4 -f $0 $*
+ ################################################################################
+ #
+ # Copyright (C) 1996, 1997
+@@ -309,22 +309,11 @@ proc init_browser {} {
  #
  proc init_options {} {
  
@@ -23,7 +31,7 @@
      
  }
  
-@@ -1931,36 +1920,19 @@
+@@ -1931,36 +1920,19 @@ proc df_gather {} {
  	update_pwin df_getdinfo [format "%d/%d ports, %dK/sec" $pports $Status(nports) $rate];
  
  	# Find the md5 file.
