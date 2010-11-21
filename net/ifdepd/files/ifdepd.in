@@ -36,6 +36,6 @@ ifdepd_start()
 
 load_rc_config $name
 
-ifdepd_enable=${ifdepd_enable:"NO"}
+ifdepd_enable=${ifdepd_enable:-"NO"}
 
 run_rc_command "$1"
