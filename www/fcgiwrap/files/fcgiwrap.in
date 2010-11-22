@@ -68,7 +68,7 @@ load_rc_config $name
 
 fcgiwrap_enable=${fcgiwrap_enable:-"NO"}
 fcgiwrap_fib=${fcgiwrap_fib:-"NONE"}
-fcgiwrap_socket=${fcgiwrap_port:-"unix:/var/run/fcgiwrap/fcgiwrap.sock"}
+fcgiwrap_socket=${fcgiwrap_socket:-"unix:/var/run/fcgiwrap/fcgiwrap.sock"}
 
 command_args="-f -p ${pidfile} ${procname} -s ${fcgiwrap_socket}"
 
