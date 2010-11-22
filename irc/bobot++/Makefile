@@ -13,7 +13,7 @@ CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	bobotpp
 
-MAINTAINER=	michael@ranner.eu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IRC bot written in C++
 
 GNU_CONFIGURE=	yes
