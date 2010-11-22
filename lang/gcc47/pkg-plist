@@ -10,6 +10,8 @@ bin/g++%%SUFFIX%%
 bin/gcc%%SUFFIX%%
 bin/gcov%%SUFFIX%%
 bin/gfortran%%SUFFIX%%
+include/quadmath.h
+include/quadmath_weak.h
 info/gcc%%SUFFIX%%/dir
 share/gcc-%%GCC_VER%%/python/libstdcxx/__init__.py
 share/gcc-%%GCC_VER%%/python/libstdcxx/v6/__init__.py
