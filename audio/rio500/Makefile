@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	fortune@n.jpn.ph
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for Diamond Rio500
 
 USE_GNOME=	glib12
