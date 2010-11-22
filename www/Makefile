@@ -631,6 +631,7 @@
     SUBDIR += p5-Acme-Monta
     SUBDIR += p5-AnyEvent-HTTP
     SUBDIR += p5-AnyEvent-HTTPD
+    SUBDIR += p5-AnyEvent-Mojo
     SUBDIR += p5-AnyEvent-ReverseHTTP
     SUBDIR += p5-AnyEvent-SCGI
     SUBDIR += p5-Apache-ASP
