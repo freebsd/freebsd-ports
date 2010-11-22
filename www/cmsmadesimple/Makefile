@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cmsmadesimple
-PORTVERSION=	1.6.6
+PORTVERSION=	1.9.1
 CATEGORIES=	www
-MASTER_SITES=	http://s3.amazonaws.com/cmsms/downloads/4470/
+MASTER_SITES=	http://s3.amazonaws.com/cmsms/downloads/6491/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-full
 
 MAINTAINER=	wen@FreeBSD.org
@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}
 CMS_DIRS=	admin doc images install lib \
 		modules plugins tmp uploads
 CMS_FILES=	favicon_cms.ico fileloc.php include.php \
-		index.php moduleinterface.php preview.php \
+		index.php moduleinterface.php \
 		soap.php stylesheet.css \
 		stylesheet.php version.php
 WRITABLE_DIRS=	tmp tmp/templates_c tmp/cache \
