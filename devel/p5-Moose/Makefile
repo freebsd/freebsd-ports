@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/../../authors/id/D/DR/DROLSKY
 PKGNAMEPREFIX=	p5-
@@ -15,8 +15,8 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A complete modern object system for Perl 5
 
 BUILD_DEPENDS=	\
-	p5-Class-MOP>=1.10:${PORTSDIR}/devel/p5-Class-MOP \
-	p5-Package-DeprecationManager>=0.07:${PORTSDIR}/devel/p5-Package-DeprecationManager \
+	p5-Class-MOP>=1.11:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Package-DeprecationManager>=0.10:${PORTSDIR}/devel/p5-Package-DeprecationManager \
 	p5-List-MoreUtils>=0.12:${PORTSDIR}/lang/p5-List-MoreUtils \
 	p5-Params-Util>=1.00:${PORTSDIR}/devel/p5-Params-Util \
 	p5-Sub-Exporter>=0.980:${PORTSDIR}/devel/p5-Sub-Exporter \
@@ -26,7 +26,7 @@ BUILD_DEPENDS=	\
 	p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
-		p5-Test-Exception>=0.27:${PORTSDIR}/devel/p5-Test-Exception \
+		p5-Test-Fatal>=0.001:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires
 
 PERL_CONFIGURE=	5.8.4+
