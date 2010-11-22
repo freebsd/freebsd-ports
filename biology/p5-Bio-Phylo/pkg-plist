@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Bio/Phylo/Forest/Node.pm
 %%SITE_PERL%%/Bio/Phylo/Forest/Tree.pm
 %%SITE_PERL%%/Bio/Phylo/Generator.pm
+%%SITE_PERL%%/Bio/Phylo/Identifiable.pm
 %%SITE_PERL%%/Bio/Phylo/IO.pm
 %%SITE_PERL%%/Bio/Phylo/Factory.pm
 %%SITE_PERL%%/Bio/Phylo/Listable.pm
@@ -60,6 +61,7 @@
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Nexml.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Nexus.pm
 %%SITE_PERL%%/Bio/Phylo/Unparsers/Pagel.pm
+%%SITE_PERL%%/Bio/Phylo/Unparsers/Phylip.pm
 %%SITE_PERL%%/Bio/Phylo/Util/Logger.pm
 %%SITE_PERL%%/Bio/Phylo/Util/CONSTANT.pm
 %%SITE_PERL%%/Bio/Phylo/Util/Exceptions.pm

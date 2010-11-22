@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-Phylo
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -33,6 +33,7 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Forest::Node.3 \
 		Bio::Phylo::Forest::Tree.3 \
 		Bio::Phylo::Generator.3 \
+		Bio::Phylo::Identifiable.3 \
 		Bio::Phylo::IO.3 \
 		Bio::Phylo::Listable.3 \
 		Bio::Phylo::Manual.3 \
@@ -86,6 +87,7 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Unparsers::Nexml.3 \
 		Bio::Phylo::Unparsers::Nexus.3 \
 		Bio::Phylo::Unparsers::Pagel.3 \
+		Bio::Phylo::Unparsers::Phylip.3 \
 		Bio::Phylo::Util::CONSTANT.3 \
 		Bio::Phylo::Util::Logger.3 \
 		Bio::Phylo::Util::IDPool.3 \
