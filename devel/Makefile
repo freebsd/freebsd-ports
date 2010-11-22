@@ -2175,6 +2175,7 @@
     SUBDIR += p5-Sub-Multi
     SUBDIR += p5-Sub-Name
     SUBDIR += p5-Sub-Override
+    SUBDIR += p5-Sub-Signatures
     SUBDIR += p5-Sub-Uplevel
     SUBDIR += p5-Sub-WrapPackages
     SUBDIR += p5-Sys-Cpu
