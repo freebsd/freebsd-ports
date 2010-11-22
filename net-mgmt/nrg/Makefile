@@ -21,6 +21,9 @@ RUN_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool \
 		${LOCALBASE}/bin/snmpget:${PORTSDIR}/net-mgmt/net-snmp \
 		${SITE_PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
+DEPRECATED=	Project has vanished. Use cacti instead.
+EXPIRATION_DATE=	2010-12-31
+
 NRG_WEB_PREFIX?=	${PREFIX}/www/data
 NRG_WEB_DIR?=		nrg
 NRG_WEB_TITLE?=		FreeBSD NRG Homepage
