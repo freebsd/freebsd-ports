@@ -11010,6 +11010,7 @@ p5-Attribute-Persistent         ports/devel/p5-Attribute-Persistent
 p5-Audio                        ports/audio/p5-Audio
 p5-Audio-Beep                   ports/audio/p5-Audio-Beep
 p5-Audio-CD                     ports/audio/p5-Audio-CD
+p5-Audio-Ecasound               ports/audio/p5-Audio-Ecasound
 p5-Audio-FLAC-Header            ports/audio/p5-Audio-FLAC-Header
 p5-Audio-M4P                    ports/multimedia/p5-Audio-M4P
 p5-Audio-MPD                    ports/audio/p5-Audio-MPD
@@ -11064,6 +11065,7 @@ p5-AxKit-XSP-PerForm            ports/www/p5-AxKit-XSP-PerForm
 p5-AxKit-XSP-Sendmail           ports/www/p5-AxKit-XSP-Sendmail
 p5-AxKit-XSP-Util               ports/www/p5-AxKit-XSP-Util
 p5-AxKit-XSP-WebUtils           ports/www/p5-AxKit-XSP-WebUtils
+p5-B-Compiling                  ports/devel/p5-B-Compiling
 p5-B-Deobfuscate                ports/devel/p5-B-Deobfuscate
 p5-B-Generate                   ports/devel/p5-B-Generate
 p5-B-Graph                      ports/devel/p5-B-Graph
@@ -11172,6 +11174,7 @@ p5-CGI-Application-Dispatch     ports/www/p5-CGI-Application-Dispatch
 p5-CGI-Application-Dispatch-Server  ports/www/p5-CGI-Application-Dispatch-Server
 p5-CGI-Application-PSGI         ports/www/p5-CGI-Application-PSGI
 p5-CGI-Application-Plugin-AnyTemplate  ports/www/p5-CGI-Application-Plugin-AnyTemplate
+p5-CGI-Application-Plugin-Apache  ports/www/p5-CGI-Application-Plugin-Apache
 p5-CGI-Application-Plugin-Authentication  ports/www/p5-CGI-Application-Plugin-Authentication
 p5-CGI-Application-Plugin-Authorization  ports/www/p5-CGI-Application-Plugin-Authorization
 p5-CGI-Application-Plugin-AutoRunmode  ports/www/p5-CGI-Application-Plugin-AutoRunmode
@@ -11765,6 +11768,7 @@ p5-DBIx-Class-HTMLWidget        ports/www/p5-DBIx-Class-HTMLWidget
 p5-DBIx-Class-InflateColumn-IP  ports/databases/p5-DBIx-Class-InflateColumn-IP
 p5-DBIx-Class-IntrospectableM2M  ports/databases/p5-DBIx-Class-IntrospectableM2M
 p5-DBIx-Class-Loader            ports/databases/p5-DBIx-Class-Loader
+p5-DBIx-Class-MooseColumns      ports/databases/p5-DBIx-Class-MooseColumns
 p5-DBIx-Class-QueryLog          ports/databases/p5-DBIx-Class-QueryLog
 p5-DBIx-Class-QueryProfiler     ports/databases/p5-DBIx-Class-QueryProfiler
 p5-DBIx-Class-ResultSet-HashRef  ports/databases/p5-DBIx-Class-ResultSet-HashRef
@@ -14975,6 +14979,7 @@ p5-attribute-persistent         ports/devel/p5-Attribute-Persistent
 p5-audio                        ports/audio/p5-Audio
 p5-audio-beep                   ports/audio/p5-Audio-Beep
 p5-audio-cd                     ports/audio/p5-Audio-CD
+p5-audio-ecasound               ports/audio/p5-Audio-Ecasound
 p5-audio-flac-header            ports/audio/p5-Audio-FLAC-Header
 p5-audio-m4p                    ports/multimedia/p5-Audio-M4P
 p5-audio-mixer                  ports/audio/p5-Audio-Mixer
@@ -15033,6 +15038,7 @@ p5-axkit-xsp-perform            ports/www/p5-AxKit-XSP-PerForm
 p5-axkit-xsp-sendmail           ports/www/p5-AxKit-XSP-Sendmail
 p5-axkit-xsp-util               ports/www/p5-AxKit-XSP-Util
 p5-axkit-xsp-webutils           ports/www/p5-AxKit-XSP-WebUtils
+p5-b-compiling                  ports/devel/p5-B-Compiling
 p5-b-deobfuscate                ports/devel/p5-B-Deobfuscate
 p5-b-generate                   ports/devel/p5-B-Generate
 p5-b-graph                      ports/devel/p5-B-Graph
@@ -15293,6 +15299,7 @@ p5-cgi-application              ports/www/p5-CGI-Application
 p5-cgi-application-dispatch     ports/www/p5-CGI-Application-Dispatch
 p5-cgi-application-dispatch-server  ports/www/p5-CGI-Application-Dispatch-Server
 p5-cgi-application-plugin-anytemplate  ports/www/p5-CGI-Application-Plugin-AnyTemplate
+p5-cgi-application-plugin-apache  ports/www/p5-CGI-Application-Plugin-Apache
 p5-cgi-application-plugin-authentication  ports/www/p5-CGI-Application-Plugin-Authentication
 p5-cgi-application-plugin-authorization  ports/www/p5-CGI-Application-Plugin-Authorization
 p5-cgi-application-plugin-autorunmode  ports/www/p5-CGI-Application-Plugin-AutoRunmode
@@ -15908,6 +15915,7 @@ p5-dbix-class-htmlwidget        ports/www/p5-DBIx-Class-HTMLWidget
 p5-dbix-class-inflatecolumn-ip  ports/databases/p5-DBIx-Class-InflateColumn-IP
 p5-dbix-class-introspectablem2m  ports/databases/p5-DBIx-Class-IntrospectableM2M
 p5-dbix-class-loader            ports/databases/p5-DBIx-Class-Loader
+p5-dbix-class-moosecolumns      ports/databases/p5-DBIx-Class-MooseColumns
 p5-dbix-class-querylog          ports/databases/p5-DBIx-Class-QueryLog
 p5-dbix-class-queryprofiler     ports/databases/p5-DBIx-Class-QueryProfiler
 p5-dbix-class-resultset-hashref  ports/databases/p5-DBIx-Class-ResultSet-HashRef
@@ -21765,6 +21773,7 @@ qgit                            ports/devel/qgit
 qglviewer                       ports/graphics/qglviewer
 qgmailnotifier                  ports/mail/qgmailnotifier
 qgo                             ports/games/qgo
+qgoogletranslator               ports/textproc/qgoogletranslator
 qhacc                           ports/finance/qhacc
 qhull                           ports/math/qhull
 qico                            ports/comms/qico
