@@ -95,81 +95,80 @@ MAKE_ARGS+=	CONF_OPT_LUA_PREFIX="--with-lua-prefix=${LOCALBASE}"
 WANT_PERL=	yes
 .endif
 
-.if !defined(WITH_X11_ONLY) && !defined(WITH_ATHENA) && !defined(WITH_MOTIF)
+.if !defined(LITE) && !defined(NO_GUI) && !defined(WITHOUT_GUI) && !defined(WITHOUT_X11) && !defined(WITH_X11_ONLY) && !defined(WITH_ATHENA) && !defined(WITH_MOTIF)
 WANT_GNOME=	yes
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if !defined(LITE)
+.if defined(LITE)
+PKGNAMESUFFIX=	-lite
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x --enable-multibyte"
+MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable-tclinterp --disable-rubyinterp --disable-luainterp"
+.else	# !LITE
 MAKE_ARGS+=	CONF_OPT_FEAT="--with-features=big"
 I18N=		CONF_OPT_MULTIBYTE="--enable-multibyte --enable-fontset --enable-xim"
 USE_GETTEXT=   	yes
 
-.if defined(NO_GUI) || defined(WITHOUT_GUI)
+. if defined(NO_GUI) || defined(WITHOUT_GUI)
 WITHOUT_X11=	yes
-.endif
-
-.if defined(WITH_CSCOPE)
-RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
-MAKE_ARGS+=	CONF_OPT_CSCOPE="--enable-cscope"
-.endif
-
-.if defined(WITH_EXUBERANT_CTAGS)
-RUN_DEPENDS+=	exctags:${PORTSDIR}/devel/ctags
-.endif
-
-.if defined(WITH_PERL)
-USE_PERL5=	yes
-MAKE_ARGS+=	CONF_OPT_PERL="--enable-perlinterp"
-.endif
-
-.if defined(WITH_TCL)
-MAKE_ARGS+=	CONF_OPT_TCL="--enable-tclinterp --with-tclsh="${TCLSH:S/${LOCALBASE}\/bin\///g}""
-.endif
-
-.if !defined(WITHOUT_X11)
-#	for now default the GUI to the GTK+ one
-. if !defined(WITH_X11_ONLY) && !defined(WITH_ATHENA) && !defined(WITH_MOTIF) && !defined(WITH_GNOME) && !defined(WITH_GTK1) && !defined(WITH_GTK2)
-WITH_GTK2=	yes
 . endif
 
-. if defined(WITH_ATHENA)
+. if defined(WITH_CSCOPE)
+RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
+MAKE_ARGS+=	CONF_OPT_CSCOPE="--enable-cscope"
+. endif
+
+. if defined(WITH_EXUBERANT_CTAGS)
+RUN_DEPENDS+=	exctags:${PORTSDIR}/devel/ctags
+. endif
+
+. if defined(WITH_PERL)
+USE_PERL5=	yes
+MAKE_ARGS+=	CONF_OPT_PERL="--enable-perlinterp"
+. endif
+
+. if defined(WITH_TCL)
+MAKE_ARGS+=	CONF_OPT_TCL="--enable-tclinterp --with-tclsh="${TCLSH:S/${LOCALBASE}\/bin\///g}""
+. endif
+
+. if !defined(WITHOUT_X11)
+#	for now default the GUI to the GTK+ one
+.  if !defined(WITH_X11_ONLY) && !defined(WITH_ATHENA) && !defined(WITH_MOTIF) && !defined(WITH_GNOME) && !defined(WITH_GTK1) && !defined(WITH_GTK2)
+WITH_GTK2=	yes
+.  endif
+
+.  if defined(WITH_ATHENA)
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena" ${I18N}
-. elif defined(WITH_GTK1)
+.  elif defined(WITH_GTK1)
 USE_GNOME=	gtk12
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${LOCALBASE}" ${I18N}
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 USE_XORG+=	xt
 PKGNAMESUFFIX=	-gtk1
-. elif defined(WITH_GTK2)
+.  elif defined(WITH_GTK2)
 USE_GNOME=	gtk20
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk2 --with-gtk-prefix=${LOCALBASE}" ${I18N}
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 USE_XORG+=	xt
-. elif defined(WITH_GNOME)
-.  if ${WITH_GNOME:Mgnomelibs}!="" || ${WITH_GNOME}=="yes" || \
+.  elif defined(WITH_GNOME)
+.   if ${WITH_GNOME:Mgnomelibs}!="" || ${WITH_GNOME}=="yes" || \
 	${WITH_GNOME}=="1"
 USE_GNOME=	gnomelibs gnomeprefix
 PKGNAMESUFFIX=	-gnome
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gnome --with-gtk-prefix=${LOCALBASE}" ${I18N}
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 USE_XORG+=	xt
-.  endif
-. elif defined(WITH_MOTIF)
+.   endif
+.  elif defined(WITH_MOTIF)
 USE_MOTIF=	yes
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\"" MOTIFHOME=${LOCALBASE} ${I18N}
-. elif defined(WITH_X11_ONLY)
+.  elif defined(WITH_X11_ONLY)
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --with-x" ${I18N}
-. endif
-.else	# WITHOUT_X11
+.  endif
+. else	# WITHOUT_X11
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x" ${I18N}
-.endif	# WITHOUT_X11
-
-.else	# LITE
-PKGNAMESUFFIX=	-lite
-MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x --enable-multibyte"
-MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable-tclinterp --disable-rubyinterp --disable-luainterp"
+. endif	# WITHOUT_X11
 .endif	# LITE
 
 .if exists(${LOCALBASE}/lib/libiconv.so)
