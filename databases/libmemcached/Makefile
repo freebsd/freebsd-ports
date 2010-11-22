@@ -7,7 +7,7 @@
 
 PORTNAME=	libmemcached
 PORTVERSION=	0.44
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://download.tangent.org/
 
@@ -20,8 +20,13 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 CONFIGURE_ARGS=	--with-memcached=no --disable-libevent --without-libevent-prefix
 
+OPTIONS=	SASL "With (Cyrus) SASL2 support" off
+
+.include <bsd.port.pre.mk>
+
 post-patch:
 	${REINPLACE_CMD} -e 's|^pkgconfigdir.*|pkgconfigdir = $${PREFIX}/libdata/pkgconfig|' \
+			 -e '/^LDFLAGS *=/ s/$$/ $${LTLIBSASL2}/' \
 			${WRKSRC}/Makefile.in
 .if defined(NO_INSTALL_MANPAGES)
 	${REINPLACE_CMD} -e 's|^SUBDIRS = docs |SUBDIRS = |' ${WRKSRC}/Makefile.in
@@ -125,4 +130,11 @@ MAN3=		hashkit_clone.3 \
 		memcached_version.3
 .endif
 
-.include <bsd.port.mk>
+.if defined(WITH_SASL)
+LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+CONFIGURE_ARGS+=	--with-libsasl2-prefix="${LOCALBASE}"
+.else
+CONFIGURE_ARGS+=	--disable-sasl
+.endif
+
+.include <bsd.port.post.mk>
