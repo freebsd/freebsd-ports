@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	libYGP
-PORTVERSION=	0.9.30
-PORTREVISION=	2
+PORTVERSION=	0.9.41
 CATEGORIES=	devel
 MASTER_SITES=	SF/libymp/libymp/libYGP-${PORTVERSION}
 DISTNAME=	libYGP-${PORTVERSION}
@@ -26,6 +25,7 @@ USE_GETTEXT=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-gmp\
 		--disable-static --disable-rpath
+USE_GMAKE=	yes
 
 .if ${PORTNAME:M*XGP}
 LIB_DEPENDS+=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
