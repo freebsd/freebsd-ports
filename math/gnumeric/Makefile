@@ -8,7 +8,7 @@
 # When updating, remember to update pkg-plist of gchemutils.
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.10.10
+PORTVERSION=	1.10.11
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -42,7 +42,7 @@ GCONF_SCHEMAS=	gnumeric-dialogs.schemas gnumeric-general.schemas \
 
 MAN1=		gnumeric.1 ssconvert.1 ssindex.1 ssgrep.1
 
-PLIST_SUB=	VERSION=${PORTVERSION} GOFFICE=0.8.10
+PLIST_SUB=	VERSION=${PORTVERSION} GOFFICE=0.8.11
 
 OPTIONS=	PERL "Enable Perl as extension language" on
 #GNOMEDB "Enable libgnomedb support" off

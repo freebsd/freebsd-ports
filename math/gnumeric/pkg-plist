@@ -924,6 +924,8 @@ share/locale/it/LC_MESSAGES/gnumeric-functions.mo
 share/locale/it/LC_MESSAGES/gnumeric.mo
 share/locale/ja/LC_MESSAGES/gnumeric-functions.mo
 share/locale/ja/LC_MESSAGES/gnumeric.mo
+share/locale/kk/LC_MESSAGES/gnumeric-functions.mo
+share/locale/kk/LC_MESSAGES/gnumeric.mo
 share/locale/ko/LC_MESSAGES/gnumeric-functions.mo
 share/locale/ko/LC_MESSAGES/gnumeric.mo
 share/locale/lt/LC_MESSAGES/gnumeric-functions.mo
@@ -1065,6 +1067,8 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/ast/LC_MESSAGES
