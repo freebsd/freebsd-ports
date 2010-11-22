@@ -5,13 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-RewriteAttributes
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple yet powerful HTML attribute rewriting
+
+RUN_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTML-Tagset>0:${PORTSDIR}/www/p5-HTML-Tagset \
+		p5-URI>0:${PORTSDIR}/net/p5-URI
 
 MAKE_JOBS_SAFE=  yes
 
