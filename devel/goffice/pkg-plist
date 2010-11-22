@@ -247,6 +247,7 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/GOFileSaver.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOFontSel.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOFormatSel.html
+%%DOCSDIR%%-%%SHORT_VER%%/GOGraphWidget.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOIOContext.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOLocaleSel.html
 %%DOCSDIR%%-%%SHORT_VER%%/GOMarker.html
@@ -317,6 +318,7 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/ch14.html
 %%DOCSDIR%%-%%SHORT_VER%%/ch15.html
 %%DOCSDIR%%-%%SHORT_VER%%/ch16.html
+%%DOCSDIR%%-%%SHORT_VER%%/ch17.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8.devhelp
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8.devhelp2
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-GOArrow.html
@@ -360,6 +362,7 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-go-image.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-go-plugin.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-go-string.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-goffice.html
 %%DOCSDIR%%-%%SHORT_VER%%/home.png
 %%DOCSDIR%%-%%SHORT_VER%%/index.html
 %%DOCSDIR%%-%%SHORT_VER%%/index.sgml
