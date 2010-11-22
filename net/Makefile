@@ -28,13 +28,14 @@
     SUBDIR += asio
     SUBDIR += aslookup
     SUBDIR += asterisk
-    SUBDIR += asterisk-addons
     SUBDIR += asterisk-app-ldap
     SUBDIR += asterisk-app-notify
     SUBDIR += asterisk-bristuff
     SUBDIR += asterisk-oh323
     SUBDIR += asterisk12
     SUBDIR += asterisk12-app-ldap
+    SUBDIR += asterisk14
+    SUBDIR += asterisk14-addons
     SUBDIR += asterisk16
     SUBDIR += asterisk16-addons
     SUBDIR += astfax

@@ -5,18 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=	asterisk-addons
+PORTNAME=	asterisk14
 PORTVERSION=	1.4.9
 PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
+PKGNAMESUFFIX=	-addons
+DISTNAME=	asterisk${PKGNAMESUFFIX}-${DISTVERSION}
 
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	GPL modules for the Asterisk Open Source PBX
 
-BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
-RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
+BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14
+RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14
 
 OPTIONS=	SAMPLE_CONFIG	"Install sample configuration files" off
 
