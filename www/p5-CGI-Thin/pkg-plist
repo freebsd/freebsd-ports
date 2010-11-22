@@ -1,0 +1,7 @@
+%%SITE_PERL%%/CGI/Thin.pm
+%%SITE_PERL%%/CGI/Thin/Cookies.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Thin/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Thin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
+@dirrm %%SITE_PERL%%/CGI/Thin
+@dirrmtry %%SITE_PERL%%/CGI

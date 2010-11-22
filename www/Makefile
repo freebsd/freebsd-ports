@@ -760,6 +760,7 @@
     SUBDIR += p5-CGI-Session-ExpireSessions
     SUBDIR += p5-CGI-Simple
     SUBDIR += p5-CGI-SpeedyCGI
+    SUBDIR += p5-CGI-Thin
     SUBDIR += p5-CGI-Untaint
     SUBDIR += p5-CGI-Untaint-date
     SUBDIR += p5-CGI-Untaint-email
