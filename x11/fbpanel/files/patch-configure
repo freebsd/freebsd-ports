@@ -1,0 +1,11 @@
+--- ./configure.orig	2010-04-04 02:02:40.000000000 -0700
++++ ./configure	2010-11-17 11:11:33.000000000 -0800
+@@ -324,7 +324,7 @@
+ add_var target "stab: configure for arch" ""
+ 
+ # N.B. order is important
+-add_var prefix "install architecture-independent files" /usr
++add_var prefix "install architecture-independent files" '${PREFIX}'
+ add_var eprefix "install architecture-dependent files" '$prefix'
+ add_var bindir "user executables" '$eprefix/bin'
+ add_var sbindir "system executables" '$eprefix/sbin'

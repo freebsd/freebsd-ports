@@ -6,25 +6,33 @@
 #
 
 PORTNAME=	fbpanel
-PORTVERSION=	4.12
-PORTREVISION=	6
+PORTVERSION=	6.1
 CATEGORIES=	x11
 MASTER_SITES=	SF
-EXTRACT_SUFX=	.tgz
+EXTRACT_SUFX=	.tbz2
 
 MAINTAINER=	corky1951@comcast.net
 COMMENT=	Desktop panel that includes a taskbar, pager, launchbar and more
 
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+
 USE_XORG=	x11 xmu xpm
 USE_GNOME=	gtk20
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
 USE_GMAKE=	yes
 
+#CONFIGURE_ENV+= PREFIX=${PREFIX}
+
 MAN1=		fbpanel.1
-MANCOMPRESSED=	yes
+MANCOMPRESSED=	no
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|share/man|man|g' ${WRKSRC}/man/Makefile
+	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' ${WRKSRC}/scripts/rfs-pkg-config
+	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' ${WRKSRC}/scripts/install.sh
+	@${REINPLACE_CMD} -e 's|@DATADIR@|${DATADIR}|g' ${WRKSRC}/data/man/${PORTNAME}.1.in
+
+post-install:
+	@${INSTALL_MAN} ${WRKSRC}/data/man/${PORTNAME}.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
