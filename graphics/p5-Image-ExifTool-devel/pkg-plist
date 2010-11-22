@@ -53,6 +53,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Nikon.pm
 %%SITE_PERL%%/Image/ExifTool/MinoltaRaw.pm
 %%SITE_PERL%%/Image/ExifTool/Minolta.pm
+%%SITE_PERL%%/Image/ExifTool/Microsoft.pm
 %%SITE_PERL%%/Image/ExifTool/Matroska.pm
 %%SITE_PERL%%/Image/ExifTool/MakerNotes.pm
 %%SITE_PERL%%/Image/ExifTool/MWG.pm
@@ -100,6 +101,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Geotag.pm
 %%SITE_PERL%%/Image/ExifTool/GeoTiff.pm
 %%SITE_PERL%%/Image/ExifTool/GPS.pm
+%%SITE_PERL%%/Image/ExifTool/GIMP.pm
 %%SITE_PERL%%/Image/ExifTool/GIF.pm
 %%SITE_PERL%%/Image/ExifTool/FujiFilm.pm
 %%SITE_PERL%%/Image/ExifTool/FotoStation.pm
@@ -118,6 +120,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Charset/Thai.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/Symbol.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/ShiftJIS.pm
+%%SITE_PERL%%/Image/ExifTool/Charset/PDFDoc.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/MacTurkish.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/MacThai.pm
 %%SITE_PERL%%/Image/ExifTool/Charset/MacRomanian.pm
@@ -158,6 +161,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/APE.pm
 %%SITE_PERL%%/Image/ExifTool/AIFF.pm
 %%SITE_PERL%%/Image/ExifTool/AFCP.pm
+%%SITE_PERL%%/Image/ExifTool/AES.pm
 %%SITE_PERL%%/Image/ExifTool.pod
 %%SITE_PERL%%/Image/ExifTool.pm
 %%SITE_PERL%%/File/RandomAccess.pod
@@ -223,6 +227,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Nikon.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MinoltaRaw.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Minolta.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/Microsoft.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/Matroska.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MWG.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/MPF.html
@@ -249,6 +254,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/H264.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/GeoTiff.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/GPS.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/GIMP.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/GIF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/FujiFilm.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/FotoStation.html
