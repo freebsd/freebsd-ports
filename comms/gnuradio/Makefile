@@ -27,6 +27,8 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_SITELIBDIR}/ephem/__init__.py:${PORTSDIR}/astro/pyephem
 
+BROKEN=		does not configure
+
 USE_PYTHON=	2.4+
 USE_WX=		2.6+
 WX_COMPS=	wx wx:build wx:run python:build python:run
