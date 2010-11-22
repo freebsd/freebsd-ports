@@ -430,6 +430,9 @@ bin/linkchecker-gui
 %%PYTHON_SITELIBDIR%%/linkcheck/gui/linkchecker_ui_progress.py
 %%PYTHON_SITELIBDIR%%/linkcheck/gui/linkchecker_ui_progress.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/gui/linkchecker_ui_progress.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/linkchecker_ui_properties.py
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/linkchecker_ui_properties.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/linkchecker_ui_properties.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/gui/logger.py
 %%PYTHON_SITELIBDIR%%/linkcheck/gui/logger.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/gui/logger.pyo
@@ -439,6 +442,15 @@ bin/linkchecker-gui
 %%PYTHON_SITELIBDIR%%/linkcheck/gui/progress.py
 %%PYTHON_SITELIBDIR%%/linkcheck/gui/progress.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/gui/progress.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/properties.py
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/properties.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/properties.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/settings.py
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/settings.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/settings.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/urlmodel.py
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/urlmodel.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/gui/urlmodel.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/gzip2.py
 %%PYTHON_SITELIBDIR%%/linkcheck/gzip2.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/gzip2.pyo
