@@ -7,6 +7,7 @@
 
 PORTNAME=	zfs
 PORTVERSION=	1
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ DISTFILES=	# none
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Python ZFS library
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.4-2.7
 MAKEFILE=	${FILESDIR}/Makefile.lib
 MAKE_ARGS+=	PYTHON_INCLUDEDIR="${PYTHON_INCLUDEDIR}" \
 		PYTHON_LDFLAGS="-L${LOCALBASE}/lib -l${PYTHON_VERSION}"
@@ -36,6 +37,15 @@ PYFILES=	__init__.py \
 .if !exists(${SRCDIR}/cddl/contrib/opensolaris/lib/pyzfs) || \
  !exists(${SRCDIR}/cddl/contrib/opensolaris/cmd/pyzfs)
 IGNORE=	requires ZFS v15 or higher sources with pyzfs (in ${SRCDIR})
+.endif
+
+.if exists(${SRCDIR}/cddl/contrib/opensolaris/lib/pyzfs/common/holds.py) && \
+exists(${SRCDIR}/cddl/contrib/opensolaris/lib/pyzfs/common/table.py)
+PYFILES+=	holds.py \
+		table.py
+PLIST_SUB+=	V28=""
+.else
+PLIST_SUB+=	V28="@comment "
 .endif
 
 post-patch:
