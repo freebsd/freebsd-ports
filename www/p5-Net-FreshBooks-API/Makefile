@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-FreshBooks-API
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,20 +24,15 @@ RUN_DEPENDS=	p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
-		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-Sub-Override>=0:${PORTSDIR}/devel/p5-Sub-Override \
-		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Test-WWW-Mechanize>=0:${PORTSDIR}/devel/p5-Test-WWW-Mechanize \
-		p5-Test-XML>=0:${PORTSDIR}/devel/p5-Test-XML
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 
 PERL_MODBUILD=	yes
 
 MAN3=		Net::FreshBooks::API.3 \
 		Net::FreshBooks::API::Base.3 \
 		Net::FreshBooks::API::Client.3 \
+		Net::FreshBooks::API::Error.3 \
 		Net::FreshBooks::API::Estimate.3 \
 		Net::FreshBooks::API::Invoice.3 \
 		Net::FreshBooks::API::InvoiceLine.3 \
@@ -50,4 +45,10 @@ MAN3=		Net::FreshBooks::API.3 \
 		Net::FreshBooks::API::Role::LineItem.3 \
 		Net::FreshBooks::API::Role::SendBy.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501104
+BUILD_DEPENDS+=	p5-Module-Build>=0.3601:${PORTSDIR}/devel/p5-Module-Build
+.endif
+
+.include <bsd.port.post.mk>
