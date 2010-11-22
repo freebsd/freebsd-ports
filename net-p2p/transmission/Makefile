@@ -15,9 +15,9 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	The "meta-port" for Transmission BitTorrent client
 
-RUN_DEPENDS=	transmissioncli:${PORTSDIR}/net-p2p/transmission-cli \
+RUN_DEPENDS=	transmission-cli:${PORTSDIR}/net-p2p/transmission-cli \
 		transmission-daemon:${PORTSDIR}/net-p2p/transmission-daemon \
-		transmission:${PORTSDIR}/net-p2p/transmission-gtk2
+		transmission-gtk:${PORTSDIR}/net-p2p/transmission-gtk2
 
 NO_BUILD=	yes
 
