@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.mindcraft.com/webstone/
 DISTNAME=	ws25_src
 EXTRACT_SUFX=	.tgz 
 
-MAINTAINER=	fortune@n.jpn.ph
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	World wide web server benchmarking
 
 GNU_CONFIGURE=	yes

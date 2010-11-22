@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-ssl
 DISTNAME=	WebStone-SSL-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	fortune@n.jpn.ph
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	World wide web server benchmarking with SSL support
 
 USE_OPENSSL=	yes
