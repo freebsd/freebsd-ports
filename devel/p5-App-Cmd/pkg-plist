@@ -1,19 +1,19 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Cmd/.packlist
 %%SITE_PERL%%/App/Cmd.pm
+%%SITE_PERL%%/App/Cmd/ArgProcessor.pm
 %%SITE_PERL%%/App/Cmd/Command.pm
+%%SITE_PERL%%/App/Cmd/Command/commands.pm
+%%SITE_PERL%%/App/Cmd/Command/help.pm
+%%SITE_PERL%%/App/Cmd/Plugin.pm
+%%SITE_PERL%%/App/Cmd/Setup.pm
+%%SITE_PERL%%/App/Cmd/Simple.pm
 %%SITE_PERL%%/App/Cmd/Subdispatch.pm
 %%SITE_PERL%%/App/Cmd/Subdispatch/DashedStyle.pm
 %%SITE_PERL%%/App/Cmd/Tester.pm
-%%SITE_PERL%%/App/Cmd/Command/help.pm
-%%SITE_PERL%%/App/Cmd/Setup.pm
 %%SITE_PERL%%/App/Cmd/Tutorial.pod
-%%SITE_PERL%%/App/Cmd/Simple.pm
-%%SITE_PERL%%/App/Cmd/ArgProcessor.pm
-%%SITE_PERL%%/App/Cmd/Plugin.pm
-%%SITE_PERL%%/App/Cmd/Command/commands.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Cmd/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Cmd
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
-@dirrmtry %%SITE_PERL%%/App/Cmd/Command
 @dirrmtry %%SITE_PERL%%/App/Cmd/Subdispatch
+@dirrmtry %%SITE_PERL%%/App/Cmd/Command
 @dirrmtry %%SITE_PERL%%/App/Cmd
 @dirrmtry %%SITE_PERL%%/App
