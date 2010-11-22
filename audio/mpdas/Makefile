@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mpdas
-PORTVERSION=	0.2.5
-PORTREVISION=	2
+PORTVERSION=	0.3.0
 CATEGORIES=	audio
 MASTER_SITES=	http://50hz.ws/mpdas/
 
@@ -28,6 +27,10 @@ PLIST_FILES=	bin/mpdas
 
 MAN1=		mpdas.1
 MANCOMPRESSED=	no
+
+post-patch:
+	@${REINPLACE_CMD} -e 's#/usr/local#${PREFIX}#g; \
+		s#MANPREFIX#MAN_PREFIX#g' ${WRKSRC}/Makefile
 
 post-install:
 	@${ECHO_MSG}
