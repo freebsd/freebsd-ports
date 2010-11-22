@@ -7,6 +7,7 @@
 
 PORTNAME=	docbook-xsl
 PORTVERSION=	1.75.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/docbook/${PORTNAME}/${PORTVERSION}:src \
 		SF/docbook/${PORTNAME}-doc/${PORTVERSION}:doc
@@ -36,17 +37,14 @@ SUB_LIST+=	INSTDIR="${INSTDIR}" \
 
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 
-MODULES=	common images lib params
+MODULES=	common fo html images lib manpages params xhtml
 
 OPTIONS=	ECLIPSE		"Eclipse modules"		on \
 		EPUB		"Epub modules"			on \
 		EXTENSIONS	"Extensions"			on \
-		FO		"XSL-FO modules"		on \
 		HIGHLIGHTING	"highlighting modules"		on \
-		HTML		"HTML modules"			on \
 		HTMLHELP	"HTML Help modules"		on \
 		JAVAHELP	"Java Help modules"		on \
-		MANPAGES	"Manpage modules"		on \
 		PROFILING	"Profiling modules"		on \
 		ROUNDTRIP	"Roundtrip modules"		on \
 		SLIDES		"Slides modules"		on \
@@ -54,7 +52,6 @@ OPTIONS=	ECLIPSE		"Eclipse modules"		on \
 		TESTS		"Test tools"			on \
 		TOOLS		"Tools"				on \
 		WEBSITE		"Website modules"		on \
-		XHTML		"XHTML modules"			on \
 		XHTML11		"XHTML 1.1 modules"		on
 
 .include <bsd.port.pre.mk>
@@ -77,23 +74,11 @@ MODULES+=	extensions
 .else
 PLIST_SUB+=	EXTENSIONS="@comment "
 .endif
-.if defined(WITH_FO)
-PLIST_SUB+=	FO=""
-MODULES+=	fo
-.else
-PLIST_SUB+=	FO="@comment "
-.endif
 .if defined(WITH_HIGHLIGHTING)
 PLIST_SUB+=	HIGHLIGHTING=""
 MODULES+=	highlighting
 .else
 PLIST_SUB+=	HIGHLIGHTING="@comment "
-.endif
-.if defined(WITH_HTML)
-PLIST_SUB+=	HTML=""
-MODULES+=	html
-.else
-PLIST_SUB+=	HTML="@comment "
 .endif
 .if defined(WITH_HTMLHELP)
 PLIST_SUB+=	HTMLHELP=""
@@ -106,12 +91,6 @@ PLIST_SUB+=	JAVAHELP=""
 MODULES+=	javahelp
 .else
 PLIST_SUB+=	JAVAHELP="@comment "
-.endif
-.if defined(WITH_MANPAGES)
-PLIST_SUB+=	MANPAGES=""
-MODULES+=	manpages
-.else
-PLIST_SUB+=	MANPAGES="@comment "
 .endif
 .if defined(WITH_PROFILING)
 PLIST_SUB+=	PROFILING=""
@@ -154,12 +133,6 @@ PLIST_SUB+=	WEBSITE=""
 MODULES+=	website
 .else
 PLIST_SUB+=	WEBSITE="@comment "
-.endif
-.if defined(WITH_XHTML)
-PLIST_SUB+=	XHTML=""
-MODULES+=	xhtml
-.else
-PLIST_SUB+=	XHTML="@comment "
 .endif
 .if defined(WITH_XHTML11)
 PLIST_SUB+=	XHTML11=""
