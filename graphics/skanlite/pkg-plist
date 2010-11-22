@@ -23,6 +23,9 @@ share/doc/HTML/es/skanlite/index.docbook
 share/doc/HTML/et/skanlite/common
 share/doc/HTML/et/skanlite/index.cache.bz2
 share/doc/HTML/et/skanlite/index.docbook
+share/doc/HTML/fr/skanlite/common
+share/doc/HTML/fr/skanlite/index.cache.bz2
+share/doc/HTML/fr/skanlite/index.docbook
 share/doc/HTML/it/skanlite/common
 share/doc/HTML/it/skanlite/index.cache.bz2
 share/doc/HTML/it/skanlite/index.docbook
@@ -49,10 +52,12 @@ share/locale/en_GB/LC_MESSAGES/skanlite.mo
 share/locale/eo/LC_MESSAGES/skanlite.mo
 share/locale/es/LC_MESSAGES/skanlite.mo
 share/locale/et/LC_MESSAGES/skanlite.mo
+share/locale/eu/LC_MESSAGES/skanlite.mo
 share/locale/fr/LC_MESSAGES/skanlite.mo
 share/locale/ga/LC_MESSAGES/skanlite.mo
 share/locale/gl/LC_MESSAGES/skanlite.mo
 share/locale/hr/LC_MESSAGES/skanlite.mo
+share/locale/hu/LC_MESSAGES/skanlite.mo
 share/locale/is/LC_MESSAGES/skanlite.mo
 share/locale/it/LC_MESSAGES/skanlite.mo
 share/locale/ja/LC_MESSAGES/skanlite.mo
@@ -60,6 +65,7 @@ share/locale/km/LC_MESSAGES/skanlite.mo
 share/locale/ko/LC_MESSAGES/skanlite.mo
 share/locale/lt/LC_MESSAGES/skanlite.mo
 share/locale/lv/LC_MESSAGES/skanlite.mo
+share/locale/mai/LC_MESSAGES/skanlite.mo
 share/locale/nb/LC_MESSAGES/skanlite.mo
 share/locale/nds/LC_MESSAGES/skanlite.mo
 share/locale/nl/LC_MESSAGES/skanlite.mo
@@ -82,6 +88,7 @@ share/locale/zh_TW/LC_MESSAGES/skanlite.mo
 @dirrm share/doc/HTML/pt_BR/skanlite
 @dirrm share/doc/HTML/pt/skanlite
 @dirrm share/doc/HTML/it/skanlite
+@dirrm share/doc/HTML/fr/skanlite
 @dirrm share/doc/HTML/et/skanlite
 @dirrm share/doc/HTML/es/skanlite
 @dirrm share/doc/HTML/en/skanlite

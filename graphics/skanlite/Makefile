@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	skanlite
-PORTVERSION=	${APP_VER}.${EXTRA_VER}
+PORTVERSION=	0.5
 CATEGORIES=	graphics kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${EXTRA_VER}/src/extragear
-DISTNAME=	${PORTNAME}-${APP_VER}-kde${EXTRA_VER}
+MASTER_SITES=	SF/sanewidget/Skanlite/
 DIST_SUBDIR=	KDE/extragear
 
 MAINTAINER=	kde@FreeBSD.org
@@ -25,8 +23,5 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
-
-APP_VER=	0.4
-EXTRA_VER=	4.4.0
 
 .include <bsd.port.mk>
