@@ -1,0 +1,12 @@
+Every HTTP::Exception is a Exception::Class - Class. So the same
+mechanisms apply as with Exception::Class-classes. In fact have a look
+at Exception::Class' docs for more general information on exceptions
+and Exception::Class::Base for information on what methods a caught
+exception also has.
+
+HTTP::Exception is only a factory for HTTP::Exception::XXX (where X is
+a number) subclasses. That means that HTTP::Exception->new(404)
+returns a HTTP::Exception::404 object, which in turn is a
+HTTP::Exception::Base - Object.
+
+WWW: http://search.cpan.org/dist/HTTP-Exception/
