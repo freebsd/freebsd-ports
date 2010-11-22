@@ -15,6 +15,7 @@ MAINTAINER=	mm@FreeBSD.org
 COMMENT=	High-speed Dirac codec
 
 LIB_DEPENDS=	orc-0.4:${PORTSDIR}/devel/orc
+BUILD_DEPENDS=	orc>=0.4.10:${PORTSDIR}/devel/orc
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
