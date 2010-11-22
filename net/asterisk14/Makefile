@@ -11,6 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
+PKGNAMESUFFIX=	14
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
@@ -40,7 +41,7 @@ MAKE_ENV=	MKDIR="${MKDIR}" \
 		ASTCFLAGS="${PTHREAD_CFLAGS} ${CFLAGS}" \
 		ASTLDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
-CONFLICTS=	asterisk*-1.2* asterisk*-1.6*
+CONFLICTS=	asterisk*-1.2* asterisk*-1.6* asterisk*-1.8*
 
 OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		ODBC		"Enable ODBC support" on \
