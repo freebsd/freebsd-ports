@@ -59,13 +59,10 @@ CONFIGURE_ARGS+=		--disable-asm
 LDFLAGS+=	-fstack-protector
 .endif
 
-.if ${ARCH}=="i386"
-MAKE_ENV+=	ARCH_X86="1"
-.elif ${ARCH} == "powerpc"
-MAKE_ENV+=	ARCH_PPC="1"
-.endif
-
-MAKE_ENV+=	ARCH=${ARCH}
+CONFIGURE_ENV+=	ARCH= \
+		TARGET_ARCH=
+MAKE_ENV+=	ARCH= \
+		TARGET_ARCH=
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
