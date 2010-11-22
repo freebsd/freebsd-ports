@@ -1,0 +1,13 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Exception/.packlist
+%%SITE_PERL%%/HTTP/Exception.pm
+%%SITE_PERL%%/HTTP/Exception/1XX.pm
+%%SITE_PERL%%/HTTP/Exception/2XX.pm
+%%SITE_PERL%%/HTTP/Exception/3XX.pm
+%%SITE_PERL%%/HTTP/Exception/4XX.pm
+%%SITE_PERL%%/HTTP/Exception/5XX.pm
+%%SITE_PERL%%/HTTP/Exception/Base.pm
+%%SITE_PERL%%/HTTP/Exception/Loader.pm
+@dirrm %%SITE_PERL%%/HTTP/Exception
+@comment @dirrm %%SITE_PERL%%/HTTP
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Exception
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
