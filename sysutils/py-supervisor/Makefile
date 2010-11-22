@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	supervisor
-PORTVERSION=	3.0a8
+PORTVERSION=	3.0a9
 CATEGORIES=	sysutils python
-MASTER_SITES=	http://dist.supervisord.org/\
-	        CHEESESHOP
+MASTER_SITES=	http://dist.supervisord.org/ \
+		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	hizel@vyborg.ru
