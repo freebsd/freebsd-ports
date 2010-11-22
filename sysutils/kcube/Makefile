@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.tuxed.de/kcube/download/
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Another cpu load kicker applet for KDE
 
+DEPRECATED=	Project has vanished
+EXPIRATION_DATE=2010-12-31
+
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:22
 USE_GMAKE=	yes
