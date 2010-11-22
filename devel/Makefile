@@ -1196,6 +1196,7 @@
     SUBDIR += p5-B-Graph
     SUBDIR += p5-B-Hooks-EndOfScope
     SUBDIR += p5-B-Hooks-OP-Check
+    SUBDIR += p5-B-Hooks-OP-Check-EntersubForCV
     SUBDIR += p5-B-Hooks-OP-PPAddr
     SUBDIR += p5-B-Hooks-Parser
     SUBDIR += p5-B-Keywords
