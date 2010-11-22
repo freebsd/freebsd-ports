@@ -1,7 +1,7 @@
 # This is the /usr/local/etc/scamp/default file.
-# Created June 10, 2010 @ 15:37:48
+# Created November 14, 2010 @ 07:09:46
 
-SCAMP_VERSION=5.2j
+SCAMP_VERSION=5.3
 CLAMAV_DB=/var/db/clamav
 T_DIR=/var/db/clamav/tmp
 C_GROUP=clamav
