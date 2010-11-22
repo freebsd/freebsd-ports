@@ -1238,6 +1238,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/magick.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/memory.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/module.html
+%%PORTDOCS%%%%DOCSDIR%%/www/api/mogrify.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/monitor.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/montage.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/morphology.html
