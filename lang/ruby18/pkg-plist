@@ -394,7 +394,9 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/openssl/digest.rb
 %%RUBY_LIBDIR%%/openssl/pkcs7.rb
 %%RUBY_LIBDIR%%/openssl/ssl.rb
+%%RUBY_LIBDIR%%/openssl/ssl-internal.rb
 %%RUBY_LIBDIR%%/openssl/x509.rb
+%%RUBY_LIBDIR%%/openssl/x509-internal.rb
 %%RUBY_LIBDIR%%/openssl.rb
 %%RUBY_LIBDIR%%/optparse/date.rb
 %%RUBY_LIBDIR%%/optparse/shellwords.rb
