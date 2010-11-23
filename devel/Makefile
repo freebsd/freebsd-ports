@@ -1526,6 +1526,7 @@
     SUBDIR += p5-Devel-Cycle
     SUBDIR += p5-Devel-DProfPP
     SUBDIR += p5-Devel-Declare
+    SUBDIR += p5-Devel-Declare-Parser
     SUBDIR += p5-Devel-Diagram
     SUBDIR += p5-Devel-Ditto
     SUBDIR += p5-Devel-Dumpvar
