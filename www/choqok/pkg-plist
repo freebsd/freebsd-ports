@@ -192,3 +192,5 @@ share/locale/zh_CN/LC_MESSAGES/choqok.mo
 @dirrm share/apps/choqok_nowlistening
 @dirrm share/apps/choqok_searchaction
 @dirrm share/apps/choqok
+@dirrmtry share/apps/dbus-1/services
+@dirrmtry share/apps/dbus-1
