@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk-recordmydesktop
 PORTVERSION=	0.3.8
+PORTREVISION=	1
 CATEGORIES=	multimedia deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	recordmydesktop/gtk-recordMyDesktop/${PORTVERSION}
@@ -22,7 +23,7 @@ USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_PYTHON=	yes
-USE_GNOME=	gtk20 pygtk2
+USE_GNOME=	gtk20 pygtk2 desktopfileutils
 INSTALL_ICONS=	yes
 
 LICENSE=	GPLv2
