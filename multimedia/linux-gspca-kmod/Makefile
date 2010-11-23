@@ -24,7 +24,13 @@ NO_PACKAGE=	depends on kernel sources
 MAKEFILE=	Makefile.kld
 ALL_TARGET=	depend all
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 800000
+BROKEN=		does not compile on 8.X
+.endif
+
 post-extract:
 	@${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
