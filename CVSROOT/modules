@@ -11071,6 +11071,7 @@ p5-B-Generate                   ports/devel/p5-B-Generate
 p5-B-Graph                      ports/devel/p5-B-Graph
 p5-B-Hooks-EndOfScope           ports/devel/p5-B-Hooks-EndOfScope
 p5-B-Hooks-OP-Check             ports/devel/p5-B-Hooks-OP-Check
+p5-B-Hooks-OP-Check-EntersubForCV  ports/devel/p5-B-Hooks-OP-Check-EntersubForCV
 p5-B-Hooks-OP-PPAddr            ports/devel/p5-B-Hooks-OP-PPAddr
 p5-B-Hooks-Parser               ports/devel/p5-B-Hooks-Parser
 p5-B-Keywords                   ports/devel/p5-B-Keywords
@@ -12571,6 +12572,7 @@ p5-HTTP-DAV                     ports/www/p5-HTTP-DAV
 p5-HTTP-Daemon-SSL              ports/www/p5-HTTP-Daemon-SSL
 p5-HTTP-Engine                  ports/www/p5-HTTP-Engine
 p5-HTTP-Engine-Middleware       ports/www/p5-HTTP-Engine-Middleware
+p5-HTTP-Exception               ports/www/p5-HTTP-Exception
 p5-HTTP-GHTTP                   ports/www/p5-HTTP-GHTTP
 p5-HTTP-HeaderParser-XS         ports/www/p5-HTTP-HeaderParser-XS
 p5-HTTP-Headers-Fast            ports/www/p5-HTTP-Headers-Fast
@@ -14039,6 +14041,7 @@ p5-Sub-Installer                ports/devel/p5-Sub-Installer
 p5-Sub-Multi                    ports/devel/p5-Sub-Multi
 p5-Sub-Name                     ports/devel/p5-Sub-Name
 p5-Sub-Override                 ports/devel/p5-Sub-Override
+p5-Sub-Signatures               ports/devel/p5-Sub-Signatures
 p5-Sub-Uplevel                  ports/devel/p5-Sub-Uplevel
 p5-Sub-WrapPackages             ports/devel/p5-Sub-WrapPackages
 p5-Subtitles                    ports/multimedia/p5-Subtitles
@@ -15044,6 +15047,7 @@ p5-b-generate                   ports/devel/p5-B-Generate
 p5-b-graph                      ports/devel/p5-B-Graph
 p5-b-hooks-endofscope           ports/devel/p5-B-Hooks-EndOfScope
 p5-b-hooks-op-check             ports/devel/p5-B-Hooks-OP-Check
+p5-b-hooks-op-check-entersubforcv  ports/devel/p5-B-Hooks-OP-Check-EntersubForCV
 p5-b-hooks-op-ppaddr            ports/devel/p5-B-Hooks-OP-PPAddr
 p5-b-hooks-parser               ports/devel/p5-B-Hooks-Parser
 p5-b-keywords                   ports/devel/p5-B-Keywords
@@ -16587,6 +16591,7 @@ p5-http-daemon-ssl              ports/www/p5-HTTP-Daemon-SSL
 p5-http-dav                     ports/www/p5-HTTP-DAV
 p5-http-engine                  ports/www/p5-HTTP-Engine
 p5-http-engine-middleware       ports/www/p5-HTTP-Engine-Middleware
+p5-http-exception               ports/www/p5-HTTP-Exception
 p5-http-ghttp                   ports/www/p5-HTTP-GHTTP
 p5-http-headerparser-xs         ports/www/p5-HTTP-HeaderParser-XS
 p5-http-headers-fast            ports/www/p5-HTTP-Headers-Fast
@@ -18056,6 +18061,7 @@ p5-sub-installer                ports/devel/p5-Sub-Installer
 p5-sub-multi                    ports/devel/p5-Sub-Multi
 p5-sub-name                     ports/devel/p5-Sub-Name
 p5-sub-override                 ports/devel/p5-Sub-Override
+p5-sub-signatures               ports/devel/p5-Sub-Signatures
 p5-sub-uplevel                  ports/devel/p5-Sub-Uplevel
 p5-sub-wrappackages             ports/devel/p5-Sub-WrapPackages
 p5-subatom                      ports/devel/p5-subatom
