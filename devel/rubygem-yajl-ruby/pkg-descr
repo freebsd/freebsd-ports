@@ -18,4 +18,4 @@ Features:
  * ~1.5x faster than Marshal.load
  * ~2x faster than Marshal.dump
 
-WWW:	http://github.com/brianmario/yajl-ruby
+WWW: https://github.com/brianmario/yajl-ruby

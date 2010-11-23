@@ -3,4 +3,4 @@ connection handling. Adheres to twitter's reconnection guidline.
 
 JSON format only.
 
-WWW:	http://github.com/voloko/twitter-stream
+WWW: https://github.com/voloko/twitter-stream
