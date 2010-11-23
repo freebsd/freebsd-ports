@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zile
-PORTVERSION=	2.3.19
+PORTVERSION=	2.3.21
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
@@ -14,12 +14,13 @@ MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Small emacs-like text editor
 
 USE_GMAKE=	yes
+USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--without-included-regex
 
 MAN1=		${PORTNAME}.1
-PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/FAQ %%DATADIR%%/dotzile.sample
+PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/FAQ %%DATADIR%%/dotzile-extra.el
 PLIST_DIRS=	%%DATADIR%%
 
 CPPFLAGS=	-isystem /usr/include/gnu
