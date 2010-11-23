@@ -28,6 +28,7 @@ USE_GETTEXT=	yes
 USE_SDL=	sdl
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--without-alsa
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/gtk
 
