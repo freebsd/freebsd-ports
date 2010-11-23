@@ -1,0 +1,25 @@
+=============================================
+1 Congratulations! You have successfully installed
+PRESTASHOP e-Commerce platform.
+
+2 Add the following to your Apache configuration, and
+   restart the server:
+
+  ### Add the AcceptPathInfo directive only for Apache 2.0.30 or later.
+   Alias /prestashop %%WWWDIR%%/
+   AcceptPathInfo On
+   <Directory %%WWWDIR%%>
+      AllowOverride None
+      Order Allow,Deny
+      Allow from all
+   </Directory>
+
+3 Create a database for PRESTASHOP.
+
+4 Then continue to proceed to Prestashop web setup proccess with
+  your browser:
+  http://your-server-name/prestashop/install
+
+5 More detailed document could be found here:
+  http://www.prestashop.com/wiki/Installing_And_Updating_PrestaShop_Software/ 
+=============================================

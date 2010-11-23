@@ -80,6 +80,7 @@
     SUBDIR += pfpro
     SUBDIR += php-tclink
     SUBDIR += php4-pfpro
+    SUBDIR += prestashop
     SUBDIR += qhacc
     SUBDIR += qtstalker
     SUBDIR += quantlib
