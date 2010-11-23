@@ -18,6 +18,9 @@ COMMENT=	A Login Anomaly Detector
 
 RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
 
+DEPRECATED=	Project is dead.
+EXPIRATION_DATE=2010-12-31
+
 USE_PYTHON=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
