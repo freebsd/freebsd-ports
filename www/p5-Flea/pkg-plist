@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flea/.packlist
+%%SITE_PERL%%/Flea.pm
+%%SITE_PERL%%/Flea/Parser/Method.pm
+%%SITE_PERL%%/Flea/Parser/Route.pm
+@dirrm %%SITE_PERL%%/Flea/Parser
+@dirrm %%SITE_PERL%%/Flea
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Flea
