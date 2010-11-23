@@ -141,6 +141,7 @@
     SUBDIR += ppmd
     SUBDIR += ppmd-7z
     SUBDIR += ppunpack
+    SUBDIR += pxz
     SUBDIR += py-liblzma
     SUBDIR += py-librtfcomp
     SUBDIR += py-lzma
