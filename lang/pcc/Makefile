@@ -7,36 +7,32 @@
 #
 
 PORTNAME=	pcc
-PORTVERSION=	0.9.9.${DATESPEC}
+PORTVERSION=	0.9.9.101107
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pcc.ludd.ltu.se/pub/pcc/ \
 		http://pcc.ludd.ltu.se/ftp/pub/pcc/ \
 		ftp://226.net120.skekraft.net/pcc/
-DISTNAME=	pcc-${DATESPEC}
+DISTNAME=	pcc-${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	joel@FreeBSD.org
 COMMENT=	S.C.Johnson's Portable C Compiler brought into the C99 world
 
-DATESPEC=	101107
-
 ONLY_FOR_ARCHS=	i386 amd64
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DATESPEC}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	YACC=${YACC}
+CONFIGURE_ENV=	YACC=${YACC}
 USE_GMAKE=	yes
 
-MAN1=		pcc.1 cpp.1 ccom.1
+MAN1=		ccom.1 cpp.1 pcc.1
 PLIST_FILES=	bin/pcc libexec/ccom libexec/cpp
-
-OSVERMAJOR=${OSREL:C/\.[0-9.]*//}
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/os/freebsd
 	${CP} ${FILESDIR}/*.h ${WRKSRC}/os/freebsd
-	${REINPLACE_CMD} -e "s,%%OSVERMAJOR%%,${OSVERMAJOR}," \
+	${REINPLACE_CMD} -e "s,%%OSVERMAJOR%%,${OSREL:R}," \
 		${WRKSRC}/os/freebsd/ccconfig.h
 
 .include <bsd.port.mk>
