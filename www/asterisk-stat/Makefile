@@ -34,7 +34,7 @@ OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL" off
 ASTERISKSTATDB=	pgsql
 .else
 ASTERISKSTATDB=	mysql
-RUN_DEPENDS+=	${LOCALBASE}/lib/asterisk/modules/cdr_addon_mysql.so:${PORTSDIR}/net/asterisk-addons
+RUN_DEPENDS+=	${LOCALBASE}/lib/asterisk/modules/cdr_addon_mysql.so:${PORTSDIR}/net/asterisk14-addons
 .endif
 
 USE_PHP+=	${ASTERISKSTATDB}
