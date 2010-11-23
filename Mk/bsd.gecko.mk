@@ -418,14 +418,16 @@ MOZ_OPTIONS+=	--enable-gnomevfs
 MOZ_OPTIONS+=	--disable-gnomevfs
 .endif
 
+.if !defined(STRIP) || ${STRIP} == ""
+MOZ_OPTIONS+=	--disable-strip --disable-install-strip
+.endif
+
 .if defined(WITH_DEBUG)
-MOZ_OPTIONS+=	--enable-debug				\
-		--disable-strip
+MOZ_OPTIONS+=	--enable-debug
 WITH_LOGGING=	yes
 .else
 MOZ_OPTIONS+=	--disable-debug				\
-		--enable-optimize=${WITH_OPTIMIZE}	\
-		--enable-strip
+		--enable-optimize=${WITH_OPTIMIZE}
 .endif
 
 .if defined(WITH_JAVA) && defined(_WITH_JAVA)
@@ -516,6 +518,7 @@ gecko-post-patch:
 .for subdir in "" nsprpub js/src
 	@if [ -f ${MOZSRC}/${subdir}/config/system-headers ] ; then \
 		${ECHO_CMD} "fenv.h" >> ${MOZSRC}/${subdir}/config/system-headers ; \
+		${ECHO_CMD} "pthread_np.h" >> ${MOZSRC}/${subdir}/config/system-headers ; \
 	fi
 .endfor
 	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
