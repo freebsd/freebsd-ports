@@ -7,6 +7,7 @@
 
 PORTNAME=	opencryptoki
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -54,11 +55,10 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 CFLAGS+=	-I${LOCALBASE}/include
 
-pre-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${ACLOCAL}
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LIBTOOLIZE} --force -c
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${AUTOMAKE} --add-missing -c
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${AUTOCONF}
+run-autotools:	run-autotools-autoreconf
+
+run-autotools-autoreconf:
+	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -i
 
 post-install:
 	@cd ${PREFIX}/lib && ${LN} -s opencryptoki/libopencryptoki* .

@@ -1,0 +1,9 @@
+--- Makefile.am.orig	2010-07-29 21:28:41.000000000 +0900
++++ Makefile.am	2010-11-23 22:35:25.112978674 +0900
+@@ -8,5 +8,5 @@
+ MISCDIR = misc
+ endif
+ 
+-SUBDIRS = usr man $(MISCDIR) $(TESTDIR)
++SUBDIRS = usr man $(TESTDIR)
+ 
