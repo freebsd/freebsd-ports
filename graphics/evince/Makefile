@@ -7,9 +7,8 @@
 #
 
 PORTNAME=	evince
-PORTVERSION=	2.30.3
 PORTVERSION=	2.32.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -132,7 +131,5 @@ post-patch:
 
 post-install:
 	@-update-desktop-database
-	@${INSTALL_DATA} ${WRKSRC}/data/org.gnome.Evince.gschema.xml \
-		${PREFIX}/share/glib-2.0/schemas
 
 .include <bsd.port.post.mk>
