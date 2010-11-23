@@ -34,6 +34,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a3314314-f731-11df-a757-0011098ad87f">
+    <topic>horde-base -- XSS: VCARD attachments vulnerability</topic>
+    <affects>
+      <package>
+	<name>horde-base</name>
+	<range><lt>3.3.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+      	<p>The Horde team reports:</p>
+	<blockquote cite="http://article.gmane.org/gmane.comp.horde.announce/532">
+	  <p>The major changes compared to Horde version 3.3.10 are:</p>
+          <p>* Fixed XSS vulnerability when viewing details of a vCard.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://article.gmane.org/gmane.comp.horde.announce/532</url>
+      <url>http://bugs.horde.org/ticket/9357</url>
+    </references>
+    <dates>
+      <discovery>2010-11-02</discovery>
+      <entry>2010-11-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="533d20e7-f71f-11df-9ae1-000bcdf0a03b">
     <topic>proftpd -- remote code execution vulnerability</topic>
     <affects>
