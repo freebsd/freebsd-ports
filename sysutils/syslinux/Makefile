@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	linux/boot/syslinux
 
-MAINTAINER=	luigi@FreeBSD.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Syslinux for FreeBSD
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
@@ -25,6 +25,10 @@ USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 700000
+BROKEN=		requires FreeBSD 7.x and higher
+.endif
 
 # utility target to build pkg-plist
 _A =	mbr/mbr.bin mbr/gptmbr.bin \
