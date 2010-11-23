@@ -18,6 +18,9 @@ COMMENT=	Automatic updates of custom rulesets for SpamAssassin
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 				spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
+DEPRECATED=	Use sa-update instead
+EXPIRATION_DATE=	2011-01-31
+
 OPTIONS=	ANTIDRUG "Already included in SA 3.0" off \
 		BLACKLIST "William Stearn's sa-blacklist" off \
 		BLACKLISTU "William Stearn's URI blacklist" off \
