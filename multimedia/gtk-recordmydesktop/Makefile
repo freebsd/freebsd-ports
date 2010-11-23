@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-recordmydesktop
 PORTVERSION=	0.3.8
-CATEGORIES=	deskutils multimedia
+CATEGORIES=	multimedia deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	recordmydesktop/gtk-recordMyDesktop/${PORTVERSION}
 
@@ -26,7 +26,7 @@ USE_GNOME=	gtk20 pygtk2
 INSTALL_ICONS=	yes
 
 LICENSE=	GPLv2
-LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 post-build:
 	@${REINPLACE_CMD} -e 's|/usr/bin|${PREFIX}/bin|' \
