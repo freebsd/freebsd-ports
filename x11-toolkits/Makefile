@@ -41,7 +41,6 @@
     SUBDIR += gauche-gtk
     SUBDIR += gdl
     SUBDIR += gigi
-    SUBDIR += gir-repository-gtksourceview2
     SUBDIR += gir-repository-vte
     SUBDIR += gnocl
     SUBDIR += gnome-desktop-sharp20
