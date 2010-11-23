@@ -955,6 +955,7 @@
     SUBDIR += rubygem-righthttpconnection
     SUBDIR += rubygem-rightslicehost
     SUBDIR += rubygem-rubytter
+    SUBDIR += rubygem-tweetstream
     SUBDIR += rubygem-twitter
     SUBDIR += rubygem-twitter-stream
     SUBDIR += rubygem-twitter4r
