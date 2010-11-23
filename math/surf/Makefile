@@ -26,6 +26,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-cups --datadir=${PREFIX}/share
 
+CONFLICTS=	surf-0* # www/surf
+
 MAN1=		${PORTNAME}.1
 PORTDOCS=	manual.sgml
 PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/${PORTNAME}.xpm
