@@ -11,10 +11,10 @@
 # ======================= USERS =================================
 # To specify which gecko-based backend you prefer, use something like:
 #
-# WITH_GECKO=	firefox
+# WITH_GECKO=	libxul
 #
 # The valid backends are:
-# firefox flock seamonkey thunderbird
+# libxul seamonkey
 #
 # See below for more details.
 # ======================= /USERS ================================
@@ -36,31 +36,29 @@ Gecko_Pre_Include=			bsd.gecko.mk
 
 # Users should use the following syntax:
 #
-# WITH_GECKO= mozilla firefox seamonkey
-#  Use mozilla whenever a port supports it, falling back on firefox and
-#  then seamonkey.
-# WITH_GECKO= firefox
-#  Sets your preferred backend. With this example, firefox will always
-#  be chosen, unless the port doesn't support a firefox backend. In that
+# WITH_GECKO= libxul seamonkey
+#  Use libxul whenever a port supports it, falling back on seamonkey.
+# WITH_GECKO= libxul
+#  Sets your preferred backend. With this example, libxul will always
+#  be chosen, unless the port doesn't support a libxul backend. In that
 #  case, you get whatever the porter chose as the default. Better to use
 #  the first example.
 #
 #
 # Ports should use the following:
 #
-# USE_GECKO= mozilla firefox seamonkey
+# USE_GECKO= libxul seamonkey
 #  The list of gecko backends that the port supports. Unless the user
 #  overrides it with WITH_GECKO, the first gecko listed in USE_GECKO
-#  will be the default. In the above example, www/mozilla will be used
-#  as a gecko backend unless WITH_GECKO=firefox or WITH_GECKO=seamonkey
-#  is defined by the user.
+#  will be the default. In the above example, www/libxul will be used
+#  as a gecko backend unless WITH_GECKO=seamonkey is defined by the user.
 #
 # USE_GECKO= firefox-devel<->firefox
 #  This will sed -e 's/firefox/firefox-devel/' on Makefile.in's and configure 
 #  if ${GECKO}=="firefox-devel"
 #
 #  Example:
-#  USE_GECKO= mozilla firefox seamonkey
+#  USE_GECKO= libxul seamonkey
 #  
 #  post-patch:
 #	@${REINPALCE_CMD} -e 's|mozilla-|${GECKO}-|' \
@@ -70,7 +68,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #  has been chosen.
 #
 #  Example:
-#  USE_GECKO= mozilla firefox seamonkey
+#  USE_GECKO= libxul seamonkey
 #  
 #  post-patch:
 #  .if ${GECKO}=="seamonkey"
@@ -78,10 +76,8 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #		${MOZSRC}/configure
 #  .endif
 
-_GECKO_ALL=	firefox seamonkey thunderbird flock mozilla \
-		libxul
+_GECKO_ALL=	seamonkey libxul
 
-thunderbird_PORTSDIR=	mail
 libxul_PLIST=		${LOCALBASE}/lib/libxul/libxul.so
 
 .for gecko in ${_GECKO_ALL}
