@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Meta/Builder.pm
+%%SITE_PERL%%/Meta/Builder/Base.pm
+%%SITE_PERL%%/Meta/Builder/Util.pm
+@dirrm %%SITE_PERL%%/Meta/Builder
+@dirrmtry %%SITE_PERL%%/Meta
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Meta/Builder
