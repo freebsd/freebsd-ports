@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX:S|s$||}-jp_${PORTVERSION:S|.||}_beta
 MAINTAINER=	jfkimura@yahoo.co.jp
 COMMENT=	Japanese sound files for Asterisk
 
-RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
+RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14
 
 NO_BUILD=	yes
 ASTERISKDIR=	${DATADIR}/${PKGNAMESUFFIX:S|-||}
