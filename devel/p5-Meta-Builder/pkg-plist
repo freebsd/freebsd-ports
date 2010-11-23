@@ -3,4 +3,3 @@
 %%SITE_PERL%%/Meta/Builder/Util.pm
 @dirrm %%SITE_PERL%%/Meta/Builder
 @dirrmtry %%SITE_PERL%%/Meta
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Meta/Builder
