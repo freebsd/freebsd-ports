@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scala
-PORTVERSION=	2.8.0
+PORTVERSION=	2.8.1
 DISTVERSIONSUFFIX=	.final
 CATEGORIES=	lang java
 MASTER_SITES=	http://www.scala-lang.org/downloads/distrib/files/ \
