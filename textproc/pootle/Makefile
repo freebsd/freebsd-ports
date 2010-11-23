@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pootle
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	textproc
 MASTER_SITES=	SF/translate/Pootle/${PORTVERSION}/
 DISTNAME=	Pootle-${PORTVERSION}
@@ -15,7 +15,7 @@ MAINTAINER=	catone@cpan.org
 COMMENT=	Pootle is a user-friendly web portal for simple translation process
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.2:${PORTSDIR}/www/py-django \
-		translate-toolkit>=1.8:${PORTSDIR}/textproc/translate-toolkit \
+		translate-toolkit>=1.8.1:${PORTSDIR}/textproc/translate-toolkit \
 		${PYTHON_PKGNAMEPREFIX}south>=0.7:${PORTSDIR}/databases/py-south
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
