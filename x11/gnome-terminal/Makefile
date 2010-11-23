@@ -31,6 +31,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 GCONF_SCHEMAS=	gnome-terminal.schemas
 
 post-patch:
-	${FIND} ${WRKSRC} -type f -exec ${TOUCH} -f {} \;
+	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \
+		${WRKSRC}/configure ${WRKSRC}/config.h.in
 
 .include <bsd.port.mk>
