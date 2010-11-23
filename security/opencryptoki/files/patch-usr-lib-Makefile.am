@@ -1,0 +1,13 @@
+--- usr/lib/Makefile.am.orig	2010-07-29 21:28:41.000000000 +0900
++++ usr/lib/Makefile.am	2010-11-24 02:34:56.159978814 +0900
+@@ -1,10 +1,2 @@
+ SUBDIRS = pkcs11
+ 
+-install-data-hook:
+-	$(MKDIR_P) $(DESTDIR)/etc/ld.so.conf.d
+-	echo "$(libdir)/opencryptoki" >\
+-		$(DESTDIR)/etc/ld.so.conf.d/opencryptoki-$(target_cpu).conf
+-	echo "$(libdir)/opencryptoki/stdll" >>\
+-		$(DESTDIR)/etc/ld.so.conf.d/opencryptoki-$(target_cpu).conf
+-	echo "**** Remember you must run ldconfig before using the above settings ****"
+-
