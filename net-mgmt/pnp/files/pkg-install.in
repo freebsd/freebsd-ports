@@ -3,17 +3,22 @@
 # $FreeBSD$
 #
 
-PNP_RRDS=%%PNP_RRDS%%
-PNP_SPOOL=%%PNP_SPOOL%%
+SPOOL_DIRS=%%SPOOL_DIRS%%
 NAGIOSUSER=%%NAGIOSUSER%%
 NAGIOSGROUP=%%NAGIOSGROUP%%
 
+# Create directories with mode and ownership specified in SPOOL_DIRS
+# as strings separated by '%' of format DIR:OWNER:GROUP:MODE
 dirs () {
-	for i in "$PNP_RRDS" "$PNP_SPOOL"; do
-		if ! [ -d "$i" ]; then
-			mkdir -p "$i"
-			chmod 750 "$i"
-			chown "$NAGIOSUSER":"$NAGIOSGROUP" "$i"
+	IFS=%
+	for i in $SPOOL_DIRS; do
+		d="${i%%:*}"
+		if ! [ -d "$d" ]; then
+			go=`echo "$i" | cut -f 2-3 -d :`
+			m="${i##*:}"
+			mkdir -p "$d"
+			chown "$go" "$d"
+			chmod "$m" "$d"
 		fi
 	done
 }
@@ -29,7 +34,7 @@ check_sanity () {
 	fi
 }
 
-if [ "x$2" = "xPOST-INSTALL" ]; then
+if [ "x$2" = "xPRE-INSTALL" ]; then
 	check_sanity
 	dirs
 fi

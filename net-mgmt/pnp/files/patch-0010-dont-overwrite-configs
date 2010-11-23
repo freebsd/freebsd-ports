@@ -1,6 +1,20 @@
---- ./sample-config/Makefile.in.orig	2010-05-29 23:27:44.000000000 +0200
-+++ ./sample-config/Makefile.in	2010-05-29 23:27:44.000000000 +0200
-@@ -27,23 +27,19 @@
+From cccbb033458f205ac74e11babe5021bc7a3ade3c Mon Sep 17 00:00:00 2001
+From: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
+Date: Wed, 17 Nov 2010 19:47:16 +0300
+Subject: [PATCH 1/3] Do not overwrite configuration files
+
+Install all configuration files as *-sample.
+
+Signed-off-by: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
+---
+ sample-config/Makefile.in |    8 +++-----
+ 1 files changed, 3 insertions(+), 5 deletions(-)
+
+diff --git a/sample-config/Makefile.in b/sample-config/Makefile.in
+index 883345c..1eac2c1 100644
+--- a/sample-config/Makefile.in
++++ b/sample-config/Makefile.in
+@@ -31,14 +31,12 @@ distclean: clean
  devclean: distclean
  
  install:
@@ -16,9 +30,8 @@
 +	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/background.pdf $(DESTDIR)$(SYSCONFDIR)/background.pdf-sample
  
  install-config: 
--	-rm -f $(DESTDIR)$(HTMLDIR)/conf/config.php
--
- 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)
+ 
+@@ -46,7 +44,7 @@ install-config:
  	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)/check_commands
  	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(SYSCONFDIR)/pages
  	
@@ -26,4 +39,7 @@
 +	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/config.php $(DESTDIR)$(SYSCONFDIR)/config.php-sample
  	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/process_perfdata.cfg-sample $(DESTDIR)$(SYSCONFDIR)
  	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/rra.cfg-sample $(DESTDIR)$(SYSCONFDIR)
- 	$(INSTALL) -m 644 $(INSTALL_OPTS)  pnp/check_commands/check_nwstat.cfg-sample $(DESTDIR)$(SYSCONFDIR)/check_commands
+ 	$(INSTALL) -m 644 $(INSTALL_OPTS)  misccommands.cfg-sample $(DESTDIR)$(SYSCONFDIR)
+-- 
+1.7.2.1
+

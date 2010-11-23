@@ -2,51 +2,39 @@
 
 You just installed/upgraded PNP graphing tool for Nagios.
 
-For tool configuration tasks read
-  http://www.pnp4nagios.org/pnp/config
-
-For Web-frontend configuration tasks read
-  http://www.pnp4nagios.org/pnp/webfe
+You will need to read the documentation at
+  http://docs.pnp4nagios.org/pnp-0.6/doc_complete
+both for new installations and upgrades from 0.4, since you will
+need to tweak your Nagios and PNP configuration according to the
+0.6.x recipes.
 
 We recommend to start with the following restrictive Apache
 configuration for the PNP area:
-
+{{{
+# PNP graphing tool
+Alias /nagios/pnp %%WWWDIR%%
 <Directory "%%WWWDIR%%/">
     Order deny,allow
     Allow from all
     Deny from all
-    DirectoryIndex index.php
+
     AddHandler application/x-httpd-php .php
-</Directory>
+    DirectoryIndex index.php
 
-<Directory "%%WWWDIR%%/include/">
-    Options None
-    Order allow,deny
-    Deny from all
-    <FilesMatch ".css$">
-        Order deny,allow
-        Allow from all
-        Deny from all
-    </FilesMatch>
+    RewriteEngine on
+    RewriteBase /nagios/pnp/
+    # Protect application and system files from being viewed
+    RewriteRule ^(application|modules|system) - [F,L]
+    # Allow any files or directories that exist to be displayed directly
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    # Rewrite all other URLs to index.php/URL
+    RewriteRule .* index.php/$0 [PT,L]
 </Directory>
+}}}
 
-<Directory "%%WWWDIR%%/include/js/">
-    Order deny,allow
-    Allow from all
-    Deny from all
-</Directory>
-<Directory "%%WWWDIR%%/lang/">
-    Order allow,deny
-    Deny from all
-</Directory>
-<Directory "%%WWWDIR%%/templates/">
-    Order allow,deny
-    Deny from all
-</Directory>
-<Directory "%%WWWDIR%%/templates.dist/">
-    Order allow,deny
-    Deny from all
-</Directory>
+Create %%WWWDIR%%/install.ignore to disable sanity check
+and start using PNP.
 
 Please, note that user who runs Apache processes should be able to
 read PNP RRD spool files from
