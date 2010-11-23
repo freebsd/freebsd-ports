@@ -7,6 +7,7 @@
 
 PORTNAME=	trousers
 PORTVERSION=	0.3.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
@@ -37,7 +38,7 @@ LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
 .include "Makefile.man"
 
-CONFIGURE_ARGS=	--with-gui=none \
+CONFIGURE_ARGS=	--with-gui=none --enable-static \
 		--localstatedir=${PREFIX}/var \
 		--with-tssuser=${USERS} --with-tssgroup=${GROUPS}
 
