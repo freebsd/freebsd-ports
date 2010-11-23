@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.8
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpbb.com/files/release/ \
 		http://d10xg45o6p6dbl.cloudfront.net/projects/p/phpbb/
-DISTNAME=	phpBB-${PORTVERSION}-PL1
+DISTNAME=	phpBB-${PORTVERSION}
 
 MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	A PHP-based bulletin board / discussion forum system
@@ -41,6 +41,7 @@ PLIST_SUB+=	PHPBBDIR=${PHPBBDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 #
 PHPBBDIR=	${WWWDOCROOT}/${PHPBBURL}
 PKGOPTS=	${FILESDIR}/pkg-opts
+PORTDOCS=	*
 
 options:
 	@ ${ECHO_MSG} "===>  Build options for ${PKGNAME}:"
