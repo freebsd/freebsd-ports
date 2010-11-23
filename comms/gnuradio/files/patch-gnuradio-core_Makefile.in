@@ -1,6 +1,6 @@
---- gnuradio-core/Makefile.in.orig	2008-03-24 12:49:57.000000000 -0400
-+++ gnuradio-core/Makefile.in	2008-03-24 16:13:56.000000000 -0400
-@@ -546,14 +546,13 @@
+--- gnuradio-core/Makefile.in.orig	2008-08-23 20:37:32.000000000 -0400
++++ gnuradio-core/Makefile.in	2010-11-16 14:44:47.000000000 -0500
+@@ -561,14 +561,13 @@
  # Base directory for example applications
  exampledir = $(datadir)/gnuradio/examples
  EXTRA_DIST = \
