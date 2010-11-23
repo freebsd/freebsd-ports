@@ -66,7 +66,7 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://www.zerodayinitiative.com/advisories/ZDI-10-229/</url>
     </references>
     <dates>
-      <discovery>2010-11-FIXME</discovery>
+      <discovery>2010-11-02</discovery>
       <entry>2010-11-23</entry>
     </dates>
   </vuln>
