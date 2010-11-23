@@ -1,0 +1,11 @@
+Fennec does a ton, but it may be hard to adopt it all at once. It also
+is a large project, and has not yet been fully split into component
+projects. Fennec::Lite takes a minimalist approach to do for Fennec
+what Mouse does for Moose.
+
+Fennec::Lite is a single module file with no non-core dependencies. It
+can easily be used by any project, either directly, or by copying it
+into your project. The file itself is less than 300 lines of code at
+the time of this writing, that includes whitespace.
+
+WWW: http://search.cpan.org/dist/Fennec-Lite/
