@@ -57,5 +57,5 @@ share/themes/bubble/gtk-2.0/red.svg
 @dirrmtry share/themes/bubble/gtk-2.0
 @dirrmtry share/themes/bubble/gtk-3.0
 @dirrmtry share/themes/bubble
-@comment @exec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/etc/gtk-2.0/gdk-pixbuf.loaders 2>/dev/null || /usr/bin/true
-@comment @unexec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/etc/gtk-2.0/gdk-pixbuf.loaders 2>/dev/null || /usr/bin/true
+@exec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true
+@unexec %D/bin/gdk-pixbuf-query-loaders > /dev/null 2>&1 && %D/bin/gdk-pixbuf-query-loaders > %D/lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders.cache 2>/dev/null || /usr/bin/true
