@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libnfc
-PORTVERSION=	1.3.9
+PORTVERSION=	1.4.0
 CATEGORIES=	devel
 MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/ \
     		http://romain.blogreen.org/distfiles/
@@ -26,8 +26,11 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack
 
-MAN1=		nfc-mfclassic.1 nfc-emulate.1 nfc-list.1 nfc-mfultralight.1 \
-		nfc-relay.1 nfc-anticol.1 nfc-sam.1
+MAN1=		nfc-anticol.1 nfc-dep-initiator.1 nfc-dep-target.1 \
+		nfc-emulate-forum-tag4.1 nfc-emulate-tag.1 nfc-emulate-uid.1 \
+		nfc-mfclassic.1 nfc-list.1 nfc-mfultralight.1 nfc-poll.1 \
+		nfc-relay.1 nfc-relay-picc.1 pn53x-diagnose.1 pn53x-sam.1 \
+		pn53x-tamashell.1
 
 .include <bsd.port.pre.mk>
 
