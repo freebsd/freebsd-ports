@@ -6,36 +6,27 @@
 #
 
 PORTNAME=	Mojo
-PORTVERSION=	0.999914
+PORTVERSION=	0.999941
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Test
+MASTER_SITE_SUBDIR=	Mojolicious
 PKGNAMEPREFIX=	p5-
+DISTNAME=	Mojolicious-${PORTVERSION}
 
 MAINTAINER=	mopsfelder@gmail.com
 COMMENT=	A high level MVC web framework written in Perl
 
 PERL_CONFIGURE=	yes
 
+MAN1=		mojo.1
 MAN3=		Mojo.3 \
 		Mojo::Asset.3 \
 		Mojo::Asset::File.3 \
 		Mojo::Asset::Memory.3 \
 		Mojo::Base.3 \
-		Mojo::Buffer.3 \
 		Mojo::ByteStream.3 \
 		Mojo::Client.3 \
 		Mojo::Command.3 \
-		Mojo::Command::Cgi.3 \
-		Mojo::Command::Daemon.3 \
-		Mojo::Command::DaemonPrefork.3 \
-		Mojo::Command::Fastcgi.3 \
-		Mojo::Command::Generate.3 \
-		Mojo::Command::Generate::App.3 \
-		Mojo::Command::Generate::Makefile.3 \
-		Mojo::Command::Get.3 \
-		Mojo::Command::Test.3 \
-		Mojo::Commands.3 \
 		Mojo::Content.3 \
 		Mojo::Content::MultiPart.3 \
 		Mojo::Content::Single.3 \
@@ -43,10 +34,9 @@ MAN3=		Mojo.3 \
 		Mojo::Cookie::Request.3 \
 		Mojo::Cookie::Response.3 \
 		Mojo::CookieJar.3 \
+		Mojo::DOM.3 \
 		Mojo::Date.3 \
 		Mojo::Exception.3 \
-		Mojo::Filter.3 \
-		Mojo::Filter::Chunked.3 \
 		Mojo::Headers.3 \
 		Mojo::HelloWorld.3 \
 		Mojo::Home.3 \
@@ -62,41 +52,63 @@ MAN3=		Mojo.3 \
 		Mojo::Server.3 \
 		Mojo::Server::CGI.3 \
 		Mojo::Server::Daemon.3 \
-		Mojo::Server::Daemon::Prefork.3 \
 		Mojo::Server::FastCGI.3 \
-		Mojo::Stateful.3 \
+		Mojo::Server::PSGI.3 \
 		Mojo::Template.3 \
-		Mojo::Template::Exception.3 \
 		Mojo::Transaction.3 \
-		Mojo::Transaction::Pipeline.3 \
-		Mojo::Transaction::Single.3 \
+		Mojo::Transaction::HTTP.3 \
+		Mojo::Transaction::WebSocket.3 \
 		Mojo::URL.3 \
 		Mojo::Upload.3 \
-		MojoX::Dispatcher::Routes.3 \
-		MojoX::Dispatcher::Routes::Controller.3 \
-		MojoX::Dispatcher::Static.3 \
-		MojoX::Renderer.3 \
-		MojoX::Routes.3 \
-		MojoX::Routes::Match.3 \
-		MojoX::Routes::Pattern.3 \
-		MojoX::Types.3 \
+		Mojo::Util.3 \
 		Mojolicious.3 \
-		Mojolicious::Book.3 \
+		Mojolicious::Command::Cgi.3 \
+		Mojolicious::Command::Daemon.3 \
+		Mojolicious::Command::Fastcgi.3 \
 		Mojolicious::Command::Generate.3 \
 		Mojolicious::Command::Generate::App.3 \
+		Mojolicious::Command::Generate::Gitignore.3 \
 		Mojolicious::Command::Generate::LiteApp.3 \
+		Mojolicious::Command::Generate::Makefile.3 \
+		Mojolicious::Command::Get.3 \
+		Mojolicious::Command::Inflate.3 \
+		Mojolicious::Command::Psgi.3 \
 		Mojolicious::Command::Routes.3 \
+		Mojolicious::Command::Test.3 \
+		Mojolicious::Command::Version.3 \
 		Mojolicious::Commands.3 \
 		Mojolicious::Controller.3 \
+		Mojolicious::Guides.3 \
+		Mojolicious::Guides::Cheatsheet.3 \
+		Mojolicious::Guides::CodingGuidelines.3 \
+		Mojolicious::Guides::Cookbook.3 \
+		Mojolicious::Guides::FAQ.3 \
+		Mojolicious::Guides::Rendering.3 \
+		Mojolicious::Guides::Routing.3 \
 		Mojolicious::Lite.3 \
 		Mojolicious::Plugin.3 \
 		Mojolicious::Plugin::AgentCondition.3 \
+		Mojolicious::Plugin::Charset.3 \
 		Mojolicious::Plugin::DefaultHelpers.3 \
 		Mojolicious::Plugin::EpRenderer.3 \
 		Mojolicious::Plugin::EplRenderer.3 \
+		Mojolicious::Plugin::HeaderCondition.3 \
+		Mojolicious::Plugin::I18n.3 \
+		Mojolicious::Plugin::JsonConfig.3 \
+		Mojolicious::Plugin::PodRenderer.3 \
+		Mojolicious::Plugin::PoweredBy.3 \
 		Mojolicious::Plugin::RequestTimer.3 \
+		Mojolicious::Plugin::TagHelpers.3 \
 		Mojolicious::Plugins.3 \
+		Mojolicious::Renderer.3 \
+		Mojolicious::Routes.3 \
+		Mojolicious::Routes::Match.3 \
+		Mojolicious::Routes::Pattern.3 \
+		Mojolicious::Session.3 \
+		Mojolicious::Static.3 \
+		Mojolicious::Types.3 \
 		Test::Mojo.3 \
-		Test::Mojo::Server.3
+		README.3 \
+		ojo.3
 
 .include <bsd.port.mk>
