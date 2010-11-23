@@ -1,15 +1,19 @@
 @comment $FreeBSD$
 bin/nfc-anticol
-bin/nfc-emulate
+bin/nfc-dep-initiator
+bin/nfc-dep-target
+bin/nfc-emulate-forum-tag4
+bin/nfc-emulate-tag
+bin/nfc-emulate-uid
 bin/nfc-list
 bin/nfc-mfclassic
 bin/nfc-mfultralight
 bin/nfc-poll
 bin/nfc-relay
-bin/nfc-sam
-bin/nfcip-initiator
-bin/nfcip-target
+bin/nfc-relay-picc
 bin/pn53x-diagnose
+bin/pn53x-sam
+bin/pn53x-tamashell
 include/nfc/nfc-messages.h
 include/nfc/nfc-types.h
 include/nfc/nfc.h
