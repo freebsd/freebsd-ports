@@ -21,11 +21,11 @@ POST-INSTALL)
 	  if [ ! -d ${DIR} ]; then
 	    echo "===> Creating directory ${DIR}"
 	    ${MKDIR} ${DIR}
+	    echo "===> Changing ownership of ${DIR}"
+	    ${CHOWN} -R ${UID}:${GID} ${DIR}
+	    echo "===> Changing permissions of ${DIR}"
+	    ${CHMOD} -R 770 ${DIR}
 	  fi
-	  echo "===> Changing ownership of ${DIR}"
-	  ${CHOWN} -R ${UID}:${GID} ${DIR}
-	  echo "===> Changing permissions of ${DIR}"
-	  ${CHMOD} -R 770 ${DIR}
 	done
 	;;
 esac

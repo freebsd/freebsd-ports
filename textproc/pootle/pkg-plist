@@ -828,6 +828,7 @@ bin/updatetm
 %%DATADIR%%/mo/mg/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/ml/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/mn/LC_MESSAGES/django.mo
+%%DATADIR%%/mo/mr/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/ms/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/mt/LC_MESSAGES/django.mo
 %%DATADIR%%/mo/nap/LC_MESSAGES/django.mo
@@ -871,6 +872,7 @@ bin/updatetm
 
 
 @dirrmtry etc/pootle
+@dirrmtry etc/devd
 @dirrm %%PYTHON_SITELIBDIR%%/contact_form_i18n
 @dirrm %%PYTHON_SITELIBDIR%%/djblets/util/templatetags
 @dirrm %%PYTHON_SITELIBDIR%%/djblets/util
@@ -930,6 +932,7 @@ bin/updatetm
 @dirrm %%PYTHON_SITELIBDIR%%/profiles
 @dirrm %%PYTHON_SITELIBDIR%%/registration
 @dirrmtry share/doc
+@dirrmtry share/skel
 @dirrmtry share
 @dirrm %%DATADIR%%/html/js/mt
 @dirrm %%DATADIR%%/html/js/jquery
@@ -1012,6 +1015,8 @@ bin/updatetm
 @dirrm %%DATADIR%%/mo/mt
 @dirrm %%DATADIR%%/mo/ms/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/ms
+@dirrm %%DATADIR%%/mo/mr/LC_MESSAGES
+@dirrm %%DATADIR%%/mo/mr
 @dirrm %%DATADIR%%/mo/mn/LC_MESSAGES
 @dirrm %%DATADIR%%/mo/mn
 @dirrm %%DATADIR%%/mo/ml/LC_MESSAGES
