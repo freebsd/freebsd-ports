@@ -38,7 +38,7 @@
     SUBDIR += asql
     SUBDIR += asterisk-fop
     SUBDIR += asterisk-gui
-    SUBDIR += asterisk-stat
+#    SUBDIR += asterisk-stat
     SUBDIR += aswedit
     SUBDIR += aswiki
     SUBDIR += atutor
