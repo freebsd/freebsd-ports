@@ -1,0 +1,8 @@
+Exporter::Declare is a meta-driven exporting tool. Exporter::Declare
+tries to adopt all the good features of other exporting tools, while
+throwing away horrible interfaces. Exporter::Declare also provides
+hooks that allow you to add options and arguments for import. Finally,
+Exporter::Declare's meta-driven system allows for top-notch
+introspection.
+
+WWW: http://search.cpan.org/dist/Exporter-Declare/
