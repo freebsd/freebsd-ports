@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-# XXX: rails,active* require ~> 1.0.1 of arel, *sigh*
+# XXX: rails,active* require exact versions of arel arel, *sigh*
 
 PORTNAME=	arel
 PORTVERSION=	2.0.3
