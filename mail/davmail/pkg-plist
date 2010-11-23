@@ -1,0 +1,83 @@
+bin/davmail
+%%JAVASHAREDIR%%/davmail/lib/slf4j-log4j12-1.3.1.jar
+%%JAVASHAREDIR%%/davmail/lib/log4j-1.2.15.jar
+%%JAVASHAREDIR%%/davmail/lib/commons-collections-3.1.jar
+%%JAVASHAREDIR%%/davmail/lib/junit-3.8.1.jar
+%%JAVASHAREDIR%%/davmail/lib/jackrabbit-webdav-1.4.jar
+%%JAVASHAREDIR%%/davmail/lib/commons-codec-1.3.jar
+%%JAVASHAREDIR%%/davmail/lib/libgrowl-0.2.jar
+%%JAVASHAREDIR%%/davmail/lib/mail-1.4.1.jar
+%%JAVASHAREDIR%%/davmail/lib/commons-logging-1.0.4.jar
+%%JAVASHAREDIR%%/davmail/lib/activation-1.1.jar
+%%JAVASHAREDIR%%/davmail/lib/libgrowl.jnilib
+%%JAVASHAREDIR%%/davmail/lib/jcifs-1.3.14.jar
+%%JAVASHAREDIR%%/davmail/lib/jdom-1.0.jar
+%%JAVASHAREDIR%%/davmail/lib/slf4j-api-1.3.1.jar
+%%JAVASHAREDIR%%/davmail/lib/htmlcleaner-2.1.jar
+%%JAVASHAREDIR%%/davmail/lib/wstx-asl-3.2.7.jar
+%%JAVASHAREDIR%%/davmail/lib/xercesImpl-2.8.1.jar
+%%JAVASHAREDIR%%/davmail/lib/stax-api-1.0.1.jar
+%%JAVASHAREDIR%%/davmail/lib/commons-httpclient-3.1.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/classes/davmail.properties
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/davmail.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/libgrowl-0.2.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/mail-1.4.1.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/activation-1.1.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/junit-3.8.1.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/jdom-1.0.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/log4j-1.2.15.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/slf4j-api-1.3.1.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/wstx-asl-3.2.7.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/htmlcleaner-2.1.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/stax-api-1.0.1.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/slf4j-log4j12-1.3.1.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/xercesImpl-2.8.1.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/jackrabbit-webdav-1.4.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/commons-collections-3.1.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/commons-httpclient-3.1.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/jcifs-1.3.14.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/commons-codec-1.3.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/lib/commons-logging-1.0.4.jar
+%%JAVASHAREDIR%%/davmail/web/WEB-INF/web.xml
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/MacOS/davmail
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/activation-1.1.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/commons-codec-1.3.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/commons-collections-3.1.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/commons-httpclient-3.1.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/commons-logging-1.0.4.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/htmlcleaner-2.1.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/jackrabbit-webdav-1.4.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/jcifs-1.3.14.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/jdom-1.0.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/junit-3.8.1.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/libgrowl-0.2.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/libgrowl.jnilib
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/log4j-1.2.15.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/mail-1.4.1.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/slf4j-api-1.3.1.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/slf4j-log4j12-1.3.1.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/stax-api-1.0.1.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/wstx-asl-3.2.7.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/xercesImpl-2.8.1.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java/davmail.jar
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/tray.icns
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Info.plist
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/PkgInfo
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Info-dock.plist
+%%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Info-nodock.plist
+%%JAVASHAREDIR%%/davmail/version.txt
+%%JAVASHAREDIR%%/davmail/davmail.jar
+%%JAVASHAREDIR%%/davmail/davmail.png
+%%JAVASHAREDIR%%/davmail/davmail.sh
+%%JAVASHAREDIR%%/davmail/davmail.desktop
+@dirrm %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/MacOS
+@dirrm %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources/Java
+@dirrm %%JAVASHAREDIR%%/davmail/DavMail.app/Contents/Resources
+@dirrm %%JAVASHAREDIR%%/davmail/DavMail.app/Contents
+@dirrm %%JAVASHAREDIR%%/davmail/DavMail.app
+@dirrm %%JAVASHAREDIR%%/davmail/lib
+@dirrm %%JAVASHAREDIR%%/davmail/web/WEB-INF/classes
+@dirrm %%JAVASHAREDIR%%/davmail/web/WEB-INF/lib
+@dirrm %%JAVASHAREDIR%%/davmail/web/WEB-INF
+@dirrm %%JAVASHAREDIR%%/davmail/web
+@dirrm %%JAVASHAREDIR%%/davmail
