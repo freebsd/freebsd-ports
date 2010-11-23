@@ -1,0 +1,8 @@
+DavMail POP/IMAP/SMTP/Caldav/Carddav/LDAP Exchange Gateway
+
+DavMail is a POP/IMAP/SMTP/Caldav/Carddav/LDAP exchange gateway
+allowing users to use any mail/calendar client (e.g. Thunderbird
+with Lightning or Apple iCal) with an Exchange server, even from
+the internet or behind a firewall through Outlook Web Access.
+
+WWW: http://davmail.sourceforge.net/
