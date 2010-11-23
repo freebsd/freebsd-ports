@@ -60,8 +60,6 @@ share/pixmaps/gwget.png
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry share/dbus-1/services
-@dirrmtry share/dbus-1
 %%EPIPHANY%%@dirrmtry lib/epiphany/%%EPHY_VERSION%%/extensions
 %%EPIPHANY%%@dirrmtry lib/epiphany/%%EPHY_VERSION%%
 %%EPIPHANY%%@dirrmtry lib/epiphany

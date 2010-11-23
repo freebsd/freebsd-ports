@@ -19,7 +19,5 @@ libexec/desktop-data-engine
 share/dbus-1/services/org.freedesktop.od.Engine.service
 share/desktop-data-model/version
 @dirrm share/desktop-data-model
-@dirrm share/dbus-1/services
-@dirrm share/dbus-1
 @dirrm include/ddm-1/ddm
 @dirrm include/ddm-1
