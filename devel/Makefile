@@ -481,9 +481,7 @@
     SUBDIR += gindent
     SUBDIR += gio-fam-backend
     SUBDIR += gir-repository
-    SUBDIR += gir-repository-gconf2
     SUBDIR += gir-repository-libnotify
-    SUBDIR += gir-repository-libsoup
     SUBDIR += git
     SUBDIR += git-merge-changelog
     SUBDIR += gitg
