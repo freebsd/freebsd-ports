@@ -1115,6 +1115,7 @@
     SUBDIR += p5-PSGI
     SUBDIR += p5-ParallelUA
     SUBDIR += p5-Path-Class-URI
+    SUBDIR += p5-Perlbal-Plugin-PSGI
     SUBDIR += p5-Plack
     SUBDIR += p5-Plack-App-Proxy
     SUBDIR += p5-Plack-Handler-AnyEvent-HTTPD
