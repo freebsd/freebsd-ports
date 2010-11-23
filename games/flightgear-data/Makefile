@@ -7,19 +7,19 @@
 
 PORTNAME=	FlightGear-data
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
-MASTER_SITES=	ftp://ftp.de.flightgear.org/pub/fgfs/Shared/ \
+MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Shared/ \
+		http://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Shared/ \
 		ftp://ftp.kingmont.com/flightsims/flightgear/Shared/ \
-		ftp://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Shared/ \
-		http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Shared/ \
-		http://ftp3.linux.kiev.ua/pub/fgfs/Shared/ \
-		ftp://ftp.ibiblio.org/pub/mirrors/flightgear/ftp/Shared/ \
-		ftp://ftp.flightgear.org/pub/fgfs/Shared/ \
-		ftp://ftp.is.co.za/pub/games/flightgear/ftp/Shared/
+		ftp://ftp.de.flightgear.org/pub/fgfs/Shared/ \
+		ftp://flightgear.wo0t.de/flightgear-ftp/ftp/Shared/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	FlightGear scenery, textures and aircraft models
+
+LICENSE=	GPLv2
 
 NO_BUILD=	yes
 USE_BZIP2=	yes

@@ -7,17 +7,14 @@
 
 PORTNAME=	FlightGear
 PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
-MASTER_SITES=	ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \
+MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Source/ \
+		http://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Source/ \
 		ftp://ftp.kingmont.com/flightsims/flightgear/Source/ \
-		ftp://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Source/ \
-		http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Source/ \
-		http://ftp3.linux.kiev.ua/pub/fgfs/Source/ \
-		ftp://ftp.ibiblio.org/pub/mirrors/flightgear/ftp/Source/ \
-		ftp://ftp.flightgear.org/pub/fgfs/Source/ \
-		ftp://ftp.is.co.za/pub/games/flightgear/ftp/Source/
+		ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \
+		ftp://flightgear.wo0t.de/flightgear-ftp/ftp/Source/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	The FlightGear flight simulator
@@ -28,6 +25,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear \
 		${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/flightgear-data
+
+LICENSE=	GPLv2
 
 .if defined(WITH_OSG_DEVEL)
 LIB_DEPENDS+=	osg.59:${PORTSDIR}/graphics/osg-devel
