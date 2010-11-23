@@ -108,6 +108,7 @@
     SUBDIR += p5-Text-Greeking-zh_TW
     SUBDIR += pcmanx
     SUBDIR += phpbb-tw
+    SUBDIR += phpbb3-tw
     SUBDIR += pine4
     SUBDIR += pyDict
     SUBDIR += qe
