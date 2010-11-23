@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Devel/Declare/Interface.pm
+%%SITE_PERL%%/Devel/Declare/Parser.pm
+%%SITE_PERL%%/Devel/Declare/Parser/Codeblock.pm
+%%SITE_PERL%%/Devel/Declare/Parser/Emulate.pm
+%%SITE_PERL%%/Devel/Declare/Parser/Method.pm
+%%SITE_PERL%%/Devel/Declare/Parser/Sublike.pm
+@dirrm %%SITE_PERL%%/Devel/Declare/Parser
+@dirrmtry %%SITE_PERL%%/Devel/Declare
+@dirrmtry %%SITE_PERL%%/Devel
