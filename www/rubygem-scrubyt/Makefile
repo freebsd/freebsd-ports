@@ -8,7 +8,7 @@
 PORTNAME=	scrubyt
 PORTVERSION=	0.4.11
 CATEGORIES=	www rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A powerful web scraping toolkit written in Ruby

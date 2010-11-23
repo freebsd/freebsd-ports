@@ -8,7 +8,7 @@ PORTNAME=	captcha
 PORTVERSION=	0.1.2
 PORTREVISION=	4
 CATEGORIES=	graphics rubygems
-MASTER_SITES=	RF
+MASTER_SITES=	RG
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A simple CAPTCHA written in Ruby
