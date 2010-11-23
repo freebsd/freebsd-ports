@@ -8,8 +8,7 @@ PORTNAME=	junkbuster
 PORTVERSION=	2.0.2
 PORTREVISION=	7
 CATEGORIES=	www
-MASTER_SITES=	http://f2.org/download/ \
-		http://www.junkbusters.com/ht/en/
+MASTER_SITES=	http://f2.org/download/
 DISTNAME=	ijb-zlib-11
 EXTRACT_SUFX=	.tgz
 
