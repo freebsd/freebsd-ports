@@ -16,8 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mayo@oyam.ca
 COMMENT=	Notify application module for the Asterisk PBX
 
-BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
-RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
+BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14
+RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14
 
 USE_GMAKE=	yes
 

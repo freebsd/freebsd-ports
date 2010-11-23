@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.b2bua.org/chrome/site/
 MAINTAINER=	bamby@sippysoft.com
 COMMENT=	A H.323 support module for the Asterisk soft PBX
 
-BUILD_DEPENDS= 	${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk
+BUILD_DEPENDS= 	${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk14
 LIB_DEPENDS= 	pt_r.1:${PORTSDIR}/devel/pwlib\
 	    	h323_r.1:${PORTSDIR}/net/openh323
 

@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	idefix@fechner.net
 COMMENT=	LDAPget application module for the Asterisk PBX 1.4
 
-BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
+BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk14
 
 USE_GMAKE=	yes
 USE_ICONV=	yes

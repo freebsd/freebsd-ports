@@ -16,7 +16,7 @@ COMMENT=	AstFax provides an outgoing email to fax gateway for Asterisk
 
 LIB_DEPENDS=	spandsp.1:${PORTSDIR}/comms/spandsp
 BUILD_DEPENDS=	${LOCALBASE}/lib/libeps.a:${PORTSDIR}/mail/eps
-RUN_DEPENDS=	${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk
+RUN_DEPENDS=	${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk14
 
 MAKE_JOBS_SAFE=  yes
 
