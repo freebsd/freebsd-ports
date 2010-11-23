@@ -6,30 +6,32 @@
 #
 
 PORTNAME=	pnp
-PORTVERSION=	0.4.14
-PORTREVISION=	2
+PORTVERSION=	0.6.7
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/${PORTNAME}4nagios/PNP/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=pnp4nagios/PNP-0.6
+DISTNAME=	pnp4nagios-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	rea-fbsd@codelabs.ru
+MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Nagios performance data collector and grapher
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool
 RUN_DEPENDS=	${LOCALBASE}/bin/rrdtool:${PORTSDIR}/databases/rrdtool \
 		nagios:${PORTSDIR}/net-mgmt/nagios
 
-LICENSE=	GPLv2
-
 OPTIONS=	PDF "Use built-in fpdf library to produce PDF views" ON
 
 .include <bsd.port.options.mk>
 
-USE_PHP=	zlib gd xml pcre
-USE_DOS2UNIX=	yes
-DOS2UNIX_REGEX=	'.*\.\(php\|js\|txt\)$$'
+LICENSE=	GPLv2
+PATCH_STRIP=	-p1
+USE_PERL5=	yes
+USE_PHP=	zlib gd xml pcre filter iconv json simplexml
 WANT_PHP_WEB=	yes
 USE_RC_SUBR=	npcd.sh
-MAN1=		pnpsender.1
+MAN8=		npcd.8
+USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	'.*\.\(php\|js\|txt\)$$'
 
 NAGIOSDIR?=	/var/spool/nagios
 NAGIOSHTMURL?=	/nagios
@@ -39,9 +41,10 @@ PNP_STATE=	${NAGIOSDIR}/pnp
 PNP_RRDS=	${PNP_STATE}/rrd
 PNP_SPOOL=	${PNP_STATE}/perfspool
 FPDF_DIR?=	share/fpdf
+SPOOL_DIRS=	${PNP_STATE}:${NAGIOSUSER}:${NAGIOSGROUP}:0750%${PNP_RRDS}:${NAGIOSUSER}:${NAGIOSGROUP}:0750%${PNP_SPOOL}:${NAGIOSUSER}:${NAGIOSGROUP}:0750
 
 .if !defined(WITH_PDF)
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-share__pnp__include__function.inc.php
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-disable-pdf
 .endif
 
 GNU_CONFIGURE=	yes
@@ -64,21 +67,10 @@ INSTALL_TARGET=	install install-config
 SUB_FILES=	pkg-install \
 		pkg-deinstall \
 		pkg-message
-SUB_LIST=	PNP_STATE=${PNP_STATE} \
+SUB_LIST=	SPOOL_DIRS=${SPOOL_DIRS} \
 		PNP_RRDS=${PNP_RRDS} \
-		PNP_SPOOL=${PNP_SPOOL} \
 		NAGIOSUSER=${NAGIOSUSER} \
 		NAGIOSGROUP=${NAGIOSGROUP}
-
-# All files in share/pnp/include/ are installed, so if we patched something
-# in that directory, we must clean the '.orig' files -- they shouldn't be
-# installed.
-PNP_CLEAN_PATCHED=	share/pnp/include/font/makefont/makefont.php.orig \
-			share/pnp/include/fpdi.php.orig \
-			share/pnp/include/fpdi_pdf_parser.php.orig \
-			share/pnp/include/function.inc.php.orig \
-			share/pnp/include/pdf_parser.php.orig \
-			share/pnp/include/site.php.orig
 
 .if defined(WITH_PDF)
 PNP_USE_FPDF=	1
@@ -90,15 +82,14 @@ post-patch:
   -e's|^\$$conf\['\''use_fpdf'\''\] = [[:digit:]];|$$conf['\''use_fpdf'\''] = ${PNP_USE_FPDF};|' \
   -e's|^\$$conf\['\''nagios_base'\''\] = "/nagios/cgi-bin";|$$conf\['\''nagios_base'\''\] = "${NAGIOSHTMURL}/cgi-bin";|' \
   "${WRKSRC}/sample-config/pnp/config.php.in"
-.for pch in ${PNP_CLEAN_PATCHED}
-	@${RM} -f "${WRKSRC}/${pch}"
-.endfor
+
+pre-install:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-.for m in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/man/man1/${m} ${MAN1PREFIX}/man/man1/${m}
+.for m in ${MAN8}
+	${INSTALL_MAN} ${WRKSRC}/man/${m} ${MAN1PREFIX}/man/man8/${m}
 .endfor
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

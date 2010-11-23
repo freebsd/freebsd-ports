@@ -1,0 +1,86 @@
+From 9c588aefedcdcd15a4bc61bf6a33c10818107390 Mon Sep 17 00:00:00 2001
+From: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
+Date: Thu, 18 Nov 2010 15:47:59 +0300
+Subject: [PATCH 3/3] Disable PDF generation
+
+This patch allows to completely disable generation of PDF files
+via any means.  It used to support WITHOUT_PDF knob of FreeBSD port.
+
+Signed-off-by: Eygene Ryabinkin <rea-fbsd@codelabs.ru>
+---
+ share/pnp/application/controllers/pdf.php |    4 ++++
+ share/pnp/application/models/rrdtool.php  |    1 +
+ share/pnp/application/views/icon_box.php  |    9 ---------
+ 3 files changed, 5 insertions(+), 9 deletions(-)
+
+diff --git a/share/pnp/application/controllers/pdf.php b/share/pnp/application/controllers/pdf.php
+index 36ef2a7..aa48d1f 100644
+--- a/share/pnp/application/controllers/pdf.php
++++ b/share/pnp/application/controllers/pdf.php
+@@ -13,6 +13,7 @@ class Pdf_Controller extends System_Controller  {
+ 
+     public function __construct(){
+         parent::__construct();
++        exit;
+ 
+         $this->use_bg = 0;
+         $this->bg = $this->config->conf['background_pdf'];
+@@ -33,6 +34,7 @@ class Pdf_Controller extends System_Controller  {
+     }
+ 
+     public function index(){
++        exit;
+ 
+         $this->host      = $this->input->get('host');
+         $this->service   = $this->input->get('srv');
+@@ -144,6 +146,7 @@ class Pdf_Controller extends System_Controller  {
+     }
+ 
+     public function page($page){
++        exit;
+         $this->start     = $this->input->get('start');
+         $this->end       = $this->input->get('end');
+         $this->view      = "";
+@@ -206,6 +209,7 @@ class Pdf_Controller extends System_Controller  {
+     }
+ 
+     public function basket(){
++        exit;
+         $this->start     = $this->input->get('start');
+         $this->end       = $this->input->get('end');
+         $this->view      = "";
+diff --git a/share/pnp/application/models/rrdtool.php b/share/pnp/application/models/rrdtool.php
+index 2c18b4e..2a24996 100644
+--- a/share/pnp/application/models/rrdtool.php
++++ b/share/pnp/application/models/rrdtool.php
+@@ -79,6 +79,7 @@ class Rrdtool_Model extends Model
+         $width = 0;
+         $height = 0;
+         if ($out == 'PDF'){
++            exit;
+             if($conf['pdf_graph_opt']){
+                 $command .= $conf['pdf_graph_opt'];
+             }
+diff --git a/share/pnp/application/views/icon_box.php b/share/pnp/application/views/icon_box.php
+index 7ce5301..838b474 100644
+--- a/share/pnp/application/views/icon_box.php
++++ b/share/pnp/application/views/icon_box.php
+@@ -9,15 +9,6 @@ $qsa  = pnp::addToUri(array('start' => $this->start,'end' => $this->end, 'view'
+ if($this->config->conf['use_calendar']){
+ 	echo "<a title=\"".Kohana::lang('common.title-calendar-link')."\" href=\"#\" id=\"button\"><img class=\"icon\" src=\"".url::base()."media/images/calendar.png\"></a>"; 
+ }
+-if($this->config->conf['use_fpdf'] == 1 && ( $position == "graph" || $position == "special") ){
+-	echo "<a title=\"".Kohana::lang('common.title-pdf-link')."\" href=\"".url::base(TRUE)."pdf".$qsa."\"><img class=\"icon\" src=\"".url::base()."media/images/pdf.png\"></a>\n";
+-}
+-if($this->config->conf['use_fpdf'] == 1 && $position == "basket"){
+-	echo "<a title=\"".Kohana::lang('common.title-pdf-link')."\" href=\"".url::base(TRUE)."pdf/basket/".$qsa."\"><img class=\"icon\" src=\"".url::base()."media/images/pdf.png\"></a>\n";
+-}
+-if($this->config->conf['use_fpdf'] == 1 && $position == "page"){
+-	echo "<a title=\"".Kohana::lang('common.title-pdf-link')."\" href=\"".url::base(TRUE)."pdf/page/".$this->page.$qsa."\"><img class=\"icon\" src=\"".url::base()."media/images/pdf.png\"></a>\n";
+-}
+ if($this->config->conf['show_xml_icon'] == 1 && $position == "graph"){
+ 	$qsa  = pnp::addToUri(array(), False);
+ 	echo "<a title=\"".Kohana::lang('common.title-xml-link')."\" href=\"".url::base(TRUE)."xml".$qsa."\"><img class=\"icon\" src=\"".url::base()."media/images/xml.png\"></a>\n";
+-- 
+1.7.2.1
+

@@ -1,131 +1,550 @@
 bin/npcd
-bin/npcdmod.o
+etc/pnp/check_commands/check_nwstat.cfg-sample
+etc/pnp/check_commands/check_nrpe.cfg-sample
+etc/pnp/check_commands/check_all_local_disks.cfg-sample
+etc/pnp/pages/web_traffic.cfg-sample
 etc/pnp/pnp4nagios_release
 etc/pnp/config.php-sample
 etc/pnp/background.pdf-sample
-etc/pnp/check_commands/check_nwstat.cfg-sample
-etc/pnp/pages/web_traffic.cfg-sample
 etc/pnp/process_perfdata.cfg-sample
 etc/pnp/rra.cfg-sample
+etc/pnp/misccommands.cfg-sample
+etc/pnp/nagios.cfg-sample
 etc/pnp/npcd.cfg-sample
+lib/npcdmod.o
+lib/kohana/system/controllers/captcha.php
+lib/kohana/system/controllers/template.php
+lib/kohana/system/i18n/de_DE/validation.php
+lib/kohana/system/i18n/de_DE/core.php
+lib/kohana/system/i18n/de_DE/pagination.php
+lib/kohana/system/i18n/de_DE/captcha.php
+lib/kohana/system/i18n/de_DE/encrypt.php
+lib/kohana/system/i18n/de_DE/orm.php
+lib/kohana/system/i18n/de_DE/image.php
+lib/kohana/system/i18n/de_DE/session.php
+lib/kohana/system/i18n/de_DE/database.php
+lib/kohana/system/i18n/de_DE/calendar.php
+lib/kohana/system/i18n/de_DE/profiler.php
+lib/kohana/system/i18n/de_DE/cache.php
+lib/kohana/system/i18n/de_DE/upload.php
+lib/kohana/system/i18n/de_DE/event.php
+lib/kohana/system/i18n/de_DE/errors.php
+lib/kohana/system/i18n/de_DE/swift.php
+lib/kohana/system/i18n/nl_NL/validation.php
+lib/kohana/system/i18n/nl_NL/core.php
+lib/kohana/system/i18n/nl_NL/pagination.php
+lib/kohana/system/i18n/nl_NL/captcha.php
+lib/kohana/system/i18n/nl_NL/encrypt.php
+lib/kohana/system/i18n/nl_NL/orm.php
+lib/kohana/system/i18n/nl_NL/image.php
+lib/kohana/system/i18n/nl_NL/session.php
+lib/kohana/system/i18n/nl_NL/database.php
+lib/kohana/system/i18n/nl_NL/calendar.php
+lib/kohana/system/i18n/nl_NL/profiler.php
+lib/kohana/system/i18n/nl_NL/cache.php
+lib/kohana/system/i18n/nl_NL/upload.php
+lib/kohana/system/i18n/nl_NL/event.php
+lib/kohana/system/i18n/nl_NL/errors.php
+lib/kohana/system/i18n/nl_NL/swift.php
+lib/kohana/system/i18n/es_ES/validation.php
+lib/kohana/system/i18n/es_ES/core.php
+lib/kohana/system/i18n/es_ES/pagination.php
+lib/kohana/system/i18n/es_ES/captcha.php
+lib/kohana/system/i18n/es_ES/encrypt.php
+lib/kohana/system/i18n/es_ES/orm.php
+lib/kohana/system/i18n/es_ES/image.php
+lib/kohana/system/i18n/es_ES/session.php
+lib/kohana/system/i18n/es_ES/database.php
+lib/kohana/system/i18n/es_ES/calendar.php
+lib/kohana/system/i18n/es_ES/profiler.php
+lib/kohana/system/i18n/es_ES/cache.php
+lib/kohana/system/i18n/es_ES/upload.php
+lib/kohana/system/i18n/es_ES/event.php
+lib/kohana/system/i18n/es_ES/errors.php
+lib/kohana/system/i18n/es_ES/swift.php
+lib/kohana/system/i18n/ru_RU/validation.php
+lib/kohana/system/i18n/ru_RU/core.php
+lib/kohana/system/i18n/ru_RU/pagination.php
+lib/kohana/system/i18n/ru_RU/captcha.php
+lib/kohana/system/i18n/ru_RU/encrypt.php
+lib/kohana/system/i18n/ru_RU/orm.php
+lib/kohana/system/i18n/ru_RU/image.php
+lib/kohana/system/i18n/ru_RU/session.php
+lib/kohana/system/i18n/ru_RU/database.php
+lib/kohana/system/i18n/ru_RU/calendar.php
+lib/kohana/system/i18n/ru_RU/profiler.php
+lib/kohana/system/i18n/ru_RU/cache.php
+lib/kohana/system/i18n/ru_RU/upload.php
+lib/kohana/system/i18n/ru_RU/event.php
+lib/kohana/system/i18n/ru_RU/errors.php
+lib/kohana/system/i18n/ru_RU/swift.php
+lib/kohana/system/i18n/en_US/validation.php
+lib/kohana/system/i18n/en_US/core.php
+lib/kohana/system/i18n/en_US/pagination.php
+lib/kohana/system/i18n/en_US/captcha.php
+lib/kohana/system/i18n/en_US/encrypt.php
+lib/kohana/system/i18n/en_US/orm.php
+lib/kohana/system/i18n/en_US/image.php
+lib/kohana/system/i18n/en_US/session.php
+lib/kohana/system/i18n/en_US/database.php
+lib/kohana/system/i18n/en_US/calendar.php
+lib/kohana/system/i18n/en_US/profiler.php
+lib/kohana/system/i18n/en_US/cache.php
+lib/kohana/system/i18n/en_US/upload.php
+lib/kohana/system/i18n/en_US/event.php
+lib/kohana/system/i18n/en_US/errors.php
+lib/kohana/system/i18n/en_US/swift.php
+lib/kohana/system/i18n/fr_FR/validation.php
+lib/kohana/system/i18n/fr_FR/core.php
+lib/kohana/system/i18n/fr_FR/pagination.php
+lib/kohana/system/i18n/fr_FR/captcha.php
+lib/kohana/system/i18n/fr_FR/encrypt.php
+lib/kohana/system/i18n/fr_FR/orm.php
+lib/kohana/system/i18n/fr_FR/image.php
+lib/kohana/system/i18n/fr_FR/session.php
+lib/kohana/system/i18n/fr_FR/database.php
+lib/kohana/system/i18n/fr_FR/calendar.php
+lib/kohana/system/i18n/fr_FR/profiler.php
+lib/kohana/system/i18n/fr_FR/cache.php
+lib/kohana/system/i18n/fr_FR/upload.php
+lib/kohana/system/i18n/fr_FR/event.php
+lib/kohana/system/i18n/fr_FR/errors.php
+lib/kohana/system/i18n/fr_FR/swift.php
+lib/kohana/system/i18n/it_IT/validation.php
+lib/kohana/system/i18n/it_IT/core.php
+lib/kohana/system/i18n/it_IT/pagination.php
+lib/kohana/system/i18n/it_IT/captcha.php
+lib/kohana/system/i18n/it_IT/encrypt.php
+lib/kohana/system/i18n/it_IT/orm.php
+lib/kohana/system/i18n/it_IT/image.php
+lib/kohana/system/i18n/it_IT/session.php
+lib/kohana/system/i18n/it_IT/database.php
+lib/kohana/system/i18n/it_IT/calendar.php
+lib/kohana/system/i18n/it_IT/profiler.php
+lib/kohana/system/i18n/it_IT/cache.php
+lib/kohana/system/i18n/it_IT/upload.php
+lib/kohana/system/i18n/it_IT/event.php
+lib/kohana/system/i18n/it_IT/errors.php
+lib/kohana/system/i18n/it_IT/swift.php
+lib/kohana/system/helpers/remote.php
+lib/kohana/system/helpers/url.php
+lib/kohana/system/helpers/feed.php
+lib/kohana/system/helpers/expires.php
+lib/kohana/system/helpers/text.php
+lib/kohana/system/helpers/email.php
+lib/kohana/system/helpers/download.php
+lib/kohana/system/helpers/format.php
+lib/kohana/system/helpers/form.php
+lib/kohana/system/helpers/arr.php
+lib/kohana/system/helpers/html.php
+lib/kohana/system/helpers/valid.php
+lib/kohana/system/helpers/date.php
+lib/kohana/system/helpers/file.php
+lib/kohana/system/helpers/request.php
+lib/kohana/system/helpers/upload.php
+lib/kohana/system/helpers/cookie.php
+lib/kohana/system/helpers/security.php
+lib/kohana/system/helpers/num.php
+lib/kohana/system/helpers/inflector.php
+lib/kohana/system/libraries/drivers/Database/Mssql.php
+lib/kohana/system/libraries/drivers/Database/Pdosqlite.php
+lib/kohana/system/libraries/drivers/Database/Mysqli.php
+lib/kohana/system/libraries/drivers/Database/Pgsql.php
+lib/kohana/system/libraries/drivers/Database/Mysql.php
+lib/kohana/system/libraries/drivers/Captcha/Alpha.php
+lib/kohana/system/libraries/drivers/Captcha/Math.php
+lib/kohana/system/libraries/drivers/Captcha/Word.php
+lib/kohana/system/libraries/drivers/Captcha/Riddle.php
+lib/kohana/system/libraries/drivers/Captcha/Basic.php
+lib/kohana/system/libraries/drivers/Captcha/Black.php
+lib/kohana/system/libraries/drivers/Cache/Eaccelerator.php
+lib/kohana/system/libraries/drivers/Cache/Apc.php
+lib/kohana/system/libraries/drivers/Cache/Memcache.php
+lib/kohana/system/libraries/drivers/Cache/Xcache.php
+lib/kohana/system/libraries/drivers/Cache/File.php
+lib/kohana/system/libraries/drivers/Cache/Sqlite.php
+lib/kohana/system/libraries/drivers/Image/GraphicsMagick.php
+lib/kohana/system/libraries/drivers/Image/GD.php
+lib/kohana/system/libraries/drivers/Image/ImageMagick.php
+lib/kohana/system/libraries/drivers/Session/Cookie.php
+lib/kohana/system/libraries/drivers/Session/Cache.php
+lib/kohana/system/libraries/drivers/Session/Database.php
+lib/kohana/system/libraries/drivers/Captcha.php
+lib/kohana/system/libraries/drivers/Cache.php
+lib/kohana/system/libraries/drivers/Session.php
+lib/kohana/system/libraries/drivers/Image.php
+lib/kohana/system/libraries/drivers/Database.php
+lib/kohana/system/libraries/Pagination.php
+lib/kohana/system/libraries/ORM_Tree.php
+lib/kohana/system/libraries/Encrypt.php
+lib/kohana/system/libraries/Calendar.php
+lib/kohana/system/libraries/Database_Expression.php
+lib/kohana/system/libraries/Event_Observer.php
+lib/kohana/system/libraries/Event_Subject.php
+lib/kohana/system/libraries/Captcha.php
+lib/kohana/system/libraries/Cache.php
+lib/kohana/system/libraries/Session.php
+lib/kohana/system/libraries/Image.php
+lib/kohana/system/libraries/Validation.php
+lib/kohana/system/libraries/ORM_Versioned.php
+lib/kohana/system/libraries/Controller.php
+lib/kohana/system/libraries/Profiler.php
+lib/kohana/system/libraries/Model.php
+lib/kohana/system/libraries/View.php
+lib/kohana/system/libraries/Router.php
+lib/kohana/system/libraries/ORM_Iterator.php
+lib/kohana/system/libraries/URI.php
+lib/kohana/system/libraries/Profiler_Table.php
+lib/kohana/system/libraries/ORM.php
+lib/kohana/system/libraries/Calendar_Event.php
+lib/kohana/system/libraries/Tagcloud.php
+lib/kohana/system/libraries/Input.php
+lib/kohana/system/libraries/Database.php
+lib/kohana/system/config/locale.php
+lib/kohana/system/config/routes.php
+lib/kohana/system/config/pagination.php
+lib/kohana/system/config/sql_types.php
+lib/kohana/system/config/captcha.php
+lib/kohana/system/config/email.php
+lib/kohana/system/config/image.php
+lib/kohana/system/config/cache_sqlite.php
+lib/kohana/system/config/cache_memcache.php
+lib/kohana/system/config/session.php
+lib/kohana/system/config/database.php
+lib/kohana/system/config/credit_cards.php
+lib/kohana/system/config/http.php
+lib/kohana/system/config/mimes.php
+lib/kohana/system/config/profiler.php
+lib/kohana/system/config/view.php
+lib/kohana/system/config/cache.php
+lib/kohana/system/config/encryption.php
+lib/kohana/system/config/upload.php
+lib/kohana/system/config/cookie.php
+lib/kohana/system/config/user_agents.php
+lib/kohana/system/config/inflector.php
+lib/kohana/system/config/cache_xcache.php
+lib/kohana/system/core/utf8/transliterate_to_ascii.php
+lib/kohana/system/core/utf8/ucfirst.php
+lib/kohana/system/core/utf8/ord.php
+lib/kohana/system/core/utf8/strrpos.php
+lib/kohana/system/core/utf8/strtolower.php
+lib/kohana/system/core/utf8/substr.php
+lib/kohana/system/core/utf8/str_pad.php
+lib/kohana/system/core/utf8/strcspn.php
+lib/kohana/system/core/utf8/trim.php
+lib/kohana/system/core/utf8/rtrim.php
+lib/kohana/system/core/utf8/strcasecmp.php
+lib/kohana/system/core/utf8/strtoupper.php
+lib/kohana/system/core/utf8/str_split.php
+lib/kohana/system/core/utf8/strpos.php
+lib/kohana/system/core/utf8/stristr.php
+lib/kohana/system/core/utf8/ucwords.php
+lib/kohana/system/core/utf8/str_ireplace.php
+lib/kohana/system/core/utf8/strlen.php
+lib/kohana/system/core/utf8/to_unicode.php
+lib/kohana/system/core/utf8/substr_replace.php
+lib/kohana/system/core/utf8/from_unicode.php
+lib/kohana/system/core/utf8/strrev.php
+lib/kohana/system/core/utf8/strspn.php
+lib/kohana/system/core/utf8/ltrim.php
+lib/kohana/system/core/Event.php
+lib/kohana/system/core/Benchmark.php
+lib/kohana/system/core/Bootstrap.php
+lib/kohana/system/core/Kohana.php
+lib/kohana/system/core/utf8.php
+lib/kohana/system/views/kohana/template.php
+lib/kohana/system/views/pagination/digg.php
+lib/kohana/system/views/pagination/punbb.php
+lib/kohana/system/views/pagination/extended.php
+lib/kohana/system/views/pagination/classic.php
+lib/kohana/system/views/kohana_profiler_table.php
+lib/kohana/system/views/kohana_error_page.php
+lib/kohana/system/views/kohana_calendar.php
+lib/kohana/system/views/kohana_profiler_table.css
+lib/kohana/system/views/kohana_profiler.php
+lib/kohana/system/views/kohana_error_disabled.php
+lib/kohana/system/views/kohana_errors.css
+lib/kohana/system/fonts/LICENSE
+lib/kohana/system/fonts/DejaVuSerif.ttf
 libexec/process_perfdata.pl
 libexec/check_pnp_rrds.pl
-%%WWWDIR%%/images/ack.png
-%%WWWDIR%%/images/action.gif
-%%WWWDIR%%/images/calendar.png
-%%WWWDIR%%/images/critical.png
-%%WWWDIR%%/images/eps.png
-%%WWWDIR%%/images/graph.gif
-%%WWWDIR%%/images/int.gif
-%%WWWDIR%%/images/int2.gif
-%%WWWDIR%%/images/link.png
-%%WWWDIR%%/images/noack.png
-%%WWWDIR%%/images/notify.gif
-%%WWWDIR%%/images/ok.png
-%%WWWDIR%%/images/pages.png
-%%WWWDIR%%/images/pdf.png
-%%WWWDIR%%/images/pnp.png
-%%WWWDIR%%/images/recovery.png
-%%WWWDIR%%/images/rrdtool.png
-%%WWWDIR%%/images/svg.png
-%%WWWDIR%%/images/trends.gif
-%%WWWDIR%%/images/warning.png
-%%WWWDIR%%/images/xml.png
-%%WWWDIR%%/images/zoom.png
-%%WWWDIR%%/include/tpl_function.inc.php
-%%WWWDIR%%/include/font/makefont/cp1250.map
-%%WWWDIR%%/include/font/makefont/cp1251.map
-%%WWWDIR%%/include/font/makefont/cp1252.map
-%%WWWDIR%%/include/font/makefont/cp1253.map
-%%WWWDIR%%/include/font/makefont/cp1254.map
-%%WWWDIR%%/include/font/makefont/cp1255.map
-%%WWWDIR%%/include/font/makefont/cp1257.map
-%%WWWDIR%%/include/font/makefont/cp1258.map
-%%WWWDIR%%/include/font/makefont/cp874.map
-%%WWWDIR%%/include/font/makefont/iso-8859-1.map
-%%WWWDIR%%/include/font/makefont/iso-8859-11.map
-%%WWWDIR%%/include/font/makefont/iso-8859-15.map
-%%WWWDIR%%/include/font/makefont/iso-8859-16.map
-%%WWWDIR%%/include/font/makefont/iso-8859-2.map
-%%WWWDIR%%/include/font/makefont/iso-8859-4.map
-%%WWWDIR%%/include/font/makefont/iso-8859-5.map
-%%WWWDIR%%/include/font/makefont/iso-8859-7.map
-%%WWWDIR%%/include/font/makefont/iso-8859-9.map
-%%WWWDIR%%/include/font/makefont/koi8-r.map
-%%WWWDIR%%/include/font/makefont/koi8-u.map
-%%WWWDIR%%/include/font/makefont/makefont.php
-%%WWWDIR%%/include/font/courier.php
-%%WWWDIR%%/include/font/helvetica.php
-%%WWWDIR%%/include/font/helveticab.php
-%%WWWDIR%%/include/font/helveticabi.php
-%%WWWDIR%%/include/font/helveticai.php
-%%WWWDIR%%/include/font/symbol.php
-%%WWWDIR%%/include/font/times.php
-%%WWWDIR%%/include/font/timesb.php
-%%WWWDIR%%/include/font/timesbi.php
-%%WWWDIR%%/include/font/timesi.php
-%%WWWDIR%%/include/font/zapfdingbats.php
-%%WWWDIR%%/include/js/builder.js
-%%WWWDIR%%/include/js/calendar-blue.css
-%%WWWDIR%%/include/js/calendar-de.js
-%%WWWDIR%%/include/js/calendar-en.js
-%%WWWDIR%%/include/js/calendar-setup.js
-%%WWWDIR%%/include/js/calendar.js
-%%WWWDIR%%/include/js/controls.js
-%%WWWDIR%%/include/js/dragdrop.js
-%%WWWDIR%%/include/js/effects.js
-%%WWWDIR%%/include/js/menuarrow.gif
-%%WWWDIR%%/include/js/overlib_mini.js
-%%WWWDIR%%/include/js/prototype.js
-%%WWWDIR%%/include/js/scriptaculous.js
-%%WWWDIR%%/include/js/slider.js
-%%WWWDIR%%/include/js/sound.js
-%%WWWDIR%%/include/js/unittest.js
-%%WWWDIR%%/include/js/zoom.js
-%%WWWDIR%%/include/debug.php
-%%WWWDIR%%/include/fpdf.php
-%%WWWDIR%%/include/fpdf_tpl.php
-%%WWWDIR%%/include/fpdi.php
-%%WWWDIR%%/include/fpdi_pdf_parser.php
-%%WWWDIR%%/include/function.inc.php
-%%WWWDIR%%/include/pdf_context.php
-%%WWWDIR%%/include/pdf_parser.php
-%%WWWDIR%%/include/site.php
-%%WWWDIR%%/include/style.css
-%%WWWDIR%%/include/wrapper_functions.php
-%%WWWDIR%%/lang/lang_de.php
-%%WWWDIR%%/lang/lang_en.php
-%%WWWDIR%%/lang/lang_fr.php
-%%WWWDIR%%/lang/lang_nl.php
-%%WWWDIR%%/lang/lang_se.php
+libexec/verify_pnp_config.pl
+libexec/rrd_convert.pl
+%%WWWDIR%%/documents/_media/bulk-npcd.png
+%%WWWDIR%%/documents/_media/bulk-npcdmod.png
+%%WWWDIR%%/documents/_media/bulk.png
+%%WWWDIR%%/documents/_media/nagiospowered-72x72.png
+%%WWWDIR%%/documents/_media/pnp-preview-05-08-2009.png
+%%WWWDIR%%/documents/_media/popup.png
+%%WWWDIR%%/documents/_media/srv_info.png
+%%WWWDIR%%/documents/_media/synchronous.png
+%%WWWDIR%%/documents/en_US/about.html
+%%WWWDIR%%/documents/en_US/advanced.html
+%%WWWDIR%%/documents/en_US/config.html
+%%WWWDIR%%/documents/en_US/doc_complete.html
+%%WWWDIR%%/documents/en_US/dwnld.html
+%%WWWDIR%%/documents/en_US/install.html
+%%WWWDIR%%/documents/en_US/modes.html
+%%WWWDIR%%/documents/en_US/new-features.html
+%%WWWDIR%%/documents/en_US/npcd.html
+%%WWWDIR%%/documents/en_US/pages.html
+%%WWWDIR%%/documents/en_US/perfdata_format.html
+%%WWWDIR%%/documents/en_US/rrd_convert.html
+%%WWWDIR%%/documents/en_US/rrdcached.html
+%%WWWDIR%%/documents/en_US/start.html
+%%WWWDIR%%/documents/en_US/timeranges.html
+%%WWWDIR%%/documents/en_US/tpl.html
+%%WWWDIR%%/documents/en_US/tpl_custom.html
+%%WWWDIR%%/documents/en_US/tpl_helper.html
+%%WWWDIR%%/documents/en_US/tpl_special.html
+%%WWWDIR%%/documents/en_US/upgrade.html
+%%WWWDIR%%/documents/en_US/verify.html
+%%WWWDIR%%/documents/en_US/verify_pnp_config.html
+%%WWWDIR%%/documents/en_US/webfe.html
+%%WWWDIR%%/documents/en_US/webfe_cfg.html
+%%WWWDIR%%/documents/en_US/wrapper.html
+%%WWWDIR%%/documents/en_US/xport.html
+%%WWWDIR%%/documents/de_DE/about.html
+%%WWWDIR%%/documents/de_DE/advanced.html
+%%WWWDIR%%/documents/de_DE/config.html
+%%WWWDIR%%/documents/de_DE/doc_complete.html
+%%WWWDIR%%/documents/de_DE/dwnld.html
+%%WWWDIR%%/documents/de_DE/install.html
+%%WWWDIR%%/documents/de_DE/modes.html
+%%WWWDIR%%/documents/de_DE/new-features.html
+%%WWWDIR%%/documents/de_DE/npcd.html
+%%WWWDIR%%/documents/de_DE/pages.html
+%%WWWDIR%%/documents/de_DE/perfdata_format.html
+%%WWWDIR%%/documents/de_DE/rrd_convert.html
+%%WWWDIR%%/documents/de_DE/rrdcached.html
+%%WWWDIR%%/documents/de_DE/start.html
+%%WWWDIR%%/documents/de_DE/timeranges.html
+%%WWWDIR%%/documents/de_DE/tpl.html
+%%WWWDIR%%/documents/de_DE/tpl_custom.html
+%%WWWDIR%%/documents/de_DE/tpl_helper.html
+%%WWWDIR%%/documents/de_DE/tpl_special.html
+%%WWWDIR%%/documents/de_DE/upgrade.html
+%%WWWDIR%%/documents/de_DE/verify.html
+%%WWWDIR%%/documents/de_DE/verify_pnp_config.html
+%%WWWDIR%%/documents/de_DE/webfe.html
+%%WWWDIR%%/documents/de_DE/webfe_cfg.html
+%%WWWDIR%%/documents/de_DE/wrapper.html
+%%WWWDIR%%/documents/de_DE/xport.html
+%%WWWDIR%%/application/controllers/ajax.php
+%%WWWDIR%%/application/controllers/debug.php
+%%WWWDIR%%/application/controllers/docs.php
+%%WWWDIR%%/application/controllers/graph.php
+%%WWWDIR%%/application/controllers/image.php
+%%WWWDIR%%/application/controllers/json.php
+%%WWWDIR%%/application/controllers/page.php
+%%WWWDIR%%/application/controllers/pdf.php
+%%WWWDIR%%/application/controllers/popup.php
+%%WWWDIR%%/application/controllers/special.php
+%%WWWDIR%%/application/controllers/start.php
+%%WWWDIR%%/application/controllers/system.php
+%%WWWDIR%%/application/controllers/xml.php
+%%WWWDIR%%/application/controllers/xport.php
+%%WWWDIR%%/application/controllers/zoom.php
+%%WWWDIR%%/application/config/config.php
+%%WWWDIR%%/application/config/locale.php
+%%WWWDIR%%/application/config/routes.php
+%%WWWDIR%%/application/config/session.php
+%%WWWDIR%%/application/helpers/nagios.php
+%%WWWDIR%%/application/helpers/pnp.php
+%%WWWDIR%%/application/helpers/rrd.php
+%%WWWDIR%%/application/i18n/de_DE/common.php
+%%WWWDIR%%/application/i18n/de_DE/error.php
+%%WWWDIR%%/application/i18n/en_US/common.php
+%%WWWDIR%%/application/i18n/en_US/error.php
+%%WWWDIR%%/application/i18n/es_ES/common.php
+%%WWWDIR%%/application/i18n/es_ES/error.php
+%%WWWDIR%%/application/i18n/ru_RU/common.php
+%%WWWDIR%%/application/i18n/ru_RU/error.php
+%%WWWDIR%%/application/i18n/fr_FR/common.php
+%%WWWDIR%%/application/i18n/fr_FR/error.php
+%%WWWDIR%%/application/models/config.php
+%%WWWDIR%%/application/models/data.php
+%%WWWDIR%%/application/models/rrdtool.php
+%%WWWDIR%%/application/views/basket_box.php
+%%WWWDIR%%/application/views/debug.php
+%%WWWDIR%%/application/views/docs.php
+%%WWWDIR%%/application/views/docs_box.php
+%%WWWDIR%%/application/views/graph.php
+%%WWWDIR%%/application/views/graph_content.php
+%%WWWDIR%%/application/views/graph_content_special.php
+%%WWWDIR%%/application/views/header.php
+%%WWWDIR%%/application/views/host_box.php
+%%WWWDIR%%/application/views/icon_box.php
+%%WWWDIR%%/application/views/kohana_error_page.php
+%%WWWDIR%%/application/views/logo_box.php
+%%WWWDIR%%/application/views/multisite_box.php
+%%WWWDIR%%/application/views/page.php
+%%WWWDIR%%/application/views/pages_box.php
+%%WWWDIR%%/application/views/popup.php
+%%WWWDIR%%/application/views/search_box.php
+%%WWWDIR%%/application/views/service_box.php
+%%WWWDIR%%/application/views/special_templates_box.php
+%%WWWDIR%%/application/views/status_box.php
+%%WWWDIR%%/application/views/template.php
+%%WWWDIR%%/application/views/timerange_box.php
+%%WWWDIR%%/application/views/timerange_select.php
+%%WWWDIR%%/application/views/widget_graph.sample.php
+%%WWWDIR%%/application/views/widget_menu.sample.php
+%%WWWDIR%%/application/views/zoom.php
+%%WWWDIR%%/application/views/zoom_header.php
+%%WWWDIR%%/application/vendor/fpdf/filters/FilterASCII85.php
+%%WWWDIR%%/application/vendor/fpdf/filters/FilterASCII85_FPDI.php
+%%WWWDIR%%/application/vendor/fpdf/filters/FilterLZW.php
+%%WWWDIR%%/application/vendor/fpdf/filters/FilterLZW_FPDI.php
+%%WWWDIR%%/application/vendor/fpdf/font/courier.php
+%%WWWDIR%%/application/vendor/fpdf/font/helvetica.php
+%%WWWDIR%%/application/vendor/fpdf/font/helveticab.php
+%%WWWDIR%%/application/vendor/fpdf/font/helveticabi.php
+%%WWWDIR%%/application/vendor/fpdf/font/helveticai.php
+%%WWWDIR%%/application/vendor/fpdf/font/symbol.php
+%%WWWDIR%%/application/vendor/fpdf/font/times.php
+%%WWWDIR%%/application/vendor/fpdf/font/timesb.php
+%%WWWDIR%%/application/vendor/fpdf/font/timesbi.php
+%%WWWDIR%%/application/vendor/fpdf/font/timesi.php
+%%WWWDIR%%/application/vendor/fpdf/font/zapfdingbats.php
+%%WWWDIR%%/application/vendor/fpdf/fpdf.php
+%%WWWDIR%%/application/vendor/fpdf/fpdf_tpl.php
+%%WWWDIR%%/application/vendor/fpdf/fpdi.php
+%%WWWDIR%%/application/vendor/fpdf/fpdi2tcpdf_bridge.php
+%%WWWDIR%%/application/vendor/fpdf/fpdi_pdf_parser.php
+%%WWWDIR%%/application/vendor/fpdf/pdf_context.php
+%%WWWDIR%%/application/vendor/fpdf/pdf_parser.php
+%%WWWDIR%%/media/js/jquery-min.js
+%%WWWDIR%%/media/js/jquery-ui.min.js
+%%WWWDIR%%/media/js/jquery.cluetip.js
+%%WWWDIR%%/media/js/zoom.js
+%%WWWDIR%%/media/css/ui-lightness/images/ui-anim_basic_16x16.gif
+%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_flat_10_000000_40x100.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-icons_228ef1_256x240.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-icons_ef8c08_256x240.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-icons_ffd27a_256x240.png
+%%WWWDIR%%/media/css/ui-lightness/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/media/css/ui-lightness/jquery-ui.css
+%%WWWDIR%%/media/css/ui-smoothness/images/ui-anim_basic_16x16.gif
+%%WWWDIR%%/media/css/ui-smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/media/css/ui-smoothness/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/media/css/ui-smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%WWWDIR%%/media/css/ui-smoothness/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/media/css/ui-smoothness/images/ui-bg_glass_75_dadada_1x400.png
+%%WWWDIR%%/media/css/ui-smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%WWWDIR%%/media/css/ui-smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/media/css/ui-smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%WWWDIR%%/media/css/ui-smoothness/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/media/css/ui-smoothness/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/media/css/ui-smoothness/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/media/css/ui-smoothness/images/ui-icons_888888_256x240.png
+%%WWWDIR%%/media/css/ui-smoothness/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/media/css/ui-smoothness/jquery-ui.css
+%%WWWDIR%%/media/css/ui-redmond/images/ui-anim_basic_16x16.gif
+%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_flat_55_fbec88_40x100.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_glass_75_d0e5f5_1x400.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_glass_85_dfeffc_1x400.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_inset-hard_100_f5f8f9_1x100.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-bg_inset-hard_100_fcfdfd_1x100.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-icons_217bc0_256x240.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-icons_469bdd_256x240.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-icons_6da8d5_256x240.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-icons_d8e7f3_256x240.png
+%%WWWDIR%%/media/css/ui-redmond/images/ui-icons_f9bd01_256x240.png
+%%WWWDIR%%/media/css/ui-redmond/jquery-ui.css
+%%WWWDIR%%/media/css/ui-multisite/images/contentframe_background.jpg
+%%WWWDIR%%/media/css/ui-multisite/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/media/css/ui-multisite/images/ui-bg_flat_75_709aa5_40x100.png
+%%WWWDIR%%/media/css/ui-multisite/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%WWWDIR%%/media/css/ui-multisite/images/ui-bg_glass_65_709aa5_1x400.png
+%%WWWDIR%%/media/css/ui-multisite/images/ui-bg_glass_75_709aa5_1x400.png
+%%WWWDIR%%/media/css/ui-multisite/images/ui-bg_highlight-soft_75_8eaeb8_1x100.png
+%%WWWDIR%%/media/css/ui-multisite/images/ui-bg_inset-soft_95_fef1ec_1x100.png
+%%WWWDIR%%/media/css/ui-multisite/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/media/css/ui-multisite/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/media/css/ui-multisite/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/media/css/ui-multisite/images/ui-icons_888888_256x240.png
+%%WWWDIR%%/media/css/ui-multisite/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/media/css/ui-multisite/jquery-ui.css
+%%WWWDIR%%/media/css/autocomplete.css
+%%WWWDIR%%/media/css/common.css
+%%WWWDIR%%/media/css/shadow.png
+%%WWWDIR%%/media/images/add.png
+%%WWWDIR%%/media/images/calendar.gif
+%%WWWDIR%%/media/images/calendar.png
+%%WWWDIR%%/media/images/de_DE.png
+%%WWWDIR%%/media/images/docs.png
+%%WWWDIR%%/media/images/en_US.png
+%%WWWDIR%%/media/images/favicon.ico
+%%WWWDIR%%/media/images/graph.png
+%%WWWDIR%%/media/images/home.png
+%%WWWDIR%%/media/images/int.gif
+%%WWWDIR%%/media/images/int2.gif
+%%WWWDIR%%/media/images/loader.gif
+%%WWWDIR%%/media/images/notify.gif
+%%WWWDIR%%/media/images/pages.png
+%%WWWDIR%%/media/images/pdf.png
+%%WWWDIR%%/media/images/pnp.png
+%%WWWDIR%%/media/images/remove.png
+%%WWWDIR%%/media/images/rrdtool.png
+%%WWWDIR%%/media/images/special.png
+%%WWWDIR%%/media/images/stats.png
+%%WWWDIR%%/media/images/trends.gif
+%%WWWDIR%%/media/images/xml.png
+%%WWWDIR%%/media/images/zoom.png
 %%WWWDIR%%/templates.dist/check-host-alive.php
+%%WWWDIR%%/templates.dist/check_dell_bladechassis.php
 %%WWWDIR%%/templates.dist/check_disk.php
 %%WWWDIR%%/templates.dist/check_dns.php
+%%WWWDIR%%/templates.dist/check_esx3.php
 %%WWWDIR%%/templates.dist/check_fping.php
+%%WWWDIR%%/templates.dist/check_hp_bladechassis.php
+%%WWWDIR%%/templates.dist/check_hpasm.php
 %%WWWDIR%%/templates.dist/check_http.php
-%%WWWDIR%%/templates.dist/check_http_url.php
+%%WWWDIR%%/templates.dist/check_icmp.php
 %%WWWDIR%%/templates.dist/check_iftraffic_counter.php
 %%WWWDIR%%/templates.dist/check_iftraffic_pct.php
 %%WWWDIR%%/templates.dist/check_load.php
+%%WWWDIR%%/templates.dist/check_local_disk.php
+%%WWWDIR%%/templates.dist/check_local_load.php
 %%WWWDIR%%/templates.dist/check_messpc_temp.php
 %%WWWDIR%%/templates.dist/check_multi.php
+%%WWWDIR%%/templates.dist/check_multi_nagiostats.php
 %%WWWDIR%%/templates.dist/check_mysql_health.php
 %%WWWDIR%%/templates.dist/check_nt_cpu.php
 %%WWWDIR%%/templates.dist/check_nt_disk.php
 %%WWWDIR%%/templates.dist/check_nt_mem.php
+%%WWWDIR%%/templates.dist/check_ntp_time.php
 %%WWWDIR%%/templates.dist/check_nwstat_CONNS.php
 %%WWWDIR%%/templates.dist/check_nwstat_LOAD.php
 %%WWWDIR%%/templates.dist/check_nwstat_LOAD1.php
-%%WWWDIR%%/templates.dist/check_ping.php
 %%WWWDIR%%/templates.dist/check_nwstat_LOAD15.php
 %%WWWDIR%%/templates.dist/check_nwstat_LOAD5.php
 %%WWWDIR%%/templates.dist/check_nwstat_ofiles.php
+%%WWWDIR%%/templates.dist/check_openmanage.php
 %%WWWDIR%%/templates.dist/check_oracle_connection-time.php
+%%WWWDIR%%/templates.dist/check_oracle_health.php
+%%WWWDIR%%/templates.dist/check_ping.php
 %%WWWDIR%%/templates.dist/check_oracle_health_connection-time.php
 %%WWWDIR%%/templates.dist/check_oracle_health_pga-in-memory-sort-ratio.php
 %%WWWDIR%%/templates.dist/check_oracle_health_redo-io-traffic.php
 %%WWWDIR%%/templates.dist/check_oracle_health_switch-interval.php
 %%WWWDIR%%/templates.dist/check_oracle_health_tablespace-usage.php
+%%WWWDIR%%/templates.dist/check_ping_tick.php
 %%WWWDIR%%/templates.dist/check_pnp_rrds.php
 %%WWWDIR%%/templates.dist/check_smtp.php
 %%WWWDIR%%/templates.dist/check_snmp_int-bits.php
@@ -134,21 +553,81 @@ libexec/check_pnp_rrds.pl
 %%WWWDIR%%/templates.dist/check_tcp.php
 %%WWWDIR%%/templates.dist/check_users.php
 %%WWWDIR%%/templates.dist/default.php
+%%WWWDIR%%/templates.dist/integer.php
+%%WWWDIR%%/templates.dist/nagiostats.php
+%%WWWDIR%%/templates.dist/pnp-runtime.php
 %%WWWDIR%%/templates.dist/response.php
-%%WWWDIR%%/templates.special/loop.php
-%%WWWDIR%%/ajax.php
+%%WWWDIR%%/templates.special/README
+%%WWWDIR%%/templates.special/advanced_loop.php-sample
+%%WWWDIR%%/templates.special/loop.php-sample
+%%WWWDIR%%/templates.special/static.php-sample
 %%WWWDIR%%/index.php
-%%WWWDIR%%/zoom.php
-@dirrmtry %%WWWDIR%%/templates.dist
-@dirrmtry %%WWWDIR%%/templates.special
+%%WWWDIR%%/install.php
+@dirrm %%WWWDIR%%/media/js
+@dirrm %%WWWDIR%%/media/images
+@dirrm %%WWWDIR%%/media/css/ui-smoothness/images
+@dirrm %%WWWDIR%%/media/css/ui-smoothness
+@dirrm %%WWWDIR%%/media/css/ui-redmond/images
+@dirrm %%WWWDIR%%/media/css/ui-redmond
+@dirrm %%WWWDIR%%/media/css/ui-multisite/images
+@dirrm %%WWWDIR%%/media/css/ui-multisite
+@dirrm %%WWWDIR%%/media/css/ui-lightness/images
+@dirrm %%WWWDIR%%/media/css/ui-lightness
+@dirrm %%WWWDIR%%/media/css
+@dirrm %%WWWDIR%%/media
+@dirrm %%WWWDIR%%/documents/en_US
+@dirrm %%WWWDIR%%/documents/de_DE
+@dirrm %%WWWDIR%%/documents/_media
+@dirrm %%WWWDIR%%/documents
+@dirrm %%WWWDIR%%/application/views
+@dirrm %%WWWDIR%%/application/vendor/fpdf/font
+@dirrm %%WWWDIR%%/application/vendor/fpdf/filters
+@dirrm %%WWWDIR%%/application/vendor/fpdf
+@dirrm %%WWWDIR%%/application/vendor
+@dirrm %%WWWDIR%%/application/models
+@dirrm %%WWWDIR%%/application/libraries
+@dirrm %%WWWDIR%%/application/i18n/ru_RU
+@dirrm %%WWWDIR%%/application/i18n/fr_FR
+@dirrm %%WWWDIR%%/application/i18n/es_ES
+@dirrm %%WWWDIR%%/application/i18n/en_US
+@dirrm %%WWWDIR%%/application/i18n/de_DE
+@dirrm %%WWWDIR%%/application/i18n
+@dirrm %%WWWDIR%%/application/hooks
+@dirrm %%WWWDIR%%/application/helpers
+@dirrm %%WWWDIR%%/application/controllers
+@dirrm %%WWWDIR%%/application/config
+@dirrm %%WWWDIR%%/application/cache
+@dirrm %%WWWDIR%%/application
 @dirrmtry %%WWWDIR%%/templates
-@dirrmtry %%WWWDIR%%/lang
-@dirrmtry %%WWWDIR%%/include/js
-@dirrmtry %%WWWDIR%%/include/font/makefont
-@dirrmtry %%WWWDIR%%/include/font
-@dirrmtry %%WWWDIR%%/include
-@dirrmtry %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/templates.dist
+@dirrm %%WWWDIR%%/templates.special
 @dirrmtry %%WWWDIR%%
-@dirrmtry etc/pnp/pages
+@dirrm lib/kohana/system/views/pagination
+@dirrm lib/kohana/system/views/kohana
+@dirrm lib/kohana/system/views
+@dirrm lib/kohana/system/libraries/drivers/Session
+@dirrm lib/kohana/system/libraries/drivers/Image
+@dirrm lib/kohana/system/libraries/drivers/Database
+@dirrm lib/kohana/system/libraries/drivers/Captcha
+@dirrm lib/kohana/system/libraries/drivers/Cache
+@dirrm lib/kohana/system/libraries/drivers
+@dirrm lib/kohana/system/libraries
+@dirrm lib/kohana/system/i18n/ru_RU
+@dirrm lib/kohana/system/i18n/nl_NL
+@dirrm lib/kohana/system/i18n/it_IT
+@dirrm lib/kohana/system/i18n/fr_FR
+@dirrm lib/kohana/system/i18n/es_ES
+@dirrm lib/kohana/system/i18n/en_US
+@dirrm lib/kohana/system/i18n/de_DE
+@dirrm lib/kohana/system/i18n
+@dirrm lib/kohana/system/helpers
+@dirrm lib/kohana/system/fonts
+@dirrm lib/kohana/system/core/utf8
+@dirrm lib/kohana/system/core
+@dirrm lib/kohana/system/controllers
+@dirrm lib/kohana/system/config
+@dirrm lib/kohana/system
+@dirrm lib/kohana
 @dirrmtry etc/pnp/check_commands
+@dirrmtry etc/pnp/pages
 @dirrmtry etc/pnp
