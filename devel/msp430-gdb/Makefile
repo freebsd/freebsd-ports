@@ -4,31 +4,29 @@
 #
 # $FreeBSD$
 #
+
 PORTNAME=	gdb
 PORTVERSION=	${GDBVERSION}.${PATCHVERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
-		http://lev.serebryakov.spb.ru/download/msp430/:patches
-MASTER_SITE_SUBDIR=	${PORTNAME}/old-releases
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/mspgcc4\/mspgcc4/}:patches
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	msp430-
 DISTFILES=	${PORTNAME}-${GDBVERSION}${EXTRACT_SUFX} \
-		${PKGNAMEPREFIX}${PORTNAME}-${GDBVERSION}.${PATCHVERSION}${EXTRACT_SUFX}:patches
+		mspgcc4-${PATCHVERSION}${EXTRACT_SUFX}:patches
 
 MAINTAINER=	lev@FreeBSD.org
-COMMENT=	FSF gdb-5.1.1 for TI's msp430 MCUs cross-development
+COMMENT=	FSF GDB for TI's msp430 MCUs cross-development
 
-BROKEN=		does not support recent versions of FreeBSD
-
-GDBVERSION=	5.1.1
-PATCHVERSION=	20030909
+GDBVERSION=	7.1
+PATCHVERSION=	20101006
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GDBVERSION}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//}
+CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --disable-werror --disable-nls
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 MAN1=		${PKGNAMEPREFIX}gdb.1 ${PKGNAMEPREFIX}run.1
 
@@ -40,17 +38,11 @@ MANPAGES=	gdb.1:gdb run.1:sim/common
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile with GCC 4.2
-.endif
+pre-patch:
+	@${CP} -r ${WRKSRC}/../mspgcc4-${PATCHVERSION}/ports/gdb-6-and-7/* ${WRKSRC}
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		Configure fails on amd64 and ia64
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Fails to link
-.endif
+post-patch:
+	@cd ${WRKSRC} && ${PATCH} ${PATCH_ARGS} -p1 <${WRKSRC}/../mspgcc4-${PATCHVERSION}/gdb-7.1.patch
 
 do-install:
 	@${MKDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin
