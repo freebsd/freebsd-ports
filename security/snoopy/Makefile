@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	snoopy
-PORTVERSION=	1.7.6
+PORTVERSION=	1.7.9
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}logger/
 
