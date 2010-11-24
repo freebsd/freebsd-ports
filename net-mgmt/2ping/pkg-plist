@@ -1,0 +1,3 @@
+@comment $FreeBSD$
+bin/2ping
+bin/2ping6
