@@ -699,6 +699,7 @@
     SUBDIR += p5-AxKit-XSP-WebUtils
     SUBDIR += p5-B-LexInfo
     SUBDIR += p5-Bigtop
+    SUBDIR += p5-Blog-Spam
     SUBDIR += p5-Bundle-Slash
     SUBDIR += p5-Bundle-Sledge
     SUBDIR += p5-Business-PayPal
