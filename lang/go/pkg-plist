@@ -246,13 +246,13 @@ lib/go/pkg/freebsd_%%ARCH%%/xml.a
 %%PORTDOCS%%%%DOCSDIR%%/video-001.png
 %%PORTDOCS%%%%DOCSDIR%%/video-002.png
 %%PORTDOCS%%%%DOCSDIR%%/video-003.png
-%%DATADIR%%/Make.cmd
-%%DATADIR%%/Make.pkg
-%%DATADIR%%/Make.common
-%%DATADIR%%/Make.ccmd
-%%DATADIR%%/Make.clib
-%%DATADIR%%/Make.inc
-@dirrm %%DATADIR%%
+%%GOMAKEDIR%%/Make.cmd
+%%GOMAKEDIR%%/Make.pkg
+%%GOMAKEDIR%%/Make.common
+%%GOMAKEDIR%%/Make.ccmd
+%%GOMAKEDIR%%/Make.clib
+%%GOMAKEDIR%%/Make.inc
+@dirrm %%GOMAKEDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/talks/io2010
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/talks
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/progs
