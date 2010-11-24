@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20101124:
+  AFFECTS: users of www/py-flexget
+  AUTHOR: lioux@FreeBSD.org
+
+  metainfo_series is no longer a builtin. This should only affect
+  you if you aren't using one of the series plugins (series,
+  all_series, thetvdb_favorites, or series_premiere.) If you need
+  to enable metainfo_series manually for a feed it can be done like
+  so:
+
+    metainfo_series: yes
+
 20101120:
   AFFECTS: users of x11-toolkits/gtk20 and x11-toolkits/gtkmm24
   AUTHOR: FreeBSD GNOME Team <gnome@FreeBSD.org>
