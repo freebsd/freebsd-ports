@@ -17,6 +17,7 @@ COMMENT=	An extensible shell, derived from plan9's rc
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-readline
+CFLAGS:=	${CFLAGS:N-O*}
 
 ALL_TARGET=	es
 MAN1=		es.1
