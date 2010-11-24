@@ -462,7 +462,7 @@
     SUBDIR += gcvs
     SUBDIR += gdb
     SUBDIR += gdb53-act
-    SUBDIR += gdb6
+    SUBDIR += gdb66
     SUBDIR += gdbmods
     SUBDIR += gdcm
     SUBDIR += geany
