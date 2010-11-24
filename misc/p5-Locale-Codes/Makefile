@@ -16,7 +16,10 @@ COMMENT=	Perl5 module providing access to ISO3166 and ISO639 Country Codes
 
 PERL_CONFIGURE=	YES
 
-MAN3=		Locale::Country.3 Locale::Constants.3 Locale::Currency.3 \
+MAN3=		Locale::Codes.3 Locale::Codes::Changes.3 \
+		Locale::Codes::Country.3 Locale::Codes::Currency.3 \
+		Locale::Codes::Language.3 Locale::Codes::Script.3 \
+		Locale::Country.3 Locale::Constants.3 Locale::Currency.3 \
 		Locale::Language.3 Locale::Script.3
 
 .include <bsd.port.mk>
