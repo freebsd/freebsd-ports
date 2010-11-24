@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bloboats
-PORTVERSION=	1.0.1
-PORTREVISION=	7
+PORTVERSION=	1.0.2
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.kapsi.fi/bloboats.dy.fi/ \
 		http://koti.mbnet.fi/makegho/c/blobtrox/ \
@@ -23,7 +22,7 @@ MAKE_JOBS_SAFE=	yes
 
 MAKE_ENV+=	DATADIR="${DATADIR}"
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/Makefile
+#post-patch:
+#	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
