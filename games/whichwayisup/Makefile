@@ -10,15 +10,13 @@ PORTVERSION=	0.7.9
 PORTREVISION=	2
 DISTVERSION=	${PORTVERSION:S/.//g}
 CATEGORIES=	games
-MASTER_SITES=	http://hectigo.net/puskutraktori/whichwayisup/
+MASTER_SITES=	http://www.hectigo.net/games/whichwayisup/
 DISTNAME=	${PORTNAME}_b${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Platformer game with rotational twist
 
 RUN_DEPENDS=	py*-game>=1.7.1:${PORTSDIR}/devel/py-game
-
-BROKEN=		does not fetch
 
 USE_PYTHON=	yes
 USE_ZIP=	yes
@@ -27,7 +25,7 @@ PORTDOCS=	README.txt changelog.txt
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e '/libdir =/s|=.*|= "${PYTHON_SITELIBDIR}/${PORTNAME}"|'\
+	@${REINPLACE_CMD} -e '/libdir =/s|=.*|= "${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}"|'\
 		${WRKSRC}/run_game.py
 	@${REINPLACE_CMD} -e '/data_dir =/s|data_py.*data.|"${DATADIR}"|'\
 		${WRKSRC}/lib/data.py
@@ -40,7 +38,7 @@ do-build:
 
 do-install:
 	@cd ${WRKSRC}/data/&&${COPYTREE_SHARE} . ${DATADIR}/
-	@cd ${WRKSRC}/lib/&&${COPYTREE_SHARE} . ${PYTHON_SITELIBDIR}/${PORTNAME}/
+	@cd ${WRKSRC}/lib/&&${COPYTREE_SHARE} . ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/
 	@${INSTALL_SCRIPT} ${WRKSRC}/run_game.py ${PREFIX}/bin/${PORTNAME}
 .ifndef NOPORTDOCS
 	@${INSTALL} -d ${DOCSDIR}/
