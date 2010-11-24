@@ -22,7 +22,7 @@ OPTIONS=	MOD_DAV_SVN	"mod_dav_svn module for Apache 2.X" off \
 		NEON		"WebDAV/Delta-V repo access module (neon)" on \
 		SERF		"WebDAV/Delta-V repo access module (serf)" off \
 		SASL		"SASL2 authorization support" off \
-		BDB		"db4 repository backend" on \
+		BDB		"Berkeley DB (4 or 5) repository backend" on \
 		ASVN		"Build and install Archive SVN (asvn)" off \
 		MAINTAINER_DEBUG	"Build debug version" off \
 		SVNSERVE_WRAPPER	"Enable svnserve wrapper" off \
@@ -85,9 +85,9 @@ pre-everything::
 .endif
 	@${ECHO_MSG} ""
 .if defined(WITH_BDB)
-	@${ECHO_MSG} "db4 repository backend enabled."
+	@${ECHO_MSG} "Berkeley DB (4 or 5) repository backend enabled."
 .else
-	@${ECHO_MSG} "db4 repository backend disabled."
+	@${ECHO_MSG} "Berkeley DB (4 or 5) repository backend disabled."
 .endif
 	@${ECHO_MSG} ""
 .if defined(WITH_MAINTAINER_DEBUG)
@@ -159,13 +159,14 @@ pre-everything::
 
 pre-configure:
 .if !defined(WITHOUT_BDB)
-	@if [ `${APR_APU_DIR}/${APU_CONFIG} --db-version` != "4" ] ; then \
+	@BDB_VERSION=`${APR_APU_DIR}/${APU_CONFIG} --db-version`; \
+	if [ "$${BDB_VERSION}" != "4" -a "$${BDB_VERSION}" != "5" ] ; then \
 		${ECHO_MSG} "" ; \
-		${ECHO_MSG} 'You should build `'"${APR_PORT}' with db4 support to use subversion with it." ; \
+		${ECHO_MSG} 'You should build `'"${APR_PORT}' with Berkeley DB (4 or 5) support to use subversion with it." ; \
 		${ECHO_MSG} 'Please rebuild `'"${APR_PORT}' with option "'`'"${OPT_NAME}' and try again." ; \
 		${ECHO_MSG} "" ; \
-		${ECHO_MSG} "Or you can disable db4 support. Only 'fs' repository backend will be available." ; \
-		${ECHO_MSG} "To disable db4 support, define WITHOUT_BDB." ; \
+		${ECHO_MSG} "Or you can disable Berkeley DB support. Only 'fs' repository backend will be available." ; \
+		${ECHO_MSG} "To disable Berkeley DB support, define WITHOUT_BDB." ; \
 		${ECHO_MSG} "" ; \
 		${FALSE} ; \
 	fi
