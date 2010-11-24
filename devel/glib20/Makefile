@@ -56,6 +56,10 @@ OPTIONS=	COLLATION_FIX "fix string collation" off
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == powerpc64
+EXTRA_PATCHES=	${.CURDIR}/files/extra-arch-powerpc64
+.endif
+
 # Let glib use asm code for implementing atomic ops on i386 and amd64.
 .if ${ARCH} == "i386"
 GLIB_ARCH=	i486
