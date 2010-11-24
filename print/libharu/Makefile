@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libharu
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	print
 MASTER_SITES=	http://libharu.org/files/
 
