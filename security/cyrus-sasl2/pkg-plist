@@ -26,10 +26,6 @@ lib/sasl2/libanonymous.so.2
 %%GSSAPI%%lib/sasl2/libgssapiv2.la
 %%GSSAPI%%lib/sasl2/libgssapiv2.so
 %%GSSAPI%%lib/sasl2/libgssapiv2.so.2
-%%EBONES%%lib/sasl2/libkerberos4.a
-%%EBONES%%lib/sasl2/libkerberos4.la
-%%EBONES%%lib/sasl2/libkerberos4.so
-%%EBONES%%lib/sasl2/libkerberos4.so.2
 %%LOGIN%%lib/sasl2/liblogin.a
 %%LOGIN%%lib/sasl2/liblogin.la
 %%LOGIN%%lib/sasl2/liblogin.so
@@ -109,5 +105,5 @@ sbin/saslpasswd2
 %%PORTDOCS%%%%DOCSDIR%%/html/windows.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/sasl2
+@dirrmtry lib/sasl2
 @cwd %%PREFIX%%
