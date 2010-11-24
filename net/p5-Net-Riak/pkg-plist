@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Riak/.packlist
 %%SITE_PERL%%/Net/Riak.pm
 %%SITE_PERL%%/Net/Riak/Bucket.pm
