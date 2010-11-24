@@ -27,7 +27,6 @@
     SUBDIR += asfrecorder
     SUBDIR += asio
     SUBDIR += aslookup
-    SUBDIR += asterisk
     SUBDIR += asterisk-app-ldap
     SUBDIR += asterisk-app-notify
     SUBDIR += asterisk-bristuff
