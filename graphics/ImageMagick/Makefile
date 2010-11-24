@@ -84,6 +84,7 @@ CONFIGURE_ARGS+=	--disable-hdri
 .if defined(WITH_THREADS)
 _IMAGEMAGICK_THREADS=yes
 _IMAGEMAGICK_THREADS_MSG=with threads
+PERL_THREADED!=	/bin/sh -c 'case `perl --version` in *freebsd-thread*) echo yes ;; esac'
 .else
 _IMAGEMAGICK_THREADS=no
 _IMAGEMAGICK_THREADS_MSG=without threads
@@ -96,7 +97,7 @@ PLIST_SUB+=		WITH_PERL=''
 MAN3=			Image::Magick.3
 MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 # PerlMagick not works with threads, if perl is not threaded, and vice versa
-. if defined(PERL_THREADED) && ${PERL_THREADED} == "true"
+. if defined(PERL_THREADED)
 _IMAGEMAGICK_THREADS_PERL_MSG=Perl is threaded
 _IMAGEMAGICK_THREADS=yes
 . else
