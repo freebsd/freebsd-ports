@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	openttd
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.5
 CATEGORIES=	games
 MASTER_SITES=	http://gb.binaries.openttd.org/binaries/releases/${PORTVERSION}/ \
 		#SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An open source clone of Microprose Transport Tycoon Deluxe
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		lzo2.2:${PORTSDIR}/archivers/lzo2
@@ -36,7 +38,8 @@ CONFIGURE_ARGS+=	--with-midi-arg=${WITH_MIDI_PLAYER_ARGS}
 .if defined(WITH_DEDICATED_SERVER_ONLY)
 CONFIGURE_ARGS+=	--enable-dedicated
 # Aid it to find lzo2 headers; client build gets it via sdl-config
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
+CXXFLAGS+=	-I${LOCALBASE}/include
+USE_RC_SUBR=	${PORTNAME}
 .else
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
@@ -44,10 +47,10 @@ USE_SDL=	sdl
 .endif
 
 SUB_FILES=	pkg-message
-MAN6=		openttd.6
+MAN6=		${PORTNAME}.6
 
-DESKTOP_ENTRIES="OpenTTD" "${COMMENT}" "openttd" "openttd" \
-		"Game;Simulation;StrategyGame;" false
+DESKTOP_ENTRIES="OpenTTD" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" \
+		"Game;Simulation;StrategyGame;" ${FALSE}
 
 PORTDOCS=	32bpp.txt HOWTO_compile_lang_files.txt elrail.svg \
 		elrail_tile.png elrail_track.png landscape.html \
@@ -67,8 +70,13 @@ pre-everything::
 .endif
 
 post-patch:
-# Remove extra (vendor-provided) CFLAGS and LDFLAGS
-	@${REINPLACE_CMD} -e '1250,1252d' ${WRKSRC}/config.lib
+# Remove extra (vendor-provided) CFLAGS and LDFLAGS and make the port more
+# LOCALBASE safe
+	@${REINPLACE_CMD} -e '1250,1252d ; s,/usr/local,${LOCALBASE},' \
+		${WRKSRC}/config.lib
+# FreeBSD has strndup(3) since 701101
+	@${REINPLACE_CMD} -e '/__NetBSD_Version__/s,$$, || (defined(__FreeBSD_version) \&\& __FreeBSD_version > 701100),' \
+		${WRKSRC}/src/string_func.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
