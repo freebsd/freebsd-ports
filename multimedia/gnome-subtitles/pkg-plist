@@ -8,14 +8,18 @@ share/applications/gnome-subtitles.desktop
 share/gnome/help/gnome-subtitles/C/gnome-subtitles.xml
 share/gnome/help/gnome-subtitles/C/legal.xml
 share/gnome/help/gnome-subtitles/ca/gnome-subtitles.xml
+share/gnome/help/gnome-subtitles/cs/gnome-subtitles.xml
 share/gnome/help/gnome-subtitles/de/gnome-subtitles.xml
 share/gnome/help/gnome-subtitles/el/gnome-subtitles.xml
 share/gnome/help/gnome-subtitles/es/gnome-subtitles.xml
 share/gnome/help/gnome-subtitles/fr/gnome-subtitles.xml
 share/gnome/help/gnome-subtitles/oc/gnome-subtitles.xml
+share/gnome/help/gnome-subtitles/ro/gnome-subtitles.xml
+share/gnome/help/gnome-subtitles/sl/gnome-subtitles.xml
 share/gnome/help/gnome-subtitles/sv/gnome-subtitles.xml
 %%NLS%%share/locale/ar/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/gnome-subtitles.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gnome-subtitles.mo
@@ -26,37 +30,51 @@ share/gnome/help/gnome-subtitles/sv/gnome-subtitles.xml
 %%NLS%%share/locale/fi/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/he/LC_MESSAGES/gnome-subtitles.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/oc/LC_MESSAGES/gnome-subtitles.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gnome-subtitles.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gnome-subtitles.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/gnome-subtitles.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/gnome-subtitles.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/gnome-subtitles.mo
 share/omf/gnome-subtitles/gnome-subtitles-C.omf
 share/omf/gnome-subtitles/gnome-subtitles-ca.omf
+share/omf/gnome-subtitles/gnome-subtitles-cs.omf
 share/omf/gnome-subtitles/gnome-subtitles-de.omf
 share/omf/gnome-subtitles/gnome-subtitles-el.omf
 share/omf/gnome-subtitles/gnome-subtitles-es.omf
 share/omf/gnome-subtitles/gnome-subtitles-fr.omf
 share/omf/gnome-subtitles/gnome-subtitles-oc.omf
+share/omf/gnome-subtitles/gnome-subtitles-ro.omf
+share/omf/gnome-subtitles/gnome-subtitles-sl.omf
 share/omf/gnome-subtitles/gnome-subtitles-sv.omf
 share/pixmaps/gnome-subtitles.png
 @dirrmtry lib/gnome-subtitles
 @dirrmtry share/omf/gnome-subtitles
 @dirrmtry share/gnome/help/gnome-subtitles/C
 @dirrmtry share/gnome/help/gnome-subtitles/ca
+@dirrmtry share/gnome/help/gnome-subtitles/cs
+@dirrmtry share/gnome/help/gnome-subtitles/ds
 @dirrmtry share/gnome/help/gnome-subtitles/de
 @dirrmtry share/gnome/help/gnome-subtitles/el
 @dirrmtry share/gnome/help/gnome-subtitles/es
 @dirrmtry share/gnome/help/gnome-subtitles/fr
 @dirrmtry share/gnome/help/gnome-subtitles/oc
+@dirrmtry share/gnome/help/gnome-subtitles/ro
+@dirrmtry share/gnome/help/gnome-subtitles/sl
 @dirrmtry share/gnome/help/gnome-subtitles/sv
 @dirrmtry share/gnome/help/gnome-subtitles
+%%NLS%%@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca@valencia
 %%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/oc
 %%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
