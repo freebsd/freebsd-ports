@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.23
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -52,7 +52,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--enable-static \
 		--enable-auth-sasldb \
 		--with-rc4=openssl \
-		--with-saslauthd=${SASLAUTHD_RUNPATH}
+		--with-saslauthd=${SASLAUTHD_RUNPATH} \
+		--disable-krb4
 
 OPTIONS=	BDB		"Use Berkeley DB"			off \
 		MYSQL		"Use MySQL"				off \
@@ -137,7 +138,7 @@ CONFIGURE_ARGS+=--enable-login
 
 .if defined(WITHOUT_PLAIN)
 CONFIGURE_ARGS+=--disable-plain
-PLAIN= "@comment "
+PLAIN=	"@comment "
 .endif
 
 .if defined(WITHOUT_OTP)
@@ -175,15 +176,6 @@ CONFIGURE_ARGS+=--enable-gssapi
 .else
 CONFIGURE_ARGS+=--disable-gssapi
 GSSAPI=	"@comment "
-.endif
-
-# KERBEROS 4 was removed in FreeBSD 5.0-CURRENT
-.if defined(WITH_KERBEROS4)
-LIB_DEPENDS+=	krb.2:${PORTSDIR}/security/krb4
-CONFIGURE_ARGS+=--enable-krb4=${LOCALBASE}/krb4
-.else
-CONFIGURE_ARGS+=--disable-krb4
-EBONES=	"@comment "
 .endif
 
 .if ${OPENSSLBASE} == /usr

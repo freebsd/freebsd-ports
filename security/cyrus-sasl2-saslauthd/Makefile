@@ -42,7 +42,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--enable-login \
 		--enable-auth-sasldb \
 		--with-rc4=openssl \
-		--with-saslauthd=${SASLAUTHD_RUNPATH}
+		--with-saslauthd=${SASLAUTHD_RUNPATH} \
+		--disable-krb4
 
 OPTIONS=	BDB		"Use Berkeley DB"			off \
 		OPENLDAP	"Use OpenLDAP"				off \
@@ -81,14 +82,6 @@ CONFIGURE_ARGS+=--enable-gssapi=${HEIMDAL_HOME} --with-gss_impl=heimdal
 CONFIGURE_ARGS+=--enable-gssapi
 .else
 CONFIGURE_ARGS+=--disable-gssapi
-.endif
-
-# KERBEROS 4 was removed in FreeBSD 5.0-CURRENT
-.if defined(WITH_KERBEROS4)
-LIB_DEPENDS+=	krb.2:${PORTSDIR}/security/krb4
-CONFIGURE_ARGS+=--enable-krb4=${LOCALBASE}/krb4
-.else
-CONFIGURE_ARGS+=--disable-krb4
 .endif
 
 .if ${OPENSSLBASE} == /usr
