@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Destroyer/.packlist
+%%SITE_PERL%%/Object/Destroyer.pm
+@dirrmtry %%SITE_PERL%%/Object
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object/Destroyer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Object
