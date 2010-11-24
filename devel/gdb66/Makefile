@@ -18,6 +18,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gdb
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	GNU GDB of newer version than comes with the system
 
+LATEST_LINK=	gdb66
+
 OPTIONS=	INSIGHT "Build the Tcl/Tk GUI (experimental!)" off
 
 USE_BZIP2=	yes
@@ -37,9 +39,11 @@ VER=	${PORTVERSION:S/.//}
 PLIST_SUB=	VER=${VER}
 MAN1=	gdb${VER}.1
 
-#ONLY_FOR_ARCHS=	i386 amd64	# untested elsewhere, might work
-
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc"
+BROKEN=		Does not configure on ia64 or powerpc
+.endif
 
 .if defined(WITH_INSIGHT)
 LIB_DEPENDS=	itk:${PORTSDIR}/x11-toolkits/itk
