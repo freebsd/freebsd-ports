@@ -1,0 +1,10 @@
+Object::Destroyer allows for the creation of "Destroy" handles. The
+handle is "attached" to the circular relationship, but is not a part
+of it. When the destroy handle falls out of scope, it will be cleaned
+up correctly, and while being cleaned up, it will also force the data
+structure it is attached to to be destroyed as well. Object::Destroyer
+can call a specified release method on an object (or method DESTROY by
+default). Alternatively, it can execute an arbitrary user code passed
+to constructor as a code reference.
+
+WWW:	http://search.cpan.org/dist/Object-Destroyer/
