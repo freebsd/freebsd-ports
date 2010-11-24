@@ -350,6 +350,7 @@ jre-1_5*-linux-*.bin	java/linux-sun-jre15	License does not allow
 jre-6*-linux-*.bin	java/linux-sun-jre16	License does not allow
 						distribution with fee
 jsdk20-solaris2-sparc*	java/jsdk		No commercial use
+jta-*.zip		java/jta		See the license
 jude-community-*.zip	devel/jude-community	License restrictions
 kaffe-*			java/kaffe		Restrictive copyright
 komodo-*		editors/komodo-edit	Distribution not permitted
