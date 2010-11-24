@@ -1,8 +1,12 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/XML/.packlist
 %%SITE_PERL%%/POE/Filter/XML.pm
 %%SITE_PERL%%/POE/Filter/XML/Handler.pm
 %%SITE_PERL%%/POE/Filter/XML/NS.pm
 %%SITE_PERL%%/POE/Filter/XML/Node.pm
-%%SITE_PERL%%/POE/Filter/XML/Utils.pm
-@dirrm %%SITE_PERL%%/POE/Filter/XML
+@dirrmtry %%SITE_PERL%%/POE/Filter/XML
 @dirrmtry %%SITE_PERL%%/POE/Filter
 @dirrmtry %%SITE_PERL%%/POE
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
