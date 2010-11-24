@@ -1,3 +1,10 @@
+%%SITE_PERL%%/Locale/Codes/Changes.pod
+%%SITE_PERL%%/Locale/Codes/Country.pm
+%%SITE_PERL%%/Locale/Codes/Currency.pm
+%%SITE_PERL%%/Locale/Codes/Language.pm
+%%SITE_PERL%%/Locale/Codes/Script.pm
+%%SITE_PERL%%/Locale/Codes.pm
+%%SITE_PERL%%/Locale/Codes.pod
 %%SITE_PERL%%/Locale/Country.pm
 %%SITE_PERL%%/Locale/Country.pod
 %%SITE_PERL%%/Locale/Language.pm
@@ -8,6 +15,8 @@
 %%SITE_PERL%%/Locale/Currency.pod
 %%SITE_PERL%%/Locale/Script.pm
 %%SITE_PERL%%/Locale/Script.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale-Codes/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale-Codes
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Codes/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Codes
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
+@dirrm %%SITE_PERL%%/Locale/Codes
 @dirrm %%SITE_PERL%%/Locale
