@@ -2,7 +2,7 @@ bin/rabbirc
 bin/rabbit
 bin/rabbit-command
 bin/rabbit-theme-manager
-bin/rabbitter
+bin/rabbiter
 bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/action.rb
 %%RUBY_SITELIBDIR%%/rabbit/action/basic.rb
@@ -53,6 +53,7 @@ bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/element/slide.rb
 %%RUBY_SITELIBDIR%%/rabbit/element/table.rb
 %%RUBY_SITELIBDIR%%/rabbit/element/tag.rb
+%%RUBY_SITELIBDIR%%/rabbit/element/text-block-element.rb
 %%RUBY_SITELIBDIR%%/rabbit/element/text-container-element.rb
 %%RUBY_SITELIBDIR%%/rabbit/element/text-element.rb
 %%RUBY_SITELIBDIR%%/rabbit/element/text-renderer.rb
@@ -362,6 +363,8 @@ bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/theme/slide-show/slide-show.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/table/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/table/table.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/tag/property.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/tag/tag.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/timer/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/timer/timer.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/title-background-color/property.rb
@@ -439,168 +442,169 @@ bin/rabrick
 %%DATADIR%%/image/ruby-images/ruby-pink-polygon-logo.png
 %%DATADIR%%/image/ruby-images/ruby-pink-polygon-small-icon.png
 %%DATADIR%%/image/ruby-images/ruby-pink-polygon.png
-share/locale/en/LC_MESSAGES/rabbit.mo
-share/locale/fr/LC_MESSAGES/rabbit.mo
-share/locale/ja/LC_MESSAGES/rabbit.mo
-%%PORTDOCS%%%%EXAMPLESDIR%%/asahina/alice.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/asahina/yukiusa.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/blue-circle.rd
-%%PORTDOCS%%%%EXAMPLESDIR%%/can_rabbit.rd
-%%PORTDOCS%%%%EXAMPLESDIR%%/cozmixng.rd
-%%PORTDOCS%%%%EXAMPLESDIR%%/cozmixng_is_field.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/cozmixng_is_field.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/equation.eps
-%%PORTDOCS%%%%EXAMPLESDIR%%/gl-sample.rd
-%%PORTDOCS%%%%EXAMPLESDIR%%/html_and_wiki.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/html_and_wiki.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/join_cozmixng.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/join_cozmixng.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/kof2005/gesture-flow.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/kof2005/gesture.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/kof2005/gtk+-widget.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/kof2005/high-light-architecture.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/kof2005/high-light-expose.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/kof2005/high-light-expose.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/kof2005/high-light-widget.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/kof2005/high-light-widget.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/kof2005/high-light.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/kof2005/mask-screenshot.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/kof2005/mask.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/kof2005/mask.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/kof2005/ruby-gnome2-logo.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/kof2005/ruby-pink-circle-logo.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/kof2005/skip-up-with-ruby-gnome2.rd
-%%PORTDOCS%%%%EXAMPLESDIR%%/kof2005/widget.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/kou/clear-blue-headline-background.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/kou/clear-blue-icon.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/kou/horizontal-bar.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/kou/quote.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/kou/vertical-bar.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/lavie.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/lightning-talk.rd
-%%PORTDOCS%%%%EXAMPLESDIR%%/lldn/input.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/lldn/interface.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/lldn/kame.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/lldn/lavie.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/lldn/lldn.rd
-%%PORTDOCS%%%%EXAMPLESDIR%%/lldn/output.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/lldn/rabbit-rwiki.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/lldn/rabbit_banner.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/lldn/rabbit_banner2.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/m17n.rd
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/banner/bn1.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/banner/bn2.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/banner/bn_psd.psd
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/banner/bn_psd2.psd
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-ruby.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-ruby.psd
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-taiyaki.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-taiyaki.psd
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-yokubari.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-yokubari.psd
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/tailavi/taiyaki.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/tailavi/taiyaki.psd
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/usako/blue_dot.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/usako/green_dot.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/usako/rabbit.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/usako/rabbit_mimi.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/usako/rabbit_mimi2.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/usako/red_dot.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/usako/ruby.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/usako/ruby_new.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/usako/usa1.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/usako/usa2.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/usako/usa3.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/usako/usako_psd.psd
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/usako/usako_psd_100.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/momo/usako/usako_psd_200.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/ppt/hare-and-tortoise-end.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/ppt/hare-and-tortoise-middle.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/ppt/hare-and-tortoise-start.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/ppt/ppt.rd
-%%PORTDOCS%%%%EXAMPLESDIR%%/ppt/rabbit-with-ruby.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/pre.rd
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit-balloon.obj
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit-en.rd
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit-history.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit-implementation.rd
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit.dia
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit.hiki
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit.rd
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit.xcf
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit/theme/festival/festival.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit/theme/gl-sample/gl-sample.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit/theme/image-with-frame/image-with-frame.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit/theme/image-with-no-shadow-frame/image-with-no-shadow-frame.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit/theme/image-without-frame/image-without-frame.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit/theme/kof2005/kof2005.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit/theme/kof2005/property.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit/theme/lightning-talk-with-contact/lightning-talk-with-contact.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit/theme/lldn/lldn.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit/theme/pdf/pdf.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit/theme/pdf/property.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit/theme/ppt/ppt.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit/theme/rabbit-and-tortoise/rabbit-and-tortoise.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit/theme/rectangle-image-slide-number/rectangle-image-slide-number.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit/theme/stop-auto-slide/stop-auto-slide.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit/theme/triangle-image-slide-number/triangle-image-slide-number.rb
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit_icon.ico
-%%PORTDOCS%%%%EXAMPLESDIR%%/rabbit_icon.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/shocker.jpg
-%%PORTDOCS%%%%EXAMPLESDIR%%/slide-property.hiki
-%%PORTDOCS%%%%EXAMPLESDIR%%/slide-property.rab
-%%PORTDOCS%%%%EXAMPLESDIR%%/sode/kame-color.riff
-%%PORTDOCS%%%%EXAMPLESDIR%%/sode/kame.riff
-%%PORTDOCS%%%%EXAMPLESDIR%%/spiral.svg
-%%PORTDOCS%%%%EXAMPLESDIR%%/table-en.rd
-%%PORTDOCS%%%%EXAMPLESDIR%%/table.rd
-%%PORTDOCS%%%%EXAMPLESDIR%%/theme-bench-en.rab
-%%PORTDOCS%%%%EXAMPLESDIR%%/theme-bench.rab
-%%PORTDOCS%%%%EXAMPLESDIR%%/usagi.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/usatti/kame-taro.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/usatti/rabbit-pink-logo.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/usatti/rabbit-pink-logo2.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/usatti/ruby-pink-circle-logo.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/usatti/ruby-pink-circle.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/usatti/ruby-pink-polygon-logo.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/usatti/ruby-pink-polygon.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/usatti/tanu-kitaro.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/usatti/usa-taro.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/usatti/yukidaru-taro.png
+%%NLS%%share/locale/en/LC_MESSAGES/rabbit.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/rabbit.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/rabbit.mo
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.en
 %%PORTDOCS%%%%DOCSDIR%%/README.en
 %%PORTDOCS%%%%DOCSDIR%%/ja/NEWS.ja
 %%PORTDOCS%%%%DOCSDIR%%/ja/README.ja
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/asahina/alice.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/asahina/yukiusa.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blue-circle.rd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/can_rabbit.rd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cozmixng.rd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cozmixng_is_field.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cozmixng_is_field.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/equation.eps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gl-sample.rd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/html_and_wiki.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/html_and_wiki.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/join_cozmixng.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/join_cozmixng.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/gesture-flow.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/gesture.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/gtk+-widget.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/high-light-architecture.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/high-light-expose.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/high-light-expose.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/high-light-widget.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/high-light-widget.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/high-light.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/mask-screenshot.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/mask.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/mask.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/ruby-gnome2-logo.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/ruby-pink-circle-logo.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/skip-up-with-ruby-gnome2.rd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/widget.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kou/clear-blue-headline-background.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kou/clear-blue-icon.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kou/horizontal-bar.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kou/quote.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kou/vertical-bar.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lavie.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lightning-talk.rd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/input.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/interface.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/kame.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/lavie.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/lldn.rd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/output.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/rabbit-rwiki.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/rabbit_banner.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/rabbit_banner2.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/m17n.rd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/banner/bn1.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/banner/bn2.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/banner/bn_psd.psd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/banner/bn_psd2.psd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-ruby.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-ruby.psd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-taiyaki.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-taiyaki.psd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-yokubari.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-yokubari.psd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/tailavi/taiyaki.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/tailavi/taiyaki.psd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/blue_dot.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/green_dot.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/rabbit.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/rabbit_mimi.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/rabbit_mimi2.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/red_dot.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/ruby.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/ruby_new.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/usa1.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/usa2.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/usa3.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/usako_psd.psd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/usako_psd_100.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/usako_psd_200.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ppt/hare-and-tortoise-end.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ppt/hare-and-tortoise-middle.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ppt/hare-and-tortoise-start.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ppt/ppt.rd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ppt/rabbit-with-ruby.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pre.rd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit-balloon.obj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit-en.rd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit-history.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit-implementation.rd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit.dia
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit.hiki
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit.rd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit.xcf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/festival/festival.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/gl-sample/gl-sample.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/image-with-frame/image-with-frame.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/image-with-no-shadow-frame/image-with-no-shadow-frame.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/image-without-frame/image-without-frame.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/kof2005/kof2005.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/kof2005/property.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/lightning-talk-with-contact/lightning-talk-with-contact.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/lldn/lldn.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/pdf/pdf.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/pdf/property.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/ppt/ppt.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/rabbit-and-tortoise/rabbit-and-tortoise.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/rectangle-image-slide-number/rectangle-image-slide-number.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/stop-auto-slide/stop-auto-slide.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/triangle-image-slide-number/triangle-image-slide-number.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit_icon.ico
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit_icon.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shocker.jpg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slide-property.hiki
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slide-property.rab
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sode/kame-color.riff
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sode/kame.riff
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spiral.svg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/table-en.rd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/table.hiki
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/table.rd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/theme-bench-en.rab
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/theme-bench.rab
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usagi.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/kame-taro.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/rabbit-pink-logo.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/rabbit-pink-logo2.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/ruby-pink-circle-logo.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/ruby-pink-circle.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/ruby-pink-polygon-logo.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/ruby-pink-polygon.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/tanu-kitaro.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/usa-taro.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/yukidaru-taro.png
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/usatti
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sode
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/triangle-image-slide-number
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/stop-auto-slide
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/rectangle-image-slide-number
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/rabbit-and-tortoise
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/ppt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/pdf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/lldn
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/lightning-talk-with-contact
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/kof2005
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/image-without-frame
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/image-with-no-shadow-frame
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/image-with-frame
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/gl-sample
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/festival
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ppt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/momo/usako
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/momo/tailavi
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/momo/banner
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/momo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/lldn
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kou
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kof2005
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/asahina
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/usatti
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/sode
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/triangle-image-slide-number
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/stop-auto-slide
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/rectangle-image-slide-number
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/rabbit-and-tortoise
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/ppt
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/pdf
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/lldn
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/lightning-talk-with-contact
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/kof2005
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/image-without-frame
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/image-with-no-shadow-frame
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/image-with-frame
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/gl-sample
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/festival
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rabbit/theme
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rabbit
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ppt
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/momo/usako
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/momo/tailavi
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/momo/banner
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/momo
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/lldn
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/kou
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/kof2005
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/asahina
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/image/ruby-images
 @dirrm %%DATADIR%%/image/rabbit-images
 @dirrm %%DATADIR%%/image/cozmixng-images
@@ -616,6 +620,7 @@ share/locale/ja/LC_MESSAGES/rabbit.mo
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/title-background-image
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/title-background-color
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/timer
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/tag
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/table
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/slide-show
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/slide-number
