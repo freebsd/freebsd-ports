@@ -1,25 +1,13 @@
 $FreeBSD$
 
-This patch works around POSIX thread implementation differences between
-FreeBSD's libthr and Linux's NPTL:
+PR552:	Support for FreeBSD's pthread implementation
+http://icedtea.classpath.org/bugzilla/show_bug.cgi?id=552
 
-- We do not support static allocations of mutex and condition variable.
-Instead, they are allocated dynamically when they are used for the first
-time if they are properly initialized with PTHREAD_MUTEX_INITIALIZER and
-PTHREAD_COND_INITIALIZER.  Thus, we explicitly initialize and destroy
-them to be safer.
+PR593:	Increment of invalidated iterator in IcedTeaPluginUtils
+http://icedtea.classpath.org/bugzilla/show_bug.cgi?id=593
 
-- We must initialize mutex before calling pthread_cond_wait(3).  Otherwise,
-it fails with EINVAL.
-
-- We must lock mutex before calling pthread_cond_wait(3).  Otherwise, it
-fails with EPERM.  This is a POSIX requirement.
-
-- We must join threads via pthread_join(3) after calling pthread_cancel(3).
-Otherwise, we may destroy mutex or condition variable in use.
-
---- icedtea6-1.9.1/plugin/icedteanp/IcedTeaNPPlugin.cc.orig	2010-10-04 17:26:45.636097000 -0400
-+++ icedtea6-1.9.1/plugin/icedteanp/IcedTeaNPPlugin.cc	2010-10-13 14:23:10.000000000 -0400
+--- icedtea6-1.9.2/plugin/icedteanp/IcedTeaNPPlugin.cc.orig	2010-10-04 17:26:45.636097000 -0400
++++ icedtea6-1.9.2/plugin/icedteanp/IcedTeaNPPlugin.cc	2010-10-13 14:23:10.000000000 -0400
 @@ -2355,6 +2355,10 @@ NP_Shutdown (void)
    pthread_cancel(plugin_request_processor_thread2);
    pthread_cancel(plugin_request_processor_thread3);
@@ -31,8 +19,8 @@ Otherwise, we may destroy mutex or condition variable in use.
    java_to_plugin_bus->unSubscribe(plugin_req_proc);
    plugin_to_java_bus->unSubscribe(java_req_proc);
    //internal_bus->unSubscribe(java_req_proc);
---- icedtea6-1.9.1/plugin/icedteanp/IcedTeaPluginRequestProcessor.cc.orig	2010-08-06 07:05:21.996828000 -0400
-+++ icedtea6-1.9.1/plugin/icedteanp/IcedTeaPluginRequestProcessor.cc	2010-10-13 14:23:10.000000000 -0400
+--- icedtea6-1.9.2/plugin/icedteanp/IcedTeaPluginRequestProcessor.cc.orig	2010-08-06 07:05:21.996828000 -0400
++++ icedtea6-1.9.2/plugin/icedteanp/IcedTeaPluginRequestProcessor.cc	2010-10-13 14:23:10.000000000 -0400
 @@ -63,6 +63,12 @@ PluginRequestProcessor::PluginRequestPro
      this->pendingRequests = new std::map<pthread_t, uintmax_t>();
  
@@ -111,3 +99,23 @@ Otherwise, we may destroy mutex or condition variable in use.
  }
  
  /******************************************
+--- icedtea6-1.9.2/plugin/icedteanp/IcedTeaPluginUtils.cc	Tue Oct 19 17:55:59 2010 +0100
++++ icedtea6-1.9.2/plugin/icedteanp/IcedTeaPluginUtils.cc	Wed Nov 24 15:22:03 2010 -0500
+@@ -510,11 +510,15 @@ IcedTeaPluginUtilities::invalidateInstan
+ 
+     std::map<void*,NPP>::iterator iterator;
+ 
+-    for (iterator = instance_map->begin(); iterator != instance_map->end(); iterator++)
++    for (iterator = instance_map->begin(); iterator != instance_map->end(); )
+     {
+         if ((*iterator).second == instance)
+         {
+-            instance_map->erase((*iterator).first);
++            instance_map->erase(iterator++);
++        }
++        else
++        {
++            ++iterator;
+         }
+     }
+ }

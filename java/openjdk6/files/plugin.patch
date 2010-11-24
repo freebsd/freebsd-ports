@@ -1,14 +1,15 @@
 $FreeBSD$
 
-Applied patches from IcedTea6-1.9:
+Applied patches from IcedTea6-1.9.2:
 
+patches/hotspot/original/update-bootclasspath.patch
 patches/icedtea-demo-swingapplet.patch
-patches/update-bootclasspath.patch
 patches/extensions/netx.patch
 patches/extensions/netx-umask.patch
 patches/extensions/liveconnect.patch
 
-Note: patches/update-bootclasspath.patch was applied without rhino support.
+Note:	patches/hotspot/original/update-bootclasspath.patch was applied without
+	rhino support.
 
 --- hotspot/src/share/vm/runtime/os.cpp.orig	2010-06-21 17:12:21.000000000 -0400
 +++ hotspot/src/share/vm/runtime/os.cpp	2010-09-09 16:24:52.000000000 -0400
