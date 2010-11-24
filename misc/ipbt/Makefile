@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ipbt
-DISTVERSION=	r7471
+DISTVERSION=	r8765
 CATEGORIES=	misc
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/ipbt/ \
-		http://freebsd.unixfreunde.de/sources/ \
-		http://people.freebsd.org/~uqs/distfiles/
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/uqs/}
 
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	A high-tech ttyrec player with improvements over ttyplay
