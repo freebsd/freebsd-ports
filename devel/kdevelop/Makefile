@@ -21,7 +21,7 @@ BUILD_DEPENDS=	cervisia:${PORTSDIR}/devel/kdesdk3 \
 		dot:${PORTSDIR}/graphics/graphviz
 LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion
 RUN_DEPENDS=	extractrc:${PORTSDIR}/devel/kdesdk3 \
-		gdb66:${PORTSDIR}/devel/gdb6 \
+		gdb66:${PORTSDIR}/devel/gdb66 \
 		gmake:${PORTSDIR}/devel/gmake
 
 .if defined(WITH_OPTIONAL_DEPENDS)
