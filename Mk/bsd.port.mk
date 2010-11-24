@@ -3411,9 +3411,9 @@ build: configure
 .endif
 
 # Disable install
-.if defined(NO_INSTALL) && !target(install)
-install: build
-	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
+.if defined(NO_INSTALL) && !target(do-install)
+do-install:
+	@${DO_NADA}
 .endif
 
 # Disable package
@@ -3883,20 +3883,7 @@ do-package: ${TMPPLIST}
 		fi; \
 	fi
 	@__softMAKEFLAGS='${__softMAKEFLAGS:S/'/'\''/g}'; \
-	_LATE_PKG_ARGS=""; \
-	if [ -f ${PKGINSTALL} ]; then \
-		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -i ${PKGINSTALL}"; \
-	fi; \
-	if [ -f ${PKGDEINSTALL} ]; then \
-		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -k ${PKGDEINSTALL}"; \
-	fi; \
-	if [ -f ${PKGREQ} ]; then \
-		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -r ${PKGREQ}"; \
-	fi; \
-	if [ -f ${PKGMESSAGE} ]; then \
-		_LATE_PKG_ARGS="$${_LATE_PKG_ARGS} -D ${PKGMESSAGE}"; \
-	fi; \
-	if ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
+	if ${PKG_CMD} -b ${PKGNAME} ${PKGFILE}; then \
 		if [ -d ${PACKAGES} ]; then \
 			cd ${.CURDIR} && eval ${MAKE} $${__softMAKEFLAGS} package-links; \
 		fi; \
