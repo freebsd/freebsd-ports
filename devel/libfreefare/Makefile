@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libfreefare
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	devel
 MASTER_SITES=	http://nfc-tools.googlecode.com/files/ \
 		http://romain.blogreen.org/distfiles/
