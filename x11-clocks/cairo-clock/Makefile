@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	cairo-clock
-PORTVERSION=	0.3.2
-PORTREVISION=	6
+PORTVERSION=	0.3.4
 CATEGORIES=	x11-clocks net gnome
 MASTER_SITES=	http://macslow.thepimp.net/projects/cairo-clock/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	daichi@freebsd.org
 COMMENT=	MacSlow's Cairo-Clock
 
-USE_BZIP2=	yes
 USE_GNOME=	gtk20 intlhack gnomehack libglade2 librsvg2
 USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-GZIP_CMD?=	/usr/bin/gzip
 MAN1=		cairo-clock.1
 
 .if !defined(WITHOUT_NLS)
