@@ -1103,7 +1103,7 @@ Note:  Please add new entries to the beginning of this file.
 	</blockquote>
 	<p>This vulnerability exists in the file upload functionality
 	  and allows attackers to upload and execute PHP code of
-	  their choice. </p>
+	  their choice.</p>
       </body>
     </description>
     <references>
@@ -1250,7 +1250,7 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Gustavo Noronha Silva reports:</p>
 	<blockquote cite="http://gitorious.org/webkitgtk/stable/commit/9d07fda89aab7105962d933eef32ca15dda610d8">
-	  <p>With help from Vincent Danen and other members of the Red Hat 
+	  <p>With help from Vincent Danen and other members of the Red Hat
              security team, the following CVE's where fixed.</p>
 	</blockquote>
       </body>
@@ -1442,12 +1442,13 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>The get1 command, as used by lftpget, in LFTP before 4.0.6 does not 
-	properly validate a server-provided filename before determining the 
-	destination filename of a download, which allows remote servers to create 
-	or overwrite arbitrary files via a Content-Disposition header that 
-	suggests a crafted filename, and possibly execute arbitrary code as a 
-	consequence of writing to a dotfile in a home directory.</p>
+	<p>The get1 command, as used by lftpget, in LFTP before 4.0.6 does
+	not properly validate a server-provided filename before determining
+	the destination filename of a download, which allows remote servers
+	to create or overwrite arbitrary files via a Content-Disposition
+	header that suggests a crafted filename, and possibly execute
+	arbitrary code as a consequence of writing to a dotfile in a home
+	directory.</p>
       </body>
     </description>
     <references>
@@ -1471,12 +1472,13 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>GNU Wget 1.12 and earlier uses a server-provided filename instead 
-	of the original URL to determine the destination filename of a download, 
-	which allows remote servers to create or overwrite arbitrary files via 
-	a 3xx redirect to a URL with a .wgetrc filename followed by a 3xx redirect 
-	to a URL with a crafted filename, and possibly execute arbitrary code 
-	as a consequence of writing to a dotfile in a home directory.</p>
+	<p>GNU Wget version 1.12 and earlier uses a server-provided filename
+	instead of the original URL to determine the destination filename of
+	a download, which allows remote servers to create or overwrite
+	arbitrary files via a 3xx redirect to a URL with a .wgetrc filename
+	followed by a 3xx redirect to a URL with a crafted filename, and
+	possibly execute arbitrary code as a consequence of writing to a
+	dotfile in a home directory.</p>
       </body>
     </description>
     <references>
@@ -1499,12 +1501,12 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>lwp-download in libwww-perl before 5.835 does not reject downloads 
-	  to filenames that begin with a . (dot) character, which allows remote 
-	  servers to create or overwrite files via a 3xx redirect to a URL with
-	  a crafted filename or a Content-Disposition header that suggests
-	  a crafted filename, and possibly execute arbitrary code as a
-	  consequence of writing to a dotfile in a home directory.</p>
+	<p>lwp-download in libwww-perl before 5.835 does not reject downloads
+	  to filenames that begin with a `.' (dot) character, which allows
+	  remote servers to create or overwrite files via a 3xx redirect to a
+	  URL with a crafted filename or a Content-Disposition header that
+	  suggests a crafted filename, and possibly execute arbitrary code as
+	  a consequence of writing to a dotfile in a home directory.</p>
       </body>
     </description>
     <references>
@@ -1541,7 +1543,7 @@ Note:  Please add new entries to the beginning of this file.
 	    Quagga's bgpd daemon parsed paths of autonomous systems
 	    (AS). A configured BGP peer could send a BGP update AS
 	    path request with unknown AS type, which could lead to
-	    denial of service (bgpd daemon crash). </p>
+	    denial of service (bgpd daemon crash).</p>
 	</blockquote>
       </body>
     </description>
@@ -1632,7 +1634,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>When multiple commands are queued (at the server) for execution
 	     in the next game tick and an client joins the server can get into
 	     an infinite loop. With the default settings triggering this bug
-	     is difficult (if not impossible), however the larger value of 
+	     is difficult (if not impossible), however the larger value of
 	     the "frame_freq" setting is easier it is to trigger the bug.</p>
 	</blockquote>
       </body>
@@ -1777,11 +1779,11 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<blockquote cite="http://code.google.com/p/isolate/">
-	  <p>isolate currently suffers from some bad security bugs! These
+	  <p>Isolate currently suffers from some bad security bugs!  These
 	    are local root privilege escalation bugs.  Thanks to the helpful
 	    person who reported them (email Chris if you want credit!).
 	    We're working to fix them ASAP, but until then, isolate is
-	    unsafe and you should uninstall it. Sorry! </p>
+	    unsafe and you should uninstall it.  Sorry!</p>
 	</blockquote>
       </body>
     </description>
@@ -3013,7 +3015,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>If the wiki is configured to allow user scripts, say
 	    with "$wgAllowUserJs = true" in LocalSettings.php, then
 	    the attacker can proceed to mount a phishing-style
-	    attack against the victim to obtain their password. </p>
+	    attack against the victim to obtain their password.</p>
 	</blockquote>
       </body>
     </description>
@@ -4906,7 +4908,7 @@ Note:  Please add new entries to the beginning of this file.
 	    "improper input validation" vulnerability in the Monkey
 	    web server that allows an attacker to perform denial of
 	    service attacks by repeatedly crashing worker threads
-	    that process HTTP requests. </p>
+	    that process HTTP requests.</p>
 	</blockquote>
       </body>
     </description>
@@ -5009,7 +5011,7 @@ Note:  Please add new entries to the beginning of this file.
 	    privileges via a table with crafted index functions, as
 	    demonstrated by functions that modify (1) search_path or
 	    (2) a prepared statement, a related issue to CVE-2007-6600
-	    and CVE-2009-3230. </p>
+	    and CVE-2009-3230.</p>
 	</blockquote>
       </body>
     </description>
@@ -6573,9 +6575,9 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Olly Betts reports:</p>
 	<blockquote cite="http://lists.xapian.org/pipermail/xapian-discuss/2009-September/007115.html">
-	  <p>There's a cross-site scripting issue in Omega - exception 
-	    messages don't currently get HTML entities escaped, but can contain
-	    CGI parameter values in some cases.</p>
+	  <p>There's a cross-site scripting issue in Omega - exception
+	    messages don't currently get HTML entities escaped, but can
+	    contain CGI parameter values in some cases.</p>
 	</blockquote>
       </body>
     </description>
@@ -8343,7 +8345,7 @@ Note:  Please add new entries to the beginning of this file.
         <p>xine developers report:</p>
         <blockquote cite="http://sourceforge.net/project/shownotes.php?group_id=9655&amp;release_id=660071">
           <ul>
-            <li>Fix broken size checks in various input plugins (ref. 
+            <li>Fix broken size checks in various input plugins (ref.
 	      CVE-2008-5239).</li>
             <li>More malloc checking (ref. CVE-2008-5240).</li>
           </ul>
@@ -9255,7 +9257,8 @@ Note:  Please add new entries to the beginning of this file.
 	    configuration file. Combined with ability to save files on server,
 	    this can allow unauthenticated users to execute arbitrary PHP code.
 	    This issue is on different parameters than PMASA-2009-3 and it was
-	    missed out of our radar because it was not existing in 2.11.x branch. </p>
+	    missed out of our radar because it was not existing in 2.11.x
+	    branch.</p>
 	</blockquote>
       </body>
     </description>
@@ -9328,7 +9331,7 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>NOTE: Users with the "Advanced" user level are able to include and
 	    execute uploaded PHP code via the "pivot_path" parameter in
 	    extensions/bbclone_tools/getkey.php when
-	    extensions/bbclone_tools/hr_conf.php can be deleted. </p>
+	    extensions/bbclone_tools/hr_conf.php can be deleted.</p>
 	</blockquote>
       </body>
     </description>
@@ -11911,12 +11914,12 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/31657">
-	  <p>A security issue has been reported in Ampache, which can be 
-	    exploited by malicious, local users to perform certain actions 
+	  <p>A security issue has been reported in Ampache, which can be
+	    exploited by malicious, local users to perform certain actions
 	    with escalated privileges.</p>
 	  <p>The security issue is caused due to the "gather-messages.sh"
 	    script handling temporary files in an insecure manner.
-	    This can be exploited via symlink attacks to overwrite arbitrary 
+	    This can be exploited via symlink attacks to overwrite arbitrary
 	    files with the privileges of the user running the script.</p>
 	</blockquote>
       </body>
@@ -12161,9 +12164,9 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The phpMyAdmin Team reports:</p>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2008-10.php">
-	  <p>A logged-in user can be subject of SQL injection through cross site
-	    request forgery. Several scripts in phpMyAdmin are vulnerable and the
-	    attack can be made through table parameter. </p>
+	  <p>A logged-in user can be subject of SQL injection through cross
+	    site request forgery.  Several scripts in phpMyAdmin are
+	    vulnerable and the attack can be made through table parameter.</p>
 	</blockquote>
       </body>
     </description>
@@ -13156,7 +13159,7 @@ Note:  Please add new entries to the beginning of this file.
 	    pollution</p>
 	  <p>MFSA 2008-38 nsXMLDocument::OnChannelRedirect() same-origin
 	    violation</p>
-	  <p>MFSA 2008-37 UTF-8 URL stack buffer overflow </p>
+	  <p>MFSA 2008-37 UTF-8 URL stack buffer overflow</p>
 	</blockquote>
       </body>
     </description>
@@ -13358,10 +13361,10 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The VLC Team reports:</p>
 	<blockquote cite="http://www.videolan.org/security/sa0810.html">
-	  <p>The VLC media player contains a stack overflow vulnerability while
-	    parsing malformed cue files. The vulnerability may be exploited by a (remote)
-	    attacker to execute arbitrary code in the context of VLC media player.
-	  </p>
+	  <p>The VLC media player contains a stack overflow vulnerability
+	    while parsing malformed cue files.  The vulnerability may be
+	    exploited by a (remote) attacker to execute arbitrary code in
+	    the context of VLC media player.</p>
 	</blockquote>
       </body>
     </description>
@@ -13770,11 +13773,12 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Adobe Product Security Incident Response Team reports:</p>
 	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb08-18.html">
-	  <p>Potential vulnerabilities have been identified in Adobe Flash 
+	  <p>Potential vulnerabilities have been identified in Adobe Flash
 	    Player 9.0.124.0 and earlier that could allow an attacker who
-	    successfully exploits these potential vulnerabilities to bypass Flash
-	    Player security controls. Adobe recommends users update to the most
-	    current version of Flash Player available for their platform.</p>
+	    successfully exploits these potential vulnerabilities to bypass
+	    Flash Player security controls.  Adobe recommends users update
+	    to the most current version of Flash Player available for their
+	    platform.</p>
 	</blockquote>
       </body>
     </description>
@@ -14219,14 +14223,14 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Hanno Boeck reports:</p>
 	<blockquote cite="http://seclists.org/bugtraq/2008/Sep/0239.html">
 	  <p>When configuring a web application to use only ssl (e.g. by
-	  forwarding all http-requests to https), a user would expect that
-	  sniffing and hijacking the session is impossible. </p>
-	  <p>Though, for this to be secure, one needs to set the session cookie
-	  to have the secure flag. Else the cookie will be transferred through
-	  http if the victim's browser does a single http-request on the same
-	  domain.</p>
-	  <p>Squirrelmail does not set that flag. It is fixed in the 1.5 test
-	  versions, but current 1.4.15 is vulnerable.</p>
+	    forwarding all http-requests to https), a user would expect that
+	    sniffing and hijacking the session is impossible.</p>
+	  <p>Though, for this to be secure, one needs to set the session
+	    cookie to have the secure flag.  Otherwise the cookie will be
+	    transferred through HTTP if the victim's browser does a single
+	    HTTP request on the same domain.</p>
+	  <p>Squirrelmail does not set that flag.  It is fixed in the 1.5
+	    test versions, but current 1.4.15 is vulnerable.</p>
 	</blockquote>
       </body>
     </description>
@@ -14292,11 +14296,10 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/Advisories/31974/">
 	  <p>An error exists in the "PMA_escapeJsString()" function in
-	    libraries/js_escape.lib.php, which can be exploited to bypass certain
-	    filters and execute arbitrary HTML and script code in a user's browser
-	    session in context of an affected site when e.g. Microsoft Internet
-	    Explorer is used.
-	  </p>
+	    libraries/js_escape.lib.php, which can be exploited to bypass
+	    certain filters and execute arbitrary HTML and script code in a
+	    user's browser session in context of an affected site when e.g.
+	    Microsoft Internet Explorer is used.</p>
 	</blockquote>
       </body>
     </description>
@@ -15898,8 +15901,7 @@ Note:  Please add new entries to the beginning of this file.
 	    (CVE-2007-0071). This exploit does NOT appear to include a new,
 	    unpatched vulnerability as has been reported elsewhere - customers
 	    with Flash Player 9.0.124.0 should not be vulnerable to this
-	    exploit.
-	  </p>
+	    exploit.</p>
 	</blockquote>
       </body>
     </description>
@@ -17773,9 +17775,9 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>zenphoto project reports:</p>
 	<blockquote cite="http://www.zenphoto.org/2008/02/">
-	  <p>A new zenphoto version is now available. This release contains
-	   security fixes for HTML, XSS, and SQL injection vulnerabilities.
-	   </p>
+	  <p>A new zenphoto version is now available.  This release contains
+	    security fixes for HTML, XSS, and SQL injection vulnerabilities.
+	  </p>
 	</blockquote>
       </body>
     </description>
@@ -21940,7 +21942,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-07-17</discovery>
       <entry>2007-07-19</entry>
-      <modified>2008-06-21</modified> 
+      <modified>2008-06-21</modified>
     </dates>
   </vuln>
 
@@ -23132,8 +23134,7 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1558">
 	  <p>The APOP protocol allows remote attackers to guess the first 3
 	    characters of a password via man-in-the-middle (MITM) attacks
-	    that use crafted message IDs and MD5 collisions.
-	 </p>
+	    that use crafted message IDs and MD5 collisions.</p>
 	</blockquote>
       </body>
     </description>
@@ -23589,11 +23590,10 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>"Moritz Jodeit reports:</p>
 	<blockquote cite="http://lists.grok.org.uk/pipermail/full-disclosure/2007-March/052738.html">
-	  <p>There's an exploitable buffer overflow in the current version of
-	  MPlayer (v1.0rc1) which can be exploited with a maliciously crafted
-	  video file. It's hidden in the function DMO_VideoDecoder() in the
-	  file loader/dmo/DMO_VideoDecoder.c.
-	 </p>
+	  <p>There's an exploitable buffer overflow in the current version
+	    of MPlayer (v1.0rc1) which can be exploited with a maliciously
+	    crafted video file.  It is hidden in the DMO_VideoDecoder()
+	    function of `loader/dmo/DMO_VideoDecoder.c' file.</p>
 	</blockquote>
       </body>
     </description>
@@ -23624,11 +23624,10 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/24470/">
 	  <p>The vulnerability is caused due to an error within the
-	  "download wiki page as text" function, which can be exploited
-	  to execute arbitrary HTML and script code in a user's browser
-	  session in context of an affected site.</p>
-	  <p>Successful exploitation may require that the victim uses IE.
-	  </p>
+	    "download wiki page as text" function, which can be exploited
+	    to execute arbitrary HTML and script code in a user's browser
+	    session in context of an affected site.</p>
+	  <p>Successful exploitation may require that the victim uses IE.</p>
 	</blockquote>
       </body>
     </description>
@@ -27766,8 +27765,7 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://secunia.com/advisories/21500/">
 	  <p>Some vulnerabilities have been reported in Horde, which
 	    can be exploited by malicious people to conduct phishing
-	    and cross-site scripting attacks.
-	  </p>
+	    and cross-site scripting attacks.</p>
 	  <ol>
 	    <li>Input passed to the "url" parameter in index.php isn't
 	      properly verified before it is being used to include an
@@ -28822,17 +28820,14 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>SecurityFocus reports:</p>
 	<blockquote cite="http://www.securityfocus.com/bid/18642">
-	  <p>
-	    Mutt is prone to a remote buffer-overflow vulnerability.
+	  <p>Mutt is prone to a remote buffer-overflow vulnerability.
 	    This issue is due to the application's failure to properly
 	    bounds-check user-supplied input before copying it to an
-	    insufficiently sized memory buffer.
-
-	    This issue may allow remote attackers to execute arbitrary
+	    insufficiently sized memory buffer.</p>
+	  <p>This issue may allow remote attackers to execute arbitrary
 	    machine code in the context of the affected application.
 	    Failed exploit attempts will likely crash the application,
-	    denying further service to legitimate users.
-	  </p>
+	    denying further service to legitimate users.</p>
 	</blockquote>
       </body>
     </description>
@@ -30395,8 +30390,7 @@ Note:  Please add new entries to the beginning of this file.
 	    execute code on the system of a remote user running the
 	    media player against a malicious playlist file.  By passing
 	    a format specifier in the path of a file that is embedded
-	    in a remote playlist, it is possible to trigger this bug.
-	  </p>
+	    in a remote playlist, it is possible to trigger this bug.</p>
 	</blockquote>
       </body>
     </description>
@@ -33449,13 +33443,12 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The fetchmail team reports:</p>
 	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2005-03.txt">
 	  <p>Fetchmail contains a bug that causes an application crash
-	     when fetchmail is configured for multidrop mode and the
-	     upstream mail server sends a message without headers.  As
-	     fetchmail does not record this message as "previously fetched",
-	     it will crash with the same message if it is re-executed, so it
-	     cannot make progress. A malicious or broken-into upstream server
-	     could thus cause a denial of service in fetchmail clients.
-	   </p>
+	    when fetchmail is configured for multidrop mode and the
+	    upstream mail server sends a message without headers.  As
+	    fetchmail does not record this message as "previously fetched",
+	    it will crash with the same message if it is re-executed, so it
+	    cannot make progress. A malicious or broken-into upstream server
+	    could thus cause a denial of service in fetchmail clients.</p>
 	</blockquote>
       </body>
     </description>
@@ -34632,8 +34625,7 @@ Note:  Please add new entries to the beginning of this file.
 	    ESC characters to certain data, to support Asian character
 	    sets. However, it does not check if it writes outside
 	    of the char array buf, and that causes a remote stack-based
-	    buffer overflow.
-	  </p>
+	    buffer overflow.</p>
 	</blockquote>
       </body>
     </description> <references>
@@ -36879,7 +36871,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>A phpMyAdmin security announcement reports:</p>
 	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-3">
 	  <p>The convcharset parameter was not correctly validated,
-	    opening the door to a XSS attack. </p>
+	    opening the door to a XSS attack.</p>
 	</blockquote>
       </body>
     </description>
@@ -42933,7 +42925,7 @@ Note:  Please add new entries to the beginning of this file.
 	    whereby a remote attacker could potentially cause
 	    arbitrary code to be executed with the privileges
 	    of the supfilesrv process (this process does not run
-	    automatically by default). </p>
+	    automatically by default).</p>
 	</blockquote>
       </body>
     </description>
@@ -46077,7 +46069,7 @@ http_access deny Gopher</pre>
 	<p>A buffer overflow vulnerability exists in the playlist
 	  processing of mpg123. A specially crafted playlist entry
 	  can cause a stack overflow that can be used to inject
-	  arbitrary code into the mpg123 process </p>
+	  arbitrary code into the mpg123 process.</p>
 	<p>Note that a malicious playlist, demonstrating this
 	  vulnerability, was released by the bug finder and may be
 	  used as a template by attackers.</p>
@@ -46760,7 +46752,7 @@ http_access deny Gopher</pre>
 	 <p>When a user is granted access to a database with a name containing
 	   an underscore and the underscore is not escaped then that user might
 	   also be able to access other, similarly named, databases on the
-	   affected system. </p>
+	   affected system.</p>
 	 <p>The problem is that the underscore is seen as a wildcard by MySQL
 	   and therefore it is possible that an admin might accidently GRANT a
 	   user access to multiple databases.</p>
@@ -46829,10 +46821,10 @@ http_access deny Gopher</pre>
        <body xmlns="http://www.w3.org/1999/xhtml">
 	 <p>A special crafted MySQL FTS request can cause the server to crash.
 	 Malicious MySQL users can abuse this bug in a denial of service
-	 attack against systems running an affected MySQL daemon. </p>
+	 attack against systems running an affected MySQL daemon.</p>
 	 <p>Note that because this bug is related to the parsing of requests,
 	 it may happen that this bug is triggered accidently by a user when he
-	 or she makes a typo. </p>
+	 or she makes a typo.</p>
        </body>
      </description>
      <references>
@@ -47486,13 +47478,11 @@ http_access deny Gopher</pre>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-      <p>
-      The Sun Java Plugin capability in Java 2 Runtime Environment
-      (JRE) 1.4.2_01, 1.4.2_04, and possibly earlier versions, does
-      not properly restrict access between Javascript and Java
-      applets during data transfer, which allows remote attackers
-      to load unsafe classes and execute arbitrary code.
-      </p>
+	<p>The Sun Java Plugin capability in Java 2 Runtime Environment
+	  (JRE) 1.4.2_01, 1.4.2_04, and possibly earlier versions, does
+	  not properly restrict access between Javascript and Java
+	  applets during data transfer, which allows remote attackers to
+	  load unsafe classes and execute arbitrary code.</p>
       </body>
     </description>
     <references>
@@ -50549,7 +50539,7 @@ http_access deny Gopher</pre>
 	    protected areas such as paths and log messages.  This may
 	    or may not be important to your organization, depending
 	    on how you're using path-based authorization, and the
-	    sensitivity of the metadata. </p>
+	    sensitivity of the metadata.</p>
 	</blockquote>
       </body>
     </description>
@@ -51220,7 +51210,7 @@ http_access deny Gopher</pre>
 	    constructs in .htaccess or httpd.conf files. The function
 	    ap_resolve_env() in server/util.c copies data from
 	    environment variables to the character array tmp with
-	    strcat(3), leading to a buffer overflow. </p>
+	    strcat(3), leading to a buffer overflow.</p>
 	</blockquote>
       </body>
     </description>
@@ -52327,8 +52317,7 @@ http_access deny Gopher</pre>
 	  used to support the "mangling method = hash" smb.conf
 	  option. The default setting for this parameter is "mangling
 	  method = hash2" and therefore not vulnerable. Versions
-	  between 2.2.0 through 2.2.9 and 3.0.0 through 3.0.4 are affected.
-	  </p>
+	  between 2.2.0 through 2.2.9 and 3.0.0 through 3.0.4 are affected.</p>
       </body>
     </description>
     <references>
@@ -54307,7 +54296,7 @@ http_access deny Gopher</pre>
 	  This could allow a local attacker to gain read or write
 	  access to a portion of kernel memory, resulting in sensitive
 	  information disclosure, bypass of access control mechanisms,
-	  or privilege escalation. </p>
+	  or privilege escalation.</p>
       </body>
     </description>
     <references>
@@ -54342,7 +54331,7 @@ http_access deny Gopher</pre>
 	<p>A process with superuser privileges inside a jail could
 	  change its root directory to that of a different jail,
 	  and thus gain full read and write access to files and
-	  directories within the target jail. </p>
+	  directories within the target jail.</p>
       </body>
     </description>
     <references>
@@ -54377,7 +54366,7 @@ http_access deny Gopher</pre>
 	such services, including HTTP, SMTP, and FTP).	By sending
 	many out-of-sequence TCP segments, the attacker can cause
 	the target machine to consume all available memory buffers
-	(``mbufs''), likely leading to a system crash. </p>
+	(``mbufs''), likely leading to a system crash.</p>
       </body>
     </description>
     <references>
