@@ -4682,3 +4682,4 @@ devel/gir-repository-libsoup|devel/libsoup|2010-11-20|merged into libsoup
 x11-toolkits/gir-repository-gtksourceview2|x11-toolkits/gtksourceview2|2010-11-20|merged into gtksourceview2
 security/gir-repository-gnome-keyring||2010-11-20|Not buildable
 devel/gir-repository-dbus|devel/gobject-introspection|2010-11-20|merged into gobject-introspection
+devel/gdb6|devel/gdb66|2010-11-24|Directory renamed
