@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: openttd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable openttd server:
+#
+# openttd_enable="YES" (bool):	Set to "NO" by default
+#				Set it to "YES" to enable openttd
+# openttd_flags="" (string):	Set to "" by default
+#				Extra flags passed to start command
+#
+# Note: flags -D and -f are set by default.
+#
+
+. /etc/rc.subr
+
+name="openttd"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/${name}"
+command_args="-s null -m null -v null -b null -D -f"
+
+load_rc_config ${name}
+
+: ${openttd_enable="NO"}
+
+run_rc_command "$1"
