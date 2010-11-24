@@ -142,6 +142,7 @@
     SUBDIR += conquest
     SUBDIR += construo
     SUBDIR += corewars
+    SUBDIR += corsix-th
     SUBDIR += cosmo
     SUBDIR += cosmosmash
     SUBDIR += cowsay
