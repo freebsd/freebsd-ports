@@ -37,7 +37,7 @@ SLAVEDIRS=	editors/vim-lite
 .include "${.CURDIR}/../vim/options"
 .endif
 
-CONFLICTS=	vim6* vim*-lite vim*-gtk1 vim*-gnome
+CONFLICTS=	vim6* vim*-lite vim*-gnome
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 DIST_SUBDIR=	vim
@@ -134,29 +134,23 @@ MAKE_ARGS+=	CONF_OPT_TCL="--enable-tclinterp --with-tclsh="${TCLSH:S/${LOCALBASE
 
 . if !defined(WITHOUT_X11)
 #	for now default the GUI to the GTK+ one
-.  if !defined(WITH_X11_ONLY) && !defined(WITH_ATHENA) && !defined(WITH_MOTIF) && !defined(WITH_GNOME) && !defined(WITH_GTK1) && !defined(WITH_GTK2)
+.  if !defined(WITH_X11_ONLY) && !defined(WITH_ATHENA) && !defined(WITH_MOTIF) && !defined(WITH_GNOME) && !defined(WITH_GTK2)
 WITH_GTK2=	yes
 .  endif
 
 .  if defined(WITH_ATHENA)
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena" ${I18N}
-.  elif defined(WITH_GTK1)
-USE_GNOME=	gtk12
-MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${LOCALBASE}" ${I18N}
-MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
-USE_XORG+=	xt
-PKGNAMESUFFIX=	-gtk1
 .  elif defined(WITH_GTK2)
 USE_GNOME=	gtk20
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk2 --with-gtk-prefix=${LOCALBASE}" ${I18N}
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 USE_XORG+=	xt
-.  elif defined(WITH_GNOME)
-.   if ${WITH_GNOME:Mgnomelibs}!="" || ${WITH_GNOME}=="yes" || \
-	${WITH_GNOME}=="1"
-USE_GNOME=	gnomelibs gnomeprefix
-PKGNAMESUFFIX=	-gnome
-MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gnome --with-gtk-prefix=${LOCALBASE}" ${I18N}
+.  elif defined(WITH_GNOME2)
+.   if ${WITH_GNOME2:Mlibgnomeui}!="" || ${WITH_GNOME2}=="yes" || \
+	${WITH_GNOME2}=="1"
+USE_GNOME=	libgnomeui
+PKGNAMESUFFIX=	-gnome2
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gnome2" ${I18N}
 MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 USE_XORG+=	xt
 .   endif
@@ -245,12 +239,6 @@ post-install:
 
 show-options:
 	@${MAKE} -DWITH_OPTIONS showconfig
-
-.if defined(WITH_GTK)
-.BEGIN:
-	@${ECHO_CMD} "WITH_GTK has been renamed WITH_GTK1."
-	@exit 1
-.endif
 
 cklatest: .PHONY
 	@${ECHO} -n "Currently at: "
