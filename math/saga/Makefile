@@ -3,13 +3,12 @@
 # Whom:                Rainer Hurling <rhurlin@gwdg.de>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	saga
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
-DISTNAME=	${PORTNAME}_${PORTVERSION}_src
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	rhurlin@gwdg.de
 COMMENT=	System for Automated Geoscientific Analyses
@@ -18,7 +17,9 @@ LIB_DEPENDS=	proj.6:${PORTSDIR}/graphics/proj \
 		gdal.15:${PORTSDIR}/graphics/gdal \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		iodbc.3:${PORTSDIR}/databases/libiodbc
+		iodbc.3:${PORTSDIR}/databases/libiodbc \
+		las.1:${PORTSDIR}/devel/liblas \
+		cv.2:${PORTSDIR}/graphics/opencv
 
 USE_WX=		2.8
 USE_LDCONFIG=	yes
@@ -40,6 +41,9 @@ OPTIONS=	UNICODE "Enable Unicode Support" On \
 
 .include <bsd.port.pre.mk>
 
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+
 .if defined(WITH_UNICODE)
 WITH_UNICODE=	yes
 CONFIGURE_ARGS+=	--enable-unicode
@@ -50,8 +54,9 @@ CONFIGURE_ARGS+=	--disable-unicode
 .if defined(WITH_HARU)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libhpdf.so:${PORTSDIR}/print/libharu
 RUN_DEPENDS+=	${LOCALBASE}/lib/libhpdf.so:${PORTSDIR}/print/libharu
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+PLIST_SUB+=	HARU=""
+.else
+PLIST_SUB+=	HARU="@comment "
 .endif
 
 post-patch:
@@ -59,13 +64,11 @@ post-patch:
 		${WRKSRC}/configure; do \
 		${REINPLACE_CMD} -e's|wx-config |${WX_CONFIG} |g' "$$f"; \
 	done
-	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' \
-		${WRKSRC}/configure \
+	@${REINPLACE_CMD} -e 's|#if !defined(__APPLE__) && !defined(__BSD__)|#ifdef HAVE_MALLOC_H|' \
 		${WRKSRC}/src/saga_core/saga_api/api_core.h \
-		${WRKSRC}/src/saga_core/saga_api/api_memory.cpp \
-		${WRKSRC}/src/modules_io/esri_e00/io_esri_e00/e00compr/cpl_port.h \
-		${WRKSRC}/src/modules_io/grid/io_grid_grib2/g2clib-1.0.4/enc_png.c \
 		${WRKSRC}/src/modules_projection/pj_georeference/pj_georeference/lmdif0.c
+	@${REINPLACE_CMD} -e 's,<cv.h>,<opencv/cv.h>,' \
+		${WRKSRC}/src/modules_images/modules_opencv/opencv/opencv.h
 .if ${ARCH} == "i386"
 	@${REINPLACE_CMD} -e 's|typedef unsigned long	DWORD;|typedef unsigned int	DWORD;|' \
 		${WRKSRC}/src/saga_core/saga_api/api_core.h
