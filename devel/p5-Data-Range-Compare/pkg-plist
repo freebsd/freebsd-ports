@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Range/Compare/.packlist
 %%SITE_PERL%%/Data/Range/Compare.pm
 %%SITE_PERL%%/Data/Range/Compare.pod
