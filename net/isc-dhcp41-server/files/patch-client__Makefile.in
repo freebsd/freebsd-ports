@@ -1,6 +1,6 @@
---- client/Makefile.in.orig	2010-01-07 19:47:06.000000000 -0500
-+++ client/Makefile.in	2010-05-29 17:24:48.814048529 -0400
-@@ -351,8 +351,8 @@
+--- client/Makefile.in.orig	2010-11-24 13:58:02.077206326 -0500
++++ client/Makefile.in	2010-11-24 13:59:01.452202855 -0500
+@@ -354,8 +354,8 @@
  	@list='$(dist_sysconf_DATA)'; for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
  	  f=$(am__strip_dir) \
@@ -11,17 +11,3 @@
  	done
  
  uninstall-dist_sysconfDATA:
-@@ -537,11 +537,11 @@
- 
- 
- dhclient.o: dhclient.c
--	$(COMPILE) -DCLIENT_PATH='"$(sbindir)"' \
-+	$(COMPILE) -DCLIENT_PATH='"PATH=/sbin:/usr/sbin:$(sbindir)"' \
- 		   -DLOCALSTATEDIR='"$(localstatedir)"' -c dhclient.c
- 
- dhc6.o: dhc6.c
--	$(COMPILE) -DCLIENT_PATH='"$(sbindir)"' \
-+	$(COMPILE) -DCLIENT_PATH='"PATH=/sbin:/usr/sbin:$(sbindir)"' \
- 		   -DLOCALSTATEDIR='"$(localstatedir)"' -c dhc6.c
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
