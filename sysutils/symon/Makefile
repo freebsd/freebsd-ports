@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	symon
-PORTVERSION=	2.80
+PORTVERSION=	2.82
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.xs4all.nl/~wpd/symon/philes/ \
-		http://people.freebsd.org/~uqs/distfiles/
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/uqs/}
 
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Performance and information monitoring tool
