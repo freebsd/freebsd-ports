@@ -96,6 +96,7 @@
     SUBDIR += gdcalc
     SUBDIR += geg
     SUBDIR += geogebra-i18n
+    SUBDIR += geometry
     SUBDIR += geonext
     SUBDIR += gexpr
     SUBDIR += ggobi

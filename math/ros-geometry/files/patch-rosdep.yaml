@@ -1,0 +1,14 @@
+--- rosdep.yaml.orig	2010-11-22 17:42:02.000000000 +0100
++++ rosdep.yaml	2010-11-24 10:46:44.000000000 +0100
+@@ -4,9 +4,11 @@
+   fedora: freeglut-devel
+   arch: freeglut
+   gentoo: freeglut
++  freebsd: libglut
+ python-sip4:
+   ubuntu: python-sip4-dev sip4
+   debian: python-sip4-dev sip4
+   macports: py25-sip
+   gentoo: dev-python/sip
+   arch: sip
++  freebsd: py26-sip

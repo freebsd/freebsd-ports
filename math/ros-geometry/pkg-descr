@@ -1,0 +1,31 @@
+The basic geometry and math libraries used in ROS.
+
+angles:
+Provides a set of simple math utilities to work with angles. The utilities cover
+simple things like normalizing an angle and conversion between degrees and
+radians, but also functions to calculate things like the shortest angular
+distance between two joinst space positions of your robot, with the joint motion
+constrained by joint limits.
+
+bullet:
+Contains version 2.76 of the Bullet professional free 3D Game Multiphysics
+Library. The Bullet library provided by this ROS package is slightly different
+from the official Bullet release.
+
+eigen:
+This package contains version 2.0.15 of the Eigen C++ template library for
+linear algebra.
+
+KDL:
+This package contains a recent version of the Kinematics and Dynamics Library
+(KDL), distributed by the Orocos Project. For stability reasons, this package
+is currently locked to revision 31715, but this revision will be updated on a
+regular basis to the latest available KDL trunk.
+
+tf:
+tf is a package that lets the user keep track of multiple coordinate frames
+over time. tf maintains the relationship between coordinate frames in a tree
+structure buffered in time, and lets the user transform points, vectors, etc
+between any two coordinate frames at any desired point in time.
+
+WWW: http://www.ros.org/wiki/geometry
