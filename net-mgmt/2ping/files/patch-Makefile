@@ -1,0 +1,17 @@
+--- Makefile.orig	2010-11-23 22:18:10.000000000 +0800
++++ Makefile	2010-11-23 22:19:16.000000000 +0800
+@@ -34,11 +34,11 @@
+ 
+ install: all
+ 	install -d -m 0755 $(DESTDIR)$(PREFIX)/bin
+-	install -d -m 0755 $(DESTDIR)$(PREFIX)/share/man/man8
++	install -d -m 0755 $(DESTDIR)$(PREFIX)/man/man8
+ 	install -m 0755 2ping $(DESTDIR)$(PREFIX)/bin
+ 	ln -sf 2ping $(DESTDIR)$(PREFIX)/bin/2ping6
+-	install -m 0644 2ping.8 $(DESTDIR)$(PREFIX)/share/man/man8
+-	ln -sf 2ping.8 $(DESTDIR)$(PREFIX)/share/man/man8/2ping6.8
++	install -m 0644 2ping.8 $(DESTDIR)$(PREFIX)/man/man8
++	cp $(DESTDIR)$(PREFIX)/man/man8/2ping.8 $(DESTDIR)$(PREFIX)/man/man8/2ping6.8
+ 
+ distclean: clean
+ 

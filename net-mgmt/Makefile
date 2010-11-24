@@ -3,6 +3,7 @@
 
     COMMENT = Network management tools
 
+    SUBDIR += 2ping
     SUBDIR += TkTopNetFlows
     SUBDIR += aggregate
     SUBDIR += aguri
