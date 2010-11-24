@@ -1,3 +1,2 @@
-MD5 (Catalyst-Plugin-Session-Store-FastMmap-0.13.tar.gz) = fc0679ab8b7a5a1bb7404a68058a5e73
-SHA256 (Catalyst-Plugin-Session-Store-FastMmap-0.13.tar.gz) = 47db141a2715b9a361386fa88be65e42fc63dd6d59efae9af2298e5c11418640
-SIZE (Catalyst-Plugin-Session-Store-FastMmap-0.13.tar.gz) = 5074
+SHA256 (Catalyst-Plugin-Session-Store-FastMmap-0.14.tar.gz) = 0d7009c2dce23bdafbe971b13356764417e6aca33dc378e0da89df19a64995fb
+SIZE (Catalyst-Plugin-Session-Store-FastMmap-0.14.tar.gz) = 5088
