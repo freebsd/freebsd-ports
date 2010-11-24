@@ -29,7 +29,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		libtool:${PORTSDIR}/devel/libtool22 \
 		${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
 		exctags:${PORTSDIR}/devel/ctags \
-		gdb66:${PORTSDIR}/devel/gdb6 \
+		gdb66:${PORTSDIR}/devel/gdb66 \
 		yelp:${PORTSDIR}/x11/yelp
 
 USE_BZIP2=	yes
