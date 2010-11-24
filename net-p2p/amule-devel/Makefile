@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amule
-PORTVERSION=	10310
+PORTVERSION=	10390
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://amule.sourceforge.net/tarballs/
 PKGNAMESUFFIX=	-devel
@@ -42,7 +42,7 @@ OPTIONS=	ALC "Compile aMule Link Creator for GUI" on \
 		ALCC "Compile aMule Link Creator for console" on \
 		AMULECMD "Compile aMule command line client" on \
 		AMULEDAEMON "Compile aMule daemon version" on \
-		AMULEGUI "Compile aMule remote GUI (EXPERIMENTAL)" on \
+		AMULEGUI "Compile aMule remote GUI" on \
 		CAS "Compile aMule Statistics for console" on \
 		ED2K "Compile aMule ed2k links handler" on \
 		FILEVIEW "Compile file viewer for console (EXPERIMENTAL)" on \
@@ -166,7 +166,9 @@ PLIST_SUB+=		MONOLITHIC="@comment "
 .endif
 
 .if !defined(WITHOUT_PLASMAMULE)
-CONFIGURE_ENV+=		ac_cv_path_KDE4_CONFIG=${KDE4_PREFIX}/bin/kde4-config
+CONFIGURE_ENV+=		ac_cv_path_KDE4_CONFIG=${KDE4_PREFIX}/bin/kde4-config \
+			KBUILDSYCOCA=${KDE4_PREFIX}/bin/kbuildsycoca4 \
+			UPDATE_MIME_DATABASE=/usr/bin/true
 CONFIGURE_ARGS+=	--enable-plasmamule
 USE_KDE4+=		kdelibs
 QT_COMPONENTS+=		dbus gui moc_build
@@ -216,6 +218,7 @@ PLIST_SUB+=		XAS="@comment "
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/LDFLAGS/s/-lpthread/${PTHREAD_LIBS}/' \
 		-e 's/test.*-print-file-name.*`/true/' \
+		-e '/if.*test/s/==/=/' \
 		${WRKSRC}/configure
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} 's/install-data-am:.*/install-data-am:/' \
@@ -225,7 +228,6 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|@prefix@|${KDE4_PREFIX}|' \
 		-e 's|LDFLAGS =|& -L${KDE4_PREFIX}/lib |' \
 		-e '/plasma.*feeder.*LDFLAGS/s/=/& -lQtDBus /' \
-		-e 's/\(plasmamule_so_\)LDFLAGS/\1CXXFLAGS/' \
 		${WRKSRC}/src/utils/plasmamule/Makefile.in
 .endif
 
