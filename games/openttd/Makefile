@@ -9,6 +9,7 @@ PORTNAME=	openttd
 PORTVERSION=	1.0.5
 CATEGORIES=	games
 MASTER_SITES=	http://gb.binaries.openttd.org/binaries/releases/${PORTVERSION}/ \
+		http://ftp.snt.utwente.nl/pub/games/openttd/binaries/releases/${PORTVERSION}/ \
 		#SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -76,6 +77,7 @@ post-patch:
 		${WRKSRC}/config.lib
 # FreeBSD has strndup(3) since 701101
 	@${REINPLACE_CMD} -e '/__NetBSD_Version__/s,$$, || (defined(__FreeBSD_version) \&\& __FreeBSD_version > 701100),' \
+	-e 's,def __NetBSD__, defined(__NetBSD__) || defined(__FreeBSD__),' \
 		${WRKSRC}/src/string_func.h
 
 do-install:
