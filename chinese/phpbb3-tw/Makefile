@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.8
 CATEGORIES=	chinese www
 MASTER_SITES=	http://www.phpbb-tw.net/phpbb/download/ \
-		http://freebsd.ee.ccu.edu.tw/phpBB/
+	http://freebsd.ee.ccu.edu.tw/phpBB/
 PKGNAMESUFFIX=	-tw
-DISTNAME=	phpBB-${PORTVERSION}-PL1
+DISTNAME=	phpBB-${PORTVERSION}
 
 MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	The Traditional Chinese version of phpBB3
@@ -28,13 +28,13 @@ PHPBBURL?=	phpBB3
 #
 # End of user-configurable variables.
 
-LATEST_LINK?=	phpbb3
 WRKSRC=		${WRKDIR}/phpBB3
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	PHPBBURL="${PHPBBURL}" \
 		PHPBBDIR="${PHPBBDIR}"
 
+PORTDOCS=	*
 PLIST_SUB+=	PHPBBDIR=${PHPBBDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 # Set custom variables:
