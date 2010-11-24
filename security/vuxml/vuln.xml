@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="373e412e-f748-11df-96cd-0015f2db7bde">
+    <topic>OpenTTD -- Denial of service (server/client) via invalid read</topic>
+    <affects>
+      <package>
+	<name>openttd</name>
+	<range><ge>1.0.0</ge><lt>1.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenTTD Team reports:</p>
+	<blockquote cite="http://security.openttd.org/en/CVE-2010-4168">
+	  <p>When a client disconnects, without sending the "quit" or
+	    "client error" message, the server has a chance of reading and
+	    writing a just freed piece of memory.  The writing can only
+	    happen while the server is sending the map.  Depending on what
+	    happens directly after freeing the memory there is a chance of
+	    segmentation fault, and thus a denial of service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2010-4168</cvename>
+      <url>http://security.openttd.org/en/CVE-2010-4168</url>
+    </references>
+    <dates>
+      <discovery>2010-11-20</discovery>
+      <entry>2010-11-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a3314314-f731-11df-a757-0011098ad87f">
     <topic>horde-base -- XSS: VCARD attachments vulnerability</topic>
     <affects>
