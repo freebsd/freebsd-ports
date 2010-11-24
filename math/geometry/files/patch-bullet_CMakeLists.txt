@@ -1,0 +1,11 @@
+--- bullet/CMakeLists.txt.orig	2010-11-22 17:42:02.000000000 +0100
++++ bullet/CMakeLists.txt	2010-11-23 21:38:34.000000000 +0100
+@@ -8,7 +8,7 @@
+ MAKE_DIRECTORY(${PROJECT_SOURCE_DIR}/src/)
+ 
+ # Build Bullet
+-execute_process(COMMAND cmake -E chdir ${PROJECT_SOURCE_DIR} make -f Makefile.bullet
++execute_process(COMMAND cmake -E chdir ${PROJECT_SOURCE_DIR} gmake -f Makefile.bullet
+                 RESULT_VARIABLE _make_failed)
+ if(_make_failed)
+   message(FATAL_ERROR "Build of Bullet failed")
