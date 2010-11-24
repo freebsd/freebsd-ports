@@ -11,8 +11,8 @@
 %%PLASMAMULE%%share/mime/amule.xml
 %%PLASMAMULE%%@exec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
 %%PLASMAMULE%%@unexec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
-%%PLASMAMULE%%@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime 2>/dev/null || true
-%%PLASMAMULE%%@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime 2>/dev/null || true
+%%PLASMAMULE%%@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime >/dev/null 2>&1 || true
+%%PLASMAMULE%%@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime >/dev/null 2>&1 || true
 %%PLASMAMULE%%@cwd
 %%ALC%%bin/alc
 %%ALCC%%bin/alcc

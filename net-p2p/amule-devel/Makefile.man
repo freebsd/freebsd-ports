@@ -11,6 +11,7 @@ MAN1_EN+=	alc.1
 MAN1_DE+=	alc.1
 MAN1_ES+=	alc.1
 MAN1_EU+=	alc.1
+MAN1_FR+=	alc.1
 MAN1_HU+=	alc.1
 MAN1_IT+=	alc.1
 . endif
@@ -55,6 +56,7 @@ MAN1_EN+=	wxcas.1
 MAN1_DE+=	wxcas.1
 MAN1_ES+=	wxcas.1
 MAN1_EU+=	wxcas.1
+MAN1_FR+=	wxcas.1
 MAN1_HU+=	wxcas.1
 MAN1_IT+=	wxcas.1
 . endif
