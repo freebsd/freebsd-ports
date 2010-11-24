@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tar
-PORTVERSION=	1.23
-PORTREVISION=	3
+PORTVERSION=	1.25
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,8 +20,7 @@ COMMENT=	GNU version of the traditional tape archiver
 
 INFO=		tar
 
-USE_AUTOTOOLS=	autoconf:268:env
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

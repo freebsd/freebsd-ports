@@ -2,6 +2,7 @@
 bin/gtar
 libexec/grmt
 %%NLS%%share/locale/bg/LC_MESSAGES/tar.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/da/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/de/LC_MESSAGES/tar.mo
