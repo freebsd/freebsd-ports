@@ -639,6 +639,7 @@
     SUBDIR += softfail
     SUBDIR += solidpop3d
     SUBDIR += sortmail
+    SUBDIR += spamass-ixhash
     SUBDIR += spamass-milter
     SUBDIR += spamass-rules
     SUBDIR += spamass-rules_du_jour
