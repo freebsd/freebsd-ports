@@ -1,0 +1,23 @@
+
+--- gio/glib-compile-schemas.c.orig	2010-11-24 21:32:15.000000000 +0100
++++ gio/glib-compile-schemas.c	2010-11-24 21:33:42.000000000 +0100
+@@ -1458,7 +1458,7 @@
+ }
+ /* Text {{{2 */
+ static void
+-text (GMarkupParseContext  *context,
++XXXtext (GMarkupParseContext  *context,
+       const gchar          *text,
+       gsize                 text_len,
+       gpointer              user_data,
+@@ -1590,7 +1590,7 @@
+ parse_gschema_files (gchar    **files,
+                      gboolean   strict)
+ {
+-  GMarkupParser parser = { start_element, end_element, text };
++  GMarkupParser parser = { start_element, end_element, XXXtext };
+   ParseState state = { 0, };
+   const gchar *filename;
+   GError *error = NULL;
+
+
