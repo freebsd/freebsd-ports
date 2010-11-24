@@ -9,14 +9,13 @@ PORTNAME=	xtu
 PORTVERSION=	1.3
 PORTREVISION=	2
 CATEGORIES=	x11-clocks
-MASTER_SITES=	http://core.de/~coto/projects/xtu/
+MASTER_SITES=	http://coto.marsrakete.de/projects/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transparent analog clock for X11
 
 DEPRECATED=	Looks like abandonware
 EXPIRATION_DATE=	2010-12-30
-BROKEN=		does not fetch
 
 USE_IMAKE=	yes
 USE_XORG=	x11 xpm xext
