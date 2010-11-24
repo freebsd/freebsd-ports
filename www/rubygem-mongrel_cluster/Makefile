@@ -6,7 +6,7 @@
 
 PORTNAME=	mongrel_cluster
 PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	rubygem-mongrel>=1.0.2:${PORTSDIR}/www/rubygem-mongrel
 USE_RC_SUBR=	mongrel_cluster
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
-RUBYGEM_AUTOPLIST=  yes
+RUBYGEM_AUTOPLIST=	yes
 REINPLACE_ARGS=	-i ""
 PLIST_FILES=	bin/mongrel_cluster_ctl
 

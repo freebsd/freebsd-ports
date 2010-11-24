@@ -26,7 +26,7 @@ load_rc_config $name
 : ${mongrel_cluster_enable="NO"}
 : ${mongrel_cluster_conf_dir="%%ETCDIR%%"}
 
-command_args="-c ${mongrel_cluster_conf_dir}"
+command_args="--clean -c ${mongrel_cluster_conf_dir}"
 start_cmd="mongrel_cmd start"
 stop_cmd="mongrel_cmd stop"
 restart_cmd="mongrel_cmd restart"
