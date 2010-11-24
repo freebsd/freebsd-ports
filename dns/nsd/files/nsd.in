@@ -17,24 +17,39 @@ rcvar=`set_rcvar`
 
 required_files=%%PREFIX%%/etc/nsd/nsd.conf
 
-command=%%PREFIX%%/sbin/${name}
+command=%%PREFIX%%/sbin/nsdc
+command_args="start"
 pidfile=`%%PREFIX%%/sbin/nsd-checkconf -o pidfile %%PREFIX%%/etc/nsd/nsd.conf`
 
 load_rc_config ${name}
 
 nsd_enable=${nsd_enable-"NO"}
 
+extra_commands="reload"
+start_precmd="nsd_precmd"
+reload_cmd="nsd_reload"
 stop_cmd="nsd_stop"
+
+nsd_precmd()
+{
+	db=`%%PREFIX%%/sbin/nsd-checkconf -o database %%PREFIX%%/etc/nsd/nsd.conf`
+	if [ ! -f "$db" ]; then
+		${command} rebuild
+	fi
+}
+
+nsd_reload()
+{
+	${command} rebuild && ${command} reload
+}
 
 nsd_stop()
 {
 	echo "Merging nsd zone transfer changes to zone files."
-	%%PREFIX%%/sbin/nsdc patch
+	${command} patch
 
-	sleep 5
-
-	echo "Stopping nsd."
-	%%PREFIX%%/sbin/nsdc stop
+	echo "Stopping ${name}."
+	${command} stop
 }
 
 run_rc_command "$1"
