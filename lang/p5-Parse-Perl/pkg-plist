@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/Parse/Perl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Parse/Perl/CopHintsHash.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Parse/Perl/Environment.pod

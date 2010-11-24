@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Blog/Spam/.packlist
 %%SITE_PERL%%/Blog/Spam/API.pm
 %%SITE_PERL%%/Blog/Spam/Plugin/00blacklist.pm
