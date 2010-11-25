@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	1.220
+PORTVERSION=	1.222
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -34,6 +34,7 @@ MAN3=		Config::Model.3 \
 		Config::Model::Backend::Debian::Dpkg::Control.3 \
 		Config::Model::Backend::Debian::Dpkg::Copyright.3 \
 		Config::Model::Backend::Debian::DpkgSyntax.3 \
+		Config::Model::Backend::Fstab.3 \
 		Config::Model::Backend::IniFile.3 \
 		Config::Model::Backend::ShellVar.3 \
 		Config::Model::Backend::Yaml.3 \
@@ -43,6 +44,7 @@ MAN3=		Config::Model.3 \
 		Config::Model::Exception.3 Config::Model::HashId.3 \
 		Config::Model::IdElementReference.3 Config::Model::Instance.3 \
 		Config::Model::ListId.3 Config::Model::Loader.3 \
+		Config::Model::Manual::ModelCreationAdvanced.3 \
 		Config::Model::Manual::ModelCreationIntroduction.3 \
 		Config::Model::Node.3 Config::Model::ObjTreeScanner.3 \
 		Config::Model::Report.3 Config::Model::Searcher.3 \
