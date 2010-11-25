@@ -7,6 +7,7 @@
 
 PORTNAME=	deco
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://hartlich.com/deco/download/:site1 \
 		http://hartlich.com/deco/archive/download/:site2
@@ -32,6 +33,9 @@ RUN_DEPENDS=	arc:${PORTSDIR}/archivers/arc \
 
 NO_LATEST_LINK=	yes
 CONFLICTS=	deco-[0-9]*
+
+post-patch:
+	@${CP} ${FILESDIR}/extract ${WRKDIR}/${PORTNAME}-archive-1.5.1/"tar\.xz"
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
