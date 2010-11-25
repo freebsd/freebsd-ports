@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	DSCM with built-in wiki, http interface and server, tickets database
 
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/fossil
 
