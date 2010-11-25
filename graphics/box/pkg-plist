@@ -1,0 +1,81 @@
+@comment $FreeBSD$
+bin/box
+bin/box0.2
+include/box0.2/box/array.h
+include/box0.2/box/error.h
+include/box0.2/box/hashfunc.h
+include/box0.2/box/hashtable.h
+include/box0.2/box/list.h
+include/box0.2/box/mem.h
+include/box0.2/box/messages.h
+include/box0.2/box/msgbase.h
+include/box0.2/box/occupation.h
+include/box0.2/box/print.h
+include/box0.2/box/srcpos.h
+include/box0.2/box/str.h
+include/box0.2/box/types.h
+lib/box0.2/lib/libg.a
+lib/box0.2/lib/libg.la
+lib/box0.2/lib/libg.so
+lib/box0.2/pkg/_arrows.bxh
+lib/box0.2/pkg/_bbox.bxh
+lib/box0.2/pkg/_circle.bxh
+lib/box0.2/pkg/_color.bxh
+lib/box0.2/pkg/_gradient.bxh
+lib/box0.2/pkg/_line.bxh
+lib/box0.2/pkg/_matrix.bxh
+lib/box0.2/pkg/_pointlist.bxh
+lib/box0.2/pkg/_poly.bxh
+lib/box0.2/pkg/_put.bxh
+lib/box0.2/pkg/_rectangle.bxh
+lib/box0.2/pkg/_sphere.bxh
+lib/box0.2/pkg/_style.bxh
+lib/box0.2/pkg/_text.bxh
+lib/box0.2/pkg/_window.bxh
+lib/box0.2/pkg/arrows.bxh
+lib/box0.2/pkg/bounce.bxh
+lib/box0.2/pkg/electric.bxh
+lib/box0.2/pkg/g.bxh
+lib/box0.2/pkg/label.bxh
+lib/box0.2/pkg/math.bxh
+lib/box0.2/pkg/objects.bxh
+lib/box0.2/pkg/tools.bxh
+lib/libboxcore0.2.a
+lib/libboxcore0.2.la
+lib/libboxcore0.2.so
+lib/libboxcore0.2.so.0
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.am
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/box-logo.box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cairo.box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/curved_arrow.box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cycloid.box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fractree.box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gradient.box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/multivibrator.box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysin.box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pythagoras.box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/Makefile.am
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/bouncing.bash
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/bouncing.box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/losing_eyes.bash
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/losing_eyes.box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/shy.bash
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/shy.box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/washing_machine.bash
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/smileys/washing_machine.box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/snake.box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/text.box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/translucency.box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wheatstone.box
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/yin-yang.box
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/smileys
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm lib/box0.2/pkg
+@dirrm lib/box0.2/lib
+@dirrm lib/box0.2
+@dirrm include/box0.2/box
+@dirrm include/box0.2

@@ -52,6 +52,7 @@
     SUBDIR += bmeps
     SUBDIR += bmp-rootvis
     SUBDIR += bmp2html
+    SUBDIR += box
     SUBDIR += bugle
     SUBDIR += c-a-i-r
     SUBDIR += cadubi
