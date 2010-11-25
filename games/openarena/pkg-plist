@@ -1,23 +1,8 @@
-%%DEDICATED%%bin/openarenaded
-%%CLIENT%%bin/openarena
-%%SMP%%bin/openarena-smp
-%%DATADIR%%/baseoa/pak0.pk3
-%%DATADIR%%/baseoa/pak1-maps.pk3
-%%DATADIR%%/baseoa/pak2-players-mature.pk3
-%%DATADIR%%/baseoa/pak2-players.pk3
-%%DATADIR%%/baseoa/pak3-music.pk3
-%%DATADIR%%/baseoa/pak4-textures.pk3
-%%DATADIR%%/baseoa/pak5-TA.pk3
-%%DATADIR%%/baseoa/pak6-misc.pk3
-%%DATADIR%%/baseoa/pak7-patch.pk3
-%%GAMELIBS%%%%LIBDIR%%/baseoa/cgame.so
-%%GAMELIBS%%%%LIBDIR%%/baseoa/qagame.so
-%%GAMELIBS%%%%LIBDIR%%/baseoa/ui.so
-%%GAMELIBS%%%%LIBDIR%%/missionpack/cgame.so
-%%GAMELIBS%%%%LIBDIR%%/missionpack/qagame.so
-%%GAMELIBS%%%%LIBDIR%%/missionpack/ui.so
-@dirrm %%DATADIR%%/baseoa
-@dirrm %%DATADIR%%
-%%GAMELIBS%%@dirrm %%LIBDIR%%/missionpack
+%%DEDICATED%%bin/oa_ded%%BINSUFFIX%%
+%%CLIENT%%bin/openarena%%BINSUFFIX%%
+%%SMP%%bin/openarena-smp%%BINSUFFIX%%
+%%GAMELIBS%%%%LIBDIR%%/baseoa/cgame%%ARCH%%.so
+%%GAMELIBS%%%%LIBDIR%%/baseoa/qagame%%ARCH%%.so
+%%GAMELIBS%%%%LIBDIR%%/baseoa/ui%%ARCH%%.so
 %%GAMELIBS%%@dirrm %%LIBDIR%%/baseoa
 %%GAMELIBS%%@dirrm %%LIBDIR%%

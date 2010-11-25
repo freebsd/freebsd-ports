@@ -604,6 +604,8 @@
     SUBDIR += oonsoo
     SUBDIR += openalchemist
     SUBDIR += openarena
+    SUBDIR += openarena-data
+    SUBDIR += openarena-oax
     SUBDIR += openastromenace
     SUBDIR += opencity
     SUBDIR += opengfx

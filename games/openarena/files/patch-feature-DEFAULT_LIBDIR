@@ -1,0 +1,128 @@
+--- code/qcommon/files.c.orig	2009-11-09 23:41:42.205886000 +0100
++++ code/qcommon/files.c	2010-02-16 15:26:18.000000000 +0100
+@@ -242,6 +242,7 @@
+ #endif
+ 
+ static	cvar_t		*fs_basepath;
++static	cvar_t		*fs_libpath;
+ static	cvar_t		*fs_basegame;
+ static	cvar_t		*fs_gamedirvar;
+ static	searchpath_t	*fs_searchpaths;
+@@ -2807,6 +2808,8 @@
+ 	fs_debug = Cvar_Get( "fs_debug", "0", 0 );
+ 	fs_basepath = Cvar_Get ("fs_basepath", Sys_DefaultInstallPath(), CVAR_INIT );
+ 	fs_basegame = Cvar_Get ("fs_basegame", "", CVAR_INIT );
++	fs_libpath = Cvar_Get ("fs_libpath", Sys_DefaultLibPath(), CVAR_INIT );
++	
+ 	homePath = Sys_DefaultHomePath();
+ 	if (!homePath || !homePath[0]) {
+ 		homePath = fs_basepath->string;
+--- code/qcommon/qcommon.h.orig	2010-02-15 17:20:33.680787000 +0100
++++ code/qcommon/qcommon.h	2010-02-16 15:26:18.000000000 +0100
+@@ -1085,6 +1085,9 @@
+ char    *Sys_DefaultAppPath(void);
+ #endif
+ 
++void	Sys_SetDefaultLibPath(const char *path);
++char	*Sys_DefaultLibPath(void);
++
+ void  Sys_SetDefaultHomePath(const char *path);
+ char	*Sys_DefaultHomePath(void);
+ const char	*Sys_TempPath(void);
+--- code/sys/sys_main.c.orig	2010-02-15 17:20:33.680787000 +0100
++++ code/sys/sys_main.c	2010-02-16 15:26:18.000000000 +0100
+@@ -49,6 +49,7 @@
+ 
+ static char binaryPath[ MAX_OSPATH ] = { 0 };
+ static char installPath[ MAX_OSPATH ] = { 0 };
++static char libPath[ MAX_OSPATH ] = { 0 };
+ 
+ /*
+ =================
+@@ -95,6 +96,29 @@
+ 
+ /*
+ =================
++Sys_SetDefaultLibPath
++=================
++*/
++void Sys_SetDefaultLibPath(const char *path)
++{
++	Q_strncpyz(libPath, path, sizeof(libPath));
++}
++
++/*
++=================
++Sys_DefaultLibPath
++=================
++*/
++char *Sys_DefaultLibPath(void)
++{
++	if (*libPath)
++		return libPath;
++	else
++		return Sys_Cwd();
++}
++
++/*
++=================
+ Sys_DefaultAppPath
+ =================
+ */
+@@ -435,6 +459,7 @@
+ Used to load a development dll instead of a virtual machine
+ #1 look in fs_homepath
+ #2 look in fs_basepath
++#3 look in fs_libpath
+ =================
+ */
+ void *Sys_LoadDll( const char *name, char *fqpath ,
+@@ -445,6 +470,7 @@
+ 	void  (*dllEntry)( intptr_t (*syscallptr)(intptr_t, ...) );
+ 	char  fname[MAX_OSPATH];
+ 	char  *basepath;
++	char  *libpath;
+ 	char  *homepath;
+ 	char  *gamedir;
+ 
+@@ -454,6 +480,7 @@
+ 
+ 	// TODO: use fs_searchpaths from files.c
+ 	basepath = Cvar_VariableString( "fs_basepath" );
++	libpath = Cvar_VariableString( "fs_libpath" );
+ 	homepath = Cvar_VariableString( "fs_homepath" );
+ 	gamedir = Cvar_VariableString( "fs_game" );
+ 
+@@ -462,6 +489,9 @@
+ 	if(!libHandle && basepath)
+ 		libHandle = Sys_TryLibraryLoad(basepath, gamedir, fname, fqpath);
+ 
++	if(!libHandle && libpath)
++		libHandle = Sys_TryLibraryLoad(libpath, gamedir, fname, fqpath);
++
+ 	if(!libHandle) {
+ 		Com_Printf ( "Sys_LoadDll(%s) failed to load library\n", name );
+ 		return NULL;
+@@ -515,6 +545,14 @@
+ #	endif
+ #endif
+ 
++#ifndef DEFAULT_LIBDIR
++#	ifdef MACOS_X
++#		define DEFAULT_LIBDIR Sys_StripAppBundle(Sys_BinaryPath())
++#	else
++#		define DEFAULT_LIBDIR Sys_BinaryPath()
++#	endif
++#endif
++
+ /*
+ =================
+ Sys_SigHandler
+@@ -589,6 +627,7 @@
+ 	Sys_ParseArgs( argc, argv );
+ 	Sys_SetBinaryPath( Sys_Dirname( argv[ 0 ] ) );
+ 	Sys_SetDefaultInstallPath( DEFAULT_BASEDIR );
++	Sys_SetDefaultLibPath( DEFAULT_LIBDIR );
+ 
+ 	// Concatenate the command line for passing to Com_Init
+ 	for( i = 1; i < argc; i++ )

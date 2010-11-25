@@ -1,0 +1,8 @@
+OpenArena Expanded is the development version of OpenArena. Its purpose is both
+to create improve the basic OpenArena gameplay but also to create a good
+starting point for any OpenArena or Quake III:Arena mods.
+
+It does not include engine or platform specific code. The source code is
+GPL v2 or later but some of the tools are not.
+
+WWW: http://code.google.com/p/oax/
