@@ -872,7 +872,6 @@ bin/updatetm
 
 
 @dirrmtry etc/pootle
-@dirrmtry etc/devd
 @dirrm %%PYTHON_SITELIBDIR%%/contact_form_i18n
 @dirrm %%PYTHON_SITELIBDIR%%/djblets/util/templatetags
 @dirrm %%PYTHON_SITELIBDIR%%/djblets/util
@@ -932,7 +931,6 @@ bin/updatetm
 @dirrm %%PYTHON_SITELIBDIR%%/profiles
 @dirrm %%PYTHON_SITELIBDIR%%/registration
 @dirrmtry share/doc
-@dirrmtry share/skel
 @dirrmtry share
 @dirrm %%DATADIR%%/html/js/mt
 @dirrm %%DATADIR%%/html/js/jquery
