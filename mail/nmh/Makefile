@@ -100,6 +100,10 @@ OPTIONS=	SASL2 "Cyrus SASL2" OFF
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 90007
+BROKEN=		does not build
+.endif
+
 .if defined(WITH_SASL2)
 LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--with-cyrus-sasl=${PREFIX}
