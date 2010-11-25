@@ -27,6 +27,51 @@ share/aclocal/vorbis.m4
 %%PORTDOCS%%%%DOCSDIR%%/framing.html
 %%PORTDOCS%%%%DOCSDIR%%/helper.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/index.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/return.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/style.css
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_analysis.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_analysis_blockout.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_analysis_buffer.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_analysis_headerout.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_analysis_init.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_analysis_wrote.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_bitrate_addblock.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_bitrate_flushpacket.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_block.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_block_clear.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_block_init.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_comment.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_comment_add.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_comment_add_tag.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_comment_clear.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_comment_init.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_comment_query.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_comment_query_count.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_commentheader_out.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_dsp_clear.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_dsp_state.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_granule_time.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_info.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_info_blocksize.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_info_clear.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_info_init.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_packet_blocksize.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_synthesis.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_synthesis_blockin.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_synthesis_halfrate.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_synthesis_halfrate_p.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_synthesis_headerin.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_synthesis_idheader.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_synthesis_init.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_synthesis_lapout.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_synthesis_pcmout.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_synthesis_read.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_synthesis_restart.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_synthesis_trackonly.html
+%%PORTDOCS%%%%DOCSDIR%%/libvorbis/vorbis_version_string.html
 %%PORTDOCS%%%%DOCSDIR%%/lspmap.png
 %%PORTDOCS%%%%DOCSDIR%%/oddlsp.png
 %%PORTDOCS%%%%DOCSDIR%%/oggstream.html
@@ -44,8 +89,8 @@ share/aclocal/vorbis.m4
 %%PORTDOCS%%%%DOCSDIR%%/vorbisenc/changes.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisenc/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisenc/index.html
-%%PORTDOCS%%%%DOCSDIR%%/vorbisenc/ov_ectl_ratemanage2_arg.html
-%%PORTDOCS%%%%DOCSDIR%%/vorbisenc/ov_ectl_ratemanage_arg.html
+%%PORTDOCS%%%%DOCSDIR%%/vorbisenc/ovectl_ratemanage2_arg.html
+%%PORTDOCS%%%%DOCSDIR%%/vorbisenc/ovectl_ratemanage_arg.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisenc/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisenc/reference.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisenc/style.css
@@ -55,7 +100,6 @@ share/aclocal/vorbis.m4
 %%PORTDOCS%%%%DOCSDIR%%/vorbisenc/vorbis_encode_setup_init.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisenc/vorbis_encode_setup_managed.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisenc/vorbis_encode_setup_vbr.html
-%%PORTDOCS%%%%DOCSDIR%%/vorbisenc/vorbis_info.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/OggVorbis_File.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/callbacks.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/chaining_example_c.html
@@ -89,6 +133,7 @@ share/aclocal/vorbis.m4
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/ov_raw_tell.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/ov_raw_total.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/ov_read.html
+%%PORTDOCS%%%%DOCSDIR%%/vorbisfile/ov_read_filter.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/ov_read_float.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/ov_seekable.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/ov_serialnumber.html
@@ -104,7 +149,6 @@ share/aclocal/vorbis.m4
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/ov_time_total.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/reference.html
-%%PORTDOCS%%%%DOCSDIR%%/vorbisfile/return.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/seekexample.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/seeking.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/seeking_example_c.html
@@ -112,8 +156,6 @@ share/aclocal/vorbis.m4
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/seekingexample.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/style.css
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/threads.html
-%%PORTDOCS%%%%DOCSDIR%%/vorbisfile/vorbis_comment.html
-%%PORTDOCS%%%%DOCSDIR%%/vorbisfile/vorbis_info.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisfile/vorbisfile_example_c.html
 %%PORTDOCS%%%%DOCSDIR%%/vorbisword2.png
 %%PORTDOCS%%%%DOCSDIR%%/wait.png
@@ -121,4 +163,5 @@ share/aclocal/vorbis.m4
 @dirrm include/vorbis
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/vorbisfile
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/vorbisenc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/libvorbis
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
