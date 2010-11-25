@@ -7,6 +7,7 @@
 
 PORTNAME=	softflowd
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www2.mindrot.org/files/softflowd/
 
@@ -18,6 +19,7 @@ USE_GMAKE=	yes
 PLIST_FILES=	sbin/softflowd sbin/softflowctl
 MAN8=		softflowd.8 softflowctl.8
 PORTDOCS=	README
+USE_RC_SUBR=	softflowd
 
 post-install:
 .if !defined(NOPORTDOCS)
