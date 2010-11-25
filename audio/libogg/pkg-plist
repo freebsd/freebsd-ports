@@ -39,6 +39,7 @@ share/aclocal/ogg.m4
 %%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_stream_packetpeek.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_stream_pagein.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_stream_pageout.html
+%%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_stream_pageout_fill.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_stream_reset.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_stream_reset_serialno.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_stream_state.html
