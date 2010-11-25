@@ -3,4 +3,4 @@ commands on multiple remote hosts in parallel. Pdsh implements dynamically
 loadable modules for extended functionality such as new remote shell services
 and remote host selection.
 
-WWW:	http://pdsh.sourceforge.net
+WWW: http://code.google.com/p/pdsh/
