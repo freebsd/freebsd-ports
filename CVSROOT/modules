@@ -140,6 +140,7 @@ ports_x11_wm                    ports/x11-wm
 2d-rewriter                     ports/science/2d-rewriter
 2dhf                            ports/science/2dhf
 2mandvd                         ports/multimedia/2mandvd
+2ping                           ports/net-mgmt/2ping
 3dc                             ports/games/3dc
 3ddesktop                       ports/x11/3ddesktop
 3dm                             ports/sysutils/3dm
@@ -693,7 +694,6 @@ asr-utils                       ports/sysutils/asr-utils
 asr10                           ports/converters/asr10
 assaultcube                     ports/games/assaultcube
 assp                            ports/mail/assp
-asterisk                        ports/net/asterisk
 asterisk-app-ldap               ports/net/asterisk-app-ldap
 asterisk-app-notify             ports/net/asterisk-app-notify
 asterisk-bristuff               ports/net/asterisk-bristuff
@@ -1883,6 +1883,7 @@ coreutils                       ports/sysutils/coreutils
 corewars                        ports/games/corewars
 corkscrew                       ports/net/corkscrew
 corona                          ports/graphics/corona
+corsix-th                       ports/games/corsix-th
 cos                             ports/java/cos
 cosmo                           ports/games/cosmo
 cosmoplayer                     ports/graphics/cosmoplayer
@@ -4320,6 +4321,7 @@ geoid                           ports/comms/geoid
 geoip                           ports/net/GeoIP
 geolizer                        ports/www/geolizer
 geomWatch                       ports/sysutils/geomWatch
+geometry                        ports/math/geometry
 geomgui                         ports/sysutils/geomgui
 geomorph                        ports/graphics/geomorph
 geomview                        ports/graphics/geomview
@@ -11116,6 +11118,7 @@ p5-Bio-SCF                      ports/biology/p5-Bio-SCF
 p5-Bit-ShiftReg                 ports/math/p5-Bit-ShiftReg
 p5-Bit-Vector                   ports/math/p5-Bit-Vector
 p5-Bit-Vector-Minimal           ports/math/p5-Bit-Vector-Minimal
+p5-Blog-Spam                    ports/www/p5-Blog-Spam
 p5-Bloom-Filter                 ports/textproc/p5-Bloom-Filter
 p5-Bot-BasicBot                 ports/irc/p5-Bot-BasicBot
 p5-Boulder                      ports/converters/p5-Boulder
@@ -13249,6 +13252,7 @@ p5-Net-Dict                     ports/net/p5-Net-Dict
 p5-Net-Divert                   ports/net/p5-Net-Divert
 p5-Net-Domain-ExpireDate        ports/dns/p5-Net-Domain-ExpireDate
 p5-Net-Domain-TLD               ports/dns/p5-Net-Domain-TLD
+p5-Net-Dropbox-API              ports/net/p5-Net-Dropbox-API
 p5-Net-EPP                      ports/net/p5-Net-EPP
 p5-Net-EPP-Proxy                ports/net/p5-Net-EPP-Proxy
 p5-Net-FS-Flickr                ports/net/p5-Net-FS-Flickr
@@ -13360,6 +13364,7 @@ p5-Net-RawIP                    ports/net/p5-Net-RawIP
 p5-Net-RawSock                  ports/net/p5-Net-RawSock
 p5-Net-Rendezvous               ports/net/p5-Net-Rendezvous
 p5-Net-Rendezvous-Publish       ports/net/p5-Net-Rendezvous-Publish
+p5-Net-Riak                     ports/net/p5-Net-Riak
 p5-Net-Rsh                      ports/net/p5-Net-Rsh
 p5-Net-SAML                     ports/security/p5-Net-SAML
 p5-Net-SAP                      ports/net/p5-Net-SAP
@@ -13461,6 +13466,7 @@ p5-ORLite-Migrate               ports/databases/p5-ORLite-Migrate
 p5-Object-Accessor              ports/devel/p5-Object-Accessor
 p5-Object-Array                 ports/devel/p5-Object-Array
 p5-Object-Declare               ports/devel/p5-Object-Declare
+p5-Object-Destroyer             ports/devel/p5-Object-Destroyer
 p5-Object-Enum                  ports/devel/p5-Object-Enum
 p5-Object-Event                 ports/devel/p5-Object-Event
 p5-Object-InsideOut             ports/devel/p5-Object-InsideOut
@@ -13627,6 +13633,7 @@ p5-Parse-FixedLength            ports/textproc/p5-Parse-FixedLength
 p5-Parse-Flex                   ports/textproc/p5-Parse-Flex
 p5-Parse-IRC                    ports/irc/p5-Parse-IRC
 p5-Parse-Method-Signatures      ports/devel/p5-Parse-Method-Signatures
+p5-Parse-Perl                   ports/lang/p5-Parse-Perl
 p5-Parse-PerlConfig             ports/devel/p5-Parse-PerlConfig
 p5-Parse-PhoneNumber            ports/textproc/p5-Parse-PhoneNumber
 p5-Parse-Pidl                   ports/devel/p5-Parse-Pidl
@@ -15099,6 +15106,7 @@ p5-bioperl-run                  ports/biology/p5-bioperl-run
 p5-bit-shiftreg                 ports/math/p5-Bit-ShiftReg
 p5-bit-vector                   ports/math/p5-Bit-Vector
 p5-bit-vector-minimal           ports/math/p5-Bit-Vector-Minimal
+p5-blog-spam                    ports/www/p5-Blog-Spam
 p5-bloom-filter                 ports/textproc/p5-Bloom-Filter
 p5-boolean                      ports/devel/p5-boolean
 p5-bot-basicbot                 ports/irc/p5-Bot-BasicBot
@@ -17276,6 +17284,7 @@ p5-net-dnsbl-multidaemon        ports/dns/p5-Net-DNSBL-MultiDaemon
 p5-net-dnsbl-statistics         ports/dns/p5-Net-DNSBL-Statistics
 p5-net-domain-expiredate        ports/dns/p5-Net-Domain-ExpireDate
 p5-net-domain-tld               ports/dns/p5-Net-Domain-TLD
+p5-net-dropbox-api              ports/net/p5-Net-Dropbox-API
 p5-net-ebay                     ports/www/p5-Net-eBay
 p5-net-epp                      ports/net/p5-Net-EPP
 p5-net-epp-proxy                ports/net/p5-Net-EPP-Proxy
@@ -17388,6 +17397,7 @@ p5-net-rawsock                  ports/net/p5-Net-RawSock
 p5-net-rblclient                ports/dns/p5-Net-RBLClient
 p5-net-rendezvous               ports/net/p5-Net-Rendezvous
 p5-net-rendezvous-publish       ports/net/p5-Net-Rendezvous-Publish
+p5-net-riak                     ports/net/p5-Net-Riak
 p5-net-rsh                      ports/net/p5-Net-Rsh
 p5-net-rtp                      ports/net/p5-Net-RTP
 p5-net-saml                     ports/security/p5-Net-SAML
@@ -17488,6 +17498,7 @@ p5-oauth-lite                   ports/net/p5-OAuth-Lite
 p5-object-accessor              ports/devel/p5-Object-Accessor
 p5-object-array                 ports/devel/p5-Object-Array
 p5-object-declare               ports/devel/p5-Object-Declare
+p5-object-destroyer             ports/devel/p5-Object-Destroyer
 p5-object-enum                  ports/devel/p5-Object-Enum
 p5-object-event                 ports/devel/p5-Object-Event
 p5-object-insideout             ports/devel/p5-Object-InsideOut
@@ -17557,6 +17568,7 @@ p5-parse-fixedlength            ports/textproc/p5-Parse-FixedLength
 p5-parse-flex                   ports/textproc/p5-Parse-Flex
 p5-parse-irc                    ports/irc/p5-Parse-IRC
 p5-parse-method-signatures      ports/devel/p5-Parse-Method-Signatures
+p5-parse-perl                   ports/lang/p5-Parse-Perl
 p5-parse-perlconfig             ports/devel/p5-Parse-PerlConfig
 p5-parse-phonenumber            ports/textproc/p5-Parse-PhoneNumber
 p5-parse-pidl                   ports/devel/p5-Parse-Pidl
@@ -23768,6 +23780,7 @@ spacearyarya                    ports/games/spacearyarya
 spacechart                      ports/astro/spacechart
 spacehulk                       ports/games/spacehulk
 spacejunk                       ports/games/spacejunk
+spamass-ixhash                  ports/mail/spamass-ixhash
 spamass-milter                  ports/mail/spamass-milter
 spamass-rules                   ports/mail/spamass-rules
 spamass-rules_du_jour           ports/mail/spamass-rules_du_jour
