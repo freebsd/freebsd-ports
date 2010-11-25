@@ -1,0 +1,10 @@
+%%DATADIR%%/pak0.pk3
+%%DATADIR%%/pak1-maps.pk3
+%%DATADIR%%/pak2-players-mature.pk3
+%%DATADIR%%/pak2-players.pk3
+%%DATADIR%%/pak4-textures.pk3
+%%DATADIR%%/pak5-TA.pk3
+%%DATADIR%%/pak6-misc.pk3
+%%DATADIR%%/pak6-patch085.pk3
+@dirrm %%DATADIR%%
+@dirrmtry %%OADIR%%
