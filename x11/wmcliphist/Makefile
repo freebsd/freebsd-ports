@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	wmcliphist
-PORTVERSION=	0.6
-PORTREVISION=	3
+PORTVERSION=	1.0
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://linux.nawebu.cz/wmcliphist/ \
-		http://people.freebsd.org/~uqs/distfiles/
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/uqs/}
 
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Clipboard history management dockapp for Window Maker
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_XORG=	xpm
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/.wmcliphistrc ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/wmcliphistrc ${EXAMPLESDIR}
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

@@ -1,5 +1,5 @@
 bin/wmcliphist
-share/examples/wmcliphist/.wmcliphistrc
+share/examples/wmcliphist/wmcliphistrc
 %%PORTDOCS%%share/doc/wmcliphist/README
 @dirrm share/examples/wmcliphist
 %%PORTDOCS%%@dirrm share/doc/wmcliphist
