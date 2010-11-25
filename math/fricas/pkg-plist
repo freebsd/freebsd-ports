@@ -934,8 +934,13 @@ lib/fricas/target/%%GNU_HOST%%/algebra/SAE.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/SAEFACT.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/SAERFFC.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/SAOS.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/SARGND.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/SCACHE.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/SCENE.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/SCIFS.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/SCONF.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/SCPKG.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/SCRT.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/SDPOL.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/SDVAR.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/SEG.fasl
@@ -987,6 +992,8 @@ lib/fricas/target/%%GNU_HOST%%/algebra/SPECOUT.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/SPFCAT.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/SPLNODE.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/SPLTREE.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/SPTCAT.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/STR.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/SQMATRIX.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/SRAGG-.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/SRAGG.fasl
@@ -1138,6 +1145,9 @@ lib/fricas/target/%%GNU_HOST%%/algebra/XEXPPKG.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/XF-.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/XF.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/XFALG.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/XML.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/XMLAT.fasl
+lib/fricas/target/%%GNU_HOST%%/algebra/XMLEL.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/XPBWPOLY.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/XPOLY.fasl
 lib/fricas/target/%%GNU_HOST%%/algebra/XPOLYC.fasl
@@ -2719,6 +2729,7 @@ lib/fricas/target/%%GNU_HOST%%/src/algebra/rf.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/riccati.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/rinterp.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/rule.spad.pamphlet
+lib/fricas/target/%%GNU_HOST%%/src/algebra/scene.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/seg.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/setorder.spad.pamphlet
 lib/fricas/target/%%GNU_HOST%%/src/algebra/sets.spad.pamphlet
