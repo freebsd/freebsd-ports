@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------
 Before using this program, edit
 
-%%EXAMPLESDIR%%/.wmcliphistrc
+%%EXAMPLESDIR%%/wmcliphistrc
 
-and copy to your home directory.
+and copy it to ~/.wmcliphistrc
 ---------------------------------------------------------------------
