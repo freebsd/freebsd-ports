@@ -1826,6 +1826,7 @@
     SUBDIR += webcrawl
     SUBDIR += webfs
     SUBDIR += webglimpse
+    SUBDIR += webgo
     SUBDIR += webinject
     SUBDIR += webkit-gtk2
     SUBDIR += webkit-sharp
