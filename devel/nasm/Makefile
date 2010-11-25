@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nasm
-PORTVERSION=	2.08.02
+PORTVERSION=	2.09.04
 PORTEPOCH=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.nasm.us/pub/nasm/releasebuilds/${PORTVERSION}/
@@ -19,8 +19,8 @@ LICENSE=	BSD
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes	# parallel builds (-jX) are broken with BSD make(1)
 INSTALL_TARGET=	install install_rdf
-MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		ldrdf.1 nasm.1 ndisasm.1 rdf2bin.1 rdf2com.1 rdf2ihx.1 \
 		rdf2ith.1 rdf2srec.1 rdfdump.1 rdflib.1 rdx.1
