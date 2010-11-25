@@ -1917,6 +1917,7 @@
     SUBDIR += p5-MooseX-Aliases
     SUBDIR += p5-MooseX-App-Cmd
     SUBDIR += p5-MooseX-Async
+    SUBDIR += p5-MooseX-Attribute-ENV
     SUBDIR += p5-MooseX-AttributeHelpers
     SUBDIR += p5-MooseX-ClassAttribute
     SUBDIR += p5-MooseX-Clone
