@@ -9,7 +9,7 @@ PORTVERSION=	0.6.0
 PORTREVISION=	5
 CATEGORIES=	ftp
 MASTER_SITES=	http://amtrickey.net/download/ \
-		http://people.freebsd.org/~uqs/distfiles/
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/uqs/}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	uqs@FreeBSD.org

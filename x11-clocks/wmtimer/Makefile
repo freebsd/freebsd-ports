@@ -10,7 +10,7 @@ PORTVERSION=	2.92
 PORTREVISION=	8
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.darkops.net/wmtimer/ \
-		http://people.freebsd.org/~uqs/distfiles/
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/uqs/}
 
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Multi-Function timer dockapp for WindowMaker
