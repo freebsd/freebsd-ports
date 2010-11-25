@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/config-edit
 %%SITE_PERL%%/Config/Model.pm
 %%SITE_PERL%%/Config/Model/Annotation.pm
@@ -8,6 +9,7 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg/Control.pm
 %%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg/Copyright.pm
 %%SITE_PERL%%/Config/Model/Backend/Debian/DpkgSyntax.pm
+%%SITE_PERL%%/Config/Model/Backend/Fstab.pm
 %%SITE_PERL%%/Config/Model/Backend/IniFile.pm
 %%SITE_PERL%%/Config/Model/Backend/ShellVar.pm
 %%SITE_PERL%%/Config/Model/Backend/Yaml.pm
@@ -36,6 +38,7 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/WizardHelper.pm
 %%SITE_PERL%%/Config/Model/application.d/dpkg-control
 %%SITE_PERL%%/Config/Model/application.d/dpkg-copyright
+%%SITE_PERL%%/Config/Model/Manual/ModelCreationAdvanced.pod
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control.pl
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control/Binary.pl
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control/Source.pl
@@ -46,11 +49,14 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/models/Fstab/CommonOptions.pl
 %%SITE_PERL%%/Config/Model/models/Fstab/Ext2FsOpt.pl
 %%SITE_PERL%%/Config/Model/models/Fstab/Ext3FsOpt.pl
+%%SITE_PERL%%/Config/Model/models/Fstab/Ext4FsOpt.pl
 %%SITE_PERL%%/Config/Model/models/Fstab/FsLine.pl
 %%SITE_PERL%%/Config/Model/models/Fstab/Iso9660_Opt.pl
+%%SITE_PERL%%/Config/Model/models/Fstab/NoneOptions.pl
 %%SITE_PERL%%/Config/Model/models/Fstab/SwapOptions.pl
 %%SITE_PERL%%/Config/Model/models/Fstab/UsbFsOptions.pl
 %%SITE_PERL%%/Config/Model/models/PopCon.pl
+%%SITE_PERL%%/Config/Model/system.d/fstab
 %%SITE_PERL%%/Config/Model/system.d/popcon
 @dirrmtry %%SITE_PERL%%/Config/Model/system.d
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Fstab
@@ -59,6 +65,7 @@ bin/config-edit
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Debian/Dpkg
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Debian
 @dirrmtry %%SITE_PERL%%/Config/Model/models
+@dirrmtry %%SITE_PERL%%/Config/Model/Manual
 @dirrmtry %%SITE_PERL%%/Config/Model/application.d
 @dirrmtry %%SITE_PERL%%/Config/Model/Manual
 @dirrmtry %%SITE_PERL%%/Config/Model/Cookbook
