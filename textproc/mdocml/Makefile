@@ -9,7 +9,7 @@ PORTNAME=	mdocml
 PORTVERSION=	1.10.6
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
-		http://people.freebsd.org/~uqs/distfiles/
+		${MASTER_SITE_LOCAL:S/%SUBDIR%/uqs/}
 
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	mdoc macro compiler
