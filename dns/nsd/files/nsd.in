@@ -20,6 +20,7 @@ required_files=%%PREFIX%%/etc/nsd/nsd.conf
 command=%%PREFIX%%/sbin/nsdc
 command_args="start"
 pidfile=`%%PREFIX%%/sbin/nsd-checkconf -o pidfile %%PREFIX%%/etc/nsd/nsd.conf`
+procname=%%PREFIX%%/sbin/${name}
 
 load_rc_config ${name}
 
