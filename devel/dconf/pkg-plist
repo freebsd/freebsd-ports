@@ -36,6 +36,9 @@ share/vala/vapi/dconf.vapi
 @dirrm share/gtk-doc/html/dconf
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
+@dirrmtry share/dbus-1/system-services
+@dirrmtry share/dbus-1/services
+@dirrmtry share/dbus-1
 @dirrm include/dconf
 @exec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
 @unexec %D/bin/gio-querymodules %D/lib/gio/modules 2>/dev/null || /usr/bin/true
