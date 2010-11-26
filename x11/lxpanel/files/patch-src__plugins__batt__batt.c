@@ -1,5 +1,5 @@
---- src/plugins/batt/batt.c.orig	2010-02-08 07:37:52.000000000 +0100
-+++ src/plugins/batt/batt.c	2010-10-16 19:33:35.871250014 +0200
+--- src/plugins/batt/batt.c.orig	2010-02-08 06:37:52.000000000 +0000
++++ src/plugins/batt/batt.c	2010-11-26 14:33:21.000000000 +0000
 @@ -30,7 +30,7 @@
   */
  
@@ -18,6 +18,24 @@
          border,
          height,
          length,
+@@ -95,7 +95,7 @@
+ typedef struct {
+     char *command;
+     sem_t *lock;
+-} alarm;
++} lx_alarm;
+ 
+ static void destructor(Plugin *p);
+ static void update_display(lx_battery *lx_b, gboolean repaint);
+@@ -103,7 +103,7 @@
+ /* alarmProcess takes the address of a dynamically allocated alarm struct (which
+    it must free). It ensures that alarm commands do not run concurrently. */
+ static void * alarmProcess(void *arg) {
+-    alarm *a = (alarm *) arg;
++    lx_alarm *a = (lx_alarm *) arg;
+ 
+     sem_wait(a->lock);
+     system(a->command);
 @@ -120,21 +120,18 @@
      char tooltip[ 256 ];
      battery *b = lx_b->b;
@@ -53,6 +71,15 @@
      {
  	/* Shrug this should be done using glibs process functions */
  	/* Alarms should not run concurrently; determine whether an alarm is
+@@ -157,7 +154,7 @@
+ 	/* Run the alarm command if it isn't already running */
+ 	if (alarmCanRun) {
+ 	    
+-	    alarm *a = (alarm *) malloc(sizeof(alarm));
++	    lx_alarm *a = (lx_alarm *) malloc(sizeof(alarm));
+ 	    a->command = lx_b->alarmCommand;
+ 	    a->lock = &(lx_b->alarmProcessLock);
+ 	    
 @@ -176,7 +173,7 @@
  	    int left_seconds = b->seconds -= 3600 * hours;
  	    int minutes = left_seconds / 60;
