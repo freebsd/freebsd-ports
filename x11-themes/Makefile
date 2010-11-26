@@ -211,6 +211,7 @@
     SUBDIR += qinx
     SUBDIR += qnxstyle
     SUBDIR += qt-bluecurve-theme
+    SUBDIR += qt4-style-float
     SUBDIR += qt4-style-quantumstyle
     SUBDIR += qtcurve-gtk2
     SUBDIR += qtcurve-kde3
