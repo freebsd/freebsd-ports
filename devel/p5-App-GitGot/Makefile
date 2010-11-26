@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	App-GitGot
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tool to make it easier to manage multiple git repositories
 
 RUN_DEPENDS=	p5-Config-INI>=0:${PORTSDIR}/devel/p5-Config-INI \
