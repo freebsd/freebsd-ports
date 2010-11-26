@@ -6,53 +6,61 @@
 #
 
 PORTNAME=	wmfs
-DISTVERSION=	201008
+DISTVERSION=	201011
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://dl.wmfs.info/
+MASTER_SITES=	http://wmfs.info/attachments/download/15/ \
+		http://cloud.github.com/downloads/philpep/wmfs/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A floating and tiling Window Manager From Scratch
 
+LICENCE=	BSD
+
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GNOME=	pkgconfig
-USE_CMAKE=	yes
 USE_XORG=	x11 xft xpm
+HAS_CONFIGURE=	yes
 
 MAN1=	${PORTNAME}.1
 MANCOMPRESSED=	yes
 
 PLIST_FILES=	bin/wmfs \
 		etc/xdg/wmfs/wmfsrc \
-		share/xsessions/wmfs.desktop \
-		%%DOCSDIR%%/TODO \
-		%%DOCSDIR%%/README \
-		%%DOCSDIR%%/wmfsrc
-PLIST_DIRS=	%%DOCSDIR%% etc/xdg/wmfs etc/xdg share/xsessions
+		share/xsessions/wmfs.desktop
 
-OPTIONS=	IMLIB2 "Enable Imlib2 support" on
+PLIST_DIRS=	etc/xdg/wmfs etc/xdg share/xsessions
+
+OPTIONS=	XRANDR "Enable xrandr support" on \
+		XINERAMA "Enable xinerama support" on \
+		IMLIB "Enable Imlib2 support" on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_IMLIB2)
-USE_EFL+=	imlib2
+CONFIGURE_ARGS=	--prefix ${PREFIX} \
+			--man-prefix ${MANPREFIX}/man \
+			--xdg-config-dir ${PREFIX}/etc/xdg
+
+.if defined(WITH_XRANDR)
+USE_XORG+=	xrandr
+.else
+CONFIGURE_ARGS+=	--without-xrandr
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|share/$${PROJECT_NAME})|${DOCSDIR})|g' \
-		-e 's|$${PREFIX}/share/man|/$${PREFIX}/man|g' \
-		-e 's|$${SYSCONFDIR}/xdg|${PREFIX}/etc/xdg|g'  ${WRKSRC}/CMakeLists.txt
+.if defined(WITH_XINERAMA)
+USE_XORG+=	xinerama
+.else
+CONFIGURE_ARGS+=	--without-xinerama
+.endif
+
+.if defined(WITH_IMLIB)
+USE_EFL+=	imlib2
+.else
+CONFIGURE_ARGS+=	--without-imlib2
+.endif
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmfs ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}/TODO
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-	${INSTALL_DATA} ${WRKSRC}/wmfsrc ${DOCSDIR}/wmfsrc
-.endif
-
 	@${CAT} ${PKGMESSAGE} | ${SED} "s|PREFIX|${PREFIX}|g" \
-		${PKGDIR}/pkg-message
+	${PKGDIR}/pkg-message
 
 .include <bsd.port.post.mk>
