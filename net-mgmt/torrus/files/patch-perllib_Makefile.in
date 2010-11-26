@@ -1,0 +1,27 @@
+--- perllib/Makefile.in.orig	2010-10-28 18:49:34.000000000 +0000
++++ perllib/Makefile.in	2010-10-28 18:50:48.000000000 +0000
+@@ -339,7 +339,7 @@
+ 
+ install-data-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(perllibdir)
+-	find * -type d ! -name CVS -print >list.tmp
++	find * -type d -print | grep -v /.svn >list.tmp
+ 	for d in `cat list.tmp`; do \
+ 	  $(mkinstalldirs) $(DESTDIR)$(perllibdir)/$$d; done
+ 	find * \( -name '*.pm' \) -type f -print >list.tmp
+@@ -348,13 +348,13 @@
+ 	rm -f list.tmp
+ 
+ uninstall-local:
+-	find * -type d ! -name CVS -print >list.tmp
++	find * -type d -print | grep -v /.svn >list.tmp
+ 	for d in `cat list.tmp`; do \
+ 	  rm -r $(DESTDIR)$(perllibdir)/$$d; done
+ 	rm -f list.tmp
+ 
+ dist-hook:
+-	find * -type d ! -name CVS -print >list.tmp
++	find * -type d -print | grep -v /.svn >list.tmp
+ 	for d in `cat list.tmp`; do \
+ 	  mkdir $(distdir)/$$d; done
+ 	find * \( -name '*.pm' -o -name '*.txt' \) -type f -print >list.tmp

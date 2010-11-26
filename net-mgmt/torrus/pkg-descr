@@ -21,6 +21,3 @@ data series of any nature. Tobi Oetiker's RRDtool is used for data storage.
       thresholds are specified by RPN expressions.
 
 WWW: http://torrus.org
-
-- Corey Smith
-corsmith@gmail.com
