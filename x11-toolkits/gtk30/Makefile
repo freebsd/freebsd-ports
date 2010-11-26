@@ -25,7 +25,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gimp Toolkit for X11 GUI (current stable version)
 
 LICENSE=	LGPL20
-LICENSE_FILE=   ${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 USE_BZIP2=	yes
 LATEST_LINK=	gtk20
 
@@ -58,10 +58,6 @@ CONFIGURE_ARGS+=	--enable-debug=yes
 OPTIONS=	CUPS "Enable cups printing support" on
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == powerpc64
-EXTRA_PATCHES=	${.CURDIR}/files/extra-arch-powerpc64
-.endif
 
 .if defined(WITH_CUPS)
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
