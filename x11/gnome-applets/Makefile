@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-applets
-PORTVERSION=	2.32.0
+PORTVERSION=	2.32.1.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -37,8 +37,7 @@ USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel gnomedocutils \
 WANT_GNOME=	yes
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gstreamer=0.10 \
-		--enable-mixer-applet \
+CONFIGURE_ARGS=	--enable-mixer-applet \
 		--disable-networkmanager
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
