@@ -1,0 +1,11 @@
+--- qt4/toolbar/CMakeLists.txt.orig	2010-10-17 02:55:35.000000000 +0900
++++ qt4/toolbar/CMakeLists.txt	2010-10-17 02:56:00.000000000 +0900
+@@ -15,8 +15,6 @@
+  
+ kde4_add_plugin(plasma_applet_uim ${uim_SRCS})
+ target_link_libraries(plasma_applet_uim ${KDE4_PLASMA_LIBS} ${KDE4_KDEUI_LIBS}
+-        ${CMAKE_SOURCE_DIR}/../../uim/.libs/libuim.so
+-        ${CMAKE_SOURCE_DIR}/../../uim/.libs/libuim-scm.so
+         -luim -luim-scm)
+  
+ install(TARGETS plasma_applet_uim DESTINATION ${PLUGIN_INSTALL_DIR})

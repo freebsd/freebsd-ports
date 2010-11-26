@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	1.5.6
-PORTREVISION?=	3
+PORTVERSION=	1.6.0
 CATEGORIES?=	textproc
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
@@ -38,11 +37,12 @@ CONFIGURE_ARGS+=	--with-x --with-xft
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--with-gtk2
 .endif
-CONFIGURE_ARGS+=	--enable-emacs
+CONFIGURE_ARGS+=	--enable-emacs --with-sj3 --with-canna --with-prime
 .endif
 
-CONFIGURE_ENV?=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib  -L${LOCALBASE}/lib"
+CONFIGURE_ENV?=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 .if !defined(UIM_SLAVE)
 .if !defined(WITHOUT_X11)
@@ -101,9 +101,10 @@ do-install:
 	cd ${WRKSRC}/helper && ${GMAKE} install-libexecPROGRAMS
 .endif
 
-.if !defined(UIM_SLAVE) && !defined(NOPORTDOCS)
+.if !defined(UIM_SLAVE)
 post-install:
 	${MKDIR} ${DATADIR}/helperdata
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR_JA}
 	${INSTALL_DATA} ${WRKSRC}/doc/KEY ${DOCSDIR}/KEY
@@ -111,6 +112,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/fep/README ${DOCSDIR}/README.key
 	${INSTALL_DATA} ${WRKSRC}/fep/README.ja ${DOCSDIR_JA}/README.fep
 	${INSTALL_DATA} ${WRKSRC}/xim/README ${DOCSDIR}/README.xim
+.endif
 .endif
 
 .include <bsd.port.post.mk>

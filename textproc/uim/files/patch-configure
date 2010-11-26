@@ -1,0 +1,11 @@
+--- configure.orig	2010-11-18 05:01:48.000000000 +0900
++++ configure	2010-11-18 05:02:16.000000000 +0900
+@@ -24012,7 +24012,7 @@
+ 
+ # Check whether --with-xft was given.
+ if test "${with_xft+set}" = set; then
+-  withval=$with_xft;  if test "x$enableval" = "xyes"; then
++  withval=$with_xft;  if test "x$withval" = "xyes"; then
+         TRY_XFT=yes
+       else
+ 	TRY_XFT=no

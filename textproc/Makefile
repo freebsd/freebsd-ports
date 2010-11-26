@@ -1258,6 +1258,7 @@
     SUBDIR += uim-gnome
     SUBDIR += uim-gtk
     SUBDIR += uim-kde
+    SUBDIR += uim-kde4
     SUBDIR += uim-m17nlib
     SUBDIR += uim-qt
     SUBDIR += uim-qt4
