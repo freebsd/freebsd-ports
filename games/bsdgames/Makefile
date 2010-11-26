@@ -12,7 +12,8 @@ PORTEPOCH=	1
 CATEGORIES=	games
 # Fetched from http://gitweb.dragonflybsd.org/dragonfly.git/tree/v2.4.0:/games
 # Content is stable, but file timestamps differ. Bad gitweb, no cookie!
-MASTER_SITES=	${MASTER_SITE_LOCAL:S/%SUBDIR%/uqs/}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	uqs
 
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Traditional BSD games taken from DragonFly BSD

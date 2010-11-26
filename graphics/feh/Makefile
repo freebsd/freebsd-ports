@@ -9,7 +9,8 @@ PORTNAME=	feh
 PORTVERSION=	1.10
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.chaosdorf.de/~derf/feh/ \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%/uqs/}
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	uqs
 
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	An image viewer that utilizes Imlib2

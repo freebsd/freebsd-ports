@@ -9,7 +9,8 @@ PORTVERSION=	0.3.1
 PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://buzzinhornetz.ath.cx/wmbday/files/ \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%/uqs/}
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	uqs
 
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Window Maker dock app that will remind you of birthdays

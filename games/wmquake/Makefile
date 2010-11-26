@@ -10,7 +10,8 @@ PORTVERSION=	1.1
 PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%/uqs/}
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	uqs
 
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Id Software\'s Quake I in a 64x64 WM dockapp window
