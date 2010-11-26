@@ -1,12 +1,24 @@
 bin/torrus
 etc/rc.d/torrus.sh
-etc/torrus/conf/devdiscover-siteconfig.pl.sample
-etc/torrus/conf/email-siteconfig.pl.sample
-etc/torrus/conf/notify-siteconfig.pl.sample
-etc/torrus/conf/snmptrap-siteconfig.pl.sample
-etc/torrus/conf/torrus-siteconfig.pl.sample
 etc/torrus/discovery/README
+@unexec if cmp -s %D/etc/torrus/conf/devdiscover-siteconfig.pl.sample %D/etc/torrus/conf/devdiscover-siteconfig.pl; then rm -f %D/etc/torrus/conf/devdiscover-siteconfig.pl; fi
+etc/torrus/conf/devdiscover-siteconfig.pl.sample
+@exec if [ ! -f %D/etc/torrus/conf/devdiscover-siteconfig.pl ] ; then cp -p %D/%F %B/devdiscover-siteconfig.pl; fi
+@unexec if cmp -s %D/etc/torrus/conf/email-siteconfig.pl.sample %D/etc/torrus/conf/email-siteconfig.pl; then rm -f %D/etc/torrus/conf/email-siteconfig.pl; fi
+etc/torrus/conf/email-siteconfig.pl.sample
+@exec if [ ! -f %D/etc/torrus/conf/email-siteconfig.pl ] ; then cp -p %D/%F %B/email-siteconfig.pl; fi
+@unexec if cmp -s %D/etc/torrus/conf/notify-siteconfig.pl.sample %D/etc/torrus/conf/notify-siteconfig.pl; then rm -f %D/etc/torrus/conf/notify-siteconfig.pl; fi
+etc/torrus/conf/notify-siteconfig.pl.sample
+@exec if [ ! -f %D/etc/torrus/conf/notify-siteconfig.pl ] ; then cp -p %D/%F %B/notify-siteconfig.pl; fi
+@unexec if cmp -s %D/etc/torrus/conf/snmptrap-siteconfig.pl.sample %D/etc/torrus/conf/snmptrap-siteconfig.pl; then rm -f %D/etc/torrus/conf/snmptrap-siteconfig.pl; fi
+etc/torrus/conf/snmptrap-siteconfig.pl.sample
+@exec if [ ! -f %D/etc/torrus/conf/snmptrap-siteconfig.pl ] ; then cp -p %D/%F %B/snmptrap-siteconfig.pl; fi
+@unexec if cmp -s %D/etc/torrus/conf/torrus-siteconfig.pl.sample %D/etc/torrus/conf/torrus-siteconfig.pl; then rm -f %D/etc/torrus/conf/torrus-siteconfig.pl; fi
+etc/torrus/conf/torrus-siteconfig.pl.sample
+@exec if [ ! -f %D/etc/torrus/conf/torrus-siteconfig.pl ] ; then cp -p %D/%F %B/torrus-siteconfig.pl; fi
+@unexec if cmp -s %D/etc/torrus/xmlconfig/site-global.xml.sample %D/etc/torrus/xmlconfig/site-global.xml; then rm -f %D/etc/torrus/xmlconfig/site-global.xml; fi
 etc/torrus/xmlconfig/site-global.xml.sample
+@exec if [ ! -f %D/etc/torrus/xmlconfig/site-global.xml ] ; then cp -p %D/%F %B/site-global.xml; fi
 libexec/torrus/acledit
 libexec/torrus/action_notify
 libexec/torrus/action_printemail
@@ -21,16 +33,20 @@ libexec/torrus/compilexml
 libexec/torrus/configinfo
 libexec/torrus/configsnapshot
 libexec/torrus/devdiscover
+libexec/torrus/flushmonitors
 libexec/torrus/genddx
 libexec/torrus/genlist
 libexec/torrus/genreport
 libexec/torrus/install_plugin
 libexec/torrus/monitor
+libexec/torrus/nodeid
 libexec/torrus/rrddir2xml
 libexec/torrus/schedulerinfo
 libexec/torrus/scripts/rrdup_notify.sh
 libexec/torrus/scripts/xml/extract-skeleton.xsl
+libexec/torrus/snmpfailures
 libexec/torrus/srvderive
+libexec/torrus/torrus.fcgi
 libexec/torrus/ttproclist
 %%DOCSDIR%%/devdoc/architecture.pod
 %%DOCSDIR%%/devdoc/devdiscover.pod
@@ -43,6 +59,7 @@ libexec/torrus/ttproclist
 %%DOCSDIR%%/devdoc/wd.monitor-escalation.pod
 %%DOCSDIR%%/devdoc/wd.uptime-mon.pod
 %%DOCSDIR%%/install.txt
+%%DOCSDIR%%/nodeid_usage.txt
 %%DOCSDIR%%/reporting_setup.txt
 %%DOCSDIR%%/rpnexpr.txt
 %%DOCSDIR%%/rrfw_torrus_migration.txt
@@ -58,101 +75,107 @@ libexec/torrus/ttproclist
 %%EXAMPLESDIR%%/onmsInterfaces.sh
 %%EXAMPLESDIR%%/setmonitor.xupdate.xml
 %%EXAMPLESDIR%%/torrus-siteconfig.powerbook.pl
-share/torrus/conf_defaults/devdiscover-config.pl
-share/torrus/conf_defaults/initscript.conf
-share/torrus/conf_defaults/instvars
-share/torrus/conf_defaults/torrus-config.pl
-share/torrus/conf_defaults/webmux.pl
-share/torrus/conf_defaults/webmux2.pl
-share/torrus/sup/dtd/snmp-discovery.dtd
-share/torrus/sup/dtd/torrus-config.dtd
-share/torrus/sup/mibs/RRDTOOL-SMI.txt
-share/torrus/sup/mibs/TORRUS-MIB.txt
-share/torrus/sup/styling/colornames.pl
-share/torrus/sup/styling/rainbow-schema.pl
-share/torrus/sup/styling/torrus-schema.pl
-share/torrus/sup/webplain/explain-rrdgraph.html
-share/torrus/sup/webplain/torrus-printer.css
-share/torrus/sup/webplain/torrus-report.css
-share/torrus/sup/webplain/torrus.css
-share/torrus/templates/aclexport.xml
-share/torrus/templates/adminfo.html
-share/torrus/templates/default-chooser.html
-share/torrus/templates/default-dir.html
-share/torrus/templates/default-helptext.html
-share/torrus/templates/default-login.html
-share/torrus/templates/default-recursivedir.html
-share/torrus/templates/default-rrd.html
-share/torrus/templates/default-tset.html
-share/torrus/templates/email-alarm.txt
-share/torrus/templates/expanded-dir.html
-share/torrus/templates/globalsearch.html
-share/torrus/templates/html-incblocks.txt
-share/torrus/templates/overview-subleaves.html
-share/torrus/templates/report-index.html
-share/torrus/templates/report-monthly.html
-share/torrus/templates/report-serviceid.html
-share/torrus/templates/report-yearly.html
-share/torrus/templates/search.html
-share/torrus/templates/tset-list.html
-share/torrus/xmlconfig/cdef-collector-defs.xml
-share/torrus/xmlconfig/defaults.xml
-share/torrus/xmlconfig/examples/apc-ups.xml
-share/torrus/xmlconfig/examples/ascend.max.xml
-share/torrus/xmlconfig/examples/docsis-monitors.xml
-share/torrus/xmlconfig/examples/generic-netsnmp.xml
-share/torrus/xmlconfig/examples/hpux.xml
-share/torrus/xmlconfig/examples/monitors.xml
-share/torrus/xmlconfig/examples/multigraph.xml
-share/torrus/xmlconfig/examples/rainbow-schema.xml
-share/torrus/xmlconfig/examples/servers.data
-share/torrus/xmlconfig/examples/servers.tmpl
-share/torrus/xmlconfig/generic/collector-periods.xml
-share/torrus/xmlconfig/generic/monitors.xml
-share/torrus/xmlconfig/generic/rfc1628.ups.xml
-share/torrus/xmlconfig/generic/rfc1697.rdbms.xml
-share/torrus/xmlconfig/generic/rfc2662.adsl-line.xml
-share/torrus/xmlconfig/generic/rfc2670.docsis-if.xml
-share/torrus/xmlconfig/generic/rfc2790.host-resources.xml
-share/torrus/xmlconfig/generic/rfc2863.if-mib.xml
-share/torrus/xmlconfig/old/cisco-mac-accounting-example.xml
-share/torrus/xmlconfig/old/cisco.generic.old-0.1.4.xml
-share/torrus/xmlconfig/old/cisco.ios.mac-accounting-0.1.8.xml
-share/torrus/xmlconfig/old/rfc1213.xml
-share/torrus/xmlconfig/old/rfc2670.docsis-if.old.0.1.5d-20040224.xml
-share/torrus/xmlconfig/old/rfc2670.docsis-if.old.1.0.4.xml
-share/torrus/xmlconfig/old/rfc2863.if-mib.old-0.1.4.xml
-share/torrus/xmlconfig/old/rfc2863.if-mib.old-0.1.7.xml
-share/torrus/xmlconfig/old/snmp-defs.old-0.1.2.xml
-share/torrus/xmlconfig/snmp-defs.xml
-share/torrus/xmlconfig/vendor/alteon.xml
-share/torrus/xmlconfig/vendor/apc.ups.xml
-share/torrus/xmlconfig/vendor/apple.ae.xml
-share/torrus/xmlconfig/vendor/arbor_e.xml
-share/torrus/xmlconfig/vendor/ascend.max.xml
-share/torrus/xmlconfig/vendor/atmel.xml
-share/torrus/xmlconfig/vendor/betternetworks.xml
-share/torrus/xmlconfig/vendor/cisco.firewall.xml
-share/torrus/xmlconfig/vendor/cisco.generic.xml
-share/torrus/xmlconfig/vendor/cisco.ios.docsis.xml
-share/torrus/xmlconfig/vendor/cisco.ios.mac-accounting.xml
-share/torrus/xmlconfig/vendor/cisco.ios.xml
-share/torrus/xmlconfig/vendor/cisco.sce.xml
-share/torrus/xmlconfig/vendor/cisco.vdsl-line.xml
-share/torrus/xmlconfig/vendor/compaq.cim.xml
-share/torrus/xmlconfig/vendor/empire.systemedge.ntregperf.xml
-share/torrus/xmlconfig/vendor/empire.systemedge.xml
-share/torrus/xmlconfig/vendor/f5.bigip.xml
-share/torrus/xmlconfig/vendor/junos.xml
-share/torrus/xmlconfig/vendor/hp.hpux.xml
-share/torrus/xmlconfig/vendor/liebert.xml
-share/torrus/xmlconfig/vendor/microsoft.windows.xml
-share/torrus/xmlconfig/vendor/motorola.bsr.xml
-share/torrus/xmlconfig/vendor/netapp.filer.xml
-share/torrus/xmlconfig/vendor/netscreen.xml
-share/torrus/xmlconfig/vendor/paradyne.xdsl.xml
-share/torrus/xmlconfig/vendor/symmetricom.xml
-share/torrus/xmlconfig/vendor/ucd.ucd-snmp.xml
+%%DATADIR%%/conf_defaults/devdiscover-config.pl
+%%DATADIR%%/conf_defaults/initscript.conf
+%%DATADIR%%/conf_defaults/instvars
+%%DATADIR%%/conf_defaults/torrus-config.pl
+%%DATADIR%%/conf_defaults/webmux.pl
+%%DATADIR%%/conf_defaults/webmux2.pl
+%%DATADIR%%/sup/dtd/snmp-discovery.dtd
+%%DATADIR%%/sup/dtd/torrus-config.dtd
+%%DATADIR%%/sup/mibs/RRDTOOL-SMI.txt
+%%DATADIR%%/sup/mibs/TORRUS-MIB.txt
+%%DATADIR%%/sup/styling/colornames.pl
+%%DATADIR%%/sup/styling/rainbow-schema.pl
+%%DATADIR%%/sup/styling/torrus-schema.pl
+%%DATADIR%%/sup/webplain/explain-rrdgraph.html
+%%DATADIR%%/sup/webplain/torrus-printer.css
+%%DATADIR%%/sup/webplain/torrus-report.css
+%%DATADIR%%/sup/webplain/torrus.css
+%%DATADIR%%/templates/aclexport.xml
+%%DATADIR%%/templates/adminfo.html
+%%DATADIR%%/templates/default-chooser.html
+%%DATADIR%%/templates/default-dir.html
+%%DATADIR%%/templates/default-helptext.html
+%%DATADIR%%/templates/default-login.html
+%%DATADIR%%/templates/default-recursivedir.html
+%%DATADIR%%/templates/default-rrd.html
+%%DATADIR%%/templates/default-tset.html
+%%DATADIR%%/templates/email-alarm.txt
+%%DATADIR%%/templates/expanded-dir.html
+%%DATADIR%%/templates/globalsearch.html
+%%DATADIR%%/templates/html-incblocks.txt
+%%DATADIR%%/templates/overview-subleaves.html
+%%DATADIR%%/templates/report-index.html
+%%DATADIR%%/templates/report-monthly.html
+%%DATADIR%%/templates/report-serviceid.html
+%%DATADIR%%/templates/report-yearly.html
+%%DATADIR%%/templates/search.html
+%%DATADIR%%/templates/tset-list.html
+%%DATADIR%%/xmlconfig/cdef-collector-defs.xml
+%%DATADIR%%/xmlconfig/defaults.xml
+%%DATADIR%%/xmlconfig/examples/apc-ups.xml
+%%DATADIR%%/xmlconfig/examples/ascend.max.xml
+%%DATADIR%%/xmlconfig/examples/docsis-monitors.xml
+%%DATADIR%%/xmlconfig/examples/generic-netsnmp.xml
+%%DATADIR%%/xmlconfig/examples/hpux.xml
+%%DATADIR%%/xmlconfig/examples/monitors.xml
+%%DATADIR%%/xmlconfig/examples/multigraph.xml
+%%DATADIR%%/xmlconfig/examples/rainbow-schema.xml
+%%DATADIR%%/xmlconfig/examples/servers.data
+%%DATADIR%%/xmlconfig/examples/servers.tmpl
+%%DATADIR%%/xmlconfig/generic/collector-periods.xml
+%%DATADIR%%/xmlconfig/generic/monitors.xml
+%%DATADIR%%/xmlconfig/generic/rfc1628.ups.xml
+%%DATADIR%%/xmlconfig/generic/rfc1697.rdbms.xml
+%%DATADIR%%/xmlconfig/generic/rfc2662.adsl-line.xml
+%%DATADIR%%/xmlconfig/generic/rfc2670.docsis-if.xml
+%%DATADIR%%/xmlconfig/generic/rfc2790.host-resources.xml
+%%DATADIR%%/xmlconfig/generic/rfc2863.if-mib.xml
+%%DATADIR%%/xmlconfig/old/cisco-mac-accounting-example.xml
+%%DATADIR%%/xmlconfig/old/cisco.generic.old-0.1.4.xml
+%%DATADIR%%/xmlconfig/old/cisco.ios.mac-accounting-0.1.8.xml
+%%DATADIR%%/xmlconfig/old/rfc1213.xml
+%%DATADIR%%/xmlconfig/old/rfc2670.docsis-if.old.0.1.5d-20040224.xml
+%%DATADIR%%/xmlconfig/old/rfc2670.docsis-if.old.1.0.4.xml
+%%DATADIR%%/xmlconfig/old/rfc2863.if-mib.old-0.1.4.xml
+%%DATADIR%%/xmlconfig/old/rfc2863.if-mib.old-0.1.7.xml
+%%DATADIR%%/xmlconfig/old/snmp-defs.old-0.1.2.xml
+%%DATADIR%%/xmlconfig/snmp-defs.xml
+%%DATADIR%%/xmlconfig/vendor/alteon.xml
+%%DATADIR%%/xmlconfig/vendor/alu-timetra.xml
+%%DATADIR%%/xmlconfig/vendor/apc.ups.xml
+%%DATADIR%%/xmlconfig/vendor/apple.ae.xml
+%%DATADIR%%/xmlconfig/vendor/arbor_e.xml
+%%DATADIR%%/xmlconfig/vendor/ascend.max.xml
+%%DATADIR%%/xmlconfig/vendor/atmel.xml
+%%DATADIR%%/xmlconfig/vendor/betternetworks.xml
+%%DATADIR%%/xmlconfig/vendor/casa-cmts.xml
+%%DATADIR%%/xmlconfig/vendor/cisco.firewall.xml
+%%DATADIR%%/xmlconfig/vendor/cisco.generic.xml
+%%DATADIR%%/xmlconfig/vendor/cisco.ios.docsis.xml
+%%DATADIR%%/xmlconfig/vendor/cisco.ios.mac-accounting.xml
+%%DATADIR%%/xmlconfig/vendor/cisco.ios.xml
+%%DATADIR%%/xmlconfig/vendor/cisco.sce.xml
+%%DATADIR%%/xmlconfig/vendor/cisco.vdsl-line.xml
+%%DATADIR%%/xmlconfig/vendor/compaq.cim.xml
+%%DATADIR%%/xmlconfig/vendor/empire.systemedge.ntregperf.xml
+%%DATADIR%%/xmlconfig/vendor/empire.systemedge.xml
+%%DATADIR%%/xmlconfig/vendor/f5.bigip.xml
+%%DATADIR%%/xmlconfig/vendor/foundry.xml
+%%DATADIR%%/xmlconfig/vendor/ftos.xml
+%%DATADIR%%/xmlconfig/vendor/jacarta.xml
+%%DATADIR%%/xmlconfig/vendor/junos.xml
+%%DATADIR%%/xmlconfig/vendor/hp.hpux.xml
+%%DATADIR%%/xmlconfig/vendor/liebert.xml
+%%DATADIR%%/xmlconfig/vendor/microsoft.windows.xml
+%%DATADIR%%/xmlconfig/vendor/motorola.bsr.xml
+%%DATADIR%%/xmlconfig/vendor/netapp.filer.xml
+%%DATADIR%%/xmlconfig/vendor/netbotz.xml
+%%DATADIR%%/xmlconfig/vendor/netscreen.xml
+%%DATADIR%%/xmlconfig/vendor/paradyne.xdsl.xml
+%%DATADIR%%/xmlconfig/vendor/symmetricom.xml
+%%DATADIR%%/xmlconfig/vendor/ucd.ucd-snmp.xml
 %%SITE_PERL%%/Torrus/ACL.pm
 %%SITE_PERL%%/Torrus/ACL/AuthLocalMD5.pm
 %%SITE_PERL%%/Torrus/ACL/Edit.pm
@@ -160,6 +183,7 @@ share/torrus/xmlconfig/vendor/ucd.ucd-snmp.xml
 %%SITE_PERL%%/Torrus/ACL/Import.pm
 %%SITE_PERL%%/Torrus/Apache2Handler.pm
 %%SITE_PERL%%/Torrus/ApacheHandler.pm
+%%SITE_PERL%%/Torrus/CGI.pm
 %%SITE_PERL%%/Torrus/Collector.pm
 %%SITE_PERL%%/Torrus/Collector/CDef.pm
 %%SITE_PERL%%/Torrus/Collector/CDef_Params.pm
@@ -176,14 +200,17 @@ share/torrus/xmlconfig/vendor/ucd.ucd-snmp.xml
 %%SITE_PERL%%/Torrus/DB.pm
 %%SITE_PERL%%/Torrus/DataAccess.pm
 %%SITE_PERL%%/Torrus/DevDiscover.pm
+%%SITE_PERL%%/Torrus/DevDiscover/ALU_Timetra.pm
 %%SITE_PERL%%/Torrus/DevDiscover/ATMEL.pm
 %%SITE_PERL%%/Torrus/DevDiscover/AlliedTelesyn_PBC18.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Alteon.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Apple_AE.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Arbor_E.pm
+%%SITE_PERL%%/Torrus/DevDiscover/Arista.pm
 %%SITE_PERL%%/Torrus/DevDiscover/AscendMax.pm
 %%SITE_PERL%%/Torrus/DevDiscover/AxxessIT.pm
 %%SITE_PERL%%/Torrus/DevDiscover/BetterNetworks.pm
+%%SITE_PERL%%/Torrus/DevDiscover/CasaCMTS.pm
 %%SITE_PERL%%/Torrus/DevDiscover/CiscoCatOS.pm
 %%SITE_PERL%%/Torrus/DevDiscover/CiscoFirewall.pm
 %%SITE_PERL%%/Torrus/DevDiscover/CiscoGeneric.pm
@@ -196,11 +223,15 @@ share/torrus/xmlconfig/vendor/ucd.ucd-snmp.xml
 %%SITE_PERL%%/Torrus/DevDiscover/CompaqCIM.pm
 %%SITE_PERL%%/Torrus/DevDiscover/EmpireSystemedge.pm
 %%SITE_PERL%%/Torrus/DevDiscover/F5BigIp.pm
+%%SITE_PERL%%/Torrus/DevDiscover/Foundry.pm
+%%SITE_PERL%%/Torrus/DevDiscover/FTOS.pm
+%%SITE_PERL%%/Torrus/DevDiscover/Jacarta.pm
 %%SITE_PERL%%/Torrus/DevDiscover/JunOS.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Liebert.pm
 %%SITE_PERL%%/Torrus/DevDiscover/MicrosoftWindows.pm
 %%SITE_PERL%%/Torrus/DevDiscover/MotorolaBSR.pm
 %%SITE_PERL%%/Torrus/DevDiscover/NetApp.pm
+%%SITE_PERL%%/Torrus/DevDiscover/NetBotz.pm
 %%SITE_PERL%%/Torrus/DevDiscover/NetScreen.pm
 %%SITE_PERL%%/Torrus/DevDiscover/OracleDatabase.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Paradyne.pm
@@ -233,48 +264,43 @@ share/torrus/xmlconfig/vendor/ucd.ucd-snmp.xml
 %%SITE_PERL%%/Torrus/Scheduler.pm
 %%SITE_PERL%%/Torrus/SchedulerInfo.pm
 %%SITE_PERL%%/Torrus/SiteConfig.pm
+%%SITE_PERL%%/Torrus/SNMP_Failures.pm
 %%SITE_PERL%%/Torrus/SQL/Reports.pm
 %%SITE_PERL%%/Torrus/SQL/SrvExport.pm
 %%SITE_PERL%%/Torrus/SQL.pm
 %%SITE_PERL%%/Torrus/TimeStamp.pm
-@exec mkdir %D/var/torrus 2>/dev/null || true
-@exec mkdir %D/var/torrus/cache 2>/dev/null || true
-@exec mkdir %D/var/torrus/db 2>/dev/null || true
-@exec mkdir %D/var/torrus/reports 2>/dev/null || true
-@exec mkdir %D/var/torrus/session_data 2>/dev/null || true
-@exec mkdir %D/var/torrus/session_data/lock 2>/dev/null || true
-@exec mkdir %D/var/torrus/session_data/store 2>/dev/null || true
+@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 755 /var/torrus 2>/dev/null || true
+@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 2775 /var/torrus/cache 2>/dev/null || true
+@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 2775 /var/torrus/collector_rrd 2>/dev/null || true
+@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 2775 /var/torrus/db 2>/dev/null || true
+@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 755 /var/torrus/reports 2>/dev/null || true
+@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 755 /var/torrus/session_data 2>/dev/null || true
+@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 2775 /var/torrus/session_data/lock 2>/dev/null || true
+@exec install -d -g %%TORRUS_USER%% -o %%TORRUS_USER%% -m 2775 /var/torrus/session_data/store 2>/dev/null || true
 @exec mkdir %D/etc/torrus/templates 2>/dev/null || true
-@exec mkdir %D/share/torrus/plugins 2>/dev/null || true
-@exec mkdir %D/share/torrus/plugins/devdiscover-config 2>/dev/null || true
-@exec mkdir %D/share/torrus/plugins/torrus-config 2>/dev/null || true
-@exec mkdir %D/share/torrus/plugins/wrapper 2>/dev/null || true
-@exec mkdir %D/share/torrus/sup/webscripts 2>/dev/null || true
-@dirrm var/torrus/session_data/store
-@dirrm var/torrus/session_data/lock
-@dirrm var/torrus/session_data
-@dirrm var/torrus/reports
-@dirrmtry var/torrus/db
-@dirrm var/torrus/cache
-@dirrmtry var/torrus
-@dirrm share/torrus/xmlconfig/vendor
-@dirrm share/torrus/xmlconfig/old
-@dirrm share/torrus/xmlconfig/generic
-@dirrm share/torrus/xmlconfig/examples
-@dirrm share/torrus/xmlconfig
-@dirrm share/torrus/templates
-@dirrm share/torrus/sup/webscripts
-@dirrm share/torrus/sup/webplain
-@dirrm share/torrus/sup/styling
-@dirrm share/torrus/sup/mibs
-@dirrm share/torrus/sup/dtd
-@dirrm share/torrus/sup
-@dirrm share/torrus/plugins/wrapper
-@dirrm share/torrus/plugins/torrus-config
-@dirrm share/torrus/plugins/devdiscover-config
-@dirrm share/torrus/plugins
-@dirrm share/torrus/conf_defaults
-@dirrm share/torrus
+@exec mkdir %D/%%DATADIR%%/plugins 2>/dev/null || true
+@exec mkdir %D/%%DATADIR%%/plugins/devdiscover-config 2>/dev/null || true
+@exec mkdir %D/%%DATADIR%%/plugins/torrus-config 2>/dev/null || true
+@exec mkdir %D/%%DATADIR%%/plugins/wrapper 2>/dev/null || true
+@exec mkdir %D/%%DATADIR%%/sup/webscripts 2>/dev/null || true
+@dirrm %%DATADIR%%/xmlconfig/vendor
+@dirrm %%DATADIR%%/xmlconfig/old
+@dirrm %%DATADIR%%/xmlconfig/generic
+@dirrm %%DATADIR%%/xmlconfig/examples
+@dirrm %%DATADIR%%/xmlconfig
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/sup/webscripts
+@dirrm %%DATADIR%%/sup/webplain
+@dirrm %%DATADIR%%/sup/styling
+@dirrm %%DATADIR%%/sup/mibs
+@dirrm %%DATADIR%%/sup/dtd
+@dirrm %%DATADIR%%/sup
+@dirrm %%DATADIR%%/plugins/wrapper
+@dirrm %%DATADIR%%/plugins/torrus-config
+@dirrm %%DATADIR%%/plugins/devdiscover-config
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/conf_defaults
+@dirrm %%DATADIR%%
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DOCSDIR%%/devdoc
 @dirrm %%DOCSDIR%%
