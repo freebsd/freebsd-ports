@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jmrueda@diatel.upm.es
 COMMENT=	Course management system based on social constructionism
 
+CONFLICTS=	moodle-2.*.*
+
 USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype
 WRKSRC=		${WRKDIR}/moodle
 
