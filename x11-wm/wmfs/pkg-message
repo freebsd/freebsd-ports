@@ -2,7 +2,7 @@
 wmfs has been installed.
 
 A default wmfsrc has been installed to:
- PREFIX/share/doc/wmfs/wmfsrc
+ PREFIX/etc/xdg/wmfs/wmfsrc
 Copy it to ~/.config/wmfs/ and modify it.
 
 ##########################################
