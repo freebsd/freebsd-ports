@@ -19,6 +19,7 @@ share/mime/packages/rosegarden.xml
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
 @dirrmtry share/icons/hicolor/64x64/mimetypes
+@dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor/32x32/mimetypes
 @dirrmtry share/icons/hicolor/32x32/apps
