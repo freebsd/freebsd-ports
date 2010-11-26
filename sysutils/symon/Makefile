@@ -9,7 +9,8 @@ PORTNAME=	symon
 PORTVERSION=	2.82
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.xs4all.nl/~wpd/symon/philes/ \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%/uqs/}
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	uqs
 
 MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Performance and information monitoring tool
