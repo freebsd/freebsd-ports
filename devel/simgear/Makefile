@@ -7,11 +7,12 @@
 
 PORTNAME=	SimGear
 PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel games
-MASTER_SITES=	ftp://ftp.de.simgear.org/pub/simgear/Source/ \
-		ftp://mirrors.ibiblio.org/pub/mirrors/simgear/ftp/Source/ \
-		ftp://goflyflightgear.com/simgear/Source/
+MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/simgear/ftp/Source/ \
+		ftp://ftp.de.flightgear.org/pub/simgear/Source/ \
+		ftp://goflyflightgear.com/simgear/Source/ \
+		ftp://flightgear.wo0t.de/simgear-ftp/ftp/Source/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A toolkit for 3D games and simulations
@@ -26,6 +27,8 @@ LIB_DEPENDS+=	osg.59:${PORTSDIR}/graphics/osg-devel
 .else
 LIB_DEPENDS+=	osg.55:${PORTSDIR}/graphics/osg
 .endif
+
+LICENSE=	GPLv2
 
 USE_XORG=	ice sm x11 xext xi xt xmu
 USE_OPENAL=	al alut
