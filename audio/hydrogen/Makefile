@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	hydrogen
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.4.2
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/Hydrogen/${PORTVERSION}%20Sources
+MASTER_SITES=	SF/${PORTNAME}/Hydrogen/${MAJORVERSION}%20Sources
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	An advanced drum machine
@@ -20,6 +20,7 @@ LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+MAJORVERSION=	0.9.4
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui linguist_build moc_build network qt3support rcc_build sql uic_build xml
 USE_SCONS=	yes
