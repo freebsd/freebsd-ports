@@ -418,14 +418,12 @@ lib/kde4/kritahairypaintop.so
 lib/kde4/kritahistogram.so
 lib/kde4/kritaimageenhancement.so
 lib/kde4/kritaimagesize.so
-%%GTL%%lib/kde4/kritakscolorspacesplugin.so
 lib/kde4/kritalayercompose.so
 lib/kde4/kritalevelfilter.so
 lib/kde4/kritametadataeditor.so
 lib/kde4/kritamodifyselection.so
 lib/kde4/kritanoisefilter.so
 lib/kde4/kritaoilpaintfilter.so
-%%GTL%%lib/kde4/kritapainterlymixer.so
 lib/kde4/kritaparticlepaintop.so
 lib/kde4/kritapixelizefilter.so
 lib/kde4/kritaraindropsfilter.so
@@ -437,7 +435,8 @@ lib/kde4/kritascripting.so
 lib/kde4/kritaselectiontools.so
 lib/kde4/kritaseparatechannels.so
 lib/kde4/kritashearimage.so
-%%GTL%%lib/kde4/kritashiva.so
+%%GTL%%lib/kde4/kritashivafilters.so
+%%GTL%%lib/kde4/kritashivagenerators.so
 lib/kde4/kritasmallcolorselector.so
 lib/kde4/kritasmalltilesfilter.so
 lib/kde4/kritasobelfilter.so
@@ -512,11 +511,11 @@ lib/kde4/libkounavailpart.so
 lib/kde4/libkplatopart.so
 lib/kde4/libkplatoworkpart.so
 lib/kde4/libkpresenterpart.so
-%%GTL%%lib/kde4/libkrita_openexr_export.so
-%%GTL%%lib/kde4/libkrita_openexr_import.so
 lib/kde4/libkrita_raw_import.so
 lib/kde4/libkritabmpexport.so
 lib/kde4/libkritabmpimport.so
+%%GTL%%lib/kde4/libkritaexrexport.so
+%%GTL%%lib/kde4/libkritaexrimport.so
 lib/kde4/libkritagifimport.so
 lib/kde4/libkritajp2export.so
 lib/kde4/libkritajp2import.so
@@ -733,10 +732,10 @@ share/applications/kde4/kplatowork.desktop
 share/applications/kde4/kpresenter.desktop
 share/applications/kde4/krita.desktop
 share/applications/kde4/krita_bmp.desktop
+%%GTL%%share/applications/kde4/krita_exr.desktop
 share/applications/kde4/krita_gif.desktop
 share/applications/kde4/krita_jp2.desktop
 share/applications/kde4/krita_jpeg.desktop
-%%GTL%%share/applications/kde4/krita_openexr.desktop
 share/applications/kde4/krita_ora.desktop
 share/applications/kde4/krita_pdf.desktop
 share/applications/kde4/krita_png.desktop
@@ -1644,14 +1643,6 @@ share/apps/krita/gradients/Yellow_Orange.ggr
 share/apps/krita/icons/hicolor/48x48/actions/template_cmyk_empty.png
 share/apps/krita/icons/hicolor/48x48/actions/template_gray_empty.png
 share/apps/krita/icons/hicolor/48x48/actions/template_rgb_empty.png
-%%GTL%%share/apps/krita/illuminants/ASP_per-wavelength_111_10001.xll
-%%GTL%%share/apps/krita/illuminants/ASP_per-wavelength_111_10004.xll
-%%GTL%%share/apps/krita/illuminants/ASP_per-wavelength_111_10005.xll
-%%GTL%%share/apps/krita/illuminants/ASP_per-wavelength_111_10008.xll
-%%GTL%%share/apps/krita/illuminants/ASP_per-wavelength_121_10003.xll
-%%GTL%%share/apps/krita/illuminants/ASP_per-wavelength_222_10002.xll
-%%GTL%%share/apps/krita/illuminants/ASP_per-wavelength_222_10006.xll
-%%GTL%%share/apps/krita/illuminants/ASP_per-wavelength_343_10007.xll
 share/apps/krita/images/krita-chalk.png
 share/apps/krita/images/krita-curve.png
 share/apps/krita/images/krita-deform.png
@@ -1670,6 +1661,7 @@ share/apps/krita/krita.rc
 share/apps/krita/krita_readonly.rc
 share/apps/krita/metadata/schemas/dc.schema
 share/apps/krita/metadata/schemas/exif.schema
+%%GTL%%share/apps/krita/metadata/schemas/exrchannels.schema
 share/apps/krita/metadata/schemas/mkn.schema
 share/apps/krita/metadata/schemas/tiff.schema
 share/apps/krita/metadata/schemas/xmp.schema
@@ -1868,20 +1860,26 @@ share/apps/krita/shaders/square_gradient.frag
 %%GTL%%share/apps/krita/shiva/kernels/AntiBullify.shiva
 %%GTL%%share/apps/krita/shiva/kernels/Bullify.shiva
 %%GTL%%share/apps/krita/shiva/kernels/Caleidoscope.shiva
+%%GTL%%share/apps/krita/shiva/kernels/CentralAbsorbtion.shiva
 %%GTL%%share/apps/krita/shiva/kernels/CheckerBoard.shiva
+%%GTL%%share/apps/krita/shiva/kernels/ConcentricCircles.shiva
 %%GTL%%share/apps/krita/shiva/kernels/Disco.shiva
 %%GTL%%share/apps/krita/shiva/kernels/Droste.shiva
+%%GTL%%share/apps/krita/shiva/kernels/FractalExplorer.shiva
 %%GTL%%share/apps/krita/shiva/kernels/MandelbrotSet.shiva
+%%GTL%%share/apps/krita/shiva/kernels/Metaball.shiva
 %%GTL%%share/apps/krita/shiva/kernels/MirrorImpose.shiva
 %%GTL%%share/apps/krita/shiva/kernels/Moire.shiva
 %%GTL%%share/apps/krita/shiva/kernels/Mosaic.shiva
 %%GTL%%share/apps/krita/shiva/kernels/PerlinNoise.shiva
 %%GTL%%share/apps/krita/shiva/kernels/RadialGradient.shiva
 %%GTL%%share/apps/krita/shiva/kernels/Ripples.shiva
+%%GTL%%share/apps/krita/shiva/kernels/RotativeBlur.shiva
 %%GTL%%share/apps/krita/shiva/kernels/Roundify.shiva
 %%GTL%%share/apps/krita/shiva/kernels/Sea.shiva
 %%GTL%%share/apps/krita/shiva/kernels/Seamlesser.shiva
 %%GTL%%share/apps/krita/shiva/kernels/Sectorize.shiva
+%%GTL%%share/apps/krita/shiva/kernels/Singleball.shiva
 %%GTL%%share/apps/krita/shiva/kernels/Slices.shiva
 %%GTL%%share/apps/krita/shiva/kernels/Something.shiva
 %%GTL%%share/apps/krita/shiva/kernels/StereographicProjection.shiva
@@ -2215,20 +2213,29 @@ share/apps/kword/templates/Normal/ProfessionalLetter.desktop
 share/apps/kword/templates/Normal/TwoColumns.desktop
 share/apps/kword/templates/Normal/TwoColumnsLetter.desktop
 share/apps/musicshape/fonts/Emmentaler-14.ttf
-%%GTL%%share/apps/pigmentcms/ctlmodules/pigmentutils.ctl
-%%GTL%%share/apps/pigmentcms/ctlprofiles/lmsaf32.ctlp
-%%GTL%%share/apps/pigmentcms/ctlprofiles/srgbaf.ctlp
-%%GTL%%share/apps/pigmentcms/ctlprofiles/scrgbaf.ctlp
-%%GTL%%share/apps/pigmentcms/ctlprofiles/xyzaf32.ctlp
-%%GTL%%share/apps/pigmentcms/ctlprofiles/ycbcr_16.ctlp
-%%GTL%%share/apps/pigmentcms/ctlprofiles/ycbcr_8.ctlp
+%%GTL%%share/apps/pigmentcms/ctlcolorspaces/gray32f.ctlcs
 %%GTL%%share/apps/pigmentcms/ctlcolorspaces/rgba16f.ctlcs
 %%GTL%%share/apps/pigmentcms/ctlcolorspaces/rgba32f.ctlcs
 %%GTL%%share/apps/pigmentcms/ctlcolorspaces/xyza16f.ctlcs
 %%GTL%%share/apps/pigmentcms/ctlcolorspaces/xyza32f.ctlcs
 %%GTL%%share/apps/pigmentcms/ctlcolorspaces/ycbcr8u.ctlcs
 %%GTL%%share/apps/pigmentcms/ctlcolorspaces/ycbcr16u.ctlcs
+%%GTL%%share/apps/pigmentcms/ctlcolortransformations/BurnHighlights.ctlt
+%%GTL%%share/apps/pigmentcms/ctlcolortransformations/BurnMidtones.ctlt
+%%GTL%%share/apps/pigmentcms/ctlcolortransformations/BurnShadows.ctlt
+%%GTL%%share/apps/pigmentcms/ctlcolortransformations/DodgeHighlights.ctlt
+%%GTL%%share/apps/pigmentcms/ctlcolortransformations/DodgeMidtones.ctlt
+%%GTL%%share/apps/pigmentcms/ctlcolortransformations/DodgeShadows.ctlt
+%%GTL%%share/apps/pigmentcms/ctlcompositeops/alphadarken.ctlt
 %%GTL%%share/apps/pigmentcms/ctlcompositeops/over.ctlt
+%%GTL%%share/apps/pigmentcms/ctlmodules/pigmentutils.ctl
+%%GTL%%share/apps/pigmentcms/ctlprofiles/lmsaf32.ctlp
+%%GTL%%share/apps/pigmentcms/ctlprofiles/scgrayf.ctlp
+%%GTL%%share/apps/pigmentcms/ctlprofiles/scrgbaf.ctlp
+%%GTL%%share/apps/pigmentcms/ctlprofiles/srgbaf.ctlp
+%%GTL%%share/apps/pigmentcms/ctlprofiles/xyzaf32.ctlp
+%%GTL%%share/apps/pigmentcms/ctlprofiles/ycbcr_16.ctlp
+%%GTL%%share/apps/pigmentcms/ctlprofiles/ycbcr_8.ctlp
 %%GTL%%share/apps/pigmentcms/ctltemplates/alphabase.ctlt
 share/apps/xsltfilter/export/kword/xslfo/kword2xslfo-table.xsl
 share/apps/xsltfilter/export/kword/xslfo/main.xsl
@@ -2680,13 +2687,13 @@ share/kde4/services/krita_bmp_import.desktop
 share/kde4/services/krita_colorspaces_extensions_plugin.desktop
 %%GTL%%share/kde4/services/krita_ctlcs_plugin.desktop
 share/kde4/services/krita_digitalmixer.desktop
+%%GTL%%share/kde4/services/krita_exr_export.desktop
+%%GTL%%share/kde4/services/krita_exr_import.desktop
 share/kde4/services/krita_gif_import.desktop
 share/kde4/services/krita_jp2_export.desktop
 share/kde4/services/krita_jp2_import.desktop
 share/kde4/services/krita_jpeg_export.desktop
 share/kde4/services/krita_jpeg_import.desktop
-%%GTL%%share/kde4/services/krita_openexr_export.desktop
-%%GTL%%share/kde4/services/krita_openexr_import.desktop
 share/kde4/services/krita_ora_export.desktop
 share/kde4/services/krita_ora_import.desktop
 share/kde4/services/krita_pdf_import.desktop
@@ -2736,7 +2743,6 @@ share/kde4/services/kritametadataeditor.desktop
 share/kde4/services/kritamodifyselection.desktop
 share/kde4/services/kritanoisefilter.desktop
 share/kde4/services/kritaoilpaintfilter.desktop
-%%GTL%%share/kde4/services/kritapainterlymixer.desktop
 share/kde4/services/kritapart.desktop
 share/kde4/services/kritaparticlepaintop.desktop
 share/kde4/services/kritapixelizefilter.desktop
@@ -2749,7 +2755,8 @@ share/kde4/services/kritascripting.desktop
 share/kde4/services/kritaselectiontools.desktop
 share/kde4/services/kritaseparatechannels.desktop
 share/kde4/services/kritashearimage.desktop
-%%GTL%%share/kde4/services/kritashiva.desktop
+%%GTL%%share/kde4/services/kritashivafilters.desktop
+%%GTL%%share/kde4/services/kritashivagenerators.desktop
 share/kde4/services/kritasmalltilesfilter.desktop
 share/kde4/services/kritasobelfilter.desktop
 share/kde4/services/kritasoftpaintop.desktop
@@ -2903,10 +2910,11 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/xsltfilter/export
 @dirrm share/apps/xsltfilter
 %%GTL%%@dirrm share/apps/pigmentcms/ctltemplates
-%%GTL%%@dirrm share/apps/pigmentcms/ctlcompositeops
-%%GTL%%@dirrm share/apps/pigmentcms/ctlcolorspaces
 %%GTL%%@dirrm share/apps/pigmentcms/ctlprofiles
 %%GTL%%@dirrm share/apps/pigmentcms/ctlmodules
+%%GTL%%@dirrm share/apps/pigmentcms/ctlcompositeops
+%%GTL%%@dirrm share/apps/pigmentcms/ctlcolortransformations
+%%GTL%%@dirrm share/apps/pigmentcms/ctlcolorspaces
 %%GTL%%@dirrm share/apps/pigmentcms
 @dirrm share/apps/musicshape/fonts
 @dirrm share/apps/musicshape
@@ -2983,7 +2991,6 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/krita/metadata
 @dirrm share/apps/krita/kpartplugins
 @dirrm share/apps/krita/images
-%%GTL%%@dirrm share/apps/krita/illuminants
 @dirrm share/apps/krita/icons/hicolor/48x48/actions
 @dirrm share/apps/krita/icons/hicolor/48x48
 @dirrm share/apps/krita/icons/hicolor
