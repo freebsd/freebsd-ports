@@ -7,7 +7,7 @@
 
 PORTNAME=	xorg
 PORTVERSION=	7.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 x11-servers
 MASTER_SITES=	# none
 PKGNAMESUFFIX=	-minimal
@@ -26,10 +26,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/Xorg:${PORTSDIR}/x11-servers/xorg-server \
 		${LOCALBASE}/lib/xorg/modules/input/mouse_drv.so:${PORTSDIR}/x11-drivers/xf86-input-mouse \
 		${LOCALBASE}/lib/xorg/modules/input/kbd_drv.so:${PORTSDIR}/x11-drivers/xf86-input-keyboard \
 		${LOCALBASE}/bin/xinit:${PORTSDIR}/x11/xinit \
-		${LOCALBASE}/bin/xauth:${PORTSDIR}/x11/xauth \
-		${LOCALBASE}/lib/X11/fonts/misc/fonts.alias:${PORTSDIR}/x11-fonts/font-alias \
-		${LOCALBASE}/lib/X11/fonts/misc/cursor.pcf.gz:${PORTSDIR}/x11-fonts/font-cursor-misc \
-		${LOCALBASE}/lib/X11/fonts/misc/10x20.pcf.gz:${PORTSDIR}/x11-fonts/font-misc-misc
+		${LOCALBASE}/bin/xauth:${PORTSDIR}/x11/xauth
 
 do-install:
 
