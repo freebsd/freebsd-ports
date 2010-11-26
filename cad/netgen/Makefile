@@ -7,14 +7,18 @@
 
 PORTNAME=	netgen
 PORTVERSION=	4.9.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION}/
 
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	An automatic 3D tetrahedral mesh generator
 
+LIB_DEPENDS=	tix8184:${PORTSDIR}/x11-toolkits/tix \
+		jpeg.11:${PORTSDIR}/graphics/jpeg \
+		togl.1:${PORTSDIR}/graphics/togl
 
+USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_TK=		84
 USE_TK_BUILD=	84
@@ -25,9 +29,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} -I${TK_LIBDIR}/Togl-1.7
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR} --enable-jpeglib
-LIB_DEPENDS+=	tix8184:${PORTSDIR}/x11-toolkits/tix \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		togl.1:${PORTSDIR}/graphics/togl
 
 FETCH_BEFORE_ARGS+=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 
@@ -67,6 +68,10 @@ pre-configure:
 		${WRKSRC}/ng/ngappinit.cpp
 
 post-install:
+#	copy some additional headers for build cad/salome-netgenplugin
+	${MKDIR} ${DATADIR}/include
+	${SH} ${FILESDIR}/netgen_copy_include_for_salome ${WRKSRC} ${PREFIX}
+	${LN} ${PREFIX}/lib/libnglib.so  ${PREFIX}/lib/libnglib.so.1
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
