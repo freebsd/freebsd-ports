@@ -1,6 +1,12 @@
 bin/inkscape
 bin/inkview
 share/applications/inkscape.desktop
+share/icons/hicolor/16x16/apps/inkscape.png
+share/icons/hicolor/22x22/apps/inkscape.png
+share/icons/hicolor/24x24/apps/inkscape.png
+share/icons/hicolor/256x256/apps/inkscape.png
+share/icons/hicolor/32x32/apps/inkscape.png
+share/icons/hicolor/48x48/apps/inkscape.png
 %%DATADIR%%/clipart/README
 %%DATADIR%%/clipart/draw-freely.ru.svg
 %%DATADIR%%/clipart/draw-freely.svg
@@ -44,6 +50,7 @@ share/applications/inkscape.desktop
 %%DATADIR%%/extensions/Barcode/Code39Ext.py
 %%DATADIR%%/extensions/Barcode/Code93.py
 %%DATADIR%%/extensions/Barcode/EAN13.py
+%%DATADIR%%/extensions/Barcode/EAN5.py
 %%DATADIR%%/extensions/Barcode/EAN8.py
 %%DATADIR%%/extensions/Barcode/RM4CC.py
 %%DATADIR%%/extensions/Barcode/UPCA.py
@@ -162,6 +169,8 @@ share/applications/inkscape.desktop
 %%DATADIR%%/extensions/cgm_input.inx
 %%DATADIR%%/extensions/chardataeffect.py
 %%DATADIR%%/extensions/cmx_input.inx
+%%DATADIR%%/extensions/color_blackandwhite.inx
+%%DATADIR%%/extensions/color_blackandwhite.py
 %%DATADIR%%/extensions/color_brighter.inx
 %%DATADIR%%/extensions/color_brighter.py
 %%DATADIR%%/extensions/color_custom.inx
@@ -245,6 +254,8 @@ share/applications/inkscape.desktop
 %%DATADIR%%/extensions/funcplot.py
 %%DATADIR%%/extensions/gears.inx
 %%DATADIR%%/extensions/gears.py
+%%DATADIR%%/extensions/generate_voronoi.inx
+%%DATADIR%%/extensions/generate_voronoi.py
 %%DATADIR%%/extensions/gimp_xcf.inx
 %%DATADIR%%/extensions/gimp_xcf.py
 %%DATADIR%%/extensions/grid_cartesian.inx
@@ -273,6 +284,34 @@ share/applications/inkscape.desktop
 %%DATADIR%%/extensions/interp.py
 %%DATADIR%%/extensions/interp_att_g.inx
 %%DATADIR%%/extensions/interp_att_g.py
+%%DATADIR%%/extensions/jessyInk.js
+%%DATADIR%%/extensions/jessyInk_autoTexts.inx
+%%DATADIR%%/extensions/jessyInk_autoTexts.py
+%%DATADIR%%/extensions/jessyInk_core_mouseHandler_noclick.js
+%%DATADIR%%/extensions/jessyInk_core_mouseHandler_zoomControl.js
+%%DATADIR%%/extensions/jessyInk_effects.inx
+%%DATADIR%%/extensions/jessyInk_effects.py
+%%DATADIR%%/extensions/jessyInk_export.inx
+%%DATADIR%%/extensions/jessyInk_export.py
+%%DATADIR%%/extensions/jessyInk_install.inx
+%%DATADIR%%/extensions/jessyInk_install.py
+%%DATADIR%%/extensions/jessyInk_keyBindings.inx
+%%DATADIR%%/extensions/jessyInk_keyBindings.py
+%%DATADIR%%/extensions/jessyInk_masterSlide.inx
+%%DATADIR%%/extensions/jessyInk_masterSlide.py
+%%DATADIR%%/extensions/jessyInk_mouseHandler.inx
+%%DATADIR%%/extensions/jessyInk_mouseHandler.py
+%%DATADIR%%/extensions/jessyInk_summary.inx
+%%DATADIR%%/extensions/jessyInk_summary.py
+%%DATADIR%%/extensions/jessyInk_transitions.inx
+%%DATADIR%%/extensions/jessyInk_transitions.py
+%%DATADIR%%/extensions/jessyInk_uninstall.inx
+%%DATADIR%%/extensions/jessyInk_uninstall.py
+%%DATADIR%%/extensions/jessyInk_video.inx
+%%DATADIR%%/extensions/jessyInk_video.py
+%%DATADIR%%/extensions/jessyInk_video.svg
+%%DATADIR%%/extensions/jessyInk_view.inx
+%%DATADIR%%/extensions/jessyInk_view.py
 %%DATADIR%%/extensions/launch_webbrowser.py
 %%DATADIR%%/extensions/lindenmayer.inx
 %%DATADIR%%/extensions/lindenmayer.py
@@ -297,6 +336,8 @@ share/applications/inkscape.desktop
 %%DATADIR%%/extensions/perfectboundcover.py
 %%DATADIR%%/extensions/perspective.inx
 %%DATADIR%%/extensions/perspective.py
+%%DATADIR%%/extensions/pixelsnap.inx
+%%DATADIR%%/extensions/pixelsnap.py
 %%DATADIR%%/extensions/plt_input.inx
 %%DATADIR%%/extensions/plt_output.inx
 %%DATADIR%%/extensions/plt_output.py
@@ -315,6 +356,8 @@ share/applications/inkscape.desktop
 %%DATADIR%%/extensions/render_alphabetsoup_config.py
 %%DATADIR%%/extensions/render_barcode.inx
 %%DATADIR%%/extensions/render_barcode.py
+%%DATADIR%%/extensions/render_barcode_datamatrix.inx
+%%DATADIR%%/extensions/render_barcode_datamatrix.py
 %%DATADIR%%/extensions/restack.inx
 %%DATADIR%%/extensions/restack.py
 %%DATADIR%%/extensions/rtree.inx
@@ -336,6 +379,8 @@ share/applications/inkscape.desktop
 %%DATADIR%%/extensions/sk_input.inx
 %%DATADIR%%/extensions/spirograph.inx
 %%DATADIR%%/extensions/spirograph.py
+%%DATADIR%%/extensions/split.inx
+%%DATADIR%%/extensions/split.py
 %%DATADIR%%/extensions/straightseg.inx
 %%DATADIR%%/extensions/straightseg.py
 %%DATADIR%%/extensions/summersnight.inx
@@ -369,12 +414,22 @@ share/applications/inkscape.desktop
 %%DATADIR%%/extensions/txt2svg.pl
 %%DATADIR%%/extensions/uniconv-ext.py
 %%DATADIR%%/extensions/uniconv_output.py
+%%DATADIR%%/extensions/voronoi.py
 %%DATADIR%%/extensions/web-set-att.inx
 %%DATADIR%%/extensions/web-set-att.py
 %%DATADIR%%/extensions/web-transmit-att.inx
 %%DATADIR%%/extensions/web-transmit-att.py
+%%DATADIR%%/extensions/webslicer_create_group.inx
+%%DATADIR%%/extensions/webslicer_create_group.py
+%%DATADIR%%/extensions/webslicer_create_rect.inx
+%%DATADIR%%/extensions/webslicer_create_rect.py
+%%DATADIR%%/extensions/webslicer_effect.py
+%%DATADIR%%/extensions/webslicer_export.inx
+%%DATADIR%%/extensions/webslicer_export.py
 %%DATADIR%%/extensions/whirl.inx
 %%DATADIR%%/extensions/whirl.py
+%%DATADIR%%/extensions/wireframe_sphere.inx
+%%DATADIR%%/extensions/wireframe_sphere.py
 %%DATADIR%%/extensions/wmf_input.inx
 %%DATADIR%%/extensions/wmf_output.inx
 %%DATADIR%%/extensions/wmf_output.py
@@ -395,6 +450,7 @@ share/applications/inkscape.desktop
 %%DATADIR%%/fonts/README
 %%DATADIR%%/gradients/README
 %%DATADIR%%/icons/README
+%%DATADIR%%/icons/color-management-icon.png
 %%DATADIR%%/icons/feBlend-icon.png
 %%DATADIR%%/icons/feBlend-icon.svg
 %%DATADIR%%/icons/feColorMatrix-icon.png
@@ -427,10 +483,14 @@ share/applications/inkscape.desktop
 %%DATADIR%%/icons/inkscape.file.png
 %%DATADIR%%/icons/inkscape.file.svg
 %%DATADIR%%/icons/inkscape.svg
+%%DATADIR%%/icons/out-of-gamut-icon.png
+%%DATADIR%%/icons/out-of-gamut-icon.svg
 %%DATADIR%%/icons/remove-color.png
 %%DATADIR%%/icons/remove-color.svg
 %%DATADIR%%/icons/tango_icons.svg
 %%DATADIR%%/icons/ticotico.jpg
+%%DATADIR%%/icons/too-much-ink-icon.png
+%%DATADIR%%/icons/too-much-ink-icon.svg
 %%DATADIR%%/keys/acd-canvas.xml
 %%DATADIR%%/keys/adobe-illustrator-cs2.xml
 %%DATADIR%%/keys/corel-draw-x4.xml
@@ -464,28 +524,6 @@ share/applications/inkscape.desktop
 %%DATADIR%%/patterns/README
 %%DATADIR%%/patterns/patterns.svg
 %%DATADIR%%/patterns/patterns.svg.h
-%%DATADIR%%/screens/about.be.svg
-%%DATADIR%%/screens/about.bg.svg
-%%DATADIR%%/screens/about.br.svg
-%%DATADIR%%/screens/about.ca.svg
-%%DATADIR%%/screens/about.cs.svg
-%%DATADIR%%/screens/about.de.svg
-%%DATADIR%%/screens/about.es.svg
-%%DATADIR%%/screens/about.eu.svg
-%%DATADIR%%/screens/about.fi.svg
-%%DATADIR%%/screens/about.fr.svg
-%%DATADIR%%/screens/about.gl.svg
-%%DATADIR%%/screens/about.hu.svg
-%%DATADIR%%/screens/about.it.svg
-%%DATADIR%%/screens/about.nl.svg
-%%DATADIR%%/screens/about.pl.svg
-%%DATADIR%%/screens/about.pt_BR.svg
-%%DATADIR%%/screens/about.ru.svg
-%%DATADIR%%/screens/about.sk.svg
-%%DATADIR%%/screens/about.sl.svg
-%%DATADIR%%/screens/about.sr.svg
-%%DATADIR%%/screens/about.sr@latin.svg
-%%DATADIR%%/screens/about.uk.svg
 %%DATADIR%%/screens/about.svg
 %%DATADIR%%/templates/A4.svg
 %%DATADIR%%/templates/A4_landscape.svg
@@ -543,6 +581,7 @@ share/applications/inkscape.desktop
 %%DATADIR%%/tutorials/gpl-2.svg
 %%DATADIR%%/tutorials/making_markers.svg
 %%DATADIR%%/tutorials/oldguitar.jpg
+%%DATADIR%%/tutorials/potrace-be.png
 %%DATADIR%%/tutorials/potrace-ca.png
 %%DATADIR%%/tutorials/potrace-de.png
 %%DATADIR%%/tutorials/potrace-en.png
@@ -551,6 +590,7 @@ share/applications/inkscape.desktop
 %%DATADIR%%/tutorials/potrace-fr.png
 %%DATADIR%%/tutorials/potrace-hu.png
 %%DATADIR%%/tutorials/potrace-ja.png
+%%DATADIR%%/tutorials/potrace-nl.png
 %%DATADIR%%/tutorials/potrace-pl.png
 %%DATADIR%%/tutorials/potrace-pt_BR.png
 %%DATADIR%%/tutorials/potrace-ru.png
@@ -560,15 +600,19 @@ share/applications/inkscape.desktop
 %%DATADIR%%/tutorials/potrace-zh_CN.png
 %%DATADIR%%/tutorials/potrace-zh_TW.png
 %%DATADIR%%/tutorials/potrace.png
+%%DATADIR%%/tutorials/tutorial-advanced.be.svg
 %%DATADIR%%/tutorials/tutorial-advanced.ca.svg
 %%DATADIR%%/tutorials/tutorial-advanced.cs.svg
 %%DATADIR%%/tutorials/tutorial-advanced.de.svg
 %%DATADIR%%/tutorials/tutorial-advanced.es.svg
 %%DATADIR%%/tutorials/tutorial-advanced.eu.svg
+%%DATADIR%%/tutorials/tutorial-advanced.fa.svg
 %%DATADIR%%/tutorials/tutorial-advanced.fr.svg
 %%DATADIR%%/tutorials/tutorial-advanced.hu.svg
+%%DATADIR%%/tutorials/tutorial-advanced.id.svg
 %%DATADIR%%/tutorials/tutorial-advanced.it.svg
 %%DATADIR%%/tutorials/tutorial-advanced.ja.svg
+%%DATADIR%%/tutorials/tutorial-advanced.nl.svg
 %%DATADIR%%/tutorials/tutorial-advanced.pl.svg
 %%DATADIR%%/tutorials/tutorial-advanced.pt_BR.svg
 %%DATADIR%%/tutorials/tutorial-advanced.ru.svg
@@ -578,6 +622,7 @@ share/applications/inkscape.desktop
 %%DATADIR%%/tutorials/tutorial-advanced.vi.svg
 %%DATADIR%%/tutorials/tutorial-advanced.zh_CN.svg
 %%DATADIR%%/tutorials/tutorial-advanced.zh_TW.svg
+%%DATADIR%%/tutorials/tutorial-basic.be.svg
 %%DATADIR%%/tutorials/tutorial-basic.bg.svg
 %%DATADIR%%/tutorials/tutorial-basic.ca.svg
 %%DATADIR%%/tutorials/tutorial-basic.cs.svg
@@ -586,8 +631,10 @@ share/applications/inkscape.desktop
 %%DATADIR%%/tutorials/tutorial-basic.eo.svg
 %%DATADIR%%/tutorials/tutorial-basic.es.svg
 %%DATADIR%%/tutorials/tutorial-basic.eu.svg
+%%DATADIR%%/tutorials/tutorial-basic.fa.svg
 %%DATADIR%%/tutorials/tutorial-basic.fr.svg
 %%DATADIR%%/tutorials/tutorial-basic.hu.svg
+%%DATADIR%%/tutorials/tutorial-basic.id.svg
 %%DATADIR%%/tutorials/tutorial-basic.it.svg
 %%DATADIR%%/tutorials/tutorial-basic.ja.svg
 %%DATADIR%%/tutorials/tutorial-basic.nl.svg
@@ -602,11 +649,13 @@ share/applications/inkscape.desktop
 %%DATADIR%%/tutorials/tutorial-basic.vi.svg
 %%DATADIR%%/tutorials/tutorial-basic.zh_CN.svg
 %%DATADIR%%/tutorials/tutorial-basic.zh_TW.svg
+%%DATADIR%%/tutorials/tutorial-calligraphy.be.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.ca.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.cs.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.de.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.es.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.eu.svg
+%%DATADIR%%/tutorials/tutorial-calligraphy.fa.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.fr.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.hu.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.ja.svg
@@ -618,10 +667,12 @@ share/applications/inkscape.desktop
 %%DATADIR%%/tutorials/tutorial-calligraphy.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.vi.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.zh_TW.svg
+%%DATADIR%%/tutorials/tutorial-elements.be.svg
 %%DATADIR%%/tutorials/tutorial-elements.ca.svg
 %%DATADIR%%/tutorials/tutorial-elements.de.svg
 %%DATADIR%%/tutorials/tutorial-elements.es.svg
 %%DATADIR%%/tutorials/tutorial-elements.eu.svg
+%%DATADIR%%/tutorials/tutorial-elements.fa.svg
 %%DATADIR%%/tutorials/tutorial-elements.fr.svg
 %%DATADIR%%/tutorials/tutorial-elements.hu.svg
 %%DATADIR%%/tutorials/tutorial-elements.ja.svg
@@ -632,22 +683,30 @@ share/applications/inkscape.desktop
 %%DATADIR%%/tutorials/tutorial-elements.sl.svg
 %%DATADIR%%/tutorials/tutorial-elements.svg
 %%DATADIR%%/tutorials/tutorial-elements.zh_TW.svg
+%%DATADIR%%/tutorials/tutorial-interpolate.be.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.de.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.fr.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.hu.svg
+%%DATADIR%%/tutorials/tutorial-interpolate.ja.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.pl.svg
+%%DATADIR%%/tutorials/tutorial-interpolate.sk.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.sl.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.vi.svg
+%%DATADIR%%/tutorials/tutorial-interpolate.zh_TW.svg
+%%DATADIR%%/tutorials/tutorial-shapes.be.svg
 %%DATADIR%%/tutorials/tutorial-shapes.ca.svg
 %%DATADIR%%/tutorials/tutorial-shapes.cs.svg
 %%DATADIR%%/tutorials/tutorial-shapes.de.svg
 %%DATADIR%%/tutorials/tutorial-shapes.es.svg
 %%DATADIR%%/tutorials/tutorial-shapes.eu.svg
+%%DATADIR%%/tutorials/tutorial-shapes.fa.svg
 %%DATADIR%%/tutorials/tutorial-shapes.fr.svg
 %%DATADIR%%/tutorials/tutorial-shapes.hu.svg
+%%DATADIR%%/tutorials/tutorial-shapes.id.svg
 %%DATADIR%%/tutorials/tutorial-shapes.it.svg
 %%DATADIR%%/tutorials/tutorial-shapes.ja.svg
+%%DATADIR%%/tutorials/tutorial-shapes.nl.svg
 %%DATADIR%%/tutorials/tutorial-shapes.pl.svg
 %%DATADIR%%/tutorials/tutorial-shapes.pt_BR.svg
 %%DATADIR%%/tutorials/tutorial-shapes.ru.svg
@@ -657,10 +716,12 @@ share/applications/inkscape.desktop
 %%DATADIR%%/tutorials/tutorial-shapes.vi.svg
 %%DATADIR%%/tutorials/tutorial-shapes.zh_CN.svg
 %%DATADIR%%/tutorials/tutorial-shapes.zh_TW.svg
+%%DATADIR%%/tutorials/tutorial-tips.be.svg
 %%DATADIR%%/tutorials/tutorial-tips.ca.svg
 %%DATADIR%%/tutorials/tutorial-tips.de.svg
 %%DATADIR%%/tutorials/tutorial-tips.es.svg
 %%DATADIR%%/tutorials/tutorial-tips.eu.svg
+%%DATADIR%%/tutorials/tutorial-tips.fa.svg
 %%DATADIR%%/tutorials/tutorial-tips.fr.svg
 %%DATADIR%%/tutorials/tutorial-tips.hu.svg
 %%DATADIR%%/tutorials/tutorial-tips.it.svg
@@ -673,13 +734,16 @@ share/applications/inkscape.desktop
 %%DATADIR%%/tutorials/tutorial-tips.svg
 %%DATADIR%%/tutorials/tutorial-tips.vi.svg
 %%DATADIR%%/tutorials/tutorial-tips.zh_TW.svg
+%%DATADIR%%/tutorials/tutorial-tracing.be.svg
 %%DATADIR%%/tutorials/tutorial-tracing.ca.svg
 %%DATADIR%%/tutorials/tutorial-tracing.de.svg
 %%DATADIR%%/tutorials/tutorial-tracing.es.svg
 %%DATADIR%%/tutorials/tutorial-tracing.eu.svg
+%%DATADIR%%/tutorials/tutorial-tracing.fa.svg
 %%DATADIR%%/tutorials/tutorial-tracing.fr.svg
 %%DATADIR%%/tutorials/tutorial-tracing.hu.svg
 %%DATADIR%%/tutorials/tutorial-tracing.ja.svg
+%%DATADIR%%/tutorials/tutorial-tracing.nl.svg
 %%DATADIR%%/tutorials/tutorial-tracing.pl.svg
 %%DATADIR%%/tutorials/tutorial-tracing.pt_BR.svg
 %%DATADIR%%/tutorials/tutorial-tracing.ru.svg
@@ -717,6 +781,7 @@ share/locale/es/LC_MESSAGES/inkscape.mo
 share/locale/es_MX/LC_MESSAGES/inkscape.mo
 share/locale/et/LC_MESSAGES/inkscape.mo
 share/locale/eu/LC_MESSAGES/inkscape.mo
+share/locale/fa/LC_MESSAGES/inkscape.mo
 share/locale/fi/LC_MESSAGES/inkscape.mo
 share/locale/fr/LC_MESSAGES/inkscape.mo
 share/locale/ga/LC_MESSAGES/inkscape.mo
@@ -750,13 +815,13 @@ share/locale/sq/LC_MESSAGES/inkscape.mo
 share/locale/sr/LC_MESSAGES/inkscape.mo
 share/locale/sr@latin/LC_MESSAGES/inkscape.mo
 share/locale/sv/LC_MESSAGES/inkscape.mo
+share/locale/te_IN/LC_MESSAGES/inkscape.mo
 share/locale/th/LC_MESSAGES/inkscape.mo
 share/locale/tr/LC_MESSAGES/inkscape.mo
 share/locale/uk/LC_MESSAGES/inkscape.mo
 share/locale/vi/LC_MESSAGES/inkscape.mo
 share/locale/zh_CN/LC_MESSAGES/inkscape.mo
 share/locale/zh_TW/LC_MESSAGES/inkscape.mo
-share/pixmaps/inkscape.png
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/tutorials
 @dirrm %%DATADIR%%/templates
@@ -782,6 +847,8 @@ share/pixmaps/inkscape.png
 @dirrmtry man/fr
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/te_IN/LC_MESSAGES
+@dirrmtry share/locale/te_IN
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/rw/LC_MESSAGES

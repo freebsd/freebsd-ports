@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	inkscape
-PORTVERSION=	0.47
-PORTREVISION=	9
+PORTVERSION=	0.48.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=${PORTNAME:L}/${PORTNAME:L}/0.48
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program seeks to become a full featured open source SVG editor
