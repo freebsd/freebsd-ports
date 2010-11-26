@@ -1,7 +1,9 @@
---- main.c.orig	Wed Jul 26 04:45:13 2006
-+++ main.c	Sat Jun 16 19:49:25 2007
-@@ -2,12 +2,14 @@
+--- main.c.orig	2010-11-26 17:45:26.000000000 +0300
++++ main.c	2010-11-26 17:47:46.000000000 +0300
+@@ -1,13 +1,16 @@
+ #include <stdio.h>
  #include <stdlib.h>
++#include <string.h>
  #include <unistd.h>
  #include <syslog.h>
 +#include <pthread.h>
@@ -15,7 +17,7 @@
  #include <net/if.h>
  #include <upnp/upnp.h>
  #include "globals.h"
-@@ -22,7 +24,6 @@
+@@ -22,7 +25,6 @@
  int main (int argc, char** argv)
  {
  	char descDocUrl[7+15+1+5+1+sizeof(g_vars.descDocName)+1]; // http://ipaddr:port/docName<null>
@@ -23,7 +25,7 @@
  	sigset_t sigsToCatch;
  	int ret, signum, arg = 1, foreground = 0;
  
-@@ -46,11 +47,17 @@
+@@ -46,11 +48,17 @@
  	strncpy(g_vars.intInterfaceName, argv[arg++], IFNAMSIZ);
  
  	// Get the internal ip address to start the daemon on
@@ -42,7 +44,7 @@
  	if (!foreground) {
  		struct rlimit resourceLimit = { 0, 0 };
  		pid_t pid, sid;
-@@ -114,9 +121,9 @@
+@@ -114,9 +122,9 @@
  
  	// Initialize UPnP SDK on the internal Interface
  	trace(3, "Initializing UPnP SDK ... ");
