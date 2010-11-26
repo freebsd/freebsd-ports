@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-gtk
 COMMENT=	GTK+ modules of uim input method
 
 USE_GNOME=	gtk20
-LIB_DEPENDS=	uim.6:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	uim.7:${PORTSDIR}/textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
@@ -19,7 +19,7 @@ CONFIGURE_ARGS=	--with-gtk2 --enable-pref
 UIM_SLAVE=	yes
 
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-gtk_Makefile.in \
-		${PATCHDIR}/extra-patch-helper_Makefile.in 
+		${PATCHDIR}/extra-patch-helper_Makefile.in
 
 .if defined(WITHOUT_X11)
 IGNORE=		requires X11

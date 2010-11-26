@@ -5,39 +5,34 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
 PKGNAMESUFFIX=	-qt4
 
-COMMENT=	Qt4 IM modules of uim input method
+COMMENT=	Qt4 modules of uim input method
 
-LIB_DEPENDS=	uim.6:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	uim.7:${PORTSDIR}/textproc/uim
 
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build qt3support
+QT_COMPONENTS=	qmake_build moc_build qt3support uic
 USE_AUTOTOOLS=	libtool:22
 USE_ICONV=	yes
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-qt4-immodule
+CONFIGURE_ARGS+=	--with-qt4 --with-qt4-immodule
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${X11BASE}/lib -L${LOCALBASE}/lib -I${LOCALBASE}/include "
 UIM_SLAVE=	yes
-
-PLIST_FILES=	${QT_PLUGINDIR_REL}/inputmethods/libuiminputcontextplugin.so
-PLIST_DIRS=	${QT_PLUGINDIR_REL}/inputmethods \
-		${QT_PLUGINDIR_REL}
 
 .if defined(WITHOUT_X11)
 IGNORE=		cannot be built without X11. Please, unset WITHOUT_X11
 .endif
 
 do-build:
-	(cd ${WRKSRC}/uim && ${SETENV} ${MAKE_ENV} ${GMAKE} libuim-x-util.la)
+	(cd ${WRKSRC}/uim && ${SETENV} ${MAKE_ENV} ${GMAKE} libuim-x-util.la libuim-counted-init.la)
 	(cd ${WRKSRC}/replace && ${SETENV} ${MAKE_ENV} ${GMAKE})
-	(cd ${WRKSRC}/qt4/immodule && ${SETENV} ${MAKE_ENV} ${GMAKE})
+	(cd ${WRKSRC}/qt4 && ${SETENV} ${MAKE_ENV} ${GMAKE})
 
 do-install:
-	(cd ${WRKSRC}/qt4/immodule && ${SETENV} ${MAKE_ENV} ${GMAKE} install)
+	(cd ${WRKSRC}/qt4 && ${SETENV} ${MAKE_ENV} ${GMAKE} install)
 
 .include "${MASTERDIR}/Makefile"

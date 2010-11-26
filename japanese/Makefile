@@ -359,8 +359,6 @@
     SUBDIR += trac
     SUBDIR += typist
     SUBDIR += uim-anthy
-    SUBDIR += uim-canna
-    SUBDIR += uim-prime
     SUBDIR += uim-tomoe-gtk
     SUBDIR += vera-fpw
     SUBDIR += vflib
