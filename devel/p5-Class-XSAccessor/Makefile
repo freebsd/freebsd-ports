@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-XSAccessor
-PORTVERSION=	1.07
+PORTVERSION=	1.09
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Generate fast XS accessors without runtime compilation
-
-BUILD_DEPENDS=	p5-AutoXS-Header>=1.02:${PORTSDIR}/devel/p5-AutoXS-Header
 
 PERL_CONFIGURE=	yes
 
