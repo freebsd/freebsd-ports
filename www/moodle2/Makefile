@@ -6,46 +6,37 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	1.9.10
+PORTVERSION=	2.0
 CATEGORIES=	www
-MASTER_SITES=	http://download.moodle.org/stable19/ \
-		http://download2.moodle.org/stable19/ \
-		http://download3.moodle.org/stable19/ \
-		http://download4.moodle.org/stable19/
+MASTER_SITES=	http://download.moodle.org/stable20/ \
+		http://download2.moodle.org/stable20/ \
+		http://download3.moodle.org/stable20/ \
+		http://download4.moodle.org/stable20/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jmrueda@diatel.upm.es
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Course management system based on social constructionism
 
-USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype
+BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
+RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
+
+CONFLICTS=	moodle-1.*.*
+LATEST_LINK=	moodle20
+
+USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype \
+		soap openssl simplexml spl dom json zip zlib
 WRKSRC=		${WRKDIR}/moodle
 
-OPTIONS=	MYSQL   "Add support for a MySQL database server" Off \
+OPTIONS=	MYSQL   "Add support for a MySQL database server" On \
 		PGSQL   "Add support for a PostgreSQL database server" Off \
 		MSSQL   "Add support for a MS SQL Server" Off \
-		ZLIB    "Add zip/unzip functionality" On \
-		NETWORK "Add Moodle Network functionality" Off \
 		LDAP    "Add LDAP authentication functionality" Off \
 		MIMETEX "Add mimeTeX filter functionality" On
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_MSSQL)
-pre-fetch:
-	@${ECHO_MSG} "
-	@${ECHO_MSG} "You didn't activate support for any database server!"
-	@${ECHO_MSG} "
-	@${ECHO_MSG} "If you want to reconsider, press Ctrl-C now to cancel"
-	@${ECHO_MSG} "the installation and run 'make config'"
-	@${ECHO_MSG} "
-	@${ECHO_MSG} "You can also add the required PHP module later, if that's"
-	@${ECHO_MSG} "what you prefer."
-	@${ECHO_MSG} "
-	@sleep 5
-.endif
-
-.if defined(WITH_MYSQL)
-USE_PHP+=	mysql
+.if !defined(WITHOUT_MYSQL)
+USE_PHP+=	mysqli
 .endif
 
 .if defined(WITH_PGSQL)
@@ -54,14 +45,6 @@ USE_PHP+=	pgsql
 
 .if defined(WITH_MSSQL)
 USE_PHP+=	mssql
-.endif
-
-.if !defined(WITHOUT_ZLIB)
-USE_PHP+=	zlib
-.endif
-
-.if defined(WITH_NETWORK)
-USE_PHP+=	openssl
 .endif
 
 .if defined(WITH_LDAP)
@@ -79,7 +62,7 @@ SUB_LIST=	MOODLEDIR=${MOODLEDIR} \
 		MOODLEDATADIR=${MOODLEDATADIR}
 
 MOODLEDIR?=	www/moodle
-MOODLEDATADIR?=	www/moodledata
+MOODLEDATADIR?=	moodledata
 
 pre-install:
 	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${MOODLEDIR}?g" >${PLIST}
@@ -88,9 +71,12 @@ pre-install:
 
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PREFIX}/${MOODLEDIR}
-	@${FIND} ${PREFIX}/${MOODLEDIR} -type d -exec ${CHMOD} a+x {} \;
-	@${ECHO_CMD} '@exec ${FIND} ${PREFIX}/${MOODLEDIR} -type d -exec ${CHMOD} a+x {} \;' \
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MOODLEDIR}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MOODLEDIR}' \
 		>> ${TMPPLIST}
+	${CHMOD} -R 755 ${PREFIX}/${MOODLEDIR}
+	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${PREFIX}/${MOODLEDIR}' >> ${TMPPLIST}
+
 	@${INSTALL} -d ${PREFIX}/${MOODLEDATADIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MOODLEDATADIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${MOODLEDATADIR}' \
