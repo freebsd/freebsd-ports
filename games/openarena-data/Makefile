@@ -19,7 +19,7 @@ COMMENT=	OpenArena game data files
 
 USE_ZIP=	yes
 
-WRKSRC=		${WRKDIR}
+WRKSRC=		${WRKDIR}/baseoa
 NO_BUILD=	yes
 FETCH_ARGS=
 USE_ZIP=	yes
@@ -29,14 +29,12 @@ OA_DATA_VER=	0.8.1
 OA_PATCH=	oa085p.zip
 OA_PATCH_VER=	0.8.1
 
+post-extract:
+	${UNZIP_CMD} -j ${DISTDIR}/${OA_DATA} ${PKGNAMEPREFIX}${OA_DATA_VER}/${OABASE}/\* -d ${WRKSRC}
+	${UNZIP_CMD} -j ${DISTDIR}/${OA_PATCH} ${PKGNAMEPREFIX}${OA_PATCH_VER}/${OABASE}/\* -d ${WRKSRC}
+
 do-install:
-		@${MKDIR} ${DATADIR}
-		@${UNZIP_CMD} -j ${DISTDIR}/${OA_DATA} \
-			${PKGNAMEPREFIX}${OA_DATA_VER}/${OABASE}/\* \
-			-d ${DATADIR}
-		@${UNZIP_CMD} -j ${DISTDIR}/${OA_PATCH} \
-			${PKGNAMEPREFIX}${OA_PATCH_VER}/${OABASE}/\* \
-			-d ${DATADIR}
-		@${CHMOD} -R o-w ${DATADIR}
+	${MKDIR} ${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DATADIR})
 
 .include "../openarena/Makefile.include"
