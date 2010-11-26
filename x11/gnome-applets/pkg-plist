@@ -1307,6 +1307,8 @@ share/gnome/help/gweather/zh_CN/gweather.xml
 %%PYTHON%%share/gnome/help/invest-applet/es/invest-applet.xml
 %%PYTHON%%share/gnome/help/invest-applet/fi/figures/symbol-search.png
 %%PYTHON%%share/gnome/help/invest-applet/fi/invest-applet.xml
+%%PYTHON%%share/gnome/help/invest-applet/it/figures/symbol-search.png
+%%PYTHON%%share/gnome/help/invest-applet/it/invest-applet.xml
 %%PYTHON%%share/gnome/help/invest-applet/ru/figures/symbol-search.png
 %%PYTHON%%share/gnome/help/invest-applet/ru/invest-applet.xml
 %%PYTHON%%share/gnome/help/invest-applet/sv/figures/symbol-search.png
@@ -1887,6 +1889,7 @@ share/omf/gweather/gweather-zh_CN.omf
 %%PYTHON%%share/omf/invest-applet/invest-applet-el.omf
 %%PYTHON%%share/omf/invest-applet/invest-applet-es.omf
 %%PYTHON%%share/omf/invest-applet/invest-applet-fi.omf
+%%PYTHON%%share/omf/invest-applet/invest-applet-it.omf
 %%PYTHON%%share/omf/invest-applet/invest-applet-ru.omf
 %%PYTHON%%share/omf/invest-applet/invest-applet-sv.omf
 %%PYTHON%%share/omf/invest-applet/invest-applet-zh_CN.omf
@@ -2295,6 +2298,8 @@ share/xmodmap/xmodmap.yu
 %%PYTHON%%@dirrm share/gnome/help/invest-applet/sv
 %%PYTHON%%@dirrm share/gnome/help/invest-applet/ru/figures
 %%PYTHON%%@dirrm share/gnome/help/invest-applet/ru
+%%PYTHON%%@dirrm share/gnome/help/invest-applet/it/figures
+%%PYTHON%%@dirrm share/gnome/help/invest-applet/it
 %%PYTHON%%@dirrm share/gnome/help/invest-applet/fi/figures
 %%PYTHON%%@dirrm share/gnome/help/invest-applet/fi
 %%PYTHON%%@dirrm share/gnome/help/invest-applet/es/figures
